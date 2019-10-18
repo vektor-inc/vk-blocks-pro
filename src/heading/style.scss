@@ -1,0 +1,25 @@
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+@mixin reset() {
+	background: none;
+	border:none;
+	border-radius: 0;
+	padding:0;
+	font-weight: normal;
+	box-shadow:none;
+	&:after {
+		border:none;
+	}
+}
+
+.vk_heading_title {
+	&-style {
+		&-plain {
+			@include reset;
+		}
+	}
+}
+.vk_heading_subtext {
+	margin-bottom:0;
+}

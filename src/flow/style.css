@@ -1,0 +1,55 @@
+/*-------------------------------------------*/
+.veu_flowBox {
+  display: block;
+  overflow: hidden; }
+
+.veu_flowBox.arrowFlag-on:after {
+  content: "";
+  background: url("../images/arrow_bottom.svg") center 50% no-repeat;
+  background-size: 50px 50px;
+  display: block;
+  overflow: hidden;
+  height: 50px;
+  width: 50px;
+  margin: 0 auto; }
+
+.veu_flowBox.arrowFlag-off {
+  padding-bottom: 0px;
+  margin-bottom: 30px; }
+
+.veu_flowBox.arrowFlag-off:after {
+  content: "";
+  font-size: 0;
+  background-image: none; }
+
+.veu_flowBox dl {
+  display: block;
+  overflow: hidden;
+  padding: 20px 25px;
+  border: 3px solid #e5e5e5;
+  margin: 0; }
+
+.veu_flowBox dl dt,
+.veu_flowBox dl dd {
+  padding-left: 0;
+  border: none; }
+
+.veu_flowBox dl dt.title {
+  border-bottom: 1px dotted #ccc;
+  margin-bottom: 10px;
+  font-size: 1.2em; }
+
+.veu_flowBox dl dd {
+  margin-bottom: 0px; }
+
+.veu_flowBox dl dd h4 {
+  margin: 0px;
+  padding: 0px; }
+
+.veu_flowBox dl dd p {
+  margin-bottom: 10px; }
+
+.veu_flowBox dl dd ul {
+  margin-bottom: 0px; }
+
+/*# sourceMappingURL=flow.css.map */

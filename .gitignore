@@ -1,0 +1,6 @@
+/*.html
+node_modules/
+dist/
+inc/vk-blocks/build/*.css
+inc/vk-blocks/build/*.js
+inc/vk-blocks/build/*.js.map

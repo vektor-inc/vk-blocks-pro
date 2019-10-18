@@ -1,0 +1,81 @@
+@charset "UTF-8";
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+.vk_staff {
+  display: flex;
+}
+.vk_staff .vk_staff_text {
+  display: table-cell;
+  vertical-align: top;
+  width: 60%;
+}
+.vk_staff .vk_staff_text_name {
+  text-align: left;
+  box-shadow: none;
+  font-size: 3rem;
+  font-family: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "serif";
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+}
+.vk_staff .vk_staff_text_name:before, .vk_staff .vk_staff_text_name:after {
+  border: none;
+}
+.vk_staff .vk_staff_text_caption {
+  font-family: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "serif";
+  font-size: 14px;
+  display: block;
+  margin: 0 0 0.5rem 4px;
+  letter-spacing: 5px;
+}
+.vk_staff .vk_staff_text_role {
+  font-size: 14px;
+  line-height: 1.6em;
+  font-family: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "serif";
+}
+.vk_staff .vk_staff_text_profileTitle {
+  font-size: 18px;
+  font-family: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "serif";
+  padding-top: 0;
+  padding-left: 0;
+  padding-bottom: 2px;
+  margin-bottom: 1.2rem;
+  border-top: none;
+  border-bottom: 1px solid #ccc;
+}
+.vk_staff .vk_staff_text_profileTitle:before, .vk_staff .vk_staff_text_profileTitle:after {
+  border: none;
+}
+.vk_staff .vk_staff_text_profileText {
+  font-size: 14px;
+}
+.vk_staff .vk_staff_photo {
+  display: table-cell;
+  vertical-align: top;
+  text-align: center;
+  width: 40%;
+}
+.vk_staff .vk_staff_photo_image {
+  width: 80%;
+  margin: 0 0 0 auto;
+  display: block;
+}
+.vk_staff .vk_staff_photo .vk_staff_photo_image-border-default {
+  border: 4px solid #efefef;
+}
+.vk_staff .vk_staff_photo .vk_staff_photo_image-border-none {
+  border: none;
+}
+
+.vk_staff_layout-image-left {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.vk_staff_layout-image-left .vk_staff_photo_image {
+  margin: 0 auto 0 0;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,30 @@
+.alert {
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 3px; }
+  .alert + .alert {
+    margin-top: 2em; }
+  .alert a {
+    transition: color .3s linear, opacity .3s linear; }
+    .alert a:link, .alert a:visited {
+      color: #fff;
+      opacity: .8;
+      text-decoration: underline; }
+    .alert a:hover, .alert a:visited {
+      color: #fff;
+      opacity: 1;
+      text-decoration: none; }
+  .alert-success {
+    background-color: #72b383;
+    color: #fff; }
+  .alert-info {
+    background-color: #72adcb;
+    color: #fff; }
+  .alert-danger {
+    background-color: #c65253;
+    color: #fff; }
+  .alert-warning {
+    background-color: #eba845;
+    color: #fff; }
+
+/*# sourceMappingURL=style.css.map */

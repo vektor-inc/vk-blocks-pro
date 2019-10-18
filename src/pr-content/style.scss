@@ -1,0 +1,84 @@
+/*-------------------------------------------*/
+/* Layout
+/*-------------------------------------------*/
+.vk_prContent {
+	margin-left:-15px;
+	margin-right:-15px;
+ @media (min-width: 576px) {
+	 display: flex;
+	 .col-sm-6 {
+		 width:50%;
+	 }
+	 &-layout {
+		&-imageLeft {
+			flex-direction: row;
+		}
+
+		&-imageRight {
+			flex-direction: row-reverse;
+		}
+
+		&-imageLeft .vk_prContent_colImg {
+			padding-right: 2em;
+		}
+
+		&-imageRight .vk_prContent_colImg {
+			padding-left: 2em;
+		}
+	 }
+	} // @media (min-width: 768px) {
+}
+
+
+/*-------------------------------------------*/
+/* others
+/*-------------------------------------------*/
+.vk_prContent {
+	&_colTxt {
+		vertical-align: top;;
+		&_title {
+			background-color: transparent;
+			font-weight: bold;
+			padding: 0;
+			box-shadow: none;
+			border: none;
+			margin-bottom:0.8em;
+			@media (max-width: 575.98px) {
+				&:first-child{
+					margin-top: 30px;
+				}
+			}
+		&:after {
+			content: "";
+				line-height: 0;
+				display: block;
+				overflow: hidden;
+				position: absolute;
+				bottom: -1px;
+				width: 0;
+				border: none;
+			}
+		}
+	  &_text {
+			line-height: 2em;
+			margin-bottom:1.7em;
+	  }
+	  &_btn.btn {
+			@media (min-width: 992px) {
+		 	 font-size:16px;
+		 	}
+	  }
+	} // &_colTxt {
+	&_colImg{
+		&_image {
+			max-width: 100%;
+			height: auto;
+		}
+		.components-button.button{
+			margin: 1em;
+		}
+		.components-button.image-button {
+			margin: 0;
+		}
+	}
+} // .vk_prContent {

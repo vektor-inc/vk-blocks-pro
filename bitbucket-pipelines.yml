@@ -16,3 +16,4 @@ pipelines:
           name: Deploy
           script:
             - git clone git@github.com:vektor-inc/vk-blocks.git
+            - cd vk-blocks

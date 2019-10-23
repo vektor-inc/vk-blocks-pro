@@ -20,6 +20,7 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 
 	// ExUnitなど読み込み先によってはあらかじめ読み込んでいるので不要の場合がある
 	require_once( 'font-awesome-config.php' );
+	require_once( 'admin-notices.php' );
 
 	// 管理画面へのBoostrapの読み込み
 	function vkblocks_load_bootstrap_admin( $hook_suffix ) {

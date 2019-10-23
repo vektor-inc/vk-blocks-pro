@@ -22,5 +22,6 @@ pipelines:
             - cd ./vk-blocks/
             - git checkout -b add/example
             - git add .
+            - git status
             - git commit -m"Update from vk-blocks-pro"
             - git push origin add/example

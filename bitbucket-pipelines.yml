@@ -16,9 +16,9 @@ pipelines:
           name: Deploy
           script:
             - git clone git@github.com:vektor-inc/vk-blocks.git
+            - rsync --exclude '.git/' --exclude '.gitignore' --exclude '.circleci/' --exclude 'tests/' --exclude 'tests/' --exclude '.phpcs.xml.dist' --exclude 'bitbucket-pipelines.yml' --exclude 'gulpfile.js' --exclude 'package-lock.json' --exclude 'phpunit.xml' --exclude 'phpunit.xml.dist' --exclude 'vk-blocks/' -avc ./* ./vk-blocks
             - cd ./vk-blocks/
-            - rm -rf ./*
-            - cd ../
-            - rsync --exclude '.git/' --exclude '.gitignore' --exclude '.circleci/' --exclude 'tests/' --exclude 'tests/' --exclude '.phpcs.xml.dist' --exclude 'bitbucket-pipelines.yml' --exclude 'gulpfile.js' --exclude 'package-lock.json' --exclude 'phpunit.xml' --exclude 'phpunit.xml.dist' -avc ./* ./vk-blocks
-            - cd ./vk-blocks/
-            - ls
+            - git checkout -b add/example
+            - git add .
+            - git commit -m"Update from vk-blocks-pro"
+            - git push origin add/example

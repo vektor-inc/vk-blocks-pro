@@ -15,7 +15,8 @@ pipelines:
       - step:
           name: Deploy
           script: 
-            - git config --get user.name
+            - git config --global --get user.name
+            - git config --global --get user.email
             - git clone git@github.com:vektor-inc/vk-blocks.git
             - rsync --exclude '.git/' --exclude '.gitignore' --exclude '.circleci/' --exclude 'tests/' --exclude 'tests/' --exclude '.phpcs.xml.dist' --exclude 'bitbucket-pipelines.yml' --exclude 'gulpfile.js' --exclude 'package-lock.json' --exclude 'phpunit.xml' --exclude 'phpunit.xml.dist' --exclude 'vk-blocks/' -avc ./* ./vk-blocks
             - cd ./vk-blocks/

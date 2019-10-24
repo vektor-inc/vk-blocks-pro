@@ -5,6 +5,11 @@
  */
 function vkblocks_admin_notice_pro() {
 
+    $plugin_base_dir = dirname(__FILE__);
+	if(strpos($plugin_base_dir,'vk-blocks-pro') !== false) {
+		return;
+	}
+
 	$meta = get_user_meta( get_current_user_id(), 'vkblocks_dismissed_notice_pro', true );
 	if ( $meta ) {
 		return;

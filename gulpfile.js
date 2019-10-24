@@ -25,7 +25,8 @@ gulp.task('sass', function () {
                 './src/scss'
             ]
         }))
-        .pipe($.autoprefixer({browsers: ['last 2 version', '> 5%']}))
+        .pipe($.autoprefixer())
+        // .pipe($.autoprefixer({browsers: ['last 2 version', '> 5%']}))
         // .pipe($.sourcemaps.write('./map'))
 
         //bundle css files by gulp-concat
@@ -67,10 +68,10 @@ gulp.task('watch', function () {
 });
 
 // Build
-gulp.task('build', ['js', 'sass', 'sass_editor']);
+gulp.task('build', gulp.series('js', 'sass', 'sass_editor'));
 
 // Default Tasks
-gulp.task('default', ['watch']);
+gulp.task('default', gulp.series('watch'));
 
 
 // copy dist ////////////////////////////////////////////////

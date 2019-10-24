@@ -342,8 +342,8 @@ msgstr ""
 msgid "Input title…"
 msgstr ""
 
-# %s: heading level e.g: "1", "2", "3"
 #: src/heading/heading-toolbar.js:17
+#. %s: heading level e.g: "1", "2", "3"
 msgid "Heading %d"
 msgstr ""
 
@@ -749,6 +749,10 @@ msgstr ""
 
 #: src/staff/component.js:50
 msgid "Caption"
+msgstr ""
+
+#: src/step/block.js:60
+msgid "Step"
 msgstr ""
 
 #: src/table-of-contents/TableOfContents.js:84

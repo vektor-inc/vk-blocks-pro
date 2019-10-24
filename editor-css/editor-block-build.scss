@@ -1184,6 +1184,27 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+.vk_step {
+  .editor-inner-blocks {
+    border: 1px solid black;
+  }
+
+  .block-editor-block-list__insertion-point-inserter {
+    opacity: 1;
+    margin-top: 150px;
+
+    .block-editor-inserter {
+      border: 1px solid black;
+      width: 100%;
+      text-align: center;
+      line-height: 9;
+    }
+  }
+}
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 $toc-left-margin: 1rem;
 
 .vk_tableOfContents {

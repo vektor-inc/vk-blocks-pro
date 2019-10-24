@@ -2,8 +2,16 @@
 /* CSS
 /*-------------------------------------------*/
 .vk_step {
+
+  .vk_step_header{
+    display: flex;
+
+    .block-editor-rich-text{
+      width: 100%;
+    }
+  }
+
   .editor-inner-blocks {
-    border: 1px solid black;
   }
 
   .block-editor-block-list__insertion-point-inserter {
@@ -11,10 +19,6 @@
     margin-top: 150px;
 
     .block-editor-inserter {
-      border: 1px solid black;
-      width: 100%;
-      text-align: center;
-      line-height: 9;
     }
   }
 }

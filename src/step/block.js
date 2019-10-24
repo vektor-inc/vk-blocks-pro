@@ -10,37 +10,14 @@ const {registerBlockType} = wp.blocks; // Import registerBlockType() from wp.blo
 const {RangeControl, RadioControl, PanelBody, Button, BaseControl, SelectControl} = wp.components;
 const {Fragment} = wp.element;
 const {InspectorControls, MediaUpload, ColorPalette} = wp.editor;
-const BlockIcon = (
-    < svg
-xmlns = "http://www.w3.org/2000/svg"
-width = "576"
-height = "512"
-viewBox = "0 0 576 512" >
-    < g >
-    < path
-d = "M288,390.2c74,0,134.2-60.3,134.2-134.2S362,121.8,288,121.8S153.8,182,153.8,256S214,390.2,288,390.2z M288,165.5
-c49
-.9, 0, 90.5, 40.6, 90.5, 90.5
-s - 40.6, 90.5 - 90.5, 90.5
-s - 90.5 - 40.6 - 90.5 - 90.5
-S238
-.1, 165.5, 288, 165.5
-z
-"/>
-< polygon
-points = "266.1,333.3 309.9,333.3 309.9,277.9 365.3,277.9 365.3,234.1 309.9,234.1 309.9,178.7 266.1,178.7 266.1,234.1
-210.7, 234.1
-210.7, 277.9
-266.1, 277.9
-"/>
-< /g>
-< path
-d = "M529,31H49C22.5,31,1,52.5,1,79v352c0,26.5,21.5,48,48,48h480c26.5,0,48-21.5,48-48V79C577,52.5,555.5,31,529,31z M529,431
-H49V79h480V431z
-"/>
-< /svg>
-)
-;
+const BlockIcon = (	<svg xmlns="http://www.w3.org/2000/svg" width="576" height="512" viewBox="0 0 576 512">
+    <g>
+    <rect x="108.8" y="18.7" width="358.5" height="40"/>
+    <rect x="108.8" y="453.3" width="358.5" height="40"/>
+    <polygon points="171.4,253.2 131.4,253.2 131.4,412.6 290.8,412.6 290.8,372.6 199.7,372.6 404.6,167.7 404.6,258.8 444.6,258.8
+444.6,99.4 285.2,99.4 285.2,139.4 376.3,139.4 171.4,344.3 	"/>
+</g>
+</svg>);
 
 /**
  * Register: a Gutenberg Block.
@@ -82,6 +59,7 @@ registerBlockType('vk-blocks/step', {
                 <Component
                     attributes = {attributes}
                     className = {className}
+                    setAttributes = {setAttributes}
                     for_ = {'edit'}
                     />
             </Fragment>

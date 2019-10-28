@@ -1,0 +1,15 @@
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+.vk_step .vk_step_header {
+  display: flex;
+}
+.vk_step .vk_step_header .block-editor-rich-text {
+  width: 100%;
+}
+.vk_step .block-editor-block-list__insertion-point-inserter {
+  opacity: 1;
+  margin-top: 150px;
+}
+
+/*# sourceMappingURL=style.css.map */

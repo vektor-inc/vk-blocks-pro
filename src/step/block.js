@@ -5,6 +5,7 @@
 import {Component} from "./component";
 import {schema} from "./schema";
 import {DefaultColorPalette} from "../_helper/default-color-palette";
+import {FontAwesome} from "../_helper/font-awesome";
 import React from "react";
 
 const {__} = wp.i18n; // Import __() from wp.i18n
@@ -69,12 +70,15 @@ registerBlockType("vk-blocks/step", {
      * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
      */
     edit({attributes, setAttributes, className}) {
-
         return (
             <Fragment>
                 <InspectorControls>
                     <PanelBody title={__('Icon setting', 'vk-blocks')}>
                         <DefaultColorPalette
+                            attributes={attributes}
+                            setAttributes={setAttributes}
+                        />
+                        <FontAwesome
                             attributes={attributes}
                             setAttributes={setAttributes}
                         />

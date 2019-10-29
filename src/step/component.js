@@ -5,7 +5,7 @@ const {__} = wp.i18n; // Import __() from wp.i18n
 
 export class Component extends React.Component {
   render() {
-    let {content, dcpColor} = this.props.attributes;
+    let {content, dcpColor, faIcon} = this.props.attributes;
     let className = this.props.className;
     let setAttributes = this.props.setAttributes;
     let for_ = this.props.for_;
@@ -35,7 +35,7 @@ export class Component extends React.Component {
     return (
         <div className={containerClass}>
           <div className={"vk_step_header"}>
-            <i className={`fas fa-user-circle fa-2x btn-${dcpColor}`}></i>
+            <i className={`${faIcon} btn-${dcpColor}`}></i>
             {heading}
           </div>
           {elm}

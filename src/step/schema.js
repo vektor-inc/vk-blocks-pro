@@ -1,9 +1,16 @@
 import {dcpSchema} from "../_helper/default-color-palette";
+import {faSchema} from "../_helper/font-awesome";
 
-export const schema = {
+
+let mergeSchema = () => {
+  return Object.assign(originalSchema, dcpSchema, faSchema);
+};
+
+const originalSchema = {
   content: {
     source: 'html',
     selector: 'p',
-  },
-  dcpSchema
+  }
 };
+
+export const schema = mergeSchema();

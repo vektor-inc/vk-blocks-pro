@@ -1,6 +1,6 @@
 import React from "react";
 
-const {RichText, InnerBlocks} = wp.editor;
+const {RichText, InnerBlocks, Inserter} = wp.editor;
 const {__} = wp.i18n; // Import __() from wp.i18n
 
 export class Component extends React.Component {
@@ -12,33 +12,39 @@ export class Component extends React.Component {
     let elm;
     let heading;
     let containerClass = "vk_step";
+    const ALLOWED_BLOCKS = ['core/image'];
+
 
     //編集画面とサイト上の切り替え
     if (for_ === "edit") {
 
       heading = <RichText
-          // style={ { background: balloonBgColor, border: balloonBgColor } }
+          className={"vk_step_heading"}
           tagName="p"
           onChange={(value) => setAttributes({content: value})}
           value={content}
           placeholder={__('Input text', 'vk-blocks')}
       />;
-      elm = <InnerBlocks/>;
+      elm = <InnerBlocks
+          allowedBlocks={ALLOWED_BLOCKS}
+      />;
     } else if ("save") {
       heading = <RichText.Content
-          // style={ { background: balloonBgColor, border: balloonBgColor } }
           tagName="p"
           value={content}
       />;
       elm = <InnerBlocks.Content/>;
     }
     return (
-        <div className={containerClass}>
-          <div className={"vk_step_header"}>
-            <i className={`${faIcon} btn-${dcpColor} vk_step_icon-${iconStyle}`}></i>
+        <div className={"vk_step"}>
+          <i className={`vk_step_icon vk_step_icon-${iconStyle} ${faIcon} btn-${dcpColor} `}></i>
+          <div className="vk_step_content">
             {heading}
+            {elm}
           </div>
-          {elm}
+          <div className="inserter">
+            {Inserter}
+          </div>
         </div>
     );
   }

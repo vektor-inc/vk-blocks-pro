@@ -60,21 +60,6 @@ registerBlockType("vk-blocks/step", {
     supports: {
         anchor: true
     },
-    styles: [
-        {
-            name: 'default',
-            label: __( 'Rounded' ),
-            isDefault: true
-        },
-        {
-            name: 'outline',
-            label: __( 'Outline' )
-        },
-        {
-            name: 'squared',
-            label: __( 'Squared' )
-        },
-    ],
 
     /**
      * The edit function describes the structure of your block in the context of the editor.

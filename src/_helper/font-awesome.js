@@ -6,7 +6,7 @@ const {__} = wp.i18n;
 export const faSchema = {
     faIcon: {
         type: 'string',
-        default: 'fas fa-arrow-circle-right',
+        default: 'fas fa-arrow-circle-right fa-2x',
     },
 };
 

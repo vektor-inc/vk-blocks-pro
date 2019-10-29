@@ -60,6 +60,21 @@ registerBlockType("vk-blocks/step", {
     supports: {
         anchor: true
     },
+    styles: [
+        {
+            name: 'default',
+            label: __( 'Rounded' ),
+            isDefault: true
+        },
+        {
+            name: 'outline',
+            label: __( 'Outline' )
+        },
+        {
+            name: 'squared',
+            label: __( 'Squared' )
+        },
+    ],
 
     /**
      * The edit function describes the structure of your block in the context of the editor.
@@ -70,15 +85,27 @@ registerBlockType("vk-blocks/step", {
      * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
      */
     edit({attributes, setAttributes, className}) {
+        const {
+            iconStyle
+        } = attributes;
         return (
             <Fragment>
                 <InspectorControls>
                     <PanelBody title={__('Icon setting', 'vk-blocks')}>
-                        <DefaultColorPalette
+                        <RadioControl
+                            label={__('Icon Style:', 'vk-blocks')}
+                            selected={iconStyle}
+                            options={[
+                                {label: __('Default', 'vk-blocks'), value: 'default'},
+                                {label: __('Outlined', 'vk-blocks'), value: 'outlined'},
+                            ]}
+                            onChange={(value) => setAttributes({iconStyle: value})}
+                        />
+                        <FontAwesome
                             attributes={attributes}
                             setAttributes={setAttributes}
                         />
-                        <FontAwesome
+                        <DefaultColorPalette
                             attributes={attributes}
                             setAttributes={setAttributes}
                         />

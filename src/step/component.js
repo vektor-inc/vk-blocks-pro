@@ -1,6 +1,4 @@
-import React from "react";
-
-const {RichText, InnerBlocks, Inserter} = wp.editor;
+const {RichText, InnerBlocks} = wp.editor;
 const {__} = wp.i18n; // Import __() from wp.i18n
 
 export class Component extends React.Component {
@@ -43,7 +41,6 @@ export class Component extends React.Component {
             {elm}
           </div>
           <div className="inserter">
-            {Inserter}
           </div>
         </div>
     );

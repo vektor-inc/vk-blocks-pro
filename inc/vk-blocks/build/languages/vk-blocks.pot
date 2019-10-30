@@ -356,58 +356,58 @@ msgid "Highlighter"
 msgstr ""
 
 #: src/latest-posts/block.js:187
-msgid "Display type and layout"
+msgid "Display conditions"
 msgstr ""
 
 #: src/latest-posts/block.js:189
-msgid "Display type"
-msgstr ""
-
-#: src/latest-posts/block.js:197
-msgid "Card"
-msgstr ""
-
-#: src/latest-posts/block.js:201
-msgid "Media"
-msgstr ""
-
-#: src/latest-posts/block.js:205
-msgid "Card Horizontal"
-msgstr ""
-
-#: src/latest-posts/block.js:251
-msgid "Column"
-msgstr ""
-
-#: src/latest-posts/block.js:261
-msgid "Display Post type and term"
-msgstr ""
-
-#: src/latest-posts/block.js:263
-msgid "Number of Posts"
-msgstr ""
-
-#: src/latest-posts/block.js:273
 msgid "Filter by PostTypes"
 msgstr ""
 
-#: src/latest-posts/block.js:280
+#: src/latest-posts/block.js:196
 msgid "Filter by Taxonomy Terms"
 msgstr ""
 
-#: src/latest-posts/block.js:287
+#: src/latest-posts/block.js:203
+msgid "Number of Posts"
+msgstr ""
+
+#: src/latest-posts/block.js:213
+msgid "Display type and columns"
+msgstr ""
+
+#: src/latest-posts/block.js:215
+msgid "Display type"
+msgstr ""
+
+#: src/latest-posts/block.js:223
+msgid "Card"
+msgstr ""
+
+#: src/latest-posts/block.js:227
+msgid "Media"
+msgstr ""
+
+#: src/latest-posts/block.js:231
+msgid "Card Horizontal"
+msgstr ""
+
+#: src/latest-posts/block.js:277
+msgid "Column"
+msgstr ""
+
+#: src/latest-posts/block.js:288
 msgid "Display item"
 msgstr ""
 
-#: src/latest-posts/block.js:289
+#: src/latest-posts/block.js:290
 msgid "Excerpt"
 msgstr ""
 
-#: src/latest-posts/block.js:294
+#: src/latest-posts/block.js:295
 msgid "Number of days to display the new post mark"
 msgstr ""
 
-#: src/latest-posts/block.js:300
+#: src/latest-posts/block.js:301
 msgid "New post mark"
 msgstr ""
 

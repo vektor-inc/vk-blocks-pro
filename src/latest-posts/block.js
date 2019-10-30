@@ -184,7 +184,33 @@ registerBlockType('vk-blocks/latest-posts', {
         return (
             <Fragment>
                 <InspectorControls>
-                    <PanelBody title={__('Display type and layout', 'vk-blocks')}>
+								<PanelBody title={__('Display conditions', 'vk-blocks')}>
+									<BaseControl
+											label={__('Filter by PostTypes', 'vk-blocks')}
+									>
+											{
+													addCheckBox(argsPostTypes)
+											}
+									</BaseControl>
+									<BaseControl
+											label={__('Filter by Taxonomy Terms', 'vk-blocks')}
+									>
+											{
+													addCheckBox(argsTaxonomy)
+											}
+									</BaseControl>
+									<BaseControl
+											label={__('Number of Posts', 'vk-blocks')}
+									>
+											<RangeControl
+													value={numberPosts}
+													onChange={(value) => setAttributes({numberPosts: value})}
+													min="1"
+													max="10"
+											/>
+									</BaseControl>
+								</PanelBody>
+                    <PanelBody title={__('Display type and columns', 'vk-blocks')}>
                         <BaseControl
                             label={__('Display type', 'vk-blocks')}
                         >
@@ -258,32 +284,7 @@ registerBlockType('vk-blocks/latest-posts', {
 													/>
 												</BaseControl>
 											</PanelBody>
-											<PanelBody title={__('Display Post type and term', 'vk-blocks')}>
-                        <BaseControl
-                            label={__('Number of Posts', 'vk-blocks')}
-                        >
-                            <RangeControl
-                                value={numberPosts}
-                                onChange={(value) => setAttributes({numberPosts: value})}
-                                min="1"
-                                max="10"
-                            />
-                        </BaseControl>
-                        <BaseControl
-                            label={__('Filter by PostTypes', 'vk-blocks')}
-                        >
-                            {
-                                addCheckBox(argsPostTypes)
-                            }
-                        </BaseControl>
-                        <BaseControl
-                            label={__('Filter by Taxonomy Terms', 'vk-blocks')}
-                        >
-                            {
-                                addCheckBox(argsTaxonomy)
-                            }
-                        </BaseControl>
-                    </PanelBody>
+
 										<PanelBody title={__('Display item', 'vk-blocks')}>
 											<CheckboxControl
 													label={__('Excerpt', 'vk-blocks')}

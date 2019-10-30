@@ -23,14 +23,14 @@ class VkBlocksLatestPosts {
 		$options = array(
 			'layout'            => $layout,
 			'slug'              => '',
-			'image'             => true,
+			'image'             => $attributes['display_image'],
 			'image_default_url' => VK_BLOCKS_URL . 'images/no-image.png',
 			'excerpt'           => $attributes['display_excerpt'],
-			'date'              => true,
+			'date'              => $attributes['display_date'],
 			'btn'               => false,
 			'btn_text'          => __( 'Read more', 'lightning' ),
 			'overlay'           => false,
-			'new'               => false,
+			'new'               => $attributes['display_new'],
 			'new_text'          => $attributes['new_text'],
 			'new_date'          => $attributes['new_date'],
 			'class_outer'       => 'vk_latestPosts_card ' . VK_Component_Posts::get_col_size_classes( $attributes ),
@@ -38,10 +38,6 @@ class VkBlocksLatestPosts {
 			'body_prepend'      => '',
 			'body_append'       => '',
 		);
-
-		if ( $options['new_date'] && $options['new_text'] ) {
-			$options['new'] = true;
-		}
 
 		if ( $wp_query->have_posts() ) :
 

@@ -23,9 +23,21 @@ export const schema = {
         type: 'number',
         default: 3,
     },
+    display_image: {
+        type: 'boolean',
+        default: true,
+    },
     display_excerpt: {
         type: 'boolean',
         default: false,
+    },
+    display_date: {
+        type: 'boolean',
+        default: true,
+    },
+    display_new: {
+        type: 'boolean',
+        default: true,
     },
     new_date: {
         type: 'number',

@@ -98,9 +98,21 @@ function vkblocks_blocks_assets() {
 									'type'    => 'number',
 									'default' => 3,
 								),
+								'display_image'     => array(
+									'type'    => 'boolean',
+									'default' => true,
+								),
 								'display_excerpt'   => array(
 									'type'    => 'boolean',
 									'default' => false,
+								),
+								'display_date'      => array(
+									'type'    => 'boolean',
+									'default' => true,
+								),
+								'display_new'       => array(
+									'type'    => 'boolean',
+									'default' => true,
 								),
 								'new_date'          => array(
 									'type'    => 'number',

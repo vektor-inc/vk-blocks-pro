@@ -58,7 +58,10 @@ registerBlockType('vk-blocks/latest-posts', {
             col_md,
             col_lg,
             col_xl,
+            display_image,
             display_excerpt,
+            display_date,
+            display_new,
             new_date,
             new_text,
             isCheckedPostType,
@@ -234,7 +237,7 @@ registerBlockType('vk-blocks/latest-posts', {
                             />
                         </BaseControl>
 												<BaseControl
-														label={__('Column', 'vk-blocks') + ' ( min-width : 0px )'}
+														label={__('Column', 'vk-blocks') + ' ( Extra small )'}
 													>
 													<RangeControl
 														value={col_xs}
@@ -244,7 +247,7 @@ registerBlockType('vk-blocks/latest-posts', {
 													/>
 												</BaseControl>
 												<BaseControl
-														label={__('Column', 'vk-blocks') + ' ( min-width : 576px )'}
+														label={__('Column', 'vk-blocks') + ' ( Small )'}
 													>
 													<RangeControl
 														value={col_sm}
@@ -254,7 +257,7 @@ registerBlockType('vk-blocks/latest-posts', {
 													/>
 												</BaseControl>
 												<BaseControl
-														label={__('Column', 'vk-blocks') + ' ( min-width : 768px )'}
+														label={__('Column', 'vk-blocks') + ' ( Medium )'}
 													>
 													<RangeControl
 														value={col_md}
@@ -264,7 +267,7 @@ registerBlockType('vk-blocks/latest-posts', {
 													/>
 												</BaseControl>
 												<BaseControl
-														label={__('Column', 'vk-blocks') + ' ( min-width : 992px )'}
+														label={__('Column', 'vk-blocks') + ' ( Large )'}
 													>
 													<RangeControl
 														value={col_lg}
@@ -274,7 +277,7 @@ registerBlockType('vk-blocks/latest-posts', {
 													/>
 												</BaseControl>
 												<BaseControl
-														label={__('Column', 'vk-blocks') + ' ( min-width : 1200px )'}
+														label={__('Column', 'vk-blocks') + ' ( Extra large )'}
 													>
 													<RangeControl
 														value={col_xl}
@@ -287,9 +290,24 @@ registerBlockType('vk-blocks/latest-posts', {
 
 										<PanelBody title={__('Display item', 'vk-blocks')}>
 											<CheckboxControl
+													label={__('Image', 'vk-blocks')}
+													checked={display_image}
+													onChange={(checked) => setAttributes({display_image: checked})}
+											/>
+											<CheckboxControl
 													label={__('Excerpt', 'vk-blocks')}
 													checked={display_excerpt}
 													onChange={(checked) => setAttributes({display_excerpt: checked})}
+											/>
+											<CheckboxControl
+													label={__('Date', 'vk-blocks')}
+													checked={display_date}
+													onChange={(checked) => setAttributes({display_date: checked})}
+											/>
+											<CheckboxControl
+													label={__('New mark', 'vk-blocks')}
+													checked={display_new}
+													onChange={(checked) => setAttributes({display_new: checked})}
 											/>
 											<TextControl
 													label={__('Number of days to display the new post mark', 'vk-blocks')}

@@ -10,11 +10,13 @@ export class Component extends React.Component {
     let elm;
     let containerClass = "vk_step";
     const ALLOWED_BLOCKS = ['vk-blocks/step-item'];
+    const TEMPLATE = [ALLOWED_BLOCKS];
 
     //編集画面とサイト上の切り替え
     if (for_ === "edit") {
       elm = <InnerBlocks
           allowedBlocks={ALLOWED_BLOCKS}
+          template={TEMPLATE}
       />;
     } else if ("save") {
       elm = <InnerBlocks.Content/>;

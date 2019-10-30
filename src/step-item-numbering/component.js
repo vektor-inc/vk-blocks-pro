@@ -9,17 +9,26 @@ export class Component extends React.Component {
         let for_ = this.props.for_;
         let elm;
         let containerClass = "vk_step";
-        const TEMPLATE = [['vk-blocks/step-item-numbering'],['core/heading']];
 
         //編集画面とサイト上の切り替え
         if (for_ === "edit") {
-            elm = <InnerBlocks template={TEMPLATE} />;
+            elm = <RichText
+                tagName="div"
+                onChange={(value) => setAttributes({content: value})}
+                value={content}
+                placeholder={__('Your Name', 'vk-blocks')}
+            />
         } else if ("save") {
-            elm = <InnerBlocks.Content/>;
+            elm = <RichText.Content
+                tagName="div"
+                className={faIcon}
+                value={content}
+            />
         }
+
         return (
             <div className={"vk_step"}>
-                {elm}
+                <i className={faIcon}>{elm}</i>
             </div>
         );
     }

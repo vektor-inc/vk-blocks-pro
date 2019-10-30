@@ -1,5 +1,5 @@
 /**
- * step-item block type
+ * step-item-numbering block type
  *
  */
 import {Component} from "./component";
@@ -28,9 +28,9 @@ const BlockIcon = 'arrow-down';
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-registerBlockType('vk-blocks/step-item', {
+registerBlockType('vk-blocks/step-item-numbering', {
     // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-    title: __('step-item', 'vk-blocks'), // Block title.
+    title: __('Step Item Numbering', 'vk-blocks'), // Block title.
     icon: BlockIcon, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
     category: 'vk-blocks-cat', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
     attributes: schema,
@@ -52,15 +52,6 @@ registerBlockType('vk-blocks/step-item', {
             <Fragment>
                 <InspectorControls>
                     <PanelBody title={__('Icon setting', 'vk-blocks')}>
-                        <RadioControl
-                            label={__('Icon Style:', 'vk-blocks')}
-                            selected={iconStyle}
-                            options={[
-                                {label: __('Default', 'vk-blocks'), value: 'default'},
-                                {label: __('Outlined', 'vk-blocks'), value: 'outlined'},
-                            ]}
-                            onChange={(value) => setAttributes({iconStyle: value})}
-                        />
                         <FontAwesome
                             attributes={attributes}
                             setAttributes={setAttributes}

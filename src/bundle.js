@@ -1,4 +1,5 @@
 //Bundle JS
+import './step-item/block.js';
 import './step/block.js';
 import './highlighter/block.js';
 

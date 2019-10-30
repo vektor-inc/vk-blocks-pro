@@ -4,9 +4,6 @@
  */
 import {Component} from "./component";
 import {schema} from "./schema";
-import {DefaultColorPalette} from "../_helper/default-color-palette";
-import {FontAwesome} from "../_helper/font-awesome";
-import React from "react";
 
 const {__} = wp.i18n; // Import __() from wp.i18n
 const {registerBlockType} = wp.blocks; // Import registerBlockType() from wp.blocks
@@ -70,32 +67,8 @@ registerBlockType("vk-blocks/step", {
      * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
      */
     edit({attributes, setAttributes, className}) {
-        const {
-            iconStyle
-        } = attributes;
         return (
             <Fragment>
-                <InspectorControls>
-                    <PanelBody title={__('Icon setting', 'vk-blocks')}>
-                        <RadioControl
-                            label={__('Icon Style:', 'vk-blocks')}
-                            selected={iconStyle}
-                            options={[
-                                {label: __('Default', 'vk-blocks'), value: 'default'},
-                                {label: __('Outlined', 'vk-blocks'), value: 'outlined'},
-                            ]}
-                            onChange={(value) => setAttributes({iconStyle: value})}
-                        />
-                        <FontAwesome
-                            attributes={attributes}
-                            setAttributes={setAttributes}
-                        />
-                        <DefaultColorPalette
-                            attributes={attributes}
-                            setAttributes={setAttributes}
-                        />
-                    </PanelBody>
-                </InspectorControls>
                 <Component
                     attributes={attributes}
                     className={className}

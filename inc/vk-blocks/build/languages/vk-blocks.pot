@@ -358,8 +358,8 @@ msgstr ""
 msgid "Input title…"
 msgstr ""
 
+# %s: heading level e.g: "1", "2", "3"
 #: src/heading/heading-toolbar.js:17
-#. %s: heading level e.g: "1", "2", "3"
 msgid "Heading %d"
 msgstr ""
 
@@ -371,71 +371,87 @@ msgstr ""
 msgid "Highlighter"
 msgstr ""
 
-#: src/latest-posts/block.js:190
+#: src/latest-posts/block.js:188
 msgid "Display conditions"
 msgstr ""
 
-#: src/latest-posts/block.js:192
+#: src/latest-posts/block.js:190
 msgid "Filter by PostTypes"
 msgstr ""
 
-#: src/latest-posts/block.js:199
+#: src/latest-posts/block.js:197
 msgid "Filter by Taxonomy Terms"
 msgstr ""
 
-#: src/latest-posts/block.js:206
+#: src/latest-posts/block.js:204
 msgid "Number of Posts"
 msgstr ""
 
-#: src/latest-posts/block.js:216
+#: src/latest-posts/block.js:214
 msgid "Display type and columns"
 msgstr ""
 
-#: src/latest-posts/block.js:218
+#: src/latest-posts/block.js:216
 msgid "Display type"
 msgstr ""
 
-#: src/latest-posts/block.js:226
+#: src/latest-posts/block.js:224
 msgid "Card"
 msgstr ""
 
-#: src/latest-posts/block.js:230
-msgid "Media"
-msgstr ""
-
-#: src/latest-posts/block.js:234
+#: src/latest-posts/block.js:228
 msgid "Card Horizontal"
 msgstr ""
 
-#: src/latest-posts/block.js:280
-msgid "Column"
+#: src/latest-posts/block.js:232
+msgid "Media"
 msgstr ""
 
-#: src/latest-posts/block.js:291
+#: src/latest-posts/block.js:238
+msgid "Column ( Screen size : Extra small )"
+msgstr ""
+
+#: src/latest-posts/block.js:248
+msgid "Column ( Screen size : Small )"
+msgstr ""
+
+#: src/latest-posts/block.js:258
+msgid "Column ( Screen size : Medium )"
+msgstr ""
+
+#: src/latest-posts/block.js:268
+msgid "Column ( Screen size : Large )"
+msgstr ""
+
+#: src/latest-posts/block.js:278
+msgid "Column ( Screen size : Extra large )"
+msgstr ""
+
+#: src/latest-posts/block.js:289
 msgid "Display item"
 msgstr ""
 
-#: src/latest-posts/block.js:293
+#: src/latest-posts/block.js:291
 msgid "Image"
 msgstr ""
 
-#: src/latest-posts/block.js:298
+#: src/latest-posts/block.js:296
 msgid "Excerpt"
 msgstr ""
 
-#: src/latest-posts/block.js:303
+#: src/latest-posts/block.js:301
 msgid "Date"
 msgstr ""
 
-#: src/latest-posts/block.js:308
+#: src/latest-posts/block.js:306
 msgid "New mark"
 msgstr ""
 
-#: src/latest-posts/block.js:313
+#: src/latest-posts/block.js:311
 msgid "Number of days to display the new post mark"
 msgstr ""
 
-#: src/latest-posts/block.js:319
+#: src/latest-posts/block.js:317
 msgid "New post mark"
 msgstr ""
 

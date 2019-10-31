@@ -224,18 +224,18 @@ registerBlockType('vk-blocks/latest-posts', {
 																		label: __('Card', 'vk-blocks'),
 																	},
 																	{
-																		value: 'media',
-																		label: __('Media', 'vk-blocks'),
-																	},
-																	{
 																		value: 'card-horizontal',
 																		label: __('Card Horizontal', 'vk-blocks'),
+																	},
+																	{
+																		value: 'media',
+																		label: __('Media', 'vk-blocks'),
 																	},
                                 ]}
                             />
                         </BaseControl>
 												<BaseControl
-														label={__('Column', 'vk-blocks') + ' ( Extra small )'}
+														label={__('Column ( Screen size : Extra small )', 'vk-blocks')}
 													>
 													<RangeControl
 														value={col_xs}
@@ -245,7 +245,7 @@ registerBlockType('vk-blocks/latest-posts', {
 													/>
 												</BaseControl>
 												<BaseControl
-														label={__('Column', 'vk-blocks') + ' ( Small )'}
+														label={__('Column ( Screen size : Small )', 'vk-blocks')}
 													>
 													<RangeControl
 														value={col_sm}
@@ -255,7 +255,7 @@ registerBlockType('vk-blocks/latest-posts', {
 													/>
 												</BaseControl>
 												<BaseControl
-														label={__('Column', 'vk-blocks') + ' ( Medium )'}
+														label={__('Column ( Screen size : Medium )', 'vk-blocks')}
 													>
 													<RangeControl
 														value={col_md}
@@ -265,7 +265,7 @@ registerBlockType('vk-blocks/latest-posts', {
 													/>
 												</BaseControl>
 												<BaseControl
-														label={__('Column', 'vk-blocks') + ' ( Large )'}
+														label={__('Column ( Screen size : Large )', 'vk-blocks')}
 													>
 													<RangeControl
 														value={col_lg}
@@ -275,7 +275,7 @@ registerBlockType('vk-blocks/latest-posts', {
 													/>
 												</BaseControl>
 												<BaseControl
-														label={__('Column', 'vk-blocks') + ' ( Extra large )'}
+														label={__('Column ( Screen size : Extra large )', 'vk-blocks')}
 													>
 													<RangeControl
 														value={col_xl}

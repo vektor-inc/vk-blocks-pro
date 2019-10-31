@@ -4,12 +4,13 @@
  */
 import {Component} from "./component";
 import {schema} from './schema';
+import React from "react";
 
 const {__} = wp.i18n; // Import __() from wp.i18n
 const {registerBlockType} = wp.blocks; // Import registerBlockType() from wp.blocks
-const {RangeControl, RadioControl, PanelBody, Button, PanelColor, BaseControl} = wp.components;
+const {PanelBody,BaseControl,SelectControl,TextControl,ColorPalette} = wp.components;
 const {Fragment} = wp.element;
-const {RichText, InspectorControls, MediaUpload, ColorPalette} = wp.editor;
+const {InspectorControls, } = wp.editor;
 const BlockIcon = 'arrow-down';
 
 /**
@@ -41,9 +42,57 @@ registerBlockType('vk-blocks/timeline-item', {
      * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
      */
     edit({attributes, setAttributes, className}) {
+        const {
+            label,
+            color,
+            style
+        } = attributes;
 
         return (
             <Fragment>
+                <InspectorControls>
+                    <PanelBody title={__('label', 'vk-blocks')}>
+                        <BaseControl
+                            help={__('Set the alt text for profile image', 'vk-blocks')}
+                        >
+                            <TextControl
+                                value={label}
+                                onChange={(value) => setAttributes({label: value})}
+                                placeholder={__('Ex,6:00AM', 'vk-blocks')}
+                            />
+                        </BaseControl>
+                    </PanelBody>
+                    <PanelBody title={__('Color', 'vk-blocks')}>
+                        <BaseControl
+                            label={__('Staff name', 'vk-blocks')}
+                        >
+                            <ColorPalette
+                                value={color}
+                                onChange={(value) => setAttributes({color: value})}
+                            />
+                        </BaseControl>
+                    </PanelBody>
+                    <PanelBody>
+                        <BaseControl
+                            label={__('Style', 'vk-blocks')}
+                        >
+                            <SelectControl
+                                value={style}
+                                onChange={(value) => setAttributes({style: value})}
+                                options={[
+                                    {
+                                        value: 'default',
+                                        label: __('Default', 'vk-blocks'),
+                                    },
+                                    {
+                                        value: 'outlined',
+                                        label: __('Outlined', 'vk-blocks'),
+                                    },
+                                ]}
+                            />
+                        </BaseControl>
+                    </PanelBody>
+                </InspectorControls>
                 <Component
                     attributes={attributes}
                     className={className}

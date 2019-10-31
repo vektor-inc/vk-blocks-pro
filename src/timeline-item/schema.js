@@ -1,7 +1,14 @@
 export const schema = {
-    vk_staff_text_name: {
+    label: {
         type: 'string',
-        source: 'html',
-        selector: 'h2',
-    }
+        default:  '6:00AM',
+    },
+    color: {
+        type: 'string',
+        default: '#ffffff',
+    },
+    style: {
+        type: 'string',
+        default: 'default',
+    },
 };

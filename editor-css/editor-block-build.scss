@@ -77,46 +77,6 @@ h1:first-child.vk_prBlocks_item_title{
 }
 }
 
-.alert{
-
-  padding: 1em;
-  margin: 1em 0;
-  border-radius: 3px;
-
-  & + &{
-    margin-top: 2em;
-  }
-
-  a{
-    transition: color .3s linear, opacity .3s linear;
-    &:link, &:visited{
-      opacity: .8;
-      text-decoration: underline;
-    }
-    &:hover, &:visited{
-      opacity: 1;
-      text-decoration: none;
-    }
-  }
-
-  @each $var in (
-                  (success, #dff0d8,#3c763d,#d6e9c6),
-                  (info, #d9edf7,#31708f,#bce8f1),
-                  (warning, #fcf8e3,#8a6d3b,#faebcc),
-                  (danger, #f2dede,#a94442,#ebccd1),
-  ){
-    $class-name: nth($var, 1);
-    $color-bg: nth($var, 2);
-    $color: nth($var, 3);
-    $color-border :nth($var, 4);
-    &-#{$class-name}{
-      background-color: $color-bg;
-      color:$color;
-      border-color:$color-border;
-    }
-  }
-}
-
 .vk_balloon {
   display: flex;
   align-items: center;
@@ -381,6 +341,46 @@ h1:first-child.vk_prBlocks_item_title{
 		max-width:96px;
 	}
 } // @media only screen and (max-width: 480px) {
+
+.alert{
+
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 3px;
+
+  & + &{
+    margin-top: 2em;
+  }
+
+  a{
+    transition: color .3s linear, opacity .3s linear;
+    &:link, &:visited{
+      opacity: .8;
+      text-decoration: underline;
+    }
+    &:hover, &:visited{
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+
+  @each $var in (
+                  (success, #dff0d8,#3c763d,#d6e9c6),
+                  (info, #d9edf7,#31708f,#bce8f1),
+                  (warning, #fcf8e3,#8a6d3b,#faebcc),
+                  (danger, #f2dede,#a94442,#ebccd1),
+  ){
+    $class-name: nth($var, 1);
+    $color-bg: nth($var, 2);
+    $color: nth($var, 3);
+    $color-border :nth($var, 4);
+    &-#{$class-name}{
+      background-color: $color-bg;
+      color:$color;
+      border-color:$color-border;
+    }
+  }
+}
 
 .vk_button{
 	margin: 5px 0;
@@ -776,6 +776,7 @@ $padding-xl:3.5em;
 		color: #fff;
 	}
 	&_title{
+		background-color: transparent;
 		margin-top:0.9em;
 		margin-bottom: 0.6em;
 		text-align: center;
@@ -783,6 +784,9 @@ $padding-xl:3.5em;
 		line-height: 1.4em;
 		border:none;
 		padding:0;
+		&::before{
+			content: none;
+		}
 		&::after{
 			border: none;
 		}

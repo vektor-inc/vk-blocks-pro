@@ -31,6 +31,7 @@
 		color: #fff;
 	}
 	&_title{
+		background-color: transparent;
 		margin-top:0.9em;
 		margin-bottom: 0.6em;
 		text-align: center;
@@ -38,6 +39,9 @@
 		line-height: 1.4em;
 		border:none;
 		padding:0;
+		&::before{
+			content: none;
+		}
 		&::after{
 			border: none;
 		}

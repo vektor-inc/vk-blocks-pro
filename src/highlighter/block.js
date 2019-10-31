@@ -61,7 +61,7 @@ registerFormatType(name, {
                 <InspectorControls>
                     <PanelColorSettings
                         title={__('Highlighter', 'vk-blocks')}
-                        initialOpen={true}
+                        initialOpen={false}
                         colorSettings={[
                             {
                                 value: activeColor,

@@ -128,7 +128,7 @@ function vkblocks_blocks_assets() {
 								),
 								'isCheckedPostType' => array(
 									'type'    => 'string',
-									'default' => '{}',
+									'default' => '["post"]',
 								),
 								'coreTerms'         => array(
 									'type'    => 'string',

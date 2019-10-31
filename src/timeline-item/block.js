@@ -32,6 +32,7 @@ registerBlockType('vk-blocks/timeline-item', {
     icon: BlockIcon, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
     category: 'vk-blocks-cat', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
     attributes: schema,
+    parent: [ 'vk-blocks/timeline' ],
 
     /**
      * The edit function describes the structure of your block in the context of the editor.
@@ -45,7 +46,8 @@ registerBlockType('vk-blocks/timeline-item', {
         const {
             label,
             color,
-            style
+            style,
+            styleLine
         } = attributes;
 
         return (
@@ -65,7 +67,11 @@ registerBlockType('vk-blocks/timeline-item', {
                             />
                     </PanelBody>
                     <PanelBody title={__('Style', 'vk-blocks')}>
-                        <SelectControl
+                        <BaseControl
+                            id="style-dot"
+                            label="Dot Style"
+                        >
+                            <SelectControl
                                 value={style}
                                 onChange={(value) => setAttributes({style: value})}
                                 options={[
@@ -79,6 +85,26 @@ registerBlockType('vk-blocks/timeline-item', {
                                     },
                                 ]}
                             />
+                        </BaseControl>
+                        <BaseControl
+                            id="style-line"
+                            label="Line Style"
+                        >
+                            <SelectControl
+                                value={styleLine}
+                                onChange={(value) => setAttributes({styleLine: value})}
+                                options={[
+                                    {
+                                        value: 'default',
+                                        label: __('Default', 'vk-blocks'),
+                                    },
+                                    {
+                                        value: 'none',
+                                        label: __('None', 'vk-blocks'),
+                                    },
+                                ]}
+                            />
+                        </BaseControl>
                     </PanelBody>
                 </InspectorControls>
                 <Component
@@ -102,7 +128,4 @@ registerBlockType('vk-blocks/timeline-item', {
     save({attributes, className}) {
         return <Component attributes={attributes} className={className} for_={"save"}/>;
     },
-
-    //Please comment out, when you need to use deprecated.
-    // deprecated:deprecated
 });

@@ -6,13 +6,15 @@ export class Component extends React.Component {
         const {
             label,
             color,
-            style
+            style,
+            styleLine
         } = this.props.attributes;
         let for_ = this.props.for_;
         let className = this.props.className;
         let containerClass = " vk_timeline-item";
         let elm;
         let styleClass;
+        let styleLineClass;
         let inlineStyle;
         let marker;
         const TEMPLATE = [['core/heading']];
@@ -32,8 +34,14 @@ export class Component extends React.Component {
             inlineStyle = {border:`3px solid ${color}`};
         }
 
+        if (styleLine === "default") {
+            styleLineClass = ' vk_timeline-item_line_style-default';
+        }else if(styleLine === "none"){
+            styleLineClass = ' vk_timeline-item_line_style-none'
+        }
+
         return (
-            <div className={className + containerClass}>
+            <div className={className + containerClass + styleLineClass}>
                 {label}
                 {elm}
                 <div

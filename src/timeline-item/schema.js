@@ -11,4 +11,8 @@ export const schema = {
         type: 'string',
         default: 'outlined',
     },
+    styleLine: {
+        type: 'string',
+        default: 'default',
+    },
 };

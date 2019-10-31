@@ -42,6 +42,10 @@ registerBlockType('vk-blocks/spacer', {
     icon: BlockIcon, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
     category: 'vk-blocks-cat-layout', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
     attributes: schema,
+    supports:{
+        className: false,
+        anchor: true,
+    },
 
     /**
      * The edit function describes the structure of your block in the context of the editor.

@@ -342,8 +342,8 @@ msgstr ""
 msgid "Input title…"
 msgstr ""
 
-# %s: heading level e.g: "1", "2", "3"
 #: src/heading/heading-toolbar.js:17
+#. %s: heading level e.g: "1", "2", "3"
 msgid "Heading %d"
 msgstr ""
 
@@ -652,7 +652,11 @@ msgstr ""
 msgid "Input content."
 msgstr ""
 
-#: src/spacer/block.js:103
+#: src/spacer/block.js:101
+msgid "Tablet"
+msgstr ""
+
+#: src/spacer/block.js:107
 msgid "Mobile"
 msgstr ""
 
@@ -660,36 +664,32 @@ msgstr ""
 msgid "Responsive Spacer"
 msgstr ""
 
-#: src/spacer/block.js:67
+#: src/spacer/block.js:71
 msgid "Unit Type"
 msgstr ""
 
-#: src/spacer/block.js:73
+#: src/spacer/block.js:77
 msgid "px"
 msgstr ""
 
-#: src/spacer/block.js:77
+#: src/spacer/block.js:81
 msgid "em"
 msgstr ""
 
-#: src/spacer/block.js:81
+#: src/spacer/block.js:85
 msgid "rem"
 msgstr ""
 
-#: src/spacer/block.js:85
+#: src/spacer/block.js:89
 msgid "vw"
 msgstr ""
 
-#: src/spacer/block.js:89
+#: src/spacer/block.js:93
 msgid "Height for each device."
 msgstr ""
 
-#: src/spacer/block.js:91
+#: src/spacer/block.js:95
 msgid "PC"
-msgstr ""
-
-#: src/spacer/block.js:97
-msgid "Tablet"
 msgstr ""
 
 #: src/staff/block.js:114

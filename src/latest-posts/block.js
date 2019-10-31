@@ -111,8 +111,6 @@ registerBlockType('vk-blocks/latest-posts', {
                     let taxList = getTaxonomyFromPostType(newIsCheckedPostType);
                     let termsList = getTermsFromTaxonomy(taxList);
 
-                    console.log(termsList);
-
                     setAttributes({coreTerms: JSON.stringify(termsList)});
                 }
             }

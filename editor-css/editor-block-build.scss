@@ -974,40 +974,6 @@ $padding-xl:3.5em;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-
-@mixin switchVisibility($pc,$tablet,$mobile) {
-  .vk_spacer {
-    .vk_spacer-display-pc {
-      display: $pc;
-    }
-
-    .vk_spacer-display-tablet {
-      display: $tablet;
-    }
-
-    .vk_spacer-display-mobile {
-      display: $mobile;
-    }
-  }
-}
-
-// Small devices (landscape phones, 576px以下)
-@media (max-width: 576px) {
-  @include switchVisibility(none, none, block);
-}
-
-// Medium devices (tablets, 577pxから768px)
-@media (min-width: 577px) and (max-width: 768px) {
-  @include switchVisibility(none, block, none);
-}
-
-// Large devices (desktops, 769px以上)
-@media (min-width: 769px) {
-  @include switchVisibility(block, none, none);
-}
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
 $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "serif";
 
 // Layout
@@ -1184,24 +1150,68 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-.vk_step {
-  .editor-inner-blocks {
-    border: 1px solid black;
-  }
 
-  .block-editor-block-list__insertion-point-inserter {
-    opacity: 1;
-    margin-top: 150px;
+@mixin switchVisibility($pc,$tablet,$mobile) {
+  .vk_spacer {
+    .vk_spacer-display-pc {
+      display: $pc;
+    }
 
-    .block-editor-inserter {
-      border: 1px solid black;
-      width: 100%;
-      text-align: center;
-      line-height: 9;
+    .vk_spacer-display-tablet {
+      display: $tablet;
+    }
+
+    .vk_spacer-display-mobile {
+      display: $mobile;
     }
   }
 }
 
+// Small devices (landscape phones, 576px以下)
+@media (max-width: 576px) {
+  @include switchVisibility(none, none, block);
+}
+
+// Medium devices (tablets, 577pxから768px)
+@media (min-width: 577px) and (max-width: 768px) {
+  @include switchVisibility(none, block, none);
+}
+
+// Large devices (desktops, 769px以上)
+@media (min-width: 769px) {
+  @include switchVisibility(block, none, none);
+}
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+.vk_step {
+  display: flex;
+  align-items: start;
+
+  i.vk_step_icon {
+    display: flex;
+    align-items: center;
+  }
+
+  //.vk_step_content {
+  //  margin: 0 2%;
+  //  width: 100%;
+  //  .block-editor-inserter__toggle{
+  //    opacity: 1;
+  //  }
+  //}
+  //
+  //.block-editor-block-list__insertion-point-inserter{
+  //  opacity: 1;
+  //}
+}
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/

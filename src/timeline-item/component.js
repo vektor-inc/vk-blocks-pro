@@ -10,9 +10,11 @@ export class Component extends React.Component {
         } = this.props.attributes;
         let for_ = this.props.for_;
         let className = this.props.className;
-        let containerClass = " vk_timeline";
+        let containerClass = " vk_timeline-item";
         let elm;
         let styleClass;
+        let inlineStyle;
+        let marker;
         const TEMPLATE = [['core/heading']];
 
         //編集画面とサイト上の切り替え
@@ -22,18 +24,22 @@ export class Component extends React.Component {
             elm = <InnerBlocks.Content/>;
         }
 
-        if (style === "default") {
-            styleClass = 'vk_timeline_style-default'
+        if (style === "solid") {
+            styleClass = ' vk_timeline-item_style-default';
+            inlineStyle = {backgroundColor:`${color}`};
         }else if(style === "outlined"){
-            styleClass = 'vk_timeline_style-outlined'
+            styleClass = ' vk_timeline-item_style-outlined'
+            inlineStyle = {border:`3px solid ${color}`};
         }
-
-        console.log(styleClass);
 
         return (
             <div className={className + containerClass}>
                 {label}
                 {elm}
+                <div
+                    className={'vk_timeline-item_style' + styleClass}
+                    style={inlineStyle}
+                />
             </div>
         );
     }

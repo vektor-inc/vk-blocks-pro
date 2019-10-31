@@ -70,12 +70,12 @@ registerBlockType('vk-blocks/timeline-item', {
                                 onChange={(value) => setAttributes({style: value})}
                                 options={[
                                     {
-                                        value: 'default',
-                                        label: __('Default', 'vk-blocks'),
-                                    },
-                                    {
                                         value: 'outlined',
                                         label: __('Outlined', 'vk-blocks'),
+                                    },
+                                    {
+                                        value: 'solid',
+                                        label: __('Solid', 'vk-blocks'),
                                     },
                                 ]}
                             />

@@ -5,10 +5,10 @@ export const schema = {
     },
     color: {
         type: 'string',
-        default: 'inherit',
+        default: '#337ab7',
     },
     style: {
         type: 'string',
-        default: 'default',
+        default: 'outlined',
     },
 };

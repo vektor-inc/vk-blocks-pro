@@ -7,11 +7,12 @@ export class Component extends React.Component {
         let className = this.props.className;
         let containerClass = " vk_timeline";
         let elm;
-        const TEMPLATE = [['vk-blocks/timeline-item']];
+        const ALLOWED_BLOCKS = ['vk-blocks/timeline-item'];
+        const TEMPLATE = [ALLOWED_BLOCKS];
 
         //編集画面とサイト上の切り替え
         if (for_ === "edit") {
-            elm = <InnerBlocks template={TEMPLATE}/>;
+            elm = <InnerBlocks template={TEMPLATE} allowedBlocks={ALLOWED_BLOCKS}/>;
         } else if ("save") {
             elm = <InnerBlocks.Content/>;
         }

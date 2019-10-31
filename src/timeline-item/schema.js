@@ -5,7 +5,7 @@ export const schema = {
     },
     color: {
         type: 'string',
-        default: '#ffffff',
+        default: 'inherit',
     },
     style: {
         type: 'string',

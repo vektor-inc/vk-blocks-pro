@@ -8,9 +8,9 @@ import React from "react";
 
 const {__} = wp.i18n; // Import __() from wp.i18n
 const {registerBlockType} = wp.blocks; // Import registerBlockType() from wp.blocks
-const {PanelBody,BaseControl,SelectControl,TextControl,ColorPalette} = wp.components;
+const {PanelBody,BaseControl,SelectControl,TextControl} = wp.components;
 const {Fragment} = wp.element;
-const {InspectorControls, } = wp.editor;
+const {InspectorControls,ColorPalette } = wp.editor;
 const BlockIcon = 'arrow-down';
 
 /**
@@ -52,31 +52,20 @@ registerBlockType('vk-blocks/timeline-item', {
             <Fragment>
                 <InspectorControls>
                     <PanelBody title={__('label', 'vk-blocks')}>
-                        <BaseControl
-                            help={__('Set the alt text for profile image', 'vk-blocks')}
-                        >
                             <TextControl
                                 value={label}
                                 onChange={(value) => setAttributes({label: value})}
                                 placeholder={__('Ex,6:00AM', 'vk-blocks')}
                             />
-                        </BaseControl>
                     </PanelBody>
                     <PanelBody title={__('Color', 'vk-blocks')}>
-                        <BaseControl
-                            label={__('Staff name', 'vk-blocks')}
-                        >
                             <ColorPalette
                                 value={color}
                                 onChange={(value) => setAttributes({color: value})}
                             />
-                        </BaseControl>
                     </PanelBody>
-                    <PanelBody>
-                        <BaseControl
-                            label={__('Style', 'vk-blocks')}
-                        >
-                            <SelectControl
+                    <PanelBody title={__('Style', 'vk-blocks')}>
+                        <SelectControl
                                 value={style}
                                 onChange={(value) => setAttributes({style: value})}
                                 options={[
@@ -90,7 +79,6 @@ registerBlockType('vk-blocks/timeline-item', {
                                     },
                                 ]}
                             />
-                        </BaseControl>
                     </PanelBody>
                 </InspectorControls>
                 <Component

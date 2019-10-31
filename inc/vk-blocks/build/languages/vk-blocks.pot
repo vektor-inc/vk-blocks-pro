@@ -371,6 +371,78 @@ msgstr ""
 msgid "Highlighter"
 msgstr ""
 
+#: src/latest-posts/block.js:190
+msgid "Display conditions"
+msgstr ""
+
+#: src/latest-posts/block.js:192
+msgid "Filter by PostTypes"
+msgstr ""
+
+#: src/latest-posts/block.js:199
+msgid "Filter by Taxonomy Terms"
+msgstr ""
+
+#: src/latest-posts/block.js:206
+msgid "Number of Posts"
+msgstr ""
+
+#: src/latest-posts/block.js:216
+msgid "Display type and columns"
+msgstr ""
+
+#: src/latest-posts/block.js:218
+msgid "Display type"
+msgstr ""
+
+#: src/latest-posts/block.js:226
+msgid "Card"
+msgstr ""
+
+#: src/latest-posts/block.js:230
+msgid "Media"
+msgstr ""
+
+#: src/latest-posts/block.js:234
+msgid "Card Horizontal"
+msgstr ""
+
+#: src/latest-posts/block.js:280
+msgid "Column"
+msgstr ""
+
+#: src/latest-posts/block.js:291
+msgid "Display item"
+msgstr ""
+
+#: src/latest-posts/block.js:293
+msgid "Image"
+msgstr ""
+
+#: src/latest-posts/block.js:298
+msgid "Excerpt"
+msgstr ""
+
+#: src/latest-posts/block.js:303
+msgid "Date"
+msgstr ""
+
+#: src/latest-posts/block.js:308
+msgid "New mark"
+msgstr ""
+
+#: src/latest-posts/block.js:313
+msgid "Number of days to display the new post mark"
+msgstr ""
+
+#: src/latest-posts/block.js:319
+msgid "New post mark"
+msgstr ""
+
+#: src/latest-posts/block.js:32
+msgid "Latest Posts"
+msgstr ""
+
 #: src/outer/block.js:107
 msgid "Background Image"
 msgstr ""

@@ -20,3 +20,4 @@ import './faq/block.js';
 import './flow/block.js';
 import './pr-blocks/block.js';
 import './pr-content/block.js';
+import './latest-posts/block.js';

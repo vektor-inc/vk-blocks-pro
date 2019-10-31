@@ -1,4 +1,6 @@
 //Bundle JS
+import './timeline-item/block.js';
+import './timeline/block.js';
 import './highlighter/block.js';
 
 import './table-of-contents/block.js';

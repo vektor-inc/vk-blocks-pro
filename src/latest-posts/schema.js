@@ -53,7 +53,7 @@ export const schema = {
     },
     isCheckedPostType: {
         type: 'string',
-        default: '[]'
+        default: '["post"]'
     },
     coreTerms: {
         type: 'string',

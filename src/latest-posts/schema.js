@@ -27,6 +27,10 @@ export const schema = {
         type: 'boolean',
         default: true,
     },
+    display_image_overlay_term: {
+        type: 'boolean',
+        default: true,
+    },
     display_excerpt: {
         type: 'boolean',
         default: false,

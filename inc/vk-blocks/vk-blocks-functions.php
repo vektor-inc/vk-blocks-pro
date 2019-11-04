@@ -102,6 +102,10 @@ function vkblocks_blocks_assets() {
 									'type'    => 'boolean',
 									'default' => true,
 								),
+								'display_image_overlay_term' => array(
+									'type'    => 'boolean',
+									'default' => true,
+								),
 								'display_excerpt'   => array(
 									'type'    => 'boolean',
 									'default' => false,

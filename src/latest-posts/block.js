@@ -293,6 +293,11 @@ registerBlockType('vk-blocks/latest-posts', {
 													onChange={(checked) => setAttributes({display_image: checked})}
 											/>
 											<CheckboxControl
+													label={__('Term name', 'vk-blocks')}
+													checked={display_image_overlay_term}
+													onChange={(checked) => setAttributes({display_image_overlay_term: checked})}
+											/>
+											<CheckboxControl
 													label={__('Excerpt', 'vk-blocks')}
 													checked={display_excerpt}
 													onChange={(checked) => setAttributes({display_excerpt: checked})}

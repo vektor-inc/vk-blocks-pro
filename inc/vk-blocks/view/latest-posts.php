@@ -11,21 +11,18 @@ class VkBlocksLatestPosts {
 	 */
 	public function render_latest_posts( $attributes ) {
 
-		$layout = $attributes['layout'];
-
 		$wp_query = $this->get_loop_query( $attributes );
 
 		if ( $wp_query === false ) {
 			return '<div>' . __( 'No Post is selected', 'vk-blocks' ) . '</div>';
 		}
 
-		$elm     = '';
 		$options = array(
-			'layout'             => $layout,
+			'layout'             => $attributes['layout'],
 			'slug'               => '',
 			'image'              => $attributes['display_image'],
 			'image_default_url'  => VK_BLOCKS_URL . 'images/no-image.png',
-			'image_overlay_term' => VK_BLOCKS_URL . 'images/no-image.png',
+			'image_overlay_term' => $attributes['display_image_overlay_term'],
 			'excerpt'            => $attributes['display_excerpt'],
 			'date'               => $attributes['display_date'],
 			'btn'                => false,
@@ -40,20 +37,8 @@ class VkBlocksLatestPosts {
 			'body_append'        => '',
 		);
 
-		if ( $wp_query->have_posts() ) :
-
-			$elm .= '<div class="vk_latestPosts vk_posts">';
-
-			while ( $wp_query->have_posts() ) {
-				$wp_query->the_post();
-				$args               = array(
-					'class' => 'card_singleTermLabel',
-				);
-				$options['overlay'] = Vk_term_color::get_single_term_with_color( false, $args );
-				$elm               .= VK_Component_Posts::get_view( $wp_query->post, $options );
-			} // while ( have_posts() ) {
-			$elm .= '</div>';
-		endif;
+		$options_loop = array( 'class_loop_outer' => 'vk_latestPosts' );
+		$elm          = VK_Component_Posts::get_loop( $wp_query, $options, $options_loop );
 
 		wp_reset_query();
 		wp_reset_postdata();

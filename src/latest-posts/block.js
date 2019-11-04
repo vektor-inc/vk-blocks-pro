@@ -59,6 +59,7 @@ registerBlockType('vk-blocks/latest-posts', {
             col_lg,
             col_xl,
             display_image,
+            display_image_overlay_term,
             display_excerpt,
             display_date,
             display_new,

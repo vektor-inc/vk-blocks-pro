@@ -358,8 +358,8 @@ msgstr ""
 msgid "Input title…"
 msgstr ""
 
-# %s: heading level e.g: "1", "2", "3"
 #: src/heading/heading-toolbar.js:17
+#. %s: heading level e.g: "1", "2", "3"
 msgid "Heading %d"
 msgstr ""
 
@@ -436,27 +436,31 @@ msgid "Image"
 msgstr ""
 
 #: src/latest-posts/block.js:296
-msgid "Excerpt"
+msgid "Term name"
 msgstr ""
 
 #: src/latest-posts/block.js:301
-msgid "Date"
+msgid "Excerpt"
 msgstr ""
 
 #: src/latest-posts/block.js:306
-msgid "New mark"
+msgid "Date"
 msgstr ""
 
 #: src/latest-posts/block.js:311
-msgid "Number of days to display the new post mark"
+msgid "New mark"
 msgstr ""
 
-#: src/latest-posts/block.js:317
-msgid "New post mark"
+#: src/latest-posts/block.js:316
+msgid "Number of days to display the new post mark"
 msgstr ""
 
 #: src/latest-posts/block.js:32
 msgid "Latest Posts"
+msgstr ""
+
+#: src/latest-posts/block.js:322
+msgid "New post mark"
 msgstr ""
 
 #: src/outer/block.js:107

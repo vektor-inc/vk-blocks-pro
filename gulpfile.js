@@ -58,11 +58,13 @@ gulp.task('copy_front_js', function () {
 			.pipe( gulp.dest( './inc/vk-blocks/build/' ) );
 });
 
+
 // watch
 gulp.task('watch', function () {
-    gulp.watch('src/**/*.js', ['js','dist_ex','copy_front_js']);
-    gulp.watch('editor-css/editor.scss_before', ['sass_editor']);
-    gulp.watch('src/**/*.scss', ['sass','sass_editor','dist_ex']);
+    gulp.watch('src/**/*.js', gulp.parallel('js','dist_ex','copy_front_js'));
+    gulp.watch('editor-css/editor.scss_before', gulp.parallel('sass_editor'));
+    gulp.watch('src/**/*.scss', gulp.parallel('sass','sass_editor','dist_ex'));
+    // gulp.watch('src/**/*.scss', ['sass']);
 });
 
 // Build

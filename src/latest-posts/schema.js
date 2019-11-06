@@ -43,6 +43,10 @@ export const schema = {
         type: 'boolean',
         default: true,
     },
+    display_btn: {
+        type: 'boolean',
+        default: false,
+    },
     new_date: {
         type: 'number',
         default: 7,
@@ -50,6 +54,14 @@ export const schema = {
     new_text: {
         type: 'string',
         default: 'New!!',
+    },
+		btn_text: {
+        type: 'string',
+        default: 'Read more',
+    },
+		btn_align: {
+        type: 'string',
+        default: 'text-right',
     },
     numberPosts: {
         type: 'number',

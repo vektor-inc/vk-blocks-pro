@@ -63,8 +63,11 @@ registerBlockType('vk-blocks/latest-posts', {
             display_excerpt,
             display_date,
             display_new,
+            display_btn,
             new_date,
             new_text,
+            btn_text,
+            btn_align,
             isCheckedPostType,
             coreTerms,
             isCheckedTerms
@@ -313,6 +316,12 @@ registerBlockType('vk-blocks/latest-posts', {
 													checked={display_new}
 													onChange={(checked) => setAttributes({display_new: checked})}
 											/>
+											<CheckboxControl
+													label={__('Button', 'vk-blocks')}
+													checked={display_btn}
+													onChange={(checked) => setAttributes({display_btn: checked})}
+											/>
+											<h4>{__('New mark option','vk-blocks')}</h4>
 											<TextControl
 													label={__('Number of days to display the new post mark', 'vk-blocks')}
 													value={new_date}
@@ -325,6 +334,35 @@ registerBlockType('vk-blocks/latest-posts', {
 													onChange={(value) => setAttributes({new_text: value})}
 													// placeholder={'Input button text.'}
 											/>
+											<h4>{__('Button option','vk-blocks')}</h4>
+											<TextControl
+													label={__('Button text', 'vk-blocks')}
+													value={btn_text}
+													onChange={(value) => setAttributes({btn_text: value})}
+													// placeholder={'Input button text.'}
+											/>
+											<BaseControl
+													label={__('Button align', 'vk-blocks')}
+											>
+													<SelectControl
+															value={btn_align}
+															onChange={(value) => setAttributes({btn_align: value})}
+															options={[
+																{
+																	value: 'text-left',
+																	label: __('Left', 'vk-blocks'),
+																},
+																{
+																	value: 'text-center',
+																	label: __('Center', 'vk-blocks'),
+																},
+																{
+																	value: 'text-right',
+																	label: __('Right', 'vk-blocks'),
+																},
+															]}
+													/>
+											</BaseControl>
 										</PanelBody>
                 </InspectorControls>
                 <div>

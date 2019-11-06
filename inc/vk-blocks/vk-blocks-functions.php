@@ -118,6 +118,10 @@ function vkblocks_blocks_assets() {
 									'type'    => 'boolean',
 									'default' => true,
 								),
+								'display_btn'       => array(
+									'type'    => 'boolean',
+									'default' => true,
+								),
 								'new_date'          => array(
 									'type'    => 'number',
 									'default' => 7,
@@ -125,6 +129,14 @@ function vkblocks_blocks_assets() {
 								'new_text'          => array(
 									'type'    => 'string',
 									'default' => 'New!!',
+								),
+								'btn_text'          => array(
+									'type'    => 'string',
+									'default' => 'Read more',
+								),
+								'btn_align'         => array(
+									'type'    => 'string',
+									'default' => 'text-right',
 								),
 								'numberPosts'       => array(
 									'type'    => 'number',

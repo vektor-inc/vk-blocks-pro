@@ -1,4 +1,7 @@
 //Bundle JS
+import './step-item-numbering/block.js';
+import './step-item/block.js';
+import './step/block.js';
 import './highlighter/block.js';
 
 import './table-of-contents/block.js';
@@ -17,3 +20,4 @@ import './faq/block.js';
 import './flow/block.js';
 import './pr-blocks/block.js';
 import './pr-content/block.js';
+import './latest-posts/block.js';

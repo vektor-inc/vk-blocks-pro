@@ -637,6 +637,18 @@ $color_dark:#343a40;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+// $border_primary : 1px solid #e5e5e5;
+// .vk_latestPosts {
+// 	.card-deck {
+// 		display: flex;
+// 		flex-flow: unset;
+// 		flex-wrap: wrap;
+// 	}
+// }
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 $media-sm-up : 576px;
 $media-md-up : 768px;
 $media-lg-up : 992px;
@@ -978,40 +990,6 @@ $padding-xl:3.5em;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-
-@mixin switchVisibility($pc,$tablet,$mobile) {
-  .vk_spacer {
-    .vk_spacer-display-pc {
-      display: $pc;
-    }
-
-    .vk_spacer-display-tablet {
-      display: $tablet;
-    }
-
-    .vk_spacer-display-mobile {
-      display: $mobile;
-    }
-  }
-}
-
-// Small devices (landscape phones, 576px以下)
-@media (max-width: 576px) {
-  @include switchVisibility(none, none, block);
-}
-
-// Medium devices (tablets, 577pxから768px)
-@media (min-width: 577px) and (max-width: 768px) {
-  @include switchVisibility(none, block, none);
-}
-
-// Large devices (desktops, 769px以上)
-@media (min-width: 769px) {
-  @include switchVisibility(block, none, none);
-}
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
 $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "serif";
 
 // Layout
@@ -1185,6 +1163,71 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
 // 	width: 70%;
 // }
 
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
+@mixin switchVisibility($pc,$tablet,$mobile) {
+  .vk_spacer {
+    .vk_spacer-display-pc {
+      display: $pc;
+    }
+
+    .vk_spacer-display-tablet {
+      display: $tablet;
+    }
+
+    .vk_spacer-display-mobile {
+      display: $mobile;
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px以下)
+@media (max-width: 576px) {
+  @include switchVisibility(none, none, block);
+}
+
+// Medium devices (tablets, 577pxから768px)
+@media (min-width: 577px) and (max-width: 768px) {
+  @include switchVisibility(none, block, none);
+}
+
+// Large devices (desktops, 769px以上)
+@media (min-width: 769px) {
+  @include switchVisibility(block, none, none);
+}
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+.vk_step {
+  display: flex;
+  align-items: start;
+
+  i.vk_step_icon {
+    display: flex;
+    align-items: center;
+  }
+
+  //.vk_step_content {
+  //  margin: 0 2%;
+  //  width: 100%;
+  //  .block-editor-inserter__toggle{
+  //    opacity: 1;
+  //  }
+  //}
+  //
+  //.block-editor-block-list__insertion-point-inserter{
+  //  opacity: 1;
+  //}
+}
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/

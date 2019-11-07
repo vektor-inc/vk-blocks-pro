@@ -3,6 +3,79 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
+#: src/_helper/default-color-palette.js:19
+#: src/button/block.js:192
+#: src/pr-content/block.js:149
+msgid "Default Color:"
+msgstr ""
+
+#: src/_helper/default-color-palette.js:22
+#: src/button/block.js:195
+#: src/pr-content/block.js:152
+msgid "Primary"
+msgstr ""
+
+#: src/_helper/default-color-palette.js:23
+#: src/button/block.js:196
+#: src/pr-content/block.js:153
+msgid "Secondary"
+msgstr ""
+
+#: src/_helper/default-color-palette.js:24
+#: src/button/block.js:197
+#: src/pr-content/block.js:154
+msgid "Success"
+msgstr ""
+
+#: src/_helper/default-color-palette.js:25
+#: src/button/block.js:198
+#: src/pr-content/block.js:155
+msgid "Info"
+msgstr ""
+
+#: src/_helper/default-color-palette.js:26
+#: src/button/block.js:199
+#: src/pr-content/block.js:156
+msgid "Warning"
+msgstr ""
+
+#: src/_helper/default-color-palette.js:27
+#: src/button/block.js:200
+#: src/pr-content/block.js:157
+msgid "Danger"
+msgstr ""
+
+#: src/_helper/default-color-palette.js:28
+#: src/button/block.js:201
+#: src/pr-content/block.js:158
+msgid "Light"
+msgstr ""
+
+#: src/_helper/default-color-palette.js:29
+#: src/button/block.js:202
+#: src/pr-content/block.js:159
+msgid "Dark"
+msgstr ""
+
+#: src/_helper/font-awesome.js:21
+msgid "FontAwesome"
+msgstr ""
+
+#: src/_helper/font-awesome.js:22
+#: src/button/block.js:221
+#: src/pr-content/block.js:175
+msgid ""
+"Enter Font Awesome Class.This icon will appear before text. Ex) fas "
+"fa-arrow-circle-right"
+msgstr ""
+
+#: src/_helper/font-awesome.js:24
+#: src/button/block.js:217
+#: src/pr-blocks/block.js:307
+#: src/pr-content/block.js:171
+msgid "Font Awesome icon list"
+msgstr ""
+
 #: src/alert/block.js:13
 msgid "Alert"
 msgstr ""
@@ -54,12 +127,14 @@ msgstr ""
 
 #: src/balloon/block.js:88
 #: src/button/block.js:174
+#: src/latest-posts/block.js:353
 #: src/pr-content/block.js:195
 msgid "Left"
 msgstr ""
 
 #: src/balloon/block.js:89
 #: src/button/block.js:176
+#: src/latest-posts/block.js:361
 #: src/pr-content/block.js:194
 msgid "Right"
 msgstr ""
@@ -117,6 +192,7 @@ msgid "Button Position:"
 msgstr ""
 
 #: src/button/block.js:175
+#: src/latest-posts/block.js:357
 msgid "Center"
 msgstr ""
 
@@ -142,51 +218,6 @@ msgstr ""
 msgid "If you select \"No background\", that you need to select a Custom Color."
 msgstr ""
 
-#: src/button/block.js:192
-#: src/pr-content/block.js:149
-msgid "Default Color:"
-msgstr ""
-
-#: src/button/block.js:195
-#: src/pr-content/block.js:152
-msgid "Primary"
-msgstr ""
-
-#: src/button/block.js:196
-#: src/pr-content/block.js:153
-msgid "Secondary"
-msgstr ""
-
-#: src/button/block.js:197
-#: src/pr-content/block.js:154
-msgid "Success"
-msgstr ""
-
-#: src/button/block.js:198
-#: src/pr-content/block.js:155
-msgid "Info"
-msgstr ""
-
-#: src/button/block.js:199
-#: src/pr-content/block.js:156
-msgid "Warning"
-msgstr ""
-
-#: src/button/block.js:200
-#: src/pr-content/block.js:157
-msgid "Danger"
-msgstr ""
-
-#: src/button/block.js:201
-#: src/pr-content/block.js:158
-msgid "Light"
-msgstr ""
-
-#: src/button/block.js:202
-#: src/pr-content/block.js:159
-msgid "Dark"
-msgstr ""
-
 #: src/button/block.js:207
 msgid "Custom Color"
 msgstr ""
@@ -202,22 +233,9 @@ msgstr ""
 msgid "Font Awesome:"
 msgstr ""
 
-#: src/button/block.js:217
-#: src/pr-blocks/block.js:307
-#: src/pr-content/block.js:171
-msgid "Font Awesome icon list"
-msgstr ""
-
 #: src/button/block.js:220
 #: src/pr-content/block.js:174
 msgid "Before text"
-msgstr ""
-
-#: src/button/block.js:221
-#: src/pr-content/block.js:175
-msgid ""
-"Enter Font Awesome Class.This icon will appear before text. Ex) fas "
-"fa-arrow-circle-right"
 msgstr ""
 
 #: src/button/block.js:227
@@ -237,6 +255,7 @@ msgid "Apply"
 msgstr ""
 
 #: src/button/block.js:59
+#: src/latest-posts/block.js:320
 msgid "Button"
 msgstr ""
 
@@ -286,6 +305,7 @@ msgstr ""
 
 #: src/heading/block.js:125
 #: src/staff/block.js:105
+#: src/step-item/block.js:59
 #: src/table-of-contents/block.js:106
 msgid "Default"
 msgstr ""
@@ -342,8 +362,8 @@ msgstr ""
 msgid "Input title…"
 msgstr ""
 
-# %s: heading level e.g: "1", "2", "3"
 #: src/heading/heading-toolbar.js:17
+#. %s: heading level e.g: "1", "2", "3"
 msgid "Heading %d"
 msgstr ""
 
@@ -353,6 +373,114 @@ msgstr ""
 
 #: src/highlighter/block.js:93
 msgid "Highlighter"
+msgstr ""
+
+#: src/latest-posts/block.js:192
+msgid "Display conditions"
+msgstr ""
+
+#: src/latest-posts/block.js:194
+msgid "Filter by PostTypes"
+msgstr ""
+
+#: src/latest-posts/block.js:201
+msgid "Filter by Taxonomy Terms"
+msgstr ""
+
+#: src/latest-posts/block.js:208
+msgid "Number of Posts"
+msgstr ""
+
+#: src/latest-posts/block.js:218
+msgid "Display type and columns"
+msgstr ""
+
+#: src/latest-posts/block.js:220
+msgid "Display type"
+msgstr ""
+
+#: src/latest-posts/block.js:228
+msgid "Card"
+msgstr ""
+
+#: src/latest-posts/block.js:232
+msgid "Card Horizontal"
+msgstr ""
+
+#: src/latest-posts/block.js:236
+msgid "Media"
+msgstr ""
+
+#: src/latest-posts/block.js:242
+msgid "Column ( Screen size : Extra small )"
+msgstr ""
+
+#: src/latest-posts/block.js:252
+msgid "Column ( Screen size : Small )"
+msgstr ""
+
+#: src/latest-posts/block.js:262
+msgid "Column ( Screen size : Medium )"
+msgstr ""
+
+#: src/latest-posts/block.js:272
+msgid "Column ( Screen size : Large )"
+msgstr ""
+
+#: src/latest-posts/block.js:282
+msgid "Column ( Screen size : Extra large )"
+msgstr ""
+
+#: src/latest-posts/block.js:293
+msgid "Display item"
+msgstr ""
+
+#: src/latest-posts/block.js:295
+msgid "Image"
+msgstr ""
+
+#: src/latest-posts/block.js:300
+msgid "Term name"
+msgstr ""
+
+#: src/latest-posts/block.js:305
+msgid "Excerpt"
+msgstr ""
+
+#: src/latest-posts/block.js:310
+msgid "Date"
+msgstr ""
+
+#: src/latest-posts/block.js:315
+msgid "New mark"
+msgstr ""
+
+#: src/latest-posts/block.js:32
+msgid "Latest Posts"
+msgstr ""
+
+#: src/latest-posts/block.js:324
+msgid "New mark option"
+msgstr ""
+
+#: src/latest-posts/block.js:326
+msgid "Number of days to display the new post mark"
+msgstr ""
+
+#: src/latest-posts/block.js:332
+msgid "New post mark"
+msgstr ""
+
+#: src/latest-posts/block.js:337
+msgid "Button option"
+msgstr ""
+
+#: src/latest-posts/block.js:339
+msgid "Button text"
+msgstr ""
+
+#: src/latest-posts/block.js:345
+msgid "Button align"
 msgstr ""
 
 #: src/outer/block.js:107
@@ -744,11 +872,37 @@ msgid "Image border"
 msgstr ""
 
 #: src/staff/component.js:42
+#: src/step-item-numbering/component.js:19
 msgid "Your Name"
 msgstr ""
 
 #: src/staff/component.js:50
 msgid "Caption"
+msgstr ""
+
+#: src/step-item-numbering/block.js:33
+msgid "Step Item Numbering"
+msgstr ""
+
+#: src/step-item-numbering/block.js:54
+#: src/step-item/block.js:54
+msgid "Icon setting"
+msgstr ""
+
+#: src/step-item/block.js:33
+msgid "step-item"
+msgstr ""
+
+#: src/step-item/block.js:56
+msgid "Icon Style:"
+msgstr ""
+
+#: src/step-item/block.js:60
+msgid "Outlined"
+msgstr ""
+
+#: src/step/block.js:53
+msgid "Step"
 msgstr ""
 
 #: src/table-of-contents/TableOfContents.js:84

@@ -143,6 +143,7 @@ registerBlockType('vk-blocks/outer', {
                             />
                         </BaseControl>
                     </PanelBody>
+
 					<PanelBody
 					title={__('Layout Setting', 'vk-blocks')}
 					initialOpen={false}
@@ -162,11 +163,11 @@ registerBlockType('vk-blocks/outer', {
 								selected={padding_left_and_right}
 								options={[
 									{
-										label: __('Do not use contents area default padding (When case of full width etc.).', 'vk-blocks'),
+										label: __('Do not use padding', 'vk-blocks'),
 										value: '0'
 									},
 									{
-										label: __('Use contents area default padding (When case of not full width and use background etc.).', 'vk-blocks'),
+										label: __('Use padding', 'vk-blocks'),
 										value: '1'
 									}
 								]}

@@ -140,7 +140,7 @@ msgid "Right"
 msgstr ""
 
 #: src/balloon/block.js:94
-#: src/outer/block.js:195
+#: src/outer/block.js:196
 msgid "Type"
 msgstr ""
 
@@ -499,136 +499,134 @@ msgstr ""
 msgid "Parallax (It will not work in preview)"
 msgstr ""
 
-#: src/outer/block.js:147
+#: src/outer/block.js:148
 #: src/pr-content/block.js:189
 msgid "Layout Setting"
 msgstr ""
 
-#: src/outer/block.js:152
+#: src/outer/block.js:153
 msgid "Outer width"
 msgstr ""
 
-#: src/outer/block.js:155
+#: src/outer/block.js:156
 msgid "Normal"
 msgstr ""
 
-#: src/outer/block.js:156
+#: src/outer/block.js:157
 msgid "Full Wide"
 msgstr ""
 
-#: src/outer/block.js:161
+#: src/outer/block.js:162
 msgid "Contents area padding (left and right)"
 msgstr ""
 
-#: src/outer/block.js:165
-msgid "Do not use contents area default padding (When case of full width etc.)."
+#: src/outer/block.js:166
+msgid "Do not use padding"
 msgstr ""
 
-#: src/outer/block.js:169
-msgid ""
-"Use contents area default padding (When case of not full width and use "
-"background etc.)."
+#: src/outer/block.js:170
+msgid "Use padding"
 msgstr ""
 
-#: src/outer/block.js:176
+#: src/outer/block.js:177
 msgid "Padding (top and bottom)"
 msgstr ""
 
-#: src/outer/block.js:179
+#: src/outer/block.js:180
 msgid "Use default padding"
 msgstr ""
 
-#: src/outer/block.js:181
+#: src/outer/block.js:182
 msgid "Do not use default padding (Set it yourself using a spacer block etc.)."
 msgstr ""
 
-#: src/outer/block.js:190
+#: src/outer/block.js:191
 msgid "Divider Setting"
 msgstr ""
 
-#: src/outer/block.js:201
+#: src/outer/block.js:202
 msgid "Tilt"
 msgstr ""
 
-#: src/outer/block.js:205
+#: src/outer/block.js:206
 msgid "Curve"
 msgstr ""
 
-#: src/outer/block.js:209
+#: src/outer/block.js:210
 msgid "Wave"
 msgstr ""
 
-#: src/outer/block.js:213
+#: src/outer/block.js:214
 msgid "Triangle"
 msgstr ""
 
-#: src/outer/block.js:219
+#: src/outer/block.js:220
 msgid "Upper Divider Level"
 msgstr ""
 
-#: src/outer/block.js:235
+#: src/outer/block.js:236
 msgid "Lower Divider Level"
 msgstr ""
 
-#: src/outer/block.js:252
+#: src/outer/block.js:253
 msgid "Border Setting"
 msgstr ""
 
-#: src/outer/block.js:258
+#: src/outer/block.js:259
 msgid "Border will disappear when divider effect is applied."
 msgstr ""
 
-#: src/outer/block.js:260
+#: src/outer/block.js:261
 msgid "Border type"
 msgstr ""
 
-#: src/outer/block.js:266
+#: src/outer/block.js:267
 #: src/staff/block.js:109
 msgid "None"
 msgstr ""
 
-#: src/outer/block.js:270
+#: src/outer/block.js:271
 #: src/pr-content/block.js:142
 msgid "Solid"
 msgstr ""
 
-#: src/outer/block.js:274
+#: src/outer/block.js:275
 msgid "Dotted"
 msgstr ""
 
-#: src/outer/block.js:278
+#: src/outer/block.js:279
 msgid "Dashed"
 msgstr ""
 
-#: src/outer/block.js:282
+#: src/outer/block.js:283
 msgid "Double"
 msgstr ""
 
-#: src/outer/block.js:286
+#: src/outer/block.js:287
 msgid "Groove"
 msgstr ""
 
-#: src/outer/block.js:290
+#: src/outer/block.js:291
 msgid "Ridge"
 msgstr ""
 
-#: src/outer/block.js:294
+#: src/outer/block.js:295
 msgid "Inset"
 msgstr ""
 
-#: src/outer/block.js:298
+#: src/outer/block.js:299
 msgid "Outset"
 msgstr ""
 
-#: src/outer/block.js:310
+#: src/outer/block.js:311
 msgid "Border width"
 msgstr ""
 
-#: src/outer/block.js:319
+#: src/outer/block.js:320
 msgid "Border radius"
 msgstr ""
 
-#: src/outer/block.js:338
+#: src/outer/block.js:339
 #: src/table-of-contents/block.js:125
 msgid "This block is only for users who bought Lightning Pro."
 msgstr ""

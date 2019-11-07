@@ -1,7 +1,7 @@
 <?php
 
 //サーバーサイドレンダリングスクリプトを読み込み。
-require_once( dirname( __FILE__ ) . '/view/latest-posts.php' );
+require_once( dirname( __FILE__ ) . '/view/post-list.php' );
 
 function vkblocks_active() {
 	return true;
@@ -39,7 +39,7 @@ function vkblocks_blocks_assets() {
 	if ( defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, '5.0', '>=' ) ) {
 
 		// $arr = array( 'alert', 'balloon', 'button', 'faq', 'flow', 'pr-blocks', 'pr-content', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents', 'simple-table', 'tr', 'th', 'td' ,'highlighter');//REPLACE-FLAG : このコメントは削除しないで下さい。wp-create-gurten-template.shで削除する基準として左の[//REPLACE-FLAG]を使っています。
-		$arr = array( 'alert', 'balloon', 'button', 'faq', 'flow', 'pr-blocks', 'pr-content', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents', 'highlighter', 'latest-posts' );//REPLACE-FLAG : このコメントは削除しないで下さい。wp-create-gurten-template.shで削除する基準として左の[//REPLACE-FLAG]を使っています。
+		$arr = array( 'alert', 'balloon', 'button', 'faq', 'flow', 'pr-blocks', 'pr-content', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents', 'highlighter', 'post-list' );//REPLACE-FLAG : このコメントは削除しないで下さい。wp-create-gurten-template.shで削除する基準として左の[//REPLACE-FLAG]を使っています。
 
 		foreach ( $arr as $value ) {
 
@@ -69,7 +69,7 @@ function vkblocks_blocks_assets() {
 				if ( ! is_admin() ) {
 					wp_enqueue_script( 'vk-blocks-toc-helper-js', VK_BLOCKS_URL . 'build/viewHelper.js', array(), VK_BLOCKS_VERSION, true );
 				}
-			} elseif ( $value == 'latest-posts' ) {
+			} elseif ( $value == 'post-list' ) {
 
 					register_block_type(
 						'vk-blocks/' . $value, array(
@@ -158,7 +158,7 @@ function vkblocks_blocks_assets() {
 							'style'           => 'vk-blocks-build-css',
 							'editor_style'    => 'vk-blocks-build-editor-css',
 							'editor_script'   => 'vk-blocks-build-js',
-							'render_callback' => 'vk_blocks_render_latest_posts',
+							'render_callback' => 'vk_blocks_render_post_list',
 						)
 					); // register_block_type(
 

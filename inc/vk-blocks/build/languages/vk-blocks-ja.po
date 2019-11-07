@@ -119,13 +119,13 @@ msgstr "位置"
 msgid "Please specify the layout of the balloon."
 msgstr "吹き出しの配置を指定してください。"
 
-#: src/balloon/block.js:88 src/button/block.js:174
-#: src/latest-posts/block.js:362 src/pr-content/block.js:195
+#: src/balloon/block.js:88 src/button/block.js:174 src/post-list/block.js:362
+#: src/pr-content/block.js:195
 msgid "Left"
 msgstr "左"
 
-#: src/balloon/block.js:89 src/button/block.js:176
-#: src/latest-posts/block.js:370 src/pr-content/block.js:194
+#: src/balloon/block.js:89 src/button/block.js:176 src/post-list/block.js:370
+#: src/pr-content/block.js:194
 msgid "Right"
 msgstr "右"
 
@@ -178,7 +178,7 @@ msgstr "小"
 msgid "Button Position:"
 msgstr "ボタンの位置:"
 
-#: src/button/block.js:175 src/latest-posts/block.js:366
+#: src/button/block.js:175 src/post-list/block.js:366
 msgid "Center"
 msgstr "中央"
 
@@ -239,7 +239,7 @@ msgstr ""
 msgid "Apply"
 msgstr ""
 
-#: src/button/block.js:59 src/latest-posts/block.js:329
+#: src/button/block.js:59 src/post-list/block.js:329
 msgid "Button"
 msgstr "ボタン"
 
@@ -357,114 +357,6 @@ msgstr "ハイライトカラー"
 #: src/highlighter/block.js:93
 msgid "Highlighter"
 msgstr "蛍光マーカー"
-
-#: src/latest-posts/block.js:193
-msgid "Display conditions"
-msgstr "表示条件"
-
-#: src/latest-posts/block.js:197
-msgid "Filter by PostTypes"
-msgstr "投稿タイプ"
-
-#: src/latest-posts/block.js:204
-msgid "Filter by Taxonomy Terms"
-msgstr "分類"
-
-#: src/latest-posts/block.js:211
-msgid "Number of Posts"
-msgstr "表示件数"
-
-#: src/latest-posts/block.js:222
-msgid "Display type and columns"
-msgstr "表示タイプとカラム"
-
-#: src/latest-posts/block.js:226
-msgid "Display type"
-msgstr "表示タイプ"
-
-#: src/latest-posts/block.js:234
-msgid "Card"
-msgstr "カード"
-
-#: src/latest-posts/block.js:238
-msgid "Card Horizontal"
-msgstr "カード（水平）"
-
-#: src/latest-posts/block.js:242
-msgid "Media"
-msgstr "メディア"
-
-#: src/latest-posts/block.js:248
-msgid "Column ( Screen size : Extra small )"
-msgstr "カラム ( 画面サイズ : Extra small )"
-
-#: src/latest-posts/block.js:258
-msgid "Column ( Screen size : Small )"
-msgstr "カラム ( 画面サイズ : Small )"
-
-#: src/latest-posts/block.js:268
-msgid "Column ( Screen size : Medium )"
-msgstr "カラム ( 画面サイズ : Medium )"
-
-#: src/latest-posts/block.js:278
-msgid "Column ( Screen size : Large )"
-msgstr "カラム ( 画面サイズ : Large )"
-
-#: src/latest-posts/block.js:288
-msgid "Column ( Screen size : Extra large )"
-msgstr "カラム ( 画面サイズ : Extra large )"
-
-#: src/latest-posts/block.js:300
-msgid "Display item"
-msgstr "表示要素"
-
-#: src/latest-posts/block.js:304
-msgid "Image"
-msgstr "画像"
-
-#: src/latest-posts/block.js:309
-msgid "Term name"
-msgstr "分類名"
-
-#: src/latest-posts/block.js:314
-msgid "Excerpt"
-msgstr "抜粋"
-
-#: src/latest-posts/block.js:319
-msgid "Date"
-msgstr "日付"
-
-#: src/latest-posts/block.js:32
-msgid "Latest Posts"
-msgstr "新着記事"
-
-#: src/latest-posts/block.js:324
-msgid "New mark"
-msgstr "新着表示"
-
-#: src/latest-posts/block.js:333
-msgid "New mark option"
-msgstr "新着表示オプション"
-
-#: src/latest-posts/block.js:335
-msgid "Number of days to display the new post mark"
-msgstr "新着表示日数"
-
-#: src/latest-posts/block.js:341
-msgid "New post mark"
-msgstr "新着表示"
-
-#: src/latest-posts/block.js:346
-msgid "Button option"
-msgstr "ボタンオプション"
-
-#: src/latest-posts/block.js:348
-msgid "Button text"
-msgstr "ボタンの文字"
-
-#: src/latest-posts/block.js:354
-msgid "Button align"
-msgstr "ボタンの位置"
 
 #: src/outer/block.js:110
 msgid "Background Image"
@@ -634,6 +526,114 @@ msgstr ""
 msgid "Opacity Setting"
 msgstr "透過設定"
 
+#: src/post-list/block.js:193
+msgid "Display conditions"
+msgstr "表示条件"
+
+#: src/post-list/block.js:197
+msgid "Filter by PostTypes"
+msgstr "投稿タイプ"
+
+#: src/post-list/block.js:204
+msgid "Filter by Taxonomy Terms"
+msgstr "分類"
+
+#: src/post-list/block.js:211
+msgid "Number of Posts"
+msgstr "表示件数"
+
+#: src/post-list/block.js:222
+msgid "Display type and columns"
+msgstr "表示タイプとカラム"
+
+#: src/post-list/block.js:226
+msgid "Display type"
+msgstr "表示タイプ"
+
+#: src/post-list/block.js:234
+msgid "Card"
+msgstr "カード"
+
+#: src/post-list/block.js:238
+msgid "Card Horizontal"
+msgstr "カード（水平）"
+
+#: src/post-list/block.js:242
+msgid "Media"
+msgstr "メディア"
+
+#: src/post-list/block.js:248
+msgid "Column ( Screen size : Extra small )"
+msgstr "カラム ( 画面サイズ : Extra small )"
+
+#: src/post-list/block.js:258
+msgid "Column ( Screen size : Small )"
+msgstr "カラム ( 画面サイズ : Small )"
+
+#: src/post-list/block.js:268
+msgid "Column ( Screen size : Medium )"
+msgstr "カラム ( 画面サイズ : Medium )"
+
+#: src/post-list/block.js:278
+msgid "Column ( Screen size : Large )"
+msgstr "カラム ( 画面サイズ : Large )"
+
+#: src/post-list/block.js:288
+msgid "Column ( Screen size : Extra large )"
+msgstr "カラム ( 画面サイズ : Extra large )"
+
+#: src/post-list/block.js:300
+msgid "Display item"
+msgstr "表示要素"
+
+#: src/post-list/block.js:304
+msgid "Image"
+msgstr "画像"
+
+#: src/post-list/block.js:309
+msgid "Term name"
+msgstr "分類名"
+
+#: src/post-list/block.js:314
+msgid "Excerpt"
+msgstr "抜粋"
+
+#: src/post-list/block.js:319
+msgid "Date"
+msgstr "日付"
+
+#: src/post-list/block.js:32
+msgid "Post list"
+msgstr "投稿リスト"
+
+#: src/post-list/block.js:324
+msgid "New mark"
+msgstr "新着表示"
+
+#: src/post-list/block.js:333
+msgid "New mark option"
+msgstr "新着表示オプション"
+
+#: src/post-list/block.js:335
+msgid "Number of days to display the new post mark"
+msgstr "新着表示日数"
+
+#: src/post-list/block.js:341
+msgid "New post mark"
+msgstr "新着表示"
+
+#: src/post-list/block.js:346
+msgid "Button option"
+msgstr "ボタンオプション"
+
+#: src/post-list/block.js:348
+msgid "Button text"
+msgstr "ボタンの文字"
+
+#: src/post-list/block.js:354
+msgid "Button align"
+msgstr "ボタンの位置"
+
 #: src/pr-blocks/block.js:149
 msgid "PR Block1 Setting"
 msgstr "PR Block1 設定"
@@ -691,8 +691,10 @@ msgid "When you have an image. Image is displayed with priority."
 msgstr "画像を設定した場合は画像が優先して表示されます。"
 
 #: src/pr-blocks/block.js:96
-msgid "PR Blocks (Beta)"
-msgstr "PR Blocks (Beta)"
+#, fuzzy
+#| msgid "PR Block"
+msgid "PR Blocks"
+msgstr "PR Block"
 
 #: src/pr-blocks/component-block.js:144
 #: src/pr-blocks/deprecated/component-block.js:144
@@ -893,6 +895,12 @@ msgstr "枠無し"
 msgid "Style"
 msgstr "スタイル"
 
+#~ msgid "Latest Posts"
+#~ msgstr "新着記事"
+
+#~ msgid "PR Blocks (Beta)"
+#~ msgstr "PR Blocks (Beta)"
+
 #~ msgid "Do not use padding (When case of full width etc.)."
 #~ msgstr ""
 #~ "余白なし\n"
@@ -978,6 +986,3 @@ msgstr "スタイル"
 
 #~ msgid "Link url"
 #~ msgstr "リンクURL"
-
-#~ msgid "PR Block"
-#~ msgstr "PR Block"

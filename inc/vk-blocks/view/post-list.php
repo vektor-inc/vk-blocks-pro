@@ -1,6 +1,6 @@
 <?php
 
-class VkBlocksLatestPosts {
+class VkBlocksPostList {
 
 	/**
 	 * Return html to display latest post list.
@@ -9,7 +9,7 @@ class VkBlocksLatestPosts {
 	 *
 	 * @return string
 	 */
-	public function render_latest_posts( $attributes ) {
+	public function render_post_list( $attributes ) {
 
 		$wp_query = $this->get_loop_query( $attributes );
 
@@ -32,13 +32,13 @@ class VkBlocksLatestPosts {
 			'new_date'                   => $attributes['new_date'],
 			'btn_text'                   => $attributes['btn_text'],
 			'btn_align'                  => $attributes['btn_align'],
-			'class_outer'                => 'vk_latestPosts_card ' . VK_Component_Posts::get_col_size_classes( $attributes ),
+			'class_outer'                => 'vk_PostList_card ' . VK_Component_Posts::get_col_size_classes( $attributes ),
 			'class_title'                => '',
 			'body_prepend'               => '',
 			'body_append'                => '',
 		);
 
-		$options_loop = array( 'class_loop_outer' => 'vk_latestPosts' );
+		$options_loop = array( 'class_loop_outer' => 'vk_PostList' );
 		$elm          = VK_Component_Posts::get_loop( $wp_query, $options, $options_loop );
 
 		wp_reset_query();
@@ -109,10 +109,10 @@ class VkBlocksLatestPosts {
  *
  * @return string
  */
-function vk_blocks_render_latest_posts( $attributes ) {
+function vk_blocks_render_post_list( $attributes ) {
 
-	$LatestPosts = new VkBlocksLatestPosts();
+	$PostList = new VkBlocksPostList();
 
-	return $LatestPosts->render_latest_posts( $attributes );
+	return $PostList->render_post_list( $attributes );
 
 }

@@ -1,5 +1,5 @@
 /**
- * latest-posts block type
+ * post-list block type
  *
  */
 import addCheckBox from './checkbox';
@@ -27,9 +27,9 @@ const {ServerSideRender} = wp.components;
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-registerBlockType('vk-blocks/latest-posts', {
+registerBlockType('vk-blocks/post-list', {
     // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-    title: __('Latest Posts', 'vk-blocks'), // Block title.
+    title: __('Post list', 'vk-blocks'), // Block title.
     icon: BlockIcon, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
     category: 'vk-blocks-cat', // Block category —s Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
     attributes: schema,
@@ -376,7 +376,7 @@ registerBlockType('vk-blocks/latest-posts', {
                 </InspectorControls>
                 <div>
                     <ServerSideRender
-                        block="vk-blocks/latest-posts"
+                        block="vk-blocks/post-list"
                         attributes={attributes}
                     />
                 </div>

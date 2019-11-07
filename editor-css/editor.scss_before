@@ -3,6 +3,7 @@
 fill:#c00;
 }
 .editor-block-list-item-vk-blocks-outer:after,
+.editor-block-list-item-vk-blocks-post-list:after,
 .editor-block-list-item-vk-blocks-table-of-contents:after,
 .editor-block-list-item-vk-blocks-simple-table:after{
 position: absolute;
@@ -57,3 +58,6 @@ h1:first-child.vk_prBlocks_item_title{
 			max-width:100%;
 		}
 }
+
+/* カラム（水平）で点線と余白ができる */
+.vk_post .row { margin:0;border:none; }

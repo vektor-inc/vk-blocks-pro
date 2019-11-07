@@ -189,7 +189,10 @@ registerBlockType('vk-blocks/latest-posts', {
         return (
             <Fragment>
                 <InspectorControls>
-								<PanelBody title={__('Display conditions', 'vk-blocks')}>
+								<PanelBody
+								title={__('Display conditions', 'vk-blocks')}
+								initialOpen={false}
+								>
 									<BaseControl
 											label={__('Filter by PostTypes', 'vk-blocks')}
 									>
@@ -215,7 +218,10 @@ registerBlockType('vk-blocks/latest-posts', {
 											/>
 									</BaseControl>
 								</PanelBody>
-                    <PanelBody title={__('Display type and columns', 'vk-blocks')}>
+                    <PanelBody
+										title={__('Display type and columns', 'vk-blocks')}
+										initialOpen={false}
+										>
                         <BaseControl
                             label={__('Display type', 'vk-blocks')}
                         >
@@ -290,7 +296,10 @@ registerBlockType('vk-blocks/latest-posts', {
 												</BaseControl>
 											</PanelBody>
 
-										<PanelBody title={__('Display item', 'vk-blocks')}>
+										<PanelBody
+										title={__('Display item', 'vk-blocks')}
+										initialOpen={false}
+										>
 											<CheckboxControl
 													label={__('Image', 'vk-blocks')}
 													checked={display_image}

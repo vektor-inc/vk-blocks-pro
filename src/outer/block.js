@@ -80,7 +80,10 @@ registerBlockType('vk-blocks/outer', {
         return (
             <Fragment>
                 <InspectorControls>
-                    <PanelBody title={__('Background Setting', 'vk-blocks')}>
+                    <PanelBody
+										title={__('Background Setting', 'vk-blocks')}
+										initialOpen={false}
+										>
                         <BaseControl
                             label={__('Color Setting', 'vk-blocks')}
                             help={__('Color will overcome background image. If you want to display image, clear background color or set opacity 0.', 'vk-blocks')}
@@ -140,7 +143,10 @@ registerBlockType('vk-blocks/outer', {
                             />
                         </BaseControl>
                     </PanelBody>
-					<PanelBody title={__('Layout Setting', 'vk-blocks')}>
+					<PanelBody
+					title={__('Layout Setting', 'vk-blocks')}
+					initialOpen={false}
+					>
 						<BaseControl>
 							<RadioControl
 								label={__('Outer width', 'vk-blocks')}
@@ -180,7 +186,10 @@ registerBlockType('vk-blocks/outer', {
 							/>
 						</BaseControl>
 					</PanelBody>
-					<PanelBody title={__('Divider Setting', 'vk-blocks')}>
+					<PanelBody
+					title={__('Divider Setting', 'vk-blocks')}
+					initialOpen={false}
+					>
 						<BaseControl>
 							<SelectControl
 								label={__('Type', 'vk-blocks')}
@@ -239,7 +248,10 @@ registerBlockType('vk-blocks/outer', {
 							/>
 						</BaseControl>
 					</PanelBody>
-					<PanelBody title={__('Border Setting', 'vk-blocks')}>
+					<PanelBody
+					title={__('Border Setting', 'vk-blocks')}
+					initialOpen={false}
+					>
 						<BaseControl
 							// label={__('Border will disappear when divider effect is applied.', 'vk-blocks')}
 						>

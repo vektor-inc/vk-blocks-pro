@@ -711,7 +711,7 @@ msgid "When you have an image. Image is displayed with priority."
 msgstr ""
 
 #: src/pr-blocks/block.js:96
-msgid "PR Blocks (Beta)"
+msgid "PR Blocks"
 msgstr ""
 
 #: src/pr-blocks/component-block.js:144

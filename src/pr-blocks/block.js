@@ -93,7 +93,7 @@ function set_attributes(number) {
  */
 registerBlockType('vk-blocks/pr-blocks', {
     // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-    title: __('PR Blocks (Beta)', 'vk-blocks'), // Block title.
+    title: __('PR Blocks', 'vk-blocks'), // Block title.
     icon: BlockIcon, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
     category: 'vk-blocks-cat', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
     attributes: set_attributes(4),

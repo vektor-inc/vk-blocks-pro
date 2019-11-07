@@ -9,11 +9,74 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-KeywordsList: __\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: src/_helper/default-color-palette.js:19 src/button/block.js:192
+#: src/pr-content/block.js:149
+msgid "Default Color:"
+msgstr "標準色:"
+
+#: src/_helper/default-color-palette.js:22 src/button/block.js:195
+#: src/pr-content/block.js:152
+msgid "Primary"
+msgstr "Primary"
+
+#: src/_helper/default-color-palette.js:23 src/button/block.js:196
+#: src/pr-content/block.js:153
+msgid "Secondary"
+msgstr "Secondary"
+
+#: src/_helper/default-color-palette.js:24 src/button/block.js:197
+#: src/pr-content/block.js:154
+msgid "Success"
+msgstr "Success"
+
+#: src/_helper/default-color-palette.js:25 src/button/block.js:198
+#: src/pr-content/block.js:155
+msgid "Info"
+msgstr "Info"
+
+#: src/_helper/default-color-palette.js:26 src/button/block.js:199
+#: src/pr-content/block.js:156
+msgid "Warning"
+msgstr "Warning"
+
+#: src/_helper/default-color-palette.js:27 src/button/block.js:200
+#: src/pr-content/block.js:157
+msgid "Danger"
+msgstr "Danger"
+
+#: src/_helper/default-color-palette.js:28 src/button/block.js:201
+#: src/pr-content/block.js:158
+msgid "Light"
+msgstr "Light"
+
+#: src/_helper/default-color-palette.js:29 src/button/block.js:202
+#: src/pr-content/block.js:159
+msgid "Dark"
+msgstr "Dark"
+
+#: src/_helper/font-awesome.js:21
+msgid "FontAwesome"
+msgstr "Font Awesome:"
+
+#: src/_helper/font-awesome.js:22 src/button/block.js:221
+#: src/pr-content/block.js:175
+msgid ""
+"Enter Font Awesome Class.This icon will appear before text. Ex) fas fa-arrow-"
+"circle-right"
+msgstr ""
+"Font Awesome の class 名を入力してください。このアイコンは文字の前に表示され"
+"ます。 例) fas fa-arrow-circle-right"
+
+#: src/_helper/font-awesome.js:24 src/button/block.js:217
+#: src/pr-blocks/block.js:307 src/pr-content/block.js:171
+msgid "Font Awesome icon list"
+msgstr "Font Awesome アイコンリスト"
 
 #: src/alert/block.js:13
 msgid "Alert"
@@ -56,11 +119,13 @@ msgstr "位置"
 msgid "Please specify the layout of the balloon."
 msgstr "吹き出しの配置を指定してください。"
 
-#: src/balloon/block.js:88 src/button/block.js:174 src/pr-content/block.js:195
+#: src/balloon/block.js:88 src/button/block.js:174
+#: src/latest-posts/block.js:353 src/pr-content/block.js:195
 msgid "Left"
 msgstr "左"
 
-#: src/balloon/block.js:89 src/button/block.js:176 src/pr-content/block.js:194
+#: src/balloon/block.js:89 src/button/block.js:176
+#: src/latest-posts/block.js:361 src/pr-content/block.js:194
 msgid "Right"
 msgstr "右"
 
@@ -113,7 +178,7 @@ msgstr "小"
 msgid "Button Position:"
 msgstr "ボタンの位置:"
 
-#: src/button/block.js:175
+#: src/button/block.js:175 src/latest-posts/block.js:357
 msgid "Center"
 msgstr "中央"
 
@@ -138,42 +203,6 @@ msgid ""
 "If you select \"No background\", that you need to select a Custom Color."
 msgstr "もし「背景なし」を選択した場合はカスタムカラーで色を指定してください。"
 
-#: src/button/block.js:192 src/pr-content/block.js:149
-msgid "Default Color:"
-msgstr "標準色:"
-
-#: src/button/block.js:195 src/pr-content/block.js:152
-msgid "Primary"
-msgstr "Primary"
-
-#: src/button/block.js:196 src/pr-content/block.js:153
-msgid "Secondary"
-msgstr "Secondary"
-
-#: src/button/block.js:197 src/pr-content/block.js:154
-msgid "Success"
-msgstr "Success"
-
-#: src/button/block.js:198 src/pr-content/block.js:155
-msgid "Info"
-msgstr "Info"
-
-#: src/button/block.js:199 src/pr-content/block.js:156
-msgid "Warning"
-msgstr "Warning"
-
-#: src/button/block.js:200 src/pr-content/block.js:157
-msgid "Danger"
-msgstr "Danger"
-
-#: src/button/block.js:201 src/pr-content/block.js:158
-msgid "Light"
-msgstr "Light"
-
-#: src/button/block.js:202 src/pr-content/block.js:159
-msgid "Dark"
-msgstr "Dark"
-
 #: src/button/block.js:207
 msgid "Custom Color"
 msgstr "カスタムカラー"
@@ -190,22 +219,9 @@ msgstr ""
 msgid "Font Awesome:"
 msgstr "Font Awesome:"
 
-#: src/button/block.js:217 src/pr-blocks/block.js:307
-#: src/pr-content/block.js:171
-msgid "Font Awesome icon list"
-msgstr "Font Awesome アイコンリスト"
-
 #: src/button/block.js:220 src/pr-content/block.js:174
 msgid "Before text"
 msgstr "文字の前"
-
-#: src/button/block.js:221 src/pr-content/block.js:175
-msgid ""
-"Enter Font Awesome Class.This icon will appear before text. Ex) fas fa-arrow-"
-"circle-right"
-msgstr ""
-"Font Awesome の class 名を入力してください。このアイコンは文字の前に表示され"
-"ます。 例) fas fa-arrow-circle-right"
 
 #: src/button/block.js:227 src/pr-content/block.js:181
 msgid "After text"
@@ -223,7 +239,7 @@ msgstr ""
 msgid "Apply"
 msgstr ""
 
-#: src/button/block.js:59
+#: src/button/block.js:59 src/latest-posts/block.js:320
 msgid "Button"
 msgstr "ボタン"
 
@@ -271,7 +287,7 @@ msgstr "スタイル設定"
 msgid "Heading style"
 msgstr "見出しスタイル"
 
-#: src/heading/block.js:125 src/staff/block.js:105
+#: src/heading/block.js:125 src/staff/block.js:105 src/step-item/block.js:59
 #: src/table-of-contents/block.js:106
 msgid "Default"
 msgstr "標準"
@@ -329,6 +345,7 @@ msgid "Input title…"
 msgstr "タイトルを入力"
 
 # %s: heading level e.g: "1", "2", "3"
+#. %s: heading level e.g: "1", "2", "3"
 #: src/heading/heading-toolbar.js:17
 msgid "Heading %d"
 msgstr "見出し %d"
@@ -340,6 +357,114 @@ msgstr "ハイライトカラー"
 #: src/highlighter/block.js:93
 msgid "Highlighter"
 msgstr "蛍光マーカー"
+
+#: src/latest-posts/block.js:192
+msgid "Display conditions"
+msgstr "表示条件"
+
+#: src/latest-posts/block.js:194
+msgid "Filter by PostTypes"
+msgstr "投稿タイプ"
+
+#: src/latest-posts/block.js:201
+msgid "Filter by Taxonomy Terms"
+msgstr "分類"
+
+#: src/latest-posts/block.js:208
+msgid "Number of Posts"
+msgstr "表示件数"
+
+#: src/latest-posts/block.js:218
+msgid "Display type and columns"
+msgstr "表示タイプとカラム"
+
+#: src/latest-posts/block.js:220
+msgid "Display type"
+msgstr "表示タイプ"
+
+#: src/latest-posts/block.js:228
+msgid "Card"
+msgstr "カード"
+
+#: src/latest-posts/block.js:232
+msgid "Card Horizontal"
+msgstr "カード（水平）"
+
+#: src/latest-posts/block.js:236
+msgid "Media"
+msgstr "メディア"
+
+#: src/latest-posts/block.js:242
+msgid "Column ( Screen size : Extra small )"
+msgstr "カラム ( 画面サイズ : Extra small )"
+
+#: src/latest-posts/block.js:252
+msgid "Column ( Screen size : Small )"
+msgstr "カラム ( 画面サイズ : Small )"
+
+#: src/latest-posts/block.js:262
+msgid "Column ( Screen size : Medium )"
+msgstr "カラム ( 画面サイズ : Medium )"
+
+#: src/latest-posts/block.js:272
+msgid "Column ( Screen size : Large )"
+msgstr "カラム ( 画面サイズ : Large )"
+
+#: src/latest-posts/block.js:282
+msgid "Column ( Screen size : Extra large )"
+msgstr "カラム ( 画面サイズ : Extra large )"
+
+#: src/latest-posts/block.js:293
+msgid "Display item"
+msgstr "表示要素"
+
+#: src/latest-posts/block.js:295
+msgid "Image"
+msgstr "画像"
+
+#: src/latest-posts/block.js:300
+msgid "Term name"
+msgstr "分類名"
+
+#: src/latest-posts/block.js:305
+msgid "Excerpt"
+msgstr "抜粋"
+
+#: src/latest-posts/block.js:310
+msgid "Date"
+msgstr "日付"
+
+#: src/latest-posts/block.js:315
+msgid "New mark"
+msgstr "新着表示"
+
+#: src/latest-posts/block.js:32
+msgid "Latest Posts"
+msgstr "新着記事"
+
+#: src/latest-posts/block.js:324
+msgid "New mark option"
+msgstr "新着表示オプション"
+
+#: src/latest-posts/block.js:326
+msgid "Number of days to display the new post mark"
+msgstr "新着表示日数"
+
+#: src/latest-posts/block.js:332
+msgid "New post mark"
+msgstr "新着表示"
+
+#: src/latest-posts/block.js:337
+msgid "Button option"
+msgstr "ボタンオプション"
+
+#: src/latest-posts/block.js:339
+msgid "Button text"
+msgstr "ボタンの文字"
+
+#: src/latest-posts/block.js:345
+msgid "Button align"
+msgstr "ボタンの位置"
 
 #: src/outer/block.js:107
 msgid "Background Image"
@@ -727,13 +852,39 @@ msgstr "画像 左"
 msgid "Image border"
 msgstr "画像の線"
 
-#: src/staff/component.js:42
+#: src/staff/component.js:42 src/step-item-numbering/component.js:19
 msgid "Your Name"
 msgstr "名前"
 
 #: src/staff/component.js:50
 msgid "Caption"
 msgstr "キャプション"
+
+#: src/step-item-numbering/block.js:33
+msgid "Step Item Numbering"
+msgstr ""
+
+#: src/step-item-numbering/block.js:54 src/step-item/block.js:54
+msgid "Icon setting"
+msgstr "アイコン設定"
+
+#: src/step-item/block.js:33
+msgid "step-item"
+msgstr ""
+
+#: src/step-item/block.js:56
+#, fuzzy
+#| msgid "Button Style:"
+msgid "Icon Style:"
+msgstr "ボタンスタイル:"
+
+#: src/step-item/block.js:60
+msgid "Outlined"
+msgstr ""
+
+#: src/step/block.js:53
+msgid "Step"
+msgstr ""
 
 #: src/table-of-contents/TableOfContents.js:84
 #: src/table-of-contents/block.js:55
@@ -764,9 +915,6 @@ msgstr "スタイル"
 
 #~ msgid "Setting layout in mobile"
 #~ msgstr "モバイルでのレイアウト設定"
-
-#~ msgid "Display one column"
-#~ msgstr "1カラム表示にする"
 
 #~ msgid "Styles"
 #~ msgstr "スタイル"
@@ -825,9 +973,6 @@ msgstr "スタイル"
 #~ msgstr "幅設定"
 
 #~ msgid "Link url"
-#~ msgstr "リンクURL"
-
-#~ msgid "Button Url"
 #~ msgstr "リンクURL"
 
 #~ msgid "PR Block"

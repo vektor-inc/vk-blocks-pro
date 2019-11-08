@@ -14,10 +14,8 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 	// Set version number.
 	define( 'VK_BLOCKS_VERSION', '0.10.1' );
 
-
 	global $vk_blocks_prefix;
 	$vk_blocks_prefix = apply_filters( 'vk_blocks_prefix', 'VK ' );
-
 
 	// ExUnitなど読み込み先によってはあらかじめ読み込んでいるので不要の場合がある
 	require_once( 'font-awesome/font-awesome-config.php' );

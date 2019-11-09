@@ -22,33 +22,27 @@
 /* リストデザイン
 /*-------------------------------------------*/
 ul,ol{
-	&.is-style-chevron-mark li,
-	&.is-style-triangle-mark li,
-	&.is-style-check-mark li,
-	&.is-style-check-circle-mark li,
-	&.is-style-check-square-mark li,
-	&.is-style-handpoint-mark li,
-	&.is-style-pencil-mark li,
-	&.is-style-smile-mark li,
-	&.is-style-frown-mark{ 
-		list-style: none;
-		position: relative;
-		.fa-lg {
-		  font-size: 1.3333333333333333em;
-		}
-		.fa-2x {
-		  font-size: 2em;
-		}
-		.fa-3x {
-		  font-size: 3em;
-		}
-		.fa-4x {
-		  font-size: 4em;
-		}
-		.fa-5x {
-		  font-size: 5em;
-		}		
+	&.is-style{
+		&-chevron-mark,
+		&-triangle-mark,
+		&-check-mark,
+		&-check-circle-mark,
+		&-check-square-mark,
+		&-handpoint-mark,
+		&-pencil-mark,
+		&-smile-mark,
+		&-frown-mark,
+		&-numbered-circle-mark,
+		&-numbered-square-mark {
+			padding: 0.5em 0.5em 0.5em 2em;
+				li{
+					list-style: none;
+					position: relative;
+				}
+			}
 	}
+	
+	
 	&.is-style-chevron-mark{
 		li{		
 			&:before { 				

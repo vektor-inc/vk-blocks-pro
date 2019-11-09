@@ -86,33 +86,27 @@ h1:first-child.vk_prBlocks_item_title{
 /* リストデザイン
 /*-------------------------------------------*/
 ul,ol{
-	&.is-style-chevron-mark li,
-	&.is-style-triangle-mark li,
-	&.is-style-check-mark li,
-	&.is-style-check-circle-mark li,
-	&.is-style-check-square-mark li,
-	&.is-style-handpoint-mark li,
-	&.is-style-pencil-mark li,
-	&.is-style-smile-mark li,
-	&.is-style-frown-mark{ 
-		list-style: none;
-		position: relative;
-		.fa-lg {
-		  font-size: 1.3333333333333333em;
-		}
-		.fa-2x {
-		  font-size: 2em;
-		}
-		.fa-3x {
-		  font-size: 3em;
-		}
-		.fa-4x {
-		  font-size: 4em;
-		}
-		.fa-5x {
-		  font-size: 5em;
-		}		
+	&.is-style{
+		&-chevron-mark,
+		&-triangle-mark,
+		&-check-mark,
+		&-check-circle-mark,
+		&-check-square-mark,
+		&-handpoint-mark,
+		&-pencil-mark,
+		&-smile-mark,
+		&-frown-mark,
+		&-numbered-circle-mark,
+		&-numbered-square-mark {
+			padding: 0.5em 0.5em 0.5em 2em;
+				li{
+					list-style: none;
+					position: relative;
+				}
+			}
 	}
+	
+	
 	&.is-style-chevron-mark{
 		li{		
 			&:before { 				
@@ -480,23 +474,6 @@ $color_dark:#343a40;
 	color:#fff;
 }
 
-/*      .qaItem
-/*-------------------------------------------*/
-.vk_faq { display:block; overflow:hidden;border-bottom:1px dotted #ccc; padding:0px 0px 25px; margin:25px 0px; width:100%; position: relative; }
-.vk_faq_title,
-.vk_faq_content {
-	border:none;padding-left: 35px;
-	&:before {
-		position: absolute;left:0;font-size:24px;line-height: 105%;
-	}
-}
-.vk_faq_title { margin-bottom:15px;font-size:18px;font-weight:700;
-  &:before { font-family:"areal";content:"Q ";color:#e50000; }
-}
-.vk_faq_content { margin:0px;
-  &:before { content:"A ";color:#337ab7;font-family: "" }
-}
-
 .vk_balloon {
   display: flex;
   align-items: center;
@@ -762,6 +739,23 @@ $color_dark:#343a40;
 	}
 } // @media only screen and (max-width: 480px) {
 
+/*      .qaItem
+/*-------------------------------------------*/
+.vk_faq { display:block; overflow:hidden;border-bottom:1px dotted #ccc; padding:0px 0px 25px; margin:25px 0px; width:100%; position: relative; }
+.vk_faq_title,
+.vk_faq_content {
+	border:none;padding-left: 35px;
+	&:before {
+		position: absolute;left:0;font-size:24px;line-height: 105%;
+	}
+}
+.vk_faq_title { margin-bottom:15px;font-size:18px;font-weight:700;
+  &:before { font-family:"areal";content:"Q ";color:#e50000; }
+}
+.vk_faq_content { margin:0px;
+  &:before { content:"A ";color:#337ab7;font-family: "" }
+}
+
 //*      .flowBox
 /*-------------------------------------------*/
 .vk_flow-arrow-on:after {
@@ -791,32 +785,6 @@ $color_dark:#343a40;
 	max-width:150px;
 	margin-left:15px;
 	box-sizing: border-box;
-}
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-@mixin reset() {
-	background: none;
-	border:none;
-	border-radius: 0;
-	padding:0;
-	font-weight: normal;
-	box-shadow:none;
-	&:after {
-		border:none;
-	}
-}
-
-.vk_heading_title {
-	&-style {
-		&-plain {
-			@include reset;
-		}
-	}
-}
-.vk_heading_subtext {
-	margin-bottom:0;
 }
 
 /*-------------------------------------------*/
@@ -941,6 +909,32 @@ $padding-xl:3.5em;
 // }
 
 /*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+@mixin reset() {
+	background: none;
+	border:none;
+	border-radius: 0;
+	padding:0;
+	font-weight: normal;
+	box-shadow:none;
+	&:after {
+		border:none;
+	}
+}
+
+.vk_heading_title {
+	&-style {
+		&-plain {
+			@include reset;
+		}
+	}
+}
+.vk_heading_subtext {
+	margin-bottom:0;
+}
+
+/*-------------------------------------------*/
 /* .vk_prBlocks
 /*-------------------------------------------*/
 .vk_prBlocks_item {
@@ -1002,88 +996,6 @@ $padding-xl:3.5em;
 		margin-bottom: 0.5em;
 		text-align: center;
 		line-height: 1.8em;
-	}
-}
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-
-.vk_table {
-	&-col-mobile1 {
-		@media( max-width: 575.98px){
-			th,
-			td {
-					display: block;
-			}
-			th {
-				background-color: rgba(0, 0, 0, 0.05);
-			}
-			// ストライプ指定の時の背景色をリセット
-			&.table-striped tbody {
-				tr:nth-of-type(odd) {
-					background: inherit;
-				}
-			}
-		} // @media( max-width: 575.98px){
-	} // &-col-mobile1 {
-}
-
-/*-------------------------------------------*/
-/* editor class
-/*-------------------------------------------*/
-.vk_simpleTable-edit{
-	.editor-inner-blocks,
-	.editor-block-list__layout,
-	.editor-block-list__block,
-	.editor-rich-text__editable,
-	.editor-block-list__block-edit{
-		padding:0;
-		margin:0;
-		width:100%;
-	}
-	& > .editor-inner-blocks{
-		margin-top:-1px; // th,td がHTML上ではdivの中になってしまう都合上、線が2pxになるためマイナスオフセット
-	}
-	.editor-block-list__block-edit{
-		height:100%;
-	}
-	.block-editor-block-list__insertion-point{
-		/* 上のセルに被るので選択しにくくなるのでデフォルトのマイナスオフセットを少し下げる */
-		top:-5px;
-	}
-	.editor-block-list__block-edit:before{
-		right:-0px;
-		left:-0px;
-		top:-0px;
-		bottom:-0px;
-		// border:1px solid #ff0000;
-	}
-	.editor-inner-blocks {
-		tr {
-			width:100%;
-			display: block;
-			border-bottom:1px solid #e5e5e5;
-			.editor-block-list__layout {
-				display: flex;
-				.editor-block-list__block {
-				}
-			}
-		}
-		th,
-		td {
-			padding: 0;
-			display: block;
-			width:100%;
-			border:none; // デフォルトでつけてくる線を消す
-			.editor-rich-text__editable{
-				padding: 14px;
-			}
-		}
-	}
-	// 編集画面のtableは HTML構造がカオスなので補正
-	&.table-striped > tbody > .editor-inner-blocks > .editor-block-list__layout > div:nth-of-type(odd) {
-			background-color: rgba(0, 0, 0, 0.05);
 	}
 }
 
@@ -1171,6 +1083,88 @@ $padding-xl:3.5em;
 		}
 	}
 } // .vk_prContent {
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
+.vk_table {
+	&-col-mobile1 {
+		@media( max-width: 575.98px){
+			th,
+			td {
+					display: block;
+			}
+			th {
+				background-color: rgba(0, 0, 0, 0.05);
+			}
+			// ストライプ指定の時の背景色をリセット
+			&.table-striped tbody {
+				tr:nth-of-type(odd) {
+					background: inherit;
+				}
+			}
+		} // @media( max-width: 575.98px){
+	} // &-col-mobile1 {
+}
+
+/*-------------------------------------------*/
+/* editor class
+/*-------------------------------------------*/
+.vk_simpleTable-edit{
+	.editor-inner-blocks,
+	.editor-block-list__layout,
+	.editor-block-list__block,
+	.editor-rich-text__editable,
+	.editor-block-list__block-edit{
+		padding:0;
+		margin:0;
+		width:100%;
+	}
+	& > .editor-inner-blocks{
+		margin-top:-1px; // th,td がHTML上ではdivの中になってしまう都合上、線が2pxになるためマイナスオフセット
+	}
+	.editor-block-list__block-edit{
+		height:100%;
+	}
+	.block-editor-block-list__insertion-point{
+		/* 上のセルに被るので選択しにくくなるのでデフォルトのマイナスオフセットを少し下げる */
+		top:-5px;
+	}
+	.editor-block-list__block-edit:before{
+		right:-0px;
+		left:-0px;
+		top:-0px;
+		bottom:-0px;
+		// border:1px solid #ff0000;
+	}
+	.editor-inner-blocks {
+		tr {
+			width:100%;
+			display: block;
+			border-bottom:1px solid #e5e5e5;
+			.editor-block-list__layout {
+				display: flex;
+				.editor-block-list__block {
+				}
+			}
+		}
+		th,
+		td {
+			padding: 0;
+			display: block;
+			width:100%;
+			border:none; // デフォルトでつけてくる線を消す
+			.editor-rich-text__editable{
+				padding: 14px;
+			}
+		}
+	}
+	// 編集画面のtableは HTML構造がカオスなので補正
+	&.table-striped > tbody > .editor-inner-blocks > .editor-block-list__layout > div:nth-of-type(odd) {
+			background-color: rgba(0, 0, 0, 0.05);
+	}
+}
 
 /*-------------------------------------------*/
 /* CSS
@@ -1416,6 +1410,14 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+.vk_table-col-overflow {
+  white-space: nowrap !important;
+}
+/*# sourceMappingURL=style.scss.map */
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 $toc-left-margin: 1rem;
 
 .vk_tableOfContents {
@@ -1500,14 +1502,6 @@ $toc-left-margin: 1rem;
   //   }
   // }
 }
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-.vk_table-col-overflow {
-  white-space: nowrap !important;
-}
-/*# sourceMappingURL=style.scss.map */
 
 /*-------------------------------------------*/
 /* CSS

@@ -235,7 +235,7 @@ registerBlockType('vk-blocks/post-list', {
 													value={numberPosts}
 													onChange={(value) => setAttributes({numberPosts: value})}
 													min="1"
-													max="10"
+													max="24"
 											/>
 									</BaseControl>
 								</PanelBody>

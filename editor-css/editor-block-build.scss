@@ -29,12 +29,6 @@ padding: 3px 4px;
 .components-checkbox-control__label { margin-bottom:0; }
 .components-color-palette { display:block; overflow:hidden; }
 
-// これがないと rem 指定してる見出しなどが大きくなりすぎる
-// 見出しがrem指定なのは今後画面サイズによって html の font size を可変にして 見出しサイズも自動可変させるため
-html {
-font-size:10px;
-}
-
 /*スライダーを表示。デフォルトだとbootstrapに非表示にされてしまう*/
 input[type=range] {
     margin: 1px;
@@ -581,32 +575,6 @@ $color_dark:#343a40;
   &:before { content:"A ";color:#337ab7;font-family: "" }
 }
 
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-@mixin reset() {
-	background: none;
-	border:none;
-	border-radius: 0;
-	padding:0;
-	font-weight: normal;
-	box-shadow:none;
-	&:after {
-		border:none;
-	}
-}
-
-.vk_heading_title {
-	&-style {
-		&-plain {
-			@include reset;
-		}
-	}
-}
-.vk_heading_subtext {
-	margin-bottom:0;
-}
-
 //*      .flowBox
 /*-------------------------------------------*/
 .vk_flow-arrow-on:after {
@@ -637,6 +605,44 @@ $color_dark:#343a40;
 	margin-left:15px;
 	box-sizing: border-box;
 }
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+@mixin reset() {
+	background: none;
+	border:none;
+	border-radius: 0;
+	padding:0;
+	font-weight: normal;
+	box-shadow:none;
+	&:after {
+		border:none;
+	}
+}
+
+.vk_heading_title {
+	&-style {
+		&-plain {
+			@include reset;
+		}
+	}
+}
+.vk_heading_subtext {
+	margin-bottom:0;
+}
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+// $border_primary : 1px solid #e5e5e5;
+// .vk_latestPosts {
+// 	.card-deck {
+// 		display: flex;
+// 		flex-flow: unset;
+// 		flex-wrap: wrap;
+// 	}
+// }
 
 /*-------------------------------------------*/
 /* CSS
@@ -745,18 +751,6 @@ $padding-xl:3.5em;
 }
 // .editor-block-list__block-edit{
 //   margin: 0!important;
-// }
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-// $border_primary : 1px solid #e5e5e5;
-// .vk_latestPosts {
-// 	.card-deck {
-// 		display: flex;
-// 		flex-flow: unset;
-// 		flex-wrap: wrap;
-// 	}
 // }
 
 /*-------------------------------------------*/

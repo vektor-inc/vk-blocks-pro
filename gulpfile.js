@@ -45,6 +45,25 @@ gulp.task('sass_editor', function (){
 				.pipe(gulp.dest('./inc/vk-blocks/build/'));
 });
 
+// VK Block で使用しているBootstrapのみコンパイル
+// ※ Lightning 以外のテーマで利用の際に読込
+gulp.task('sass_bootstrap', function (){
+    return gulp.src([ './lib/bootstrap/scss/bootstrap.scss'])
+				.pipe(sass())
+				.pipe(cleanCss())
+				.pipe(concat('bootstrap_vk_using.css'))
+				.pipe(gulp.dest('./inc/vk-blocks/build/'));
+});
+
+// VK Block で使用しているBootstrapのみコンパイル
+// ※ Lightning 以外のテーマで利用の際に読込
+gulp.task('sass_vk_components', function (){
+    return gulp.src([ './inc/vk-components/package/_scss/*.scss'])
+				.pipe(sass())
+				.pipe(cleanCss())
+				.pipe(concat('vk-components.css'))
+				.pipe(gulp.dest('./inc/vk-blocks/build/'));
+});
 
 // Transpile and Compile Sass and Bundle it.
 gulp.task('js', function () {
@@ -61,10 +80,11 @@ gulp.task('copy_front_js', function () {
 
 // watch
 gulp.task('watch', function () {
-    gulp.watch('src/**/*.js', gulp.parallel('js','dist_ex','copy_front_js'));
+    gulp.watch('src/**/*.js', gulp.parallel('js','copy_front_js'));
     gulp.watch('editor-css/editor.scss_before', gulp.parallel('sass_editor'));
-    gulp.watch('src/**/*.scss', gulp.parallel('sass','sass_editor','dist_ex'));
-    // gulp.watch('src/**/*.scss', ['sass']);
+    gulp.watch('src/**/*.scss', gulp.parallel('sass','sass_editor'));
+    gulp.watch('lib/bootstrap/scss/*.scss', gulp.parallel('sass_bootstrap','sass_editor'));
+    gulp.watch('inc/vk-components/**/*.scss', gulp.parallel('sass_vk_components','sass_editor'));
 });
 
 // Build

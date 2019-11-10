@@ -1,22 +1,4 @@
 <?php
-
-function vkblocks_is_lightning() {
-
-	// テーマがLightning系の場合読み込まない
-	$theme_textdomain = wp_get_theme()->get( 'TextDomain' );
-	if ( $theme_textdomain == 'lightning' || $theme_textdomain == 'lightning-pro' ) {
-		return true;
-	}
-
-	$theme_template = wp_get_theme()->get( 'Template' );
-	if ( $theme_template == 'lightning' || $theme_template == 'lightning-pro' ) {
-		return true;
-	}
-
-	return false;
-
-}
-
 function vkblocks_is_load_bootstrap() {
 
 	if ( vkblocks_is_lightning() ) {
@@ -103,18 +85,3 @@ function vkblocks_add_setting_link( $links ) {
 	return $links;
 }
 add_filter( 'plugin_action_links_vk-blocks/vk-blocks.php', 'vkblocks_add_setting_link', 10, 1 );
-
-/**
- * カスタマイザー用のチェックボックス
- *
- * @param $checked
- *
- * @return bool
- */
-function vkblocks_sanitize_checkbox( $checked ) {
-	if ( isset( $checked ) && $checked ) {
-		return true;
-	} else {
-		return false;
-	}
-}

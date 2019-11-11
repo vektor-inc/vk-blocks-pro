@@ -193,15 +193,19 @@ ul,ol{
 			li:before{left: -.8em;}
 		}
 		&.fa-2x{
+			li{ line-height: 1.25em;}
 			li:before{left: -1.1em;}
 		}
 		&.fa-3x{
+			li{ line-height: 1.25em;}
 			li:before{left: -1.4em;}
 		}
 		&.fa-4x{
+			li{ line-height: 1.25em;}
 			li:before{left: -1.5em;}
 		}
 		&.fa-5x{
+			li{ line-height: 1.25em;}
 			li:before{left: -1.6em;}
 		}
 	}

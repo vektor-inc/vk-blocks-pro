@@ -53,3 +53,17 @@ function vkblocks_deactive_plugins() {
 		update_option( 'vkExUnit_common_options', $options );
 	}
 }
+
+/*-------------------------------------------*/
+/*	Load updater
+/*-------------------------------------------*/
+$updater_url = dirname(__FILE__) . '/inc/plugin-update-checker/plugin-update-checker.php';
+if(file_exists($updater_url)){
+
+	require dirname(__FILE__) . '/inc/plugin-update-checker/plugin-update-checker.php';
+	$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+		'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=vk-blocks-pro',
+		__FILE__,
+		'vk-blocks-pro'
+	);
+}

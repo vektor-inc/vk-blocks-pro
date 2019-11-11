@@ -1,5 +1,3 @@
-// import '../bundle.js';
-
 
 wp.blocks.registerBlockStyle( 'core/list', {
 	name: 'default',

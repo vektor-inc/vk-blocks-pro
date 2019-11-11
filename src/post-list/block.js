@@ -157,12 +157,16 @@ registerBlockType('vk-blocks/post-list', {
             let returnTaxonomies = [];
             isCheckedPostType.forEach(postType => {
 
-                let pt = select("core").getPostType(postType);
-                let taxonomies = pt.taxonomies;
+				let pt = select("core").getPostType(postType);
 
-                taxonomies.forEach(item => {
-                    returnTaxonomies.push(item);
-                });
+                if(pt !== undefined){
+
+					let taxonomies = pt.taxonomies;
+
+					taxonomies.forEach(item => {
+						returnTaxonomies.push(item);
+					});
+				}
             });
 
             //重複を削除

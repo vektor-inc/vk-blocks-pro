@@ -54,14 +54,14 @@ msgstr ""
 
 #: src/balloon/block.js:88
 #: src/button/block.js:174
-#: src/post-list/block.js:383
+#: src/post-list/block.js:387
 #: src/pr-content/block.js:195
 msgid "Left"
 msgstr ""
 
 #: src/balloon/block.js:89
 #: src/button/block.js:176
-#: src/post-list/block.js:391
+#: src/post-list/block.js:395
 #: src/pr-content/block.js:194
 msgid "Right"
 msgstr ""
@@ -119,7 +119,7 @@ msgid "Button Position:"
 msgstr ""
 
 #: src/button/block.js:175
-#: src/post-list/block.js:387
+#: src/post-list/block.js:391
 msgid "Center"
 msgstr ""
 
@@ -240,7 +240,7 @@ msgid "Apply"
 msgstr ""
 
 #: src/button/block.js:59
-#: src/post-list/block.js:350
+#: src/post-list/block.js:354
 msgid "Button"
 msgstr ""
 
@@ -530,107 +530,107 @@ msgstr ""
 msgid "Opacity Setting"
 msgstr ""
 
-#: src/post-list/block.js:214
+#: src/post-list/block.js:218
 msgid "Display conditions"
 msgstr ""
 
-#: src/post-list/block.js:218
+#: src/post-list/block.js:222
 msgid "Filter by PostTypes"
 msgstr ""
 
-#: src/post-list/block.js:225
+#: src/post-list/block.js:229
 msgid "Filter by Taxonomy Terms"
 msgstr ""
 
-#: src/post-list/block.js:232
+#: src/post-list/block.js:236
 msgid "Number of Posts"
 msgstr ""
 
-#: src/post-list/block.js:243
+#: src/post-list/block.js:247
 msgid "Display type and columns"
 msgstr ""
 
-#: src/post-list/block.js:247
+#: src/post-list/block.js:251
 msgid "Display type"
 msgstr ""
 
-#: src/post-list/block.js:255
+#: src/post-list/block.js:259
 msgid "Card"
 msgstr ""
 
-#: src/post-list/block.js:259
+#: src/post-list/block.js:263
 msgid "Card Horizontal"
 msgstr ""
 
-#: src/post-list/block.js:263
+#: src/post-list/block.js:267
 msgid "Media"
 msgstr ""
 
-#: src/post-list/block.js:269
+#: src/post-list/block.js:273
 msgid "Column ( Screen size : Extra small )"
 msgstr ""
 
-#: src/post-list/block.js:279
+#: src/post-list/block.js:283
 msgid "Column ( Screen size : Small )"
 msgstr ""
 
-#: src/post-list/block.js:289
+#: src/post-list/block.js:293
 msgid "Column ( Screen size : Medium )"
 msgstr ""
 
-#: src/post-list/block.js:299
+#: src/post-list/block.js:303
 msgid "Column ( Screen size : Large )"
 msgstr ""
 
-#: src/post-list/block.js:309
+#: src/post-list/block.js:313
 msgid "Column ( Screen size : Extra large )"
 msgstr ""
 
-#: src/post-list/block.js:321
+#: src/post-list/block.js:325
 msgid "Display item"
 msgstr ""
 
-#: src/post-list/block.js:325
+#: src/post-list/block.js:329
 msgid "Image"
 msgstr ""
 
-#: src/post-list/block.js:330
+#: src/post-list/block.js:334
 msgid "Term name"
 msgstr ""
 
-#: src/post-list/block.js:335
+#: src/post-list/block.js:339
 msgid "Excerpt"
 msgstr ""
 
-#: src/post-list/block.js:340
+#: src/post-list/block.js:344
 msgid "Date"
 msgstr ""
 
-#: src/post-list/block.js:345
+#: src/post-list/block.js:349
 msgid "New mark"
 msgstr ""
 
-#: src/post-list/block.js:354
+#: src/post-list/block.js:358
 msgid "New mark option"
 msgstr ""
 
-#: src/post-list/block.js:356
+#: src/post-list/block.js:360
 msgid "Number of days to display the new post mark"
 msgstr ""
 
-#: src/post-list/block.js:362
+#: src/post-list/block.js:366
 msgid "New post mark"
 msgstr ""
 
-#: src/post-list/block.js:367
+#: src/post-list/block.js:371
 msgid "Button option"
 msgstr ""
 
-#: src/post-list/block.js:369
+#: src/post-list/block.js:373
 msgid "Button text"
 msgstr ""
 
-#: src/post-list/block.js:375
+#: src/post-list/block.js:379
 msgid "Button align"
 msgstr ""
 

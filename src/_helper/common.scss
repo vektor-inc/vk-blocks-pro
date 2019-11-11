@@ -34,7 +34,7 @@ ul,ol{
 		&-frown-mark,
 		&-numbered-circle-mark,
 		&-numbered-square-mark {
-			padding: 0.5em 0.5em 0.5em 2em;
+			    padding-inline-start: 1.5em;
 				li{
 					list-style: none;
 					position: relative;
@@ -139,28 +139,33 @@ ul,ol{
 	}
 	&.is-style-numbered-circle-mark{
 		counter-reset:number; 
-		list-style-type: none; 
+		list-style-type: none;
+		li:not(:before){
+			margin-left: .5em;
+   		}
+   		li{
+			margin-left: .5em;
+   		}
 		li{
 			position: relative;
-			list-style: none;			
-			&:before {				  
+			list-style: none;
+			&:before {
 				position: absolute;
+				left: -.3em;
 				counter-increment: number;
 				content: counter(number);
-				display:inline-block;
+				margin-left: -25px;
 				background:#222;
 				color: #fff;
+				text-indent:0;
+				display:inline-block;
 				font-weight:bold;
 				font-size: 15px;
 				border-radius: 50%;
-				left: -2em;
 				width: 25px;
 				height: 25px;
 				line-height: 25px;
 				text-align: center;
-				top: 50%;
-				-webkit-transform: translateY(-50%);
-				transform: translateY(-50%);
 			}
 		}	
 	}
@@ -172,21 +177,20 @@ ul,ol{
 			list-style: none;			
 			&:before {				  
 				position: absolute;
+				left: -.3em;
 				counter-increment: number;
 				content: counter(number);
-				display:inline-block;
+				margin-left: -25px;
 				background:#222;
 				color: #fff;
+				text-indent:0;
+				display:inline-block;
 				font-weight:bold;
 				font-size: 15px;
-				left: -2em;
 				width: 25px;
 				height: 25px;
 				line-height: 25px;
 				text-align: center;
-				top: 50%;
-				-webkit-transform: translateY(-50%);
-				transform: translateY(-50%);
 			}
 		}	
 	}	

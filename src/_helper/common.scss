@@ -17,10 +17,11 @@
 }
 }
 
-@mixin mark-before {font-family: "Font Awesome 5 Free";font-weight: 900;position: absolute; }
 /*-------------------------------------------*/
 /* リストデザイン
 /*-------------------------------------------*/
+@mixin mark-before {font-family: "Font Awesome 5 Free";font-weight: 900;position: absolute; }
+
 ul,ol{
 	&.is-style{
 		&-chevron-mark,
@@ -34,7 +35,7 @@ ul,ol{
 		&-frown-mark,
 		&-numbered-circle-mark,
 		&-numbered-square-mark {
-			    padding-inline-start: 1.5em;
+			    padding-inline-start: 2em;
 				li{
 					list-style: none;
 					position: relative;
@@ -140,12 +141,6 @@ ul,ol{
 	&.is-style-numbered-circle-mark{
 		counter-reset:number; 
 		list-style-type: none;
-		li:not(:before){
-			margin-left: .5em;
-   		}
-   		li{
-			margin-left: .5em;
-   		}
 		li{
 			position: relative;
 			list-style: none;
@@ -160,11 +155,10 @@ ul,ol{
 				text-indent:0;
 				display:inline-block;
 				font-weight:bold;
-				font-size: 15px;
 				border-radius: 50%;
-				width: 25px;
-				height: 25px;
-				line-height: 25px;
+				font-size: 1em;
+			    line-height: 1em;
+			    padding: .2em .35em;
 				text-align: center;
 			}
 		}	
@@ -186,12 +180,30 @@ ul,ol{
 				text-indent:0;
 				display:inline-block;
 				font-weight:bold;
-				font-size: 15px;
-				width: 25px;
-				height: 25px;
-				line-height: 25px;
+				font-size: 1em;
+			    line-height: 1em;
+			    padding: .2em .35em;
 				text-align: center;
 			}
 		}	
-	}	
+	}
+	&.is-style-numbered-circle-mark,
+	&.is-style-numbered-square-mark{
+		&.fa-lg{
+			li:before{left: -.8em;}
+		}
+		&.fa-2x{
+			li:before{left: -1.1em;}
+		}
+		&.fa-3x{
+			li:before{left: -1.4em;}
+		}
+		&.fa-4x{
+			li:before{left: -1.5em;}
+		}
+		&.fa-5x{
+			li:before{left: -1.6em;}
+		}
+	}
+
 }//ul,ol

@@ -53,3 +53,13 @@ function vkblocks_deactive_plugins() {
 		update_option( 'vkExUnit_common_options', $options );
 	}
 }
+
+/*-------------------------------------------*/
+/*	Load updater
+/*-------------------------------------------*/
+
+//var_dump(dirname(__FILE__).'/inc/plugin-update-checker/plugin-update-checker-config.php');
+
+if(file_exists(dirname(__FILE__).'/inc/plugin-update-checker/plugin-update-checker-config.php')){
+	require dirname(__FILE__).'/inc/plugin-update-checker/plugin-update-checker-config.php';
+}

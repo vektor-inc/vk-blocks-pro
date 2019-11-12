@@ -120,7 +120,7 @@ function vkblocks_blocks_assets() {
 								),
 								'display_btn'       => array(
 									'type'    => 'boolean',
-									'default' => true,
+									'default' => false,
 								),
 								'new_date'          => array(
 									'type'    => 'number',

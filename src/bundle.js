@@ -1,9 +1,7 @@
 //Bundle JS
-// import './step-item-numbering/block.js';
-// import './step-item/block.js';
-// import './step/block.js';
+import './step-item/block.js';
+import './step/block.js';
 import './highlighter/block.js';
-
 import './table-of-contents/block.js';
 // import './simple-table/block.js';
 // import './th/block.js';

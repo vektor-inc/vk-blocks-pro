@@ -126,20 +126,35 @@ registerBlockType('vk-blocks/post-list', {
             setAttributes: setAttributes
         };
 
-        subscribe(() => {
+		let blockAttributes = select("core/editor").getBlockAttributes(clientId);
+		let oldIsCheckedPostType;
+		let oldTaxList;
+		let oldTermsList;
+		let oldCoreTerms;
 
-            let blockAttributes = select("core/editor").getBlockAttributes(clientId);
-            if (blockAttributes) {
-                let newIsCheckedPostType = blockAttributes.isCheckedPostType;
+		subscribe(() => {
 
-                if (newIsCheckedPostType) {
-                    let taxList = getTaxonomyFromPostType(newIsCheckedPostType);
-                    let termsList = getTermsFromTaxonomy(taxList);
+			if (blockAttributes.isCheckedPostType !== oldIsCheckedPostType) {
 
-                    setAttributes({coreTerms: JSON.stringify(termsList)});
-                }
+				oldIsCheckedPostType = blockAttributes.isCheckedPostType;
+				let taxList = getTaxonomyFromPostType(blockAttributes.isCheckedPostType);
+
+				if (taxList !== oldTaxList) {
+					oldTaxList = taxList;
+
+					let termsList = getTermsFromTaxonomy(taxList);
+					if(termsList !== oldTermsList){
+						oldTermsList = termsList;
+						let coreTerms = JSON.stringify(termsList);
+
+						if(coreTerms!== oldCoreTerms ){
+							oldCoreTerms = coreTerms;
+							setAttributes({coreTerms: coreTerms});
+						}
+					}
+				}
             }
-        });
+		});
 
         /**
          * Get Taxonomies of checked postType. Return array of taxonomies.
@@ -244,9 +259,9 @@ registerBlockType('vk-blocks/post-list', {
 									</BaseControl>
 								</PanelBody>
                     <PanelBody
-										title={__('Display type and columns', 'vk-blocks')}
-										initialOpen={false}
-										>
+						title={__('Display type and columns', 'vk-blocks')}
+						initialOpen={false}
+					>
                         <BaseControl
                             label={__('Display type', 'vk-blocks')}
                         >

@@ -7,6 +7,7 @@ const {registerFormatType,toggleFormat} = wp.richText;
 const {RichTextToolbarButton, RichTextShortcut, InspectorControls, PanelColorSettings, getColorObjectByColorValue} = wp.blockEditor;
 const {compose,ifCondition} = wp.compose;
 const {withSelect} = wp.data;
+const {__} = wp.i18n; // Import __() from wp.i18n
 
 const MyCustomButton = props => {
     return <RichTextToolbarButton
@@ -28,7 +29,6 @@ const ConditionalButton = compose(
         }
     } ),
     ifCondition( function( props ) {
-        console.log(props.selectedBlock);
         return (
             props.selectedBlock &&
             props.selectedBlock.name === 'core/list'
@@ -44,3 +44,79 @@ registerFormatType(
         edit: ConditionalButton,
     }
 );
+
+// function addBackgroundColorStyle( props ) {
+//
+//     console.log(props);
+//     return lodash.assign( props, { style: { backgroundColor: 'red' } } );
+// }
+//
+// wp.hooks.addFilter(
+//     'blocks.getSaveContent.extraProps',
+//     'vk-blocks/test',
+//     addBackgroundColorStyle
+// );
+
+const { createHigherOrderComponent } = wp.compose;
+const { Fragment } = wp.element;
+const { PanelBody } = wp.components;
+
+// const withInspectorControls =  createHigherOrderComponent( ( BlockEdit ) => {
+//
+//     console.log(BlockEdit);
+//
+//     return ( props ) => {
+//         console.log(props);
+//         return (
+//             <Fragment>
+//                 <BlockEdit { ...props } />
+//                 <InspectorControls>
+//                     <PanelBody>
+//                         My custom control
+//                     </PanelBody>
+//                 </InspectorControls>
+//             </Fragment>
+//         );
+//     };
+// }, "withInspectorControl" );
+//
+// wp.hooks.addFilter( 'editor.BlockEdit', 'my-plugin/with-inspector-controls', withInspectorControls );
+
+wp.hooks.addFilter(
+    "blocks.registerBlockType",
+    "jsforwp-advgb/extending-register-block-type",
+    extendWithRegisterBlockType
+);
+
+function extendWithRegisterBlockType(settings, name) {
+
+    if ("core/list" === name) {
+        console.log(settings);
+    }
+
+    // Check for block type
+    if ("core/code" === name) {
+
+        // Change the block title
+        settings.title = __("Code Snippet", "jsforwpadvblocks");
+
+        // Change the block description
+        settings.description = __(
+            "Use for maximum codiness 💃",
+            "jsforwpadvblocks"
+        );
+
+        // Change block icon
+        settings.icon = "admin-tools";
+
+        // Change supports
+        settings.supports = lodash.merge( {}, settings.supports, {
+            html: true,
+            anchor: true
+        });
+
+    }
+
+    return settings;
+
+}

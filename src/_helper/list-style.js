@@ -1,4 +1,3 @@
-
 wp.blocks.registerBlockStyle( 'core/list', {
 	name: 'default',
 	label: 'デフォルト',

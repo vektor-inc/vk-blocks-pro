@@ -4,6 +4,7 @@
 }
 
 .editor-block-list-item-vk-blocks-outer:after,
+.editor-block-list-item-vk-blocks-post-list:after,
 .editor-block-list-item-vk-blocks-table-of-contents:after,
 .editor-block-list-item-vk-blocks-simple-table:after {
   position: absolute;
@@ -53,6 +54,10 @@ input[type=range] {
 .edit-post-visual-editor.editor-styles-wrapper {
   /* これがないとGutenberg標準のエディタCSSに負ける */
   /* メインのカラム幅 */
+  /* カラム（水平）で点線と余白ができる */
+  /*-------------------------------------------*/
+  /* リストデザイン
+  /*-------------------------------------------*/
   /*	type
   /*-------------------------------------------*/
   /*	position
@@ -72,6 +77,9 @@ input[type=range] {
   /* .btn がないと標準のBS4の指定に負ける */
   /*      .qaItem
   /*-------------------------------------------*/
+  /*-------------------------------------------*/
+  /*-------------------------------------------*/
+  /* CSS
   /*-------------------------------------------*/
   /*-------------------------------------------*/
   /* CSS
@@ -109,6 +117,12 @@ input[type=range] {
   /*-------------------------------------------*/
   /* CSS
   /*-------------------------------------------*/
+  /*-------------------------------------------*/
+  /* CSS
+  /*-------------------------------------------*/
+  /*-------------------------------------------*/
+  /* CSS
+  /*-------------------------------------------*/
   /*# sourceMappingURL=style.scss.map */
   /*-------------------------------------------*/
   /* CSS
@@ -125,6 +139,10 @@ input[type=range] {
 .edit-post-visual-editor.editor-styles-wrapper .editor-block-list__layout > .wp-block .wp-block {
   max-width: 100%;
 }
+.edit-post-visual-editor.editor-styles-wrapper .vk_post .row {
+  margin: 0;
+  border: none;
+}
 @media (min-width: 600px) {
   .edit-post-visual-editor.editor-styles-wrapper .wp-block-columns {
     margin-left: -15px;
@@ -140,6 +158,159 @@ input[type=range] {
     margin-left: 15px;
     margin-right: 15px;
   }
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-chevron-mark, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-triangle-mark, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-check-mark, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-check-circle-mark, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-check-square-mark, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-handpoint-mark, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-pencil-mark, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-smile-mark, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-frown-mark, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-chevron-mark, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-triangle-mark, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-check-mark, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-check-circle-mark, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-check-square-mark, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-handpoint-mark, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-pencil-mark, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-smile-mark, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-frown-mark, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark {
+  padding-inline-start: 2em;
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-chevron-mark li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-triangle-mark li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-check-mark li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-check-circle-mark li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-check-square-mark li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-handpoint-mark li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-pencil-mark li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-smile-mark li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-frown-mark li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-chevron-mark li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-triangle-mark li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-check-mark li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-check-circle-mark li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-check-square-mark li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-handpoint-mark li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-pencil-mark li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-smile-mark li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-frown-mark li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark li {
+  list-style: none;
+  position: relative;
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-chevron-mark li:before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-chevron-mark li:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  content: "";
+  left: -1.5em;
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-triangle-mark li:before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-triangle-mark li:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  content: "";
+  left: -1.3em;
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-check-mark li:before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-check-mark li:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  content: "";
+  left: -1.5em;
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-check-circle-mark li:before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-check-circle-mark li:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  content: "";
+  left: -1.5em;
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-check-square-mark li:before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-check-square-mark li:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  content: "";
+  left: -1.5em;
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-handpoint-mark li:before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-handpoint-mark li:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  content: "";
+  left: -1.5em;
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-handpoint-mark li:before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-handpoint-mark li:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  content: "";
+  left: -1.5em;
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-pencil-mark li:before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-pencil-mark li:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  content: "";
+  left: -1.5em;
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-smile-mark li:before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-smile-mark li:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  content: "";
+  left: -1.5em;
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-frown-mark li:before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-frown-mark li:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  content: "";
+  left: -1.5em;
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark {
+  counter-reset: number;
+  list-style-type: none;
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark li {
+  position: relative;
+  list-style: none;
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark li:before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark li:before {
+  position: absolute;
+  left: -0.3em;
+  counter-increment: number;
+  content: counter(number);
+  margin-left: -25px;
+  background: #222;
+  color: #fff;
+  text-indent: 0;
+  display: inline-block;
+  font-weight: bold;
+  border-radius: 50%;
+  font-size: 1em;
+  line-height: 1em;
+  padding: 0.2em 0.35em;
+  text-align: center;
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark {
+  counter-reset: number;
+  list-style-type: none;
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark li {
+  position: relative;
+  list-style: none;
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark li:before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark li:before {
+  position: absolute;
+  left: -0.3em;
+  counter-increment: number;
+  content: counter(number);
+  margin-left: -25px;
+  background: #222;
+  color: #fff;
+  text-indent: 0;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1em;
+  line-height: 1em;
+  padding: 0.2em 0.35em;
+  text-align: center;
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.fa-lg li:before, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.fa-lg li:before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.fa-lg li:before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.fa-lg li:before {
+  left: -0.8em;
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.fa-2x li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.fa-2x li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.fa-2x li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.fa-2x li {
+  line-height: 1.25em;
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.fa-2x li:before, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.fa-2x li:before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.fa-2x li:before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.fa-2x li:before {
+  left: -1.1em;
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.fa-3x li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.fa-3x li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.fa-3x li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.fa-3x li {
+  line-height: 1.25em;
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.fa-3x li:before, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.fa-3x li:before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.fa-3x li:before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.fa-3x li:before {
+  left: -1.4em;
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.fa-4x li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.fa-4x li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.fa-4x li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.fa-4x li {
+  line-height: 1.25em;
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.fa-4x li:before, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.fa-4x li:before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.fa-4x li:before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.fa-4x li:before {
+  left: -1.5em;
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.fa-5x li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.fa-5x li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.fa-5x li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.fa-5x li {
+  line-height: 1.25em;
+}
+.edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.fa-5x li:before, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.fa-5x li:before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.fa-5x li:before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.fa-5x li:before {
+  left: -1.6em;
 }
 .edit-post-visual-editor.editor-styles-wrapper .alert {
   padding: 1em;
@@ -759,6 +930,7 @@ input[type=range] {
   color: #fff;
 }
 .edit-post-visual-editor.editor-styles-wrapper .vk_prBlocks_item_title {
+  background-color: transparent;
   margin-top: 0.9em;
   margin-bottom: 0.6em;
   text-align: center;
@@ -766,6 +938,9 @@ input[type=range] {
   line-height: 1.4em;
   border: none;
   padding: 0;
+}
+.edit-post-visual-editor.editor-styles-wrapper .vk_prBlocks_item_title::before {
+  content: none;
 }
 .edit-post-visual-editor.editor-styles-wrapper .vk_prBlocks_item_title::after {
   border: none;
@@ -1072,18 +1247,13 @@ input[type=range] {
     width: 20%;
   }
 }
-.edit-post-visual-editor.editor-styles-wrapper .vk_step .editor-inner-blocks {
-  border: 1px solid black;
+.edit-post-visual-editor.editor-styles-wrapper .vk_step {
+  display: flex;
+  align-items: start;
 }
-.edit-post-visual-editor.editor-styles-wrapper .vk_step .block-editor-block-list__insertion-point-inserter {
-  opacity: 1;
-  margin-top: 150px;
-}
-.edit-post-visual-editor.editor-styles-wrapper .vk_step .block-editor-block-list__insertion-point-inserter .block-editor-inserter {
-  border: 1px solid black;
-  width: 100%;
-  text-align: center;
-  line-height: 9;
+.edit-post-visual-editor.editor-styles-wrapper .vk_step i.vk_step_icon {
+  display: flex;
+  align-items: center;
 }
 .edit-post-visual-editor.editor-styles-wrapper .vk_tableOfContents {
   margin-top: 3.5em;

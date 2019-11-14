@@ -29,6 +29,7 @@ const ConditionalButton = compose(
         }
     } ),
     ifCondition( function( props ) {
+        console.log("hello");
         return (
             props.selectedBlock &&
             props.selectedBlock.name === 'core/list'
@@ -41,6 +42,9 @@ registerFormatType(
         title: 'list Style',
         tagName: 'style',
         className: null,
+        attributes: {
+            color: 'color',
+        },
         edit: ConditionalButton,
     }
 );
@@ -89,34 +93,27 @@ wp.hooks.addFilter(
 );
 
 function extendWithRegisterBlockType(settings, name) {
-
-    if ("core/list" === name) {
-        console.log(settings);
-    }
-
     // Check for block type
-    if ("core/code" === name) {
-
-        // Change the block title
-        settings.title = __("Code Snippet", "jsforwpadvblocks");
-
-        // Change the block description
-        settings.description = __(
-            "Use for maximum codiness 💃",
-            "jsforwpadvblocks"
-        );
-
-        // Change block icon
-        settings.icon = "admin-tools";
-
+    if ("core/list" === name) {
         // Change supports
         settings.supports = lodash.merge( {}, settings.supports, {
-            html: true,
-            anchor: true
+            className: true,
         });
-
     }
-
     return settings;
-
 }
+
+// Our filter function
+function setBlockCustomClassName( className, blockName ) {
+
+    return blockName === 'core/list' ?
+        'has-pale-pink-color' :
+        className;
+}
+
+// Adding the filter
+wp.hooks.addFilter(
+    'blocks.getBlockDefaultClassName',
+    'my-plugin/set-block-custom-class-name',
+    setBlockCustomClassName
+);

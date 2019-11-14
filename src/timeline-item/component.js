@@ -42,8 +42,8 @@ export class Component extends React.Component {
 
         return (
             <div className={className + containerClass + styleLineClass}>
-                {label}
-                {elm}
+                <div className={"vk_timeline-item_caption"}>{label}</div>
+                <div className={"vk_timeline-item_contentnpm"}>{elm}</div>
                 <div
                     className={'vk_timeline-item_style' + styleClass}
                     style={inlineStyle}

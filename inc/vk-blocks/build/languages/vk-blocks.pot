@@ -800,11 +800,11 @@ msgstr ""
 msgid "If FontAwesome class entered, it will overrides the number."
 msgstr ""
 
-#: src/step/block.js:43
+#: src/step/block.js:42
 msgid "Step"
 msgstr ""
 
-#: src/step/block.js:67
+#: src/step/block.js:66
 msgid "First Dot Number"
 msgstr ""
 

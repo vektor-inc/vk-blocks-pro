@@ -1,20 +1,27 @@
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-.vk_timeline-item {
-  position: relative;
-  padding: 0 0 1.5em 1.8em;
-  margin: 32px 0;
+.vk_timeline{
+    margin: 1em 0 2em;
+  .vk_timeline-item {
+    position: relative;
+    padding: 0 0 1em 1.8em;
 
-  .vk_timeline-item_style {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 6px;
-    left: 0;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
+    .vk_timeline-item_caption{
+      margin-bottom: 0.5em;
+      color: #666;
+    }
+
+    .vk_timeline-item_style {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 4px;
+      left: 0;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+    }
   }
 }
 
@@ -22,11 +29,11 @@
   &::before {
     content: "";
     width: 3px;
-    background: #ccd5db;
+    background: #ddd;
     display: block;
     position: absolute;
-    top: 24px;
+    top: 22px;
     left: 6px;
-    bottom: -30px;
+    bottom: 0;
   }
 }

@@ -61,9 +61,9 @@ gulp.task('copy_front_js', function () {
 
 // watch
 gulp.task('watch', function () {
-	gulp.watch('src/**/*.js', ['js','dist_ex','copy_front_js']);
-	gulp.watch('editor-css/editor.scss_before', ['sass_editor']);
-	gulp.watch('src/**/*.scss', ['sass','sass_editor','dist_ex']);
+	gulp.watch('src/**/*.js', gulp.series('js','dist_ex','copy_front_js'));
+	gulp.watch('editor-css/editor.scss_before', gulp.series('sass_editor'));
+	gulp.watch('src/**/*.scss', gulp.series('sass','sass_editor','dist_ex'));
 	// gulp.watch('src/**/*.scss', ['sass']);
 });
 

@@ -3,6 +3,21 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
+#: src/_helper/font-awesome.js:21
+msgid "FontAwesome"
+msgstr ""
+
+#: src/_helper/font-awesome.js:23
+msgid "Enter Font Awesome Class. Ex) fas fa-arrow-circle-right "
+msgstr ""
+
+#: src/_helper/font-awesome.js:25
+#: src/button/block.js:217
+#: src/pr-blocks/block.js:307
+#: src/pr-content/block.js:171
+msgid "Font Awesome icon list"
+msgstr ""
+
 #: src/alert/block.js:13
 msgid "Alert"
 msgstr ""
@@ -202,12 +217,6 @@ msgstr ""
 msgid "Font Awesome:"
 msgstr ""
 
-#: src/button/block.js:217
-#: src/pr-blocks/block.js:307
-#: src/pr-content/block.js:171
-msgid "Font Awesome icon list"
-msgstr ""
-
 #: src/button/block.js:220
 #: src/pr-content/block.js:174
 msgid "Before text"
@@ -286,7 +295,9 @@ msgstr ""
 
 #: src/heading/block.js:125
 #: src/staff/block.js:105
+#: src/step-item/block.js:147
 #: src/table-of-contents/block.js:106
+#: src/timeline-item/block.js:99
 msgid "Default"
 msgstr ""
 
@@ -342,8 +353,8 @@ msgstr ""
 msgid "Input title…"
 msgstr ""
 
-# %s: heading level e.g: "1", "2", "3"
 #: src/heading/heading-toolbar.js:17
+#. %s: heading level e.g: "1", "2", "3"
 msgid "Heading %d"
 msgstr ""
 
@@ -456,11 +467,15 @@ msgstr ""
 
 #: src/outer/block.js:254
 #: src/staff/block.js:109
+#: src/step-item/block.js:151
+#: src/timeline-item/block.js:103
 msgid "None"
 msgstr ""
 
 #: src/outer/block.js:258
 #: src/pr-content/block.js:142
+#: src/step-item/block.js:128
+#: src/timeline-item/block.js:84
 msgid "Solid"
 msgstr ""
 
@@ -701,6 +716,8 @@ msgid "Set the alt text for profile image"
 msgstr ""
 
 #: src/staff/block.js:124
+#: src/step-item/block.js:111
+#: src/timeline-item/block.js:63
 msgid "Color"
 msgstr ""
 
@@ -751,6 +768,46 @@ msgstr ""
 msgid "Caption"
 msgstr ""
 
+#: src/step-item/block.js:106
+#: src/timeline-item/block.js:60
+msgid "Ex,6:00AM"
+msgstr ""
+
+#: src/step-item/block.js:117
+#: src/table-of-contents/block.js:97
+#: src/timeline-item/block.js:69
+msgid "Style"
+msgstr ""
+
+#: src/step-item/block.js:132
+#: src/timeline-item/block.js:80
+msgid "Outlined"
+msgstr ""
+
+#: src/step-item/block.js:33
+msgid "Step Item"
+msgstr ""
+
+#: src/step-item/block.js:77
+msgid "Label"
+msgstr ""
+
+#: src/step-item/block.js:89
+msgid "Dot"
+msgstr ""
+
+#: src/step-item/block.js:92
+msgid "If FontAwesome class entered, it will overrides the number."
+msgstr ""
+
+#: src/step/block.js:43
+msgid "Step"
+msgstr ""
+
+#: src/step/block.js:67
+msgid "First Dot Number"
+msgstr ""
+
 #: src/table-of-contents/TableOfContents.js:84
 #: src/table-of-contents/block.js:55
 msgid "Table of Contents"
@@ -760,6 +817,14 @@ msgstr ""
 msgid "No frame"
 msgstr ""
 
-#: src/table-of-contents/block.js:97
-msgid "Style"
+#: src/timeline-item/block.js:31
+msgid "Timeline Item"
+msgstr ""
+
+#: src/timeline-item/block.js:56
+msgid "label"
+msgstr ""
+
+#: src/timeline/block.js:56
+msgid "timeline"
 msgstr ""

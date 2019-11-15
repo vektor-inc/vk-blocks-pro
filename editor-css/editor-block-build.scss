@@ -560,6 +560,23 @@ $color_dark:#343a40;
 	color:#fff;
 }
 
+/*      .qaItem
+/*-------------------------------------------*/
+.vk_faq { display:block; overflow:hidden;border-bottom:1px dotted #ccc; padding:0px 0px 25px; margin:25px 0px; width:100%; position: relative; }
+.vk_faq_title,
+.vk_faq_content {
+	border:none;padding-left: 35px;
+	&:before {
+		position: absolute;left:0;font-size:24px;line-height: 105%;
+	}
+}
+.vk_faq_title { margin-bottom:15px;font-size:18px;font-weight:700;
+  &:before { font-family:"areal";content:"Q ";color:#e50000; }
+}
+.vk_faq_content { margin:0px;
+  &:before { content:"A ";color:#337ab7;font-family: "" }
+}
+
 //*      .flowBox
 /*-------------------------------------------*/
 .vk_flow-arrow-on:after {
@@ -589,23 +606,6 @@ $color_dark:#343a40;
 	max-width:150px;
 	margin-left:15px;
 	box-sizing: border-box;
-}
-
-/*      .qaItem
-/*-------------------------------------------*/
-.vk_faq { display:block; overflow:hidden;border-bottom:1px dotted #ccc; padding:0px 0px 25px; margin:25px 0px; width:100%; position: relative; }
-.vk_faq_title,
-.vk_faq_content {
-	border:none;padding-left: 35px;
-	&:before {
-		position: absolute;left:0;font-size:24px;line-height: 105%;
-	}
-}
-.vk_faq_title { margin-bottom:15px;font-size:18px;font-weight:700;
-  &:before { font-family:"areal";content:"Q ";color:#e50000; }
-}
-.vk_faq_content { margin:0px;
-  &:before { content:"A ";color:#337ab7;font-family: "" }
 }
 
 /*-------------------------------------------*/
@@ -1188,6 +1188,51 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+.vk_step{
+  margin: 2em 0;
+
+  .vk_step-item {
+    position: relative;
+    padding: 0 0 1em 4em;
+
+    .vk_step-item_caption{
+      margin-bottom: 0.5em;
+      color: #666;
+    }
+    .vk_step-item_dot {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      color: #ffffff;
+      padding: 9px 0;
+      text-align: center;
+    }
+    .vk_step-item_dot_caption{
+      font-size: 0.1rem;
+    }
+  }
+}
+.vk_step-item_line_style-default {
+  &::before {
+    content: "";
+    width: 3px;
+    background: #ddd;
+    display: block;
+    position: absolute;
+    top: 54px;
+    left: 23px;
+    bottom: 4px;
+  }
+}
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 $toc-left-margin: 1rem;
 
 .vk_tableOfContents {
@@ -1276,54 +1321,6 @@ $toc-left-margin: 1rem;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-.vk_step{
-  margin: 1em 0 2em;
-
-  .vk_step-item {
-    position: relative;
-    padding: 0 0 1em 4em;
-
-    .vk_step-item_caption{
-      margin-bottom: 0.5em;
-      color: #666;
-    }
-    .vk_step-item_dot {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      color: #ffffff;
-      padding: 9px 0;
-      text-align: center;
-    }
-    .vk_step-item_dot_caption{
-      font-size: 0.1rem;
-    }
-  }
-}
-.vk_step-item_line_style-default {
-  &::before {
-    content: "";
-    width: 3px;
-    background: #ddd;
-    display: block;
-    position: absolute;
-    top: 54px;
-    left: 23px;
-    bottom: 4px;
-  }
-}
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
 .vk_table-col-overflow {
   white-space: nowrap !important;
 }
@@ -1332,8 +1329,11 @@ $toc-left-margin: 1rem;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 .vk_timeline{
-    margin: 1em 0 2em;
+    margin: 2em 0;
   .vk_timeline-item {
     position: relative;
     padding: 0 0 1em 1.8em;

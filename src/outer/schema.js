@@ -1,7 +1,11 @@
 export const schema = {
 	bgColor: {
 		type: 'string',
-	default: '#f3f4f5',
+		default: '#f3f4f5',
+	},
+	defaultBgColor: {
+		type: 'string',
+		default: '#f3f4f5',
 	},
 	bgImage: {
 		type: 'string',

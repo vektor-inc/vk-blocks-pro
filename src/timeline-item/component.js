@@ -17,7 +17,7 @@ export class Component extends React.Component {
         let styleLineClass;
         let inlineStyle;
         let marker;
-        const TEMPLATE = [['core/heading']];
+        const TEMPLATE = [['core/heading', {level: 4}]];
 
         //編集画面とサイト上の切り替え
         if (for_ === "edit") {

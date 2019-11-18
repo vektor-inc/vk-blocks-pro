@@ -72,17 +72,22 @@ registerBlockType('vk-blocks/table-of-contents', {
         subscribe(() => {
             const selectedBlock = select("core/block-editor").getSelectedBlock();
 
-            if(selectedBlock === null){
-                return;
-            }
+            if(selectedBlock){
+                newSelectedId = selectedBlock.clientId;
 
-            newSelectedId = selectedBlock.clientId;
-            if (newSelectedId !== oldSelectedId) {
-                oldSelectedId = newSelectedId;
+                if (newSelectedId !== oldSelectedId) {
+                    oldSelectedId = newSelectedId;
 
-                let regex = /heading/g;
-                if (selectedBlock.name.match(regex)) {
-                    render();
+                    if(selectedBlock.name === 'vk-blocks/table-of-contents'){
+                        let html = toc.returnHtml('', style, className);
+                        setAttributes({renderHtml: html});
+                        return;
+                    }
+
+                    let regex = /heading/g;
+                    if (selectedBlock.name.match(regex)) {
+                        render();
+                    }
                 }
             }
         });

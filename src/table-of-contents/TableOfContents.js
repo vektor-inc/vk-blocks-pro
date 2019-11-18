@@ -79,72 +79,80 @@ class TableOfContents {
           }
         };
 
+        let returnHtmlContent;
+        if(source) {
+            returnHtmlContent =
+                <ul className={'vk_tableOfContents_list'}>
+                    {
+                        source.map((data) => {
+
+                            let baseClass = 'vk_tableOfContents_list_item';
+
+                            let level = Number(data.tagName.replace(/H/g, ''));
+
+                            let preNumber = '';
+
+                            if (level === 2) {
+                                h2Count++;
+                                preNumber = h2Count;
+
+                                // Reset
+                                h3Count = 0;
+                                h4Count = 0;
+                                h5Count = 0;
+                                h6Count = 0;
+                            }
+
+                            if (level === 3) {
+                                h3Count++;
+                                preNumber = h2Count + countSeparater + h3Count;
+
+                                // Reset
+                                h4Count = 0;
+                                h5Count = 0;
+                                h6Count = 0;
+                            }
+
+                            if (level === 4) {
+                                h4Count++;
+                                preNumber = h2Count + countSeparater + fixZero(h3Count) + countSeparater + h4Count;
+
+                                // Reset
+                                h5Count = 0;
+                                h6Count = 0;
+                            }
+
+                            if (level === 5) {
+                                h5Count++;
+                                preNumber = h2Count + countSeparater + fixZero(h3Count) + countSeparater + fixZero(h4Count) + countSeparater + h5Count;
+
+                                // Reset
+                                h6Count = 0;
+                            }
+
+                            if (level === 6) {
+                                h6Count++;
+                                preNumber = h2Count + countSeparater + fixZero(h3Count) + countSeparater + fixZero(h4Count) + countSeparater + fixZero(h5Count) + countSeparater + h6Count;
+
+                            }
+
+                            preNumber = preNumber + '. ';
+
+                            return <li className={`${baseClass} ${baseClass}-h-${level}`}>
+                                <a href="" className={`${baseClass}_link`}>
+                                    <span className={`${baseClass}_link_preNumber`}>{preNumber}</span>
+                                    {data.innerText}
+                                </a>
+                            </li>;
+                        })}
+                </ul>;
+        }else {
+            returnHtmlContent = '';
+        }
 
         let returnHtml = <div className={className}>
             <div className={'vk_tableOfContents_title'}>{__('Table of Contents', 'vk-blocks')}</div>
-            <ul className={'vk_tableOfContents_list'}>
-                {source.map((data) => {
-
-                    let baseClass = 'vk_tableOfContents_list_item';
-
-                    let level = Number(data.tagName.replace( /H/g , '' ));
-
-                    let preNumber = '';
-
-                    if ( level === 2 ){
-                      h2Count++;
-                      preNumber = h2Count;
-
-                      // Reset
-                      h3Count = 0;
-                      h4Count = 0;
-                      h5Count = 0;
-                      h6Count = 0;
-                    }
-
-                    if ( level === 3 ){
-                      h3Count++;
-                      preNumber = h2Count + countSeparater + h3Count;
-
-                      // Reset
-                      h4Count = 0;
-                      h5Count = 0;
-                      h6Count = 0;
-                    }
-
-                    if ( level === 4 ){
-                      h4Count++;
-                      preNumber = h2Count + countSeparater + fixZero(h3Count) + countSeparater + h4Count;
-
-                      // Reset
-                      h5Count = 0;
-                      h6Count = 0;
-                    }
-
-                    if ( level === 5 ){
-                      h5Count++;
-                      preNumber = h2Count + countSeparater + fixZero(h3Count) + countSeparater + fixZero(h4Count) + countSeparater + h5Count;
-
-                      // Reset
-                      h6Count = 0;
-                    }
-
-                    if ( level === 6 ){
-                      h6Count++;
-                      preNumber = h2Count + countSeparater + fixZero(h3Count) + countSeparater + fixZero(h4Count) + countSeparater + fixZero(h5Count) + countSeparater + h6Count;
-
-                    }
-
-                    preNumber = preNumber + '. ';
-
-                    return <li className={`${baseClass} ${baseClass}-h-${level}`}>
-                            <a href="" className={`${baseClass}_link`}>
-                                <span className={`${baseClass}_link_preNumber`}>{preNumber}</span>
-																{data.innerText}
-                            </a>
-                        </li>;
-                })}
-            </ul>
+            {returnHtmlContent}
         </div>;
 
         return ReactDOMServer.renderToString(returnHtml);

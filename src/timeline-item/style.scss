@@ -3,16 +3,16 @@
 /*-------------------------------------------*/
 .vk_timeline{
     margin: 2em 0;
-  .vk_timeline-item {
+  .vk_timeline_item {
     position: relative;
     padding: 0 0 1em 1.8em;
 
-    .vk_timeline-item_caption{
+    .vk_timeline_item_caption{
       margin-bottom: 0.5em;
       color: #666;
     }
 
-    .vk_timeline-item_style {
+    .vk_timeline_item_style {
       content: "";
       display: block;
       position: absolute;
@@ -25,7 +25,7 @@
   }
 }
 
-.vk_timeline-item_line_style-default {
+.vk_timeline_item_lineStyle-default {
   &::before {
     content: "";
     width: 3px;

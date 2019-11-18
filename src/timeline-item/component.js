@@ -11,7 +11,7 @@ export class Component extends React.Component {
         } = this.props.attributes;
         let for_ = this.props.for_;
         let className = this.props.className;
-        let containerClass = " vk_timeline-item";
+        let containerClass = " vk_timeline_item";
         let elm;
         let styleClass;
         let styleLineClass;
@@ -27,25 +27,25 @@ export class Component extends React.Component {
         }
 
         if (style === "solid") {
-            styleClass = ' vk_timeline-item_style-default';
+            styleClass = ' vk_timeline_item_style-default';
             inlineStyle = {backgroundColor:`${color}`};
         }else if(style === "outlined"){
-            styleClass = ' vk_timeline-item_style-outlined'
+            styleClass = ' vk_timeline_item_style-outlined'
             inlineStyle = {border:`3px solid ${color}`};
         }
 
         if (styleLine === "default") {
-            styleLineClass = ' vk_timeline-item_line_style-default';
+            styleLineClass = ' vk_timeline_item_lineStyle-default';
         }else if(styleLine === "none"){
-            styleLineClass = ' vk_timeline-item_line_style-none'
+            styleLineClass = ' vk_timeline_item_lineStyle-none'
         }
 
         return (
             <div className={className + containerClass + styleLineClass}>
-                <div className={"vk_timeline-item_caption"}>{label}</div>
-                <div className={"vk_timeline-item_contentnpm"}>{elm}</div>
+                <div className={"vk_timeline_item_caption"}>{label}</div>
+                <div className={"vk_timeline_item_contentnpm"}>{elm}</div>
                 <div
-                    className={'vk_timeline-item_style' + styleClass}
+                    className={'vk_timeline_item_style' + styleClass}
                     style={inlineStyle}
                 />
             </div>

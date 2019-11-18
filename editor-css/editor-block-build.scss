@@ -2,6 +2,8 @@
 .vk_block_icon_pro {
 fill:#c00;
 }
+.editor-block-list-item-vk-blocks-timeline:after,
+.editor-block-list-item-vk-blocks-step:after,
 .editor-block-list-item-vk-blocks-outer:after,
 .editor-block-list-item-vk-blocks-post-list:after,
 .editor-block-list-item-vk-blocks-table-of-contents:after,
@@ -1181,6 +1183,55 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+.vk_step{
+  margin: 2em 0;
+
+  .vk_step_item {
+    position: relative;
+    padding: 0 0 1em 4em;
+
+    .vk_step_item_caption{
+      margin-bottom: 0.5em;
+      color: #666;
+    }
+    .vk_step_item_dot {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      color: #ffffff;
+      padding: 9px 0;
+      text-align: center;
+    }
+    .vk_step_item_dot_caption{
+      font-size: 0.1rem;
+    }
+  }
+}
+.vk_step_item_lineStyle-default {
+  &::before {
+    content: "";
+    width: 3px;
+    background: #ddd;
+    display: block;
+    position: absolute;
+    top: 54px;
+    left: 23px;
+    bottom: 4px;
+  }
+}
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 $toc-left-margin: 1rem;
 
 .vk_tableOfContents {
@@ -1273,6 +1324,49 @@ $toc-left-margin: 1rem;
   white-space: nowrap !important;
 }
 /*# sourceMappingURL=style.scss.map */
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+.vk_timeline{
+    margin: 2em 0;
+  .vk_timeline_item {
+    position: relative;
+    padding: 0 0 1em 1.8em;
+
+    .vk_timeline_item_caption{
+      margin-bottom: 0.5em;
+      color: #666;
+    }
+
+    .vk_timeline_item_style {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 4px;
+      left: 0;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+    }
+  }
+}
+
+.vk_timeline_item_lineStyle-default {
+  &::before {
+    content: "";
+    width: 3px;
+    background: #ddd;
+    display: block;
+    position: absolute;
+    top: 22px;
+    left: 6px;
+    bottom: 0;
+  }
+}
 
 /*-------------------------------------------*/
 /* CSS

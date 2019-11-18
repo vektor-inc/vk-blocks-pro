@@ -2,16 +2,15 @@
  * table-of-contents block type
  *
  */
-import React from "react";
 import {schema} from './schema';
 import TableOfContents from './TableOfContents';
 
-const {__} = wp.i18n; // Import __() from wp.i18n
-const {registerBlockType} = wp.blocks; // Import registerBlockType() from wp.blocks
-const {ServerSideRender, PanelBody, SelectControl,BaseControl} = wp.components;
+const {__} = wp.i18n;
+const {registerBlockType} = wp.blocks;
+const {ServerSideRender, PanelBody, SelectControl, BaseControl} = wp.components;
 const {Fragment} = wp.element;
-const {subscribe, select, dispatch} = wp.data;
-const {RichText, InspectorControls, MediaUpload, ColorPalette} = wp.editor;
+const {subscribe, select} = wp.data;
+const {InspectorControls} = wp.blockEditor;
 const BlockIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" width="576" height="512" viewBox="0 0 576 512">
 	<g>
@@ -51,20 +50,11 @@ const BlockIcon = (
  *                             registered; otherwise `undefined`.
  */
 registerBlockType('vk-blocks/table-of-contents', {
-    // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-    title: __('Table of Contents', 'vk-blocks'), // Block title.
-    icon: BlockIcon, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
-    category: 'vk-blocks-cat', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
+    title: __('Table of Contents', 'vk-blocks'),
+    icon: BlockIcon,
+    category: 'vk-blocks-cat',
     attributes: schema,
 
-    /**
-     * The edit function describes the structure of your block in the context of the editor.
-     * This represents what the editor will render when the block is used.
-     *
-     * The "edit" property must be a valid function.
-     *
-     * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
-     */
     edit({attributes, setAttributes, className, clientId}) {
         const {
             style,
@@ -76,18 +66,26 @@ registerBlockType('vk-blocks/table-of-contents', {
             let html = toc.returnHtml(source, style, className);
             setAttributes({renderHtml: html});
         };
+
+        let oldSelectedId;
+        let newSelectedId;
         subscribe(() => {
             const selectedBlock = select("core/block-editor").getSelectedBlock();
-            if (selectedBlock) {
+
+            if(selectedBlock === null){
+                return;
+            }
+
+            newSelectedId = selectedBlock.clientId;
+            if (newSelectedId !== oldSelectedId) {
+                oldSelectedId = newSelectedId;
+
                 let regex = /heading/g;
-                let found = selectedBlock.name.match(regex);
-                if (found) {
+                if (selectedBlock.name.match(regex)) {
                     render();
                 }
             }
         });
-
-        render();
 
         return (
             <Fragment>

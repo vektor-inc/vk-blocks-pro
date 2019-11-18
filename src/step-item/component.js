@@ -14,7 +14,7 @@ export class Component extends React.Component {
         } = this.props.attributes;
         let for_ = this.props.for_;
         let className = this.props.className;
-        let containerClass = " vk_step-item";
+        let containerClass = " vk_step_item";
         let elm;
         let styleClass;
         let inlineStyle;
@@ -29,33 +29,33 @@ export class Component extends React.Component {
         }
 
         if (style === "solid") {
-            styleClass = ' vk_step-item_style-default';
+            styleClass = ' vk_step_item_style-default';
             inlineStyle = {backgroundColor: `${color}`, color: "#ffffff"};
         }else if(style === "outlined"){
-            styleClass = ' vk_step-item_style-outlined';
+            styleClass = ' vk_step_item_style-outlined';
             inlineStyle = {border: `2px solid ${color}`, color: `${color}`};
         }
 
         if (styleLine === "default") {
-            styleLineClass = ' vk_step-item_line_style-default';
+            styleLineClass = ' vk_step_item_lineStyle-default';
         }else if(styleLine === "none"){
-            styleLineClass = ' vk_step-item_line_style-none'
+            styleLineClass = ' vk_step_item_lineStyle-none'
         }
 
         return (
             <div className={className + containerClass + styleLineClass}>
-                <div className={"vk_step-item_caption"}>{label}</div>
-                <div className={"vk_step-item_content"}>{elm}</div>
+                <div className={"vk_step_item_caption"}>{label}</div>
+                <div className={"vk_step_item_content"}>{elm}</div>
                 <div
-                    className={'vk_step-item_dot' + styleClass}
+                    className={'vk_step_item_dot' + styleClass}
                     style={inlineStyle}
                 >
-                <div className={'vk_step-item_dot_caption'}>{dotCaption}</div>
+                <div className={'vk_step_item_dot_caption'}>{dotCaption}</div>
                     {(() => {
                         if (faIcon){
                             return <i className={faIcon}/>;
                         }else if(dotNum){
-                            return <div className={'vk_step-item_dot_num'}>{dotNum}</div>;
+                            return <div className={'vk_step_item_dot_num'}>{dotNum}</div>;
                         }
                     })()}
                 </div>

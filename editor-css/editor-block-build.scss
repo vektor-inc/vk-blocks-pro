@@ -1191,15 +1191,15 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
 .vk_step{
   margin: 2em 0;
 
-  .vk_step-item {
+  .vk_step_item {
     position: relative;
     padding: 0 0 1em 4em;
 
-    .vk_step-item_caption{
+    .vk_step_item_caption{
       margin-bottom: 0.5em;
       color: #666;
     }
-    .vk_step-item_dot {
+    .vk_step_item_dot {
       content: "";
       display: block;
       position: absolute;
@@ -1212,12 +1212,12 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
       padding: 9px 0;
       text-align: center;
     }
-    .vk_step-item_dot_caption{
+    .vk_step_item_dot_caption{
       font-size: 0.1rem;
     }
   }
 }
-.vk_step-item_line_style-default {
+.vk_step_item_lineStyle-default {
   &::before {
     content: "";
     width: 3px;

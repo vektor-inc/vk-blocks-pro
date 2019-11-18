@@ -2,10 +2,8 @@
  * your-block-slug block type
  *
  */
-import React from "react";
-import NewComponent from "./component";
+import Component from "./component";
 import {schema} from './schema';
-// import {deprecated} from './deprecated/block';
 
 const {__} = wp.i18n; // Import __() from wp.i18n
 const {registerBlockType} = wp.blocks; // Import registerBlockType() from wp.blocks
@@ -62,9 +60,9 @@ registerBlockType('vk-blocks/your-block-slug', {
                         </BaseControl>
                     </PanelBody>
                 </InspectorControls>
-                <div className="vk_spacer">
+                <div className="vk_your-block-slug">
                     <div>Editor</div>
-                    <NewComponent
+                    <Component
                         attributes={attributes}
                         className={className}
                         for_={'edit'}
@@ -87,7 +85,7 @@ registerBlockType('vk-blocks/your-block-slug', {
         return (
             <div className="vk_your-block-slug">
                 <div>Front</div>
-                <NewComponent
+                <Component
                     attributes={attributes}
                     className={className}
                     for_={'save'}
@@ -95,7 +93,4 @@ registerBlockType('vk-blocks/your-block-slug', {
             </div>
         );
     },
-
-    //Please comment out, when you need to use deprecated.
-    // deprecated:deprecated
 });

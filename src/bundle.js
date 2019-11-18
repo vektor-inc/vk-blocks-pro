@@ -1,4 +1,8 @@
 //Bundle JS
+import './step-item/block.js';
+import './step/block.js';
+import './timeline-item/block.js';
+import './timeline/block.js';
 import './highlighter/block.js';
 import './table-of-contents/block.js';
 // import './simple-table/block.js';

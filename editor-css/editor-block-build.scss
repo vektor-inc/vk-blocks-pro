@@ -382,6 +382,54 @@ h1:first-child.vk_prBlocks_item_title{
 	}
 } // @media only screen and (max-width: 480px) {
 
+//*      .flowBox
+/*-------------------------------------------*/
+.vk_flow-arrow-on:after {
+  content:"";
+  background: url('../images/arrow_bottom.svg') center 50% no-repeat;
+  background-size: 50px 50px;
+  display:block; overflow:hidden;
+  height:50px;
+  width:50px;
+  margin:0 auto;
+}
+.vk_flow-arrow-off  { padding-bottom:0px; margin-bottom:30px; }
+.vk_flow-arrow-off:after {
+  content:"";font-size:0;background-image: none;
+}
+.vk_flow_frame {
+	display: flex;
+	padding:20px 25px; border:3px solid #e5e5e5;margin:0;
+	justify-content: space-between;
+}
+.vk_flow_frame_text  { display:block;overflow:hidden;margin:0;width:100%;box-sizing: border-box; }
+.vk_flow_frame_text_title,
+.vk_flow_frame_text_content { padding-left:0;border:none; }
+.vk_flow_frame_text_title { border-bottom:1px dotted #ccc; margin:0 0 10px;padding:0 0 5px; font-size:1.2em; }
+.vk_flow_frame_text_content { margin-bottom:0px; }
+.vk_flow_frame_image {
+	max-width:150px;
+	margin-left:15px;
+	box-sizing: border-box;
+}
+
+/*      .qaItem
+/*-------------------------------------------*/
+.vk_faq { display:block; overflow:hidden;border-bottom:1px dotted #ccc; padding:0px 0px 25px; margin:25px 0px; width:100%; position: relative; }
+.vk_faq_title,
+.vk_faq_content {
+	border:none;padding-left: 35px;
+	&:before {
+		position: absolute;left:0;font-size:24px;line-height: 105%;
+	}
+}
+.vk_faq_title { margin-bottom:15px;font-size:18px;font-weight:700;
+  &:before { font-family:"areal";content:"Q ";color:#e50000; }
+}
+.vk_faq_content { margin:0px;
+  &:before { content:"A ";color:#337ab7;font-family: "" }
+}
+
 .vk_button{
 	margin: 5px 0;
 	&-color-custom{
@@ -560,54 +608,6 @@ $color_dark:#343a40;
 	color:#fff;
 }
 
-/*      .qaItem
-/*-------------------------------------------*/
-.vk_faq { display:block; overflow:hidden;border-bottom:1px dotted #ccc; padding:0px 0px 25px; margin:25px 0px; width:100%; position: relative; }
-.vk_faq_title,
-.vk_faq_content {
-	border:none;padding-left: 35px;
-	&:before {
-		position: absolute;left:0;font-size:24px;line-height: 105%;
-	}
-}
-.vk_faq_title { margin-bottom:15px;font-size:18px;font-weight:700;
-  &:before { font-family:"areal";content:"Q ";color:#e50000; }
-}
-.vk_faq_content { margin:0px;
-  &:before { content:"A ";color:#337ab7;font-family: "" }
-}
-
-//*      .flowBox
-/*-------------------------------------------*/
-.vk_flow-arrow-on:after {
-  content:"";
-  background: url('../images/arrow_bottom.svg') center 50% no-repeat;
-  background-size: 50px 50px;
-  display:block; overflow:hidden;
-  height:50px;
-  width:50px;
-  margin:0 auto;
-}
-.vk_flow-arrow-off  { padding-bottom:0px; margin-bottom:30px; }
-.vk_flow-arrow-off:after {
-  content:"";font-size:0;background-image: none;
-}
-.vk_flow_frame {
-	display: flex;
-	padding:20px 25px; border:3px solid #e5e5e5;margin:0;
-	justify-content: space-between;
-}
-.vk_flow_frame_text  { display:block;overflow:hidden;margin:0;width:100%;box-sizing: border-box; }
-.vk_flow_frame_text_title,
-.vk_flow_frame_text_content { padding-left:0;border:none; }
-.vk_flow_frame_text_title { border-bottom:1px dotted #ccc; margin:0 0 10px;padding:0 0 5px; font-size:1.2em; }
-.vk_flow_frame_text_content { margin-bottom:0px; }
-.vk_flow_frame_image {
-	max-width:150px;
-	margin-left:15px;
-	box-sizing: border-box;
-}
-
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -632,67 +632,6 @@ $color_dark:#343a40;
 }
 .vk_heading_subtext {
 	margin-bottom:0;
-}
-
-/*-------------------------------------------*/
-/* .vk_prBlocks
-/*-------------------------------------------*/
-.vk_prBlocks_item {
-	@media screen and (max-width:992px){
-		margin-bottom: 1.5em;
-	}
-}
-.vk_prBlocks_item {
-	&_link {
-		color: #333;
-		&:hover{
-			color: #333;
-			text-decoration: none;
-		}
-	}
-	&_icon_outer {
-		display: block;
-		position:relative;
-		margin: 0 auto ;
-		width: 80px;
-		height: 80px;
-		border-radius: 50%;
-	}
-	&_icon {
-		position:absolute;
-		top:50%;
-		left:50%;
-		transform: translateY(-50%) translateX(-50%);
-		font-size: 36px;
-		color: #fff;
-	}
-	&_title{
-		margin-top:0.9em;
-		margin-bottom: 0.6em;
-		text-align: center;
-		font-size: 21px;
-		line-height: 1.4em;
-		border:none;
-		padding:0;
-		&::after{
-			border: none;
-		}
-	}
-	&_image{
-		position: relative;
-		display: block;
-		width: 120px;
-		height:120px;
-		margin: 0 auto;
-		overflow: hidden;
-		border-radius: 50%;
-		text-indent:-9999px;
-	}
-	&_summary{
-		margin-bottom: 0.5em;
-		text-align: center;
-		line-height: 1.8em;
-	}
 }
 
 /*-------------------------------------------*/
@@ -805,84 +744,63 @@ $padding-xl:3.5em;
 // }
 
 /*-------------------------------------------*/
-/* CSS
+/* .vk_prBlocks
 /*-------------------------------------------*/
-
-.vk_table {
-	&-col-mobile1 {
-		@media( max-width: 575.98px){
-			th,
-			td {
-					display: block;
-			}
-			th {
-				background-color: rgba(0, 0, 0, 0.05);
-			}
-			// ストライプ指定の時の背景色をリセット
-			&.table-striped tbody {
-				tr:nth-of-type(odd) {
-					background: inherit;
-				}
-			}
-		} // @media( max-width: 575.98px){
-	} // &-col-mobile1 {
+.vk_prBlocks_item {
+	@media screen and (max-width:992px){
+		margin-bottom: 1.5em;
+	}
 }
-
-/*-------------------------------------------*/
-/* editor class
-/*-------------------------------------------*/
-.vk_simpleTable-edit{
-	.editor-inner-blocks,
-	.editor-block-list__layout,
-	.editor-block-list__block,
-	.editor-rich-text__editable,
-	.editor-block-list__block-edit{
+.vk_prBlocks_item {
+	&_link {
+		color: #333;
+		&:hover{
+			color: #333;
+			text-decoration: none;
+		}
+	}
+	&_icon_outer {
+		display: block;
+		position:relative;
+		margin: 0 auto ;
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+	}
+	&_icon {
+		position:absolute;
+		top:50%;
+		left:50%;
+		transform: translateY(-50%) translateX(-50%);
+		font-size: 36px;
+		color: #fff;
+	}
+	&_title{
+		margin-top:0.9em;
+		margin-bottom: 0.6em;
+		text-align: center;
+		font-size: 21px;
+		line-height: 1.4em;
+		border:none;
 		padding:0;
-		margin:0;
-		width:100%;
-	}
-	& > .editor-inner-blocks{
-		margin-top:-1px; // th,td がHTML上ではdivの中になってしまう都合上、線が2pxになるためマイナスオフセット
-	}
-	.editor-block-list__block-edit{
-		height:100%;
-	}
-	.block-editor-block-list__insertion-point{
-		/* 上のセルに被るので選択しにくくなるのでデフォルトのマイナスオフセットを少し下げる */
-		top:-5px;
-	}
-	.editor-block-list__block-edit:before{
-		right:-0px;
-		left:-0px;
-		top:-0px;
-		bottom:-0px;
-		// border:1px solid #ff0000;
-	}
-	.editor-inner-blocks {
-		tr {
-			width:100%;
-			display: block;
-			border-bottom:1px solid #e5e5e5;
-			.editor-block-list__layout {
-				display: flex;
-				.editor-block-list__block {
-				}
-			}
-		}
-		th,
-		td {
-			padding: 0;
-			display: block;
-			width:100%;
-			border:none; // デフォルトでつけてくる線を消す
-			.editor-rich-text__editable{
-				padding: 14px;
-			}
+		&::after{
+			border: none;
 		}
 	}
-	// 編集画面のtableは HTML構造がカオスなので補正
-	&.table-striped > tbody > .editor-inner-blocks > .editor-block-list__layout > div:nth-of-type(odd) {
-			background-color: rgba(0, 0, 0, 0.05);
+	&_image{
+		position: relative;
+		display: block;
+		width: 120px;
+		height:120px;
+		margin: 0 auto;
+		overflow: hidden;
+		border-radius: 50%;
+		text-indent:-9999px;
+	}
+	&_summary{
+		margin-bottom: 0.5em;
+		text-align: center;
+		line-height: 1.8em;
 	}
 }
 
@@ -970,6 +888,88 @@ $padding-xl:3.5em;
 		}
 	}
 } // .vk_prContent {
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
+.vk_table {
+	&-col-mobile1 {
+		@media( max-width: 575.98px){
+			th,
+			td {
+					display: block;
+			}
+			th {
+				background-color: rgba(0, 0, 0, 0.05);
+			}
+			// ストライプ指定の時の背景色をリセット
+			&.table-striped tbody {
+				tr:nth-of-type(odd) {
+					background: inherit;
+				}
+			}
+		} // @media( max-width: 575.98px){
+	} // &-col-mobile1 {
+}
+
+/*-------------------------------------------*/
+/* editor class
+/*-------------------------------------------*/
+.vk_simpleTable-edit{
+	.editor-inner-blocks,
+	.editor-block-list__layout,
+	.editor-block-list__block,
+	.editor-rich-text__editable,
+	.editor-block-list__block-edit{
+		padding:0;
+		margin:0;
+		width:100%;
+	}
+	& > .editor-inner-blocks{
+		margin-top:-1px; // th,td がHTML上ではdivの中になってしまう都合上、線が2pxになるためマイナスオフセット
+	}
+	.editor-block-list__block-edit{
+		height:100%;
+	}
+	.block-editor-block-list__insertion-point{
+		/* 上のセルに被るので選択しにくくなるのでデフォルトのマイナスオフセットを少し下げる */
+		top:-5px;
+	}
+	.editor-block-list__block-edit:before{
+		right:-0px;
+		left:-0px;
+		top:-0px;
+		bottom:-0px;
+		// border:1px solid #ff0000;
+	}
+	.editor-inner-blocks {
+		tr {
+			width:100%;
+			display: block;
+			border-bottom:1px solid #e5e5e5;
+			.editor-block-list__layout {
+				display: flex;
+				.editor-block-list__block {
+				}
+			}
+		}
+		th,
+		td {
+			padding: 0;
+			display: block;
+			width:100%;
+			border:none; // デフォルトでつけてくる線を消す
+			.editor-rich-text__editable{
+				padding: 14px;
+			}
+		}
+	}
+	// 編集画面のtableは HTML構造がカオスなので補正
+	&.table-striped > tbody > .editor-inner-blocks > .editor-block-list__layout > div:nth-of-type(odd) {
+			background-color: rgba(0, 0, 0, 0.05);
+	}
+}
 
 /*-------------------------------------------*/
 /* CSS

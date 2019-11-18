@@ -3,99 +3,132 @@
  *
  */
 import React from "react";
-const {registerFormatType,toggleFormat} = wp.richText;
+const {registerFormatType, toggleFormat, applyFormat, removeFormat, getActiveFormat} = window.wp.richText;
 const {RichTextToolbarButton, RichTextShortcut, InspectorControls, PanelColorSettings, getColorObjectByColorValue} = wp.blockEditor;
-const {compose,ifCondition} = wp.compose;
-const {withSelect} = wp.data;
 const {__} = wp.i18n; // Import __() from wp.i18n
+const name = 'vk-blocks/list-style';
+const {Fragment} = wp.element;
+const {addFilter} = wp.hooks;
+const BlockIcon = 'arrow';
 
-const MyCustomButton = props => {
-    return <RichTextToolbarButton
-        icon='editor-code'
-        title='List Color'
-        onClick={ () => {
-            props.onChange( toggleFormat(
-                props.value,
-                { type: 'vk-blocks/list-style' }
-            ) );
-        } }
-        isActive={ props.isActive }
-    />
-};
-const ConditionalButton = compose(
-    withSelect( function( select ) {
-        return {
-            selectedBlock: select( 'core/block-editor' ).getSelectedBlock()
-        }
-    } ),
-    ifCondition( function( props ) {
-        console.log("hello");
-        return (
-            props.selectedBlock &&
-            props.selectedBlock.name === 'core/list'
-        );
-    } )
-)( MyCustomButton );
 
-registerFormatType(
-    'vk-blocks/list-style', {
+registerFormatType(name, {
         title: 'list Style',
         tagName: 'style',
         className: null,
         attributes: {
-            color: 'color',
+            color: null,
         },
-        edit: ConditionalButton,
+    edit(props) {
+        const {value, isActive, onChange} = props;
+        const defaultColor = '#fffd6b';
+
+        let activeColor;
+        if (isActive) {
+            const activeFormat = getActiveFormat(value, name);
+            activeColor = activeFormat.attributes.color;
+        }
+
+        const setColorIfUndefined = (activeColor) => {
+            if (activeColor === undefined) {
+                activeColor = defaultColor;
+            }
+            return activeColor;
+        };
+
+        const addColorClass = (color)=>{
+
+            let colorClass;
+            switch (color) {
+                case '#f78da7':
+                    colorClass = 'vk-has-pale-pink-color';
+                    break;
+                case '#cf2e2e':
+                    colorClass = 'vk-has-vivid-red-color';
+                    break;
+                case '#ff6900':
+                    colorClass = 'vk-has-luminous-vivid-orange-color';
+                    break;
+                case '#fcb900':
+                    colorClass = 'vk-has-luminous-vivid-amber-color';
+                    break;
+                case '#7bdcb5':
+                    colorClass = 'vk-has-light-green-cyan-color';
+                    break;
+                case '#00d084':
+                    colorClass = 'vk-has-vivid-green-cyan-color';
+                    break;
+                case '#8ed1fc':
+                    colorClass = 'vk-has-pale-cyan-blue-color';
+                    break;
+                case '#0693e3':
+                    colorClass = 'vk-has-vivid-cyan-blue-color';
+                    break;
+                case '#9b51e0':
+                    colorClass = 'vk-has-vivid-purple-color';
+                    break;
+                case '#eee':
+                    colorClass = 'vk-has-very-light-gray-color';
+                    break;
+                case '#abb8c3':
+                    colorClass = 'vk-has-cyan-bluish-gray-color';
+                    break;
+                case '#313131':
+                    colorClass = 'vk-has-very-dark-gray-color';
+                    break;
+            }
+            addFilter(
+                'blocks.getBlockDefaultClassName',
+                'my-plugin/set-block-custom-class-name',
+                (className, blockName)=>{
+                    return blockName === 'core/list' ?
+                        colorClass :
+                        className;
+                }
+            );
+        };
+
+        return (
+            <Fragment>
+                <InspectorControls>
+                    <PanelColorSettings
+                        title={__('List Color', 'vk-blocks')}
+                        initialOpen={false}
+                        colorSettings={[
+                            {
+                                color: activeColor,
+                                onChange: (color) => {
+                                    if (color) {
+                                        onChange(applyFormat(value, {
+                                            type: name,
+                                            attributes: {
+                                                color: color,
+                                            }
+                                        }));
+                                        addColorClass(color);
+                                        return
+                                    }
+                                    onChange(removeFormat(value, name))
+                                },
+                                label: __('List Color', 'vk-blocks')
+                            }
+                        ]}
+                    />
+                </InspectorControls>
+            </Fragment>
+        );
+    },
     }
 );
 
-// function addBackgroundColorStyle( props ) {
-//
-//     console.log(props);
-//     return lodash.assign( props, { style: { backgroundColor: 'red' } } );
-// }
-//
-// wp.hooks.addFilter(
-//     'blocks.getSaveContent.extraProps',
-//     'vk-blocks/test',
-//     addBackgroundColorStyle
-// );
-
-const { createHigherOrderComponent } = wp.compose;
-const { Fragment } = wp.element;
-const { PanelBody } = wp.components;
-
-// const withInspectorControls =  createHigherOrderComponent( ( BlockEdit ) => {
-//
-//     console.log(BlockEdit);
-//
-//     return ( props ) => {
-//         console.log(props);
-//         return (
-//             <Fragment>
-//                 <BlockEdit { ...props } />
-//                 <InspectorControls>
-//                     <PanelBody>
-//                         My custom control
-//                     </PanelBody>
-//                 </InspectorControls>
-//             </Fragment>
-//         );
-//     };
-// }, "withInspectorControl" );
-//
-// wp.hooks.addFilter( 'editor.BlockEdit', 'my-plugin/with-inspector-controls', withInspectorControls );
-
-wp.hooks.addFilter(
+addFilter(
     "blocks.registerBlockType",
     "jsforwp-advgb/extending-register-block-type",
     extendWithRegisterBlockType
 );
 
 function extendWithRegisterBlockType(settings, name) {
-    // Check for block type
     if ("core/list" === name) {
-        // Change supports
         settings.supports = lodash.merge( {}, settings.supports, {
             className: true,
         });
@@ -103,17 +136,4 @@ function extendWithRegisterBlockType(settings, name) {
     return settings;
 }
 
-// Our filter function
-function setBlockCustomClassName( className, blockName ) {
 
-    return blockName === 'core/list' ?
-        'has-pale-pink-color' :
-        className;
-}
-
-// Adding the filter
-wp.hooks.addFilter(
-    'blocks.getBlockDefaultClassName',
-    'my-plugin/set-block-custom-class-name',
-    setBlockCustomClassName
-);

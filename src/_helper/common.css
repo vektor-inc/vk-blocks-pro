@@ -172,5 +172,41 @@ ul.is-style-numbered-circle-mark.fa-5x li, ul.is-style-numbered-square-mark.fa-5
 ul.is-style-numbered-circle-mark.fa-5x li:before, ul.is-style-numbered-square-mark.fa-5x li:before, ol.is-style-numbered-circle-mark.fa-5x li:before, ol.is-style-numbered-square-mark.fa-5x li:before {
   left: -1.6em;
 }
+ul.vk-has-pale-pink-color li::before, ol.vk-has-pale-pink-color li::before {
+  color: #f78da7;
+}
+ul.vk-has-vivid-red-color li::before, ol.vk-has-vivid-red-color li::before {
+  color: #cf2e2e;
+}
+ul.vk-has-luminous-vivid-orange-color li::before, ol.vk-has-luminous-vivid-orange-color li::before {
+  color: #ff6900;
+}
+ul.vk-has-luminous-vivid-amber-color li::before, ol.vk-has-luminous-vivid-amber-color li::before {
+  color: #fcb900;
+}
+ul.vk-has-light-green-cyan-color li::before, ol.vk-has-light-green-cyan-color li::before {
+  color: #7bdcb5;
+}
+ul.vk-has-vivid-green-cyan-color li::before, ol.vk-has-vivid-green-cyan-color li::before {
+  color: #00d084;
+}
+ul.vk-has-pale-cyan-blue-color li::before, ol.vk-has-pale-cyan-blue-color li::before {
+  color: #8ed1fc;
+}
+ul.vk-has-vivid-cyan-blue-color li::before, ol.vk-has-vivid-cyan-blue-color li::before {
+  color: #0693e3;
+}
+ul.vk-has-vivid-purple-color li::before, ol.vk-has-vivid-purple-color li::before {
+  color: #9b51e0;
+}
+ul.vk-has-very-light-gray-color li::before, ol.vk-has-very-light-gray-color li::before {
+  color: #eee;
+}
+ul.vk-has-cyan-bluish-gray-color li::before, ol.vk-has-cyan-bluish-gray-color li::before {
+  color: #abb8c3;
+}
+ul.vk-has-very-dark-gray-color li::before, ol.vk-has-very-dark-gray-color li::before {
+  color: #313131;
+}
 
 /*# sourceMappingURL=common.css.map */

@@ -22,8 +22,9 @@
 /*-------------------------------------------*/
 @mixin mark-before {font-family: "Font Awesome 5 Free";font-weight: 900;position: absolute; }
 
-ul,ol{
-	&.is-style{
+ul, ol{
+
+	&.is-style {
 		&-chevron-mark,
 		&-triangle-mark,
 		&-check-mark,
@@ -35,179 +36,296 @@ ul,ol{
 		&-frown-mark,
 		&-numbered-circle-mark,
 		&-numbered-square-mark {
-			    padding-inline-start: 2em;
-				li{
+			padding-inline-start: 2em;
+
+			li {
 					list-style: none;
 					position: relative;
 				}
 			}
 	}
-	
-	
-	&.is-style-chevron-mark{
-		li{		
-			&:before { 				
+
+
+	&.is-style-chevron-mark {
+		li {
+			&:before {
 				@include mark-before;
 				content: "\f138";
-				left : -1.5em;
+				left: -1.5em;
 			}
-		}	
+		}
 	}
-	&.is-style-triangle-mark{
-		li{				
-			&:before {				  
+
+	&.is-style-triangle-mark {
+		li {
+			&:before {
 				@include mark-before;
 				content: "\f0da";
-				left : -1.3em; 
+				left: -1.3em;
 			}
 		}
 
 	}
-	&.is-style-check-mark{
-		li{				
-			&:before {				  
+
+	&.is-style-check-mark {
+		li {
+			&:before {
 				@include mark-before;
 				content: "\f00c";
-				left : -1.5em; 
+				left: -1.5em;
 			}
 		}
 
-	}	
-	&.is-style-check-circle-mark{
-		li{				
-			&:before {				  
+	}
+
+	&.is-style-check-circle-mark {
+		li {
+			&:before {
 				@include mark-before;
 				content: "\f058";
-				left : -1.5em; 
+				left: -1.5em;
 			}
 		}
 
 	}
-	&.is-style-check-square-mark{
-		li{				
-			&:before {				  
+
+	&.is-style-check-square-mark {
+		li {
+			&:before {
 				@include mark-before;
 				content: "\f14a";
-				left : -1.5em; 
+				left: -1.5em;
 			}
 		}
 
-	}		
-	&.is-style-handpoint-mark{
-		li{			
-			&:before {			  
+	}
+
+	&.is-style-handpoint-mark {
+		li {
+			&:before {
 				@include mark-before;
 				content: "\f0a4";
-				left : -1.5em; 
+				left: -1.5em;
 			}
 		}
 	}
-	&.is-style-handpoint-mark{
-		li{			
-			&:before {			  
+
+	&.is-style-handpoint-mark {
+		li {
+			&:before {
 				@include mark-before;
 				content: "\f0a4";
-				left : -1.5em; 
+				left: -1.5em;
 			}
 		}
 	}
-	&.is-style-pencil-mark{
-		li{		
-			&:before {			  
+
+	&.is-style-pencil-mark {
+		li {
+			&:before {
 				@include mark-before;
 				content: "\f303";
-				left : -1.5em;
+				left: -1.5em;
 			}
 		}
 	}
-	&.is-style-smile-mark{
-		li{		
-			&:before {			  
+
+	&.is-style-smile-mark {
+		li {
+			&:before {
 				@include mark-before;
 				content: "\f118";
-				left : -1.5em;
+				left: -1.5em;
 			}
 		}
 	}
-	&.is-style-frown-mark{
-		li{		
-			&:before {			  
+
+	&.is-style-frown-mark {
+		li {
+			&:before {
 				@include mark-before;
 				content: "\f119";
-				left : -1.5em;
+				left: -1.5em;
 			}
 		}
 	}
-	&.is-style-numbered-circle-mark{
-		counter-reset:number; 
+
+	&.is-style-numbered-circle-mark {
+		counter-reset: number;
 		list-style-type: none;
-		li{
+
+		li {
 			position: relative;
 			list-style: none;
+
 			&:before {
 				position: absolute;
 				left: -.3em;
 				counter-increment: number;
 				content: counter(number);
 				margin-left: -25px;
-				background:#222;
+				background: #222;
 				color: #fff;
-				text-indent:0;
-				display:inline-block;
-				font-weight:bold;
+				text-indent: 0;
+				display: inline-block;
+				font-weight: bold;
 				border-radius: 50%;
 				font-size: 1em;
-			    line-height: 1em;
-			    padding: .2em .35em;
+				line-height: 1em;
+				padding: .2em .35em;
 				text-align: center;
 			}
-		}	
+		}
 	}
-	&.is-style-numbered-square-mark{
-		counter-reset:number; 
-		list-style-type: none; 
-		li{
+
+	&.is-style-numbered-square-mark {
+		counter-reset: number;
+		list-style-type: none;
+
+		li {
 			position: relative;
-			list-style: none;			
-			&:before {				  
+			list-style: none;
+
+			&:before {
 				position: absolute;
 				left: -.3em;
 				counter-increment: number;
 				content: counter(number);
 				margin-left: -25px;
-				background:#222;
+				background: #222;
 				color: #fff;
-				text-indent:0;
-				display:inline-block;
-				font-weight:bold;
+				text-indent: 0;
+				display: inline-block;
+				font-weight: bold;
 				font-size: 1em;
-			    line-height: 1em;
-			    padding: .2em .35em;
+				line-height: 1em;
+				padding: .2em .35em;
 				text-align: center;
 			}
-		}	
-	}
-	&.is-style-numbered-circle-mark,
-	&.is-style-numbered-square-mark{
-		&.fa-lg{
-			li:before{left: -.8em;}
-		}
-		&.fa-2x{
-			li{ line-height: 1.25em;}
-			li:before{left: -1.1em;}
-		}
-		&.fa-3x{
-			li{ line-height: 1.25em;}
-			li:before{left: -1.4em;}
-		}
-		&.fa-4x{
-			li{ line-height: 1.25em;}
-			li:before{left: -1.5em;}
-		}
-		&.fa-5x{
-			li{ line-height: 1.25em;}
-			li:before{left: -1.6em;}
 		}
 	}
 
-}//ul,ol
+	&.is-style-numbered-circle-mark,
+	&.is-style-numbered-square-mark {
+		&.fa-lg {
+			li:before {
+				left: -.8em;
+			}
+		}
+
+		&.fa-2x {
+			li {
+				line-height: 1.25em;
+			}
+
+			li:before {
+				left: -1.1em;
+			}
+		}
+
+		&.fa-3x {
+			li {
+				line-height: 1.25em;
+			}
+
+			li:before {
+				left: -1.4em;
+			}
+		}
+
+		&.fa-4x {
+			li {
+				line-height: 1.25em;
+			}
+
+			li:before {
+				left: -1.5em;
+			}
+		}
+
+		&.fa-5x {
+			li {
+				line-height: 1.25em;
+			}
+
+			li:before {
+				left: -1.6em;
+			}
+		}
+	}
+
+	&.vk-has-pale-pink-color {
+		li::before {
+			color: #f78da7;
+		}
+	}
+
+	&.vk-has-vivid-red-color {
+		li::before {
+			color: #cf2e2e;
+		}
+	}
+
+	&.vk-has-luminous-vivid-orange-color {
+		li::before {
+			color: #ff6900;
+		}
+	}
+
+	&.vk-has-luminous-vivid-amber-color {
+		li::before {
+			color: #fcb900;
+		}
+	}
+
+	&.vk-has-light-green-cyan-color {
+		li::before {
+			color: #7bdcb5;
+		}
+	}
+
+	&.vk-has-vivid-green-cyan-color {
+		li::before {
+			color: #00d084;
+		}
+	}
+
+	&.vk-has-pale-cyan-blue-color {
+		li::before {
+			color: #8ed1fc;
+		}
+	}
+
+	&.vk-has-vivid-cyan-blue-color {
+		li::before {
+			color: #0693e3;
+		}
+	}
+
+	&.vk-has-vivid-purple-color {
+		li::before {
+			color: #9b51e0;
+		}
+	}
+
+	&.vk-has-very-light-gray-color {
+		li::before {
+			color: #eee;
+		}
+	}
+
+	&.vk-has-cyan-bluish-gray-color {
+		li::before {
+			color: #abb8c3;
+		}
+	}
+
+	&.vk-has-very-dark-gray-color {
+		li::before {
+			color: #313131;
+		}
+	}
+
+}
+
+//ul,ol

@@ -58,6 +58,7 @@ registerBlockType('vk-blocks/table-of-contents', {
     edit({attributes, setAttributes, className, clientId}) {
         const {
             style,
+            html
         } = attributes;
 
         const toc = new TableOfContents();
@@ -78,7 +79,10 @@ registerBlockType('vk-blocks/table-of-contents', {
                 if (newSelectedId !== oldSelectedId) {
                     oldSelectedId = newSelectedId;
 
-                    if(selectedBlock.name === 'vk-blocks/table-of-contents'){
+                    let blocksList = select("core/block-editor").getBlocks();
+                    const result = blocksList.find(item => item.name === "core/heading" || item.name === "vk-blocks/heading" );
+
+                    if(result === undefined && selectedBlock.name === 'vk-blocks/table-of-contents'){
                         let html = toc.returnHtml('', style, className);
                         setAttributes({renderHtml: html});
                         return;

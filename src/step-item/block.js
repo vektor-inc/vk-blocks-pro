@@ -86,7 +86,7 @@ registerBlockType('vk-blocks/step-item', {
                             />
                         </BaseControl>
                     </PanelBody>
-                    <PanelBody title={__('Dot', 'vk-blocks')}>
+                    <PanelBody title={__('Step Mark', 'vk-blocks')}>
                         <BaseControl
                             id="dot-fa"
                             help={__('If FontAwesome class entered, it will overrides the number.', 'vk-blocks')}

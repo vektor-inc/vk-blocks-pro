@@ -793,7 +793,7 @@ msgid "Label"
 msgstr ""
 
 #: src/step-item/block.js:89
-msgid "Dot"
+msgid "Step Mark"
 msgstr ""
 
 #: src/step-item/block.js:92
@@ -826,5 +826,5 @@ msgid "label"
 msgstr ""
 
 #: src/timeline/block.js:56
-msgid "timeline"
+msgid "Timeline"
 msgstr ""

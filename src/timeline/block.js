@@ -53,7 +53,7 @@ const BlockIcon = (
  */
 registerBlockType('vk-blocks/timeline', {
     // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-    title: __('timeline', 'vk-blocks'), // Block title.
+    title: __('Timeline', 'vk-blocks'), // Block title.
     icon: BlockIcon, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
     category: 'vk-blocks-cat', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
     attributes: schema,

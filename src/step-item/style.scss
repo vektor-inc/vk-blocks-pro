@@ -7,10 +7,22 @@
   .vk_step_item {
     position: relative;
     padding: 0 0 1em 4em;
-
+      h3:first-of-type,
+      h4:first-of-type{
+        padding-top: 0.5em;
+        margin-top: 0;
+      }
+      p:first-child{
+        margin-bottom:0.3em;
+        line-height: 1;
+        color:#666;
+      }
     .vk_step_item_caption{
       margin-bottom: 0.5em;
       color: #666;
+    }
+    .vk_step_item_content{
+
     }
     .vk_step_item_dot {
       content: "";

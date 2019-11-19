@@ -1,10 +1,6 @@
 import {faSchema} from "../_helper/font-awesome";
 
 export const originalSchema = {
-    label: {
-        type: 'string',
-        default:  'Write Caption here ...',
-    },
     color: {
         type: 'string',
         default: '#337ab7',

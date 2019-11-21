@@ -299,7 +299,7 @@ msgstr ""
 
 #: src/heading/block.js:125
 #: src/staff/block.js:105
-#: src/step-item/block.js:147
+#: src/step-item/block.js:116
 #: src/table-of-contents/block.js:113
 #: src/timeline-item/block.js:99
 msgid "Default"
@@ -484,14 +484,14 @@ msgstr ""
 
 #: src/outer/block.js:281
 #: src/staff/block.js:109
-#: src/step-item/block.js:151
+#: src/step-item/block.js:120
 #: src/timeline-item/block.js:103
 msgid "None"
 msgstr ""
 
 #: src/outer/block.js:285
 #: src/pr-content/block.js:142
-#: src/step-item/block.js:128
+#: src/step-item/block.js:97
 #: src/timeline-item/block.js:84
 msgid "Solid"
 msgstr ""
@@ -826,7 +826,7 @@ msgid "Set the alt text for profile image"
 msgstr ""
 
 #: src/staff/block.js:124
-#: src/step-item/block.js:111
+#: src/step-item/block.js:80
 #: src/timeline-item/block.js:63
 msgid "Color"
 msgstr ""
@@ -878,18 +878,7 @@ msgstr ""
 msgid "Caption"
 msgstr ""
 
-#: src/step-item/block.js:106
-#: src/timeline-item/block.js:60
-msgid "Ex,6:00AM"
-msgstr ""
-
-#: src/step-item/block.js:117
-#: src/table-of-contents/block.js:104
-#: src/timeline-item/block.js:69
-msgid "Style"
-msgstr ""
-
-#: src/step-item/block.js:132
+#: src/step-item/block.js:101
 #: src/timeline-item/block.js:80
 msgid "Outlined"
 msgstr ""
@@ -898,24 +887,31 @@ msgstr ""
 msgid "Step Item"
 msgstr ""
 
-#: src/step-item/block.js:77
-msgid "Label"
-msgstr ""
-
-#: src/step-item/block.js:89
+#: src/step-item/block.js:58
 msgid "Step Mark"
 msgstr ""
 
-#: src/step-item/block.js:92
+#: src/step-item/block.js:61
 msgid "If FontAwesome class entered, it will overrides the number."
+msgstr ""
+
+#: src/step-item/block.js:75
+#: src/timeline-item/block.js:60
+msgid "Ex,6:00AM"
+msgstr ""
+
+#: src/step-item/block.js:86
+#: src/table-of-contents/block.js:104
+#: src/timeline-item/block.js:69
+msgid "Style"
+msgstr ""
+
+#: src/step/block.js:121
+msgid "First Dot Number"
 msgstr ""
 
 #: src/step/block.js:53
 msgid "Step"
-msgstr ""
-
-#: src/step/block.js:77
-msgid "First Dot Number"
 msgstr ""
 
 #: src/table-of-contents/TableOfContents.js:154

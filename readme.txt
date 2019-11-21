@@ -58,7 +58,7 @@ e.g.
 == Changelog ==
 
 = 0.13.3 =
-[ Bugfix ][ Step ] fist block dont become H4 in second later item block bug fix.
+[ Bugfix ][ Step ] first block dont become H4 in second later item block bug fix.
 
 = 0.13.2 =
 [ Specification change ] Delete width specified of edit page width ( Change to the theme specify )

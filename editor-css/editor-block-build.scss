@@ -46,17 +46,7 @@ h1:first-child.vk_prBlocks_item_title{
 	margin-top:0.9em;
 }
 
-/* メインのカラム幅 */
-.wp-block,
-.editor-block-list__layout > .wp-block {
-		max-width:calc( 100% - 20% );
-		.wp-block {
-			max-width:100%;
-		}
-}
 
-/* カラム（水平）で点線と余白ができる */
-.vk_post .row { margin:0;border:none; }
 
 .alert{
 
@@ -100,8 +90,6 @@ h1:first-child.vk_prBlocks_item_title{
     }
   }
 }
-
-
 
 .vk_balloon {
   display: flex;
@@ -730,18 +718,6 @@ $padding-xl:3.5em;
 // }
 
 /*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-// $border_primary : 1px solid #e5e5e5;
-// .vk_latestPosts {
-// 	.card-deck {
-// 		display: flex;
-// 		flex-flow: unset;
-// 		flex-wrap: wrap;
-// 	}
-// }
-
-/*-------------------------------------------*/
 /* .vk_prBlocks
 /*-------------------------------------------*/
 .vk_prBlocks_item {
@@ -805,6 +781,18 @@ $padding-xl:3.5em;
 		line-height: 1.8em;
 	}
 }
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+// $border_primary : 1px solid #e5e5e5;
+// .vk_latestPosts {
+// 	.card-deck {
+// 		display: flex;
+// 		flex-flow: unset;
+// 		flex-wrap: wrap;
+// 	}
+// }
 
 /*-------------------------------------------*/
 /* Layout

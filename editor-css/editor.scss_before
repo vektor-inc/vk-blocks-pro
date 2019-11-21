@@ -45,15 +45,3 @@ input[type=range] {
 h1:first-child.vk_prBlocks_item_title{
 	margin-top:0.9em;
 }
-
-/* メインのカラム幅 */
-.wp-block,
-.editor-block-list__layout > .wp-block {
-		max-width:calc( 100% - 20% );
-		.wp-block {
-			max-width:100%;
-		}
-}
-
-/* カラム（水平）で点線と余白ができる */
-.vk_post .row { margin:0;border:none; }

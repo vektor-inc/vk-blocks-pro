@@ -48,6 +48,8 @@ h1:first-child.vk_prBlocks_item_title{
 
 
 
+
+
 .alert{
 
   padding: 1em;
@@ -551,6 +553,32 @@ $color_dark:#343a40;
   &:before { content:"A ";color:#337ab7;font-family: "" }
 }
 
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+@mixin reset() {
+	background: none;
+	border:none;
+	border-radius: 0;
+	padding:0;
+	font-weight: normal;
+	box-shadow:none;
+	&:after {
+		border:none;
+	}
+}
+
+.vk_heading_title {
+	&-style {
+		&-plain {
+			@include reset;
+		}
+	}
+}
+.vk_heading_subtext {
+	margin-bottom:0;
+}
+
 //*      .flowBox
 /*-------------------------------------------*/
 .vk_flow-arrow-on:after {
@@ -580,32 +608,6 @@ $color_dark:#343a40;
 	max-width:150px;
 	margin-left:15px;
 	box-sizing: border-box;
-}
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-@mixin reset() {
-	background: none;
-	border:none;
-	border-radius: 0;
-	padding:0;
-	font-weight: normal;
-	box-shadow:none;
-	&:after {
-		border:none;
-	}
-}
-
-.vk_heading_title {
-	&-style {
-		&-plain {
-			@include reset;
-		}
-	}
-}
-.vk_heading_subtext {
-	margin-bottom:0;
 }
 
 /*-------------------------------------------*/
@@ -1184,6 +1186,7 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
   .vk_step_item {
     position: relative;
     padding: 0 0 1em 4em;
+    margin: 28px auto;
       h3:first-of-type,
       h4:first-of-type{
         padding-top: 0.5em;

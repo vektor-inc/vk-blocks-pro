@@ -11,7 +11,6 @@ const {registerBlockType} = wp.blocks; // Import registerBlockType() from wp.blo
 const {PanelBody,BaseControl,SelectControl,TextControl,RangeControl} = wp.components;
 const {Fragment} = wp.element;
 const {InspectorControls,ColorPalette } = wp.editor;
-const {select} = wp.data;
 import {deprecated} from './deprecated';
 
 const BlockIcon = 'arrow-down';
@@ -45,30 +44,13 @@ registerBlockType('vk-blocks/step-item', {
      *
      * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
      */
-    edit({attributes, setAttributes, className, clientId}) {
+    edit({attributes, setAttributes, className}) {
         const {
             color,
             style,
             styleLine,
             dotCaption
         } = attributes;
-
-        const {getBlocksByClientId, getPreviousBlockClientId, getBlockRootClientId} = select("core/block-editor");
-        let preClientId = getPreviousBlockClientId(clientId);
-        let preBlock = getBlocksByClientId(preClientId);
-
-        let preDotNum;
-        let preDotNumOld;
-        if(preClientId){
-            preDotNum = preBlock[0].attributes.dotNum;
-
-            if(preDotNum !== preDotNumOld){
-                if(preDotNum && preDotNum){
-                    setAttributes({dotNum: preDotNum + 1})
-                }
-            }
-            preDotNumOld = preDotNum;
-        }
 
         return (
             <Fragment>

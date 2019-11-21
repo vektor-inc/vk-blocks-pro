@@ -18,12 +18,11 @@ export class Component extends React.Component {
         let styleClass;
         let inlineStyle;
         let styleLineClass;
-        const TEMPLATE = [['core/heading', {level: 4}]];
 
         //編集画面とサイト上の切り替え
         if (for_ === "edit") {
-            elm = <InnerBlocks template={TEMPLATE}/>;
-        } else if ("save") {
+            elm = <InnerBlocks/>;
+        } else if ("save"){
             elm = <InnerBlocks.Content/>;
         }
 

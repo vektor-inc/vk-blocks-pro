@@ -5,7 +5,8 @@
   margin: 2em 0; }
   .vk_step .vk_step_item {
     position: relative;
-    padding: 0 0 1em 4em; }
+    padding: 0 0 1em 4em;
+    margin: 28px auto; }
     .vk_step .vk_step_item h3:first-of-type,
     .vk_step .vk_step_item h4:first-of-type {
       padding-top: 0.5em;

@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.3.0
-Stable tag: 0.13.2
+Stable tag: 0.13.3
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -28,6 +28,9 @@ This is a plugin that extends Gutenberg's blocks.
 * PR Content
 * Title（with sub text）
 * Responsive Spacer
+* Post List
+* Step
+* Timeline
 
 [ Editing and correction ]
 
@@ -53,6 +56,9 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.13.3 =
+[ Bugfix ][ Step ] fist block dont become H4 in second later item block bug fix.
 
 = 0.13.2 =
 [ Specification change ] Delete width specified of edit page width ( Change to the theme specify )

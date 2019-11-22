@@ -8,7 +8,6 @@ const {Fragment} = wp.element;
 const {addFilter} = wp.hooks;
 const {
     PanelBody,
-    RadioControl
 } = wp.components;
 
 const {
@@ -39,47 +38,43 @@ export const addAttribute = (settings) => {
 addFilter('blocks.registerBlockType', 'vk-blocks/list-style', addAttribute);
 
 export const convertColorClass = (color) => {
-    let colorClass;
     switch (color) {
         case '#f78da7':
-            colorClass = 'vk-has-pale-pink-color';
-            break;
-        case '#cf2e2e':
-            colorClass = 'vk-has-vivid-red-color';
-            break;
-        case '#ff6900':
-            colorClass = 'vk-has-luminous-vivid-orange-color';
-            break;
-        case '#fcb900':
-            colorClass = 'vk-has-luminous-vivid-amber-color';
-            break;
-        case '#7bdcb5':
-            colorClass = 'vk-has-light-green-cyan-color';
-            break;
-        case '#00d084':
-            colorClass = 'vk-has-vivid-green-cyan-color';
-            break;
-        case '#8ed1fc':
-            colorClass = 'vk-has-pale-cyan-blue-color';
-            break;
-        case '#0693e3':
-            colorClass = 'vk-has-vivid-cyan-blue-color';
-            break;
-        case '#9b51e0':
-            colorClass = 'vk-has-vivid-purple-color';
-            break;
-        case '#eee':
-            colorClass = 'vk-has-very-light-gray-color';
-            break;
-        case '#abb8c3':
-            colorClass = 'vk-has-cyan-bluish-gray-color';
-            break;
-        case '#313131':
-            colorClass = 'vk-has-very-dark-gray-color';
-            break;
-    }
+            return 'vk-has-pale-pink-color';
 
-    return colorClass;
+        case '#cf2e2e':
+            return 'vk-has-vivid-red-color';
+
+        case '#ff6900':
+            return 'vk-has-luminous-vivid-orange-color';
+
+        case '#fcb900':
+            return 'vk-has-luminous-vivid-amber-color';
+
+        case '#7bdcb5':
+            return 'vk-has-light-green-cyan-color';
+
+        case '#00d084':
+            return 'vk-has-vivid-green-cyan-color';
+
+        case '#8ed1fc':
+            return 'vk-has-pale-cyan-blue-color';
+
+        case '#0693e3':
+            return 'vk-has-vivid-cyan-blue-color';
+
+        case '#9b51e0':
+            return 'vk-has-vivid-purple-color';
+
+        case '#eee':
+            return 'vk-has-very-light-gray-color';
+
+        case '#abb8c3':
+            return 'vk-has-cyan-bluish-gray-color';
+
+        case '#313131':
+            return 'vk-has-very-dark-gray-color';
+    }
 };
 
 export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
@@ -87,9 +82,8 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
     let activeColor = '';
 
     return (props) => {
-        // isValidBlockType で指定したブロックが選択されたら表示
         if (isValidBlockType(props.name) && props.isSelected) {
-            // すでにオプション選択されていたら
+
             if (props.attributes.color) {
                 activeColor = props.attributes.color;
             }else {
@@ -103,25 +97,25 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
                                    className="list-color-controle">
                             <ColorPalette
                                 value={activeColor}
+                                disableCustomColors={true}
                                 onChange={(newColor) => {
                                     let newClassName = convertColorClass(newColor);
 
-                                    // 高度な設定で入力している場合は追加する
                                     if (props.attributes.className) {
-                                        // 付与されているclassを取り出す
+
                                         let inputClassName = props.attributes.className;
-                                        // スペース区切りを配列に
+
                                         inputClassName = inputClassName.split(' ');
-                                        // 選択されていたオプションの値を削除
+
                                         let filterClassName = inputClassName.filter(function (name) {
-                                            return name !== activeColor;
+                                            return -1 === name.indexOf("vk-has-");
                                         });
-                                        // 新しく選択したオプションを追加
-                                        filterClassName.push(newColor);
-                                        // 配列を文字列に
+
+                                        filterClassName.push(newClassName);
+
                                         newClassName = filterClassName.join(' ');
                                     }
-                                    // 新しく選択したオプションをactiveColorに
+
                                     activeColor = newColor;
                                     props.setAttributes({
                                         className: newClassName,

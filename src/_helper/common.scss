@@ -22,6 +22,7 @@
 /*-------------------------------------------*/
 @mixin mark-before {font-family: "Font Awesome 5 Free";font-weight: 900;position: absolute; }
 
+
 ul, ol{
 
 	&.is-style {
@@ -43,111 +44,6 @@ ul, ol{
 					position: relative;
 				}
 			}
-	}
-
-
-	&.is-style-chevron-mark {
-		li {
-			&:before {
-				@include mark-before;
-				content: "\f138";
-				left: -1.5em;
-			}
-		}
-	}
-
-	&.is-style-triangle-mark {
-		li {
-			&:before {
-				@include mark-before;
-				content: "\f0da";
-				left: -1.3em;
-			}
-		}
-
-	}
-
-	&.is-style-check-mark {
-		li {
-			&:before {
-				@include mark-before;
-				content: "\f00c";
-				left: -1.5em;
-			}
-		}
-
-	}
-
-	&.is-style-check-circle-mark {
-		li {
-			&:before {
-				@include mark-before;
-				content: "\f058";
-				left: -1.5em;
-			}
-		}
-
-	}
-
-	&.is-style-check-square-mark {
-		li {
-			&:before {
-				@include mark-before;
-				content: "\f14a";
-				left: -1.5em;
-			}
-		}
-
-	}
-
-	&.is-style-handpoint-mark {
-		li {
-			&:before {
-				@include mark-before;
-				content: "\f0a4";
-				left: -1.5em;
-			}
-		}
-	}
-
-	&.is-style-handpoint-mark {
-		li {
-			&:before {
-				@include mark-before;
-				content: "\f0a4";
-				left: -1.5em;
-			}
-		}
-	}
-
-	&.is-style-pencil-mark {
-		li {
-			&:before {
-				@include mark-before;
-				content: "\f303";
-				left: -1.5em;
-			}
-		}
-	}
-
-	&.is-style-smile-mark {
-		li {
-			&:before {
-				@include mark-before;
-				content: "\f118";
-				left: -1.5em;
-			}
-		}
-	}
-
-	&.is-style-frown-mark {
-		li {
-			&:before {
-				@include mark-before;
-				content: "\f119";
-				left: -1.5em;
-			}
-		}
 	}
 
 	&.is-style-numbered-circle-mark {
@@ -254,78 +150,59 @@ ul, ol{
 		}
 	}
 
-	&.vk-has-pale-pink-color {
-		li::before {
-			color: #f78da7;
+	$stylePalette: (
+					is-style-chevron-mark: "\f138",
+					is-style-triangle-mark: "\f0da",
+					is-style-check-mark: "\f00c",
+					is-style-check-circle-mark: "\f058",
+					is-style-check-square-mark: "\f14a",
+					is-style-handpoint-mark: "\f0a4",
+					is-style-pencil-mark: "\f303",
+					is-style-smile-mark: "\f118",
+					is-style-frown-mark: "\f119",
+	);
+	@each $styleClass, $faCode in $stylePalette {
+		&.#{$styleClass} {
+			li {
+				&:before {
+					@include mark-before;
+					content: $faCode;
+					left: -1.5em;
+				}
+			}
 		}
 	}
 
-	&.vk-has-vivid-red-color {
-		li::before {
-			color: #cf2e2e;
-		}
-	}
+	$colorPalette: (
+					vk-has-pale-pink-color: #f78da7,
+					vk-has-vivid-red-color: #cf2e2e,
+					vk-has-luminous-vivid-orange-color: #ff6900,
+					vk-has-luminous-vivid-amber-color: #fcb900,
+					vk-has-light-green-cyan-color: #7bdcb5,
+					vk-has-vivid-green-cyan-color: #00d084,
+					vk-has-pale-cyan-blue-color: #8ed1fc,
+					vk-has-vivid-cyan-blue-color: #0693e3,
+					vk-has-vivid-purple-color: #9b51e0,
+					vk-has-very-light-gray-color: #eee,
+					vk-has-cyan-bluish-gray-color: #abb8c3,
+					vk-has-very-dark-gray-color: #313131,
+	);
 
-	&.vk-has-luminous-vivid-orange-color {
-		li::before {
-			color: #ff6900;
+	@each $colorClass, $color in $colorPalette {
+		&.#{$colorClass} {
+			li::before {
+				color: $color;
+			}
 		}
-	}
 
-	&.vk-has-luminous-vivid-amber-color {
-		li::before {
-			color: #fcb900;
-		}
-	}
-
-	&.vk-has-light-green-cyan-color {
-		li::before {
-			color: #7bdcb5;
-		}
-	}
-
-	&.vk-has-vivid-green-cyan-color {
-		li::before {
-			color: #00d084;
-		}
-	}
-
-	&.vk-has-pale-cyan-blue-color {
-		li::before {
-			color: #8ed1fc;
-		}
-	}
-
-	&.vk-has-vivid-cyan-blue-color {
-		li::before {
-			color: #0693e3;
-		}
-	}
-
-	&.vk-has-vivid-purple-color {
-		li::before {
-			color: #9b51e0;
-		}
-	}
-
-	&.vk-has-very-light-gray-color {
-		li::before {
-			color: #eee;
-		}
-	}
-
-	&.vk-has-cyan-bluish-gray-color {
-		li::before {
-			color: #abb8c3;
-		}
-	}
-
-	&.vk-has-very-dark-gray-color {
-		li::before {
-			color: #313131;
+		&.is-style-numbered-circle-mark.#{$colorClass},
+		&.is-style-numbered-square-mark.#{$colorClass}{
+			li::before {
+				color: #ffffff;
+				background-color: $color;
+			}
 		}
 	}
 
 }
-
 //ul,ol

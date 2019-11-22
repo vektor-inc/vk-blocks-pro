@@ -22,10 +22,38 @@
 /*-------------------------------------------*/
 @mixin mark-before {font-family: "Font Awesome 5 Free";font-weight: 900;position: absolute; }
 
+$stylePalette: (
+        is-style-default: "•",
+        is-style-chevron-mark: "\f138",
+        is-style-triangle-mark: "\f0da",
+        is-style-check-mark: "\f00c",
+        is-style-check-circle-mark: "\f058",
+        is-style-check-square-mark: "\f14a",
+        is-style-handpoint-mark: "\f0a4",
+        is-style-pencil-mark: "\f303",
+        is-style-smile-mark: "\f118",
+        is-style-frown-mark: "\f119",
+);
+
+$colorPalette: (
+        vk-has-pale-pink-color: #f78da7,
+        vk-has-vivid-red-color: #cf2e2e,
+        vk-has-luminous-vivid-orange-color: #ff6900,
+        vk-has-luminous-vivid-amber-color: #fcb900,
+        vk-has-light-green-cyan-color: #7bdcb5,
+        vk-has-vivid-green-cyan-color: #00d084,
+        vk-has-pale-cyan-blue-color: #8ed1fc,
+        vk-has-vivid-cyan-blue-color: #0693e3,
+        vk-has-vivid-purple-color: #9b51e0,
+        vk-has-very-light-gray-color: #eee,
+        vk-has-cyan-bluish-gray-color: #abb8c3,
+        vk-has-very-dark-gray-color: #313131,
+);
 
 ul, ol{
 
 	&.is-style {
+      &-default,
 		&-chevron-mark,
 		&-triangle-mark,
 		&-check-mark,
@@ -104,7 +132,7 @@ ul, ol{
 	&.is-style-numbered-circle-mark,
 	&.is-style-numbered-square-mark {
 		&.fa-lg {
-			li:before {
+			li::before {
 				left: -.8em;
 			}
 		}
@@ -114,7 +142,7 @@ ul, ol{
 				line-height: 1.25em;
 			}
 
-			li:before {
+			li::before {
 				left: -1.1em;
 			}
 		}
@@ -124,7 +152,7 @@ ul, ol{
 				line-height: 1.25em;
 			}
 
-			li:before {
+			li::before {
 				left: -1.4em;
 			}
 		}
@@ -134,7 +162,7 @@ ul, ol{
 				line-height: 1.25em;
 			}
 
-			li:before {
+			li::before {
 				left: -1.5em;
 			}
 		}
@@ -144,49 +172,31 @@ ul, ol{
 				line-height: 1.25em;
 			}
 
-			li:before {
+			li::before {
 				left: -1.6em;
 			}
 		}
-	}
+    }
 
-	$stylePalette: (
-					is-style-chevron-mark: "\f138",
-					is-style-triangle-mark: "\f0da",
-					is-style-check-mark: "\f00c",
-					is-style-check-circle-mark: "\f058",
-					is-style-check-square-mark: "\f14a",
-					is-style-handpoint-mark: "\f0a4",
-					is-style-pencil-mark: "\f303",
-					is-style-smile-mark: "\f118",
-					is-style-frown-mark: "\f119",
-	);
 	@each $styleClass, $faCode in $stylePalette {
 		&.#{$styleClass} {
 			li {
-				&:before {
+				&::before {
 					@include mark-before;
 					content: $faCode;
 					left: -1.5em;
 				}
 			}
 		}
-	}
-
-	$colorPalette: (
-					vk-has-pale-pink-color: #f78da7,
-					vk-has-vivid-red-color: #cf2e2e,
-					vk-has-luminous-vivid-orange-color: #ff6900,
-					vk-has-luminous-vivid-amber-color: #fcb900,
-					vk-has-light-green-cyan-color: #7bdcb5,
-					vk-has-vivid-green-cyan-color: #00d084,
-					vk-has-pale-cyan-blue-color: #8ed1fc,
-					vk-has-vivid-cyan-blue-color: #0693e3,
-					vk-has-vivid-purple-color: #9b51e0,
-					vk-has-very-light-gray-color: #eee,
-					vk-has-cyan-bluish-gray-color: #abb8c3,
-					vk-has-very-dark-gray-color: #313131,
-	);
+      &.is-style-default {
+        li {
+          &::before {
+            font-size: 22px;
+            line-height: 1.1em;
+          }
+        }
+      }
+    }
 
 	@each $colorClass, $color in $colorPalette {
 		&.#{$colorClass} {

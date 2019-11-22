@@ -34,7 +34,7 @@ export const addAttribute = (settings) => {
         });
     }
     return settings;
-}
+};
 addFilter('blocks.registerBlockType', 'vk-blocks/list-style', addAttribute);
 
 export const convertColorClass = (color) => {

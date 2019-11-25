@@ -46,25 +46,6 @@ h1:first-child.vk_prBlocks_item_title{
 	margin-top:0.9em;
 }
 
-@media (min-width: 600px){
-.wp-block-columns {
-	margin-left:-15px;
-	margin-right:-15px;
-}
-.wp-block-column {
-	flex-basis: auto;
-	margin-left:15px;
-	margin-right:15px;
-	width: calc( 50% - 30px ) ;
-	&:not(:first-child),
-	&:not(:last-child),
-	&:nth-child(odd){
-		margin-left:15px;
-		margin-right:15px;
-	}
-}
-}
-
 /*-------------------------------------------*/
 /* リストデザイン
 /*-------------------------------------------*/
@@ -946,6 +927,91 @@ $padding-xl:3.5em;
 // }
 
 /*-------------------------------------------*/
+/* Layout
+/*-------------------------------------------*/
+.vk_prContent {
+	margin-left:-15px;
+	margin-right:-15px;
+ @media (min-width: 576px) {
+	 display: flex;
+	 .col-sm-6 {
+		 width:50%;
+	 }
+	 &-layout {
+		&-imageLeft {
+			flex-direction: row;
+		}
+
+		&-imageRight {
+			flex-direction: row-reverse;
+		}
+
+		&-imageLeft .vk_prContent_colImg {
+			padding-right: 2em;
+		}
+
+		&-imageRight .vk_prContent_colImg {
+			padding-left: 2em;
+		}
+	 }
+	} // @media (min-width: 768px) {
+}
+
+
+/*-------------------------------------------*/
+/* others
+/*-------------------------------------------*/
+.vk_prContent {
+	&_colTxt {
+		vertical-align: top;;
+		&_title {
+			background-color: transparent;
+			font-weight: bold;
+			padding: 0;
+			box-shadow: none;
+			border: none;
+			margin-bottom:0.8em;
+			@media (max-width: 575.98px) {
+				&:first-child{
+					margin-top: 30px;
+				}
+			}
+		&:after {
+			content: "";
+				line-height: 0;
+				display: block;
+				overflow: hidden;
+				position: absolute;
+				bottom: -1px;
+				width: 0;
+				border: none;
+			}
+		}
+	  &_text {
+			line-height: 2em;
+			margin-bottom:1.7em;
+	  }
+	  &_btn.btn {
+			@media (min-width: 992px) {
+		 	 font-size:16px;
+		 	}
+	  }
+	} // &_colTxt {
+	&_colImg{
+		&_image {
+			max-width: 100%;
+			height: auto;
+		}
+		.components-button.button{
+			margin: 1em;
+		}
+		.components-button.image-button {
+			margin: 0;
+		}
+	}
+} // .vk_prContent {
+
+/*-------------------------------------------*/
 /* .vk_prBlocks
 /*-------------------------------------------*/
 .vk_prBlocks_item {
@@ -1093,90 +1159,39 @@ $padding-xl:3.5em;
 }
 
 /*-------------------------------------------*/
-/* Layout
+/* CSS
 /*-------------------------------------------*/
-.vk_prContent {
-	margin-left:-15px;
-	margin-right:-15px;
- @media (min-width: 576px) {
-	 display: flex;
-	 .col-sm-6 {
-		 width:50%;
-	 }
-	 &-layout {
-		&-imageLeft {
-			flex-direction: row;
-		}
 
-		&-imageRight {
-			flex-direction: row-reverse;
-		}
+@mixin switchVisibility($pc,$tablet,$mobile) {
+  .vk_spacer {
+    .vk_spacer-display-pc {
+      display: $pc;
+    }
 
-		&-imageLeft .vk_prContent_colImg {
-			padding-right: 2em;
-		}
+    .vk_spacer-display-tablet {
+      display: $tablet;
+    }
 
-		&-imageRight .vk_prContent_colImg {
-			padding-left: 2em;
-		}
-	 }
-	} // @media (min-width: 768px) {
+    .vk_spacer-display-mobile {
+      display: $mobile;
+    }
+  }
 }
 
+// Small devices (landscape phones, 576px以下)
+@media (max-width: 576px) {
+  @include switchVisibility(none, none, block);
+}
 
-/*-------------------------------------------*/
-/* others
-/*-------------------------------------------*/
-.vk_prContent {
-	&_colTxt {
-		vertical-align: top;;
-		&_title {
-			background-color: transparent;
-			font-weight: bold;
-			padding: 0;
-			box-shadow: none;
-			border: none;
-			margin-bottom:0.8em;
-			@media (max-width: 575.98px) {
-				&:first-child{
-					margin-top: 30px;
-				}
-			}
-		&:after {
-			content: "";
-				line-height: 0;
-				display: block;
-				overflow: hidden;
-				position: absolute;
-				bottom: -1px;
-				width: 0;
-				border: none;
-			}
-		}
-	  &_text {
-			line-height: 2em;
-			margin-bottom:1.7em;
-	  }
-	  &_btn.btn {
-			@media (min-width: 992px) {
-		 	 font-size:16px;
-		 	}
-	  }
-	} // &_colTxt {
-	&_colImg{
-		&_image {
-			max-width: 100%;
-			height: auto;
-		}
-		.components-button.button{
-			margin: 1em;
-		}
-		.components-button.image-button {
-			margin: 0;
-		}
-	}
-} // .vk_prContent {
+// Medium devices (tablets, 577pxから768px)
+@media (min-width: 577px) and (max-width: 768px) {
+  @include switchVisibility(none, block, none);
+}
 
+// Large devices (desktops, 769px以上)
+@media (min-width: 769px) {
+  @include switchVisibility(block, none, none);
+}
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -1357,40 +1372,6 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
 /* CSS
 /*-------------------------------------------*/
 
-@mixin switchVisibility($pc,$tablet,$mobile) {
-  .vk_spacer {
-    .vk_spacer-display-pc {
-      display: $pc;
-    }
-
-    .vk_spacer-display-tablet {
-      display: $tablet;
-    }
-
-    .vk_spacer-display-mobile {
-      display: $mobile;
-    }
-  }
-}
-
-// Small devices (landscape phones, 576px以下)
-@media (max-width: 576px) {
-  @include switchVisibility(none, none, block);
-}
-
-// Medium devices (tablets, 577pxから768px)
-@media (min-width: 577px) and (max-width: 768px) {
-  @include switchVisibility(none, block, none);
-}
-
-// Large devices (desktops, 769px以上)
-@media (min-width: 769px) {
-  @include switchVisibility(block, none, none);
-}
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -1400,14 +1381,14 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
   .vk_step_item {
     position: relative;
     padding: 0 0 1em 4em;
-    margin: 28px auto;
+    margin: 0 auto;
 
       h3:first-of-type,
       h4:first-of-type{
         padding-top: 0.5em;
         margin-top: 0;
       }
-      p:first-child{
+			&_content > p:first-child{
         margin-bottom:0.3em;
         line-height: 1;
         color:#666;
@@ -1449,14 +1430,6 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
     bottom: 4px;
   }
 }
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-.vk_table-col-overflow {
-  white-space: nowrap !important;
-}
-/*# sourceMappingURL=style.scss.map */
 
 /*-------------------------------------------*/
 /* CSS
@@ -1545,6 +1518,14 @@ $toc-left-margin: 1rem;
   //   }
   // }
 }
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+.vk_table-col-overflow {
+  white-space: nowrap !important;
+}
+/*# sourceMappingURL=style.scss.map */
 
 /*-------------------------------------------*/
 /* CSS

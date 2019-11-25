@@ -134,12 +134,13 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 
 addFilter('editor.BlockEdit', 'vk-blocks/list-style', addBlockControl);
 
+
 wp.blocks.registerBlockStyle('core/list',
     [
         {
             name: 'default',
             label: __('Default', 'vk-blocks'),
-            isDefault: true,
+            isDefault:true
         },
         {
             name: 'chevron-mark',

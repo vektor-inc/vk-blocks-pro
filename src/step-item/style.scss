@@ -14,7 +14,7 @@
         padding-top: 0.5em;
         margin-top: 0;
       }
-      p:first-child{
+			&_content > p:first-child{
         margin-bottom:0.3em;
         line-height: 1;
         color:#666;

@@ -298,6 +298,7 @@ msgid "Heading style"
 msgstr ""
 
 #: src/heading/block.js:125
+#: src/list-style/block.js:142
 #: src/staff/block.js:105
 #: src/step-item/block.js:116
 #: src/table-of-contents/block.js:113
@@ -368,6 +369,55 @@ msgstr ""
 
 #: src/highlighter/block.js:93
 msgid "Highlighter"
+msgstr ""
+
+#: src/list-style/block.js:147
+msgid "Chevron"
+msgstr ""
+
+#: src/list-style/block.js:151
+#: src/outer/block.js:228
+msgid "Triangle"
+msgstr ""
+
+#: src/list-style/block.js:155
+msgid "Check"
+msgstr ""
+
+#: src/list-style/block.js:159
+msgid "Check Square"
+msgstr ""
+
+#: src/list-style/block.js:163
+msgid "Check Circle"
+msgstr ""
+
+#: src/list-style/block.js:167
+msgid "Handpoint"
+msgstr ""
+
+#: src/list-style/block.js:171
+msgid "Pencil"
+msgstr ""
+
+#: src/list-style/block.js:175
+msgid "Smile"
+msgstr ""
+
+#: src/list-style/block.js:179
+msgid "Frown"
+msgstr ""
+
+#: src/list-style/block.js:183
+msgid "Numbered Circle"
+msgstr ""
+
+#: src/list-style/block.js:187
+msgid "Numbered Square"
+msgstr ""
+
+#: src/list-style/block.js:96
+msgid "List Color"
 msgstr ""
 
 #: src/outer/block.js:102
@@ -456,10 +506,6 @@ msgstr ""
 
 #: src/outer/block.js:224
 msgid "Wave"
-msgstr ""
-
-#: src/outer/block.js:228
-msgid "Triangle"
 msgstr ""
 
 #: src/outer/block.js:234

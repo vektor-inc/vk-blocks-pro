@@ -48,6 +48,10 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 			return $return;
 		}
 
+		/**
+		 * [public description]
+		 * @var [type]
+		 */
 		static public function get_view( $post, $options ) {
 
 			$options = self::get_loop_post_view_options( $options );
@@ -66,6 +70,10 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 			 echo wp_kses_post( self::get_view( $post, $options ) );
 		}
 
+		/**
+		 * [public description]
+		 * @var [type]
+		 */
 		static public function get_loop( $wp_query, $options, $options_loop = array() ) {
 
 			$options_loop_dafault = array(
@@ -96,6 +104,11 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 			wp_reset_postdata();
 			return $loop;
 		}
+
+		/**
+		 * [public description]
+		 * @var [type]
+		 */
 		static public function the_loop( $wp_query, $options, $options_loop = array() ) {
 			echo self::get_loop( $wp_query, $options, $options_loop );
 		}
@@ -145,7 +158,14 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				if ( $classes['class_outer'] ) {
 					$classes['class_outer'] = ' ' . $classes['class_outer'];
 				}
-				$html .= '<div class="vk_post_imgOuter' . $classes['class_outer'] . '">';
+
+				$image_src = get_the_post_thumbnail_url( $post->ID, 'large' );
+				if ( ! $image_src && $options['image_default_url'] ) {
+					$image_src = esc_url( $options['image_default_url'] );
+				}
+				$style = ' style="background-image:url(' . $image_src . ')"';
+
+				$html .= '<div class="vk_post_imgOuter' . $classes['class_outer'] . '"' . $style . '>';
 				$html .= '<a href="' . get_the_permalink( $post->ID ) . '">';
 
 				if ( $options['overlay'] ) {
@@ -160,11 +180,12 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 					$term_args = array(
 						'class' => 'vk_post_imgOuter_singleTermLabel',
 					);
-					$html     .= Vk_term_color::get_single_term_with_color( false, $term_args );
-					$html     .= '</div>';
+					if ( method_exists( 'Vk_term_color', 'get_single_term_with_color' ) ) {
+						$html .= Vk_term_color::get_single_term_with_color( false, $term_args );
+					}
+					$html .= '</div>';
 
 				}
-
 				if ( $classes['class_image'] ) {
 					$image_class = 'vk_post_imgOuter_img ' . $classes['class_image'];
 				} else {
@@ -248,7 +269,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 					'outer_class'    => '',
 					'btn_text'       => $options['btn_text'],
 					'btn_url'        => get_the_permalink( $post->ID ),
-					'btn_class'      => 'btn btn-primary btn-sm',
+					'btn_class'      => 'btn btn-primary vk_post_btn',
 					'btn_target'     => '',
 					'btn_ghost'      => false,
 					'btn_color_text' => '',
@@ -308,15 +329,9 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 			// $html .= '<a href="' . get_the_permalink( $post->ID ) . '" class="card-horizontal-inner">';
 			$html .= '<div class="row no-gutters card-horizontal-inner-row">';
 
-			$image_src = '';
+			// $image_src = '';
 			if ( $options['display_image'] ) {
-
-				$image_src = get_the_post_thumbnail_url( $post->ID, 'medium' );
-				if ( ! $image_src && $options['image_default_url'] ) {
-					$image_src = esc_url( $options['image_default_url'] );
-				}
-
-				$html .= '<div class="col-5 card-img-outer" style="background-image:url(' . $image_src . ')">';
+				$html .= '<div class="col-5 card-img-outer">';
 				$attr  = array(
 					'class_outer' => '',
 					'class_image' => 'card-img card-img-use-bg',

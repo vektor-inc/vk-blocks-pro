@@ -32,7 +32,8 @@ $xl-min:1200px;
 /*-------------------------------------------*/
 /* vk_post Layout
 /*-------------------------------------------*/
-.vk_post-col {
+/* If exclude the .vk_posts that, when you select the .media don't work */
+.vk_posts .vk_post-col {
 	&-xs-3 { width : calc( 25% - 30px );}
 	&-xs-4 { width : calc( 33.3% - 30px );}
 	&-xs-6 { width : calc( 50% - 30px );}
@@ -76,18 +77,8 @@ $xl-min:1200px;
 .vk_post{
 	margin-left:15px;
 	margin-right:15px;
-	img {
-		transition-duration: 0.3s;
-	}
 	a:hover {
 		text-decoration: none;
-		img {
-			// opacity: 0.7;
-			 filter: saturate(150%);
-			 filter: brightness(70%);
-			 // filter: contrast(110%);
-			// transform: scale(1.1,1.1);
-		}
 	}
 	&_imgOuter {
 		position: relative;
@@ -129,7 +120,9 @@ $xl-min:1200px;
 		margin-top: 0.5em;
 		color:#666;
 	}
-
+	&_btn{
+		font-size:12px;
+	}
 	/*
 	Basicly wright to without .vk_post.
 	This additional is can't over wright only.
@@ -150,6 +143,54 @@ $xl-min:1200px;
 		border-bottom:$border_primary ;
 	}
 }
+
+/*-------------------------------------------*/
+/* image effect
+/*-------------------------------------------*/
+.vk_post{
+	&_imgOuter {
+		position: relative;
+		background-size: cover;
+		background-position: center 50%;
+		::after{
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background: rgba(0, 0, 0, 0);
+			transition-duration: 0.3s;
+		}
+		:hover::after{
+			background: rgba(0, 0, 0, 0.5);
+		}
+		a {
+			height:100%;
+		}
+		&_img {
+			position: absolute;
+			left: -9999px;
+		}
+	}
+	&:not(.card-horizontal){
+		.vk_post_imgOuter {
+				border-bottom: $border_primary;
+				&:before {
+					content:"";
+					display: block;
+					padding-top:62%;
+				}
+		}
+	}
+	&.card-horizontal {
+		.vk_post_imgOuter {
+			height:100%;
+		}
+	}
+}
+
+
 /*-------------------------------------------*/
 /* Button display
 /*-------------------------------------------*/
@@ -173,7 +214,7 @@ $xl-min:1200px;
 	}
 	&.card {
 		.vk_post_body {
-			padding-bottom:70px;
+			padding-bottom:65px;
 		}
 		.vk_post_btnOuter {
 			width: calc( 100% - 2.5rem );
@@ -250,13 +291,6 @@ $xl-min:1200px;
 	}
 	&-meta {
 		font-size:12px;
-	}
-	&-img-outer {
-		position: relative;
-		overflow: hidden;
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: 50% 50%;
 	}
 	&-img-use-bg {
 		position:relative;
@@ -340,7 +374,7 @@ $xl-min:1200px;
 .media.vk_post-col {
 	&-xs-6:first-child,
 	&-xs-6:nth-child(2) { border-top: $border_primary; }
-	@media ( min-width : $sm-min ){
+	@media ( min-width : $sm-min ) and ( max-width : $sm-max ) {
 		&-sm-6:nth-child(2),
 		&-sm-4:nth-child(2),
 		&-sm-4:nth-child(3),
@@ -348,7 +382,7 @@ $xl-min:1200px;
 		&-sm-3:nth-child(3),
 		&-sm-3:nth-child(4) { border-top: $border_primary; }
 	}
-	@media ( min-width : $md-min ){
+	@media ( min-width : $md-min ) and ( max-width : $md-max ){
 		&-md-6:nth-child(2),
 		&-md-4:nth-child(2),
 		&-md-4:nth-child(3),
@@ -356,7 +390,7 @@ $xl-min:1200px;
 		&-md-3:nth-child(3),
 		&-md-3:nth-child(4) { border-top: $border_primary; }
 	}
-	@media ( min-width : $lg-min ){
+	@media ( min-width : $lg-min ) and ( max-width : $lg-max ){
 		&-lg-6:nth-child(2),
 		&-lg-4:nth-child(2),
 		&-lg-4:nth-child(3),

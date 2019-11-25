@@ -3,13 +3,28 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
+#: src/_helper/font-awesome.js:21
+msgid "FontAwesome"
+msgstr ""
+
+#: src/_helper/font-awesome.js:23
+msgid "Enter Font Awesome Class. Ex) fas fa-arrow-circle-right "
+msgstr ""
+
+#: src/_helper/font-awesome.js:25
+#: src/button/block.js:217
+#: src/pr-blocks/block.js:307
+#: src/pr-content/block.js:171
+msgid "Font Awesome icon list"
+msgstr ""
+
 #: src/alert/block.js:13
 msgid "Alert"
 msgstr ""
 
 #: src/balloon/block.js:122
 #: src/flow/block.js:112
-#: src/outer/block.js:122
+#: src/outer/block.js:136
 #: src/pr-blocks/block.js:343
 #: src/pr-content/component.js:116
 #: src/pr-content/deprecated/component-deprecated.js:102
@@ -19,7 +34,7 @@ msgstr ""
 
 #: src/balloon/block.js:122
 #: src/flow/block.js:113
-#: src/outer/block.js:124
+#: src/outer/block.js:138
 #: src/pr-blocks/block.js:345
 #: src/pr-content/component.js:120
 #: src/pr-content/deprecated/component-deprecated.js:106
@@ -54,20 +69,20 @@ msgstr ""
 
 #: src/balloon/block.js:88
 #: src/button/block.js:174
-#: src/post-list/block.js:383
+#: src/post-list/block.js:402
 #: src/pr-content/block.js:195
 msgid "Left"
 msgstr ""
 
 #: src/balloon/block.js:89
 #: src/button/block.js:176
-#: src/post-list/block.js:391
+#: src/post-list/block.js:410
 #: src/pr-content/block.js:194
 msgid "Right"
 msgstr ""
 
 #: src/balloon/block.js:94
-#: src/outer/block.js:196
+#: src/outer/block.js:210
 msgid "Type"
 msgstr ""
 
@@ -106,7 +121,7 @@ msgid "Large"
 msgstr ""
 
 #: src/button/block.js:165
-#: src/outer/block.js:138
+#: src/outer/block.js:152
 msgid "normal"
 msgstr ""
 
@@ -119,7 +134,7 @@ msgid "Button Position:"
 msgstr ""
 
 #: src/button/block.js:175
-#: src/post-list/block.js:387
+#: src/post-list/block.js:406
 msgid "Center"
 msgstr ""
 
@@ -205,12 +220,6 @@ msgstr ""
 msgid "Font Awesome:"
 msgstr ""
 
-#: src/button/block.js:217
-#: src/pr-blocks/block.js:307
-#: src/pr-content/block.js:171
-msgid "Font Awesome icon list"
-msgstr ""
-
 #: src/button/block.js:220
 #: src/pr-content/block.js:174
 msgid "Before text"
@@ -240,7 +249,7 @@ msgid "Apply"
 msgstr ""
 
 #: src/button/block.js:59
-#: src/post-list/block.js:350
+#: src/post-list/block.js:369
 msgid "Button"
 msgstr ""
 
@@ -290,7 +299,9 @@ msgstr ""
 
 #: src/heading/block.js:125
 #: src/staff/block.js:105
-#: src/table-of-contents/block.js:106
+#: src/step-item/block.js:116
+#: src/table-of-contents/block.js:113
+#: src/timeline-item/block.js:99
 msgid "Default"
 msgstr ""
 
@@ -359,278 +370,282 @@ msgstr ""
 msgid "Highlighter"
 msgstr ""
 
-#: src/outer/block.js:110
-msgid "Background Image"
-msgstr ""
-
-#: src/outer/block.js:131
-msgid "Background image Position"
-msgstr ""
-
-#: src/outer/block.js:139
-msgid "Fixed"
-msgstr ""
-
-#: src/outer/block.js:140
-msgid "Parallax (It will not work in preview)"
-msgstr ""
-
-#: src/outer/block.js:148
-#: src/pr-content/block.js:189
-msgid "Layout Setting"
-msgstr ""
-
-#: src/outer/block.js:153
-msgid "Outer width"
-msgstr ""
-
-#: src/outer/block.js:156
-msgid "Normal"
-msgstr ""
-
-#: src/outer/block.js:157
-msgid "Full Wide"
-msgstr ""
-
-#: src/outer/block.js:162
-msgid "Contents area padding (left and right)"
-msgstr ""
-
-#: src/outer/block.js:166
-msgid "Do not use padding"
-msgstr ""
-
-#: src/outer/block.js:170
-msgid "Use padding"
-msgstr ""
-
-#: src/outer/block.js:177
-msgid "Padding (top and bottom)"
-msgstr ""
-
-#: src/outer/block.js:180
-msgid "Use default padding"
-msgstr ""
-
-#: src/outer/block.js:182
-msgid "Do not use default padding (Set it yourself using a spacer block etc.)."
-msgstr ""
-
-#: src/outer/block.js:191
-msgid "Divider Setting"
-msgstr ""
-
-#: src/outer/block.js:202
-msgid "Tilt"
-msgstr ""
-
-#: src/outer/block.js:206
-msgid "Curve"
-msgstr ""
-
-#: src/outer/block.js:210
-msgid "Wave"
-msgstr ""
-
-#: src/outer/block.js:214
-msgid "Triangle"
-msgstr ""
-
-#: src/outer/block.js:220
-msgid "Upper Divider Level"
-msgstr ""
-
-#: src/outer/block.js:236
-msgid "Lower Divider Level"
-msgstr ""
-
-#: src/outer/block.js:253
-msgid "Border Setting"
-msgstr ""
-
-#: src/outer/block.js:259
-msgid "Border will disappear when divider effect is applied."
-msgstr ""
-
-#: src/outer/block.js:261
-msgid "Border type"
-msgstr ""
-
-#: src/outer/block.js:267
-#: src/staff/block.js:109
-msgid "None"
-msgstr ""
-
-#: src/outer/block.js:271
-#: src/pr-content/block.js:142
-msgid "Solid"
-msgstr ""
-
-#: src/outer/block.js:275
-msgid "Dotted"
-msgstr ""
-
-#: src/outer/block.js:279
-msgid "Dashed"
-msgstr ""
-
-#: src/outer/block.js:283
-msgid "Double"
-msgstr ""
-
-#: src/outer/block.js:287
-msgid "Groove"
-msgstr ""
-
-#: src/outer/block.js:291
-msgid "Ridge"
-msgstr ""
-
-#: src/outer/block.js:295
-msgid "Inset"
-msgstr ""
-
-#: src/outer/block.js:299
-msgid "Outset"
-msgstr ""
-
-#: src/outer/block.js:311
-msgid "Border width"
-msgstr ""
-
-#: src/outer/block.js:320
-msgid "Border radius"
-msgstr ""
-
-#: src/outer/block.js:339
-#: src/table-of-contents/block.js:125
-msgid "This block is only for users who bought Lightning Pro."
-msgstr ""
-
-#: src/outer/block.js:44
-msgid "Outer"
-msgstr ""
-
-#: src/outer/block.js:84
-msgid "Background Setting"
-msgstr ""
-
-#: src/outer/block.js:88
+#: src/outer/block.js:102
 #: src/pr-content/block.js:92
 msgid "Color Setting"
 msgstr ""
 
-#: src/outer/block.js:89
+#: src/outer/block.js:103
 msgid ""
 "Color will overcome background image. If you want to display image, clear "
 "background color or set opacity 0."
 msgstr ""
 
-#: src/outer/block.js:97
+#: src/outer/block.js:112
 msgid "Opacity Setting"
 msgstr ""
 
-#: src/post-list/block.js:214
+#: src/outer/block.js:124
+msgid "Background Image"
+msgstr ""
+
+#: src/outer/block.js:145
+msgid "Background image Position"
+msgstr ""
+
+#: src/outer/block.js:153
+msgid "Fixed"
+msgstr ""
+
+#: src/outer/block.js:154
+msgid "Parallax (It will not work in preview)"
+msgstr ""
+
+#: src/outer/block.js:162
+#: src/pr-content/block.js:189
+msgid "Layout Setting"
+msgstr ""
+
+#: src/outer/block.js:167
+msgid "Outer width"
+msgstr ""
+
+#: src/outer/block.js:170
+msgid "Normal"
+msgstr ""
+
+#: src/outer/block.js:171
+msgid "Full Wide"
+msgstr ""
+
+#: src/outer/block.js:176
+msgid "Contents area padding (left and right)"
+msgstr ""
+
+#: src/outer/block.js:180
+msgid "Do not use padding"
+msgstr ""
+
+#: src/outer/block.js:184
+msgid "Use padding"
+msgstr ""
+
+#: src/outer/block.js:191
+msgid "Padding (top and bottom)"
+msgstr ""
+
+#: src/outer/block.js:194
+msgid "Use default padding"
+msgstr ""
+
+#: src/outer/block.js:196
+msgid "Do not use default padding (Set it yourself using a spacer block etc.)."
+msgstr ""
+
+#: src/outer/block.js:205
+msgid "Divider Setting"
+msgstr ""
+
+#: src/outer/block.js:216
+msgid "Tilt"
+msgstr ""
+
+#: src/outer/block.js:220
+msgid "Curve"
+msgstr ""
+
+#: src/outer/block.js:224
+msgid "Wave"
+msgstr ""
+
+#: src/outer/block.js:228
+msgid "Triangle"
+msgstr ""
+
+#: src/outer/block.js:234
+msgid "Upper Divider Level"
+msgstr ""
+
+#: src/outer/block.js:250
+msgid "Lower Divider Level"
+msgstr ""
+
+#: src/outer/block.js:267
+msgid "Border Setting"
+msgstr ""
+
+#: src/outer/block.js:273
+msgid "Border will disappear when divider effect is applied."
+msgstr ""
+
+#: src/outer/block.js:275
+msgid "Border type"
+msgstr ""
+
+#: src/outer/block.js:281
+#: src/staff/block.js:109
+#: src/step-item/block.js:120
+#: src/timeline-item/block.js:103
+msgid "None"
+msgstr ""
+
+#: src/outer/block.js:285
+#: src/pr-content/block.js:142
+#: src/step-item/block.js:97
+#: src/timeline-item/block.js:84
+msgid "Solid"
+msgstr ""
+
+#: src/outer/block.js:289
+msgid "Dotted"
+msgstr ""
+
+#: src/outer/block.js:293
+msgid "Dashed"
+msgstr ""
+
+#: src/outer/block.js:297
+msgid "Double"
+msgstr ""
+
+#: src/outer/block.js:301
+msgid "Groove"
+msgstr ""
+
+#: src/outer/block.js:305
+msgid "Ridge"
+msgstr ""
+
+#: src/outer/block.js:309
+msgid "Inset"
+msgstr ""
+
+#: src/outer/block.js:313
+msgid "Outset"
+msgstr ""
+
+#: src/outer/block.js:325
+msgid "Border width"
+msgstr ""
+
+#: src/outer/block.js:334
+msgid "Border radius"
+msgstr ""
+
+#: src/outer/block.js:353
+#: src/table-of-contents/block.js:132
+msgid "This block is only for users who bought Lightning Pro."
+msgstr ""
+
+#: src/outer/block.js:45
+msgid "Outer"
+msgstr ""
+
+#: src/outer/block.js:98
+msgid "Background Setting"
+msgstr ""
+
+#: src/post-list/block.js:233
 msgid "Display conditions"
 msgstr ""
 
-#: src/post-list/block.js:218
+#: src/post-list/block.js:237
 msgid "Filter by PostTypes"
 msgstr ""
 
-#: src/post-list/block.js:225
+#: src/post-list/block.js:244
 msgid "Filter by Taxonomy Terms"
 msgstr ""
 
-#: src/post-list/block.js:232
+#: src/post-list/block.js:251
 msgid "Number of Posts"
 msgstr ""
 
-#: src/post-list/block.js:243
+#: src/post-list/block.js:262
 msgid "Display type and columns"
 msgstr ""
 
-#: src/post-list/block.js:247
+#: src/post-list/block.js:266
 msgid "Display type"
 msgstr ""
 
-#: src/post-list/block.js:255
+#: src/post-list/block.js:274
 msgid "Card"
 msgstr ""
 
-#: src/post-list/block.js:259
+#: src/post-list/block.js:278
 msgid "Card Horizontal"
 msgstr ""
 
-#: src/post-list/block.js:263
+#: src/post-list/block.js:282
 msgid "Media"
 msgstr ""
 
-#: src/post-list/block.js:269
+#: src/post-list/block.js:288
 msgid "Column ( Screen size : Extra small )"
 msgstr ""
 
-#: src/post-list/block.js:279
+#: src/post-list/block.js:298
 msgid "Column ( Screen size : Small )"
 msgstr ""
 
-#: src/post-list/block.js:289
+#: src/post-list/block.js:308
 msgid "Column ( Screen size : Medium )"
 msgstr ""
 
-#: src/post-list/block.js:299
+#: src/post-list/block.js:318
 msgid "Column ( Screen size : Large )"
 msgstr ""
 
-#: src/post-list/block.js:309
+#: src/post-list/block.js:328
 msgid "Column ( Screen size : Extra large )"
 msgstr ""
 
-#: src/post-list/block.js:321
+#: src/post-list/block.js:340
 msgid "Display item"
 msgstr ""
 
-#: src/post-list/block.js:325
+#: src/post-list/block.js:344
 msgid "Image"
 msgstr ""
 
-#: src/post-list/block.js:330
+#: src/post-list/block.js:349
 msgid "Term name"
 msgstr ""
 
-#: src/post-list/block.js:335
+#: src/post-list/block.js:354
 msgid "Excerpt"
 msgstr ""
 
-#: src/post-list/block.js:340
+#: src/post-list/block.js:359
 msgid "Date"
 msgstr ""
 
-#: src/post-list/block.js:345
+#: src/post-list/block.js:364
 msgid "New mark"
 msgstr ""
 
-#: src/post-list/block.js:354
+#: src/post-list/block.js:373
 msgid "New mark option"
 msgstr ""
 
-#: src/post-list/block.js:356
+#: src/post-list/block.js:375
 msgid "Number of days to display the new post mark"
 msgstr ""
 
-#: src/post-list/block.js:362
+#: src/post-list/block.js:381
 msgid "New post mark"
 msgstr ""
 
-#: src/post-list/block.js:367
+#: src/post-list/block.js:386
 msgid "Button option"
 msgstr ""
 
-#: src/post-list/block.js:369
+#: src/post-list/block.js:388
 msgid "Button text"
 msgstr ""
 
-#: src/post-list/block.js:375
+#: src/post-list/block.js:394
 msgid "Button align"
 msgstr ""
 
@@ -811,6 +826,8 @@ msgid "Set the alt text for profile image"
 msgstr ""
 
 #: src/staff/block.js:124
+#: src/step-item/block.js:80
+#: src/timeline-item/block.js:63
 msgid "Color"
 msgstr ""
 
@@ -861,15 +878,59 @@ msgstr ""
 msgid "Caption"
 msgstr ""
 
-#: src/table-of-contents/TableOfContents.js:84
-#: src/table-of-contents/block.js:55
+#: src/step-item/block.js:101
+#: src/timeline-item/block.js:80
+msgid "Outlined"
+msgstr ""
+
+#: src/step-item/block.js:33
+msgid "Step Item"
+msgstr ""
+
+#: src/step-item/block.js:58
+msgid "Step Mark"
+msgstr ""
+
+#: src/step-item/block.js:61
+msgid "If FontAwesome class entered, it will overrides the number."
+msgstr ""
+
+#: src/step-item/block.js:75
+#: src/timeline-item/block.js:60
+msgid "Ex,6:00AM"
+msgstr ""
+
+#: src/step-item/block.js:86
+#: src/table-of-contents/block.js:104
+#: src/timeline-item/block.js:69
+msgid "Style"
+msgstr ""
+
+#: src/step/block.js:121
+msgid "First Dot Number"
+msgstr ""
+
+#: src/step/block.js:53
+msgid "Step"
+msgstr ""
+
+#: src/table-of-contents/TableOfContents.js:154
+#: src/table-of-contents/block.js:53
 msgid "Table of Contents"
 msgstr ""
 
-#: src/table-of-contents/block.js:110
+#: src/table-of-contents/block.js:117
 msgid "No frame"
 msgstr ""
 
-#: src/table-of-contents/block.js:97
-msgid "Style"
+#: src/timeline-item/block.js:31
+msgid "Timeline Item"
+msgstr ""
+
+#: src/timeline-item/block.js:56
+msgid "label"
+msgstr ""
+
+#: src/timeline/block.js:56
+msgid "Timeline"
 msgstr ""

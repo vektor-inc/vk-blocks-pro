@@ -2,6 +2,8 @@
 .vk_block_icon_pro {
 fill:#c00;
 }
+.editor-block-list-item-vk-blocks-timeline:after,
+.editor-block-list-item-vk-blocks-step:after,
 .editor-block-list-item-vk-blocks-outer:after,
 .editor-block-list-item-vk-blocks-post-list:after,
 .editor-block-list-item-vk-blocks-table-of-contents:after,
@@ -29,12 +31,6 @@ padding: 3px 4px;
 .components-checkbox-control__label { margin-bottom:0; }
 .components-color-palette { display:block; overflow:hidden; }
 
-// これがないと rem 指定してる見出しなどが大きくなりすぎる
-// 見出しがrem指定なのは今後画面サイズによって html の font size を可変にして 見出しサイズも自動可変させるため
-html {
-font-size:10px;
-}
-
 /*スライダーを表示。デフォルトだとbootstrapに非表示にされてしまう*/
 input[type=range] {
     margin: 1px;
@@ -49,18 +45,6 @@ input[type=range] {
 h1:first-child.vk_prBlocks_item_title{
 	margin-top:0.9em;
 }
-
-/* メインのカラム幅 */
-.wp-block,
-.editor-block-list__layout > .wp-block {
-		max-width:calc( 100% - 20% );
-		.wp-block {
-			max-width:100%;
-		}
-}
-
-/* カラム（水平）で点線と余白ができる */
-.vk_post .row { margin:0;border:none; }
 
 @media (min-width: 600px){
 .wp-block-columns {
@@ -86,201 +70,208 @@ h1:first-child.vk_prBlocks_item_title{
 /*-------------------------------------------*/
 @mixin mark-before {font-family: "Font Awesome 5 Free";font-weight: 900;position: absolute; }
 
-ul,ol{
-	&.is-style{
-		&-chevron-mark,
-		&-triangle-mark,
-		&-check-mark,
-		&-check-circle-mark,
-		&-check-square-mark,
-		&-handpoint-mark,
-		&-pencil-mark,
-		&-smile-mark,
-		&-frown-mark,
-		&-numbered-circle-mark,
-		&-numbered-square-mark {
-			    padding-inline-start: 2em;
-				li{
-					list-style: none;
-					position: relative;
-				}
-			}
-	}
-	
-	
-	&.is-style-chevron-mark{
-		li{		
-			&:before { 				
-				@include mark-before;
-				content: "\f138";
-				left : -1.5em;
-			}
-		}	
-	}
-	&.is-style-triangle-mark{
-		li{				
-			&:before {				  
-				@include mark-before;
-				content: "\f0da";
-				left : -1.3em; 
-			}
-		}
+$stylePalette: (
+        is-style-default: "•",
+        is-style-chevron-mark: "\f138",
+        is-style-triangle-mark: "\f0da",
+        is-style-check-mark: "\f00c",
+        is-style-check-circle-mark: "\f058",
+        is-style-check-square-mark: "\f14a",
+        is-style-handpoint-mark: "\f0a4",
+        is-style-pencil-mark: "\f303",
+        is-style-smile-mark: "\f118",
+        is-style-frown-mark: "\f119",
+);
 
-	}
-	&.is-style-check-mark{
-		li{				
-			&:before {				  
-				@include mark-before;
-				content: "\f00c";
-				left : -1.5em; 
-			}
-		}
+$colorPalette: (
+        vk-has-pale-pink-color: #f78da7,
+        vk-has-vivid-red-color: #cf2e2e,
+        vk-has-luminous-vivid-orange-color: #ff6900,
+        vk-has-luminous-vivid-amber-color: #fcb900,
+        vk-has-light-green-cyan-color: #7bdcb5,
+        vk-has-vivid-green-cyan-color: #00d084,
+        vk-has-pale-cyan-blue-color: #8ed1fc,
+        vk-has-vivid-cyan-blue-color: #0693e3,
+        vk-has-vivid-purple-color: #9b51e0,
+        vk-has-very-light-gray-color: #eee,
+        vk-has-cyan-bluish-gray-color: #abb8c3,
+        vk-has-very-dark-gray-color: #313131,
+);
 
-	}	
-	&.is-style-check-circle-mark{
-		li{				
-			&:before {				  
-				@include mark-before;
-				content: "\f058";
-				left : -1.5em; 
-			}
-		}
+ul, ol{
 
+	&.is-style {
+      &-default,
+      &-chevron-mark,
+      &-triangle-mark,
+      &-check-mark,
+      &-check-circle-mark,
+      &-check-square-mark,
+      &-handpoint-mark,
+      &-pencil-mark,
+      &-smile-mark,
+      &-frown-mark,
+      &-numbered-circle-mark,
+      &-numbered-square-mark {
+        padding-inline-start: 2em;
+        li {
+          list-style: none;
+          position: relative;
+        }
+      }
 	}
-	&.is-style-check-square-mark{
-		li{				
-			&:before {				  
-				@include mark-before;
-				content: "\f14a";
-				left : -1.5em; 
-			}
-		}
 
-	}		
-	&.is-style-handpoint-mark{
-		li{			
-			&:before {			  
-				@include mark-before;
-				content: "\f0a4";
-				left : -1.5em; 
-			}
-		}
-	}
-	&.is-style-handpoint-mark{
-		li{			
-			&:before {			  
-				@include mark-before;
-				content: "\f0a4";
-				left : -1.5em; 
-			}
-		}
-	}
-	&.is-style-pencil-mark{
-		li{		
-			&:before {			  
-				@include mark-before;
-				content: "\f303";
-				left : -1.5em;
-			}
-		}
-	}
-	&.is-style-smile-mark{
-		li{		
-			&:before {			  
-				@include mark-before;
-				content: "\f118";
-				left : -1.5em;
-			}
-		}
-	}
-	&.is-style-frown-mark{
-		li{		
-			&:before {			  
-				@include mark-before;
-				content: "\f119";
-				left : -1.5em;
-			}
-		}
-	}
-	&.is-style-numbered-circle-mark{
-		counter-reset:number; 
+	&.is-style-numbered-circle-mark {
+		counter-reset: number;
 		list-style-type: none;
-		li{
+
+		li {
 			position: relative;
 			list-style: none;
+
 			&:before {
 				position: absolute;
 				left: -.3em;
 				counter-increment: number;
 				content: counter(number);
 				margin-left: -25px;
-				background:#222;
+				background: #222;
 				color: #fff;
-				text-indent:0;
-				display:inline-block;
-				font-weight:bold;
+				text-indent: 0;
+				display: inline-block;
+				font-weight: bold;
 				border-radius: 50%;
 				font-size: 1em;
-			    line-height: 1em;
-			    padding: .2em .35em;
+				line-height: 1em;
+				padding: .2em .35em;
 				text-align: center;
 			}
-		}	
+		}
 	}
-	&.is-style-numbered-square-mark{
-		counter-reset:number; 
-		list-style-type: none; 
-		li{
+
+	&.is-style-numbered-square-mark {
+		counter-reset: number;
+		list-style-type: none;
+
+		li {
 			position: relative;
-			list-style: none;			
-			&:before {				  
+			list-style: none;
+
+			&:before {
 				position: absolute;
 				left: -.3em;
 				counter-increment: number;
 				content: counter(number);
 				margin-left: -25px;
-				background:#222;
+				background: #222;
 				color: #fff;
-				text-indent:0;
-				display:inline-block;
-				font-weight:bold;
+				text-indent: 0;
+				display: inline-block;
+				font-weight: bold;
 				font-size: 1em;
-			    line-height: 1em;
-			    padding: .2em .35em;
+				line-height: 1em;
+				padding: .2em .35em;
 				text-align: center;
 			}
-		}	
-	}
-	&.is-style-numbered-circle-mark,
-	&.is-style-numbered-square-mark{
-		&.fa-lg{
-			li:before{left: -.8em;}
-		}
-		&.fa-2x{
-			li{ line-height: 1.25em;}
-			li:before{left: -1.1em;}
-		}
-		&.fa-3x{
-			li{ line-height: 1.25em;}
-			li:before{left: -1.4em;}
-		}
-		&.fa-4x{
-			li{ line-height: 1.25em;}
-			li:before{left: -1.5em;}
-		}
-		&.fa-5x{
-			li{ line-height: 1.25em;}
-			li:before{left: -1.6em;}
 		}
 	}
 
-}//ul,ol
+	&.is-style-numbered-circle-mark,
+	&.is-style-numbered-square-mark {
+		&.fa-lg {
+			li::before {
+				left: -.8em;
+			}
+		}
+
+		&.fa-2x {
+			li {
+				line-height: 1.25em;
+			}
+
+			li::before {
+				left: -1.1em;
+			}
+		}
+
+		&.fa-3x {
+			li {
+				line-height: 1.25em;
+			}
+
+			li::before {
+				left: -1.4em;
+			}
+		}
+
+		&.fa-4x {
+			li {
+				line-height: 1.25em;
+			}
+
+			li::before {
+				left: -1.5em;
+			}
+		}
+
+		&.fa-5x {
+			li {
+				line-height: 1.25em;
+			}
+
+			li::before {
+				left: -1.6em;
+			}
+		}
+    }
+
+	@each $styleClass, $faCode in $stylePalette {
+      &.#{$styleClass} {
+        li {
+          &::before {
+            @include mark-before;
+            content: $faCode;
+            left: -1.5em;
+          }
+        }
+      }
+      &.is-style-default {
+        li {
+          &::before {
+            font-size: 22px;
+            line-height: 1.1em;
+          }
+        }
+      }
+    }
+
+	@each $colorClass, $color in $colorPalette {
+		&.#{$colorClass} {
+			li::before {
+				color: $color;
+			}
+		}
+
+		&.is-style-numbered-circle-mark.#{$colorClass},
+		&.is-style-numbered-square-mark.#{$colorClass}{
+			li::before {
+				color: #ffffff;
+				background-color: $color;
+			}
+		}
+	}
+
+}
+//ul,ol
 
 .alert{
 
   padding: 1em;
   margin: 1em 0;
   border-radius: 3px;
+	p {
+		margin-bottom:0;
+	}
 
   & + &{
     margin-top: 2em;
@@ -1399,34 +1390,74 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-.vk_step {
-  display: flex;
-  align-items: start;
 
-  i.vk_step_icon {
-    display: flex;
-    align-items: center;
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+.vk_step{
+  margin: 2em 0;
+
+  .vk_step_item {
+    position: relative;
+    padding: 0 0 1em 4em;
+    margin: 28px auto;
+
+      h3:first-of-type,
+      h4:first-of-type{
+        padding-top: 0.5em;
+        margin-top: 0;
+      }
+      p:first-child{
+        margin-bottom:0.3em;
+        line-height: 1;
+        color:#666;
+      }
+    .vk_step_item_caption{
+      margin-bottom: 0.5em;
+      color: #666;
+    }
+    .vk_step_item_content{
+
+    }
+    .vk_step_item_dot {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      color: #ffffff;
+      padding: 9px 0;
+      text-align: center;
+    }
+    .vk_step_item_dot_caption{
+      font-size: 0.1rem;
+    }
   }
-
-  //.vk_step_content {
-  //  margin: 0 2%;
-  //  width: 100%;
-  //  .block-editor-inserter__toggle{
-  //    opacity: 1;
-  //  }
-  //}
-  //
-  //.block-editor-block-list__insertion-point-inserter{
-  //  opacity: 1;
-  //}
+}
+.vk_step_item_lineStyle-default {
+  &::before {
+    content: "";
+    width: 3px;
+    background: #ddd;
+    display: block;
+    position: absolute;
+    top: 54px;
+    left: 23px;
+    bottom: 4px;
+  }
 }
 
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
+.vk_table-col-overflow {
+  white-space: nowrap !important;
+}
+/*# sourceMappingURL=style.scss.map */
+
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -1518,10 +1549,45 @@ $toc-left-margin: 1rem;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-.vk_table-col-overflow {
-  white-space: nowrap !important;
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+.vk_timeline{
+    margin: 2em 0;
+  .vk_timeline_item {
+    position: relative;
+    padding: 0 0 1em 1.8em;
+
+    .vk_timeline_item_caption{
+      margin-bottom: 0.5em;
+      color: #666;
+    }
+
+    .vk_timeline_item_style {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 4px;
+      left: 0;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+    }
+  }
 }
-/*# sourceMappingURL=style.scss.map */
+
+.vk_timeline_item_lineStyle-default {
+  &::before {
+    content: "";
+    width: 3px;
+    background: #ddd;
+    display: block;
+    position: absolute;
+    top: 22px;
+    left: 6px;
+    bottom: 0;
+  }
+}
 
 /*-------------------------------------------*/
 /* CSS

@@ -126,20 +126,35 @@ registerBlockType('vk-blocks/post-list', {
             setAttributes: setAttributes
         };
 
-        subscribe(() => {
+		let blockAttributes = select("core/editor").getBlockAttributes(clientId);
+		let oldIsCheckedPostType;
+		let oldTaxList;
+		let oldTermsList;
+		let oldCoreTerms;
 
-            let blockAttributes = select("core/editor").getBlockAttributes(clientId);
-            if (blockAttributes) {
-                let newIsCheckedPostType = blockAttributes.isCheckedPostType;
+		subscribe(() => {
 
-                if (newIsCheckedPostType) {
-                    let taxList = getTaxonomyFromPostType(newIsCheckedPostType);
-                    let termsList = getTermsFromTaxonomy(taxList);
+			if (blockAttributes.isCheckedPostType !== oldIsCheckedPostType) {
 
-                    setAttributes({coreTerms: JSON.stringify(termsList)});
-                }
+				oldIsCheckedPostType = blockAttributes.isCheckedPostType;
+				let taxList = getTaxonomyFromPostType(blockAttributes.isCheckedPostType);
+
+				if (taxList !== oldTaxList) {
+					oldTaxList = taxList;
+
+					let termsList = getTermsFromTaxonomy(taxList);
+					if(termsList !== oldTermsList){
+						oldTermsList = termsList;
+						let coreTerms = JSON.stringify(termsList);
+
+						if(coreTerms!== oldCoreTerms ){
+							oldCoreTerms = coreTerms;
+							setAttributes({coreTerms: coreTerms});
+						}
+					}
+				}
             }
-        });
+		});
 
         /**
          * Get Taxonomies of checked postType. Return array of taxonomies.
@@ -157,12 +172,16 @@ registerBlockType('vk-blocks/post-list', {
             let returnTaxonomies = [];
             isCheckedPostType.forEach(postType => {
 
-                let pt = select("core").getPostType(postType);
-                let taxonomies = pt.taxonomies;
+				let pt = select("core").getPostType(postType);
 
-                taxonomies.forEach(item => {
-                    returnTaxonomies.push(item);
-                });
+                if(pt !== undefined){
+
+					let taxonomies = pt.taxonomies;
+
+					taxonomies.forEach(item => {
+						returnTaxonomies.push(item);
+					});
+				}
             });
 
             //重複を削除
@@ -235,14 +254,14 @@ registerBlockType('vk-blocks/post-list', {
 													value={numberPosts}
 													onChange={(value) => setAttributes({numberPosts: value})}
 													min="1"
-													max="10"
+													max="24"
 											/>
 									</BaseControl>
 								</PanelBody>
                     <PanelBody
-										title={__('Display type and columns', 'vk-blocks')}
-										initialOpen={false}
-										>
+						title={__('Display type and columns', 'vk-blocks')}
+						initialOpen={false}
+					>
                         <BaseControl
                             label={__('Display type', 'vk-blocks')}
                         >

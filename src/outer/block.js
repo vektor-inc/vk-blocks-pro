@@ -7,6 +7,7 @@ import {Component} from "./component";
 import {schema} from './schema';
 import {deprecated} from './deprecated/block';
 import toNumber from "../_helper/to-number";
+import hex2rgba from "../_helper/hex-to-rgba";
 
 const {__} = wp.i18n; // Import __() from wp.i18n
 const {registerBlockType} = wp.blocks; // Import registerBlockType() from wp.blocks
@@ -59,15 +60,16 @@ registerBlockType('vk-blocks/outer', {
      */
     edit({attributes, setAttributes,className}) {
         const {
-			bgColor,
-			bgImage,
-			bgPosition,
-			outerWidth,
-			padding_left_and_right,
-			padding_top_and_bottom,
-			opacity,
-			upper_level,
-			lower_level,
+            bgColor,
+			defaultBgColor,
+            bgImage,
+            bgPosition,
+            outerWidth,
+            padding_left_and_right,
+            padding_top_and_bottom,
+            opacity,
+            upper_level,
+            lower_level,
 			upperDividerBgColor,
 			lowerDividerBgColor,
 			dividerType,
@@ -76,6 +78,18 @@ registerBlockType('vk-blocks/outer', {
 			borderColor,
 			borderRadius
         } = attributes;
+
+		const setColorIfUndefined = (bgColor) => {
+			if (bgColor === undefined) {
+				bgColor = defaultBgColor;
+			}
+			return bgColor;
+		};
+
+		const setBgColor = (bgColor) => {
+			bgColor = setColorIfUndefined(bgColor);
+			setAttributes({bgColor: bgColor})
+		};
 
         return (
             <Fragment>
@@ -90,7 +104,8 @@ registerBlockType('vk-blocks/outer', {
                         >
                             <ColorPalette
                                 value={bgColor}
-                                onChange={(value) => setAttributes({bgColor: value})}
+                                onChange={(value) => setBgColor(value)}
+                                // onChange={(value) => setAttributes({bgColor: value})}
                             />
                         </BaseControl>
                         <BaseControl
@@ -105,7 +120,6 @@ registerBlockType('vk-blocks/outer', {
                                 step={0.1}
                             />
                         </BaseControl>
-
                         <BaseControl
                             label={__('Background Image', 'vk-blocks')}
                             help=""

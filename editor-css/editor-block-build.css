@@ -43,8 +43,9 @@ input[type=range] {
 /* editor area *********************************************/
 .edit-post-visual-editor.editor-styles-wrapper {
   /* これがないとGutenberg標準のエディタCSSに負ける */
-  /* メインのカラム幅 */
-  /* カラム（水平）で点線と余白ができる */
+  /*-------------------------------------------*/
+  /* リストデザイン
+  /*-------------------------------------------*/
   /*	type
   /*-------------------------------------------*/
   /*	position
@@ -56,14 +57,14 @@ input[type=range] {
   * SmartPhone
   0px - 480px
   ***********************/
-  /*      .qaItem
-  /*-------------------------------------------*/
   /*-------------------------------------------*/
   /*	Lightnig がまだ Bootstrap4 でないため手動で追加したクラス
   /*	Lighnting が 4 を同梱したら削除して化
   /*-------------------------------------------*/
   /* .btn がないと標準のBS4の指定に負ける */
   /* .btn がないと標準のBS4の指定に負ける */
+  /*      .qaItem
+  /*-------------------------------------------*/
   /*-------------------------------------------*/
   /*-------------------------------------------*/
   /* CSS
@@ -78,22 +79,16 @@ input[type=range] {
   /* .vk_prBlocks
   /*-------------------------------------------*/
   /*-------------------------------------------*/
-  /* Layout
-  /*-------------------------------------------*/
-  /*-------------------------------------------*/
-  /* others
-  /*-------------------------------------------*/
-  /*-------------------------------------------*/
   /* CSS
   /*-------------------------------------------*/
   /*-------------------------------------------*/
   /* editor class
   /*-------------------------------------------*/
   /*-------------------------------------------*/
-  /* CSS
+  /* Layout
   /*-------------------------------------------*/
   /*-------------------------------------------*/
-  /* CSS
+  /* others
   /*-------------------------------------------*/
   /*-------------------------------------------*/
   /* CSS
@@ -116,18 +111,275 @@ input[type=range] {
   /*-------------------------------------------*/
   /*-------------------------------------------*/
   /* CSS
+  /*-------------------------------------------*/
+  /*-------------------------------------------*/
+  /* CSS
+  /*-------------------------------------------*/
+  /*-------------------------------------------*/
+  /* CSS
   /*-------------------------------------------*/ }
   .edit-post-visual-editor.editor-styles-wrapper h1:first-child.vk_prBlocks_item_title {
     margin-top: 0.9em; }
-  .edit-post-visual-editor.editor-styles-wrapper .wp-block,
-  .edit-post-visual-editor.editor-styles-wrapper .editor-block-list__layout > .wp-block {
-    max-width: calc( 100% - 20% ); }
-    .edit-post-visual-editor.editor-styles-wrapper .wp-block .wp-block,
-    .edit-post-visual-editor.editor-styles-wrapper .editor-block-list__layout > .wp-block .wp-block {
-      max-width: 100%; }
-  .edit-post-visual-editor.editor-styles-wrapper .vk_post .row {
-    margin: 0;
-    border: none; }
+  @media (min-width: 600px) {
+    .edit-post-visual-editor.editor-styles-wrapper .wp-block-columns {
+      margin-left: -15px;
+      margin-right: -15px; }
+    .edit-post-visual-editor.editor-styles-wrapper .wp-block-column {
+      flex-basis: auto;
+      margin-left: 15px;
+      margin-right: 15px;
+      width: calc( 50% - 30px ); }
+      .edit-post-visual-editor.editor-styles-wrapper .wp-block-column:not(:first-child), .edit-post-visual-editor.editor-styles-wrapper .wp-block-column:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper .wp-block-column:nth-child(odd) {
+        margin-left: 15px;
+        margin-right: 15px; } }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-default, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-chevron-mark, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-triangle-mark, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-check-mark, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-check-circle-mark, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-check-square-mark, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-handpoint-mark, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-pencil-mark, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-smile-mark, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-frown-mark, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-default, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-chevron-mark, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-triangle-mark, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-check-mark, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-check-circle-mark, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-check-square-mark, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-handpoint-mark, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-pencil-mark, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-smile-mark, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-frown-mark, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark {
+    padding-inline-start: 2em; }
+    .edit-post-visual-editor.editor-styles-wrapper ul.is-style-default li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-chevron-mark li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-triangle-mark li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-check-mark li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-check-circle-mark li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-check-square-mark li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-handpoint-mark li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-pencil-mark li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-smile-mark li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-frown-mark li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-default li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-chevron-mark li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-triangle-mark li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-check-mark li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-check-circle-mark li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-check-square-mark li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-handpoint-mark li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-pencil-mark li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-smile-mark li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-frown-mark li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark li {
+      list-style: none;
+      position: relative; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark {
+    counter-reset: number;
+    list-style-type: none; }
+    .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark li {
+      position: relative;
+      list-style: none; }
+      .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark li:before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark li:before {
+        position: absolute;
+        left: -.3em;
+        counter-increment: number;
+        content: counter(number);
+        margin-left: -25px;
+        background: #222;
+        color: #fff;
+        text-indent: 0;
+        display: inline-block;
+        font-weight: bold;
+        border-radius: 50%;
+        font-size: 1em;
+        line-height: 1em;
+        padding: .2em .35em;
+        text-align: center; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark {
+    counter-reset: number;
+    list-style-type: none; }
+    .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark li {
+      position: relative;
+      list-style: none; }
+      .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark li:before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark li:before {
+        position: absolute;
+        left: -.3em;
+        counter-increment: number;
+        content: counter(number);
+        margin-left: -25px;
+        background: #222;
+        color: #fff;
+        text-indent: 0;
+        display: inline-block;
+        font-weight: bold;
+        font-size: 1em;
+        line-height: 1em;
+        padding: .2em .35em;
+        text-align: center; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.fa-lg li::before, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.fa-lg li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.fa-lg li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.fa-lg li::before {
+    left: -.8em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.fa-2x li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.fa-2x li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.fa-2x li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.fa-2x li {
+    line-height: 1.25em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.fa-2x li::before, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.fa-2x li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.fa-2x li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.fa-2x li::before {
+    left: -1.1em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.fa-3x li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.fa-3x li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.fa-3x li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.fa-3x li {
+    line-height: 1.25em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.fa-3x li::before, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.fa-3x li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.fa-3x li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.fa-3x li::before {
+    left: -1.4em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.fa-4x li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.fa-4x li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.fa-4x li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.fa-4x li {
+    line-height: 1.25em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.fa-4x li::before, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.fa-4x li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.fa-4x li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.fa-4x li::before {
+    left: -1.5em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.fa-5x li, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.fa-5x li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.fa-5x li, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.fa-5x li {
+    line-height: 1.25em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.fa-5x li::before, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.fa-5x li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.fa-5x li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.fa-5x li::before {
+    left: -1.6em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-default li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-default li::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    content: "•";
+    left: -1.5em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-default li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-default li::before {
+    font-size: 22px;
+    line-height: 1.1em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-chevron-mark li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-chevron-mark li::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    content: "";
+    left: -1.5em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-default li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-default li::before {
+    font-size: 22px;
+    line-height: 1.1em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-triangle-mark li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-triangle-mark li::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    content: "";
+    left: -1.5em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-default li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-default li::before {
+    font-size: 22px;
+    line-height: 1.1em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-check-mark li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-check-mark li::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    content: "";
+    left: -1.5em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-default li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-default li::before {
+    font-size: 22px;
+    line-height: 1.1em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-check-circle-mark li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-check-circle-mark li::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    content: "";
+    left: -1.5em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-default li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-default li::before {
+    font-size: 22px;
+    line-height: 1.1em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-check-square-mark li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-check-square-mark li::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    content: "";
+    left: -1.5em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-default li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-default li::before {
+    font-size: 22px;
+    line-height: 1.1em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-handpoint-mark li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-handpoint-mark li::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    content: "";
+    left: -1.5em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-default li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-default li::before {
+    font-size: 22px;
+    line-height: 1.1em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-pencil-mark li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-pencil-mark li::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    content: "";
+    left: -1.5em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-default li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-default li::before {
+    font-size: 22px;
+    line-height: 1.1em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-smile-mark li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-smile-mark li::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    content: "";
+    left: -1.5em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-default li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-default li::before {
+    font-size: 22px;
+    line-height: 1.1em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-frown-mark li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-frown-mark li::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    content: "";
+    left: -1.5em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-default li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-default li::before {
+    font-size: 22px;
+    line-height: 1.1em; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.vk-has-pale-pink-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.vk-has-pale-pink-color li::before {
+    color: #f78da7; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.vk-has-pale-pink-color li::before, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.vk-has-pale-pink-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.vk-has-pale-pink-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.vk-has-pale-pink-color li::before {
+    color: #ffffff;
+    background-color: #f78da7; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.vk-has-vivid-red-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.vk-has-vivid-red-color li::before {
+    color: #cf2e2e; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.vk-has-vivid-red-color li::before, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.vk-has-vivid-red-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.vk-has-vivid-red-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.vk-has-vivid-red-color li::before {
+    color: #ffffff;
+    background-color: #cf2e2e; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.vk-has-luminous-vivid-orange-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.vk-has-luminous-vivid-orange-color li::before {
+    color: #ff6900; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.vk-has-luminous-vivid-orange-color li::before, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.vk-has-luminous-vivid-orange-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.vk-has-luminous-vivid-orange-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.vk-has-luminous-vivid-orange-color li::before {
+    color: #ffffff;
+    background-color: #ff6900; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.vk-has-luminous-vivid-amber-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.vk-has-luminous-vivid-amber-color li::before {
+    color: #fcb900; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.vk-has-luminous-vivid-amber-color li::before, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.vk-has-luminous-vivid-amber-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.vk-has-luminous-vivid-amber-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.vk-has-luminous-vivid-amber-color li::before {
+    color: #ffffff;
+    background-color: #fcb900; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.vk-has-light-green-cyan-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.vk-has-light-green-cyan-color li::before {
+    color: #7bdcb5; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.vk-has-light-green-cyan-color li::before, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.vk-has-light-green-cyan-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.vk-has-light-green-cyan-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.vk-has-light-green-cyan-color li::before {
+    color: #ffffff;
+    background-color: #7bdcb5; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.vk-has-vivid-green-cyan-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.vk-has-vivid-green-cyan-color li::before {
+    color: #00d084; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.vk-has-vivid-green-cyan-color li::before, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.vk-has-vivid-green-cyan-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.vk-has-vivid-green-cyan-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.vk-has-vivid-green-cyan-color li::before {
+    color: #ffffff;
+    background-color: #00d084; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.vk-has-pale-cyan-blue-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.vk-has-pale-cyan-blue-color li::before {
+    color: #8ed1fc; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.vk-has-pale-cyan-blue-color li::before, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.vk-has-pale-cyan-blue-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.vk-has-pale-cyan-blue-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.vk-has-pale-cyan-blue-color li::before {
+    color: #ffffff;
+    background-color: #8ed1fc; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.vk-has-vivid-cyan-blue-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.vk-has-vivid-cyan-blue-color li::before {
+    color: #0693e3; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.vk-has-vivid-cyan-blue-color li::before, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.vk-has-vivid-cyan-blue-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.vk-has-vivid-cyan-blue-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.vk-has-vivid-cyan-blue-color li::before {
+    color: #ffffff;
+    background-color: #0693e3; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.vk-has-vivid-purple-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.vk-has-vivid-purple-color li::before {
+    color: #9b51e0; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.vk-has-vivid-purple-color li::before, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.vk-has-vivid-purple-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.vk-has-vivid-purple-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.vk-has-vivid-purple-color li::before {
+    color: #ffffff;
+    background-color: #9b51e0; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.vk-has-very-light-gray-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.vk-has-very-light-gray-color li::before {
+    color: #eee; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.vk-has-very-light-gray-color li::before, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.vk-has-very-light-gray-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.vk-has-very-light-gray-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.vk-has-very-light-gray-color li::before {
+    color: #ffffff;
+    background-color: #eee; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.vk-has-cyan-bluish-gray-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.vk-has-cyan-bluish-gray-color li::before {
+    color: #abb8c3; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.vk-has-cyan-bluish-gray-color li::before, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.vk-has-cyan-bluish-gray-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.vk-has-cyan-bluish-gray-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.vk-has-cyan-bluish-gray-color li::before {
+    color: #ffffff;
+    background-color: #abb8c3; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.vk-has-very-dark-gray-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.vk-has-very-dark-gray-color li::before {
+    color: #313131; }
+  .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-circle-mark.vk-has-very-dark-gray-color li::before, .edit-post-visual-editor.editor-styles-wrapper ul.is-style-numbered-square-mark.vk-has-very-dark-gray-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-circle-mark.vk-has-very-dark-gray-color li::before, .edit-post-visual-editor.editor-styles-wrapper ol.is-style-numbered-square-mark.vk-has-very-dark-gray-color li::before {
+    color: #ffffff;
+    background-color: #313131; }
+  .edit-post-visual-editor.editor-styles-wrapper .alert {
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 3px; }
+    .edit-post-visual-editor.editor-styles-wrapper .alert p {
+      margin-bottom: 0; }
+    .edit-post-visual-editor.editor-styles-wrapper .alert + .edit-post-visual-editor.editor-styles-wrapper .alert {
+      margin-top: 2em; }
+    .edit-post-visual-editor.editor-styles-wrapper .alert a {
+      transition: color .3s linear, opacity .3s linear; }
+      .edit-post-visual-editor.editor-styles-wrapper .alert a:link, .edit-post-visual-editor.editor-styles-wrapper .alert a:visited {
+        opacity: .8;
+        text-decoration: underline; }
+      .edit-post-visual-editor.editor-styles-wrapper .alert a:hover, .edit-post-visual-editor.editor-styles-wrapper .alert a:visited {
+        opacity: 1;
+        text-decoration: none; }
+    .edit-post-visual-editor.editor-styles-wrapper .alert-success {
+      background-color: #dff0d8;
+      color: #3c763d;
+      border-color: #d6e9c6; }
+    .edit-post-visual-editor.editor-styles-wrapper .alert-info {
+      background-color: #d9edf7;
+      color: #31708f;
+      border-color: #bce8f1; }
+    .edit-post-visual-editor.editor-styles-wrapper .alert-warning {
+      background-color: #fcf8e3;
+      color: #8a6d3b;
+      border-color: #faebcc; }
+    .edit-post-visual-editor.editor-styles-wrapper .alert-danger {
+      background-color: #f2dede;
+      color: #a94442;
+      border-color: #ebccd1; }
   .edit-post-visual-editor.editor-styles-wrapper .vk_balloon {
     display: flex;
     align-items: center;
@@ -270,68 +522,6 @@ input[type=range] {
           display: inline-block; }
     .edit-post-visual-editor.editor-styles-wrapper .vk_balloon_icon {
       max-width: 96px; } }
-  .edit-post-visual-editor.editor-styles-wrapper .alert {
-    padding: 1em;
-    margin: 1em 0;
-    border-radius: 3px; }
-    .edit-post-visual-editor.editor-styles-wrapper .alert + .edit-post-visual-editor.editor-styles-wrapper .alert {
-      margin-top: 2em; }
-    .edit-post-visual-editor.editor-styles-wrapper .alert a {
-      transition: color .3s linear, opacity .3s linear; }
-      .edit-post-visual-editor.editor-styles-wrapper .alert a:link, .edit-post-visual-editor.editor-styles-wrapper .alert a:visited {
-        opacity: .8;
-        text-decoration: underline; }
-      .edit-post-visual-editor.editor-styles-wrapper .alert a:hover, .edit-post-visual-editor.editor-styles-wrapper .alert a:visited {
-        opacity: 1;
-        text-decoration: none; }
-    .edit-post-visual-editor.editor-styles-wrapper .alert-success {
-      background-color: #dff0d8;
-      color: #3c763d;
-      border-color: #d6e9c6; }
-    .edit-post-visual-editor.editor-styles-wrapper .alert-info {
-      background-color: #d9edf7;
-      color: #31708f;
-      border-color: #bce8f1; }
-    .edit-post-visual-editor.editor-styles-wrapper .alert-warning {
-      background-color: #fcf8e3;
-      color: #8a6d3b;
-      border-color: #faebcc; }
-    .edit-post-visual-editor.editor-styles-wrapper .alert-danger {
-      background-color: #f2dede;
-      color: #a94442;
-      border-color: #ebccd1; }
-  .edit-post-visual-editor.editor-styles-wrapper .vk_faq {
-    display: block;
-    overflow: hidden;
-    border-bottom: 1px dotted #ccc;
-    padding: 0px 0px 25px;
-    margin: 25px 0px;
-    width: 100%;
-    position: relative; }
-  .edit-post-visual-editor.editor-styles-wrapper .vk_faq_title,
-  .edit-post-visual-editor.editor-styles-wrapper .vk_faq_content {
-    border: none;
-    padding-left: 35px; }
-    .edit-post-visual-editor.editor-styles-wrapper .vk_faq_title:before,
-    .edit-post-visual-editor.editor-styles-wrapper .vk_faq_content:before {
-      position: absolute;
-      left: 0;
-      font-size: 24px;
-      line-height: 105%; }
-  .edit-post-visual-editor.editor-styles-wrapper .vk_faq_title {
-    margin-bottom: 15px;
-    font-size: 18px;
-    font-weight: 700; }
-    .edit-post-visual-editor.editor-styles-wrapper .vk_faq_title:before {
-      font-family: "areal";
-      content: "Q ";
-      color: #e50000; }
-  .edit-post-visual-editor.editor-styles-wrapper .vk_faq_content {
-    margin: 0px; }
-    .edit-post-visual-editor.editor-styles-wrapper .vk_faq_content:before {
-      content: "A ";
-      color: #337ab7;
-      font-family: ""; }
   .edit-post-visual-editor.editor-styles-wrapper .vk_button {
     margin: 5px 0; }
     .edit-post-visual-editor.editor-styles-wrapper .vk_button-color-custom a:hover {
@@ -453,6 +643,38 @@ input[type=range] {
   .edit-post-visual-editor.editor-styles-wrapper .btn.btn-outline-dark:focus {
     background: #343a40;
     color: #fff; }
+  .edit-post-visual-editor.editor-styles-wrapper .vk_faq {
+    display: block;
+    overflow: hidden;
+    border-bottom: 1px dotted #ccc;
+    padding: 0px 0px 25px;
+    margin: 25px 0px;
+    width: 100%;
+    position: relative; }
+  .edit-post-visual-editor.editor-styles-wrapper .vk_faq_title,
+  .edit-post-visual-editor.editor-styles-wrapper .vk_faq_content {
+    border: none;
+    padding-left: 35px; }
+    .edit-post-visual-editor.editor-styles-wrapper .vk_faq_title:before,
+    .edit-post-visual-editor.editor-styles-wrapper .vk_faq_content:before {
+      position: absolute;
+      left: 0;
+      font-size: 24px;
+      line-height: 105%; }
+  .edit-post-visual-editor.editor-styles-wrapper .vk_faq_title {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 700; }
+    .edit-post-visual-editor.editor-styles-wrapper .vk_faq_title:before {
+      font-family: "areal";
+      content: "Q ";
+      color: #e50000; }
+  .edit-post-visual-editor.editor-styles-wrapper .vk_faq_content {
+    margin: 0px; }
+    .edit-post-visual-editor.editor-styles-wrapper .vk_faq_content:before {
+      content: "A ";
+      color: #337ab7;
+      font-family: ""; }
   .edit-post-visual-editor.editor-styles-wrapper .vk_flow-arrow-on:after {
     content: "";
     background: url("../images/arrow_bottom.svg") center 50% no-repeat;
@@ -624,6 +846,51 @@ input[type=range] {
     margin-bottom: 0.5em;
     text-align: center;
     line-height: 1.8em; }
+  @media (max-width: 575.98px) {
+    .edit-post-visual-editor.editor-styles-wrapper .vk_table-col-mobile1 th,
+    .edit-post-visual-editor.editor-styles-wrapper .vk_table-col-mobile1 td {
+      display: block; }
+    .edit-post-visual-editor.editor-styles-wrapper .vk_table-col-mobile1 th {
+      background-color: rgba(0, 0, 0, 0.05); }
+    .edit-post-visual-editor.editor-styles-wrapper .vk_table-col-mobile1.table-striped tbody tr:nth-of-type(odd) {
+      background: inherit; } }
+  .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .editor-inner-blocks,
+  .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .editor-block-list__layout,
+  .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .editor-block-list__block,
+  .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .editor-rich-text__editable,
+  .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .editor-block-list__block-edit {
+    padding: 0;
+    margin: 0;
+    width: 100%; }
+  .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit > .editor-inner-blocks {
+    margin-top: -1px; }
+  .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .editor-block-list__block-edit {
+    height: 100%; }
+  .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .block-editor-block-list__insertion-point {
+    /* 上のセルに被るので選択しにくくなるのでデフォルトのマイナスオフセットを少し下げる */
+    top: -5px; }
+  .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .editor-block-list__block-edit:before {
+    right: -0px;
+    left: -0px;
+    top: -0px;
+    bottom: -0px; }
+  .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .editor-inner-blocks tr {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #e5e5e5; }
+    .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .editor-inner-blocks tr .editor-block-list__layout {
+      display: flex; }
+  .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .editor-inner-blocks th,
+  .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .editor-inner-blocks td {
+    padding: 0;
+    display: block;
+    width: 100%;
+    border: none; }
+    .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .editor-inner-blocks th .editor-rich-text__editable,
+    .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .editor-inner-blocks td .editor-rich-text__editable {
+      padding: 14px; }
+  .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit.table-striped > tbody > .editor-inner-blocks > .editor-block-list__layout > div:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05); }
   .edit-post-visual-editor.editor-styles-wrapper .vk_prContent {
     margin-left: -15px;
     margin-right: -15px; }
@@ -674,72 +941,6 @@ input[type=range] {
     margin: 1em; }
   .edit-post-visual-editor.editor-styles-wrapper .vk_prContent_colImg .components-button.image-button {
     margin: 0; }
-  @media (max-width: 575.98px) {
-    .edit-post-visual-editor.editor-styles-wrapper .vk_table-col-mobile1 th,
-    .edit-post-visual-editor.editor-styles-wrapper .vk_table-col-mobile1 td {
-      display: block; }
-    .edit-post-visual-editor.editor-styles-wrapper .vk_table-col-mobile1 th {
-      background-color: rgba(0, 0, 0, 0.05); }
-    .edit-post-visual-editor.editor-styles-wrapper .vk_table-col-mobile1.table-striped tbody tr:nth-of-type(odd) {
-      background: inherit; } }
-  .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .editor-inner-blocks,
-  .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .editor-block-list__layout,
-  .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .editor-block-list__block,
-  .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .editor-rich-text__editable,
-  .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .editor-block-list__block-edit {
-    padding: 0;
-    margin: 0;
-    width: 100%; }
-  .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit > .editor-inner-blocks {
-    margin-top: -1px; }
-  .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .editor-block-list__block-edit {
-    height: 100%; }
-  .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .block-editor-block-list__insertion-point {
-    /* 上のセルに被るので選択しにくくなるのでデフォルトのマイナスオフセットを少し下げる */
-    top: -5px; }
-  .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .editor-block-list__block-edit:before {
-    right: -0px;
-    left: -0px;
-    top: -0px;
-    bottom: -0px; }
-  .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .editor-inner-blocks tr {
-    width: 100%;
-    display: block;
-    border-bottom: 1px solid #e5e5e5; }
-    .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .editor-inner-blocks tr .editor-block-list__layout {
-      display: flex; }
-  .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .editor-inner-blocks th,
-  .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .editor-inner-blocks td {
-    padding: 0;
-    display: block;
-    width: 100%;
-    border: none; }
-    .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .editor-inner-blocks th .editor-rich-text__editable,
-    .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit .editor-inner-blocks td .editor-rich-text__editable {
-      padding: 14px; }
-  .edit-post-visual-editor.editor-styles-wrapper .vk_simpleTable-edit.table-striped > tbody > .editor-inner-blocks > .editor-block-list__layout > div:nth-of-type(odd) {
-    background-color: rgba(0, 0, 0, 0.05); }
-  @media (max-width: 576px) {
-    .edit-post-visual-editor.editor-styles-wrapper .vk_spacer .vk_spacer-display-pc {
-      display: none; }
-    .edit-post-visual-editor.editor-styles-wrapper .vk_spacer .vk_spacer-display-tablet {
-      display: none; }
-    .edit-post-visual-editor.editor-styles-wrapper .vk_spacer .vk_spacer-display-mobile {
-      display: block; } }
-  @media (min-width: 577px) and (max-width: 768px) {
-    .edit-post-visual-editor.editor-styles-wrapper .vk_spacer .vk_spacer-display-pc {
-      display: none; }
-    .edit-post-visual-editor.editor-styles-wrapper .vk_spacer .vk_spacer-display-tablet {
-      display: block; }
-    .edit-post-visual-editor.editor-styles-wrapper .vk_spacer .vk_spacer-display-mobile {
-      display: none; } }
-  @media (min-width: 769px) {
-    .edit-post-visual-editor.editor-styles-wrapper .vk_spacer .vk_spacer-display-pc {
-      display: block; }
-    .edit-post-visual-editor.editor-styles-wrapper .vk_spacer .vk_spacer-display-tablet {
-      display: none; }
-    .edit-post-visual-editor.editor-styles-wrapper .vk_spacer .vk_spacer-display-mobile {
-      display: none; } }
   .edit-post-visual-editor.editor-styles-wrapper .vk_staff_text {
     float: left;
     width: 61.6%; }
@@ -839,11 +1040,33 @@ input[type=range] {
     .edit-post-visual-editor.editor-styles-wrapper .page-template-page-lp .vk_staff_photo,
     .edit-post-visual-editor.editor-styles-wrapper .page-template-page-lp-builder .vk_staff_photo {
       width: 20%; } }
+  @media (max-width: 576px) {
+    .edit-post-visual-editor.editor-styles-wrapper .vk_spacer .vk_spacer-display-pc {
+      display: none; }
+    .edit-post-visual-editor.editor-styles-wrapper .vk_spacer .vk_spacer-display-tablet {
+      display: none; }
+    .edit-post-visual-editor.editor-styles-wrapper .vk_spacer .vk_spacer-display-mobile {
+      display: block; } }
+  @media (min-width: 577px) and (max-width: 768px) {
+    .edit-post-visual-editor.editor-styles-wrapper .vk_spacer .vk_spacer-display-pc {
+      display: none; }
+    .edit-post-visual-editor.editor-styles-wrapper .vk_spacer .vk_spacer-display-tablet {
+      display: block; }
+    .edit-post-visual-editor.editor-styles-wrapper .vk_spacer .vk_spacer-display-mobile {
+      display: none; } }
+  @media (min-width: 769px) {
+    .edit-post-visual-editor.editor-styles-wrapper .vk_spacer .vk_spacer-display-pc {
+      display: block; }
+    .edit-post-visual-editor.editor-styles-wrapper .vk_spacer .vk_spacer-display-tablet {
+      display: none; }
+    .edit-post-visual-editor.editor-styles-wrapper .vk_spacer .vk_spacer-display-mobile {
+      display: none; } }
   .edit-post-visual-editor.editor-styles-wrapper .vk_step {
     margin: 2em 0; }
     .edit-post-visual-editor.editor-styles-wrapper .vk_step .vk_step_item {
       position: relative;
-      padding: 0 0 1em 4em; }
+      padding: 0 0 1em 4em;
+      margin: 28px auto; }
       .edit-post-visual-editor.editor-styles-wrapper .vk_step .vk_step_item h3:first-of-type,
       .edit-post-visual-editor.editor-styles-wrapper .vk_step .vk_step_item h4:first-of-type {
         padding-top: 0.5em;
@@ -878,6 +1101,8 @@ input[type=range] {
     top: 54px;
     left: 23px;
     bottom: 4px; }
+  .edit-post-visual-editor.editor-styles-wrapper .vk_table-col-overflow {
+    white-space: nowrap !important; }
   .edit-post-visual-editor.editor-styles-wrapper .vk_tableOfContents {
     margin-top: 3.5em;
     margin-bottom: 3.5em; }
@@ -913,8 +1138,6 @@ input[type=range] {
           .edit-post-visual-editor.editor-styles-wrapper .vk_tableOfContents_list_item_link:hover {
             text-decoration: none;
             border-bottom: none; }
-  .edit-post-visual-editor.editor-styles-wrapper .vk_table-col-overflow {
-    white-space: nowrap !important; }
   .edit-post-visual-editor.editor-styles-wrapper .vk_timeline {
     margin: 2em 0; }
     .edit-post-visual-editor.editor-styles-wrapper .vk_timeline .vk_timeline_item {

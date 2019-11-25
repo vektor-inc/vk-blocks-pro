@@ -282,8 +282,9 @@ msgstr "スタイル設定"
 msgid "Heading style"
 msgstr "見出しスタイル"
 
-#: src/heading/block.js:125 src/staff/block.js:105 src/step-item/block.js:147
-#: src/table-of-contents/block.js:113 src/timeline-item/block.js:99
+#: src/heading/block.js:125 src/list-style/block.js:142 src/staff/block.js:105
+#: src/step-item/block.js:116 src/table-of-contents/block.js:113
+#: src/timeline-item/block.js:99
 msgid "Default"
 msgstr "標準"
 
@@ -352,6 +353,54 @@ msgstr "ハイライトカラー"
 #: src/highlighter/block.js:93
 msgid "Highlighter"
 msgstr "蛍光マーカー"
+
+#: src/list-style/block.js:147
+msgid "Chevron"
+msgstr "山"
+
+#: src/list-style/block.js:151 src/outer/block.js:228
+msgid "Triangle"
+msgstr "三角"
+
+#: src/list-style/block.js:155
+msgid "Check"
+msgstr "チェック"
+
+#: src/list-style/block.js:159
+msgid "Check Square"
+msgstr "チェック-四角"
+
+#: src/list-style/block.js:163
+msgid "Check Circle"
+msgstr "チェック-丸"
+
+#: src/list-style/block.js:167
+msgid "Handpoint"
+msgstr "指"
+
+#: src/list-style/block.js:171
+msgid "Pencil"
+msgstr "鉛筆"
+
+#: src/list-style/block.js:175
+msgid "Smile"
+msgstr "笑顔"
+
+#: src/list-style/block.js:179
+msgid "Frown"
+msgstr "不満顔"
+
+#: src/list-style/block.js:183
+msgid "Numbered Circle"
+msgstr "数字-丸"
+
+#: src/list-style/block.js:187
+msgid "Numbered Square"
+msgstr "数字-四角"
+
+#: src/list-style/block.js:96
+msgid "List Color"
+msgstr "見出しの色"
 
 #: src/outer/block.js:102 src/pr-content/block.js:92
 msgid "Color Setting"
@@ -441,10 +490,6 @@ msgstr "カーブ"
 msgid "Wave"
 msgstr "波状"
 
-#: src/outer/block.js:228
-msgid "Triangle"
-msgstr "三角"
-
 #: src/outer/block.js:234
 msgid "Upper Divider Level"
 msgstr "上部区切りレベル"
@@ -465,13 +510,13 @@ msgstr "枠線は区切りレベルを適用すると表示されなくなりま
 msgid "Border type"
 msgstr "枠線の種類"
 
-#: src/outer/block.js:281 src/staff/block.js:109 src/step-item/block.js:151
+#: src/outer/block.js:281 src/staff/block.js:109 src/step-item/block.js:120
 #: src/timeline-item/block.js:103
 msgid "None"
 msgstr "なし"
 
-#: src/outer/block.js:285 src/pr-content/block.js:142
-#: src/step-item/block.js:128 src/timeline-item/block.js:84
+#: src/outer/block.js:285 src/pr-content/block.js:142 src/step-item/block.js:97
+#: src/timeline-item/block.js:84
 msgid "Solid"
 msgstr "直線"
 
@@ -803,7 +848,7 @@ msgstr "画像の代替テキスト"
 msgid "Set the alt text for profile image"
 msgstr "プロフィール画像の代替テキストを設定します"
 
-#: src/staff/block.js:124 src/step-item/block.js:111
+#: src/staff/block.js:124 src/step-item/block.js:80
 #: src/timeline-item/block.js:63
 msgid "Color"
 msgstr "色"
@@ -852,16 +897,7 @@ msgstr "名前"
 msgid "Caption"
 msgstr "キャプション"
 
-#: src/step-item/block.js:106 src/timeline-item/block.js:60
-msgid "Ex,6:00AM"
-msgstr "例) 午前 6:00"
-
-#: src/step-item/block.js:117 src/table-of-contents/block.js:104
-#: src/timeline-item/block.js:69
-msgid "Style"
-msgstr "スタイル"
-
-#: src/step-item/block.js:132 src/timeline-item/block.js:80
+#: src/step-item/block.js:101 src/timeline-item/block.js:80
 msgid "Outlined"
 msgstr "アウトライン"
 
@@ -869,25 +905,30 @@ msgstr "アウトライン"
 msgid "Step Item"
 msgstr "ステップ要素"
 
-#: src/step-item/block.js:77
-msgid "Label"
-msgstr "ラベル"
-
-#: src/step-item/block.js:89
+#: src/step-item/block.js:58
 msgid "Step Mark"
 msgstr "ステップマーク"
 
-#: src/step-item/block.js:92
+#: src/step-item/block.js:61
 msgid "If FontAwesome class entered, it will overrides the number."
 msgstr "Font Awesome の class 名が入力されている場合は数字は上書きされます。"
+
+#: src/step-item/block.js:75 src/timeline-item/block.js:60
+msgid "Ex,6:00AM"
+msgstr "例) 午前 6:00"
+
+#: src/step-item/block.js:86 src/table-of-contents/block.js:104
+#: src/timeline-item/block.js:69
+msgid "Style"
+msgstr "スタイル"
+
+#: src/step/block.js:121
+msgid "First Dot Number"
+msgstr "ステップの開始番号"
 
 #: src/step/block.js:53
 msgid "Step"
 msgstr "ステップ"
-
-#: src/step/block.js:77
-msgid "First Dot Number"
-msgstr "ステップの開始番号"
 
 #: src/table-of-contents/TableOfContents.js:154
 #: src/table-of-contents/block.js:53
@@ -909,6 +950,9 @@ msgstr "ラベル"
 #: src/timeline/block.js:56
 msgid "Timeline"
 msgstr "タイムライン"
+
+#~ msgid "Label"
+#~ msgstr "ラベル"
 
 #~ msgid "Icon setting"
 #~ msgstr "アイコン設定"

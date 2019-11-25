@@ -1,1 +1,217 @@
+@media (min-width: 600px){
+.wp-block-columns {
+	margin-left:-15px;
+	margin-right:-15px;
+}
+.wp-block-column {
+	flex-basis: auto;
+	margin-left:15px;
+	margin-right:15px;
+	width: calc( 50% - 30px ) ;
+	&:not(:first-child),
+	&:not(:last-child),
+	&:nth-child(odd){
+		margin-left:15px;
+		margin-right:15px;
+	}
+}
+}
 
+/*-------------------------------------------*/
+/* リストデザイン
+/*-------------------------------------------*/
+@mixin mark-before {font-family: "Font Awesome 5 Free";font-weight: 900;position: absolute; }
+
+$stylePalette: (
+        is-style-default: "•",
+        is-style-chevron-mark: "\f138",
+        is-style-triangle-mark: "\f0da",
+        is-style-check-mark: "\f00c",
+        is-style-check-circle-mark: "\f058",
+        is-style-check-square-mark: "\f14a",
+        is-style-handpoint-mark: "\f0a4",
+        is-style-pencil-mark: "\f303",
+        is-style-smile-mark: "\f118",
+        is-style-frown-mark: "\f119",
+);
+
+$colorPalette: (
+        vk-has-pale-pink-color: #f78da7,
+        vk-has-vivid-red-color: #cf2e2e,
+        vk-has-luminous-vivid-orange-color: #ff6900,
+        vk-has-luminous-vivid-amber-color: #fcb900,
+        vk-has-light-green-cyan-color: #7bdcb5,
+        vk-has-vivid-green-cyan-color: #00d084,
+        vk-has-pale-cyan-blue-color: #8ed1fc,
+        vk-has-vivid-cyan-blue-color: #0693e3,
+        vk-has-vivid-purple-color: #9b51e0,
+        vk-has-very-light-gray-color: #eee,
+        vk-has-cyan-bluish-gray-color: #abb8c3,
+        vk-has-very-dark-gray-color: #313131,
+);
+
+ul, ol{
+
+	&.is-style {
+      &-default,
+      &-chevron-mark,
+      &-triangle-mark,
+      &-check-mark,
+      &-check-circle-mark,
+      &-check-square-mark,
+      &-handpoint-mark,
+      &-pencil-mark,
+      &-smile-mark,
+      &-frown-mark,
+      &-numbered-circle-mark,
+      &-numbered-square-mark {
+        padding-inline-start: 2em;
+        li {
+          list-style: none;
+          position: relative;
+        }
+      }
+	}
+
+	&.is-style-numbered-circle-mark {
+		counter-reset: number;
+		list-style-type: none;
+
+		li {
+			position: relative;
+			list-style: none;
+
+			&:before {
+				position: absolute;
+				left: -.3em;
+				counter-increment: number;
+				content: counter(number);
+				margin-left: -25px;
+				background: #222;
+				color: #fff;
+				text-indent: 0;
+				display: inline-block;
+				font-weight: bold;
+				border-radius: 50%;
+				font-size: 1em;
+				line-height: 1em;
+				padding: .2em .35em;
+				text-align: center;
+			}
+		}
+	}
+
+	&.is-style-numbered-square-mark {
+		counter-reset: number;
+		list-style-type: none;
+
+		li {
+			position: relative;
+			list-style: none;
+
+			&:before {
+				position: absolute;
+				left: -.3em;
+				counter-increment: number;
+				content: counter(number);
+				margin-left: -25px;
+				background: #222;
+				color: #fff;
+				text-indent: 0;
+				display: inline-block;
+				font-weight: bold;
+				font-size: 1em;
+				line-height: 1em;
+				padding: .2em .35em;
+				text-align: center;
+			}
+		}
+	}
+
+	&.is-style-numbered-circle-mark,
+	&.is-style-numbered-square-mark {
+		&.fa-lg {
+			li::before {
+				left: -.8em;
+			}
+		}
+
+		&.fa-2x {
+			li {
+				line-height: 1.25em;
+			}
+
+			li::before {
+				left: -1.1em;
+			}
+		}
+
+		&.fa-3x {
+			li {
+				line-height: 1.25em;
+			}
+
+			li::before {
+				left: -1.4em;
+			}
+		}
+
+		&.fa-4x {
+			li {
+				line-height: 1.25em;
+			}
+
+			li::before {
+				left: -1.5em;
+			}
+		}
+
+		&.fa-5x {
+			li {
+				line-height: 1.25em;
+			}
+
+			li::before {
+				left: -1.6em;
+			}
+		}
+    }
+
+	@each $styleClass, $faCode in $stylePalette {
+      &.#{$styleClass} {
+        li {
+          &::before {
+            @include mark-before;
+            content: $faCode;
+            left: -1.5em;
+          }
+        }
+      }
+      &.is-style-default {
+        li {
+          &::before {
+            font-size: 22px;
+            line-height: 1.1em;
+          }
+        }
+      }
+    }
+
+	@each $colorClass, $color in $colorPalette {
+		&.#{$colorClass} {
+			li::before {
+				color: $color;
+			}
+		}
+
+		&.is-style-numbered-circle-mark.#{$colorClass},
+		&.is-style-numbered-square-mark.#{$colorClass}{
+			li::before {
+				color: #ffffff;
+				background-color: $color;
+			}
+		}
+	}
+
+}
+//ul,ol

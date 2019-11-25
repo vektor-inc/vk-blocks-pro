@@ -133,3 +133,56 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 }, 'addMyCustomBlockControls');
 
 addFilter('editor.BlockEdit', 'vk-blocks/list-style', addBlockControl);
+
+wp.blocks.registerBlockStyle('core/list',
+    [
+        {
+            name: 'default',
+            label: __('Default', 'vk-blocks'),
+            isDefault: true,
+        },
+        {
+            name: 'chevron-mark',
+            label: __('Chevron', 'vk-blocks'),
+        },
+        {
+            name: 'triangle-mark',
+            label: __('Triangle', 'vk-blocks')
+        },
+        {
+            name: 'check-mark',
+            label: __('Check', 'vk-blocks')
+        },
+        {
+            name: 'check-square-mark',
+            label: __('Check Square', 'vk-blocks')
+        },
+        {
+            name: 'check-circle-mark',
+            label: __('Check Circle', 'vk-blocks')
+        },
+        {
+            name: 'handpoint-mark',
+            label: __('Handpoint', 'vk-blocks')
+        },
+        {
+            name: 'pencil-mark',
+            label: __('Pencil', 'vk-blocks')
+        },
+        {
+            name: 'smile-mark',
+            label: __('Smile', 'vk-blocks')
+        },
+        {
+            name: 'frown-mark',
+            label: __('Frown', 'vk-blocks')
+        },
+        {
+            name: 'numbered-circle-mark',
+            label: __('Numbered Circle', 'vk-blocks')
+        },
+        {
+            name: 'numbered-square-mark',
+            label: __('Numbered Square', 'vk-blocks')
+        }
+    ]);

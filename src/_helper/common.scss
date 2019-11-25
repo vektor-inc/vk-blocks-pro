@@ -54,24 +54,23 @@ ul, ol{
 
 	&.is-style {
       &-default,
-		&-chevron-mark,
-		&-triangle-mark,
-		&-check-mark,
-		&-check-circle-mark,
-		&-check-square-mark,
-		&-handpoint-mark,
-		&-pencil-mark,
-		&-smile-mark,
-		&-frown-mark,
-		&-numbered-circle-mark,
-		&-numbered-square-mark {
-			padding-inline-start: 2em;
-
-			li {
-					list-style: none;
-					position: relative;
-				}
-			}
+      &-chevron-mark,
+      &-triangle-mark,
+      &-check-mark,
+      &-check-circle-mark,
+      &-check-square-mark,
+      &-handpoint-mark,
+      &-pencil-mark,
+      &-smile-mark,
+      &-frown-mark,
+      &-numbered-circle-mark,
+      &-numbered-square-mark {
+        padding-inline-start: 2em;
+        li {
+          list-style: none;
+          position: relative;
+        }
+      }
 	}
 
 	&.is-style-numbered-circle-mark {
@@ -179,15 +178,15 @@ ul, ol{
     }
 
 	@each $styleClass, $faCode in $stylePalette {
-		&.#{$styleClass} {
-			li {
-				&::before {
-					@include mark-before;
-					content: $faCode;
-					left: -1.5em;
-				}
-			}
-		}
+      &.#{$styleClass} {
+        li {
+          &::before {
+            @include mark-before;
+            content: $faCode;
+            left: -1.5em;
+          }
+        }
+      }
       &.is-style-default {
         li {
           &::before {

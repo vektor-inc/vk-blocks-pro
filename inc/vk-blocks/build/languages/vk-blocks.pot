@@ -289,8 +289,9 @@ msgstr ""
 msgid "Input content"
 msgstr ""
 
-#: src/group-heading/block.js:12
+#: src/group-heading/block.js:25
 #: src/heading/block.js:125
+#: src/group-heading/block.js:14
 #: src/list-style/block.js:142
 #: src/staff/block.js:105
 #: src/step-item/block.js:116
@@ -299,9 +300,40 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: src/group-heading/block.js:17
-#: src/list-style/block.js:147
-msgid "Chevron"
+#: src/group-heading/block.js:30
+#: src/outer/block.js:285
+#: src/pr-content/block.js:142
+#: src/group-heading/block.js:19
+#: src/step-item/block.js:97
+#: src/timeline-item/block.js:84
+msgid "Solid"
+msgstr ""
+
+#: src/group-heading/block.js:34
+#: src/outer/block.js:289
+msgid "Dotted"
+msgstr ""
+
+#: src/group-heading/block.js:38
+#: src/outer/block.js:293
+msgid "Dashed"
+msgstr ""
+
+#: src/group-heading/block.js:42
+#: src/outer/block.js:297
+msgid "Double"
+msgstr ""
+
+#: src/group-heading/block.js:46
+msgid "Stitch"
+msgstr ""
+
+#: src/group-heading/block.js:50
+msgid "top-bottom-border"
+msgstr ""
+
+#: src/group-heading/block.js:54
+msgid "Shadow"
 msgstr ""
 
 #: src/heading/block.js:119
@@ -375,6 +407,10 @@ msgstr ""
 
 #: src/highlighter/block.js:93
 msgid "Highlighter"
+msgstr ""
+
+#: src/list-style/block.js:147
+msgid "Chevron"
 msgstr ""
 
 #: src/list-style/block.js:151
@@ -535,25 +571,6 @@ msgstr ""
 #: src/step-item/block.js:120
 #: src/timeline-item/block.js:103
 msgid "None"
-msgstr ""
-
-#: src/outer/block.js:285
-#: src/pr-content/block.js:142
-#: src/step-item/block.js:97
-#: src/timeline-item/block.js:84
-msgid "Solid"
-msgstr ""
-
-#: src/outer/block.js:289
-msgid "Dotted"
-msgstr ""
-
-#: src/outer/block.js:293
-msgid "Dashed"
-msgstr ""
-
-#: src/outer/block.js:297
-msgid "Double"
 msgstr ""
 
 #: src/outer/block.js:301

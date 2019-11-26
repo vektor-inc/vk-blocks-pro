@@ -21,36 +21,36 @@ const {createHigherOrderComponent} = wp.compose;
 wp.blocks.registerBlockStyle('core/group',
     [
         {
-            name: 'default',
+            name: 'vk-group-default',
             label: __('Default', 'vk-blocks'),
             isDefault: true
         },
         {
-            name: 'solid',
+            name: 'vk-group-solid',
             label: __('Solid', 'vk-blocks')
         },
         {
-            name: 'dotted',
+            name: 'vk-group-dotted',
             label: __('Dotted', 'vk-blocks')
         },
         {
-            name: 'dashed',
+            name: 'vk-group-dashed',
             label: __('Dashed', 'vk-blocks')
         },
         {
-            name: 'double',
+            name: 'vk-group-double',
             label: __('Double', 'vk-blocks')
         },       
         {
-            name: 'stitch',
+            name: 'vk-group-stitch',
             label: __('Stitch', 'vk-blocks')
         },
         {
-            name: 'top-bottom-border',
+            name: 'vk-group-top-bottom-border',
             label: __('top-bottom-border', 'vk-blocks')
         },
         {
-            name: 'shadow',
+            name: 'vk-group-shadow',
             label: __('Shadow', 'vk-blocks')
         }  
     ]);

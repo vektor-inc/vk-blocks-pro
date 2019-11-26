@@ -289,14 +289,7 @@ msgstr ""
 msgid "Input content"
 msgstr ""
 
-#: src/heading/block.js:119
-msgid "Style Settings"
-msgstr ""
-
-#: src/heading/block.js:121
-msgid "Heading style"
-msgstr ""
-
+#: src/group-heading/block.js:12
 #: src/heading/block.js:125
 #: src/list-style/block.js:142
 #: src/staff/block.js:105
@@ -304,6 +297,19 @@ msgstr ""
 #: src/table-of-contents/block.js:113
 #: src/timeline-item/block.js:99
 msgid "Default"
+msgstr ""
+
+#: src/group-heading/block.js:17
+#: src/list-style/block.js:147
+msgid "Chevron"
+msgstr ""
+
+#: src/heading/block.js:119
+msgid "Style Settings"
+msgstr ""
+
+#: src/heading/block.js:121
+msgid "Heading style"
 msgstr ""
 
 #: src/heading/block.js:126
@@ -369,10 +375,6 @@ msgstr ""
 
 #: src/highlighter/block.js:93
 msgid "Highlighter"
-msgstr ""
-
-#: src/list-style/block.js:147
-msgid "Chevron"
 msgstr ""
 
 #: src/list-style/block.js:151

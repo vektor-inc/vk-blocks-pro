@@ -143,8 +143,8 @@ wp.blocks.registerBlockStyle('core/list',
             isDefault:true
         },
         {
-            name: 'vk-chevron-mark',
-            label: __('Chevron', 'vk-blocks'),
+            name: 'vk-arrow-mark',
+            label: __('Arrow', 'vk-blocks'),
         },
         {
             name: 'vk-triangle-mark',

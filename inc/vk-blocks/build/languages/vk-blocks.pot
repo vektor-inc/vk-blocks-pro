@@ -372,7 +372,7 @@ msgid "Highlighter"
 msgstr ""
 
 #: src/list-style/block.js:147
-msgid "Chevron"
+msgid "Arrow"
 msgstr ""
 
 #: src/list-style/block.js:151

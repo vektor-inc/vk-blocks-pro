@@ -355,8 +355,8 @@ msgid "Highlighter"
 msgstr "蛍光マーカー"
 
 #: src/list-style/block.js:147
-msgid "Chevron"
-msgstr "山"
+msgid "Arrow"
+msgstr "矢印"
 
 #: src/list-style/block.js:151 src/outer/block.js:228
 msgid "Triangle"
@@ -950,6 +950,9 @@ msgstr "ラベル"
 #: src/timeline/block.js:56
 msgid "Timeline"
 msgstr "タイムライン"
+
+#~ msgid "Chevron"
+#~ msgstr "山"
 
 #~ msgid "Label"
 #~ msgstr "ラベル"

@@ -5,7 +5,7 @@
 
 $stylePalette: (
         is-style-vk-default: "•",
-        is-style-vk-chevron-mark: "\f138",
+        is-style-vk-arrow-mark: "\f138",
         is-style-vk-triangle-mark: "\f0da",
         is-style-vk-check-mark: "\f00c",
         is-style-vk-check-circle-mark: "\f058",
@@ -35,7 +35,7 @@ ul, ol{
 
 	&.is-style {
       &-vk-default,
-      &-vk-chevron-mark,
+      &-vk-arrow-mark,
       &-vk-triangle-mark,
       &-vk-check-mark,
       &-vk-check-circle-mark,

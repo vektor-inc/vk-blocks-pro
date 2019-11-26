@@ -46,6 +46,249 @@ h1:first-child.vk_prBlocks_item_title{
 	margin-top:0.9em;
 }
 
+/*-------------------------------------------*/
+/* リストデザイン
+/*-------------------------------------------*/
+@mixin mark-before {font-family: "Font Awesome 5 Free";font-weight: 900;position: absolute; }
+
+$stylePalette: (
+        is-style-vk-default: "•",
+        is-style-vk-arrow-mark: "\f138",
+        is-style-vk-triangle-mark: "\f0da",
+        is-style-vk-check-mark: "\f00c",
+        is-style-vk-check-circle-mark: "\f058",
+        is-style-vk-check-square-mark: "\f14a",
+        is-style-vk-handpoint-mark: "\f0a4",
+        is-style-vk-pencil-mark: "\f303",
+        is-style-vk-smile-mark: "\f118",
+        is-style-vk-frown-mark: "\f119",
+);
+
+$colorPalette: (
+        vk-has-pale-pink-color: #f78da7,
+        vk-has-vivid-red-color: #cf2e2e,
+        vk-has-luminous-vivid-orange-color: #ff6900,
+        vk-has-luminous-vivid-amber-color: #fcb900,
+        vk-has-light-green-cyan-color: #7bdcb5,
+        vk-has-vivid-green-cyan-color: #00d084,
+        vk-has-pale-cyan-blue-color: #8ed1fc,
+        vk-has-vivid-cyan-blue-color: #0693e3,
+        vk-has-vivid-purple-color: #9b51e0,
+        vk-has-very-light-gray-color: #eee,
+        vk-has-cyan-bluish-gray-color: #abb8c3,
+        vk-has-very-dark-gray-color: #313131,
+);
+
+ul, ol{
+
+	&.is-style {
+      &-vk-default,
+      &-vk-arrow-mark,
+      &-vk-triangle-mark,
+      &-vk-check-mark,
+      &-vk-check-circle-mark,
+      &-vk-check-square-mark,
+      &-vk-handpoint-mark,
+      &-vk-pencil-mark,
+      &-vk-smile-mark,
+      &-vk-frown-mark,
+      &-vk-numbered-circle-mark,
+      &-vk-numbered-square-mark {
+        padding-inline-start: 2em;
+        li {
+          list-style: none;
+          position: relative;
+        }
+      }
+	}
+
+	&.is-style-vk-numbered-circle-mark {
+		counter-reset: number;
+		list-style-type: none;
+
+		li {
+			position: relative;
+			list-style: none;
+
+			&:before {
+				position: absolute;
+				left: -.3em;
+				counter-increment: number;
+				content: counter(number);
+				margin-left: -25px;
+				background: #222;
+				color: #fff;
+				text-indent: 0;
+				display: inline-block;
+				font-weight: bold;
+				border-radius: 50%;
+				font-size: 1em;
+				line-height: 1em;
+				padding: .2em .35em;
+				text-align: center;
+			}
+		}
+	}
+
+	&.is-style-vk-numbered-square-mark {
+		counter-reset: number;
+		list-style-type: none;
+
+		li {
+			position: relative;
+			list-style: none;
+
+			&:before {
+				position: absolute;
+				left: -.3em;
+				counter-increment: number;
+				content: counter(number);
+				margin-left: -25px;
+				background: #222;
+				color: #fff;
+				text-indent: 0;
+				display: inline-block;
+				font-weight: bold;
+				font-size: 1em;
+				line-height: 1em;
+				padding: .3em .37em .2em;
+				text-align: center;
+				border-radius: 2px;
+			}
+		}
+	}
+
+	&.is-style-vk-numbered-circle-mark,
+	&.is-style-vk-numbered-square-mark {
+		&.fa-lg {
+			li::before {
+				left: -.8em;
+			}
+		}
+
+		&.fa-2x {
+			li {
+				line-height: 1.25em;
+			}
+
+			li::before {
+				left: -1.1em;
+			}
+		}
+
+		&.fa-3x {
+			li {
+				line-height: 1.25em;
+			}
+
+			li::before {
+				left: -1.4em;
+			}
+		}
+
+		&.fa-4x {
+			li {
+				line-height: 1.25em;
+			}
+
+			li::before {
+				left: -1.5em;
+			}
+		}
+
+		&.fa-5x {
+			li {
+				line-height: 1.25em;
+			}
+
+			li::before {
+				left: -1.6em;
+			}
+		}
+    }
+
+	@each $styleClass, $faCode in $stylePalette {
+      &.#{$styleClass} {
+        li {
+          &::before {
+            @include mark-before;
+            content: $faCode;
+            left: -1.5em;
+          }
+        }
+      }
+      &.is-style-vk-default {
+        li {
+          &::before {
+            font-size: 22px;
+            line-height: 1.1em;
+          }
+        }
+      }
+    }
+
+	@each $colorClass, $color in $colorPalette {
+		&.#{$colorClass} {
+			li::before {
+				color: $color;
+			}
+		}
+
+		&.is-style-vk-numbered-circle-mark.#{$colorClass},
+		&.is-style-vk-numbered-square-mark.#{$colorClass}{
+			li::before {
+				color: #ffffff;
+				background-color: $color;
+			}
+		}
+	}
+
+}
+//ul,ol
+
+.alert{
+
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 3px;
+	p {
+		margin-bottom:0;
+	}
+
+  & + &{
+    margin-top: 2em;
+  }
+
+  a{
+    transition: color .3s linear, opacity .3s linear;
+    &:link, &:visited{
+      opacity: .8;
+      text-decoration: underline;
+    }
+    &:hover, &:visited{
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+
+  @each $var in (
+                  (success, #dff0d8,#3c763d,#d6e9c6),
+                  (info, #d9edf7,#31708f,#bce8f1),
+                  (warning, #fcf8e3,#8a6d3b,#faebcc),
+                  (danger, #f2dede,#a94442,#ebccd1),
+  ){
+    $class-name: nth($var, 1);
+    $color-bg: nth($var, 2);
+    $color: nth($var, 3);
+    $color-border :nth($var, 4);
+    &-#{$class-name}{
+      background-color: $color-bg;
+      color:$color;
+      border-color:$color-border;
+    }
+  }
+}
+
 .vk_balloon {
   display: flex;
   align-items: center;
@@ -310,249 +553,6 @@ h1:first-child.vk_prBlocks_item_title{
 		max-width:96px;
 	}
 } // @media only screen and (max-width: 480px) {
-
-/*-------------------------------------------*/
-/* リストデザイン
-/*-------------------------------------------*/
-@mixin mark-before {font-family: "Font Awesome 5 Free";font-weight: 900;position: absolute; }
-
-$stylePalette: (
-        is-style-vk-default: "•",
-        is-style-vk-chevron-mark: "\f138",
-        is-style-vk-triangle-mark: "\f0da",
-        is-style-vk-check-mark: "\f00c",
-        is-style-vk-check-circle-mark: "\f058",
-        is-style-vk-check-square-mark: "\f14a",
-        is-style-vk-handpoint-mark: "\f0a4",
-        is-style-vk-pencil-mark: "\f303",
-        is-style-vk-smile-mark: "\f118",
-        is-style-vk-frown-mark: "\f119",
-);
-
-$colorPalette: (
-        vk-has-pale-pink-color: #f78da7,
-        vk-has-vivid-red-color: #cf2e2e,
-        vk-has-luminous-vivid-orange-color: #ff6900,
-        vk-has-luminous-vivid-amber-color: #fcb900,
-        vk-has-light-green-cyan-color: #7bdcb5,
-        vk-has-vivid-green-cyan-color: #00d084,
-        vk-has-pale-cyan-blue-color: #8ed1fc,
-        vk-has-vivid-cyan-blue-color: #0693e3,
-        vk-has-vivid-purple-color: #9b51e0,
-        vk-has-very-light-gray-color: #eee,
-        vk-has-cyan-bluish-gray-color: #abb8c3,
-        vk-has-very-dark-gray-color: #313131,
-);
-
-ul, ol{
-
-	&.is-style {
-      &-vk-default,
-      &-vk-chevron-mark,
-      &-vk-triangle-mark,
-      &-vk-check-mark,
-      &-vk-check-circle-mark,
-      &-vk-check-square-mark,
-      &-vk-handpoint-mark,
-      &-vk-pencil-mark,
-      &-vk-smile-mark,
-      &-vk-frown-mark,
-      &-vk-numbered-circle-mark,
-      &-vk-numbered-square-mark {
-        padding-inline-start: 2em;
-        li {
-          list-style: none;
-          position: relative;
-        }
-      }
-	}
-
-	&.is-style-vk-numbered-circle-mark {
-		counter-reset: number;
-		list-style-type: none;
-
-		li {
-			position: relative;
-			list-style: none;
-
-			&:before {
-				position: absolute;
-				left: -.3em;
-				counter-increment: number;
-				content: counter(number);
-				margin-left: -25px;
-				background: #222;
-				color: #fff;
-				text-indent: 0;
-				display: inline-block;
-				font-weight: bold;
-				border-radius: 50%;
-				font-size: 1em;
-				line-height: 1em;
-				padding: .2em .35em;
-				text-align: center;
-			}
-		}
-	}
-
-	&.is-style-vk-numbered-square-mark {
-		counter-reset: number;
-		list-style-type: none;
-
-		li {
-			position: relative;
-			list-style: none;
-
-			&:before {
-				position: absolute;
-				left: -.3em;
-				counter-increment: number;
-				content: counter(number);
-				margin-left: -25px;
-				background: #222;
-				color: #fff;
-				text-indent: 0;
-				display: inline-block;
-				font-weight: bold;
-				font-size: 1em;
-				line-height: 1em;
-				padding: .3em .37em .2em;
-				text-align: center;
-				border-radius: 2px;
-			}
-		}
-	}
-
-	&.is-style-vk-numbered-circle-mark,
-	&.is-style-vk-numbered-square-mark {
-		&.fa-lg {
-			li::before {
-				left: -.8em;
-			}
-		}
-
-		&.fa-2x {
-			li {
-				line-height: 1.25em;
-			}
-
-			li::before {
-				left: -1.1em;
-			}
-		}
-
-		&.fa-3x {
-			li {
-				line-height: 1.25em;
-			}
-
-			li::before {
-				left: -1.4em;
-			}
-		}
-
-		&.fa-4x {
-			li {
-				line-height: 1.25em;
-			}
-
-			li::before {
-				left: -1.5em;
-			}
-		}
-
-		&.fa-5x {
-			li {
-				line-height: 1.25em;
-			}
-
-			li::before {
-				left: -1.6em;
-			}
-		}
-    }
-
-	@each $styleClass, $faCode in $stylePalette {
-      &.#{$styleClass} {
-        li {
-          &::before {
-            @include mark-before;
-            content: $faCode;
-            left: -1.5em;
-          }
-        }
-      }
-      &.is-style-vk-default {
-        li {
-          &::before {
-            font-size: 22px;
-            line-height: 1.1em;
-          }
-        }
-      }
-    }
-
-	@each $colorClass, $color in $colorPalette {
-		&.#{$colorClass} {
-			li::before {
-				color: $color;
-			}
-		}
-
-		&.is-style-vk-numbered-circle-mark.#{$colorClass},
-		&.is-style-vk-numbered-square-mark.#{$colorClass}{
-			li::before {
-				color: #ffffff;
-				background-color: $color;
-			}
-		}
-	}
-
-}
-//ul,ol
-
-.alert{
-
-  padding: 1em;
-  margin: 1em 0;
-  border-radius: 3px;
-	p {
-		margin-bottom:0;
-	}
-
-  & + &{
-    margin-top: 2em;
-  }
-
-  a{
-    transition: color .3s linear, opacity .3s linear;
-    &:link, &:visited{
-      opacity: .8;
-      text-decoration: underline;
-    }
-    &:hover, &:visited{
-      opacity: 1;
-      text-decoration: none;
-    }
-  }
-
-  @each $var in (
-                  (success, #dff0d8,#3c763d,#d6e9c6),
-                  (info, #d9edf7,#31708f,#bce8f1),
-                  (warning, #fcf8e3,#8a6d3b,#faebcc),
-                  (danger, #f2dede,#a94442,#ebccd1),
-  ){
-    $class-name: nth($var, 1);
-    $color-bg: nth($var, 2);
-    $color: nth($var, 3);
-    $color-border :nth($var, 4);
-    &-#{$class-name}{
-      background-color: $color-bg;
-      color:$color;
-      border-color:$color-border;
-    }
-  }
-}
 
 .vk_button{
 	margin: 5px 0;

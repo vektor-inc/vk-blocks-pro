@@ -4,16 +4,16 @@
 @mixin mark-before {font-family: "Font Awesome 5 Free";font-weight: 900;position: absolute; }
 
 $stylePalette: (
-        is-style-default: "•",
-        is-style-chevron-mark: "\f138",
-        is-style-triangle-mark: "\f0da",
-        is-style-check-mark: "\f00c",
-        is-style-check-circle-mark: "\f058",
-        is-style-check-square-mark: "\f14a",
-        is-style-handpoint-mark: "\f0a4",
-        is-style-pencil-mark: "\f303",
-        is-style-smile-mark: "\f118",
-        is-style-frown-mark: "\f119",
+        is-style-vk-default: "•",
+        is-style-vk-chevron-mark: "\f138",
+        is-style-vk-triangle-mark: "\f0da",
+        is-style-vk-check-mark: "\f00c",
+        is-style-vk-check-circle-mark: "\f058",
+        is-style-vk-check-square-mark: "\f14a",
+        is-style-vk-handpoint-mark: "\f0a4",
+        is-style-vk-pencil-mark: "\f303",
+        is-style-vk-smile-mark: "\f118",
+        is-style-vk-frown-mark: "\f119",
 );
 
 $colorPalette: (
@@ -34,18 +34,18 @@ $colorPalette: (
 ul, ol{
 
 	&.is-style {
-      &-default,
-      &-chevron-mark,
-      &-triangle-mark,
-      &-check-mark,
-      &-check-circle-mark,
-      &-check-square-mark,
-      &-handpoint-mark,
-      &-pencil-mark,
-      &-smile-mark,
-      &-frown-mark,
-      &-numbered-circle-mark,
-      &-numbered-square-mark {
+      &-vk-default,
+      &-vk-chevron-mark,
+      &-vk-triangle-mark,
+      &-vk-check-mark,
+      &-vk-check-circle-mark,
+      &-vk-check-square-mark,
+      &-vk-handpoint-mark,
+      &-vk-pencil-mark,
+      &-vk-smile-mark,
+      &-vk-frown-mark,
+      &-vk-numbered-circle-mark,
+      &-vk-numbered-square-mark {
         padding-inline-start: 2em;
         li {
           list-style: none;
@@ -54,7 +54,7 @@ ul, ol{
       }
 	}
 
-	&.is-style-numbered-circle-mark {
+	&.is-style-vk-numbered-circle-mark {
 		counter-reset: number;
 		list-style-type: none;
 
@@ -82,7 +82,7 @@ ul, ol{
 		}
 	}
 
-	&.is-style-numbered-square-mark {
+	&.is-style-vk-numbered-square-mark {
 		counter-reset: number;
 		list-style-type: none;
 
@@ -109,8 +109,8 @@ ul, ol{
 		}
 	}
 
-	&.is-style-numbered-circle-mark,
-	&.is-style-numbered-square-mark {
+	&.is-style-vk-numbered-circle-mark,
+	&.is-style-vk-numbered-square-mark {
 		&.fa-lg {
 			li::before {
 				left: -.8em;
@@ -168,7 +168,7 @@ ul, ol{
           }
         }
       }
-      &.is-style-default {
+      &.is-style-vk-default {
         li {
           &::before {
             font-size: 22px;
@@ -185,8 +185,8 @@ ul, ol{
 			}
 		}
 
-		&.is-style-numbered-circle-mark.#{$colorClass},
-		&.is-style-numbered-square-mark.#{$colorClass}{
+		&.is-style-vk-numbered-circle-mark.#{$colorClass},
+		&.is-style-vk-numbered-square-mark.#{$colorClass}{
 			li::before {
 				color: #ffffff;
 				background-color: $color;

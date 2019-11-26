@@ -1,9 +1,43 @@
+import React from "react";
 const {InnerBlocks} = wp.editor;
 const {__} = wp.i18n; // Import __() from wp.i18n
+import {faSchema} from "../_helper/font-awesome";
+
+export const originalSchema = {
+    label: {
+        type: 'string',
+        default:  'Write Caption here ...',
+    },
+    color: {
+        type: 'string',
+        default: '#337ab7',
+    },
+    style: {
+        type: 'string',
+        default: 'solid',
+    },
+    styleLine: {
+        type: 'string',
+        default: 'default',
+    },
+    dotCaption: {
+        type: 'string',
+        default: 'STEP',
+    },
+    dotNum: {
+        type: 'number',
+        default: 1,
+    }
+};
+let mergeSchema = () => {
+    return Object.assign(originalSchema, faSchema);
+};
+export const schema = mergeSchema();
 
 export class Component extends React.Component {
     render() {
         const {
+            label,
             color,
             style,
             styleLine,
@@ -18,11 +52,12 @@ export class Component extends React.Component {
         let styleClass;
         let inlineStyle;
         let styleLineClass;
+        const TEMPLATE = [['core/heading', {level: 4}]];
 
         //編集画面とサイト上の切り替え
         if (for_ === "edit") {
-            elm = <InnerBlocks/>;
-        } else if ("save"){
+            elm = <InnerBlocks template={TEMPLATE}/>;
+        } else if ("save") {
             elm = <InnerBlocks.Content/>;
         }
 
@@ -42,12 +77,13 @@ export class Component extends React.Component {
 
         return (
             <div className={className + containerClass + styleLineClass}>
+                <div className={"vk_step_item_caption"}>{label}</div>
                 <div className={"vk_step_item_content"}>{elm}</div>
                 <div
                     className={'vk_step_item_dot' + styleClass}
                     style={inlineStyle}
                 >
-                <div className={'vk_step_item_dot_caption'}>{dotCaption}</div>
+                    <div className={'vk_step_item_dot_caption'}>{dotCaption}</div>
                     {(() => {
                         if (faIcon){
                             return <i className={faIcon}/>;
@@ -60,3 +96,12 @@ export class Component extends React.Component {
         );
     }
 }
+
+export const deprecated = [
+    {
+        attributes: schema,
+        save({attributes, className}) {
+            return <Component attributes={attributes} className={className} for_={"save"}/>;
+        },
+    }
+];

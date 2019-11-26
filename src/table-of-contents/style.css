@@ -2,40 +2,51 @@
 /* CSS
 /*-------------------------------------------*/
 .vk_tableOfContents {
-  border: 1px solid #ff0000;
-  padding: 4rem;
+  margin-top: 3.5em;
+  margin-bottom: 3.5em;
+}
+.vk_tableOfContents-style-default {
+  border: 3px solid rgba(0, 0, 0, 0.04);
+  box-shadow: inset 0px 0px 0px 1px white;
+  background-color: rgba(0, 0, 0, 0.015);
+  padding: 3rem 4rem;
 }
 .vk_tableOfContents_title {
   text-align: center;
+  font-size: 1.2em;
+  letter-spacing: 0.5em;
 }
 .vk_tableOfContents li {
+  margin: 0;
+}
+.vk_tableOfContents_list {
+  padding: 0;
+  margin-top: 1em;
+}
+.vk_tableOfContents_list_item {
+  list-style: none;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0.8rem 0;
+}
+.vk_tableOfContents_list_item-h-3 {
+  padding-left: 1rem;
+}
+.vk_tableOfContents_list_item-h-4 {
+  padding-left: 2rem;
+}
+.vk_tableOfContents_list_item-h-5 {
+  padding-left: 3rem;
+}
+.vk_tableOfContents_list_item-h-6 {
+  padding-left: 4rem;
+}
+.vk_tableOfContents_list_item_link {
+  color: #333;
   border-bottom: 1px solid #ccc;
 }
-
-.editor-styles-wrapper .vk_tableOfContents ul {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-.editor-styles-wrapper .vk_tableOfContents .list-group-item {
-  border: none;
-}
-.editor-styles-wrapper ul {
-  list-style: none !important;
-}
-.editor-styles-wrapper ul li.vk_tableOfContents_list_item-h3 {
-  margin-left: 2rem;
-}
-.editor-styles-wrapper ul li.vk_tableOfContents_list_item-h4 {
-  margin-left: 4rem;
-}
-.editor-styles-wrapper ul li.vk_tableOfContents_list_item-h5 {
-  margin-left: 8rem;
-}
-.editor-styles-wrapper ul li.vk_tableOfContents_list_item-h6 {
-  margin-left: 12rem;
-}
-.editor-styles-wrapper ul ul {
-  list-style: none !important;
+.vk_tableOfContents_list_item_link:hover {
+  text-decoration: none;
+  border-bottom: none;
 }
 
 /*# sourceMappingURL=style.css.map */

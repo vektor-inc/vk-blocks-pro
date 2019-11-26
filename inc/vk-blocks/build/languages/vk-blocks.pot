@@ -417,7 +417,7 @@ msgid "Numbered Square"
 msgstr ""
 
 #: src/list-style/block.js:96
-msgid "List Color"
+msgid "List Icon Color"
 msgstr ""
 
 #: src/outer/block.js:102

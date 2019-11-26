@@ -93,7 +93,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
                 <Fragment>
                     <BlockEdit {...props} />
                     <InspectorControls>
-                        <PanelBody title={__('List Color', 'vk-blocks')} initialOpen={false}
+                        <PanelBody title={__('List Icon Color', 'vk-blocks')} initialOpen={false}
                                    className="list-color-controle">
                             <ColorPalette
                                 value={activeColor}

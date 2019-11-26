@@ -291,7 +291,6 @@ msgstr ""
 
 #: src/group-heading/block.js:25
 #: src/heading/block.js:125
-#: src/group-heading/block.js:14
 #: src/list-style/block.js:142
 #: src/staff/block.js:105
 #: src/step-item/block.js:116
@@ -303,7 +302,6 @@ msgstr ""
 #: src/group-heading/block.js:30
 #: src/outer/block.js:285
 #: src/pr-content/block.js:142
-#: src/group-heading/block.js:19
 #: src/step-item/block.js:97
 #: src/timeline-item/block.js:84
 msgid "Solid"

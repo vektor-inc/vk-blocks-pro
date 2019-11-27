@@ -270,52 +270,74 @@ ul, ol{
 /* グループブロック　デザイン
 /*-------------------------------------------*/
 
-@mixin pad-mag{ padding: 1.8em; margin: 1.2em 0; }
+@mixin pad-mag{
+	padding: 1.8em; margin: 1.2em 0;
+}
+@mixin inner-item-pad-mag{
+	h2,h3,h4,h5,h6 {
+		margin-bottom:1rem;
+	}
+	ul,ol {
+		margin-top:0;
+		margin-bottom:0;
+		li:last-child {
+			margin-bottom:0;
+		}
+	}
+}
 
 .wp-block-group{
 	&.is-style{
-		&-vk-group-solid{
-			border: solid 3px;
-			@include pad-mag;
-		}
-		&-vk-group-dotted{
-			border: dotted 1px;
-			@include pad-mag;
-		}
-		&-vk-group-dashed{
-			border: dashed 2px;
-			@include pad-mag;
-		}
-		&-vk-group-double{
-			border: double 5px;
-			@include pad-mag;
-		}
-		&-vk-group-stitch{
-			margin: 1em 0;
-			padding:0.5em;
-			border-radius: 8px;
-			.wp-block-group__inner-container{
-				border: dashed 2px;
-				border-radius: 8px;
-				padding: 1.8em;
+		&-vk-group {
+			&-solid{
+				border: solid 3px;
+				@include pad-mag;
+				@include inner-item-pad-mag;
 			}
-		}
-		&-vk-group-top-bottom-border{
-			border-top: solid 1px;
-			border-bottom: solid 1px;
+			&-dotted{
+				border: dotted 1px;
+				@include pad-mag;
+			}
+			&-dashed{
+				border: dashed 2px;
+				@include pad-mag;
+				@include inner-item-pad-mag;
+			}
+			&-double{
+				border: double 5px;
+				@include pad-mag;
+				@include inner-item-pad-mag;
+			}
+			&-stitch{
+				margin: 1em 0;
+				padding:0.5em;
+				border-radius: 8px;
+				@include inner-item-pad-mag;
+				.wp-block-group__inner-container{
+					border: dashed 2px;
+					border-radius: 8px;
+					padding: 1.8em;
+				}
+			}
+			&-top-bottom-border{
+				border-top: solid 1px;
+				border-bottom: solid 1px;
   			@include pad-mag;
+				@include inner-item-pad-mag;
   			padding-left: 0;
   			padding-right: 0;
-		}
-		&-vk-group-shadow{
-			box-shadow :0px 0px 5px rgba(0,0,0,0.2);
-			@include pad-mag;
+			}
+			&-shadow{
+				box-shadow :0px 0px 5px rgba(0,0,0,0.2);
+				@include pad-mag;
+				@include inner-item-pad-mag;
+			}
 		}
 	}
 	h3:first-child,h4:first-child{
-		margin-top: 1em;
+		margin-top:0;
 	}
-	p:first-of-type{
+	p:last-child{
 		margin-bottom: 0;
 	}
 
@@ -329,6 +351,48 @@ ul, ol{
 	}
 }//.wp-block-group
 
+.alert{
+
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 3px;
+	p {
+		margin-bottom:0;
+	}
+
+  & + &{
+    margin-top: 2em;
+  }
+
+  a{
+    transition: color .3s linear, opacity .3s linear;
+    &:link, &:visited{
+      opacity: .8;
+      text-decoration: underline;
+    }
+    &:hover, &:visited{
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+
+  @each $var in (
+                  (success, #dff0d8,#3c763d,#d6e9c6),
+                  (info, #d9edf7,#31708f,#bce8f1),
+                  (warning, #fcf8e3,#8a6d3b,#faebcc),
+                  (danger, #f2dede,#a94442,#ebccd1),
+  ){
+    $class-name: nth($var, 1);
+    $color-bg: nth($var, 2);
+    $color: nth($var, 3);
+    $color-border :nth($var, 4);
+    &-#{$class-name}{
+      background-color: $color-bg;
+      color:$color;
+      border-color:$color-border;
+    }
+  }
+}
 
 .vk_balloon {
   display: flex;
@@ -595,49 +659,6 @@ ul, ol{
 	}
 } // @media only screen and (max-width: 480px) {
 
-.alert{
-
-  padding: 1em;
-  margin: 1em 0;
-  border-radius: 3px;
-	p {
-		margin-bottom:0;
-	}
-
-  & + &{
-    margin-top: 2em;
-  }
-
-  a{
-    transition: color .3s linear, opacity .3s linear;
-    &:link, &:visited{
-      opacity: .8;
-      text-decoration: underline;
-    }
-    &:hover, &:visited{
-      opacity: 1;
-      text-decoration: none;
-    }
-  }
-
-  @each $var in (
-                  (success, #dff0d8,#3c763d,#d6e9c6),
-                  (info, #d9edf7,#31708f,#bce8f1),
-                  (warning, #fcf8e3,#8a6d3b,#faebcc),
-                  (danger, #f2dede,#a94442,#ebccd1),
-  ){
-    $class-name: nth($var, 1);
-    $color-bg: nth($var, 2);
-    $color: nth($var, 3);
-    $color-border :nth($var, 4);
-    &-#{$class-name}{
-      background-color: $color-bg;
-      color:$color;
-      border-color:$color-border;
-    }
-  }
-}
-
 .vk_button{
 	margin: 5px 0;
 	&-color-custom{
@@ -891,212 +912,6 @@ $color_dark:#343a40;
 }
 
 /*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-$media-sm-up : 576px;
-$media-md-up : 768px;
-$media-lg-up : 992px;
-$media-xl-up : 1200px;
-$media-sm-down : 575.98px;
-$media-md-down : 767.98px;
-$media-lg-down : 991.98px;
-$media-xl-down : 1199.98px;
-.vk_outer{
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-  .vk_outer_container{
-    min-height: 40px;
-  }
-}
-.vk_outer-width-full {
-	margin-left:calc(50% - 50vw);
-	margin-right:calc(50% - 50vw);
-  padding-left:calc(50vw - 50%);
-  padding-right:calc(50vw - 50%);
-}
-$padding-none:1.5em;
-$padding-sm:2em;
-$padding-md:2.5em;
-$padding-lg:3em;
-$padding-xl:3.5em;
-.vk_outer-paddingLR-use{
-  padding-left: $padding-none ;
-	padding-right: $padding-none ;
-	@media ( min-width: $media-sm-up ){
-		padding-left: $padding-sm ;
-		padding-right: $padding-sm ;
-	}
-	@media ( min-width: $media-md-up ){
-		padding-left: $padding-md ;
-		padding-right: $padding-md ;
-	}
-	@media ( min-width: $media-lg-up ){
-		padding-left: $padding-lg ;
-		padding-right: $padding-lg ;
-	}
-	@media ( min-width: $media-xl-up ){
-		padding-left: $padding-xl ;
-		padding-right: $padding-xl ;
-	}
-}
-.vk_outer-paddingVertical-use{
-	padding-top: $padding-none ;
-	padding-bottom: $padding-none ;
-	@media ( min-width: $media-sm-up ){
-		padding-top: $padding-sm ;
-		padding-bottom: $padding-sm ;
-	}
-	@media ( min-width: $media-md-up ){
-		padding-top: $padding-md ;
-		padding-bottom: $padding-md ;
-	}
-	@media ( min-width: $media-lg-up ){
-		padding-top: $padding-lg ;
-		padding-bottom: $padding-lg ;
-	}
-	@media ( min-width: $media-xl-up ){
-		padding-top: $padding-xl ;
-		padding-bottom: $padding-xl ;
-	}
-}
-
-.vk_outer-bgPosition-fixed{
-  background-attachment: fixed !important;
-	background-size: cover !important;
-}
-.vk_outer-bgPosition-normal{
-  background-attachment: unset !important;
-	background-size: cover !important;
-}
-
-.vk_outer_separator {
-	svg {
-		display: block;
-		max-height: 100px;
-		position: absolute;
-		left: 0;
-		width: 100%;
-	}
-}
-.vk_outer_separator-position-upper{
-  svg{
-    top: 0;
-    transform: rotate(180deg);
-  }
-}
-.vk_outer_separator-position-lower{
-  svg{
-    bottom: 0;
-  }
-}
-
-.vk_outer .editor-block-list__block {
-	margin: 0;
-}
-// .editor-block-list__block-edit{
-//   margin: 0!important;
-// }
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-// $border_primary : 1px solid #e5e5e5;
-// .vk_latestPosts {
-// 	.card-deck {
-// 		display: flex;
-// 		flex-flow: unset;
-// 		flex-wrap: wrap;
-// 	}
-// }
-
-/*-------------------------------------------*/
-/* Layout
-/*-------------------------------------------*/
-.vk_prContent {
-	margin-left:-15px;
-	margin-right:-15px;
- @media (min-width: 576px) {
-	 display: flex;
-	 .col-sm-6 {
-		 width:50%;
-	 }
-	 &-layout {
-		&-imageLeft {
-			flex-direction: row;
-		}
-
-		&-imageRight {
-			flex-direction: row-reverse;
-		}
-
-		&-imageLeft .vk_prContent_colImg {
-			padding-right: 2em;
-		}
-
-		&-imageRight .vk_prContent_colImg {
-			padding-left: 2em;
-		}
-	 }
-	} // @media (min-width: 768px) {
-}
-
-
-/*-------------------------------------------*/
-/* others
-/*-------------------------------------------*/
-.vk_prContent {
-	&_colTxt {
-		vertical-align: top;;
-		&_title {
-			background-color: transparent;
-			font-weight: bold;
-			padding: 0;
-			box-shadow: none;
-			border: none;
-			margin-bottom:0.8em;
-			@media (max-width: 575.98px) {
-				&:first-child{
-					margin-top: 30px;
-				}
-			}
-		&:after {
-			content: "";
-				line-height: 0;
-				display: block;
-				overflow: hidden;
-				position: absolute;
-				bottom: -1px;
-				width: 0;
-				border: none;
-			}
-		}
-	  &_text {
-			line-height: 2em;
-			margin-bottom:1.7em;
-	  }
-	  &_btn.btn {
-			@media (min-width: 992px) {
-		 	 font-size:16px;
-		 	}
-	  }
-	} // &_colTxt {
-	&_colImg{
-		&_image {
-			max-width: 100%;
-			height: auto;
-		}
-		.components-button.button{
-			margin: 1em;
-		}
-		.components-button.image-button {
-			margin: 0;
-		}
-	}
-} // .vk_prContent {
-
-/*-------------------------------------------*/
 /* .vk_prBlocks
 /*-------------------------------------------*/
 .vk_prBlocks_item {
@@ -1164,41 +979,15 @@ $padding-xl:3.5em;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+// $border_primary : 1px solid #e5e5e5;
+// .vk_latestPosts {
+// 	.card-deck {
+// 		display: flex;
+// 		flex-flow: unset;
+// 		flex-wrap: wrap;
+// 	}
+// }
 
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-
-@mixin switchVisibility($pc,$tablet,$mobile) {
-  .vk_spacer {
-    .vk_spacer-display-pc {
-      display: $pc;
-    }
-
-    .vk_spacer-display-tablet {
-      display: $tablet;
-    }
-
-    .vk_spacer-display-mobile {
-      display: $mobile;
-    }
-  }
-}
-
-// Small devices (landscape phones, 576px以下)
-@media (max-width: 576px) {
-  @include switchVisibility(none, none, block);
-}
-
-// Medium devices (tablets, 577pxから768px)
-@media (min-width: 577px) and (max-width: 768px) {
-  @include switchVisibility(none, block, none);
-}
-
-// Large devices (desktops, 769px以上)
-@media (min-width: 769px) {
-  @include switchVisibility(block, none, none);
-}
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -1460,6 +1249,234 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+$media-sm-up : 576px;
+$media-md-up : 768px;
+$media-lg-up : 992px;
+$media-xl-up : 1200px;
+$media-sm-down : 575.98px;
+$media-md-down : 767.98px;
+$media-lg-down : 991.98px;
+$media-xl-down : 1199.98px;
+.vk_outer{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  .vk_outer_container{
+    min-height: 40px;
+  }
+}
+.vk_outer-width-full {
+	margin-left:calc(50% - 50vw);
+	margin-right:calc(50% - 50vw);
+  padding-left:calc(50vw - 50%);
+  padding-right:calc(50vw - 50%);
+}
+$padding-none:1.5em;
+$padding-sm:2em;
+$padding-md:2.5em;
+$padding-lg:3em;
+$padding-xl:3.5em;
+.vk_outer-paddingLR-use{
+  padding-left: $padding-none ;
+	padding-right: $padding-none ;
+	@media ( min-width: $media-sm-up ){
+		padding-left: $padding-sm ;
+		padding-right: $padding-sm ;
+	}
+	@media ( min-width: $media-md-up ){
+		padding-left: $padding-md ;
+		padding-right: $padding-md ;
+	}
+	@media ( min-width: $media-lg-up ){
+		padding-left: $padding-lg ;
+		padding-right: $padding-lg ;
+	}
+	@media ( min-width: $media-xl-up ){
+		padding-left: $padding-xl ;
+		padding-right: $padding-xl ;
+	}
+}
+.vk_outer-paddingVertical-use{
+	padding-top: $padding-none ;
+	padding-bottom: $padding-none ;
+	@media ( min-width: $media-sm-up ){
+		padding-top: $padding-sm ;
+		padding-bottom: $padding-sm ;
+	}
+	@media ( min-width: $media-md-up ){
+		padding-top: $padding-md ;
+		padding-bottom: $padding-md ;
+	}
+	@media ( min-width: $media-lg-up ){
+		padding-top: $padding-lg ;
+		padding-bottom: $padding-lg ;
+	}
+	@media ( min-width: $media-xl-up ){
+		padding-top: $padding-xl ;
+		padding-bottom: $padding-xl ;
+	}
+}
+
+.vk_outer-bgPosition-fixed{
+  background-attachment: fixed !important;
+	background-size: cover !important;
+}
+.vk_outer-bgPosition-normal{
+  background-attachment: unset !important;
+	background-size: cover !important;
+}
+
+.vk_outer_separator {
+	svg {
+		display: block;
+		max-height: 100px;
+		position: absolute;
+		left: 0;
+		width: 100%;
+	}
+}
+.vk_outer_separator-position-upper{
+  svg{
+    top: 0;
+    transform: rotate(180deg);
+  }
+}
+.vk_outer_separator-position-lower{
+  svg{
+    bottom: 0;
+  }
+}
+
+.vk_outer .editor-block-list__block {
+	margin: 0;
+}
+// .editor-block-list__block-edit{
+//   margin: 0!important;
+// }
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
+@mixin switchVisibility($pc,$tablet,$mobile) {
+  .vk_spacer {
+    .vk_spacer-display-pc {
+      display: $pc;
+    }
+
+    .vk_spacer-display-tablet {
+      display: $tablet;
+    }
+
+    .vk_spacer-display-mobile {
+      display: $mobile;
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px以下)
+@media (max-width: 576px) {
+  @include switchVisibility(none, none, block);
+}
+
+// Medium devices (tablets, 577pxから768px)
+@media (min-width: 577px) and (max-width: 768px) {
+  @include switchVisibility(none, block, none);
+}
+
+// Large devices (desktops, 769px以上)
+@media (min-width: 769px) {
+  @include switchVisibility(block, none, none);
+}
+/*-------------------------------------------*/
+/* Layout
+/*-------------------------------------------*/
+.vk_prContent {
+	margin-left:-15px;
+	margin-right:-15px;
+ @media (min-width: 576px) {
+	 display: flex;
+	 .col-sm-6 {
+		 width:50%;
+	 }
+	 &-layout {
+		&-imageLeft {
+			flex-direction: row;
+		}
+
+		&-imageRight {
+			flex-direction: row-reverse;
+		}
+
+		&-imageLeft .vk_prContent_colImg {
+			padding-right: 2em;
+		}
+
+		&-imageRight .vk_prContent_colImg {
+			padding-left: 2em;
+		}
+	 }
+	} // @media (min-width: 768px) {
+}
+
+
+/*-------------------------------------------*/
+/* others
+/*-------------------------------------------*/
+.vk_prContent {
+	&_colTxt {
+		vertical-align: top;;
+		&_title {
+			background-color: transparent;
+			font-weight: bold;
+			padding: 0;
+			box-shadow: none;
+			border: none;
+			margin-bottom:0.8em;
+			@media (max-width: 575.98px) {
+				&:first-child{
+					margin-top: 30px;
+				}
+			}
+		&:after {
+			content: "";
+				line-height: 0;
+				display: block;
+				overflow: hidden;
+				position: absolute;
+				bottom: -1px;
+				width: 0;
+				border: none;
+			}
+		}
+	  &_text {
+			line-height: 2em;
+			margin-bottom:1.7em;
+	  }
+	  &_btn.btn {
+			@media (min-width: 992px) {
+		 	 font-size:16px;
+		 	}
+	  }
+	} // &_colTxt {
+	&_colImg{
+		&_image {
+			max-width: 100%;
+			height: auto;
+		}
+		.components-button.button{
+			margin: 1em;
+		}
+		.components-button.image-button {
+			margin: 0;
+		}
+	}
+} // .vk_prContent {
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 $toc-left-margin: 1rem;
 
 .vk_tableOfContents {
@@ -1548,6 +1565,61 @@ $toc-left-margin: 1rem;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+.vk_table-col-overflow {
+  white-space: nowrap !important;
+}
+/*# sourceMappingURL=style.scss.map */
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+.vk_timeline{
+    margin: 2em 0;
+  .vk_timeline_item {
+    position: relative;
+    padding: 0 0 1em 1.8em;
+
+    .vk_timeline_item_caption{
+      margin-bottom: 0.5em;
+      color: #666;
+    }
+
+    .vk_timeline_item_style {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 4px;
+      left: 0;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+    }
+  }
+}
+
+.vk_timeline_item_lineStyle-default {
+  &::before {
+    content: "";
+    width: 3px;
+    background: #ddd;
+    display: block;
+    position: absolute;
+    top: 22px;
+    left: 6px;
+    bottom: 0;
+  }
+}
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 .vk_step{
   margin: 2em 0;
 
@@ -1601,57 +1673,6 @@ $toc-left-margin: 1rem;
     top: 54px;
     left: 23px;
     bottom: 4px;
-  }
-}
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-.vk_table-col-overflow {
-  white-space: nowrap !important;
-}
-/*# sourceMappingURL=style.scss.map */
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-.vk_timeline{
-    margin: 2em 0;
-  .vk_timeline_item {
-    position: relative;
-    padding: 0 0 1em 1.8em;
-
-    .vk_timeline_item_caption{
-      margin-bottom: 0.5em;
-      color: #666;
-    }
-
-    .vk_timeline_item_style {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 4px;
-      left: 0;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-    }
-  }
-}
-
-.vk_timeline_item_lineStyle-default {
-  &::before {
-    content: "";
-    width: 3px;
-    background: #ddd;
-    display: block;
-    position: absolute;
-    top: 22px;
-    left: 6px;
-    bottom: 0;
   }
 }
 

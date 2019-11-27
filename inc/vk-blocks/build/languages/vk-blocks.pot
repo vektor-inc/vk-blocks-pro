@@ -299,9 +299,45 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
+<<<<<<< HEAD
 #: src/group-heading/block.js:131
 #: src/list-style/block.js:147
 msgid "Chevron"
+=======
+#: src/group-heading/block.js:30
+#: src/outer/block.js:285
+#: src/pr-content/block.js:142
+#: src/step-item/block.js:97
+#: src/timeline-item/block.js:84
+msgid "Solid"
+msgstr ""
+
+#: src/group-heading/block.js:34
+#: src/outer/block.js:289
+msgid "Dotted"
+msgstr ""
+
+#: src/group-heading/block.js:38
+#: src/outer/block.js:293
+msgid "Dashed"
+msgstr ""
+
+#: src/group-heading/block.js:42
+#: src/outer/block.js:297
+msgid "Double"
+msgstr ""
+
+#: src/group-heading/block.js:46
+msgid "Stitch"
+msgstr ""
+
+#: src/group-heading/block.js:50
+msgid "top-bottom-border"
+msgstr ""
+
+#: src/group-heading/block.js:54
+msgid "Shadow"
+>>>>>>> d0aa1ea81b9233966faafe15ea0b3abc6ed03ea9
 msgstr ""
 
 #: src/heading/block.js:119
@@ -535,25 +571,6 @@ msgstr ""
 #: src/step-item/block.js:120
 #: src/timeline-item/block.js:103
 msgid "None"
-msgstr ""
-
-#: src/outer/block.js:285
-#: src/pr-content/block.js:142
-#: src/step-item/block.js:97
-#: src/timeline-item/block.js:84
-msgid "Solid"
-msgstr ""
-
-#: src/outer/block.js:289
-msgid "Dotted"
-msgstr ""
-
-#: src/outer/block.js:293
-msgid "Dashed"
-msgstr ""
-
-#: src/outer/block.js:297
-msgid "Double"
 msgstr ""
 
 #: src/outer/block.js:301

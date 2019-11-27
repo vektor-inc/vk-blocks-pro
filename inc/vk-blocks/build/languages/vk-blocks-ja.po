@@ -274,6 +274,33 @@ msgstr "タイトルを入力"
 msgid "Input content"
 msgstr "説明を入力"
 
+#: src/group-heading/block.js:34
+#: src/outer/block.js:289
+msgid "Dotted"
+msgstr "ドット"
+
+#: src/group-heading/block.js:38
+#: src/outer/block.js:293
+msgid "Dashed"
+msgstr "破線"
+
+#: src/group-heading/block.js:42
+#: src/outer/block.js:297
+msgid "Double"
+msgstr "二重線"
+
+#: src/group-heading/block.js:46
+msgid "Stitch"
+msgstr "スティッチ"
+
+#: src/group-heading/block.js:50
+msgid "top-bottom-border"
+msgstr "上下ボーダー"
+
+#: src/group-heading/block.js:54
+msgid "Shadow"
+msgstr "シャドウ"
+
 #: src/heading/block.js:119
 msgid "Style Settings"
 msgstr "スタイル設定"

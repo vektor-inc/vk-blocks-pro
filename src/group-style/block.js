@@ -2,6 +2,7 @@
  * group-style block type
  *
  */
+import {wpEditor} from '../_helper/deprecated-fix.js';
 const {assign} = lodash;
 const {__} = wp.i18n;
 const {Fragment} = wp.element;
@@ -9,11 +10,10 @@ const {addFilter} = wp.hooks;
 const {
     PanelBody,
 } = wp.components;
-
 const {
     InspectorControls,
     ColorPalette
-} = wp.blockEditor;
+} = wpEditor;
 
 const {createHigherOrderComponent} = wp.compose;
 import {convertColorClass} from "../_helper/color-code-to-class.js";

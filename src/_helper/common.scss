@@ -249,6 +249,7 @@ ul, ol{
 			&-dotted{
 				border: dotted 1px;
 				@include pad-mag;
+				@include inner-item-pad-mag;
 			}
 			&-dashed{
 				border: dashed 2px;

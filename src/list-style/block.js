@@ -55,7 +55,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
                 <Fragment>
                     <BlockEdit {...props} />
                     <InspectorControls>
-                        <PanelBody title={__('List Color', 'vk-blocks')} initialOpen={false}
+                        <PanelBody title={__('List Icon Color', 'vk-blocks')} initialOpen={false}
                                    className="list-color-controle">
                             <ColorPalette
                                 value={activeColor}
@@ -100,52 +100,52 @@ addFilter('editor.BlockEdit', 'vk-blocks/list-style', addBlockControl);
 wp.blocks.registerBlockStyle('core/list',
     [
         {
-            name: 'default',
+            name: 'vk-default',
             label: __('Default', 'vk-blocks'),
             isDefault:true
         },
         {
-            name: 'chevron-mark',
-            label: __('Chevron', 'vk-blocks'),
+            name: 'vk-arrow-mark',
+            label: __('Arrow', 'vk-blocks'),
         },
         {
-            name: 'triangle-mark',
+            name: 'vk-triangle-mark',
             label: __('Triangle', 'vk-blocks')
         },
         {
-            name: 'check-mark',
+            name: 'vk-check-mark',
             label: __('Check', 'vk-blocks')
         },
         {
-            name: 'check-square-mark',
+            name: 'vk-check-square-mark',
             label: __('Check Square', 'vk-blocks')
         },
         {
-            name: 'check-circle-mark',
+            name: 'vk-check-circle-mark',
             label: __('Check Circle', 'vk-blocks')
         },
         {
-            name: 'handpoint-mark',
+            name: 'vk-handpoint-mark',
             label: __('Handpoint', 'vk-blocks')
         },
         {
-            name: 'pencil-mark',
+            name: 'vk-pencil-mark',
             label: __('Pencil', 'vk-blocks')
         },
         {
-            name: 'smile-mark',
+            name: 'vk-smile-mark',
             label: __('Smile', 'vk-blocks')
         },
         {
-            name: 'frown-mark',
+            name: 'vk-frown-mark',
             label: __('Frown', 'vk-blocks')
         },
         {
-            name: 'numbered-circle-mark',
+            name: 'vk-numbered-circle-mark',
             label: __('Numbered Circle', 'vk-blocks')
         },
         {
-            name: 'numbered-square-mark',
+            name: 'vk-numbered-square-mark',
             label: __('Numbered Square', 'vk-blocks')
         }
     ]);

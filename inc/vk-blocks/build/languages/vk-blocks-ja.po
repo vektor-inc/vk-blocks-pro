@@ -15,34 +15,18 @@ msgstr ""
 "X-Poedit-KeywordsList: __\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: src/_helper/font-awesome.js:21
-msgid "FontAwesome"
-msgstr "Font Awesome:"
-
-#: src/_helper/font-awesome.js:23
-msgid "Enter Font Awesome Class. Ex) fas fa-arrow-circle-right "
-msgstr ""
-"Font Awesome の class 名を入力してください。例) fas fa-arrow-circle-right"
-
-#: src/_helper/font-awesome.js:25 src/button/block.js:217
-#: src/pr-blocks/block.js:307 src/pr-content/block.js:171
-msgid "Font Awesome icon list"
-msgstr "Font Awesome アイコンリスト"
-
 #: src/alert/block.js:13
 msgid "Alert"
 msgstr "アラート"
 
 #: src/balloon/block.js:122 src/flow/block.js:112 src/outer/block.js:136
 #: src/pr-blocks/block.js:343 src/pr-content/component.js:116
-#: src/pr-content/deprecated/component-deprecated.js:102
 #: src/staff/component.js:88
 msgid "Select image"
 msgstr "画像を選択"
 
 #: src/balloon/block.js:122 src/flow/block.js:113 src/outer/block.js:138
 #: src/pr-blocks/block.js:345 src/pr-content/component.js:120
-#: src/pr-content/deprecated/component-deprecated.js:106
 msgid "Upload image"
 msgstr "画像をアップロード"
 
@@ -206,6 +190,11 @@ msgstr ""
 msgid "Font Awesome:"
 msgstr "Font Awesome:"
 
+#: src/button/block.js:217 src/pr-blocks/block.js:307
+#: src/pr-content/block.js:171
+msgid "Font Awesome icon list"
+msgstr "Font Awesome アイコンリスト"
+
 #: src/button/block.js:220 src/pr-content/block.js:174
 msgid "Before text"
 msgstr "文字の前"
@@ -359,20 +348,6 @@ msgstr "文字サイズ (rem)"
 msgid "Heading"
 msgstr "見出し"
 
-#: src/heading/component.js:106
-msgid "Input sub text…"
-msgstr "サブテキストを入力"
-
-#: src/heading/component.js:89
-msgid "Input title…"
-msgstr "タイトルを入力"
-
-# %s: heading level e.g: "1", "2", "3"
-#. %s: heading level e.g: "1", "2", "3"
-#: src/heading/heading-toolbar.js:17
-msgid "Heading %d"
-msgstr "見出し %d"
-
 #: src/highlighter/block.js:81
 msgid "Highlight Color"
 msgstr "ハイライトカラー"
@@ -382,8 +357,8 @@ msgid "Highlighter"
 msgstr "蛍光マーカー"
 
 #: src/list-style/block.js:147
-msgid "Chevron"
-msgstr "山"
+msgid "Arrow"
+msgstr "矢印"
 
 #: src/list-style/block.js:151 src/outer/block.js:228
 msgid "Triangle"
@@ -426,8 +401,8 @@ msgid "Numbered Square"
 msgstr "数字-四角"
 
 #: src/list-style/block.js:96
-msgid "List Color"
-msgstr "見出しの色"
+msgid "List Icon Color"
+msgstr "リストアイコンの色"
 
 #: src/outer/block.js:102 src/pr-content/block.js:92
 msgid "Color Setting"
@@ -763,16 +738,6 @@ msgstr "画像を設定した場合は画像が優先して表示されます。
 msgid "PR Blocks"
 msgstr "PR Blocks"
 
-#: src/pr-blocks/component-block.js:144
-#: src/pr-blocks/deprecated/component-block.js:144
-msgid "Input Title"
-msgstr "タイトルを入力"
-
-#: src/pr-blocks/component-block.js:151
-#: src/pr-blocks/deprecated/component-block.js:151
-msgid "Input Content"
-msgstr "文章を入力してください"
-
 #: src/pr-content/block.js:106
 msgid "Image Border Color"
 msgstr "画像の線の色"
@@ -818,12 +783,10 @@ msgid "Content Color"
 msgstr "本文の色"
 
 #: src/pr-content/component.js:136
-#: src/pr-content/deprecated/component-deprecated.js:122
 msgid "Input title."
 msgstr "タイトルを入力してください。"
 
 #: src/pr-content/component.js:144
-#: src/pr-content/deprecated/component-deprecated.js:130
 msgid "Input content."
 msgstr "本文を入力してください。"
 
@@ -977,6 +940,32 @@ msgstr "ラベル"
 #: src/timeline/block.js:56
 msgid "Timeline"
 msgstr "タイムライン"
+
+#~ msgid "FontAwesome"
+#~ msgstr "Font Awesome:"
+
+#~ msgid "Enter Font Awesome Class. Ex) fas fa-arrow-circle-right "
+#~ msgstr ""
+#~ "Font Awesome の class 名を入力してください。例) fas fa-arrow-circle-right"
+
+#~ msgid "Input sub text…"
+#~ msgstr "サブテキストを入力"
+
+#~ msgid "Input title…"
+#~ msgstr "タイトルを入力"
+
+# %s: heading level e.g: "1", "2", "3"
+#~ msgid "Heading %d"
+#~ msgstr "見出し %d"
+
+#~ msgid "Input Title"
+#~ msgstr "タイトルを入力"
+
+#~ msgid "Input Content"
+#~ msgstr "文章を入力してください"
+
+#~ msgid "Chevron"
+#~ msgstr "山"
 
 #~ msgid "Label"
 #~ msgstr "ラベル"

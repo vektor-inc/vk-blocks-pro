@@ -50,6 +50,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
             }else {
                 activeColor = '#fffd6b';
             }
+
             return (
                 <Fragment>
                     <BlockEdit {...props} />

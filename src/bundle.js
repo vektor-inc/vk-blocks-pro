@@ -1,5 +1,5 @@
 //Bundle JS
-import './group-heading/block.js';
+import './group-style/block.js';
 import './list-style/block.js';
 import './step-item/block.js';
 import './step/block.js';

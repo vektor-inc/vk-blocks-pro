@@ -1,5 +1,5 @@
 /**
- * group-heading block type
+ * group-style block type
  *
  */
 const {assign} = lodash;
@@ -20,7 +20,7 @@ import {convertColorClass} from "../_helper/color-code-to-class.js";
 
 const isValidBlockType = (name) => {
     const validBlockTypes = [
-        'core/list',
+        'core/group',
     ];
     return validBlockTypes.includes(name);
 };
@@ -36,7 +36,7 @@ export const addAttribute = (settings) => {
     }
     return settings;
 };
-addFilter('blocks.registerBlockType', 'vk-blocks/list-style', addAttribute);
+addFilter('blocks.registerBlockType', 'vk-blocks/group-style', addAttribute);
 
 export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 
@@ -54,8 +54,8 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
                 <Fragment>
                     <BlockEdit {...props} />
                     <InspectorControls>
-                        <PanelBody title={__('List Color', 'vk-blocks')} initialOpen={false}
-                                   className="list-color-controle">
+                        <PanelBody title={__('Border Color', 'vk-blocks')} initialOpen={false}
+                                   className="group-border-color-controle">
                             <ColorPalette
                                 value={activeColor}
                                 disableCustomColors={true}
@@ -93,15 +93,10 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
     };
 }, 'addMyCustomBlockControls');
 
-addFilter('editor.BlockEdit', 'vk-blocks/list-style', addBlockControl);
+addFilter('editor.BlockEdit', 'vk-blocks/group-style', addBlockControl);
 
 wp.blocks.registerBlockStyle('core/group',
     [
-        {
-            name: 'vk-group-default',
-            label: __('Default', 'vk-blocks'),
-            isDefault: true
-        },
         {
             name: 'vk-group-solid',
             label: __('Solid', 'vk-blocks')

@@ -15,18 +15,34 @@ msgstr ""
 "X-Poedit-KeywordsList: __\n"
 "X-Poedit-SearchPath-0: .\n"
 
+#: src/_helper/font-awesome.js:21
+msgid "FontAwesome"
+msgstr "Font Awesome:"
+
+#: src/_helper/font-awesome.js:23
+msgid "Enter Font Awesome Class. Ex) fas fa-arrow-circle-right "
+msgstr ""
+"Font Awesome の class 名を入力してください。例) fas fa-arrow-circle-right"
+
+#: src/_helper/font-awesome.js:25 src/button/block.js:217
+#: src/pr-blocks/block.js:307 src/pr-content/block.js:171
+msgid "Font Awesome icon list"
+msgstr "Font Awesome アイコンリスト"
+
 #: src/alert/block.js:13
 msgid "Alert"
 msgstr "アラート"
 
 #: src/balloon/block.js:122 src/flow/block.js:112 src/outer/block.js:136
 #: src/pr-blocks/block.js:343 src/pr-content/component.js:116
+#: src/pr-content/deprecated/component-deprecated.js:102
 #: src/staff/component.js:88
 msgid "Select image"
 msgstr "画像を選択"
 
 #: src/balloon/block.js:122 src/flow/block.js:113 src/outer/block.js:138
 #: src/pr-blocks/block.js:345 src/pr-content/component.js:120
+#: src/pr-content/deprecated/component-deprecated.js:106
 msgid "Upload image"
 msgstr "画像をアップロード"
 
@@ -190,11 +206,6 @@ msgstr ""
 msgid "Font Awesome:"
 msgstr "Font Awesome:"
 
-#: src/button/block.js:217 src/pr-blocks/block.js:307
-#: src/pr-content/block.js:171
-msgid "Font Awesome icon list"
-msgstr "Font Awesome アイコンリスト"
-
 #: src/button/block.js:220 src/pr-content/block.js:174
 msgid "Before text"
 msgstr "文字の前"
@@ -221,7 +232,7 @@ msgstr ""
 
 #: src/button/block.js:265
 msgid "Apply"
-msgstr ""
+msgstr "適用"
 
 #: src/button/block.js:59 src/post-list/block.js:369
 msgid "Button"
@@ -263,6 +274,40 @@ msgstr "タイトルを入力"
 msgid "Input content"
 msgstr "説明を入力"
 
+#: src/group-style/block.js:103 src/outer/block.js:285
+#: src/pr-content/block.js:142 src/step-item/block.js:97
+#: src/timeline-item/block.js:84
+msgid "Solid"
+msgstr "直線"
+
+#: src/group-style/block.js:107 src/outer/block.js:289
+msgid "Dotted"
+msgstr "点線"
+
+#: src/group-style/block.js:111 src/outer/block.js:293
+msgid "Dashed"
+msgstr "破線"
+
+#: src/group-style/block.js:115 src/outer/block.js:297
+msgid "Double"
+msgstr "二重線"
+
+#: src/group-style/block.js:119
+msgid "Stitch"
+msgstr "スティッチ"
+
+#: src/group-style/block.js:123
+msgid "top-bottom-border"
+msgstr "上下ボーダー"
+
+#: src/group-style/block.js:127
+msgid "Shadow"
+msgstr "シャドウ"
+
+#: src/group-style/block.js:58
+msgid "Border Color"
+msgstr "枠線の色"
+
 #: src/heading/block.js:119
 msgid "Style Settings"
 msgstr "スタイル設定"
@@ -271,7 +316,7 @@ msgstr "スタイル設定"
 msgid "Heading style"
 msgstr "見出しスタイル"
 
-#: src/heading/block.js:125 src/list-style/block.js:142 src/staff/block.js:105
+#: src/heading/block.js:125 src/list-style/block.js:104 src/staff/block.js:105
 #: src/step-item/block.js:116 src/table-of-contents/block.js:113
 #: src/timeline-item/block.js:99
 msgid "Default"
@@ -321,6 +366,20 @@ msgstr "文字サイズ (rem)"
 msgid "Heading"
 msgstr "見出し"
 
+#: src/heading/component.js:106
+msgid "Input sub text…"
+msgstr "サブテキストを入力"
+
+#: src/heading/component.js:89
+msgid "Input title…"
+msgstr "タイトルを入力"
+
+# %s: heading level e.g: "1", "2", "3"
+#. %s: heading level e.g: "1", "2", "3"
+#: src/heading/heading-toolbar.js:17
+msgid "Heading %d"
+msgstr "見出し %d"
+
 #: src/highlighter/block.js:81
 msgid "Highlight Color"
 msgstr "ハイライトカラー"
@@ -329,51 +388,51 @@ msgstr "ハイライトカラー"
 msgid "Highlighter"
 msgstr "蛍光マーカー"
 
-#: src/list-style/block.js:147
+#: src/list-style/block.js:109
 msgid "Arrow"
 msgstr "矢印"
 
-#: src/list-style/block.js:151 src/outer/block.js:228
+#: src/list-style/block.js:113 src/outer/block.js:228
 msgid "Triangle"
 msgstr "三角"
 
-#: src/list-style/block.js:155
+#: src/list-style/block.js:117
 msgid "Check"
 msgstr "チェック"
 
-#: src/list-style/block.js:159
+#: src/list-style/block.js:121
 msgid "Check Square"
 msgstr "チェック-四角"
 
-#: src/list-style/block.js:163
+#: src/list-style/block.js:125
 msgid "Check Circle"
 msgstr "チェック-丸"
 
-#: src/list-style/block.js:167
+#: src/list-style/block.js:129
 msgid "Handpoint"
 msgstr "指"
 
-#: src/list-style/block.js:171
+#: src/list-style/block.js:133
 msgid "Pencil"
 msgstr "鉛筆"
 
-#: src/list-style/block.js:175
+#: src/list-style/block.js:137
 msgid "Smile"
 msgstr "笑顔"
 
-#: src/list-style/block.js:179
+#: src/list-style/block.js:141
 msgid "Frown"
 msgstr "不満顔"
 
-#: src/list-style/block.js:183
+#: src/list-style/block.js:145
 msgid "Numbered Circle"
 msgstr "数字-丸"
 
-#: src/list-style/block.js:187
+#: src/list-style/block.js:149
 msgid "Numbered Square"
 msgstr "数字-四角"
 
-#: src/list-style/block.js:96
+#: src/list-style/block.js:58
 msgid "List Icon Color"
 msgstr "リストアイコンの色"
 
@@ -489,23 +548,6 @@ msgstr "枠線の種類"
 #: src/timeline-item/block.js:103
 msgid "None"
 msgstr "なし"
-
-#: src/outer/block.js:285 src/pr-content/block.js:142 src/step-item/block.js:97
-#: src/timeline-item/block.js:84
-msgid "Solid"
-msgstr "直線"
-
-#: src/outer/block.js:289
-msgid "Dotted"
-msgstr "点線"
-
-#: src/outer/block.js:293
-msgid "Dashed"
-msgstr "Dashed"
-
-#: src/outer/block.js:297
-msgid "Double"
-msgstr "二重線"
 
 #: src/outer/block.js:301
 msgid "Groove"
@@ -711,6 +753,16 @@ msgstr "画像を設定した場合は画像が優先して表示されます。
 msgid "PR Blocks"
 msgstr "PR Blocks"
 
+#: src/pr-blocks/component-block.js:144
+#: src/pr-blocks/deprecated/component-block.js:144
+msgid "Input Title"
+msgstr "タイトルを入力"
+
+#: src/pr-blocks/component-block.js:151
+#: src/pr-blocks/deprecated/component-block.js:151
+msgid "Input Content"
+msgstr "文章を入力してください"
+
 #: src/pr-content/block.js:106
 msgid "Image Border Color"
 msgstr "画像の線の色"
@@ -756,10 +808,12 @@ msgid "Content Color"
 msgstr "本文の色"
 
 #: src/pr-content/component.js:136
+#: src/pr-content/deprecated/component-deprecated.js:122
 msgid "Input title."
 msgstr "タイトルを入力してください。"
 
 #: src/pr-content/component.js:144
+#: src/pr-content/deprecated/component-deprecated.js:130
 msgid "Input content."
 msgstr "本文を入力してください。"
 
@@ -914,29 +968,6 @@ msgstr "ラベル"
 msgid "Timeline"
 msgstr "タイムライン"
 
-#~ msgid "FontAwesome"
-#~ msgstr "Font Awesome:"
-
-#~ msgid "Enter Font Awesome Class. Ex) fas fa-arrow-circle-right "
-#~ msgstr ""
-#~ "Font Awesome の class 名を入力してください。例) fas fa-arrow-circle-right"
-
-#~ msgid "Input sub text…"
-#~ msgstr "サブテキストを入力"
-
-#~ msgid "Input title…"
-#~ msgstr "タイトルを入力"
-
-# %s: heading level e.g: "1", "2", "3"
-#~ msgid "Heading %d"
-#~ msgstr "見出し %d"
-
-#~ msgid "Input Title"
-#~ msgstr "タイトルを入力"
-
-#~ msgid "Input Content"
-#~ msgstr "文章を入力してください"
-
 #~ msgid "Chevron"
 #~ msgstr "山"
 
@@ -1008,9 +1039,6 @@ msgstr "タイムライン"
 #~| msgid "Icon Name"
 #~ msgid "Name"
 #~ msgstr "アイコンの名前"
-
-#~ msgid "Border color"
-#~ msgstr "枠線の色"
 
 #~ msgid "Use contents area default padding"
 #~ msgstr "コンテンツエリアの左右に標準の余白を使用"

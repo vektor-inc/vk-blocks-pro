@@ -1,5 +1,5 @@
 /**
- * list-style block type
+ * group-style block type
  *
  */
 const {assign} = lodash;
@@ -18,10 +18,9 @@ const {
 const {createHigherOrderComponent} = wp.compose;
 import {convertColorClass} from "../_helper/color-code-to-class.js";
 
-
 const isValidBlockType = (name) => {
     const validBlockTypes = [
-        'core/list',
+        'core/group',
     ];
     return validBlockTypes.includes(name);
 };
@@ -37,7 +36,7 @@ export const addAttribute = (settings) => {
     }
     return settings;
 };
-addFilter('blocks.registerBlockType', 'vk-blocks/list-style', addAttribute);
+addFilter('blocks.registerBlockType', 'vk-blocks/group-style', addAttribute);
 
 export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 
@@ -51,12 +50,13 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
             }else {
                 activeColor = '#fffd6b';
             }
+
             return (
                 <Fragment>
                     <BlockEdit {...props} />
                     <InspectorControls>
-                        <PanelBody title={__('List Icon Color', 'vk-blocks')} initialOpen={false}
-                                   className="list-color-controle">
+                        <PanelBody title={__('Border Color', 'vk-blocks')} initialOpen={false}
+                                   className="group-border-color-controle">
                             <ColorPalette
                                 value={activeColor}
                                 disableCustomColors={true}
@@ -94,58 +94,36 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
     };
 }, 'addMyCustomBlockControls');
 
-addFilter('editor.BlockEdit', 'vk-blocks/list-style', addBlockControl);
+addFilter('editor.BlockEdit', 'vk-blocks/group-style', addBlockControl);
 
-
-wp.blocks.registerBlockStyle('core/list',
+wp.blocks.registerBlockStyle('core/group',
     [
         {
-            name: 'vk-default',
-            label: __('Default', 'vk-blocks'),
-            isDefault:true
+            name: 'vk-group-solid',
+            label: __('Solid', 'vk-blocks')
         },
         {
-            name: 'vk-arrow-mark',
-            label: __('Arrow', 'vk-blocks'),
+            name: 'vk-group-dotted',
+            label: __('Dotted', 'vk-blocks')
         },
         {
-            name: 'vk-triangle-mark',
-            label: __('Triangle', 'vk-blocks')
+            name: 'vk-group-dashed',
+            label: __('Dashed', 'vk-blocks')
         },
         {
-            name: 'vk-check-mark',
-            label: __('Check', 'vk-blocks')
+            name: 'vk-group-double',
+            label: __('Double', 'vk-blocks')
         },
         {
-            name: 'vk-check-square-mark',
-            label: __('Check Square', 'vk-blocks')
+            name: 'vk-group-stitch',
+            label: __('Stitch', 'vk-blocks')
         },
         {
-            name: 'vk-check-circle-mark',
-            label: __('Check Circle', 'vk-blocks')
+            name: 'vk-group-top-bottom-border',
+            label: __('top-bottom-border', 'vk-blocks')
         },
         {
-            name: 'vk-handpoint-mark',
-            label: __('Handpoint', 'vk-blocks')
-        },
-        {
-            name: 'vk-pencil-mark',
-            label: __('Pencil', 'vk-blocks')
-        },
-        {
-            name: 'vk-smile-mark',
-            label: __('Smile', 'vk-blocks')
-        },
-        {
-            name: 'vk-frown-mark',
-            label: __('Frown', 'vk-blocks')
-        },
-        {
-            name: 'vk-numbered-circle-mark',
-            label: __('Numbered Circle', 'vk-blocks')
-        },
-        {
-            name: 'vk-numbered-square-mark',
-            label: __('Numbered Square', 'vk-blocks')
+            name: 'vk-group-shadow',
+            label: __('Shadow', 'vk-blocks')
         }
     ]);

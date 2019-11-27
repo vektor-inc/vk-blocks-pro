@@ -289,6 +289,45 @@ msgstr ""
 msgid "Input content"
 msgstr ""
 
+#: src/group-style/block.js:103
+#: src/outer/block.js:285
+#: src/pr-content/block.js:142
+#: src/step-item/block.js:97
+#: src/timeline-item/block.js:84
+msgid "Solid"
+msgstr ""
+
+#: src/group-style/block.js:107
+#: src/outer/block.js:289
+msgid "Dotted"
+msgstr ""
+
+#: src/group-style/block.js:111
+#: src/outer/block.js:293
+msgid "Dashed"
+msgstr ""
+
+#: src/group-style/block.js:115
+#: src/outer/block.js:297
+msgid "Double"
+msgstr ""
+
+#: src/group-style/block.js:119
+msgid "Stitch"
+msgstr ""
+
+#: src/group-style/block.js:123
+msgid "top-bottom-border"
+msgstr ""
+
+#: src/group-style/block.js:127
+msgid "Shadow"
+msgstr ""
+
+#: src/group-style/block.js:58
+msgid "Border Color"
+msgstr ""
+
 #: src/heading/block.js:119
 msgid "Style Settings"
 msgstr ""
@@ -298,7 +337,7 @@ msgid "Heading style"
 msgstr ""
 
 #: src/heading/block.js:125
-#: src/list-style/block.js:142
+#: src/list-style/block.js:104
 #: src/staff/block.js:105
 #: src/step-item/block.js:116
 #: src/table-of-contents/block.js:113
@@ -371,52 +410,52 @@ msgstr ""
 msgid "Highlighter"
 msgstr ""
 
-#: src/list-style/block.js:147
+#: src/list-style/block.js:109
 msgid "Arrow"
 msgstr ""
 
-#: src/list-style/block.js:151
+#: src/list-style/block.js:113
 #: src/outer/block.js:228
 msgid "Triangle"
 msgstr ""
 
-#: src/list-style/block.js:155
+#: src/list-style/block.js:117
 msgid "Check"
 msgstr ""
 
-#: src/list-style/block.js:159
+#: src/list-style/block.js:121
 msgid "Check Square"
 msgstr ""
 
-#: src/list-style/block.js:163
+#: src/list-style/block.js:125
 msgid "Check Circle"
 msgstr ""
 
-#: src/list-style/block.js:167
+#: src/list-style/block.js:129
 msgid "Handpoint"
 msgstr ""
 
-#: src/list-style/block.js:171
+#: src/list-style/block.js:133
 msgid "Pencil"
 msgstr ""
 
-#: src/list-style/block.js:175
+#: src/list-style/block.js:137
 msgid "Smile"
 msgstr ""
 
-#: src/list-style/block.js:179
+#: src/list-style/block.js:141
 msgid "Frown"
 msgstr ""
 
-#: src/list-style/block.js:183
+#: src/list-style/block.js:145
 msgid "Numbered Circle"
 msgstr ""
 
-#: src/list-style/block.js:187
+#: src/list-style/block.js:149
 msgid "Numbered Square"
 msgstr ""
 
-#: src/list-style/block.js:96
+#: src/list-style/block.js:58
 msgid "List Icon Color"
 msgstr ""
 
@@ -533,25 +572,6 @@ msgstr ""
 #: src/step-item/block.js:120
 #: src/timeline-item/block.js:103
 msgid "None"
-msgstr ""
-
-#: src/outer/block.js:285
-#: src/pr-content/block.js:142
-#: src/step-item/block.js:97
-#: src/timeline-item/block.js:84
-msgid "Solid"
-msgstr ""
-
-#: src/outer/block.js:289
-msgid "Dotted"
-msgstr ""
-
-#: src/outer/block.js:293
-msgid "Dashed"
-msgstr ""
-
-#: src/outer/block.js:297
-msgid "Double"
 msgstr ""
 
 #: src/outer/block.js:301

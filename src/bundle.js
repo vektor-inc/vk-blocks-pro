@@ -1,4 +1,5 @@
 //Bundle JS
+import './group-style/block.js';
 import './list-style/block.js';
 import './step-item/block.js';
 import './step/block.js';

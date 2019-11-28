@@ -24,8 +24,8 @@ pipelines:
             - git rm -r tests/
             - git rm -r bin/
             - git rm inc/vk-blocks/build/block-build.css
-            - git rm src/table-of-contents
-            - git rm src/outer
+            - git rm -r src/table-of-contents
+            - git rm -r src/outer
             - git add .
             - git status
             - git commit -m"Update from vk-blocks-pro"

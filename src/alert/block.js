@@ -6,7 +6,8 @@ import {deprecated} from './deprecated';
 
 const {__} = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks;
-const { RichText }          = wp.editor;
+const {RichText} = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
+
 
 registerBlockType( 'vk-blocks/alert', {
 

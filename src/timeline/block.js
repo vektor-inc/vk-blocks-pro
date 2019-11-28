@@ -7,9 +7,7 @@ import {schema} from './schema';
 
 const {__} = wp.i18n; // Import __() from wp.i18n
 const {registerBlockType} = wp.blocks; // Import registerBlockType() from wp.blocks
-const {RangeControl, RadioControl, PanelBody, Button, PanelColor, BaseControl} = wp.components;
 const {Fragment} = wp.element;
-const {RichText, InspectorControls, MediaUpload, ColorPalette} = wp.editor;
 const BlockIcon = (
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
 <path d="M105.8,101.3V27c0-13.9-11.2-25.1-25.1-25.1S55.6,13.1,55.6,27v74.4c7.5-3.7,16.1-5.8,25.1-5.8

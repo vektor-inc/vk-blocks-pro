@@ -9,7 +9,7 @@ const {__} = wp.i18n; // Import __() from wp.i18n
 const {registerBlockType, createBlock} = wp.blocks; // Import registerBlockType() from wp.blocks
 const {PanelBody} = wp.components;
 const {Fragment} = wp.element;
-const {InspectorControls} = wp.editor;
+const {InspectorControls} = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const {select, dispatch} = wp.data;
 const BlockIcon = (
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">

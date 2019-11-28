@@ -5,10 +5,9 @@ import React from "react";
 import {schema} from './schema';
 
 const { lodash } = window;
-const { times } = lodash;
 const {__} = wp.i18n; // Import __() from wp.i18n
 const {registerBlockType} = wp.blocks; // Import registerBlockType() from wp.blocks
-const {RichText} = wp.editor;
+const {RichText} = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const BlockIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" width="576" height="512" viewBox="0 0 576 512">
 	<path d="M63.6,432.7h448.9c24.8,0,44.9-20.1,44.9-44.9V125.1c0-24.8-20.1-44.9-44.9-44.9H63.6c-24.8,0-44.9,20.1-44.9,44.9v262.7

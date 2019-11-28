@@ -2,7 +2,8 @@
  * group-style block type
  *
  */
-import {wpEditor} from '../_helper/deprecated-fix.js';
+import {convertColorClass} from "../_helper/color-code-to-class.js";
+
 const {assign} = lodash;
 const {__} = wp.i18n;
 const {Fragment} = wp.element;
@@ -13,10 +14,9 @@ const {
 const {
     InspectorControls,
     ColorPalette
-} = wpEditor;
+} = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 
 const {createHigherOrderComponent} = wp.compose;
-import {convertColorClass} from "../_helper/color-code-to-class.js";
 
 const isValidBlockType = (name) => {
     const validBlockTypes = [

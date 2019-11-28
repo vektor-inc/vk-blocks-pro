@@ -9,8 +9,7 @@ const {__} = wp.i18n; // Import __() from wp.i18n
 const {registerBlockType} = wp.blocks; // Import registerBlockType() from wp.blocks
 const {RangeControl, PanelBody, BaseControl,CheckboxControl} = wp.components;
 const {Fragment} = wp.element;
-const {InspectorControls} = wp.editor;
-const {select, dispatch} = wp.data;
+const {InspectorControls} = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const BlockIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" width="576" height="512" viewBox="0 0 576 512">
 	<path d="M512.4,80.3H63.6c-24.8,0-44.9,20.1-44.9,44.9v262.7c0,24.8,20.1,44.9,44.9,44.9h448.9c24.8,0,44.9-20.1,44.9-44.9V125.1

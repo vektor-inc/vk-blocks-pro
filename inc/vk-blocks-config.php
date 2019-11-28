@@ -25,4 +25,5 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 
 	require_once( 'admin-notices.php' );
 	require_once( 'vk-blocks/vk-blocks-functions.php' );
+	require_once( 'vk-blocks/functions-color.php' );
 }

@@ -1,7 +1,17 @@
 .is-style-vk-image {
-	&-border {
-		img {
-			border:1px solid #e5e5e5;
-		}
-	}
+    &-border {
+        img {
+            border: 1px solid #e5e5e5;
+        }
+    }
+
+    &-photoFrame {
+        background-color: #fff;
+        padding: 10px;
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+
+        figcaption {
+            margin: 8px 0 0;
+        }
+    }
 }

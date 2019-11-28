@@ -6,12 +6,12 @@
   .vk_step .vk_step_item {
     position: relative;
     padding: 0 0 1em 4em;
-    margin: 28px auto; }
+    margin: 0 auto; }
     .vk_step .vk_step_item h3:first-of-type,
     .vk_step .vk_step_item h4:first-of-type {
       padding-top: 0.5em;
       margin-top: 0; }
-    .vk_step .vk_step_item p:first-child {
+    .vk_step .vk_step_item_content > p:first-child {
       margin-bottom: 0.3em;
       line-height: 1;
       color: #666; }

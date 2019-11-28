@@ -18,13 +18,13 @@ msgstr ""
 msgid "Font Awesome icon list"
 msgstr ""
 
-#: src/alert/block.js:13
+#: src/alert/block.js:14
 msgid "Alert"
 msgstr ""
 
 #: src/balloon/block.js:122
 #: src/flow/block.js:112
-#: src/outer/block.js:136
+#: src/outer/block.js:135
 #: src/pr-blocks/block.js:343
 #: src/pr-content/component.js:116
 #: src/pr-content/deprecated/component-deprecated.js:102
@@ -34,7 +34,7 @@ msgstr ""
 
 #: src/balloon/block.js:122
 #: src/flow/block.js:113
-#: src/outer/block.js:138
+#: src/outer/block.js:137
 #: src/pr-blocks/block.js:345
 #: src/pr-content/component.js:120
 #: src/pr-content/deprecated/component-deprecated.js:106
@@ -59,7 +59,7 @@ msgid "Balloon setting"
 msgstr ""
 
 #: src/balloon/block.js:84
-#: src/heading/block.js:177
+#: src/heading/block.js:176
 msgid "Position"
 msgstr ""
 
@@ -82,7 +82,7 @@ msgid "Right"
 msgstr ""
 
 #: src/balloon/block.js:94
-#: src/outer/block.js:210
+#: src/outer/block.js:209
 msgid "Type"
 msgstr ""
 
@@ -121,7 +121,7 @@ msgid "Large"
 msgstr ""
 
 #: src/button/block.js:165
-#: src/outer/block.js:152
+#: src/outer/block.js:151
 msgid "normal"
 msgstr ""
 
@@ -289,16 +289,55 @@ msgstr ""
 msgid "Input content"
 msgstr ""
 
-#: src/heading/block.js:119
+#: src/group-style/block.js:103
+#: src/outer/block.js:284
+#: src/pr-content/block.js:142
+#: src/step-item/block.js:97
+#: src/timeline-item/block.js:84
+msgid "Solid"
+msgstr ""
+
+#: src/group-style/block.js:107
+#: src/outer/block.js:288
+msgid "Dotted"
+msgstr ""
+
+#: src/group-style/block.js:111
+#: src/outer/block.js:292
+msgid "Dashed"
+msgstr ""
+
+#: src/group-style/block.js:115
+#: src/outer/block.js:296
+msgid "Double"
+msgstr ""
+
+#: src/group-style/block.js:119
+msgid "Stitch"
+msgstr ""
+
+#: src/group-style/block.js:123
+msgid "top-bottom-border"
+msgstr ""
+
+#: src/group-style/block.js:127
+msgid "Shadow"
+msgstr ""
+
+#: src/group-style/block.js:58
+msgid "Border Color"
+msgstr ""
+
+#: src/heading/block.js:118
 msgid "Style Settings"
 msgstr ""
 
-#: src/heading/block.js:121
+#: src/heading/block.js:120
 msgid "Heading style"
 msgstr ""
 
-#: src/heading/block.js:125
-#: src/list-style/block.js:142
+#: src/heading/block.js:124
+#: src/list-style/block.js:104
 #: src/staff/block.js:105
 #: src/step-item/block.js:116
 #: src/table-of-contents/block.js:113
@@ -306,47 +345,47 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: src/heading/block.js:126
+#: src/heading/block.js:125
 msgid "Plain"
 msgstr ""
 
-#: src/heading/block.js:129
+#: src/heading/block.js:128
 msgid "Margin bottom size (rem)"
 msgstr ""
 
-#: src/heading/block.js:140
+#: src/heading/block.js:139
 msgid "Heading Settings"
 msgstr ""
 
-#: src/heading/block.js:141
+#: src/heading/block.js:140
 msgid "Level"
 msgstr ""
 
-#: src/heading/block.js:143
+#: src/heading/block.js:142
 msgid "Text Alignment"
 msgstr ""
 
-#: src/heading/block.js:160
+#: src/heading/block.js:159
 msgid "Heading margin bottom size (rem)"
 msgstr ""
 
-#: src/heading/block.js:175
+#: src/heading/block.js:174
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/heading/block.js:180
+#: src/heading/block.js:179
 msgid "Display"
 msgstr ""
 
-#: src/heading/block.js:181
+#: src/heading/block.js:180
 msgid "Hide"
 msgstr ""
 
-#: src/heading/block.js:185
+#: src/heading/block.js:184
 msgid "Text size (rem)"
 msgstr ""
 
-#: src/heading/block.js:66
+#: src/heading/block.js:65
 msgid "Heading"
 msgstr ""
 
@@ -371,223 +410,212 @@ msgstr ""
 msgid "Highlighter"
 msgstr ""
 
-#: src/list-style/block.js:147
+#: src/image/block.js:10
+msgid "Photo frame"
+msgstr ""
+
+#: src/image/block.js:6
+msgid "Border"
+msgstr ""
+
+#: src/list-style/block.js:109
 msgid "Arrow"
 msgstr ""
 
-#: src/list-style/block.js:151
-#: src/outer/block.js:228
+#: src/list-style/block.js:113
+#: src/outer/block.js:227
 msgid "Triangle"
 msgstr ""
 
-#: src/list-style/block.js:155
+#: src/list-style/block.js:117
 msgid "Check"
 msgstr ""
 
-#: src/list-style/block.js:159
+#: src/list-style/block.js:121
 msgid "Check Square"
 msgstr ""
 
-#: src/list-style/block.js:163
+#: src/list-style/block.js:125
 msgid "Check Circle"
 msgstr ""
 
-#: src/list-style/block.js:167
+#: src/list-style/block.js:129
 msgid "Handpoint"
 msgstr ""
 
-#: src/list-style/block.js:171
+#: src/list-style/block.js:133
 msgid "Pencil"
 msgstr ""
 
-#: src/list-style/block.js:175
+#: src/list-style/block.js:137
 msgid "Smile"
 msgstr ""
 
-#: src/list-style/block.js:179
+#: src/list-style/block.js:141
 msgid "Frown"
 msgstr ""
 
-#: src/list-style/block.js:183
+#: src/list-style/block.js:145
 msgid "Numbered Circle"
 msgstr ""
 
-#: src/list-style/block.js:187
+#: src/list-style/block.js:149
 msgid "Numbered Square"
 msgstr ""
 
-#: src/list-style/block.js:96
+#: src/list-style/block.js:58
 msgid "List Icon Color"
 msgstr ""
 
-#: src/outer/block.js:102
+#: src/outer/block.js:101
 #: src/pr-content/block.js:92
 msgid "Color Setting"
 msgstr ""
 
-#: src/outer/block.js:103
+#: src/outer/block.js:102
 msgid ""
 "Color will overcome background image. If you want to display image, clear "
 "background color or set opacity 0."
 msgstr ""
 
-#: src/outer/block.js:112
+#: src/outer/block.js:111
 msgid "Opacity Setting"
 msgstr ""
 
-#: src/outer/block.js:124
+#: src/outer/block.js:123
 msgid "Background Image"
 msgstr ""
 
-#: src/outer/block.js:145
+#: src/outer/block.js:144
 msgid "Background image Position"
 msgstr ""
 
-#: src/outer/block.js:153
+#: src/outer/block.js:152
 msgid "Fixed"
 msgstr ""
 
-#: src/outer/block.js:154
+#: src/outer/block.js:153
 msgid "Parallax (It will not work in preview)"
 msgstr ""
 
-#: src/outer/block.js:162
+#: src/outer/block.js:161
 #: src/pr-content/block.js:189
 msgid "Layout Setting"
 msgstr ""
 
-#: src/outer/block.js:167
+#: src/outer/block.js:166
 msgid "Outer width"
 msgstr ""
 
-#: src/outer/block.js:170
+#: src/outer/block.js:169
 msgid "Normal"
 msgstr ""
 
-#: src/outer/block.js:171
+#: src/outer/block.js:170
 msgid "Full Wide"
 msgstr ""
 
-#: src/outer/block.js:176
+#: src/outer/block.js:175
 msgid "Contents area padding (left and right)"
 msgstr ""
 
-#: src/outer/block.js:180
+#: src/outer/block.js:179
 msgid "Do not use padding"
 msgstr ""
 
-#: src/outer/block.js:184
+#: src/outer/block.js:183
 msgid "Use padding"
 msgstr ""
 
-#: src/outer/block.js:191
+#: src/outer/block.js:190
 msgid "Padding (top and bottom)"
 msgstr ""
 
-#: src/outer/block.js:194
+#: src/outer/block.js:193
 msgid "Use default padding"
 msgstr ""
 
-#: src/outer/block.js:196
+#: src/outer/block.js:195
 msgid "Do not use default padding (Set it yourself using a spacer block etc.)."
 msgstr ""
 
-#: src/outer/block.js:205
+#: src/outer/block.js:204
 msgid "Divider Setting"
 msgstr ""
 
-#: src/outer/block.js:216
+#: src/outer/block.js:215
 msgid "Tilt"
 msgstr ""
 
-#: src/outer/block.js:220
+#: src/outer/block.js:219
 msgid "Curve"
 msgstr ""
 
-#: src/outer/block.js:224
+#: src/outer/block.js:223
 msgid "Wave"
 msgstr ""
 
-#: src/outer/block.js:234
+#: src/outer/block.js:233
 msgid "Upper Divider Level"
 msgstr ""
 
-#: src/outer/block.js:250
+#: src/outer/block.js:249
 msgid "Lower Divider Level"
 msgstr ""
 
-#: src/outer/block.js:267
+#: src/outer/block.js:266
 msgid "Border Setting"
 msgstr ""
 
-#: src/outer/block.js:273
+#: src/outer/block.js:272
 msgid "Border will disappear when divider effect is applied."
 msgstr ""
 
-#: src/outer/block.js:275
+#: src/outer/block.js:274
 msgid "Border type"
 msgstr ""
 
-#: src/outer/block.js:281
+#: src/outer/block.js:280
 #: src/staff/block.js:109
 #: src/step-item/block.js:120
 #: src/timeline-item/block.js:103
 msgid "None"
 msgstr ""
 
-#: src/outer/block.js:285
-#: src/pr-content/block.js:142
-#: src/step-item/block.js:97
-#: src/timeline-item/block.js:84
-msgid "Solid"
-msgstr ""
-
-#: src/outer/block.js:289
-msgid "Dotted"
-msgstr ""
-
-#: src/outer/block.js:293
-msgid "Dashed"
-msgstr ""
-
-#: src/outer/block.js:297
-msgid "Double"
-msgstr ""
-
-#: src/outer/block.js:301
+#: src/outer/block.js:300
 msgid "Groove"
 msgstr ""
 
-#: src/outer/block.js:305
+#: src/outer/block.js:304
 msgid "Ridge"
 msgstr ""
 
-#: src/outer/block.js:309
+#: src/outer/block.js:308
 msgid "Inset"
 msgstr ""
 
-#: src/outer/block.js:313
+#: src/outer/block.js:312
 msgid "Outset"
 msgstr ""
 
-#: src/outer/block.js:325
+#: src/outer/block.js:324
 msgid "Border width"
 msgstr ""
 
-#: src/outer/block.js:334
+#: src/outer/block.js:333
 msgid "Border radius"
 msgstr ""
 
-#: src/outer/block.js:353
+#: src/outer/block.js:352
 #: src/table-of-contents/block.js:132
 msgid "This block is only for users who bought Lightning Pro."
 msgstr ""
 
-#: src/outer/block.js:45
+#: src/outer/block.js:44
 msgid "Outer"
 msgstr ""
 
-#: src/outer/block.js:98
+#: src/outer/block.js:97
 msgid "Background Setting"
 msgstr ""
 
@@ -977,6 +1005,6 @@ msgstr ""
 msgid "label"
 msgstr ""
 
-#: src/timeline/block.js:56
+#: src/timeline/block.js:54
 msgid "Timeline"
 msgstr ""

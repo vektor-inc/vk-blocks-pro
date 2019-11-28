@@ -10,7 +10,7 @@ const {__} = wp.i18n; // Import __() from wp.i18n
 const {registerBlockType} = wp.blocks; // Import registerBlockType() from wp.blocks
 const {PanelBody,BaseControl,SelectControl,TextControl} = wp.components;
 const {Fragment} = wp.element;
-const {InspectorControls,ColorPalette } = wp.editor;
+const {InspectorControls,ColorPalette } = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const BlockIcon = 'arrow-down';
 
 /**

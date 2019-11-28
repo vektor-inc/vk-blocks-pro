@@ -1,4 +1,5 @@
 //Bundle JS
+import './group-style/block.js';
 import './list-style/block.js';
 import './step-item/block.js';
 import './step/block.js';
@@ -18,3 +19,4 @@ import './flow/block.js';
 import './pr-blocks/block.js';
 import './pr-content/block.js';
 import './post-list/block.js';
+import './image/block.js';

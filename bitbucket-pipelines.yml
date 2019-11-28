@@ -23,6 +23,7 @@ pipelines:
             - git checkout -b add/example
             - git rm -r tests/
             - git rm -r bin/
+            - git rm inc/vk-blocks/build/block-build.css
             - git add .
             - git status
             - git commit -m"Update from vk-blocks-pro"

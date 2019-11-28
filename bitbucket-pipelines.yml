@@ -14,7 +14,7 @@ pipelines:
     master:
       - step:
           name: Deploy
-          script: 
+          script:
             - git config --global user.email "info@vektor-inc.co.jp"
             - git config --global user.name "bitbucket-piplines-vk-blocks-pro"
             - git clone git@github.com:vektor-inc/vk-blocks.git
@@ -24,4 +24,4 @@ pipelines:
             - git add .
             - git status
             - git commit -m"Update from vk-blocks-pro"
-            - git push origin add/example
+            - git push -f origin add/example

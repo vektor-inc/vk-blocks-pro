@@ -24,7 +24,7 @@ pipelines:
             - cd ../
             - ls
             - pwd
-            - rsync --exclude '.node-version' --exclude 'bin/' --exclude '.git/' --exclude '.gitignore' --exclude '.circleci/' --exclude 'tests/' --exclude '.phpcs.xml.dist' --exclude 'bitbucket-pipelines.yml' --exclude 'package-lock.json' --exclude 'phpunit.xml' --exclude 'phpunit.xml.dist' --exclude 'inc/plugin-update-checker/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.scss' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -avc ./* ./vk-blocks
+            - rsync --exclude '.node-version' --exclude 'bin/' --exclude '.git/' --exclude '.gitignore' --exclude '.circleci/' --exclude 'tests/' --exclude 'tests/**' --exclude '.phpcs.xml.dist' --exclude 'bitbucket-pipelines.yml' --exclude 'package-lock.json' --exclude 'phpunit.xml' --exclude 'phpunit.xml.dist' --exclude 'inc/plugin-update-checker/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.scss' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -avc ./* ./vk-blocks
             - cd ./vk-blocks/
             - git add .
             - git status

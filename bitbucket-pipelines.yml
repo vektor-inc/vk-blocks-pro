@@ -21,6 +21,7 @@ pipelines:
             - rsync --exclude '.git/' --exclude '.gitignore' --exclude '.circleci/' --exclude 'tests/' --exclude 'tests/' --exclude '.phpcs.xml.dist' --exclude 'bitbucket-pipelines.yml' --exclude 'gulpfile.js' --exclude 'package-lock.json' --exclude 'phpunit.xml' --exclude 'phpunit.xml.dist' --exclude 'inc/plugin-update-checker/' -avc ./* ./vk-blocks
             - cd ./vk-blocks/
             - git checkout -b add/example
+            - git pull origin add/example
             - git add .
             - git status
             - git commit -m"Update from vk-blocks-pro"

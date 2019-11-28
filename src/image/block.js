@@ -1,12 +1,12 @@
 wp.blocks.registerBlockStyle('core/image',
-[
-	{
-		name: 'vk-image-border',
-		label: 'Border'
-	},
-	{
-		name: 'vk-image-photoFrame',
-		label: 'Photo frame'
-	},
-]
+	[
+		{
+			name: 'vk-image-border',
+			label: __('Border', 'vk-blocks'),
+		},
+		{
+			name: 'vk-image-photoFrame',
+			label: __('Photo frame', 'vk-blocks'),
+		},
+	]
 );

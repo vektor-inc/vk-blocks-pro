@@ -6,7 +6,7 @@ import {deprecated} from './deprecated';
 
 const {__} = wp.i18n; // Import __() from wp.i18n
 const {registerBlockType} = wp.blocks; // Import registerBlockType() from wp.blocks
-const {RichText} = wp.editor;
+const {RichText} = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const BlockIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" width="576" height="512" viewBox="0 0 576 512">
 	<path d="M178.9,191.6c7.2,5,12,8.2,14.2,9.4c3.3,1.9,7.8,4,13.4,6.5l-16.1,32.4c-8.1-3.9-16.1-8.6-24-14

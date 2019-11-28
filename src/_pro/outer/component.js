@@ -1,7 +1,7 @@
 import React from 'react';
 import {componentDivider} from './component-divider';
 const {InnerBlocks} = wp.editor;
-import hex2rgba from "../_helper/hex-to-rgba";
+import hex2rgba from "../../_helper/hex-to-rgba";
 
 export class Component extends React.Component {
 

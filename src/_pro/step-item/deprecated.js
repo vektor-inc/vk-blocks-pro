@@ -1,7 +1,7 @@
 import React from "react";
 const {InnerBlocks} = wp.editor;
 const {__} = wp.i18n; // Import __() from wp.i18n
-import {faSchema} from "../_helper/font-awesome";
+import {faSchema} from "../../_helper/font-awesome";
 
 export const originalSchema = {
     label: {

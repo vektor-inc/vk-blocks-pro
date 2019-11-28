@@ -410,12 +410,12 @@ msgstr ""
 msgid "Highlighter"
 msgstr ""
 
-#: src/image/block.js:5
-msgid "Border"
+#: src/image/block.js:10
+msgid "Photo frame"
 msgstr ""
 
-#: src/image/block.js:9
-msgid "Photo frame"
+#: src/image/block.js:6
+msgid "Border"
 msgstr ""
 
 #: src/list-style/block.js:109

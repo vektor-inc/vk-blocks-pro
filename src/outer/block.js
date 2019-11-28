@@ -7,13 +7,12 @@ import {Component} from "./component";
 import {schema} from './schema';
 import {deprecated} from './deprecated/block';
 import toNumber from "../_helper/to-number";
-import hex2rgba from "../_helper/hex-to-rgba";
 
 const {__} = wp.i18n; // Import __() from wp.i18n
 const {registerBlockType} = wp.blocks; // Import registerBlockType() from wp.blocks
 const {RangeControl, RadioControl, PanelBody, Button, BaseControl,SelectControl} = wp.components;
 const {Fragment} = wp.element;
-const {InspectorControls, MediaUpload, ColorPalette} = wp.editor;
+const {InspectorControls, MediaUpload, ColorPalette} = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const BlockIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" width="576" height="512" viewBox="0 0 576 512">
 	<g>

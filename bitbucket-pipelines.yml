@@ -18,7 +18,7 @@ pipelines:
             - git config --global user.email "info@vektor-inc.co.jp"
             - git config --global user.name "bitbucket-piplines-vk-blocks-pro"
             - git clone git@github.com:vektor-inc/vk-blocks.git
-            - rsync  --exclude 'vk-blocks/' --exclude '.node-version' --exclude 'bin/' --exclude '.git/' --exclude '.gitignore' --exclude '.circleci/' --exclude 'tests/' --exclude '.phpcs.xml.dist' --exclude 'bitbucket-pipelines.yml' --exclude 'package-lock.json' --exclude 'phpunit.xml' --exclude 'phpunit.xml.dist' --exclude 'inc/plugin-update-checker/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.scss' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -avc ./* ./vk-blocks
+            - rsync  --exclude 'src/outer' --exclude 'src/timeline-item' --exclude 'src/timeline' --exclude 'src/table-of-contents' --exclude 'src/post-list' --exclude 'src/step' --exclude 'vk-blocks/' --exclude '.node-version' --exclude 'bin/' --exclude '.git/' --exclude '.gitignore' --exclude '.circleci/' --exclude 'tests/' --exclude '.phpcs.xml.dist' --exclude 'bitbucket-pipelines.yml' --exclude 'package-lock.json' --exclude 'phpunit.xml' --exclude 'phpunit.xml.dist' --exclude 'inc/plugin-update-checker/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.scss' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -avc ./* ./vk-blocks
             - cd ./vk-blocks/
             - git checkout -b add/example
             - git rm -r tests/

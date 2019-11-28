@@ -1,14 +1,12 @@
 //Bundle JS
+import './group-style/block.js';
+import './list-style/block.js';
 import './step-item/block.js';
 import './step/block.js';
 import './timeline-item/block.js';
 import './timeline/block.js';
 import './highlighter/block.js';
 import './table-of-contents/block.js';
-// import './simple-table/block.js';
-// import './th/block.js';
-// import './td/block.js';
-// import './tr/block.js';
 import './staff/block.js';
 import './spacer/block.js';
 import './outer/block.js';
@@ -21,3 +19,4 @@ import './flow/block.js';
 import './pr-blocks/block.js';
 import './pr-content/block.js';
 import './post-list/block.js';
+import './image/block.js';

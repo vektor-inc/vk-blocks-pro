@@ -10,8 +10,8 @@ const {__} = wp.i18n; // Import __() from wp.i18n
 const {registerBlockType} = wp.blocks; // Import registerBlockType() from wp.blocks
 const {PanelBody,BaseControl,SelectControl,TextControl,RangeControl} = wp.components;
 const {Fragment} = wp.element;
-const {InspectorControls,ColorPalette } = wp.editor;
-const {select} = wp.data;
+const {InspectorControls,ColorPalette } = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
+import {deprecated} from './deprecated';
 
 const BlockIcon = 'arrow-down';
 
@@ -44,48 +44,17 @@ registerBlockType('vk-blocks/step-item', {
      *
      * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
      */
-    edit({attributes, setAttributes, className, clientId}) {
+    edit({attributes, setAttributes, className}) {
         const {
-            label,
             color,
             style,
             styleLine,
-            dotCaption,
-            dotNum
+            dotCaption
         } = attributes;
-
-        const {getBlocksByClientId, getPreviousBlockClientId, getBlockRootClientId} = select("core/block-editor");
-        let preClientId = getPreviousBlockClientId(clientId);
-        let preBlock = getBlocksByClientId(preClientId);
-
-        let preDotNum;
-        let preDotNumOld;
-        if(preClientId){
-            preDotNum = preBlock[0].attributes.dotNum;
-
-            if(preDotNum !== preDotNumOld){
-                if(preDotNum && preDotNum){
-                    setAttributes({dotNum: preDotNum + 1})
-                }
-            }
-            preDotNumOld = preDotNum;
-        }
 
         return (
             <Fragment>
                 <InspectorControls>
-                    <PanelBody title={__('Label', 'vk-blocks')}>
-                        <BaseControl
-                            id="label"
-                            label="Caption Label"
-                        >
-                            <TextControl
-                                value={label}
-                                onChange={(value) => setAttributes({label: value})}
-                                placeholder={__('Ex,6:00AM', 'vk-blocks')}
-                            />
-                        </BaseControl>
-                    </PanelBody>
                     <PanelBody title={__('Step Mark', 'vk-blocks')}>
                         <BaseControl
                             id="dot-fa"
@@ -175,4 +144,6 @@ registerBlockType('vk-blocks/step-item', {
     save({attributes, className}) {
         return <Component attributes={attributes} className={className} for_={"save"}/>;
     },
+
+    deprecated: deprecated,
 });

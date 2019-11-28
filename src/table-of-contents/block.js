@@ -10,7 +10,7 @@ const {registerBlockType} = wp.blocks;
 const {ServerSideRender, PanelBody, SelectControl, BaseControl} = wp.components;
 const {Fragment} = wp.element;
 const {subscribe, select} = wp.data;
-const {InspectorControls} = wp.blockEditor;
+const {InspectorControls} = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const BlockIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" width="576" height="512" viewBox="0 0 576 512">
 	<g>

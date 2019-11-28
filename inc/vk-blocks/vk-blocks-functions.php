@@ -11,13 +11,25 @@ function vkblocks_blocks_assets() {
 	wp_register_style( 'vk-blocks-build-css', VK_BLOCKS_URL . 'build/block-build.css', array(), VK_BLOCKS_VERSION );
 	wp_register_style( 'vk-blocks-build-editor-css', VK_BLOCKS_URL . 'build/block-build-editor.css', array(), VK_BLOCKS_VERSION );
 
-	wp_register_script(
-		'vk-blocks-build-js', VK_BLOCKS_URL . 'build/block-build.js', array(
+	global $wp_version;
+	if ( defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, '5.3', '>=' ) ) {
+		$dependency = array(
+			'wp-block-editor',
 			'wp-blocks',
 			'wp-i18n',
 			'wp-element',
 			'wp-editor',
-		), VK_BLOCKS_VERSION, true
+		);
+	} else {
+		$dependency = array(
+			'wp-blocks',
+			'wp-i18n',
+			'wp-element',
+			'wp-editor',
+		);
+	}
+	wp_register_script(
+		'vk-blocks-build-js', VK_BLOCKS_URL . 'build/block-build.js', $dependency, VK_BLOCKS_VERSION, true
 	);
 
 	if ( function_exists( 'wp_set_script_translations' ) ) {
@@ -35,11 +47,30 @@ function vkblocks_blocks_assets() {
 		}
 	} // if ( $theme->exists() ) {
 
-	global $wp_version;
 	if ( defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, '5.0', '>=' ) ) {
 
-		// $arr = array( 'alert', 'balloon', 'button', 'faq', 'flow', 'pr-blocks', 'pr-content', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents', 'simple-table', 'tr', 'th', 'td' ,'highlighter','timeline','timeline-item');//REPLACE-FLAG : このコメントは削除しないで下さい。wp-create-gurten-template.shで削除する基準として左の[//REPLACE-FLAG]を使っています。
-		$arr = array( 'alert', 'balloon', 'button', 'faq', 'flow', 'pr-blocks', 'pr-content', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents', 'highlighter', 'timeline', 'timeline-item', 'step', 'step-item', 'post-list' );//REPLACE-FLAG : このコメントは削除しないで下さい。wp-create-gurten-template.shで削除する基準として左の[//REPLACE-FLAG]を使っています。
+		$arr = array(
+			'alert',
+			'balloon',
+			'button',
+			'faq',
+			'flow',
+			'pr-blocks',
+			'pr-content',
+			'outer',
+			'spacer',
+			'heading',
+			'staff',
+			'table-of-contents',
+			'highlighter',
+			'timeline',
+			'timeline-item',
+			'step',
+			'step-item',
+			'post-list',
+			'list-style',
+			'group-style'
+		);//REPLACE-FLAG : このコメントは削除しないで下さい。wp-create-gurten-template.shで削除する基準として左の[//REPLACE-FLAG]を使っています。
 
 		foreach ( $arr as $value ) {
 

@@ -5,9 +5,9 @@
 import {deprecated} from './deprecated'
 const {__} = wp.i18n; // Import __() from wp.i18n
 const {registerBlockType} = wp.blocks; // Import registerBlockType() from wp.blocks
-const {RangeControl, RadioControl, PanelBody, Button, PanelColor} = wp.components;
+const {RadioControl, PanelBody, Button} = wp.components;
 const {Fragment} = wp.element;
-const {RichText, InspectorControls, MediaUpload, ColorPalette} = wp.editor;
+const {RichText, InspectorControls, MediaUpload} = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const BlockIcon = 'arrow-down';
 
 /**

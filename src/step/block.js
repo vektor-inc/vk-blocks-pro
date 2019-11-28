@@ -6,10 +6,10 @@ import {Component} from "./component";
 import {schema} from './schema';
 
 const {__} = wp.i18n; // Import __() from wp.i18n
-const {registerBlockType} = wp.blocks; // Import registerBlockType() from wp.blocks
+const {registerBlockType, createBlock} = wp.blocks; // Import registerBlockType() from wp.blocks
 const {PanelBody} = wp.components;
 const {Fragment} = wp.element;
-const {InspectorControls} = wp.editor;
+const {InspectorControls} = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const {select, dispatch} = wp.data;
 const BlockIcon = (
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
@@ -69,7 +69,51 @@ registerBlockType('vk-blocks/step', {
         } = attributes;
 
         const {getBlocksByClientId} = select("core/block-editor");
-        const {updateBlockAttributes} = dispatch('core/block-editor');
+        const {updateBlockAttributes, insertBlock} = dispatch('core/block-editor');
+
+        let currentBlock = getBlocksByClientId(clientId);
+        let beforeLength;
+        let afterLength;
+
+        const addH4Block = (index, innerBlocks) => {
+            if (innerBlocks[index].innerBlocks.length === 0) {
+                const blockToInsert = createBlock('core/heading', {
+                    level: 4,
+                });
+                insertBlock(blockToInsert, 0, innerBlocks[index].clientId);
+            }
+        };
+
+
+        if (currentBlock !== undefined || currentBlock[0].innerBlocks !== undefined) {
+
+            let innerBlocks = currentBlock[0].innerBlocks;
+            beforeLength = innerBlocks.length;
+
+            //先頭のinnerBlockのみの時
+            if (innerBlocks.length === 1) {
+                addH4Block(0, innerBlocks);
+            }
+
+            if (beforeLength !== undefined && beforeLength !== 0 && beforeLength !== 1) {
+
+                if (beforeLength !== afterLength) {
+
+                    for (let i = 0; i < innerBlocks.length; i++) {
+                        if (innerBlocks[i] !== undefined) {
+
+                            addH4Block(i, innerBlocks);
+
+                            updateBlockAttributes(innerBlocks[i].clientId, {
+                                dotNum: firstDotNum + i
+                            });
+                        }
+                    }
+                }
+                afterLength = beforeLength;
+            }
+        }
+
 
         return (
             <Fragment>
@@ -79,23 +123,10 @@ registerBlockType('vk-blocks/step', {
                             type="number"
                             id={"dot-number"}
                             onChange={(event) => {
-
                                 let value = parseInt(event.target.value, 10);
                                 setAttributes({
                                     firstDotNum: value,
                                 });
-
-                                if (getBlocksByClientId(clientId)) {
-                                    let currentBlock = getBlocksByClientId(clientId);
-                                    let innerBlocks = currentBlock[0].innerBlocks;
-
-                                    for (let i = 0; i < innerBlocks.length; i++) {
-
-                                        if (innerBlocks[i] !== undefined) {
-                                            updateBlockAttributes(innerBlocks[i].clientId, {dotNum: value + i});
-                                        }
-                                    }
-                                }
                             }}
                             value={firstDotNum}
                             min="1"

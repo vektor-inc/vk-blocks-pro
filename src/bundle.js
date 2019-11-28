@@ -13,7 +13,6 @@ import './flow/block.js';
 import './pr-blocks/block.js';
 import './pr-content/block.js';
 import './image/block.js';
-
 //Pro Blocks
 import './_pro/post-list/block.js';
 import './_pro/outer/block.js';

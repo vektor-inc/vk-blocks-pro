@@ -26,6 +26,7 @@ pipelines:
             - git rm inc/vk-blocks/build/block-build.css
             - git rm -r src/table-of-contents
             - git rm -r src/outer
+            - sed -i '/_pro/d' src/bundle.js
             - git add .
             - git status
             - git commit -m"Update from vk-blocks-pro"

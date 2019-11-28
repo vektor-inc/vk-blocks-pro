@@ -20,7 +20,7 @@ pipelines:
             - git clone git@github.com:vektor-inc/vk-blocks.git
             - cd ./vk-blocks/
             - git checkout -b add/example
-            - git pull origin add/example
+#            - git pull origin add/example
             - cd ../
             - rsync --exclude '.git/' --exclude '.gitignore' --exclude '.circleci/' --exclude 'tests/' --exclude 'tests/' --exclude '.phpcs.xml.dist' --exclude 'bitbucket-pipelines.yml' --exclude 'package-lock.json' --exclude 'phpunit.xml' --exclude 'phpunit.xml.dist' --exclude 'inc/plugin-update-checker/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.scss' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -avc ./* ./vk-blocks
             - cd ./vk-blocks/

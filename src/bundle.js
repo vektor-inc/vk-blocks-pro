@@ -20,3 +20,4 @@ import './pr-blocks/block.js';
 import './pr-content/block.js';
 import './post-list/block.js';
 import './image/block.js';
+import './heading-style/block.js';

@@ -17,7 +17,6 @@ require_once( 'inc/vk-blocks-config.php' );
 add_action(
 	'plugins_loaded', function () {
 	// Load language files.
-	// load_plugin_textdomain( 'vk-blocks', false, basename( dirname( __FILE__ ) ) . '/inc/vk-blocks/build/languages' );
 	load_plugin_textdomain( 'vk-blocks', false, 'vk-blocks/inc/vk-blocks/build/languages' );
 }
 );
@@ -68,6 +67,7 @@ function vkblocks_deactive_plugins() {
 /*-------------------------------------------*/
 $plugin_base_dir = dirname( __FILE__ );
 if ( strpos( $plugin_base_dir, 'vk-blocks-pro' ) !== false ) {
+
 	$updater_url = dirname( __FILE__ ) . '/inc/plugin-update-checker/plugin-update-checker.php';
 	if ( file_exists( $updater_url ) ) {
 		require dirname( __FILE__ ) . '/inc/plugin-update-checker/plugin-update-checker.php';

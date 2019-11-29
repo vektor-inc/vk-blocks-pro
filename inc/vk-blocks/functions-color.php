@@ -2,10 +2,12 @@
 
 add_action( 'wp_head', 'lightning_print_css_vk_heading_style', 3 );
 function lightning_print_css_vk_heading_style() {
+
+	$dynamic_css = "";
+
 	$options = get_option( 'lightning_theme_options' );
 	if ( isset( $options['color_key'] ) && isset( $options['color_key_dark'] ) ) {
 		$color_key      = esc_html( $options['color_key'] );
-		$color_key_dark = esc_html( $options['color_key_dark'] );
 
 		$dynamic_css .= '
 		.is-style-vk-heading-speech_balloon_fill,
@@ -33,7 +35,6 @@ function lightning_print_css_vk_heading_style() {
 		$dynamic_css = preg_replace( '/[\n\r\t]/', '', $dynamic_css );
 		// Change multiple spaces to single space
 		$dynamic_css = preg_replace( '/\s(?=\s)/', '', $dynamic_css );
-		wp_add_inline_style( 'lightning-design-style', $dynamic_css );
-		
+		wp_add_inline_style( 'lightning-design-style', $dynamic_css );		
 	} // if ( isset($options['color_key'] && isset($options['color_key_dark'] ) {
 }

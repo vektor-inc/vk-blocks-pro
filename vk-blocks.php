@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: VK Blocks Pro
+ * Plugin Name: VK Blocks
  * Plugin URI: https://github.com/vektor-inc/vk-blocks
  * Description: This is a plugin that extends Gutenberg's blocks.
  * Version: 0.15.0
@@ -16,10 +16,10 @@ require_once( 'inc/vk-blocks-config.php' );
 
 add_action(
 	'plugins_loaded', function () {
-		// Load language files.
-		// load_plugin_textdomain( 'vk-blocks', false, basename( dirname( __FILE__ ) ) . '/inc/vk-blocks/build/languages' );
-		load_plugin_textdomain( 'vk-blocks', false, 'vk-blocks/inc/vk-blocks/build/languages' );
-	}
+	// Load language files.
+	// load_plugin_textdomain( 'vk-blocks', false, basename( dirname( __FILE__ ) ) . '/inc/vk-blocks/build/languages' );
+	load_plugin_textdomain( 'vk-blocks', false, 'vk-blocks/inc/vk-blocks/build/languages' );
+}
 );
 
 function vkblocks_deactivate_plugin( $plugin_path ) {
@@ -40,28 +40,18 @@ function vkblocks_deactivate_plugin( $plugin_path ) {
 add_action( 'init', 'vkblocks_deactive_plugins' );
 function vkblocks_deactive_plugins() {
 
-	function vkblocks_deactive_plugins() {
+	$plugin_base_dir = dirname( __FILE__ );
 
-		$plugin_base_dir = dirname( __FILE__ );
-
-		if ( strpos( $plugin_base_dir, 'vk-blocks-pro' ) === false ) {
-			// Deactive Plugin VK Blocks
-			if ( function_exists( 'vkblocks_deactivate_plugin' ) ) {
-				vkblocks_deactivate_plugin( 'vk-blocks/vk-blocks.php' );
-			}
-
-		}elseif (strpos( $plugin_base_dir, 'vk-blocks' ) === false){
-			// Deactive Plugin VK Blocks Pro
-			if ( function_exists( 'vkblocks_deactivate_plugin' ) ) {
-				vkblocks_deactivate_plugin( 'vk-blocks-pro/vk-blocks.php' );
-			}
+	if ( strpos( $plugin_base_dir, 'vk-blocks-pro' ) === false ) {
+		// Deactive Plugin VK Blocks
+		if ( function_exists( 'vkblocks_deactivate_plugin' ) ) {
+			vkblocks_deactivate_plugin( 'vk-blocks-pro/vk-blocks.php' );
 		}
 
-		// Deactive ExUnit included VK Blocks
-		$options = get_option( 'vkExUnit_common_options' );
-		if ( ! empty( $options['active_vk-blocks'] ) ) {
-			$options['active_vk-blocks'] = false;
-			update_option( 'vkExUnit_common_options', $options );
+	}elseif (strpos( $plugin_base_dir, 'vk-blocks' ) === false){
+		// Deactive Plugin VK Blocks Pro
+		if ( function_exists( 'vkblocks_deactivate_plugin' ) ) {
+			vkblocks_deactivate_plugin( 'vk-blocks/vk-blocks.php' );
 		}
 	}
 

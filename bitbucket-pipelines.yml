@@ -14,7 +14,8 @@ pipelines:
           script:
             # VK BlocksのGithubにアクセスできるユーザーの設定
             - cd inc/vk-blocks/
-            - ls            - git config --global user.email "info@vektor-inc.co.jp"
+            - ls
+            - git config --global user.email "info@vektor-inc.co.jp"
             - git config --global user.name "bitbucket-piplines-vk-blocks-pro"
             # 通常版をクローン
             - git clone git@github.com:vektor-inc/vk-blocks.git

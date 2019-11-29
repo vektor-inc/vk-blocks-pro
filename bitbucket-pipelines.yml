@@ -28,12 +28,20 @@ pipelines:
             - git rm inc/vk-blocks/build/block-build.css
             - git rm -r src/table-of-contents
             - git rm -r src/outer
-            # Pro版専用のブロックは読み込まないよう削除
+            # Pro版ブロックは読み込まないよう削除
             - sed -i /_pro/d src/bundle.js
             # プラグイン名を通常版へリネーム
             - sed -i /Pro/d src/bundle.js
-            # Pro版専用のブロックは読み込まないよう削除
+            # ***
+            # Pro版ブロックを追加する時は、下のコードをコピペし新しいブロック名で置き換えて下さい。
+            # ***
+            - sed -i -e "s/, 'outer'//g" inc/vk-blocks/vk-blocks-functions.php
+            - sed -i -e "s/, 'post-list'//g" inc/vk-blocks/vk-blocks-functions.php
+            - sed -i -e "s/, 'step'//g" inc/vk-blocks/vk-blocks-functions.php
+            - sed -i -e "s/, 'step-item'//g" inc/vk-blocks/vk-blocks-functions.php
             - sed -i -e "s/, 'table-of-contents'//g" inc/vk-blocks/vk-blocks-functions.php
+            - sed -i -e "s/, 'timeline'//g" inc/vk-blocks/vk-blocks-functions.php
+            - sed -i -e "s/, 'timeline-item'//g" inc/vk-blocks/vk-blocks-functions.php
             # 以下はadd/exampleブランチにpushするための処理
             - git add .
             - git status

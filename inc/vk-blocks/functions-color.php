@@ -1,24 +1,11 @@
 <?php
 
-//ハンドル名登録
-function heading_style_method() {
-    wp_enqueue_style(
-        'heading_style',
-        get_template_directory_uri() 
-    );
-}
-add_action( 'wp_enqueue_scripts', 'heading_style_method' );
-
-
 add_action( 'wp_head', 'lightning_print_css_vk_heading_style', 3 );
 function lightning_print_css_vk_heading_style() {
 	$options = get_option( 'lightning_theme_options' );
 	if ( isset( $options['color_key'] ) && isset( $options['color_key_dark'] ) ) {
 		$color_key      = esc_html( $options['color_key'] );
 		$color_key_dark = esc_html( $options['color_key_dark'] );
-
-
-
 
 		$dynamic_css .= '
 		.is-style-vk-heading-speech_balloon_fill,
@@ -40,15 +27,13 @@ function lightning_print_css_vk_heading_style() {
 		.is-style-vk-heading-brackets::after{ border-top-color:' . $color_key . '; border-bottom-color:' . $color_key . '; border-right-color:' . $color_key . '; }
 		';
 
-
 		// delete before after space
 		$dynamic_css = trim( $dynamic_css );
 		// convert tab and br to space
 		$dynamic_css = preg_replace( '/[\n\r\t]/', '', $dynamic_css );
 		// Change multiple spaces to single space
 		$dynamic_css = preg_replace( '/\s(?=\s)/', '', $dynamic_css );
-		wp_add_inline_style( 'heading_style', $dynamic_css );
-
+		wp_add_inline_style( 'lightning-design-style', $dynamic_css );
 		
 	} // if ( isset($options['color_key'] && isset($options['color_key_dark'] ) {
 }

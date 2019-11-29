@@ -27,6 +27,7 @@ pipelines:
             - git rm -r src/table-of-contents
             - git rm -r src/outer
             - sed -i '/_pro/d' src/bundle.js
+            - sed -i '/VK Blocks Pro/VK Blocks' vk-blocks.php
             - git add .
             - git status
             - git commit -m"Update from vk-blocks-pro"

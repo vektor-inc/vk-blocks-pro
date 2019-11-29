@@ -40,10 +40,29 @@ function vkblocks_deactivate_plugin( $plugin_path ) {
 add_action( 'init', 'vkblocks_deactive_plugins' );
 function vkblocks_deactive_plugins() {
 
-	// Deactive Plugin VK Blocks
-	$plugin_path = 'vk-blocks/vk-blocks.php';
-	if ( function_exists( 'vkblocks_deactivate_plugin' ) ) {
-		vkblocks_deactivate_plugin( $plugin_path );
+	function vkblocks_deactive_plugins() {
+
+		$plugin_base_dir = dirname( __FILE__ );
+
+		if ( strpos( $plugin_base_dir, 'vk-blocks-pro' ) === false ) {
+			// Deactive Plugin VK Blocks
+			if ( function_exists( 'vkblocks_deactivate_plugin' ) ) {
+				vkblocks_deactivate_plugin( 'vk-blocks/vk-blocks.php' );
+			}
+
+		}elseif (strpos( $plugin_base_dir, 'vk-blocks' ) === false){
+			// Deactive Plugin VK Blocks Pro
+			if ( function_exists( 'vkblocks_deactivate_plugin' ) ) {
+				vkblocks_deactivate_plugin( 'vk-blocks-pro/vk-blocks.php' );
+			}
+		}
+
+		// Deactive ExUnit included VK Blocks
+		$options = get_option( 'vkExUnit_common_options' );
+		if ( ! empty( $options['active_vk-blocks'] ) ) {
+			$options['active_vk-blocks'] = false;
+			update_option( 'vkExUnit_common_options', $options );
+		}
 	}
 
 	// Deactive ExUnit included VK Blocks

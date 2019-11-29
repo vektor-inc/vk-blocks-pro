@@ -43,13 +43,13 @@ function vkblocks_deactive_plugins() {
 	$plugin_base_dir = dirname( __FILE__ );
 
 	if ( strpos( $plugin_base_dir, 'vk-blocks-pro' ) === false ) {
-		// Deactive Plugin VK Blocks
+		// Deactive Plugin VK Blocks Pro
 		if ( function_exists( 'vkblocks_deactivate_plugin' ) ) {
 			vkblocks_deactivate_plugin( 'vk-blocks-pro/vk-blocks.php' );
 		}
 
 	}elseif (strpos( $plugin_base_dir, 'vk-blocks' ) === false){
-		// Deactive Plugin VK Blocks Pro
+		// Deactive Plugin VK Blocks
 		if ( function_exists( 'vkblocks_deactivate_plugin' ) ) {
 			vkblocks_deactivate_plugin( 'vk-blocks/vk-blocks.php' );
 		}

@@ -1,8 +1,4 @@
-# This is a sample build configuration for Other.
-# Check our guides at https://confluence.atlassian.com/x/5Q4SMw for more examples.
-# Only use spaces to indent your .yml configuration.
-# -----
-# You can specify a custom docker image from Docker Hub as your build environment.
+# VK Blocks Proから通常版へデプロイする処理
 image: atlassian/default-image:2
 
 pipelines:
@@ -11,23 +7,32 @@ pipelines:
         script:
           - echo "Everything is awesome!"
   branches:
+    #↓このブランチにpushした時に処理を開始
     dist/vk-blocks:
       - step:
           name: Deploy
           script:
+            # VK BlocksのGithubにアクセスできるユーザーの設定
             - git config --global user.email "info@vektor-inc.co.jp"
             - git config --global user.name "bitbucket-piplines-vk-blocks-pro"
+            # 通常版をクローン
             - git clone git@github.com:vektor-inc/vk-blocks.git
+            # 指定したファイルを除外して、Pro版をコピー&上書き
             - rsync --exclude '_pro/' --exclude 'vk-blocks/' --exclude '.node-version' --exclude 'bin/' --exclude '.git/' --exclude '.gitignore' --exclude '.circleci/' --exclude 'tests/' --exclude '.phpcs.xml.dist' --exclude 'bitbucket-pipelines.yml' --exclude 'package-lock.json' --exclude 'phpunit.xml' --exclude 'phpunit.xml.dist' --exclude 'inc/plugin-update-checker/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.scss' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -avc ./* ./vk-blocks
             - cd ./vk-blocks/
+            # push先のブランチを切る
             - git checkout -b add/example
+            # 通常版に元からある不要なファイルを削除
             - git rm -r tests/
             - git rm -r bin/
             - git rm inc/vk-blocks/build/block-build.css
             - git rm -r src/table-of-contents
             - git rm -r src/outer
+            # Pro版専用のブロックは読み込まないよう削除
             - sed -i '/_pro/d' src/bundle.js
+            # プラグイン名を通常版へリネーム
             - sed -i '/VK Blocks Pro/VK Blocks' vk-blocks.php
+            # 以下はadd/exampleブランチにpushするための処理
             - git add .
             - git status
             - git commit -m"Update from vk-blocks-pro"

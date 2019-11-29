@@ -43,6 +43,7 @@ pipelines:
             - sed -i -e "s/, 'timeline'//g" inc/vk-blocks/vk-blocks-functions.php
             - sed -i -e "s/, 'timeline-item'//g" inc/vk-blocks/vk-blocks-functions.php
             - cd inc/vk-blocks/
+            - ls
             # 以下はadd/exampleブランチにpushするための処理
             - git add .
             - git status

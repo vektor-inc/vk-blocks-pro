@@ -33,7 +33,7 @@ pipelines:
             # プラグイン名を通常版へリネーム
             - sed -i /Pro/d src/bundle.js
             # Pro版専用のブロックは読み込まないよう削除
-            - sed -i /,\'table-of-contents\'/d inc/vk-blocks/vk-blocks-functions.php
+            - sed -i "/,\ 'table-of-contents\'/d" inc/vk-blocks/vk-blocks-functions.php
             # 以下はadd/exampleブランチにpushするための処理
             - git add .
             - git status

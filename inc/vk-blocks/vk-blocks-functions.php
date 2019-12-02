@@ -49,28 +49,7 @@ function vkblocks_blocks_assets() {
 
 	if ( defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, '5.0', '>=' ) ) {
 
-		$arr = array(
-			'alert',
-			'balloon',
-			'button',
-			'faq',
-			'flow',
-			'pr-blocks',
-			'pr-content',
-			'outer',
-			'spacer',
-			'heading',
-			'staff',
-			'table-of-contents',
-			'highlighter',
-			'timeline',
-			'timeline-item',
-			'step',
-			'step-item',
-			'post-list',
-			'list-style',
-			'group-style'
-		);//REPLACE-FLAG : このコメントは削除しないで下さい。wp-create-gurten-template.shで削除する基準として左の[//REPLACE-FLAG]を使っています。
+		$arr = array( 'alert', 'balloon', 'button', 'faq', 'flow', 'pr-blocks', 'pr-content', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents', 'highlighter', 'timeline', 'timeline-item', 'step', 'step-item', 'post-list', 'list-style', 'group-style' );//REPLACE-FLAG : このコメントは削除しないで下さい。wp-create-gurten-template.shで削除する基準として左の[//REPLACE-FLAG]を使っています。
 
 		foreach ( $arr as $value ) {
 

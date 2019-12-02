@@ -35,7 +35,7 @@ pipelines:
             # Pro版ブロックは読み込まないよう削除
             - sed -i /_pro/d src/bundle.js
             # プラグイン名を通常版へリネーム
-            - sed -i 's/Pro//' vk-blocks.php
+            - sed -i 3s/Pro// vk-blocks.php
             # ***
             # Pro版ブロックを追加する時は、下のコードをコピペし新しいブロック名で置き換えて下さい!
             # ***

@@ -42,8 +42,8 @@ pipelines:
             - ls
             - cd ../../
             - ls
-            - git rm -r 'src/_pro'
-            - rm -r src/_pro/
+            - git rm -r src/alert
+            - git rm -r src/_pro
 #            - for pro_block in ${pro_block_array[@]}; do
 #            - echo ${eachValue}
 #            - done

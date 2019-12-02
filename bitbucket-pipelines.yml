@@ -18,8 +18,10 @@ pipelines:
             # 通常版をクローン
             - git clone git@github.com:vektor-inc/vk-blocks.git
             - mv vk-blocks/ vk-blocks-git/
+            # Pro版のブロックslugを配列に追加（後で使用する）
+            - pro_block_array=($(ls src/_pro/))
             # 指定したファイルを除外して、Pro版をコピー&上書き
-            - rsync --exclude 'vk-blocks-git/' --exclude '.node-version' --exclude 'bin/' --exclude '.git/' --exclude '.gitignore' --exclude '.circleci/' --exclude 'tests/' --exclude '.phpcs.xml.dist' --exclude 'bitbucket-pipelines.yml' --exclude 'package-lock.json' --exclude 'phpunit.xml' --exclude 'phpunit.xml.dist' --exclude 'inc/plugin-update-checker/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.scss' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvc ./* ./vk-blocks-git/
+            - rsync --exclude 'src/_pro/' --exclude 'vk-blocks-git/' --exclude '.node-version' --exclude 'bin/' --exclude '.git/' --exclude '.gitignore' --exclude '.circleci/' --exclude 'tests/' --exclude '.phpcs.xml.dist' --exclude 'bitbucket-pipelines.yml' --exclude 'package-lock.json' --exclude 'phpunit.xml' --exclude 'phpunit.xml.dist' --exclude 'inc/plugin-update-checker/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.scss' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvc ./* ./vk-blocks-git/
             - mv vk-blocks-git/ vk-blocks/
             - cd ./vk-blocks/
             # push先のブランチを切る
@@ -34,28 +36,21 @@ pipelines:
             - sed -i /_pro/d src/bundle.js
             # プラグイン名を通常版へリネーム
             - sed -i 3s/Pro// vk-blocks.php
-            # Pro版のブロックslugを配列に追加
-            - pro_block_array=($(ls src/_pro/))
-            - echo ${pro_block_array[@]}
             # Pro版のブロックを削除
-            - cd src/_pro/
-            - ls
-            - cd ../../
-            - ls
-            - git rm -r src/_pro/**
-#            - for pro_block in ${pro_block_array[@]}; do
-#            - echo ${eachValue}
-#            - done
+            - for pro_block in ${pro_block_array[@]}; do
+            - echo ${pro_block}
+            - sed -i -e "s/, '${pro_block}'//g" inc/vk-blocks/vk-blocks-functions.php
+            - done
             # ***
             # Pro版ブロックを追加する時は、下のコードをコピペし新しいブロック名で置き換えて下さい!
             # ***
-            - sed -i -e "s/, 'outer'//g" inc/vk-blocks/vk-blocks-functions.php
-            - sed -i -e "s/, 'post-list'//g" inc/vk-blocks/vk-blocks-functions.php
-            - sed -i -e "s/, 'step'//g" inc/vk-blocks/vk-blocks-functions.php
-            - sed -i -e "s/, 'step-item'//g" inc/vk-blocks/vk-blocks-functions.php
-            - sed -i -e "s/, 'table-of-contents'//g" inc/vk-blocks/vk-blocks-functions.php
-            - sed -i -e "s/, 'timeline'//g" inc/vk-blocks/vk-blocks-functions.php
-            - sed -i -e "s/, 'timeline-item'//g" inc/vk-blocks/vk-blocks-functions.php
+#            - sed -i -e "s/, 'outer'//g" inc/vk-blocks/vk-blocks-functions.php
+#            - sed -i -e "s/, 'post-list'//g" inc/vk-blocks/vk-blocks-functions.php
+#            - sed -i -e "s/, 'step'//g" inc/vk-blocks/vk-blocks-functions.php
+#            - sed -i -e "s/, 'step-item'//g" inc/vk-blocks/vk-blocks-functions.php
+#            - sed -i -e "s/, 'table-of-contents'//g" inc/vk-blocks/vk-blocks-functions.php
+#            - sed -i -e "s/, 'timeline'//g" inc/vk-blocks/vk-blocks-functions.php
+#            - sed -i -e "s/, 'timeline-item'//g" inc/vk-blocks/vk-blocks-functions.php
             # 以下はadd/exampleブランチにpushするための処理
             - git add .
             - git status

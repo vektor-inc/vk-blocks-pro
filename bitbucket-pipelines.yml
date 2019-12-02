@@ -35,6 +35,8 @@ pipelines:
             # プラグイン名を通常版へリネーム
             - sed -i 3s/Pro// vk-blocks.php
             - ls
+            - cd src/
+            - ls
             # Pro版のブロックslugを配列に追加
             - pro_block_array=($(ls src/_pro/))
             #

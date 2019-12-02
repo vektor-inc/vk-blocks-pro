@@ -213,7 +213,6 @@ ul, ol{
 	}
 	ul,ol {
 		margin-top:0;
-		margin-bottom:0;
 		li:last-child {
 			margin-bottom:0;
 		}
@@ -272,7 +271,8 @@ ul, ol{
 	h3:first-child,h4:first-child{
 		margin-top:0;
 	}
-	p:last-child{
+
+	*:last-child{
 		margin-bottom: 0;
 	}
 

@@ -32,6 +32,7 @@ pipelines:
             - sed -i /_pro/d src/bundle.js
             # プラグイン名を通常版へリネーム
             - sed -i /Pro/d vk-blocks.php
+            - cat src/bundle.js
             # ***
             # Pro版ブロックを追加する時は、下のコードをコピペし新しいブロック名で置き換えて下さい!
             # ***

@@ -39,7 +39,7 @@ pipelines:
             # Pro版のブロックを削除
             - for pro_block in ${pro_block_array[@]}; do
             - echo ${pro_block}
-            - sed -i s/\,\ \'${pro_block}\'//g inc/vk-blocks/vk-blocks-functions.php
+            - sed -i s/\,*\'${pro_block}\'//g inc/vk-blocks/vk-blocks-functions.php
             - done
             # ***
             # Pro版ブロックを追加する時は、下のコードをコピペし新しいブロック名で置き換えて下さい!

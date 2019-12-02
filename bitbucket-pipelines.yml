@@ -41,10 +41,7 @@ pipelines:
             - echo ${eachValue}
             - done
             # Pro版のブロックを削除
-            - ls
-            - cd src/
-            - ls
-            - git rm -rf src/_pro/
+            - git rm -r src/_pro
             # ***
             # Pro版ブロックを追加する時は、下のコードをコピペし新しいブロック名で置き換えて下さい!
             # ***

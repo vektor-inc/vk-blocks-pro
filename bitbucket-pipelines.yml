@@ -32,27 +32,15 @@ pipelines:
             - git rm inc/vk-blocks/build/block-build.css
             - git rm -r src/table-of-contents
             - git rm -r src/outer
-            # Pro版ブロックは読み込まないよう削除
+            # Pro版ブロックは読み込まないようjsから削除
             - sed -i /_pro/d src/bundle.js
             # プラグイン名を通常版へリネーム
             - sed -i 3s/Pro// vk-blocks.php
-            # Pro版のブロックを削除
+            # Pro版のブロックをphpから削除
             - for pro_block in ${pro_block_array[@]}; do
-            - echo ${pro_block}
             - sed -i s/\,\ \'${pro_block}\'//g inc/vk-blocks/vk-blocks-functions.php
             - done
-            # ***
-            # Pro版ブロックを追加する時は、下のコードをコピペし新しいブロック名で置き換えて下さい!
-            # ***
-#            - sed -i -e "s/, 'outer'//g" inc/vk-blocks/vk-blocks-functions.php
-#            - sed -i -e "s/, 'post-list'//g" inc/vk-blocks/vk-blocks-functions.php
-#            - sed -i -e "s/, 'step'//g" inc/vk-blocks/vk-blocks-functions.php
-#            - sed -i -e "s/, 'step-item'//g" inc/vk-blocks/vk-blocks-functions.php
-#            - sed -i -e "s/, 'table-of-contents'//g" inc/vk-blocks/vk-blocks-functions.php
-#            - sed -i -e "s/, 'timeline'//g" inc/vk-blocks/vk-blocks-functions.php
-#            - sed -i -e "s/, 'timeline-item'//g" inc/vk-blocks/vk-blocks-functions.php
             # 以下はadd/exampleブランチにpushするための処理
             - git add .
-            - git status
             - git commit -m"Update from vk-blocks-pro"
             - git push -f origin add/example

@@ -25,7 +25,7 @@ pipelines:
             - mv vk-blocks-git/ vk-blocks/
             - cd ./vk-blocks/
             # push先のブランチを切る
-            - git checkout -b add/example
+            - git checkout -b add/vk-blocks-free
             # 通常版に元からある不要なファイルを削除
             - git rm -r tests/
             - git rm -r bin/
@@ -40,7 +40,7 @@ pipelines:
             - for pro_block in ${pro_block_array[@]}; do
             - sed -i s/\,\ \'${pro_block}\'//g inc/vk-blocks/vk-blocks-functions.php
             - done
-            # 以下はadd/exampleブランチにpushするための処理
+            # 以下はadd/vk-blocks-freeブランチにpushするための処理
             - git add .
             - git commit -m"Update from vk-blocks-pro"
-            - git push -f origin add/example
+            - git push -f origin add/vk-blocks-free

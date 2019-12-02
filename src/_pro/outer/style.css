@@ -1,0 +1,83 @@
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+.vk_outer {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative; }
+  .vk_outer .vk_outer_container {
+    min-height: 40px; }
+
+.vk_outer-width-full {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%); }
+
+.vk_outer-paddingLR-use {
+  padding-left: 1.5em;
+  padding-right: 1.5em; }
+  @media (min-width: 576px) {
+    .vk_outer-paddingLR-use {
+      padding-left: 2em;
+      padding-right: 2em; } }
+  @media (min-width: 768px) {
+    .vk_outer-paddingLR-use {
+      padding-left: 2.5em;
+      padding-right: 2.5em; } }
+  @media (min-width: 992px) {
+    .vk_outer-paddingLR-use {
+      padding-left: 3em;
+      padding-right: 3em; } }
+  @media (min-width: 1200px) {
+    .vk_outer-paddingLR-use {
+      padding-left: 3.5em;
+      padding-right: 3.5em; } }
+
+.vk_outer-paddingVertical-use {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em; }
+  @media (min-width: 576px) {
+    .vk_outer-paddingVertical-use {
+      padding-top: 2em;
+      padding-bottom: 2em; } }
+  @media (min-width: 768px) {
+    .vk_outer-paddingVertical-use {
+      padding-top: 2.5em;
+      padding-bottom: 2.5em; } }
+  @media (min-width: 992px) {
+    .vk_outer-paddingVertical-use {
+      padding-top: 3em;
+      padding-bottom: 3em; } }
+  @media (min-width: 1200px) {
+    .vk_outer-paddingVertical-use {
+      padding-top: 3.5em;
+      padding-bottom: 3.5em; } }
+
+.vk_outer-bgPosition-fixed {
+  background-attachment: fixed !important;
+  background-size: cover !important; }
+
+.vk_outer-bgPosition-normal {
+  background-attachment: unset !important;
+  background-size: cover !important; }
+
+.vk_outer_separator svg {
+  display: block;
+  max-height: 100px;
+  position: absolute;
+  left: 0;
+  width: 100%; }
+
+.vk_outer_separator-position-upper svg {
+  top: 0;
+  transform: rotate(180deg); }
+
+.vk_outer_separator-position-lower svg {
+  bottom: 0; }
+
+.vk_outer .editor-block-list__block {
+  margin: 0; }
+
+/*# sourceMappingURL=style.css.map */

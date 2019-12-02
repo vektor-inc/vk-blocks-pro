@@ -16,10 +16,9 @@ require_once( 'inc/vk-blocks-config.php' );
 
 add_action(
 	'plugins_loaded', function () {
-		// Load language files.
-		// load_plugin_textdomain( 'vk-blocks', false, basename( dirname( __FILE__ ) ) . '/inc/vk-blocks/build/languages' );
-		load_plugin_textdomain( 'vk-blocks', false, 'vk-blocks/inc/vk-blocks/build/languages' );
-	}
+	// Load language files.
+	load_plugin_textdomain( 'vk-blocks', false, 'vk-blocks/inc/vk-blocks/build/languages' );
+}
 );
 
 function vkblocks_deactivate_plugin( $plugin_path ) {
@@ -40,10 +39,19 @@ function vkblocks_deactivate_plugin( $plugin_path ) {
 add_action( 'init', 'vkblocks_deactive_plugins' );
 function vkblocks_deactive_plugins() {
 
-	// Deactive Plugin VK Blocks
-	$plugin_path = 'vk-blocks/vk-blocks.php';
-	if ( function_exists( 'vkblocks_deactivate_plugin' ) ) {
-		vkblocks_deactivate_plugin( $plugin_path );
+	$plugin_base_dir = dirname( __FILE__ );
+
+	if ( strpos( $plugin_base_dir, 'vk-blocks-pro' ) === false ) {
+		// Deactive Plugin VK Blocks Pro
+		if ( function_exists( 'vkblocks_deactivate_plugin' ) ) {
+			vkblocks_deactivate_plugin( 'vk-blocks-pro/vk-blocks.php' );
+		}
+
+	}elseif (strpos( $plugin_base_dir, 'vk-blocks' ) === false){
+		// Deactive Plugin VK Blocks
+		if ( function_exists( 'vkblocks_deactivate_plugin' ) ) {
+			vkblocks_deactivate_plugin( 'vk-blocks/vk-blocks.php' );
+		}
 	}
 
 	// Deactive ExUnit included VK Blocks
@@ -57,13 +65,16 @@ function vkblocks_deactive_plugins() {
 /*-------------------------------------------*/
 /*	Load updater
 /*-------------------------------------------*/
-$updater_url = dirname( __FILE__ ) . '/inc/plugin-update-checker/plugin-update-checker.php';
-if ( file_exists( $updater_url ) ) {
+$plugin_base_dir = dirname( __FILE__ );
+if ( strpos( $plugin_base_dir, 'vk-blocks-pro' ) !== false ) {
 
-	require dirname( __FILE__ ) . '/inc/plugin-update-checker/plugin-update-checker.php';
-	$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-		'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=vk-blocks-pro',
-		__FILE__,
-		'vk-blocks-pro'
-	);
+	$updater_url = dirname( __FILE__ ) . '/inc/plugin-update-checker/plugin-update-checker.php';
+	if ( file_exists( $updater_url ) ) {
+		require dirname( __FILE__ ) . '/inc/plugin-update-checker/plugin-update-checker.php';
+		$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+			'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=vk-blocks-pro',
+			__FILE__,
+			'vk-blocks-pro'
+		);
+	}
 }

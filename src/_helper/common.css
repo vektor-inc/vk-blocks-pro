@@ -1,17 +1,4 @@
 @charset "UTF-8";
-@media (min-width: 600px) {
-  .wp-block-columns {
-    margin-left: -15px;
-    margin-right: -15px; }
-
-  .wp-block-column {
-    flex-basis: auto;
-    margin-left: 15px;
-    margin-right: 15px;
-    width: calc( 50% - 30px ); }
-    .wp-block-column:not(:first-child), .wp-block-column:not(:last-child), .wp-block-column:nth-child(odd) {
-      margin-left: 15px;
-      margin-right: 15px; } }
 /*-------------------------------------------*/
 /* リストデザイン
 /*-------------------------------------------*/

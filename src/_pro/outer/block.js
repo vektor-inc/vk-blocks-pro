@@ -6,7 +6,7 @@ import React from "react";
 import {Component} from "./component";
 import {schema} from './schema';
 import {deprecated} from './deprecated/block';
-import toNumber from "../_helper/to-number";
+import toNumber from "../../_helper/to-number";
 
 const {__} = wp.i18n; // Import __() from wp.i18n
 const {registerBlockType} = wp.blocks; // Import registerBlockType() from wp.blocks

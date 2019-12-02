@@ -1,42 +1,31 @@
 @charset "UTF-8";
 .vk_button {
-  margin: 5px 0;
-}
-.vk_button-color-custom a:hover {
-  opacity: 0.8;
-  box-shadow: 0 0 0 0.2rem rgba(171, 184, 195, 0.25);
-}
-.vk_button-align-left {
-  text-align: left;
-}
-.vk_button-align-center {
-  text-align: center;
-}
-.vk_button-align-right {
-  text-align: right;
-}
-.vk_button-align-block {
-  display: block;
-}
-.vk_button_link.btn {
-  padding-top: 0.7em;
-  padding-bottom: 0.6em;
-}
-.vk_button_link_before {
-  margin-right: 0.7rem;
-}
-.vk_button_link_after {
-  margin-left: 0.7rem;
-}
-.vk_button_link_subCaption {
-  display: block;
-  overflow: hidden;
-  margin: 0;
-  font-size: 80%;
-}
-.vk_button .editor-rich-text {
-  display: inline-block;
-}
+  margin: 5px 0; }
+  .vk_button-color-custom a:hover {
+    opacity: 0.8;
+    box-shadow: 0 0 0 0.2rem rgba(171, 184, 195, 0.25); }
+  .vk_button-align-left {
+    text-align: left; }
+  .vk_button-align-center {
+    text-align: center; }
+  .vk_button-align-right {
+    text-align: right; }
+  .vk_button-align-block {
+    display: block; }
+  .vk_button_link.btn {
+    padding-top: .7em;
+    padding-bottom: .6em; }
+  .vk_button_link_before {
+    margin-right: 0.7rem; }
+  .vk_button_link_after {
+    margin-left: 0.7rem; }
+  .vk_button_link_subCaption {
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    font-size: 80%; }
+  .vk_button .editor-rich-text {
+    display: inline-block; }
 
 /*-------------------------------------------*/
 /*	Lightnig がまだ Bootstrap4 でないため手動で追加したクラス
@@ -44,148 +33,123 @@
 /*-------------------------------------------*/
 /* .btn がないと標準のBS4の指定に負ける */
 .btn.btn-primary {
-  color: #fff;
-}
+  color: #fff; }
 
 .btn.btn-secondary {
   color: #fff;
-  background-color: #6c757d;
-}
+  background-color: #6c757d; }
 
 .btn.btn-success {
-  color: #fff;
-}
+  color: #fff; }
 
 .btn.btn-info {
-  color: #fff;
-}
+  color: #fff; }
 
 .btn.btn-warning {
-  color: #fff;
-}
+  color: #fff; }
 
 .btn.btn-danger {
-  color: #fff;
-}
+  color: #fff; }
 
 .btn.btn-light {
   color: #fff;
-  background-color: #f8f9fa;
-}
+  background-color: #f8f9fa; }
 
 .btn.btn-dark {
   color: #fff;
-  background-color: #343a40;
-}
+  background-color: #343a40; }
 
 .btn.btn-secondary:hover,
 .btn.btn-dark:hover {
-  color: #fff;
-}
+  color: #fff; }
 
 /* .btn がないと標準のBS4の指定に負ける */
 .btn.btn-outline-primary {
   color: #007bff;
   border: 1px solid #007bff;
   background: none;
-  box-shadow: none;
-}
+  box-shadow: none; }
 
 .btn.btn-outline-secondary {
   color: #6c757d;
   border: 1px solid #6c757d;
   background: none;
-  box-shadow: none;
-}
+  box-shadow: none; }
 
 .btn.btn-outline-success {
   color: #28a745;
   border: 1px solid #28a745;
   background: none;
-  box-shadow: none;
-}
+  box-shadow: none; }
 
 .btn.btn-outline-info {
   color: #17a2b8;
   border: 1px solid #17a2b8;
   background: none;
-  box-shadow: none;
-}
+  box-shadow: none; }
 
 .btn.btn-outline-warning {
   color: #ffc107;
   border: 1px solid #ffc107;
   background: none;
-  box-shadow: none;
-}
+  box-shadow: none; }
 
 .btn.btn-outline-danger {
   color: #dc3545;
   border: 1px solid #dc3545;
   background: none;
-  box-shadow: none;
-}
+  box-shadow: none; }
 
 .btn.btn-outline-light {
   color: #f8f9fa;
   border: 1px solid #f8f9fa;
   background: none;
-  box-shadow: none;
-}
+  box-shadow: none; }
 
 .btn.btn-outline-dark {
   color: #343a40;
   border: 1px solid #343a40;
   background: none;
-  box-shadow: none;
-}
+  box-shadow: none; }
 
 .btn.btn-outline-primary:hover,
 .btn.btn-outline-primary:focus {
   background: #007bff;
-  color: #fff;
-}
+  color: #fff; }
 
 .btn.btn-outline-secondary:hover,
 .btn.btn-outline-secondary:focus {
   background: #6c757d;
-  color: #fff;
-}
+  color: #fff; }
 
 .btn.btn-outline-success:hover,
 .btn.btn-outline-success:focus {
   background: #28a745;
-  color: #fff;
-}
+  color: #fff; }
 
 .btn.btn-outline-info:hover,
 .btn.btn-outline-info:focus {
   background: #17a2b8;
-  color: #fff;
-}
+  color: #fff; }
 
 .btn.btn-outline-warning:hover,
 .btn.btn-outline-warning:focus {
   background: #ffc107;
-  color: #fff;
-}
+  color: #fff; }
 
 .btn.btn-outline-danger:hover,
 .btn.btn-outline-danger:focus {
   background: #dc3545;
-  color: #fff;
-}
+  color: #fff; }
 
 .btn.btn-outline-light:hover,
 .btn.btn-outline-light:focus {
   background: #f8f9fa;
-  color: #fff;
-}
+  color: #fff; }
 
 .btn.btn-outline-dark:hover,
 .btn.btn-outline-dark:focus {
   background: #343a40;
-  color: #fff;
-}
+  color: #fff; }
 
 /*# sourceMappingURL=style.css.map */

@@ -19,7 +19,7 @@ pipelines:
             - git clone git@github.com:vektor-inc/vk-blocks.git
             - mv vk-blocks/ vk-blocks-git/
             # 指定したファイルを除外して、Pro版をコピー&上書き
-            - rsync --exclude '_pro/' --exclude 'vk-blocks-git/' --exclude '.node-version' --exclude 'bin/' --exclude '.git/' --exclude '.gitignore' --exclude '.circleci/' --exclude 'tests/' --exclude '.phpcs.xml.dist' --exclude 'bitbucket-pipelines.yml' --exclude 'package-lock.json' --exclude 'phpunit.xml' --exclude 'phpunit.xml.dist' --exclude 'inc/plugin-update-checker/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.scss' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvc ./* ./vk-blocks-git/
+            - rsync --exclude 'vk-blocks-git/' --exclude '.node-version' --exclude 'bin/' --exclude '.git/' --exclude '.gitignore' --exclude '.circleci/' --exclude 'tests/' --exclude '.phpcs.xml.dist' --exclude 'bitbucket-pipelines.yml' --exclude 'package-lock.json' --exclude 'phpunit.xml' --exclude 'phpunit.xml.dist' --exclude 'inc/plugin-update-checker/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.scss' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvc ./* ./vk-blocks-git/
             - mv vk-blocks-git/ vk-blocks/
             - cd ./vk-blocks/
             # push先のブランチを切る
@@ -34,15 +34,14 @@ pipelines:
             - sed -i /_pro/d src/bundle.js
             # プラグイン名を通常版へリネーム
             - sed -i 3s/Pro// vk-blocks.php
-            - ls
-            - cd src/
-            - ls
             # Pro版のブロックslugを配列に追加
             - pro_block_array=($(ls src/_pro/))
             #
             - for pro_block in ${pro_block_array[@]}; do
             - echo ${eachValue}
             - done
+            # Pro版のブロックを削除
+            - git rm -rf src/_pro/
             # ***
             # Pro版ブロックを追加する時は、下のコードをコピペし新しいブロック名で置き換えて下さい!
             # ***

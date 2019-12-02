@@ -32,7 +32,6 @@ pipelines:
             - sed -i /_pro/d src/bundle.js
             # プラグイン名を通常版へリネーム
             - sed -i /Pro/d vk-blocks.php
-            - cat src/bundle.js
             # ***
             # Pro版ブロックを追加する時は、下のコードをコピペし新しいブロック名で置き換えて下さい!
             # ***
@@ -43,8 +42,6 @@ pipelines:
             - sed -i -e "s/, 'table-of-contents'//g" inc/vk-blocks/vk-blocks-functions.php
             - sed -i -e "s/, 'timeline'//g" inc/vk-blocks/vk-blocks-functions.php
             - sed -i -e "s/, 'timeline-item'//g" inc/vk-blocks/vk-blocks-functions.php
-            - cd inc/vk-blocks/
-            - ls
             # 以下はadd/exampleブランチにpushするための処理
             - git add .
             - git status

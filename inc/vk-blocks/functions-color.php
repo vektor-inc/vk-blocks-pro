@@ -1,16 +1,16 @@
 <?php
 /* 色の出力 */
 /*-------------------------------------------*/
-/*	
+/*
 /*-------------------------------------------*/
 
 function lightning_print_css_vk_heading_style() {
 
-	$dynamic_css = "";
+	$dynamic_css = '';
 
 	$options = get_option( 'lightning_theme_options' );
 	if ( isset( $options['color_key'] ) && isset( $options['color_key_dark'] ) ) {
-		$color_key      = esc_html( $options['color_key'] );
+		$color_key = esc_html( $options['color_key'] );
 
 		$dynamic_css .= '
 		.mainSection .entry-body h1.is-style-vk-heading-plain,
@@ -90,7 +90,7 @@ function lightning_print_css_vk_heading_style() {
 		.mainSection .entry-body h4.is-style-vk-heading-speech_balloon_fill::after,
 		.mainSection .entry-body h5.is-style-vk-heading-speech_balloon_fill::after,
 		.mainSection .entry-body h6.is-style-vk-heading-speech_balloon_fill::after{content:none;}
-		
+
 		.mainSection .entry-body h1.is-style-vk-heading-background_fill,
 		.mainSection .entry-body h2.is-style-vk-heading-background_fill,
 		.mainSection .entry-body h3.is-style-vk-heading-background_fill,
@@ -159,7 +159,7 @@ function lightning_print_css_vk_heading_style() {
 		.mainSection .entry-body h2.is-style-vk-heading-background_fill_lightgray,
 		.mainSection .entry-body h3.is-style-vk-heading-background_fill_lightgray,
 		.mainSection .entry-body h4.is-style-vk-heading-background_fill_lightgray,
-		.mainSection .entry-body h5.is-style-vk-heading-background_fill_lightgray,						
+		.mainSection .entry-body h5.is-style-vk-heading-background_fill_lightgray,
 		.mainSection .entry-body h6.is-style-vk-heading-background_fill_lightgray{
 			color: #333;
 			position: relative;
@@ -172,7 +172,7 @@ function lightning_print_css_vk_heading_style() {
 			border-radius: 4px;
 			outline: unset;
 			outline-offset: unset;
-			box-shadow: unset;	
+			box-shadow: unset;
 		}
 		.mainSection .entry-body h1.is-style-vk-heading-background_fill_lightgray::before,
 		.mainSection .entry-body h2.is-style-vk-heading-background_fill_lightgray::before,
@@ -207,7 +207,7 @@ function lightning_print_css_vk_heading_style() {
 			border-radius: unset;
 			outline: unset;
 			outline-offset: unset;
-			box-shadow: unset;		
+			box-shadow: unset;
 		}
 		.mainSection .entry-body h1.is-style-vk-heading-topborder_background_fill_none::before,
 		.mainSection .entry-body h2.is-style-vk-heading-topborder_background_fill_none::before,
@@ -242,7 +242,7 @@ function lightning_print_css_vk_heading_style() {
 			border-radius: unset;
 			outline: unset;
 			outline-offset: unset;
-			box-shadow: unset;			
+			box-shadow: unset;
 		}
 		.mainSection .entry-body h1.is-style-vk-heading-topborder_background_fill_black::before,
 		.mainSection .entry-body h2.is-style-vk-heading-topborder_background_fill_black::before,
@@ -276,7 +276,7 @@ function lightning_print_css_vk_heading_style() {
 			background-color:transparent;
 			outline: unset;
 			outline-offset: unset;
-			box-shadow: unset;			
+			box-shadow: unset;
 		}
 		.mainSection .entry-body h1.is-style-vk-heading-double::before,
 		.mainSection .entry-body h2.is-style-vk-heading-double::before,
@@ -310,7 +310,7 @@ function lightning_print_css_vk_heading_style() {
 			background-color:transparent;
 			outline: unset;
 			outline-offset: unset;
-			box-shadow: unset;					
+			box-shadow: unset;
 		}
 		.mainSection .entry-body h1.is-style-vk-heading-double_black::before,
 		.mainSection .entry-body h2.is-style-vk-heading-double_black::before,
@@ -343,7 +343,7 @@ function lightning_print_css_vk_heading_style() {
 			background-color:transparent;
 			outline: unset;
 			outline-offset: unset;
-			box-shadow: unset;					
+			box-shadow: unset;
 		}
 		.mainSection .entry-body h1.is-style-vk-heading-double_bottomborder::before,
 		.mainSection .entry-body h2.is-style-vk-heading-double_bottomborder::before,
@@ -376,7 +376,7 @@ function lightning_print_css_vk_heading_style() {
 			background-color:transparent;
 			outline: unset;
 			outline-offset: unset;
-			box-shadow: unset;		
+			box-shadow: unset;
 		}
 		.mainSection .entry-body h1.is-style-vk-heading-double_bottomborder_black::before,
 		.mainSection .entry-body h2.is-style-vk-heading-double_bottomborder_black::before,
@@ -410,7 +410,7 @@ function lightning_print_css_vk_heading_style() {
 			background-color:transparent;
 			outline: unset;
 			outline-offset: unset;
-			box-shadow: unset;		
+			box-shadow: unset;
 		}
 		.mainSection .entry-body h1.is-style-vk-heading-solid::before,
 		.mainSection .entry-body h2.is-style-vk-heading-solid::before,
@@ -444,7 +444,7 @@ function lightning_print_css_vk_heading_style() {
 			background-color:transparent;
 			outline: unset;
 			outline-offset: unset;
-			box-shadow: unset;		
+			box-shadow: unset;
 		}
 		.mainSection .entry-body h1.is-style-vk-heading-solid_black::before,
 		.mainSection .entry-body h2.is-style-vk-heading-solid_black::before,
@@ -478,7 +478,7 @@ function lightning_print_css_vk_heading_style() {
 			background-color:transparent;
 			outline: unset;
 			outline-offset: unset;
-			box-shadow: unset;		
+			box-shadow: unset;
 		}
 		.mainSection .entry-body h1.is-style-vk-heading-solid_bottomborder::before,
 		.mainSection .entry-body h2.is-style-vk-heading-solid_bottomborder::before,
@@ -597,7 +597,7 @@ function lightning_print_css_vk_heading_style() {
 			outline: unset;
 			outline-offset: unset;
 			border-radius: unset;
-			box-shadow: unset;	
+			box-shadow: unset;
 		}
 		.mainSection .entry-body h1.is-style-vk-heading-dotted_bottomborder_black::before,
 		.mainSection .entry-body h2.is-style-vk-heading-dotted_bottomborder_black::before,
@@ -662,7 +662,7 @@ function lightning_print_css_vk_heading_style() {
 			bottom: unset;
 			position: unset;
 			width: unset;
-			border-top: none;		
+			border-top: none;
 		}
 
 		.mainSection .entry-body h1.is-style-vk-heading-leftborder,
@@ -718,7 +718,7 @@ function lightning_print_css_vk_heading_style() {
 			outline: unset;
 			outline-offset: unset;
 			border-radius: unset;
-			box-shadow: unset;	
+			box-shadow: unset;
 		}
 		.mainSection .entry-body h1.is-style-vk-heading-leftborder_nobackground::before,
 		.mainSection .entry-body h2.is-style-vk-heading-leftborder_nobackground::before,
@@ -731,7 +731,7 @@ function lightning_print_css_vk_heading_style() {
 		.mainSection .entry-body h3.is-style-vk-heading-leftborder_nobackground::after,
 		.mainSection .entry-body h4.is-style-vk-heading-leftborder_nobackground::after,
 		.mainSection .entry-body h5.is-style-vk-heading-leftborder_nobackground::after,
-		.mainSection .entry-body h6.is-style-vk-heading-leftborder_nobackground::after{content:none;}	
+		.mainSection .entry-body h6.is-style-vk-heading-leftborder_nobackground::after{content:none;}
 
 		.mainSection .entry-body h1.is-style-vk-heading-diagonal_stripe_bottomborder,
 		.mainSection .entry-body h2.is-style-vk-heading-diagonal_stripe_bottomborder,
@@ -778,7 +778,7 @@ function lightning_print_css_vk_heading_style() {
 			);
 			background-size: 5px 5px;
 			margin-left: 0;
-		}		
+		}
 
 		.mainSection .entry-body h1.is-style-vk-heading-brackets,
 		.mainSection .entry-body h2.is-style-vk-heading-brackets,
@@ -799,7 +799,7 @@ function lightning_print_css_vk_heading_style() {
 			outline: unset;
 			outline-offset: unset;
 			border-radius: unset;
-			box-shadow: unset;	
+			box-shadow: unset;
 		}
 		.mainSection .entry-body h1.is-style-vk-heading-brackets::before,
 		.mainSection .entry-body h2.is-style-vk-heading-brackets::before,
@@ -858,7 +858,7 @@ function lightning_print_css_vk_heading_style() {
 			outline: unset;
 			outline-offset: unset;
 			border-radius: unset;
-			box-shadow: unset;				
+			box-shadow: unset;
 		}
 		.mainSection .entry-body h1.is-style-vk-heading-brackets_black::before,
 		.mainSection .entry-body h2.is-style-vk-heading-brackets_black::before,
@@ -896,7 +896,7 @@ function lightning_print_css_vk_heading_style() {
 			border-right: solid 1px #333;
 			right: 0;
 			left: auto;
-		}	
+		}
 
 		.mainSection .entry-body h1.is-style-vk-heading-small_bottomborder,
 		.mainSection .entry-body h2.is-style-vk-heading-small_bottomborder,
@@ -949,7 +949,7 @@ function lightning_print_css_vk_heading_style() {
 		$dynamic_css = preg_replace( '/[\n\r\t]/', '', $dynamic_css );
 		// Change multiple spaces to single space
 		$dynamic_css = preg_replace( '/\s(?=\s)/', '', $dynamic_css );
-		wp_add_inline_style( 'lightning-design-style', $dynamic_css );		
+		wp_add_inline_style( 'lightning-design-style', $dynamic_css );
 	} // if ( isset($options['color_key'] && isset($options['color_key_dark'] ) {
 }
 

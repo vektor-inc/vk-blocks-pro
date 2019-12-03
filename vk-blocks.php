@@ -44,7 +44,7 @@ if ( function_exists( 'vkblocks_deactivate_plugin' ) ) {
 }
 
 /*-------------------------------------------*/
-/*	Deactive VK Blocks
+/*	Deactive VK Blocks ( Free )
 /*-------------------------------------------*/
 add_action( 'init', 'vkblocks_deactive_free_version' );
 function vkblocks_deactive_free_version() {
@@ -52,7 +52,7 @@ function vkblocks_deactive_free_version() {
 	$plugin_base_dir = dirname( __FILE__ );
 
 	// When this file loaded from Pro version
-	if ( strpos( $plugin_base_dir, 'vk-blocks-pro' ) === true ) {
+	if ( strpos( $plugin_base_dir, 'vk-blocks-pro' ) !== false ) {
 
 		// Deactive Plugin VK Blocks ( free )
 		if ( function_exists( 'vkblocks_deactivate_plugin' ) ) {

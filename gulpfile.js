@@ -71,7 +71,7 @@ gulp.task('js', function () {
 });
 
 gulp.task('copy_front_js', function () {
-	return gulp.src([ './src/table-of-contents/viewHelper.js'])
+	return gulp.src([ './src/_pro/table-of-contents/viewHelper.js'])
 		.pipe(jsmin())
 		.pipe( gulp.dest( './inc/vk-blocks/build/' ) );
 });

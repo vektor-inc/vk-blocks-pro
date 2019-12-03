@@ -273,12 +273,11 @@ ul, ol{
 	}
 
 	/* *:last-child で指定するとブロックエディタでカラムの中にいれた時に枠の外にはみ出す */
-	p,ul,ol,dl,table{
+	p,ul,ol,dl,table,.wp-block-columns{
 		&:last-child{
 			margin-bottom: 0;
 		}
 	}
-
 
 	@each $colorClass, $color in $colorPalette {
 		&.#{$colorClass} {

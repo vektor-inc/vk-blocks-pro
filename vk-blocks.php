@@ -44,31 +44,29 @@ if ( function_exists( 'vkblocks_deactivate_plugin' ) ) {
 }
 
 /*-------------------------------------------*/
-/*	Deactive VK Blocks (Free)
+/*	Deactive VK Blocks
 /*-------------------------------------------*/
-add_action( 'init', 'vkblocks_deactive_plugins' );
-function vkblocks_deactive_plugins() {
+add_action( 'init', 'vkblocks_deactive_free_version' );
+function vkblocks_deactive_free_version() {
 
 	$plugin_base_dir = dirname( __FILE__ );
 
-	if ( strpos( $plugin_base_dir, 'vk-blocks-pro' ) === false ) {
-		// Deactive Plugin VK Blocks Pro
-		if ( function_exists( 'vkblocks_deactivate_plugin' ) ) {
-			vkblocks_deactivate_plugin( 'vk-blocks-pro/vk-blocks.php' );
-		}
-	} elseif ( strpos( $plugin_base_dir, 'vk-blocks' ) === false ) {
-		// Deactive Plugin VK Blocks
+	// When this file loaded from Pro version
+	if ( strpos( $plugin_base_dir, 'vk-blocks-pro' ) === true ) {
+
+		// Deactive Plugin VK Blocks ( free )
 		if ( function_exists( 'vkblocks_deactivate_plugin' ) ) {
 			vkblocks_deactivate_plugin( 'vk-blocks/vk-blocks.php' );
 		}
+
+		// Deactive ExUnit included VK Blocks
+		$options = get_option( 'vkExUnit_common_options' );
+		if ( ! empty( $options['active_vk-blocks'] ) ) {
+			$options['active_vk-blocks'] = false;
+			update_option( 'vkExUnit_common_options', $options );
+		}
 	}
 
-	// Deactive ExUnit included VK Blocks
-	$options = get_option( 'vkExUnit_common_options' );
-	if ( ! empty( $options['active_vk-blocks'] ) ) {
-		$options['active_vk-blocks'] = false;
-		update_option( 'vkExUnit_common_options', $options );
-	}
 }
 
 /*-------------------------------------------*/

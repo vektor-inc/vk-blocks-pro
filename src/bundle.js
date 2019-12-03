@@ -14,6 +14,7 @@ import './pr-blocks/block.js';
 import './pr-content/block.js';
 import './heading-style/block.js';
 import './image/block.js';
+import './_pro/child-page/block.js';
 import './_pro/post-list/block.js';
 import './_pro/outer/block.js';
 import './_pro/table-of-contents/block.js';

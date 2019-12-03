@@ -272,9 +272,13 @@ ul, ol{
 		margin-top:0;
 	}
 
-	*:last-child{
-		margin-bottom: 0;
+	/* *:last-child で指定するとブロックエディタでカラムの中にいれた時に枠の外にはみ出す */
+	p,ul,ol,dl,table{
+		&:last-child{
+			margin-bottom: 0;
+		}
 	}
+
 
 	@each $colorClass, $color in $colorPalette {
 		&.#{$colorClass} {

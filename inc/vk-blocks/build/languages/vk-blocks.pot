@@ -171,7 +171,6 @@ msgstr ""
 #: src/_pro/step-item/block.js:97
 #: src/_pro/timeline-item/block.js:84
 #: src/group-style/block.js:103
-#: src/heading-style/block.js:96
 #: src/pr-content/block.js:142
 msgid "Solid"
 msgstr ""
@@ -188,7 +187,6 @@ msgstr ""
 
 #: src/_pro/outer/block.js:296
 #: src/group-style/block.js:115
-#: src/heading-style/block.js:80
 msgid "Double"
 msgstr ""
 
@@ -669,51 +667,23 @@ msgid "Border Color"
 msgstr ""
 
 #: src/heading-style/block.js:100
-msgid "Solid_black"
-msgstr ""
-
-#: src/heading-style/block.js:104
-msgid "Solid_bottomborder"
+msgid "Solid border top and bottom black"
 msgstr ""
 
 #: src/heading-style/block.js:108
-msgid "Solid_bottomborder_black"
-msgstr ""
-
-#: src/heading-style/block.js:112
-msgid "Solid_bottomborder_leftkeycolor"
+msgid "Solid border bottom black"
 msgstr ""
 
 #: src/heading-style/block.js:116
-msgid "Dotted_bottomborder_black"
+msgid "Dotted border bottom black"
 msgstr ""
 
 #: src/heading-style/block.js:120
-msgid "Both_ends"
-msgstr ""
-
-#: src/heading-style/block.js:124
-msgid "Leftborder"
-msgstr ""
-
-#: src/heading-style/block.js:128
-msgid "Leftborder_nobackground"
-msgstr ""
-
-#: src/heading-style/block.js:132
-msgid "Diagonal_stripe_bottomborder"
-msgstr ""
-
-#: src/heading-style/block.js:136
-msgid "Brackets"
+msgid "Both ends"
 msgstr ""
 
 #: src/heading-style/block.js:140
-msgid "Brackets_black"
-msgstr ""
-
-#: src/heading-style/block.js:144
-msgid "Small_bottomborder"
+msgid "Brackets black"
 msgstr ""
 
 #: src/heading-style/block.js:52
@@ -721,40 +691,16 @@ msgstr ""
 msgid "Plain"
 msgstr ""
 
-#: src/heading-style/block.js:56
-msgid "Speech_balloon_fill"
-msgstr ""
-
-#: src/heading-style/block.js:60
-msgid "Background_fill"
-msgstr ""
-
-#: src/heading-style/block.js:64
-msgid "Background_fill_stitch"
-msgstr ""
-
 #: src/heading-style/block.js:68
-msgid "Background_fill_lightgray"
-msgstr ""
-
-#: src/heading-style/block.js:72
-msgid "Topborder_background_fill_none"
-msgstr ""
-
-#: src/heading-style/block.js:76
-msgid "Topborder_background_fill_black"
+msgid "Background fill lightgray"
 msgstr ""
 
 #: src/heading-style/block.js:84
-msgid "Double_black"
-msgstr ""
-
-#: src/heading-style/block.js:88
-msgid "Double_bottomborder"
+msgid "Double border top and bottom black"
 msgstr ""
 
 #: src/heading-style/block.js:92
-msgid "Double_bottomborder_black"
+msgid "Double border bottom black"
 msgstr ""
 
 #: src/heading/block.js:118

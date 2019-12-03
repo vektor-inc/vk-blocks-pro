@@ -81,7 +81,7 @@ wp.blocks.registerBlockStyle( 'core/heading',
 		// },
 		{
 			name: 'vk-heading-double_black',
-			label: __('Double black', 'vk-blocks')
+			label: __('Double border top and bottom black', 'vk-blocks')
 		},
 		// {
 		// 	name: 'vk-heading-double_bottomborder',
@@ -89,7 +89,7 @@ wp.blocks.registerBlockStyle( 'core/heading',
 		// },
 		{
 			name: 'vk-heading-double_bottomborder_black',
-			label: __('Double border-bottom black', 'vk-blocks')
+			label: __('Double border bottom black', 'vk-blocks')
 		},
 		// {
 		// 	name: 'vk-heading-solid',
@@ -97,7 +97,7 @@ wp.blocks.registerBlockStyle( 'core/heading',
 		// },
 		{
 			name: 'vk-heading-solid_black',
-			label: __('Solid black', 'vk-blocks')
+			label: __('Solid border top and bottom black', 'vk-blocks')
 		},
 		// {
 		// 	name: 'vk-heading-solid_bottomborder',
@@ -105,7 +105,7 @@ wp.blocks.registerBlockStyle( 'core/heading',
 		// },
 		{
 			name: 'vk-heading-solid_bottomborder_black',
-			label: __('Solid border-bottom black', 'vk-blocks')
+			label: __('Solid border bottom black', 'vk-blocks')
 		},
 		// {
 		// 	name: 'vk-heading-solid_bottomborder_leftkeycolor',
@@ -113,7 +113,7 @@ wp.blocks.registerBlockStyle( 'core/heading',
 		// },
 		{
 			name: 'vk-heading-dotted_bottomborder_black',
-			label: __('Dotted border-bottom black', 'vk-blocks')
+			label: __('Dotted border bottom black', 'vk-blocks')
 		},
 		{
 			name: 'vk-heading-both_ends',

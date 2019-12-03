@@ -1,0 +1,574 @@
+//管理画面側の見出しブロックのスタイルのcssになります。
+//cssを修正する場合はfunctions-color.phpのdynamic_css部分とこちらのscssを修正してください。
+
+$color_key:#337ab7;
+
+.editor-styles-wrapper{
+	h3.is-style-vk-heading:after{border-bottom:none !important;}
+	.is-style-vk-heading{
+		&-plain {
+			background-color:unset;
+			position: relative;
+			border:none;
+			padding:unset;
+			margin-left: unset;
+			margin-right: unset;
+			border-radius:unset;
+			outline: unset;
+			outline-offset: unset;
+			box-shadow: unset;
+			&::before,&::after{
+				content:none;				
+			}
+		}
+		&-speech_balloon_fill{
+			background-color: $color_key;
+			position: relative;
+			border:none;
+			padding: 0.6em 0.8em 0.5em;
+			margin-left: unset;
+			margin-right: unset;
+			margin-bottom:1.2em;
+			color:#fff;
+			border-radius:4px;
+			text-align:left;
+			outline: unset;
+			outline-offset: unset;
+			box-shadow: unset;
+			overflow: unset;
+			&::before{
+				content: "";
+				position: absolute;
+				top: auto;
+				left: 40px;
+				bottom: -20px;
+				width: auto;
+				margin-left: -10px;
+				border: 10px solid transparent;
+				border-top: 10px solid $color_key;
+				z-index: 2;
+				height: auto;
+				background-color: transparent !important;
+			}
+			&::after{content:none;}
+		}
+		&-background_fill{
+			background-color: $color_key;
+			position: relative;
+			border:none;
+			padding: 0.6em 0.7em 0.5em;
+			margin-bottom:1.2em;
+			margin-left: unset;
+			margin-right: unset;
+			color:#fff;
+			border-radius:4px;
+			outline: unset;
+			outline-offset: unset;
+			&::before,&::after{
+				content:none;
+			}
+		}
+		&-background_fill_stitch{
+			background-color:$color_key;
+			position: relative;
+			padding: 0.6em 0.7em 0.5em;
+			margin-bottom:1.2em;
+			margin-left: unset;
+			margin-right: unset;
+			color:#fff;
+			border-radius:4px;
+			border:none;
+			outline: dashed 1px #fff;
+			outline-offset: -4px;
+			box-shadow: unset;
+			&::before,&::after{
+				content:none;
+			}
+		}
+		&-background_fill_lightgray{
+			color: #333;
+			position: relative;
+			border:none;
+			background-color: #efefef;
+			padding: 0.6em 0.7em 0.5em;
+			margin-bottom:1.2em;
+			margin-left: unset;
+			margin-right: unset;
+			border-radius: 4px;
+			outline: unset;
+			outline-offset: unset;
+			box-shadow: unset;
+			&::before,&::after{
+				content:none;
+			}		
+		}
+		&-topborder_background_fill_none{
+			color: #333;
+			position: relative;
+			background-color: unset;
+			padding: 0.6em 0 0.5em;
+			margin-bottom:1.2em;
+			margin-left: unset;
+			margin-right: unset;
+			border-top: 2px solid $color_key;
+			border-bottom: 1px solid #ccc;
+			border-left: unset;
+			border-right: unset;
+			border-radius: unset;
+			outline: unset;
+			outline-offset: unset;
+			box-shadow: unset;
+			&::before,&::after{
+				content:none;
+			}			
+		}
+		&-topborder_background_fill_black{
+			position: relative;
+			background-color: #191919;
+			padding: 0.6em 0.7em 0.5em;
+			margin-bottom:1.2em;
+			margin-left: unset;
+			margin-right: unset;
+			color: #fff;
+			border-top: 2px solid $color_key;
+			border-bottom: 1px solid #999;
+			border-left: unset;
+			border-right: unset;
+			border-radius: unset;
+			outline: unset;
+			outline-offset: unset;
+			box-shadow: unset;
+			&::before,&::after{
+				content:none;
+			}			
+		}
+		&-double{
+			color: #333;
+			position: relative;
+			border:none;
+			padding: 0.6em 0 0.5em;
+			margin-bottom:1.2em;
+			margin-left: unset;
+			margin-right: unset;
+			border-top: double 3px $color_key;
+			border-bottom: double 3px $color_key;
+			border-radius: unset;
+			background-color:transparent;
+			outline: unset;
+			outline-offset: unset;
+			box-shadow: unset;
+			&::before,&::after{
+				content:none;
+			}			
+		}
+		&-double_black{
+			color:#333;
+			position: relative;
+			border:none;
+			padding: 0.6em 0 0.5em;
+			margin-bottom:1.2em;
+			margin-left: unset;
+			margin-right: unset;
+			border-top: double 3px #333;
+			border-bottom: double 3px #333;
+			border-radius: unset;
+			background-color:transparent;
+			outline: unset;
+			outline-offset: unset;
+			box-shadow: unset;
+			&::before,&::after{
+				content:none;
+			}					
+		}
+		&-double_bottomborder{
+			color:#333;
+			position: relative;
+			border:none;
+			padding: 0.6em 0 0.5em;
+			margin-bottom:1.2em;
+			margin-left: unset;
+			margin-right: unset;
+			border-bottom: double 3px $color_key;
+			border-radius: unset;
+			background-color:transparent;
+			outline: unset;
+			outline-offset: unset;
+			box-shadow: unset;
+			&::before,&::after{
+				content:none;
+			}					
+		}
+		&-double_bottomborder_black{
+			color:#333;
+			position: relative;
+			border:none;
+			padding: 0.6em 0 0.5em;
+			margin-bottom:1.2em;
+			margin-left: unset;
+			margin-right: unset;
+			border-bottom: double 3px #333;
+			border-radius: unset;
+			background-color:transparent;
+			outline: unset;
+			outline-offset: unset;
+			box-shadow: unset;
+			&::before,&::after{
+				content:none;
+			}		
+		}
+		&-solid{
+			color:#333;
+			position: relative;
+			border:none;
+			padding: 0.6em 0 0.5em;
+			margin-bottom:1.2em;
+			margin-left: unset;
+			margin-right: unset;
+			border-top: solid 1px $color_key;
+			border-bottom: solid 1px $color_key;
+			border-radius: unset;
+			background-color:transparent;
+			outline: unset;
+			outline-offset: unset;
+			box-shadow: unset;
+			&::before,&::after{
+				content:none;
+			}		
+		}
+		&-solid_black{
+			color:#333;
+			position: relative;
+			border:none;
+			padding: 0.6em 0 0.5em;
+			margin-bottom:1.2em;
+			margin-left: unset;
+			margin-right: unset;
+			border-top: solid 1px #333;
+			border-bottom: solid 1px #333;
+			border-radius: unset;
+			background-color:transparent;
+			outline: unset;
+			outline-offset: unset;
+			box-shadow: unset;
+			&::before,&::after{
+				content:none;
+			}		
+		}
+		&-solid_bottomborder{
+			color:#333;
+			position: relative;
+			border:none;
+			padding: 0.6em 0 0.5em;
+			margin-bottom:1.2em;
+			margin-left: unset;
+			margin-right: unset;
+			border-top: unset;
+			border-bottom: solid 1px $color_key;
+			border-radius: unset;
+			background-color:transparent;
+			outline: unset;
+			outline-offset: unset;
+			box-shadow: unset;
+			&::before,&::after{
+				content:none;
+			}		
+		}
+		&-solid_bottomborder_black{
+			color:#333;
+			position: relative;
+			border:none;
+			padding: 0.6em 0 0.5em;
+			margin-bottom:1.2em;
+			margin-left: unset;
+			margin-right: unset;
+			border-top: unset;
+			border-bottom: solid 1px #333;
+			border-radius: unset;
+			background-color:transparent;
+			outline: unset;
+			outline-offset: unset;
+			box-shadow: unset;
+			&::before,&::after{
+				content:none;
+			}		
+		}
+		&-solid_bottomborder_leftkeycolor{
+			color:#333;
+			position: relative;
+			padding: 0.6em 0 0.5em;
+			margin-bottom:1.2em;
+			margin-left: unset;
+			margin-right: unset;
+			border-top:none;
+			border-right:none;
+			border-left:none;
+			border-bottom: 1px solid #ccc;
+			background-color:transparent;
+			text-align:left;
+			outline: unset;
+			outline-offset: unset;
+			border-radius: unset;
+			box-shadow: unset;
+			overflow: unset;
+			&:before{ content:none; }
+			&:after{
+				content: ".";
+				line-height: 0;
+				display: block;
+				overflow: hidden;
+				position: absolute;
+				left:0;
+				bottom: -1px;
+				width: 30%;
+				border: unset;
+				border-top: none !important;
+				border-bottom: 1px solid $color_key;
+				margin-left: 0;
+			}
+		}
+		&-dotted_bottomborder_black{
+			color:#333;
+			position: relative;
+			padding: 0.6em 0 0.5em;
+			margin-bottom:1.2em;
+			margin-left: unset;
+			margin-right: unset;
+			border-top:none;
+			border-right:none;
+			border-left:none;
+			border-bottom: 1px dotted #111;
+			background-color:transparent;
+			outline: unset;
+			outline-offset: unset;
+			border-radius: unset;
+			box-shadow: unset;
+			&::before,&::after{
+				content:none;
+			}		
+		}
+		&-both_ends{
+			color:#333;
+			position: relative;
+			border:none;
+			display: flex;
+			align-items: center;
+			text-align: center;
+			margin-bottom:1.2em;
+			margin-left: unset;
+			margin-right: unset;
+			padding:0;
+			border-radius: unset;
+			background-color:transparent;
+			outline: unset;
+			outline-offset: unset;
+			box-shadow: unset;
+			&::before{
+				content: "";
+				flex-grow: 1;
+				border-bottom: 1px solid #333;
+				margin-right: 1em;
+				top: unset;
+				position: unset;
+				width: unset;
+				border-top: none;
+			}
+			&::after{
+				content: "";
+				flex-grow: 1;
+				border-bottom: 1px solid #333;
+				margin-left: 1em;
+				bottom: unset;
+				position: unset;
+				width: unset;
+				border-top: none;		
+			}
+		}
+		&-leftborder{
+			color:#333;
+			position: relative;
+			border:none;
+			padding: 0.6em 0.7em 0.5em;
+			margin-bottom:1.2em;
+			margin-left: unset;
+			margin-right: unset;
+			border-left:solid 2px $color_key;
+			background-color: #efefef;
+			text-align:left;
+			outline: unset;
+			outline-offset: unset;
+			border-radius: unset;
+			box-shadow: unset;
+			&::before,&::after{
+				content:none;
+			}
+		}
+		&-leftborder_nobackground{
+			color:#333;
+			position: relative;
+			border:none;
+			padding: 0.6em 0.7em 0.5em;
+			margin-bottom:1.2em;
+			margin-left: unset;
+			margin-right: unset;
+			border-left:solid 2px $color_key;
+			background-color:transparent;
+			text-align:left;
+			outline: unset;
+			outline-offset: unset;
+			border-radius: unset;
+			box-shadow: unset;
+			&::before,&::after{
+				content:none;
+			}		
+		}
+		&-diagonal_stripe_bottomborder{
+			color:#333;
+			position: relative;
+			border:none;
+			padding: 0.5em 0 0.7em;
+			margin-bottom:1.2em;
+			margin-left: unset;
+			margin-right: unset;
+			background-color: transparent;
+			outline: unset;
+			outline-offset: unset;
+			border-radius: unset;
+			&:before{
+				content: none;
+			}
+			&::after{
+				content:"";
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 7px;
+				border: none !important;
+				background: linear-gradient(
+					-45deg,
+					rgba(255,255,255,0.1) 25%, $color_key 25%,
+					#222 50%, rgba(255,255,255,0.1) 50%,
+					rgba(255,255,255,0.1) 75%, $color_key 75%,
+					#222
+				);
+				background-size: 5px 5px;
+				margin-left: 0;
+			}		
+		}
+		&-brackets{
+			color:#333;
+			position: relative;
+			border:none;
+			padding: 0.7em;
+			margin-bottom:1.2em;
+			margin-left: unset;
+			margin-right: unset;
+			text-align: center;
+			background-color:transparent !important;
+			border-bottom:unset !important;
+			outline: unset;
+			outline-offset: unset;
+			border-radius: unset;
+			box-shadow: unset;
+			&::before{
+				content:"";
+				position: absolute;
+				top: 0;
+				width: 12px;
+				height: 100%;
+				display: inline-block;
+				border-top: solid 1px $color_key;
+				border-bottom: solid 1px $color_key;
+				margin-left:0;
+				border-left: solid 1px $color_key;
+				left: 0;
+			}
+			&::after{
+				content:"";
+				position: absolute;
+				top: 0;
+				width: 12px;
+				height: 100%;
+				display: inline-block;
+				border-top: solid 1px $color_key;
+				border-bottom: solid 1px $color_key;
+				margin-left:0;
+				border-right: solid 1px $color_key;
+				right: 0;
+				left: auto;
+			}	
+		}
+		&-brackets_black{
+			color:#333;
+			position: relative;
+			border:none;
+			padding: 0.7em;
+			margin-bottom:1.2em;
+			margin-left: unset;
+			margin-right: unset;
+			text-align: center;
+			background-color:transparent;
+			border-bottom:unset;
+			outline: unset;
+			outline-offset: unset;
+			border-radius: unset;
+			box-shadow: unset;
+			&::before{
+				content:"";
+				position: absolute;
+				top: 0;
+				width: 12px;
+				height: 100%;
+				display: inline-block;
+				border-top: solid 1px #333;
+				border-bottom: solid 1px #333;
+				margin-left:0;
+				border-left: solid 1px #333;
+				left: 0;
+			}
+			&::after{
+				content:"";
+				position: absolute;
+				top: 0;
+				width: 12px;
+				height: 100%;
+				display: inline-block;
+				border-top: solid 1px #333;
+				border-bottom: solid 1px #333;
+				margin-left:0;
+				border-right: solid 1px #333 !important;
+				right: 0;
+				left: auto;
+			}		
+		}
+		&-small_bottomborder{
+			color:#333;
+			position: relative;
+			border:none;
+			padding: 0;
+			text-align: center;
+			background-color:transparent;
+			margin-left: unset;
+			margin-right: unset;
+			margin-bottom: 3em;
+			outline: unset;
+			outline-offset: unset;
+			border-radius: unset;
+			box-shadow: unset;
+			overflow: unset;
+			&:before{
+				content: none;
+			}		
+			&::after{
+				content: "";
+				display: inline-block;
+				position: absolute;
+				left: 50%;
+				margin-left: -19px;
+				bottom: -24px;
+				width: 38px;
+				border-top: solid 2px $color_key;
+			}
+		}
+	}//.is-style-vk-heading
+}//.editor-block-list__block

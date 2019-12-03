@@ -42,6 +42,7 @@ $color_key: #337ab7;
     margin-left: 0;
 }
 
+.entry-body,
 .editor-styles-wrapper {
     h3.is-style-vk-heading:after {
         border-bottom: none !important;
@@ -411,7 +412,6 @@ $color_key: #337ab7;
         &-brackets_black {
             @include title_unset;
             @include title_brackets;
-
             &::before,
             &::after {
                 @include title_brackets_before_after;
@@ -455,6 +455,6 @@ $color_key: #337ab7;
         // 		border-top: solid 2px $color_key;
         // 	}
         // }
-   
+
     } //.is-style-vk-heading
 } //.editor-block-list__block

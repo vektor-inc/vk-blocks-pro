@@ -24,7 +24,7 @@ add_action(
 /*-------------------------------------------*/
 /*	Helpers ( Plugin only )
 /*-------------------------------------------*/
-if ( function_exists( 'vkblocks_deactivate_plugin' ) ) {
+if ( ! function_exists( 'vkblocks_deactivate_plugin' ) ) {
 	/**
 	 * Plugin deactive function
 	 * @param  [type] $plugin_path [description]

@@ -34,6 +34,7 @@ pipelines:
             - elif [ -e ${remove} ];then
             - git rm -${remove}
             - fi
+            - done
             # Pro版ブロックは読み込まないようjsから削除
             - sed -i /_pro/d src/bundle.js
             # プラグイン名を通常版へリネーム

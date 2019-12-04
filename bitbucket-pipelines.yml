@@ -27,11 +27,13 @@ pipelines:
             # push先のブランチを切る
             - git checkout -b add/vk-blocks-free
             # 通常版に元からある不要なファイルを削除
-            - git rm -r tests/
-            - git rm -r bin/
-            - git rm inc/vk-blocks/build/block-build.css
-            - git rm -r src/table-of-contents
-            - git rm -r src/outer
+            - remove_files=(tests/ bin/ src/table-of-contents src/outer inc/vk-blocks/build/block-build.css)
+            - for remove in ${remove_files[@]}; do
+            - if [ -d ${remove} ];then
+            - git rm -r ${remove}
+            - elif [ -e ${remove} ];then
+            - git rm -${remove}
+            - fi
             # Pro版ブロックは読み込まないようjsから削除
             - sed -i /_pro/d src/bundle.js
             # プラグイン名を通常版へリネーム

@@ -15,6 +15,7 @@ export class PostList extends React.Component {
     render() {
 
         const {postTypes, className, attributes, setAttributes, clientId, name} = this.props.value;
+
         const {
             numberPosts,
             layout,
@@ -37,6 +38,9 @@ export class PostList extends React.Component {
             coreTerms,
             isCheckedTerms
         } = attributes;
+
+        attributes['name'] = name;
+        attributes['postId'] = select("core/editor").getCurrentPostId();
 
         /**
          * Check array is empty or not. If array is empty return true;

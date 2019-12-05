@@ -22,8 +22,6 @@ registerBlockType('vk-blocks/child-page', {
         };
     })((props) => {
 
-        console.log(props);
-
         return(
             <PostList
                 value={props}

@@ -42,7 +42,6 @@ registerBlockType('vk-blocks/post-list', {
             postTypes: select('core').getPostTypes(),
         };
 	})((props) => {
-
        return(
 		   <PostList
 			   value={props}

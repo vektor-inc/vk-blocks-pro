@@ -4,19 +4,7 @@
  */
 const {assign} = lodash;
 const {__} = wp.i18n;
-const {Fragment} = wp.element;
 const {addFilter} = wp.hooks;
-const {
-    PanelBody,
-} = wp.components;
-
-const {
-    InspectorControls,
-    ColorPalette
-} = wp.blockEditor;
-
-const {createHigherOrderComponent} = wp.compose;
-import {convertColorClass} from "../_helper/color-code-to-class.js";
 
 const isValidBlockType = (name) => {
     const validBlockTypes = [
@@ -38,15 +26,13 @@ export const addAttribute = (settings) => {
 };
 addFilter('blocks.registerBlockType', 'vk-blocks/heading-style', addAttribute);
 
-
-
-wp.blocks.registerBlockStyle( 'core/heading', 
+wp.blocks.registerBlockStyle( 'core/heading',
 	[
         {
             name: 'vk-heading-default',
             label: __('Default', 'vk-blocks'),
             isDefault:true
-        },	
+        },
 		{
 			name: 'vk-heading-plain',
 			label: __('Plain', 'vk-blocks')

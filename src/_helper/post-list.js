@@ -305,11 +305,14 @@ export class PostList extends React.Component {
                     checked={display_date}
                     onChange={(checked) => setAttributes({display_date: checked})}
                 />
+
+
                 <CheckboxControl
                     label={__('New mark', 'vk-blocks')}
                     checked={display_new}
                     onChange={(checked) => setAttributes({display_new: checked})}
                 />
+
                 <CheckboxControl
                     label={__('Button', 'vk-blocks')}
                     checked={display_btn}
@@ -372,7 +375,12 @@ export class PostList extends React.Component {
                                 </div>
                             );
                         }else if(name === 'vk-blocks/child-page'){
-                                return renderItem;
+                            return(
+                                <div>
+                                    {renderTypeColumn}
+                                    {renderItem}
+                                </div>
+                            );
                         }
                     })()}
                 </InspectorControls>

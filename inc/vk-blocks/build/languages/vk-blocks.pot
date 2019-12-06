@@ -18,6 +18,146 @@ msgstr ""
 msgid "Font Awesome icon list"
 msgstr ""
 
+#: src/_helper/post-list.js:183
+msgid "Filter by PostTypes"
+msgstr ""
+
+#: src/_helper/post-list.js:190
+msgid "Filter by Taxonomy Terms"
+msgstr ""
+
+#: src/_helper/post-list.js:197
+msgid "Number of Posts"
+msgstr ""
+
+#: src/_helper/post-list.js:209
+msgid "Display conditions"
+msgstr ""
+
+#: src/_helper/post-list.js:213
+msgid "Parent"
+msgstr ""
+
+#: src/_helper/post-list.js:216
+msgid "Link"
+msgstr ""
+
+#: src/_helper/post-list.js:232
+msgid "Display type and columns"
+msgstr ""
+
+#: src/_helper/post-list.js:236
+msgid "Display type"
+msgstr ""
+
+#: src/_helper/post-list.js:244
+msgid "Card"
+msgstr ""
+
+#: src/_helper/post-list.js:248
+msgid "Card Horizontal"
+msgstr ""
+
+#: src/_helper/post-list.js:252
+msgid "Media"
+msgstr ""
+
+#: src/_helper/post-list.js:258
+msgid "Column ( Screen size : Extra small )"
+msgstr ""
+
+#: src/_helper/post-list.js:268
+msgid "Column ( Screen size : Small )"
+msgstr ""
+
+#: src/_helper/post-list.js:278
+msgid "Column ( Screen size : Medium )"
+msgstr ""
+
+#: src/_helper/post-list.js:288
+msgid "Column ( Screen size : Large )"
+msgstr ""
+
+#: src/_helper/post-list.js:298
+msgid "Column ( Screen size : Extra large )"
+msgstr ""
+
+#: src/_helper/post-list.js:310
+msgid "Display item"
+msgstr ""
+
+#: src/_helper/post-list.js:314
+msgid "Image"
+msgstr ""
+
+#: src/_helper/post-list.js:319
+msgid "Term name"
+msgstr ""
+
+#: src/_helper/post-list.js:324
+msgid "Excerpt"
+msgstr ""
+
+#: src/_helper/post-list.js:329
+msgid "Date"
+msgstr ""
+
+#: src/_helper/post-list.js:336
+msgid "New mark"
+msgstr ""
+
+#: src/_helper/post-list.js:342
+#: src/button/block.js:59
+msgid "Button"
+msgstr ""
+
+#: src/_helper/post-list.js:346
+msgid "New mark option"
+msgstr ""
+
+#: src/_helper/post-list.js:348
+msgid "Number of days to display the new post mark"
+msgstr ""
+
+#: src/_helper/post-list.js:354
+msgid "New post mark"
+msgstr ""
+
+#: src/_helper/post-list.js:359
+msgid "Button option"
+msgstr ""
+
+#: src/_helper/post-list.js:361
+msgid "Button text"
+msgstr ""
+
+#: src/_helper/post-list.js:367
+msgid "Button align"
+msgstr ""
+
+#: src/_helper/post-list.js:375
+#: src/balloon/block.js:88
+#: src/button/block.js:174
+#: src/pr-content/block.js:195
+msgid "Left"
+msgstr ""
+
+#: src/_helper/post-list.js:379
+#: src/button/block.js:175
+msgid "Center"
+msgstr ""
+
+#: src/_helper/post-list.js:383
+#: src/balloon/block.js:89
+#: src/button/block.js:176
+#: src/pr-content/block.js:194
+msgid "Right"
+msgstr ""
+
+#: src/_pro/child-page/block.js:14
+msgid "child-page"
+msgstr ""
+
 #: src/_pro/outer/block.js:101
 #: src/pr-content/block.js:92
 msgid "Color Setting"
@@ -171,7 +311,7 @@ msgstr ""
 #: src/_pro/step-item/block.js:97
 #: src/_pro/timeline-item/block.js:84
 #: src/group-style/block.js:103
-#: src/heading-style/block.js:96
+#: src/heading-style/block.js:82
 #: src/pr-content/block.js:142
 msgid "Solid"
 msgstr ""
@@ -188,7 +328,7 @@ msgstr ""
 
 #: src/_pro/outer/block.js:296
 #: src/group-style/block.js:115
-#: src/heading-style/block.js:80
+#: src/heading-style/block.js:66
 msgid "Double"
 msgstr ""
 
@@ -229,135 +369,7 @@ msgstr ""
 msgid "Background Setting"
 msgstr ""
 
-#: src/_pro/post-list/block.js:233
-msgid "Display conditions"
-msgstr ""
-
-#: src/_pro/post-list/block.js:237
-msgid "Filter by PostTypes"
-msgstr ""
-
-#: src/_pro/post-list/block.js:244
-msgid "Filter by Taxonomy Terms"
-msgstr ""
-
-#: src/_pro/post-list/block.js:251
-msgid "Number of Posts"
-msgstr ""
-
-#: src/_pro/post-list/block.js:262
-msgid "Display type and columns"
-msgstr ""
-
-#: src/_pro/post-list/block.js:266
-msgid "Display type"
-msgstr ""
-
-#: src/_pro/post-list/block.js:274
-msgid "Card"
-msgstr ""
-
-#: src/_pro/post-list/block.js:278
-msgid "Card Horizontal"
-msgstr ""
-
-#: src/_pro/post-list/block.js:282
-msgid "Media"
-msgstr ""
-
-#: src/_pro/post-list/block.js:288
-msgid "Column ( Screen size : Extra small )"
-msgstr ""
-
-#: src/_pro/post-list/block.js:298
-msgid "Column ( Screen size : Small )"
-msgstr ""
-
-#: src/_pro/post-list/block.js:308
-msgid "Column ( Screen size : Medium )"
-msgstr ""
-
-#: src/_pro/post-list/block.js:318
-msgid "Column ( Screen size : Large )"
-msgstr ""
-
-#: src/_pro/post-list/block.js:328
-msgid "Column ( Screen size : Extra large )"
-msgstr ""
-
-#: src/_pro/post-list/block.js:340
-msgid "Display item"
-msgstr ""
-
-#: src/_pro/post-list/block.js:344
-msgid "Image"
-msgstr ""
-
-#: src/_pro/post-list/block.js:349
-msgid "Term name"
-msgstr ""
-
-#: src/_pro/post-list/block.js:354
-msgid "Excerpt"
-msgstr ""
-
-#: src/_pro/post-list/block.js:359
-msgid "Date"
-msgstr ""
-
-#: src/_pro/post-list/block.js:364
-msgid "New mark"
-msgstr ""
-
-#: src/_pro/post-list/block.js:369
-#: src/button/block.js:59
-msgid "Button"
-msgstr ""
-
-#: src/_pro/post-list/block.js:373
-msgid "New mark option"
-msgstr ""
-
-#: src/_pro/post-list/block.js:375
-msgid "Number of days to display the new post mark"
-msgstr ""
-
-#: src/_pro/post-list/block.js:381
-msgid "New post mark"
-msgstr ""
-
-#: src/_pro/post-list/block.js:386
-msgid "Button option"
-msgstr ""
-
-#: src/_pro/post-list/block.js:388
-msgid "Button text"
-msgstr ""
-
-#: src/_pro/post-list/block.js:394
-msgid "Button align"
-msgstr ""
-
-#: src/_pro/post-list/block.js:402
-#: src/balloon/block.js:88
-#: src/button/block.js:174
-#: src/pr-content/block.js:195
-msgid "Left"
-msgstr ""
-
-#: src/_pro/post-list/block.js:406
-#: src/button/block.js:175
-msgid "Center"
-msgstr ""
-
-#: src/_pro/post-list/block.js:410
-#: src/balloon/block.js:89
-#: src/button/block.js:176
-#: src/pr-content/block.js:194
-msgid "Right"
-msgstr ""
-
-#: src/_pro/post-list/block.js:53
+#: src/_pro/post-list/block.js:35
 msgid "Post list"
 msgstr ""
 
@@ -369,7 +381,7 @@ msgstr ""
 #: src/_pro/step-item/block.js:116
 #: src/_pro/table-of-contents/block.js:113
 #: src/_pro/timeline-item/block.js:99
-#: src/heading-style/block.js:47
+#: src/heading-style/block.js:33
 #: src/heading/block.js:124
 #: src/list-style/block.js:104
 #: src/staff/block.js:105
@@ -668,93 +680,93 @@ msgstr ""
 msgid "Border Color"
 msgstr ""
 
-#: src/heading-style/block.js:100
-msgid "Solid_black"
-msgstr ""
-
-#: src/heading-style/block.js:104
-msgid "Solid_bottomborder"
-msgstr ""
-
-#: src/heading-style/block.js:108
-msgid "Solid_bottomborder_black"
-msgstr ""
-
-#: src/heading-style/block.js:112
-msgid "Solid_bottomborder_leftkeycolor"
-msgstr ""
-
-#: src/heading-style/block.js:116
+#: src/heading-style/block.js:102
 msgid "Dotted_bottomborder_black"
 msgstr ""
 
-#: src/heading-style/block.js:120
+#: src/heading-style/block.js:106
 msgid "Both_ends"
 msgstr ""
 
-#: src/heading-style/block.js:124
+#: src/heading-style/block.js:110
 msgid "Leftborder"
 msgstr ""
 
-#: src/heading-style/block.js:128
+#: src/heading-style/block.js:114
 msgid "Leftborder_nobackground"
 msgstr ""
 
-#: src/heading-style/block.js:132
+#: src/heading-style/block.js:118
 msgid "Diagonal_stripe_bottomborder"
 msgstr ""
 
-#: src/heading-style/block.js:136
+#: src/heading-style/block.js:122
 msgid "Brackets"
 msgstr ""
 
-#: src/heading-style/block.js:140
+#: src/heading-style/block.js:126
 msgid "Brackets_black"
 msgstr ""
 
-#: src/heading-style/block.js:144
+#: src/heading-style/block.js:130
 msgid "Small_bottomborder"
 msgstr ""
 
-#: src/heading-style/block.js:52
+#: src/heading-style/block.js:38
 #: src/heading/block.js:125
 msgid "Plain"
 msgstr ""
 
-#: src/heading-style/block.js:56
+#: src/heading-style/block.js:42
 msgid "Speech_balloon_fill"
 msgstr ""
 
-#: src/heading-style/block.js:60
+#: src/heading-style/block.js:46
 msgid "Background_fill"
 msgstr ""
 
-#: src/heading-style/block.js:64
+#: src/heading-style/block.js:50
 msgid "Background_fill_stitch"
 msgstr ""
 
-#: src/heading-style/block.js:68
+#: src/heading-style/block.js:54
 msgid "Background_fill_lightgray"
 msgstr ""
 
-#: src/heading-style/block.js:72
+#: src/heading-style/block.js:58
 msgid "Topborder_background_fill_none"
 msgstr ""
 
-#: src/heading-style/block.js:76
+#: src/heading-style/block.js:62
 msgid "Topborder_background_fill_black"
 msgstr ""
 
-#: src/heading-style/block.js:84
+#: src/heading-style/block.js:70
 msgid "Double_black"
 msgstr ""
 
-#: src/heading-style/block.js:88
+#: src/heading-style/block.js:74
 msgid "Double_bottomborder"
 msgstr ""
 
-#: src/heading-style/block.js:92
+#: src/heading-style/block.js:78
 msgid "Double_bottomborder_black"
+msgstr ""
+
+#: src/heading-style/block.js:86
+msgid "Solid_black"
+msgstr ""
+
+#: src/heading-style/block.js:90
+msgid "Solid_bottomborder"
+msgstr ""
+
+#: src/heading-style/block.js:94
+msgid "Solid_bottomborder_black"
+msgstr ""
+
+#: src/heading-style/block.js:98
+msgid "Solid_bottomborder_leftkeycolor"
 msgstr ""
 
 #: src/heading/block.js:118

@@ -3,7 +3,7 @@
  * Plugin Name: VK Blocks Pro
  * Plugin URI: https://github.com/vektor-inc/vk-blocks
  * Description: This is a plugin that extends Gutenberg's blocks.
- * Version: 0.15.1
+ * Version: 0.16.3
  * Author: Vektor,Inc.
  * Author URI: https://vektor-inc.co.jp
  * Text Domain: vk-blocks
@@ -24,7 +24,7 @@ add_action(
 /*-------------------------------------------*/
 /*	Helpers ( Plugin only )
 /*-------------------------------------------*/
-if ( function_exists( 'vkblocks_deactivate_plugin' ) ) {
+if ( ! function_exists( 'vkblocks_deactivate_plugin' ) ) {
 	/**
 	 * Plugin deactive function
 	 * @param  [type] $plugin_path [description]
@@ -46,28 +46,25 @@ if ( function_exists( 'vkblocks_deactivate_plugin' ) ) {
 /*-------------------------------------------*/
 /*	Deactive VK Blocks ( Free )
 /*-------------------------------------------*/
-add_action( 'init', 'vkblocks_deactive_free_version' );
-function vkblocks_deactive_free_version() {
-
-	$plugin_base_dir = dirname( __FILE__ );
-
-	// When this file loaded from Pro version
-	if ( strpos( $plugin_base_dir, 'vk-blocks-pro' ) !== false ) {
-
-		// Deactive Plugin VK Blocks ( free )
-		if ( function_exists( 'vkblocks_deactivate_plugin' ) ) {
-			vkblocks_deactivate_plugin( 'vk-blocks/vk-blocks.php' );
-		}
-
-		// Deactive ExUnit included VK Blocks
-		$options = get_option( 'vkExUnit_common_options' );
-		if ( ! empty( $options['active_vk-blocks'] ) ) {
-			$options['active_vk-blocks'] = false;
-			update_option( 'vkExUnit_common_options', $options );
+/* 関数名入れると無料版の宣言と被ってエラーになるので一時的な回避処理で無名関数を利用 */
+add_action(
+	'init', function() {
+		$plugin_base_dir = dirname( __FILE__ );
+		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		if ( is_plugin_active( 'vk-blocks-pro/vk-blocks.php' ) ) {
+			// Deactive Plugin VK Blocks ( free )
+			if ( function_exists( 'vkblocks_deactivate_plugin' ) ) {
+				vkblocks_deactivate_plugin( 'vk-blocks/vk-blocks.php' );
+			}
+			// Deactive ExUnit included VK Blocks
+			$options = get_option( 'vkExUnit_common_options' );
+			if ( ! empty( $options['active_vk-blocks'] ) ) {
+				$options['active_vk-blocks'] = false;
+				update_option( 'vkExUnit_common_options', $options );
+			}
 		}
 	}
-
-}
+);
 
 /*-------------------------------------------*/
 /*	Load updater

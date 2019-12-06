@@ -311,7 +311,10 @@ msgstr ""
 #: src/_pro/step-item/block.js:97
 #: src/_pro/timeline-item/block.js:84
 #: src/group-style/block.js:103
+<<<<<<< HEAD
 #: src/heading-style/block.js:82
+=======
+>>>>>>> cfefa21b5759c7ec7c162d43ecdb55d303985e4c
 #: src/pr-content/block.js:142
 msgid "Solid"
 msgstr ""
@@ -328,7 +331,10 @@ msgstr ""
 
 #: src/_pro/outer/block.js:296
 #: src/group-style/block.js:115
+<<<<<<< HEAD
 #: src/heading-style/block.js:66
+=======
+>>>>>>> cfefa21b5759c7ec7c162d43ecdb55d303985e4c
 msgid "Double"
 msgstr ""
 
@@ -680,6 +686,7 @@ msgstr ""
 msgid "Border Color"
 msgstr ""
 
+<<<<<<< HEAD
 #: src/heading-style/block.js:102
 msgid "Dotted_bottomborder_black"
 msgstr ""
@@ -710,6 +717,26 @@ msgstr ""
 
 #: src/heading-style/block.js:130
 msgid "Small_bottomborder"
+=======
+#: src/heading-style/block.js:100
+msgid "Solid border top and bottom black"
+msgstr ""
+
+#: src/heading-style/block.js:108
+msgid "Solid border bottom black"
+msgstr ""
+
+#: src/heading-style/block.js:116
+msgid "Dotted border bottom black"
+msgstr ""
+
+#: src/heading-style/block.js:120
+msgid "Both ends"
+msgstr ""
+
+#: src/heading-style/block.js:140
+msgid "Brackets black"
+>>>>>>> cfefa21b5759c7ec7c162d43ecdb55d303985e4c
 msgstr ""
 
 #: src/heading-style/block.js:38
@@ -717,6 +744,7 @@ msgstr ""
 msgid "Plain"
 msgstr ""
 
+<<<<<<< HEAD
 #: src/heading-style/block.js:42
 msgid "Speech_balloon_fill"
 msgstr ""
@@ -751,6 +779,18 @@ msgstr ""
 
 #: src/heading-style/block.js:78
 msgid "Double_bottomborder_black"
+=======
+#: src/heading-style/block.js:68
+msgid "Background fill lightgray"
+msgstr ""
+
+#: src/heading-style/block.js:84
+msgid "Double border top and bottom black"
+msgstr ""
+
+#: src/heading-style/block.js:92
+msgid "Double border bottom black"
+>>>>>>> cfefa21b5759c7ec7c162d43ecdb55d303985e4c
 msgstr ""
 
 #: src/heading-style/block.js:86

@@ -6,7 +6,7 @@
 function vkblocks_admin_notice_pro() {
 
     $plugin_base_dir = dirname(__FILE__);
-	if(strpos($plugin_base_dir,'vk-blocks-pro') === false) {
+	if(strpos($plugin_base_dir,'vk-blocks-pro') !== false) {
 		return;
 	}
 

@@ -19,6 +19,8 @@ class VkBlocksPostList {
 			$wp_query = $this->get_loop_query_child( $attributes );
 		}
 
+		var_export(fdsa)
+
 		if ( $wp_query === false ) {
 			return '<div>' . __( 'No Post is selected', 'vk-blocks' ) . '</div>';
 		}
@@ -106,13 +108,19 @@ class VkBlocksPostList {
 
 	public function get_loop_query_child($attributes){
 
+		if($attributes['url'] !== null){
+			$parent_id = url_to_postid($attributes['url']);
+		}else{
+			$parent_id = $attributes['postId'];
+		}
+
 		$args =  array(
 			'post_type'      => 'page',
 			'paged'          => 0,
 			//0で全件取得
 			'order'          => 'DESC',
 			'orderby'        => 'date',
-			'post_parent' => $attributes['postId']
+			'post_parent' => $parent_id
 		);
 
 		return new WP_Query( $args );

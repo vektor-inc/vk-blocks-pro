@@ -182,6 +182,9 @@ function vkblocks_blocks_assets() {
 				register_block_type(
 					'vk-blocks/' . $value, array(
 						'attributes'      => array(
+							'url'            => array(
+								'type'    => 'string',
+							),
 							'postId'            => array(
 								'type'    => 'number',
 							),

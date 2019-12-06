@@ -5,7 +5,7 @@
 const {__} = wp.i18n;
 const {RangeControl, PanelBody, BaseControl, TextControl, SelectControl, CheckboxControl} = wp.components;
 const {Fragment} = wp.element;
-const {InspectorControls} = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
+const {InspectorControls,URLInput} = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const {subscribe, select} = wp.data;
 const {ServerSideRender} = wp.components;
 import addCheckBox from './checkbox';
@@ -14,9 +14,10 @@ export class PostList extends React.Component {
 
     render() {
 
-        const {postTypes, className, attributes, setAttributes, clientId, name} = this.props.value;
+        const {postTypes, className, attributes, setAttributes, clientId, name,isSelected} = this.props.value;
 
         const {
+            url,
             numberPosts,
             layout,
             col_xs,
@@ -203,6 +204,29 @@ export class PostList extends React.Component {
                 </BaseControl>
             </PanelBody>;
 
+        const renderConditionsUrlInput = <PanelBody
+            title={__('Display conditions', 'vk-blocks')}
+            initialOpen={false}
+        >
+            <BaseControl
+                label={__('Parent', 'vk-blocks')}
+            >
+                <URLInput
+                    label={ __( 'Link' ) }
+                    className="wp-block-button__inline-link"
+                    value={ url }
+                    /* eslint-disable jsx-a11y/no-autofocus */
+                    // Disable Reason: The rule is meant to prevent enabling auto-focus, not disabling it.
+                    autoFocus={ false }
+                    /* eslint-enable jsx-a11y/no-autofocus */
+                    onChange={ ( value ) => setAttributes( { url: value } ) }
+                    disableSuggestions={ ! isSelected }
+                    isFullWidth
+                    hasBorder
+                />
+            </BaseControl>
+        </PanelBody>;
+
         const renderTypeColumn = <PanelBody
                 title={__('Display type and columns', 'vk-blocks')}
                 initialOpen={false}
@@ -377,6 +401,7 @@ export class PostList extends React.Component {
                         }else if(name === 'vk-blocks/child-page'){
                             return(
                                 <div>
+                                    {renderConditionsUrlInput}
                                     {renderTypeColumn}
                                     {renderItem}
                                 </div>
@@ -385,10 +410,19 @@ export class PostList extends React.Component {
                     })()}
                 </InspectorControls>
                 <div>
-                    <ServerSideRender
-                        block="vk-blocks/post-list"
-                        attributes={attributes}
-                    />
+                    {(() => {
+                        if(name === 'vk-blocks/post-list'){
+                            return <ServerSideRender
+                                block="vk-blocks/post-list"
+                                attributes={attributes}
+                            />
+                        }else if(name === 'vk-blocks/child-page'){
+                            return <ServerSideRender
+                                block="vk-blocks/child-page"
+                                attributes={attributes}
+                            />
+                        }
+                    })()}
                 </div>
             </Fragment>
         )

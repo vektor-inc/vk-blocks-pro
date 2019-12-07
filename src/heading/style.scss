@@ -11,6 +11,9 @@
 	&:after {
 		border:none;
 	}
+	&:before{
+		content:none;
+	}
 }
 
 .vk_heading_title {

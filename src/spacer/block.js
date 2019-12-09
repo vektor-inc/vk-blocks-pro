@@ -55,8 +55,10 @@ registerBlockType('vk-blocks/spacer', {
      *
      * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
      */
-    edit({attributes, setAttributes, className}) {
+    edit(props) {
+        const {attributes, setAttributes, className} = props;
         const {
+            anchor,
             unit,
             pc,
             tablet,

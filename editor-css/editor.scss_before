@@ -2,7 +2,10 @@
 .vk_block_icon_pro {
 fill:#c00;
 }
+.editor-block-list-item-vk-blocks-timeline:after,
+.editor-block-list-item-vk-blocks-step:after,
 .editor-block-list-item-vk-blocks-outer:after,
+.editor-block-list-item-vk-blocks-post-list:after,
 .editor-block-list-item-vk-blocks-table-of-contents:after,
 .editor-block-list-item-vk-blocks-simple-table:after{
 position: absolute;
@@ -28,12 +31,6 @@ padding: 3px 4px;
 .components-checkbox-control__label { margin-bottom:0; }
 .components-color-palette { display:block; overflow:hidden; }
 
-// これがないと rem 指定してる見出しなどが大きくなりすぎる
-// 見出しがrem指定なのは今後画面サイズによって html の font size を可変にして 見出しサイズも自動可変させるため
-html {
-font-size:10px;
-}
-
 /*スライダーを表示。デフォルトだとbootstrapに非表示にされてしまう*/
 input[type=range] {
     margin: 1px;
@@ -47,13 +44,4 @@ input[type=range] {
 /* これがないとGutenberg標準のエディタCSSに負ける */
 h1:first-child.vk_prBlocks_item_title{
 	margin-top:0.9em;
-}
-
-/* メインのカラム幅 */
-.wp-block,
-.editor-block-list__layout > .wp-block {
-		max-width:calc( 100% - 20% );
-		.wp-block {
-			max-width:100%;
-		}
 }

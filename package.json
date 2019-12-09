@@ -18,11 +18,11 @@
     "> 5%"
   ],
   "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/plugin-transform-react-jsx": "^7.3.0",
-    "@babel/preset-env": "^7.6.3",
-    "@wordpress/babel-plugin-makepot": "^3.2.1",
-    "autoprefixer": "^9.6.5",
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-transform-react-jsx": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
+    "@wordpress/babel-plugin-makepot": "^3.3.0",
+    "autoprefixer": "^9.7.1",
     "babel-loader": "^8.0.6",
     "classnames": "^2.2.6",
     "css-loader": "^3.2.0",
@@ -35,14 +35,14 @@
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6",
-    "npm-check-updates": "^3.1.25",
+    "npm-check-updates": "^3.2.1",
     "postcss-loader": "^3.0.0",
     "run-sequence": "^2.2.1",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
     "vinyl-named": "^1.1.0",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.9",
+    "webpack-cli": "^3.3.10",
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {

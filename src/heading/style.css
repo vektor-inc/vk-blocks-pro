@@ -1,8 +1,17 @@
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-.components-base-control__field {
-  width: 100%;
-  padding: 20px 0; }
+.vk_heading_title-style-plain {
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  font-weight: normal;
+  box-shadow: none; }
+  .vk_heading_title-style-plain:after {
+    border: none; }
+
+.vk_heading_subtext {
+  margin-bottom: 0; }
 
 /*# sourceMappingURL=style.css.map */

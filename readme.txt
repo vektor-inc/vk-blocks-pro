@@ -2,9 +2,9 @@
 Contributors: vektor-inc,kurudrive,naoki0h
 Donate link:
 Tags: Gutenberg,FAQ,alert
-Requires at least: 4.6
-Tested up to: 5.2.2
-Stable tag: 0.10.1
+Requires at least: 5.0
+Tested up to: 5.3.0
+Stable tag: 0.16.0
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -28,6 +28,9 @@ This is a plugin that extends Gutenberg's blocks.
 * PR Content
 * Title（with sub text）
 * Responsive Spacer
+* Post List
+* Step
+* Timeline
 
 [ Editing and correction ]
 
@@ -53,6 +56,57 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.16.0 =
+[ Add Style ] Add title styles
+
+= 0.15.1 =
+[ design tuning ] Delete margin bottom of the last block in the group block.
+
+= 0.15.0 =
+[ Add Style ] Add Group styles
+[ Add Style ] Add Image styles
+
+= 0.14.0 =
+[ Add Style ] Add list styles
+
+= 0.13.3 =
+[ Bugfix ][ Step ] first block dont become H4 in second later item block bug fix.
+
+= 0.13.2 =
+[ Specification change ] Delete width specified of edit page width ( Change to the theme specify )
+
+= 0.13.1 =
+[ Specification change ][ Step Block ] Delete First Caption
+
+= 0.13.0 =
+[ Add Block ] Step Block
+[ Add Block ] Timeline Block
+
+= 0.12.7 =
+[ Bugfix ][ table of contents ] bug fix
+
+= 0.12.6 =
+[ Bugfix ][ column ] WordPress 5.3 column bug fix
+
+= 0.12.5 =
+[ Bugfix ][ post list ] WordPress 5.3 bug fix
+
+= 0.12.4 =
+[ Bugfix ][ post list ] button display bug fix
+
+= 0.12.3 =
+[ Bugfix ] updater
+
+= 0.12.2 =
+[ Bugfix ][ post list ] taxonomy bug list
+[ add function ] updater
+
+= 0.12.1 =
+[ Bugfix ] common css html font size
+
+= 0.12.0 =
+[ Add New Block ] Post List Block
 
 = 0.10.1 =
 [ Bugfix ] baloon css

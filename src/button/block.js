@@ -8,9 +8,9 @@ import {deprecated} from "./deprecated/deprecated";
 
 const {__} = wp.i18n; // Import __() from wp.i18n
 const {registerBlockType} = wp.blocks; // Import registerBlockType() from wp.blocks
-const {RangeControl, RadioControl, PanelBody, Button, BaseControl, CheckboxControl, TextControl, Dashicon, IconButton,} = wp.components;
+const {RadioControl, PanelBody, BaseControl, CheckboxControl, TextControl, Dashicon, IconButton,} = wp.components;
 const {Fragment} = wp.element;
-const {RichText, InspectorControls, MediaUpload, ColorPalette, URLInput,} = wp.editor;
+const {RichText, InspectorControls,ColorPalette, URLInput,} = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const BlockIcon = (
     <svg xmlns="http://www.w3.org/2000/svg" width="576" height="512" viewBox="0 0 576 512">
 		<g>

@@ -38,6 +38,7 @@
   font-size: 21px;
   line-height: 1.4em;
   border: none;
+<<<<<<< HEAD
   padding: 0;
 }
 .vk_prBlocks_item_title::before {
@@ -46,6 +47,13 @@
 .vk_prBlocks_item_title::after {
   border: none;
 }
+=======
+  padding: 0; }
+  .vk_prBlocks_item_title::before {
+    content: none; }
+  .vk_prBlocks_item_title::after {
+    border: none; }
+>>>>>>> 21db543e07cf95bfeda36ca0410b3388b2282468
 .vk_prBlocks_item_image {
   position: relative;
   display: block;

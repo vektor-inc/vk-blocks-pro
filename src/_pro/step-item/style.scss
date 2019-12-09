@@ -1,0 +1,58 @@
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+.vk_step{
+  margin: 2em 0;
+
+  .vk_step_item {
+    position: relative;
+    padding: 0 0 1em 4em;
+    margin: 0 auto;
+
+      h3:first-of-type,
+      h4:first-of-type{
+        padding-top: 0.5em;
+        margin-top: 0;
+      }
+			&_content > p:first-child{
+        margin-bottom:0.3em;
+        line-height: 1;
+        color:#666;
+      }
+    .vk_step_item_caption{
+      margin-bottom: 0.5em;
+      color: #666;
+    }
+    .vk_step_item_content{
+
+    }
+    .vk_step_item_dot {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      color: #ffffff;
+      padding: 9px 0;
+      text-align: center;
+    }
+    .vk_step_item_dot_caption{
+      font-size: 0.1rem;
+    }
+  }
+}
+.vk_step_item_lineStyle-default {
+  &::before {
+    content: "";
+    width: 3px;
+    background: #ddd;
+    display: block;
+    position: absolute;
+    top: 54px;
+    left: 23px;
+    bottom: 4px;
+  }
+}

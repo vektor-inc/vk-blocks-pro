@@ -3,7 +3,7 @@
  */
 const {__} = wp.i18n; // Import __() from wp.i18n
 const {registerFormatType, toggleFormat, applyFormat, removeFormat, getActiveFormat} = window.wp.richText;
-const {RichTextToolbarButton, RichTextShortcut, InspectorControls, PanelColorSettings, getColorObjectByColorValue} = wp.editor;
+const {RichTextToolbarButton, RichTextShortcut, InspectorControls, PanelColorSettings, getColorObjectByColorValue} = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const {Fragment} = wp.element;
 const name = 'vk-blocks/highlighter';
 const BlockIcon = (
@@ -61,7 +61,7 @@ registerFormatType(name, {
                 <InspectorControls>
                     <PanelColorSettings
                         title={__('Highlighter', 'vk-blocks')}
-                        initialOpen={true}
+                        initialOpen={false}
                         colorSettings={[
                             {
                                 value: activeColor,

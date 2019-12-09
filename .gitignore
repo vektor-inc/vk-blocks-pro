@@ -4,3 +4,8 @@ dist/
 inc/vk-blocks/build/*.css
 inc/vk-blocks/build/*.js
 inc/vk-blocks/build/*.js.map
+/editor-css/editor-block-build.scss
+/editor-css/editor-block-build.css
+/editor-css/editor-block-build.css.map
+._.DS_Store
+.DS_Store

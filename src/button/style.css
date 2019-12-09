@@ -1,43 +1,31 @@
 @charset "UTF-8";
 .vk_button {
   margin: 5px 0; }
-
-.vk_button-color-custom a:hover {
-  opacity: 0.8;
-  box-shadow: 0 0 0 0.2rem rgba(171, 184, 195, 0.25); }
-
-.vk_button-align-left {
-  text-align: left; }
-
-.vk_button-align-center {
-  text-align: center; }
-
-.vk_button-align-right {
-  text-align: right; }
-
-.vk_button-align-block {
-  display: block; }
-
-#vk_button_link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center; }
-
-.vk_button_link_before {
-  margin-right: 0.7rem; }
-
-.vk_button_link_after {
-  margin-left: 0.7rem; }
-
-.vk_button_link_txt {
-  display: inline; }
-
-.vk_button_link_subCaption {
-  margin: 0;
-  font-size: 80%; }
-
-.vk_button .editor-rich-text {
-  display: inline-block; }
+  .vk_button-color-custom a:hover {
+    opacity: 0.8;
+    box-shadow: 0 0 0 0.2rem rgba(171, 184, 195, 0.25); }
+  .vk_button-align-left {
+    text-align: left; }
+  .vk_button-align-center {
+    text-align: center; }
+  .vk_button-align-right {
+    text-align: right; }
+  .vk_button-align-block {
+    display: block; }
+  .vk_button_link.btn {
+    padding-top: .7em;
+    padding-bottom: .6em; }
+  .vk_button_link_before {
+    margin-right: 0.7rem; }
+  .vk_button_link_after {
+    margin-left: 0.7rem; }
+  .vk_button_link_subCaption {
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    font-size: 80%; }
+  .vk_button .editor-rich-text {
+    display: inline-block; }
 
 /*-------------------------------------------*/
 /*	Lightnig がまだ Bootstrap4 でないため手動で追加したクラス

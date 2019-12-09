@@ -45,3 +45,7 @@ input[type=range] {
 h1:first-child.vk_prBlocks_item_title{
 	margin-top:0.9em;
 }
+
+.editor-url-input input{
+    with:100%;
+}

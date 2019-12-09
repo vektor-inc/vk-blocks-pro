@@ -106,7 +106,7 @@ class VkBlocksPostList {
 
 	public function get_loop_query_child($attributes){
 
-		if ( $attributes['url'] === null || $attributes['url'] === '' ) {
+		if ( empty( $attributes['url'] ) ) {
 			$parent_id = $attributes['postId'];
 		} else if ( url_to_postid( $attributes['url'] ) !== 0 ) {
 			$parent_id = url_to_postid( $attributes['url'] );

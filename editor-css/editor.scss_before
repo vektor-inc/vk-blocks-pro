@@ -36,6 +36,10 @@ input[type=range] {
     margin: 1px;
 }
 
+.editor-url-input input[type="text"]{
+    width:100%;
+}
+
 /* editor area *********************************************/
 .edit-post-visual-editor.editor-styles-wrapper{
 
@@ -44,8 +48,4 @@ input[type=range] {
 /* これがないとGutenberg標準のエディタCSSに負ける */
 h1:first-child.vk_prBlocks_item_title{
 	margin-top:0.9em;
-}
-
-.editor-url-input input{
-    with:100%;
 }

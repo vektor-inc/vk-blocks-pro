@@ -103,6 +103,10 @@ wp.blocks.registerBlockStyle('core/group',
             label: __('Solid', 'vk-blocks')
         },
         {
+            name: 'vk-group-solid-roundcorner',
+            label: __('Solid-Roundcorner', 'vk-blocks')
+        },
+        {
             name: 'vk-group-dotted',
             label: __('Dotted', 'vk-blocks')
         },

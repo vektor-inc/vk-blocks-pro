@@ -367,7 +367,7 @@ msgstr ""
 #: src/_pro/step-item/block.js:116
 #: src/_pro/table-of-contents/block.js:113
 #: src/_pro/timeline-item/block.js:99
-#: src/heading-style/block.js:47
+#: src/heading-style/block.js:35
 #: src/heading/block.js:124
 #: src/list-style/block.js:104
 #: src/staff/block.js:105
@@ -670,41 +670,41 @@ msgstr ""
 msgid "Solid Roundcorner"
 msgstr ""
 
-#: src/heading-style/block.js:100
-msgid "Solid border top and bottom black"
-msgstr ""
-
-#: src/heading-style/block.js:108
-msgid "Solid border bottom black"
-msgstr ""
-
-#: src/heading-style/block.js:116
+#: src/heading-style/block.js:104
 msgid "Dotted border bottom black"
 msgstr ""
 
-#: src/heading-style/block.js:120
+#: src/heading-style/block.js:108
 msgid "Both ends"
 msgstr ""
 
-#: src/heading-style/block.js:140
+#: src/heading-style/block.js:128
 msgid "Brackets black"
 msgstr ""
 
-#: src/heading-style/block.js:52
+#: src/heading-style/block.js:40
 #: src/heading/block.js:125
 msgid "Plain"
 msgstr ""
 
-#: src/heading-style/block.js:68
+#: src/heading-style/block.js:56
 msgid "Background fill lightgray"
 msgstr ""
 
-#: src/heading-style/block.js:84
+#: src/heading-style/block.js:72
 msgid "Double border top and bottom black"
 msgstr ""
 
-#: src/heading-style/block.js:92
+#: src/heading-style/block.js:80
 msgid "Double border bottom black"
+msgstr ""
+
+#: src/heading-style/block.js:88
+msgid "Solid border top and bottom black"
+msgstr ""
+
+#: src/heading-style/block.js:96
+msgid "Solid border bottom black"
 msgstr ""
 
 #: src/heading/block.js:118
@@ -953,6 +953,10 @@ msgid "Input content."
 msgstr ""
 
 #: src/spacer/block.js:103
+msgid "Tablet"
+msgstr ""
+
+#: src/spacer/block.js:109
 msgid "Mobile"
 msgstr ""
 
@@ -960,36 +964,32 @@ msgstr ""
 msgid "Responsive Spacer"
 msgstr ""
 
-#: src/spacer/block.js:67
+#: src/spacer/block.js:73
 msgid "Unit Type"
 msgstr ""
 
-#: src/spacer/block.js:73
+#: src/spacer/block.js:79
 msgid "px"
 msgstr ""
 
-#: src/spacer/block.js:77
+#: src/spacer/block.js:83
 msgid "em"
 msgstr ""
 
-#: src/spacer/block.js:81
+#: src/spacer/block.js:87
 msgid "rem"
 msgstr ""
 
-#: src/spacer/block.js:85
+#: src/spacer/block.js:91
 msgid "vw"
 msgstr ""
 
-#: src/spacer/block.js:89
+#: src/spacer/block.js:95
 msgid "Height for each device."
 msgstr ""
 
-#: src/spacer/block.js:91
-msgid "PC"
-msgstr ""
-
 #: src/spacer/block.js:97
-msgid "Tablet"
+msgid "PC"
 msgstr ""
 
 #: src/staff/block.js:114

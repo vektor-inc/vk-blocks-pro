@@ -1,4 +1,8 @@
 export const schema = {
+    anchor: {
+        type: 'string',
+        default: null,
+    },
     unit: {
         type: 'string',
         default: 'px',

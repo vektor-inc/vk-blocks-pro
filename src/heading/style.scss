@@ -9,7 +9,11 @@
 	font-weight: normal;
 	box-shadow:none;
 	&:after {
+		content:none;
 		border:none;
+	}
+	&:before{
+		content:none;
 	}
 }
 

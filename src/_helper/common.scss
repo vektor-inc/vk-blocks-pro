@@ -227,6 +227,12 @@ ul, ol{
 				@include pad-mag;
 				@include inner-item-pad-mag;
 			}
+			&-solid-roundcorner{
+				border: solid 3px;
+				border-radius: 8px;
+				@include pad-mag;
+				@include inner-item-pad-mag;
+			}
 			&-dotted{
 				border: dotted 1px;
 				@include pad-mag;

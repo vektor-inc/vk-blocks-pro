@@ -215,11 +215,8 @@ export class PostList extends React.Component {
                     label={ __( 'Link' ) }
                     className="wp-block-button__inline-link"
                     value={ url }
-                    /* eslint-disable jsx-a11y/no-autofocus */
-                    // Disable Reason: The rule is meant to prevent enabling auto-focus, not disabling it.
                     autoFocus={ false }
-                    /* eslint-enable jsx-a11y/no-autofocus */
-                    onChange={ ( value ) => setAttributes( { url: value } ) }
+                    onChange={(value) => setAttributes({url: value})}
                     disableSuggestions={ ! isSelected }
                     isFullWidth
                     hasBorder

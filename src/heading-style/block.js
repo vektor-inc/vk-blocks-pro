@@ -4,20 +4,7 @@
  */
 const {assign} = lodash;
 const {__} = wp.i18n;
-const {Fragment} = wp.element;
 const {addFilter} = wp.hooks;
-const {
-    PanelBody,
-} = wp.components;
-
-const {
-    InspectorControls,
-    ColorPalette
-} = wp.blockEditor;
-
-const {createHigherOrderComponent} = wp.compose;
-import {convertColorClass} from "../_helper/color-code-to-class.js";
-
 const isValidBlockType = (name) => {
     const validBlockTypes = [
         'core/heading',

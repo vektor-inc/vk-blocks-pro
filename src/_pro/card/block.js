@@ -1,5 +1,5 @@
 /**
- * step block type
+ * card block type
  *
  */
 import {Component} from "./component";
@@ -48,9 +48,9 @@ const BlockIcon = (
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-registerBlockType('vk-blocks/step', {
+registerBlockType('vk-blocks/card', {
     // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-    title: __('Step', 'vk-blocks'), // Block title.
+    title: __('Card', 'vk-blocks'), // Block title.
     icon: BlockIcon, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
     category: 'vk-blocks-cat', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
     attributes: schema,
@@ -121,7 +121,7 @@ registerBlockType('vk-blocks/step', {
         return (
             <Fragment>
                 <InspectorControls>
-                    <PanelBody title={__('First Dot Number', 'vk-blocks')}>
+                    <PanelBody title={__('Column Number', 'vk-blocks')}>
                         <input
                             type="number"
                             id={"dot-number"}
@@ -133,7 +133,7 @@ registerBlockType('vk-blocks/step', {
                             }}
                             value={firstDotNum}
                             min="1"
-                            step="1"
+                            card="1"
                         />
                     </PanelBody>
                 </InspectorControls>

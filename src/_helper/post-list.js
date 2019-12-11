@@ -212,8 +212,6 @@ export class PostList extends React.Component {
                 label={__('Parent', 'vk-blocks')}
             >
                 <URLInput
-                    label={ __( 'Link' ) }
-                    className="wp-block-button__inline-link"
                     value={ url }
                     autoFocus={ false }
                     onChange={(value) => setAttributes({url: value})}

@@ -385,18 +385,25 @@ export class PostList extends React.Component {
             <Fragment>
                 <InspectorControls>
                     {(() => {
-                        if(name === 'vk-blocks/post-list'){
+                        if (name === 'vk-blocks/child-page') {
                             return(
                                 <div>
-                                    {renderConditions}
+                                    {renderConditionsUrlInput}
                                     {renderTypeColumn}
                                     {renderItem}
                                 </div>
                             );
-                        }else if(name === 'vk-blocks/child-page'){
-                            return(
+                        } else if (name === 'vk-blocks/card') {
+                            return (
                                 <div>
-                                    {renderConditionsUrlInput}
+                                    {renderTypeColumn}
+                                    {renderItem}
+                                </div>
+                            )
+                        } else {
+                            return (
+                                <div>
+                                    {renderConditions}
                                     {renderTypeColumn}
                                     {renderItem}
                                 </div>
@@ -406,14 +413,16 @@ export class PostList extends React.Component {
                 </InspectorControls>
                 <div>
                     {(() => {
-                        if(name === 'vk-blocks/post-list'){
-                            return <ServerSideRender
-                                block="vk-blocks/post-list"
-                                attributes={attributes}
-                            />
-                        }else if(name === 'vk-blocks/child-page'){
+                        if (name === 'vk-blocks/child-page') {
                             return <ServerSideRender
                                 block="vk-blocks/child-page"
+                                attributes={attributes}
+                            />
+                        } else if (name === 'vk-blocks/card') {
+
+                        } else {
+                            return <ServerSideRender
+                                block="vk-blocks/post-list"
                                 attributes={attributes}
                             />
                         }

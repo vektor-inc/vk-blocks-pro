@@ -5,10 +5,7 @@
 const {assign} = lodash;
 const {__} = wp.i18n;
 const {addFilter} = wp.hooks;
-<<<<<<< HEAD
-=======
 
->>>>>>> 3badace230f5409557865a3434766462e8394656
 const isValidBlockType = (name) => {
     const validBlockTypes = [
         'core/heading',

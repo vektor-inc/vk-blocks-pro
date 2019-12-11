@@ -4,6 +4,7 @@
  */
 import {Component} from "./component";
 import {schema} from './schema';
+import {PostList} from "../../_helper/post-list";
 
 const {__} = wp.i18n; // Import __() from wp.i18n
 const {registerBlockType, createBlock} = wp.blocks; // Import registerBlockType() from wp.blocks
@@ -63,80 +64,84 @@ registerBlockType('vk-blocks/card', {
      *
      * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
      */
-    edit({attributes, setAttributes, className, clientId}) {
-        const {
-            firstDotNum
-        } = attributes;
-
-        let selectEditor = select("core/block-editor") ? select("core/block-editor") : select("core/editor");
-        let dispatchEditor = dispatch("core/block-editor") ? dispatch("core/block-editor") : dispatch("core/editor");
-
-        const {getBlocksByClientId} = selectEditor;
-        const {updateBlockAttributes, insertBlock} = dispatchEditor;
-
-        let currentBlock = getBlocksByClientId(clientId);
-        let beforeLength;
-        let afterLength;
-
-        const addH4Block = (index, innerBlocks) => {
-            if (innerBlocks[index].innerBlocks.length === 0) {
-                const blockToInsert = createBlock('core/heading', {
-                    level: 4,
-                });
-                insertBlock(blockToInsert, 0, innerBlocks[index].clientId);
-            }
-        };
-
-
-        if (currentBlock !== undefined || currentBlock[0].innerBlocks !== undefined) {
-
-            let innerBlocks = currentBlock[0].innerBlocks;
-            beforeLength = innerBlocks.length;
-
-            //先頭のinnerBlockのみの時
-            if (innerBlocks.length === 1) {
-                addH4Block(0, innerBlocks);
-            }
-
-            if (beforeLength !== undefined && beforeLength !== 0 && beforeLength !== 1) {
-
-                if (beforeLength !== afterLength) {
-
-                    for (let i = 0; i < innerBlocks.length; i++) {
-                        if (innerBlocks[i] !== undefined) {
-
-                            addH4Block(i, innerBlocks);
-
-                            updateBlockAttributes(innerBlocks[i].clientId, {
-                                dotNum: firstDotNum + i
-                            });
-                        }
-                    }
-                }
-                afterLength = beforeLength;
-            }
-        }
+    edit(props) {
+        const {attributes, setAttributes, className, clientId} = props;
+        // const {
+        //     firstDotNum
+        // } = attributes;
+        //
+        // let selectEditor = select("core/block-editor") ? select("core/block-editor") : select("core/editor");
+        // let dispatchEditor = dispatch("core/block-editor") ? dispatch("core/block-editor") : dispatch("core/editor");
+        //
+        // const {getBlocksByClientId} = selectEditor;
+        // const {updateBlockAttributes, insertBlock} = dispatchEditor;
+        //
+        // let currentBlock = getBlocksByClientId(clientId);
+        // let beforeLength;
+        // let afterLength;
+        //
+        // const addH4Block = (index, innerBlocks) => {
+        //     if (innerBlocks[index].innerBlocks.length === 0) {
+        //         const blockToInsert = createBlock('core/heading', {
+        //             level: 4,
+        //         });
+        //         insertBlock(blockToInsert, 0, innerBlocks[index].clientId);
+        //     }
+        // };
+        //
+        //
+        // if (currentBlock !== undefined || currentBlock[0].innerBlocks !== undefined) {
+        //
+        //     let innerBlocks = currentBlock[0].innerBlocks;
+        //     beforeLength = innerBlocks.length;
+        //
+        //     //先頭のinnerBlockのみの時
+        //     if (innerBlocks.length === 1) {
+        //         addH4Block(0, innerBlocks);
+        //     }
+        //
+        //     if (beforeLength !== undefined && beforeLength !== 0 && beforeLength !== 1) {
+        //
+        //         if (beforeLength !== afterLength) {
+        //
+        //             for (let i = 0; i < innerBlocks.length; i++) {
+        //                 if (innerBlocks[i] !== undefined) {
+        //
+        //                     addH4Block(i, innerBlocks);
+        //
+        //                     updateBlockAttributes(innerBlocks[i].clientId, {
+        //                         dotNum: firstDotNum
+        //                     });
+        //                 }
+        //             }
+        //         }
+        //         afterLength = beforeLength;
+        //     }
+        // }
 
 
         return (
             <Fragment>
-                <InspectorControls>
-                    <PanelBody title={__('Column Number', 'vk-blocks')}>
-                        <input
-                            type="number"
-                            id={"dot-number"}
-                            onChange={(event) => {
-                                let value = parseInt(event.target.value, 10);
-                                setAttributes({
-                                    firstDotNum: value,
-                                });
-                            }}
-                            value={firstDotNum}
-                            min="1"
-                            card="1"
-                        />
-                    </PanelBody>
-                </InspectorControls>
+                <PostList
+                    value={props}
+                />
+                {/*<InspectorControls>*/}
+                    {/*<PanelBody title={__('Column Number', 'vk-blocks')}>*/}
+                    {/*    <input*/}
+                    {/*        type="number"*/}
+                    {/*        id={"dot-number"}*/}
+                    {/*        onChange={(event) => {*/}
+                    {/*            let value = parseInt(event.target.value, 10);*/}
+                    {/*            setAttributes({*/}
+                    {/*                firstDotNum: value,*/}
+                    {/*            });*/}
+                    {/*        }}*/}
+                    {/*        value={firstDotNum}*/}
+                    {/*        min="1"*/}
+                    {/*        card="1"*/}
+                    {/*    />*/}
+                    {/*</PanelBody>*/}
+                {/*</InspectorControls>*/}
                 <Component
                     attributes={attributes}
                     className={className}

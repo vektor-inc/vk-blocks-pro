@@ -18,8 +18,10 @@ export class Component extends React.Component {
         }
         return (
             <div className={`container`}>
+                <div className={'row'}>
+                    {elm}
+                </div>
             {/*<div className={`${className} ${containerClass} container`}>*/}
-                {elm}
             </div>
         );
     }

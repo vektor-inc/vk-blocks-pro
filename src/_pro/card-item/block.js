@@ -43,7 +43,8 @@ registerBlockType('vk-blocks/card-item', {
      *
      * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
      */
-    edit({attributes, setAttributes, className}) {
+    edit(props) {
+        const {attributes, setAttributes, className} = props;
         const {
             color,
             style,
@@ -124,9 +125,7 @@ registerBlockType('vk-blocks/card-item', {
                     </PanelBody>
                 </InspectorControls>
                 <Component
-                    attributes={attributes}
-                    className={className}
-                    setAttributes={setAttributes}
+                    value={props}
                     for_={"edit"}
                 />
             </Fragment>

@@ -18,6 +18,82 @@ msgstr ""
 msgid "Font Awesome icon list"
 msgstr ""
 
+#: src/_pro/card-item/block.js:100
+#: src/_pro/step-item/block.js:101
+#: src/_pro/timeline-item/block.js:80
+msgid "Outlined"
+msgstr ""
+
+#: src/_pro/card-item/block.js:115
+#: src/_pro/step-item/block.js:116
+#: src/_pro/table-of-contents/block.js:113
+#: src/_pro/timeline-item/block.js:99
+#: src/heading-style/block.js:34
+#: src/heading/block.js:124
+#: src/list-style/block.js:104
+#: src/staff/block.js:105
+msgid "Default"
+msgstr ""
+
+#: src/_pro/card-item/block.js:119
+#: src/_pro/outer/block.js:280
+#: src/_pro/step-item/block.js:120
+#: src/_pro/timeline-item/block.js:103
+#: src/staff/block.js:109
+msgid "None"
+msgstr ""
+
+#: src/_pro/card-item/block.js:32
+msgid "Card Item"
+msgstr ""
+
+#: src/_pro/card-item/block.js:57
+msgid "Card Mark"
+msgstr ""
+
+#: src/_pro/card-item/block.js:60
+#: src/_pro/step-item/block.js:61
+msgid "If FontAwesome class entered, it will overrides the number."
+msgstr ""
+
+#: src/_pro/card-item/block.js:74
+#: src/_pro/step-item/block.js:75
+#: src/_pro/timeline-item/block.js:60
+msgid "Ex,6:00AM"
+msgstr ""
+
+#: src/_pro/card-item/block.js:79
+#: src/_pro/step-item/block.js:80
+#: src/_pro/timeline-item/block.js:63
+#: src/staff/block.js:124
+msgid "Color"
+msgstr ""
+
+#: src/_pro/card-item/block.js:85
+#: src/_pro/step-item/block.js:86
+#: src/_pro/table-of-contents/block.js:104
+#: src/_pro/timeline-item/block.js:69
+msgid "Style"
+msgstr ""
+
+#: src/_pro/card-item/block.js:96
+#: src/_pro/outer/block.js:284
+#: src/_pro/step-item/block.js:97
+#: src/_pro/timeline-item/block.js:84
+#: src/group-style/block.js:103
+#: src/pr-content/block.js:142
+msgid "Solid"
+msgstr ""
+
+#: src/_pro/card/block.js:124
+msgid "Column Number"
+msgstr ""
+
+#: src/_pro/card/block.js:53
+#: src/_pro/post-list/block.js:274
+msgid "Card"
+msgstr ""
+
 #: src/_pro/outer/block.js:101
 #: src/pr-content/block.js:92
 msgid "Color Setting"
@@ -160,21 +236,6 @@ msgstr ""
 msgid "Border type"
 msgstr ""
 
-#: src/_pro/outer/block.js:280
-#: src/_pro/step-item/block.js:120
-#: src/_pro/timeline-item/block.js:103
-#: src/staff/block.js:109
-msgid "None"
-msgstr ""
-
-#: src/_pro/outer/block.js:284
-#: src/_pro/step-item/block.js:97
-#: src/_pro/timeline-item/block.js:84
-#: src/group-style/block.js:103
-#: src/pr-content/block.js:142
-msgid "Solid"
-msgstr ""
-
 #: src/_pro/outer/block.js:288
 #: src/group-style/block.js:111
 msgid "Dotted"
@@ -249,10 +310,6 @@ msgstr ""
 
 #: src/_pro/post-list/block.js:266
 msgid "Display type"
-msgstr ""
-
-#: src/_pro/post-list/block.js:274
-msgid "Card"
 msgstr ""
 
 #: src/_pro/post-list/block.js:278
@@ -359,21 +416,6 @@ msgstr ""
 msgid "Post list"
 msgstr ""
 
-#: src/_pro/step-item/block.js:101
-#: src/_pro/timeline-item/block.js:80
-msgid "Outlined"
-msgstr ""
-
-#: src/_pro/step-item/block.js:116
-#: src/_pro/table-of-contents/block.js:113
-#: src/_pro/timeline-item/block.js:99
-#: src/heading-style/block.js:47
-#: src/heading/block.js:124
-#: src/list-style/block.js:104
-#: src/staff/block.js:105
-msgid "Default"
-msgstr ""
-
 #: src/_pro/step-item/block.js:33
 msgid "Step Item"
 msgstr ""
@@ -382,28 +424,7 @@ msgstr ""
 msgid "Step Mark"
 msgstr ""
 
-#: src/_pro/step-item/block.js:61
-msgid "If FontAwesome class entered, it will overrides the number."
-msgstr ""
-
-#: src/_pro/step-item/block.js:75
-#: src/_pro/timeline-item/block.js:60
-msgid "Ex,6:00AM"
-msgstr ""
-
-#: src/_pro/step-item/block.js:80
-#: src/_pro/timeline-item/block.js:63
-#: src/staff/block.js:124
-msgid "Color"
-msgstr ""
-
-#: src/_pro/step-item/block.js:86
-#: src/_pro/table-of-contents/block.js:104
-#: src/_pro/timeline-item/block.js:69
-msgid "Style"
-msgstr ""
-
-#: src/_pro/step/block.js:121
+#: src/_pro/step/block.js:124
 msgid "First Dot Number"
 msgstr ""
 
@@ -670,41 +691,41 @@ msgstr ""
 msgid "Border Color"
 msgstr ""
 
-#: src/heading-style/block.js:100
-msgid "Solid border top and bottom black"
-msgstr ""
-
-#: src/heading-style/block.js:108
-msgid "Solid border bottom black"
-msgstr ""
-
-#: src/heading-style/block.js:116
+#: src/heading-style/block.js:103
 msgid "Dotted border bottom black"
 msgstr ""
 
-#: src/heading-style/block.js:120
+#: src/heading-style/block.js:107
 msgid "Both ends"
 msgstr ""
 
-#: src/heading-style/block.js:140
+#: src/heading-style/block.js:127
 msgid "Brackets black"
 msgstr ""
 
-#: src/heading-style/block.js:52
+#: src/heading-style/block.js:39
 #: src/heading/block.js:125
 msgid "Plain"
 msgstr ""
 
-#: src/heading-style/block.js:68
+#: src/heading-style/block.js:55
 msgid "Background fill lightgray"
 msgstr ""
 
-#: src/heading-style/block.js:84
+#: src/heading-style/block.js:71
 msgid "Double border top and bottom black"
 msgstr ""
 
-#: src/heading-style/block.js:92
+#: src/heading-style/block.js:79
 msgid "Double border bottom black"
+msgstr ""
+
+#: src/heading-style/block.js:87
+msgid "Solid border top and bottom black"
+msgstr ""
+
+#: src/heading-style/block.js:95
+msgid "Solid border bottom black"
 msgstr ""
 
 #: src/heading/block.js:118

@@ -168,20 +168,20 @@ msgid "None"
 msgstr "なし"
 
 #: src/_pro/outer/block.js:284 src/_pro/step-item/block.js:97
-#: src/_pro/timeline-item/block.js:84 src/group-style/block.js:103
+#: src/_pro/timeline-item/block.js:84 src/group-style/block.js:95
 #: src/pr-content/block.js:142
 msgid "Solid"
 msgstr "直線"
 
-#: src/_pro/outer/block.js:288 src/group-style/block.js:107
+#: src/_pro/outer/block.js:288 src/group-style/block.js:103
 msgid "Dotted"
 msgstr "点線"
 
-#: src/_pro/outer/block.js:292 src/group-style/block.js:111
+#: src/_pro/outer/block.js:292 src/group-style/block.js:107
 msgid "Dashed"
 msgstr "Dashed"
 
-#: src/_pro/outer/block.js:296 src/group-style/block.js:115
+#: src/_pro/outer/block.js:296 src/group-style/block.js:111
 msgid "Double"
 msgstr "二重線"
 
@@ -618,21 +618,25 @@ msgstr "タイトルを入力"
 msgid "Input content"
 msgstr "説明を入力"
 
-#: src/group-style/block.js:119
+#: src/group-style/block.js:115
 msgid "Stitch"
 msgstr "スティッチ"
 
-#: src/group-style/block.js:123
-msgid "top-bottom-border"
-msgstr "上下線"
+#: src/group-style/block.js:119
+msgid "Border Top Bottom"
+msgstr "直線 上下"
 
-#: src/group-style/block.js:127
+#: src/group-style/block.js:123
 msgid "Shadow"
 msgstr "シャドウ"
 
-#: src/group-style/block.js:58
+#: src/group-style/block.js:50
 msgid "Border Color"
 msgstr "線の色"
+
+#: src/group-style/block.js:99
+msgid "Solid Roundcorner"
+msgstr "直線 角丸"
 
 #: src/heading-style/block.js:100
 msgid "Solid border top and bottom black"
@@ -1007,6 +1011,9 @@ msgstr "名前"
 #: src/staff/component.js:50
 msgid "Caption"
 msgstr "キャプション"
+
+#~ msgid "top-bottom-border"
+#~ msgstr "上下線"
 
 #~ msgid "Solid black"
 #~ msgstr "直線 黒"

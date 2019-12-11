@@ -18,136 +18,136 @@ msgstr ""
 msgid "Font Awesome icon list"
 msgstr ""
 
-#: src/_helper/post-list.js:183
+#: src/_helper/post-list.js:182
 msgid "Filter by PostTypes"
 msgstr ""
 
-#: src/_helper/post-list.js:190
+#: src/_helper/post-list.js:189
 msgid "Filter by Taxonomy Terms"
 msgstr ""
 
-#: src/_helper/post-list.js:197
+#: src/_helper/post-list.js:196
 msgid "Number of Posts"
 msgstr ""
 
-#: src/_helper/post-list.js:209
+#: src/_helper/post-list.js:208
 msgid "Display conditions"
 msgstr ""
 
-#: src/_helper/post-list.js:213
+#: src/_helper/post-list.js:212
 msgid "Parent"
 msgstr ""
 
-#: src/_helper/post-list.js:216
+#: src/_helper/post-list.js:215
 msgid "Link"
 msgstr ""
 
-#: src/_helper/post-list.js:232
+#: src/_helper/post-list.js:231
 msgid "Display type and columns"
 msgstr ""
 
-#: src/_helper/post-list.js:236
+#: src/_helper/post-list.js:235
 msgid "Display type"
 msgstr ""
 
-#: src/_helper/post-list.js:244
+#: src/_helper/post-list.js:243
 msgid "Card"
 msgstr ""
 
-#: src/_helper/post-list.js:248
+#: src/_helper/post-list.js:247
 msgid "Card Horizontal"
 msgstr ""
 
-#: src/_helper/post-list.js:252
+#: src/_helper/post-list.js:251
 msgid "Media"
 msgstr ""
 
-#: src/_helper/post-list.js:258
+#: src/_helper/post-list.js:257
 msgid "Column ( Screen size : Extra small )"
 msgstr ""
 
-#: src/_helper/post-list.js:268
+#: src/_helper/post-list.js:267
 msgid "Column ( Screen size : Small )"
 msgstr ""
 
-#: src/_helper/post-list.js:278
+#: src/_helper/post-list.js:277
 msgid "Column ( Screen size : Medium )"
 msgstr ""
 
-#: src/_helper/post-list.js:288
+#: src/_helper/post-list.js:287
 msgid "Column ( Screen size : Large )"
 msgstr ""
 
-#: src/_helper/post-list.js:298
+#: src/_helper/post-list.js:297
 msgid "Column ( Screen size : Extra large )"
 msgstr ""
 
-#: src/_helper/post-list.js:310
+#: src/_helper/post-list.js:309
 msgid "Display item"
 msgstr ""
 
-#: src/_helper/post-list.js:314
+#: src/_helper/post-list.js:313
 msgid "Image"
 msgstr ""
 
-#: src/_helper/post-list.js:319
+#: src/_helper/post-list.js:318
 msgid "Term name"
 msgstr ""
 
-#: src/_helper/post-list.js:324
+#: src/_helper/post-list.js:323
 msgid "Excerpt"
 msgstr ""
 
-#: src/_helper/post-list.js:329
+#: src/_helper/post-list.js:328
 msgid "Date"
 msgstr ""
 
-#: src/_helper/post-list.js:336
+#: src/_helper/post-list.js:335
 msgid "New mark"
 msgstr ""
 
-#: src/_helper/post-list.js:342
+#: src/_helper/post-list.js:341
 #: src/button/block.js:59
 msgid "Button"
 msgstr ""
 
-#: src/_helper/post-list.js:346
+#: src/_helper/post-list.js:345
 msgid "New mark option"
 msgstr ""
 
-#: src/_helper/post-list.js:348
+#: src/_helper/post-list.js:347
 msgid "Number of days to display the new post mark"
 msgstr ""
 
-#: src/_helper/post-list.js:354
+#: src/_helper/post-list.js:353
 msgid "New post mark"
 msgstr ""
 
-#: src/_helper/post-list.js:359
+#: src/_helper/post-list.js:358
 msgid "Button option"
 msgstr ""
 
-#: src/_helper/post-list.js:361
+#: src/_helper/post-list.js:360
 msgid "Button text"
 msgstr ""
 
-#: src/_helper/post-list.js:367
+#: src/_helper/post-list.js:366
 msgid "Button align"
 msgstr ""
 
-#: src/_helper/post-list.js:375
+#: src/_helper/post-list.js:374
 #: src/balloon/block.js:88
 #: src/button/block.js:174
 #: src/pr-content/block.js:195
 msgid "Left"
 msgstr ""
 
-#: src/_helper/post-list.js:379
+#: src/_helper/post-list.js:378
 #: src/button/block.js:175
 msgid "Center"
 msgstr ""
 
-#: src/_helper/post-list.js:383
+#: src/_helper/post-list.js:382
 #: src/balloon/block.js:89
 #: src/button/block.js:176
 #: src/pr-content/block.js:194
@@ -310,31 +310,23 @@ msgstr ""
 #: src/_pro/outer/block.js:284
 #: src/_pro/step-item/block.js:97
 #: src/_pro/timeline-item/block.js:84
-#: src/group-style/block.js:103
-<<<<<<< HEAD
-#: src/heading-style/block.js:82
-=======
->>>>>>> cfefa21b5759c7ec7c162d43ecdb55d303985e4c
+#: src/group-style/block.js:95
 #: src/pr-content/block.js:142
 msgid "Solid"
 msgstr ""
 
 #: src/_pro/outer/block.js:288
-#: src/group-style/block.js:107
+#: src/group-style/block.js:103
 msgid "Dotted"
 msgstr ""
 
 #: src/_pro/outer/block.js:292
-#: src/group-style/block.js:111
+#: src/group-style/block.js:107
 msgid "Dashed"
 msgstr ""
 
 #: src/_pro/outer/block.js:296
-#: src/group-style/block.js:115
-<<<<<<< HEAD
-#: src/heading-style/block.js:66
-=======
->>>>>>> cfefa21b5759c7ec7c162d43ecdb55d303985e4c
+#: src/group-style/block.js:111
 msgid "Double"
 msgstr ""
 
@@ -670,73 +662,36 @@ msgstr ""
 msgid "Input content"
 msgstr ""
 
-#: src/group-style/block.js:119
+#: src/group-style/block.js:115
 msgid "Stitch"
 msgstr ""
 
-#: src/group-style/block.js:123
-msgid "top-bottom-border"
+#: src/group-style/block.js:119
+msgid "Border Top Bottom"
 msgstr ""
 
-#: src/group-style/block.js:127
+#: src/group-style/block.js:123
 msgid "Shadow"
 msgstr ""
 
-#: src/group-style/block.js:58
+#: src/group-style/block.js:50
 msgid "Border Color"
 msgstr ""
 
-<<<<<<< HEAD
+#: src/group-style/block.js:99
+msgid "Solid Roundcorner"
+msgstr ""
+
 #: src/heading-style/block.js:102
-msgid "Dotted_bottomborder_black"
-msgstr ""
-
-#: src/heading-style/block.js:106
-msgid "Both_ends"
-msgstr ""
-
-#: src/heading-style/block.js:110
-msgid "Leftborder"
-msgstr ""
-
-#: src/heading-style/block.js:114
-msgid "Leftborder_nobackground"
-msgstr ""
-
-#: src/heading-style/block.js:118
-msgid "Diagonal_stripe_bottomborder"
-msgstr ""
-
-#: src/heading-style/block.js:122
-msgid "Brackets"
-msgstr ""
-
-#: src/heading-style/block.js:126
-msgid "Brackets_black"
-msgstr ""
-
-#: src/heading-style/block.js:130
-msgid "Small_bottomborder"
-=======
-#: src/heading-style/block.js:100
-msgid "Solid border top and bottom black"
-msgstr ""
-
-#: src/heading-style/block.js:108
-msgid "Solid border bottom black"
-msgstr ""
-
-#: src/heading-style/block.js:116
 msgid "Dotted border bottom black"
 msgstr ""
 
-#: src/heading-style/block.js:120
+#: src/heading-style/block.js:106
 msgid "Both ends"
 msgstr ""
 
-#: src/heading-style/block.js:140
+#: src/heading-style/block.js:126
 msgid "Brackets black"
->>>>>>> cfefa21b5759c7ec7c162d43ecdb55d303985e4c
 msgstr ""
 
 #: src/heading-style/block.js:38
@@ -744,69 +699,24 @@ msgstr ""
 msgid "Plain"
 msgstr ""
 
-<<<<<<< HEAD
-#: src/heading-style/block.js:42
-msgid "Speech_balloon_fill"
-msgstr ""
-
-#: src/heading-style/block.js:46
-msgid "Background_fill"
-msgstr ""
-
-#: src/heading-style/block.js:50
-msgid "Background_fill_stitch"
-msgstr ""
-
 #: src/heading-style/block.js:54
-msgid "Background_fill_lightgray"
-msgstr ""
-
-#: src/heading-style/block.js:58
-msgid "Topborder_background_fill_none"
-msgstr ""
-
-#: src/heading-style/block.js:62
-msgid "Topborder_background_fill_black"
-msgstr ""
-
-#: src/heading-style/block.js:70
-msgid "Double_black"
-msgstr ""
-
-#: src/heading-style/block.js:74
-msgid "Double_bottomborder"
-msgstr ""
-
-#: src/heading-style/block.js:78
-msgid "Double_bottomborder_black"
-=======
-#: src/heading-style/block.js:68
 msgid "Background fill lightgray"
 msgstr ""
 
-#: src/heading-style/block.js:84
+#: src/heading-style/block.js:70
 msgid "Double border top and bottom black"
 msgstr ""
 
-#: src/heading-style/block.js:92
+#: src/heading-style/block.js:78
 msgid "Double border bottom black"
->>>>>>> cfefa21b5759c7ec7c162d43ecdb55d303985e4c
 msgstr ""
 
 #: src/heading-style/block.js:86
-msgid "Solid_black"
-msgstr ""
-
-#: src/heading-style/block.js:90
-msgid "Solid_bottomborder"
+msgid "Solid border top and bottom black"
 msgstr ""
 
 #: src/heading-style/block.js:94
-msgid "Solid_bottomborder_black"
-msgstr ""
-
-#: src/heading-style/block.js:98
-msgid "Solid_bottomborder_leftkeycolor"
+msgid "Solid border bottom black"
 msgstr ""
 
 #: src/heading/block.js:118
@@ -1055,6 +965,10 @@ msgid "Input content."
 msgstr ""
 
 #: src/spacer/block.js:103
+msgid "Tablet"
+msgstr ""
+
+#: src/spacer/block.js:109
 msgid "Mobile"
 msgstr ""
 
@@ -1062,36 +976,32 @@ msgstr ""
 msgid "Responsive Spacer"
 msgstr ""
 
-#: src/spacer/block.js:67
+#: src/spacer/block.js:73
 msgid "Unit Type"
 msgstr ""
 
-#: src/spacer/block.js:73
+#: src/spacer/block.js:79
 msgid "px"
 msgstr ""
 
-#: src/spacer/block.js:77
+#: src/spacer/block.js:83
 msgid "em"
 msgstr ""
 
-#: src/spacer/block.js:81
+#: src/spacer/block.js:87
 msgid "rem"
 msgstr ""
 
-#: src/spacer/block.js:85
+#: src/spacer/block.js:91
 msgid "vw"
 msgstr ""
 
-#: src/spacer/block.js:89
+#: src/spacer/block.js:95
 msgid "Height for each device."
 msgstr ""
 
-#: src/spacer/block.js:91
-msgid "PC"
-msgstr ""
-
 #: src/spacer/block.js:97
-msgid "Tablet"
+msgid "PC"
 msgstr ""
 
 #: src/staff/block.js:114

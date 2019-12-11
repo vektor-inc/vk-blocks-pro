@@ -43,11 +43,11 @@ export const schema = {
     },
     display_excerpt: {
         type: 'boolean',
-        default: false,
+        default: true,
     },
     display_date: {
         type: 'boolean',
-        default: true,
+        default: false,
     },
     display_new: {
         type: 'boolean',
@@ -55,7 +55,7 @@ export const schema = {
     },
     display_btn: {
         type: 'boolean',
-        default: false,
+        default: true,
     },
     new_date: {
         type: 'number',

@@ -1,5 +1,5 @@
 import React from "react";
-import {SpacerComponent} from "./component";
+import {SpacerComponentV1,SpacerComponentV2} from "./component";
 import {schema} from './schema';
 const {RichText} = wp.editor;
 
@@ -8,7 +8,15 @@ export const deprecated = [
         attributes: schema,
         save({attributes}) {
             return (
-                <SpacerComponent attributes={attributes}/>
+                <SpacerComponentV2 attributes={attributes}/>
+            );
+        },
+    },
+    {
+        attributes: schema,
+        save({attributes}) {
+            return (
+                <SpacerComponentV1 attributes={attributes}/>
             );
         },
     }

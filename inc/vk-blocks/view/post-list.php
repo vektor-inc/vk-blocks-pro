@@ -5,16 +5,22 @@ class VkBlocksPostList {
 	/**
 	 * Return html to display latest post list.
 	 *
+	 * @param $name
 	 * @param $attributes
 	 *
 	 * @return string
 	 */
 	public function render_post_list( $attributes ) {
 
-		$wp_query = $this->get_loop_query( $attributes );
+		$name = $attributes['name'];
+		if($name === 'vk-blocks/post-list'){
+			$wp_query = $this->get_loop_query( $attributes );
+		} elseif ( $name === 'vk-blocks/child-page' ) {
+			$wp_query = $this->get_loop_query_child( $attributes );
+		}
 
-		if ( $wp_query === false ) {
-			return '<div>' . __( 'No Post is selected', 'vk-blocks' ) . '</div>';
+		if ( $wp_query === false || $wp_query->posts === array() ) {
+			return $this->renderNoPost();
 		}
 
 		$options = array(
@@ -94,9 +100,36 @@ class VkBlocksPostList {
 			'orderby'        => 'date',
 		);
 
-		$wp_query = new WP_Query( $args );
+		return new WP_Query( $args );
 
-		return $wp_query;
+	}
+
+	public function get_loop_query_child($attributes){
+
+		if ( empty( $attributes['url'] ) ) {
+			$parent_id = $attributes['postId'];
+		} else if ( url_to_postid( $attributes['url'] ) !== 0 ) {
+			$parent_id = url_to_postid( $attributes['url'] );
+		} else {
+			return $this->renderNoPost();
+		}
+
+
+//parent idが正しく指定されなかった時は、何も撮ってこないクエリを投げる
+		$args =  array(
+			'post_type'      => 'page',
+			'paged'          => 0,
+			//0で全件取得
+			'order'          => 'DESC',
+			'orderby'        => 'date',
+			'post_parent' => $parent_id
+		);
+
+		return new WP_Query( $args );
+	}
+
+	public function renderNoPost() {
+		return '<div>' . __( 'No Post is selected', 'vk-blocks' ) . '</div>';
 	}
 
 }
@@ -105,6 +138,7 @@ class VkBlocksPostList {
 /**
  * Gutenberg Callback function.
  *
+ * @param $name
  * @param $attributes
  *
  * @return string

@@ -1,4 +1,7 @@
 export const schema = {
+    url: {
+        "type": "string",
+    },
     postId: {
         type: 'number',
     },
@@ -40,11 +43,11 @@ export const schema = {
     },
     display_excerpt: {
         type: 'boolean',
-        default: false,
+        default: true,
     },
     display_date: {
         type: 'boolean',
-        default: true,
+        default: false,
     },
     display_new: {
         type: 'boolean',
@@ -52,7 +55,7 @@ export const schema = {
     },
     display_btn: {
         type: 'boolean',
-        default: false,
+        default: true,
     },
     new_date: {
         type: 'number',
@@ -62,11 +65,11 @@ export const schema = {
         type: 'string',
         default: 'New!!',
     },
-		btn_text: {
+    btn_text: {
         type: 'string',
         default: 'Read more',
     },
-		btn_align: {
+    btn_align: {
         type: 'string',
         default: 'text-right',
     },

@@ -234,7 +234,6 @@ registerBlockType('vk-blocks/button', {
                     </PanelBody>
                 </InspectorControls>
                 <div className={containerClass}>
-
                     <Component lbColorCustom={buttonColorCustom} lbColor={buttonColor} lbType={buttonType}
                                lbAlign={buttonAlign}
                                lbSize={buttonSize}
@@ -249,7 +248,7 @@ registerBlockType('vk-blocks/button', {
                             value={content}
                             placeholder={__('Input text', 'vk-blocks')}
                             formattingControls={['bold', 'italic', 'strikethrough']}
-                            // keepPlaceholderOnFocus
+                            isSelected={true}
                         />
                     }/>
                     {isSelected && (

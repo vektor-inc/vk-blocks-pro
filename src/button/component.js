@@ -41,10 +41,8 @@ export class Component extends React.Component {
                     color: buttonColorCustom
                 };
             }
-
 				// カスタムカラーじゃない場合
         } else if (!buttonColorCustom) {
-
             // 塗り
             if (buttonType === '0') {
                 aClass = `${aClass} btn-${buttonSize} btn-${buttonColor}`;
@@ -60,8 +58,6 @@ export class Component extends React.Component {
         if ( buttonAlign === 'block' ){
         	aClass = `${aClass} btn-block`;
         }
-
-
 
         if (fontAwesomeIconBefore) {
             iconBefore = <i className={`${fontAwesomeIconBefore} vk_button_link_before`}></i> ;

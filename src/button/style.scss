@@ -175,3 +175,8 @@ $color_dark:#343a40;
 	background: $color_dark;
 	color:#fff;
 }
+@media (min-width: 600px), all{
+	div[data-type="vk-blocks/button"]{
+		padding: 0;
+	}
+}

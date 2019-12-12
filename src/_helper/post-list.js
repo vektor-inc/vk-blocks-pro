@@ -17,7 +17,7 @@ export class PostList extends React.Component {
         const {postTypes, className, attributes, setAttributes, clientId, name,isSelected} = this.props.value;
 
         const {
-            url,
+            id,
             numberPosts,
             layout,
             col_xs,
@@ -204,6 +204,32 @@ export class PostList extends React.Component {
                 </BaseControl>
             </PanelBody>;
 
+
+        let renderPostList = (posts) => {
+            if (posts) {
+                let options = posts.map(post => {
+
+                    let label;
+                    if (post.parent !== 0) {
+                        label = ' - ' + post.title.rendered + "(Child Page)"
+                    } else {
+                        label = post.title.rendered
+                    }
+                    return {
+                        value: post.id,
+                        label: __(label, 'vk-blocks'),
+                    }
+                });
+
+                let defaultOption = [{
+                    value: 999,
+                    label: __('Current Page', 'vk-blocks'),
+                }];
+
+                return defaultOption.concat(options);
+            }
+        };
+
         const renderConditionsUrlInput = <PanelBody
             title={__('Display conditions', 'vk-blocks')}
             initialOpen={false}
@@ -211,13 +237,13 @@ export class PostList extends React.Component {
             <BaseControl
                 label={__('Parent', 'vk-blocks')}
             >
-                <URLInput
-                    value={ url }
-                    autoFocus={ false }
-                    onChange={(value) => setAttributes({url: value})}
-                    disableSuggestions={ ! isSelected }
-                    isFullWidth
-                    hasBorder
+                {
+                    postTypes && console.log(postTypes)
+                }
+                <SelectControl
+                    value={id}
+                    onChange={(value) => setAttributes({id: value})}
+                    options={renderPostList(postTypes)}
                 />
             </BaseControl>
         </PanelBody>;

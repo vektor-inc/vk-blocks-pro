@@ -12,7 +12,7 @@ class VkBlocksPostList {
 	 */
 	public function render_post_list( $attributes ) {
 
-		$name = $attributes['name'];
+		$name = esc_html( $attributes['name'] );
 		if($name === 'vk-blocks/post-list'){
 			$wp_query = $this->get_loop_query( $attributes );
 		} elseif ( $name === 'vk-blocks/child-page' ) {
@@ -24,20 +24,20 @@ class VkBlocksPostList {
 		}
 
 		$options = array(
-			'layout'                     => $attributes['layout'],
+			'layout'                     => esc_html( $attributes['layout'] ),
 			'slug'                       => '',
-			'display_image'              => $attributes['display_image'],
-			'display_image_overlay_term' => $attributes['display_image_overlay_term'],
-			'display_excerpt'            => $attributes['display_excerpt'],
-			'display_date'               => $attributes['display_date'],
-			'display_new'                => $attributes['display_new'],
-			'display_btn'                => $attributes['display_btn'],
+			'display_image'              => esc_html( $attributes['display_image'] ),
+			'display_image_overlay_term' => esc_html( $attributes['display_image_overlay_term'] ),
+			'display_excerpt'            => esc_html( $attributes['display_excerpt'] ),
+			'display_date'               => esc_html( $attributes['display_date'] ),
+			'display_new'                => esc_html( $attributes['display_new'] ),
+			'display_btn'                => esc_html( $attributes['display_btn'] ),
 			'image_default_url'          => VK_BLOCKS_URL . 'images/no-image.png',
 			'overlay'                    => false,
-			'new_text'                   => $attributes['new_text'],
-			'new_date'                   => $attributes['new_date'],
-			'btn_text'                   => $attributes['btn_text'],
-			'btn_align'                  => $attributes['btn_align'],
+			'new_text'                   => esc_html( $attributes['new_text'] ),
+			'new_date'                   => esc_html( $attributes['new_date'] ),
+			'btn_text'                   => esc_html( $attributes['btn_text'] ),
+			'btn_align'                  => esc_html( $attributes['btn_align'] ),
 			'class_outer'                => 'vk_PostList_card ' . VK_Component_Posts::get_col_size_classes( $attributes ),
 			'class_title'                => '',
 			'body_prepend'               => '',
@@ -57,6 +57,7 @@ class VkBlocksPostList {
 		if ( ! $array ) {
 			return false;
 		}
+		return true;
 	}
 
 	private function format_terms( $isCheckedTerms ) {
@@ -88,44 +89,35 @@ class VkBlocksPostList {
 			return false;
 		}
 
-		// $count      = ( isset( $instance['count'] ) && $instance['count'] ) ? $instance['count'] : 10;
-
 		$args = array(
 			'post_type'      => $isCheckedPostType,
 			'tax_query'      => $this::format_terms( $isCheckedTerms ),
 			'paged'          => 1,
 			//0で全件取得
-			'posts_per_page' => $attributes['numberPosts'],
+			'posts_per_page' => intval( $attributes['numberPosts'] ),
 			'order'          => 'DESC',
 			'orderby'        => 'date',
 		);
-
 		return new WP_Query( $args );
-
 	}
 
 	public function get_loop_query_child($attributes){
 
-		if ( empty( $attributes['url'] ) ) {
-			$parent_id = $attributes['postId'];
-		} else if ( url_to_postid( $attributes['url'] ) !== 0 ) {
-			$parent_id = url_to_postid( $attributes['url'] );
+		//ParentIdを指定
+		if ( isset( $attributes['selectId'] ) ) {
+			$args = array(
+				'post_type'   => 'page',
+				'paged'       => 0,
+				//0で全件取得
+				'order'       => 'DESC',
+				'orderby'     => 'date',
+				'post_parent' => intval( $attributes['selectId'] )
+			);
+			return new WP_Query( $args );
+
 		} else {
-			return $this->renderNoPost();
+			return false;
 		}
-
-
-//parent idが正しく指定されなかった時は、何も撮ってこないクエリを投げる
-		$args =  array(
-			'post_type'      => 'page',
-			'paged'          => 0,
-			//0で全件取得
-			'order'          => 'DESC',
-			'orderby'        => 'date',
-			'post_parent' => $parent_id
-		);
-
-		return new WP_Query( $args );
 	}
 
 	public function renderNoPost() {
@@ -133,7 +125,6 @@ class VkBlocksPostList {
 	}
 
 }
-
 
 /**
  * Gutenberg Callback function.

@@ -1,9 +1,6 @@
 export const schema = {
-    url: {
-        "type": "string",
-    },
-    postId: {
-        type: 'number',
+    selectId: {
+        "type": "number",
     },
     name: {
         type: 'string',

@@ -1,7 +1,4 @@
 export const schema = {
-    postId: {
-        type: 'number',
-    },
     name: {
         type: 'string',
         default: '',

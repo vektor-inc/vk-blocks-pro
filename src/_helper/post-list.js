@@ -14,10 +14,9 @@ export class PostList extends React.Component {
 
     render() {
 
-        const {postTypes, className, attributes, setAttributes, clientId, name,isSelected} = this.props.value;
-
+        const {postTypes, className, attributes, setAttributes, clientId, name, isSelected} = this.props.value;
         const {
-            id,
+            selectId,
             numberPosts,
             layout,
             col_xs,
@@ -39,9 +38,7 @@ export class PostList extends React.Component {
             coreTerms,
             isCheckedTerms
         } = attributes;
-
         attributes['name'] = name;
-        attributes['postId'] = select("core/editor").getCurrentPostId();
 
         /**
          * Check array is empty or not. If array is empty return true;
@@ -204,7 +201,6 @@ export class PostList extends React.Component {
                 </BaseControl>
             </PanelBody>;
 
-
         let renderPostList = (posts) => {
             if (posts) {
                 let options = posts.map(post => {
@@ -222,8 +218,8 @@ export class PostList extends React.Component {
                 });
 
                 let defaultOption = [{
-                    value: 999,
-                    label: __('Current Page', 'vk-blocks'),
+                    value: false,
+                    label: __('None', 'vk-blocks'),
                 }];
 
                 return defaultOption.concat(options);
@@ -237,12 +233,9 @@ export class PostList extends React.Component {
             <BaseControl
                 label={__('Parent', 'vk-blocks')}
             >
-                {
-                    postTypes && console.log(postTypes)
-                }
                 <SelectControl
-                    value={id}
-                    onChange={(value) => setAttributes({id: value})}
+                    value={selectId}
+                    onChange={(value) => setAttributes({selectId: value})}
                     options={renderPostList(postTypes)}
                 />
             </BaseControl>

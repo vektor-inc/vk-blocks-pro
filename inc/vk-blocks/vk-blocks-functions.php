@@ -84,9 +84,6 @@ function vkblocks_blocks_assets() {
 					register_block_type(
 						'vk-blocks/' . $value, array(
 							'attributes'      => array(
-								'postId'            => array(
-									'type'    => 'number',
-								),
 								'name'            => array(
 									'type'    => 'string',
 								),
@@ -182,24 +179,21 @@ function vkblocks_blocks_assets() {
 				register_block_type(
 					'vk-blocks/' . $value, array(
 						'attributes'      => array(
-							'url'            => array(
-								'type'    => 'string',
-							),
-							'postId'            => array(
+							'selectId' => array(
 								'type'    => 'number',
 							),
-							'name'            => array(
+							'name'     => array(
 								'type'    => 'string',
 							),
-							'layout'            => array(
+							'layout'   => array(
 								'type'    => 'string',
 								'default' => 'card',
 							),
-							'col_xs'            => array(
+							'col_xs'   => array(
 								'type'    => 'number',
 								'default' => 1,
 							),
-							'col_sm'            => array(
+							'col_sm'   => array(
 								'type'    => 'number',
 								'default' => 2,
 							),

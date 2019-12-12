@@ -35,10 +35,8 @@ registerBlockType('vk-blocks/child-page', {
     edit: withSelect((select) => {
         return {
             postTypes: select('core').getEntityRecords('postType', 'page', {
-                // per_page: -1,
-                _embed: true, //HERE
-                // parent: wp.data.select("core/editor").getCurrentPostId(),
-            })
+                _embed: true,
+            }),
         };
     })((props) => {
 

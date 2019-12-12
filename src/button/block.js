@@ -249,10 +249,9 @@ registerBlockType('vk-blocks/button', {
                             value={content}
                             placeholder={__('Input text', 'vk-blocks')}
                             formattingControls={['bold', 'italic', 'strikethrough']}
-                            keepPlaceholderOnFocus
+                            // keepPlaceholderOnFocus
                         />
                     }/>
-
                     {isSelected && (
                         <form
                             className="block-library-button__inline-link"

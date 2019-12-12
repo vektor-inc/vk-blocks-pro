@@ -7,6 +7,7 @@ const {registerBlockType} = wp.blocks;
 const {withSelect} = wp.data;
 import {schema} from './schema.js';
 import {PostList} from '../../_helper/post-list';
+
 const BlockIcon = (
 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 576 512">
 <path d="M333.5,151.4l-85.6-0.1c-16.2,0-29.3-13.2-29.3-29.4l0.1-90.2c0-16.2,13.2-29.3,29.4-29.3l85.6,0.1
@@ -18,7 +19,7 @@ const BlockIcon = (
         c20.6,0,37.3-16.7,37.3-37.3l0.1-134.7C570,318.1,553.2,301.3,532.7,301.3z M412.4,464.6l0.1-117.4l111.4,0.1l-0.1,117.4
         L412.4,464.6z"/>
 </g>
-<polygon points="308.7,206.7 308.8,169.1 272.8,169 272.7,206.7 92.1,206.5 92.1,279.2 128.1,279.2 128.1,242.5 453.4,242.9 
+    <polygon points="308.7,206.7 308.8,169.1 272.8,169 272.7,206.7 92.1,206.5 92.1,279.2 128.1,279.2 128.1,242.5 453.4,242.9
     453.4,279.2 489.4,279.2 489.4,206.9 "/>
 </svg>
 
@@ -33,7 +34,11 @@ registerBlockType('vk-blocks/child-page', {
 
     edit: withSelect((select) => {
         return {
-            postTypes: select('core').getPostTypes(),
+            postTypes: select('core').getEntityRecords('postType', 'page', {
+                // per_page: -1,
+                _embed: true, //HERE
+                // parent: wp.data.select("core/editor").getCurrentPostId(),
+            })
         };
     })((props) => {
 

@@ -13,7 +13,7 @@ class VkBlocksPostList {
 	public function render_post_list( $attributes ) {
 
 		$name = esc_html( $attributes['name'] );
-		if($name === 'vk-blocks/post-list'){
+		if ( $name === 'vk-blocks/post-list' ) {
 			$wp_query = $this->get_loop_query( $attributes );
 		} elseif ( $name === 'vk-blocks/child-page' ) {
 			$wp_query = $this->get_loop_query_child( $attributes );
@@ -62,12 +62,12 @@ class VkBlocksPostList {
 
 	private function format_terms( $isCheckedTerms ) {
 
-		$return             = [];
+		$return             = array();
 		$return['relation'] = 'OR';
 
 		foreach ( $isCheckedTerms as $key => $value ) {
 
-			if ( $value !== [] ) {
+			if ( $value !== array() ) {
 
 				$new_array = array(
 					'taxonomy' => $key,
@@ -93,7 +93,7 @@ class VkBlocksPostList {
 			'post_type'      => $isCheckedPostType,
 			'tax_query'      => $this::format_terms( $isCheckedTerms ),
 			'paged'          => 1,
-			//0で全件取得
+			// 0で全件取得
 			'posts_per_page' => intval( $attributes['numberPosts'] ),
 			'order'          => 'DESC',
 			'orderby'        => 'date',
@@ -101,18 +101,18 @@ class VkBlocksPostList {
 		return new WP_Query( $args );
 	}
 
-	public function get_loop_query_child($attributes){
+	public function get_loop_query_child( $attributes ) {
 
-		//ParentIdを指定
+		// ParentIdを指定
 		if ( isset( $attributes['selectId'] ) ) {
 			$args = array(
-				'post_type'   => 'page',
-				'paged'       => 0,
-				//0で全件取得
+				'post_type'      => 'page',
+				'paged'          => 0,
+				// 0で全件取得
 				'posts_per_page' => -1,
-				'order'       => 'DESC',
-				'orderby'     => 'date',
-				'post_parent' => intval( $attributes['selectId'] )
+				'order'          => 'ASC',
+				'orderby'        => 'menu_order',
+				'post_parent'    => intval( $attributes['selectId'] ),
 			);
 			return new WP_Query( $args );
 

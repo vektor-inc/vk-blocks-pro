@@ -18,143 +18,143 @@ msgstr ""
 msgid "Font Awesome icon list"
 msgstr ""
 
-#: src/_helper/post-list.js:182
-msgid "Filter by PostTypes"
-msgstr ""
-
-#: src/_helper/post-list.js:189
-msgid "Filter by Taxonomy Terms"
-msgstr ""
-
-#: src/_helper/post-list.js:196
-msgid "Number of Posts"
-msgstr ""
-
-#: src/_helper/post-list.js:208
+#: src/_helper/post-list.js:175
 msgid "Display conditions"
 msgstr ""
 
-#: src/_helper/post-list.js:212
-msgid "Parent"
+#: src/_helper/post-list.js:179
+msgid "Filter by PostTypes"
 msgstr ""
 
-#: src/_helper/post-list.js:215
-msgid "Link"
+#: src/_helper/post-list.js:186
+msgid "Filter by Taxonomy Terms"
 msgstr ""
 
-#: src/_helper/post-list.js:231
+#: src/_helper/post-list.js:193
+msgid "Number of Posts"
+msgstr ""
+
+#: src/_helper/post-list.js:222
+#: src/_pro/outer/block.js:280
+#: src/_pro/step-item/block.js:120
+#: src/_pro/timeline-item/block.js:103
+#: src/staff/block.js:109
+msgid "None"
+msgstr ""
+
+#: src/_helper/post-list.js:230
 msgid "Display type and columns"
 msgstr ""
 
-#: src/_helper/post-list.js:235
+#: src/_helper/post-list.js:234
 msgid "Display type"
 msgstr ""
 
-#: src/_helper/post-list.js:243
+#: src/_helper/post-list.js:242
 msgid "Card"
 msgstr ""
 
-#: src/_helper/post-list.js:247
+#: src/_helper/post-list.js:246
 msgid "Card Horizontal"
 msgstr ""
 
-#: src/_helper/post-list.js:251
+#: src/_helper/post-list.js:250
 msgid "Media"
 msgstr ""
 
-#: src/_helper/post-list.js:257
+#: src/_helper/post-list.js:256
 msgid "Column ( Screen size : Extra small )"
 msgstr ""
 
-#: src/_helper/post-list.js:267
+#: src/_helper/post-list.js:266
 msgid "Column ( Screen size : Small )"
 msgstr ""
 
-#: src/_helper/post-list.js:277
+#: src/_helper/post-list.js:276
 msgid "Column ( Screen size : Medium )"
 msgstr ""
 
-#: src/_helper/post-list.js:287
+#: src/_helper/post-list.js:286
 msgid "Column ( Screen size : Large )"
 msgstr ""
 
-#: src/_helper/post-list.js:297
+#: src/_helper/post-list.js:296
 msgid "Column ( Screen size : Extra large )"
 msgstr ""
 
-#: src/_helper/post-list.js:309
+#: src/_helper/post-list.js:308
 msgid "Display item"
 msgstr ""
 
-#: src/_helper/post-list.js:313
+#: src/_helper/post-list.js:312
 msgid "Image"
 msgstr ""
 
-#: src/_helper/post-list.js:318
+#: src/_helper/post-list.js:317
 msgid "Term name"
 msgstr ""
 
-#: src/_helper/post-list.js:323
+#: src/_helper/post-list.js:322
 msgid "Excerpt"
 msgstr ""
 
-#: src/_helper/post-list.js:328
+#: src/_helper/post-list.js:327
 msgid "Date"
 msgstr ""
 
-#: src/_helper/post-list.js:335
+#: src/_helper/post-list.js:334
 msgid "New mark"
 msgstr ""
 
-#: src/_helper/post-list.js:341
+#: src/_helper/post-list.js:340
 #: src/button/block.js:59
 msgid "Button"
 msgstr ""
 
-#: src/_helper/post-list.js:345
+#: src/_helper/post-list.js:344
 msgid "New mark option"
 msgstr ""
 
-#: src/_helper/post-list.js:347
+#: src/_helper/post-list.js:346
 msgid "Number of days to display the new post mark"
 msgstr ""
 
-#: src/_helper/post-list.js:353
+#: src/_helper/post-list.js:352
 msgid "New post mark"
 msgstr ""
 
-#: src/_helper/post-list.js:358
+#: src/_helper/post-list.js:357
 msgid "Button option"
 msgstr ""
 
-#: src/_helper/post-list.js:360
+#: src/_helper/post-list.js:359
 msgid "Button text"
 msgstr ""
 
-#: src/_helper/post-list.js:366
+#: src/_helper/post-list.js:365
 msgid "Button align"
 msgstr ""
 
-#: src/_helper/post-list.js:374
+#: src/_helper/post-list.js:373
 #: src/balloon/block.js:88
 #: src/button/block.js:174
 #: src/pr-content/block.js:195
 msgid "Left"
 msgstr ""
 
-#: src/_helper/post-list.js:378
+#: src/_helper/post-list.js:377
 #: src/button/block.js:175
 msgid "Center"
 msgstr ""
 
-#: src/_helper/post-list.js:382
+#: src/_helper/post-list.js:381
 #: src/balloon/block.js:89
 #: src/button/block.js:176
 #: src/pr-content/block.js:194
 msgid "Right"
 msgstr ""
 
-#: src/_pro/child-page/block.js:14
+#: src/_pro/child-page/block.js:30
 msgid "child-page"
 msgstr ""
 
@@ -298,13 +298,6 @@ msgstr ""
 
 #: src/_pro/outer/block.js:274
 msgid "Border type"
-msgstr ""
-
-#: src/_pro/outer/block.js:280
-#: src/_pro/step-item/block.js:120
-#: src/_pro/timeline-item/block.js:103
-#: src/staff/block.js:109
-msgid "None"
 msgstr ""
 
 #: src/_pro/outer/block.js:284

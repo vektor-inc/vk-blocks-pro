@@ -32,27 +32,22 @@ const BlockIcon = (
   </svg>
 );
 
-registerBlockType('vk-blocks/child-page', {
-    // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-    title: __('child-page', 'vk-blocks'), // Block title.
-    icon: BlockIcon, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
-    category: 'vk-blocks-cat', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
-    attributes: schema,
+registerBlockType("vk-blocks/child-page", {
+  // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
+  title: __("Child page list", "vk-blocks"), // Block title.
+  icon: BlockIcon, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
+  category: "vk-blocks-cat", // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
+  attributes: schema,
 
-    edit: withSelect((select) => {
-        return {
-            postTypes: select("core/editor").getCurrentPostId()
-        };
-    })((props) => {
+  edit: withSelect(select => {
+    return {
+      postTypes: select("core/editor").getCurrentPostId()
+    };
+  })(props => {
+    props.attributes["selectId"] = props.postTypes;
 
-        props.attributes['selectId'] = props.postTypes;
-
-        return(
-            <PostList
-                value={props}
-            />
-        );
-    }),
+    return <PostList value={props} />;
+  }),
   save() {
     return null;
   }

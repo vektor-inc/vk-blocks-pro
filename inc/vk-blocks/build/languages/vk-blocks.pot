@@ -154,8 +154,8 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
-#: src/_pro/child-page/block.js:30
-msgid "child-page"
+#: src/_pro/child-page/block.js:37
+msgid "Child page list"
 msgstr ""
 
 #: src/_pro/outer/block.js:101

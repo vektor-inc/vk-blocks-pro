@@ -110,8 +110,8 @@ class VkBlocksPostList {
 				'paged'          => 0,
 				// 0で全件取得
 				'posts_per_page' => -1,
-				'order'          => 'DESC',
-				'orderby'        => 'date',
+				'order'          => 'ASC',
+				'orderby'        => 'menu_order',
 				'post_parent'    => intval( $attributes['selectId'] ),
 			);
 			return new WP_Query( $args );

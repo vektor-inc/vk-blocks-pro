@@ -109,6 +109,7 @@ class VkBlocksPostList {
 				'post_type'   => 'page',
 				'paged'       => 0,
 				//0で全件取得
+				'posts_per_page' => -1,
 				'order'       => 'DESC',
 				'orderby'     => 'date',
 				'post_parent' => intval( $attributes['selectId'] )

@@ -14,7 +14,7 @@ export class PostList extends React.Component {
 
     render() {
 
-        const {postTypes, className, attributes, setAttributes, clientId, name, isSelected} = this.props.value;
+        const {postTypes, attributes, setAttributes, clientId, name} = this.props.value;
         const {
             selectId,
             numberPosts,

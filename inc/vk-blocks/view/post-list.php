@@ -106,12 +106,13 @@ class VkBlocksPostList {
 		// ParentIdを指定
 		if ( isset( $attributes['selectId'] ) ) {
 			$args = array(
-				'post_type'   => 'page',
-				'paged'       => 0,
+				'post_type'      => 'page',
+				'paged'          => 0,
 				// 0で全件取得
-				'order'       => 'DESC',
-				'orderby'     => 'date',
-				'post_parent' => intval( $attributes['selectId'] ),
+				'posts_per_page' => -1,
+				'order'          => 'DESC',
+				'orderby'        => 'date',
+				'post_parent'    => intval( $attributes['selectId'] ),
 			);
 			return new WP_Query( $args );
 

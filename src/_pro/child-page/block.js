@@ -36,6 +36,7 @@ registerBlockType('vk-blocks/child-page', {
         return {
             postTypes: select('core').getEntityRecords('postType', 'page', {
                 _embed: true,
+                per_page: -1
             }),
         };
     })((props) => {

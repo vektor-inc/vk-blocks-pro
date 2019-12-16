@@ -102,59 +102,59 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: src/_helper/post-list.js:334
+#: src/_helper/post-list.js:336
 msgid "New mark"
 msgstr ""
 
-#: src/_helper/post-list.js:340
+#: src/_helper/post-list.js:342
 #: src/button/block.js:59
 msgid "Button"
 msgstr ""
 
-#: src/_helper/post-list.js:344
+#: src/_helper/post-list.js:346
 msgid "New mark option"
 msgstr ""
 
-#: src/_helper/post-list.js:346
+#: src/_helper/post-list.js:348
 msgid "Number of days to display the new post mark"
 msgstr ""
 
-#: src/_helper/post-list.js:352
+#: src/_helper/post-list.js:354
 msgid "New post mark"
 msgstr ""
 
-#: src/_helper/post-list.js:357
+#: src/_helper/post-list.js:359
 msgid "Button option"
 msgstr ""
 
-#: src/_helper/post-list.js:359
+#: src/_helper/post-list.js:361
 msgid "Button text"
 msgstr ""
 
-#: src/_helper/post-list.js:365
+#: src/_helper/post-list.js:367
 msgid "Button align"
 msgstr ""
 
-#: src/_helper/post-list.js:373
+#: src/_helper/post-list.js:375
 #: src/balloon/block.js:88
 #: src/button/block.js:174
 #: src/pr-content/block.js:195
 msgid "Left"
 msgstr ""
 
-#: src/_helper/post-list.js:377
+#: src/_helper/post-list.js:379
 #: src/button/block.js:175
 msgid "Center"
 msgstr ""
 
-#: src/_helper/post-list.js:381
+#: src/_helper/post-list.js:383
 #: src/balloon/block.js:89
 #: src/button/block.js:176
 #: src/pr-content/block.js:194
 msgid "Right"
 msgstr ""
 
-#: src/_pro/child-page/block.js:30
+#: src/_pro/child-page/block.js:37
 msgid "child-page"
 msgstr ""
 

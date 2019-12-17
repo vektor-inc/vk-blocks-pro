@@ -88,39 +88,56 @@ export class Component extends React.Component {
             imageBorderProperty = `1px solid ${ImageBorderColor}`;
         }
 
+        const saveImage = (value) => {
+            if(value){
+                setAttributes({Image: JSON.stringify(value)});
+            }
+        };
+
+        const renderImage = (for_) =>{
+
+            const ImageParse = JSON.parse(Image);
+
+            if(for_ === 'edit'){
+
+                return <MediaUpload
+                    onSelect={saveImage}
+                    type=" image"
+                    value={Image}
+                    render={({open}) => (
+                        <Button
+                            onClick={open}
+                            className={Image ? 'image-button' : 'button button-large'}
+                        >
+                            {!Image ? __('Select image', 'vk-blocks') :
+                                <img
+                                    className={'vk_prContent_colImg_image'}
+                                    src={ImageParse.sizes.full.url}
+                                    alt={ImageParse.alt}
+                                    style={{border: imageBorderProperty}}
+                                />}
+                        </Button>
+                    )}
+                />
+            }else if(for_ === 'save'){
+
+                if(!Image){
+                    return __('Select image', 'vk-blocks');
+                }else {
+                    return <img
+                        className={'vk_prContent_colImg_image'}
+                        src={ImageParse.sizes.full.url}
+                        alt={ImageParse.alt}
+                        style={{border: imageBorderProperty}}
+                    />
+                }
+            }
+        };
 
         return (
             <div className={containerClass}>
                         <div className="col-sm-6 vk_prContent_colImg">
-                            {for_ === 'edit' ?
-                                <MediaUpload
-                                    onSelect={(value) => setAttributes({Image: value.sizes.full.url})}
-                                    type=" image"
-                                    value={Image}
-                                    render={({open}) => (
-                                        <Button
-                                            onClick={open}
-                                            className={Image ? 'image-button' : 'button button-large'}
-                                        >
-                                            {!Image ? __('Select image', 'vk-blocks') :
-                                                <img
-                                                    className={'vk_prContent_colImg_image'}
-                                                    src={Image}
-                                                    alt={__('Upload image', 'vk-blocks')}
-                                                    style={{border: imageBorderProperty}}
-                                                />}
-                                        </Button>
-                                    )}
-                                />
-                                :
-                                !Image ? __('Select image', 'vk-blocks') :
-                                    <img
-                                        className={'vk_prContent_colImg_image'}
-                                        src={Image}
-                                        alt={__('Upload image', 'vk-blocks')}
-                                        style={{border: imageBorderProperty}}
-                                    />
-                            }
+                            {renderImage(for_)}
                         </div>
                         <div className="col-sm-6 vk_prContent_colTxt">
                             {
@@ -171,7 +188,7 @@ export class Component extends React.Component {
                                 (() => {
                                     if (buttonText !== '' && buttonText !== undefined ) {
                                         return (
-																					<div className={btnClass}>
+                                            <div className={btnClass}>
                                             <a href={url}
                                                className={aClass}
                                                target={buttonTarget? '_blank':null}
@@ -182,7 +199,7 @@ export class Component extends React.Component {
                                                     attributes={attributes}
                                                 />
                                             </a>
-																					</div>
+                                            </div>
                                         );
                                     }
                                 })()

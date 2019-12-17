@@ -17,6 +17,7 @@ class VkBlocksPostList {
 			$wp_query = $this->get_loop_query( $attributes );
 		} elseif ( $name === 'vk-blocks/child-page' ) {
 			$wp_query = $this->get_loop_query_child( $attributes );
+
 		}
 
 		if ( $wp_query === false || $wp_query->posts === array() ) {

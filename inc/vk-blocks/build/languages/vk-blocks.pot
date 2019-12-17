@@ -183,8 +183,6 @@ msgstr ""
 #: src/pr-blocks/block.js:343
 #: src/pr-content/component.js:125
 #: src/pr-content/deprecated/component-deprecated.js:102
-#: src/balloon/block.js:122
-#: src/pr-content/component.js:116
 #: src/staff/component.js:88
 msgid "Select image"
 msgstr ""
@@ -463,7 +461,6 @@ msgid "Balloon setting"
 msgstr ""
 
 #: src/balloon/block.js:85
-#: src/balloon/block.js:84
 #: src/heading/block.js:176
 msgid "Position"
 msgstr ""

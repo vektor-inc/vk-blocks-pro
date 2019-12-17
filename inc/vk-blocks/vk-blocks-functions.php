@@ -219,7 +219,7 @@ function vkblocks_blocks_assets() {
 							),
 							'display_excerpt'   => array(
 								'type'    => 'boolean',
-								'default' => false,
+								'default' => true,
 							),
 							'display_date'      => array(
 								'type'    => 'boolean',

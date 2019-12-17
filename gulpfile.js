@@ -40,6 +40,7 @@ gulp.task('sass_editor', function (){
 		.pipe(gulp.dest('./editor-css/'))
 		.pipe(sass())
 		.pipe(cleanCss())
+		.pipe($.autoprefixer())
 		.pipe(concat('block-build-editor.css'))
 		.pipe(gulp.dest('./inc/vk-blocks/build/'));
 });

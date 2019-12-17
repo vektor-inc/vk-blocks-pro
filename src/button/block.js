@@ -61,8 +61,9 @@ registerBlockType('vk-blocks/button', {
     category: 'vk-blocks-cat', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
     attributes: {
         content: {
+            type: 'string',
             source: 'html',
-            selector: 'span',
+            selector: 'div',
         },
         subCaption: {
             type: 'string',
@@ -234,7 +235,6 @@ registerBlockType('vk-blocks/button', {
                     </PanelBody>
                 </InspectorControls>
                 <div className={containerClass}>
-
                     <Component lbColorCustom={buttonColorCustom} lbColor={buttonColor} lbType={buttonType}
                                lbAlign={buttonAlign}
                                lbSize={buttonSize}
@@ -243,16 +243,15 @@ registerBlockType('vk-blocks/button', {
                                lbsubCaption={subCaption}
                                lbRichtext={
                         <RichText
-                            tagName="span"
+                            tagName="div"
                             className={'vk_button_link_txt'}
                             onChange={(value) => setAttributes({content: value})}
                             value={content}
                             placeholder={__('Input text', 'vk-blocks')}
                             formattingControls={['bold', 'italic', 'strikethrough']}
-                            keepPlaceholderOnFocus
+                            isSelected={true}
                         />
                     }/>
-
                     {isSelected && (
                         <form
                             className="block-library-button__inline-link"
@@ -321,7 +320,7 @@ registerBlockType('vk-blocks/button', {
                            lbsubCaption={subCaption}
                            lbRichtext={
                     <RichText.Content
-                        tagName="span"
+                        tagName="div"
                         className={'vk_button_link_txt'}
                         value={content}
                     />

@@ -14,7 +14,7 @@ msgstr ""
 #: src/_helper/font-awesome.js:25
 #: src/button/block.js:217
 #: src/pr-blocks/block.js:307
-#: src/pr-content/block.js:177
+#: src/pr-content/block.js:171
 msgid "Font Awesome icon list"
 msgstr ""
 
@@ -138,7 +138,7 @@ msgstr ""
 #: src/_helper/post-list.js:373
 #: src/balloon/block.js:88
 #: src/button/block.js:174
-#: src/pr-content/block.js:204
+#: src/pr-content/block.js:195
 msgid "Left"
 msgstr ""
 
@@ -150,7 +150,7 @@ msgstr ""
 #: src/_helper/post-list.js:381
 #: src/balloon/block.js:89
 #: src/button/block.js:176
-#: src/pr-content/block.js:203
+#: src/pr-content/block.js:194
 msgid "Right"
 msgstr ""
 
@@ -159,7 +159,7 @@ msgid "Child page list"
 msgstr ""
 
 #: src/_pro/outer/block.js:101
-#: src/pr-content/block.js:93
+#: src/pr-content/block.js:92
 msgid "Color Setting"
 msgstr ""
 
@@ -213,7 +213,7 @@ msgid "Parallax (It will not work in preview)"
 msgstr ""
 
 #: src/_pro/outer/block.js:161
-#: src/pr-content/block.js:196
+#: src/pr-content/block.js:189
 msgid "Layout Setting"
 msgstr ""
 
@@ -303,7 +303,7 @@ msgstr ""
 #: src/_pro/step-item/block.js:97
 #: src/_pro/timeline-item/block.js:84
 #: src/group-style/block.js:95
-#: src/pr-content/block.js:148
+#: src/pr-content/block.js:142
 msgid "Solid"
 msgstr ""
 
@@ -488,7 +488,7 @@ msgstr ""
 
 #: src/button/block.js:156
 #: src/pr-blocks/block.js:293
-#: src/pr-content/block.js:140
+#: src/pr-content/block.js:134
 msgid "Open link new tab."
 msgstr ""
 
@@ -531,47 +531,47 @@ msgid "If you select \"No background\", that you need to select a Custom Color."
 msgstr ""
 
 #: src/button/block.js:192
-#: src/pr-content/block.js:155
+#: src/pr-content/block.js:149
 msgid "Default Color:"
 msgstr ""
 
 #: src/button/block.js:195
-#: src/pr-content/block.js:158
+#: src/pr-content/block.js:152
 msgid "Primary"
 msgstr ""
 
 #: src/button/block.js:196
-#: src/pr-content/block.js:159
+#: src/pr-content/block.js:153
 msgid "Secondary"
 msgstr ""
 
 #: src/button/block.js:197
-#: src/pr-content/block.js:160
+#: src/pr-content/block.js:154
 msgid "Success"
 msgstr ""
 
 #: src/button/block.js:198
-#: src/pr-content/block.js:161
+#: src/pr-content/block.js:155
 msgid "Info"
 msgstr ""
 
 #: src/button/block.js:199
-#: src/pr-content/block.js:162
+#: src/pr-content/block.js:156
 msgid "Warning"
 msgstr ""
 
 #: src/button/block.js:200
-#: src/pr-content/block.js:163
+#: src/pr-content/block.js:157
 msgid "Danger"
 msgstr ""
 
 #: src/button/block.js:201
-#: src/pr-content/block.js:164
+#: src/pr-content/block.js:158
 msgid "Light"
 msgstr ""
 
 #: src/button/block.js:202
-#: src/pr-content/block.js:165
+#: src/pr-content/block.js:159
 msgid "Dark"
 msgstr ""
 
@@ -586,29 +586,29 @@ msgid ""
 msgstr ""
 
 #: src/button/block.js:216
-#: src/pr-content/block.js:176
+#: src/pr-content/block.js:170
 msgid "Font Awesome:"
 msgstr ""
 
 #: src/button/block.js:220
-#: src/pr-content/block.js:180
+#: src/pr-content/block.js:174
 msgid "Before text"
 msgstr ""
 
 #: src/button/block.js:221
-#: src/pr-content/block.js:181
+#: src/pr-content/block.js:175
 msgid ""
 "Enter Font Awesome Class.This icon will appear before text. Ex) fas "
 "fa-arrow-circle-right"
 msgstr ""
 
 #: src/button/block.js:227
-#: src/pr-content/block.js:187
+#: src/pr-content/block.js:181
 msgid "After text"
 msgstr ""
 
 #: src/button/block.js:228
-#: src/pr-content/block.js:188
+#: src/pr-content/block.js:182
 msgid ""
 "Enter Font Awesome Class.This icon will appear after text. Ex) fas "
 "fa-external-link-alt"
@@ -902,39 +902,35 @@ msgstr ""
 msgid "Input Content"
 msgstr ""
 
-#: src/pr-content/block.js:102
-msgid "Content Color"
-msgstr ""
-
-#: src/pr-content/block.js:109
+#: src/pr-content/block.js:106
 msgid "Image Border Color"
 msgstr ""
 
-#: src/pr-content/block.js:118
+#: src/pr-content/block.js:114
 msgid "Button Setting"
 msgstr ""
 
-#: src/pr-content/block.js:122
+#: src/pr-content/block.js:116
 msgid "Button Text"
 msgstr ""
 
-#: src/pr-content/block.js:131
+#: src/pr-content/block.js:125
 msgid "Link URL"
 msgstr ""
 
-#: src/pr-content/block.js:144
+#: src/pr-content/block.js:138
 msgid "Button Type"
 msgstr ""
 
-#: src/pr-content/block.js:149
+#: src/pr-content/block.js:143
 msgid "Ghost"
 msgstr ""
 
-#: src/pr-content/block.js:169
+#: src/pr-content/block.js:163
 msgid "Button Color"
 msgstr ""
 
-#: src/pr-content/block.js:200
+#: src/pr-content/block.js:191
 msgid "Layout Type"
 msgstr ""
 
@@ -942,8 +938,12 @@ msgstr ""
 msgid "PR Content"
 msgstr ""
 
-#: src/pr-content/block.js:96
+#: src/pr-content/block.js:93
 msgid "Title Color"
+msgstr ""
+
+#: src/pr-content/block.js:99
+msgid "Content Color"
 msgstr ""
 
 #: src/pr-content/component.js:153

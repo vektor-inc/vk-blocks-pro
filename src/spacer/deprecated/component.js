@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class SpacerComponent extends React.Component {
+export class SpacerComponentV1 extends React.Component {
 
     render() {
         let {
@@ -12,6 +12,27 @@ export class SpacerComponent extends React.Component {
 
         return (
             <div className="vk_spacer">
+                <div className={'vk_spacer-display-pc'} style={{height: pc + unit}}></div>
+                <div className={'vk_spacer-display-tablet'} style={{height: tablet + unit}}></div>
+                <div className={'vk_spacer-display-mobile'} style={{height: mobile + unit}}></div>
+            </div>
+        );
+    }
+}
+
+export class SpacerComponentV2 extends React.Component {
+
+    render() {
+        let {
+            unit,
+            pc,
+            tablet,
+            mobile,
+        } = this.props.attributes;
+        let className = this.props.className;
+
+        return (
+            <div className={`${className} vk_spacer`}>
                 <div className={'vk_spacer-display-pc'} style={{height: pc + unit}}></div>
                 <div className={'vk_spacer-display-tablet'} style={{height: tablet + unit}}></div>
                 <div className={'vk_spacer-display-mobile'} style={{height: mobile + unit}}></div>

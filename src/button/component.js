@@ -69,7 +69,7 @@ export class Component extends React.Component {
         return (
                 <a
                     href={buttonUrl}
-                    // id={'vk_button_link'}
+                    id={'vk_button_link'}
                     style={aStyle}
                     className={aClass}
                     role={'button'}

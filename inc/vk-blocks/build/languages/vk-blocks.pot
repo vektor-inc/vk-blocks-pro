@@ -41,7 +41,7 @@ msgstr ""
 #: src/balloon/block.js:122
 #: src/flow/block.js:112
 #: src/pr-blocks/block.js:343
-#: src/pr-content/component.js:116
+#: src/pr-content/component.js:125
 #: src/pr-content/deprecated/component-deprecated.js:102
 #: src/staff/component.js:88
 msgid "Select image"
@@ -51,7 +51,6 @@ msgstr ""
 #: src/balloon/block.js:122
 #: src/flow/block.js:113
 #: src/pr-blocks/block.js:345
-#: src/pr-content/component.js:120
 #: src/pr-content/deprecated/component-deprecated.js:106
 msgid "Upload image"
 msgstr ""
@@ -942,12 +941,12 @@ msgstr ""
 msgid "Content Color"
 msgstr ""
 
-#: src/pr-content/component.js:136
+#: src/pr-content/component.js:153
 #: src/pr-content/deprecated/component-deprecated.js:122
 msgid "Input title."
 msgstr ""
 
-#: src/pr-content/component.js:144
+#: src/pr-content/component.js:161
 #: src/pr-content/deprecated/component-deprecated.js:130
 msgid "Input content."
 msgstr ""

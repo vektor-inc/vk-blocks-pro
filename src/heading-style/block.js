@@ -26,8 +26,6 @@ export const addAttribute = (settings) => {
 };
 addFilter('blocks.registerBlockType', 'vk-blocks/heading-style', addAttribute);
 
-
-
 wp.blocks.registerBlockStyle( 'core/heading',
 	[
         {

@@ -2,6 +2,7 @@
 .vk_block_icon_pro {
 fill:#c00;
 }
+.editor-block-list-item-vk-blocks-child-page:after,
 .editor-block-list-item-vk-blocks-timeline:after,
 .editor-block-list-item-vk-blocks-step:after,
 .editor-block-list-item-vk-blocks-outer:after,
@@ -34,6 +35,10 @@ padding: 3px 4px;
 /*スライダーを表示。デフォルトだとbootstrapに非表示にされてしまう*/
 input[type=range] {
     margin: 1px;
+}
+
+.editor-url-input input[type="text"]{
+    width:100%;
 }
 
 /* editor area *********************************************/

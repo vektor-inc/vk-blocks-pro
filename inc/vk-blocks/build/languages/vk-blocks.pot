@@ -136,7 +136,7 @@ msgid "Button align"
 msgstr ""
 
 #: src/_helper/post-list.js:373
-#: src/balloon/block.js:88
+#: src/balloon/block.js:89
 #: src/button/block.js:174
 #: src/pr-content/block.js:204
 msgid "Left"
@@ -148,7 +148,7 @@ msgid "Center"
 msgstr ""
 
 #: src/_helper/post-list.js:381
-#: src/balloon/block.js:89
+#: src/balloon/block.js:90
 #: src/button/block.js:176
 #: src/pr-content/block.js:203
 msgid "Right"
@@ -178,17 +178,18 @@ msgid "Background Image"
 msgstr ""
 
 #: src/_pro/outer/block.js:135
-#: src/balloon/block.js:122
+#: src/balloon/block.js:123
 #: src/flow/block.js:112
 #: src/pr-blocks/block.js:343
 #: src/pr-content/component.js:125
 #: src/pr-content/deprecated/component-deprecated.js:102
+#: src/balloon/block.js:122
+#: src/pr-content/component.js:116
 #: src/staff/component.js:88
 msgid "Select image"
 msgstr ""
 
 #: src/_pro/outer/block.js:137
-#: src/balloon/block.js:122
 #: src/flow/block.js:113
 #: src/pr-blocks/block.js:345
 #: src/pr-content/deprecated/component-deprecated.js:106
@@ -258,7 +259,7 @@ msgid "Divider Setting"
 msgstr ""
 
 #: src/_pro/outer/block.js:209
-#: src/balloon/block.js:94
+#: src/balloon/block.js:95
 msgid "Type"
 msgstr ""
 
@@ -440,11 +441,15 @@ msgstr ""
 msgid "Alert"
 msgstr ""
 
-#: src/balloon/block.js:131
+#: src/balloon/block.js:100
+msgid "Thinking"
+msgstr ""
+
+#: src/balloon/block.js:134
 msgid "Icon Name"
 msgstr ""
 
-#: src/balloon/block.js:140
+#: src/balloon/block.js:143
 #: src/button/block.js:250
 msgid "Input text"
 msgstr ""
@@ -453,29 +458,26 @@ msgstr ""
 msgid "Ballon"
 msgstr ""
 
-#: src/balloon/block.js:82
+#: src/balloon/block.js:83
 msgid "Balloon setting"
 msgstr ""
 
+#: src/balloon/block.js:85
 #: src/balloon/block.js:84
 #: src/heading/block.js:176
 msgid "Position"
 msgstr ""
 
-#: src/balloon/block.js:85
+#: src/balloon/block.js:86
 msgid "Please specify the layout of the balloon."
 msgstr ""
 
-#: src/balloon/block.js:95
+#: src/balloon/block.js:96
 msgid "Please select the type of balloon."
 msgstr ""
 
-#: src/balloon/block.js:98
-msgid "Serif"
-msgstr ""
-
 #: src/balloon/block.js:99
-msgid "Thinking"
+msgid "Serif"
 msgstr ""
 
 #: src/button/block.js:148

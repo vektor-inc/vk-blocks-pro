@@ -12,7 +12,13 @@ class VkBlocksPostList {
 	 */
 	public function render_post_list( $attributes ) {
 
-		$name = esc_html( $attributes['name'] );
+		// $attributes['name'] 未定義対応
+		if( empty( $attributes['name'])){
+				$name = 'vk-blocks/post-list';
+		} else {
+			$name = esc_html( $attributes['name'] );
+		}
+
 		if ( $name === 'vk-blocks/post-list' ) {
 			$wp_query = $this->get_loop_query( $attributes );
 		} elseif ( $name === 'vk-blocks/child-page' ) {

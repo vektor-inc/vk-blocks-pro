@@ -44,9 +44,10 @@ input[type=range] {
 /* editor area *********************************************/
 .edit-post-visual-editor.editor-styles-wrapper{
 
-
-
 /* これがないとGutenberg標準のエディタCSSに負ける */
 h1:first-child.vk_prBlocks_item_title{
 	margin-top:0.9em;
 }
+
+/* ボタンの前後にアイコンフォントを指定してしてもアイコンが改行されてしまうため回避処理 */
+.vk_button .editor-rich-text { display:inline-block; }

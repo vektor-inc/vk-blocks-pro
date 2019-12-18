@@ -63,7 +63,7 @@ registerBlockType('vk-blocks/button', {
         content: {
             type: 'string',
             source: 'html',
-            selector: 'div',
+            selector: 'span',
         },
         subCaption: {
             type: 'string',
@@ -243,7 +243,7 @@ registerBlockType('vk-blocks/button', {
                                lbsubCaption={subCaption}
                                lbRichtext={
                         <RichText
-                            tagName="div"
+                            tagName="span"
                             className={'vk_button_link_txt'}
                             onChange={(value) => setAttributes({content: value})}
                             value={content}
@@ -320,7 +320,7 @@ registerBlockType('vk-blocks/button', {
                            lbsubCaption={subCaption}
                            lbRichtext={
                     <RichText.Content
-                        tagName="div"
+                        tagName="span"
                         className={'vk_button_link_txt'}
                         value={content}
                     />

@@ -5,8 +5,6 @@ export class Component extends React.Component {
     render() {
         const {attributes, className} = this.props.value;
         let {
-            url,
-            numberPosts,
             layout,
             col_xs,
             col_sm,
@@ -61,28 +59,71 @@ export class Component extends React.Component {
             vk_title = 'card-title';
             vk_date = 'card-date';
         }
+
+        const renderImage = (display_image) => {
+            if (display_image) {
+                return <img src="http://vccw.test/wp-content/plugins/vk-blocks-pro/inc/vk-blocks/images/no-image.png" alt="" className="vk_post_imgOuter_img card-img-top"/>
+
+            }
+        };
+
+        const renderDate = (display_date) => {
+            if (display_date) {
+                return <div className={`vk_post_date ${vk_date}`}>{vk_date}</div>;
+            }
+        };
+
+        const renderNew = (display_new) => {
+            if (display_new) {
+                return <span className="vk_post_title_new">{new_text}</span>;
+            }
+        };
+
+        // return (
+        //     <div className={`vk_post ${layout} vk_PostList_card vk_post-col-xs-${col_xs} vk_post-col-sm-${col_sm} vk_post-col-md-${col_md} vk_post-col-lg-${col_lg} vk_post-col-xl-${col_xl}`}>
+        //         <div className={imgContainerClass}>
+        //             <a href="http://vccw.test/archives/32">
+        //                 <div className="card-img-overlay">
+        //                 </div>
+        //                 {renderImage(display_image)}
+        //             </a>
+        //         </div>
+        //         <div className={`vk_post_body ${vk_post_body}`}>
+        //             <h5 className={`vk_post_title ${vk_title}`}>
+        //                 <a href="http://vccw.test/archives/32">
+        //                     タイトル
+        //                 </a>
+        //             </h5>
+        //         </div>
+        //     </div>
+        // );
+
+
         return (
-            <div className={`vk_post ${layout} vk_PostList_card vk_post-col-xs-${col_xs} vk_post-col-sm-${col_sm} vk_post-col-md-${col_md} vk_post-col-lg-${col_lg} vk_post-col-xl-${col_xl}`}>
-                <div className={imgContainerClass}>
-                    <a href="http://vccw.test/archives/32">
-                        <div className="card-img-overlay">
-                            <span className="vk_post_imgOuter_singleTermLabel"
-                                  style={{color: '#fff', backgroundColor: '#999999'}}>Uncategorized</span>
-                        </div>
-                        <img src="http://vccw.test/wp-content/plugins/vk-blocks-pro/inc/vk-blocks/images/no-image.png"
-                             alt="" className={imgClass}/>
-                    </a>
+            <div className={`vk_post ${layout} card-post vk_PostList_card vk_post-col-xs-${col_xs} vk_post-col-sm-${col_sm} vk_post-col-md-${col_md} vk_post-col-lg-${col_lg} vk_post-col-xl-${col_xl} vk_post-btn-display`}>
+            {/*<div className="vk_post card card-post vk_PostList_card vk_post-col-xs-12 vk_post-col-sm-6 vk_post-col-md-4 vk_post-col-lg-4 vk_post-col-xl-4 vk_post-btn-display post-1 post type-post status-publish format-standard hentry category-uncategorized">*/}
+            <div className={imgContainerClass}>
+                <a href="http://vccw.test/archives/1">
+                <div className="card-img-overlay">
+                    {/*<span className="vk_post_imgOuter_singleTermLabel" style="color:#fff;background-color:#999999">Uncategorized</span>*/}
                 </div>
-                <div className={`vk_post_body ${vk_post_body}`}>
-                    <h5 className={`vk_post_title ${vk_title}`}>
-                        <a href="http://vccw.test/archives/32">
-                            <span className="vk_post_title_new">New!!</span>
-                        </a>
-                    </h5>
-                    <div className={`vk_post_date ${vk_date}`}>Dec 11th 2019</div>
+                    {/*<img src="http://vccw.test/wp-content/plugins/vk-blocks-pro/inc/vk-blocks/images/no-image.png" alt="" className="vk_post_imgOuter_img card-img-top"/>*/}
+                    {renderImage(display_image)}
+                </a>
+            </div>
+            <div className="vk_post_body card-body">
+                <h5 className="vk_post_title card-title">
+                    <a href="http://vccw.test/archives/1">Hello world!
+                        {/*<span className="vk_post_title_new">New!!</span>*/}
+                    </a>
+                </h5>
+                {/*<div className="vk_post_date card-date published">12月 16th 2019</div>*/}
+                <p className="vk_post_excerpt card-text">Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>
+                <div className="vk_post_btnOuter text-right">
+                    <a className="btn btn-primary vk_post_btn" href="http://vccw.test/archives/1">Read more</a>
                 </div>
             </div>
-        );
+            </div>);
 
         // return (
         //     <div id="post-32"

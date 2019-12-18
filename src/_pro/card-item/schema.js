@@ -1,14 +1,4 @@
 export const schema = {
-    url: {
-        "type": "string",
-    },
-    postId: {
-        type: 'number',
-    },
-    name: {
-        type: 'string',
-        default: '',
-    },
     layout: {
         type: 'string',
         default: 'card',
@@ -72,21 +62,5 @@ export const schema = {
     btn_align: {
         type: 'string',
         default: 'text-right',
-    },
-    numberPosts: {
-        type: 'number',
-        default: 6,
-    },
-    isCheckedPostType: {
-        type: 'string',
-        default: '["post"]'
-    },
-    coreTerms: {
-        type: 'string',
-        default: '[]'
-    },
-    isCheckedTerms: {
-        type: 'string',
-        default: '{}'
     }
 };

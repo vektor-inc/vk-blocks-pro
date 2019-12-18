@@ -66,82 +66,60 @@ registerBlockType('vk-blocks/card', {
      */
     edit(props) {
         const {attributes, setAttributes, className, clientId} = props;
-        // const {
-        //     firstDotNum
-        // } = attributes;
-        //
-        // let selectEditor = select("core/block-editor") ? select("core/block-editor") : select("core/editor");
-        // let dispatchEditor = dispatch("core/block-editor") ? dispatch("core/block-editor") : dispatch("core/editor");
-        //
-        // const {getBlocksByClientId} = selectEditor;
-        // const {updateBlockAttributes, insertBlock} = dispatchEditor;
-        //
-        // let currentBlock = getBlocksByClientId(clientId);
-        // let beforeLength;
-        // let afterLength;
-        //
-        // const addH4Block = (index, innerBlocks) => {
-        //     if (innerBlocks[index].innerBlocks.length === 0) {
-        //         const blockToInsert = createBlock('core/heading', {
-        //             level: 4,
-        //         });
-        //         insertBlock(blockToInsert, 0, innerBlocks[index].clientId);
-        //     }
-        // };
-        //
-        //
-        // if (currentBlock !== undefined || currentBlock[0].innerBlocks !== undefined) {
-        //
-        //     let innerBlocks = currentBlock[0].innerBlocks;
-        //     beforeLength = innerBlocks.length;
-        //
-        //     //先頭のinnerBlockのみの時
-        //     if (innerBlocks.length === 1) {
-        //         addH4Block(0, innerBlocks);
-        //     }
-        //
-        //     if (beforeLength !== undefined && beforeLength !== 0 && beforeLength !== 1) {
-        //
-        //         if (beforeLength !== afterLength) {
-        //
-        //             for (let i = 0; i < innerBlocks.length; i++) {
-        //                 if (innerBlocks[i] !== undefined) {
-        //
-        //                     addH4Block(i, innerBlocks);
-        //
-        //                     updateBlockAttributes(innerBlocks[i].clientId, {
-        //                         dotNum: firstDotNum
-        //                     });
-        //                 }
-        //             }
-        //         }
-        //         afterLength = beforeLength;
-        //     }
-        // }
+        const {
+            layout,
+            col_xs,
+            col_sm,
+            col_md,
+            col_lg,
+            col_xl,
+            display_image,
+            display_image_overlay_term,
+            display_excerpt,
+            display_date,
+            display_new,
+            display_btn,
+            new_date,
+            new_text,
+            btn_text,
+            btn_align,
+        } = attributes;
 
+        let selectEditor = select("core/block-editor") ? select("core/block-editor") : select("core/editor");
+        let dispatchEditor = dispatch("core/block-editor") ? dispatch("core/block-editor") : dispatch("core/editor");
+
+        const {getBlocksByClientId} = selectEditor;
+        const {updateBlockAttributes} = dispatchEditor;
+
+        let currentBlock = getBlocksByClientId(clientId);
+        let beforeLength;
+        let afterLength;
+
+
+        if (currentBlock !== undefined || currentBlock[0].innerBlocks !== undefined) {
+
+            let innerBlocks = currentBlock[0].innerBlocks;
+            beforeLength = innerBlocks.length;
+
+            if (beforeLength !== undefined) {
+
+                if (beforeLength !== afterLength) {
+
+                    for (let i = 0; i < innerBlocks.length; i++) {
+                        if (innerBlocks[i] !== undefined) {
+                            updateBlockAttributes(innerBlocks[i].clientId, attributes);
+                        }
+                    }
+                }
+                afterLength = beforeLength;
+            }
+        }
 
         return (
             <Fragment>
                 <PostList
                     value={props}
                 />
-                {/*<InspectorControls>*/}
-                    {/*<PanelBody title={__('Column Number', 'vk-blocks')}>*/}
-                    {/*    <input*/}
-                    {/*        type="number"*/}
-                    {/*        id={"dot-number"}*/}
-                    {/*        onChange={(event) => {*/}
-                    {/*            let value = parseInt(event.target.value, 10);*/}
-                    {/*            setAttributes({*/}
-                    {/*                firstDotNum: value,*/}
-                    {/*            });*/}
-                    {/*        }}*/}
-                    {/*        value={firstDotNum}*/}
-                    {/*        min="1"*/}
-                    {/*        card="1"*/}
-                    {/*    />*/}
-                    {/*</PanelBody>*/}
-                {/*</InspectorControls>*/}
                 <Component
                     attributes={attributes}
                     className={className}

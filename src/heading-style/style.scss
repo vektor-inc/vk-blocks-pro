@@ -42,13 +42,16 @@ $color_key: #337ab7;
     margin-left: 0;
 }
 
-.entry-body,
-.editor-styles-wrapper {
-    h3.is-style-vk-heading:after {
-        border-bottom: none !important;
-    }
 
-    .is-style-vk-heading {
+
+
+.is-style-vk-heading {
+    &,
+    .entry-body &,
+    .editor-styles-wrapper & {
+        h3.is-style-vk-heading:after {
+            border-bottom: none !important;
+        }
         &-plain {
             @include title_unset;
 

@@ -8,8 +8,6 @@ import {schema} from './schema.js';
 import {Component} from "./component.js";
 import {deprecated} from "./deprecated/deprecated";
 
-
-
 const {__} = wp.i18n; // Import __() from wp.i18n
 const {registerBlockType} = wp.blocks; // Import registerBlockType() from wp.blocks
 const {RadioControl, PanelBody, BaseControl, CheckboxControl, TextControl} = wp.components;

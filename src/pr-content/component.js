@@ -96,9 +96,8 @@ export class Component extends React.Component {
 
         const renderImage = (for_) =>{
 
-            const ImageParse = JSON.parse(Image);
-
             if(for_ === 'edit'){
+                const ImageParse = JSON.parse(Image);
 
                 return <MediaUpload
                     onSelect={saveImage}
@@ -124,12 +123,24 @@ export class Component extends React.Component {
                 if(!Image){
                     return __('Select image', 'vk-blocks');
                 }else {
-                    return <img
-                        className={'vk_prContent_colImg_image'}
-                        src={ImageParse.sizes.full.url}
-                        alt={ImageParse.alt}
-                        style={{border: imageBorderProperty}}
-                    />
+                    (() => {
+                        if(Image.indexOf("{") === -1){
+                            return <img
+                                className={'vk_prContent_colImg_image'}
+                                src={Image}
+                                alt={__('Upload image', 'vk-blocks')}
+                                style={{border: imageBorderProperty}}
+                            />
+                        }else{
+                            const ImageParse = JSON.parse(Image);
+                            return <img
+                                className={'vk_prContent_colImg_image'}
+                                src={ImageParse.sizes.full.url}
+                                alt={ImageParse.alt}
+                                style={{border: imageBorderProperty}}
+                            />
+                        }
+                    })()
                 }
             }
         };

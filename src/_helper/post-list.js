@@ -222,32 +222,57 @@ export class PostList extends React.Component {
             </BaseControl>
         </PanelBody>;
 
+        const renderTypeSwitch = (name) => {
+            if (name === 'vk-blocks/card') {
+                return (
+                    <BaseControl
+                        label={__('Display type', 'vk-blocks')}
+                    >
+                        <SelectControl
+                            value={layout}
+                            onChange={(value) => setAttributes({layout: value})}
+                            options={[
+                                {
+                                    value: 'card',
+                                    label: __('Card', 'vk-blocks'),
+                                }
+                            ]}
+                        />
+                    </BaseControl>
+                )
+            } else {
+                return (
+                    <BaseControl
+                        label={__('Display type', 'vk-blocks')}
+                    >
+                        <SelectControl
+                            value={layout}
+                            onChange={(value) => setAttributes({layout: value})}
+                            options={[
+                                {
+                                    value: 'card',
+                                    label: __('Card', 'vk-blocks'),
+                                },
+                                {
+                                    value: 'card-horizontal',
+                                    label: __('Card Horizontal', 'vk-blocks'),
+                                },
+                                {
+                                    value: 'media',
+                                    label: __('Media', 'vk-blocks'),
+                                },
+                            ]}
+                        />
+                    </BaseControl>
+                )
+            }
+        };
+
         const renderTypeColumn = <PanelBody
                 title={__('Display type and columns', 'vk-blocks')}
                 initialOpen={false}
             >
-                <BaseControl
-                    label={__('Display type', 'vk-blocks')}
-                >
-                    <SelectControl
-                        value={layout}
-                        onChange={(value) => setAttributes({layout: value})}
-                        options={[
-                            {
-                                value: 'card',
-                                label: __('Card', 'vk-blocks'),
-                            },
-                            {
-                                value: 'card-horizontal',
-                                label: __('Card Horizontal', 'vk-blocks'),
-                            },
-                            {
-                                value: 'media',
-                                label: __('Media', 'vk-blocks'),
-                            },
-                        ]}
-                    />
-                </BaseControl>
+            {renderTypeSwitch(name)}
                 <BaseControl
                     label={__('Column ( Screen size : Extra small )', 'vk-blocks')}
                 >
@@ -381,6 +406,50 @@ export class PostList extends React.Component {
                 </BaseControl>
             </PanelBody>;
 
+        const renderItemCard = <PanelBody
+            title={__('Display item', 'vk-blocks')}
+            initialOpen={false}
+        >
+            <CheckboxControl
+                label={__('Image', 'vk-blocks')}
+                checked={display_image}
+                onChange={(checked) => setAttributes({display_image: checked})}
+            />
+            <CheckboxControl
+                label={__('Excerpt', 'vk-blocks')}
+                checked={display_excerpt}
+                onChange={(checked) => setAttributes({display_excerpt: checked})}
+            />
+            <CheckboxControl
+                label={__('Button', 'vk-blocks')}
+                checked={display_btn}
+                onChange={(checked) => setAttributes({display_btn: checked})}
+            />
+            <h4>{__('Button option', 'vk-blocks')}</h4>
+            <BaseControl
+                label={__('Button align', 'vk-blocks')}
+            >
+                <SelectControl
+                    value={btn_align}
+                    onChange={(value) => setAttributes({btn_align: value})}
+                    options={[
+                        {
+                            value: 'text-left',
+                            label: __('Left', 'vk-blocks'),
+                        },
+                        {
+                            value: 'text-center',
+                            label: __('Center', 'vk-blocks'),
+                        },
+                        {
+                            value: 'text-right',
+                            label: __('Right', 'vk-blocks'),
+                        },
+                    ]}
+                />
+            </BaseControl>
+        </PanelBody>;
+
         return (
             <Fragment>
                 <InspectorControls>
@@ -397,7 +466,7 @@ export class PostList extends React.Component {
                             return (
                                 <div>
                                     {renderTypeColumn}
-                                    {renderItem}
+                                    {renderItemCard}
                                 </div>
                             )
                         } else {

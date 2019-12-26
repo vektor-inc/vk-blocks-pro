@@ -17,13 +17,16 @@
 	}
 }
 
-.vk_heading_title {
-	&-style {
-		&-plain {
+// .vk_heading は指定が強い要素（ Charm ）も消すために必要
+.vk_heading.vk_heading-style-plain {
+	.vk_heading_title {
+		@include reset;
+		&:after {
 			@include reset;
 		}
 	}
 }
+
 .vk_heading_subtext {
 	margin-bottom:0;
 }

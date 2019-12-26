@@ -426,6 +426,11 @@ export class PostList extends React.Component {
                 onChange={(checked) => setAttributes({display_btn: checked})}
             />
             <h4>{__('Button option', 'vk-blocks')}</h4>
+            <TextControl
+                label={__('Button text', 'vk-blocks')}
+                value={btn_text}
+                onChange={(value) => setAttributes({btn_text: value})}
+            />
             <BaseControl
                 label={__('Button align', 'vk-blocks')}
             >

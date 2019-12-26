@@ -65,7 +65,7 @@ export class Component extends React.Component {
         };
         const renderButton = (display_btn) => {
             if (display_btn) {
-                return <a className="btn btn-primary vk_post_btn" href="http://vccw.test/archives/1">Read more</a>
+                return <a className="btn btn-primary vk_post_btn" href="http://vccw.test/archives/1">{btn_text}</a>
             }
         };
 
@@ -83,7 +83,7 @@ export class Component extends React.Component {
                     <a href="http://vccw.test/archives/1">Hello world!</a>
                 </h5>
                 {renderExcerpt(display_excerpt)}
-                <div className="vk_post_btnOuter text-right">
+                <div className={`vk_post_btnOuter ${btn_align}`}>
                     {renderButton(display_btn)}
                 </div>
             </div>

@@ -136,7 +136,7 @@ msgid "Button align"
 msgstr ""
 
 #: src/_helper/post-list.js:373
-#: src/balloon/block.js:90
+#: src/balloon/block.js:128
 #: src/button/block.js:175
 #: src/pr-content/block.js:202
 msgid "Left"
@@ -148,7 +148,7 @@ msgid "Center"
 msgstr ""
 
 #: src/_helper/post-list.js:381
-#: src/balloon/block.js:91
+#: src/balloon/block.js:129
 #: src/button/block.js:177
 #: src/pr-content/block.js:201
 msgid "Right"
@@ -178,11 +178,12 @@ msgid "Background Image"
 msgstr ""
 
 #: src/_pro/outer/block.js:135
-#: src/balloon/block.js:124
+#: src/balloon/block.js:110
 #: src/flow/block.js:112
 #: src/pr-blocks/block.js:343
-#: src/pr-content/component.js:124
+#: src/pr-content/component.js:144
 #: src/pr-content/deprecated/component-deprecated.js:102
+#: src/pr-content/deprecated/component-no-boder-color.js:116
 #: src/staff/component.js:88
 msgid "Select image"
 msgstr ""
@@ -190,8 +191,9 @@ msgstr ""
 #: src/_pro/outer/block.js:137
 #: src/flow/block.js:113
 #: src/pr-blocks/block.js:345
-#: src/pr-content/component.js:131
+#: src/pr-content/component.js:149
 #: src/pr-content/deprecated/component-deprecated.js:106
+#: src/pr-content/deprecated/component-no-boder-color.js:120
 msgid "Upload image"
 msgstr ""
 
@@ -258,7 +260,7 @@ msgid "Divider Setting"
 msgstr ""
 
 #: src/_pro/outer/block.js:209
-#: src/balloon/block.js:96
+#: src/balloon/block.js:134
 msgid "Type"
 msgstr ""
 
@@ -440,42 +442,42 @@ msgstr ""
 msgid "Alert"
 msgstr ""
 
-#: src/balloon/block.js:100
-msgid "Serif"
+#: src/balloon/block.js:122
+msgid "Balloon setting"
 msgstr ""
 
-#: src/balloon/block.js:101
-msgid "Thinking"
+#: src/balloon/block.js:124
+#: src/heading/block.js:176
+msgid "Position"
+msgstr ""
+
+#: src/balloon/block.js:125
+msgid "Please specify the layout of the balloon."
 msgstr ""
 
 #: src/balloon/block.js:135
+msgid "Please select the type of balloon."
+msgstr ""
+
+#: src/balloon/block.js:138
+msgid "Serif"
+msgstr ""
+
+#: src/balloon/block.js:139
+msgid "Thinking"
+msgstr ""
+
+#: src/balloon/block.js:160
 msgid "Icon Name"
 msgstr ""
 
-#: src/balloon/block.js:144
+#: src/balloon/block.js:169
 #: src/button/block.js:250
 msgid "Input text"
 msgstr ""
 
 #: src/balloon/block.js:32
 msgid "Ballon"
-msgstr ""
-
-#: src/balloon/block.js:84
-msgid "Balloon setting"
-msgstr ""
-
-#: src/balloon/block.js:86
-#: src/heading/block.js:176
-msgid "Position"
-msgstr ""
-
-#: src/balloon/block.js:87
-msgid "Please specify the layout of the balloon."
-msgstr ""
-
-#: src/balloon/block.js:97
-msgid "Please select the type of balloon."
 msgstr ""
 
 #: src/button/block.js:149
@@ -946,13 +948,15 @@ msgstr ""
 msgid "Title Color"
 msgstr ""
 
-#: src/pr-content/component.js:164
+#: src/pr-content/component.js:179
 #: src/pr-content/deprecated/component-deprecated.js:122
+#: src/pr-content/deprecated/component-no-boder-color.js:136
 msgid "Input title."
 msgstr ""
 
-#: src/pr-content/component.js:172
+#: src/pr-content/component.js:187
 #: src/pr-content/deprecated/component-deprecated.js:130
+#: src/pr-content/deprecated/component-no-boder-color.js:144
 msgid "Input content."
 msgstr ""
 

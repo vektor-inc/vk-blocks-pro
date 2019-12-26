@@ -37,7 +37,7 @@ export class Component extends React.Component {
         let btnClass = 'vk_button';
         let aClass = 'btn btn-block vk_button_link vk_prContent_colTxt_btn';
         let aStyle = {};
-        let imageBorderProperty = '';
+        let imageBorderProperty = 'none';
 
         if (layout === 'right') {
             containerClass = classNames(className, containerClass, 'vk_prContent-layout-imageRight');
@@ -80,13 +80,12 @@ export class Component extends React.Component {
         }
 
         //borderColorが指定されなかった場合はボーダーを非表示に
-        if (ImageBorderColor === null || ImageBorderColor === undefined) {
-
-            imageBorderProperty = 'none';
-
-        } else {
+        if (ImageBorderColor) {
             imageBorderProperty = `1px solid ${ImageBorderColor}`;
+        } else {
+            imageBorderProperty = `none`;
         }
+
 
         const saveImage = (value) => {
             if(value){
@@ -94,53 +93,69 @@ export class Component extends React.Component {
             }
         };
 
-        const renderImage = (for_) =>{
+        const renderImage = (for_) => {
 
             if(for_ === 'edit'){
-                const ImageParse = JSON.parse(Image);
-
-                return <MediaUpload
-                    onSelect={saveImage}
-                    type=" image"
-                    value={Image}
-                    render={({open}) => (
-                        <Button
-                            onClick={open}
-                            className={Image ? 'image-button' : 'button button-large'}
-                        >
-                            {!Image ? __('Select image', 'vk-blocks') :
-                                <img
-                                    className={'vk_prContent_colImg_image'}
-                                    src={ImageParse.sizes.full.url}
-                                    alt={ImageParse.alt}
-                                    style={{border: imageBorderProperty}}
-                                />}
-                        </Button>
-                    )}
-                />
+                if (Image.indexOf("{") === -1) {
+                    return <MediaUpload
+                        onSelect={(value) => setAttributes({Image: value.sizes.full.url})}
+                        type=" image"
+                        value={Image}
+                        render={({open}) => (
+                            <Button
+                                onClick={open}
+                                className={Image ? 'image-button' : 'button button-large'}
+                            >
+                                {!Image ? __('Select image', 'vk-blocks') :
+                                    <img
+                                        className={'vk_prContent_colImg_image'}
+                                        src={Image}
+                                        alt={__('Upload image', 'vk-blocks')}
+                                        style={{border: imageBorderProperty}}
+                                    />}
+                            </Button>
+                        )}
+                    />
+                }else{
+                    const ImageParse = JSON.parse(Image);
+                    return <MediaUpload
+                        onSelect={saveImage}
+                        type=" image"
+                        value={Image}
+                        render={({open}) => (
+                            <Button
+                                onClick={open}
+                                className={Image ? 'image-button' : 'button button-large'}
+                            >
+                                {!Image ? __('Select image', 'vk-blocks') :
+                                    <img
+                                        className={'vk_prContent_colImg_image'}
+                                        src={ImageParse.sizes.full.url}
+                                        alt={ImageParse.alt}
+                                        style={{border: imageBorderProperty}}
+                                    />}
+                            </Button>
+                        )}
+                    />
+                }
             }else if(for_ === 'save'){
 
                 if(!Image){
                     return __('Select image', 'vk-blocks');
                 }else {
-                    (() => {
-                        if(Image.indexOf("{") === -1){
-                            return <img
-                                className={'vk_prContent_colImg_image'}
-                                src={Image}
-                                alt={__('Upload image', 'vk-blocks')}
-                                style={{border: imageBorderProperty}}
-                            />
-                        }else{
-                            const ImageParse = JSON.parse(Image);
-                            return <img
-                                className={'vk_prContent_colImg_image'}
-                                src={ImageParse.sizes.full.url}
-                                alt={ImageParse.alt}
-                                style={{border: imageBorderProperty}}
-                            />
-                        }
-                    })()
+
+                    if (Image.indexOf("{") === -1) {
+                        return <img className={'vk_prContent_colImg_image'} src={Image}
+                                    alt={__('Upload image', 'vk-blocks')} style={{border: imageBorderProperty}}/>
+                    } else {
+                        const ImageParse = JSON.parse(Image);
+                        return <img
+                            className={'vk_prContent_colImg_image'}
+                            src={ImageParse.sizes.full.url}
+                            alt={ImageParse.alt}
+                            style={{border: imageBorderProperty}}
+                        />
+                    }
                 }
             }
         };
@@ -166,7 +181,7 @@ export class Component extends React.Component {
                                                 />
                                                 < RichText
                                                     tagName="p"
-																										className={'vk_prContent_colTxt_text'}
+                                                    className={'vk_prContent_colTxt_text'}
                                                     onChange={(value) => setAttributes({content: value})}
                                                     value={content}
                                                     placeholder={__('Input content.', 'vk-blocks')}

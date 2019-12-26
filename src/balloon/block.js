@@ -76,7 +76,45 @@ registerBlockType('vk-blocks/balloon', {
 			IconImage,
 		} = attributes;
 
-		const IconImageParse = JSON.parse(IconImage);
+		const renderMediaUploader = (IconImage) => {
+
+			if (IconImage.indexOf("{") === -1) {
+				return <MediaUpload
+					onSelect={(value) => setAttributes({IconImage: value.sizes.full.url})}
+					type="image"
+					className={'vk_balloon_icon_image'}
+					value={IconImage}
+					render={({open}) => (
+						<Button
+							onClick={open}
+							className={IconImage ? 'image-button' : 'button button-large'}
+						>
+							{!IconImage ? __('Select image', 'vk-blocks') :
+								<img className={'vk_balloon_icon_image'} src={IconImage}
+									 alt=""/>}
+						</Button>
+					)}
+				/>
+			} else {
+				const IconImageParse = JSON.parse(IconImage);
+				return <MediaUpload
+					onSelect={(value) => setAttributes({IconImage: JSON.stringify(value)})}
+					type="image"
+					className={'vk_balloon_icon_image'}
+					value={IconImage}
+					render={({open}) => (
+						<Button
+							onClick={open}
+							className={IconImage ? 'image-button' : 'button button-large'}
+						>
+							{!IconImage ? __('Select image', 'vk-blocks') :
+								<img className={'vk_balloon_icon_image'} src={IconImageParse.sizes.full.url}
+									 alt={IconImageParse.alt}/>}
+						</Button>
+					)}
+				/>
+			}
+		};
 
 		return (
 			<Fragment>
@@ -111,22 +149,9 @@ registerBlockType('vk-blocks/balloon', {
 
 				<div className={ `${ className } vk_balloon vk_balloon-${ balloonAlign } vk_balloon-${ balloonType }` }>
 					<div className={ 'vk_balloon_icon' }>
-						<MediaUpload
-							onSelect={(value) => setAttributes({IconImage: JSON.stringify(value)})}
-							type="image"
-							className={ 'vk_balloon_icon_image' }
-							value={ IconImage }
-							render={ ( { open } ) => (
-								<Button
-									onClick={ open }
-									className={ IconImage ? 'image-button' : 'button button-large' }
-								>
-									{!IconImage ? __('Select image', 'vk-blocks') :
-										<img className={'vk_balloon_icon_image'} src={IconImageParse.sizes.full.url}
-											 alt={IconImageParse.alt}/>}
-								</Button>
-							)}
-						/>
+						{
+
+						}
 						<RichText
 							tagName="figcaption"
 							className={ 'vk_balloon_icon_name' }
@@ -172,7 +197,8 @@ registerBlockType('vk-blocks/balloon', {
 				{IconImage ?
 					<figure>
 						{
-							IconImage.indexOf("{") === -1 ? <img
+							IconImage.indexOf("{") === -1 ?
+								<img
 									className={ 'vk_balloon_icon_image' }
 									src={ IconImage }
 									alt=''

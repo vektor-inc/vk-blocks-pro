@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from 'classnames';
 import {Fontawesome} from "./component-fontawesome-deprecated";
 
 const {__} = wp.i18n; // Import __() from wp.i18n
@@ -6,7 +7,7 @@ const {Button} = wp.components;
 const {MediaUpload} = wp.editor;
 let {RichText} = wp.editor;
 
-export class ComponentDeprecated extends React.Component {
+export class ComponentNoBorderColor extends React.Component {
 
     render() {
 
@@ -28,17 +29,20 @@ export class ComponentDeprecated extends React.Component {
             fontAwesomeIconBefore,
             fontAwesomeIconAfter
         } = attributes;
+
         let setAttributes = this.props.setAttributes;
+        let className = this.props.className;
         let for_ = this.props.for_;
         let containerClass = 'vk_prContent';
         let btnClass = 'vk_button';
         let aClass = 'btn btn-block vk_button_link vk_prContent_colTxt_btn';
         let aStyle = {};
+        let imageBorderProperty = '';
 
         if (layout === 'right') {
-            containerClass = `${containerClass} vk_prContent-layout-imageRight`;
+            containerClass = classNames(className, containerClass, 'vk_prContent-layout-imageRight');
         } else {
-            containerClass = `${containerClass} vk_prContent-layout-imageLeft`;
+            containerClass = classNames(className, containerClass, 'vk_prContent-layout-imageLeft');
         }
 
         if (buttonColorCustom) {
@@ -75,6 +79,16 @@ export class ComponentDeprecated extends React.Component {
 
         }
 
+        //borderColorが指定されなかった場合はボーダーを非表示に
+        if (ImageBorderColor === null || ImageBorderColor === undefined) {
+
+            imageBorderProperty = 'none';
+
+        } else {
+            imageBorderProperty = `1px solid ${ImageBorderColor}`;
+        }
+
+
         return (
             <div className={containerClass}>
                 <div className="col-sm-6 vk_prContent_colImg">
@@ -93,7 +107,7 @@ export class ComponentDeprecated extends React.Component {
                                             className={'vk_prContent_colImg_image'}
                                             src={Image}
                                             alt={__('Upload image', 'vk-blocks')}
-                                            style={{border:`1px solid ${ImageBorderColor}`}}
+                                            style={{border: imageBorderProperty}}
                                         />}
                                 </Button>
                             )}
@@ -104,7 +118,7 @@ export class ComponentDeprecated extends React.Component {
                                 className={'vk_prContent_colImg_image'}
                                 src={Image}
                                 alt={__('Upload image', 'vk-blocks')}
-                                style={{border: `1px solid ${ImageBorderColor}`}}
+                                style={{border: imageBorderProperty}}
                             />
                     }
                 </div>

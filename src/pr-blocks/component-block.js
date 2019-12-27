@@ -63,16 +63,17 @@ export class ComponentBlock extends React.Component {
         };
 
         const renderItem_image = (insertImage) => {
-            if (isNotJSON(insertImage)) {
+            let bgImage = insertImage[blockNumArrIndex];
+            if (isNotJSON(bgImage)) {
                 return {
-                    backgroundImage: `url(${insertImage[blockNumArrIndex]})`,
+                    backgroundImage: `url(${bgImage})`,
                     backgroundRepeat: 'no-repeat 50% center',
                     backgroundSize: 'cover'
                 }
             } else {
-                const IconImageParse = JSON.parse(insertImage[blockNumArrIndex]);
+                const bgImageParse = JSON.parse(bgImage);
                 return {
-                    backgroundImage: `url(${IconImageParse.sizes.full.url})`,
+                    backgroundImage: `url(${bgImageParse.sizes.full.url})`,
                     backgroundRepeat: 'no-repeat 50% center',
                     backgroundSize: 'cover'
                 }

@@ -142,7 +142,6 @@ registerBlockType('vk-blocks/pr-blocks', {
         }
 
         const uploadNonAltImage1 = (insertImage) => {
-
             if (isNotJSON(insertImage)) {
                 setAttributes({insertImage1: insertImage.url})
             } else {

@@ -3,8 +3,8 @@ Contributors: vektor-inc,kurudrive,naoki0h
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
-Tested up to: 5.3.0
-Stable tag: 0.17.1
+Tested up to: 5.3.2
+Stable tag: 0.17.2
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -56,6 +56,10 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.17.2 =
+[ bug fix ][ Button ] Custom color palette
+[ bug fix ][ PR Block ] Fixed image alt
 
 = 0.17.1 =
 [ bug fix ][ Button ] Fixed input text bug on Safari

@@ -78,7 +78,8 @@ registerBlockType('vk-blocks/balloon', {
 
 		const renderMediaUploader = (IconImage) => {
 
-			if (IconImage.indexOf("{") === -1) {
+
+			if (IconImage && IconImage.indexOf("{") === -1) {
 				return <MediaUpload
 					onSelect={(value) => setAttributes({IconImage: value.sizes.full.url})}
 					type="image"
@@ -150,7 +151,7 @@ registerBlockType('vk-blocks/balloon', {
 				<div className={ `${ className } vk_balloon vk_balloon-${ balloonAlign } vk_balloon-${ balloonType }` }>
 					<div className={ 'vk_balloon_icon' }>
 						{
-
+							renderMediaUploader(IconImage)
 						}
 						<RichText
 							tagName="figcaption"

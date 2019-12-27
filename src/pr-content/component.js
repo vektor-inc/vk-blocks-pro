@@ -96,7 +96,7 @@ export class Component extends React.Component {
         const renderImage = (for_) => {
 
             if(for_ === 'edit'){
-                if (Image.indexOf("{") === -1) {
+                if (Image && Image.indexOf("{") === -1) {
                     return <MediaUpload
                         onSelect={(value) => setAttributes({Image: value.sizes.full.url})}
                         type=" image"
@@ -144,7 +144,7 @@ export class Component extends React.Component {
                     return __('Select image', 'vk-blocks');
                 }else {
 
-                    if (Image.indexOf("{") === -1) {
+                    if (Image && Image.indexOf("{") === -1) {
                         return <img className={'vk_prContent_colImg_image'} src={Image}
                                     alt={__('Upload image', 'vk-blocks')} style={{border: imageBorderProperty}}/>
                     } else {

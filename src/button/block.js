@@ -91,7 +91,7 @@ registerBlockType('vk-blocks/button', {
         },
         buttonColorCustom: {
             type: 'string',
-            default: null,
+            default: 'undefined',
         },
         buttonAlign: {
             type: 'string',

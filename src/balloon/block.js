@@ -78,7 +78,8 @@ registerBlockType('vk-blocks/balloon', {
 
 		const renderMediaUploader = (IconImage) => {
 
-			if (IconImage.indexOf("{") === -1) {
+
+			if (IconImage && IconImage.indexOf("{") === -1) {
 				return <MediaUpload
 					onSelect={(value) => setAttributes({IconImage: value.sizes.full.url})}
 					type="image"

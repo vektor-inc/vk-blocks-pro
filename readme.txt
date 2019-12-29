@@ -58,7 +58,7 @@ e.g.
 == Changelog ==
 
 = 0.17.2 =
-[ bug fix ][ Button ] Custom color palette
+[ bug fix ][ Button ] Custom color palette.
 [ bug fix ][ PR Block ] Fixed image alt
 
 = 0.17.1 =

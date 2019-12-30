@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.3.2
-Stable tag: 0.17.4
+Stable tag: 0.17.5
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -56,6 +56,9 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.17.5 =
+[ bugfix ] viewHelpers.js が消えていたので復帰
 
 = 0.17.4 =
 [ deploy setting from GitHub ] 

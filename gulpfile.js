@@ -88,7 +88,7 @@ gulp.task('watch', function () {
 });
 
 // Build
-gulp.task('build', gulp.series('js', 'sass', 'sass_editor'));
+gulp.task('build', gulp.series('copy_front_js', 'js', 'sass', 'sass_editor'));
 
 // Default Tasks
 gulp.task('default', gulp.series('watch'));

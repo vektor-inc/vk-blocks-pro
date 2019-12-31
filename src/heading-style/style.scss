@@ -15,7 +15,6 @@ $color_key: #337ab7;
 }
 
 @mixin title_no_bg {
-	color: #333;
 	background-color: transparent;
 	border: none;
 	padding: 0.6em 0 0.5em;
@@ -24,7 +23,6 @@ $color_key: #337ab7;
 
 @mixin title_brackets {
 	border: none;
-	color: #333;
 	background-color: transparent !important;
 	padding: 0.7em;
 	margin-bottom: 1.2em;
@@ -52,7 +50,6 @@ $color_key: #337ab7;
 		&-plain {
 			@include title_unset;
 
-			color: #333;
 			background-color: transparent;
 			border: none;
 			padding: unset;
@@ -130,7 +127,6 @@ $color_key: #337ab7;
 		&-background_fill_lightgray {
 			@include title_unset;
 
-			color: #333;
 			border: none;
 			background-color: #efefef;
 			padding: 0.6em 0.7em 0.5em;
@@ -312,7 +308,6 @@ $color_key: #337ab7;
 		&-both_ends {
 			@include title_unset;
 
-			color: #333;
 			background-color: transparent;
 			border: none;
 			display: flex;

@@ -4,460 +4,463 @@
 $color_key: #337ab7;
 
 @mixin title_unset {
-    position: relative;
-    margin-left: unset;
-    margin-right: unset;
-    outline: unset;
-    outline-offset: unset;
-    box-shadow: unset;
-    border-radius: unset;
-    overflow: unset;
+	position: relative;
+	margin-left: unset;
+	margin-right: unset;
+	outline: unset;
+	outline-offset: unset;
+	box-shadow: unset;
+	border-radius: unset;
+	overflow: unset;
 }
 
 @mixin title_no_bg {
-    color: #333;
-    background-color: transparent;
-    border: none;
-    padding: 0.6em 0 0.5em;
-    margin-bottom: 1.2em;
+	color: #333;
+	background-color: transparent;
+	border: none;
+	padding: 0.6em 0 0.5em;
+	margin-bottom: 1.2em;
 }
 
 @mixin title_brackets {
-    border: none;
-    color: #333;
-    background-color: transparent !important;
-    padding: 0.7em;
-    margin-bottom: 1.2em;
-    text-align: center;
-    border-bottom: unset !important;
+	border: none;
+	color: #333;
+	background-color: transparent !important;
+	padding: 0.7em;
+	margin-bottom: 1.2em;
+	text-align: center;
+	border-bottom: unset !important;
 }
 
 @mixin title_brackets_before_after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 12px;
-    height: 100%;
-    display: inline-block;
-    margin-left: 0;
+	content: "";
+	position: absolute;
+	top: 0;
+	width: 12px;
+	height: 100%;
+	display: inline-block;
+	margin-left: 0;
 }
 
-
-
-
 .is-style-vk-heading {
-    &,
-    .entry-body &,
-    .editor-styles-wrapper & {
-        h3.is-style-vk-heading:after {
-            border-bottom: none !important;
-        }
-        &-plain {
-            @include title_unset;
-
-            color: #333;
-            background-color: transparent;
-            border: none;
-            padding: unset;
-
-            &::before, &::after {
-                content: none;
-            }
-        }
-
-        // &-speech_balloon_fill {
-        //     @include title_unset;
-
-        //     overflow: unset;
-        //     border: none;
-        //     padding: 0.6em 0.8em 0.5em;
-        //     margin-bottom: 1.2em;
-        //     color: #fff;
-        //     border-radius: 4px;
-        //     text-align: left;
-        //     background-color: $color_key;
-
-        //     &::before {
-        //         content: "";
-        //         position: absolute;
-        //         top: auto;
-        //         left: 40px;
-        //         bottom: -20px;
-        //         width: auto;
-        //         margin-left: -10px;
-        //         border: 10px solid transparent;
-        //         border-top: 10px solid $color_key;
-        //         z-index: 2;
-        //         height: auto;
-        //         background-color: transparent !important;
-        //     }
-
-        //     &::after {
-        //         content: none;
-        //     }
-        // }
-
-        // &-background_fill {
-        //     @include title_unset;
-
-        //     border: none;
-        //     margin-bottom: 1.2em;
-        //     color: #fff;
-        //     border-radius: 4px;
-        //     background-color: $color_key;
-
-        //     &::before, &::after {
-        //         content: none;
-        //     }
-        // }
-
-        // &-background_fill_stitch {
-        //     position: relative;
-        //     margin-left: unset;
-        //     margin-right: unset;
-        //     background-color: $color_key;
-        //     padding: 0.6em 0.7em 0.5em;
-        //     margin-bottom: 1.2em;
-        //     color: #fff;
-        //     border-radius: 4px;
-        //     border: none;
-        //     outline: dashed 1px #fff;
-        //     outline-offset: -4px;
-
-        //     &::before, &::after {
-        //         content: none;
-        //     }
-        // }
-
-        &-background_fill_lightgray {
-            @include title_unset;
-
-            color: #333;
-            border: none;
-            background-color: #efefef;
-            padding: 0.6em 0.7em 0.5em;
-            margin-bottom: 1.2em;
-            border-radius: 4px;
-
-            &::before, &::after {
-                content: none;
-            }
-        }
-
-        // &-topborder_background_fill_none {
-        //     @include title_unset;
-        //     @include title_no_bg;
-
-        //     border-left: unset;
-        //     border-right: unset;
-        //     border-top: 2px solid $color_key;
-        //     border-bottom: 1px solid #ccc;
-
-        //     &::before, &::after {
-        //         content: none;
-        //     }
-        // }
-
-        // &-topborder_background_fill_black {
-        //     @include title_unset;
-
-        //     border-left: unset;
-        //     border-right: unset;
-        //     background-color: #191919;
-        //     padding: 0.6em 0.7em 0.5em;
-        //     margin-bottom: 1.2em;
-        //     color: #fff;
-        //     border-top: 2px solid $color_key;
-        //     border-bottom: 1px solid #999;
-
-        //     &::before, &::after {
-        //         content: none;
-        //     }
-        // }
-
-        // &-double {
-        //     @include title_unset;
-        //     @include title_no_bg;
-
-        //     border-top: double 3px $color_key;
-        //     border-bottom: double 3px $color_key;
-
-        //     &::before, &::after {
-        //         content: none;
-        //     }
-        // }
-
-        &-double_black {
-            @include title_unset;
-            @include title_no_bg;
-
-            border-top: double 3px #333;
-            border-bottom: double 3px #333;
-
-            &::before, &::after {
-                content: none;
-            }
-        }
-
-        // &-double_bottomborder {
-        //     @include title_unset;
-        //     @include title_no_bg;
-
-        //     border-bottom: double 3px $color_key;
-
-        //     &::before, &::after {
-        //         content: none;
-        //     }
-        // }
-
-        &-double_bottomborder_black {
-            @include title_unset;
-            @include title_no_bg;
-
-            border-bottom: double 3px #333;
-
-            &::before, &::after {
-                content: none;
-            }
-        }
-
-        // &-solid {
-        //     @include title_unset;
-        //     @include title_no_bg;
-
-        //     border-top: solid 1px $color_key;
-        //     border-bottom: solid 1px $color_key;
-
-        //     &::before, &::after {
-        //         content: none;
-        //     }
-        // }
-
-        &-solid_black {
-            @include title_unset;
-            @include title_no_bg;
-
-            border-top: solid 1px #333;
-            border-bottom: solid 1px #333;
-
-            &::before, &::after {
-                content: none;
-            }
-        }
-
-        // &-solid_bottomborder {
-        //     @include title_unset;
-        //     @include title_no_bg;
-
-        //     border-bottom: solid 1px $color_key;
-
-        //     &::before, &::after {
-        //         content: none;
-        //     }
-        // }
-
-        &-solid_bottomborder_black {
-            @include title_unset;
-            @include title_no_bg;
-
-            border-bottom: solid 1px #333;
-
-            &::before, &::after {
-                content: none;
-            }
-        }
-
-        // &-solid_bottomborder_leftkeycolor {
-        //     @include title_unset;
-        //     @include title_no_bg;
-
-        //     border-bottom: 1px solid #ccc;
-        //     text-align: left;
-
-        //     &:before {
-        //         content: none;
-        //     }
-
-        //     &:after {
-        //         content: ".";
-        //         line-height: 0;
-        //         display: block;
-        //         overflow: hidden;
-        //         position: absolute;
-        //         left: 0;
-        //         bottom: -1px;
-        //         width: 30%;
-        //         border: unset;
-        //         border-top: none !important;
-        //         border-bottom: 1px solid $color_key;
-        //         margin-left: 0;
-        //     }
-        // }
-
-        &-dotted_bottomborder_black {
-            @include title_unset;
-            @include title_no_bg;
-
-            border-bottom: 1px dotted #111;
-
-            &::before, &::after {
-                content: none;
-            }
-        }
-
-        &-both_ends {
-            @include title_unset;
-
-            color: #333;
-            background-color: transparent;
-            border: none;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            margin-bottom: 1.2em;
-            padding: 0;
-
-            &::before,
-            &::after {
-                content: "";
-                flex-grow: 1;
-                border-bottom: 1px solid #333;
-                position: unset;
-                width: unset;
-                border-top: none;
-            }
-
-            &::before {
-                margin-right: 1em;
-                top: unset;
-            }
-
-            &::after {
-                margin-left: 1em;
-                bottom: unset;
-            }
-        }
-
-        // &-leftborder {
-        //     @include title_unset;
-
-        //     border: none;
-        //     color: #333;
-        //     padding: 0.6em 0.7em 0.5em;
-        //     margin-bottom: 1.2em;
-        //     border-left: solid 2px $color_key;
-        //     background-color: #efefef;
-        //     text-align: left;
-
-        //     &::before, &::after {
-        //         content: none;
-        //     }
-        // }
-
-        // &-leftborder_nobackground {
-        //     @include title_unset;
-        //     @include title_no_bg;
-
-        //     padding: 0.6em 0.7em 0.5em;
-        //     border-left: solid 2px $color_key;
-        //     text-align: left;
-
-        //     &::before, &::after {
-        //         content: none;
-        //     }
-        // }
-
-        // &-diagonal_stripe_bottomborder{
-        // 	@include title_unset;
-        // 	@include title_no_bg;
-        // 	&:before{
-        // 		content: none;
-        // 	}
-        // 	&::after{
-        // 		content:"";
-        // 		position: absolute;
-        // 		left: 0;
-        // 		bottom: 0;
-        // 		width: 100%;
-        // 		height: 7px;
-        // 		border: none !important;
-        // 		background: linear-gradient(
-        // 			-45deg,
-        // 			rgba(255,255,255,0.1) 25%, $color_key 25%,
-        // 			#222 50%, rgba(255,255,255,0.1) 50%,
-        // 			rgba(255,255,255,0.1) 75%, $color_key 75%,
-        // 			#222
-        // 		);
-        // 		background-size: 5px 5px;
-        // 		margin-left: 0;
-        // 	}
-        // }
-
-        // &-brackets{
-        // 	@include title_unset;
-        // 	@include title_brackets;
-        // 	&::before,
-        // 	&::after{
-        // 		@include title_brackets_before_after;
-        // 		border-top: solid 1px $color_key;
-        // 		border-bottom: solid 1px $color_key;
-        // 	}
-        // 	&::before{
-        // 		border-left: solid 1px $color_key;
-        // 		left: 0;
-        // 	}
-        // 	&::after{
-        // 		border-right: solid 1px $color_key;
-        // 		right: 0;
-        // 		left: auto;
-        // 	}
-        // }
-        &-brackets_black {
-            @include title_unset;
-            @include title_brackets;
-            &::before,
-            &::after {
-                @include title_brackets_before_after;
-
-                border-top: solid 1px #333;
-                border-bottom: solid 1px #333;
-            }
-
-            &::before {
-                border-left: solid 1px #333;
-                left: 0;
-            }
-
-            &::after {
-                border-right: solid 1px #333 !important;
-                right: 0;
-                left: auto;
-            }
-        }
-
-        // &-small_bottomborder{
-        // 	@include title_unset;
-        // 	border:none;
-        // 	color:#333;
-        // 	background-color:transparent !important;
-        // 	overflow: unset;
-        // 	padding: 0;
-        // 	text-align: center;
-        // 	margin-bottom: 3em;
-        // 	&:before{
-        // 		content: none;
-        // 	}
-        // 	&::after{
-        // 		content: "";
-        // 		display: inline-block;
-        // 		position: absolute;
-        // 		left: 50%;
-        // 		margin-left: -19px;
-        // 		bottom: -24px;
-        // 		width: 38px;
-        // 		border-top: solid 2px $color_key;
-        // 	}
-        // }
-
-    } //.is-style-vk-heading
+	&,
+	.entry-body &,
+	.editor-styles-wrapper & {
+		h3.is-style-vk-heading:after {
+			border-bottom: none !important;
+		}
+		&-plain {
+			@include title_unset;
+
+			color: #333;
+			background-color: transparent;
+			border: none;
+			padding: unset;
+
+			&::before,
+			&::after {
+				content: none;
+			}
+		}
+
+		// &-speech_balloon_fill {
+		//     @include title_unset;
+
+		//     overflow: unset;
+		//     border: none;
+		//     padding: 0.6em 0.8em 0.5em;
+		//     margin-bottom: 1.2em;
+		//     color: #fff;
+		//     border-radius: 4px;
+		//     text-align: left;
+		//     background-color: $color_key;
+
+		//     &::before {
+		//         content: "";
+		//         position: absolute;
+		//         top: auto;
+		//         left: 40px;
+		//         bottom: -20px;
+		//         width: auto;
+		//         margin-left: -10px;
+		//         border: 10px solid transparent;
+		//         border-top: 10px solid $color_key;
+		//         z-index: 2;
+		//         height: auto;
+		//         background-color: transparent !important;
+		//     }
+
+		//     &::after {
+		//         content: none;
+		//     }
+		// }
+
+		// &-background_fill {
+		//     @include title_unset;
+
+		//     border: none;
+		//     margin-bottom: 1.2em;
+		//     color: #fff;
+		//     border-radius: 4px;
+		//     background-color: $color_key;
+
+		//     &::before, &::after {
+		//         content: none;
+		//     }
+		// }
+
+		// &-background_fill_stitch {
+		//     position: relative;
+		//     margin-left: unset;
+		//     margin-right: unset;
+		//     background-color: $color_key;
+		//     padding: 0.6em 0.7em 0.5em;
+		//     margin-bottom: 1.2em;
+		//     color: #fff;
+		//     border-radius: 4px;
+		//     border: none;
+		//     outline: dashed 1px #fff;
+		//     outline-offset: -4px;
+
+		//     &::before, &::after {
+		//         content: none;
+		//     }
+		// }
+
+		&-background_fill_lightgray {
+			@include title_unset;
+
+			color: #333;
+			border: none;
+			background-color: #efefef;
+			padding: 0.6em 0.7em 0.5em;
+			margin-bottom: 1.2em;
+			border-radius: 4px;
+
+			&::before,
+			&::after {
+				content: none;
+			}
+		}
+
+		// &-topborder_background_fill_none {
+		//     @include title_unset;
+		//     @include title_no_bg;
+
+		//     border-left: unset;
+		//     border-right: unset;
+		//     border-top: 2px solid $color_key;
+		//     border-bottom: 1px solid #ccc;
+
+		//     &::before, &::after {
+		//         content: none;
+		//     }
+		// }
+
+		// &-topborder_background_fill_black {
+		//     @include title_unset;
+
+		//     border-left: unset;
+		//     border-right: unset;
+		//     background-color: #191919;
+		//     padding: 0.6em 0.7em 0.5em;
+		//     margin-bottom: 1.2em;
+		//     color: #fff;
+		//     border-top: 2px solid $color_key;
+		//     border-bottom: 1px solid #999;
+
+		//     &::before, &::after {
+		//         content: none;
+		//     }
+		// }
+
+		// &-double {
+		//     @include title_unset;
+		//     @include title_no_bg;
+
+		//     border-top: double 3px $color_key;
+		//     border-bottom: double 3px $color_key;
+
+		//     &::before, &::after {
+		//         content: none;
+		//     }
+		// }
+
+		&-double_black {
+			@include title_unset;
+			@include title_no_bg;
+
+			border-top: double 3px #333;
+			border-bottom: double 3px #333;
+
+			&::before,
+			&::after {
+				content: none;
+			}
+		}
+
+		// &-double_bottomborder {
+		//     @include title_unset;
+		//     @include title_no_bg;
+
+		//     border-bottom: double 3px $color_key;
+
+		//     &::before, &::after {
+		//         content: none;
+		//     }
+		// }
+
+		&-double_bottomborder_black {
+			@include title_unset;
+			@include title_no_bg;
+
+			border-bottom: double 3px #333;
+
+			&::before,
+			&::after {
+				content: none;
+			}
+		}
+
+		// &-solid {
+		//     @include title_unset;
+		//     @include title_no_bg;
+
+		//     border-top: solid 1px $color_key;
+		//     border-bottom: solid 1px $color_key;
+
+		//     &::before, &::after {
+		//         content: none;
+		//     }
+		// }
+
+		&-solid_black {
+			@include title_unset;
+			@include title_no_bg;
+
+			border-top: solid 1px #333;
+			border-bottom: solid 1px #333;
+
+			&::before,
+			&::after {
+				content: none;
+			}
+		}
+
+		// &-solid_bottomborder {
+		//     @include title_unset;
+		//     @include title_no_bg;
+
+		//     border-bottom: solid 1px $color_key;
+
+		//     &::before, &::after {
+		//         content: none;
+		//     }
+		// }
+
+		&-solid_bottomborder_black {
+			@include title_unset;
+			@include title_no_bg;
+
+			border-bottom: solid 1px #333;
+
+			&::before,
+			&::after {
+				content: none;
+			}
+		}
+
+		// &-solid_bottomborder_leftkeycolor {
+		//     @include title_unset;
+		//     @include title_no_bg;
+
+		//     border-bottom: 1px solid #ccc;
+		//     text-align: left;
+
+		//     &:before {
+		//         content: none;
+		//     }
+
+		//     &:after {
+		//         content: ".";
+		//         line-height: 0;
+		//         display: block;
+		//         overflow: hidden;
+		//         position: absolute;
+		//         left: 0;
+		//         bottom: -1px;
+		//         width: 30%;
+		//         border: unset;
+		//         border-top: none !important;
+		//         border-bottom: 1px solid $color_key;
+		//         margin-left: 0;
+		//     }
+		// }
+
+		&-dotted_bottomborder_black {
+			@include title_unset;
+			@include title_no_bg;
+
+			border-bottom: 1px dotted #111;
+
+			&::before,
+			&::after {
+				content: none;
+			}
+		}
+
+		&-both_ends {
+			@include title_unset;
+
+			color: #333;
+			background-color: transparent;
+			border: none;
+			display: flex;
+			align-items: center;
+			text-align: center;
+			margin-bottom: 1.2em;
+			padding: 0;
+
+			&::before,
+			&::after {
+				content: "";
+				flex-grow: 1;
+				border-bottom: 1px solid #333;
+				position: unset;
+				width: unset;
+				border-top: none;
+			}
+
+			&::before {
+				margin-right: 1em;
+				top: unset;
+			}
+
+			&::after {
+				margin-left: 1em;
+				bottom: unset;
+			}
+		}
+
+		// &-leftborder {
+		//     @include title_unset;
+
+		//     border: none;
+		//     color: #333;
+		//     padding: 0.6em 0.7em 0.5em;
+		//     margin-bottom: 1.2em;
+		//     border-left: solid 2px $color_key;
+		//     background-color: #efefef;
+		//     text-align: left;
+
+		//     &::before, &::after {
+		//         content: none;
+		//     }
+		// }
+
+		// &-leftborder_nobackground {
+		//     @include title_unset;
+		//     @include title_no_bg;
+
+		//     padding: 0.6em 0.7em 0.5em;
+		//     border-left: solid 2px $color_key;
+		//     text-align: left;
+
+		//     &::before, &::after {
+		//         content: none;
+		//     }
+		// }
+
+		// &-diagonal_stripe_bottomborder{
+		// 	@include title_unset;
+		// 	@include title_no_bg;
+		// 	&:before{
+		// 		content: none;
+		// 	}
+		// 	&::after{
+		// 		content:"";
+		// 		position: absolute;
+		// 		left: 0;
+		// 		bottom: 0;
+		// 		width: 100%;
+		// 		height: 7px;
+		// 		border: none !important;
+		// 		background: linear-gradient(
+		// 			-45deg,
+		// 			rgba(255,255,255,0.1) 25%, $color_key 25%,
+		// 			#222 50%, rgba(255,255,255,0.1) 50%,
+		// 			rgba(255,255,255,0.1) 75%, $color_key 75%,
+		// 			#222
+		// 		);
+		// 		background-size: 5px 5px;
+		// 		margin-left: 0;
+		// 	}
+		// }
+
+		// &-brackets{
+		// 	@include title_unset;
+		// 	@include title_brackets;
+		// 	&::before,
+		// 	&::after{
+		// 		@include title_brackets_before_after;
+		// 		border-top: solid 1px $color_key;
+		// 		border-bottom: solid 1px $color_key;
+		// 	}
+		// 	&::before{
+		// 		border-left: solid 1px $color_key;
+		// 		left: 0;
+		// 	}
+		// 	&::after{
+		// 		border-right: solid 1px $color_key;
+		// 		right: 0;
+		// 		left: auto;
+		// 	}
+		// }
+		&-brackets_black {
+			@include title_unset;
+			@include title_brackets;
+			&::before,
+			&::after {
+				@include title_brackets_before_after;
+
+				border-top: solid 1px #333;
+				border-bottom: solid 1px #333;
+			}
+
+			&::before {
+				border-left: solid 1px #333;
+				left: 0;
+			}
+
+			&::after {
+				border-right: solid 1px #333 !important;
+				right: 0;
+				left: auto;
+			}
+		}
+
+		// &-small_bottomborder{
+		// 	@include title_unset;
+		// 	border:none;
+		// 	color:#333;
+		// 	background-color:transparent !important;
+		// 	overflow: unset;
+		// 	padding: 0;
+		// 	text-align: center;
+		// 	margin-bottom: 3em;
+		// 	&:before{
+		// 		content: none;
+		// 	}
+		// 	&::after{
+		// 		content: "";
+		// 		display: inline-block;
+		// 		position: absolute;
+		// 		left: 50%;
+		// 		margin-left: -19px;
+		// 		bottom: -24px;
+		// 		width: 38px;
+		// 		border-top: solid 2px $color_key;
+		// 	}
+		// }
+	} //.is-style-vk-heading
 } //.editor-block-list__block

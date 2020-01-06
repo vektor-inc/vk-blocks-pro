@@ -76,7 +76,10 @@ export class Component extends React.Component {
               className={titleClass}
               value={excerpt_text}
               onChange={value => setAttributes({ excerpt_text: value })}
-              placeholder={__("Excerpt", "vk-blocks")}
+              placeholder={__(
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                "vk-blocks"
+              )}
             />
           );
         } else {
@@ -93,10 +96,7 @@ export class Component extends React.Component {
     const renderButton = display_btn => {
       if (display_btn) {
         return (
-          <a
-            className="btn btn-primary vk_post_btn"
-            href="http://vccw.test/archives/1"
-          >
+          <a className="btn btn-primary vk_post_btn" href={url}>
             {btn_text}
           </a>
         );

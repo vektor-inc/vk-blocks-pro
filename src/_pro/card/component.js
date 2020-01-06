@@ -18,7 +18,6 @@ export class Component extends React.Component {
     }
     return (
       <div className={`container`}>
-        {console.log(elm)}
         <div className={"row"}>{elm}</div>
       </div>
     );

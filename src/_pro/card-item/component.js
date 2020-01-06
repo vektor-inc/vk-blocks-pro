@@ -1,6 +1,7 @@
 const { __ } = wp.i18n; // Import __() from wp.i18n
-const { RichText } =
+const { RichText, MediaUpload } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
+const { Button } = wp.components;
 
 export class Component extends React.Component {
   render() {
@@ -18,7 +19,8 @@ export class Component extends React.Component {
       btn_text,
       btn_align,
       title,
-      excerpt_text
+      excerpt_text,
+      image
     } = attributes;
 
     const for_ = this.props.for_;
@@ -56,11 +58,29 @@ export class Component extends React.Component {
 
     const renderImage = display_image => {
       if (display_image) {
+        const imageParsed = JSON.parse(image);
         return (
-          <img
-            src="http://vccw.test/wp-content/plugins/vk-blocks-pro/inc/vk-blocks/images/no-image.png"
-            alt=""
-            className="vk_post_imgOuter_img card-img-top"
+          <MediaUpload
+            onSelect={value => setAttributes({ image: JSON.stringify(value) })}
+            type="image"
+            className={"vk_post_imgOuter_img card-img-top"}
+            value={image}
+            render={({ open }) => (
+              <Button
+                onClick={open}
+                className={image ? "image-button" : "button button-large"}
+              >
+                {!image ? (
+                  __("Select image", "vk-blocks")
+                ) : (
+                  <img
+                    className={"vk_post_imgOuter_img card-img-top"}
+                    src={imageParsed.sizes.full.url}
+                    alt={imageParsed.alt}
+                  />
+                )}
+              </Button>
+            )}
           />
         );
       }
@@ -129,15 +149,24 @@ export class Component extends React.Component {
       }
     };
 
+    let imageStyle;
+    if (image) {
+      imageStyle = {
+        backgroundImage: `url(${JSON.parse(image).sizes.full.url})`
+      };
+    } else {
+      imageStyle = {};
+    }
+
     return (
       <div
         className={`vk_post ${layout} card-post vk_PostList_card vk_post-col-xs-${col_xs} vk_post-col-sm-${col_sm} vk_post-col-md-${col_md} vk_post-col-lg-${col_lg} vk_post-col-xl-${col_xl} vk_post-btn-display`}
       >
-        <div className={imgContainerClass}>
-          <a href="http://vccw.test/archives/1">
-            <div className="card-img-overlay"></div>
-            {renderImage(display_image)}
-          </a>
+        <div className={imgContainerClass} style={imageStyle}>
+          {/* <a href="http://vccw.test/archives/1"> */}
+          <div className="card-img-overlay"></div>
+          {renderImage(display_image)}
+          {/* </a> */}
         </div>
         <div className="vk_post_body card-body">
           {renderTitle()}

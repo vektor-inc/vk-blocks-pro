@@ -72,5 +72,9 @@ export const schema = {
     type: "string",
     source: "html",
     selector: "p.vk_post_excerpt.card-text"
+  },
+  image: {
+    type: "string",
+    default: null
   }
 };

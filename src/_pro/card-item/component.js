@@ -65,22 +65,22 @@ export class Component extends React.Component {
             type="image"
             className={"vk_post_imgOuter_img card-img-top"}
             value={image}
-            render={({ open }) => (
-              <Button
-                onClick={open}
-                className={image ? "image-button" : "button button-large"}
-              >
-                {!image ? (
-                  __("Select image", "vk-blocks")
-                ) : (
-                  <img
-                    className={"vk_post_imgOuter_img card-img-top"}
-                    src={imageParsed.sizes.full.url}
-                    alt={imageParsed.alt}
-                  />
-                )}
-              </Button>
-            )}
+            render={({ open }) =>
+              !image ? (
+                <Button
+                  onClick={open}
+                  className={image ? "image-button" : "button button-large"}
+                >
+                  {__("Select image", "vk-blocks")}
+                </Button>
+              ) : (
+                <img
+                  className={"vk_post_imgOuter_img card-img-top"}
+                  src={imageParsed.sizes.full.url}
+                  alt={imageParsed.alt}
+                />
+              )
+            }
           />
         );
       }

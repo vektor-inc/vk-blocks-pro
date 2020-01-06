@@ -2,6 +2,7 @@ const { __ } = wp.i18n; // Import __() from wp.i18n
 const { RichText, MediaUpload } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const { Button } = wp.components;
+const { Fragment } = wp.element;
 
 export class Component extends React.Component {
   render() {
@@ -20,11 +21,11 @@ export class Component extends React.Component {
       btn_align,
       title,
       excerpt_text,
-      image
+      image,
+      url
     } = attributes;
 
     const for_ = this.props.for_;
-    const url = "";
     let containerClass = " vk_card_item";
 
     const isEdit = () => {
@@ -59,7 +60,7 @@ export class Component extends React.Component {
     const renderImage = display_image => {
       if (display_image) {
         const imageParsed = JSON.parse(image);
-        return (
+        const uploadButton = (
           <MediaUpload
             onSelect={value => setAttributes({ image: JSON.stringify(value) })}
             type="image"
@@ -83,6 +84,20 @@ export class Component extends React.Component {
             }
           />
         );
+
+        if (isEdit(for_)) {
+          return (
+            <Fragment>
+              <div className="card-img-overlay"></div>
+              {uploadButton}
+            </Fragment>
+          );
+        } else {
+          <a href={url}>
+            <div className="card-img-overlay"></div>
+            {uploadButton}
+          </a>;
+        }
       }
     };
     const renderExcerpt = display_excerpt => {
@@ -163,10 +178,7 @@ export class Component extends React.Component {
         className={`vk_post ${layout} card-post vk_PostList_card vk_post-col-xs-${col_xs} vk_post-col-sm-${col_sm} vk_post-col-md-${col_md} vk_post-col-lg-${col_lg} vk_post-col-xl-${col_xl} vk_post-btn-display`}
       >
         <div className={imgContainerClass} style={imageStyle}>
-          {/* <a href="http://vccw.test/archives/1"> */}
-          <div className="card-img-overlay"></div>
           {renderImage(display_image)}
-          {/* </a> */}
         </div>
         <div className="vk_post_body card-body">
           {renderTitle()}

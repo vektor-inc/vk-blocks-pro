@@ -76,5 +76,9 @@ export const schema = {
   image: {
     type: "string",
     default: null
+  },
+  url: {
+    type: "string",
+    default: null
   }
 };

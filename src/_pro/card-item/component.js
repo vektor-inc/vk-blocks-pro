@@ -17,10 +17,12 @@ export class Component extends React.Component {
       display_btn,
       btn_text,
       btn_align,
-      title
+      title,
+      excerpt_text
     } = attributes;
 
     const for_ = this.props.for_;
+    const url = "";
     let containerClass = " vk_card_item";
 
     const isEdit = () => {
@@ -65,12 +67,27 @@ export class Component extends React.Component {
     };
     const renderExcerpt = display_excerpt => {
       if (display_excerpt) {
-        return (
-          <p className="vk_post_excerpt card-text">
-            Welcome to WordPress. This is your first post. Edit or delete it,
-            then start writing!
-          </p>
-        );
+        const titleTag = "p";
+        const titleClass = "vk_post_excerpt card-text";
+        if (isEdit(for_)) {
+          return (
+            <RichText
+              tagName={titleTag}
+              className={titleClass}
+              value={excerpt_text}
+              onChange={value => setAttributes({ excerpt_text: value })}
+              placeholder={__("Excerpt", "vk-blocks")}
+            />
+          );
+        } else {
+          return (
+            <RichText.Content
+              tagName={titleTag}
+              className={titleClass}
+              value={excerpt_text}
+            />
+          );
+        }
       }
     };
     const renderButton = display_btn => {
@@ -101,11 +118,13 @@ export class Component extends React.Component {
         );
       } else {
         return (
-          <RichText.Content
-            tagName={titleTag}
-            className={titleClass}
-            value={title}
-          />
+          <a href={url}>
+            <RichText.Content
+              tagName={titleTag}
+              className={titleClass}
+              value={title}
+            />
+          </a>
         );
       }
     };
@@ -122,9 +141,6 @@ export class Component extends React.Component {
         </div>
         <div className="vk_post_body card-body">
           {renderTitle()}
-          {/* <h5 className="vk_post_title card-title">
-            <a href="http://vccw.test/archives/1">Hello world!</a>
-          </h5> */}
           {renderExcerpt(display_excerpt)}
           <div className={`vk_post_btnOuter ${btn_align}`}>
             {renderButton(display_btn)}

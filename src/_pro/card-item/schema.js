@@ -67,5 +67,10 @@ export const schema = {
     type: "string",
     source: "html",
     selector: "h5.vk_post_title.card-title"
+  },
+  excerpt_text: {
+    type: "string",
+    source: "html",
+    selector: "p.vk_post_excerpt.card-text"
   }
 };

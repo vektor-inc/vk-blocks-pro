@@ -44,7 +44,7 @@ export const schema = {
   },
   display_date: {
     type: "boolean",
-    default: false
+    default: true
   },
   display_new: {
     type: "boolean",

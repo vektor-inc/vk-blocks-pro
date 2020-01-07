@@ -88,15 +88,21 @@ export class Component extends React.Component {
         if (isEdit(for_)) {
           return (
             <Fragment>
-              <div className="card-img-overlay"></div>
-              {uploadButton}
+              <div className={imgContainerClass} style={imageStyle}>
+                <div className="card-img-overlay"></div>
+                {uploadButton}
+              </div>
             </Fragment>
           );
         } else {
-          <a href={url}>
-            <div className="card-img-overlay"></div>
-            {uploadButton}
-          </a>;
+          return (
+            <div className={imgContainerClass} style={imageStyle}>
+              <a href={url}>
+                <div className="card-img-overlay"></div>
+                {uploadButton}
+              </a>
+            </div>
+          );
         }
       }
     };
@@ -177,9 +183,7 @@ export class Component extends React.Component {
       <div
         className={`vk_post ${layout} card-post vk_PostList_card vk_post-col-xs-${col_xs} vk_post-col-sm-${col_sm} vk_post-col-md-${col_md} vk_post-col-lg-${col_lg} vk_post-col-xl-${col_xl} vk_post-btn-display`}
       >
-        <div className={imgContainerClass} style={imageStyle}>
-          {renderImage(display_image)}
-        </div>
+        {renderImage(display_image)}
         <div className="vk_post_body card-body">
           {renderTitle()}
           {renderExcerpt(display_excerpt)}

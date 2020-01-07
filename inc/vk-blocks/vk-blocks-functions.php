@@ -121,11 +121,11 @@ function vkblocks_blocks_assets() {
 								),
 								'display_excerpt'   => array(
 									'type'    => 'boolean',
-									'default' => false,
+									'default' => true,
 								),
 								'display_date'      => array(
 									'type'    => 'boolean',
-									'default' => true,
+									'default' => false,
 								),
 								'display_new'       => array(
 									'type'    => 'boolean',
@@ -133,7 +133,7 @@ function vkblocks_blocks_assets() {
 								),
 								'display_btn'       => array(
 									'type'    => 'boolean',
-									'default' => false,
+									'default' => true,
 								),
 								'new_date'          => array(
 									'type'    => 'number',

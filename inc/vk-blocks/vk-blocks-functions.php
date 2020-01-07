@@ -184,6 +184,7 @@ function vkblocks_blocks_assets() {
 							),
 							'name'     => array(
 								'type'    => 'string',
+								'default' => "",
 							),
 							'layout'   => array(
 								'type'    => 'string',
@@ -197,7 +198,7 @@ function vkblocks_blocks_assets() {
 								'type'    => 'number',
 								'default' => 2,
 							),
-							'col_md'            => array(
+							'col_md'   => array(
 								'type'    => 'number',
 								'default' => 3,
 							),
@@ -219,7 +220,7 @@ function vkblocks_blocks_assets() {
 							),
 							'display_excerpt'   => array(
 								'type'    => 'boolean',
-								'default' => false,
+								'default' => true,
 							),
 							'display_date'      => array(
 								'type'    => 'boolean',
@@ -231,7 +232,7 @@ function vkblocks_blocks_assets() {
 							),
 							'display_btn'       => array(
 								'type'    => 'boolean',
-								'default' => false,
+								'default' => true,
 							),
 							'new_date'          => array(
 								'type'    => 'number',

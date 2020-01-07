@@ -16,10 +16,6 @@ export class Component extends React.Component {
     } else if ("save") {
       elm = <InnerBlocks.Content />;
     }
-    return (
-      <div className={`container`}>
-        <div className={"row"}>{elm}</div>
-      </div>
-    );
+    return <div className={"vk_posts"}>{elm}</div>;
   }
 }

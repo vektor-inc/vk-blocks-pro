@@ -180,7 +180,8 @@ function vkblocks_blocks_assets() {
 					'vk-blocks/' . $value, array(
 						'attributes'      => array(
 							'selectId' => array(
-								'type'    => 'number',
+								'type'    => 'string',
+								'default' => false,
 							),
 							'name'     => array(
 								'type'    => 'string',

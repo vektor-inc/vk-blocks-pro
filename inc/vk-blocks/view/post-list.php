@@ -104,7 +104,7 @@ class VkBlocksPostList {
 	public function get_loop_query_child( $attributes ) {
 
 		// ParentIdを指定
-		if ( isset( $attributes['selectId'] ) ) {
+		if ( isset( $attributes['selectId'] ) && $attributes['selectId'] !== 'false' ) {
 			$args = array(
 				'post_type'      => 'page',
 				'paged'          => 0,

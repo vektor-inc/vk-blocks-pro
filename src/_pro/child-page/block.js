@@ -5,7 +5,7 @@
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { withSelect } = wp.data;
-import { schema } from "./schema.js";
+import { schema } from "./schema";
 import { PostList } from "../../_helper/post-list";
 
 const BlockIcon = (

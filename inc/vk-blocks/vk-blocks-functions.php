@@ -225,11 +225,11 @@ function vkblocks_blocks_assets() {
 							),
 							'display_date'      => array(
 								'type'    => 'boolean',
-								'default' => true,
+								'default' => false,
 							),
 							'display_new'       => array(
 								'type'    => 'boolean',
-								'default' => true,
+								'default' => false,
 							),
 							'display_btn'       => array(
 								'type'    => 'boolean',

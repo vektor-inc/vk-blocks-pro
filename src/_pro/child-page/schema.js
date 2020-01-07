@@ -45,11 +45,11 @@ export const schema = {
   },
   display_date: {
     type: "boolean",
-    default: true
+    default: false
   },
   display_new: {
     type: "boolean",
-    default: true
+    default: false
   },
   display_btn: {
     type: "boolean",

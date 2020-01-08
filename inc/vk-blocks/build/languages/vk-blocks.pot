@@ -349,7 +349,7 @@ msgid "Border radius"
 msgstr ""
 
 #: src/_pro/outer/block.js:352
-#: src/_pro/table-of-contents/block.js:132
+#: src/_pro/table-of-contents/block.js:178
 msgid "This block is only for users who bought Lightning Pro."
 msgstr ""
 
@@ -371,7 +371,7 @@ msgid "Outlined"
 msgstr ""
 
 #: src/_pro/step-item/block.js:116
-#: src/_pro/table-of-contents/block.js:113
+#: src/_pro/table-of-contents/block.js:160
 #: src/_pro/timeline-item/block.js:99
 #: src/heading-style/block.js:33
 #: src/heading/block.js:124
@@ -404,7 +404,7 @@ msgid "Color"
 msgstr ""
 
 #: src/_pro/step-item/block.js:86
-#: src/_pro/table-of-contents/block.js:104
+#: src/_pro/table-of-contents/block.js:153
 #: src/_pro/timeline-item/block.js:69
 msgid "Style"
 msgstr ""
@@ -417,12 +417,12 @@ msgstr ""
 msgid "Step"
 msgstr ""
 
-#: src/_pro/table-of-contents/TableOfContents.js:154
-#: src/_pro/table-of-contents/block.js:53
+#: src/_pro/table-of-contents/TableOfContents.js:175
+#: src/_pro/table-of-contents/block.js:80
 msgid "Table of Contents"
 msgstr ""
 
-#: src/_pro/table-of-contents/block.js:117
+#: src/_pro/table-of-contents/block.js:164
 msgid "No frame"
 msgstr ""
 

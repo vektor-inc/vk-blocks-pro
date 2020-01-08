@@ -6,7 +6,7 @@
 
 	.vk_step_item {
 		position: relative;
-		padding: 0 0 1em 4em;
+		padding: 0 0 2.4em 4.5em;
 		margin: 0 auto;
 
 		h3:first-of-type,
@@ -37,6 +37,9 @@
 			color: #ffffff;
 			padding: 9px 0;
 			text-align: center;
+			&_num {
+				line-height: 1.2;
+			}
 		}
 		.vk_step_item_dot_caption {
 			font-size: 0.5rem;

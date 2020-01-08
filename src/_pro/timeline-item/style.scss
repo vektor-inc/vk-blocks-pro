@@ -5,14 +5,14 @@
 	margin: 2em 0;
 	.vk_timeline_item {
 		position: relative;
-		padding: 0 0 1em 1.8em;
+		padding: 0 0 2.4em 1.8em;
 
-		.vk_timeline_item_caption {
-			margin-bottom: 0.5em;
+		&_caption {
+			margin-bottom: 1.5em;
 			color: #666;
 		}
 
-		.vk_timeline_item_style {
+		&_style {
 			content: "";
 			display: block;
 			position: absolute;

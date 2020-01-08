@@ -14,12 +14,12 @@ class VkBlocksPostList {
 
 		$name = esc_html( $attributes['name'] );
 		if ( $name === 'vk-blocks/post-list' ) {
-			$wp_query = $this->get_loop_query( $attributes );
+			$wp_query = $this->get_loop_query( $attributes ); 
 		} elseif ( $name === 'vk-blocks/child-page' ) {
 			$wp_query = $this->get_loop_query_child( $attributes );
 		}
 
-		if ( $wp_query === false || $wp_query->posts === array() ) {
+		if ( $wp_query === false || $wp_query === 'false' || $wp_query->posts === array() ) {
 			return $this->renderNoPost();
 		}
 

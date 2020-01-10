@@ -37,6 +37,7 @@
     "gulp-sourcemaps": "^2.6",
     "npm-check-updates": "^3.2.1",
     "postcss-loader": "^3.0.0",
+    "puppeteer": "^2.0.0",
     "run-sequence": "^2.2.1",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",

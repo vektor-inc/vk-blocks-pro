@@ -4,6 +4,7 @@
 /*-------------------------------------------*/
 // このファイルは基本 /vk-blocks/vk-blocks-functions.phpを読み込むファイルだけ
 // vk-blocks
+
 if ( ! function_exists( 'vkblocks_active' ) ) {
 
 	// Set asset URL.

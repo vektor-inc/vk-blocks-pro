@@ -8,6 +8,7 @@ function vkblocks_active() {
 }
 
 function vkblocks_blocks_assets() {
+
 	wp_register_style( 'vk-blocks-build-css', VK_BLOCKS_URL . 'build/block-build.css', array(), VK_BLOCKS_VERSION );
 	wp_register_style( 'vk-blocks-build-editor-css', VK_BLOCKS_URL . 'build/block-build-editor.css', array(), VK_BLOCKS_VERSION );
 

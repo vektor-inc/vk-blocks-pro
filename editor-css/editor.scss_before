@@ -25,6 +25,11 @@ padding: 3px 4px;
 .components-base-control__label {
 	 font-weight:bold;
 }
+/* ラベルに inline-block がついてしまっているために画像ボタンが回り込んでひっついてしまうため */
+.wp-core-ui .components-base-control__label + button {
+	display:block;
+}
+
 .components-base-control .components-base-control__help {
 	margin-top:0;
 }
@@ -32,7 +37,7 @@ padding: 3px 4px;
 .components-checkbox-control__label { margin-bottom:0; }
 .components-color-palette { display:block; overflow:hidden; }
 
-/*スライダーを表示。デフォルトだとbootstrapに非表示にされてしまう*/
+/* スライダーを表示。デフォルトだとbootstrapに非表示にされてしまう */
 input[type=range] {
     margin: 1px;
 }
@@ -44,9 +49,10 @@ input[type=range] {
 /* editor area *********************************************/
 .edit-post-visual-editor.editor-styles-wrapper{
 
-
-
 /* これがないとGutenberg標準のエディタCSSに負ける */
 h1:first-child.vk_prBlocks_item_title{
 	margin-top:0.9em;
 }
+
+/* ボタンの前後にアイコンフォントを指定してしてもアイコンが改行されてしまうため回避処理 */
+.vk_button .editor-rich-text { display:inline-block; }

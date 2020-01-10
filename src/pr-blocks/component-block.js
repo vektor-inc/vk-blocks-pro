@@ -1,4 +1,5 @@
 import React from 'react';
+import {isNotJSON} from "../_helper/is-not-json";
 
 const {__} = wp.i18n; // Import __() from wp.i18n
 const {RichText} = wp.editor;
@@ -50,22 +51,41 @@ export class ComponentBlock extends React.Component {
         let richTextH1Save = '';
         let richTextPSave = '';
 
+        const renderSaveAltImage = (insertImage) => {
+            if (isNotJSON(insertImage)) {
+                return <img src={insertImage}
+                            alt=''/>
+            } else {
+                const IconImageParse = JSON.parse(insertImage);
+                return <img src={IconImageParse.sizes.full.url}
+                            alt={IconImageParse.alt}/>
+            }
+        };
+
+        const renderItem_image = (insertImage) => {
+            let bgImage = insertImage[blockNumArrIndex];
+            if (isNotJSON(bgImage)) {
+                return {
+                    backgroundImage: `url(${bgImage})`,
+                    backgroundRepeat: 'no-repeat 50% center',
+                    backgroundSize: 'cover'
+                }
+            } else {
+                const bgImageParse = JSON.parse(bgImage);
+                return {
+                    backgroundImage: `url(${bgImageParse.sizes.full.url})`,
+                    backgroundRepeat: 'no-repeat 50% center',
+                    backgroundSize: 'cover'
+                }
+            }
+        };
 
         let drawElement = (() => {
 
             if (insertImage[blockNumArrIndex]) {
-
                 return <div className="vk_prBlocks_item_image"
-                            style={{
-                                backgroundImage: `url(${insertImage[blockNumArrIndex]})`,
-                                backgroundRepeat: 'no-repeat 50% center',
-                                backgroundSize: 'cover'
-                            }}
-                >
-                    <img
-                        src={insertImage[blockNumArrIndex]}
-                        alt=''
-                    />
+                            style={renderItem_image(insertImage)}>
+                    {renderSaveAltImage(insertImage[blockNumArrIndex])}
                 </div>
 
             } else {

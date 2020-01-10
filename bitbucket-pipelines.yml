@@ -32,7 +32,7 @@ pipelines:
             - if [ -d ${remove} ];then
             - git rm -r ${remove}
             - elif [ -e ${remove} ];then
-            - git rm -${remove}
+            - git rm ${remove}
             - fi
             - done
             # Pro版ブロックは読み込まないようjsから削除

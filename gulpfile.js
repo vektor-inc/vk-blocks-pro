@@ -40,6 +40,7 @@ gulp.task('sass_editor', function (){
 		.pipe(gulp.dest('./editor-css/'))
 		.pipe(sass())
 		.pipe(cleanCss())
+		.pipe($.autoprefixer())
 		.pipe(concat('block-build-editor.css'))
 		.pipe(gulp.dest('./inc/vk-blocks/build/'));
 });
@@ -87,7 +88,7 @@ gulp.task('watch', function () {
 });
 
 // Build
-gulp.task('build', gulp.series('js', 'sass', 'sass_editor'));
+gulp.task('build', gulp.series('copy_front_js', 'js', 'sass', 'sass_editor'));
 
 // Default Tasks
 gulp.task('default', gulp.series('watch'));

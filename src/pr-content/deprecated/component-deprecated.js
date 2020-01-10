@@ -162,6 +162,7 @@ export class ComponentDeprecated extends React.Component {
                                            className={aClass}
                                            target={buttonTarget? '_blank':null}
                                            style={aStyle}
+                                           rel="noopener noreferrer"
                                         >
                                             <Fontawesome
                                                 attributes={attributes}

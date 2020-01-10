@@ -243,6 +243,7 @@ export class PostList extends React.Component {
           };
         });
 
+<<<<<<< HEAD
         //デフォルトオプション
         let defaultOption = [
           {

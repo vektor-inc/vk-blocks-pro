@@ -61,6 +61,7 @@ registerBlockType('vk-blocks/button', {
     category: 'vk-blocks-cat', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
     attributes: {
         content: {
+            type: 'string',
             source: 'html',
             selector: 'span',
         },
@@ -90,7 +91,7 @@ registerBlockType('vk-blocks/button', {
         },
         buttonColorCustom: {
             type: 'string',
-            default: null,
+            default: 'undefined',
         },
         buttonAlign: {
             type: 'string',
@@ -234,7 +235,6 @@ registerBlockType('vk-blocks/button', {
                     </PanelBody>
                 </InspectorControls>
                 <div className={containerClass}>
-
                     <Component lbColorCustom={buttonColorCustom} lbColor={buttonColor} lbType={buttonType}
                                lbAlign={buttonAlign}
                                lbSize={buttonSize}
@@ -249,10 +249,9 @@ registerBlockType('vk-blocks/button', {
                             value={content}
                             placeholder={__('Input text', 'vk-blocks')}
                             formattingControls={['bold', 'italic', 'strikethrough']}
-                            keepPlaceholderOnFocus
+                            isSelected={true}
                         />
                     }/>
-
                     {isSelected && (
                         <form
                             className="block-library-button__inline-link"

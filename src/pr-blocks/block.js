@@ -5,6 +5,7 @@
 import React from "react";
 import {deprecated} from "./deprecated/block";
 import {ComponentBlock} from "./component-block";
+import {isNotJSON} from "../_helper/is-not-json";
 
 
 const {__} = wp.i18n; // Import __() from wp.i18n
@@ -76,8 +77,6 @@ function set_attributes(number) {
     return attributes;
 }
 
-
-
 /**
  * Register: aa Gutenberg Block.
  *
@@ -142,6 +141,48 @@ registerBlockType('vk-blocks/pr-blocks', {
             containerClass = `vk_prBlocks row`;
         }
 
+        const uploadNonAltImage1 = (insertImage) => {
+            if (isNotJSON(insertImage)) {
+                setAttributes({insertImage1: insertImage.url})
+            } else {
+                setAttributes({insertImage1: JSON.stringify(insertImage)})
+            }
+        };
+
+        const uploadNonAltImage2 = (insertImage) => {
+            if (isNotJSON(insertImage)) {
+                setAttributes({insertImage2: insertImage.url})
+            } else {
+                setAttributes({insertImage2: JSON.stringify(insertImage)})
+            }
+        };
+
+        const uploadNonAltImage3 = (insertImage) => {
+            if (isNotJSON(insertImage)) {
+                setAttributes({insertImage3: insertImage.url})
+            } else {
+                setAttributes({insertImage3: JSON.stringify(insertImage)})
+            }
+        };
+
+        const renderEditAltImage = (insertImage) => {
+            if (isNotJSON(insertImage)) {
+                return !insertImage
+                    ?
+                    __('Select image', 'vk-blocks')
+                    :
+                    <img className={'icon-image'} src={insertImage}
+                         alt={__('Upload image', 'vk-blocks')}/>
+            } else {
+                const IconImageParse = JSON.parse(insertImage);
+                return !insertImage
+                    ? __('Select image', 'vk-blocks')
+                    :
+                    <img className={'icon-image'} src={IconImageParse.sizes.full.url}
+                         alt={IconImageParse.alt}/>
+            }
+        };
+
         return [
             <Fragment>
                 <InspectorControls>
@@ -198,7 +239,7 @@ registerBlockType('vk-blocks/pr-blocks', {
                             help={__('When you have an image. Image is displayed with priority', 'vk-blocks')}
                         >
                             <MediaUpload
-                                onSelect={(value) => setAttributes({insertImage1: value.url})}
+                                onSelect={uploadNonAltImage1}
                                 type="image"
                                 value={insertImage1}
                                 render={({open}) => (
@@ -206,9 +247,7 @@ registerBlockType('vk-blocks/pr-blocks', {
                                         onClick={open}
                                         className={insertImage1 ? 'image-button' : 'button button-large'}
                                     >
-                                        {!insertImage1 ? __('Select image', 'vk-blocks') :
-                                            <img className={'icon-image'} src={insertImage1}
-                                                 alt={__('Upload image', 'vk-blocks')}/>}
+                                        {renderEditAltImage(insertImage1)}
                                     </Button>
                                 )}
                             />
@@ -265,7 +304,7 @@ registerBlockType('vk-blocks/pr-blocks', {
                             help={__('When you have an image. Image is displayed with priority.', 'vk-blocks')}
                         >
                             <MediaUpload
-                                onSelect={(value) => setAttributes({insertImage2: value.url})}
+                                onSelect={uploadNonAltImage2}
                                 type="image"
                                 value={insertImage2}
                                 render={({open}) => (
@@ -273,9 +312,7 @@ registerBlockType('vk-blocks/pr-blocks', {
                                         onClick={open}
                                         className={insertImage2 ? 'image-button' : 'button button-large'}
                                     >
-                                        {!insertImage2 ? __('Select image', 'vk-blocks') :
-                                            <img className={'icon-image'} src={insertImage2}
-                                                 alt={__('Upload image', 'vk-blocks')}/>}
+                                        {renderEditAltImage(insertImage2)}
                                     </Button>
                                 )}
                             />
@@ -332,7 +369,7 @@ registerBlockType('vk-blocks/pr-blocks', {
                             help={__('When you have an image. Image is displayed with priority.', 'vk-blocks')}
                         >
                             <MediaUpload
-                                onSelect={(value) => setAttributes({insertImage3: value.url})}
+                                onSelect={uploadNonAltImage3}
                                 type="image"
                                 value={insertImage3}
                                 render={({open}) => (
@@ -340,9 +377,7 @@ registerBlockType('vk-blocks/pr-blocks', {
                                         onClick={open}
                                         className={insertImage3 ? 'image-button' : 'button button-large'}
                                     >
-                                        {!insertImage3 ? __('Select image', 'vk-blocks') :
-                                            <img className={'icon-image'} src={insertImage3}
-                                                 alt={__('Upload image', 'vk-blocks')}/>}
+                                        {renderEditAltImage(insertImage3)}
                                     </Button>
                                 )}
                             />

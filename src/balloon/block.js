@@ -69,14 +69,55 @@ registerBlockType('vk-blocks/balloon', {
 	edit( { attributes, className, setAttributes } ) {
 		const {
 			content,
-            balloonName,
-            balloonType,
-            balloonBgColor,
+			balloonName,
+			balloonType,
+			balloonBgColor,
 			balloonAlign,
 			IconImage,
 		} = attributes;
 
-        return (
+		const renderMediaUploader = (IconImage) => {
+
+
+			if (IconImage && IconImage.indexOf("{") === -1) {
+				return <MediaUpload
+					onSelect={(value) => setAttributes({IconImage: value.sizes.full.url})}
+					type="image"
+					className={'vk_balloon_icon_image'}
+					value={IconImage}
+					render={({open}) => (
+						<Button
+							onClick={open}
+							className={IconImage ? 'image-button' : 'button button-large'}
+						>
+							{!IconImage ? __('Select image', 'vk-blocks') :
+								<img className={'vk_balloon_icon_image'} src={IconImage}
+									 alt=""/>}
+						</Button>
+					)}
+				/>
+			} else {
+				const IconImageParse = JSON.parse(IconImage);
+				return <MediaUpload
+					onSelect={(value) => setAttributes({IconImage: JSON.stringify(value)})}
+					type="image"
+					className={'vk_balloon_icon_image'}
+					value={IconImage}
+					render={({open}) => (
+						<Button
+							onClick={open}
+							className={IconImage ? 'image-button' : 'button button-large'}
+						>
+							{!IconImage ? __('Select image', 'vk-blocks') :
+								<img className={'vk_balloon_icon_image'} src={IconImageParse.sizes.full.url}
+									 alt={IconImageParse.alt}/>}
+						</Button>
+					)}
+				/>
+			}
+		};
+
+		return (
 			<Fragment>
 				<InspectorControls>
 					<PanelBody title={__('Balloon setting', 'vk-blocks')}>
@@ -90,46 +131,35 @@ registerBlockType('vk-blocks/balloon', {
 							] }
 							onChange={ ( value ) => setAttributes( { balloonAlign: value } ) }
 						/>
-		        <RadioControl
-		            label={__('Type', 'vk-blocks')}
-		            help={__('Please select the type of balloon.', 'vk-blocks')}
-		            selected={ balloonType }
-		            options={ [
-		                { label: __('Serif', 'vk-blocks'), value: 'type-serif' },
-		                { label: __('Thinking', 'vk-blocks'), value: 'type-think' }
-		            ] }
-		            onChange={ ( value ) => setAttributes( { balloonType: value } ) }
-		        />
-		        <ColorPalette
-		            value={balloonBgColor}
-		            onChange={(value) => setAttributes({balloonBgColor: value})}
-		        />
+						<RadioControl
+							label={__('Type', 'vk-blocks')}
+							help={__('Please select the type of balloon.', 'vk-blocks')}
+							selected={ balloonType }
+							options={ [
+								{ label: __('Serif', 'vk-blocks'), value: 'type-serif' },
+								{ label: __('Thinking', 'vk-blocks'), value: 'type-think' }
+							] }
+							onChange={ ( value ) => setAttributes( { balloonType: value } ) }
+						/>
+						<ColorPalette
+							value={balloonBgColor}
+							onChange={(value) => setAttributes({balloonBgColor: value})}
+						/>
 					</PanelBody>
 				</InspectorControls>
 
 				<div className={ `${ className } vk_balloon vk_balloon-${ balloonAlign } vk_balloon-${ balloonType }` }>
 					<div className={ 'vk_balloon_icon' }>
-						<MediaUpload
-							onSelect={ (value) => setAttributes( { IconImage: value.sizes.full.url } ) }
-							type="image"
-							className={ 'vk_balloon_icon_image' }
-							value={ IconImage }
-							render={ ( { open } ) => (
-								<Button
-									onClick={ open }
-									className={ IconImage ? 'image-button' : 'button button-large' }
-								>
-									{ ! IconImage ? __('Select image', 'vk-blocks') : <img className={ 'vk_balloon_icon_image' } src={ IconImage } alt={__('Upload image', 'vk-blocks') } /> }
-								</Button>
-							)}
-						/>
-                        <RichText
-                            tagName="figcaption"
+						{
+							renderMediaUploader(IconImage)
+						}
+						<RichText
+							tagName="figcaption"
 							className={ 'vk_balloon_icon_name' }
-                            onChange={ ( value ) => setAttributes( { balloonName: value } ) }
-                            value={ balloonName }
-                            placeholder={__('Icon Name', 'vk-blocks') }
-                        />
+							onChange={ ( value ) => setAttributes( { balloonName: value } ) }
+							value={ balloonName }
+							placeholder={__('Icon Name', 'vk-blocks') }
+						/>
 					</div>
 					<RichText
 						style={ { background: balloonBgColor, border: balloonBgColor } }
@@ -141,7 +171,7 @@ registerBlockType('vk-blocks/balloon', {
 					/>
 				</div>
 			</Fragment>
-        );
+		);
 	},
 
 
@@ -156,37 +186,43 @@ registerBlockType('vk-blocks/balloon', {
 	save( { attributes, className } ) {
 		const {
 			content,
-            balloonName,
-            balloonType,
-            balloonBgColor,
+			balloonName,
+			balloonType,
+			balloonBgColor,
 			balloonAlign,
 			IconImage,
 		} = attributes;
 
-		return (
-			<div className={ `vk_balloon vk_balloon-${ balloonAlign } vk_balloon-${ balloonType }` }>
-				<div className={ 'vk_balloon_icon' }>
-					{ IconImage ?
-						<figure>
-							<img
-								className={ 'vk_balloon_icon_image' }
-								src={ IconImage }
-								alt=''
-							/>
-                            <RichText.Content
-                                tagName="figcaption"
-																className={ 'vk_balloon_icon_name' }
-                                value={ balloonName }
-                            />
-						</figure> : '' }
-				</div>
-				<RichText.Content
-					className={ 'vk_balloon_content' }
-					style={ { background: balloonBgColor, border: balloonBgColor } }
-					tagName="p"
-					value={ content }
-				/>
+		return (<div className={`vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType}`}>
+			<div className={'vk_balloon_icon'}>
+				{IconImage ?
+					<figure>
+						{
+							IconImage.indexOf("{") === -1 ?
+								<img
+									className={ 'vk_balloon_icon_image' }
+									src={ IconImage }
+									alt=''
+								/>
+								:
+								<img
+									className={'vk_balloon_icon_image'}
+									src={JSON.parse(IconImage).sizes.full.url}
+									alt={JSON.parse(IconImage).alt} />
+						}
+						<RichText.Content
+							tagName="figcaption"
+							className={'vk_balloon_icon_name'}
+							value={balloonName}
+						/>
+					</figure> : ''}
 			</div>
-		);
-	},
+			<RichText.Content
+				className={'vk_balloon_content'}
+				style={{background: balloonBgColor, border: balloonBgColor}}
+				tagName="p"
+				value={content}
+			/>
+		</div>)
+	}
 });

@@ -198,82 +198,52 @@ export class PostList extends React.Component {
       </PanelBody>
     );
 
-    let renderPostList = posts => {
-      if (posts) {
-        let label;
+    let renderPages = pages => {
+      if (pages) {
+        //親ページを抽出
+        let parents = pages.filter(page => {
+          if (page.parent === 0) {
+            return true;
+          }
+          return false;
+        });
 
-        let options = posts.map(post => {
-          if (post.parent !== 0) {
-            label = " - " + post.title.rendered + "(Child Page)";
+        //子ページを抽出
+        let children = pages.filter(page => {
+          if (page.parent !== 0) {
+            return true;
+          }
+          return false;
+        });
+
+        //親ページの直後に子ページが挿入された配列を生成
+        children.forEach(child => {
+          const index = parents.findIndex(parent => parent.id === child.parent);
+          if (index !== -1) {
+            parents.splice(index, 0, child);
           } else {
-            label = post.title.rendered;
+            parents.push(child);
+          }
+        });
+
+        //順番を反対に
+        parents.reverse();
+
+        //プルダウンメニュー用にフォーマット
+        let label;
+        const formated = parents.map(page => {
+          if (page.parent !== 0) {
+            label = " - " + page.title.rendered + "(Child Page)";
+          } else {
+            label = page.title.rendered;
           }
           return {
-            value: post.id,
-            parent: post.parent,
+            value: page.id,
             label: __(label, "vk-blocks")
           };
         });
 
-        let isNumber = obj => {
-          return obj !== undefined && typeof obj === "number" && !isNaN(obj);
-        };
-
-        const filterParent = post => {
-          if (isNumber(post.parent) && post.parent === 0) {
-            return true;
-          }
-          return false;
-        };
-
-        let parentPosts = options.filter(filterParent);
-
-        const filterChildren = post => {
-          if (isNumber(post.parent) && post.parent !== 0) {
-            return true;
-          }
-          return false;
-        };
-
-        let childrenPosts = options.filter(filterChildren);
-
-        parentPosts.forEach(post => {
-          const result = childrenPosts.filter((value, index) => {
-            child => child.parent === post.id;
-          }, post);
-        });
-
-        // console.log(childrenPosts);
-
-        // let allPosts = parentPosts.map((post, index, array) => {
-        //   let result = childrenPosts.map(child => {
-        //     console.log(child);
-        //     console.log(post);
-        //     return child.parent === post.id;
-        //   });
-        // if (post.id in childrenPosts === true) {
-        //   return (
-        //     {
-        //       value: post.id,
-        //       label: __(label, "vk-blocks")
-        //     },
-        //     {
-
-        //     }
-        //   );
-        // } else {
-        //   return {
-        //     value: post.id,
-        //     label: __(label, "vk-blocks")
-        //   };
-        // }
-        // });
-        // console.log(allPosts);
-
-        // posts.sort(function(a, b) {
-        //   return a.parent - b.parent;
-        // });
-
+        //デフォルトオプション
         let defaultOption = [
           {
             value: false,
@@ -281,7 +251,8 @@ export class PostList extends React.Component {
           }
         ];
 
-        return defaultOption.concat(parentPosts);
+        //デフォルトオプションとペーイ一覧を結合して返す
+        return defaultOption.concat(formated);
       }
     };
 
@@ -294,7 +265,7 @@ export class PostList extends React.Component {
           <SelectControl
             value={selectId}
             onChange={value => setAttributes({ selectId: value })}
-            options={renderPostList(postTypes)}
+            options={renderPages(postTypes)}
           />
         </BaseControl>
       </PanelBody>

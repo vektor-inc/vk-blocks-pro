@@ -30,7 +30,7 @@ msgstr ""
 msgid "Number of Posts"
 msgstr ""
 
-#: src/_helper/post-list.js:280
+#: src/_helper/post-list.js:250
 #: src/_pro/outer/block.js:280
 #: src/_pro/step-item/block.js:120
 #: src/_pro/timeline-item/block.js:103
@@ -38,120 +38,120 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: src/_helper/post-list.js:290
+#: src/_helper/post-list.js:261
 msgid "Display conditions"
 msgstr ""
 
-#: src/_helper/post-list.js:293
+#: src/_helper/post-list.js:264
 msgid "Parent"
 msgstr ""
 
-#: src/_helper/post-list.js:305
+#: src/_helper/post-list.js:276
 msgid "Display type and columns"
 msgstr ""
 
-#: src/_helper/post-list.js:308
+#: src/_helper/post-list.js:279
 msgid "Display type"
 msgstr ""
 
-#: src/_helper/post-list.js:315
+#: src/_helper/post-list.js:286
 msgid "Card"
 msgstr ""
 
-#: src/_helper/post-list.js:319
+#: src/_helper/post-list.js:290
 msgid "Card Horizontal"
 msgstr ""
 
-#: src/_helper/post-list.js:323
+#: src/_helper/post-list.js:294
 msgid "Media"
 msgstr ""
 
-#: src/_helper/post-list.js:329
+#: src/_helper/post-list.js:300
 msgid "Column ( Screen size : Extra small )"
 msgstr ""
 
-#: src/_helper/post-list.js:338
+#: src/_helper/post-list.js:309
 msgid "Column ( Screen size : Small )"
 msgstr ""
 
-#: src/_helper/post-list.js:346
+#: src/_helper/post-list.js:317
 msgid "Column ( Screen size : Medium )"
 msgstr ""
 
-#: src/_helper/post-list.js:354
+#: src/_helper/post-list.js:325
 msgid "Column ( Screen size : Large )"
 msgstr ""
 
-#: src/_helper/post-list.js:363
+#: src/_helper/post-list.js:334
 msgid "Column ( Screen size : Extra large )"
 msgstr ""
 
-#: src/_helper/post-list.js:376
+#: src/_helper/post-list.js:347
 msgid "Display item"
 msgstr ""
 
-#: src/_helper/post-list.js:378
+#: src/_helper/post-list.js:349
 msgid "Image"
 msgstr ""
 
-#: src/_helper/post-list.js:383
+#: src/_helper/post-list.js:354
 msgid "Term name"
 msgstr ""
 
-#: src/_helper/post-list.js:390
+#: src/_helper/post-list.js:361
 msgid "Excerpt"
 msgstr ""
 
-#: src/_helper/post-list.js:395
+#: src/_helper/post-list.js:366
 msgid "Date"
 msgstr ""
 
-#: src/_helper/post-list.js:401
+#: src/_helper/post-list.js:372
 msgid "New mark"
 msgstr ""
 
-#: src/_helper/post-list.js:407
+#: src/_helper/post-list.js:378
 #: src/button/block.js:59
 msgid "Button"
 msgstr ""
 
-#: src/_helper/post-list.js:411
+#: src/_helper/post-list.js:382
 msgid "New mark option"
 msgstr ""
 
-#: src/_helper/post-list.js:413
+#: src/_helper/post-list.js:384
 msgid "Number of days to display the new post mark"
 msgstr ""
 
-#: src/_helper/post-list.js:419
+#: src/_helper/post-list.js:390
 msgid "New post mark"
 msgstr ""
 
-#: src/_helper/post-list.js:424
+#: src/_helper/post-list.js:395
 msgid "Button option"
 msgstr ""
 
-#: src/_helper/post-list.js:426
+#: src/_helper/post-list.js:397
 msgid "Button text"
 msgstr ""
 
-#: src/_helper/post-list.js:431
+#: src/_helper/post-list.js:402
 msgid "Button align"
 msgstr ""
 
-#: src/_helper/post-list.js:438
+#: src/_helper/post-list.js:409
 #: src/balloon/block.js:88
 #: src/button/block.js:174
 #: src/pr-content/block.js:195
 msgid "Left"
 msgstr ""
 
-#: src/_helper/post-list.js:442
+#: src/_helper/post-list.js:413
 #: src/button/block.js:175
 msgid "Center"
 msgstr ""
 
-#: src/_helper/post-list.js:446
+#: src/_helper/post-list.js:417
 #: src/balloon/block.js:89
 #: src/button/block.js:176
 #: src/pr-content/block.js:194

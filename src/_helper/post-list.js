@@ -251,7 +251,7 @@ export class PostList extends React.Component {
           }
         ];
 
-        //デフォルトオプションとペーイ一覧を結合して返す
+        //デフォルトオプションとページ一覧を結合して返す
         return defaultOption.concat(formated);
       }
     };

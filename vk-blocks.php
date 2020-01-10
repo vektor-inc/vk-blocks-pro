@@ -12,8 +12,6 @@
 // Do not load directly.
 defined( 'ABSPATH' ) || die();
 
-require_once( 'inc/vk-blocks-config.php' );
-
 add_action(
 	'plugins_loaded', function () {
 		// Load language files.
@@ -50,7 +48,10 @@ if ( ! function_exists( 'vkblocks_deactivate_plugin' ) ) {
 add_action(
 	'init', function() {
 		$plugin_base_dir = dirname( __FILE__ );
+
+		require_once( 'inc/vk-blocks-config.php' );
 		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		
 		if ( is_plugin_active( 'vk-blocks-pro/vk-blocks.php' ) ) {
 			// Deactive Plugin VK Blocks ( free )
 			if ( function_exists( 'vkblocks_deactivate_plugin' ) ) {

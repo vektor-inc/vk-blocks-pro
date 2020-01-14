@@ -176,7 +176,7 @@ export class PostList extends React.Component {
       return returnTerms;
     };
 
-    const renderConditions = (
+    const renderConditions = () => (
       <PanelBody
         title={__("Display conditions", "vk-blocks")}
         initialOpen={false}
@@ -273,7 +273,7 @@ export class PostList extends React.Component {
       );
     };
 
-    const renderTypeColumn = (
+    const renderTypeColumn = () => (
       <PanelBody
         title={__("Display type and columns", "vk-blocks")}
         initialOpen={false}
@@ -345,7 +345,7 @@ export class PostList extends React.Component {
       </PanelBody>
     );
 
-    const renderItem = (
+    const renderItem = () => (
       <PanelBody title={__("Display item", "vk-blocks")} initialOpen={false}>
         <CheckboxControl
           label={__("Image", "vk-blocks")}
@@ -431,17 +431,17 @@ export class PostList extends React.Component {
             if (name === "vk-blocks/post-list") {
               return (
                 <div>
-                  {renderConditions}
-                  {renderTypeColumn}
-                  {renderItem}
+                  {renderConditions()}
+                  {renderTypeColumn()}
+                  {renderItem()}
                 </div>
               );
             } else if (name === "vk-blocks/child-page") {
               return (
                 <div>
                   {renderConditionsUrlInput()}
-                  {renderTypeColumn}
-                  {renderItem}
+                  {renderTypeColumn()}
+                  {renderItem()}
                 </div>
               );
             }

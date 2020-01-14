@@ -256,20 +256,22 @@ export class PostList extends React.Component {
       }
     };
 
-    const renderConditionsUrlInput = (
-      <PanelBody
-        title={__("Display conditions", "vk-blocks")}
-        initialOpen={false}
-      >
-        <BaseControl label={__("Parent", "vk-blocks")}>
-          <SelectControl
-            value={selectId}
-            onChange={value => setAttributes({ selectId: value })}
-            options={renderPages(postTypes)}
-          />
-        </BaseControl>
-      </PanelBody>
-    );
+    const renderConditionsUrlInput = () => {
+      return (
+        <PanelBody
+          title={__("Display conditions", "vk-blocks")}
+          initialOpen={false}
+        >
+          <BaseControl label={__("Parent", "vk-blocks")}>
+            <SelectControl
+              value={selectId}
+              onChange={value => setAttributes({ selectId: value })}
+              options={renderPages(postTypes)}
+            />
+          </BaseControl>
+        </PanelBody>
+      );
+    };
 
     const renderTypeColumn = (
       <PanelBody
@@ -437,7 +439,7 @@ export class PostList extends React.Component {
             } else if (name === "vk-blocks/child-page") {
               return (
                 <div>
-                  {renderConditionsUrlInput}
+                  {renderConditionsUrlInput()}
                   {renderTypeColumn}
                   {renderItem}
                 </div>

@@ -41,11 +41,12 @@ registerBlockType("vk-blocks/child-page", {
 
   edit: withSelect(select => {
     return {
-      postTypes: select("core/editor").getCurrentPostId()
+      postTypes: select("core").getEntityRecords("postType", "page", {
+        _embed: true,
+        per_page: -1
+      })
     };
   })(props => {
-    props.attributes["selectId"] = props.postTypes;
-
     return <PostList value={props} />;
   }),
   save() {

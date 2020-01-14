@@ -12,21 +12,12 @@ class VkBlocksPostList {
 	 */
 	public function render_post_list( $attributes ) {
 
-<<<<<<< HEAD
-
 		if(isset($attributes['name'])){
 			$name = esc_html( $attributes['name'] );
 		}else{
 			return '<div>' . __("I'm sorry, This block is broken. Please remove this and reinsert it.", 'vk-blocks') . '</div>';
-=======
-		// $attributes['name'] 未定義対応
-		if( empty( $attributes['name'])){
-				$name = 'vk-blocks/post-list';
-		} else {
-			$name = esc_html( $attributes['name'] );
->>>>>>> 5c1a37f362b2a45230d08323b0625e8b1e6268fa
 		}
-
+		
 		if ( $name === 'vk-blocks/post-list' ) {
 			$wp_query = $this->get_loop_query( $attributes ); 
 		} elseif ( $name === 'vk-blocks/child-page' ) {

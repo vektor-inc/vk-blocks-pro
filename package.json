@@ -6,6 +6,7 @@
   "scripts": {
     "start": "npm install && npm run build && npm run watch && wp plugin activate vk-blocks && wp browse --wp-admin",
     "watch": "gulp watch",
+    "build-dev": "gulp build-dev",
     "build": "gulp build && npm run translate",
     "translate": "./node_modules/.bin/po2json ./inc/vk-blocks/build/languages/vk-blocks-ja.po ./inc/vk-blocks/build/languages/vk-blocks-ja-vk-blocks-build-js.json -f jed",
     "gulp": "gulp",
@@ -44,6 +45,7 @@
     "vinyl-named": "^1.1.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
+    "webpack-merge": "^4.2.2",
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {

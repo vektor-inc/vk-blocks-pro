@@ -14,7 +14,7 @@ const {
 const { Fragment } = wp.element;
 const { InspectorControls, URLInput } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
-const { subscribe, select } = wp.data;
+const { subscribe, select, dispatch } = wp.data;
 const { ServerSideRender } = wp.components;
 import addCheckBox from "./checkbox";
 
@@ -27,6 +27,7 @@ export class PostList extends React.Component {
       clientId,
       name
     } = this.props.value;
+
     const {
       selectId,
       numberPosts,
@@ -68,50 +69,55 @@ export class PostList extends React.Component {
         return item.slug !== "wp_block" && item.slug !== "attachment";
       });
     };
-
-    let argsPostTypes = {
-      name: "postTypes",
-      originData: filterUnusedPostType(postTypes),
-      checkedData: JSON.parse(isCheckedPostType),
-      setAttributes: setAttributes
+    const argsPostTypes = () => {
+      return {
+        name: "postTypes",
+        originData: filterUnusedPostType(postTypes),
+        checkedData: JSON.parse(isCheckedPostType),
+        setAttributes: setAttributes
+      };
     };
 
-    let argsTaxonomy = {
-      name: "taxonomy",
-      originData: JSON.parse(coreTerms),
-      checkedData: JSON.parse(isCheckedTerms),
-      setAttributes: setAttributes
+    const argsTaxonomy = () => {
+      return {
+        name: "taxonomy",
+        originData: JSON.parse(coreTerms),
+        checkedData: JSON.parse(isCheckedTerms),
+        setAttributes: setAttributes
+      };
     };
 
-    let blockAttributes = select("core/editor").getBlockAttributes(clientId);
-    let oldIsCheckedPostType;
-    let oldTaxList;
-    let oldTermsList;
-    let oldCoreTerms;
+    if (name === "vk-blocks/post-list") {
+      let blockAttributes = select("core/editor").getBlockAttributes(clientId);
+      let oldIsCheckedPostType;
+      let oldTaxList;
+      let oldTermsList;
+      let oldCoreTerms;
 
-    subscribe(() => {
-      if (blockAttributes.isCheckedPostType !== oldIsCheckedPostType) {
-        oldIsCheckedPostType = blockAttributes.isCheckedPostType;
-        let taxList = getTaxonomyFromPostType(
-          blockAttributes.isCheckedPostType
-        );
+      subscribe(() => {
+        if (blockAttributes.isCheckedPostType !== oldIsCheckedPostType) {
+          oldIsCheckedPostType = blockAttributes.isCheckedPostType;
+          let taxList = getTaxonomyFromPostType(
+            blockAttributes.isCheckedPostType
+          );
 
-        if (taxList !== oldTaxList) {
-          oldTaxList = taxList;
+          if (taxList !== oldTaxList) {
+            oldTaxList = taxList;
 
-          let termsList = getTermsFromTaxonomy(taxList);
-          if (termsList !== oldTermsList) {
-            oldTermsList = termsList;
-            let coreTerms = JSON.stringify(termsList);
+            let termsList = getTermsFromTaxonomy(taxList);
+            if (termsList !== oldTermsList) {
+              oldTermsList = termsList;
+              let coreTerms = JSON.stringify(termsList);
 
-            if (coreTerms !== oldCoreTerms) {
-              oldCoreTerms = coreTerms;
-              setAttributes({ coreTerms: coreTerms });
+              if (coreTerms !== oldCoreTerms) {
+                oldCoreTerms = coreTerms;
+                setAttributes({ coreTerms: coreTerms });
+              }
             }
           }
         }
-      }
-    });
+      });
+    }
 
     /**
      * Get Taxonomies of checked postType. Return array of taxonomies.
@@ -176,45 +182,70 @@ export class PostList extends React.Component {
       return returnTerms;
     };
 
-    const renderConditions = () => (
-      <PanelBody
-        title={__("Display conditions", "vk-blocks")}
-        initialOpen={false}
-      >
-        <BaseControl label={__("Filter by PostTypes", "vk-blocks")}>
-          {addCheckBox(argsPostTypes)}
-        </BaseControl>
-        <BaseControl label={__("Filter by Taxonomy Terms", "vk-blocks")}>
-          {addCheckBox(argsTaxonomy)}
-        </BaseControl>
-        <BaseControl label={__("Number of Posts", "vk-blocks")}>
-          <RangeControl
-            value={numberPosts}
-            onChange={value => setAttributes({ numberPosts: value })}
-            min="1"
-            max="24"
-          />
-        </BaseControl>
-      </PanelBody>
-    );
+    const renderConditions = () => {
+      return (
+        <PanelBody
+          title={__("Display conditions", "vk-blocks")}
+          initialOpen={false}
+        >
+          <BaseControl label={__("Filter by PostTypes", "vk-blocks")}>
+            {addCheckBox(argsPostTypes())}
+          </BaseControl>
+          <BaseControl label={__("Filter by Taxonomy Terms", "vk-blocks")}>
+            {addCheckBox(argsTaxonomy())}
+          </BaseControl>
+          <BaseControl label={__("Number of Posts", "vk-blocks")}>
+            <RangeControl
+              value={numberPosts}
+              onChange={value => setAttributes({ numberPosts: value })}
+              min="1"
+              max="24"
+            />
+          </BaseControl>
+        </PanelBody>
+      );
+    };
+
+    const filterParents = pages => {
+      return pages.filter(page => {
+        if (page.parent === 0) {
+          return true;
+        }
+        return false;
+      });
+    };
+
+    const filterChildren = pages => {
+      return pages.filter(page => {
+        if (page.parent !== 0) {
+          return true;
+        }
+        return false;
+      });
+    };
+
+    const formatPulldonwOrder = parents => {
+      let label;
+      return parents.map(page => {
+        if (page.parent !== 0) {
+          label = " - " + page.title.rendered + "(Child Page)";
+        } else {
+          label = page.title.rendered;
+        }
+        return {
+          value: page.id,
+          label: __(label, "vk-blocks")
+        };
+      });
+    };
 
     let renderPages = pages => {
       if (pages) {
         //親ページを抽出
-        let parents = pages.filter(page => {
-          if (page.parent === 0) {
-            return true;
-          }
-          return false;
-        });
+        let parents = filterParents(pages);
 
         //子ページを抽出
-        let children = pages.filter(page => {
-          if (page.parent !== 0) {
-            return true;
-          }
-          return false;
-        });
+        let children = filterChildren(pages);
 
         //親ページの直後に子ページが挿入された配列を生成
         children.forEach(child => {
@@ -230,29 +261,36 @@ export class PostList extends React.Component {
         parents.reverse();
 
         //プルダウンメニュー用にフォーマット
-        let label;
-        const formated = parents.map(page => {
-          if (page.parent !== 0) {
-            label = " - " + page.title.rendered + "(Child Page)";
-          } else {
-            label = page.title.rendered;
-          }
-          return {
-            value: page.id,
-            label: __(label, "vk-blocks")
-          };
-        });
+        let formated = formatPulldonwOrder(parents);
 
-        //デフォルトオプション
         let defaultOption = [
           {
-            value: false,
-            label: __("None", "vk-blocks")
+            value: 0,
+            label: __("Exsist Already Page", "vk-blocks")
           }
         ];
+        let currentPageId = select("core/editor").getCurrentPostId();
+        let isCurrentPageCreated = pages.find(
+          page => page.id === currentPageId
+        );
 
-        //デフォルトオプションとページ一覧を結合して返す
-        return defaultOption.concat(formated);
+        //新規ページにブロック追加時 or 既存ページにブロック追加時
+        if (
+          (isCurrentPageCreated === undefined && selectId === undefined) ||
+          selectId === undefined ||
+          (isCurrentPageCreated === undefined && currentPageId === selectId)
+        ) {
+          setAttributes({ selectId: currentPageId });
+          //デフォルトオプション
+          defaultOption = [
+            {
+              value: currentPageId,
+              label: __("Current Page", "vk-blocks")
+            }
+          ];
+          formated = defaultOption.concat(formated);
+        }
+        return formated;
       }
     };
 
@@ -273,156 +311,169 @@ export class PostList extends React.Component {
       );
     };
 
-    const renderTypeColumn = () => (
-      <PanelBody
-        title={__("Display type and columns", "vk-blocks")}
-        initialOpen={false}
-      >
-        <BaseControl label={__("Display type", "vk-blocks")}>
-          <SelectControl
-            value={layout}
-            onChange={value => setAttributes({ layout: value })}
-            options={[
-              {
-                value: "card",
-                label: __("Card", "vk-blocks")
-              },
-              {
-                value: "card-horizontal",
-                label: __("Card Horizontal", "vk-blocks")
-              },
-              {
-                value: "media",
-                label: __("Media", "vk-blocks")
-              }
-            ]}
-          />
-        </BaseControl>
-        <BaseControl
-          label={__("Column ( Screen size : Extra small )", "vk-blocks")}
+    const renderTypeColumn = () => {
+      return (
+        <PanelBody
+          title={__("Display type and columns", "vk-blocks")}
+          initialOpen={false}
         >
-          <RangeControl
-            value={col_xs}
-            onChange={value => setAttributes({ col_xs: value })}
-            min="1"
-            max="4"
-          />
-        </BaseControl>
-        <BaseControl label={__("Column ( Screen size : Small )", "vk-blocks")}>
-          <RangeControl
-            value={col_sm}
-            onChange={value => setAttributes({ col_sm: value })}
-            min="1"
-            max="4"
-          />
-        </BaseControl>
-        <BaseControl label={__("Column ( Screen size : Medium )", "vk-blocks")}>
-          <RangeControl
-            value={col_md}
-            onChange={value => setAttributes({ col_md: value })}
-            min="1"
-            max="4"
-          />
-        </BaseControl>
-        <BaseControl label={__("Column ( Screen size : Large )", "vk-blocks")}>
-          <RangeControl
-            value={col_lg}
-            onChange={value => setAttributes({ col_lg: value })}
-            min="1"
-            max="4"
-          />
-        </BaseControl>
-        <BaseControl
-          label={__("Column ( Screen size : Extra large )", "vk-blocks")}
-        >
-          <RangeControl
-            value={col_xl}
-            onChange={value => setAttributes({ col_xl: value })}
-            min="1"
-            max="4"
-          />
-        </BaseControl>
-      </PanelBody>
-    );
+          <BaseControl label={__("Display type", "vk-blocks")}>
+            <SelectControl
+              value={layout}
+              onChange={value => setAttributes({ layout: value })}
+              options={[
+                {
+                  value: "card",
+                  label: __("Card", "vk-blocks")
+                },
+                {
+                  value: "card-horizontal",
+                  label: __("Card Horizontal", "vk-blocks")
+                },
+                {
+                  value: "media",
+                  label: __("Media", "vk-blocks")
+                }
+              ]}
+            />
+          </BaseControl>
+          <BaseControl
+            label={__("Column ( Screen size : Extra small )", "vk-blocks")}
+          >
+            <RangeControl
+              value={col_xs}
+              onChange={value => setAttributes({ col_xs: value })}
+              min="1"
+              max="4"
+            />
+          </BaseControl>
+          <BaseControl
+            label={__("Column ( Screen size : Small )", "vk-blocks")}
+          >
+            <RangeControl
+              value={col_sm}
+              onChange={value => setAttributes({ col_sm: value })}
+              min="1"
+              max="4"
+            />
+          </BaseControl>
+          <BaseControl
+            label={__("Column ( Screen size : Medium )", "vk-blocks")}
+          >
+            <RangeControl
+              value={col_md}
+              onChange={value => setAttributes({ col_md: value })}
+              min="1"
+              max="4"
+            />
+          </BaseControl>
+          <BaseControl
+            label={__("Column ( Screen size : Large )", "vk-blocks")}
+          >
+            <RangeControl
+              value={col_lg}
+              onChange={value => setAttributes({ col_lg: value })}
+              min="1"
+              max="4"
+            />
+          </BaseControl>
+          <BaseControl
+            label={__("Column ( Screen size : Extra large )", "vk-blocks")}
+          >
+            <RangeControl
+              value={col_xl}
+              onChange={value => setAttributes({ col_xl: value })}
+              min="1"
+              max="4"
+            />
+          </BaseControl>
+        </PanelBody>
+      );
+    };
 
-    const renderItem = () => (
-      <PanelBody title={__("Display item", "vk-blocks")} initialOpen={false}>
-        <CheckboxControl
-          label={__("Image", "vk-blocks")}
-          checked={display_image}
-          onChange={checked => setAttributes({ display_image: checked })}
-        />
-        <CheckboxControl
-          label={__("Term name", "vk-blocks")}
-          checked={display_image_overlay_term}
-          onChange={checked =>
-            setAttributes({ display_image_overlay_term: checked })
-          }
-        />
-        <CheckboxControl
-          label={__("Excerpt", "vk-blocks")}
-          checked={display_excerpt}
-          onChange={checked => setAttributes({ display_excerpt: checked })}
-        />
-        <CheckboxControl
-          label={__("Date", "vk-blocks")}
-          checked={display_date}
-          onChange={checked => setAttributes({ display_date: checked })}
-        />
-
-        <CheckboxControl
-          label={__("New mark", "vk-blocks")}
-          checked={display_new}
-          onChange={checked => setAttributes({ display_new: checked })}
-        />
-
-        <CheckboxControl
-          label={__("Button", "vk-blocks")}
-          checked={display_btn}
-          onChange={checked => setAttributes({ display_btn: checked })}
-        />
-        <h4>{__("New mark option", "vk-blocks")}</h4>
-        <TextControl
-          label={__("Number of days to display the new post mark", "vk-blocks")}
-          value={new_date}
-          onChange={value => setAttributes({ new_date: value })}
-          // placeholder={'Input button text.'}
-        />
-        <TextControl
-          label={__("New post mark", "vk-blocks")}
-          value={new_text}
-          onChange={value => setAttributes({ new_text: value })}
-          // placeholder={'Input button text.'}
-        />
-        <h4>{__("Button option", "vk-blocks")}</h4>
-        <TextControl
-          label={__("Button text", "vk-blocks")}
-          value={btn_text}
-          onChange={value => setAttributes({ btn_text: value })}
-          // placeholder={'Input button text.'}
-        />
-        <BaseControl label={__("Button align", "vk-blocks")}>
-          <SelectControl
-            value={btn_align}
-            onChange={value => setAttributes({ btn_align: value })}
-            options={[
-              {
-                value: "text-left",
-                label: __("Left", "vk-blocks")
-              },
-              {
-                value: "text-center",
-                label: __("Center", "vk-blocks")
-              },
-              {
-                value: "text-right",
-                label: __("Right", "vk-blocks")
-              }
-            ]}
+    const renderItem = () => {
+      return (
+        <PanelBody title={__("Display item", "vk-blocks")} initialOpen={false}>
+          <CheckboxControl
+            label={__("Image", "vk-blocks")}
+            checked={display_image}
+            onChange={checked => setAttributes({ display_image: checked })}
           />
-        </BaseControl>
-      </PanelBody>
-    );
+          <CheckboxControl
+            label={__("Term name", "vk-blocks")}
+            checked={display_image_overlay_term}
+            onChange={checked =>
+              setAttributes({ display_image_overlay_term: checked })
+            }
+          />
+          <CheckboxControl
+            label={__("Excerpt", "vk-blocks")}
+            checked={display_excerpt}
+            onChange={checked => setAttributes({ display_excerpt: checked })}
+          />
+          <CheckboxControl
+            label={__("Date", "vk-blocks")}
+            checked={display_date}
+            onChange={checked => setAttributes({ display_date: checked })}
+          />
+
+          <CheckboxControl
+            label={__("New mark", "vk-blocks")}
+            checked={display_new}
+            onChange={checked => setAttributes({ display_new: checked })}
+          />
+
+          <CheckboxControl
+            label={__("Button", "vk-blocks")}
+            checked={display_btn}
+            onChange={checked => setAttributes({ display_btn: checked })}
+          />
+          <h4>{__("New mark option", "vk-blocks")}</h4>
+          <TextControl
+            label={__(
+              "Number of days to display the new post mark",
+              "vk-blocks"
+            )}
+            value={new_date}
+            onChange={value => setAttributes({ new_date: value })}
+            // placeholder={'Input button text.'}
+          />
+          <TextControl
+            label={__("New post mark", "vk-blocks")}
+            value={new_text}
+            onChange={value => setAttributes({ new_text: value })}
+            // placeholder={'Input button text.'}
+          />
+          <h4>{__("Button option", "vk-blocks")}</h4>
+          <TextControl
+            label={__("Button text", "vk-blocks")}
+            value={btn_text}
+            onChange={value => setAttributes({ btn_text: value })}
+            // placeholder={'Input button text.'}
+          />
+          <BaseControl label={__("Button align", "vk-blocks")}>
+            <SelectControl
+              value={btn_align}
+              onChange={value => setAttributes({ btn_align: value })}
+              options={[
+                {
+                  value: "text-left",
+                  label: __("Left", "vk-blocks")
+                },
+                {
+                  value: "text-center",
+                  label: __("Center", "vk-blocks")
+                },
+                {
+                  value: "text-right",
+                  label: __("Right", "vk-blocks")
+                }
+              ]}
+            />
+          </BaseControl>
+        </PanelBody>
+      );
+    };
 
     return (
       <Fragment>

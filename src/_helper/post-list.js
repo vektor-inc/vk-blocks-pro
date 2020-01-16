@@ -345,8 +345,7 @@ export class PostList extends React.Component {
                 <TextControl
                     label={__('Number of days to display the new post mark', 'vk-blocks')}
                     value={new_date}
-                    onChange={(value) => setAttributes({new_date: value})}
-                    // placeholder={'Input button text.'}
+                    onChange={value => setAttributes({ new_date: parseInt(value, 10) })}
                 />
                 <TextControl
                     label={__('New post mark', 'vk-blocks')}

@@ -121,7 +121,7 @@ function vkblocks_blocks_assets() {
 								),
 								'display_excerpt'   => array(
 									'type'    => 'boolean',
-									'default' => true,
+									'default' => false,
 								),
 								'display_date'      => array(
 									'type'    => 'boolean',

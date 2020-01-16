@@ -144,7 +144,7 @@ export class PostList extends React.Component {
         }
       });
 
-      //重複を削除
+      //驥崎､�ｒ蜑企勁
       returnTaxonomies = returnTaxonomies.filter(
         (x, i, self) => self.indexOf(x) === i
       );
@@ -241,13 +241,13 @@ export class PostList extends React.Component {
 
     let renderPages = pages => {
       if (pages) {
-        //親ページを抽出
+        //隕ｪ繝壹�繧ｸ繧呈歓蜃ｺ
         let parents = filterParents(pages);
 
-        //子ページを抽出
+        //蟄舌�繝ｼ繧ｸ繧呈歓蜃ｺ
         let children = filterChildren(pages);
 
-        //親ページの直後に子ページが挿入された配列を生成
+        //隕ｪ繝壹�繧ｸ縺ｮ逶ｴ蠕後↓蟄舌�繝ｼ繧ｸ縺梧諺蜈･縺輔ｌ縺滄�蛻励ｒ逕滓�
         children.forEach(child => {
           const index = parents.findIndex(parent => parent.id === child.parent);
           if (index !== -1) {
@@ -257,10 +257,10 @@ export class PostList extends React.Component {
           }
         });
 
-        //順番を反対に
+        //鬆�分繧貞渚蟇ｾ縺ｫ
         parents.reverse();
 
-        //プルダウンメニュー用にフォーマット
+        //繝励Ν繝繧ｦ繝ｳ繝｡繝九Η繝ｼ逕ｨ縺ｫ繝輔か繝ｼ繝槭ャ繝�
         let formated = formatPulldonwOrder(parents);
 
         let defaultOption = [
@@ -274,14 +274,14 @@ export class PostList extends React.Component {
           page => page.id === currentPageId
         );
 
-        //新規ページにブロック追加時 or 既存ページにブロック追加時
+        //譁ｰ隕上�繝ｼ繧ｸ縺ｫ繝悶Ο繝�け霑ｽ蜉�譎� or 譌｢蟄倥�繝ｼ繧ｸ縺ｫ繝悶Ο繝�け霑ｽ蜉�譎�
         if (
           (isCurrentPageCreated === undefined && selectId === undefined) ||
           selectId === undefined ||
           (isCurrentPageCreated === undefined && currentPageId === selectId)
         ) {
           setAttributes({ selectId: currentPageId });
-          //デフォルトオプション
+          //繝�ヵ繧ｩ繝ｫ繝医が繝励す繝ｧ繝ｳ
           defaultOption = [
             {
               value: currentPageId,
@@ -437,8 +437,7 @@ export class PostList extends React.Component {
               "vk-blocks"
             )}
             value={new_date}
-            onChange={value => setAttributes({ new_date: value })}
-            // placeholder={'Input button text.'}
+            onChange={value => setAttributes({ new_date: parseInt(value, 10) })}
           />
           <TextControl
             label={__("New post mark", "vk-blocks")}

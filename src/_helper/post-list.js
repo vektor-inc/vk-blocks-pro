@@ -303,7 +303,9 @@ export class PostList extends React.Component {
           <BaseControl label={__("Parent", "vk-blocks")}>
             <SelectControl
               value={selectId}
-              onChange={value => setAttributes({ selectId: value })}
+              onChange={value =>
+                setAttributes({ selectId: parseInt(value, 10) })
+              }
               options={renderPages(postTypes)}
             />
           </BaseControl>

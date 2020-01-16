@@ -4,8 +4,8 @@
  */
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { withSelect } = wp.data;
-import { schema } from "./schema.js";
+const { withSelect, select } = wp.data;
+import { schema } from "./schema";
 import { PostList } from "../../_helper/post-list";
 
 const BlockIcon = (
@@ -41,11 +41,12 @@ registerBlockType("vk-blocks/child-page", {
 
   edit: withSelect(select => {
     return {
-      postTypes: select("core/editor").getCurrentPostId()
+      postTypes: select("core").getEntityRecords("postType", "page", {
+        _embed: true,
+        per_page: -1
+      })
     };
   })(props => {
-    props.attributes["selectId"] = props.postTypes;
-
     return <PostList value={props} />;
   }),
   save() {

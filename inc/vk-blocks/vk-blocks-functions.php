@@ -8,6 +8,7 @@ function vkblocks_active() {
 }
 
 function vkblocks_blocks_assets() {
+
 	wp_register_style( 'vk-blocks-build-css', VK_BLOCKS_URL . 'build/block-build.css', array(), VK_BLOCKS_VERSION );
 	wp_register_style( 'vk-blocks-build-editor-css', VK_BLOCKS_URL . 'build/block-build-editor.css', array(), VK_BLOCKS_VERSION );
 
@@ -133,7 +134,7 @@ function vkblocks_blocks_assets() {
 								),
 								'display_btn'       => array(
 									'type'    => 'boolean',
-									'default' => false,
+									'default' => true,
 								),
 								'new_date'          => array(
 									'type'    => 'number',
@@ -184,6 +185,7 @@ function vkblocks_blocks_assets() {
 							),
 							'name'     => array(
 								'type'    => 'string',
+								'default' => "",
 							),
 							'layout'   => array(
 								'type'    => 'string',
@@ -197,7 +199,7 @@ function vkblocks_blocks_assets() {
 								'type'    => 'number',
 								'default' => 2,
 							),
-							'col_md'            => array(
+							'col_md'   => array(
 								'type'    => 'number',
 								'default' => 3,
 							),
@@ -227,7 +229,7 @@ function vkblocks_blocks_assets() {
 							),
 							'display_new'       => array(
 								'type'    => 'boolean',
-								'default' => true,
+								'default' => false,
 							),
 							'display_btn'       => array(
 								'type'    => 'boolean',

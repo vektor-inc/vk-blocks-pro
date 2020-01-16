@@ -35,11 +35,13 @@ msgid "Number of Posts"
 msgstr ""
 
 #: src/_helper/post-list.js:222
+>>>>>>> 5c1a37f362b2a45230d08323b0625e8b1e6268fa
 #: src/_pro/outer/block.js:280
 #: src/_pro/step-item/block.js:120
 #: src/_pro/timeline-item/block.js:103
 #: src/staff/block.js:109
 msgid "None"
+
 msgstr ""
 
 #: src/_helper/post-list.js:230
@@ -107,9 +109,11 @@ msgid "New mark"
 msgstr ""
 
 #: src/_helper/post-list.js:340
+>>>>>>> 5c1a37f362b2a45230d08323b0625e8b1e6268fa
 #: src/button/block.js:59
 msgid "Button"
 msgstr ""
+
 
 #: src/_helper/post-list.js:344
 msgid "New mark option"
@@ -151,11 +155,13 @@ msgstr ""
 #: src/balloon/block.js:130
 #: src/button/block.js:177
 #: src/pr-content/block.js:201
+>>>>>>> 5c1a37f362b2a45230d08323b0625e8b1e6268fa
 msgid "Right"
 msgstr ""
 
 #: src/_pro/child-page/block.js:37
 msgid "Child page list"
+>>>>>>> 5c1a37f362b2a45230d08323b0625e8b1e6268fa
 msgstr ""
 
 #: src/_pro/outer/block.js:101

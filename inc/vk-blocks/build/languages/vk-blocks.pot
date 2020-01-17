@@ -631,16 +631,16 @@ msgstr ""
 msgid "Apply"
 msgstr ""
 
-#: src/faq/block.js:42
+#: src/faq/block.js:100
+msgid "Please enter a answer."
+msgstr ""
+
+#: src/faq/block.js:56
 msgid "FAQ"
 msgstr ""
 
-#: src/faq/block.js:79
+#: src/faq/block.js:93
 msgid "Please enter a question."
-msgstr ""
-
-#: src/faq/block.js:86
-msgid "Please enter a answer."
 msgstr ""
 
 #: src/flow/block.js:28

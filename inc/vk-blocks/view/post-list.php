@@ -13,16 +13,17 @@ class VkBlocksPostList {
 	public function render_post_list( $attributes ) {
 
 		if(isset($attributes['name'])){
-			$name = esc_html( $attributes['name'] );
-		}else{
-			return '<div>' . __("I'm sorry, This block is broken. Please remove this and reinsert it.", 'vk-blocks') . '</div>';
-		}
-		
-		if ( $name === 'vk-blocks/post-list' ) {
-			$wp_query = $this->get_loop_query( $attributes ); 
-		} elseif ( $name === 'vk-blocks/child-page' ) {
-			$wp_query = $this->get_loop_query_child( $attributes );
 
+			$name = esc_html( $attributes['name'] );
+			if ( $name === 'vk-blocks/child-page' ) {
+				$wp_query = $this->get_loop_query_child( $attributes );
+
+			}else if ( $name === 'vk-blocks/post-list' ){
+				$wp_query = $this->get_loop_query( $attributes ); 
+			}
+			
+		}else {
+			$wp_query = $this->get_loop_query( $attributes ); 
 		}
 
 		if ( $wp_query === false || $wp_query === 'false' || $wp_query->posts === array() ) {

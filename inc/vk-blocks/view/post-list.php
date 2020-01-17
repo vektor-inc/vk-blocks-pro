@@ -12,21 +12,21 @@ class VkBlocksPostList {
 	 */
 	public function render_post_list( $attributes ) {
 
-		// $attributes['name'] 未定義対応
-		if( empty( $attributes['name'])){
-				$name = 'vk-blocks/post-list';
-		} else {
+		if(isset($attributes['name'])){
+
 			$name = esc_html( $attributes['name'] );
+			if ( $name === 'vk-blocks/child-page' ) {
+				$wp_query = $this->get_loop_query_child( $attributes );
+
+			}else if ( $name === 'vk-blocks/post-list' ){
+				$wp_query = $this->get_loop_query( $attributes ); 
+			}
+			
+		}else {
+			$wp_query = $this->get_loop_query( $attributes ); 
 		}
 
-		if ( $name === 'vk-blocks/post-list' ) {
-			$wp_query = $this->get_loop_query( $attributes );
-		} elseif ( $name === 'vk-blocks/child-page' ) {
-			$wp_query = $this->get_loop_query_child( $attributes );
-
-		}
-
-		if ( $wp_query === false || $wp_query->posts === array() ) {
+		if ( $wp_query === false || $wp_query === 'false' || $wp_query->posts === array() ) {
 			return $this->renderNoPost();
 		}
 
@@ -111,7 +111,7 @@ class VkBlocksPostList {
 	public function get_loop_query_child( $attributes ) {
 
 		// ParentIdを指定
-		if ( isset( $attributes['selectId'] ) ) {
+		if ( isset( $attributes['selectId'] ) && $attributes['selectId'] !== 'false' ) {
 			$args = array(
 				'post_type'      => 'page',
 				'paged'          => 0,

@@ -4,6 +4,7 @@
 /*-------------------------------------------*/
 // このファイルは基本 /vk-blocks/vk-blocks-functions.phpを読み込むファイルだけ
 // vk-blocks
+
 if ( ! function_exists( 'vkblocks_active' ) ) {
 
 	// Set asset URL.
@@ -15,11 +16,12 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 	$vk_blocks_prefix = apply_filters( 'vk_blocks_prefix', 'VK ' );
 
 	require_once( 'vk-blocks/helpers.php' );
+	require_once( 'vk-components/vk-components-config.php' );
+	require_once( 'vk-blocks/load-vk-components.php' );
+	require_once( 'font-awesome/font-awesome-config.php' );
+	require_once( 'term-color/term-color-config.php' );
+	
 	if ( ! vkblocks_is_lightning() ) {
-		require_once( 'vk-components/vk-components-config.php' );
-		require_once( 'vk-blocks/load-vk-components.php' );
-		require_once( 'font-awesome/font-awesome-config.php' );
-		require_once( 'term-color/term-color-config.php' );
 		require_once( 'vk-blocks/load-bootstrap.php' );
 	}
 

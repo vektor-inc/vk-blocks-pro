@@ -16,6 +16,7 @@ export class Component extends React.Component {
     if (for_ === "edit") {
 
       innerClass = 'editting';
+      innerClass = innerClass + ' vk_posts-edit';
       innerClass = innerClass + ' vk_posts-edit-col-xs-' + attributes.col_xs;
       innerClass = innerClass + ' vk_posts-edit-col-sm-' + attributes.col_sm;
       innerClass = innerClass + ' vk_posts-edit-col-md-' + attributes.col_md;

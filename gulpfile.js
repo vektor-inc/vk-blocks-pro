@@ -35,8 +35,8 @@ gulp.task('sass', function () {
 
 
 gulp.task('sass_editor', function (){
-	return gulp.src([ './editor-css/editor.scss_before',  './src/**/*.scss', './editor-css/editor.scss_after'])
-		.pipe(concat('editor-block-build.scss'))
+	return gulp.src([ './editor-css/_editor_before.scss',  './src/**/*.scss', './editor-css/_editor_after.scss'])
+		.pipe(concat('editor-block-build-marge.scss'))
 		.pipe(gulp.dest('./editor-css/'))
 		.pipe(sass())
 		.pipe(cleanCss())
@@ -80,7 +80,7 @@ gulp.task('copy_front_js', function () {
 // watch
 gulp.task('watch', function () {
     gulp.watch('src/**/*.js', gulp.parallel('js','copy_front_js'));
-    gulp.watch('editor-css/editor.scss_before', gulp.parallel('sass_editor'));
+    gulp.watch('editor-css/_editor_before.scss', gulp.parallel('sass_editor'));
     gulp.watch('src/**/*.scss', gulp.series('sass','sass_editor'));
     gulp.watch('lib/bootstrap/scss/*.scss', gulp.parallel('sass_bootstrap','sass_editor'));
     gulp.watch('inc/vk-components/**/*.scss', gulp.parallel('sass_vk_components','sass_editor'));

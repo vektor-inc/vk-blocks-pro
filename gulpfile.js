@@ -152,6 +152,7 @@ gulp.task("dist", function() {
       ],
       { base: "./" }
     )
+    .pipe(gulp.dest("../../../../../../updatepro/app/public/wp-content/plugins/vk-blocks-pro"))
     .pipe(gulp.dest("dist/vk-blocks-pro")); // distディレクトリに出力
 });
 

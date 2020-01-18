@@ -94,17 +94,25 @@ $xl-min: 1200px;
   .editor-block-list__layout {
     display: flex;
     flex-wrap: wrap;
-    margin-left:0;
-    margin-right:0;
     padding:0;
     width:100%;
   }
   .editor-block-list__block {
-    border:1px solid #ff00ff;
-    margin:0 15px 15px;
+    margin:0 15px 30px;
     padding:0;
-    .vk_post {
-      width:100%;
+    .block-editor-block-list__block-edit {
+      margin:0;
+      height:100%;
+    }
+    /* ここより下は編集機能以外でマイナスオフセットする必要はない */
+    div[data-block]{
+      margin:0;
+      height:100%;
+      .vk_post {
+        width:100%;
+        height:100%;
+        margin-top:0;
+      }
     }
   }
   .block-list-appender {

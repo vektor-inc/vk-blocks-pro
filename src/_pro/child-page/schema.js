@@ -8,7 +8,7 @@ export const schema = {
   },
   layout: {
     type: "string",
-    default: "card"
+    default: "card-horizontal"
   },
   col_xs: {
     type: "number",
@@ -20,15 +20,15 @@ export const schema = {
   },
   col_md: {
     type: "number",
-    default: 3
+    default: 2
   },
   col_lg: {
     type: "number",
-    default: 3
+    default: 2
   },
   col_xl: {
     type: "number",
-    default: 3
+    default: 2
   },
   display_image: {
     type: "boolean",

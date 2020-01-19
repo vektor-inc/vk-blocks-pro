@@ -196,7 +196,7 @@ function vkblocks_blocks_assets() {
 							),
 							'layout'                     => array(
 								'type'    => 'string',
-								'default' => 'card',
+								'default' => 'card-horizontal',
 							),
 							'col_xs'                     => array(
 								'type'    => 'number',
@@ -208,15 +208,15 @@ function vkblocks_blocks_assets() {
 							),
 							'col_md'                     => array(
 								'type'    => 'number',
-								'default' => 3,
+								'default' => 2,
 							),
 							'col_lg'                     => array(
 								'type'    => 'number',
-								'default' => 3,
+								'default' => 2,
 							),
 							'col_xl'                     => array(
 								'type'    => 'number',
-								'default' => 3,
+								'default' => 2,
 							),
 							'display_image'              => array(
 								'type'    => 'boolean',

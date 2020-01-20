@@ -100,7 +100,6 @@ export class Component extends React.Component {
             <div className={imgContainerClass} style={imageStyle}>
               <a href={url}>
                 <div className="card-img-overlay"></div>
-                {uploadButton}
               </a>
             </div>
           );

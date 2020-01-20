@@ -1,5 +1,6 @@
 const { RichText, InnerBlocks } = wp.editor;
 const { __ } = wp.i18n; // Import __() from wp.i18n
+import { convertToGrid } from "../../_helper/convert-to-grid";
 
 export class Component extends React.Component {
   render() {
@@ -11,10 +12,6 @@ export class Component extends React.Component {
     let elm;
     const ALLOWED_BLOCKS = ["vk-blocks/card-item"];
     const TEMPLATE = [ALLOWED_BLOCKS];
-
-    const convertToGrid = colNum => {
-      return 12 / colNum;
-    };
 
     //編集画面とサイト上の切り替え
     if (for_ === "edit") {

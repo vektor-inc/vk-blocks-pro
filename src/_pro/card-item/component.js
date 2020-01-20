@@ -3,6 +3,7 @@ const { RichText, MediaUpload } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const { Button } = wp.components;
 const { Fragment } = wp.element;
+import { convertToGrid } from "../../_helper/convert-to-grid";
 
 export class Component extends React.Component {
   render() {
@@ -181,7 +182,13 @@ export class Component extends React.Component {
 
     return (
       <div
-        className={`vk_post ${layout} card-post vk_PostList_card vk_post-col-xs-${col_xs} vk_post-col-sm-${col_sm} vk_post-col-md-${col_md} vk_post-col-lg-${col_lg} vk_post-col-xl-${col_xl} vk_post-btn-display`}
+        className={`vk_post ${layout} card-post vk_PostList_card vk_post-col-xs-${convertToGrid(
+          col_xs
+        )} vk_post-col-sm-${convertToGrid(
+          col_sm
+        )} vk_post-col-md-${col_md} vk_post-col-lg-${convertToGrid(
+          col_lg
+        )} vk_post-col-xl-${convertToGrid(col_xl)} vk_post-btn-display`}
       >
         {renderImage(display_image)}
         <div className="vk_post_body card-body">

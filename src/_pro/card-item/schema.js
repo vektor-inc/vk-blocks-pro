@@ -31,10 +31,6 @@ export const schema = {
     type: "boolean",
     default: true
   },
-  display_excerpt: {
-    type: "boolean",
-    default: true
-  },
   display_date: {
     type: "boolean",
     default: false

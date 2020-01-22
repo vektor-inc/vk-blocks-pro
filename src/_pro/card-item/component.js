@@ -18,7 +18,6 @@ export class Component extends React.Component {
       col_lg,
       col_xl,
       display_image,
-      display_excerpt,
       display_btn,
       btn_text,
       btn_align,
@@ -120,34 +119,33 @@ export class Component extends React.Component {
         }
       }
     };
-    const renderExcerpt = display_excerpt => {
-      if (display_excerpt) {
-        const titleTag = "p";
-        const titleClass = "vk_post_excerpt card-text";
-        if (isEdit(for_)) {
-          return (
-            <RichText
-              tagName={titleTag}
-              className={titleClass}
-              value={excerpt_text}
-              onChange={value => setAttributes({ excerpt_text: value })}
-              placeholder={__(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-                "vk-blocks"
-              )}
-            />
-          );
-        } else {
-          return (
-            <RichText.Content
-              tagName={titleTag}
-              className={titleClass}
-              value={excerpt_text}
-            />
-          );
-        }
+    const renderExcerpt = () => {
+      const titleTag = "p";
+      const titleClass = "vk_post_excerpt card-text";
+      if (isEdit(for_)) {
+        return (
+          <RichText
+            tagName={titleTag}
+            className={titleClass}
+            value={excerpt_text}
+            onChange={value => setAttributes({ excerpt_text: value })}
+            placeholder={__(
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+              "vk-blocks"
+            )}
+          />
+        );
+      } else {
+        return (
+          <RichText.Content
+            tagName={titleTag}
+            className={titleClass}
+            value={excerpt_text}
+          />
+        );
       }
     };
+
     const renderButton = display_btn => {
       if (display_btn) {
         return (
@@ -207,7 +205,7 @@ export class Component extends React.Component {
         {renderImage(display_image)}
         <div className="vk_post_body card-body">
           {renderTitle()}
-          {renderExcerpt(display_excerpt)}
+          {renderExcerpt()}
           <div className={`vk_post_btnOuter ${btn_align}`}>
             {renderButton(display_btn)}
           </div>

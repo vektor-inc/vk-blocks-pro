@@ -516,11 +516,6 @@ export class PostList extends React.Component {
             onChange={checked => setAttributes({ display_image: checked })}
           />
           <CheckboxControl
-            label={__("Excerpt", "vk-blocks")}
-            checked={display_excerpt}
-            onChange={checked => setAttributes({ display_excerpt: checked })}
-          />
-          <CheckboxControl
             label={__("Button", "vk-blocks")}
             checked={display_btn}
             onChange={checked => setAttributes({ display_btn: checked })}

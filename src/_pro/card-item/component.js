@@ -202,7 +202,7 @@ export class Component extends React.Component {
 
     return (
       <div
-        className={`vk_post ${layout} card-post vk_PostList_card vk_post-col-xs-${convertToGrid(
+        className={`vk_post card ${layout} card-post vk_PostList_card vk_post-col-xs-${convertToGrid(
           col_xs
         )} vk_post-col-sm-${convertToGrid(
           col_sm

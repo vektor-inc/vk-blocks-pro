@@ -70,95 +70,99 @@ msgstr ""
 msgid "Column ( Screen size : Extra large )"
 msgstr ""
 
-#: src/_helper/post-list.js:395
+#: src/_helper/post-list.js:391
+msgid "Card No Border"
+msgstr ""
+
+#: src/_helper/post-list.js:399
 msgid "Display type"
 msgstr ""
 
-#: src/_helper/post-list.js:402
+#: src/_helper/post-list.js:406
 #: src/_pro/card/block.js:61
 msgid "Card"
 msgstr ""
 
-#: src/_helper/post-list.js:406
+#: src/_helper/post-list.js:410
 msgid "Card Horizontal"
 msgstr ""
 
-#: src/_helper/post-list.js:410
+#: src/_helper/post-list.js:414
 msgid "Media"
 msgstr ""
 
-#: src/_helper/post-list.js:428
+#: src/_helper/post-list.js:432
 msgid "Term name"
 msgstr ""
 
-#: src/_helper/post-list.js:435
+#: src/_helper/post-list.js:439
 msgid "Excerpt"
 msgstr ""
 
-#: src/_helper/post-list.js:440
+#: src/_helper/post-list.js:444
 msgid "Date"
 msgstr ""
 
-#: src/_helper/post-list.js:446
+#: src/_helper/post-list.js:450
 msgid "New mark"
 msgstr ""
 
-#: src/_helper/post-list.js:456
+#: src/_helper/post-list.js:460
 msgid "New mark option"
 msgstr ""
 
-#: src/_helper/post-list.js:458
+#: src/_helper/post-list.js:462
 msgid "Number of days to display the new post mark"
 msgstr ""
 
-#: src/_helper/post-list.js:466
+#: src/_helper/post-list.js:470
 msgid "New post mark"
 msgstr ""
 
-#: src/_helper/post-list.js:512
+#: src/_helper/post-list.js:516
 msgid "Display item"
 msgstr ""
 
-#: src/_helper/post-list.js:514
+#: src/_helper/post-list.js:518
 msgid "Image"
 msgstr ""
 
-#: src/_helper/post-list.js:519
+#: src/_helper/post-list.js:523
 #: src/button/block.js:59
 msgid "Button"
 msgstr ""
 
-#: src/_helper/post-list.js:524
+#: src/_helper/post-list.js:528
 msgid "Button option"
 msgstr ""
 
-#: src/_helper/post-list.js:527
+#: src/_helper/post-list.js:531
 msgid ""
 "Click each card block to set the target url. You can find the url form at "
 "it's sidebar."
 msgstr ""
 
-#: src/_helper/post-list.js:533
+#: src/_helper/post-list.js:537
 msgid "Button text"
 msgstr ""
 
-#: src/_helper/post-list.js:537
+#: src/_helper/post-list.js:541
 msgid "Button align"
 msgstr ""
 
-#: src/_helper/post-list.js:544
+#: src/_helper/post-list.js:548
 #: src/balloon/block.js:97
 #: src/button/block.js:175
 #: src/pr-content/block.js:202
 msgid "Left"
 msgstr ""
 
-#: src/_helper/post-list.js:548
+#: src/_helper/post-list.js:552
 #: src/button/block.js:176
 msgid "Center"
 msgstr ""
 
-#: src/_helper/post-list.js:552
+#: src/_helper/post-list.js:556
 #: src/balloon/block.js:98
 #: src/button/block.js:177
 #: src/pr-content/block.js:201

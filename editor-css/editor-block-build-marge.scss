@@ -507,6 +507,49 @@ ol {
 	}
 } //.wp-block-group
 
+.alert{
+
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 3px;
+	p {
+		margin-bottom:0;
+	}
+
+  & + &{
+    margin-top: 2em;
+  }
+
+  a{
+    transition: color .3s linear, opacity .3s linear;
+    &:link, &:visited{
+      opacity: .8;
+      text-decoration: underline;
+    }
+    &:hover, &:visited{
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+
+  @each $var in (
+                  (success, #dff0d8,#3c763d,#d6e9c6),
+                  (info, #d9edf7,#31708f,#bce8f1),
+                  (warning, #fcf8e3,#8a6d3b,#faebcc),
+                  (danger, #f2dede,#a94442,#ebccd1),
+  ){
+    $class-name: nth($var, 1);
+    $color-bg: nth($var, 2);
+    $color: nth($var, 3);
+    $color-border :nth($var, 4);
+    &-#{$class-name}{
+      background-color: $color-bg;
+      color:$color;
+      border-color:$color-border;
+    }
+  }
+}
+
 .vk_balloon {
   display: flex;
   align-items: center;
@@ -771,49 +814,6 @@ ol {
 		max-width:96px;
 	}
 } // @media only screen and (max-width: 480px) {
-
-.alert{
-
-  padding: 1em;
-  margin: 1em 0;
-  border-radius: 3px;
-	p {
-		margin-bottom:0;
-	}
-
-  & + &{
-    margin-top: 2em;
-  }
-
-  a{
-    transition: color .3s linear, opacity .3s linear;
-    &:link, &:visited{
-      opacity: .8;
-      text-decoration: underline;
-    }
-    &:hover, &:visited{
-      opacity: 1;
-      text-decoration: none;
-    }
-  }
-
-  @each $var in (
-                  (success, #dff0d8,#3c763d,#d6e9c6),
-                  (info, #d9edf7,#31708f,#bce8f1),
-                  (warning, #fcf8e3,#8a6d3b,#faebcc),
-                  (danger, #f2dede,#a94442,#ebccd1),
-  ){
-    $class-name: nth($var, 1);
-    $color-bg: nth($var, 2);
-    $color: nth($var, 3);
-    $color-border :nth($var, 4);
-    &-#{$class-name}{
-      background-color: $color-bg;
-      color:$color;
-      border-color:$color-border;
-    }
-  }
-}
 
 .vk_button {
   margin: 5px 0;
@@ -2048,72 +2048,9 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
 /* CSS
 /*-------------------------------------------*/
 
-///*-------------------------------------------*/
-///* CSS
-///*-------------------------------------------*/
-//.vk_card{
-//  margin: 2em 0;
-//
-//  .vk_card_item {
-//    position: relative;
-//    padding: 0 0 1em 4em;
-//    margin: 0 auto;
-//
-//      h3:first-of-type,
-//      h4:first-of-type{
-//        padding-top: 0.5em;
-//        margin-top: 0;
-//      }
-//			&_content > p:first-child{
-//        margin-bottom:0.3em;
-//        line-height: 1;
-//        color:#666;
-//      }
-//    .vk_card_item_caption{
-//      margin-bottom: 0.5em;
-//      color: #666;
-//    }
-//    .vk_card_item_content{
-//
-//    }
-//    .vk_card_item_dot {
-//      content: "";
-//      display: block;
-//      position: absolute;
-//      top: 0;
-//      left: 0;
-//      width: 50px;
-//      height: 50px;
-//      border-radius: 50%;
-//      color: #ffffff;
-//      padding: 9px 0;
-//      text-align: center;
-//    }
-//    .vk_card_item_dot_caption{
-//      font-size: 0.5rem;
-//    }
-//  }
-//}
-//.vk_card_item_lineStyle-default {
-//  &::before {
-//    content: "";
-//    width: 3px;
-//    background: #ddd;
-//    display: block;
-//    position: absolute;
-//    top: 54px;
-//    left: 23px;
-//    bottom: 4px;
-//  }
-//}
-
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-
-.vk_childPage {
-	margin-top: 2.5rem;
-}
 
 /*-------------------------------------------*/
 /* CSS
@@ -2221,6 +2158,69 @@ $padding-xl:3.5em;
 //   margin: 0!important;
 // }
 
+///*-------------------------------------------*/
+///* CSS
+///*-------------------------------------------*/
+//.vk_card{
+//  margin: 2em 0;
+//
+//  .vk_card_item {
+//    position: relative;
+//    padding: 0 0 1em 4em;
+//    margin: 0 auto;
+//
+//      h3:first-of-type,
+//      h4:first-of-type{
+//        padding-top: 0.5em;
+//        margin-top: 0;
+//      }
+//			&_content > p:first-child{
+//        margin-bottom:0.3em;
+//        line-height: 1;
+//        color:#666;
+//      }
+//    .vk_card_item_caption{
+//      margin-bottom: 0.5em;
+//      color: #666;
+//    }
+//    .vk_card_item_content{
+//
+//    }
+//    .vk_card_item_dot {
+//      content: "";
+//      display: block;
+//      position: absolute;
+//      top: 0;
+//      left: 0;
+//      width: 50px;
+//      height: 50px;
+//      border-radius: 50%;
+//      color: #ffffff;
+//      padding: 9px 0;
+//      text-align: center;
+//    }
+//    .vk_card_item_dot_caption{
+//      font-size: 0.5rem;
+//    }
+//  }
+//}
+//.vk_card_item_lineStyle-default {
+//  &::before {
+//    content: "";
+//    width: 3px;
+//    background: #ddd;
+//    display: block;
+//    position: absolute;
+//    top: 54px;
+//    left: 23px;
+//    bottom: 4px;
+//  }
+//}
+
+.vk_childPage {
+	margin-top: 2.5rem;
+}
+
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -2286,9 +2286,6 @@ $padding-xl:3.5em;
 	}
 }
 
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -2417,4 +2414,7 @@ $toc-left-margin: 1rem;
 	}
 }
 
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 }

@@ -3,7 +3,7 @@ const { RichText, MediaUpload } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const { Button } = wp.components;
 const { Fragment } = wp.element;
-const { useDispatch } = wp.data;
+const { useDispatch, dispatch } = wp.data;
 
 import { convertToGrid } from "../../_helper/convert-to-grid";
 
@@ -61,7 +61,7 @@ export class Component extends React.Component {
     }
 
     const deleteImgBtn = () => {
-      useDispatch("core/editor").updateBlockAttributes(clientId, {
+      dispatch("core/editor").updateBlockAttributes(clientId, {
         image: null
       });
     };

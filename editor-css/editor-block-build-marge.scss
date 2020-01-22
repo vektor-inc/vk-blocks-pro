@@ -1033,6 +1033,23 @@ $color_dark: #343a40;
   color: #fff;
 }
 
+/*      .qaItem
+/*-------------------------------------------*/
+.vk_faq { display:block; overflow:hidden;border-bottom:1px dotted #ccc; padding:0px 0px 25px; margin:25px 0px; width:100%; position: relative; }
+.vk_faq_title,
+.vk_faq_content {
+	border:none;padding-left: 35px;
+	&:before {
+		position: absolute;left:0;font-size:24px;line-height: 105%;
+	}
+}
+.vk_faq_title { margin-bottom:15px;font-size:18px;font-weight:700;
+  &:before { font-family:"areal";content:"Q ";color:#e50000; }
+}
+.vk_faq_content { margin:0px;
+  &:before { content:"A ";color:#337ab7;font-family: "" }
+}
+
 //*      .flowBox
 /*-------------------------------------------*/
 .vk_flow-arrow-on:after {
@@ -1062,23 +1079,6 @@ $color_dark: #343a40;
 	max-width:150px;
 	margin-left:15px;
 	box-sizing: border-box;
-}
-
-/*      .qaItem
-/*-------------------------------------------*/
-.vk_faq { display:block; overflow:hidden;border-bottom:1px dotted #ccc; padding:0px 0px 25px; margin:25px 0px; width:100%; position: relative; }
-.vk_faq_title,
-.vk_faq_content {
-	border:none;padding-left: 35px;
-	&:before {
-		position: absolute;left:0;font-size:24px;line-height: 105%;
-	}
-}
-.vk_faq_title { margin-bottom:15px;font-size:18px;font-weight:700;
-  &:before { font-family:"areal";content:"Q ";color:#e50000; }
-}
-.vk_faq_content { margin:0px;
-  &:before { content:"A ";color:#337ab7;font-family: "" }
 }
 
 /*-------------------------------------------*/
@@ -1748,6 +1748,40 @@ $color_key: #337ab7;
 /* CSS
 /*-------------------------------------------*/
 
+@mixin switchVisibility($pc,$tablet,$mobile) {
+  .vk_spacer {
+    .vk_spacer-display-pc {
+      display: $pc;
+    }
+
+    .vk_spacer-display-tablet {
+      display: $tablet;
+    }
+
+    .vk_spacer-display-mobile {
+      display: $mobile;
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px以下)
+@media (max-width: 576px) {
+  @include switchVisibility(none, none, block);
+}
+
+// Medium devices (tablets, 577pxから768px)
+@media (min-width: 577px) and (max-width: 768px) {
+  @include switchVisibility(none, block, none);
+}
+
+// Large devices (desktops, 769px以上)
+@media (min-width: 769px) {
+  @include switchVisibility(block, none, none);
+}
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
 .vk_table {
 	&-col-mobile1 {
 		@media( max-width: 575.98px){
@@ -1826,40 +1860,6 @@ $color_key: #337ab7;
 	}
 }
 
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-
-@mixin switchVisibility($pc,$tablet,$mobile) {
-  .vk_spacer {
-    .vk_spacer-display-pc {
-      display: $pc;
-    }
-
-    .vk_spacer-display-tablet {
-      display: $tablet;
-    }
-
-    .vk_spacer-display-mobile {
-      display: $mobile;
-    }
-  }
-}
-
-// Small devices (landscape phones, 576px以下)
-@media (max-width: 576px) {
-  @include switchVisibility(none, none, block);
-}
-
-// Medium devices (tablets, 577pxから768px)
-@media (min-width: 577px) and (max-width: 768px) {
-  @include switchVisibility(none, block, none);
-}
-
-// Large devices (desktops, 769px以上)
-@media (min-width: 769px) {
-  @include switchVisibility(block, none, none);
-}
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -2052,65 +2052,6 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
 /* CSS
 /*-------------------------------------------*/
 
-///*-------------------------------------------*/
-///* CSS
-///*-------------------------------------------*/
-//.vk_card{
-//  margin: 2em 0;
-//
-//  .vk_card_item {
-//    position: relative;
-//    padding: 0 0 1em 4em;
-//    margin: 0 auto;
-//
-//      h3:first-of-type,
-//      h4:first-of-type{
-//        padding-top: 0.5em;
-//        margin-top: 0;
-//      }
-//			&_content > p:first-child{
-//        margin-bottom:0.3em;
-//        line-height: 1;
-//        color:#666;
-//      }
-//    .vk_card_item_caption{
-//      margin-bottom: 0.5em;
-//      color: #666;
-//    }
-//    .vk_card_item_content{
-//
-//    }
-//    .vk_card_item_dot {
-//      content: "";
-//      display: block;
-//      position: absolute;
-//      top: 0;
-//      left: 0;
-//      width: 50px;
-//      height: 50px;
-//      border-radius: 50%;
-//      color: #ffffff;
-//      padding: 9px 0;
-//      text-align: center;
-//    }
-//    .vk_card_item_dot_caption{
-//      font-size: 0.5rem;
-//    }
-//  }
-//}
-//.vk_card_item_lineStyle-default {
-//  &::before {
-//    content: "";
-//    width: 3px;
-//    background: #ddd;
-//    display: block;
-//    position: absolute;
-//    top: 54px;
-//    left: 23px;
-//    bottom: 4px;
-//  }
-//}
-
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -2224,6 +2165,65 @@ $padding-xl:3.5em;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+
+///*-------------------------------------------*/
+///* CSS
+///*-------------------------------------------*/
+//.vk_card{
+//  margin: 2em 0;
+//
+//  .vk_card_item {
+//    position: relative;
+//    padding: 0 0 1em 4em;
+//    margin: 0 auto;
+//
+//      h3:first-of-type,
+//      h4:first-of-type{
+//        padding-top: 0.5em;
+//        margin-top: 0;
+//      }
+//			&_content > p:first-child{
+//        margin-bottom:0.3em;
+//        line-height: 1;
+//        color:#666;
+//      }
+//    .vk_card_item_caption{
+//      margin-bottom: 0.5em;
+//      color: #666;
+//    }
+//    .vk_card_item_content{
+//
+//    }
+//    .vk_card_item_dot {
+//      content: "";
+//      display: block;
+//      position: absolute;
+//      top: 0;
+//      left: 0;
+//      width: 50px;
+//      height: 50px;
+//      border-radius: 50%;
+//      color: #ffffff;
+//      padding: 9px 0;
+//      text-align: center;
+//    }
+//    .vk_card_item_dot_caption{
+//      font-size: 0.5rem;
+//    }
+//  }
+//}
+//.vk_card_item_lineStyle-default {
+//  &::before {
+//    content: "";
+//    width: 3px;
+//    background: #ddd;
+//    display: block;
+//    position: absolute;
+//    top: 54px;
+//    left: 23px;
+//    bottom: 4px;
+//  }
+//}
 
 /*-------------------------------------------*/
 /* CSS

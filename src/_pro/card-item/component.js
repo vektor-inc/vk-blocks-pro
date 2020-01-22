@@ -3,11 +3,13 @@ const { RichText, MediaUpload } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const { Button } = wp.components;
 const { Fragment } = wp.element;
+const { useDispatch } = wp.data;
+
 import { convertToGrid } from "../../_helper/convert-to-grid";
 
 export class Component extends React.Component {
   render() {
-    const { setAttributes, attributes, className } = this.props.value;
+    const { setAttributes, attributes, className, clientId } = this.props.value;
     let {
       layout,
       col_xs,
@@ -58,40 +60,52 @@ export class Component extends React.Component {
       vk_date = "card-date";
     }
 
-    const renderImage = display_image => {
-      if (display_image) {
-        const imageParsed = JSON.parse(image);
-        const uploadButton = (
-          <MediaUpload
-            onSelect={value => setAttributes({ image: JSON.stringify(value) })}
-            type="image"
-            className={"vk_post_imgOuter_img card-img-top"}
-            value={image}
-            render={({ open }) =>
-              !image ? (
-                <Button
-                  onClick={open}
-                  className={image ? "image-button" : "button button-large"}
-                >
+    const deleteImgBtn = () => {
+      useDispatch("core/editor").updateBlockAttributes(clientId, {
+        image: null
+      });
+    };
+
+    const uploadImgBtn = image => {
+      const imageParsed = JSON.parse(image);
+      return (
+        <MediaUpload
+          onSelect={value => setAttributes({ image: JSON.stringify(value) })}
+          type="image"
+          className={"vk_post_imgOuter_img card-img-top"}
+          value={image}
+          render={({ open }) => (
+            <Fragment>
+              {!imageParsed ? (
+                <Button onClick={open} className={"button button-large"}>
                   {__("Select image", "vk-blocks")}
                 </Button>
               ) : (
-                <img
-                  className={"vk_post_imgOuter_img card-img-top"}
-                  src={imageParsed.sizes.full.url}
-                  alt={imageParsed.alt}
-                />
-              )
-            }
-          />
-        );
+                <Fragment>
+                  <img
+                    className={"vk_post_imgOuter_img card-img-top"}
+                    src={imageParsed.sizes.full.url}
+                    alt={imageParsed.alt}
+                  />
+                  <Button onClick={deleteImgBtn} className={"image-button"}>
+                    {__("×", "vk-blocks")}
+                  </Button>
+                </Fragment>
+              )}
+            </Fragment>
+          )}
+        />
+      );
+    };
 
+    const renderImage = display_image => {
+      if (display_image) {
         if (isEdit(for_)) {
           return (
             <Fragment>
               <div className={imgContainerClass} style={imageStyle}>
                 <div className="card-img-overlay"></div>
-                {uploadButton}
+                {uploadImgBtn(image)}
               </div>
             </Fragment>
           );
@@ -172,8 +186,9 @@ export class Component extends React.Component {
 
     let imageStyle;
     if (image) {
+      let imageParsed = JSON.parse(image);
       imageStyle = {
-        backgroundImage: `url(${JSON.parse(image).sizes.full.url})`
+        backgroundImage: `url(${imageParsed.sizes.full.url})`
       };
     } else {
       imageStyle = {};

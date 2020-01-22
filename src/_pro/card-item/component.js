@@ -111,14 +111,22 @@ export class Component extends React.Component {
         } else {
           return (
             <div className={imgContainerClass} style={imageStyle}>
-              <a href={url}>
-                <div className="card-img-overlay"></div>
-              </a>
+              {switchAddUrltoImage(url)}
             </div>
           );
         }
       }
     };
+
+    const switchAddUrltoImage = url => {
+      let overlay = <div className="card-img-overlay"></div>;
+      if (url) {
+        return <a href={url}>{overlay}</a>;
+      } else {
+        return overlay;
+      }
+    };
+
     const renderExcerpt = () => {
       const titleTag = "p";
       const titleClass = "vk_post_excerpt card-text";

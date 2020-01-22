@@ -177,13 +177,13 @@ msgstr ""
 msgid "https://www.vektor-inc.co.jp/"
 msgstr ""
 
-#: src/_pro/card-item/component.js:132
+#: src/_pro/card-item/component.js:140
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
 "tempor incididunt ut labore et dolore magna aliqua. "
 msgstr ""
 
-#: src/_pro/card-item/component.js:169
+#: src/_pro/card-item/component.js:177
 msgid "Title"
 msgstr ""
 

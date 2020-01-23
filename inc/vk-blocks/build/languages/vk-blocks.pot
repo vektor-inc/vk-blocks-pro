@@ -71,7 +71,7 @@ msgid "Column ( Screen size : Extra large )"
 msgstr ""
 
 #: src/_helper/post-list.js:391
-msgid "Card No Border"
+msgid "Card NoBorder"
 msgstr ""
 
 #: src/_helper/post-list.js:399
@@ -181,17 +181,17 @@ msgstr ""
 msgid "https://www.vektor-inc.co.jp/"
 msgstr ""
 
-#: src/_pro/card-item/component.js:140
+#: src/_pro/card-item/component.js:147
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
 "tempor incididunt ut labore et dolore magna aliqua. "
 msgstr ""
 
-#: src/_pro/card-item/component.js:177
+#: src/_pro/card-item/component.js:184
 msgid "Title"
 msgstr ""
 
-#: src/_pro/card-item/component.js:80
+#: src/_pro/card-item/component.js:87
 #: src/_pro/outer/block.js:135
 #: src/balloon/block.js:136
 #: src/flow/block.js:112
@@ -203,7 +203,7 @@ msgstr ""
 msgid "Select image"
 msgstr ""
 
-#: src/_pro/card-item/component.js:90
+#: src/_pro/card-item/component.js:97
 msgid "×"
 msgstr ""
 

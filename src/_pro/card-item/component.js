@@ -57,6 +57,13 @@ export class Component extends React.Component {
       vk_post_body = "card-body";
       vk_title = "card-title";
       vk_date = "card-date";
+    } else if (layout === "card-noborder") {
+      layout = "card " + layout + " card-post";
+      imgContainerClass = "vk_post_imgOuter";
+      imgClass = "vk_post_imgOuter_img card-img-top";
+      vk_post_body = "card-body";
+      vk_title = "card-title";
+      vk_date = "card-date";
     }
 
     const deleteImgBtn = () => {
@@ -202,7 +209,7 @@ export class Component extends React.Component {
 
     return (
       <div
-        className={`vk_post card ${layout} card-post vk_PostList_card vk_post-col-xs-${convertToGrid(
+        className={`vk_post ${layout} vk_PostList_card vk_post-col-xs-${convertToGrid(
           col_xs
         )} vk_post-col-sm-${convertToGrid(
           col_sm

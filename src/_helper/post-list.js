@@ -387,7 +387,7 @@ export class PostList extends React.Component {
                   label: __("Card", "vk-blocks")
                 },
                 {
-                  value: "card-noborder ",
+                  value: "card-noborder",
                   label: __("Card NoBorder", "vk-blocks")
                 }
               ]}

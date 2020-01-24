@@ -3,6 +3,14 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
+#: plugin/menu/sidebar.js:17
+msgid "Block templates"
+msgstr ""
+
+#: plugin/menu/sidebar.js:28
+msgid "VK Blocks"
+msgstr ""
+
 #: src/_helper/font-awesome.js:21
 msgid "FontAwesome"
 msgstr ""

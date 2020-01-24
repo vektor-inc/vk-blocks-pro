@@ -49,14 +49,21 @@
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
+    "@wordpress/components": "^9.0.0",
     "@wordpress/data": "^4.9.2",
+    "@wordpress/edit-post": "^3.11.0",
+    "@wordpress/element": "^2.10.0",
+    "@wordpress/hooks": "^2.6.0",
     "@wordpress/i18n": "^3.6.1",
+    "@wordpress/plugins": "^2.10.0",
     "aphrodite": "^2.4.0",
     "gulp-jsmin": "^0.1.5",
+    "lodash": "^4.17.15",
     "node-sass": "^4.13.0",
     "po2json": "^1.0.0-alpha",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-image": "^2.2.2",
     "react-responsive": "^8.0.1"
   }
 }

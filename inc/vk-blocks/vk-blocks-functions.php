@@ -20,6 +20,11 @@ function vkblocks_blocks_assets() {
 			'wp-i18n',
 			'wp-element',
 			'wp-editor',
+			'wp-edit-post',
+			'wp-components',
+			'wp-data',
+			'wp-plugins',
+			'wp-hooks',
 		);
 	} else {
 		$dependency = array(
@@ -27,6 +32,11 @@ function vkblocks_blocks_assets() {
 			'wp-i18n',
 			'wp-element',
 			'wp-editor',
+			'wp-edit-post',
+			'wp-components',
+			'wp-data',
+			'wp-plugins',
+			'wp-hooks',
 		);
 	}
 	wp_register_script(

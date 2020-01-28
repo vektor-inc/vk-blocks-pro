@@ -1,4 +1,11 @@
-const { TabPanel, Panel, PanelBody, PanelRow, BaseControl } = wp.components;
+const {
+  TabPanel,
+  Panel,
+  PanelBody,
+  PanelRow,
+  BaseControl,
+  Button
+} = wp.components;
 
 const { Fragment } = wp.element;
 
@@ -9,6 +16,8 @@ const { applyFilters } = wp.hooks;
 const { __ } = wp.i18n;
 
 const { dispatch, select } = wp.data;
+
+const { parse } = wp.blocks;
 
 // const BlockTemplates = "./block-templates";
 
@@ -31,24 +40,15 @@ export default function() {
   ];
 
   const DummyTemplate = () => {
-    return (
-      <div>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </div>
-    );
+    const part =
+      '<!-- wp:vk-blocks/alert --><div class="wp-block-vk-blocks-alert undefined alert alert-info"><p>テスト</p></div><!-- /wp:vk-blocks/alert -->';
     return (
       <li>
         <Button
           className="smb-menu__template-part__button"
           onClick={() => {
-            const parsedBlocks = parse(part.content);
-            if (parsedBlocks.length) {
+            const parsedBlocks = parse(part);
+            if (parsedBlocks) {
               const selectedBlock = getSelectedBlock();
               if (null === selectedBlock) {
                 // when not selected block
@@ -117,19 +117,20 @@ export default function() {
       </PluginSidebarMoreMenuItem>
 
       <PluginSidebar name="vkbSidebar" title={__("VK Blocks", "vk-blocks")}>
-        <TabPanel
+        <DummyTemplate />
+        {/* <TabPanel
           className="edit-post-sidebar__panel-tab"
           activeClass="is-active"
           onSelect={tabName => applyFilters("vk-blocks.select-menu", tabName)}
           tabs={tabMenus}
         >
-          {/* <BlockTemplates /> */}
+          <BlockTemplates />
           {tabData => {
-            // switch (tabData.name) {
-            //   case "block-templates":
-            //     return <BlockTemplates />;
-            // }
-            // return null;
+            switch (tabData.name) {
+              case "block-templates":
+                return <BlockTemplates />;
+            }
+            return null;
             return (
               <PanelBody title={"template1"} opened={true}>
                 <BaseControl label={__("template1content", "vk-blocks")}>
@@ -138,7 +139,7 @@ export default function() {
               </PanelBody>
             );
           }}
-        </TabPanel>
+        </TabPanel> */}
       </PluginSidebar>
     </Fragment>
   );

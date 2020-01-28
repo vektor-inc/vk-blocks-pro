@@ -17,6 +17,7 @@ const { InspectorControls, URLInput } =
 const { subscribe, select } = wp.data;
 const { ServerSideRender } = wp.components;
 import addCheckBox from "./checkbox";
+import AlignControl from "../../components/align-control";
 
 export class PostList extends React.Component {
   render() {
@@ -579,6 +580,7 @@ export class PostList extends React.Component {
                 <div>
                   {renderTypeColumn()}
                   {renderItemCard()}
+                  {<AlignControl />}
                 </div>
               );
             } else {

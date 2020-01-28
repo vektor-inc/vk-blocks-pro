@@ -3,6 +3,25 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
+#: components/align-control/index.js:30
+msgid "Align"
+msgstr ""
+
+#: components/align-control/index.js:31
+#: src/_pro/card-item/component.js:184
+msgid "Title"
+msgstr ""
+
+#: components/align-control/index.js:34
+msgid "Text"
+msgstr ""
+
+#: components/align-control/index.js:37
+#: src/_helper/post-list.js:524
+#: src/button/block.js:59
+msgid "Button"
+msgstr ""
+
 #: src/_helper/font-awesome.js:21
 msgid "FontAwesome"
 msgstr ""
@@ -18,151 +37,146 @@ msgstr ""
 msgid "Font Awesome icon list"
 msgstr ""
 
-#: src/_helper/post-list.js:191
+#: src/_helper/post-list.js:192
 msgid "Filter by PostTypes"
 msgstr ""
 
-#: src/_helper/post-list.js:194
+#: src/_helper/post-list.js:195
 msgid "Filter by Taxonomy Terms"
 msgstr ""
 
-#: src/_helper/post-list.js:197
+#: src/_helper/post-list.js:198
 msgid "Number of Posts"
 msgstr ""
 
-#: src/_helper/post-list.js:269
+#: src/_helper/post-list.js:270
 msgid "Exsist Already Page"
 msgstr ""
 
-#: src/_helper/post-list.js:288
+#: src/_helper/post-list.js:289
 msgid "Current Page"
 msgstr ""
 
-#: src/_helper/post-list.js:300
+#: src/_helper/post-list.js:301
 msgid "Display conditions"
 msgstr ""
 
-#: src/_helper/post-list.js:303
+#: src/_helper/post-list.js:304
 msgid "Parent"
 msgstr ""
 
-#: src/_helper/post-list.js:319
+#: src/_helper/post-list.js:320
 msgid "Display type and columns"
 msgstr ""
 
-#: src/_helper/post-list.js:324
+#: src/_helper/post-list.js:325
 msgid "Column ( Screen size : Extra small )"
 msgstr ""
 
-#: src/_helper/post-list.js:334
+#: src/_helper/post-list.js:335
 msgid "Column ( Screen size : Small )"
 msgstr ""
 
-#: src/_helper/post-list.js:344
+#: src/_helper/post-list.js:345
 msgid "Column ( Screen size : Medium )"
 msgstr ""
 
-#: src/_helper/post-list.js:354
+#: src/_helper/post-list.js:355
 msgid "Column ( Screen size : Large )"
 msgstr ""
 
-#: src/_helper/post-list.js:364
+#: src/_helper/post-list.js:365
 msgid "Column ( Screen size : Extra large )"
 msgstr ""
 
-#: src/_helper/post-list.js:391
+#: src/_helper/post-list.js:392
 msgid "Card NoBorder"
 msgstr ""
 
-#: src/_helper/post-list.js:399
+#: src/_helper/post-list.js:400
 msgid "Display type"
 msgstr ""
 
-#: src/_helper/post-list.js:406
+#: src/_helper/post-list.js:407
 #: src/_pro/card/block.js:61
 msgid "Card"
 msgstr ""
 
-#: src/_helper/post-list.js:410
+#: src/_helper/post-list.js:411
 msgid "Card Horizontal"
 msgstr ""
 
-#: src/_helper/post-list.js:414
+#: src/_helper/post-list.js:415
 msgid "Media"
 msgstr ""
 
-#: src/_helper/post-list.js:432
+#: src/_helper/post-list.js:433
 msgid "Term name"
 msgstr ""
 
-#: src/_helper/post-list.js:439
+#: src/_helper/post-list.js:440
 msgid "Excerpt"
 msgstr ""
 
-#: src/_helper/post-list.js:444
+#: src/_helper/post-list.js:445
 msgid "Date"
 msgstr ""
 
-#: src/_helper/post-list.js:450
+#: src/_helper/post-list.js:451
 msgid "New mark"
 msgstr ""
 
-#: src/_helper/post-list.js:460
+#: src/_helper/post-list.js:461
 msgid "New mark option"
 msgstr ""
 
-#: src/_helper/post-list.js:462
+#: src/_helper/post-list.js:463
 msgid "Number of days to display the new post mark"
 msgstr ""
 
-#: src/_helper/post-list.js:470
+#: src/_helper/post-list.js:471
 msgid "New post mark"
 msgstr ""
 
-#: src/_helper/post-list.js:516
+#: src/_helper/post-list.js:517
 msgid "Display item"
 msgstr ""
 
-#: src/_helper/post-list.js:518
+#: src/_helper/post-list.js:519
 msgid "Image"
 msgstr ""
 
-#: src/_helper/post-list.js:523
-#: src/button/block.js:59
-msgid "Button"
-msgstr ""
-
-#: src/_helper/post-list.js:528
+#: src/_helper/post-list.js:529
 msgid "Button option"
 msgstr ""
 
-#: src/_helper/post-list.js:531
+#: src/_helper/post-list.js:532
 msgid ""
 "Click each card block to set the target url. You can find the url form at "
 "it's sidebar."
 msgstr ""
 
-#: src/_helper/post-list.js:537
+#: src/_helper/post-list.js:538
 msgid "Button text"
 msgstr ""
 
-#: src/_helper/post-list.js:541
+#: src/_helper/post-list.js:542
 msgid "Button align"
 msgstr ""
 
-#: src/_helper/post-list.js:548
+#: src/_helper/post-list.js:549
 #: src/balloon/block.js:97
 #: src/button/block.js:175
 #: src/pr-content/block.js:202
 msgid "Left"
 msgstr ""
 
-#: src/_helper/post-list.js:552
+#: src/_helper/post-list.js:553
 #: src/button/block.js:176
 msgid "Center"
 msgstr ""
 
-#: src/_helper/post-list.js:556
+#: src/_helper/post-list.js:557
 #: src/balloon/block.js:98
 #: src/button/block.js:177
 #: src/pr-content/block.js:201
@@ -185,10 +199,6 @@ msgstr ""
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
 "tempor incididunt ut labore et dolore magna aliqua. "
-msgstr ""
-
-#: src/_pro/card-item/component.js:184
-msgid "Title"
 msgstr ""
 
 #: src/_pro/card-item/component.js:87

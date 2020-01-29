@@ -11,7 +11,7 @@ const {
   SelectControl,
   CheckboxControl
 } = wp.components;
-const { Fragment } = wp.element;
+const { Fragment, Component } = wp.element;
 const { InspectorControls, URLInput } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const { subscribe, select } = wp.data;
@@ -19,7 +19,7 @@ const { ServerSideRender } = wp.components;
 import addCheckBox from "./checkbox";
 import AlignControl from "../../components/align-control";
 
-export class PostList extends React.Component {
+export class PostList extends Component {
   render() {
     const {
       postTypes,

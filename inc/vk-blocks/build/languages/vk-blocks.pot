@@ -3,20 +3,20 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: components/align-control/index.js:30
+#: components/align-control/index.js:24
 msgid "Align"
 msgstr ""
 
-#: components/align-control/index.js:31
+#: components/align-control/index.js:25
 #: src/_pro/card-item/component.js:184
 msgid "Title"
 msgstr ""
 
-#: components/align-control/index.js:34
+#: components/align-control/index.js:28
 msgid "Text"
 msgstr ""
 
-#: components/align-control/index.js:37
+#: components/align-control/index.js:31
 #: src/_helper/post-list.js:524
 #: src/button/block.js:59
 msgid "Button"
@@ -98,7 +98,7 @@ msgid "Display type"
 msgstr ""
 
 #: src/_helper/post-list.js:407
-#: src/_pro/card/block.js:61
+#: src/_pro/card/block.js:74
 msgid "Card"
 msgstr ""
 

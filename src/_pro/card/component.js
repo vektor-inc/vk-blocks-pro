@@ -1,6 +1,7 @@
 const { RichText, InnerBlocks } = wp.editor;
 const { __ } = wp.i18n; // Import __() from wp.i18n
 import { convertToGrid } from "../../_helper/convert-to-grid";
+import React from "react";
 
 export class Component extends React.Component {
   render() {

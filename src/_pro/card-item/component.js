@@ -94,8 +94,11 @@ export class Component extends React.Component {
                     src={imageParsed.sizes.full.url}
                     alt={imageParsed.alt}
                   />
-                  <Button onClick={deleteImgBtn} className={"image-button"}>
-                    {__("×", "vk-blocks")}
+                  <Button
+                    onClick={deleteImgBtn}
+                    className={"image-button button button-delete"}
+                  >
+                    {__("Delete Image", "vk-blocks")}
                   </Button>
                 </Fragment>
               )}
@@ -210,7 +213,7 @@ export class Component extends React.Component {
 
     return (
       <div
-        className={`vk_post ${layout} vk_PostList_card vk_post-col-xs-${convertToGrid(
+        className={`vk_post ${layout} vk_card_item vk_post-col-xs-${convertToGrid(
           col_xs
         )} vk_post-col-sm-${convertToGrid(
           col_sm

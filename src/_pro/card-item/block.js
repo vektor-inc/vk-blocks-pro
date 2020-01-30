@@ -4,13 +4,14 @@
  */
 import { Component } from "./component";
 import { schema } from "./schema";
+import { LinkControl } from "../../../components/link-control";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { PanelBody, BaseControl, TextControl, ToggleControl } = wp.components;
+const { PanelBody, BaseControl, TextControl } = wp.components;
 const { InspectorControls } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
-const { Fragment, useCallback } = wp.element;
+const { Fragment } = wp.element;
 const BlockIcon = "arrow-down";
 
 registerBlockType("vk-blocks/card-item", {
@@ -22,34 +23,10 @@ registerBlockType("vk-blocks/card-item", {
 
   edit(props) {
     const { setAttributes, attributes } = props;
-    const { url, linkTarget, rel } = attributes;
-    const NEW_TAB_REL = "noreferrer noopener";
+    const { url } = attributes;
 
-    const onSetLinkRel = useCallback(
-      value => {
-        setAttributes({ rel: value });
-      },
-      [setAttributes]
-    );
-    const onToggleOpenInNewTab = useCallback(
-      value => {
-        const newLinkTarget = value ? "_blank" : undefined;
-
-        let updatedRel = rel;
-        if (newLinkTarget && !rel) {
-          updatedRel = NEW_TAB_REL;
-        } else if (!newLinkTarget && rel === NEW_TAB_REL) {
-          updatedRel = undefined;
-        }
-
-        setAttributes({
-          linkTarget: newLinkTarget,
-          rel: updatedRel
-        });
-      },
-      [rel, setAttributes]
-    );
-
+    // LinkControl用に設定
+    props.blockName = "card";
     return (
       <Fragment>
         <InspectorControls>
@@ -61,21 +38,7 @@ registerBlockType("vk-blocks/card-item", {
                 placeholder={__("https://www.vektor-inc.co.jp/", "vk-blocks")}
               />
             </BaseControl>
-            <BaseControl
-              label={__("Link settings", "vk-blocks")}
-              id="sidebar-card-block-url-settings"
-            >
-              <ToggleControl
-                label={__("Open in new tab", "vk-blocks")}
-                onChange={onToggleOpenInNewTab}
-                checked={linkTarget === "_blank"}
-              />
-              <TextControl
-                label={__("Link rel", "vk-blocks")}
-                value={rel || ""}
-                onChange={onSetLinkRel}
-              />
-            </BaseControl>
+            <LinkControl {...props} />
           </PanelBody>
         </InspectorControls>
         <Component value={props} for_={"edit"} />

@@ -135,7 +135,7 @@ export class Component extends React.Component {
       let overlay = <div className="card-img-overlay"></div>;
       if (url) {
         return (
-          <a href={url} rel={rel}>
+          <a href={url} target={linkTarget} rel={rel}>
             {overlay}
           </a>
         );
@@ -174,7 +174,12 @@ export class Component extends React.Component {
     const renderButton = display_btn => {
       if (display_btn) {
         return (
-          <a className={`btn btn-primary vk_post_btn`} href={url} rel={rel}>
+          <a
+            className={`btn btn-primary vk_post_btn`}
+            href={url}
+            target={linkTarget}
+            rel={rel}
+          >
             {btn_text}
           </a>
         );
@@ -196,7 +201,7 @@ export class Component extends React.Component {
         );
       } else {
         return (
-          <a href={url} rel={rel}>
+          <a href={url} target={linkTarget} rel={rel}>
             <RichText.Content
               tagName={titleTag}
               className={titleClass}

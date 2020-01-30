@@ -9,4 +9,4 @@ inc/vk-blocks/build/*.js.map
 /editor-css/editor-block-build.css.map
 ._.DS_Store
 .DS_Store
-/vendor/
+vendor/

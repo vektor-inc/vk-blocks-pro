@@ -68,8 +68,11 @@ registerBlockType('vk-blocks/step', {
             firstDotNum
         } = attributes;
 
-        const {getBlocksByClientId} = select("core/block-editor");
-        const {updateBlockAttributes, insertBlock} = dispatch('core/block-editor');
+        let selectEditor = select("core/block-editor") ? select("core/block-editor") : select("core/editor");
+        let dispatchEditor = dispatch("core/block-editor") ? dispatch("core/block-editor") : dispatch("core/editor");
+
+        const {getBlocksByClientId} = selectEditor;
+        const {updateBlockAttributes, insertBlock} = dispatchEditor;
 
         let currentBlock = getBlocksByClientId(clientId);
         let beforeLength;

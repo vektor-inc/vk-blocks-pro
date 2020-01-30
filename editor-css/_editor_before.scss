@@ -32,7 +32,7 @@
   .components-checkbox-control__label { margin-bottom:0; }
   .components-color-palette { display:block; overflow:hidden; }
   
-  /*繧ｹ繝ｩ繧､繝繝ｼ繧定｡ｨ遉ｺ縲ゅョ繝輔か繝ｫ繝医□縺ｨbootstrap縺ｫ髱櫁｡ｨ遉ｺ縺ｫ縺輔ｌ縺ｦ縺励∪縺�*/
+  /*スライダーを表示。デフォルトだとbootstrapに非表示にされてしまう*/
   input[type=range] {
       margin: 1px;
   }

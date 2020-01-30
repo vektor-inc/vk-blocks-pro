@@ -24,7 +24,9 @@ export class Component extends React.Component {
       excerpt_text,
       image,
       url,
-      activeControl
+      activeControl,
+      linkTarget,
+      rel
     } = attributes;
 
     let align = JSON.parse(activeControl);
@@ -132,7 +134,11 @@ export class Component extends React.Component {
     const switchAddUrltoImage = url => {
       let overlay = <div className="card-img-overlay"></div>;
       if (url) {
-        return <a href={url}>{overlay}</a>;
+        return (
+          <a href={url} rel={rel}>
+            {overlay}
+          </a>
+        );
       } else {
         return overlay;
       }
@@ -168,7 +174,7 @@ export class Component extends React.Component {
     const renderButton = display_btn => {
       if (display_btn) {
         return (
-          <a className={`btn btn-primary vk_post_btn`} href={url}>
+          <a className={`btn btn-primary vk_post_btn`} href={url} rel={rel}>
             {btn_text}
           </a>
         );
@@ -190,7 +196,7 @@ export class Component extends React.Component {
         );
       } else {
         return (
-          <a href={url}>
+          <a href={url} rel={rel}>
             <RichText.Content
               tagName={titleTag}
               className={titleClass}

@@ -76,5 +76,17 @@ export const schema = {
   activeControl: {
     type: "string",
     default: '{"title": "left", "text":"left" ,"button":"right"}'
+  },
+  linkTarget: {
+    type: "string",
+    source: "attribute",
+    selector: "a",
+    attribute: "target"
+  },
+  rel: {
+    type: "string",
+    source: "attribute",
+    selector: "a",
+    attribute: "rel"
   }
 };

@@ -20,13 +20,14 @@ export class Component extends React.Component {
       display_image,
       display_btn,
       btn_text,
-      btn_align,
       title,
       excerpt_text,
       image,
-      url
+      url,
+      activeControl
     } = attributes;
 
+    let align = JSON.parse(activeControl);
     const for_ = this.props.for_;
     let containerClass = " vk_card_item";
 
@@ -134,9 +135,9 @@ export class Component extends React.Component {
       }
     };
 
-    const renderExcerpt = () => {
+    const renderExcerpt = align => {
       const titleTag = "p";
-      const titleClass = "vk_post_excerpt card-text";
+      const titleClass = `vk_post_excerpt card-text text-${align.text}`;
       if (isEdit(for_)) {
         return (
           <RichText
@@ -164,16 +165,16 @@ export class Component extends React.Component {
     const renderButton = display_btn => {
       if (display_btn) {
         return (
-          <a className="btn btn-primary vk_post_btn" href={url}>
+          <a className={`btn btn-primary vk_post_btn`} href={url}>
             {btn_text}
           </a>
         );
       }
     };
 
-    const renderTitle = () => {
+    const renderTitle = align => {
       const titleTag = "h5";
-      const titleClass = "vk_post_title card-title";
+      const titleClass = `vk_post_title card-title text-${align.title}`;
       if (isEdit(for_)) {
         return (
           <RichText
@@ -219,9 +220,9 @@ export class Component extends React.Component {
       >
         {renderImage(display_image)}
         <div className="vk_post_body card-body">
-          {renderTitle()}
-          {renderExcerpt()}
-          <div className={`vk_post_btnOuter ${btn_align}`}>
+          {renderTitle(align)}
+          {renderExcerpt(align)}
+          <div className={`vk_post_btnOuter text-${align.button}`}>
             {renderButton(display_btn)}
           </div>
         </div>

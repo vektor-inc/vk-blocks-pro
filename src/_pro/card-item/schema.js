@@ -55,10 +55,6 @@ export const schema = {
     type: "string",
     default: "Read more"
   },
-  btn_align: {
-    type: "string",
-    default: "text-right"
-  },
   title: {
     type: "string",
     source: "html",
@@ -76,5 +72,9 @@ export const schema = {
   url: {
     type: "string",
     default: null
+  },
+  activeControl: {
+    type: "string",
+    default: '{"title": "left", "text":"left" ,"button":"right"}'
   }
 };

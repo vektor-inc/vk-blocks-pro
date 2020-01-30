@@ -389,7 +389,7 @@ export class PostList extends Component {
                 },
                 {
                   value: "card-noborder",
-                  label: __("Card NoBorder", "vk-blocks")
+                  label: __("Card ( No border )", "vk-blocks")
                 }
               ]}
             />

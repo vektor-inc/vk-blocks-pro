@@ -1,200 +1,218 @@
 
 .vk_block_icon_pro {
-fill:#c00;
-}
-.editor-block-list-item-vk-blocks-child-page:after,
-.editor-block-list-item-vk-blocks-timeline:after,
-.editor-block-list-item-vk-blocks-step:after,
-.editor-block-list-item-vk-blocks-outer:after,
-.editor-block-list-item-vk-blocks-post-list:after,
-.editor-block-list-item-vk-blocks-table-of-contents:after,
-.editor-block-list-item-vk-blocks-simple-table:after{
-position: absolute;
-top: 0;
-right: 0;
-content: "Pro";
-display: inline-block;
-font-size: 10px;
-line-height: 1;
-color: #fff;
-background-color: #cd3034;
-border-radius: 2px;
-padding: 3px 4px;
-}
-
-.components-base-control__label {
-	 font-weight:bold;
-}
-.components-base-control .components-base-control__help {
-	margin-top:0;
-}
-.components-radio-control__option label { margin-bottom:0; }
-.components-checkbox-control__label { margin-bottom:0; }
-.components-color-palette { display:block; overflow:hidden; }
-
-/*スライダーを表示。デフォルトだとbootstrapに非表示にされてしまう*/
-input[type=range] {
-    margin: 1px;
-}
-
-.editor-url-input input[type="text"]{
-    width:100%;
-}
-
-/* editor area *********************************************/
-.edit-post-visual-editor.editor-styles-wrapper{
-
-
-/* これがないとGutenberg標準のエディタCSSに負ける */
-h1:first-child.vk_prBlocks_item_title{
-	margin-top:0.9em;
-}
-
-/* Bootstrap Adjuster */
-$border_primary: 1px solid #e5e5e5;
-$color_font_default: #464646;
-
-$xs-max: 575.98px;
-$sm-max: 767.98px;
-$md-max: 991.98px;
-$lg-max: 1199.98px;
-
-$sm-min: 576px;
-$md-min: 768px;
-$lg-min: 992px;
-$xl-min: 1200px;
-
-/*-------------------------------------------*/
-/* vk_post Layout
-/*-------------------------------------------*/
-/* vk_post common style
-/*-------------------------------------------*/
-/* Button display
-/*-------------------------------------------*/
-/* Main section 1 column adjustment
-/*-------------------------------------------*/
-/* .card
-/*-------------------------------------------*/
-/* .media new type
-/*-------------------------------------------*/
-/* .media old type ( Lightning Default )
-/*-------------------------------------------*/
-
-/*-------------------------------------------*/
-/* vk_post Layout
-/*-------------------------------------------*/
-/* If exclude the .vk_posts that, when you select the .media don't work */
-
-
-// .vk_posts .editor-inner-blocks .editor-block-list__layout .wp-block .editor-block-list__block-edit div .vk_post-col {
-
-.vk_posts > .vk_posts-edit {
-  width:100%;
-  .editor-block-list__layout {
-    display: flex;
-    flex-wrap: wrap;
-    padding:0;
-    width:100%;
+  fill:#c00;
   }
-  .editor-block-list__block {
-    margin:0 15px 30px;
-    padding:0;
-    .block-editor-block-list__block-edit {
-      margin:0;
-      height:100%;
+  .editor-block-list-item-vk-blocks-card:after,
+  .editor-block-list-item-vk-blocks-child-page:after,
+  .editor-block-list-item-vk-blocks-timeline:after,
+  .editor-block-list-item-vk-blocks-step:after,
+  .editor-block-list-item-vk-blocks-outer:after,
+  .editor-block-list-item-vk-blocks-post-list:after,
+  .editor-block-list-item-vk-blocks-table-of-contents:after,
+  .editor-block-list-item-vk-blocks-simple-table:after{
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "Pro";
+  display: inline-block;
+  font-size: 10px;
+  line-height: 1;
+  color: #fff;
+  background-color: #cd3034;
+  border-radius: 2px;
+  padding: 3px 4px;
+  }
+  
+  .components-base-control__label {
+     font-weight:bold;
+  }
+  .components-base-control .components-base-control__help {
+    margin-top:0;
+  }
+  .components-radio-control__option label { margin-bottom:0; }
+  .components-checkbox-control__label { margin-bottom:0; }
+  .components-color-palette { display:block; overflow:hidden; }
+  
+  /*スライダーを表示。デフォルトだとbootstrapに非表示にされてしまう*/
+  input[type=range] {
+      margin: 1px;
+  }
+  
+  .editor-url-input input[type="text"]{
+      width:100%;
+  }
+  
+  /* editor area *********************************************/
+  .edit-post-visual-editor.editor-styles-wrapper{
+  
+  
+  /* これがないとGutenberg標準のエディタCSSに負ける */
+  h1:first-child.vk_prBlocks_item_title{
+    margin-top:0.9em;
+  }
+  
+  /* Bootstrap Adjuster */
+  $border_primary: 1px solid #e5e5e5;
+  $color_font_default: #464646;
+  
+  $xs-max: 575.98px;
+  $sm-max: 767.98px;
+  $md-max: 991.98px;
+  $lg-max: 1199.98px;
+  
+  $sm-min: 576px;
+  $md-min: 768px;
+  $lg-min: 992px;
+  $xl-min: 1200px;
+  
+  $color-danger : #b52727;
+  
+  /*-------------------------------------------*/
+  /* card
+  /*-------------------------------------------*/
+  
+  // Card ボタンリンクの説明
+  .postList_itemCard_button-option {
+    margin-bottom: 5px;
+  }
+  
+  .vk_post_imgOuter {
+    position: relative;
+    .components-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      transition: all 1s;
     }
-    /* ここより下は編集機能以外でマイナスオフセットする必要はない */
-    div[data-block]{
-      margin:0;
-      height:100%;
-      .vk_post {
-        width:100%;
-        height:100%;
-        margin-top:0;
+    .button-delete {
+      opacity: 0;
+      border:1px solid $color-danger;
+      color:$color-danger;
+      transition: all 1s;
+      &:hover {
+        background-color: $color-danger;
+        color:#fff;
       }
     }
   }
-  .block-list-appender {
-    clear:both;
+  .vk_post_imgOuter:hover .button-delete {
+    transition: all 1s;
+    opacity: 1;
+  }
+  
+  
+  /*-------------------------------------------*/
+  /* vk_post Layout
+  /*-------------------------------------------*/
+  /* If exclude the .vk_posts that, when you select the .media don't work */
+  
+  
+  // .vk_posts .editor-inner-blocks .editor-block-list__layout .wp-block .editor-block-list__block-edit div .vk_post-col {
+  
+  .vk_posts > .vk_posts-edit {
     width:100%;
+    .editor-block-list__layout {
+      display: flex;
+      flex-wrap: wrap;
+      padding:0;
+      width:100%;
+    }
+    .editor-block-list__block {
+      margin:0 15px 30px;
+      padding:0;
+      .block-editor-block-list__block-edit {
+        margin:0;
+        height:100%;
+      }
+      /* ここより下は編集機能以外でマイナスオフセットする必要はない */
+      div[data-block]{
+        margin:0;
+        height:100%;
+        .vk_post {
+          width:100%;
+          height:100%;
+          margin-top:0;
+        }
+      }
+    }
+    .block-list-appender {
+      clear:both;
+      width:100%;
+    }
+  
   }
-
-}
-.vk_posts .vk_posts-edit-col {
-  &-xs-3 .editor-block-list__block{
-    width: calc(25% - 30px);
-  }
-  &-xs-4 .editor-block-list__block{
-    width: calc(33.3% - 30px);
-  }
-  &-xs-6 .editor-block-list__block{
-    width: calc(50% - 30px);
-  }
-  &-xs-12 .editor-block-list__block {
-    width: calc(100% - 30px);
-  }
-  @media (min-width: $sm-min) {
-    &-sm-3 .editor-block-list__block{
+  .vk_posts .vk_posts-edit-col {
+    &-xs-3 .editor-block-list__block{
       width: calc(25% - 30px);
     }
-    &-sm-4 .editor-block-list__block{
+    &-xs-4 .editor-block-list__block{
       width: calc(33.3% - 30px);
     }
-    &-sm-6 .editor-block-list__block{
+    &-xs-6 .editor-block-list__block{
       width: calc(50% - 30px);
     }
-    &-sm-12 .editor-block-list__block{
+    &-xs-12 .editor-block-list__block {
       width: calc(100% - 30px);
     }
+    @media (min-width: $sm-min) {
+      &-sm-3 .editor-block-list__block{
+        width: calc(25% - 30px);
+      }
+      &-sm-4 .editor-block-list__block{
+        width: calc(33.3% - 30px);
+      }
+      &-sm-6 .editor-block-list__block{
+        width: calc(50% - 30px);
+      }
+      &-sm-12 .editor-block-list__block{
+        width: calc(100% - 30px);
+      }
+    }
+    @media (min-width: $md-min) {
+      &-md-3 .editor-block-list__block{
+        width: calc(25% - 30px);
+      }
+      &-md-4 .editor-block-list__block{
+        width: calc(33.3% - 30px);
+      }
+      &-md-6 .editor-block-list__block{
+        width: calc(50% - 30px);
+      }
+      &-md-12 .editor-block-list__block{
+        width: calc(100% - 30px);
+      }
+    }
+    @media (min-width: $lg-min) {
+      &-lg-3 > .editor-block-list__block{
+        width: calc(25% - 30px);
+      }
+      &-lg-4 > .editor-block-list__block{
+        width: calc(33.3% - 30px);
+      }
+      &-lg-6 > .editor-block-list__block{
+        width: calc(50% - 30px);
+      }
+      &-lg-12 > .editor-block-list__block{
+        width: calc(100% - 30px);
+      }
+    }
+    @media (min-width: $xl-min) {
+      &-xl-3 > .editor-block-list__block{
+        width: calc(25% - 30px);
+      }
+      &-xl-4 > .editor-block-list__block{
+        width: calc(33.3% - 30px);
+      }
+      &-xl-6 > .editor-block-list__block{
+        width: calc(50% - 30px);
+      }
+      &-xl-12 > .editor-block-list__block{
+        width: calc(100% - 30px);
+      }
+    }
   }
-  @media (min-width: $md-min) {
-    &-md-3 .editor-block-list__block{
-      width: calc(25% - 30px);
-    }
-    &-md-4 .editor-block-list__block{
-      width: calc(33.3% - 30px);
-    }
-    &-md-6 .editor-block-list__block{
-      width: calc(50% - 30px);
-    }
-    &-md-12 .editor-block-list__block{
-      width: calc(100% - 30px);
-    }
-  }
-  @media (min-width: $lg-min) {
-    &-lg-3 > .editor-block-list__block{
-      width: calc(25% - 30px);
-    }
-    &-lg-4 > .editor-block-list__block{
-      width: calc(33.3% - 30px);
-    }
-    &-lg-6 > .editor-block-list__block{
-      width: calc(50% - 30px);
-    }
-    &-lg-12 > .editor-block-list__block{
-      width: calc(100% - 30px);
-    }
-  }
-  @media (min-width: $xl-min) {
-    &-xl-3 > .editor-block-list__block{
-      width: calc(25% - 30px);
-    }
-    &-xl-4 > .editor-block-list__block{
-      width: calc(33.3% - 30px);
-    }
-    &-xl-6 > .editor-block-list__block{
-      width: calc(50% - 30px);
-    }
-    &-xl-12 > .editor-block-list__block{
-      width: calc(100% - 30px);
-    }
-  }
-}
-
-// Card ボタンリンクの説明
-.postList_itemCard_button-option {
-	margin-bottom: 5px;
-}
+  
 /*-------------------------------------------*/
 /* リストデザイン
 /*-------------------------------------------*/
@@ -507,6 +525,49 @@ ol {
 	}
 } //.wp-block-group
 
+.alert{
+
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 3px;
+	p {
+		margin-bottom:0;
+	}
+
+  & + &{
+    margin-top: 2em;
+  }
+
+  a{
+    transition: color .3s linear, opacity .3s linear;
+    &:link, &:visited{
+      opacity: .8;
+      text-decoration: underline;
+    }
+    &:hover, &:visited{
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+
+  @each $var in (
+                  (success, #dff0d8,#3c763d,#d6e9c6),
+                  (info, #d9edf7,#31708f,#bce8f1),
+                  (warning, #fcf8e3,#8a6d3b,#faebcc),
+                  (danger, #f2dede,#a94442,#ebccd1),
+  ){
+    $class-name: nth($var, 1);
+    $color-bg: nth($var, 2);
+    $color: nth($var, 3);
+    $color-border :nth($var, 4);
+    &-#{$class-name}{
+      background-color: $color-bg;
+      color:$color;
+      border-color:$color-border;
+    }
+  }
+}
+
 .vk_balloon {
   display: flex;
   align-items: center;
@@ -772,49 +833,6 @@ ol {
 	}
 } // @media only screen and (max-width: 480px) {
 
-.alert{
-
-  padding: 1em;
-  margin: 1em 0;
-  border-radius: 3px;
-	p {
-		margin-bottom:0;
-	}
-
-  & + &{
-    margin-top: 2em;
-  }
-
-  a{
-    transition: color .3s linear, opacity .3s linear;
-    &:link, &:visited{
-      opacity: .8;
-      text-decoration: underline;
-    }
-    &:hover, &:visited{
-      opacity: 1;
-      text-decoration: none;
-    }
-  }
-
-  @each $var in (
-                  (success, #dff0d8,#3c763d,#d6e9c6),
-                  (info, #d9edf7,#31708f,#bce8f1),
-                  (warning, #fcf8e3,#8a6d3b,#faebcc),
-                  (danger, #f2dede,#a94442,#ebccd1),
-  ){
-    $class-name: nth($var, 1);
-    $color-bg: nth($var, 2);
-    $color: nth($var, 3);
-    $color-border :nth($var, 4);
-    &-#{$class-name}{
-      background-color: $color-bg;
-      color:$color;
-      border-color:$color-border;
-    }
-  }
-}
-
 .vk_button {
   margin: 5px 0;
 
@@ -1079,6 +1097,39 @@ $color_dark: #343a40;
 	max-width:150px;
 	margin-left:15px;
 	box-sizing: border-box;
+}
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+@mixin reset() {
+	background: none;
+	border:none;
+	border-radius: 0;
+	padding:0;
+	font-weight: normal;
+	box-shadow:none;
+	&:after {
+		content:none;
+		border:none;
+	}
+	&:before{
+		content:none;
+	}
+}
+
+// .vk_heading は指定が強い要素（ Charm ）も消すために必要
+.vk_heading.vk_heading-style-plain {
+	.vk_heading_title {
+		@include reset;
+		&:after {
+			@include reset;
+		}
+	}
+}
+
+.vk_heading_subtext {
+	margin-bottom:0;
 }
 
 //管理画面側の見出しブロックのスタイルのcssになります。
@@ -1543,39 +1594,6 @@ $color_key: #337ab7;
 	} //.is-style-vk-heading
 } //.editor-block-list__block
 
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-@mixin reset() {
-	background: none;
-	border:none;
-	border-radius: 0;
-	padding:0;
-	font-weight: normal;
-	box-shadow:none;
-	&:after {
-		content:none;
-		border:none;
-	}
-	&:before{
-		content:none;
-	}
-}
-
-// .vk_heading は指定が強い要素（ Charm ）も消すために必要
-.vk_heading.vk_heading-style-plain {
-	.vk_heading_title {
-		@include reset;
-		&:after {
-			@include reset;
-		}
-	}
-}
-
-.vk_heading_subtext {
-	margin-bottom:0;
-}
-
 .is-style-vk-image {
     &-border {
         img {
@@ -1748,40 +1766,6 @@ $color_key: #337ab7;
 /* CSS
 /*-------------------------------------------*/
 
-@mixin switchVisibility($pc,$tablet,$mobile) {
-  .vk_spacer {
-    .vk_spacer-display-pc {
-      display: $pc;
-    }
-
-    .vk_spacer-display-tablet {
-      display: $tablet;
-    }
-
-    .vk_spacer-display-mobile {
-      display: $mobile;
-    }
-  }
-}
-
-// Small devices (landscape phones, 576px以下)
-@media (max-width: 576px) {
-  @include switchVisibility(none, none, block);
-}
-
-// Medium devices (tablets, 577pxから768px)
-@media (min-width: 577px) and (max-width: 768px) {
-  @include switchVisibility(none, block, none);
-}
-
-// Large devices (desktops, 769px以上)
-@media (min-width: 769px) {
-  @include switchVisibility(block, none, none);
-}
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-
 .vk_table {
 	&-col-mobile1 {
 		@media( max-width: 575.98px){
@@ -1860,6 +1844,40 @@ $color_key: #337ab7;
 	}
 }
 
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
+@mixin switchVisibility($pc,$tablet,$mobile) {
+  .vk_spacer {
+    .vk_spacer-display-pc {
+      display: $pc;
+    }
+
+    .vk_spacer-display-tablet {
+      display: $tablet;
+    }
+
+    .vk_spacer-display-mobile {
+      display: $mobile;
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px以下)
+@media (max-width: 576px) {
+  @include switchVisibility(none, none, block);
+}
+
+// Medium devices (tablets, 577pxから768px)
+@media (min-width: 577px) and (max-width: 768px) {
+  @include switchVisibility(none, block, none);
+}
+
+// Large devices (desktops, 769px以上)
+@media (min-width: 769px) {
+  @include switchVisibility(block, none, none);
+}
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -2052,64 +2070,20 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
 /* CSS
 /*-------------------------------------------*/
 
-///*-------------------------------------------*/
-///* CSS
-///*-------------------------------------------*/
-//.vk_card{
-//  margin: 2em 0;
-//
-//  .vk_card_item {
-//    position: relative;
-//    padding: 0 0 1em 4em;
-//    margin: 0 auto;
-//
-//      h3:first-of-type,
-//      h4:first-of-type{
-//        padding-top: 0.5em;
-//        margin-top: 0;
-//      }
-//			&_content > p:first-child{
-//        margin-bottom:0.3em;
-//        line-height: 1;
-//        color:#666;
-//      }
-//    .vk_card_item_caption{
-//      margin-bottom: 0.5em;
-//      color: #666;
-//    }
-//    .vk_card_item_content{
-//
-//    }
-//    .vk_card_item_dot {
-//      content: "";
-//      display: block;
-//      position: absolute;
-//      top: 0;
-//      left: 0;
-//      width: 50px;
-//      height: 50px;
-//      border-radius: 50%;
-//      color: #ffffff;
-//      padding: 9px 0;
-//      text-align: center;
-//    }
-//    .vk_card_item_dot_caption{
-//      font-size: 0.5rem;
-//    }
-//  }
-//}
-//.vk_card_item_lineStyle-default {
-//  &::before {
-//    content: "";
-//    width: 3px;
-//    background: #ddd;
-//    display: block;
-//    position: absolute;
-//    top: 54px;
-//    left: 23px;
-//    bottom: 4px;
-//  }
-//}
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
+.vk_card {
+  &_item {
+    .vk_post_title.card-title {
+      font-size: 1rem;
+    }
+    .vk_post_excerpt.card-text {
+      font-size: 14px;
+    }
+  }
+}
 
 .vk_childPage {
 	margin-top: 2.5rem;

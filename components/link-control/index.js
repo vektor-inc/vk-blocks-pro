@@ -34,7 +34,7 @@ export const LinkControl = props => {
 
   return (
     <BaseControl
-      label={__("Link settings", "vk-blocks")}
+      label={__("Link target", "vk-blocks")}
       id={`sidebar-${blockName}-block-url-settings`}
     >
       <ToggleControl

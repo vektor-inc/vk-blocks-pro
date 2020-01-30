@@ -54,7 +54,7 @@ function vkblocks_blocks_assets() {
 
 	if ( defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, '5.0', '>=' ) ) {
 
-		$arr = array( 'alert', 'balloon', 'button', 'faq', 'flow', 'pr-blocks', 'pr-content', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents', 'highlighter', 'timeline', 'timeline-item', 'step', 'step-item', 'post-list', 'list-style', 'group-style', 'child-page' );// REPLACE-FLAG : このコメントは削除しないで下さい。wp-create-gurten-template.shで削除する基準として左の[//REPLACE-FLAG]を使っています。
+		$arr = array( 'alert', 'balloon', 'button', 'faq', 'flow', 'pr-blocks', 'pr-content', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents', 'highlighter', 'timeline', 'timeline-item', 'step', 'step-item', 'post-list', 'list-style', 'group-style', 'child-page', 'card', 'card-item' );//REPLACE-FLAG : このコメントは削除しないで下さい。wp-create-gurten-template.shで削除する基準として左の[//REPLACE-FLAG]を使っています。
 
 		foreach ( $arr as $value ) {
 
@@ -140,7 +140,7 @@ function vkblocks_blocks_assets() {
 								),
 								'display_btn'       => array(
 									'type'    => 'boolean',
-									'default' => true,
+									'default' => false,
 								),
 								'new_date'          => array(
 									'type'    => 'number',
@@ -196,7 +196,7 @@ function vkblocks_blocks_assets() {
 							),
 							'layout'                     => array(
 								'type'    => 'string',
-								'default' => 'card',
+								'default' => 'card-horizontal',
 							),
 							'col_xs'                     => array(
 								'type'    => 'number',
@@ -208,15 +208,15 @@ function vkblocks_blocks_assets() {
 							),
 							'col_md'                     => array(
 								'type'    => 'number',
-								'default' => 3,
+								'default' => 2,
 							),
 							'col_lg'                     => array(
 								'type'    => 'number',
-								'default' => 3,
+								'default' => 2,
 							),
 							'col_xl'                     => array(
 								'type'    => 'number',
-								'default' => 3,
+								'default' => 2,
 							),
 							'display_image'              => array(
 								'type'    => 'boolean',

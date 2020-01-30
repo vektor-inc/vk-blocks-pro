@@ -1,5 +1,8 @@
 export const schema = {
-  selectId: {
+  url: {
+    type: "string"
+  },
+  postId: {
     type: "number"
   },
   name: {
@@ -8,7 +11,7 @@ export const schema = {
   },
   layout: {
     type: "string",
-    default: "card-horizontal"
+    default: "card"
   },
   col_xs: {
     type: "number",
@@ -20,15 +23,15 @@ export const schema = {
   },
   col_md: {
     type: "number",
-    default: 2
+    default: 3
   },
   col_lg: {
     type: "number",
-    default: 2
+    default: 3
   },
   col_xl: {
     type: "number",
-    default: 2
+    default: 3
   },
   display_image: {
     type: "boolean",
@@ -48,7 +51,7 @@ export const schema = {
   },
   display_new: {
     type: "boolean",
-    default: false
+    default: true
   },
   display_btn: {
     type: "boolean",
@@ -85,5 +88,9 @@ export const schema = {
   isCheckedTerms: {
     type: "string",
     default: "{}"
+  },
+  activeControl: {
+    type: "string",
+    default: '{"title": "left", "text":"left" ,"button":"right"}'
   }
 };

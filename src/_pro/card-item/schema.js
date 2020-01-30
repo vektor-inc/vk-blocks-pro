@@ -1,14 +1,7 @@
 export const schema = {
-  selectId: {
-    type: "number"
-  },
-  name: {
-    type: "string",
-    default: ""
-  },
   layout: {
     type: "string",
-    default: "card-horizontal"
+    default: "card"
   },
   col_xs: {
     type: "number",
@@ -20,15 +13,15 @@ export const schema = {
   },
   col_md: {
     type: "number",
-    default: 2
+    default: 3
   },
   col_lg: {
     type: "number",
-    default: 2
+    default: 3
   },
   col_xl: {
     type: "number",
-    default: 2
+    default: 3
   },
   display_image: {
     type: "boolean",
@@ -38,17 +31,13 @@ export const schema = {
     type: "boolean",
     default: true
   },
-  display_excerpt: {
-    type: "boolean",
-    default: true
-  },
   display_date: {
     type: "boolean",
     default: false
   },
   display_new: {
     type: "boolean",
-    default: false
+    default: true
   },
   display_btn: {
     type: "boolean",
@@ -66,24 +55,38 @@ export const schema = {
     type: "string",
     default: "Read more"
   },
-  btn_align: {
+  title: {
     type: "string",
-    default: "text-right"
+    source: "html",
+    selector: "h5.vk_post_title.card-title"
   },
-  numberPosts: {
-    type: "number",
-    default: 6
-  },
-  isCheckedPostType: {
+  excerpt_text: {
     type: "string",
-    default: '["post"]'
+    source: "html",
+    selector: "p.vk_post_excerpt.card-text"
   },
-  coreTerms: {
+  image: {
     type: "string",
-    default: "[]"
+    default: null
   },
-  isCheckedTerms: {
+  url: {
     type: "string",
-    default: "{}"
+    default: null
+  },
+  activeControl: {
+    type: "string",
+    default: '{"title": "left", "text":"left" ,"button":"right"}'
+  },
+  linkTarget: {
+    type: "string",
+    source: "attribute",
+    selector: "a",
+    attribute: "target"
+  },
+  rel: {
+    type: "string",
+    source: "attribute",
+    selector: "a",
+    attribute: "rel"
   }
 };

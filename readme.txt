@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.3.2
-Stable tag: 0.19.2
+Stable tag: 0.20.0
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -31,6 +31,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Post List [ Pro ]
 * Step [ Pro ]
 * Timeline [ Pro ]
+* Card [ Pro ]
 
 [ Editing and correction ]
 
@@ -56,6 +57,10 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.20.0 =
+[ add block ][ Card block ] * Pro Version Only
+[ Specification change ] Delete Lightning Pro Limited
 
 = 0.19.2 =
 [ Design tuning ][ Child Page List(Pro) ] Add margin top

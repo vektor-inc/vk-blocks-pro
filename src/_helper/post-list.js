@@ -539,26 +539,6 @@ export class PostList extends Component {
             value={btn_text}
             onChange={value => setAttributes({ btn_text: value })}
           />
-          <BaseControl label={__("Button align", "vk-blocks")}>
-            <SelectControl
-              value={btn_align}
-              onChange={value => setAttributes({ btn_align: value })}
-              options={[
-                {
-                  value: "text-left",
-                  label: __("Left", "vk-blocks")
-                },
-                {
-                  value: "text-center",
-                  label: __("Center", "vk-blocks")
-                },
-                {
-                  value: "text-right",
-                  label: __("Right", "vk-blocks")
-                }
-              ]}
-            />
-          </BaseControl>
         </PanelBody>
       );
     };

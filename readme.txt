@@ -59,7 +59,7 @@ e.g.
 == Changelog ==
 
 = 0.20.1 =
-[ Specification change ] Delete Lightning Pro Limited
+[ Specification change ][ card ] btn margine tuning
 
 = 0.20.0 =
 [ add block ][ Card block ] * Pro Version Only

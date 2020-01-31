@@ -25,8 +25,6 @@ registerBlockType("vk-blocks/card-item", {
     const { setAttributes, attributes } = props;
     const { url } = attributes;
 
-    // LinkControl用に設定
-    props.blockName = "card";
     return (
       <Fragment>
         <InspectorControls>
@@ -38,7 +36,7 @@ registerBlockType("vk-blocks/card-item", {
                 placeholder={__("https://example.com", "vk-blocks")}
               />
             </BaseControl>
-            <LinkControl {...props} />
+            <LinkControl blockName={"card"} {...props} />
           </PanelBody>
         </InspectorControls>
         <Component value={props} for_={"edit"} />

@@ -222,6 +222,8 @@ export class Component extends React.Component {
       imageStyle = {};
     }
 
+    let btnClass = display_btn ? "vk_post-btn-display" : "";
+
     return (
       <div
         className={`vk_post ${layout} vk_card_item vk_post-col-xs-${convertToGrid(
@@ -230,7 +232,7 @@ export class Component extends React.Component {
           col_sm
         )} vk_post-col-md-${col_md} vk_post-col-lg-${convertToGrid(
           col_lg
-        )} vk_post-col-xl-${convertToGrid(col_xl)} vk_post-btn-display`}
+        )} vk_post-col-xl-${convertToGrid(col_xl)} ${btnClass}`}
       >
         {renderImage(display_image)}
         <div className="vk_post_body card-body">

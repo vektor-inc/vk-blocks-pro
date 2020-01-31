@@ -41,8 +41,6 @@ registerBlockType("vk-blocks/card-item", {
     const { setAttributes, attributes } = props;
     const { url } = attributes;
 
-    // LinkControl用に設定
-    props.blockName = "card";
     return (
       <Fragment>
         <InspectorControls>
@@ -51,10 +49,10 @@ registerBlockType("vk-blocks/card-item", {
               <TextControl
                 value={url}
                 onChange={value => setAttributes({ url: value })}
-                placeholder={__("https://www.vektor-inc.co.jp/", "vk-blocks")}
+                placeholder={__("https://example.com", "vk-blocks")}
               />
             </BaseControl>
-            <LinkControl {...props} />
+            <LinkControl blockName={"card"} {...props} />
           </PanelBody>
         </InspectorControls>
         <Component value={props} for_={"edit"} />

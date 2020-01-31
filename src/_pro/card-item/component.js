@@ -230,7 +230,7 @@ export class Component extends React.Component {
           col_xs
         )} vk_post-col-sm-${convertToGrid(
           col_sm
-        )} vk_post-col-md-${col_md} vk_post-col-lg-${convertToGrid(
+        )} vk_post-col-md-${convertToGrid(col_md)} vk_post-col-lg-${convertToGrid(
           col_lg
         )} vk_post-col-xl-${convertToGrid(col_xl)} ${btnClass}`}
       >

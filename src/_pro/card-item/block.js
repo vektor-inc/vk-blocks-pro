@@ -35,7 +35,7 @@ registerBlockType("vk-blocks/card-item", {
               <TextControl
                 value={url}
                 onChange={value => setAttributes({ url: value })}
-                placeholder={__("https://www.vektor-inc.co.jp/", "vk-blocks")}
+                placeholder={__("https://example.com", "vk-blocks")}
               />
             </BaseControl>
             <LinkControl {...props} />

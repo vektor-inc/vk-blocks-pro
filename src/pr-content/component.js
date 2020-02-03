@@ -125,30 +125,41 @@ export class Component extends React.Component {
           );
         } else {
           const ImageParse = JSON.parse(Image);
-          return (
-            <MediaUpload
-              onSelect={saveImage}
-              type=" image"
-              value={Image}
-              render={({ open }) => (
-                <Button
-                  onClick={open}
-                  className={Image ? "image-button" : "button button-large"}
-                >
-                  {!Image ? (
-                    __("Select image", "vk-blocks")
-                  ) : (
-                    <img
-                      className={"vk_prContent_colImg_image"}
-                      src={ImageParse.sizes.full.url}
-                      alt={ImageParse.alt}
-                      style={{ border: imageBorderProperty }}
-                    />
-                  )}
-                </Button>
-              )}
-            />
-          );
+          if (typeof ImageParse.sizes !== "undefined") {
+            return (
+              <MediaUpload
+                onSelect={saveImage}
+                type=" image"
+                value={Image}
+                render={({ open }) => (
+                  <Button
+                    onClick={open}
+                    className={Image ? "image-button" : "button button-large"}
+                  >
+                    {!Image ? (
+                      __("Select image", "vk-blocks")
+                    ) : (
+                      <img
+                        className={"vk_prContent_colImg_image"}
+                        src={ImageParse.sizes.full.url}
+                        alt={ImageParse.alt}
+                        style={{ border: imageBorderProperty }}
+                      />
+                    )}
+                  </Button>
+                )}
+              />
+            );
+          } else {
+            return (
+              <div>
+                {__(
+                  "Something wrong with your image. Please insert it again.",
+                  "vk-blocks"
+                )}
+              </div>
+            );
+          }
         }
       } else if (for_ === "save") {
         if (!Image) {
@@ -165,14 +176,18 @@ export class Component extends React.Component {
             );
           } else {
             const ImageParse = JSON.parse(Image);
-            return (
-              <img
-                className={"vk_prContent_colImg_image"}
-                src={ImageParse.sizes.full.url}
-                alt={ImageParse.alt}
-                style={{ border: imageBorderProperty }}
-              />
-            );
+            if (typeof ImageParse.sizes !== "undefined") {
+              return (
+                <img
+                  className={"vk_prContent_colImg_image"}
+                  src={ImageParse.sizes.full.url}
+                  alt={ImageParse.alt}
+                  style={{ border: imageBorderProperty }}
+                />
+              );
+            } else {
+              return "";
+            }
           }
         }
       }

@@ -117,13 +117,12 @@ registerBlockType("vk-blocks/table-of-contents", {
     };
 
     //Rendering when this block is inserted.
+    const selectedBlock = select("core/block-editor").getSelectedBlock();
     renderWhenInserted();
 
     let oldSelectedId;
     let newSelectedId;
     subscribe(() => {
-      const selectedBlock = select("core/block-editor").getSelectedBlock();
-
       if (selectedBlock) {
         newSelectedId = selectedBlock.clientId;
 
@@ -168,19 +167,10 @@ registerBlockType("vk-blocks/table-of-contents", {
             </BaseControl>
           </PanelBody>
         </InspectorControls>
-        {vk_blocks_check.is_pro ? (
-          <ServerSideRender
-            block="vk-blocks/table-of-contents"
-            attributes={attributes}
-          />
-        ) : (
-          <div>
-            {__(
-              "This block is only for users who bought Lightning Pro.",
-              "vk-blocks"
-            )}
-          </div>
-        )}
+        <ServerSideRender
+          block="vk-blocks/table-of-contents"
+          attributes={attributes}
+        />
       </Fragment>
     );
   },

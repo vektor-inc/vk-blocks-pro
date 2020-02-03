@@ -185,7 +185,7 @@ msgstr ""
 #: src/balloon/block.js:111
 #: src/flow/block.js:112
 #: src/pr-blocks/block.js:179
-#: src/pr-content/component.js:144
+#: src/pr-content/component.js:166
 #: src/pr-content/deprecated/component-deprecated.js:102
 #: src/pr-content/deprecated/component-no-boder-color.js:116
 #: src/staff/component.js:88
@@ -195,7 +195,7 @@ msgstr ""
 #: src/_pro/outer/block.js:137
 #: src/flow/block.js:113
 #: src/pr-blocks/block.js:175
-#: src/pr-content/component.js:149
+#: src/pr-content/component.js:173
 #: src/pr-content/deprecated/component-deprecated.js:106
 #: src/pr-content/deprecated/component-no-boder-color.js:120
 msgid "Upload image"
@@ -959,13 +959,17 @@ msgstr ""
 msgid "Title Color"
 msgstr ""
 
-#: src/pr-content/component.js:179
+#: src/pr-content/component.js:156
+msgid "Something wrong with your image. Please insert it again."
+msgstr ""
+
+#: src/pr-content/component.js:209
 #: src/pr-content/deprecated/component-deprecated.js:122
 #: src/pr-content/deprecated/component-no-boder-color.js:136
 msgid "Input title."
 msgstr ""
 
-#: src/pr-content/component.js:187
+#: src/pr-content/component.js:217
 #: src/pr-content/deprecated/component-deprecated.js:130
 #: src/pr-content/deprecated/component-no-boder-color.js:144
 msgid "Input content."

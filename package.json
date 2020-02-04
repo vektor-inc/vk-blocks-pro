@@ -55,6 +55,7 @@
     "@wordpress/element": "^2.10.0",
     "@wordpress/hooks": "^2.6.0",
     "@wordpress/i18n": "^3.6.1",
+    "@wordpress/list-reusable-blocks": "^1.11.0",
     "@wordpress/plugins": "^2.10.0",
     "aphrodite": "^2.4.0",
     "gulp-jsmin": "^0.1.5",

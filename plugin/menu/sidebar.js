@@ -44,6 +44,7 @@ export default function() {
       '<!-- wp:vk-blocks/alert --><div class="wp-block-vk-blocks-alert undefined alert alert-info"><p>テスト</p></div><!-- /wp:vk-blocks/alert -->';
     return (
       <li>
+        <div className={"page-title-action"}>fdsaf</div>
         <Button
           className="smb-menu__template-part__button"
           onClick={() => {

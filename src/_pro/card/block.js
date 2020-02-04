@@ -107,7 +107,8 @@ registerBlockType("vk-blocks/card", {
     let afterLength;
 
     if (
-      currentBlock !== undefined ||
+      currentBlock !== undefined &&
+      currentBlock[0] !== null &&
       currentBlock[0].innerBlocks !== undefined
     ) {
       let innerBlocks = currentBlock[0].innerBlocks;

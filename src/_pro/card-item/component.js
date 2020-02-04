@@ -171,17 +171,19 @@ export class Component extends React.Component {
       }
     };
 
-    const renderButton = display_btn => {
+    const renderButton = (display_btn, align) => {
       if (display_btn) {
         return (
-          <a
-            className={`btn btn-primary vk_post_btn`}
-            href={url}
-            target={linkTarget}
-            rel={rel}
-          >
-            {btn_text}
-          </a>
+          <div className={`vk_post_btnOuter text-${align.button}`}>
+            <a
+              className={`btn btn-primary vk_post_btn`}
+              href={url}
+              target={linkTarget}
+              rel={rel}
+            >
+              {btn_text}
+            </a>
+          </div>
         );
       }
     };
@@ -238,9 +240,7 @@ export class Component extends React.Component {
         <div className="vk_post_body card-body">
           {renderTitle(align)}
           {renderExcerpt(align)}
-          <div className={`vk_post_btnOuter text-${align.button}`}>
-            {renderButton(display_btn)}
-          </div>
+          {renderButton(display_btn, align)}
         </div>
       </div>
     );

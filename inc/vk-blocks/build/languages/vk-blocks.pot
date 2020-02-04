@@ -207,7 +207,7 @@ msgid ""
 "tempor incididunt ut labore et dolore magna aliqua. "
 msgstr ""
 
-#: src/_pro/card-item/component.js:199
+#: src/_pro/card-item/component.js:201
 msgid "Title"
 msgstr ""
 

@@ -25,6 +25,7 @@ function vkblocks_blocks_assets() {
 			'wp-data',
 			'wp-plugins',
 			'wp-hooks',
+			'wp-api-fetch'
 		);
 	} else {
 		$dependency = array(
@@ -37,6 +38,7 @@ function vkblocks_blocks_assets() {
 			'wp-data',
 			'wp-plugins',
 			'wp-hooks',
+			'wp-api-fetch'
 		);
 	}
 	wp_register_script(

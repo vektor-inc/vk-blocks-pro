@@ -1,10 +1,8 @@
 "use strict";
 
-import ScreenshotImg from "./screenshot-img";
+// import ScreenshotImg from "./screenshot-img";
 
-// import apiFetch from "@wordpress/api-fetch";
-
-// import { first, last } from "lodash";
+import { first, last } from "lodash";
 
 const { parse } = wp.blocks;
 
@@ -13,6 +11,10 @@ const { Button, Spinner } = wp.components;
 const { useState } = wp.element;
 
 const { dispatch, select } = wp.data;
+
+export const vkbFetchReuseableBlocks = () => {
+  return wp.apiFetch({ path: `/wp/v2/blocks?per_page=-1` });
+};
 
 export default function({ slug }) {
   const [parts, setParts] = useState(null);
@@ -23,11 +25,8 @@ export default function({ slug }) {
       return;
     }
 
-    apiFetch({
-      path: `/snow-monkey-blocks/v5/block-template-panel/?slug=${slug}`,
-      method: "GET",
-      parse: true
-    }).then(result => {
+    vkbFetchReuseableBlocks().then(result => {
+      console.log(result);
       setParts(result);
     });
   };
@@ -54,74 +53,72 @@ export default function({ slug }) {
     }
 
     const newResultParts = parts.map(part => {
-      if (smb.isPro || !part.isPro) {
-        return (
-          <li>
-            <Button
-              className="smb-menu__template-part__button"
-              onClick={() => {
-                const parsedBlocks = parse(part.content);
-                if (parsedBlocks.length) {
-                  const selectedBlock = getSelectedBlock();
-                  if (null === selectedBlock) {
-                    // when not selected block
-                    // get last root block
-                    const lastRootBlock = last(getBlocks());
-                    const isEmpty =
-                      undefined !== lastRootBlock &&
-                      null === lastRootBlock.rootClientId &&
-                      (!getBlockCount(lastRootBlock.clientId) ||
-                        ("core/paragraph" === lastRootBlock.name &&
-                          "" === lastRootBlock.attributes.content));
-                    if (isEmpty) {
-                      // Replace when last block is empty
-                      replaceBlocks(lastRootBlock.clientId, parsedBlocks);
-                    } else {
-                      // Insert at the end when block is not empty
-                      insertBlocks(parsedBlocks);
-                    }
+      return (
+        <li>
+          <Button
+            className="smb-menu__template-part__button"
+            onClick={() => {
+              const parsedBlocks = parse(part.content.raw);
+              if (parsedBlocks.length) {
+                const selectedBlock = getSelectedBlock();
+                if (null === selectedBlock) {
+                  // when not selected block
+                  // get last root block
+                  const lastRootBlock = last(getBlocks());
+                  const isEmpty =
+                    undefined !== lastRootBlock &&
+                    null === lastRootBlock.rootClientId &&
+                    (!getBlockCount(lastRootBlock.clientId) ||
+                      ("core/paragraph" === lastRootBlock.name &&
+                        "" === lastRootBlock.attributes.content));
+                  if (isEmpty) {
+                    // Replace when last block is empty
+                    replaceBlocks(lastRootBlock.clientId, parsedBlocks);
                   } else {
-                    // when selected block
-                    // isEmpty is true when blocktype is paragraph and content is empty
-                    const isEmpty =
-                      "core/paragraph" === selectedBlock.name &&
-                      "" === selectedBlock.attributes.content;
-                    if (!isEmpty) {
-                      // Insert after block
-                      const insertionPoint = getBlockInsertionPoint();
-                      insertBlocks(
-                        parsedBlocks,
-                        insertionPoint.index,
-                        insertionPoint.rootClientId
-                      );
-                    } else {
-                      // Replace at the block when block is empty
-                      replaceBlocks(selectedBlock.clientId, parsedBlocks);
-                    }
+                    // Insert at the end when block is not empty
+                    insertBlocks(parsedBlocks);
                   }
-                  multiSelect(
-                    first(parsedBlocks).clientId,
-                    last(parsedBlocks).clientId
-                  );
+                } else {
+                  // when selected block
+                  // isEmpty is true when blocktype is paragraph and content is empty
+                  const isEmpty =
+                    "core/paragraph" === selectedBlock.name &&
+                    "" === selectedBlock.attributes.content;
+                  if (!isEmpty) {
+                    // Insert after block
+                    const insertionPoint = getBlockInsertionPoint();
+                    insertBlocks(
+                      parsedBlocks,
+                      insertionPoint.index,
+                      insertionPoint.rootClientId
+                    );
+                  } else {
+                    // Replace at the block when block is empty
+                    replaceBlocks(selectedBlock.clientId, parsedBlocks);
+                  }
                 }
-              }}
-            >
-              <ScreenshotImg
-                className="smb-menu__template-part__button__screenshot"
-                src={part.screenshot}
-                loader={
-                  <div className="smb-menu__template-part__button__screenshot__loading">
-                    <Spinner />
-                  </div>
-                }
-              />
-              <span className="smb-menu__template-part__button__title">
-                {part.title}
-              </span>
-            </Button>
-          </li>
-        );
-      }
+                multiSelect(
+                  first(parsedBlocks).clientId,
+                  last(parsedBlocks).clientId
+                );
+              }
+            }}
+          >
+            {/* <ScreenshotImg
+              className="smb-menu__template-part__button__screenshot"
+              src={part.screenshot}
+              loader={
+                <div className="smb-menu__template-part__button__screenshot__loading">
+                  <Spinner />
+                </div>
+              }
+            /> */}
+            <span className="smb-menu__template-part__button__title">
+              {part.title.raw}
+            </span>
+          </Button>
+        </li>
+      );
     });
 
     setResultParts(newResultParts.filter(resultPart => resultPart));

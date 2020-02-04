@@ -46,6 +46,11 @@ input[type=range] {
     width:100%;
 }
 
+/* ブロックインサーター@サイドバー用 */
+.edit-post-sidebar__panel-tab{
+	height:100%;
+}
+
 /* editor area *********************************************/
 .edit-post-visual-editor.editor-styles-wrapper{
 

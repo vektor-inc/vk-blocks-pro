@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.3.2
-Stable tag: 0.17.6
+Stable tag: 0.20.4
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -31,6 +31,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Post List [ Pro ]
 * Step [ Pro ]
 * Timeline [ Pro ]
+* Card [ Pro ]
 
 [ Editing and correction ]
 
@@ -56,6 +57,44 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.20.4 =
+[ bug fix ][ Card ] reuse and group bug fix
+
+= 0.20.3 =
+[ bug fix ][ PR Content ] fix deparected
+
+= 0.20.2 =
+[ bug fix ][ card ] fix md size convert error
+
+= 0.20.1 =
+[ Specification change ][ card ] btn margine tuning
+
+= 0.20.0 =
+[ add block ][ Card block ] * Pro Version Only
+[ Specification change ] Delete Lightning Pro Limited
+
+= 0.19.2 =
+[ Design tuning ][ Child Page List(Pro) ] Add margin top
+[ Specification change ][ post-list(Pro) / child-page(Pro) ] Change Outer class name
+
+= 0.19.1 =
+[ Bug fix ] vk-components.css link
+[ Specification change ] Exclude link to vk-components.css for lightning user
+
+= 0.19.0 =
+[ Add function ][ QA Block ] Add html anchor
+
+= 0.18.2 =
+[ bugfix ][ Post list (Pro) ] Display item controll
+
+= 0.18.0 =
+[ bugfix ][ Post list (Pro) ] item controll
+[ Add function ][ Child Page (Pro) ] Can be set the parent page.
+
+= 0.17.7 =
+[ bugfix ] Table of contents render bug fix
+[ Design tuning ][ Step block / Timiline block ]
 
 = 0.17.6 =
 [ bugfix ] headding style color bug fix

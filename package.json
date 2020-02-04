@@ -6,10 +6,13 @@
   "scripts": {
     "start": "npm install && npm run build && npm run watch && wp plugin activate vk-blocks && wp browse --wp-admin",
     "watch": "gulp watch",
+    "build-dev": "gulp build-dev",
     "build": "gulp build && npm run translate",
     "translate": "./node_modules/.bin/po2json ./inc/vk-blocks/build/languages/vk-blocks-ja.po ./inc/vk-blocks/build/languages/vk-blocks-ja-vk-blocks-build-js.json -f jed",
     "gulp": "gulp",
-    "test": ""
+    "test": "",
+    "lint:js": "wp-scripts lint-js",
+    "lint:css": "wp-scripts lint-style"
   },
   "author": "",
   "license": "MIT",
@@ -22,10 +25,13 @@
     "@babel/plugin-transform-react-jsx": "^7.7.0",
     "@babel/preset-env": "^7.7.1",
     "@wordpress/babel-plugin-makepot": "^3.3.0",
+    "@wordpress/eslint-plugin": "^3.3.0",
+    "@wordpress/scripts": "^6.2.0",
     "autoprefixer": "^9.7.1",
     "babel-loader": "^8.0.6",
     "classnames": "^2.2.6",
     "css-loader": "^3.2.0",
+    "eslint": "^6.8.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-clean-css": "^4.2.0",
@@ -37,12 +43,14 @@
     "gulp-sourcemaps": "^2.6",
     "npm-check-updates": "^3.2.1",
     "postcss-loader": "^3.0.0",
+    "puppeteer": "^2.0.0",
     "run-sequence": "^2.2.1",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
     "vinyl-named": "^1.1.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
+    "webpack-merge": "^4.2.2",
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {

@@ -58,17 +58,20 @@ e.g.
 
 == Changelog ==
 
+= 0.21.0 =
+[ Specification change ] load css on footer from header
+
 = 0.20.4 =
-[ bug fix ][ Card ] reuse and group bug fix
+[ bug fix ][ Card(Pro) ] reuse and group bug fix
 
 = 0.20.3 =
 [ bug fix ][ PR Content ] fix deparected
 
 = 0.20.2 =
-[ bug fix ][ card ] fix md size convert error
+[ bug fix ][ Card(Pro) ] fix md size convert error
 
 = 0.20.1 =
-[ Specification change ][ card ] btn margine tuning
+[ Specification change ][ Card(Pro) ] btn margine tuning
 
 = 0.20.0 =
 [ add block ][ Card block ] * Pro Version Only

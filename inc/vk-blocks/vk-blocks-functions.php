@@ -10,13 +10,22 @@ function vkblocks_active() {
 /*
  Load css
 ---------------------------------------------------------- */
+if ( ! function_exists( 'vkblocks_css_hook_point' ) ) {
+	function vkblocks_css_hook_point() {
+		return apply_filters( 'vkblocks_css_hook_point', 'wp_enqueue_scripts' );
+	};
+}
+
 // Load css at footer
 if ( ! function_exists( 'vkblocks_add_footer_styles' ) ) {
 	function vkblocks_add_footer_styles() {
 		wp_enqueue_style( 'vk-blocks-build-css' );
 	};
 }
-add_action( 'wp_footer', 'vkblocks_add_footer_styles' );
+
+// $hook_point = vkblocks_css_hook_point();
+// add_action( $hook_point, 'vkblocks_add_footer_styles' );
+add_action( 'wp_enqueue_scripts', 'vkblocks_add_footer_styles' );
 
 function vkblocks_blocks_assets() {
 

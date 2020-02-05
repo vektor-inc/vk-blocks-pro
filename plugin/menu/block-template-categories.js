@@ -1,8 +1,8 @@
 "use strict";
 
-// import BlockTemplatePanel from "./block-template-panel";
+import BlockTemplatePanel from "./block-template-panel";
 
-// import apiFetch from "@wordpress/api-fetch";
+import apiFetch from "@wordpress/api-fetch";
 
 import { PanelBody, Spinner } from "@wordpress/components";
 
@@ -17,13 +17,13 @@ export default function() {
       return;
     }
 
-    // apiFetch({
-    //   path: "/snow-monkey-blocks/v5/block-template-categories/",
-    //   method: "GET",
-    //   parse: true
-    // }).then(result => {
-    //   setCategories(result);
-    // });
+    apiFetch({
+      path: "/snow-monkey-blocks/v5/block-template-categories/",
+      method: "GET",
+      parse: true
+    }).then(result => {
+      setCategories(result);
+    });
   };
 
   const setupResultCategories = () => {
@@ -46,12 +46,12 @@ export default function() {
       }
     });
 
-    // setResultCategories(
-    //   newResultCategories.filter(resultCategory => resultCategory)
-    // );
+    setResultCategories(
+      newResultCategories.filter(resultCategory => resultCategory)
+    );
   };
 
-  //   setupResultCategories();
+  setupResultCategories();
 
   if (resultCategories) {
     return <Fragment>{resultCategories}</Fragment>;

@@ -2,7 +2,7 @@
 
 // import ScreenshotImg from "./screenshot-img";
 
-import { first, last } from "lodash";
+const { first, last } = window.lodash;
 
 const { parse } = wp.blocks;
 

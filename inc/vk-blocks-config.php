@@ -17,6 +17,7 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 
 	require_once( 'vk-blocks/helpers.php' );
 	require_once( 'vk-components/vk-components-config.php' );
+	require_once( 'custom-field-builder/custom-field-builder-config.php');
 	require_once( 'vk-blocks/load-vk-components.php' );
 	require_once( 'font-awesome/font-awesome-config.php' );
 	require_once( 'term-color/term-color-config.php' );

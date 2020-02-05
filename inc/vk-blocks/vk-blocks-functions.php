@@ -2,6 +2,9 @@
 
 // サーバーサイドレンダリングスクリプトを読み込み。
 require_once dirname( __FILE__ ) . '/view/post-list.php';
+require_once dirname(dirname(dirname( __FILE__ ))) . '/inc/custom-field-builder/custom-field-builder-config.php';
+
+
 
 function vkblocks_active() {
 	return true;

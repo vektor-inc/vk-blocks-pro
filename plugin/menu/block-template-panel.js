@@ -133,12 +133,8 @@ export default ({ slug }) => {
   const parsedBlock = parse(`<!-- wp:paragraph -->
         <p><a href="tel:5555551234">(555) 555 1234</a></p>
         <!-- /wp:paragraph -->`);
-  console.log(parsedBlock);
-  const renderedBlocks = useMemo(() => castArray(parsedBlock), [parsedBlock]);
-  console.log(renderedBlocks);
-
   return (
-    <BlockPreview blocks={renderedBlocks} />
+    <BlockPreview blocks={parsedBlock} />
     // <div className="vkb_menu__template-part__loading">
     //   <Spinner />
     // </div>

@@ -36,6 +36,7 @@
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6",
+    "memize": "^1.0.5",
     "npm-check-updates": "^3.2.1",
     "postcss-loader": "^3.0.0",
     "puppeteer": "^2.0.0",

@@ -28,7 +28,7 @@ export default function({ slug }) {
     vkbFetchReuseableBlocks().then(result => {
       console.log(result);
       const filterd = result.filter(value => {
-        return value.custom_fields.is_registerd_vkb_template === "yes";
+        return value.custom_fields.is_registerd_vkb_template[0] === "1";
       });
       console.log(filterd);
       setParts(filterd);

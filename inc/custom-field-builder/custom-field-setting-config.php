@@ -20,7 +20,7 @@ class VKB_Block_Template_Custom_Fields {
 	public static function add_metabox() {
 
 		$id            = 'vkb_block_template';
-		$title         = __( 'Register as VK Blocks template', 'vk-blocks' );
+		$title         = __( 'VK Blocks template', 'vk-blocks' );
 		$callback      = array( __CLASS__, 'fields_form' );
 		$screen        = self::$target_post_type;
 		$context       = 'advanced';
@@ -47,19 +47,15 @@ class VKB_Block_Template_Custom_Fields {
 	}
 
 	public static function custom_fields_array() {
-		
+
 		$custom_fields_array = array(
-			// 'salary_staff'         => array(
-			// 	'label'       => 'スタッフ',
-			// 	'type'        => 'select',
-			// 	'description' => 'スタッフは<a href="' . admin_url( '/post-new.php?post_type=staff' ) . '" target="_blank">こちら</a>から登録してください。',
-			// 	'required'    => true,
-			// 	'options'     => $staff,
-			// ),
 			self::$target_post_meta_key  => array(
-				'label'       => 'Staff No.',
-				'type'        => 'text',
-				'description' => '支給分一覧ではこの値が小さい順に表示されます。',
+				'label'       => '',
+				'type'        => 'checkbox',
+				'description' => __( 'By cheking above, you cann reinsert this block from sidebar', 'vk-blocks' ),
+				'options'     => array(
+					true => __( 'Register as template', 'vk-google-job-posting-manager' ),
+				),
 				'required'    => false,
 			)
 		);

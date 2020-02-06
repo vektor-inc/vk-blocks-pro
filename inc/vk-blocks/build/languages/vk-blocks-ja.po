@@ -15,6 +15,22 @@ msgstr ""
 "X-Poedit-KeywordsList: __\n"
 "X-Poedit-SearchPath-0: .\n"
 
+#: components/card-align-control/index.js:22
+msgid "Align"
+msgstr "表示位置"
+
+#: components/link-control/index.js:37
+msgid "Link target"
+msgstr "リンクターゲット"
+
+#: components/link-control/index.js:41
+msgid "Open in new tab"
+msgstr "リンクを別ウィンドウで開く"
+
+#: components/link-control/index.js:46
+msgid "Link rel"
+msgstr "rel属性"
+
 #: src/_helper/font-awesome.js:21
 msgid "FontAwesome"
 msgstr "Font Awesome:"
@@ -29,149 +45,200 @@ msgstr ""
 msgid "Font Awesome icon list"
 msgstr "Font Awesome アイコンリスト"
 
-#: src/_helper/post-list.js:191
+#: src/_helper/post-list.js:192
 msgid "Filter by PostTypes"
 msgstr "投稿タイプ"
 
-#: src/_helper/post-list.js:194
+#: src/_helper/post-list.js:195
 msgid "Filter by Taxonomy Terms"
 msgstr "分類"
 
-#: src/_helper/post-list.js:197
+#: src/_helper/post-list.js:198
 msgid "Number of Posts"
 msgstr "表示件数"
 
-#: src/_helper/post-list.js:269
+#: src/_helper/post-list.js:270
 msgid "Exsist Already Page"
 msgstr ""
 
-#: src/_helper/post-list.js:288
+#: src/_helper/post-list.js:289
 msgid "Current Page"
 msgstr ""
 
-#: src/_helper/post-list.js:300
+#: src/_helper/post-list.js:301
 msgid "Display conditions"
 msgstr "表示条件"
 
-#: src/_helper/post-list.js:303
+#: src/_helper/post-list.js:304
 msgid "Parent"
 msgstr "親ページ"
 
-#: src/_helper/post-list.js:319
+#: src/_helper/post-list.js:320
 msgid "Display type and columns"
 msgstr "表示タイプとカラム"
 
-#: src/_helper/post-list.js:322
-msgid "Display type"
-msgstr "表示タイプ"
-
-#: src/_helper/post-list.js:329
-msgid "Card"
-msgstr "カード"
-
-#: src/_helper/post-list.js:333
-msgid "Card Horizontal"
-msgstr "カード（水平）"
-
-#: src/_helper/post-list.js:337
-msgid "Media"
-msgstr "メディア"
-
-#: src/_helper/post-list.js:343
+#: src/_helper/post-list.js:325
 msgid "Column ( Screen size : Extra small )"
 msgstr "カラム ( 画面サイズ : Extra small )"
 
-#: src/_helper/post-list.js:353
+#: src/_helper/post-list.js:335
 msgid "Column ( Screen size : Small )"
 msgstr "カラム ( 画面サイズ : Small )"
 
-#: src/_helper/post-list.js:363
+#: src/_helper/post-list.js:345
 msgid "Column ( Screen size : Medium )"
 msgstr "カラム ( 画面サイズ : Medium )"
 
-#: src/_helper/post-list.js:373
+#: src/_helper/post-list.js:355
 msgid "Column ( Screen size : Large )"
 msgstr "カラム ( 画面サイズ : Large )"
 
-#: src/_helper/post-list.js:383
+#: src/_helper/post-list.js:365
 msgid "Column ( Screen size : Extra large )"
 msgstr "カラム ( 画面サイズ : Extra large )"
 
-#: src/_helper/post-list.js:398
-msgid "Display item"
-msgstr "表示要素"
+#: src/_helper/post-list.js:392
+msgid "Card ( No border )"
+msgstr "カード（線なし）"
 
 #: src/_helper/post-list.js:400
-msgid "Image"
-msgstr "画像"
+msgid "Display type"
+msgstr "表示タイプ"
 
-#: src/_helper/post-list.js:405
+#: src/_helper/post-list.js:407 src/_pro/card/block.js:51
+msgid "Card"
+msgstr "カード"
+
+#: src/_helper/post-list.js:411
+msgid "Card Horizontal"
+msgstr "カード（水平）"
+
+#: src/_helper/post-list.js:415
+msgid "Media"
+msgstr "メディア"
+
+#: src/_helper/post-list.js:433
 msgid "Term name"
 msgstr "分類名"
 
-#: src/_helper/post-list.js:412
+#: src/_helper/post-list.js:440
 msgid "Excerpt"
 msgstr "抜粋"
 
-#: src/_helper/post-list.js:417
+#: src/_helper/post-list.js:445
 msgid "Date"
 msgstr "日付"
 
-#: src/_helper/post-list.js:423
+#: src/_helper/post-list.js:451
 msgid "New mark"
 msgstr "新着表示"
 
-#: src/_helper/post-list.js:429 src/button/block.js:59
-msgid "Button"
-msgstr "ボタン"
-
-#: src/_helper/post-list.js:433
+#: src/_helper/post-list.js:461
 msgid "New mark option"
 msgstr "新着表示オプション"
 
-#: src/_helper/post-list.js:435
+#: src/_helper/post-list.js:463
 msgid "Number of days to display the new post mark"
 msgstr "新着表示日数"
 
-#: src/_helper/post-list.js:443
+#: src/_helper/post-list.js:471
 msgid "New post mark"
 msgstr "新着表示"
 
-#: src/_helper/post-list.js:448
-msgid "Button option"
-msgstr "ボタンオプション"
-
-#: src/_helper/post-list.js:450
-msgid "Button text"
-msgstr "ボタンの文字"
-
-#: src/_helper/post-list.js:455
+#: src/_helper/post-list.js:491
 msgid "Button align"
 msgstr "ボタンの位置"
 
-#: src/_helper/post-list.js:462 src/balloon/block.js:129
-#: src/button/block.js:175 src/pr-content/block.js:202
+#: src/_helper/post-list.js:498 src/balloon/block.js:97 src/button/block.js:175
+#: src/pr-content/block.js:202
 msgid "Left"
 msgstr "左"
 
-#: src/_helper/post-list.js:466 src/button/block.js:176
+#: src/_helper/post-list.js:502 src/button/block.js:176
 msgid "Center"
 msgstr "中央"
 
-#: src/_helper/post-list.js:470 src/balloon/block.js:130
-#: src/button/block.js:177 src/pr-content/block.js:201
+#: src/_helper/post-list.js:506 src/balloon/block.js:98 src/button/block.js:177
+#: src/pr-content/block.js:201
 msgid "Right"
 msgstr "右"
+
+#: src/_helper/post-list.js:517
+msgid "Display item"
+msgstr "表示要素"
+
+#: src/_helper/post-list.js:519
+msgid "Image"
+msgstr "画像"
+
+#: src/_helper/post-list.js:524 src/button/block.js:59
+msgid "Button"
+msgstr "ボタン"
+
+#: src/_helper/post-list.js:529
+msgid "Button option"
+msgstr "ボタンオプション"
+
+#: src/_helper/post-list.js:532
+msgid ""
+"Click each card block to set the target url. You can find the url form at "
+"it's sidebar."
+msgstr ""
+"ボタンのリンク先は各カードブロックをクリックすると、サイドバーにURL入力フォー"
+"ムが表示されます。"
+
+#: src/_helper/post-list.js:538
+msgid "Button text"
+msgstr "ボタンの文字"
+
+#: src/_pro/card-item/block.js:34
+msgid "Card Item"
+msgstr "カードアイテム"
+
+#: src/_pro/card-item/block.js:49
+msgid "URL"
+msgstr ""
+
+#: src/_pro/card-item/block.js:54
+msgid "https://www.vektor-inc.co.jp/"
+msgstr ""
+
+#: src/_pro/card-item/component.js:103
+msgid "Delete Image"
+msgstr "画像を削除"
+
+#: src/_pro/card-item/component.js:157
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolore magna aliqua. "
+msgstr ""
+
+#: src/_pro/card-item/component.js:199
+msgid "Title"
+msgstr "タイトルを入力"
+
+#: src/_pro/card-item/component.js:90 src/_pro/outer/block.js:154
+#: src/balloon/block.js:136 src/flow/block.js:112 src/pr-blocks/block.js:179
+#: src/pr-content/component.js:155
+#: src/pr-content/deprecated/component-deprecated.js:102
+#: src/pr-content/deprecated/component-no-boder-color.js:116
+#: src/staff/component.js:88
+msgid "Select image"
+msgstr "画像を選択"
 
 #: src/_pro/child-page/block.js:37
 msgid "Child page list"
 msgstr "子ページリスト"
 
-#: src/_pro/outer/block.js:101 src/pr-content/block.js:91
+#: src/_pro/outer/block.js:116
+msgid "Background Setting"
+msgstr "背景設定"
+
+#: src/_pro/outer/block.js:120 src/pr-content/block.js:91
 msgid "Color Setting"
 msgstr "色設定"
 
-#: src/_pro/outer/block.js:102
+#: src/_pro/outer/block.js:121
 msgid ""
 "Color will overcome background image. If you want to display image, clear "
 "background color or set opacity 0."
@@ -179,187 +246,171 @@ msgstr ""
 "色を指定すると画像よりも優先されます。画像を表示したい場合は、背景色をクリア"
 "するか、不透明度を0に設定します。"
 
-#: src/_pro/outer/block.js:111
+#: src/_pro/outer/block.js:132
 msgid "Opacity Setting"
 msgstr "透過設定"
 
-#: src/_pro/outer/block.js:123
+#: src/_pro/outer/block.js:143
 msgid "Background Image"
 msgstr "背景画像"
 
-#: src/_pro/outer/block.js:135 src/balloon/block.js:111 src/flow/block.js:112
-#: src/pr-blocks/block.js:179 src/pr-content/component.js:144
-#: src/pr-content/deprecated/component-deprecated.js:102
-#: src/pr-content/deprecated/component-no-boder-color.js:116
-#: src/staff/component.js:88
-msgid "Select image"
-msgstr "画像を選択"
-
-#: src/_pro/outer/block.js:137 src/flow/block.js:113 src/pr-blocks/block.js:175
-#: src/pr-content/component.js:149
+#: src/_pro/outer/block.js:159 src/balloon/block.js:141 src/flow/block.js:113
+#: src/pr-blocks/block.js:175 src/pr-content/component.js:162
 #: src/pr-content/deprecated/component-deprecated.js:106
 #: src/pr-content/deprecated/component-no-boder-color.js:120
 msgid "Upload image"
 msgstr "画像をアップロード"
 
-#: src/_pro/outer/block.js:144
+#: src/_pro/outer/block.js:168
 msgid "Background image Position"
 msgstr "背景画像の位置"
 
-#: src/_pro/outer/block.js:151 src/button/block.js:166
+#: src/_pro/outer/block.js:175 src/button/block.js:166
 msgid "normal"
 msgstr "標準"
 
-#: src/_pro/outer/block.js:152
+#: src/_pro/outer/block.js:176
 msgid "Fixed"
 msgstr "固定"
 
-#: src/_pro/outer/block.js:153
+#: src/_pro/outer/block.js:178
 msgid "Parallax (It will not work in preview)"
 msgstr "パララックス（編集画面では反映されません）"
 
-#: src/_pro/outer/block.js:161 src/pr-content/block.js:194
+#: src/_pro/outer/block.js:191 src/pr-content/block.js:194
 msgid "Layout Setting"
 msgstr "レイアウト設定"
 
-#: src/_pro/outer/block.js:166
+#: src/_pro/outer/block.js:196
 msgid "Outer width"
 msgstr "アウターの幅"
 
-#: src/_pro/outer/block.js:169
+#: src/_pro/outer/block.js:199
 msgid "Normal"
 msgstr "標準"
 
-#: src/_pro/outer/block.js:170
+#: src/_pro/outer/block.js:200
 msgid "Full Wide"
 msgstr "全幅"
 
-#: src/_pro/outer/block.js:175
+#: src/_pro/outer/block.js:205
 msgid "Contents area padding (left and right)"
 msgstr "コンテンツエリアの余白 (左右)"
 
-#: src/_pro/outer/block.js:179
+#: src/_pro/outer/block.js:212
 msgid "Do not use padding"
 msgstr "余白なし"
 
-#: src/_pro/outer/block.js:183
+#: src/_pro/outer/block.js:216
 msgid "Use padding"
 msgstr "余白あり"
 
-#: src/_pro/outer/block.js:190
+#: src/_pro/outer/block.js:225
 msgid "Padding (top and bottom)"
 msgstr "余白 (上下)"
 
-#: src/_pro/outer/block.js:193
+#: src/_pro/outer/block.js:228
 msgid "Use default padding"
 msgstr "標準の余白を使用"
 
-#: src/_pro/outer/block.js:195
+#: src/_pro/outer/block.js:230
 msgid "Do not use default padding (Set it yourself using a spacer block etc.)."
 msgstr "標準の余白を使用しない（スペーサーブロックなどで独自に指定する）。"
 
-#: src/_pro/outer/block.js:204
+#: src/_pro/outer/block.js:244
 msgid "Divider Setting"
 msgstr "区切りの設定"
 
-#: src/_pro/outer/block.js:209 src/balloon/block.js:135
+#: src/_pro/outer/block.js:249 src/balloon/block.js:103
 msgid "Type"
 msgstr "タイプ"
 
-#: src/_pro/outer/block.js:215
+#: src/_pro/outer/block.js:255
 msgid "Tilt"
 msgstr "傾斜"
 
-#: src/_pro/outer/block.js:219
+#: src/_pro/outer/block.js:259
 msgid "Curve"
 msgstr "カーブ"
 
-#: src/_pro/outer/block.js:223
+#: src/_pro/outer/block.js:263
 msgid "Wave"
 msgstr "波状"
 
-#: src/_pro/outer/block.js:227 src/list-style/block.js:113
+#: src/_pro/outer/block.js:267 src/list-style/block.js:113
 msgid "Triangle"
 msgstr "三角"
 
-#: src/_pro/outer/block.js:233
+#: src/_pro/outer/block.js:272
 msgid "Upper Divider Level"
 msgstr "上部区切りレベル"
 
-#: src/_pro/outer/block.js:249
+#: src/_pro/outer/block.js:290
 msgid "Lower Divider Level"
 msgstr "下部区切りレベル"
 
-#: src/_pro/outer/block.js:266
+#: src/_pro/outer/block.js:310
 msgid "Border Setting"
 msgstr "枠線の設定"
 
-#: src/_pro/outer/block.js:272
+#: src/_pro/outer/block.js:317
 msgid "Border will disappear when divider effect is applied."
 msgstr "枠線は区切りレベルを適用すると表示されなくなります。"
 
-#: src/_pro/outer/block.js:274
+#: src/_pro/outer/block.js:323
 msgid "Border type"
 msgstr "枠線の種類"
 
-#: src/_pro/outer/block.js:280 src/_pro/step-item/block.js:120
+#: src/_pro/outer/block.js:329 src/_pro/step-item/block.js:120
 #: src/_pro/timeline-item/block.js:103 src/staff/block.js:109
 msgid "None"
 msgstr "なし"
 
-#: src/_pro/outer/block.js:284 src/_pro/step-item/block.js:97
+#: src/_pro/outer/block.js:333 src/_pro/step-item/block.js:97
 #: src/_pro/timeline-item/block.js:84 src/group-style/block.js:95
 #: src/pr-content/block.js:146
 msgid "Solid"
 msgstr "直線"
 
-#: src/_pro/outer/block.js:288 src/group-style/block.js:103
+#: src/_pro/outer/block.js:337 src/group-style/block.js:103
 msgid "Dotted"
 msgstr "点線"
 
-#: src/_pro/outer/block.js:292 src/group-style/block.js:107
+#: src/_pro/outer/block.js:341 src/group-style/block.js:107
 msgid "Dashed"
 msgstr "Dashed"
 
-#: src/_pro/outer/block.js:296 src/group-style/block.js:111
+#: src/_pro/outer/block.js:345 src/group-style/block.js:111
 msgid "Double"
 msgstr "二重線"
 
-#: src/_pro/outer/block.js:300
+#: src/_pro/outer/block.js:349
 msgid "Groove"
 msgstr "Groove"
 
-#: src/_pro/outer/block.js:304
+#: src/_pro/outer/block.js:353
 msgid "Ridge"
 msgstr "Ridge"
 
-#: src/_pro/outer/block.js:308
+#: src/_pro/outer/block.js:357
 msgid "Inset"
 msgstr "Inset"
 
-#: src/_pro/outer/block.js:312
+#: src/_pro/outer/block.js:361
 msgid "Outset"
 msgstr "Outset"
 
-#: src/_pro/outer/block.js:324
+#: src/_pro/outer/block.js:372
 msgid "Border width"
 msgstr "枠線の幅"
 
-#: src/_pro/outer/block.js:333
+#: src/_pro/outer/block.js:379
 msgid "Border radius"
 msgstr "枠線のRの大きさ"
 
-#: src/_pro/outer/block.js:352 src/_pro/table-of-contents/block.js:178
-msgid "This block is only for users who bought Lightning Pro."
-msgstr "このブロックは Lightning Pro 専用です。"
-
-#: src/_pro/outer/block.js:44
+#: src/_pro/outer/block.js:63
 msgid "Outer"
 msgstr "Outer"
-
-#: src/_pro/outer/block.js:97
-msgid "Background Setting"
-msgstr "背景設定"
 
 #: src/_pro/post-list/block.js:53
 msgid "Post list"
@@ -369,7 +420,7 @@ msgstr "投稿リスト"
 msgid "Outlined"
 msgstr "アウトライン"
 
-#: src/_pro/step-item/block.js:116 src/_pro/table-of-contents/block.js:160
+#: src/_pro/step-item/block.js:116 src/_pro/table-of-contents/block.js:159
 #: src/_pro/timeline-item/block.js:99 src/heading-style/block.js:33
 #: src/heading/block.js:124 src/list-style/block.js:104 src/staff/block.js:105
 msgid "Default"
@@ -396,12 +447,12 @@ msgstr "例) 午前 6:00"
 msgid "Color"
 msgstr "色"
 
-#: src/_pro/step-item/block.js:86 src/_pro/table-of-contents/block.js:153
+#: src/_pro/step-item/block.js:86 src/_pro/table-of-contents/block.js:152
 #: src/_pro/timeline-item/block.js:69
 msgid "Style"
 msgstr "スタイル"
 
-#: src/_pro/step/block.js:121
+#: src/_pro/step/block.js:124
 msgid "First Dot Number"
 msgstr "ステップの開始番号"
 
@@ -414,7 +465,7 @@ msgstr "ステップ"
 msgid "Table of Contents"
 msgstr "目次"
 
-#: src/_pro/table-of-contents/block.js:164
+#: src/_pro/table-of-contents/block.js:163
 msgid "No frame"
 msgstr "枠無し"
 
@@ -434,41 +485,41 @@ msgstr "タイムライン"
 msgid "Alert"
 msgstr "アラート"
 
-#: src/balloon/block.js:123
-msgid "Balloon setting"
-msgstr "フキダシ設定"
-
-#: src/balloon/block.js:125 src/heading/block.js:176
-msgid "Position"
-msgstr "位置"
-
-#: src/balloon/block.js:126
-msgid "Please specify the layout of the balloon."
-msgstr "吹き出しの配置を指定してください。"
-
-#: src/balloon/block.js:136
+#: src/balloon/block.js:104
 msgid "Please select the type of balloon."
 msgstr "吹き出しのタイプを指定してください。"
 
-#: src/balloon/block.js:139
+#: src/balloon/block.js:107
 msgid "Serif"
 msgstr "セリフ"
 
-#: src/balloon/block.js:140
+#: src/balloon/block.js:108
 msgid "Thinking"
 msgstr "吹き出し"
 
-#: src/balloon/block.js:161
+#: src/balloon/block.js:152
 msgid "Icon Name"
 msgstr "アイコンの名前"
 
-#: src/balloon/block.js:170 src/button/block.js:250
+#: src/balloon/block.js:161 src/button/block.js:250
 msgid "Input text"
 msgstr "文字を入力"
 
-#: src/balloon/block.js:32
+#: src/balloon/block.js:38
 msgid "Ballon"
 msgstr "フキダシ"
+
+#: src/balloon/block.js:88
+msgid "Balloon setting"
+msgstr "フキダシ設定"
+
+#: src/balloon/block.js:90 src/heading/block.js:176
+msgid "Position"
+msgstr "位置"
+
+#: src/balloon/block.js:91
+msgid "Please specify the layout of the balloon."
+msgstr "吹き出しの配置を指定してください。"
 
 #: src/button/block.js:149
 msgid "Button setting"
@@ -600,17 +651,17 @@ msgstr ""
 msgid "Apply"
 msgstr ""
 
-#: src/faq/block.js:42
+#: src/faq/block.js:100
+msgid "Please enter a answer."
+msgstr "回答を入力してください。"
+
+#: src/faq/block.js:56
 msgid "FAQ"
 msgstr "質問と解答"
 
-#: src/faq/block.js:79
+#: src/faq/block.js:93
 msgid "Please enter a question."
 msgstr "質問を入力してください。"
-
-#: src/faq/block.js:86
-msgid "Please enter a answer."
-msgstr "回答を入力してください。"
 
 #: src/flow/block.js:28
 msgid "Flow"
@@ -928,13 +979,13 @@ msgstr "PR Content"
 msgid "Title Color"
 msgstr "見出しの色"
 
-#: src/pr-content/component.js:179
+#: src/pr-content/component.js:194
 #: src/pr-content/deprecated/component-deprecated.js:122
 #: src/pr-content/deprecated/component-no-boder-color.js:136
 msgid "Input title."
 msgstr "タイトルを入力してください。"
 
-#: src/pr-content/component.js:187
+#: src/pr-content/component.js:202
 #: src/pr-content/deprecated/component-deprecated.js:130
 #: src/pr-content/deprecated/component-no-boder-color.js:144
 msgid "Input content."
@@ -1032,6 +1083,14 @@ msgstr "名前"
 msgid "Caption"
 msgstr "キャプション"
 
+#, fuzzy
+#~| msgid "Icon setting"
+#~ msgid "Link settings"
+#~ msgstr "アイコン設定"
+
+#~ msgid "This block is only for users who bought Lightning Pro."
+#~ msgstr "このブロックは Lightning Pro 専用です。"
+
 #~ msgid "top-bottom-border"
 #~ msgstr "上下線"
 
@@ -1101,9 +1160,6 @@ msgstr "キャプション"
 #~ msgid "Label"
 #~ msgstr "ラベル"
 
-#~ msgid "Icon setting"
-#~ msgstr "アイコン設定"
-
 #, fuzzy
 #~| msgid "Button Style:"
 #~ msgid "Icon Style:"
@@ -1170,9 +1226,6 @@ msgstr "キャプション"
 #~ msgid "Use contents area default padding"
 #~ msgstr "コンテンツエリアの左右に標準の余白を使用"
 
-#~ msgid "Link target"
-#~ msgstr "リンクターゲット"
-
 #~ msgid "Open url in new window"
 #~ msgstr "リンクを別ウィンドウで開く"
 
@@ -1191,6 +1244,3 @@ msgstr "キャプション"
 
 #~ msgid "Width Setting"
 #~ msgstr "幅設定"
-
-#~ msgid "Link url"
-#~ msgstr "リンクURL"

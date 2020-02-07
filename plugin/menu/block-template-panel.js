@@ -6,7 +6,9 @@ const { first, last } = window.lodash;
 
 const { parse } = wp.blocks;
 
-const { Button, Spinner, BlockPreview } = wp.components;
+const { Button, Spinner } = wp.components;
+
+const { BlockPreview } = wp.blockEditor;
 
 const { useState, useMemo } = wp.element;
 
@@ -130,13 +132,50 @@ export default ({ slug }) => {
   //   return <ul>{resultParts}</ul>;
   // }
 
-  const parsedBlock = parse(`<!-- wp:paragraph -->
-        <p><a href="tel:5555551234">(555) 555 1234</a></p>
-        <!-- /wp:paragraph -->`);
+  console.log(BlockPreview);
+
+  const template0 = `<!-- wp:list {"className":"is-style-vk-arrow-mark"} -->
+  <ul class="is-style-vk-arrow-mark"><li>test</li></ul>
+  <!-- /wp:list -->`;
+
+  const template1 = `
+  <!-- wp:paragraph {"align":"left"} -->
+  <p class="has-text-align-left">Let's talk 👋 Don't hesitate to reach out with the contact information below, or send a message using the form.</p>
+  <!-- /wp:paragraph -->
+  <!-- wp:heading {"align":"left"} -->
+  <h2 class="has-text-align-left">Get in Touch</h2>
+  <!-- /wp:heading -->
+  <!-- wp:paragraph -->
+  <p>10 Street Road</p>
+  <!-- /wp:paragraph -->
+  <!-- wp:paragraph -->
+  <p>City,  10100</p>
+  <!-- /wp:paragraph -->
+  <!-- wp:paragraph -->
+  <p>USA</p>
+  <!-- /wp:paragraph -->
+  <!-- wp:paragraph -->
+  <p><a href="mailto:mail@example.com">mail@example.com</a></p>
+  <!-- /wp:paragraph -->
+  <!-- wp:paragraph -->
+  <p><a href="tel:5555551234">(555) 555 1234</a></p>
+  <!-- /wp:paragraph -->
+`;
+
+  const parsedBlock = parse(template1);
+  // const getBlock = parsedBlock[0];
+
+  // delete getBlock["validationIssues"];
+  // delete getBlock["originalContent"];
+
+  // console.log(getBlock);
+
+  // let test = <BlockPreview viewportWidth={500} blocks={getBlock} />;
+  // console.log(test);
+
   return (
-    <BlockPreview blocks={parsedBlock} />
-    // <div className="vkb_menu__template-part__loading">
-    //   <Spinner />
-    // </div>
+    <div>
+      <BlockPreview viewportWidth={300} blocks={parsedBlock} />
+    </div>
   );
 };

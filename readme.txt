@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.3.2
-Stable tag: 0.22.2
+Stable tag: 0.22.3
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -58,8 +58,13 @@ e.g.
 
 == Changelog ==
 
+= 0.22.3 =
+[ BugFix ][ PR Content ] Error fix
+[ Specification change ] Add css load point hook
+[ Specification change ][ YouTube ] Add 100% width
+
 = 0.22.2 =
-[ Specification change ] load css on header from footer
+[ Specification change( Revert ) ] load css on header from footer
 
 = 0.22.0 =
 [ Specification change ] load font awesome on footer from header

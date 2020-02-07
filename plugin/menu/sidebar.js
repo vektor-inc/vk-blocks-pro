@@ -36,7 +36,8 @@ export default function() {
       </PluginSidebarMoreMenuItem>
 
       <PluginSidebar name="vkbSidebar" title={__("VK Blocks", "vk-blocks")}>
-        <TabPanel
+        <BlockTemplatePanel />
+        {/* <TabPanel
           className="edit-post-sidebar__panel-tab"
           activeClass="is-active"
           onSelect={tabName => applyFilters("vk-blocks.select-menu", tabName)}
@@ -49,7 +50,7 @@ export default function() {
             }
             return null;
           }}
-        </TabPanel>
+        </TabPanel> */}
       </PluginSidebar>
     </Fragment>
   );

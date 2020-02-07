@@ -100,11 +100,33 @@ export default ({ slug }) => {
               }
             }}
           >
-            <BlockPreview viewportWidth={300} blocks={parsedBlock} />
-            <span className="vkb-menu__template-part__button__title">
+            <section class="container">
+              <div class="card">
+                <div class="content">
+                  {/* <img
+                    class="logo"
+                    src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/76882/logo.svg"
+                    alt="mparticle"
+                  /> */}
+                  <h6>{part.title.raw}</h6>
+                  <div class="hover_content">
+                    <div class="inner">
+                      <BlockPreview viewportWidth={400} blocks={parsedBlock} />
+                    </div>
+                    {/* <p>
+                      mParticle’s customer data platform empowers you to
+                      Integrate all of your data and orchestrate it across
+                      channels, partners, and systems.
+                    </p> */}
+                  </div>
+                </div>
+              </div>
+            </section>
+            {/* <BlockPreview viewportWidth={300} blocks={parsedBlock} /> */}
+            {/* <span className="vkb-menu__template-part__button__title">
               <BlockPreview viewportWidth={300} blocks={parsedBlock} />
               {part.title.raw}
-            </span>
+            </span> */}
           </Button>
         </li>
       );

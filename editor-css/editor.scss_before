@@ -48,13 +48,6 @@ input[type=range] {
 
 /* ブロックインサーター@サイドバー用 */
 
-.edit-post-sidebar>.components-panel {
-    height: 100%!important;
-}
-.edit-post-sidebar__panel-tab{
-	height:100%;
-	padding:0;
-}
 .vkb-menu__template-part__button{
 	padding:0;
 	width:100%;
@@ -100,6 +93,7 @@ input[type=range] {
     .content {
       width: 100%;
       max-width: 100%;
+      padding: 15px;
     }
     .logo {
       margin: 0 0 1em;
@@ -114,7 +108,7 @@ input[type=range] {
       letter-spacing: 2px;
     }
     .hover_content {
-      overflow: hidden;
+      overflow: scroll;
       max-height: 0;
       transform: translateY(1em);
       transition: all .55s ease;
@@ -142,17 +136,18 @@ input[type=range] {
         margin-bottom: .5em;
       }
       .hover_content {
-        max-height: 1000px;
+        max-height: 60vh;
+        height:100%;
         transform: none;
+        margin-top: 20px;
         .inner{
-          height: 500px;
+          height:400px;
           width: 100%;
         }
       }
     }
   }
 }
-
 
 /* editor area *********************************************/
 .edit-post-visual-editor.editor-styles-wrapper{

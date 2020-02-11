@@ -111,7 +111,7 @@ export default ({ slug }) => {
                   <h6>{part.title.raw}</h6>
                   <div class="hover_content">
                     <div class="inner">
-                      <BlockPreview viewportWidth={400} blocks={parsedBlock} />
+                      <BlockPreview viewportWidth={300} blocks={parsedBlock} />
                     </div>
                     {/* <p>
                       mParticle’s customer data platform empowers you to

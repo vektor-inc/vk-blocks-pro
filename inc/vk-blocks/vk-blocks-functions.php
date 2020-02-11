@@ -336,3 +336,19 @@ if ( ! function_exists( 'vkblocks_blocks_categories' ) ) {
 	}
 	add_filter( 'block_categories', 'vkblocks_blocks_categories', 10, 2 );
 }
+function add_posts_columns( $columns ) {
+	$columns['vkb_template'] = 'VKB テンプレート';
+	return $columns;
+  }
+  function custom_posts_column( $column_name, $post_id ) {
+	if ( $column_name == 'vkb_template' ) {
+	  $cf_vkb_template = get_post_meta( $post_id, 'is_registerd_vkb_template', true );
+	  $cf_vkb_template ? $checked = "checked" : $checked = "";
+	  echo  '<input type="checkbox" name="is_registerd_vkb_template[]" id="is_registerd_vkb_template' . $post_id .'" value="1" ' . $checked . '>';
+	  //ajaxの保存処理を追加
+	}
+  }
+  add_filter( 'manage_wp_block_posts_columns', 'add_posts_columns' );
+  add_action( 'manage_wp_block_posts_custom_column', 'custom_posts_column', 10, 2 );
+
+

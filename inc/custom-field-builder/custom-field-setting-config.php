@@ -4,7 +4,7 @@
 */
 
 class VKB_Block_Template_Custom_Fields {
-
+	
 	static public $target_post_type;
 	static public $target_post_meta_key;
 
@@ -54,7 +54,7 @@ class VKB_Block_Template_Custom_Fields {
 				'type'        => 'checkbox',
 				'description' => __( 'By cheking above, you cann reinsert this block from sidebar', 'vk-blocks' ),
 				'options'     => array(
-					true => __( 'Register as template', 'vk-google-job-posting-manager' ),
+					1 => __( 'Register as template', 'vk-google-job-posting-manager' ),
 				),
 				'required'    => false,
 			)

@@ -344,11 +344,38 @@ function add_posts_columns( $columns ) {
 	if ( $column_name == 'vkb_template' ) {
 	  $cf_vkb_template = get_post_meta( $post_id, 'is_registerd_vkb_template', true );
 	  $cf_vkb_template ? $checked = "checked" : $checked = "";
-	  echo  '<input type="checkbox" name="is_registerd_vkb_template[]" id="is_registerd_vkb_template' . $post_id .'" value="1" ' . $checked . '>';
-	  //ajaxの保存処理を追加
-	}
-  }
+	  $ajax_nonce = wp_create_nonce( "my-special-string" );
+	  echo '<form name="register_vkb_template_form' . $post_id .'"><input type="checkbox" name="is_registerd_vkb_template" id="is_registerd_vkb_template' . $post_id .'"' . $checked . '>';
+	  echo '<script type="text/javascript">
+	  jQuery(document).ready(function($){
+		$("#is_registerd_vkb_template' . $post_id .'").on("change", function(){
+			let value = document.getElementById("is_registerd_vkb_template' . $post_id .'").checked;
+			var data = {
+				action: "my_action",
+				security: "' . $ajax_nonce . '",
+				my_string: JSON.stringify({ "postId": ' . $post_id .', "checked": value })
+			};
+			$.post(ajaxurl, data, function(response) {
+				console.log(response);
+			});
+		})
+	  });
+	  </script>';	
+	};
+  };
   add_filter( 'manage_wp_block_posts_columns', 'add_posts_columns' );
   add_action( 'manage_wp_block_posts_custom_column', 'custom_posts_column', 10, 2 );
+
+  add_action( 'wp_ajax_my_action', 'my_action_function' );
+  function my_action_function() {
+	  check_ajax_referer( 'my-special-string', 'security' );
+	  $raw = sanitize_text_field( $_POST['my_string'] );
+	  $raw = str_replace("\\", "", $raw);
+	  $ajaxData = json_decode( $raw ,true);
+	  $save = $ajaxData["checked"] ? array("1") : '';
+	  echo update_post_meta($ajaxData["postId"], 'is_registerd_vkb_template', $save);
+	  wp_die();
+  }
+  
 
 

@@ -9,6 +9,8 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 
 	// Set asset URL.
 	define( 'VK_BLOCKS_URL', plugin_dir_url( __FILE__ ) . 'vk-blocks/' );
+	define( 'VK_BLOCKS_INC_URL', plugin_dir_url( __FILE__ ));
+	
 	// Set version number.
 	define( 'VK_BLOCKS_VERSION', '0.13.0' );
 

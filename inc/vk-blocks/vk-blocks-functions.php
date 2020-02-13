@@ -339,31 +339,19 @@ if ( ! function_exists( 'vkblocks_blocks_categories' ) ) {
 function add_posts_columns( $columns ) {
 	$columns['vkb_template'] = 'VKB テンプレート';
 	return $columns;
-  }
-  function custom_posts_column( $column_name, $post_id ) {
+}
+function custom_posts_column( $column_name, $post_id ) {
 	if ( $column_name == 'vkb_template' ) {
-	  $cf_vkb_template = get_post_meta( $post_id, 'is_registerd_vkb_template', true );
-	  $cf_vkb_template ? $checked = "checked" : $checked = "";
-	  $ajax_nonce = wp_create_nonce( "my-special-string" );
-	  echo '<form name="register_vkb_template_form' . $post_id .'"><input type="checkbox" name="is_registerd_vkb_template" id="is_registerd_vkb_template' . $post_id .'"' . $checked . '>';
-	  echo '<script type="text/javascript">
-	  jQuery(document).ready(function($){
-		$("#is_registerd_vkb_template' . $post_id .'").on("change", function(){
-			let value = document.getElementById("is_registerd_vkb_template' . $post_id .'").checked;
-			var data = {
-				action: "my_action",
-				security: "' . $ajax_nonce . '",
-				my_string: JSON.stringify({ "postId": ' . $post_id .', "checked": value })
-			};
-			$.post(ajaxurl, data, function(response) {
-				console.log(response);
-			});
-		})
-	  });
-	  </script>';	
+		$ajax_nonce = wp_create_nonce( "my-special-string" );
+		$cf_vkb_template = get_post_meta( $post_id, 'is_registerd_vkb_template', true );
+		$cf_vkb_template ? $checked = "checked" : $checked = "";
+
+		echo '<form name="register_vkb_template_form' . $post_id .'">';
+		echo '<input type="checkbox" name="is_registerd_vkb_template" id="is_registerd_vkb_template' . $post_id .'"' . ' ' . $checked . '>';
+		echo '<script type="text/javascript">saveCheckBox("' . $post_id . '", "' . $ajax_nonce . '");</script>';	
 	};
   };
-  add_filter( 'manage_wp_block_posts_columns', 'add_posts_columns' );
+  add_filter( 'manage_wp_block_posts_columns', 'add_posts_columns' );	
   add_action( 'manage_wp_block_posts_custom_column', 'custom_posts_column', 10, 2 );
 
   add_action( 'wp_ajax_my_action', 'my_action_function' );
@@ -377,5 +365,13 @@ function add_posts_columns( $columns ) {
 	  wp_die();
   }
   
+function enqueue_ajax_script_checkbox(){
+	wp_enqueue_script( 'fetch-polyfill', plugins_url().'/vk-blocks-pro/plugin/menu/fetch.umd.js' );
+	wp_enqueue_script( 'ajax_script_checkbox', plugins_url().'/vk-blocks-pro/plugin/menu/helper_checkbox.js',array('fetch-polyfill') );
+}
+add_action( 'admin_print_scripts-edit.php', 'enqueue_ajax_script_checkbox' );
 
-
+function print_nonce(){
+	$ajax_nonce = wp_create_nonce( "my-special-string" );
+}
+add_action( 'admin_head-edit.php', 'print_nonce' );

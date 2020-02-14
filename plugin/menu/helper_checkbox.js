@@ -22,10 +22,6 @@ function saveCheckBox(post_id, ajax_nonce) {
         .then(response => response.json())
         .then(data => console.log(JSON.stringify(data))) // JSON-string from `response.json()` call
         .catch(error => console.error(error));
-    } else {
-      alert(
-        "ご使用のブラウザはサポートしていません。Chrome, firefox, Edge等の最新版のブラウザをご使用下さい"
-      );
     }
   });
 }

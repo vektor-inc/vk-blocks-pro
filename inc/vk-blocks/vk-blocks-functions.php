@@ -336,6 +336,8 @@ if ( ! function_exists( 'vkblocks_blocks_categories' ) ) {
 	}
 	add_filter( 'block_categories', 'vkblocks_blocks_categories', 10, 2 );
 }
+
+
 function add_posts_columns( $columns ) {
 	$columns['vkb_template'] = 'VKB テンプレート';
 	return $columns;
@@ -366,12 +368,12 @@ function custom_posts_column( $column_name, $post_id ) {
   }
   
 function enqueue_ajax_script_checkbox(){
-	wp_enqueue_script( 'fetch-polyfill', plugins_url().'/vk-blocks-pro/plugin/menu/fetch.umd.js' );
-	wp_enqueue_script( 'ajax_script_checkbox', plugins_url().'/vk-blocks-pro/plugin/menu/helper_checkbox.js',array('fetch-polyfill') );
+
+	global $post_type;
+	if ($post_type == 'wp_block') {
+		wp_enqueue_script( 'fetch-polyfill', plugins_url().'/vk-blocks-pro/plugin/menu/fetch.umd.js' );
+		wp_enqueue_script( 'ajax_script_checkbox', plugins_url().'/vk-blocks-pro/plugin/menu/helper_checkbox.js',array('fetch-polyfill') );
+	}
 }
 add_action( 'admin_print_scripts-edit.php', 'enqueue_ajax_script_checkbox' );
 
-function print_nonce(){
-	$ajax_nonce = wp_create_nonce( "my-special-string" );
-}
-add_action( 'admin_head-edit.php', 'print_nonce' );

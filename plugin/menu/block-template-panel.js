@@ -1,7 +1,3 @@
-import { Fragment } from "react";
-
-// import ScreenshotImg from "./screenshot-img";
-
 const { first, last } = window.lodash;
 
 const { parse } = wp.blocks;
@@ -10,11 +6,13 @@ const { Button, Spinner } = wp.components;
 
 const { BlockPreview } = wp.blockEditor;
 
-const { useState, useMemo } = wp.element;
+const { useState, useMemo, Fragment } = wp.element;
 
 const { dispatch, select } = wp.data;
 
 const { insertBlocks, replaceBlocks, multiSelect } = dispatch("core/editor");
+
+const { __ } = wp.i18n;
 
 const {
   getBlocks,
@@ -40,7 +38,6 @@ export default ({ slug }) => {
       const filterd = result.filter(value => {
         return value.custom_fields.is_registerd_vkb_template[0] === "1";
       });
-      console.log(filterd);
       setParts(filterd);
     });
   };
@@ -102,30 +99,15 @@ export default ({ slug }) => {
             <section class="container">
               <div class="card">
                 <div class="content">
-                  {/* <img
-                    class="logo"
-                    src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/76882/logo.svg"
-                    alt="mparticle"
-                  /> */}
                   <h6>{part.title.raw}</h6>
                   <div class="hover_content">
                     <div class="inner">
                       <BlockPreview viewportWidth={300} blocks={parsedBlock} />
                     </div>
-                    {/* <p>
-                      mParticle’s customer data platform empowers you to
-                      Integrate all of your data and orchestrate it across
-                      channels, partners, and systems.
-                    </p> */}
                   </div>
                 </div>
               </div>
             </section>
-            {/* <BlockPreview viewportWidth={300} blocks={parsedBlock} /> */}
-            {/* <span className="vkb-menu__template-part__button__title">
-              <BlockPreview viewportWidth={300} blocks={parsedBlock} />
-              {part.title.raw}
-            </span> */}
           </Button>
         </li>
       );
@@ -136,9 +118,20 @@ export default ({ slug }) => {
   setupResultParts();
 
   if (resultParts) {
-    return <ul>{resultParts}</ul>;
+    return (
+      <Fragment>
+        <ul>{resultParts}</ul>
+        <div className={"vkb-menu__template-part__advanced"}>
+          <a
+            href="/wp-admin/edit.php?post_type=wp_block"
+            className={"vkb-menu__template-part__advanced-link isLink"}
+          >
+            {__("Advanced Settings", "vk-blocks")}
+          </a>
+        </div>
+      </Fragment>
+    );
   }
-
   return (
     <div className="vkb-menu__template-part__loading">
       <Spinner />

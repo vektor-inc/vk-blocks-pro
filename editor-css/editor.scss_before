@@ -149,6 +149,19 @@ input[type=range] {
   }
 }
 
+.vkb-menu__template-part__advanced{
+    font-size: 10px;
+    padding: 2px 17px;
+    position: fixed;
+    height: 25px;
+    bottom: 0;
+    right: 0px;
+    width: 279px;
+    background-color: #fff;
+    text-align: right;
+    border-top: 1px solid #e2e4e7;
+}
+
 /* editor area *********************************************/
 .edit-post-visual-editor.editor-styles-wrapper{
 

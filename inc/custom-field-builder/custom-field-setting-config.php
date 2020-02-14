@@ -54,15 +54,14 @@ class VKB_Block_Template_Custom_Fields {
 				'type'        => 'checkbox',
 				'description' => __( 'By cheking above, you cann reinsert this block from sidebar', 'vk-blocks' ),
 				'options'     => array(
-					1 => __( 'Register as template', 'vk-google-job-posting-manager' ),
+					1 => __( 'Register as template', 'vk-blocks' ),
 				),
 				'required'    => false,
 			)
 		);
 		return $custom_fields_array;
 	}
-
-
+	
 	public static function be_reusable_blocks_admin_menu() {
 		add_menu_page( __( 'Reusable Blocks', 'vk-blocks' ), __( 'Reusable Blocks', 'vk-blocks' ), 'edit_posts', 'edit.php?post_type=wp_block', '', 'dashicons-editor-table', 22 );
 	}

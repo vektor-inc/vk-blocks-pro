@@ -3,14 +3,15 @@
 /**
  * The admin notice for VK blocks Pro.
  */
-function vkblocks_admin_notice_pro() {
+function vkblocks_admin_notice_template() {
 
-    $plugin_base_dir = dirname(__FILE__);
-	if(strpos($plugin_base_dir,'vk-blocks-pro') !== false) {
+	global $post_type;
+
+    if ($post_type !== 'wp_block') {
 		return;
 	}
 
-	$meta = get_user_meta( get_current_user_id(), 'vkblocks_dismissed_notice_pro', true );
+	$meta = get_user_meta( get_current_user_id(), 'vkblocks_dismissed_notice_template', true );
 	if ( $meta ) {
 		return;
 	}
@@ -36,24 +37,21 @@ function vkblocks_admin_notice_pro() {
 			?>
 		</p>
 		<p>
-			<a href="<?php echo esc_url( __( 'https://www.vektor-inc.co.jp/info/', 'vk-blocks' ) ); ?>">
-				<?php esc_html_e( 'See more', 'vk-blocks' ); ?></a>
-			<span> | </span>
-			<a href="<?php echo esc_url( wp_nonce_url( add_query_arg( 'vkblocks-dismiss-pro', 'dismiss_admin_notice' ), 'vkblocks-dismiss-pro-' . get_current_user_id() ) ); ?>" target="_parent">
+			<a href="<?php echo esc_url( wp_nonce_url( add_query_arg( 'vkblocks-dismiss-template', 'dismiss_admin_notice' ), 'vkblocks-dismiss-template-' . get_current_user_id() ) ); ?>" target="_parent">
 				<?php esc_html_e( 'Dismiss this notice', 'vk-blocks' ); ?></a>
 		</p>
 	</div>
 	<?php
 }
-add_action( 'admin_notices', 'vkblocks_admin_notice_pro' );
+add_action( 'admin_notices', 'vkblocks_admin_notice_template' );
 
 
 /**
  * Dismiss admin notice for VK blocks Pro.
  */
-function vkblocks_admin_notice_dismiss() {
-	if ( isset( $_GET['vkblocks-dismiss-pro'] ) && check_admin_referer( 'vkblocks-dismiss-pro-' . get_current_user_id() ) ) {
-		update_user_meta( get_current_user_id(), 'vkblocks_dismissed_notice_pro', 1 );
+function vkblocks_admin_notice_template_dismiss() {
+	if ( isset( $_GET['vkblocks-dismiss-template'] ) && check_admin_referer( 'vkblocks-dismiss-template-' . get_current_user_id() ) ) {
+		update_user_meta( get_current_user_id(), 'vkblocks_dismissed_notice_template', 1 );
 	}
 }
-add_action( 'admin_head', 'vkblocks_admin_notice_dismiss' );
+add_action( 'admin_head', 'vkblocks_admin_notice_template_dismiss' );

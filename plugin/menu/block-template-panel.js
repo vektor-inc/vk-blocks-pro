@@ -97,7 +97,7 @@ export default ({ slug }) => {
                   </h6>
                   <div class="hover_content">
                     <div class="inner">
-                      <BlockPreview viewportWidth={300} blocks={part.blocks} />
+                      <BlockPreview viewportWidth={320} blocks={part.blocks} />
                     </div>
                   </div>
                 </div>

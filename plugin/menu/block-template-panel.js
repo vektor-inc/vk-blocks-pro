@@ -21,9 +21,8 @@ const {
   getBlockInsertionPoint
 } = select("core/block-editor");
 
-export const vkbFetchReuseableBlocks = () => {
-  return wp.apiFetch({ path: `/wp/v2/blocks?per_page=-1` });
-};
+import parsedTemplates from "./default-templates";
+console.log(parsedTemplates);
 
 export default ({ slug }) => {
   const [parts, setParts] = useState(null);
@@ -33,13 +32,7 @@ export default ({ slug }) => {
     if (parts) {
       return;
     }
-
-    vkbFetchReuseableBlocks().then(result => {
-      const filterd = result.filter(value => {
-        return value.custom_fields.is_registerd_vkb_template[0] === "1";
-      });
-      setParts(filterd);
-    });
+    setParts(parsedTemplates);
   };
 
   const setupResultParts = () => {
@@ -53,13 +46,12 @@ export default ({ slug }) => {
     }
 
     const newResultParts = parts.map(part => {
-      const parsedBlock = parse(part.content.raw);
       return (
         <li>
           <Button
             className="vkb-menu__template-part__button"
             onClick={() => {
-              if (parsedBlock.length) {
+              if (part.blocks.length) {
                 const selectedBlock = getSelectedBlock();
                 if (null === selectedBlock) {
                   const lastRootBlock = last(getBlocks());
@@ -70,9 +62,9 @@ export default ({ slug }) => {
                       ("core/paragraph" === lastRootBlock.name &&
                         "" === lastRootBlock.attributes.content));
                   if (isEmpty) {
-                    replaceBlocks(lastRootBlock.clientId, parsedBlock);
+                    replaceBlocks(lastRootBlock.clientId, part.blocks);
                   } else {
-                    insertBlocks(parsedBlock);
+                    insertBlocks(part.blocks);
                   }
                 } else {
                   const isEmpty =
@@ -81,17 +73,17 @@ export default ({ slug }) => {
                   if (!isEmpty) {
                     const insertionPoint = getBlockInsertionPoint();
                     insertBlocks(
-                      parsedBlock,
+                      part.blocks,
                       insertionPoint.index,
                       insertionPoint.rootClientId
                     );
                   } else {
-                    replaceBlocks(selectedBlock.clientId, parsedBlock);
+                    replaceBlocks(selectedBlock.clientId, part.blocks);
                   }
                 }
                 multiSelect(
-                  first(parsedBlock).clientId,
-                  last(parsedBlock).clientId
+                  first(part.blocks).clientId,
+                  last(part.blocks).clientId
                 );
               }
             }}
@@ -99,10 +91,13 @@ export default ({ slug }) => {
             <section class="container">
               <div class="card">
                 <div class="content">
-                  <h6>{part.title.raw}</h6>
+                  <h6>
+                    {part.icon}
+                    {part.name}
+                  </h6>
                   <div class="hover_content">
                     <div class="inner">
-                      <BlockPreview viewportWidth={300} blocks={parsedBlock} />
+                      <BlockPreview viewportWidth={300} blocks={part.blocks} />
                     </div>
                   </div>
                 </div>

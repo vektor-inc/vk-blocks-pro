@@ -9,7 +9,6 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 
 	// Set asset URL.
 	define( 'VK_BLOCKS_URL', plugin_dir_url( __FILE__ ) . 'vk-blocks/' );
-	define( 'VK_BLOCKS_INC_URL', plugin_dir_url( __FILE__ ));
 	
 	// Set version number.
 	define( 'VK_BLOCKS_VERSION', '0.13.0' );
@@ -19,7 +18,6 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 
 	require_once( 'vk-blocks/helpers.php' );
 	require_once( 'vk-components/vk-components-config.php' );
-	require_once( 'custom-field-builder/custom-field-builder-config.php');
 	require_once( 'vk-blocks/load-vk-components.php' );
 	require_once( 'font-awesome/font-awesome-config.php' );
 	require_once( 'term-color/term-color-config.php' );
@@ -29,7 +27,6 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 	}
 
 	require_once( 'admin-notices.php' );
-	require_once( 'admin-notices-vkb-template.php' );
 	require_once( 'vk-blocks/vk-blocks-functions.php' );
 	/* 出力するCSSが多すぎるので一旦コメントアウト */
 	// require_once( 'vk-blocks/functions-color.php' );

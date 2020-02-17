@@ -2,9 +2,6 @@
 
 // サーバーサイドレンダリングスクリプトを読み込み。
 require_once dirname( __FILE__ ) . '/view/post-list.php';
-require_once dirname(dirname(dirname( __FILE__ ))) . '/inc/custom-field-builder/custom-field-builder-config.php';
-
-
 
 function vkblocks_active() {
 	return true;
@@ -336,44 +333,3 @@ if ( ! function_exists( 'vkblocks_blocks_categories' ) ) {
 	}
 	add_filter( 'block_categories', 'vkblocks_blocks_categories', 10, 2 );
 }
-
-
-function add_posts_columns( $columns ) {
-	$columns['vkb_template'] =  __( 'VK Blocks Templates', 'vk-blocks' );
-	return $columns;
-}
-function custom_posts_column( $column_name, $post_id ) {
-	if ( $column_name == 'vkb_template' ) {
-		$ajax_nonce = wp_create_nonce( "my-special-string" );
-		$cf_vkb_template = get_post_meta( $post_id, 'is_registerd_vkb_template', true );
-		$cf_vkb_template ? $checked = "checked" : $checked = "";
-
-		echo '<form name="register_vkb_template_form' . $post_id .'">';
-		echo '<input type="checkbox" name="is_registerd_vkb_template" id="is_registerd_vkb_template' . $post_id .'"' . ' ' . $checked . '>';
-		echo '<script type="text/javascript">saveCheckBox("' . $post_id . '", "' . $ajax_nonce . '");</script>';	
-	};
-  };
-  add_filter( 'manage_wp_block_posts_columns', 'add_posts_columns' );	
-  add_action( 'manage_wp_block_posts_custom_column', 'custom_posts_column', 10, 2 );
-
-  add_action( 'wp_ajax_my_action', 'my_action_function' );
-  function my_action_function() {
-	  check_ajax_referer( 'my-special-string', 'security' );
-	  $raw = sanitize_text_field( $_POST['my_string'] );
-	  $raw = str_replace("\\", "", $raw);
-	  $ajaxData = json_decode( $raw ,true);
-	  $save = $ajaxData["checked"] ? array("1") : '';
-	  echo update_post_meta($ajaxData["postId"], 'is_registerd_vkb_template', $save);
-	  wp_die();
-  }
-  
-function enqueue_ajax_script_checkbox(){
-
-	global $post_type;
-	if ($post_type == 'wp_block') {
-		wp_enqueue_script( 'fetch-polyfill', plugins_url().'/vk-blocks-pro/plugin/menu/fetch.umd.js' );
-		wp_enqueue_script( 'ajax_script_checkbox', plugins_url().'/vk-blocks-pro/plugin/menu/helper_checkbox.js',array('fetch-polyfill') );
-	}
-}
-add_action( 'admin_print_scripts-edit.php', 'enqueue_ajax_script_checkbox' );
-

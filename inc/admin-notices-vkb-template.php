@@ -17,10 +17,10 @@ function vkblocks_admin_notice_template() {
 	}
 	?>
 
-	<div id="notice-vkblocks-pro" class="notice notice-success is-dismissible">
+	<div id="vkblocks-dismissed-notice-template" class="notice notice-success is-dismissible">
 		<p>
 			<strong>
-				<?php esc_html_e( 'We\'ve released VK Blocks Pro!', 'vk-blocks' ); ?>
+				<?php esc_html_e( 'VK Blocks Template Advanced Settings', 'vk-blocks' ); ?>
 			</strong>
 		</p>
 		<p>
@@ -28,7 +28,7 @@ function vkblocks_admin_notice_template() {
 				printf(
 					/* translators: 1: opening a tag, 2: closing a tag */
 					esc_html__(
-						'Thank you for using VK Blocks. We\'ve released VK Blocks Pro. It has more custom blocks to build web site more easily. If you are using Outer, Simple Table, or Table of Contents blocks with Lightning Pro, please switch to use VK Blocks Pro. Lightning Pro user can download it at Free. Please read %1$s this post %2$s for more details.',
+						'If you want to add extra blocks ',
 						'vk-blocks'
 					),
 					'<a href="' . esc_url( __( 'https://www.vektor-inc.co.jp/info/', 'vk-blocks' ) ) . '">',
@@ -46,9 +46,6 @@ function vkblocks_admin_notice_template() {
 add_action( 'admin_notices', 'vkblocks_admin_notice_template' );
 
 
-/**
- * Dismiss admin notice for VK blocks Pro.
- */
 function vkblocks_admin_notice_template_dismiss() {
 	if ( isset( $_GET['vkblocks-dismiss-template'] ) && check_admin_referer( 'vkblocks-dismiss-template-' . get_current_user_id() ) ) {
 		update_user_meta( get_current_user_id(), 'vkblocks_dismissed_notice_template', 1 );

@@ -339,7 +339,7 @@ if ( ! function_exists( 'vkblocks_blocks_categories' ) ) {
 
 
 function add_posts_columns( $columns ) {
-	$columns['vkb_template'] = 'VKB テンプレート';
+	$columns['vkb_template'] =  __( 'VK Blocks Templates', 'vk-blocks' );
 	return $columns;
 }
 function custom_posts_column( $column_name, $post_id ) {

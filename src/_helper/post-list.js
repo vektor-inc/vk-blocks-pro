@@ -95,7 +95,10 @@ export class PostList extends React.Component {
       let oldCoreTerms;
 
       subscribe(() => {
-        if (blockAttributes.isCheckedPostType !== oldIsCheckedPostType) {
+        if (
+          blockAttributes &&
+          blockAttributes.isCheckedPostType !== oldIsCheckedPostType
+        ) {
           oldIsCheckedPostType = blockAttributes.isCheckedPostType;
           let taxList = getTaxonomyFromPostType(
             blockAttributes.isCheckedPostType

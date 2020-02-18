@@ -96,7 +96,6 @@ export default ({ slug }) => {
                   <div class="hover_content">
                     <div class="inner">
                       <BlockPreview viewportWidth={601} blocks={part.blocks} />
-                      {/* <BlockPreview viewportWidth={768} blocks={part.blocks} /> */}
                     </div>
                   </div>
                 </div>
@@ -112,19 +111,7 @@ export default ({ slug }) => {
   setupResultParts();
 
   if (resultParts) {
-    return (
-      <Fragment>
-        <ul>{resultParts}</ul>
-        <div className={"vkb-menu__template-part__advanced"}>
-          <a
-            href="/wp-admin/edit.php?post_type=wp_block"
-            className={"vkb-menu__template-part__advanced-link isLink"}
-          >
-            {__("Advanced Settings", "vk-blocks")}
-          </a>
-        </div>
-      </Fragment>
-    );
+    return <ul>{resultParts}</ul>;
   }
   return (
     <div className="vkb-menu__template-part__loading">

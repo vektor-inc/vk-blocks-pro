@@ -112,6 +112,10 @@
         color: #6E6E70;
         line-height: 1.4em;
       }
+      .edit-post-visual-editor{
+        position: initial;
+        padding-top: 0;
+      }
     }
     &:hover {
       // width: 24em;
@@ -131,13 +135,22 @@
         margin-bottom: .5em;
       }
       .hover_content {
-        max-height: 35vh;
+        max-height: none;
         height:100%;
         transform: none;
         margin-top: 20px;
         .inner{
-          height:400px;
+          // height:400px;
           width: 100%;
+          .block-editor-block-preview__container::before{
+            position: relative;
+            height: auto;
+          }
+          .block-editor-block-preview__container::before{
+            content: "";
+            display: block;
+            padding-top: 100%;
+          }
         }
       }
     }

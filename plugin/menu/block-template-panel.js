@@ -43,7 +43,7 @@ export default ({ slug }) => {
       return;
     }
 
-    const newResultParts = parts.map(part => {
+    const newResultParts = parts.map((part, index) => {
       return (
         <li>
           <Button
@@ -87,14 +87,17 @@ export default ({ slug }) => {
             }}
           >
             <section class="container">
-              <div class="card">
+              <div
+                id={`vkb-menu__template-part__card${index}`}
+                class="card vkb-menu__template-part__card"
+              >
                 <div class="content">
                   <h6>
                     {part.icon}
                     {part.name}
                   </h6>
                   <div class="hover_content">
-                    <div class="inner">
+                    <div class="inner edit-post-visual-editor editor-styles-wrapper">
                       <BlockPreview viewportWidth={601} blocks={part.blocks} />
                     </div>
                   </div>
@@ -102,6 +105,21 @@ export default ({ slug }) => {
               </div>
             </section>
           </Button>
+          <script type="application/javascript">{`
+        {
+            console.log("success!!");
+        }
+    `}</script>
+          <script>
+            alert("hellooooo"); console.log( document.querySelector(
+            "#vkb-menu__template-part__card{index}
+            .block-editor-block-preview__content") );
+          </script>
+          {console.log(
+            document.querySelector(
+              `#vkb-menu__template-part__card${index} .block-editor-block-preview__content`
+            )
+          )}
         </li>
       );
     });

@@ -11,21 +11,24 @@ const {
   SelectControl,
   CheckboxControl
 } = wp.components;
-const { Fragment } = wp.element;
+const { Fragment, Component } = wp.element;
 const { InspectorControls, URLInput } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
-const { subscribe, select, dispatch } = wp.data;
+const { subscribe, select } = wp.data;
 const { ServerSideRender } = wp.components;
 import addCheckBox from "./checkbox";
+import { CardAlignControls } from "../../components/card-align-control";
 
-export class PostList extends React.Component {
+export class PostList extends Component {
   render() {
     const {
       postTypes,
+      className,
       attributes,
       setAttributes,
       clientId,
-      name
+      name,
+      isSelected
     } = this.props.value;
 
     const {
@@ -121,7 +124,6 @@ export class PostList extends React.Component {
         }
       });
     }
-
     /**
      * Get Taxonomies of checked postType. Return array of taxonomies.
      * @param isCheckedPostTypeArgs
@@ -146,8 +148,7 @@ export class PostList extends React.Component {
           });
         }
       });
-
-      //驥崎､�ｒ蜑企勁
+      //重複を削除
       returnTaxonomies = returnTaxonomies.filter(
         (x, i, self) => self.indexOf(x) === i
       );
@@ -322,26 +323,7 @@ export class PostList extends React.Component {
           title={__("Display type and columns", "vk-blocks")}
           initialOpen={false}
         >
-          <BaseControl label={__("Display type", "vk-blocks")}>
-            <SelectControl
-              value={layout}
-              onChange={value => setAttributes({ layout: value })}
-              options={[
-                {
-                  value: "card",
-                  label: __("Card", "vk-blocks")
-                },
-                {
-                  value: "card-horizontal",
-                  label: __("Card Horizontal", "vk-blocks")
-                },
-                {
-                  value: "media",
-                  label: __("Media", "vk-blocks")
-                }
-              ]}
-            />
-          </BaseControl>
+          {renderTypeSwitch(name)}
           <BaseControl
             label={__("Column ( Screen size : Extra small )", "vk-blocks")}
           >
@@ -396,6 +378,52 @@ export class PostList extends React.Component {
       );
     };
 
+    const renderTypeSwitch = name => {
+      if (name === "vk-blocks/card") {
+        return (
+          <BaseControl label={__("Display type", "vk-blocks")}>
+            <SelectControl
+              value={layout}
+              onChange={value => setAttributes({ layout: value })}
+              options={[
+                {
+                  value: "card",
+                  label: __("Card", "vk-blocks")
+                },
+                {
+                  value: "card-noborder",
+                  label: __("Card ( No border )", "vk-blocks")
+                }
+              ]}
+            />
+          </BaseControl>
+        );
+      } else {
+        return (
+          <BaseControl label={__("Display type", "vk-blocks")}>
+            <SelectControl
+              value={layout}
+              onChange={value => setAttributes({ layout: value })}
+              options={[
+                {
+                  value: "card",
+                  label: __("Card", "vk-blocks")
+                },
+                {
+                  value: "card-horizontal",
+                  label: __("Card Horizontal", "vk-blocks")
+                },
+                {
+                  value: "media",
+                  label: __("Media", "vk-blocks")
+                }
+              ]}
+            />
+          </BaseControl>
+        );
+      }
+    };
+
     const renderItem = () => {
       return (
         <PanelBody title={__("Display item", "vk-blocks")} initialOpen={false}>
@@ -448,7 +476,15 @@ export class PostList extends React.Component {
             onChange={value => setAttributes({ new_text: value })}
             // placeholder={'Input button text.'}
           />
-          <h4>{__("Button option", "vk-blocks")}</h4>
+          <h4 className={"postList_itemCard_button-option"}>
+            {__("Button option", "vk-blocks")}
+          </h4>
+          <p>
+            {__(
+              "Click each card block to set the target url. You can find the url form at it's sidebar.",
+              "vk-blocks"
+            )}
+          </p>
           <TextControl
             label={__("Button text", "vk-blocks")}
             value={btn_text}
@@ -479,22 +515,61 @@ export class PostList extends React.Component {
       );
     };
 
+    const renderItemCard = () => {
+      return (
+        <PanelBody title={__("Display item", "vk-blocks")} initialOpen={false}>
+          <CheckboxControl
+            label={__("Image", "vk-blocks")}
+            checked={display_image}
+            onChange={checked => setAttributes({ display_image: checked })}
+          />
+          <CheckboxControl
+            label={__("Button", "vk-blocks")}
+            checked={display_btn}
+            onChange={checked => setAttributes({ display_btn: checked })}
+          />
+          <h4 className={"postList_itemCard_button-option"}>
+            {__("Button option", "vk-blocks")}
+          </h4>
+          <p>
+            {__(
+              "Click each card block to set the target url. You can find the url form at it's sidebar.",
+              "vk-blocks"
+            )}
+          </p>
+          <TextControl
+            label={__("Button text", "vk-blocks")}
+            value={btn_text}
+            onChange={value => setAttributes({ btn_text: value })}
+          />
+        </PanelBody>
+      );
+    };
+
     return (
       <Fragment>
         <InspectorControls>
           {(() => {
-            if (name === "vk-blocks/post-list") {
+            if (name === "vk-blocks/child-page") {
               return (
                 <div>
-                  {renderConditions()}
+                  {renderConditionsUrlInput()}
                   {renderTypeColumn()}
                   {renderItem()}
                 </div>
               );
-            } else if (name === "vk-blocks/child-page") {
+            } else if (name === "vk-blocks/card") {
               return (
                 <div>
-                  {renderConditionsUrlInput()}
+                  {renderTypeColumn()}
+                  {renderItemCard()}
+                  {<CardAlignControls {...this.props.value} />}
+                </div>
+              );
+            } else {
+              return (
+                <div>
+                  {renderConditions()}
                   {renderTypeColumn()}
                   {renderItem()}
                 </div>
@@ -504,17 +579,18 @@ export class PostList extends React.Component {
         </InspectorControls>
         <div>
           {(() => {
-            if (name === "vk-blocks/post-list") {
-              return (
-                <ServerSideRender
-                  block="vk-blocks/post-list"
-                  attributes={attributes}
-                />
-              );
-            } else if (name === "vk-blocks/child-page") {
+            if (name === "vk-blocks/child-page") {
               return (
                 <ServerSideRender
                   block="vk-blocks/child-page"
+                  attributes={attributes}
+                />
+              );
+            } else if (name === "vk-blocks/card") {
+            } else {
+              return (
+                <ServerSideRender
+                  block="vk-blocks/post-list"
                   attributes={attributes}
                 />
               );

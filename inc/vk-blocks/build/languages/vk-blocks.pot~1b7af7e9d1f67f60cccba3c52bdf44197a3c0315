@@ -3,25 +3,6 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: plugin/menu/sidebar.js:17
-msgid "VK Blocks Templates"
-
-#: components/card-align-control/index.js:22
-msgid "Align"
-msgstr ""
-
-#: components/link-control/index.js:37
-msgid "Link target"
-msgstr ""
-
-#: components/link-control/index.js:41
-msgid "Open in new tab"
-msgstr ""
-
-#: components/link-control/index.js:46
-msgid "Link rel"
-msgstr ""
-
 #: src/_helper/font-awesome.js:21
 msgid "FontAwesome"
 msgstr ""
@@ -37,467 +18,301 @@ msgstr ""
 msgid "Font Awesome icon list"
 msgstr ""
 
-#: src/_helper/post-list.js:194
+#: src/_helper/post-list.js:191
 msgid "Filter by PostTypes"
+msgstr ""
+
+#: src/_helper/post-list.js:194
+msgid "Filter by Taxonomy Terms"
 msgstr ""
 
 #: src/_helper/post-list.js:197
-msgid "Filter by Taxonomy Terms"
-msgstr ""
-
-#: src/_helper/post-list.js:200
 msgid "Number of Posts"
 msgstr ""
 
-#: src/_helper/post-list.js:272
+#: src/_helper/post-list.js:269
 msgid "Exsist Already Page"
 msgstr ""
 
-#: src/_helper/post-list.js:291
+#: src/_helper/post-list.js:288
 msgid "Current Page"
+msgstr ""
+
+#: src/_helper/post-list.js:300
+msgid "Display conditions"
 msgstr ""
 
 #: src/_helper/post-list.js:303
-msgid "Display conditions"
-msgstr ""
-
-#: src/_helper/post-list.js:306
 msgid "Parent"
 msgstr ""
 
-#: src/_helper/post-list.js:322
-#: src/_helper/post-list.js:192
-msgid "Filter by PostTypes"
-msgstr ""
-
-#: src/_helper/post-list.js:195
-msgid "Filter by Taxonomy Terms"
-msgstr ""
-
-#: src/_helper/post-list.js:198
-msgid "Number of Posts"
-msgstr ""
-
-#: src/_helper/post-list.js:270
-msgid "Exsist Already Page"
-msgstr ""
-
-#: src/_helper/post-list.js:289
-msgid "Current Page"
-msgstr ""
-
-#: src/_helper/post-list.js:301
-msgid "Display conditions"
-msgstr ""
-
-#: src/_helper/post-list.js:304
-msgid "Parent"
-msgstr ""
-
-#: src/_helper/post-list.js:320
->>>>>>> ca351ddc72eb178cb11e8b89361e02e8306d829f
+#: src/_helper/post-list.js:319
 msgid "Display type and columns"
 msgstr ""
 
-#: src/_helper/post-list.js:325
+#: src/_helper/post-list.js:322
 msgid "Display type"
 msgstr ""
 
-#: src/_helper/post-list.js:332
+#: src/_helper/post-list.js:329
 msgid "Card"
 msgstr ""
 
-#: src/_helper/post-list.js:336
+#: src/_helper/post-list.js:333
 msgid "Card Horizontal"
 msgstr ""
 
-#: src/_helper/post-list.js:340
+#: src/_helper/post-list.js:337
 msgid "Media"
 msgstr ""
 
-#: src/_helper/post-list.js:346
+#: src/_helper/post-list.js:343
 msgid "Column ( Screen size : Extra small )"
 msgstr ""
 
-#: src/_helper/post-list.js:356
+#: src/_helper/post-list.js:353
 msgid "Column ( Screen size : Small )"
 msgstr ""
 
-#: src/_helper/post-list.js:366
+#: src/_helper/post-list.js:363
 msgid "Column ( Screen size : Medium )"
 msgstr ""
 
-#: src/_helper/post-list.js:376
+#: src/_helper/post-list.js:373
 msgid "Column ( Screen size : Large )"
 msgstr ""
 
-#: src/_helper/post-list.js:386
+#: src/_helper/post-list.js:383
 msgid "Column ( Screen size : Extra large )"
 msgstr ""
 
-#: src/_helper/post-list.js:401
+#: src/_helper/post-list.js:398
 msgid "Display item"
 msgstr ""
 
-#: src/_helper/post-list.js:403
+#: src/_helper/post-list.js:400
 msgid "Image"
 msgstr ""
 
-#: src/_helper/post-list.js:408
+#: src/_helper/post-list.js:405
 msgid "Term name"
 msgstr ""
 
-#: src/_helper/post-list.js:415
+#: src/_helper/post-list.js:412
 msgid "Excerpt"
 msgstr ""
 
-#: src/_helper/post-list.js:420
+#: src/_helper/post-list.js:417
 msgid "Date"
 msgstr ""
 
-#: src/_helper/post-list.js:426
+#: src/_helper/post-list.js:423
 msgid "New mark"
 msgstr ""
 
-#: src/_helper/post-list.js:432
+#: src/_helper/post-list.js:429
 #: src/button/block.js:59
 msgid "Button"
 msgstr ""
 
-#: src/_helper/post-list.js:436
+#: src/_helper/post-list.js:433
 msgid "New mark option"
 msgstr ""
 
-#: src/_helper/post-list.js:438
+#: src/_helper/post-list.js:435
 msgid "Number of days to display the new post mark"
 msgstr ""
 
-#: src/_helper/post-list.js:446
+#: src/_helper/post-list.js:443
 msgid "New post mark"
 msgstr ""
 
-#: src/_helper/post-list.js:451
+#: src/_helper/post-list.js:448
 msgid "Button option"
 msgstr ""
 
-#: src/_helper/post-list.js:453
+#: src/_helper/post-list.js:450
 msgid "Button text"
 msgstr ""
 
-#: src/_helper/post-list.js:458
+#: src/_helper/post-list.js:455
 msgid "Button align"
 msgstr ""
 
-#: src/_helper/post-list.js:465
+#: src/_helper/post-list.js:462
 #: src/balloon/block.js:129
-msgid "Column ( Screen size : Extra small )"
-msgstr ""
-
-#: src/_helper/post-list.js:335
-msgid "Column ( Screen size : Small )"
-msgstr ""
-
-#: src/_helper/post-list.js:345
-msgid "Column ( Screen size : Medium )"
-msgstr ""
-
-#: src/_helper/post-list.js:355
-msgid "Column ( Screen size : Large )"
-msgstr ""
-
-#: src/_helper/post-list.js:365
-msgid "Column ( Screen size : Extra large )"
-msgstr ""
-
-#: src/_helper/post-list.js:392
-msgid "Card ( No border )"
-msgstr ""
-
-#: src/_helper/post-list.js:400
-msgid "Display type"
-msgstr ""
-
-#: src/_helper/post-list.js:407
-#: src/_pro/card/block.js:51
-msgid "Card"
-msgstr ""
-
-#: src/_helper/post-list.js:411
-msgid "Card Horizontal"
-msgstr ""
-
-#: src/_helper/post-list.js:415
-msgid "Media"
-msgstr ""
-
-#: src/_helper/post-list.js:433
-msgid "Term name"
-msgstr ""
-
-#: src/_helper/post-list.js:440
-msgid "Excerpt"
-msgstr ""
-
-#: src/_helper/post-list.js:445
-msgid "Date"
-msgstr ""
-
-#: src/_helper/post-list.js:451
-msgid "New mark"
-msgstr ""
-
-#: src/_helper/post-list.js:461
-msgid "New mark option"
-msgstr ""
-
-#: src/_helper/post-list.js:463
-msgid "Number of days to display the new post mark"
-msgstr ""
-
-#: src/_helper/post-list.js:471
-msgid "New post mark"
-msgstr ""
-
-#: src/_helper/post-list.js:491
-msgid "Button align"
-msgstr ""
-
-#: src/_helper/post-list.js:498
-#: src/balloon/block.js:97
->>>>>>> ca351ddc72eb178cb11e8b89361e02e8306d829f
 #: src/button/block.js:175
 #: src/pr-content/block.js:202
 msgid "Left"
 msgstr ""
 
-#: src/_helper/post-list.js:469
+#: src/_helper/post-list.js:466
 #: src/button/block.js:176
 msgid "Center"
 msgstr ""
 
-#: src/_helper/post-list.js:473
+#: src/_helper/post-list.js:470
 #: src/balloon/block.js:130
-#: src/_helper/post-list.js:506
-#: src/balloon/block.js:98
 #: src/button/block.js:177
 #: src/pr-content/block.js:201
 msgid "Right"
-msgstr ""
-
-#: src/_helper/post-list.js:517
-msgid "Display item"
-msgstr ""
-
-#: src/_helper/post-list.js:519
-msgid "Image"
-msgstr ""
-
-#: src/_helper/post-list.js:524
-#: src/button/block.js:59
-msgid "Button"
-msgstr ""
-
-#: src/_helper/post-list.js:529
-msgid "Button option"
-msgstr ""
-
-#: src/_helper/post-list.js:532
-msgid ""
-"Click each card block to set the target url. You can find the url form at "
-"it's sidebar."
-msgstr ""
-
-#: src/_helper/post-list.js:538
-msgid "Button text"
-msgstr ""
-
-#: src/_pro/card-item/block.js:34
-msgid "Card Item"
-msgstr ""
-
-#: src/_pro/card-item/block.js:47
-msgid "URL"
-msgstr ""
-
-#: src/_pro/card-item/block.js:52
-msgid "https://example.com"
-msgstr ""
-
-#: src/_pro/card-item/component.js:103
-msgid "Delete Image"
-msgstr ""
-
-#: src/_pro/card-item/component.js:157
-msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
-"tempor incididunt ut labore et dolore magna aliqua. "
-msgstr ""
-
-#: src/_pro/card-item/component.js:201
-msgid "Title"
-msgstr ""
-
-#: src/_pro/card-item/component.js:90
-#: src/_pro/outer/block.js:154
-#: src/balloon/block.js:136
-#: src/flow/block.js:112
-#: src/pr-blocks/block.js:179
-#: src/pr-content/component.js:157
-#: src/pr-content/deprecated/component-deprecated.js:102
-#: src/pr-content/deprecated/component-no-boder-color.js:116
-#: src/staff/component.js:88
-msgid "Select image"
 msgstr ""
 
 #: src/_pro/child-page/block.js:37
 msgid "Child page list"
 msgstr ""
 
-#: src/_pro/outer/block.js:116
-msgid "Background Setting"
-msgstr ""
-
-#: src/_pro/outer/block.js:120
+#: src/_pro/outer/block.js:101
 #: src/pr-content/block.js:91
 msgid "Color Setting"
 msgstr ""
 
-#: src/_pro/outer/block.js:121
+#: src/_pro/outer/block.js:102
 msgid ""
 "Color will overcome background image. If you want to display image, clear "
 "background color or set opacity 0."
 msgstr ""
 
-#: src/_pro/outer/block.js:132
+#: src/_pro/outer/block.js:111
 msgid "Opacity Setting"
 msgstr ""
 
-#: src/_pro/outer/block.js:143
+#: src/_pro/outer/block.js:123
 msgid "Background Image"
 msgstr ""
 
-#: src/_pro/outer/block.js:159
-#: src/balloon/block.js:141
+#: src/_pro/outer/block.js:135
+#: src/balloon/block.js:111
+#: src/flow/block.js:112
+#: src/pr-blocks/block.js:179
+#: src/pr-content/component.js:144
+#: src/pr-content/deprecated/component-deprecated.js:102
+#: src/pr-content/deprecated/component-no-boder-color.js:116
+#: src/staff/component.js:88
+msgid "Select image"
+msgstr ""
+
+#: src/_pro/outer/block.js:137
 #: src/flow/block.js:113
 #: src/pr-blocks/block.js:175
-#: src/pr-content/component.js:164
+#: src/pr-content/component.js:149
 #: src/pr-content/deprecated/component-deprecated.js:106
 #: src/pr-content/deprecated/component-no-boder-color.js:120
 msgid "Upload image"
 msgstr ""
 
-#: src/_pro/outer/block.js:168
+#: src/_pro/outer/block.js:144
 msgid "Background image Position"
 msgstr ""
 
-#: src/_pro/outer/block.js:175
+#: src/_pro/outer/block.js:151
 #: src/button/block.js:166
 msgid "normal"
 msgstr ""
 
-#: src/_pro/outer/block.js:176
+#: src/_pro/outer/block.js:152
 msgid "Fixed"
 msgstr ""
 
-#: src/_pro/outer/block.js:178
+#: src/_pro/outer/block.js:153
 msgid "Parallax (It will not work in preview)"
 msgstr ""
 
-#: src/_pro/outer/block.js:191
+#: src/_pro/outer/block.js:161
 #: src/pr-content/block.js:194
 msgid "Layout Setting"
 msgstr ""
 
-#: src/_pro/outer/block.js:196
+#: src/_pro/outer/block.js:166
 msgid "Outer width"
 msgstr ""
 
-#: src/_pro/outer/block.js:199
+#: src/_pro/outer/block.js:169
 msgid "Normal"
 msgstr ""
 
-#: src/_pro/outer/block.js:200
+#: src/_pro/outer/block.js:170
 msgid "Full Wide"
 msgstr ""
 
-#: src/_pro/outer/block.js:205
+#: src/_pro/outer/block.js:175
 msgid "Contents area padding (left and right)"
 msgstr ""
 
-#: src/_pro/outer/block.js:212
+#: src/_pro/outer/block.js:179
 msgid "Do not use padding"
 msgstr ""
 
-#: src/_pro/outer/block.js:216
+#: src/_pro/outer/block.js:183
 msgid "Use padding"
 msgstr ""
 
-#: src/_pro/outer/block.js:225
+#: src/_pro/outer/block.js:190
 msgid "Padding (top and bottom)"
 msgstr ""
 
-#: src/_pro/outer/block.js:228
+#: src/_pro/outer/block.js:193
 msgid "Use default padding"
 msgstr ""
 
-#: src/_pro/outer/block.js:230
+#: src/_pro/outer/block.js:195
 msgid "Do not use default padding (Set it yourself using a spacer block etc.)."
 msgstr ""
 
-#: src/_pro/outer/block.js:244
+#: src/_pro/outer/block.js:204
 msgid "Divider Setting"
 msgstr ""
 
-#: src/_pro/outer/block.js:249
-#: src/balloon/block.js:103
+#: src/_pro/outer/block.js:209
+#: src/balloon/block.js:135
 msgid "Type"
 msgstr ""
 
-#: src/_pro/outer/block.js:255
+#: src/_pro/outer/block.js:215
 msgid "Tilt"
 msgstr ""
 
-#: src/_pro/outer/block.js:259
+#: src/_pro/outer/block.js:219
 msgid "Curve"
 msgstr ""
 
-#: src/_pro/outer/block.js:263
+#: src/_pro/outer/block.js:223
 msgid "Wave"
 msgstr ""
 
-#: src/_pro/outer/block.js:267
+#: src/_pro/outer/block.js:227
 #: src/list-style/block.js:113
 msgid "Triangle"
 msgstr ""
 
-#: src/_pro/outer/block.js:272
+#: src/_pro/outer/block.js:233
 msgid "Upper Divider Level"
 msgstr ""
 
-#: src/_pro/outer/block.js:290
+#: src/_pro/outer/block.js:249
 msgid "Lower Divider Level"
 msgstr ""
 
-#: src/_pro/outer/block.js:310
+#: src/_pro/outer/block.js:266
 msgid "Border Setting"
 msgstr ""
 
-#: src/_pro/outer/block.js:317
+#: src/_pro/outer/block.js:272
 msgid "Border will disappear when divider effect is applied."
 msgstr ""
 
-#: src/_pro/outer/block.js:323
+#: src/_pro/outer/block.js:274
 msgid "Border type"
 msgstr ""
 
-#: src/_pro/outer/block.js:329
+#: src/_pro/outer/block.js:280
 #: src/_pro/step-item/block.js:120
 #: src/_pro/timeline-item/block.js:103
 #: src/staff/block.js:109
 msgid "None"
 msgstr ""
 
-#: src/_pro/outer/block.js:333
+#: src/_pro/outer/block.js:284
 #: src/_pro/step-item/block.js:97
 #: src/_pro/timeline-item/block.js:84
 #: src/group-style/block.js:95
@@ -505,47 +320,56 @@ msgstr ""
 msgid "Solid"
 msgstr ""
 
-#: src/_pro/outer/block.js:337
+#: src/_pro/outer/block.js:288
 #: src/group-style/block.js:103
 msgid "Dotted"
 msgstr ""
 
-#: src/_pro/outer/block.js:341
+#: src/_pro/outer/block.js:292
 #: src/group-style/block.js:107
 msgid "Dashed"
 msgstr ""
 
-#: src/_pro/outer/block.js:345
+#: src/_pro/outer/block.js:296
 #: src/group-style/block.js:111
 msgid "Double"
 msgstr ""
 
-#: src/_pro/outer/block.js:349
+#: src/_pro/outer/block.js:300
 msgid "Groove"
 msgstr ""
 
-#: src/_pro/outer/block.js:353
+#: src/_pro/outer/block.js:304
 msgid "Ridge"
 msgstr ""
 
-#: src/_pro/outer/block.js:357
+#: src/_pro/outer/block.js:308
 msgid "Inset"
 msgstr ""
 
-#: src/_pro/outer/block.js:361
+#: src/_pro/outer/block.js:312
 msgid "Outset"
 msgstr ""
 
-#: src/_pro/outer/block.js:372
+#: src/_pro/outer/block.js:324
 msgid "Border width"
 msgstr ""
 
-#: src/_pro/outer/block.js:379
+#: src/_pro/outer/block.js:333
 msgid "Border radius"
 msgstr ""
 
-#: src/_pro/outer/block.js:63
+#: src/_pro/outer/block.js:352
+#: src/_pro/table-of-contents/block.js:178
+msgid "This block is only for users who bought Lightning Pro."
+msgstr ""
+
+#: src/_pro/outer/block.js:44
 msgid "Outer"
+msgstr ""
+
+#: src/_pro/outer/block.js:97
+msgid "Background Setting"
 msgstr ""
 
 #: src/_pro/post-list/block.js:53
@@ -558,7 +382,7 @@ msgid "Outlined"
 msgstr ""
 
 #: src/_pro/step-item/block.js:116
-#: src/_pro/table-of-contents/block.js:159
+#: src/_pro/table-of-contents/block.js:160
 #: src/_pro/timeline-item/block.js:99
 #: src/heading-style/block.js:33
 #: src/heading/block.js:124
@@ -591,12 +415,12 @@ msgid "Color"
 msgstr ""
 
 #: src/_pro/step-item/block.js:86
-#: src/_pro/table-of-contents/block.js:152
+#: src/_pro/table-of-contents/block.js:153
 #: src/_pro/timeline-item/block.js:69
 msgid "Style"
 msgstr ""
 
-#: src/_pro/step/block.js:124
+#: src/_pro/step/block.js:121
 msgid "First Dot Number"
 msgstr ""
 
@@ -609,7 +433,7 @@ msgstr ""
 msgid "Table of Contents"
 msgstr ""
 
-#: src/_pro/table-of-contents/block.js:163
+#: src/_pro/table-of-contents/block.js:164
 msgid "No frame"
 msgstr ""
 
@@ -629,42 +453,42 @@ msgstr ""
 msgid "Alert"
 msgstr ""
 
-#: src/balloon/block.js:104
-msgid "Please select the type of balloon."
-msgstr ""
-
-#: src/balloon/block.js:107
-msgid "Serif"
-msgstr ""
-
-#: src/balloon/block.js:108
-msgid "Thinking"
-msgstr ""
-
-#: src/balloon/block.js:152
-msgid "Icon Name"
-msgstr ""
-
-#: src/balloon/block.js:161
-#: src/button/block.js:250
-msgid "Input text"
-msgstr ""
-
-#: src/balloon/block.js:38
-msgid "Ballon"
-msgstr ""
-
-#: src/balloon/block.js:88
+#: src/balloon/block.js:123
 msgid "Balloon setting"
 msgstr ""
 
-#: src/balloon/block.js:90
+#: src/balloon/block.js:125
 #: src/heading/block.js:176
 msgid "Position"
 msgstr ""
 
-#: src/balloon/block.js:91
+#: src/balloon/block.js:126
 msgid "Please specify the layout of the balloon."
+msgstr ""
+
+#: src/balloon/block.js:136
+msgid "Please select the type of balloon."
+msgstr ""
+
+#: src/balloon/block.js:139
+msgid "Serif"
+msgstr ""
+
+#: src/balloon/block.js:140
+msgid "Thinking"
+msgstr ""
+
+#: src/balloon/block.js:161
+msgid "Icon Name"
+msgstr ""
+
+#: src/balloon/block.js:170
+#: src/button/block.js:250
+msgid "Input text"
+msgstr ""
+
+#: src/balloon/block.js:32
+msgid "Ballon"
 msgstr ""
 
 #: src/button/block.js:149
@@ -1135,13 +959,13 @@ msgstr ""
 msgid "Title Color"
 msgstr ""
 
-#: src/pr-content/component.js:200
+#: src/pr-content/component.js:179
 #: src/pr-content/deprecated/component-deprecated.js:122
 #: src/pr-content/deprecated/component-no-boder-color.js:136
 msgid "Input title."
 msgstr ""
 
-#: src/pr-content/component.js:208
+#: src/pr-content/component.js:187
 #: src/pr-content/deprecated/component-deprecated.js:130
 #: src/pr-content/deprecated/component-no-boder-color.js:144
 msgid "Input content."

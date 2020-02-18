@@ -13,7 +13,7 @@ const defaultTemplates = [
     name: "About",
     icon: "👋",
     content: `<!-- wp:media-text {"mediaPosition":"right","mediaId":150,"mediaType":"image","isStackedOnMobile":true} -->
-	<div class="wp-block-media-text alignwide has-media-on-the-right is-stacked-on-mobile"><figure class="wp-block-media-text__media"><img src="http://vccw.test/wp-content/uploads/2020/02/eyecatch-pr-block.jpg" alt="" class="wp-image-150"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3,"className":"is-style-vk-heading-plain"} -->
+	<div class="wp-block-media-text alignwide has-media-on-the-right is-stacked-on-mobile"><figure class="wp-block-media-text__media"><img src="https://www.vektor-inc.co.jp/wp-content/uploads/2019/11/eyecatch-pr-block.jpg" alt="" class="wp-image-150"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3,"className":"is-style-vk-heading-plain"} -->
 	<h3 class="is-style-vk-heading-plain"><strong>自社のコンセプトや、キャッチコピーが入ります。</strong></h3>
 	<!-- /wp:heading -->
 	

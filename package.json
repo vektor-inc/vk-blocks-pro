@@ -72,6 +72,7 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-image": "^2.2.2",
+    "react-inline-script": "^1.2.0",
     "react-responsive": "^8.0.1"
   }
 }

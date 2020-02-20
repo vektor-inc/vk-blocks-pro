@@ -22,6 +22,7 @@ const {
 } = select("core/block-editor");
 
 import parsedTemplates from "./default-templates";
+
 export default ({ slug }) => {
   const [parts, setParts] = useState(null);
   const [resultParts, setResultParts] = useState(null);
@@ -86,7 +87,7 @@ export default ({ slug }) => {
               }
             }}
           >
-            <section class="container">
+            <section class="vkb-menu__template-part_card_container">
               <div
                 id={`vkb-menu__template-part__card${index}`}
                 class="card vkb-menu__template-part__card"
@@ -105,21 +106,6 @@ export default ({ slug }) => {
               </div>
             </section>
           </Button>
-          <script type="application/javascript">{`
-        {
-            console.log("success!!");
-        }
-    `}</script>
-          <script>
-            alert("hellooooo"); console.log( document.querySelector(
-            "#vkb-menu__template-part__card{index}
-            .block-editor-block-preview__content") );
-          </script>
-          {console.log(
-            document.querySelector(
-              `#vkb-menu__template-part__card${index} .block-editor-block-preview__content`
-            )
-          )}
         </li>
       );
     });

@@ -87,14 +87,16 @@ export default ({ slug }) => {
               }
             }}
           >
-            <section class="vkb-menu__template-part_card_container">
+            <section class="vkb-menu__template-part__card__container">
               <div
                 id={`vkb-menu__template-part__card${index}`}
                 class="card vkb-menu__template-part__card"
               >
                 <div class="content">
                   <h6>
-                    {part.icon}
+                    <span className={"vkb-menu__template-part__header__icon"}>
+                      {part.icon}
+                    </span>
                     {part.name}
                   </h6>
                   <div class="hover_content">

@@ -18,6 +18,7 @@ const { subscribe, select } = wp.data;
 const { ServerSideRender } = wp.components;
 import addCheckBox from "./checkbox";
 import { CardAlignControls } from "../../components/card-align-control";
+import { renderItem } from "./post-list-utils";
 
 export class PostList extends Component {
   render() {
@@ -72,6 +73,7 @@ export class PostList extends Component {
         return item.slug !== "wp_block" && item.slug !== "attachment";
       });
     };
+
     const argsPostTypes = () => {
       return {
         name: "postTypes",
@@ -314,204 +316,6 @@ export class PostList extends Component {
       );
     };
 
-    const renderTypeColumn = () => {
-      return (
-        <PanelBody
-          title={__("Display type and columns", "vk-blocks")}
-          initialOpen={false}
-        >
-          {renderTypeSwitch(name)}
-          <BaseControl
-            label={__("Column ( Screen size : Extra small )", "vk-blocks")}
-          >
-            <RangeControl
-              value={col_xs}
-              onChange={value => setAttributes({ col_xs: value })}
-              min="1"
-              max="4"
-            />
-          </BaseControl>
-          <BaseControl
-            label={__("Column ( Screen size : Small )", "vk-blocks")}
-          >
-            <RangeControl
-              value={col_sm}
-              onChange={value => setAttributes({ col_sm: value })}
-              min="1"
-              max="4"
-            />
-          </BaseControl>
-          <BaseControl
-            label={__("Column ( Screen size : Medium )", "vk-blocks")}
-          >
-            <RangeControl
-              value={col_md}
-              onChange={value => setAttributes({ col_md: value })}
-              min="1"
-              max="4"
-            />
-          </BaseControl>
-          <BaseControl
-            label={__("Column ( Screen size : Large )", "vk-blocks")}
-          >
-            <RangeControl
-              value={col_lg}
-              onChange={value => setAttributes({ col_lg: value })}
-              min="1"
-              max="4"
-            />
-          </BaseControl>
-          <BaseControl
-            label={__("Column ( Screen size : Extra large )", "vk-blocks")}
-          >
-            <RangeControl
-              value={col_xl}
-              onChange={value => setAttributes({ col_xl: value })}
-              min="1"
-              max="4"
-            />
-          </BaseControl>
-        </PanelBody>
-      );
-    };
-
-    const renderTypeSwitch = name => {
-      if (name === "vk-blocks/card") {
-        return (
-          <BaseControl label={__("Display type", "vk-blocks")}>
-            <SelectControl
-              value={layout}
-              onChange={value => setAttributes({ layout: value })}
-              options={[
-                {
-                  value: "card",
-                  label: __("Card", "vk-blocks")
-                },
-                {
-                  value: "card-noborder",
-                  label: __("Card ( No border )", "vk-blocks")
-                }
-              ]}
-            />
-          </BaseControl>
-        );
-      } else {
-        return (
-          <BaseControl label={__("Display type", "vk-blocks")}>
-            <SelectControl
-              value={layout}
-              onChange={value => setAttributes({ layout: value })}
-              options={[
-                {
-                  value: "card",
-                  label: __("Card", "vk-blocks")
-                },
-                {
-                  value: "card-horizontal",
-                  label: __("Card Horizontal", "vk-blocks")
-                },
-                {
-                  value: "media",
-                  label: __("Media", "vk-blocks")
-                }
-              ]}
-            />
-          </BaseControl>
-        );
-      }
-    };
-
-    const renderItem = () => {
-      return (
-        <PanelBody title={__("Display item", "vk-blocks")} initialOpen={false}>
-          <CheckboxControl
-            label={__("Image", "vk-blocks")}
-            checked={display_image}
-            onChange={checked => setAttributes({ display_image: checked })}
-          />
-          <CheckboxControl
-            label={__("Term name", "vk-blocks")}
-            checked={display_image_overlay_term}
-            onChange={checked =>
-              setAttributes({ display_image_overlay_term: checked })
-            }
-          />
-          <CheckboxControl
-            label={__("Excerpt", "vk-blocks")}
-            checked={display_excerpt}
-            onChange={checked => setAttributes({ display_excerpt: checked })}
-          />
-          <CheckboxControl
-            label={__("Date", "vk-blocks")}
-            checked={display_date}
-            onChange={checked => setAttributes({ display_date: checked })}
-          />
-
-          <CheckboxControl
-            label={__("New mark", "vk-blocks")}
-            checked={display_new}
-            onChange={checked => setAttributes({ display_new: checked })}
-          />
-
-          <CheckboxControl
-            label={__("Button", "vk-blocks")}
-            checked={display_btn}
-            onChange={checked => setAttributes({ display_btn: checked })}
-          />
-          <h4>{__("New mark option", "vk-blocks")}</h4>
-          <TextControl
-            label={__(
-              "Number of days to display the new post mark",
-              "vk-blocks"
-            )}
-            value={new_date}
-            onChange={value => setAttributes({ new_date: parseInt(value, 10) })}
-          />
-          <TextControl
-            label={__("New post mark", "vk-blocks")}
-            value={new_text}
-            onChange={value => setAttributes({ new_text: value })}
-            // placeholder={'Input button text.'}
-          />
-          <h4 className={"postList_itemCard_button-option"}>
-            {__("Button option", "vk-blocks")}
-          </h4>
-          <p>
-            {__(
-              "Click each card block to set the target url. You can find the url form at it's sidebar.",
-              "vk-blocks"
-            )}
-          </p>
-          <TextControl
-            label={__("Button text", "vk-blocks")}
-            value={btn_text}
-            onChange={value => setAttributes({ btn_text: value })}
-            // placeholder={'Input button text.'}
-          />
-          <BaseControl label={__("Button align", "vk-blocks")}>
-            <SelectControl
-              value={btn_align}
-              onChange={value => setAttributes({ btn_align: value })}
-              options={[
-                {
-                  value: "text-left",
-                  label: __("Left", "vk-blocks")
-                },
-                {
-                  value: "text-center",
-                  label: __("Center", "vk-blocks")
-                },
-                {
-                  value: "text-right",
-                  label: __("Right", "vk-blocks")
-                }
-              ]}
-            />
-          </BaseControl>
-        </PanelBody>
-      );
-    };
-
     const renderItemCard = () => {
       return (
         <PanelBody title={__("Display item", "vk-blocks")} initialOpen={false}>
@@ -551,24 +355,24 @@ export class PostList extends Component {
               return (
                 <div>
                   {renderConditionsUrlInput()}
-                  {renderTypeColumn()}
-                  {renderItem()}
+                  <SelectColumns {...attributes} />
+                  <DisplayItems {...attributes} />
                 </div>
               );
             } else if (name === "vk-blocks/card") {
               return (
                 <div>
-                  {renderTypeColumn()}
+                  <SelectColumns {...attributes} />
                   {renderItemCard()}
-                  {<CardAlignControls {...this.props.value} />}
+                  <CardAlignControls {...this.props.value} />
                 </div>
               );
             } else {
               return (
                 <div>
                   {renderConditions()}
-                  {renderTypeColumn()}
-                  {renderItem()}
+                  <SelectColumns {...attributes} />
+                  <DisplayItems {...attributes} />
                 </div>
               );
             }

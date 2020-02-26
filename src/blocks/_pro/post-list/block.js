@@ -46,7 +46,8 @@ const BlockIcon = (
     />
   </svg>
 );
-import { schema } from "./schema.js";
+
+import { schema } from "./schema.js.js";
 import { PostList } from "../../_helper/post-list";
 
 registerBlockType("vk-blocks/post-list", {

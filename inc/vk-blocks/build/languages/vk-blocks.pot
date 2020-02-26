@@ -34,155 +34,161 @@ msgstr ""
 msgid "Font Awesome icon list"
 msgstr ""
 
-#: src/_helper/post-list.js:192
-msgid "Filter by PostTypes"
-msgstr ""
-
-#: src/_helper/post-list.js:195
-msgid "Filter by Taxonomy Terms"
-msgstr ""
-
-#: src/_helper/post-list.js:198
-msgid "Number of Posts"
-msgstr ""
-
-#: src/_helper/post-list.js:270
-msgid "Exsist Already Page"
-msgstr ""
-
-#: src/_helper/post-list.js:289
-msgid "Current Page"
-msgstr ""
-
-#: src/_helper/post-list.js:301
-msgid "Display conditions"
-msgstr ""
-
-#: src/_helper/post-list.js:304
-msgid "Parent"
-msgstr ""
-
-#: src/_helper/post-list.js:320
-msgid "Display type and columns"
-msgstr ""
-
-#: src/_helper/post-list.js:325
-msgid "Column ( Screen size : Extra small )"
-msgstr ""
-
-#: src/_helper/post-list.js:335
-msgid "Column ( Screen size : Small )"
-msgstr ""
-
-#: src/_helper/post-list.js:345
-msgid "Column ( Screen size : Medium )"
-msgstr ""
-
-#: src/_helper/post-list.js:355
-msgid "Column ( Screen size : Large )"
-msgstr ""
-
-#: src/_helper/post-list.js:365
-msgid "Column ( Screen size : Extra large )"
-msgstr ""
-
-#: src/_helper/post-list.js:392
+#: src/_helper/post-list-utils.js:105
 msgid "Card ( No border )"
 msgstr ""
 
-#: src/_helper/post-list.js:400
-msgid "Display type"
-msgstr ""
-
-#: src/_helper/post-list.js:407
+#: src/_helper/post-list-utils.js:111
 #: src/_pro/card/block.js:51
 msgid "Card"
 msgstr ""
 
-#: src/_helper/post-list.js:411
+#: src/_helper/post-list-utils.js:115
 msgid "Card Horizontal"
 msgstr ""
 
-#: src/_helper/post-list.js:415
+#: src/_helper/post-list-utils.js:119
 msgid "Media"
 msgstr ""
 
-#: src/_helper/post-list.js:433
+#: src/_helper/post-list-utils.js:12
+#: src/_helper/post-list.js:321
+msgid "Display item"
+msgstr ""
+
+#: src/_helper/post-list-utils.js:139
+msgid "Display type and columns"
+msgstr ""
+
+#: src/_helper/post-list-utils.js:14
+#: src/_helper/post-list.js:323
+msgid "Image"
+msgstr ""
+
+#: src/_helper/post-list-utils.js:142
+msgid "Display type"
+msgstr ""
+
+#: src/_helper/post-list-utils.js:150
+msgid "Column ( Screen size : Extra small )"
+msgstr ""
+
+#: src/_helper/post-list-utils.js:159
+msgid "Column ( Screen size : Small )"
+msgstr ""
+
+#: src/_helper/post-list-utils.js:167
+msgid "Column ( Screen size : Medium )"
+msgstr ""
+
+#: src/_helper/post-list-utils.js:175
+msgid "Column ( Screen size : Large )"
+msgstr ""
+
+#: src/_helper/post-list-utils.js:184
+msgid "Column ( Screen size : Extra large )"
+msgstr ""
+
+#: src/_helper/post-list-utils.js:19
 msgid "Term name"
 msgstr ""
 
-#: src/_helper/post-list.js:440
+#: src/_helper/post-list-utils.js:26
 msgid "Excerpt"
 msgstr ""
 
-#: src/_helper/post-list.js:445
+#: src/_helper/post-list-utils.js:31
 msgid "Date"
 msgstr ""
 
-#: src/_helper/post-list.js:451
+#: src/_helper/post-list-utils.js:37
 msgid "New mark"
 msgstr ""
 
-#: src/_helper/post-list.js:461
+#: src/_helper/post-list-utils.js:43
+#: src/_helper/post-list.js:328
+#: src/button/block.js:59
+msgid "Button"
+msgstr ""
+
+#: src/_helper/post-list-utils.js:47
 msgid "New mark option"
 msgstr ""
 
-#: src/_helper/post-list.js:463
+#: src/_helper/post-list-utils.js:49
 msgid "Number of days to display the new post mark"
 msgstr ""
 
-#: src/_helper/post-list.js:471
+#: src/_helper/post-list-utils.js:54
 msgid "New post mark"
 msgstr ""
 
-#: src/_helper/post-list.js:491
+#: src/_helper/post-list-utils.js:59
+#: src/_helper/post-list.js:333
+msgid "Button option"
+msgstr ""
+
+#: src/_helper/post-list-utils.js:62
+#: src/_helper/post-list.js:336
+msgid ""
+"Click each card block to set the target url. You can find the url form at "
+"it's sidebar."
+msgstr ""
+
+#: src/_helper/post-list-utils.js:68
+#: src/_helper/post-list.js:342
+msgid "Button text"
+msgstr ""
+
+#: src/_helper/post-list-utils.js:72
 msgid "Button align"
 msgstr ""
 
-#: src/_helper/post-list.js:498
+#: src/_helper/post-list-utils.js:79
 #: src/balloon/block.js:97
 #: src/button/block.js:175
 #: src/pr-content/block.js:202
 msgid "Left"
 msgstr ""
 
-#: src/_helper/post-list.js:502
+#: src/_helper/post-list-utils.js:83
 #: src/button/block.js:176
 msgid "Center"
 msgstr ""
 
-#: src/_helper/post-list.js:506
+#: src/_helper/post-list-utils.js:87
 #: src/balloon/block.js:98
 #: src/button/block.js:177
 #: src/pr-content/block.js:201
 msgid "Right"
 msgstr ""
 
-#: src/_helper/post-list.js:517
-msgid "Display item"
+#: src/_helper/post-list.js:194
+msgid "Filter by PostTypes"
 msgstr ""
 
-#: src/_helper/post-list.js:519
-msgid "Image"
+#: src/_helper/post-list.js:197
+msgid "Filter by Taxonomy Terms"
 msgstr ""
 
-#: src/_helper/post-list.js:524
-#: src/button/block.js:59
-msgid "Button"
+#: src/_helper/post-list.js:200
+msgid "Number of Posts"
 msgstr ""
 
-#: src/_helper/post-list.js:529
-msgid "Button option"
+#: src/_helper/post-list.js:272
+msgid "Exsist Already Page"
 msgstr ""
 
-#: src/_helper/post-list.js:532
-msgid ""
-"Click each card block to set the target url. You can find the url form at "
-"it's sidebar."
+#: src/_helper/post-list.js:291
+msgid "Current Page"
 msgstr ""
 
-#: src/_helper/post-list.js:538
-msgid "Button text"
+#: src/_helper/post-list.js:303
+msgid "Display conditions"
+msgstr ""
+
+#: src/_helper/post-list.js:306
+msgid "Parent"
 msgstr ""
 
 #: src/_pro/card-item/block.js:34
@@ -422,7 +428,7 @@ msgstr ""
 msgid "Outer"
 msgstr ""
 
-#: src/_pro/post-list/block.js:53
+#: src/_pro/post-list/block.js:54
 msgid "Post list"
 msgstr ""
 

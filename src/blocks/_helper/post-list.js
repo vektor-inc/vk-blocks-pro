@@ -18,7 +18,7 @@ const { subscribe, select } = wp.data;
 const { ServerSideRender } = wp.components;
 import addCheckBox from "./checkbox";
 import { CardAlignControls } from "../../components/card-align-control";
-import { renderItem } from "./post-list-utils";
+// import { renderItem } from "../../components/post-list-utils";
 
 export class PostList extends Component {
   render() {

@@ -4,8 +4,8 @@
  */
 
 import React from "react";
-import { schema } from "./schema.js.js";
-import { Component } from "./component.js.js";
+import { schema } from "./schema";
+import { Component } from "./component";
 import { deprecated } from "./deprecated/deprecated";
 
 const { __ } = wp.i18n; // Import __() from wp.i18n

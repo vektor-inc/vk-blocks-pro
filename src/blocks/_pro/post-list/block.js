@@ -4,7 +4,11 @@
  */
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { withSelect } = wp.data;
+const { RangeControl, PanelBody, BaseControl } = wp.components;
+const { Fragment } = wp.element;
+const { InspectorControls } =
+  wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
+const { ServerSideRender } = wp.components;
 const BlockIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -47,8 +51,11 @@ const BlockIcon = (
   </svg>
 );
 
-import { schema } from "./schema.js.js";
-import { PostList } from "../../_helper/post-list";
+import { schema } from "./schema";
+import { DisplayItemsControl } from "../../../components/display-items-control";
+import { ColumnLayoutControl } from "../../../components/column-layout-control";
+import { AdvancedCheckboxControl } from "../../../components/advanced-checkbox-control";
+import { usePostTypes, usePostTypeTaxonomies } from "../../../utils/hooks";
 
 registerBlockType("vk-blocks/post-list", {
   title: __("Post list", "vk-blocks"),
@@ -56,13 +63,123 @@ registerBlockType("vk-blocks/post-list", {
   category: "vk-blocks-cat",
   attributes: schema,
 
-  edit: withSelect(select => {
-    return {
-      postTypes: select("core").getPostTypes()
-    };
-  })(props => {
-    return <PostList value={props} />;
-  }),
+  edit(props) {
+    const {
+      className,
+      attributes,
+      setAttributes,
+      clientId,
+      name,
+      isSelected
+    } = props;
+
+    const {
+      selectId,
+      numberPosts,
+      layout,
+      col_xs,
+      col_sm,
+      col_md,
+      col_lg,
+      col_xl,
+      display_image,
+      display_image_overlay_term,
+      display_excerpt,
+      display_date,
+      display_new,
+      display_btn,
+      new_date,
+      new_text,
+      btn_text,
+      btn_align,
+      isCheckedPostType,
+      coreTerms,
+      isCheckedTerms
+    } = attributes;
+    attributes["name"] = name;
+
+    // if (name === "vk-blocks/post-list") {
+    // let blockAttributes = select("core/editor").getBlockAttributes(clientId);
+    let oldIsCheckedPostType;
+    let oldTaxList;
+    let oldTermsList;
+    let oldCoreTerms;
+
+    //   subscribe(() => {
+    //     if (blockAttributes.isCheckedPostType !== oldIsCheckedPostType) {
+    //       oldIsCheckedPostType = blockAttributes.isCheckedPostType;
+    //       let taxList = getTaxonomyFromPostType(
+    //         blockAttributes.isCheckedPostType
+    //       );
+
+    //       if (taxList !== oldTaxList) {
+    //         oldTaxList = taxList;
+
+    //         let termsList = getTermsFromTaxonomy(taxList);
+    //         if (termsList !== oldTermsList) {
+    //           oldTermsList = termsList;
+    //           let coreTerms = JSON.stringify(termsList);
+
+    //           if (coreTerms !== oldCoreTerms) {
+    //             oldCoreTerms = coreTerms;
+    //             setAttributes({ coreTerms: coreTerms });
+    //           }
+    //         }
+    //       }
+    //     }
+    //   });
+    // }
+
+    let postTypesProps = usePostTypes().map(postType => {
+      return {
+        label: postType.name,
+        slug: postType.slug
+      };
+    });
+    // let taxonomies = usePostTypeTaxonomies();
+
+    return (
+      <Fragment>
+        <InspectorControls>
+          <PanelBody
+            title={__("Display conditions", "vk-blocks")}
+            initialOpen={false}
+          >
+            <BaseControl label={__("Filter by PostTypes", "vk-blocks")}>
+              <AdvancedCheckboxControl
+                schema={"isCheckedPostType"}
+                rawData={postTypesProps}
+                checkedData={JSON.parse(isCheckedPostType)}
+                {...props}
+              />
+            </BaseControl>
+            <BaseControl label={__("Filter by Taxonomy Terms", "vk-blocks")}>
+              {/* {addCheckBox(argsTaxonomy())} */}
+            </BaseControl>
+            <BaseControl label={__("Number of Posts", "vk-blocks")}>
+              <RangeControl
+                value={numberPosts}
+                onChange={value => setAttributes({ numberPosts: value })}
+                min="1"
+                max="24"
+              />
+            </BaseControl>
+          </PanelBody>
+          <ColumnLayoutControl {...attributes} />
+          <DisplayItemsControl {...attributes} />
+        </InspectorControls>
+        <ServerSideRender block="vk-blocks/post-list" attributes={attributes} />
+      </Fragment>
+    );
+  },
+
+  // : withSelect(select => {
+  //   return {
+  //     postTypes: select("core").getPostTypes()
+  //   };
+  // })(props => {
+  //   return <PostList value={props} />;
+  // }),
 
   save() {
     return null;

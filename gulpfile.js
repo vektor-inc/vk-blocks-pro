@@ -39,14 +39,19 @@ gulp.task("sass", function() {
   );
 });
 
-gulp.task('sass_editor', function (){
-	return gulp.src([ './editor-css/_editor_before.scss',  './src/**/*.scss', './editor-css/_editor_after.scss'])
-		.pipe(concat('editor-block-build-marge.scss'))
-		.pipe(gulp.dest('./editor-css/'))
-		.pipe(sass())
-		.pipe(cleanCss())
-		.pipe(concat('block-build-editor.css'))
-		.pipe(gulp.dest('./inc/vk-blocks/build/'));
+gulp.task("sass_editor", function() {
+  return gulp
+    .src([
+      "./editor-css/_editor_before.scss",
+      "./src/**/*.scss",
+      "./editor-css/_editor_after.scss"
+    ])
+    .pipe(concat("editor-block-build-marge.scss"))
+    .pipe(gulp.dest("./editor-css/"))
+    .pipe(sass())
+    .pipe(cleanCss())
+    .pipe(concat("block-build-editor.css"))
+    .pipe(gulp.dest("./inc/vk-blocks/build/"));
 });
 
 // VK Block で使用しているBootstrapのみコンパイル
@@ -82,18 +87,24 @@ gulp.task("js", function() {
 
 gulp.task("copy_front_js", function() {
   return gulp
-    .src(["./src/_pro/table-of-contents/viewHelper.js"])
+    .src(["./src/blocks/_pro/table-of-contents/viewHelper.js"])
     .pipe(jsmin())
     .pipe(gulp.dest("./inc/vk-blocks/build/"));
 });
 
 // watch
-gulp.task('watch', function () {
-    gulp.watch('src/**/*.js', gulp.parallel('js','copy_front_js'));
-    gulp.watch('editor-css/_editor_before.scss', gulp.parallel('sass_editor'));
-    gulp.watch('src/**/*.scss', gulp.series('sass','sass_editor'));
-    gulp.watch('lib/bootstrap/scss/*.scss', gulp.parallel('sass_bootstrap','sass_editor'));
-    gulp.watch('inc/vk-components/**/*.scss', gulp.parallel('sass_vk_components','sass_editor'));
+gulp.task("watch", function() {
+  gulp.watch("src/**/*.js", gulp.parallel("js", "copy_front_js"));
+  gulp.watch("editor-css/_editor_before.scss", gulp.parallel("sass_editor"));
+  gulp.watch("src/**/*.scss", gulp.series("sass", "sass_editor"));
+  gulp.watch(
+    "lib/bootstrap/scss/*.scss",
+    gulp.parallel("sass_bootstrap", "sass_editor")
+  );
+  gulp.watch(
+    "inc/vk-components/**/*.scss",
+    gulp.parallel("sass_vk_components", "sass_editor")
+  );
 });
 
 //Build : Development
@@ -140,7 +151,11 @@ gulp.task("dist", function() {
       ],
       { base: "./" }
     )
-    .pipe(gulp.dest("../../../../../../updatepro/app/public/wp-content/plugins/vk-blocks-pro"))
+    .pipe(
+      gulp.dest(
+        "../../../../../../updatepro/app/public/wp-content/plugins/vk-blocks-pro"
+      )
+    )
     .pipe(gulp.dest("dist/vk-blocks-pro")); // distディレクトリに出力
 });
 

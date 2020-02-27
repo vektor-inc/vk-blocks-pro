@@ -173,14 +173,6 @@ registerBlockType("vk-blocks/post-list", {
     );
   },
 
-  // : withSelect(select => {
-  //   return {
-  //     postTypes: select("core").getPostTypes()
-  //   };
-  // })(props => {
-  //   return <PostList value={props} />;
-  // }),
-
   save() {
     return null;
   }

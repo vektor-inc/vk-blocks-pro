@@ -1,26 +1,30 @@
 const { CheckboxControl } = wp.components;
+const { useState } = wp.element;
+import { destructiveDeleteFromArray } from "../../utils/delete-from-array";
 
 export const AdvancedCheckboxControl = props => {
   const { schema, rawData, checkedData, setAttributes } = props;
-
   if (!rawData || !Array.isArray(checkedData) || !checkedData) return false;
 
-  const advancedSetAttributes = (schema, checkedData) => {
-    setAttributes({ [schema]: JSON.stringify(checkedData) });
+  const [checkedState, setCheckedState] = useState(checkedData);
+
+  const advancedSetAttributes = (schema, saveData) => {
+    setAttributes({ [schema]: JSON.stringify(saveData) });
   };
 
   let checkBoxComponents = rawData.map(data => {
     return (
       <CheckboxControl
         label={data.label}
-        checked={checkedData.some(item => item === data.slug)}
+        checked={checkedState.some(item => item === data.slug)}
         onChange={value => {
           if (value) {
-            checkedData.push(data.slug);
+            checkedState.push(data.slug);
           } else {
-            checkedData = checkedData.filter(item => item !== data.slug);
+            destructiveDeleteFromArray(checkedState, data.slug);
           }
-          advancedSetAttributes.bind(null, schema, checkedData)();
+          setCheckedState(checkedState);
+          advancedSetAttributes.bind(null, schema, checkedState)();
         }}
       />
     );

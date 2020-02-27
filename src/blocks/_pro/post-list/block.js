@@ -130,13 +130,22 @@ registerBlockType("vk-blocks/post-list", {
     //   });
     // }
 
-    let postTypesProps = usePostTypes().map(postType => {
+    let postTypes = usePostTypes();
+    let postTypesProps = postTypes.map(postType => {
       return {
         label: postType.name,
         slug: postType.slug
       };
     });
-    // let taxonomies = usePostTypeTaxonomies();
+
+    const getTaxonomies = postType => {
+      return usePostTypeTaxonomies(postType);
+    };
+
+    let taxonomiesProps = postTypes.forEach(getTaxonomies);
+
+    console.log(postTypes);
+    console.log(taxonomiesProps);
 
     return (
       <Fragment>
@@ -154,7 +163,12 @@ registerBlockType("vk-blocks/post-list", {
               />
             </BaseControl>
             <BaseControl label={__("Filter by Taxonomy Terms", "vk-blocks")}>
-              {/* {addCheckBox(argsTaxonomy())} */}
+              {/* <AdvancedCheckboxControl
+                schema={"isCheckedTerms"}
+                rawData={taxonomiesProps}
+                checkedData={JSON.parse(isCheckedTerms)}
+                {...props}
+              /> */}
             </BaseControl>
             <BaseControl label={__("Number of Posts", "vk-blocks")}>
               <RangeControl

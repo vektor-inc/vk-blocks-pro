@@ -42,6 +42,8 @@ const defaultMinMax = {
 };
 
 export const ColumnLayoutControl = props => {
+  const { setAttributes, attributes } = props;
+  const { layout, name, col_xs, col_sm, col_md, col_lg, col_xl } = attributes;
   return (
     <PanelBody
       title={__("Display type and columns", "vk-blocks")}
@@ -49,16 +51,16 @@ export const ColumnLayoutControl = props => {
     >
       <BaseControl label={__("Display type", "vk-blocks")}>
         <SelectControl
-          value={props.layout}
+          value={layout}
           onChange={value => setAttributes({ layout: value })}
-          options={setOptions(props.name)}
+          options={setOptions(name)}
         />
       </BaseControl>
       <BaseControl
         label={__("Column ( Screen size : Extra small )", "vk-blocks")}
       >
         <RangeControl
-          value={props.col_xs}
+          value={col_xs}
           onChange={value => setAttributes({ col_xs: value })}
           min={defaultMinMax.min}
           max={defaultMinMax.max}
@@ -66,7 +68,7 @@ export const ColumnLayoutControl = props => {
       </BaseControl>
       <BaseControl label={__("Column ( Screen size : Small )", "vk-blocks")}>
         <RangeControl
-          value={props.col_sm}
+          value={col_sm}
           onChange={value => setAttributes({ col_sm: value })}
           min={defaultMinMax.min}
           max={defaultMinMax.max}
@@ -74,7 +76,7 @@ export const ColumnLayoutControl = props => {
       </BaseControl>
       <BaseControl label={__("Column ( Screen size : Medium )", "vk-blocks")}>
         <RangeControl
-          value={props.col_md}
+          value={col_md}
           onChange={value => setAttributes({ col_md: value })}
           min={defaultMinMax.min}
           max={defaultMinMax.max}
@@ -82,7 +84,7 @@ export const ColumnLayoutControl = props => {
       </BaseControl>
       <BaseControl label={__("Column ( Screen size : Large )", "vk-blocks")}>
         <RangeControl
-          value={props.col_lg}
+          value={col_lg}
           onChange={value => setAttributes({ col_lg: value })}
           min={defaultMinMax.min}
           max={defaultMinMax.max}
@@ -92,7 +94,7 @@ export const ColumnLayoutControl = props => {
         label={__("Column ( Screen size : Extra large )", "vk-blocks")}
       >
         <RangeControl
-          value={props.col_xl}
+          value={col_xl}
           onChange={value => setAttributes({ col_xl: value })}
           min={defaultMinMax.min}
           max={defaultMinMax.max}

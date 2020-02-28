@@ -126,8 +126,8 @@ registerBlockType("vk-blocks/post-list", {
               />
             </BaseControl>
           </PanelBody>
-          <ColumnLayoutControl {...attributes} />
-          <DisplayItemsControl {...attributes} />
+          <ColumnLayoutControl {...props} />
+          <DisplayItemsControl {...props} />
         </InspectorControls>
         <ServerSideRender block="vk-blocks/post-list" attributes={attributes} />
       </Fragment>

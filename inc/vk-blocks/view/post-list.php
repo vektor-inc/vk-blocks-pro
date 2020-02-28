@@ -75,19 +75,14 @@ class VkBlocksPostList {
 
 		foreach ( $isCheckedTerms as $key => $value ) {
 
-			var_dump($value);
-			var_dump(get_term_by('slug',$value));
-			die();
+			$term = get_term($value);
+			$new_array = array(
+				'taxonomy' => $term->taxonomy,
+				'field'    => 'term_id',
+				'terms'    => $value,
+			);
+			array_push( $return, $new_array );
 
-			if ( $value !== array() ) {
-
-				$new_array = array(
-					'taxonomy' => $key,
-					'field'    => 'slug',
-					'terms'    => $value,
-				);
-				array_push( $return, $new_array );
-			}
 		}
 		return $return;
 	}
@@ -95,6 +90,7 @@ class VkBlocksPostList {
 	public function get_loop_query( $attributes ) {
 
 		$isCheckedPostType = json_decode( $attributes['isCheckedPostType'], true );
+
 		$isCheckedTerms    = json_decode( $attributes['isCheckedTerms'], true );
 
 		if ( empty( $isCheckedPostType ) ) {

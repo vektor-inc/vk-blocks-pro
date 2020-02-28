@@ -84,7 +84,6 @@ registerBlockType("vk-blocks/post-list", {
 
     let taxonomies = useTaxonomies();
     let terms = useTermsGroupbyTaxnomy(taxonomies);
-    console.log(terms);
     let taxonomiesPropsRaw = Object.keys(terms).map(function(taxonomy) {
       return this[taxonomy].map(term => {
         return {

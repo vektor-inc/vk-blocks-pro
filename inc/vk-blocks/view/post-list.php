@@ -75,6 +75,10 @@ class VkBlocksPostList {
 
 		foreach ( $isCheckedTerms as $key => $value ) {
 
+			var_dump($value);
+			var_dump(get_term_by('slug',$value));
+			die();
+
 			if ( $value !== array() ) {
 
 				$new_array = array(

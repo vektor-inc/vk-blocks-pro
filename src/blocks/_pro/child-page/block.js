@@ -2,12 +2,6 @@
  * child-page block type
  *
  */
-const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
-const { withSelect, select } = wp.data;
-import { schema } from "./schema";
-import { PostList } from "../../_helper/post-list";
-
 const BlockIcon = (
   <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 576 512">
     <path
@@ -32,6 +26,18 @@ const BlockIcon = (
   </svg>
 );
 
+const { registerBlockType } = wp.blocks;
+const { __ } = wp.i18n;
+const { PanelBody, BaseControl, SelectControl } = wp.components;
+const { Fragment } = wp.element;
+const { InspectorControls } =
+  wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
+const { withSelect, select } = wp.data;
+const { ServerSideRender } = wp.components;
+import { schema } from "./schema";
+import { DisplayItemsControl } from "../../../components/display-items-control";
+import { ColumnLayoutControl } from "../../../components/column-layout-control";
+
 registerBlockType("vk-blocks/child-page", {
   // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
   title: __("Child page list", "vk-blocks"), // Block title.
@@ -47,9 +53,126 @@ registerBlockType("vk-blocks/child-page", {
       })
     };
   })(props => {
-    return <PostList value={props} />;
+    const { setAttributes, attributes, postTypes } = props;
+    const { selectId } = attributes;
+    return (
+      <Fragment>
+        <InspectorControls>
+          <PanelBody
+            title={__("Display conditions", "vk-blocks")}
+            initialOpen={false}
+          >
+            <BaseControl label={__("Parent", "vk-blocks")}>
+              <SelectControl
+                value={selectId}
+                onChange={value =>
+                  setAttributes({ selectId: parseInt(value, 10) })
+                }
+                options={renderPages(...props)}
+              />
+            </BaseControl>
+          </PanelBody>
+          <ColumnLayoutControl {...props} />
+          <DisplayItemsControl {...props} />
+        </InspectorControls>
+        <ServerSideRender
+          block="vk-blocks/child-page"
+          attributes={attributes}
+        />
+      </Fragment>
+    );
   }),
   save() {
     return null;
   }
 });
+
+export const renderPages = pages => {
+  const { attributes } = props;
+  const { selectId } = attributes;
+  console.log(pages);
+
+  if (pages) {
+    //隕ｪ繝壹�繧ｸ繧呈歓蜃ｺ
+    let parents = filterParents(pages);
+
+    //蟄舌�繝ｼ繧ｸ繧呈歓蜃ｺ
+    let children = filterChildren(pages);
+
+    //隕ｪ繝壹�繧ｸ縺ｮ逶ｴ蠕後↓蟄舌�繝ｼ繧ｸ縺梧諺蜈･縺輔ｌ縺滄�蛻励ｒ逕滓�
+    children.forEach(child => {
+      const index = parents.findIndex(parent => parent.id === child.parent);
+      if (index !== -1) {
+        parents.splice(index, 0, child);
+      } else {
+        parents.push(child);
+      }
+    });
+
+    //鬆�分繧貞渚蟇ｾ縺ｫ
+    parents.reverse();
+
+    //繝励Ν繝繧ｦ繝ｳ繝｡繝九Η繝ｼ逕ｨ縺ｫ繝輔か繝ｼ繝槭ャ繝�
+    let formated = formatPulldonwOrder(parents);
+
+    let defaultOption = [
+      {
+        value: 0,
+        label: __("Exsist Already Page", "vk-blocks")
+      }
+    ];
+    let currentPageId = select("core/editor").getCurrentPostId();
+    let isCurrentPageCreated = pages.find(page => page.id === currentPageId);
+
+    //譁ｰ隕上�繝ｼ繧ｸ縺ｫ繝悶Ο繝�け霑ｽ蜉�譎� or 譌｢蟄倥�繝ｼ繧ｸ縺ｫ繝悶Ο繝�け霑ｽ蜉�譎�
+    if (
+      (isCurrentPageCreated === undefined && selectId === undefined) ||
+      selectId === undefined ||
+      (isCurrentPageCreated === undefined && currentPageId === selectId)
+    ) {
+      setAttributes({ selectId: currentPageId });
+      //繝�ヵ繧ｩ繝ｫ繝医が繝励す繝ｧ繝ｳ
+      defaultOption = [
+        {
+          value: currentPageId,
+          label: __("Current Page", "vk-blocks")
+        }
+      ];
+      formated = defaultOption.concat(formated);
+    }
+    return formated;
+  }
+};
+
+export const filterParents = pages => {
+  return pages.filter(page => {
+    if (page.parent === 0) {
+      return true;
+    }
+    return false;
+  });
+};
+
+export const filterChildren = pages => {
+  return pages.filter(page => {
+    if (page.parent !== 0) {
+      return true;
+    }
+    return false;
+  });
+};
+
+export const formatPulldonwOrder = parents => {
+  let label;
+  return parents.map(page => {
+    if (page.parent !== 0) {
+      label = " - " + page.title.rendered + "(Child Page)";
+    } else {
+      label = page.title.rendered;
+    }
+    return {
+      value: page.id,
+      label: __(label, "vk-blocks")
+    };
+  });
+};

@@ -28,7 +28,7 @@ class VkBlocksPostList {
 			$options_loop = array( 'class_loop_outer' => '' );
 		}
 
-		if ( $wp_query === false || $wp_query === 'false' || $wp_query->posts === array() ) {
+		if ( !isset($wp_query) || $wp_query === false || $wp_query === 'false' || $wp_query->posts === array() ) {
 			return $this->renderNoPost();
 		}
 

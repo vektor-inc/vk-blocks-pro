@@ -69,38 +69,9 @@ registerBlockType("vk-blocks/post-list", {
   attributes: schema,
 
   edit(props) {
-    const {
-      className,
-      attributes,
-      setAttributes,
-      clientId,
-      name,
-      isSelected
-    } = props;
+    const { attributes, setAttributes, name } = props;
 
-    const {
-      selectId,
-      numberPosts,
-      layout,
-      col_xs,
-      col_sm,
-      col_md,
-      col_lg,
-      col_xl,
-      display_image,
-      display_image_overlay_term,
-      display_excerpt,
-      display_date,
-      display_new,
-      display_btn,
-      new_date,
-      new_text,
-      btn_text,
-      btn_align,
-      isCheckedPostType,
-      coreTerms,
-      isCheckedTerms
-    } = attributes;
+    const { numberPosts, isCheckedPostType, isCheckedTerms } = attributes;
     attributes["name"] = name;
 
     let postTypes = usePostTypes();

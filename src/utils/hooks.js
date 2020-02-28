@@ -15,6 +15,12 @@ export const usePostType = postType => {
   );
 };
 
+export const useTaxonomies = () => {
+  return useSelect(select => {
+    return select("core").getTaxonomies({ per_page: -1 }) || [];
+  }, []);
+};
+
 export const usePostTypeTaxonomies = postType => {
   return useSelect(
     select => {

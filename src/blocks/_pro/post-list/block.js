@@ -55,7 +55,12 @@ import { schema } from "./schema";
 import { DisplayItemsControl } from "../../../components/display-items-control";
 import { ColumnLayoutControl } from "../../../components/column-layout-control";
 import { AdvancedCheckboxControl } from "../../../components/advanced-checkbox-control";
-import { usePostTypes, usePostTypeTaxonomies } from "../../../utils/hooks";
+import {
+  usePostTypes,
+  useTaxonomies,
+  useTermsGroupbyTaxnomy
+} from "../../../utils/hooks";
+import { flat } from "../../../utils/multi-array-flaten";
 
 registerBlockType("vk-blocks/post-list", {
   title: __("Post list", "vk-blocks"),
@@ -98,38 +103,6 @@ registerBlockType("vk-blocks/post-list", {
     } = attributes;
     attributes["name"] = name;
 
-    // if (name === "vk-blocks/post-list") {
-    // let blockAttributes = select("core/editor").getBlockAttributes(clientId);
-    let oldIsCheckedPostType;
-    let oldTaxList;
-    let oldTermsList;
-    let oldCoreTerms;
-
-    //   subscribe(() => {
-    //     if (blockAttributes.isCheckedPostType !== oldIsCheckedPostType) {
-    //       oldIsCheckedPostType = blockAttributes.isCheckedPostType;
-    //       let taxList = getTaxonomyFromPostType(
-    //         blockAttributes.isCheckedPostType
-    //       );
-
-    //       if (taxList !== oldTaxList) {
-    //         oldTaxList = taxList;
-
-    //         let termsList = getTermsFromTaxonomy(taxList);
-    //         if (termsList !== oldTermsList) {
-    //           oldTermsList = termsList;
-    //           let coreTerms = JSON.stringify(termsList);
-
-    //           if (coreTerms !== oldCoreTerms) {
-    //             oldCoreTerms = coreTerms;
-    //             setAttributes({ coreTerms: coreTerms });
-    //           }
-    //         }
-    //       }
-    //     }
-    //   });
-    // }
-
     let postTypes = usePostTypes();
     let postTypesProps = postTypes.map(postType => {
       return {
@@ -138,14 +111,18 @@ registerBlockType("vk-blocks/post-list", {
       };
     });
 
-    const getTaxonomies = postType => {
-      return usePostTypeTaxonomies(postType);
-    };
-
-    let taxonomiesProps = postTypes.forEach(getTaxonomies);
-
-    console.log(postTypes);
-    console.log(taxonomiesProps);
+    let taxonomies = useTaxonomies();
+    let terms = useTermsGroupbyTaxnomy(taxonomies);
+    let taxonomiesPropsRaw = Object.keys(terms).map(function(taxonomy) {
+      return this[taxonomy].map(term => {
+        return {
+          taxonomy: taxonomy,
+          label: term.name,
+          slug: term.slug
+        };
+      });
+    }, terms);
+    const taxonomiesProps = flat(taxonomiesPropsRaw);
 
     return (
       <Fragment>
@@ -163,12 +140,12 @@ registerBlockType("vk-blocks/post-list", {
               />
             </BaseControl>
             <BaseControl label={__("Filter by Taxonomy Terms", "vk-blocks")}>
-              {/* <AdvancedCheckboxControl
+              <AdvancedCheckboxControl
                 schema={"isCheckedTerms"}
                 rawData={taxonomiesProps}
                 checkedData={JSON.parse(isCheckedTerms)}
                 {...props}
-              /> */}
+              />
             </BaseControl>
             <BaseControl label={__("Number of Posts", "vk-blocks")}>
               <RangeControl

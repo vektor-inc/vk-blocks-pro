@@ -4,7 +4,8 @@ import { destructiveDeleteFromArray } from "../../utils/delete-from-array";
 
 export const AdvancedCheckboxControl = props => {
   const { schema, rawData, checkedData, setAttributes } = props;
-  if (!rawData || !Array.isArray(checkedData) || !checkedData) return false;
+
+  if (!rawData || !checkedData) return false;
 
   const [checkedState, setCheckedState] = useState(checkedData);
 

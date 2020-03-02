@@ -1,5 +1,5 @@
 module.exports = {
-  entry: "./src/bundle.js",
+  entry: "./src/blocks/bundle.js",
   output: {
     filename: "./inc/vk-blocks/build/block-build.js"
   },

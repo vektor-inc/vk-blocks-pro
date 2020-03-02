@@ -28,7 +28,7 @@ class VkBlocksPostList {
 			$options_loop = array( 'class_loop_outer' => '' );
 		}
 
-		if ( $wp_query === false || $wp_query === 'false' || $wp_query->posts === array() ) {
+		if ( !isset($wp_query) || $wp_query === false || $wp_query === 'false' || $wp_query->posts === array() ) {
 			return $this->renderNoPost();
 		}
 
@@ -75,15 +75,14 @@ class VkBlocksPostList {
 
 		foreach ( $isCheckedTerms as $key => $value ) {
 
-			if ( $value !== array() ) {
+			$term = get_term($value);
+			$new_array = array(
+				'taxonomy' => $term->taxonomy,
+				'field'    => 'term_id',
+				'terms'    => $value,
+			);
+			array_push( $return, $new_array );
 
-				$new_array = array(
-					'taxonomy' => $key,
-					'field'    => 'slug',
-					'terms'    => $value,
-				);
-				array_push( $return, $new_array );
-			}
 		}
 		return $return;
 	}
@@ -91,6 +90,7 @@ class VkBlocksPostList {
 	public function get_loop_query( $attributes ) {
 
 		$isCheckedPostType = json_decode( $attributes['isCheckedPostType'], true );
+
 		$isCheckedTerms    = json_decode( $attributes['isCheckedTerms'], true );
 
 		if ( empty( $isCheckedPostType ) ) {

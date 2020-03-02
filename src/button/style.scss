@@ -52,8 +52,8 @@
     }
   }
 
-  .editor-rich-text {
-    //display: inline-block;
+  .editor-rich-text { // Font Awesomeアイコンが管理画面側で改行されないために inline-block を指定
+    display: inline-block;
   }
 }
 

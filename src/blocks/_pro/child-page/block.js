@@ -55,6 +55,7 @@ registerBlockType("vk-blocks/child-page", {
   })(props => {
     const { setAttributes, attributes, postTypes } = props;
     const { selectId } = attributes;
+    attributes["name"] = "vk-blocks/child-page";
     return (
       <Fragment>
         <InspectorControls>
@@ -68,7 +69,7 @@ registerBlockType("vk-blocks/child-page", {
                 onChange={value =>
                   setAttributes({ selectId: parseInt(value, 10) })
                 }
-                options={renderPages(...props)}
+                options={renderPages(postTypes, props)}
               />
             </BaseControl>
           </PanelBody>
@@ -87,17 +88,16 @@ registerBlockType("vk-blocks/child-page", {
   }
 });
 
-export const renderPages = pages => {
-  const { attributes } = props;
+export const renderPages = (postTypes, props) => {
+  const { attributes, setAttributes } = props;
   const { selectId } = attributes;
-  console.log(pages);
 
-  if (pages) {
+  if (postTypes) {
     //隕ｪ繝壹�繧ｸ繧呈歓蜃ｺ
-    let parents = filterParents(pages);
+    let parents = filterParents(postTypes);
 
     //蟄舌�繝ｼ繧ｸ繧呈歓蜃ｺ
-    let children = filterChildren(pages);
+    let children = filterChildren(postTypes);
 
     //隕ｪ繝壹�繧ｸ縺ｮ逶ｴ蠕後↓蟄舌�繝ｼ繧ｸ縺梧諺蜈･縺輔ｌ縺滄�蛻励ｒ逕滓�
     children.forEach(child => {
@@ -122,7 +122,9 @@ export const renderPages = pages => {
       }
     ];
     let currentPageId = select("core/editor").getCurrentPostId();
-    let isCurrentPageCreated = pages.find(page => page.id === currentPageId);
+    let isCurrentPageCreated = postTypes.find(
+      page => page.id === currentPageId
+    );
 
     //譁ｰ隕上�繝ｼ繧ｸ縺ｫ繝悶Ο繝�け霑ｽ蜉�譎� or 譌｢蟄倥�繝ｼ繧ｸ縺ｫ繝悶Ο繝�け霑ｽ蜉�譎�
     if (

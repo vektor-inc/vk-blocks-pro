@@ -72,7 +72,8 @@ registerBlockType("vk-blocks/card", {
    * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
    */
   edit(props) {
-    const { attributes, setAttributes, className, clientId } = props;
+    const { attributes, setAttributes, className, clientId, name } = props;
+    attributes["name"] = name;
 
     let selectEditor = select("core/block-editor")
       ? select("core/block-editor")

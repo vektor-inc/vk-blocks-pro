@@ -53,9 +53,9 @@ registerBlockType("vk-blocks/child-page", {
       })
     };
   })(props => {
-    const { setAttributes, attributes, postTypes } = props;
+    const { setAttributes, attributes, postTypes, name } = props;
     const { selectId } = attributes;
-    attributes["name"] = "vk-blocks/child-page";
+    attributes["name"] = name;
     return (
       <Fragment>
         <InspectorControls>

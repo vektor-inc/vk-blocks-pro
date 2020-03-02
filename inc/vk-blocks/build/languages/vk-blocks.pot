@@ -18,71 +18,6 @@ msgstr ""
 msgid "Font Awesome icon list"
 msgstr ""
 
-#: src/blocks/_helper/post-list.js:194
-#: src/blocks/_pro/post-list/block.js:148
-msgid "Filter by PostTypes"
-msgstr ""
-
-#: src/blocks/_helper/post-list.js:197
-#: src/blocks/_pro/post-list/block.js:156
-msgid "Filter by Taxonomy Terms"
-msgstr ""
-
-#: src/blocks/_helper/post-list.js:200
-#: src/blocks/_pro/post-list/block.js:159
-msgid "Number of Posts"
-msgstr ""
-
-#: src/blocks/_helper/post-list.js:272
-msgid "Exsist Already Page"
-msgstr ""
-
-#: src/blocks/_helper/post-list.js:291
-msgid "Current Page"
-msgstr ""
-
-#: src/blocks/_helper/post-list.js:303
-#: src/blocks/_pro/post-list/block.js:145
-msgid "Display conditions"
-msgstr ""
-
-#: src/blocks/_helper/post-list.js:306
-msgid "Parent"
-msgstr ""
-
-#: src/blocks/_helper/post-list.js:321
-#: src/components/display-items-control/index.js:12
-msgid "Display item"
-msgstr ""
-
-#: src/blocks/_helper/post-list.js:323
-#: src/components/display-items-control/index.js:14
-msgid "Image"
-msgstr ""
-
-#: src/blocks/_helper/post-list.js:328
-#: src/blocks/button/block.js:59
-#: src/components/display-items-control/index.js:43
-msgid "Button"
-msgstr ""
-
-#: src/blocks/_helper/post-list.js:333
-#: src/components/display-items-control/index.js:59
-msgid "Button option"
-msgstr ""
-
-#: src/blocks/_helper/post-list.js:336
-#: src/components/display-items-control/index.js:62
-msgid ""
-"Click each card block to set the target url. You can find the url form at "
-"it's sidebar."
-msgstr ""
-
-#: src/blocks/_helper/post-list.js:342
-#: src/components/display-items-control/index.js:68
-msgid "Button text"
-msgstr ""
-
 #: src/blocks/_pro/card-item/block.js:34
 msgid "Card Item"
 msgstr ""
@@ -121,13 +56,63 @@ msgstr ""
 msgid "Select image"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:51
+#: src/blocks/_pro/card/block.js:139
+#: src/components/display-items-control/index.js:26
+msgid "Display item"
+msgstr ""
+
+#: src/blocks/_pro/card/block.js:141
+#: src/components/display-items-control/index.js:28
+msgid "Image"
+msgstr ""
+
+#: src/blocks/_pro/card/block.js:146
+#: src/blocks/button/block.js:59
+#: src/components/display-items-control/index.js:57
+msgid "Button"
+msgstr ""
+
+#: src/blocks/_pro/card/block.js:151
+#: src/components/display-items-control/index.js:73
+msgid "Button option"
+msgstr ""
+
+#: src/blocks/_pro/card/block.js:154
+#: src/components/display-items-control/index.js:76
+msgid ""
+"Click each card block to set the target url. You can find the url form at "
+"it's sidebar."
+msgstr ""
+
+#: src/blocks/_pro/card/block.js:160
+#: src/components/display-items-control/index.js:82
+msgid "Button text"
+msgstr ""
+
+#: src/blocks/_pro/card/block.js:61
 #: src/components/column-layout-control/index.js:19
 msgid "Card"
 msgstr ""
 
-#: src/blocks/_pro/child-page/block.js:37
+#: src/blocks/_pro/child-page/block.js:121
+msgid "Exsist Already Page"
+msgstr ""
+
+#: src/blocks/_pro/child-page/block.js:140
+msgid "Current Page"
+msgstr ""
+
+#: src/blocks/_pro/child-page/block.js:43
 msgid "Child page list"
+msgstr ""
+
+#: src/blocks/_pro/child-page/block.js:63
+#: src/blocks/_pro/post-list/block.js:101
+msgid "Display conditions"
+msgstr ""
+
+#: src/blocks/_pro/child-page/block.js:66
+msgid "Parent"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:116
@@ -325,7 +310,19 @@ msgstr ""
 msgid "Outer"
 msgstr ""
 
-#: src/blocks/_pro/post-list/block.js:61
+#: src/blocks/_pro/post-list/block.js:104
+msgid "Filter by PostTypes"
+msgstr ""
+
+#: src/blocks/_pro/post-list/block.js:112
+msgid "Filter by Taxonomy Terms"
+msgstr ""
+
+#: src/blocks/_pro/post-list/block.js:120
+msgid "Number of Posts"
+msgstr ""
+
+#: src/blocks/_pro/post-list/block.js:66
 msgid "Post list"
 msgstr ""
 
@@ -447,14 +444,14 @@ msgstr ""
 #: src/blocks/balloon/block.js:97
 #: src/blocks/button/block.js:175
 #: src/blocks/pr-content/block.js:241
-#: src/components/display-items-control/index.js:79
+#: src/components/display-items-control/index.js:93
 msgid "Left"
 msgstr ""
 
 #: src/blocks/balloon/block.js:98
 #: src/blocks/button/block.js:177
 #: src/blocks/pr-content/block.js:240
-#: src/components/display-items-control/index.js:87
+#: src/components/display-items-control/index.js:101
 msgid "Right"
 msgstr ""
 
@@ -489,7 +486,7 @@ msgid "Button Position:"
 msgstr ""
 
 #: src/blocks/button/block.js:176
-#: src/components/display-items-control/index.js:83
+#: src/components/display-items-control/index.js:97
 msgid "Center"
 msgstr ""
 
@@ -1054,63 +1051,63 @@ msgstr ""
 msgid "Media"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:47
+#: src/components/column-layout-control/index.js:50
 msgid "Display type and columns"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:50
+#: src/components/column-layout-control/index.js:53
 msgid "Display type"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:58
+#: src/components/column-layout-control/index.js:61
 msgid "Column ( Screen size : Extra small )"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:67
+#: src/components/column-layout-control/index.js:70
 msgid "Column ( Screen size : Small )"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:75
+#: src/components/column-layout-control/index.js:78
 msgid "Column ( Screen size : Medium )"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:83
+#: src/components/column-layout-control/index.js:86
 msgid "Column ( Screen size : Large )"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:92
+#: src/components/column-layout-control/index.js:95
 msgid "Column ( Screen size : Extra large )"
 msgstr ""
 
-#: src/components/display-items-control/index.js:19
+#: src/components/display-items-control/index.js:33
 msgid "Term name"
 msgstr ""
 
-#: src/components/display-items-control/index.js:26
+#: src/components/display-items-control/index.js:40
 msgid "Excerpt"
 msgstr ""
 
-#: src/components/display-items-control/index.js:31
+#: src/components/display-items-control/index.js:45
 msgid "Date"
 msgstr ""
 
-#: src/components/display-items-control/index.js:37
+#: src/components/display-items-control/index.js:51
 msgid "New mark"
 msgstr ""
 
-#: src/components/display-items-control/index.js:47
+#: src/components/display-items-control/index.js:61
 msgid "New mark option"
 msgstr ""
 
-#: src/components/display-items-control/index.js:49
+#: src/components/display-items-control/index.js:63
 msgid "Number of days to display the new post mark"
 msgstr ""
 
-#: src/components/display-items-control/index.js:54
+#: src/components/display-items-control/index.js:68
 msgid "New post mark"
 msgstr ""
 
-#: src/components/display-items-control/index.js:72
+#: src/components/display-items-control/index.js:86
 msgid "Button align"
 msgstr ""
 

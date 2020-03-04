@@ -1,4 +1,5 @@
 
+/* Pro版ブロック表示 */
 .vk_block_icon_pro {
   fill:#c00;
   }
@@ -23,6 +24,16 @@
   padding: 3px 4px;
   }
   
+/* ブロックの種類入れ替えトグルについて、この指定がないと見えてしまう */
+.components-button.block-editor-block-switcher__toggle {
+  overflow: hidden;
+}
+
+/* スライダーを表示 : デフォルトだとbootstrapに非表示にされてしまう */
+input[type=range] {
+  margin: 1px;
+}
+
   .components-base-control__label {
      font-weight:bold;
   }
@@ -32,12 +43,7 @@
   .components-radio-control__option label { margin-bottom:0; }
   .components-checkbox-control__label { margin-bottom:0; }
   .components-color-palette { display:block; overflow:hidden; }
-  
-  /*スライダーを表示。デフォルトだとbootstrapに非表示にされてしまう*/
-  input[type=range] {
-      margin: 1px;
-  }
-  
+    
   .editor-url-input input[type="text"]{
       width:100%;
   }

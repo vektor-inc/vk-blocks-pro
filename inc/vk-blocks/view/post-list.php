@@ -77,7 +77,7 @@ class VkBlocksPostList {
 
 			$term = get_term($value);
 			$new_array = array(
-				'taxonomy' => $term->taxonomy,
+				'taxonomy' => isset($term->taxonomy) ? $term->taxonomy : $key,
 				'field'    => 'term_id',
 				'terms'    => $value,
 			);

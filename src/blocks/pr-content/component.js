@@ -96,6 +96,7 @@ export class Component extends React.Component {
       }
     };
 
+    console.log(Image);
     const renderImage = for_ => {
       if (for_ === "edit") {
         if (Image && Image.indexOf("{") === -1) {

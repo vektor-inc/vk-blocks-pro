@@ -16,9 +16,9 @@ const defaultTemplates = [
 	<div class="vk_spacer"><div class="vk_spacer-display-pc" style="height:100px"></div><div class="vk_spacer-display-tablet" style="height:30px"></div><div class="vk_spacer-display-mobile" style="height:20px"></div></div>
 	<!-- /wp:vk-blocks/spacer -->
 	
-	<!-- wp:image {"id":12074,"sizeSlug":"large"} -->
-	<figure class="wp-block-image size-large"><img src="https://www.vektor-inc.co.jp/wp-content/uploads/2020/02/pr-img.png" alt="" class="wp-image-12074"/></figure>
-	<!-- /wp:image -->
+	<!-- wp:vk-blocks/pr-content {"url":"https://example.com","buttonColorCustom":"#cf2e2e","Image":"https://www.vektor-inc.co.jp/wp-content/uploads/2020/02/pr-img.png","layout":"right"} -->
+	<div class="wp-block-vk-blocks-pr-content vk_prContent vk_prContent-layout-imageRight"><div class="col-sm-6 vk_prContent_colImg"><img class="vk_prContent_colImg_image" src="https://www.vektor-inc.co.jp/wp-content/uploads/2020/02/pr-img.png" alt="画像をアップロード" style="border:none"/></div><div class="col-sm-6 vk_prContent_colTxt"><h3 class="vk_prContent_colTxt_title">自社のコンセプトや、キャッチコピーが入ります。</h3><p class="vk_prContent_colTxt_text">この部分には、自社について説明が入ります。<br>自社のコンセプトや理念など、大切にしていることについて説明しましょう。お客様に一番伝えたいことを書くことをおススメします。</p><div class="vk_button vk_button-color-custom"><a href="https://example.com" class="btn btn-block vk_button_link vk_prContent_colTxt_btn btn-primary" style="background-color:#cf2e2e;border:1px solid #cf2e2e" rel="noopener noreferrer"><span class="vk_button_link_txt">さらに詳しく</span></a></div></div></div>
+	<!-- /wp:vk-blocks/pr-content -->
 	
 	<!-- wp:vk-blocks/spacer {"pc":100} -->
 	<div class="vk_spacer"><div class="vk_spacer-display-pc" style="height:100px"></div><div class="vk_spacer-display-tablet" style="height:30px"></div><div class="vk_spacer-display-mobile" style="height:20px"></div></div>

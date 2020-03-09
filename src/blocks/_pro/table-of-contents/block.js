@@ -5,6 +5,7 @@
 
 import { schema } from "./schema";
 import TableOfContents from "./TableOfContents";
+import classNames from "classnames";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -14,7 +15,7 @@ const {
   SelectControl,
   BaseControl
 } = wp.components;
-const { Fragment } = wp.element;
+const { Fragment, useCallback } = wp.element;
 const { InspectorControls } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const { addFilter } = wp.hooks;
@@ -111,13 +112,14 @@ registerBlockType("vk-blocks/table-of-contents", {
   }
 });
 
-const getTocClientId = useSelect(select => {
-  const { getBlocks } = select("core/block-editor");
-  const tocBlock = getBlocks().filter(
-    block => block.name == "vk-blocks/table-of-contents"
-  );
-  return tocBlock[0] ? tocBlock[0].clientId : "";
-}, []);
+const getTocClientId = () =>
+  useSelect(select => {
+    const { getBlocks } = select("core/block-editor");
+    const tocBlock = getBlocks().filter(
+      block => block.name == "vk-blocks/table-of-contents"
+    );
+    return tocBlock[0] ? tocBlock[0].clientId : "";
+  }, []);
 
 const getBlockIndex = clientId =>
   useSelect(select => {
@@ -149,16 +151,27 @@ const getHeadings = props => {
       renderHtml: render
     });
 
-    let customAnchor = ` test-${blockIndex}`;
-    if (anchor && anchor !== customAnchor) {
-      anchor = anchor + customAnchor;
-    } else {
-      anchor = customAnchor;
+    if (anchor === undefined) {
+      updateBlockAttributes(clientId, {
+        anchor: `test-${blockIndex}`
+      });
     }
 
-    updateBlockAttributes(clientId, {
-      anchor: anchor
-    });
+    // let customAnchor;
+    // console.log(anchor);
+    // console.log(blockIndex);
+
+    // if (anchor != undefined) {
+    //   customAnchor = classNames(anchor, `test-${blockIndex}`);
+    // } else {
+    //   customAnchor = `test-${blockIndex}`;
+    // }
+
+    // console.log(customAnchor);
+    // customAnchor = classNames(anchor, `test-${blockIndex}`);
+    // const updateRenderHtml = useCallback(() => {}, [customAnchor]);
+
+    // const updateId = useCallback(() => {}, [customAnchor]);
   }
 };
 

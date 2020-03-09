@@ -2,6 +2,7 @@
  * table-of-contents block type
  *
  */
+
 import { schema } from "./schema";
 import TableOfContents from "./TableOfContents";
 
@@ -14,9 +15,12 @@ const {
   BaseControl
 } = wp.components;
 const { Fragment } = wp.element;
-const { subscribe, select } = wp.data;
 const { InspectorControls } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
+const { addFilter } = wp.hooks;
+const { createHigherOrderComponent } = wp.compose;
+const { useDispatch, useSelect } = wp.data;
+
 const BlockIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -63,87 +67,14 @@ const BlockIcon = (
   </svg>
 );
 
-/**
- * Register: a Gutenberg Block.
- *
- * Registers a new block provided a unique name and an object defining its
- * behavior. Once registered, the block is made editor as an option to any
- * editor interface where blocks are implemented.
- *
- * @link https://wordpress.org/gutenberg/handbook/block-api/
- * @param  {string}   name     Block name.
- * @param  {Object}   settings Block settings.
- * @return {?WPBlock}          The block, if it has been successfully
- *                             registered; otherwise `undefined`.
- */
 registerBlockType("vk-blocks/table-of-contents", {
   title: __("Table of Contents", "vk-blocks"),
   icon: BlockIcon,
   category: "vk-blocks-cat",
   attributes: schema,
 
-  edit({ attributes, setAttributes, className, clientId }) {
-    const { style, html, renderHtml } = attributes;
-
-    const toc = new TableOfContents();
-    const render = () => {
-      let source = toc.getHtagsInEditor();
-      let html = toc.returnHtml(source, style, className);
-      setAttributes({ renderHtml: html });
-    };
-
-    const findHeadingFromBlockList = () => {
-      let blocksList = select("core/block-editor").getBlocks();
-      return blocksList.find(
-        item =>
-          item.name === "core/heading" || item.name === "vk-blocks/heading"
-      );
-    };
-
-    const isNoHeadingBlock = result => {
-      return (
-        result === undefined &&
-        selectedBlock.name === "vk-blocks/table-of-contents"
-      );
-    };
-
-    const renderWhenInserted = () => {
-      if (renderHtml === "") {
-        let result = findHeadingFromBlockList();
-        if (!isNoHeadingBlock(result)) {
-          render();
-        }
-      }
-    };
-
-    //Rendering when this block is inserted.
-    const selectedBlock = select("core/block-editor").getSelectedBlock();
-    renderWhenInserted();
-
-    let oldSelectedId;
-    let newSelectedId;
-    subscribe(() => {
-      if (selectedBlock) {
-        newSelectedId = selectedBlock.clientId;
-
-        if (newSelectedId !== oldSelectedId) {
-          oldSelectedId = newSelectedId;
-
-          const result = findHeadingFromBlockList();
-
-          if (isNoHeadingBlock(result)) {
-            let html = toc.returnHtml("", style, className);
-            setAttributes({ renderHtml: html });
-            return;
-          }
-
-          let regex = /heading/g;
-          if (selectedBlock.name.match(regex)) {
-            render();
-          }
-        }
-      }
-    });
+  edit({ attributes, setAttributes }) {
+    const { style } = attributes;
 
     return (
       <Fragment>
@@ -175,15 +106,81 @@ registerBlockType("vk-blocks/table-of-contents", {
     );
   },
 
-  /**
-   * The save function defin className }> which the different attributes should be combined
-   * into the final markup, which is then serialized by Gutenberg into post_content.
-   *
-   * The "save" property must be specified and must be a valid function.
-   *
-   * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
-   */
   save() {
     return null;
   }
 });
+
+const getTocClientId = useSelect(select => {
+  const { getBlocks } = select("core/block-editor");
+  const tocBlock = getBlocks().filter(
+    block => block.name == "vk-blocks/table-of-contents"
+  );
+  return tocBlock[0] ? tocBlock[0].clientId : "";
+}, []);
+
+const getBlockIndex = clientId =>
+  useSelect(select => {
+    const { getBlockIndex } = select("core/block-editor");
+    return getBlockIndex(clientId) || "";
+  }, []);
+
+const updateTableOfContents = createHigherOrderComponent(BlockListBlock => {
+  return props => {
+    getHeadings(props);
+    return <BlockListBlock {...props} />;
+  };
+}, "updateTableOfContents");
+
+const getHeadings = props => {
+  const { className, name, clientId, attributes } = props;
+  const { style, anchor } = attributes;
+
+  if (name === "vk-blocks/heading" || name === "core/heading") {
+    const tocClientId = getTocClientId();
+    const blockIndex = getBlockIndex(clientId);
+
+    const toc = new TableOfContents();
+    let source = toc.getHtagsInEditor();
+    let render = toc.returnHtml(source, style, className);
+
+    const { updateBlockAttributes } = useDispatch("core/editor");
+    updateBlockAttributes(tocClientId, {
+      renderHtml: render
+    });
+
+    let customAnchor = ` test-${blockIndex}`;
+    if (anchor && anchor !== customAnchor) {
+      anchor = anchor + customAnchor;
+    } else {
+      anchor = customAnchor;
+    }
+
+    updateBlockAttributes(clientId, {
+      anchor: anchor
+    });
+  }
+};
+
+addFilter(
+  "editor.BlockListBlock",
+  "vk-blocks/table-of-contents",
+  updateTableOfContents
+);
+
+// const addIdToHeadings = props => {
+//   return props;
+//   if (
+//     blockType.name === "vk-blocks/heading" ||
+//     blockType.name === "core/heading"
+//   ) {
+//   }
+
+//   return element;
+// };
+
+// addFilter(
+//   "blocks.getSaveContent.extraProps",
+//   "vk-blocks/table-of-contents",
+//   addIdToHeadings
+// );

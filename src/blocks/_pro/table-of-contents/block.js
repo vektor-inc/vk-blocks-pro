@@ -153,25 +153,9 @@ const getHeadings = props => {
 
     if (anchor === undefined) {
       updateBlockAttributes(clientId, {
-        anchor: `test-${blockIndex}`
+        anchor: `vk-htags-${blockIndex}`
       });
     }
-
-    // let customAnchor;
-    // console.log(anchor);
-    // console.log(blockIndex);
-
-    // if (anchor != undefined) {
-    //   customAnchor = classNames(anchor, `test-${blockIndex}`);
-    // } else {
-    //   customAnchor = `test-${blockIndex}`;
-    // }
-
-    // console.log(customAnchor);
-    // customAnchor = classNames(anchor, `test-${blockIndex}`);
-    // const updateRenderHtml = useCallback(() => {}, [customAnchor]);
-
-    // const updateId = useCallback(() => {}, [customAnchor]);
   }
 };
 

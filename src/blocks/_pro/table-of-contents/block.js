@@ -112,13 +112,10 @@ registerBlockType("vk-blocks/table-of-contents", {
   }
 });
 
-const getTocClientId = () =>
+const getBlocksByName = blockName =>
   useSelect(select => {
     const { getBlocks } = select("core/block-editor");
-    const tocBlock = getBlocks().filter(
-      block => block.name == "vk-blocks/table-of-contents"
-    );
-    return tocBlock[0] ? tocBlock[0].clientId : "";
+    return getBlocks().filter(block => block.name == blockName);
   }, []);
 
 const getBlockIndex = clientId =>
@@ -139,12 +136,16 @@ const getHeadings = props => {
   const { style, anchor } = attributes;
 
   if (name === "vk-blocks/heading" || name === "core/heading") {
-    const tocClientId = getTocClientId();
+    const tocs = getBlocksByName("vk-blocks/table-of-contents");
+    const tocClientId = tocs[0] ? tocs[0].clientId : "";
     const blockIndex = getBlockIndex(clientId);
 
+    const cHeadings = getBlocksByName("core/heading");
+    const vHeadings = getBlocksByName("vk-blocks/heading");
+    const headings = cHeadings.concat(vHeadings);
+
     const toc = new TableOfContents();
-    let source = toc.getHtagsInEditor();
-    let render = toc.returnHtml(source, style, className);
+    let render = toc.returnHtml(headings, style, className);
 
     const { updateBlockAttributes } = useDispatch("core/editor");
     updateBlockAttributes(tocClientId, {
@@ -164,20 +165,3 @@ addFilter(
   "vk-blocks/table-of-contents",
   updateTableOfContents
 );
-
-// const addIdToHeadings = props => {
-//   return props;
-//   if (
-//     blockType.name === "vk-blocks/heading" ||
-//     blockType.name === "core/heading"
-//   ) {
-//   }
-
-//   return element;
-// };
-
-// addFilter(
-//   "blocks.getSaveContent.extraProps",
-//   "vk-blocks/table-of-contents",
-//   addIdToHeadings
-// );

@@ -80,8 +80,7 @@ class TableOfContents {
       returnHtmlContent = source.map(data => {
         let baseClass = "vk_tableOfContents_list_item";
 
-        let level = Number(data.tagName.replace(/H/g, ""));
-
+        let level = data.attributes.level;
         let preNumber = "";
 
         if (level === 2) {
@@ -150,11 +149,18 @@ class TableOfContents {
 
         preNumber = preNumber + ". ";
 
+        let content = data.attributes.content
+          ? data.attributes.content
+          : data.attributes.title;
+
         return (
           <li className={`${baseClass} ${baseClass}-h-${level}`}>
-            <a href="" className={`${baseClass}_link`}>
+            <a
+              href={`#${data.attributes.anchor}`}
+              className={`${baseClass}_link`}
+            >
               <span className={`${baseClass}_link_preNumber`}>{preNumber}</span>
-              {data.innerText}
+              {content}
             </a>
           </li>
         );

@@ -256,7 +256,6 @@ registerBlockType("vk-blocks/heading", {
         <Component attributes={attributes} for_={"save"} />
       </div>
     );
-  }
-
-  // deprecated: Version0_6_0
+  },
+  deprecated: Version0_6_0
 });

@@ -109,7 +109,11 @@ function vkblocks_blocks_assets() {
 							),
 						),
 						'render_callback' => function ( $attributes ) {
-							return $attributes['renderHtml'];
+							if($attributes['renderHtml']){
+								return $attributes['renderHtml'];
+							}else{
+								return '<div><div class="vk_tableOfContents_title">' . __("Table of Contents", "vk-blocks") .'</div></div>';
+							}
 						},
 					)
 				);

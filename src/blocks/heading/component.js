@@ -7,7 +7,6 @@ const { __ } = wp.i18n; // Import __() from wp.i18n
 export class Component extends React.Component {
   render() {
     const {
-      anchor,
       level,
       align,
       title,
@@ -22,12 +21,9 @@ export class Component extends React.Component {
       outerMarginBottom
     } = this.props.attributes;
     const setAttributes = this.props.setAttributes;
-    let className = this.props.className;
     let for_ = this.props.for_;
-    let containerClass = classNames(
-      className,
-      `vk_heading vk_heading-style-${titleStyle}`
-    );
+
+    let containerClass = `vk_heading vk_heading-style-${titleStyle}`;
     const tagName = "h" + level;
     let cStyle;
     let tStyle;
@@ -57,7 +53,6 @@ export class Component extends React.Component {
       return (
         <div className={containerClass} style={cStyle}>
           <RichText
-            id={anchor}
             tagName={tagName}
             value={title}
             onChange={value => setAttributes({ title: value })}
@@ -90,7 +85,6 @@ export class Component extends React.Component {
       return (
         <div className={containerClass} style={cStyle}>
           <RichText.Content
-            id={anchor}
             tagName={tagName}
             value={title}
             onChange={value => setAttributes({ title: value })}

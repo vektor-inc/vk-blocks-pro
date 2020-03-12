@@ -118,6 +118,15 @@ const getBlocksByName = blockName =>
     return getBlocks().filter(block => block.name == blockName);
   }, []);
 
+const getInnerBlocks = () =>
+  useSelect(select => {
+    const { getBlocks } = select("core/block-editor");
+    let inners = getBlocks().map(block => {
+      if (block.innerBlocks) return block.innerBlocks;
+    });
+    return inners.filter(block => block[0] != undefined);
+  }, []);
+
 const getBlockIndex = clientId =>
   useSelect(select => {
     const { getBlockIndex } = select("core/block-editor");
@@ -135,13 +144,50 @@ const getHeadings = props => {
   const { className, name, clientId, attributes } = props;
   const { style, anchor } = attributes;
 
-  if (name === "vk-blocks/heading" || name === "core/heading") {
+  const allowedBlocks = [
+    "vk-blocks/heading",
+    "vk-blocks/outer",
+    "core/heading",
+    "core/cover",
+    "core/group"
+  ];
+
+  const headingBlocks = ["vk-blocks/heading", "core/heading"];
+
+  const isAllowedBlock = (name, allowedBlocks) => {
+    return allowedBlocks.find(block => block === name);
+  };
+
+  if (isAllowedBlock(name, allowedBlocks)) {
     const tocs = getBlocksByName("vk-blocks/table-of-contents");
     const tocClientId = tocs[0] ? tocs[0].clientId : "";
     const blockIndex = getBlockIndex(clientId);
+    let innerBlocks = getInnerBlocks();
+
+    innerBlocks = innerBlocks.reduce((accumulator, currentValue) => {
+      accumulator.concat(currentValue);
+      return accumulator;
+    }, []);
+
+    innerBlocks = innerBlocks.reduce((accumulator, currentValue) => {
+      if (isAllowedBlock(currentValue.name, headingBlocks)) {
+        return accumulator.push(currentValue);
+      } else if (currentValue.innerBlocks[0] != undefined) {
+        let headings = currentValue.innerBlocks.filter(block =>
+          isAllowedBlock(block.name, headingBlocks)
+        );
+        console.log(headings);
+        console.log(accumulator);
+
+        return accumulator.concat(headings);
+      }
+    }, []);
+
+    console.log(innerBlocks);
 
     const cHeadings = getBlocksByName("core/heading");
     const vHeadings = getBlocksByName("vk-blocks/heading");
+
     const headings = cHeadings.concat(vHeadings);
 
     const toc = new TableOfContents();

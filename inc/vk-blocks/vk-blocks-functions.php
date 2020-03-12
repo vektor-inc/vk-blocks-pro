@@ -117,10 +117,6 @@ function vkblocks_blocks_assets() {
 						},
 					)
 				);
-
-				if ( ! is_admin() ) {
-					wp_enqueue_script( 'vk-blocks-toc-helper-js', VK_BLOCKS_URL . 'build/viewHelper.js', array(), VK_BLOCKS_VERSION, true );
-				}
 			} elseif ( $value == 'post-list' ) {
 
 					register_block_type(

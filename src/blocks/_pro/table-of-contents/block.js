@@ -4,8 +4,14 @@
  */
 
 import { schema } from "./schema";
-import TableOfContents from "./TableOfContents";
-import classNames from "classnames";
+import {
+  isAllowedBlock,
+  getBlocksByName,
+  getInnerBlocks,
+  getBlockIndex,
+  getHeadingsFromInnerBlocks,
+  returnHtml
+} from "./toc-utils";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -15,12 +21,12 @@ const {
   SelectControl,
   BaseControl
 } = wp.components;
-const { Fragment, useCallback } = wp.element;
+const { Fragment } = wp.element;
 const { InspectorControls } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const { addFilter } = wp.hooks;
 const { createHigherOrderComponent } = wp.compose;
-const { useDispatch, useSelect } = wp.data;
+const { useDispatch } = wp.data;
 
 const BlockIcon = (
   <svg
@@ -112,34 +118,6 @@ registerBlockType("vk-blocks/table-of-contents", {
   }
 });
 
-const getBlocksByName = blockName =>
-  useSelect(select => {
-    const { getBlocks } = select("core/block-editor");
-    return getBlocks().filter(block => block.name == blockName);
-  }, []);
-
-const getInnerBlocks = () =>
-  useSelect(select => {
-    const { getBlocks } = select("core/block-editor");
-    let inners = getBlocks().map(block => {
-      if (block.innerBlocks) return block.innerBlocks;
-    });
-    return inners.filter(block => block[0] != undefined);
-  }, []);
-
-const getBlockIndex = clientId =>
-  useSelect(select => {
-    const { getBlockIndex } = select("core/block-editor");
-    return getBlockIndex(clientId) || "";
-  }, []);
-
-const updateTableOfContents = createHigherOrderComponent(BlockListBlock => {
-  return props => {
-    getHeadings(props);
-    return <BlockListBlock {...props} />;
-  };
-}, "updateTableOfContents");
-
 const getHeadings = props => {
   const { className, name, clientId, attributes } = props;
   const { style, anchor } = attributes;
@@ -154,44 +132,15 @@ const getHeadings = props => {
 
   const headingBlocks = ["vk-blocks/heading", "core/heading"];
 
-  const isAllowedBlock = (name, allowedBlocks) => {
-    return allowedBlocks.find(block => block === name);
-  };
-
   if (isAllowedBlock(name, allowedBlocks)) {
     const tocs = getBlocksByName("vk-blocks/table-of-contents");
     const tocClientId = tocs[0] ? tocs[0].clientId : "";
     const blockIndex = getBlockIndex(clientId);
-    let innerBlocks = getInnerBlocks();
+    let innerBlocks = getInnerBlocks(allowedBlocks);
 
-    innerBlocks = innerBlocks.reduce((accumulator, currentValue) => {
-      accumulator.concat(currentValue);
-      return accumulator;
-    }, []);
+    let headings = getHeadingsFromInnerBlocks(innerBlocks, headingBlocks);
 
-    innerBlocks = innerBlocks.reduce((accumulator, currentValue) => {
-      if (isAllowedBlock(currentValue.name, headingBlocks)) {
-        return accumulator.push(currentValue);
-      } else if (currentValue.innerBlocks[0] != undefined) {
-        let headings = currentValue.innerBlocks.filter(block =>
-          isAllowedBlock(block.name, headingBlocks)
-        );
-        console.log(headings);
-        console.log(accumulator);
-
-        return accumulator.concat(headings);
-      }
-    }, []);
-
-    console.log(innerBlocks);
-
-    const cHeadings = getBlocksByName("core/heading");
-    const vHeadings = getBlocksByName("vk-blocks/heading");
-
-    const headings = cHeadings.concat(vHeadings);
-
-    const toc = new TableOfContents();
-    let render = toc.returnHtml(headings, style, className);
+    let render = returnHtml(headings, style, className);
 
     const { updateBlockAttributes } = useDispatch("core/editor");
     updateBlockAttributes(tocClientId, {
@@ -205,6 +154,13 @@ const getHeadings = props => {
     }
   }
 };
+
+const updateTableOfContents = createHigherOrderComponent(BlockListBlock => {
+  return props => {
+    getHeadings(props);
+    return <BlockListBlock {...props} />;
+  };
+}, "updateTableOfContents");
 
 addFilter(
   "editor.BlockListBlock",

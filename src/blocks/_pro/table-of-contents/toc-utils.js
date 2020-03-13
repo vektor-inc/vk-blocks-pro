@@ -173,10 +173,14 @@ export const returnHtml = (source, style, className) => {
 
   let returnHtml = (
     <div className={className}>
+      <input id="toggle" type="checkbox" checked />
+      <label for="toggle" />
       <div className={"vk_tableOfContents_title"}>
         {__("Table of Contents", "vk-blocks")}
       </div>
-      <ul className={"vk_tableOfContents_list"}>{returnHtmlContent}</ul>
+      <div id="expand">
+        <ul className={"vk_tableOfContents_list"}>{returnHtmlContent}</ul>
+      </div>
     </div>
   );
   return ReactDOMServer.renderToString(returnHtml);

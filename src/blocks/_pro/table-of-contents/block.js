@@ -21,7 +21,7 @@ const {
   SelectControl,
   BaseControl
 } = wp.components;
-const { Fragment } = wp.element;
+const { Fragment, useState } = wp.element;
 const { InspectorControls } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const { addFilter } = wp.hooks;
@@ -82,7 +82,6 @@ registerBlockType("vk-blocks/table-of-contents", {
 
   edit({ attributes, setAttributes }) {
     const { style } = attributes;
-
     return (
       <Fragment>
         <InspectorControls>

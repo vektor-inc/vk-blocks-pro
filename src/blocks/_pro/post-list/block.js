@@ -4,7 +4,7 @@
  */
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RangeControl, PanelBody, BaseControl, SelectControl, CheckboxControl } = wp.components;
+const { RangeControl, PanelBody, BaseControl, SelectControl, CheckboxControl, TextControl } = wp.components;
 const { Fragment } = wp.element;
 const { InspectorControls } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
@@ -82,7 +82,6 @@ registerBlockType("vk-blocks/post-list", {
       };
     });
 
-    let maxPages = 10;
     let taxonomies = useTaxonomies();
     let terms = useTermsGroupbyTaxnomy(taxonomies);
     let taxonomiesPropsRaw = Object.keys(terms).map(function(taxonomy) {
@@ -140,11 +139,11 @@ registerBlockType("vk-blocks/post-list", {
               />
             </BaseControl>
             <BaseControl label={__("offset", "vk-blocks")}>
-              <RangeControl
+              <TextControl
                 value={offset}
                 onChange={(v) => setAttributes({ offset: v})}
-                min="1"
-                max={maxPages}
+                type="number"
+                min="0"
               />
             </BaseControl>
             <BaseControl>

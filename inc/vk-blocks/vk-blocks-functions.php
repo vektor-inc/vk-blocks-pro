@@ -210,6 +210,10 @@ function vkblocks_blocks_assets() {
 									'type'    => 'number',
 									'default' => 0
 								),
+								'selfIgnore'        => array(
+									'type'    => 'boolean',
+									'default' => false
+								),
 							),
 							// 'style'           => 'vk-blocks-build-css',
 							'editor_style'    => 'vk-blocks-build-editor-css',

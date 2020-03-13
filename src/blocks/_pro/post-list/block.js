@@ -4,7 +4,7 @@
  */
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RangeControl, PanelBody, BaseControl, SelectControl } = wp.components;
+const { RangeControl, PanelBody, BaseControl, SelectControl, CheckboxControl } = wp.components;
 const { Fragment } = wp.element;
 const { InspectorControls } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
@@ -71,7 +71,7 @@ registerBlockType("vk-blocks/post-list", {
   edit(props) {
     const { attributes, setAttributes, name } = props;
 
-    const { numberPosts, isCheckedPostType, isCheckedTerms, offset, orderby } = attributes;
+    const { numberPosts, isCheckedPostType, isCheckedTerms, offset, orderby, selfIgnore } = attributes;
     attributes["name"] = name;
 
     let postTypes = usePostTypes();
@@ -145,6 +145,13 @@ registerBlockType("vk-blocks/post-list", {
                 onChange={(v) => setAttributes({ offset: v})}
                 min="1"
                 max={maxPages}
+              />
+            </BaseControl>
+            <BaseControl>
+              <CheckboxControl
+                label={__("Ignore this post", "vk-blocks")}
+                checked={selfIgnore}
+                onChange={(v) => setAttributes({ selfIgnore: v})}
               />
             </BaseControl>
           </PanelBody>

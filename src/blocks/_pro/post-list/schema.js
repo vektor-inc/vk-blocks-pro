@@ -90,5 +90,9 @@ export const schema = {
   orderby: {
     type: "string",
     default: "date"
+  },
+  selfIgnore: {
+    type: "boolean",
+    default: false
   }
 };

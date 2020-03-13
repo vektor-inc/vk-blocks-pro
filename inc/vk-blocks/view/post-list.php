@@ -104,7 +104,8 @@ class VkBlocksPostList {
 			// 0で全件取得
 			'posts_per_page' => intval( $attributes['numberPosts'] ),
 			'order'          => 'DESC',
-			'orderby'        => 'date',
+			'orderby'        => $attributes['orderby'],
+			'offset'         => intval($attributes['offset'])
 		);
 		return new WP_Query( $args );
 	}
@@ -121,6 +122,7 @@ class VkBlocksPostList {
 				'order'          => 'ASC',
 				'orderby'        => 'menu_order',
 				'post_parent'    => intval( $attributes['selectId'] ),
+				'offset'         => intval($attributes['offset'])
 			);
 			return new WP_Query( $args );
 

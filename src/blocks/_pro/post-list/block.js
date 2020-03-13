@@ -4,7 +4,7 @@
  */
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RangeControl, PanelBody, BaseControl } = wp.components;
+const { RangeControl, PanelBody, BaseControl, SelectControl } = wp.components;
 const { Fragment } = wp.element;
 const { InspectorControls } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
@@ -71,7 +71,7 @@ registerBlockType("vk-blocks/post-list", {
   edit(props) {
     const { attributes, setAttributes, name } = props;
 
-    const { numberPosts, isCheckedPostType, isCheckedTerms } = attributes;
+    const { numberPosts, isCheckedPostType, isCheckedTerms, offset, orderby } = attributes;
     attributes["name"] = name;
 
     let postTypes = usePostTypes();
@@ -82,6 +82,7 @@ registerBlockType("vk-blocks/post-list", {
       };
     });
 
+    let maxPages = 10;
     let taxonomies = useTaxonomies();
     let terms = useTermsGroupbyTaxnomy(taxonomies);
     let taxonomiesPropsRaw = Object.keys(terms).map(function(taxonomy) {
@@ -123,6 +124,27 @@ registerBlockType("vk-blocks/post-list", {
                 onChange={value => setAttributes({ numberPosts: value })}
                 min="1"
                 max="24"
+              />
+            </BaseControl>
+            <BaseControl label={__("Order by", "vk-blocks")}>
+              <SelectControl
+                value={orderby}
+                onChange={(v) => setAttributes({ orderby: v })}
+                options={
+                  [
+                    {value: 'date', label: __("Published Date", "vk-blocks")},
+                    {value: 'modefied', label: __("Modefied Date", "vk-blocks")},
+                    {value: 'random', label: __("Random", "vk-blocks")}
+                  ]
+                }
+              />
+            </BaseControl>
+            <BaseControl label={__("offset", "vk-blocks")}>
+              <RangeControl
+                value={offset}
+                onChange={(v) => setAttributes({ offset: v})}
+                min="1"
+                max={maxPages}
               />
             </BaseControl>
           </PanelBody>

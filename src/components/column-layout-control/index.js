@@ -44,7 +44,7 @@ const defaultMinMax = {
 export const ColumnLayoutControl = props => {
   const { setAttributes, attributes } = props;
   const { layout, name, col_xs, col_sm, col_md, col_lg, col_xl } = attributes;
-  console.log(name);
+
   return (
     <PanelBody
       title={__("Display type and columns", "vk-blocks")}

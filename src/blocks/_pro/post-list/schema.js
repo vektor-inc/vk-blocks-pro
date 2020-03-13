@@ -82,5 +82,13 @@ export const schema = {
   isCheckedTerms: {
     type: "string",
     default: "[]"
+  },
+  offset: {
+    type: "number",
+    default: 0
+  },
+  orderby: {
+    type: "string",
+    default: "date"
   }
 };

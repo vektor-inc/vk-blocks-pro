@@ -133,7 +133,6 @@ registerBlockType("vk-blocks/outer", {
               <ColorPalette
                 value={bgColor}
                 onChange={value => setBgColor(value)}
-                // onChange={(value) => setAttributes({bgColor: value})}
               />
             </BaseControl>
             <BaseControl label={__("Opacity Setting", "vk-blocks")}>
@@ -147,7 +146,10 @@ registerBlockType("vk-blocks/outer", {
                 step={0.1}
               />
             </BaseControl>
-            <BaseControl label={__("Background Image", "vk-blocks")}>
+            <BaseControl
+              label={__("Background Image", "vk-blocks")}
+              className={"vk_outer_sidebar_bgImage"}
+            >
               <MediaUpload
                 onSelect={value => setAttributes({ bgImage: value.url })}
                 type="image"
@@ -165,7 +167,10 @@ registerBlockType("vk-blocks/outer", {
                         </Button>
                       </Fragment>
                     ) : (
-                      <Button onClick={open} className={"button button-large"}>
+                      <Button
+                        onClick={open}
+                        className={"button button-large components-button"}
+                      >
                         {__("Select image", "vk-blocks")}
                       </Button>
                     )}

@@ -98,8 +98,12 @@ class VkBlocksPostList {
 		}
 
 		$post__not_in = array();
-		if ( $attributes['selfIgnore'] ) {
+		if ( ! empty( $attributes['selfIgnore'] ) ) {
 			$post__not_in = array( get_the_ID() );
+		}
+		$offset = '';
+		if ( ! empty( $attributes['offset'] ) ) {
+			$offset = intval( $attributes['offset'] );
 		}
 
 		$args = array(
@@ -110,7 +114,7 @@ class VkBlocksPostList {
 			'posts_per_page' => intval( $attributes['numberPosts'] ),
 			'order'          => 'DESC',
 			'orderby'        => $attributes['orderby'],
-			'offset'         => intval($attributes['offset']),
+			'offset'         => $offset,
 			'post__not_in'   => $post__not_in,
 		);
 		return new WP_Query( $args );
@@ -120,9 +124,14 @@ class VkBlocksPostList {
 
 		// ParentIdを指定
 		if ( isset( $attributes['selectId'] ) && $attributes['selectId'] !== 'false' ) {
-			$post__not_in = [];
-			if ($attributes['selfIgnore']) {
-				$post__not_in = [get_the_ID()];
+			$post__not_in = array();
+			if ( ! empty( $attributes['selfIgnore'] ) ) {
+				$post__not_in = array( get_the_ID() );
+			}
+
+			$offset = '';
+			if ( ! empty( $attributes['offset'] ) ) {
+				$offset = intval( $attributes['offset'] );
 			}
 
 			$args = array(
@@ -133,7 +142,7 @@ class VkBlocksPostList {
 				'order'          => 'ASC',
 				'orderby'        => 'menu_order',
 				'post_parent'    => intval( $attributes['selectId'] ),
-				'offset'         => intval($attributes['offset']),
+				'offset'         => $offset,
 				'post__not_in'   => $post__not_in,
 			);
 			return new WP_Query( $args );

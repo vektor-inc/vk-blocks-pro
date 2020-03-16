@@ -21,6 +21,7 @@ const {
 const { Fragment } = wp.element;
 const { InspectorControls, MediaUpload, ColorPalette } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
+const { dispatch } = wp.data;
 const BlockIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +77,7 @@ registerBlockType("vk-blocks/outer", {
    *
    * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
    */
-  edit({ attributes, setAttributes, className }) {
+  edit({ attributes, setAttributes, className, clientId }) {
     const {
       bgColor,
       defaultBgColor,
@@ -107,6 +108,12 @@ registerBlockType("vk-blocks/outer", {
     const setBgColor = bgColor => {
       bgColor = setColorIfUndefined(bgColor);
       setAttributes({ bgColor: bgColor });
+    };
+
+    const deleteImgBtn = () => {
+      dispatch("core/editor").updateBlockAttributes(clientId, {
+        bgImage: null
+      });
     };
 
     return (
@@ -140,30 +147,32 @@ registerBlockType("vk-blocks/outer", {
                 step={0.1}
               />
             </BaseControl>
-            <BaseControl label={__("Background Image", "vk-blocks")} help="">
+            <BaseControl label={__("Background Image", "vk-blocks")}>
               <MediaUpload
                 onSelect={value => setAttributes({ bgImage: value.url })}
                 type="image"
                 value={bgImage}
                 render={({ open }) => (
-                  <Button
-                    onClick={open}
-                    className={bgImage ? "image-button" : "button button-large"}
-                  >
-                    {!bgImage ? (
-                      __("Select image", "vk-blocks")
+                  <Fragment>
+                    {bgImage ? (
+                      <Fragment>
+                        <img className={"icon-image"} src={bgImage} />
+                        <Button
+                          onClick={deleteImgBtn}
+                          className={"image-button button button-delete"}
+                        >
+                          {__("Delete Image", "vk-blocks")}
+                        </Button>
+                      </Fragment>
                     ) : (
-                      <img
-                        className={"icon-image"}
-                        src={bgImage}
-                        alt={__("Upload image", "vk-blocks")}
-                      />
+                      <Button onClick={open} className={"button button-large"}>
+                        {__("Select image", "vk-blocks")}
+                      </Button>
                     )}
-                  </Button>
+                  </Fragment>
                 )}
               />
             </BaseControl>
-
             <BaseControl
               label={__("Background image Position", "vk-blocks")}
               help=""

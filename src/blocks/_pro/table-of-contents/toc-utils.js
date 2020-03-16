@@ -1,6 +1,7 @@
 import ReactDOMServer from "react-dom/server";
 const { __ } = wp.i18n;
 const { useSelect } = wp.data;
+import classNames from "classnames";
 
 export const isAllowedBlock = (name, allowedBlocks) => {
   return allowedBlocks.find(blockName => blockName === name);
@@ -172,14 +173,18 @@ export const returnHtml = (source, style, className) => {
   }
 
   let returnHtml = (
-    <div className={className}>
-      <input id="toggle" type="checkbox" checked />
-      <label for="toggle" />
-      <div className={"vk_tableOfContents_title"}>
-        {__("Table of Contents", "vk-blocks")}
-      </div>
-      <div id="expand">
-        <ul className={"vk_tableOfContents_list"}>{returnHtmlContent}</ul>
+    <div className={classNames(className, "tabs")}>
+      <div className="tab">
+        <div className={"vk_tableOfContents_title"}>
+          {__("Table of Contents", "vk-blocks")}
+        </div>
+        <input type="checkbox" id="chck1" />
+        <label className="tab-label" htmlFor="chck1">
+          {__("CLICK", "vk-blocks")}
+        </label>
+        <ul className={"vk_tableOfContents_list tab-content"}>
+          {returnHtmlContent}
+        </ul>
       </div>
     </div>
   );

@@ -106,11 +106,7 @@ function vkblocks_blocks_assets() {
 							'renderHtml' => array(
 								'type'    => 'string',
 								'default' => '',
-							),
-							'open' => array(
-								'type'    => 'boolean',
-								'default' => true,
-							),
+							)
 						),
 						'render_callback' => function ( $attributes ) {
 							if($attributes['renderHtml']){

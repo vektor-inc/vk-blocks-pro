@@ -6,9 +6,5 @@ export const schema = {
   renderHtml: {
     type: "string",
     default: ""
-  },
-  open: {
-    type: "boolean",
-    default: true
   }
 };

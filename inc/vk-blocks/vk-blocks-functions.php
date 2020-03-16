@@ -204,15 +204,15 @@ function vkblocks_blocks_assets() {
 								),
 								'orderby'           => array(
 									'type'    => 'string',
-									'default' => 'date'
+									'default' => 'date',
 								),
 								'offset'            => array(
 									'type'    => 'number',
-									'default' => 0
+									'default' => 0,
 								),
 								'selfIgnore'        => array(
 									'type'    => 'boolean',
-									'default' => false
+									'default' => false,
 								),
 							),
 							// 'style'           => 'vk-blocks-build-css',

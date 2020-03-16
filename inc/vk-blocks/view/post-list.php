@@ -28,7 +28,7 @@ class VkBlocksPostList {
 			$options_loop = array( 'class_loop_outer' => '' );
 		}
 
-		if ( !isset($wp_query) || $wp_query === false || $wp_query === 'false' || $wp_query->posts === array() ) {
+		if ( ! isset( $wp_query ) || $wp_query === false || $wp_query === 'false' || $wp_query->posts === array() ) {
 			return $this->renderNoPost();
 		}
 
@@ -75,9 +75,9 @@ class VkBlocksPostList {
 
 		foreach ( $isCheckedTerms as $key => $value ) {
 
-			$term = get_term($value);
+			$term      = get_term( $value );
 			$new_array = array(
-				'taxonomy' => isset($term->taxonomy) ? $term->taxonomy : $key,
+				'taxonomy' => isset( $term->taxonomy ) ? $term->taxonomy : $key,
 				'field'    => 'term_id',
 				'terms'    => $value,
 			);
@@ -91,15 +91,15 @@ class VkBlocksPostList {
 
 		$isCheckedPostType = json_decode( $attributes['isCheckedPostType'], true );
 
-		$isCheckedTerms    = json_decode( $attributes['isCheckedTerms'], true );
+		$isCheckedTerms = json_decode( $attributes['isCheckedTerms'], true );
 
 		if ( empty( $isCheckedPostType ) ) {
 			return false;
 		}
 
 		$post__not_in = array();
-		if ($attributes['selfIgnore']) {
-			$post__not_in = array(get_the_ID());
+		if ( $attributes['selfIgnore'] ) {
+			$post__not_in = array( get_the_ID() );
 		}
 
 		$args = array(

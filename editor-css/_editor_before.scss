@@ -48,6 +48,34 @@ input[type=range] {
       width:100%;
   }
   
+  // VK Outer 編集パネル
+  $color-danger: #dd3333;
+.vk_outer_sidebar_bgImage {
+	position: relative;
+	.components-button {
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translateY(-50%) translateX(-50%);
+	  transition: all 1s;
+	}
+	.button-delete {
+	  opacity: 0;
+	  border: 1px solid $color-danger;
+	  color: $color-danger;
+	  transition: all 1s;
+	  &:hover {
+		background-color: $color-danger;
+		border: 1px solid #b72a2a;
+		color: #fff;
+	  }
+	}
+	&:hover .button-delete {
+		transition: all 1s;
+		opacity: 1;
+	}
+  }
+
   /* editor area *********************************************/
   .edit-post-visual-editor.editor-styles-wrapper{
   
@@ -218,4 +246,3 @@ input[type=range] {
       }
     }
   }
-  

@@ -47,135 +47,38 @@ input[type=range] {
   .editor-url-input input[type="text"]{
       width:100%;
   }
-  
-  /* ブロックインサーター@サイドバー用 */
-.vkb-menu__template-part__button{
-	padding:0;
-	width:100%;
 
-	.vkb-menu__template-part__card__container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: none;
-  }
-  .card {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-    width: 90%;
-    max-width: 100%;
-    padding: 2em 0;
-    background: #FFF;
-    box-shadow: 0 0 6px 0 rgba(#202024, .12);
-    transition: all .35s ease;
-
-    .vkb-menu__template-part__header__icon{
-      margin-right: 3px;
-    }
-    
-    &::before, &::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      background: #000;
-      height: 4px;
-    }
-    &::before {
-      width: 0;
-      opacity: 0;
-      transition: opacity 0 ease, width 0 ease;
-      transition-delay: .5s;
-    }
-    &::after {
-      width: 100%;
-      background: white;
-      transition: width .5s ease;
-    }
-    .content {
-      width: 100%;
-      max-width: 100%;
-      padding: 15px;
-    }
-    .logo {
-      margin: 0 0 1em;
-      width: 10.625em;
-      transition: all .35s ease;
-    }
-    h6 {
-      color: #999;
-      font-weight: 600;
-      text-transform: uppercase;
-      margin: 0;
-      letter-spacing: 2px;
-    }
-    .hover_content {
-      overflow: scroll;
-      max-height: 0;
-      transform: translateY(1em);
-      transition: all .55s ease;
-      div.inner {
-        margin: 1.5em 0 0;
-        color: #6E6E70;
-        line-height: 1.4em;
-        overflow: hidden;
-      }
-      .edit-post-visual-editor{
-        position: initial;
-        padding-top: 0;
-      }
-    }
-    &:hover {
-      // width: 24em;
-      box-shadow: 0 10px 20px 0 rgba(#202024, .12);
-      &::before {
-        // width: 100%;
-        opacity: 1;
-        transition: opacity .5s ease, width .5s ease;
-        transition-delay: 0;
-      }
-      &::after {
-        // width: 0;
-        opacity: 0;
-        transition: width 0 ease;
-      }
-      .logo {
-        margin-bottom: .5em;
-      }
-      .hover_content {
-        max-height: none;
-        height:100%;
-        transform: none;
-        margin-top: 20px;
-        .inner{
-          width: 100%;
-          .block-editor-block-preview__container::before{
-            position: relative;
-            height: auto;
-          }
-        }
-      }
-    }
-  }
-  #vkb-menu__template-part__card0 .inner{
-    height: 186px;
-    padding: 0 5px;
-  }
-  #vkb-menu__template-part__card1 .inner{
-    height: 282px;
-  }
-  #vkb-menu__template-part__card2 .inner{
-    height: 320px;
-  }
-  #vkb-menu__template-part__card3 .inner{
-    height: 100px;
-  }
-}
+// ブロックテンプレートのサイドバー調整CSS読み込み
+@import "./editor_before_template_inserter";
   
+// VK Outer 編集パネル
+$color-danger: #dd3333;
+.vk_outer_sidebar_bgImage {
+	position: relative;
+	.components-button {
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translateY(-50%) translateX(-50%);
+	  transition: all 1s;
+	}
+	.button-delete {
+	  opacity: 0;
+	  border: 1px solid $color-danger;
+	  color: $color-danger;
+	  transition: all 1s;
+	  &:hover {
+		background-color: $color-danger;
+		border: 1px solid #b72a2a;
+		color: #fff;
+	  }
+	}
+	&:hover .button-delete {
+		transition: all 1s;
+		opacity: 1;
+	}
+  }
+
   /* editor area *********************************************/
   .edit-post-visual-editor.editor-styles-wrapper{
   
@@ -977,23 +880,6 @@ ol {
 	}
 } // @media only screen and (max-width: 480px) {
 
-/*      .qaItem
-/*-------------------------------------------*/
-.vk_faq { display:block; overflow:hidden;border-bottom:1px dotted #ccc; padding:0px 0px 25px; margin:25px 0px; width:100%; position: relative; }
-.vk_faq_title,
-.vk_faq_content {
-	border:none;padding-left: 35px;
-	&:before {
-		position: absolute;left:0;font-size:24px;line-height: 105%;
-	}
-}
-.vk_faq_title { margin-bottom:15px;font-size:18px;font-weight:700;
-  &:before { font-family:"areal";content:"Q ";color:#e50000; }
-}
-.vk_faq_content { margin:0px;
-  &:before { content:"A ";color:#337ab7;font-family: "" }
-}
-
 .vk_button {
   margin: 5px 0;
 
@@ -1212,6 +1098,23 @@ $color_dark: #343a40;
   color: #fff;
 }
 
+/*      .qaItem
+/*-------------------------------------------*/
+.vk_faq { display:block; overflow:hidden;border-bottom:1px dotted #ccc; padding:0px 0px 25px; margin:25px 0px; width:100%; position: relative; }
+.vk_faq_title,
+.vk_faq_content {
+	border:none;padding-left: 35px;
+	&:before {
+		position: absolute;left:0;font-size:24px;line-height: 105%;
+	}
+}
+.vk_faq_title { margin-bottom:15px;font-size:18px;font-weight:700;
+  &:before { font-family:"areal";content:"Q ";color:#e50000; }
+}
+.vk_faq_content { margin:0px;
+  &:before { content:"A ";color:#337ab7;font-family: "" }
+}
+
 //*      .flowBox
 /*-------------------------------------------*/
 .vk_flow-arrow-on:after {
@@ -1241,6 +1144,39 @@ $color_dark: #343a40;
 	max-width:150px;
 	margin-left:15px;
 	box-sizing: border-box;
+}
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+@mixin reset() {
+	background: none;
+	border:none;
+	border-radius: 0;
+	padding:0;
+	font-weight: normal;
+	box-shadow:none;
+	&:after {
+		content:none;
+		border:none;
+	}
+	&:before{
+		content:none;
+	}
+}
+
+// .vk_heading は指定が強い要素（ Charm ）も消すために必要
+.vk_heading.vk_heading-style-plain {
+	.vk_heading_title {
+		@include reset;
+		&:after {
+			@include reset;
+		}
+	}
+}
+
+.vk_heading_subtext {
+	margin-bottom:0;
 }
 
 //管理画面側の見出しブロックのスタイルのcssになります。
@@ -1704,39 +1640,6 @@ $color_key: #337ab7;
 		// }
 	} //.is-style-vk-heading
 } //.editor-block-list__block
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-@mixin reset() {
-	background: none;
-	border:none;
-	border-radius: 0;
-	padding:0;
-	font-weight: normal;
-	box-shadow:none;
-	&:after {
-		content:none;
-		border:none;
-	}
-	&:before{
-		content:none;
-	}
-}
-
-// .vk_heading は指定が強い要素（ Charm ）も消すために必要
-.vk_heading.vk_heading-style-plain {
-	.vk_heading_title {
-		@include reset;
-		&:after {
-			@include reset;
-		}
-	}
-}
-
-.vk_heading_subtext {
-	margin-bottom:0;
-}
 
 .is-style-vk-image {
     &-border {
@@ -2209,6 +2112,25 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
 /* CSS
 /*-------------------------------------------*/
 
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
+.vk_card {
+  &_item {
+    .vk_post_title.card-title {
+      font-size: 1rem;
+    }
+    .vk_post_excerpt.card-text {
+      font-size: 14px;
+    }
+  }
+}
+
 .vk_childPage {
 	margin-top: 2.5rem;
 }
@@ -2216,81 +2138,81 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-$media-sm-up : 576px;
-$media-md-up : 768px;
-$media-lg-up : 992px;
-$media-xl-up : 1200px;
-$media-sm-down : 575.98px;
-$media-md-down : 767.98px;
-$media-lg-down : 991.98px;
-$media-xl-down : 1199.98px;
-.vk_outer{
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-  .vk_outer_container{
-    min-height: 40px;
-  }
+$media-sm-up: 576px;
+$media-md-up: 768px;
+$media-lg-up: 992px;
+$media-xl-up: 1200px;
+$media-sm-down: 575.98px;
+$media-md-down: 767.98px;
+$media-lg-down: 991.98px;
+$media-xl-down: 1199.98px;
+.vk_outer {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+	.vk_outer_container {
+		min-height: 40px;
+	}
 }
 .vk_outer-width-full {
-	margin-left:calc(50% - 50vw);
-	margin-right:calc(50% - 50vw);
-  padding-left:calc(50vw - 50%);
-  padding-right:calc(50vw - 50%);
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	padding-left: calc(50vw - 50%);
+	padding-right: calc(50vw - 50%);
 }
-$padding-none:1.5em;
-$padding-sm:2em;
-$padding-md:2.5em;
-$padding-lg:3em;
-$padding-xl:3.5em;
-.vk_outer-paddingLR-use{
-  padding-left: $padding-none ;
-	padding-right: $padding-none ;
-	@media ( min-width: $media-sm-up ){
-		padding-left: $padding-sm ;
-		padding-right: $padding-sm ;
+$padding-none: 1.5em;
+$padding-sm: 2em;
+$padding-md: 2.5em;
+$padding-lg: 3em;
+$padding-xl: 3.5em;
+.vk_outer-paddingLR-use {
+	padding-left: $padding-none;
+	padding-right: $padding-none;
+	@media (min-width: $media-sm-up) {
+		padding-left: $padding-sm;
+		padding-right: $padding-sm;
 	}
-	@media ( min-width: $media-md-up ){
-		padding-left: $padding-md ;
-		padding-right: $padding-md ;
+	@media (min-width: $media-md-up) {
+		padding-left: $padding-md;
+		padding-right: $padding-md;
 	}
-	@media ( min-width: $media-lg-up ){
-		padding-left: $padding-lg ;
-		padding-right: $padding-lg ;
+	@media (min-width: $media-lg-up) {
+		padding-left: $padding-lg;
+		padding-right: $padding-lg;
 	}
-	@media ( min-width: $media-xl-up ){
-		padding-left: $padding-xl ;
-		padding-right: $padding-xl ;
+	@media (min-width: $media-xl-up) {
+		padding-left: $padding-xl;
+		padding-right: $padding-xl;
 	}
 }
-.vk_outer-paddingVertical-use{
-	padding-top: $padding-none ;
-	padding-bottom: $padding-none ;
-	@media ( min-width: $media-sm-up ){
-		padding-top: $padding-sm ;
-		padding-bottom: $padding-sm ;
+.vk_outer-paddingVertical-use {
+	padding-top: $padding-none;
+	padding-bottom: $padding-none;
+	@media (min-width: $media-sm-up) {
+		padding-top: $padding-sm;
+		padding-bottom: $padding-sm;
 	}
-	@media ( min-width: $media-md-up ){
-		padding-top: $padding-md ;
-		padding-bottom: $padding-md ;
+	@media (min-width: $media-md-up) {
+		padding-top: $padding-md;
+		padding-bottom: $padding-md;
 	}
-	@media ( min-width: $media-lg-up ){
-		padding-top: $padding-lg ;
-		padding-bottom: $padding-lg ;
+	@media (min-width: $media-lg-up) {
+		padding-top: $padding-lg;
+		padding-bottom: $padding-lg;
 	}
-	@media ( min-width: $media-xl-up ){
-		padding-top: $padding-xl ;
-		padding-bottom: $padding-xl ;
+	@media (min-width: $media-xl-up) {
+		padding-top: $padding-xl;
+		padding-bottom: $padding-xl;
 	}
 }
 
-.vk_outer-bgPosition-fixed{
-  background-attachment: fixed !important;
+.vk_outer-bgPosition-fixed {
+	background-attachment: fixed !important;
 	background-size: cover !important;
 }
-.vk_outer-bgPosition-normal{
-  background-attachment: unset !important;
+.vk_outer-bgPosition-normal {
+	background-attachment: unset !important;
 	background-size: cover !important;
 }
 
@@ -2303,25 +2225,22 @@ $padding-xl:3.5em;
 		width: 100%;
 	}
 }
-.vk_outer_separator-position-upper{
-  svg{
-    top: 0;
-    transform: rotate(180deg);
-  }
+.vk_outer_separator-position-upper {
+	svg {
+		top: 0;
+		transform: rotate(180deg);
+	}
 }
-.vk_outer_separator-position-lower{
-  svg{
-    bottom: 0;
-  }
+.vk_outer_separator-position-lower {
+	svg {
+		bottom: 0;
+	}
 }
 
 // .editor-block-list__block-edit{
 //   margin: 0!important;
 // }
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
+$color-danger: #b52727;
 
 /*-------------------------------------------*/
 /* CSS
@@ -2479,21 +2398,6 @@ $toc-left-margin: 1rem;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-
-.vk_card {
-  &_item {
-    .vk_post_title.card-title {
-      font-size: 1rem;
-    }
-    .vk_post_excerpt.card-text {
-      font-size: 14px;
-    }
-  }
-}
-
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/

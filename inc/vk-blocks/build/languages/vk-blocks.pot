@@ -332,10 +332,10 @@ msgid "Outlined"
 msgstr ""
 
 #: src/blocks/_pro/step-item/block.js:116
-#: src/blocks/_pro/table-of-contents/block.js:159
+#: src/blocks/_pro/table-of-contents/block.js:96
 #: src/blocks/_pro/timeline-item/block.js:99
 #: src/blocks/heading-style/block.js:33
-#: src/blocks/heading/block.js:124
+#: src/blocks/heading/block.js:153
 #: src/blocks/list-style/block.js:104
 #: src/blocks/staff/block.js:105
 msgid "Default"
@@ -365,7 +365,7 @@ msgid "Color"
 msgstr ""
 
 #: src/blocks/_pro/step-item/block.js:86
-#: src/blocks/_pro/table-of-contents/block.js:152
+#: src/blocks/_pro/table-of-contents/block.js:89
 #: src/blocks/_pro/timeline-item/block.js:69
 msgid "Style"
 msgstr ""
@@ -378,13 +378,29 @@ msgstr ""
 msgid "Step"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents/TableOfContents.js:175
-#: src/blocks/_pro/table-of-contents/block.js:80
+#: src/blocks/_pro/table-of-contents/block.js:100
+msgid "No frame"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents/block.js:105
+msgid "Default Display Status"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents/block.js:112
+msgid "OPEN"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents/block.js:116
+msgid "CLOSE"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents/block.js:78
+#: src/blocks/_pro/table-of-contents/toc-utils.js:181
 msgid "Table of Contents"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents/block.js:163
-msgid "No frame"
+#: src/blocks/_pro/table-of-contents/toc-utils.js:185
+msgid "CLICK"
 msgstr ""
 
 #: src/blocks/_pro/timeline-item/block.js:31
@@ -433,7 +449,7 @@ msgid "Balloon setting"
 msgstr ""
 
 #: src/blocks/balloon/block.js:90
-#: src/blocks/heading/block.js:176
+#: src/blocks/heading/block.js:210
 msgid "Position"
 msgstr ""
 
@@ -669,7 +685,7 @@ msgid "Brackets black"
 msgstr ""
 
 #: src/blocks/heading-style/block.js:38
-#: src/blocks/heading/block.js:125
+#: src/blocks/heading/block.js:154
 msgid "Plain"
 msgstr ""
 
@@ -693,59 +709,61 @@ msgstr ""
 msgid "Solid border bottom black"
 msgstr ""
 
-#: src/blocks/heading/block.js:118
+#: src/blocks/heading/block.js:147
 msgid "Style Settings"
 msgstr ""
 
-#: src/blocks/heading/block.js:120
+#: src/blocks/heading/block.js:149
 msgid "Heading style"
 msgstr ""
 
-#: src/blocks/heading/block.js:128
+#: src/blocks/heading/block.js:157
 msgid "Margin bottom size (rem)"
 msgstr ""
 
-#: src/blocks/heading/block.js:139
+#: src/blocks/heading/block.js:168
 msgid "Heading Settings"
 msgstr ""
 
-#: src/blocks/heading/block.js:140
+#: src/blocks/heading/block.js:169
 msgid "Level"
 msgstr ""
 
-#: src/blocks/heading/block.js:142
+#: src/blocks/heading/block.js:176
 msgid "Text Alignment"
 msgstr ""
 
-#: src/blocks/heading/block.js:159
+#: src/blocks/heading/block.js:193
 msgid "Heading margin bottom size (rem)"
 msgstr ""
 
-#: src/blocks/heading/block.js:174
+#: src/blocks/heading/block.js:208
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/blocks/heading/block.js:179
+#: src/blocks/heading/block.js:213
 msgid "Display"
 msgstr ""
 
-#: src/blocks/heading/block.js:180
+#: src/blocks/heading/block.js:214
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/heading/block.js:184
+#: src/blocks/heading/block.js:218
 msgid "Text size (rem)"
 msgstr ""
 
-#: src/blocks/heading/block.js:65
+#: src/blocks/heading/block.js:78
 msgid "Heading"
 msgstr ""
 
-#: src/blocks/heading/component.js:106
+#: src/blocks/heading/component.js:109
+#: src/blocks/heading/deprecated/block.js:642
 msgid "Input sub text…"
 msgstr ""
 
-#: src/blocks/heading/component.js:89
+#: src/blocks/heading/component.js:93
+#: src/blocks/heading/deprecated/block.js:626
 msgid "Input title…"
 msgstr ""
 
@@ -1051,31 +1069,31 @@ msgstr ""
 msgid "Media"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:50
+#: src/components/column-layout-control/index.js:49
 msgid "Display type and columns"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:53
+#: src/components/column-layout-control/index.js:52
 msgid "Display type"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:61
+#: src/components/column-layout-control/index.js:60
 msgid "Column ( Screen size : Extra small )"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:70
+#: src/components/column-layout-control/index.js:69
 msgid "Column ( Screen size : Small )"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:78
+#: src/components/column-layout-control/index.js:77
 msgid "Column ( Screen size : Medium )"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:86
+#: src/components/column-layout-control/index.js:85
 msgid "Column ( Screen size : Large )"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:95
+#: src/components/column-layout-control/index.js:94
 msgid "Column ( Screen size : Extra large )"
 msgstr ""
 

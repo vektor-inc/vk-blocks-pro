@@ -108,7 +108,7 @@ msgid "Child page list"
 msgstr ""
 
 #: src/blocks/_pro/child-page/block.js:63
-#: src/blocks/_pro/post-list/block.js:102
+#: src/blocks/_pro/post-list/block.js:101
 msgid "Display conditions"
 msgstr ""
 
@@ -301,39 +301,39 @@ msgstr ""
 msgid "Outer"
 msgstr ""
 
-#: src/blocks/_pro/post-list/block.js:105
+#: src/blocks/_pro/post-list/block.js:104
 msgid "Filter by PostTypes"
 msgstr ""
 
-#: src/blocks/_pro/post-list/block.js:113
+#: src/blocks/_pro/post-list/block.js:112
 msgid "Filter by Taxonomy Terms"
 msgstr ""
 
-#: src/blocks/_pro/post-list/block.js:121
+#: src/blocks/_pro/post-list/block.js:120
 msgid "Number of Posts"
 msgstr ""
 
-#: src/blocks/_pro/post-list/block.js:129
+#: src/blocks/_pro/post-list/block.js:128
 msgid "Order by"
 msgstr ""
 
-#: src/blocks/_pro/post-list/block.js:135
+#: src/blocks/_pro/post-list/block.js:134
 msgid "Published Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/block.js:136
+#: src/blocks/_pro/post-list/block.js:135
 msgid "Modefied Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/block.js:137
+#: src/blocks/_pro/post-list/block.js:136
 msgid "Random"
 msgstr ""
 
-#: src/blocks/_pro/post-list/block.js:142
+#: src/blocks/_pro/post-list/block.js:141
 msgid "offset"
 msgstr ""
 
-#: src/blocks/_pro/post-list/block.js:152
+#: src/blocks/_pro/post-list/block.js:151
 msgid "Ignore this post"
 msgstr ""
 

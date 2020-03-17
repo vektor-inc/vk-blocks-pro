@@ -84,9 +84,14 @@ $toc-left-margin: 1rem;
         transition: all 0.35s;
       }
     }
-    &-content {
+    &_content-open {
       max-height: 100vh;
       padding: 1em;
+      transition: all 0.35s;
+    }
+    &_content-close {
+      max-height: 0;
+      padding: 0 1em;
       transition: all 0.35s;
     }
     &-close {
@@ -99,9 +104,13 @@ $toc-left-margin: 1rem;
   }
   // :checked
   input:checked {
-    ~ .tab-content {
+    ~ .tab_content-open {
       max-height: 0;
       padding: 0 1em;
+    }
+    ~ .tab_content-close {
+      max-height: 100vh;
+      padding: 1em;
     }
   }
 }

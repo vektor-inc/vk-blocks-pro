@@ -54,7 +54,8 @@ export const getHeadingsFromInnerBlocks = (innerBlocks, headingBlocks) => {
   return headings.concat(result);
 };
 
-export const returnHtml = (source, style, className) => {
+export const returnHtml = (source, attributes, className) => {
+  const { style, open } = attributes;
   if (!className) {
     className = "vk_tableOfContents";
   } else {
@@ -182,7 +183,7 @@ export const returnHtml = (source, style, className) => {
         <label className="tab-label" htmlFor="chck1">
           {__("CLICK", "vk-blocks")}
         </label>
-        <ul className={"vk_tableOfContents_list tab-content"}>
+        <ul className={`vk_tableOfContents_list tab_content-${open}`}>
           {returnHtmlContent}
         </ul>
       </div>

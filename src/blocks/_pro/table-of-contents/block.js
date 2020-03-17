@@ -135,8 +135,7 @@ registerBlockType("vk-blocks/table-of-contents", {
 
 const getHeadings = props => {
   const { className, name, clientId, attributes } = props;
-  const { style, anchor } = attributes;
-
+  const { anchor } = attributes;
   const allowedBlocks = [
     "vk-blocks/heading",
     "vk-blocks/outer",
@@ -150,12 +149,13 @@ const getHeadings = props => {
   if (isAllowedBlock(name, allowedBlocks)) {
     const tocs = getBlocksByName("vk-blocks/table-of-contents");
     const tocClientId = tocs[0] ? tocs[0].clientId : "";
+    const tocAttributes = tocs[0] ? tocs[0].attributes : "";
     const blockIndex = getBlockIndex(clientId);
     let innerBlocks = getInnerBlocks(allowedBlocks);
 
     let headings = getHeadingsFromInnerBlocks(innerBlocks, headingBlocks);
 
-    let render = returnHtml(headings, style, className);
+    let render = returnHtml(headings, tocAttributes, className);
 
     const { updateBlockAttributes } = useDispatch("core/editor");
     updateBlockAttributes(tocClientId, {

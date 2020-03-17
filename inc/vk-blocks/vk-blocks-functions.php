@@ -343,21 +343,44 @@ if ( ! function_exists( 'vkblocks_blocks_categories' ) ) {
 	// Add Block Category,
 	function vkblocks_blocks_categories( $categories, $post ) {
 		global $vk_blocks_prefix;
-		return array_merge(
-			$categories,
-			array(
+
+		if ( ! vk_is_block_category_exist( $categories, 'vk-blocks-cat' ) ) {
+			$categories = array_merge(
+				$categories,
 				array(
-					'slug'  => 'vk-blocks-cat',
-					'title' => $vk_blocks_prefix . __( 'Blocks', 'vk-blocks' ),
-					'icon'  => '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z" /><path d="M19 13H5v-2h14v2z" /></svg>',
-				),
+					array(
+						'slug'  => 'vk-blocks-cat',
+						'title' => $vk_blocks_prefix . __( 'Blocks', 'vk-all-in-one-expansion-unit' ),
+						'icon'  => '',
+					),
+				)
+			);
+		}
+		if ( ! vk_is_block_category_exist( $categories, 'vk-blocks-cat-layout' ) ) {
+			$categories = array_merge(
+				$categories,
 				array(
-					'slug'  => 'vk-blocks-cat-layout',
-					'title' => $vk_blocks_prefix . __( 'Blocks Layout', 'vk-blocks' ),
-					'icon'  => '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z" /><path d="M19 13H5v-2h14v2z" /></svg>',
-				),
-			)
-		);
+					array(
+						'slug'  => 'vk-blocks-cat-layout',
+						'title' => $vk_blocks_prefix . __( 'Blocks Layout', 'vk-all-in-one-expansion-unit' ),
+						'icon'  => '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z" /><path d="M19 13H5v-2h14v2z" /></svg>',
+					),
+				)
+			);
+		}
+		// if ( ! vk_is_block_category_exist( $categories, 'vk-blocks-cat-widget' ) ) {
+		// 	$categories = array_merge(
+		// 		$categories,
+		// 		array(
+		// 			array(
+		// 				'slug'  => 'vk-blocks-cat-widget',
+		// 				'title' => $vk_blocks_prefix . __( 'Blocks Widget', 'vk-all-in-one-expansion-unit' ),
+		// 				'icon'  => '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z" /><path d="M19 13H5v-2h14v2z" /></svg>',
+		// 			),
+		// 		)
+		// 	);
+		// }
+		return $categories;
 	}
 	add_filter( 'block_categories', 'vkblocks_blocks_categories', 10, 2 );
 }

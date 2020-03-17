@@ -81,12 +81,12 @@ registerBlockType("vk-blocks/table-of-contents", {
   attributes: schema,
 
   edit({ attributes, setAttributes }) {
-    const { style } = attributes;
+    const { style, open } = attributes;
     return (
       <Fragment>
         <InspectorControls>
           <PanelBody>
-            <BaseControl label={__("Style", "vk-blocks")} help={``}>
+            <BaseControl label={__("Style", "vk-blocks")}>
               <SelectControl
                 value={style}
                 onChange={value => setAttributes({ style: value })}
@@ -98,6 +98,22 @@ registerBlockType("vk-blocks/table-of-contents", {
                   {
                     value: "",
                     label: __("No frame", "vk-blocks")
+                  }
+                ]}
+              />
+            </BaseControl>
+            <BaseControl label={__("Default Display Status", "vk-blocks")}>
+              <SelectControl
+                value={open}
+                onChange={value => setAttributes({ open: value })}
+                options={[
+                  {
+                    value: "open",
+                    label: __("OPEN", "vk-blocks")
+                  },
+                  {
+                    value: "close",
+                    label: __("CLOSE", "vk-blocks")
                   }
                 ]}
               />

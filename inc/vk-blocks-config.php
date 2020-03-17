@@ -20,6 +20,7 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 	require_once 'vk-blocks/load-vk-components.php';
 	require_once 'font-awesome/font-awesome-config.php';
 	require_once 'term-color/term-color-config.php';
+	require_once 'template-tags/package/template-tags.php';
 
 	if ( ! vkblocks_is_lightning() ) {
 		require_once 'vk-blocks/load-bootstrap.php';

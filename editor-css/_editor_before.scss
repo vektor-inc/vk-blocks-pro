@@ -1,4 +1,5 @@
 
+/* Pro版ブロック表示 */
 .vk_block_icon_pro {
   fill:#c00;
   }
@@ -23,6 +24,16 @@
   padding: 3px 4px;
   }
   
+/* ブロックの種類入れ替えトグルについて、この指定がないと見えてしまう */
+.components-button.block-editor-block-switcher__toggle {
+  overflow: hidden;
+}
+
+/* スライダーを表示 : デフォルトだとbootstrapに非表示にされてしまう */
+input[type=range] {
+  margin: 1px;
+}
+
   .components-base-control__label {
      font-weight:bold;
   }
@@ -32,16 +43,39 @@
   .components-radio-control__option label { margin-bottom:0; }
   .components-checkbox-control__label { margin-bottom:0; }
   .components-color-palette { display:block; overflow:hidden; }
-  
-  /*スライダーを表示。デフォルトだとbootstrapに非表示にされてしまう*/
-  input[type=range] {
-      margin: 1px;
-  }
-  
+    
   .editor-url-input input[type="text"]{
       width:100%;
   }
   
+  // VK Outer 編集パネル
+  $color-danger: #dd3333;
+.vk_outer_sidebar_bgImage {
+	position: relative;
+	.components-button {
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translateY(-50%) translateX(-50%);
+	  transition: all 1s;
+	}
+	.button-delete {
+	  opacity: 0;
+	  border: 1px solid $color-danger;
+	  color: $color-danger;
+	  transition: all 1s;
+	  &:hover {
+		background-color: $color-danger;
+		border: 1px solid #b72a2a;
+		color: #fff;
+	  }
+	}
+	&:hover .button-delete {
+		transition: all 1s;
+		opacity: 1;
+	}
+  }
+
   /* editor area *********************************************/
   .edit-post-visual-editor.editor-styles-wrapper{
   
@@ -212,4 +246,3 @@
       }
     }
   }
-  

@@ -11,11 +11,11 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 	define( 'VK_BLOCKS_URL', plugin_dir_url( __FILE__ ) . 'vk-blocks/' );
 	// Set version number.
 
-	define( 'VK_BLOCKS_VERSION', '0.23.3' );
+	define( 'VK_BLOCKS_VERSION', '0.23.5' );
 
 	global $vk_blocks_prefix;
 	$vk_blocks_prefix = apply_filters( 'vk_blocks_prefix', 'VK' );
-	if ( $vk_blocks_prefix ){
+	if ( $vk_blocks_prefix ) {
 		$vk_blocks_prefix .= ' ';
 	}
 

@@ -132,7 +132,7 @@ registerBlockType("vk-blocks/post-list", {
                 options={
                   [
                     {value: 'date', label: __("Published Date", "vk-blocks")},
-                    {value: 'modefied', label: __("Modefied Date", "vk-blocks")},
+                    {value: 'modified', label: __("Modefied Date", "vk-blocks")},
                     {value: 'rand', label: __("Random", "vk-blocks")}
                   ]
                 }

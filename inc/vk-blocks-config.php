@@ -14,7 +14,10 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 	define( 'VK_BLOCKS_VERSION', '0.23.1' );
 
 	global $vk_blocks_prefix;
-	$vk_blocks_prefix = apply_filters( 'vk_blocks_prefix', 'VK ' );
+	$vk_blocks_prefix = apply_filters( 'vk_blocks_prefix', 'VK' );
+	if ( $vk_blocks_prefix ){
+		$vk_blocks_prefix .= ' ';
+	}
 
 	require_once 'vk-blocks/helpers.php';
 	require_once 'vk-components/vk-components-config.php';

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-KeywordsList: __\n"
@@ -42,6 +42,7 @@ msgid "https://example.com"
 msgstr "https://example.com"
 
 #: src/blocks/_pro/card-item/component.js:103
+#: src/blocks/_pro/outer/block.js:166
 msgid "Delete Image"
 msgstr "画像を削除"
 
@@ -55,7 +56,7 @@ msgstr ""
 msgid "Title"
 msgstr "タイトルを入力"
 
-#: src/blocks/_pro/card-item/component.js:90 src/blocks/_pro/outer/block.js:154
+#: src/blocks/_pro/card-item/component.js:90 src/blocks/_pro/outer/block.js:174
 #: src/blocks/balloon/block.js:136 src/blocks/flow/block.js:112
 #: src/blocks/pr-blocks/block.js:179 src/blocks/pr-content/component.js:157
 #: src/blocks/pr-content/deprecated/component-deprecated.js:102
@@ -116,7 +117,7 @@ msgid "Child page list"
 msgstr "子ページリスト"
 
 #: src/blocks/_pro/child-page/block.js:63
-#: src/blocks/_pro/post-list/block.js:102
+#: src/blocks/_pro/post-list/block.js:101
 msgid "Display conditions"
 msgstr "表示条件"
 
@@ -124,15 +125,15 @@ msgstr "表示条件"
 msgid "Parent"
 msgstr "親ページ"
 
-#: src/blocks/_pro/outer/block.js:116
+#: src/blocks/_pro/outer/block.js:123
 msgid "Background Setting"
 msgstr "背景設定"
 
-#: src/blocks/_pro/outer/block.js:120 src/blocks/pr-content/block.js:119
+#: src/blocks/_pro/outer/block.js:127 src/blocks/pr-content/block.js:119
 msgid "Color Setting"
 msgstr "色設定"
 
-#: src/blocks/_pro/outer/block.js:121
+#: src/blocks/_pro/outer/block.js:128
 msgid ""
 "Color will overcome background image. If you want to display image, clear "
 "background color or set opacity 0."
@@ -140,208 +141,200 @@ msgstr ""
 "色を指定すると画像よりも優先されます。画像を表示したい場合は、背景色をクリア"
 "するか、不透明度を0に設定します。"
 
-#: src/blocks/_pro/outer/block.js:132
+#: src/blocks/_pro/outer/block.js:138
 msgid "Opacity Setting"
 msgstr "透過設定"
 
-#: src/blocks/_pro/outer/block.js:143
+#: src/blocks/_pro/outer/block.js:150
 msgid "Background Image"
 msgstr "背景画像"
 
-#: src/blocks/_pro/outer/block.js:159 src/blocks/balloon/block.js:141
-#: src/blocks/flow/block.js:113 src/blocks/pr-blocks/block.js:175
-#: src/blocks/pr-content/component.js:164
-#: src/blocks/pr-content/deprecated/component-deprecated.js:106
-#: src/blocks/pr-content/deprecated/component-no-boder-color.js:120
-msgid "Upload image"
-msgstr "画像をアップロード"
-
-#: src/blocks/_pro/outer/block.js:168
+#: src/blocks/_pro/outer/block.js:182
 msgid "Background image Position"
 msgstr "背景画像の位置"
 
-#: src/blocks/_pro/outer/block.js:175 src/blocks/button/block.js:166
+#: src/blocks/_pro/outer/block.js:189 src/blocks/button/block.js:166
 msgid "normal"
 msgstr "標準"
 
-#: src/blocks/_pro/outer/block.js:176
+#: src/blocks/_pro/outer/block.js:190
 msgid "Fixed"
 msgstr "固定"
 
-#: src/blocks/_pro/outer/block.js:178
+#: src/blocks/_pro/outer/block.js:192
 msgid "Parallax (It will not work in preview)"
 msgstr "パララックス（編集画面では反映されません）"
 
-#: src/blocks/_pro/outer/block.js:191 src/blocks/pr-content/block.js:233
+#: src/blocks/_pro/outer/block.js:205 src/blocks/pr-content/block.js:233
 msgid "Layout Setting"
 msgstr "レイアウト設定"
 
-#: src/blocks/_pro/outer/block.js:196
+#: src/blocks/_pro/outer/block.js:210
 msgid "Outer width"
 msgstr "アウターの幅"
 
-#: src/blocks/_pro/outer/block.js:199
+#: src/blocks/_pro/outer/block.js:213
 msgid "Normal"
 msgstr "標準"
 
-#: src/blocks/_pro/outer/block.js:200
+#: src/blocks/_pro/outer/block.js:214
 msgid "Full Wide"
 msgstr "全幅"
 
-#: src/blocks/_pro/outer/block.js:205
+#: src/blocks/_pro/outer/block.js:219
 msgid "Contents area padding (left and right)"
 msgstr "コンテンツエリアの余白 (左右)"
 
-#: src/blocks/_pro/outer/block.js:212
+#: src/blocks/_pro/outer/block.js:226
 msgid "Do not use padding"
 msgstr "余白なし"
 
-#: src/blocks/_pro/outer/block.js:216
+#: src/blocks/_pro/outer/block.js:230
 msgid "Use padding"
 msgstr "余白あり"
 
-#: src/blocks/_pro/outer/block.js:225
+#: src/blocks/_pro/outer/block.js:239
 msgid "Padding (top and bottom)"
 msgstr "余白 (上下)"
 
-#: src/blocks/_pro/outer/block.js:228
+#: src/blocks/_pro/outer/block.js:242
 msgid "Use default padding"
 msgstr "標準の余白を使用"
 
-#: src/blocks/_pro/outer/block.js:230
+#: src/blocks/_pro/outer/block.js:244
 msgid "Do not use default padding (Set it yourself using a spacer block etc.)."
 msgstr "標準の余白を使用しない（スペーサーブロックなどで独自に指定する）。"
 
-#: src/blocks/_pro/outer/block.js:244
+#: src/blocks/_pro/outer/block.js:258
 msgid "Divider Setting"
 msgstr "区切りの設定"
 
-#: src/blocks/_pro/outer/block.js:249 src/blocks/balloon/block.js:103
+#: src/blocks/_pro/outer/block.js:263 src/blocks/balloon/block.js:103
 msgid "Type"
 msgstr "タイプ"
 
-#: src/blocks/_pro/outer/block.js:255
+#: src/blocks/_pro/outer/block.js:269
 msgid "Tilt"
 msgstr "傾斜"
 
-#: src/blocks/_pro/outer/block.js:259
+#: src/blocks/_pro/outer/block.js:273
 msgid "Curve"
 msgstr "カーブ"
 
-#: src/blocks/_pro/outer/block.js:263
+#: src/blocks/_pro/outer/block.js:277
 msgid "Wave"
 msgstr "波状"
 
-#: src/blocks/_pro/outer/block.js:267 src/blocks/list-style/block.js:113
+#: src/blocks/_pro/outer/block.js:281 src/blocks/list-style/block.js:113
 msgid "Triangle"
 msgstr "三角"
 
-#: src/blocks/_pro/outer/block.js:272
+#: src/blocks/_pro/outer/block.js:286
 msgid "Upper Divider Level"
 msgstr "上部区切りレベル"
 
-#: src/blocks/_pro/outer/block.js:290
+#: src/blocks/_pro/outer/block.js:304
 msgid "Lower Divider Level"
 msgstr "下部区切りレベル"
 
-#: src/blocks/_pro/outer/block.js:310
+#: src/blocks/_pro/outer/block.js:324
 msgid "Border Setting"
 msgstr "枠線の設定"
 
-#: src/blocks/_pro/outer/block.js:317
+#: src/blocks/_pro/outer/block.js:331
 msgid "Border will disappear when divider effect is applied."
 msgstr "枠線は区切りレベルを適用すると表示されなくなります。"
 
-#: src/blocks/_pro/outer/block.js:323
+#: src/blocks/_pro/outer/block.js:337
 msgid "Border type"
 msgstr "枠線の種類"
 
-#: src/blocks/_pro/outer/block.js:329 src/blocks/_pro/step-item/block.js:120
+#: src/blocks/_pro/outer/block.js:343 src/blocks/_pro/step-item/block.js:120
 #: src/blocks/_pro/timeline-item/block.js:103 src/blocks/staff/block.js:109
 msgid "None"
 msgstr "なし"
 
-#: src/blocks/_pro/outer/block.js:333 src/blocks/_pro/step-item/block.js:97
+#: src/blocks/_pro/outer/block.js:347 src/blocks/_pro/step-item/block.js:97
 #: src/blocks/_pro/timeline-item/block.js:84 src/blocks/group-style/block.js:95
 #: src/blocks/pr-content/block.js:168
 msgid "Solid"
 msgstr "直線"
 
-#: src/blocks/_pro/outer/block.js:337 src/blocks/group-style/block.js:103
+#: src/blocks/_pro/outer/block.js:351 src/blocks/group-style/block.js:103
 msgid "Dotted"
 msgstr "点線"
 
-#: src/blocks/_pro/outer/block.js:341 src/blocks/group-style/block.js:107
+#: src/blocks/_pro/outer/block.js:355 src/blocks/group-style/block.js:107
 msgid "Dashed"
 msgstr "Dashed"
 
-#: src/blocks/_pro/outer/block.js:345 src/blocks/group-style/block.js:111
+#: src/blocks/_pro/outer/block.js:359 src/blocks/group-style/block.js:111
 msgid "Double"
 msgstr "二重線"
 
-#: src/blocks/_pro/outer/block.js:349
+#: src/blocks/_pro/outer/block.js:363
 msgid "Groove"
 msgstr "Groove"
 
-#: src/blocks/_pro/outer/block.js:353
+#: src/blocks/_pro/outer/block.js:367
 msgid "Ridge"
 msgstr "Ridge"
 
-#: src/blocks/_pro/outer/block.js:357
+#: src/blocks/_pro/outer/block.js:371
 msgid "Inset"
 msgstr "Inset"
 
-#: src/blocks/_pro/outer/block.js:361
+#: src/blocks/_pro/outer/block.js:375
 msgid "Outset"
 msgstr "Outset"
 
-#: src/blocks/_pro/outer/block.js:372
+#: src/blocks/_pro/outer/block.js:386
 msgid "Border width"
 msgstr "枠線の幅"
 
-#: src/blocks/_pro/outer/block.js:379
+#: src/blocks/_pro/outer/block.js:393
 msgid "Border radius"
 msgstr "枠線のRの大きさ"
 
-#: src/blocks/_pro/outer/block.js:63
+#: src/blocks/_pro/outer/block.js:64
 msgid "Outer"
 msgstr "Outer"
 
-#: src/blocks/_pro/post-list/block.js:105
+#: src/blocks/_pro/post-list/block.js:104
 msgid "Filter by PostTypes"
 msgstr "投稿タイプ"
 
-#: src/blocks/_pro/post-list/block.js:113
+#: src/blocks/_pro/post-list/block.js:112
 msgid "Filter by Taxonomy Terms"
 msgstr "分類"
 
-#: src/blocks/_pro/post-list/block.js:121
+#: src/blocks/_pro/post-list/block.js:120
 msgid "Number of Posts"
 msgstr "表示件数"
 
-#: src/blocks/_pro/post-list/block.js:129
+#: src/blocks/_pro/post-list/block.js:128
 msgid "Order by"
 msgstr "表示順"
 
-#: src/blocks/_pro/post-list/block.js:135
+#: src/blocks/_pro/post-list/block.js:134
 msgid "Published Date"
 msgstr "公開日"
 
-#: src/blocks/_pro/post-list/block.js:136
+#: src/blocks/_pro/post-list/block.js:135
 msgid "Modefied Date"
 msgstr "更新日"
 
-#: src/blocks/_pro/post-list/block.js:137
+#: src/blocks/_pro/post-list/block.js:136
 msgid "Random"
 msgstr "ランダム"
 
-#: src/blocks/_pro/post-list/block.js:142
+#: src/blocks/_pro/post-list/block.js:141
 msgid "offset"
 msgstr "オフセット数"
 
-#: src/blocks/_pro/post-list/block.js:152
+#: src/blocks/_pro/post-list/block.js:151
 msgid "Ignore this post"
-msgstr "自分をリストに含めない"
+msgstr "表示中の投稿をリストから除外する"
 
 #: src/blocks/_pro/post-list/block.js:66
 msgid "Post list"
@@ -432,6 +425,13 @@ msgstr "セリフ"
 #: src/blocks/balloon/block.js:108
 msgid "Thinking"
 msgstr "吹き出し"
+
+#: src/blocks/balloon/block.js:141 src/blocks/flow/block.js:113
+#: src/blocks/pr-blocks/block.js:175 src/blocks/pr-content/component.js:164
+#: src/blocks/pr-content/deprecated/component-deprecated.js:106
+#: src/blocks/pr-content/deprecated/component-no-boder-color.js:120
+msgid "Upload image"
+msgstr "画像をアップロード"
 
 #: src/blocks/balloon/block.js:152
 msgid "Icon Name"

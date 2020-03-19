@@ -7,18 +7,18 @@ export const AdvancedToggleControl = props => {
     label,
     helpYes,
     helpNo,
-    hidden,
+    schema,
     setAttributes
   } = props;
-  const [hasFixedTable, setHasFixedTable] = useState(initialFixedTable);
 
+  const [hasFixedTable, setHasFixedTable] = useState(initialFixedTable);
   return (
     <ToggleControl
       label={label}
       help={hasFixedTable ? helpYes : helpNo}
       checked={hasFixedTable}
       onChange={() => {
-        setAttributes({ [hidden]: !hasFixedTable });
+        setAttributes({ [schema]: !hasFixedTable });
         setHasFixedTable(!hasFixedTable);
       }}
     />

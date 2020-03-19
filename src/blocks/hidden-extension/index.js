@@ -8,36 +8,6 @@ const { createHigherOrderComponent } = wp.compose;
 
 import { AdvancedToggleControl } from "../../components/advanced-toggle-control";
 
-const withInspectorControls = createHigherOrderComponent(BlockEdit => {
-  return props => {
-    return (
-      <Fragment>
-        <BlockEdit {...props} />
-        <InspectorControls>
-          <PanelBody
-            title={__("Display Settings", "vk-blocks")}
-            initialOpen={false}
-          >
-            <AdvancedToggleControl
-              initialFixedTable={props.attributes.vkb_hidden}
-              helpYes={__("Visible", "vk-blocks")}
-              helpNo={__("Hidden", "vk-blocks")}
-              schema={"vkb_hidden"}
-              {...props}
-            />
-          </PanelBody>
-        </InspectorControls>
-      </Fragment>
-    );
-  };
-}, "withInspectorControl");
-
-wp.hooks.addFilter(
-  "editor.BlockEdit",
-  "vk-blocks/hidden-extension",
-  withInspectorControls
-);
-
 addFilter(
   "blocks.registerBlockType",
   "vk-blocks/hidden-extension",
@@ -55,14 +25,51 @@ addFilter(
   }
 );
 
-// function addBackgroundColorStyle(props) {
-//   console.log("blocks.getSaveContent.extraProps");
-//   console.log(props);
-//   return lodash.assign(props, { hidden: props.hidden });
-// }
+wp.hooks.addFilter(
+  "editor.BlockEdit",
+  "vk-blocks/hidden-extension",
+  createHigherOrderComponent(BlockEdit => {
+    return props => {
+      return (
+        <Fragment>
+          <BlockEdit {...props} />
+          <InspectorControls>
+            <PanelBody
+              title={__("Display Settings", "vk-blocks")}
+              initialOpen={false}
+            >
+              <AdvancedToggleControl
+                initialFixedTable={props.attributes.vkb_hidden}
+                helpYes={__("Hidden", "vk-blocks")}
+                helpNo={__("Visible", "vk-blocks")}
+                schema={"vkb_hidden"}
+                {...props}
+              />
+            </PanelBody>
+          </InspectorControls>
+        </Fragment>
+      );
+    };
+  }, "addHiddenSection")
+);
 
-// wp.hooks.addFilter(
-//   "blocks.getSaveContent.extraProps",
-//   "vk-blocks/hidden-extension",
-//   addBackgroundColorStyle
-// );
+wp.hooks.addFilter(
+  "blocks.getSaveElement",
+  "vk-blocks/hidden-extension",
+  (element, blockType, attributes) => {
+    attributes.vkb_hidden &&
+      lodash.assign(element.props.style, { display: "none" });
+    return element;
+  }
+);
+
+wp.hooks.addFilter(
+  "editor.BlockListBlock",
+  "vk-blocks/hidden-extension",
+  createHigherOrderComponent(BlockListBlock => {
+    return props => {
+      let hiddenClass = props.attributes.vkb_hidden ? "vkb_hidden_warning" : "";
+      return <BlockListBlock {...props} className={hiddenClass} />;
+    };
+  }, "addHiddenWarning")
+);

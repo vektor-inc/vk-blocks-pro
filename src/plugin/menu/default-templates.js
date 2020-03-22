@@ -13,13 +13,13 @@ const defaultTemplates = [
 		name: "Cover",
 		icon: "",
 		content: `
-		<!-- wp:vk-blocks/outer {"bgColor":"#000000","bgImage":"http://test.local/wp-content/uploads/2018/09/programming-942487_1920.jpg","outerWidth":"full","padding_top_and_bottom":"0","opacity":0.7} -->
-		<div id="vk-htags-" class="wp-block-vk-blocks-outer vk_outer vk_outer-width-full vk_outer-paddingLR-none vk_outer-paddingVertical-none vk_outer-bgPosition-normal" style="background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(http://test.local/wp-content/uploads/2018/09/programming-942487_1920.jpg);border:0px none #000;border-radius:0px"><div class="vk_outer_container"><!-- wp:vk-blocks/spacer {"unit":"rem","pc":4.5,"tablet":4.5,"mobile":4.5} -->
+		<!-- wp:vk-blocks/outer {"bgColor":"#000000","bgImage":"https://www.vektor-inc.co.jp/vk-blocks-tmpl-images/programming-942487_1920.jpg","outerWidth":"full","padding_top_and_bottom":"0","opacity":0.7} -->
+		<div id="vk-htags-" class="wp-block-vk-blocks-outer vk_outer vk_outer-width-full vk_outer-paddingLR-none vk_outer-paddingVertical-none vk_outer-bgPosition-normal" style="background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://www.vektor-inc.co.jp/vk-blocks-tmpl-images/programming-942487_1920.jpg);border:0px none #000;border-radius:0px"><div class="vk_outer_container"><!-- wp:vk-blocks/spacer {"unit":"rem","pc":4.5,"tablet":4.5,"mobile":4.5} -->
 		<div class="vk_spacer"><div class="vk_spacer-display-pc" style="height:4.5rem"></div><div class="vk_spacer-display-tablet" style="height:4.5rem"></div><div class="vk_spacer-display-mobile" style="height:4.5rem"></div></div>
 		<!-- /wp:vk-blocks/spacer -->
 	
-		<!-- wp:vk-blocks/pr-content {"titleColor":"#eeeeee","contentColor":"#eeeeee","url":"https://example.com","buttonType":"1","buttonColorCustom":"#eeeeee","Image":"http://test.local/vk-blocks-tmpl-images/device_01.png","layout":"right","fontAwesomeIconBefore":"fas fa-arrow-circle-right","fontAwesomeIconAfter":""} -->
-		<div class="wp-block-vk-blocks-pr-content vk_prContent vk_prContent-layout-imageRight"><div class="col-sm-6 vk_prContent_colImg"><img class="vk_prContent_colImg_image" src="http://test.local/vk-blocks-tmpl-images/device_01.png" alt="画像をアップロード" style="border:none"/></div><div class="col-sm-6 vk_prContent_colTxt"><h3 class="vk_prContent_colTxt_title" style="color:#eeeeee">自社のコンセプトや、キャッチコピーが入ります。</h3><p class="vk_prContent_colTxt_text" style="color:#eeeeee">この部分には、自社について説明が入ります。<br>自社のコンセプトや理念など、大切にしていることについて説明しましょう。お客様に一番伝えたいことを書くことをおススメします。</p><div class="vk_button vk_button-color-custom"><a href="https://example.com" class="btn btn-block vk_button_link vk_prContent_colTxt_btn btn-primary" style="background-color:transparent;border:1px solid #eeeeee;color:#eeeeee" rel="noopener noreferrer"><i class="fas fa-arrow-circle-right vk_button_link_before"></i><span class="vk_button_link_txt">さらに詳しく</span></a></div></div></div>
+		<!-- wp:vk-blocks/pr-content {"titleColor":"#eeeeee","contentColor":"#eeeeee","url":"https://example.com","buttonType":"1","buttonColorCustom":"#eeeeee","Image":"https://www.vektor-inc.co.jp/vk-blocks-tmpl-images/device_01.png","layout":"right","fontAwesomeIconBefore":"fas fa-arrow-circle-right","fontAwesomeIconAfter":""} -->
+		<div class="wp-block-vk-blocks-pr-content vk_prContent vk_prContent-layout-imageRight"><div class="col-sm-6 vk_prContent_colImg"><img class="vk_prContent_colImg_image" src="https://www.vektor-inc.co.jp/vk-blocks-tmpl-images/device_01.png" alt="画像をアップロード" style="border:none"/></div><div class="col-sm-6 vk_prContent_colTxt"><h3 class="vk_prContent_colTxt_title" style="color:#eeeeee">自社のコンセプトや、キャッチコピーが入ります。</h3><p class="vk_prContent_colTxt_text" style="color:#eeeeee">この部分には、自社について説明が入ります。<br>自社のコンセプトや理念など、大切にしていることについて説明しましょう。お客様に一番伝えたいことを書くことをおススメします。</p><div class="vk_button vk_button-color-custom"><a href="https://example.com" class="btn btn-block vk_button_link vk_prContent_colTxt_btn btn-primary" style="background-color:transparent;border:1px solid #eeeeee;color:#eeeeee" rel="noopener noreferrer"><i class="fas fa-arrow-circle-right vk_button_link_before"></i><span class="vk_button_link_txt">さらに詳しく</span></a></div></div></div>
 		<!-- /wp:vk-blocks/pr-content -->
 		
 		<!-- wp:vk-blocks/spacer {"unit":"rem","pc":2,"tablet":4,"mobile":4} -->
@@ -38,7 +38,7 @@ const defaultTemplates = [
 		<!-- /wp:vk-blocks/spacer -->
 		
 		<!-- wp:vk-blocks/heading {"align":"center","titleStyle":"plain","outerMarginBottom":0,"titleColor":"#ffffff","titleMarginBottom":0,"subTextColor":"#ffffff"} -->
-		<div class="wp-block-vk-blocks-heading vk_heading vk_heading-style-plain" style="margin-bottom:0rem"><h2 style="color:#ffffff;font-size:2rem;margin-bottom:0rem;text-align:center" class="vk_heading_title vk_heading_title-style-plain" placeholder="Input title">Title test</h2><p style="color:#ffffff;font-size:1.2rem;text-align:center" class="vk_heading_subtext vk_heading_subtext-style-plain" placeholder="Input sub text">Sub title text</p></div>
+		<div class="wp-block-vk-blocks-heading vk_heading vk_heading-style-plain" style="margin-bottom:0rem"><h2 style="color:#ffffff;font-size:2rem;margin-bottom:0rem;text-align:center" class="vk_heading_title vk_heading_title-style-plain" placeholder="タイトルを入力">Title test</h2><p style="color:#ffffff;font-size:1.2rem;text-align:center" class="vk_heading_subtext vk_heading_subtext-style-plain" placeholder="サブテキストを入力">Sub title text</p></div>
 		<!-- /wp:vk-blocks/heading -->
 		
 		<!-- wp:vk-blocks/spacer {"unit":"rem","pc":3,"tablet":3,"mobile":3} -->
@@ -88,8 +88,8 @@ const defaultTemplates = [
 	<div id="vk-htags-4" class="wp-block-vk-blocks-outer vk_outer vk_outer-width-full vk_outer-paddingLR-none vk_outer-paddingVertical-none vk_outer-bgPosition-normal" style="background:linear-gradient(rgba(243, 244, 245, 0.5), rgba(243, 244, 245, 0.5));border:none;border-radius:0px"><div class="vk_outer_separator vk_outer_separator-position-upper vk_outer_separator-type-tilt" style="padding-bottom:60px"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100" preserveaspectratio="none"><path d="m100,40 L0,100 L100,100 z" strokewidth="0" fill="#fff"></path></svg></div><div class="vk_outer_container"><!-- wp:vk-blocks/spacer {"unit":"rem","pc":4,"tablet":4,"mobile":4} -->
 	<div class="vk_spacer"><div class="vk_spacer-display-pc" style="height:4rem"></div><div class="vk_spacer-display-tablet" style="height:4rem"></div><div class="vk_spacer-display-mobile" style="height:4rem"></div></div>
 	<!-- /wp:vk-blocks/spacer -->
-	<!-- wp:vk-blocks/pr-content {"url":"https://example.com","buttonColorCustom":"#cf2e2e","Image":"https://www.vektor-inc.co.jp/wp-content/uploads/2020/02/pr-img.png","layout":"right"} -->
-	<div class="wp-block-vk-blocks-pr-content vk_prContent vk_prContent-layout-imageRight"><div class="col-sm-6 vk_prContent_colImg"><img class="vk_prContent_colImg_image" src="https://www.vektor-inc.co.jp/wp-content/uploads/2020/02/pr-img.png" alt="画像をアップロード" style="border:none"/></div><div class="col-sm-6 vk_prContent_colTxt"><h3 class="vk_prContent_colTxt_title">自社のコンセプトやキャッチコピーが入ります。</h3><p class="vk_prContent_colTxt_text">この部分には、自社について説明が入ります。<br>自社のコンセプトや理念など、大切にしていることについて説明しましょう。お客様に一番伝えたいことを書くことをおススメします。</p><div class="vk_button vk_button-color-custom"><a href="https://example.com" class="btn btn-block vk_button_link vk_prContent_colTxt_btn btn-primary" style="background-color:#cf2e2e;border:1px solid #cf2e2e" rel="noopener noreferrer"><span class="vk_button_link_txt">さらに詳しく</span></a></div></div></div>
+	<!-- wp:vk-blocks/pr-content {"url":"https://example.com","buttonColorCustom":"#cf2e2e","Image":"https://www.vektor-inc.co.jp/vk-blocks-tmpl-images/pr-img.png","layout":"right"} -->
+	<div class="wp-block-vk-blocks-pr-content vk_prContent vk_prContent-layout-imageRight"><div class="col-sm-6 vk_prContent_colImg"><img class="vk_prContent_colImg_image" src="https://www.vektor-inc.co.jp/vk-blocks-tmpl-images/pr-img.png" alt="" style="border:none"/></div><div class="col-sm-6 vk_prContent_colTxt"><h3 class="vk_prContent_colTxt_title">自社のコンセプトやキャッチコピーが入ります。</h3><p class="vk_prContent_colTxt_text">この部分には、自社について説明が入ります。<br>自社のコンセプトや理念など、大切にしていることについて説明しましょう。お客様に一番伝えたいことを書くことをおススメします。</p><div class="vk_button vk_button-color-custom"><a href="https://example.com" class="btn btn-block vk_button_link vk_prContent_colTxt_btn btn-primary" style="background-color:#cf2e2e;border:1px solid #cf2e2e" rel="noopener noreferrer"><span class="vk_button_link_txt">さらに詳しく</span></a></div></div></div>
 	<!-- /wp:vk-blocks/pr-content -->
 	<!-- wp:vk-blocks/spacer {"unit":"rem","pc":4,"tablet":4,"mobile":4} -->
 	<div class="vk_spacer"><div class="vk_spacer-display-pc" style="height:4rem"></div><div class="vk_spacer-display-tablet" style="height:4rem"></div><div class="vk_spacer-display-mobile" style="height:4rem"></div></div>
@@ -149,13 +149,13 @@ const defaultTemplates = [
 	name: "Call To Action",
     icon: "",
 	content: `
-	<!-- wp:vk-blocks/outer {"bgColor":"#000000","bgImage":"http://test.local/wp-content/uploads/2018/09/programming-942487_1920.jpg","bgPosition":"fixed","padding_left_and_right":"1","padding_top_and_bottom":"0","opacity":0.7,"borderRadius":8} -->
-	<div id="vk-htags-15" class="wp-block-vk-blocks-outer vk_outer vk_outer-width-normal vk_outer-paddingLR-use vk_outer-paddingVertical-none vk_outer-bgPosition-fixed" style="background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(http://test.local/wp-content/uploads/2018/09/programming-942487_1920.jpg);border:0px none #000;border-radius:8px"><div class="vk_outer_container"><!-- wp:vk-blocks/spacer {"unit":"rem","pc":4,"tablet":4,"mobile":4} -->
+	<!-- wp:vk-blocks/outer {"bgColor":"#000000","bgImage":"https://www.vektor-inc.co.jp/vk-blocks-tmpl-images/programming-942487_1920.jpg","bgPosition":"fixed","padding_left_and_right":"1","padding_top_and_bottom":"0","opacity":0.7,"borderRadius":8} -->
+	<div id="vk-htags-15" class="wp-block-vk-blocks-outer vk_outer vk_outer-width-normal vk_outer-paddingLR-use vk_outer-paddingVertical-none vk_outer-bgPosition-fixed" style="background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://www.vektor-inc.co.jp/vk-blocks-tmpl-images/programming-942487_1920.jpg);border:0px none #000;border-radius:8px"><div class="vk_outer_container"><!-- wp:vk-blocks/spacer {"unit":"rem","pc":4,"tablet":4,"mobile":4} -->
 	<div class="vk_spacer"><div class="vk_spacer-display-pc" style="height:4rem"></div><div class="vk_spacer-display-tablet" style="height:4rem"></div><div class="vk_spacer-display-mobile" style="height:4rem"></div></div>
 	<!-- /wp:vk-blocks/spacer -->
 	
-	<!-- wp:vk-blocks/pr-content {"titleColor":"#eeeeee","contentColor":"#eeeeee","url":"https://example.com","buttonColorCustom":"#cf2e2e","Image":"http://test.local/vk-blocks-tmpl-images/device_01.png","layout":"right","fontAwesomeIconBefore":"fas fa-arrow-circle-right","fontAwesomeIconAfter":""} -->
-	<div class="wp-block-vk-blocks-pr-content vk_prContent vk_prContent-layout-imageRight"><div class="col-sm-6 vk_prContent_colImg"><img class="vk_prContent_colImg_image" src="http://test.local/vk-blocks-tmpl-images/device_01.png" alt="画像をアップロード" style="border:none"/></div><div class="col-sm-6 vk_prContent_colTxt"><h3 class="vk_prContent_colTxt_title" style="color:#eeeeee">Call To Action Title</h3><p class="vk_prContent_colTxt_text" style="color:#eeeeee">この部分には、自社について説明が入ります。<br>自社のコンセプトや理念など、大切にしていることについて説明しましょう。お客様に一番伝えたいことを書くことをおススメします。</p><div class="vk_button vk_button-color-custom"><a href="https://example.com" class="btn btn-block vk_button_link vk_prContent_colTxt_btn btn-primary" style="background-color:#cf2e2e;border:1px solid #cf2e2e" rel="noopener noreferrer"><i class="fas fa-arrow-circle-right vk_button_link_before"></i><span class="vk_button_link_txt">さらに詳しく</span></a></div></div></div>
+	<!-- wp:vk-blocks/pr-content {"titleColor":"#eeeeee","contentColor":"#eeeeee","url":"https://example.com","buttonColorCustom":"#cf2e2e","Image":"https://www.vektor-inc.co.jp/vk-blocks-tmpl-images/device_01.png","layout":"right","fontAwesomeIconBefore":"fas fa-arrow-circle-right","fontAwesomeIconAfter":""} -->
+	<div class="wp-block-vk-blocks-pr-content vk_prContent vk_prContent-layout-imageRight"><div class="col-sm-6 vk_prContent_colImg"><img class="vk_prContent_colImg_image" src="https://www.vektor-inc.co.jp/vk-blocks-tmpl-images/device_01.png" alt="画像をアップロード" style="border:none"/></div><div class="col-sm-6 vk_prContent_colTxt"><h3 class="vk_prContent_colTxt_title" style="color:#eeeeee">Call To Action Title</h3><p class="vk_prContent_colTxt_text" style="color:#eeeeee">この部分には、自社について説明が入ります。<br>自社のコンセプトや理念など、大切にしていることについて説明しましょう。お客様に一番伝えたいことを書くことをおススメします。</p><div class="vk_button vk_button-color-custom"><a href="https://example.com" class="btn btn-block vk_button_link vk_prContent_colTxt_btn btn-primary" style="background-color:#cf2e2e;border:1px solid #cf2e2e" rel="noopener noreferrer"><i class="fas fa-arrow-circle-right vk_button_link_before"></i><span class="vk_button_link_txt">さらに詳しく</span></a></div></div></div>
 	<!-- /wp:vk-blocks/pr-content -->
 	
 	<!-- wp:vk-blocks/spacer {"unit":"rem","pc":4.5,"tablet":4,"mobile":4} -->
@@ -172,8 +172,8 @@ const defaultTemplates = [
 	name: "Contact",
     icon: "",
     content: `
-	<!-- wp:vk-blocks/outer {"bgColor":"#313131","bgImage":"http://test.local/vk-blocks-tmpl-images/home-office-336373_1920-e1513588377670.jpg","outerWidth":"full","bgPosition":"fixed","padding_top_and_bottom":"0","opacity":0.7} -->
-<div id="vk-htags-17" class="wp-block-vk-blocks-outer vk_outer vk_outer-width-full vk_outer-paddingLR-none vk_outer-paddingVertical-none vk_outer-bgPosition-fixed" style="background:linear-gradient(rgba(49, 49, 49, 0.7), rgba(49, 49, 49, 0.7)), url(http://test.local/vk-blocks-tmpl-images/home-office-336373_1920-e1513588377670.jpg);border:0px none #000;border-radius:0px"><div class="vk_outer_container"><!-- wp:vk-blocks/spacer {"unit":"rem","pc":3,"tablet":3,"mobile":3} -->
+	<!-- wp:vk-blocks/outer {"bgColor":"#313131","bgImage":"https://www.vektor-inc.co.jp/vk-blocks-tmpl-images/home-office-336373_1920-e1513588377670.jpg","outerWidth":"full","bgPosition":"fixed","padding_top_and_bottom":"0","opacity":0.7} -->
+<div id="vk-htags-17" class="wp-block-vk-blocks-outer vk_outer vk_outer-width-full vk_outer-paddingLR-none vk_outer-paddingVertical-none vk_outer-bgPosition-fixed" style="background:linear-gradient(rgba(49, 49, 49, 0.7), rgba(49, 49, 49, 0.7)), url(https://www.vektor-inc.co.jp/vk-blocks-tmpl-images/home-office-336373_1920-e1513588377670.jpg);border:0px none #000;border-radius:0px"><div class="vk_outer_container"><!-- wp:vk-blocks/spacer {"unit":"rem","pc":3,"tablet":3,"mobile":3} -->
 <div class="vk_spacer"><div class="vk_spacer-display-pc" style="height:3rem"></div><div class="vk_spacer-display-tablet" style="height:3rem"></div><div class="vk_spacer-display-mobile" style="height:3rem"></div></div>
 <!-- /wp:vk-blocks/spacer -->
 
@@ -190,20 +190,14 @@ const defaultTemplates = [
 <div class="wp-block-column"><!-- wp:vk-blocks/button {"subCaption":"お気軽にお問い合わせください","buttonUrl":"/contact/","buttonColor":"success","buttonColorCustom":null,"buttonAlign":"block","fontAwesomeIconBefore":"far fa-envelope"} -->
 <div class="wp-block-vk-blocks-button vk_button vk_button-align-block"><a href="/contact/" id="vk_button_link" class="btn vk_button_link btn-md btn-success btn-block" role="button" aria-pressed="true" rel="noopener noreferrer"><i class="far fa-envelope vk_button_link_before"></i><span class="vk_button_link_txt">メールでのお問い合わせ</span><p class="vk_button_link_subCaption">お気軽にお問い合わせください</p></a></div>
 <!-- /wp:vk-blocks/button -->
-
-<!-- wp:paragraph -->
-<p></p>
-<!-- /wp:paragraph --></div>
+</div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:vk-blocks/button {"subCaption":"電話でのお問い合わせはこちら","buttonUrl":"tel:000-000-0000","buttonColor":"danger","buttonColorCustom":null,"buttonAlign":"block","fontAwesomeIconBefore":"fas fa-phone-square-alt"} -->
 <div class="wp-block-vk-blocks-button vk_button vk_button-align-block"><a href="tel:000-000-0000" id="vk_button_link" class="btn vk_button_link btn-md btn-danger btn-block" role="button" aria-pressed="true" rel="noopener noreferrer"><i class="fas fa-phone-square-alt vk_button_link_before"></i><span class="vk_button_link_txt">000-000-0000</span><p class="vk_button_link_subCaption">電話でのお問い合わせはこちら</p></a></div>
 <!-- /wp:vk-blocks/button -->
-
-<!-- wp:paragraph -->
-<p></p>
-<!-- /wp:paragraph --></div>
+</div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 

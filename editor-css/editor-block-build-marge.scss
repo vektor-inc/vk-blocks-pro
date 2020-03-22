@@ -615,6 +615,272 @@ ol {
   }
 }
 
+/*      .qaItem
+/*-------------------------------------------*/
+.vk_faq { display:block; overflow:hidden;border-bottom:1px dotted #ccc; padding:0px 0px 25px; margin:25px 0px; width:100%; position: relative; }
+.vk_faq_title,
+.vk_faq_content {
+	border:none;padding-left: 35px;
+	&:before {
+		position: absolute;left:0;font-size:24px;line-height: 105%;
+	}
+}
+.vk_faq_title { margin-bottom:15px;font-size:18px;font-weight:700;
+  &:before { font-family:"areal";content:"Q ";color:#e50000; }
+}
+.vk_faq_content { margin:0px;
+  &:before { content:"A ";color:#337ab7;font-family: "" }
+}
+
+//*      .flowBox
+/*-------------------------------------------*/
+.vk_flow-arrow-on:after {
+  content:"";
+  background: url('../images/arrow_bottom.svg') center 50% no-repeat;
+  background-size: 50px 50px;
+  display:block; overflow:hidden;
+  height:50px;
+  width:50px;
+  margin:0 auto;
+}
+.vk_flow-arrow-off  { padding-bottom:0px; margin-bottom:30px; }
+.vk_flow-arrow-off:after {
+  content:"";font-size:0;background-image: none;
+}
+.vk_flow_frame {
+	display: flex;
+	padding:20px 25px; border:3px solid #e5e5e5;margin:0;
+	justify-content: space-between;
+}
+.vk_flow_frame_text  { display:block;overflow:hidden;margin:0;width:100%;box-sizing: border-box; }
+.vk_flow_frame_text_title,
+.vk_flow_frame_text_content { padding-left:0;border:none; }
+.vk_flow_frame_text_title { border-bottom:1px dotted #ccc; margin:0 0 10px;padding:0 0 5px; font-size:1.2em; }
+.vk_flow_frame_text_content { margin-bottom:0px; }
+.vk_flow_frame_image {
+	max-width:150px;
+	margin-left:15px;
+	box-sizing: border-box;
+}
+
+.vk_button {
+  margin: 5px 0;
+
+  &-color-custom {
+    a:hover {
+      opacity: 0.8;
+      box-shadow: 0 0 0 0.2rem rgba(171, 184, 195, .25);
+    }
+  }
+
+  &-align {
+    &-left {
+      text-align: left;
+    }
+
+    &-center {
+      text-align: center;
+    }
+
+    &-right {
+      text-align: right;
+    }
+
+    &-block {
+      display: block;
+    }
+  }
+
+  &_link {
+    min-width: 100px;
+    min-height: 30px;
+
+    &.btn { // .btn指定がないと管理画面で標準の .btn の指定に負ける
+      padding-top: .7em;
+      padding-bottom: .6em;
+      user-select: text;
+    }
+
+    &_before {
+      margin-right: 0.7rem;
+    }
+
+    &_after {
+      margin-left: 0.7rem;
+    }
+
+    &_subCaption {
+      display: block;
+      overflow: hidden;
+      margin: 0;
+      font-size: 80%;
+    }
+  }
+
+  .editor-rich-text { // Font Awesomeアイコンが管理画面側で改行されないために inline-block を指定
+    display: inline-block;
+  }
+}
+
+
+/*-------------------------------------------*/
+/*	Lightnig がまだ Bootstrap4 でないため手動で追加したクラス
+/*	Lighnting が 4 を同梱したら削除して化
+/*-------------------------------------------*/
+$color_primary: #007bff;
+$color_secondary: #6c757d;
+$color_success: #28a745;
+$color_info: #17a2b8;
+$color_warning: #ffc107;
+$color_danger: #dc3545;
+$color_light: #f8f9fa;
+$color_dark: #343a40;
+/* .btn がないと標準のBS4の指定に負ける */
+.btn.btn-primary {
+  color: #fff;
+}
+
+.btn.btn-secondary {
+  color: #fff;
+  background-color: $color_secondary;
+}
+
+.btn.btn-success {
+  color: #fff;
+}
+
+.btn.btn-info {
+  color: #fff;
+}
+
+.btn.btn-warning {
+  color: #fff;
+}
+
+.btn.btn-danger {
+  color: #fff;
+}
+
+.btn.btn-light {
+  color: #fff;
+  background-color: $color_light;
+}
+
+.btn.btn-dark {
+  color: #fff;
+  background-color: $color_dark;
+}
+
+.btn.btn-secondary:hover,
+.btn.btn-dark:hover {
+  color: #fff;
+}
+
+/* .btn がないと標準のBS4の指定に負ける */
+.btn.btn-outline-primary {
+  color: $color_primary;
+  border: 1px solid $color_primary;
+  background: none;
+  box-shadow: none;
+}
+
+.btn.btn-outline-secondary {
+  color: $color_secondary;
+  border: 1px solid $color_secondary;
+  background: none;
+  box-shadow: none;
+}
+
+.btn.btn-outline-success {
+  color: $color_success;
+  border: 1px solid $color_success;
+  background: none;
+  box-shadow: none;
+}
+
+.btn.btn-outline-info {
+  color: $color_info;
+  border: 1px solid $color_info;
+  background: none;
+  box-shadow: none;
+}
+
+.btn.btn-outline-warning {
+  color: $color_warning;
+  border: 1px solid $color_warning;
+  background: none;
+  box-shadow: none;
+}
+
+.btn.btn-outline-danger {
+  color: $color_danger;
+  border: 1px solid $color_danger;
+  background: none;
+  box-shadow: none;
+}
+
+.btn.btn-outline-light {
+  color: $color_light;
+  border: 1px solid $color_light;
+  background: none;
+  box-shadow: none;
+}
+
+.btn.btn-outline-dark {
+  color: $color_dark;
+  border: 1px solid $color_dark;
+  background: none;
+  box-shadow: none;
+}
+
+.btn.btn-outline-primary:hover,
+.btn.btn-outline-primary:focus {
+  background: $color_primary;
+  color: #fff;
+}
+
+.btn.btn-outline-secondary:hover,
+.btn.btn-outline-secondary:focus {
+  background: $color_secondary;
+  color: #fff;
+}
+
+.btn.btn-outline-success:hover,
+.btn.btn-outline-success:focus {
+  background: $color_success;
+  color: #fff;
+}
+
+.btn.btn-outline-info:hover,
+.btn.btn-outline-info:focus {
+  background: $color_info;
+  color: #fff;
+}
+
+.btn.btn-outline-warning:hover,
+.btn.btn-outline-warning:focus {
+  background: $color_warning;
+  color: #fff;
+}
+
+.btn.btn-outline-danger:hover,
+.btn.btn-outline-danger:focus {
+  background: $color_danger;
+  color: #fff;
+}
+
+.btn.btn-outline-light:hover,
+.btn.btn-outline-light:focus {
+  background: $color_light;
+  color: #fff;
+}
+
+.btn.btn-outline-dark:hover,
+.btn.btn-outline-dark:focus {
+  background: $color_dark;
+  color: #fff;
+}
+
 .vk_balloon {
   display: flex;
   align-items: center;
@@ -879,272 +1145,6 @@ ol {
 		max-width:96px;
 	}
 } // @media only screen and (max-width: 480px) {
-
-.vk_button {
-  margin: 5px 0;
-
-  &-color-custom {
-    a:hover {
-      opacity: 0.8;
-      box-shadow: 0 0 0 0.2rem rgba(171, 184, 195, .25);
-    }
-  }
-
-  &-align {
-    &-left {
-      text-align: left;
-    }
-
-    &-center {
-      text-align: center;
-    }
-
-    &-right {
-      text-align: right;
-    }
-
-    &-block {
-      display: block;
-    }
-  }
-
-  &_link {
-    min-width: 100px;
-    min-height: 30px;
-
-    &.btn { // .btn指定がないと管理画面で標準の .btn の指定に負ける
-      padding-top: .7em;
-      padding-bottom: .6em;
-      user-select: text;
-    }
-
-    &_before {
-      margin-right: 0.7rem;
-    }
-
-    &_after {
-      margin-left: 0.7rem;
-    }
-
-    &_subCaption {
-      display: block;
-      overflow: hidden;
-      margin: 0;
-      font-size: 80%;
-    }
-  }
-
-  .editor-rich-text { // Font Awesomeアイコンが管理画面側で改行されないために inline-block を指定
-    display: inline-block;
-  }
-}
-
-
-/*-------------------------------------------*/
-/*	Lightnig がまだ Bootstrap4 でないため手動で追加したクラス
-/*	Lighnting が 4 を同梱したら削除して化
-/*-------------------------------------------*/
-$color_primary: #007bff;
-$color_secondary: #6c757d;
-$color_success: #28a745;
-$color_info: #17a2b8;
-$color_warning: #ffc107;
-$color_danger: #dc3545;
-$color_light: #f8f9fa;
-$color_dark: #343a40;
-/* .btn がないと標準のBS4の指定に負ける */
-.btn.btn-primary {
-  color: #fff;
-}
-
-.btn.btn-secondary {
-  color: #fff;
-  background-color: $color_secondary;
-}
-
-.btn.btn-success {
-  color: #fff;
-}
-
-.btn.btn-info {
-  color: #fff;
-}
-
-.btn.btn-warning {
-  color: #fff;
-}
-
-.btn.btn-danger {
-  color: #fff;
-}
-
-.btn.btn-light {
-  color: #fff;
-  background-color: $color_light;
-}
-
-.btn.btn-dark {
-  color: #fff;
-  background-color: $color_dark;
-}
-
-.btn.btn-secondary:hover,
-.btn.btn-dark:hover {
-  color: #fff;
-}
-
-/* .btn がないと標準のBS4の指定に負ける */
-.btn.btn-outline-primary {
-  color: $color_primary;
-  border: 1px solid $color_primary;
-  background: none;
-  box-shadow: none;
-}
-
-.btn.btn-outline-secondary {
-  color: $color_secondary;
-  border: 1px solid $color_secondary;
-  background: none;
-  box-shadow: none;
-}
-
-.btn.btn-outline-success {
-  color: $color_success;
-  border: 1px solid $color_success;
-  background: none;
-  box-shadow: none;
-}
-
-.btn.btn-outline-info {
-  color: $color_info;
-  border: 1px solid $color_info;
-  background: none;
-  box-shadow: none;
-}
-
-.btn.btn-outline-warning {
-  color: $color_warning;
-  border: 1px solid $color_warning;
-  background: none;
-  box-shadow: none;
-}
-
-.btn.btn-outline-danger {
-  color: $color_danger;
-  border: 1px solid $color_danger;
-  background: none;
-  box-shadow: none;
-}
-
-.btn.btn-outline-light {
-  color: $color_light;
-  border: 1px solid $color_light;
-  background: none;
-  box-shadow: none;
-}
-
-.btn.btn-outline-dark {
-  color: $color_dark;
-  border: 1px solid $color_dark;
-  background: none;
-  box-shadow: none;
-}
-
-.btn.btn-outline-primary:hover,
-.btn.btn-outline-primary:focus {
-  background: $color_primary;
-  color: #fff;
-}
-
-.btn.btn-outline-secondary:hover,
-.btn.btn-outline-secondary:focus {
-  background: $color_secondary;
-  color: #fff;
-}
-
-.btn.btn-outline-success:hover,
-.btn.btn-outline-success:focus {
-  background: $color_success;
-  color: #fff;
-}
-
-.btn.btn-outline-info:hover,
-.btn.btn-outline-info:focus {
-  background: $color_info;
-  color: #fff;
-}
-
-.btn.btn-outline-warning:hover,
-.btn.btn-outline-warning:focus {
-  background: $color_warning;
-  color: #fff;
-}
-
-.btn.btn-outline-danger:hover,
-.btn.btn-outline-danger:focus {
-  background: $color_danger;
-  color: #fff;
-}
-
-.btn.btn-outline-light:hover,
-.btn.btn-outline-light:focus {
-  background: $color_light;
-  color: #fff;
-}
-
-.btn.btn-outline-dark:hover,
-.btn.btn-outline-dark:focus {
-  background: $color_dark;
-  color: #fff;
-}
-
-/*      .qaItem
-/*-------------------------------------------*/
-.vk_faq { display:block; overflow:hidden;border-bottom:1px dotted #ccc; padding:0px 0px 25px; margin:25px 0px; width:100%; position: relative; }
-.vk_faq_title,
-.vk_faq_content {
-	border:none;padding-left: 35px;
-	&:before {
-		position: absolute;left:0;font-size:24px;line-height: 105%;
-	}
-}
-.vk_faq_title { margin-bottom:15px;font-size:18px;font-weight:700;
-  &:before { font-family:"areal";content:"Q ";color:#e50000; }
-}
-.vk_faq_content { margin:0px;
-  &:before { content:"A ";color:#337ab7;font-family: "" }
-}
-
-//*      .flowBox
-/*-------------------------------------------*/
-.vk_flow-arrow-on:after {
-  content:"";
-  background: url('../images/arrow_bottom.svg') center 50% no-repeat;
-  background-size: 50px 50px;
-  display:block; overflow:hidden;
-  height:50px;
-  width:50px;
-  margin:0 auto;
-}
-.vk_flow-arrow-off  { padding-bottom:0px; margin-bottom:30px; }
-.vk_flow-arrow-off:after {
-  content:"";font-size:0;background-image: none;
-}
-.vk_flow_frame {
-	display: flex;
-	padding:20px 25px; border:3px solid #e5e5e5;margin:0;
-	justify-content: space-between;
-}
-.vk_flow_frame_text  { display:block;overflow:hidden;margin:0;width:100%;box-sizing: border-box; }
-.vk_flow_frame_text_title,
-.vk_flow_frame_text_content { padding-left:0;border:none; }
-.vk_flow_frame_text_title { border-bottom:1px dotted #ccc; margin:0 0 10px;padding:0 0 5px; font-size:1.2em; }
-.vk_flow_frame_text_content { margin-bottom:0px; }
-.vk_flow_frame_image {
-	max-width:150px;
-	margin-left:15px;
-	box-sizing: border-box;
-}
 
 /*-------------------------------------------*/
 /* CSS
@@ -1641,86 +1641,85 @@ $color_key: #337ab7;
 	} //.is-style-vk-heading
 } //.editor-block-list__block
 
-.is-style-vk-image {
-    &-border {
-        img {
-            border: 1px solid #e5e5e5;
-        }
-    }
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 
-    &-photoFrame {
-        background-color: #fff;
-        padding: 10px;
-        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-
-        figcaption {
-            margin: 8px 0 0;
-        }
-    }
+.vk_table {
+	&-col-mobile1 {
+		@media( max-width: 575.98px){
+			th,
+			td {
+					display: block;
+			}
+			th {
+				background-color: rgba(0, 0, 0, 0.05);
+			}
+			// ストライプ指定の時の背景色をリセット
+			&.table-striped tbody {
+				tr:nth-of-type(odd) {
+					background: inherit;
+				}
+			}
+		} // @media( max-width: 575.98px){
+	} // &-col-mobile1 {
 }
 
 /*-------------------------------------------*/
-/* .vk_prBlocks
+/* editor class
 /*-------------------------------------------*/
-.vk_prBlocks_item {
-	@media screen and (max-width: 992px) {
-		margin-bottom: 1.5em;
+.vk_simpleTable-edit{
+	.editor-inner-blocks,
+	.editor-block-list__layout,
+	.editor-block-list__block,
+	.editor-rich-text__editable,
+	.editor-block-list__block-edit{
+		padding:0;
+		margin:0;
+		width:100%;
 	}
-}
-.vk_prBlocks_item {
-	&_link {
-		color: #333;
-		&:hover {
-			color: #333;
-			text-decoration: none;
+	& > .editor-inner-blocks{
+		margin-top:-1px; // th,td がHTML上ではdivの中になってしまう都合上、線が2pxになるためマイナスオフセット
+	}
+	.editor-block-list__block-edit{
+		height:100%;
+	}
+	.block-editor-block-list__insertion-point{
+		/* 上のセルに被るので選択しにくくなるのでデフォルトのマイナスオフセットを少し下げる */
+		top:-5px;
+	}
+	.editor-block-list__block-edit:before{
+		right:-0px;
+		left:-0px;
+		top:-0px;
+		bottom:-0px;
+		// border:1px solid #ff0000;
+	}
+	.editor-inner-blocks {
+		tr {
+			width:100%;
+			display: block;
+			border-bottom:1px solid #e5e5e5;
+			.editor-block-list__layout {
+				display: flex;
+				.editor-block-list__block {
+				}
+			}
+		}
+		th,
+		td {
+			padding: 0;
+			display: block;
+			width:100%;
+			border:none; // デフォルトでつけてくる線を消す
+			.editor-rich-text__editable{
+				padding: 14px;
+			}
 		}
 	}
-	&_icon_outer {
-		display: block;
-		position: relative;
-		margin: 0 auto;
-		width: 80px;
-		height: 80px;
-		border-radius: 50%;
-	}
-	&_icon {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translateY(-50%) translateX(-50%);
-		font-size: 36px;
-		color: #fff;
-	}
-	&_title {
-		background-color: transparent;
-		margin-top: 0.9em;
-		margin-bottom: 0.6em;
-		text-align: center;
-		font-size: 21px;
-		line-height: 1.4em;
-		border: none;
-		padding: 0;
-		&::before {
-			content: none;
-		}
-		&::after {
-			border: none;
-		}
-	}
-	&_image {
-		position: relative;
-		display: block;
-		width: 120px;
-		height: 120px;
-		margin: 0 auto;
-		overflow: hidden;
-		border-radius: 50%;
-		text-indent: -9999px;
-	}
-	&_summary {
-		margin-bottom: 0.5em;
-		text-align: center;
-		line-height: 1.8em;
+	// 編集画面のtableは HTML構造がカオスなので補正
+	&.table-striped > tbody > .editor-inner-blocks > .editor-block-list__layout > div:nth-of-type(odd) {
+			background-color: rgba(0, 0, 0, 0.05);
 	}
 }
 
@@ -1807,88 +1806,6 @@ $color_key: #337ab7;
 		}
 	}
 } // .vk_prContent {
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-
-.vk_table {
-	&-col-mobile1 {
-		@media( max-width: 575.98px){
-			th,
-			td {
-					display: block;
-			}
-			th {
-				background-color: rgba(0, 0, 0, 0.05);
-			}
-			// ストライプ指定の時の背景色をリセット
-			&.table-striped tbody {
-				tr:nth-of-type(odd) {
-					background: inherit;
-				}
-			}
-		} // @media( max-width: 575.98px){
-	} // &-col-mobile1 {
-}
-
-/*-------------------------------------------*/
-/* editor class
-/*-------------------------------------------*/
-.vk_simpleTable-edit{
-	.editor-inner-blocks,
-	.editor-block-list__layout,
-	.editor-block-list__block,
-	.editor-rich-text__editable,
-	.editor-block-list__block-edit{
-		padding:0;
-		margin:0;
-		width:100%;
-	}
-	& > .editor-inner-blocks{
-		margin-top:-1px; // th,td がHTML上ではdivの中になってしまう都合上、線が2pxになるためマイナスオフセット
-	}
-	.editor-block-list__block-edit{
-		height:100%;
-	}
-	.block-editor-block-list__insertion-point{
-		/* 上のセルに被るので選択しにくくなるのでデフォルトのマイナスオフセットを少し下げる */
-		top:-5px;
-	}
-	.editor-block-list__block-edit:before{
-		right:-0px;
-		left:-0px;
-		top:-0px;
-		bottom:-0px;
-		// border:1px solid #ff0000;
-	}
-	.editor-inner-blocks {
-		tr {
-			width:100%;
-			display: block;
-			border-bottom:1px solid #e5e5e5;
-			.editor-block-list__layout {
-				display: flex;
-				.editor-block-list__block {
-				}
-			}
-		}
-		th,
-		td {
-			padding: 0;
-			display: block;
-			width:100%;
-			border:none; // デフォルトでつけてくる線を消す
-			.editor-rich-text__editable{
-				padding: 14px;
-			}
-		}
-	}
-	// 編集画面のtableは HTML構造がカオスなので補正
-	&.table-striped > tbody > .editor-inner-blocks > .editor-block-list__layout > div:nth-of-type(odd) {
-			background-color: rgba(0, 0, 0, 0.05);
-	}
-}
 
 /*-------------------------------------------*/
 /* CSS
@@ -2112,6 +2029,89 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
 /* CSS
 /*-------------------------------------------*/
 
+.is-style-vk-image {
+    &-border {
+        img {
+            border: 1px solid #e5e5e5;
+        }
+    }
+
+    &-photoFrame {
+        background-color: #fff;
+        padding: 10px;
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+
+        figcaption {
+            margin: 8px 0 0;
+        }
+    }
+}
+
+/*-------------------------------------------*/
+/* .vk_prBlocks
+/*-------------------------------------------*/
+.vk_prBlocks_item {
+	@media screen and (max-width: 992px) {
+		margin-bottom: 1.5em;
+	}
+}
+.vk_prBlocks_item {
+	&_link {
+		color: #333;
+		&:hover {
+			color: #333;
+			text-decoration: none;
+		}
+	}
+	&_icon_outer {
+		display: block;
+		position: relative;
+		margin: 0 auto;
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+	}
+	&_icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateY(-50%) translateX(-50%);
+		font-size: 36px;
+		color: #fff;
+	}
+	&_title {
+		background-color: transparent;
+		margin-top: 0.9em;
+		margin-bottom: 0.6em;
+		text-align: center;
+		font-size: 21px;
+		line-height: 1.4em;
+		border: none;
+		padding: 0;
+		&::before {
+			content: none;
+		}
+		&::after {
+			border: none;
+		}
+	}
+	&_image {
+		position: relative;
+		display: block;
+		width: 120px;
+		height: 120px;
+		margin: 0 auto;
+		overflow: hidden;
+		border-radius: 50%;
+		text-indent: -9999px;
+	}
+	&_summary {
+		margin-bottom: 0.5em;
+		text-align: center;
+		line-height: 1.8em;
+	}
+}
+
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -2310,6 +2310,49 @@ $color-danger: #b52727;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+.vk_timeline {
+	margin: 2em 0;
+	.vk_timeline_item {
+		position: relative;
+		padding: 0 0 2.4em 1.8em;
+
+		&_caption {
+			margin-bottom: 1.5em;
+			color: #666;
+		}
+
+		&_style {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 4px;
+			left: 0;
+			width: 14px;
+			height: 14px;
+			border-radius: 50%;
+		}
+	}
+}
+
+.vk_timeline_item_lineStyle-default {
+	&::before {
+		content: "";
+		width: 3px;
+		background: #ddd;
+		display: block;
+		position: absolute;
+		top: 22px;
+		left: 6px;
+		bottom: 0;
+	}
+}
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 $toc-left-margin: 1rem;
 
 .vk_tableOfContents {
@@ -2393,49 +2436,6 @@ $toc-left-margin: 1rem;
   //     list-style: none !important;
   //   }
   // }
-}
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-.vk_timeline {
-	margin: 2em 0;
-	.vk_timeline_item {
-		position: relative;
-		padding: 0 0 2.4em 1.8em;
-
-		&_caption {
-			margin-bottom: 1.5em;
-			color: #666;
-		}
-
-		&_style {
-			content: "";
-			display: block;
-			position: absolute;
-			top: 4px;
-			left: 0;
-			width: 14px;
-			height: 14px;
-			border-radius: 50%;
-		}
-	}
-}
-
-.vk_timeline_item_lineStyle-default {
-	&::before {
-		content: "";
-		width: 3px;
-		background: #ddd;
-		display: block;
-		position: absolute;
-		top: 22px;
-		left: 6px;
-		bottom: 0;
-	}
 }
 
 }

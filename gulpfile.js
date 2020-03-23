@@ -96,6 +96,7 @@ gulp.task("copy_front_js", function() {
 gulp.task("watch", function() {
   gulp.watch("src/**/*.js", gulp.parallel("js", "copy_front_js"));
   gulp.watch("editor-css/_editor_before.scss", gulp.parallel("sass_editor"));
+  gulp.watch("editor-css/_editor_before_template_insertergulp.scss", gulp.parallel("sass_editor"));
   gulp.watch("src/**/*.scss", gulp.series("sass", "sass_editor"));
   gulp.watch(
     "lib/bootstrap/scss/*.scss",

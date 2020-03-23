@@ -47,9 +47,12 @@ input[type=range] {
   .editor-url-input input[type="text"]{
       width:100%;
   }
+
+// ブロックテンプレートのサイドバー調整CSS読み込み
+@import "./editor_before_template_inserter";
   
-  // VK Outer 編集パネル
-  $color-danger: #dd3333;
+// VK Outer 編集パネル
+$color-danger: #dd3333;
 .vk_outer_sidebar_bgImage {
 	position: relative;
 	.components-button {
@@ -246,7 +249,6 @@ input[type=range] {
       }
     }
   }
-
 /*-------------------------------------------*/
 /* リストデザイン
 /*-------------------------------------------*/
@@ -1726,54 +1728,53 @@ $color_key: #337ab7;
 /* Layout
 /*-------------------------------------------*/
 .vk_prContent {
-	margin-left:-15px;
-	margin-right:-15px;
- @media (min-width: 576px) {
-	 display: flex;
-	 .col-sm-6 {
-		 width:50%;
-	 }
-	 &-layout {
-		&-imageLeft {
-			flex-direction: row;
+	margin-left: -15px;
+	margin-right: -15px;
+	@media (min-width: 576px) {
+		display: flex;
+		.col-sm-6 {
+			width: 50%;
 		}
+		&-layout {
+			&-imageLeft {
+				flex-direction: row;
+			}
 
-		&-imageRight {
-			flex-direction: row-reverse;
-		}
+			&-imageRight {
+				flex-direction: row-reverse;
+			}
 
-		&-imageLeft .vk_prContent_colImg {
-			padding-right: 2em;
-		}
+			&-imageLeft .vk_prContent_colImg {
+				padding-right: 2em;
+			}
 
-		&-imageRight .vk_prContent_colImg {
-			padding-left: 2em;
+			&-imageRight .vk_prContent_colImg {
+				padding-left: 2em;
+			}
 		}
-	 }
 	} // @media (min-width: 768px) {
 }
-
 
 /*-------------------------------------------*/
 /* others
 /*-------------------------------------------*/
 .vk_prContent {
 	&_colTxt {
-		vertical-align: top;;
+		vertical-align: top;
 		&_title {
 			background-color: transparent;
 			font-weight: bold;
 			padding: 0;
 			box-shadow: none;
 			border: none;
-			margin-bottom:0.8em;
+			margin-bottom: 0.8em;
 			@media (max-width: 575.98px) {
-				&:first-child{
+				&:first-child {
 					margin-top: 30px;
 				}
 			}
-		&:after {
-			content: "";
+			&:after {
+				content: "";
 				line-height: 0;
 				display: block;
 				overflow: hidden;
@@ -1783,22 +1784,22 @@ $color_key: #337ab7;
 				border: none;
 			}
 		}
-	  &_text {
+		&_text {
 			line-height: 2em;
-			margin-bottom:1.7em;
-	  }
-	  &_btn.btn {
+			margin-bottom: 1.7em;
+		}
+		&_btn.btn {
 			@media (min-width: 992px) {
-		 	 font-size:16px;
-		 	}
-	  }
+				font-size: 16px;
+			}
+		}
 	} // &_colTxt {
-	&_colImg{
+	&_colImg {
 		&_image {
 			max-width: 100%;
 			height: auto;
 		}
-		.components-button.button{
+		.components-button.button {
 			margin: 1em;
 		}
 		.components-button.image-button {
@@ -2244,6 +2245,10 @@ $color-danger: #b52727;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 .vk_step {
 	margin: 2em 0;
 
@@ -2301,10 +2306,6 @@ $color-danger: #b52727;
 		bottom: 4px;
 	}
 }
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
 
 /*-------------------------------------------*/
 /* CSS

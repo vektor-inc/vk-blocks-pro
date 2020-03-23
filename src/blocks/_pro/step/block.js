@@ -97,9 +97,9 @@ registerBlockType("vk-blocks/step", {
     };
 
     if (
-      currentBlock !== undefined ||
-      currentBlock[0].innerBlocks !== undefined ||
-      currentBlock[0].innerBlocks !== null
+      currentBlock != undefined &&
+      currentBlock[0] != null &&
+      currentBlock[0].innerBlocks != undefined
     ) {
       let innerBlocks = currentBlock[0].innerBlocks;
       beforeLength = innerBlocks.length;

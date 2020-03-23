@@ -180,9 +180,7 @@ export const returnHtml = (source, attributes, className) => {
           {__("Table of Contents", "vk-blocks")}
         </div>
         <input type="checkbox" id="chck1" />
-        <label className="tab-label" htmlFor="chck1">
-          {__("CLICK", "vk-blocks")}
-        </label>
+        <label className="tab-label" htmlFor="chck1" />
         <ul className={`vk_tableOfContents_list tab_content-${open}`}>
           {returnHtmlContent}
         </ul>

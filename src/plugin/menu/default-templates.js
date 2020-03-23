@@ -57,21 +57,21 @@ const defaultTemplates = [
 		<!-- /wp:vk-blocks/spacer -->
 		
 		<!-- wp:vk-blocks/heading {"align":"center","titleStyle":"plain","outerMarginBottom":3,"titleMarginBottom":0} -->
-		<div class="wp-block-vk-blocks-heading vk_heading vk_heading-style-plain" style="margin-bottom:3rem"><h2 style="color:#000000;font-size:2rem;margin-bottom:0rem;text-align:center" class="vk_heading_title vk_heading_title-style-plain" placeholder="タイトルを入力">サービスの特徴など</h2><p style="color:#000000;font-size:1.2rem;text-align:center" class="vk_heading_subtext vk_heading_subtext-style-plain" placeholder="サブテキストを入力">提供しているサービスの特徴などを画像つきで紹介します</p></div>
+		<div class="wp-block-vk-blocks-heading" id="vk-htags--1"><div class="vk_heading vk_heading-style-plain" style="margin-bottom:3rem"><h2 style="color:#000000;font-size:2rem;margin-bottom:0rem;text-align:center" class="vk_heading_title vk_heading_title-style-plain" placeholder="タイトルを入力">サービスの特徴など</h2><p style="color:#000000;font-size:1.2rem;text-align:center" class="vk_heading_subtext vk_heading_subtext-style-plain" placeholder="サブテキストを入力">提供しているサービスの特徴などを画像つきで紹介します</p></div></div>
 		<!-- /wp:vk-blocks/heading -->
 		
 		<!-- wp:vk-blocks/card {"name":"vk-blocks/card"} -->
-		<div class="vk_posts">
-		<!-- wp:vk-blocks/card-item -->
-		<div class="vk_post card card-post vk_card_item vk_post-col-xs-12 vk_post-col-sm-6 vk_post-col-md-4 vk_post-col-lg-4 vk_post-col-xl-4 vk_post-btn-display"><div class="vk_post_imgOuter"><div class="card-img-overlay"></div></div><div class="vk_post_body card-body"><a><h5 class="vk_post_title card-title text-left">サービスの特徴</h5></a><p class="vk_post_excerpt card-text text-left">サービスの特徴についての紹介文などが入りますサービスの特徴についての紹介文などが入ります。</p><div class="vk_post_btnOuter text-right"><a class="btn btn-primary vk_post_btn">Read more</a></div></div></div>
+		<div class="vk_posts"><!-- wp:vk-blocks/card-item {"url":"/"} -->
+		<div class="vk_post card card-post vk_card_item vk_post-col-xs-12 vk_post-col-sm-6 vk_post-col-md-4 vk_post-col-lg-4 vk_post-col-xl-4 vk_post-btn-display"><div class="vk_post_imgOuter"><a href="/"><div class="card-img-overlay"></div></a></div><div class="vk_post_body card-body"><a href="/"><h5 class="vk_post_title card-title text-left">サービスの特徴</h5></a><p class="vk_post_excerpt card-text text-left">サービスの特徴についての紹介文などが入りますサービスの特徴についての紹介文などが入ります。</p><div class="vk_post_btnOuter text-right"><a class="btn btn-primary vk_post_btn" href="/">Read more</a></div></div></div>
 		<!-- /wp:vk-blocks/card-item -->
-		<!-- wp:vk-blocks/card-item -->
-		<div class="vk_post card card-post vk_card_item vk_post-col-xs-12 vk_post-col-sm-6 vk_post-col-md-4 vk_post-col-lg-4 vk_post-col-xl-4 vk_post-btn-display"><div class="vk_post_imgOuter"><div class="card-img-overlay"></div></div><div class="vk_post_body card-body"><a><h5 class="vk_post_title card-title text-left">サービスの特徴</h5></a><p class="vk_post_excerpt card-text text-left">サービスの特徴についての紹介文などが入りますサービスの特徴についての紹介文などが入ります。</p><div class="vk_post_btnOuter text-right"><a class="btn btn-primary vk_post_btn">Read more</a></div></div></div>
+		
+		<!-- wp:vk-blocks/card-item {"url":"/"} -->
+		<div class="vk_post card card-post vk_card_item vk_post-col-xs-12 vk_post-col-sm-6 vk_post-col-md-4 vk_post-col-lg-4 vk_post-col-xl-4 vk_post-btn-display"><div class="vk_post_imgOuter"><a href="/"><div class="card-img-overlay"></div></a></div><div class="vk_post_body card-body"><a href="/"><h5 class="vk_post_title card-title text-left">サービスの特徴</h5></a><p class="vk_post_excerpt card-text text-left">サービスの特徴についての紹介文などが入りますサービスの特徴についての紹介文などが入ります。</p><div class="vk_post_btnOuter text-right"><a class="btn btn-primary vk_post_btn" href="/">Read more</a></div></div></div>
 		<!-- /wp:vk-blocks/card-item -->
-		<!-- wp:vk-blocks/card-item -->
-		<div class="vk_post card card-post vk_card_item vk_post-col-xs-12 vk_post-col-sm-6 vk_post-col-md-4 vk_post-col-lg-4 vk_post-col-xl-4 vk_post-btn-display"><div class="vk_post_imgOuter"><div class="card-img-overlay"></div></div><div class="vk_post_body card-body"><a><h5 class="vk_post_title card-title text-left">サービスの特徴</h5></a><p class="vk_post_excerpt card-text text-left">サービスの特徴についての紹介文などが入りますサービスの特徴についての紹介文などが入ります。</p><div class="vk_post_btnOuter text-right"><a class="btn btn-primary vk_post_btn">Read more</a></div></div></div>
-		<!-- /wp:vk-blocks/card-item -->
-		</div>
+		
+		<!-- wp:vk-blocks/card-item {"url":"/"} -->
+		<div class="vk_post card card-post vk_card_item vk_post-col-xs-12 vk_post-col-sm-6 vk_post-col-md-4 vk_post-col-lg-4 vk_post-col-xl-4 vk_post-btn-display"><div class="vk_post_imgOuter"><a href="/"><div class="card-img-overlay"></div></a></div><div class="vk_post_body card-body"><a href="/"><h5 class="vk_post_title card-title text-left">サービスの特徴</h5></a><p class="vk_post_excerpt card-text text-left">サービスの特徴についての紹介文などが入りますサービスの特徴についての紹介文などが入ります。</p><div class="vk_post_btnOuter text-right"><a class="btn btn-primary vk_post_btn" href="/">Read more</a></div></div></div>
+		<!-- /wp:vk-blocks/card-item --></div>
 		<!-- /wp:vk-blocks/card -->
 		
 		<!-- wp:vk-blocks/spacer {"unit":"rem","pc":2,"tablet":2,"mobile":2} -->

@@ -10,6 +10,13 @@
 		align-items: center;
 		justify-content: center;
 		max-width: none;
+		// .vk_outer-bgPosition-fixed {
+		// 	border: 5px solid #ff0000;
+		// 	background-attachment: unset !important;
+		// }
+		div[class*="vk_outer-bgPosition-"] {
+			background-attachment: unset !important;
+		}
 	}
 	.card {
 		position: relative;
@@ -109,37 +116,42 @@
 			}
 		}
 	}
+	/* 
+	If you want to change property of the height,
+	your working browser window size have to full size.
+	Because preview inner size was vary by window size.
+	 */
 	#vkb-menu__template-part__card0 .inner {
-		height: 108px;
+		height: 66px;
 	}
 	#vkb-menu__template-part__card1 .inner {
-		height: 35px;
+		height: 22px;
 	}
 	#vkb-menu__template-part__card2 .inner {
-		height: 120px;
+		height: 90px;
 	}
 	#vkb-menu__template-part__card3 .inner {
-		height: 100px;
+		height: 72px;
 	}
 	#vkb-menu__template-part__card4 .inner {
-		height: 70px;
+		height: 53px;
 	}
 	#vkb-menu__template-part__card5 .inner {
-		height: 130px;
+		height: 95px;
 	}
 	#vkb-menu__template-part__card6 .inner {
-		height: 160px;
+		height: 115px;
 	}
 	#vkb-menu__template-part__card7 .inner {
 		height: 100px;
 	}
 	#vkb-menu__template-part__card8 .inner {
-		height: 44px;
+		height: 29px;
 	}
 	#vkb-menu__template-part__card9 .inner {
 		height: 100px;
 	}
 	#vkb-menu__template-part__card10 .inner {
-		height: 100px;
+		height: 45px;
 	}
 }

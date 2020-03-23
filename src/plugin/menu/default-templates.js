@@ -132,8 +132,8 @@ const defaultTemplates = [
     name: "Information ( Card )",
     icon: "",
 	content: `
-	<!-- wp:vk-blocks/outer {"bgColor":"#ffffff","bgImage":"http://test.local/wp-content/uploads/2020/03/network-4851119_1280.jpg","outerWidth":"full","opacity":0.9} -->
-	<div id="vk-htags-9" class="wp-block-vk-blocks-outer vk_outer vk_outer-width-full vk_outer-paddingLR-none vk_outer-paddingVertical-use vk_outer-bgPosition-normal" style="background:linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(http://test.local/wp-content/uploads/2020/03/network-4851119_1280.jpg);border:0px none #000;border-radius:0px"><div class="vk_outer_container"><!-- wp:vk-blocks/heading {"align":"center","titleStyle":"plain","outerMarginBottom":3,"titleMarginBottom":0} -->
+	<!-- wp:vk-blocks/outer {"bgColor":"#ffffff","outerWidth":"full","opacity":0.9} -->
+	<div id="vk-htags-9" class="wp-block-vk-blocks-outer vk_outer vk_outer-width-full vk_outer-paddingLR-none vk_outer-paddingVertical-use vk_outer-bgPosition-normal" style="background:linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));border:0px none #000;border-radius:0px"><div class="vk_outer_container"><!-- wp:vk-blocks/heading {"align":"center","titleStyle":"plain","outerMarginBottom":3,"titleMarginBottom":0} -->
 	<div class="wp-block-vk-blocks-heading vk_heading vk_heading-style-plain" style="margin-bottom:3rem"><h2 style="color:#000000;font-size:2rem;margin-bottom:0rem;text-align:center" class="vk_heading_title vk_heading_title-style-plain" placeholder="タイトルを入力"><strong>お知らせ</strong></h2><p style="color:#000000;font-size:1.2rem;text-align:center" class="vk_heading_subtext vk_heading_subtext-style-plain" placeholder="サブテキストを入力">Information</p></div>
 	<!-- /wp:vk-blocks/heading -->
 	

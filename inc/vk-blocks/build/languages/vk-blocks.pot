@@ -47,7 +47,6 @@ msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:90
 #: src/blocks/_pro/outer/block.js:174
-#: src/blocks/_pro/outer/block.js:154
 #: src/blocks/balloon/block.js:136
 #: src/blocks/flow/block.js:112
 #: src/blocks/pr-blocks/block.js:179
@@ -122,7 +121,6 @@ msgid "Background Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:127
-#: src/blocks/_pro/outer/block.js:120
 #: src/blocks/pr-content/block.js:119
 msgid "Color Setting"
 msgstr ""
@@ -146,7 +144,6 @@ msgid "Background image Position"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:189
-#: src/blocks/_pro/outer/block.js:175
 #: src/blocks/button/block.js:166
 msgid "normal"
 msgstr ""
@@ -160,7 +157,6 @@ msgid "Parallax (It will not work in preview)"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:205
-#: src/blocks/_pro/outer/block.js:191
 #: src/blocks/pr-content/block.js:233
 msgid "Layout Setting"
 msgstr ""
@@ -206,7 +202,6 @@ msgid "Divider Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:263
-#: src/blocks/_pro/outer/block.js:249
 #: src/blocks/balloon/block.js:103
 msgid "Type"
 msgstr ""
@@ -224,7 +219,6 @@ msgid "Wave"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:281
-#: src/blocks/_pro/outer/block.js:267
 #: src/blocks/list-style/block.js:113
 msgid "Triangle"
 msgstr ""
@@ -252,7 +246,6 @@ msgstr ""
 #: src/blocks/_pro/outer/block.js:343
 #: src/blocks/_pro/step-item/block.js:120
 #: src/blocks/_pro/timeline-item/block.js:103
-#: src/blocks/_pro/outer/block.js:329
 #: src/blocks/staff/block.js:109
 msgid "None"
 msgstr ""
@@ -260,26 +253,22 @@ msgstr ""
 #: src/blocks/_pro/outer/block.js:347
 #: src/blocks/_pro/step-item/block.js:97
 #: src/blocks/_pro/timeline-item/block.js:84
-#: src/blocks/_pro/outer/block.js:333
 #: src/blocks/group-style/block.js:95
 #: src/blocks/pr-content/block.js:168
 msgid "Solid"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:351
-#: src/blocks/_pro/outer/block.js:337
 #: src/blocks/group-style/block.js:103
 msgid "Dotted"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:355
-#: src/blocks/_pro/outer/block.js:341
 #: src/blocks/group-style/block.js:107
 msgid "Dashed"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:359
-#: src/blocks/_pro/outer/block.js:345
 #: src/blocks/group-style/block.js:111
 msgid "Double"
 msgstr ""
@@ -396,11 +385,11 @@ msgstr ""
 msgid "Style"
 msgstr ""
 
-#: src/blocks/_pro/step/block.js:124
+#: src/blocks/_pro/step/block.js:135
 msgid "First Dot Number"
 msgstr ""
 
-#: src/blocks/_pro/step/block.js:53
+#: src/blocks/_pro/step/block.js:60
 msgid "Step"
 msgstr ""
 
@@ -429,16 +418,6 @@ msgstr ""
 msgid "Alert"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:159
-#: src/blocks/balloon/block.js:141
-#: src/blocks/flow/block.js:113
-#: src/blocks/pr-blocks/block.js:175
-#: src/blocks/pr-content/component.js:165
-#: src/blocks/pr-content/deprecated/component-deprecated.js:106
-#: src/blocks/pr-content/deprecated/component-no-boder-color.js:120
-msgid "Upload image"
-msgstr ""
-
 #: src/blocks/balloon/block.js:104
 msgid "Please select the type of balloon."
 msgstr ""
@@ -449,6 +428,15 @@ msgstr ""
 
 #: src/blocks/balloon/block.js:108
 msgid "Thinking"
+msgstr ""
+
+#: src/blocks/balloon/block.js:141
+#: src/blocks/flow/block.js:113
+#: src/blocks/pr-blocks/block.js:175
+#: src/blocks/pr-content/component.js:165
+#: src/blocks/pr-content/deprecated/component-deprecated.js:106
+#: src/blocks/pr-content/deprecated/component-no-boder-color.js:120
+msgid "Upload image"
 msgstr ""
 
 #: src/blocks/balloon/block.js:152

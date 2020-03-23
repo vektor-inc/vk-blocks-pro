@@ -249,329 +249,6 @@ $color-danger: #dd3333;
       }
     }
   }
-/*-------------------------------------------*/
-/* リストデザイン
-/*-------------------------------------------*/
-@mixin mark-before {
-	font-family: "Font Awesome 5 Free";
-	font-weight: 900;
-	position: absolute;
-}
-
-$stylePalette: (
-	is-style-vk-default: "•",
-	is-style-vk-arrow-mark: "\f138",
-	is-style-vk-triangle-mark: "\f0da",
-	is-style-vk-check-mark: "\f00c",
-	is-style-vk-check-circle-mark: "\f058",
-	is-style-vk-check-square-mark: "\f14a",
-	is-style-vk-handpoint-mark: "\f0a4",
-	is-style-vk-pencil-mark: "\f303",
-	is-style-vk-smile-mark: "\f118",
-	is-style-vk-frown-mark: "\f119"
-);
-
-$colorPalette: (
-	vk-has-pale-pink-color: #f78da7,
-	vk-has-vivid-red-color: #cf2e2e,
-	vk-has-luminous-vivid-orange-color: #ff6900,
-	vk-has-luminous-vivid-amber-color: #fcb900,
-	vk-has-light-green-cyan-color: #7bdcb5,
-	vk-has-vivid-green-cyan-color: #00d084,
-	vk-has-pale-cyan-blue-color: #8ed1fc,
-	vk-has-vivid-cyan-blue-color: #0693e3,
-	vk-has-vivid-purple-color: #9b51e0,
-	vk-has-very-light-gray-color: #eee,
-	vk-has-cyan-bluish-gray-color: #abb8c3,
-	vk-has-very-dark-gray-color: #313131
-);
-
-ul,
-ol {
-	&.is-style {
-		&-vk-default,
-		&-vk-arrow-mark,
-		&-vk-triangle-mark,
-		&-vk-check-mark,
-		&-vk-check-circle-mark,
-		&-vk-check-square-mark,
-		&-vk-handpoint-mark,
-		&-vk-pencil-mark,
-		&-vk-smile-mark,
-		&-vk-frown-mark,
-		&-vk-numbered-circle-mark,
-		&-vk-numbered-square-mark {
-			padding-inline-start: 2em;
-			li {
-				list-style: none;
-				position: relative;
-				margin-bottom: 0.8em;
-				line-height: 1.65em;
-			}
-		}
-	}
-
-	&.is-style-vk-numbered-circle-mark {
-		counter-reset: number;
-		list-style-type: none;
-
-		li {
-			position: relative;
-			list-style: none;
-
-			&:before {
-				position: absolute;
-				left: -0.3em;
-				counter-increment: number;
-				content: counter(number);
-				margin-left: -25px;
-				background: #222;
-				color: #fff;
-				text-indent: 0;
-				display: inline-block;
-				font-weight: bold;
-				border-radius: 50%;
-				font-size: 1em;
-				line-height: 1em;
-				padding: 0.3em 0.37em 0.2em;
-				text-align: center;
-			}
-		}
-	}
-
-	&.is-style-vk-numbered-square-mark {
-		counter-reset: number;
-		list-style-type: none;
-
-		li {
-			position: relative;
-			list-style: none;
-
-			&:before {
-				position: absolute;
-				left: -0.3em;
-				counter-increment: number;
-				content: counter(number);
-				margin-left: -25px;
-				background: #222;
-				color: #fff;
-				text-indent: 0;
-				display: inline-block;
-				font-weight: bold;
-				font-size: 1em;
-				line-height: 1em;
-				padding: 0.3em 0.37em 0.2em;
-				text-align: center;
-				border-radius: 2px;
-			}
-		}
-	}
-
-	&.is-style-vk-numbered-circle-mark,
-	&.is-style-vk-numbered-square-mark {
-		&.fa-lg {
-			li::before {
-				left: -0.8em;
-			}
-		}
-
-		&.fa-2x {
-			li {
-				line-height: 1.25em;
-			}
-
-			li::before {
-				left: -1.1em;
-			}
-		}
-
-		&.fa-3x {
-			li {
-				line-height: 1.25em;
-			}
-
-			li::before {
-				left: -1.4em;
-			}
-		}
-
-		&.fa-4x {
-			li {
-				line-height: 1.25em;
-			}
-
-			li::before {
-				left: -1.5em;
-			}
-		}
-
-		&.fa-5x {
-			li {
-				line-height: 1.25em;
-			}
-
-			li::before {
-				left: -1.6em;
-			}
-		}
-	}
-
-	@each $styleClass, $faCode in $stylePalette {
-		&.#{$styleClass} {
-			li {
-				&::before {
-					@include mark-before;
-					content: $faCode;
-					left: -1.5em;
-				}
-			}
-		}
-		&.is-style-vk-default {
-			li {
-				&::before {
-					font-size: 22px;
-					line-height: 1.1em;
-				}
-			}
-		}
-	}
-
-	@each $colorClass, $color in $colorPalette {
-		&.#{$colorClass} {
-			li::before {
-				color: $color;
-			}
-		}
-
-		&.is-style-vk-numbered-circle-mark.#{$colorClass},
-		&.is-style-vk-numbered-square-mark.#{$colorClass} {
-			li::before {
-				color: #ffffff;
-				background-color: $color;
-			}
-		}
-	}
-}
-//ul,ol
-
-/*-------------------------------------------*/
-/* グループブロック　デザイン
-/*-------------------------------------------*/
-
-@mixin pad-mag {
-	padding: 1.8em;
-	margin: 1.2em 0;
-}
-@mixin inner-item-pad-mag {
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		margin-bottom: 1rem;
-	}
-	ul,
-	ol {
-		margin-top: 0;
-		li:last-child {
-			margin-bottom: 0;
-		}
-	}
-}
-
-.wp-block-group {
-	&.is-style {
-		&-vk-group {
-			&-solid {
-				border: solid 3px;
-				@include pad-mag;
-				@include inner-item-pad-mag;
-			}
-			&-solid-roundcorner {
-				border: solid 3px;
-				border-radius: 8px;
-				@include pad-mag;
-				@include inner-item-pad-mag;
-			}
-			&-dotted {
-				border: dotted 1px;
-				@include pad-mag;
-				@include inner-item-pad-mag;
-			}
-			&-dashed {
-				border: dashed 2px;
-				@include pad-mag;
-				@include inner-item-pad-mag;
-			}
-			&-double {
-				border: double 5px;
-				@include pad-mag;
-				@include inner-item-pad-mag;
-			}
-			&-stitch {
-				margin: 1em 0;
-				padding: 0.5em;
-				border-radius: 8px;
-				@include inner-item-pad-mag;
-				.wp-block-group__inner-container {
-					border: dashed 2px;
-					border-radius: 8px;
-					padding: 1.8em;
-				}
-			}
-			&-top-bottom-border {
-				border-top: solid 1px;
-				border-bottom: solid 1px;
-				@include pad-mag;
-				@include inner-item-pad-mag;
-				padding-left: 0;
-				padding-right: 0;
-			}
-			&-shadow {
-				box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-				@include pad-mag;
-				@include inner-item-pad-mag;
-			}
-		}
-	}
-	h3:first-child,
-	h4:first-child {
-		margin-top: 0;
-	}
-
-	/* *:last-child で指定するとブロックエディタでカラムの中にいれた時に枠の外にはみ出す */
-	p,
-	ul,
-	ol,
-	dl,
-	table,
-	.wp-block-columns {
-		&:last-child {
-			margin-bottom: 0;
-		}
-	}
-
-	@each $colorClass, $color in $colorPalette {
-		&.#{$colorClass} {
-			border-color: $color;
-			.wp-block-group__inner-container {
-				border-color: $color;
-			}
-		}
-	}
-} //.wp-block-group
-
-/*-------------------------------------------*/
-/* YouTube
-/*-------------------------------------------*/
-.wp-block-embed {
-	&-youtube {
-		iframe {
-			width: 100%;
-		}
-	}
-}
-
 .alert{
 
   padding: 1em;
@@ -1098,23 +775,6 @@ $color_dark: #343a40;
   color: #fff;
 }
 
-/*      .qaItem
-/*-------------------------------------------*/
-.vk_faq { display:block; overflow:hidden;border-bottom:1px dotted #ccc; padding:0px 0px 25px; margin:25px 0px; width:100%; position: relative; }
-.vk_faq_title,
-.vk_faq_content {
-	border:none;padding-left: 35px;
-	&:before {
-		position: absolute;left:0;font-size:24px;line-height: 105%;
-	}
-}
-.vk_faq_title { margin-bottom:15px;font-size:18px;font-weight:700;
-  &:before { font-family:"areal";content:"Q ";color:#e50000; }
-}
-.vk_faq_content { margin:0px;
-  &:before { content:"A ";color:#337ab7;font-family: "" }
-}
-
 //*      .flowBox
 /*-------------------------------------------*/
 .vk_flow-arrow-on:after {
@@ -1144,39 +804,6 @@ $color_dark: #343a40;
 	max-width:150px;
 	margin-left:15px;
 	box-sizing: border-box;
-}
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-@mixin reset() {
-	background: none;
-	border:none;
-	border-radius: 0;
-	padding:0;
-	font-weight: normal;
-	box-shadow:none;
-	&:after {
-		content:none;
-		border:none;
-	}
-	&:before{
-		content:none;
-	}
-}
-
-// .vk_heading は指定が強い要素（ Charm ）も消すために必要
-.vk_heading.vk_heading-style-plain {
-	.vk_heading_title {
-		@include reset;
-		&:after {
-			@include reset;
-		}
-	}
-}
-
-.vk_heading_subtext {
-	margin-bottom:0;
 }
 
 //管理画面側の見出しブロックのスタイルのcssになります。
@@ -1641,6 +1268,56 @@ $color_key: #337ab7;
 	} //.is-style-vk-heading
 } //.editor-block-list__block
 
+/*      .qaItem
+/*-------------------------------------------*/
+.vk_faq { display:block; overflow:hidden;border-bottom:1px dotted #ccc; padding:0px 0px 25px; margin:25px 0px; width:100%; position: relative; }
+.vk_faq_title,
+.vk_faq_content {
+	border:none;padding-left: 35px;
+	&:before {
+		position: absolute;left:0;font-size:24px;line-height: 105%;
+	}
+}
+.vk_faq_title { margin-bottom:15px;font-size:18px;font-weight:700;
+  &:before { font-family:"areal";content:"Q ";color:#e50000; }
+}
+.vk_faq_content { margin:0px;
+  &:before { content:"A ";color:#337ab7;font-family: "" }
+}
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+@mixin reset() {
+	background: none;
+	border:none;
+	border-radius: 0;
+	padding:0;
+	font-weight: normal;
+	box-shadow:none;
+	&:after {
+		content:none;
+		border:none;
+	}
+	&:before{
+		content:none;
+	}
+}
+
+// .vk_heading は指定が強い要素（ Charm ）も消すために必要
+.vk_heading.vk_heading-style-plain {
+	.vk_heading_title {
+		@include reset;
+		&:after {
+			@include reset;
+		}
+	}
+}
+
+.vk_heading_subtext {
+	margin-bottom:0;
+}
+
 .is-style-vk-image {
     &-border {
         img {
@@ -1657,6 +1334,329 @@ $color_key: #337ab7;
             margin: 8px 0 0;
         }
     }
+}
+
+/*-------------------------------------------*/
+/* リストデザイン
+/*-------------------------------------------*/
+@mixin mark-before {
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	position: absolute;
+}
+
+$stylePalette: (
+	is-style-vk-default: "•",
+	is-style-vk-arrow-mark: "\f138",
+	is-style-vk-triangle-mark: "\f0da",
+	is-style-vk-check-mark: "\f00c",
+	is-style-vk-check-circle-mark: "\f058",
+	is-style-vk-check-square-mark: "\f14a",
+	is-style-vk-handpoint-mark: "\f0a4",
+	is-style-vk-pencil-mark: "\f303",
+	is-style-vk-smile-mark: "\f118",
+	is-style-vk-frown-mark: "\f119"
+);
+
+$colorPalette: (
+	vk-has-pale-pink-color: #f78da7,
+	vk-has-vivid-red-color: #cf2e2e,
+	vk-has-luminous-vivid-orange-color: #ff6900,
+	vk-has-luminous-vivid-amber-color: #fcb900,
+	vk-has-light-green-cyan-color: #7bdcb5,
+	vk-has-vivid-green-cyan-color: #00d084,
+	vk-has-pale-cyan-blue-color: #8ed1fc,
+	vk-has-vivid-cyan-blue-color: #0693e3,
+	vk-has-vivid-purple-color: #9b51e0,
+	vk-has-very-light-gray-color: #eee,
+	vk-has-cyan-bluish-gray-color: #abb8c3,
+	vk-has-very-dark-gray-color: #313131
+);
+
+ul,
+ol {
+	&.is-style {
+		&-vk-default,
+		&-vk-arrow-mark,
+		&-vk-triangle-mark,
+		&-vk-check-mark,
+		&-vk-check-circle-mark,
+		&-vk-check-square-mark,
+		&-vk-handpoint-mark,
+		&-vk-pencil-mark,
+		&-vk-smile-mark,
+		&-vk-frown-mark,
+		&-vk-numbered-circle-mark,
+		&-vk-numbered-square-mark {
+			padding-inline-start: 2em;
+			li {
+				list-style: none;
+				position: relative;
+				margin-bottom: 0.8em;
+				line-height: 1.65em;
+			}
+		}
+	}
+
+	&.is-style-vk-numbered-circle-mark {
+		counter-reset: number;
+		list-style-type: none;
+
+		li {
+			position: relative;
+			list-style: none;
+
+			&:before {
+				position: absolute;
+				left: -0.3em;
+				counter-increment: number;
+				content: counter(number);
+				margin-left: -25px;
+				background: #222;
+				color: #fff;
+				text-indent: 0;
+				display: inline-block;
+				font-weight: bold;
+				border-radius: 50%;
+				font-size: 1em;
+				line-height: 1em;
+				padding: 0.3em 0.37em 0.2em;
+				text-align: center;
+			}
+		}
+	}
+
+	&.is-style-vk-numbered-square-mark {
+		counter-reset: number;
+		list-style-type: none;
+
+		li {
+			position: relative;
+			list-style: none;
+
+			&:before {
+				position: absolute;
+				left: -0.3em;
+				counter-increment: number;
+				content: counter(number);
+				margin-left: -25px;
+				background: #222;
+				color: #fff;
+				text-indent: 0;
+				display: inline-block;
+				font-weight: bold;
+				font-size: 1em;
+				line-height: 1em;
+				padding: 0.3em 0.37em 0.2em;
+				text-align: center;
+				border-radius: 2px;
+			}
+		}
+	}
+
+	&.is-style-vk-numbered-circle-mark,
+	&.is-style-vk-numbered-square-mark {
+		&.fa-lg {
+			li::before {
+				left: -0.8em;
+			}
+		}
+
+		&.fa-2x {
+			li {
+				line-height: 1.25em;
+			}
+
+			li::before {
+				left: -1.1em;
+			}
+		}
+
+		&.fa-3x {
+			li {
+				line-height: 1.25em;
+			}
+
+			li::before {
+				left: -1.4em;
+			}
+		}
+
+		&.fa-4x {
+			li {
+				line-height: 1.25em;
+			}
+
+			li::before {
+				left: -1.5em;
+			}
+		}
+
+		&.fa-5x {
+			li {
+				line-height: 1.25em;
+			}
+
+			li::before {
+				left: -1.6em;
+			}
+		}
+	}
+
+	@each $styleClass, $faCode in $stylePalette {
+		&.#{$styleClass} {
+			li {
+				&::before {
+					@include mark-before;
+					content: $faCode;
+					left: -1.5em;
+				}
+			}
+		}
+		&.is-style-vk-default {
+			li {
+				&::before {
+					font-size: 22px;
+					line-height: 1.1em;
+				}
+			}
+		}
+	}
+
+	@each $colorClass, $color in $colorPalette {
+		&.#{$colorClass} {
+			li::before {
+				color: $color;
+			}
+		}
+
+		&.is-style-vk-numbered-circle-mark.#{$colorClass},
+		&.is-style-vk-numbered-square-mark.#{$colorClass} {
+			li::before {
+				color: #ffffff;
+				background-color: $color;
+			}
+		}
+	}
+}
+//ul,ol
+
+/*-------------------------------------------*/
+/* グループブロック　デザイン
+/*-------------------------------------------*/
+
+@mixin pad-mag {
+	padding: 1.8em;
+	margin: 1.2em 0;
+}
+@mixin inner-item-pad-mag {
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-bottom: 1rem;
+	}
+	ul,
+	ol {
+		margin-top: 0;
+		li:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.wp-block-group {
+	&.is-style {
+		&-vk-group {
+			&-solid {
+				border: solid 3px;
+				@include pad-mag;
+				@include inner-item-pad-mag;
+			}
+			&-solid-roundcorner {
+				border: solid 3px;
+				border-radius: 8px;
+				@include pad-mag;
+				@include inner-item-pad-mag;
+			}
+			&-dotted {
+				border: dotted 1px;
+				@include pad-mag;
+				@include inner-item-pad-mag;
+			}
+			&-dashed {
+				border: dashed 2px;
+				@include pad-mag;
+				@include inner-item-pad-mag;
+			}
+			&-double {
+				border: double 5px;
+				@include pad-mag;
+				@include inner-item-pad-mag;
+			}
+			&-stitch {
+				margin: 1em 0;
+				padding: 0.5em;
+				border-radius: 8px;
+				@include inner-item-pad-mag;
+				.wp-block-group__inner-container {
+					border: dashed 2px;
+					border-radius: 8px;
+					padding: 1.8em;
+				}
+			}
+			&-top-bottom-border {
+				border-top: solid 1px;
+				border-bottom: solid 1px;
+				@include pad-mag;
+				@include inner-item-pad-mag;
+				padding-left: 0;
+				padding-right: 0;
+			}
+			&-shadow {
+				box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+				@include pad-mag;
+				@include inner-item-pad-mag;
+			}
+		}
+	}
+	h3:first-child,
+	h4:first-child {
+		margin-top: 0;
+	}
+
+	/* *:last-child で指定するとブロックエディタでカラムの中にいれた時に枠の外にはみ出す */
+	p,
+	ul,
+	ol,
+	dl,
+	table,
+	.wp-block-columns {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	@each $colorClass, $color in $colorPalette {
+		&.#{$colorClass} {
+			border-color: $color;
+			.wp-block-group__inner-container {
+				border-color: $color;
+			}
+		}
+	}
+} //.wp-block-group
+
+/*-------------------------------------------*/
+/* YouTube
+/*-------------------------------------------*/
+.wp-block-embed {
+	&-youtube {
+		iframe {
+			width: 100%;
+		}
+	}
 }
 
 /*-------------------------------------------*/
@@ -2131,10 +2131,6 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
   }
 }
 
-.vk_childPage {
-	margin-top: 2.5rem;
-}
-
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -2242,6 +2238,10 @@ $padding-xl: 3.5em;
 // }
 $color-danger: #b52727;
 
+.vk_childPage {
+	margin-top: 2.5rem;
+}
+
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -2313,120 +2313,241 @@ $color-danger: #b52727;
 $toc-left-margin: 1rem;
 
 .vk_tableOfContents {
-  margin-top: 3.5em;
-  margin-bottom: 3.5em;
-  position: relative;
-  &-style-default {
-    border: 3px solid rgba(0, 0, 0, 0.04);
-    box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 1);
-    background-color: rgba(0, 0, 0, 0.015);
-    padding: 3rem 4rem;
-  }
-  &_title {
-    text-align: center;
-    font-size: 1.2em;
-    letter-spacing: 0.5em;
-    padding: 3em 2em;
-  }
-  li {
-    margin: 0;
-  }
-  &_list {
-    padding: 0;
-    margin-top: 1em;
-    &_item {
-      list-style: none;
-      border-bottom: 1px solid #e5e5e5;
-      padding: 0.8rem 0;
-      &-h-2 {
-        // padding-left:$toc-left-margin;
-      }
-      &-h-3 {
-        padding-left: $toc-left-margin * 1;
-      }
-      &-h-4 {
-        padding-left: $toc-left-margin * 2;
-      }
-      &-h-5 {
-        padding-left: $toc-left-margin * 3;
-      }
-      &-h-6 {
-        padding-left: $toc-left-margin * 4;
-      }
-      &_link {
-        color: #333;
-        border-bottom: 1px solid #ccc;
-        &:hover {
-          text-decoration: none;
-          border-bottom: none;
-        }
-      }
-    }
-  }
-  input {
-    position: absolute;
-    opacity: 0;
-    z-index: -1;
-  }
-  /* Accordion styles */
-  .tab {
-    width: 100%;
-    overflow: hidden;
-    &-label {
-      cursor: pointer;
-      position: absolute;
-      bottom: 10px;
-      right: 0;
-      left: 0;
-      margin: auto;
-      text-align: center;
-      font-size: 0.5em;
-      /* Icon */
-      &::before {
-        content: "CLOSE";
-        display: block;
-        text-align: center;
-        margin: auto;
-        margin-bottom: 2px;
-        width: auto;
-        height: 1em;
-        transition: all 0.35s;
-      }
-    }
-    &_content-open {
-      max-height: 100vh;
-      padding: 1em;
-      transition: all 0.35s;
-    }
-    &_content-close {
-      max-height: 0;
-      padding: 0 1em;
-      transition: all 0.35s;
-    }
-    &-close {
-      display: flex;
-      justify-content: flex-end;
-      padding: 1em;
-      font-size: 0.75em;
-      cursor: pointer;
-    }
-  }
-  // :checked
-  input:checked {
-    ~ .tab-label {
-      &::before {
-        content: "OPEN";
-      }
-    }
-    ~ .tab_content-open {
-      max-height: 0;
-      padding: 0 1em;
-    }
-    ~ .tab_content-close {
-      max-height: 100vh;
-      padding: 1em;
-    }
-  }
+	margin-top: 3em;
+	margin-bottom: 3em;
+	position: relative;
+	&-style-default {
+		border: 3px solid rgba(0, 0, 0, 0.04);
+		box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 1);
+		background-color: rgba(0, 0, 0, 0.015);
+		padding: 3rem 4rem;
+	}
+	&_title {
+		text-align: center;
+		font-size: 1.2em;
+		letter-spacing: 0.5em;
+		padding: 0;
+	}
+	li {
+		margin: 0;
+	}
+	&_list {
+		padding: 0;
+		margin: 0;
+		&_item {
+			list-style: none;
+			border-bottom: 1px solid #e5e5e5;
+			padding: 0.8rem 0;
+			&-h-2 {
+				// padding-left:$toc-left-margin;
+			}
+			&-h-3 {
+				padding-left: $toc-left-margin * 1;
+			}
+			&-h-4 {
+				padding-left: $toc-left-margin * 2;
+			}
+			&-h-5 {
+				padding-left: $toc-left-margin * 3;
+			}
+			&-h-6 {
+				padding-left: $toc-left-margin * 4;
+			}
+			&_link {
+				color: #333;
+				border-bottom: 1px solid #ccc;
+				&:hover {
+					text-decoration: none;
+					border-bottom: none;
+				}
+			}
+		}
+	}
+	input {
+		position: absolute;
+		opacity: 0;
+		z-index: -1;
+	}
+	/* Accordion styles */
+	.tab {
+		width: 100%;
+		overflow: hidden;
+		&-label {
+			cursor: pointer;
+			// position: absolute;
+			// bottom: -2px;
+			// right: 0;
+			// left: 0;
+			// margin: auto;
+			// text-align: center;
+			font-size: 0.8em;
+			/* Icon */
+			// &::before {
+			// 	content: "\5e";
+			// 	display: block;
+			// 	text-align: center;
+			// 	margin: auto;
+			// 	margin-bottom: 2px;
+			// 	width: 1em;
+			// 	height: 1em;
+			// 	transition: all 0.35s;
+			// }
+		}
+		&_content-open {
+			max-height: 100vh;
+			padding: 1em;
+			transition: all 0.35s;
+		}
+		&_content-close {
+			max-height: 0;
+			padding: 0 1em;
+			transition: all 0.35s;
+		}
+		&-close {
+			display: flex;
+			justify-content: flex-end;
+			padding: 1em;
+			font-size: 0.75em;
+			cursor: pointer;
+		}
+	}
+	// :checked
+	input:checked {
+		~ .tab_content-open {
+			max-height: 0;
+			padding: 0 1em;
+		}
+		~ .tab_content-close {
+			max-height: 100vh;
+			padding: 1em;
+		}
+	}
+}
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+$toc-left-margin: 1rem;
+
+.vk_tableOfContents {
+	margin-top: 3.5em;
+	margin-bottom: 3.5em;
+	position: relative;
+	&-style-default {
+		border: 3px solid rgba(0, 0, 0, 0.04);
+		box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 1);
+		background-color: rgba(0, 0, 0, 0.015);
+		padding: 2rem 3rem;
+	}
+	&_title {
+		text-align: center;
+		font-size: 1.2em;
+		letter-spacing: 0.5em;
+		margin-left: 0.5em;
+	}
+	li {
+		margin: 0;
+	}
+	&_list {
+		padding: 0;
+		margin: 0;
+		&_item {
+			list-style: none;
+			border-bottom: 1px solid #e5e5e5;
+			padding: 0.8rem 0;
+			&-h-2 {
+				// padding-left:$toc-left-margin;
+			}
+			&-h-3 {
+				padding-left: $toc-left-margin * 1;
+			}
+			&-h-4 {
+				padding-left: $toc-left-margin * 2;
+			}
+			&-h-5 {
+				padding-left: $toc-left-margin * 3;
+			}
+			&-h-6 {
+				padding-left: $toc-left-margin * 4;
+			}
+			&_link {
+				color: #333;
+				border-bottom: 1px solid #ccc;
+				&:hover {
+					text-decoration: none;
+					border-bottom: none;
+				}
+			}
+		}
+	}
+	input {
+		position: absolute;
+		opacity: 0;
+		z-index: -1;
+	}
+	/* Accordion styles */
+	.tab {
+		width: 100%;
+		overflow: hidden;
+		&-label {
+			cursor: pointer;
+			font-size: 0.8em;
+			letter-spacing: 2px;
+			line-height: 1;
+			text-align: center;
+			display: block;
+			margin: 0.5em auto 0;
+			width: 6em;
+			border: 1px solid #999;
+			padding: 3px 1em 2px;
+			/* Icon */
+			&::before {
+				content: "CLOSE";
+				color: #666;
+				font-size: 0.8em;
+
+				border-radius: 2px;
+				display: inline-block;
+				text-align: center;
+				margin: auto;
+				width: auto;
+				transition: all 0.35s;
+			}
+		}
+		&_content-open {
+			max-height: 100vh;
+			padding: 1em;
+			transition: all 0.35s;
+		}
+		&_content-close {
+			max-height: 0;
+			padding: 0 1em;
+			transition: all 0.35s;
+		}
+		&-close {
+			display: flex;
+			justify-content: flex-end;
+			padding: 1em;
+			font-size: 0.75em;
+			cursor: pointer;
+		}
+	}
+	// :checked
+	input:checked {
+		~ .tab-label {
+			&::before {
+				content: "OPEN";
+			}
+		}
+		~ .tab_content-open {
+			max-height: 0;
+			padding: 0 1em;
+		}
+		~ .tab_content-close {
+			max-height: 100vh;
+			padding: 1em;
+		}
+	}
 }
 
 /*-------------------------------------------*/

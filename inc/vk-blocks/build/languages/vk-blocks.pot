@@ -50,7 +50,7 @@ msgstr ""
 #: src/blocks/balloon/block.js:136
 #: src/blocks/flow/block.js:112
 #: src/blocks/pr-blocks/block.js:179
-#: src/blocks/pr-content/component.js:157
+#: src/blocks/pr-content/component.js:158
 #: src/blocks/pr-content/deprecated/component-deprecated.js:102
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:116
 #: src/blocks/staff/component.js:88
@@ -385,11 +385,11 @@ msgstr ""
 msgid "Style"
 msgstr ""
 
-#: src/blocks/_pro/step/block.js:124
+#: src/blocks/_pro/step/block.js:135
 msgid "First Dot Number"
 msgstr ""
 
-#: src/blocks/_pro/step/block.js:53
+#: src/blocks/_pro/step/block.js:60
 msgid "Step"
 msgstr ""
 
@@ -445,7 +445,7 @@ msgstr ""
 #: src/blocks/balloon/block.js:141
 #: src/blocks/flow/block.js:113
 #: src/blocks/pr-blocks/block.js:175
-#: src/blocks/pr-content/component.js:164
+#: src/blocks/pr-content/component.js:165
 #: src/blocks/pr-content/deprecated/component-deprecated.js:106
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:120
 msgid "Upload image"
@@ -966,13 +966,13 @@ msgstr ""
 msgid "PR Content"
 msgstr ""
 
-#: src/blocks/pr-content/component.js:200
+#: src/blocks/pr-content/component.js:201
 #: src/blocks/pr-content/deprecated/component-deprecated.js:122
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:136
 msgid "Input title."
 msgstr ""
 
-#: src/blocks/pr-content/component.js:208
+#: src/blocks/pr-content/component.js:209
 #: src/blocks/pr-content/deprecated/component-deprecated.js:130
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:144
 msgid "Input content."
@@ -1159,4 +1159,8 @@ msgstr ""
 
 #: src/components/link-control/index.js:46
 msgid "Link rel"
+msgstr ""
+
+#: src/plugin/menu/sidebar.js:17
+msgid "VK Blocks Templates"
 msgstr ""

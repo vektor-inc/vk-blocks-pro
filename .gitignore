@@ -7,6 +7,7 @@ inc/vk-blocks/build/*.js.map
 /editor-css/editor-block-build.scss
 /editor-css/editor-block-build.css
 /editor-css/editor-block-build.css.map
+/editor-css/editor-block-build-marge.scss
 ._.DS_Store
 .DS_Store
 vendor/

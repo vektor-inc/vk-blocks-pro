@@ -10,16 +10,21 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 	// Set asset URL.
 	define( 'VK_BLOCKS_URL', plugin_dir_url( __FILE__ ) . 'vk-blocks/' );
 	// Set version number.
-	define( 'VK_BLOCKS_VERSION', '0.22.7' );
+
+	define( 'VK_BLOCKS_VERSION', '0.23.5' );
 
 	global $vk_blocks_prefix;
-	$vk_blocks_prefix = apply_filters( 'vk_blocks_prefix', 'VK ' );
+	$vk_blocks_prefix = apply_filters( 'vk_blocks_prefix', 'VK' );
+	if ( $vk_blocks_prefix ) {
+		$vk_blocks_prefix .= ' ';
+	}
 
 	require_once 'vk-blocks/helpers.php';
 	require_once 'vk-components/vk-components-config.php';
 	require_once 'vk-blocks/load-vk-components.php';
 	require_once 'font-awesome/font-awesome-config.php';
 	require_once 'term-color/term-color-config.php';
+	require_once 'template-tags/package/template-tags.php';
 
 	if ( ! vkblocks_is_lightning() ) {
 		require_once 'vk-blocks/load-bootstrap.php';

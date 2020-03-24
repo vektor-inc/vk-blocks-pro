@@ -8,8 +8,11 @@ export const AdvancedToggleControl = props => {
     helpYes,
     helpNo,
     schema,
-    setAttributes
+    setAttributes,
+    jsonKey
   } = props;
+
+  console.log(props);
 
   const [hasFixedTable, setHasFixedTable] = useState(initialFixedTable);
   return (
@@ -18,8 +21,16 @@ export const AdvancedToggleControl = props => {
       help={hasFixedTable ? helpYes : helpNo}
       checked={hasFixedTable}
       onChange={() => {
-        setAttributes({ [schema]: !hasFixedTable });
         setHasFixedTable(!hasFixedTable);
+
+        if (saveAsJson && initialFixedTable[jsonKey]) {
+          lodash.assign(initialFixedTable, {
+            [jsonKey]: !hasFixedTable
+          });
+          setAttributes({ [schema]: JSON.stringify(initialFixedTable) });
+        } else {
+          setAttributes({ [schema]: !hasFixedTable });
+        }
       }}
     />
   );

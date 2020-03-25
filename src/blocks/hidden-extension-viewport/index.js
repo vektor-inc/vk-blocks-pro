@@ -6,7 +6,6 @@ const { InspectorControls } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const { createHigherOrderComponent } = wp.compose;
 import classnames from "classnames";
-import { capitalize } from "../_helper/capitalize";
 import { AdvancedToggleControl } from "../../components/advanced-toggle-control";
 
 addFilter(
@@ -16,37 +15,31 @@ addFilter(
     settings.attributes = {
       ...settings.attributes,
       ...{
-        vkb_hidden_viewport: {
-          type: "string",
-          default: "{}"
+        vkb_hidden_xl: {
+          type: "boolean",
+          default: false
+        },
+        vkb_hidden_lg: {
+          type: "boolean",
+          default: false
+        },
+        vkb_hidden_md: {
+          type: "boolean",
+          default: false
+        },
+        vkb_hidden_sm: {
+          type: "boolean",
+          default: false
+        },
+        vkb_hidden_xs: {
+          type: "boolean",
+          default: false
         }
       }
     };
     return settings;
   }
 );
-
-const ViewportSidebars = props => {
-  let vkb_hidden_viewport = JSON.parse(props.attributes.vkb_hidden_viewport);
-  const viewports = ["xs", "sm", "md", "lg", "xl"];
-
-  return viewports.map(viewport => {
-    // let vkb_hidden_viewport_item =
-    //   vkb_hidden_viewport[viewport] != undefined
-    //     ? vkb_hidden_viewport[viewport]
-    //     : false;
-
-    return (
-      <AdvancedToggleControl
-        label={__(`Hidden at ${capitalize(viewport)}`, "vk-blocks")}
-        schema={"vkb_hidden_viewport"}
-        initialFixedTable={vkb_hidden_viewport}
-        jsonKey={viewport}
-        {...props}
-      />
-    );
-  });
-};
 
 wp.hooks.addFilter(
   "editor.BlockEdit",
@@ -61,7 +54,36 @@ wp.hooks.addFilter(
               title={__("Display Settings by View port", "vk-blocks")}
               initialOpen={false}
             >
-              <ViewportSidebars {...props} />
+              <AdvancedToggleControl
+                label={__("Hidden at XL", "vk-blocks")}
+                initialFixedTable={props.attributes.vkb_hidden_xl}
+                schema={"vkb_hidden_xl"}
+                {...props}
+              />
+              <AdvancedToggleControl
+                label={__("Hidden at LG", "vk-blocks")}
+                initialFixedTable={props.attributes.vkb_hidden_lg}
+                schema={"vkb_hidden_lg"}
+                {...props}
+              />
+              <AdvancedToggleControl
+                label={__("Hidden at MD", "vk-blocks")}
+                initialFixedTable={props.attributes.vkb_hidden_md}
+                schema={"vkb_hidden_md"}
+                {...props}
+              />
+              <AdvancedToggleControl
+                label={__("Hidden at SM", "vk-blocks")}
+                initialFixedTable={props.attributes.vkb_hidden_sm}
+                schema={"vkb_hidden_sm"}
+                {...props}
+              />
+              <AdvancedToggleControl
+                label={__("Hidden at XS", "vk-blocks")}
+                initialFixedTable={props.attributes.vkb_hidden_xs}
+                schema={"vkb_hidden_xs"}
+                {...props}
+              />
             </PanelBody>
           </InspectorControls>
         </Fragment>
@@ -74,9 +96,19 @@ wp.hooks.addFilter(
   "blocks.getSaveElement",
   "vk-blocks/hidden-extension-viewport",
   (element, blockType, attributes) => {
-    if (attributes.vkb_hidden_viewport) {
-      element.props.className = classnames(element.props.className, "hey");
-    }
+    let customXl = attributes.vkb_hidden_xl && "vkb-hidden-xl";
+    let customLg = attributes.vkb_hidden_lg && "vkb-hidden-lg";
+    let customMd = attributes.vkb_hidden_md && "vkb-hidden-md";
+    let customSm = attributes.vkb_hidden_sm && "vkb-hidden-sm";
+    let customXs = attributes.vkb_hidden_xs && "vkb-hidden-xs";
+    element.props.className = classnames(
+      element.props.className,
+      customXl,
+      customLg,
+      customMd,
+      customSm,
+      customXs
+    );
     return element;
   }
 );
@@ -86,9 +118,18 @@ wp.hooks.addFilter(
   "vk-blocks/hidden-extension-viewport",
   createHigherOrderComponent(BlockListBlock => {
     return props => {
-      let hiddenClass = props.attributes.vkb_hidden_viewport
-        ? "vkb_hidden_warning"
-        : "";
+      let hiddenClass;
+      if (
+        props.attributes.vkb_hidden_xl ||
+        props.attributes.vkb_hidden_lg ||
+        props.attributes.vkb_hidden_md ||
+        props.attributes.vkb_hidden_sm ||
+        props.attributes.vkb_hidden_xs
+      ) {
+        hiddenClass = "vkb_hidden_warning";
+      } else {
+        hiddenClass = "";
+      }
       return <BlockListBlock {...props} className={hiddenClass} />;
     };
   }, "addHiddenWarning")

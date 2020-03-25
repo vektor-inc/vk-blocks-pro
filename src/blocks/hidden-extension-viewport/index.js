@@ -112,25 +112,3 @@ wp.hooks.addFilter(
     return element;
   }
 );
-
-wp.hooks.addFilter(
-  "editor.BlockListBlock",
-  "vk-blocks/hidden-extension-viewport",
-  createHigherOrderComponent(BlockListBlock => {
-    return props => {
-      let hiddenClass;
-      if (
-        props.attributes.vkb_hidden_xl ||
-        props.attributes.vkb_hidden_lg ||
-        props.attributes.vkb_hidden_md ||
-        props.attributes.vkb_hidden_sm ||
-        props.attributes.vkb_hidden_xs
-      ) {
-        hiddenClass = "vkb_hidden_warning";
-      } else {
-        hiddenClass = "";
-      }
-      return <BlockListBlock {...props} className={hiddenClass} />;
-    };
-  }, "addHiddenWarning")
-);

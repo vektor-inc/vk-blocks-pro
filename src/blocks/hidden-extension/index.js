@@ -5,8 +5,8 @@ const { PanelBody } = wp.components;
 const { InspectorControls } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const { createHigherOrderComponent } = wp.compose;
-
 import { AdvancedToggleControl } from "../../components/advanced-toggle-control";
+import classnames from "classnames";
 
 addFilter(
   "blocks.registerBlockType",
@@ -68,8 +68,35 @@ wp.hooks.addFilter(
   "vk-blocks/hidden-extension",
   createHigherOrderComponent(BlockListBlock => {
     return props => {
-      let hiddenClass = props.attributes.vkb_hidden ? "vkb_hidden_warning" : "";
-      return <BlockListBlock {...props} className={hiddenClass} />;
+      let customXl = props.attributes.vkb_hidden_xl && "vkb-hidden-edit-xl";
+      let customLg = props.attributes.vkb_hidden_lg && "vkb-hidden-edit-lg";
+      let customMd = props.attributes.vkb_hidden_md && "vkb-hidden-edit-md";
+      let customSm = props.attributes.vkb_hidden_sm && "vkb-hidden-edit-sm";
+      let customXs = props.attributes.vkb_hidden_xs && "vkb-hidden-edit-xs";
+      let hiddenBase;
+      if (
+        customXl ||
+        customLg ||
+        customMd ||
+        customSm ||
+        customXs ||
+        props.attributes.vkb_hidden
+      ) {
+        hiddenBase = "vkb_hidden_warning";
+      }
+      return (
+        <BlockListBlock
+          {...props}
+          className={classnames(
+            hiddenBase,
+            customXl,
+            customLg,
+            customMd,
+            customSm,
+            customXs
+          )}
+        />
+      );
     };
   }, "addHiddenWarning")
 );

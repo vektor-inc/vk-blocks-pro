@@ -47,9 +47,12 @@ input[type=range] {
   .editor-url-input input[type="text"]{
       width:100%;
   }
+
+// ブロックテンプレートのサイドバー調整CSS読み込み
+@import "./editor_before_template_inserter";
   
-  // VK Outer 編集パネル
-  $color-danger: #dd3333;
+// VK Outer 編集パネル
+$color-danger: #dd3333;
 .vk_outer_sidebar_bgImage {
 	position: relative;
 	.components-button {
@@ -245,7 +248,6 @@ input[type=range] {
         width: calc(100% - 30px);
       }
     }
-  }
   .vkb_hidden_warning{
     background-color: #e6e6e6;
   }

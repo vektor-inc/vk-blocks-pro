@@ -26,3 +26,4 @@ import "./_pro/step-item/block.js";
 import "./_pro/step/block.js";
 import "./_pro/timeline-item/block.js";
 import "./_pro/timeline/block.js";
+import "../plugin/menu/block.js";

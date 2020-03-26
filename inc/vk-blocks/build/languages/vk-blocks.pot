@@ -50,7 +50,7 @@ msgstr ""
 #: src/blocks/balloon/block.js:136
 #: src/blocks/flow/block.js:112
 #: src/blocks/pr-blocks/block.js:179
-#: src/blocks/pr-content/component.js:157
+#: src/blocks/pr-content/component.js:158
 #: src/blocks/pr-content/deprecated/component-deprecated.js:102
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:116
 #: src/blocks/staff/component.js:88
@@ -347,10 +347,10 @@ msgid "Outlined"
 msgstr ""
 
 #: src/blocks/_pro/step-item/block.js:116
-#: src/blocks/_pro/table-of-contents/block.js:159
+#: src/blocks/_pro/table-of-contents/block.js:96
 #: src/blocks/_pro/timeline-item/block.js:99
 #: src/blocks/heading-style/block.js:33
-#: src/blocks/heading/block.js:124
+#: src/blocks/heading/block.js:153
 #: src/blocks/list-style/block.js:104
 #: src/blocks/staff/block.js:105
 msgid "Default"
@@ -380,26 +380,38 @@ msgid "Color"
 msgstr ""
 
 #: src/blocks/_pro/step-item/block.js:86
-#: src/blocks/_pro/table-of-contents/block.js:152
+#: src/blocks/_pro/table-of-contents/block.js:89
 #: src/blocks/_pro/timeline-item/block.js:69
 msgid "Style"
 msgstr ""
 
-#: src/blocks/_pro/step/block.js:124
+#: src/blocks/_pro/step/block.js:135
 msgid "First Dot Number"
 msgstr ""
 
-#: src/blocks/_pro/step/block.js:53
+#: src/blocks/_pro/step/block.js:60
 msgid "Step"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents/TableOfContents.js:175
-#: src/blocks/_pro/table-of-contents/block.js:80
-msgid "Table of Contents"
+#: src/blocks/_pro/table-of-contents/block.js:100
+msgid "No frame"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents/block.js:163
-msgid "No frame"
+#: src/blocks/_pro/table-of-contents/block.js:105
+msgid "Default Display Status"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents/block.js:112
+msgid "OPEN"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents/block.js:116
+msgid "CLOSE"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents/block.js:78
+#: src/blocks/_pro/table-of-contents/toc-utils.js:180
+msgid "Table of Contents"
 msgstr ""
 
 #: src/blocks/_pro/timeline-item/block.js:31
@@ -433,7 +445,7 @@ msgstr ""
 #: src/blocks/balloon/block.js:141
 #: src/blocks/flow/block.js:113
 #: src/blocks/pr-blocks/block.js:175
-#: src/blocks/pr-content/component.js:164
+#: src/blocks/pr-content/component.js:165
 #: src/blocks/pr-content/deprecated/component-deprecated.js:106
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:120
 msgid "Upload image"
@@ -457,7 +469,7 @@ msgid "Balloon setting"
 msgstr ""
 
 #: src/blocks/balloon/block.js:90
-#: src/blocks/heading/block.js:176
+#: src/blocks/heading/block.js:210
 msgid "Position"
 msgstr ""
 
@@ -693,7 +705,7 @@ msgid "Brackets black"
 msgstr ""
 
 #: src/blocks/heading-style/block.js:38
-#: src/blocks/heading/block.js:125
+#: src/blocks/heading/block.js:154
 msgid "Plain"
 msgstr ""
 
@@ -717,59 +729,61 @@ msgstr ""
 msgid "Solid border bottom black"
 msgstr ""
 
-#: src/blocks/heading/block.js:118
+#: src/blocks/heading/block.js:147
 msgid "Style Settings"
 msgstr ""
 
-#: src/blocks/heading/block.js:120
+#: src/blocks/heading/block.js:149
 msgid "Heading style"
 msgstr ""
 
-#: src/blocks/heading/block.js:128
+#: src/blocks/heading/block.js:157
 msgid "Margin bottom size (rem)"
 msgstr ""
 
-#: src/blocks/heading/block.js:139
+#: src/blocks/heading/block.js:168
 msgid "Heading Settings"
 msgstr ""
 
-#: src/blocks/heading/block.js:140
+#: src/blocks/heading/block.js:169
 msgid "Level"
 msgstr ""
 
-#: src/blocks/heading/block.js:142
+#: src/blocks/heading/block.js:176
 msgid "Text Alignment"
 msgstr ""
 
-#: src/blocks/heading/block.js:159
+#: src/blocks/heading/block.js:193
 msgid "Heading margin bottom size (rem)"
 msgstr ""
 
-#: src/blocks/heading/block.js:174
+#: src/blocks/heading/block.js:208
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/blocks/heading/block.js:179
+#: src/blocks/heading/block.js:213
 msgid "Display"
 msgstr ""
 
-#: src/blocks/heading/block.js:180
+#: src/blocks/heading/block.js:214
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/heading/block.js:184
+#: src/blocks/heading/block.js:218
 msgid "Text size (rem)"
 msgstr ""
 
-#: src/blocks/heading/block.js:65
+#: src/blocks/heading/block.js:78
 msgid "Heading"
 msgstr ""
 
-#: src/blocks/heading/component.js:106
+#: src/blocks/heading/component.js:109
+#: src/blocks/heading/deprecated/block.js:642
 msgid "Input sub text…"
 msgstr ""
 
-#: src/blocks/heading/component.js:89
+#: src/blocks/heading/component.js:93
+#: src/blocks/heading/deprecated/block.js:626
 msgid "Input title…"
 msgstr ""
 
@@ -988,13 +1002,13 @@ msgstr ""
 msgid "PR Content"
 msgstr ""
 
-#: src/blocks/pr-content/component.js:200
+#: src/blocks/pr-content/component.js:201
 #: src/blocks/pr-content/deprecated/component-deprecated.js:122
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:136
 msgid "Input title."
 msgstr ""
 
-#: src/blocks/pr-content/component.js:208
+#: src/blocks/pr-content/component.js:209
 #: src/blocks/pr-content/deprecated/component-deprecated.js:130
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:144
 msgid "Input content."
@@ -1181,4 +1195,8 @@ msgstr ""
 
 #: src/components/link-control/index.js:46
 msgid "Link rel"
+msgstr ""
+
+#: src/plugin/menu/sidebar.js:17
+msgid "VK Blocks Templates"
 msgstr ""

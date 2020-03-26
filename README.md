@@ -23,3 +23,8 @@ npm run build
 [ prefix ]_[ block name ]_[section name]_[sub section name]
 [ prefix ]_[ block name ]-[Attribute name]-[Attribute property]
 ```
+
+## リリースビルド
+```
+bin/dist_kuru.sh
+```

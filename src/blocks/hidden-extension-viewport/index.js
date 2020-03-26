@@ -96,11 +96,11 @@ wp.hooks.addFilter(
   "blocks.getSaveElement",
   "vk-blocks/hidden-extension-viewport",
   (element, blockType, attributes) => {
-    let customXl = attributes.vkb_hidden_xl && "vkb-hidden-xl";
-    let customLg = attributes.vkb_hidden_lg && "vkb-hidden-lg";
-    let customMd = attributes.vkb_hidden_md && "vkb-hidden-md";
-    let customSm = attributes.vkb_hidden_sm && "vkb-hidden-sm";
-    let customXs = attributes.vkb_hidden_xs && "vkb-hidden-xs";
+    let customXl = attributes.vkb_hidden_xl && "d-xl-none";
+    let customLg = attributes.vkb_hidden_lg && "d-lg-none d-xl-block";
+    let customMd = attributes.vkb_hidden_md && "d-md-none d-lg-block";
+    let customSm = attributes.vkb_hidden_sm && "d-sm-none d-md-block";
+    let customXs = attributes.vkb_hidden_xs && "d-none d-sm-block";
     element.props.className = classnames(
       element.props.className,
       customXl,

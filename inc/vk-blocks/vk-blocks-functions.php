@@ -99,6 +99,26 @@ function vkblocks_blocks_assets() {
 	if ( defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, '5.0', '>=' ) ) {
 
 		$arr = array( 'alert', 'balloon', 'button', 'faq', 'flow', 'pr-blocks', 'pr-content', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents', 'highlighter', 'timeline', 'timeline-item', 'step', 'step-item', 'post-list', 'list-style', 'group-style', 'child-page', 'card', 'card-item' );// REPLACE-FLAG : このコメントは削除しないで下さい。wp-create-gurten-template.shで削除する基準として左の[//REPLACE-FLAG]を使っています。
+		$common_attributes = array(
+			'vkb_hidden' => array(
+				'type'    => 'boolean',
+				'default' => false),
+			'vkb_hidden_xl' => array(
+				'type'    => 'boolean',
+				'default' => false),
+			'vkb_hidden_lg' => array(
+				'type'    => 'boolean',
+				'default' => false),
+			'vkb_hidden_md' => array(
+				'type'    => 'boolean',
+				'default' => false),
+			'vkb_hidden_sm' => array(
+				'type'    => 'boolean',
+				'default' => false),
+			'vkb_hidden_xs' => array(
+				'type'    => 'boolean',
+				'default' => false),
+			);
 
 		foreach ( $arr as $value ) {
 
@@ -110,7 +130,8 @@ function vkblocks_blocks_assets() {
 						// 'style'        => 'vk-blocks-build-css',
 						'editor_style'    => 'vk-blocks-build-editor-css',
 						'editor_script'   => 'vk-blocks-build-js',
-						'attributes'      => array(
+						'attributes'      => array_merge(
+							array(
 							'style'      => array(
 								'type'    => 'string',
 								'default' => '',
@@ -123,7 +144,7 @@ function vkblocks_blocks_assets() {
 								'type'    => 'string',
 								'default' => 'open',
 							),
-						),
+						),$common_attributes),
 						'render_callback' => function ( $attributes ) {
 							if ( $attributes['renderHtml'] ) {
 								return $attributes['renderHtml'];
@@ -138,7 +159,8 @@ function vkblocks_blocks_assets() {
 					register_block_type(
 						'vk-blocks/' . $value,
 						array(
-							'attributes'      => array(
+							'attributes'      => array_merge(
+							array(
 								'name'              => array(
 									'type' => 'string',
 								),
@@ -234,7 +256,7 @@ function vkblocks_blocks_assets() {
 									'type'    => 'boolean',
 									'default' => false,
 								),
-							),
+							),$common_attributes),
 							// 'style'           => 'vk-blocks-build-css',
 							'editor_style'    => 'vk-blocks-build-editor-css',
 							'editor_script'   => 'vk-blocks-build-js',
@@ -246,7 +268,8 @@ function vkblocks_blocks_assets() {
 				register_block_type(
 					'vk-blocks/' . $value,
 					array(
-						'attributes'      => array(
+						'attributes'      => array_merge(
+							array(
 							'selectId'                   => array(
 								'type' => 'number',
 							),
@@ -334,7 +357,7 @@ function vkblocks_blocks_assets() {
 								'type'    => 'string',
 								'default' => '[]',
 							),
-						),
+						),$common_attributes),
 						// 'style'           => 'vk-blocks-build-css',
 						'editor_style'    => 'vk-blocks-build-editor-css',
 						'editor_script'   => 'vk-blocks-build-js',
@@ -345,7 +368,7 @@ function vkblocks_blocks_assets() {
 
 				register_block_type(
 					'vk-blocks/' . $value,
-					array(
+					array(	
 						// 'style'         => 'vk-blocks-build-css',
 						'editor_style'  => 'vk-blocks-build-editor-css',
 						'editor_script' => 'vk-blocks-build-js',

@@ -6,21 +6,31 @@ const { InspectorControls } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const { createHigherOrderComponent } = wp.compose;
 import { AdvancedToggleControl } from "../../components/advanced-toggle-control";
-import classnames from "classnames";
+
+export const in_string = (str, keyword) => {
+  return str.indexOf(keyword) !== -1;
+};
+
+export const is_hidden = blockName => {
+  const allowed = ["core", "vk-blocks"];
+  return allowed.find(name => in_string(blockName, name)) !== undefined;
+};
 
 addFilter(
   "blocks.registerBlockType",
   "vk-blocks/hidden-extension",
   settings => {
-    settings.attributes = {
-      ...settings.attributes,
-      ...{
-        vkb_hidden: {
-          type: "boolean",
-          default: false
+    if (is_hidden(settings.name)) {
+      settings.attributes = {
+        ...settings.attributes,
+        ...{
+          vkb_hidden: {
+            type: "boolean",
+            default: false
+          }
         }
-      }
-    };
+      };
+    }
     return settings;
   }
 );
@@ -30,25 +40,29 @@ wp.hooks.addFilter(
   "vk-blocks/hidden-extension",
   createHigherOrderComponent(BlockEdit => {
     return props => {
-      return (
-        <Fragment>
-          <BlockEdit {...props} />
-          <InspectorControls>
-            <PanelBody
-              title={__("Display Settings", "vk-blocks")}
-              initialOpen={false}
-            >
-              <AdvancedToggleControl
-                initialFixedTable={props.attributes.vkb_hidden}
-                helpYes={__("Hidden", "vk-blocks")}
-                helpNo={__("Visible", "vk-blocks")}
-                schema={"vkb_hidden"}
-                {...props}
-              />
-            </PanelBody>
-          </InspectorControls>
-        </Fragment>
-      );
+      if (is_hidden(props.name)) {
+        return (
+          <Fragment>
+            <BlockEdit {...props} />
+            <InspectorControls>
+              <PanelBody
+                title={__("Display Settings", "vk-blocks")}
+                initialOpen={false}
+              >
+                <AdvancedToggleControl
+                  initialFixedTable={props.attributes.vkb_hidden}
+                  helpYes={__("Hidden", "vk-blocks")}
+                  helpNo={__("Visible", "vk-blocks")}
+                  schema={"vkb_hidden"}
+                  {...props}
+                />
+              </PanelBody>
+            </InspectorControls>
+          </Fragment>
+        );
+      } else {
+        return <BlockEdit {...props} />;
+      }
     };
   }, "addHiddenSection")
 );

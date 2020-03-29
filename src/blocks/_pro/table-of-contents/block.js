@@ -9,6 +9,7 @@ import {
   getBlocksByName,
   getInnerBlocks,
   getBlockIndex,
+  getChildIndex,
   getHeadingsFromInnerBlocks,
   returnHtml
 } from "./toc-utils";
@@ -134,7 +135,7 @@ registerBlockType("vk-blocks/table-of-contents", {
 });
 
 const getHeadings = props => {
-  const { className, name, clientId, attributes } = props;
+  const { className, name, rootClientId, clientId, attributes } = props;
   const { anchor } = attributes;
   const allowedBlocks = [
     "vk-blocks/heading",
@@ -143,18 +144,15 @@ const getHeadings = props => {
     "core/cover",
     "core/group"
   ];
-
   const headingBlocks = ["vk-blocks/heading", "core/heading"];
 
   if (isAllowedBlock(name, allowedBlocks)) {
     const tocs = getBlocksByName("vk-blocks/table-of-contents");
     const tocClientId = tocs[0] ? tocs[0].clientId : "";
     const tocAttributes = tocs[0] ? tocs[0].attributes : "";
-    const blockIndex = getBlockIndex(clientId);
+
     let innerBlocks = getInnerBlocks(allowedBlocks);
-
     let headings = getHeadingsFromInnerBlocks(innerBlocks, headingBlocks);
-
     let render = returnHtml(headings, tocAttributes, className);
 
     const { updateBlockAttributes } = useDispatch("core/editor");
@@ -162,9 +160,15 @@ const getHeadings = props => {
       renderHtml: render
     });
 
-    if (anchor === undefined) {
+    const blockIndex = getBlockIndex(clientId);
+
+    if (
+      anchor === undefined &&
+      isAllowedBlock(name, headingBlocks) != undefined
+    ) {
+      let childIndex = getChildIndex(rootClientId, clientId);
       updateBlockAttributes(clientId, {
-        anchor: `vk-htags-${blockIndex}`
+        anchor: `vk-htags-${blockIndex}${childIndex}`
       });
     }
   }
@@ -172,7 +176,9 @@ const getHeadings = props => {
 
 const updateTableOfContents = createHigherOrderComponent(BlockListBlock => {
   return props => {
-    getHeadings(props);
+    {
+      getHeadings(props);
+    }
     return <BlockListBlock {...props} />;
   };
 }, "updateTableOfContents");

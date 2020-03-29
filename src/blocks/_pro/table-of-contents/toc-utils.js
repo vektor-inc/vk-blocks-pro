@@ -19,6 +19,12 @@ export const getBlocksByName = blockName =>
     return getBlocks().filter(block => block.name == blockName);
   }, []);
 
+export const getBlocksByClientId = clientId =>
+  useSelect(select => {
+    const { getBlocks } = select("core/block-editor");
+    return getBlocks().filter(block => block.clientId == clientId);
+  }, []);
+
 export const getInnerBlocks = allowedBlocks =>
   useSelect(select => {
     const { getBlocks } = select("core/block-editor");
@@ -52,6 +58,21 @@ export const getHeadingsFromInnerBlocks = (innerBlocks, headingBlocks) => {
   const vHeadings = getBlocksByName("vk-blocks/heading");
   let headings = cHeadings.concat(vHeadings);
   return headings.concat(result);
+};
+
+export const getChildIndex = (rootClientId, clientId) => {
+  let childIndex = "";
+
+  if (rootClientId != undefined) {
+    let parent = getBlocksByClientId(rootClientId);
+    let children = parent[0].innerBlocks;
+
+    if (children != undefined) {
+      childIndex = children.findIndex(child => child.clientId === clientId);
+      childIndex = `-${childIndex}`;
+    }
+  }
+  return childIndex;
 };
 
 export const returnHtml = (source, attributes, className) => {
@@ -160,7 +181,10 @@ export const returnHtml = (source, attributes, className) => {
         : data.attributes.title;
 
       return (
-        <li className={`${baseClass} ${baseClass}-h-${level}`}>
+        <li
+          key={data.clientId}
+          className={`${baseClass} ${baseClass}-h-${level}`}
+        >
           <a
             href={`#${data.attributes.anchor}`}
             className={`${baseClass}_link`}
@@ -180,7 +204,10 @@ export const returnHtml = (source, attributes, className) => {
           {__("Table of Contents", "vk-blocks")}
         </div>
         <input type="checkbox" id="chck1" />
-        <label className="tab-label vk_tableOfContents_openCloseBtn" htmlFor="chck1" />
+        <label
+          className="tab-label vk_tableOfContents_openCloseBtn"
+          htmlFor="chck1"
+        />
         <ul className={`vk_tableOfContents_list tab_content-${open}`}>
           {returnHtmlContent}
         </ul>

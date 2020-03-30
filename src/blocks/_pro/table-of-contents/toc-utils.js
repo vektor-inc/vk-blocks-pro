@@ -36,12 +36,6 @@ export const getInnerBlocks = allowedBlocks =>
     }, []);
   }, []);
 
-export const getBlockIndex = clientId =>
-  useSelect(select => {
-    const { getBlockIndex } = select("core/block-editor");
-    return getBlockIndex(clientId) || "";
-  }, []);
-
 export const getHeadingsFromInnerBlocks = (innerBlocks, headingBlocks) => {
   //多次元配列を配列に変換
   innerBlocks = transformToOneDimensionalArray(innerBlocks);
@@ -58,21 +52,6 @@ export const getHeadingsFromInnerBlocks = (innerBlocks, headingBlocks) => {
   const vHeadings = getBlocksByName("vk-blocks/heading");
   let headings = cHeadings.concat(vHeadings);
   return headings.concat(result);
-};
-
-export const getChildIndex = (rootClientId, clientId) => {
-  let childIndex = "";
-
-  if (rootClientId != undefined) {
-    let parent = getBlocksByClientId(rootClientId);
-    let children = parent[0].innerBlocks;
-
-    if (children != undefined) {
-      childIndex = children.findIndex(child => child.clientId === clientId);
-      childIndex = `-${childIndex}`;
-    }
-  }
-  return childIndex;
 };
 
 export const returnHtml = (source, attributes, className) => {

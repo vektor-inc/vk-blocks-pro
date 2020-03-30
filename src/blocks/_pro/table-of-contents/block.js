@@ -8,8 +8,6 @@ import {
   isAllowedBlock,
   getBlocksByName,
   getInnerBlocks,
-  getBlockIndex,
-  getChildIndex,
   getHeadingsFromInnerBlocks,
   returnHtml
 } from "./toc-utils";
@@ -22,7 +20,7 @@ const {
   SelectControl,
   BaseControl
 } = wp.components;
-const { Fragment, useState } = wp.element;
+const { Fragment } = wp.element;
 const { InspectorControls } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const { addFilter } = wp.hooks;
@@ -135,7 +133,7 @@ registerBlockType("vk-blocks/table-of-contents", {
 });
 
 const getHeadings = props => {
-  const { className, name, rootClientId, clientId, attributes } = props;
+  const { className, name, clientId, attributes } = props;
   const { anchor } = attributes;
   const allowedBlocks = [
     "vk-blocks/heading",
@@ -160,15 +158,12 @@ const getHeadings = props => {
       renderHtml: render
     });
 
-    const blockIndex = getBlockIndex(clientId);
-
     if (
       anchor === undefined &&
       isAllowedBlock(name, headingBlocks) != undefined
     ) {
-      let childIndex = getChildIndex(rootClientId, clientId);
       updateBlockAttributes(clientId, {
-        anchor: `vk-htags-${blockIndex}${childIndex}`
+        anchor: `vk-htags-${clientId}`
       });
     }
   }
@@ -176,9 +171,7 @@ const getHeadings = props => {
 
 const updateTableOfContents = createHigherOrderComponent(BlockListBlock => {
   return props => {
-    {
-      getHeadings(props);
-    }
+    getHeadings(props);
     return <BlockListBlock {...props} />;
   };
 }, "updateTableOfContents");

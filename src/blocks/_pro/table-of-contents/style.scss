@@ -72,7 +72,7 @@ $toc-left-margin: 1rem;
 		padding: 3px 1em 2px;
 		/* Icon */
 		&::before {
-			content: "CLOSE";
+			content: "OPEN";
 			color: #666;
 			font-size: 0.8em;
 
@@ -110,7 +110,7 @@ $toc-left-margin: 1rem;
 	input:checked {
 		~ .vk_tableOfContents_openCloseBtn {
 			&::before {
-				content: "OPEN";
+				content: "CLOSE";
 			}
 		}
 		~ .tab_content-open {

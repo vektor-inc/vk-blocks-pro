@@ -2,11 +2,11 @@
  * outer block type
  *
  */
-import React from "react";
 import { Component } from "./component";
 import { schema } from "./schema";
 import { deprecated } from "./deprecated/block";
 import toNumber from "../../_helper/to-number";
+import { AdvancedMediaUpload } from "../../../components/advanced-media-upload";
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
@@ -82,6 +82,8 @@ registerBlockType("vk-blocks/outer", {
       bgColor,
       defaultBgColor,
       bgImage,
+      bgImageTablet,
+      bgImageMobile,
       bgPosition,
       outerWidth,
       padding_left_and_right,
@@ -147,7 +149,7 @@ registerBlockType("vk-blocks/outer", {
               />
             </BaseControl>
             <BaseControl
-              label={__("Background Image", "vk-blocks")}
+              label={__("Background Image PC", "vk-blocks")}
               className={"vk_outer_sidebar_bgImage"}
             >
               <MediaUpload
@@ -159,6 +161,70 @@ registerBlockType("vk-blocks/outer", {
                     {bgImage ? (
                       <Fragment>
                         <img className={"icon-image"} src={bgImage} />
+                        <Button
+                          onClick={deleteImgBtn}
+                          className={"image-button button button-delete"}
+                        >
+                          {__("Delete Image", "vk-blocks")}
+                        </Button>
+                      </Fragment>
+                    ) : (
+                      <Button
+                        onClick={open}
+                        className={"button button-large components-button"}
+                      >
+                        {__("Select image", "vk-blocks")}
+                      </Button>
+                    )}
+                  </Fragment>
+                )}
+              />
+            </BaseControl>
+            <BaseControl
+              label={__("Background Image Tablet", "vk-blocks")}
+              className={"vk_outer_sidebar_bgImage"}
+            >
+              <MediaUpload
+                onSelect={value => setAttributes({ bgImageTablet: value.url })}
+                type="image"
+                value={bgImageTablet}
+                render={({ open }) => (
+                  <Fragment>
+                    {bgImageTablet ? (
+                      <Fragment>
+                        <img className={"icon-image"} src={bgImageTablet} />
+                        <Button
+                          onClick={deleteImgBtn}
+                          className={"image-button button button-delete"}
+                        >
+                          {__("Delete Image", "vk-blocks")}
+                        </Button>
+                      </Fragment>
+                    ) : (
+                      <Button
+                        onClick={open}
+                        className={"button button-large components-button"}
+                      >
+                        {__("Select image", "vk-blocks")}
+                      </Button>
+                    )}
+                  </Fragment>
+                )}
+              />
+            </BaseControl>
+            <BaseControl
+              label={__("Background Image Mobile", "vk-blocks")}
+              className={"vk_outer_sidebar_bgImage"}
+            >
+              <MediaUpload
+                onSelect={value => setAttributes({ bgImageMobile: value.url })}
+                type="image"
+                value={bgImageMobile}
+                render={({ open }) => (
+                  <Fragment>
+                    {bgImageMobile ? (
+                      <Fragment>
+                        <img className={"icon-image"} src={bgImageMobile} />
                         <Button
                           onClick={deleteImgBtn}
                           className={"image-button button button-delete"}

@@ -1,6 +1,6 @@
 import ReactDOMServer from "react-dom/server";
 const { __ } = wp.i18n;
-const { useSelect } = wp.data;
+const { useSelect, select } = wp.data;
 import classNames from "classnames";
 
 export const isAllowedBlock = (name, allowedBlocks) => {
@@ -19,6 +19,27 @@ export const getBlocksByName = blockName =>
     return getBlocks().filter(block => block.name == blockName);
   }, []);
 
+export const getAllHeadings = headingList =>
+  useSelect(select => {
+    const { getBlocks } = select("core/block-editor");
+    return getBlocks().map(block => {
+      if (1 <= block.innerBlocks.length) {
+        return block.innerBlocks.filter(
+          block => headingList.indexOf(block.name) != -1
+        );
+      } else if (headingList.indexOf(block.name) != -1) {
+        return block;
+      }
+    });
+  }, []);
+
+export const removeUnnecessaryElements = headingsRaw => {
+  let oneDimensionArrayStoredHeading = transformToOneDimensionalArray(
+    headingsRaw
+  );
+  return oneDimensionArrayStoredHeading.filter(heading => heading != undefined);
+};
+
 export const getBlocksByClientId = clientId =>
   useSelect(select => {
     const { getBlocks } = select("core/block-editor");
@@ -36,12 +57,18 @@ export const getInnerBlocks = allowedBlocks =>
     }, []);
   }, []);
 
+export const getBlockIndex = clientId =>
+  useSelect(select => {
+    const { getBlockIndex } = select("core/editor");
+    return getBlockIndex(clientId);
+  }, []);
+
 export const getHeadingsFromInnerBlocks = (innerBlocks, headingBlocks) => {
   //多次元配列を配列に変換
   innerBlocks = transformToOneDimensionalArray(innerBlocks);
 
   //見出しブロックを抽出
-  let result = innerBlocks.reduce((accumulator, currentValue) => {
+  let innerHeadings = innerBlocks.reduce((accumulator, currentValue) => {
     if (isAllowedBlock(currentValue.name, headingBlocks)) {
       accumulator.push(currentValue);
     }
@@ -50,8 +77,11 @@ export const getHeadingsFromInnerBlocks = (innerBlocks, headingBlocks) => {
 
   const cHeadings = getBlocksByName("core/heading");
   const vHeadings = getBlocksByName("vk-blocks/heading");
-  let headings = cHeadings.concat(vHeadings);
-  return headings.concat(result);
+
+  let cvHeadings = cHeadings.concat(vHeadings);
+  let headings = cvHeadings.concat(innerHeadings);
+
+  return headings;
 };
 
 export const returnHtml = (source, attributes, className) => {

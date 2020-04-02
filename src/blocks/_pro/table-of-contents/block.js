@@ -1,6 +1,5 @@
 /**
  * table-of-contents block type
- *
  */
 
 import { schema } from "./schema";
@@ -9,7 +8,9 @@ import {
   getBlocksByName,
   getInnerBlocks,
   getHeadingsFromInnerBlocks,
-  returnHtml
+  returnHtml,
+  getAllHeadings,
+  removeUnnecessaryElements
 } from "./toc-utils";
 
 const { __ } = wp.i18n;
@@ -133,40 +134,46 @@ registerBlockType("vk-blocks/table-of-contents", {
 });
 
 const getHeadings = props => {
-  const { className, name, clientId, attributes } = props;
-  const { anchor } = attributes;
-  const allowedBlocks = [
-    "vk-blocks/heading",
-    "vk-blocks/outer",
-    "core/heading",
-    "core/cover",
-    "core/group"
-  ];
-  const headingBlocks = ["vk-blocks/heading", "core/heading"];
+  // const { className, name, clientId, attributes } = props;
+  // const { anchor } = attributes;
+  // const allowedBlocks = [
+  //   "vk-blocks/heading",
+  //   "vk-blocks/outer",
+  //   "core/heading",
+  //   "core/cover",
+  //   "core/group"
+  // ];
 
-  if (isAllowedBlock(name, allowedBlocks)) {
-    const tocs = getBlocksByName("vk-blocks/table-of-contents");
-    const tocClientId = tocs[0] ? tocs[0].clientId : "";
-    const tocAttributes = tocs[0] ? tocs[0].attributes : "";
+  const headingList = ["core/heading", "vk-blocks/heading"];
 
-    let innerBlocks = getInnerBlocks(allowedBlocks);
-    let headings = getHeadingsFromInnerBlocks(innerBlocks, headingBlocks);
-    let render = returnHtml(headings, tocAttributes, className);
+  // if (isAllowedBlock(name, allowedBlocks)) {
+  // const tocs = getBlocksByName("vk-blocks/table-of-contents");
+  // const tocClientId = tocs[0] ? tocs[0].clientId : "";
+  // const tocAttributes = tocs[0] ? tocs[0].attributes : "";
 
-    const { updateBlockAttributes } = useDispatch("core/editor");
-    updateBlockAttributes(tocClientId, {
-      renderHtml: render
-    });
+  //もう一度全ブロック取得。再レンダリング
 
-    if (
-      anchor === undefined &&
-      isAllowedBlock(name, headingBlocks) != undefined
-    ) {
-      updateBlockAttributes(clientId, {
-        anchor: `vk-htags-${clientId}`
-      });
-    }
-  }
+  let headingsRaw = getAllHeadings(headingList);
+  let headings = removeUnnecessaryElements(headingsRaw);
+
+  // let innerBlocks = getInnerBlocks(allowedBlocks);
+  // let headings = getHeadingsFromInnerBlocks(innerBlocks, headingBlocks);
+  // let render = returnHtml(headings, tocAttributes, className);
+
+  // const { updateBlockAttributes } = useDispatch("core/editor");
+  // updateBlockAttributes(tocClientId, {
+  //   renderHtml: render
+  // });
+
+  // if (
+  //   anchor === undefined &&
+  //   isAllowedBlock(name, headingBlocks) != undefined
+  // ) {
+  //   updateBlockAttributes(clientId, {
+  //     anchor: `vk-htags-${clientId}`
+  //   });
+  // }
+  // }
 };
 
 const updateTableOfContents = createHigherOrderComponent(BlockListBlock => {

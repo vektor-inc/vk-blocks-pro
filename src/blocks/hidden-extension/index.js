@@ -7,13 +7,22 @@ const { InspectorControls } =
 const { createHigherOrderComponent } = wp.compose;
 import { AdvancedToggleControl } from "../../components/advanced-toggle-control";
 
+// Check the keyword including str or not
 export const in_string = (str, keyword) => {
-  return str.indexOf(keyword) !== -1;
+	// If keyword was included that return ( true or false )
+  	return str.indexOf(keyword) !== -1;
 };
 
+// The checking block is hidden function target or not
 export const is_hidden = blockName => {
-  const allowed = ["core", "vk-blocks"];
-  return allowed.find(name => in_string(blockName, name)) !== undefined;
+
+	// Target of hidden function active
+	const allowed = ["core", "vk-blocks"];
+	  
+	// name には allowed の項目が一つずつ入る
+	// 判断中のブロック名の中にname( core or vk-blocks )がある（ undefinedじゃない ）場合
+	// true を返す
+	return allowed.find(name => in_string(blockName, name)) !== undefined;
 };
 
 addFilter(

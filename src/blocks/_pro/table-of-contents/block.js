@@ -8,7 +8,8 @@ import {
   getBlocksByName,
   returnHtml,
   getAllHeadings,
-  removeUnnecessaryElements
+  removeUnnecessaryElements,
+  asyncGetBlocksByName
 } from "./toc-utils";
 import BlockIcon from "./icon.svg";
 
@@ -114,9 +115,12 @@ const getHeadings = props => {
       });
     }
 
+    const asyncToc = asyncGetBlocksByName("vk-blocks/table-of-contents");
+    const open = asyncToc[0] ? asyncToc[0].attributes.open : "";
+
     let headingsRaw = getAllHeadings(headingList);
     let headings = removeUnnecessaryElements(headingsRaw);
-    let render = returnHtml(headings, tocAttributes, className);
+    let render = returnHtml(headings, tocAttributes, className, open);
 
     if (isAllowedBlock(name, headingList) != undefined) {
       updateBlockAttributes(tocClientId, {

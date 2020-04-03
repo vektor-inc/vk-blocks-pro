@@ -1,6 +1,6 @@
 import ReactDOMServer from "react-dom/server";
 const { __ } = wp.i18n;
-const { select } = wp.data;
+const { useSelect, select } = wp.data;
 import classNames from "classnames";
 
 export const isAllowedBlock = (name, allowedBlocks) => {
@@ -12,6 +12,12 @@ export const transformToOneDimensionalArray = multiDimensionalarray => {
     return accumulator.concat(currentValue);
   }, []);
 };
+
+export const asyncGetBlocksByName = blockName =>
+  useSelect(select => {
+    const { getBlocks } = select("core/block-editor");
+    return getBlocks().filter(block => block.name == blockName);
+  }, []);
 
 export const getBlocksByName = blockName => {
   const { getBlocks } = select("core/block-editor");
@@ -38,8 +44,8 @@ export const removeUnnecessaryElements = headingsRaw => {
   return oneDimensionArrayStoredHeading.filter(heading => heading != undefined);
 };
 
-export const returnHtml = (source, attributes, className) => {
-  const { style, open } = attributes;
+export const returnHtml = (source, attributes, className, open) => {
+  const { style } = attributes;
   if (!className) {
     className = "vk_tableOfContents";
   } else {
@@ -168,7 +174,7 @@ export const returnHtml = (source, attributes, className) => {
         </div>
         <input type="checkbox" id="chck1" />
         <label
-          className="tab-label vk_tableOfContents_openCloseBtn"
+          className={`tab-label vk_tableOfContents_openCloseBtn button_status button_status-${open}`}
           htmlFor="chck1"
         />
         <ul className={`vk_tableOfContents_list tab_content-${open}`}>

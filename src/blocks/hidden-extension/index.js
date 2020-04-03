@@ -42,27 +42,27 @@ wp.hooks.addFilter(
     return props => {
       if (is_hidden(props.name)) {
         return (
-          <Fragment>
-            <BlockEdit {...props} />
-            <InspectorControls>
-              <PanelBody
-                title={__("Display Settings", "vk-blocks")}
-                initialOpen={false}
+	<Fragment>
+		<BlockEdit { ...props } />
+		<InspectorControls>
+			<PanelBody
+				title={ __("Display Settings", "vk-blocks") }
+				initialOpen={ false }
               >
-                <AdvancedToggleControl
-                  initialFixedTable={props.attributes.vkb_hidden}
-                  helpYes={__("Hidden", "vk-blocks")}
-                  helpNo={__("Visible", "vk-blocks")}
-                  schema={"vkb_hidden"}
-                  {...props}
+				<AdvancedToggleControl
+					initialFixedTable={ props.attributes.vkb_hidden }
+					helpYes={ __("Hidden", "vk-blocks") }
+					helpNo={ __("Visible", "vk-blocks") }
+					schema={ "vkb_hidden" }
+					{ ...props }
                 />
-              </PanelBody>
-            </InspectorControls>
-          </Fragment>
+			</PanelBody>
+		</InspectorControls>
+	</Fragment>
         );
-      } else {
-        return <BlockEdit {...props} />;
-      }
+      } 
+        return <BlockEdit { ...props } />;
+      
     };
   }, "addHiddenSection")
 );
@@ -82,7 +82,7 @@ wp.hooks.addFilter(
   "vk-blocks/hidden-extension",
   createHigherOrderComponent(BlockListBlock => {
     return props => {
-      let hiddenClass =
+      const hiddenClass =
         props.attributes.vkb_hidden_xl ||
         props.attributes.vkb_hidden_lg ||
         props.attributes.vkb_hidden_md ||
@@ -91,7 +91,7 @@ wp.hooks.addFilter(
         props.attributes.vkb_hidden
           ? "vkb_hidden_warning"
           : "";
-      return <BlockListBlock {...props} className={hiddenClass} />;
+      return <BlockListBlock { ...props } className={ hiddenClass } />;
     };
   }, "addHiddenWarning")
 );

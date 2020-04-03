@@ -31,7 +31,7 @@ msgid "https://example.com"
 msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:103
-#: src/blocks/_pro/outer/block.js:166
+#: src/blocks/_pro/outer/block.js:143
 msgid "Delete Image"
 msgstr ""
 
@@ -46,7 +46,7 @@ msgid "Title"
 msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:90
-#: src/blocks/_pro/outer/block.js:174
+#: src/blocks/_pro/outer/block.js:151
 #: src/blocks/balloon/block.js:136
 #: src/blocks/flow/block.js:112
 #: src/blocks/pr-blocks/block.js:179
@@ -116,141 +116,141 @@ msgstr ""
 msgid "Parent"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:123
+#: src/blocks/_pro/outer/block.js:100
 msgid "Background Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:127
+#: src/blocks/_pro/outer/block.js:104
 #: src/blocks/pr-content/block.js:119
 msgid "Color Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:128
+#: src/blocks/_pro/outer/block.js:105
 msgid ""
 "Color will overcome background image. If you want to display image, clear "
 "background color or set opacity 0."
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:138
+#: src/blocks/_pro/outer/block.js:115
 msgid "Opacity Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:150
+#: src/blocks/_pro/outer/block.js:127
 msgid "Background Image"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:182
+#: src/blocks/_pro/outer/block.js:159
 msgid "Background image Position"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:189
+#: src/blocks/_pro/outer/block.js:166
 #: src/blocks/button/block.js:166
 msgid "normal"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:190
+#: src/blocks/_pro/outer/block.js:167
 msgid "Fixed"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:192
+#: src/blocks/_pro/outer/block.js:169
 msgid "Parallax (It will not work in preview)"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:205
+#: src/blocks/_pro/outer/block.js:182
 #: src/blocks/pr-content/block.js:233
 msgid "Layout Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:210
+#: src/blocks/_pro/outer/block.js:187
 msgid "Outer width"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:213
+#: src/blocks/_pro/outer/block.js:190
 msgid "Normal"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:214
+#: src/blocks/_pro/outer/block.js:191
 msgid "Full Wide"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:219
+#: src/blocks/_pro/outer/block.js:196
 msgid "Contents area padding (left and right)"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:226
+#: src/blocks/_pro/outer/block.js:203
 msgid "Do not use padding"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:230
+#: src/blocks/_pro/outer/block.js:207
 msgid "Use padding"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:239
+#: src/blocks/_pro/outer/block.js:216
 msgid "Padding (top and bottom)"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:242
+#: src/blocks/_pro/outer/block.js:219
 msgid "Use default padding"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:244
+#: src/blocks/_pro/outer/block.js:221
 msgid "Do not use default padding (Set it yourself using a spacer block etc.)."
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:258
+#: src/blocks/_pro/outer/block.js:235
 msgid "Divider Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:263
+#: src/blocks/_pro/outer/block.js:240
 #: src/blocks/balloon/block.js:103
 msgid "Type"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:269
+#: src/blocks/_pro/outer/block.js:246
 msgid "Tilt"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:273
+#: src/blocks/_pro/outer/block.js:250
 msgid "Curve"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:277
+#: src/blocks/_pro/outer/block.js:254
 msgid "Wave"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:281
+#: src/blocks/_pro/outer/block.js:258
 #: src/blocks/list-style/block.js:113
 msgid "Triangle"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:286
+#: src/blocks/_pro/outer/block.js:263
 msgid "Upper Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:304
+#: src/blocks/_pro/outer/block.js:281
 msgid "Lower Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:324
+#: src/blocks/_pro/outer/block.js:301
 msgid "Border Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:331
+#: src/blocks/_pro/outer/block.js:308
 msgid "Border will disappear when divider effect is applied."
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:337
+#: src/blocks/_pro/outer/block.js:314
 msgid "Border type"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:343
+#: src/blocks/_pro/outer/block.js:320
 #: src/blocks/_pro/step-item/block.js:120
 #: src/blocks/_pro/timeline-item/block.js:103
 #: src/blocks/staff/block.js:109
 msgid "None"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:347
+#: src/blocks/_pro/outer/block.js:324
 #: src/blocks/_pro/step-item/block.js:97
 #: src/blocks/_pro/timeline-item/block.js:84
 #: src/blocks/group-style/block.js:95
@@ -258,46 +258,46 @@ msgstr ""
 msgid "Solid"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:351
+#: src/blocks/_pro/outer/block.js:328
 #: src/blocks/group-style/block.js:103
 msgid "Dotted"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:355
+#: src/blocks/_pro/outer/block.js:332
 #: src/blocks/group-style/block.js:107
 msgid "Dashed"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:359
+#: src/blocks/_pro/outer/block.js:336
 #: src/blocks/group-style/block.js:111
 msgid "Double"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:363
+#: src/blocks/_pro/outer/block.js:340
 msgid "Groove"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:367
+#: src/blocks/_pro/outer/block.js:344
 msgid "Ridge"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:371
+#: src/blocks/_pro/outer/block.js:348
 msgid "Inset"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:375
+#: src/blocks/_pro/outer/block.js:352
 msgid "Outset"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:386
+#: src/blocks/_pro/outer/block.js:363
 msgid "Border width"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:393
+#: src/blocks/_pro/outer/block.js:370
 msgid "Border radius"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:64
+#: src/blocks/_pro/outer/block.js:49
 msgid "Outer"
 msgstr ""
 
@@ -347,7 +347,7 @@ msgid "Outlined"
 msgstr ""
 
 #: src/blocks/_pro/step-item/block.js:116
-#: src/blocks/_pro/table-of-contents/block.js:96
+#: src/blocks/_pro/table-of-contents/block.js:50
 #: src/blocks/_pro/timeline-item/block.js:99
 #: src/blocks/heading-style/block.js:33
 #: src/blocks/heading/block.js:153
@@ -380,7 +380,7 @@ msgid "Color"
 msgstr ""
 
 #: src/blocks/_pro/step-item/block.js:86
-#: src/blocks/_pro/table-of-contents/block.js:89
+#: src/blocks/_pro/table-of-contents/block.js:43
 #: src/blocks/_pro/timeline-item/block.js:69
 msgid "Style"
 msgstr ""
@@ -393,25 +393,25 @@ msgstr ""
 msgid "Step"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents/block.js:100
+#: src/blocks/_pro/table-of-contents/block.js:32
+#: src/blocks/_pro/table-of-contents/toc-utils.js:173
+msgid "Table of Contents"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents/block.js:54
 msgid "No frame"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents/block.js:105
+#: src/blocks/_pro/table-of-contents/block.js:59
 msgid "Default Display Status"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents/block.js:112
+#: src/blocks/_pro/table-of-contents/block.js:66
 msgid "OPEN"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents/block.js:116
+#: src/blocks/_pro/table-of-contents/block.js:70
 msgid "CLOSE"
-msgstr ""
-
-#: src/blocks/_pro/table-of-contents/block.js:78
-#: src/blocks/_pro/table-of-contents/toc-utils.js:180
-msgid "Table of Contents"
 msgstr ""
 
 #: src/blocks/_pro/timeline-item/block.js:31
@@ -792,39 +792,39 @@ msgstr ""
 msgid "Heading %d"
 msgstr ""
 
-#: src/blocks/hidden-extension-viewport/index.js:54
+#: src/blocks/hidden-extension-viewport/index.js:58
 msgid "Display Settings by View port"
 msgstr ""
 
-#: src/blocks/hidden-extension-viewport/index.js:58
+#: src/blocks/hidden-extension-viewport/index.js:62
 msgid "Hidden at XL"
 msgstr ""
 
-#: src/blocks/hidden-extension-viewport/index.js:64
+#: src/blocks/hidden-extension-viewport/index.js:68
 msgid "Hidden at LG"
 msgstr ""
 
-#: src/blocks/hidden-extension-viewport/index.js:70
+#: src/blocks/hidden-extension-viewport/index.js:74
 msgid "Hidden at MD"
 msgstr ""
 
-#: src/blocks/hidden-extension-viewport/index.js:76
+#: src/blocks/hidden-extension-viewport/index.js:80
 msgid "Hidden at SM"
 msgstr ""
 
-#: src/blocks/hidden-extension-viewport/index.js:82
+#: src/blocks/hidden-extension-viewport/index.js:86
 msgid "Hidden at XS"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:38
+#: src/blocks/hidden-extension/index.js:49
 msgid "Display Settings"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:43
+#: src/blocks/hidden-extension/index.js:54
 msgid "Hidden"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:44
+#: src/blocks/hidden-extension/index.js:55
 msgid "Visible"
 msgstr ""
 

@@ -4,122 +4,137 @@
 $toc-left-margin: 1rem;
 
 .vk_tableOfContents {
-	margin-top: 3.5em;
-	margin-bottom: 3.5em;
-	position: relative;
-	&-style-default {
-		border: 3px solid rgba(0, 0, 0, 0.04);
-		box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 1);
-		background-color: rgba(0, 0, 0, 0.015);
-		padding: 2rem 3rem;
-	}
-	&_title {
-		text-align: center;
-		font-size: 1.2em;
-		letter-spacing: 0.5em;
-		margin-left: 0.5em;
-	}
-	li {
-		margin: 0;
-	}
-	&_list {
-		padding: 0;
-		margin: 0;
-		&_item {
-			list-style: none;
-			border-bottom: 1px solid #e5e5e5;
-			padding: 0.8rem 0;
-			&-h-2 {
-				// padding-left:$toc-left-margin;
-			}
-			&-h-3 {
-				padding-left: $toc-left-margin * 1;
-			}
-			&-h-4 {
-				padding-left: $toc-left-margin * 2;
-			}
-			&-h-5 {
-				padding-left: $toc-left-margin * 3;
-			}
-			&-h-6 {
-				padding-left: $toc-left-margin * 4;
-			}
-			&_link {
-				color: #333;
-				border-bottom: 1px solid #ccc;
-				&:hover {
-					text-decoration: none;
-					border-bottom: none;
-				}
-			}
-		}
-	}
-	input {
-		position: absolute;
-		opacity: 0;
-		z-index: -1;
-	}
-	&_openCloseBtn {
-		cursor: pointer;
-		font-size: 0.8em;
-		letter-spacing: 2px;
-		line-height: 1;
-		text-align: center;
-		display: block;
-		margin: 0.5em auto 0;
-		width: 6em;
-		border: 1px solid #999;
-		padding: 3px 1em 2px;
-		/* Icon */
-		&::before {
-			content: "CLOSE";
-			color: #666;
-			font-size: 0.8em;
+  margin-top: 3.5em;
+  margin-bottom: 3.5em;
+  position: relative;
+  &-style-default {
+    border: 3px solid rgba(0, 0, 0, 0.04);
+    box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 1);
+    background-color: rgba(0, 0, 0, 0.015);
+    padding: 2rem 3rem;
+  }
+  &_title {
+    text-align: center;
+    font-size: 1.2em;
+    letter-spacing: 0.5em;
+    margin-left: 0.5em;
+  }
+  li {
+    margin: 0;
+  }
+  &_list {
+    padding: 0;
+    margin: 0;
+    &_item {
+      list-style: none;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 0.8rem 0;
+      &-h-2 {
+        // padding-left:$toc-left-margin;
+      }
+      &-h-3 {
+        padding-left: $toc-left-margin * 1;
+      }
+      &-h-4 {
+        padding-left: $toc-left-margin * 2;
+      }
+      &-h-5 {
+        padding-left: $toc-left-margin * 3;
+      }
+      &-h-6 {
+        padding-left: $toc-left-margin * 4;
+      }
+      &_link {
+        color: #333;
+        border-bottom: 1px solid #ccc;
+        &:hover {
+          text-decoration: none;
+          border-bottom: none;
+        }
+      }
+    }
+  }
+  input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+  &_openCloseBtn {
+    cursor: pointer;
+    font-size: 0.8em;
+    letter-spacing: 2px;
+    line-height: 1;
+    text-align: center;
+    display: block;
+    margin: 0.5em auto 0;
+    width: 6em;
+    border: 1px solid #999;
+    padding: 3px 1em 2px;
+  }
+  .button_status-open {
+    &::before {
+      content: "CLOSE";
+    }
+  }
+  .button_status-close {
+    &::before {
+      content: "OPEN";
+    }
+  }
+  .button_status {
+    &::before {
+      color: #666;
+      font-size: 0.8em;
 
-			border-radius: 2px;
-			display: inline-block;
-			text-align: center;
-			margin: auto;
-			width: auto;
-			transition: all 0.35s;
-		}
-	}
-	/* Accordion styles */
-	.tab {
-		width: 100%;
-		overflow: hidden;
-		&_content-open {
-			max-height: 100vh;
-			padding: 1em;
-			transition: all 0.35s;
-		}
-		&_content-close {
-			max-height: 0;
-			padding: 0 1em;
-			transition: all 0.35s;
-		}
-		&-close {
-			display: flex;
-			justify-content: flex-end;
-			padding: 1em;
-			font-size: 0.75em;
-			cursor: pointer;
-		}
-	}
-	// :checked
-	input:checked {
-		~ .vk_tableOfContents_openCloseBtn {
-			&::before {
-				content: "OPEN";
-			}
-		}
-		~ .tab_content-open {
-			max-height: 0;
-			padding: 0 1em;
-		}
-		~ .tab_content-close {
-			max-height: 100vh;
-			padding: 1em;
-		}
-	}
+      border-radius: 2px;
+      display: inline-block;
+      text-align: center;
+      margin: auto;
+      width: auto;
+      transition: all 0.35s;
+    }
+  }
+  /* Accordion styles */
+  .tab {
+    width: 100%;
+    overflow: hidden;
+    &_content-open {
+      max-height: 100vh;
+      padding: 1em;
+      transition: all 0.35s;
+    }
+    &_content-close {
+      max-height: 0;
+      padding: 0 1em;
+      transition: all 0.35s;
+    }
+    &-close {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1em;
+      font-size: 0.75em;
+      cursor: pointer;
+    }
+  }
+  // :checked
+  input:checked {
+    ~ .button_status-open {
+      &::before {
+        content: "OPEN";
+      }
+    }
+    ~ .button_status-close {
+      &::before {
+        content: "CLOSE";
+      }
+    }
+    ~ .tab_content-open {
+      max-height: 0;
+      padding: 0 1em;
+    }
+    ~ .tab_content-close {
+      max-height: 100vh;
+      padding: 1em;
+    }
+  }
 }

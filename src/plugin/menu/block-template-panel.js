@@ -71,11 +71,7 @@ export default ({ slug }) => {
                     "" === selectedBlock.attributes.content;
                   if (!isEmpty) {
                     const insertionPoint = getBlockInsertionPoint();
-                    insertBlocks(
-                      part.blocks,
-                      insertionPoint.index,
-                      insertionPoint.rootClientId
-                    );
+                    insertBlocks(part.blocks, insertionPoint.index);
                   } else {
                     replaceBlocks(selectedBlock.clientId, part.blocks);
                   }

@@ -6,8 +6,6 @@ import { schema } from "./schema";
 import {
   isAllowedBlock,
   getBlocksByName,
-  getInnerBlocks,
-  getHeadingsFromInnerBlocks,
   returnHtml,
   getAllHeadings,
   removeUnnecessaryElements
@@ -26,7 +24,7 @@ const { InspectorControls } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const { addFilter } = wp.hooks;
 const { createHigherOrderComponent } = wp.compose;
-const { useDispatch } = wp.data;
+const { dispatch } = wp.data;
 
 const BlockIcon = (
   <svg
@@ -134,46 +132,43 @@ registerBlockType("vk-blocks/table-of-contents", {
 });
 
 const getHeadings = props => {
-  // const { className, name, clientId, attributes } = props;
-  // const { anchor } = attributes;
-  // const allowedBlocks = [
-  //   "vk-blocks/heading",
-  //   "vk-blocks/outer",
-  //   "core/heading",
-  //   "core/cover",
-  //   "core/group"
-  // ];
+  const { className, name, clientId, attributes } = props;
+  const { anchor } = attributes;
+  const allowedBlocks = [
+    "vk-blocks/heading",
+    "vk-blocks/outer",
+    "core/heading",
+    "core/cover",
+    "core/group"
+  ];
 
   const headingList = ["core/heading", "vk-blocks/heading"];
 
-  // if (isAllowedBlock(name, allowedBlocks)) {
-  // const tocs = getBlocksByName("vk-blocks/table-of-contents");
-  // const tocClientId = tocs[0] ? tocs[0].clientId : "";
-  // const tocAttributes = tocs[0] ? tocs[0].attributes : "";
+  if (isAllowedBlock(name, allowedBlocks)) {
+    const tocs = getBlocksByName("vk-blocks/table-of-contents");
+    const tocClientId = tocs[0] ? tocs[0].clientId : "";
+    const tocAttributes = tocs[0] ? tocs[0].attributes : "";
 
-  //もう一度全ブロック取得。再レンダリング
+    const { updateBlockAttributes } = dispatch("core/editor");
+    if (
+      anchor === undefined &&
+      isAllowedBlock(name, headingList) != undefined
+    ) {
+      updateBlockAttributes(clientId, {
+        anchor: `vk-htags-${clientId}`
+      });
+    }
 
-  let headingsRaw = getAllHeadings(headingList);
-  let headings = removeUnnecessaryElements(headingsRaw);
+    let headingsRaw = getAllHeadings(headingList);
+    let headings = removeUnnecessaryElements(headingsRaw);
+    let render = returnHtml(headings, tocAttributes, className);
 
-  // let innerBlocks = getInnerBlocks(allowedBlocks);
-  // let headings = getHeadingsFromInnerBlocks(innerBlocks, headingBlocks);
-  // let render = returnHtml(headings, tocAttributes, className);
-
-  // const { updateBlockAttributes } = useDispatch("core/editor");
-  // updateBlockAttributes(tocClientId, {
-  //   renderHtml: render
-  // });
-
-  // if (
-  //   anchor === undefined &&
-  //   isAllowedBlock(name, headingBlocks) != undefined
-  // ) {
-  //   updateBlockAttributes(clientId, {
-  //     anchor: `vk-htags-${clientId}`
-  //   });
-  // }
-  // }
+    if (isAllowedBlock(name, headingList) != undefined) {
+      updateBlockAttributes(tocClientId, {
+        renderHtml: render
+      });
+    }
+  }
 };
 
 const updateTableOfContents = createHigherOrderComponent(BlockListBlock => {

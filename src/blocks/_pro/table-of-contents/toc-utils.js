@@ -1,6 +1,6 @@
 import ReactDOMServer from "react-dom/server";
 const { __ } = wp.i18n;
-const { useSelect, select } = wp.data;
+const { select } = wp.data;
 import classNames from "classnames";
 
 export const isAllowedBlock = (name, allowedBlocks) => {
@@ -13,75 +13,29 @@ export const transformToOneDimensionalArray = multiDimensionalarray => {
   }, []);
 };
 
-export const getBlocksByName = blockName =>
-  useSelect(select => {
-    const { getBlocks } = select("core/block-editor");
-    return getBlocks().filter(block => block.name == blockName);
-  }, []);
+export const getBlocksByName = blockName => {
+  const { getBlocks } = select("core/block-editor");
+  return getBlocks().filter(block => block.name == blockName);
+};
 
-export const getAllHeadings = headingList =>
-  useSelect(select => {
-    const { getBlocks } = select("core/block-editor");
-    return getBlocks().map(block => {
-      if (1 <= block.innerBlocks.length) {
-        return block.innerBlocks.filter(
-          block => headingList.indexOf(block.name) != -1
-        );
-      } else if (headingList.indexOf(block.name) != -1) {
-        return block;
-      }
-    });
-  }, []);
+export const getAllHeadings = headingList => {
+  const { getBlocks } = select("core/block-editor");
+  return getBlocks().map(block => {
+    if (1 <= block.innerBlocks.length) {
+      return block.innerBlocks.filter(
+        block => headingList.indexOf(block.name) != -1
+      );
+    } else if (headingList.indexOf(block.name) != -1) {
+      return block;
+    }
+  });
+};
 
 export const removeUnnecessaryElements = headingsRaw => {
   let oneDimensionArrayStoredHeading = transformToOneDimensionalArray(
     headingsRaw
   );
   return oneDimensionArrayStoredHeading.filter(heading => heading != undefined);
-};
-
-export const getBlocksByClientId = clientId =>
-  useSelect(select => {
-    const { getBlocks } = select("core/block-editor");
-    return getBlocks().filter(block => block.clientId == clientId);
-  }, []);
-
-export const getInnerBlocks = allowedBlocks =>
-  useSelect(select => {
-    const { getBlocks } = select("core/block-editor");
-    return getBlocks().reduce((accumulator, block) => {
-      if (block.innerBlocks && isAllowedBlock(block.name, allowedBlocks)) {
-        accumulator.push(block.innerBlocks);
-      }
-      return accumulator;
-    }, []);
-  }, []);
-
-export const getBlockIndex = clientId =>
-  useSelect(select => {
-    const { getBlockIndex } = select("core/editor");
-    return getBlockIndex(clientId);
-  }, []);
-
-export const getHeadingsFromInnerBlocks = (innerBlocks, headingBlocks) => {
-  //多次元配列を配列に変換
-  innerBlocks = transformToOneDimensionalArray(innerBlocks);
-
-  //見出しブロックを抽出
-  let innerHeadings = innerBlocks.reduce((accumulator, currentValue) => {
-    if (isAllowedBlock(currentValue.name, headingBlocks)) {
-      accumulator.push(currentValue);
-    }
-    return accumulator;
-  }, []);
-
-  const cHeadings = getBlocksByName("core/heading");
-  const vHeadings = getBlocksByName("vk-blocks/heading");
-
-  let cvHeadings = cHeadings.concat(vHeadings);
-  let headings = cvHeadings.concat(innerHeadings);
-
-  return headings;
 };
 
 export const returnHtml = (source, attributes, className) => {

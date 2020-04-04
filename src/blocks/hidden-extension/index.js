@@ -92,12 +92,16 @@ wp.hooks.addFilter(
   "blocks.getSaveElement",
   "vk-blocks/hidden-extension",
   (element, blockType, attributes) => {
-    attributes.vkb_hidden &&
-      lodash.assign(element.props.style, { display: "none", speak: "none" });
+	// If attributes.vkb_hidden is true
+	attributes.vkb_hidden &&
+		// Overwrite the fists object(element.props.style) property by second object property
+		lodash.assign(element.props.style, { display: "none", speak: "none" });
     return element;
   }
 );
 
+/* Filter of editor.BlockListBlock
+/*-----------------------------------*/
 wp.hooks.addFilter(
   "editor.BlockListBlock",
   "vk-blocks/hidden-extension",

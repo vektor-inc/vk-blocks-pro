@@ -25,13 +25,20 @@ export const is_hidden = blockName => {
 	return allowed.find(name => in_string(blockName, name)) !== undefined;
 };
 
+
+/* Filter of blocks.registerBlockType
+/*-----------------------------------*/
 addFilter(
   "blocks.registerBlockType",
   "vk-blocks/hidden-extension",
   settings => {
+	// If hidden function target block...
     if (is_hidden(settings.name)) {
+
       settings.attributes = {
-        ...settings.attributes,
+		// Deploy original settings.attributes to array and...
+		...settings.attributes,
+		// Add hidden attributes
         ...{
           vkb_hidden: {
             type: "boolean",
@@ -44,6 +51,8 @@ addFilter(
   }
 );
 
+/* Filter of editor.BlockEdit
+/*-----------------------------------*/
 wp.hooks.addFilter(
   "editor.BlockEdit",
   "vk-blocks/hidden-extension",
@@ -69,13 +78,16 @@ wp.hooks.addFilter(
 		</InspectorControls>
 	</Fragment>
         );
-      } 
-        return <BlockEdit { ...props } />;
+	  }
+		// IF not hidden function target block that return original BlockEdit
+		return <BlockEdit { ...props } />;
       
     };
   }, "addHiddenSection")
 );
 
+/* Filter of blocks.getSaveElement
+/*-----------------------------------*/
 wp.hooks.addFilter(
   "blocks.getSaveElement",
   "vk-blocks/hidden-extension",

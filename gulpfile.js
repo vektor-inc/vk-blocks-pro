@@ -1,17 +1,17 @@
-var gulp = require("gulp"),
+const gulp = require("gulp"),
   concat = require("gulp-concat"),
   $ = require("gulp-load-plugins")(),
   webpackStream = require("webpack-stream"),
   webpack = require("webpack"),
   webpackDev = require("./webpack.dev"),
   webpackProd = require("./webpack.prod");
-var sass = require("gulp-sass");
-var autoprefixer = require("gulp-autoprefixer");
-var cleanCss = require("gulp-clean-css");
+const sass = require("gulp-sass");
+const autoprefixer = require("gulp-autoprefixer");
+const cleanCss = require("gulp-clean-css");
 // 同期的に処理してくれる（ distで使用している ）
-var runSequence = require("run-sequence");
+const runSequence = require("run-sequence");
 // js最小化
-var jsmin = require("gulp-jsmin");
+const jsmin = require("gulp-jsmin");
 
 gulp.task("sass", function() {
   return (

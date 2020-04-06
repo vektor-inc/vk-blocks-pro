@@ -792,40 +792,36 @@ msgstr ""
 msgid "Heading %d"
 msgstr ""
 
-#: src/blocks/hidden-extension-viewport/index.js:58
-msgid "Display Settings by View port"
+#: src/blocks/hidden-extension/index.js:105
+msgid "Hidden at lg"
 msgstr ""
 
-#: src/blocks/hidden-extension-viewport/index.js:62
-msgid "Hidden at XL"
+#: src/blocks/hidden-extension/index.js:111
+msgid "Hidden at md"
 msgstr ""
 
-#: src/blocks/hidden-extension-viewport/index.js:68
-msgid "Hidden at LG"
+#: src/blocks/hidden-extension/index.js:117
+msgid "Hidden at sm"
 msgstr ""
 
-#: src/blocks/hidden-extension-viewport/index.js:74
-msgid "Hidden at MD"
+#: src/blocks/hidden-extension/index.js:123
+msgid "Hidden at xs"
 msgstr ""
 
-#: src/blocks/hidden-extension-viewport/index.js:80
-msgid "Hidden at SM"
-msgstr ""
-
-#: src/blocks/hidden-extension-viewport/index.js:86
-msgid "Hidden at XS"
-msgstr ""
-
-#: src/blocks/hidden-extension/index.js:49
+#: src/blocks/hidden-extension/index.js:85
 msgid "Display Settings"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:54
-msgid "Hidden"
+#: src/blocks/hidden-extension/index.js:88
+msgid "Hidden at All"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:55
-msgid "Visible"
+#: src/blocks/hidden-extension/index.js:96
+msgid "Hidden at Selected Viewport"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:99
+msgid "Hidden at xl"
 msgstr ""
 
 #: src/blocks/highlighter/block.js:81

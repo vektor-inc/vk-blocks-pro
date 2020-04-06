@@ -792,39 +792,39 @@ msgstr ""
 msgid "Heading %d"
 msgstr ""
 
-#: src/blocks/hidden-extension-viewport/index.js:54
+#: src/blocks/hidden-extension-viewport/index.js:58
 msgid "Display Settings by View port"
 msgstr ""
 
-#: src/blocks/hidden-extension-viewport/index.js:58
+#: src/blocks/hidden-extension-viewport/index.js:62
 msgid "Hidden at XL"
 msgstr ""
 
-#: src/blocks/hidden-extension-viewport/index.js:64
+#: src/blocks/hidden-extension-viewport/index.js:68
 msgid "Hidden at LG"
 msgstr ""
 
-#: src/blocks/hidden-extension-viewport/index.js:70
+#: src/blocks/hidden-extension-viewport/index.js:74
 msgid "Hidden at MD"
 msgstr ""
 
-#: src/blocks/hidden-extension-viewport/index.js:76
+#: src/blocks/hidden-extension-viewport/index.js:80
 msgid "Hidden at SM"
 msgstr ""
 
-#: src/blocks/hidden-extension-viewport/index.js:82
+#: src/blocks/hidden-extension-viewport/index.js:86
 msgid "Hidden at XS"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:38
+#: src/blocks/hidden-extension/index.js:49
 msgid "Display Settings"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:43
+#: src/blocks/hidden-extension/index.js:54
 msgid "Hidden"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:44
+#: src/blocks/hidden-extension/index.js:55
 msgid "Visible"
 msgstr ""
 

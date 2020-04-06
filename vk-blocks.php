@@ -12,6 +12,9 @@
 // Do not load directly.
 defined( 'ABSPATH' ) || die();
 
+$data = get_file_data( __FILE__, array( 'version' => 'Version' ) );
+define( 'VK_BLOCKS_PRO_VERSION', $data['version'] );
+
 require_once 'inc/vk-blocks-config.php';
 
 add_action(

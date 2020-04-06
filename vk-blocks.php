@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) || die();
 if ( is_admin() ) {
 	$options = get_option( 'vkExUnit_common_options' );
 	if ( !empty( $options['active_vk-blocks'] ) ) {
-		$options['active_vk-blocks'] = true;
+		$options['active_vk-blocks'] = false;
 		update_option( 'vkExUnit_common_options', $options );
 
 		add_action( 'admin_notices', function(){

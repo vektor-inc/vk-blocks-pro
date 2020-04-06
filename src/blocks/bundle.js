@@ -15,7 +15,6 @@ import "./pr-content/block.js";
 import "./heading-style/block.js";
 import "./image/block.js";
 import "./hidden-extension/";
-import "./hidden-extension-viewport/";
 import "./_pro/card-item/block.js";
 import "./_pro/card/block.js";
 import "./_pro/child-page/block.js";

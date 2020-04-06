@@ -1,6 +1,6 @@
 import ReactDOMServer from "react-dom/server";
 const { __ } = wp.i18n;
-const { useSelect } = wp.data;
+const { useSelect, select } = wp.data;
 import classNames from "classnames";
 
 export const isAllowedBlock = (name, allowedBlocks) => {
@@ -13,49 +13,39 @@ export const transformToOneDimensionalArray = multiDimensionalarray => {
   }, []);
 };
 
-export const getBlocksByName = blockName =>
+export const asyncGetBlocksByName = blockName =>
   useSelect(select => {
     const { getBlocks } = select("core/block-editor");
     return getBlocks().filter(block => block.name == blockName);
   }, []);
 
-export const getInnerBlocks = allowedBlocks =>
-  useSelect(select => {
-    const { getBlocks } = select("core/block-editor");
-    return getBlocks().reduce((accumulator, block) => {
-      if (block.innerBlocks && isAllowedBlock(block.name, allowedBlocks)) {
-        accumulator.push(block.innerBlocks);
-      }
-      return accumulator;
-    }, []);
-  }, []);
-
-export const getBlockIndex = clientId =>
-  useSelect(select => {
-    const { getBlockIndex } = select("core/block-editor");
-    return getBlockIndex(clientId) || "";
-  }, []);
-
-export const getHeadingsFromInnerBlocks = (innerBlocks, headingBlocks) => {
-  //多次元配列を配列に変換
-  innerBlocks = transformToOneDimensionalArray(innerBlocks);
-
-  //見出しブロックを抽出
-  let result = innerBlocks.reduce((accumulator, currentValue) => {
-    if (isAllowedBlock(currentValue.name, headingBlocks)) {
-      accumulator.push(currentValue);
-    }
-    return accumulator;
-  }, []);
-
-  const cHeadings = getBlocksByName("core/heading");
-  const vHeadings = getBlocksByName("vk-blocks/heading");
-  let headings = cHeadings.concat(vHeadings);
-  return headings.concat(result);
+export const getBlocksByName = blockName => {
+  const { getBlocks } = select("core/block-editor");
+  return getBlocks().filter(block => block.name == blockName);
 };
 
-export const returnHtml = (source, attributes, className) => {
-  const { style, open } = attributes;
+export const getAllHeadings = headingList => {
+  const { getBlocks } = select("core/block-editor");
+  return getBlocks().map(block => {
+    if (1 <= block.innerBlocks.length) {
+      return block.innerBlocks.filter(
+        block => headingList.indexOf(block.name) != -1
+      );
+    } else if (headingList.indexOf(block.name) != -1) {
+      return block;
+    }
+  });
+};
+
+export const removeUnnecessaryElements = headingsRaw => {
+  let oneDimensionArrayStoredHeading = transformToOneDimensionalArray(
+    headingsRaw
+  );
+  return oneDimensionArrayStoredHeading.filter(heading => heading != undefined);
+};
+
+export const returnHtml = (source, attributes, className, open) => {
+  const { style } = attributes;
   if (!className) {
     className = "vk_tableOfContents";
   } else {
@@ -160,7 +150,10 @@ export const returnHtml = (source, attributes, className) => {
         : data.attributes.title;
 
       return (
-        <li className={`${baseClass} ${baseClass}-h-${level}`}>
+        <li
+          key={data.clientId}
+          className={`${baseClass} ${baseClass}-h-${level}`}
+        >
           <a
             href={`#${data.attributes.anchor}`}
             className={`${baseClass}_link`}
@@ -180,7 +173,10 @@ export const returnHtml = (source, attributes, className) => {
           {__("Table of Contents", "vk-blocks")}
         </div>
         <input type="checkbox" id="chck1" />
-        <label className="tab-label vk_tableOfContents_openCloseBtn" htmlFor="chck1" />
+        <label
+          className={`tab-label vk_tableOfContents_openCloseBtn button_status button_status-${open}`}
+          htmlFor="chck1"
+        />
         <ul className={`vk_tableOfContents_list tab_content-${open}`}>
           {returnHtmlContent}
         </ul>

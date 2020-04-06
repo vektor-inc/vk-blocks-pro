@@ -83,8 +83,12 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 			if ( !isset( $wp_query->query['post_type'] ) ) {
 				$outer_class_post_types[] = 'vk_posts-postType-post';
 			} else {
-				foreach ( $wp_query->query['post_type'] as $key => $value ) {
-					$outer_class_post_types[] = 'vk_posts-postType-' . $value;
+				if ( is_array( $wp_query->query['post_type'] ) ) {
+					foreach ( $wp_query->query['post_type'] as $key => $value ) {
+						$outer_class_post_types[] = 'vk_posts-postType-' . $value;
+					}
+				} else {
+					$outer_class_post_types[] = 'vk_posts-postType-' . $wp_query->query['post_type'];
 				}
 			}
 			// Additional loop option
@@ -458,6 +462,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				$html .= '<span class="postListText_singleTermLabel">';
 				$term_args = array(
 					'class' => 'postListText_singleTermLabel_inner',
+					'link' => true,
 				);
 				if ( method_exists( 'Vk_term_color', 'get_single_term_with_color' ) ) {
 					$html .= Vk_term_color::get_single_term_with_color( $post, $term_args );
@@ -467,7 +472,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 
 			$html .= '<h5 class="postListText_title"><a href="' . get_the_permalink( $post->ID ) . '">';
 			$html .= get_the_title( $post->ID );
-			$html .= '</a></h5>';
+			$html .= '</a>';
 
 			if ( $options['display_new'] ) {
 				$today = date_i18n( 'U' );
@@ -477,6 +482,8 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 					$html .= '<span class="vk_post_title_new">' . $options['new_text'] . '</span>';
 				}
 			}
+			
+			$html .= '</h5>';
 
 			$html .= '</div>';
 			return $html;

@@ -71,8 +71,7 @@ wp.hooks.addFilter(
   "blocks.getSaveElement",
   "vk-blocks/hidden-extension",
   (element, blockType, attributes) => {
-    attributes.vkb_hidden &&
-      lodash.assign(element.props.style, { display: "none", speak: "none" });
+    element.props.className = classnames(element.props.className, "d-none");
     return element;
   }
 );

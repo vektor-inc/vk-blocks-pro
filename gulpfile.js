@@ -1,17 +1,31 @@
-var gulp = require("gulp"),
+const gulp = require("gulp"),
   concat = require("gulp-concat"),
   $ = require("gulp-load-plugins")(),
   webpackStream = require("webpack-stream"),
   webpack = require("webpack"),
   webpackDev = require("./webpack.dev"),
   webpackProd = require("./webpack.prod");
-var sass = require("gulp-sass");
-var autoprefixer = require("gulp-autoprefixer");
-var cleanCss = require("gulp-clean-css");
-// 同期的に処理してくれる（ distで使用している ）
-var runSequence = require("run-sequence");
+const sass = require("gulp-sass");
+const autoprefixer = require("gulp-autoprefixer");
+const cleanCss = require("gulp-clean-css");
+const replace = require('gulp-replace');
+
+
 // js最小化
-var jsmin = require("gulp-jsmin");
+const jsmin = require("gulp-jsmin");
+
+
+gulp.task('text-domain', function (done) {
+	gulp.src(['./inc/term-color/package/*'])
+	  .pipe(replace(', \'vk_term_color_textdomain\'', ', \'vk-blocks\''))
+	  .pipe(gulp.dest('./inc/term-color/package/'));
+	done();
+  });
+
+
+
+
+
 
 gulp.task("sass", function() {
   return (

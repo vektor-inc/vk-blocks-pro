@@ -793,35 +793,42 @@ msgid "Heading %d"
 msgstr ""
 
 #: src/blocks/hidden-extension/index.js:105
-msgid "Hidden at lg"
+msgid "Hidden ( Screen size : sm )"
 msgstr ""
 
 #: src/blocks/hidden-extension/index.js:111
-msgid "Hidden at md"
+msgid "Hidden ( Screen size : md )"
 msgstr ""
 
 #: src/blocks/hidden-extension/index.js:117
-msgid "Hidden at sm"
+msgid "Hidden ( Screen size : lg )"
 msgstr ""
 
 #: src/blocks/hidden-extension/index.js:123
-msgid "Hidden at xs"
+msgid "Hidden ( Screen size : xl )"
 msgstr ""
 
 #: src/blocks/hidden-extension/index.js:85
-msgid "Display Settings"
+msgid "Hidden Settings"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:88
-msgid "Hidden at All"
+#: src/blocks/hidden-extension/index.js:89
+msgid "Hidden at screel size"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:96
-msgid "Hidden at Selected Viewport"
+#: src/blocks/hidden-extension/index.js:91
+msgid ""
+"Note : This function is display hidden only. Actually Block is output to "
+"HTML.Pleade don't use you must not bisible item.Don't use it for blocks you "
+"really don't want to display."
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:93
+msgid "Hidden ( Screen size : all )"
 msgstr ""
 
 #: src/blocks/hidden-extension/index.js:99
-msgid "Hidden at xl"
+msgid "Hidden ( Screen size : xs )"
 msgstr ""
 
 #: src/blocks/highlighter/block.js:81

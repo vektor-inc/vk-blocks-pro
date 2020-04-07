@@ -82,49 +82,50 @@ wp.hooks.addFilter(
 		<BlockEdit { ...props } />
 		<InspectorControls>
 			<PanelBody
-				title={ __("Display Settings", "vk-blocks") }
+				title={ __("Hidden Settings", "vk-blocks") }
 				initialOpen={ false }
               >
-				<BaseControl label={ __("Hidden at All", "vk-blocks") }>
+				<BaseControl
+					label={ __("Hidden at screel size", "vk-blocks") }
+                >
+					<p>{ __("Note : This function is display hidden only. Actually Block is output to HTML.Pleade don't use you must not bisible item.Don't use it for blocks you really don't want to display.", "vk-blocks") }</p>
 					<AdvancedToggleControl
+						label={ __("Hidden ( Screen size : all )", "vk-blocks") }
 						initialFixedTable={ props.attributes.vkb_hidden }
 						schema={ "vkb_hidden" }
 						{ ...props }
                   />
-				</BaseControl>
-				<BaseControl
-					label={ __("Hidden at Selected Viewport", "vk-blocks") }
-                >
 					<AdvancedToggleControl
-						label={ __("Hidden at xl", "vk-blocks") }
-						initialFixedTable={ props.attributes.vkb_hidden_xl }
-						schema={ "vkb_hidden_xl" }
+						label={ __("Hidden ( Screen size : xs )", "vk-blocks") }
+						initialFixedTable={ props.attributes.vkb_hidden_xs }
+						schema={ "vkb_hidden_xs" }
 						{ ...props }
                   />
 					<AdvancedToggleControl
-						label={ __("Hidden at lg", "vk-blocks") }
-						initialFixedTable={ props.attributes.vkb_hidden_lg }
-						schema={ "vkb_hidden_lg" }
-						{ ...props }
-                  />
-					<AdvancedToggleControl
-						label={ __("Hidden at md", "vk-blocks") }
-						initialFixedTable={ props.attributes.vkb_hidden_md }
-						schema={ "vkb_hidden_md" }
-						{ ...props }
-                  />
-					<AdvancedToggleControl
-						label={ __("Hidden at sm", "vk-blocks") }
+						label={ __("Hidden ( Screen size : sm )", "vk-blocks") }
 						initialFixedTable={ props.attributes.vkb_hidden_sm }
 						schema={ "vkb_hidden_sm" }
 						{ ...props }
                   />
 					<AdvancedToggleControl
-						label={ __("Hidden at xs", "vk-blocks") }
-						initialFixedTable={ props.attributes.vkb_hidden_xs }
-						schema={ "vkb_hidden_xs" }
+						label={ __("Hidden ( Screen size : md )", "vk-blocks") }
+						initialFixedTable={ props.attributes.vkb_hidden_md }
+						schema={ "vkb_hidden_md" }
 						{ ...props }
                   />
+					<AdvancedToggleControl
+						label={ __("Hidden ( Screen size : lg )", "vk-blocks") }
+						initialFixedTable={ props.attributes.vkb_hidden_lg }
+						schema={ "vkb_hidden_lg" }
+						{ ...props }
+                  />
+					<AdvancedToggleControl
+						label={ __("Hidden ( Screen size : xl )", "vk-blocks") }
+						initialFixedTable={ props.attributes.vkb_hidden_xl }
+						schema={ "vkb_hidden_xl" }
+						{ ...props }
+                  />
+
 				</BaseControl>
 			</PanelBody>
 		</InspectorControls>

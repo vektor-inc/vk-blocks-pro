@@ -12,6 +12,9 @@
 // Do not load directly.
 defined( 'ABSPATH' ) || die();
 
+$data = get_file_data( __FILE__, array( 'version' => 'Version' ) );
+define( 'VK_BLOCKS_PRO_VERSION', $data['version'] );
+
 if ( is_admin() && ! is_network_admin() ) {
 	$options = get_option( 'vkExUnit_common_options' );
 	if ( !empty( $options['active_vk-blocks'] ) ) {

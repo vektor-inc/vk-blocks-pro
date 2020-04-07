@@ -64,15 +64,9 @@
     "@wordpress/icons": "^1.1.0",
     "@wordpress/list-reusable-blocks": "^1.11.0",
     "@wordpress/plugins": "^2.10.0",
-    "aphrodite": "^2.4.0",
+    "@wordpress/viewport": "^2.14.0",
     "gulp-jsmin": "^0.1.5",
-    "lodash": "^4.17.15",
-    "node-sass": "^4.13.0",
-    "po2json": "^1.0.0-alpha",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "react-image": "^2.2.2",
-    "react-inline-script": "^1.2.0",
-    "react-responsive": "^8.0.1"
+    "node-sass": "^4.13.1",
+    "po2json": "^1.0.0-alpha"
   }
 }

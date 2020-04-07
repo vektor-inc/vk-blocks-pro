@@ -2,9 +2,8 @@ const { Fragment } = wp.element;
 import { componentDivider } from "./component-divider";
 const { InnerBlocks } = wp.editor;
 import hex2rgba from "../../_helper/hex-to-rgba";
-// import { useMediaQuery } from "react-responsive";
 
-export const Component = props => {
+export const OuterBlock = props => {
   let {
     bgColor,
     bgImage,
@@ -107,34 +106,81 @@ export const Component = props => {
     borderRadiusProperty = `0px`;
   }
 
-  // const isDesktopOrLaptop = useMediaQuery({
-  //   query: "(min-device-width: 1224px)"
-  // });
-  // const xl = useMediaQuery({ query: "(min-width: 1200px)" });
-  // const isPc = useMediaQuery({ query: "(min-width: 992px)" });
-  // const isTablet = useMediaQuery({ query: "(min-width: 768px)" });
+  let defaultProps = {
+    anchor,
+    className,
+    classWidth,
+    classPaddingLR,
+    classPaddingVertical,
+    classBgPosition,
+    borderProperty,
+    borderRadiusProperty,
+    upper_level,
+    upperDividerBgColor,
+    whichSideUpper,
+    dividerType,
+    containerClass,
+    elm,
+    lower_level,
+    lowerDividerBgColor,
+    whichSideLower
+  };
 
   return (
     <Fragment>
       {bgImageMobile || bgImageTablet || bgImage ? (
-        <style>
-          {`
-          @media screen and (min-width: 768px) {
-            #${anchor}{background: linear-gradient(${bgColor}, ${bgColor}), url(${bgImageMobile})}
+        <Fragment>
+          <style>
+            {`
+          @media screen and (max-width: 479px) {
+            .${className}{background: linear-gradient(${bgColor}, ${bgColor}), url(${bgImageMobile})};
           }
-          @media screen and (min-width: 992px) {
-            #${anchor}{background: linear-gradient(${bgColor}, ${bgColor}), url(${bgImageTablet})}
+          @media screen and (min-width: 480px) {
+            .${className}{background: linear-gradient(${bgColor}, ${bgColor}), url(${bgImageTablet})}!important;
           }
-          @media screen and (min-width: 1200px) {
-            #${anchor}{background: linear-gradient(${bgColor}, ${bgColor}), url(${bgImage})}
+          @media screen and (min-width: 1280px) {
+            .${className}{background: linear-gradient(${bgColor}, ${bgColor}), url(${bgImage})}!important;
           }
           `}
-        </style>
+          </style>
+          <OuterBlockInner {...defaultProps} />
+        </Fragment>
       ) : (
-        <style>
-          {`#${anchor}{background: linear-gradient(${bgColor}, ${bgColor})}`}
-        </style>
+        <OuterBlockInner
+          bgStyle={{
+            background: `linear-gradient(${bgColor}, ${bgColor})`
+          }}
+          {...defaultProps}
+        />
       )}
+    </Fragment>
+  );
+};
+
+const OuterBlockInner = props => {
+  const {
+    anchor,
+    className,
+    classWidth,
+    classPaddingLR,
+    classPaddingVertical,
+    classBgPosition,
+    borderProperty,
+    borderRadiusProperty,
+    upper_level,
+    upperDividerBgColor,
+    whichSideUpper,
+    dividerType,
+    containerClass,
+    elm,
+    lower_level,
+    lowerDividerBgColor,
+    whichSideLower,
+    bgStyle
+  } = props;
+
+  return (
+    <Fragment>
       <div
         id={anchor}
         className={
@@ -146,7 +192,7 @@ export const Component = props => {
           classBgPosition
         }
         style={{
-          // background: bgStyle,
+          background: bgStyle,
           border: borderProperty,
           borderRadius: borderRadiusProperty
         }}

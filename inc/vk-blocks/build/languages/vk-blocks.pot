@@ -792,6 +792,38 @@ msgstr ""
 msgid "Heading %d"
 msgstr ""
 
+#: src/blocks/hidden-extension/index.js:105
+msgid "Hidden at lg"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:111
+msgid "Hidden at md"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:117
+msgid "Hidden at sm"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:123
+msgid "Hidden at xs"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:85
+msgid "Display Settings"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:88
+msgid "Hidden at All"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:96
+msgid "Hidden at Selected Viewport"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:99
+msgid "Hidden at xl"
+msgstr ""
+
 #: src/blocks/highlighter/block.js:81
 msgid "Highlight Color"
 msgstr ""

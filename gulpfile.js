@@ -10,10 +10,8 @@ const autoprefixer = require("gulp-autoprefixer");
 const cleanCss = require("gulp-clean-css");
 const replace = require('gulp-replace');
 
-
 // js最小化
 const jsmin = require("gulp-jsmin");
-
 
 gulp.task('text-domain', function (done) {
 	gulp.src(['./inc/term-color/package/*'])
@@ -21,11 +19,6 @@ gulp.task('text-domain', function (done) {
 	  .pipe(gulp.dest('./inc/term-color/package/'));
 	done();
   });
-
-
-
-
-
 
 gulp.task("sass", function() {
   return (
@@ -102,6 +95,7 @@ gulp.task("js", function() {
 // watch
 gulp.task("watch", function() {
   gulp.watch("src/**/*.js", gulp.parallel("js"));
+//   gulp.watch("src/**/*.js", gulp.parallel("js-dev"));
   gulp.watch("editor-css/_editor_before.scss", gulp.parallel("sass_editor"));
   gulp.watch("editor-css/_editor_before_template_inserter.scss", gulp.parallel("sass_editor"));
   gulp.watch("src/**/*.scss", gulp.series("sass", "sass_editor"));

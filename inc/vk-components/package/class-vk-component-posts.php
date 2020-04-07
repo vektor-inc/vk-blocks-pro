@@ -101,10 +101,11 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 			// Set post item outer col class
 			if ( $options['layout'] !== 'postListText' ){
 				// If get info of column that deploy col to class annd add
-				if ( $options['class_outer'] ) {
-					$options['class_outer'] .= ' ';
+				if ( empty( $options['class_outer'] ) ) {
+					$options['class_outer'] = self::get_col_size_classes( $options );
+				} else {
+					$options['class_outer'] .= ' ' . self::get_col_size_classes( $options );
 				}
-				$options['class_outer'] .= self::get_col_size_classes( $options );
 			}
 
 			$loop = '';
@@ -352,7 +353,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 					'class_posts_outer' => 'media-outer',
 				),
 				'postListText'    => array(
-					'label'             => _x( 'Text 1 colmun', 'post list type', 'vk-compo-textdomain' ),
+					'label'             => _x( 'Text 1 Column', 'post list type', 'vk-compo-textdomain' ),
 					'class_posts_outer' => 'postListText-outer',
 				),
 			);

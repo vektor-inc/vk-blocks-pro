@@ -110,7 +110,7 @@ msgstr ""
 
 #: src/blocks/_pro/child-page/block.js:140
 msgid "Current Page"
-msgstr ""
+msgstr "現在のページ"
 
 #: src/blocks/_pro/child-page/block.js:43
 msgid "Child page list"
@@ -400,7 +400,7 @@ msgstr "枠無し"
 
 #: src/blocks/_pro/table-of-contents/block.js:59
 msgid "Default Display Status"
-msgstr ""
+msgstr "初期表示状態"
 
 #: src/blocks/_pro/table-of-contents/block.js:66
 msgid "OPEN"
@@ -1107,31 +1107,35 @@ msgstr "カード（水平）"
 msgid "Media"
 msgstr "メディア"
 
-#: src/components/column-layout-control/index.js:50
+#: src/components/column-layout-control/index.js:31
+msgid "Text 1 Column"
+msgstr "テキスト１カラム"
+
+#: src/components/column-layout-control/index.js:54
 msgid "Display type and columns"
 msgstr "表示タイプとカラム"
 
-#: src/components/column-layout-control/index.js:53
+#: src/components/column-layout-control/index.js:57
 msgid "Display type"
 msgstr "表示タイプ"
 
-#: src/components/column-layout-control/index.js:61
+#: src/components/column-layout-control/index.js:65
 msgid "Column ( Screen size : Extra small )"
 msgstr "カラム ( 画面サイズ : Extra small )"
 
-#: src/components/column-layout-control/index.js:70
+#: src/components/column-layout-control/index.js:74
 msgid "Column ( Screen size : Small )"
 msgstr "カラム ( 画面サイズ : Small )"
 
-#: src/components/column-layout-control/index.js:78
+#: src/components/column-layout-control/index.js:82
 msgid "Column ( Screen size : Medium )"
 msgstr "カラム ( 画面サイズ : Medium )"
 
-#: src/components/column-layout-control/index.js:86
+#: src/components/column-layout-control/index.js:90
 msgid "Column ( Screen size : Large )"
 msgstr "カラム ( 画面サイズ : Large )"
 
-#: src/components/column-layout-control/index.js:95
+#: src/components/column-layout-control/index.js:99
 msgid "Column ( Screen size : Extra large )"
 msgstr "カラム ( 画面サイズ : Extra large )"
 

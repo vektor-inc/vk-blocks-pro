@@ -1128,31 +1128,35 @@ msgstr ""
 msgid "Media"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:50
+#: src/components/column-layout-control/index.js:31
+msgid "Text 1 Column"
+msgstr ""
+
+#: src/components/column-layout-control/index.js:54
 msgid "Display type and columns"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:53
+#: src/components/column-layout-control/index.js:57
 msgid "Display type"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:61
+#: src/components/column-layout-control/index.js:65
 msgid "Column ( Screen size : Extra small )"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:70
+#: src/components/column-layout-control/index.js:74
 msgid "Column ( Screen size : Small )"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:78
+#: src/components/column-layout-control/index.js:82
 msgid "Column ( Screen size : Medium )"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:86
+#: src/components/column-layout-control/index.js:90
 msgid "Column ( Screen size : Large )"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:95
+#: src/components/column-layout-control/index.js:99
 msgid "Column ( Screen size : Extra large )"
 msgstr ""
 

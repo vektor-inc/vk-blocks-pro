@@ -19,13 +19,15 @@ https://github.com/vektor-inc/vektor-wp-libraries
 		font-size: 14px;
 		display: block;
 		float: left;
-		width: 110px;
+		min-width: 115px;
+		margin-right: 1em;
 	}
 	&_singleTermLabel {
-		padding: 0 1em;
+		padding: 0;
 		display: block;
 		float: left;
 		min-width: 150px;
+		margin-right: 1em;
 		margin-top: 2px;
 		&_inner {
 			display: block;

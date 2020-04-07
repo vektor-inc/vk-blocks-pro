@@ -1165,8 +1165,10 @@ msgstr ""
 msgid "VK Blocks Templates"
 msgstr ""
 
+#: src/translation_dummy.js:2
 msgid "Disabled Blocks module. Because VK-Blocks Plugin running."
 msgstr ""
 
+#: src/translation_dummy.js:3
 msgid "Deactivated VK-Blocks Plugin. Because VK-Blocks Pro running."
 msgstr ""

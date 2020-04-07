@@ -257,9 +257,14 @@ $color-danger: #dd3333;
       }
     }
 }
-.vkb_hidden_warning{
-	padding:3px;
-	border:1px dotted #e5e5e5;
-	border-radius: 3px;
-  	background-color: #f9f9f9;
+
+/*-------------------------------------------*/
+/* edit hidden block class 
+/*-------------------------------------------*/
+.vk_edit_hidden_warning{
+	// border:1px dotted #666;
+	opacity: 0.4;
+}
+.vk_edit_hidden_all{
+  	opacity: 0.2;
 }

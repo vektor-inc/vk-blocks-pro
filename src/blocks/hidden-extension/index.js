@@ -163,7 +163,7 @@ wp.hooks.addFilter(
       const custom = vkb_hidden && "vk_hidden";
       const customXl = vkb_hidden_xl && "vk_hidden-xl";
       const customLg = vkb_hidden_lg && "vk_hidden-lg";
-      const customMd = vkb_hidden_md && "vk_hidden-mg";
+      const customMd = vkb_hidden_md && "vk_hidden-md";
       const customSm = vkb_hidden_sm && "vk_hidden-sm";
       const customXs = vkb_hidden_xs && "vk_hidden-xs";
 
@@ -195,16 +195,24 @@ wp.hooks.addFilter(
   "vk-blocks/hidden-extension",
   createHigherOrderComponent(BlockListBlock => {
     return props => {
-      const hiddenClass =
+
+		// Add hidden common class
+		const hiddenSomething =
         props.attributes.vkb_hidden_xl ||
         props.attributes.vkb_hidden_lg ||
         props.attributes.vkb_hidden_md ||
         props.attributes.vkb_hidden_sm ||
         props.attributes.vkb_hidden_xs ||
         props.attributes.vkb_hidden
-          ? "vkb_hidden_warning"
-          : "";
-      return <BlockListBlock { ...props } className={ hiddenClass } />;
+          ? "vk_edit_hidden_warning"
+		  : "";
+
+		// Add hidden all class
+		const hiddenClassName =         props.attributes.vkb_hidden
+		? hiddenSomething + " vk_edit_hidden_all"
+		: hiddenSomething;
+		  
+      return <BlockListBlock { ...props } className={ hiddenClassName } />;
     };
   }, "addHiddenWarning")
 );

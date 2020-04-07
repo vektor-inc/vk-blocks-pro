@@ -12,7 +12,7 @@
 // Do not load directly.
 defined( 'ABSPATH' ) || die();
 
-if ( is_admin() ) {
+if ( is_admin() && ! is_network_admin() ) {
 	$options = get_option( 'vkExUnit_common_options' );
 	if ( !empty( $options['active_vk-blocks'] ) ) {
 		$options['active_vk-blocks'] = false;
@@ -20,7 +20,7 @@ if ( is_admin() ) {
 
 		add_action( 'admin_notices', function(){
 			echo '<div class="updated notice"><p>';
-			echo "VK-Blocksと競合するため、VK All in One Expansion UnitのBlock機能を停止しました。";
+			echo __( 'Disabled Blocks module. Because VK-Blocks Plugin running.', 'vk-blocks' );
 			echo '</p></div>';
 		} );
 	}

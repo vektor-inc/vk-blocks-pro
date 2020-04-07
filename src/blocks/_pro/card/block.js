@@ -17,7 +17,7 @@ const { select, dispatch } = wp.data;
 const BlockIcon = (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 576">
     <path
-      class="st0"
+      className="st0"
       d="M456.1,1320.7H118.4v36.6H533V945.2h-35.5v334C497.6,1302.1,479,1320.7,456.1,1320.7z"
     />
     <g>

@@ -110,7 +110,7 @@ msgstr ""
 
 #: src/blocks/_pro/child-page/block.js:140
 msgid "Current Page"
-msgstr ""
+msgstr "現在のページ"
 
 #: src/blocks/_pro/child-page/block.js:43
 msgid "Child page list"
@@ -400,7 +400,7 @@ msgstr "枠無し"
 
 #: src/blocks/_pro/table-of-contents/block.js:59
 msgid "Default Display Status"
-msgstr ""
+msgstr "初期表示状態"
 
 #: src/blocks/_pro/table-of-contents/block.js:66
 msgid "OPEN"
@@ -772,6 +772,47 @@ msgstr "タイトルを入力"
 msgid "Heading %d"
 msgstr "見出し %d"
 
+#: src/blocks/hidden-extension/index.js:105
+msgid "Hidden ( Screen size : sm )"
+msgstr "非表示 ( 画面サイズ : sm )"
+
+#: src/blocks/hidden-extension/index.js:111
+msgid "Hidden ( Screen size : md )"
+msgstr "非表示 ( 画面サイズ : md )"
+
+#: src/blocks/hidden-extension/index.js:117
+msgid "Hidden ( Screen size : lg )"
+msgstr "非表示 ( 画面サイズ : lg )"
+
+#: src/blocks/hidden-extension/index.js:123
+msgid "Hidden ( Screen size : xl )"
+msgstr "非表示 ( 画面サイズ : xs )"
+
+#: src/blocks/hidden-extension/index.js:85
+msgid "Hidden Settings"
+msgstr "非表示設定"
+
+#: src/blocks/hidden-extension/index.js:89
+msgid "Hidden at screel size"
+msgstr "非表示にする画面サイズ"
+
+#: src/blocks/hidden-extension/index.js:91
+msgid ""
+"Note : This function is display hidden only. Actually Block is output to "
+"HTML.Pleade don't use you must not bisible item.Don't use it for blocks you "
+"really don't want to display."
+msgstr ""
+"注意 : この機能はあくまでHTMLに出力される要素を非表示にするだけです。本当に見"
+"せてはいけない要素には使わないでください。"
+
+#: src/blocks/hidden-extension/index.js:93
+msgid "Hidden ( Screen size : all )"
+msgstr "非表示 ( 画面サイズ : all )"
+
+#: src/blocks/hidden-extension/index.js:99
+msgid "Hidden ( Screen size : xs )"
+msgstr "非表示 ( 画面サイズ : xs )"
+
 #: src/blocks/highlighter/block.js:81
 msgid "Highlight Color"
 msgstr "ハイライトカラー"
@@ -1066,31 +1107,35 @@ msgstr "カード（水平）"
 msgid "Media"
 msgstr "メディア"
 
-#: src/components/column-layout-control/index.js:50
+#: src/components/column-layout-control/index.js:31
+msgid "Text 1 Column"
+msgstr "テキスト１カラム"
+
+#: src/components/column-layout-control/index.js:54
 msgid "Display type and columns"
 msgstr "表示タイプとカラム"
 
-#: src/components/column-layout-control/index.js:53
+#: src/components/column-layout-control/index.js:57
 msgid "Display type"
 msgstr "表示タイプ"
 
-#: src/components/column-layout-control/index.js:61
+#: src/components/column-layout-control/index.js:65
 msgid "Column ( Screen size : Extra small )"
 msgstr "カラム ( 画面サイズ : Extra small )"
 
-#: src/components/column-layout-control/index.js:70
+#: src/components/column-layout-control/index.js:74
 msgid "Column ( Screen size : Small )"
 msgstr "カラム ( 画面サイズ : Small )"
 
-#: src/components/column-layout-control/index.js:78
+#: src/components/column-layout-control/index.js:82
 msgid "Column ( Screen size : Medium )"
 msgstr "カラム ( 画面サイズ : Medium )"
 
-#: src/components/column-layout-control/index.js:86
+#: src/components/column-layout-control/index.js:90
 msgid "Column ( Screen size : Large )"
 msgstr "カラム ( 画面サイズ : Large )"
 
-#: src/components/column-layout-control/index.js:95
+#: src/components/column-layout-control/index.js:99
 msgid "Column ( Screen size : Extra large )"
 msgstr "カラム ( 画面サイズ : Extra large )"
 

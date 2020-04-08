@@ -1,12 +1,10 @@
 const { first, last } = window.lodash;
 
-const { parse } = wp.blocks;
-
 const { Button, Spinner } = wp.components;
 
 const { BlockPreview } = wp.blockEditor;
 
-const { useState, useMemo, Fragment } = wp.element;
+const { useState } = wp.element;
 
 const { dispatch, select } = wp.data;
 

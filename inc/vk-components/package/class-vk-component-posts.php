@@ -79,36 +79,39 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 
 			// Outer Post Type classes
 			$patterns = self::get_patterns();
-			$outer_class_post_types = array();
+			$loop_outer_class_post_types = array();
 			if ( !isset( $wp_query->query['post_type'] ) ) {
-				$outer_class_post_types[] = 'vk_posts-postType-post';
+				$loop_outer_class_post_types[] = 'vk_posts-postType-post';
 			} else {
 				if ( is_array( $wp_query->query['post_type'] ) ) {
 					foreach ( $wp_query->query['post_type'] as $key => $value ) {
-						$outer_class_post_types[] = 'vk_posts-postType-' . $value;
+						$loop_outer_class_post_types[] = 'vk_posts-postType-' . $value;
 					}
 				} else {
-					$outer_class_post_types[] = 'vk_posts-postType-' . $wp_query->query['post_type'];
+					$loop_outer_class_post_types[] = 'vk_posts-postType-' . $wp_query->query['post_type'];
 				}
 			}
 			// Additional loop option
-			$outer_class = implode( ' ', $outer_class_post_types );
+			$loop_outer_class = implode( ' ', $loop_outer_class_post_types );
 
 			if ( ! empty( $options_loop['class_loop_outer'] ) ){
-				$outer_class .= ' ' . $options_loop['class_loop_outer'];
+				$loop_outer_class .= ' ' . $options_loop['class_loop_outer'];
 			}
 
 			// Set post item outer col class
-			if ( $options['layout'] === 'postListText' ){
-				$options['class_outer'] = '';
-			} else {
-				$options['class_outer'] = self::get_col_size_classes( $options );
+			if ( $options['layout'] !== 'postListText' ){
+				// If get info of column that deploy col to class annd add
+				if ( empty( $options['class_outer'] ) ) {
+					$options['class_outer'] = self::get_col_size_classes( $options );
+				} else {
+					$options['class_outer'] .= ' ' . self::get_col_size_classes( $options );
+				}
 			}
 
 			$loop = '';
 			if ( $wp_query->have_posts() ) :
 
-				$loop .= '<div class="vk_posts ' . esc_attr( $outer_class ) . '">';
+				$loop .= '<div class="vk_posts ' . esc_attr( $loop_outer_class ) . '">';
 
 				while ( $wp_query->have_posts() ) {
 					$wp_query->the_post();
@@ -350,7 +353,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 					'class_posts_outer' => 'media-outer',
 				),
 				'postListText'    => array(
-					'label'             => _x( 'Text 1 colmun', 'post list type', 'vk-compo-textdomain' ),
+					'label'             => _x( 'Text 1 Column', 'post list type', 'vk-compo-textdomain' ),
 					'class_posts_outer' => 'postListText-outer',
 				),
 			);

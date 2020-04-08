@@ -792,6 +792,45 @@ msgstr ""
 msgid "Heading %d"
 msgstr ""
 
+#: src/blocks/hidden-extension/index.js:105
+msgid "Hidden ( Screen size : sm )"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:111
+msgid "Hidden ( Screen size : md )"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:117
+msgid "Hidden ( Screen size : lg )"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:123
+msgid "Hidden ( Screen size : xl )"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:85
+msgid "Hidden Settings"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:89
+msgid "Hidden at screel size"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:91
+msgid ""
+"Note : This function is display hidden only. Actually Block is output to "
+"HTML.Pleade don't use you must not bisible item.Don't use it for blocks you "
+"really don't want to display."
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:93
+msgid "Hidden ( Screen size : all )"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:99
+msgid "Hidden ( Screen size : xs )"
+msgstr ""
+
 #: src/blocks/highlighter/block.js:81
 msgid "Highlight Color"
 msgstr ""
@@ -1089,31 +1128,35 @@ msgstr ""
 msgid "Media"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:50
+#: src/components/column-layout-control/index.js:31
+msgid "Text 1 Column"
+msgstr ""
+
+#: src/components/column-layout-control/index.js:54
 msgid "Display type and columns"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:53
+#: src/components/column-layout-control/index.js:57
 msgid "Display type"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:61
+#: src/components/column-layout-control/index.js:65
 msgid "Column ( Screen size : Extra small )"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:70
+#: src/components/column-layout-control/index.js:74
 msgid "Column ( Screen size : Small )"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:78
+#: src/components/column-layout-control/index.js:82
 msgid "Column ( Screen size : Medium )"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:86
+#: src/components/column-layout-control/index.js:90
 msgid "Column ( Screen size : Large )"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:95
+#: src/components/column-layout-control/index.js:99
 msgid "Column ( Screen size : Extra large )"
 msgstr ""
 

@@ -91,6 +91,9 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 					$loop_outer_class_post_types[] = 'vk_posts-postType-' . $wp_query->query['post_type'];
 				}
 			}
+
+			$loop_outer_class_post_types[] = 'vk_posts-layout-' . $options['layout'];
+
 			// Additional loop option
 			$loop_outer_class = implode( ' ', $loop_outer_class_post_types );
 

@@ -772,31 +772,47 @@ msgstr "タイトルを入力"
 msgid "Heading %d"
 msgstr "見出し %d"
 
-#: src/blocks/hidden-extension/index.js:105
+#: src/blocks/hidden-extension/index.js:100
+msgid "Hidden ( Screen size : all )"
+msgstr "非表示 ( 画面サイズ : all )"
+
+#: src/blocks/hidden-extension/index.js:106
+msgid "Hidden ( Screen size : xs )"
+msgstr "非表示 ( 画面サイズ : xs )"
+
+#: src/blocks/hidden-extension/index.js:112
 msgid "Hidden ( Screen size : sm )"
 msgstr "非表示 ( 画面サイズ : sm )"
 
-#: src/blocks/hidden-extension/index.js:111
+#: src/blocks/hidden-extension/index.js:118
 msgid "Hidden ( Screen size : md )"
 msgstr "非表示 ( 画面サイズ : md )"
 
-#: src/blocks/hidden-extension/index.js:117
+#: src/blocks/hidden-extension/index.js:124
 msgid "Hidden ( Screen size : lg )"
 msgstr "非表示 ( 画面サイズ : lg )"
 
-#: src/blocks/hidden-extension/index.js:123
+#: src/blocks/hidden-extension/index.js:130
 msgid "Hidden ( Screen size : xl )"
-msgstr "非表示 ( 画面サイズ : xs )"
+msgstr "非表示 ( 画面サイズ : xl )"
 
-#: src/blocks/hidden-extension/index.js:85
+#: src/blocks/hidden-extension/index.js:135
+msgid ""
+"If you want to hide multiple blocks, that first you set to group block and "
+"the next, hide for the that group block."
+msgstr ""
+"複数のブロックを非表示にする場合は、最初にグループブロックに設定し、そのグ"
+"ループブロックに対して非表示にします。"
+
+#: src/blocks/hidden-extension/index.js:92
 msgid "Hidden Settings"
 msgstr "非表示設定"
 
-#: src/blocks/hidden-extension/index.js:89
+#: src/blocks/hidden-extension/index.js:96
 msgid "Hidden at screel size"
 msgstr "非表示にする画面サイズ"
 
-#: src/blocks/hidden-extension/index.js:91
+#: src/blocks/hidden-extension/index.js:98
 msgid ""
 "Note : This function is display hidden only. Actually Block is output to "
 "HTML.Pleade don't use you must not bisible item.Don't use it for blocks you "
@@ -804,14 +820,6 @@ msgid ""
 msgstr ""
 "注意 : この機能はあくまでHTMLに出力される要素を非表示にするだけです。本当に見"
 "せてはいけない要素には使わないでください。"
-
-#: src/blocks/hidden-extension/index.js:93
-msgid "Hidden ( Screen size : all )"
-msgstr "非表示 ( 画面サイズ : all )"
-
-#: src/blocks/hidden-extension/index.js:99
-msgid "Hidden ( Screen size : xs )"
-msgstr "非表示 ( 画面サイズ : xs )"
 
 #: src/blocks/highlighter/block.js:81
 msgid "Highlight Color"

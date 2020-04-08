@@ -132,7 +132,7 @@ wp.hooks.addFilter(
 						schema={ "vkb_hidden_xl" }
 						{ ...props }
                   />
-
+					<p>{ __("If you want to hide multiple blocks, that first you set to group block and the next, hide for the that group block.", "vk-blocks") }</p>
 				</BaseControl>
 			</PanelBody>
 		</InspectorControls>

@@ -17,12 +17,19 @@ export const in_string = (str, keyword) => {
 // The checking block is hidden function target or not
 export const is_hidden = blockName => {
   // Target of hidden function active
-  const allowed = ["core", "vk-blocks"];
-
+  const allowed = ["core","vk-blocks"];
   // name には allowed の項目が一つずつ入る
   // 判断中のブロック名の中にname( core or vk-blocks )がある（ undefinedじゃない ）場合
   // true を返す
-  return allowed.find(name => in_string(blockName, name)) !== undefined;
+  let hiddenReturn = allowed.find(name => in_string(blockName, name)) !== undefined;
+
+  const excludes = ["core/block"];
+  const excludeBlock = excludes.find(excludeName => in_string(blockName, excludeName)) !== undefined; 
+  if ( excludeBlock ){
+	hiddenReturn = false;
+  }
+
+  return hiddenReturn;
 };
 
 /* Filter of blocks.registerBlockType

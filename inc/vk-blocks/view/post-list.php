@@ -47,13 +47,17 @@ class VkBlocksPostList {
 			'new_date'                   => esc_html( $attributes['new_date'] ),
 			'btn_text'                   => esc_html( $attributes['btn_text'] ),
 			'btn_align'                  => esc_html( $attributes['btn_align'] ),
-			'class_outer'                => VK_Component_Posts::get_col_size_classes( $attributes ),
+			'col_xs'                     => esc_html( $attributes['col_xs'] ),
+			'col_sm'                     => esc_html( $attributes['col_sm'] ),
+			'col_md'                     => esc_html( $attributes['col_md'] ),
+			'col_lg'                     => esc_html( $attributes['col_lg'] ),
+			'col_xl'                     => esc_html( $attributes['col_xl'] ),
+			'class_outer'                => '',
 			'class_title'                => '',
 			'body_prepend'               => '',
 			'body_append'                => '',
 		);
-
-		$elm = VK_Component_Posts::get_loop( $wp_query, $options, $options_loop );
+		$elm     = VK_Component_Posts::get_loop( $wp_query, $options, $options_loop );
 
 		wp_reset_query();
 		wp_reset_postdata();

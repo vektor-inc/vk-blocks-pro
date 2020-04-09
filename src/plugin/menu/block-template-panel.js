@@ -1,12 +1,10 @@
 const { first, last } = window.lodash;
 
-const { parse } = wp.blocks;
-
 const { Button, Spinner } = wp.components;
 
 const { BlockPreview } = wp.blockEditor;
 
-const { useState, useMemo, Fragment } = wp.element;
+const { useState } = wp.element;
 
 const { dispatch, select } = wp.data;
 
@@ -71,11 +69,7 @@ export default ({ slug }) => {
                     "" === selectedBlock.attributes.content;
                   if (!isEmpty) {
                     const insertionPoint = getBlockInsertionPoint();
-                    insertBlocks(
-                      part.blocks,
-                      insertionPoint.index,
-                      insertionPoint.rootClientId
-                    );
+                    insertBlocks(part.blocks, insertionPoint.index);
                   } else {
                     replaceBlocks(selectedBlock.clientId, part.blocks);
                   }

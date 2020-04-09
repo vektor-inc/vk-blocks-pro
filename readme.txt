@@ -1,10 +1,10 @@
 === VK Blocks ===
-Contributors: vektor-inc,kurudrive,naoki0h
+Contributors: vektor-inc,kurudrive,naoki0h,nc30
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
-Tested up to: 5.3.2
-Stable tag: 0.24.0
+Tested up to: 5.4.0
+Stable tag: 0.25.1
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -57,6 +57,20 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.25.1 =
+[ Specification change ][ Hidden Function ] Exclude Reuse block
+
+= 0.25.0 =
+[ Add function ][ Hidden Function ] Add
+[ Add function ][ Post list(Pro) ] Add text list layout
+
+= 0.24.2 =
+[ BugFix ][ Table of Content(Pro) ] Title in Outer Block bug fix 
+
+= 0.24.1 =
+[ bugfix ] Cope with WordPress5.4
+[ bugfix ][ Block Template ( Pro ) ] indert bug fix
 
 = 0.24.0 =
 [ Add function ][ Template block(Pro) ] Add

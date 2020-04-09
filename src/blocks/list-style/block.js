@@ -52,15 +52,15 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
                 activeColor = '#fffd6b';
             }
             return (
-                <Fragment>
-                    <BlockEdit {...props} />
-                    <InspectorControls>
-                        <PanelBody title={__('List Icon Color', 'vk-blocks')} initialOpen={false}
-                                   className="list-color-controle">
-                            <ColorPalette
-                                value={activeColor}
-                                disableCustomColors={true}
-                                onChange={(newColor) => {
+	<Fragment>
+		<BlockEdit { ...props } />
+		<InspectorControls>
+			<PanelBody title={ __('List Icon Color', 'vk-blocks') } initialOpen={ false }
+				className="list-color-controle">
+				<ColorPalette
+					value={ activeColor }
+					disableCustomColors={ true }
+					onChange={ (newColor) => {
                                     let newClassName = convertColorClass(newColor);
 
                                     if (props.attributes.className) {
@@ -69,7 +69,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 
                                         inputClassName = inputClassName.split(' ');
 
-                                        let filterClassName = inputClassName.filter(function (name) {
+                                        const filterClassName = inputClassName.filter(function (name) {
                                             return -1 === name.indexOf("vk-has-");
                                         });
 
@@ -83,14 +83,14 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
                                         className: newClassName,
                                         color: newColor
                                     });
-                                }}
+                                } }
                             />
-                        </PanelBody>
-                    </InspectorControls>
-                </Fragment>
+			</PanelBody>
+		</InspectorControls>
+	</Fragment>
             );
         }
-        return <BlockEdit {...props} />;
+        return <BlockEdit { ...props } />;
     };
 }, 'addMyCustomBlockControls');
 

@@ -256,4 +256,15 @@ $color-danger: #dd3333;
         width: calc(100% - 30px);
       }
     }
-  }
+}
+
+/*-------------------------------------------*/
+/* edit hidden block class 
+/*-------------------------------------------*/
+.vk_edit_hidden_warning{
+	// border:1px dotted #666;
+	opacity: 0.4;
+}
+.vk_edit_hidden_all{
+  	opacity: 0.2;
+}

@@ -10,45 +10,45 @@ const { InspectorControls } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const { ServerSideRender } = wp.components;
 const BlockIcon = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="576"
-    height="512"
-    viewBox="0 0 576 512"
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="576"
+		height="512"
+		viewBox="0 0 576 512"
   >
-    <g>
-      <g>
-        <path
-          d="M269.4,390.8h196.4c7.1,0,12.8-5.9,12.8-12.8v-45.6c0-7.1-5.9-12.8-12.8-12.8H269.4c-7.1,0-12.8,5.9-12.8,12.8V378
+		<g>
+			<g>
+				<path
+					d="M269.4,390.8h196.4c7.1,0,12.8-5.9,12.8-12.8v-45.6c0-7.1-5.9-12.8-12.8-12.8H269.4c-7.1,0-12.8,5.9-12.8,12.8V378
 				C256.6,384.9,262.5,390.8,269.4,390.8z"
         />
-        <path
-          d="M269.4,291.6h196.4c7.1,0,12.8-5.9,12.8-12.8v-45.6c0-7.1-5.9-12.8-12.8-12.8H269.4c-7.1,0-12.8,5.9-12.8,12.8v45.6
+				<path
+					d="M269.4,291.6h196.4c7.1,0,12.8-5.9,12.8-12.8v-45.6c0-7.1-5.9-12.8-12.8-12.8H269.4c-7.1,0-12.8,5.9-12.8,12.8v45.6
 				C256.6,285.9,262.5,291.6,269.4,291.6z"
         />
-        <path
-          d="M269.4,192.5h196.4c7.1,0,12.8-5.9,12.8-12.8V134c0-7.1-5.9-12.8-12.8-12.8H269.4c-7.1,0-12.8,5.9-12.8,12.8v45.6
+				<path
+					d="M269.4,192.5h196.4c7.1,0,12.8-5.9,12.8-12.8V134c0-7.1-5.9-12.8-12.8-12.8H269.4c-7.1,0-12.8,5.9-12.8,12.8v45.6
 				C256.6,186.8,262.5,192.5,269.4,192.5z"
         />
-        <path
-          d="M110.2,390.8H211c7.1,0,12.8-5.9,12.8-12.8v-45.6c0-7.1-5.9-12.8-12.8-12.8H110.2c-7.1,0-12.8,5.9-12.8,12.8V378
+				<path
+					d="M110.2,390.8H211c7.1,0,12.8-5.9,12.8-12.8v-45.6c0-7.1-5.9-12.8-12.8-12.8H110.2c-7.1,0-12.8,5.9-12.8,12.8V378
 				C97.4,384.9,103.3,390.8,110.2,390.8z"
         />
-        <path
-          d="M110.2,291.6H211c7.1,0,12.8-5.9,12.8-12.8v-45.6c0-7.1-5.9-12.8-12.8-12.8H110.2c-7.1,0-12.8,5.9-12.8,12.8v45.6
+				<path
+					d="M110.2,291.6H211c7.1,0,12.8-5.9,12.8-12.8v-45.6c0-7.1-5.9-12.8-12.8-12.8H110.2c-7.1,0-12.8,5.9-12.8,12.8v45.6
 				C97.4,285.9,103.3,291.6,110.2,291.6z"
         />
-        <path
-          d="M110.2,192.5H211c7.1,0,12.8-5.9,12.8-12.8V134c0-7.1-5.9-12.8-12.8-12.8H110.2c-7.1,0-12.8,5.9-12.8,12.8v45.6
+				<path
+					d="M110.2,192.5H211c7.1,0,12.8-5.9,12.8-12.8V134c0-7.1-5.9-12.8-12.8-12.8H110.2c-7.1,0-12.8,5.9-12.8,12.8v45.6
 				C97.4,186.8,103.3,192.5,110.2,192.5z"
         />
-      </g>
-    </g>
-    <path
-      d="M528,32H48C21.5,32,0,53.5,0,80v352c0,26.5,21.5,48,48,48h480c26.5,0,48-21.5,48-48V80C576,53.5,554.5,32,528,32z M528,432
+			</g>
+		</g>
+		<path
+			d="M528,32H48C21.5,32,0,53.5,0,80v352c0,26.5,21.5,48,48,48h480c26.5,0,48-21.5,48-48V80C576,53.5,554.5,32,528,32z M528,432
 		H48V80h480V432z"
     />
-  </svg>
+	</svg>
 );
 
 import { schema } from "./schema";
@@ -72,19 +72,19 @@ registerBlockType("vk-blocks/post-list", {
     const { attributes, setAttributes, name } = props;
 
     const { numberPosts, isCheckedPostType, isCheckedTerms, offset, orderby, selfIgnore } = attributes;
-    attributes["name"] = name;
+    attributes.name = name;
 
-    let postTypes = usePostTypes();
-    let postTypesProps = postTypes.map(postType => {
+    const postTypes = usePostTypes();
+    const postTypesProps = postTypes.map(postType => {
       return {
         label: postType.name,
         slug: postType.slug
       };
     });
 
-    let taxonomies = useTaxonomies();
-    let terms = useTermsGroupbyTaxnomy(taxonomies);
-    let taxonomiesPropsRaw = Object.keys(terms).map(function(taxonomy) {
+    const taxonomies = useTaxonomies();
+    const terms = useTermsGroupbyTaxnomy(taxonomies);
+    const taxonomiesPropsRaw = Object.keys(terms).map(function(taxonomy) {
       return this[taxonomy].map(term => {
         return {
           label: term.name,
@@ -95,41 +95,41 @@ registerBlockType("vk-blocks/post-list", {
     const taxonomiesProps = flat(taxonomiesPropsRaw);
 
     return (
-      <Fragment>
-        <InspectorControls>
-          <PanelBody
-            title={__("Display conditions", "vk-blocks")}
-            initialOpen={false}
+	<Fragment>
+		<InspectorControls>
+			<PanelBody
+				title={ __("Display conditions", "vk-blocks") }
+				initialOpen={ false }
           >
-            <BaseControl label={__("Filter by PostTypes", "vk-blocks")}>
-              <AdvancedCheckboxControl
-                schema={"isCheckedPostType"}
-                rawData={postTypesProps}
-                checkedData={JSON.parse(isCheckedPostType)}
-                {...props}
+				<BaseControl label={ __("Filter by PostTypes", "vk-blocks") }>
+					<AdvancedCheckboxControl
+						schema={ "isCheckedPostType" }
+						rawData={ postTypesProps }
+						checkedData={ JSON.parse(isCheckedPostType) }
+						{ ...props }
               />
-            </BaseControl>
-            <BaseControl label={__("Filter by Taxonomy Terms", "vk-blocks")}>
-              <AdvancedCheckboxControl
-                schema={"isCheckedTerms"}
-                rawData={taxonomiesProps}
-                checkedData={JSON.parse(isCheckedTerms)}
-                {...props}
+				</BaseControl>
+				<BaseControl label={ __("Filter by Taxonomy Terms", "vk-blocks") }>
+					<AdvancedCheckboxControl
+						schema={ "isCheckedTerms" }
+						rawData={ taxonomiesProps }
+						checkedData={ JSON.parse(isCheckedTerms) }
+						{ ...props }
               />
-            </BaseControl>
-            <BaseControl label={__("Number of Posts", "vk-blocks")}>
-              <RangeControl
-                value={numberPosts}
-                onChange={value => setAttributes({ numberPosts: value })}
-                min="1"
-                max="24"
+				</BaseControl>
+				<BaseControl label={ __("Number of Posts", "vk-blocks") }>
+					<RangeControl
+						value={ numberPosts }
+						onChange={ value => setAttributes({ numberPosts: value }) }
+						min="1"
+						max="24"
               />
-            </BaseControl>
-            <BaseControl label={__("Order by", "vk-blocks")}>
-              <SelectControl
-                value={orderby}
-                onChange={(v) => setAttributes({ orderby: v })}
-                options={
+				</BaseControl>
+				<BaseControl label={ __("Order by", "vk-blocks") }>
+					<SelectControl
+						value={ orderby }
+						onChange={ (v) => setAttributes({ orderby: v }) }
+						options={
                   [
                     {value: 'date', label: __("Published Date", "vk-blocks")},
                     {value: 'modified', label: __("Modefied Date", "vk-blocks")},
@@ -137,28 +137,28 @@ registerBlockType("vk-blocks/post-list", {
                   ]
                 }
               />
-            </BaseControl>
-            <BaseControl label={__("offset", "vk-blocks")}>
-              <TextControl
-                value={offset}
-                onChange={(v) => setAttributes({ offset: v})}
-                type="number"
-                min="0"
+				</BaseControl>
+				<BaseControl label={ __("offset", "vk-blocks") }>
+					<TextControl
+						value={ offset }
+						onChange={ (v) => setAttributes({ offset: v}) }
+						type="number"
+						min="0"
               />
-            </BaseControl>
-            <BaseControl>
-              <CheckboxControl
-                label={__("Ignore this post", "vk-blocks")}
-                checked={selfIgnore}
-                onChange={(v) => setAttributes({ selfIgnore: v})}
+				</BaseControl>
+				<BaseControl>
+					<CheckboxControl
+						label={ __("Ignore this post", "vk-blocks") }
+						checked={ selfIgnore }
+						onChange={ (v) => setAttributes({ selfIgnore: v}) }
               />
-            </BaseControl>
-          </PanelBody>
-          <ColumnLayoutControl {...props} />
-          <DisplayItemsControl {...props} />
-        </InspectorControls>
-        <ServerSideRender block="vk-blocks/post-list" attributes={attributes} />
-      </Fragment>
+				</BaseControl>
+			</PanelBody>
+			<ColumnLayoutControl { ...props } />
+			<DisplayItemsControl { ...props } />
+		</InspectorControls>
+		<ServerSideRender block="vk-blocks/post-list" attributes={ attributes } />
+	</Fragment>
     );
   },
 

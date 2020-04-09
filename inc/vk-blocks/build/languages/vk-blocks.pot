@@ -57,40 +57,40 @@ msgstr ""
 msgid "Select image"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:139
+#: src/blocks/_pro/card/block.js:117
 #: src/components/display-items-control/index.js:26
 msgid "Display item"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:141
+#: src/blocks/_pro/card/block.js:119
 #: src/components/display-items-control/index.js:28
 msgid "Image"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:146
+#: src/blocks/_pro/card/block.js:124
 #: src/blocks/button/block.js:59
 #: src/components/display-items-control/index.js:57
 msgid "Button"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:151
+#: src/blocks/_pro/card/block.js:129
 #: src/components/display-items-control/index.js:73
 msgid "Button option"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:154
+#: src/blocks/_pro/card/block.js:132
 #: src/components/display-items-control/index.js:76
 msgid ""
 "Click each card block to set the target url. You can find the url form at "
 "it's sidebar."
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:160
+#: src/blocks/_pro/card/block.js:138
 #: src/components/display-items-control/index.js:82
 msgid "Button text"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:61
+#: src/blocks/_pro/card/block.js:47
 #: src/components/column-layout-control/index.js:19
 msgid "Card"
 msgstr ""
@@ -792,6 +792,51 @@ msgstr ""
 msgid "Heading %d"
 msgstr ""
 
+#: src/blocks/hidden-extension/index.js:100
+msgid "Hidden ( Screen size : all )"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:106
+msgid "Hidden ( Screen size : xs )"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:112
+msgid "Hidden ( Screen size : sm )"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:118
+msgid "Hidden ( Screen size : md )"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:124
+msgid "Hidden ( Screen size : lg )"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:130
+msgid "Hidden ( Screen size : xl )"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:135
+msgid ""
+"If you want to hide multiple blocks, that first you set to group block and "
+"the next, hide for the that group block."
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:92
+msgid "Hidden Settings"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:96
+msgid "Hidden at screel size"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:98
+msgid ""
+"Note : This function is display hidden only. Actually Block is output to "
+"HTML.Pleade don't use you must not bisible item.Don't use it for blocks you "
+"really don't want to display."
+msgstr ""
+
 #: src/blocks/highlighter/block.js:81
 msgid "Highlight Color"
 msgstr ""
@@ -1073,7 +1118,7 @@ msgstr ""
 msgid "Caption"
 msgstr ""
 
-#: src/components/card-align-control/index.js:22
+#: src/components/card-align-control/index.js:29
 msgid "Align"
 msgstr ""
 

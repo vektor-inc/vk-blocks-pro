@@ -6,7 +6,9 @@ import { capitalize } from "../../blocks/_helper/capitalize";
 export const CardAlignControls = props => {
   const { attributes } = props;
   const shema = JSON.parse(attributes.activeControl);
-  props.schema = shema;
+  // console.log(shema);
+  // console.log(props.schema);
+  // props.schema = shema;
 
   const createAlignControl = label => {
     props.initial = shema[label];

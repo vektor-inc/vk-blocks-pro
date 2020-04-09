@@ -129,9 +129,8 @@ export const OuterBlock = props => {
   return (
     <Fragment>
       {bgImageMobile || bgImageTablet || bgImage ? (
-        <Fragment>
-          <style>
-            {`
+        <style>
+          {`
           @media screen and (max-width: 479px) {
             .${className}{background: linear-gradient(${bgColor}, ${bgColor}), url(${bgImageMobile})};
           }
@@ -142,17 +141,13 @@ export const OuterBlock = props => {
             .${className}{background: linear-gradient(${bgColor}, ${bgColor}), url(${bgImage})}!important;
           }
           `}
-          </style>
-          <OuterBlockInner {...defaultProps} />
-        </Fragment>
+        </style>
       ) : (
-        <OuterBlockInner
-          bgStyle={{
-            background: `linear-gradient(${bgColor}, ${bgColor})`
-          }}
-          {...defaultProps}
-        />
+        <style>
+          {`.${className}{background: linear-gradient(${bgColor}, ${bgColor})}!important;`}
+        </style>
       )}
+      <OuterBlockInner {...defaultProps} />
     </Fragment>
   );
 };
@@ -175,8 +170,7 @@ const OuterBlockInner = props => {
     elm,
     lower_level,
     lowerDividerBgColor,
-    whichSideLower,
-    bgStyle
+    whichSideLower
   } = props;
 
   return (
@@ -192,7 +186,6 @@ const OuterBlockInner = props => {
           classBgPosition
         }
         style={{
-          background: bgStyle,
           border: borderProperty,
           borderRadius: borderRadiusProperty
         }}

@@ -130,33 +130,35 @@ registerBlockType("vk-blocks/outer", {
               label={__("Background Image PC", "vk-blocks")}
               className={"vk_outer_sidebar_bgImage"}
             >
-              <MediaUpload
-                onSelect={value => setAttributes({ bgImage: value.url })}
-                type="image"
-                value={bgImage}
-                render={({ open }) => (
-                  <Fragment>
-                    {bgImage ? (
-                      <Fragment>
-                        <img className={"icon-image"} src={bgImage} />
+              <div className={"vk_outer_sidebar_bgImage_button_container"}>
+                <MediaUpload
+                  onSelect={value => setAttributes({ bgImage: value.url })}
+                  type="image"
+                  value={bgImage}
+                  render={({ open }) => (
+                    <Fragment>
+                      {bgImage ? (
+                        <Fragment>
+                          <img className={"icon-image"} src={bgImage} />
+                          <Button
+                            onClick={deleteImgBtn}
+                            className={"image-button button button-delete"}
+                          >
+                            {__("Delete Image", "vk-blocks")}
+                          </Button>
+                        </Fragment>
+                      ) : (
                         <Button
-                          onClick={deleteImgBtn}
-                          className={"image-button button button-delete"}
+                          onClick={open}
+                          className={"button button-large components-button"}
                         >
-                          {__("Delete Image", "vk-blocks")}
+                          {__("Select image", "vk-blocks")}
                         </Button>
-                      </Fragment>
-                    ) : (
-                      <Button
-                        onClick={open}
-                        className={"button button-large components-button"}
-                      >
-                        {__("Select image", "vk-blocks")}
-                      </Button>
-                    )}
-                  </Fragment>
-                )}
-              />
+                      )}
+                    </Fragment>
+                  )}
+                />
+              </div>
             </BaseControl>
             <BaseControl
               label={__("Background Image Tablet", "vk-blocks")}

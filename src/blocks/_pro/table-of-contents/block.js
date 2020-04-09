@@ -162,7 +162,7 @@ const getHeadings = props => {
       renderHtml: render
     });
 
-    if (anchor === undefined) {
+    if (anchor === undefined && isAllowedBlock(name, headingBlocks)) {
       updateBlockAttributes(clientId, {
         anchor: `vk-htags-${blockIndex}`
       });

@@ -160,7 +160,10 @@ export const returnHtml = (source, attributes, className) => {
         : data.attributes.title;
 
       return (
-        <li className={`${baseClass} ${baseClass}-h-${level}`}>
+        <li
+          className={`${baseClass} ${baseClass}-h-${level}`}
+          key={data.clientId}
+        >
           <a
             href={`#${data.attributes.anchor}`}
             className={`${baseClass}_link`}
@@ -180,7 +183,10 @@ export const returnHtml = (source, attributes, className) => {
           {__("Table of Contents", "vk-blocks")}
         </div>
         <input type="checkbox" id="chck1" />
-        <label className="tab-label vk_tableOfContents_openCloseBtn" htmlFor="chck1" />
+        <label
+          className="tab-label vk_tableOfContents_openCloseBtn"
+          htmlFor="chck1"
+        />
         <ul className={`vk_tableOfContents_list tab_content-${open}`}>
           {returnHtmlContent}
         </ul>

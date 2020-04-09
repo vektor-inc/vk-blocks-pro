@@ -1,7 +1,7 @@
 //Bundle JS
 import "./group-style/block.js";
 import "./list-style/block.js";
-// import "./highlighter/block.js";
+import "./highlighter/block.js";
 import "./staff/block.js";
 import "./spacer/block.js";
 import "./heading/block.js";
@@ -12,14 +12,14 @@ import "./faq/block.js";
 import "./flow/block.js";
 import "./pr-blocks/block.js";
 import "./pr-content/block.js";
-// import "./heading-style/block.js";
+import "./heading-style/block.js";
 import "./image/block.js";
 import "./_pro/card-item/block.js";
 import "./_pro/card/block.js";
 import "./_pro/child-page/block.js";
 import "./_pro/post-list/block.js";
 import "./_pro/outer/block.js";
-// import "./_pro/table-of-contents/block.js";
+import "./_pro/table-of-contents/block.js";
 import "./_pro/step-item/block.js";
 import "./_pro/step/block.js";
 import "./_pro/timeline-item/block.js";

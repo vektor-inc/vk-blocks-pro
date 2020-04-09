@@ -256,7 +256,18 @@ $color-danger: #dd3333;
         width: calc(100% - 30px);
       }
     }
-  }
+}
+
+/*-------------------------------------------*/
+/* edit hidden block class 
+/*-------------------------------------------*/
+.vk_edit_hidden_warning{
+	// border:1px dotted #666;
+	opacity: 0.4;
+}
+.vk_edit_hidden_all{
+  	opacity: 0.2;
+}
 /*-------------------------------------------*/
 /* リストデザイン
 /*-------------------------------------------*/
@@ -580,6 +591,49 @@ ol {
 	}
 }
 
+.alert{
+
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 3px;
+	p {
+		margin-bottom:0;
+	}
+
+  & + &{
+    margin-top: 2em;
+  }
+
+  a{
+    transition: color .3s linear, opacity .3s linear;
+    &:link, &:visited{
+      opacity: .8;
+      text-decoration: underline;
+    }
+    &:hover, &:visited{
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+
+  @each $var in (
+                  (success, #dff0d8,#3c763d,#d6e9c6),
+                  (info, #d9edf7,#31708f,#bce8f1),
+                  (warning, #fcf8e3,#8a6d3b,#faebcc),
+                  (danger, #f2dede,#a94442,#ebccd1),
+  ){
+    $class-name: nth($var, 1);
+    $color-bg: nth($var, 2);
+    $color: nth($var, 3);
+    $color-border :nth($var, 4);
+    &-#{$class-name}{
+      background-color: $color-bg;
+      color:$color;
+      border-color:$color-border;
+    }
+  }
+}
+
 .vk_balloon {
   display: flex;
   align-items: center;
@@ -845,66 +899,6 @@ ol {
 	}
 } // @media only screen and (max-width: 480px) {
 
-.alert{
-
-  padding: 1em;
-  margin: 1em 0;
-  border-radius: 3px;
-	p {
-		margin-bottom:0;
-	}
-
-  & + &{
-    margin-top: 2em;
-  }
-
-  a{
-    transition: color .3s linear, opacity .3s linear;
-    &:link, &:visited{
-      opacity: .8;
-      text-decoration: underline;
-    }
-    &:hover, &:visited{
-      opacity: 1;
-      text-decoration: none;
-    }
-  }
-
-  @each $var in (
-                  (success, #dff0d8,#3c763d,#d6e9c6),
-                  (info, #d9edf7,#31708f,#bce8f1),
-                  (warning, #fcf8e3,#8a6d3b,#faebcc),
-                  (danger, #f2dede,#a94442,#ebccd1),
-  ){
-    $class-name: nth($var, 1);
-    $color-bg: nth($var, 2);
-    $color: nth($var, 3);
-    $color-border :nth($var, 4);
-    &-#{$class-name}{
-      background-color: $color-bg;
-      color:$color;
-      border-color:$color-border;
-    }
-  }
-}
-
-/*      .qaItem
-/*-------------------------------------------*/
-.vk_faq { display:block; overflow:hidden;border-bottom:1px dotted #ccc; padding:0px 0px 25px; margin:25px 0px; width:100%; position: relative; }
-.vk_faq_title,
-.vk_faq_content {
-	border:none;padding-left: 35px;
-	&:before {
-		position: absolute;left:0;font-size:24px;line-height: 105%;
-	}
-}
-.vk_faq_title { margin-bottom:15px;font-size:18px;font-weight:700;
-  &:before { font-family:"areal";content:"Q ";color:#e50000; }
-}
-.vk_faq_content { margin:0px;
-  &:before { content:"A ";color:#337ab7;font-family: "" }
-}
-
 .vk_button {
   margin: 5px 0;
 
@@ -1121,6 +1115,23 @@ $color_dark: #343a40;
 .btn.btn-outline-dark:focus {
   background: $color_dark;
   color: #fff;
+}
+
+/*      .qaItem
+/*-------------------------------------------*/
+.vk_faq { display:block; overflow:hidden;border-bottom:1px dotted #ccc; padding:0px 0px 25px; margin:25px 0px; width:100%; position: relative; }
+.vk_faq_title,
+.vk_faq_content {
+	border:none;padding-left: 35px;
+	&:before {
+		position: absolute;left:0;font-size:24px;line-height: 105%;
+	}
+}
+.vk_faq_title { margin-bottom:15px;font-size:18px;font-weight:700;
+  &:before { font-family:"areal";content:"Q ";color:#e50000; }
+}
+.vk_faq_content { margin:0px;
+  &:before { content:"A ";color:#337ab7;font-family: "" }
 }
 
 //*      .flowBox
@@ -1649,6 +1660,46 @@ $color_key: #337ab7;
 	} //.is-style-vk-heading
 } //.editor-block-list__block
 
+$xs-max: 575.98px;
+$sm-max: 767.98px;
+$md-max: 991.98px;
+$lg-max: 1199.98px;
+
+$sm-min: 576px;
+$md-min: 768px;
+$lg-min: 992px;
+$xl-min: 1200px;
+
+.vk_hidden {
+	display: none !important;
+	color: var(--blue);
+	@media (max-width: $xs-max) {
+		&-xs {
+			display: none !important;
+		}
+	}
+	@media (min-width: $sm-min) and (max-width: $sm-max) {
+		&-sm {
+			display: none !important;
+		}
+	}
+	@media (min-width: $md-min) and (max-width: $md-max) {
+		&-md {
+			display: none !important;
+		}
+	}
+	@media (min-width: $lg-min) and (max-width: $lg-max) {
+		&-lg {
+			display: none !important;
+		}
+	}
+	@media (min-width: $xl-min) {
+		&-xl {
+			display: none !important;
+		}
+	}
+}
+
 .is-style-vk-image {
     &-border {
         img {
@@ -1935,14 +1986,6 @@ $color_key: #337ab7;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-.vk_table-col-overflow {
-  white-space: nowrap !important;
-}
-/*# sourceMappingURL=style.scss.map */
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
 $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "serif";
 
 // Layout
@@ -2119,6 +2162,10 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+.vk_table-col-overflow {
+  white-space: nowrap !important;
+}
+/*# sourceMappingURL=style.scss.map */
 
 /*-------------------------------------------*/
 /* CSS
@@ -2138,6 +2185,10 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
     }
   }
 }
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 
 .vk_childPage {
 	margin-top: 2.5rem;
@@ -2231,6 +2282,7 @@ $padding-xl: 3.5em;
 		position: absolute;
 		left: 0;
 		width: 100%;
+		pointer-events: none; //上に重なるとボタンなどのリンクが押せなくなるので追加
 	}
 }
 .vk_outer_separator-position-upper {
@@ -2321,124 +2373,139 @@ $color-danger: #b52727;
 $toc-left-margin: 1rem;
 
 .vk_tableOfContents {
-	margin-top: 3.5em;
-	margin-bottom: 3.5em;
-	position: relative;
-	&-style-default {
-		border: 3px solid rgba(0, 0, 0, 0.04);
-		box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 1);
-		background-color: rgba(0, 0, 0, 0.015);
-		padding: 2rem 3rem;
-	}
-	&_title {
-		text-align: center;
-		font-size: 1.2em;
-		letter-spacing: 0.5em;
-		margin-left: 0.5em;
-	}
-	li {
-		margin: 0;
-	}
-	&_list {
-		padding: 0;
-		margin: 0;
-		&_item {
-			list-style: none;
-			border-bottom: 1px solid #e5e5e5;
-			padding: 0.8rem 0;
-			&-h-2 {
-				// padding-left:$toc-left-margin;
-			}
-			&-h-3 {
-				padding-left: $toc-left-margin * 1;
-			}
-			&-h-4 {
-				padding-left: $toc-left-margin * 2;
-			}
-			&-h-5 {
-				padding-left: $toc-left-margin * 3;
-			}
-			&-h-6 {
-				padding-left: $toc-left-margin * 4;
-			}
-			&_link {
-				color: #333;
-				border-bottom: 1px solid #ccc;
-				&:hover {
-					text-decoration: none;
-					border-bottom: none;
-				}
-			}
-		}
-	}
-	input {
-		position: absolute;
-		opacity: 0;
-		z-index: -1;
-	}
-	&_openCloseBtn {
-		cursor: pointer;
-		font-size: 0.8em;
-		letter-spacing: 2px;
-		line-height: 1;
-		text-align: center;
-		display: block;
-		margin: 0.5em auto 0;
-		width: 6em;
-		border: 1px solid #999;
-		padding: 3px 1em 2px;
-		/* Icon */
-		&::before {
-			content: "CLOSE";
-			color: #666;
-			font-size: 0.8em;
+  margin-top: 3.5em;
+  margin-bottom: 3.5em;
+  position: relative;
+  &-style-default {
+    border: 3px solid rgba(0, 0, 0, 0.04);
+    box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 1);
+    background-color: rgba(0, 0, 0, 0.015);
+    padding: 2rem 3rem;
+  }
+  &_title {
+    text-align: center;
+    font-size: 1.2em;
+    letter-spacing: 0.5em;
+    margin-left: 0.5em;
+  }
+  li {
+    margin: 0;
+  }
+  &_list {
+    padding: 0;
+    margin: 0;
+    &_item {
+      list-style: none;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 0.8rem 0;
+      &-h-2 {
+        // padding-left:$toc-left-margin;
+      }
+      &-h-3 {
+        padding-left: $toc-left-margin * 1;
+      }
+      &-h-4 {
+        padding-left: $toc-left-margin * 2;
+      }
+      &-h-5 {
+        padding-left: $toc-left-margin * 3;
+      }
+      &-h-6 {
+        padding-left: $toc-left-margin * 4;
+      }
+      &_link {
+        color: #333;
+        border-bottom: 1px solid #ccc;
+        &:hover {
+          text-decoration: none;
+          border-bottom: none;
+        }
+      }
+    }
+  }
+  input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+  &_openCloseBtn {
+    cursor: pointer;
+    font-size: 0.8em;
+    letter-spacing: 2px;
+    line-height: 1;
+    text-align: center;
+    display: block;
+    margin: 0.5em auto 0;
+    width: 6em;
+    border: 1px solid #999;
+    padding: 3px 1em 2px;
+  }
+  .button_status-open {
+    &::before {
+      content: "CLOSE";
+    }
+  }
+  .button_status-close {
+    &::before {
+      content: "OPEN";
+    }
+  }
+  .button_status {
+    &::before {
+      color: #666;
+      font-size: 0.8em;
 
-			border-radius: 2px;
-			display: inline-block;
-			text-align: center;
-			margin: auto;
-			width: auto;
-			transition: all 0.35s;
-		}
-	}
-	/* Accordion styles */
-	.tab {
-		width: 100%;
-		overflow: hidden;
-		&_content-open {
-			max-height: 100vh;
-			padding: 1em;
-			transition: all 0.35s;
-		}
-		&_content-close {
-			max-height: 0;
-			padding: 0 1em;
-			transition: all 0.35s;
-		}
-		&-close {
-			display: flex;
-			justify-content: flex-end;
-			padding: 1em;
-			font-size: 0.75em;
-			cursor: pointer;
-		}
-	}
-	// :checked
-	input:checked {
-		~ .vk_tableOfContents_openCloseBtn {
-			&::before {
-				content: "OPEN";
-			}
-		}
-		~ .tab_content-open {
-			max-height: 0;
-			padding: 0 1em;
-		}
-		~ .tab_content-close {
-			max-height: 100vh;
-			padding: 1em;
-		}
-	}
+      border-radius: 2px;
+      display: inline-block;
+      text-align: center;
+      margin: auto;
+      width: auto;
+      transition: all 0.35s;
+    }
+  }
+  /* Accordion styles */
+  .tab {
+    width: 100%;
+    overflow: hidden;
+    &_content-open {
+      max-height: 100vh;
+      padding: 1em;
+      transition: all 0.35s;
+    }
+    &_content-close {
+      max-height: 0;
+      padding: 0 1em;
+      transition: all 0.35s;
+    }
+    &-close {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1em;
+      font-size: 0.75em;
+      cursor: pointer;
+    }
+  }
+  // :checked
+  input:checked {
+    ~ .button_status-open {
+      &::before {
+        content: "OPEN";
+      }
+    }
+    ~ .button_status-close {
+      &::before {
+        content: "CLOSE";
+      }
+    }
+    ~ .tab_content-open {
+      max-height: 0;
+      padding: 0 1em;
+    }
+    ~ .tab_content-close {
+      max-height: 100vh;
+      padding: 1em;
+    }
+  }
 }
 
 /*-------------------------------------------*/

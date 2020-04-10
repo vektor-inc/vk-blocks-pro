@@ -19,12 +19,18 @@ if ( ! function_exists( 'vkblocks_add_styles' ) ) {
 if ( ! function_exists( 'vkblocks_enqueue_point' ) ) {
 	function vkblocks_enqueue_point() {
 		$hook_point = apply_filters( 'vkblocks_enqueue_point', 'wp_enqueue_scripts' );
+		// Front css
 		add_action( $hook_point, 'vkblocks_add_styles' );
+
+		// Admin css
+		if ( is_admin() ) {
+			add_action( 'enqueue_block_assets', 'vkblocks_add_styles' );
+		}
 	};
 }
 
 /**
- * Reason of Using through the after_setup_theme is 
+ * Reason of Using through the after_setup_theme is
  * to be able to change the action hook point of css load from theme..
  */
 add_action( 'after_setup_theme', 'vkblocks_enqueue_point' );
@@ -42,6 +48,14 @@ function vkblocks_blocks_assets() {
 			'wp-i18n',
 			'wp-element',
 			'wp-editor',
+			'wp-hooks',
+			'wp-compose',
+			'wp-edit-post',
+			'wp-components',
+			'wp-data',
+			'wp-plugins',
+			'wp-hooks',
+			'wp-api-fetch',
 		);
 	} else {
 		$dependency = array(
@@ -49,6 +63,14 @@ function vkblocks_blocks_assets() {
 			'wp-i18n',
 			'wp-element',
 			'wp-editor',
+			'wp-hooks',
+			'wp-compose',
+			'wp-edit-post',
+			'wp-components',
+			'wp-data',
+			'wp-plugins',
+			'wp-hooks',
+			'wp-api-fetch',
 		);
 	}
 	wp_register_script(
@@ -77,6 +99,26 @@ function vkblocks_blocks_assets() {
 	if ( defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, '5.0', '>=' ) ) {
 
 		$arr = array( 'alert', 'balloon', 'button', 'faq', 'flow', 'pr-blocks', 'pr-content', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents', 'highlighter', 'timeline', 'timeline-item', 'step', 'step-item', 'post-list', 'list-style', 'group-style', 'child-page', 'card', 'card-item' );// REPLACE-FLAG : このコメントは削除しないで下さい。wp-create-gurten-template.shで削除する基準として左の[//REPLACE-FLAG]を使っています。
+		$common_attributes = array(
+			'vkb_hidden' => array(
+				'type'    => 'boolean',
+				'default' => false),
+			'vkb_hidden_xl' => array(
+				'type'    => 'boolean',
+				'default' => false),
+			'vkb_hidden_lg' => array(
+				'type'    => 'boolean',
+				'default' => false),
+			'vkb_hidden_md' => array(
+				'type'    => 'boolean',
+				'default' => false),
+			'vkb_hidden_sm' => array(
+				'type'    => 'boolean',
+				'default' => false),
+			'vkb_hidden_xs' => array(
+				'type'    => 'boolean',
+				'default' => false),
+			);
 
 		foreach ( $arr as $value ) {
 
@@ -88,7 +130,8 @@ function vkblocks_blocks_assets() {
 						// 'style'        => 'vk-blocks-build-css',
 						'editor_style'    => 'vk-blocks-build-editor-css',
 						'editor_script'   => 'vk-blocks-build-js',
-						'attributes'      => array(
+						'attributes'      => array_merge(
+							array(
 							'style'      => array(
 								'type'    => 'string',
 								'default' => '',
@@ -97,22 +140,27 @@ function vkblocks_blocks_assets() {
 								'type'    => 'string',
 								'default' => '',
 							),
-						),
+							'open'       => array(
+								'type'    => 'string',
+								'default' => 'open',
+							),
+						),$common_attributes),
 						'render_callback' => function ( $attributes ) {
-							return $attributes['renderHtml'];
+							if ( $attributes['renderHtml'] ) {
+								return $attributes['renderHtml'];
+							} else {
+								return '<div><div class="vk_tableOfContents_title">' . __( 'Table of Contents', 'vk-blocks' ) . '</div></div>';
+							}
 						},
 					)
 				);
-
-				if ( ! is_admin() ) {
-					wp_enqueue_script( 'vk-blocks-toc-helper-js', VK_BLOCKS_URL . 'build/viewHelper.js', array(), VK_BLOCKS_VERSION, true );
-				}
 			} elseif ( $value == 'post-list' ) {
 
 					register_block_type(
 						'vk-blocks/' . $value,
 						array(
-							'attributes'      => array(
+							'attributes'      => array_merge(
+							array(
 								'name'              => array(
 									'type' => 'string',
 								),
@@ -196,7 +244,19 @@ function vkblocks_blocks_assets() {
 									'type'    => 'string',
 									'default' => '[]',
 								),
-							),
+								'orderby'           => array(
+									'type'    => 'string',
+									'default' => 'date',
+								),
+								'offset'            => array(
+									'type'    => 'number',
+									'default' => 0,
+								),
+								'selfIgnore'        => array(
+									'type'    => 'boolean',
+									'default' => false,
+								),
+							),$common_attributes),
 							// 'style'           => 'vk-blocks-build-css',
 							'editor_style'    => 'vk-blocks-build-editor-css',
 							'editor_script'   => 'vk-blocks-build-js',
@@ -208,7 +268,8 @@ function vkblocks_blocks_assets() {
 				register_block_type(
 					'vk-blocks/' . $value,
 					array(
-						'attributes'      => array(
+						'attributes'      => array_merge(
+							array(
 							'selectId'                   => array(
 								'type' => 'number',
 							),
@@ -296,7 +357,7 @@ function vkblocks_blocks_assets() {
 								'type'    => 'string',
 								'default' => '[]',
 							),
-						),
+						),$common_attributes),
 						// 'style'           => 'vk-blocks-build-css',
 						'editor_style'    => 'vk-blocks-build-editor-css',
 						'editor_script'   => 'vk-blocks-build-js',
@@ -307,7 +368,7 @@ function vkblocks_blocks_assets() {
 
 				register_block_type(
 					'vk-blocks/' . $value,
-					array(
+					array(	
 						// 'style'         => 'vk-blocks-build-css',
 						'editor_style'  => 'vk-blocks-build-editor-css',
 						'editor_script' => 'vk-blocks-build-js',
@@ -325,21 +386,44 @@ if ( ! function_exists( 'vkblocks_blocks_categories' ) ) {
 	// Add Block Category,
 	function vkblocks_blocks_categories( $categories, $post ) {
 		global $vk_blocks_prefix;
-		return array_merge(
-			$categories,
-			array(
+
+		if ( ! vk_is_block_category_exist( $categories, 'vk-blocks-cat' ) ) {
+			$categories = array_merge(
+				$categories,
 				array(
-					'slug'  => 'vk-blocks-cat',
-					'title' => $vk_blocks_prefix . __( 'Blocks', 'vk-blocks' ),
-					'icon'  => '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z" /><path d="M19 13H5v-2h14v2z" /></svg>',
-				),
+					array(
+						'slug'  => 'vk-blocks-cat',
+						'title' => $vk_blocks_prefix . __( 'Blocks', 'vk-all-in-one-expansion-unit' ),
+						'icon'  => '',
+					),
+				)
+			);
+		}
+		if ( ! vk_is_block_category_exist( $categories, 'vk-blocks-cat-layout' ) ) {
+			$categories = array_merge(
+				$categories,
 				array(
-					'slug'  => 'vk-blocks-cat-layout',
-					'title' => $vk_blocks_prefix . __( 'Blocks Layout', 'vk-blocks' ),
-					'icon'  => '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z" /><path d="M19 13H5v-2h14v2z" /></svg>',
-				),
-			)
-		);
+					array(
+						'slug'  => 'vk-blocks-cat-layout',
+						'title' => $vk_blocks_prefix . __( 'Blocks Layout', 'vk-all-in-one-expansion-unit' ),
+						'icon'  => '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z" /><path d="M19 13H5v-2h14v2z" /></svg>',
+					),
+				)
+			);
+		}
+		// if ( ! vk_is_block_category_exist( $categories, 'vk-blocks-cat-widget' ) ) {
+		// $categories = array_merge(
+		// $categories,
+		// array(
+		// array(
+		// 'slug'  => 'vk-blocks-cat-widget',
+		// 'title' => $vk_blocks_prefix . __( 'Blocks Widget', 'vk-all-in-one-expansion-unit' ),
+		// 'icon'  => '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z" /><path d="M19 13H5v-2h14v2z" /></svg>',
+		// ),
+		// )
+		// );
+		// }
+		return $categories;
 	}
 	add_filter( 'block_categories', 'vkblocks_blocks_categories', 10, 2 );
 }

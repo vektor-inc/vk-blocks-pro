@@ -1,10 +1,14 @@
 module.exports = {
-  entry: "./src/bundle.js",
+  entry: "./src/blocks/bundle.js",
   output: {
     filename: "./inc/vk-blocks/build/block-build.js"
   },
   module: {
     rules: [
+      {
+        test: /\.svg$/,
+        loader: "babel-loader!svg-react-loader"
+      },
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,

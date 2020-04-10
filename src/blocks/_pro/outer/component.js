@@ -3,17 +3,12 @@ import { componentDivider } from "./component-divider";
 const { InnerBlocks } = wp.editor;
 import hex2rgba from "../../_helper/hex-to-rgba";
 
-export const OuterBlock = props => {
+export const OuterBlock = (props) => {
   let {
-    bgColor,
-    bgImage,
-    bgImageTablet,
-    bgImageMobile,
     bgPosition,
     outerWidth,
     padding_left_and_right,
     padding_top_and_bottom,
-    opacity,
     upper_level,
     lower_level,
     upperDividerBgColor,
@@ -23,7 +18,7 @@ export const OuterBlock = props => {
     borderStyle,
     borderColor,
     borderRadius,
-    anchor
+    anchor,
   } = props.attributes;
 
   let className = props.className;
@@ -42,14 +37,6 @@ export const OuterBlock = props => {
 
   //幅のクラス切り替え
   classWidth = ` vk_outer-width-${outerWidth}`;
-
-  //hexからrgbaに変換
-  if (bgColor) {
-    bgColor = hex2rgba(bgColor, opacity);
-  } else {
-    //背景色をクリアした時は、白に変更
-    bgColor = hex2rgba("#fff", opacity);
-  }
 
   //classBgPositionのクラス切り替え
   if (bgPosition === "parallax") {
@@ -123,36 +110,132 @@ export const OuterBlock = props => {
     elm,
     lower_level,
     lowerDividerBgColor,
-    whichSideLower
+    whichSideLower,
   };
 
   return (
     <Fragment>
-      {bgImageMobile || bgImageTablet || bgImage ? (
-        <style>
-          {`
-          @media screen and (max-width: 479px) {
-            .${className}{background: linear-gradient(${bgColor}, ${bgColor}), url(${bgImageMobile})};
-          }
-          @media screen and (min-width: 480px) {
-            .${className}{background: linear-gradient(${bgColor}, ${bgColor}), url(${bgImageTablet})}!important;
-          }
-          @media screen and (min-width: 1280px) {
-            .${className}{background: linear-gradient(${bgColor}, ${bgColor}), url(${bgImage})}!important;
-          }
-          `}
-        </style>
-      ) : (
-        <style>
-          {`.${className}{background: linear-gradient(${bgColor}, ${bgColor})}!important;`}
-        </style>
-      )}
+      <GenerateMediaqueryCss {...props} />
       <OuterBlockInner {...defaultProps} />
     </Fragment>
   );
 };
 
-const OuterBlockInner = props => {
+const GenerateMediaqueryCss = (props) => {
+  const { attributes, className } = props;
+  const {
+    bgImageMobile,
+    bgImageTablet,
+    bgImage,
+    bgColor,
+    opacity,
+  } = attributes;
+
+  const mobileViewport = "max-width: 480px";
+  const tabletViewport = "min-width: 480px";
+  const pcViewport = "min-width: 1280px";
+  const underPcViewport = "max-width: 1280px";
+
+  let bgColorWOpacity;
+
+  //hexからrgbaに変換
+  if (bgColor) {
+    bgColorWOpacity = hex2rgba(bgColor, opacity);
+  } else {
+    //背景色をクリアした時は、白に変更
+    bgColorWOpacity = hex2rgba("#fff", opacity);
+  }
+
+  //moible only
+  if (bgImageMobile && !bgImageTablet && !bgImage) {
+    return (
+      <style>{`.${className}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})}!important;`}</style>
+    );
+  }
+  //tablet only
+  if (!bgImageMobile && bgImageTablet && !bgImage) {
+    return (
+      <style>{`.${className}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})}!important;`}</style>
+    );
+  }
+  //pc only
+  if (!bgImageMobile && !bgImageTablet && bgImage) {
+    return (
+      <style>{`.${className}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})}!important;`}</style>
+    );
+  }
+  //pc -mobile
+  if (bgImageMobile && !bgImageTablet && bgImage) {
+    return (
+      <style>
+        {`
+          @media screen and (${underPcViewport}) {
+            .${className}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})}!important;
+          }
+          @media screen and (${pcViewport}) {
+            .${className}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})}!important;
+          }
+          `}
+      </style>
+    );
+  }
+  //pc -tablet
+  if (!bgImageMobile && bgImageTablet && bgImage) {
+    return (
+      <style>
+        {`
+          @media screen and (${underPcViewport}) {
+            .${className}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})}!important;
+          }
+          @media screen and (${pcViewport}) {
+            .${className}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})}!important;
+          }
+          `}
+      </style>
+    );
+  }
+  //tablet - mobile
+  if (bgImageMobile && bgImageTablet && !bgImage) {
+    return (
+      <style>
+        {`
+          @media screen and (${mobileViewport}) {
+            .${className}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})}!important;
+          }
+          @media screen and (${tabletViewport}) {
+            .${className}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})}!important;
+          }
+        `}
+      </style>
+    );
+  }
+  //pc -tablet - mobile
+  if (bgImageMobile && bgImageTablet && bgImage) {
+    return (
+      <style>
+        {`
+        @media screen and (${mobileViewport}) {
+          .${className}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})}!important;
+        }
+        @media screen and (${tabletViewport}) {
+          .${className}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})}!important;
+        }
+        @media screen and (${pcViewport}) {
+          .${className}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})}!important;
+        }
+        `}
+      </style>
+    );
+  }
+  //no background image
+  if (!bgImageMobile && !bgImageTablet && !bgImage) {
+    return (
+      <style>{`.${className}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity})}!important;`}</style>
+    );
+  }
+};
+
+const OuterBlockInner = (props) => {
   const {
     anchor,
     className,
@@ -170,7 +253,7 @@ const OuterBlockInner = props => {
     elm,
     lower_level,
     lowerDividerBgColor,
-    whichSideLower
+    whichSideLower,
   } = props;
 
   return (
@@ -187,7 +270,7 @@ const OuterBlockInner = props => {
         }
         style={{
           border: borderProperty,
-          borderRadius: borderRadiusProperty
+          borderRadius: borderRadiusProperty,
         }}
       >
         {componentDivider(

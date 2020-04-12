@@ -166,8 +166,6 @@ msgstr ""
 
 #: src/blocks/_pro/outer/block.js:190
 #: src/blocks/button/block.js:178
-#: src/blocks/button/block.js:200
-#: src/components/advanced-button-group-control/index.js:29
 msgid "Normal"
 msgstr ""
 
@@ -512,14 +510,10 @@ msgid "Button Size:"
 msgstr ""
 
 #: src/blocks/button/block.js:170
-#: src/blocks/button/block.js:151
-#: src/components/advanced-button-group-control/index.js:25
 msgid "Large"
 msgstr ""
 
 #: src/blocks/button/block.js:186
-#: src/blocks/button/block.js:208
-#: src/components/advanced-button-group-control/index.js:33
 msgid "Small"
 msgstr ""
 

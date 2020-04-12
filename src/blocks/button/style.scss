@@ -1,6 +1,6 @@
 .vk_button {
 	margin: 5px 0;
-
+	text-align: center; /* テキストのみの時のセンター揃え */
 	&-color-custom {
 		a:hover {
 			opacity: 0.8;
@@ -30,6 +30,14 @@
 		min-width: 100px;
 		min-height: 30px;
 
+		&-type-text {
+			box-shadow: none;
+			&:hover {
+				background: none;
+				box-shadow: none;
+			}
+		}
+
 		&.btn {
 			// .btn指定がないと管理画面で標準の .btn の指定に負ける
 			padding-top: 0.7em;
@@ -56,6 +64,12 @@
 	.editor-rich-text {
 		// Font Awesomeアイコンが管理画面側で改行されないために inline-block を指定
 		display: inline-block;
+	}
+}
+
+.vk_button-color-custom {
+	.vk_button_link-type-text:hover {
+		box-shadow: none;
 	}
 }
 

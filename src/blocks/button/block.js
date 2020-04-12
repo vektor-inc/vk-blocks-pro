@@ -159,8 +159,8 @@ registerBlockType('vk-blocks/button', {
 					onChange={ (checked) => setAttributes({buttonTarget: checked}) }
                         />
 
-				<h4 className="mb-1">{ __('Button Size:', 'vk-blocks') }</h4>
-				<ButtonGroup className="block-editor-color-gradient-control__button-tabs">
+				<h4 className="mt-0 mb-2">{ __('Button Size:', 'vk-blocks') }</h4>
+				<ButtonGroup className="mb-3">
 					<Button
 						isSmall
 						isPrimary={ buttonSize === 'lg' }
@@ -187,27 +187,71 @@ registerBlockType('vk-blocks/button', {
 					</Button>
 				</ButtonGroup>
 
-				<RadioControl
-					label={ __('Button Position:', 'vk-blocks') }
-					selected={ buttonAlign }
-					options={ [
-                                {label: __('Left', 'vk-blocks'), value: 'left'},
-                                {label: __('Center', 'vk-blocks'), value: 'center'},
-                                {label: __('Right', 'vk-blocks'), value: 'right'},
-                                {label: __('Block', 'vk-blocks'), value: 'block'},
-                            ] }
-					onChange={ (value) => setAttributes({buttonAlign: value}) }
-                        />
-				<RadioControl
-					label={ __('Button Style:', 'vk-blocks') }
-					selected={ buttonType }
-					options={ [
-                                {label: __('Solid color', 'vk-blocks'), value: '0'},
-                                {label: __('No background', 'vk-blocks'), value: '1'},
-                            ] }
-					help={ __('If you select "No background", that you need to select a Custom Color.', 'vk-blocks') }
-					onChange={ (value) => setAttributes({buttonType: value}) }
-                        />
+				<h4 className="mt-0 mb-2">{ __('Button Position:', 'vk-blocks') }</h4>
+				<ButtonGroup className="mb-3">
+					<Button
+						isSmall
+						isPrimary={ buttonAlign === 'left' }
+						isSecondary={ buttonAlign !== 'left' }
+						onClick={ () => setAttributes({buttonAlign: 'left'}) }
+						>
+						{ __('Left', 'vk-blocks') }
+					</Button>
+					<Button
+						isSmall
+						isPrimary={ buttonAlign === 'center' }
+						isSecondary={ buttonAlign !== 'center' }
+						onClick={ () => setAttributes({buttonAlign: 'center'}) }
+						>
+						{ __('Center', 'vk-blocks') }
+					</Button>
+					<Button
+						isSmall
+						isPrimary={ buttonAlign === 'right' }
+						isSecondary={ buttonAlign !== 'right' }
+						onClick={ () => setAttributes({buttonAlign: 'right'}) }
+						>
+						{ __('Right', 'vk-blocks') }
+					</Button>
+					<Button
+						isSmall
+						isPrimary={ buttonAlign === 'block' }
+						isSecondary={ buttonAlign !== 'block' }
+						onClick={ () => setAttributes({buttonAlign: 'block'}) }
+						>
+						{ __('Block', 'vk-blocks') }
+					</Button>
+				</ButtonGroup>
+
+				<h4 className="mt-0 mb-2">{ __('Button Style:', 'vk-blocks') }</h4>
+				<ButtonGroup className="mb-2">
+					<Button
+						isSmall
+						isPrimary={ buttonType === '0' }
+						isSecondary={ buttonType !== '0' }
+						onClick={ () => setAttributes({buttonType: '0'}) }
+						>
+						{ __('Solid color', 'vk-blocks') }
+					</Button>
+					<Button
+						isSmall
+						isPrimary={ buttonType === '1' }
+						isSecondary={ buttonType !== '1' }
+						onClick={ () => setAttributes({buttonType: '1'}) }
+						>
+						{ __('No background', 'vk-blocks') }
+					</Button>
+					<Button
+						isSmall
+						isPrimary={ buttonType === '2' }
+						isSecondary={ buttonType !== '2' }
+						onClick={ () => setAttributes({buttonType: '2'}) }
+						>
+						{ __('Text only', 'vk-blocks') }
+					</Button>
+				</ButtonGroup>
+				<p className="mb-3">{ __('If you select "No background", that you need to select a Custom Color.', 'vk-blocks') }</p>
+
 				<RadioControl
 					label={ __('Default Color:', 'vk-blocks') }
 					selected={ buttonColor }

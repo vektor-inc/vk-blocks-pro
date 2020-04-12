@@ -8,7 +8,7 @@ import {deprecated} from "./deprecated/deprecated";
 
 const {__} = wp.i18n; // Import __() from wp.i18n
 const {registerBlockType} = wp.blocks; // Import registerBlockType() from wp.blocks
-const {RadioControl, PanelBody, BaseControl, CheckboxControl, TextControl, Dashicon, IconButton,} = wp.components;
+const {RadioControl, PanelBody, BaseControl, CheckboxControl, TextControl, Dashicon, IconButton, ButtonGroup, Button } = wp.components;
 const {Fragment} = wp.element;
 const {RichText, InspectorControls,ColorPalette, URLInput,} = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const BlockIcon = (
@@ -158,16 +158,35 @@ registerBlockType('vk-blocks/button', {
 					checked={ buttonTarget }
 					onChange={ (checked) => setAttributes({buttonTarget: checked}) }
                         />
-				<RadioControl
-					label={ __('Button Size:', 'vk-blocks') }
-					selected={ buttonSize }
-					options={ [
-                                {label: __('Large', 'vk-blocks'), value: 'lg'},
-                                {label: __('normal', 'vk-blocks'), value: 'md'},
-                                {label: __('Small', 'vk-blocks'), value: 'sm'},
-                            ] }
-					onChange={ (value) => setAttributes({buttonSize: value}) }
-                        />
+
+				<h4 className="mb-1">{ __('Button Size:', 'vk-blocks') }</h4>
+				<ButtonGroup className="block-editor-color-gradient-control__button-tabs">
+					<Button
+						isSmall
+						isPrimary={ buttonSize === 'lg' }
+						isSecondary={ buttonSize !== 'lg' }
+						onClick={ () => setAttributes({buttonSize: 'lg'}) }
+						>
+						{ __('Large', 'vk-blocks') }
+					</Button>
+					<Button
+						isSmall
+						isPrimary={ buttonSize === 'md' }
+						isSecondary={ buttonSize !== 'md' }
+						onClick={ () => setAttributes({buttonSize: 'md'}) }
+						>
+						{ __('Normal', 'vk-blocks') }
+					</Button>
+					<Button
+						isSmall
+						isPrimary={ buttonSize === 'sm' }
+						isSecondary={ buttonSize !== 'sm' }
+						onClick={ () => setAttributes({buttonSize: 'sm'}) }
+						>
+						{ __('Small', 'vk-blocks') }
+					</Button>
+				</ButtonGroup>
+
 				<RadioControl
 					label={ __('Button Position:', 'vk-blocks') }
 					selected={ buttonAlign }

@@ -18,15 +18,15 @@ msgstr ""
 msgid "Font Awesome icon list"
 msgstr ""
 
-#: src/blocks/_pro/card-item/block.js:34
+#: src/blocks/_pro/card-item/block.js:42
 msgid "Card Item"
 msgstr ""
 
-#: src/blocks/_pro/card-item/block.js:47
+#: src/blocks/_pro/card-item/block.js:55
 msgid "URL"
 msgstr ""
 
-#: src/blocks/_pro/card-item/block.js:52
+#: src/blocks/_pro/card-item/block.js:60
 msgid "https://example.com"
 msgstr ""
 

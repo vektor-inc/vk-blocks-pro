@@ -1,6 +1,5 @@
 /**
  * outer block type
- *
  */
 import { OuterBlock } from "./component";
 import { schema } from "./schema";
@@ -60,9 +59,6 @@ registerBlockType("vk-blocks/outer", {
     const {
       bgColor,
       defaultBgColor,
-      bgImage,
-      bgImageTablet,
-      bgImageMobile,
       bgPosition,
       outerWidth,
       padding_left_and_right,

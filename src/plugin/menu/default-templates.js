@@ -112,20 +112,14 @@ const defaultTemplates = [
     icon: "",
 	content: `
 	<!-- wp:vk-blocks/outer {"outerWidth":"full"} -->
-	<div class="wp-block-vk-blocks-outer vk_outer vk_outer-width-full vk_outer-paddingLR-none vk_outer-paddingVertical-use vk_outer-bgPosition-normal" style="background:linear-gradient(rgba(243, 244, 245, 0.5), rgba(243, 244, 245, 0.5));border:0px none #000;border-radius:0px"><div class="vk_outer_container"><!-- wp:vk-blocks/heading {"align":"center","titleStyle":"plain","outerMarginBottom":3,"titleMarginBottom":0} -->
-	<div class="wp-block-vk-blocks-heading vk_heading vk_heading-style-plain" style="margin-bottom:3rem"><h2 style="color:#000000;font-size:2rem;margin-bottom:0rem;text-align:center" class="vk_heading_title vk_heading_title-style-plain" placeholder="タイトルを入力"><strong>お知らせ</strong></h2><p style="color:#000000;font-size:1.2rem;text-align:center" class="vk_heading_subtext vk_heading_subtext-style-plain" placeholder="サブテキストを入力">Information</p></div>
-	<!-- /wp:vk-blocks/heading -->
-	
-	<!-- wp:latest-posts {"displayPostDate":true} /-->
-	
-	<!-- wp:vk-blocks/spacer {"unit":"rem","pc":1,"tablet":1,"mobile":1} -->
-	<div class="vk_spacer"><div class="vk_spacer-display-pc" style="height:1rem"></div><div class="vk_spacer-display-tablet" style="height:1rem"></div><div class="vk_spacer-display-mobile" style="height:1rem"></div></div>
-	<!-- /wp:vk-blocks/spacer -->
-	
-	<!-- wp:vk-blocks/button {"buttonUrl":"https://example.com/","buttonColorCustom":"#cf2e2e","buttonAlign":"right","fontAwesomeIconBefore":"fas fa-arrow-circle-right"} -->
-	<div class="wp-block-vk-blocks-button vk_button vk_button-color-custom vk_button-align-right"><a href="https://example.com/" id="vk_button_link" style="background-color:#cf2e2e;border:1px solid #cf2e2e" class="btn vk_button_link btn-primary btn-md" role="button" aria-pressed="true" rel="noopener noreferrer"><i class="fas fa-arrow-circle-right vk_button_link_before"></i><span class="vk_button_link_txt">一覧を見る</span></a></div>
-	<!-- /wp:vk-blocks/button --></div></div>
-	<!-- /wp:vk-blocks/outer -->
+<div class="wp-block-vk-blocks-outer vk_outer vk_outer-width-full vk_outer-paddingLR-none vk_outer-paddingVertical-use vk_outer-bgPosition-normal" style="background:linear-gradient(rgba(243, 244, 245, 0.5), rgba(243, 244, 245, 0.5));border:0px none #000;border-radius:0px"><div class="vk_outer_container"><!-- wp:vk-blocks/heading {"align":"center","titleStyle":"plain","outerMarginBottom":2,"titleMarginBottom":0} -->
+<div class="wp-block-vk-blocks-heading" id="vk-htags-a181b726-7749-4bd8-9887-0306c0bc7bd5"><div class="vk_heading vk_heading-style-plain" style="margin-bottom:2rem"><h2 style="color:#000000;font-size:2rem;margin-bottom:0rem;text-align:center" class="vk_heading_title vk_heading_title-style-plain" placeholder="タイトルを入力"><strong>お知らせ</strong></h2><p style="color:#000000;font-size:1.2rem;text-align:center" class="vk_heading_subtext vk_heading_subtext-style-plain" placeholder="サブテキストを入力">Information</p></div></div>
+<!-- /wp:vk-blocks/heading -->
+
+<!-- wp:vk-blocks/post-list {"name":"vk-blocks/post-list","layout":"postListText"} /-->
+
+</div></div>
+<!-- /wp:vk-blocks/outer -->
 	`
 },
 {
@@ -139,8 +133,8 @@ const defaultTemplates = [
 	
 	<!-- wp:vk-blocks/post-list {"name":"vk-blocks/post-list"} /-->
 	
-	<!-- wp:vk-blocks/button {"buttonUrl":"https://example.com/","buttonColorCustom":"#cf2e2e","buttonAlign":"right","fontAwesomeIconBefore":"fas fa-arrow-circle-right"} -->
-	<div class="wp-block-vk-blocks-button vk_button vk_button-color-custom vk_button-align-right"><a href="https://example.com/" id="vk_button_link" style="background-color:#cf2e2e;border:1px solid #cf2e2e" class="btn vk_button_link btn-primary btn-md" role="button" aria-pressed="true" rel="noopener noreferrer"><i class="fas fa-arrow-circle-right vk_button_link_before"></i><span class="vk_button_link_txt">一覧を見る</span></a></div>
+	<!-- wp:vk-blocks/button {"buttonUrl":"https://example.com/","buttonSize":"sm","buttonAlign":"right","fontAwesomeIconBefore":"fas fa-arrow-circle-right"} -->
+	<div class="wp-block-vk-blocks-button vk_button vk_button-align-right"><a href="https://example.com/" id="vk_button_link" class="btn vk_button_link btn-sm btn-primary" role="button" aria-pressed="true" rel="noopener noreferrer"><i class="fas fa-arrow-circle-right vk_button_link_before"></i><span class="vk_button_link_txt">一覧を見る</span></a></div>
 	<!-- /wp:vk-blocks/button --></div></div>
 	<!-- /wp:vk-blocks/outer -->
 	`

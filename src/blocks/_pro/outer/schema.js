@@ -1,78 +1,82 @@
 export const schema = {
   bgColor: {
     type: "string",
-    default: "#f3f4f5"
+    default: "#f3f4f5",
   },
   defaultBgColor: {
     type: "string",
-    default: "#f3f4f5"
+    default: "#f3f4f5",
   },
   bgImage: {
     type: "string",
-    default: null
+    default: null,
   },
   bgImageTablet: {
     type: "string",
-    default: null
+    default: null,
   },
   bgImageMobile: {
     type: "string",
-    default: null
+    default: null,
   },
   outerWidth: {
     type: "string",
-    default: "normal"
+    default: "normal",
   },
   bgPosition: {
     type: "string",
-    default: "normal"
+    default: "normal",
   },
   padding_left_and_right: {
     type: "string",
-    default: "0"
+    default: "0",
   },
   padding_top_and_bottom: {
     type: "string",
-    default: "1"
+    default: "1",
   },
   opacity: {
     type: "number",
-    default: 0.5
+    default: 0.5,
   },
   upper_level: {
     type: "number",
-    default: 0
+    default: 0,
   },
   lower_level: {
     type: "number",
-    default: 0
+    default: 0,
   },
   dividerType: {
     type: "string",
-    default: "tilt"
+    default: "tilt",
   },
   upperDividerBgColor: {
     type: "string",
-    default: "#fff"
+    default: "#fff",
   },
   lowerDividerBgColor: {
     type: "string",
-    default: "#fff"
+    default: "#fff",
   },
   borderWidth: {
     type: "number",
-    default: 0
+    default: 0,
   },
   borderStyle: {
     type: "string",
-    default: "none"
+    default: "none",
   },
   borderColor: {
     type: "string",
-    default: "#000"
+    default: "#000",
   },
   borderRadius: {
     type: "number",
-    default: 0
-  }
+    default: 0,
+  },
+  clientId: {
+    type: "string",
+    default: null,
+  },
 };

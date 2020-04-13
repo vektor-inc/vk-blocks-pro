@@ -55,7 +55,8 @@ registerBlockType("vk-blocks/outer", {
     anchor: true,
   },
 
-  edit({ attributes, setAttributes, className, clientId }) {
+  edit(props) {
+    const { attributes, setAttributes, className, clientId } = props;
     const {
       bgColor,
       defaultBgColor,
@@ -78,6 +79,9 @@ registerBlockType("vk-blocks/outer", {
       borderRadius,
     } = attributes;
 
+    //save clientId for using in Class.
+    setAttributes({ clientId: clientId });
+
     const setColorIfUndefined = (bgColor) => {
       if (bgColor === undefined) {
         bgColor = defaultBgColor;
@@ -88,12 +92,6 @@ registerBlockType("vk-blocks/outer", {
     const setBgColor = (bgColor) => {
       bgColor = setColorIfUndefined(bgColor);
       setAttributes({ bgColor: bgColor });
-    };
-
-    const deleteImgBtn = () => {
-      dispatch("core/editor").updateBlockAttributes(clientId, {
-        bgImage: null,
-      });
     };
 
     return (
@@ -131,130 +129,26 @@ registerBlockType("vk-blocks/outer", {
               className={"vk_outer_sidebar_bgImage"}
             >
               <div className={"vk_outer_sidebar_bgImage_button_container"}>
-                <MediaUpload
-                  onSelect={(value) => setAttributes({ bgImage: value.url })}
-                  type="image"
-                  value={bgImage}
-                  render={({ open }) => (
-                    <Fragment>
-                      {bgImage ? (
-                        <Fragment>
-                          <img className={"icon-image"} src={bgImage} />
-                          <Button
-                            onClick={() => {
-                              dispatch("core/editor").updateBlockAttributes(
-                                clientId,
-                                {
-                                  bgImage: null,
-                                }
-                              );
-                            }}
-                            className={"image-button button button-delete"}
-                          >
-                            {__("Delete Image", "vk-blocks")}
-                          </Button>
-                        </Fragment>
-                      ) : (
-                        <Button
-                          onClick={open}
-                          className={"button button-large components-button"}
-                        >
-                          {__("Select image", "vk-blocks")}
-                        </Button>
-                      )}
-                    </Fragment>
-                  )}
-                />
+                <AdvancedMediaUpload schema={"bgImage"} {...props} />
               </div>
             </BaseControl>
             <BaseControl
               label={__("Background Image Tablet", "vk-blocks")}
               className={"vk_outer_sidebar_bgImage"}
             >
-              <MediaUpload
-                onSelect={(value) =>
-                  setAttributes({ bgImageTablet: value.url })
-                }
-                type="image"
-                value={bgImageTablet}
-                render={({ open }) => (
-                  <Fragment>
-                    {bgImageTablet ? (
-                      <Fragment>
-                        <img className={"icon-image"} src={bgImageTablet} />
-                        <Button
-                          onClick={() => {
-                            dispatch("core/editor").updateBlockAttributes(
-                              clientId,
-                              {
-                                bgImageTablet: null,
-                              }
-                            );
-                          }}
-                          className={"image-button button button-delete"}
-                        >
-                          {__("Delete Image", "vk-blocks")}
-                        </Button>
-                      </Fragment>
-                    ) : (
-                      <Button
-                        onClick={open}
-                        className={"button button-large components-button"}
-                      >
-                        {__("Select image", "vk-blocks")}
-                      </Button>
-                    )}
-                  </Fragment>
-                )}
-              />
+              <AdvancedMediaUpload schema={"bgImageTablet"} {...props} />
             </BaseControl>
             <BaseControl
               label={__("Background Image Mobile", "vk-blocks")}
               className={"vk_outer_sidebar_bgImage"}
             >
-              <MediaUpload
-                onSelect={(value) =>
-                  setAttributes({ bgImageMobile: value.url })
-                }
-                type="image"
-                value={bgImageMobile}
-                render={({ open }) => (
-                  <Fragment>
-                    {bgImageMobile ? (
-                      <Fragment>
-                        <img className={"icon-image"} src={bgImageMobile} />
-                        <Button
-                          onClick={() => {
-                            dispatch("core/editor").updateBlockAttributes(
-                              clientId,
-                              {
-                                bgImageMobile: null,
-                              }
-                            );
-                          }}
-                          className={"image-button button button-delete"}
-                        >
-                          {__("Delete Image", "vk-blocks")}
-                        </Button>
-                      </Fragment>
-                    ) : (
-                      <Button
-                        onClick={open}
-                        className={"button button-large components-button"}
-                      >
-                        {__("Select image", "vk-blocks")}
-                      </Button>
-                    )}
-                  </Fragment>
-                )}
-              />
+              <AdvancedMediaUpload schema={"bgImageMobile"} {...props} />
             </BaseControl>
             <BaseControl
               label={__("Background image Position", "vk-blocks")}
               help=""
             >
               <RadioControl
-                // label={__('Background Position', 'vk-blocks')}
                 selected={bgPosition}
                 options={[
                   { label: __("normal", "vk-blocks"), value: "normal" },
@@ -395,9 +289,7 @@ registerBlockType("vk-blocks/outer", {
             title={__("Border Setting", "vk-blocks")}
             initialOpen={false}
           >
-            <BaseControl
-            // label={__('Border will disappear when divider effect is applied.', 'vk-blocks')}
-            >
+            <BaseControl>
               <p>
                 {__(
                   "Border will disappear when divider effect is applied.",
@@ -474,6 +366,7 @@ registerBlockType("vk-blocks/outer", {
           </PanelBody>
         </InspectorControls>
         <OuterBlock
+          clientId={clientId}
           attributes={attributes}
           className={className}
           for_={"edit"}
@@ -482,9 +375,15 @@ registerBlockType("vk-blocks/outer", {
     );
   },
 
-  save({ attributes, className }) {
+  save(props) {
+    const { attributes, className } = props;
     return (
-      <OuterBlock attributes={attributes} className={className} for_={"save"} />
+      <OuterBlock
+        clientId={attributes.clientId}
+        attributes={attributes}
+        className={className}
+        for_={"save"}
+      />
     );
   },
 

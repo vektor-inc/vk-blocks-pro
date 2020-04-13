@@ -4,6 +4,7 @@ const { Fragment } = wp.element;
 const { MediaUpload } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const { dispatch } = wp.data;
+import noImage from "../../../inc/vk-blocks/images/no-image.png";
 
 export const AdvancedMediaUpload = (props) => {
   const { schema, clientId, setAttributes, attributes } = props;
@@ -13,6 +14,8 @@ export const AdvancedMediaUpload = (props) => {
       [schema]: null,
     });
   };
+
+  console.log(attributes[schema]);
 
   return (
     <MediaUpload
@@ -32,12 +35,15 @@ export const AdvancedMediaUpload = (props) => {
               </Button>
             </Fragment>
           ) : (
-            <Button
-              onClick={open}
-              className={"button button-large components-button"}
-            >
-              {__("Select image", "vk-blocks")}
-            </Button>
+            <Fragment>
+              <img className={"icon-image"} src={noImage} />
+              <Button
+                onClick={open}
+                className={"button button-large components-button"}
+              >
+                {__("Select image", "vk-blocks")}
+              </Button>
+            </Fragment>
           )}
         </Fragment>
       )}

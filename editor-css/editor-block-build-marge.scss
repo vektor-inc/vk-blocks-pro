@@ -899,6 +899,37 @@ ol {
 	}
 } // @media only screen and (max-width: 480px) {
 
+//*      .flowBox
+/*-------------------------------------------*/
+.vk_flow-arrow-on:after {
+  content:"";
+  background: url('../images/arrow_bottom.svg') center 50% no-repeat;
+  background-size: 50px 50px;
+  display:block; overflow:hidden;
+  height:50px;
+  width:50px;
+  margin:0 auto;
+}
+.vk_flow-arrow-off  { padding-bottom:0px; margin-bottom:30px; }
+.vk_flow-arrow-off:after {
+  content:"";font-size:0;background-image: none;
+}
+.vk_flow_frame {
+	display: flex;
+	padding:20px 25px; border:3px solid #e5e5e5;margin:0;
+	justify-content: space-between;
+}
+.vk_flow_frame_text  { display:block;overflow:hidden;margin:0;width:100%;box-sizing: border-box; }
+.vk_flow_frame_text_title,
+.vk_flow_frame_text_content { padding-left:0;border:none; }
+.vk_flow_frame_text_title { border-bottom:1px dotted #ccc; margin:0 0 10px;padding:0 0 5px; font-size:1.2em; }
+.vk_flow_frame_text_content { margin-bottom:0px; }
+.vk_flow_frame_image {
+	max-width:150px;
+	margin-left:15px;
+	box-sizing: border-box;
+}
+
 .vk_button {
   margin: 5px 0;
 
@@ -1132,37 +1163,6 @@ $color_dark: #343a40;
 }
 .vk_faq_content { margin:0px;
   &:before { content:"A ";color:#337ab7;font-family: "" }
-}
-
-//*      .flowBox
-/*-------------------------------------------*/
-.vk_flow-arrow-on:after {
-  content:"";
-  background: url('../images/arrow_bottom.svg') center 50% no-repeat;
-  background-size: 50px 50px;
-  display:block; overflow:hidden;
-  height:50px;
-  width:50px;
-  margin:0 auto;
-}
-.vk_flow-arrow-off  { padding-bottom:0px; margin-bottom:30px; }
-.vk_flow-arrow-off:after {
-  content:"";font-size:0;background-image: none;
-}
-.vk_flow_frame {
-	display: flex;
-	padding:20px 25px; border:3px solid #e5e5e5;margin:0;
-	justify-content: space-between;
-}
-.vk_flow_frame_text  { display:block;overflow:hidden;margin:0;width:100%;box-sizing: border-box; }
-.vk_flow_frame_text_title,
-.vk_flow_frame_text_content { padding-left:0;border:none; }
-.vk_flow_frame_text_title { border-bottom:1px dotted #ccc; margin:0 0 10px;padding:0 0 5px; font-size:1.2em; }
-.vk_flow_frame_text_content { margin-bottom:0px; }
-.vk_flow_frame_image {
-	max-width:150px;
-	margin-left:15px;
-	box-sizing: border-box;
 }
 
 /*-------------------------------------------*/
@@ -1660,46 +1660,6 @@ $color_key: #337ab7;
 	} //.is-style-vk-heading
 } //.editor-block-list__block
 
-$xs-max: 575.98px;
-$sm-max: 767.98px;
-$md-max: 991.98px;
-$lg-max: 1199.98px;
-
-$sm-min: 576px;
-$md-min: 768px;
-$lg-min: 992px;
-$xl-min: 1200px;
-
-.vk_hidden {
-	display: none !important;
-	color: var(--blue);
-	@media (max-width: $xs-max) {
-		&-xs {
-			display: none !important;
-		}
-	}
-	@media (min-width: $sm-min) and (max-width: $sm-max) {
-		&-sm {
-			display: none !important;
-		}
-	}
-	@media (min-width: $md-min) and (max-width: $md-max) {
-		&-md {
-			display: none !important;
-		}
-	}
-	@media (min-width: $lg-min) and (max-width: $lg-max) {
-		&-lg {
-			display: none !important;
-		}
-	}
-	@media (min-width: $xl-min) {
-		&-xl {
-			display: none !important;
-		}
-	}
-}
-
 .is-style-vk-image {
     &-border {
         img {
@@ -2171,6 +2131,46 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
 /* CSS
 /*-------------------------------------------*/
 
+$xs-max: 575.98px;
+$sm-max: 767.98px;
+$md-max: 991.98px;
+$lg-max: 1199.98px;
+
+$sm-min: 576px;
+$md-min: 768px;
+$lg-min: 992px;
+$xl-min: 1200px;
+
+.vk_hidden {
+	display: none !important;
+	color: var(--blue);
+	@media (max-width: $xs-max) {
+		&-xs {
+			display: none !important;
+		}
+	}
+	@media (min-width: $sm-min) and (max-width: $sm-max) {
+		&-sm {
+			display: none !important;
+		}
+	}
+	@media (min-width: $md-min) and (max-width: $md-max) {
+		&-md {
+			display: none !important;
+		}
+	}
+	@media (min-width: $lg-min) and (max-width: $lg-max) {
+		&-lg {
+			display: none !important;
+		}
+	}
+	@media (min-width: $xl-min) {
+		&-xl {
+			display: none !important;
+		}
+	}
+}
+
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -2185,6 +2185,10 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
     }
   }
 }
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 
 .vk_childPage {
 	margin-top: 2.5rem;
@@ -2297,10 +2301,6 @@ $padding-xl: 3.5em;
 //   margin: 0!important;
 // }
 $color-danger: #b52727;
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
 
 /*-------------------------------------------*/
 /* CSS

@@ -18,20 +18,20 @@ msgstr ""
 msgid "Font Awesome icon list"
 msgstr ""
 
-#: src/blocks/_pro/card-item/block.js:34
+#: src/blocks/_pro/card-item/block.js:42
 msgid "Card Item"
 msgstr ""
 
-#: src/blocks/_pro/card-item/block.js:47
+#: src/blocks/_pro/card-item/block.js:55
 msgid "URL"
 msgstr ""
 
-#: src/blocks/_pro/card-item/block.js:52
+#: src/blocks/_pro/card-item/block.js:60
 msgid "https://example.com"
 msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:103
-#: src/blocks/_pro/outer/block.js:166
+#: src/components/advanced-media-upload/index.js:31
 msgid "Delete Image"
 msgstr ""
 
@@ -46,7 +46,6 @@ msgid "Title"
 msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:90
-#: src/blocks/_pro/outer/block.js:174
 #: src/blocks/balloon/block.js:136
 #: src/blocks/flow/block.js:112
 #: src/blocks/pr-blocks/block.js:179
@@ -54,6 +53,7 @@ msgstr ""
 #: src/blocks/pr-content/deprecated/component-deprecated.js:102
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:116
 #: src/blocks/staff/component.js:88
+#: src/components/advanced-media-upload/index.js:39
 msgid "Select image"
 msgstr ""
 
@@ -116,141 +116,149 @@ msgstr ""
 msgid "Parent"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:123
+#: src/blocks/_pro/outer/block.js:101
 msgid "Background Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:127
+#: src/blocks/_pro/outer/block.js:105
 #: src/blocks/pr-content/block.js:119
 msgid "Color Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:128
+#: src/blocks/_pro/outer/block.js:106
 msgid ""
 "Color will overcome background image. If you want to display image, clear "
 "background color or set opacity 0."
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:138
+#: src/blocks/_pro/outer/block.js:116
 msgid "Opacity Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:150
-msgid "Background Image"
+#: src/blocks/_pro/outer/block.js:128
+msgid "Background Image PC"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:182
+#: src/blocks/_pro/outer/block.js:136
+msgid "Background Image Tablet"
+msgstr ""
+
+#: src/blocks/_pro/outer/block.js:142
+msgid "Background Image Mobile"
+msgstr ""
+
+#: src/blocks/_pro/outer/block.js:148
 msgid "Background image Position"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:189
+#: src/blocks/_pro/outer/block.js:154
 #: src/blocks/button/block.js:166
 msgid "normal"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:190
+#: src/blocks/_pro/outer/block.js:155
 msgid "Fixed"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:192
+#: src/blocks/_pro/outer/block.js:157
 msgid "Parallax (It will not work in preview)"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:205
+#: src/blocks/_pro/outer/block.js:170
 #: src/blocks/pr-content/block.js:233
 msgid "Layout Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:210
+#: src/blocks/_pro/outer/block.js:175
 msgid "Outer width"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:213
+#: src/blocks/_pro/outer/block.js:178
 msgid "Normal"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:214
+#: src/blocks/_pro/outer/block.js:179
 msgid "Full Wide"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:219
+#: src/blocks/_pro/outer/block.js:184
 msgid "Contents area padding (left and right)"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:226
+#: src/blocks/_pro/outer/block.js:191
 msgid "Do not use padding"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:230
+#: src/blocks/_pro/outer/block.js:195
 msgid "Use padding"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:239
+#: src/blocks/_pro/outer/block.js:204
 msgid "Padding (top and bottom)"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:242
+#: src/blocks/_pro/outer/block.js:207
 msgid "Use default padding"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:244
+#: src/blocks/_pro/outer/block.js:209
 msgid "Do not use default padding (Set it yourself using a spacer block etc.)."
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:258
+#: src/blocks/_pro/outer/block.js:223
 msgid "Divider Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:263
+#: src/blocks/_pro/outer/block.js:228
 #: src/blocks/balloon/block.js:103
 msgid "Type"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:269
+#: src/blocks/_pro/outer/block.js:234
 msgid "Tilt"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:273
+#: src/blocks/_pro/outer/block.js:238
 msgid "Curve"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:277
+#: src/blocks/_pro/outer/block.js:242
 msgid "Wave"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:281
+#: src/blocks/_pro/outer/block.js:246
 #: src/blocks/list-style/block.js:113
 msgid "Triangle"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:286
+#: src/blocks/_pro/outer/block.js:251
 msgid "Upper Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:304
+#: src/blocks/_pro/outer/block.js:269
 msgid "Lower Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:324
+#: src/blocks/_pro/outer/block.js:289
 msgid "Border Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:331
+#: src/blocks/_pro/outer/block.js:294
 msgid "Border will disappear when divider effect is applied."
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:337
+#: src/blocks/_pro/outer/block.js:300
 msgid "Border type"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:343
+#: src/blocks/_pro/outer/block.js:306
 #: src/blocks/_pro/step-item/block.js:120
 #: src/blocks/_pro/timeline-item/block.js:103
 #: src/blocks/staff/block.js:109
 msgid "None"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:347
+#: src/blocks/_pro/outer/block.js:310
 #: src/blocks/_pro/step-item/block.js:97
 #: src/blocks/_pro/timeline-item/block.js:84
 #: src/blocks/group-style/block.js:95
@@ -258,46 +266,46 @@ msgstr ""
 msgid "Solid"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:351
+#: src/blocks/_pro/outer/block.js:314
 #: src/blocks/group-style/block.js:103
 msgid "Dotted"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:355
+#: src/blocks/_pro/outer/block.js:318
 #: src/blocks/group-style/block.js:107
 msgid "Dashed"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:359
+#: src/blocks/_pro/outer/block.js:322
 #: src/blocks/group-style/block.js:111
 msgid "Double"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:363
+#: src/blocks/_pro/outer/block.js:326
 msgid "Groove"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:367
+#: src/blocks/_pro/outer/block.js:330
 msgid "Ridge"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:371
+#: src/blocks/_pro/outer/block.js:334
 msgid "Inset"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:375
+#: src/blocks/_pro/outer/block.js:338
 msgid "Outset"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:386
+#: src/blocks/_pro/outer/block.js:349
 msgid "Border width"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:393
+#: src/blocks/_pro/outer/block.js:356
 msgid "Border radius"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:64
+#: src/blocks/_pro/outer/block.js:50
 msgid "Outer"
 msgstr ""
 
@@ -410,7 +418,7 @@ msgid "CLOSE"
 msgstr ""
 
 #: src/blocks/_pro/table-of-contents/block.js:78
-#: src/blocks/_pro/table-of-contents/toc-utils.js:180
+#: src/blocks/_pro/table-of-contents/toc-utils.js:183
 msgid "Table of Contents"
 msgstr ""
 
@@ -1073,7 +1081,7 @@ msgstr ""
 msgid "Caption"
 msgstr ""
 
-#: src/components/card-align-control/index.js:22
+#: src/components/card-align-control/index.js:24
 msgid "Align"
 msgstr ""
 

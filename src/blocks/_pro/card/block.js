@@ -17,7 +17,7 @@ const { select, dispatch } = wp.data;
 const BlockIcon = (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 576">
     <path
-      class="st0"
+      className="st0"
       d="M456.1,1320.7H118.4v36.6H533V945.2h-35.5v334C497.6,1302.1,479,1320.7,456.1,1320.7z"
     />
     <g>
@@ -107,10 +107,10 @@ registerBlockType("vk-blocks/card", {
     return (
       <Component attributes={attributes} className={className} for_={"save"} />
     );
-  }
+  },
 });
 
-export const DisplayItemsControlForCards = props => {
+export const DisplayItemsControlForCards = (props) => {
   const { setAttributes, attributes } = props;
   const { display_image, display_btn, btn_text } = attributes;
   return (
@@ -118,12 +118,12 @@ export const DisplayItemsControlForCards = props => {
       <CheckboxControl
         label={__("Image", "vk-blocks")}
         checked={display_image}
-        onChange={checked => setAttributes({ display_image: checked })}
+        onChange={(checked) => setAttributes({ display_image: checked })}
       />
       <CheckboxControl
         label={__("Button", "vk-blocks")}
         checked={display_btn}
-        onChange={checked => setAttributes({ display_btn: checked })}
+        onChange={(checked) => setAttributes({ display_btn: checked })}
       />
       <h4 className={"postList_itemCard_button-option"}>
         {__("Button option", "vk-blocks")}
@@ -137,7 +137,7 @@ export const DisplayItemsControlForCards = props => {
       <TextControl
         label={__("Button text", "vk-blocks")}
         value={btn_text}
-        onChange={value => setAttributes({ btn_text: value })}
+        onChange={(value) => setAttributes({ btn_text: value })}
       />
     </PanelBody>
   );

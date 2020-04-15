@@ -1,13 +1,13 @@
 module.exports = {
   entry: "./src/blocks/bundle.js",
   output: {
-    filename: "./inc/vk-blocks/build/block-build.js"
+    filename: "./inc/vk-blocks/build/block-build.js",
   },
   module: {
     rules: [
       {
         test: /\.svg$/,
-        loader: "babel-loader!svg-react-loader"
+        loader: "babel-loader!svg-react-loader",
       },
       {
         test: /\.js$/,
@@ -22,13 +22,13 @@ module.exports = {
                 // JSをスキャンして、potを作成/アップデート
                 "@wordpress/babel-plugin-makepot",
                 {
-                  output: `./inc/vk-blocks/build/languages/vk-blocks.pot`
-                }
-              ]
-            ]
-          }
-        }
-      }
-    ]
-  }
+                  output: `./inc/vk-blocks/build/languages/vk-blocks.pot`,
+                },
+              ],
+            ],
+          },
+        },
+      },
+    ],
+  },
 };

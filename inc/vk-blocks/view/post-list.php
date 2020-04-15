@@ -56,11 +56,18 @@ class VkBlocksPostList {
 			'class_title'                => '',
 			'body_prepend'               => '',
 			'body_append'                => '',
+			'vkb_hidden'                 => $attributes['vkb_hidden'],
+			'vkb_hidden_xl'              => $attributes['vkb_hidden_xl'],
+			'vkb_hidden_lg'              => $attributes['vkb_hidden_lg'],
+			'vkb_hidden_md'              => $attributes['vkb_hidden_md'],
+			'vkb_hidden_sm'              => $attributes['vkb_hidden_sm'],
+			'vkb_hidden_xs'              => $attributes['vkb_hidden_xs'],
 		);
 		$elm     = VK_Component_Posts::get_loop( $wp_query, $options, $options_loop );
 
 		wp_reset_query();
 		wp_reset_postdata();
+
 
 		return $elm;
 	}

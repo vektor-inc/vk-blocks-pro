@@ -18,15 +18,15 @@ msgstr ""
 msgid "Font Awesome icon list"
 msgstr ""
 
-#: src/blocks/_pro/card-item/block.js:34
+#: src/blocks/_pro/card-item/block.js:42
 msgid "Card Item"
 msgstr ""
 
-#: src/blocks/_pro/card-item/block.js:47
+#: src/blocks/_pro/card-item/block.js:58
 msgid "URL"
 msgstr ""
 
-#: src/blocks/_pro/card-item/block.js:52
+#: src/blocks/_pro/card-item/block.js:63
 msgid "https://example.com"
 msgstr ""
 
@@ -57,40 +57,40 @@ msgstr ""
 msgid "Select image"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:117
+#: src/blocks/_pro/card/block.js:122
 #: src/components/display-items-control/index.js:26
 msgid "Display item"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:119
+#: src/blocks/_pro/card/block.js:124
 #: src/components/display-items-control/index.js:28
 msgid "Image"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:124
+#: src/blocks/_pro/card/block.js:129
 #: src/blocks/button/block.js:59
 #: src/components/display-items-control/index.js:57
 msgid "Button"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:129
+#: src/blocks/_pro/card/block.js:134
 #: src/components/display-items-control/index.js:73
 msgid "Button option"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:132
+#: src/blocks/_pro/card/block.js:137
 #: src/components/display-items-control/index.js:76
 msgid ""
 "Click each card block to set the target url. You can find the url form at "
 "it's sidebar."
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:138
+#: src/blocks/_pro/card/block.js:143
 #: src/components/display-items-control/index.js:82
 msgid "Button text"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:47
+#: src/blocks/_pro/card/block.js:48
 #: src/components/column-layout-control/index.js:19
 msgid "Card"
 msgstr ""
@@ -792,49 +792,49 @@ msgstr ""
 msgid "Heading %d"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:100
+#: src/blocks/hidden-extension/index.js:101
+msgid ""
+"Note : This function is display hidden only. Actually Block is output to "
+"HTML.Pleade don't use you must not bisible item.Don't use it for blocks you "
+"really don't want to display."
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:107
 msgid "Hidden ( Screen size : all )"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:106
+#: src/blocks/hidden-extension/index.js:113
 msgid "Hidden ( Screen size : xs )"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:112
+#: src/blocks/hidden-extension/index.js:119
 msgid "Hidden ( Screen size : sm )"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:118
+#: src/blocks/hidden-extension/index.js:125
 msgid "Hidden ( Screen size : md )"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:124
+#: src/blocks/hidden-extension/index.js:131
 msgid "Hidden ( Screen size : lg )"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:130
+#: src/blocks/hidden-extension/index.js:137
 msgid "Hidden ( Screen size : xl )"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:135
+#: src/blocks/hidden-extension/index.js:143
 msgid ""
 "If you want to hide multiple blocks, that first you set to group block and "
 "the next, hide for the that group block."
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:92
+#: src/blocks/hidden-extension/index.js:96
 msgid "Hidden Settings"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:96
+#: src/blocks/hidden-extension/index.js:99
 msgid "Hidden at screel size"
-msgstr ""
-
-#: src/blocks/hidden-extension/index.js:98
-msgid ""
-"Note : This function is display hidden only. Actually Block is output to "
-"HTML.Pleade don't use you must not bisible item.Don't use it for blocks you "
-"really don't want to display."
 msgstr ""
 
 #: src/blocks/highlighter/block.js:81

@@ -23,59 +23,62 @@ export class Component extends React.Component {
 
 		aClass = `vk_button_link`;
 
-		if ( buttonType === '0' || buttonType === '1' ) {
+		if ( buttonType == '0' ||  buttonType == null || buttonType == '1' ){
 			aClass = `${aClass} btn`;
 		} else {
 			aClass = `${aClass} vk_button_link-type-text`;
 		}
 
-		aClass = `${aClass} btn-${buttonSize}`;
+		// 塗り
+		if ( buttonType == '0' ||  buttonType === null ){
 
-		// 規定カラーの場合
-		if ( buttonColorCustom == 'undefined' || buttonColorCustom == 'null' ) {
-			
-			// 塗り
-			if (buttonType === '0') {
+			// 規定カラーの場合
+			if ( buttonColorCustom == 'undefined' || buttonColorCustom === null ) {
+
 				aClass = `${aClass} btn-${buttonColor}`;
-			// 塗りなし
-			} else if ( buttonType === '1' ) {
-				aClass = `${aClass} btn-outline-${buttonColor}`;
-			// テキストのみ
-			} else if ( buttonType === '2' ) {
-				aClass = `${aClass} btn-outline-${buttonColor}`;
-			}
-			aStyle = null;
-		
-		// カスタムカラーの場合
-		} else {
 
-			// 塗り
-			if ( buttonType === '0' ) {
+				aStyle = null;
+			// カスタムカラーの場合
+			} else {
 				aStyle = {
 					backgroundColor: buttonColorCustom,
 					border: `1px solid ${buttonColorCustom}`,
 					color: `#fff`,
 				};
-			// 塗りなし
-			} else if ( buttonType === '1' ) {
+			}
+		// 塗りなし
+		} else if ( buttonType === '1' ) {
+			// 規定カラーの場合
+			if ( buttonColorCustom == 'undefined' || buttonColorCustom == 'null' ) {
+				aClass = `${aClass} btn-outline-${buttonColor}`;
+				aStyle = null;
+			// カスタムカラーの場合
+			} else {
 				aStyle = {
 					backgroundColor: 'transparent',
 					border: '1px solid ' + buttonColorCustom,
 					color: buttonColorCustom,
 				};
-			// テキストのみ
-			} else if ( buttonType === '2' ) {
+			}
+		// テキストのみ
+		} else if ( buttonType === '2' ) {
+			// 規定カラーの場合
+			if ( buttonColorCustom == 'undefined' || buttonColorCustom == 'null' ) {
+				aClass = `${aClass} btn-outline-${buttonColor}`;
+				aStyle = null;
+			// カスタムカラーの場合
+			} else {
 				aStyle = {
 					color: buttonColorCustom,
 				};
 			}
-
 		}
+
+		aClass = `${aClass} btn-${buttonSize}`;
 
         if ( buttonAlign === 'block' ){
         	aClass = `${aClass} btn-block`;
         }
-
         if (fontAwesomeIconBefore) {
             iconBefore = <i className={ `${fontAwesomeIconBefore} vk_button_link_before` }></i> ;
         }

@@ -12,21 +12,21 @@ msgid "Enter Font Awesome Class. Ex) fas fa-arrow-circle-right "
 msgstr ""
 
 #: src/blocks/_helper/font-awesome.js:25
-#: src/blocks/button/block.js:218
+#: src/blocks/button/block.js:289
 #: src/blocks/pr-blocks/block.js:344
 #: src/blocks/pr-content/block.js:202
 msgid "Font Awesome icon list"
 msgstr ""
 
-#: src/blocks/_pro/card-item/block.js:34
+#: src/blocks/_pro/card-item/block.js:42
 msgid "Card Item"
 msgstr ""
 
-#: src/blocks/_pro/card-item/block.js:47
+#: src/blocks/_pro/card-item/block.js:58
 msgid "URL"
 msgstr ""
 
-#: src/blocks/_pro/card-item/block.js:52
+#: src/blocks/_pro/card-item/block.js:63
 msgid "https://example.com"
 msgstr ""
 
@@ -57,40 +57,40 @@ msgstr ""
 msgid "Select image"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:139
+#: src/blocks/_pro/card/block.js:122
 #: src/components/display-items-control/index.js:26
 msgid "Display item"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:141
+#: src/blocks/_pro/card/block.js:124
 #: src/components/display-items-control/index.js:28
 msgid "Image"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:146
+#: src/blocks/_pro/card/block.js:129
 #: src/blocks/button/block.js:59
 #: src/components/display-items-control/index.js:57
 msgid "Button"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:151
+#: src/blocks/_pro/card/block.js:134
 #: src/components/display-items-control/index.js:73
 msgid "Button option"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:154
+#: src/blocks/_pro/card/block.js:137
 #: src/components/display-items-control/index.js:76
 msgid ""
 "Click each card block to set the target url. You can find the url form at "
 "it's sidebar."
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:160
+#: src/blocks/_pro/card/block.js:143
 #: src/components/display-items-control/index.js:82
 msgid "Button text"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:61
+#: src/blocks/_pro/card/block.js:48
 #: src/components/column-layout-control/index.js:19
 msgid "Card"
 msgstr ""
@@ -144,7 +144,6 @@ msgid "Background image Position"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:166
-#: src/blocks/button/block.js:166
 msgid "normal"
 msgstr ""
 
@@ -166,6 +165,7 @@ msgid "Outer width"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:190
+#: src/blocks/button/block.js:178
 msgid "Normal"
 msgstr ""
 
@@ -456,7 +456,7 @@ msgid "Icon Name"
 msgstr ""
 
 #: src/blocks/balloon/block.js:161
-#: src/blocks/button/block.js:250
+#: src/blocks/button/block.js:321
 msgid "Input text"
 msgstr ""
 
@@ -478,14 +478,14 @@ msgid "Please specify the layout of the balloon."
 msgstr ""
 
 #: src/blocks/balloon/block.js:97
-#: src/blocks/button/block.js:175
+#: src/blocks/button/block.js:198
 #: src/blocks/pr-content/block.js:241
 #: src/components/display-items-control/index.js:93
 msgid "Left"
 msgstr ""
 
 #: src/blocks/balloon/block.js:98
-#: src/blocks/button/block.js:177
+#: src/blocks/button/block.js:214
 #: src/blocks/pr-content/block.js:240
 #: src/components/display-items-control/index.js:101
 msgid "Right"
@@ -509,130 +509,138 @@ msgstr ""
 msgid "Button Size:"
 msgstr ""
 
-#: src/blocks/button/block.js:165
+#: src/blocks/button/block.js:170
 msgid "Large"
 msgstr ""
 
-#: src/blocks/button/block.js:167
+#: src/blocks/button/block.js:186
 msgid "Small"
 msgstr ""
 
-#: src/blocks/button/block.js:172
+#: src/blocks/button/block.js:190
 msgid "Button Position:"
 msgstr ""
 
-#: src/blocks/button/block.js:176
+#: src/blocks/button/block.js:206
 #: src/components/display-items-control/index.js:97
 msgid "Center"
 msgstr ""
 
-#: src/blocks/button/block.js:178
+#: src/blocks/button/block.js:222
+msgid "Wide"
+msgstr ""
+
+#: src/blocks/button/block.js:230
 msgid "Block"
 msgstr ""
 
-#: src/blocks/button/block.js:183
+#: src/blocks/button/block.js:234
 msgid "Button Style:"
 msgstr ""
 
-#: src/blocks/button/block.js:186
+#: src/blocks/button/block.js:242
 #: src/blocks/pr-blocks/block.js:361
 msgid "Solid color"
 msgstr ""
 
-#: src/blocks/button/block.js:187
+#: src/blocks/button/block.js:250
 #: src/blocks/pr-blocks/block.js:362
 msgid "No background"
 msgstr ""
 
-#: src/blocks/button/block.js:189
+#: src/blocks/button/block.js:258
+msgid "Text only"
+msgstr ""
+
+#: src/blocks/button/block.js:261
 msgid "If you select \"No background\", that you need to select a Custom Color."
 msgstr ""
 
-#: src/blocks/button/block.js:193
+#: src/blocks/button/block.js:264
 #: src/blocks/pr-content/block.js:175
 msgid "Default Color:"
 msgstr ""
 
-#: src/blocks/button/block.js:196
+#: src/blocks/button/block.js:267
 #: src/blocks/pr-content/block.js:178
 msgid "Primary"
 msgstr ""
 
-#: src/blocks/button/block.js:197
+#: src/blocks/button/block.js:268
 #: src/blocks/pr-content/block.js:179
 msgid "Secondary"
 msgstr ""
 
-#: src/blocks/button/block.js:198
+#: src/blocks/button/block.js:269
 #: src/blocks/pr-content/block.js:180
 msgid "Success"
 msgstr ""
 
-#: src/blocks/button/block.js:199
+#: src/blocks/button/block.js:270
 #: src/blocks/pr-content/block.js:181
 msgid "Info"
 msgstr ""
 
-#: src/blocks/button/block.js:200
+#: src/blocks/button/block.js:271
 #: src/blocks/pr-content/block.js:182
 msgid "Warning"
 msgstr ""
 
-#: src/blocks/button/block.js:201
+#: src/blocks/button/block.js:272
 #: src/blocks/pr-content/block.js:183
 msgid "Danger"
 msgstr ""
 
-#: src/blocks/button/block.js:202
+#: src/blocks/button/block.js:273
 #: src/blocks/pr-content/block.js:184
 msgid "Light"
 msgstr ""
 
-#: src/blocks/button/block.js:203
+#: src/blocks/button/block.js:274
 #: src/blocks/pr-content/block.js:185
 msgid "Dark"
 msgstr ""
 
-#: src/blocks/button/block.js:208
+#: src/blocks/button/block.js:279
 msgid "Custom Color"
 msgstr ""
 
-#: src/blocks/button/block.js:209
+#: src/blocks/button/block.js:280
 msgid ""
 "This custom color overrides the default color. If you want to use the "
 "default color, click the clear button."
 msgstr ""
 
-#: src/blocks/button/block.js:217
+#: src/blocks/button/block.js:288
 #: src/blocks/pr-content/block.js:196
 msgid "Font Awesome:"
 msgstr ""
 
-#: src/blocks/button/block.js:221
+#: src/blocks/button/block.js:292
 #: src/blocks/pr-content/block.js:207
 msgid "Before text"
 msgstr ""
 
-#: src/blocks/button/block.js:222
+#: src/blocks/button/block.js:293
 #: src/blocks/pr-content/block.js:208
 msgid ""
 "Enter Font Awesome Class.This icon will appear before text. Ex) fas "
 "fa-arrow-circle-right"
 msgstr ""
 
-#: src/blocks/button/block.js:228
+#: src/blocks/button/block.js:299
 #: src/blocks/pr-content/block.js:219
 msgid "After text"
 msgstr ""
 
-#: src/blocks/button/block.js:229
+#: src/blocks/button/block.js:300
 #: src/blocks/pr-content/block.js:220
 msgid ""
 "Enter Font Awesome Class.This icon will appear after text. Ex) fas "
 "fa-external-link-alt"
 msgstr ""
 
-#: src/blocks/button/block.js:264
+#: src/blocks/button/block.js:335
 msgid "Apply"
 msgstr ""
 
@@ -792,43 +800,49 @@ msgstr ""
 msgid "Heading %d"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:105
-msgid "Hidden ( Screen size : sm )"
-msgstr ""
-
-#: src/blocks/hidden-extension/index.js:111
-msgid "Hidden ( Screen size : md )"
-msgstr ""
-
-#: src/blocks/hidden-extension/index.js:117
-msgid "Hidden ( Screen size : lg )"
-msgstr ""
-
-#: src/blocks/hidden-extension/index.js:123
-msgid "Hidden ( Screen size : xl )"
-msgstr ""
-
-#: src/blocks/hidden-extension/index.js:85
-msgid "Hidden Settings"
-msgstr ""
-
-#: src/blocks/hidden-extension/index.js:89
-msgid "Hidden at screel size"
-msgstr ""
-
-#: src/blocks/hidden-extension/index.js:91
+#: src/blocks/hidden-extension/index.js:101
 msgid ""
 "Note : This function is display hidden only. Actually Block is output to "
 "HTML.Pleade don't use you must not bisible item.Don't use it for blocks you "
 "really don't want to display."
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:93
+#: src/blocks/hidden-extension/index.js:107
 msgid "Hidden ( Screen size : all )"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:99
+#: src/blocks/hidden-extension/index.js:113
 msgid "Hidden ( Screen size : xs )"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:119
+msgid "Hidden ( Screen size : sm )"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:125
+msgid "Hidden ( Screen size : md )"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:131
+msgid "Hidden ( Screen size : lg )"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:137
+msgid "Hidden ( Screen size : xl )"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:143
+msgid ""
+"If you want to hide multiple blocks, that first you set to group block and "
+"the next, hide for the that group block."
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:96
+msgid "Hidden Settings"
+msgstr ""
+
+#: src/blocks/hidden-extension/index.js:99
+msgid "Hidden at screel size"
 msgstr ""
 
 #: src/blocks/highlighter/block.js:81
@@ -1112,7 +1126,7 @@ msgstr ""
 msgid "Caption"
 msgstr ""
 
-#: src/components/card-align-control/index.js:22
+#: src/components/card-align-control/index.js:29
 msgid "Align"
 msgstr ""
 

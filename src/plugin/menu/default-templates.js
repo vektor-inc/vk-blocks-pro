@@ -116,6 +116,10 @@ const defaultTemplates = [
 
 <!-- wp:vk-blocks/post-list {"name":"vk-blocks/post-list","layout":"postListText"} /-->
 
+<!-- wp:vk-blocks/button {"buttonUrl":"/information/","buttonType":"2","buttonColorCustom":"#313131","buttonAlign":"right","fontAwesomeIconAfter":"fas fa-arrow-circle-right"} -->
+<div class="wp-block-vk-blocks-button vk_button vk_button-color-custom vk_button-align-right"><a href="/information/" id="vk_button_link" style="color:#313131" class="vk_button_link vk_button_link-type-text btn-md" role="button" aria-pressed="true" rel="noopener noreferrer"><span class="vk_button_link_txt">お知らせ一覧</span><i class="fas fa-arrow-circle-right vk_button_link_after"></i></a></div>
+<!-- /wp:vk-blocks/button -->
+
 </div></div>
 <!-- /wp:vk-blocks/outer -->
 	`,

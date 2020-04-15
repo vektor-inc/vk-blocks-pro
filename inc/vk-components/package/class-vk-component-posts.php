@@ -77,6 +77,8 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 		 */
 		public static function get_loop( $wp_query, $options, $options_loop = array() ) {
 
+			// get_loop
+
 			// Outer Post Type classes
 			$patterns = self::get_patterns();
 			$loop_outer_class_post_types = array();
@@ -91,6 +93,9 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 					$loop_outer_class_post_types[] = 'vk_posts-postType-' . $wp_query->query['post_type'];
 				}
 			}
+
+			$loop_outer_class_post_types[] = 'vk_posts-layout-' . $options['layout'];
+
 			// Additional loop option
 			$loop_outer_class = implode( ' ', $loop_outer_class_post_types );
 
@@ -108,10 +113,27 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				}
 			}
 
+			// Set hidden class
+			$hidden_class =[];
+			if($options['vkb_hidden']){
+				array_push($hidden_class,'vk_hidden');
+			}else if($options['vkb_hidden_xl']){
+				array_push($hidden_class,'vk_hidden-xl');
+			}else if($options['vkb_hidden_lg']){
+				array_push($hidden_class,'vk_hidden-lg');
+			}else if($options['vkb_hidden_md']){
+				array_push($hidden_class,'vk_hidden-md');
+			}else if($options['vkb_hidden_sm']){
+				array_push($hidden_class,'vk_hidden-sm');
+			}else if($options['vkb_hidden_xs']){
+				array_push($hidden_class,'vk_hidden-xs');
+			}			
+			$hidden_class = implode( ' ', $hidden_class );
+
 			$loop = '';
 			if ( $wp_query->have_posts() ) :
 
-				$loop .= '<div class="vk_posts ' . esc_attr( $loop_outer_class ) . '">';
+				$loop .= '<div class="vk_posts ' . esc_attr( $loop_outer_class ) . ' ' . esc_attr( $hidden_class ) . '">';
 
 				while ( $wp_query->have_posts() ) {
 					$wp_query->the_post();

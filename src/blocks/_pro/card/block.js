@@ -6,6 +6,7 @@ import { Component } from "./component";
 import { schema } from "./schema";
 import { ColumnLayoutControl } from "../../../components/column-layout-control";
 import { CardAlignControls } from "../../../components/card-align-control";
+import { deprecated } from "./deprecated";
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
@@ -17,7 +18,7 @@ const { select, dispatch } = wp.data;
 const BlockIcon = (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 576">
     <path
-      class="st0"
+      className="st0"
       d="M456.1,1320.7H118.4v36.6H533V945.2h-35.5v334C497.6,1302.1,479,1320.7,456.1,1320.7z"
     />
     <g>
@@ -43,34 +44,15 @@ const BlockIcon = (
   </svg>
 );
 
-/**
- * Register: a Gutenberg Block.
- *
- * Registers a new block provided a unique name and an object defining its
- * behavior. Once registered, the block is made editor as an option to any
- * editor interface where blocks are implemented.
- *
- * @link https://wordpress.org/gutenberg/handbook/block-api/
- * @param  {string}   name     Block name.
- * @param  {Object}   settings Block settings.
- * @return {?WPBlock}          The block, if it has been successfully
- *                             registered; otherwise `undefined`.
- */
 registerBlockType("vk-blocks/card", {
-  // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-  title: __("Card", "vk-blocks"), // Block title.
-  icon: BlockIcon, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
-  category: "vk-blocks-cat", // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
+  title: __("Card", "vk-blocks"),
+  icon: BlockIcon,
+  category: "vk-blocks-cat",
   attributes: schema,
+  supports: {
+    className: true,
+  },
 
-  /**
-   * The edit function describes the structure of your block in the context of the editor.
-   * This represents what the editor will render when the block is used.
-   *
-   * The "edit" property must be a valid function.
-   *
-   * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
-   */
   edit(props) {
     const { attributes, setAttributes, className, clientId, name } = props;
     attributes["name"] = name;
@@ -129,10 +111,11 @@ registerBlockType("vk-blocks/card", {
     return (
       <Component attributes={attributes} className={className} for_={"save"} />
     );
-  }
+  },
+  deprecated: deprecated,
 });
 
-export const DisplayItemsControlForCards = props => {
+export const DisplayItemsControlForCards = (props) => {
   const { setAttributes, attributes } = props;
   const { display_image, display_btn, btn_text } = attributes;
   return (
@@ -140,12 +123,12 @@ export const DisplayItemsControlForCards = props => {
       <CheckboxControl
         label={__("Image", "vk-blocks")}
         checked={display_image}
-        onChange={checked => setAttributes({ display_image: checked })}
+        onChange={(checked) => setAttributes({ display_image: checked })}
       />
       <CheckboxControl
         label={__("Button", "vk-blocks")}
         checked={display_btn}
-        onChange={checked => setAttributes({ display_btn: checked })}
+        onChange={(checked) => setAttributes({ display_btn: checked })}
       />
       <h4 className={"postList_itemCard_button-option"}>
         {__("Button option", "vk-blocks")}
@@ -159,7 +142,7 @@ export const DisplayItemsControlForCards = props => {
       <TextControl
         label={__("Button text", "vk-blocks")}
         value={btn_text}
-        onChange={value => setAttributes({ btn_text: value })}
+        onChange={(value) => setAttributes({ btn_text: value })}
       />
     </PanelBody>
   );

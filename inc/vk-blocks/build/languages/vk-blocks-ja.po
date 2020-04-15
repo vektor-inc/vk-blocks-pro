@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 1.8.7.1\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-KeywordsList: __\n"
@@ -1202,6 +1202,14 @@ msgstr "rel属性"
 #: src/plugin/menu/sidebar.js:17
 msgid "VK Blocks Templates"
 msgstr ""
+
+msgid "Disabled Blocks module. Because VK-Blocks Plugin running."
+msgstr ""
+"VK-Blocksと競合するため、VK All in One Expansion UnitのBlock機能を停止しまし"
+"た。"
+
+msgid "Deactivated VK-Blocks Plugin. Because VK-Blocks Pro running."
+msgstr "Pro版VK-Blocksが起動しているため、VK-Blocksを停止しました。"
 
 #, fuzzy
 #~| msgid "Icon setting"

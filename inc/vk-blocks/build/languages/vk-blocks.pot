@@ -12,7 +12,7 @@ msgid "Enter Font Awesome Class. Ex) fas fa-arrow-circle-right "
 msgstr ""
 
 #: src/blocks/_helper/font-awesome.js:25
-#: src/blocks/button/block.js:281
+#: src/blocks/button/block.js:289
 #: src/blocks/pr-blocks/block.js:344
 #: src/blocks/pr-content/block.js:202
 msgid "Font Awesome icon list"
@@ -456,7 +456,7 @@ msgid "Icon Name"
 msgstr ""
 
 #: src/blocks/balloon/block.js:161
-#: src/blocks/button/block.js:313
+#: src/blocks/button/block.js:321
 msgid "Input text"
 msgstr ""
 
@@ -527,116 +527,120 @@ msgid "Center"
 msgstr ""
 
 #: src/blocks/button/block.js:222
+msgid "Wide"
+msgstr ""
+
+#: src/blocks/button/block.js:230
 msgid "Block"
 msgstr ""
 
-#: src/blocks/button/block.js:226
+#: src/blocks/button/block.js:234
 msgid "Button Style:"
 msgstr ""
 
-#: src/blocks/button/block.js:234
+#: src/blocks/button/block.js:242
 #: src/blocks/pr-blocks/block.js:361
 msgid "Solid color"
 msgstr ""
 
-#: src/blocks/button/block.js:242
+#: src/blocks/button/block.js:250
 #: src/blocks/pr-blocks/block.js:362
 msgid "No background"
 msgstr ""
 
-#: src/blocks/button/block.js:250
+#: src/blocks/button/block.js:258
 msgid "Text only"
 msgstr ""
 
-#: src/blocks/button/block.js:253
+#: src/blocks/button/block.js:261
 msgid "If you select \"No background\", that you need to select a Custom Color."
 msgstr ""
 
-#: src/blocks/button/block.js:256
+#: src/blocks/button/block.js:264
 #: src/blocks/pr-content/block.js:175
 msgid "Default Color:"
 msgstr ""
 
-#: src/blocks/button/block.js:259
+#: src/blocks/button/block.js:267
 #: src/blocks/pr-content/block.js:178
 msgid "Primary"
 msgstr ""
 
-#: src/blocks/button/block.js:260
+#: src/blocks/button/block.js:268
 #: src/blocks/pr-content/block.js:179
 msgid "Secondary"
 msgstr ""
 
-#: src/blocks/button/block.js:261
+#: src/blocks/button/block.js:269
 #: src/blocks/pr-content/block.js:180
 msgid "Success"
 msgstr ""
 
-#: src/blocks/button/block.js:262
+#: src/blocks/button/block.js:270
 #: src/blocks/pr-content/block.js:181
 msgid "Info"
 msgstr ""
 
-#: src/blocks/button/block.js:263
+#: src/blocks/button/block.js:271
 #: src/blocks/pr-content/block.js:182
 msgid "Warning"
 msgstr ""
 
-#: src/blocks/button/block.js:264
+#: src/blocks/button/block.js:272
 #: src/blocks/pr-content/block.js:183
 msgid "Danger"
 msgstr ""
 
-#: src/blocks/button/block.js:265
+#: src/blocks/button/block.js:273
 #: src/blocks/pr-content/block.js:184
 msgid "Light"
 msgstr ""
 
-#: src/blocks/button/block.js:266
+#: src/blocks/button/block.js:274
 #: src/blocks/pr-content/block.js:185
 msgid "Dark"
 msgstr ""
 
-#: src/blocks/button/block.js:271
+#: src/blocks/button/block.js:279
 msgid "Custom Color"
 msgstr ""
 
-#: src/blocks/button/block.js:272
+#: src/blocks/button/block.js:280
 msgid ""
 "This custom color overrides the default color. If you want to use the "
 "default color, click the clear button."
 msgstr ""
 
-#: src/blocks/button/block.js:280
+#: src/blocks/button/block.js:288
 #: src/blocks/pr-content/block.js:196
 msgid "Font Awesome:"
 msgstr ""
 
-#: src/blocks/button/block.js:284
+#: src/blocks/button/block.js:292
 #: src/blocks/pr-content/block.js:207
 msgid "Before text"
 msgstr ""
 
-#: src/blocks/button/block.js:285
+#: src/blocks/button/block.js:293
 #: src/blocks/pr-content/block.js:208
 msgid ""
 "Enter Font Awesome Class.This icon will appear before text. Ex) fas "
 "fa-arrow-circle-right"
 msgstr ""
 
-#: src/blocks/button/block.js:291
+#: src/blocks/button/block.js:299
 #: src/blocks/pr-content/block.js:219
 msgid "After text"
 msgstr ""
 
-#: src/blocks/button/block.js:292
+#: src/blocks/button/block.js:300
 #: src/blocks/pr-content/block.js:220
 msgid ""
 "Enter Font Awesome Class.This icon will appear after text. Ex) fas "
 "fa-external-link-alt"
 msgstr ""
 
-#: src/blocks/button/block.js:327
+#: src/blocks/button/block.js:335
 msgid "Apply"
 msgstr ""
 

@@ -50,21 +50,21 @@ export class Component extends React.Component {
 		} else {
 
 			// 塗り
-			if ( buttonType === '0') {
+			if ( buttonType === '0' ) {
 				aStyle = {
 					backgroundColor: buttonColorCustom,
 					border: `1px solid ${buttonColorCustom}`,
 					color: `#fff`,
 				};
 			// 塗りなし
-			} else if (buttonType === '1') {
+			} else if ( buttonType === '1' ) {
 				aStyle = {
 					backgroundColor: 'transparent',
 					border: '1px solid ' + buttonColorCustom,
 					color: buttonColorCustom,
 				};
 			// テキストのみ
-			} else if (buttonType === '2') {
+			} else if ( buttonType === '2' ) {
 				aStyle = {
 					color: buttonColorCustom,
 				};

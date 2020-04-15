@@ -24,6 +24,15 @@
 		&-block {
 			display: block;
 		}
+		&-wide {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 70%;
+			.btn {
+				display: block;
+			}
+		}
 	}
 
 	&_link {

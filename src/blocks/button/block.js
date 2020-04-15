@@ -215,6 +215,14 @@ registerBlockType('vk-blocks/button', {
 					</Button>
 					<Button
 						isSmall
+						isPrimary={ buttonAlign === 'wide' }
+						isSecondary={ buttonAlign !== 'wide' }
+						onClick={ () => setAttributes({buttonAlign: 'wide'}) }
+						>
+						{ __('Wide', 'vk-blocks') }
+					</Button>
+					<Button
+						isSmall
 						isPrimary={ buttonAlign === 'block' }
 						isSecondary={ buttonAlign !== 'block' }
 						onClick={ () => setAttributes({buttonAlign: 'block'}) }

@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.4.0
-Stable tag: 0.25.6
+Stable tag: 0.26.0
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -57,6 +57,11 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.26.0 =
+[ Add function ][ button ] Add text style
+[ Add function ][ button ] Add wide style
+[ bug fix ] Bug fix of when use hidden function and Posts column  
 
 = 0.25.4 =
 [ bug fix ][ term color ] Fixed bug that gives arise from no custom taxonomy / term.

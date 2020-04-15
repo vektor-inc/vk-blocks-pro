@@ -6,6 +6,7 @@ import { Component } from "./component";
 import { schema } from "./schema";
 import { ColumnLayoutControl } from "../../../components/column-layout-control";
 import { CardAlignControls } from "../../../components/card-align-control";
+import { deprecated } from "./deprecated";
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
@@ -48,6 +49,9 @@ registerBlockType("vk-blocks/card", {
   icon: BlockIcon,
   category: "vk-blocks-cat",
   attributes: schema,
+  supports: {
+    className: true,
+  },
 
   edit(props) {
     const { attributes, setAttributes, className, clientId, name } = props;
@@ -108,6 +112,7 @@ registerBlockType("vk-blocks/card", {
       <Component attributes={attributes} className={className} for_={"save"} />
     );
   },
+  deprecated: deprecated,
 });
 
 export const DisplayItemsControlForCards = (props) => {

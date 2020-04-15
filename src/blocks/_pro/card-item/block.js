@@ -44,6 +44,9 @@ registerBlockType("vk-blocks/card-item", {
   category: "vk-blocks-cat",
   attributes: schema,
   parent: ["vk-blocks/card"],
+  supports: {
+    className: true,
+  },
 
   edit(props) {
     const { setAttributes, attributes } = props;

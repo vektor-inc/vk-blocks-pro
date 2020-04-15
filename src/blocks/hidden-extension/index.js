@@ -24,10 +24,11 @@ export const is_hidden = (blockName) => {
   let hiddenReturn =
     allowed.find((name) => in_string(blockName, name)) !== undefined;
 
-  const excludes = ["core/block"];
+  const excludes = ["core/block", "vk-blocks/card-item"];
   const excludeBlock =
     excludes.find((excludeName) => in_string(blockName, excludeName)) !==
     undefined;
+
   if (excludeBlock) {
     hiddenReturn = false;
   }
@@ -186,7 +187,7 @@ wp.hooks.addFilter(
       const customSm = vkb_hidden_sm && "vk_hidden-sm";
       const customXs = vkb_hidden_xs && "vk_hidden-xs";
 
-      if (element && !element.props.for_) {
+      if (element) {
         element = {
           ...element,
           ...{

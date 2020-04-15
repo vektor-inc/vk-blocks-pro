@@ -32,7 +32,7 @@ export class Component extends React.Component {
 		aClass = `${aClass} btn-${buttonSize}`;
 
 		// 規定カラーの場合
-		if ( buttonColorCustom === 'undefined' || buttonColorCustom === undefined ) {
+		if ( buttonColorCustom == 'undefined' || buttonColorCustom == 'null' ) {
 			
 			// 塗り
 			if (buttonType === '0') {

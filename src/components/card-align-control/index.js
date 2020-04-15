@@ -3,23 +3,23 @@ const { PanelBody, BaseControl } = wp.components;
 import { AlignControl } from "../align-control";
 import { capitalize } from "../../blocks/_helper/capitalize";
 
-export const CardAlignControls = props => {
+export const CardAlignControls = (props) => {
   const { attributes } = props;
-  const shema = JSON.parse(attributes.activeControl);
+  const schema = JSON.parse(attributes.activeControl);
 
-  const createAlignControl = label => {
+  const createAlignControl = (label, index) => {
     props = {
       ...props,
       ...{
-        initial: shema[label]
+        initial: schema[label],
       },
       ...{
-        component: label
-      }
+        component: label,
+      },
     };
     return (
-      <BaseControl label={__(`${capitalize(label)}`, "vk-blocks")}>
-        <AlignControl {...props} />
+      <BaseControl key={index} label={__(`${capitalize(label)}`, "vk-blocks")}>
+        <AlignControl schema={schema} {...props} />
       </BaseControl>
     );
   };

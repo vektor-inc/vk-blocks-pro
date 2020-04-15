@@ -24,20 +24,20 @@ msgid "Enter Font Awesome Class. Ex) fas fa-arrow-circle-right "
 msgstr ""
 "Font Awesome の class 名を入力してください。例) fas fa-arrow-circle-right"
 
-#: src/blocks/_helper/font-awesome.js:25 src/blocks/button/block.js:218
+#: src/blocks/_helper/font-awesome.js:25 src/blocks/button/block.js:289
 #: src/blocks/pr-blocks/block.js:344 src/blocks/pr-content/block.js:202
 msgid "Font Awesome icon list"
 msgstr "Font Awesome アイコンリスト"
 
-#: src/blocks/_pro/card-item/block.js:34
+#: src/blocks/_pro/card-item/block.js:42
 msgid "Card Item"
 msgstr "カードアイテム"
 
-#: src/blocks/_pro/card-item/block.js:47
+#: src/blocks/_pro/card-item/block.js:55
 msgid "URL"
 msgstr "URL"
 
-#: src/blocks/_pro/card-item/block.js:52
+#: src/blocks/_pro/card-item/block.js:60
 msgid "https://example.com"
 msgstr "https://example.com"
 
@@ -65,27 +65,27 @@ msgstr "タイトルを入力"
 msgid "Select image"
 msgstr "画像を選択"
 
-#: src/blocks/_pro/card/block.js:139
+#: src/blocks/_pro/card/block.js:117
 #: src/components/display-items-control/index.js:26
 msgid "Display item"
 msgstr "表示要素"
 
-#: src/blocks/_pro/card/block.js:141
+#: src/blocks/_pro/card/block.js:119
 #: src/components/display-items-control/index.js:28
 msgid "Image"
 msgstr "画像"
 
-#: src/blocks/_pro/card/block.js:146 src/blocks/button/block.js:59
+#: src/blocks/_pro/card/block.js:124 src/blocks/button/block.js:59
 #: src/components/display-items-control/index.js:57
 msgid "Button"
 msgstr "ボタン"
 
-#: src/blocks/_pro/card/block.js:151
+#: src/blocks/_pro/card/block.js:129
 #: src/components/display-items-control/index.js:73
 msgid "Button option"
 msgstr "ボタンオプション"
 
-#: src/blocks/_pro/card/block.js:154
+#: src/blocks/_pro/card/block.js:132
 #: src/components/display-items-control/index.js:76
 msgid ""
 "Click each card block to set the target url. You can find the url form at "
@@ -94,12 +94,12 @@ msgstr ""
 "ボタンのリンク先は各カードブロックをクリックすると、サイドバーにURL入力フォー"
 "ムが表示されます。"
 
-#: src/blocks/_pro/card/block.js:160
+#: src/blocks/_pro/card/block.js:138
 #: src/components/display-items-control/index.js:82
 msgid "Button text"
 msgstr "ボタンの文字"
 
-#: src/blocks/_pro/card/block.js:61
+#: src/blocks/_pro/card/block.js:47
 #: src/components/column-layout-control/index.js:19
 msgid "Card"
 msgstr "カード"
@@ -153,7 +153,7 @@ msgstr "背景画像"
 msgid "Background image Position"
 msgstr "背景画像の位置"
 
-#: src/blocks/_pro/outer/block.js:166 src/blocks/button/block.js:166
+#: src/blocks/_pro/outer/block.js:166
 msgid "normal"
 msgstr "標準"
 
@@ -173,7 +173,7 @@ msgstr "レイアウト設定"
 msgid "Outer width"
 msgstr "アウターの幅"
 
-#: src/blocks/_pro/outer/block.js:190
+#: src/blocks/_pro/outer/block.js:190 src/blocks/button/block.js:178
 msgid "Normal"
 msgstr "標準"
 
@@ -449,7 +449,7 @@ msgstr "画像をアップロード"
 msgid "Icon Name"
 msgstr "アイコンの名前"
 
-#: src/blocks/balloon/block.js:161 src/blocks/button/block.js:250
+#: src/blocks/balloon/block.js:161 src/blocks/button/block.js:321
 msgid "Input text"
 msgstr "文字を入力"
 
@@ -469,13 +469,13 @@ msgstr "位置"
 msgid "Please specify the layout of the balloon."
 msgstr "吹き出しの配置を指定してください。"
 
-#: src/blocks/balloon/block.js:97 src/blocks/button/block.js:175
+#: src/blocks/balloon/block.js:97 src/blocks/button/block.js:198
 #: src/blocks/pr-content/block.js:241
 #: src/components/display-items-control/index.js:93
 msgid "Left"
 msgstr "左"
 
-#: src/blocks/balloon/block.js:98 src/blocks/button/block.js:177
+#: src/blocks/balloon/block.js:98 src/blocks/button/block.js:214
 #: src/blocks/pr-content/block.js:240
 #: src/components/display-items-control/index.js:101
 msgid "Right"
@@ -498,85 +498,93 @@ msgstr "リンクを別ウィンドウで開く"
 msgid "Button Size:"
 msgstr "ボタンサイズ:"
 
-#: src/blocks/button/block.js:165
+#: src/blocks/button/block.js:170
 msgid "Large"
 msgstr "大"
 
-#: src/blocks/button/block.js:167
+#: src/blocks/button/block.js:186
 msgid "Small"
 msgstr "小"
 
-#: src/blocks/button/block.js:172
+#: src/blocks/button/block.js:190
 msgid "Button Position:"
 msgstr "ボタンの位置:"
 
-#: src/blocks/button/block.js:176
+#: src/blocks/button/block.js:206
 #: src/components/display-items-control/index.js:97
 msgid "Center"
 msgstr "中央"
 
-#: src/blocks/button/block.js:178
-msgid "Block"
-msgstr "ブロック（全幅）"
+#: src/blocks/button/block.js:222
+msgid "Wide"
+msgstr "幅広"
 
-#: src/blocks/button/block.js:183
+#: src/blocks/button/block.js:230
+msgid "Block"
+msgstr "全幅"
+
+#: src/blocks/button/block.js:234
 msgid "Button Style:"
 msgstr "ボタンスタイル:"
 
-#: src/blocks/button/block.js:186 src/blocks/pr-blocks/block.js:361
+#: src/blocks/button/block.js:242 src/blocks/pr-blocks/block.js:361
 msgid "Solid color"
 msgstr "ベタ塗り"
 
-#: src/blocks/button/block.js:187 src/blocks/pr-blocks/block.js:362
+#: src/blocks/button/block.js:250 src/blocks/pr-blocks/block.js:362
 msgid "No background"
 msgstr "背景なし"
 
-#: src/blocks/button/block.js:189
+#: src/blocks/button/block.js:258
+msgid "Text only"
+msgstr "テキストのみ"
+
+#: src/blocks/button/block.js:261
 msgid ""
 "If you select \"No background\", that you need to select a Custom Color."
 msgstr "もし「背景なし」を選択した場合はカスタムカラーで色を指定してください。"
 
-#: src/blocks/button/block.js:193 src/blocks/pr-content/block.js:175
+#: src/blocks/button/block.js:264 src/blocks/pr-content/block.js:175
 msgid "Default Color:"
 msgstr "標準色:"
 
-#: src/blocks/button/block.js:196 src/blocks/pr-content/block.js:178
+#: src/blocks/button/block.js:267 src/blocks/pr-content/block.js:178
 msgid "Primary"
 msgstr "Primary"
 
-#: src/blocks/button/block.js:197 src/blocks/pr-content/block.js:179
+#: src/blocks/button/block.js:268 src/blocks/pr-content/block.js:179
 msgid "Secondary"
 msgstr "Secondary"
 
-#: src/blocks/button/block.js:198 src/blocks/pr-content/block.js:180
+#: src/blocks/button/block.js:269 src/blocks/pr-content/block.js:180
 msgid "Success"
 msgstr "Success"
 
-#: src/blocks/button/block.js:199 src/blocks/pr-content/block.js:181
+#: src/blocks/button/block.js:270 src/blocks/pr-content/block.js:181
 msgid "Info"
 msgstr "Info"
 
-#: src/blocks/button/block.js:200 src/blocks/pr-content/block.js:182
+#: src/blocks/button/block.js:271 src/blocks/pr-content/block.js:182
 msgid "Warning"
 msgstr "Warning"
 
-#: src/blocks/button/block.js:201 src/blocks/pr-content/block.js:183
+#: src/blocks/button/block.js:272 src/blocks/pr-content/block.js:183
 msgid "Danger"
 msgstr "Danger"
 
-#: src/blocks/button/block.js:202 src/blocks/pr-content/block.js:184
+#: src/blocks/button/block.js:273 src/blocks/pr-content/block.js:184
 msgid "Light"
 msgstr "Light"
 
-#: src/blocks/button/block.js:203 src/blocks/pr-content/block.js:185
+#: src/blocks/button/block.js:274 src/blocks/pr-content/block.js:185
 msgid "Dark"
 msgstr "Dark"
 
-#: src/blocks/button/block.js:208
+#: src/blocks/button/block.js:279
 msgid "Custom Color"
 msgstr "カスタムカラー"
 
-#: src/blocks/button/block.js:209
+#: src/blocks/button/block.js:280
 msgid ""
 "This custom color overrides the default color. If you want to use the "
 "default color, click the clear button."
@@ -584,15 +592,15 @@ msgstr ""
 "このカスタムカラーはデフォルトのカラーを上書きします。 デフォルトの色を使用し"
 "たい場合は、クリアボタンをクリックしてください。"
 
-#: src/blocks/button/block.js:217 src/blocks/pr-content/block.js:196
+#: src/blocks/button/block.js:288 src/blocks/pr-content/block.js:196
 msgid "Font Awesome:"
 msgstr "Font Awesome:"
 
-#: src/blocks/button/block.js:221 src/blocks/pr-content/block.js:207
+#: src/blocks/button/block.js:292 src/blocks/pr-content/block.js:207
 msgid "Before text"
 msgstr "文字の前"
 
-#: src/blocks/button/block.js:222 src/blocks/pr-content/block.js:208
+#: src/blocks/button/block.js:293 src/blocks/pr-content/block.js:208
 msgid ""
 "Enter Font Awesome Class.This icon will appear before text. Ex) fas fa-arrow-"
 "circle-right"
@@ -600,11 +608,11 @@ msgstr ""
 "Font Awesome の class 名を入力してください。このアイコンは文字の前に表示され"
 "ます。 例) fas fa-arrow-circle-right"
 
-#: src/blocks/button/block.js:228 src/blocks/pr-content/block.js:219
+#: src/blocks/button/block.js:299 src/blocks/pr-content/block.js:219
 msgid "After text"
 msgstr "文字の後"
 
-#: src/blocks/button/block.js:229 src/blocks/pr-content/block.js:220
+#: src/blocks/button/block.js:300 src/blocks/pr-content/block.js:220
 msgid ""
 "Enter Font Awesome Class.This icon will appear after text. Ex) fas fa-"
 "external-link-alt"
@@ -612,7 +620,7 @@ msgstr ""
 "Font Awesome の class 名を入力してください。このアイコンは文字の後に表示され"
 "ます。 例) fas fa-external-link-alt"
 
-#: src/blocks/button/block.js:264
+#: src/blocks/button/block.js:335
 msgid "Apply"
 msgstr ""
 
@@ -1099,7 +1107,7 @@ msgstr "名前"
 msgid "Caption"
 msgstr "キャプション"
 
-#: src/components/card-align-control/index.js:22
+#: src/components/card-align-control/index.js:29
 msgid "Align"
 msgstr "表示位置"
 

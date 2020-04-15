@@ -17,15 +17,18 @@ define( 'VK_BLOCKS_PRO_VERSION', $data['version'] );
 
 if ( is_admin() && ! is_network_admin() ) {
 	$options = get_option( 'vkExUnit_common_options' );
-	if ( !empty( $options['active_vk-blocks'] ) ) {
+	if ( ! empty( $options['active_vk-blocks'] ) ) {
 		$options['active_vk-blocks'] = false;
 		update_option( 'vkExUnit_common_options', $options );
 
-		add_action( 'admin_notices', function(){
-			echo '<div class="updated notice"><p>';
-			echo __( 'Disabled Blocks module. Because VK-Blocks Plugin running.', 'vk-blocks' );
-			echo '</p></div>';
-		} );
+		add_action(
+			'admin_notices',
+			function() {
+				echo '<div class="updated notice"><p>';
+				echo __( 'Disabled Blocks module. Because VK-Blocks Plugin running.', 'vk-blocks' );
+				echo '</p></div>';
+			}
+		);
 	}
 }
 

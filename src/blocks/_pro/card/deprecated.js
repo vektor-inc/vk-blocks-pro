@@ -1,9 +1,24 @@
+import { schema } from "./schema";
 const { InnerBlocks } = wp.editor;
-const { __ } = wp.i18n; // Import __() from wp.i18n
+const { Component } = wp.element;
 import { convertToGrid } from "../../_helper/convert-to-grid";
-import React from "react";
 
-export class Component extends React.Component {
+export const deprecated = [
+  {
+    attributes: schema,
+    save({ attributes, className }) {
+      return (
+        <DeprecatedComponent
+          attributes={attributes}
+          className={className}
+          for_={"save"}
+        />
+      );
+    },
+  },
+];
+
+class DeprecatedComponent extends Component {
   render() {
     let for_ = this.props.for_;
     let attributes = this.props.attributes;
@@ -47,6 +62,6 @@ export class Component extends React.Component {
     } else if ("save") {
       elm = <InnerBlocks.Content />;
     }
-    return <div className={`vk_posts ${className}`}>{elm}</div>;
+    return <div className={"vk_posts"}>{elm}</div>;
   }
 }

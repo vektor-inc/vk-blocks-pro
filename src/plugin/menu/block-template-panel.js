@@ -1,6 +1,6 @@
 const { first, last } = window.lodash;
 
-const { Button, Spinner } = wp.components;
+const { Spinner } = wp.components;
 
 const { BlockPreview } = wp.blockEditor;
 
@@ -16,7 +16,7 @@ const {
   getBlocks,
   getBlockCount,
   getSelectedBlock,
-  getBlockInsertionPoint
+  getBlockInsertionPoint,
 } = select("core/block-editor");
 
 import parsedTemplates from "./default-templates";
@@ -44,8 +44,8 @@ export default ({ slug }) => {
 
     const newResultParts = parts.map((part, index) => {
       return (
-        <li>
-          <Button
+        <li key={index}>
+          <div
             className="vkb-menu__template-part__button"
             onClick={() => {
               if (part.blocks.length) {
@@ -101,11 +101,11 @@ export default ({ slug }) => {
                 </div>
               </div>
             </section>
-          </Button>
+          </div>
         </li>
       );
     });
-    setResultParts(newResultParts.filter(resultPart => resultPart));
+    setResultParts(newResultParts.filter((resultPart) => resultPart));
   };
 
   setupResultParts();

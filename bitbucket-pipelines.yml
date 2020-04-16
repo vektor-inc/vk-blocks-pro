@@ -40,7 +40,9 @@ pipelines:
             # プラグイン名を通常版へリネーム
             - sed -i 3s/Pro// vk-blocks.php
             # Pro版のブロックslugを配列に追加（後で使用する）
+            - cd ../
             - pro_block_array=($(ls src/_pro/))
+            - cd ./vk-blocks-free/
             # Pro版のブロックをphpから削除
             - for pro_block in ${pro_block_array[@]}; do
             - sed -i s/\,\ \'${pro_block}\'//g inc/vk-blocks/vk-blocks-functions.php

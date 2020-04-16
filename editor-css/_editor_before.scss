@@ -1,4 +1,5 @@
 
+/* Pro版ブロック表示 */
 .vk_block_icon_pro {
   fill:#c00;
   }
@@ -23,6 +24,16 @@
   padding: 3px 4px;
   }
   
+/* ブロックの種類入れ替えトグルについて、この指定がないと見えてしまう */
+.components-button.block-editor-block-switcher__toggle {
+  overflow: hidden;
+}
+
+/* スライダーを表示 : デフォルトだとbootstrapに非表示にされてしまう */
+input[type=range] {
+  margin: 1px;
+}
+
   .components-base-control__label {
      font-weight:bold;
   }
@@ -32,16 +43,42 @@
   .components-radio-control__option label { margin-bottom:0; }
   .components-checkbox-control__label { margin-bottom:0; }
   .components-color-palette { display:block; overflow:hidden; }
-  
-  /*スライダーを表示。デフォルトだとbootstrapに非表示にされてしまう*/
-  input[type=range] {
-      margin: 1px;
-  }
-  
+    
   .editor-url-input input[type="text"]{
       width:100%;
   }
+
+// ブロックテンプレートのサイドバー調整CSS読み込み
+@import "./editor_before_template_inserter";
   
+// VK Outer 編集パネル
+$color-danger: #dd3333;
+.vk_outer_sidebar_bgImage {
+	position: relative;
+	.components-button {
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translateY(-50%) translateX(-50%);
+	  transition: all 1s;
+	}
+	.button-delete {
+	  opacity: 0;
+	  border: 1px solid $color-danger;
+	  color: $color-danger;
+	  transition: all 1s;
+	  &:hover {
+		background-color: $color-danger;
+		border: 1px solid #b72a2a;
+		color: #fff;
+	  }
+	}
+	&:hover .button-delete {
+		transition: all 1s;
+		opacity: 1;
+	}
+  }
+
   /* editor area *********************************************/
   .edit-post-visual-editor.editor-styles-wrapper{
   
@@ -112,13 +149,15 @@
   
   .vk_posts > .vk_posts-edit {
     width:100%;
-    .editor-block-list__layout {
+    .editor-block-list__layout,
+    .block-editor-block-list__layout {
       display: flex;
       flex-wrap: wrap;
       padding:0;
       width:100%;
     }
-    .editor-block-list__block {
+    .editor-block-list__block,
+    .block-editor-block-list__block {
       margin:0 15px 30px;
       padding:0;
       .block-editor-block-list__block-edit {
@@ -129,11 +168,16 @@
       div[data-block]{
         margin:0;
         height:100%;
-        .vk_post {
-          width:100%;
-          height:100%;
-          margin-top:0;
-        }
+        // .vk_post {
+        //   width:100%;
+        //   height:100%;
+        //   margin-top:0;
+        // }
+      }
+      .vk_post {
+        width:100%;
+        height:100%;
+        margin-top:0;
       }
     }
     .block-list-appender {
@@ -173,7 +217,8 @@
       &-md-3 .editor-block-list__block{
         width: calc(25% - 30px);
       }
-      &-md-4 .editor-block-list__block{
+      &-md-4 .editor-block-list__block,
+      &-md-4 .block-editor-block-list__block{
         width: calc(33.3% - 30px);
       }
       &-md-6 .editor-block-list__block{
@@ -211,5 +256,51 @@
         width: calc(100% - 30px);
       }
     }
+}
+
+/*-------------------------------------------*/
+/* edit hidden block class 
+/*-------------------------------------------*/
+.vk_edit_hidden_warning{
+	// border:1px dotted #666;
+	opacity: 0.4;
+}
+.vk_edit_hidden_all{
+  	opacity: 0.2;
+}
+
+/* .vk_hidden.vk_hidden は2つじゃないと上書きできない  */
+.vk_hidden.vk_hidden {
+  display: block !important;
+  color: var(--blue);
+
+  &.vk_posts{
+	// display block だとカラムがすべて落ちるため posts は flexで上書き
+	display: flex !important;
   }
-  
+  @media (max-width: $xs-max) {
+    &-xs {
+      display: block !important;
+    }
+  }
+  @media (min-width: $sm-min) and (max-width: $sm-max) {
+    &-sm {
+      display: block !important;
+    }
+  }
+  @media (min-width: $md-min) and (max-width: $md-max) {
+    &-md {
+      display: block !important;
+    }
+  }
+  @media (min-width: $lg-min) and (max-width: $lg-max) {
+    &-lg {
+      display: block !important;
+    }
+  }
+  @media (min-width: $xl-min) {
+    &-xl {
+      display: block !important;
+    }
+  }
+}

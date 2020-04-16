@@ -2,10 +2,6 @@
 image: atlassian/default-image:2
 
 pipelines:
-  default:
-    - step:
-        script:
-          - echo "Everything is awesome!"
   branches:
     #↓このブランチにpushした時に処理を開始
     dist/vk-blocks:

@@ -23,9 +23,7 @@ pipelines:
             # 指定したファイルを除外して、Pro版をコピー&上書き
             - rsync --exclude 'src/blocks/_pro/' --exclude 'vk-blocks-git/' --exclude '.node-version' --exclude 'bin/' --exclude '.git/' --exclude '.gitignore' --exclude '.circleci/' --exclude 'tests/' --exclude '.phpcs.xml.dist' --exclude 'bitbucket-pipelines.yml' --exclude 'package-lock.json' --exclude 'phpunit.xml' --exclude 'phpunit.xml.dist' --exclude 'inc/plugin-update-checker/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.scss' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvc ./* ./vk-blocks-git/
             - mv vk-blocks-git/ vk-blocks/
-            - ls
             - cd ./vk-blocks/
-            - ls
             # push先のブランチを切る
             - git checkout -b add/vk-blocks-free
             # 通常版に元からある不要なファイルを削除
@@ -49,3 +47,8 @@ pipelines:
             - git add .
             - git commit -m"Update from vk-blocks-pro"
             - git push -f origin add/vk-blocks-free
+            - ls
+            - cd src/
+            - ls
+            - cd blocks/
+            - ls

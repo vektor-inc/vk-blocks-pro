@@ -41,9 +41,7 @@ pipelines:
             - sed -i 3s/Pro// vk-blocks.php
             # Pro版のブロックslugを配列に追加（後で使用する）
             - cd ../
-            - ls
-            - pwd
-            - pro_block_array=($(ls src/_pro/))
+            - pro_block_array=($(ls src/blocks/_pro/))
             - cd ./vk-blocks-free/
             # Pro版のブロックをphpから削除
             - for pro_block in ${pro_block_array[@]}; do

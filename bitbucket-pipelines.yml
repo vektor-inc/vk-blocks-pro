@@ -36,6 +36,10 @@ pipelines:
             - done
             - ls
             - pwd
+            - cd src/
+            - ls
+            - cd blocks/
+            - ls
             # Pro版ブロックは読み込まないようjsから削除
             - sed -i /_pro/d src/blocks/bundle.js
             # プラグイン名を通常版へリネーム

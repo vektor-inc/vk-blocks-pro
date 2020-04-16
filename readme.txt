@@ -61,7 +61,7 @@ e.g.
 = 0.26.0 =
 [ Add function ][ button ] Add text style
 [ Add function ][ button ] Add wide style
-[ bug fix ] Bug fix of when use hidden function and Posts column  
+[ bug fix ] Bug fix of when use hidden function and Posts column
 
 = 0.25.4 =
 [ bug fix ][ term color ] Fixed bug that gives arise from no custom taxonomy / term.

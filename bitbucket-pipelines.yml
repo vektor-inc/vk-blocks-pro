@@ -35,12 +35,6 @@ pipelines:
             - git rm ${remove}
             - fi
             - done
-            - ls
-            - pwd
-            - cd src/
-            - ls
-            - cd blocks/
-            - ls
             # Pro版ブロックは読み込まないようjsから削除
             - sed -i /_pro/d src/blocks/bundle.js
             # プラグイン名を通常版へリネーム
@@ -55,8 +49,3 @@ pipelines:
             - git add .
             - git commit -m"Update from vk-blocks-pro"
             - git push -f origin add/vk-blocks-free
-            - ls
-            - cd src/
-            - ls
-            - cd blocks/
-            - ls

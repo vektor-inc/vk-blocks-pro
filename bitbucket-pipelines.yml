@@ -34,12 +34,12 @@ pipelines:
             - git rm ${remove}
             - fi
             - done
+            - ls
+            - pwd
             # Pro版ブロックは読み込まないようjsから削除
             - sed -i /_pro/d src/blocks/bundle.js
             # プラグイン名を通常版へリネーム
             - sed -i 3s/Pro// vk-blocks.php
-            - ls
-            - pwd
             # Pro版のブロックslugを配列に追加（後で使用する）
             - pro_block_array=($(ls src/_pro/))
             # Pro版のブロックをphpから削除

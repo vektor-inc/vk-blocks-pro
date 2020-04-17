@@ -49,7 +49,7 @@ export class Component extends React.Component {
 		// 塗りなし
 		} else if ( buttonType === '1' ) {
 			// 規定カラーの場合
-			if ( buttonColorCustom == 'undefined' || buttonColorCustom == 'null' ) {
+			if ( buttonColorCustom == 'undefined' || buttonColorCustom === null ) {
 				aClass = `${aClass} btn-outline-${buttonColor}`;
 				aStyle = null;
 			// カスタムカラーの場合

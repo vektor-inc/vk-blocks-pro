@@ -13,7 +13,7 @@
 defined( 'ABSPATH' ) || die();
 
 if ( ! function_exists( 'vkblocks_get_version' ) ) {
-	function vkblocks_get_version(){
+	function vkblocks_get_version() {
 		$data = get_file_data( __FILE__, array( 'version' => 'Version' ) );
 		return $data['version'];
 	}
@@ -44,7 +44,7 @@ if ( ! function_exists( 'vkblocks_deactivate_plugin' ) ) {
 
 /*
   Deactive VK Blocks ( Free )
-/*-------------------------------------------*/
+-------------------------------------------*/
 /* 関数名入れると無料版の宣言と被ってエラーになるので一時的な回避処理で無名関数を利用 */
 add_action(
 	'init',

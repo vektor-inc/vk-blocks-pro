@@ -21,6 +21,7 @@ export class Component extends React.Component {
         let iconBefore = '';
         let iconAfter = '';
 
+		aStyle = null;
 		aClass = `vk_button_link`;
 
 		if ( buttonType == '0' ||  buttonType == null || buttonType == '1' ){
@@ -33,11 +34,11 @@ export class Component extends React.Component {
 		if ( buttonType == '0' ||  buttonType === null ){
 
 			// 規定カラーの場合
-			if ( buttonColorCustom == 'undefined' || buttonColorCustom === null ) {
+			if ( buttonColorCustom == 'undefined' || buttonColorCustom == undefined || buttonColorCustom === null ) {
 
 				aClass = `${aClass} btn-${buttonColor}`;
-
 				aStyle = null;
+
 			// カスタムカラーの場合
 			} else {
 				aStyle = {
@@ -49,7 +50,7 @@ export class Component extends React.Component {
 		// 塗りなし
 		} else if ( buttonType === '1' ) {
 			// 規定カラーの場合
-			if ( buttonColorCustom == 'undefined' || buttonColorCustom === null ) {
+			if ( buttonColorCustom == 'undefined' || buttonColorCustom == undefined || buttonColorCustom === null ) {
 				aClass = `${aClass} btn-outline-${buttonColor}`;
 				aStyle = null;
 			// カスタムカラーの場合
@@ -63,7 +64,7 @@ export class Component extends React.Component {
 		// テキストのみ
 		} else if ( buttonType === '2' ) {
 			// 規定カラーの場合
-			if ( buttonColorCustom == 'undefined' || buttonColorCustom == 'null' ) {
+			if ( buttonColorCustom == 'undefined' || buttonColorCustom == undefined || buttonColorCustom === null ) {
 				aClass = `${aClass} btn-outline-${buttonColor}`;
 				aStyle = null;
 			// カスタムカラーの場合

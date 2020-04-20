@@ -9,7 +9,7 @@ import {
   returnHtml,
   getAllHeadings,
   removeUnnecessaryElements,
-  asyncGetBlocksByName
+  asyncGetBlocksByName,
 } from "./toc-utils";
 import BlockIcon from "./icon.svg";
 
@@ -19,7 +19,7 @@ const {
   ServerSideRender,
   PanelBody,
   SelectControl,
-  BaseControl
+  BaseControl,
 } = wp.components;
 const { Fragment } = wp.element;
 const { InspectorControls } =
@@ -43,32 +43,32 @@ registerBlockType("vk-blocks/table-of-contents", {
             <BaseControl label={__("Style", "vk-blocks")}>
               <SelectControl
                 value={style}
-                onChange={value => setAttributes({ style: value })}
+                onChange={(value) => setAttributes({ style: value })}
                 options={[
                   {
                     value: "default",
-                    label: __("Default", "vk-blocks")
+                    label: __("Default", "vk-blocks"),
                   },
                   {
                     value: "",
-                    label: __("No frame", "vk-blocks")
-                  }
+                    label: __("No frame", "vk-blocks"),
+                  },
                 ]}
               />
             </BaseControl>
             <BaseControl label={__("Default Display Status", "vk-blocks")}>
               <SelectControl
                 value={open}
-                onChange={value => setAttributes({ open: value })}
+                onChange={(value) => setAttributes({ open: value })}
                 options={[
                   {
                     value: "open",
-                    label: __("OPEN", "vk-blocks")
+                    label: __("OPEN", "vk-blocks"),
                   },
                   {
                     value: "close",
-                    label: __("CLOSE", "vk-blocks")
-                  }
+                    label: __("CLOSE", "vk-blocks"),
+                  },
                 ]}
               />
             </BaseControl>
@@ -84,10 +84,10 @@ registerBlockType("vk-blocks/table-of-contents", {
 
   save() {
     return null;
-  }
+  },
 });
 
-const getHeadings = props => {
+const getHeadings = (props) => {
   const { className, name, clientId, attributes } = props;
   const { anchor } = attributes;
   const allowedBlocks = [
@@ -95,7 +95,7 @@ const getHeadings = props => {
     "vk-blocks/outer",
     "core/heading",
     "core/cover",
-    "core/group"
+    "core/group",
   ];
 
   const headingList = ["core/heading", "vk-blocks/heading"];
@@ -111,7 +111,7 @@ const getHeadings = props => {
       isAllowedBlock(name, headingList) != undefined
     ) {
       updateBlockAttributes(clientId, {
-        anchor: `vk-htags-${clientId}`
+        anchor: `vk-htags-${clientId}`,
       });
     }
 
@@ -124,14 +124,14 @@ const getHeadings = props => {
 
     if (isAllowedBlock(name, headingList) != undefined) {
       updateBlockAttributes(tocClientId, {
-        renderHtml: render
+        renderHtml: render,
       });
     }
   }
 };
 
-const updateTableOfContents = createHigherOrderComponent(BlockListBlock => {
-  return props => {
+const updateTableOfContents = createHigherOrderComponent((BlockListBlock) => {
+  return (props) => {
     getHeadings(props);
     return <BlockListBlock {...props} />;
   };

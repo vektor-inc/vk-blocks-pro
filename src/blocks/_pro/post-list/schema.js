@@ -1,98 +1,102 @@
 export const schema = {
   name: {
     type: "string",
-    default: ""
+    default: "",
   },
   layout: {
     type: "string",
-    default: "card"
+    default: "card",
   },
   col_xs: {
     type: "number",
-    default: 1
+    default: 1,
   },
   col_sm: {
     type: "number",
-    default: 2
+    default: 2,
   },
   col_md: {
     type: "number",
-    default: 3
+    default: 3,
   },
   col_lg: {
     type: "number",
-    default: 3
+    default: 3,
   },
   col_xl: {
     type: "number",
-    default: 3
+    default: 3,
   },
   display_image: {
     type: "boolean",
-    default: true
+    default: true,
   },
   display_image_overlay_term: {
     type: "boolean",
-    default: true
+    default: true,
   },
   display_excerpt: {
     type: "boolean",
-    default: false
+    default: false,
   },
   display_date: {
     type: "boolean",
-    default: true
+    default: true,
   },
   display_new: {
     type: "boolean",
-    default: true
+    default: true,
   },
   display_btn: {
     type: "boolean",
-    default: false
+    default: false,
   },
   new_date: {
     type: "number",
-    default: 7
+    default: 7,
   },
   new_text: {
     type: "string",
-    default: "New!!"
+    default: "New!!",
   },
   btn_text: {
     type: "string",
-    default: "Read more"
+    default: "Read more",
   },
   btn_align: {
     type: "string",
-    default: "text-right"
+    default: "text-right",
   },
   numberPosts: {
     type: "number",
-    default: 6
+    default: 6,
   },
   isCheckedPostType: {
     type: "string",
-    default: '["post"]'
+    default: '["post"]',
   },
   coreTerms: {
     type: "string",
-    default: "[]"
+    default: "[]",
   },
   isCheckedTerms: {
     type: "string",
-    default: "[]"
+    default: "[]",
   },
   offset: {
     type: "number",
-    default: 0
+    default: 0,
   },
   orderby: {
     type: "string",
-    default: "date"
+    default: "date",
   },
   selfIgnore: {
     type: "boolean",
-    default: false
-  }
+    default: false,
+  },
+  className: {
+    type: "string",
+    default: "",
+  },
 };

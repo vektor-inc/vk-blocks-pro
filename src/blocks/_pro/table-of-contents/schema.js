@@ -1,14 +1,18 @@
 export const schema = {
   style: {
     type: "string",
-    default: "default"
+    default: "default",
   },
   renderHtml: {
     type: "string",
-    default: ""
+    default: "",
   },
   open: {
     type: "string",
-    default: "open"
-  }
+    default: "open",
+  },
+  className: {
+    type: "string",
+    default: "",
+  },
 };

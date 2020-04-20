@@ -45,14 +45,14 @@ registerBlockType("vk-blocks/child-page", {
   category: "vk-blocks-cat", // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
   attributes: schema,
 
-  edit: withSelect(select => {
+  edit: withSelect((select) => {
     return {
       postTypes: select("core").getEntityRecords("postType", "page", {
         _embed: true,
-        per_page: -1
-      })
+        per_page: -1,
+      }),
     };
-  })(props => {
+  })((props) => {
     const { setAttributes, attributes, postTypes, name } = props;
     const { selectId } = attributes;
     attributes["name"] = name;
@@ -66,7 +66,7 @@ registerBlockType("vk-blocks/child-page", {
             <BaseControl label={__("Parent", "vk-blocks")}>
               <SelectControl
                 value={selectId}
-                onChange={value =>
+                onChange={(value) =>
                   setAttributes({ selectId: parseInt(value, 10) })
                 }
                 options={renderPages(postTypes, props)}
@@ -85,7 +85,7 @@ registerBlockType("vk-blocks/child-page", {
   }),
   save() {
     return null;
-  }
+  },
 });
 
 export const renderPages = (postTypes, props) => {
@@ -100,8 +100,8 @@ export const renderPages = (postTypes, props) => {
     let children = filterChildren(postTypes);
 
     //隕ｪ繝壹�繧ｸ縺ｮ逶ｴ蠕後↓蟄舌�繝ｼ繧ｸ縺梧諺蜈･縺輔ｌ縺滄�蛻励ｒ逕滓�
-    children.forEach(child => {
-      const index = parents.findIndex(parent => parent.id === child.parent);
+    children.forEach((child) => {
+      const index = parents.findIndex((parent) => parent.id === child.parent);
       if (index !== -1) {
         parents.splice(index, 0, child);
       } else {
@@ -118,12 +118,12 @@ export const renderPages = (postTypes, props) => {
     let defaultOption = [
       {
         value: 0,
-        label: __("Exsist Already Page", "vk-blocks")
-      }
+        label: __("Exsist Already Page", "vk-blocks"),
+      },
     ];
     let currentPageId = select("core/editor").getCurrentPostId();
     let isCurrentPageCreated = postTypes.find(
-      page => page.id === currentPageId
+      (page) => page.id === currentPageId
     );
 
     //譁ｰ隕上�繝ｼ繧ｸ縺ｫ繝悶Ο繝�け霑ｽ蜉�譎� or 譌｢蟄倥�繝ｼ繧ｸ縺ｫ繝悶Ο繝�け霑ｽ蜉�譎�
@@ -137,8 +137,8 @@ export const renderPages = (postTypes, props) => {
       defaultOption = [
         {
           value: currentPageId,
-          label: __("Current Page", "vk-blocks")
-        }
+          label: __("Current Page", "vk-blocks"),
+        },
       ];
       formated = defaultOption.concat(formated);
     }
@@ -146,8 +146,8 @@ export const renderPages = (postTypes, props) => {
   }
 };
 
-export const filterParents = pages => {
-  return pages.filter(page => {
+export const filterParents = (pages) => {
+  return pages.filter((page) => {
     if (page.parent === 0) {
       return true;
     }
@@ -155,8 +155,8 @@ export const filterParents = pages => {
   });
 };
 
-export const filterChildren = pages => {
-  return pages.filter(page => {
+export const filterChildren = (pages) => {
+  return pages.filter((page) => {
     if (page.parent !== 0) {
       return true;
     }
@@ -164,9 +164,9 @@ export const filterChildren = pages => {
   });
 };
 
-export const formatPulldonwOrder = parents => {
+export const formatPulldonwOrder = (parents) => {
   let label;
-  return parents.map(page => {
+  return parents.map((page) => {
     if (page.parent !== 0) {
       label = " - " + page.title.rendered + "(Child Page)";
     } else {
@@ -174,7 +174,7 @@ export const formatPulldonwOrder = parents => {
     }
     return {
       value: page.id,
-      label: __(label, "vk-blocks")
+      label: __(label, "vk-blocks"),
     };
   });
 };

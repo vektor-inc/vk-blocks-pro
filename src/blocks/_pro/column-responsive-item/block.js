@@ -2,16 +2,11 @@
  * card-item block type
  *
  */
-import { Component } from "./component";
 import { schema } from "./schema";
-import { LinkControl } from "../../../components/link-control";
-
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { PanelBody, BaseControl, TextControl } = wp.components;
-const { InspectorControls } =
-  wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
-const { Fragment } = wp.element;
+const { InnerBlocks } = wp.blockEditor;
+
 const BlockIcon = (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 498 498">
     <path
@@ -49,29 +44,20 @@ registerBlockType("vk-blocks/column-responsive-item", {
   },
 
   edit(props) {
-    const { setAttributes, attributes } = props;
-    const { url } = attributes;
-
+    const { className } = props;
     return (
-      <Fragment>
-        <InspectorControls>
-          <PanelBody title={__("URL", "vk-blocks")}>
-            <BaseControl id="sidebar-card-block-url">
-              <TextControl
-                value={url}
-                onChange={(value) => setAttributes({ url: value })}
-                placeholder={__("https://example.com", "vk-blocks")}
-              />
-            </BaseControl>
-            <LinkControl blockName={"card"} {...props} />
-          </PanelBody>
-        </InspectorControls>
-        <Component value={props} for_={"edit"} />
-      </Fragment>
+      <div className={`${className}`}>
+        <InnerBlocks />
+      </div>
     );
   },
 
   save(props) {
-    return <Component value={props} for_={"save"} />;
+    const { className } = props;
+    return (
+      <div className={`${className}`}>
+        <InnerBlocks.Content />
+      </div>
+    );
   },
 });

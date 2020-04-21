@@ -10,8 +10,7 @@ const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { Fragment } = wp.element;
 const { PanelBody, CheckboxControl, TextControl } = wp.components;
-const { InspectorControls } =
-  wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
+const { InspectorControls } = wp.blockEditor;
 const { select, dispatch } = wp.data;
 const BlockIcon = (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 576">
@@ -55,39 +54,40 @@ registerBlockType("vk-blocks/column-responsive", {
     const { attributes, setAttributes, className, clientId, name } = props;
     attributes["name"] = name;
 
-    let selectEditor = select("core/block-editor")
-      ? select("core/block-editor")
-      : select("core/editor");
-    let dispatchEditor = dispatch("core/block-editor")
-      ? dispatch("core/block-editor")
-      : dispatch("core/editor");
+    // let selectEditor = select("core/block-editor")
+    //   ? select("core/block-editor")
+    //   : select("core/editor");
+    // let dispatchEditor = dispatch("core/block-editor")
+    //   ? dispatch("core/block-editor")
+    //   : dispatch("core/editor");
 
-    const { getBlocksByClientId } = selectEditor;
-    const { updateBlockAttributes } = dispatchEditor;
+    // const { getBlocksByClientId } = selectEditor;
+    // const { updateBlockAttributes } = dispatchEditor;
 
-    let currentBlock = getBlocksByClientId(clientId);
-    let beforeLength;
-    let afterLength;
+    // let currentBlock = getBlocksByClientId(clientId);
+    // let beforeLength;
+    // let afterLength;
 
-    if (
-      currentBlock !== undefined &&
-      currentBlock[0] !== null &&
-      currentBlock[0].innerBlocks !== undefined
-    ) {
-      let innerBlocks = currentBlock[0].innerBlocks;
-      beforeLength = innerBlocks.length;
+    // if (
+    //   currentBlock !== undefined &&
+    //   currentBlock[0] !== null &&
+    //   currentBlock[0].innerBlocks !== undefined
+    // ) {
+    //   let innerBlocks = currentBlock[0].innerBlocks;
+    //   beforeLength = innerBlocks.length;
 
-      if (beforeLength !== undefined) {
-        if (beforeLength !== afterLength) {
-          for (let i = 0; i < innerBlocks.length; i++) {
-            if (innerBlocks[i] !== undefined) {
-              updateBlockAttributes(innerBlocks[i].clientId, attributes);
-            }
-          }
-        }
-        afterLength = beforeLength;
-      }
-    }
+    //   if (beforeLength !== undefined) {
+    //     if (beforeLength !== afterLength) {
+    //       for (let i = 0; i < innerBlocks.length; i++) {
+    //         if (innerBlocks[i] !== undefined) {
+    //           updateBlockAttributes(innerBlocks[i].clientId, attributes);
+    //         }
+    //       }
+    //     }
+    //     afterLength = beforeLength;
+    //   }
+    // }
+
     return (
       <Fragment>
         <InspectorControls>
@@ -104,7 +104,11 @@ registerBlockType("vk-blocks/column-responsive", {
   },
   save({ attributes, className }) {
     return (
-      <Component attributes={attributes} className={className} for_={"save"} />
+      <ColumnResponsive
+        attributes={attributes}
+        className={className}
+        for_={"save"}
+      />
     );
   },
 });

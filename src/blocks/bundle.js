@@ -25,5 +25,7 @@ import "./_pro/step-item/block.js";
 import "./_pro/step/block.js";
 import "./_pro/timeline-item/block.js";
 import "./_pro/timeline/block.js";
+import "./_pro/column-responsive/block.js";
+import "./_pro/column-responsive-item/block.js";
 import "../plugin/menu/block.js";
 import "../translation_dummy.js";

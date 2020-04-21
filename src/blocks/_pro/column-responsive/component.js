@@ -19,12 +19,14 @@ export const ColumnResponsive = (props) => {
     innerClass = innerClass + " vk_posts-edit";
 
     elm = (
-      <div className={innerClass}>
-        <InnerBlocks template={TEMPLATE} allowedBlocks={ALLOWED_BLOCKS} />
-      </div>
+      <InnerBlocks
+        className={"container row"}
+        template={TEMPLATE}
+        allowedBlocks={ALLOWED_BLOCKS}
+      />
     );
   } else if ("save") {
-    elm = <InnerBlocks.Content />;
+    elm = <InnerBlocks.Content className={"container row"} />;
   }
-  return <div className={`vk_posts ${className}`}>{elm}</div>;
+  return elm;
 };

@@ -105,3 +105,25 @@ registerBlockType("vk-blocks/column-responsive", {
     );
   },
 });
+
+const { createHigherOrderComponent } = wp.compose;
+const { addFilter } = wp.hooks;
+
+const vkbwithClientIdClassName = createHigherOrderComponent(
+  (BlockListBlock) => {
+    return (props) => {
+      if (props.name === "vk-blocks/column-responsive-item") {
+        return <BlockListBlock {...props} className={"col-3"} />;
+      } else {
+        return <BlockListBlock {...props} />;
+      }
+    };
+  },
+  "vkbwithClientIdClassName"
+);
+
+addFilter(
+  "editor.BlockListBlock",
+  "vk-blocks/column-responsive-item",
+  vkbwithClientIdClassName
+);

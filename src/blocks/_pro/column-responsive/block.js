@@ -52,19 +52,12 @@ registerBlockType("vk-blocks/column-responsive", {
 
   edit(props) {
     const { attributes, setAttributes, className, clientId, name } = props;
-    attributes["name"] = name;
 
-    // let selectEditor = select("core/block-editor")
-    //   ? select("core/block-editor")
-    //   : select("core/editor");
-    // let dispatchEditor = dispatch("core/block-editor")
-    //   ? dispatch("core/block-editor")
-    //   : dispatch("core/editor");
+    // const { getBlocksByClientId } = select("core/block-editor");
+    // const { updateBlockAttributes } = dispatch("core/block-editor");
 
-    // const { getBlocksByClientId } = selectEditor;
-    // const { updateBlockAttributes } = dispatchEditor;
+    // let thisBlock = getBlocksByClientId(clientId);
 
-    // let currentBlock = getBlocksByClientId(clientId);
     // let beforeLength;
     // let afterLength;
 

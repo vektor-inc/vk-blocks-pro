@@ -125,12 +125,12 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				array_push( $hidden_class, 'vk_hidden-sm' );
 			} elseif ( ! empty( $options['vkb_hidden_xs'] ) ) {
 				array_push( $hidden_class, 'vk_hidden-xs' );
-			};
+			}
 
 			$loop = '';
 			if ( $wp_query->have_posts() ) :
 
-				$loop .= '<div class="vk_posts ' .  esc_attr($options['className']) . ' ' . esc_attr( $loop_outer_class ) . ' ' . esc_attr( implode( ' ', $hidden_class ) ) . '">';
+				$loop .= '<div class="vk_posts ' . esc_attr( $loop_outer_class ) . ' ' . esc_attr( implode( ' ', $hidden_class ) ) . '">';
 
 				while ( $wp_query->have_posts() ) {
 					$wp_query->the_post();

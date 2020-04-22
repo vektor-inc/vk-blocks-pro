@@ -5,11 +5,12 @@
 import { ColumnResponsive } from "./component";
 import { schema } from "./schema";
 import { ColumnLayoutControl } from "../../../components/column-layout-control";
+import classNames from "classnames";
+import { convertToGrid } from "../../_helper/convert-to-grid";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { Fragment } = wp.element;
-const { PanelBody, CheckboxControl, TextControl } = wp.components;
 const { InspectorControls } = wp.blockEditor;
 const { select, dispatch } = wp.data;
 const BlockIcon = (
@@ -53,33 +54,33 @@ registerBlockType("vk-blocks/column-responsive", {
   edit(props) {
     const { attributes, setAttributes, className, clientId, name } = props;
 
-    // const { getBlocksByClientId } = select("core/block-editor");
-    // const { updateBlockAttributes } = dispatch("core/block-editor");
+    const { getBlocksByClientId } = select("core/block-editor");
+    const { updateBlockAttributes } = dispatch("core/block-editor");
 
-    // let thisBlock = getBlocksByClientId(clientId);
+    let thisBlock = getBlocksByClientId(clientId);
 
-    // let beforeLength;
-    // let afterLength;
+    let beforeLength;
+    let afterLength;
 
-    // if (
-    //   currentBlock !== undefined &&
-    //   currentBlock[0] !== null &&
-    //   currentBlock[0].innerBlocks !== undefined
-    // ) {
-    //   let innerBlocks = currentBlock[0].innerBlocks;
-    //   beforeLength = innerBlocks.length;
+    if (
+      thisBlock !== undefined &&
+      thisBlock[0] !== null &&
+      thisBlock[0].innerBlocks !== undefined
+    ) {
+      let innerBlocks = thisBlock[0].innerBlocks;
+      beforeLength = innerBlocks.length;
 
-    //   if (beforeLength !== undefined) {
-    //     if (beforeLength !== afterLength) {
-    //       for (let i = 0; i < innerBlocks.length; i++) {
-    //         if (innerBlocks[i] !== undefined) {
-    //           updateBlockAttributes(innerBlocks[i].clientId, attributes);
-    //         }
-    //       }
-    //     }
-    //     afterLength = beforeLength;
-    //   }
-    // }
+      if (beforeLength !== undefined) {
+        if (beforeLength !== afterLength) {
+          for (let i = 0; i < innerBlocks.length; i++) {
+            if (innerBlocks[i] !== undefined) {
+              updateBlockAttributes(innerBlocks[i].clientId, attributes);
+            }
+          }
+        }
+        afterLength = beforeLength;
+      }
+    }
 
     return (
       <Fragment>
@@ -113,7 +114,17 @@ const vkbwithClientIdClassName = createHigherOrderComponent(
   (BlockListBlock) => {
     return (props) => {
       if (props.name === "vk-blocks/column-responsive-item") {
-        return <BlockListBlock {...props} className={"col-3"} />;
+        const { col_xs, col_sm, col_md, col_lg, col_xl } = props.attributes;
+        return (
+          <BlockListBlock
+            {...props}
+            className={`col-${convertToGrid(col_xs)} col-sm-${convertToGrid(
+              col_sm
+            )} col-md-${convertToGrid(col_md)} col-lg-${convertToGrid(
+              col_lg
+            )} col-xl-${convertToGrid(col_xl)}`}
+          />
+        );
       } else {
         return <BlockListBlock {...props} />;
       }
@@ -126,4 +137,29 @@ addFilter(
   "editor.BlockListBlock",
   "vk-blocks/column-responsive-item",
   vkbwithClientIdClassName
+);
+
+addFilter(
+  "blocks.getSaveElement",
+  "vk-blocks/hidden-extension",
+  (element, blockType, attributes) => {
+    const { col_xs, col_sm, col_md, col_lg, col_xl } = attributes;
+    if (blockType.name === "vk-blocks/column-responsive-item" && element) {
+      element = {
+        ...element,
+        ...{
+          props: {
+            ...element.props,
+            ...{
+              className: classNames(
+                element.props.className,
+                `col-${col_xs} col-sm-${col_sm} col-md-${col_md} col-lg-${col_lg} col-xl-${col_xl}`
+              ),
+            },
+          },
+        },
+      };
+    }
+    return element;
+  }
 );

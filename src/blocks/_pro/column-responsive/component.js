@@ -19,14 +19,21 @@ export const ColumnResponsive = (props) => {
     innerClass = innerClass + " vk_posts-edit";
 
     elm = (
-      <InnerBlocks
-        className={"container row"}
-        template={TEMPLATE}
-        allowedBlocks={ALLOWED_BLOCKS}
-      />
+      <div>
+        <InnerBlocks
+          //編集画面の追加タグ用に2回目のClassを挿入
+          className={"container row"}
+          template={TEMPLATE}
+          allowedBlocks={ALLOWED_BLOCKS}
+        />
+      </div>
     );
   } else if ("save") {
-    elm = <InnerBlocks.Content className={"container row"} />;
+    elm = (
+      <div className={"container row"}>
+        <InnerBlocks.Content />
+      </div>
+    );
   }
   return elm;
 };

@@ -240,38 +240,38 @@ $color-danger: #dd3333;
 		}
     }
     @media (min-width: $lg-min) {
-		&-col-lg-3 > .editor-block-list__block,
-		&-col-lg-3 > .block-editor-block-list__block {
+		&-col-lg-3 .editor-block-list__block,
+		&-col-lg-3 .block-editor-block-list__block {
 			width: calc(25% - 30px);
 		}
-		&-col-lg-4 > .editor-block-list__block,
-		&-col-lg-4 > .block-editor-block-list__block {
+		&-col-lg-4 .editor-block-list__block,
+		&-col-lg-4 .block-editor-block-list__block {
 			width: calc(33.3% - 30px);
 		}
-		&-col-lg-6 > .editor-block-list__block,
-		&-col-lg-6 > .block-editor-block-list__block {
+		&-col-lg-6 .editor-block-list__block,
+		&-col-lg-6 .block-editor-block-list__block {
 			width: calc(50% - 30px);
 		}
-		&-col-lg-12 > .editor-block-list__block,
-		&-col-lg-12 > .block-editor-block-list__block {
+		&-col-lg-12 .editor-block-list__block,
+		&-col-lg-12 .block-editor-block-list__block {
 			width: calc(100% - 30px);
 		}
     }
     @media (min-width: $xl-min) {
-		&-col-xl-3 > .editor-block-list__block,
-		&-col-xl-3 > .block-editor-block-list__block {
+		&-col-xl-3 .editor-block-list__block,
+		&-col-xl-3 .block-editor-block-list__block {
 			width: calc(25% - 30px);
 		}
-		&-col-xl-4 > .editor-block-list__block,
-		&-col-xl-4 > .block-editor-block-list__block {
+		&-col-xl-4 .editor-block-list__block,
+		&-col-xl-4 .block-editor-block-list__block {
 			width: calc(33.3% - 30px);
 		}
-		&-col-xl-6 > .editor-block-list__block,
-		&-col-xl-6 > .block-editor-block-list__block {
+		&-col-xl-6 .editor-block-list__block,
+		&-col-xl-6 .block-editor-block-list__block {
 			width: calc(50% - 30px);
 		}
-		&-col-xl-12 > .editor-block-list__block,
-		&-col-xl-12 > .block-editor-block-list__block {
+		&-col-xl-12 .editor-block-list__block,
+		&-col-xl-12 .block-editor-block-list__block {
 			width: calc(100% - 30px);
 		}
     }

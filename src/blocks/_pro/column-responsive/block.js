@@ -42,6 +42,11 @@ const BlockIcon = (
   </svg>
 );
 
+let displayInserter = false;
+if (window.wpVersion && 5.4 <= window.wpVersion) {
+  displayInserter = true;
+}
+
 registerBlockType("vk-blocks/column-responsive", {
   title: __("Responsive Column", "vk-blocks"),
   icon: BlockIcon,
@@ -49,6 +54,7 @@ registerBlockType("vk-blocks/column-responsive", {
   attributes: schema,
   supports: {
     className: true,
+    inserter: displayInserter,
   },
 
   edit(props) {

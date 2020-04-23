@@ -1,7 +1,22 @@
 import { schema, schema_v1 } from "./schema";
-import { ComponentV0, ComponentV1 } from "./component";
+import { ComponentV0, ComponentV1, ComponentForTemplate } from "./component";
 
 export const deprecated = [
+  //ブロックテンプレート用のdeprecated
+  {
+    attributes: schema_v1,
+    save({ attributes, className }) {
+      {
+        return (
+          <ComponentForTemplate
+            attributes={attributes}
+            className={className}
+            for_={"save"}
+          />
+        );
+      }
+    }
+  },
   {
     attributes: schema_v1,
 

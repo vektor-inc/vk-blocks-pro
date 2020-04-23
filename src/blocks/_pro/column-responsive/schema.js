@@ -1,7 +1,7 @@
 export const schema = {
   name: {
     type: "string",
-    default: "column-responsive",
+    default: "column-responsive-item",
   },
   layout: {
     type: "string",

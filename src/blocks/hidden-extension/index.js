@@ -223,11 +223,11 @@ wp.hooks.addFilter(
       // Add hidden common class
       const hiddenSomething =
         props.attributes.vkb_hidden_xl ||
-        props.attributes.vkb_hidden_lg ||
-        props.attributes.vkb_hidden_md ||
-        props.attributes.vkb_hidden_sm ||
-        props.attributes.vkb_hidden_xs ||
-        props.attributes.vkb_hidden
+          props.attributes.vkb_hidden_lg ||
+          props.attributes.vkb_hidden_md ||
+          props.attributes.vkb_hidden_sm ||
+          props.attributes.vkb_hidden_xs ||
+          props.attributes.vkb_hidden
           ? "vk_edit_hidden_warning"
           : "";
 
@@ -236,7 +236,7 @@ wp.hooks.addFilter(
         ? hiddenSomething + " vk_edit_hidden_all"
         : hiddenSomething;
 
-      return <BlockListBlock {...props} className={hiddenClassName} />;
+      return <BlockListBlock {...props} className={classnames(hiddenClassName, props.className)} />;
     };
   }, "addHiddenWarning")
 );

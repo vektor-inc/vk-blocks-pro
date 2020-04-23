@@ -12,7 +12,7 @@ msgid "Enter Font Awesome Class. Ex) fas fa-arrow-circle-right "
 msgstr ""
 
 #: src/blocks/_helper/font-awesome.js:25
-#: src/blocks/button/block.js:218
+#: src/blocks/button/block.js:289
 #: src/blocks/pr-blocks/block.js:344
 #: src/blocks/pr-content/block.js:202
 msgid "Font Awesome icon list"
@@ -22,16 +22,16 @@ msgstr ""
 msgid "Card Item"
 msgstr ""
 
-#: src/blocks/_pro/card-item/block.js:55
+#: src/blocks/_pro/card-item/block.js:58
 msgid "URL"
 msgstr ""
 
-#: src/blocks/_pro/card-item/block.js:60
+#: src/blocks/_pro/card-item/block.js:63
 msgid "https://example.com"
 msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:103
-#: src/components/advanced-media-upload/index.js:31
+#: src/components/advanced-media-upload/index.js:34
 msgid "Delete Image"
 msgstr ""
 
@@ -49,48 +49,48 @@ msgstr ""
 #: src/blocks/balloon/block.js:136
 #: src/blocks/flow/block.js:112
 #: src/blocks/pr-blocks/block.js:179
-#: src/blocks/pr-content/component.js:158
+#: src/blocks/pr-content/component.js:157
 #: src/blocks/pr-content/deprecated/component-deprecated.js:102
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:116
 #: src/blocks/staff/component.js:88
-#: src/components/advanced-media-upload/index.js:39
+#: src/components/advanced-media-upload/index.js:44
 msgid "Select image"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:117
+#: src/blocks/_pro/card/block.js:122
 #: src/components/display-items-control/index.js:26
 msgid "Display item"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:119
+#: src/blocks/_pro/card/block.js:124
 #: src/components/display-items-control/index.js:28
 msgid "Image"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:124
+#: src/blocks/_pro/card/block.js:129
 #: src/blocks/button/block.js:59
 #: src/components/display-items-control/index.js:57
 msgid "Button"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:129
+#: src/blocks/_pro/card/block.js:134
 #: src/components/display-items-control/index.js:73
 msgid "Button option"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:132
+#: src/blocks/_pro/card/block.js:137
 #: src/components/display-items-control/index.js:76
 msgid ""
 "Click each card block to set the target url. You can find the url form at "
 "it's sidebar."
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:138
+#: src/blocks/_pro/card/block.js:143
 #: src/components/display-items-control/index.js:82
 msgid "Button text"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:47
+#: src/blocks/_pro/card/block.js:48
 #: src/components/column-layout-control/index.js:19
 msgid "Card"
 msgstr ""
@@ -148,7 +148,6 @@ msgid "Background image Position"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:150
-#: src/blocks/button/block.js:166
 msgid "normal"
 msgstr ""
 
@@ -170,6 +169,7 @@ msgid "Outer width"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:174
+#: src/blocks/button/block.js:178
 msgid "Normal"
 msgstr ""
 
@@ -358,7 +358,7 @@ msgstr ""
 #: src/blocks/_pro/table-of-contents/block.js:50
 #: src/blocks/_pro/timeline-item/block.js:99
 #: src/blocks/heading-style/block.js:33
-#: src/blocks/heading/block.js:153
+#: src/blocks/heading/block.js:132
 #: src/blocks/list-style/block.js:104
 #: src/blocks/staff/block.js:105
 msgid "Default"
@@ -453,7 +453,7 @@ msgstr ""
 #: src/blocks/balloon/block.js:141
 #: src/blocks/flow/block.js:113
 #: src/blocks/pr-blocks/block.js:175
-#: src/blocks/pr-content/component.js:165
+#: src/blocks/pr-content/component.js:164
 #: src/blocks/pr-content/deprecated/component-deprecated.js:106
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:120
 msgid "Upload image"
@@ -464,7 +464,7 @@ msgid "Icon Name"
 msgstr ""
 
 #: src/blocks/balloon/block.js:161
-#: src/blocks/button/block.js:250
+#: src/blocks/button/block.js:321
 msgid "Input text"
 msgstr ""
 
@@ -477,7 +477,7 @@ msgid "Balloon setting"
 msgstr ""
 
 #: src/blocks/balloon/block.js:90
-#: src/blocks/heading/block.js:210
+#: src/blocks/heading/block.js:189
 msgid "Position"
 msgstr ""
 
@@ -486,14 +486,14 @@ msgid "Please specify the layout of the balloon."
 msgstr ""
 
 #: src/blocks/balloon/block.js:97
-#: src/blocks/button/block.js:175
+#: src/blocks/button/block.js:198
 #: src/blocks/pr-content/block.js:241
 #: src/components/display-items-control/index.js:93
 msgid "Left"
 msgstr ""
 
 #: src/blocks/balloon/block.js:98
-#: src/blocks/button/block.js:177
+#: src/blocks/button/block.js:214
 #: src/blocks/pr-content/block.js:240
 #: src/components/display-items-control/index.js:101
 msgid "Right"
@@ -517,130 +517,138 @@ msgstr ""
 msgid "Button Size:"
 msgstr ""
 
-#: src/blocks/button/block.js:165
+#: src/blocks/button/block.js:170
 msgid "Large"
 msgstr ""
 
-#: src/blocks/button/block.js:167
+#: src/blocks/button/block.js:186
 msgid "Small"
 msgstr ""
 
-#: src/blocks/button/block.js:172
+#: src/blocks/button/block.js:190
 msgid "Button Position:"
 msgstr ""
 
-#: src/blocks/button/block.js:176
+#: src/blocks/button/block.js:206
 #: src/components/display-items-control/index.js:97
 msgid "Center"
 msgstr ""
 
-#: src/blocks/button/block.js:178
+#: src/blocks/button/block.js:222
+msgid "Wide"
+msgstr ""
+
+#: src/blocks/button/block.js:230
 msgid "Block"
 msgstr ""
 
-#: src/blocks/button/block.js:183
+#: src/blocks/button/block.js:234
 msgid "Button Style:"
 msgstr ""
 
-#: src/blocks/button/block.js:186
+#: src/blocks/button/block.js:242
 #: src/blocks/pr-blocks/block.js:361
 msgid "Solid color"
 msgstr ""
 
-#: src/blocks/button/block.js:187
+#: src/blocks/button/block.js:250
 #: src/blocks/pr-blocks/block.js:362
 msgid "No background"
 msgstr ""
 
-#: src/blocks/button/block.js:189
+#: src/blocks/button/block.js:258
+msgid "Text only"
+msgstr ""
+
+#: src/blocks/button/block.js:261
 msgid "If you select \"No background\", that you need to select a Custom Color."
 msgstr ""
 
-#: src/blocks/button/block.js:193
+#: src/blocks/button/block.js:264
 #: src/blocks/pr-content/block.js:175
 msgid "Default Color:"
 msgstr ""
 
-#: src/blocks/button/block.js:196
+#: src/blocks/button/block.js:267
 #: src/blocks/pr-content/block.js:178
 msgid "Primary"
 msgstr ""
 
-#: src/blocks/button/block.js:197
+#: src/blocks/button/block.js:268
 #: src/blocks/pr-content/block.js:179
 msgid "Secondary"
 msgstr ""
 
-#: src/blocks/button/block.js:198
+#: src/blocks/button/block.js:269
 #: src/blocks/pr-content/block.js:180
 msgid "Success"
 msgstr ""
 
-#: src/blocks/button/block.js:199
+#: src/blocks/button/block.js:270
 #: src/blocks/pr-content/block.js:181
 msgid "Info"
 msgstr ""
 
-#: src/blocks/button/block.js:200
+#: src/blocks/button/block.js:271
 #: src/blocks/pr-content/block.js:182
 msgid "Warning"
 msgstr ""
 
-#: src/blocks/button/block.js:201
+#: src/blocks/button/block.js:272
 #: src/blocks/pr-content/block.js:183
 msgid "Danger"
 msgstr ""
 
-#: src/blocks/button/block.js:202
+#: src/blocks/button/block.js:273
 #: src/blocks/pr-content/block.js:184
 msgid "Light"
 msgstr ""
 
-#: src/blocks/button/block.js:203
+#: src/blocks/button/block.js:274
 #: src/blocks/pr-content/block.js:185
 msgid "Dark"
 msgstr ""
 
-#: src/blocks/button/block.js:208
+#: src/blocks/button/block.js:279
 msgid "Custom Color"
 msgstr ""
 
-#: src/blocks/button/block.js:209
+#: src/blocks/button/block.js:280
 msgid ""
 "This custom color overrides the default color. If you want to use the "
 "default color, click the clear button."
 msgstr ""
 
-#: src/blocks/button/block.js:217
+#: src/blocks/button/block.js:288
 #: src/blocks/pr-content/block.js:196
 msgid "Font Awesome:"
 msgstr ""
 
-#: src/blocks/button/block.js:221
+#: src/blocks/button/block.js:292
 #: src/blocks/pr-content/block.js:207
 msgid "Before text"
 msgstr ""
 
-#: src/blocks/button/block.js:222
+#: src/blocks/button/block.js:293
 #: src/blocks/pr-content/block.js:208
 msgid ""
 "Enter Font Awesome Class.This icon will appear before text. Ex) fas "
 "fa-arrow-circle-right"
 msgstr ""
 
-#: src/blocks/button/block.js:228
+#: src/blocks/button/block.js:299
 #: src/blocks/pr-content/block.js:219
 msgid "After text"
 msgstr ""
 
-#: src/blocks/button/block.js:229
+#: src/blocks/button/block.js:300
 #: src/blocks/pr-content/block.js:220
 msgid ""
 "Enter Font Awesome Class.This icon will appear after text. Ex) fas "
 "fa-external-link-alt"
 msgstr ""
 
-#: src/blocks/button/block.js:264
+#: src/blocks/button/block.js:335
 msgid "Apply"
 msgstr ""
 
@@ -713,7 +721,7 @@ msgid "Brackets black"
 msgstr ""
 
 #: src/blocks/heading-style/block.js:38
-#: src/blocks/heading/block.js:154
+#: src/blocks/heading/block.js:133
 msgid "Plain"
 msgstr ""
 
@@ -737,61 +745,63 @@ msgstr ""
 msgid "Solid border bottom black"
 msgstr ""
 
-#: src/blocks/heading/block.js:147
+#: src/blocks/heading/block.js:126
 msgid "Style Settings"
 msgstr ""
 
-#: src/blocks/heading/block.js:149
+#: src/blocks/heading/block.js:128
 msgid "Heading style"
 msgstr ""
 
-#: src/blocks/heading/block.js:157
+#: src/blocks/heading/block.js:136
 msgid "Margin bottom size (rem)"
 msgstr ""
 
-#: src/blocks/heading/block.js:168
+#: src/blocks/heading/block.js:147
 msgid "Heading Settings"
 msgstr ""
 
-#: src/blocks/heading/block.js:169
+#: src/blocks/heading/block.js:148
 msgid "Level"
 msgstr ""
 
-#: src/blocks/heading/block.js:176
+#: src/blocks/heading/block.js:155
 msgid "Text Alignment"
 msgstr ""
 
-#: src/blocks/heading/block.js:193
+#: src/blocks/heading/block.js:172
 msgid "Heading margin bottom size (rem)"
 msgstr ""
 
-#: src/blocks/heading/block.js:208
+#: src/blocks/heading/block.js:187
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/blocks/heading/block.js:213
+#: src/blocks/heading/block.js:192
 msgid "Display"
 msgstr ""
 
-#: src/blocks/heading/block.js:214
+#: src/blocks/heading/block.js:193
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/heading/block.js:218
+#: src/blocks/heading/block.js:197
 msgid "Text size (rem)"
 msgstr ""
 
-#: src/blocks/heading/block.js:78
+#: src/blocks/heading/block.js:65
 msgid "Heading"
 msgstr ""
 
 #: src/blocks/heading/component.js:109
-#: src/blocks/heading/deprecated/block.js:642
+#: src/blocks/heading/deprecated/block.js:663
+#: src/blocks/heading/deprecated/component.js:109
 msgid "Input sub text…"
 msgstr ""
 
 #: src/blocks/heading/component.js:93
-#: src/blocks/heading/deprecated/block.js:626
+#: src/blocks/heading/deprecated/block.js:647
+#: src/blocks/heading/deprecated/component.js:93
 msgid "Input title…"
 msgstr ""
 
@@ -800,48 +810,48 @@ msgstr ""
 msgid "Heading %d"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:100
+#: src/blocks/hidden-extension/index.js:101
 msgid ""
 "Note : This function is display hidden only. Actually Block is output to "
 "HTML.Pleade don't use you must not bisible item.Don't use it for blocks you "
 "really don't want to display."
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:106
+#: src/blocks/hidden-extension/index.js:107
 msgid "Hidden ( Screen size : all )"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:112
+#: src/blocks/hidden-extension/index.js:113
 msgid "Hidden ( Screen size : xs )"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:118
+#: src/blocks/hidden-extension/index.js:119
 msgid "Hidden ( Screen size : sm )"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:124
+#: src/blocks/hidden-extension/index.js:125
 msgid "Hidden ( Screen size : md )"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:130
+#: src/blocks/hidden-extension/index.js:131
 msgid "Hidden ( Screen size : lg )"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:136
+#: src/blocks/hidden-extension/index.js:137
 msgid "Hidden ( Screen size : xl )"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:142
+#: src/blocks/hidden-extension/index.js:143
 msgid ""
 "If you want to hide multiple blocks, that first you set to group block and "
 "the next, hide for the that group block."
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:95
+#: src/blocks/hidden-extension/index.js:96
 msgid "Hidden Settings"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:98
+#: src/blocks/hidden-extension/index.js:99
 msgid "Hidden at screel size"
 msgstr ""
 
@@ -1019,13 +1029,13 @@ msgstr ""
 msgid "PR Content"
 msgstr ""
 
-#: src/blocks/pr-content/component.js:201
+#: src/blocks/pr-content/component.js:200
 #: src/blocks/pr-content/deprecated/component-deprecated.js:122
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:136
 msgid "Input title."
 msgstr ""
 
-#: src/blocks/pr-content/component.js:209
+#: src/blocks/pr-content/component.js:208
 #: src/blocks/pr-content/deprecated/component-deprecated.js:130
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:144
 msgid "Input content."
@@ -1126,7 +1136,7 @@ msgstr ""
 msgid "Caption"
 msgstr ""
 
-#: src/components/card-align-control/index.js:28
+#: src/components/card-align-control/index.js:29
 msgid "Align"
 msgstr ""
 
@@ -1220,4 +1230,12 @@ msgstr ""
 
 #: src/plugin/menu/sidebar.js:17
 msgid "VK Blocks Templates"
+msgstr ""
+
+#: src/translation_dummy.js:2
+msgid "Disabled Blocks module. Because VK-Blocks Plugin running."
+msgstr ""
+
+#: src/translation_dummy.js:3
+msgid "Deactivated VK-Blocks Plugin. Because VK-Blocks Pro running."
 msgstr ""

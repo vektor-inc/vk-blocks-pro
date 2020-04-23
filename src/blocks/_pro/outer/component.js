@@ -132,10 +132,10 @@ const GenerateMediaqueryCss = (props) => {
     opacity,
   } = attributes;
 
-  const mobileViewport = "max-width: 480px";
-  const tabletViewport = "min-width: 480px";
-  const pcViewport = "min-width: 1280px";
-  const underPcViewport = "max-width: 1280px";
+  const mobileViewport = "max-width: 575.98px";
+  const tabletViewport = "min-width: 576px";
+  const pcViewport = "min-width: 1200px";
+  const underPcViewport = "max-width: 1199.98px";
 
   let bgColorWOpacity;
 

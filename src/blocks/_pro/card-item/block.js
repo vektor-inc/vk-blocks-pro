@@ -44,6 +44,9 @@ registerBlockType("vk-blocks/card-item", {
   category: "vk-blocks-cat",
   attributes: schema,
   parent: ["vk-blocks/card"],
+  supports: {
+    className: true,
+  },
 
   edit(props) {
     const { setAttributes, attributes } = props;
@@ -56,7 +59,7 @@ registerBlockType("vk-blocks/card-item", {
             <BaseControl id="sidebar-card-block-url">
               <TextControl
                 value={url}
-                onChange={value => setAttributes({ url: value })}
+                onChange={(value) => setAttributes({ url: value })}
                 placeholder={__("https://example.com", "vk-blocks")}
               />
             </BaseControl>
@@ -70,5 +73,5 @@ registerBlockType("vk-blocks/card-item", {
 
   save(props) {
     return <Component value={props} for_={"save"} />;
-  }
+  },
 });

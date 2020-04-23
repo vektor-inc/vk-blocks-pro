@@ -24,10 +24,11 @@ export const is_hidden = (blockName) => {
   let hiddenReturn =
     allowed.find((name) => in_string(blockName, name)) !== undefined;
 
-  const excludes = ["core/block"];
+  const excludes = ["core/block", "vk-blocks/card-item"];
   const excludeBlock =
     excludes.find((excludeName) => in_string(blockName, excludeName)) !==
     undefined;
+
   if (excludeBlock) {
     hiddenReturn = false;
   }
@@ -88,70 +89,70 @@ wp.hooks.addFilter(
     return (props) => {
       if (is_hidden(props.name)) {
         return (
-          <Fragment>
-            <BlockEdit {...props} />
-            <InspectorControls>
-              <PanelBody
-                title={__("Hidden Settings", "vk-blocks")}
-                initialOpen={false}
+	<Fragment>
+		<BlockEdit { ...props } />
+		<InspectorControls>
+			<PanelBody
+				title={ __("Hidden Settings", "vk-blocks") }
+				initialOpen={ false }
               >
-                <BaseControl label={__("Hidden at screel size", "vk-blocks")}>
-                  <p>
-                    {__(
+				<BaseControl label={ __("Hidden at screel size", "vk-blocks") }>
+					<p>
+						{ __(
                       "Note : This function is display hidden only. Actually Block is output to HTML.Pleade don't use you must not bisible item.Don't use it for blocks you really don't want to display.",
                       "vk-blocks"
-                    )}
-                  </p>
-                  <AdvancedToggleControl
-                    label={__("Hidden ( Screen size : all )", "vk-blocks")}
-                    initialFixedTable={props.attributes.vkb_hidden}
-                    schema={"vkb_hidden"}
-                    {...props}
+                    ) }
+					</p>
+					<AdvancedToggleControl
+						label={ __("Hidden ( Screen size : all )", "vk-blocks") }
+						initialFixedTable={ props.attributes.vkb_hidden }
+						schema={ "vkb_hidden" }
+						{ ...props }
                   />
-                  <AdvancedToggleControl
-                    label={__("Hidden ( Screen size : xs )", "vk-blocks")}
-                    initialFixedTable={props.attributes.vkb_hidden_xs}
-                    schema={"vkb_hidden_xs"}
-                    {...props}
+					<AdvancedToggleControl
+						label={ __("Hidden ( Screen size : xs )", "vk-blocks") }
+						initialFixedTable={ props.attributes.vkb_hidden_xs }
+						schema={ "vkb_hidden_xs" }
+						{ ...props }
                   />
-                  <AdvancedToggleControl
-                    label={__("Hidden ( Screen size : sm )", "vk-blocks")}
-                    initialFixedTable={props.attributes.vkb_hidden_sm}
-                    schema={"vkb_hidden_sm"}
-                    {...props}
+					<AdvancedToggleControl
+						label={ __("Hidden ( Screen size : sm )", "vk-blocks") }
+						initialFixedTable={ props.attributes.vkb_hidden_sm }
+						schema={ "vkb_hidden_sm" }
+						{ ...props }
                   />
-                  <AdvancedToggleControl
-                    label={__("Hidden ( Screen size : md )", "vk-blocks")}
-                    initialFixedTable={props.attributes.vkb_hidden_md}
-                    schema={"vkb_hidden_md"}
-                    {...props}
+					<AdvancedToggleControl
+						label={ __("Hidden ( Screen size : md )", "vk-blocks") }
+						initialFixedTable={ props.attributes.vkb_hidden_md }
+						schema={ "vkb_hidden_md" }
+						{ ...props }
                   />
-                  <AdvancedToggleControl
-                    label={__("Hidden ( Screen size : lg )", "vk-blocks")}
-                    initialFixedTable={props.attributes.vkb_hidden_lg}
-                    schema={"vkb_hidden_lg"}
-                    {...props}
+					<AdvancedToggleControl
+						label={ __("Hidden ( Screen size : lg )", "vk-blocks") }
+						initialFixedTable={ props.attributes.vkb_hidden_lg }
+						schema={ "vkb_hidden_lg" }
+						{ ...props }
                   />
-                  <AdvancedToggleControl
-                    label={__("Hidden ( Screen size : xl )", "vk-blocks")}
-                    initialFixedTable={props.attributes.vkb_hidden_xl}
-                    schema={"vkb_hidden_xl"}
-                    {...props}
+					<AdvancedToggleControl
+						label={ __("Hidden ( Screen size : xl )", "vk-blocks") }
+						initialFixedTable={ props.attributes.vkb_hidden_xl }
+						schema={ "vkb_hidden_xl" }
+						{ ...props }
                   />
-                  <p>
-                    {__(
+					<p>
+						{ __(
                       "If you want to hide multiple blocks, that first you set to group block and the next, hide for the that group block.",
                       "vk-blocks"
-                    )}
-                  </p>
-                </BaseControl>
-              </PanelBody>
-            </InspectorControls>
-          </Fragment>
+                    ) }
+					</p>
+				</BaseControl>
+			</PanelBody>
+		</InspectorControls>
+	</Fragment>
         );
       }
       // IF not hidden function target block that return original BlockEdit
-      return <BlockEdit {...props} />;
+      return <BlockEdit { ...props } />;
     };
   }, "addHiddenSection")
 );
@@ -186,19 +187,24 @@ wp.hooks.addFilter(
       const customSm = vkb_hidden_sm && "vk_hidden-sm";
       const customXs = vkb_hidden_xs && "vk_hidden-xs";
 
-      if (element && !element.props.for_) {
-        element.props = {
-          ...element.props,
+      if (element) {
+        element = {
+          ...element,
           ...{
-            className: classnames(
-              element.props.className,
-              custom,
-              customXl,
-              customLg,
-              customMd,
-              customSm,
-              customXs
-            ),
+            props: {
+              ...element.props,
+              ...{
+                className: classnames(
+                  element.props.className,
+                  custom,
+                  customXl,
+                  customLg,
+                  customMd,
+                  customSm,
+                  customXs
+                ),
+              },
+            },
           },
         };
       }
@@ -230,7 +236,7 @@ wp.hooks.addFilter(
         ? hiddenSomething + " vk_edit_hidden_all"
         : hiddenSomething;
 
-      return <BlockListBlock {...props} className={hiddenClassName} />;
+      return <BlockListBlock { ...props } className={ hiddenClassName } />;
     };
   }, "addHiddenWarning")
 );

@@ -56,7 +56,7 @@ const defaultTemplates = [
 		<!-- /wp:vk-blocks/spacer -->
 
 		<!-- wp:vk-blocks/heading {"align":"center","titleStyle":"plain","outerMarginBottom":3,"titleMarginBottom":0} -->
-		<div class="wp-block-vk-blocks-heading" id="vk-htags--1"><div class="vk_heading vk_heading-style-plain" style="margin-bottom:3rem"><h2 style="color:#000000;font-size:2rem;margin-bottom:0rem;text-align:center" class="vk_heading_title vk_heading_title-style-plain" placeholder="タイトルを入力">サービスの特徴など</h2><p style="color:#000000;font-size:1.2rem;text-align:center" class="vk_heading_subtext vk_heading_subtext-style-plain" placeholder="サブテキストを入力">提供しているサービスの特徴などを画像つきで紹介します</p></div></div>
+		<div class="wp-block-vk-blocks-heading"><div class="vk_heading vk_heading-style-plain" style="margin-bottom:3rem"><h2 style="color:#000000;font-size:2rem;margin-bottom:0rem;text-align:center" class="vk_heading_title vk_heading_title-style-plain" placeholder="タイトルを入力">サービスの特徴など</h2><p style="color:#000000;font-size:1.2rem;text-align:center" class="vk_heading_subtext vk_heading_subtext-style-plain" placeholder="サブテキストを入力">提供しているサービスの特徴などを画像つきで紹介します</p></div></div>
 		<!-- /wp:vk-blocks/heading -->
 
 		<!-- wp:vk-blocks/card {"name":"vk-blocks/card"} -->
@@ -111,7 +111,7 @@ const defaultTemplates = [
 		content: `
 		<!-- wp:vk-blocks/outer {"outerWidth":"full"} -->
 	<div class="wp-block-vk-blocks-outer vk_outer vk_outer-width-full vk_outer-paddingLR-none vk_outer-paddingVertical-use vk_outer-bgPosition-normal" style="background:linear-gradient(rgba(243, 244, 245, 0.5), rgba(243, 244, 245, 0.5));border:0px none #000;border-radius:0px"><div class="vk_outer_container"><!-- wp:vk-blocks/heading {"align":"center","titleStyle":"plain","outerMarginBottom":2,"titleMarginBottom":0} -->
-	<div class="wp-block-vk-blocks-heading" id="vk-htags-a181b726-7749-4bd8-9887-0306c0bc7bd5"><div class="vk_heading vk_heading-style-plain" style="margin-bottom:2rem"><h2 style="color:#000000;font-size:2rem;margin-bottom:0rem;text-align:center" class="vk_heading_title vk_heading_title-style-plain" placeholder="タイトルを入力"><strong>お知らせ</strong></h2><p style="color:#000000;font-size:1.2rem;text-align:center" class="vk_heading_subtext vk_heading_subtext-style-plain" placeholder="サブテキストを入力">Information</p></div></div>
+	<div class="wp-block-vk-blocks-heading"><div class="vk_heading vk_heading-style-plain" style="margin-bottom:2rem"><h2 style="color:#000000;font-size:2rem;margin-bottom:0rem;text-align:center" class="vk_heading_title vk_heading_title-style-plain" placeholder="タイトルを入力"><strong>お知らせ</strong></h2><p style="color:#000000;font-size:1.2rem;text-align:center" class="vk_heading_subtext vk_heading_subtext-style-plain" placeholder="サブテキストを入力">Information</p></div></div>
 	<!-- /wp:vk-blocks/heading -->
 
 	<!-- wp:vk-blocks/post-list {"name":"vk-blocks/post-list","layout":"postListText"} /-->
@@ -214,7 +214,7 @@ const defaultTemplates = [
 		<!-- wp:vk-blocks/step -->
 		<div class="wp-block-vk-blocks-step vk_step"><!-- wp:vk-blocks/step-item -->
 		<div class="wp-block-vk-blocks-step-item vk_step_item vk_step_item_lineStyle-default"><div class="vk_step_item_content"><!-- wp:heading {"level":4} -->
-		<h4 id="vk-htags--1"><strong>お問い合わせ</strong></h4>
+		<h4><strong>お問い合わせ</strong></h4>
 		<!-- /wp:heading -->
 
 		<!-- wp:paragraph -->
@@ -224,7 +224,7 @@ const defaultTemplates = [
 
 		<!-- wp:vk-blocks/step-item {"dotNum":2} -->
 		<div class="wp-block-vk-blocks-step-item vk_step_item vk_step_item_lineStyle-default"><div class="vk_step_item_content"><!-- wp:heading {"level":4} -->
-		<h4 id="vk-htags--1"><strong>サービスのご提供</strong></h4>
+		<h4><strong>サービスのご提供</strong></h4>
 		<!-- /wp:heading -->
 
 		<!-- wp:paragraph -->
@@ -234,7 +234,7 @@ const defaultTemplates = [
 
 		<!-- wp:vk-blocks/step-item {"styleLine":"none","dotNum":3} -->
 		<div class="wp-block-vk-blocks-step-item vk_step_item vk_step_item_lineStyle-none"><div class="vk_step_item_content"><!-- wp:heading {"level":4} -->
-		<h4 id="vk-htags--1"><strong>ご入金</strong></h4>
+		<h4><strong>ご入金</strong></h4>
 		<!-- /wp:heading -->
 
 		<!-- wp:paragraph -->

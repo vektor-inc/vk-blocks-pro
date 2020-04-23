@@ -14,7 +14,7 @@ const defaultTemplates = [
 		icon: "",
 		content: `
 		<!-- wp:vk-blocks/outer {"bgColor":"#000000","bgImage":"https://www.vektor-inc.co.jp/vk-blocks-tmpl-images/programming-942487_1920.jpg","outerWidth":"full","padding_top_and_bottom":"0","opacity":0.7} -->
-		<div id="vk-htags-" class="wp-block-vk-blocks-outer vk_outer vk_outer-width-full vk_outer-paddingLR-none vk_outer-paddingVertical-none vk_outer-bgPosition-normal" style="background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://www.vektor-inc.co.jp/vk-blocks-tmpl-images/programming-942487_1920.jpg);border:0px none #000;border-radius:0px"><div class="vk_outer_container"><!-- wp:vk-blocks/spacer {"unit":"rem","pc":4.5,"tablet":4.5,"mobile":4.5} -->
+		<div class="wp-block-vk-blocks-outer vk_outer vk_outer-width-full vk_outer-paddingLR-none vk_outer-paddingVertical-none vk_outer-bgPosition-normal" style="background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://www.vektor-inc.co.jp/vk-blocks-tmpl-images/programming-942487_1920.jpg);border:0px none #000;border-radius:0px"><div class="vk_outer_container"><!-- wp:vk-blocks/spacer {"unit":"rem","pc":4.5,"tablet":4.5,"mobile":4.5} -->
 		<div class="vk_spacer"><div class="vk_spacer-display-pc" style="height:4.5rem"></div><div class="vk_spacer-display-tablet" style="height:4.5rem"></div><div class="vk_spacer-display-mobile" style="height:4.5rem"></div></div>
 		<!-- /wp:vk-blocks/spacer -->
 	
@@ -33,7 +33,7 @@ const defaultTemplates = [
 		icon: "",
 		content: `
 		<!-- wp:vk-blocks/outer {"bgColor":"#0c7abb","outerWidth":"full","padding_top_and_bottom":"0","opacity":1} -->
-		<div id="vk-htags-11" class="wp-block-vk-blocks-outer vk_outer vk_outer-width-full vk_outer-paddingLR-none vk_outer-paddingVertical-none vk_outer-bgPosition-normal" style="background:linear-gradient(rgba(12, 122, 187, 1), rgba(12, 122, 187, 1));border:0px none #000;border-radius:0px"><div class="vk_outer_container"><!-- wp:vk-blocks/spacer {"unit":"rem","pc":3,"tablet":3,"mobile":3} -->
+		<div class="wp-block-vk-blocks-outer vk_outer vk_outer-width-full vk_outer-paddingLR-none vk_outer-paddingVertical-none vk_outer-bgPosition-normal" style="background:linear-gradient(rgba(12, 122, 187, 1), rgba(12, 122, 187, 1));border:0px none #000;border-radius:0px"><div class="vk_outer_container"><!-- wp:vk-blocks/spacer {"unit":"rem","pc":3,"tablet":3,"mobile":3} -->
 		<div class="vk_spacer"><div class="vk_spacer-display-pc" style="height:3rem"></div><div class="vk_spacer-display-tablet" style="height:3rem"></div><div class="vk_spacer-display-mobile" style="height:3rem"></div></div>
 		<!-- /wp:vk-blocks/spacer -->
 
@@ -51,7 +51,7 @@ const defaultTemplates = [
 		name: "Service",
 		icon: "",
 		content: `<!-- wp:vk-blocks/outer {"bgColor":"#ffffff","outerWidth":"full","padding_top_and_bottom":"0"} -->
-		<div id="vk-htags-5" class="wp-block-vk-blocks-outer vk_outer vk_outer-width-full vk_outer-paddingLR-none vk_outer-paddingVertical-none vk_outer-bgPosition-normal" style="background:linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));border:0px none #000;border-radius:0px"><div class="vk_outer_container"><!-- wp:vk-blocks/spacer {"unit":"rem","pc":4,"tablet":4,"mobile":4} -->
+		<div class="wp-block-vk-blocks-outer vk_outer vk_outer-width-full vk_outer-paddingLR-none vk_outer-paddingVertical-none vk_outer-bgPosition-normal" style="background:linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));border:0px none #000;border-radius:0px"><div class="vk_outer_container"><!-- wp:vk-blocks/spacer {"unit":"rem","pc":4,"tablet":4,"mobile":4} -->
 		<div class="vk_spacer"><div class="vk_spacer-display-pc" style="height:4rem"></div><div class="vk_spacer-display-tablet" style="height:4rem"></div><div class="vk_spacer-display-mobile" style="height:4rem"></div></div>
 		<!-- /wp:vk-blocks/spacer -->
 
@@ -83,7 +83,7 @@ const defaultTemplates = [
 		icon: "",
 		content: `
 		<!-- wp:vk-blocks/outer {"outerWidth":"full","padding_top_and_bottom":"0","upper_level":-60} -->
-		<div id="vk-htags-4" class="wp-block-vk-blocks-outer vk_outer vk_outer-width-full vk_outer-paddingLR-none vk_outer-paddingVertical-none vk_outer-bgPosition-normal" style="background:linear-gradient(rgba(243, 244, 245, 0.5), rgba(243, 244, 245, 0.5));border:none;border-radius:0px"><div class="vk_outer_separator vk_outer_separator-position-upper vk_outer_separator-type-tilt" style="padding-bottom:60px"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100" preserveaspectratio="none"><path d="m100,40 L0,100 L100,100 z" strokewidth="0" fill="#fff"></path></svg></div><div class="vk_outer_container"><!-- wp:vk-blocks/spacer {"unit":"rem","pc":4,"tablet":4,"mobile":4} -->
+		<div class="wp-block-vk-blocks-outer vk_outer vk_outer-width-full vk_outer-paddingLR-none vk_outer-paddingVertical-none vk_outer-bgPosition-normal" style="background:linear-gradient(rgba(243, 244, 245, 0.5), rgba(243, 244, 245, 0.5));border:none;border-radius:0px"><div class="vk_outer_separator vk_outer_separator-position-upper vk_outer_separator-type-tilt" style="padding-bottom:60px"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100" preserveaspectratio="none"><path d="m100,40 L0,100 L100,100 z" strokewidth="0" fill="#fff"></path></svg></div><div class="vk_outer_container"><!-- wp:vk-blocks/spacer {"unit":"rem","pc":4,"tablet":4,"mobile":4} -->
 		<div class="vk_spacer"><div class="vk_spacer-display-pc" style="height:4rem"></div><div class="vk_spacer-display-tablet" style="height:4rem"></div><div class="vk_spacer-display-mobile" style="height:4rem"></div></div>
 		<!-- /wp:vk-blocks/spacer -->
 		<!-- wp:vk-blocks/pr-content {"url":"https://example.com","buttonColorCustom":"#cf2e2e","Image":"https://www.vektor-inc.co.jp/vk-blocks-tmpl-images/pr-img.png","layout":"right"} -->
@@ -129,7 +129,7 @@ const defaultTemplates = [
 		icon: "",
 		content: `
 	  	<!-- wp:vk-blocks/outer {"bgColor":"#ffffff","outerWidth":"full","opacity":0.9} -->
-	  	<div id="vk-htags-9" class="wp-block-vk-blocks-outer vk_outer vk_outer-width-full vk_outer-paddingLR-none vk_outer-paddingVertical-use vk_outer-bgPosition-normal" style="background:linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));border:0px none #000;border-radius:0px"><div class="vk_outer_container"><!-- wp:vk-blocks/heading {"align":"center","titleStyle":"plain","outerMarginBottom":3,"titleMarginBottom":0} -->
+	  	<div class="wp-block-vk-blocks-outer vk_outer vk_outer-width-full vk_outer-paddingLR-none vk_outer-paddingVertical-use vk_outer-bgPosition-normal" style="background:linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));border:0px none #000;border-radius:0px"><div class="vk_outer_container"><!-- wp:vk-blocks/heading {"align":"center","titleStyle":"plain","outerMarginBottom":3,"titleMarginBottom":0} -->
 	  	<div class="wp-block-vk-blocks-heading vk_heading vk_heading-style-plain" style="margin-bottom:3rem"><h2 style="color:#000000;font-size:2rem;margin-bottom:0rem;text-align:center" class="vk_heading_title vk_heading_title-style-plain" placeholder="タイトルを入力"><strong>お知らせ</strong></h2><p style="color:#000000;font-size:1.2rem;text-align:center" class="vk_heading_subtext vk_heading_subtext-style-plain" placeholder="サブテキストを入力">Information</p></div>
 	  	<!-- /wp:vk-blocks/heading -->
 
@@ -146,7 +146,7 @@ const defaultTemplates = [
 		icon: "",
 		content: `
 		<!-- wp:vk-blocks/outer {"bgColor":"#000000","bgImage":"https://www.vektor-inc.co.jp/vk-blocks-tmpl-images/programming-942487_1920.jpg","bgPosition":"fixed","padding_left_and_right":"1","padding_top_and_bottom":"0","opacity":0.7,"borderRadius":8} -->
-		<div id="vk-htags-15" class="wp-block-vk-blocks-outer vk_outer vk_outer-width-normal vk_outer-paddingLR-use vk_outer-paddingVertical-none vk_outer-bgPosition-fixed" style="background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://www.vektor-inc.co.jp/vk-blocks-tmpl-images/programming-942487_1920.jpg);border:0px none #000;border-radius:8px"><div class="vk_outer_container"><!-- wp:vk-blocks/spacer {"unit":"rem","pc":4,"tablet":4,"mobile":4} -->
+		<div class="wp-block-vk-blocks-outer vk_outer vk_outer-width-normal vk_outer-paddingLR-use vk_outer-paddingVertical-none vk_outer-bgPosition-fixed" style="background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://www.vektor-inc.co.jp/vk-blocks-tmpl-images/programming-942487_1920.jpg);border:0px none #000;border-radius:8px"><div class="vk_outer_container"><!-- wp:vk-blocks/spacer {"unit":"rem","pc":4,"tablet":4,"mobile":4} -->
 		<div class="vk_spacer"><div class="vk_spacer-display-pc" style="height:4rem"></div><div class="vk_spacer-display-tablet" style="height:4rem"></div><div class="vk_spacer-display-mobile" style="height:4rem"></div></div>
 		<!-- /wp:vk-blocks/spacer -->
 
@@ -169,7 +169,7 @@ const defaultTemplates = [
 		icon: "",
 		content: `
 	  	<!-- wp:vk-blocks/outer {"bgColor":"#313131","bgImage":"https://www.vektor-inc.co.jp/vk-blocks-tmpl-images/home-office-336373_1920-e1513588377670.jpg","outerWidth":"full","bgPosition":"fixed","padding_top_and_bottom":"0","opacity":0.7} -->
-	  <div id="vk-htags-17" class="wp-block-vk-blocks-outer vk_outer vk_outer-width-full vk_outer-paddingLR-none vk_outer-paddingVertical-none vk_outer-bgPosition-fixed" style="background:linear-gradient(rgba(49, 49, 49, 0.7), rgba(49, 49, 49, 0.7)), url(https://www.vektor-inc.co.jp/vk-blocks-tmpl-images/home-office-336373_1920-e1513588377670.jpg);border:0px none #000;border-radius:0px"><div class="vk_outer_container"><!-- wp:vk-blocks/spacer {"unit":"rem","pc":3,"tablet":3,"mobile":3} -->
+	  <div class="wp-block-vk-blocks-outer vk_outer vk_outer-width-full vk_outer-paddingLR-none vk_outer-paddingVertical-none vk_outer-bgPosition-fixed" style="background:linear-gradient(rgba(49, 49, 49, 0.7), rgba(49, 49, 49, 0.7)), url(https://www.vektor-inc.co.jp/vk-blocks-tmpl-images/home-office-336373_1920-e1513588377670.jpg);border:0px none #000;border-radius:0px"><div class="vk_outer_container"><!-- wp:vk-blocks/spacer {"unit":"rem","pc":3,"tablet":3,"mobile":3} -->
 	  <div class="vk_spacer"><div class="vk_spacer-display-pc" style="height:3rem"></div><div class="vk_spacer-display-tablet" style="height:3rem"></div><div class="vk_spacer-display-mobile" style="height:3rem"></div></div>
 	  <!-- /wp:vk-blocks/spacer -->
 

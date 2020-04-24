@@ -90,20 +90,20 @@ export class Component extends React.Component {
                   {__("Select image", "vk-blocks")}
                 </Button>
               ) : (
-                <Fragment>
-                  <img
-                    className={"vk_post_imgOuter_img card-img-top"}
-                    src={imageParsed.sizes.full.url}
-                    alt={imageParsed.alt}
-                  />
-                  <Button
-                    onClick={deleteImgBtn}
-                    className={"image-button button button-delete"}
-                  >
-                    {__("Delete Image", "vk-blocks")}
-                  </Button>
-                </Fragment>
-              )}
+                  <Fragment>
+                    <img
+                      className={"vk_post_imgOuter_img card-img-top"}
+                      src={imageParsed.sizes.full.url}
+                      alt={imageParsed.alt}
+                    />
+                    <Button
+                      onClick={deleteImgBtn}
+                      className={"image-button button button-delete"}
+                    >
+                      {__("Delete Image", "vk-blocks")}
+                    </Button>
+                  </Fragment>
+                )}
             </Fragment>
           )}
         />

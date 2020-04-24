@@ -81,8 +81,7 @@ $color-danger: #dd3333;
 
   /* editor area *********************************************/
   .edit-post-visual-editor.editor-styles-wrapper{
-  
-  
+
   /* これがないとGutenberg標準のエディタCSSに負ける */
   h1:first-child.vk_prBlocks_item_title{
     margin-top:0.9em;
@@ -303,4 +302,8 @@ $color-danger: #dd3333;
       display: block !important;
     }
   }
+}
+
+.vk_column-responsive .block-list-appender{
+  width: 100%;
 }

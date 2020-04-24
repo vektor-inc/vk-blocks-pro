@@ -4,7 +4,7 @@
  */
 import { ColumnResponsive } from "./component";
 import { schema } from "./schema";
-import { ColumnLayoutControl } from "../../../components/column-layout-control";
+import { ColumnLayout } from "../../../components/column-layout";
 import classNames from "classnames";
 import { convertToGrid } from "../../_helper/convert-to-grid";
 
@@ -13,6 +13,8 @@ const { registerBlockType } = wp.blocks;
 const { Fragment } = wp.element;
 const { InspectorControls } = wp.blockEditor;
 const { select, dispatch } = wp.data;
+const { PanelBody } = wp.components;
+
 const BlockIcon = (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 576">
     <path
@@ -91,7 +93,12 @@ registerBlockType("vk-blocks/column-responsive", {
     return (
       <Fragment>
         <InspectorControls>
-          <ColumnLayoutControl {...props} />
+          <PanelBody
+            title={__("Layout Columns", "vk-blocks")}
+            initialOpen={false}
+          >
+            <ColumnLayout {...props} />
+          </PanelBody>
         </InspectorControls>
         <ColumnResponsive
           attributes={attributes}

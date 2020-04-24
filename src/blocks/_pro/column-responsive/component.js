@@ -7,7 +7,7 @@ export const ColumnResponsive = (props) => {
   let attributes = props.attributes;
   let innerClass = "";
   let className = props.className;
-  let containerClass = " vk_card";
+  let containerClass = " vk_column-responsive";
   let elm;
 
   const ALLOWED_BLOCKS = [["vk-blocks/column-responsive-item"]];
@@ -22,7 +22,7 @@ export const ColumnResponsive = (props) => {
       <div>
         <InnerBlocks
           //編集画面の追加タグ用に2回目のClassを挿入
-          className={"container row"}
+          className={`${containerClass} container row`}
           template={TEMPLATE}
           allowedBlocks={ALLOWED_BLOCKS}
         />

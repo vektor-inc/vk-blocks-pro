@@ -16,6 +16,7 @@ export const AdvancedCheckboxControl = props => {
   let checkBoxComponents = rawData.map(data => {
     return (
       <CheckboxControl
+        key={data.slug}
         label={data.label}
         checked={checkedState.some(item => item === data.slug)}
         onChange={value => {

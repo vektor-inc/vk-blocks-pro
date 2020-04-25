@@ -240,38 +240,38 @@ $color-danger: #dd3333;
 		}
     }
     @media (min-width: $lg-min) {
-		&-col-lg-3 > .editor-block-list__block,
-		&-col-lg-3 > .block-editor-block-list__block {
+		&-col-lg-3 .editor-block-list__block,
+		&-col-lg-3 .block-editor-block-list__block {
 			width: calc(25% - 30px);
 		}
-		&-col-lg-4 > .editor-block-list__block,
-		&-col-lg-4 > .block-editor-block-list__block {
+		&-col-lg-4 .editor-block-list__block,
+		&-col-lg-4 .block-editor-block-list__block {
 			width: calc(33.3% - 30px);
 		}
-		&-col-lg-6 > .editor-block-list__block,
-		&-col-lg-6 > .block-editor-block-list__block {
+		&-col-lg-6 .editor-block-list__block,
+		&-col-lg-6 .block-editor-block-list__block {
 			width: calc(50% - 30px);
 		}
-		&-col-lg-12 > .editor-block-list__block,
-		&-col-lg-12 > .block-editor-block-list__block {
+		&-col-lg-12 .editor-block-list__block,
+		&-col-lg-12 .block-editor-block-list__block {
 			width: calc(100% - 30px);
 		}
     }
     @media (min-width: $xl-min) {
-		&-col-xl-3 > .editor-block-list__block,
-		&-col-xl-3 > .block-editor-block-list__block {
+		&-col-xl-3 .editor-block-list__block,
+		&-col-xl-3 .block-editor-block-list__block {
 			width: calc(25% - 30px);
 		}
-		&-col-xl-4 > .editor-block-list__block,
-		&-col-xl-4 > .block-editor-block-list__block {
+		&-col-xl-4 .editor-block-list__block,
+		&-col-xl-4 .block-editor-block-list__block {
 			width: calc(33.3% - 30px);
 		}
-		&-col-xl-6 > .editor-block-list__block,
-		&-col-xl-6 > .block-editor-block-list__block {
+		&-col-xl-6 .editor-block-list__block,
+		&-col-xl-6 .block-editor-block-list__block {
 			width: calc(50% - 30px);
 		}
-		&-col-xl-12 > .editor-block-list__block,
-		&-col-xl-12 > .block-editor-block-list__block {
+		&-col-xl-12 .editor-block-list__block,
+		&-col-xl-12 .block-editor-block-list__block {
 			width: calc(100% - 30px);
 		}
     }
@@ -1797,71 +1797,6 @@ $xl-min: 1200px;
 }
 
 /*-------------------------------------------*/
-/* .vk_prBlocks
-/*-------------------------------------------*/
-.vk_prBlocks_item {
-	@media screen and (max-width: 992px) {
-		margin-bottom: 1.5em;
-	}
-}
-.vk_prBlocks_item {
-	&_link {
-		color: #333;
-		&:hover {
-			color: #333;
-			text-decoration: none;
-		}
-	}
-	&_icon_outer {
-		display: block;
-		position: relative;
-		margin: 0 auto;
-		width: 80px;
-		height: 80px;
-		border-radius: 50%;
-	}
-	&_icon {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translateY(-50%) translateX(-50%);
-		font-size: 36px;
-		color: #fff;
-	}
-	&_title {
-		background-color: transparent;
-		margin-top: 0.9em;
-		margin-bottom: 0.6em;
-		text-align: center;
-		font-size: 21px;
-		line-height: 1.4em;
-		border: none;
-		padding: 0;
-		&::before {
-			content: none;
-		}
-		&::after {
-			border: none;
-		}
-	}
-	&_image {
-		position: relative;
-		display: block;
-		width: 120px;
-		height: 120px;
-		margin: 0 auto;
-		overflow: hidden;
-		border-radius: 50%;
-		text-indent: -9999px;
-	}
-	&_summary {
-		margin-bottom: 0.5em;
-		text-align: center;
-		line-height: 1.8em;
-	}
-}
-
-/*-------------------------------------------*/
 /* Layout
 /*-------------------------------------------*/
 .vk_prContent {
@@ -1946,6 +1881,71 @@ $xl-min: 1200px;
 } // .vk_prContent {
 
 /*-------------------------------------------*/
+/* .vk_prBlocks
+/*-------------------------------------------*/
+.vk_prBlocks_item {
+	@media screen and (max-width: 992px) {
+		margin-bottom: 1.5em;
+	}
+}
+.vk_prBlocks_item {
+	&_link {
+		color: #333;
+		&:hover {
+			color: #333;
+			text-decoration: none;
+		}
+	}
+	&_icon_outer {
+		display: block;
+		position: relative;
+		margin: 0 auto;
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+	}
+	&_icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateY(-50%) translateX(-50%);
+		font-size: 36px;
+		color: #fff;
+	}
+	&_title {
+		background-color: transparent;
+		margin-top: 0.9em;
+		margin-bottom: 0.6em;
+		text-align: center;
+		font-size: 21px;
+		line-height: 1.4em;
+		border: none;
+		padding: 0;
+		&::before {
+			content: none;
+		}
+		&::after {
+			border: none;
+		}
+	}
+	&_image {
+		position: relative;
+		display: block;
+		width: 120px;
+		height: 120px;
+		margin: 0 auto;
+		overflow: hidden;
+		border-radius: 50%;
+		text-indent: -9999px;
+	}
+	&_summary {
+		margin-bottom: 0.5em;
+		text-align: center;
+		line-height: 1.8em;
+	}
+}
+
+/*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
 
@@ -2027,40 +2027,6 @@ $xl-min: 1200px;
 	}
 }
 
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-
-@mixin switchVisibility($pc,$tablet,$mobile) {
-  .vk_spacer {
-    .vk_spacer-display-pc {
-      display: $pc;
-    }
-
-    .vk_spacer-display-tablet {
-      display: $tablet;
-    }
-
-    .vk_spacer-display-mobile {
-      display: $mobile;
-    }
-  }
-}
-
-// Small devices (landscape phones, 576px以下)
-@media (max-width: 576px) {
-  @include switchVisibility(none, none, block);
-}
-
-// Medium devices (tablets, 577pxから768px)
-@media (min-width: 577px) and (max-width: 768px) {
-  @include switchVisibility(none, block, none);
-}
-
-// Large devices (desktops, 769px以上)
-@media (min-width: 769px) {
-  @include switchVisibility(block, none, none);
-}
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -2237,6 +2203,40 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
 // 	width: 70%;
 // }
 
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
+@mixin switchVisibility($pc,$tablet,$mobile) {
+  .vk_spacer {
+    .vk_spacer-display-pc {
+      display: $pc;
+    }
+
+    .vk_spacer-display-tablet {
+      display: $tablet;
+    }
+
+    .vk_spacer-display-mobile {
+      display: $mobile;
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px以下)
+@media (max-width: 576px) {
+  @include switchVisibility(none, none, block);
+}
+
+// Medium devices (tablets, 577pxから768px)
+@media (min-width: 577px) and (max-width: 768px) {
+  @include switchVisibility(none, block, none);
+}
+
+// Large devices (desktops, 769px以上)
+@media (min-width: 769px) {
+  @include switchVisibility(block, none, none);
+}
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/

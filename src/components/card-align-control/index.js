@@ -6,8 +6,8 @@ import { capitalize } from "../../blocks/_helper/capitalize";
 export const CardAlignControls = (props) => {
   const { attributes } = props;
   const schema = JSON.parse(attributes.activeControl);
-
   const createAlignControl = (label, index) => {
+
     props = {
       ...props,
       ...{
@@ -18,16 +18,16 @@ export const CardAlignControls = (props) => {
       },
     };
     return (
-      <BaseControl key={index} label={__(`${capitalize(label)}`, "vk-blocks")}>
-        <AlignControl schema={schema} {...props} />
-      </BaseControl>
+	<BaseControl key={ index } label={ __(`${capitalize(label)}`, "vk-blocks") }>
+		<AlignControl schema={ schema } { ...props } />
+	</BaseControl>
     );
   };
 
   const alignControls = ["title", "text", "button"].map(createAlignControl);
   return (
-    <PanelBody title={__("Align", "vk-blocks")} initialOpen={false}>
-      {alignControls}
-    </PanelBody>
+	<PanelBody title={ __("Align", "vk-blocks") } initialOpen={ false }>
+		{ alignControls }
+	</PanelBody>
   );
 };

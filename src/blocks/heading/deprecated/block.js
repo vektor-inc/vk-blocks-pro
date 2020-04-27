@@ -3,8 +3,9 @@
  *
  */
 import React from "react";
-import { schema } from "./schema";
+import { schema, schema1 } from "./schema";
 import classNames from "classnames";
+import { Component } from "./component";
 const { Fragment } = wp.element;
 const { RichText } = wp.editor;
 const { __ } = wp.i18n;
@@ -52,7 +53,27 @@ function set_attirbuite(number) {
   return attributes;
 }
 
-export const Version0_6_0 = [
+export const Deprecated = [
+  {
+    attributes: schema1,
+    save({ attributes, className }) {
+      return (
+        <div className={className} id="vk-htags-a181b726-7749-4bd8-9887-0306c0bc7bd5">
+          <Component attributes={attributes} for_={"save"} />
+        </div>
+      );
+    }
+  },
+  {
+    attributes: schema1,
+    save({ attributes, className }) {
+      return (
+        <div className={className} id="vk-htags--1">
+          <Component attributes={attributes} for_={"save"} />
+        </div>
+      );
+    }
+  },
   {
     attributes: {
       level: {
@@ -153,22 +174,22 @@ export const Version0_6_0 = [
             className={`vk_heading_title vk_heading_title-style-${titleStyle}`}
           />
           {// サブテキスト
-          (() => {
-            if (subTextFlag === "on") {
-              return (
-                <RichText.Content
-                  tagName={"p"}
-                  value={subText}
-                  style={{
-                    color: subTextColor,
-                    fontSize: subTextSize + "rem",
-                    textAlign: align
-                  }}
-                  className={`vk_heading_subtext vk_heading_subtext-style-${titleStyle}`}
-                />
-              );
-            }
-          })()}
+            (() => {
+              if (subTextFlag === "on") {
+                return (
+                  <RichText.Content
+                    tagName={"p"}
+                    value={subText}
+                    style={{
+                      color: subTextColor,
+                      fontSize: subTextSize + "rem",
+                      textAlign: align
+                    }}
+                    className={`vk_heading_subtext vk_heading_subtext-style-${titleStyle}`}
+                  />
+                );
+              }
+            })()}
         </div>
       );
     }
@@ -509,58 +530,58 @@ export const Version0_6_0 = [
                 className={`vk_heading_title vk_heading_title-style-${titleStyle}`}
               />
               {// サブテキスト
-              (() => {
-                if (subTextFlag === "on") {
-                  return (
-                    <RichText.Content
-                      tagName={"p"}
-                      value={subText}
-                      style={{
-                        color: subTextColor,
-                        fontSize: subTextSize + "rem",
-                        textAlign: align
-                      }}
-                      className={`vk_heading_subtext vk_heading_subtext-style-${titleStyle}`}
-                    />
-                  );
-                }
-              })()}
+                (() => {
+                  if (subTextFlag === "on") {
+                    return (
+                      <RichText.Content
+                        tagName={"p"}
+                        value={subText}
+                        style={{
+                          color: subTextColor,
+                          fontSize: subTextSize + "rem",
+                          textAlign: align
+                        }}
+                        className={`vk_heading_subtext vk_heading_subtext-style-${titleStyle}`}
+                      />
+                    );
+                  }
+                })()}
             </div>
           ) : (
-            <div
-              className={`vk_heading vk_heading-style-${titleStyle}`}
-              style={{ marginBottom: outerMarginBottom + `rem` }}
-            >
-              <RichText.Content
-                tagName={tagName}
-                value={title}
-                style={{
-                  color: titleColor,
-                  fontSize: titleSize + "rem",
-                  textAlign: align,
-                  marginBottom: titleMarginBottom + "rem"
-                }}
-                className={`vk_heading_title vk_heading_title-style-${titleStyle}`}
-              />
-              {// サブテキスト
-              (() => {
-                if (subTextFlag === "on") {
-                  return (
-                    <RichText.Content
-                      tagName={"p"}
-                      value={subText}
-                      style={{
-                        color: subTextColor,
-                        fontSize: subTextSize + "rem",
-                        textAlign: align
-                      }}
-                      className={`vk_heading_subtext vk_heading_subtext-style-${titleStyle}`}
-                    />
-                  );
-                }
-              })()}
-            </div>
-          )}
+              <div
+                className={`vk_heading vk_heading-style-${titleStyle}`}
+                style={{ marginBottom: outerMarginBottom + `rem` }}
+              >
+                <RichText.Content
+                  tagName={tagName}
+                  value={title}
+                  style={{
+                    color: titleColor,
+                    fontSize: titleSize + "rem",
+                    textAlign: align,
+                    marginBottom: titleMarginBottom + "rem"
+                  }}
+                  className={`vk_heading_title vk_heading_title-style-${titleStyle}`}
+                />
+                {// サブテキスト
+                  (() => {
+                    if (subTextFlag === "on") {
+                      return (
+                        <RichText.Content
+                          tagName={"p"}
+                          value={subText}
+                          style={{
+                            color: subTextColor,
+                            fontSize: subTextSize + "rem",
+                            textAlign: align
+                          }}
+                          className={`vk_heading_subtext vk_heading_subtext-style-${titleStyle}`}
+                        />
+                      );
+                    }
+                  })()}
+              </div>
+            )}
         </Fragment>
       );
     }
@@ -626,24 +647,24 @@ export class NoAnchor extends React.Component {
           placeholder={__("Input title…", "vk-blocks")}
         />
         {// サブテキスト
-        (() => {
-          if (subTextFlag === "on") {
-            return (
-              <RichText.Content
-                tagName={"p"}
-                value={subText}
-                onChange={value => setAttributes({ subText: value })}
-                style={{
-                  color: subTextColor,
-                  fontSize: subTextSize + "rem",
-                  textAlign: align
-                }}
-                className={`vk_heading_subtext vk_heading_subtext-style-${titleStyle}`}
-                placeholder={__("Input sub text…", "vk-blocks")}
-              />
-            );
-          }
-        })()}
+          (() => {
+            if (subTextFlag === "on") {
+              return (
+                <RichText.Content
+                  tagName={"p"}
+                  value={subText}
+                  onChange={value => setAttributes({ subText: value })}
+                  style={{
+                    color: subTextColor,
+                    fontSize: subTextSize + "rem",
+                    textAlign: align
+                  }}
+                  className={`vk_heading_subtext vk_heading_subtext-style-${titleStyle}`}
+                  placeholder={__("Input sub text…", "vk-blocks")}
+                />
+              );
+            }
+          })()}
       </div>
     );
   }

@@ -31,7 +31,7 @@ msgid "https://example.com"
 msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:103
-#: src/blocks/_pro/outer/block.js:143
+#: src/components/advanced-media-upload/index.js:34
 msgid "Delete Image"
 msgstr ""
 
@@ -46,14 +46,14 @@ msgid "Title"
 msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:90
-#: src/blocks/_pro/outer/block.js:151
 #: src/blocks/balloon/block.js:136
 #: src/blocks/flow/block.js:112
 #: src/blocks/pr-blocks/block.js:179
-#: src/blocks/pr-content/component.js:158
+#: src/blocks/pr-content/component.js:157
 #: src/blocks/pr-content/deprecated/component-deprecated.js:102
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:116
 #: src/blocks/staff/component.js:88
+#: src/components/advanced-media-upload/index.js:44
 msgid "Select image"
 msgstr ""
 
@@ -116,141 +116,145 @@ msgstr ""
 msgid "Parent"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:100
-msgid "Background Setting"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:104
+#: src/blocks/_pro/outer/block.js:101
 #: src/blocks/pr-content/block.js:119
 msgid "Color Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:105
+#: src/blocks/_pro/outer/block.js:102
 msgid ""
 "Color will overcome background image. If you want to display image, clear "
 "background color or set opacity 0."
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:115
+#: src/blocks/_pro/outer/block.js:112
 msgid "Opacity Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:127
-msgid "Background Image"
+#: src/blocks/_pro/outer/block.js:124
+msgid "Background Image PC"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:159
+#: src/blocks/_pro/outer/block.js:132
+msgid "Background Image Tablet"
+msgstr ""
+
+#: src/blocks/_pro/outer/block.js:138
+msgid "Background Image Mobile"
+msgstr ""
+
+#: src/blocks/_pro/outer/block.js:144
 msgid "Background image Position"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:166
+#: src/blocks/_pro/outer/block.js:150
 msgid "normal"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:167
+#: src/blocks/_pro/outer/block.js:151
 msgid "Fixed"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:169
+#: src/blocks/_pro/outer/block.js:153
 msgid "Parallax (It will not work in preview)"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:182
+#: src/blocks/_pro/outer/block.js:166
 #: src/blocks/pr-content/block.js:233
 msgid "Layout Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:187
+#: src/blocks/_pro/outer/block.js:171
 msgid "Outer width"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:190
+#: src/blocks/_pro/outer/block.js:174
 #: src/blocks/button/block.js:178
 msgid "Normal"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:191
+#: src/blocks/_pro/outer/block.js:175
 msgid "Full Wide"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:196
+#: src/blocks/_pro/outer/block.js:180
 msgid "Contents area padding (left and right)"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:203
+#: src/blocks/_pro/outer/block.js:187
 msgid "Do not use padding"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:207
+#: src/blocks/_pro/outer/block.js:191
 msgid "Use padding"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:216
+#: src/blocks/_pro/outer/block.js:200
 msgid "Padding (top and bottom)"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:219
+#: src/blocks/_pro/outer/block.js:203
 msgid "Use default padding"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:221
+#: src/blocks/_pro/outer/block.js:205
 msgid "Do not use default padding (Set it yourself using a spacer block etc.)."
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:235
+#: src/blocks/_pro/outer/block.js:219
 msgid "Divider Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:240
+#: src/blocks/_pro/outer/block.js:224
 #: src/blocks/balloon/block.js:103
 msgid "Type"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:246
+#: src/blocks/_pro/outer/block.js:230
 msgid "Tilt"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:250
+#: src/blocks/_pro/outer/block.js:234
 msgid "Curve"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:254
+#: src/blocks/_pro/outer/block.js:238
 msgid "Wave"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:258
+#: src/blocks/_pro/outer/block.js:242
 #: src/blocks/list-style/block.js:113
 msgid "Triangle"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:263
+#: src/blocks/_pro/outer/block.js:247
 msgid "Upper Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:281
+#: src/blocks/_pro/outer/block.js:265
 msgid "Lower Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:301
+#: src/blocks/_pro/outer/block.js:285
 msgid "Border Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:308
+#: src/blocks/_pro/outer/block.js:290
 msgid "Border will disappear when divider effect is applied."
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:314
+#: src/blocks/_pro/outer/block.js:296
 msgid "Border type"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:320
+#: src/blocks/_pro/outer/block.js:302
 #: src/blocks/_pro/step-item/block.js:120
 #: src/blocks/_pro/timeline-item/block.js:103
 #: src/blocks/staff/block.js:109
 msgid "None"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:324
+#: src/blocks/_pro/outer/block.js:306
 #: src/blocks/_pro/step-item/block.js:97
 #: src/blocks/_pro/timeline-item/block.js:84
 #: src/blocks/group-style/block.js:95
@@ -258,47 +262,51 @@ msgstr ""
 msgid "Solid"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:328
+#: src/blocks/_pro/outer/block.js:310
 #: src/blocks/group-style/block.js:103
 msgid "Dotted"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:332
+#: src/blocks/_pro/outer/block.js:314
 #: src/blocks/group-style/block.js:107
 msgid "Dashed"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:336
+#: src/blocks/_pro/outer/block.js:318
 #: src/blocks/group-style/block.js:111
 msgid "Double"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:340
+#: src/blocks/_pro/outer/block.js:322
 msgid "Groove"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:344
+#: src/blocks/_pro/outer/block.js:326
 msgid "Ridge"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:348
+#: src/blocks/_pro/outer/block.js:330
 msgid "Inset"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:352
+#: src/blocks/_pro/outer/block.js:334
 msgid "Outset"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:363
+#: src/blocks/_pro/outer/block.js:345
 msgid "Border width"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:370
+#: src/blocks/_pro/outer/block.js:352
 msgid "Border radius"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:49
 msgid "Outer"
+msgstr ""
+
+#: src/blocks/_pro/outer/block.js:97
+msgid "Background Setting"
 msgstr ""
 
 #: src/blocks/_pro/post-list/block.js:104
@@ -350,7 +358,7 @@ msgstr ""
 #: src/blocks/_pro/table-of-contents/block.js:50
 #: src/blocks/_pro/timeline-item/block.js:99
 #: src/blocks/heading-style/block.js:33
-#: src/blocks/heading/block.js:153
+#: src/blocks/heading/block.js:132
 #: src/blocks/list-style/block.js:104
 #: src/blocks/staff/block.js:105
 msgid "Default"
@@ -394,7 +402,7 @@ msgid "Step"
 msgstr ""
 
 #: src/blocks/_pro/table-of-contents/block.js:32
-#: src/blocks/_pro/table-of-contents/toc-utils.js:173
+#: src/blocks/_pro/table-of-contents/toc-utils.js:175
 msgid "Table of Contents"
 msgstr ""
 
@@ -445,7 +453,7 @@ msgstr ""
 #: src/blocks/balloon/block.js:141
 #: src/blocks/flow/block.js:113
 #: src/blocks/pr-blocks/block.js:175
-#: src/blocks/pr-content/component.js:165
+#: src/blocks/pr-content/component.js:164
 #: src/blocks/pr-content/deprecated/component-deprecated.js:106
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:120
 msgid "Upload image"
@@ -469,7 +477,7 @@ msgid "Balloon setting"
 msgstr ""
 
 #: src/blocks/balloon/block.js:90
-#: src/blocks/heading/block.js:210
+#: src/blocks/heading/block.js:189
 msgid "Position"
 msgstr ""
 
@@ -713,7 +721,7 @@ msgid "Brackets black"
 msgstr ""
 
 #: src/blocks/heading-style/block.js:38
-#: src/blocks/heading/block.js:154
+#: src/blocks/heading/block.js:133
 msgid "Plain"
 msgstr ""
 
@@ -737,61 +745,63 @@ msgstr ""
 msgid "Solid border bottom black"
 msgstr ""
 
-#: src/blocks/heading/block.js:147
+#: src/blocks/heading/block.js:126
 msgid "Style Settings"
 msgstr ""
 
-#: src/blocks/heading/block.js:149
+#: src/blocks/heading/block.js:128
 msgid "Heading style"
 msgstr ""
 
-#: src/blocks/heading/block.js:157
+#: src/blocks/heading/block.js:136
 msgid "Margin bottom size (rem)"
 msgstr ""
 
-#: src/blocks/heading/block.js:168
+#: src/blocks/heading/block.js:147
 msgid "Heading Settings"
 msgstr ""
 
-#: src/blocks/heading/block.js:169
+#: src/blocks/heading/block.js:148
 msgid "Level"
 msgstr ""
 
-#: src/blocks/heading/block.js:176
+#: src/blocks/heading/block.js:155
 msgid "Text Alignment"
 msgstr ""
 
-#: src/blocks/heading/block.js:193
+#: src/blocks/heading/block.js:172
 msgid "Heading margin bottom size (rem)"
 msgstr ""
 
-#: src/blocks/heading/block.js:208
+#: src/blocks/heading/block.js:187
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/blocks/heading/block.js:213
+#: src/blocks/heading/block.js:192
 msgid "Display"
 msgstr ""
 
-#: src/blocks/heading/block.js:214
+#: src/blocks/heading/block.js:193
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/heading/block.js:218
+#: src/blocks/heading/block.js:197
 msgid "Text size (rem)"
 msgstr ""
 
-#: src/blocks/heading/block.js:78
+#: src/blocks/heading/block.js:65
 msgid "Heading"
 msgstr ""
 
 #: src/blocks/heading/component.js:109
-#: src/blocks/heading/deprecated/block.js:642
+#: src/blocks/heading/deprecated/block.js:663
+#: src/blocks/heading/deprecated/component.js:109
 msgid "Input sub text…"
 msgstr ""
 
 #: src/blocks/heading/component.js:93
-#: src/blocks/heading/deprecated/block.js:626
+#: src/blocks/heading/deprecated/block.js:647
+#: src/blocks/heading/deprecated/component.js:93
 msgid "Input title…"
 msgstr ""
 
@@ -1019,13 +1029,13 @@ msgstr ""
 msgid "PR Content"
 msgstr ""
 
-#: src/blocks/pr-content/component.js:201
+#: src/blocks/pr-content/component.js:200
 #: src/blocks/pr-content/deprecated/component-deprecated.js:122
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:136
 msgid "Input title."
 msgstr ""
 
-#: src/blocks/pr-content/component.js:209
+#: src/blocks/pr-content/component.js:208
 #: src/blocks/pr-content/deprecated/component-deprecated.js:130
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:144
 msgid "Input content."

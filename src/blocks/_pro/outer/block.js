@@ -1,11 +1,11 @@
 /**
  * outer block type
  */
-import React from "react";
-import { Component } from "./component";
+import { OuterBlock } from "./component";
 import { schema } from "./schema";
 import { deprecated } from "./deprecated/block";
 import toNumber from "../../_helper/to-number";
+import { AdvancedMediaUpload } from "../../../components/advanced-media-upload";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -15,7 +15,7 @@ const {
   PanelBody,
   Button,
   BaseControl,
-  SelectControl
+  SelectControl,
 } = wp.components;
 const { Fragment } = wp.element;
 const { InspectorControls, MediaUpload, ColorPalette } =
@@ -51,14 +51,14 @@ registerBlockType("vk-blocks/outer", {
   category: "vk-blocks-cat-layout",
   attributes: schema,
   supports: {
-    anchor: true
+    anchor: true,
   },
 
-  edit({ attributes, setAttributes, className, clientId }) {
+  edit(props) {
+    const { attributes, setAttributes, className, clientId } = props;
     const {
       bgColor,
       defaultBgColor,
-      bgImage,
       bgPosition,
       outerWidth,
       padding_left_and_right,
@@ -72,25 +72,22 @@ registerBlockType("vk-blocks/outer", {
       borderWidth,
       borderStyle,
       borderColor,
-      borderRadius
+      borderRadius,
     } = attributes;
 
-    const setColorIfUndefined = bgColor => {
+    //save clientId for using in Class.
+    setAttributes({ clientId: clientId });
+
+    const setColorIfUndefined = (bgColor) => {
       if (bgColor === undefined) {
         bgColor = defaultBgColor;
       }
       return bgColor;
     };
 
-    const setBgColor = bgColor => {
+    const setBgColor = (bgColor) => {
       bgColor = setColorIfUndefined(bgColor);
       setAttributes({ bgColor: bgColor });
-    };
-
-    const deleteImgBtn = () => {
-      dispatch("core/editor").updateBlockAttributes(clientId, {
-        bgImage: null
-      });
     };
 
     return (
@@ -109,13 +106,13 @@ registerBlockType("vk-blocks/outer", {
             >
               <ColorPalette
                 value={bgColor}
-                onChange={value => setBgColor(value)}
+                onChange={(value) => setBgColor(value)}
               />
             </BaseControl>
             <BaseControl label={__("Opacity Setting", "vk-blocks")}>
               <RangeControl
                 value={opacity}
-                onChange={value => {
+                onChange={(value) => {
                   setAttributes({ opacity: value });
                 }}
                 min={0}
@@ -124,43 +121,30 @@ registerBlockType("vk-blocks/outer", {
               />
             </BaseControl>
             <BaseControl
-              label={__("Background Image", "vk-blocks")}
+              label={__("Background Image PC", "vk-blocks")}
               className={"vk_outer_sidebar_bgImage"}
             >
-              <MediaUpload
-                onSelect={value => setAttributes({ bgImage: value.url })}
-                type="image"
-                value={bgImage}
-                render={({ open }) => (
-                  <Fragment>
-                    {bgImage ? (
-                      <Fragment>
-                        <img className={"icon-image"} src={bgImage} />
-                        <Button
-                          onClick={deleteImgBtn}
-                          className={"image-button button button-delete"}
-                        >
-                          {__("Delete Image", "vk-blocks")}
-                        </Button>
-                      </Fragment>
-                    ) : (
-                      <Button
-                        onClick={open}
-                        className={"button button-large components-button"}
-                      >
-                        {__("Select image", "vk-blocks")}
-                      </Button>
-                    )}
-                  </Fragment>
-                )}
-              />
+              <div className={"vk_outer_sidebar_bgImage_button_container"}>
+                <AdvancedMediaUpload schema={"bgImage"} {...props} />
+              </div>
+            </BaseControl>
+            <BaseControl
+              label={__("Background Image Tablet", "vk-blocks")}
+              className={"vk_outer_sidebar_bgImage"}
+            >
+              <AdvancedMediaUpload schema={"bgImageTablet"} {...props} />
+            </BaseControl>
+            <BaseControl
+              label={__("Background Image Mobile", "vk-blocks")}
+              className={"vk_outer_sidebar_bgImage"}
+            >
+              <AdvancedMediaUpload schema={"bgImageMobile"} {...props} />
             </BaseControl>
             <BaseControl
               label={__("Background image Position", "vk-blocks")}
               help=""
             >
               <RadioControl
-                // label={__('Background Position', 'vk-blocks')}
                 selected={bgPosition}
                 options={[
                   { label: __("normal", "vk-blocks"), value: "normal" },
@@ -170,10 +154,10 @@ registerBlockType("vk-blocks/outer", {
                       "Parallax (It will not work in preview)",
                       "vk-blocks"
                     ),
-                    value: "parallax"
-                  }
+                    value: "parallax",
+                  },
                 ]}
-                onChange={value => setAttributes({ bgPosition: value })}
+                onChange={(value) => setAttributes({ bgPosition: value })}
               />
             </BaseControl>
           </PanelBody>
@@ -188,9 +172,9 @@ registerBlockType("vk-blocks/outer", {
                 selected={outerWidth}
                 options={[
                   { label: __("Normal", "vk-blocks"), value: "normal" },
-                  { label: __("Full Wide", "vk-blocks"), value: "full" }
+                  { label: __("Full Wide", "vk-blocks"), value: "full" },
                 ]}
-                onChange={value => setAttributes({ outerWidth: value })}
+                onChange={(value) => setAttributes({ outerWidth: value })}
               />
               <RadioControl
                 label={__(
@@ -201,14 +185,14 @@ registerBlockType("vk-blocks/outer", {
                 options={[
                   {
                     label: __("Do not use padding", "vk-blocks"),
-                    value: "0"
+                    value: "0",
                   },
                   {
                     label: __("Use padding", "vk-blocks"),
-                    value: "1"
-                  }
+                    value: "1",
+                  },
                 ]}
-                onChange={value =>
+                onChange={(value) =>
                   setAttributes({ padding_left_and_right: value })
                 }
               />
@@ -222,10 +206,10 @@ registerBlockType("vk-blocks/outer", {
                       "Do not use default padding (Set it yourself using a spacer block etc.).",
                       "vk-blocks"
                     ),
-                    value: "0"
-                  }
+                    value: "0",
+                  },
                 ]}
-                onChange={value =>
+                onChange={(value) =>
                   setAttributes({ padding_top_and_bottom: value })
                 }
               />
@@ -239,31 +223,31 @@ registerBlockType("vk-blocks/outer", {
               <SelectControl
                 label={__("Type", "vk-blocks")}
                 value={dividerType}
-                onChange={value => setAttributes({ dividerType: value })}
+                onChange={(value) => setAttributes({ dividerType: value })}
                 options={[
                   {
                     value: "tilt",
-                    label: __("Tilt", "vk-blocks")
+                    label: __("Tilt", "vk-blocks"),
                   },
                   {
                     value: "curve",
-                    label: __("Curve", "vk-blocks")
+                    label: __("Curve", "vk-blocks"),
                   },
                   {
                     value: "wave",
-                    label: __("Wave", "vk-blocks")
+                    label: __("Wave", "vk-blocks"),
                   },
                   {
                     value: "triangle",
-                    label: __("Triangle", "vk-blocks")
-                  }
+                    label: __("Triangle", "vk-blocks"),
+                  },
                 ]}
               />
             </BaseControl>
             <BaseControl label={__("Upper Divider Level", "vk-blocks")}>
               <RangeControl
                 value={upper_level}
-                onChange={value =>
+                onChange={(value) =>
                   setAttributes({ upper_level: toNumber(value, -100, 100) })
                 }
                 min="-100"
@@ -273,7 +257,7 @@ registerBlockType("vk-blocks/outer", {
             <BaseControl>
               <ColorPalette
                 value={upperDividerBgColor}
-                onChange={value =>
+                onChange={(value) =>
                   setAttributes({ upperDividerBgColor: value })
                 }
               />
@@ -281,7 +265,7 @@ registerBlockType("vk-blocks/outer", {
             <BaseControl label={__("Lower Divider Level", "vk-blocks")}>
               <RangeControl
                 value={lower_level}
-                onChange={value =>
+                onChange={(value) =>
                   setAttributes({ lower_level: toNumber(value, -100, 100) })
                 }
                 min="-100"
@@ -291,7 +275,7 @@ registerBlockType("vk-blocks/outer", {
             <BaseControl>
               <ColorPalette
                 value={lowerDividerBgColor}
-                onChange={value =>
+                onChange={(value) =>
                   setAttributes({ lowerDividerBgColor: value })
                 }
               />
@@ -301,9 +285,7 @@ registerBlockType("vk-blocks/outer", {
             title={__("Border Setting", "vk-blocks")}
             initialOpen={false}
           >
-            <BaseControl
-            // label={__('Border will disappear when divider effect is applied.', 'vk-blocks')}
-            >
+            <BaseControl>
               <p>
                 {__(
                   "Border will disappear when divider effect is applied.",
@@ -313,64 +295,64 @@ registerBlockType("vk-blocks/outer", {
               <SelectControl
                 label={__("Border type", "vk-blocks")}
                 value={borderStyle}
-                onChange={value => setAttributes({ borderStyle: value })}
+                onChange={(value) => setAttributes({ borderStyle: value })}
                 options={[
                   {
                     value: "none",
-                    label: __("None", "vk-blocks")
+                    label: __("None", "vk-blocks"),
                   },
                   {
                     value: "solid",
-                    label: __("Solid", "vk-blocks")
+                    label: __("Solid", "vk-blocks"),
                   },
                   {
                     value: "dotted",
-                    label: __("Dotted", "vk-blocks")
+                    label: __("Dotted", "vk-blocks"),
                   },
                   {
                     value: "dashed",
-                    label: __("Dashed", "vk-blocks")
+                    label: __("Dashed", "vk-blocks"),
                   },
                   {
                     value: "double",
-                    label: __("Double", "vk-blocks")
+                    label: __("Double", "vk-blocks"),
                   },
                   {
                     value: "groove",
-                    label: __("Groove", "vk-blocks")
+                    label: __("Groove", "vk-blocks"),
                   },
                   {
                     value: "ridge",
-                    label: __("Ridge", "vk-blocks")
+                    label: __("Ridge", "vk-blocks"),
                   },
                   {
                     value: "inset",
-                    label: __("Inset", "vk-blocks")
+                    label: __("Inset", "vk-blocks"),
                   },
                   {
                     value: "outset",
-                    label: __("Outset", "vk-blocks")
-                  }
+                    label: __("Outset", "vk-blocks"),
+                  },
                 ]}
               />
             </BaseControl>
             <BaseControl>
               <ColorPalette
                 value={borderColor}
-                onChange={value => setAttributes({ borderColor: value })}
+                onChange={(value) => setAttributes({ borderColor: value })}
               />
             </BaseControl>
             <BaseControl label={__("Border width", "vk-blocks")}>
               <RangeControl
                 value={borderWidth}
-                onChange={value => setAttributes({ borderWidth: value })}
+                onChange={(value) => setAttributes({ borderWidth: value })}
                 min="0"
               />
             </BaseControl>
             <BaseControl label={__("Border radius", "vk-blocks")}>
               <RangeControl
                 value={borderRadius}
-                onChange={value =>
+                onChange={(value) =>
                   setAttributes({ borderRadius: toNumber(value, -100, 100) })
                 }
                 min="-100"
@@ -379,7 +361,8 @@ registerBlockType("vk-blocks/outer", {
             </BaseControl>
           </PanelBody>
         </InspectorControls>
-        <Component
+        <OuterBlock
+          clientId={clientId}
           attributes={attributes}
           className={className}
           for_={"edit"}
@@ -388,25 +371,17 @@ registerBlockType("vk-blocks/outer", {
     );
   },
 
-  /**
-   * The save function defin className }> which the different attributes should be combined
-   * into the final markup, which is then serialized by Gutenberg into post_content.
-   *
-   * The "save" property must be specified and must be a valid function.
-   *
-   * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
-   */
-  save({ attributes, className }) {
-    {
-      return (
-        <Component
-          attributes={attributes}
-          className={className}
-          for_={"save"}
-        />
-      );
-    }
+  save(props) {
+    const { attributes, className } = props;
+    return (
+      <OuterBlock
+        clientId={attributes.clientId}
+        attributes={attributes}
+        className={className}
+        for_={"save"}
+      />
+    );
   },
 
-  deprecated: deprecated
+  deprecated: deprecated,
 });

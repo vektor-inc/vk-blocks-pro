@@ -4,32 +4,32 @@ const { useSelect, select } = wp.data;
 import classNames from "classnames";
 
 export const isAllowedBlock = (name, allowedBlocks) => {
-  return allowedBlocks.find(blockName => blockName === name);
+  return allowedBlocks.find((blockName) => blockName === name);
 };
 
-export const transformToOneDimensionalArray = multiDimensionalarray => {
+export const transformToOneDimensionalArray = (multiDimensionalarray) => {
   return multiDimensionalarray.reduce((accumulator, currentValue) => {
     return accumulator.concat(currentValue);
   }, []);
 };
 
-export const asyncGetBlocksByName = blockName =>
-  useSelect(select => {
+export const asyncGetBlocksByName = (blockName) =>
+  useSelect((select) => {
     const { getBlocks } = select("core/block-editor");
-    return getBlocks().filter(block => block.name == blockName);
+    return getBlocks().filter((block) => block.name == blockName);
   }, []);
 
-export const getBlocksByName = blockName => {
+export const getBlocksByName = (blockName) => {
   const { getBlocks } = select("core/block-editor");
-  return getBlocks().filter(block => block.name == blockName);
+  return getBlocks().filter((block) => block.name == blockName);
 };
 
-export const getAllHeadings = headingList => {
+export const getAllHeadings = (headingList) => {
   const { getBlocks } = select("core/block-editor");
-  return getBlocks().map(block => {
+  return getBlocks().map((block) => {
     if (1 <= block.innerBlocks.length) {
       return block.innerBlocks.filter(
-        block => headingList.indexOf(block.name) != -1
+        (block) => headingList.indexOf(block.name) != -1
       );
     } else if (headingList.indexOf(block.name) != -1) {
       return block;
@@ -37,11 +37,13 @@ export const getAllHeadings = headingList => {
   });
 };
 
-export const removeUnnecessaryElements = headingsRaw => {
+export const removeUnnecessaryElements = (headingsRaw) => {
   let oneDimensionArrayStoredHeading = transformToOneDimensionalArray(
     headingsRaw
   );
-  return oneDimensionArrayStoredHeading.filter(heading => heading != undefined);
+  return oneDimensionArrayStoredHeading.filter(
+    (heading) => heading != undefined
+  );
 };
 
 export const returnHtml = (source, attributes, className, open) => {
@@ -63,7 +65,7 @@ export const returnHtml = (source, attributes, className, open) => {
   let h4Count = 0;
   let h5Count = 0;
   let h6Count = 0;
-  const fixZero = count => {
+  const fixZero = (count) => {
     if (count === 0) {
       return 1;
     } else {
@@ -73,7 +75,7 @@ export const returnHtml = (source, attributes, className, open) => {
 
   let returnHtmlContent = "";
   if (source) {
-    returnHtmlContent = source.map(data => {
+    returnHtmlContent = source.map((data) => {
       let baseClass = "vk_tableOfContents_list_item";
 
       let level = data.attributes.level;

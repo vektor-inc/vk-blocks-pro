@@ -10,6 +10,10 @@ module.exports = {
         loader: "babel-loader!svg-react-loader",
       },
       {
+        test: /\.(jpg|png)$/,
+        loaders: "url-loader",
+      },
+      {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         use: {

@@ -96,7 +96,6 @@ export class Component extends React.Component {
       }
     };
 
-    console.log(Image);
     const renderImage = for_ => {
       if (for_ === "edit") {
         if (Image && Image.indexOf("{") === -1) {
@@ -113,13 +112,13 @@ export class Component extends React.Component {
                   {!Image ? (
                     __("Select image", "vk-blocks")
                   ) : (
-                    <img
-                      className={"vk_prContent_colImg_image"}
-                      src={Image}
-                      alt={__("Upload image", "vk-blocks")}
-                      style={{ border: imageBorderProperty }}
-                    />
-                  )}
+                      <img
+                        className={"vk_prContent_colImg_image"}
+                        src={Image}
+                        alt={__("Upload image", "vk-blocks")}
+                        style={{ border: imageBorderProperty }}
+                      />
+                    )}
                 </Button>
               )}
             />
@@ -141,13 +140,13 @@ export class Component extends React.Component {
                   {Image === null || typeof ImageParse.sizes === "undefined" ? (
                     __("Select image", "vk-blocks")
                   ) : (
-                    <img
-                      className={"vk_prContent_colImg_image"}
-                      src={ImageParse.sizes.full.url}
-                      alt={ImageParse.alt}
-                      style={{ border: imageBorderProperty }}
-                    />
-                  )}
+                      <img
+                        className={"vk_prContent_colImg_image"}
+                        src={ImageParse.sizes.full.url}
+                        alt={ImageParse.alt}
+                        style={{ border: imageBorderProperty }}
+                      />
+                    )}
                 </Button>
               )}
             />
@@ -231,23 +230,23 @@ export class Component extends React.Component {
             }
           })()}
           {//ボタンテキストが入力されるとボタンを表示。
-          (() => {
-            if (buttonText !== "" && buttonText !== undefined) {
-              return (
-                <div className={btnClass}>
-                  <a
-                    href={url}
-                    className={aClass}
-                    target={buttonTarget ? "_blank" : null}
-                    style={aStyle}
-                    rel="noopener noreferrer"
-                  >
-                    <Fontawesome attributes={attributes} />
-                  </a>
-                </div>
-              );
-            }
-          })()}
+            (() => {
+              if (buttonText !== "" && buttonText !== undefined) {
+                return (
+                  <div className={btnClass}>
+                    <a
+                      href={url}
+                      className={aClass}
+                      target={buttonTarget ? "_blank" : null}
+                      style={aStyle}
+                      rel="noopener noreferrer"
+                    >
+                      <Fontawesome attributes={attributes} />
+                    </a>
+                  </div>
+                );
+              }
+            })()}
         </div>
       </div>
     );

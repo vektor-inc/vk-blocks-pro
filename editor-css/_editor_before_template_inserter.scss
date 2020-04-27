@@ -1,24 +1,25 @@
 /* ブロックインサーター@サイドバー用 */
-.vkb-menu__template-part__button {
-	padding: 0;
-	width: 100%;
-	height: auto;
-	.vkb-menu__template-part__card__container {
+.vkb-menu__template-part {
+	&__button {
+		padding: 0;
+		width: 100%;
+		height: auto;
+	}
+
+	// Card Outer
+	& &__card__container {
 		width: 100%;
 		height: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		max-width: none;
-		// .vk_outer-bgPosition-fixed {
-		// 	border: 5px solid #ff0000;
-		// 	background-attachment: unset !important;
-		// }
 		div[class*="vk_outer-bgPosition-"] {
 			background-attachment: unset !important;
 		}
 	}
-	.card {
+
+	& &__card {
 		position: relative;
 		display: flex;
 		justify-content: center;
@@ -29,112 +30,81 @@
 		padding: 0;
 		background: #fff;
 		transition: all 0.35s ease;
-		.vkb-menu__template-part__header__icon {
-			margin-right: 3px;
+		border: none;
+		// これがないとプレビューのカード内の上下に余白ができる
+		.editor-styles-wrapper .block-editor-block-list__block {
+			margin-top: 0;
+			margin-bottom: 0;
 		}
-
-		// &::before,
-		// &::after {
-		// 	content: "";
-		// 	position: absolute;
-		// 	top: 0;
-		// 	left: 0;
-		// 	width: 100%;
-		// 	background: #000;
-		// }
-		// &::before {
-		// 	width: 0;
-		// 	opacity: 0;
-		// 	transition: opacity 0 ease, width 0 ease;
-		// 	transition-delay: 0.5s;
-		// }
-		// &::after {
-		// 	width: 100%;
-		// 	background: white;
-		// 	transition: width 0.5s ease;
-		// }
 		.content {
 			width: 100%;
 			max-width: 100%;
-		}
-		.logo {
-			margin: 0 0 1em;
-			width: 10.625em;
-			transition: all 0.35s ease;
-		}
-		h6 {
-			color: #666;
-			font-weight: 600;
-			text-transform: uppercase;
-			margin: 0 0 1em;
-			letter-spacing: 2px;
-		}
-		.hover_content {
-			overflow: auto;
-			border-radius: 5px;
-			border: 1px solid #e5e5e5;
-			div.inner {
-				color: #6e6e70;
-				line-height: 1.4em;
-				overflow: hidden;
-			}
-			.edit-post-visual-editor {
-				position: initial;
-				padding-top: 0;
-			}
-			&:hover {
-				border: 1px solid #007cba;
-			}
-		}
-		&:hover {
-			&::before {
-				// opacity: 1;
-				// transition: opacity 0.5s ease, width 0.5s ease;
-				// transition-delay: 0;
-			}
-			&::after {
-				// width: 0;
-				// opacity: 0;
-				// transition: width 0 ease;
-			}
-			.logo {
-				margin-bottom: 0.5em;
+			h6 {
+				color: #666;
+				font-weight: 600;
+				text-transform: uppercase;
+				margin: 0 0 1em;
+				letter-spacing: 2px;
+				text-align: center;
 			}
 			.hover_content {
-				max-height: none;
-				height: 100%;
-				transform: none;
-				// margin-top: 20px;
-				.inner {
-					width: 100%;
-					height: auto;
-					.block-editor-block-preview__container::before {
-						position: relative;
+				overflow: auto;
+				border-radius: 5px;
+				border: 1px solid #e5e5e5;
+				div.inner {
+					color: #6e6e70;
+					line-height: 1.4em;
+					overflow: hidden;
+				}
+				.edit-post-visual-editor {
+					position: initial;
+					padding-top: 0;
+				}
+				&:hover {
+					border: 1px solid #007cba;
+				}
+				.block-editor-block-preview__content {
+					width: 720px !important;
+					transform: scale(0.35) !important;
+				}
+			}
+			&:hover {
+				.logo {
+					margin-bottom: 0.5em;
+				}
+				.hover_content {
+					max-height: none;
+					height: 100%;
+					transform: none;
+					.inner {
+						width: 100%;
 						height: auto;
 					}
 				}
 			}
-		}
-	}
-	/* 
+		} //.content
+	} // &__card
+}
+.vkb-menu__template-part__button {
+	/*
 	If you want to change property of the height,
 	your working browser window size have to full size.
 	Because preview inner size was vary by window size.
 	 */
 	#vkb-menu__template-part__card0 .inner {
-		height: 66px;
+		height: 100px;
 	}
 	#vkb-menu__template-part__card1 .inner {
-		height: 22px;
+		height: 50px;
 	}
 	#vkb-menu__template-part__card2 .inner {
-		height: 90px;
+		height: 120px;
 	}
 	#vkb-menu__template-part__card3 .inner {
-		height: 72px;
+		height: 92px;
 	}
 	#vkb-menu__template-part__card4 .inner {
-		height: 53px;
+		height: 73px;
 	}
 	#vkb-menu__template-part__card5 .inner {
 		height: 95px;
@@ -146,12 +116,12 @@
 		height: 100px;
 	}
 	#vkb-menu__template-part__card8 .inner {
-		height: 29px;
+		height: 75px;
 	}
 	#vkb-menu__template-part__card9 .inner {
 		height: 100px;
 	}
 	#vkb-menu__template-part__card10 .inner {
-		height: 45px;
+		height: 65px;
 	}
 }

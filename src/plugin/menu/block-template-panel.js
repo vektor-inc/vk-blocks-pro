@@ -111,7 +111,7 @@ export default ({ slug }) => {
   setupResultParts();
 
   if (resultParts) {
-    return <ul>{ resultParts }</ul>;
+    return <ul className="vkb-menu__template-part">{ resultParts }</ul>;
   }
   return (
 	<div className="vkb-menu__template-part__loading">

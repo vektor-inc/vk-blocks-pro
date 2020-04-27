@@ -26,7 +26,7 @@ export class Component extends React.Component {
       url,
       activeControl,
       linkTarget,
-      rel
+      rel,
     } = attributes;
 
     let align = JSON.parse(activeControl);
@@ -71,15 +71,15 @@ export class Component extends React.Component {
 
     const deleteImgBtn = () => {
       dispatch("core/editor").updateBlockAttributes(clientId, {
-        image: null
+        image: null,
       });
     };
 
-    const uploadImgBtn = image => {
+    const uploadImgBtn = (image) => {
       const imageParsed = JSON.parse(image);
       return (
         <MediaUpload
-          onSelect={value => setAttributes({ image: JSON.stringify(value) })}
+          onSelect={(value) => setAttributes({ image: JSON.stringify(value) })}
           type="image"
           className={"vk_post_imgOuter_img card-img-top"}
           value={image}
@@ -110,7 +110,7 @@ export class Component extends React.Component {
       );
     };
 
-    const renderImage = display_image => {
+    const renderImage = (display_image) => {
       if (display_image) {
         if (isEdit(for_)) {
           return (
@@ -131,7 +131,7 @@ export class Component extends React.Component {
       }
     };
 
-    const switchAddUrltoImage = url => {
+    const switchAddUrltoImage = (url) => {
       let overlay = <div className="card-img-overlay"></div>;
       if (url) {
         return (
@@ -144,7 +144,7 @@ export class Component extends React.Component {
       }
     };
 
-    const renderExcerpt = align => {
+    const renderExcerpt = (align) => {
       const titleTag = "p";
       const titleClass = `vk_post_excerpt card-text text-${align.text}`;
       if (isEdit(for_)) {
@@ -153,7 +153,7 @@ export class Component extends React.Component {
             tagName={titleTag}
             className={titleClass}
             value={excerpt_text}
-            onChange={value => setAttributes({ excerpt_text: value })}
+            onChange={(value) => setAttributes({ excerpt_text: value })}
             placeholder={__(
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
               "vk-blocks"
@@ -188,7 +188,7 @@ export class Component extends React.Component {
       }
     };
 
-    const renderTitle = align => {
+    const renderTitle = (align) => {
       const titleTag = "h5";
       const titleClass = `vk_post_title card-title text-${align.title}`;
       if (isEdit(for_)) {
@@ -197,7 +197,7 @@ export class Component extends React.Component {
             tagName={titleTag}
             className={titleClass}
             value={title}
-            onChange={value => setAttributes({ title: value })}
+            onChange={(value) => setAttributes({ title: value })}
             placeholder={__("Title", "vk-blocks")}
           />
         );
@@ -218,7 +218,7 @@ export class Component extends React.Component {
     if (image) {
       let imageParsed = JSON.parse(image);
       imageStyle = {
-        backgroundImage: `url(${imageParsed.sizes.full.url})`
+        backgroundImage: `url(${imageParsed.sizes.full.url})`,
       };
     } else {
       imageStyle = {};

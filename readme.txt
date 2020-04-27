@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.4.0
-Stable tag: 0.26.6
+Stable tag: 0.26.9
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -58,6 +58,15 @@ e.g.
 
 == Changelog ==
 
+= 0.26.9 =
+[ bug fix ][ Card(pro) ] column bug fix at edit screen
+
+= 0.26.8 =
+[ bug fix ][ Card(pro) ] Disappear card url bug fix.
+
+= 0.26.7 =
+[ bug fix ][ Card(pro) ] column bug fix at edit screen
+
 = 0.26.6 =
 [ bug fix ] Dynamic attribute class error
 
@@ -73,7 +82,7 @@ e.g.
 = 0.26.0 =
 [ Add function ][ button ] Add text style
 [ Add function ][ button ] Add wide style
-[ bug fix ] Bug fix of when use hidden function and Posts column  
+[ bug fix ] Bug fix of when use hidden function and Posts column
 
 = 0.25.4 =
 [ bug fix ][ term color ] Fixed bug that gives arise from no custom taxonomy / term.

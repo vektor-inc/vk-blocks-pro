@@ -1,39 +1,40 @@
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-$font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "serif";
+$font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
+	"Hiragino Mincho Pro", "serif";
 
 // Layout
-.vk_staff{
-	&_text{
-		float:left;
+.vk_staff {
+	&_text {
+		float: left;
 		width: 61.6%;
 	}
 	&_photo {
-		float:right;
+		float: right;
 		width: 32%;
 	}
 	&-layout-imageLeft {
-		.vk_staff_text{
-			float:right;
+		.vk_staff_text {
+			float: right;
 		}
-		.vk_staff_photo{
-			float:left;
+		.vk_staff_photo {
+			float: left;
 		}
 	}
 }
 
 //
 .vk_staff {
-	display:block;
-	overflow:hidden;
-	&_text{
+	display: block;
+	overflow: hidden;
+	&_text {
 		&_name {
 			text-align: left;
 			box-shadow: none;
 			font-size: 3.5rem;
 			font-family: $font_serif;
-			line-height: 1.0;
+			line-height: 1;
 			margin-bottom: 0.5rem;
 			border: none;
 			padding: 0;
@@ -56,7 +57,7 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
 			line-height: 1.6em;
 			font-family: $font_serif;
 		}
-		&_profileTitle{
+		&_profileTitle {
 			font-size: 18px;
 			font-family: $font_serif;
 			padding-top: 0;
@@ -80,11 +81,11 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
 		vertical-align: top;
 		text-align: center;
 		button {
-			width:100%;
+			width: 100%;
 		}
-		.image-button{
+		.image-button {
 			padding: 0;
-			margin:0;
+			margin: 0;
 			display: block;
 		}
 		&-border-default {
@@ -102,14 +103,13 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
 	}
 }
 
-
 // Lightning で幅広の１カラムテンプレート時補正
 .page-template-page-onecolumn,
 .page-template-page-lp,
 .page-template-page-lp-builder {
-	.vk_staff{
-		@media ( min-width: 992px ){
-			&_text{
+	.vk_staff {
+		@media (min-width: 992px) {
+			&_text {
 				width: 74%;
 				&_name {
 					font-size: 4rem;
@@ -126,8 +126,8 @@ $font_serif:"ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hirag
 				width: 22%;
 			}
 		}
-		@media ( min-width: 1200px ){
-			&_text{
+		@media (min-width: 1200px) {
+			&_text {
 				width: 75%;
 			}
 			&_photo {

@@ -3,11 +3,11 @@ const { __ } = wp.i18n; // Import __() from wp.i18n
 const { Component } = wp.element;
 
 export const ColumnResponsive = (props) => {
-  let for_ = props.for_;
-  let attributes = props.attributes;
+  const for_ = props.for_;
+  const attributes = props.attributes;
   let innerClass = "";
-  let className = props.className;
-  let containerClass = " vk_column-responsive";
+  const className = props.className;
+  const containerClass = " vk_column-responsive";
   let elm;
 
   const ALLOWED_BLOCKS = [["vk-blocks/column-responsive-item"]];
@@ -19,20 +19,20 @@ export const ColumnResponsive = (props) => {
     innerClass = innerClass + " vk_posts-edit";
 
     elm = (
-      <div>
-        <InnerBlocks
+	<div>
+		<InnerBlocks
           //編集画面の追加タグ用に2回目のClassを挿入
-          className={`${containerClass} container row`}
-          template={TEMPLATE}
-          allowedBlocks={ALLOWED_BLOCKS}
+			className={ `${containerClass} container row` }
+			template={ TEMPLATE }
+			allowedBlocks={ ALLOWED_BLOCKS }
         />
-      </div>
+	</div>
     );
   } else if ("save") {
     elm = (
-      <div className={"container row"}>
-        <InnerBlocks.Content />
-      </div>
+	<div className={ "container row" }>
+		<InnerBlocks.Content />
+	</div>
     );
   }
   return elm;

@@ -44,10 +44,10 @@ export default ({ slug }) => {
 
     const newResultParts = parts.map((part, index) => {
       return (
-        <li key={index}>
-          <div
-            className="vkb-menu__template-part__button"
-            onClick={() => {
+	<li key={ index }>
+		<div
+			className="vkb-menu__template-part__button"
+			onClick={ () => {
               if (part.blocks.length) {
                 const selectedBlock = getSelectedBlock();
                 if (null === selectedBlock) {
@@ -79,30 +79,30 @@ export default ({ slug }) => {
                   last(part.blocks).clientId
                 );
               }
-            }}
+            } }
           >
-            <section class="vkb-menu__template-part__card__container">
-              <div
-                id={`vkb-menu__template-part__card${index}`}
-                class="card vkb-menu__template-part__card"
+			<section className="vkb-menu__template-part__card__container">
+				<div
+					id={ `vkb-menu__template-part__card${index}` }
+					className="card vkb-menu__template-part__card"
               >
-                <div class="content">
-                  <h6>
-                    <span className={"vkb-menu__template-part__header__icon"}>
-                      {part.icon}
-                    </span>
-                    {part.name}
-                  </h6>
-                  <div class="hover_content">
-                    <div class="inner edit-post-visual-editor editor-styles-wrapper">
-                      <BlockPreview viewportWidth={601} blocks={part.blocks} />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-        </li>
+					<div className="content">
+						<h6>
+							<span className={ "vkb-menu__template-part__header__icon" }>
+								{ part.icon }
+							</span>
+							{ part.name }
+						</h6>
+						<div className="hover_content">
+							<div className="inner edit-post-visual-editor editor-styles-wrapper">
+								<BlockPreview viewportWidth={ 601 } blocks={ part.blocks } />
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</li>
       );
     });
     setResultParts(newResultParts.filter((resultPart) => resultPart));
@@ -111,11 +111,11 @@ export default ({ slug }) => {
   setupResultParts();
 
   if (resultParts) {
-    return <ul>{resultParts}</ul>;
+    return <ul>{ resultParts }</ul>;
   }
   return (
-    <div className="vkb-menu__template-part__loading">
-      <Spinner />
-    </div>
+	<div className="vkb-menu__template-part__loading">
+		<Spinner />
+	</div>
   );
 };

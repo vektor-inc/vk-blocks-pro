@@ -22,7 +22,7 @@ export const ColumnResponsive = (props) => {
 	<div>
 		<InnerBlocks
           //編集画面の追加タグ用に2回目のClassを挿入
-			className={ `${containerClass} container row` }
+			className={ `${containerClass} row` }
 			template={ TEMPLATE }
 			allowedBlocks={ ALLOWED_BLOCKS }
         />
@@ -30,7 +30,7 @@ export const ColumnResponsive = (props) => {
     );
   } else if ("save") {
     elm = (
-	<div className={ "container row" }>
+	<div className={ "row" }>
 		<InnerBlocks.Content />
 	</div>
     );

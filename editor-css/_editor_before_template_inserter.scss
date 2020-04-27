@@ -85,6 +85,9 @@
 			&:hover {
 				border: 1px solid #007cba;
 			}
+			.block-editor-block-preview__content{
+				transform: scale(0.415973)!important;
+			}
 		}
 		&:hover {
 			&::before {

@@ -87,6 +87,7 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 			padding: 0;
 			margin: 0;
 			display: block;
+			height: 100%; // これがないと画像の枠が潰れる
 		}
 		&-border-default {
 			border: 4px solid #efefef;

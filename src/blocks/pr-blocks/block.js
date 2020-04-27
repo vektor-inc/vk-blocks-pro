@@ -15,26 +15,26 @@ const {Fragment} = wp.element;
 const {InspectorControls, MediaUpload, ColorPalette} = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const BlockIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" width="576" height="512" viewBox="0 0 576 512">
-	<g>
 		<g>
-			<circle cx="288" cy="186.2" r="60"/>
-			<rect x="213.5" y="278.8" width="149" height="107"/>
+			<g>
+				<circle cx="288" cy="186.2" r="60" />
+				<rect x="213.5" y="278.8" width="149" height="107" />
+			</g>
+			<g>
+				<circle cx="74.5" cy="186.2" r="60" />
+				<rect y="278.8" width="149" height="107" />
+			</g>
+			<g>
+				<circle cx="501.5" cy="186.2" r="60" />
+				<rect x="427" y="278.8" width="149" height="107" />
+			</g>
 		</g>
-		<g>
-			<circle cx="74.5" cy="186.2" r="60"/>
-			<rect y="278.8" width="149" height="107"/>
-		</g>
-		<g>
-			<circle cx="501.5" cy="186.2" r="60"/>
-			<rect x="427" y="278.8" width="149" height="107"/>
-		</g>
-	</g>
 	</svg>
 );
 
 function set_attributes(number) {
 
-    var attributes = {};
+    const attributes = {};
 
     for (let i = 1; i <= number; i++) {
 
@@ -105,7 +105,7 @@ registerBlockType('vk-blocks/pr-blocks', {
      *
      * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
      */
-    edit: function ({attributes, setAttributes, className}) {
+    edit ({attributes, setAttributes, className}) {
 
         const {
             heading1,
@@ -171,240 +171,243 @@ registerBlockType('vk-blocks/pr-blocks', {
                     ?
                     __('Select image', 'vk-blocks')
                     :
-                    <img className={'icon-image'} src={insertImage}
-                         alt={__('Upload image', 'vk-blocks')}/>
-            } else {
+                    <img className={ 'icon-image' } src={ insertImage }
+	alt={ __('Upload image', 'vk-blocks') } />
+            } 
                 const IconImageParse = JSON.parse(insertImage);
                 return !insertImage
                     ? __('Select image', 'vk-blocks')
                     :
-                    <img className={'icon-image'} src={IconImageParse.sizes.full.url}
-                         alt={IconImageParse.alt}/>
-            }
+                    <img className={ 'icon-image' } src={ IconImageParse.sizes.full.url }
+	alt={ IconImageParse.alt } />
+            
         };
 
         return [
-            <Fragment>
-                <InspectorControls>
+	<Fragment>
+		<InspectorControls>
 
-                    <PanelBody title={__('PR Block1 Setting', 'vk-blocks')}>
-                        <BaseControl
-                            label={__('Link URL:', 'vk-blocks')}
+			<PanelBody title={ __('PR Block1 Setting', 'vk-blocks') }>
+				<BaseControl
+					label={ __('Link URL:', 'vk-blocks') }
                         >
-                            <TextControl
-                                value={url1}
-                                onChange={(value) => setAttributes({url1: value})}
+					<TextControl
+						value={ url1 }
+						onChange={ (value) => setAttributes({url1: value}) }
                             />
-                            <CheckboxControl
-                                label={__('Open link new tab.', 'vk-blocks')}
-                                checked={urlOpenType1}
-                                onChange={(checked) => setAttributes({urlOpenType1: checked})}
+					<CheckboxControl
+						label={ __('Open link new tab.', 'vk-blocks') }
+						checked={ urlOpenType1 }
+						onChange={ (checked) => setAttributes({urlOpenType1: checked}) }
                             />
-                        </BaseControl>
-                        <BaseControl
-                            label={__('Icon 1', 'vk-blocks')}
+				</BaseControl>
+				<BaseControl
+					label={ __('Icon 1', 'vk-blocks') }
 
                         >
-                            <TextControl
-                                label={__('Class name of the Font Awesome icon font you want to use:', 'vk-blocks')}
-                                value={icon1}
-                                onChange={(value) => setAttributes({icon1: value})}
-                                placeholder={'fas fa-file'}
-                                help={<a href={`https://fontawesome.com/icons?d=gallery&m=free`}
-                                         target={`_blank`}>{__('Font Awesome icon list', 'vk-blocks')}</a>}
+					<TextControl
+						label={ __('Class name of the Font Awesome icon font you want to use:', 'vk-blocks') }
+						value={ icon1 }
+						onChange={ (value) => setAttributes({icon1: value}) }
+						placeholder={ 'fas fa-file' }
+						help={ <a href={ `https://fontawesome.com/icons?d=gallery&m=free` }
+							target={ `_blank` }>{ __('Font Awesome icon list', 'vk-blocks') }</a> }
                             />
-                            <ColorPalette
-                                value={color1}
-                                onChange={(value) => {
+					<ColorPalette
+						value={ color1 }
+						onChange={ (value) => {
                                     if (value) {
                                         setAttributes({color1: value})
                                     } else {
                                         setAttributes({color1: '#0693e3'})
                                         setAttributes({bgType1: '0'})
                                     }
-                                }}
+                                } }
                             />
-                            <RadioControl
-                                label={__('Icon Background:', 'vk-blocks')}
-                                selected={bgType1}
-                                options={[
+					<RadioControl
+						label={ __('Icon Background:', 'vk-blocks') }
+						selected={ bgType1 }
+						options={ [
                                     {label: __('Solid color', 'vk-blocks'), value: '0'},
                                     {label: __('No background', 'vk-blocks'), value: '1'},
-                                ]}
-                                onChange={(value) => setAttributes({bgType1: value})}
+                                ] }
+						onChange={ (value) => setAttributes({bgType1: value}) }
                             />
-                        </BaseControl>
-                        <BaseControl
-                            label={__('PR Image 1', 'vk-blocks')}
-                            help={__('When you have an image. Image is displayed with priority', 'vk-blocks')}
+				</BaseControl>
+				<BaseControl
+					// label={ __('PR Image 1', 'vk-blocks') }
+					help={ __('When you have an image. Image is displayed with priority', 'vk-blocks') }
                         >
-                            <MediaUpload
-                                onSelect={uploadNonAltImage1}
-                                type="image"
-                                value={insertImage1}
-                                render={({open}) => (
-                                    <Button
-                                        onClick={open}
-                                        className={insertImage1 ? 'image-button' : 'button button-large'}
+					<h4 className="components-base-control__title">{ __('PR Image 1', 'vk-blocks') }</h4>
+					<MediaUpload
+						onSelect={ uploadNonAltImage1 }
+						type="image"
+						value={ insertImage1 }
+						render={ ({open}) => (
+							<Button
+								onClick={ open }
+								className={ insertImage1 ? 'image-button' : 'button button-large' }
                                     >
-                                        {renderEditAltImage(insertImage1)}
-                                    </Button>
-                                )}
+								{ renderEditAltImage(insertImage1) }
+							</Button>
+                                ) }
                             />
-                        </BaseControl>
-                    </PanelBody>
-                    <PanelBody title={__('PR Block2 Setting', 'vk-blocks')}>
-                        <BaseControl
-                            label={__('Link URL:', 'vk-blocks')}
+				</BaseControl>
+			</PanelBody>
+			<PanelBody title={ __('PR Block2 Setting', 'vk-blocks') }>
+				<BaseControl
+					label={ __('Link URL:', 'vk-blocks') }
                         >
-                            <TextControl
-                                value={url2}
-                                onChange={(value) => setAttributes({url2: value})}
+					<TextControl
+						value={ url2 }
+						onChange={ (value) => setAttributes({url2: value}) }
                             />
-                            <CheckboxControl
-                                label={__('Open link new tab.', 'vk-blocks')}
-                                checked={urlOpenType2}
-                                onChange={(checked) => setAttributes({urlOpenType2: checked})}
+					<CheckboxControl
+						label={ __('Open link new tab.', 'vk-blocks') }
+						checked={ urlOpenType2 }
+						onChange={ (checked) => setAttributes({urlOpenType2: checked}) }
                             />
-                        </BaseControl>
-                        <BaseControl
-                            label={__('Icon 2', 'vk-blocks')}
+				</BaseControl>
+				<BaseControl
+					label={ __('Icon 2', 'vk-blocks') }
                         >
-                            <TextControl
-                                label={__('Class name of the Font Awesome icon font you want to use:', 'vk-blocks')}
-                                value={icon2}
-                                onChange={(value) => setAttributes({icon2: value})}
-                                placeholder={'fas fa-file'}
-                                help={<a href={`https://fontawesome.com/icons?d=gallery&m=free`}
-                                         target={`_blank`}>{__('Font Awesome icon list', 'vk-blocks')}</a>}
+					<TextControl
+						label={ __('Class name of the Font Awesome icon font you want to use:', 'vk-blocks') }
+						value={ icon2 }
+						onChange={ (value) => setAttributes({icon2: value}) }
+						placeholder={ 'fas fa-file' }
+						help={ <a href={ `https://fontawesome.com/icons?d=gallery&m=free` }
+							target={ `_blank` }>{ __('Font Awesome icon list', 'vk-blocks') }</a> }
                             />
-                            <ColorPalette
-                                value={color2}
-                                onChange={(value) => {
+					<ColorPalette
+						value={ color2 }
+						onChange={ (value) => {
                                     if (value) {
                                         setAttributes({color2: value})
                                     } else {
                                         setAttributes({color2: '#0693e3'})
                                         setAttributes({bgType2: '0'})
                                     }
-                                }}
+                                } }
                             />
-                            <RadioControl
-                                label={__('Icon Background:', 'vk-blocks')}
-                                selected={bgType2}
-                                options={[
+					<RadioControl
+						label={ __('Icon Background:', 'vk-blocks') }
+						selected={ bgType2 }
+						options={ [
                                     {label: __('Solid color', 'vk-blocks'), value: '0'},
                                     {label: __('No background', 'vk-blocks'), value: '1'},
-                                ]}
-                                onChange={(value) => setAttributes({bgType2: value})}
+                                ] }
+						onChange={ (value) => setAttributes({bgType2: value}) }
                             />
-                        </BaseControl>
-                        <BaseControl
-                            label={__('PR Image 2', 'vk-blocks')}
-                            help={__('When you have an image. Image is displayed with priority.', 'vk-blocks')}
+				</BaseControl>
+				<BaseControl
+					// label={ __('PR Image 2', 'vk-blocks') }
+					help={ __('When you have an image. Image is displayed with priority.', 'vk-blocks') }
                         >
-                            <MediaUpload
-                                onSelect={uploadNonAltImage2}
-                                type="image"
-                                value={insertImage2}
-                                render={({open}) => (
-                                    <Button
-                                        onClick={open}
-                                        className={insertImage2 ? 'image-button' : 'button button-large'}
+					<h4 className="components-base-control__title">{ __('PR Image 2', 'vk-blocks') }</h4>
+					<MediaUpload
+						onSelect={ uploadNonAltImage2 }
+						type="image"
+						value={ insertImage2 }
+						render={ ({open}) => (
+							<Button
+								onClick={ open }
+								className={ insertImage2 ? 'image-button' : 'button button-large' }
                                     >
-                                        {renderEditAltImage(insertImage2)}
-                                    </Button>
-                                )}
+								{ renderEditAltImage(insertImage2) }
+							</Button>
+                                ) }
                             />
-                        </BaseControl>
-                    </PanelBody>
-                    <PanelBody title={__('PR Block3 Setting', 'vk-blocks')}>
-                        <BaseControl
-                            label={__('Link URL:', 'vk-blocks')}
+				</BaseControl>
+			</PanelBody>
+			<PanelBody title={ __('PR Block3 Setting', 'vk-blocks') }>
+				<BaseControl
+					label={ __('Link URL:', 'vk-blocks') }
                         >
-                            <TextControl
-                                value={url3}
-                                onChange={(value) => setAttributes({url3: value})}
+					<TextControl
+						value={ url3 }
+						onChange={ (value) => setAttributes({url3: value}) }
                             />
-                            <CheckboxControl
-                                label={__('Open link new tab.', 'vk-blocks')}
-                                checked={urlOpenType3}
-                                onChange={(checked) => setAttributes({urlOpenType3: checked})}
+					<CheckboxControl
+						label={ __('Open link new tab.', 'vk-blocks') }
+						checked={ urlOpenType3 }
+						onChange={ (checked) => setAttributes({urlOpenType3: checked}) }
                             />
-                        </BaseControl>
-                        <BaseControl
-                            label={__('Icon 3', 'vk-blocks')}
+				</BaseControl>
+				<BaseControl
+					label={ __('Icon 3', 'vk-blocks') }
                         >
-                            <TextControl
-                                label={__('Class name of the Font Awesome icon font you want to use:', 'vk-blocks')}
-                                value={icon3}
-                                onChange={(value) => setAttributes({icon3: value})}
-                                placeholder={'fas fa-file'}
-                                help={<a href={`https://fontawesome.com/icons?d=gallery&m=free`}
-                                         target={`_blank`}>{__('Font Awesome icon list', 'vk-blocks')}</a>}
+					<TextControl
+						label={ __('Class name of the Font Awesome icon font you want to use:', 'vk-blocks') }
+						value={ icon3 }
+						onChange={ (value) => setAttributes({icon3: value}) }
+						placeholder={ 'fas fa-file' }
+						help={ <a href={ `https://fontawesome.com/icons?d=gallery&m=free` }
+							target={ `_blank` }>{ __('Font Awesome icon list', 'vk-blocks') }</a> }
                             />
-                            <ColorPalette
-                                value={color3}
-                                onChange={(value) => {
+					<ColorPalette
+						value={ color3 }
+						onChange={ (value) => {
                                     if (value) {
                                         setAttributes({color3: value})
                                     } else {
                                         setAttributes({color3: '#0693e3'})
                                         setAttributes({bgType3: '0'})
                                     }
-                                }}
+                                } }
                             />
-                            <RadioControl
-                                label={__('Icon Background:', 'vk-blocks')}
-                                selected={bgType3}
-                                options={[
+					<RadioControl
+						label={ __('Icon Background:', 'vk-blocks') }
+						selected={ bgType3 }
+						options={ [
                                     {label: __('Solid color', 'vk-blocks'), value: '0'},
                                     {label: __('No background', 'vk-blocks'), value: '1'},
-                                ]}
-                                onChange={(value) => setAttributes({bgType3: value})}
+                                ] }
+						onChange={ (value) => setAttributes({bgType3: value}) }
                             />
-                        </BaseControl>
-                        <BaseControl
-                            label={__('PR Image 3', 'vk-blocks')}
-                            help={__('When you have an image. Image is displayed with priority.', 'vk-blocks')}
+				</BaseControl>
+				<BaseControl
+					// label={ __('PR Image 3', 'vk-blocks') }
+					help={ __('When you have an image. Image is displayed with priority.', 'vk-blocks') }
                         >
-                            <MediaUpload
-                                onSelect={uploadNonAltImage3}
-                                type="image"
-                                value={insertImage3}
-                                render={({open}) => (
-                                    <Button
-                                        onClick={open}
-                                        className={insertImage3 ? 'image-button' : 'button button-large'}
+					<h4 className="components-base-control__title">{ __('PR Image 3', 'vk-blocks') }</h4>
+					<MediaUpload
+						onSelect={ uploadNonAltImage3 }
+						type="image"
+						value={ insertImage3 }
+						render={ ({open}) => (
+							<Button
+								onClick={ open }
+								className={ insertImage3 ? 'image-button' : 'button button-large' }
                                     >
-                                        {renderEditAltImage(insertImage3)}
-                                    </Button>
-                                )}
+								{ renderEditAltImage(insertImage3) }
+							</Button>
+                                ) }
                             />
-                        </BaseControl>
-                    </PanelBody>
-                </InspectorControls>
-                <div className={containerClass}>
-                    <ComponentBlock
-                        attributes={attributes}
-                        setAttributes={setAttributes}
-                        blockNum={1}
-                        for_={'edit'}
+				</BaseControl>
+			</PanelBody>
+		</InspectorControls>
+		<div className={ containerClass }>
+			<ComponentBlock
+				attributes={ attributes }
+				setAttributes={ setAttributes }
+				blockNum={ 1 }
+				for_={ 'edit' }
                     />
-                    <ComponentBlock
-                        attributes={attributes}
-                        setAttributes={setAttributes}
-                        blockNum={2}
-                        for_={'edit'}
+			<ComponentBlock
+				attributes={ attributes }
+				setAttributes={ setAttributes }
+				blockNum={ 2 }
+				for_={ 'edit' }
                     />
-                    <ComponentBlock
-                        attributes={attributes}
-                        setAttributes={setAttributes}
-                        blockNum={3}
-                        for_={'edit'}
+			<ComponentBlock
+				attributes={ attributes }
+				setAttributes={ setAttributes }
+				blockNum={ 3 }
+				for_={ 'edit' }
                     />
-                </div>
-            </Fragment>
+		</div>
+	</Fragment>
         ];
     },
 
@@ -426,27 +429,27 @@ registerBlockType('vk-blocks/pr-blocks', {
         }
 
         return (
-            <div className={containerClass}>
-                <ComponentBlock
-                    attributes={attributes}
-                    blockNum={1}
-                    for_={'save'}
+	<div className={ containerClass }>
+		<ComponentBlock
+			attributes={ attributes }
+			blockNum={ 1 }
+			for_={ 'save' }
                 />
-                <ComponentBlock
-                    attributes={attributes}
-                    blockNum={2}
-                    for_={'save'}
+		<ComponentBlock
+			attributes={ attributes }
+			blockNum={ 2 }
+			for_={ 'save' }
                 />
-                <ComponentBlock
-                    attributes={attributes}
-                    blockNum={3}
-                    for_={'save'}
+		<ComponentBlock
+			attributes={ attributes }
+			blockNum={ 3 }
+			for_={ 'save' }
                 />
-            </div>
+	</div>
         );
 
     },
 
-    deprecated: deprecated
+    deprecated
 
 });

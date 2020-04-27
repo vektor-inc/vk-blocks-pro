@@ -34,19 +34,37 @@ input[type=range] {
   margin: 1px;
 }
 
-  .components-base-control__label {
-     font-weight:bold;
-  }
-  .components-base-control .components-base-control__help {
-    margin-top:0;
-  }
-  .components-radio-control__option label { margin-bottom:0; }
-  .components-checkbox-control__label { margin-bottom:0; }
-  .components-color-palette { display:block; overflow:hidden; }
-    
-  .editor-url-input input[type="text"]{
-      width:100%;
-  }
+// これがないとスタッフブロックや各種画像の外側のbuttonが高さを検出できない
+button.image-button{
+	height:100%;
+}
+
+.components-base-control {
+	// 独自に追加
+	&__title {
+		padding-bottom:3px;
+		border-bottom :1px solid #ccc;
+		margin-bottom:1em;
+		display: block;
+	}
+	&__label {
+
+	}
+	&__help {
+		margin-top:0;
+	}
+	.components-button {
+		margin-bottom:0.5em;
+	}
+}
+
+.components-radio-control__option label { margin-bottom:0; }
+.components-checkbox-control__label { margin-bottom:0; }
+.components-color-palette { display:block; overflow:hidden; }
+
+.editor-url-input input[type="text"]{
+	width:100%;
+}
 
 // ブロックテンプレートのサイドバー調整CSS読み込み
 @import "./editor_before_template_inserter";

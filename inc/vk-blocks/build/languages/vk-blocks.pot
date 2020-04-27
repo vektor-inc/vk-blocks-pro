@@ -13,7 +13,7 @@ msgstr ""
 
 #: src/blocks/_helper/font-awesome.js:25
 #: src/blocks/button/block.js:289
-#: src/blocks/pr-blocks/block.js:344
+#: src/blocks/pr-blocks/block.js:346
 #: src/blocks/pr-content/block.js:202
 msgid "Font Awesome icon list"
 msgstr ""
@@ -508,7 +508,7 @@ msgid "Sub Caption"
 msgstr ""
 
 #: src/blocks/button/block.js:157
-#: src/blocks/pr-blocks/block.js:330
+#: src/blocks/pr-blocks/block.js:332
 #: src/blocks/pr-content/block.js:160
 msgid "Open link new tab."
 msgstr ""
@@ -547,12 +547,12 @@ msgid "Button Style:"
 msgstr ""
 
 #: src/blocks/button/block.js:242
-#: src/blocks/pr-blocks/block.js:361
+#: src/blocks/pr-blocks/block.js:363
 msgid "Solid color"
 msgstr ""
 
 #: src/blocks/button/block.js:250
-#: src/blocks/pr-blocks/block.js:362
+#: src/blocks/pr-blocks/block.js:364
 msgid "No background"
 msgstr ""
 
@@ -923,52 +923,52 @@ msgstr ""
 msgid "Icon 1"
 msgstr ""
 
-#: src/blocks/pr-blocks/block.js:238
-msgid "PR Image 1"
-msgstr ""
-
 #: src/blocks/pr-blocks/block.js:239
 msgid "When you have an image. Image is displayed with priority"
 msgstr ""
 
-#: src/blocks/pr-blocks/block.js:256
+#: src/blocks/pr-blocks/block.js:241
+msgid "PR Image 1"
+msgstr ""
+
+#: src/blocks/pr-blocks/block.js:257
 msgid "PR Block2 Setting"
 msgstr ""
 
-#: src/blocks/pr-blocks/block.js:271
+#: src/blocks/pr-blocks/block.js:272
 msgid "Icon 2"
 msgstr ""
 
-#: src/blocks/pr-blocks/block.js:303
+#: src/blocks/pr-blocks/block.js:307
 msgid "PR Image 2"
 msgstr ""
 
-#: src/blocks/pr-blocks/block.js:321
+#: src/blocks/pr-blocks/block.js:323
 msgid "PR Block3 Setting"
 msgstr ""
 
-#: src/blocks/pr-blocks/block.js:323
+#: src/blocks/pr-blocks/block.js:325
 msgid "Link URL:"
 msgstr ""
 
-#: src/blocks/pr-blocks/block.js:336
+#: src/blocks/pr-blocks/block.js:338
 msgid "Icon 3"
 msgstr ""
 
-#: src/blocks/pr-blocks/block.js:339
+#: src/blocks/pr-blocks/block.js:341
 msgid "Class name of the Font Awesome icon font you want to use:"
 msgstr ""
 
-#: src/blocks/pr-blocks/block.js:358
+#: src/blocks/pr-blocks/block.js:360
 msgid "Icon Background:"
 msgstr ""
 
-#: src/blocks/pr-blocks/block.js:368
-msgid "PR Image 3"
+#: src/blocks/pr-blocks/block.js:371
+msgid "When you have an image. Image is displayed with priority."
 msgstr ""
 
-#: src/blocks/pr-blocks/block.js:369
-msgid "When you have an image. Image is displayed with priority."
+#: src/blocks/pr-blocks/block.js:373
+msgid "PR Image 3"
 msgstr ""
 
 #: src/blocks/pr-blocks/block.js:95

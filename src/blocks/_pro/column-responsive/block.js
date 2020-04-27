@@ -52,7 +52,7 @@ if (window.wpVersion && 5.4 <= window.wpVersion) {
 registerBlockType("vk-blocks/column-responsive", {
   title: __("Responsive Column", "vk-blocks"),
   icon: BlockIcon,
-  category: "vk-blocks-cat",
+  category: "vk-blocks-cat-layout",
   attributes: schema,
   supports: {
     className: true,

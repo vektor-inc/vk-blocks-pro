@@ -1,245 +1,250 @@
-
 /* Pro版ブロック表示 */
 .vk_block_icon_pro {
-  fill:#c00;
-  }
-  .editor-block-list-item-vk-blocks-card:after,
-  .editor-block-list-item-vk-blocks-child-page:after,
-  .editor-block-list-item-vk-blocks-timeline:after,
-  .editor-block-list-item-vk-blocks-step:after,
-  .editor-block-list-item-vk-blocks-outer:after,
-  .editor-block-list-item-vk-blocks-post-list:after,
-  .editor-block-list-item-vk-blocks-table-of-contents:after,
-  .editor-block-list-item-vk-blocks-simple-table:after{
-  position: absolute;
-  top: 0;
-  right: 0;
-  content: "Pro";
-  display: inline-block;
-  font-size: 10px;
-  line-height: 1;
-  color: #fff;
-  background-color: #cd3034;
-  border-radius: 2px;
-  padding: 3px 4px;
-  }
-  
+	fill: #c00;
+}
+.editor-block-list-item-vk-blocks-card:after,
+.editor-block-list-item-vk-blocks-child-page:after,
+.editor-block-list-item-vk-blocks-timeline:after,
+.editor-block-list-item-vk-blocks-step:after,
+.editor-block-list-item-vk-blocks-outer:after,
+.editor-block-list-item-vk-blocks-post-list:after,
+.editor-block-list-item-vk-blocks-table-of-contents:after,
+.editor-block-list-item-vk-blocks-simple-table:after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	content: "Pro";
+	display: inline-block;
+	font-size: 10px;
+	line-height: 1;
+	color: #fff;
+	background-color: #cd3034;
+	border-radius: 2px;
+	padding: 3px 4px;
+}
+
 /* ブロックの種類入れ替えトグルについて、この指定がないと見えてしまう */
 .components-button.block-editor-block-switcher__toggle {
-  overflow: hidden;
+	overflow: hidden;
 }
 
 /* スライダーを表示 : デフォルトだとbootstrapに非表示にされてしまう */
-input[type=range] {
-  margin: 1px;
+input[type="range"] {
+	margin: 1px;
 }
 
 // これがないとスタッフブロックや各種画像の外側のbuttonが高さを検出できない
-button.image-button{
-	height:100%;
+button.image-button {
+	height: 100%;
 }
 
 .components-base-control {
 	// 独自に追加
 	&__title {
-		padding-bottom:3px;
-		border-bottom :1px solid #ccc;
-		margin-bottom:1em;
+		padding-bottom: 3px;
+		border-bottom: 1px solid #ccc;
+		margin-bottom: 1em;
 		display: block;
 	}
 	&__label {
-
 	}
 	&__help {
-		margin-top:0;
+		margin-top: 0;
 	}
 	.components-button {
-		margin-bottom:0.5em;
+		margin-bottom: 0.5em;
 	}
 }
 
-.components-radio-control__option label { margin-bottom:0; }
-.components-checkbox-control__label { margin-bottom:0; }
-.components-color-palette { display:block; overflow:hidden; }
+.components-radio-control__option label {
+	margin-bottom: 0;
+}
+.components-checkbox-control__label {
+	margin-bottom: 0;
+}
+.components-color-palette {
+	display: block;
+	overflow: hidden;
+}
 
-.editor-url-input input[type="text"]{
-	width:100%;
+.editor-url-input input[type="text"] {
+	width: 100%;
 }
 
 // ブロックテンプレートのサイドバー調整CSS読み込み
 @import "./editor_before_template_inserter";
-  
+
 // VK Outer 編集パネル
 $color-danger: #dd3333;
 .vk_outer_sidebar_bgImage {
 	position: relative;
 	.components-button {
-	  position: absolute;
-	  top: 50%;
-	  left: 50%;
-	  transform: translateY(-50%) translateX(-50%);
-	  transition: all 1s;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateY(-50%) translateX(-50%);
+		transition: all 1s;
 	}
 	.button-delete {
-	  opacity: 0;
-	  border: 1px solid $color-danger;
-	  color: $color-danger;
-	  transition: all 1s;
-	  &:hover {
-		background-color: $color-danger;
-		border: 1px solid #b72a2a;
-		color: #fff;
-	  }
+		opacity: 0;
+		border: 1px solid $color-danger;
+		color: $color-danger;
+		transition: all 1s;
+		&:hover {
+			background-color: $color-danger;
+			border: 1px solid #b72a2a;
+			color: #fff;
+		}
 	}
 	&:hover .button-delete {
 		transition: all 1s;
 		opacity: 1;
 	}
-  }
+}
 
-  /* editor area *********************************************/
-  .edit-post-visual-editor.editor-styles-wrapper{
-  
-  
-  /* これがないとGutenberg標準のエディタCSSに負ける */
-  h1:first-child.vk_prBlocks_item_title{
-    margin-top:0.9em;
-  }
-  
-  /* Bootstrap Adjuster */
-  $border_primary: 1px solid #e5e5e5;
-  $color_font_default: #464646;
-  
-  $xs-max: 575.98px;
-  $sm-max: 767.98px;
-  $md-max: 991.98px;
-  $lg-max: 1199.98px;
-  
-  $sm-min: 576px;
-  $md-min: 768px;
-  $lg-min: 992px;
-  $xl-min: 1200px;
-  
-  $color-danger : #b52727;
-  
+/* editor area *********************************************/
+//   .edit-post-visual-editor.editor-styles-wrapper{
+
+table {
+	border: 1px solid #ff0000;
+}
+
+/* これがないとGutenberg標準のエディタCSSに負ける */
+h1:first-child.vk_prBlocks_item_title {
+	margin-top: 0.9em;
+}
+
+/* Bootstrap Adjuster */
+$border_primary: 1px solid #e5e5e5;
+$color_font_default: #464646;
+
+$xs-max: 575.98px;
+$sm-max: 767.98px;
+$md-max: 991.98px;
+$lg-max: 1199.98px;
+
+$sm-min: 576px;
+$md-min: 768px;
+$lg-min: 992px;
+$xl-min: 1200px;
+
+$color-danger: #b52727;
+
+/*-------------------------------------------*/
+/* card
   /*-------------------------------------------*/
-  /* card
+
+// Card ボタンリンクの説明
+.postList_itemCard_button-option {
+	margin-bottom: 5px;
+}
+
+.vk_post_imgOuter {
+	position: relative;
+	.components-button {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateY(-50%) translateX(-50%);
+		transition: all 1s;
+	}
+	.button-delete {
+		opacity: 0;
+		border: 1px solid $color-danger;
+		color: $color-danger;
+		transition: all 1s;
+		&:hover {
+			background-color: $color-danger;
+			color: #fff;
+		}
+	}
+}
+.vk_post_imgOuter:hover .button-delete {
+	transition: all 1s;
+	opacity: 1;
+}
+
+/*-------------------------------------------*/
+/* vk_post Layout
   /*-------------------------------------------*/
-  
-  // Card ボタンリンクの説明
-  .postList_itemCard_button-option {
-    margin-bottom: 5px;
-  }
-  
-  .vk_post_imgOuter {
-    position: relative;
-    .components-button {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translateY(-50%) translateX(-50%);
-      transition: all 1s;
-    }
-    .button-delete {
-      opacity: 0;
-      border:1px solid $color-danger;
-      color:$color-danger;
-      transition: all 1s;
-      &:hover {
-        background-color: $color-danger;
-        color:#fff;
-      }
-    }
-  }
-  .vk_post_imgOuter:hover .button-delete {
-    transition: all 1s;
-    opacity: 1;
-  }
-  
-  
-  /*-------------------------------------------*/
-  /* vk_post Layout
-  /*-------------------------------------------*/
-  /* If exclude the .vk_posts that, when you select the .media don't work */
-  
-  
-  // .vk_posts .editor-inner-blocks .editor-block-list__layout .wp-block .editor-block-list__block-edit div .vk_post-col {
-  
-  .vk_posts > .vk_posts-edit {
-    width:100%;
-    .editor-block-list__layout,
-    .block-editor-block-list__layout {
-      display: flex;
-      flex-wrap: wrap;
-      padding:0;
-	  width:100%;
-    }
-    .editor-block-list__block,
-    .block-editor-block-list__block {
-      margin:0 15px 30px;
-      padding:0;
-      .block-editor-block-list__block-edit {
-        margin:0;
-        height:100%;
-      }
-      /* ここより下は編集機能以外でマイナスオフセットする必要はない */
-      div[data-block]{
-        margin:0;
-        height:100%;
-        // .vk_post {
-        //   width:100%;
-        //   height:100%;
-        //   margin-top:0;
-        // }
-      }
-      & > .vk_post {
-        width:100%;
-        height:100%;
-        margin-top:0;
-      }
-    }
-    .block-list-appender {
-      clear:both;
-      width:100%;
-    }
-  
-  }
-  .vk_posts .vk_posts-edit {
-    &-col-xs-3 .editor-block-list__block,
+/* If exclude the .vk_posts that, when you select the .media don't work */
+
+// .vk_posts .editor-inner-blocks .editor-block-list__layout .wp-block .editor-block-list__block-edit div .vk_post-col {
+
+.vk_posts > .vk_posts-edit {
+	width: 100%;
+	.editor-block-list__layout,
+	.block-editor-block-list__layout {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 0;
+		width: 100%;
+	}
+	.editor-block-list__block,
+	.block-editor-block-list__block {
+		margin: 0 15px 30px;
+		padding: 0;
+		.block-editor-block-list__block-edit {
+			margin: 0;
+			height: 100%;
+		}
+		/* ここより下は編集機能以外でマイナスオフセットする必要はない */
+		div[data-block] {
+			margin: 0;
+			height: 100%;
+			// .vk_post {
+			//   width:100%;
+			//   height:100%;
+			//   margin-top:0;
+			// }
+		}
+		& > .vk_post {
+			width: 100%;
+			height: 100%;
+			margin-top: 0;
+		}
+	}
+	.block-list-appender {
+		clear: both;
+		width: 100%;
+	}
+}
+.vk_posts .vk_posts-edit {
+	&-col-xs-3 .editor-block-list__block,
 	&-col-xs-3 .block-editor-block-list__block {
 		width: calc(25% - 30px);
-    }
-    &-col-xs-4 .editor-block-list__block,
+	}
+	&-col-xs-4 .editor-block-list__block,
 	&-col-xs-4 .block-editor-block-list__block {
 		width: calc(33.3% - 30px);
-    }
-    &-col-xs-6 .editor-block-list__block,
+	}
+	&-col-xs-6 .editor-block-list__block,
 	&-col-xs-6 .block-editor-block-list__block {
 		width: calc(50% - 30px);
-    }
-    &-col-xs-12 .editor-block-list__block ,
+	}
+	&-col-xs-12 .editor-block-list__block,
 	&-col-xs-12 .block-editor-block-list__block {
-      width: calc(100% - 30px);
-    }
-    @media (min-width: $sm-min) {
+		width: calc(100% - 30px);
+	}
+	@media (min-width: $sm-min) {
 		&-col-sm-3 .editor-block-list__block,
 		&-col-sm-3 .block-editor-block-list__block {
-        	width: calc(25% - 30px);
+			width: calc(25% - 30px);
 		}
 		&-col-sm-4 .editor-block-list__block,
 		&-col-sm-4 .block-editor-block-list__block {
-        	width: calc(33.3% - 30px);
+			width: calc(33.3% - 30px);
 		}
 		&-col-sm-6 .editor-block-list__block,
 		&-col-sm-6 .block-editor-block-list__block {
-        	width: calc(50% - 30px);
+			width: calc(50% - 30px);
 		}
 		&-col-sm-12 .editor-block-list__block,
 		&-col-sm-12 .block-editor-block-list__block {
 			width: calc(100% - 30px);
 		}
-    }
-    @media (min-width: $md-min) {
+	}
+	@media (min-width: $md-min) {
 		&-col-md-3 .editor-block-list__block,
 		&-col-md-3 .block-editor-block-list__block {
 			width: calc(25% - 30px);
@@ -256,8 +261,8 @@ $color-danger: #dd3333;
 		&-col-md-12 .block-editor-block-list__block {
 			width: calc(100% - 30px);
 		}
-    }
-    @media (min-width: $lg-min) {
+	}
+	@media (min-width: $lg-min) {
 		&-col-lg-3 .editor-block-list__block,
 		&-col-lg-3 .block-editor-block-list__block {
 			width: calc(25% - 30px);
@@ -274,8 +279,8 @@ $color-danger: #dd3333;
 		&-col-lg-12 .block-editor-block-list__block {
 			width: calc(100% - 30px);
 		}
-    }
-    @media (min-width: $xl-min) {
+	}
+	@media (min-width: $xl-min) {
 		&-col-xl-3 .editor-block-list__block,
 		&-col-xl-3 .block-editor-block-list__block {
 			width: calc(25% - 30px);
@@ -292,55 +297,56 @@ $color-danger: #dd3333;
 		&-col-xl-12 .block-editor-block-list__block {
 			width: calc(100% - 30px);
 		}
-    }
+	}
 }
 
 /*-------------------------------------------*/
 /* edit hidden block class 
 /*-------------------------------------------*/
-.vk_edit_hidden_warning{
+.vk_edit_hidden_warning {
 	// border:1px dotted #666;
 	opacity: 0.4;
 }
-.vk_edit_hidden_all{
-  	opacity: 0.2;
+.vk_edit_hidden_all {
+	opacity: 0.2;
 }
 
 /* .vk_hidden.vk_hidden は2つじゃないと上書きできない  */
 .vk_hidden.vk_hidden {
-  display: block !important;
-  color: var(--blue);
+	display: block !important;
+	color: var(--blue);
 
-  &.vk_posts{
-	// display block だとカラムがすべて落ちるため posts は flexで上書き
-	display: flex !important;
-  }
-  @media (max-width: $xs-max) {
-    &-xs {
-      display: block !important;
-    }
-  }
-  @media (min-width: $sm-min) and (max-width: $sm-max) {
-    &-sm {
-      display: block !important;
-    }
-  }
-  @media (min-width: $md-min) and (max-width: $md-max) {
-    &-md {
-      display: block !important;
-    }
-  }
-  @media (min-width: $lg-min) and (max-width: $lg-max) {
-    &-lg {
-      display: block !important;
-    }
-  }
-  @media (min-width: $xl-min) {
-    &-xl {
-      display: block !important;
-    }
-  }
+	&.vk_posts {
+		// display block だとカラムがすべて落ちるため posts は flexで上書き
+		display: flex !important;
+	}
+	@media (max-width: $xs-max) {
+		&-xs {
+			display: block !important;
+		}
+	}
+	@media (min-width: $sm-min) and (max-width: $sm-max) {
+		&-sm {
+			display: block !important;
+		}
+	}
+	@media (min-width: $md-min) and (max-width: $md-max) {
+		&-md {
+			display: block !important;
+		}
+	}
+	@media (min-width: $lg-min) and (max-width: $lg-max) {
+		&-lg {
+			display: block !important;
+		}
+	}
+	@media (min-width: $xl-min) {
+		&-xl {
+			display: block !important;
+		}
+	}
 }
+
 /*-------------------------------------------*/
 /* リストデザイン
 /*-------------------------------------------*/
@@ -662,49 +668,6 @@ ol {
 			width: 100%;
 		}
 	}
-}
-
-.alert{
-
-  padding: 1em;
-  margin: 1em 0;
-  border-radius: 3px;
-	p {
-		margin-bottom:0;
-	}
-
-  & + &{
-    margin-top: 2em;
-  }
-
-  a{
-    transition: color .3s linear, opacity .3s linear;
-    &:link, &:visited{
-      opacity: .8;
-      text-decoration: underline;
-    }
-    &:hover, &:visited{
-      opacity: 1;
-      text-decoration: none;
-    }
-  }
-
-  @each $var in (
-                  (success, #dff0d8,#3c763d,#d6e9c6),
-                  (info, #d9edf7,#31708f,#bce8f1),
-                  (warning, #fcf8e3,#8a6d3b,#faebcc),
-                  (danger, #f2dede,#a94442,#ebccd1),
-  ){
-    $class-name: nth($var, 1);
-    $color-bg: nth($var, 2);
-    $color: nth($var, 3);
-    $color-border :nth($var, 4);
-    &-#{$class-name}{
-      background-color: $color-bg;
-      color:$color;
-      border-color:$color-border;
-    }
-  }
 }
 
 .vk_balloon {
@@ -1211,6 +1174,49 @@ $color_dark: #343a40;
 .btn.btn-outline-dark:focus {
 	background: $color_dark;
 	color: #fff;
+}
+
+.alert{
+
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 3px;
+	p {
+		margin-bottom:0;
+	}
+
+  & + &{
+    margin-top: 2em;
+  }
+
+  a{
+    transition: color .3s linear, opacity .3s linear;
+    &:link, &:visited{
+      opacity: .8;
+      text-decoration: underline;
+    }
+    &:hover, &:visited{
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+
+  @each $var in (
+                  (success, #dff0d8,#3c763d,#d6e9c6),
+                  (info, #d9edf7,#31708f,#bce8f1),
+                  (warning, #fcf8e3,#8a6d3b,#faebcc),
+                  (danger, #f2dede,#a94442,#ebccd1),
+  ){
+    $class-name: nth($var, 1);
+    $color-bg: nth($var, 2);
+    $color: nth($var, 3);
+    $color-border :nth($var, 4);
+    &-#{$class-name}{
+      background-color: $color-bg;
+      color:$color;
+      border-color:$color-border;
+    }
+  }
 }
 
 //*      .flowBox
@@ -1815,6 +1821,90 @@ $xl-min: 1200px;
 }
 
 /*-------------------------------------------*/
+/* Layout
+/*-------------------------------------------*/
+.vk_prContent {
+	margin-left: -15px;
+	margin-right: -15px;
+	@media (min-width: 576px) {
+		display: flex;
+		.col-sm-6 {
+			width: 50%;
+		}
+		&-layout {
+			&-imageLeft {
+				flex-direction: row;
+			}
+
+			&-imageRight {
+				flex-direction: row-reverse;
+			}
+
+			&-imageLeft .vk_prContent_colImg {
+				padding-right: 2em;
+			}
+
+			&-imageRight .vk_prContent_colImg {
+				padding-left: 2em;
+			}
+		}
+	} // @media (min-width: 768px) {
+}
+
+/*-------------------------------------------*/
+/* others
+/*-------------------------------------------*/
+.vk_prContent {
+	&_colTxt {
+		vertical-align: top;
+		&_title {
+			background-color: transparent;
+			font-weight: bold;
+			padding: 0;
+			box-shadow: none;
+			border: none;
+			margin-bottom: 0.8em;
+			@media (max-width: 575.98px) {
+				&:first-child {
+					margin-top: 30px;
+				}
+			}
+			&:after {
+				content: "";
+				line-height: 0;
+				display: block;
+				overflow: hidden;
+				position: absolute;
+				bottom: -1px;
+				width: 0;
+				border: none;
+			}
+		}
+		&_text {
+			line-height: 2em;
+			margin-bottom: 1.7em;
+		}
+		&_btn.btn {
+			@media (min-width: 992px) {
+				font-size: 16px;
+			}
+		}
+	} // &_colTxt {
+	&_colImg {
+		&_image {
+			max-width: 100%;
+			height: auto;
+		}
+		.components-button.button {
+			margin: 1em;
+		}
+		.components-button.image-button {
+			margin: 0;
+		}
+	}
+} // .vk_prContent {
+
+/*-------------------------------------------*/
 /* .vk_prBlocks
 /*-------------------------------------------*/
 .vk_prBlocks_item {
@@ -1960,90 +2050,6 @@ $xl-min: 1200px;
 			background-color: rgba(0, 0, 0, 0.05);
 	}
 }
-
-/*-------------------------------------------*/
-/* Layout
-/*-------------------------------------------*/
-.vk_prContent {
-	margin-left: -15px;
-	margin-right: -15px;
-	@media (min-width: 576px) {
-		display: flex;
-		.col-sm-6 {
-			width: 50%;
-		}
-		&-layout {
-			&-imageLeft {
-				flex-direction: row;
-			}
-
-			&-imageRight {
-				flex-direction: row-reverse;
-			}
-
-			&-imageLeft .vk_prContent_colImg {
-				padding-right: 2em;
-			}
-
-			&-imageRight .vk_prContent_colImg {
-				padding-left: 2em;
-			}
-		}
-	} // @media (min-width: 768px) {
-}
-
-/*-------------------------------------------*/
-/* others
-/*-------------------------------------------*/
-.vk_prContent {
-	&_colTxt {
-		vertical-align: top;
-		&_title {
-			background-color: transparent;
-			font-weight: bold;
-			padding: 0;
-			box-shadow: none;
-			border: none;
-			margin-bottom: 0.8em;
-			@media (max-width: 575.98px) {
-				&:first-child {
-					margin-top: 30px;
-				}
-			}
-			&:after {
-				content: "";
-				line-height: 0;
-				display: block;
-				overflow: hidden;
-				position: absolute;
-				bottom: -1px;
-				width: 0;
-				border: none;
-			}
-		}
-		&_text {
-			line-height: 2em;
-			margin-bottom: 1.7em;
-		}
-		&_btn.btn {
-			@media (min-width: 992px) {
-				font-size: 16px;
-			}
-		}
-	} // &_colTxt {
-	&_colImg {
-		&_image {
-			max-width: 100%;
-			height: auto;
-		}
-		.components-button.button {
-			margin: 1em;
-		}
-		.components-button.image-button {
-			margin: 0;
-		}
-	}
-} // .vk_prContent {
 
 /*-------------------------------------------*/
 /* CSS
@@ -2272,6 +2278,10 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 /* CSS
 /*-------------------------------------------*/
 
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
 .vk_card {
   &_item {
     .vk_post_title.card-title {
@@ -2283,117 +2293,74 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
   }
 }
 
+.vk_childPage {
+	margin-top: 2.5rem;
+}
+
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-$media-sm-up: 576px;
-$media-md-up: 768px;
-$media-lg-up: 992px;
-$media-xl-up: 1200px;
-$media-sm-down: 575.98px;
-$media-md-down: 767.98px;
-$media-lg-down: 991.98px;
-$media-xl-down: 1199.98px;
-.vk_outer {
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	position: relative;
-	.vk_outer_container {
-		min-height: 40px;
-	}
-}
-.vk_outer-width-full {
-	margin-left: calc(50% - 50vw);
-	margin-right: calc(50% - 50vw);
-	padding-left: calc(50vw - 50%);
-	padding-right: calc(50vw - 50%);
-}
-$padding-none: 1.5em;
-$padding-sm: 2em;
-$padding-md: 2.5em;
-$padding-lg: 3em;
-$padding-xl: 3.5em;
-.vk_outer-paddingLR-use {
-	padding-left: $padding-none;
-	padding-right: $padding-none;
-	@media (min-width: $media-sm-up) {
-		padding-left: $padding-sm;
-		padding-right: $padding-sm;
-	}
-	@media (min-width: $media-md-up) {
-		padding-left: $padding-md;
-		padding-right: $padding-md;
-	}
-	@media (min-width: $media-lg-up) {
-		padding-left: $padding-lg;
-		padding-right: $padding-lg;
-	}
-	@media (min-width: $media-xl-up) {
-		padding-left: $padding-xl;
-		padding-right: $padding-xl;
-	}
-}
-.vk_outer-paddingVertical-use {
-	padding-top: $padding-none;
-	padding-bottom: $padding-none;
-	@media (min-width: $media-sm-up) {
-		padding-top: $padding-sm;
-		padding-bottom: $padding-sm;
-	}
-	@media (min-width: $media-md-up) {
-		padding-top: $padding-md;
-		padding-bottom: $padding-md;
-	}
-	@media (min-width: $media-lg-up) {
-		padding-top: $padding-lg;
-		padding-bottom: $padding-lg;
-	}
-	@media (min-width: $media-xl-up) {
-		padding-top: $padding-xl;
-		padding-bottom: $padding-xl;
-	}
-}
 
-.vk_outer-bgPosition-fixed {
-	background-attachment: fixed !important;
-	background-size: cover !important;
-}
-.vk_outer-bgPosition-normal {
-	background-attachment: unset !important;
-	background-size: cover !important;
-}
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+.vk_step {
+	margin: 2em 0;
 
-.vk_outer_separator {
-	svg {
+	.vk_step_item {
+		position: relative;
+		padding: 0 0 2.4em 4.5em;
+		margin: 0 auto;
+
+		h3:first-of-type,
+		h4:first-of-type {
+			padding-top: 0.5em;
+			margin-top: 0;
+		}
+		&_content > p:first-child {
+			margin-bottom: 0.3em;
+			line-height: 1;
+			color: #666;
+		}
+		.vk_step_item_caption {
+			margin-bottom: 0.5em;
+			color: #666;
+		}
+		.vk_step_item_content {
+		}
+		.vk_step_item_dot {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			color: #ffffff;
+			padding: 9px 0;
+			text-align: center;
+			&_num {
+				line-height: 1.2;
+			}
+		}
+		.vk_step_item_dot_caption {
+			font-size: 0.5rem;
+		}
+	}
+}
+.vk_step_item_lineStyle-default {
+	&::before {
+		content: "";
+		width: 3px;
+		background: #ddd;
 		display: block;
-		max-height: 100px;
 		position: absolute;
-		left: 0;
-		width: 100%;
-		pointer-events: none; //上に重なるとボタンなどのリンクが押せなくなるので追加
+		top: 54px;
+		left: 23px;
+		bottom: 4px;
 	}
 }
-.vk_outer_separator-position-upper {
-	svg {
-		top: 0;
-		transform: rotate(180deg);
-	}
-}
-.vk_outer_separator-position-lower {
-	svg {
-		bottom: 0;
-	}
-}
-
-// .editor-block-list__block-edit{
-//   margin: 0!important;
-// }
-$color-danger: #b52727;
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
 
 /*-------------------------------------------*/
 /* CSS
@@ -2536,10 +2503,6 @@ $toc-left-margin: 1rem;
   }
 }
 
-.vk_childPage {
-	margin-top: 2.5rem;
-}
-
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -2586,66 +2549,109 @@ $toc-left-margin: 1rem;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-.vk_step {
-	margin: 2em 0;
-
-	.vk_step_item {
-		position: relative;
-		padding: 0 0 2.4em 4.5em;
-		margin: 0 auto;
-
-		h3:first-of-type,
-		h4:first-of-type {
-			padding-top: 0.5em;
-			margin-top: 0;
-		}
-		&_content > p:first-child {
-			margin-bottom: 0.3em;
-			line-height: 1;
-			color: #666;
-		}
-		.vk_step_item_caption {
-			margin-bottom: 0.5em;
-			color: #666;
-		}
-		.vk_step_item_content {
-		}
-		.vk_step_item_dot {
-			content: "";
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 50px;
-			height: 50px;
-			border-radius: 50%;
-			color: #ffffff;
-			padding: 9px 0;
-			text-align: center;
-			&_num {
-				line-height: 1.2;
-			}
-		}
-		.vk_step_item_dot_caption {
-			font-size: 0.5rem;
-		}
+$media-sm-up: 576px;
+$media-md-up: 768px;
+$media-lg-up: 992px;
+$media-xl-up: 1200px;
+$media-sm-down: 575.98px;
+$media-md-down: 767.98px;
+$media-lg-down: 991.98px;
+$media-xl-down: 1199.98px;
+.vk_outer {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+	.vk_outer_container {
+		min-height: 40px;
 	}
 }
-.vk_step_item_lineStyle-default {
-	&::before {
-		content: "";
-		width: 3px;
-		background: #ddd;
+.vk_outer-width-full {
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	padding-left: calc(50vw - 50%);
+	padding-right: calc(50vw - 50%);
+}
+$padding-none: 1.5em;
+$padding-sm: 2em;
+$padding-md: 2.5em;
+$padding-lg: 3em;
+$padding-xl: 3.5em;
+.vk_outer-paddingLR-use {
+	padding-left: $padding-none;
+	padding-right: $padding-none;
+	@media (min-width: $media-sm-up) {
+		padding-left: $padding-sm;
+		padding-right: $padding-sm;
+	}
+	@media (min-width: $media-md-up) {
+		padding-left: $padding-md;
+		padding-right: $padding-md;
+	}
+	@media (min-width: $media-lg-up) {
+		padding-left: $padding-lg;
+		padding-right: $padding-lg;
+	}
+	@media (min-width: $media-xl-up) {
+		padding-left: $padding-xl;
+		padding-right: $padding-xl;
+	}
+}
+.vk_outer-paddingVertical-use {
+	padding-top: $padding-none;
+	padding-bottom: $padding-none;
+	@media (min-width: $media-sm-up) {
+		padding-top: $padding-sm;
+		padding-bottom: $padding-sm;
+	}
+	@media (min-width: $media-md-up) {
+		padding-top: $padding-md;
+		padding-bottom: $padding-md;
+	}
+	@media (min-width: $media-lg-up) {
+		padding-top: $padding-lg;
+		padding-bottom: $padding-lg;
+	}
+	@media (min-width: $media-xl-up) {
+		padding-top: $padding-xl;
+		padding-bottom: $padding-xl;
+	}
+}
+
+.vk_outer-bgPosition-fixed {
+	background-attachment: fixed !important;
+	background-size: cover !important;
+}
+.vk_outer-bgPosition-normal {
+	background-attachment: unset !important;
+	background-size: cover !important;
+}
+
+.vk_outer_separator {
+	svg {
 		display: block;
+		max-height: 100px;
 		position: absolute;
-		top: 54px;
-		left: 23px;
-		bottom: 4px;
+		left: 0;
+		width: 100%;
+		pointer-events: none; //上に重なるとボタンなどのリンクが押せなくなるので追加
+	}
+}
+.vk_outer_separator-position-upper {
+	svg {
+		top: 0;
+		transform: rotate(180deg);
+	}
+}
+.vk_outer_separator-position-lower {
+	svg {
+		bottom: 0;
 	}
 }
 
-}
+// .editor-block-list__block-edit{
+//   margin: 0!important;
+// }
+$color-danger: #b52727;
+
+// }

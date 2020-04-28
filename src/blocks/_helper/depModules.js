@@ -1,0 +1,1 @@
+export const vkbBlockEditor = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;

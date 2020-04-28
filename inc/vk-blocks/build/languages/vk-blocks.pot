@@ -3,439 +3,12 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/_helper/font-awesome.js:21
-msgid "FontAwesome"
-msgstr ""
-
-#: src/blocks/_helper/font-awesome.js:23
-msgid "Enter Font Awesome Class. Ex) fas fa-arrow-circle-right "
-msgstr ""
-
-#: src/blocks/_helper/font-awesome.js:25
-#: src/blocks/button/block.js:289
-#: src/blocks/pr-blocks/block.js:346
-#: src/blocks/pr-content/block.js:202
-msgid "Font Awesome icon list"
-msgstr ""
-
-#: src/blocks/_pro/card-item/block.js:42
-msgid "Card Item"
-msgstr ""
-
-#: src/blocks/_pro/card-item/block.js:58
-msgid "URL"
-msgstr ""
-
-#: src/blocks/_pro/card-item/block.js:63
-msgid "https://example.com"
-msgstr ""
-
-#: src/blocks/_pro/card-item/component.js:103
-#: src/components/advanced-media-upload/index.js:34
-msgid "Delete Image"
-msgstr ""
-
-#: src/blocks/_pro/card-item/component.js:157
-msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
-"tempor incididunt ut labore et dolore magna aliqua. "
-msgstr ""
-
-#: src/blocks/_pro/card-item/component.js:201
-msgid "Title"
-msgstr ""
-
-#: src/blocks/_pro/card-item/component.js:90
-#: src/blocks/balloon/block.js:136
-#: src/blocks/flow/block.js:112
-#: src/blocks/pr-blocks/block.js:179
-#: src/blocks/pr-content/component.js:157
-#: src/blocks/pr-content/deprecated/component-deprecated.js:102
-#: src/blocks/pr-content/deprecated/component-no-boder-color.js:116
-#: src/blocks/staff/component.js:88
-#: src/components/advanced-media-upload/index.js:44
-msgid "Select image"
-msgstr ""
-
-#: src/blocks/_pro/card/block.js:122
-#: src/components/display-items-control/index.js:26
-msgid "Display item"
-msgstr ""
-
-#: src/blocks/_pro/card/block.js:124
-#: src/components/display-items-control/index.js:28
-msgid "Image"
-msgstr ""
-
-#: src/blocks/_pro/card/block.js:129
-#: src/blocks/button/block.js:59
-#: src/components/display-items-control/index.js:57
-msgid "Button"
-msgstr ""
-
-#: src/blocks/_pro/card/block.js:134
-#: src/components/display-items-control/index.js:73
-msgid "Button option"
-msgstr ""
-
-#: src/blocks/_pro/card/block.js:137
-#: src/components/display-items-control/index.js:76
-msgid ""
-"Click each card block to set the target url. You can find the url form at "
-"it's sidebar."
-msgstr ""
-
-#: src/blocks/_pro/card/block.js:143
-#: src/components/display-items-control/index.js:82
-msgid "Button text"
-msgstr ""
-
-#: src/blocks/_pro/card/block.js:48
-#: src/components/column-layout-control/index.js:19
-msgid "Card"
-msgstr ""
-
-#: src/blocks/_pro/child-page/block.js:121
-msgid "Exsist Already Page"
-msgstr ""
-
-#: src/blocks/_pro/child-page/block.js:140
-msgid "Current Page"
-msgstr ""
-
-#: src/blocks/_pro/child-page/block.js:43
-msgid "Child page list"
-msgstr ""
-
-#: src/blocks/_pro/child-page/block.js:63
-#: src/blocks/_pro/post-list/block.js:101
-msgid "Display conditions"
-msgstr ""
-
-#: src/blocks/_pro/child-page/block.js:66
-msgid "Parent"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:101
-#: src/blocks/pr-content/block.js:119
-msgid "Color Setting"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:102
-msgid ""
-"Color will overcome background image. If you want to display image, clear "
-"background color or set opacity 0."
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:112
-msgid "Opacity Setting"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:124
-msgid "Background Image PC"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:132
-msgid "Background Image Tablet"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:138
-msgid "Background Image Mobile"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:144
-msgid "Background image Position"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:150
-msgid "normal"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:151
-msgid "Fixed"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:153
-msgid "Parallax (It will not work in preview)"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:166
-#: src/blocks/pr-content/block.js:233
-msgid "Layout Setting"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:171
-msgid "Outer width"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:174
-#: src/blocks/button/block.js:178
-msgid "Normal"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:175
-msgid "Full Wide"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:180
-msgid "Contents area padding (left and right)"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:187
-msgid "Do not use padding"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:191
-msgid "Use padding"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:200
-msgid "Padding (top and bottom)"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:203
-msgid "Use default padding"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:205
-msgid "Do not use default padding (Set it yourself using a spacer block etc.)."
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:219
-msgid "Divider Setting"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:224
-#: src/blocks/balloon/block.js:103
-msgid "Type"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:230
-msgid "Tilt"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:234
-msgid "Curve"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:238
-msgid "Wave"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:242
-#: src/blocks/list-style/block.js:113
-msgid "Triangle"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:247
-msgid "Upper Divider Level"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:265
-msgid "Lower Divider Level"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:285
-msgid "Border Setting"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:290
-msgid "Border will disappear when divider effect is applied."
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:296
-msgid "Border type"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:302
-#: src/blocks/_pro/step-item/block.js:120
-#: src/blocks/_pro/timeline-item/block.js:103
-#: src/blocks/staff/block.js:109
-msgid "None"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:306
-#: src/blocks/_pro/step-item/block.js:97
-#: src/blocks/_pro/timeline-item/block.js:84
-#: src/blocks/group-style/block.js:95
-#: src/blocks/pr-content/block.js:168
-msgid "Solid"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:310
-#: src/blocks/group-style/block.js:103
-msgid "Dotted"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:314
-#: src/blocks/group-style/block.js:107
-msgid "Dashed"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:318
-#: src/blocks/group-style/block.js:111
-msgid "Double"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:322
-msgid "Groove"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:326
-msgid "Ridge"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:330
-msgid "Inset"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:334
-msgid "Outset"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:345
-msgid "Border width"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:352
-msgid "Border radius"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:49
-msgid "Outer"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.js:97
-msgid "Background Setting"
-msgstr ""
-
-#: src/blocks/_pro/post-list/block.js:104
-msgid "Filter by PostTypes"
-msgstr ""
-
-#: src/blocks/_pro/post-list/block.js:112
-msgid "Filter by Taxonomy Terms"
-msgstr ""
-
-#: src/blocks/_pro/post-list/block.js:120
-msgid "Number of Posts"
-msgstr ""
-
-#: src/blocks/_pro/post-list/block.js:128
-msgid "Order by"
-msgstr ""
-
-#: src/blocks/_pro/post-list/block.js:134
-msgid "Published Date"
-msgstr ""
-
-#: src/blocks/_pro/post-list/block.js:135
-msgid "Modefied Date"
-msgstr ""
-
-#: src/blocks/_pro/post-list/block.js:136
-msgid "Random"
-msgstr ""
-
-#: src/blocks/_pro/post-list/block.js:141
-msgid "offset"
-msgstr ""
-
-#: src/blocks/_pro/post-list/block.js:151
-msgid "Ignore this post"
-msgstr ""
-
-#: src/blocks/_pro/post-list/block.js:66
-msgid "Post list"
-msgstr ""
-
-#: src/blocks/_pro/step-item/block.js:101
-#: src/blocks/_pro/timeline-item/block.js:80
-msgid "Outlined"
-msgstr ""
-
-#: src/blocks/_pro/step-item/block.js:116
-#: src/blocks/_pro/table-of-contents/block.js:50
-#: src/blocks/_pro/timeline-item/block.js:99
-#: src/blocks/heading-style/block.js:33
-#: src/blocks/heading/block.js:132
-#: src/blocks/list-style/block.js:104
-#: src/blocks/staff/block.js:105
-msgid "Default"
-msgstr ""
-
-#: src/blocks/_pro/step-item/block.js:33
-msgid "Step Item"
-msgstr ""
-
-#: src/blocks/_pro/step-item/block.js:58
-msgid "Step Mark"
-msgstr ""
-
-#: src/blocks/_pro/step-item/block.js:61
-msgid "If FontAwesome class entered, it will overrides the number."
-msgstr ""
-
-#: src/blocks/_pro/step-item/block.js:75
-#: src/blocks/_pro/timeline-item/block.js:60
-msgid "Ex,6:00AM"
-msgstr ""
-
-#: src/blocks/_pro/step-item/block.js:80
-#: src/blocks/_pro/timeline-item/block.js:63
-#: src/blocks/staff/block.js:124
-msgid "Color"
-msgstr ""
-
-#: src/blocks/_pro/step-item/block.js:86
-#: src/blocks/_pro/table-of-contents/block.js:43
-#: src/blocks/_pro/timeline-item/block.js:69
-msgid "Style"
-msgstr ""
-
-#: src/blocks/_pro/step/block.js:135
-msgid "First Dot Number"
-msgstr ""
-
-#: src/blocks/_pro/step/block.js:60
-msgid "Step"
-msgstr ""
-
-#: src/blocks/_pro/table-of-contents/block.js:32
-#: src/blocks/_pro/table-of-contents/toc-utils.js:175
-msgid "Table of Contents"
-msgstr ""
-
-#: src/blocks/_pro/table-of-contents/block.js:54
-msgid "No frame"
-msgstr ""
-
-#: src/blocks/_pro/table-of-contents/block.js:59
-msgid "Default Display Status"
-msgstr ""
-
-#: src/blocks/_pro/table-of-contents/block.js:66
-msgid "OPEN"
-msgstr ""
-
-#: src/blocks/_pro/table-of-contents/block.js:70
-msgid "CLOSE"
-msgstr ""
-
-#: src/blocks/_pro/timeline-item/block.js:31
-msgid "Timeline Item"
-msgstr ""
-
-#: src/blocks/_pro/timeline-item/block.js:56
-msgid "label"
-msgstr ""
-
-#: src/blocks/_pro/timeline/block.js:54
-msgid "Timeline"
-msgstr ""
-
 #: src/blocks/alert/block.js:14
 msgid "Alert"
+msgstr ""
+
+#: src/blocks/balloon/block.js:103
+msgid "Type"
 msgstr ""
 
 #: src/blocks/balloon/block.js:104
@@ -448,6 +21,16 @@ msgstr ""
 
 #: src/blocks/balloon/block.js:108
 msgid "Thinking"
+msgstr ""
+
+#: src/blocks/balloon/block.js:136
+#: src/blocks/flow/block.js:112
+#: src/blocks/pr-blocks/block.js:179
+#: src/blocks/pr-content/component.js:157
+#: src/blocks/pr-content/deprecated/component-deprecated.js:102
+#: src/blocks/pr-content/deprecated/component-no-boder-color.js:116
+#: src/blocks/staff/component.js:88
+msgid "Select image"
 msgstr ""
 
 #: src/blocks/balloon/block.js:141
@@ -488,14 +71,12 @@ msgstr ""
 #: src/blocks/balloon/block.js:97
 #: src/blocks/button/block.js:198
 #: src/blocks/pr-content/block.js:241
-#: src/components/display-items-control/index.js:93
 msgid "Left"
 msgstr ""
 
 #: src/blocks/balloon/block.js:98
 #: src/blocks/button/block.js:214
 #: src/blocks/pr-content/block.js:240
-#: src/components/display-items-control/index.js:101
 msgid "Right"
 msgstr ""
 
@@ -521,6 +102,10 @@ msgstr ""
 msgid "Large"
 msgstr ""
 
+#: src/blocks/button/block.js:178
+msgid "Normal"
+msgstr ""
+
 #: src/blocks/button/block.js:186
 msgid "Small"
 msgstr ""
@@ -530,7 +115,6 @@ msgid "Button Position:"
 msgstr ""
 
 #: src/blocks/button/block.js:206
-#: src/components/display-items-control/index.js:97
 msgid "Center"
 msgstr ""
 
@@ -624,6 +208,12 @@ msgstr ""
 msgid "Font Awesome:"
 msgstr ""
 
+#: src/blocks/button/block.js:289
+#: src/blocks/pr-blocks/block.js:346
+#: src/blocks/pr-content/block.js:202
+msgid "Font Awesome icon list"
+msgstr ""
+
 #: src/blocks/button/block.js:292
 #: src/blocks/pr-content/block.js:207
 msgid "Before text"
@@ -650,6 +240,10 @@ msgstr ""
 
 #: src/blocks/button/block.js:335
 msgid "Apply"
+msgstr ""
+
+#: src/blocks/button/block.js:59
+msgid "Button"
 msgstr ""
 
 #: src/blocks/faq/block.js:100
@@ -688,26 +282,6 @@ msgstr ""
 msgid "Input content"
 msgstr ""
 
-#: src/blocks/group-style/block.js:115
-msgid "Stitch"
-msgstr ""
-
-#: src/blocks/group-style/block.js:119
-msgid "Border Top Bottom"
-msgstr ""
-
-#: src/blocks/group-style/block.js:123
-msgid "Shadow"
-msgstr ""
-
-#: src/blocks/group-style/block.js:50
-msgid "Border Color"
-msgstr ""
-
-#: src/blocks/group-style/block.js:99
-msgid "Solid Roundcorner"
-msgstr ""
-
 #: src/blocks/heading-style/block.js:102
 msgid "Dotted border bottom black"
 msgstr ""
@@ -718,6 +292,12 @@ msgstr ""
 
 #: src/blocks/heading-style/block.js:126
 msgid "Brackets black"
+msgstr ""
+
+#: src/blocks/heading-style/block.js:33
+#: src/blocks/heading/block.js:132
+#: src/blocks/staff/block.js:85
+msgid "Default"
 msgstr ""
 
 #: src/blocks/heading-style/block.js:38
@@ -810,109 +390,12 @@ msgstr ""
 msgid "Heading %d"
 msgstr ""
 
-#: src/blocks/hidden-extension/index.js:101
-msgid ""
-"Note : This function is display hidden only. Actually Block is output to "
-"HTML.Pleade don't use you must not bisible item.Don't use it for blocks you "
-"really don't want to display."
-msgstr ""
-
-#: src/blocks/hidden-extension/index.js:107
-msgid "Hidden ( Screen size : all )"
-msgstr ""
-
-#: src/blocks/hidden-extension/index.js:113
-msgid "Hidden ( Screen size : xs )"
-msgstr ""
-
-#: src/blocks/hidden-extension/index.js:119
-msgid "Hidden ( Screen size : sm )"
-msgstr ""
-
-#: src/blocks/hidden-extension/index.js:125
-msgid "Hidden ( Screen size : md )"
-msgstr ""
-
-#: src/blocks/hidden-extension/index.js:131
-msgid "Hidden ( Screen size : lg )"
-msgstr ""
-
-#: src/blocks/hidden-extension/index.js:137
-msgid "Hidden ( Screen size : xl )"
-msgstr ""
-
-#: src/blocks/hidden-extension/index.js:143
-msgid ""
-"If you want to hide multiple blocks, that first you set to group block and "
-"the next, hide for the that group block."
-msgstr ""
-
-#: src/blocks/hidden-extension/index.js:96
-msgid "Hidden Settings"
-msgstr ""
-
-#: src/blocks/hidden-extension/index.js:99
-msgid "Hidden at screel size"
-msgstr ""
-
-#: src/blocks/highlighter/block.js:81
-msgid "Highlight Color"
-msgstr ""
-
-#: src/blocks/highlighter/block.js:93
-msgid "Highlighter"
-msgstr ""
-
 #: src/blocks/image/block.js:10
 msgid "Photo frame"
 msgstr ""
 
 #: src/blocks/image/block.js:6
 msgid "Border"
-msgstr ""
-
-#: src/blocks/list-style/block.js:109
-msgid "Arrow"
-msgstr ""
-
-#: src/blocks/list-style/block.js:117
-msgid "Check"
-msgstr ""
-
-#: src/blocks/list-style/block.js:121
-msgid "Check Square"
-msgstr ""
-
-#: src/blocks/list-style/block.js:125
-msgid "Check Circle"
-msgstr ""
-
-#: src/blocks/list-style/block.js:129
-msgid "Handpoint"
-msgstr ""
-
-#: src/blocks/list-style/block.js:133
-msgid "Pencil"
-msgstr ""
-
-#: src/blocks/list-style/block.js:137
-msgid "Smile"
-msgstr ""
-
-#: src/blocks/list-style/block.js:141
-msgid "Frown"
-msgstr ""
-
-#: src/blocks/list-style/block.js:145
-msgid "Numbered Circle"
-msgstr ""
-
-#: src/blocks/list-style/block.js:149
-msgid "Numbered Square"
-msgstr ""
-
-#: src/blocks/list-style/block.js:58
-msgid "List Icon Color"
 msgstr ""
 
 #: src/blocks/pr-blocks/block.js:190
@@ -985,6 +468,10 @@ msgstr ""
 msgid "Input Content"
 msgstr ""
 
+#: src/blocks/pr-content/block.js:119
+msgid "Color Setting"
+msgstr ""
+
 #: src/blocks/pr-content/block.js:122
 msgid "Title Color"
 msgstr ""
@@ -1013,12 +500,20 @@ msgstr ""
 msgid "Button Type"
 msgstr ""
 
+#: src/blocks/pr-content/block.js:168
+msgid "Solid"
+msgstr ""
+
 #: src/blocks/pr-content/block.js:169
 msgid "Ghost"
 msgstr ""
 
 #: src/blocks/pr-content/block.js:189
 msgid "Button Color"
+msgstr ""
+
+#: src/blocks/pr-content/block.js:233
+msgid "Layout Setting"
 msgstr ""
 
 #: src/blocks/pr-content/block.js:237
@@ -1081,51 +576,59 @@ msgstr ""
 msgid "PC"
 msgstr ""
 
-#: src/blocks/staff/block.js:114
-msgid "Alt text"
+#: src/blocks/staff/block.js:104
+msgid "Color"
 msgstr ""
 
-#: src/blocks/staff/block.js:116
-msgid "Set the alt text for profile image"
-msgstr ""
-
-#: src/blocks/staff/block.js:126
+#: src/blocks/staff/block.js:106
 msgid "Staff name"
 msgstr ""
 
-#: src/blocks/staff/block.js:134
+#: src/blocks/staff/block.js:114
 msgid "Name caption"
 msgstr ""
 
-#: src/blocks/staff/block.js:142
+#: src/blocks/staff/block.js:122
 #: src/blocks/staff/component.js:58
 msgid "Role position"
 msgstr ""
 
-#: src/blocks/staff/block.js:150
+#: src/blocks/staff/block.js:130
 #: src/blocks/staff/component.js:66
 msgid "Profile title"
 msgstr ""
 
-#: src/blocks/staff/block.js:158
+#: src/blocks/staff/block.js:138
 #: src/blocks/staff/component.js:74
 msgid "Profile text"
 msgstr ""
 
-#: src/blocks/staff/block.js:54
+#: src/blocks/staff/block.js:42
 msgid "Staff"
 msgstr ""
 
-#: src/blocks/staff/block.js:82
+#: src/blocks/staff/block.js:62
 msgid "Layout"
 msgstr ""
 
-#: src/blocks/staff/block.js:93
+#: src/blocks/staff/block.js:73
 msgid "Image left"
 msgstr ""
 
-#: src/blocks/staff/block.js:98
+#: src/blocks/staff/block.js:78
 msgid "Image border"
+msgstr ""
+
+#: src/blocks/staff/block.js:89
+msgid "None"
+msgstr ""
+
+#: src/blocks/staff/block.js:94
+msgid "Alt text"
+msgstr ""
+
+#: src/blocks/staff/block.js:96
+msgid "Set the alt text for profile image"
 msgstr ""
 
 #: src/blocks/staff/component.js:42
@@ -1134,108 +637,4 @@ msgstr ""
 
 #: src/blocks/staff/component.js:50
 msgid "Caption"
-msgstr ""
-
-#: src/components/card-align-control/index.js:29
-msgid "Align"
-msgstr ""
-
-#: src/components/column-layout-control/index.js:13
-msgid "Card ( No border )"
-msgstr ""
-
-#: src/components/column-layout-control/index.js:23
-msgid "Card Horizontal"
-msgstr ""
-
-#: src/components/column-layout-control/index.js:27
-msgid "Media"
-msgstr ""
-
-#: src/components/column-layout-control/index.js:31
-msgid "Text 1 Column"
-msgstr ""
-
-#: src/components/column-layout-control/index.js:54
-msgid "Display type and columns"
-msgstr ""
-
-#: src/components/column-layout-control/index.js:57
-msgid "Display type"
-msgstr ""
-
-#: src/components/column-layout-control/index.js:65
-msgid "Column ( Screen size : Extra small )"
-msgstr ""
-
-#: src/components/column-layout-control/index.js:74
-msgid "Column ( Screen size : Small )"
-msgstr ""
-
-#: src/components/column-layout-control/index.js:82
-msgid "Column ( Screen size : Medium )"
-msgstr ""
-
-#: src/components/column-layout-control/index.js:90
-msgid "Column ( Screen size : Large )"
-msgstr ""
-
-#: src/components/column-layout-control/index.js:99
-msgid "Column ( Screen size : Extra large )"
-msgstr ""
-
-#: src/components/display-items-control/index.js:33
-msgid "Term name"
-msgstr ""
-
-#: src/components/display-items-control/index.js:40
-msgid "Excerpt"
-msgstr ""
-
-#: src/components/display-items-control/index.js:45
-msgid "Date"
-msgstr ""
-
-#: src/components/display-items-control/index.js:51
-msgid "New mark"
-msgstr ""
-
-#: src/components/display-items-control/index.js:61
-msgid "New mark option"
-msgstr ""
-
-#: src/components/display-items-control/index.js:63
-msgid "Number of days to display the new post mark"
-msgstr ""
-
-#: src/components/display-items-control/index.js:68
-msgid "New post mark"
-msgstr ""
-
-#: src/components/display-items-control/index.js:86
-msgid "Button align"
-msgstr ""
-
-#: src/components/link-control/index.js:37
-msgid "Link target"
-msgstr ""
-
-#: src/components/link-control/index.js:41
-msgid "Open in new tab"
-msgstr ""
-
-#: src/components/link-control/index.js:46
-msgid "Link rel"
-msgstr ""
-
-#: src/plugin/menu/sidebar.js:17
-msgid "VK Blocks Templates"
-msgstr ""
-
-#: src/translation_dummy.js:2
-msgid "Disabled Blocks module. Because VK-Blocks Plugin running."
-msgstr ""
-
-#: src/translation_dummy.js:3
-msgid "Deactivated VK-Blocks Plugin. Because VK-Blocks Pro running."
 msgstr ""

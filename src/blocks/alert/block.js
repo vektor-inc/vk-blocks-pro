@@ -2,14 +2,15 @@
  * Alert block type
  *
  */
-import {deprecated} from './deprecated';
+import { deprecated } from './deprecated';
+import { vkbBlockEditor } from "./../_helper/depModules";
 
-const {__} = wp.i18n; // Import __() from wp.i18n
+const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const {RichText} = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
+const { RichText } = vkbBlockEditor;
 
 
-registerBlockType( 'vk-blocks/alert', {
+registerBlockType('vk-blocks/alert', {
 
   title: __('Alert', 'vk-blocks'),
 
@@ -23,55 +24,55 @@ registerBlockType( 'vk-blocks/alert', {
       default: 'info',
     },
     content: {
-        type: 'string',
-        source: 'html',
-        selector: 'p',
+      type: 'string',
+      source: 'html',
+      selector: 'p',
     }
   },
 
-  edit({attributes, setAttributes, className}) {
-      const {
-          style,
-          content
-      } = attributes;
+  edit({ attributes, setAttributes, className }) {
+    const {
+      style,
+      content
+    } = attributes;
 
-    function onStyleChange(event){
-      setAttributes({style: event.target.value});
+    function onStyleChange(event) {
+      setAttributes({ style: event.target.value });
     }
 
     function onChangeContent(newContent) {
-      setAttributes({content: newContent});
+      setAttributes({ content: newContent });
     }
 
     return (
-        <div className={`${className} alert alert-${style}`}>
+      <div className={`${className} alert alert-${style}`}>
         <select onChange={onStyleChange}>
-            <option value={'success'} selected={style === 'success'}>Success</option>
-            <option value={'info'} selected={style === 'info'}>Info</option>
-            <option value={'warning'} selected={style === 'warning'}>Warning</option>
-            <option value={'danger'} selected={style === 'danger'}>Danger</option>
+          <option value={'success'} selected={style === 'success'}>Success</option>
+          <option value={'info'} selected={style === 'info'}>Info</option>
+          <option value={'warning'} selected={style === 'warning'}>Warning</option>
+          <option value={'danger'} selected={style === 'danger'}>Danger</option>
         </select>
         <RichText
-            tagName="p"
-            onChange={onChangeContent}
-            value={content}
+          tagName="p"
+          onChange={onChangeContent}
+          value={content}
         />
       </div>
     );
   },
 
-  save({attributes,className}) {
-      const {
-          style,
-          content
-      } = attributes;
+  save({ attributes, className }) {
+    const {
+      style,
+      content
+    } = attributes;
     return (
-        <div className={`${className} alert alert-${style}`}>
+      <div className={`${className} alert alert-${style}`}>
         <RichText.Content
-            tagName={'p'}
-            value={content}/>
+          tagName={'p'}
+          value={content} />
       </div>
     );
   },
-    deprecated: deprecated,
-} );
+  deprecated: deprecated,
+});

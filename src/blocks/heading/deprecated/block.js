@@ -2,11 +2,10 @@
  * heading block type
  *
  */
-import React from "react";
 import { schema, schema1 } from "./schema";
 import classNames from "classnames";
-import { Component } from "./component";
-const { Fragment } = wp.element;
+import { VKBHeading } from "./component";
+const { Fragment, Component } = wp.element;
 const { RichText } = wp.editor;
 const { __ } = wp.i18n;
 
@@ -59,7 +58,7 @@ export const Deprecated = [
     save({ attributes, className }) {
       return (
         <div className={className} id="vk-htags-a181b726-7749-4bd8-9887-0306c0bc7bd5">
-          <Component attributes={attributes} for_={"save"} />
+          <VKBHeading attributes={attributes} for_={"save"} />
         </div>
       );
     }
@@ -69,7 +68,7 @@ export const Deprecated = [
     save({ attributes, className }) {
       return (
         <div className={className} id="vk-htags--1">
-          <Component attributes={attributes} for_={"save"} />
+          <VKBHeading attributes={attributes} for_={"save"} />
         </div>
       );
     }
@@ -588,7 +587,7 @@ export const Deprecated = [
   }
 ];
 
-export class NoAnchor extends React.Component {
+export class NoAnchor extends Component {
   render() {
     const {
       level,

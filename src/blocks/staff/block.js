@@ -2,7 +2,6 @@
  * staff block type
  *
  */
-import React from "react";
 import { NewComponent } from "./component";
 import { schema } from './schema';
 import { vkbBlockEditor } from "./../_helper/depModules";

@@ -10,6 +10,9 @@ import { vkbBlockEditor } from "../../_helper/depModules";
 import { depServerSideRender } from "../../_helper/depModules";
 const { InspectorControls } = vkbBlockEditor;
 const ServerSideRender = depServerSideRender();
+import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
+const inserterVisible = hiddenNewBlock(5.3);
+
 const BlockIcon = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
@@ -68,6 +71,9 @@ registerBlockType("vk-blocks/post-list", {
 	icon: BlockIcon,
 	category: "vk-blocks-cat",
 	attributes: schema,
+	supports: {
+		inserter: inserterVisible
+	},
 
 	edit(props) {
 		const { attributes, setAttributes, name } = props;

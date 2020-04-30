@@ -38,6 +38,8 @@ const ServerSideRender = depServerSideRender();
 import { schema } from "./schema";
 import { DisplayItemsControl } from "../../../components/display-items-control";
 import { ColumnLayoutControl } from "../../../components/column-layout-control";
+import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
+const inserterVisible = hiddenNewBlock(5.3);
 
 registerBlockType("vk-blocks/child-page", {
   // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
@@ -45,6 +47,9 @@ registerBlockType("vk-blocks/child-page", {
   icon: BlockIcon, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
   category: "vk-blocks-cat", // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
   attributes: schema,
+  supports: {
+    inserter: inserterVisible
+  },
 
   edit: withSelect((select) => {
     return {

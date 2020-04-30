@@ -7,6 +7,7 @@ import { schema } from "./schema";
 import { ColumnLayoutControl } from "../../../components/column-layout-control";
 import { CardAlignControls } from "../../../components/card-align-control";
 import { deprecated } from "./deprecated";
+import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
@@ -43,6 +44,7 @@ const BlockIcon = (
     />
   </svg>
 );
+const inserterVisible = hiddenNewBlock(5.3);
 
 registerBlockType("vk-blocks/card", {
   title: __("Card", "vk-blocks"),
@@ -51,6 +53,7 @@ registerBlockType("vk-blocks/card", {
   attributes: schema,
   supports: {
     className: true,
+    inserter: inserterVisible
   },
 
   edit(props) {

@@ -28,12 +28,18 @@ const { InspectorControls } = vkbBlockEditor;
 const { addFilter } = wp.hooks;
 const { createHigherOrderComponent } = wp.compose;
 const { dispatch } = wp.data;
+import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
+const inserterVisible = hiddenNewBlock(5.3);
+
 
 registerBlockType("vk-blocks/table-of-contents", {
   title: __("Table of Contents", "vk-blocks"),
   icon: <BlockIcon />,
   category: "vk-blocks-cat",
   attributes: schema,
+  supports: {
+    inserter: inserterVisible
+  },
 
   edit({ attributes, setAttributes }) {
     const { style, open } = attributes;
@@ -138,8 +144,10 @@ const updateTableOfContents = createHigherOrderComponent((BlockListBlock) => {
   };
 }, "updateTableOfContents");
 
-addFilter(
-  "editor.BlockListBlock",
-  "vk-blocks/table-of-contents",
-  updateTableOfContents
-);
+if (5.3 <= parseFloat(wpVersion)) {
+  addFilter(
+    "editor.BlockListBlock",
+    "vk-blocks/table-of-contents",
+    updateTableOfContents
+  );
+}

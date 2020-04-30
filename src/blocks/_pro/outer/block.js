@@ -6,6 +6,8 @@ import { schema } from "./schema";
 import { deprecated } from "./deprecated/block";
 import toNumber from "../../_helper/to-number";
 import { AdvancedMediaUpload } from "../../../components/advanced-media-upload";
+import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
+const inserterVisible = hiddenNewBlock(5.3);
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -52,6 +54,7 @@ registerBlockType("vk-blocks/outer", {
   attributes: schema,
   supports: {
     anchor: true,
+    inserter: inserterVisible
   },
 
   edit(props) {

@@ -1,10 +1,8 @@
-import React from "react";
-import {ComponentBlock} from "./component-block";
+import { ComponentBlock } from "./component-block";
 
-const {__} = wp.i18n; // Import __() from wp.i18n
-const {RadioControl, PanelBody, Button, BaseControl, CheckboxControl, TextControl} = wp.components;
-const {Fragment} = wp.element;
-const {RichText, InspectorControls, MediaUpload, ColorPalette} = wp.editor;
+const { __ } = wp.i18n; // Import __() from wp.i18n
+import { vkbBlockEditor } from "./../../_helper/depModules";
+const { RichText } = vkbBlockEditor;
 
 function set_attributes(number) {
 
@@ -99,7 +97,7 @@ export const deprecated = [
     {
         attributes: set_attributes(4),
 
-        save({attributes}) {
+        save({ attributes }) {
             const {
                 heading1,
                 heading2,
@@ -133,7 +131,7 @@ export const deprecated = [
                     <div className="vk_prBlocks_item col-sm-4">
                         <a
                             href={url1}
-                            target={urlOpenType1? '_blank':'_self'}
+                            target={urlOpenType1 ? '_blank' : '_self'}
                             className="vk_prBlocks_item_link"
                         >
                             {(() => {
@@ -141,11 +139,11 @@ export const deprecated = [
                                 if (insertImage1) {
 
                                     return <div className="vk_prBlocks_item_image"
-                                                style={{
-                                                    backgroundImage: 'url(' + insertImage1 + ')',
-                                                    backgroundRepeat: 'no-repeat 50% center',
-                                                    backgroundSize: 'cover'
-                                                }}
+                                        style={{
+                                            backgroundImage: 'url(' + insertImage1 + ')',
+                                            backgroundRepeat: 'no-repeat 50% center',
+                                            backgroundSize: 'cover'
+                                        }}
                                     >
                                         <img
                                             src={insertImage1}
@@ -155,7 +153,7 @@ export const deprecated = [
 
                                 } else {
 
-                                    if ( ! color1 ){
+                                    if (!color1) {
                                         color1 = '#0693e3';
                                         bgType1 === '0';
                                     }
@@ -168,16 +166,16 @@ export const deprecated = [
                                                 border: `1px solid ${color1}`
                                             }}
                                         ><i className={`${icon1} vk_prBlocks_item_icon`}
-                                            style={{color: '#fff'}}>
-                                        </i>
+                                            style={{ color: '#fff' }}>
+                                            </i>
                                         </div>
                                     } else {
                                         return <div
                                             className="vk_prBlocks_item_icon_outer"
-                                            style={{backgroundColor: 'transparent', border: '1px solid ' + color1}}
+                                            style={{ backgroundColor: 'transparent', border: '1px solid ' + color1 }}
                                         ><i className={`${icon1} vk_prBlocks_item_icon`}
-                                            style={{color: color1}}>
-                                        </i>
+                                            style={{ color: color1 }}>
+                                            </i>
                                         </div>
                                     }
                                 }
@@ -185,17 +183,17 @@ export const deprecated = [
                             <RichText.Content
                                 className="vk_prBlocks_item_title vk_prBlocks_item_title-1"
                                 tagName={'h1'}
-                                value={heading1}/>
+                                value={heading1} />
                             <RichText.Content
                                 className="vk_prBlocks_item_summary vk_prBlocks_item_summary-1"
                                 tagName={'p'}
-                                value={content1}/>
+                                value={content1} />
                         </a>
                     </div>
                     <div className="vk_prBlocks_item col-sm-4">
                         <a
                             href={url2}
-                            target={urlOpenType2? '_blank':'_self'}
+                            target={urlOpenType2 ? '_blank' : '_self'}
                             className="vk_prBlocks_item_link"
                         >
                             {(() => {
@@ -203,11 +201,11 @@ export const deprecated = [
                                 if (insertImage2) {
 
                                     return <div className="vk_prBlocks_item_image"
-                                                style={{
-                                                    backgroundImage: 'url(' + insertImage2 + ')',
-                                                    backgroundRepeat: 'no-repeat 50% center',
-                                                    backgroundSize: 'cover'
-                                                }}
+                                        style={{
+                                            backgroundImage: 'url(' + insertImage2 + ')',
+                                            backgroundRepeat: 'no-repeat 50% center',
+                                            backgroundSize: 'cover'
+                                        }}
                                     >
                                         <img
                                             src={insertImage2}
@@ -216,7 +214,7 @@ export const deprecated = [
                                     </div>
 
                                 } else {
-                                    if ( ! color2 ){
+                                    if (!color2) {
                                         color2 = '#0693e3';
                                         bgType2 === '0';
                                     }
@@ -228,16 +226,16 @@ export const deprecated = [
                                                 border: `1px solid ${color2}`
                                             }}
                                         ><i className={`${icon2} vk_prBlocks_item_icon`}
-                                            style={{color: '#fff'}}>
-                                        </i>
+                                            style={{ color: '#fff' }}>
+                                            </i>
                                         </div>
                                     } else {
                                         return <div
                                             className="vk_prBlocks_item_icon_outer"
-                                            style={{backgroundColor: 'transparent', border: '1px solid ' + color2}}
+                                            style={{ backgroundColor: 'transparent', border: '1px solid ' + color2 }}
                                         ><i className={`${icon2} vk_prBlocks_item_icon`}
-                                            style={{color: color2}}>
-                                        </i>
+                                            style={{ color: color2 }}>
+                                            </i>
                                         </div>
                                     }
                                 }
@@ -245,18 +243,18 @@ export const deprecated = [
                             <RichText.Content
                                 className="vk_prBlocks_item_title vk_prBlocks_item_title-2"
                                 tagName={'h1'}
-                                value={heading2}/>
+                                value={heading2} />
                             <RichText.Content
                                 className="vk_prBlocks_item_summary vk_prBlocks_item_summary-2"
                                 tagName={'p'}
-                                value={content2}/>
+                                value={content2} />
                         </a>
                     </div>
 
                     <div className="vk_prBlocks_item col-sm-4">
                         <a
                             href={url3}
-                            target={urlOpenType3? '_blank':'_self'}
+                            target={urlOpenType3 ? '_blank' : '_self'}
                             className="vk_prBlocks_item_link"
                         >
                             {(() => {
@@ -264,11 +262,11 @@ export const deprecated = [
                                 if (insertImage3) {
 
                                     return <div className="vk_prBlocks_item_image"
-                                                style={{
-                                                    backgroundImage: 'url(' + insertImage3 + ')',
-                                                    backgroundRepeat: 'no-repeat 50% center',
-                                                    backgroundSize: 'cover'
-                                                }}
+                                        style={{
+                                            backgroundImage: 'url(' + insertImage3 + ')',
+                                            backgroundRepeat: 'no-repeat 50% center',
+                                            backgroundSize: 'cover'
+                                        }}
                                     >
                                         <img
                                             src={insertImage3}
@@ -277,7 +275,7 @@ export const deprecated = [
                                     </div>
 
                                 } else {
-                                    if ( ! color3 ){
+                                    if (!color3) {
                                         color3 = '#0693e3';
                                         bgType3 === '0';
                                     }
@@ -289,16 +287,16 @@ export const deprecated = [
                                                 border: `1px solid ${color3}`
                                             }}
                                         ><i className={`${icon3} vk_prBlocks_item_icon`}
-                                            style={{color: '#fff'}}>
-                                        </i>
+                                            style={{ color: '#fff' }}>
+                                            </i>
                                         </div>
                                     } else {
                                         return <div
                                             className="vk_prBlocks_item_icon_outer"
-                                            style={{backgroundColor: 'transparent', border: '1px solid ' + color3}}
+                                            style={{ backgroundColor: 'transparent', border: '1px solid ' + color3 }}
                                         ><i className={`${icon3} vk_prBlocks_item_icon`}
-                                            style={{color: color3}}>
-                                        </i>
+                                            style={{ color: color3 }}>
+                                            </i>
                                         </div>
                                     }
                                 }
@@ -306,11 +304,11 @@ export const deprecated = [
                             <RichText.Content
                                 className="vk_prBlocks_item_title vk_prBlocks_item_title-3"
                                 tagName={'h1'}
-                                value={heading3}/>
+                                value={heading3} />
                             <RichText.Content
                                 className="vk_prBlocks_item_summary vk_prBlocks_item_summary-3"
                                 tagName={'p'}
-                                value={content3}/>
+                                value={content3} />
                         </a>
                     </div>
                 </div>
@@ -321,7 +319,7 @@ export const deprecated = [
     },
     {
         attributes: set_attributes2(4),
-        save({attributes}) {
+        save({ attributes }) {
 
             return (
                 <div className="vk_prBlocks row">

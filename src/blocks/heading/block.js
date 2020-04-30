@@ -2,19 +2,17 @@
  * heading block type
  *
  */
-import React from "react";
-import classNames from "classnames";
 import { schema } from "./schema";
 import HeadingToolbar from "./heading-toolbar";
-import { Component } from "./component";
+import { VKBHeading } from "./component";
 import { Deprecated } from "./deprecated/block";
+import { vkbBlockEditor } from "./../_helper/depModules";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { RangeControl, PanelBody, RadioControl, SelectControl } = wp.components;
 const { Fragment } = wp.element;
-const { InspectorControls, ColorPalette, BlockControls, AlignmentToolbar } =
-  wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
+const { InspectorControls, ColorPalette, BlockControls, AlignmentToolbar } = vkbBlockEditor;
 const BlockIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -211,7 +209,7 @@ registerBlockType("vk-blocks/heading", {
           </PanelBody>
         </InspectorControls>
         <div className={className}>
-          <Component
+          <VKBHeading
             attributes={attributes}
             setAttributes={setAttributes}
             for_={"edit"}
@@ -224,7 +222,7 @@ registerBlockType("vk-blocks/heading", {
   save({ attributes, className }) {
     return (
       <div className={className}>
-        <Component attributes={attributes} for_={"save"} />
+        <VKBHeading attributes={attributes} for_={"save"} />
       </div>
     );
   },

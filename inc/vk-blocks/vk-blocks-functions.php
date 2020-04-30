@@ -428,3 +428,13 @@ if ( ! function_exists( 'vkblocks_blocks_categories' ) ) {
 
 	add_filter( 'block_categories', 'vkblocks_blocks_categories', 10, 2 );
 }
+
+if ( ! function_exists( 'vkblocks_set_wp_version' ) ) {
+	function vkblocks_set_wp_version() {
+		global $wp_version;
+		echo '<script>',
+			'var wpVersion = "'. $wp_version . '";',
+		'</script>';
+	}
+	add_action( 'admin_head','vkblocks_set_wp_version', 10, 0 );
+}

@@ -1,10 +1,9 @@
-import React from "react";
-import classNames from "classnames";
-
-const { RichText } = wp.editor;
+const { Component } = wp.element;
+import { vkbBlockEditor } from "./../_helper/depModules";
+const { RichText } = vkbBlockEditor;
 const { __ } = wp.i18n; // Import __() from wp.i18n
 
-export class Component extends React.Component {
+export class VKBHeading extends Component {
   render() {
     const {
       level,
@@ -61,24 +60,24 @@ export class Component extends React.Component {
             placeholder={__("Input title…", "vk-blocks")}
           />
           {// サブテキスト
-          (() => {
-            if (subTextFlag === "on") {
-              return (
-                <RichText
-                  tagName={"p"}
-                  value={subText}
-                  onChange={value => setAttributes({ subText: value })}
-                  style={{
-                    color: subTextColor,
-                    fontSize: subTextSize + "rem",
-                    textAlign: align
-                  }}
-                  className={`vk_heading_subtext vk_heading_subtext-style-${titleStyle}`}
-                  placeholder={__("Input sub text…", "vk-blocks")}
-                />
-              );
-            }
-          })()}
+            (() => {
+              if (subTextFlag === "on") {
+                return (
+                  <RichText
+                    tagName={"p"}
+                    value={subText}
+                    onChange={value => setAttributes({ subText: value })}
+                    style={{
+                      color: subTextColor,
+                      fontSize: subTextSize + "rem",
+                      textAlign: align
+                    }}
+                    className={`vk_heading_subtext vk_heading_subtext-style-${titleStyle}`}
+                    placeholder={__("Input sub text…", "vk-blocks")}
+                  />
+                );
+              }
+            })()}
         </div>
       );
     } else if (for_ === "save") {
@@ -93,24 +92,24 @@ export class Component extends React.Component {
             placeholder={__("Input title…", "vk-blocks")}
           />
           {// サブテキスト
-          (() => {
-            if (subTextFlag === "on") {
-              return (
-                <RichText.Content
-                  tagName={"p"}
-                  value={subText}
-                  onChange={value => setAttributes({ subText: value })}
-                  style={{
-                    color: subTextColor,
-                    fontSize: subTextSize + "rem",
-                    textAlign: align
-                  }}
-                  className={`vk_heading_subtext vk_heading_subtext-style-${titleStyle}`}
-                  placeholder={__("Input sub text…", "vk-blocks")}
-                />
-              );
-            }
-          })()}
+            (() => {
+              if (subTextFlag === "on") {
+                return (
+                  <RichText.Content
+                    tagName={"p"}
+                    value={subText}
+                    onChange={value => setAttributes({ subText: value })}
+                    style={{
+                      color: subTextColor,
+                      fontSize: subTextSize + "rem",
+                      textAlign: align
+                    }}
+                    className={`vk_heading_subtext vk_heading_subtext-style-${titleStyle}`}
+                    placeholder={__("Input sub text…", "vk-blocks")}
+                  />
+                );
+              }
+            })()}
         </div>
       );
     }

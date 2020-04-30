@@ -3,13 +3,14 @@
  *
  */
 import Component from "./component";
-import {schema} from './schema';
+import { schema } from './schema';
+import { vkbBlockEditor } from "./../_helper/depModules";
 
-const {__} = wp.i18n; // Import __() from wp.i18n
-const {registerBlockType} = wp.blocks; // Import registerBlockType() from wp.blocks
-const {RangeControl, RadioControl, PanelBody, Button, PanelColor, BaseControl} = wp.components;
-const {Fragment} = wp.element;
-const {RichText, InspectorControls, MediaUpload, ColorPalette} = wp.editor;
+const { __ } = wp.i18n; // Import __() from wp.i18n
+const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
+const { RangeControl, RadioControl, PanelBody, Button, PanelColor, BaseControl } = wp.components;
+const { Fragment } = wp.element;
+const { RichText, InspectorControls, MediaUpload, ColorPalette } = vkbBlockEditor;
 const BlockIcon = 'arrow-down';
 
 /**
@@ -40,7 +41,7 @@ registerBlockType('vk-blocks/your-block-slug', {
      *
      * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
      */
-    edit({attributes, setAttributes,className}) {
+    edit({ attributes, setAttributes, className }) {
         const {
             heading,
             content,
@@ -55,7 +56,7 @@ registerBlockType('vk-blocks/your-block-slug', {
                         <BaseControl label={__('Title Color', 'vk-blocks')}>
                             <ColorPalette
                                 value={content}
-                                onChange={(value) => setAttributes({content: value})}
+                                onChange={(value) => setAttributes({ content: value })}
                             />
                         </BaseControl>
                     </PanelBody>
@@ -80,7 +81,7 @@ registerBlockType('vk-blocks/your-block-slug', {
      *
      * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
      */
-    save({attributes,className}) {
+    save({ attributes, className }) {
 
         return (
             <div className="vk_your-block-slug">

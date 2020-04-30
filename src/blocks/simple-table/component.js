@@ -2,7 +2,8 @@ import React from 'react';
 
 const { lodash } = window;
 const { times } = lodash;
-const {InnerBlocks} = wp.editor;
+import { vkbBlockEditor } from "./../../_helper/depModules";
+const { InnerBlocks } = vkbBlockEditor;
 
 export class Component extends React.Component {
 

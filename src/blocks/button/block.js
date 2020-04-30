@@ -8,7 +8,7 @@ import { vkbBlockEditor } from "./../_helper/depModules";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RadioControl, PanelBody, BaseControl, CheckboxControl, TextControl, Dashicon, IconButton, ButtonGroup, Button } = wp.VKBButtons;
+const { RadioControl, PanelBody, BaseControl, CheckboxControl, TextControl, Dashicon, IconButton, ButtonGroup, Button } = wp.components;
 const { Fragment } = wp.element;
 const { RichText, InspectorControls, ColorPalette, URLInput, } = vkbBlockEditor;
 const BlockIcon = (
@@ -297,7 +297,7 @@ registerBlockType('vk-blocks/button', {
 								onChange={(value) => setAttributes({ content: value })}
 								value={content}
 								placeholder={__('Input text', 'vk-blocks')}
-								formattingControls={['bold', 'italic', 'strikethrough']}
+								allowedFormats={['bold', 'italic', 'strikethrough']}
 								isSelected={true}
 							/>
 						} />

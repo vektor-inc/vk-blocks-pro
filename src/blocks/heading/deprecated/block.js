@@ -6,7 +6,8 @@ import { schema, schema1 } from "./schema";
 import classNames from "classnames";
 import { VKBHeading } from "./component";
 const { Fragment, Component } = wp.element;
-const { RichText } = wp.editor;
+import { vkbBlockEditor } from "./../../_helper/depModules";
+const { RichText } = vkbBlockEditor;
 const { __ } = wp.i18n;
 
 function set_attirbuite(number) {

@@ -1,6 +1,7 @@
 const { Fragment } = wp.element;
 import { componentDivider } from "./component-divider";
-const { InnerBlocks } = wp.editor;
+import { vkbBlockEditor } from "./../../_helper/depModules";
+const { InnerBlocks } = vkbBlockEditor;
 import hex2rgba from "../../_helper/hex-to-rgba";
 
 export const OuterBlock = (props) => {

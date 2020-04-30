@@ -16,14 +16,15 @@ import BlockIcon from "./icon.svg";
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const {
-  ServerSideRender,
   PanelBody,
   SelectControl,
   BaseControl,
 } = wp.components;
+import { depServerSideRender } from "../../_helper/depModules";
+const ServerSideRender = depServerSideRender();
 const { Fragment } = wp.element;
-const { InspectorControls } =
-  wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
+import { vkbBlockEditor } from "../../_helper/depModules";
+const { InspectorControls } = vkbBlockEditor;
 const { addFilter } = wp.hooks;
 const { createHigherOrderComponent } = wp.compose;
 const { dispatch } = wp.data;
@@ -105,7 +106,7 @@ const getHeadings = (props) => {
     const tocClientId = tocs[0] ? tocs[0].clientId : "";
     const tocAttributes = tocs[0] ? tocs[0].attributes : "";
 
-    const { updateBlockAttributes } = dispatch("core/editor");
+    const { updateBlockAttributes } = dispatch("core/block-editor") ? dispatch("core/block-editor") : dispatch("core/editor");
     if (
       anchor === undefined &&
       isAllowedBlock(name, headingList) != undefined

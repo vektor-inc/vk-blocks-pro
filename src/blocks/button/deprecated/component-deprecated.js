@@ -1,6 +1,6 @@
 const { Component } = wp.element;
 
-export class ComponentDeprecated extends Component {
+export class VKBButtonDeprecated extends Component {
 
     render() {
 

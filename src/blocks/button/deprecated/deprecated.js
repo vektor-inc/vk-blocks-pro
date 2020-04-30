@@ -4,7 +4,8 @@ import { VKBButtonDeprecatedNoOpnnerNoRefererID } from "./component-deprecated-n
 import { VKBButtonDeprecatedSubcaptionNoopennerId } from "./component-deprecated-subcaption-noNoopnnernoreferer-id";
 import { VKBButton } from "../component";
 
-const { RichText } = wp.editor;
+import { vkbBlockEditor } from "./../../_helper/depModules";
+const { RichText } = vkbBlockEditor;
 
 export const deprecated = [
 	{

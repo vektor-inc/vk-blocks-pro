@@ -1,11 +1,11 @@
 import React from "react";
 import classNames from 'classnames';
-import {Fontawesome} from "./component-fontawesome-deprecated";
+import { Fontawesome } from "./component-fontawesome-deprecated";
 
-const {__} = wp.i18n; // Import __() from wp.i18n
-const {Button} = wp.components;
-const {MediaUpload} = wp.editor;
-let {RichText} = wp.editor;
+const { __ } = wp.i18n; // Import __() from wp.i18n
+const { Button } = wp.components;
+import { vkbBlockEditor } from "./../../_helper/depModules";
+const { MediaUpload, RichText } = vkbBlockEditor;
 
 export class ComponentNoBorderColor extends React.Component {
 
@@ -94,10 +94,10 @@ export class ComponentNoBorderColor extends React.Component {
                 <div className="col-sm-6 vk_prContent_colImg">
                     {for_ === 'edit' ?
                         <MediaUpload
-                            onSelect={(value) => setAttributes({Image: value.sizes.full.url})}
+                            onSelect={(value) => setAttributes({ Image: value.sizes.full.url })}
                             type=" image"
                             value={Image}
-                            render={({open}) => (
+                            render={({ open }) => (
                                 <Button
                                     onClick={open}
                                     className={Image ? 'image-button' : 'button button-large'}
@@ -107,7 +107,7 @@ export class ComponentNoBorderColor extends React.Component {
                                             className={'vk_prContent_colImg_image'}
                                             src={Image}
                                             alt={__('Upload image', 'vk-blocks')}
-                                            style={{border: imageBorderProperty}}
+                                            style={{ border: imageBorderProperty }}
                                         />}
                                 </Button>
                             )}
@@ -118,7 +118,7 @@ export class ComponentNoBorderColor extends React.Component {
                                 className={'vk_prContent_colImg_image'}
                                 src={Image}
                                 alt={__('Upload image', 'vk-blocks')}
-                                style={{border: imageBorderProperty}}
+                                style={{ border: imageBorderProperty }}
                             />
                     }
                 </div>
@@ -131,18 +131,18 @@ export class ComponentNoBorderColor extends React.Component {
                                         <RichText
                                             tagName="h3"
                                             className={'vk_prContent_colTxt_title'}
-                                            onChange={(value) => setAttributes({title: value})}
+                                            onChange={(value) => setAttributes({ title: value })}
                                             value={title}
                                             placeholder={__('Input title.', 'vk-blocks')}
-                                            style={{color: titleColor}}
+                                            style={{ color: titleColor }}
                                         />
                                         < RichText
                                             tagName="p"
                                             className={'vk_prContent_colTxt_text'}
-                                            onChange={(value) => setAttributes({content: value})}
+                                            onChange={(value) => setAttributes({ content: value })}
                                             value={content}
                                             placeholder={__('Input content.', 'vk-blocks')}
-                                            style={{color: contentColor}}
+                                            style={{ color: contentColor }}
                                         />
                                     </React.Fragment>
                                 );
@@ -153,13 +153,13 @@ export class ComponentNoBorderColor extends React.Component {
                                             tagName="h3"
                                             value={title}
                                             className={'vk_prContent_colTxt_title'}
-                                            style={{color: titleColor}}
+                                            style={{ color: titleColor }}
                                         />
                                         <RichText.Content
                                             tagName="p"
                                             className={'vk_prContent_colTxt_text'}
                                             value={content}
-                                            style={{color: contentColor}}
+                                            style={{ color: contentColor }}
                                         />
                                     </React.Fragment>);
                             }
@@ -169,14 +169,14 @@ export class ComponentNoBorderColor extends React.Component {
 
                         //ボタンテキストが入力されるとボタンを表示。
                         (() => {
-                            if (buttonText !== '' && buttonText !== undefined ) {
+                            if (buttonText !== '' && buttonText !== undefined) {
                                 return (
                                     <div className={btnClass}>
                                         <a href={url}
-                                           className={aClass}
-                                           target={buttonTarget? '_blank':null}
-                                           style={aStyle}
-                                           rel="noopener noreferrer"
+                                            className={aClass}
+                                            target={buttonTarget ? '_blank' : null}
+                                            style={aStyle}
+                                            rel="noopener noreferrer"
                                         >
                                             <Fontawesome
                                                 attributes={attributes}

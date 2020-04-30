@@ -2,7 +2,8 @@ import React from 'react';
 
 const { lodash } = window;
 const { times } = lodash;
-const {InnerBlocks} = wp.editor;
+import { vkbBlockEditor } from "./../../_helper/depModules";
+const { InnerBlocks } = vkbBlockEditor;
 
 export class Component extends React.Component {
 
@@ -13,7 +14,7 @@ export class Component extends React.Component {
             innerTag
         } = this.props.attributes;
         let for_ = this.props.for_;
-        const ALLOWED_BLOCKS = ['vk-blocks/th','vk-blocks/td'];
+        const ALLOWED_BLOCKS = ['vk-blocks/th', 'vk-blocks/td'];
 
         /**
          * Get Th Block to repeat.
@@ -61,7 +62,7 @@ export class Component extends React.Component {
             if (for_ === 'edit') {
                 return <tr>
                     <InnerBlocks
-                        template={[["vk-blocks/th"],["vk-blocks/td"]]}
+                        template={[["vk-blocks/th"], ["vk-blocks/td"]]}
                         templateLock="all"
                         ALLOWED_BLOCKS={ALLOWED_BLOCKS}
                     />
@@ -69,7 +70,7 @@ export class Component extends React.Component {
             } else if ('save') {
                 return <tr>
                     <InnerBlocks.Content
-                        template={[["vk-blocks/th"],["vk-blocks/td"]]}
+                        template={[["vk-blocks/th"], ["vk-blocks/td"]]}
                         templateLock="all"
                         ALLOWED_BLOCKS={ALLOWED_BLOCKS}
                     />

@@ -1,6 +1,6 @@
 const { __ } = wp.i18n; // Import __() from wp.i18n
-const { RichText, MediaUpload } =
-  wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
+import { vkbBlockEditor } from "./../../_helper/depModules";
+const { RichText, MediaUpload } = vkbBlockEditor;
 const { Button } = wp.components;
 const { Fragment } = wp.element;
 const { dispatch } = wp.data;
@@ -90,20 +90,20 @@ export class Component extends React.Component {
                   {__("Select image", "vk-blocks")}
                 </Button>
               ) : (
-                <Fragment>
-                  <img
-                    className={"vk_post_imgOuter_img card-img-top"}
-                    src={imageParsed.sizes.full.url}
-                    alt={imageParsed.alt}
-                  />
-                  <Button
-                    onClick={deleteImgBtn}
-                    className={"image-button button button-delete"}
-                  >
-                    {__("Delete Image", "vk-blocks")}
-                  </Button>
-                </Fragment>
-              )}
+                  <Fragment>
+                    <img
+                      className={"vk_post_imgOuter_img card-img-top"}
+                      src={imageParsed.sizes.full.url}
+                      alt={imageParsed.alt}
+                    />
+                    <Button
+                      onClick={deleteImgBtn}
+                      className={"image-button button button-delete"}
+                    >
+                      {__("Delete Image", "vk-blocks")}
+                    </Button>
+                  </Fragment>
+                )}
             </Fragment>
           )}
         />

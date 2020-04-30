@@ -33,7 +33,8 @@ const { Fragment } = wp.element;
 const { InspectorControls } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const { withSelect, select } = wp.data;
-const { ServerSideRender } = wp.components;
+import { depServerSideRender } from "../../_helper/depModules";
+const ServerSideRender = depServerSideRender();
 import { schema } from "./schema";
 import { DisplayItemsControl } from "../../../components/display-items-control";
 import { ColumnLayoutControl } from "../../../components/column-layout-control";

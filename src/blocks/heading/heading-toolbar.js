@@ -6,18 +6,12 @@ const { range } = lodash;
 const { __, sprintf } = wp.i18n;
 const { Component } = wp.element;
 const { Toolbar } = wp.components;
-import HeadingLevelIcon from './heading-level-icon';
 
 class HeadingToolbar extends Component {
 	createLevelControl(targetLevel, selectedLevel, onChange) {
 		const isActive = targetLevel === selectedLevel;
 		return {
-			icon: (
-				<HeadingLevelIcon
-					level={targetLevel}
-					isPressed={isActive}
-				/>
-			),
+			icon: 'heading',
 			// translators: %s: heading level e.g: "1", "2", "3"
 			title: sprintf(__('Heading %d'), targetLevel),
 			isActive,

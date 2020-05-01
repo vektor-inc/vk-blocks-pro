@@ -67,6 +67,29 @@ button.image-button {
 	overflow: hidden;
 }
 
+button.components-button.components-toolbar__control{
+	position: relative;
+}
+
+.components-toolbar__control.components-button[data-subscript]::after {
+    font-size: 1px;
+    right: 7px;
+}
+
+.components-toolbar__control.components-button[data-subscript] svg {
+    padding: 5px;
+	padding-left: 1px;
+	height: 30px;
+    width: 30px;
+}
+
+.components-toolbar__control.components-button {
+    width: 36px;
+    height: 36px;
+    padding: 3px;
+    outline: none;
+}
+
 .editor-url-input input[type="text"] {
 	width: 100%;
 }

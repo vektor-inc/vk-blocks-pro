@@ -12,7 +12,7 @@ export const schema = {
   },
   outerMarginBottom: {
     type: "number",
-    default: null
+    default: ""
   },
   title: {
     type: "string",

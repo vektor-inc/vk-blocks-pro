@@ -4,6 +4,7 @@
 import { Component } from "./component";
 import { schema } from './schema';
 import React from "react";
+import formatNum from "../_helper/formatNum";
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
@@ -56,7 +57,7 @@ registerBlockType('vk-blocks/simple-table', {
 
 		const updateChildBlockAttributesRow = (value) => {
 
-			setAttributes({ rowNum: value || rowNum });
+			setAttributes({ rowNum: formatNum(value, rowNum) });
 
 		};
 

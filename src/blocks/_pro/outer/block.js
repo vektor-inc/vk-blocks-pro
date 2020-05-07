@@ -7,6 +7,7 @@ import { deprecated } from "./deprecated/block";
 import toNumber from "../../_helper/to-number";
 import { AdvancedMediaUpload } from "../../../components/advanced-media-upload";
 import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
+import formatNum from "../../_helper/formatNum";
 const inserterVisible = hiddenNewBlock(5.3);
 
 const { __ } = wp.i18n;
@@ -116,7 +117,7 @@ registerBlockType("vk-blocks/outer", {
 							<RangeControl
 								value={opacity}
 								onChange={(value) => {
-									setAttributes({ opacity: value || opacity });
+									setAttributes({ opacity: formatNum(value, opacity) });
 								}}
 								min={0}
 								max={1}
@@ -348,7 +349,7 @@ registerBlockType("vk-blocks/outer", {
 						<BaseControl label={__("Border width", "vk-blocks")}>
 							<RangeControl
 								value={borderWidth}
-								onChange={(value) => setAttributes({ borderWidth: value || borderWidth })}
+								onChange={(value) => setAttributes({ borderWidth: formatNum(value, borderWidth) })}
 								min="0"
 							/>
 						</BaseControl>

@@ -6,6 +6,7 @@ import React from "react";
 import { schema } from './schema';
 import { SpacerComponent } from "./component";
 import { deprecated } from "./deprecated/deprecated";
+import formatNum from "../_helper/formatNum";
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
@@ -96,19 +97,19 @@ registerBlockType('vk-blocks/spacer', {
 							<RangeControl
 								label={__('PC', 'vk-blocks')}
 								value={pc}
-								onChange={(value) => setAttributes({ pc: value || pc })}
+								onChange={(value) => setAttributes({ pc: formatNum(value, pc) })}
 								step={0.1}
 							/>
 							<RangeControl
 								label={__('Tablet', 'vk-blocks')}
 								value={tablet}
-								onChange={(value) => setAttributes({ tablet: value || tablet })}
+								onChange={(value) => setAttributes({ tablet: formatNum(value, tablet) })}
 								step={0.1}
 							/>
 							<RangeControl
 								label={__('Mobile', 'vk-blocks')}
 								value={mobile}
-								onChange={(value) => setAttributes({ mobile: value || mobile })}
+								onChange={(value) => setAttributes({ mobile: formatNum(value, mobile) })}
 								step={0.1}
 							/>
 						</BaseControl>

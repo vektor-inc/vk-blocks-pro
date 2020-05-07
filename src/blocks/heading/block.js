@@ -7,6 +7,7 @@ import HeadingToolbar from "./heading-toolbar";
 import { VKBHeading } from "./component";
 import { Deprecated } from "./deprecated/block";
 import { vkbBlockEditor } from "./../_helper/depModules";
+import formatNum from "../_helper/formatNum";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -135,7 +136,7 @@ registerBlockType("vk-blocks/heading", {
 						<RangeControl
 							value={outerMarginBottom}
 							onChange={value => {
-								setAttributes({ outerMarginBottom: value || outerMarginBottom });
+								setAttributes({ outerMarginBottom: formatNum(value, outerMarginBottom) });
 							}}
 							min={-1}
 							max={8}
@@ -161,7 +162,7 @@ registerBlockType("vk-blocks/heading", {
 						<RangeControl
 							value={titleSize}
 							onChange={value => {
-								setAttributes({ titleSize: value || titleSize });
+								setAttributes({ titleSize: formatNum(value, titleSize) });
 							}}
 							min={0.5}
 							max={4}
@@ -171,7 +172,7 @@ registerBlockType("vk-blocks/heading", {
 						<RangeControl
 							value={titleMarginBottom}
 							onChange={value => {
-								setAttributes({ titleMarginBottom: value || titleMarginBottom });
+								setAttributes({ titleMarginBottom: formatNum(value, titleMarginBottom) });
 							}}
 							min={-1}
 							max={3}
@@ -196,7 +197,7 @@ registerBlockType("vk-blocks/heading", {
 						<RangeControl
 							value={subTextSize}
 							onChange={value => {
-								setAttributes({ subTextSize: value || subTextSize });
+								setAttributes({ subTextSize: formatNum(value, subTextSize) });
 							}}
 							min={0.5}
 							max={3}

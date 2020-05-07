@@ -34,7 +34,7 @@ input[type="range"] {
 }
 
 // これがないとスタッフブロックや各種画像の外側のbuttonが高さを検出できない
-button.image-button {
+button.image-button:not(.button-delete) {
 	height: 100%;
 }
 
@@ -126,7 +126,12 @@ $color-danger: #dd3333;
 }
 
 /* editor area *********************************************/
-//   .edit-post-visual-editor.editor-styles-wrapper{
+  .edit-post-visual-editor.editor-styles-wrapper{
+
+// レスポンシブスペーサーの識別用枠線
+.vk_spacer {
+	border: 1px dotted #ccc;
+}
 
 table {
 	border: 1px solid #ff0000;
@@ -135,6 +140,12 @@ table {
 /* これがないとGutenberg標準のエディタCSSに負ける */
 h1:first-child.vk_prBlocks_item_title {
 	margin-top: 0.9em;
+}
+.vk_prContent_colTxt_title {
+	border: none;
+	&::after {
+		display: none;
+	}
 }
 
 /* Bootstrap Adjuster */
@@ -155,7 +166,7 @@ $color-danger: #b52727;
 
 /*-------------------------------------------*/
 /* card
-  /*-------------------------------------------*/
+/*-------------------------------------------*/
 
 // Card ボタンリンクの説明
 .postList_itemCard_button-option {

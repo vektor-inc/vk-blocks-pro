@@ -251,7 +251,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				if ( $img ) {
 					$html .= $img;
 				} elseif ( $options['image_default_url'] ) {
-					$html .= '<img src="' . esc_url( $options['image_default_url'] ) . '" alt="" class="' . $image_class . '" />';
+					$html .= '<img src="' . esc_url( $options['image_default_url'] ) . '" alt="" class="' . $image_class . '" loading="lazy" />';
 				}
 				$html .= '</a>';
 				$html .= '</div><!-- [ /.vk_post_imgOuter ] -->';

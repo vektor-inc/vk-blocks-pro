@@ -129,7 +129,7 @@ registerBlockType("vk-blocks/post-list", {
 								value={numberPosts}
 								onChange={value => setAttributes({ numberPosts: parseInt(value, 10) || parseInt(numberPosts, 10) })}
 								min="1"
-								max="24"
+								max="100"
 							/>
 						</BaseControl>
 						<BaseControl label={__("Order by", "vk-blocks")}>

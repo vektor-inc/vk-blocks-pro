@@ -62,7 +62,8 @@ export const DisplayItemsControl = props => {
 			<TextControl
 				label={__("Number of days to display the new post mark", "vk-blocks")}
 				value={new_date}
-				onChange={value => setAttributes({ new_date: parseInt(value, 10) || 0 })}
+				onChange={value => setAttributes({ new_date: parseInt(value, 10) || parseInt(new_date, 10) })}
+				type={"number"}
 			/>
 			<TextControl
 				label={__("New post mark", "vk-blocks")}

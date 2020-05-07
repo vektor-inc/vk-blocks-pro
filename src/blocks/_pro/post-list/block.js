@@ -127,7 +127,7 @@ registerBlockType("vk-blocks/post-list", {
 						<BaseControl label={__("Number of Posts", "vk-blocks")}>
 							<RangeControl
 								value={numberPosts}
-								onChange={value => setAttributes({ numberPosts: value })}
+								onChange={value => setAttributes({ numberPosts: parseInt(value, 10) || parseInt(numberPosts, 10) })}
 								min="1"
 								max="24"
 							/>
@@ -148,7 +148,7 @@ registerBlockType("vk-blocks/post-list", {
 						<BaseControl label={__("offset", "vk-blocks")}>
 							<TextControl
 								value={offset}
-								onChange={(v) => setAttributes({ offset: parseInt(v, 10) })}
+								onChange={(v) => setAttributes({ offset: parseInt(v, 10) || parseInt(offset, 10) })}
 								type="number"
 								min="0"
 							/>

@@ -53,11 +53,11 @@ registerBlockType('vk-blocks/button', {
 		},
 		subCaption: {
 			type: 'string',
-			default: null,
+			default: "",
 		},
 		buttonUrl: {
 			type: 'string',
-			default: null,
+			default: "",
 		},
 		buttonTarget: {
 			type: 'Boolean',
@@ -85,11 +85,11 @@ registerBlockType('vk-blocks/button', {
 		},
 		fontAwesomeIconBefore: {
 			type: 'string',
-			default: null,
+			default: "",
 		},
 		fontAwesomeIconAfter: {
 			type: 'string',
-			default: null,
+			default: "",
 		}
 	},
 

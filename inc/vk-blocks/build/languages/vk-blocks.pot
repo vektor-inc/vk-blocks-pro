@@ -136,15 +136,15 @@ msgid "Opacity Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:127
-msgid "Background Image PC"
+msgid "Background Image (PC)"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:135
-msgid "Background Image Tablet"
+msgid "Background Image (Tablet)"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:141
-msgid "Background Image Mobile"
+msgid "Background Image (Mobile)"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:147

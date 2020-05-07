@@ -105,37 +105,37 @@ registerBlockType("vk-blocks/post-list", {
 			<Fragment>
 				<InspectorControls>
 					<PanelBody
-						title={__("Display conditions", "vk-blocks")}
-						initialOpen={false}
+						title={ __("Display conditions", "vk-blocks") }
+						initialOpen={ false }
 					>
-						<BaseControl label={__("Filter by PostTypes", "vk-blocks")}>
+						<BaseControl label={ __("Filter by PostTypes", "vk-blocks") }>
 							<AdvancedCheckboxControl
-								schema={"isCheckedPostType"}
-								rawData={postTypesProps}
-								checkedData={JSON.parse(isCheckedPostType)}
-								{...props}
+								schema={ "isCheckedPostType" }
+								rawData={ postTypesProps }
+								checkedData={ JSON.parse(isCheckedPostType) }
+								{ ...props }
 							/>
 						</BaseControl>
-						<BaseControl label={__("Filter by Taxonomy Terms", "vk-blocks")}>
+						<BaseControl label={ __("Filter by Taxonomy Terms", "vk-blocks") }>
 							<AdvancedCheckboxControl
-								schema={"isCheckedTerms"}
-								rawData={taxonomiesProps}
-								checkedData={JSON.parse(isCheckedTerms)}
-								{...props}
+								schema={ "isCheckedTerms" }
+								rawData={ taxonomiesProps }
+								checkedData={ JSON.parse(isCheckedTerms) }
+								{ ...props }
 							/>
 						</BaseControl>
-						<BaseControl label={__("Number of Posts", "vk-blocks")}>
+						<BaseControl label={ __("Number of Posts", "vk-blocks") }>
 							<RangeControl
-								value={numberPosts}
-								onChange={value => setAttributes({ numberPosts: value })}
+								value={ numberPosts }
+								onChange={ value => setAttributes({ numberPosts: value }) }
 								min="1"
 								max="24"
 							/>
 						</BaseControl>
-						<BaseControl label={__("Order by", "vk-blocks")}>
+						<BaseControl label={ __("Order by", "vk-blocks") }>
 							<SelectControl
-								value={orderby}
-								onChange={(v) => setAttributes({ orderby: v })}
+								value={ orderby }
+								onChange={ (v) => setAttributes({ orderby: v }) }
 								options={
 									[
 										{ value: 'date', label: __("Published Date", "vk-blocks") },
@@ -145,26 +145,26 @@ registerBlockType("vk-blocks/post-list", {
 								}
 							/>
 						</BaseControl>
-						<BaseControl label={__("offset", "vk-blocks")}>
+						<BaseControl label={ __("offset", "vk-blocks") }>
 							<TextControl
-								value={offset}
-								onChange={(v) => setAttributes({ offset: parseInt(v, 10) })}
+								value={ offset }
+								onChange={ (v) => setAttributes({ offset: parseInt(v, 10) }) }
 								type="number"
 								min="0"
 							/>
 						</BaseControl>
 						<BaseControl>
 							<CheckboxControl
-								label={__("Ignore this post", "vk-blocks")}
-								checked={selfIgnore}
-								onChange={(v) => setAttributes({ selfIgnore: v })}
+								label={ __("Ignore this post", "vk-blocks") }
+								checked={ selfIgnore }
+								onChange={ (v) => setAttributes({ selfIgnore: v }) }
 							/>
 						</BaseControl>
 					</PanelBody>
-					<ColumnLayoutControl {...props} />
-					<DisplayItemsControl {...props} />
+					<ColumnLayoutControl { ...props } />
+					<DisplayItemsControl { ...props } />
 				</InspectorControls>
-				<ServerSideRender block="vk-blocks/post-list" attributes={attributes} />
+				<ServerSideRender block="vk-blocks/post-list" attributes={ attributes } />
 			</Fragment>
 		);
 	},

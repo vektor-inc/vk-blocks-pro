@@ -34,7 +34,7 @@ input[type="range"] {
 }
 
 // これがないとスタッフブロックや各種画像の外側のbuttonが高さを検出できない
-button.image-button {
+button.image-button:not(.button-delete) {
 	height: 100%;
 }
 

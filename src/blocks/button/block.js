@@ -8,7 +8,7 @@ import { vkbBlockEditor } from "./../_helper/depModules";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RadioControl, PanelBody, BaseControl, CheckboxControl, TextControl, Dashicon, IconButton, ButtonGroup, Button } = wp.components;
+const { RadioControl, PanelBody, BaseControl, CheckboxControl, TextControl, Dashicon, ButtonGroup, Button } = wp.components;
 const { Fragment } = wp.element;
 const { RichText, InspectorControls, ColorPalette, URLInput, } = vkbBlockEditor;
 const BlockIcon = (
@@ -310,7 +310,7 @@ registerBlockType('vk-blocks/button', {
 								value={buttonUrl}
 								onChange={(value) => setAttributes({ buttonUrl: value })}
 							/>
-							<IconButton icon="editor-break" label={__('Apply', 'vk-blocks')} type="submit" />
+							<Button icon="editor-break" label={__('Apply', 'vk-blocks')} type="submit" />
 						</form>
 					)}
 				</div>

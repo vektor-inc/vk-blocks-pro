@@ -67,6 +67,29 @@ button.image-button:not(.button-delete) {
 	overflow: hidden;
 }
 
+button.components-button.components-toolbar__control{
+	position: relative;
+}
+
+.components-toolbar__control.components-button[data-subscript]::after {
+    font-size: 1px;
+    right: 7px;
+}
+
+.components-toolbar__control.components-button[data-subscript] svg {
+    padding: 5px;
+	padding-left: 1px;
+	height: 30px;
+    width: 30px;
+}
+
+.components-toolbar__control.components-button {
+    width: 36px;
+    height: 36px;
+    padding: 3px;
+    outline: none;
+}
+
 .editor-url-input input[type="text"] {
 	width: 100%;
 }
@@ -2283,6 +2306,14 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 /* CSS
 /*-------------------------------------------*/
 
+.vk_childPage {
+	margin-top: 2.5rem;
+}
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -2302,9 +2333,9 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
   }
 }
 
-.vk_childPage {
-	margin-top: 2.5rem;
-}
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 
 /*-------------------------------------------*/
 /* CSS
@@ -2417,7 +2448,6 @@ $color-danger: #b52727;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -2620,9 +2650,6 @@ $toc-left-margin: 1rem;
   }
 }
 
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/

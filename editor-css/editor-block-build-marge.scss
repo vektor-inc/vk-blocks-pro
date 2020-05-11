@@ -1976,6 +1976,7 @@ $xl-min: 1200px;
 		}
 		.components-button.image-button {
 			margin: 0;
+			height: auto; //これがないとfirefoxの管理画面上でbutton内のimage画像が上にはみ出す
 		}
 	}
 } // .vk_prContent {

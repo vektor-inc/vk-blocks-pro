@@ -446,15 +446,8 @@ if ( ! function_exists( 'vkblocks_set_wp_version' ) ) {
 	function vkblocks_set_wp_version() {
 		global $wp_version;
 		echo '<script>',
-<<<<<<< HEAD
-			'var wpVersion = "'. $wp_version . '";',
-		'</script>';
-	}
-	add_action( 'admin_head','vkblocks_set_wp_version', 10, 0 );
-=======
 			'var wpVersion = "' . $wp_version . '";',
 		'</script>';
 	}
 	add_action( 'admin_head', 'vkblocks_set_wp_version', 10, 0 );
->>>>>>> 4a0b7884c4ecf9035e59fd21a4d5b91939c74af8
 }

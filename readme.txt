@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.4.0
-Stable tag: 0.27.1
+Stable tag: 0.27.2
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -58,8 +58,12 @@ e.g.
 
 == Changelog ==
 
+= 0.27.2 =
+[ bug fix ][ Outer(pro) ] when reset border that block breaks
+[ bug fix ][ Table Of Content(pro) ] Can't all display title
+
 = 0.27.1 =
-[ bug fix ][ PR Content ] LAyout bug fix on firefox
+[ bug fix ][ PR Content ] Layout bug fix on firefox
 [ Design tuning ][ Table of content(pro) ] Padding tuning
 
 = 0.27.0 =

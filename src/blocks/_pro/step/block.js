@@ -4,6 +4,8 @@
  */
 import { Component } from "./component";
 import { schema } from "./schema";
+import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
+const inserterVisible = hiddenNewBlock(5.3);
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType, createBlock } = wp.blocks; // Import registerBlockType() from wp.blocks
@@ -61,15 +63,10 @@ registerBlockType("vk-blocks/step", {
   icon: BlockIcon, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
   category: "vk-blocks-cat", // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
   attributes: schema,
+  supports: {
+    inserter: inserterVisible
+  },
 
-  /**
-   * The edit function describes the structure of your block in the context of the editor.
-   * This represents what the editor will render when the block is used.
-   *
-   * The "edit" property must be a valid function.
-   *
-   * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
-   */
   edit({ attributes, setAttributes, className, clientId }) {
     const { firstDotNum } = attributes;
 

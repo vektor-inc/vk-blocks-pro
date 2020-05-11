@@ -1,12 +1,11 @@
-import React from "react";
-import {schema} from "./schema";
-import {NewComponent} from "./block";
+import { schema } from "./schema";
+import { NewComponent } from "./block";
 
 export const deprecated = [
     {
         attributes: schema,
 
-        save({attributes}) {
+        save({ attributes }) {
             const {
                 heading,
             } = attributes;

@@ -1,5 +1,6 @@
 import { schema } from "./schema";
-const { InnerBlocks } = wp.editor;
+import { vkbBlockEditor } from "./../../_helper/depModules";
+const { InnerBlocks } = vkbBlockEditor;
 const { Component } = wp.element;
 import { convertToGrid } from "../../_helper/convert-to-grid";
 

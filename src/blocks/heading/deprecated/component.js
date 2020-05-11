@@ -1,7 +1,7 @@
-const { Component } = wp.element;
-import { vkbBlockEditor } from "./../_helper/depModules";
+import { vkbBlockEditor } from "./../../_helper/depModules";
 const { RichText } = vkbBlockEditor;
-const { __ } = wp.i18n; // Import __() from wp.i18n
+const { __ } = wp.i18n;
+const { Component } = wp.element;
 
 export class VKBHeading extends Component {
   render() {

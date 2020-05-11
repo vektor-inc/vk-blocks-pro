@@ -1,5 +1,5 @@
-const {RichText, InnerBlocks} = wp.editor;
-const {__} = wp.i18n; // Import __() from wp.i18n
+import { vkbBlockEditor } from "./../../_helper/depModules";
+const { InnerBlocks } = vkbBlockEditor;
 
 export class Component extends React.Component {
     render() {
@@ -12,9 +12,9 @@ export class Component extends React.Component {
 
         //編集画面とサイト上の切り替え
         if (for_ === "edit") {
-            elm = <InnerBlocks template={TEMPLATE} allowedBlocks={ALLOWED_BLOCKS}/>;
+            elm = <InnerBlocks template={TEMPLATE} allowedBlocks={ALLOWED_BLOCKS} />;
         } else if ("save") {
-            elm = <InnerBlocks.Content/>;
+            elm = <InnerBlocks.Content />;
         }
         return (
             <div className={className + containerClass}>

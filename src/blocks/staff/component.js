@@ -1,10 +1,10 @@
-import React from 'react';
+const { __ } = wp.i18n;
+import { vkbBlockEditor } from "./../_helper/depModules";
+const { RichText, MediaUpload } = vkbBlockEditor;
+const { Button } = wp.components;
+const { Component } = wp.element;
 
-const {__} = wp.i18n; // Import __() from wp.i18n
-const {RichText, MediaUpload} = wp.editor;
-const {Button} = wp.components;
-
-export class NewComponent extends React.Component {
+export class NewComponent extends Component {
 
     render() {
 
@@ -36,58 +36,58 @@ export class NewComponent extends React.Component {
                     <RichText
                         tagName="h3"
                         className={'vk_staff_text_name'}
-                        style={{color: vk_staff_nameColor}}
-                        onChange={(value) => setAttributes({vk_staff_text_name: value})}
+                        style={{ color: vk_staff_nameColor }}
+                        onChange={(value) => setAttributes({ vk_staff_text_name: value })}
                         value={vk_staff_text_name}
                         placeholder={__('Your Name', 'vk-blocks')}
                     />
                     <RichText
                         tagName="p"
                         className={'vk_staff_text_caption'}
-                        style={{color: vk_staff_captionColor}}
-                        onChange={(value) => setAttributes({vk_staff_text_caption: value})}
+                        style={{ color: vk_staff_captionColor }}
+                        onChange={(value) => setAttributes({ vk_staff_text_caption: value })}
                         value={vk_staff_text_caption}
                         placeholder={__('Caption', 'vk-blocks')}
                     />
                     <RichText
                         tagName="p"
                         className={'vk_staff_text_role'}
-                        style={{color: vk_staff_positionColor}}
-                        onChange={(value) => setAttributes({vk_staff_text_role: value})}
+                        style={{ color: vk_staff_positionColor }}
+                        onChange={(value) => setAttributes({ vk_staff_text_role: value })}
                         value={vk_staff_text_role}
                         placeholder={__('Role position', 'vk-blocks')}
                     />
                     <RichText
                         tagName="h4"
                         className={'vk_staff_text_profileTitle'}
-                        style={{color: vk_staff_profileTitleColor}}
-                        onChange={(value) => setAttributes({vk_staff_text_profileTitle: value})}
+                        style={{ color: vk_staff_profileTitleColor }}
+                        onChange={(value) => setAttributes({ vk_staff_text_profileTitle: value })}
                         value={vk_staff_text_profileTitle}
                         placeholder={__('Profile title', 'vk-blocks')}
                     />
                     <RichText
                         tagName="p"
                         className={'vk_staff_text_profileText'}
-                        style={{color: vk_staff_profileTextColor}}
-                        onChange={(value) => setAttributes({vk_staff_text_profileText: value})}
+                        style={{ color: vk_staff_profileTextColor }}
+                        onChange={(value) => setAttributes({ vk_staff_text_profileText: value })}
                         value={vk_staff_text_profileText}
                         placeholder={__('Profile text', 'vk-blocks')}
                     />
                 </div>
                 <div className={`vk_staff_photo vk_staff_photo-border-${vk_staff_photoBorder}`}>
                     <MediaUpload
-                        onSelect={(value) => setAttributes({vk_staff_photo_image: value.sizes.full.url})}
+                        onSelect={(value) => setAttributes({ vk_staff_photo_image: value.sizes.full.url })}
                         type="image"
                         className={'vk_staff_photo_image'}
                         value={vk_staff_photo_image}
-                        render={({open}) => (
+                        render={({ open }) => (
                             <Button
                                 onClick={open}
                                 className={vk_staff_photo_image ? 'image-button' : 'button button-large'}
                             >
                                 {!vk_staff_photo_image ? __('Select image', 'vk-blocks') :
                                     <img className={`vk_staff_photo_image`} src={vk_staff_photo_image}
-                                         alt={__(vk_staff_photo_image_alt, 'vk-blocks')}/>}
+                                        alt={__(vk_staff_photo_image_alt, 'vk-blocks')} />}
                             </Button>
                         )}
                     />
@@ -101,40 +101,40 @@ export class NewComponent extends React.Component {
                     <RichText.Content
                         tagName="h3"
                         className={'vk_staff_text_name'}
-                        style={{color: vk_staff_nameColor}}
-                        value={vk_staff_text_name}/>
+                        style={{ color: vk_staff_nameColor }}
+                        value={vk_staff_text_name} />
                     <RichText.Content
                         tagName="p"
                         className={'vk_staff_text_caption'}
-                        style={{color: vk_staff_captionColor}}
+                        style={{ color: vk_staff_captionColor }}
                         value={vk_staff_text_caption}
                     />
                     <RichText.Content
                         tagName="p"
                         className={'vk_staff_text_role'}
-                        style={{color: vk_staff_positionColor}}
+                        style={{ color: vk_staff_positionColor }}
                         value={vk_staff_text_role}
                     />
                     <RichText.Content
                         tagName="h4"
                         className={'vk_staff_text_profileTitle'}
-                        style={{color: vk_staff_profileTitleColor}}
+                        style={{ color: vk_staff_profileTitleColor }}
                         value={vk_staff_text_profileTitle}
                     />
                     <RichText.Content
                         tagName="p"
                         className={'vk_staff_text_profileText'}
-                        style={{color: vk_staff_profileTextColor}}
+                        style={{ color: vk_staff_profileTextColor }}
                         value={vk_staff_text_profileText}
                     />
                 </div>
                 {vk_staff_photo_image ?
                     <div className={`vk_staff_photo vk_staff_photo-border-${vk_staff_photoBorder}`}>
-                                <img className={`vk_staff_photo_image`} src={vk_staff_photo_image} alt={
-                                    vk_staff_photo_image_alt ? __(vk_staff_photo_image_alt, 'vk-blocks')
-                                        :
-                                        ""
-                                }/>
+                        <img className={`vk_staff_photo_image`} src={vk_staff_photo_image} alt={
+                            vk_staff_photo_image_alt ? __(vk_staff_photo_image_alt, 'vk-blocks')
+                                :
+                                ""
+                        } />
                     </div>
                     : ''
                 }

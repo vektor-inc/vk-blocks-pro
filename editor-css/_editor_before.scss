@@ -1,226 +1,284 @@
-
 /* Pro版ブロック表示 */
 .vk_block_icon_pro {
-  fill:#c00;
-  }
-  .editor-block-list-item-vk-blocks-card:after,
-  .editor-block-list-item-vk-blocks-child-page:after,
-  .editor-block-list-item-vk-blocks-timeline:after,
-  .editor-block-list-item-vk-blocks-step:after,
-  .editor-block-list-item-vk-blocks-outer:after,
-  .editor-block-list-item-vk-blocks-post-list:after,
-  .editor-block-list-item-vk-blocks-table-of-contents:after,
-  .editor-block-list-item-vk-blocks-simple-table:after{
-  position: absolute;
-  top: 0;
-  right: 0;
-  content: "Pro";
-  display: inline-block;
-  font-size: 10px;
-  line-height: 1;
-  color: #fff;
-  background-color: #cd3034;
-  border-radius: 2px;
-  padding: 3px 4px;
-  }
-  
+	fill: #c00;
+}
+.editor-block-list-item-vk-blocks-card:after,
+.editor-block-list-item-vk-blocks-child-page:after,
+.editor-block-list-item-vk-blocks-timeline:after,
+.editor-block-list-item-vk-blocks-step:after,
+.editor-block-list-item-vk-blocks-outer:after,
+.editor-block-list-item-vk-blocks-post-list:after,
+.editor-block-list-item-vk-blocks-table-of-contents:after,
+.editor-block-list-item-vk-blocks-simple-table:after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	content: "Pro";
+	display: inline-block;
+	font-size: 10px;
+	line-height: 1;
+	color: #fff;
+	background-color: #cd3034;
+	border-radius: 2px;
+	padding: 3px 4px;
+}
+
 /* ブロックの種類入れ替えトグルについて、この指定がないと見えてしまう */
 .components-button.block-editor-block-switcher__toggle {
-  overflow: hidden;
+	overflow: hidden;
 }
 
 /* スライダーを表示 : デフォルトだとbootstrapに非表示にされてしまう */
-input[type=range] {
-  margin: 1px;
+input[type="range"] {
+	margin: 1px;
 }
 
-  .components-base-control__label {
-     font-weight:bold;
-  }
-  .components-base-control .components-base-control__help {
-    margin-top:0;
-  }
-  .components-radio-control__option label { margin-bottom:0; }
-  .components-checkbox-control__label { margin-bottom:0; }
-  .components-color-palette { display:block; overflow:hidden; }
-    
-  .editor-url-input input[type="text"]{
-      width:100%;
-  }
+// これがないとスタッフブロックや各種画像の外側のbuttonが高さを検出できない
+button.image-button:not(.button-delete) {
+	height: 100%;
+}
+
+.components-base-control {
+	// 独自に追加
+	&__title {
+		padding-bottom: 3px;
+		border-bottom: 1px solid #ccc;
+		margin-bottom: 1em;
+		display: block;
+	}
+	&__label {
+	}
+	&__help {
+		margin-top: 0;
+	}
+	.components-button {
+		margin-bottom: 0.5em;
+	}
+}
+
+.components-radio-control__option label {
+	margin-bottom: 0;
+}
+.components-checkbox-control__label {
+	margin-bottom: 0;
+}
+.components-color-palette {
+	display: block;
+	overflow: hidden;
+}
+
+button.components-button.components-toolbar__control{
+	position: relative;
+}
+
+.components-toolbar__control.components-button[data-subscript]::after {
+    font-size: 1px;
+    right: 7px;
+}
+
+.components-toolbar__control.components-button[data-subscript] svg {
+    padding: 5px;
+	padding-left: 1px;
+	height: 30px;
+    width: 30px;
+}
+
+.components-toolbar__control.components-button {
+    width: 36px;
+    height: 36px;
+    padding: 3px;
+    outline: none;
+}
+
+.editor-url-input input[type="text"] {
+	width: 100%;
+}
 
 // ブロックテンプレートのサイドバー調整CSS読み込み
 @import "./editor_before_template_inserter";
-  
+
 // VK Outer 編集パネル
 $color-danger: #dd3333;
 .vk_outer_sidebar_bgImage {
 	position: relative;
 	.components-button {
-	  position: absolute;
-	  top: 50%;
-	  left: 50%;
-	  transform: translateY(-50%) translateX(-50%);
-	  transition: all 1s;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateY(-50%) translateX(-50%);
+		transition: all 1s;
 	}
 	.button-delete {
-	  opacity: 0;
-	  border: 1px solid $color-danger;
-	  color: $color-danger;
-	  transition: all 1s;
-	  &:hover {
-		background-color: $color-danger;
-		border: 1px solid #b72a2a;
-		color: #fff;
-	  }
+		opacity: 0;
+		border: 1px solid $color-danger;
+		color: $color-danger;
+		transition: all 1s;
+		&:hover {
+			background-color: $color-danger;
+			border: 1px solid #b72a2a;
+			color: #fff;
+		}
 	}
 	&:hover .button-delete {
 		transition: all 1s;
 		opacity: 1;
 	}
-  }
+}
 
-  /* editor area *********************************************/
+/* editor area *********************************************/
   .edit-post-visual-editor.editor-styles-wrapper{
 
-  /* これがないとGutenberg標準のエディタCSSに負ける */
-  h1:first-child.vk_prBlocks_item_title{
-    margin-top:0.9em;
-  }
-  
-  /* Bootstrap Adjuster */
-  $border_primary: 1px solid #e5e5e5;
-  $color_font_default: #464646;
-  
-  $xs-max: 575.98px;
-  $sm-max: 767.98px;
-  $md-max: 991.98px;
-  $lg-max: 1199.98px;
-  
-  $sm-min: 576px;
-  $md-min: 768px;
-  $lg-min: 992px;
-  $xl-min: 1200px;
-  
-  $color-danger : #b52727;
-  
+// レスポンシブスペーサーの識別用枠線
+.vk_spacer {
+	border: 1px dotted #ccc;
+}
+
+table {
+	border: 1px solid #ff0000;
+}
+
+/* これがないとGutenberg標準のエディタCSSに負ける */
+h1:first-child.vk_prBlocks_item_title {
+	margin-top: 0.9em;
+}
+.vk_prContent_colTxt_title {
+	border: none;
+	&::after {
+		display: none;
+	}
+}
+
+/* Bootstrap Adjuster */
+$border_primary: 1px solid #e5e5e5;
+$color_font_default: #464646;
+
+$xs-max: 575.98px;
+$sm-max: 767.98px;
+$md-max: 991.98px;
+$lg-max: 1199.98px;
+
+$sm-min: 576px;
+$md-min: 768px;
+$lg-min: 992px;
+$xl-min: 1200px;
+
+$color-danger: #b52727;
+
+/*-------------------------------------------*/
+/* card
+/*-------------------------------------------*/
+
+// Card ボタンリンクの説明
+.postList_itemCard_button-option {
+	margin-bottom: 5px;
+}
+
+.vk_post_imgOuter {
+	position: relative;
+	.components-button {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateY(-50%) translateX(-50%);
+		transition: all 1s;
+	}
+	.button-delete {
+		opacity: 0;
+		border: 1px solid $color-danger;
+		color: $color-danger;
+		transition: all 1s;
+		&:hover {
+			background-color: $color-danger;
+			color: #fff;
+		}
+	}
+}
+.vk_post_imgOuter:hover .button-delete {
+	transition: all 1s;
+	opacity: 1;
+}
+
+/*-------------------------------------------*/
+/* vk_post Layout
   /*-------------------------------------------*/
-  /* card
-  /*-------------------------------------------*/
-  
-  // Card ボタンリンクの説明
-  .postList_itemCard_button-option {
-    margin-bottom: 5px;
-  }
-  
-  .vk_post_imgOuter {
-    position: relative;
-    .components-button {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translateY(-50%) translateX(-50%);
-      transition: all 1s;
-    }
-    .button-delete {
-      opacity: 0;
-      border:1px solid $color-danger;
-      color:$color-danger;
-      transition: all 1s;
-      &:hover {
-        background-color: $color-danger;
-        color:#fff;
-      }
-    }
-  }
-  .vk_post_imgOuter:hover .button-delete {
-    transition: all 1s;
-    opacity: 1;
-  }
-  
-  
-  /*-------------------------------------------*/
-  /* vk_post Layout
-  /*-------------------------------------------*/
-  /* If exclude the .vk_posts that, when you select the .media don't work */
-  
-  
-  // .vk_posts .editor-inner-blocks .editor-block-list__layout .wp-block .editor-block-list__block-edit div .vk_post-col {
-  
-  .vk_posts > .vk_posts-edit {
-    width:100%;
-    .editor-block-list__layout,
-    .block-editor-block-list__layout {
-      display: flex;
-      flex-wrap: wrap;
-      padding:0;
-	  width:100%;
-    }
-    .editor-block-list__block,
-    .block-editor-block-list__block {
-      margin:0 15px 30px;
-      padding:0;
-      .block-editor-block-list__block-edit {
-        margin:0;
-        height:100%;
-      }
-      /* ここより下は編集機能以外でマイナスオフセットする必要はない */
-      div[data-block]{
-        margin:0;
-        height:100%;
-        // .vk_post {
-        //   width:100%;
-        //   height:100%;
-        //   margin-top:0;
-        // }
-      }
-      & > .vk_post {
-        width:100%;
-        height:100%;
-        margin-top:0;
-      }
-    }
-    .block-list-appender {
-      clear:both;
-      width:100%;
-    }
-  
-  }
-  .vk_posts .vk_posts-edit {
-    &-col-xs-3 .editor-block-list__block,
+/* If exclude the .vk_posts that, when you select the .media don't work */
+
+// .vk_posts .editor-inner-blocks .editor-block-list__layout .wp-block .editor-block-list__block-edit div .vk_post-col {
+
+.vk_posts > .vk_posts-edit {
+	width: 100%;
+	.editor-block-list__layout,
+	.block-editor-block-list__layout {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 0;
+		width: 100%;
+	}
+	.editor-block-list__block,
+	.block-editor-block-list__block {
+		margin: 0 15px 30px;
+		padding: 0;
+		.block-editor-block-list__block-edit {
+			margin: 0;
+			height: 100%;
+		}
+		/* ここより下は編集機能以外でマイナスオフセットする必要はない */
+		div[data-block] {
+			margin: 0;
+			height: 100%;
+			// .vk_post {
+			//   width:100%;
+			//   height:100%;
+			//   margin-top:0;
+			// }
+		}
+		& > .vk_post {
+			width: 100%;
+			height: 100%;
+			margin-top: 0;
+		}
+	}
+	.block-list-appender {
+		clear: both;
+		width: 100%;
+	}
+}
+.vk_posts .vk_posts-edit {
+	&-col-xs-3 .editor-block-list__block,
 	&-col-xs-3 .block-editor-block-list__block {
 		width: calc(25% - 30px);
-    }
-    &-col-xs-4 .editor-block-list__block,
+	}
+	&-col-xs-4 .editor-block-list__block,
 	&-col-xs-4 .block-editor-block-list__block {
 		width: calc(33.3% - 30px);
-    }
-    &-col-xs-6 .editor-block-list__block,
+	}
+	&-col-xs-6 .editor-block-list__block,
 	&-col-xs-6 .block-editor-block-list__block {
 		width: calc(50% - 30px);
-    }
-    &-col-xs-12 .editor-block-list__block ,
+	}
+	&-col-xs-12 .editor-block-list__block,
 	&-col-xs-12 .block-editor-block-list__block {
-      width: calc(100% - 30px);
-    }
-    @media (min-width: $sm-min) {
+		width: calc(100% - 30px);
+	}
+	@media (min-width: $sm-min) {
 		&-col-sm-3 .editor-block-list__block,
 		&-col-sm-3 .block-editor-block-list__block {
-        	width: calc(25% - 30px);
+			width: calc(25% - 30px);
 		}
 		&-col-sm-4 .editor-block-list__block,
 		&-col-sm-4 .block-editor-block-list__block {
-        	width: calc(33.3% - 30px);
+			width: calc(33.3% - 30px);
 		}
 		&-col-sm-6 .editor-block-list__block,
 		&-col-sm-6 .block-editor-block-list__block {
-        	width: calc(50% - 30px);
+			width: calc(50% - 30px);
 		}
 		&-col-sm-12 .editor-block-list__block,
 		&-col-sm-12 .block-editor-block-list__block {
 			width: calc(100% - 30px);
 		}
-    }
-    @media (min-width: $md-min) {
+	}
+	@media (min-width: $md-min) {
 		&-col-md-3 .editor-block-list__block,
 		&-col-md-3 .block-editor-block-list__block {
 			width: calc(25% - 30px);
@@ -237,8 +295,8 @@ $color-danger: #dd3333;
 		&-col-md-12 .block-editor-block-list__block {
 			width: calc(100% - 30px);
 		}
-    }
-    @media (min-width: $lg-min) {
+	}
+	@media (min-width: $lg-min) {
 		&-col-lg-3 .editor-block-list__block,
 		&-col-lg-3 .block-editor-block-list__block {
 			width: calc(25% - 30px);
@@ -255,8 +313,8 @@ $color-danger: #dd3333;
 		&-col-lg-12 .block-editor-block-list__block {
 			width: calc(100% - 30px);
 		}
-    }
-    @media (min-width: $xl-min) {
+	}
+	@media (min-width: $xl-min) {
 		&-col-xl-3 .editor-block-list__block,
 		&-col-xl-3 .block-editor-block-list__block {
 			width: calc(25% - 30px);
@@ -273,24 +331,24 @@ $color-danger: #dd3333;
 		&-col-xl-12 .block-editor-block-list__block {
 			width: calc(100% - 30px);
 		}
-    }
+	}
 }
 
 /*-------------------------------------------*/
-/* edit hidden block class 
+/* edit hidden block class
 /*-------------------------------------------*/
-.vk_edit_hidden_warning{
+.vk_edit_hidden_warning {
 	// border:1px dotted #666;
 	opacity: 0.4;
 }
-.vk_edit_hidden_all{
-  	opacity: 0.2;
+.vk_edit_hidden_all {
+	opacity: 0.2;
 }
 
 /* .vk_hidden.vk_hidden は2つじゃないと上書きできない  */
 .vk_hidden.vk_hidden {
-  display: block !important;
-  color: var(--blue);
+	display: block !important;
+	color: var(--blue);
 
   &.vk_posts{
 	// display block だとカラムがすべて落ちるため posts は flexで上書き

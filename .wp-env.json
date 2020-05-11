@@ -1,0 +1,6 @@
+{
+    "core": "https://wordpress.org/wordpress-5.0.8.zip",
+    "plugins": [
+        "."
+    ]
+}

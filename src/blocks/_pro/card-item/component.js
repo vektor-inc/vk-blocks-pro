@@ -1,6 +1,6 @@
 const { __ } = wp.i18n; // Import __() from wp.i18n
-const { RichText, MediaUpload } =
-  wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
+import { vkbBlockEditor } from "./../../_helper/depModules";
+const { RichText, MediaUpload } = vkbBlockEditor;
 const { Button } = wp.components;
 const { Fragment } = wp.element;
 const { dispatch } = wp.data;

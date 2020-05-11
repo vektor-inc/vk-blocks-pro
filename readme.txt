@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.4.0
-Stable tag: 0.26.9
+Stable tag: 0.27.0
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -58,6 +58,11 @@ e.g.
 
 == Changelog ==
 
+= 0.27.0 =
+[ Add function ][ Outer(pro) ] Responsible background image
+[ Specification change ][ staff ] Change title size
+[ Specification change ][ Responsible Spacer ] Display dottline in edit screen
+ 
 = 0.26.9 =
 [ bug fix ][ Card(pro) ] column bug fix at edit screen
 

@@ -2,7 +2,7 @@ const { first, last } = window.lodash;
 
 const { Spinner } = wp.components;
 
-const { BlockPreview } = wp.blockEditor;
+const { BlockPreview } = wp.blockEditor ? wp.blockEditor : wp.editor;
 
 const { useState } = wp.element;
 
@@ -22,6 +22,11 @@ const {
 import parsedTemplates from "./default-templates";
 
 export default ({ slug }) => {
+
+  if (5.3 > parseFloat(wpVersion)) {
+    return;
+  }
+
   const [parts, setParts] = useState(null);
   const [resultParts, setResultParts] = useState(null);
 
@@ -81,20 +86,20 @@ export default ({ slug }) => {
               }
             }}
           >
-            <section class="vkb-menu__template-part__card__container">
+            <section className="vkb-menu__template-part__card__container">
               <div
                 id={`vkb-menu__template-part__card${index}`}
-                class="card vkb-menu__template-part__card"
+                className="card vkb-menu__template-part__card"
               >
-                <div class="content">
+                <div className="content">
                   <h6>
                     <span className={"vkb-menu__template-part__header__icon"}>
                       {part.icon}
                     </span>
                     {part.name}
                   </h6>
-                  <div class="hover_content">
-                    <div class="inner edit-post-visual-editor editor-styles-wrapper">
+                  <div className="hover_content">
+                    <div className="inner edit-post-visual-editor editor-styles-wrapper">
                       <BlockPreview viewportWidth={601} blocks={part.blocks} />
                     </div>
                   </div>
@@ -111,7 +116,7 @@ export default ({ slug }) => {
   setupResultParts();
 
   if (resultParts) {
-    return <ul>{resultParts}</ul>;
+    return <ul className="vkb-menu__template-part">{resultParts}</ul>;
   }
   return (
     <div className="vkb-menu__template-part__loading">

@@ -1,5 +1,5 @@
-import React from "react";
-const {RichText} = wp.editor;
+import { vkbBlockEditor } from "./../_helper/depModules";
+const { RichText } = vkbBlockEditor;
 
 export const deprecated = [
     {
@@ -16,22 +16,22 @@ export const deprecated = [
             }
         },
 
-        save({attributes}) {
+        save({ attributes }) {
             const {
                 heading,
                 content
             } = attributes;
 
             return (
-                <dl className={ 'vk_faq' }>
+                <dl className={'vk_faq'}>
                     <RichText.Content
                         tagName="dt"
-                        className={ 'vk_faq_title' }
+                        className={'vk_faq_title'}
                         value={heading}
                     />
                     <RichText.Content
                         tagName="dd"
-                        className={ 'vk_faq_content' }
+                        className={'vk_faq_content'}
                         value={content}
                     />
                 </dl>

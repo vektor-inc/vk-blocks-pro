@@ -14,7 +14,6 @@ https://github.com/vektor-inc/vektor-wp-libraries
   vk_is_plugin_active
   Sanitize
   Post Type Check Box
-	vk_is_checked
 */
 
 if ( ! function_exists( 'vk_is_template_tags_exist' ) ) {
@@ -428,26 +427,5 @@ if ( ! function_exists( 'vk_is_checked' ) ) {
 			$checked = ' checked';
 		}
 		echo $checked;
-	}
-}
-
-/**
- * Chack block category exist
- *
- * @param array  $categories
- * @param string $slug
- * @return boolian
- */
-if ( ! function_exists( 'vk_is_block_category_exist' ) ) {
-	function vk_is_block_category_exist( $categories, $slug ) {
-		$keys = array();
-		foreach ( $categories as $key => $value ) {
-			$keys[] = $value['slug'];
-		}
-		if ( in_array( $slug, $keys ) ) {
-			return true;
-		} else {
-			return false;
-		}
 	}
 }

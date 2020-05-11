@@ -1,11 +1,11 @@
-import React from "react";
-import {ComponentDeprecated} from "./component-deprecated";
-import {ComponentDeprecatedId} from "./component-deprecated-id";
-import {ComponentDeprecatedNoOpnnerNoRefererID} from "./component-deprecated-noopenernoreferer-id";
-import {ComponentDeprecatedSubcaptionNoopennerId} from "./component-deprecated-subcaption-noNoopnnernoreferer-id";
-import {Component} from "../component";
+import { VKBButtonDeprecated } from "./component-deprecated";
+import { VKBButtonDeprecatedId } from "./component-deprecated-id";
+import { VKBButtonDeprecatedNoOpnnerNoRefererID } from "./component-deprecated-noopenernoreferer-id";
+import { VKBButtonDeprecatedSubcaptionNoopennerId } from "./component-deprecated-subcaption-noNoopnnernoreferer-id";
+import { VKBButton } from "../component";
 
-const { RichText } = wp.editor;
+import { vkbBlockEditor } from "./../../_helper/depModules";
+const { RichText } = vkbBlockEditor;
 
 export const deprecated = [
 	{
@@ -52,7 +52,7 @@ export const deprecated = [
 			}
 		},
 
-		save({attributes}) {
+		save({ attributes }) {
 			const {
 				content,
 				buttonUrl,
@@ -81,20 +81,20 @@ export const deprecated = [
 			return (
 				<div className={containerClass}>
 
-					<ComponentDeprecated lbColorCustom={buttonColorCustom} lbColor={buttonColor} lbType={buttonType}
-										 lbAlign={buttonAlign}
-										 lbSize={buttonSize}
-										 lbUrl={buttonUrl}
-										 lbTarget={buttonTarget}
-										 lbFontAwesomeIconBefore={fontAwesomeIconBefore}
-										 lbFontAwesomeIconAfter={fontAwesomeIconAfter}
-										 lbRichtext={
-											 <RichText.Content
-												 tagName="span"
-												 className={'vk_button_link_txt'}
-												 value={content}
-											 />
-										 }/>
+					<VKBButtonDeprecated lbColorCustom={buttonColorCustom} lbColor={buttonColor} lbType={buttonType}
+						lbAlign={buttonAlign}
+						lbSize={buttonSize}
+						lbUrl={buttonUrl}
+						lbTarget={buttonTarget}
+						lbFontAwesomeIconBefore={fontAwesomeIconBefore}
+						lbFontAwesomeIconAfter={fontAwesomeIconAfter}
+						lbRichtext={
+							<RichText.Content
+								tagName="span"
+								className={'vk_button_link_txt'}
+								value={content}
+							/>
+						} />
 				</div>
 			);
 		},
@@ -143,7 +143,7 @@ export const deprecated = [
 			}
 		},
 
-		save({attributes}) {
+		save({ attributes }) {
 			const {
 				content,
 				buttonUrl,
@@ -172,117 +172,20 @@ export const deprecated = [
 			return (
 				<div className={containerClass}>
 
-					<ComponentDeprecatedId lbColorCustom={buttonColorCustom} lbColor={buttonColor} lbType={buttonType}
-										 lbAlign={buttonAlign}
-										 lbSize={buttonSize}
-										 lbUrl={buttonUrl}
-										 lbTarget={buttonTarget}
-										 lbFontAwesomeIconBefore={fontAwesomeIconBefore}
-										 lbFontAwesomeIconAfter={fontAwesomeIconAfter}
-										 lbRichtext={
-											 <RichText.Content
-												 tagName="span"
-												 className={'vk_button_link_txt'}
-												 value={content}
-											 />
-										 }/>
-				</div>
-			);
-		},
-	},
-	{
-		attributes: {
-			content: {
-				source: 'html',
-				selector: 'span',
-			},
-			subCaption: {
-				type: 'string',
-				default: null,
-			},
-			buttonUrl: {
-				type: 'string',
-				default: null,
-			},
-			buttonTarget: {
-				type: 'Boolean',
-				default: false,
-			},
-			buttonSize: {
-				type: 'string',
-				default: 'md',
-			},
-			buttonType: {
-				type: 'string',
-				default: '0',
-			},
-			buttonColor: {
-				type: 'string',
-				default: 'primary',
-			},
-			buttonColorCustom: {
-				type: 'string',
-				default: null,
-			},
-			buttonAlign: {
-				type: 'string',
-				default: 'left',
-			},
-			fontAwesomeIconBefore: {
-				type: 'string',
-				default: null,
-			},
-			fontAwesomeIconAfter: {
-				type: 'string',
-				default: null,
-			}
-		},
-		save({attributes, className}) {
-			const {
-				content,
-				subCaption,
-				buttonUrl,
-				buttonTarget,
-				buttonSize,
-				buttonType,
-				buttonColor,
-				buttonColorCustom,
-				buttonAlign,
-				fontAwesomeIconBefore,
-				fontAwesomeIconAfter,
-			} = attributes;
-
-			let containerClass = '';
-
-			if (buttonColorCustom) {
-
-				containerClass = `vk_button vk_button-color-custom vk_button-align-${buttonAlign}`;
-
-			} else if (!buttonColorCustom) {
-
-				containerClass = `vk_button vk_button-align-${buttonAlign}`;
-
-			}
-
-			return (
-				<div className={containerClass}>
-
-					<ComponentDeprecatedNoOpnnerNoRefererID lbColorCustom={buttonColorCustom} lbColor={buttonColor}
-															lbType={buttonType}
-															lbAlign={buttonAlign}
-															lbSize={buttonSize}
-															lbUrl={buttonUrl}
-															lbTarget={buttonTarget}
-															lbFontAwesomeIconBefore={fontAwesomeIconBefore}
-															lbFontAwesomeIconAfter={fontAwesomeIconAfter}
-															lbsubCaption={subCaption}
-															lbRichtext={
-																<RichText.Content
-																	tagName="span"
-																	className={'vk_button_link_txt'}
-																	value={content}
-																/>
-															}/>
+					<VKBButtonDeprecatedId lbColorCustom={buttonColorCustom} lbColor={buttonColor} lbType={buttonType}
+						lbAlign={buttonAlign}
+						lbSize={buttonSize}
+						lbUrl={buttonUrl}
+						lbTarget={buttonTarget}
+						lbFontAwesomeIconBefore={fontAwesomeIconBefore}
+						lbFontAwesomeIconAfter={fontAwesomeIconAfter}
+						lbRichtext={
+							<RichText.Content
+								tagName="span"
+								className={'vk_button_link_txt'}
+								value={content}
+							/>
+						} />
 				</div>
 			);
 		},
@@ -334,7 +237,7 @@ export const deprecated = [
 				default: null,
 			}
 		},
-		save({attributes, className}) {
+		save({ attributes, className }) {
 			const {
 				content,
 				subCaption,
@@ -364,23 +267,120 @@ export const deprecated = [
 			return (
 				<div className={containerClass}>
 
-					<ComponentDeprecatedSubcaptionNoopennerId lbColorCustom={buttonColorCustom}
-															  lbColor={buttonColor}
-															  lbType={buttonType}
-															  lbAlign={buttonAlign}
-															  lbSize={buttonSize}
-															  lbUrl={buttonUrl}
-															  lbTarget={buttonTarget}
-															  lbFontAwesomeIconBefore={fontAwesomeIconBefore}
-															  lbFontAwesomeIconAfter={fontAwesomeIconAfter}
-															  lbsubCaption={subCaption}
-															  lbRichtext={
-																  <RichText.Content
-																	  tagName="span"
-																	  className={'vk_button_link_txt'}
-																	  value={content}
-																  />
-															  }/>
+					<VKBButtonDeprecatedNoOpnnerNoRefererID lbColorCustom={buttonColorCustom} lbColor={buttonColor}
+						lbType={buttonType}
+						lbAlign={buttonAlign}
+						lbSize={buttonSize}
+						lbUrl={buttonUrl}
+						lbTarget={buttonTarget}
+						lbFontAwesomeIconBefore={fontAwesomeIconBefore}
+						lbFontAwesomeIconAfter={fontAwesomeIconAfter}
+						lbsubCaption={subCaption}
+						lbRichtext={
+							<RichText.Content
+								tagName="span"
+								className={'vk_button_link_txt'}
+								value={content}
+							/>
+						} />
+				</div>
+			);
+		},
+	},
+	{
+		attributes: {
+			content: {
+				source: 'html',
+				selector: 'span',
+			},
+			subCaption: {
+				type: 'string',
+				default: null,
+			},
+			buttonUrl: {
+				type: 'string',
+				default: null,
+			},
+			buttonTarget: {
+				type: 'Boolean',
+				default: false,
+			},
+			buttonSize: {
+				type: 'string',
+				default: 'md',
+			},
+			buttonType: {
+				type: 'string',
+				default: '0',
+			},
+			buttonColor: {
+				type: 'string',
+				default: 'primary',
+			},
+			buttonColorCustom: {
+				type: 'string',
+				default: null,
+			},
+			buttonAlign: {
+				type: 'string',
+				default: 'left',
+			},
+			fontAwesomeIconBefore: {
+				type: 'string',
+				default: null,
+			},
+			fontAwesomeIconAfter: {
+				type: 'string',
+				default: null,
+			}
+		},
+		save({ attributes, className }) {
+			const {
+				content,
+				subCaption,
+				buttonUrl,
+				buttonTarget,
+				buttonSize,
+				buttonType,
+				buttonColor,
+				buttonColorCustom,
+				buttonAlign,
+				fontAwesomeIconBefore,
+				fontAwesomeIconAfter,
+			} = attributes;
+
+			let containerClass = '';
+
+			if (buttonColorCustom) {
+
+				containerClass = `vk_button vk_button-color-custom vk_button-align-${buttonAlign}`;
+
+			} else if (!buttonColorCustom) {
+
+				containerClass = `vk_button vk_button-align-${buttonAlign}`;
+
+			}
+
+			return (
+				<div className={containerClass}>
+
+					<VKBButtonDeprecatedSubcaptionNoopennerId lbColorCustom={buttonColorCustom}
+						lbColor={buttonColor}
+						lbType={buttonType}
+						lbAlign={buttonAlign}
+						lbSize={buttonSize}
+						lbUrl={buttonUrl}
+						lbTarget={buttonTarget}
+						lbFontAwesomeIconBefore={fontAwesomeIconBefore}
+						lbFontAwesomeIconAfter={fontAwesomeIconAfter}
+						lbsubCaption={subCaption}
+						lbRichtext={
+							<RichText.Content
+								tagName="span"
+								className={'vk_button_link_txt'}
+								value={content}
+							/>
+						} />
 				</div>
 			);
 		}
@@ -433,7 +433,7 @@ export const deprecated = [
 				default: null,
 			}
 		},
-		save({attributes, className}) {
+		save({ attributes, className }) {
 			const {
 				content,
 				subCaption,
@@ -459,28 +459,28 @@ export const deprecated = [
 
 			}
 
-			if(className){
+			if (className) {
 				containerClass = className + ' ' + containerClass;
 			}
 
 			return (
 				<div className={containerClass}>
 
-					<Component lbColorCustom={buttonColorCustom} lbColor={buttonColor} lbType={buttonType}
-							   lbAlign={buttonAlign}
-							   lbSize={buttonSize}
-							   lbUrl={buttonUrl}
-							   lbTarget={buttonTarget}
-							   lbFontAwesomeIconBefore={fontAwesomeIconBefore}
-							   lbFontAwesomeIconAfter={fontAwesomeIconAfter}
-							   lbsubCaption={subCaption}
-							   lbRichtext={
-								   <RichText.Content
-									   tagName="span"
-									   className={'vk_button_link_txt'}
-									   value={content}
-								   />
-							   }/>
+					<VKBButton lbColorCustom={buttonColorCustom} lbColor={buttonColor} lbType={buttonType}
+						lbAlign={buttonAlign}
+						lbSize={buttonSize}
+						lbUrl={buttonUrl}
+						lbTarget={buttonTarget}
+						lbFontAwesomeIconBefore={fontAwesomeIconBefore}
+						lbFontAwesomeIconAfter={fontAwesomeIconAfter}
+						lbsubCaption={subCaption}
+						lbRichtext={
+							<RichText.Content
+								tagName="span"
+								className={'vk_button_link_txt'}
+								value={content}
+							/>
+						} />
 				</div>
 			);
 		}

@@ -100,9 +100,8 @@ $toc-left-margin: 1rem;
 	/* Accordion styles */
 	.tab {
 		width: 100%;
-		overflow: hidden;
 		&_content-open {
-			max-height: 100vh;
+			max-height: auto;
 			padding: 1em;
 			transition: all 0.35s;
 		}

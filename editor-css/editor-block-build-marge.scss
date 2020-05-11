@@ -1012,6 +1012,54 @@ ol {
 	}
 } // @media only screen and (max-width: 480px) {
 
+/*      .qaItem
+/*-------------------------------------------*/
+.vk_faq { display:block; overflow:hidden;border-bottom:1px dotted #ccc; padding:0px 0px 25px; margin:25px 0px; width:100%; position: relative; }
+.vk_faq_title,
+.vk_faq_content {
+	border:none;padding-left: 35px;
+	&:before {
+		position: absolute;left:0;font-size:24px;line-height: 105%;
+	}
+}
+.vk_faq_title { margin-bottom:15px;font-size:18px;font-weight:700;
+  &:before { font-family:"areal";content:"Q ";color:#e50000; }
+}
+.vk_faq_content { margin:0px;
+  &:before { content:"A ";color:#337ab7;font-family: "" }
+}
+
+//*      .flowBox
+/*-------------------------------------------*/
+.vk_flow-arrow-on:after {
+  content:"";
+  background: url('../images/arrow_bottom.svg') center 50% no-repeat;
+  background-size: 50px 50px;
+  display:block; overflow:hidden;
+  height:50px;
+  width:50px;
+  margin:0 auto;
+}
+.vk_flow-arrow-off  { padding-bottom:0px; margin-bottom:30px; }
+.vk_flow-arrow-off:after {
+  content:"";font-size:0;background-image: none;
+}
+.vk_flow_frame {
+	display: flex;
+	padding:20px 25px; border:3px solid #e5e5e5;margin:0;
+	justify-content: space-between;
+}
+.vk_flow_frame_text  { display:block;overflow:hidden;margin:0;width:100%;box-sizing: border-box; }
+.vk_flow_frame_text_title,
+.vk_flow_frame_text_content { padding-left:0;border:none; }
+.vk_flow_frame_text_title { border-bottom:1px dotted #ccc; margin:0 0 10px;padding:0 0 5px; font-size:1.2em; }
+.vk_flow_frame_text_content { margin-bottom:0px; }
+.vk_flow_frame_image {
+	max-width:150px;
+	margin-left:15px;
+	box-sizing: border-box;
+}
+
 .vk_button {
 	margin: 5px 0;
 	text-align: center; /* テキストのみの時のセンター揃え */
@@ -1251,54 +1299,6 @@ $color_dark: #343a40;
 .btn.btn-outline-dark:focus {
 	background: $color_dark;
 	color: #fff;
-}
-
-/*      .qaItem
-/*-------------------------------------------*/
-.vk_faq { display:block; overflow:hidden;border-bottom:1px dotted #ccc; padding:0px 0px 25px; margin:25px 0px; width:100%; position: relative; }
-.vk_faq_title,
-.vk_faq_content {
-	border:none;padding-left: 35px;
-	&:before {
-		position: absolute;left:0;font-size:24px;line-height: 105%;
-	}
-}
-.vk_faq_title { margin-bottom:15px;font-size:18px;font-weight:700;
-  &:before { font-family:"areal";content:"Q ";color:#e50000; }
-}
-.vk_faq_content { margin:0px;
-  &:before { content:"A ";color:#337ab7;font-family: "" }
-}
-
-//*      .flowBox
-/*-------------------------------------------*/
-.vk_flow-arrow-on:after {
-  content:"";
-  background: url('../images/arrow_bottom.svg') center 50% no-repeat;
-  background-size: 50px 50px;
-  display:block; overflow:hidden;
-  height:50px;
-  width:50px;
-  margin:0 auto;
-}
-.vk_flow-arrow-off  { padding-bottom:0px; margin-bottom:30px; }
-.vk_flow-arrow-off:after {
-  content:"";font-size:0;background-image: none;
-}
-.vk_flow_frame {
-	display: flex;
-	padding:20px 25px; border:3px solid #e5e5e5;margin:0;
-	justify-content: space-between;
-}
-.vk_flow_frame_text  { display:block;overflow:hidden;margin:0;width:100%;box-sizing: border-box; }
-.vk_flow_frame_text_title,
-.vk_flow_frame_text_content { padding-left:0;border:none; }
-.vk_flow_frame_text_title { border-bottom:1px dotted #ccc; margin:0 0 10px;padding:0 0 5px; font-size:1.2em; }
-.vk_flow_frame_text_content { margin-bottom:0px; }
-.vk_flow_frame_image {
-	max-width:150px;
-	margin-left:15px;
-	box-sizing: border-box;
 }
 
 /*-------------------------------------------*/
@@ -1999,6 +1999,7 @@ $xl-min: 1200px;
 		}
 		.components-button.image-button {
 			margin: 0;
+			height: auto; //これがないとfirefoxの管理画面上でbutton内のimage画像が上にはみ出す
 		}
 	}
 } // .vk_prContent {
@@ -2306,14 +2307,6 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 /* CSS
 /*-------------------------------------------*/
 
-.vk_childPage {
-	margin-top: 2.5rem;
-}
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -2333,9 +2326,9 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
   }
 }
 
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
+.vk_childPage {
+	margin-top: 2.5rem;
+}
 
 /*-------------------------------------------*/
 /* CSS
@@ -2448,6 +2441,7 @@ $color-danger: #b52727;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -2515,141 +2509,147 @@ $color-danger: #b52727;
 $toc-left-margin: 1rem;
 
 .vk_tableOfContents {
-  margin-top: 3.5em;
-  margin-bottom: 3.5em;
-  position: relative;
-  &-style-default {
-    border: 3px solid rgba(0, 0, 0, 0.04);
-    box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 1);
-    background-color: rgba(0, 0, 0, 0.015);
-    padding: 2rem 3rem;
-  }
-  &_title {
-    text-align: center;
-    font-size: 1.2em;
-    letter-spacing: 0.5em;
-    margin-left: 0.5em;
-  }
-  li {
-    margin: 0;
-  }
-  &_list {
-    padding: 0;
-    margin: 0;
-    &_item {
-      list-style: none;
-      border-bottom: 1px solid #e5e5e5;
-      padding: 0.8rem 0;
-      &-h-2 {
-        // padding-left:$toc-left-margin;
-      }
-      &-h-3 {
-        padding-left: $toc-left-margin * 1;
-      }
-      &-h-4 {
-        padding-left: $toc-left-margin * 2;
-      }
-      &-h-5 {
-        padding-left: $toc-left-margin * 3;
-      }
-      &-h-6 {
-        padding-left: $toc-left-margin * 4;
-      }
-      &_link {
-        color: #333;
-        border-bottom: 1px solid #ccc;
-        &:hover {
-          text-decoration: none;
-          border-bottom: none;
-        }
-      }
-    }
-  }
-  input {
-    position: absolute;
-    opacity: 0;
-    z-index: -1;
-  }
-  &_openCloseBtn {
-    cursor: pointer;
-    font-size: 0.8em;
-    letter-spacing: 2px;
-    line-height: 1;
-    text-align: center;
-    display: block;
-    margin: 0.5em auto 0;
-    width: 6em;
-    border: 1px solid #999;
-    padding: 3px 1em 2px;
-  }
-  .button_status-open {
-    &::before {
-      content: "CLOSE";
-    }
-  }
-  .button_status-close {
-    &::before {
-      content: "OPEN";
-    }
-  }
-  .button_status {
-    &::before {
-      color: #666;
-      font-size: 0.8em;
+	margin-top: 3.5em;
+	margin-bottom: 3.5em;
+	position: relative;
+	&-style-default {
+		border: 3px solid rgba(0, 0, 0, 0.04);
+		box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 1);
+		background-color: rgba(0, 0, 0, 0.015);
+		padding: 2rem 1.5rem;
+		@media (min-width: 576px) {
+			padding: 2rem 3rem;
+		}
+	}
+	&_title {
+		text-align: center;
+		font-size: 1.2em;
+		letter-spacing: 0.5em;
+		margin-left: 0.5em;
+	}
+	li {
+		margin: 0;
+	}
+	&_list {
+		padding: 0;
+		margin: 0;
+		&_item {
+			list-style: none;
+			border-bottom: 1px solid #e5e5e5;
+			padding: 0.8rem 0;
+			&-h-2 {
+				// padding-left:$toc-left-margin;
+			}
+			&-h-3 {
+				padding-left: $toc-left-margin * 1;
+			}
+			&-h-4 {
+				padding-left: $toc-left-margin * 2;
+			}
+			&-h-5 {
+				padding-left: $toc-left-margin * 3;
+			}
+			&-h-6 {
+				padding-left: $toc-left-margin * 4;
+			}
+			&_link {
+				color: #333;
+				border-bottom: 1px solid #ccc;
+				&:hover {
+					text-decoration: none;
+					border-bottom: none;
+				}
+			}
+		}
+	}
+	input {
+		position: absolute;
+		opacity: 0;
+		z-index: -1;
+	}
+	&_openCloseBtn {
+		cursor: pointer;
+		font-size: 0.8em;
+		letter-spacing: 2px;
+		line-height: 1;
+		text-align: center;
+		display: block;
+		margin: 0.5em auto 0;
+		width: 6em;
+		border: 1px solid #999;
+		padding: 3px 1em 2px;
+	}
+	.button_status-open {
+		&::before {
+			content: "CLOSE";
+		}
+	}
+	.button_status-close {
+		&::before {
+			content: "OPEN";
+		}
+	}
+	.button_status {
+		&::before {
+			color: #666;
+			font-size: 0.8em;
 
-      border-radius: 2px;
-      display: inline-block;
-      text-align: center;
-      margin: auto;
-      width: auto;
-      transition: all 0.35s;
-    }
-  }
-  /* Accordion styles */
-  .tab {
-    width: 100%;
-    overflow: hidden;
-    &_content-open {
-      max-height: 100vh;
-      padding: 1em;
-      transition: all 0.35s;
-    }
-    &_content-close {
-      max-height: 0;
-      padding: 0 1em;
-      transition: all 0.35s;
-    }
-    &-close {
-      display: flex;
-      justify-content: flex-end;
-      padding: 1em;
-      font-size: 0.75em;
-      cursor: pointer;
-    }
-  }
-  // :checked
-  input:checked {
-    ~ .button_status-open {
-      &::before {
-        content: "OPEN";
-      }
-    }
-    ~ .button_status-close {
-      &::before {
-        content: "CLOSE";
-      }
-    }
-    ~ .tab_content-open {
-      max-height: 0;
-      padding: 0 1em;
-    }
-    ~ .tab_content-close {
-      max-height: 100vh;
-      padding: 1em;
-    }
-  }
+			border-radius: 2px;
+			display: inline-block;
+			text-align: center;
+			margin: auto;
+			width: auto;
+			transition: all 0.35s;
+		}
+	}
+	/* Accordion styles */
+	.tab {
+		width: 100%;
+		overflow: hidden;
+		&_content-open {
+			max-height: 100vh;
+			padding: 1em;
+			transition: all 0.35s;
+		}
+		&_content-close {
+			max-height: 0;
+			padding: 0 1em;
+			transition: all 0.35s;
+		}
+		&-close {
+			display: flex;
+			justify-content: flex-end;
+			padding: 1em;
+			font-size: 0.75em;
+			cursor: pointer;
+		}
+	}
+	// :checked
+	input:checked {
+		~ .button_status-open {
+			&::before {
+				content: "OPEN";
+			}
+		}
+		~ .button_status-close {
+			&::before {
+				content: "CLOSE";
+			}
+		}
+		~ .tab_content-open {
+			max-height: 0;
+			padding: 0 1em;
+		}
+		~ .tab_content-close {
+			max-height: 100vh;
+			padding: 1em;
+		}
+	}
 }
 
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/

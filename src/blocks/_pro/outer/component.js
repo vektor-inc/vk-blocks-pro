@@ -23,7 +23,7 @@ export const OuterBlock = (props) => {
 	} = props.attributes;
 
 	const { clientId } = props;
-	let className = props.className;
+	const className = props.className;
 	const for_ = props.for_;
 	let classPaddingLR;
 	let classPaddingVertical;
@@ -94,7 +94,7 @@ export const OuterBlock = (props) => {
 		borderRadiusProperty = `0px`;
 	}
 
-	let defaultProps = {
+	const defaultProps = {
 		clientId,
 		anchor,
 		className,
@@ -117,8 +117,8 @@ export const OuterBlock = (props) => {
 
 	return (
 		<Fragment>
-			<GenerateMediaqueryCss {...props} />
-			<OuterBlockInner {...defaultProps} />
+			<GenerateMediaqueryCss { ...props } />
+			<OuterBlockInner { ...defaultProps } />
 		</Fragment>
 	);
 };
@@ -151,33 +151,33 @@ const GenerateMediaqueryCss = (props) => {
 	//moible only
 	if (bgImageMobile && !bgImageTablet && !bgImage) {
 		return (
-			<style>{`.vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})}!important;`}</style>
+			<style>{ `.vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})}!important;` }</style>
 		);
 	}
 	//tablet only
 	if (!bgImageMobile && bgImageTablet && !bgImage) {
 		return (
-			<style>{`.vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})}!important;`}</style>
+			<style>{ `.vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})}!important;` }</style>
 		);
 	}
 	//pc only
 	if (!bgImageMobile && !bgImageTablet && bgImage) {
 		return (
-			<style>{`.vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})}!important;`}</style>
+			<style>{ `.vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})}!important;` }</style>
 		);
 	}
 	//pc -mobile
 	if (bgImageMobile && !bgImageTablet && bgImage) {
 		return (
 			<style>
-				{`
+				{ `
           @media screen and (${underPcViewport}) {
             .vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})}!important;
           }
           @media screen and (${pcViewport}) {
             .vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})}!important;
           }
-          `}
+          ` }
 			</style>
 		);
 	}
@@ -185,14 +185,14 @@ const GenerateMediaqueryCss = (props) => {
 	if (!bgImageMobile && bgImageTablet && bgImage) {
 		return (
 			<style>
-				{`
+				{ `
           @media screen and (${underPcViewport}) {
             .vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})}!important;
           }
           @media screen and (${pcViewport}) {
             .vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})}!important;
           }
-          `}
+          ` }
 			</style>
 		);
 	}
@@ -200,14 +200,14 @@ const GenerateMediaqueryCss = (props) => {
 	if (bgImageMobile && bgImageTablet && !bgImage) {
 		return (
 			<style>
-				{`
+				{ `
           @media screen and (${mobileViewport}) {
             .vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})}!important;
           }
           @media screen and (${tabletViewport}) {
             .vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})}!important;
           }
-        `}
+        ` }
 			</style>
 		);
 	}
@@ -215,7 +215,7 @@ const GenerateMediaqueryCss = (props) => {
 	if (bgImageMobile && bgImageTablet && bgImage) {
 		return (
 			<style>
-				{`
+				{ `
         @media screen and (${mobileViewport}) {
           .vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})}!important;
         }
@@ -225,14 +225,14 @@ const GenerateMediaqueryCss = (props) => {
         @media screen and (${pcViewport}) {
           .vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})}!important;
         }
-        `}
+        ` }
 			</style>
 		);
 	}
 	//no background image
 	if (!bgImageMobile && !bgImageTablet && !bgImage) {
 		return (
-			<style>{`.vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity})}!important;`}</style>
+			<style>{ `.vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity})}!important;` }</style>
 		);
 	}
 };
@@ -262,7 +262,7 @@ const OuterBlockInner = (props) => {
 	return (
 		<Fragment>
 			<div
-				id={anchor}
+				id={ anchor }
 				className={
 					"vkb-outer-" +
 					clientId +
@@ -274,24 +274,24 @@ const OuterBlockInner = (props) => {
 					classPaddingVertical +
 					classBgPosition
 				}
-				style={{
+				style={ {
 					border: borderProperty,
 					borderRadius: borderRadiusProperty,
-				}}
+				} }
 			>
-				{componentDivider(
+				{ componentDivider(
 					upper_level,
 					upperDividerBgColor,
 					whichSideUpper,
 					dividerType
-				)}
-				<div className={containerClass}>{elm}</div>
-				{componentDivider(
+				) }
+				<div className={ containerClass }>{ elm }</div>
+				{ componentDivider(
 					lower_level,
 					lowerDividerBgColor,
 					whichSideLower,
 					dividerType
-				)}
+				) }
 			</div>
 		</Fragment>
 	);

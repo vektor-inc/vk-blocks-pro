@@ -1012,6 +1012,23 @@ ol {
 	}
 } // @media only screen and (max-width: 480px) {
 
+/*      .qaItem
+/*-------------------------------------------*/
+.vk_faq { display:block; overflow:hidden;border-bottom:1px dotted #ccc; padding:0px 0px 25px; margin:25px 0px; width:100%; position: relative; }
+.vk_faq_title,
+.vk_faq_content {
+	border:none;padding-left: 35px;
+	&:before {
+		position: absolute;left:0;font-size:24px;line-height: 105%;
+	}
+}
+.vk_faq_title { margin-bottom:15px;font-size:18px;font-weight:700;
+  &:before { font-family:"areal";content:"Q ";color:#e50000; }
+}
+.vk_faq_content { margin:0px;
+  &:before { content:"A ";color:#337ab7;font-family: "" }
+}
+
 .vk_button {
 	margin: 5px 0;
 	text-align: center; /* テキストのみの時のセンター揃え */
@@ -1253,23 +1270,6 @@ $color_dark: #343a40;
 	color: #fff;
 }
 
-/*      .qaItem
-/*-------------------------------------------*/
-.vk_faq { display:block; overflow:hidden;border-bottom:1px dotted #ccc; padding:0px 0px 25px; margin:25px 0px; width:100%; position: relative; }
-.vk_faq_title,
-.vk_faq_content {
-	border:none;padding-left: 35px;
-	&:before {
-		position: absolute;left:0;font-size:24px;line-height: 105%;
-	}
-}
-.vk_faq_title { margin-bottom:15px;font-size:18px;font-weight:700;
-  &:before { font-family:"areal";content:"Q ";color:#e50000; }
-}
-.vk_faq_content { margin:0px;
-  &:before { content:"A ";color:#337ab7;font-family: "" }
-}
-
 //*      .flowBox
 /*-------------------------------------------*/
 .vk_flow-arrow-on:after {
@@ -1299,39 +1299,6 @@ $color_dark: #343a40;
 	max-width:150px;
 	margin-left:15px;
 	box-sizing: border-box;
-}
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-@mixin reset() {
-	background: none;
-	border:none;
-	border-radius: 0;
-	padding:0;
-	font-weight: normal;
-	box-shadow:none;
-	&:after {
-		content:none;
-		border:none;
-	}
-	&:before{
-		content:none;
-	}
-}
-
-// .vk_heading は指定が強い要素（ Charm ）も消すために必要
-.vk_heading.vk_heading-style-plain {
-	.vk_heading_title {
-		@include reset;
-		&:after {
-			@include reset;
-		}
-	}
-}
-
-.vk_heading_subtext {
-	margin-bottom:0;
 }
 
 //管理画面側の見出しブロックのスタイルのcssになります。
@@ -1796,6 +1763,39 @@ $color_key: #337ab7;
 	} //.is-style-vk-heading
 } //.editor-block-list__block
 
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+@mixin reset() {
+	background: none;
+	border:none;
+	border-radius: 0;
+	padding:0;
+	font-weight: normal;
+	box-shadow:none;
+	&:after {
+		content:none;
+		border:none;
+	}
+	&:before{
+		content:none;
+	}
+}
+
+// .vk_heading は指定が強い要素（ Charm ）も消すために必要
+.vk_heading.vk_heading-style-plain {
+	.vk_heading_title {
+		@include reset;
+		&:after {
+			@include reset;
+		}
+	}
+}
+
+.vk_heading_subtext {
+	margin-bottom:0;
+}
+
 $xs-max: 575.98px;
 $sm-max: 767.98px;
 $md-max: 991.98px;
@@ -2124,6 +2124,14 @@ $xl-min: 1200px;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+.vk_table-col-overflow {
+  white-space: nowrap !important;
+}
+/*# sourceMappingURL=style.scss.map */
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 	"Hiragino Mincho Pro", "serif";
 
@@ -2298,18 +2306,6 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-.vk_table-col-overflow {
-  white-space: nowrap !important;
-}
-/*# sourceMappingURL=style.scss.map */
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
 
 /*-------------------------------------------*/
 /* CSS
@@ -2325,6 +2321,10 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
     }
   }
 }
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 
 .vk_childPage {
 	margin-top: 2.5rem;
@@ -2506,6 +2506,9 @@ $color-danger: #b52727;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 $toc-left-margin: 1rem;
 
 .vk_tableOfContents {
@@ -2646,9 +2649,6 @@ $toc-left-margin: 1rem;
 	}
 }
 
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/

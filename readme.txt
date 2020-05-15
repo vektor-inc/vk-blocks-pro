@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.4.1
-Stable tag: 0.27.4
+Stable tag: 0.27.5
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -57,6 +57,9 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.27.5 =
+[ bug fix ][ Step (pro) ] When add inner block that real time step number bug fix.
 
 = 0.27.4 =
 [ bug fix ][ Post List(pro) ] Additional class name not reflected bug fix

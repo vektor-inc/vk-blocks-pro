@@ -58,6 +58,10 @@ e.g.
 
 == Changelog ==
 
+= 0.28.0 =
+[ bug fix ][ toc (pro) ] close toc block bug fix
+[ Add function ][ Child Page List (pro) ] function of exclude this page.
+
 = 0.27.5 =
 [ bug fix ][ Step (pro) ] When add inner block that real time step number bug fix.
 

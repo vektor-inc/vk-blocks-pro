@@ -26,26 +26,25 @@ const BlockIcon = (
   </svg>
 );
 
-const { registerBlockType } = wp.blocks;
-const { __ } = wp.i18n;
-const { PanelBody, BaseControl, SelectControl } = wp.components;
-const { Fragment } = wp.element;
+const { registerBlockType } = wp.blocks
+const { __ } = wp.i18n
+const { PanelBody, BaseControl, SelectControl, CheckboxControl } = wp.components
+const { Fragment } = wp.element
 const { InspectorControls } =
-  wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
-const { withSelect, select } = wp.data;
-import { depServerSideRender } from "../../_helper/depModules";
-const ServerSideRender = depServerSideRender();
-import { schema } from "./schema";
-import { DisplayItemsControl } from "../../../components/display-items-control";
-import { ColumnLayoutControl } from "../../../components/column-layout-control";
+  wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor
+const { withSelect, select } = wp.data
+import { depServerSideRender } from "../../_helper/depModules"
+const ServerSideRender = depServerSideRender()
+import { schema } from "./schema"
+import { DisplayItemsControl } from "../../../components/display-items-control"
+import { ColumnLayoutControl } from "../../../components/column-layout-control"
 import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
-const inserterVisible = hiddenNewBlock(5.3);
+const inserterVisible = hiddenNewBlock(5.3)
 
 registerBlockType("vk-blocks/child-page", {
-  // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-  title: __("Child page list", "vk-blocks"), // Block title.
-  icon: BlockIcon, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
-  category: "vk-blocks-cat", // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
+  title: __("Child page list", "vk-blocks"),
+  icon: BlockIcon,
+  category: "vk-blocks-cat",
   attributes: schema,
   supports: {
     inserter: inserterVisible
@@ -60,8 +59,8 @@ registerBlockType("vk-blocks/child-page", {
     };
   })((props) => {
     const { setAttributes, attributes, postTypes, name } = props;
-    const { selectId } = attributes;
-    attributes["name"] = name;
+    const { selectId, selfIgnore } = attributes
+    attributes["name"] = name
     return (
       <Fragment>
         <InspectorControls>
@@ -76,6 +75,13 @@ registerBlockType("vk-blocks/child-page", {
                   setAttributes({ selectId: parseInt(value, 10) })
                 }
                 options={renderPages(postTypes, props)}
+              />
+            </BaseControl>
+            <BaseControl>
+              <CheckboxControl
+                label={__("Ignore this post", "vk-blocks")}
+                checked={selfIgnore}
+                onChange={(v) => setAttributes({ selfIgnore: v })}
               />
             </BaseControl>
           </PanelBody>
@@ -99,13 +105,9 @@ export const renderPages = (postTypes, props) => {
   const { selectId } = attributes;
 
   if (postTypes) {
-    //隕ｪ繝壹�繧ｸ繧呈歓蜃ｺ
     let parents = filterParents(postTypes);
-
-    //蟄舌�繝ｼ繧ｸ繧呈歓蜃ｺ
     let children = filterChildren(postTypes);
 
-    //隕ｪ繝壹�繧ｸ縺ｮ逶ｴ蠕後↓蟄舌�繝ｼ繧ｸ縺梧諺蜈･縺輔ｌ縺滄�蛻励ｒ逕滓�
     children.forEach((child) => {
       const index = parents.findIndex((parent) => parent.id === child.parent);
       if (index !== -1) {
@@ -115,10 +117,8 @@ export const renderPages = (postTypes, props) => {
       }
     });
 
-    //鬆�分繧貞渚蟇ｾ縺ｫ
     parents.reverse();
 
-    //繝励Ν繝繧ｦ繝ｳ繝｡繝九Η繝ｼ逕ｨ縺ｫ繝輔か繝ｼ繝槭ャ繝�
     let formated = formatPulldonwOrder(parents);
 
     let defaultOption = [
@@ -132,14 +132,12 @@ export const renderPages = (postTypes, props) => {
       (page) => page.id === currentPageId
     );
 
-    //譁ｰ隕上�繝ｼ繧ｸ縺ｫ繝悶Ο繝�け霑ｽ蜉�譎� or 譌｢蟄倥�繝ｼ繧ｸ縺ｫ繝悶Ο繝�け霑ｽ蜉�譎�
     if (
       (isCurrentPageCreated === undefined && selectId === undefined) ||
       selectId === undefined ||
       (isCurrentPageCreated === undefined && currentPageId === selectId)
     ) {
       setAttributes({ selectId: currentPageId });
-      //繝�ヵ繧ｩ繝ｫ繝医が繝励す繝ｧ繝ｳ
       defaultOption = [
         {
           value: currentPageId,

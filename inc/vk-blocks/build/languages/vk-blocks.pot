@@ -99,21 +99,26 @@ msgstr ""
 msgid "Exsist Already Page"
 msgstr ""
 
-#: src/blocks/_pro/child-page/block.js:146
+#: src/blocks/_pro/child-page/block.js:144
 msgid "Current Page"
 msgstr ""
 
-#: src/blocks/_pro/child-page/block.js:46
+#: src/blocks/_pro/child-page/block.js:45
 msgid "Child page list"
 msgstr ""
 
-#: src/blocks/_pro/child-page/block.js:69
+#: src/blocks/_pro/child-page/block.js:68
 #: src/blocks/_pro/post-list/block.js:109
 msgid "Display conditions"
 msgstr ""
 
-#: src/blocks/_pro/child-page/block.js:72
+#: src/blocks/_pro/child-page/block.js:71
 msgid "Parent"
+msgstr ""
+
+#: src/blocks/_pro/child-page/block.js:82
+#: src/blocks/_pro/post-list/block.js:159
+msgid "Ignore this post"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:101
@@ -339,10 +344,6 @@ msgstr ""
 
 #: src/blocks/_pro/post-list/block.js:149
 msgid "offset"
-msgstr ""
-
-#: src/blocks/_pro/post-list/block.js:159
-msgid "Ignore this post"
 msgstr ""
 
 #: src/blocks/_pro/post-list/block.js:71

@@ -99,21 +99,26 @@ msgstr ""
 msgid "Exsist Already Page"
 msgstr ""
 
-#: src/blocks/_pro/child-page/block.js:146
+#: src/blocks/_pro/child-page/block.js:144
 msgid "Current Page"
 msgstr ""
 
-#: src/blocks/_pro/child-page/block.js:46
+#: src/blocks/_pro/child-page/block.js:45
 msgid "Child page list"
 msgstr ""
 
-#: src/blocks/_pro/child-page/block.js:69
+#: src/blocks/_pro/child-page/block.js:68
 #: src/blocks/_pro/post-list/block.js:109
 msgid "Display conditions"
 msgstr ""
 
-#: src/blocks/_pro/child-page/block.js:72
+#: src/blocks/_pro/child-page/block.js:71
 msgid "Parent"
+msgstr ""
+
+#: src/blocks/_pro/child-page/block.js:82
+#: src/blocks/_pro/post-list/block.js:159
+msgid "Ignore this post"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:101
@@ -252,14 +257,14 @@ msgid "Border type"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:306
-#: src/blocks/_pro/step-item/block.js:99
+#: src/blocks/_pro/step-item/block.js:98
 #: src/blocks/_pro/timeline-item/block.js:103
 #: src/blocks/staff/block.js:88
 msgid "None"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:310
-#: src/blocks/_pro/step-item/block.js:76
+#: src/blocks/_pro/step-item/block.js:75
 #: src/blocks/_pro/timeline-item/block.js:84
 #: src/blocks/group-style/block.js:95
 #: src/blocks/pr-content/block.js:168
@@ -341,49 +346,45 @@ msgstr ""
 msgid "offset"
 msgstr ""
 
-#: src/blocks/_pro/post-list/block.js:159
-msgid "Ignore this post"
-msgstr ""
-
 #: src/blocks/_pro/post-list/block.js:71
 msgid "Post list"
 msgstr ""
 
-#: src/blocks/_pro/step-item/block.js:20
+#: src/blocks/_pro/step-item/block.js:19
 msgid "Step Item"
 msgstr ""
 
-#: src/blocks/_pro/step-item/block.js:37
+#: src/blocks/_pro/step-item/block.js:36
 msgid "Step Mark"
 msgstr ""
 
-#: src/blocks/_pro/step-item/block.js:40
+#: src/blocks/_pro/step-item/block.js:39
 msgid "If FontAwesome class entered, it will overrides the number."
 msgstr ""
 
-#: src/blocks/_pro/step-item/block.js:54
+#: src/blocks/_pro/step-item/block.js:53
 #: src/blocks/_pro/timeline-item/block.js:60
 msgid "Ex,6:00AM"
 msgstr ""
 
-#: src/blocks/_pro/step-item/block.js:59
+#: src/blocks/_pro/step-item/block.js:58
 #: src/blocks/_pro/timeline-item/block.js:63
 #: src/blocks/staff/block.js:103
 msgid "Color"
 msgstr ""
 
-#: src/blocks/_pro/step-item/block.js:65
+#: src/blocks/_pro/step-item/block.js:64
 #: src/blocks/_pro/table-of-contents/block.js:50
 #: src/blocks/_pro/timeline-item/block.js:69
 msgid "Style"
 msgstr ""
 
-#: src/blocks/_pro/step-item/block.js:80
+#: src/blocks/_pro/step-item/block.js:79
 #: src/blocks/_pro/timeline-item/block.js:80
 msgid "Outlined"
 msgstr ""
 
-#: src/blocks/_pro/step-item/block.js:95
+#: src/blocks/_pro/step-item/block.js:94
 #: src/blocks/_pro/table-of-contents/block.js:57
 #: src/blocks/_pro/timeline-item/block.js:99
 #: src/blocks/heading-style/block.js:33
@@ -393,12 +394,12 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: src/blocks/_pro/step/block.js:132
-msgid "First Dot Number"
+#: src/blocks/_pro/step/block.js:54
+msgid "Step"
 msgstr ""
 
-#: src/blocks/_pro/step/block.js:62
-msgid "Step"
+#: src/blocks/_pro/step/block.js:97
+msgid "First Dot Number"
 msgstr ""
 
 #: src/blocks/_pro/table-of-contents/block.js:36

@@ -1,4 +1,5 @@
-const { InnerBlocks } = wp.editor;
+import { vkbBlockEditor } from "./../../_helper/depModules";
+const { InnerBlocks } = vkbBlockEditor;
 const { __ } = wp.i18n; // Import __() from wp.i18n
 import { convertToGrid } from "../../_helper/convert-to-grid";
 import React from "react";

@@ -3,8 +3,8 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
-Tested up to: 5.4.0
-Stable tag: 0.26.9
+Tested up to: 5.4.1
+Stable tag: 0.28.0
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -58,6 +58,35 @@ e.g.
 
 == Changelog ==
 
+= 0.28.1 =
+[ bug fix ][ toc (pro) ] Marker tag error fix
+
+= 0.28.0 =
+[ bug fix ][ toc (pro) ] close toc block bug fix
+[ Add function ][ Child Page List (pro) ] function of exclude this page.
+
+= 0.27.5 =
+[ bug fix ][ Step (pro) ] When add inner block that real time step number bug fix.
+
+= 0.27.4 =
+[ bug fix ][ Post List(pro) ] Additional class name not reflected bug fix
+
+= 0.27.3 =
+build only
+
+= 0.27.2 =
+[ bug fix ][ Outer(pro) ] when reset border that block breaks
+[ bug fix ][ Table Of Content(pro) ] Can't all display title
+
+= 0.27.1 =
+[ bug fix ][ PR Content ] Layout bug fix on firefox
+[ Design tuning ][ Table of content(pro) ] Padding tuning
+
+= 0.27.0 =
+[ Add function ][ Outer(pro) ] Responsible background image
+[ Specification change ][ staff ] Change title size
+[ Specification change ][ Responsible Spacer ] Display dottline in edit screen
+ 
 = 0.26.9 =
 [ bug fix ][ Card(pro) ] column bug fix at edit screen
 

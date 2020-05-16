@@ -16,23 +16,30 @@ import BlockIcon from "./icon.svg";
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const {
-  ServerSideRender,
   PanelBody,
   SelectControl,
   BaseControl,
 } = wp.components;
+import { depServerSideRender } from "../../_helper/depModules";
+const ServerSideRender = depServerSideRender();
 const { Fragment } = wp.element;
-const { InspectorControls } =
-  wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
+import { vkbBlockEditor } from "../../_helper/depModules";
+const { InspectorControls } = vkbBlockEditor;
 const { addFilter } = wp.hooks;
 const { createHigherOrderComponent } = wp.compose;
 const { dispatch } = wp.data;
+import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
+const inserterVisible = hiddenNewBlock(5.3);
+
 
 registerBlockType("vk-blocks/table-of-contents", {
   title: __("Table of Contents", "vk-blocks"),
   icon: <BlockIcon />,
   category: "vk-blocks-cat",
   attributes: schema,
+  supports: {
+    inserter: inserterVisible
+  },
 
   edit({ attributes, setAttributes }) {
     const { style, open } = attributes;
@@ -105,7 +112,7 @@ const getHeadings = (props) => {
     const tocClientId = tocs[0] ? tocs[0].clientId : "";
     const tocAttributes = tocs[0] ? tocs[0].attributes : "";
 
-    const { updateBlockAttributes } = dispatch("core/editor");
+    const { updateBlockAttributes } = dispatch("core/block-editor") ? dispatch("core/block-editor") : dispatch("core/editor");
     if (
       anchor === undefined &&
       isAllowedBlock(name, headingList) != undefined
@@ -137,8 +144,10 @@ const updateTableOfContents = createHigherOrderComponent((BlockListBlock) => {
   };
 }, "updateTableOfContents");
 
-addFilter(
-  "editor.BlockListBlock",
-  "vk-blocks/table-of-contents",
-  updateTableOfContents
-);
+if (5.3 <= parseFloat(wpVersion)) {
+  addFilter(
+    "editor.BlockListBlock",
+    "vk-blocks/table-of-contents",
+    updateTableOfContents
+  );
+}

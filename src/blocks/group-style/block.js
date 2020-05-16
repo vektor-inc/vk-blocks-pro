@@ -3,14 +3,14 @@
  *
  */
 import { convertColorClass } from "../_helper/color-code-to-class.js";
+import { vkbBlockEditor } from "./../_helper/depModules";
 
 const { assign } = lodash;
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 const { addFilter } = wp.hooks;
 const { PanelBody } = wp.components;
-const { InspectorControls, ColorPalette } =
-  wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
+const { InspectorControls, ColorPalette } = vkbBlockEditor;
 
 const { createHigherOrderComponent } = wp.compose;
 
@@ -62,7 +62,7 @@ export const addBlockControl = createHigherOrderComponent(BlockEdit => {
 
                     inputClassName = inputClassName.split(" ");
 
-                    let filterClassName = inputClassName.filter(function(name) {
+                    let filterClassName = inputClassName.filter(function (name) {
                       return -1 === name.indexOf("vk-has-");
                     });
 

@@ -1,9 +1,7 @@
-import React from 'react';
-
-export class NewComponent extends React.Component {
+const { Component } = wp.element;
+export class NewComponent extends Component {
 
     render() {
-
         let {
             heading,
             content,

@@ -58,6 +58,9 @@ e.g.
 
 == Changelog ==
 
+= 0.28.1 =
+[ bug fix ][ toc (pro) ] Marker tag error fix
+
 = 0.28.0 =
 [ bug fix ][ toc (pro) ] close toc block bug fix
 [ Add function ][ Child Page List (pro) ] function of exclude this page.

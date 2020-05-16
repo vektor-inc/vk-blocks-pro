@@ -161,7 +161,7 @@ export const returnHtml = (source, attributes, className, open) => {
 			className={ `${baseClass}_link` }
           >
 			<span className={ `${baseClass}_link_preNumber` }>{ preNumber }</span>
-			{ content }
+			{ content.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g,'') }
 		</a>
 	</li>
       );

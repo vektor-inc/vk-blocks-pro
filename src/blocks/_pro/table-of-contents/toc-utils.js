@@ -147,9 +147,14 @@ export const returnHtml = (source, attributes, className, open) => {
 
       preNumber = preNumber + ". ";
 
-      const content = data.attributes.content
+      let content = data.attributes.content
         ? data.attributes.content
-        : data.attributes.title;
+		: data.attributes.title;
+
+		// この条件分岐がないと見出し配置して文字列が undefinedの時にreplace対象がなくてエディタがクラッシュする 
+		if ( content ){
+			content = content.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g,'');
+		}
 
       return (
 	<li

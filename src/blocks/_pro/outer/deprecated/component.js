@@ -1,6 +1,6 @@
 import { componentDivider } from "./component-divider";
-
-const { InnerBlocks } = wp.editor;
+import { vkbBlockEditor } from "./../../../_helper/depModules";
+const { InnerBlocks } = vkbBlockEditor;
 const { Component } = wp.element;
 
 //hexカラーコード定義をrgbaに変換

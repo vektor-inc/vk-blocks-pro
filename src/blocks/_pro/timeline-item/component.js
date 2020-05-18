@@ -1,5 +1,6 @@
-const {InnerBlocks} = wp.editor;
-const {__} = wp.i18n; // Import __() from wp.i18n
+import { vkbBlockEditor } from "./../../_helper/depModules";
+const { InnerBlocks } = vkbBlockEditor;
+const { __ } = wp.i18n; // Import __() from wp.i18n
 
 export class Component extends React.Component {
     render() {
@@ -17,26 +18,26 @@ export class Component extends React.Component {
         let styleLineClass;
         let inlineStyle;
         let marker;
-        const TEMPLATE = [['core/heading', {level: 4}]];
+        const TEMPLATE = [['core/heading', { level: 4 }]];
 
         //編集画面とサイト上の切り替え
         if (for_ === "edit") {
-            elm = <InnerBlocks template={TEMPLATE}/>;
+            elm = <InnerBlocks template={TEMPLATE} />;
         } else if ("save") {
-            elm = <InnerBlocks.Content/>;
+            elm = <InnerBlocks.Content />;
         }
 
         if (style === "solid") {
             styleClass = ' vk_timeline_item_style-default';
-            inlineStyle = {backgroundColor:`${color}`};
-        }else if(style === "outlined"){
+            inlineStyle = { backgroundColor: `${color}` };
+        } else if (style === "outlined") {
             styleClass = ' vk_timeline_item_style-outlined'
-            inlineStyle = {border:`3px solid ${color}`};
+            inlineStyle = { border: `3px solid ${color}` };
         }
 
         if (styleLine === "default") {
             styleLineClass = ' vk_timeline_item_lineStyle-default';
-        }else if(styleLine === "none"){
+        } else if (styleLine === "none") {
             styleLineClass = ' vk_timeline_item_lineStyle-none'
         }
 

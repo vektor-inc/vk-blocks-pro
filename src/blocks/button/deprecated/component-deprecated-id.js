@@ -1,6 +1,6 @@
-import React from 'react';
+const { Component } = wp.element;
 
-export class ComponentDeprecatedId extends React.Component {
+export class VKBButtonDeprecatedId extends Component {
 
     render() {
 
@@ -33,7 +33,7 @@ export class ComponentDeprecatedId extends React.Component {
                     backgroundColor: buttonColorCustom,
                     border: `1px solid ${buttonColorCustom}`
                 };
-            // 塗りなし
+                // 塗りなし
             } else if (buttonType === '1') {
                 aStyle = {
                     backgroundColor: 'transparent',
@@ -42,14 +42,14 @@ export class ComponentDeprecatedId extends React.Component {
                 };
             }
 
-				// カスタムカラーじゃない場合
+            // カスタムカラーじゃない場合
         } else if (!buttonColorCustom) {
 
             // 塗り
             if (buttonType === '0') {
                 aClass = `${aClass} btn-${buttonSize} btn-${buttonColor}`;
                 aStyle = null;
-            // 塗りなし
+                // 塗りなし
             } else if (buttonType === '1') {
                 aClass = `${aClass} btn-${buttonSize} btn-outline-${buttonColor}`;
                 aStyle = null;
@@ -57,34 +57,34 @@ export class ComponentDeprecatedId extends React.Component {
 
         }
 
-        if ( buttonAlign === 'block' ){
-        	aClass = `${aClass} btn-block`;
+        if (buttonAlign === 'block') {
+            aClass = `${aClass} btn-block`;
         }
 
 
 
         if (fontAwesomeIconBefore) {
-            iconBefore = <i className={`${fontAwesomeIconBefore} vk_button_link_before`}></i> ;
+            iconBefore = <i className={`${fontAwesomeIconBefore} vk_button_link_before`}></i>;
         }
         if (fontAwesomeIconAfter) {
             iconAfter = <i className={`${fontAwesomeIconAfter} vk_button_link_after`}></i>;
         }
 
         return (
-                <a
-                    href={buttonUrl}
-                    id={'vk_button_link'}
-                    className={aClass}
-                    role={'button'}
-                    aria-pressed={true}
-                    style={aStyle}
-                    target={buttonTarget? '_blank':null}
-                >
-                    {iconBefore}
-                    {richText}
-                    {iconAfter}
+            <a
+                href={buttonUrl}
+                id={'vk_button_link'}
+                className={aClass}
+                role={'button'}
+                aria-pressed={true}
+                style={aStyle}
+                target={buttonTarget ? '_blank' : null}
+            >
+                {iconBefore}
+                {richText}
+                {iconAfter}
 
-                </a>
+            </a>
         );
     }
 }

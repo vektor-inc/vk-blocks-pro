@@ -2,76 +2,85 @@
  * Alert block type
  *
  */
-import {deprecated} from './deprecated';
+import { deprecated } from './deprecated';
+import { vkbBlockEditor } from "./../_helper/depModules";
 
-const {__} = wp.i18n; // Import __() from wp.i18n
+const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const {RichText} = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
+const { PanelBody, SelectControl } = wp.components;
+const { InspectorControls, RichText } = vkbBlockEditor;
+const { Fragment } = wp.element;
 
 
-registerBlockType( 'vk-blocks/alert', {
+registerBlockType('vk-blocks/alert', {
 
-  title: __('Alert', 'vk-blocks'),
+	title: __('Alert', 'vk-blocks'),
 
-  icon: 'info',
+	icon: 'info',
 
-  category: 'vk-blocks-cat',
+	category: 'vk-blocks-cat',
 
-  attributes: {
-    style: {
-      type: 'string',
-      default: 'info',
-    },
-    content: {
-        type: 'string',
-        source: 'html',
-        selector: 'p',
-    }
-  },
+	attributes: {
+		style: {
+			type: 'string',
+			default: 'info',
+		},
+		content: {
+			type: 'string',
+			source: 'html',
+			selector: 'p',
+		}
+	},
 
-  edit({attributes, setAttributes, className}) {
-      const {
-          style,
-          content
-      } = attributes;
+	edit({ attributes, setAttributes, className }) {
+		const {
+			style,
+			content
+		} = attributes;
 
-    function onStyleChange(event){
-      setAttributes({style: event.target.value});
-    }
+		const onChangeContent = (newContent) => {
+			setAttributes({ content: newContent });
+		}
 
-    function onChangeContent(newContent) {
-      setAttributes({content: newContent});
-    }
+		return (
+			<Fragment>
+				<InspectorControls>
+					<PanelBody title={__("Style Settings", "vk-blocks")}>
+						<SelectControl
+							value={style}
+							onChange={value => setAttributes({ style: value })}
+							options={[
+								{ label: __("Success", "vk-blocks"), value: "success" },
+								{ label: __("Info", "vk-blocks"), value: "info" },
+								{ label: __("Warning", "vk-blocks"), value: "warning" },
+								{ label: __("Danger", "vk-blocks"), value: "danger" },
+							]}
+						/>
+					</PanelBody>
+				</InspectorControls>
+				<div className={`${className} alert alert-${style}`}>
+					<RichText
+						tagName="p"
+						onChange={onChangeContent}
+						value={content}
+					/>
+				</div>
+			</Fragment>
+		);
+	},
 
-    return (
-        <div className={`${className} alert alert-${style}`}>
-        <select onChange={onStyleChange}>
-            <option value={'success'} selected={style === 'success'}>Success</option>
-            <option value={'info'} selected={style === 'info'}>Info</option>
-            <option value={'warning'} selected={style === 'warning'}>Warning</option>
-            <option value={'danger'} selected={style === 'danger'}>Danger</option>
-        </select>
-        <RichText
-            tagName="p"
-            onChange={onChangeContent}
-            value={content}
-        />
-      </div>
-    );
-  },
-
-  save({attributes,className}) {
-      const {
-          style,
-          content
-      } = attributes;
-    return (
-        <div className={`${className} alert alert-${style}`}>
-        <RichText.Content
-            tagName={'p'}
-            value={content}/>
-      </div>
-    );
-  },
-    deprecated: deprecated,
-} );
+	save({ attributes, className }) {
+		const {
+			style,
+			content
+		} = attributes;
+		return (
+			<div className={`${className} alert alert-${style}`}>
+				<RichText.Content
+					tagName={'p'}
+					value={content} />
+			</div>
+		);
+	},
+	deprecated: deprecated,
+});

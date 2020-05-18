@@ -34,7 +34,7 @@ input[type="range"] {
 }
 
 // これがないとスタッフブロックや各種画像の外側のbuttonが高さを検出できない
-button.image-button {
+button.image-button:not(.button-delete) {
 	height: 100%;
 }
 
@@ -65,6 +65,29 @@ button.image-button {
 .components-color-palette {
 	display: block;
 	overflow: hidden;
+}
+
+button.components-button.components-toolbar__control{
+	position: relative;
+}
+
+.components-toolbar__control.components-button[data-subscript]::after {
+    font-size: 1px;
+    right: 7px;
+}
+
+.components-toolbar__control.components-button[data-subscript] svg {
+    padding: 5px;
+	padding-left: 1px;
+	height: 30px;
+    width: 30px;
+}
+
+.components-toolbar__control.components-button {
+    width: 36px;
+    height: 36px;
+    padding: 3px;
+    outline: none;
 }
 
 .editor-url-input input[type="text"] {
@@ -103,7 +126,12 @@ $color-danger: #dd3333;
 }
 
 /* editor area *********************************************/
-//   .edit-post-visual-editor.editor-styles-wrapper{
+  .edit-post-visual-editor.editor-styles-wrapper{
+
+// レスポンシブスペーサーの識別用枠線
+.vk_spacer {
+	border: 1px dotted #ccc;
+}
 
 table {
 	border: 1px solid #ff0000;
@@ -112,6 +140,12 @@ table {
 /* これがないとGutenberg標準のエディタCSSに負ける */
 h1:first-child.vk_prBlocks_item_title {
 	margin-top: 0.9em;
+}
+.vk_prContent_colTxt_title {
+	border: none;
+	&::after {
+		display: none;
+	}
 }
 
 /* Bootstrap Adjuster */
@@ -132,7 +166,7 @@ $color-danger: #b52727;
 
 /*-------------------------------------------*/
 /* card
-  /*-------------------------------------------*/
+/*-------------------------------------------*/
 
 // Card ボタンリンクの説明
 .postList_itemCard_button-option {

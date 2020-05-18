@@ -3,11 +3,11 @@
  *
  */
 import { deprecated } from "./deprecated";
+import { vkbBlockEditor } from "./../_helper/depModules";
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
-const { RichText } =
-  wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
+const { RichText } = vkbBlockEditor;
 const BlockIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"

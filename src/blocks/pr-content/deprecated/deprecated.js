@@ -1,6 +1,5 @@
-import React from "react";
-import {ComponentDeprecated} from "./component-deprecated";
-import {ComponentNoBorderColor} from "./component-no-boder-color";
+import { ComponentDeprecated } from "./component-deprecated";
+import { ComponentNoBorderColor } from "./component-no-boder-color";
 
 export const deprecated = [
     {
@@ -64,7 +63,7 @@ export const deprecated = [
             }
         },
 
-        save({attributes, className}) {
+        save({ attributes, className }) {
 
             return (
                 <ComponentDeprecated
@@ -127,14 +126,14 @@ export const deprecated = [
                 type: 'string',
                 default: 'left',
             },
-            fontAwesomeIconBefore:{
+            fontAwesomeIconBefore: {
                 type: 'string',
             },
-            fontAwesomeIconAfter:{
+            fontAwesomeIconAfter: {
                 type: 'string',
             }
         },
-        save({attributes, className}) {
+        save({ attributes, className }) {
 
             return (
                 <ComponentNoBorderColor

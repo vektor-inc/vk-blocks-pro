@@ -1,10 +1,9 @@
-import React from "react";
-import classNames from "classnames";
-
-const { RichText } = wp.editor;
+import { vkbBlockEditor } from "./../../_helper/depModules";
+const { RichText } = vkbBlockEditor;
 const { __ } = wp.i18n;
+const { Component } = wp.element;
 
-export class Component extends React.Component {
+export class VKBHeading extends Component {
   render() {
     const {
       level,

@@ -90,4 +90,8 @@ export const schema = {
     type: "string",
     default: "",
   },
+  selfIgnore: {
+    type: "boolean",
+    default: false,
+  },
 };

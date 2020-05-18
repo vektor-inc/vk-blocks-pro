@@ -38,7 +38,7 @@ export const getAllHeadings = (headingList) => {
 };
 
 export const removeUnnecessaryElements = (headingsRaw) => {
-  let oneDimensionArrayStoredHeading = transformToOneDimensionalArray(
+  const oneDimensionArrayStoredHeading = transformToOneDimensionalArray(
     headingsRaw
   );
   return oneDimensionArrayStoredHeading.filter(
@@ -58,8 +58,8 @@ export const returnHtml = (source, attributes, className, open) => {
     className = className + " vk_tableOfContents-style-" + style;
   }
 
-  let listClassName = "vk_tableOfContents_list_item";
-  let countSeparater = ".";
+  const listClassName = "vk_tableOfContents_list_item";
+  const countSeparater = ".";
   let h2Count = 0;
   let h3Count = 0;
   let h4Count = 0;
@@ -68,17 +68,17 @@ export const returnHtml = (source, attributes, className, open) => {
   const fixZero = (count) => {
     if (count === 0) {
       return 1;
-    } else {
+    } 
       return count;
-    }
+    
   };
 
   let returnHtmlContent = "";
   if (source) {
     returnHtmlContent = source.map((data) => {
-      let baseClass = "vk_tableOfContents_list_item";
+      const baseClass = "vk_tableOfContents_list_item";
 
-      let level = data.attributes.level;
+      const level = data.attributes.level;
       let preNumber = "";
 
       if (level === 2) {
@@ -147,43 +147,43 @@ export const returnHtml = (source, attributes, className, open) => {
 
       preNumber = preNumber + ". ";
 
-      let content = data.attributes.content
+      const content = data.attributes.content
         ? data.attributes.content
         : data.attributes.title;
 
       return (
-        <li
-          key={data.clientId}
-          className={`${baseClass} ${baseClass}-h-${level}`}
+	<li
+		key={ data.clientId }
+		className={ `${baseClass} ${baseClass}-h-${level}` }
         >
-          <a
-            href={`#${data.attributes.anchor}`}
-            className={`${baseClass}_link`}
+		<a
+			href={ `#${data.attributes.anchor}` }
+			className={ `${baseClass}_link` }
           >
-            <span className={`${baseClass}_link_preNumber`}>{preNumber}</span>
-            {content}
-          </a>
-        </li>
+			<span className={ `${baseClass}_link_preNumber` }>{ preNumber }</span>
+			{ content }
+		</a>
+	</li>
       );
     });
   }
 
-  let returnHtml = (
-    <div className={classNames(className, "tabs")}>
-      <div className="tab">
-        <div className={"vk_tableOfContents_title"}>
-          {__("Table of Contents", "vk-blocks")}
-        </div>
-        <input type="checkbox" id="chck1" />
-        <label
-          className={`tab-label vk_tableOfContents_openCloseBtn button_status button_status-${open}`}
-          htmlFor="chck1"
+  const returnHtml = (
+	<div className={ classNames(className, "tabs") }>
+		<div className="tab">
+			<div className={ "vk_tableOfContents_title" }>
+				{ __("Table of Contents", "vk-blocks") }
+			</div>
+			<input type="checkbox" id="chck1" />
+			<label
+				className={ `tab-label vk_tableOfContents_openCloseBtn button_status button_status-${open}` }
+				htmlFor="chck1"
         />
-        <ul className={`vk_tableOfContents_list tab_content-${open}`}>
-          {returnHtmlContent}
-        </ul>
-      </div>
-    </div>
+			<ul className={ `vk_tableOfContents_list tab_content-${open}` }>
+				{ returnHtmlContent }
+			</ul>
+		</div>
+	</div>
   );
   return ReactDOMServer.renderToString(returnHtml);
 };

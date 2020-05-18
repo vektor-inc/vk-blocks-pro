@@ -383,10 +383,13 @@ function vkblocks_blocks_assets() {
 									'type'    => 'string',
 									'default' => '',
 								),
+								'selfIgnore'        => array(
+									'type'    => 'boolean',
+									'default' => false,
+								),
 							),
 							$common_attributes
 						),
-						// 'style'           => 'vk-blocks-build-css',
 						'editor_style'    => 'vk-blocks-build-editor-css',
 						'editor_script'   => 'vk-blocks-build-js',
 						'render_callback' => 'vk_blocks_render_post_list',

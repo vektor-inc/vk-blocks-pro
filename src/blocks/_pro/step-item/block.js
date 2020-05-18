@@ -2,7 +2,7 @@
  * step-item block type
  *
  */
-import { Component } from "./component";
+import { StepItem } from "./component";
 import { schema } from './schema';
 import { FontAwesome } from "../../_helper/font-awesome";
 
@@ -16,7 +16,6 @@ import { deprecated } from './deprecated';
 const BlockIcon = 'arrow-down';
 
 registerBlockType('vk-blocks/step-item', {
-	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
 	title: __('Step Item', 'vk-blocks'), // Block title.
 	icon: BlockIcon, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: 'vk-blocks-cat', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
@@ -103,7 +102,7 @@ registerBlockType('vk-blocks/step-item', {
 						</BaseControl>
 					</PanelBody>
 				</InspectorControls>
-				<Component
+				<StepItem
 					attributes={attributes}
 					className={className}
 					setAttributes={setAttributes}
@@ -114,7 +113,7 @@ registerBlockType('vk-blocks/step-item', {
 	},
 
 	save({ attributes, className }) {
-		return <Component attributes={attributes} className={className} for_={"save"} />;
+		return <StepItem attributes={attributes} className={className} for_={"save"} />;
 	},
 
 	deprecated: deprecated,

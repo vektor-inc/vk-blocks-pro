@@ -403,7 +403,7 @@ msgid "First Dot Number"
 msgstr ""
 
 #: src/blocks/_pro/table-of-contents/block.js:36
-#: src/blocks/_pro/table-of-contents/toc-utils.js:175
+#: src/blocks/_pro/table-of-contents/toc-utils.js:184
 msgid "Table of Contents"
 msgstr ""
 

@@ -4,7 +4,7 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "npm install && npm run build && npm run watch && wp plugin activate vk-blocks && wp browse --wp-admin",
+    "start": "npx wp-env start",
     "watch": "gulp watch",
     "build-dev": "gulp build-dev",
     "build": "gulp build && npm run translate",

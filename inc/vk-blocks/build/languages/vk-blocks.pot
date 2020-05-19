@@ -278,23 +278,23 @@ msgstr ""
 #: src/blocks/_pro/outer/block.js:310
 #: src/blocks/_pro/step-item/block.js:75
 #: src/blocks/_pro/timeline-item/block.js:84
-#: src/blocks/group-style/block.js:95
+#: src/blocks/group-style/block.js:130
 #: src/blocks/pr-content/block.js:168
 msgid "Solid"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:314
-#: src/blocks/group-style/block.js:103
+#: src/blocks/group-style/block.js:138
 msgid "Dotted"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:318
-#: src/blocks/group-style/block.js:107
+#: src/blocks/group-style/block.js:142
 msgid "Dashed"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:322
-#: src/blocks/group-style/block.js:111
+#: src/blocks/group-style/block.js:146
 msgid "Double"
 msgstr ""
 
@@ -458,24 +458,28 @@ msgstr ""
 
 #: src/blocks/alert/block.js:53
 #: src/blocks/button/block.js:247
+#: src/blocks/group-style/block.js:162
 #: src/blocks/pr-content/block.js:180
 msgid "Success"
 msgstr ""
 
 #: src/blocks/alert/block.js:54
 #: src/blocks/button/block.js:248
+#: src/blocks/group-style/block.js:166
 #: src/blocks/pr-content/block.js:181
 msgid "Info"
 msgstr ""
 
 #: src/blocks/alert/block.js:55
 #: src/blocks/button/block.js:249
+#: src/blocks/group-style/block.js:170
 #: src/blocks/pr-content/block.js:182
 msgid "Warning"
 msgstr ""
 
 #: src/blocks/alert/block.js:56
 #: src/blocks/button/block.js:250
+#: src/blocks/group-style/block.js:174
 #: src/blocks/pr-content/block.js:183
 msgid "Danger"
 msgstr ""
@@ -710,24 +714,24 @@ msgstr ""
 msgid "Input content"
 msgstr ""
 
-#: src/blocks/group-style/block.js:115
+#: src/blocks/group-style/block.js:134
+msgid "Solid Roundcorner"
+msgstr ""
+
+#: src/blocks/group-style/block.js:150
 msgid "Stitch"
 msgstr ""
 
-#: src/blocks/group-style/block.js:119
+#: src/blocks/group-style/block.js:154
 msgid "Border Top Bottom"
 msgstr ""
 
-#: src/blocks/group-style/block.js:123
+#: src/blocks/group-style/block.js:158
 msgid "Shadow"
 msgstr ""
 
-#: src/blocks/group-style/block.js:50
+#: src/blocks/group-style/block.js:51
 msgid "Border Color"
-msgstr ""
-
-#: src/blocks/group-style/block.js:99
-msgid "Solid Roundcorner"
 msgstr ""
 
 #: src/blocks/heading-style/block.js:102

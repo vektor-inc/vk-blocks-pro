@@ -265,10 +265,15 @@ $color-danger: #b52727;
 
 	}
 
-	.block-editor-block-list__block { 
-		flex: inherit;
-		margin: 0 15px 30px;
-		padding: 0;
+	div[class^="col-"] {
+		// col直下の余分な余白の削除など
+		// col内に入れたブロックにまで反映されないように & > 指定
+		& > .block-editor-block-list__block { 
+			flex: inherit;
+			margin: 0 0 15px;
+			padding: 0;
+			width:100%;
+		}
 	}
 
 	& > .col-xs-3 {

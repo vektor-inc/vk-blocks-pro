@@ -91,7 +91,7 @@ msgid "Button text"
 msgstr ""
 
 #: src/blocks/_pro/card/block.js:50
-#: src/components/column-layout-control/index.js:20
+#: src/components/column-layout-control/index.js:22
 msgid "Card"
 msgstr ""
 
@@ -119,6 +119,18 @@ msgstr ""
 #: src/blocks/_pro/child-page/block.js:82
 #: src/blocks/_pro/post-list/block.js:159
 msgid "Ignore this post"
+msgstr ""
+
+#: src/blocks/_pro/column-responsive-item/block.js:18
+msgid "Responsive Column Item"
+msgstr ""
+
+#: src/blocks/_pro/column-responsive/block.js:48
+msgid "Responsive Column"
+msgstr ""
+
+#: src/blocks/_pro/column-responsive/block.js:92
+msgid "Layout Columns"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:101
@@ -403,7 +415,7 @@ msgid "First Dot Number"
 msgstr ""
 
 #: src/blocks/_pro/table-of-contents/block.js:36
-#: src/blocks/_pro/table-of-contents/toc-utils.js:184
+#: src/blocks/_pro/table-of-contents/toc-utils.js:180
 msgid "Table of Contents"
 msgstr ""
 
@@ -1146,48 +1158,48 @@ msgstr ""
 msgid "Align"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:100
-msgid "Column ( Screen size : Extra large )"
-msgstr ""
-
-#: src/components/column-layout-control/index.js:14
+#: src/components/column-layout-control/index.js:16
 msgid "Card ( No border )"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:24
+#: src/components/column-layout-control/index.js:26
 msgid "Card Horizontal"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:28
+#: src/components/column-layout-control/index.js:30
 msgid "Media"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:32
+#: src/components/column-layout-control/index.js:34
 msgid "Text 1 Column"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:55
+#: src/components/column-layout-control/index.js:54
 msgid "Display type and columns"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:58
+#: src/components/column-layout-control/index.js:57
 msgid "Display type"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:66
+#: src/components/column-layout/index.js:19
 msgid "Column ( Screen size : Extra small )"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:75
+#: src/components/column-layout/index.js:28
 msgid "Column ( Screen size : Small )"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:83
+#: src/components/column-layout/index.js:36
 msgid "Column ( Screen size : Medium )"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:91
+#: src/components/column-layout/index.js:44
 msgid "Column ( Screen size : Large )"
+msgstr ""
+
+#: src/components/column-layout/index.js:53
+msgid "Column ( Screen size : Extra large )"
 msgstr ""
 
 #: src/components/display-items-control/index.js:34

@@ -271,97 +271,96 @@ $color-danger: #b52727;
 		padding: 0;
 	}
 
-		& > .col-xs-3 {
+	& > .col-xs-3 {
+		width: calc(25% - 30px);
+		max-width: var(--vk-width-couter-col-3) ;
+	}
+	& > .col-xs-4 {
+		width: calc(33.3% - 30px);
+		max-width: var(--vk-width-couter-col-4) ;
+	}
+
+	& > .col-xs-6 {
+		width: calc(50% - 30px);
+		max-width: var(--vk-width-couter-col-6) ;
+	}
+
+	& > .col-xs-12 {
+		width: calc(100% - 30px);
+		max-width: var(--vk-width-couter-col-12) ;
+	}
+	@media (min-width: $sm-min) {
+		& > .col-sm-3 {
 			width: calc(25% - 30px);
 			max-width: var(--vk-width-couter-col-3) ;
 		}
-		& > .col-xs-4 {
+		& > .col-sm-4 {
 			width: calc(33.3% - 30px);
 			max-width: var(--vk-width-couter-col-4) ;
 		}
-
-		& > .col-xs-6 {
+		& > .col-sm-6 {
 			width: calc(50% - 30px);
 			max-width: var(--vk-width-couter-col-6) ;
 		}
-
-		& > .col-xs-12 {
+		& > .col-sm-12 {
 			width: calc(100% - 30px);
 			max-width: var(--vk-width-couter-col-12) ;
 		}
-		@media (min-width: $sm-min) {
-			& > .col-sm-3 {
-				width: calc(25% - 30px);
-				max-width: var(--vk-width-couter-col-3) ;
-			}
-			& > .col-sm-4 {
-				width: calc(33.3% - 30px);
-				max-width: var(--vk-width-couter-col-4) ;
-			}
-			& > .col-sm-6 {
-				width: calc(50% - 30px);
-				max-width: var(--vk-width-couter-col-6) ;
-			}
-			& > .col-sm-12 {
-				width: calc(100% - 30px);
-				max-width: var(--vk-width-couter-col-12) ;
-			}
+	}
+	@media (min-width: $md-min) {
+		& > .col-md-3 {
+			width: calc(25% - 30px);
+			max-width: var(--vk-width-couter-col-3) ;
 		}
-		@media (min-width: $md-min) {
-			& > .col-md-3 {
-				width: calc(25% - 30px);
-				max-width: var(--vk-width-couter-col-3) ;
-			}
-			& > .col-md-4 {
-				width: calc(33.3% - 30px);
-				max-width: var(--vk-width-couter-col-4) ;
-			}
-			& > .col-md-6 {
-				width: calc(50% - 30px);
-				max-width: var(--vk-width-couter-col-6) ;
-			}
-			& > .col-md-12 {
-				width: calc(100% - 30px);
-				max-width: var(--vk-width-couter-col-12) ;
-			}
+		& > .col-md-4 {
+			width: calc(33.3% - 30px);
+			max-width: var(--vk-width-couter-col-4) ;
 		}
-		@media (min-width: $lg-min) {
-			& > .col-lg-3{
-				width: calc(25% - 30px);
-				max-width: var(--vk-width-couter-col-3) ;
-			}
-			& > .col-lg-4 {
-				width: calc(33.3% - 30px);
-				max-width: var(--vk-width-couter-col-4) ;
-			}
-			& > .col-lg-6 {
-				width: calc(50% - 30px);
-				max-width: var(--vk-width-couter-col-6) ;
-			}
-			& > .col-lg-12 {
-				width: calc(100% - 30px);
-				max-width: var(--vk-width-couter-col-12) ;
-			}
+		& > .col-md-6 {
+			width: calc(50% - 30px);
+			max-width: var(--vk-width-couter-col-6) ;
 		}
-		@media (min-width: $xl-min) {
-			& > .col-xl-3 {
-				width: calc(25% - 30px);
-				max-width: var(--vk-width-couter-col-3) ;
-			}
-			& > .col-xl-4 {
-				width: calc(33.3% - 30px);
-				max-width: var(--vk-width-couter-col-4) ;
-			}
-			& > .col-xl-6 {
-				width: calc(50% - 30px);
-				max-width: var(--vk-width-couter-col-6) ;
-			}
-			& > .col-xl-12 {
-				width: calc(100% - 30px);
-				max-width: var(--vk-width-couter-col-12) ;
-			}
+		& > .col-md-12 {
+			width: calc(100% - 30px);
+			max-width: var(--vk-width-couter-col-12) ;
 		}
-	// }	
+	}
+	@media (min-width: $lg-min) {
+		& > .col-lg-3{
+			width: calc(25% - 30px);
+			max-width: var(--vk-width-couter-col-3) ;
+		}
+		& > .col-lg-4 {
+			width: calc(33.3% - 30px);
+			max-width: var(--vk-width-couter-col-4) ;
+		}
+		& > .col-lg-6 {
+			width: calc(50% - 30px);
+			max-width: var(--vk-width-couter-col-6) ;
+		}
+		& > .col-lg-12 {
+			width: calc(100% - 30px);
+			max-width: var(--vk-width-couter-col-12) ;
+		}
+	}
+	@media (min-width: $xl-min) {
+		& > .col-xl-3 {
+			width: calc(25% - 30px);
+			max-width: var(--vk-width-couter-col-3) ;
+		}
+		& > .col-xl-4 {
+			width: calc(33.3% - 30px);
+			max-width: var(--vk-width-couter-col-4) ;
+		}
+		& > .col-xl-6 {
+			width: calc(50% - 30px);
+			max-width: var(--vk-width-couter-col-6) ;
+		}
+		& > .col-xl-12 {
+			width: calc(100% - 30px);
+			max-width: var(--vk-width-couter-col-12) ;
+		}
+	}
 }//.vk_column-responsive
 
 .vk_posts .vk_posts-edit {

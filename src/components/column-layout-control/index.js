@@ -1,8 +1,10 @@
 const { __ } = wp.i18n;
-const { RangeControl, PanelBody, BaseControl, SelectControl } = wp.components;
-import formatNum from "../../blocks/_helper/formatNum";
+const { PanelBody, BaseControl, SelectControl } = wp.components;
+const { Component } = wp.element;
+const { createHigherOrderComponent, compose } = wp.compose;
+import { ColumnLayout } from "../column-layout";
 
-const setOptions = name => {
+export const setOptions = name => {
 	const options = {
 		"vk-blocks/card": [
 			{
@@ -41,71 +43,30 @@ const setOptions = name => {
 
 };
 
-const defaultMinMax = {
-	min: "1",
-	max: "4"
-};
-
-export const ColumnLayoutControl = props => {
-	const { setAttributes, attributes } = props;
-	const { layout, name, col_xs, col_sm, col_md, col_lg, col_xl } = attributes;
-
-	return (
-		<PanelBody
-			title={__("Display type and columns", "vk-blocks")}
-			initialOpen={false}
-		>
-			<BaseControl label={__("Display type", "vk-blocks")}>
-				<SelectControl
-					value={layout}
-					onChange={value => setAttributes({ layout: value })}
-					options={setOptions(name)}
-				/>
-			</BaseControl>
-			<BaseControl
-				label={__("Column ( Screen size : Extra small )", "vk-blocks")}
-			>
-				<RangeControl
-					value={col_xs}
-					onChange={value => setAttributes({ col_xs: formatNum(value, col_xs) })}
-					min={defaultMinMax.min}
-					max={defaultMinMax.max}
-				/>
-			</BaseControl>
-			<BaseControl label={__("Column ( Screen size : Small )", "vk-blocks")}>
-				<RangeControl
-					value={col_sm}
-					onChange={value => setAttributes({ col_sm: formatNum(value, col_sm) })}
-					min={defaultMinMax.min}
-					max={defaultMinMax.max}
-				/>
-			</BaseControl>
-			<BaseControl label={__("Column ( Screen size : Medium )", "vk-blocks")}>
-				<RangeControl
-					value={col_md}
-					onChange={value => setAttributes({ col_md: formatNum(value, col_md) })}
-					min={defaultMinMax.min}
-					max={defaultMinMax.max}
-				/>
-			</BaseControl>
-			<BaseControl label={__("Column ( Screen size : Large )", "vk-blocks")}>
-				<RangeControl
-					value={col_lg}
-					onChange={value => setAttributes({ col_lg: formatNum(value, col_lg) })}
-					min={defaultMinMax.min}
-					max={defaultMinMax.max}
-				/>
-			</BaseControl>
-			<BaseControl
-				label={__("Column ( Screen size : Extra large )", "vk-blocks")}
-			>
-				<RangeControl
-					value={col_xl}
-					onChange={value => setAttributes({ col_xl: formatNum(value, col_xl) })}
-					min={defaultMinMax.min}
-					max={defaultMinMax.max}
-				/>
-			</BaseControl>
-		</PanelBody>
+const ColumnLayoutControlRaw = (ColumnLayout) =>
+	createHigherOrderComponent(
+		(ColumnLayout) => class extends Component {
+			render() {
+				const { setAttributes, attributes } = this.props;
+				const { layout, name } = attributes;
+				return (
+					<PanelBody
+						title={__("Display type and columns", "vk-blocks")}
+						initialOpen={false}
+					>
+						<BaseControl label={__("Display type", "vk-blocks")}>
+							<SelectControl
+								value={layout}
+								onChange={value => setAttributes({ layout: value })}
+								options={setOptions(name)}
+							/>
+						</BaseControl>
+						<ColumnLayout {...this.props} />
+					</PanelBody>
+				);
+			}
+		},
+		"ColumnLayoutControlRaw"
 	);
-};
+
+export const ColumnLayoutControl = compose(ColumnLayoutControlRaw())(ColumnLayout);

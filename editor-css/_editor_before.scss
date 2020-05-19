@@ -9,7 +9,8 @@
 .editor-block-list-item-vk-blocks-outer:after,
 .editor-block-list-item-vk-blocks-post-list:after,
 .editor-block-list-item-vk-blocks-table-of-contents:after,
-.editor-block-list-item-vk-blocks-simple-table:after {
+.editor-block-list-item-vk-blocks-simple-table:after,
+.editor-block-list-item-vk-blocks-column-responsive:after {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -243,6 +244,103 @@ $color-danger: #b52727;
 		width: 100%;
 	}
 }
+
+
+
+.vk_column-responsive.row {
+	border:none;
+	.wp-block-vk-blocks-column-responsive-item{
+		padding: 14px;
+		outline: 1px dashed #ccc;
+		width: 100%;
+		height: auto;
+		margin-top: 1em;
+		transition: 1.0s ;
+		&:focus,&:active,&:hover{
+			outline: 1px solid #555d66;
+		}
+		p{    line-height: 1.4;}
+
+	}
+
+	.block-editor-block-list__block { 
+		flex: inherit;
+		margin: 0 15px 30px;
+		padding: 0;
+
+		&.col-xs-3 {
+			width: calc(25% - 30px);
+		}
+		&.col-xs-4 {
+			width: calc(33.3% - 30px);
+		}
+
+		&.col-xs-6 {
+			width: calc(50% - 30px);
+		}
+
+		&.col-xs-12 {
+			width: calc(100% - 30px);
+		}
+		@media (min-width: $sm-min) {
+			&.col-sm-3 {
+				width: calc(25% - 30px);
+			}
+			&.col-sm-4 {
+				width: calc(33.3% - 30px);
+			}
+			&.col-sm-6 {
+				width: calc(50% - 30px);
+			}
+			&.col-sm-12 {
+				width: calc(100% - 30px);
+			}
+		}
+		@media (min-width: $md-min) {
+			&.col-md-3 {
+				width: calc(25% - 30px);
+			}
+			&.col-md-4 {
+				width: calc(33.3% - 30px);
+			}
+			&.col-md-6 {
+				width: calc(50% - 30px);
+			}
+			&.col-md-12 {
+				width: calc(100% - 30px);
+			}
+		}
+		@media (min-width: $lg-min) {
+			&.col-lg-3{
+				width: calc(25% - 30px);
+			}
+			&.col-lg-4 {
+				width: calc(33.3% - 30px);
+			}
+			&.col-lg-6 {
+				width: calc(50% - 30px);
+			}
+			&.col-lg-12 {
+				width: calc(100% - 30px);
+			}
+		}
+		@media (min-width: $xl-min) {
+			&.col-xl-3 {
+				width: calc(25% - 30px);
+			}
+			&.col-xl-4 {
+				width: calc(33.3% - 30px);
+			}
+			&.col-xl-6 {
+				width: calc(50% - 30px);
+			}
+			&.col-xl-12 {
+				width: calc(100% - 30px);
+			}
+		}
+	}	
+}//.vk_column-responsive
+
 .vk_posts .vk_posts-edit {
 	&-col-xs-3 .editor-block-list__block,
 	&-col-xs-3 .block-editor-block-list__block {
@@ -335,7 +433,7 @@ $color-danger: #b52727;
 }
 
 /*-------------------------------------------*/
-/* edit hidden block class 
+/* edit hidden block class
 /*-------------------------------------------*/
 .vk_edit_hidden_warning {
 	// border:1px dotted #666;
@@ -350,33 +448,37 @@ $color-danger: #b52727;
 	display: block !important;
 	color: var(--blue);
 
-	&.vk_posts {
-		// display block だとカラムがすべて落ちるため posts は flexで上書き
-		display: flex !important;
-	}
-	@media (max-width: $xs-max) {
-		&-xs {
-			display: block !important;
-		}
-	}
-	@media (min-width: $sm-min) and (max-width: $sm-max) {
-		&-sm {
-			display: block !important;
-		}
-	}
-	@media (min-width: $md-min) and (max-width: $md-max) {
-		&-md {
-			display: block !important;
-		}
-	}
-	@media (min-width: $lg-min) and (max-width: $lg-max) {
-		&-lg {
-			display: block !important;
-		}
-	}
-	@media (min-width: $xl-min) {
-		&-xl {
-			display: block !important;
-		}
-	}
+  &.vk_posts{
+	// display block だとカラムがすべて落ちるため posts は flexで上書き
+	display: flex !important;
+  }
+  @media (max-width: $xs-max) {
+    &-xs {
+      display: block !important;
+    }
+  }
+  @media (min-width: $sm-min) and (max-width: $sm-max) {
+    &-sm {
+      display: block !important;
+    }
+  }
+  @media (min-width: $md-min) and (max-width: $md-max) {
+    &-md {
+      display: block !important;
+    }
+  }
+  @media (min-width: $lg-min) and (max-width: $lg-max) {
+    &-lg {
+      display: block !important;
+    }
+  }
+  @media (min-width: $xl-min) {
+    &-xl {
+      display: block !important;
+    }
+  }
+}
+
+.vk_column-responsive .block-list-appender{
+  width: 100%;
 }

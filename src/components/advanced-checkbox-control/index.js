@@ -13,10 +13,10 @@ export const AdvancedCheckboxControl = props => {
 		setAttributes({ [schema]: JSON.stringify(saveData) });
 	};
 
-	let checkBoxComponents = rawData.map((data, index) => {
+	let checkBoxComponents = rawData.map(data => {
 		return (
 			<CheckboxControl
-				key={index}
+				key={data.slug}
 				label={data.label}
 				checked={checkedState.some(item => item === data.slug)}
 				onChange={value => {

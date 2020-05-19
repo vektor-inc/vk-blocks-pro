@@ -243,6 +243,103 @@ $color-danger: #b52727;
 		width: 100%;
 	}
 }
+
+
+
+.vk_column-responsive.row {
+	border:none;
+	.wp-block-vk-blocks-column-responsive-item{
+		padding: 14px;
+		outline: 1px dashed #ccc;
+		width: 100%;
+		height: auto;
+		margin-top: 1em;
+		transition: 1.0s ;
+		&:focus,&:active,&:hover{
+			outline: 1px solid #555d66;
+		}
+		p{    line-height: 1.4;}
+
+	}
+
+	.block-editor-block-list__block { 
+		flex: inherit;
+		margin: 0 15px 30px;
+		padding: 0;
+
+		&.col-xs-3 {
+			width: calc(25% - 30px);
+		}
+		&.col-xs-4 {
+			width: calc(33.3% - 30px);
+		}
+
+		&.col-xs-6 {
+			width: calc(50% - 30px);
+		}
+
+		&.col-xs-12 {
+			width: calc(100% - 30px);
+		}
+		@media (min-width: $sm-min) {
+			&.col-sm-3 {
+				width: calc(25% - 30px);
+			}
+			&.col-sm-4 {
+				width: calc(33.3% - 30px);
+			}
+			&.col-sm-6 {
+				width: calc(50% - 30px);
+			}
+			&.col-sm-12 {
+				width: calc(100% - 30px);
+			}
+		}
+		@media (min-width: $md-min) {
+			&.col-md-3 {
+				width: calc(25% - 30px);
+			}
+			&.col-md-4 {
+				width: calc(33.3% - 30px);
+			}
+			&.col-md-6 {
+				width: calc(50% - 30px);
+			}
+			&.col-md-12 {
+				width: calc(100% - 30px);
+			}
+		}
+		@media (min-width: $lg-min) {
+			&.col-lg-3{
+				width: calc(25% - 30px);
+			}
+			&.col-lg-4 {
+				width: calc(33.3% - 30px);
+			}
+			&.col-lg-6 {
+				width: calc(50% - 30px);
+			}
+			&.col-lg-12 {
+				width: calc(100% - 30px);
+			}
+		}
+		@media (min-width: $xl-min) {
+			&.col-xl-3 {
+				width: calc(25% - 30px);
+			}
+			&.col-xl-4 {
+				width: calc(33.3% - 30px);
+			}
+			&.col-xl-6 {
+				width: calc(50% - 30px);
+			}
+			&.col-xl-12 {
+				width: calc(100% - 30px);
+			}
+		}
+	}	
+}//.vk_column-responsive
+
 .vk_posts .vk_posts-edit {
 	&-col-xs-3 .editor-block-list__block,
 	&-col-xs-3 .block-editor-block-list__block {
@@ -335,7 +432,7 @@ $color-danger: #b52727;
 }
 
 /*-------------------------------------------*/
-/* edit hidden block class 
+/* edit hidden block class
 /*-------------------------------------------*/
 .vk_edit_hidden_warning {
 	// border:1px dotted #666;
@@ -350,35 +447,39 @@ $color-danger: #b52727;
 	display: block !important;
 	color: var(--blue);
 
-	&.vk_posts {
-		// display block だとカラムがすべて落ちるため posts は flexで上書き
-		display: flex !important;
-	}
-	@media (max-width: $xs-max) {
-		&-xs {
-			display: block !important;
-		}
-	}
-	@media (min-width: $sm-min) and (max-width: $sm-max) {
-		&-sm {
-			display: block !important;
-		}
-	}
-	@media (min-width: $md-min) and (max-width: $md-max) {
-		&-md {
-			display: block !important;
-		}
-	}
-	@media (min-width: $lg-min) and (max-width: $lg-max) {
-		&-lg {
-			display: block !important;
-		}
-	}
-	@media (min-width: $xl-min) {
-		&-xl {
-			display: block !important;
-		}
-	}
+  &.vk_posts{
+	// display block だとカラムがすべて落ちるため posts は flexで上書き
+	display: flex !important;
+  }
+  @media (max-width: $xs-max) {
+    &-xs {
+      display: block !important;
+    }
+  }
+  @media (min-width: $sm-min) and (max-width: $sm-max) {
+    &-sm {
+      display: block !important;
+    }
+  }
+  @media (min-width: $md-min) and (max-width: $md-max) {
+    &-md {
+      display: block !important;
+    }
+  }
+  @media (min-width: $lg-min) and (max-width: $lg-max) {
+    &-lg {
+      display: block !important;
+    }
+  }
+  @media (min-width: $xl-min) {
+    &-xl {
+      display: block !important;
+    }
+  }
+}
+
+.vk_column-responsive .block-list-appender{
+  width: 100%;
 }
 
 /*-------------------------------------------*/
@@ -1301,39 +1402,6 @@ $color_dark: #343a40;
 	box-sizing: border-box;
 }
 
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-@mixin reset() {
-	background: none;
-	border:none;
-	border-radius: 0;
-	padding:0;
-	font-weight: normal;
-	box-shadow:none;
-	&:after {
-		content:none;
-		border:none;
-	}
-	&:before{
-		content:none;
-	}
-}
-
-// .vk_heading は指定が強い要素（ Charm ）も消すために必要
-.vk_heading.vk_heading-style-plain {
-	.vk_heading_title {
-		@include reset;
-		&:after {
-			@include reset;
-		}
-	}
-}
-
-.vk_heading_subtext {
-	margin-bottom:0;
-}
-
 //管理画面側の見出しブロックのスタイルのcssになります。
 //cssを修正する場合はfunctions-color.phpのdynamic_css部分とこちらのscssを修正してください。
 
@@ -1795,6 +1863,39 @@ $color_key: #337ab7;
 		// }
 	} //.is-style-vk-heading
 } //.editor-block-list__block
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+@mixin reset() {
+	background: none;
+	border:none;
+	border-radius: 0;
+	padding:0;
+	font-weight: normal;
+	box-shadow:none;
+	&:after {
+		content:none;
+		border:none;
+	}
+	&:before{
+		content:none;
+	}
+}
+
+// .vk_heading は指定が強い要素（ Charm ）も消すために必要
+.vk_heading.vk_heading-style-plain {
+	.vk_heading_title {
+		@include reset;
+		&:after {
+			@include reset;
+		}
+	}
+}
+
+.vk_heading_subtext {
+	margin-bottom:0;
+}
 
 $xs-max: 575.98px;
 $sm-max: 767.98px;
@@ -2311,6 +2412,10 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 /* CSS
 /*-------------------------------------------*/
 
+.vk_childPage {
+	margin-top: 2.5rem;
+}
+
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -2326,8 +2431,23 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
   }
 }
 
-.vk_childPage {
-	margin-top: 2.5rem;
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
+.vk_card {
+  &_item {
+    .vk_post_title.card-title {
+      font-size: 1rem;
+    }
+    .vk_post_excerpt.card-text {
+      font-size: 14px;
+    }
+  }
 }
 
 /*-------------------------------------------*/
@@ -2593,6 +2713,7 @@ $toc-left-margin: 1rem;
 		&::before {
 			color: #666;
 			font-size: 0.8em;
+
 			border-radius: 2px;
 			display: inline-block;
 			text-align: center;
@@ -2603,8 +2724,7 @@ $toc-left-margin: 1rem;
 	}
 	/* Accordion styles */
 	.tab {
-    width: 100%;
-    overflow: hidden;
+		width: 100%;
 		&_content-open {
 			max-height: auto;
 			padding: 1em;

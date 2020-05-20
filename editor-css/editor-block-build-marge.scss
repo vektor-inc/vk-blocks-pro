@@ -12,7 +12,7 @@
 .editor-block-list-item-vk-blocks-post-list:after,
 .editor-block-list-item-vk-blocks-table-of-contents:after,
 .editor-block-list-item-vk-blocks-simple-table:after,
-.editor-block-list-item-vk-blocks-column-responsive:after {
+.editor-block-list-item-vk-blocks-grid-column:after {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -339,9 +339,9 @@ $color-danger: #b52727;
 }
 
 /*-------------------------------------------*/
-/* .vk_column-responsive Layout
+/* .vk_grid-column Layout
 /*-------------------------------------------*/
-.vk_column-responsive.row {
+.vk_grid-column.row {
 	border:none;
 	flex-direction: row;
 
@@ -356,7 +356,7 @@ $color-danger: #b52727;
 		&:focus,&:active,&:hover{
 			outline: 1px solid #555d66;
 		}
-		.wp-block-vk-blocks-column-responsive-item{
+		.wp-block-vk-blocks-grid-column-item{
 			padding: 0;
 			width: 100%;
 		}
@@ -452,7 +452,7 @@ $color-danger: #b52727;
 			max-width: var(--vk-width-couter-col-12) ;
 		}
 	}
-}//.vk_column-responsive
+}//.vk_grid-column
 
 /*-------------------------------------------*/
 /* edit hidden block class
@@ -501,7 +501,7 @@ $color-danger: #b52727;
   }
 }
 
-.vk_column-responsive .block-list-appender{
+.vk_grid-column .block-list-appender{
   width: 100%;
 }
 
@@ -1484,6 +1484,46 @@ $color_dark: #343a40;
 	margin-bottom:0;
 }
 
+$xs-max: 575.98px;
+$sm-max: 767.98px;
+$md-max: 991.98px;
+$lg-max: 1199.98px;
+
+$sm-min: 576px;
+$md-min: 768px;
+$lg-min: 992px;
+$xl-min: 1200px;
+
+.vk_hidden {
+	display: none !important;
+	color: var(--blue);
+	@media (max-width: $xs-max) {
+		&-xs {
+			display: none !important;
+		}
+	}
+	@media (min-width: $sm-min) and (max-width: $sm-max) {
+		&-sm {
+			display: none !important;
+		}
+	}
+	@media (min-width: $md-min) and (max-width: $md-max) {
+		&-md {
+			display: none !important;
+		}
+	}
+	@media (min-width: $lg-min) and (max-width: $lg-max) {
+		&-lg {
+			display: none !important;
+		}
+	}
+	@media (min-width: $xl-min) {
+		&-xl {
+			display: none !important;
+		}
+	}
+}
+
 //管理画面側の見出しブロックのスタイルのcssになります。
 //cssを修正する場合はfunctions-color.phpのdynamic_css部分とこちらのscssを修正してください。
 
@@ -1945,46 +1985,6 @@ $color_key: #337ab7;
 		// }
 	} //.is-style-vk-heading
 } //.editor-block-list__block
-
-$xs-max: 575.98px;
-$sm-max: 767.98px;
-$md-max: 991.98px;
-$lg-max: 1199.98px;
-
-$sm-min: 576px;
-$md-min: 768px;
-$lg-min: 992px;
-$xl-min: 1200px;
-
-.vk_hidden {
-	display: none !important;
-	color: var(--blue);
-	@media (max-width: $xs-max) {
-		&-xs {
-			display: none !important;
-		}
-	}
-	@media (min-width: $sm-min) and (max-width: $sm-max) {
-		&-sm {
-			display: none !important;
-		}
-	}
-	@media (min-width: $md-min) and (max-width: $md-max) {
-		&-md {
-			display: none !important;
-		}
-	}
-	@media (min-width: $lg-min) and (max-width: $lg-max) {
-		&-lg {
-			display: none !important;
-		}
-	}
-	@media (min-width: $xl-min) {
-		&-xl {
-			display: none !important;
-		}
-	}
-}
 
 .is-style-vk-image {
     &-border {
@@ -2461,21 +2461,6 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 /* CSS
 /*-------------------------------------------*/
 
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-
-.vk_card {
-  &_item {
-    .vk_post_title.card-title {
-      font-size: 1rem;
-    }
-    .vk_post_excerpt.card-text {
-      font-size: 14px;
-    }
-  }
-}
-
 .vk_childPage {
 	margin-top: 2.5rem;
 }
@@ -2498,10 +2483,6 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
     }
   }
 }
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
 
 /*-------------------------------------------*/
 /* CSS
@@ -2610,6 +2591,71 @@ $padding-xl: 3.5em;
 //   margin: 0!important;
 // }
 $color-danger: #b52727;
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+.vk_step {
+	margin: 2em 0;
+
+	.vk_step_item {
+		position: relative;
+		padding: 0 0 2.4em 4.5em;
+		margin: 0 auto;
+
+		h3:first-of-type,
+		h4:first-of-type {
+			padding-top: 0.5em;
+			margin-top: 0;
+		}
+		&_content > p:first-child {
+			margin-bottom: 0.3em;
+			line-height: 1;
+			color: #666;
+		}
+		.vk_step_item_caption {
+			margin-bottom: 0.5em;
+			color: #666;
+		}
+		.vk_step_item_content {
+		}
+		.vk_step_item_dot {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			color: #ffffff;
+			padding: 9px 0;
+			text-align: center;
+			&_num {
+				line-height: 1.2;
+			}
+		}
+		.vk_step_item_dot_caption {
+			font-size: 0.5rem;
+		}
+	}
+}
+.vk_step_item_lineStyle-default {
+	&::before {
+		content: "";
+		width: 3px;
+		background: #ddd;
+		display: block;
+		position: absolute;
+		top: 54px;
+		left: 23px;
+		bottom: 4px;
+	}
+}
 
 /*-------------------------------------------*/
 /* CSS
@@ -2757,67 +2803,21 @@ $toc-left-margin: 1rem;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-.vk_step {
-	margin: 2em 0;
-
-	.vk_step_item {
-		position: relative;
-		padding: 0 0 2.4em 4.5em;
-		margin: 0 auto;
-
-		h3:first-of-type,
-		h4:first-of-type {
-			padding-top: 0.5em;
-			margin-top: 0;
-		}
-		&_content > p:first-child {
-			margin-bottom: 0.3em;
-			line-height: 1;
-			color: #666;
-		}
-		.vk_step_item_caption {
-			margin-bottom: 0.5em;
-			color: #666;
-		}
-		.vk_step_item_content {
-		}
-		.vk_step_item_dot {
-			content: "";
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 50px;
-			height: 50px;
-			border-radius: 50%;
-			color: #ffffff;
-			padding: 9px 0;
-			text-align: center;
-			&_num {
-				line-height: 1.2;
-			}
-		}
-		.vk_step_item_dot_caption {
-			font-size: 0.5rem;
-		}
-	}
-}
-.vk_step_item_lineStyle-default {
-	&::before {
-		content: "";
-		width: 3px;
-		background: #ddd;
-		display: block;
-		position: absolute;
-		top: 54px;
-		left: 23px;
-		bottom: 4px;
-	}
-}
-
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+
+.vk_card {
+  &_item {
+    .vk_post_title.card-title {
+      font-size: 1rem;
+    }
+    .vk_post_excerpt.card-text {
+      font-size: 14px;
+    }
+  }
+}
+
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/

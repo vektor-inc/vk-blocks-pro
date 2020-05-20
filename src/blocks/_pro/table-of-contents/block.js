@@ -29,6 +29,7 @@ const { dispatch } = wp.data;
 import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
 const inserterVisible = hiddenNewBlock(5.3);
 import TocBody from './TocBody'
+import deprecated from './deprecated'
 
 
 registerBlockType("vk-blocks/table-of-contents", {
@@ -89,6 +90,7 @@ registerBlockType("vk-blocks/table-of-contents", {
 	save(props) {
 		return <TocBody {...props} />;
 	},
+	deprecated: deprecated
 });
 
 const getHeadings = (props) => {

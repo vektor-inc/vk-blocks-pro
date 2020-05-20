@@ -74,6 +74,11 @@ addFilter("editor.BlockEdit", "vk-blocks/group-style", addBlockControl);
 
 const addGroupBorderStyleOnEdit = createHigherOrderComponent((BlockListBlock) => {
 	return (props) => {
+
+		if (!isValidBlockType(props.name)) {
+			return <BlockListBlock {...props} />
+		}
+
 		const editStye = `
 			.block-${props.clientId} .wp-block-group, .block-${props.clientId} .wp-block-group.is-style-vk-group-stitch .wp-block-group__inner-container{
 				border-color:${props.attributes.color}!important;

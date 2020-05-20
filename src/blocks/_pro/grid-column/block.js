@@ -36,8 +36,8 @@ if (window.wpVersion && 5.4 <= parseFloat(window.wpVersion)) {
 	displayInserter = true;
 }
 
-registerBlockType("vk-blocks/column-responsive", {
-	title: __("Responsive Column", "vk-blocks"),
+registerBlockType("vk-blocks/grid-column", {
+	title: __("Grid Column", "vk-blocks"),
 	icon: BlockIcon,
 	category: "vk-blocks-cat-layout",
 	attributes: schema,
@@ -113,7 +113,7 @@ const { addFilter } = wp.hooks;
 const vkbwithClientIdClassName = createHigherOrderComponent(
 	(BlockListBlock) => {
 		return (props) => {
-			if (props.name === "vk-blocks/column-responsive-item") {
+			if (props.name === "vk-blocks/grid-column-item") {
 				const { col_xs, col_sm, col_md, col_lg, col_xl } = props.attributes;
 				const customClass = classNames(props.className, `col-${convertToGrid(col_xs)} col-sm-${convertToGrid(col_sm)} col-md-${convertToGrid(col_md)} col-lg-${convertToGrid(col_lg)} col-xl-${convertToGrid(col_xl)}`);
 				return (
@@ -132,7 +132,7 @@ const vkbwithClientIdClassName = createHigherOrderComponent(
 
 addFilter(
 	"editor.BlockListBlock",
-	"vk-blocks/column-responsive-item",
+	"vk-blocks/grid-column-item",
 	vkbwithClientIdClassName
 );
 
@@ -141,7 +141,7 @@ addFilter(
 	"vk-blocks/hidden-extension",
 	(element, blockType, attributes) => {
 		const { col_xs, col_sm, col_md, col_lg, col_xl } = attributes;
-		if (blockType.name === "vk-blocks/column-responsive-item" && element) {
+		if (blockType.name === "vk-blocks/grid-column-item" && element) {
 			element = {
 				...element,
 				...{

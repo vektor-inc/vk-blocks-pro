@@ -131,7 +131,46 @@ function vkblocks_blocks_assets() {
 
 		foreach ( $arr as $value ) {
 
-			if ( $value == 'post-list' ) {
+			if ( $value === 'table-of-contents' ) {
+
+				register_block_type(
+					'vk-blocks/' . $value,
+					array(
+						// 'style'        => 'vk-blocks-build-css',
+						'editor_style'    => 'vk-blocks-build-editor-css',
+						'editor_script'   => 'vk-blocks-build-js',
+						'attributes'      => array_merge(
+							array(
+								'style'      => array(
+									'type'    => 'string',
+									'default' => '',
+								),
+								'renderHtml' => array(
+									'type'    => 'string',
+									'default' => '',
+								),
+								'open'       => array(
+									'type'    => 'string',
+									'default' => 'open',
+								),
+								'className'  => array(
+									'type'    => 'string',
+									'default' => '',
+								),
+							),
+							$common_attributes
+						),
+						'render_callback' => function ( $attributes ) {
+							if ( $attributes['renderHtml'] ) {
+								$custom_class = esc_attr( $attributes['className'] ) . ' ';
+								return preg_replace( '/class="/', 'class="' . $custom_class, $attributes['renderHtml'], 1 );
+							} else {
+								return '<div><div class="vk_tableOfContents_title">' . __( 'Table of Contents', 'vk-blocks' ) . '</div></div>';
+							}
+						},
+					)
+				);
+			} elseif ( $value == 'post-list' ) {
 					register_block_type(
 						'vk-blocks/' . $value,
 						array(

@@ -58,6 +58,12 @@ e.g.
 
 == Changelog ==
 
+= 0.29.0 =
+[ Add new block ][ Grid Column(pro) ]
+[ Add function ][ Group ] Use custom border color
+[ bug fix ][ toc (pro) ] Many title charactor number 
+[ bug fix ][ list ] 2digits number display bug fix
+
 = 0.28.4 =
 [ bug fix ] Drag and drop inserter bug fix
 

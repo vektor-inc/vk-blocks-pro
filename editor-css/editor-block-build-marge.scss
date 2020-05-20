@@ -524,7 +524,7 @@ $stylePalette: (
 	is-style-vk-handpoint-mark: "\f0a4",
 	is-style-vk-pencil-mark: "\f303",
 	is-style-vk-smile-mark: "\f118",
-	is-style-vk-frown-mark: "\f119"
+	is-style-vk-frown-mark: "\f119",
 );
 
 $colorPalette: (
@@ -539,7 +539,7 @@ $colorPalette: (
 	vk-has-vivid-purple-color: #9b51e0,
 	vk-has-very-light-gray-color: #eee,
 	vk-has-cyan-bluish-gray-color: #abb8c3,
-	vk-has-very-dark-gray-color: #313131
+	vk-has-very-dark-gray-color: #313131,
 );
 
 ul,
@@ -577,10 +577,10 @@ ol {
 
 			&:before {
 				position: absolute;
-				left: -0.3em;
+				left: 0;
 				counter-increment: number;
 				content: counter(number);
-				margin-left: -25px;
+				margin-left: -2em;
 				background: #222;
 				color: #fff;
 				text-indent: 0;
@@ -1451,79 +1451,6 @@ $color_dark: #343a40;
 	box-sizing: border-box;
 }
 
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-@mixin reset() {
-	background: none;
-	border:none;
-	border-radius: 0;
-	padding:0;
-	font-weight: normal;
-	box-shadow:none;
-	&:after {
-		content:none;
-		border:none;
-	}
-	&:before{
-		content:none;
-	}
-}
-
-// .vk_heading は指定が強い要素（ Charm ）も消すために必要
-.vk_heading.vk_heading-style-plain {
-	.vk_heading_title {
-		@include reset;
-		&:after {
-			@include reset;
-		}
-	}
-}
-
-.vk_heading_subtext {
-	margin-bottom:0;
-}
-
-$xs-max: 575.98px;
-$sm-max: 767.98px;
-$md-max: 991.98px;
-$lg-max: 1199.98px;
-
-$sm-min: 576px;
-$md-min: 768px;
-$lg-min: 992px;
-$xl-min: 1200px;
-
-.vk_hidden {
-	display: none !important;
-	color: var(--blue);
-	@media (max-width: $xs-max) {
-		&-xs {
-			display: none !important;
-		}
-	}
-	@media (min-width: $sm-min) and (max-width: $sm-max) {
-		&-sm {
-			display: none !important;
-		}
-	}
-	@media (min-width: $md-min) and (max-width: $md-max) {
-		&-md {
-			display: none !important;
-		}
-	}
-	@media (min-width: $lg-min) and (max-width: $lg-max) {
-		&-lg {
-			display: none !important;
-		}
-	}
-	@media (min-width: $xl-min) {
-		&-xl {
-			display: none !important;
-		}
-	}
-}
-
 //管理画面側の見出しブロックのスタイルのcssになります。
 //cssを修正する場合はfunctions-color.phpのdynamic_css部分とこちらのscssを修正してください。
 
@@ -1986,22 +1913,77 @@ $color_key: #337ab7;
 	} //.is-style-vk-heading
 } //.editor-block-list__block
 
-.is-style-vk-image {
-    &-border {
-        img {
-            border: 1px solid #e5e5e5;
-        }
-    }
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+@mixin reset() {
+	background: none;
+	border:none;
+	border-radius: 0;
+	padding:0;
+	font-weight: normal;
+	box-shadow:none;
+	&:after {
+		content:none;
+		border:none;
+	}
+	&:before{
+		content:none;
+	}
+}
 
-    &-photoFrame {
-        background-color: #fff;
-        padding: 10px;
-        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+// .vk_heading は指定が強い要素（ Charm ）も消すために必要
+.vk_heading.vk_heading-style-plain {
+	.vk_heading_title {
+		@include reset;
+		&:after {
+			@include reset;
+		}
+	}
+}
 
-        figcaption {
-            margin: 8px 0 0;
-        }
-    }
+.vk_heading_subtext {
+	margin-bottom:0;
+}
+
+$xs-max: 575.98px;
+$sm-max: 767.98px;
+$md-max: 991.98px;
+$lg-max: 1199.98px;
+
+$sm-min: 576px;
+$md-min: 768px;
+$lg-min: 992px;
+$xl-min: 1200px;
+
+.vk_hidden {
+	display: none !important;
+	color: var(--blue);
+	@media (max-width: $xs-max) {
+		&-xs {
+			display: none !important;
+		}
+	}
+	@media (min-width: $sm-min) and (max-width: $sm-max) {
+		&-sm {
+			display: none !important;
+		}
+	}
+	@media (min-width: $md-min) and (max-width: $md-max) {
+		&-md {
+			display: none !important;
+		}
+	}
+	@media (min-width: $lg-min) and (max-width: $lg-max) {
+		&-lg {
+			display: none !important;
+		}
+	}
+	@media (min-width: $xl-min) {
+		&-xl {
+			display: none !important;
+		}
+	}
 }
 
 /*-------------------------------------------*/
@@ -2067,6 +2049,59 @@ $color_key: #337ab7;
 		text-align: center;
 		line-height: 1.8em;
 	}
+}
+
+.is-style-vk-image {
+    &-border {
+        img {
+            border: 1px solid #e5e5e5;
+        }
+    }
+
+    &-photoFrame {
+        background-color: #fff;
+        padding: 10px;
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+
+        figcaption {
+            margin: 8px 0 0;
+        }
+    }
+}
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
+@mixin switchVisibility($pc, $tablet, $mobile) {
+	.vk_spacer {
+		.vk_spacer-display-pc {
+			display: $pc;
+		}
+
+		.vk_spacer-display-tablet {
+			display: $tablet;
+		}
+
+		.vk_spacer-display-mobile {
+			display: $mobile;
+		}
+	}
+}
+
+// Small devices (landscape phones, 576px以下)
+@media (max-width: 576px) {
+	@include switchVisibility(none, none, block);
+}
+
+// Medium devices (tablets, 577pxから768px)
+@media (min-width: 577px) and (max-width: 768px) {
+	@include switchVisibility(none, block, none);
+}
+
+// Large devices (desktops, 769px以上)
+@media (min-width: 769px) {
+	@include switchVisibility(block, none, none);
 }
 
 /*-------------------------------------------*/
@@ -2234,41 +2269,6 @@ $color_key: #337ab7;
 	&.table-striped > tbody > .editor-inner-blocks > .editor-block-list__layout > div:nth-of-type(odd) {
 			background-color: rgba(0, 0, 0, 0.05);
 	}
-}
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-
-@mixin switchVisibility($pc, $tablet, $mobile) {
-	.vk_spacer {
-		.vk_spacer-display-pc {
-			display: $pc;
-		}
-
-		.vk_spacer-display-tablet {
-			display: $tablet;
-		}
-
-		.vk_spacer-display-mobile {
-			display: $mobile;
-		}
-	}
-}
-
-// Small devices (landscape phones, 576px以下)
-@media (max-width: 576px) {
-	@include switchVisibility(none, none, block);
-}
-
-// Medium devices (tablets, 577pxから768px)
-@media (min-width: 577px) and (max-width: 768px) {
-	@include switchVisibility(none, block, none);
-}
-
-// Large devices (desktops, 769px以上)
-@media (min-width: 769px) {
-	@include switchVisibility(block, none, none);
 }
 
 /*-------------------------------------------*/
@@ -2448,6 +2448,10 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 .vk_table-col-overflow {
   white-space: nowrap !important;
 }
@@ -2461,8 +2465,15 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 /* CSS
 /*-------------------------------------------*/
 
-.vk_childPage {
-	margin-top: 2.5rem;
+.vk_card {
+  &_item {
+    .vk_post_title.card-title {
+      font-size: 1rem;
+    }
+    .vk_post_excerpt.card-text {
+      font-size: 14px;
+    }
+  }
 }
 
 /*-------------------------------------------*/
@@ -2660,6 +2671,49 @@ $color-danger: #b52727;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+.vk_timeline {
+	margin: 2em 0;
+	.vk_timeline_item {
+		position: relative;
+		padding: 0 0 2.4em 1.8em;
+
+		&_caption {
+			margin-bottom: 1.5em;
+			color: #666;
+		}
+
+		&_style {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 4px;
+			left: 0;
+			width: 14px;
+			height: 14px;
+			border-radius: 50%;
+		}
+	}
+}
+
+.vk_timeline_item_lineStyle-default {
+	&::before {
+		content: "";
+		width: 3px;
+		background: #ddd;
+		display: block;
+		position: absolute;
+		top: 22px;
+		left: 6px;
+		bottom: 0;
+	}
+}
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 $toc-left-margin: 1rem;
 
 .vk_tableOfContents {
@@ -2800,62 +2854,8 @@ $toc-left-margin: 1rem;
 	}
 }
 
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-
-.vk_card {
-  &_item {
-    .vk_post_title.card-title {
-      font-size: 1rem;
-    }
-    .vk_post_excerpt.card-text {
-      font-size: 14px;
-    }
-  }
-}
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-.vk_timeline {
-	margin: 2em 0;
-	.vk_timeline_item {
-		position: relative;
-		padding: 0 0 2.4em 1.8em;
-
-		&_caption {
-			margin-bottom: 1.5em;
-			color: #666;
-		}
-
-		&_style {
-			content: "";
-			display: block;
-			position: absolute;
-			top: 4px;
-			left: 0;
-			width: 14px;
-			height: 14px;
-			border-radius: 50%;
-		}
-	}
-}
-
-.vk_timeline_item_lineStyle-default {
-	&::before {
-		content: "";
-		width: 3px;
-		background: #ddd;
-		display: block;
-		position: absolute;
-		top: 22px;
-		left: 6px;
-		bottom: 0;
-	}
+.vk_childPage {
+	margin-top: 2.5rem;
 }
 
 }

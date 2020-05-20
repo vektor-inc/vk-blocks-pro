@@ -133,149 +133,149 @@ msgstr ""
 msgid "Layout Columns"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:101
+#: src/blocks/_pro/outer/block.js:103
 msgid "Background Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:105
+#: src/blocks/_pro/outer/block.js:107
 #: src/blocks/pr-content/block.js:119
 msgid "Color Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:106
+#: src/blocks/_pro/outer/block.js:108
 msgid ""
 "Color will overcome background image. If you want to display image, clear "
 "background color or set opacity 0."
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:116
+#: src/blocks/_pro/outer/block.js:118
 msgid "Opacity Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:128
+#: src/blocks/_pro/outer/block.js:130
 msgid "Background Image PC"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:136
+#: src/blocks/_pro/outer/block.js:138
 msgid "Background Image Tablet"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:142
+#: src/blocks/_pro/outer/block.js:144
 msgid "Background Image Mobile"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:148
+#: src/blocks/_pro/outer/block.js:150
 msgid "Background image Position"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:154
+#: src/blocks/_pro/outer/block.js:156
 msgid "normal"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:155
+#: src/blocks/_pro/outer/block.js:157
 msgid "Fixed"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:157
-msgid "Parallax (It will not work in preview)"
+#: src/blocks/_pro/outer/block.js:159
+msgid "Parallax (Non-guaranteed / Abolished)"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:170
+#: src/blocks/_pro/outer/block.js:172
 #: src/blocks/pr-content/block.js:233
 msgid "Layout Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:175
+#: src/blocks/_pro/outer/block.js:177
 msgid "Outer width"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:178
+#: src/blocks/_pro/outer/block.js:180
 #: src/blocks/button/block.js:156
 msgid "Normal"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:179
+#: src/blocks/_pro/outer/block.js:181
 msgid "Full Wide"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:184
+#: src/blocks/_pro/outer/block.js:186
 msgid "Contents area padding (left and right)"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:191
+#: src/blocks/_pro/outer/block.js:193
 msgid "Do not use padding"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:195
+#: src/blocks/_pro/outer/block.js:197
 msgid "Use padding"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:204
+#: src/blocks/_pro/outer/block.js:206
 msgid "Padding (top and bottom)"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:207
+#: src/blocks/_pro/outer/block.js:209
 msgid "Use default padding"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:209
+#: src/blocks/_pro/outer/block.js:211
 msgid "Do not use default padding (Set it yourself using a spacer block etc.)."
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:223
+#: src/blocks/_pro/outer/block.js:225
 msgid "Divider Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:228
+#: src/blocks/_pro/outer/block.js:230
 #: src/blocks/balloon/block.js:81
 msgid "Type"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:234
+#: src/blocks/_pro/outer/block.js:236
 msgid "Tilt"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:238
+#: src/blocks/_pro/outer/block.js:240
 msgid "Curve"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:242
+#: src/blocks/_pro/outer/block.js:244
 msgid "Wave"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:246
+#: src/blocks/_pro/outer/block.js:248
 #: src/blocks/list-style/block.js:113
 msgid "Triangle"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:251
+#: src/blocks/_pro/outer/block.js:253
 msgid "Upper Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:269
+#: src/blocks/_pro/outer/block.js:271
 msgid "Lower Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:289
+#: src/blocks/_pro/outer/block.js:291
 msgid "Border Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:294
+#: src/blocks/_pro/outer/block.js:296
 msgid "Border will disappear when divider effect is applied."
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:300
+#: src/blocks/_pro/outer/block.js:302
 msgid "Border type"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:306
+#: src/blocks/_pro/outer/block.js:308
 #: src/blocks/_pro/step-item/block.js:98
 #: src/blocks/_pro/timeline-item/block.js:103
 #: src/blocks/staff/block.js:88
 msgid "None"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:310
+#: src/blocks/_pro/outer/block.js:312
 #: src/blocks/_pro/step-item/block.js:75
 #: src/blocks/_pro/timeline-item/block.js:84
 #: src/blocks/group-style/block.js:135
@@ -283,42 +283,42 @@ msgstr ""
 msgid "Solid"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:314
+#: src/blocks/_pro/outer/block.js:316
 #: src/blocks/group-style/block.js:143
 msgid "Dotted"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:318
+#: src/blocks/_pro/outer/block.js:320
 #: src/blocks/group-style/block.js:147
 msgid "Dashed"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:322
+#: src/blocks/_pro/outer/block.js:324
 #: src/blocks/group-style/block.js:151
 msgid "Double"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:326
+#: src/blocks/_pro/outer/block.js:328
 msgid "Groove"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:330
+#: src/blocks/_pro/outer/block.js:332
 msgid "Ridge"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:334
+#: src/blocks/_pro/outer/block.js:336
 msgid "Inset"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:338
+#: src/blocks/_pro/outer/block.js:340
 msgid "Outset"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:349
+#: src/blocks/_pro/outer/block.js:351
 msgid "Border width"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:356
+#: src/blocks/_pro/outer/block.js:358
 msgid "Border radius"
 msgstr ""
 

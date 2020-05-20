@@ -157,7 +157,7 @@ registerBlockType("vk-blocks/outer", {
 									{ label: __("Fixed", "vk-blocks"), value: "fixed" },
 									{
 										label: __(
-											"Parallax (It will not work in preview)",
+											"Parallax (Non-guaranteed / Abolished)",
 											"vk-blocks"
 										),
 										value: "parallax",

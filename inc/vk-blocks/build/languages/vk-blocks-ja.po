@@ -143,15 +143,15 @@ msgstr "グリッドカラム"
 msgid "Layout Columns"
 msgstr "カラムレイアウト"
 
-#: src/blocks/_pro/outer/block.js:101
+#: src/blocks/_pro/outer/block.js:103
 msgid "Background Setting"
 msgstr "背景設定"
 
-#: src/blocks/_pro/outer/block.js:105 src/blocks/pr-content/block.js:119
+#: src/blocks/_pro/outer/block.js:107 src/blocks/pr-content/block.js:119
 msgid "Color Setting"
 msgstr "色設定"
 
-#: src/blocks/_pro/outer/block.js:106
+#: src/blocks/_pro/outer/block.js:108
 msgid ""
 "Color will overcome background image. If you want to display image, clear "
 "background color or set opacity 0."
@@ -159,166 +159,166 @@ msgstr ""
 "色を指定すると画像よりも優先されます。画像を表示したい場合は、背景色をクリア"
 "するか、不透明度を0に設定します。"
 
-#: src/blocks/_pro/outer/block.js:116
+#: src/blocks/_pro/outer/block.js:118
 msgid "Opacity Setting"
 msgstr "透過設定"
 
-#: src/blocks/_pro/outer/block.js:128
+#: src/blocks/_pro/outer/block.js:130
 msgid "Background Image PC"
 msgstr "背景画像 ( PC )"
 
-#: src/blocks/_pro/outer/block.js:136
+#: src/blocks/_pro/outer/block.js:138
 msgid "Background Image Tablet"
 msgstr "背景画像 ( タブレット )"
 
-#: src/blocks/_pro/outer/block.js:142
+#: src/blocks/_pro/outer/block.js:144
 msgid "Background Image Mobile"
 msgstr "背景画像背景画像 ( モバイル )"
 
-#: src/blocks/_pro/outer/block.js:148
+#: src/blocks/_pro/outer/block.js:150
 msgid "Background image Position"
 msgstr "背景画像の位置"
 
-#: src/blocks/_pro/outer/block.js:154
+#: src/blocks/_pro/outer/block.js:156
 msgid "normal"
 msgstr "標準"
 
-#: src/blocks/_pro/outer/block.js:155
+#: src/blocks/_pro/outer/block.js:157
 msgid "Fixed"
 msgstr "固定"
 
-#: src/blocks/_pro/outer/block.js:157
-msgid "Parallax (It will not work in preview)"
-msgstr "パララックス（編集画面では反映されません）"
+#: src/blocks/_pro/outer/block.js:159
+msgid "Parallax (Non-guaranteed / Abolished)"
+msgstr "パララックス（非保証/近日廃止）"
 
-#: src/blocks/_pro/outer/block.js:170 src/blocks/pr-content/block.js:233
+#: src/blocks/_pro/outer/block.js:172 src/blocks/pr-content/block.js:233
 msgid "Layout Setting"
 msgstr "レイアウト設定"
 
-#: src/blocks/_pro/outer/block.js:175
+#: src/blocks/_pro/outer/block.js:177
 msgid "Outer width"
 msgstr "アウターの幅"
 
-#: src/blocks/_pro/outer/block.js:178 src/blocks/button/block.js:156
+#: src/blocks/_pro/outer/block.js:180 src/blocks/button/block.js:156
 msgid "Normal"
 msgstr "標準"
 
-#: src/blocks/_pro/outer/block.js:179
+#: src/blocks/_pro/outer/block.js:181
 msgid "Full Wide"
 msgstr "全幅"
 
-#: src/blocks/_pro/outer/block.js:184
+#: src/blocks/_pro/outer/block.js:186
 msgid "Contents area padding (left and right)"
 msgstr "コンテンツエリアの余白 (左右)"
 
-#: src/blocks/_pro/outer/block.js:191
+#: src/blocks/_pro/outer/block.js:193
 msgid "Do not use padding"
 msgstr "余白なし"
 
-#: src/blocks/_pro/outer/block.js:195
+#: src/blocks/_pro/outer/block.js:197
 msgid "Use padding"
 msgstr "余白あり"
 
-#: src/blocks/_pro/outer/block.js:204
+#: src/blocks/_pro/outer/block.js:206
 msgid "Padding (top and bottom)"
 msgstr "余白 (上下)"
 
-#: src/blocks/_pro/outer/block.js:207
+#: src/blocks/_pro/outer/block.js:209
 msgid "Use default padding"
 msgstr "標準の余白を使用"
 
-#: src/blocks/_pro/outer/block.js:209
+#: src/blocks/_pro/outer/block.js:211
 msgid "Do not use default padding (Set it yourself using a spacer block etc.)."
 msgstr "標準の余白を使用しない（スペーサーブロックなどで独自に指定する）。"
 
-#: src/blocks/_pro/outer/block.js:223
+#: src/blocks/_pro/outer/block.js:225
 msgid "Divider Setting"
 msgstr "区切りの設定"
 
-#: src/blocks/_pro/outer/block.js:228 src/blocks/balloon/block.js:81
+#: src/blocks/_pro/outer/block.js:230 src/blocks/balloon/block.js:81
 msgid "Type"
 msgstr "タイプ"
 
-#: src/blocks/_pro/outer/block.js:234
+#: src/blocks/_pro/outer/block.js:236
 msgid "Tilt"
 msgstr "傾斜"
 
-#: src/blocks/_pro/outer/block.js:238
+#: src/blocks/_pro/outer/block.js:240
 msgid "Curve"
 msgstr "カーブ"
 
-#: src/blocks/_pro/outer/block.js:242
+#: src/blocks/_pro/outer/block.js:244
 msgid "Wave"
 msgstr "波状"
 
-#: src/blocks/_pro/outer/block.js:246 src/blocks/list-style/block.js:113
+#: src/blocks/_pro/outer/block.js:248 src/blocks/list-style/block.js:113
 msgid "Triangle"
 msgstr "三角"
 
-#: src/blocks/_pro/outer/block.js:251
+#: src/blocks/_pro/outer/block.js:253
 msgid "Upper Divider Level"
 msgstr "上部区切りレベル"
 
-#: src/blocks/_pro/outer/block.js:269
+#: src/blocks/_pro/outer/block.js:271
 msgid "Lower Divider Level"
 msgstr "下部区切りレベル"
 
-#: src/blocks/_pro/outer/block.js:289
+#: src/blocks/_pro/outer/block.js:291
 msgid "Border Setting"
 msgstr "枠線の設定"
 
-#: src/blocks/_pro/outer/block.js:294
+#: src/blocks/_pro/outer/block.js:296
 msgid "Border will disappear when divider effect is applied."
 msgstr "枠線は区切りレベルを適用すると表示されなくなります。"
 
-#: src/blocks/_pro/outer/block.js:300
+#: src/blocks/_pro/outer/block.js:302
 msgid "Border type"
 msgstr "枠線の種類"
 
-#: src/blocks/_pro/outer/block.js:306 src/blocks/_pro/step-item/block.js:98
+#: src/blocks/_pro/outer/block.js:308 src/blocks/_pro/step-item/block.js:98
 #: src/blocks/_pro/timeline-item/block.js:103 src/blocks/staff/block.js:88
 msgid "None"
 msgstr "なし"
 
-#: src/blocks/_pro/outer/block.js:310 src/blocks/_pro/step-item/block.js:75
+#: src/blocks/_pro/outer/block.js:312 src/blocks/_pro/step-item/block.js:75
 #: src/blocks/_pro/timeline-item/block.js:84
 #: src/blocks/group-style/block.js:135 src/blocks/pr-content/block.js:168
 msgid "Solid"
 msgstr "直線"
 
-#: src/blocks/_pro/outer/block.js:314 src/blocks/group-style/block.js:143
+#: src/blocks/_pro/outer/block.js:316 src/blocks/group-style/block.js:143
 msgid "Dotted"
 msgstr "点線"
 
-#: src/blocks/_pro/outer/block.js:318 src/blocks/group-style/block.js:147
+#: src/blocks/_pro/outer/block.js:320 src/blocks/group-style/block.js:147
 msgid "Dashed"
 msgstr "Dashed"
 
-#: src/blocks/_pro/outer/block.js:322 src/blocks/group-style/block.js:151
+#: src/blocks/_pro/outer/block.js:324 src/blocks/group-style/block.js:151
 msgid "Double"
 msgstr "二重線"
 
-#: src/blocks/_pro/outer/block.js:326
+#: src/blocks/_pro/outer/block.js:328
 msgid "Groove"
 msgstr "Groove"
 
-#: src/blocks/_pro/outer/block.js:330
+#: src/blocks/_pro/outer/block.js:332
 msgid "Ridge"
 msgstr "Ridge"
 
-#: src/blocks/_pro/outer/block.js:334
+#: src/blocks/_pro/outer/block.js:336
 msgid "Inset"
 msgstr "Inset"
 
-#: src/blocks/_pro/outer/block.js:338
+#: src/blocks/_pro/outer/block.js:340
 msgid "Outset"
 msgstr "Outset"
 
-#: src/blocks/_pro/outer/block.js:349
+#: src/blocks/_pro/outer/block.js:351
 msgid "Border width"
 msgstr "枠線の幅"
 
-#: src/blocks/_pro/outer/block.js:356
+#: src/blocks/_pro/outer/block.js:358
 msgid "Border radius"
 msgstr "枠線のRの大きさ"
 
@@ -1240,6 +1240,9 @@ msgstr ""
 #: src/translation_dummy.js:3
 msgid "Deactivated VK-Blocks Plugin. Because VK-Blocks Pro running."
 msgstr "Pro版VK-Blocksが起動しているため、VK-Blocksを停止しました。"
+
+#~ msgid "Parallax (It will not work in preview)"
+#~ msgstr "パララックス（編集画面では反映されません）"
 
 #, fuzzy
 #~| msgid "Responsive Spacer"

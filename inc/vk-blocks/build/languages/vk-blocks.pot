@@ -121,15 +121,15 @@ msgstr ""
 msgid "Ignore this post"
 msgstr ""
 
-#: src/blocks/_pro/column-responsive-item/block.js:18
-msgid "Responsive Column Item"
+#: src/blocks/_pro/grid-column-item/block.js:18
+msgid "Grid Column Item"
 msgstr ""
 
-#: src/blocks/_pro/column-responsive/block.js:40
-msgid "Responsive Column"
+#: src/blocks/_pro/grid-column/block.js:40
+msgid "Grid Column"
 msgstr ""
 
-#: src/blocks/_pro/column-responsive/block.js:84
+#: src/blocks/_pro/grid-column/block.js:84
 msgid "Layout Columns"
 msgstr ""
 

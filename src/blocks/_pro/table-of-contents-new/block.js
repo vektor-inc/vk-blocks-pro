@@ -1,5 +1,5 @@
 /**
- * table-of-contents block type
+ * table-of-contents-new-new block type
  */
 
 import { schema } from "./schema";
@@ -29,10 +29,8 @@ const { dispatch } = wp.data;
 import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
 const inserterVisible = hiddenNewBlock(5.3);
 import TocBody from './TocBody'
-import deprecated from './deprecated'
 
-
-registerBlockType("vk-blocks/table-of-contents", {
+registerBlockType("vk-blocks/table-of-contents-new", {
 	title: __("Table of Contents", "vk-blocks"),
 	icon: <BlockIcon />,
 	category: "vk-blocks-cat",
@@ -90,7 +88,6 @@ registerBlockType("vk-blocks/table-of-contents", {
 	save(props) {
 		return <TocBody {...props} />;
 	},
-	deprecated: deprecated
 });
 
 const getHeadings = (props) => {
@@ -107,7 +104,7 @@ const getHeadings = (props) => {
 	const headingList = ["core/heading", "vk-blocks/heading"];
 
 	if (isAllowedBlock(name, allowedBlocks)) {
-		const tocs = getBlocksByName("vk-blocks/table-of-contents");
+		const tocs = getBlocksByName("vk-blocks/table-of-contents-new");
 		const tocClientId = tocs[0] ? tocs[0].clientId : "";
 		const tocAttributes = tocs[0] ? tocs[0].attributes : "";
 
@@ -121,7 +118,7 @@ const getHeadings = (props) => {
 			});
 		}
 
-		const asyncToc = asyncGetBlocksByName("vk-blocks/table-of-contents");
+		const asyncToc = asyncGetBlocksByName("vk-blocks/table-of-contents-new");
 		const open = asyncToc[0] ? asyncToc[0].attributes.open : "";
 
 		let headingsRaw = getAllHeadings(headingList);
@@ -146,7 +143,7 @@ const updateTableOfContents = createHigherOrderComponent((BlockListBlock) => {
 if (5.3 <= parseFloat(wpVersion)) {
 	addFilter(
 		"editor.BlockListBlock",
-		"vk-blocks/table-of-contents",
+		"vk-blocks/table-of-contents-new",
 		updateTableOfContents
 	);
 }

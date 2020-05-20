@@ -278,23 +278,23 @@ msgstr ""
 #: src/blocks/_pro/outer/block.js:310
 #: src/blocks/_pro/step-item/block.js:75
 #: src/blocks/_pro/timeline-item/block.js:84
-#: src/blocks/group-style/block.js:130
+#: src/blocks/group-style/block.js:135
 #: src/blocks/pr-content/block.js:168
 msgid "Solid"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:314
-#: src/blocks/group-style/block.js:138
+#: src/blocks/group-style/block.js:143
 msgid "Dotted"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:318
-#: src/blocks/group-style/block.js:142
+#: src/blocks/group-style/block.js:147
 msgid "Dashed"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:322
-#: src/blocks/group-style/block.js:146
+#: src/blocks/group-style/block.js:151
 msgid "Double"
 msgstr ""
 
@@ -458,28 +458,28 @@ msgstr ""
 
 #: src/blocks/alert/block.js:53
 #: src/blocks/button/block.js:247
-#: src/blocks/group-style/block.js:162
+#: src/blocks/group-style/block.js:167
 #: src/blocks/pr-content/block.js:180
 msgid "Success"
 msgstr ""
 
 #: src/blocks/alert/block.js:54
 #: src/blocks/button/block.js:248
-#: src/blocks/group-style/block.js:166
+#: src/blocks/group-style/block.js:171
 #: src/blocks/pr-content/block.js:181
 msgid "Info"
 msgstr ""
 
 #: src/blocks/alert/block.js:55
 #: src/blocks/button/block.js:249
-#: src/blocks/group-style/block.js:170
+#: src/blocks/group-style/block.js:175
 #: src/blocks/pr-content/block.js:182
 msgid "Warning"
 msgstr ""
 
 #: src/blocks/alert/block.js:56
 #: src/blocks/button/block.js:250
-#: src/blocks/group-style/block.js:174
+#: src/blocks/group-style/block.js:179
 #: src/blocks/pr-content/block.js:183
 msgid "Danger"
 msgstr ""
@@ -714,19 +714,19 @@ msgstr ""
 msgid "Input content"
 msgstr ""
 
-#: src/blocks/group-style/block.js:134
+#: src/blocks/group-style/block.js:139
 msgid "Solid Roundcorner"
 msgstr ""
 
-#: src/blocks/group-style/block.js:150
+#: src/blocks/group-style/block.js:155
 msgid "Stitch"
 msgstr ""
 
-#: src/blocks/group-style/block.js:154
+#: src/blocks/group-style/block.js:159
 msgid "Border Top Bottom"
 msgstr ""
 
-#: src/blocks/group-style/block.js:158
+#: src/blocks/group-style/block.js:163
 msgid "Shadow"
 msgstr ""
 

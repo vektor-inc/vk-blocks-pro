@@ -203,7 +203,7 @@ $color-danger: #b52727;
 
 /*-------------------------------------------*/
 /* vk_post Layout
-  /*-------------------------------------------*/
+/*-------------------------------------------*/
 /* If exclude the .vk_posts that, when you select the .media don't work */
 
 // .vk_posts .editor-inner-blocks .editor-block-list__layout .wp-block .editor-block-list__block-edit div .vk_post-col {
@@ -247,28 +247,119 @@ $color-danger: #b52727;
 	}
 }
 
+.vk_posts .vk_posts-edit {
+	&-col-xs-3 .editor-block-list__block,
+	&-col-xs-3 .block-editor-block-list__block {
+		width: calc(25% - 30px);
+	}
+	&-col-xs-4 .editor-block-list__block,
+	&-col-xs-4 .block-editor-block-list__block {
+		width: calc(33.3% - 30px);
+	}
+	&-col-xs-6 .editor-block-list__block,
+	&-col-xs-6 .block-editor-block-list__block {
+		width: calc(50% - 30px);
+	}
+	&-col-xs-12 .editor-block-list__block,
+	&-col-xs-12 .block-editor-block-list__block {
+		width: calc(100% - 30px);
+	}
+	@media (min-width: $sm-min) {
+		&-col-sm-3 .editor-block-list__block,
+		&-col-sm-3 .block-editor-block-list__block {
+			width: calc(25% - 30px);
+		}
+		&-col-sm-4 .editor-block-list__block,
+		&-col-sm-4 .block-editor-block-list__block {
+			width: calc(33.3% - 30px);
+		}
+		&-col-sm-6 .editor-block-list__block,
+		&-col-sm-6 .block-editor-block-list__block {
+			width: calc(50% - 30px);
+		}
+		&-col-sm-12 .editor-block-list__block,
+		&-col-sm-12 .block-editor-block-list__block {
+			width: calc(100% - 30px);
+		}
+	}
+	@media (min-width: $md-min) {
+		&-col-md-3 .editor-block-list__block,
+		&-col-md-3 .block-editor-block-list__block {
+			width: calc(25% - 30px);
+		}
+		&-col-md-4 .editor-block-list__block,
+		&-col-md-4 .block-editor-block-list__block {
+			width: calc(33.3% - 30px);
+		}
+		&-col-md-6 .editor-block-list__block,
+		&-col-md-6 .block-editor-block-list__block {
+			width: calc(50% - 30px);
+		}
+		&-col-md-12 .editor-block-list__block,
+		&-col-md-12 .block-editor-block-list__block {
+			width: calc(100% - 30px);
+		}
+	}
+	@media (min-width: $lg-min) {
+		&-col-lg-3 .editor-block-list__block,
+		&-col-lg-3 .block-editor-block-list__block {
+			width: calc(25% - 30px);
+		}
+		&-col-lg-4 .editor-block-list__block,
+		&-col-lg-4 .block-editor-block-list__block {
+			width: calc(33.3% - 30px);
+		}
+		&-col-lg-6 .editor-block-list__block,
+		&-col-lg-6 .block-editor-block-list__block {
+			width: calc(50% - 30px);
+		}
+		&-col-lg-12 .editor-block-list__block,
+		&-col-lg-12 .block-editor-block-list__block {
+			width: calc(100% - 30px);
+		}
+	}
+	@media (min-width: $xl-min) {
+		&-col-xl-3 .editor-block-list__block,
+		&-col-xl-3 .block-editor-block-list__block {
+			width: calc(25% - 30px);
+		}
+		&-col-xl-4 .editor-block-list__block,
+		&-col-xl-4 .block-editor-block-list__block {
+			width: calc(33.3% - 30px);
+		}
+		&-col-xl-6 .editor-block-list__block,
+		&-col-xl-6 .block-editor-block-list__block {
+			width: calc(50% - 30px);
+		}
+		&-col-xl-12 .editor-block-list__block,
+		&-col-xl-12 .block-editor-block-list__block {
+			width: calc(100% - 30px);
+		}
+	}
+}
 
-
+/*-------------------------------------------*/
+/* .vk_column-responsive Layout
+/*-------------------------------------------*/
 .vk_column-responsive.row {
 	border:none;
-	.wp-block-vk-blocks-column-responsive-item{
-		padding: 14px;
+	flex-direction: row;
+
+	// colの余分な余白の削除など
+	// col内に入れたブロックにまで反映されないように & > 指定
+	div[class*="col-"].block-editor-block-list__block { 
+		flex: inherit;
+		margin:0 15px 15px;
+		padding: 0;
 		outline: 1px dashed #ccc;
-		width: 100%;
-		height: auto;
-		margin-top: 1em;
 		transition: 1.0s ;
 		&:focus,&:active,&:hover{
 			outline: 1px solid #555d66;
 		}
-		p{    line-height: 1.4;}
-
-	}
-
-	.block-editor-block-list__block { 
-		flex: inherit;
-		margin: 0 15px 30px;
-		padding: 0;
+		.wp-block-vk-blocks-column-responsive-item{
+			padding: 0;
+			width: 100%;
+		}
 	}
 
 	& > .col-xs-3 {
@@ -362,97 +453,6 @@ $color-danger: #b52727;
 		}
 	}
 }//.vk_column-responsive
-
-.vk_posts .vk_posts-edit {
-	&-col-xs-3 .editor-block-list__block,
-	&-col-xs-3 .block-editor-block-list__block {
-		width: calc(25% - 30px);
-	}
-	&-col-xs-4 .editor-block-list__block,
-	&-col-xs-4 .block-editor-block-list__block {
-		width: calc(33.3% - 30px);
-	}
-	&-col-xs-6 .editor-block-list__block,
-	&-col-xs-6 .block-editor-block-list__block {
-		width: calc(50% - 30px);
-	}
-	&-col-xs-12 .editor-block-list__block,
-	&-col-xs-12 .block-editor-block-list__block {
-		width: calc(100% - 30px);
-	}
-	@media (min-width: $sm-min) {
-		&-col-sm-3 .editor-block-list__block,
-		&-col-sm-3 .block-editor-block-list__block {
-			width: calc(25% - 30px);
-		}
-		&-col-sm-4 .editor-block-list__block,
-		&-col-sm-4 .block-editor-block-list__block {
-			width: calc(33.3% - 30px);
-		}
-		&-col-sm-6 .editor-block-list__block,
-		&-col-sm-6 .block-editor-block-list__block {
-			width: calc(50% - 30px);
-		}
-		&-col-sm-12 .editor-block-list__block,
-		&-col-sm-12 .block-editor-block-list__block {
-			width: calc(100% - 30px);
-		}
-	}
-	@media (min-width: $md-min) {
-		&-col-md-3 .editor-block-list__block,
-		&-col-md-3 .block-editor-block-list__block {
-			width: calc(25% - 30px);
-		}
-		&-col-md-4 .editor-block-list__block,
-		&-col-md-4 .block-editor-block-list__block {
-			width: calc(33.3% - 30px);
-		}
-		&-col-md-6 .editor-block-list__block,
-		&-col-md-6 .block-editor-block-list__block {
-			width: calc(50% - 30px);
-		}
-		&-col-md-12 .editor-block-list__block,
-		&-col-md-12 .block-editor-block-list__block {
-			width: calc(100% - 30px);
-		}
-	}
-	@media (min-width: $lg-min) {
-		&-col-lg-3 .editor-block-list__block,
-		&-col-lg-3 .block-editor-block-list__block {
-			width: calc(25% - 30px);
-		}
-		&-col-lg-4 .editor-block-list__block,
-		&-col-lg-4 .block-editor-block-list__block {
-			width: calc(33.3% - 30px);
-		}
-		&-col-lg-6 .editor-block-list__block,
-		&-col-lg-6 .block-editor-block-list__block {
-			width: calc(50% - 30px);
-		}
-		&-col-lg-12 .editor-block-list__block,
-		&-col-lg-12 .block-editor-block-list__block {
-			width: calc(100% - 30px);
-		}
-	}
-	@media (min-width: $xl-min) {
-		&-col-xl-3 .editor-block-list__block,
-		&-col-xl-3 .block-editor-block-list__block {
-			width: calc(25% - 30px);
-		}
-		&-col-xl-4 .editor-block-list__block,
-		&-col-xl-4 .block-editor-block-list__block {
-			width: calc(33.3% - 30px);
-		}
-		&-col-xl-6 .editor-block-list__block,
-		&-col-xl-6 .block-editor-block-list__block {
-			width: calc(50% - 30px);
-		}
-		&-col-xl-12 .editor-block-list__block,
-		&-col-xl-12 .block-editor-block-list__block {
-			width: calc(100% - 30px);
-		}
-	}
-}
 
 /*-------------------------------------------*/
 /* edit hidden block class

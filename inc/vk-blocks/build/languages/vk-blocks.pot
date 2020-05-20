@@ -125,11 +125,11 @@ msgstr ""
 msgid "Responsive Column Item"
 msgstr ""
 
-#: src/blocks/_pro/column-responsive/block.js:48
+#: src/blocks/_pro/column-responsive/block.js:40
 msgid "Responsive Column"
 msgstr ""
 
-#: src/blocks/_pro/column-responsive/block.js:92
+#: src/blocks/_pro/column-responsive/block.js:84
 msgid "Layout Columns"
 msgstr ""
 
@@ -414,8 +414,8 @@ msgstr ""
 msgid "First Dot Number"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents/block.js:36
-#: src/blocks/_pro/table-of-contents/toc-utils.js:180
+#: src/blocks/_pro/table-of-contents/TocBody.js:12
+#: src/blocks/_pro/table-of-contents/block.js:35
 msgid "Table of Contents"
 msgstr ""
 

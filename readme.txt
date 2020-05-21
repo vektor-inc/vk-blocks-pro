@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.4.1
-Stable tag: 0.28.4
+Stable tag: 0.29.4
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -57,6 +57,24 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.29.4 =
+build only
+
+= 0.29.3 =
+[ bug fix ][ toc (pro) ] Cope with old type toc 
+
+= 0.29.2 =
+build only
+
+= 0.29.1 =
+[ bug fix ][ toc (pro) ] Cope with deprecated 
+
+= 0.29.0 =
+[ Add new block ][ Grid Column(pro) ]
+[ Add function ][ Group ] Use custom border color
+[ bug fix ][ toc (pro) ] Many title charactor number 
+[ bug fix ][ list ] 2digits number display bug fix
 
 = 0.28.4 =
 [ bug fix ] Drag and drop inserter bug fix

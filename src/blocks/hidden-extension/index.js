@@ -92,60 +92,60 @@ if (5.3 <= parseFloat(wpVersion)) {
 				if (is_hidden(props.name)) {
 					return (
 						<Fragment>
-							<BlockEdit {...props} />
+							<BlockEdit { ...props } />
 							<InspectorControls>
 								<PanelBody
-									title={__("Hidden Settings", "vk-blocks")}
-									initialOpen={false}
+									title={ __("Hidden Settings", "vk-blocks") }
+									initialOpen={ false }
 								>
-									<BaseControl label={__("Hidden at screel size", "vk-blocks")}>
+									<BaseControl label={ __("Hidden at screel size", "vk-blocks") }>
 										<p>
-											{__(
+											{ __(
 												"Note : This function is display hidden only. Actually Block is output to HTML.Pleade don't use you must not bisible item.Don't use it for blocks you really don't want to display.",
 												"vk-blocks"
-											)}
+											) }
 										</p>
 										<AdvancedToggleControl
-											label={__("Hidden ( Screen size : all )", "vk-blocks")}
-											initialFixedTable={props.attributes.vkb_hidden}
-											schema={"vkb_hidden"}
-											{...props}
+											label={ __("Hidden ( Screen size : all )", "vk-blocks") }
+											initialFixedTable={ props.attributes.vkb_hidden }
+											schema={ "vkb_hidden" }
+											{ ...props }
 										/>
 										<AdvancedToggleControl
-											label={__("Hidden ( Screen size : xs )", "vk-blocks")}
-											initialFixedTable={props.attributes.vkb_hidden_xs}
-											schema={"vkb_hidden_xs"}
-											{...props}
+											label={ __("Hidden ( Screen size : xs )", "vk-blocks") }
+											initialFixedTable={ props.attributes.vkb_hidden_xs }
+											schema={ "vkb_hidden_xs" }
+											{ ...props }
 										/>
 										<AdvancedToggleControl
-											label={__("Hidden ( Screen size : sm )", "vk-blocks")}
-											initialFixedTable={props.attributes.vkb_hidden_sm}
-											schema={"vkb_hidden_sm"}
-											{...props}
+											label={ __("Hidden ( Screen size : sm )", "vk-blocks") }
+											initialFixedTable={ props.attributes.vkb_hidden_sm }
+											schema={ "vkb_hidden_sm" }
+											{ ...props }
 										/>
 										<AdvancedToggleControl
-											label={__("Hidden ( Screen size : md )", "vk-blocks")}
-											initialFixedTable={props.attributes.vkb_hidden_md}
-											schema={"vkb_hidden_md"}
-											{...props}
+											label={ __("Hidden ( Screen size : md )", "vk-blocks") }
+											initialFixedTable={ props.attributes.vkb_hidden_md }
+											schema={ "vkb_hidden_md" }
+											{ ...props }
 										/>
 										<AdvancedToggleControl
-											label={__("Hidden ( Screen size : lg )", "vk-blocks")}
-											initialFixedTable={props.attributes.vkb_hidden_lg}
-											schema={"vkb_hidden_lg"}
-											{...props}
+											label={ __("Hidden ( Screen size : lg )", "vk-blocks") }
+											initialFixedTable={ props.attributes.vkb_hidden_lg }
+											schema={ "vkb_hidden_lg" }
+											{ ...props }
 										/>
 										<AdvancedToggleControl
-											label={__("Hidden ( Screen size : xl )", "vk-blocks")}
-											initialFixedTable={props.attributes.vkb_hidden_xl}
-											schema={"vkb_hidden_xl"}
-											{...props}
+											label={ __("Hidden ( Screen size : xl )", "vk-blocks") }
+											initialFixedTable={ props.attributes.vkb_hidden_xl }
+											schema={ "vkb_hidden_xl" }
+											{ ...props }
 										/>
 										<p>
-											{__(
+											{ __(
 												"If you want to hide multiple blocks, that first you set to group block and the next, hide for the that group block.",
 												"vk-blocks"
-											)}
+											) }
 										</p>
 									</BaseControl>
 								</PanelBody>
@@ -154,7 +154,7 @@ if (5.3 <= parseFloat(wpVersion)) {
 					);
 				}
 				// IF not hidden function target block that return original BlockEdit
-				return <BlockEdit {...props} />;
+				return <BlockEdit { ...props } />;
 			};
 		}, "addHiddenSection")
 	);
@@ -241,7 +241,8 @@ if (5.3 <= parseFloat(wpVersion)) {
 				// Add default class too.
 				const attachedClass = classnames(hiddenClassName, props.className)
 
-				return <BlockListBlock {...props} className={attachedClass} />;
+				return <BlockListBlock { ...props } className={ attachedClass } />;
+
 			};
 		}, "addHiddenWarning")
 	);

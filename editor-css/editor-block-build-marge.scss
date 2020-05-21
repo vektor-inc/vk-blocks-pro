@@ -1,3 +1,5 @@
+@import "_variables";
+
 /* Pro版ブロック表示 */
 .vk_block_icon_pro {
 	fill: #c00;
@@ -9,7 +11,9 @@
 .editor-block-list-item-vk-blocks-outer:after,
 .editor-block-list-item-vk-blocks-post-list:after,
 .editor-block-list-item-vk-blocks-table-of-contents:after,
-.editor-block-list-item-vk-blocks-simple-table:after {
+.editor-block-list-item-vk-blocks-table-of-contents-new:after,
+.editor-block-list-item-vk-blocks-simple-table:after,
+.editor-block-list-item-vk-blocks-grid-column:after {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -200,7 +204,7 @@ $color-danger: #b52727;
 
 /*-------------------------------------------*/
 /* vk_post Layout
-  /*-------------------------------------------*/
+/*-------------------------------------------*/
 /* If exclude the .vk_posts that, when you select the .media don't work */
 
 // .vk_posts .editor-inner-blocks .editor-block-list__layout .wp-block .editor-block-list__block-edit div .vk_post-col {
@@ -243,6 +247,7 @@ $color-danger: #b52727;
 		width: 100%;
 	}
 }
+
 .vk_posts .vk_posts-edit {
 	&-col-xs-3 .editor-block-list__block,
 	&-col-xs-3 .block-editor-block-list__block {
@@ -335,7 +340,123 @@ $color-danger: #b52727;
 }
 
 /*-------------------------------------------*/
-/* edit hidden block class 
+/* .vk_grid-column Layout
+/*-------------------------------------------*/
+.vk_grid-column.row {
+	border:none;
+	flex-direction: row;
+
+	// colの余分な余白の削除など
+	// col内に入れたブロックにまで反映されないように & > 指定
+	div[class*="col-"].block-editor-block-list__block { 
+		flex: inherit;
+		margin:0 15px 15px;
+		padding: 0;
+		outline: 1px dashed #ccc;
+		transition: 1.0s ;
+		&:focus,&:active,&:hover{
+			outline: 1px solid #555d66;
+		}
+		.wp-block-vk-blocks-grid-column-item{
+			padding: 0;
+			width: 100%;
+		}
+	}
+
+	& > .col-xs-3 {
+		width: calc(25% - 30px);
+		max-width: var(--vk-width-couter-col-3) ;
+	}
+	& > .col-xs-4 {
+		width: calc(33.3% - 30px);
+		max-width: var(--vk-width-couter-col-4) ;
+	}
+
+	& > .col-xs-6 {
+		width: calc(50% - 30px);
+		max-width: var(--vk-width-couter-col-6) ;
+	}
+
+	& > .col-xs-12 {
+		width: calc(100% - 30px);
+		max-width: var(--vk-width-couter-col-12) ;
+	}
+	@media (min-width: $sm-min) {
+		& > .col-sm-3 {
+			width: calc(25% - 30px);
+			max-width: var(--vk-width-couter-col-3) ;
+		}
+		& > .col-sm-4 {
+			width: calc(33.3% - 30px);
+			max-width: var(--vk-width-couter-col-4) ;
+		}
+		& > .col-sm-6 {
+			width: calc(50% - 30px);
+			max-width: var(--vk-width-couter-col-6) ;
+		}
+		& > .col-sm-12 {
+			width: calc(100% - 30px);
+			max-width: var(--vk-width-couter-col-12) ;
+		}
+	}
+	@media (min-width: $md-min) {
+		& > .col-md-3 {
+			width: calc(25% - 30px);
+			max-width: var(--vk-width-couter-col-3) ;
+		}
+		& > .col-md-4 {
+			width: calc(33.3% - 30px);
+			max-width: var(--vk-width-couter-col-4) ;
+		}
+		& > .col-md-6 {
+			width: calc(50% - 30px);
+			max-width: var(--vk-width-couter-col-6) ;
+		}
+		& > .col-md-12 {
+			width: calc(100% - 30px);
+			max-width: var(--vk-width-couter-col-12) ;
+		}
+	}
+	@media (min-width: $lg-min) {
+		& > .col-lg-3{
+			width: calc(25% - 30px);
+			max-width: var(--vk-width-couter-col-3) ;
+		}
+		& > .col-lg-4 {
+			width: calc(33.3% - 30px);
+			max-width: var(--vk-width-couter-col-4) ;
+		}
+		& > .col-lg-6 {
+			width: calc(50% - 30px);
+			max-width: var(--vk-width-couter-col-6) ;
+		}
+		& > .col-lg-12 {
+			width: calc(100% - 30px);
+			max-width: var(--vk-width-couter-col-12) ;
+		}
+	}
+	@media (min-width: $xl-min) {
+		& > .col-xl-3 {
+			width: calc(25% - 30px);
+			max-width: var(--vk-width-couter-col-3) ;
+		}
+		& > .col-xl-4 {
+			width: calc(33.3% - 30px);
+			max-width: var(--vk-width-couter-col-4) ;
+		}
+		& > .col-xl-6 {
+			width: calc(50% - 30px);
+			max-width: var(--vk-width-couter-col-6) ;
+		}
+		& > .col-xl-12 {
+			width: calc(100% - 30px);
+			max-width: var(--vk-width-couter-col-12) ;
+		}
+	}
+}//.vk_grid-column
+
+/*-------------------------------------------*/
+/* edit hidden block class
 /*-------------------------------------------*/
 .vk_edit_hidden_warning {
 	// border:1px dotted #666;
@@ -350,35 +471,39 @@ $color-danger: #b52727;
 	display: block !important;
 	color: var(--blue);
 
-	&.vk_posts {
-		// display block だとカラムがすべて落ちるため posts は flexで上書き
-		display: flex !important;
-	}
-	@media (max-width: $xs-max) {
-		&-xs {
-			display: block !important;
-		}
-	}
-	@media (min-width: $sm-min) and (max-width: $sm-max) {
-		&-sm {
-			display: block !important;
-		}
-	}
-	@media (min-width: $md-min) and (max-width: $md-max) {
-		&-md {
-			display: block !important;
-		}
-	}
-	@media (min-width: $lg-min) and (max-width: $lg-max) {
-		&-lg {
-			display: block !important;
-		}
-	}
-	@media (min-width: $xl-min) {
-		&-xl {
-			display: block !important;
-		}
-	}
+  &.vk_posts{
+	// display block だとカラムがすべて落ちるため posts は flexで上書き
+	display: flex !important;
+  }
+  @media (max-width: $xs-max) {
+    &-xs {
+      display: block !important;
+    }
+  }
+  @media (min-width: $sm-min) and (max-width: $sm-max) {
+    &-sm {
+      display: block !important;
+    }
+  }
+  @media (min-width: $md-min) and (max-width: $md-max) {
+    &-md {
+      display: block !important;
+    }
+  }
+  @media (min-width: $lg-min) and (max-width: $lg-max) {
+    &-lg {
+      display: block !important;
+    }
+  }
+  @media (min-width: $xl-min) {
+    &-xl {
+      display: block !important;
+    }
+  }
+}
+
+.vk_grid-column .block-list-appender{
+  width: 100%;
 }
 
 /*-------------------------------------------*/
@@ -400,7 +525,7 @@ $stylePalette: (
 	is-style-vk-handpoint-mark: "\f0a4",
 	is-style-vk-pencil-mark: "\f303",
 	is-style-vk-smile-mark: "\f118",
-	is-style-vk-frown-mark: "\f119"
+	is-style-vk-frown-mark: "\f119",
 );
 
 $colorPalette: (
@@ -415,7 +540,7 @@ $colorPalette: (
 	vk-has-vivid-purple-color: #9b51e0,
 	vk-has-very-light-gray-color: #eee,
 	vk-has-cyan-bluish-gray-color: #abb8c3,
-	vk-has-very-dark-gray-color: #313131
+	vk-has-very-dark-gray-color: #313131,
 );
 
 ul,
@@ -453,10 +578,10 @@ ol {
 
 			&:before {
 				position: absolute;
-				left: -0.3em;
+				left: 0;
 				counter-increment: number;
 				content: counter(number);
-				margin-left: -25px;
+				margin-left: -2.4em;
 				background: #222;
 				color: #fff;
 				text-indent: 0;
@@ -464,8 +589,9 @@ ol {
 				font-weight: bold;
 				border-radius: 50%;
 				font-size: 1em;
-				line-height: 1em;
-				padding: 0.3em 0.37em 0.2em;
+				line-height: 1.8em;
+				width: 26px;
+				height: 26px;
 				text-align: center;
 			}
 		}
@@ -491,8 +617,9 @@ ol {
 				display: inline-block;
 				font-weight: bold;
 				font-size: 1em;
-				line-height: 1em;
-				padding: 0.3em 0.37em 0.2em;
+				line-height: 1.8em;
+				width: 26px;
+				height: 26px;
 				text-align: center;
 				border-radius: 2px;
 			}
@@ -661,6 +788,30 @@ ol {
 			}
 			&-shadow {
 				box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+				@include pad-mag;
+				@include inner-item-pad-mag;
+			}
+			&-alert-success {
+				background-color: #dff0d8;
+				color: #3c763d;
+				@include pad-mag;
+				@include inner-item-pad-mag;
+			}
+			&-alert-info {
+				background-color: #d9edf7;
+				color: #31708f;
+				@include pad-mag;
+				@include inner-item-pad-mag;
+			}
+			&-alert-warning {
+				background-color: #fcf8e3;
+				color: #8a6d3b;
+				@include pad-mag;
+				@include inner-item-pad-mag;
+			}
+			&-alert-danger {
+				background-color: #f2dede;
+				color: #a94442;
 				@include pad-mag;
 				@include inner-item-pad-mag;
 			}
@@ -2311,6 +2462,10 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 /* CSS
 /*-------------------------------------------*/
 
+.vk_childPage {
+	margin-top: 2.5rem;
+}
+
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -2326,9 +2481,24 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
   }
 }
 
-.vk_childPage {
-	margin-top: 2.5rem;
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
+.vk_card {
+  &_item {
+    .vk_post_title.card-title {
+      font-size: 1rem;
+    }
+    .vk_post_excerpt.card-text {
+      font-size: 14px;
+    }
+  }
 }
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 
 /*-------------------------------------------*/
 /* CSS
@@ -2437,10 +2607,6 @@ $padding-xl: 3.5em;
 //   margin: 0!important;
 // }
 $color-danger: #b52727;
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
 
 /*-------------------------------------------*/
 /* CSS
@@ -2649,6 +2815,153 @@ $toc-left-margin: 1rem;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+$toc-left-margin: 1rem;
+
+.vk_tableOfContents {
+	margin-top: 3.5em;
+	margin-bottom: 3.5em;
+	position: relative;
+	&-style-default {
+		border: 3px solid rgba(0, 0, 0, 0.04);
+		box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 1);
+		background-color: rgba(0, 0, 0, 0.015);
+		padding: 2rem 1.5rem;
+		@media (min-width: 576px) {
+			padding: 2rem 3rem;
+		}
+	}
+	&_title {
+		text-align: center;
+		font-size: 1.2em;
+		letter-spacing: 0.5em;
+		margin-left: 0.5em;
+	}
+	li {
+		margin: 0;
+	}
+	&_list {
+		padding: 0;
+		margin: 0;
+		&_item {
+			list-style: none;
+			border-bottom: 1px solid #e5e5e5;
+			padding: 0.8rem 0;
+			&-h-2 {
+				// padding-left:$toc-left-margin;
+			}
+			&-h-3 {
+				padding-left: $toc-left-margin * 1;
+			}
+			&-h-4 {
+				padding-left: $toc-left-margin * 2;
+			}
+			&-h-5 {
+				padding-left: $toc-left-margin * 3;
+			}
+			&-h-6 {
+				padding-left: $toc-left-margin * 4;
+			}
+			&_link {
+				color: #333;
+				border-bottom: 1px solid #ccc;
+				&:hover {
+					text-decoration: none;
+					border-bottom: none;
+				}
+			}
+		}
+	}
+	input {
+		position: absolute;
+		opacity: 0;
+		z-index: -1;
+	}
+	&_openCloseBtn {
+		cursor: pointer;
+		font-size: 0.8em;
+		letter-spacing: 2px;
+		line-height: 1;
+		text-align: center;
+		display: block;
+		margin: 0.5em auto 0;
+		width: 6em;
+		border: 1px solid #999;
+		padding: 3px 1em 2px;
+	}
+	.button_status-open {
+		&::before {
+			content: "CLOSE";
+		}
+	}
+	.button_status-close {
+		&::before {
+			content: "OPEN";
+		}
+	}
+	.button_status {
+		&::before {
+			color: #666;
+			font-size: 0.8em;
+			border-radius: 2px;
+			display: inline-block;
+			text-align: center;
+			margin: auto;
+			width: auto;
+			transition: all 0.35s;
+		}
+	}
+	/* Accordion styles */
+	.tab {
+    width: 100%;
+    overflow: hidden;
+		&_content-open {
+			max-height: auto;
+			padding: 1em;
+			transition: all 0.35s;
+		}
+		&_content-close {
+			max-height: 0;
+			padding: 0 1em;
+			transition: all 0.35s;
+		}
+		&-close {
+			display: flex;
+			justify-content: flex-end;
+			padding: 1em;
+			font-size: 0.75em;
+			cursor: pointer;
+		}
+	}
+	// :checked
+	input:checked {
+		~ .button_status-open {
+			&::before {
+				content: "OPEN";
+			}
+		}
+		~ .button_status-close {
+			&::before {
+				content: "CLOSE";
+			}
+		}
+		~ .tab_content-open {
+			max-height: 0;
+			padding: 0 1em;
+		}
+		~ .tab_content-close {
+			max-height: 100vh;
+			padding: 1em;
+		}
+	}
+}
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/

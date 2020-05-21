@@ -466,14 +466,14 @@ msgstr ""
 
 #: src/blocks/alert/block.js:53
 #: src/blocks/button/block.js:247
-#: src/blocks/group-style/block.js:167
+#: src/blocks/group-style/block.js:171
 #: src/blocks/pr-content/block.js:180
 msgid "Success"
 msgstr ""
 
 #: src/blocks/alert/block.js:54
 #: src/blocks/button/block.js:248
-#: src/blocks/group-style/block.js:171
+#: src/blocks/group-style/block.js:167
 #: src/blocks/pr-content/block.js:181
 msgid "Info"
 msgstr ""

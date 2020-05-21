@@ -45,28 +45,28 @@ export const addBlockControl = createHigherOrderComponent(BlockEdit => {
 			}
 			return (
 				<Fragment>
-					<BlockEdit {...props} />
+					<BlockEdit { ...props } />
 					<InspectorControls>
 						<PanelBody
-							title={__("Border Color", "vk-blocks")}
-							initialOpen={false}
+							title={ __("Border Color", "vk-blocks") }
+							initialOpen={ false }
 							className="group-border-color-controle"
 						>
 							<ColorPalette
-								value={activeColor}
-								onChange={newColor => {
+								value={ activeColor }
+								onChange={ newColor => {
 									props.setAttributes({
 										color: newColor,
 										clientId: props.clientId
 									});
-								}}
+								} }
 							/>
 						</PanelBody>
 					</InspectorControls>
 				</Fragment>
 			);
 		}
-		return <BlockEdit {...props} />;
+		return <BlockEdit { ...props } />;
 	};
 }, "addMyCustomBlockControls");
 
@@ -76,18 +76,18 @@ const addGroupBorderStyleOnEdit = createHigherOrderComponent((BlockListBlock) =>
 	return (props) => {
 
 		if (!isValidBlockType(props.name)) {
-			return <BlockListBlock {...props} />
+			return <BlockListBlock { ...props } />
 		}
 
 		const editStye = `
 			.block-${props.clientId} .wp-block-group, .block-${props.clientId} .wp-block-group.is-style-vk-group-stitch .wp-block-group__inner-container{
 				border-color:${props.attributes.color}!important;
 			}`;
-		return <div className={props.className}>
+		return <div className={ props.className }>
 			<style>
-				{editStye}
+				{ editStye }
 			</style>
-			<BlockListBlock {...props} className={"block-" + props.clientId} />
+			<BlockListBlock { ...props } className={ "block-" + props.clientId } />
 		</div>;
 	};
 }, 'addGroupBorderStyleOnEdit');
@@ -102,11 +102,11 @@ const addGroupBorderStyleOnSave = (element, blockType, attributes) => {
 				border-color:${attributes.color}!important;
 			}`
 	return (
-		<div className={attributes.className}>
+		<div className={ attributes.className }>
 			<style>
-				{saveStyle}
+				{ saveStyle }
 			</style>
-			{element}
+			{ element }
 		</div>
 	);
 }
@@ -119,9 +119,9 @@ wp.hooks.addFilter(
 const addGroupBorderStyleClass = (props, blockType, attributes) => {
 	if ('core/group' === blockType.name) {
 		return assign(props, { className: `block-${attributes.clientId} ` + props.className });
-	} else {
+	} 
 		return props;
-	}
+	
 }
 wp.hooks.addFilter(
 	'blocks.getSaveContent.extraProps',
@@ -163,12 +163,12 @@ wp.blocks.registerBlockStyle("core/group", [
 		label: __("Shadow", "vk-blocks")
 	},
 	{
-		name: "vk-group-alert-success",
-		label: __("Success", "vk-blocks")
-	},
-	{
 		name: "vk-group-alert-info",
 		label: __("Info", "vk-blocks")
+	},
+	{
+		name: "vk-group-alert-success",
+		label: __("Success", "vk-blocks")
 	},
 	{
 		name: "vk-group-alert-warning",

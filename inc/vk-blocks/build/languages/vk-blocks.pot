@@ -386,7 +386,8 @@ msgid "Color"
 msgstr ""
 
 #: src/blocks/_pro/step-item/block.js:64
-#: src/blocks/_pro/table-of-contents/block.js:51
+#: src/blocks/_pro/table-of-contents-new/block.js:49
+#: src/blocks/_pro/table-of-contents/block.js:47
 #: src/blocks/_pro/timeline-item/block.js:69
 msgid "Style"
 msgstr ""
@@ -397,7 +398,8 @@ msgid "Outlined"
 msgstr ""
 
 #: src/blocks/_pro/step-item/block.js:94
-#: src/blocks/_pro/table-of-contents/block.js:58
+#: src/blocks/_pro/table-of-contents-new/block.js:56
+#: src/blocks/_pro/table-of-contents/block.js:54
 #: src/blocks/_pro/timeline-item/block.js:99
 #: src/blocks/heading-style/block.js:33
 #: src/blocks/heading/block.js:131
@@ -414,24 +416,30 @@ msgstr ""
 msgid "First Dot Number"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents/TocBody.js:12
-#: src/blocks/_pro/table-of-contents/block.js:36
+#: src/blocks/_pro/table-of-contents-new/TocBody.js:12
+#: src/blocks/_pro/table-of-contents-new/block.js:34
+#: src/blocks/_pro/table-of-contents/block.js:33
+#: src/blocks/_pro/table-of-contents/toc-utils.js:180
 msgid "Table of Contents"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents/block.js:62
+#: src/blocks/_pro/table-of-contents-new/block.js:60
+#: src/blocks/_pro/table-of-contents/block.js:58
 msgid "No frame"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents/block.js:67
+#: src/blocks/_pro/table-of-contents-new/block.js:65
+#: src/blocks/_pro/table-of-contents/block.js:63
 msgid "Default Display Status"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents/block.js:74
+#: src/blocks/_pro/table-of-contents-new/block.js:72
+#: src/blocks/_pro/table-of-contents/block.js:70
 msgid "OPEN"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents/block.js:78
+#: src/blocks/_pro/table-of-contents-new/block.js:76
+#: src/blocks/_pro/table-of-contents/block.js:74
 msgid "CLOSE"
 msgstr ""
 

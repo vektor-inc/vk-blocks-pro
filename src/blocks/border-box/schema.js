@@ -12,7 +12,7 @@ export const originalSchema = {
 	},
 	color: {
 		type: 'string',
-		default: '#337ab7',
+		default: 'red',
 	}
 };
 

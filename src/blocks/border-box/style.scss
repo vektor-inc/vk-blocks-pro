@@ -45,7 +45,7 @@
 .vk_borderBox {
     margin: 0 0 2em;
     position: relative;
-   .vk_borderBox_title{
+   .vk_borderBox_title_container{
        margin:0;
        font-size: 1em;
        line-height: 1.4;
@@ -53,7 +53,10 @@
        font-weight: bold;
        .svg-inline--fa,.fas{
         margin-right: 5px;
-       }
+	   }
+	   .vk_borderBox_title{
+		   display: inline;
+	   }
    }
    .vk_borderBox_body{
         padding: 1.5em;
@@ -70,12 +73,12 @@
 .vk_borderBox{
     &.vk_borderBox-style-solid-kado-tit-tab,
     &.vk_borderBox-style-solid-round-tit-tab {
-        .vk_borderBox_title {
+        .vk_borderBox_title_container {
             display: inline-block;
         }
     }
     &.vk_borderBox-style-solid-round-tit-tab {
-       .vk_borderBox_title{ border-radius: 8px 8px 0 0; }
+       .vk_borderBox_title_container{ border-radius: 8px 8px 0 0; }
     }
     &.vk_borderBox-style-solid-kado-tit-inner,
     &.vk_borderBox-style-solid-kado-tit-onborder,
@@ -83,7 +86,7 @@
         background-color: transparent;
         border-width: 2px;
         border-style: solid;
-        .vk_borderBox_title {
+        .vk_borderBox_title_container {
             padding: 1.5em 1.5em 1em;
         }
         .vk_borderBox_body {
@@ -93,7 +96,7 @@
         }
     }
     &.vk_borderBox-style-iconFeature{
-        .vk_borderBox_title {
+        .vk_borderBox_title_container {
             position: relative;
             padding-top: 2.2em;
             &::after{
@@ -120,7 +123,7 @@
         }
     }
     &.vk_borderBox-style-solid-kado-tit-onborder{
-        .vk_borderBox_title {
+        .vk_borderBox_title_container {
             position: relative;
             top: -1.2em;
             left: 1em;
@@ -149,11 +152,11 @@
 .vk_borderBox-style-solid-kado-tit-tab,
 .vk_borderBox-style-solid-kado-tit-banner,
 .vk_borderBox-style-solid-round-tit-tab{
-    .vk_borderBox_title{
+    .vk_borderBox_title_container{
         color:#fff;
     }
     &.vk_borderBox-color-red {
-        .vk_borderBox_title {
+        .vk_borderBox_title_container {
             background-color:  var(--vk-color-background-red);
         }
         .vk_borderBox_body {
@@ -162,7 +165,7 @@
     }
 
     &.vk_borderBox-color-orange {
-        .vk_borderBox_title{
+        .vk_borderBox_title_container{
             background-color:  var(--vk-color-background-orange);
         }
         .vk_borderBox_body {
@@ -170,7 +173,7 @@
         }
     }
     &.vk_borderBox-color-blue {
-        .vk_borderBox_title{
+        .vk_borderBox_title_container{
              background-color:  var(--vk-color-background-blue);
         }
         .vk_borderBox_body {
@@ -178,7 +181,7 @@
         }
     }
     &.vk_borderBox-color-green {
-        .vk_borderBox_title{
+        .vk_borderBox_title_container{
             background-color:  var(--vk-color-background-green);
         }
         .vk_borderBox_body {
@@ -186,7 +189,7 @@
         }
     }
     &.vk_borderBox-color-black {
-        .vk_borderBox_title{
+        .vk_borderBox_title_container{
             background-color:  var(--vk-color-background-black);
         }
         .vk_borderBox_body {
@@ -199,19 +202,19 @@
 .vk_borderBox-style-solid-kado-tit-inner,
 .vk_borderBox-style-solid-kado-tit-onborder,
 .vk_borderBox-style-iconFeature{
-    &.vk_borderBox-color-red .vk_borderBox_title {
+    &.vk_borderBox-color-red .vk_borderBox_title_container {
         color: var(--vk-color-background-red);
     }
-    &.vk_borderBox-color-orange .vk_borderBox_title {
+    &.vk_borderBox-color-orange .vk_borderBox_title_container {
         color: var(--vk-color-background-orange);
     }
-    &.vk_borderBox-color-blue .vk_borderBox_title {
+    &.vk_borderBox-color-blue .vk_borderBox_title_container {
         color: var(--vk-color-background-blue);
     }
-    &.vk_borderBox-color-green .vk_borderBox_title {
+    &.vk_borderBox-color-green .vk_borderBox_title_container {
         color: var(--vk-color-background-green);
     }
-    &.vk_borderBox-color-black .vk_borderBox_title {
+    &.vk_borderBox-color-black .vk_borderBox_title_container {
         color: var(--vk-color-background-black);
     }
 
@@ -219,7 +222,7 @@
 /* iconFeatureパターン */
 .vk_borderBox-style-iconFeature{
     &.vk_borderBox-color-red{
-        .vk_borderBox_title{
+        .vk_borderBox_title_container{
             .svg-inline--fa,.fas{ //iconfont
                 color: #fff;
             }
@@ -229,7 +232,7 @@
         }
     }
     &.vk_borderBox-color-orange{
-        .vk_borderBox_title{
+        .vk_borderBox_title_container{
             .svg-inline--fa,.fas{ //iconfont
                 background-color:  var(--vk-color-background-orange);
                 color: #fff;
@@ -240,7 +243,7 @@
         }
     }
     &.vk_borderBox-color-blue{
-        .vk_borderBox_title{
+        .vk_borderBox_title_container{
             .svg-inline--fa,.fas{ //iconfont
                 background-color:  var(--vk-color-background-blue);
                 color: #fff;
@@ -251,7 +254,7 @@
         }
     }
     &.vk_borderBox-color-green{
-        .vk_borderBox_title{
+        .vk_borderBox_title_container{
             .svg-inline--fa,.fas{ //iconfont
                 background-color:  var(--vk-color-background-green);
                 color: #fff;
@@ -262,7 +265,7 @@
         }
     }
     &.vk_borderBox-color-black{
-        .vk_borderBox_title{
+        .vk_borderBox_title_container{
             .svg-inline--fa,.fas{ //iconfont
                 background-color:  var(--vk-color-background-black);
                 color: #fff;

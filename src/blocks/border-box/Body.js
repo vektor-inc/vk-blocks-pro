@@ -4,7 +4,7 @@ const { __ } = wp.i18n; // Import __() from wp.i18n
 
 const Body = (props) => {
 	const { setAttributes, attributes, for_ } = props;
-	const { heading } = attributes;
+	const { heading,color,faIcon } = attributes;
 
 	let inner;
 	let title;
@@ -29,10 +29,10 @@ const Body = (props) => {
 	}
 
 	return (
-		<div className="vk_borderBox vk_borderBox-style-solid-kado-tit-tab">
+		<div className={`vk_borderBox vk_borderBox-style-solid-kado-tit-tab vk_borderBox-color-${color}`}>
 			{/* <!-- [ ここに vk_borderBox _inner ...できれば無しでいきたいが...  ] --> */}
 			<div className="vk_borderBox_title_container">
-				<i className="fas fa-exclamation-triangle"></i>
+				<i className={`${faIcon}`}></i>
 				{title}
 			</div>
 			<div className="vk_borderBox_body">

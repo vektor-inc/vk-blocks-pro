@@ -18,6 +18,30 @@ msgstr ""
 msgid "Font Awesome icon list"
 msgstr ""
 
+#: src/blocks/_pro/border-box/Body.js:19
+msgid "Please enter a title."
+msgstr ""
+
+#: src/blocks/_pro/border-box/block.js:17
+msgid "Border Box"
+msgstr ""
+
+#: src/blocks/_pro/border-box/block.js:28
+msgid "Icon"
+msgstr ""
+
+#: src/blocks/_pro/border-box/block.js:31
+#: src/blocks/_pro/step-item/block.js:39
+msgid "If FontAwesome class entered, it will overrides the number."
+msgstr ""
+
+#: src/blocks/_pro/border-box/block.js:39
+#: src/blocks/_pro/step-item/block.js:58
+#: src/blocks/_pro/timeline-item/block.js:63
+#: src/blocks/staff/block.js:103
+msgid "Color"
+msgstr ""
+
 #: src/blocks/_pro/card-item/block.js:42
 msgid "Card Item"
 msgstr ""
@@ -370,19 +394,9 @@ msgstr ""
 msgid "Step Mark"
 msgstr ""
 
-#: src/blocks/_pro/step-item/block.js:39
-msgid "If FontAwesome class entered, it will overrides the number."
-msgstr ""
-
 #: src/blocks/_pro/step-item/block.js:53
 #: src/blocks/_pro/timeline-item/block.js:60
 msgid "Ex,6:00AM"
-msgstr ""
-
-#: src/blocks/_pro/step-item/block.js:58
-#: src/blocks/_pro/timeline-item/block.js:63
-#: src/blocks/staff/block.js:103
-msgid "Color"
 msgstr ""
 
 #: src/blocks/_pro/step-item/block.js:64

@@ -3,7 +3,7 @@ const { InnerBlocks, RichText } = vkbBlockEditor;
 const { __ } = wp.i18n; // Import __() from wp.i18n
 
 const Body = (props) => {
-	const { setAttributes, attributes, for_ } = props;
+	const { setAttributes, attributes, for_, className } = props;
 	const { heading,color,faIcon } = attributes;
 
 	let inner;
@@ -29,7 +29,7 @@ const Body = (props) => {
 	}
 
 	return (
-		<div className={`vk_borderBox vk_borderBox-style-solid-kado-tit-tab vk_borderBox-color-${color}`}>
+		<div className={`vk_borderBox vk_borderBox-style-solid-kado-tit-tab vk_borderBox-color-${color} ${className}`}>
 			{/* <!-- [ ここに vk_borderBox _inner ...できれば無しでいきたいが...  ] --> */}
 			<div className="vk_borderBox_title_container">
 				<i className={`${faIcon}`}></i>

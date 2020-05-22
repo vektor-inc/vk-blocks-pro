@@ -71,18 +71,18 @@
 装飾指定
 --------------------------------------------*/
 .vk_borderBox{
-    &.vk_borderBox-style-solid-kado-tit-tab,
-    &.vk_borderBox-style-solid-round-tit-tab {
+    &.is-style-vk_borderBox-style-solid-kado-tit-tab,
+    &.is-style-vk_borderBox-style-solid-round-tit-tab {
         .vk_borderBox_title_container {
             display: inline-block;
         }
     }
-    &.vk_borderBox-style-solid-round-tit-tab {
+    &.is-style-vk_borderBox-style-solid-round-tit-tab {
        .vk_borderBox_title_container{ border-radius: 8px 8px 0 0; }
     }
-    &.vk_borderBox-style-solid-kado-tit-inner,
-    &.vk_borderBox-style-solid-kado-tit-onborder,
-    &.vk_borderBox-style-iconFeature {
+    &.is-style-vk_borderBox-style-solid-kado-tit-inner,
+    &.is-style-vk_borderBox-style-solid-kado-tit-onborder,
+    &.is-style-vk_borderBox-style-iconFeature {
         background-color: transparent;
         border-width: 2px;
         border-style: solid;
@@ -95,7 +95,7 @@
             padding-top: 0;
         }
     }
-    &.vk_borderBox-style-iconFeature{
+    &.is-style-vk_borderBox-style-iconFeature{
         .vk_borderBox_title_container {
             position: relative;
             padding-top: 2.2em;
@@ -122,7 +122,7 @@
             -ms-transform: translate(-50%, -50%);
         }
     }
-    &.vk_borderBox-style-solid-kado-tit-onborder{
+    &.is-style-vk_borderBox-style-solid-kado-tit-onborder{
         .vk_borderBox_title_container {
             position: relative;
             top: -1.2em;
@@ -141,17 +141,17 @@
 --------------------------------------------*/
 /* タブ風タイトル　背景色がないパターン */
 .vk_borderBox{
-    &.vk_borderBox-style-solid-kado-tit-tab,
-    &.vk_borderBox-style-solid-round-tit-tab{
+    &.is-style-vk_borderBox-style-solid-kado-tit-tab,
+    &.is-style-vk_borderBox-style-solid-round-tit-tab{
         border:none;
         background-color: transparent;
     }
 }
 
 /* タイトル背景塗り 白文字パターン */
-.vk_borderBox-style-solid-kado-tit-tab,
-.vk_borderBox-style-solid-kado-tit-banner,
-.vk_borderBox-style-solid-round-tit-tab{
+.is-style-vk_borderBox-style-solid-kado-tit-tab,
+.is-style-vk_borderBox-style-solid-kado-tit-banner,
+.is-style-vk_borderBox-style-solid-round-tit-tab{
     .vk_borderBox_title_container{
         color:#fff;
     }
@@ -199,9 +199,9 @@
 }
 
 /* タイトル文字色のみパターン */
-.vk_borderBox-style-solid-kado-tit-inner,
-.vk_borderBox-style-solid-kado-tit-onborder,
-.vk_borderBox-style-iconFeature{
+.is-style-vk_borderBox-style-solid-kado-tit-inner,
+.is-style-vk_borderBox-style-solid-kado-tit-onborder,
+.is-style-vk_borderBox-style-iconFeature{
     &.vk_borderBox-color-red .vk_borderBox_title_container {
         color: var(--vk-color-background-red);
     }
@@ -220,7 +220,7 @@
 
 }
 /* iconFeatureパターン */
-.vk_borderBox-style-iconFeature{
+.is-style-vk_borderBox-style-iconFeature{
     &.vk_borderBox-color-red{
         .vk_borderBox_title_container{
             .svg-inline--fa,.fas{ //iconfont

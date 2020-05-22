@@ -18,6 +18,32 @@ registerBlockType('vk-blocks/border-box', {
 	icon: 'arrow-down',
 	category: 'vk-blocks-cat',
 	attributes: schema,
+	styles: [		{
+			name: 'vk_borderBox-style-solid-kado-tit-tab',
+			label: __( 'solid-kado-tit-tab' ),
+			isDefault: true
+		},
+		{
+			name: 'vk_borderBox-style-solid-round-tit-tab',
+			label: __( 'solid-round-tit-tab' )
+		},
+		{
+			name: 'vk_borderBox-style-solid-kado-tit-inner',
+			label: __( 'solid-kado-tit-inner' )
+		},
+		{
+			name: 'vk_borderBox-style-solid-kado-tit-onborder',
+			label: __( 'vk_borderBox-style-solid-kado-tit-onborder' )
+		},
+		{
+			name: 'vk_borderBox-style-iconFeature',
+			label: __( 'vk_borderBox-style-iconFeature' )
+		},
+		{
+			name: 'vk_borderBox-style-solid-kado-tit-banner',
+			label: __( 'vk_borderBox-style-solid-kado-tit-banner' )
+		},
+	],
 
 	edit(props) {
 		const { attributes, setAttributes } = props;

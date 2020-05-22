@@ -18,6 +18,7 @@ import "../translation_dummy.js";
 
 /*WP5.3 以下では読み込まれない*/
 import "./hidden-extension/";
+import "./border-box/block.js";
 import "./_pro/card-item/block.js";
 import "./_pro/card/block.js";
 import "./_pro/child-page/block.js";
@@ -28,7 +29,6 @@ import "./_pro/step-item/block.js";
 import "./_pro/step/block.js";
 import "./_pro/timeline-item/block.js";
 import "./_pro/timeline/block.js";
-import "./_pro/border-box/block.js";
 import "./_pro/grid-column/block.js";
 import "./_pro/grid-column-item/block.js";
 import "../plugin/menu/block.js";

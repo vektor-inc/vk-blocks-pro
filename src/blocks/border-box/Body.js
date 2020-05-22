@@ -1,4 +1,4 @@
-import { vkbBlockEditor } from "../../_helper/depModules";
+import { vkbBlockEditor } from "../_helper/depModules";
 const { InnerBlocks, RichText } = vkbBlockEditor;
 const { __ } = wp.i18n; // Import __() from wp.i18n
 

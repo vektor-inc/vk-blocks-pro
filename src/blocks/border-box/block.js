@@ -4,13 +4,13 @@
  */
 import Body from "./Body";
 import { schema } from './schema';
-import { FontAwesome } from "../../_helper/font-awesome";
+import { FontAwesome } from "./../_helper/font-awesome";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { PanelBody, BaseControl } = wp.components;
 const { Fragment } = wp.element;
-import { vkbBlockEditor } from "../../_helper/depModules";
+import { vkbBlockEditor } from "./../_helper/depModules";
 const { InspectorControls, ColorPalette } = vkbBlockEditor;
 
 registerBlockType('vk-blocks/border-box', {

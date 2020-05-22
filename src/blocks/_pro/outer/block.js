@@ -16,14 +16,12 @@ const {
 	RangeControl,
 	RadioControl,
 	PanelBody,
-	Button,
 	BaseControl,
 	SelectControl,
 } = wp.components;
 const { Fragment } = wp.element;
-const { InspectorControls, MediaUpload, ColorPalette } =
+const { InspectorControls, ColorPalette } =
 	wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
-const { dispatch } = wp.data;
 const BlockIcon = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
@@ -376,12 +374,11 @@ registerBlockType("vk-blocks/outer", {
 	},
 
 	save(props) {
-		const { attributes, className } = props;
+		const { attributes } = props;
 		return (
 			<OuterBlock
 				clientId={attributes.clientId}
 				attributes={attributes}
-				className={className}
 				for_={"save"}
 			/>
 		);

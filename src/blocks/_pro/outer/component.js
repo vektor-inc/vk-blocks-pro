@@ -116,10 +116,27 @@ export const OuterBlock = (props) => {
 	};
 
 	return (
-		<Fragment>
+		<div
+		id={ anchor }
+		className={
+			"vkb-outer-" +
+			clientId +
+			" " +
+			className +
+			" vk_outer" +
+			classWidth +
+			classPaddingLR +
+			classPaddingVertical +
+			classBgPosition
+		}
+		style={ {
+			border: borderProperty,
+			borderRadius: borderRadiusProperty,
+		} }
+		>
 			<GenerateMediaqueryCss { ...props } />
 			<OuterBlockInner { ...defaultProps } />
-		</Fragment>
+		</div>
 	);
 };
 
@@ -239,15 +256,6 @@ const GenerateMediaqueryCss = (props) => {
 
 const OuterBlockInner = (props) => {
 	const {
-		clientId,
-		anchor,
-		className,
-		classWidth,
-		classPaddingLR,
-		classPaddingVertical,
-		classBgPosition,
-		borderProperty,
-		borderRadiusProperty,
 		upper_level,
 		upperDividerBgColor,
 		whichSideUpper,
@@ -261,24 +269,7 @@ const OuterBlockInner = (props) => {
 
 	return (
 		<Fragment>
-			<div
-				id={ anchor }
-				className={
-					"vkb-outer-" +
-					clientId +
-					" " +
-					className +
-					" vk_outer" +
-					classWidth +
-					classPaddingLR +
-					classPaddingVertical +
-					classBgPosition
-				}
-				style={ {
-					border: borderProperty,
-					borderRadius: borderRadiusProperty,
-				} }
-			>
+			<div>
 				{ componentDivider(
 					upper_level,
 					upperDividerBgColor,

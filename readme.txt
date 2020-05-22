@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.4.1
-Stable tag: 0.29.5
+Stable tag: 0.29.6
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -57,6 +57,9 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.29.6 =
+[ Delete function ][ Group block ] Delete border custom color
 
 = 0.29.5 =
 [ Design tuning ][ Group block style ] Add alert style

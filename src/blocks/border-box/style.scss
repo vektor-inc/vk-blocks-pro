@@ -67,15 +67,15 @@
 /*
 装飾指定
 --------------------------------------------*/
-.vk_borderBox{ 
+.vk_borderBox{
     &.vk_borderBox-style-solid-kado-tit-tab,
-    &.vk_borderBox-style-solid-round-tit-tab {   
-        .vk_borderBox_title {           
+    &.vk_borderBox-style-solid-round-tit-tab {
+        .vk_borderBox_title {
             display: inline-block;
         }
     }
     &.vk_borderBox-style-solid-round-tit-tab {
-       .vk_borderBox_title{ border-radius: 8px 8px 0 0; }  
+       .vk_borderBox_title{ border-radius: 8px 8px 0 0; }
     }
     &.vk_borderBox-style-solid-kado-tit-inner,
     &.vk_borderBox-style-solid-kado-tit-onborder,
@@ -86,7 +86,7 @@
         .vk_borderBox_title {
             padding: 1.5em 1.5em 1em;
         }
-        .vk_borderBox_body {  
+        .vk_borderBox_body {
             background-color: transparent;
             border: none;
             padding-top: 0;
@@ -141,7 +141,7 @@
     &.vk_borderBox-style-solid-kado-tit-tab,
     &.vk_borderBox-style-solid-round-tit-tab{
         border:none;
-        background-color: transparent;  
+        background-color: transparent;
     }
 }
 
@@ -176,7 +176,7 @@
         .vk_borderBox_body {
             border-color:var(--vk-color-border-blue);
         }
-    }    
+    }
     &.vk_borderBox-color-green {
         .vk_borderBox_title{
             background-color:  var(--vk-color-background-green);
@@ -184,7 +184,7 @@
         .vk_borderBox_body {
             border-color:var(--vk-color-border-green);
         }
-    } 
+    }
     &.vk_borderBox-color-black {
         .vk_borderBox_title{
             background-color:  var(--vk-color-background-black);
@@ -192,7 +192,7 @@
         .vk_borderBox_body {
             border-color:var(--vk-color-border-black);
         }
-    }   
+    }
 }
 
 /* タイトル文字色のみパターン */
@@ -223,7 +223,7 @@
             .svg-inline--fa,.fas{ //iconfont
                 color: #fff;
             }
-            &::after{ 
+            &::after{
                 background-color:  var(--vk-color-background-red);
             }
         }
@@ -234,7 +234,7 @@
                 background-color:  var(--vk-color-background-orange);
                 color: #fff;
             }
-            &::after{ 
+            &::after{
                 background-color:  var(--vk-color-background-orange);
             }
         }
@@ -245,7 +245,7 @@
                 background-color:  var(--vk-color-background-blue);
                 color: #fff;
             }
-            &::after{ 
+            &::after{
                 background-color:  var(--vk-color-background-blue);
             }
         }
@@ -256,7 +256,7 @@
                 background-color:  var(--vk-color-background-green);
                 color: #fff;
             }
-            &::after{ 
+            &::after{
                 background-color:  var(--vk-color-background-green);
             }
         }
@@ -267,7 +267,7 @@
                 background-color:  var(--vk-color-background-black);
                 color: #fff;
             }
-            &::after{ 
+            &::after{
                 background-color:  var(--vk-color-background-black);
             }
         }

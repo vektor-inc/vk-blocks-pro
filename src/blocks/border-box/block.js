@@ -18,7 +18,11 @@ registerBlockType('vk-blocks/border-box', {
 	icon: 'arrow-down',
 	category: 'vk-blocks-cat',
 	attributes: schema,
-	styles: [		{
+	supports:{
+		className:true
+	},
+	styles: [
+		{
 			name: 'vk_borderBox-style-solid-kado-tit-tab',
 			label: __( 'solid-kado-tit-tab' ),
 			isDefault: true

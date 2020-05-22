@@ -6,10 +6,6 @@ export const originalSchema = {
 		source: "html",
 		selector: "h4"
 	},
-	style: {
-		type: 'string',
-		default: 'solid',
-	},
 	color: {
 		type: 'string',
 		default: 'red',

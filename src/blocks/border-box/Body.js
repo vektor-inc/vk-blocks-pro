@@ -29,8 +29,7 @@ const Body = (props) => {
 	}
 
 	return (
-		<div className={`vk_borderBox vk_borderBox-style-solid-kado-tit-tab vk_borderBox-color-${color} ${className}`}>
-			{/* <!-- [ ここに vk_borderBox _inner ...できれば無しでいきたいが...  ] --> */}
+		<div className={`vk_borderBox vk_borderBox-color-${color} ${className}`}>
 			<div className="vk_borderBox_title_container">
 				<i className={`${faIcon}`}></i>
 				{title}
@@ -38,7 +37,6 @@ const Body = (props) => {
 			<div className="vk_borderBox_body">
 				{inner}
 			</div>
-			{/* <!-- [ / ここに vk_borderBox _inner ...できれば無しでいきたいが...  ] --> */}
 		</div>
 	);
 

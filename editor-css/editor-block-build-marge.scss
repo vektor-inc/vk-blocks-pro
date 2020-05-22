@@ -1403,6 +1403,287 @@ $color_dark: #343a40;
 	color: #fff;
 }
 
+
+:root {
+    --vk-color-border-red: #dc3545;
+    --vk-color-background-red:#dc3545;
+    --vk-color-border-orange: #ffa536;
+    --vk-color-background-orange:#ffa536;
+    --vk-color-border-blue: #4267b2;
+    --vk-color-background-blue:#4267b2;
+    --vk-color-border-green: #28a745;
+    --vk-color-background-green:#28a745;
+    --vk-color-border-black: #222;
+    --vk-color-background-black:#222;
+}
+
+/*
+線色指定
+--------------------------------------------*/
+.vk_borderBox-color{
+    &-red {
+        border-color:var(--vk-color-border-red);
+        background-color:var(--vk-color-background-red);
+    }
+    &-orange {
+        border-color:var(--vk-color-border-orange);
+        background-color:var(--vk-color-background-orange);
+    }
+    &-blue {
+        border-color:var(--vk-color-border-blue);
+        background-color:var(--vk-color-background-blue);
+    }
+    &-green {
+        border-color:var(--vk-color-border-green);
+        background-color:var(--vk-color-background-green);
+    }
+    &-black {
+        border-color:var(--vk-color-border-black);
+        background-color:var(--vk-color-background-black);
+    }
+}
+
+
+/*
+共通指定
+--------------------------------------------*/
+.vk_borderBox {
+    margin: 0 0 2em;
+    position: relative;
+   .vk_borderBox_title_container{
+       margin:0;
+       font-size: 1em;
+       line-height: 1.4;
+       padding: 0.5em 1.5em 0.4em;
+       font-weight: bold;
+       .svg-inline--fa,.fas{
+            margin-right: 5px;
+       }      
+	   .vk_borderBox_title{
+           display: inline;
+           font-weight: bold;
+           font-size: 1em;
+	   }
+   }
+   .vk_borderBox_body{
+        padding: 1.5em;
+        background-color: #fff;
+        border-width: 2px;
+        border-style: solid;
+       p{ margin-bottom: 0; }
+   }
+}
+
+/*
+装飾指定
+--------------------------------------------*/
+.vk_borderBox{
+    &.is-style-vk_borderBox-style-solid-kado-tit-tab,
+    &.is-style-vk_borderBox-style-solid-round-tit-tab {
+        .vk_borderBox_title_container {
+            display: inline-block;
+        }
+    }
+    &.is-style-vk_borderBox-style-solid-round-tit-tab {
+       .vk_borderBox_title_container{ border-radius: 8px 8px 0 0; }
+    }
+    &.is-style-vk_borderBox-style-solid-kado-tit-inner,
+    &.is-style-vk_borderBox-style-solid-kado-tit-onborder,
+    &.is-style-vk_borderBox-style-iconFeature {
+        background-color: transparent;
+        border-width: 2px;
+        border-style: solid;
+        .vk_borderBox_title_container {
+            padding: 1.5em 1.5em 1em;
+        }
+        .vk_borderBox_body {
+            background-color: transparent;
+            border: none;
+            padding-top: 0;
+        }
+    }
+    &.is-style-vk_borderBox-style-iconFeature{
+        .vk_borderBox_title_container {
+            position: relative;
+            padding-top: 2.2em;
+            &::after{
+                content: "";
+                position: absolute;
+                top: -32%;
+                left: 1.5em;
+                padding: 1.4em;
+                border-radius: 50%;
+                border: solid 2px #fff;
+
+            }
+        }
+        .svg-inline--fa,.fas{
+            position: absolute;
+            font-size: 1.3em;
+            margin-right: 0;
+            z-index: 100;
+            top: 0%;
+            left: 2.3em;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+        }
+    }
+    &.is-style-vk_borderBox-style-solid-kado-tit-onborder{
+        .vk_borderBox_title_container {
+            position: relative;
+            top: -1.2em;
+            left: 1em;
+            z-index: 1;
+            display: inline-block;
+            padding: .5em .5em;
+            background: #fff;
+        }
+    }
+}
+
+
+/*
+タイトル部分色指定
+--------------------------------------------*/
+/* タブ風タイトル　背景色がないパターン */
+.vk_borderBox{
+    &.is-style-vk_borderBox-style-solid-kado-tit-tab,
+    &.is-style-vk_borderBox-style-solid-round-tit-tab{
+        border:none;
+        background-color: transparent;
+    }
+}
+
+/* タイトル背景塗り 白文字パターン */
+.is-style-vk_borderBox-style-solid-kado-tit-tab,
+.is-style-vk_borderBox-style-solid-kado-tit-banner,
+.is-style-vk_borderBox-style-solid-round-tit-tab{
+    .vk_borderBox_title_container{
+        color:#fff;
+    }
+    &.vk_borderBox-color-red {
+        .vk_borderBox_title_container {
+            background-color:  var(--vk-color-background-red);
+        }
+        .vk_borderBox_body {
+            border-color:var(--vk-color-border-red);
+        }
+    }
+
+    &.vk_borderBox-color-orange {
+        .vk_borderBox_title_container{
+            background-color:  var(--vk-color-background-orange);
+        }
+        .vk_borderBox_body {
+            border-color:var(--vk-color-border-orange);
+        }
+    }
+    &.vk_borderBox-color-blue {
+        .vk_borderBox_title_container{
+             background-color:  var(--vk-color-background-blue);
+        }
+        .vk_borderBox_body {
+            border-color:var(--vk-color-border-blue);
+        }
+    }
+    &.vk_borderBox-color-green {
+        .vk_borderBox_title_container{
+            background-color:  var(--vk-color-background-green);
+        }
+        .vk_borderBox_body {
+            border-color:var(--vk-color-border-green);
+        }
+    }
+    &.vk_borderBox-color-black {
+        .vk_borderBox_title_container{
+            background-color:  var(--vk-color-background-black);
+        }
+        .vk_borderBox_body {
+            border-color:var(--vk-color-border-black);
+        }
+    }
+}
+
+/* タイトル文字色のみパターン */
+.is-style-vk_borderBox-style-solid-kado-tit-inner,
+.is-style-vk_borderBox-style-solid-kado-tit-onborder,
+.is-style-vk_borderBox-style-iconFeature{
+    &.vk_borderBox-color-red .vk_borderBox_title_container {
+        color: var(--vk-color-background-red);
+    }
+    &.vk_borderBox-color-orange .vk_borderBox_title_container {
+        color: var(--vk-color-background-orange);
+    }
+    &.vk_borderBox-color-blue .vk_borderBox_title_container {
+        color: var(--vk-color-background-blue);
+    }
+    &.vk_borderBox-color-green .vk_borderBox_title_container {
+        color: var(--vk-color-background-green);
+    }
+    &.vk_borderBox-color-black .vk_borderBox_title_container {
+        color: var(--vk-color-background-black);
+    }
+
+}
+/* iconFeatureパターン */
+.is-style-vk_borderBox-style-iconFeature{
+    &.vk_borderBox-color-red{
+        .vk_borderBox_title_container{
+            .svg-inline--fa,.fas{ //iconfont
+                color: #fff;
+            }
+            &::after{
+                background-color:  var(--vk-color-background-red);
+            }
+        }
+    }
+    &.vk_borderBox-color-orange{
+        .vk_borderBox_title_container{
+            .svg-inline--fa,.fas{ //iconfont
+                background-color:  var(--vk-color-background-orange);
+                color: #fff;
+            }
+            &::after{
+                background-color:  var(--vk-color-background-orange);
+            }
+        }
+    }
+    &.vk_borderBox-color-blue{
+        .vk_borderBox_title_container{
+            .svg-inline--fa,.fas{ //iconfont
+                background-color:  var(--vk-color-background-blue);
+                color: #fff;
+            }
+            &::after{
+                background-color:  var(--vk-color-background-blue);
+            }
+        }
+    }
+    &.vk_borderBox-color-green{
+        .vk_borderBox_title_container{
+            .svg-inline--fa,.fas{ //iconfont
+                background-color:  var(--vk-color-background-green);
+                color: #fff;
+            }
+            &::after{
+                background-color:  var(--vk-color-background-green);
+            }
+        }
+    }
+    &.vk_borderBox-color-black{
+        .vk_borderBox_title_container{
+            .svg-inline--fa,.fas{ //iconfont
+                background-color:  var(--vk-color-background-black);
+                color: #fff;
+            }
+            &::after{
+                background-color:  var(--vk-color-background-black);
+            }
+        }
+    }
+}
+
 /*      .qaItem
 /*-------------------------------------------*/
 .vk_faq { display:block; overflow:hidden;border-bottom:1px dotted #ccc; padding:0px 0px 25px; margin:25px 0px; width:100%; position: relative; }
@@ -1449,39 +1730,6 @@ $color_dark: #343a40;
 	max-width:150px;
 	margin-left:15px;
 	box-sizing: border-box;
-}
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-@mixin reset() {
-	background: none;
-	border:none;
-	border-radius: 0;
-	padding:0;
-	font-weight: normal;
-	box-shadow:none;
-	&:after {
-		content:none;
-		border:none;
-	}
-	&:before{
-		content:none;
-	}
-}
-
-// .vk_heading は指定が強い要素（ Charm ）も消すために必要
-.vk_heading.vk_heading-style-plain {
-	.vk_heading_title {
-		@include reset;
-		&:after {
-			@include reset;
-		}
-	}
-}
-
-.vk_heading_subtext {
-	margin-bottom:0;
 }
 
 //管理画面側の見出しブロックのスタイルのcssになります。
@@ -1946,6 +2194,39 @@ $color_key: #337ab7;
 	} //.is-style-vk-heading
 } //.editor-block-list__block
 
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+@mixin reset() {
+	background: none;
+	border:none;
+	border-radius: 0;
+	padding:0;
+	font-weight: normal;
+	box-shadow:none;
+	&:after {
+		content:none;
+		border:none;
+	}
+	&:before{
+		content:none;
+	}
+}
+
+// .vk_heading は指定が強い要素（ Charm ）も消すために必要
+.vk_heading.vk_heading-style-plain {
+	.vk_heading_title {
+		@include reset;
+		&:after {
+			@include reset;
+		}
+	}
+}
+
+.vk_heading_subtext {
+	margin-bottom:0;
+}
+
 $xs-max: 575.98px;
 $sm-max: 767.98px;
 $md-max: 991.98px;
@@ -2070,6 +2351,91 @@ $xl-min: 1200px;
 }
 
 /*-------------------------------------------*/
+/* Layout
+/*-------------------------------------------*/
+.vk_prContent {
+	margin-left: -15px;
+	margin-right: -15px;
+	@media (min-width: 576px) {
+		display: flex;
+		.col-sm-6 {
+			width: 50%;
+		}
+		&-layout {
+			&-imageLeft {
+				flex-direction: row;
+			}
+
+			&-imageRight {
+				flex-direction: row-reverse;
+			}
+
+			&-imageLeft .vk_prContent_colImg {
+				padding-right: 2em;
+			}
+
+			&-imageRight .vk_prContent_colImg {
+				padding-left: 2em;
+			}
+		}
+	} // @media (min-width: 768px) {
+}
+
+/*-------------------------------------------*/
+/* others
+/*-------------------------------------------*/
+.vk_prContent {
+	&_colTxt {
+		vertical-align: top;
+		&_title {
+			background-color: transparent;
+			font-weight: bold;
+			padding: 0;
+			box-shadow: none;
+			border: none;
+			margin-bottom: 0.8em;
+			@media (max-width: 575.98px) {
+				&:first-child {
+					margin-top: 30px;
+				}
+			}
+			&:after {
+				content: "";
+				line-height: 0;
+				display: block;
+				overflow: hidden;
+				position: absolute;
+				bottom: -1px;
+				width: 0;
+				border: none;
+			}
+		}
+		&_text {
+			line-height: 2em;
+			margin-bottom: 1.7em;
+		}
+		&_btn.btn {
+			@media (min-width: 992px) {
+				font-size: 16px;
+			}
+		}
+	} // &_colTxt {
+	&_colImg {
+		&_image {
+			max-width: 100%;
+			height: auto;
+		}
+		.components-button.button {
+			margin: 1em;
+		}
+		.components-button.image-button {
+			margin: 0;
+			height: auto; //これがないとfirefoxの管理画面上でbutton内のimage画像が上にはみ出す
+		}
+	}
+} // .vk_prContent {
+
+/*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
 
@@ -2149,41 +2515,6 @@ $xl-min: 1200px;
 	&.table-striped > tbody > .editor-inner-blocks > .editor-block-list__layout > div:nth-of-type(odd) {
 			background-color: rgba(0, 0, 0, 0.05);
 	}
-}
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-
-@mixin switchVisibility($pc, $tablet, $mobile) {
-	.vk_spacer {
-		.vk_spacer-display-pc {
-			display: $pc;
-		}
-
-		.vk_spacer-display-tablet {
-			display: $tablet;
-		}
-
-		.vk_spacer-display-mobile {
-			display: $mobile;
-		}
-	}
-}
-
-// Small devices (landscape phones, 576px以下)
-@media (max-width: 576px) {
-	@include switchVisibility(none, none, block);
-}
-
-// Medium devices (tablets, 577pxから768px)
-@media (min-width: 577px) and (max-width: 768px) {
-	@include switchVisibility(none, block, none);
-}
-
-// Large devices (desktops, 769px以上)
-@media (min-width: 769px) {
-	@include switchVisibility(block, none, none);
 }
 
 /*-------------------------------------------*/
@@ -2372,370 +2703,44 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 /* CSS
 /*-------------------------------------------*/
 
-/*-------------------------------------------*/
-/* Layout
-/*-------------------------------------------*/
-.vk_prContent {
-	margin-left: -15px;
-	margin-right: -15px;
-	@media (min-width: 576px) {
-		display: flex;
-		.col-sm-6 {
-			width: 50%;
+@mixin switchVisibility($pc, $tablet, $mobile) {
+	.vk_spacer {
+		.vk_spacer-display-pc {
+			display: $pc;
 		}
-		&-layout {
-			&-imageLeft {
-				flex-direction: row;
-			}
 
-			&-imageRight {
-				flex-direction: row-reverse;
-			}
+		.vk_spacer-display-tablet {
+			display: $tablet;
+		}
 
-			&-imageLeft .vk_prContent_colImg {
-				padding-right: 2em;
-			}
-
-			&-imageRight .vk_prContent_colImg {
-				padding-left: 2em;
-			}
-		}
-	} // @media (min-width: 768px) {
-}
-
-/*-------------------------------------------*/
-/* others
-/*-------------------------------------------*/
-.vk_prContent {
-	&_colTxt {
-		vertical-align: top;
-		&_title {
-			background-color: transparent;
-			font-weight: bold;
-			padding: 0;
-			box-shadow: none;
-			border: none;
-			margin-bottom: 0.8em;
-			@media (max-width: 575.98px) {
-				&:first-child {
-					margin-top: 30px;
-				}
-			}
-			&:after {
-				content: "";
-				line-height: 0;
-				display: block;
-				overflow: hidden;
-				position: absolute;
-				bottom: -1px;
-				width: 0;
-				border: none;
-			}
-		}
-		&_text {
-			line-height: 2em;
-			margin-bottom: 1.7em;
-		}
-		&_btn.btn {
-			@media (min-width: 992px) {
-				font-size: 16px;
-			}
-		}
-	} // &_colTxt {
-	&_colImg {
-		&_image {
-			max-width: 100%;
-			height: auto;
-		}
-		.components-button.button {
-			margin: 1em;
-		}
-		.components-button.image-button {
-			margin: 0;
-			height: auto; //これがないとfirefoxの管理画面上でbutton内のimage画像が上にはみ出す
+		.vk_spacer-display-mobile {
+			display: $mobile;
 		}
 	}
-} // .vk_prContent {
+}
+
+// Small devices (landscape phones, 576px以下)
+@media (max-width: 576px) {
+	@include switchVisibility(none, none, block);
+}
+
+// Medium devices (tablets, 577pxから768px)
+@media (min-width: 577px) and (max-width: 768px) {
+	@include switchVisibility(none, block, none);
+}
+
+// Large devices (desktops, 769px以上)
+@media (min-width: 769px) {
+	@include switchVisibility(block, none, none);
+}
 
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
 
-
-:root {
-    --vk-color-border-red: #dc3545;
-    --vk-color-background-red:#dc3545;
-    --vk-color-border-orange: #ffa536;
-    --vk-color-background-orange:#ffa536;
-    --vk-color-border-blue: #4267b2;
-    --vk-color-background-blue:#4267b2;
-    --vk-color-border-green: #28a745;
-    --vk-color-background-green:#28a745;
-    --vk-color-border-black: #222;
-    --vk-color-background-black:#222;
-}
-
-/*
-線色指定
---------------------------------------------*/
-.vk_borderBox-color{
-    &-red {
-        border-color:var(--vk-color-border-red);
-        background-color:var(--vk-color-background-red);
-    }
-    &-orange {
-        border-color:var(--vk-color-border-orange);
-        background-color:var(--vk-color-background-orange);
-    }
-    &-blue {
-        border-color:var(--vk-color-border-blue);
-        background-color:var(--vk-color-background-blue);
-    }
-    &-green {
-        border-color:var(--vk-color-border-green);
-        background-color:var(--vk-color-background-green);
-    }
-    &-black {
-        border-color:var(--vk-color-border-black);
-        background-color:var(--vk-color-background-black);
-    }
-}
-
-
-/*
-共通指定
---------------------------------------------*/
-.vk_borderBox {
-    margin: 0 0 2em;
-    position: relative;
-   .vk_borderBox_title{
-       margin:0;
-       font-size: 1em;
-       line-height: 1.4;
-       padding: 0.5em 1.5em 0.4em;
-       font-weight: bold;
-       .svg-inline--fa,.fas{
-        margin-right: 5px;
-       }
-   }
-   .vk_borderBox_body{
-        padding: 1.5em;
-        background-color: #fff;
-        border-width: 2px;
-        border-style: solid;
-       p{ margin-bottom: 0; }
-   }
-}
-
-/*
-装飾指定
---------------------------------------------*/
-.vk_borderBox{ 
-    &.vk_borderBox-style-solid-kado-tit-tab,
-    &.vk_borderBox-style-solid-round-tit-tab {   
-        .vk_borderBox_title {           
-            display: inline-block;
-        }
-    }
-    &.vk_borderBox-style-solid-round-tit-tab {
-       .vk_borderBox_title{ border-radius: 8px 8px 0 0; }  
-    }
-    &.vk_borderBox-style-solid-kado-tit-inner,
-    &.vk_borderBox-style-solid-kado-tit-onborder,
-    &.vk_borderBox-style-iconFeature {
-        background-color: transparent;
-        border-width: 2px;
-        border-style: solid;
-        .vk_borderBox_title {
-            padding: 1.5em 1.5em 1em;
-        }
-        .vk_borderBox_body {  
-            background-color: transparent;
-            border: none;
-            padding-top: 0;
-        }
-    }
-    &.vk_borderBox-style-iconFeature{
-        .vk_borderBox_title {
-            position: relative;
-            padding-top: 2.2em;
-            &::after{
-                content: "";
-                position: absolute;
-                top: -32%;
-                left: 1.5em;
-                padding: 1.4em;
-                border-radius: 50%;
-                border: solid 2px #fff;
-
-            }
-        }
-        .svg-inline--fa,.fas{
-            position: absolute;
-            font-size: 1.3em;
-            margin-right: 0;
-            z-index: 100;
-            top: 0%;
-            left: 2.3em;
-            transform: translate(-50%, -50%);
-            -webkit-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-        }
-    }
-    &.vk_borderBox-style-solid-kado-tit-onborder{
-        .vk_borderBox_title {
-            position: relative;
-            top: -1.2em;
-            left: 1em;
-            z-index: 1;
-            display: inline-block;
-            padding: .5em .5em;
-            background: #fff;
-        }
-    }
-}
-
-
-/*
-タイトル部分色指定
---------------------------------------------*/
-/* タブ風タイトル　背景色がないパターン */
-.vk_borderBox{
-    &.vk_borderBox-style-solid-kado-tit-tab,
-    &.vk_borderBox-style-solid-round-tit-tab{
-        border:none;
-        background-color: transparent;  
-    }
-}
-
-/* タイトル背景塗り 白文字パターン */
-.vk_borderBox-style-solid-kado-tit-tab,
-.vk_borderBox-style-solid-kado-tit-banner,
-.vk_borderBox-style-solid-round-tit-tab{
-    .vk_borderBox_title{
-        color:#fff;
-    }
-    &.vk_borderBox-color-red {
-        .vk_borderBox_title {
-            background-color:  var(--vk-color-background-red);
-        }
-        .vk_borderBox_body {
-            border-color:var(--vk-color-border-red);
-        }
-    }
-
-    &.vk_borderBox-color-orange {
-        .vk_borderBox_title{
-            background-color:  var(--vk-color-background-orange);
-        }
-        .vk_borderBox_body {
-            border-color:var(--vk-color-border-orange);
-        }
-    }
-    &.vk_borderBox-color-blue {
-        .vk_borderBox_title{
-             background-color:  var(--vk-color-background-blue);
-        }
-        .vk_borderBox_body {
-            border-color:var(--vk-color-border-blue);
-        }
-    }    
-    &.vk_borderBox-color-green {
-        .vk_borderBox_title{
-            background-color:  var(--vk-color-background-green);
-        }
-        .vk_borderBox_body {
-            border-color:var(--vk-color-border-green);
-        }
-    } 
-    &.vk_borderBox-color-black {
-        .vk_borderBox_title{
-            background-color:  var(--vk-color-background-black);
-        }
-        .vk_borderBox_body {
-            border-color:var(--vk-color-border-black);
-        }
-    }   
-}
-
-/* タイトル文字色のみパターン */
-.vk_borderBox-style-solid-kado-tit-inner,
-.vk_borderBox-style-solid-kado-tit-onborder,
-.vk_borderBox-style-iconFeature{
-    &.vk_borderBox-color-red .vk_borderBox_title {
-        color: var(--vk-color-background-red);
-    }
-    &.vk_borderBox-color-orange .vk_borderBox_title {
-        color: var(--vk-color-background-orange);
-    }
-    &.vk_borderBox-color-blue .vk_borderBox_title {
-        color: var(--vk-color-background-blue);
-    }
-    &.vk_borderBox-color-green .vk_borderBox_title {
-        color: var(--vk-color-background-green);
-    }
-    &.vk_borderBox-color-black .vk_borderBox_title {
-        color: var(--vk-color-background-black);
-    }
-
-}
-/* iconFeatureパターン */
-.vk_borderBox-style-iconFeature{
-    &.vk_borderBox-color-red{
-        .vk_borderBox_title{
-            .svg-inline--fa,.fas{ //iconfont
-                color: #fff;
-            }
-            &::after{ 
-                background-color:  var(--vk-color-background-red);
-            }
-        }
-    }
-    &.vk_borderBox-color-orange{
-        .vk_borderBox_title{
-            .svg-inline--fa,.fas{ //iconfont
-                background-color:  var(--vk-color-background-orange);
-                color: #fff;
-            }
-            &::after{ 
-                background-color:  var(--vk-color-background-orange);
-            }
-        }
-    }
-    &.vk_borderBox-color-blue{
-        .vk_borderBox_title{
-            .svg-inline--fa,.fas{ //iconfont
-                background-color:  var(--vk-color-background-blue);
-                color: #fff;
-            }
-            &::after{ 
-                background-color:  var(--vk-color-background-blue);
-            }
-        }
-    }
-    &.vk_borderBox-color-green{
-        .vk_borderBox_title{
-            .svg-inline--fa,.fas{ //iconfont
-                background-color:  var(--vk-color-background-green);
-                color: #fff;
-            }
-            &::after{ 
-                background-color:  var(--vk-color-background-green);
-            }
-        }
-    }
-    &.vk_borderBox-color-black{
-        .vk_borderBox_title{
-            .svg-inline--fa,.fas{ //iconfont
-                background-color:  var(--vk-color-background-black);
-                color: #fff;
-            }
-            &::after{ 
-                background-color:  var(--vk-color-background-black);
-            }
-        }
-    }
-}
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 
 .vk_childPage {
 	margin-top: 2.5rem;
@@ -2951,9 +2956,6 @@ $color-danger: #b52727;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
 $toc-left-margin: 1rem;
 
 .vk_tableOfContents {
@@ -3094,6 +3096,9 @@ $toc-left-margin: 1rem;
 	}
 }
 
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/

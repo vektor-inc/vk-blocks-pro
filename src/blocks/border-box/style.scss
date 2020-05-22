@@ -52,10 +52,12 @@
        padding: 0.5em 1.5em 0.4em;
        font-weight: bold;
        .svg-inline--fa,.fas{
-        margin-right: 5px;
-	   }
+            margin-right: 5px;
+       }      
 	   .vk_borderBox_title{
-		   display: inline;
+           display: inline;
+           font-weight: bold;
+           font-size: 1em;
 	   }
    }
    .vk_borderBox_body{

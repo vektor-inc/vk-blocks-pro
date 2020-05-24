@@ -192,18 +192,22 @@ registerBlockType("vk-blocks/outer", {
 
 							<RadioControl
 								label={ __(
-									"Contents area padding (left and right)",
+									"Padding (Horizontal)",
 									"vk-blocks"
 								) }
 								selected={ padding_left_and_right }
 								options={ [
 									{
-										label: __("Do not use padding", "vk-blocks"),
+										label: __("Contents area fit", "vk-blocks"),
 										value: "0",
 									},
 									{
-										label: __("Use padding", "vk-blocks"),
+										label: __("Contents area width and padding", "vk-blocks"),
 										value: "1",
+									},
+									{
+										label: __("Full wide width and padding", "vk-blocks"),
+										value: "2",
 									},
 								] }
 								onChange={ (value) =>
@@ -211,7 +215,7 @@ registerBlockType("vk-blocks/outer", {
 								}
 							/>
 							<RadioControl
-								label={ __("Padding (top and bottom)", "vk-blocks") }
+								label={ __("Padding (Vertical)", "vk-blocks") }
 								selected={ padding_top_and_bottom }
 								options={ [
 									{ label: __("Use default padding", "vk-blocks"), value: "1" },

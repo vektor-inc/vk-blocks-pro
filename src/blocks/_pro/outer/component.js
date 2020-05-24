@@ -49,7 +49,9 @@ export const OuterBlock = (props) => {
 	}
 
 	//classPaddingLRのクラス切り替え
-	if (padding_left_and_right === "1") {
+	if ( padding_left_and_right === "2") {
+		classPaddingLR = " vk_outer-paddingLR-noneFull";
+	} else if ( padding_left_and_right === "1") {
 		classPaddingLR = " vk_outer-paddingLR-use";
 	} else {
 		classPaddingLR = " vk_outer-paddingLR-none";
@@ -117,8 +119,8 @@ export const OuterBlock = (props) => {
 
 	return (
 		<div
-		id={ anchor }
-		className={
+			id={ anchor }
+			className={
 			"vkb-outer-" +
 			clientId +
 			" " +
@@ -129,7 +131,7 @@ export const OuterBlock = (props) => {
 			classPaddingVertical +
 			classBgPosition
 		}
-		style={ {
+			style={ {
 			border: borderProperty,
 			borderRadius: borderRadiusProperty,
 		} }

@@ -2573,10 +2573,9 @@ $media-xl-down: 1199.98px;
 	margin-right: calc(50% - 50vw);
 	padding-left: calc(50vw - 50%);
 	padding-right: calc(50vw - 50%);
-	&.vk_outer-paddingLR-noneFull {
-		padding-left: 30px;
-		padding-right: 30px;
-	}
+}
+// Fit to content area width
+.vk_outer-paddingLR-none {
 }
 $padding-none: 1.5em;
 $padding-sm: 2em;
@@ -2663,67 +2662,6 @@ $color-danger: #b52727;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-.vk_step {
-	margin: 2em 0;
-
-	.vk_step_item {
-		position: relative;
-		padding: 0 0 2.4em 4.5em;
-		margin: 0 auto;
-
-		h3:first-of-type,
-		h4:first-of-type {
-			padding-top: 0.5em;
-			margin-top: 0;
-		}
-		&_content > p:first-child {
-			margin-bottom: 0.3em;
-			line-height: 1;
-			color: #666;
-		}
-		.vk_step_item_caption {
-			margin-bottom: 0.5em;
-			color: #666;
-		}
-		.vk_step_item_content {
-		}
-		.vk_step_item_dot {
-			content: "";
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 50px;
-			height: 50px;
-			border-radius: 50%;
-			color: #ffffff;
-			padding: 9px 0;
-			text-align: center;
-			&_num {
-				line-height: 1.2;
-			}
-		}
-		.vk_step_item_dot_caption {
-			font-size: 0.5rem;
-		}
-	}
-}
-.vk_step_item_lineStyle-default {
-	&::before {
-		content: "";
-		width: 3px;
-		background: #ddd;
-		display: block;
-		position: absolute;
-		top: 54px;
-		left: 23px;
-		bottom: 4px;
-	}
-}
 
 /*-------------------------------------------*/
 /* CSS
@@ -2865,6 +2803,67 @@ $toc-left-margin: 1rem;
 			max-height: 100vh;
 			padding: 1em;
 		}
+	}
+}
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+.vk_step {
+	margin: 2em 0;
+
+	.vk_step_item {
+		position: relative;
+		padding: 0 0 2.4em 4.5em;
+		margin: 0 auto;
+
+		h3:first-of-type,
+		h4:first-of-type {
+			padding-top: 0.5em;
+			margin-top: 0;
+		}
+		&_content > p:first-child {
+			margin-bottom: 0.3em;
+			line-height: 1;
+			color: #666;
+		}
+		.vk_step_item_caption {
+			margin-bottom: 0.5em;
+			color: #666;
+		}
+		.vk_step_item_content {
+		}
+		.vk_step_item_dot {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			color: #ffffff;
+			padding: 9px 0;
+			text-align: center;
+			&_num {
+				line-height: 1.2;
+			}
+		}
+		.vk_step_item_dot_caption {
+			font-size: 0.5rem;
+		}
+	}
+}
+.vk_step_item_lineStyle-default {
+	&::before {
+		content: "";
+		width: 3px;
+		background: #ddd;
+		display: block;
+		position: absolute;
+		top: 54px;
+		left: 23px;
+		bottom: 4px;
 	}
 }
 

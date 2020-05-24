@@ -170,6 +170,7 @@ registerBlockType("vk-blocks/outer", {
 						title={ __("Layout Setting", "vk-blocks") }
 						initialOpen={ false }
 					>
+						<label>{ __( 'Width', 'vk-blocks' ) }</label>
 						<BaseControl>
 							<ButtonGroup className="mb-3">
 								<Button
@@ -192,22 +193,18 @@ registerBlockType("vk-blocks/outer", {
 
 							<RadioControl
 								label={ __(
-									"Padding (Horizontal)",
+									"Padding (Left and Right)",
 									"vk-blocks"
 								) }
 								selected={ padding_left_and_right }
 								options={ [
 									{
-										label: __("Contents area fit", "vk-blocks"),
+										label: __("Fit to the Content area", "vk-blocks"),
 										value: "0",
 									},
 									{
-										label: __("Contents area width and padding", "vk-blocks"),
+										label: __("Add padding to the Outer area", "vk-blocks"),
 										value: "1",
-									},
-									{
-										label: __("Full wide width and padding", "vk-blocks"),
-										value: "2",
 									},
 								] }
 								onChange={ (value) =>
@@ -215,13 +212,13 @@ registerBlockType("vk-blocks/outer", {
 								}
 							/>
 							<RadioControl
-								label={ __("Padding (Vertical)", "vk-blocks") }
+								label={ __("Padding (Top and Bottom)", "vk-blocks") }
 								selected={ padding_top_and_bottom }
 								options={ [
 									{ label: __("Use default padding", "vk-blocks"), value: "1" },
 									{
 										label: __(
-											"Do not use default padding (Set it yourself using a spacer block etc.).",
+											"Do not use default padding",
 											"vk-blocks"
 										),
 										value: "0",
@@ -231,6 +228,7 @@ registerBlockType("vk-blocks/outer", {
 									setAttributes({ padding_top_and_bottom: value })
 								}
 							/>
+							<p>{ __( '* If you select "Do not use" that, please set yourself it such as a spacer block.', "vk-blocks" ) }</p>
 						</BaseControl>
 					</PanelBody>
 					<PanelBody

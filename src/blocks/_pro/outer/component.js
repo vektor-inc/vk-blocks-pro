@@ -49,11 +49,11 @@ export const OuterBlock = (props) => {
 	}
 
 	//classPaddingLRのクラス切り替え
-	if ( padding_left_and_right === "2") {
-		classPaddingLR = " vk_outer-paddingLR-noneFull";
-	} else if ( padding_left_and_right === "1") {
+	classPaddingLR = "";
+	if ( padding_left_and_right === "1") {
 		classPaddingLR = " vk_outer-paddingLR-use";
 	} else {
+		// Fit to content area width
 		classPaddingLR = " vk_outer-paddingLR-none";
 	}
 

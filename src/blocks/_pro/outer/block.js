@@ -18,6 +18,8 @@ const {
 	PanelBody,
 	BaseControl,
 	SelectControl,
+	ButtonGroup,
+	Button
 } = wp.components;
 const { Fragment } = wp.element;
 const { InspectorControls, ColorPalette } =
@@ -169,15 +171,25 @@ registerBlockType("vk-blocks/outer", {
 						initialOpen={ false }
 					>
 						<BaseControl>
-							<RadioControl
-								label={ __("Outer width", "vk-blocks") }
-								selected={ outerWidth }
-								options={ [
-									{ label: __("Normal", "vk-blocks"), value: "normal" },
-									{ label: __("Full Wide", "vk-blocks"), value: "full" },
-								] }
-								onChange={ (value) => setAttributes({ outerWidth: value }) }
-							/>
+							<ButtonGroup className="mb-3">
+								<Button
+									isSmall
+									isPrimary={ outerWidth === 'normal' }
+									isSecondary={ outerWidth !== 'normal' }
+									onClick={ () => setAttributes({ outerWidth: 'normal' }) }
+								>
+									{ __('Normal', 'vk-blocks') }
+								</Button>
+								<Button
+									isSmall
+									isPrimary={ outerWidth === 'full' }
+									isSecondary={ outerWidth !== 'full' }
+									onClick={ () => setAttributes({ outerWidth: 'full' }) }
+								>
+									{ __('Full Wide', 'vk-blocks') }
+								</Button>
+							</ButtonGroup>
+
 							<RadioControl
 								label={ __(
 									"Contents area padding (left and right)",

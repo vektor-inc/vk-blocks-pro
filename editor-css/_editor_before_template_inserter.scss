@@ -1,5 +1,9 @@
 /* ブロックインサーター@サイドバー用 */
 .vkb-menu__template-part {
+	.block-editor-block-preview__content {
+		left: 50% !important;
+		margin-left: -50% !important;
+	}
 	&__button {
 		padding: 0;
 		width: 100%;
@@ -116,12 +120,15 @@
 		height: 100px;
 	}
 	#vkb-menu__template-part__card8 .inner {
-		height: 75px;
-	}
-	#vkb-menu__template-part__card9 .inner {
 		height: 100px;
 	}
+	#vkb-menu__template-part__card9 .inner {
+		height: 75px;
+	}
 	#vkb-menu__template-part__card10 .inner {
+		height: 100px;
+	}
+	#vkb-menu__template-part__card11 .inner {
 		height: 65px;
 	}
 }

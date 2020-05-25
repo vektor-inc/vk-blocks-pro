@@ -140,8 +140,20 @@ const defaultTemplates = [
 	  	<!-- /wp:vk-blocks/button --></div></div>
 	  	<!-- /wp:vk-blocks/outer -->
 	  	`,
-	},
-	{
+		},
+		{
+		name: "Feature Posts",
+		icon: "",
+		content: `
+		<!-- wp:vk-blocks/outer {"bgColor":"#eeeeee","outerWidth":"full","padding_left_and_right":"1","padding_top_and_bottom":"0","clientId":"88b8ebeb-19b0-46cc-9690-90c26b4835c5"} -->
+		<div class="vkb-outer-88b8ebeb-19b0-46cc-9690-90c26b4835c5 wp-block-vk-blocks-outer vk_outer vk_outer-width-full vk_outer-paddingLR-use vk_outer-paddingVertical-none vk_outer-bgPosition-normal" style="border:0px none #000;border-radius:0px"><style>.vkb-outer-88b8ebeb-19b0-46cc-9690-90c26b4835c5{background: linear-gradient(rgba(238, 238, 238, 0.5), rgba(238, 238, 238, 0.5))}!important;</style><div><div class="vk_outer_container"><!-- wp:vk-blocks/spacer {"pc":30} -->
+		<div class="vk_spacer"><div class="vk_spacer-display-pc" style="height:30px"></div><div class="vk_spacer-display-tablet" style="height:30px"></div><div class="vk_spacer-display-mobile" style="height:20px"></div></div>
+		<!-- /wp:vk-blocks/spacer -->
+		<!-- wp:vk-blocks/post-list {"name":"vk-blocks/post-list","col_xs":2,"col_sm":3,"col_xl":6,"display_date":false} /--></div></div></div>
+		<!-- /wp:vk-blocks/outer -->
+		`,
+		},
+		{
 		name: "Call To Action",
 		icon: "",
 		content: `

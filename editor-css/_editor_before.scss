@@ -129,8 +129,25 @@ $color-danger: #dd3333;
 	}
 }
 
+
 /* editor area *********************************************/
-  .edit-post-visual-editor.editor-styles-wrapper{
+.edit-post-visual-editor.editor-styles-wrapper{
+
+	/*
+	 アウターが全幅で インナーもコンテンツエリアを突き抜けて広げる処理
+	-----------------------------------------------*/
+	.vk_outer-width-full.vk_outer-paddingLR-use {
+		// コンテンツエリアをはみ出させる
+		.wp-block { max-width:100%; }
+	}
+	
+	.is-sidebar-opened & .vk_outer-width-full.vk_outer-paddingLR-use {
+		// サイドバー表示時に全幅要素がはみ出してサイドバーの下などに入り込むのを防止
+		margin-left: calc( 50% - 50vw + 140px );
+		margin-right: calc( 50% - 50vw + 140px );
+		// コンテンツエリアをはみ出させる
+		.wp-block { max-width:100%; }
+	}
 
 // レスポンシブスペーサーの識別用枠線
 .vk_spacer {

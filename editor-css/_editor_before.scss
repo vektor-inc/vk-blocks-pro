@@ -129,8 +129,25 @@ $color-danger: #dd3333;
 	}
 }
 
+
 /* editor area *********************************************/
-  .edit-post-visual-editor.editor-styles-wrapper{
+.edit-post-visual-editor.editor-styles-wrapper{
+
+	/*
+	 アウターが全幅で インナーもコンテンツエリアを突き抜けて広げる処理
+	-----------------------------------------------*/
+	.vk_outer-width-full.vk_outer-paddingLR-use {
+		// コンテンツエリアをはみ出させる
+		.wp-block { max-width:100%; }
+	}
+	
+	.is-sidebar-opened & .vk_outer-width-full.vk_outer-paddingLR-use {
+		// サイドバー表示時に全幅要素がはみ出してサイドバーの下などに入り込むのを防止
+		margin-left: calc( 50% - 50vw + 140px );
+		margin-right: calc( 50% - 50vw + 140px );
+		// コンテンツエリアをはみ出させる
+		.wp-block { max-width:100%; }
+	}
 
 // レスポンシブスペーサーの識別用枠線
 .vk_spacer {
@@ -249,6 +266,10 @@ $color-danger: #b52727;
 }
 
 .vk_posts .vk_posts-edit {
+	&-col-xs-2 .editor-block-list__block,
+	&-col-xs-2 .block-editor-block-list__block {
+		width: calc(16.66% - 30px);
+	}
 	&-col-xs-3 .editor-block-list__block,
 	&-col-xs-3 .block-editor-block-list__block {
 		width: calc(25% - 30px);
@@ -266,6 +287,10 @@ $color-danger: #b52727;
 		width: calc(100% - 30px);
 	}
 	@media (min-width: $sm-min) {
+		&-col-sm-2 .editor-block-list__block,
+		&-col-sm-2 .block-editor-block-list__block {
+			width: calc(16.66% - 30px);
+		}
 		&-col-sm-3 .editor-block-list__block,
 		&-col-sm-3 .block-editor-block-list__block {
 			width: calc(25% - 30px);
@@ -284,6 +309,10 @@ $color-danger: #b52727;
 		}
 	}
 	@media (min-width: $md-min) {
+		&-col-md-2 .editor-block-list__block,
+		&-col-md-2 .block-editor-block-list__block {
+			width: calc(16.66% - 30px);
+		}
 		&-col-md-3 .editor-block-list__block,
 		&-col-md-3 .block-editor-block-list__block {
 			width: calc(25% - 30px);
@@ -302,6 +331,10 @@ $color-danger: #b52727;
 		}
 	}
 	@media (min-width: $lg-min) {
+		&-col-lg-2 .editor-block-list__block,
+		&-col-lg-2 .block-editor-block-list__block {
+			width: calc(16.66% - 30px);
+		}
 		&-col-lg-3 .editor-block-list__block,
 		&-col-lg-3 .block-editor-block-list__block {
 			width: calc(25% - 30px);
@@ -320,6 +353,10 @@ $color-danger: #b52727;
 		}
 	}
 	@media (min-width: $xl-min) {
+		&-col-xl-2 .editor-block-list__block,
+		&-col-xl-2 .block-editor-block-list__block {
+			width: calc(16.66% - 30px);
+		}
 		&-col-xl-3 .editor-block-list__block,
 		&-col-xl-3 .block-editor-block-list__block {
 			width: calc(25% - 30px);
@@ -363,6 +400,10 @@ $color-danger: #b52727;
 		}
 	}
 
+	& > .col-xs-2 {
+		width: calc(16.66% - 30px);
+		max-width: var(--vk-width-couter-col-2) ;
+	}
 	& > .col-xs-3 {
 		width: calc(25% - 30px);
 		max-width: var(--vk-width-couter-col-3) ;
@@ -382,6 +423,10 @@ $color-danger: #b52727;
 		max-width: var(--vk-width-couter-col-12) ;
 	}
 	@media (min-width: $sm-min) {
+		& > .col-sm-2 {
+			width: calc(16.66% - 30px);
+			max-width: var(--vk-width-couter-col-2) ;
+		}
 		& > .col-sm-3 {
 			width: calc(25% - 30px);
 			max-width: var(--vk-width-couter-col-3) ;
@@ -400,6 +445,10 @@ $color-danger: #b52727;
 		}
 	}
 	@media (min-width: $md-min) {
+		& > .col-md-2 {
+			width: calc(16.66% - 30px);
+			max-width: var(--vk-width-couter-col-2) ;
+		}
 		& > .col-md-3 {
 			width: calc(25% - 30px);
 			max-width: var(--vk-width-couter-col-3) ;
@@ -418,6 +467,10 @@ $color-danger: #b52727;
 		}
 	}
 	@media (min-width: $lg-min) {
+		& > .col-lg-2 {
+			width: calc(16.66% - 30px);
+			max-width: var(--vk-width-couter-col-2) ;
+		}
 		& > .col-lg-3{
 			width: calc(25% - 30px);
 			max-width: var(--vk-width-couter-col-3) ;
@@ -436,6 +489,10 @@ $color-danger: #b52727;
 		}
 	}
 	@media (min-width: $xl-min) {
+		& > .col-xl-2 {
+			width: calc(16.66% - 30px);
+			max-width: var(--vk-width-couter-col-2) ;
+		}
 		& > .col-xl-3 {
 			width: calc(25% - 30px);
 			max-width: var(--vk-width-couter-col-3) ;

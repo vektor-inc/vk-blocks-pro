@@ -1,10 +1,10 @@
 const { Fragment } = wp.element;
 import { componentDivider } from "./component-divider";
-import { vkbBlockEditor } from "./../../_helper/depModules";
+import { vkbBlockEditor } from "./../../../_helper/depModules";
 const { InnerBlocks } = vkbBlockEditor;
-import hex2rgba from "../../_helper/hex-to-rgba";
+import hex2rgba from "./../../../_helper/hex-to-rgba";
 
-export const OuterBlock = (props) => {
+export const ComponentV2_1 = (props) => {
 	const {
 		bgPosition,
 		outerWidth,
@@ -49,11 +49,9 @@ export const OuterBlock = (props) => {
 	}
 
 	//classPaddingLRのクラス切り替え
-	classPaddingLR = "";
-	if ( padding_left_and_right === "1") {
+	if (padding_left_and_right === "1") {
 		classPaddingLR = " vk_outer-paddingLR-use";
 	} else {
-		// Fit to content area width
 		classPaddingLR = " vk_outer-paddingLR-none";
 	}
 
@@ -118,27 +116,10 @@ export const OuterBlock = (props) => {
 	};
 
 	return (
-		<div
-			id={ anchor }
-			className={
-			"vkb-outer-" +
-			clientId +
-			" " +
-			className +
-			" vk_outer" +
-			classWidth +
-			classPaddingLR +
-			classPaddingVertical +
-			classBgPosition
-		}
-			style={ {
-			border: borderProperty,
-			borderRadius: borderRadiusProperty,
-		} }
-		>
+		<Fragment>
 			<GenerateMediaqueryCss { ...props } />
 			<OuterBlockInner { ...defaultProps } />
-		</div>
+		</Fragment>
 	);
 };
 
@@ -258,6 +239,15 @@ const GenerateMediaqueryCss = (props) => {
 
 const OuterBlockInner = (props) => {
 	const {
+		clientId,
+		anchor,
+		className,
+		classWidth,
+		classPaddingLR,
+		classPaddingVertical,
+		classBgPosition,
+		borderProperty,
+		borderRadiusProperty,
 		upper_level,
 		upperDividerBgColor,
 		whichSideUpper,
@@ -271,7 +261,24 @@ const OuterBlockInner = (props) => {
 
 	return (
 		<Fragment>
-			<div>
+			<div
+				id={ anchor }
+				className={
+					"vkb-outer-" +
+					clientId +
+					" " +
+					className +
+					" vk_outer" +
+					classWidth +
+					classPaddingLR +
+					classPaddingVertical +
+					classBgPosition
+				}
+				style={ {
+					border: borderProperty,
+					borderRadius: borderRadiusProperty,
+				} }
+			>
 				{ componentDivider(
 					upper_level,
 					upperDividerBgColor,

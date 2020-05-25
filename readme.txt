@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.4.1
-Stable tag: 0.29.4
+Stable tag: 0.30.0
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -32,6 +32,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Step [ Pro ]
 * Timeline [ Pro ]
 * Card [ Pro ]
+* Grid Column [ Pro ]
 
 [ Editing and correction ]
 
@@ -57,6 +58,18 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.30.0 =
+[ Add Function ][ Post list (pro) / Card (pro) / Grid Column (pro) ] Cope with 6 column
+
+= 0.29.7 =
+[ bug fix ][ outer (pro) ] fix outer block error
+
+= 0.29.6 =
+[ Delete function ][ Group block ] Delete border custom color
+
+= 0.29.5 =
+[ Design tuning ][ Group block style ] Add alert style
 
 = 0.29.4 =
 build only

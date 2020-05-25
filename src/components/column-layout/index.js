@@ -1,7 +1,7 @@
 const { __ } = wp.i18n;
 const { RangeControl, BaseControl } = wp.components;
 const { Fragment } = wp.element;
-import formatNum from "../../blocks/_helper/formatNum";
+import formatNumCol from "../../blocks/_helper/formatNumCol";
 
 export const ColumnLayout = (props) => {
 
@@ -10,53 +10,53 @@ export const ColumnLayout = (props) => {
 
 	const defaultMinMax = {
 		min: "1",
-		max: "4"
+		max: "6"
 	};
 
 	return (
 		<Fragment>
 			<BaseControl
-				label={__("Column ( Screen size : Extra small )", "vk-blocks")}
+				label={ __("Column ( Screen size : Extra small )", "vk-blocks") }
 			>
 				<RangeControl
-					value={col_xs}
-					onChange={value => setAttributes({ col_xs: formatNum(value, col_xs) })}
-					min={defaultMinMax.min}
-					max={defaultMinMax.max}
+					value={ col_xs }
+					onChange={ value => setAttributes({ col_xs: formatNumCol(value, col_xs) }) }
+					min={ defaultMinMax.min }
+					max={ defaultMinMax.max }
 				/>
 			</BaseControl>
-			<BaseControl label={__("Column ( Screen size : Small )", "vk-blocks")}>
+			<BaseControl label={ __("Column ( Screen size : Small )", "vk-blocks") }>
 				<RangeControl
-					value={col_sm}
-					onChange={value => setAttributes({ col_sm: formatNum(value, col_sm) })}
-					min={defaultMinMax.min}
-					max={defaultMinMax.max}
+					value={ col_sm }
+					onChange={ value => setAttributes({ col_sm: formatNumCol(value, col_sm) }) }
+					min={ defaultMinMax.min }
+					max={ defaultMinMax.max }
 				/>
 			</BaseControl>
-			<BaseControl label={__("Column ( Screen size : Medium )", "vk-blocks")}>
+			<BaseControl label={ __("Column ( Screen size : Medium )", "vk-blocks") }>
 				<RangeControl
-					value={col_md}
-					onChange={value => setAttributes({ col_md: formatNum(value, col_md) })}
-					min={defaultMinMax.min}
-					max={defaultMinMax.max}
+					value={ col_md }
+					onChange={ value => setAttributes({ col_md: formatNumCol(value, col_md) }) }
+					min={ defaultMinMax.min }
+					max={ defaultMinMax.max }
 				/>
 			</BaseControl>
-			<BaseControl label={__("Column ( Screen size : Large )", "vk-blocks")}>
+			<BaseControl label={ __("Column ( Screen size : Large )", "vk-blocks") }>
 				<RangeControl
-					value={col_lg}
-					onChange={value => setAttributes({ col_lg: formatNum(value, col_lg) })}
-					min={defaultMinMax.min}
-					max={defaultMinMax.max}
+					value={ col_lg }
+					onChange={ value => setAttributes({ col_lg: formatNumCol(value, col_lg) }) }
+					min={ defaultMinMax.min }
+					max={ defaultMinMax.max }
 				/>
 			</BaseControl>
 			<BaseControl
-				label={__("Column ( Screen size : Extra large )", "vk-blocks")}
+				label={ __("Column ( Screen size : Extra large )", "vk-blocks") }
 			>
 				<RangeControl
-					value={col_xl}
-					onChange={value => setAttributes({ col_xl: formatNum(value, col_xl) })}
-					min={defaultMinMax.min}
-					max={defaultMinMax.max}
+					value={ col_xl }
+					onChange={ value => setAttributes({ col_xl: formatNumCol(value, col_xl) }) }
+					min={ defaultMinMax.min }
+					max={ defaultMinMax.max }
 				/>
 			</BaseControl>
 		</Fragment>

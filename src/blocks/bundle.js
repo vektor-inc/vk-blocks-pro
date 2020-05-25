@@ -25,6 +25,7 @@ import "./_pro/child-page/block.js";
 import "./_pro/post-list/block.js";
 import "./_pro/outer/block.js";
 import "./_pro/table-of-contents/block.js";
+import "./_pro/table-of-contents-new/block.js";
 import "./_pro/step-item/block.js";
 import "./_pro/step/block.js";
 import "./_pro/timeline-item/block.js";

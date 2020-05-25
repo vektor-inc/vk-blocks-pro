@@ -1,8 +1,23 @@
-import { schema, schema_v1 } from "./schema";
+import { schema, schema_v1,schema_v2 } from "./schema";
 import { ComponentV0, ComponentV1, ComponentForTemplate0, ComponentForTemplate1, ComponentForTemplate2, ComponentForTemplate3, ComponentForTemplate4, ComponentForTemplate5, ComponentForTemplate6 } from "./component";
+import {ComponentV2_1} from './componentv2'
 
 export const deprecated = [
-  //ブロックテンプレート用のdeprecated
+	//ブロックテンプレート用のdeprecated
+	{
+		attributes: schema_v2,
+		save(props) {
+			const { attributes, className } = props;
+			return (
+				<ComponentV2_1
+					clientId={attributes.clientId}
+					attributes={attributes}
+					className={className}
+					for_={"save"}
+				/>
+			);
+		},
+	},
   {
     attributes: schema_v1,
     save({ attributes, className }) {

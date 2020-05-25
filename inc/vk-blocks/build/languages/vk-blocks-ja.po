@@ -195,130 +195,138 @@ msgstr "パララックス（編集画面では反映されません）"
 msgid "Layout Setting"
 msgstr "レイアウト設定"
 
-#: src/blocks/_pro/outer/block.js:175
-msgid "Outer width"
-msgstr "アウターの幅"
+#: src/blocks/_pro/outer/block.js:173
+msgid "Width"
+msgstr "幅"
 
-#: src/blocks/_pro/outer/block.js:178 src/blocks/button/block.js:156
+#: src/blocks/_pro/outer/block.js:182 src/blocks/button/block.js:156
 msgid "Normal"
 msgstr "標準"
 
-#: src/blocks/_pro/outer/block.js:179
+#: src/blocks/_pro/outer/block.js:190
 msgid "Full Wide"
 msgstr "全幅"
 
-#: src/blocks/_pro/outer/block.js:184
-msgid "Contents area padding (left and right)"
-msgstr "コンテンツエリアの余白 (左右)"
-
-#: src/blocks/_pro/outer/block.js:191
-msgid "Do not use padding"
-msgstr "余白なし"
-
 #: src/blocks/_pro/outer/block.js:195
-msgid "Use padding"
-msgstr "余白あり"
+msgid "Padding (Left and Right)"
+msgstr "余白 (左右)"
 
-#: src/blocks/_pro/outer/block.js:204
-msgid "Padding (top and bottom)"
+#: src/blocks/_pro/outer/block.js:202
+msgid "Fit to the Content area"
+msgstr "コンテンツエリアに合わせる"
+
+#: src/blocks/_pro/outer/block.js:206
+msgid "Add padding to the Outer area"
+msgstr "アウターエリア内に余白を追加する"
+
+#: src/blocks/_pro/outer/block.js:215
+msgid "Padding (Top and Bottom)"
 msgstr "余白 (上下)"
 
-#: src/blocks/_pro/outer/block.js:207
+#: src/blocks/_pro/outer/block.js:218
 msgid "Use default padding"
 msgstr "標準の余白を使用"
 
-#: src/blocks/_pro/outer/block.js:209
-msgid "Do not use default padding (Set it yourself using a spacer block etc.)."
-msgstr "標準の余白を使用しない（スペーサーブロックなどで独自に指定する）。"
+#: src/blocks/_pro/outer/block.js:220
+msgid "Do not use default padding"
+msgstr "標準の余白を使用しない"
 
-#: src/blocks/_pro/outer/block.js:223
+#: src/blocks/_pro/outer/block.js:231
+msgid ""
+"* If you select \"Do not use\" that, please set yourself it such as a spacer "
+"block."
+msgstr ""
+"*「使用しない」を選択した場合はスペーサーブロックなどで任意に設定してくださ"
+"い。"
+
+#: src/blocks/_pro/outer/block.js:235
 msgid "Divider Setting"
 msgstr "区切りの設定"
 
-#: src/blocks/_pro/outer/block.js:228 src/blocks/balloon/block.js:81
+#: src/blocks/_pro/outer/block.js:240 src/blocks/balloon/block.js:81
 msgid "Type"
 msgstr "タイプ"
 
-#: src/blocks/_pro/outer/block.js:234
+#: src/blocks/_pro/outer/block.js:246
 msgid "Tilt"
 msgstr "傾斜"
 
-#: src/blocks/_pro/outer/block.js:238
+#: src/blocks/_pro/outer/block.js:250
 msgid "Curve"
 msgstr "カーブ"
 
-#: src/blocks/_pro/outer/block.js:242
+#: src/blocks/_pro/outer/block.js:254
 msgid "Wave"
 msgstr "波状"
 
-#: src/blocks/_pro/outer/block.js:246 src/blocks/list-style/block.js:113
+#: src/blocks/_pro/outer/block.js:258 src/blocks/list-style/block.js:113
 msgid "Triangle"
 msgstr "三角"
 
-#: src/blocks/_pro/outer/block.js:251
+#: src/blocks/_pro/outer/block.js:263
 msgid "Upper Divider Level"
 msgstr "上部区切りレベル"
 
-#: src/blocks/_pro/outer/block.js:269
+#: src/blocks/_pro/outer/block.js:281
 msgid "Lower Divider Level"
 msgstr "下部区切りレベル"
 
-#: src/blocks/_pro/outer/block.js:289
+#: src/blocks/_pro/outer/block.js:301
 msgid "Border Setting"
 msgstr "枠線の設定"
 
-#: src/blocks/_pro/outer/block.js:294
+#: src/blocks/_pro/outer/block.js:306
 msgid "Border will disappear when divider effect is applied."
 msgstr "枠線は区切りレベルを適用すると表示されなくなります。"
 
-#: src/blocks/_pro/outer/block.js:300
+#: src/blocks/_pro/outer/block.js:312
 msgid "Border type"
 msgstr "枠線の種類"
 
-#: src/blocks/_pro/outer/block.js:306 src/blocks/_pro/step-item/block.js:98
+#: src/blocks/_pro/outer/block.js:318 src/blocks/_pro/step-item/block.js:98
 #: src/blocks/_pro/timeline-item/block.js:103 src/blocks/staff/block.js:88
 msgid "None"
 msgstr "なし"
 
-#: src/blocks/_pro/outer/block.js:310 src/blocks/_pro/step-item/block.js:75
-#: src/blocks/_pro/timeline-item/block.js:84
-#: src/blocks/group-style/block.js:135 src/blocks/pr-content/block.js:168
+#: src/blocks/_pro/outer/block.js:322 src/blocks/_pro/step-item/block.js:75
+#: src/blocks/_pro/timeline-item/block.js:84 src/blocks/group-style/block.js:95
+#: src/blocks/pr-content/block.js:168
 msgid "Solid"
 msgstr "直線"
 
-#: src/blocks/_pro/outer/block.js:314 src/blocks/group-style/block.js:143
+#: src/blocks/_pro/outer/block.js:326 src/blocks/group-style/block.js:103
 msgid "Dotted"
 msgstr "点線"
 
-#: src/blocks/_pro/outer/block.js:318 src/blocks/group-style/block.js:147
+#: src/blocks/_pro/outer/block.js:330 src/blocks/group-style/block.js:107
 msgid "Dashed"
 msgstr "Dashed"
 
-#: src/blocks/_pro/outer/block.js:322 src/blocks/group-style/block.js:151
+#: src/blocks/_pro/outer/block.js:334 src/blocks/group-style/block.js:111
 msgid "Double"
 msgstr "二重線"
 
-#: src/blocks/_pro/outer/block.js:326
+#: src/blocks/_pro/outer/block.js:338
 msgid "Groove"
 msgstr "Groove"
 
-#: src/blocks/_pro/outer/block.js:330
+#: src/blocks/_pro/outer/block.js:342
 msgid "Ridge"
 msgstr "Ridge"
 
-#: src/blocks/_pro/outer/block.js:334
+#: src/blocks/_pro/outer/block.js:346
 msgid "Inset"
 msgstr "Inset"
 
-#: src/blocks/_pro/outer/block.js:338
+#: src/blocks/_pro/outer/block.js:350
 msgid "Outset"
 msgstr "Outset"
 
-#: src/blocks/_pro/outer/block.js:349
+#: src/blocks/_pro/outer/block.js:361
 msgid "Border width"
 msgstr "枠線の幅"
 
-#: src/blocks/_pro/outer/block.js:356
+#: src/blocks/_pro/outer/block.js:368
 msgid "Border radius"
 msgstr "枠線のRの大きさ"
 
@@ -385,7 +393,8 @@ msgid "Color"
 msgstr "色"
 
 #: src/blocks/_pro/step-item/block.js:64
-#: src/blocks/_pro/table-of-contents/block.js:50
+#: src/blocks/_pro/table-of-contents-new/block.js:49
+#: src/blocks/_pro/table-of-contents/block.js:47
 #: src/blocks/_pro/timeline-item/block.js:69
 msgid "Style"
 msgstr "スタイル"
@@ -396,7 +405,8 @@ msgid "Outlined"
 msgstr "アウトライン"
 
 #: src/blocks/_pro/step-item/block.js:94
-#: src/blocks/_pro/table-of-contents/block.js:57
+#: src/blocks/_pro/table-of-contents-new/block.js:56
+#: src/blocks/_pro/table-of-contents/block.js:54
 #: src/blocks/_pro/timeline-item/block.js:99
 #: src/blocks/heading-style/block.js:33 src/blocks/heading/block.js:131
 #: src/blocks/list-style/block.js:104 src/blocks/staff/block.js:84
@@ -411,24 +421,30 @@ msgstr "ステップ"
 msgid "First Dot Number"
 msgstr "ステップの開始番号"
 
-#: src/blocks/_pro/table-of-contents/TocBody.js:12
-#: src/blocks/_pro/table-of-contents/block.js:35
+#: src/blocks/_pro/table-of-contents-new/TocBody.js:12
+#: src/blocks/_pro/table-of-contents-new/block.js:34
+#: src/blocks/_pro/table-of-contents/block.js:33
+#: src/blocks/_pro/table-of-contents/toc-utils.js:180
 msgid "Table of Contents"
 msgstr "目次"
 
-#: src/blocks/_pro/table-of-contents/block.js:61
+#: src/blocks/_pro/table-of-contents-new/block.js:60
+#: src/blocks/_pro/table-of-contents/block.js:58
 msgid "No frame"
 msgstr "枠無し"
 
-#: src/blocks/_pro/table-of-contents/block.js:66
+#: src/blocks/_pro/table-of-contents-new/block.js:65
+#: src/blocks/_pro/table-of-contents/block.js:63
 msgid "Default Display Status"
 msgstr "初期表示状態"
 
-#: src/blocks/_pro/table-of-contents/block.js:73
+#: src/blocks/_pro/table-of-contents-new/block.js:72
+#: src/blocks/_pro/table-of-contents/block.js:70
 msgid "OPEN"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents/block.js:77
+#: src/blocks/_pro/table-of-contents-new/block.js:76
+#: src/blocks/_pro/table-of-contents/block.js:74
 msgid "CLOSE"
 msgstr ""
 
@@ -453,22 +469,22 @@ msgid "Style Settings"
 msgstr "スタイル設定"
 
 #: src/blocks/alert/block.js:53 src/blocks/button/block.js:247
-#: src/blocks/group-style/block.js:167 src/blocks/pr-content/block.js:180
+#: src/blocks/pr-content/block.js:180
 msgid "Success"
 msgstr "Success"
 
 #: src/blocks/alert/block.js:54 src/blocks/button/block.js:248
-#: src/blocks/group-style/block.js:171 src/blocks/pr-content/block.js:181
+#: src/blocks/pr-content/block.js:181
 msgid "Info"
 msgstr "Info"
 
 #: src/blocks/alert/block.js:55 src/blocks/button/block.js:249
-#: src/blocks/group-style/block.js:175 src/blocks/pr-content/block.js:182
+#: src/blocks/pr-content/block.js:182
 msgid "Warning"
 msgstr "Warning"
 
 #: src/blocks/alert/block.js:56 src/blocks/button/block.js:250
-#: src/blocks/group-style/block.js:179 src/blocks/pr-content/block.js:183
+#: src/blocks/pr-content/block.js:183
 msgid "Danger"
 msgstr "Danger"
 
@@ -690,25 +706,25 @@ msgstr "タイトルを入力"
 msgid "Input content"
 msgstr "説明を入力"
 
-#: src/blocks/group-style/block.js:139
-msgid "Solid Roundcorner"
-msgstr "直線 角丸"
-
-#: src/blocks/group-style/block.js:155
+#: src/blocks/group-style/block.js:115
 msgid "Stitch"
 msgstr "スティッチ"
 
-#: src/blocks/group-style/block.js:159
+#: src/blocks/group-style/block.js:119
 msgid "Border Top Bottom"
 msgstr "直線 上下"
 
-#: src/blocks/group-style/block.js:163
+#: src/blocks/group-style/block.js:123
 msgid "Shadow"
 msgstr "シャドウ"
 
-#: src/blocks/group-style/block.js:51
+#: src/blocks/group-style/block.js:50
 msgid "Border Color"
 msgstr "線の色"
+
+#: src/blocks/group-style/block.js:99
+msgid "Solid Roundcorner"
+msgstr "直線 角丸"
 
 #: src/blocks/heading-style/block.js:102
 msgid "Dotted border bottom black"
@@ -1241,6 +1257,33 @@ msgstr ""
 msgid "Deactivated VK-Blocks Plugin. Because VK-Blocks Pro running."
 msgstr "Pro版VK-Blocksが起動しているため、VK-Blocksを停止しました。"
 
+#~ msgid "Padding (Horizontal)"
+#~ msgstr "余白（水平）"
+
+#~ msgid "Padding (Vertical)"
+#~ msgstr "余白（上下）"
+
+#~ msgid "Use padding"
+#~ msgstr "余白あり"
+
+#~ msgid "Don't use padding"
+#~ msgstr "余白なし"
+
+#~ msgid "Use"
+#~ msgstr "あり"
+
+#~ msgid "Contents area width and padding"
+#~ msgstr "コンテンツエリアの左右に標準の余白を使用"
+
+#~ msgid "Full wide width and padding"
+#~ msgstr "全幅に余白を使用"
+
+#~ msgid "Parallax (Non-guaranteed / Abolished)"
+#~ msgstr "パララックス（非保証/近日廃止）"
+
+#~ msgid "Outer width"
+#~ msgstr "アウターの幅"
+
 #, fuzzy
 #~| msgid "Responsive Spacer"
 #~ msgid "Responsive Column"
@@ -1385,9 +1428,6 @@ msgstr "Pro版VK-Blocksが起動しているため、VK-Blocksを停止しまし
 #~| msgid "Icon Name"
 #~ msgid "Name"
 #~ msgstr "アイコンの名前"
-
-#~ msgid "Use contents area default padding"
-#~ msgstr "コンテンツエリアの左右に標準の余白を使用"
 
 #~ msgid "Open url in new window"
 #~ msgstr "リンクを別ウィンドウで開く"

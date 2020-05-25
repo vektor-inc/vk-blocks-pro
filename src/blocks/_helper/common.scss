@@ -17,7 +17,7 @@ $stylePalette: (
 	is-style-vk-handpoint-mark: "\f0a4",
 	is-style-vk-pencil-mark: "\f303",
 	is-style-vk-smile-mark: "\f118",
-	is-style-vk-frown-mark: "\f119"
+	is-style-vk-frown-mark: "\f119",
 );
 
 $colorPalette: (
@@ -32,7 +32,7 @@ $colorPalette: (
 	vk-has-vivid-purple-color: #9b51e0,
 	vk-has-very-light-gray-color: #eee,
 	vk-has-cyan-bluish-gray-color: #abb8c3,
-	vk-has-very-dark-gray-color: #313131
+	vk-has-very-dark-gray-color: #313131,
 );
 
 ul,
@@ -70,10 +70,10 @@ ol {
 
 			&:before {
 				position: absolute;
-				left: -0.3em;
+				left: 0;
 				counter-increment: number;
 				content: counter(number);
-				margin-left: -25px;
+				margin-left: -2.4em;
 				background: #222;
 				color: #fff;
 				text-indent: 0;
@@ -283,27 +283,35 @@ ol {
 				@include pad-mag;
 				@include inner-item-pad-mag;
 			}
-			&-alert-success {
-				background-color: #dff0d8;
-				color: #3c763d;
-				@include pad-mag;
-				@include inner-item-pad-mag;
-			}
 			&-alert-info {
 				background-color: #d9edf7;
 				color: #31708f;
+				border-radius: 3px;
+				border: 1px solid #bce8f1;
+				@include pad-mag;
+				@include inner-item-pad-mag;
+			}
+			&-alert-success {
+				background-color: #dff0d8;
+				color: #3c763d;
+				border-radius: 3px;
+				border: 1px solid #d6e9c6;
 				@include pad-mag;
 				@include inner-item-pad-mag;
 			}
 			&-alert-warning {
 				background-color: #fcf8e3;
 				color: #8a6d3b;
+				border-radius: 3px;
+				border: 1px solid #faebcc;
 				@include pad-mag;
 				@include inner-item-pad-mag;
 			}
 			&-alert-danger {
 				background-color: #f2dede;
 				color: #a94442;
+				border-radius: 3px;
+				border: 1px solid #ebccd1;
 				@include pad-mag;
 				@include inner-item-pad-mag;
 			}

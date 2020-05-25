@@ -1,5 +1,5 @@
 /**
- * table-of-contents block type
+ * table-of-contents-new-new block type
  */
 
 import { schema } from "./schema";
@@ -20,25 +20,27 @@ const {
 	SelectControl,
 	BaseControl,
 } = wp.components;
-import { depServerSideRender } from "../../_helper/depModules";
-const ServerSideRender = depServerSideRender();
 const { Fragment } = wp.element;
 import { vkbBlockEditor } from "../../_helper/depModules";
 const { InspectorControls } = vkbBlockEditor;
 const { addFilter } = wp.hooks;
 const { createHigherOrderComponent } = wp.compose;
 const { dispatch } = wp.data;
+import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
+const inserterVisible = hiddenNewBlock(5.3);
+import TocBody from './TocBody'
 
-registerBlockType("vk-blocks/table-of-contents", {
+registerBlockType("vk-blocks/table-of-contents-new", {
 	title: __("Table of Contents", "vk-blocks"),
 	icon: <BlockIcon />,
 	category: "vk-blocks-cat",
 	attributes: schema,
 	supports: {
-		inserter: false
+		inserter: inserterVisible
 	},
 
-	edit({ attributes, setAttributes }) {
+	edit(props) {
+		const { attributes, setAttributes } = props;
 		const { style, open } = attributes;
 		return (
 			<Fragment>
@@ -78,16 +80,13 @@ registerBlockType("vk-blocks/table-of-contents", {
 						</BaseControl>
 					</PanelBody>
 				</InspectorControls>
-				<ServerSideRender
-					block="vk-blocks/table-of-contents"
-					attributes={attributes}
-				/>
+				<TocBody {...props} />
 			</Fragment>
 		);
 	},
 
-	save() {
-		return null;
+	save(props) {
+		return <TocBody {...props} />;
 	},
 });
 
@@ -105,7 +104,7 @@ const getHeadings = (props) => {
 	const headingList = ["core/heading", "vk-blocks/heading"];
 
 	if (isAllowedBlock(name, allowedBlocks)) {
-		const tocs = getBlocksByName("vk-blocks/table-of-contents");
+		const tocs = getBlocksByName("vk-blocks/table-of-contents-new");
 		const tocClientId = tocs[0] ? tocs[0].clientId : "";
 		const tocAttributes = tocs[0] ? tocs[0].attributes : "";
 
@@ -119,7 +118,7 @@ const getHeadings = (props) => {
 			});
 		}
 
-		const asyncToc = asyncGetBlocksByName("vk-blocks/table-of-contents");
+		const asyncToc = asyncGetBlocksByName("vk-blocks/table-of-contents-new");
 		const open = asyncToc[0] ? asyncToc[0].attributes.open : "";
 
 		let headingsRaw = getAllHeadings(headingList);
@@ -144,7 +143,7 @@ const updateTableOfContents = createHigherOrderComponent((BlockListBlock) => {
 if (5.3 <= parseFloat(wpVersion)) {
 	addFilter(
 		"editor.BlockListBlock",
-		"vk-blocks/table-of-contents",
+		"vk-blocks/table-of-contents-new",
 		updateTableOfContents
 	);
 }

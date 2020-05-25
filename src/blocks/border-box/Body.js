@@ -1,4 +1,5 @@
 import { vkbBlockEditor } from "../_helper/depModules";
+import classNames from "classnames";
 const { InnerBlocks, RichText } = vkbBlockEditor;
 const { __ } = wp.i18n; // Import __() from wp.i18n
 
@@ -28,8 +29,14 @@ const Body = (props) => {
 		/>
 	}
 
+	let customClass = className;
+	//Defaultクラスを設定
+	if(-1 === className.indexOf('is-style-')){
+		customClass =  classNames(className,'is-style-vk_borderBox-style-solid-kado-tit-tab')
+	}
+
 	return (
-		<div className={`vk_borderBox vk_borderBox-color-${color} ${className}`}>
+		<div className={`vk_borderBox vk_borderBox-color-${color} ${customClass}`}>
 			<div className="vk_borderBox_title_container">
 				<i className={`${faIcon}`}></i>
 				{title}

@@ -25,7 +25,7 @@ registerBlockType('vk-blocks/border-box', {
 		{
 			name: 'vk_borderBox-style-solid-kado-tit-tab',
 			label: __( 'solid-kado-tit-tab' ),
-			isDefault: true
+			isDefault:true
 		},
 		{
 			name: 'vk_borderBox-style-solid-round-tit-tab',
@@ -45,7 +45,7 @@ registerBlockType('vk-blocks/border-box', {
 		},
 		{
 			name: 'vk_borderBox-style-solid-kado-tit-banner',
-			label: __( 'vk_borderBox-style-solid-kado-tit-banner' )
+			label: __( 'vk_borderBox-style-solid-kado-tit-banner' ),
 		},
 	],
 

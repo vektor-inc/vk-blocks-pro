@@ -357,22 +357,22 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 		/*-------------------------------------------*/
 
 		public static function get_patterns() {
-
+			global $vk_components_textdomain;
 			$patterns = array(
 				'card'            => array(
-					'label'             => __( 'Card', 'vk-compo-textdomain' ),
+					'label'             => __( 'Card', $vk_components_textdomain ),
 					'class_posts_outer' => '',
 				),
 				'card-horizontal' => array(
-					'label'             => __( 'Card Horizontal', 'vk-compo-textdomain' ),
+					'label'             => __( 'Card Horizontal', $vk_components_textdomain ),
 					'class_posts_outer' => '',
 				),
 				'media'           => array(
-					'label'             => __( 'Media', 'vk-compo-textdomain' ),
+					'label'             => __( 'Media', $vk_components_textdomain ),
 					'class_posts_outer' => 'media-outer',
 				),
 				'postListText'    => array(
-					'label'             => _x( 'Text 1 Column', 'post list type', 'vk-compo-textdomain' ),
+					'label'             => _x( 'Text 1 Column', 'post list type', $vk_components_textdomain ),
 					'class_posts_outer' => 'postListText-outer',
 				),
 			);

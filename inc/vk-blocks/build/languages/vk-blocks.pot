@@ -377,7 +377,7 @@ msgid "Step Mark"
 msgstr ""
 
 #: src/blocks/_pro/step-item/block.js:39
-#: src/blocks/border-box/block.js:57
+#: src/blocks/border-box/block.js:88
 msgid "If FontAwesome class entered, it will overrides the number."
 msgstr ""
 
@@ -388,7 +388,7 @@ msgstr ""
 
 #: src/blocks/_pro/step-item/block.js:58
 #: src/blocks/_pro/timeline-item/block.js:63
-#: src/blocks/border-box/block.js:65
+#: src/blocks/border-box/block.js:96
 #: src/blocks/staff/block.js:103
 msgid "Color"
 msgstr ""
@@ -557,60 +557,60 @@ msgstr ""
 msgid "Thinking"
 msgstr ""
 
-#: src/blocks/border-box/Body.js:19
+#: src/blocks/border-box/Body.js:20
 msgid "Please enter a title."
 msgstr ""
 
-#: src/blocks/border-box/block.js:17
-msgid "Border Box"
-msgstr ""
-
-#: src/blocks/border-box/block.js:23
-msgid "solid-kado-tit-tab"
-msgstr ""
-
-#: src/blocks/border-box/block.js:28
-msgid "solid-round-tit-tab"
-msgstr ""
-
-#: src/blocks/border-box/block.js:32
-msgid "solid-kado-tit-inner"
-msgstr ""
-
-#: src/blocks/border-box/block.js:36
-msgid "vk_borderBox-style-solid-kado-tit-onborder"
-msgstr ""
-
-#: src/blocks/border-box/block.js:40
-msgid "vk_borderBox-style-iconFeature"
-msgstr ""
-
-#: src/blocks/border-box/block.js:44
-msgid "vk_borderBox-style-solid-kado-tit-banner"
-msgstr ""
-
-#: src/blocks/border-box/block.js:54
-msgid "Icon"
-msgstr ""
-
-#: src/blocks/border-box/block.js:72
+#: src/blocks/border-box/block.js:103
 msgid "Red"
 msgstr ""
 
-#: src/blocks/border-box/block.js:76
+#: src/blocks/border-box/block.js:107
 msgid "Orange"
 msgstr ""
 
-#: src/blocks/border-box/block.js:80
+#: src/blocks/border-box/block.js:111
 msgid "Blue"
 msgstr ""
 
-#: src/blocks/border-box/block.js:84
+#: src/blocks/border-box/block.js:115
 msgid "Green"
 msgstr ""
 
-#: src/blocks/border-box/block.js:88
+#: src/blocks/border-box/block.js:119
 msgid "Black"
+msgstr ""
+
+#: src/blocks/border-box/block.js:44
+msgid "Border Box"
+msgstr ""
+
+#: src/blocks/border-box/block.js:54
+msgid "solid-kado-tit-tab"
+msgstr ""
+
+#: src/blocks/border-box/block.js:59
+msgid "solid-round-tit-tab"
+msgstr ""
+
+#: src/blocks/border-box/block.js:63
+msgid "solid-kado-tit-inner"
+msgstr ""
+
+#: src/blocks/border-box/block.js:67
+msgid "vk_borderBox-style-solid-kado-tit-onborder"
+msgstr ""
+
+#: src/blocks/border-box/block.js:71
+msgid "vk_borderBox-style-iconFeature"
+msgstr ""
+
+#: src/blocks/border-box/block.js:75
+msgid "vk_borderBox-style-solid-kado-tit-banner"
+msgstr ""
+
+#: src/blocks/border-box/block.js:85
+msgid "Icon"
 msgstr ""
 
 #: src/blocks/button/block.js:127

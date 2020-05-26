@@ -3,15 +3,19 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/_helper/font-awesome.js:21
-msgid "FontAwesome"
+#: src/blocks/_helper/font-awesome.js:22
+msgid "Font Awesome"
 msgstr ""
 
-#: src/blocks/_helper/font-awesome.js:23
-msgid "Enter Font Awesome Class. Ex) fas fa-arrow-circle-right "
+#: src/blocks/_helper/font-awesome.js:28
+msgid "Enter Font Awesome Class."
 msgstr ""
 
-#: src/blocks/_helper/font-awesome.js:25
+#: src/blocks/_helper/font-awesome.js:29
+msgid "Ex) fas fa-arrow-circle-right"
+msgstr ""
+
+#: src/blocks/_helper/font-awesome.js:31
 #: src/blocks/button/block.js:267
 #: src/blocks/pr-blocks/block.js:325
 #: src/blocks/pr-content/block.js:202

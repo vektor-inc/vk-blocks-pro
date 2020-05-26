@@ -17,16 +17,20 @@ export class FontAwesome extends React.Component {
 		const setAttributes = this.props.setAttributes;
 
 		return (
-			<TextControl
-				label={ __('FontAwesome', 'vk-blocks') }
-				help={
-					<span>{ __('Enter Font Awesome Class. Ex) fas fa-arrow-circle-right ', 'vk-blocks') }
-						<a href={ `https://fontawesome.com/icons?d=gallery&m=free` }
-							target={ `_blank` }>{ __('Font Awesome icon list', 'vk-blocks') }</a></span> }
-				value={ faIcon }
-				onChange={ (value) => setAttributes({ faIcon: value }) }
-				placeholder={ 'fas fa-arrow-circle-right' }
+			<fragment>
+				<TextControl
+					label={ __('Font Awesome', 'vk-blocks') }
+					value={ faIcon }
+					onChange={ (value) => setAttributes({ faIcon: value }) }
+					placeholder={ 'fas fa-arrow-circle-right' }
+					className="mb-0"
 			/>
+				<p className="mt-1">{ __('Enter Font Awesome Class.', 'vk-blocks') }<br />
+					{ __('Ex) fas fa-arrow-circle-right', 'vk-blocks') }<br />
+					<a href={ `https://fontawesome.com/icons?d=gallery&m=free` }
+						target={ `_blank` }>{ __('Font Awesome icon list', 'vk-blocks') }</a></p>
+			</fragment>
+
 		);
 	}
 }

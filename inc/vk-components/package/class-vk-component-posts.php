@@ -532,7 +532,9 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				$col = 3;
 			} elseif ( $input_col == 6 ) {
 				$col = 2;
-			}
+			} else {
+                $col = 4;
+            }
 			return strval( $col );
 		}
 

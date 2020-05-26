@@ -84,10 +84,13 @@
 		.vk_borderBox_title_container {
 			border-radius: 8px 8px 0 0;
 		}
+		.vk_borderBox_body {
+			border-radius: 0 8px 8px 8px;
+		}
 	}
 	&.is-style-vk_borderBox-style-solid-kado-tit-inner,
 	&.is-style-vk_borderBox-style-solid-kado-tit-onborder,
-	&.is-style-vk_borderBox-style-iconFeature {
+	&.is-style-vk_borderBox-style-solid-kado-iconFeature {
 		background-color: transparent;
 		border-width: 2px;
 		border-style: solid;
@@ -100,7 +103,7 @@
 			padding-top: 0;
 		}
 	}
-	&.is-style-vk_borderBox-style-iconFeature {
+	&.is-style-vk_borderBox-style-solid-kado-iconFeature {
 		.vk_borderBox_title_container {
 			position: relative;
 			padding-top: 2.2em;
@@ -210,7 +213,7 @@
 /* タイトル文字色のみパターン */
 .is-style-vk_borderBox-style-solid-kado-tit-inner,
 .is-style-vk_borderBox-style-solid-kado-tit-onborder,
-.is-style-vk_borderBox-style-iconFeature {
+.is-style-vk_borderBox-style-solid-kado-iconFeature {
 	&.vk_borderBox-color-red .vk_borderBox_title_container {
 		color: var(--vk-color-background-red);
 	}
@@ -228,7 +231,7 @@
 	}
 }
 /* iconFeatureパターン */
-.is-style-vk_borderBox-style-iconFeature {
+.is-style-vk_borderBox-style-solid-kado-iconFeature {
 	&.vk_borderBox-color-red {
 		.vk_borderBox_title_container {
 			.svg-inline--fa,

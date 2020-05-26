@@ -594,19 +594,19 @@ msgid "solid-round-tit-tab"
 msgstr ""
 
 #: src/blocks/border-box/block.js:63
-msgid "solid-kado-tit-inner"
+msgid "solid-kado-tit-banner"
 msgstr ""
 
 #: src/blocks/border-box/block.js:67
-msgid "vk_borderBox-style-solid-kado-tit-onborder"
+msgid "solid-kado-tit-onborder"
 msgstr ""
 
 #: src/blocks/border-box/block.js:71
-msgid "vk_borderBox-style-iconFeature"
+msgid "solid-kado-tit-inner"
 msgstr ""
 
 #: src/blocks/border-box/block.js:75
-msgid "vk_borderBox-style-solid-kado-tit-banner"
+msgid "solid-kado-iconFeature"
 msgstr ""
 
 #: src/blocks/border-box/block.js:85

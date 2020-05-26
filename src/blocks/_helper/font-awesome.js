@@ -13,19 +13,19 @@ export const faSchema = {
 export class FontAwesome extends React.Component {
 
 	render() {
-		let { faIcon } = this.props.attributes;
-		let setAttributes = this.props.setAttributes;
+		const { faIcon } = this.props.attributes;
+		const setAttributes = this.props.setAttributes;
 
 		return (
 			<TextControl
-				label={__('FontAwesome', 'vk-blocks')}
+				label={ __('FontAwesome', 'vk-blocks') }
 				help={
-					<span>{__('Enter Font Awesome Class. Ex) fas fa-arrow-circle-right ', 'vk-blocks')}
-						<a href={`https://fontawesome.com/icons?d=gallery&m=free`}
-							target={`_blank`}>{__('Font Awesome icon list', 'vk-blocks')}</a></span>}
-				value={faIcon}
-				onChange={(value) => setAttributes({ faIcon: value })}
-				placeholder={'fas fa-arrow-circle-right'}
+					<span>{ __('Enter Font Awesome Class. Ex) fas fa-arrow-circle-right ', 'vk-blocks') }
+						<a href={ `https://fontawesome.com/icons?d=gallery&m=free` }
+							target={ `_blank` }>{ __('Font Awesome icon list', 'vk-blocks') }</a></span> }
+				value={ faIcon }
+				onChange={ (value) => setAttributes({ faIcon: value }) }
+				placeholder={ 'fas fa-arrow-circle-right' }
 			/>
 		);
 	}

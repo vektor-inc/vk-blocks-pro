@@ -31,9 +31,9 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				'display_btn'                => false,
 				'image_default_url'          => false,
 				'overlay'                    => false,
-				'btn_text'                   => __( 'Read more', $vk_components_textdomain ),
+				'btn_text'                   => __( 'Read more', 'vk-block' ),
 				'btn_align'                  => 'text-right',
-				'new_text'                   => __( 'New!!', $vk_components_textdomain ),
+				'new_text'                   => __( 'New!!', 'vk-block' ),
 				'new_date'                   => 7,
 				'textlink'                   => true,
 				'class_outer'                => '',
@@ -357,22 +357,22 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 		/*-------------------------------------------*/
 
 		public static function get_patterns() {
-
+			global $vk_components_textdomain;
 			$patterns = array(
 				'card'            => array(
-					'label'             => __( 'Card', 'vk-compo-textdomain' ),
+					'label'             => __( 'Card', 'vk-block' ),
 					'class_posts_outer' => '',
 				),
 				'card-horizontal' => array(
-					'label'             => __( 'Card Horizontal', 'vk-compo-textdomain' ),
+					'label'             => __( 'Card Horizontal', 'vk-block' ),
 					'class_posts_outer' => '',
 				),
 				'media'           => array(
-					'label'             => __( 'Media', 'vk-compo-textdomain' ),
+					'label'             => __( 'Media', 'vk-block' ),
 					'class_posts_outer' => 'media-outer',
 				),
 				'postListText'    => array(
-					'label'             => _x( 'Text 1 Column', 'post list type', 'vk-compo-textdomain' ),
+					'label'             => _x( 'Text 1 Column', 'post list type', 'vk-block' ),
 					'class_posts_outer' => 'postListText-outer',
 				),
 			);
@@ -532,7 +532,9 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				$col = 3;
 			} elseif ( $input_col == 6 ) {
 				$col = 2;
-			}
+			} else {
+                $col = 4;
+            }
 			return strval( $col );
 		}
 

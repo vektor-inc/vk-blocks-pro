@@ -1227,6 +1227,306 @@ ol {
 	}
 } // @media only screen and (max-width: 480px) {
 
+:root {
+	--vk-color-border-red: #dc3545;
+	--vk-color-background-red: #dc3545;
+	--vk-color-border-orange: #ffa536;
+	--vk-color-background-orange: #ffa536;
+	--vk-color-border-blue: #4267b2;
+	--vk-color-background-blue: #4267b2;
+	--vk-color-border-green: #28a745;
+	--vk-color-background-green: #28a745;
+	--vk-color-border-black: #222;
+	--vk-color-background-black: #222;
+}
+
+/*
+線色指定
+--------------------------------------------*/
+.vk_borderBox-color {
+	&-red {
+		border-color: var(--vk-color-border-red);
+		background-color: var(--vk-color-background-red);
+	}
+	&-orange {
+		border-color: var(--vk-color-border-orange);
+		background-color: var(--vk-color-background-orange);
+	}
+	&-blue {
+		border-color: var(--vk-color-border-blue);
+		background-color: var(--vk-color-background-blue);
+	}
+	&-green {
+		border-color: var(--vk-color-border-green);
+		background-color: var(--vk-color-background-green);
+	}
+	&-black {
+		border-color: var(--vk-color-border-black);
+		background-color: var(--vk-color-background-black);
+	}
+}
+
+/*
+共通指定
+--------------------------------------------*/
+.vk_borderBox {
+	margin: 0 0 2em;
+	position: relative;
+	.vk_borderBox_title_container {
+		margin: 0;
+		font-size: 1em;
+		line-height: 1.4;
+		padding: 0.5em 1.5em 0.4em;
+		font-weight: bold;
+		.svg-inline--fa,
+		.fas {
+			margin-right: 5px;
+		}
+		.vk_borderBox_title {
+			display: inline;
+			font-weight: bold;
+			font-size: 1em;
+		}
+	}
+	.vk_borderBox_body {
+		padding: 1.5em;
+		background-color: #fff;
+		border-width: 2px;
+		border-style: solid;
+		p {
+			margin-bottom: 0;
+		}
+	}
+}
+
+/*
+装飾指定
+--------------------------------------------*/
+.vk_borderBox {
+	&.is-style-vk_borderBox-style-solid-kado-tit-tab,
+	&.is-style-vk_borderBox-style-solid-round-tit-tab {
+		.vk_borderBox_title_container {
+			display: inline-block;
+		}
+	}
+	&.is-style-vk_borderBox-style-solid-round-tit-tab {
+		.vk_borderBox_title_container {
+			border-radius: 8px 8px 0 0;
+		}
+		.vk_borderBox_body {
+			border-radius: 0 8px 8px 8px;
+		}
+	}
+	&.is-style-vk_borderBox-style-solid-kado-tit-inner,
+	&.is-style-vk_borderBox-style-solid-kado-tit-onborder,
+	&.is-style-vk_borderBox-style-solid-kado-iconFeature {
+		background-color: transparent;
+		border-width: 2px;
+		border-style: solid;
+		.vk_borderBox_title_container {
+			padding: 1.5em 1.5em 1em;
+		}
+		.vk_borderBox_body {
+			background-color: transparent;
+			border: none;
+			padding-top: 0;
+		}
+	}
+	&.is-style-vk_borderBox-style-solid-kado-iconFeature {
+		.vk_borderBox_title_container {
+			position: relative;
+			padding-top: 2.2em;
+			&::after {
+				content: "";
+				position: absolute;
+				top: -32%;
+				left: 1.5em;
+				padding: 1.4em;
+				border-radius: 50%;
+				border: solid 2px #fff;
+			}
+		}
+		.svg-inline--fa,
+		.fa,
+		.fab,
+		.fas,
+		.far,
+		.fal,
+		.fad {
+			position: absolute;
+			font-size: 1.3em;
+			margin-right: 0;
+			z-index: 100;
+			top: 0%;
+			left: 2.3em;
+			transform: translate(-50%, -50%);
+			-webkit-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+		}
+	}
+	&.is-style-vk_borderBox-style-solid-kado-tit-onborder {
+		.vk_borderBox_title_container {
+			position: relative;
+			top: -1.2em;
+			left: 1em;
+			z-index: 1;
+			display: inline-block;
+			padding: 0.5em 0.5em;
+			background: #fff;
+		}
+	}
+}
+
+/*
+タイトル部分色指定
+--------------------------------------------*/
+/* タブ風タイトル　背景色がないパターン */
+.vk_borderBox {
+	&.is-style-vk_borderBox-style-solid-kado-tit-tab,
+	&.is-style-vk_borderBox-style-solid-round-tit-tab {
+		border: none;
+		background-color: transparent;
+	}
+}
+
+/* タイトル背景塗り 白文字パターン */
+.is-style-vk_borderBox-style-solid-kado-tit-tab,
+.is-style-vk_borderBox-style-solid-kado-tit-banner,
+.is-style-vk_borderBox-style-solid-round-tit-tab {
+	.vk_borderBox_title_container {
+		color: #fff;
+	}
+	&.vk_borderBox-color-red {
+		.vk_borderBox_title_container {
+			background-color: var(--vk-color-background-red);
+		}
+		.vk_borderBox_body {
+			border-color: var(--vk-color-border-red);
+		}
+	}
+
+	&.vk_borderBox-color-orange {
+		.vk_borderBox_title_container {
+			background-color: var(--vk-color-background-orange);
+		}
+		.vk_borderBox_body {
+			border-color: var(--vk-color-border-orange);
+		}
+	}
+	&.vk_borderBox-color-blue {
+		.vk_borderBox_title_container {
+			background-color: var(--vk-color-background-blue);
+		}
+		.vk_borderBox_body {
+			border-color: var(--vk-color-border-blue);
+		}
+	}
+	&.vk_borderBox-color-green {
+		.vk_borderBox_title_container {
+			background-color: var(--vk-color-background-green);
+		}
+		.vk_borderBox_body {
+			border-color: var(--vk-color-border-green);
+		}
+	}
+	&.vk_borderBox-color-black {
+		.vk_borderBox_title_container {
+			background-color: var(--vk-color-background-black);
+		}
+		.vk_borderBox_body {
+			border-color: var(--vk-color-border-black);
+		}
+	}
+}
+
+/* タイトル文字色のみパターン */
+.is-style-vk_borderBox-style-solid-kado-tit-inner,
+.is-style-vk_borderBox-style-solid-kado-tit-onborder,
+.is-style-vk_borderBox-style-solid-kado-iconFeature {
+	&.vk_borderBox-color-red .vk_borderBox_title_container {
+		color: var(--vk-color-background-red);
+	}
+	&.vk_borderBox-color-orange .vk_borderBox_title_container {
+		color: var(--vk-color-background-orange);
+	}
+	&.vk_borderBox-color-blue .vk_borderBox_title_container {
+		color: var(--vk-color-background-blue);
+	}
+	&.vk_borderBox-color-green .vk_borderBox_title_container {
+		color: var(--vk-color-background-green);
+	}
+	&.vk_borderBox-color-black .vk_borderBox_title_container {
+		color: var(--vk-color-background-black);
+	}
+}
+/* iconFeatureパターン */
+.is-style-vk_borderBox-style-solid-kado-iconFeature {
+	&.vk_borderBox-color-red {
+		.vk_borderBox_title_container {
+			.svg-inline--fa,
+			.fas {
+				//iconfont
+				color: #fff;
+			}
+			&::after {
+				background-color: var(--vk-color-background-red);
+			}
+		}
+	}
+	&.vk_borderBox-color-orange {
+		.vk_borderBox_title_container {
+			.svg-inline--fa,
+			.fas {
+				//iconfont
+				background-color: var(--vk-color-background-orange);
+				color: #fff;
+			}
+			&::after {
+				background-color: var(--vk-color-background-orange);
+			}
+		}
+	}
+	&.vk_borderBox-color-blue {
+		.vk_borderBox_title_container {
+			.svg-inline--fa,
+			.fas {
+				//iconfont
+				background-color: var(--vk-color-background-blue);
+				color: #fff;
+			}
+			&::after {
+				background-color: var(--vk-color-background-blue);
+			}
+		}
+	}
+	&.vk_borderBox-color-green {
+		.vk_borderBox_title_container {
+			.svg-inline--fa,
+			.fas {
+				//iconfont
+				background-color: var(--vk-color-background-green);
+				color: #fff;
+			}
+			&::after {
+				background-color: var(--vk-color-background-green);
+			}
+		}
+	}
+	&.vk_borderBox-color-black {
+		.vk_borderBox_title_container {
+			.svg-inline--fa,
+			.fas {
+				//iconfont
+				background-color: var(--vk-color-background-black);
+				color: #fff;
+			}
+			&::after {
+				background-color: var(--vk-color-background-black);
+			}
+		}
+	}
+}
+
 .vk_button {
 	margin: 5px 0;
 	text-align: center; /* テキストのみの時のセンター揃え */
@@ -2640,12 +2940,17 @@ $padding-xl: 3.5em;
 }
 
 .vk_outer-bgPosition-fixed {
-	background-attachment: fixed !important;
-	background-size: cover !important;
+	background-attachment: fixed;
+	background-size: cover;
+	// iPhone の時に fixed のままだとバグで反応せずに画像のcoverまで効かなくなって巨大な画像が表示されるので
+	// scroll で上書きする
+	@supports (-webkit-overflow-scrolling: touch) {
+		background-attachment: scroll;
+	}
 }
 .vk_outer-bgPosition-normal {
-	background-attachment: unset !important;
-	background-size: cover !important;
+	background-attachment: unset;
+	background-size: cover;
 }
 
 .vk_outer_separator {

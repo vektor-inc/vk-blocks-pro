@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.4.1
-Stable tag: 0.30.0
+Stable tag: 0.31.0
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -59,11 +59,15 @@ e.g.
 
 == Changelog ==
 
+= 0.31.0 =
+[ Add new block ][ Border Box ]
+[ bug fix ][ Outer (pro) ] BG fix error on iPhone
+
 = 0.30.0 =
 [ Add Function ][ Post list (pro) / Card (pro) / Grid Column (pro) ] Cope with 6 column
 
 = 0.29.7 =
-[ bug fix ][ outer (pro) ] fix outer block error
+[ bug fix ][ Outer (pro) ] fix outer block error
 
 = 0.29.6 =
 [ Delete function ][ Group block ] Delete border custom color

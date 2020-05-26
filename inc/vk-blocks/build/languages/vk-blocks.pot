@@ -3,15 +3,19 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/_helper/font-awesome.js:21
-msgid "FontAwesome"
+#: src/blocks/_helper/font-awesome.js:22
+msgid "Font Awesome"
 msgstr ""
 
-#: src/blocks/_helper/font-awesome.js:23
-msgid "Enter Font Awesome Class. Ex) fas fa-arrow-circle-right "
+#: src/blocks/_helper/font-awesome.js:28
+msgid "Enter Font Awesome Class."
 msgstr ""
 
-#: src/blocks/_helper/font-awesome.js:25
+#: src/blocks/_helper/font-awesome.js:29
+msgid "Ex) fas fa-arrow-circle-right"
+msgstr ""
+
+#: src/blocks/_helper/font-awesome.js:31
 #: src/blocks/button/block.js:267
 #: src/blocks/pr-blocks/block.js:325
 #: src/blocks/pr-content/block.js:202
@@ -50,8 +54,6 @@ msgstr ""
 #: src/blocks/flow/block.js:96
 #: src/blocks/pr-blocks/block.js:158
 #: src/blocks/pr-content/component.js:157
-#: src/blocks/pr-content/deprecated/component-deprecated.js:102
-#: src/blocks/pr-content/deprecated/component-no-boder-color.js:116
 #: src/blocks/staff/component.js:88
 #: src/components/advanced-media-upload/index.js:42
 msgid "Select image"
@@ -173,11 +175,11 @@ msgid "normal"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:155
-msgid "Fixed"
+msgid "Fixed (Not fixed on iPhone)"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:157
-msgid "Parallax (It will not work in preview)"
+msgid "Parallax (Non-guaranteed)"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:170
@@ -214,74 +216,74 @@ msgstr ""
 msgid "Padding (Top and Bottom)"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:218
+#: src/blocks/_pro/outer/block.js:219
 msgid "Use default padding"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:220
+#: src/blocks/_pro/outer/block.js:221
 msgid "Do not use default padding"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:231
+#: src/blocks/_pro/outer/block.js:232
 msgid ""
 "* If you select \"Do not use\" that, please set yourself it such as a "
 "spacer block."
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:235
+#: src/blocks/_pro/outer/block.js:236
 msgid "Divider Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:240
+#: src/blocks/_pro/outer/block.js:241
 #: src/blocks/balloon/block.js:81
 msgid "Type"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:246
+#: src/blocks/_pro/outer/block.js:247
 msgid "Tilt"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:250
+#: src/blocks/_pro/outer/block.js:251
 msgid "Curve"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:254
+#: src/blocks/_pro/outer/block.js:255
 msgid "Wave"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:258
+#: src/blocks/_pro/outer/block.js:259
 #: src/blocks/list-style/block.js:113
 msgid "Triangle"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:263
+#: src/blocks/_pro/outer/block.js:264
 msgid "Upper Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:281
+#: src/blocks/_pro/outer/block.js:282
 msgid "Lower Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:301
+#: src/blocks/_pro/outer/block.js:302
 msgid "Border Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:306
+#: src/blocks/_pro/outer/block.js:307
 msgid "Border will disappear when divider effect is applied."
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:312
+#: src/blocks/_pro/outer/block.js:313
 msgid "Border type"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:318
+#: src/blocks/_pro/outer/block.js:319
 #: src/blocks/_pro/step-item/block.js:98
 #: src/blocks/_pro/timeline-item/block.js:103
 #: src/blocks/staff/block.js:88
 msgid "None"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:322
+#: src/blocks/_pro/outer/block.js:323
 #: src/blocks/_pro/step-item/block.js:75
 #: src/blocks/_pro/timeline-item/block.js:84
 #: src/blocks/group-style/block.js:95
@@ -289,42 +291,42 @@ msgstr ""
 msgid "Solid"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:326
+#: src/blocks/_pro/outer/block.js:327
 #: src/blocks/group-style/block.js:103
 msgid "Dotted"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:330
+#: src/blocks/_pro/outer/block.js:331
 #: src/blocks/group-style/block.js:107
 msgid "Dashed"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:334
+#: src/blocks/_pro/outer/block.js:335
 #: src/blocks/group-style/block.js:111
 msgid "Double"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:338
+#: src/blocks/_pro/outer/block.js:339
 msgid "Groove"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:342
+#: src/blocks/_pro/outer/block.js:343
 msgid "Ridge"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:346
+#: src/blocks/_pro/outer/block.js:347
 msgid "Inset"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:350
+#: src/blocks/_pro/outer/block.js:351
 msgid "Outset"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:361
+#: src/blocks/_pro/outer/block.js:362
 msgid "Border width"
 msgstr ""
 
-#: src/blocks/_pro/outer/block.js:368
+#: src/blocks/_pro/outer/block.js:369
 msgid "Border radius"
 msgstr ""
 
@@ -387,6 +389,7 @@ msgstr ""
 
 #: src/blocks/_pro/step-item/block.js:58
 #: src/blocks/_pro/timeline-item/block.js:63
+#: src/blocks/border-box/block.js:85
 #: src/blocks/staff/block.js:103
 msgid "Color"
 msgstr ""
@@ -498,8 +501,6 @@ msgstr ""
 #: src/blocks/flow/block.js:97
 #: src/blocks/pr-blocks/block.js:154
 #: src/blocks/pr-content/component.js:164
-#: src/blocks/pr-content/deprecated/component-deprecated.js:106
-#: src/blocks/pr-content/deprecated/component-no-boder-color.js:120
 msgid "Upload image"
 msgstr ""
 
@@ -553,6 +554,62 @@ msgstr ""
 
 #: src/blocks/balloon/block.js:86
 msgid "Thinking"
+msgstr ""
+
+#: src/blocks/border-box/Body.js:20
+msgid "Please enter a title."
+msgstr ""
+
+#: src/blocks/border-box/block.js:100
+msgid "Blue"
+msgstr ""
+
+#: src/blocks/border-box/block.js:104
+msgid "Green"
+msgstr ""
+
+#: src/blocks/border-box/block.js:108
+msgid "Black"
+msgstr ""
+
+#: src/blocks/border-box/block.js:113
+msgid "Icon"
+msgstr ""
+
+#: src/blocks/border-box/block.js:44
+msgid "Border Box"
+msgstr ""
+
+#: src/blocks/border-box/block.js:54
+msgid "Solid Angle Tab"
+msgstr ""
+
+#: src/blocks/border-box/block.js:59
+msgid "Solid Round Tab"
+msgstr ""
+
+#: src/blocks/border-box/block.js:63
+msgid "Solid Angle Banner"
+msgstr ""
+
+#: src/blocks/border-box/block.js:67
+msgid "Solid Angle Onborder"
+msgstr ""
+
+#: src/blocks/border-box/block.js:71
+msgid "Solid Angle Inner"
+msgstr ""
+
+#: src/blocks/border-box/block.js:75
+msgid "Solid Angle iconFeature"
+msgstr ""
+
+#: src/blocks/border-box/block.js:92
+msgid "Red"
+msgstr ""
+
+#: src/blocks/border-box/block.js:96
+msgid "Orange"
 msgstr ""
 
 #: src/blocks/button/block.js:127
@@ -827,13 +884,11 @@ msgstr ""
 
 #: src/blocks/heading/component.js:108
 #: src/blocks/heading/deprecated/block.js:663
-#: src/blocks/heading/deprecated/component.js:108
 msgid "Input sub text…"
 msgstr ""
 
 #: src/blocks/heading/component.js:92
 #: src/blocks/heading/deprecated/block.js:647
-#: src/blocks/heading/deprecated/component.js:92
 msgid "Input title…"
 msgstr ""
 
@@ -1008,12 +1063,10 @@ msgid "PR Blocks"
 msgstr ""
 
 #: src/blocks/pr-blocks/component-block.js:164
-#: src/blocks/pr-blocks/deprecated/component-block.js:144
 msgid "Input Title"
 msgstr ""
 
 #: src/blocks/pr-blocks/component-block.js:171
-#: src/blocks/pr-blocks/deprecated/component-block.js:151
 msgid "Input Content"
 msgstr ""
 
@@ -1062,14 +1115,10 @@ msgid "PR Content"
 msgstr ""
 
 #: src/blocks/pr-content/component.js:200
-#: src/blocks/pr-content/deprecated/component-deprecated.js:122
-#: src/blocks/pr-content/deprecated/component-no-boder-color.js:136
 msgid "Input title."
 msgstr ""
 
 #: src/blocks/pr-content/component.js:208
-#: src/blocks/pr-content/deprecated/component-deprecated.js:130
-#: src/blocks/pr-content/deprecated/component-no-boder-color.js:144
 msgid "Input content."
 msgstr ""
 
@@ -1196,26 +1245,6 @@ msgstr ""
 msgid "Display type"
 msgstr ""
 
-#: src/components/column-layout/index.js:19
-msgid "Column ( Screen size : Extra small )"
-msgstr ""
-
-#: src/components/column-layout/index.js:28
-msgid "Column ( Screen size : Small )"
-msgstr ""
-
-#: src/components/column-layout/index.js:36
-msgid "Column ( Screen size : Medium )"
-msgstr ""
-
-#: src/components/column-layout/index.js:44
-msgid "Column ( Screen size : Large )"
-msgstr ""
-
-#: src/components/column-layout/index.js:53
-msgid "Column ( Screen size : Extra large )"
-msgstr ""
-
 #: src/components/display-items-control/index.js:34
 msgid "Term name"
 msgstr ""
@@ -1258,10 +1287,6 @@ msgstr ""
 
 #: src/components/link-control/index.js:46
 msgid "Link rel"
-msgstr ""
-
-#: src/plugin/menu/sidebar.js:17
-msgid "VK Blocks Templates"
 msgstr ""
 
 #: src/translation_dummy.js:2

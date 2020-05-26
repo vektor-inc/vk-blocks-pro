@@ -1,5 +1,5 @@
 /**
- * card block type
+ * Pr Card block type
  *
  */
 import { Component } from "./component";
@@ -46,8 +46,8 @@ const BlockIcon = (
 );
 const inserterVisible = hiddenNewBlock(5.3);
 
-registerBlockType("vk-blocks/card", {
-  title: __("Card", "vk-blocks"),
+registerBlockType("vk-blocks/pr-card", {
+  title: __("PR Card", "vk-blocks"),
   icon: BlockIcon,
   category: "vk-blocks-cat",
   attributes: schema,

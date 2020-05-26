@@ -187,12 +187,12 @@ msgid "normal"
 msgstr "標準"
 
 #: src/blocks/_pro/outer/block.js:155
-msgid "Fixed"
-msgstr "固定"
+msgid "Fixed (Not fixed on iPhone)"
+msgstr "固定（iPhoneでは固定されません）"
 
 #: src/blocks/_pro/outer/block.js:157
-msgid "Parallax (It will not work in preview)"
-msgstr "パララックス（編集画面では反映されません）"
+msgid "Parallax (Non-guaranteed)"
+msgstr "パララックス（非保証）"
 
 #: src/blocks/_pro/outer/block.js:170 src/blocks/pr-content/block.js:233
 msgid "Layout Setting"
@@ -226,15 +226,15 @@ msgstr "アウターエリア内に余白を追加する"
 msgid "Padding (Top and Bottom)"
 msgstr "余白 (上下)"
 
-#: src/blocks/_pro/outer/block.js:218
+#: src/blocks/_pro/outer/block.js:219
 msgid "Use default padding"
 msgstr "標準の余白を使用"
 
-#: src/blocks/_pro/outer/block.js:220
+#: src/blocks/_pro/outer/block.js:221
 msgid "Do not use default padding"
 msgstr "標準の余白を使用しない"
 
-#: src/blocks/_pro/outer/block.js:231
+#: src/blocks/_pro/outer/block.js:232
 msgid ""
 "* If you select \"Do not use\" that, please set yourself it such as a spacer "
 "block."
@@ -242,94 +242,94 @@ msgstr ""
 "*「使用しない」を選択した場合はスペーサーブロックなどで任意に設定してくださ"
 "い。"
 
-#: src/blocks/_pro/outer/block.js:235
+#: src/blocks/_pro/outer/block.js:236
 msgid "Divider Setting"
 msgstr "区切りの設定"
 
-#: src/blocks/_pro/outer/block.js:240 src/blocks/balloon/block.js:81
+#: src/blocks/_pro/outer/block.js:241 src/blocks/balloon/block.js:81
 msgid "Type"
 msgstr "タイプ"
 
-#: src/blocks/_pro/outer/block.js:246
+#: src/blocks/_pro/outer/block.js:247
 msgid "Tilt"
 msgstr "傾斜"
 
-#: src/blocks/_pro/outer/block.js:250
+#: src/blocks/_pro/outer/block.js:251
 msgid "Curve"
 msgstr "カーブ"
 
-#: src/blocks/_pro/outer/block.js:254
+#: src/blocks/_pro/outer/block.js:255
 msgid "Wave"
 msgstr "波状"
 
-#: src/blocks/_pro/outer/block.js:258 src/blocks/list-style/block.js:113
+#: src/blocks/_pro/outer/block.js:259 src/blocks/list-style/block.js:113
 msgid "Triangle"
 msgstr "三角"
 
-#: src/blocks/_pro/outer/block.js:263
+#: src/blocks/_pro/outer/block.js:264
 msgid "Upper Divider Level"
 msgstr "上部区切りレベル"
 
-#: src/blocks/_pro/outer/block.js:281
+#: src/blocks/_pro/outer/block.js:282
 msgid "Lower Divider Level"
 msgstr "下部区切りレベル"
 
-#: src/blocks/_pro/outer/block.js:301
+#: src/blocks/_pro/outer/block.js:302
 msgid "Border Setting"
 msgstr "枠線の設定"
 
-#: src/blocks/_pro/outer/block.js:306
+#: src/blocks/_pro/outer/block.js:307
 msgid "Border will disappear when divider effect is applied."
 msgstr "枠線は区切りレベルを適用すると表示されなくなります。"
 
-#: src/blocks/_pro/outer/block.js:312
+#: src/blocks/_pro/outer/block.js:313
 msgid "Border type"
 msgstr "枠線の種類"
 
-#: src/blocks/_pro/outer/block.js:318 src/blocks/_pro/step-item/block.js:98
+#: src/blocks/_pro/outer/block.js:319 src/blocks/_pro/step-item/block.js:98
 #: src/blocks/_pro/timeline-item/block.js:103 src/blocks/staff/block.js:88
 msgid "None"
 msgstr "なし"
 
-#: src/blocks/_pro/outer/block.js:322 src/blocks/_pro/step-item/block.js:75
+#: src/blocks/_pro/outer/block.js:323 src/blocks/_pro/step-item/block.js:75
 #: src/blocks/_pro/timeline-item/block.js:84 src/blocks/group-style/block.js:95
 #: src/blocks/pr-content/block.js:168
 msgid "Solid"
 msgstr "直線"
 
-#: src/blocks/_pro/outer/block.js:326 src/blocks/group-style/block.js:103
+#: src/blocks/_pro/outer/block.js:327 src/blocks/group-style/block.js:103
 msgid "Dotted"
 msgstr "点線"
 
-#: src/blocks/_pro/outer/block.js:330 src/blocks/group-style/block.js:107
+#: src/blocks/_pro/outer/block.js:331 src/blocks/group-style/block.js:107
 msgid "Dashed"
 msgstr "Dashed"
 
-#: src/blocks/_pro/outer/block.js:334 src/blocks/group-style/block.js:111
+#: src/blocks/_pro/outer/block.js:335 src/blocks/group-style/block.js:111
 msgid "Double"
 msgstr "二重線"
 
-#: src/blocks/_pro/outer/block.js:338
+#: src/blocks/_pro/outer/block.js:339
 msgid "Groove"
 msgstr "Groove"
 
-#: src/blocks/_pro/outer/block.js:342
+#: src/blocks/_pro/outer/block.js:343
 msgid "Ridge"
 msgstr "Ridge"
 
-#: src/blocks/_pro/outer/block.js:346
+#: src/blocks/_pro/outer/block.js:347
 msgid "Inset"
 msgstr "Inset"
 
-#: src/blocks/_pro/outer/block.js:350
+#: src/blocks/_pro/outer/block.js:351
 msgid "Outset"
 msgstr "Outset"
 
-#: src/blocks/_pro/outer/block.js:361
+#: src/blocks/_pro/outer/block.js:362
 msgid "Border width"
 msgstr "枠線の幅"
 
-#: src/blocks/_pro/outer/block.js:368
+#: src/blocks/_pro/outer/block.js:369
 msgid "Border radius"
 msgstr "枠線のRの大きさ"
 
@@ -1317,6 +1317,12 @@ msgstr ""
 msgid "Deactivated VK-Blocks Plugin. Because VK-Blocks Pro running."
 msgstr "Pro版VK-Blocksが起動しているため、VK-Blocksを停止しました。"
 
+#~ msgid "Fixed"
+#~ msgstr "固定"
+
+#~ msgid "Parallax (It will not work in preview)"
+#~ msgstr "パララックス（編集画面では反映されません）"
+
 #~ msgid "FontAwesome"
 #~ msgstr "Font Awesome"
 
@@ -1324,9 +1330,6 @@ msgstr "Pro版VK-Blocksが起動しているため、VK-Blocksを停止しまし
 #~| msgid "top-bottom-border"
 #~ msgid "solid-kado-tit-onborder"
 #~ msgstr "上下線"
-
-#~ msgid "Parallax(Non-guaranteed)"
-#~ msgstr "パララックス（非保証/近日廃止）"
 
 #~ msgid "Padding (Horizontal)"
 #~ msgstr "余白（水平）"

@@ -51,28 +51,28 @@ registerBlockType('vk-blocks/border-box', {
 	styles: [
 		{
 			name: 'vk_borderBox-style-solid-kado-tit-tab',
-			label: __( 'solid-kado-tit-tab' ),
+			label: __( 'Solid Angle Tab', 'vk-blocks' ),
 			isDefault:true
 		},
 		{
 			name: 'vk_borderBox-style-solid-round-tit-tab',
-			label: __( 'solid-round-tit-tab' )
+			label: __( 'Solid Round Tab', 'vk-blocks' )
 		},
 		{
 			name: 'vk_borderBox-style-solid-kado-tit-banner',
-			label: __( 'solid-kado-tit-banner' ),
+			label: __( 'Solid Angle Banner', 'vk-blocks' ),
 		},
 		{
 			name: 'vk_borderBox-style-solid-kado-tit-onborder',
-			label: __( 'solid-kado-tit-onborder' )
+			label: __( 'Solid Angle Onborder', 'vk-blocks' ),
 		},
 		{
 			name: 'vk_borderBox-style-solid-kado-tit-inner',
-			label: __( 'solid-kado-tit-inner' )
+			label: __( 'Solid Angle Inner', 'vk-blocks' ),
 		},
 		{
 			name: 'vk_borderBox-style-solid-kado-iconFeature',
-			label: __( 'solid-kado-iconFeature' )
+			label: __( 'Solid Angle iconFeature', 'vk-blocks' ),
 		},
 	],
 
@@ -82,16 +82,6 @@ registerBlockType('vk-blocks/border-box', {
 		return (
 			<Fragment>
 				<InspectorControls>
-					<PanelBody title={ __('Icon', 'vk-blocks') }>
-						<BaseControl
-							id="dot-fa"
-						>
-							<FontAwesome
-								attributes={ attributes }
-								setAttributes={ setAttributes }
-							/>
-						</BaseControl>
-					</PanelBody>
 					<PanelBody title={ __('Color', 'vk-blocks') }>
 						<SelectControl
 							value={ color }
@@ -119,6 +109,16 @@ registerBlockType('vk-blocks/border-box', {
 								}
 							] }
 						/>
+					</PanelBody>
+					<PanelBody title={ __('Icon', 'vk-blocks') }>
+						<BaseControl
+							id="dot-fa"
+						>
+							<FontAwesome
+								attributes={ attributes }
+								setAttributes={ setAttributes }
+							/>
+						</BaseControl>
 					</PanelBody>
 				</InspectorControls>
 				<Body for_={ 'edit' } { ...props } />

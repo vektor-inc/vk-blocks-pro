@@ -388,7 +388,8 @@ msgid "Ex,6:00AM"
 msgstr "例) 午前 6:00"
 
 #: src/blocks/_pro/step-item/block.js:58
-#: src/blocks/_pro/timeline-item/block.js:63 src/blocks/staff/block.js:103
+#: src/blocks/_pro/timeline-item/block.js:63 src/blocks/border-box/block.js:95
+#: src/blocks/staff/block.js:103
 msgid "Color"
 msgstr "色"
 
@@ -542,6 +543,62 @@ msgstr "セリフ"
 #: src/blocks/balloon/block.js:86
 msgid "Thinking"
 msgstr "吹き出し"
+
+#: src/blocks/border-box/Body.js:20
+msgid "Please enter a title."
+msgstr "見出しを入力してください。"
+
+#: src/blocks/border-box/block.js:102
+msgid "Red"
+msgstr "赤"
+
+#: src/blocks/border-box/block.js:106
+msgid "Orange"
+msgstr "オレンジ"
+
+#: src/blocks/border-box/block.js:110
+msgid "Blue"
+msgstr "青"
+
+#: src/blocks/border-box/block.js:114
+msgid "Green"
+msgstr "緑"
+
+#: src/blocks/border-box/block.js:118
+msgid "Black"
+msgstr "黒"
+
+#: src/blocks/border-box/block.js:44
+msgid "Border Box"
+msgstr "枠線ボックス"
+
+#: src/blocks/border-box/block.js:54
+msgid "Solid Angle Tab"
+msgstr "直線 ピン角 タブ"
+
+#: src/blocks/border-box/block.js:59
+msgid "Solid Round Tab"
+msgstr "直線 角丸 タブ"
+
+#: src/blocks/border-box/block.js:63
+msgid "Solid Angle Banner"
+msgstr "直線 ピン角 バナー"
+
+#: src/blocks/border-box/block.js:67
+msgid "Solid Angle Onborder"
+msgstr "直線 ピンカド 線上"
+
+#: src/blocks/border-box/block.js:71
+msgid "Solid Angle Inner"
+msgstr "直線 ピン角 内側"
+
+#: src/blocks/border-box/block.js:75
+msgid "Solid Angle iconFeature"
+msgstr "直線 ピン角 アイコン"
+
+#: src/blocks/border-box/block.js:85
+msgid "Icon"
+msgstr "アイコン"
 
 #: src/blocks/button/block.js:127
 msgid "Button setting"
@@ -1257,6 +1314,14 @@ msgstr ""
 msgid "Deactivated VK-Blocks Plugin. Because VK-Blocks Pro running."
 msgstr "Pro版VK-Blocksが起動しているため、VK-Blocksを停止しました。"
 
+#, fuzzy
+#~| msgid "top-bottom-border"
+#~ msgid "solid-kado-tit-onborder"
+#~ msgstr "上下線"
+
+#~ msgid "Parallax(Non-guaranteed)"
+#~ msgstr "パララックス（非保証/近日廃止）"
+
 #~ msgid "Padding (Horizontal)"
 #~ msgstr "余白（水平）"
 
@@ -1278,9 +1343,6 @@ msgstr "Pro版VK-Blocksが起動しているため、VK-Blocksを停止しまし
 #~ msgid "Full wide width and padding"
 #~ msgstr "全幅に余白を使用"
 
-#~ msgid "Parallax (Non-guaranteed / Abolished)"
-#~ msgstr "パララックス（非保証/近日廃止）"
-
 #~ msgid "Outer width"
 #~ msgstr "アウターの幅"
 
@@ -1297,17 +1359,8 @@ msgstr "Pro版VK-Blocksが起動しているため、VK-Blocksを停止しまし
 #~ msgid "This block is only for users who bought Lightning Pro."
 #~ msgstr "このブロックは Lightning Pro 専用です。"
 
-#~ msgid "top-bottom-border"
-#~ msgstr "上下線"
-
-#~ msgid "Solid black"
-#~ msgstr "直線 黒"
-
 #~ msgid "Double black"
 #~ msgstr "二重線 黒"
-
-#~ msgid "Solid border-bottom"
-#~ msgstr "直線 下線"
 
 #, fuzzy
 #~| msgid "top-bottom-border"

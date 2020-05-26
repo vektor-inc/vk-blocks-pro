@@ -377,7 +377,6 @@ msgid "Step Mark"
 msgstr ""
 
 #: src/blocks/_pro/step-item/block.js:39
-#: src/blocks/border-box/block.js:88
 msgid "If FontAwesome class entered, it will overrides the number."
 msgstr ""
 
@@ -388,7 +387,7 @@ msgstr ""
 
 #: src/blocks/_pro/step-item/block.js:58
 #: src/blocks/_pro/timeline-item/block.js:63
-#: src/blocks/border-box/block.js:96
+#: src/blocks/border-box/block.js:85
 #: src/blocks/staff/block.js:103
 msgid "Color"
 msgstr ""
@@ -561,24 +560,20 @@ msgstr ""
 msgid "Please enter a title."
 msgstr ""
 
-#: src/blocks/border-box/block.js:103
-msgid "Red"
-msgstr ""
-
-#: src/blocks/border-box/block.js:107
-msgid "Orange"
-msgstr ""
-
-#: src/blocks/border-box/block.js:111
+#: src/blocks/border-box/block.js:100
 msgid "Blue"
 msgstr ""
 
-#: src/blocks/border-box/block.js:115
+#: src/blocks/border-box/block.js:104
 msgid "Green"
 msgstr ""
 
-#: src/blocks/border-box/block.js:119
+#: src/blocks/border-box/block.js:108
 msgid "Black"
+msgstr ""
+
+#: src/blocks/border-box/block.js:113
+msgid "Icon"
 msgstr ""
 
 #: src/blocks/border-box/block.js:44
@@ -586,31 +581,35 @@ msgid "Border Box"
 msgstr ""
 
 #: src/blocks/border-box/block.js:54
-msgid "solid-kado-tit-tab"
+msgid "Solid Angle Tab"
 msgstr ""
 
 #: src/blocks/border-box/block.js:59
-msgid "solid-round-tit-tab"
+msgid "Solid Round Tab"
 msgstr ""
 
 #: src/blocks/border-box/block.js:63
-msgid "solid-kado-tit-banner"
+msgid "Solid Angle Banner"
 msgstr ""
 
 #: src/blocks/border-box/block.js:67
-msgid "solid-kado-tit-onborder"
+msgid "Solid Angle Onborder"
 msgstr ""
 
 #: src/blocks/border-box/block.js:71
-msgid "solid-kado-tit-inner"
+msgid "Solid Angle Inner"
 msgstr ""
 
 #: src/blocks/border-box/block.js:75
-msgid "solid-kado-iconFeature"
+msgid "Solid Angle iconFeature"
 msgstr ""
 
-#: src/blocks/border-box/block.js:85
-msgid "Icon"
+#: src/blocks/border-box/block.js:92
+msgid "Red"
+msgstr ""
+
+#: src/blocks/border-box/block.js:96
+msgid "Orange"
 msgstr ""
 
 #: src/blocks/button/block.js:127

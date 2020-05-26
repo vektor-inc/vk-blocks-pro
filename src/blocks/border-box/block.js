@@ -85,7 +85,6 @@ registerBlockType('vk-blocks/border-box', {
 					<PanelBody title={ __('Icon', 'vk-blocks') }>
 						<BaseControl
 							id="dot-fa"
-							help={ __('If FontAwesome class entered, it will overrides the number.', 'vk-blocks') }
 						>
 							<FontAwesome
 								attributes={ attributes }

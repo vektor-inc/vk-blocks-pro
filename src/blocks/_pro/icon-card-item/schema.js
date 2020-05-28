@@ -25,7 +25,7 @@ export const schema = {
   },
   activeControl: {
     type: "string",
-    default: '{"text""center"}',
+    default: '{"text":"center"}',
   },
 	urlOpenType:{
 		type: 'Boolean',

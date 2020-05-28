@@ -46,11 +46,11 @@ export const schema = {
 	heading:{
 		type: 'string',
 		source: 'html',
-		selector: '.vk_prBlocks_item_title',
+		selector: '.vk_icon-card_item_title',
 	},
 	content:{
 		type: 'string',
 		source: 'html',
-		selector: '.vk_prBlocks_item_summary',
+		selector: '.vk_icon_card_item_summary',
 	}
 };

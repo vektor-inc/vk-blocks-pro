@@ -1,4 +1,4 @@
-import { vkbBlockEditor } from "./../../_helper/depModules";
+import { vkbBlockEditor } from "../../_helper/depModules";
 const { InnerBlocks } = vkbBlockEditor;
 const { __ } = wp.i18n;
 const {Component} = wp.element
@@ -12,7 +12,7 @@ export class PRCard extends Component {
     let innerClass = "";
     let className = this.props.className;
     let elm;
-    const ALLOWED_BLOCKS = ["vk-blocks/pr-card-item"];
+    const ALLOWED_BLOCKS = ["vk-blocks/icon-card-item"];
 		const TEMPLATE = [ALLOWED_BLOCKS];
 
     //編集画面とサイト上の切り替え

@@ -38,12 +38,12 @@ const BlockIcon = (
   </svg>
 );
 
-registerBlockType("vk-blocks/pr-card-item", {
+registerBlockType("vk-blocks/icon-card-item", {
   title: __("Icon Card Item", "vk-blocks"),
   icon: BlockIcon,
   category: "vk-blocks-cat",
   attributes: schema,
-  parent: ["vk-blocks/pr-card"],
+  parent: ["vk-blocks/icon-card"],
   supports: {
     className: true,
   },

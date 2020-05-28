@@ -19,8 +19,8 @@ import "../translation_dummy.js";
 /*WP5.3 以下では読み込まれない*/
 import "./hidden-extension/";
 import "./border-box/block.js";
-import "./_pro/pr-card-item/block.js";
-import "./_pro/pr-card/block.js";
+import "./_pro/icon-card-item/block.js";
+import "./_pro/icon-card/block.js";
 import "./_pro/card-item/block.js";
 import "./_pro/card/block.js";
 import "./_pro/child-page/block.js";

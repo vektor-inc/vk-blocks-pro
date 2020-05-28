@@ -1,5 +1,5 @@
 const { __ } = wp.i18n; // Import __() from wp.i18n
-import { vkbBlockEditor } from "./../../_helper/depModules";
+import { vkbBlockEditor } from "../../_helper/depModules";
 const { RichText } = vkbBlockEditor;
 const { Fragment } = wp.element;
 
@@ -24,11 +24,11 @@ export const PRcarditem = (props)=>{
 	let contents;
 	if(for_ === "edit"){
 		contents = <Fragment>
-			<div className="vk_prBlocks_item_icon_outer" style={style}>
-				<i className={`${icon} vk_prBlocks_item_icon`} style={iconStyle}/>
+			<div className="vk_icon-card_item_icon_outer" style={style}>
+				<i className={`${icon} vk_icon-card_item_icon`} style={iconStyle}/>
 			</div>
 			<RichText
-				className="vk_prBlocks_item_title vk_prBlocks_item_title"
+				className="vk_icon-card_item_title vk_icon-card_item_title"
 				tagName={'h3'}
 				onChange={(value) => props.setAttributes({ heading: value })}
 				value={heading}
@@ -43,12 +43,12 @@ export const PRcarditem = (props)=>{
 			/>
 		</Fragment>
 	}else if(for_ === "save"){
-		contents = <a href={url} className="vk_prBlocks_item_link" target={urlOpenType ? "_blank" : "_self"} rel="noopener noreferrer">
-			<div className="vk_prBlocks_item_icon_outer" style={style}>
-				<i className={`${icon} vk_prBlocks_item_icon`} style={iconStyle}/>
+		contents = <a href={url} className="vk_icon-card_item_link" target={urlOpenType ? "_blank" : "_self"} rel="noopener noreferrer">
+			<div className="vk_icon-card_item_icon_outer" style={style}>
+				<i className={`${icon} vk_icon-card_item_icon`} style={iconStyle}/>
 			</div>
 			<RichText.Content
-				className={`vk_prBlocks_item_title vk_prBlocks_item_title`}
+				className={`vk_icon-card_item_title vk_icon-card_item_title`}
 				tagName={'h3'}
 				value={heading} />
 			<RichText.Content
@@ -60,7 +60,7 @@ export const PRcarditem = (props)=>{
 
 	return (
 		<div
-			className={`vk_post vk_pr-card_item vk_post-col-xs-${convertToGrid(
+			className={`vk_post vk_icon-card_item vk_post-col-xs-${convertToGrid(
 				col_xs
 			)} vk_post-col-sm-${convertToGrid(
 				col_sm

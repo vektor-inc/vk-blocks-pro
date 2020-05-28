@@ -45,7 +45,7 @@ const BlockIcon = (
 );
 const inserterVisible = hiddenNewBlock(5.3);
 
-registerBlockType("vk-blocks/pr-card", {
+registerBlockType("vk-blocks/icon-card", {
   title: __("Icon Card", "vk-blocks"),
   icon: BlockIcon,
   category: "vk-blocks-cat",

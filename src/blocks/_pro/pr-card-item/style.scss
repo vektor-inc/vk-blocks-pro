@@ -1,14 +1,12 @@
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-
-.vk_card {
-  &_item {
-    .vk_post_title.card-title {
-      font-size: 1rem;
-    }
-    .vk_post_excerpt.card-text {
-      font-size: 14px;
-    }
-  }
+.wp-block-vk-blocks-pr-card{
+	.vk_pr-card_item{
+		margin: auto;
+	}
+}
+.vk_icon_card_item_summary {
+    margin-bottom: 0.5em;
+    line-height: 1.8em;
 }

@@ -1,8 +1,4 @@
 export const schema = {
-  layout: {
-    type: "string",
-    default: "card",
-  },
   col_xs: {
     type: "number",
     default: 1,
@@ -23,70 +19,38 @@ export const schema = {
     type: "number",
     default: 3,
   },
-  display_image: {
-    type: "boolean",
-    default: true,
-  },
-  display_image_overlay_term: {
-    type: "boolean",
-    default: true,
-  },
-  display_date: {
-    type: "boolean",
-    default: false,
-  },
-  display_new: {
-    type: "boolean",
-    default: true,
-  },
-  display_btn: {
-    type: "boolean",
-    default: true,
-  },
-  new_date: {
-    type: "number",
-    default: 7,
-  },
-  new_text: {
-    type: "string",
-    default: "New!!",
-  },
-  btn_text: {
-    type: "string",
-    default: "Read more",
-  },
-  title: {
-    type: "string",
-    source: "html",
-    selector: "h5.vk_post_title.card-title",
-  },
-  excerpt_text: {
-    type: "string",
-    source: "html",
-    selector: "p.vk_post_excerpt.card-text",
-  },
-  image: {
-    type: "string",
-    default: null,
-  },
   url: {
     type: "string",
     default: "",
   },
   activeControl: {
     type: "string",
-    default: '{"title": "left", "text":"left" ,"button":"right"}',
+    default: '{"text""center"}',
   },
-  linkTarget: {
-    type: "string",
-    source: "attribute",
-    selector: "a",
-    attribute: "target",
-  },
-  rel: {
-    type: "string",
-    source: "attribute",
-    selector: "a",
-    attribute: "rel",
-  },
+	urlOpenType:{
+		type: 'Boolean',
+		default: false,
+	},
+	icon:{
+		type: 'string',
+		default: 'fas fa-file',
+	},
+	color:{
+		type: 'string',
+		default: '#0693e3',
+	},
+	bgType:{
+		type: 'string',
+		default: '0',
+	},
+	heading:{
+		type: 'string',
+		source: 'html',
+		selector: '.vk_prBlocks_item_title',
+	},
+	content:{
+		type: 'string',
+		source: 'html',
+		selector: '.vk_prBlocks_item_summary',
+	}
 };

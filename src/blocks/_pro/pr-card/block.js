@@ -2,17 +2,16 @@
  * Pr Card block type
  *
  */
-import { Component } from "./component";
+import { PRCard } from "./component";
 import { schema } from "./schema";
-import { ColumnLayoutControl } from "../../../components/column-layout-control";
-import { CardAlignControls } from "../../../components/card-align-control";
-import { deprecated } from "./deprecated";
+import { ColumnLayout } from "../../../components/column-layout";
+import { AlignControl } from "../../../components/align-control";
 import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
 
-const { __ } = wp.i18n; // Import __() from wp.i18n
-const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
+const { __ } = wp.i18n;
+const { registerBlockType } = wp.blocks;
 const { Fragment } = wp.element;
-const { PanelBody, CheckboxControl, TextControl } = wp.components;
+const { PanelBody,BaseControl} = wp.components;
 const { InspectorControls } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const { select, dispatch } = wp.data;
@@ -47,7 +46,7 @@ const BlockIcon = (
 const inserterVisible = hiddenNewBlock(5.3);
 
 registerBlockType("vk-blocks/pr-card", {
-  title: __("PR Card", "vk-blocks"),
+  title: __("Icon Card", "vk-blocks"),
   icon: BlockIcon,
   category: "vk-blocks-cat",
   attributes: schema,
@@ -92,16 +91,27 @@ registerBlockType("vk-blocks/pr-card", {
         }
         afterLength = beforeLength;
       }
-    }
+		}
+
+		const align = JSON.parse(attributes.activeControl)
+		const initial = "text"
+
     return (
       <Fragment>
         <InspectorControls>
-          <ColumnLayoutControl {...props} />
-          <DisplayItemsControlForCards {...props} />
-          <CardAlignControls {...props} />
+					<PanelBody
+						title={__("Columns", "vk-blocks")}
+						initialOpen={false}
+					>
+						<ColumnLayout {...props} />
+					</PanelBody>
+					<PanelBody title={ __("Align", "vk-blocks") } initialOpen={ false }>
+						<BaseControl help={ __("Align content text", "vk-blocks") }>
+							<AlignControl {...props} schema={align} component={initial} initial={align[initial]} />
+						</BaseControl>
+					</PanelBody>
         </InspectorControls>
-
-        <Component
+        <PRCard
           attributes={attributes}
           className={className}
           setAttributes={setAttributes}
@@ -112,41 +122,7 @@ registerBlockType("vk-blocks/pr-card", {
   },
   save({ attributes, className }) {
     return (
-      <Component attributes={attributes} className={className} for_={"save"} />
+      <PRCard attributes={attributes} className={className} for_={"save"} />
     );
   },
-  deprecated: deprecated,
 });
-
-export const DisplayItemsControlForCards = (props) => {
-  const { setAttributes, attributes } = props;
-  const { display_image, display_btn, btn_text } = attributes;
-  return (
-    <PanelBody title={__("Display item", "vk-blocks")} initialOpen={false}>
-      <CheckboxControl
-        label={__("Image", "vk-blocks")}
-        checked={display_image}
-        onChange={(checked) => setAttributes({ display_image: checked })}
-      />
-      <CheckboxControl
-        label={__("Button", "vk-blocks")}
-        checked={display_btn}
-        onChange={(checked) => setAttributes({ display_btn: checked })}
-      />
-      <h4 className={"postList_itemCard_button-option"}>
-        {__("Button option", "vk-blocks")}
-      </h4>
-      <p>
-        {__(
-          "Click each card block to set the target url. You can find the url form at it's sidebar.",
-          "vk-blocks"
-        )}
-      </p>
-      <TextControl
-        label={__("Button text", "vk-blocks")}
-        value={btn_text}
-        onChange={(value) => setAttributes({ btn_text: value })}
-      />
-    </PanelBody>
-  );
-};

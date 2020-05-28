@@ -1,19 +1,19 @@
 import { vkbBlockEditor } from "./../../_helper/depModules";
 const { InnerBlocks } = vkbBlockEditor;
-const { __ } = wp.i18n; // Import __() from wp.i18n
+const { __ } = wp.i18n;
+const {Component} = wp.element
 import { convertToGrid } from "../../_helper/convert-to-grid";
 import React from "react";
 
-export class Component extends React.Component {
+export class PRCard extends Component {
   render() {
     let for_ = this.props.for_;
     let attributes = this.props.attributes;
     let innerClass = "";
     let className = this.props.className;
-    let containerClass = " vk_card";
     let elm;
-    const ALLOWED_BLOCKS = ["vk-blocks/card-item"];
-    const TEMPLATE = [ALLOWED_BLOCKS];
+    const ALLOWED_BLOCKS = ["vk-blocks/pr-card-item"];
+		const TEMPLATE = [ALLOWED_BLOCKS];
 
     //編集画面とサイト上の切り替え
     if (for_ === "edit") {

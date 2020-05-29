@@ -94,7 +94,6 @@ registerBlockType("vk-blocks/icon-card", {
 		}
 
 		const align = JSON.parse(attributes.activeControl)
-		const initial = "text"
 
     return (
       <Fragment>
@@ -107,7 +106,8 @@ registerBlockType("vk-blocks/icon-card", {
 					</PanelBody>
 					<PanelBody title={ __("Align", "vk-blocks") } initialOpen={ false }>
 						<BaseControl help={ __("Align content text", "vk-blocks") }>
-							<AlignControl {...props} schema={align} component={initial} initial={align[initial]} />
+							<AlignControl {...props} schema={align} component={"title"} initial={align["title"]} />
+							<AlignControl {...props} schema={align} component={"text"} initial={align["text"]} />
 						</BaseControl>
 					</PanelBody>
         </InspectorControls>

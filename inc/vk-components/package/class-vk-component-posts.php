@@ -356,7 +356,6 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 		/*-------------------------------------------*/
 
 		public static function get_patterns() {
-			global 'vk-blocks';
 			$patterns = array(
 				'card'            => array(
 					'label'             => __( 'Card', 'vk-blocks' ),

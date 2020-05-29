@@ -7,6 +7,7 @@ import { schema } from "./schema";
 import { ColumnLayout } from "../../../components/column-layout";
 import { AlignControl } from "../../../components/align-control";
 import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
+import removeProperty from "../../_helper/removeProperty"
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -85,7 +86,11 @@ registerBlockType("vk-blocks/icon-card", {
         if (beforeLength !== afterLength) {
           for (let i = 0; i < innerBlocks.length; i++) {
             if (innerBlocks[i] !== undefined) {
-              updateBlockAttributes(innerBlocks[i].clientId, attributes);
+
+							//className以外の値で、子要素のattributesをアップデート
+							const updateAttributes = removeProperty(attributes,"className")
+							updateBlockAttributes(innerBlocks[i].clientId, updateAttributes);
+
             }
           }
         }

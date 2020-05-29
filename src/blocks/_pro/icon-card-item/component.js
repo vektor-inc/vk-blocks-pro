@@ -7,7 +7,7 @@ import { convertToGrid } from "../../_helper/convert-to-grid";
 
 export const PRcarditem = (props)=>{
 
-	const {attributes,setAttributes,for_}=props;
+	const {attributes,setAttributes,for_,className}=props;
 	const{color, heading, content, icon, url, urlOpenType, bgType,col_xs,col_sm,col_md,col_lg,col_xl,activeControl}=attributes
 	const align = JSON.parse(activeControl)
 
@@ -60,7 +60,7 @@ export const PRcarditem = (props)=>{
 
 	return (
 		<div
-			className={`vk_post vk_icon-card_item vk_post-col-xs-${convertToGrid(
+			className={`${className} vk_post vk_icon-card_item vk_post-col-xs-${convertToGrid(
 				col_xs
 			)} vk_post-col-sm-${convertToGrid(
 				col_sm

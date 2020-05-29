@@ -9,7 +9,7 @@ import { convertToGrid } from "../../_helper/convert-to-grid";
 
 export class Component extends React.Component {
   render() {
-    const { setAttributes, attributes, className, clientId } = this.props.value;
+    const { setAttributes, attributes, className, clientId } = this.props;
     let {
       layout,
       col_xs,
@@ -228,7 +228,7 @@ export class Component extends React.Component {
 
     return (
       <div
-        className={`vk_post ${layout} vk_card_item vk_post-col-xs-${convertToGrid(
+        className={`${className} vk_post ${layout} vk_card_item vk_post-col-xs-${convertToGrid(
           col_xs
         )} vk_post-col-sm-${convertToGrid(
           col_sm

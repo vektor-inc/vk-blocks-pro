@@ -1,32 +1,36 @@
-const { InnerBlocks } = wp.editor;
-const { __ } = wp.i18n; // Import __() from wp.i18n
-const { Component } = wp.element;
-import Swiper from 'swiper';
+// const { InnerBlocks } = wp.editor;
+// const { __ } = wp.i18n; // Import __() from wp.i18n
+// const { Component } = wp.element;
+import React from 'react';
+import Swiper from 'react-id-swiper';
+import 'swiper/css/swiper.css'
 
-export const ColumnResponsive = (props) => {
+export class ColumnResponsive extends React.Component {
 
+  render() {
 
-	const mySwiper = new Swiper ('.swiper-container', {
-    speed: 400,
-    spaceBetween: 100
-	})
+    return(
+      <Swiper>
+        <div>Slide 1</div>
+        <div>Slide 2</div>
+        <div>Slide 3</div>
+        <div>Slide 4</div>
+        <div>Slide 5</div>
+      </Swiper>
+		)
 
-	return(
-		<div className="swiper-container">
-    <div className="swiper-wrapper">
-        <div className="swiper-slide">Slide 1</div>
-        <div className="swiper-slide">Slide 2</div>
-        <div className="swiper-slide">Slide 3</div>
-        ...
-    </div>
-    <div className="swiper-pagination">Page nation</div>
-    <div className="swiper-button-prev">Prev</div>
-    <div className="swiper-button-next">Next</div>
+  };
+}
 
-    <div className="swiper-scrollbar">scrollbar</div>
-</div>
-	)
-
+// export const ColumnResponsive = () => {
+//   return(<Swiper>
+//     <div>Slide 1</div>
+//     <div>Slide 2</div>
+//     <div>Slide 3</div>
+//     <div>Slide 4</div>
+//     <div>Slide 5</div>
+//   </Swiper>)
+// }
   // const for_ = props.for_;
   // const attributes = props.attributes;
   // let innerClass = "";
@@ -60,4 +64,4 @@ export const ColumnResponsive = (props) => {
   //   );
   // }
   // return elm;
-};
+// };

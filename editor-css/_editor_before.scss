@@ -562,3 +562,9 @@ $color-danger: #b52727;
 .vk_grid-column .block-list-appender{
   width: 100%;
 }
+
+.wp-block-vk-blocks-icon-card{
+	.vk_icon-card_item{
+		margin: 15px auto!important;
+	}
+}

@@ -146,7 +146,7 @@ export class Component extends React.Component {
 
     const renderExcerpt = (align) => {
       const titleTag = "p";
-      const titleClass = `vk_post_excerpt card-text text-${align.text}`;
+      const titleClass = `vk_post_excerpt card-text has-text-align-${align.text}`;
       if (isEdit(for_)) {
         return (
           <RichText
@@ -174,7 +174,7 @@ export class Component extends React.Component {
     const renderButton = (display_btn, align) => {
       if (display_btn) {
         return (
-          <div className={`vk_post_btnOuter text-${align.button}`}>
+          <div className={`vk_post_btnOuter has-text-align-${align.button}`}>
             <a
               className={`btn btn-primary vk_post_btn`}
               href={url}
@@ -190,7 +190,7 @@ export class Component extends React.Component {
 
     const renderTitle = (align) => {
       const titleTag = "h5";
-      const titleClass = `vk_post_title card-title text-${align.title}`;
+      const titleClass = `vk_post_title card-title has-text-align-${align.title}`;
       if (isEdit(for_)) {
         return (
           <RichText

@@ -134,7 +134,7 @@ gulp.task("replace_text_domain", function(done) {
 		.pipe(gulp.dest("./inc/template-tags/package/"));
 	// vk-components.
 	gulp.src(["./inc/vk-components/package/*.php"])
-		.pipe(replace("$vk_components_textdomain","'vk-blocks'"))
+		.pipe(replace("'vk_components_textdomain'","'vk-blocks'"))
 		.pipe(gulp.dest("./inc/vk-components/package/"));
 	done();
 });

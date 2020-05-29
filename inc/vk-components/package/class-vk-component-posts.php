@@ -20,7 +20,6 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 		 Basic method
 		/*-------------------------------------------*/
 		public static function get_loop_post_view_options( $options ) {
-			global 'vk-blocks';
 			$default = array(
 				'layout'                     => 'card',
 				'display_image'              => true,

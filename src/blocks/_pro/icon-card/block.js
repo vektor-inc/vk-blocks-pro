@@ -105,8 +105,10 @@ registerBlockType("vk-blocks/icon-card", {
 						<ColumnLayout {...props} />
 					</PanelBody>
 					<PanelBody title={ __("Align", "vk-blocks") } initialOpen={ false }>
-						<BaseControl help={ __("Align content text", "vk-blocks") }>
+						<BaseControl label={ __("Title", "vk-blocks") }>
 							<AlignControl {...props} schema={align} component={"title"} initial={align["title"]} />
+						</BaseControl>
+						<BaseControl label={ __("Text", "vk-blocks") }>
 							<AlignControl {...props} schema={align} component={"text"} initial={align["text"]} />
 						</BaseControl>
 					</PanelBody>

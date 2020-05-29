@@ -28,7 +28,7 @@ export const PRcarditem = (props)=>{
 				<i className={`${icon} vk_icon-card_item_icon`} style={iconStyle}/>
 			</div>
 			<RichText
-				className="vk_icon-card_item_title vk_icon-card_item_title"
+				className={`vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}`}
 				tagName={'h3'}
 				onChange={(value) => props.setAttributes({ heading: value })}
 				value={heading}
@@ -48,7 +48,7 @@ export const PRcarditem = (props)=>{
 				<i className={`${icon} vk_icon-card_item_icon`} style={iconStyle}/>
 			</div>
 			<RichText.Content
-				className={`vk_icon-card_item_title vk_icon-card_item_title`}
+				className={`vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}`}
 				tagName={'h3'}
 				value={heading} />
 			<RichText.Content

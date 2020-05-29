@@ -1,8 +1,10 @@
+import {vkbBlockEditor} from "./../../blocks/_helper/depModules"
+
 const { first, last } = window.lodash;
 
 const { Spinner } = wp.components;
 
-const { BlockPreview } = wp.blockEditor ? wp.blockEditor : wp.editor;
+const { BlockPreview } = vkbBlockEditor;
 
 const { useState } = wp.element;
 
@@ -17,7 +19,7 @@ const {
   getBlockCount,
   getSelectedBlock,
   getBlockInsertionPoint,
-} = select("core/block-editor");
+} = select("core/block-editor") ? select("core/block-editor") : select("core/editor");
 
 import parsedTemplates from "./default-templates";
 

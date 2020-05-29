@@ -3,9 +3,10 @@
  *
  */
 import { schema } from "./schema";
+import {vkbBlockEditor} from "../../_helper/depModules"
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { InnerBlocks } = wp.blockEditor;
+const { InnerBlocks } = vkbBlockEditor;
 
 const BlockIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 576">

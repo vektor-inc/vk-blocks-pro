@@ -7,11 +7,12 @@ import { schema } from "./schema";
 import { ColumnLayout } from "../../../components/column-layout";
 import classNames from "classnames";
 import { convertToGrid } from "../../_helper/convert-to-grid";
+import {vkbBlockEditor} from "../../_helper/depModules"
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { Fragment } = wp.element;
-const { InspectorControls } = wp.blockEditor;
+const { InspectorControls } =vkbBlockEditor;
 const { select, dispatch } = wp.data;
 const { PanelBody } = wp.components;
 

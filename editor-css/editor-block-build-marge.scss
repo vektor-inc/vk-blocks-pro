@@ -55,9 +55,9 @@ button.image-button:not(.button-delete) {
 	&__help {
 		margin-top: 0;
 	}
-	.components-button {
-		margin-bottom: 0.5em;
-	}
+	// .components-button {
+	// 	margin-bottom: 0.5em;
+	// }
 }
 
 .components-radio-control__option label {
@@ -140,7 +140,7 @@ $color-danger: #dd3333;
 		// コンテンツエリアをはみ出させる
 		.wp-block { max-width:100%; }
 	}
-	
+
 	.is-sidebar-opened & .vk_outer-width-full.vk_outer-paddingLR-use {
 		// サイドバー表示時に全幅要素がはみ出してサイドバーの下などに入り込むのを防止
 		margin-left: calc( 50% - 50vw + 140px );
@@ -385,7 +385,7 @@ $color-danger: #b52727;
 
 	// colの余分な余白の削除など
 	// col内に入れたブロックにまで反映されないように & > 指定
-	div[class*="col-"].block-editor-block-list__block { 
+	div[class*="col-"].block-editor-block-list__block {
 		flex: inherit;
 		margin:0 15px 15px;
 		padding: 0;
@@ -562,6 +562,13 @@ $color-danger: #b52727;
 .vk_grid-column .block-list-appender{
   width: 100%;
 }
+
+.wp-block-vk-blocks-icon-card{
+	.vk_icon-card_item{
+		margin: 15px auto!important;
+	}
+}
+
 /*-------------------------------------------*/
 /* リストデザイン
 /*-------------------------------------------*/
@@ -917,6 +924,15 @@ ol {
 			width: 100%;
 		}
 	}
+}
+.has-text-align-right{
+	text-align: right;
+}
+.has-text-align-left{
+	text-align: left;
+}
+.has-text-align-center{
+	text-align: center;
 }
 
 .alert{
@@ -2826,21 +2842,6 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 /* CSS
 /*-------------------------------------------*/
 
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-
-.vk_card {
-  &_item {
-    .vk_post_title.card-title {
-      font-size: 1rem;
-    }
-    .vk_post_excerpt.card-text {
-      font-size: 14px;
-    }
-  }
-}
-
 .vk_childPage {
 	margin-top: 2.5rem;
 }
@@ -2849,6 +2850,21 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 /* CSS
 /*-------------------------------------------*/
 
+.vk_card {
+  &_item {
+    .vk_post_title.card-title {
+      font-size: 1rem;
+    }
+    .vk_post_excerpt.card-text {
+      font-size: 14px;
+    }
+  }
+}
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -2863,6 +2879,83 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
     }
   }
 }
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+.wp-block-vk-blocks-icon-card{
+	.vk_icon-card_item{
+		margin: 15px 10px 0 10px;
+	}
+}
+.vk_icon_card_item_summary {
+    margin-bottom: 0.5em;
+    line-height: 1.8em;
+}
+/*-------------------------------------------*/
+/* .vk_icon-card
+/*-------------------------------------------*/
+.vk_icon-card_item {
+	@media screen and (max-width: 992px) {
+		margin-bottom: 1.5em;
+	}
+}
+.vk_icon-card_item {
+	&_link {
+		color: #333;
+		&:hover {
+			color: #333;
+			text-decoration: none;
+		}
+	}
+	&_icon_outer {
+		display: block;
+		position: relative;
+		margin: 0 auto;
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+	}
+	&_icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateY(-50%) translateX(-50%);
+		font-size: 36px;
+		color: #fff;
+	}
+	&_title {
+		background-color: transparent;
+		margin-top: 0.9em;
+		margin-bottom: 0.6em;
+		font-size: 21px;
+		line-height: 1.4em;
+		border: none;
+		padding: 0;
+		&::before {
+			content: none;
+		}
+		&::after {
+			border: none;
+		}
+	}
+	&_image {
+		position: relative;
+		display: block;
+		width: 120px;
+		height: 120px;
+		margin: 0 auto;
+		overflow: hidden;
+		border-radius: 50%;
+		text-indent: -9999px;
+	}
+	&_summary {
+		margin-bottom: 0.5em;
+		text-align: center;
+		line-height: 1.8em;
+	}
+}
+
 
 /*-------------------------------------------*/
 /* CSS

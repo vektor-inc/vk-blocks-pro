@@ -118,6 +118,27 @@ gulp.task("build", gulp.series("js", "sass", "sass_editor"));
 // Default Tasks
 gulp.task("default", gulp.series("watch"));
 
+// replace_text_domain
+gulp.task("replace_text_domain", function(done) {
+	// font-awesome.
+	gulp.src(["./inc/font-awesome/package/*.php"])
+		.pipe(replace("'vk_font_awesome_version_textdomain'", "'vk-blocks'"))
+		.pipe(gulp.dest("./inc/font-awesome/package/"));
+	// term-color.
+	gulp.src(["./inc/term-color/package/*.php"])
+		.pipe(replace("'vk_term_color_textdomain'","'vk-blocks'"))
+		.pipe(gulp.dest("./inc/term-color/package/"));
+	// template-tag.
+	gulp.src(["./inc/template-tags/package/*.php"])
+		.pipe(replace("'vk-all-in-one-expansion-unit'","'vk-blocks'"))
+		.pipe(gulp.dest("./inc/template-tags/package/"));
+	// vk-components.
+	gulp.src(["./inc/vk-components/package/*.php"])
+		.pipe(replace("'vk_components_textdomain'","'vk-blocks'"))
+		.pipe(gulp.dest("./inc/vk-components/package/"));
+	done();
+});
+
 // copy dist ////////////////////////////////////////////////
 
 gulp.task("dist", function() {

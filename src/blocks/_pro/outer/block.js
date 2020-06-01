@@ -152,10 +152,10 @@ registerBlockType("vk-blocks/outer", {
 								selected={ bgPosition }
 								options={ [
 									{ label: __("normal", "vk-blocks"), value: "normal" },
-									{ label: __("Fixed", "vk-blocks"), value: "fixed" },
+									{ label: __("Fixed (Not fixed on iPhone)", "vk-blocks"), value: "fixed" },
 									{
 										label: __(
-											"Parallax (It will not work in preview)",
+											"Parallax (Non-guaranteed)",
 											"vk-blocks"
 										),
 										value: "parallax",
@@ -170,7 +170,7 @@ registerBlockType("vk-blocks/outer", {
 						title={ __("Layout Setting", "vk-blocks") }
 						initialOpen={ false }
 					>
-						<label>{ __( 'Width', 'vk-blocks' ) }</label>
+						<p className={ 'mb-1' }><label>{ __( 'Width', 'vk-blocks' ) }</label></p>
 						<BaseControl>
 							<ButtonGroup className="mb-3">
 								<Button
@@ -213,6 +213,7 @@ registerBlockType("vk-blocks/outer", {
 							/>
 							<RadioControl
 								label={ __("Padding (Top and Bottom)", "vk-blocks") }
+								className={ 'mb-1' }
 								selected={ padding_top_and_bottom }
 								options={ [
 									{ label: __("Use default padding", "vk-blocks"), value: "1" },

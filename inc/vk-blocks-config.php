@@ -32,6 +32,7 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 
 	require_once 'admin-notices.php';
 	require_once 'vk-blocks/vk-blocks-functions.php';
+	require_once 'vk-blocks/load-swiper.php';
 	/*
 	 出力するCSSが多すぎるので一旦コメントアウト */
 	// require_once( 'vk-blocks/functions-color.php' );

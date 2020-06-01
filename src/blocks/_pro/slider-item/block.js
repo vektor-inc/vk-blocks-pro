@@ -34,9 +34,8 @@ registerBlockType("vk-blocks/slider-item", {
 	},
 
 	save(props) {
-		const { className } = props;
 		return (
-			<div className={`${className}`}>
+			<div className={`swiper-slide`}>
 				<InnerBlocks.Content />
 			</div>
 		);

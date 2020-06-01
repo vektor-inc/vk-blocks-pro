@@ -48,7 +48,6 @@ registerBlockType("vk-blocks/slider", {
 
 	edit(props) {
 		const { attributes, setAttributes, className, clientId, name } = props;
-
 		const { getBlocksByClientId } = select("core/block-editor");
 		const { updateBlockAttributes } = dispatch("core/block-editor");
 
@@ -134,29 +133,4 @@ addFilter(
 	"editor.BlockListBlock",
 	"vk-blocks/slider-item",
 	vkbwithClientIdClassName
-);
-
-addFilter(
-	"blocks.getSaveElement",
-	"vk-blocks/hidden-extension",
-	(element, blockType, attributes) => {
-		const { col_xs, col_sm, col_md, col_lg, col_xl } = attributes;
-		if (blockType.name === "vk-blocks/slider-item" && element) {
-			element = {
-				...element,
-				...{
-					props: {
-						...element.props,
-						...{
-							className: classNames(
-								element.props.className,
-								`col-${convertToGrid(col_xs)} col-sm-${convertToGrid(col_sm)} col-md-${convertToGrid(col_md)} col-lg-${convertToGrid(col_lg)} col-xl-${convertToGrid(col_xl)}`
-							),
-						},
-					},
-				},
-			};
-		}
-		return element;
-	}
 );

@@ -12,6 +12,7 @@ msgid "Enter Font Awesome Class. Ex) fas fa-arrow-circle-right "
 msgstr ""
 
 #: src/blocks/_helper/font-awesome.js:25
+#: src/blocks/_pro/icon-card-item/block.js:62
 #: src/blocks/button/block.js:267
 #: src/blocks/pr-blocks/block.js:325
 #: src/blocks/pr-content/block.js:202
@@ -42,6 +43,7 @@ msgid ""
 msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:201
+#: src/blocks/_pro/icon-card/block.js:101
 msgid "Title"
 msgstr ""
 
@@ -57,40 +59,40 @@ msgstr ""
 msgid "Select image"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:125
+#: src/blocks/_pro/card/block.js:132
 #: src/components/display-items-control/index.js:27
 msgid "Display item"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:127
+#: src/blocks/_pro/card/block.js:134
 #: src/components/display-items-control/index.js:29
 msgid "Image"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:132
+#: src/blocks/_pro/card/block.js:139
 #: src/blocks/button/block.js:45
 #: src/components/display-items-control/index.js:58
 msgid "Button"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:137
+#: src/blocks/_pro/card/block.js:144
 #: src/components/display-items-control/index.js:75
 msgid "Button option"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:140
+#: src/blocks/_pro/card/block.js:147
 #: src/components/display-items-control/index.js:78
 msgid ""
 "Click each card block to set the target url. You can find the url form at "
 "it's sidebar."
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:146
+#: src/blocks/_pro/card/block.js:153
 #: src/components/display-items-control/index.js:84
 msgid "Button text"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:50
+#: src/blocks/_pro/card/block.js:51
 #: src/components/column-layout-control/index.js:22
 msgid "Card"
 msgstr ""
@@ -121,16 +123,92 @@ msgstr ""
 msgid "Ignore this post"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/block.js:18
+#: src/blocks/_pro/grid-column-item/block.js:19
 msgid "Grid Column Item"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/block.js:40
+#: src/blocks/_pro/grid-column/block.js:41
 msgid "Grid Column"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/block.js:84
+#: src/blocks/_pro/grid-column/block.js:85
 msgid "Layout Columns"
+msgstr ""
+
+#: src/blocks/_pro/icon-card-item/block.js:23
+msgid "Icon Card Item"
+msgstr ""
+
+#: src/blocks/_pro/icon-card-item/block.js:39
+msgid "PR Block Setting"
+msgstr ""
+
+#: src/blocks/_pro/icon-card-item/block.js:41
+#: src/blocks/pr-blocks/block.js:304
+msgid "Link URL:"
+msgstr ""
+
+#: src/blocks/_pro/icon-card-item/block.js:48
+#: src/blocks/button/block.js:135
+#: src/blocks/pr-blocks/block.js:311
+#: src/blocks/pr-content/block.js:160
+msgid "Open link new tab."
+msgstr ""
+
+#: src/blocks/_pro/icon-card-item/block.js:54
+#: src/blocks/border-box/block.js:58
+msgid "Icon"
+msgstr ""
+
+#: src/blocks/_pro/icon-card-item/block.js:57
+#: src/blocks/pr-blocks/block.js:320
+msgid "Class name of the Font Awesome icon font you want to use:"
+msgstr ""
+
+#: src/blocks/_pro/icon-card-item/block.js:76
+#: src/blocks/pr-blocks/block.js:339
+msgid "Icon Background:"
+msgstr ""
+
+#: src/blocks/_pro/icon-card-item/block.js:79
+#: src/blocks/button/block.js:220
+#: src/blocks/pr-blocks/block.js:342
+msgid "Solid color"
+msgstr ""
+
+#: src/blocks/_pro/icon-card-item/block.js:80
+#: src/blocks/button/block.js:228
+#: src/blocks/pr-blocks/block.js:343
+msgid "No background"
+msgstr ""
+
+#: src/blocks/_pro/icon-card-item/component.js:35
+#: src/blocks/pr-blocks/component-block.js:164
+#: src/blocks/pr-blocks/deprecated/component-block.js:144
+msgid "Input Title"
+msgstr ""
+
+#: src/blocks/_pro/icon-card-item/component.js:42
+#: src/blocks/pr-blocks/component-block.js:171
+#: src/blocks/pr-blocks/deprecated/component-block.js:151
+msgid "Input Content"
+msgstr ""
+
+#: src/blocks/_pro/icon-card/block.js:100
+#: src/components/card-align-control/index.js:29
+msgid "Align"
+msgstr ""
+
+#: src/blocks/_pro/icon-card/block.js:104
+msgid "Text"
+msgstr ""
+
+#: src/blocks/_pro/icon-card/block.js:38
+msgid "Icon Card"
+msgstr ""
+
+#: src/blocks/_pro/icon-card/block.js:95
+msgid "Columns"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:101
@@ -377,7 +455,7 @@ msgid "Step Mark"
 msgstr ""
 
 #: src/blocks/_pro/step-item/block.js:39
-#: src/blocks/border-box/block.js:57
+#: src/blocks/border-box/block.js:61
 msgid "If FontAwesome class entered, it will overrides the number."
 msgstr ""
 
@@ -388,7 +466,7 @@ msgstr ""
 
 #: src/blocks/_pro/step-item/block.js:58
 #: src/blocks/_pro/timeline-item/block.js:63
-#: src/blocks/border-box/block.js:65
+#: src/blocks/border-box/block.js:69
 #: src/blocks/staff/block.js:103
 msgid "Color"
 msgstr ""
@@ -557,7 +635,7 @@ msgstr ""
 msgid "Thinking"
 msgstr ""
 
-#: src/blocks/border-box/Body.js:19
+#: src/blocks/border-box/Body.js:20
 msgid "Please enter a title."
 msgstr ""
 
@@ -565,51 +643,47 @@ msgstr ""
 msgid "Border Box"
 msgstr ""
 
-#: src/blocks/border-box/block.js:23
+#: src/blocks/border-box/block.js:27
 msgid "solid-kado-tit-tab"
 msgstr ""
 
-#: src/blocks/border-box/block.js:28
+#: src/blocks/border-box/block.js:32
 msgid "solid-round-tit-tab"
 msgstr ""
 
-#: src/blocks/border-box/block.js:32
+#: src/blocks/border-box/block.js:36
 msgid "solid-kado-tit-inner"
 msgstr ""
 
-#: src/blocks/border-box/block.js:36
+#: src/blocks/border-box/block.js:40
 msgid "vk_borderBox-style-solid-kado-tit-onborder"
 msgstr ""
 
-#: src/blocks/border-box/block.js:40
+#: src/blocks/border-box/block.js:44
 msgid "vk_borderBox-style-iconFeature"
 msgstr ""
 
-#: src/blocks/border-box/block.js:44
+#: src/blocks/border-box/block.js:48
 msgid "vk_borderBox-style-solid-kado-tit-banner"
 msgstr ""
 
-#: src/blocks/border-box/block.js:54
-msgid "Icon"
-msgstr ""
-
-#: src/blocks/border-box/block.js:72
+#: src/blocks/border-box/block.js:76
 msgid "Red"
 msgstr ""
 
-#: src/blocks/border-box/block.js:76
+#: src/blocks/border-box/block.js:80
 msgid "Orange"
 msgstr ""
 
-#: src/blocks/border-box/block.js:80
+#: src/blocks/border-box/block.js:84
 msgid "Blue"
 msgstr ""
 
-#: src/blocks/border-box/block.js:84
+#: src/blocks/border-box/block.js:88
 msgid "Green"
 msgstr ""
 
-#: src/blocks/border-box/block.js:88
+#: src/blocks/border-box/block.js:92
 msgid "Black"
 msgstr ""
 
@@ -619,12 +693,6 @@ msgstr ""
 
 #: src/blocks/button/block.js:129
 msgid "Sub Caption"
-msgstr ""
-
-#: src/blocks/button/block.js:135
-#: src/blocks/pr-blocks/block.js:311
-#: src/blocks/pr-content/block.js:160
-msgid "Open link new tab."
 msgstr ""
 
 #: src/blocks/button/block.js:140
@@ -658,16 +726,6 @@ msgstr ""
 
 #: src/blocks/button/block.js:212
 msgid "Button Style:"
-msgstr ""
-
-#: src/blocks/button/block.js:220
-#: src/blocks/pr-blocks/block.js:342
-msgid "Solid color"
-msgstr ""
-
-#: src/blocks/button/block.js:228
-#: src/blocks/pr-blocks/block.js:343
-msgid "No background"
 msgstr ""
 
 #: src/blocks/button/block.js:236
@@ -1037,20 +1095,8 @@ msgstr ""
 msgid "PR Block3 Setting"
 msgstr ""
 
-#: src/blocks/pr-blocks/block.js:304
-msgid "Link URL:"
-msgstr ""
-
 #: src/blocks/pr-blocks/block.js:317
 msgid "Icon 3"
-msgstr ""
-
-#: src/blocks/pr-blocks/block.js:320
-msgid "Class name of the Font Awesome icon font you want to use:"
-msgstr ""
-
-#: src/blocks/pr-blocks/block.js:339
-msgid "Icon Background:"
 msgstr ""
 
 #: src/blocks/pr-blocks/block.js:350
@@ -1063,16 +1109,6 @@ msgstr ""
 
 #: src/blocks/pr-blocks/block.js:82
 msgid "PR Blocks"
-msgstr ""
-
-#: src/blocks/pr-blocks/component-block.js:164
-#: src/blocks/pr-blocks/deprecated/component-block.js:144
-msgid "Input Title"
-msgstr ""
-
-#: src/blocks/pr-blocks/component-block.js:171
-#: src/blocks/pr-blocks/deprecated/component-block.js:151
-msgid "Input Content"
 msgstr ""
 
 #: src/blocks/pr-content/block.js:122
@@ -1224,10 +1260,6 @@ msgstr ""
 
 #: src/blocks/staff/component.js:50
 msgid "Caption"
-msgstr ""
-
-#: src/components/card-align-control/index.js:29
-msgid "Align"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:16

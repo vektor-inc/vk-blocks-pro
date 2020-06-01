@@ -41,7 +41,7 @@ export const schema = {
 	},
 	bgType:{
 		type: 'string',
-		default: '0',
+		default: '1',
 	},
 	heading:{
 		type: 'string',

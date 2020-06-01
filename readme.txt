@@ -61,6 +61,8 @@ e.g.
 
 = 0.32.0 =
 [ Add new block ][ Icon Card (pro) ]
+[ Specification Change ] Font Awesome Version 5.13.0
+[ Specification Change ] Bootstrap Version 4.5.0
 
 = 0.31.0 =
 [ Add new block ][ Border Box ]

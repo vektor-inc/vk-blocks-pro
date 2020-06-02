@@ -1,8 +1,4 @@
 export const schema = {
-  layout: {
-    type: "string",
-    default: "card",
-  },
   col_xs: {
     type: "number",
     default: 1,
@@ -88,5 +84,5 @@ export const schema = {
     source: "attribute",
     selector: "a",
     attribute: "rel",
-  },
+	}
 };

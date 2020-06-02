@@ -1,12 +1,4 @@
 export const schema = {
-  name: {
-    type: "string",
-    default: "grid-column-item",
-  },
-  layout: {
-    type: "string",
-    default: "card",
-  },
   col_xs: {
     type: "number",
     default: 1,
@@ -26,5 +18,21 @@ export const schema = {
   col_xl: {
     type: "number",
     default: 3,
-  },
+	},
+	unit: {
+		type: 'string',
+		default: 'px',
+	},
+	pc: {
+		type: 'number',
+		default: 40,
+	},
+	tablet: {
+		type: 'number',
+		default: 30,
+	},
+	mobile: {
+		type: 'number',
+		default: 20,
+	}
 };

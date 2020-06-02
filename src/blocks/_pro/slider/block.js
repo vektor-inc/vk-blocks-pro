@@ -7,13 +7,14 @@ import { schema } from "./schema";
 import { ColumnLayout } from "../../../components/column-layout";
 import classNames from "classnames";
 import { convertToGrid } from "../../_helper/convert-to-grid";
+import formatNum from "../../_helper/formatNum";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { Fragment } = wp.element;
 const { InspectorControls } = wp.blockEditor;
 const { select, dispatch } = wp.data;
-const { PanelBody } = wp.components;
+const { RangeControl, PanelBody, BaseControl, SelectControl } = wp.components;
 
 const BlockIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 576">
@@ -47,7 +48,8 @@ registerBlockType("vk-blocks/slider", {
 	},
 
 	edit(props) {
-		const { attributes, setAttributes, className, clientId, name } = props;
+		const { attributes, setAttributes, className, clientId } = props;
+		const { unit, pc, tablet, mobile } = attributes;
 		const { getBlocksByClientId } = select("core/block-editor");
 		const { updateBlockAttributes } = dispatch("core/block-editor");
 
@@ -84,6 +86,54 @@ registerBlockType("vk-blocks/slider", {
 						initialOpen={false}
 					>
 						<ColumnLayout {...props} />
+					</PanelBody>
+					<PanelBody
+						title={__("Slide Settings", "vk-blocks")}
+						initialOpen={false}
+					>
+						<SelectControl
+							label={__('Unit Type', 'vk-blocks')}
+							value={unit}
+							onChange={(value) => setAttributes({ unit: value })}
+							options={[
+								{
+									value: 'px',
+									label: __('px', 'vk-blocks'),
+								},
+								{
+									value: 'em',
+									label: __('em', 'vk-blocks'),
+								},
+								{
+									value: 'rem',
+									label: __('rem', 'vk-blocks'),
+								},
+								{
+									value: 'vw',
+									label: __('vw', 'vk-blocks'),
+								}
+							]}
+						/>
+						<BaseControl label={__('Slide Height for each device.', 'vk-blocks')}>
+							<RangeControl
+								label={__('PC', 'vk-blocks')}
+								value={pc}
+								onChange={(value) => setAttributes({ pc: formatNum(value, pc) })}
+								step={0.1}
+							/>
+							<RangeControl
+								label={__('Tablet', 'vk-blocks')}
+								value={tablet}
+								onChange={(value) => setAttributes({ tablet: formatNum(value, tablet) })}
+								step={0.1}
+							/>
+							<RangeControl
+								label={__('Mobile', 'vk-blocks')}
+								value={mobile}
+								onChange={(value) => setAttributes({ mobile: formatNum(value, mobile) })}
+								step={0.1}
+							/>
+						</BaseControl>
 					</PanelBody>
 				</InspectorControls>
 				<ColumnResponsive

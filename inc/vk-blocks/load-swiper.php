@@ -11,8 +11,26 @@ add_action( 'wp_enqueue_scripts', 'vkblocks_load_slider_scripts' );
 function vkblocks_add_slider_front_scripts( $block_content, $block ) {
 
 	if ( $block['blockName'] === 'vk-blocks/slider' ) {
+
+		//Default値をセット
+		$pc = isset($block['attrs']["pc"]) ? $block['attrs']["pc"] : "600";
+		$tablet = isset($block['attrs']["tablet"]) ? $block['attrs']["tablet"] : "600";
+		$mobile = isset($block['attrs']["mobile"]) ? $block['attrs']["mobile"] : "600";
+		$unit = isset($block['attrs']["unit"]) ? $block['attrs']["unit"] : "px";
+
+		$style = "<style>
+		@media (max-width: 576px) {
+			.vk_slider_item{height:". esc_attr($mobile) . esc_attr($unit) . "}
+		}
+		@media (min-width: 577px) and (max-width: 768px) {
+			.vk_slider_item{height:". esc_attr($tablet) . esc_attr($unit) . "}
+		}
+		@media (min-width: 769px) {
+			.vk_slider_item{height:". esc_attr($pc) . esc_attr($unit) . "}
+		}
+		</style>";
 		$script = "<script>window.onload = function () { var swiper = new Swiper('.swiper-container', {navigation: { nextEl: '.swiper-button-next',prevEl: '.swiper-button-prev',},});};</script>";
-		return $script . $block_content;
+		return $style . $script . $block_content;
 	}
     return $block_content;
 }

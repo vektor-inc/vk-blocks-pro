@@ -2,5 +2,8 @@
     "core": "https://wordpress.org/latest.zip",
     "plugins": [
         "."
-    ]
+	],
+	"themes":[
+		"https://downloads.wordpress.org/theme/lightning.zip"
+	]
 }

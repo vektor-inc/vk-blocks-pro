@@ -25,14 +25,22 @@ export const schema = {
 	},
 	pc: {
 		type: 'number',
-		default: 40,
+		default: 600,
 	},
 	tablet: {
 		type: 'number',
-		default: 30,
+		default: 600,
 	},
 	mobile: {
 		type: 'number',
-		default: 20,
-	}
+		default: 600,
+	},
+	autoPlay: {
+		type: "boolean",
+		default: true,
+	},
+	autoPlayDelay: {
+		type: "number",
+		default: 2500,
+  },
 };

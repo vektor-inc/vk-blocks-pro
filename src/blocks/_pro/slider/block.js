@@ -8,13 +8,16 @@ import { ColumnLayout } from "../../../components/column-layout";
 import classNames from "classnames";
 import { convertToGrid } from "../../_helper/convert-to-grid";
 import formatNum from "../../_helper/formatNum";
+import { AdvancedToggleControl } from "./../../../components/advanced-toggle-control";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { Fragment } = wp.element;
 const { InspectorControls } = wp.blockEditor;
 const { select, dispatch } = wp.data;
-const { RangeControl, PanelBody, BaseControl, SelectControl } = wp.components;
+const { RangeControl, PanelBody, BaseControl, SelectControl, TextControl } = wp.components;
+const { createHigherOrderComponent } = wp.compose;
+const { addFilter } = wp.hooks;
 
 const BlockIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 576">
@@ -49,7 +52,7 @@ registerBlockType("vk-blocks/slider", {
 
 	edit(props) {
 		const { attributes, setAttributes, className, clientId } = props;
-		const { unit, pc, tablet, mobile } = attributes;
+		const { unit, pc, tablet, mobile, autoPlay, autoPlayDelay } = attributes;
 		const { getBlocksByClientId } = select("core/block-editor");
 		const { updateBlockAttributes } = dispatch("core/block-editor");
 
@@ -88,7 +91,7 @@ registerBlockType("vk-blocks/slider", {
 						<ColumnLayout {...props} />
 					</PanelBody>
 					<PanelBody
-						title={__("Slide Settings", "vk-blocks")}
+						title={__("Height", "vk-blocks")}
 						initialOpen={false}
 					>
 						<SelectControl
@@ -135,6 +138,24 @@ registerBlockType("vk-blocks/slider", {
 							/>
 						</BaseControl>
 					</PanelBody>
+					<PanelBody
+						title={ __("Slider Settings", "vk-blocks") }
+						initialOpen={ false }
+					>
+						<BaseControl label={ __("AutoPlay", "vk-blocks") }>
+							<AdvancedToggleControl
+								initialFixedTable={ autoPlay }
+								schema={ "autoPlay" }
+								{ ...props }
+							/>
+							<TextControl
+								label={__('Delay', 'vk-blocks')}
+								value={autoPlayDelay}
+								onChange={value => setAttributes({ autoPlayDelay: formatNum(parseInt(value, 10), parseInt(autoPlayDelay, 10)) })}
+								type={"number"}
+							/>
+						</BaseControl>
+					</PanelBody>
 				</InspectorControls>
 				<ColumnResponsive
 					attributes={attributes}
@@ -155,9 +176,6 @@ registerBlockType("vk-blocks/slider", {
 		);
 	},
 });
-
-const { createHigherOrderComponent } = wp.compose;
-const { addFilter } = wp.hooks;
 
 const vkbwithClientIdClassName = createHigherOrderComponent(
 	(BlockListBlock) => {

@@ -12,11 +12,14 @@ function vkblocks_add_slider_front_scripts( $block_content, $block ) {
 
 	if ( $block['blockName'] === 'vk-blocks/slider' ) {
 
+		$attributes = $block['attrs'];
 		//Default値をセット
-		$pc = isset($block['attrs']["pc"]) ? $block['attrs']["pc"] : "600";
-		$tablet = isset($block['attrs']["tablet"]) ? $block['attrs']["tablet"] : "600";
-		$mobile = isset($block['attrs']["mobile"]) ? $block['attrs']["mobile"] : "600";
-		$unit = isset($block['attrs']["unit"]) ? $block['attrs']["unit"] : "px";
+		$pc = isset($attributes["pc"]) ? $attributes["pc"] : "600";
+		$tablet = isset($attributes["tablet"]) ? $attributes["tablet"] : "600";
+		$mobile = isset($attributes["mobile"]) ? $attributes["mobile"] : "600";
+		$unit = isset($attributes["unit"]) ? $attributes["unit"] : "px";
+		$autoPlay = isset($attributes["autoPlay"]) ? $attributes["autoPlay"] : true;
+		$autoPlayDelay = isset($attributes["autoPlayDelay"]) ? $attributes["autoPlayDelay"] : '2500';
 
 		$style = "<style>
 		@media (max-width: 576px) {
@@ -29,7 +32,25 @@ function vkblocks_add_slider_front_scripts( $block_content, $block ) {
 			.vk_slider_item{height:". esc_attr($pc) . esc_attr($unit) . "}
 		}
 		</style>";
-		$script = "<script>window.onload = function () { var swiper = new Swiper('.swiper-container', {navigation: { nextEl: '.swiper-button-next',prevEl: '.swiper-button-prev',},});};</script>";
+
+		if($autoPlay){
+			$auto_play_scripts = 'autoplay: {
+				delay: '.intval($autoPlayDelay).',
+				disableOnInteraction: false,
+			},';
+		}else{
+			$auto_play_scripts = '';
+		}
+
+		$script = "<script>window.onload = function () {
+			var swiper = new Swiper('.swiper-container', {
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev'
+				},
+				". $auto_play_scripts ."
+			});
+		};</script>";
 		return $style . $script . $block_content;
 	}
     return $block_content;

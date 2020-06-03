@@ -42,5 +42,9 @@ export const schema = {
 	autoPlayDelay: {
 		type: "number",
 		default: 2500,
-  },
+	},
+	navigation: {
+		type: "boolean",
+		default: true,
+	},
 };

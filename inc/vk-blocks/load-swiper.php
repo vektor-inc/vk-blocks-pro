@@ -48,6 +48,9 @@ function vkblocks_add_slider_front_scripts( $block_content, $block ) {
 					nextEl: '.swiper-button-next',
 					prevEl: '.swiper-button-prev'
 				},
+				pagination: {
+					el: '.swiper-pagination',
+				},
 				". $auto_play_scripts ."
 			});
 		};</script>";

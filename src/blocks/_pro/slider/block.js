@@ -52,7 +52,7 @@ registerBlockType("vk-blocks/slider", {
 
 	edit(props) {
 		const { attributes, setAttributes, className, clientId } = props;
-		const { unit, pc, tablet, mobile, autoPlay, autoPlayDelay } = attributes;
+		const { unit, pc, tablet, mobile, autoPlay, autoPlayDelay, navigation } = attributes;
 		const { getBlocksByClientId } = select("core/block-editor");
 		const { updateBlockAttributes } = dispatch("core/block-editor");
 
@@ -142,6 +142,13 @@ registerBlockType("vk-blocks/slider", {
 						title={ __("Slider Settings", "vk-blocks") }
 						initialOpen={ false }
 					>
+						<BaseControl label={ __("Display Navigation ", "vk-blocks") }>
+							<AdvancedToggleControl
+								initialFixedTable={ navigation }
+								schema={ "navigation" }
+								{ ...props }
+							/>
+						</BaseControl>
 						<BaseControl label={ __("AutoPlay", "vk-blocks") }>
 							<AdvancedToggleControl
 								initialFixedTable={ autoPlay }

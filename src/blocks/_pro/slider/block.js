@@ -12,7 +12,7 @@ import { AdvancedToggleControl } from "./../../../components/advanced-toggle-con
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { Fragment } = wp.element;
+const { Fragment, useEffect } = wp.element;
 const { InspectorControls } = wp.blockEditor;
 const { select, dispatch } = wp.data;
 const { RangeControl, PanelBody, BaseControl, SelectControl, TextControl } = wp.components;
@@ -60,6 +60,12 @@ registerBlockType("vk-blocks/slider", {
 
 		let beforeLength;
 		let afterLength;
+
+		useEffect(() => {
+			updateBlockAttributes(clientId, {
+				clientId:clientId,
+			});
+		}, [])
 
 		if (
 			thisBlock !== undefined &&

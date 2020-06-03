@@ -6,7 +6,7 @@ export const ColumnResponsive = (props) => {
 
 	const for_ = props.for_;
 	const attributes = props.attributes;
-	const {navigation} = attributes;
+	const {navigation,clientId} = attributes;
   let innerClass = "";
   const className = props.className;
   const containerClass = " vk_grid-column";
@@ -35,7 +35,7 @@ export const ColumnResponsive = (props) => {
     );
   }
   return (
-		<div className="swiper-container">
+		<div className={`swiper-container vk_slider_${clientId}`}>
 			<div className="swiper-wrapper">
 				{elm}
 			</div>

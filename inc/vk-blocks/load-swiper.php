@@ -13,6 +13,7 @@ function vkblocks_add_slider_front_scripts( $block_content, $block ) {
 	if ( $block['blockName'] === 'vk-blocks/slider' ) {
 
 		$attributes = $block['attrs'];
+		$clientId = $block['attrs']["clientId"];
 		//Default値をセット
 		$pc = isset($attributes["pc"]) ? $attributes["pc"] : "600";
 		$tablet = isset($attributes["tablet"]) ? $attributes["tablet"] : "600";
@@ -23,13 +24,13 @@ function vkblocks_add_slider_front_scripts( $block_content, $block ) {
 
 		$style = "<style>
 		@media (max-width: 576px) {
-			.vk_slider_item{height:". esc_attr($mobile) . esc_attr($unit) . "}
+			.vk_slider_" . esc_html($clientId) . " .vk_slider_item{height:". esc_attr($mobile) . esc_attr($unit) . "}
 		}
 		@media (min-width: 577px) and (max-width: 768px) {
-			.vk_slider_item{height:". esc_attr($tablet) . esc_attr($unit) . "}
+			.vk_slider_" . esc_html($clientId) . " .vk_slider_item{height:". esc_attr($tablet) . esc_attr($unit) . "}
 		}
 		@media (min-width: 769px) {
-			.vk_slider_item{height:". esc_attr($pc) . esc_attr($unit) . "}
+			.vk_slider_" . esc_html($clientId) . " .vk_slider_item{height:". esc_attr($pc) . esc_attr($unit) . "}
 		}
 		</style>";
 
@@ -43,7 +44,7 @@ function vkblocks_add_slider_front_scripts( $block_content, $block ) {
 		}
 
 		$script = "<script>window.onload = function () {
-			var swiper = new Swiper('.swiper-container', {
+			var swiper" . esc_html($clientId) . " = new Swiper('.vk_slider_" . esc_html($clientId) . "', {
 				navigation: {
 					nextEl: '.swiper-button-next',
 					prevEl: '.swiper-button-prev'

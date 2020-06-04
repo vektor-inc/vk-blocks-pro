@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.4.1
-Stable tag: 0.32.1
+Stable tag: 0.32.2
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -59,6 +59,9 @@ e.g.
 
 == Changelog ==
 
+= 0.32.2 =
+[ bug fix ][ Icon Card ] Fix alignment of icon and card item.
+
 = 0.32.1 =
 [ bug fix ][ Border Box ] Fix title design is overwrited by theme.
 
@@ -87,18 +90,18 @@ e.g.
 build only
 
 = 0.29.3 =
-[ bug fix ][ toc (pro) ] Cope with old type toc 
+[ bug fix ][ toc (pro) ] Cope with old type toc
 
 = 0.29.2 =
 build only
 
 = 0.29.1 =
-[ bug fix ][ toc (pro) ] Cope with deprecated 
+[ bug fix ][ toc (pro) ] Cope with deprecated
 
 = 0.29.0 =
 [ Add new block ][ Grid Column(pro) ]
 [ Add function ][ Group ] Use custom border color
-[ bug fix ][ toc (pro) ] Many title charactor number 
+[ bug fix ][ toc (pro) ] Many title charactor number
 [ bug fix ][ list ] 2digits number display bug fix
 
 = 0.28.4 =
@@ -138,7 +141,7 @@ build only
 [ Add function ][ Outer(pro) ] Responsible background image
 [ Specification change ][ staff ] Change title size
 [ Specification change ][ Responsible Spacer ] Display dottline in edit screen
- 
+
 = 0.26.9 =
 [ bug fix ][ Card(pro) ] column bug fix at edit screen
 
@@ -182,7 +185,7 @@ build only
 [ Add function ][ Post list(Pro) ] Add text list layout
 
 = 0.24.2 =
-[ BugFix ][ Table of Content(Pro) ] Title in Outer Block bug fix 
+[ BugFix ][ Table of Content(Pro) ] Title in Outer Block bug fix
 
 = 0.24.1 =
 [ bugfix ] Cope with WordPress5.4
@@ -259,7 +262,7 @@ build only
 [ bugfix ] viewHelpers.js Reregistration
 
 = 0.17.4 =
-[ deploy setting from GitHub ] 
+[ deploy setting from GitHub ]
 
 = 0.17.2 =
 [ bug fix ][ Button ] Custom color palette.

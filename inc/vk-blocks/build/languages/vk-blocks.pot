@@ -136,6 +136,7 @@ msgid "Grid Column"
 msgstr ""
 
 #: src/blocks/_pro/grid-column/block.js:85
+#: src/blocks/_pro/slider/block.js:100
 msgid "Layout Columns"
 msgstr ""
 
@@ -200,6 +201,7 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card/block.js:100
 #: src/components/card-align-control/index.js:29
+#: src/components/vertical-align-control/index.js:38
 msgid "Align"
 msgstr ""
 
@@ -448,6 +450,78 @@ msgstr ""
 
 #: src/blocks/_pro/post-list/block.js:71
 msgid "Post list"
+msgstr ""
+
+#: src/blocks/_pro/slider-item/block.js:28
+msgid "Slider Item"
+msgstr ""
+
+#: src/blocks/_pro/slider/block.js:106
+msgid "Height"
+msgstr ""
+
+#: src/blocks/_pro/slider/block.js:110
+#: src/blocks/spacer/block.js:74
+msgid "Unit Type"
+msgstr ""
+
+#: src/blocks/_pro/slider/block.js:116
+#: src/blocks/spacer/block.js:80
+msgid "px"
+msgstr ""
+
+#: src/blocks/_pro/slider/block.js:120
+#: src/blocks/spacer/block.js:84
+msgid "em"
+msgstr ""
+
+#: src/blocks/_pro/slider/block.js:124
+#: src/blocks/spacer/block.js:88
+msgid "rem"
+msgstr ""
+
+#: src/blocks/_pro/slider/block.js:128
+#: src/blocks/spacer/block.js:92
+msgid "vw"
+msgstr ""
+
+#: src/blocks/_pro/slider/block.js:132
+msgid "Slide Height for each device."
+msgstr ""
+
+#: src/blocks/_pro/slider/block.js:134
+#: src/blocks/spacer/block.js:98
+msgid "PC"
+msgstr ""
+
+#: src/blocks/_pro/slider/block.js:140
+#: src/blocks/spacer/block.js:104
+msgid "Tablet"
+msgstr ""
+
+#: src/blocks/_pro/slider/block.js:146
+#: src/blocks/spacer/block.js:110
+msgid "Mobile"
+msgstr ""
+
+#: src/blocks/_pro/slider/block.js:154
+msgid "Slider Settings"
+msgstr ""
+
+#: src/blocks/_pro/slider/block.js:157
+msgid "Display Navigation "
+msgstr ""
+
+#: src/blocks/_pro/slider/block.js:164
+msgid "AutoPlay"
+msgstr ""
+
+#: src/blocks/_pro/slider/block.js:171
+msgid "Delay"
+msgstr ""
+
+#: src/blocks/_pro/slider/block.js:48
+msgid "Slider"
 msgstr ""
 
 #: src/blocks/_pro/step-item/block.js:19
@@ -1174,44 +1248,12 @@ msgstr ""
 msgid "Input content."
 msgstr ""
 
-#: src/blocks/spacer/block.js:104
-msgid "Tablet"
-msgstr ""
-
-#: src/blocks/spacer/block.js:110
-msgid "Mobile"
-msgstr ""
-
 #: src/blocks/spacer/block.js:42
 msgid "Responsive Spacer"
 msgstr ""
 
-#: src/blocks/spacer/block.js:74
-msgid "Unit Type"
-msgstr ""
-
-#: src/blocks/spacer/block.js:80
-msgid "px"
-msgstr ""
-
-#: src/blocks/spacer/block.js:84
-msgid "em"
-msgstr ""
-
-#: src/blocks/spacer/block.js:88
-msgid "rem"
-msgstr ""
-
-#: src/blocks/spacer/block.js:92
-msgid "vw"
-msgstr ""
-
 #: src/blocks/spacer/block.js:96
 msgid "Height for each device."
-msgstr ""
-
-#: src/blocks/spacer/block.js:98
-msgid "PC"
 msgstr ""
 
 #: src/blocks/staff/block.js:105

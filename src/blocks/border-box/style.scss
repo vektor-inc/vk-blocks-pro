@@ -68,10 +68,10 @@
 	}
 	.vk_borderBox_body {
 		padding: 1.5em;
-		background-color: #fff;
+		// background-color: #fff;
 		border-width: 2px;
 		border-style: solid;
-		p {
+		p:last-child {
 			margin-bottom: 0;
 		}
 	}
@@ -161,7 +161,8 @@
 /* タブ風タイトル　背景色がないパターン */
 .vk_borderBox {
 	&.is-style-vk_borderBox-style-solid-kado-tit-tab,
-	&.is-style-vk_borderBox-style-solid-round-tit-tab {
+	&.is-style-vk_borderBox-style-solid-round-tit-tab,
+	&.is-style-vk_borderBox-style-solid-kado-tit-banner {
 		border: none;
 		background-color: transparent;
 	}

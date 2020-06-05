@@ -24,6 +24,9 @@ $media-xl-down: 1199.98px;
 	padding-left: calc(50vw - 50%);
 	padding-right: calc(50vw - 50%);
 }
+// Fit to content area width
+.vk_outer-paddingLR-none {
+}
 $padding-none: 1.5em;
 $padding-sm: 2em;
 $padding-md: 2.5em;
@@ -71,12 +74,17 @@ $padding-xl: 3.5em;
 }
 
 .vk_outer-bgPosition-fixed {
-	background-attachment: fixed !important;
-	background-size: cover !important;
+	background-attachment: fixed;
+	background-size: cover;
+	// iPhone の時に fixed のままだとバグで反応せずに画像のcoverまで効かなくなって巨大な画像が表示されるので
+	// scroll で上書きする
+	@supports (-webkit-overflow-scrolling: touch) {
+		background-attachment: scroll;
+	}
 }
 .vk_outer-bgPosition-normal {
-	background-attachment: unset !important;
-	background-size: cover !important;
+	background-attachment: unset;
+	background-size: cover;
 }
 
 .vk_outer_separator {

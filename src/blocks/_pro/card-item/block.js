@@ -66,12 +66,12 @@ registerBlockType("vk-blocks/card-item", {
             <LinkControl blockName={"card"} {...props} />
           </PanelBody>
         </InspectorControls>
-        <Component value={props} for_={"edit"} />
+        <Component {...props} for_={"edit"} />
       </Fragment>
     );
   },
 
   save(props) {
-    return <Component value={props} for_={"save"} />;
+    return <Component {...props} for_={"save"} />;
   },
 });

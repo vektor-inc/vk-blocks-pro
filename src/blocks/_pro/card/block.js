@@ -8,6 +8,7 @@ import { ColumnLayoutControl } from "../../../components/column-layout-control";
 import { CardAlignControls } from "../../../components/card-align-control";
 import { deprecated } from "./deprecated";
 import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
+import removeProperty from "../../_helper/removeProperty"
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
@@ -72,7 +73,9 @@ registerBlockType("vk-blocks/card", {
 
     let currentBlock = getBlocksByClientId(clientId);
     let beforeLength;
-    let afterLength;
+		let afterLength;
+
+		console.log(attributes)
 
     if (
       currentBlock !== undefined &&
@@ -86,7 +89,11 @@ registerBlockType("vk-blocks/card", {
         if (beforeLength !== afterLength) {
           for (let i = 0; i < innerBlocks.length; i++) {
             if (innerBlocks[i] !== undefined) {
-              updateBlockAttributes(innerBlocks[i].clientId, attributes);
+
+							//className以外の値で、子要素のattributesをアップデート
+							const updateAttributes = removeProperty(attributes,"className")
+							updateBlockAttributes(innerBlocks[i].clientId, updateAttributes);
+
             }
           }
         }

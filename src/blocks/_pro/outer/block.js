@@ -16,14 +16,14 @@ const {
 	RangeControl,
 	RadioControl,
 	PanelBody,
-	Button,
 	BaseControl,
 	SelectControl,
+	ButtonGroup,
+	Button
 } = wp.components;
 const { Fragment } = wp.element;
-const { InspectorControls, MediaUpload, ColorPalette } =
+const { InspectorControls, ColorPalette } =
 	wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
-const { dispatch } = wp.data;
 const BlockIcon = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +80,6 @@ registerBlockType("vk-blocks/outer", {
 		} = attributes;
 
 		//save clientId for using in Class.
-		// setAttributes({ clientId: clientId });
 		setAttributes({ clientId });
 
 		const setColorIfUndefined = (bgColor) => {
@@ -92,7 +91,6 @@ registerBlockType("vk-blocks/outer", {
 
 		const setBgColor = (bgColor) => {
 			bgColor = setColorIfUndefined(bgColor);
-			// setAttributes({ bgColor : bgColor });
 			setAttributes({ bgColor });
 		};
 
@@ -154,10 +152,10 @@ registerBlockType("vk-blocks/outer", {
 								selected={ bgPosition }
 								options={ [
 									{ label: __("normal", "vk-blocks"), value: "normal" },
-									{ label: __("Fixed", "vk-blocks"), value: "fixed" },
+									{ label: __("Fixed (Not fixed on iPhone)", "vk-blocks"), value: "fixed" },
 									{
 										label: __(
-											"Parallax (Non-guaranteed / Abolished)",
+											"Parallax (Non-guaranteed)",
 											"vk-blocks"
 										),
 										value: "parallax",
@@ -172,29 +170,40 @@ registerBlockType("vk-blocks/outer", {
 						title={ __("Layout Setting", "vk-blocks") }
 						initialOpen={ false }
 					>
+						<p className={ 'mb-1' }><label>{ __( 'Width', 'vk-blocks' ) }</label></p>
 						<BaseControl>
-							<RadioControl
-								label={ __("Outer width", "vk-blocks") }
-								selected={ outerWidth }
-								options={ [
-									{ label: __("Normal", "vk-blocks"), value: "normal" },
-									{ label: __("Full Wide", "vk-blocks"), value: "full" },
-								] }
-								onChange={ (value) => setAttributes({ outerWidth: value }) }
-							/>
+							<ButtonGroup className="mb-3">
+								<Button
+									isSmall
+									isPrimary={ outerWidth === 'normal' }
+									isSecondary={ outerWidth !== 'normal' }
+									onClick={ () => setAttributes({ outerWidth: 'normal' }) }
+								>
+									{ __('Normal', 'vk-blocks') }
+								</Button>
+								<Button
+									isSmall
+									isPrimary={ outerWidth === 'full' }
+									isSecondary={ outerWidth !== 'full' }
+									onClick={ () => setAttributes({ outerWidth: 'full' }) }
+								>
+									{ __('Full Wide', 'vk-blocks') }
+								</Button>
+							</ButtonGroup>
+
 							<RadioControl
 								label={ __(
-									"Contents area padding (left and right)",
+									"Padding (Left and Right)",
 									"vk-blocks"
 								) }
 								selected={ padding_left_and_right }
 								options={ [
 									{
-										label: __("Do not use padding", "vk-blocks"),
+										label: __("Fit to the Content area", "vk-blocks"),
 										value: "0",
 									},
 									{
-										label: __("Use padding", "vk-blocks"),
+										label: __("Add padding to the Outer area", "vk-blocks"),
 										value: "1",
 									},
 								] }
@@ -203,13 +212,14 @@ registerBlockType("vk-blocks/outer", {
 								}
 							/>
 							<RadioControl
-								label={ __("Padding (top and bottom)", "vk-blocks") }
+								label={ __("Padding (Top and Bottom)", "vk-blocks") }
+								className={ 'mb-1' }
 								selected={ padding_top_and_bottom }
 								options={ [
 									{ label: __("Use default padding", "vk-blocks"), value: "1" },
 									{
 										label: __(
-											"Do not use default padding (Set it yourself using a spacer block etc.).",
+											"Do not use default padding",
 											"vk-blocks"
 										),
 										value: "0",
@@ -219,6 +229,7 @@ registerBlockType("vk-blocks/outer", {
 									setAttributes({ padding_top_and_bottom: value })
 								}
 							/>
+							<p>{ __( '* If you select "Do not use" that, please set yourself it such as a spacer block.', "vk-blocks" ) }</p>
 						</BaseControl>
 					</PanelBody>
 					<PanelBody
@@ -378,17 +389,15 @@ registerBlockType("vk-blocks/outer", {
 	},
 
 	save(props) {
-		const { attributes, className } = props;
+		const { attributes } = props;
 		return (
 			<OuterBlock
 				clientId={ attributes.clientId }
 				attributes={ attributes }
-				className={ className }
 				for_={ "save" }
 			/>
 		);
 	},
 
-	// deprecated: deprecated,
 	deprecated,
 });

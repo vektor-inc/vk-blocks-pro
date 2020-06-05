@@ -20,7 +20,6 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 		 Basic method
 		/*-------------------------------------------*/
 		public static function get_loop_post_view_options( $options ) {
-			global $vk_components_textdomain;
 			$default = array(
 				'layout'                     => 'card',
 				'display_image'              => true,
@@ -31,9 +30,9 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				'display_btn'                => false,
 				'image_default_url'          => false,
 				'overlay'                    => false,
-				'btn_text'                   => __( 'Read more', $vk_components_textdomain ),
+				'btn_text'                   => __( 'Read more', 'vk-blocks' ),
 				'btn_align'                  => 'text-right',
-				'new_text'                   => __( 'New!!', $vk_components_textdomain ),
+				'new_text'                   => __( 'New!!', 'vk-blocks' ),
 				'new_date'                   => 7,
 				'textlink'                   => true,
 				'class_outer'                => '',
@@ -357,22 +356,21 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 		/*-------------------------------------------*/
 
 		public static function get_patterns() {
-
 			$patterns = array(
 				'card'            => array(
-					'label'             => __( 'Card', 'vk-compo-textdomain' ),
+					'label'             => __( 'Card', 'vk-blocks' ),
 					'class_posts_outer' => '',
 				),
 				'card-horizontal' => array(
-					'label'             => __( 'Card Horizontal', 'vk-compo-textdomain' ),
+					'label'             => __( 'Card Horizontal', 'vk-blocks' ),
 					'class_posts_outer' => '',
 				),
 				'media'           => array(
-					'label'             => __( 'Media', 'vk-compo-textdomain' ),
+					'label'             => __( 'Media', 'vk-blocks' ),
 					'class_posts_outer' => 'media-outer',
 				),
 				'postListText'    => array(
-					'label'             => _x( 'Text 1 Column', 'post list type', 'vk-compo-textdomain' ),
+					'label'             => _x( 'Text 1 Column', 'post list type', 'vk-blocks' ),
 					'class_posts_outer' => 'postListText-outer',
 				),
 			);
@@ -530,7 +528,11 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				$col = 4;
 			} elseif ( $input_col == 4 ) {
 				$col = 3;
-			}
+			} elseif ( $input_col == 6 ) {
+				$col = 2;
+			} else {
+                $col = 4;
+            }
 			return strval( $col );
 		}
 

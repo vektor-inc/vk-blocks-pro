@@ -33,10 +33,10 @@ export const ColumnResponsive = (props) => {
     elm = (
         <InnerBlocks.Content />
     );
-  }
+	}
   return (
 		<div className={`swiper-container vk_slider_${clientId}`}>
-			<div className="swiper-wrapper">
+			<div className={`swiper-wrapper`}>
 				{elm}
 			</div>
 			<div className="swiper-button-next"></div>

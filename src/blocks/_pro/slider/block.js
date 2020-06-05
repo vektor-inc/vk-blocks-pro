@@ -61,9 +61,11 @@ registerBlockType("vk-blocks/slider", {
 		let beforeLength;
 		let afterLength;
 
+		let customClientId = clientId.replace(/-/g, '');
+
 		useEffect(() => {
 			updateBlockAttributes(clientId, {
-				clientId:clientId,
+				clientId:customClientId,
 			});
 		}, [])
 

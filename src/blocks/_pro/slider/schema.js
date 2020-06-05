@@ -51,4 +51,8 @@ export const schema = {
 		type: "string",
 		default: "",
 	},
+	activeControl: {
+		type: "string",
+		default: '{"slider": "center"}',
+	},
 };

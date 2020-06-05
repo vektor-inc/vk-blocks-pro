@@ -3,10 +3,11 @@ const { useState } = wp.element;
 const { Toolbar } = wp.components;
 
 export const AlignControl = props => {
-  const { setAttributes, schema, initial, component } = props;
+  const { setAttributes, schema, initial, component,direction  } = props;
   const [activeControl, setActiveControl] = useState(initial);
 
   function createAlignControl(align) {
+
     return {
       icon: `editor-align${align}`,
       title: __(`Align ${align}`, "vk-blocks"),
@@ -16,9 +17,16 @@ export const AlignControl = props => {
         setAttributes({ activeControl: JSON.stringify(schema) });
         setActiveControl(align);
       }
-    };
-  }
-  return (
-    <Toolbar controls={["left", "center", "right"].map(createAlignControl)} />
-  );
+		};
+	}
+
+	if(direction === "vertical"){
+		return (
+			<Toolbar controls={["top", "center", "bottom"].map(createAlignControl)} />
+		);
+	}else{
+		return (
+			<Toolbar controls={["left", "center", "right"].map(createAlignControl)} />
+		);
+	}
 };

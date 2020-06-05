@@ -34,8 +34,9 @@ registerBlockType("vk-blocks/slider-item", {
 	},
 
 	save(props) {
+		const align = JSON.parse(props.attributes.activeControl)
 		return (
-			<div className={`vk_slider_item swiper-slide`}>
+			<div className={`vk_slider_item swiper-slide vk_slider_item-align-vertical-${align.slider}`}>
 				<InnerBlocks.Content />
 			</div>
 		);

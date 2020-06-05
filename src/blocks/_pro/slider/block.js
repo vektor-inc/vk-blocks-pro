@@ -9,6 +9,7 @@ import classNames from "classnames";
 import { convertToGrid } from "../../_helper/convert-to-grid";
 import formatNum from "../../_helper/formatNum";
 import { AdvancedToggleControl } from "./../../../components/advanced-toggle-control";
+import {VerticalAlignControls} from "./../../../components/vertical-align-control"
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -171,6 +172,7 @@ registerBlockType("vk-blocks/slider", {
 							/>
 						</BaseControl>
 					</PanelBody>
+					<VerticalAlignControls {...props} keyArray={["slider"]}/>
 				</InspectorControls>
 				<ColumnResponsive
 					attributes={attributes}

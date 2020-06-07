@@ -77,7 +77,7 @@ $padding-xl: 3.5em;
 	// background-attachment は !important をつけておかないと
 	// 画面サイズ毎の指定が background に対してされていて attachment が無効化されるため !important を消さないこと
 	background-attachment: fixed !important;
-	background-size: cover;
+	background-size: cover !important;
 	// iPhone の時に fixed のままだとバグで反応せずに画像のcoverまで効かなくなって巨大な画像が表示されるので
 	// scroll で上書きする
 	@supports (-webkit-overflow-scrolling: touch) {

@@ -3,7 +3,7 @@
     font-family: "Font Awesome 5 Free";
     font-weight:bold;
     background: rgba(255,255,255,0.5);
-    padding: 15px 20px;
+    padding: 5px 10px;
     font-size: 20px;
 	color:rgba(0,0,0,0.5);
   }
@@ -17,7 +17,6 @@
   }
   .swiper-slide {
 	font-size: 18px;
-	background: #fff;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
@@ -35,11 +34,16 @@
 .swiper-button-prev::after {
 	@include swiper-button-font-awesome;
     content: "\f104";
-
+	@media (min-width: 992px){
+		padding: 15px 20px;
+	}
 }
 .swiper-button-next::after {
 	@include swiper-button-font-awesome;
-    content: "\f105";
+	content: "\f105";
+	@media (min-width: 992px){
+		padding: 15px 20px;
+	}
 }
 
 //button position
@@ -90,4 +94,9 @@
 .swiper-pagination-bullet-active {
     background: #000;
     opacity: 0.6;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets, 
+.swiper-pagination-custom, .swiper-pagination-fraction{
+	bottom: 15px;
 }

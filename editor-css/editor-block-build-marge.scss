@@ -936,49 +936,6 @@ ol {
 	text-align: center;
 }
 
-.alert{
-
-  padding: 1em;
-  margin: 1em 0;
-  border-radius: 3px;
-	p {
-		margin-bottom:0;
-	}
-
-  & + &{
-    margin-top: 2em;
-  }
-
-  a{
-    transition: color .3s linear, opacity .3s linear;
-    &:link, &:visited{
-      opacity: .8;
-      text-decoration: underline;
-    }
-    &:hover, &:visited{
-      opacity: 1;
-      text-decoration: none;
-    }
-  }
-
-  @each $var in (
-                  (success, #dff0d8,#3c763d,#d6e9c6),
-                  (info, #d9edf7,#31708f,#bce8f1),
-                  (warning, #fcf8e3,#8a6d3b,#faebcc),
-                  (danger, #f2dede,#a94442,#ebccd1),
-  ){
-    $class-name: nth($var, 1);
-    $color-bg: nth($var, 2);
-    $color: nth($var, 3);
-    $color-border :nth($var, 4);
-    &-#{$class-name}{
-      background-color: $color-bg;
-      color:$color;
-      border-color:$color-border;
-    }
-  }
-}
-
 .vk_balloon {
   display: flex;
   align-items: center;
@@ -1243,6 +1200,49 @@ ol {
 		max-width:96px;
 	}
 } // @media only screen and (max-width: 480px) {
+
+.alert{
+
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 3px;
+	p {
+		margin-bottom:0;
+	}
+
+  & + &{
+    margin-top: 2em;
+  }
+
+  a{
+    transition: color .3s linear, opacity .3s linear;
+    &:link, &:visited{
+      opacity: .8;
+      text-decoration: underline;
+    }
+    &:hover, &:visited{
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+
+  @each $var in (
+                  (success, #dff0d8,#3c763d,#d6e9c6),
+                  (info, #d9edf7,#31708f,#bce8f1),
+                  (warning, #fcf8e3,#8a6d3b,#faebcc),
+                  (danger, #f2dede,#a94442,#ebccd1),
+  ){
+    $class-name: nth($var, 1);
+    $color-bg: nth($var, 2);
+    $color: nth($var, 3);
+    $color-border :nth($var, 4);
+    &-#{$class-name}{
+      background-color: $color-bg;
+      color:$color;
+      border-color:$color-border;
+    }
+  }
+}
 
 :root {
 	--vk-color-border-red: #dc3545;
@@ -1793,6 +1793,23 @@ $color_dark: #343a40;
 	color: #fff;
 }
 
+/*      .qaItem
+/*-------------------------------------------*/
+.vk_faq { display:block; overflow:hidden;border-bottom:1px dotted #ccc; padding:0px 0px 25px; margin:25px 0px; width:100%; position: relative; }
+.vk_faq_title,
+.vk_faq_content {
+	border:none;padding-left: 35px;
+	&:before {
+		position: absolute;left:0;font-size:24px;line-height: 105%;
+	}
+}
+.vk_faq_title { margin-bottom:15px;font-size:18px;font-weight:700;
+  &:before { font-family:"areal";content:"Q ";color:#e50000; }
+}
+.vk_faq_content { margin:0px;
+  &:before { content:"A ";color:#337ab7;font-family: "" }
+}
+
 //*      .flowBox
 /*-------------------------------------------*/
 .vk_flow-arrow-on:after {
@@ -1822,23 +1839,6 @@ $color_dark: #343a40;
 	max-width:150px;
 	margin-left:15px;
 	box-sizing: border-box;
-}
-
-/*      .qaItem
-/*-------------------------------------------*/
-.vk_faq { display:block; overflow:hidden;border-bottom:1px dotted #ccc; padding:0px 0px 25px; margin:25px 0px; width:100%; position: relative; }
-.vk_faq_title,
-.vk_faq_content {
-	border:none;padding-left: 35px;
-	&:before {
-		position: absolute;left:0;font-size:24px;line-height: 105%;
-	}
-}
-.vk_faq_title { margin-bottom:15px;font-size:18px;font-weight:700;
-  &:before { font-family:"areal";content:"Q ";color:#e50000; }
-}
-.vk_faq_content { margin:0px;
-  &:before { content:"A ";color:#337ab7;font-family: "" }
 }
 
 /*-------------------------------------------*/
@@ -2395,6 +2395,88 @@ $xl-min: 1200px;
 }
 
 /*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
+.vk_table {
+	&-col-mobile1 {
+		@media( max-width: 575.98px){
+			th,
+			td {
+					display: block;
+			}
+			th {
+				background-color: rgba(0, 0, 0, 0.05);
+			}
+			// ストライプ指定の時の背景色をリセット
+			&.table-striped tbody {
+				tr:nth-of-type(odd) {
+					background: inherit;
+				}
+			}
+		} // @media( max-width: 575.98px){
+	} // &-col-mobile1 {
+}
+
+/*-------------------------------------------*/
+/* editor class
+/*-------------------------------------------*/
+.vk_simpleTable-edit{
+	.editor-inner-blocks,
+	.editor-block-list__layout,
+	.editor-block-list__block,
+	.editor-rich-text__editable,
+	.editor-block-list__block-edit{
+		padding:0;
+		margin:0;
+		width:100%;
+	}
+	& > .editor-inner-blocks{
+		margin-top:-1px; // th,td がHTML上ではdivの中になってしまう都合上、線が2pxになるためマイナスオフセット
+	}
+	.editor-block-list__block-edit{
+		height:100%;
+	}
+	.block-editor-block-list__insertion-point{
+		/* 上のセルに被るので選択しにくくなるのでデフォルトのマイナスオフセットを少し下げる */
+		top:-5px;
+	}
+	.editor-block-list__block-edit:before{
+		right:-0px;
+		left:-0px;
+		top:-0px;
+		bottom:-0px;
+		// border:1px solid #ff0000;
+	}
+	.editor-inner-blocks {
+		tr {
+			width:100%;
+			display: block;
+			border-bottom:1px solid #e5e5e5;
+			.editor-block-list__layout {
+				display: flex;
+				.editor-block-list__block {
+				}
+			}
+		}
+		th,
+		td {
+			padding: 0;
+			display: block;
+			width:100%;
+			border:none; // デフォルトでつけてくる線を消す
+			.editor-rich-text__editable{
+				padding: 14px;
+			}
+		}
+	}
+	// 編集画面のtableは HTML構造がカオスなので補正
+	&.table-striped > tbody > .editor-inner-blocks > .editor-block-list__layout > div:nth-of-type(odd) {
+			background-color: rgba(0, 0, 0, 0.05);
+	}
+}
+
+/*-------------------------------------------*/
 /* .vk_prBlocks
 /*-------------------------------------------*/
 .vk_prBlocks_item {
@@ -2548,88 +2630,6 @@ $xl-min: 1200px;
 /* CSS
 /*-------------------------------------------*/
 
-.vk_table {
-	&-col-mobile1 {
-		@media( max-width: 575.98px){
-			th,
-			td {
-					display: block;
-			}
-			th {
-				background-color: rgba(0, 0, 0, 0.05);
-			}
-			// ストライプ指定の時の背景色をリセット
-			&.table-striped tbody {
-				tr:nth-of-type(odd) {
-					background: inherit;
-				}
-			}
-		} // @media( max-width: 575.98px){
-	} // &-col-mobile1 {
-}
-
-/*-------------------------------------------*/
-/* editor class
-/*-------------------------------------------*/
-.vk_simpleTable-edit{
-	.editor-inner-blocks,
-	.editor-block-list__layout,
-	.editor-block-list__block,
-	.editor-rich-text__editable,
-	.editor-block-list__block-edit{
-		padding:0;
-		margin:0;
-		width:100%;
-	}
-	& > .editor-inner-blocks{
-		margin-top:-1px; // th,td がHTML上ではdivの中になってしまう都合上、線が2pxになるためマイナスオフセット
-	}
-	.editor-block-list__block-edit{
-		height:100%;
-	}
-	.block-editor-block-list__insertion-point{
-		/* 上のセルに被るので選択しにくくなるのでデフォルトのマイナスオフセットを少し下げる */
-		top:-5px;
-	}
-	.editor-block-list__block-edit:before{
-		right:-0px;
-		left:-0px;
-		top:-0px;
-		bottom:-0px;
-		// border:1px solid #ff0000;
-	}
-	.editor-inner-blocks {
-		tr {
-			width:100%;
-			display: block;
-			border-bottom:1px solid #e5e5e5;
-			.editor-block-list__layout {
-				display: flex;
-				.editor-block-list__block {
-				}
-			}
-		}
-		th,
-		td {
-			padding: 0;
-			display: block;
-			width:100%;
-			border:none; // デフォルトでつけてくる線を消す
-			.editor-rich-text__editable{
-				padding: 14px;
-			}
-		}
-	}
-	// 編集画面のtableは HTML構造がカオスなので補正
-	&.table-striped > tbody > .editor-inner-blocks > .editor-block-list__layout > div:nth-of-type(odd) {
-			background-color: rgba(0, 0, 0, 0.05);
-	}
-}
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-
 @mixin switchVisibility($pc, $tablet, $mobile) {
 	.vk_spacer {
 		.vk_spacer-display-pc {
@@ -2660,6 +2660,14 @@ $xl-min: 1200px;
 @media (min-width: 769px) {
 	@include switchVisibility(block, none, none);
 }
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+.vk_table-col-overflow {
+  white-space: nowrap !important;
+}
+/*# sourceMappingURL=style.scss.map */
 
 /*-------------------------------------------*/
 /* CSS
@@ -2838,10 +2846,6 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-.vk_table-col-overflow {
-  white-space: nowrap !important;
-}
-/*# sourceMappingURL=style.scss.map */
 
 /*-------------------------------------------*/
 /* CSS
@@ -2874,10 +2878,6 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 /* CSS
 /*-------------------------------------------*/
 
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-
 .vk_card {
   &_item {
     .vk_post_title.card-title {
@@ -2887,6 +2887,82 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
       font-size: 14px;
     }
   }
+}
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+.wp-block-vk-blocks-icon-card{
+	.vk_icon-card_item{
+		margin: 0 15px 15px 15px;
+	}
+}
+.vk_icon_card_item_summary {
+    margin-bottom: 0.5em;
+    line-height: 1.8em;
+}
+/*-------------------------------------------*/
+/* .vk_icon-card
+/*-------------------------------------------*/
+.vk_icon-card_item {
+	@media screen and (max-width: 992px) {
+		margin-bottom: 1.5em;
+	}
+}
+.vk_icon-card_item {
+	&_link {
+		color: #333;
+		&:hover {
+			color: #333;
+			text-decoration: none;
+		}
+	}
+	&_icon_outer {
+		display: block;
+		position: relative;
+		margin: 0 auto;
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+	}
+	&_icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateY(-50%) translateX(-50%);
+		font-size: 36px;
+		color: #fff;
+	}
+	&_title {
+		background-color: transparent;
+		margin-top: 0.9em;
+		margin-bottom: 0.6em;
+		font-size: 21px;
+		line-height: 1.4em;
+		border: none;
+		padding: 0;
+		&::before {
+			content: none;
+		}
+		&::after {
+			border: none;
+		}
+	}
+	&_image {
+		position: relative;
+		display: block;
+		width: 120px;
+		height: 120px;
+		margin: 0 auto;
+		overflow: hidden;
+		border-radius: 50%;
+		text-indent: -9999px;
+	}
+	&_summary {
+		margin-bottom: 0.5em;
+		text-align: center;
+		line-height: 1.8em;
+	}
 }
 
 
@@ -3009,82 +3085,6 @@ $color-danger: #b52727;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-.wp-block-vk-blocks-icon-card{
-	.vk_icon-card_item{
-		margin: 0 15px 15px 15px;
-	}
-}
-.vk_icon_card_item_summary {
-    margin-bottom: 0.5em;
-    line-height: 1.8em;
-}
-/*-------------------------------------------*/
-/* .vk_icon-card
-/*-------------------------------------------*/
-.vk_icon-card_item {
-	@media screen and (max-width: 992px) {
-		margin-bottom: 1.5em;
-	}
-}
-.vk_icon-card_item {
-	&_link {
-		color: #333;
-		&:hover {
-			color: #333;
-			text-decoration: none;
-		}
-	}
-	&_icon_outer {
-		display: block;
-		position: relative;
-		margin: 0 auto;
-		width: 80px;
-		height: 80px;
-		border-radius: 50%;
-	}
-	&_icon {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translateY(-50%) translateX(-50%);
-		font-size: 36px;
-		color: #fff;
-	}
-	&_title {
-		background-color: transparent;
-		margin-top: 0.9em;
-		margin-bottom: 0.6em;
-		font-size: 21px;
-		line-height: 1.4em;
-		border: none;
-		padding: 0;
-		&::before {
-			content: none;
-		}
-		&::after {
-			border: none;
-		}
-	}
-	&_image {
-		position: relative;
-		display: block;
-		width: 120px;
-		height: 120px;
-		margin: 0 auto;
-		overflow: hidden;
-		border-radius: 50%;
-		text-indent: -9999px;
-	}
-	&_summary {
-		margin-bottom: 0.5em;
-		text-align: center;
-		line-height: 1.8em;
-	}
-}
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
 
 .vk_slider_item {
 	display: flex;
@@ -3118,6 +3118,7 @@ $color-danger: #b52727;
 .swiper-container {
 	width: 100%;
 	height: 100%;
+	position: relative;
   }
   .swiper-slide {
 	font-size: 18px;
@@ -3151,6 +3152,13 @@ $color-danger: #b52727;
 }
 
 //button position
+//管理画面対策
+.swiper-button-next, .swiper-button-prev{
+	position: absolute;
+	top:50%;
+	z-index: 10;
+}
+
 .swiper-button-prev,
 .swiper-container-rtl .swiper-button-next {
     left: 20px;
@@ -3204,6 +3212,16 @@ $color-danger: #b52727;
 .swiper-pagination-custom, .swiper-pagination-fraction{
 	bottom: 15px;
 }
+
+//管理画面ではbutton非表示
+.edit-post-visual-editor.editor-styles-wrapper .swiper-button-prev,
+.edit-post-visual-editor.editor-styles-wrapper .swiper-button-next{
+	display: none;
+}
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -3264,10 +3282,6 @@ $color-danger: #b52727;
 		bottom: 4px;
 	}
 }
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
 
 /*-------------------------------------------*/
 /* CSS

@@ -14,6 +14,7 @@
 .swiper-container {
 	width: 100%;
 	height: 100%;
+	position: relative;
   }
   .swiper-slide {
 	font-size: 18px;
@@ -47,6 +48,13 @@
 }
 
 //button position
+//管理画面対策
+.swiper-button-next, .swiper-button-prev{
+	position: absolute;
+	top:50%;
+	z-index: 10;
+}
+
 .swiper-button-prev,
 .swiper-container-rtl .swiper-button-next {
     left: 20px;
@@ -99,4 +107,10 @@
 .swiper-container-horizontal>.swiper-pagination-bullets, 
 .swiper-pagination-custom, .swiper-pagination-fraction{
 	bottom: 15px;
+}
+
+//管理画面ではbutton非表示
+.edit-post-visual-editor.editor-styles-wrapper .swiper-button-prev,
+.edit-post-visual-editor.editor-styles-wrapper .swiper-button-next{
+	display: none;
 }

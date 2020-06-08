@@ -1,3 +1,13 @@
+@mixin swiper-button-font-awesome {
+    position: relative;
+    font-family: "Font Awesome 5 Free";
+    font-weight:bold;
+    background: rgba(255,255,255,0.5);
+    padding: 15px 20px;
+    font-size: 20px;
+	color:rgba(0,0,0,0.5);
+  }
+
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -6,7 +16,6 @@
 	height: 100%;
   }
   .swiper-slide {
-	text-align: center;
 	font-size: 18px;
 	background: #fff;
 	display: flex;
@@ -20,3 +29,59 @@
 		color: inherit;
 	  }
   }
+
+
+//buttonデザイン
+.swiper-button-prev::after {
+	@include swiper-button-font-awesome;
+    content: "\f104";
+
+}
+.swiper-button-next::after {
+	@include swiper-button-font-awesome;
+    content: "\f105";
+}
+
+//buttonの位置
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+    left: 20px;
+    right: auto
+}
+ 
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+    right: 20px;
+    left: auto
+}
+
+//buttonのanimation
+.swiper-button-prev:hover:after{
+    animation: arrow_prev .5s ease-out forwards;
+}
+@keyframes arrow_prev {
+    0% {
+      right: 0px;
+    }
+    50% {
+      right: 3px;
+    }
+    100% {
+       right: 0;
+    }
+}
+  
+.swiper-button-next:hover:after{
+   animation: arrow_next .5s ease-out forwards;
+}
+@keyframes arrow_next {
+    0% {
+      left: 0px;
+    }
+    50% {
+      left: 3px;
+    }
+    100% {
+      left: 0;
+    }
+}

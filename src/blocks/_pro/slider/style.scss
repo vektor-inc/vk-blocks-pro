@@ -31,7 +31,7 @@
   }
 
 
-//buttonデザイン
+//button design
 .swiper-button-prev::after {
 	@include swiper-button-font-awesome;
     content: "\f104";
@@ -42,7 +42,7 @@
     content: "\f105";
 }
 
-//buttonの位置
+//button position
 .swiper-button-prev,
 .swiper-container-rtl .swiper-button-next {
     left: 20px;
@@ -55,7 +55,7 @@
     left: auto
 }
 
-//buttonのanimation
+//button animation
 .swiper-button-prev:hover:after{
     animation: arrow_prev .5s ease-out forwards;
 }
@@ -84,4 +84,10 @@
     100% {
       left: 0;
     }
+}
+
+//pagination
+.swiper-pagination-bullet-active {
+    background: #000;
+    opacity: 0.6;
 }

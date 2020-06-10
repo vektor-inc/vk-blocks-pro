@@ -97,12 +97,6 @@ registerBlockType("vk-blocks/slider", {
 			<Fragment>
 				<InspectorControls>
 					<PanelBody
-						title={__("Layout Columns", "vk-blocks")}
-						initialOpen={false}
-					>
-						<ColumnLayout {...props} />
-					</PanelBody>
-					<PanelBody
 						title={__("Height", "vk-blocks")}
 						initialOpen={false}
 					>

@@ -5,19 +5,19 @@ export const schema = {
   },
   col_sm: {
     type: "number",
-    default: 2,
+    default: 1,
   },
   col_md: {
     type: "number",
-    default: 3,
+    default: 1,
   },
   col_lg: {
     type: "number",
-    default: 3,
+    default: 1,
   },
   col_xl: {
     type: "number",
-    default: 3,
+    default: 1,
   },
 	activeControl: {
 		type: "string",

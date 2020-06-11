@@ -131,14 +131,24 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 
 				$loop .= '<div class="vk_posts ' . esc_attr( $loop_outer_class ) . ' ' . esc_attr( implode( ' ', $hidden_class ) ) . '">';
 
+				global $vk_posts_loop_count;
+				$vk_posts_loop_count = 0;
+
 				while ( $wp_query->have_posts() ) {
+
+					$vk_posts_loop_count++;
+
 					$wp_query->the_post();
 					global $post;
 					$loop .= self::get_view( $post, $options );
+
+					$loop .= apply_filters( 'vk_posts_loop_middle', '', $options );
+
 				} // while ( have_posts() ) {
-				endif;
 
 				$loop .= '</div>';
+
+			endif;
 
 			wp_reset_postdata();
 			return $loop;
@@ -356,6 +366,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 		/*-------------------------------------------*/
 
 		public static function get_patterns() {
+
 			$patterns = array(
 				'card'            => array(
 					'label'             => __( 'Card', 'vk-blocks' ),

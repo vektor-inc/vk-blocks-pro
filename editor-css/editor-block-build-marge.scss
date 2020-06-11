@@ -936,49 +936,6 @@ ol {
 	text-align: center;
 }
 
-.alert{
-
-  padding: 1em;
-  margin: 1em 0;
-  border-radius: 3px;
-	p {
-		margin-bottom:0;
-	}
-
-  & + &{
-    margin-top: 2em;
-  }
-
-  a{
-    transition: color .3s linear, opacity .3s linear;
-    &:link, &:visited{
-      opacity: .8;
-      text-decoration: underline;
-    }
-    &:hover, &:visited{
-      opacity: 1;
-      text-decoration: none;
-    }
-  }
-
-  @each $var in (
-                  (success, #dff0d8,#3c763d,#d6e9c6),
-                  (info, #d9edf7,#31708f,#bce8f1),
-                  (warning, #fcf8e3,#8a6d3b,#faebcc),
-                  (danger, #f2dede,#a94442,#ebccd1),
-  ){
-    $class-name: nth($var, 1);
-    $color-bg: nth($var, 2);
-    $color: nth($var, 3);
-    $color-border :nth($var, 4);
-    &-#{$class-name}{
-      background-color: $color-bg;
-      color:$color;
-      border-color:$color-border;
-    }
-  }
-}
-
 .vk_balloon {
   display: flex;
   align-items: center;
@@ -1243,6 +1200,49 @@ ol {
 		max-width:96px;
 	}
 } // @media only screen and (max-width: 480px) {
+
+.alert{
+
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 3px;
+	p {
+		margin-bottom:0;
+	}
+
+  & + &{
+    margin-top: 2em;
+  }
+
+  a{
+    transition: color .3s linear, opacity .3s linear;
+    &:link, &:visited{
+      opacity: .8;
+      text-decoration: underline;
+    }
+    &:hover, &:visited{
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+
+  @each $var in (
+                  (success, #dff0d8,#3c763d,#d6e9c6),
+                  (info, #d9edf7,#31708f,#bce8f1),
+                  (warning, #fcf8e3,#8a6d3b,#faebcc),
+                  (danger, #f2dede,#a94442,#ebccd1),
+  ){
+    $class-name: nth($var, 1);
+    $color-bg: nth($var, 2);
+    $color: nth($var, 3);
+    $color-border :nth($var, 4);
+    &-#{$class-name}{
+      background-color: $color-bg;
+      color:$color;
+      border-color:$color-border;
+    }
+  }
+}
 
 :root {
 	--vk-color-border-red: #dc3545;
@@ -2851,10 +2851,6 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 /* CSS
 /*-------------------------------------------*/
 
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-
 .vk_card {
   &_item {
     .vk_post_title.card-title {
@@ -2865,11 +2861,16 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
     }
   }
 }
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 
 .vk_childPage {
 	margin-top: 2.5rem;
 }
 
+
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -2888,7 +2889,6 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
     }
   }
 }
-
 
 /*-------------------------------------------*/
 /* CSS
@@ -3096,10 +3096,24 @@ $color-danger: #b52727;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+
 .swiper-container {
 	width: 100%;
 	height: 100%;
-	position: relative;
+  position: relative;
+    &.vk_width-full{ //全幅
+      margin: 0 calc(50% - 50vw);
+      width: 100vw;
+      .vk_slider_item{
+        width: 100vw !important;
+        .wp-block-image.size-full {
+          width: 100vw !important;
+          img{
+            width: 100%;
+          }
+        }
+      }
+    }
   }
   .swiper-slide {
 	font-size: 18px;
@@ -3203,26 +3217,6 @@ $color-danger: #b52727;
 /* CSS
 /*-------------------------------------------*/
 
-.vk_slider_item {
-	display: flex;
-}
-
-.vk_slider_item-align-vertical-{
-	&top{
-		justify-content: flex-start;
-	}
-	&center{
-		justify-content: center;
-	}
-	&bottom{
-		justify-content: flex-end;
-	}
-}
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -3287,143 +3281,20 @@ $color-danger: #b52727;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-$toc-left-margin: 1rem;
 
-.vk_tableOfContents {
-	margin-top: 3.5em;
-	margin-bottom: 3.5em;
-	position: relative;
-	&-style-default {
-		border: 3px solid rgba(0, 0, 0, 0.04);
-		box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 1);
-		background-color: rgba(0, 0, 0, 0.015);
-		padding: 2rem 1.5rem;
-		@media (min-width: 576px) {
-			padding: 2rem 3rem;
-		}
+.vk_slider_item {
+	display: flex;
+}
+
+.vk_slider_item-align-vertical-{
+	&top{
+		justify-content: flex-start;
 	}
-	&_title {
-		text-align: center;
-		font-size: 1.2em;
-		letter-spacing: 0.5em;
-		margin-left: 0.5em;
+	&center{
+		justify-content: center;
 	}
-	li {
-		margin: 0;
-	}
-	&_list {
-		padding: 0;
-		margin: 0;
-		&_item {
-			list-style: none;
-			border-bottom: 1px solid #e5e5e5;
-			padding: 0.8rem 0;
-			&-h-2 {
-				// padding-left:$toc-left-margin;
-			}
-			&-h-3 {
-				padding-left: $toc-left-margin * 1;
-			}
-			&-h-4 {
-				padding-left: $toc-left-margin * 2;
-			}
-			&-h-5 {
-				padding-left: $toc-left-margin * 3;
-			}
-			&-h-6 {
-				padding-left: $toc-left-margin * 4;
-			}
-			&_link {
-				color: #333;
-				border-bottom: 1px solid #ccc;
-				&:hover {
-					text-decoration: none;
-					border-bottom: none;
-				}
-			}
-		}
-	}
-	input {
-		position: absolute;
-		opacity: 0;
-		z-index: -1;
-	}
-	&_openCloseBtn {
-		cursor: pointer;
-		font-size: 0.8em;
-		letter-spacing: 2px;
-		line-height: 1;
-		text-align: center;
-		display: block;
-		margin: 0.5em auto 0;
-		width: 6em;
-		border: 1px solid #999;
-		padding: 3px 1em 2px;
-	}
-	.button_status-open {
-		&::before {
-			content: "CLOSE";
-		}
-	}
-	.button_status-close {
-		&::before {
-			content: "OPEN";
-		}
-	}
-	.button_status {
-		&::before {
-			color: #666;
-			font-size: 0.8em;
-			border-radius: 2px;
-			display: inline-block;
-			text-align: center;
-			margin: auto;
-			width: auto;
-			transition: all 0.35s;
-		}
-	}
-	/* Accordion styles */
-	.tab {
-    width: 100%;
-    overflow: hidden;
-		&_content-open {
-			max-height: auto;
-			padding: 1em;
-			transition: all 0.35s;
-		}
-		&_content-close {
-			max-height: 0;
-			padding: 0 1em;
-			transition: all 0.35s;
-		}
-		&-close {
-			display: flex;
-			justify-content: flex-end;
-			padding: 1em;
-			font-size: 0.75em;
-			cursor: pointer;
-		}
-	}
-	// :checked
-	input:checked {
-		~ .button_status-open {
-			&::before {
-				content: "OPEN";
-			}
-		}
-		~ .button_status-close {
-			&::before {
-				content: "CLOSE";
-			}
-		}
-		~ .tab_content-open {
-			max-height: 0;
-			padding: 0 1em;
-		}
-		~ .tab_content-close {
-			max-height: 100vh;
-			padding: 1em;
-		}
+	&bottom{
+		justify-content: flex-end;
 	}
 }
 
@@ -3573,6 +3444,149 @@ $toc-left-margin: 1rem;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+$toc-left-margin: 1rem;
+
+.vk_tableOfContents {
+	margin-top: 3.5em;
+	margin-bottom: 3.5em;
+	position: relative;
+	&-style-default {
+		border: 3px solid rgba(0, 0, 0, 0.04);
+		box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 1);
+		background-color: rgba(0, 0, 0, 0.015);
+		padding: 2rem 1.5rem;
+		@media (min-width: 576px) {
+			padding: 2rem 3rem;
+		}
+	}
+	&_title {
+		text-align: center;
+		font-size: 1.2em;
+		letter-spacing: 0.5em;
+		margin-left: 0.5em;
+	}
+	li {
+		margin: 0;
+	}
+	&_list {
+		padding: 0;
+		margin: 0;
+		&_item {
+			list-style: none;
+			border-bottom: 1px solid #e5e5e5;
+			padding: 0.8rem 0;
+			&-h-2 {
+				// padding-left:$toc-left-margin;
+			}
+			&-h-3 {
+				padding-left: $toc-left-margin * 1;
+			}
+			&-h-4 {
+				padding-left: $toc-left-margin * 2;
+			}
+			&-h-5 {
+				padding-left: $toc-left-margin * 3;
+			}
+			&-h-6 {
+				padding-left: $toc-left-margin * 4;
+			}
+			&_link {
+				color: #333;
+				border-bottom: 1px solid #ccc;
+				&:hover {
+					text-decoration: none;
+					border-bottom: none;
+				}
+			}
+		}
+	}
+	input {
+		position: absolute;
+		opacity: 0;
+		z-index: -1;
+	}
+	&_openCloseBtn {
+		cursor: pointer;
+		font-size: 0.8em;
+		letter-spacing: 2px;
+		line-height: 1;
+		text-align: center;
+		display: block;
+		margin: 0.5em auto 0;
+		width: 6em;
+		border: 1px solid #999;
+		padding: 3px 1em 2px;
+	}
+	.button_status-open {
+		&::before {
+			content: "CLOSE";
+		}
+	}
+	.button_status-close {
+		&::before {
+			content: "OPEN";
+		}
+	}
+	.button_status {
+		&::before {
+			color: #666;
+			font-size: 0.8em;
+			border-radius: 2px;
+			display: inline-block;
+			text-align: center;
+			margin: auto;
+			width: auto;
+			transition: all 0.35s;
+		}
+	}
+	/* Accordion styles */
+	.tab {
+    width: 100%;
+    overflow: hidden;
+		&_content-open {
+			max-height: auto;
+			padding: 1em;
+			transition: all 0.35s;
+		}
+		&_content-close {
+			max-height: 0;
+			padding: 0 1em;
+			transition: all 0.35s;
+		}
+		&-close {
+			display: flex;
+			justify-content: flex-end;
+			padding: 1em;
+			font-size: 0.75em;
+			cursor: pointer;
+		}
+	}
+	// :checked
+	input:checked {
+		~ .button_status-open {
+			&::before {
+				content: "OPEN";
+			}
+		}
+		~ .button_status-close {
+			&::before {
+				content: "CLOSE";
+			}
+		}
+		~ .tab_content-open {
+			max-height: 0;
+			padding: 0 1em;
+		}
+		~ .tab_content-close {
+			max-height: 100vh;
+			padding: 1em;
+		}
+	}
+}
+
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/

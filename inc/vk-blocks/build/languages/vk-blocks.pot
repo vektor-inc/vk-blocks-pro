@@ -136,7 +136,6 @@ msgid "Grid Column"
 msgstr ""
 
 #: src/blocks/_pro/grid-column/block.js:85
-#: src/blocks/_pro/slider/block.js:100
 msgid "Layout Columns"
 msgstr ""
 
@@ -201,7 +200,6 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card/block.js:100
 #: src/components/card-align-control/index.js:29
-#: src/components/vertical-align-control/index.js:38
 msgid "Align"
 msgstr ""
 
@@ -452,7 +450,7 @@ msgstr ""
 msgid "Post list"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/block.js:28
+#: src/blocks/_pro/slider-item/block.js:29
 msgid "Slider Item"
 msgstr ""
 
@@ -520,7 +518,7 @@ msgstr ""
 msgid "Delay"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:48
+#: src/blocks/_pro/slider/block.js:46
 msgid "Slider"
 msgstr ""
 

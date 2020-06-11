@@ -34,9 +34,5 @@ export const schema = {
 	width:{
 		type: "string",
 		default: "",
-	},
-	verticalAlignment: {
-		type: 'string',
-		default: "center",
 	}
 };

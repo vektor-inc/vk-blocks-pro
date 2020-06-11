@@ -12,7 +12,7 @@ import { AdvancedToggleControl } from "./../../../components/advanced-toggle-con
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { Fragment, useEffect } = wp.element;
-const { InspectorControls, BlockControls, BlockAlignmentToolbar, BlockVerticalAlignmentToolbar} = wp.blockEditor;
+const { InspectorControls, BlockControls, BlockAlignmentToolbar} = wp.blockEditor;
 const { select, dispatch } = wp.data;
 const { RangeControl, PanelBody, BaseControl, SelectControl, TextControl } = wp.components;
 const { createHigherOrderComponent } = wp.compose;
@@ -54,7 +54,7 @@ registerBlockType("vk-blocks/slider", {
 
 	edit(props) {
 		const { attributes, setAttributes, className, clientId } = props;
-		const { unit, pc, tablet, mobile, autoPlay, autoPlayDelay, navigation, width, verticalAlignment } = attributes;
+		const { unit, pc, tablet, mobile, autoPlay, autoPlayDelay, navigation, width } = attributes;
 		const { getBlocksByClientId } = select("core/block-editor");
 		const { updateBlockAttributes } = dispatch("core/block-editor");
 
@@ -90,8 +90,6 @@ registerBlockType("vk-blocks/slider", {
 				afterLength = beforeLength;
 			}
 		}
-
-		console.log(width)
 		return (
 			<Fragment>
 				<BlockControls>
@@ -101,10 +99,6 @@ registerBlockType("vk-blocks/slider", {
 							setAttributes( { width: nextWidth } )
 						}
 						controls={ [ 'wide', 'full' ] }
-					/>
-					<BlockVerticalAlignmentToolbar
-						onChange={  ( alignment ) => setAttributes( { verticalAlignment: alignment } ) }
-						value={ verticalAlignment }
 					/>
 				</BlockControls>
 				<InspectorControls>
@@ -180,27 +174,6 @@ registerBlockType("vk-blocks/slider", {
 								type={"number"}
 							/>
 						</BaseControl>
-					</PanelBody>
-					<PanelBody
-						title={ __("Align", "vk-blocks") }
-						initialOpen={ false }
-					>
-						<BlockVerticalAlignmentToolbar
-							onChange={  ( alignment ) => setAttributes( { verticalAlignment: alignment } ) }
-							value={ verticalAlignment }
-						/>
-					</PanelBody>
-					<PanelBody
-						title={ __("Width", "vk-blocks") }
-						initialOpen={ false }
-					>
-						<BlockAlignmentToolbar
-							value={ width }
-							onChange={ ( nextWidth ) =>
-								setAttributes( { width: nextWidth } )
-							}
-							controls={ [ 'wide', 'full' ] }
-						/>
 					</PanelBody>
 				</InspectorControls>
 				<ColumnResponsive

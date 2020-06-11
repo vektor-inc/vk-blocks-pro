@@ -19,8 +19,8 @@ export const schema = {
     type: "number",
     default: 1,
   },
-	activeControl: {
-		type: "string",
-		default: '{"slider": "center"}',
-	},
+	verticalAlignment: {
+		type: 'string',
+		default: "center",
+	}
 };

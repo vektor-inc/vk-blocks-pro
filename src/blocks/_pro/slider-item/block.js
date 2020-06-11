@@ -5,7 +5,8 @@
 import { schema } from "./schema";
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { InnerBlocks } = wp.blockEditor;
+const { Fragment } = wp.element;
+const { InnerBlocks, BlockControls, BlockVerticalAlignmentToolbar} = wp.blockEditor;
 
 const BlockIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 576">
@@ -35,18 +36,26 @@ registerBlockType("vk-blocks/slider-item", {
 	},
 
 	edit(props) {
-		const { className } = props;
+		const { className, attributes, setAttributes } = props;
+		const { verticalAlignment } = attributes;
 		return (
-			<div className={`${className}`}>
-				<InnerBlocks />
-			</div>
+			<Fragment>
+				<BlockControls>
+					<BlockVerticalAlignmentToolbar
+						onChange={  ( alignment ) => setAttributes( { verticalAlignment: alignment } ) }
+						value={ verticalAlignment }
+					/>
+				</BlockControls>
+				<div className={`${className} vk_align-${verticalAlignment}`}>
+					<InnerBlocks />
+				</div>
+			</Fragment>
 		);
 	},
 
 	save(props) {
-		const align = JSON.parse(props.attributes.activeControl)
 		return (
-			<div className={`vk_slider_item swiper-slide vk_slider_item-align-vertical-${align.slider}`}>
+			<div className={`vk_slider_item swiper-slide vk_align-${props.attributes.verticalAlignment}`}>
 				<InnerBlocks.Content />
 			</div>
 		);

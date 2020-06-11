@@ -4,12 +4,10 @@
  */
 import { ColumnResponsive } from "./component";
 import { schema } from "./schema";
-import { ColumnLayout } from "../../../components/column-layout";
 import classNames from "classnames";
 import { convertToGrid } from "../../_helper/convert-to-grid";
 import formatNum from "../../_helper/formatNum";
 import { AdvancedToggleControl } from "./../../../components/advanced-toggle-control";
-import {VerticalAlignControls} from "./../../../components/vertical-align-control"
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;

@@ -1,18 +1,37 @@
 const { InnerBlocks } = wp.editor;
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { Component, Fragment } = wp.element;
+import classNames from "classnames";
 
 export const ColumnResponsive = (props) => {
 
 	const for_ = props.for_;
 	const attributes = props.attributes;
-	const {navigation,clientId} = attributes;
+	const {navigation,clientId,width,verticalAlignment} = attributes;
   let innerClass = "";
   const className = props.className;
   const containerClass = " vk_grid-column";
-  let elm;
+	let elm;
+	let alignClass;
+	let alignClassVertical;
   const ALLOWED_BLOCKS = [["vk-blocks/slider-item"]];
-  const TEMPLATE = ALLOWED_BLOCKS;
+	const TEMPLATE = ALLOWED_BLOCKS;
+
+	if("full" === width){
+		alignClass = "vk_width-full"
+	}else if("wide" === width){
+		alignClass = "vk_width-wide"
+	}else{
+		alignClass = "vk_width"
+	}
+
+	if("top" === verticalAlignment){
+		alignClassVertical = "vk_align-top"
+	}else if("center" === verticalAlignment){
+		alignClassVertical = "vk_align-center"
+	}else if("bottom" === verticalAlignment){
+		alignClassVertical = "vk_align-bottom"
+	}
 
   //編集画面とサイト上の切り替え
   if (for_ === "edit") {
@@ -35,7 +54,7 @@ export const ColumnResponsive = (props) => {
     );
 	}
   return (
-		<div className={`swiper-container vk_slider_${clientId}`}>
+		<div className={classNames(`swiper-container vk_slider_${clientId}`, alignClass, alignClassVertical)}>
 			<div className={`swiper-wrapper`}>
 				{elm}
 			</div>

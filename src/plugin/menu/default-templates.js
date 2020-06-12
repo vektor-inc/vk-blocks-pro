@@ -17,11 +17,11 @@ const defaultTemplates = [
 		<div class="wp-block-vk-blocks-outer vk_outer vk_outer-width-full vk_outer-paddingLR-none vk_outer-paddingVertical-none vk_outer-bgPosition-normal" style="background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://www.vektor-inc.co.jp/vk-blocks-tmpl-images/programming-942487_1920.jpg);border:0px none #000;border-radius:0px"><div class="vk_outer_container"><!-- wp:vk-blocks/spacer {"unit":"rem","pc":4.5,"tablet":4.5,"mobile":4.5} -->
 		<div class="vk_spacer"><div class="vk_spacer-display-pc" style="height:4.5rem"></div><div class="vk_spacer-display-tablet" style="height:4.5rem"></div><div class="vk_spacer-display-mobile" style="height:4.5rem"></div></div>
 		<!-- /wp:vk-blocks/spacer -->
-	
+
 		<!-- wp:vk-blocks/pr-content {"titleColor":"#eeeeee","contentColor":"#eeeeee","url":"https://example.com","buttonType":"1","buttonColorCustom":"#eeeeee","Image":"https://www.vektor-inc.co.jp/vk-blocks-tmpl-images/device_01.png","layout":"right","fontAwesomeIconBefore":"fas fa-arrow-circle-right","fontAwesomeIconAfter":""} -->
 		<div class="wp-block-vk-blocks-pr-content vk_prContent vk_prContent-layout-imageRight"><div class="col-sm-6 vk_prContent_colImg"><img class="vk_prContent_colImg_image" src="https://www.vektor-inc.co.jp/vk-blocks-tmpl-images/device_01.png" alt="画像をアップロード" style="border:none"/></div><div class="col-sm-6 vk_prContent_colTxt"><h3 class="vk_prContent_colTxt_title" style="color:#eeeeee">自社のコンセプトやキャッチコピーが入ります。</h3><p class="vk_prContent_colTxt_text" style="color:#eeeeee">この部分には、自社について説明が入ります。<br>自社のコンセプトや理念など、大切にしていることについて説明しましょう。お客様に一番伝えたいことを書くことをおススメします。</p><div class="vk_button vk_button-color-custom"><a href="https://example.com" class="btn btn-block vk_button_link vk_prContent_colTxt_btn btn-primary" style="background-color:transparent;border:1px solid #eeeeee;color:#eeeeee" rel="noopener noreferrer"><i class="fas fa-arrow-circle-right vk_button_link_before"></i><span class="vk_button_link_txt">さらに詳しく</span></a></div></div></div>
 		<!-- /wp:vk-blocks/pr-content -->
-		
+
 		<!-- wp:vk-blocks/spacer {"unit":"rem","pc":2,"tablet":4,"mobile":4} -->
 		<div class="vk_spacer"><div class="vk_spacer-display-pc" style="height:2rem"></div><div class="vk_spacer-display-tablet" style="height:4rem"></div><div class="vk_spacer-display-mobile" style="height:4rem"></div></div>
 		<!-- /wp:vk-blocks/spacer --></div></div>
@@ -97,12 +97,22 @@ const defaultTemplates = [
 		`,
 	},
 	{
-		name: "PR Blocks Set",
+		name: "Icon Card Set",
 		icon: "",
-		content: `<!-- wp:vk-blocks/outer {"bgColor":"#ffffff","outerWidth":"full","opacity":1} -->
-		<div class="wp-block-vk-blocks-outer vk_outer vk_outer-width-full vk_outer-paddingLR-none vk_outer-paddingVertical-use vk_outer-bgPosition-normal" style="background:linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));border:0px none #000;border-radius:0px"><div class="vk_outer_container"><!-- wp:vk-blocks/pr-blocks {"url1":"/service/","icon1":"far fa-file-alt","color1":"#337ab7","bgType1":"1","url2":"/company/","icon2":"far fa-building","color2":"#337ab7","bgType2":"1","url3":"/recruit/","icon3":"fas fa-users","color3":"#337ab7","bgType3":"1"} -->
-		<div class="wp-block-vk-blocks-pr-blocks vk_prBlocks row"><div class="vk_prBlocks_item col-sm-4"><a href="/service/" class="vk_prBlocks_item_link" target="_self" rel="noopener noreferrer"><div class="vk_prBlocks_item_icon_outer" style="background-color:transparent;border:1px solid #337ab7"><i class="far fa-file-alt vk_prBlocks_item_icon" style="color:#337ab7"></i></div><h3 class="vk_prBlocks_item_title vk_prBlocks_item_title-1"> サービス案内</h3><p class="vk_prBlocks_item_summary vk_prBlocks_item_summary-1">弊社が提供するサービス＆ソリューションについてご紹介しています。経験豊富なスタッフがこだわりを持って取り組んでいます。</p></a></div><div class="vk_prBlocks_item col-sm-4"><a href="/company/" class="vk_prBlocks_item_link" target="_self" rel="noopener noreferrer"><div class="vk_prBlocks_item_icon_outer" style="background-color:transparent;border:1px solid #337ab7"><i class="far fa-building vk_prBlocks_item_icon" style="color:#337ab7"></i></div><h3 class="vk_prBlocks_item_title vk_prBlocks_item_title-2">会社案内</h3><p class="vk_prBlocks_item_summary vk_prBlocks_item_summary-2">弊社代表挨拶や会社の基本情報について記載しています。また、弊社の歴史なども紹介していますので是非ご覧ください。</p></a></div><div class="vk_prBlocks_item col-sm-4"><a href="/recruit/" class="vk_prBlocks_item_link" target="_self" rel="noopener noreferrer"><div class="vk_prBlocks_item_icon_outer" style="background-color:transparent;border:1px solid #337ab7"><i class="fas fa-users vk_prBlocks_item_icon" style="color:#337ab7"></i></div><h3 class="vk_prBlocks_item_title vk_prBlocks_item_title-3">採用情報</h3><p class="vk_prBlocks_item_summary vk_prBlocks_item_summary-3">株式会社サンプルでは一緒に働く仲間を募集しています。自分で考えていろいろな事にチャレンジできるやりがいのある仕事です。</p></a></div></div>
-		<!-- /wp:vk-blocks/pr-blocks --></div></div>
+		content: `<!-- wp:vk-blocks/outer {"bgColor":"#ffffff","outerWidth":"full","opacity":1,"clientId":"c0a133ef-fa45-4fba-bfd2-554fcb772305"} -->
+		<div class="vkb-outer-c0a133ef-fa45-4fba-bfd2-554fcb772305 wp-block-vk-blocks-outer vk_outer vk_outer-width-full vk_outer-paddingLR-none vk_outer-paddingVertical-use vk_outer-bgPosition-normal" style="border:0px none #000;border-radius:0px"><style>.vkb-outer-c0a133ef-fa45-4fba-bfd2-554fcb772305{background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1))}!important;</style><div><div class="vk_outer_container"><!-- wp:vk-blocks/icon-card -->
+		<div class="vk_posts wp-block-vk-blocks-icon-card"><!-- wp:vk-blocks/icon-card-item {"url":"/service/","icon":"far fa-file-alt","color":"#337ab7"} -->
+		<div class="wp-block-vk-blocks-icon-card-item vk_post vk_icon-card_item vk_post-col-xs-12 vk_post-col-sm-6 vk_post-col-md-4 vk_post-col-lg-4 vk_post-col-xl-4"><a href="/service/" class="vk_icon-card_item_link" target="_self" rel="noopener noreferrer"><div class="vk_icon-card_item_icon_outer" style="background-color:transparent;border:1px solid #337ab7"><i class="far fa-file-alt vk_icon-card_item_icon" style="color:#337ab7"></i></div><h3 class="vk_icon-card_item_title vk_icon-card_item_title has-text-align-center">サービス案内</h3><p class="vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-center">弊社が提供するサービス＆ソリューションについてご紹介しています。経験豊富なスタッフがこだわりを持って取り組んでいます。</p></a></div>
+		<!-- /wp:vk-blocks/icon-card-item -->
+
+		<!-- wp:vk-blocks/icon-card-item {"url":"/company/","icon":"far fa-building","color":"#337ab7"} -->
+		<div class="wp-block-vk-blocks-icon-card-item vk_post vk_icon-card_item vk_post-col-xs-12 vk_post-col-sm-6 vk_post-col-md-4 vk_post-col-lg-4 vk_post-col-xl-4"><a href="/company/" class="vk_icon-card_item_link" target="_self" rel="noopener noreferrer"><div class="vk_icon-card_item_icon_outer" style="background-color:transparent;border:1px solid #337ab7"><i class="far fa-building vk_icon-card_item_icon" style="color:#337ab7"></i></div><h3 class="vk_icon-card_item_title vk_icon-card_item_title has-text-align-center">会社案内</h3><p class="vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-center">弊社代表挨拶や会社の基本情報について記載しています。また、弊社の歴史なども紹介していますので是非ご覧ください。</p></a></div>
+		<!-- /wp:vk-blocks/icon-card-item -->
+
+		<!-- wp:vk-blocks/icon-card-item {"url":"/recruit/","icon":"fas fa-users","color":"#337ab7"} -->
+		<div class="wp-block-vk-blocks-icon-card-item vk_post vk_icon-card_item vk_post-col-xs-12 vk_post-col-sm-6 vk_post-col-md-4 vk_post-col-lg-4 vk_post-col-xl-4"><a href="/recruit/" class="vk_icon-card_item_link" target="_self" rel="noopener noreferrer"><div class="vk_icon-card_item_icon_outer" style="background-color:transparent;border:1px solid #337ab7"><i class="fas fa-users vk_icon-card_item_icon" style="color:#337ab7"></i></div><h3 class="vk_icon-card_item_title vk_icon-card_item_title has-text-align-center">採用情報</h3><p class="vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-center">株式会社サンプルでは一緒に働く仲間を募集しています。自分で考えていろいろな事にチャレンジできるやりがいのある仕事です。</p></a></div>
+		<!-- /wp:vk-blocks/icon-card-item --></div>
+		<!-- /wp:vk-blocks/icon-card --></div></div></div>
 		<!-- /wp:vk-blocks/outer -->`,
 	},
 	{

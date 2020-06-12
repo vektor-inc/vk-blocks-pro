@@ -272,36 +272,22 @@ const defaultTemplates = [
 		`,
 	},
 	{
-		name: "List box",
+		name: "Border box",
 		icon: "",
-		content: `
-	  <!-- wp:group {"customBackgroundColor":"#fffbee","className":"is-style-vk-group-solid-roundcorner vk-has-luminous-vivid-amber-color","color":"#fcb900"} -->
-	  <div class="wp-block-group has-background is-style-vk-group-solid-roundcorner vk-has-luminous-vivid-amber-color" style="background-color:#fffbee"><div class="wp-block-group__inner-container"><!-- wp:heading {"level":5,"className":"is-style-vk-heading-plain"} -->
-	  <h5 class="is-style-vk-heading-plain">List Title Sample</h5>
-	  <!-- /wp:heading -->
+		content: `<!-- wp:vk-blocks/border-box {"faIcon":"fas fa-exclamation"} -->
+		<div class="vk_borderBox vk_borderBox-color-red wp-block-vk-blocks-border-box is-style-vk_borderBox-style-solid-kado-tit-tab"><div class="vk_borderBox_title_container"><i class="fas fa-exclamation"></i><h4 class="vk_borderBox_title">枠線ブロックサンプル</h4></div><div class="vk_borderBox_body"><!-- wp:list {"className":"is-style-vk-check-mark vk-has-vivid-red-color","color":"#cf2e2e"} -->
+		<ul class="is-style-vk-check-mark vk-has-vivid-red-color"><li>これはリストのスタイルのサンプルです。</li><li>これはリストのスタイルのサンプルです。</li><li>これはリストのスタイルのサンプルです。</li><li>これはリストのスタイルのサンプルです。</li></ul>
+		<!-- /wp:list --></div></div>
+		<!-- /wp:vk-blocks/border-box -->
 
-	  <!-- wp:list {"className":"is-style-vk-check-mark vk-has-luminous-vivid-amber-color","color":"#fcb900"} -->
-	  <ul class="is-style-vk-check-mark vk-has-luminous-vivid-amber-color"><li>There is list style sample there is list style sample.</li><li>There is list style sample there is list style sample.</li><li>There is list style sample there is list style sample.</li></ul>
-	  <!-- /wp:list --></div></div>
-	  <!-- /wp:group -->
-
-	  <!-- wp:vk-blocks/spacer {"unit":"rem","pc":2,"tablet":2,"mobile":2} -->
-	  <div class="vk_spacer"><div class="vk_spacer-display-pc" style="height:2rem"></div><div class="vk_spacer-display-tablet" style="height:2rem"></div><div class="vk_spacer-display-mobile" style="height:2rem"></div></div>
-	  <!-- /wp:vk-blocks/spacer -->`,
-	},
-];
-
-const testTemplate = [
-	{
-		name: "List box",
-		icon: "",
-		content: `<div>hello</div>`,
+		<!-- wp:vk-blocks/spacer {"unit":"rem","pc":2,"tablet":2,"mobile":2} -->
+		<div class="vk_spacer"><div class="vk_spacer-display-pc" style="height:2rem"></div><div class="vk_spacer-display-tablet" style="height:2rem"></div><div class="vk_spacer-display-mobile" style="height:2rem"></div></div>
+		<!-- /wp:vk-blocks/spacer -->`,
 	},
 ];
 
 const parsedTemplates = memoize(() =>
 	defaultTemplates.map((template) => ({
-		//   testTemplate.map((template) => ({
 		...template,
 		blocks: parse(template.content),
 	}))

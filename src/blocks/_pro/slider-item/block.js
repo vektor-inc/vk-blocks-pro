@@ -6,7 +6,8 @@ import { schema } from "./schema";
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { Fragment } = wp.element;
-const { InnerBlocks, BlockControls, BlockVerticalAlignmentToolbar} = wp.blockEditor;
+const { PanelBody, BaseControl } = wp.components;
+const { InspectorControls, InnerBlocks, BlockControls, BlockVerticalAlignmentToolbar} = wp.blockEditor;
 
 const BlockIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 576">
@@ -46,6 +47,16 @@ registerBlockType("vk-blocks/slider-item", {
 						value={ verticalAlignment }
 					/>
 				</BlockControls>
+				<InspectorControls>
+					<PanelBody title={__('Align', 'vk-blocks')}>
+						<BaseControl label={__('Vertical', 'vk-blocks')}>
+							<BlockVerticalAlignmentToolbar
+								onChange={  ( alignment ) => setAttributes( { verticalAlignment: alignment } ) }
+								value={ verticalAlignment }
+							/>
+						</BaseControl>
+                    </PanelBody>
+				</InspectorControls>
 				<div className={`${className} vk_align-${verticalAlignment}`}>
 					<InnerBlocks />
 				</div>

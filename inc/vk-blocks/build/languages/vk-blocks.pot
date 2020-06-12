@@ -199,6 +199,7 @@ msgid "Input Content"
 msgstr ""
 
 #: src/blocks/_pro/icon-card/block.js:100
+#: src/blocks/_pro/slider-item/block.js:51
 #: src/components/card-align-control/index.js:29
 msgid "Align"
 msgstr ""
@@ -450,8 +451,12 @@ msgstr ""
 msgid "Post list"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/block.js:29
+#: src/blocks/_pro/slider-item/block.js:30
 msgid "Slider Item"
+msgstr ""
+
+#: src/blocks/_pro/slider-item/block.js:52
+msgid "Vertical"
 msgstr ""
 
 #: src/blocks/_pro/slider/block.js:106

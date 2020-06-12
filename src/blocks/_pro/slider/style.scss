@@ -12,24 +12,39 @@
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-
 .swiper-container {
 	width: 100%;
 	height: 100%;
   position: relative;
-    &.vk_width-full{ //全幅
+    .vk_slider_item{
+      &.vk_align-top{
+        align-items:flex-start;
+        justify-content:flex-start;
+      }
+      &.vk_align-center{
+        align-items:center;
+        justify-content: center;
+      }
+      &.vk_align-bottom{
+        align-items:flex-end;
+        justify-content: flex-end;
+      }
+    }
+    &.vk_width-full{ //全幅の時
       margin: 0 calc(50% - 50vw);
       width: 100vw;
       .vk_slider_item{
         width: 100vw !important;
-        .wp-block-image.size-full {
-          width: 100vw !important;
-          img{
-            width: 100%;
-          }
+        .vk_outer-width-full{
+           width: 100%;
         }
       }
     }
+    .block-list-appender { //管理画面のボタン
+      width: 100%;
+      max-width: 1140px;
+      margin: auto;
+  }
   }
   .swiper-slide {
 	font-size: 18px;
@@ -63,23 +78,44 @@
 }
 
 //button position
-//管理画面対策
-.swiper-button-next, .swiper-button-prev{
-	position: absolute;
-	top:50%;
-	z-index: 10;
-}
+.swiper-container{
+  .swiper-button-next, .swiper-button-prev{
+    position: absolute;
+    top:50%;
+    z-index: 10;
+  }
+  .swiper-button-prev,
+  .swiper-container-rtl .swiper-button-next {
+      left: 10px;
+      right: auto;
+      @media (min-width: 992px){
+        left: 20px;
+      }
+  }
+  
+  .swiper-button-next,
+  .swiper-container-rtl .swiper-button-prev {
+      right: 10px;
+      left: auto;
+      @media (min-width: 992px){
+        right: 20px;
+      }
+  }
+  &.vk_width-full{
+    .swiper-button-prev,
+    .swiper-container-rtl .swiper-button-next {
+      @media (min-width: 992px){
+        left: 30px;
+      }
+    }
 
-.swiper-button-prev,
-.swiper-container-rtl .swiper-button-next {
-    left: 20px;
-    right: auto
-}
- 
-.swiper-button-next,
-.swiper-container-rtl .swiper-button-prev {
-    right: 20px;
-    left: auto
+    .swiper-button-next,
+    .swiper-container-rtl .swiper-button-prev {
+      @media (min-width: 992px){
+        right: 30px;
+       }
+    }
+  }
 }
 
 //button animation
@@ -124,8 +160,19 @@
 	bottom: 15px;
 }
 
-//管理画面ではbutton非表示
-.edit-post-visual-editor.editor-styles-wrapper .swiper-button-prev,
-.edit-post-visual-editor.editor-styles-wrapper .swiper-button-next{
-	display: none;
+//管理画面
+.edit-post-visual-editor.editor-styles-wrapper{
+  .swiper-button-prev,
+  .swiper-button-next{ //button非表示
+    display: none;
+  }
+  .swiper-container.vk_width-full{ //全幅の時
+    .wp-block-vk-blocks-slider-item{
+      margin: auto;
+      .vk_outer-paddingLR-use { //メニューに隠れて編集しずらいため
+        margin-left: calc(50% - 50vw + 200px);
+        margin-right: calc(50% - 50vw + 200px);
+      }
+    }
+  }
 }

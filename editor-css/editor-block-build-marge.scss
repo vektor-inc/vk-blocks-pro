@@ -936,6 +936,49 @@ ol {
 	text-align: center;
 }
 
+.alert{
+
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 3px;
+	p {
+		margin-bottom:0;
+	}
+
+  & + &{
+    margin-top: 2em;
+  }
+
+  a{
+    transition: color .3s linear, opacity .3s linear;
+    &:link, &:visited{
+      opacity: .8;
+      text-decoration: underline;
+    }
+    &:hover, &:visited{
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+
+  @each $var in (
+                  (success, #dff0d8,#3c763d,#d6e9c6),
+                  (info, #d9edf7,#31708f,#bce8f1),
+                  (warning, #fcf8e3,#8a6d3b,#faebcc),
+                  (danger, #f2dede,#a94442,#ebccd1),
+  ){
+    $class-name: nth($var, 1);
+    $color-bg: nth($var, 2);
+    $color: nth($var, 3);
+    $color-border :nth($var, 4);
+    &-#{$class-name}{
+      background-color: $color-bg;
+      color:$color;
+      border-color:$color-border;
+    }
+  }
+}
+
 .vk_balloon {
   display: flex;
   align-items: center;
@@ -1200,49 +1243,6 @@ ol {
 		max-width:96px;
 	}
 } // @media only screen and (max-width: 480px) {
-
-.alert{
-
-  padding: 1em;
-  margin: 1em 0;
-  border-radius: 3px;
-	p {
-		margin-bottom:0;
-	}
-
-  & + &{
-    margin-top: 2em;
-  }
-
-  a{
-    transition: color .3s linear, opacity .3s linear;
-    &:link, &:visited{
-      opacity: .8;
-      text-decoration: underline;
-    }
-    &:hover, &:visited{
-      opacity: 1;
-      text-decoration: none;
-    }
-  }
-
-  @each $var in (
-                  (success, #dff0d8,#3c763d,#d6e9c6),
-                  (info, #d9edf7,#31708f,#bce8f1),
-                  (warning, #fcf8e3,#8a6d3b,#faebcc),
-                  (danger, #f2dede,#a94442,#ebccd1),
-  ){
-    $class-name: nth($var, 1);
-    $color-bg: nth($var, 2);
-    $color: nth($var, 3);
-    $color-border :nth($var, 4);
-    &-#{$class-name}{
-      background-color: $color-bg;
-      color:$color;
-      border-color:$color-border;
-    }
-  }
-}
 
 :root {
 	--vk-color-border-red: #dc3545;
@@ -2851,25 +2851,24 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 /* CSS
 /*-------------------------------------------*/
 
-.vk_card {
-  &_item {
-    .vk_post_title.card-title {
-      font-size: 1rem;
-    }
-    .vk_post_excerpt.card-text {
-      font-size: 14px;
-    }
-  }
-}
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-
 .vk_childPage {
 	margin-top: 2.5rem;
 }
 
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
+.vk_card {
+  &_item {
+    .vk_post_title.card-title {
+      font-size: 1rem;
+    }
+    .vk_post_excerpt.card-text {
+      font-size: 14px;
+    }
+  }
+}
 
 /*-------------------------------------------*/
 /* CSS
@@ -2889,6 +2888,7 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
     }
   }
 }
+
 
 /*-------------------------------------------*/
 /* CSS
@@ -3096,24 +3096,39 @@ $color-danger: #b52727;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-
 .swiper-container {
 	width: 100%;
 	height: 100%;
   position: relative;
-    &.vk_width-full{ //全幅
+    .vk_slider_item{
+      &.vk_align-top{
+        align-items:flex-start;
+        justify-content:flex-start;
+      }
+      &.vk_align-center{
+        align-items:center;
+        justify-content: center;
+      }
+      &.vk_align-bottom{
+        align-items:flex-end;
+        justify-content: flex-end;
+      }
+    }
+    &.vk_width-full{ //全幅の時
       margin: 0 calc(50% - 50vw);
       width: 100vw;
       .vk_slider_item{
         width: 100vw !important;
-        .wp-block-image.size-full {
-          width: 100vw !important;
-          img{
-            width: 100%;
-          }
+        .vk_outer-width-full{
+           width: 100%;
         }
       }
     }
+    .block-list-appender { //管理画面のボタン
+      width: 100%;
+      max-width: 1140px;
+      margin: auto;
+  }
   }
   .swiper-slide {
 	font-size: 18px;
@@ -3147,23 +3162,44 @@ $color-danger: #b52727;
 }
 
 //button position
-//管理画面対策
-.swiper-button-next, .swiper-button-prev{
-	position: absolute;
-	top:50%;
-	z-index: 10;
-}
+.swiper-container{
+  .swiper-button-next, .swiper-button-prev{
+    position: absolute;
+    top:50%;
+    z-index: 10;
+  }
+  .swiper-button-prev,
+  .swiper-container-rtl .swiper-button-next {
+      left: 10px;
+      right: auto;
+      @media (min-width: 992px){
+        left: 20px;
+      }
+  }
+  
+  .swiper-button-next,
+  .swiper-container-rtl .swiper-button-prev {
+      right: 10px;
+      left: auto;
+      @media (min-width: 992px){
+        right: 20px;
+      }
+  }
+  &.vk_width-full{
+    .swiper-button-prev,
+    .swiper-container-rtl .swiper-button-next {
+      @media (min-width: 992px){
+        left: 30px;
+      }
+    }
 
-.swiper-button-prev,
-.swiper-container-rtl .swiper-button-next {
-    left: 20px;
-    right: auto
-}
- 
-.swiper-button-next,
-.swiper-container-rtl .swiper-button-prev {
-    right: 20px;
-    left: auto
+    .swiper-button-next,
+    .swiper-container-rtl .swiper-button-prev {
+      @media (min-width: 992px){
+        right: 30px;
+       }
+    }
+  }
 }
 
 //button animation
@@ -3208,11 +3244,42 @@ $color-danger: #b52727;
 	bottom: 15px;
 }
 
-//管理画面ではbutton非表示
-.edit-post-visual-editor.editor-styles-wrapper .swiper-button-prev,
-.edit-post-visual-editor.editor-styles-wrapper .swiper-button-next{
-	display: none;
+//管理画面
+.edit-post-visual-editor.editor-styles-wrapper{
+  .swiper-button-prev,
+  .swiper-button-next{ //button非表示
+    display: none;
+  }
+  .swiper-container.vk_width-full{ //全幅の時
+    .wp-block-vk-blocks-slider-item{
+      margin: auto;
+      .vk_outer-paddingLR-use { //メニューに隠れて編集しずらいため
+        margin-left: calc(50% - 50vw + 200px);
+        margin-right: calc(50% - 50vw + 200px);
+      }
+    }
+  }
 }
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
+.vk_slider_item {
+	display: flex;
+}
+
+.vk_slider_item-align-vertical-{
+	&top{
+		justify-content: flex-start;
+	}
+	&center{
+		justify-content: center;
+	}
+	&bottom{
+		justify-content: flex-end;
+	}
+}
+
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -3281,20 +3348,143 @@ $color-danger: #b52727;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+$toc-left-margin: 1rem;
 
-.vk_slider_item {
-	display: flex;
-}
-
-.vk_slider_item-align-vertical-{
-	&top{
-		justify-content: flex-start;
+.vk_tableOfContents {
+	margin-top: 3.5em;
+	margin-bottom: 3.5em;
+	position: relative;
+	&-style-default {
+		border: 3px solid rgba(0, 0, 0, 0.04);
+		box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 1);
+		background-color: rgba(0, 0, 0, 0.015);
+		padding: 2rem 1.5rem;
+		@media (min-width: 576px) {
+			padding: 2rem 3rem;
+		}
 	}
-	&center{
-		justify-content: center;
+	&_title {
+		text-align: center;
+		font-size: 1.2em;
+		letter-spacing: 0.5em;
+		margin-left: 0.5em;
 	}
-	&bottom{
-		justify-content: flex-end;
+	li {
+		margin: 0;
+	}
+	&_list {
+		padding: 0;
+		margin: 0;
+		&_item {
+			list-style: none;
+			border-bottom: 1px solid #e5e5e5;
+			padding: 0.8rem 0;
+			&-h-2 {
+				// padding-left:$toc-left-margin;
+			}
+			&-h-3 {
+				padding-left: $toc-left-margin * 1;
+			}
+			&-h-4 {
+				padding-left: $toc-left-margin * 2;
+			}
+			&-h-5 {
+				padding-left: $toc-left-margin * 3;
+			}
+			&-h-6 {
+				padding-left: $toc-left-margin * 4;
+			}
+			&_link {
+				color: #333;
+				border-bottom: 1px solid #ccc;
+				&:hover {
+					text-decoration: none;
+					border-bottom: none;
+				}
+			}
+		}
+	}
+	input {
+		position: absolute;
+		opacity: 0;
+		z-index: -1;
+	}
+	&_openCloseBtn {
+		cursor: pointer;
+		font-size: 0.8em;
+		letter-spacing: 2px;
+		line-height: 1;
+		text-align: center;
+		display: block;
+		margin: 0.5em auto 0;
+		width: 6em;
+		border: 1px solid #999;
+		padding: 3px 1em 2px;
+	}
+	.button_status-open {
+		&::before {
+			content: "CLOSE";
+		}
+	}
+	.button_status-close {
+		&::before {
+			content: "OPEN";
+		}
+	}
+	.button_status {
+		&::before {
+			color: #666;
+			font-size: 0.8em;
+			border-radius: 2px;
+			display: inline-block;
+			text-align: center;
+			margin: auto;
+			width: auto;
+			transition: all 0.35s;
+		}
+	}
+	/* Accordion styles */
+	.tab {
+    width: 100%;
+    overflow: hidden;
+		&_content-open {
+			max-height: auto;
+			padding: 1em;
+			transition: all 0.35s;
+		}
+		&_content-close {
+			max-height: 0;
+			padding: 0 1em;
+			transition: all 0.35s;
+		}
+		&-close {
+			display: flex;
+			justify-content: flex-end;
+			padding: 1em;
+			font-size: 0.75em;
+			cursor: pointer;
+		}
+	}
+	// :checked
+	input:checked {
+		~ .button_status-open {
+			&::before {
+				content: "OPEN";
+			}
+		}
+		~ .button_status-close {
+			&::before {
+				content: "CLOSE";
+			}
+		}
+		~ .tab_content-open {
+			max-height: 0;
+			padding: 0 1em;
+		}
+		~ .tab_content-close {
+			max-height: 100vh;
+			padding: 1em;
+		}
 	}
 }
 
@@ -3444,149 +3634,6 @@ $toc-left-margin: 1rem;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-$toc-left-margin: 1rem;
-
-.vk_tableOfContents {
-	margin-top: 3.5em;
-	margin-bottom: 3.5em;
-	position: relative;
-	&-style-default {
-		border: 3px solid rgba(0, 0, 0, 0.04);
-		box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 1);
-		background-color: rgba(0, 0, 0, 0.015);
-		padding: 2rem 1.5rem;
-		@media (min-width: 576px) {
-			padding: 2rem 3rem;
-		}
-	}
-	&_title {
-		text-align: center;
-		font-size: 1.2em;
-		letter-spacing: 0.5em;
-		margin-left: 0.5em;
-	}
-	li {
-		margin: 0;
-	}
-	&_list {
-		padding: 0;
-		margin: 0;
-		&_item {
-			list-style: none;
-			border-bottom: 1px solid #e5e5e5;
-			padding: 0.8rem 0;
-			&-h-2 {
-				// padding-left:$toc-left-margin;
-			}
-			&-h-3 {
-				padding-left: $toc-left-margin * 1;
-			}
-			&-h-4 {
-				padding-left: $toc-left-margin * 2;
-			}
-			&-h-5 {
-				padding-left: $toc-left-margin * 3;
-			}
-			&-h-6 {
-				padding-left: $toc-left-margin * 4;
-			}
-			&_link {
-				color: #333;
-				border-bottom: 1px solid #ccc;
-				&:hover {
-					text-decoration: none;
-					border-bottom: none;
-				}
-			}
-		}
-	}
-	input {
-		position: absolute;
-		opacity: 0;
-		z-index: -1;
-	}
-	&_openCloseBtn {
-		cursor: pointer;
-		font-size: 0.8em;
-		letter-spacing: 2px;
-		line-height: 1;
-		text-align: center;
-		display: block;
-		margin: 0.5em auto 0;
-		width: 6em;
-		border: 1px solid #999;
-		padding: 3px 1em 2px;
-	}
-	.button_status-open {
-		&::before {
-			content: "CLOSE";
-		}
-	}
-	.button_status-close {
-		&::before {
-			content: "OPEN";
-		}
-	}
-	.button_status {
-		&::before {
-			color: #666;
-			font-size: 0.8em;
-			border-radius: 2px;
-			display: inline-block;
-			text-align: center;
-			margin: auto;
-			width: auto;
-			transition: all 0.35s;
-		}
-	}
-	/* Accordion styles */
-	.tab {
-    width: 100%;
-    overflow: hidden;
-		&_content-open {
-			max-height: auto;
-			padding: 1em;
-			transition: all 0.35s;
-		}
-		&_content-close {
-			max-height: 0;
-			padding: 0 1em;
-			transition: all 0.35s;
-		}
-		&-close {
-			display: flex;
-			justify-content: flex-end;
-			padding: 1em;
-			font-size: 0.75em;
-			cursor: pointer;
-		}
-	}
-	// :checked
-	input:checked {
-		~ .button_status-open {
-			&::before {
-				content: "OPEN";
-			}
-		}
-		~ .button_status-close {
-			&::before {
-				content: "CLOSE";
-			}
-		}
-		~ .tab_content-open {
-			max-height: 0;
-			padding: 0 1em;
-		}
-		~ .tab_content-close {
-			max-height: 100vh;
-			padding: 1em;
-		}
-	}
-}
-
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/

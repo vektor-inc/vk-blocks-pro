@@ -167,12 +167,17 @@
     display: none;
   }
   .swiper-container.vk_width-full{ //全幅の時
+    
     .wp-block-vk-blocks-slider-item{
       margin: auto;
       .vk_outer-paddingLR-use { //メニューに隠れて編集しずらいため
-        margin-left: calc(50% - 50vw + 200px);
-        margin-right: calc(50% - 50vw + 200px);
+        @media (min-width: 768px){
+          margin-left: calc(50% - 50vw + 200px);
+          margin-right: calc(50% - 50vw + 200px);
+        }
       }
     }
+
   }
+  
 }

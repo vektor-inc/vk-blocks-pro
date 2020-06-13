@@ -23,35 +23,39 @@ msgstr ""
 msgid "Font Awesome icon list"
 msgstr ""
 
-#: src/blocks/_pro/card-item/block.js:42
+#: src/blocks/_pro/card-item/block.js:43
 msgid "Card Item"
 msgstr ""
 
-#: src/blocks/_pro/card-item/block.js:58
+#: src/blocks/_pro/card-item/block.js:59
 msgid "URL"
 msgstr ""
 
-#: src/blocks/_pro/card-item/block.js:63
+#: src/blocks/_pro/card-item/block.js:64
 msgid "https://example.com"
 msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:103
+#: src/blocks/_pro/card-item/deprecated.js:196
 #: src/components/advanced-media-upload/index.js:32
 msgid "Delete Image"
 msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:157
+#: src/blocks/_pro/card-item/deprecated.js:250
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
 "tempor incididunt ut labore et dolore magna aliqua. "
 msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:201
+#: src/blocks/_pro/card-item/deprecated.js:294
 #: src/blocks/_pro/icon-card/block.js:101
 msgid "Title"
 msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:90
+#: src/blocks/_pro/card-item/deprecated.js:183
 #: src/blocks/balloon/block.js:114
 #: src/blocks/flow/block.js:96
 #: src/blocks/pr-blocks/block.js:158

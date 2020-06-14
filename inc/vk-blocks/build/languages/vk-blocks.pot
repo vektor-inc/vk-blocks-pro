@@ -35,26 +35,26 @@ msgstr ""
 msgid "https://example.com"
 msgstr ""
 
-#: src/blocks/_pro/card-item/component.js:103
+#: src/blocks/_pro/card-item/component.js:110
 #: src/blocks/_pro/card-item/deprecated.js:196
 #: src/components/advanced-media-upload/index.js:32
 msgid "Delete Image"
 msgstr ""
 
-#: src/blocks/_pro/card-item/component.js:157
+#: src/blocks/_pro/card-item/component.js:164
 #: src/blocks/_pro/card-item/deprecated.js:250
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
 "tempor incididunt ut labore et dolore magna aliqua. "
 msgstr ""
 
-#: src/blocks/_pro/card-item/component.js:201
+#: src/blocks/_pro/card-item/component.js:208
 #: src/blocks/_pro/card-item/deprecated.js:294
 #: src/blocks/_pro/icon-card/block.js:101
 msgid "Title"
 msgstr ""
 
-#: src/blocks/_pro/card-item/component.js:90
+#: src/blocks/_pro/card-item/component.js:97
 #: src/blocks/_pro/card-item/deprecated.js:183
 #: src/blocks/balloon/block.js:114
 #: src/blocks/flow/block.js:96
@@ -101,7 +101,7 @@ msgid "Button text"
 msgstr ""
 
 #: src/blocks/_pro/card/block.js:51
-#: src/components/column-layout-control/index.js:22
+#: src/components/column-layout-control/index.js:26
 msgid "Card"
 msgstr ""
 
@@ -1277,23 +1277,27 @@ msgstr ""
 msgid "Card ( No border )"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:26
-msgid "Card Horizontal"
+#: src/components/column-layout-control/index.js:20
+msgid "Card Image Round"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:30
-msgid "Media"
+msgid "Card Horizontal"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:34
+msgid "Media"
+msgstr ""
+
+#: src/components/column-layout-control/index.js:38
 msgid "Text 1 Column"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:54
+#: src/components/column-layout-control/index.js:58
 msgid "Display type and columns"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:57
+#: src/components/column-layout-control/index.js:61
 msgid "Display type"
 msgstr ""
 

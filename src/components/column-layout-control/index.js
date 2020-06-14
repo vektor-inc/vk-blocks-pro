@@ -17,7 +17,7 @@ export const setOptions = name => {
 			},
 			{
 				value: "card-imageRound",
-				label: __("Card Image Round", "vk-blocks")
+				label: __("Card ( Image Round )", "vk-blocks")
 			}
 		],
 		"vk-blocks/else": [

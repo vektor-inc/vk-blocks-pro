@@ -33,35 +33,39 @@ msgstr "例) fas fa-arrow-circle-right"
 msgid "Font Awesome icon list"
 msgstr "Font Awesome アイコンリスト"
 
-#: src/blocks/_pro/card-item/block.js:42
+#: src/blocks/_pro/card-item/block.js:43
 msgid "Card Item"
 msgstr "カードアイテム"
 
-#: src/blocks/_pro/card-item/block.js:58
+#: src/blocks/_pro/card-item/block.js:59
 msgid "URL"
 msgstr "URL"
 
-#: src/blocks/_pro/card-item/block.js:63
+#: src/blocks/_pro/card-item/block.js:64
 msgid "https://example.com"
 msgstr "https://example.com"
 
-#: src/blocks/_pro/card-item/component.js:103
+#: src/blocks/_pro/card-item/component.js:110
+#: src/blocks/_pro/card-item/deprecated.js:196
 #: src/components/advanced-media-upload/index.js:32
 msgid "Delete Image"
 msgstr "画像を削除"
 
-#: src/blocks/_pro/card-item/component.js:157
+#: src/blocks/_pro/card-item/component.js:164
+#: src/blocks/_pro/card-item/deprecated.js:250
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
 "tempor incididunt ut labore et dolore magna aliqua. "
 msgstr ""
 
-#: src/blocks/_pro/card-item/component.js:201
+#: src/blocks/_pro/card-item/component.js:208
+#: src/blocks/_pro/card-item/deprecated.js:294
 #: src/blocks/_pro/icon-card/block.js:101
 msgid "Title"
 msgstr "タイトルを入力"
 
-#: src/blocks/_pro/card-item/component.js:90 src/blocks/balloon/block.js:114
+#: src/blocks/_pro/card-item/component.js:97
+#: src/blocks/_pro/card-item/deprecated.js:183 src/blocks/balloon/block.js:114
 #: src/blocks/flow/block.js:96 src/blocks/pr-blocks/block.js:158
 #: src/blocks/pr-content/component.js:157
 #: src/blocks/pr-content/deprecated/component-deprecated.js:102
@@ -106,7 +110,7 @@ msgid "Button text"
 msgstr "ボタンの文字"
 
 #: src/blocks/_pro/card/block.js:51
-#: src/components/column-layout-control/index.js:22
+#: src/components/column-layout-control/index.js:26
 msgid "Card"
 msgstr "カード"
 
@@ -153,10 +157,8 @@ msgid "Icon Card Item"
 msgstr "アイコンカードアイテム"
 
 #: src/blocks/_pro/icon-card-item/block.js:39
-#, fuzzy
-#| msgid "PR Block1 Setting"
 msgid "PR Block Setting"
-msgstr "PR Block1 設定"
+msgstr "PR Block 設定"
 
 #: src/blocks/_pro/icon-card-item/block.js:41 src/blocks/pr-blocks/block.js:304
 msgid "Link URL:"
@@ -1249,23 +1251,27 @@ msgstr "キャプション"
 msgid "Card ( No border )"
 msgstr "カード（線なし）"
 
-#: src/components/column-layout-control/index.js:26
+#: src/components/column-layout-control/index.js:20
+msgid "Card ( Image Round )"
+msgstr "カード（画像丸抜き）"
+
+#: src/components/column-layout-control/index.js:30
 msgid "Card Horizontal"
 msgstr "カード（水平）"
 
-#: src/components/column-layout-control/index.js:30
+#: src/components/column-layout-control/index.js:34
 msgid "Media"
 msgstr "メディア"
 
-#: src/components/column-layout-control/index.js:34
+#: src/components/column-layout-control/index.js:38
 msgid "Text 1 Column"
 msgstr "テキスト１カラム"
 
-#: src/components/column-layout-control/index.js:54
+#: src/components/column-layout-control/index.js:58
 msgid "Display type and columns"
 msgstr "表示タイプとカラム"
 
-#: src/components/column-layout-control/index.js:57
+#: src/components/column-layout-control/index.js:61
 msgid "Display type"
 msgstr "表示タイプ"
 

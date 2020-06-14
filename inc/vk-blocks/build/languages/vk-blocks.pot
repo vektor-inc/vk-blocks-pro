@@ -1278,7 +1278,7 @@ msgid "Card ( No border )"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:20
-msgid "Card Image Round"
+msgid "Card ( Image Round )"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:30

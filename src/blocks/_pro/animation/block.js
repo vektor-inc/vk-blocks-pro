@@ -14,7 +14,7 @@ const { Fragment } = wp.element;
 const BlockIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 576">
 		<path d="M147.9,189.1v193.2c0,24.8,20.6,44.7,44.7,44.7h189.9c24.8,0,44.7-20.6,44.7-44.7V189.1c0-24.8-20.6-44.7-44.7-44.7H192.7
-	C168.2,144.4,147.9,165,147.9,189.1z"/>
+	C168.2,144.4,147.9,165,147.9,189.1z" />
 	</svg>
 );
 
@@ -33,22 +33,22 @@ registerBlockType("vk-blocks/animation", {
 		return (
 			<Fragment>
 				<InspectorControls>
-					<PanelBody title={__("Animation Settings", "vk-blocks")}>
+					<PanelBody title={ __("Animation Settings", "vk-blocks") }>
 						<SelectControl
-							value={effect}
-							onChange={value => setAttributes({ effect: value })}
-							options={[
+							value={ effect }
+							onChange={ value => setAttributes({ effect: value }) }
+							options={ [
 								{ label: __("Fade In", "vk-blocks"), value: "fade-in" },
 								{ label: __("Fade Up", "vk-blocks"), value: "fade-up" },
 								{ label: __("Slide Left", "vk-blocks"), value: "slide-left" },
 								{ label: __("Slide Right", "vk-blocks"), value: "slide-right" },
-							]}
+							] }
 						/>
 					</PanelBody>
 				</InspectorControls>
-				<div className={classNames(className, `vk-animation vk-animation-${effect}`)}>
+				<div className={ classNames(className, `vk_animation vk_animation-${effect}`) }>
 					<InnerBlocks
-						templateInsertUpdatesSelection={false}
+						templateInsertUpdatesSelection={ false }
 					/>
 				</div>
 			</Fragment>
@@ -57,7 +57,7 @@ registerBlockType("vk-blocks/animation", {
 
 	save(props) {
 		return (
-			<div className={classNames(`vk-animation vk-animation-${props.attributes.effect}`)}>
+			<div className={ classNames(`vk_animation vk_animation-${props.attributes.effect}`) }>
 				<InnerBlocks.Content />
 			</div>
 		);

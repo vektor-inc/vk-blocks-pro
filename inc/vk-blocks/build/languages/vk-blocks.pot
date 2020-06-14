@@ -23,6 +23,30 @@ msgstr ""
 msgid "Font Awesome icon list"
 msgstr ""
 
+#: src/blocks/_pro/animation/block.js:22
+msgid "Animation Block"
+msgstr ""
+
+#: src/blocks/_pro/animation/block.js:36
+msgid "Animation Settings"
+msgstr ""
+
+#: src/blocks/_pro/animation/block.js:41
+msgid "Fade In"
+msgstr ""
+
+#: src/blocks/_pro/animation/block.js:42
+msgid "Fade Up"
+msgstr ""
+
+#: src/blocks/_pro/animation/block.js:43
+msgid "Slide Left"
+msgstr ""
+
+#: src/blocks/_pro/animation/block.js:44
+msgid "Slide Right"
+msgstr ""
+
 #: src/blocks/_pro/card-item/block.js:42
 msgid "Card Item"
 msgstr ""

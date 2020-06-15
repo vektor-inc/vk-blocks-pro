@@ -49,7 +49,7 @@ registerBlockType("vk-blocks/animation", {
 						/>
 					</PanelBody>
 				</InspectorControls>
-				<div className={ classNames(className, `vk_animation vk_animation-${effect}`, customClientId) }>
+				<div className={ classNames(className, `vk_animation vk_animation-${effect} vk_animation-${customClientId}`)}>
 					<InnerBlocks
 						templateInsertUpdatesSelection={ false }
 					/>

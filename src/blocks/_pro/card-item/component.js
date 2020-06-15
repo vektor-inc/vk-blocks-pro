@@ -29,9 +29,9 @@ export class Component extends React.Component {
       rel,
     } = attributes;
 
-    let align = JSON.parse(activeControl);
+    const align = JSON.parse(activeControl);
     const for_ = this.props.for_;
-    let containerClass = " vk_card_item";
+    const containerClass = " vk_card_item";
 
     const isEdit = () => {
       if (for_ === "edit") {
@@ -67,7 +67,14 @@ export class Component extends React.Component {
       vk_post_body = "card-body";
       vk_title = "card-title";
       vk_date = "card-date";
-    }
+    } else if (layout === "card-imageRound") {
+      layout = "card card-noborder " + layout + " card-post";
+      imgContainerClass = "vk_post_imgOuter";
+      imgClass = "vk_post_imgOuter_img card-img-top";
+      vk_post_body = "card-body";
+      vk_title = "card-title";
+      vk_date = "card-date";
+	}
 
     const deleteImgBtn = () => {
       dispatch("core/editor").updateBlockAttributes(clientId, {
@@ -78,34 +85,34 @@ export class Component extends React.Component {
     const uploadImgBtn = (image) => {
       const imageParsed = JSON.parse(image);
       return (
-        <MediaUpload
-          onSelect={(value) => setAttributes({ image: JSON.stringify(value) })}
-          type="image"
-          className={"vk_post_imgOuter_img card-img-top"}
-          value={image}
-          render={({ open }) => (
-            <Fragment>
-              {!imageParsed ? (
-                <Button onClick={open} className={"button button-large"}>
-                  {__("Select image", "vk-blocks")}
-                </Button>
+	<MediaUpload
+		onSelect={ (value) => setAttributes({ image: JSON.stringify(value) }) }
+		type="image"
+		className={ "vk_post_imgOuter_img card-img-top" }
+		value={ image }
+		render={ ({ open }) => (
+			<Fragment>
+				{ !imageParsed ? (
+					<Button onClick={ open } className={ "button button-large" }>
+						{ __("Select image", "vk-blocks") }
+					</Button>
               ) : (
-                  <Fragment>
-                    <img
-                      className={"vk_post_imgOuter_img card-img-top"}
-                      src={imageParsed.sizes.full.url}
-                      alt={imageParsed.alt}
+	<Fragment>
+		<img
+			className={ "vk_post_imgOuter_img card-img-top" }
+			src={ imageParsed.sizes.full.url }
+			alt={ imageParsed.alt }
                     />
-                    <Button
-                      onClick={deleteImgBtn}
-                      className={"image-button button button-delete"}
+		<Button
+			onClick={ deleteImgBtn }
+			className={ "image-button button button-delete" }
                     >
-                      {__("Delete Image", "vk-blocks")}
-                    </Button>
-                  </Fragment>
-                )}
-            </Fragment>
-          )}
+			{ __("Delete Image", "vk-blocks") }
+		</Button>
+	</Fragment>
+                ) }
+			</Fragment>
+          ) }
         />
       );
     };
@@ -114,34 +121,34 @@ export class Component extends React.Component {
       if (display_image) {
         if (isEdit(for_)) {
           return (
-            <Fragment>
-              <div className={imgContainerClass} style={imageStyle}>
-                <div className="card-img-overlay"></div>
-                {uploadImgBtn(image)}
-              </div>
-            </Fragment>
+	<Fragment>
+		<div className={ imgContainerClass } style={ imageStyle }>
+			<div className="card-img-overlay"></div>
+			{ uploadImgBtn(image) }
+		</div>
+	</Fragment>
           );
-        } else {
+        } 
           return (
-            <div className={imgContainerClass} style={imageStyle}>
-              {switchAddUrltoImage(url)}
-            </div>
+	<div className={ imgContainerClass } style={ imageStyle }>
+		{ switchAddUrltoImage(url) }
+	</div>
           );
-        }
+        
       }
     };
 
     const switchAddUrltoImage = (url) => {
-      let overlay = <div className="card-img-overlay"></div>;
+      const overlay = <div className="card-img-overlay"></div>;
       if (url) {
         return (
-          <a href={url} target={linkTarget} rel={rel}>
-            {overlay}
-          </a>
+	<a href={ url } target={ linkTarget } rel={ rel }>
+		{ overlay }
+	</a>
         );
-      } else {
+      } 
         return overlay;
-      }
+      
     };
 
     const renderExcerpt = (align) => {
@@ -149,41 +156,41 @@ export class Component extends React.Component {
       const titleClass = `vk_post_excerpt card-text has-text-align-${align.text}`;
       if (isEdit(for_)) {
         return (
-          <RichText
-            tagName={titleTag}
-            className={titleClass}
-            value={excerpt_text}
-            onChange={(value) => setAttributes({ excerpt_text: value })}
-            placeholder={__(
+	<RichText
+		tagName={ titleTag }
+		className={ titleClass }
+		value={ excerpt_text }
+		onChange={ (value) => setAttributes({ excerpt_text: value }) }
+		placeholder={ __(
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
               "vk-blocks"
-            )}
+            ) }
           />
         );
-      } else {
+      } 
         return (
-          <RichText.Content
-            tagName={titleTag}
-            className={titleClass}
-            value={excerpt_text}
+	<RichText.Content
+		tagName={ titleTag }
+		className={ titleClass }
+		value={ excerpt_text }
           />
         );
-      }
+      
     };
 
     const renderButton = (display_btn, align) => {
       if (display_btn) {
         return (
-          <div className={`vk_post_btnOuter has-text-align-${align.button}`}>
-            <a
-              className={`btn btn-primary vk_post_btn`}
-              href={url}
-              target={linkTarget}
-              rel={rel}
+	<div className={ `vk_post_btnOuter has-text-align-${align.button}` }>
+		<a
+			className={ `btn btn-primary vk_post_btn` }
+			href={ url }
+			target={ linkTarget }
+			rel={ rel }
             >
-              {btn_text}
-            </a>
-          </div>
+			{ btn_text }
+		</a>
+	</div>
         );
       }
     };
@@ -193,30 +200,30 @@ export class Component extends React.Component {
       const titleClass = `vk_post_title card-title has-text-align-${align.title}`;
       if (isEdit(for_)) {
         return (
-          <RichText
-            tagName={titleTag}
-            className={titleClass}
-            value={title}
-            onChange={(value) => setAttributes({ title: value })}
-            placeholder={__("Title", "vk-blocks")}
+	<RichText
+		tagName={ titleTag }
+		className={ titleClass }
+		value={ title }
+		onChange={ (value) => setAttributes({ title: value }) }
+		placeholder={ __("Title", "vk-blocks") }
           />
         );
-      } else {
+      } 
         return (
-          <a href={url} target={linkTarget} rel={rel}>
-            <RichText.Content
-              tagName={titleTag}
-              className={titleClass}
-              value={title}
+	<a href={ url } target={ linkTarget } rel={ rel }>
+		<RichText.Content
+			tagName={ titleTag }
+			className={ titleClass }
+			value={ title }
             />
-          </a>
+	</a>
         );
-      }
+      
     };
 
     let imageStyle;
     if (image) {
-      let imageParsed = JSON.parse(image);
+      const imageParsed = JSON.parse(image);
       imageStyle = {
         backgroundImage: `url(${imageParsed.sizes.full.url})`,
       };
@@ -224,11 +231,11 @@ export class Component extends React.Component {
       imageStyle = {};
     }
 
-    let btnClass = display_btn ? "vk_post-btn-display" : "";
+    const btnClass = display_btn ? "vk_post-btn-display" : "";
 
     return (
-      <div
-        className={`${className} vk_post ${layout} vk_card_item vk_post-col-xs-${convertToGrid(
+	<div
+		className={ `${className} vk_post ${layout} vk_card_item vk_post-col-xs-${convertToGrid(
           col_xs
         )} vk_post-col-sm-${convertToGrid(
           col_sm
@@ -236,15 +243,15 @@ export class Component extends React.Component {
           col_md
         )} vk_post-col-lg-${convertToGrid(
           col_lg
-        )} vk_post-col-xl-${convertToGrid(col_xl)} ${btnClass}`}
+        )} vk_post-col-xl-${convertToGrid(col_xl)} ${btnClass}` }
       >
-        {renderImage(display_image)}
-        <div className="vk_post_body card-body">
-          {renderTitle(align)}
-          {renderExcerpt(align)}
-          {renderButton(display_btn, align)}
-        </div>
-      </div>
+		{ renderImage(display_image) }
+		<div className="vk_post_body card-body">
+			{ renderTitle(align) }
+			{ renderExcerpt(align) }
+			{ renderButton(display_btn, align) }
+		</div>
+	</div>
     );
   }
 }

@@ -75,8 +75,6 @@ registerBlockType("vk-blocks/card", {
     let beforeLength;
 		let afterLength;
 
-		console.log(attributes)
-
     if (
       currentBlock !== undefined &&
       currentBlock[0] !== null &&

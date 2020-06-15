@@ -9,7 +9,7 @@ const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { InnerBlocks, InspectorControls } = vkbBlockEditor;
 const { PanelBody, SelectControl } = wp.components;
-const { Fragment } = wp.element;
+const { Fragment,useRef } = wp.element;
 
 const BlockIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 576">
@@ -28,8 +28,11 @@ registerBlockType("vk-blocks/animation", {
 	},
 
 	edit(props) {
-		const { className, attributes, setAttributes } = props;
+		const { className, attributes, setAttributes, clientId } = props;
 		const {effect} = attributes;
+		const customClientId = clientId.replace(/-/g, '');
+		setAttributes({clientId:customClientId})
+
 		return (
 			<Fragment>
 				<InspectorControls>
@@ -46,7 +49,7 @@ registerBlockType("vk-blocks/animation", {
 						/>
 					</PanelBody>
 				</InspectorControls>
-				<div className={ classNames(className, `vk_animation vk_animation-${effect}`) }>
+				<div className={ classNames(className, `vk_animation vk_animation-${effect}`, customClientId) }>
 					<InnerBlocks
 						templateInsertUpdatesSelection={ false }
 					/>
@@ -57,7 +60,7 @@ registerBlockType("vk-blocks/animation", {
 
 	save(props) {
 		return (
-			<div className={ classNames(`vk_animation vk_animation-${props.attributes.effect}`) }>
+			<div className={ classNames(`vk_animation vk_animation-${props.attributes.effect} vk_animation-${props.attributes.clientId}`) }>
 				<InnerBlocks.Content />
 			</div>
 		);

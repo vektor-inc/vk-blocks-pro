@@ -5,6 +5,7 @@
 import { Component } from "./component";
 import { schema } from "./schema";
 import { LinkControl } from "../../../components/link-control";
+import { deprecated } from "./deprecated"
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -73,5 +74,6 @@ registerBlockType("vk-blocks/card-item", {
 
   save(props) {
     return <Component {...props} for_={"save"} />;
-  },
+	},
+	deprecated : deprecated
 });

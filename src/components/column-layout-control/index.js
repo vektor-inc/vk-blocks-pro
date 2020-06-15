@@ -14,6 +14,10 @@ export const setOptions = name => {
 			{
 				value: "card-noborder",
 				label: __("Card ( No border )", "vk-blocks")
+			},
+			{
+				value: "card-imageRound",
+				label: __("Card ( Image Round )", "vk-blocks")
 			}
 		],
 		"vk-blocks/else": [
@@ -51,17 +55,17 @@ const ColumnLayoutControlRaw = (ColumnLayout) =>
 				const { layout, name } = attributes;
 				return (
 					<PanelBody
-						title={__("Display type and columns", "vk-blocks")}
-						initialOpen={false}
+						title={ __("Display type and columns", "vk-blocks") }
+						initialOpen={ false }
 					>
-						<BaseControl label={__("Display type", "vk-blocks")}>
+						<BaseControl label={ __("Display type", "vk-blocks") }>
 							<SelectControl
-								value={layout}
-								onChange={value => setAttributes({ layout: value })}
-								options={setOptions(name)}
+								value={ layout }
+								onChange={ value => setAttributes({ layout: value }) }
+								options={ setOptions(name) }
 							/>
 						</BaseControl>
-						<ColumnLayout {...this.props} />
+						<ColumnLayout { ...this.props } />
 					</PanelBody>
 				);
 			}

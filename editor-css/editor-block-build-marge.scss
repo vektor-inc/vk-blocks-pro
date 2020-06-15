@@ -1509,49 +1509,6 @@ ol {
 	}
 }
 
-.alert{
-
-  padding: 1em;
-  margin: 1em 0;
-  border-radius: 3px;
-	p {
-		margin-bottom:0;
-	}
-
-  & + &{
-    margin-top: 2em;
-  }
-
-  a{
-    transition: color .3s linear, opacity .3s linear;
-    &:link, &:visited{
-      opacity: .8;
-      text-decoration: underline;
-    }
-    &:hover, &:visited{
-      opacity: 1;
-      text-decoration: none;
-    }
-  }
-
-  @each $var in (
-                  (success, #dff0d8,#3c763d,#d6e9c6),
-                  (info, #d9edf7,#31708f,#bce8f1),
-                  (warning, #fcf8e3,#8a6d3b,#faebcc),
-                  (danger, #f2dede,#a94442,#ebccd1),
-  ){
-    $class-name: nth($var, 1);
-    $color-bg: nth($var, 2);
-    $color: nth($var, 3);
-    $color-border :nth($var, 4);
-    &-#{$class-name}{
-      background-color: $color-bg;
-      color:$color;
-      border-color:$color-border;
-    }
-  }
-}
-
 .vk_button {
 	margin: 5px 0;
 	text-align: center; /* テキストのみの時のセンター揃え */
@@ -3041,8 +2998,10 @@ $padding-xl: 3.5em;
 }
 
 .vk_outer-bgPosition-fixed {
-	background-attachment: fixed;
-	background-size: cover;
+	// background-attachment は !important をつけておかないと
+	// 画面サイズ毎の指定が background に対してされていて attachment が無効化されるため !important を消さないこと
+	background-attachment: fixed !important;
+	background-size: cover !important;
 	// iPhone の時に fixed のままだとバグで反応せずに画像のcoverまで効かなくなって巨大な画像が表示されるので
 	// scroll で上書きする
 	@supports (-webkit-overflow-scrolling: touch) {
@@ -3089,7 +3048,7 @@ $color-danger: #b52727;
     background: rgba(255,255,255,0.5);
     padding: 5px 10px;
     font-size: 20px;
-    border-radius: .25rem;    
+    border-radius: .25rem;
 	  color:rgba(0,0,0,0.5);
   }
 
@@ -3176,7 +3135,7 @@ $color-danger: #b52727;
         left: 20px;
       }
   }
-  
+
   .swiper-button-next,
   .swiper-container-rtl .swiper-button-prev {
       right: 10px;
@@ -3217,7 +3176,7 @@ $color-danger: #b52727;
        right: 0;
     }
 }
-  
+
 .swiper-button-next:hover:after{
    animation: arrow_next .5s ease-out forwards;
 }
@@ -3239,7 +3198,7 @@ $color-danger: #b52727;
     opacity: 0.6;
 }
 
-.swiper-container-horizontal>.swiper-pagination-bullets, 
+.swiper-container-horizontal>.swiper-pagination-bullets,
 .swiper-pagination-custom, .swiper-pagination-fraction{
 	bottom: 15px;
 }
@@ -3251,7 +3210,7 @@ $color-danger: #b52727;
     display: none;
   }
   .swiper-container.vk_width-full{ //全幅の時
-    
+
     .wp-block-vk-blocks-slider-item{
       margin: auto;
       .vk_outer-paddingLR-use { //メニューに隠れて編集しずらいため
@@ -3263,7 +3222,7 @@ $color-danger: #b52727;
     }
 
   }
-  
+
 }
 /*-------------------------------------------*/
 /* CSS
@@ -3284,6 +3243,10 @@ $color-danger: #b52727;
 		justify-content: flex-end;
 	}
 }
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 
 /*-------------------------------------------*/
 /* CSS
@@ -3345,10 +3308,6 @@ $color-danger: #b52727;
 		bottom: 4px;
 	}
 }
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
 
 /*-------------------------------------------*/
 /* CSS

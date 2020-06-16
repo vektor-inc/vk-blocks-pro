@@ -1,10 +1,25 @@
 import { vkbBlockEditor } from "../_helper/depModules";
 import classNames from "classnames";
-import ReactHtmlParser from 'react-html-parser';
 const { InnerBlocks, RichText } = vkbBlockEditor;
 const { __ } = wp.i18n;
+import { faSchema } from "./../_helper/font-awesome";
 
-const Body = (props) => {
+export const originalSchema = {
+	heading: {
+		type: "string",
+		source: "html",
+		selector: "h4"
+	},
+	color: {
+		type: 'string',
+		default: 'red',
+	}
+};
+let depMergeSchema = () => {
+	return Object.assign(originalSchema, faSchema);
+};
+
+const DepBody = (props) => {
 	const { setAttributes, attributes, for_, className } = props;
 	const { heading,color,faIcon } = attributes;
 
@@ -39,7 +54,7 @@ const Body = (props) => {
 	return (
 		<div className={`vk_borderBox vk_borderBox-color-${color} ${customClass}`}>
 			<div className="vk_borderBox_title_container">
-				{ReactHtmlParser(faIcon)}
+				<i className={`${faIcon}`}></i>
 				{title}
 			</div>
 			<div className="vk_borderBox_body">
@@ -47,6 +62,13 @@ const Body = (props) => {
 			</div>
 		</div>
 	);
-
 }
-export default Body;
+
+export const deprecated = [
+  {
+    attributes: depMergeSchema,
+    save(props) {
+      return ( <DepBody for_={ 'save' }{ ...props } />);
+    }
+  }
+]

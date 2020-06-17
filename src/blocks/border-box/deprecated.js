@@ -2,22 +2,6 @@ import { vkbBlockEditor } from "../_helper/depModules";
 import classNames from "classnames";
 const { InnerBlocks, RichText } = vkbBlockEditor;
 const { __ } = wp.i18n;
-import { faSchema } from "./../_helper/font-awesome";
-
-export const originalSchema = {
-	heading: {
-		type: "string",
-		source: "html",
-		selector: "h4"
-	},
-	color: {
-		type: 'string',
-		default: 'red',
-	}
-};
-let depMergeSchema = () => {
-	return Object.assign(originalSchema, faSchema);
-};
 
 const DepBody = (props) => {
 	const { setAttributes, attributes, for_, className } = props;
@@ -66,7 +50,21 @@ const DepBody = (props) => {
 
 export const deprecated = [
   {
-    attributes: depMergeSchema,
+    attributes: {
+		heading: {
+			type: "string",
+			source: "html",
+			selector: "h4"
+		},
+		color: {
+			type: 'string',
+			default: 'red',
+		},
+		faIcon: {
+			type: 'string',
+			default: '',
+		},
+	},
     save(props) {
       return ( <DepBody for_={ 'save' }{ ...props } />);
     }

@@ -36,10 +36,18 @@ const Body = (props) => {
 		customClass =  classNames(className,'is-style-vk_borderBox-style-solid-kado-tit-tab')
 	}
 
+	//iタグでdeprecatedが効かなかったので追加。
+	let icon;
+	if ( faIcon.indexOf('<i class="') === -1) {
+		icon = `<i class="${faIcon}"></i>`
+	}else{
+		icon = faIcon
+	}
+
 	return (
 		<div className={`vk_borderBox vk_borderBox-color-${color} ${customClass}`}>
 			<div className="vk_borderBox_title_container">
-				{ReactHtmlParser(faIcon)}
+				{ReactHtmlParser(icon)}
 				{title}
 			</div>
 			<div className="vk_borderBox_body">

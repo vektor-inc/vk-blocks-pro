@@ -98,8 +98,8 @@ $toc-left-margin: 1rem;
 	}
 	/* Accordion styles */
 	.tab {
-    width: 100%;
-    overflow: hidden;
+		width: 100%;
+		overflow: hidden;
 		&_content-open {
 			max-height: auto;
 			padding: 1em;
@@ -135,7 +135,7 @@ $toc-left-margin: 1rem;
 			padding: 0 1em;
 		}
 		~ .tab_content-close {
-			max-height: 100vh;
+			max-height: 2000px;
 			padding: 1em;
 		}
 	}

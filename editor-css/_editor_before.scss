@@ -13,7 +13,8 @@
 .editor-block-list-item-vk-blocks-table-of-contents:after,
 .editor-block-list-item-vk-blocks-table-of-contents-new:after,
 .editor-block-list-item-vk-blocks-simple-table:after,
-.editor-block-list-item-vk-blocks-grid-column:after {
+.editor-block-list-item-vk-blocks-grid-column:after,
+.editor-block-list-item-vk-blocks-icon-card:after {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -55,9 +56,9 @@ button.image-button:not(.button-delete) {
 	&__help {
 		margin-top: 0;
 	}
-	.components-button {
-		margin-bottom: 0.5em;
-	}
+	// .components-button {
+	// 	margin-bottom: 0.5em;
+	// }
 }
 
 .components-radio-control__option label {
@@ -140,7 +141,7 @@ $color-danger: #dd3333;
 		// コンテンツエリアをはみ出させる
 		.wp-block { max-width:100%; }
 	}
-	
+
 	.is-sidebar-opened & .vk_outer-width-full.vk_outer-paddingLR-use {
 		// サイドバー表示時に全幅要素がはみ出してサイドバーの下などに入り込むのを防止
 		margin-left: calc( 50% - 50vw + 140px );
@@ -385,7 +386,7 @@ $color-danger: #b52727;
 
 	// colの余分な余白の削除など
 	// col内に入れたブロックにまで反映されないように & > 指定
-	div[class*="col-"].block-editor-block-list__block { 
+	div[class*="col-"].block-editor-block-list__block {
 		flex: inherit;
 		margin:0 15px 15px;
 		padding: 0;
@@ -561,4 +562,10 @@ $color-danger: #b52727;
 
 .vk_grid-column .block-list-appender{
   width: 100%;
+}
+
+.wp-block-vk-blocks-icon-card{
+	.vk_icon-card_item{
+		margin: 15px auto!important;
+	}
 }

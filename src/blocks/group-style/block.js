@@ -90,36 +90,52 @@ export const addBlockControl = createHigherOrderComponent(BlockEdit => {
 addFilter("editor.BlockEdit", "vk-blocks/group-style", addBlockControl);
 
 wp.blocks.registerBlockStyle("core/group", [
-  {
-    name: "vk-group-solid",
-    label: __("Solid", "vk-blocks")
-  },
-  {
-    name: "vk-group-solid-roundcorner",
-    label: __("Solid Roundcorner", "vk-blocks")
-  },
-  {
-    name: "vk-group-dotted",
-    label: __("Dotted", "vk-blocks")
-  },
-  {
-    name: "vk-group-dashed",
-    label: __("Dashed", "vk-blocks")
-  },
-  {
-    name: "vk-group-double",
-    label: __("Double", "vk-blocks")
-  },
-  {
-    name: "vk-group-stitch",
-    label: __("Stitch", "vk-blocks")
-  },
-  {
-    name: "vk-group-top-bottom-border",
-    label: __("Border Top Bottom", "vk-blocks")
-  },
-  {
-    name: "vk-group-shadow",
-    label: __("Shadow", "vk-blocks")
-  }
+	{
+		name: "vk-group-solid",
+		label: __("Solid", "vk-blocks")
+	},
+	{
+		name: "vk-group-solid-roundcorner",
+		label: __("Solid Roundcorner", "vk-blocks")
+	},
+	{
+		name: "vk-group-dotted",
+		label: __("Dotted", "vk-blocks")
+	},
+	{
+		name: "vk-group-dashed",
+		label: __("Dashed", "vk-blocks")
+	},
+	{
+		name: "vk-group-double",
+		label: __("Double", "vk-blocks")
+	},
+	{
+		name: "vk-group-stitch",
+		label: __("Stitch", "vk-blocks")
+	},
+	{
+		name: "vk-group-top-bottom-border",
+		label: __("Border Top Bottom", "vk-blocks")
+	},
+	{
+		name: "vk-group-shadow",
+		label: __("Shadow", "vk-blocks")
+	},
+	{
+		name: "vk-group-alert-info",
+		label: __("Info", "vk-blocks")
+	},
+	{
+		name: "vk-group-alert-success",
+		label: __("Success", "vk-blocks")
+	},
+	{
+		name: "vk-group-alert-warning",
+		label: __("Warning", "vk-blocks")
+	},
+	{
+		name: "vk-group-alert-danger",
+		label: __("Danger", "vk-blocks")
+	}
 ]);

@@ -18,13 +18,15 @@ export class FontAwesome extends Component {
 
 		const render = (
 			<Fragment>
-				<label className={"components-base-control__label"}>{__('Icon Background:', 'vk-blocks')}</label>
+				<label className={"components-base-control__label"}>{__('Icon', 'vk-blocks')}</label>
 				<RadioControl
 					selected={faIcon}
 					options={[
-						{ label:<i className="fas fa-arrow-circle-right fa-lg"></i>, value: '<i class="fas fa-arrow-circle-right fa-lg">' },
-						{ label:<i className="fas fa-address-book fa-lg"></i>, value: '<i class="fas fa-address-book fa-lg"></i>' },
-						{ label:<i className="fas fa-address-book fa-lg"></i>, value: '<i class="fas fa-address-book fa-lg"></i>' }
+						{ label: <i className="fas fa-battery-empty fa-lg"></i>, value: '<i class="fas fa-battery-empty"></i>' },
+						{ label: <i className="fas fa-battery-quarter fa-lg"></i>, value: '<i class="fas fa-battery-quarter"></i>' },
+						{ label: <i className="fas fa-battery-half fa-lg"></i>, value: '<i class="fas fa-battery-half"></i>' },
+						{ label: <i className="fas fa-battery-three-quarters fa-lg"></i>, value: '<i class="fas fa-battery-three-quarters"></i>' },
+						{ label: <i className="fas fa-battery-full fa-lg"></i>, value: '<i class="fas fa-battery-full"></i>' }
 					]}
 					onChange={(value) => setAttributes({ faIcon: value })}
 				/>

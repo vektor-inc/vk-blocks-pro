@@ -18,16 +18,20 @@ export class FontAwesome extends Component {
 
 		const render = (
 			<Fragment>
-				<label className={"components-base-control__label"}>{__('Icon', 'vk-blocks')}</label>
+				<label className={ "components-base-control__label" }>{ __('Icon', 'vk-blocks') }</label>
 				<RadioControl
-					selected={faIcon}
-					options={[
-						{ label: <i className="fas fa-arrow-up"></i>, value: '<i class="fas fa-arrow-up"></i>' },
+					selected={ faIcon }
+					options={ [
 						{ label: <i className="fas fa-arrow-right"></i>, value: '<i class="fas fa-arrow-right"></i>' },
 						{ label: <i className="fas fa-arrow-down"></i>, value: '<i class="fas fa-arrow-down"></i>' },
-						{ label: <i className="fas fa-arrow-circle-up"></i>, value: '<i class="fas fa-arrow-circle-up"></i>' },
+						{ label: <i className="fas fa-arrow-left"></i>, value: '<i class="fas fa-arrow-left"></i>' },
                         { label: <i className="fas fa-arrow-circle-right"></i>, value: '<i class="fas fa-arrow-circle-right"></i>' },
-                        { label: <i className="fas fas fa-arrow-circle-down"></i>, value: '<i class="fas fa-arrow-circle-down"></i>' },
+						{ label: <i className="fas fas fa-arrow-circle-down"></i>, value: '<i class="fas fa-arrow-circle-down"></i>' },
+						{ label: <i className="fas fas fa-arrow-circle-left"></i>, value: '<i class="fas fa-arrow-circle-left"></i>' },
+						{ label: <i className="fas fa-external-link-square-alt"></i>, value: '<i class="fas fa-external-link-square-alt"></i>' },
+						{ label: <i className="fas fa-external-link-alt"></i>, value: '<i class="fas fa-external-link-alt"></i>' },
+						{ label: <i className="fas fa-download"></i>, value: '<i class="fas fa-download"></i>' },
+
                         { label: <i className="fas fa-exclamation-triangle"></i>, value: '<i class="fas fa-exclamation-triangle"></i>' },
                         { label: <i className="fas fa-exclamation-circle"></i>, value: '<i class="fas fa-exclamation-circle"></i>' },
                         { label: <i className="fas fa-exclamation"></i>, value: '<i class="fas fa-exclamation"></i>' },
@@ -41,16 +45,18 @@ export class FontAwesome extends Component {
                         { label: <i className="fas fa-phone"></i>, value: '<i class="fas fa-phone"></i>' },
                         { label: <i className="fas fa-phone-square"></i>, value: '<i class="fas fa-phone-square"></i>' },
                         { label: <i className="fas fa-envelope"></i>, value: '<i class="fas fa-envelope"></i>' },
-                        { label: <i className="fab fa-line"></i>, value: '<i class="fab fa-line"></i>' },
                         { label: <i className="fas fa-user"></i>, value: '<i class="fas fa-user"></i>' },
-                        { label: <i className="fas fa-users"></i>, value: '<i class="fas fa-users"></i>' },
+						{ label: <i className="fas fa-users"></i>, value: '<i class="fas fa-users"></i>' },
+						{ label: <i className="fas fa-file-alt"></i>, value: '<i class="far fa-file-alt"></i>' },
+						{ label: <i className="fas fa-file"></i>, value: '<i class="fas fa-file"></i>' },
                         { label: <i className="fas fa-file-pdf"></i>, value: '<i class="fas fa-file-pdf"></i>' },
-                        { label: <i className="fas fa-file"></i>, value: '<i class="fas fa-file"></i>' },
+
                         { label: <i className="fas fa-building"></i>, value: '<i class="fas fa-building"></i>' },
                         { label: <i className="fab fa-twitter"></i>, value: '<i class="fab fa-twitter"></i>' },
-                        { label: <i className="fab fa-facebook-square"></i>, value: '<i class="fab fa-facebook-square"></i>' },
-					]}
-					onChange={(value) => setAttributes({ faIcon: value })}
+						{ label: <i className="fab fa-facebook-square"></i>, value: '<i class="fab fa-facebook-square"></i>' },
+                        { label: <i className="fab fa-line"></i>, value: '<i class="fab fa-line"></i>' },
+					] }
+					onChange={ (value) => setAttributes({ faIcon: value }) }
 				/>
 				<hr></hr>
 				<p className="mt-1">{ __('If you want to use an icon other than the ones listed above, you can use any of the icons from Font Awesome\'s icon list Please select a tag and enter it.', 'vk-blocks') }<br />
@@ -70,9 +76,9 @@ export class FontAwesome extends Component {
 					className="mb-0"
 				/>
 				<AdvancedPopOverControl
-					label={__("Select Icon", "vk-blocks")}
-					renderComp={render}
-					setAttributes={setAttributes}
+					label={ __("Select Icon", "vk-blocks") }
+					renderComp={ render }
+					setAttributes={ setAttributes }
 				/>
 			</Fragment>
 		);

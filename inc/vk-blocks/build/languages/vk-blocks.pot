@@ -3,24 +3,47 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/_helper/font-awesome.js:22
-msgid "Font Awesome"
+#: src/blocks/_helper/font-awesome-new.js:21
+#: src/blocks/_pro/icon-card-item/block.js:54
+#: src/blocks/border-box/block.js:114
+msgid "Icon"
 msgstr ""
 
-#: src/blocks/_helper/font-awesome.js:28
-msgid "Enter Font Awesome Class."
+#: src/blocks/_helper/font-awesome-new.js:62
+msgid ""
+"If you want to use an icon other than the ones listed above, you can use "
+"any of the icons from Font Awesome's icon list Please select a tag and "
+"enter it."
 msgstr ""
 
-#: src/blocks/_helper/font-awesome.js:29
-msgid "Ex) fas fa-arrow-circle-right"
+#: src/blocks/_helper/font-awesome-new.js:63
+msgid "Ex) <i class=\"fas fa-arrow-circle-right\"></i>"
 msgstr ""
 
-#: src/blocks/_helper/font-awesome.js:31
+#: src/blocks/_helper/font-awesome-new.js:65
+#: src/blocks/_helper/font-awesome.js:30
 #: src/blocks/_pro/icon-card-item/block.js:62
 #: src/blocks/button/block.js:267
 #: src/blocks/pr-blocks/block.js:325
 #: src/blocks/pr-content/block.js:202
 msgid "Font Awesome icon list"
+msgstr ""
+
+#: src/blocks/_helper/font-awesome-new.js:72
+#: src/blocks/_helper/font-awesome.js:21
+msgid "Font Awesome"
+msgstr ""
+
+#: src/blocks/_helper/font-awesome-new.js:79
+msgid "Select Icon"
+msgstr ""
+
+#: src/blocks/_helper/font-awesome.js:27
+msgid "Enter Font Awesome Class."
+msgstr ""
+
+#: src/blocks/_helper/font-awesome.js:28
+msgid "Ex) fas fa-arrow-circle-right"
 msgstr ""
 
 #: src/blocks/_pro/card-item/block.js:43
@@ -36,26 +59,26 @@ msgid "https://example.com"
 msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:110
-#: src/blocks/_pro/card-item/deprecated.js:196
+#: src/blocks/_pro/card-item/deprecated.js:537
 #: src/components/advanced-media-upload/index.js:32
 msgid "Delete Image"
 msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:164
-#: src/blocks/_pro/card-item/deprecated.js:250
+#: src/blocks/_pro/card-item/deprecated.js:591
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
 "tempor incididunt ut labore et dolore magna aliqua. "
 msgstr ""
 
-#: src/blocks/_pro/card-item/component.js:208
-#: src/blocks/_pro/card-item/deprecated.js:294
+#: src/blocks/_pro/card-item/component.js:209
+#: src/blocks/_pro/card-item/deprecated.js:636
 #: src/blocks/_pro/icon-card/block.js:101
 msgid "Title"
 msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:97
-#: src/blocks/_pro/card-item/deprecated.js:183
+#: src/blocks/_pro/card-item/deprecated.js:524
 #: src/blocks/balloon/block.js:114
 #: src/blocks/flow/block.js:96
 #: src/blocks/pr-blocks/block.js:158
@@ -67,35 +90,35 @@ msgstr ""
 msgid "Select image"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:132
+#: src/blocks/_pro/card/block.js:130
 #: src/components/display-items-control/index.js:27
 msgid "Display item"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:134
+#: src/blocks/_pro/card/block.js:132
 #: src/components/display-items-control/index.js:29
 msgid "Image"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:139
+#: src/blocks/_pro/card/block.js:137
 #: src/blocks/button/block.js:45
 #: src/components/display-items-control/index.js:58
 msgid "Button"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:144
+#: src/blocks/_pro/card/block.js:142
 #: src/components/display-items-control/index.js:75
 msgid "Button option"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:147
+#: src/blocks/_pro/card/block.js:145
 #: src/components/display-items-control/index.js:78
 msgid ""
 "Click each card block to set the target url. You can find the url form at "
 "it's sidebar."
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:153
+#: src/blocks/_pro/card/block.js:151
 #: src/components/display-items-control/index.js:84
 msgid "Button text"
 msgstr ""
@@ -161,11 +184,6 @@ msgstr ""
 #: src/blocks/pr-blocks/block.js:311
 #: src/blocks/pr-content/block.js:160
 msgid "Open link new tab."
-msgstr ""
-
-#: src/blocks/_pro/icon-card-item/block.js:54
-#: src/blocks/border-box/block.js:113
-msgid "Icon"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/block.js:57
@@ -473,7 +491,7 @@ msgstr ""
 
 #: src/blocks/_pro/step-item/block.js:58
 #: src/blocks/_pro/timeline-item/block.js:63
-#: src/blocks/border-box/block.js:85
+#: src/blocks/border-box/block.js:86
 #: src/blocks/staff/block.js:103
 msgid "Color"
 msgstr ""
@@ -646,55 +664,56 @@ msgstr ""
 msgid "Thinking"
 msgstr ""
 
-#: src/blocks/border-box/Body.js:20
+#: src/blocks/border-box/Body.js:21
+#: src/blocks/border-box/deprecated.js:20
 msgid "Please enter a title."
 msgstr ""
 
-#: src/blocks/border-box/block.js:100
+#: src/blocks/border-box/block.js:101
 msgid "Blue"
 msgstr ""
 
-#: src/blocks/border-box/block.js:104
+#: src/blocks/border-box/block.js:105
 msgid "Green"
 msgstr ""
 
-#: src/blocks/border-box/block.js:108
+#: src/blocks/border-box/block.js:109
 msgid "Black"
 msgstr ""
 
-#: src/blocks/border-box/block.js:44
+#: src/blocks/border-box/block.js:45
 msgid "Border Box"
 msgstr ""
 
-#: src/blocks/border-box/block.js:54
+#: src/blocks/border-box/block.js:55
 msgid "Solid Angle Tab"
 msgstr ""
 
-#: src/blocks/border-box/block.js:59
+#: src/blocks/border-box/block.js:60
 msgid "Solid Round Tab"
 msgstr ""
 
-#: src/blocks/border-box/block.js:63
+#: src/blocks/border-box/block.js:64
 msgid "Solid Angle Banner"
 msgstr ""
 
-#: src/blocks/border-box/block.js:67
+#: src/blocks/border-box/block.js:68
 msgid "Solid Angle Onborder"
 msgstr ""
 
-#: src/blocks/border-box/block.js:71
+#: src/blocks/border-box/block.js:72
 msgid "Solid Angle Inner"
 msgstr ""
 
-#: src/blocks/border-box/block.js:75
+#: src/blocks/border-box/block.js:76
 msgid "Solid Angle iconFeature"
 msgstr ""
 
-#: src/blocks/border-box/block.js:92
+#: src/blocks/border-box/block.js:93
 msgid "Red"
 msgstr ""
 
-#: src/blocks/border-box/block.js:96
+#: src/blocks/border-box/block.js:97
 msgid "Orange"
 msgstr ""
 
@@ -1271,6 +1290,10 @@ msgstr ""
 
 #: src/blocks/staff/component.js:50
 msgid "Caption"
+msgstr ""
+
+#: src/components/advanced-popover-control/index.js:53
+msgid "More"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:16

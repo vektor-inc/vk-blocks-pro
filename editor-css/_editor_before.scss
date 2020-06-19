@@ -154,8 +154,43 @@ $color-danger: #dd3333;
 .vk_spacer {
 	border: 1px dotted #ccc;
 }
+// アニメーションブロックの識別用枠線
 .vk_animation {
 	border: 1px dashed #ccc;
+	// そのままだと編集画面でも消えてしまうので上書き（.wp-block-vk-blocks-animation）がないと負けてしまう
+	&.wp-block-vk-blocks-animation{
+		opacity: 1;
+	}
+	&:before {
+		position:absolute;
+		right:0;
+		top:0;
+		font-size:10px;
+	}
+	&.vk_animation-fade-in{
+		left:0;
+		&:before {
+			content:'Fade in';
+		}
+	}
+	&.vk_animation-slide-left{
+		right:0;
+		&:before {
+			content:'Slide left';
+		}
+	}
+	&.vk_animation-slide-right{
+		left:0;
+		&:before {
+			content:'Slide right';
+		}
+	}
+	&.vk_animation-slide-up{
+		top:0;
+		&:before {
+			content:'Slide up';
+		}
+	}
 }
 
 table {

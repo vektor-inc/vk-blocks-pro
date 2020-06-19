@@ -27,27 +27,27 @@ msgstr ""
 msgid "Animation Block"
 msgstr ""
 
-#: src/blocks/_pro/animation/block.js:36
+#: src/blocks/_pro/animation/block.js:39
 msgid "Animation Settings"
 msgstr ""
 
-#: src/blocks/_pro/animation/block.js:41
+#: src/blocks/_pro/animation/block.js:44
 msgid "Fade In"
 msgstr ""
 
-#: src/blocks/_pro/animation/block.js:42
-msgid "Fade Up"
+#: src/blocks/_pro/animation/block.js:45
+msgid "Slide Up"
 msgstr ""
 
-#: src/blocks/_pro/animation/block.js:43
+#: src/blocks/_pro/animation/block.js:46
 msgid "Slide Left"
 msgstr ""
 
-#: src/blocks/_pro/animation/block.js:44
+#: src/blocks/_pro/animation/block.js:47
 msgid "Slide Right"
 msgstr ""
 
-#: src/blocks/_pro/card-item/block.js:42
+#: src/blocks/_pro/card-item/block.js:43
 msgid "Card Item"
 msgstr ""
 

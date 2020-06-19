@@ -42,14 +42,14 @@ registerBlockType("vk-blocks/animation", {
 							onChange={ value => setAttributes({ effect: value }) }
 							options={ [
 								{ label: __("Fade In", "vk-blocks"), value: "fade-in" },
-								{ label: __("Fade Up", "vk-blocks"), value: "fade-up" },
+								{ label: __("Slide Up", "vk-blocks"), value: "slide-up" },
 								{ label: __("Slide Left", "vk-blocks"), value: "slide-left" },
 								{ label: __("Slide Right", "vk-blocks"), value: "slide-right" },
 							] }
 						/>
 					</PanelBody>
 				</InspectorControls>
-				<div className={ classNames(className, `vk_animation vk_animation-${effect} vk_animation-${customClientId}`)}>
+				<div className={ classNames(className, `vk_animation vk_animation-${effect} vk_animation-${customClientId}`) }>
 					<InnerBlocks
 						templateInsertUpdatesSelection={ false }
 					/>

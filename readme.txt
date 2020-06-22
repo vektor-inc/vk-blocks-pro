@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.4.1
-Stable tag: 0.33.2
+Stable tag: 0.33.3
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -58,6 +58,9 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.33.3 =
+[ Bug fix ] reverse to 0.33.1
 
 = 0.33.2 =
 [ Bug fix ][ Card (pro) ] if url is null, no a tag of card title.

@@ -34,4 +34,5 @@ import "./_pro/timeline-item/block.js";
 import "./_pro/timeline/block.js";
 import "./_pro/grid-column/block.js";
 import "./_pro/grid-column-item/block.js";
+import "./_pro/animation/block.js";
 import "../plugin/menu/block.js";

@@ -10,7 +10,7 @@ export default class AdvancedPopOverControl extends Component {
 	}
 
 	render() {
-		const popverBtnClass = "apc-icon-btn";
+		const popverBtnClass = "apc-icon-btn components-button is-secondary is-small";
 
 		const handleOpen = () => {
 			this.setState({ open: !this.state.open });
@@ -40,23 +40,21 @@ export default class AdvancedPopOverControl extends Component {
 					>
 						<Button
 							isTertiary
-							className={`${popverBtnClass}`}
-							onClick={handleOpen}
-							ref={this.buttonRef}
+							className={ `${popverBtnClass}` }
+							onClick={ handleOpen }
+							ref={ this.buttonRef }
 						>
-							<span className="components-base-control__label">
-								{this.props.label}
-							</span>
+							{ this.props.label }
 						</Button>
-						{this.state.open && this.buttonRef.current && (
+						{ this.state.open && this.buttonRef.current && (
 							<Popover
-								anchorRect={this.buttonRef.current.getBoundingClientRect()}
-								children={this.props.renderComp}
-								onFocusOutside={handleOnClickOutside}
-								focusOnMount={"container"}
-								className={"vk-blocks-advanced-popover-control"}
+								anchorRect={ this.buttonRef.current.getBoundingClientRect() }
+								children={ this.props.renderComp }
+								onFocusOutside={ handleOnClickOutside }
+								focusOnMount={ "container" }
+								className={ "vk-blocks-advanced-popover-control" }
 							></Popover>
-						)}
+						) }
 					</div>
 				</div>
 			</Fragment>

@@ -23,27 +23,27 @@ msgstr ""
 msgid "Font Awesome icon list"
 msgstr ""
 
-#: src/blocks/_pro/animation/block.js:22
+#: src/blocks/_pro/animation/block.js:29
 msgid "Animation Block"
 msgstr ""
 
-#: src/blocks/_pro/animation/block.js:39
+#: src/blocks/_pro/animation/block.js:46
 msgid "Animation Settings"
 msgstr ""
 
-#: src/blocks/_pro/animation/block.js:44
+#: src/blocks/_pro/animation/block.js:51
 msgid "Fade In"
 msgstr ""
 
-#: src/blocks/_pro/animation/block.js:45
+#: src/blocks/_pro/animation/block.js:52
 msgid "Slide Up"
 msgstr ""
 
-#: src/blocks/_pro/animation/block.js:46
+#: src/blocks/_pro/animation/block.js:53
 msgid "Slide Left"
 msgstr ""
 
-#: src/blocks/_pro/animation/block.js:47
+#: src/blocks/_pro/animation/block.js:54
 msgid "Slide Right"
 msgstr ""
 
@@ -60,26 +60,26 @@ msgid "https://example.com"
 msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:110
-#: src/blocks/_pro/card-item/deprecated.js:196
+#: src/blocks/_pro/card-item/deprecated.js:537
 #: src/components/advanced-media-upload/index.js:32
 msgid "Delete Image"
 msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:164
-#: src/blocks/_pro/card-item/deprecated.js:250
+#: src/blocks/_pro/card-item/deprecated.js:591
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
 "tempor incididunt ut labore et dolore magna aliqua. "
 msgstr ""
 
-#: src/blocks/_pro/card-item/component.js:208
-#: src/blocks/_pro/card-item/deprecated.js:294
+#: src/blocks/_pro/card-item/component.js:209
+#: src/blocks/_pro/card-item/deprecated.js:636
 #: src/blocks/_pro/icon-card/block.js:101
 msgid "Title"
 msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:97
-#: src/blocks/_pro/card-item/deprecated.js:183
+#: src/blocks/_pro/card-item/deprecated.js:524
 #: src/blocks/balloon/block.js:114
 #: src/blocks/flow/block.js:96
 #: src/blocks/pr-blocks/block.js:158
@@ -91,35 +91,35 @@ msgstr ""
 msgid "Select image"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:132
+#: src/blocks/_pro/card/block.js:130
 #: src/components/display-items-control/index.js:27
 msgid "Display item"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:134
+#: src/blocks/_pro/card/block.js:132
 #: src/components/display-items-control/index.js:29
 msgid "Image"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:139
+#: src/blocks/_pro/card/block.js:137
 #: src/blocks/button/block.js:45
 #: src/components/display-items-control/index.js:58
 msgid "Button"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:144
+#: src/blocks/_pro/card/block.js:142
 #: src/components/display-items-control/index.js:75
 msgid "Button option"
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:147
+#: src/blocks/_pro/card/block.js:145
 #: src/components/display-items-control/index.js:78
 msgid ""
 "Click each card block to set the target url. You can find the url form at "
 "it's sidebar."
 msgstr ""
 
-#: src/blocks/_pro/card/block.js:153
+#: src/blocks/_pro/card/block.js:151
 #: src/components/display-items-control/index.js:84
 msgid "Button text"
 msgstr ""

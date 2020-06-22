@@ -44,6 +44,7 @@ msgstr ""
 
 #: src/blocks/_helper/font-awesome.js:28
 msgid "Ex) fas fa-arrow-circle-right"
+msgstr ""
 
 #: src/blocks/_pro/animation/block.js:29
 msgid "Animation"
@@ -82,26 +83,26 @@ msgid "https://example.com"
 msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:110
-#: src/blocks/_pro/card-item/deprecated.js:537
+#: src/blocks/_pro/card-item/deprecated.js:539
 #: src/components/advanced-media-upload/index.js:32
 msgid "Delete Image"
 msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:164
-#: src/blocks/_pro/card-item/deprecated.js:591
+#: src/blocks/_pro/card-item/deprecated.js:593
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
 "tempor incididunt ut labore et dolore magna aliqua. "
 msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:209
-#: src/blocks/_pro/card-item/deprecated.js:636
+#: src/blocks/_pro/card-item/deprecated.js:638
 #: src/blocks/_pro/icon-card/block.js:101
 msgid "Title"
 msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:97
-#: src/blocks/_pro/card-item/deprecated.js:524
+#: src/blocks/_pro/card-item/deprecated.js:526
 #: src/blocks/balloon/block.js:114
 #: src/blocks/flow/block.js:96
 #: src/blocks/pr-blocks/block.js:158
@@ -1313,10 +1314,6 @@ msgstr ""
 
 #: src/blocks/staff/component.js:50
 msgid "Caption"
-msgstr ""
-
-#: src/components/advanced-popover-control/index.js:53
-msgid "More"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:16

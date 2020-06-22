@@ -436,8 +436,10 @@ class DepComponent extends React.Component {
 }
 class DepComponent2 extends React.Component {
   render() {
-    const { setAttributes, attributes, className, clientId } = this.props;
+		const { setAttributes, attributes, clientId } = this.props.value;
+
     let {
+			className,
       layout,
       col_xs,
       col_sm,

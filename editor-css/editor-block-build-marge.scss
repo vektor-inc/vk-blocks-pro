@@ -4,6 +4,7 @@
 .vk_block_icon_pro {
 	fill: #c00;
 }
+.editor-block-list-item-vk-blocks-animation:after,
 .editor-block-list-item-vk-blocks-card:after,
 .editor-block-list-item-vk-blocks-child-page:after,
 .editor-block-list-item-vk-blocks-timeline:after,
@@ -153,6 +154,46 @@ $color-danger: #dd3333;
 // レスポンシブスペーサーの識別用枠線
 .vk_spacer {
 	border: 1px dotted #ccc;
+}
+// アニメーションブロックの識別用枠線
+.vk_animation {
+	border: 1px dashed #ccc;
+	// そのままだと編集画面でも消えてしまうので上書き（.wp-block-vk-blocks-animation）がないと負けてしまう
+	&.wp-block-vk-blocks-animation{
+		opacity: 1;
+	}
+	&:before {
+		position:absolute;
+		right:0;
+		top:0;
+		font-size:10px;
+		background: #eeeeee;
+		padding: .2em .6em;
+	}
+	&.vk_animation-fade-in{
+		left:0;
+		&:before {
+			content:'Fade in';
+		}
+	}
+	&.vk_animation-slide-left{
+		right:0;
+		&:before {
+			content:'Slide left';
+		}
+	}
+	&.vk_animation-slide-right{
+		left:0;
+		&:before {
+			content:'Slide right';
+		}
+	}
+	&.vk_animation-slide-up{
+		top:0;
+		&:before {
+			content:'Slide up';
+		}
+	}
 }
 
 table {
@@ -979,246 +1020,270 @@ ol {
   }
 }
 
-.vk_button {
-	margin: 5px 0;
-	text-align: center; /* テキストのみの時のセンター揃え */
-	&-color-custom {
-		a:hover {
-			opacity: 0.8;
-			box-shadow: 0 0 0 0.2rem rgba(171, 184, 195, 0.25);
+.vk_balloon {
+  display: flex;
+  align-items: center;
+	margin-bottom:1em;
+	figure{
+    margin:0;
+  }
+	p {
+		word-break: break-all;
+		background: #f5f5f5;
+		padding:1.1rem 1.4rem;
+	}
+}
+.vk_balloon_icon {
+	flex-basis: 96px;
+	flex-shrink: 0;
+	text-align: center;
+}
+.vk_balloon_icon_image {
+	vertical-align: bottom;
+	max-width: 64px;
+}
+.vk_balloon_icon_name {
+	display: block;
+	text-align: center;
+	font-size: 0.7rem;
+	margin-top:0.2rem;
+}
+.vk_balloon_content{
+	position: relative;
+	text-align: left;
+	&.editor-rich-text__tinymce[data-is-placeholder-visible=true] {
+		// これがないと未入力時に吹き出しが２重になる
+		position: absolute;
+	}
+}
+
+/*	type
+/*-------------------------------------------*/
+.vk_balloon-type-serif{
+	.vk_balloon_content{
+		border-color: #f5f5f5;
+		border-radius: .4em;
+		&::after{
+			content: '';
+			position: absolute;
+			width: 0;
+			height: 0;
+			border: 20px solid transparent;
 		}
 	}
+}
+.vk_balloon-type-think{
+	.vk_balloon_content{
+		border-radius: 2rem;
+		&::before,
+		&::after{
+			position: absolute;
+			content: '';
+			border-radius: 50%;
+			background: inherit;
+		}
+		&::before{
+			width: 20px;
+			height: 20px;
+		}
+		&::after{
+			width: 10px;
+			height: 10px;
+		}
+	}
+}
 
-	&-align {
-		&-left {
-			text-align: left;
+/*	position
+/*-------------------------------------------*/
+.vk_balloon-position-left{
+	&.vk_balloon-type-serif{
+		.vk_balloon_icon{
+			margin-right: 2rem;
 		}
 
-		&-center {
-			text-align: center;
-		}
-
-		&-right {
-			text-align: right;
-		}
-
-		&-block {
-			display: block;
-		}
-		&-wide {
-			display: block;
-			margin-left: auto;
-			margin-right: auto;
-			max-width: 70%;
-			.btn {
-				display: block;
+		.vk_balloon_content{
+			&::after{
+				left: 0;
+				top: 50%;
+				border-right-color: inherit;
+				border-left: 0;
+				margin-top: -20px;
+				margin-left: -20px;
 			}
 		}
 	}
 
-	&_link {
-		min-width: 100px;
-		min-height: 30px;
+	&.vk_balloon-type-think{
+		.vk_balloon_icon{
+			margin-right: 2.5rem;
+		}
 
-		&-type-text {
-			box-shadow: none;
-			padding: 0;
-			&:hover {
-				background: none;
-				box-shadow: none;
+		.vk_balloon_content{
+			&::before{
+				left: -22px;
+				top: 7px;
+			}
+
+			&::after{
+				left: -35px;
+				top: 20px;
 			}
 		}
-
-		&.btn {
-			// .btn指定がないと管理画面で標準の .btn の指定に負ける
-			padding-top: 0.7em;
-			padding-bottom: 0.6em;
-			user-select: text;
+	}
+}//.vk_balloon-position-left
+.vk_balloon-position-right{
+	flex-direction: row-reverse;
+	&.vk_balloon-type-serif{
+		.vk_balloon_icon{
+			margin-left: 2rem;
 		}
 
-		&_before {
-			margin-right: 0.7rem;
-		}
-
-		&_after {
-			margin-left: 0.7rem;
-		}
-
-		&_subCaption {
-			display: block;
-			overflow: hidden;
-			margin: 0;
-			font-size: 80%;
+		.vk_balloon_content{
+			&::after{
+				right: 0;
+				top: 50%;
+				border-left-color: inherit;
+				border-right: 0;
+				margin-top: -20px;
+				margin-right: -20px;
+			}
 		}
 	}
 
-	.editor-rich-text {
-		// Font Awesomeアイコンが管理画面側で改行されないために inline-block を指定
-		display: inline-block;
+	&.vk_balloon-type-think{
+		.vk_balloon_icon{
+			margin-left: 2.5rem;
+		}
+
+		.vk_balloon_content{
+			&::before{
+				right: -22px;
+				top: 7px;
+			}
+
+			&::after{
+				right: -35px;
+				top: 20px;
+			}
+		}
 	}
+}//.vk_balloon-position-right
+
+
+.vk_balloon {
+  &.animation-vibration{
+    .vk_balloon_content{
+      display: inline-block;
+      animation: vibration .1s  infinite;
+    }
+  }
 }
 
-.vk_button-color-custom {
-	.vk_button_link-type-text:hover {
-		box-shadow: none;
+/**
+ Animation Vibration
+ */
+@keyframes vibration {
+  0% {transform: translate(0px, 0px) rotateZ(0deg)}
+  25% {transform: translate(2px, 2px) rotateZ(1deg)}
+  50% {transform: translate(0px, 2px) rotateZ(0deg)}
+  75% {transform: translate(2px, 0px) rotateZ(-1deg)}
+  100% {transform: translate(0px, 0px) rotateZ(0deg)}
+}
+
+/*********************
+* SmartPhone
+0px - 480px
+***********************/
+
+
+@media only screen and (max-width: 480px) {
+	.vk_balloon_content{
+		font-size: .9em;
 	}
-}
+	.vk_balloon-type-serif {
+		.vk_balloon_content{
+			&::after {
+				border: 15px solid transparent;
+			}
+		}
+	}
+	.vk_balloon-type-think {
+		.vk_balloon_content{
+			&::after {
+				border: 5px solid transparent;
+			}
+		}
+	}
 
-/*-------------------------------------------*/
-/*	Lightnig がまだ Bootstrap4 でないため手動で追加したクラス
-/*	Lighnting が 4 を同梱したら削除して化
-/*-------------------------------------------*/
-$color_primary: #007bff;
-$color_secondary: #6c757d;
-$color_success: #28a745;
-$color_info: #17a2b8;
-$color_warning: #ffc107;
-$color_danger: #dc3545;
-$color_light: #f8f9fa;
-$color_dark: #343a40;
-/* .btn がないと標準のBS4の指定に負ける */
-.btn.btn-primary {
-	color: #fff;
-}
+  .vk_balloon{
+    align-items: normal;
+    &.vk_balloon-position-left{
+      &.vk_balloon-type-serif{
+      	.vk_balloon_icon{
+      		max-width:86px;
+			margin-right: 1.5rem;
+		}//.vk_balloon_icon
+        .vk_balloon_content{
+          display: inline-block;
+          &::after{
+            top: 35px;
+             margin-left: -15px;
+          }
+        }//.vk_balloon_content
+      }//&.vk_balloon-type-serif
 
-.btn.btn-secondary {
-	color: #fff;
-	background-color: $color_secondary;
-}
+      &.vk_balloon-type-think{
+      	.vk_balloon_icon{
+			margin-right: 2rem;
+			max-width: 86px;
+		}
+				.vk_balloon_content{
+					display: inline-block;
 
-.btn.btn-success {
-	color: #fff;
-}
+					&::before{
+						width: 15px;
+						height: 15px;
+					}
+        }
+      }
+    }//&.vk_balloon-position-left
 
-.btn.btn-info {
-	color: #fff;
-}
+    &.vk_balloon-position-right{
+      text-align: right;
 
-.btn.btn-warning {
-	color: #fff;
-}
+			&.vk_balloon-type-serif{
+				.vk_balloon_icon{
+				  margin-left: auto;
+				  margin-right: 0;
+				}
 
-.btn.btn-danger {
-	color: #fff;
-}
+				.vk_balloon_content{
+				  display: inline-block;
+				  &::after{
+				    top: 35px;
+					margin-right: -15px;
+				  }
+				}
+			}//&.vk_balloon-type-serif
 
-.btn.btn-light {
-	background-color: $color_light;
-}
+			&.vk_balloon-type-think{
+				.vk_balloon_icon{
+				  margin-left: 2rem;
+				  margin-right: 0;
+				  max-width:86px;
+				}
 
-.btn.btn-dark {
-	color: #fff;
-	background-color: $color_dark;
-}
+				.vk_balloon_content{
+					display: inline-block;
+				}
+			}//&.vk_balloon-type-think
+		}//.vk_balloon-position-right
+	}//.vk_balloon
 
-.btn.btn-secondary:hover,
-.btn.btn-dark:hover {
-	color: #fff;
-}
-
-/* .btn がないと標準のBS4の指定に負ける */
-.btn.btn-outline-primary {
-	color: $color_primary;
-	border: 1px solid $color_primary;
-	background: none;
-	box-shadow: none;
-}
-
-.btn.btn-outline-secondary {
-	color: $color_secondary;
-	border: 1px solid $color_secondary;
-	background: none;
-	box-shadow: none;
-}
-
-.btn.btn-outline-success {
-	color: $color_success;
-	border: 1px solid $color_success;
-	background: none;
-	box-shadow: none;
-}
-
-.btn.btn-outline-info {
-	color: $color_info;
-	border: 1px solid $color_info;
-	background: none;
-	box-shadow: none;
-}
-
-.btn.btn-outline-warning {
-	color: $color_warning;
-	border: 1px solid $color_warning;
-	background: none;
-	box-shadow: none;
-}
-
-.btn.btn-outline-danger {
-	color: $color_danger;
-	border: 1px solid $color_danger;
-	background: none;
-	box-shadow: none;
-}
-
-.btn.btn-outline-light {
-	border: 1px solid $color_light;
-	background: none;
-	box-shadow: none;
-}
-
-.btn.btn-outline-dark {
-	color: $color_dark;
-	border: 1px solid $color_dark;
-	background: none;
-	box-shadow: none;
-}
-
-.btn.btn-outline-primary:hover,
-.btn.btn-outline-primary:focus {
-	background: $color_primary;
-	color: #fff;
-}
-
-.btn.btn-outline-secondary:hover,
-.btn.btn-outline-secondary:focus {
-	background: $color_secondary;
-	color: #fff;
-}
-
-.btn.btn-outline-success:hover,
-.btn.btn-outline-success:focus {
-	background: $color_success;
-	color: #fff;
-}
-
-.btn.btn-outline-info:hover,
-.btn.btn-outline-info:focus {
-	background: $color_info;
-	color: #fff;
-}
-
-.btn.btn-outline-warning:hover,
-.btn.btn-outline-warning:focus {
-	background: $color_warning;
-	color: #fff;
-}
-
-.btn.btn-outline-danger:hover,
-.btn.btn-outline-danger:focus {
-	background: $color_danger;
-	color: #fff;
-}
-
-.btn.btn-outline-light:hover,
-.btn.btn-outline-light:focus {
-	background: $color_light;
-	color: #fff;
-}
-
-.btn.btn-outline-dark:hover,
-.btn.btn-outline-dark:focus {
-	background: $color_dark;
-	color: #fff;
-}
+	.vk_balloon_icon{
+		max-width:96px;
+	}
+} // @media only screen and (max-width: 480px) {
 
 :root {
 	--vk-color-border-red: #dc3545;
@@ -1528,270 +1593,246 @@ $color_dark: #343a40;
 	}
 }
 
-.vk_balloon {
-  display: flex;
-  align-items: center;
-	margin-bottom:1em;
-	figure{
-    margin:0;
-  }
-	p {
-		word-break: break-all;
-		background: #f5f5f5;
-		padding:1.1rem 1.4rem;
+.vk_button {
+	margin: 5px 0;
+	text-align: center; /* テキストのみの時のセンター揃え */
+	&-color-custom {
+		a:hover {
+			opacity: 0.8;
+			box-shadow: 0 0 0 0.2rem rgba(171, 184, 195, 0.25);
+		}
 	}
-}
-.vk_balloon_icon {
-	flex-basis: 96px;
-	flex-shrink: 0;
-	text-align: center;
-}
-.vk_balloon_icon_image {
-	vertical-align: bottom;
-	max-width: 64px;
-}
-.vk_balloon_icon_name {
-	display: block;
-	text-align: center;
-	font-size: 0.7rem;
-	margin-top:0.2rem;
-}
-.vk_balloon_content{
-	position: relative;
-	text-align: left;
-	&.editor-rich-text__tinymce[data-is-placeholder-visible=true] {
-		// これがないと未入力時に吹き出しが２重になる
-		position: absolute;
+
+	&-align {
+		&-left {
+			text-align: left;
+		}
+
+		&-center {
+			text-align: center;
+		}
+
+		&-right {
+			text-align: right;
+		}
+
+		&-block {
+			display: block;
+		}
+		&-wide {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 70%;
+			.btn {
+				display: block;
+			}
+		}
+	}
+
+	&_link {
+		min-width: 100px;
+		min-height: 30px;
+
+		&-type-text {
+			box-shadow: none;
+			padding: 0;
+			&:hover {
+				background: none;
+				box-shadow: none;
+			}
+		}
+
+		&.btn {
+			// .btn指定がないと管理画面で標準の .btn の指定に負ける
+			padding-top: 0.7em;
+			padding-bottom: 0.6em;
+			user-select: text;
+		}
+
+		&_before {
+			margin-right: 0.7rem;
+		}
+
+		&_after {
+			margin-left: 0.7rem;
+		}
+
+		&_subCaption {
+			display: block;
+			overflow: hidden;
+			margin: 0;
+			font-size: 80%;
+		}
+	}
+
+	.editor-rich-text {
+		// Font Awesomeアイコンが管理画面側で改行されないために inline-block を指定
+		display: inline-block;
 	}
 }
 
-/*	type
+.vk_button-color-custom {
+	.vk_button_link-type-text:hover {
+		box-shadow: none;
+	}
+}
+
 /*-------------------------------------------*/
-.vk_balloon-type-serif{
-	.vk_balloon_content{
-		border-color: #f5f5f5;
-		border-radius: .4em;
-		&::after{
-			content: '';
-			position: absolute;
-			width: 0;
-			height: 0;
-			border: 20px solid transparent;
-		}
-	}
-}
-.vk_balloon-type-think{
-	.vk_balloon_content{
-		border-radius: 2rem;
-		&::before,
-		&::after{
-			position: absolute;
-			content: '';
-			border-radius: 50%;
-			background: inherit;
-		}
-		&::before{
-			width: 20px;
-			height: 20px;
-		}
-		&::after{
-			width: 10px;
-			height: 10px;
-		}
-	}
-}
-
-/*	position
+/*	Lightnig がまだ Bootstrap4 でないため手動で追加したクラス
+/*	Lighnting が 4 を同梱したら削除して化
 /*-------------------------------------------*/
-.vk_balloon-position-left{
-	&.vk_balloon-type-serif{
-		.vk_balloon_icon{
-			margin-right: 2rem;
-		}
-
-		.vk_balloon_content{
-			&::after{
-				left: 0;
-				top: 50%;
-				border-right-color: inherit;
-				border-left: 0;
-				margin-top: -20px;
-				margin-left: -20px;
-			}
-		}
-	}
-
-	&.vk_balloon-type-think{
-		.vk_balloon_icon{
-			margin-right: 2.5rem;
-		}
-
-		.vk_balloon_content{
-			&::before{
-				left: -22px;
-				top: 7px;
-			}
-
-			&::after{
-				left: -35px;
-				top: 20px;
-			}
-		}
-	}
-}//.vk_balloon-position-left
-.vk_balloon-position-right{
-	flex-direction: row-reverse;
-	&.vk_balloon-type-serif{
-		.vk_balloon_icon{
-			margin-left: 2rem;
-		}
-
-		.vk_balloon_content{
-			&::after{
-				right: 0;
-				top: 50%;
-				border-left-color: inherit;
-				border-right: 0;
-				margin-top: -20px;
-				margin-right: -20px;
-			}
-		}
-	}
-
-	&.vk_balloon-type-think{
-		.vk_balloon_icon{
-			margin-left: 2.5rem;
-		}
-
-		.vk_balloon_content{
-			&::before{
-				right: -22px;
-				top: 7px;
-			}
-
-			&::after{
-				right: -35px;
-				top: 20px;
-			}
-		}
-	}
-}//.vk_balloon-position-right
-
-
-.vk_balloon {
-  &.animation-vibration{
-    .vk_balloon_content{
-      display: inline-block;
-      animation: vibration .1s  infinite;
-    }
-  }
+$color_primary: #007bff;
+$color_secondary: #6c757d;
+$color_success: #28a745;
+$color_info: #17a2b8;
+$color_warning: #ffc107;
+$color_danger: #dc3545;
+$color_light: #f8f9fa;
+$color_dark: #343a40;
+/* .btn がないと標準のBS4の指定に負ける */
+.btn.btn-primary {
+	color: #fff;
 }
 
-/**
- Animation Vibration
- */
-@keyframes vibration {
-  0% {transform: translate(0px, 0px) rotateZ(0deg)}
-  25% {transform: translate(2px, 2px) rotateZ(1deg)}
-  50% {transform: translate(0px, 2px) rotateZ(0deg)}
-  75% {transform: translate(2px, 0px) rotateZ(-1deg)}
-  100% {transform: translate(0px, 0px) rotateZ(0deg)}
+.btn.btn-secondary {
+	color: #fff;
+	background-color: $color_secondary;
 }
 
-/*********************
-* SmartPhone
-0px - 480px
-***********************/
+.btn.btn-success {
+	color: #fff;
+}
 
+.btn.btn-info {
+	color: #fff;
+}
 
-@media only screen and (max-width: 480px) {
-	.vk_balloon_content{
-		font-size: .9em;
-	}
-	.vk_balloon-type-serif {
-		.vk_balloon_content{
-			&::after {
-				border: 15px solid transparent;
-			}
-		}
-	}
-	.vk_balloon-type-think {
-		.vk_balloon_content{
-			&::after {
-				border: 5px solid transparent;
-			}
-		}
-	}
+.btn.btn-warning {
+	color: #fff;
+}
 
-  .vk_balloon{
-    align-items: normal;
-    &.vk_balloon-position-left{
-      &.vk_balloon-type-serif{
-      	.vk_balloon_icon{
-      		max-width:86px;
-			margin-right: 1.5rem;
-		}//.vk_balloon_icon
-        .vk_balloon_content{
-          display: inline-block;
-          &::after{
-            top: 35px;
-             margin-left: -15px;
-          }
-        }//.vk_balloon_content
-      }//&.vk_balloon-type-serif
+.btn.btn-danger {
+	color: #fff;
+}
 
-      &.vk_balloon-type-think{
-      	.vk_balloon_icon{
-			margin-right: 2rem;
-			max-width: 86px;
-		}
-				.vk_balloon_content{
-					display: inline-block;
+.btn.btn-light {
+	background-color: $color_light;
+}
 
-					&::before{
-						width: 15px;
-						height: 15px;
-					}
-        }
-      }
-    }//&.vk_balloon-position-left
+.btn.btn-dark {
+	color: #fff;
+	background-color: $color_dark;
+}
 
-    &.vk_balloon-position-right{
-      text-align: right;
+.btn.btn-secondary:hover,
+.btn.btn-dark:hover {
+	color: #fff;
+}
 
-			&.vk_balloon-type-serif{
-				.vk_balloon_icon{
-				  margin-left: auto;
-				  margin-right: 0;
-				}
+/* .btn がないと標準のBS4の指定に負ける */
+.btn.btn-outline-primary {
+	color: $color_primary;
+	border: 1px solid $color_primary;
+	background: none;
+	box-shadow: none;
+}
 
-				.vk_balloon_content{
-				  display: inline-block;
-				  &::after{
-				    top: 35px;
-					margin-right: -15px;
-				  }
-				}
-			}//&.vk_balloon-type-serif
+.btn.btn-outline-secondary {
+	color: $color_secondary;
+	border: 1px solid $color_secondary;
+	background: none;
+	box-shadow: none;
+}
 
-			&.vk_balloon-type-think{
-				.vk_balloon_icon{
-				  margin-left: 2rem;
-				  margin-right: 0;
-				  max-width:86px;
-				}
+.btn.btn-outline-success {
+	color: $color_success;
+	border: 1px solid $color_success;
+	background: none;
+	box-shadow: none;
+}
 
-				.vk_balloon_content{
-					display: inline-block;
-				}
-			}//&.vk_balloon-type-think
-		}//.vk_balloon-position-right
-	}//.vk_balloon
+.btn.btn-outline-info {
+	color: $color_info;
+	border: 1px solid $color_info;
+	background: none;
+	box-shadow: none;
+}
 
-	.vk_balloon_icon{
-		max-width:96px;
-	}
-} // @media only screen and (max-width: 480px) {
+.btn.btn-outline-warning {
+	color: $color_warning;
+	border: 1px solid $color_warning;
+	background: none;
+	box-shadow: none;
+}
+
+.btn.btn-outline-danger {
+	color: $color_danger;
+	border: 1px solid $color_danger;
+	background: none;
+	box-shadow: none;
+}
+
+.btn.btn-outline-light {
+	border: 1px solid $color_light;
+	background: none;
+	box-shadow: none;
+}
+
+.btn.btn-outline-dark {
+	color: $color_dark;
+	border: 1px solid $color_dark;
+	background: none;
+	box-shadow: none;
+}
+
+.btn.btn-outline-primary:hover,
+.btn.btn-outline-primary:focus {
+	background: $color_primary;
+	color: #fff;
+}
+
+.btn.btn-outline-secondary:hover,
+.btn.btn-outline-secondary:focus {
+	background: $color_secondary;
+	color: #fff;
+}
+
+.btn.btn-outline-success:hover,
+.btn.btn-outline-success:focus {
+	background: $color_success;
+	color: #fff;
+}
+
+.btn.btn-outline-info:hover,
+.btn.btn-outline-info:focus {
+	background: $color_info;
+	color: #fff;
+}
+
+.btn.btn-outline-warning:hover,
+.btn.btn-outline-warning:focus {
+	background: $color_warning;
+	color: #fff;
+}
+
+.btn.btn-outline-danger:hover,
+.btn.btn-outline-danger:focus {
+	background: $color_danger;
+	color: #fff;
+}
+
+.btn.btn-outline-light:hover,
+.btn.btn-outline-light:focus {
+	background: $color_light;
+	color: #fff;
+}
+
+.btn.btn-outline-dark:hover,
+.btn.btn-outline-dark:focus {
+	background: $color_dark;
+	color: #fff;
+}
 
 /*      .qaItem
 /*-------------------------------------------*/
@@ -1808,6 +1849,37 @@ $color_dark: #343a40;
 }
 .vk_faq_content { margin:0px;
   &:before { content:"A ";color:#337ab7;font-family: "" }
+}
+
+//*      .flowBox
+/*-------------------------------------------*/
+.vk_flow-arrow-on:after {
+  content:"";
+  background: url('../images/arrow_bottom.svg') center 50% no-repeat;
+  background-size: 50px 50px;
+  display:block; overflow:hidden;
+  height:50px;
+  width:50px;
+  margin:0 auto;
+}
+.vk_flow-arrow-off  { padding-bottom:0px; margin-bottom:30px; }
+.vk_flow-arrow-off:after {
+  content:"";font-size:0;background-image: none;
+}
+.vk_flow_frame {
+	display: flex;
+	padding:20px 25px; border:3px solid #e5e5e5;margin:0;
+	justify-content: space-between;
+}
+.vk_flow_frame_text  { display:block;overflow:hidden;margin:0;width:100%;box-sizing: border-box; }
+.vk_flow_frame_text_title,
+.vk_flow_frame_text_content { padding-left:0;border:none; }
+.vk_flow_frame_text_title { border-bottom:1px dotted #ccc; margin:0 0 10px;padding:0 0 5px; font-size:1.2em; }
+.vk_flow_frame_text_content { margin-bottom:0px; }
+.vk_flow_frame_image {
+	max-width:150px;
+	margin-left:15px;
+	box-sizing: border-box;
 }
 
 /*-------------------------------------------*/
@@ -1841,37 +1913,6 @@ $color_dark: #343a40;
 
 .vk_heading_subtext {
 	margin-bottom:0;
-}
-
-//*      .flowBox
-/*-------------------------------------------*/
-.vk_flow-arrow-on:after {
-  content:"";
-  background: url('../images/arrow_bottom.svg') center 50% no-repeat;
-  background-size: 50px 50px;
-  display:block; overflow:hidden;
-  height:50px;
-  width:50px;
-  margin:0 auto;
-}
-.vk_flow-arrow-off  { padding-bottom:0px; margin-bottom:30px; }
-.vk_flow-arrow-off:after {
-  content:"";font-size:0;background-image: none;
-}
-.vk_flow_frame {
-	display: flex;
-	padding:20px 25px; border:3px solid #e5e5e5;margin:0;
-	justify-content: space-between;
-}
-.vk_flow_frame_text  { display:block;overflow:hidden;margin:0;width:100%;box-sizing: border-box; }
-.vk_flow_frame_text_title,
-.vk_flow_frame_text_content { padding-left:0;border:none; }
-.vk_flow_frame_text_title { border-bottom:1px dotted #ccc; margin:0 0 10px;padding:0 0 5px; font-size:1.2em; }
-.vk_flow_frame_text_content { margin-bottom:0px; }
-.vk_flow_frame_image {
-	max-width:150px;
-	margin-left:15px;
-	box-sizing: border-box;
 }
 
 //管理画面側の見出しブロックのスタイルのcssになります。
@@ -2376,6 +2417,24 @@ $xl-min: 1200px;
 	}
 }
 
+.is-style-vk-image {
+    &-border {
+        img {
+            border: 1px solid #e5e5e5;
+        }
+    }
+
+    &-photoFrame {
+        background-color: #fff;
+        padding: 10px;
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+
+        figcaption {
+            margin: 8px 0 0;
+        }
+    }
+}
+
 /*-------------------------------------------*/
 /* .vk_prBlocks
 /*-------------------------------------------*/
@@ -2439,6 +2498,123 @@ $xl-min: 1200px;
 		text-align: center;
 		line-height: 1.8em;
 	}
+}
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
+.vk_table {
+	&-col-mobile1 {
+		@media( max-width: 575.98px){
+			th,
+			td {
+					display: block;
+			}
+			th {
+				background-color: rgba(0, 0, 0, 0.05);
+			}
+			// ストライプ指定の時の背景色をリセット
+			&.table-striped tbody {
+				tr:nth-of-type(odd) {
+					background: inherit;
+				}
+			}
+		} // @media( max-width: 575.98px){
+	} // &-col-mobile1 {
+}
+
+/*-------------------------------------------*/
+/* editor class
+/*-------------------------------------------*/
+.vk_simpleTable-edit{
+	.editor-inner-blocks,
+	.editor-block-list__layout,
+	.editor-block-list__block,
+	.editor-rich-text__editable,
+	.editor-block-list__block-edit{
+		padding:0;
+		margin:0;
+		width:100%;
+	}
+	& > .editor-inner-blocks{
+		margin-top:-1px; // th,td がHTML上ではdivの中になってしまう都合上、線が2pxになるためマイナスオフセット
+	}
+	.editor-block-list__block-edit{
+		height:100%;
+	}
+	.block-editor-block-list__insertion-point{
+		/* 上のセルに被るので選択しにくくなるのでデフォルトのマイナスオフセットを少し下げる */
+		top:-5px;
+	}
+	.editor-block-list__block-edit:before{
+		right:-0px;
+		left:-0px;
+		top:-0px;
+		bottom:-0px;
+		// border:1px solid #ff0000;
+	}
+	.editor-inner-blocks {
+		tr {
+			width:100%;
+			display: block;
+			border-bottom:1px solid #e5e5e5;
+			.editor-block-list__layout {
+				display: flex;
+				.editor-block-list__block {
+				}
+			}
+		}
+		th,
+		td {
+			padding: 0;
+			display: block;
+			width:100%;
+			border:none; // デフォルトでつけてくる線を消す
+			.editor-rich-text__editable{
+				padding: 14px;
+			}
+		}
+	}
+	// 編集画面のtableは HTML構造がカオスなので補正
+	&.table-striped > tbody > .editor-inner-blocks > .editor-block-list__layout > div:nth-of-type(odd) {
+			background-color: rgba(0, 0, 0, 0.05);
+	}
+}
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
+@mixin switchVisibility($pc, $tablet, $mobile) {
+	.vk_spacer {
+		.vk_spacer-display-pc {
+			display: $pc;
+		}
+
+		.vk_spacer-display-tablet {
+			display: $tablet;
+		}
+
+		.vk_spacer-display-mobile {
+			display: $mobile;
+		}
+	}
+}
+
+// Small devices (landscape phones, 576px以下)
+@media (max-width: 576px) {
+	@include switchVisibility(none, none, block);
+}
+
+// Medium devices (tablets, 577pxから768px)
+@media (min-width: 577px) and (max-width: 768px) {
+	@include switchVisibility(none, block, none);
+}
+
+// Large devices (desktops, 769px以上)
+@media (min-width: 769px) {
+	@include switchVisibility(block, none, none);
 }
 
 /*-------------------------------------------*/
@@ -2525,106 +2701,6 @@ $xl-min: 1200px;
 		}
 	}
 } // .vk_prContent {
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-
-.vk_table {
-	&-col-mobile1 {
-		@media( max-width: 575.98px){
-			th,
-			td {
-					display: block;
-			}
-			th {
-				background-color: rgba(0, 0, 0, 0.05);
-			}
-			// ストライプ指定の時の背景色をリセット
-			&.table-striped tbody {
-				tr:nth-of-type(odd) {
-					background: inherit;
-				}
-			}
-		} // @media( max-width: 575.98px){
-	} // &-col-mobile1 {
-}
-
-/*-------------------------------------------*/
-/* editor class
-/*-------------------------------------------*/
-.vk_simpleTable-edit{
-	.editor-inner-blocks,
-	.editor-block-list__layout,
-	.editor-block-list__block,
-	.editor-rich-text__editable,
-	.editor-block-list__block-edit{
-		padding:0;
-		margin:0;
-		width:100%;
-	}
-	& > .editor-inner-blocks{
-		margin-top:-1px; // th,td がHTML上ではdivの中になってしまう都合上、線が2pxになるためマイナスオフセット
-	}
-	.editor-block-list__block-edit{
-		height:100%;
-	}
-	.block-editor-block-list__insertion-point{
-		/* 上のセルに被るので選択しにくくなるのでデフォルトのマイナスオフセットを少し下げる */
-		top:-5px;
-	}
-	.editor-block-list__block-edit:before{
-		right:-0px;
-		left:-0px;
-		top:-0px;
-		bottom:-0px;
-		// border:1px solid #ff0000;
-	}
-	.editor-inner-blocks {
-		tr {
-			width:100%;
-			display: block;
-			border-bottom:1px solid #e5e5e5;
-			.editor-block-list__layout {
-				display: flex;
-				.editor-block-list__block {
-				}
-			}
-		}
-		th,
-		td {
-			padding: 0;
-			display: block;
-			width:100%;
-			border:none; // デフォルトでつけてくる線を消す
-			.editor-rich-text__editable{
-				padding: 14px;
-			}
-		}
-	}
-	// 編集画面のtableは HTML構造がカオスなので補正
-	&.table-striped > tbody > .editor-inner-blocks > .editor-block-list__layout > div:nth-of-type(odd) {
-			background-color: rgba(0, 0, 0, 0.05);
-	}
-}
-
-.is-style-vk-image {
-    &-border {
-        img {
-            border: 1px solid #e5e5e5;
-        }
-    }
-
-    &-photoFrame {
-        background-color: #fff;
-        padding: 10px;
-        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-
-        figcaption {
-            margin: 8px 0 0;
-        }
-    }
-}
 
 /*-------------------------------------------*/
 /* CSS
@@ -2804,37 +2880,6 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 /* CSS
 /*-------------------------------------------*/
 
-@mixin switchVisibility($pc, $tablet, $mobile) {
-	.vk_spacer {
-		.vk_spacer-display-pc {
-			display: $pc;
-		}
-
-		.vk_spacer-display-tablet {
-			display: $tablet;
-		}
-
-		.vk_spacer-display-mobile {
-			display: $mobile;
-		}
-	}
-}
-
-// Small devices (landscape phones, 576px以下)
-@media (max-width: 576px) {
-	@include switchVisibility(none, none, block);
-}
-
-// Medium devices (tablets, 577pxから768px)
-@media (min-width: 577px) and (max-width: 768px) {
-	@include switchVisibility(none, block, none);
-}
-
-// Large devices (desktops, 769px以上)
-@media (min-width: 769px) {
-	@include switchVisibility(block, none, none);
-}
-
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -2846,6 +2891,35 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+:root {
+	--vk-animation-size: 3em;
+}
+.vk_animation {
+	opacity: 0;
+	transition: all 0.5s ease-out 0.5s;
+	position: relative;
+	&-active {
+		opacity: 1;
+	}
+}
+.vk_animation-slide-under {
+	top: 3em;
+	&.vk_animation-active {
+		top: 0;
+	}
+}
+.vk_animation-slide-right {
+	left: -3em;
+	&.vk_animation-active {
+		left: 0;
+	}
+}
+.vk_animation-slide-left {
+	right: -3em;
+	&.vk_animation-active {
+		right: 0;
+	}
+}
 
 /*-------------------------------------------*/
 /* CSS
@@ -3249,8 +3323,8 @@ $toc-left-margin: 1rem;
 	}
 	/* Accordion styles */
 	.tab {
-		width: 100%;
-		overflow: hidden;
+    width: 100%;
+    overflow: hidden;
 		&_content-open {
 			max-height: auto;
 			padding: 1em;
@@ -3286,52 +3360,9 @@ $toc-left-margin: 1rem;
 			padding: 0 1em;
 		}
 		~ .tab_content-close {
-			max-height: 2000px;
+			max-height: 100vh;
 			padding: 1em;
 		}
-	}
-}
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-.vk_timeline {
-	margin: 2em 0;
-	.vk_timeline_item {
-		position: relative;
-		padding: 0 0 2.4em 1.8em;
-
-		&_caption {
-			margin-bottom: 1.5em;
-			color: #666;
-		}
-
-		&_style {
-			content: "";
-			display: block;
-			position: absolute;
-			top: 4px;
-			left: 0;
-			width: 14px;
-			height: 14px;
-			border-radius: 50%;
-		}
-	}
-}
-
-.vk_timeline_item_lineStyle-default {
-	&::before {
-		content: "";
-		width: 3px;
-		background: #ddd;
-		display: block;
-		position: absolute;
-		top: 22px;
-		left: 6px;
-		bottom: 0;
 	}
 }
 
@@ -3472,9 +3503,52 @@ $toc-left-margin: 1rem;
 			padding: 0 1em;
 		}
 		~ .tab_content-close {
-			max-height: 100%;
+			max-height: 100vh;
 			padding: 1em;
 		}
+	}
+}
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+.vk_timeline {
+	margin: 2em 0;
+	.vk_timeline_item {
+		position: relative;
+		padding: 0 0 2.4em 1.8em;
+
+		&_caption {
+			margin-bottom: 1.5em;
+			color: #666;
+		}
+
+		&_style {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 4px;
+			left: 0;
+			width: 14px;
+			height: 14px;
+			border-radius: 50%;
+		}
+	}
+}
+
+.vk_timeline_item_lineStyle-default {
+	&::before {
+		content: "";
+		width: 3px;
+		background: #ddd;
+		display: block;
+		position: absolute;
+		top: 22px;
+		left: 6px;
+		bottom: 0;
 	}
 }
 

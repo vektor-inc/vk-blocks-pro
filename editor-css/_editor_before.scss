@@ -4,6 +4,7 @@
 .vk_block_icon_pro {
 	fill: #c00;
 }
+.editor-block-list-item-vk-blocks-animation:after,
 .editor-block-list-item-vk-blocks-card:after,
 .editor-block-list-item-vk-blocks-child-page:after,
 .editor-block-list-item-vk-blocks-timeline:after,
@@ -166,6 +167,8 @@ $color-danger: #dd3333;
 		right:0;
 		top:0;
 		font-size:10px;
+		background: #eeeeee;
+		padding: .2em .6em;
 	}
 	&.vk_animation-fade-in{
 		left:0;

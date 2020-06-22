@@ -46,6 +46,7 @@
     "memize": "^1.0.5",
     "npm-check-updates": "^3.2.1",
     "postcss-loader": "^3.0.0",
+    "react-html-parser": "^2.0.2",
     "run-sequence": "^2.2.1",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",

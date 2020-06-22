@@ -3,25 +3,47 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/_helper/font-awesome.js:22
-msgid "Font Awesome"
+#: src/blocks/_helper/font-awesome-new.js:21
+#: src/blocks/_pro/icon-card-item/block.js:54
+#: src/blocks/border-box/block.js:114
+msgid "Icon"
 msgstr ""
 
-#: src/blocks/_helper/font-awesome.js:28
-msgid "Enter Font Awesome Class."
+#: src/blocks/_helper/font-awesome-new.js:62
+msgid ""
+"If you want to use an icon other than the ones listed above, you can use "
+"any of the icons from Font Awesome's icon list Please select a tag and "
+"enter it."
 msgstr ""
 
-#: src/blocks/_helper/font-awesome.js:29
-msgid "Ex) fas fa-arrow-circle-right"
+#: src/blocks/_helper/font-awesome-new.js:63
+msgid "Ex) <i class=\"fas fa-arrow-circle-right\"></i>"
 msgstr ""
 
-#: src/blocks/_helper/font-awesome.js:31
+#: src/blocks/_helper/font-awesome-new.js:65
+#: src/blocks/_helper/font-awesome.js:30
 #: src/blocks/_pro/icon-card-item/block.js:62
 #: src/blocks/button/block.js:267
 #: src/blocks/pr-blocks/block.js:325
 #: src/blocks/pr-content/block.js:202
 msgid "Font Awesome icon list"
 msgstr ""
+
+#: src/blocks/_helper/font-awesome-new.js:72
+#: src/blocks/_helper/font-awesome.js:21
+msgid "Font Awesome"
+msgstr ""
+
+#: src/blocks/_helper/font-awesome-new.js:79
+msgid "Select Icon"
+msgstr ""
+
+#: src/blocks/_helper/font-awesome.js:27
+msgid "Enter Font Awesome Class."
+msgstr ""
+
+#: src/blocks/_helper/font-awesome.js:28
+msgid "Ex) fas fa-arrow-circle-right"
 
 #: src/blocks/_pro/animation/block.js:29
 msgid "Animation"
@@ -185,11 +207,6 @@ msgstr ""
 #: src/blocks/pr-blocks/block.js:311
 #: src/blocks/pr-content/block.js:160
 msgid "Open link new tab."
-msgstr ""
-
-#: src/blocks/_pro/icon-card-item/block.js:54
-#: src/blocks/border-box/block.js:113
-msgid "Icon"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/block.js:57
@@ -497,7 +514,7 @@ msgstr ""
 
 #: src/blocks/_pro/step-item/block.js:58
 #: src/blocks/_pro/timeline-item/block.js:63
-#: src/blocks/border-box/block.js:85
+#: src/blocks/border-box/block.js:86
 #: src/blocks/staff/block.js:103
 msgid "Color"
 msgstr ""
@@ -670,55 +687,56 @@ msgstr ""
 msgid "Thinking"
 msgstr ""
 
-#: src/blocks/border-box/Body.js:20
+#: src/blocks/border-box/Body.js:21
+#: src/blocks/border-box/deprecated.js:20
 msgid "Please enter a title."
 msgstr ""
 
-#: src/blocks/border-box/block.js:100
+#: src/blocks/border-box/block.js:101
 msgid "Blue"
 msgstr ""
 
-#: src/blocks/border-box/block.js:104
+#: src/blocks/border-box/block.js:105
 msgid "Green"
 msgstr ""
 
-#: src/blocks/border-box/block.js:108
+#: src/blocks/border-box/block.js:109
 msgid "Black"
 msgstr ""
 
-#: src/blocks/border-box/block.js:44
+#: src/blocks/border-box/block.js:45
 msgid "Border Box"
 msgstr ""
 
-#: src/blocks/border-box/block.js:54
+#: src/blocks/border-box/block.js:55
 msgid "Solid Angle Tab"
 msgstr ""
 
-#: src/blocks/border-box/block.js:59
+#: src/blocks/border-box/block.js:60
 msgid "Solid Round Tab"
 msgstr ""
 
-#: src/blocks/border-box/block.js:63
+#: src/blocks/border-box/block.js:64
 msgid "Solid Angle Banner"
 msgstr ""
 
-#: src/blocks/border-box/block.js:67
+#: src/blocks/border-box/block.js:68
 msgid "Solid Angle Onborder"
 msgstr ""
 
-#: src/blocks/border-box/block.js:71
+#: src/blocks/border-box/block.js:72
 msgid "Solid Angle Inner"
 msgstr ""
 
-#: src/blocks/border-box/block.js:75
+#: src/blocks/border-box/block.js:76
 msgid "Solid Angle iconFeature"
 msgstr ""
 
-#: src/blocks/border-box/block.js:92
+#: src/blocks/border-box/block.js:93
 msgid "Red"
 msgstr ""
 
-#: src/blocks/border-box/block.js:96
+#: src/blocks/border-box/block.js:97
 msgid "Orange"
 msgstr ""
 
@@ -1295,6 +1313,10 @@ msgstr ""
 
 #: src/blocks/staff/component.js:50
 msgid "Caption"
+msgstr ""
+
+#: src/components/advanced-popover-control/index.js:53
+msgid "More"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:16

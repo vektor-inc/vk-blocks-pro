@@ -1,10 +1,9 @@
 import { vkbBlockEditor } from "../_helper/depModules";
 import classNames from "classnames";
-import ReactHtmlParser from 'react-html-parser';
 const { InnerBlocks, RichText } = vkbBlockEditor;
 const { __ } = wp.i18n;
 
-const Body = (props) => {
+const DepBody = (props) => {
 	const { setAttributes, attributes, for_, className } = props;
 	const { heading,color,faIcon } = attributes;
 
@@ -36,18 +35,10 @@ const Body = (props) => {
 		customClass =  classNames(className,'is-style-vk_borderBox-style-solid-kado-tit-tab')
 	}
 
-	//iタグでdeprecatedが効かなかったので追加。
-	let icon;
-	if ( faIcon.indexOf('<i class="') === -1) {
-		icon = `<i class="${faIcon}"></i>`
-	}else{
-		icon = faIcon
-	}
-
 	return (
 		<div className={`vk_borderBox vk_borderBox-color-${color} ${customClass}`}>
 			<div className="vk_borderBox_title_container">
-				{ReactHtmlParser(icon)}
+				<i className={`${faIcon}`}></i>
 				{title}
 			</div>
 			<div className="vk_borderBox_body">
@@ -55,6 +46,27 @@ const Body = (props) => {
 			</div>
 		</div>
 	);
-
 }
-export default Body;
+
+export const deprecated = [
+  {
+    attributes: {
+		heading: {
+			type: "string",
+			source: "html",
+			selector: "h4"
+		},
+		color: {
+			type: 'string',
+			default: 'red',
+		},
+		faIcon: {
+			type: 'string',
+			default: '',
+		},
+	},
+    save(props) {
+      return ( <DepBody for_={ 'save' }{ ...props } />);
+    }
+  }
+]

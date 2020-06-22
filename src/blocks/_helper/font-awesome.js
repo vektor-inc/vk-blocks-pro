@@ -1,6 +1,5 @@
-import React from "react";
-
 const { TextControl } = wp.components;
+const { Fragment,Component } = wp.element;
 const { __ } = wp.i18n;
 
 export const faSchema = {
@@ -10,14 +9,14 @@ export const faSchema = {
 	},
 };
 
-export class FontAwesome extends React.Component {
+export class FontAwesome extends Component {
 
 	render() {
 		const { faIcon } = this.props.attributes;
 		const setAttributes = this.props.setAttributes;
 
 		return (
-			<fragment>
+			<Fragment>
 				<TextControl
 					label={ __('Font Awesome', 'vk-blocks') }
 					value={ faIcon }
@@ -29,7 +28,7 @@ export class FontAwesome extends React.Component {
 					{ __('Ex) fas fa-arrow-circle-right', 'vk-blocks') }<br />
 					<a href={ `https://fontawesome.com/icons?d=gallery&m=free` }
 						target={ `_blank` }>{ __('Font Awesome icon list', 'vk-blocks') }</a></p>
-			</fragment>
+			</Fragment>
 
 		);
 	}

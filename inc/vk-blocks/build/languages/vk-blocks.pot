@@ -44,6 +44,29 @@ msgstr ""
 
 #: src/blocks/_helper/font-awesome.js:28
 msgid "Ex) fas fa-arrow-circle-right"
+
+#: src/blocks/_pro/animation/block.js:29
+msgid "Animation"
+msgstr ""
+
+#: src/blocks/_pro/animation/block.js:46
+msgid "Animation Settings"
+msgstr ""
+
+#: src/blocks/_pro/animation/block.js:51
+msgid "Fade In"
+msgstr ""
+
+#: src/blocks/_pro/animation/block.js:52
+msgid "Slide Up"
+msgstr ""
+
+#: src/blocks/_pro/animation/block.js:53
+msgid "Slide Left"
+msgstr ""
+
+#: src/blocks/_pro/animation/block.js:54
+msgid "Slide Right"
 msgstr ""
 
 #: src/blocks/_pro/card-item/block.js:43

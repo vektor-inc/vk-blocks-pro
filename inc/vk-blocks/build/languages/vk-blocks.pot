@@ -24,7 +24,7 @@ msgid "Font Awesome icon list"
 msgstr ""
 
 #: src/blocks/_pro/animation/block.js:29
-msgid "Animation Block"
+msgid "Animation"
 msgstr ""
 
 #: src/blocks/_pro/animation/block.js:46

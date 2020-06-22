@@ -128,13 +128,13 @@ export class Component extends React.Component {
 		</div>
 	</Fragment>
           );
-        } 
+        }
           return (
 	<div className={ imgContainerClass } style={ imageStyle }>
 		{ switchAddUrltoImage(url) }
 	</div>
           );
-        
+
       }
     };
 
@@ -146,9 +146,9 @@ export class Component extends React.Component {
 		{ overlay }
 	</a>
         );
-      } 
+      }
         return overlay;
-      
+
     };
 
     const renderExcerpt = (align) => {
@@ -167,7 +167,7 @@ export class Component extends React.Component {
             ) }
           />
         );
-      } 
+      }
         return (
 	<RichText.Content
 		tagName={ titleTag }
@@ -175,7 +175,7 @@ export class Component extends React.Component {
 		value={ excerpt_text }
           />
         );
-      
+
     };
 
     const renderButton = (display_btn, align) => {
@@ -193,14 +193,15 @@ export class Component extends React.Component {
 	</div>
         );
       }
-    };
+		};
 
-    const renderTitle = (align) => {
+
+		const renderTitle = (align) => {
       const titleTag = "h5";
       const titleClass = `vk_post_title card-title has-text-align-${align.title}`;
       if (isEdit(for_)) {
         return (
-	<RichText
+				<RichText
 		tagName={ titleTag }
 		className={ titleClass }
 		value={ title }
@@ -208,17 +209,21 @@ export class Component extends React.Component {
 		placeholder={ __("Title", "vk-blocks") }
           />
         );
-      } 
-        return (
-	<a href={ url } target={ linkTarget } rel={ rel }>
-		<RichText.Content
-			tagName={ titleTag }
-			className={ titleClass }
-			value={ title }
-            />
-	</a>
-        );
-      
+      }else if(!isEdit(for_) && !url){
+				return (<RichText.Content
+							tagName={ titleTag }
+							className={ titleClass }
+							value={ title }/>);
+			}else{
+				return (
+					<a href={ url } target={ linkTarget } rel={ rel }>
+						<RichText.Content
+							tagName={ titleTag }
+							className={ titleClass }
+							value={ title }
+										/>
+					</a>);
+			}
     };
 
     let imageStyle;

@@ -354,6 +354,26 @@ ol {
 		}
 	}
 }
+
+/*-------------------------------------------*/
+/* FontAwesome Popover
+/*-------------------------------------------*/
+.vk-blocks-advanced-popover-control{
+	.components-popover__content{
+		padding: 20px 15px;
+		.components-base-control__field{
+			display: flex;
+			flex-wrap: wrap;
+			.components-radio-control__option{
+				margin-right: 8px;
+				.components-radio-control__input{
+					margin: 10px!important;
+				}
+			}
+		}
+	}
+}
+
 .has-text-align-right{
 	text-align: right;
 }

@@ -1,0 +1,32 @@
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+:root {
+	--vk-animation-size: 3em;
+}
+.vk_animation {
+	opacity: 0;
+	transition: all 0.5s ease-out 0.5s;
+	position: relative;
+	&-active {
+		opacity: 1;
+	}
+}
+.vk_animation-slide-up {
+	top: 3em;
+	&.vk_animation-active {
+		top: 0;
+	}
+}
+.vk_animation-slide-right {
+	left: -3em;
+	&.vk_animation-active {
+		left: 0;
+	}
+}
+.vk_animation-slide-left {
+	right: -3em;
+	&.vk_animation-active {
+		right: 0;
+	}
+}

@@ -4,7 +4,8 @@
  */
 import Body from "./Body";
 import { schema } from './schema';
-import { FontAwesome } from "./../_helper/font-awesome";
+import { FontAwesome } from "./../_helper/font-awesome-new";
+import { deprecated }  from "./deprecated"
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -14,9 +15,9 @@ import { vkbBlockEditor } from "./../_helper/depModules";
 const { InspectorControls } = vkbBlockEditor;
 
 const BlockIcon = (
-	<svg 
+	<svg
 		xmlns="http://www.w3.org/2000/svg"
-		x="0px" 
+		x="0px"
 		y="0px"
 		viewBox="0 0 576 576"
 	>
@@ -129,4 +130,5 @@ registerBlockType('vk-blocks/border-box', {
 	save(props) {
 		return <Body for_={ 'save' }{ ...props } />;
 	},
+	deprecated:deprecated
 });

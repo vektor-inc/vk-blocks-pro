@@ -42,22 +42,12 @@ export default class AdvancedPopOverControl extends Component {
 							isTertiary
 							className={`${popverBtnClass}`}
 							onClick={handleOpen}
+							ref={this.buttonRef}
 						>
 							<span className="components-base-control__label">
 								{this.props.label}
 							</span>
 						</Button>
-						<IconButton
-							className={`${popverBtnClass} components-button is-button is-default`}
-							icon="edit"
-							label={__(
-								"More",
-								"vk-blocks"
-							)}
-							onClick={handleOpen}
-							id={`vk-blocks-button-icon-control__edit`}
-							ref={this.buttonRef}
-						/>
 						{this.state.open && this.buttonRef.current && (
 							<Popover
 								anchorRect={this.buttonRef.current.getBoundingClientRect()}

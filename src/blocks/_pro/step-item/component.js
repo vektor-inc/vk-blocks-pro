@@ -2,6 +2,7 @@ import { vkbBlockEditor } from "./../../_helper/depModules";
 const { InnerBlocks } = vkbBlockEditor;
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { Component } = wp.element;
+import ReactHtmlParser from 'react-html-parser';
 
 export class StepItem extends Component {
 	render() {
@@ -57,7 +58,7 @@ export class StepItem extends Component {
 					<div className={'vk_step_item_dot_caption'}>{dotCaption}</div>
 					{(() => {
 						if (faIcon) {
-							return <i className={faIcon} />;
+							return ReactHtmlParser(faIcon);
 						} else if (dotNum) {
 							return <div className={'vk_step_item_dot_num'}>{dotNum}</div>;
 						}

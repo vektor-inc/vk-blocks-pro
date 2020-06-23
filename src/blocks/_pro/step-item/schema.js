@@ -1,4 +1,4 @@
-import {faSchema} from "../../_helper/font-awesome";
+import { faSchema } from "./../../_helper/font-awesome-new";
 
 export const originalSchema = {
     color: {

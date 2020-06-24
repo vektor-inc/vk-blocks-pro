@@ -4,6 +4,7 @@
 .vk_block_icon_pro {
 	fill: #c00;
 }
+.editor-block-list-item-vk-blocks-animation:after,
 .editor-block-list-item-vk-blocks-card:after,
 .editor-block-list-item-vk-blocks-child-page:after,
 .editor-block-list-item-vk-blocks-timeline:after,
@@ -153,6 +154,46 @@ $color-danger: #dd3333;
 // レスポンシブスペーサーの識別用枠線
 .vk_spacer {
 	border: 1px dotted #ccc;
+}
+// アニメーションブロックの識別用枠線
+.vk_animation {
+	border: 1px dashed #ccc;
+	// そのままだと編集画面でも消えてしまうので上書き（.wp-block-vk-blocks-animation）がないと負けてしまう
+	&.wp-block-vk-blocks-animation{
+		opacity: 1;
+	}
+	&:before {
+		position:absolute;
+		right:0;
+		top:0;
+		font-size:10px;
+		background: #eeeeee;
+		padding: .2em .6em;
+	}
+	&.vk_animation-fade-in{
+		left:0;
+		&:before {
+			content:'Fade in';
+		}
+	}
+	&.vk_animation-slide-left{
+		right:0;
+		&:before {
+			content:'Slide left';
+		}
+	}
+	&.vk_animation-slide-right{
+		left:0;
+		&:before {
+			content:'Slide right';
+		}
+	}
+	&.vk_animation-slide-up{
+		top:0;
+		&:before {
+			content:'Slide up';
+		}
+	}
 }
 
 table {
@@ -1572,6 +1613,23 @@ ol {
 	}
 }
 
+/*      .qaItem
+/*-------------------------------------------*/
+.vk_faq { display:block; overflow:hidden;border-bottom:1px dotted #ccc; padding:0px 0px 25px; margin:25px 0px; width:100%; position: relative; }
+.vk_faq_title,
+.vk_faq_content {
+	border:none;padding-left: 35px;
+	&:before {
+		position: absolute;left:0;font-size:24px;line-height: 105%;
+	}
+}
+.vk_faq_title { margin-bottom:15px;font-size:18px;font-weight:700;
+  &:before { font-family:"areal";content:"Q ";color:#e50000; }
+}
+.vk_faq_content { margin:0px;
+  &:before { content:"A ";color:#337ab7;font-family: "" }
+}
+
 .vk_button {
 	margin: 5px 0;
 	text-align: center; /* テキストのみの時のセンター揃え */
@@ -1813,23 +1871,6 @@ $color_dark: #343a40;
 	color: #fff;
 }
 
-/*      .qaItem
-/*-------------------------------------------*/
-.vk_faq { display:block; overflow:hidden;border-bottom:1px dotted #ccc; padding:0px 0px 25px; margin:25px 0px; width:100%; position: relative; }
-.vk_faq_title,
-.vk_faq_content {
-	border:none;padding-left: 35px;
-	&:before {
-		position: absolute;left:0;font-size:24px;line-height: 105%;
-	}
-}
-.vk_faq_title { margin-bottom:15px;font-size:18px;font-weight:700;
-  &:before { font-family:"areal";content:"Q ";color:#e50000; }
-}
-.vk_faq_content { margin:0px;
-  &:before { content:"A ";color:#337ab7;font-family: "" }
-}
-
 //*      .flowBox
 /*-------------------------------------------*/
 .vk_flow-arrow-on:after {
@@ -1892,6 +1933,46 @@ $color_dark: #343a40;
 
 .vk_heading_subtext {
 	margin-bottom:0;
+}
+
+$xs-max: 575.98px;
+$sm-max: 767.98px;
+$md-max: 991.98px;
+$lg-max: 1199.98px;
+
+$sm-min: 576px;
+$md-min: 768px;
+$lg-min: 992px;
+$xl-min: 1200px;
+
+.vk_hidden {
+	display: none !important;
+	color: var(--blue);
+	@media (max-width: $xs-max) {
+		&-xs {
+			display: none !important;
+		}
+	}
+	@media (min-width: $sm-min) and (max-width: $sm-max) {
+		&-sm {
+			display: none !important;
+		}
+	}
+	@media (min-width: $md-min) and (max-width: $md-max) {
+		&-md {
+			display: none !important;
+		}
+	}
+	@media (min-width: $lg-min) and (max-width: $lg-max) {
+		&-lg {
+			display: none !important;
+		}
+	}
+	@media (min-width: $xl-min) {
+		&-xl {
+			display: none !important;
+		}
+	}
 }
 
 //管理画面側の見出しブロックのスタイルのcssになります。
@@ -2355,46 +2436,6 @@ $color_key: #337ab7;
 		// }
 	} //.is-style-vk-heading
 } //.editor-block-list__block
-
-$xs-max: 575.98px;
-$sm-max: 767.98px;
-$md-max: 991.98px;
-$lg-max: 1199.98px;
-
-$sm-min: 576px;
-$md-min: 768px;
-$lg-min: 992px;
-$xl-min: 1200px;
-
-.vk_hidden {
-	display: none !important;
-	color: var(--blue);
-	@media (max-width: $xs-max) {
-		&-xs {
-			display: none !important;
-		}
-	}
-	@media (min-width: $sm-min) and (max-width: $sm-max) {
-		&-sm {
-			display: none !important;
-		}
-	}
-	@media (min-width: $md-min) and (max-width: $md-max) {
-		&-md {
-			display: none !important;
-		}
-	}
-	@media (min-width: $lg-min) and (max-width: $lg-max) {
-		&-lg {
-			display: none !important;
-		}
-	}
-	@media (min-width: $xl-min) {
-		&-xl {
-			display: none !important;
-		}
-	}
-}
 
 .is-style-vk-image {
     &-border {
@@ -2870,21 +2911,39 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+:root {
+	--vk-animation-size: 3em;
+}
+.vk_animation {
+	opacity: 0;
+	transition: all 0.5s ease-out 0.5s;
+	position: relative;
+	&-active {
+		opacity: 1;
+	}
+}
+.vk_animation-slide-under {
+	top: 3em;
+	&.vk_animation-active {
+		top: 0;
+	}
+}
+.vk_animation-slide-right {
+	left: -3em;
+	&.vk_animation-active {
+		left: 0;
+	}
+}
+.vk_animation-slide-left {
+	right: -3em;
+	&.vk_animation-active {
+		right: 0;
+	}
+}
 
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-
-.vk_card {
-  &_item {
-    .vk_post_title.card-title {
-      font-size: 1rem;
-    }
-    .vk_post_excerpt.card-text {
-      font-size: 14px;
-    }
-  }
-}
 
 .vk_childPage {
 	margin-top: 2.5rem;
@@ -2894,10 +2953,6 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 /* CSS
 /*-------------------------------------------*/
 
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-
 .vk_card {
   &_item {
     .vk_post_title.card-title {
@@ -2913,78 +2968,21 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-.wp-block-vk-blocks-icon-card{
-	.vk_icon-card_item{
-		margin: 0 15px 15px 15px;
-	}
+
+.vk_card {
+  &_item {
+    .vk_post_title.card-title {
+      font-size: 1rem;
+    }
+    .vk_post_excerpt.card-text {
+      font-size: 14px;
+    }
+  }
 }
-.vk_icon_card_item_summary {
-    margin-bottom: 0.5em;
-    line-height: 1.8em;
-}
+
 /*-------------------------------------------*/
-/* .vk_icon-card
+/* CSS
 /*-------------------------------------------*/
-.vk_icon-card_item {
-	@media screen and (max-width: 992px) {
-		margin-bottom: 1.5em;
-	}
-}
-.vk_icon-card_item {
-	&_link {
-		color: #333;
-		&:hover {
-			color: #333;
-			text-decoration: none;
-		}
-	}
-	&_icon_outer {
-		display: block;
-		position: relative;
-		margin: 0 auto;
-		width: 80px;
-		height: 80px;
-		border-radius: 50%;
-	}
-	&_icon {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translateY(-50%) translateX(-50%);
-		font-size: 36px;
-		color: #fff;
-	}
-	&_title {
-		background-color: transparent;
-		margin-top: 0.9em;
-		margin-bottom: 0.6em;
-		font-size: 21px;
-		line-height: 1.4em;
-		border: none;
-		padding: 0;
-		&::before {
-			content: none;
-		}
-		&::after {
-			border: none;
-		}
-	}
-	&_image {
-		position: relative;
-		display: block;
-		width: 120px;
-		height: 120px;
-		margin: 0 auto;
-		overflow: hidden;
-		border-radius: 50%;
-		text-indent: -9999px;
-	}
-	&_summary {
-		margin-bottom: 0.5em;
-		text-align: center;
-		line-height: 1.8em;
-	}
-}
 
 /*-------------------------------------------*/
 /* CSS
@@ -3107,6 +3105,78 @@ $color-danger: #b52727;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+.wp-block-vk-blocks-icon-card{
+	.vk_icon-card_item{
+		margin: 0 15px 15px 15px;
+	}
+}
+.vk_icon_card_item_summary {
+    margin-bottom: 0.5em;
+    line-height: 1.8em;
+}
+/*-------------------------------------------*/
+/* .vk_icon-card
+/*-------------------------------------------*/
+.vk_icon-card_item {
+	@media screen and (max-width: 992px) {
+		margin-bottom: 1.5em;
+	}
+}
+.vk_icon-card_item {
+	&_link {
+		color: #333;
+		&:hover {
+			color: #333;
+			text-decoration: none;
+		}
+	}
+	&_icon_outer {
+		display: block;
+		position: relative;
+		margin: 0 auto;
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+	}
+	&_icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateY(-50%) translateX(-50%);
+		font-size: 36px;
+		color: #fff;
+	}
+	&_title {
+		background-color: transparent;
+		margin-top: 0.9em;
+		margin-bottom: 0.6em;
+		font-size: 21px;
+		line-height: 1.4em;
+		border: none;
+		padding: 0;
+		&::before {
+			content: none;
+		}
+		&::after {
+			border: none;
+		}
+	}
+	&_image {
+		position: relative;
+		display: block;
+		width: 120px;
+		height: 120px;
+		margin: 0 auto;
+		overflow: hidden;
+		border-radius: 50%;
+		text-indent: -9999px;
+	}
+	&_summary {
+		margin-bottom: 0.5em;
+		text-align: center;
+		line-height: 1.8em;
+	}
+}
 
 /*-------------------------------------------*/
 /* CSS
@@ -3168,6 +3238,10 @@ $color-danger: #b52727;
 		bottom: 4px;
 	}
 }
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 
 /*-------------------------------------------*/
 /* CSS
@@ -3315,6 +3389,49 @@ $toc-left-margin: 1rem;
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+.vk_timeline {
+	margin: 2em 0;
+	.vk_timeline_item {
+		position: relative;
+		padding: 0 0 2.4em 1.8em;
+
+		&_caption {
+			margin-bottom: 1.5em;
+			color: #666;
+		}
+
+		&_style {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 4px;
+			left: 0;
+			width: 14px;
+			height: 14px;
+			border-radius: 50%;
+		}
+	}
+}
+
+.vk_timeline_item_lineStyle-default {
+	&::before {
+		content: "";
+		width: 3px;
+		background: #ddd;
+		display: block;
+		position: absolute;
+		top: 22px;
+		left: 6px;
+		bottom: 0;
+	}
+}
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
 $toc-left-margin: 1rem;
 
 .vk_tableOfContents {
@@ -3452,49 +3569,6 @@ $toc-left-margin: 1rem;
 			max-height: 100%;
 			padding: 1em;
 		}
-	}
-}
-
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-/*-------------------------------------------*/
-/* CSS
-/*-------------------------------------------*/
-.vk_timeline {
-	margin: 2em 0;
-	.vk_timeline_item {
-		position: relative;
-		padding: 0 0 2.4em 1.8em;
-
-		&_caption {
-			margin-bottom: 1.5em;
-			color: #666;
-		}
-
-		&_style {
-			content: "";
-			display: block;
-			position: absolute;
-			top: 4px;
-			left: 0;
-			width: 14px;
-			height: 14px;
-			border-radius: 50%;
-		}
-	}
-}
-
-.vk_timeline_item_lineStyle-default {
-	&::before {
-		content: "";
-		width: 3px;
-		background: #ddd;
-		display: block;
-		position: absolute;
-		top: 22px;
-		left: 6px;
-		bottom: 0;
 	}
 }
 

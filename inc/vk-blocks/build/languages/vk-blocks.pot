@@ -4,7 +4,7 @@ msgstr ""
 "X-Generator: babel-plugin-makepot\n"
 
 #: src/blocks/_helper/font-awesome-new.js:21
-#: src/blocks/_pro/icon-card-item/block.js:54
+#: src/blocks/_pro/icon-card-item/block.js:55
 #: src/blocks/border-box/block.js:114
 msgid "Icon"
 msgstr ""
@@ -22,7 +22,6 @@ msgstr ""
 
 #: src/blocks/_helper/font-awesome-new.js:65
 #: src/blocks/_helper/font-awesome.js:30
-#: src/blocks/_pro/icon-card-item/block.js:62
 #: src/blocks/button/block.js:267
 #: src/blocks/pr-blocks/block.js:325
 #: src/blocks/pr-content/block.js:202
@@ -44,6 +43,7 @@ msgstr ""
 
 #: src/blocks/_helper/font-awesome.js:28
 msgid "Ex) fas fa-arrow-circle-right"
+msgstr ""
 
 #: src/blocks/_pro/animation/block.js:29
 msgid "Animation"
@@ -82,26 +82,26 @@ msgid "https://example.com"
 msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:110
-#: src/blocks/_pro/card-item/deprecated.js:537
+#: src/blocks/_pro/card-item/deprecated.js:539
 #: src/components/advanced-media-upload/index.js:32
 msgid "Delete Image"
 msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:164
-#: src/blocks/_pro/card-item/deprecated.js:591
+#: src/blocks/_pro/card-item/deprecated.js:593
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
 "tempor incididunt ut labore et dolore magna aliqua. "
 msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:209
-#: src/blocks/_pro/card-item/deprecated.js:636
+#: src/blocks/_pro/card-item/deprecated.js:638
 #: src/blocks/_pro/icon-card/block.js:101
 msgid "Title"
 msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:97
-#: src/blocks/_pro/card-item/deprecated.js:524
+#: src/blocks/_pro/card-item/deprecated.js:526
 #: src/blocks/balloon/block.js:114
 #: src/blocks/flow/block.js:96
 #: src/blocks/pr-blocks/block.js:158
@@ -189,55 +189,52 @@ msgstr ""
 msgid "Layout Columns"
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/block.js:23
+#: src/blocks/_pro/icon-card-item/block.js:24
 msgid "Icon Card Item"
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/block.js:39
+#: src/blocks/_pro/icon-card-item/block.js:40
 msgid "PR Block Setting"
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/block.js:41
+#: src/blocks/_pro/icon-card-item/block.js:42
 #: src/blocks/pr-blocks/block.js:304
 msgid "Link URL:"
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/block.js:48
+#: src/blocks/_pro/icon-card-item/block.js:49
 #: src/blocks/button/block.js:135
 #: src/blocks/pr-blocks/block.js:311
 #: src/blocks/pr-content/block.js:160
 msgid "Open link new tab."
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/block.js:57
-#: src/blocks/pr-blocks/block.js:320
-msgid "Class name of the Font Awesome icon font you want to use:"
-msgstr ""
-
-#: src/blocks/_pro/icon-card-item/block.js:76
+#: src/blocks/_pro/icon-card-item/block.js:73
 #: src/blocks/pr-blocks/block.js:339
 msgid "Icon Background:"
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/block.js:79
+#: src/blocks/_pro/icon-card-item/block.js:76
 #: src/blocks/button/block.js:220
 #: src/blocks/pr-blocks/block.js:342
 msgid "Solid color"
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/block.js:80
+#: src/blocks/_pro/icon-card-item/block.js:77
 #: src/blocks/button/block.js:228
 #: src/blocks/pr-blocks/block.js:343
 msgid "No background"
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/component.js:35
+#: src/blocks/_pro/icon-card-item/component.js:37
+#: src/blocks/_pro/icon-card-item/deprecated.js:35
 #: src/blocks/pr-blocks/component-block.js:164
 #: src/blocks/pr-blocks/deprecated/component-block.js:144
 msgid "Input Title"
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/component.js:42
+#: src/blocks/_pro/icon-card-item/component.js:44
+#: src/blocks/_pro/icon-card-item/deprecated.js:42
 #: src/blocks/pr-blocks/component-block.js:171
 #: src/blocks/pr-blocks/deprecated/component-block.js:151
 msgid "Input Content"
@@ -1152,6 +1149,10 @@ msgstr ""
 msgid "Icon 3"
 msgstr ""
 
+#: src/blocks/pr-blocks/block.js:320
+msgid "Class name of the Font Awesome icon font you want to use:"
+msgstr ""
+
 #: src/blocks/pr-blocks/block.js:350
 msgid "When you have an image. Image is displayed with priority."
 msgstr ""
@@ -1313,10 +1314,6 @@ msgstr ""
 
 #: src/blocks/staff/component.js:50
 msgid "Caption"
-msgstr ""
-
-#: src/components/advanced-popover-control/index.js:53
-msgid "More"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:16

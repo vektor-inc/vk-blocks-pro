@@ -1,4 +1,6 @@
-export const schema = {
+import { faSchema } from "./../../_helper/font-awesome-new";
+
+const originalSchema = {
   col_xs: {
     type: "number",
     default: 1,
@@ -31,10 +33,6 @@ export const schema = {
 		type: 'Boolean',
 		default: false,
 	},
-	icon:{
-		type: 'string',
-		default: 'fas fa-file',
-	},
 	color:{
 		type: 'string',
 		default: '#0693e3',
@@ -54,3 +52,9 @@ export const schema = {
 		selector: '.vk_icon_card_item_summary',
 	}
 };
+
+let mergeSchema = () => {
+	return Object.assign(originalSchema, faSchema);
+};
+
+export const schema = mergeSchema();

@@ -4,12 +4,13 @@
  */
 import { PRcarditem } from "./component";
 import { schema } from "./schema";
-import { AdvancedMediaUpload } from "../../../components/advanced-media-upload";
+import { deprecated } from "./deprecated"
+import { FontAwesome } from "./../../_helper/font-awesome-new";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { PanelBody, BaseControl, TextControl, CheckboxControl, RadioControl, Button} = wp.components;
-const { InspectorControls, MediaUpload, ColorPalette  } =
+const { PanelBody, BaseControl, TextControl, CheckboxControl, RadioControl} = wp.components;
+const { InspectorControls, ColorPalette  } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const { Fragment } = wp.element;
 const BlockIcon = (
@@ -31,7 +32,7 @@ registerBlockType("vk-blocks/icon-card-item", {
 
   edit(props) {
     const { setAttributes, attributes } = props;
-		const { url , urlOpenType, color, icon, bgType} = attributes;
+		const { url , urlOpenType, color, bgType} = attributes;
 
     return (
       <Fragment>
@@ -53,13 +54,9 @@ registerBlockType("vk-blocks/icon-card-item", {
 						<BaseControl
 							label={__('Icon', 'vk-blocks')}
 						>
-							<TextControl
-								label={__('Class name of the Font Awesome icon font you want to use:', 'vk-blocks')}
-								value={icon}
-								onChange={(value) => setAttributes({ icon: value })}
-								placeholder={'fas fa-file'}
-								help={<a href={`https://fontawesome.com/icons?d=gallery&m=free`}
-									target={`_blank`}>{__('Font Awesome icon list', 'vk-blocks')}</a>}
+							<FontAwesome
+								attributes={attributes}
+								setAttributes={setAttributes}
 							/>
 							<ColorPalette
 								value={color}
@@ -92,4 +89,7 @@ registerBlockType("vk-blocks/icon-card-item", {
   save(props) {
     return <PRcarditem {...props} for_={"save"} />;
   },
+
+  deprecated:deprecated
+
 });

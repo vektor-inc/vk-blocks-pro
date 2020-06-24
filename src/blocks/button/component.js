@@ -1,4 +1,5 @@
 const { Component } = wp.element;
+import ReactHtmlParser from 'react-html-parser';
 
 export class VKBButton extends Component {
 
@@ -80,11 +81,18 @@ export class VKBButton extends Component {
 		if (buttonAlign === 'block') {
 			aClass = `${aClass} btn-block`;
 		}
+
 		if (fontAwesomeIconBefore) {
-			iconBefore = <i className={`${fontAwesomeIconBefore} vk_button_link_before`}></i>;
-		}
-		if (fontAwesomeIconAfter) {
-			iconAfter = <i className={`${fontAwesomeIconAfter} vk_button_link_after`}></i>;
+			//add class and inline css
+			let faIconFragmentBefore= fontAwesomeIconBefore.split(' ');
+			faIconFragmentBefore[1] = ' ' + faIconFragmentBefore[1] + ` vk_button_link_before `
+			iconBefore = faIconFragmentBefore.join('')
+        }
+        if (fontAwesomeIconAfter) {
+			//add class and inline css
+			let faIconFragmentAfter = fontAwesomeIconAfter.split(' ');
+			faIconFragmentAfter[1] = ' ' + faIconFragmentAfter[1] + ` vk_button_link_after `
+			iconAfter = faIconFragmentAfter.join('')
 		}
 
 		return (
@@ -98,9 +106,9 @@ export class VKBButton extends Component {
 				target={buttonTarget ? '_blank' : null}
 				rel={'noopener noreferrer'}
 			>
-				{iconBefore}
+				{ReactHtmlParser(iconBefore)}
 				{richText}
-				{iconAfter}
+				{ReactHtmlParser(iconAfter)}
 				{ /*サブキャプションが入力された時のみ表示*/}
 				{subCaption && <p className={'vk_button_link_subCaption'}>{subCaption}</p>}
 			</a>

@@ -86,15 +86,16 @@ registerBlockType('vk-blocks/button', {
 		},
 		fontAwesomeIconBefore: {
 			type: 'string',
-			default: "",
+			default: '',
 		},
 		fontAwesomeIconAfter: {
 			type: 'string',
-			default: "",
+			default:  '',
 		}
 	},
 
-	edit({ attributes, className, setAttributes, isSelected }) {
+	edit(props) {
+		const { attributes, className, setAttributes, isSelected } = props
 		const {
 			content,
 			subCaption,
@@ -268,12 +269,12 @@ registerBlockType('vk-blocks/button', {
 							help={<a href={`https://fontawesome.com/icons?d=gallery&m=free`} target={`_blank`}>{__('Font Awesome icon list', 'vk-blocks')}</a>}
 						>
 							<FontAwesome
-								attributes={ "fontAwesomeIconBefore" }
-								setAttributes={ setAttributes }
+								attributeName={"fontAwesomeIconBefore"}
+								{...props}
 							/>
 							<FontAwesome
-								attributes={ "fontAwesomeIconAfter" }
-								setAttributes={ setAttributes }
+								attributeName={"fontAwesomeIconAfter"}
+								{...props}
 							/>
 						</BaseControl>
 					</PanelBody>

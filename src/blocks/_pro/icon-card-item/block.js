@@ -55,8 +55,8 @@ registerBlockType("vk-blocks/icon-card-item", {
 							label={__('Icon', 'vk-blocks')}
 						>
 							<FontAwesome
-								attributes={attributes}
-								setAttributes={setAttributes}
+								attributeName={"faIcon"}
+								{...props}
 							/>
 							<ColorPalette
 								value={color}

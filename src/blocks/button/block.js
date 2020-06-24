@@ -5,6 +5,7 @@
 import { VKBButton } from "./component";
 import { deprecated } from "./deprecated/deprecated";
 import { vkbBlockEditor } from "./../_helper/depModules";
+import { FontAwesome } from "../_helper/font-awesome-new"
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -266,19 +267,13 @@ registerBlockType('vk-blocks/button', {
 							label={__('Font Awesome:', 'vk-blocks')}
 							help={<a href={`https://fontawesome.com/icons?d=gallery&m=free`} target={`_blank`}>{__('Font Awesome icon list', 'vk-blocks')}</a>}
 						>
-							<TextControl
-								label={__('Before text', 'vk-blocks')}
-								help={__('Enter Font Awesome Class.This icon will appear before text. Ex) fas fa-arrow-circle-right', 'vk-blocks')}
-								value={fontAwesomeIconBefore}
-								onChange={(value) => setAttributes({ fontAwesomeIconBefore: value })}
-								placeholder={'fas fa-arrow-circle-right'}
+							<FontAwesome
+								attributes={ "fontAwesomeIconBefore" }
+								setAttributes={ setAttributes }
 							/>
-							<TextControl
-								label={__('After text', 'vk-blocks')}
-								help={__('Enter Font Awesome Class.This icon will appear after text. Ex) fas fa-external-link-alt', 'vk-blocks')}
-								value={fontAwesomeIconAfter}
-								onChange={(value) => setAttributes({ fontAwesomeIconAfter: value })}
-								placeholder={'fas fa-external-link-alt'}
+							<FontAwesome
+								attributes={ "fontAwesomeIconAfter" }
+								setAttributes={ setAttributes }
 							/>
 						</BaseControl>
 					</PanelBody>
@@ -318,14 +313,6 @@ registerBlockType('vk-blocks/button', {
 		);
 	},
 
-    /**
-     * The save function defin className }> which the different attributes should be combined
-     * into the final markup, which is then serialized by Gutenberg into post_content.
-     *
-     * The "save" property must be specified and must be a valid function.
-     *
-     * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
-     */
 	save({ attributes, className }) {
 		const {
 			content,

@@ -22,5 +22,17 @@ export const schema = {
   activeControl: {
     type: "string",
     default: '{"title":"center","text":"center"}',
-  },
+	},
+	faIcon: {
+		type: 'string',
+		default: '<i class="fas fa-user"></i>',
+	},
+	color:{
+		type: 'string',
+		default: '#0693e3',
+	},
+	bgType:{
+		type: 'string',
+		default: '0',
+	},
 };

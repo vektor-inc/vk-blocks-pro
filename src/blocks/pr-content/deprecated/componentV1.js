@@ -1,10 +1,10 @@
 import React from "react";
 import classNames from "classnames";
-import { Fontawesome } from "./component-fontawesome";
+import { FontAwesome } from "./../../_helper/font-awesome";
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { Button } = wp.components;
-import { vkbBlockEditor } from "./../_helper/depModules";
+import { vkbBlockEditor } from "./../../_helper/depModules";
 const { MediaUpload, RichText } = vkbBlockEditor;
 
 export class ComponentV1 extends React.Component {
@@ -241,7 +241,7 @@ export class ComponentV1 extends React.Component {
                       style={aStyle}
                       rel="noopener noreferrer"
                     >
-                      <Fontawesome attributes={attributes} />
+                      <FontAwesome attributes={attributes} />
                     </a>
                   </div>
                 );

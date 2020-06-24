@@ -13,21 +13,27 @@ export const PRcarditem = (props)=>{
 	const align = JSON.parse(activeControl)
 
 	let style;
-	let iconStyle;
+	let iconColor;
+
 	if(bgType == '0'){
 		style = {backgroundColor:`${color}`, border:`1px solid ${color}`}
-		iconStyle = {color:`#ffffff`}
+		iconColor = `#ffffff`
 	}else{
 		style = {backgroundColor:`transparent`, border:`1px solid ${color}`}
-		iconStyle = {color:`${color}`}
+		iconColor = `${color}`
 	}
+
+	//add class and inline css
+	let faIconFragment = faIcon.split(' ');
+	faIconFragment[0] = faIconFragment[0] + ` style="color:${iconColor}" `
+	faIconFragment[1] = faIconFragment[1] + ` vk_icon-card_item_icon `
+	let faIconTag = faIconFragment.join('')
 
 	let contents;
 	if(for_ === "edit"){
 		contents = <Fragment>
 			<div className="vk_icon-card_item_icon_outer" style={style}>
-				{ReactHtmlParser(faIcon)}
-				{/* <i className={`${icon} vk_icon-card_item_icon`} style={iconStyle}/> */}
+				{ReactHtmlParser(faIconTag)}
 			</div>
 			<RichText
 				className={`vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}`}
@@ -47,8 +53,7 @@ export const PRcarditem = (props)=>{
 	}else if(for_ === "save"){
 		contents = <a href={url} className="vk_icon-card_item_link" target={urlOpenType ? "_blank" : "_self"} rel="noopener noreferrer">
 			<div className="vk_icon-card_item_icon_outer" style={style}>
-				{ReactHtmlParser(faIcon)}
-				{/* <i className={`${icon} vk_icon-card_item_icon`} style={iconStyle}/> */}
+				{ReactHtmlParser(faIconTag)}
 			</div>
 			<RichText.Content
 				className={`vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}`}

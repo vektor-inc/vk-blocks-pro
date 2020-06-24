@@ -4,7 +4,7 @@
  */
 import Body from "./Body";
 import { schema } from './schema';
-import { FontAwesome } from "./../_helper/font-awesome-new";
+import { FontAwesome } from "./font-awesome-new";
 import { deprecated }  from "./deprecated"
 
 const { __ } = wp.i18n;

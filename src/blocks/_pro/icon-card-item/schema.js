@@ -1,6 +1,4 @@
-import { faSchema } from "./../../_helper/font-awesome-new";
-
-const originalSchema = {
+const schema = {
   col_xs: {
     type: "number",
     default: 1,
@@ -50,11 +48,9 @@ const originalSchema = {
 		type: 'string',
 		source: 'html',
 		selector: '.vk_icon_card_item_summary',
+	},
+	faIcon: {
+		type: 'string',
+		default: '',
 	}
 };
-
-let mergeSchema = () => {
-	return Object.assign(originalSchema, faSchema);
-};
-
-export const schema = mergeSchema();

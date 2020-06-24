@@ -119,9 +119,6 @@ export class ComponentBlock extends Component {
                         }}
                     >
 						{ReactHtmlParser(faIconTag)}
-						{/* <i className={`${icon[blockNumArrIndex]} vk_prBlocks_item_icon`}
-                        style={{ color: '#fff' }}>
-                        </i> */}
                     </div>
                 } else {
                     return <div
@@ -129,9 +126,6 @@ export class ComponentBlock extends Component {
                         	style={{ backgroundColor: 'transparent', border: '1px solid ' + color[blockNumArrIndex] }}
                     		>
 							{ReactHtmlParser(faIconTag)}
-						{/* <i className={`${icon[blockNumArrIndex]} vk_prBlocks_item_icon`}
-                        style={{ color: color[blockNumArrIndex] }}>
-                        </i> */}
                     </div>
                 }
             }

@@ -1,5 +1,4 @@
-import { faSchema } from "./../_helper/font-awesome-new";
-export const originalSchema = {
+export const schema = {
 	title: {
 		source: "html",
 		selector: ".vk_prContent_colTxt_title"
@@ -55,16 +54,10 @@ export const originalSchema = {
 	},
 	fontAwesomeIconBefore: {
 		type: "string",
-		default: ""
+		default: '<i class="fas fa-user"></i>'
 	},
 	fontAwesomeIconAfter: {
 		type: "string",
-		default: ""
+		default: '<i class="fas fa-user"></i>'
 	}
 };
-
-let mergeSchema = () => {
-	return Object.assign(originalSchema, faSchema);
-};
-
-export const schema = mergeSchema();

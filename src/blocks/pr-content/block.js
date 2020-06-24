@@ -7,7 +7,7 @@ import React from "react";
 import { schema } from "./schema";
 import { Component } from "./component";
 import { deprecated } from "./deprecated/deprecated";
-import { Fontawesome } from "./../_helper/font-awesome-new"
+import { FontAwesome } from "./../_helper/font-awesome-new"
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
@@ -77,7 +77,8 @@ registerBlockType("vk-blocks/pr-content", {
 	category: "vk-blocks-cat", // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	attributes: schema,
 
-	edit: function ({ attributes, className, setAttributes }) {
+	edit: function (props) {
+		const { attributes, className, setAttributes } = props
 		const {
 			titleColor,
 			contentColor,
@@ -191,8 +192,8 @@ registerBlockType("vk-blocks/pr-content", {
 							)}
 							>
 								<FontAwesome
-									attributes={ attributes }
-									setAttributes={ setAttributes }
+									attributeName={"fontAwesomeIconBefore"}
+									{...props}
 								/>
 							</BaseControl>
 							<BaseControl
@@ -203,22 +204,10 @@ registerBlockType("vk-blocks/pr-content", {
 							)}
 							>
 								<FontAwesome
-									attributes={ attributes }
-									setAttributes={ setAttributes }
+									attributeName={"fontAwesomeIconAfter"}
+									{...props}
 								/>
 							</BaseControl>
-							{/* <TextControl
-								label={__("After text", "vk-blocks")}
-								help={__(
-									"Enter Font Awesome Class.This icon will appear after text. Ex) fas fa-external-link-alt",
-									"vk-blocks"
-								)}
-								value={fontAwesomeIconAfter}
-								onChange={value =>
-									setAttributes({ fontAwesomeIconAfter: value })
-								}
-								placeholder={"fas fa-external-link-alt"}
-							/> */}
 						</BaseControl>
 					</PanelBody>
 					<PanelBody
@@ -246,7 +235,8 @@ registerBlockType("vk-blocks/pr-content", {
 		);
 	},
 
-	save({ attributes, className }) {
+	save(props) {
+		const { attributes, className } = props
 		return (
 			<Component attributes={attributes} className={className} for_={"save"} />
 		);

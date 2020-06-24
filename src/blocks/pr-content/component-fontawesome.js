@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactHtmlParser from 'react-html-parser';
 
 export class Fontawesome extends React.Component {
 
@@ -9,22 +10,29 @@ export class Fontawesome extends React.Component {
             fontAwesomeIconAfter,
         } = this.props.attributes;
 
-        let iconBefore = '';
-        let iconAfter = '';
-
+		let iconBefore = '';
+		let faIconFragmentBefore;
+		let iconAfter = '';
+		let faIconFragmentAfter;
 
         if (fontAwesomeIconBefore) {
-            iconBefore = <i className={`${fontAwesomeIconBefore} vk_button_link_before`}></i> ;
+			//add class and inline css
+			faIconFragmentBefore= fontAwesomeIconBefore.split(' ');
+			faIconFragmentBefore[1] = ' ' + faIconFragmentBefore[1] + ` vk_button_link_before `
+			iconBefore = faIconFragmentBefore.join('')
         }
         if (fontAwesomeIconAfter) {
-            iconAfter = <i className={`${fontAwesomeIconAfter} vk_button_link_after`}></i>;
-        }
+			//add class and inline css
+			faIconFragmentAfter = fontAwesomeIconAfter.split(' ');
+			faIconFragmentAfter[1] = ' ' + faIconFragmentAfter[1] + ` vk_button_link_after `
+			iconAfter = faIconFragmentAfter.join('')
+		}
 
         return (
-					<React.Fragment>
-                    {iconBefore}
-                    <span className="vk_button_link_txt">{buttonText}</span>
-                    {iconAfter}
+			<React.Fragment>
+				{ReactHtmlParser(iconBefore)}
+				<span className="vk_button_link_txt">{buttonText}</span>
+				{ReactHtmlParser(iconAfter)}
           </React.Fragment>
         );
     }

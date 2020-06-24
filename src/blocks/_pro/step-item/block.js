@@ -37,6 +37,7 @@ registerBlockType('vk-blocks/step-item', {
 					<PanelBody title={ __('Step Mark', 'vk-blocks') }>
 						<BaseControl
 							id="dot-fa"
+							label={ __('Icon ( Font Awesome )', 'vk-blocks') }
 							help={ __('If Font Awesome tags entered, it will overrides the number.', 'vk-blocks') }
 						>
 							<FontAwesome
@@ -44,6 +45,7 @@ registerBlockType('vk-blocks/step-item', {
 								{ ...props }
 							/>
 						</BaseControl>
+
 						<BaseControl
 							id="dot-caption"
 							label="Caption"

@@ -40,7 +40,7 @@ export default class AdvancedPopOverControl extends Component {
 					>
 						<Button
 							isTertiary
-							className={ `${popverBtnClass}` }
+							className={ `${popverBtnClass} mb-1` }
 							onClick={ handleOpen }
 							ref={ this.buttonRef }
 						>

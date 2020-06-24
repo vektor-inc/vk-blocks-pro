@@ -52,12 +52,14 @@ registerBlockType("vk-blocks/icon-card-item", {
 							/>
 				</BaseControl>
 				<BaseControl
-					label={ __('Icon', 'vk-blocks') }
-						>
+					label={ __('Icon ( Font Awesome )', 'vk-blocks') }
+							>
 					<FontAwesome
 						attributeName={ "faIcon" }
 						{ ...props }
-							/>
+					/>
+				</BaseControl>
+				<BaseControl>
 					<ColorPalette
 						value={ color }
 						onChange={ (value) => {

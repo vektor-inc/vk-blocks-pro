@@ -84,33 +84,33 @@ export class VKBButton extends Component {
 
 		if (fontAwesomeIconBefore) {
 			//add class and inline css
-			let faIconFragmentBefore= fontAwesomeIconBefore.split(' ');
+			const faIconFragmentBefore= fontAwesomeIconBefore.split(' ');
 			faIconFragmentBefore[1] = ' ' + faIconFragmentBefore[1] + ` vk_button_link_before `
 			iconBefore = faIconFragmentBefore.join('')
         }
         if (fontAwesomeIconAfter) {
 			//add class and inline css
-			let faIconFragmentAfter = fontAwesomeIconAfter.split(' ');
+			const faIconFragmentAfter = fontAwesomeIconAfter.split(' ');
 			faIconFragmentAfter[1] = ' ' + faIconFragmentAfter[1] + ` vk_button_link_after `
 			iconAfter = faIconFragmentAfter.join('')
 		}
 
 		return (
 			<a
-				href={buttonUrl}
-				id={'vk_button_link'}
-				style={aStyle}
-				className={aClass}
-				role={'button'}
-				aria-pressed={true}
-				target={buttonTarget ? '_blank' : null}
-				rel={'noopener noreferrer'}
+				href={ buttonUrl }
+				id={ 'vk_button_link' }
+				style={ aStyle }
+				className={ aClass }
+				role={ 'button' }
+				aria-pressed={ true }
+				target={ buttonTarget ? '_blank' : null }
+				rel={ 'noopener noreferrer' }
 			>
-				{ReactHtmlParser(iconBefore)}
-				{richText}
-				{ReactHtmlParser(iconAfter)}
-				{ /*サブキャプションが入力された時のみ表示*/}
-				{subCaption && <p className={'vk_button_link_subCaption'}>{subCaption}</p>}
+				{ ReactHtmlParser(iconBefore) }
+				{ richText }
+				{ ReactHtmlParser(iconAfter) }
+				{ /*サブキャプションが入力された時のみ表示*/ }
+				{ subCaption && <p className={ 'vk_button_link_subCaption' }>{ subCaption }</p> }
 			</a>
 		);
 	}

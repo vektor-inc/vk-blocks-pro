@@ -34,14 +34,14 @@ registerBlockType('vk-blocks/step-item', {
 		return (
 			<Fragment>
 				<InspectorControls>
-					<PanelBody title={__('Step Mark', 'vk-blocks')}>
+					<PanelBody title={ __('Step Mark', 'vk-blocks') }>
 						<BaseControl
 							id="dot-fa"
-							help={__('If FontAwesome class entered, it will overrides the number.', 'vk-blocks')}
+							help={ __('If Font Awesome tags entered, it will overrides the number.', 'vk-blocks') }
 						>
 							<FontAwesome
-								attributeName={"faIcon"}
-								{...props}
+								attributeName={ "faIcon" }
+								{ ...props }
 							/>
 						</BaseControl>
 						<BaseControl
@@ -49,28 +49,28 @@ registerBlockType('vk-blocks/step-item', {
 							label="Caption"
 						>
 							<TextControl
-								value={dotCaption}
-								onChange={(value) => setAttributes({ dotCaption: value })}
-								placeholder={__('Ex,6:00AM', 'vk-blocks')}
+								value={ dotCaption }
+								onChange={ (value) => setAttributes({ dotCaption: value }) }
+								placeholder={ __('Ex,6:00AM', 'vk-blocks') }
 							/>
 						</BaseControl>
 
 					</PanelBody>
-					<PanelBody title={__('Color', 'vk-blocks')}>
+					<PanelBody title={ __('Color', 'vk-blocks') }>
 						<ColorPalette
-							value={color}
-							onChange={(value) => setAttributes({ color: value })}
+							value={ color }
+							onChange={ (value) => setAttributes({ color: value }) }
 						/>
 					</PanelBody>
-					<PanelBody title={__('Style', 'vk-blocks')}>
+					<PanelBody title={ __('Style', 'vk-blocks') }>
 						<BaseControl
 							id="style-dot"
 							label="Dot Style"
 						>
 							<SelectControl
-								value={style}
-								onChange={(value) => setAttributes({ style: value })}
-								options={[
+								value={ style }
+								onChange={ (value) => setAttributes({ style: value }) }
+								options={ [
 									{
 										value: 'solid',
 										label: __('Solid', 'vk-blocks'),
@@ -79,7 +79,7 @@ registerBlockType('vk-blocks/step-item', {
 										value: 'outlined',
 										label: __('Outlined', 'vk-blocks'),
 									},
-								]}
+								] }
 							/>
 						</BaseControl>
 						<BaseControl
@@ -87,9 +87,9 @@ registerBlockType('vk-blocks/step-item', {
 							label="Line Style"
 						>
 							<SelectControl
-								value={styleLine}
-								onChange={(value) => setAttributes({ styleLine: value })}
-								options={[
+								value={ styleLine }
+								onChange={ (value) => setAttributes({ styleLine: value }) }
+								options={ [
 									{
 										value: 'default',
 										label: __('Default', 'vk-blocks'),
@@ -98,16 +98,16 @@ registerBlockType('vk-blocks/step-item', {
 										value: 'none',
 										label: __('None', 'vk-blocks'),
 									},
-								]}
+								] }
 							/>
 						</BaseControl>
 					</PanelBody>
 				</InspectorControls>
 				<StepItem
-					attributes={attributes}
-					className={className}
-					setAttributes={setAttributes}
-					for_={"edit"}
+					attributes={ attributes }
+					className={ className }
+					setAttributes={ setAttributes }
+					for_={ "edit" }
 				/>
 			</Fragment>
 		);
@@ -115,8 +115,8 @@ registerBlockType('vk-blocks/step-item', {
 
 	save(props) {
 		const { attributes, className } = props
-		return <StepItem attributes={attributes} className={className} for_={"save"} />;
+		return <StepItem attributes={ attributes } className={ className } for_={ "save" } />;
 	},
 
-	deprecated: deprecated,
+	deprecated,
 });

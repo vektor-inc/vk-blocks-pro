@@ -1,4 +1,5 @@
 import { ComponentBlock } from "./component-block";
+import { ComponentBlockV2 } from "./component-blockV2"
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 import { vkbBlockEditor } from "./../../_helper/depModules";
@@ -94,6 +95,39 @@ function set_attributes2(number) {
 }
 
 export const deprecated = [
+	{
+		attributes:set_attributes(4),
+		save({ attributes, className }) {
+
+			let containerClass;
+			if (className) {
+				containerClass = `${className} vk_prBlocks row`;
+			} else {
+				containerClass = `vk_prBlocks row`;
+			}
+
+			return (
+				<div className={containerClass}>
+					<ComponentBlockV2
+						attributes={attributes}
+						blockNum={1}
+						for_={'save'}
+					/>
+					<ComponentBlockV2
+						attributes={attributes}
+						blockNum={2}
+						for_={'save'}
+					/>
+					<ComponentBlockV2
+						attributes={attributes}
+						blockNum={3}
+						for_={'save'}
+					/>
+				</div>
+			);
+
+		},
+	},
     {
         attributes: set_attributes(4),
 

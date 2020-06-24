@@ -1,11 +1,10 @@
-import { isNotJSON } from "../_helper/is-not-json";
+import { isNotJSON } from "./../../_helper/is-not-json";
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { Component } = wp.element;
-import { vkbBlockEditor } from "./../_helper/depModules";
+import { vkbBlockEditor } from "./../../_helper/depModules";
 const { RichText } = vkbBlockEditor;
-import ReactHtmlParser from 'react-html-parser';
 
-export class ComponentBlock extends Component {
+export class ComponentBlockV2 extends Component {
 
     render() {
 
@@ -93,22 +92,7 @@ export class ComponentBlock extends Component {
 
                 if (!color[blockNumArrIndex]) {
                     color[blockNumArrIndex] = '#0693e3';
-				}
-
-				let iconColor;
-				if (bgType[blockNumArrIndex] === '0') {
-					iconColor = '#fff'
-				}else{
-					iconColor = color[blockNumArrIndex]
-				}
-				//add class and inline css
-				let faIcon = icon[blockNumArrIndex]
-				let faIconFragment = faIcon.split(' ');
-				faIconFragment[0] = faIconFragment[0] + ` style="color:${iconColor}" `
-				faIconFragment[1] = faIconFragment[1] + ` vk_prBlocks_item_icon `
-				let faIconTag = faIconFragment.join('')
-
-
+                }
                 if (bgType[blockNumArrIndex] === '0') {
 
                     return <div
@@ -117,21 +101,17 @@ export class ComponentBlock extends Component {
                             backgroundColor: color[blockNumArrIndex],
                             border: `1px solid ${color[blockNumArrIndex]}`
                         }}
-                    >
-						{ReactHtmlParser(faIconTag)}
-						{/* <i className={`${icon[blockNumArrIndex]} vk_prBlocks_item_icon`}
+                    ><i className={`${icon[blockNumArrIndex]} vk_prBlocks_item_icon`}
                         style={{ color: '#fff' }}>
-                        </i> */}
+                        </i>
                     </div>
                 } else {
                     return <div
-                        	className="vk_prBlocks_item_icon_outer"
-                        	style={{ backgroundColor: 'transparent', border: '1px solid ' + color[blockNumArrIndex] }}
-                    		>
-							{ReactHtmlParser(faIconTag)}
-						{/* <i className={`${icon[blockNumArrIndex]} vk_prBlocks_item_icon`}
+                        className="vk_prBlocks_item_icon_outer"
+                        style={{ backgroundColor: 'transparent', border: '1px solid ' + color[blockNumArrIndex] }}
+                    ><i className={`${icon[blockNumArrIndex]} vk_prBlocks_item_icon`}
                         style={{ color: color[blockNumArrIndex] }}>
-                        </i> */}
+                        </i>
                     </div>
                 }
             }

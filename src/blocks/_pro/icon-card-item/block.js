@@ -32,7 +32,7 @@ registerBlockType("vk-blocks/icon-card-item", {
 
   edit(props) {
     const { setAttributes, attributes } = props;
-		const { url , urlOpenType, color, bgType} = attributes;
+	const { url , urlOpenType, color, bgType} = attributes;
 
     return (
       <Fragment>

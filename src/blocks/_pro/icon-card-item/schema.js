@@ -1,4 +1,4 @@
-const schema = {
+export const schema = {
   col_xs: {
     type: "number",
     default: 1,
@@ -51,6 +51,6 @@ const schema = {
 	},
 	faIcon: {
 		type: 'string',
-		default: '',
+		default: '<i class="fas fa-user"></i>',
 	}
 };

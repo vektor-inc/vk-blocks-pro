@@ -173,23 +173,10 @@ registerBlockType("vk-blocks/pr-content", {
 								onChange={ value => setAttributes({ buttonColorCustom: value }) }
 							/>
 						</BaseControl>
-						<BaseControl
-							label={ __("Font Awesome:", "vk-blocks") }
-							help={
-								<a
-									href={ `https://fontawesome.com/icons?d=gallery&m=free` }
-									target={ `_blank` }
-								>
-									{ __("Font Awesome icon list", "vk-blocks") }
-								</a>
-							}
-							>
+						<BaseControl>
+							<h4 className="mt-0 mb-2">{ __('Icon ( Font Awesome )', 'vk-blocks') }</h4>
 							<BaseControl
 								label={ __("Before text", "vk-blocks") }
-								help={ __(
-								"Enter Font Awesome Class.This icon will appear before text. Ex) fas fa-arrow-circle-right",
-								"vk-blocks"
-							) }
 							>
 								<FontAwesome
 									attributeName={ "fontAwesomeIconBefore" }
@@ -198,10 +185,6 @@ registerBlockType("vk-blocks/pr-content", {
 							</BaseControl>
 							<BaseControl
 								label={ __("After text", "vk-blocks") }
-								help={ __(
-								"Enter Font Awesome Class.This icon will appear after text. Ex) fas fa-external-link-alt",
-								"vk-blocks"
-							) }
 							>
 								<FontAwesome
 									attributeName={ "fontAwesomeIconAfter" }

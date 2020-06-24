@@ -264,19 +264,27 @@ registerBlockType('vk-blocks/button', {
 								onChange={ (value) => setAttributes({ buttonColorCustom: value }) }
 							/>
 						</BaseControl>
-						<BaseControl
-							label={ __('Font Awesome:', 'vk-blocks') }
-							help={ <a href={ `https://fontawesome.com/icons?d=gallery&m=free` } target={ `_blank` }>{ __('Font Awesome icon list', 'vk-blocks') }</a> }
-						>
-							<FontAwesome
-								attributeName={ "fontAwesomeIconBefore" }
-								{ ...props }
-							/>
-							<FontAwesome
-								attributeName={ "fontAwesomeIconAfter" }
-								{ ...props }
-							/>
+
+						<BaseControl>
+							<h4 className="mt-0 mb-2">{ __('Icon ( Font Awesome )', 'vk-blocks') }</h4>
+							<BaseControl
+								label={ __("Before text", "vk-blocks") }
+							>
+								<FontAwesome
+									attributeName={ "fontAwesomeIconBefore" }
+									{ ...props }
+								/>
+							</BaseControl>
+							<BaseControl
+								label={ __("After text", "vk-blocks") }
+							>
+								<FontAwesome
+									attributeName={ "fontAwesomeIconAfter" }
+									{ ...props }
+								/>
+							</BaseControl>
 						</BaseControl>
+
 					</PanelBody>
 				</InspectorControls>
 				<div className={ containerClass }>

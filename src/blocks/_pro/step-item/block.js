@@ -22,7 +22,8 @@ registerBlockType('vk-blocks/step-item', {
 	attributes: schema,
 	parent: ['vk-blocks/step'],
 
-	edit({ attributes, setAttributes, className }) {
+	edit(props) {
+		const { attributes, setAttributes, className } = props
 		const {
 			color,
 			style,
@@ -39,8 +40,8 @@ registerBlockType('vk-blocks/step-item', {
 							help={__('If FontAwesome class entered, it will overrides the number.', 'vk-blocks')}
 						>
 							<FontAwesome
-								attributes={attributes}
-								setAttributes={setAttributes}
+								attributeName={"faIcon"}
+								{...props}
 							/>
 						</BaseControl>
 						<BaseControl
@@ -112,7 +113,8 @@ registerBlockType('vk-blocks/step-item', {
 		);
 	},
 
-	save({ attributes, className }) {
+	save(props) {
+		const { attributes, className } = props
 		return <StepItem attributes={attributes} className={className} for_={"save"} />;
 	},
 

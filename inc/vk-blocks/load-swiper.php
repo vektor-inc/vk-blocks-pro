@@ -50,6 +50,7 @@ function vkblocks_add_slider_front_scripts( $block_content, $block ) {
 		}
 
 		$script ="<script>
+		window.addEventListener('DOMContentLoaded',function() {
 			var swiper".$clientId." = new Swiper ('.vk_slider_".$clientId."', {
 				// Optional parameters
 				loop: true,
@@ -71,6 +72,8 @@ function vkblocks_add_slider_front_scripts( $block_content, $block ) {
 				},
 				".$auto_play_scripts."
 			  })
+		}, false)
+
 		</script>";
 
 		return $block_content .  $script . $style;

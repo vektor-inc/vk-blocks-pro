@@ -101,8 +101,13 @@ export class ComponentBlock extends Component {
 				}else{
 					iconColor = color[blockNumArrIndex]
 				}
-				//add class and inline css
+
 				let faIcon = icon[blockNumArrIndex]
+				//過去バージョンをリカバリーした時にiconを正常に表示する
+				if( faIcon && !faIcon.match(/<i/)){
+					faIcon = `<i class="${faIcon}"></i>`
+				}
+				//add class and inline css
 				let faIconFragment = faIcon.split(' ');
 				faIconFragment[0] = faIconFragment[0] + ` style="color:${iconColor}" `
 				faIconFragment[1] = faIconFragment[1] + ` vk_prBlocks_item_icon `

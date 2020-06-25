@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
+const { Component } = wp.element;
 
-export class Fontawesome extends React.Component {
+export class Fontawesome extends Component {
 
     render() {
         let {

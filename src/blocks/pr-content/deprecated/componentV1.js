@@ -4,10 +4,11 @@ import { FontAwesome } from "./../../_helper/font-awesome";
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { Button } = wp.components;
+const { Component } = wp.element;
 import { vkbBlockEditor } from "./../../_helper/depModules";
 const { MediaUpload, RichText } = vkbBlockEditor;
 
-export class ComponentV1 extends React.Component {
+export class ComponentV1 extends Component {
   render() {
     const attributes = this.props.attributes;
     const {

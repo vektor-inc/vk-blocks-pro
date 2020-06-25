@@ -2,10 +2,8 @@
  * Pr-Content block type
  *
  */
-
-import React from "react";
 import { schema } from "./schema";
-import { Component } from "./component";
+import { PRcontent } from "./component";
 import { deprecated } from "./deprecated/deprecated";
 import { FontAwesome } from "./../_helper/font-awesome-new"
 
@@ -208,7 +206,7 @@ registerBlockType("vk-blocks/pr-content", {
 						/>
 					</PanelBody>
 				</InspectorControls>
-				<Component
+				<PRcontent
 					attributes={ attributes }
 					setAttributes={ setAttributes }
 					className={ className }
@@ -221,7 +219,7 @@ registerBlockType("vk-blocks/pr-content", {
 	save(props) {
 		const { attributes, className } = props
 		return (
-			<Component attributes={ attributes } className={ className } for_={ "save" } />
+			<PRcontent attributes={ attributes } className={ className } for_={ "save" } />
 		);
 	},
 

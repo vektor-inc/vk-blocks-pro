@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
 const { Component } = wp.element;
 
@@ -15,6 +14,14 @@ export class Fontawesome extends Component {
 		let faIconFragmentBefore;
 		let iconAfter = '';
 		let faIconFragmentAfter;
+
+		//過去バージョンをリカバリーした時にiconを正常に表示する
+		if( fontAwesomeIconBefore && !fontAwesomeIconBefore.match(/<i/)){
+			fontAwesomeIconBefore = `<i class="${fontAwesomeIconBefore}"></i>`
+		}
+		if( fontAwesomeIconAfter && !fontAwesomeIconAfter.match(/<i/)){
+			fontAwesomeIconAfter = `<i class="${fontAwesomeIconAfter}"></i>`
+		}
 
         if (fontAwesomeIconBefore) {
 			//add class and inline css

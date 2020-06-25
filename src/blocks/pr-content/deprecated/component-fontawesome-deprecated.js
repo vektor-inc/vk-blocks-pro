@@ -18,14 +18,13 @@ export class Fontawesome extends React.Component {
         }
         if (fontAwesomeIconAfter) {
             iconAfter = <i className={`${fontAwesomeIconAfter} vk_button_link_after`}></i>;
-        }
+		}
 
-        return (
-					<React.Fragment>
-                    {iconBefore}
-                    <span className="vk_button_link_txt">{buttonText}</span>
-                    {iconAfter}
-          </React.Fragment>
-        );
+        return (<React.Fragment>
+				{iconBefore}
+				<span className="vk_button_link_txt">{buttonText}</span>
+				{iconAfter}
+				</React.Fragment>
+			);
     }
 }

@@ -23,6 +23,10 @@ export const PRcarditem = (props)=>{
 		iconColor = `${color}`
 	}
 
+	//過去バージョンをリカバリーした時にiconを正常に表示する
+	if( faIcon && !faIcon.match(/<i/)){
+		faIcon = `<i class="${faIcon}"></i>`
+	}
 	//add class and inline css
 	let faIconFragment = faIcon.split(' ');
 	faIconFragment[0] = faIconFragment[0] + ` style="color:${iconColor}" `

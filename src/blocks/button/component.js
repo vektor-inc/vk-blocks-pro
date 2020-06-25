@@ -82,6 +82,14 @@ export class VKBButton extends Component {
 			aClass = `${aClass} btn-block`;
 		}
 
+		//過去バージョンをリカバリーした時にiconを正常に表示する
+		if( fontAwesomeIconBefore && !fontAwesomeIconBefore.match(/<i/)){
+			fontAwesomeIconBefore = `<i class="${fontAwesomeIconBefore}"></i>`
+		}
+		if( fontAwesomeIconAfter && !fontAwesomeIconAfter.match(/<i/)){
+			fontAwesomeIconAfter = `<i class="${fontAwesomeIconAfter}"></i>`
+		}
+
 		if (fontAwesomeIconBefore) {
 			//add class and inline css
 			const faIconFragmentBefore= fontAwesomeIconBefore.split(' ');

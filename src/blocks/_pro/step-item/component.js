@@ -48,6 +48,11 @@ export class StepItem extends Component {
 			styleLineClass = ' vk_step_item_lineStyle-none'
 		}
 
+		//過去バージョンをリカバリーした時にiconを正常に表示する
+		if( faIcon && !faIcon.match(/<i/)){
+			faIcon = `<i class="${faIcon}"></i>`
+		}
+
 		return (
 			<div className={className + containerClass + styleLineClass}>
 				<div className={"vk_step_item_content"}>{elm}</div>

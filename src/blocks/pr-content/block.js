@@ -77,7 +77,7 @@ registerBlockType("vk-blocks/pr-content", {
 	category: "vk-blocks-cat", // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	attributes: schema,
 
-	edit: function (props) {
+	edit (props) {
 		const { attributes, className, setAttributes } = props
 		const {
 			titleColor,
@@ -97,65 +97,65 @@ registerBlockType("vk-blocks/pr-content", {
 			<Fragment>
 				<InspectorControls>
 					<PanelBody
-						title={__("Color Setting", "vk-blocks")}
-						initialOpen={false}
+						title={ __("Color Setting", "vk-blocks") }
+						initialOpen={ false }
 					>
-						<BaseControl label={__("Title Color", "vk-blocks")}>
+						<BaseControl label={ __("Title Color", "vk-blocks") }>
 							<ColorPalette
-								value={titleColor}
-								onChange={value => setAttributes({ titleColor: value })}
+								value={ titleColor }
+								onChange={ value => setAttributes({ titleColor: value }) }
 							/>
 						</BaseControl>
-						<BaseControl label={__("Content Color", "vk-blocks")}>
+						<BaseControl label={ __("Content Color", "vk-blocks") }>
 							<ColorPalette
-								value={contentColor}
-								onChange={value => setAttributes({ contentColor: value })}
+								value={ contentColor }
+								onChange={ value => setAttributes({ contentColor: value }) }
 							/>
 						</BaseControl>
-						<BaseControl label={__("Image Border Color", "vk-blocks")}>
+						<BaseControl label={ __("Image Border Color", "vk-blocks") }>
 							<ColorPalette
-								value={ImageBorderColor}
-								onChange={value => setAttributes({ ImageBorderColor: value })}
+								value={ ImageBorderColor }
+								onChange={ value => setAttributes({ ImageBorderColor: value }) }
 							/>
 						</BaseControl>
 					</PanelBody>
 					<PanelBody
-						title={__("Button Setting", "vk-blocks")}
-						initialOpen={false}
+						title={ __("Button Setting", "vk-blocks") }
+						initialOpen={ false }
 					>
-						<BaseControl label={__("Button Text", "vk-blocks")}>
+						<BaseControl label={ __("Button Text", "vk-blocks") }>
 							<TextControl
-								value={buttonText}
-								onChange={value => setAttributes({ buttonText: value })}
-								placeholder={"Input button text."}
+								value={ buttonText }
+								onChange={ value => setAttributes({ buttonText: value }) }
+								placeholder={ "Input button text." }
 							/>
 						</BaseControl>
-						<BaseControl label={__("Link URL", "vk-blocks")}>
+						<BaseControl label={ __("Link URL", "vk-blocks") }>
 							<TextControl
-								value={url}
-								onChange={value => setAttributes({ url: value })}
-								placeholder={"https://vektor-inc.co.jp/"}
+								value={ url }
+								onChange={ value => setAttributes({ url: value }) }
+								placeholder={ "https://vektor-inc.co.jp/" }
 							/>
 						</BaseControl>
 						<CheckboxControl
-							label={__("Open link new tab.", "vk-blocks")}
-							checked={buttonTarget}
-							onChange={checked => setAttributes({ buttonTarget: checked })}
+							label={ __("Open link new tab.", "vk-blocks") }
+							checked={ buttonTarget }
+							onChange={ checked => setAttributes({ buttonTarget: checked }) }
 						/>
-						<BaseControl label={__("Button Type", "vk-blocks")}>
+						<BaseControl label={ __("Button Type", "vk-blocks") }>
 							<RadioControl
-								selected={buttonType}
-								options={[
+								selected={ buttonType }
+								options={ [
 									{ label: __("Solid", "vk-blocks"), value: "0" },
 									{ label: __("Ghost", "vk-blocks"), value: "1" }
-								]}
-								onChange={value => setAttributes({ buttonType: value })}
+								] }
+								onChange={ value => setAttributes({ buttonType: value }) }
 							/>
 						</BaseControl>
 						<RadioControl
-							label={__("Default Color:", "vk-blocks")}
-							selected={buttonColor}
-							options={[
+							label={ __("Default Color:", "vk-blocks") }
+							selected={ buttonColor }
+							options={ [
 								{ label: __("Primary", "vk-blocks"), value: "primary" },
 								{ label: __("Secondary", "vk-blocks"), value: "secondary" },
 								{ label: __("Success", "vk-blocks"), value: "success" },
@@ -164,72 +164,55 @@ registerBlockType("vk-blocks/pr-content", {
 								{ label: __("Danger", "vk-blocks"), value: "danger" },
 								{ label: __("Light", "vk-blocks"), value: "light" },
 								{ label: __("Dark", "vk-blocks"), value: "dark" }
-							]}
-							onChange={value => setAttributes({ buttonColor: value })}
+							] }
+							onChange={ value => setAttributes({ buttonColor: value }) }
 						/>
-						<BaseControl label={__("Button Color", "vk-blocks")}>
+						<BaseControl label={ __("Button Color", "vk-blocks") }>
 							<ColorPalette
-								value={buttonColorCustom}
-								onChange={value => setAttributes({ buttonColorCustom: value })}
+								value={ buttonColorCustom }
+								onChange={ value => setAttributes({ buttonColorCustom: value }) }
 							/>
 						</BaseControl>
-						<BaseControl
-							label={__("Font Awesome:", "vk-blocks")}
-							help={
-								<a
-									href={`https://fontawesome.com/icons?d=gallery&m=free`}
-									target={`_blank`}
-								>
-									{__("Font Awesome icon list", "vk-blocks")}
-								</a>
-							}
-							>
+						<BaseControl>
+							<h4 className="mt-0 mb-2">{ __('Icon ( Font Awesome )', 'vk-blocks') }</h4>
 							<BaseControl
-							label={__("Before text", "vk-blocks")}
-							help={__(
-								"Enter Font Awesome Class.This icon will appear before text. Ex) fas fa-arrow-circle-right",
-								"vk-blocks"
-							)}
+								label={ __("Before text", "vk-blocks") }
 							>
 								<FontAwesome
-									attributeName={"fontAwesomeIconBefore"}
-									{...props}
+									attributeName={ "fontAwesomeIconBefore" }
+									{ ...props }
 								/>
 							</BaseControl>
 							<BaseControl
-							label={__("After text", "vk-blocks")}
-							help={__(
-								"Enter Font Awesome Class.This icon will appear after text. Ex) fas fa-external-link-alt",
-								"vk-blocks"
-							)}
+								label={ __("After text", "vk-blocks") }
 							>
 								<FontAwesome
-									attributeName={"fontAwesomeIconAfter"}
-									{...props}
+									attributeName={ "fontAwesomeIconAfter" }
+									{ ...props }
 								/>
 							</BaseControl>
 						</BaseControl>
 					</PanelBody>
 					<PanelBody
-						title={__("Layout Setting", "vk-blocks")}
-						initialOpen={false}
+						title={ __("Layout Setting", "vk-blocks") }
+						initialOpen={ false }
 					>
 						<RadioControl
-							label={__("Layout Type", "vk-blocks")}
-							selected={layout}
-							options={[
+							label={ __("Layout Type", "vk-blocks") }
+							selected={ layout }
+							options={ [
 								{ label: __("Right", "vk-blocks"), value: "right" },
 								{ label: __("Left", "vk-blocks"), value: "left" }
-							]}
-							onChange={value => setAttributes({ layout: value })}
+							] }
+							onChange={ value => setAttributes({ layout: value }) }
 						/>
 					</PanelBody>
 				</InspectorControls>
 				<Component
-					attributes={attributes}
-					setAttributes={setAttributes}
-					className={className}
-					for_={"edit"}
+					attributes={ attributes }
+					setAttributes={ setAttributes }
+					className={ className }
+					for_={ "edit" }
 				/>
 			</Fragment>
 		);
@@ -238,9 +221,9 @@ registerBlockType("vk-blocks/pr-content", {
 	save(props) {
 		const { attributes, className } = props
 		return (
-			<Component attributes={attributes} className={className} for_={"save"} />
+			<Component attributes={ attributes } className={ className } for_={ "save" } />
 		);
 	},
 
-	deprecated: deprecated
+	deprecated
 });

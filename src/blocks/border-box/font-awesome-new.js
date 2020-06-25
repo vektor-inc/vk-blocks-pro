@@ -69,7 +69,6 @@ export class FontAwesome extends Component {
 		return (
 			<Fragment>
 				<TextControl
-					label={ __('Font Awesome', 'vk-blocks') }
 					value={ faIcon }
 					onChange={ (value) => setAttributes({ faIcon: value }) }
 					placeholder={ '<i class="fas fa-arrow-circle-right"></i>' }

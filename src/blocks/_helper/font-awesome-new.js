@@ -60,7 +60,6 @@ export const FontAwesome = (props) => {
 	return (
 		<Fragment>
 			<TextControl
-				label={ __('Font Awesome', 'vk-blocks') }
 				value={ attributes[attributeName] }
 				onChange={ (value) => setAttributes({ [attributeName]: value }) }
 				placeholder={ '<i class="fas fa-arrow-circle-right"></i>' }

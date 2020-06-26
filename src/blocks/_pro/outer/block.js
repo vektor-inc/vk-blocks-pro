@@ -206,6 +206,10 @@ registerBlockType("vk-blocks/outer", {
 										label: __("Add padding to the Outer area", "vk-blocks"),
 										value: "1",
 									},
+									{
+										label: __("Remove padding from the Outer area", "vk-blocks"),
+										value: "2",
+									},
 								] }
 								onChange={ (value) =>
 									setAttributes({ padding_left_and_right: value })

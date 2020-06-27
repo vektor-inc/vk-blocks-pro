@@ -52,6 +52,10 @@ $padding-xl: 3.5em;
 		padding-right: $padding-xl;
 	}
 }
+.vk_outer-paddingLR-zero {
+	padding-left: 0;
+	padding-right: 0;
+}
 .vk_outer-paddingVertical-use {
 	padding-top: $padding-none;
 	padding-bottom: $padding-none;

@@ -68,9 +68,11 @@
 	}
 	.vk_borderBox_body {
 		padding: 1.5em;
-		// background-color: #fff;
 		border-width: 2px;
 		border-style: solid;
+		@media (min-width: 992px) {
+			padding: 2em;
+		}
 		p:last-child {
 			margin-bottom: 0;
 		}

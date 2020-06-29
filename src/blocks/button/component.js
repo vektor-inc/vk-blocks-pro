@@ -12,8 +12,8 @@ export class VKBButton extends Component {
 		const buttonSize = this.props.lbSize;
 		const buttonUrl = this.props.lbUrl;
 		const buttonTarget = this.props.lbTarget;
-		const fontAwesomeIconBefore = this.props.lbFontAwesomeIconBefore;
-		const fontAwesomeIconAfter = this.props.lbFontAwesomeIconAfter;
+		let fontAwesomeIconBefore = this.props.lbFontAwesomeIconBefore;
+		let fontAwesomeIconAfter = this.props.lbFontAwesomeIconAfter;
 		const richText = this.props.lbRichtext;
 		const subCaption = this.props.lbsubCaption;
 		const containerClass = '';

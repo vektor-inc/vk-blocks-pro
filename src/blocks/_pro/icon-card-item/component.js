@@ -9,7 +9,7 @@ import { convertToGrid } from "../../_helper/convert-to-grid";
 export const PRcarditem = (props)=>{
 
 	const {attributes,setAttributes,for_,className}=props;
-	const{color, heading, content, faIcon, url, urlOpenType, bgType,col_xs,col_sm,col_md,col_lg,col_xl,activeControl}=attributes
+	let {color, heading, content, faIcon, url, icon, urlOpenType, bgType,col_xs,col_sm,col_md,col_lg,col_xl,activeControl}=attributes
 	const align = JSON.parse(activeControl)
 
 	let style;
@@ -26,7 +26,10 @@ export const PRcarditem = (props)=>{
 	//過去バージョンをリカバリーした時にiconを正常に表示する
 	if( faIcon && !faIcon.match(/<i/)){
 		faIcon = `<i class="${faIcon}"></i>`
+	}else if( icon && !icon.match(/<i/)){
+		faIcon = `<i class="${icon}"></i>`
 	}
+
 	//add class and inline css
 	let faIconFragment = faIcon.split(' ');
 	faIconFragment[0] = faIconFragment[0] + ` style="color:${iconColor}" `

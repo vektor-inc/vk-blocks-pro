@@ -1,7 +1,6 @@
 const { Component } = wp.element;
-import ReactHtmlParser from 'react-html-parser';
 
-export class VKBButton extends Component {
+export class VKBButtonV1 extends Component {
 
 	render() {
 
@@ -12,8 +11,8 @@ export class VKBButton extends Component {
 		const buttonSize = this.props.lbSize;
 		const buttonUrl = this.props.lbUrl;
 		const buttonTarget = this.props.lbTarget;
-		let fontAwesomeIconBefore = this.props.lbFontAwesomeIconBefore;
-		let fontAwesomeIconAfter = this.props.lbFontAwesomeIconAfter;
+		const fontAwesomeIconBefore = this.props.lbFontAwesomeIconBefore;
+		const fontAwesomeIconAfter = this.props.lbFontAwesomeIconAfter;
 		const richText = this.props.lbRichtext;
 		const subCaption = this.props.lbsubCaption;
 		const containerClass = '';
@@ -81,44 +80,29 @@ export class VKBButton extends Component {
 		if (buttonAlign === 'block') {
 			aClass = `${aClass} btn-block`;
 		}
-
-		//過去バージョンをリカバリーした時にiconを正常に表示する
-		if( fontAwesomeIconBefore && !fontAwesomeIconBefore.match(/<i/)){
-			fontAwesomeIconBefore = `<i class="${fontAwesomeIconBefore}"></i>`
-		}
-		if( fontAwesomeIconAfter && !fontAwesomeIconAfter.match(/<i/)){
-			fontAwesomeIconAfter = `<i class="${fontAwesomeIconAfter}"></i>`
-		}
-
 		if (fontAwesomeIconBefore) {
-			//add class and inline css
-			const faIconFragmentBefore= fontAwesomeIconBefore.split(' ');
-			faIconFragmentBefore[1] = ' ' + faIconFragmentBefore[1] + ` vk_button_link_before `
-			iconBefore = faIconFragmentBefore.join('')
-        }
-        if (fontAwesomeIconAfter) {
-			//add class and inline css
-			const faIconFragmentAfter = fontAwesomeIconAfter.split(' ');
-			faIconFragmentAfter[1] = ' ' + faIconFragmentAfter[1] + ` vk_button_link_after `
-			iconAfter = faIconFragmentAfter.join('')
+			iconBefore = <i className={`${fontAwesomeIconBefore} vk_button_link_before`}></i>;
+		}
+		if (fontAwesomeIconAfter) {
+			iconAfter = <i className={`${fontAwesomeIconAfter} vk_button_link_after`}></i>;
 		}
 
 		return (
 			<a
-				href={ buttonUrl }
-				id={ 'vk_button_link' }
-				style={ aStyle }
-				className={ aClass }
-				role={ 'button' }
-				aria-pressed={ true }
-				target={ buttonTarget ? '_blank' : null }
-				rel={ 'noopener noreferrer' }
+				href={buttonUrl}
+				id={'vk_button_link'}
+				style={aStyle}
+				className={aClass}
+				role={'button'}
+				aria-pressed={true}
+				target={buttonTarget ? '_blank' : null}
+				rel={'noopener noreferrer'}
 			>
-				{ ReactHtmlParser(iconBefore) }
-				{ richText }
-				{ ReactHtmlParser(iconAfter) }
-				{ /*サブキャプションが入力された時のみ表示*/ }
-				{ subCaption && <p className={ 'vk_button_link_subCaption' }>{ subCaption }</p> }
+				{iconBefore}
+				{richText}
+				{iconAfter}
+				{ /*サブキャプションが入力された時のみ表示*/}
+				{subCaption && <p className={'vk_button_link_subCaption'}>{subCaption}</p>}
 			</a>
 		);
 	}

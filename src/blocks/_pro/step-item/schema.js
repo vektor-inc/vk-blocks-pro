@@ -1,6 +1,4 @@
-import {faSchema} from "../../_helper/font-awesome";
-
-export const originalSchema = {
+export const schema = {
     color: {
         type: 'string',
         default: '#337ab7',
@@ -20,12 +18,9 @@ export const originalSchema = {
     dotNum: {
         type: 'number',
         default: 1,
-    }
+	},
+	faIcon:{
+		type:'string',
+		default:''
+	}
 };
-
-
-let mergeSchema = () => {
-    return Object.assign(originalSchema, faSchema);
-};
-
-export const schema = mergeSchema();

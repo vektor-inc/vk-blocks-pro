@@ -1,13 +1,41 @@
 import classNames from "classnames";
-import { Fontawesome } from "./component-fontawesome";
-
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { Button } = wp.components;
-const { Component } = wp.element;
-import { vkbBlockEditor } from "./../_helper/depModules";
+const { Component,Fragment } = wp.element;
+import { vkbBlockEditor } from "./../../_helper/depModules";
 const { MediaUpload, RichText } = vkbBlockEditor;
 
-export class PRcontent extends Component {
+export class Fontawesome extends Component {
+
+	render() {
+			let {
+					buttonText,
+					fontAwesomeIconBefore,
+					fontAwesomeIconAfter,
+			} = this.props.attributes;
+
+			let iconBefore = '';
+			let iconAfter = '';
+
+
+			if (fontAwesomeIconBefore) {
+					iconBefore = <i className={`${fontAwesomeIconBefore} vk_button_link_before`}></i> ;
+			}
+			if (fontAwesomeIconAfter) {
+					iconAfter = <i className={`${fontAwesomeIconAfter} vk_button_link_after`}></i>;
+			}
+
+			return (
+				<Fragment>
+									{iconBefore}
+									<span className="vk_button_link_txt">{buttonText}</span>
+									{iconAfter}
+				</Fragment>
+			);
+	}
+}
+
+export class ComponentV1 extends Component {
   render() {
     const attributes = this.props.attributes;
     const {
@@ -26,7 +54,7 @@ export class PRcontent extends Component {
       layout,
       fontAwesomeIconBefore,
       fontAwesomeIconAfter
-    } = attributes;
+		} = attributes;
 
     let setAttributes = this.props.setAttributes;
     let className = this.props.className;
@@ -182,7 +210,7 @@ export class PRcontent extends Component {
           }
         }
       }
-    };
+		};
 
     return (
       <div className={containerClass}>
@@ -191,7 +219,7 @@ export class PRcontent extends Component {
           {(() => {
             if (for_ === "edit") {
               return (
-                <React.Fragment>
+                <Fragment>
                   <RichText
                     tagName="h3"
                     className={"vk_prContent_colTxt_title"}
@@ -208,11 +236,11 @@ export class PRcontent extends Component {
                     placeholder={__("Input content.", "vk-blocks")}
                     style={{ color: contentColor }}
                   />
-                </React.Fragment>
+                </Fragment>
               );
             } else {
               return (
-                <React.Fragment>
+                <Fragment>
                   <RichText.Content
                     tagName="h3"
                     value={title}
@@ -225,7 +253,7 @@ export class PRcontent extends Component {
                     value={content}
                     style={{ color: contentColor }}
                   />
-                </React.Fragment>
+                </Fragment>
               );
             }
           })()}
@@ -241,7 +269,7 @@ export class PRcontent extends Component {
                       style={aStyle}
                       rel="noopener noreferrer"
                     >
-                      <Fontawesome attributes={attributes} />
+                      <Fontawesome attributes={attributes}/>
                     </a>
                   </div>
                 );

@@ -54,10 +54,10 @@ export const schema = {
 	},
 	fontAwesomeIconBefore: {
 		type: "string",
-		default: ""
+		default: '<i class="fas fa-user"></i>'
 	},
 	fontAwesomeIconAfter: {
 		type: "string",
-		default: ""
+		default: '<i class="fas fa-user"></i>'
 	}
 };

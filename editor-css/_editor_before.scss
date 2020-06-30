@@ -103,6 +103,8 @@ button.components-button.components-toolbar__control{
 
 // ブロックテンプレートのサイドバー調整CSS読み込み
 @import "./editor_before_template_inserter";
+// アイコンリストCSS読み込み
+@import "./editor_before_icon_list";
 
 // VK Outer 編集パネル
 $color-danger: #dd3333;

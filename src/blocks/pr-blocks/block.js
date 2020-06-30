@@ -6,6 +6,7 @@ import React from "react";
 import { deprecated } from "./deprecated/block";
 import { ComponentBlock } from "./component-block";
 import { isNotJSON } from "../_helper/is-not-json";
+import { FontAwesome } from "../_helper/font-awesome-new"
 
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
@@ -58,7 +59,7 @@ function set_attributes(number) {
 		};
 		attributes['icon' + i] = {
 			type: 'string',
-			default: 'fas fa-file',
+			default: '<i class="fas fa-file"></i>',
 		};
 		attributes['color' + i] = {
 			type: 'string',
@@ -78,30 +79,20 @@ function set_attributes(number) {
 }
 
 registerBlockType('vk-blocks/pr-blocks', {
-	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __('PR Blocks', 'vk-blocks'), // Block title.
-	icon: BlockIcon, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
-	category: 'vk-blocks-cat', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
+	title: __('PR Blocks', 'vk-blocks'),
+	icon: BlockIcon,
+	category: 'vk-blocks-cat',
 	attributes: set_attributes(4),
 
-	edit({ attributes, setAttributes, className }) {
-
+	edit(props) {
+		const { attributes, setAttributes, className } = props
 		const {
-			heading1,
-			heading2,
-			heading3,
-			content1,
-			content2,
-			content3,
 			url1,
 			url2,
 			url3,
 			urlOpenType1,
 			urlOpenType2,
 			urlOpenType3,
-			icon1,
-			icon2,
-			icon3,
 			color1,
 			color2,
 			color3,
@@ -184,13 +175,9 @@ registerBlockType('vk-blocks/pr-blocks', {
 							label={__('Icon 1', 'vk-blocks')}
 
 						>
-							<TextControl
-								label={__('Class name of the Font Awesome icon font you want to use:', 'vk-blocks')}
-								value={icon1}
-								onChange={(value) => setAttributes({ icon1: value })}
-								placeholder={'fas fa-file'}
-								help={<a href={`https://fontawesome.com/icons?d=gallery&m=free`}
-									target={`_blank`}>{__('Font Awesome icon list', 'vk-blocks')}</a>}
+							<FontAwesome
+								attributeName={"icon1"}
+								{...props}
 							/>
 							<ColorPalette
 								value={color1}
@@ -250,13 +237,9 @@ registerBlockType('vk-blocks/pr-blocks', {
 						<BaseControl
 							label={__('Icon 2', 'vk-blocks')}
 						>
-							<TextControl
-								label={__('Class name of the Font Awesome icon font you want to use:', 'vk-blocks')}
-								value={icon2}
-								onChange={(value) => setAttributes({ icon2: value })}
-								placeholder={'fas fa-file'}
-								help={<a href={`https://fontawesome.com/icons?d=gallery&m=free`}
-									target={`_blank`}>{__('Font Awesome icon list', 'vk-blocks')}</a>}
+							<FontAwesome
+								attributeName={"icon2"}
+								{...props}
 							/>
 							<ColorPalette
 								value={color2}
@@ -316,13 +299,9 @@ registerBlockType('vk-blocks/pr-blocks', {
 						<BaseControl
 							label={__('Icon 3', 'vk-blocks')}
 						>
-							<TextControl
-								label={__('Class name of the Font Awesome icon font you want to use:', 'vk-blocks')}
-								value={icon3}
-								onChange={(value) => setAttributes({ icon3: value })}
-								placeholder={'fas fa-file'}
-								help={<a href={`https://fontawesome.com/icons?d=gallery&m=free`}
-									target={`_blank`}>{__('Font Awesome icon list', 'vk-blocks')}</a>}
+							<FontAwesome
+								attributeName={"icon3"}
+								{...props}
 							/>
 							<ColorPalette
 								value={color3}
@@ -390,8 +369,8 @@ registerBlockType('vk-blocks/pr-blocks', {
 		);
 	},
 
-	save({ attributes, className }) {
-
+	save(props) {
+		const { attributes, className } = props
 		let containerClass;
 		if (className) {
 			containerClass = `${className} vk_prBlocks row`;

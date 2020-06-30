@@ -6,7 +6,7 @@ import ReactHtmlParser from 'react-html-parser';
 
 export class StepItem extends Component {
 	render() {
-		const {
+		let {
 			color,
 			style,
 			styleLine,

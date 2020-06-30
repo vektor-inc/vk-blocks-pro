@@ -3,7 +3,6 @@ import { vkbBlockEditor } from "../../_helper/depModules";
 const { RichText } = vkbBlockEditor;
 const { Fragment } = wp.element;
 import ReactHtmlParser from 'react-html-parser';
-
 import { convertToGrid } from "../../_helper/convert-to-grid";
 
 export const PRcarditem = (props)=>{
@@ -26,7 +25,9 @@ export const PRcarditem = (props)=>{
 	//過去バージョンをリカバリーした時にiconを正常に表示する
 	if( faIcon && !faIcon.match(/<i/)){
 		faIcon = `<i class="${faIcon}"></i>`
-	}else if( icon && !icon.match(/<i/)){
+
+	//過去のicon attribuet用 deprecated処理
+	}else if( !faIcon && icon && !icon.match(/<i/)){
 		faIcon = `<i class="${icon}"></i>`
 	}
 

@@ -52,5 +52,10 @@ export const schema = {
 	faIcon: {
 		type: 'string',
 		default: '<i class="fas fa-user"></i>',
-	}
+	},
+	//This attribute is deprecated.
+	icon:{
+		type: 'string',
+		default: 'fas fa-file',
+	},
 };

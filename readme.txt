@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.4.2
-Stable tag: 0.35.0
+Stable tag: 0.35.1
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -26,6 +26,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Button
 * PR Blocks
 * PR Content
+* Border box
 * Title（with sub text）
 * Responsive Spacer
 * Post List [ Pro ]
@@ -33,6 +34,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Timeline [ Pro ]
 * Card [ Pro ]
 * Grid Column [ Pro ]
+* Animation [ Pro ]
 
 [ Editing and correction ]
 
@@ -58,6 +60,9 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.35.1 =
+[ Bug fix ][ Step Block ] Can not edit bug fix
 
 = 0.35.0 =
 [ Add function ] Fontawesome icon selector update

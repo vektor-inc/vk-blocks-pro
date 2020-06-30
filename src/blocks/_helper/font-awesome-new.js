@@ -11,6 +11,7 @@ export const FontAwesome = (props) => {
 		<Fragment>
 			<label className={ "components-base-control__label" }>{ __('Icon', 'vk-blocks') }</label>
 			<RadioControl
+				className={ "vk_icon_list" }
 				selected={ attributes[attributeName] }
 				options={ [
 					{ label: <i className="fas fa-arrow-right"></i>, value: '<i class="fas fa-arrow-right"></i>' },

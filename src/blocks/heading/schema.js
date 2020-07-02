@@ -48,5 +48,13 @@ export const schema = {
 	subTextSize: {
 		type: "number",
 		default: 1.2
+	},
+	colorQ: {
+		type: "string",
+		default: "#e50000"
+	},
+	colorA: {
+		type: "string",
+		default: "#337ab7"
 	}
 };

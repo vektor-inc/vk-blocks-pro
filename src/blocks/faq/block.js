@@ -72,10 +72,20 @@ registerBlockType("vk-blocks/faq", {
 
   edit({ attributes, setAttributes, className }) {
 	let { heading, content, colorQ, colorA } = attributes;
+	let AContents;
 
 	//リカバリー時に、attributesのデフォルト値をセット
-	colorQ = !colorQ && "#e50000"
-	colorA = !colorA && "#337ab7"
+	if(!colorQ){
+		colorQ = "#e50000"
+	}
+	if(!colorA){
+		colorA = "#337ab7"
+	}
+	if("undfined" == content){
+		AContents = <dd className={`vk_faq_content deprecated`}> <InnerBlocks/></dd>
+	}else{
+		AContents = <RichText tagName="dd" className={"vk_faq_content deprecated"} onChange={value => setAttributes({ content: value })} value={content} placeholder={__("Please enter a answer.", "vk-blocks")}/>
+	}
 
     return (
 			<Fragment>
@@ -108,10 +118,7 @@ registerBlockType("vk-blocks/faq", {
 				</div>
 				<div className={"vk_faq_inner_section vk_faq_inner_section_answer"}>
 				<dt className={"vk_faq_label"} style={{color:colorA}}>{__('A', 'vk-blocks')}</dt>
-				{/*リカバリー用：古いブロックだとddタグをレンダリング*/}
-				{ content && <RichText tagName="dd" className={"vk_faq_content deprecated"} onChange={value => setAttributes({ content: value })} value={content} placeholder={__("Please enter a answer.", "vk-blocks")}/>}
-				{/*新しいブロックだと、InnerBlocksをレンダリング*/}
-				{ !content && <dd className={`vk_faq_content deprecated`}> <InnerBlocks/></dd>}
+				{AContents}
 				</div>
 			</dl>
 			</Fragment>
@@ -120,11 +127,22 @@ registerBlockType("vk-blocks/faq", {
 
 	save({ attributes, className }) {
 	let { heading, content, colorQ, colorA } = attributes;
+	let AContents;
 	//リカバリー時に、attributesのデフォルト値をセット
-	colorQ = !colorQ && "#e50000"
-	colorA = !colorA && "#337ab7"
+	if(!colorQ){
+		colorQ = "#e50000"
+	}
+	if(!colorA){
+		colorA = "#337ab7"
+	}
+	if("undfined" == content){
+		AContents = <dd className={`vk_faq_content deprecated`}> <InnerBlocks.Content/></dd>
+	}else{
+		AContents = <RichText.Content tagName="dd" className={"vk_faq_content deprecated"} value={content}/>
+	}
 
-    return (
+  return (
+			<Fragment>
       <dl className={`${className} vk_faq`}>
 		  <div className={"vk_faq_inner_section"}>
 			  <dt className={"vk_faq_label"} style={{color:colorQ}}>{__('Q', 'vk-blocks')}</dt>
@@ -135,13 +153,11 @@ registerBlockType("vk-blocks/faq", {
 			</div>
 			<div className={"vk_faq_inner_section vk_faq_inner_section_answer"}>
 				<dt className={"vk_faq_label"} style={{color:colorA}}>{__('A', 'vk-blocks')}</dt>
-				{ /*リカバリー用：古いブロックだとddタグをレンダリング*/}
-				{ content && <RichText.Content tagName="dd" className={"vk_faq_content deprecated"} onChange={value => setAttributes({ content: value })} value={content} placeholder={__("Please enter a answer.", "vk-blocks")}/>}
-				{ /*新しいブロックだと、InnerBlocksをレンダリング*/}
-				{ !content && <dd className={`vk_faq_content deprecated`}><InnerBlocks.Content/></dd>}
+				{AContents}
 			</div>
       </dl>
+			</Fragment>
     );
   },
-  deprecated: deprecated
+  // deprecated: deprecated
 });

@@ -4,12 +4,13 @@
 	display:block;
 	overflow:hidden;
 	border-bottom:1px dotted #ccc;
-	padding:0px 0px 25px;
-	margin:25px 0px;
+	padding: 0.5em 0;
+	margin:0;
 	width:100%;
 	position: relative;
 	dt{
 		border:none;
+		padding-left: 0;
 	}
 }
 .vk_faq_title,
@@ -20,7 +21,8 @@
 	}
 }
 .vk_faq_title {
-	margin-bottom:15px;font-size:18px;font-weight:700;
+	margin-bottom:0;
+	font-size:18px;font-weight:700;
 	&:before { font-family:"areal";content:"Q ";color:#e50000; }
 }
 .vk_faq_content {
@@ -34,7 +36,7 @@
 	&:before { content:none }
 }
 .vk_faq_label{
-	margin-bottom:15px;
+	margin-bottom:0;
 	font-weight:700;
 	font-family:"areal";
 	font-size: 24px;
@@ -42,10 +44,17 @@
 }
 .vk_faq_inner_section{
 	display: flex;
+	padding: .9em;
+
+	&.vk_faq_inner_section,
 	&.vk_faq_inner_section_answer{
+		
 		dd{
 			width: 100%;
-    		padding-left: 20px;
+			padding-left: 20px;
+			P:last-child{
+				margin-bottom:0;
+			}
 		}
 	}
 }

@@ -10,7 +10,7 @@ function vkblocks_face_list_customize( $wp_customize ) {
 	$wp_customize->add_section(
 		'vk_blocks_face_list_setting',
 		array(
-			'title' =>  __( 'Baloon Face Image Setting', 'vk-blocks-pro' ),
+			'title' =>  __( 'Register Baloon Face Image', 'vk-blocks-pro' ),
 			'panel' => 'vk_blocks_setting',
 		)
 	);

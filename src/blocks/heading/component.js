@@ -1,5 +1,6 @@
 const { Component } = wp.element;
 import { vkbBlockEditor } from "./../_helper/depModules";
+import ReactHtmlParser from 'react-html-parser';
 const { RichText } = vkbBlockEditor;
 const { __ } = wp.i18n; // Import __() from wp.i18n
 
@@ -17,10 +18,14 @@ export class VKBHeading extends Component {
       subTextSize,
       titleStyle,
       titleMarginBottom,
-      outerMarginBottom
+	  outerMarginBottom,
+	  fontAwesomeIconBefore,
+	  fontAwesomeIconAfter
     } = this.props.attributes;
     const setAttributes = this.props.setAttributes;
-    let for_ = this.props.for_;
+	let for_ = this.props.for_;
+
+
 
     let containerClass = `vk_heading vk_heading-style-${titleStyle}`;
     const tagName = "h" + level;
@@ -52,8 +57,9 @@ export class VKBHeading extends Component {
       return (
         <div className={containerClass} style={cStyle}>
           <RichText
+
             tagName={tagName}
-            value={title}
+            value={[fontAwesomeIconBefore,title,fontAwesomeIconAfter].join('')}
             onChange={value => setAttributes({ title: value })}
             style={tStyle}
             className={`vk_heading_title vk_heading_title-style-${titleStyle}`}
@@ -85,7 +91,7 @@ export class VKBHeading extends Component {
         <div className={containerClass} style={cStyle}>
           <RichText.Content
             tagName={tagName}
-            value={title}
+            value={[fontAwesomeIconBefore,title,fontAwesomeIconAfter].join('')}
             onChange={value => setAttributes({ title: value })}
             style={tStyle}
             className={`vk_heading_title vk_heading_title-style-${titleStyle}`}

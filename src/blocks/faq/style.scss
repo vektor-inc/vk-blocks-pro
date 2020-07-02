@@ -21,9 +21,17 @@
 }
 .vk_faq_title {
 	margin-bottom:15px;font-size:18px;font-weight:700;
+	&:before { font-family:"areal";content:"Q ";color:#e50000; }
 }
 .vk_faq_content {
 	margin:0px;
+	&:before { content:"A ";color:#337ab7;font-family: "" }
+}
+.vk_faq_title.deprecated {
+	&:before { content:none }
+}
+.vk_faq_content.deprecated {
+	&:before { content:none }
 }
 .vk_faq_label{
 	margin-bottom:15px;

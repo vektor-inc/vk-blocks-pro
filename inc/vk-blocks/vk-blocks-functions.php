@@ -2,6 +2,7 @@
 
 // サーバーサイドレンダリングスクリプトを読み込み。
 require_once dirname( __FILE__ ) . '/view/post-list.php';
+require_once dirname( __FILE__ ) . '/customize/vk-blocks-customize-config.php';
 
 function vkblocks_active() {
 	return true;

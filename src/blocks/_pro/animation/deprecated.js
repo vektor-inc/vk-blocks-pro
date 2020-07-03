@@ -1,14 +1,18 @@
+import classNames from "classnames";
+import {vkbBlockEditor} from "../../_helper/depModules";
+const { InnerBlocks } = vkbBlockEditor;
+
 export const deprecated = [
     {
         attributes: {
-            effect: {
-                type: "string",
-                default: "slide-up",
-            },
-            clientId: {
-                type: "string",
-                default: "",
-            },
+			effect: {
+				type: "string",
+				default: "slide-up",
+			},
+			clientId: {
+				type: "string",
+				default: "",
+			},
         },
         save(props) {
             return (

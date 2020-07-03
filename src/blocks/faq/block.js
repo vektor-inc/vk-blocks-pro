@@ -66,8 +66,41 @@ registerBlockType("vk-blocks/faq", {
 		}
   },
   supports: {
-    anchor: true
+	anchor: true
 	},
+
+	styles: [
+		{
+			name: 'vk_faq-normal',
+			label: __( 'Normal', 'vk-blocks' ),
+			isDefault:true
+		},
+		{
+			name: 'vk_faq-bgfill-circle',
+			label: __( 'Bgfill Circle', 'vk-blocks' )
+		},
+		{
+			name: 'vk_faq-bgfill-square',
+			label: __( 'Bgfill Square', 'vk-blocks' ),
+		},
+		{
+			name: 'vk_faq-bgfill-rounded',
+			label: __( 'Bgfill Rounded', 'vk-blocks' ),
+		},
+		{
+			name: 'vk_faq-border-circle',
+			label: __( 'Border Circle', 'vk-blocks' ),
+		},
+		{
+			name: 'vk_faq-border-square',
+			label: __( 'Border Square', 'vk-blocks' ),
+		},
+		{
+			name: 'vk_faq-border-rounded',
+			label: __( 'Border Rounded', 'vk-blocks' ),
+		},
+
+	],
 
   edit({ attributes, setAttributes, className }) {
 	let { heading, content, colorQ, colorA } = attributes;

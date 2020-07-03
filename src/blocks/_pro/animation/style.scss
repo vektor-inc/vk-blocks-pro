@@ -3,7 +3,7 @@
 /*-------------------------------------------*/
 $vk_animation_short_size: 3em;
 $vk_animation_normal_size: 6em;
-$vk_animation_large_size: 9em;
+$vk_animation_long_size: 9em;
 
 :root {
 	--vk-animation-size: 3em;
@@ -47,8 +47,8 @@ $vk_animation_large_size: 9em;
 		top: $vk_animation_normal_size;
 	}
 
-	&.vk_animation-range-large {
-		top: $vk_animation_large_size;
+	&.vk_animation-range-long {
+		top: $vk_animation_long_size;
 	}
 
 	&.vk_animation-active {
@@ -67,8 +67,8 @@ $vk_animation_large_size: 9em;
 		left: -  #{$vk_animation_normal_size};
 	}
 
-	&.vk_animation-range-large {
-		left: -  #{$vk_animation_large_size};
+	&.vk_animation-range-long {
+		left: -  #{$vk_animation_long_size};
 	}
 
 	&.vk_animation-active {
@@ -87,8 +87,8 @@ $vk_animation_large_size: 9em;
 		right: -  #{$vk_animation_normal_size};
 	}
 
-	&.vk_animation-range-large {
-		right: -  #{$vk_animation_large_size};
+	&.vk_animation-range-long {
+		right: -  #{$vk_animation_long_size};
 	}
 
 	&.vk_animation-active {

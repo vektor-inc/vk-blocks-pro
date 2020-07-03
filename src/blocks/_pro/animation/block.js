@@ -64,7 +64,7 @@ registerBlockType("vk-blocks/animation", {
 							onChange={ value => setAttributes({ speed: value }) }
 							options={ [
 								{ label: __("Very Slow", "vk-blocks"), value: "very-slow" },
-								{ label: __("Slow", "vk-blocks"), value: "Slow" },
+								{ label: __("Slow", "vk-blocks"), value: "slow" },
 								{ label: __("Normal", "vk-blocks"), value: "normal" },
 								{ label: __("Fast", "vk-blocks"), value: "fast" },
 								{ label: __("Very Fast", "vk-blocks"), value: "very-fast" },

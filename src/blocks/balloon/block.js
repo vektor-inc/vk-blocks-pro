@@ -2,11 +2,11 @@
  * Baloon block type
  *
  */
-
+import { deprecated } from './deprecated';
 import { vkbBlockEditor } from "./../_helper/depModules";
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RangeControl, RadioControl, PanelBody, Button } = wp.components;
+const { RangeControl, RadioControl, PanelBody, Button, ButtonGroup } = wp.components;
 const { Fragment } = wp.element;
 const { RichText, InspectorControls, MediaUpload, ColorPalette } = vkbBlockEditor;
 const BlockIcon = (
@@ -47,7 +47,11 @@ registerBlockType("vk-blocks/balloon", {
     IconImage: {
       type: "string",
       default: null // no image by default!
-    }
+	},
+	balloonImageType: {
+		type: "string",
+		default: "normal" // no image by default!
+	  },
   },
 
   edit({ attributes, className, setAttributes }) {
@@ -57,7 +61,8 @@ registerBlockType("vk-blocks/balloon", {
       balloonType,
       balloonBgColor,
       balloonAlign,
-      IconImage
+	  IconImage,
+	  balloonImageType
     } = attributes;
 
     return (
@@ -87,6 +92,32 @@ registerBlockType("vk-blocks/balloon", {
               ]}
               onChange={value => setAttributes({ balloonType: value })}
             />
+			<ButtonGroup className="mb-3">
+				<Button
+					isSmall
+					isPrimary={ balloonImageType === 'normal' }
+					isSecondary={ balloonImageType !== 'normal' }
+					onClick={ () => setAttributes({ balloonImageType: 'normal' }) }
+				>
+					{ __('Normal', 'vk-blocks') }
+				</Button>
+				<Button
+					isSmall
+					isPrimary={ balloonImageType === 'rounded' }
+					isSecondary={ balloonImageType !== 'rounded' }
+					onClick={ () => setAttributes({ balloonImageType: 'rounded' }) }
+				>
+					{ __('Rounded', 'vk-blocks') }
+				</Button>
+				<Button
+					isSmall
+					isPrimary={ balloonImageType === 'circle' }
+					isSecondary={ balloonImageType !== 'circle' }
+					onClick={ () => setAttributes({ balloonImageType: 'circle' }) }
+				>
+					{ __('Circle', 'vk-blocks') }
+				</Button>
+			</ButtonGroup>
             <ColorPalette
               value={balloonBgColor}
               onChange={value => setAttributes({ balloonBgColor: value })}
@@ -97,13 +128,13 @@ registerBlockType("vk-blocks/balloon", {
         <div
           className={`${className} vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType}`}
         >
-          <div className={"vk_balloon_icon"}>
+          <div className={ `vk_balloon_icon` }>
             <MediaUpload
               onSelect={value =>
                 setAttributes({ IconImage: value.sizes.full.url })
               }
               type="image"
-              className={"vk_balloon_icon_image"}
+              className={`vk_balloon_icon_image vk_balloon-image-${balloonImageType}`}
               value={IconImage}
               render={({ open }) => (
                 <Button
@@ -114,7 +145,7 @@ registerBlockType("vk-blocks/balloon", {
                     __("Select image", "vk-blocks")
                   ) : (
                       <img
-                        className={"vk_balloon_icon_image"}
+                      className={`vk_balloon_icon_image vk_balloon-image-${balloonImageType}`}
                         src={IconImage}
                         alt={__("Upload image", "vk-blocks")}
                       />
@@ -150,17 +181,18 @@ registerBlockType("vk-blocks/balloon", {
       balloonType,
       balloonBgColor,
       balloonAlign,
-      IconImage
+	  IconImage,
+	  balloonImageType
     } = attributes;
 
     return (
       <div
         className={`vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType}`}
       >
-        <div className={"vk_balloon_icon"}>
+        <div className={ `vk_balloon_icon` }>
           {IconImage ? (
             <figure>
-              <img className={"vk_balloon_icon_image"} src={IconImage} alt="" />
+              <img className={`vk_balloon_icon_image vk_balloon-image-${balloonImageType}`} src={IconImage} alt="" />
               <RichText.Content
                 tagName="figcaption"
                 className={"vk_balloon_icon_name"}
@@ -179,5 +211,6 @@ registerBlockType("vk-blocks/balloon", {
         />
       </div>
     );
-  }
+  },
+  deprecated: deprecated,
 });

@@ -60,15 +60,15 @@ $vk_animation_large_size: 9em;
 .vk_animation-slide-right {
 
 	&.vk_animation-range-short {
-		left: - $vk_animation_short_size;
+		left: - #{$vk_animation_short_size};
 	}
 
 	&.vk_animation-range-normal {
-		left: - $vk_animation_normal_size;
+		left: -  #{$vk_animation_normal_size};
 	}
 
 	&.vk_animation-range-large {
-		left: - $vk_animation_large_size;
+		left: -  #{$vk_animation_large_size};
 	}
 
 	&.vk_animation-active {
@@ -80,15 +80,15 @@ $vk_animation_large_size: 9em;
 .vk_animation-slide-left {
 
 	&.vk_animation-range-short {
-		right: - $vk_animation_short_size;
+		right: -  #{$vk_animation_short_size};
 	}
 
 	&.vk_animation-range-normal {
-		right: - $vk_animation_normal_size;
+		right: -  #{$vk_animation_normal_size};
 	}
 
 	&.vk_animation-range-large {
-		right: - $vk_animation_large_size;
+		right: -  #{$vk_animation_large_size};
 	}
 
 	&.vk_animation-active {

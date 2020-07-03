@@ -71,7 +71,21 @@ export const VKBHeading =(props) => {
 					className={headingStyle}
 					placeholder={__("Input title…", "vk-blocks")}
 				/>
-				{subTextFlag === "on" && <RichText tagName={"p"} value={subText} onChange={value => setAttributes({ subText: value })} style={subTextStyle} className={subTextClass} placeholder={__("Input sub text…", "vk-blocks")}/>}
+				{// サブテキスト
+            	(() => {
+				if (subTextFlag === "on") {
+				  return (
+					<RichText
+					  tagName={"div"}
+					  value={subText}
+					  onChange={value => setAttributes({ subText: value })}
+					  style={subTextStyle}
+					  className={subTextClass}
+					  placeholder={__("Input sub text…", "vk-blocks")}
+					/>
+				  );
+				}
+			  })()}
 			</div>
 		);
 	} else if (for_ === "save") {
@@ -83,7 +97,19 @@ export const VKBHeading =(props) => {
 						style={tStyle}
 						className={headingStyle}
 					/>
-				{subTextFlag === "on" && <RichText.Content tagName={"p"} value={subText} style={subTextStyle} className={subTextClass} />}
+				{// サブテキスト
+            	(() => {
+				if (subTextFlag === "on") {
+				  return (
+					<RichText.Content
+					  tagName={"div"}
+					  value={subText}
+					  style={subTextClass}
+					  className={subTextClass}
+					/>
+				  );
+				}
+			  })()}
 			</div>
 		);
 	}

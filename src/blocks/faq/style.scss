@@ -29,9 +29,9 @@ $answer-color: #337ab7;
 			color: $answer-color;
 		}
 	}
-	&-bgfill-round,
-	&-bgfill-kado,
-	&-bgfill-kadomaru{
+	&-bgfill-circle,
+	&-bgfill-square,
+	&-bgfill-rounded{
 		.vk_faq_label{
 			@include question-bgcolor;
 		}
@@ -39,21 +39,21 @@ $answer-color: #337ab7;
 			@include answer-bgcolor;
 		}
 	}
-	&-bgfill-round, 
-	&-border-round{
+	&-bgfill-circle, 
+	&-border-circle{
 		.vk_faq_label{
 			border-radius: 50%;
 		}
 	}
-	&-bgfill-kadomaru,
-	&-border-kadomaru{
+	&-bgfill-rounded,
+	&-border-rounded{
 		.vk_faq_label{
 			border-radius: 4px;
 		}	
 	}
-	&-border-round,
-	&-border-kado,
-	&-border-kadomaru{
+	&-border-circle,
+	&-border-square,
+	&-border-rounded{
 		.vk_faq_label{
 			@include question-bordercolor;
 		}

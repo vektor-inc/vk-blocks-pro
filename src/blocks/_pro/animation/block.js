@@ -91,7 +91,7 @@ registerBlockType("vk-blocks/animation", {
 
 	save(props) {
 		return (
-			<div className={ classNames(`vk_animation vk_animation-${props.attributes.effect} vk_animation-${props.attributes.clientId}`) }>
+			<div className={ classNames(`vk_animation vk_animation-${props.attributes.effect} vk_animation-speed-${props.attributes.speed} vk_animation-range-${props.attributes.range} vk_animation-${props.attributes.clientId}`) }>
 				<InnerBlocks.Content />
 			</div>
 		);

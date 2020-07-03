@@ -36,7 +36,7 @@ registerBlockType("vk-blocks/animation", {
 
 	edit(props) {
 		const { className, attributes, setAttributes, clientId } = props;
-		const {effect} = attributes;
+		const {effect, speed, range} = attributes;
 		const customClientId = clientId.replace(/-/g, '');
 		setAttributes({clientId:customClientId})
 
@@ -44,6 +44,7 @@ registerBlockType("vk-blocks/animation", {
 			<Fragment>
 				<InspectorControls>
 					<PanelBody title={ __("Animation Settings", "vk-blocks") }>
+						<label>{__("Effect Setting", "vk-blocks")}</label>
 						<SelectControl
 							value={ effect }
 							onChange={ value => setAttributes({ effect: value }) }
@@ -54,9 +55,32 @@ registerBlockType("vk-blocks/animation", {
 								{ label: __("Slide Right", "vk-blocks"), value: "slide-right" },
 							] }
 						/>
+
+						<label>{__("Effect Speed", "vk-blocks")}</label>
+						<SelectControl
+							value={ speed }
+							onChange={ value => setAttributes({ effect: value }) }
+							options={ [
+								{ label: __("Very Slow", "vk-blocks"), value: "very-slow" },
+								{ label: __("Slow", "vk-blocks"), value: "Slow" },
+								{ label: __("Normal", "vk-blocks"), value: "normal" },
+								{ label: __("Fast", "vk-blocks"), value: "fast" },
+								{ label: __("Very Fast", "vk-blocks"), value: "very-fast" },
+							] }
+						/>
+						<label>{__("Effect Range", "vk-blocks")}</label>
+						<SelectControl
+							value={ range }
+							onChange={ value => setAttributes({ effect: value }) }
+							options={ [
+								{ label: __("Short", "vk-blocks"), value: "short" },
+								{ label: __("Normal", "vk-blocks"), value: "normal" },
+								{ label: __("Long", "vk-blocks"), value: "long" },
+							] }
+						/>
 					</PanelBody>
 				</InspectorControls>
-				<div className={ classNames(className, `vk_animation vk_animation-${effect} vk_animation-${customClientId}`) }>
+				<div className={ classNames(className, `vk_animation vk_animation-${effect} vk_animation-speed-${speed} vk_animation-range-${range} vk_animation-${customClientId}`) }>
 					<InnerBlocks
 						templateInsertUpdatesSelection={ false }
 					/>

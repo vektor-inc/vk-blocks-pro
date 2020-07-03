@@ -4,7 +4,6 @@
 	display:block;
 	overflow:hidden;
 	border-bottom:1px dotted #ccc;
-	padding: 0.5em 0;
 	margin:0;
 	width:100%;
 	position: relative;
@@ -22,7 +21,9 @@
 }
 .vk_faq_title {
 	margin-bottom:0;
-	font-size:18px;font-weight:700;
+	font-size:18px;
+	line-height: 1.8;
+	font-weight:700;
 	&:before { font-family:"areal";content:"Q ";color:#e50000; }
 }
 .vk_faq_content {
@@ -40,11 +41,11 @@
 	font-weight:700;
 	font-family:"areal";
 	font-size: 24px;
-    line-height: 105%;
+    line-height: 130%;
 }
 .vk_faq_inner_section{
 	display: flex;
-	padding: .9em;
+	padding: 1em .9em;
 
 	&.vk_faq_inner_section,
 	&.vk_faq_inner_section_answer{
@@ -52,9 +53,7 @@
 		dd{
 			width: 100%;
 			padding-left: 20px;
-			P:last-child{
-				margin-bottom:0;
-			}
+
 		}
 	}
 }

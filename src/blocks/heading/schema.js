@@ -48,5 +48,13 @@ export const schema = {
 	subTextSize: {
 		type: "number",
 		default: 1.2
-	}
+	},
+	fontAwesomeIconBefore: {
+		type: 'string',
+		default: '',
+	},
+	fontAwesomeIconAfter: {
+		type: 'string',
+		default:  '',
+ 	}
 };

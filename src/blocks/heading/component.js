@@ -1,9 +1,6 @@
-const { Component,useEffect } = wp.element;
 import { vkbBlockEditor } from "./../_helper/depModules";
-import ReactHtmlParser from 'react-html-parser';
 const { RichText } = vkbBlockEditor;
 const { __ } = wp.i18n; // Import __() from wp.i18n
-const { dispatch } = wp.data;
 
 export const VKBHeading =(props) => {
 	const {attributes,setAttributes,for_,clientId} = props
@@ -57,31 +54,24 @@ export const VKBHeading =(props) => {
 	}
 	let subTextClass = `vk_heading_subtext vk_heading_subtext-style-${titleStyle}`;
 
-	const { updateBlockAttributes } = dispatch("core/block-editor") ? dispatch("core/block-editor") : dispatch("core/editor");
-
-	// useEffect(() => {
-	// 	const replaced = title.replace(/^<i.*i>/g, '')
-	// 	console.log(replaced)
-	// 	console.log(clientId)
-	// 	updateBlockAttributes(clientId, { title: "fontAwesomeIconBefore" + replaced + "fontAwesomeIconAfter"});
-	// },[fontAwesomeIconBefore,fontAwesomeIconAfter])
-
-	console.log(props)
+	let titleAndIcons = "";
+	const replaced = title.replace(/<i class=".*?"><\/i>/g, '')
+	titleAndIcons = fontAwesomeIconBefore + replaced + fontAwesomeIconAfter
 
 	if (for_ === "edit") {
 		return (
 			<div className={containerClass} style={cStyle}>
 				<RichText
 					tagName={tagName}
-					value={title}
+					value={titleAndIcons}
 					onChange={(value) => {
-						setAttributes({ title: value})
+						setAttributes({ title: value} )
 					}}
 					style={tStyle}
 					className={headingStyle}
 					placeholder={__("Input title…", "vk-blocks")}
 				/>
-				{/* {subTextFlag === "on" && <RichText tagName={"p"} value={subText} onChange={value => setAttributes({ subText: value })} style={subTextStyle} className={subTextClass} placeholder={__("Input sub text…", "vk-blocks")}/>} */}
+				{subTextFlag === "on" && <RichText tagName={"p"} value={subText} onChange={value => setAttributes({ subText: value })} style={subTextStyle} className={subTextClass} placeholder={__("Input sub text…", "vk-blocks")}/>}
 			</div>
 		);
 	} else if (for_ === "save") {
@@ -89,11 +79,11 @@ export const VKBHeading =(props) => {
 			<div className={containerClass} style={cStyle}>
 				<RichText.Content
 						tagName={tagName}
-						value={title}
+						value={titleAndIcons}
 						style={tStyle}
 						className={headingStyle}
 					/>
-				{/* {subTextFlag === "on" && <RichText.Content tagName={"p"} value={subText} style={subTextStyle} className={subTextClass} />} */}
+				{subTextFlag === "on" && <RichText.Content tagName={"p"} value={subText} style={subTextStyle} className={subTextClass} />}
 			</div>
 		);
 	}

@@ -4,12 +4,13 @@
  */
 import { deprecated } from "./deprecated";
 import { vkbBlockEditor } from "./../_helper/depModules";
+import classNames from "classnames";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { PanelBody, BaseControl } = wp.components;
 const { RichText, InnerBlocks, InspectorControls, ColorPalette } = vkbBlockEditor;
-const { Fragment, useState } = wp.element;
+const { Fragment } = wp.element;
 
 const BlockIcon = (
   <svg
@@ -43,19 +44,17 @@ const BlockIcon = (
 );
 
 registerBlockType("vk-blocks/faq", {
-  title: __("FAQ", "vk-blocks"), // Block title.
-  icon: BlockIcon, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
-  category: "vk-blocks-cat", // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
+  title: __("FAQ", "vk-blocks"),
+  icon: BlockIcon,
+  category: "vk-blocks-cat",
   attributes: {
     heading: {
       type: "string",
       source: "html",
-      selector: "dd"
-    },
-    content: {
-      type: "string",
-      source: "html",
-      selector: "dd"
+      selector: "dd.vk_faq_title"
+		},
+		content:{
+			type: "string"
 		},
 		colorQ:{
 			type:"string",
@@ -68,23 +67,22 @@ registerBlockType("vk-blocks/faq", {
   },
   supports: {
     anchor: true
-  },
+	},
 
   edit({ attributes, setAttributes, className }) {
 	let { heading, content, colorQ, colorA } = attributes;
-	let AContents;
+	const TEMPLATE = [
+		[ 'core/paragraph', { content: content} ],
+	];
 
 	//リカバリー時に、attributesのデフォルト値をセット
 	if(!colorQ){
 		colorQ = "#e50000"
+		setAttributes({ colorQ: colorQ })
 	}
 	if(!colorA){
 		colorA = "#337ab7"
-	}
-	if("undfined" == content){
-		AContents = <dd className={`vk_faq_content deprecated`}> <InnerBlocks/></dd>
-	}else{
-		AContents = <RichText tagName="dd" className={"vk_faq_content deprecated"} onChange={value => setAttributes({ content: value })} value={content} placeholder={__("Please enter a answer.", "vk-blocks")}/>
+		setAttributes({ colorA: colorA })
 	}
 
     return (
@@ -105,7 +103,7 @@ registerBlockType("vk-blocks/faq", {
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>
-			<dl className={`${className} vk_faq`}>
+			<dl className={classNames(className,"vk_faq")}>
 				<div className={"vk_faq_inner_section"}>
 				<dt className={"vk_faq_label"} style={{color:colorQ }}>{__('Q', 'vk-blocks')}</dt>
 				<RichText
@@ -118,32 +116,18 @@ registerBlockType("vk-blocks/faq", {
 				</div>
 				<div className={"vk_faq_inner_section vk_faq_inner_section_answer"}>
 				<dt className={"vk_faq_label"} style={{color:colorA}}>{__('A', 'vk-blocks')}</dt>
-				{AContents}
+				<dd className={`vk_faq_content deprecated`}> <InnerBlocks template={ TEMPLATE }/></dd>
 				</div>
 			</dl>
 			</Fragment>
 		);
 	},
 
-	save({ attributes, className }) {
-	let { heading, content, colorQ, colorA } = attributes;
-	let AContents;
-	//リカバリー時に、attributesのデフォルト値をセット
-	if(!colorQ){
-		colorQ = "#e50000"
-	}
-	if(!colorA){
-		colorA = "#337ab7"
-	}
-	if("undfined" == content){
-		AContents = <dd className={`vk_faq_content deprecated`}> <InnerBlocks.Content/></dd>
-	}else{
-		AContents = <RichText.Content tagName="dd" className={"vk_faq_content deprecated"} value={content}/>
-	}
-
+	save({ attributes }) {
+	let { heading, colorQ, colorA } = attributes;
   return (
 			<Fragment>
-      <dl className={`${className} vk_faq`}>
+      <dl className={`vk_faq`}>
 		  <div className={"vk_faq_inner_section"}>
 			  <dt className={"vk_faq_label"} style={{color:colorQ}}>{__('Q', 'vk-blocks')}</dt>
 			  <RichText.Content
@@ -153,11 +137,11 @@ registerBlockType("vk-blocks/faq", {
 			</div>
 			<div className={"vk_faq_inner_section vk_faq_inner_section_answer"}>
 				<dt className={"vk_faq_label"} style={{color:colorA}}>{__('A', 'vk-blocks')}</dt>
-				{AContents}
+				<dd className={`vk_faq_content deprecated`}> <InnerBlocks.Content/></dd>
 			</div>
       </dl>
 			</Fragment>
     );
   },
-  // deprecated: deprecated
+  deprecated: deprecated
 });

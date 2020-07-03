@@ -73,22 +73,18 @@ registerBlockType("vk-blocks/heading", {
 	},
 
 	edit( props ) {
-		const { attributes, className, setAttributes, isSelected } = props
+		const { attributes, className, setAttributes } = props
 		const {
 			level,
 			align,
-			title,
 			titleColor,
 			titleSize,
-			subText,
 			subTextFlag,
 			subTextColor,
 			subTextSize,
 			titleStyle,
 			titleMarginBottom,
 			outerMarginBottom,
-			fontAwesomeIconBefore,
-			fontAwesomeIconAfter
 		} = attributes;
 
 		let setTitleFontSize = newLevel => {
@@ -235,22 +231,19 @@ registerBlockType("vk-blocks/heading", {
 					</PanelBody>
 				</InspectorControls>
 				<div className={className}>
-					<VKBHeading
-						attributes={attributes}
-						setAttributes={setAttributes}
-						for_={"edit"}
-					/>
+					<VKBHeading {...props} for_={"edit"}/>
 				</div>
 			</Fragment>
 		);
 	},
 
-	save({ attributes, className }) {
+	save(props) {
+		console.log(props)
 		return (
-			<div className={className}>
-				<VKBHeading attributes={attributes} for_={"save"} />
+			<div>
+				<VKBHeading {...props} for_={"save"}/>
 			</div>
 		);
 	},
-	deprecated: Deprecated
+	// deprecated: Deprecated
 });

@@ -56,9 +56,12 @@ function set_attirbuite(number) {
 export const Deprecated = [
 	{
 		attributes:schema2,
-		save({ attributes }) {
+		save(props) {
+			const {attributes} = props
+			console.log(props)
+			console.log(attributes)
 			return (
-				<div>
+				<div id={attributes.anchor}>
 					<VKBHeading2 attributes={attributes} for_={"save"} />
 				</div>
 			);

@@ -2,8 +2,8 @@
 /* CSS
 /*-------------------------------------------*/
 $vk_animation_short_size: 3em;
-$vk_animation_normal_size: 3em;
-$vk_animation_large_size: 3em;
+$vk_animation_normal_size: 6em;
+$vk_animation_large_size: 9em;
 
 :root {
 	--vk-animation-size: 3em;
@@ -18,15 +18,15 @@ $vk_animation_large_size: 3em;
 }
 
 .vk_animation-speed-very-slow {
-
+    transition: all 2s ease-out 2s;
 }
 
 .vk_animation-speed-slow {
-
+    transition: all 1.5s ease-out 1.5s;
 }
 
 .vk_animation-speed-normal {
-
+    transition: all 1s ease-out 1s;
 }
 
 .vk_animation-speed-fast {
@@ -34,7 +34,7 @@ $vk_animation_large_size: 3em;
 }
 
 .vk_animation-speed-very-fast {
-
+    transition: all 0.25s ease-out 0.25s;
 }
 
 .vk_animation-slide-up {

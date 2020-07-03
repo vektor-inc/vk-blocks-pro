@@ -163,6 +163,7 @@ $color-danger: #dd3333;
 // アニメーションブロックの識別用枠線
 .vk_animation {
 	border: 1px dashed #ccc;
+	min-height:3em;
 	// そのままだと編集画面でも消えてしまうので上書き（.wp-block-vk-blocks-animation）がないと負けてしまう
 	&.wp-block-vk-blocks-animation{
 		opacity: 1;
@@ -174,6 +175,7 @@ $color-danger: #dd3333;
 		font-size:10px;
 		background: #eeeeee;
 		padding: .2em .6em;
+		z-index:1000;
 	}
 	&.vk_animation-fade-in{
 		left:0;

@@ -59,7 +59,7 @@ registerBlockType("vk-blocks/animation", {
 						<label>{__("Effect Speed", "vk-blocks")}</label>
 						<SelectControl
 							value={ speed }
-							onChange={ value => setAttributes({ effect: value }) }
+							onChange={ value => setAttributes({ speed: value }) }
 							options={ [
 								{ label: __("Very Slow", "vk-blocks"), value: "very-slow" },
 								{ label: __("Slow", "vk-blocks"), value: "Slow" },
@@ -71,7 +71,7 @@ registerBlockType("vk-blocks/animation", {
 						<label>{__("Effect Range", "vk-blocks")}</label>
 						<SelectControl
 							value={ range }
-							onChange={ value => setAttributes({ effect: value }) }
+							onChange={ value => setAttributes({ range: value }) }
 							options={ [
 								{ label: __("Short", "vk-blocks"), value: "short" },
 								{ label: __("Normal", "vk-blocks"), value: "normal" },

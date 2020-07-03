@@ -92,6 +92,7 @@ registerBlockType("vk-blocks/balloon", {
               ]}
               onChange={value => setAttributes({ balloonType: value })}
             />
+			<p className={ 'mb-1' }><label>{ __( 'Image Style', 'vk-blocks' ) }</label></p>
 			<ButtonGroup className="mb-3">
 				<Button
 					isSmall

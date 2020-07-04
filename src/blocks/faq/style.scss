@@ -120,7 +120,9 @@ $answer-color: #337ab7;
 			width: 100%;
 			padding-left:15px;
 			border-left: none;
-
+			p{ //管理画面で隙間が空くので
+				width: auto;
+			}
 		}
 	}
 }

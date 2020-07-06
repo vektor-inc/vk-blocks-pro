@@ -15,4 +15,4 @@ function vkblocks_customize( $wp_customize ) {
 }
 add_action( 'customize_register', 'vkblocks_customize' );
 
-require_once dirname( __FILE__ ) . '/face-list.php';
+require_once dirname( __FILE__ ) . '/balloon.php';

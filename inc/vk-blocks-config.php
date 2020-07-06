@@ -34,6 +34,12 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 	require_once 'vk-blocks/vk-blocks-functions.php';
 	require_once 'vk-blocks/load-animation.php';
 
+	require_once dirname(dirname(__FILE__)) .'/src/App/RestAPI/BlockMeta/EntryPoint.php';
+	//BlockMeta用のAPIルートを設定
+	new EntryPoint();
+
+	// var_dump(get_option( "vk_blocks_face_option"));
+
 	/*
 	 出力するCSSが多すぎるので一旦コメントアウト */
 	// require_once( 'vk-blocks/functions-color.php' );

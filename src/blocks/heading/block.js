@@ -85,6 +85,7 @@ registerBlockType("vk-blocks/heading", {
 			titleStyle,
 			titleMarginBottom,
 			outerMarginBottom,
+			fontAwesomeIconColor
 		} = attributes;
 
 		let setTitleFontSize = newLevel => {
@@ -180,29 +181,19 @@ registerBlockType("vk-blocks/heading", {
 							max={4}
 							step={0.1}
 						/>
-						<BaseControl>
-							<h4 className="mt-0 mb-2">{ __('Icon ( Font Awesome )', 'vk-blocks') }</h4>
-							<BaseControl
-								label={ __("Before text", "vk-blocks") }
-							>
-								<FontAwesome
-									attributeName={ "fontAwesomeIconBefore" }
-									{ ...props }
-								/>
-							</BaseControl>
-							<BaseControl
-								label={ __("After text", "vk-blocks") }
-							>
-								<FontAwesome
-									attributeName={ "fontAwesomeIconAfter" }
-									{ ...props }
-								/>
-							</BaseControl>
+						<BaseControl label={ __("Text Color", "vk-blocks") }>
+							<ColorPalette value={titleColor} onChange={value => setAttributes({ titleColor: value })}/>
 						</BaseControl>
-						<ColorPalette
-							value={titleColor}
-							onChange={value => setAttributes({ titleColor: value })}
-						/>
+						<h4 className="mt-0 mb-2">{ __('Icon ( Font Awesome )', 'vk-blocks') }</h4>
+						<BaseControl label={ __("Before text", "vk-blocks") }>
+							<FontAwesome attributeName={ "fontAwesomeIconBefore" } { ...props } />
+						</BaseControl>
+						<BaseControl label={ __("After text", "vk-blocks") }>
+							<FontAwesome attributeName={ "fontAwesomeIconAfter" } { ...props } />
+						</BaseControl>
+						<BaseControl label={ __("Icon Color", "vk-blocks") }>
+							<ColorPalette value={fontAwesomeIconColor} onChange={value => setAttributes({ fontAwesomeIconColor: value })}/>
+						</BaseControl>
 					</PanelBody>
 					<PanelBody title={__("Sub Text Settings", "vk-blocks")}>
 						<RadioControl

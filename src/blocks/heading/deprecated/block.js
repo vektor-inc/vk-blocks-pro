@@ -87,6 +87,12 @@ export const Deprecated = [
   },
   {
     attributes: {
+			anchor: {
+				type: 'string',
+				source: 'attribute',
+				attribute: 'id',
+				selector: '*',
+			},
       level: {
         type: "number",
         default: 2
@@ -454,6 +460,12 @@ export const Deprecated = [
   },
   {
     attributes: {
+			anchor: {
+				type: 'string',
+				source: 'attribute',
+				attribute: 'id',
+				selector: '*',
+			},
       level: {
         type: "number",
         default: 2

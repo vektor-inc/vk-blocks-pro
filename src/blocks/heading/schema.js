@@ -62,5 +62,9 @@ export const schema = {
 	fontAwesomeIconAfter: {
 		type: 'string',
 		default:  '',
- 	}
+	 },
+	 fontAwesomeIconColor: {
+		type: "string",
+		default: "#000000"
+	},
 };

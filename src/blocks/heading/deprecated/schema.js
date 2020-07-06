@@ -1,4 +1,10 @@
 export const schema = {
+	anchor: {
+		type: 'string',
+		source: 'attribute',
+		attribute: 'id',
+		selector: '*',
+	},
     level: {
         type: 'number',
         default: 2,
@@ -50,6 +56,12 @@ export const schema = {
 };
 
 export const schema1 = {
+	anchor: {
+		type: 'string',
+		source: 'attribute',
+		attribute: 'id',
+		selector: '*',
+	},
     level: {
         type: 'number',
         default: 2,

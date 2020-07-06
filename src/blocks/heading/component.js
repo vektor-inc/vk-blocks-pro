@@ -37,10 +37,10 @@ export const VKBHeading =(props) => {
 		titleMarginBottom,
 		outerMarginBottom,
 		fontAwesomeIconBefore,
-		fontAwesomeIconAfter
+		fontAwesomeIconAfter,
+		fontAwesomeIconColor
 	} = attributes;
 	let containerClass = `vk_heading vk_heading-style-${titleStyle}`;
-	const tagName = "h" + level;
 	let cStyle;
 	let tStyle;
 
@@ -73,21 +73,34 @@ export const VKBHeading =(props) => {
 	}
 	let subTextClass = `vk_heading_subtext vk_heading_subtext-style-${titleStyle}`;
 
+	let iconBefore = '';
+	let iconAfter = '';
+	if (fontAwesomeIconBefore) {
+		//add inline css
+		const faIconFragmentBefore= fontAwesomeIconBefore.split('<i');
+		faIconFragmentBefore[0] = ' ' + faIconFragmentBefore[0] + `<i style="color:${fontAwesomeIconColor};" `
+		iconBefore = faIconFragmentBefore.join('')
+	}
+	if (fontAwesomeIconAfter) {
+		//add class and inline css
+		const faIconFragmentAfter = fontAwesomeIconAfter.split('<i');
+		faIconFragmentAfter[0] = ' ' + faIconFragmentAfter[0] + `<i style="color:${fontAwesomeIconColor};" `
+		iconAfter = faIconFragmentAfter.join('')
+	}
+
 	if (for_ === "edit") {
 
 		let titleContent = <Fragment>
-			{ReactHtmlParser(fontAwesomeIconBefore)}
+			{ReactHtmlParser(iconBefore)}
 				<RichText
 					tagName={"span"}
 					value={title}
 					onChange={(value) => {
 						setAttributes({ title: value} )
 					}}
-					style={tStyle}
-					className={headingStyle}
 					placeholder={__("Input title…", "vk-blocks")}
 				/>
-				{ReactHtmlParser(fontAwesomeIconAfter)}
+				{ReactHtmlParser(iconAfter)}
 		</Fragment>
 
 		let subtextContent;
@@ -107,14 +120,12 @@ export const VKBHeading =(props) => {
 	} else if (for_ === "save") {
 
 		let titleContent = <Fragment>
-			{ReactHtmlParser(fontAwesomeIconBefore)}
+			{ReactHtmlParser(iconBefore)}
 			<RichText.Content
 				tagName={"span"}
 				value={title}
-				style={tStyle}
-				className={headingStyle}
 			/>
-			{ReactHtmlParser(fontAwesomeIconAfter)}
+			{ReactHtmlParser(iconAfter)}
 		</Fragment>
 
 		let subtextContent;

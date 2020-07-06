@@ -125,16 +125,28 @@ registerBlockType("vk-blocks/card", {
 
 export const DisplayItemsControlForCards = (props) => {
   const { setAttributes, attributes } = props;
-  const { display_image, display_btn, btn_text } = attributes;
+  const { display_title, display_excerpt, display_image, display_btn, btn_text } = attributes;
   return (
     <PanelBody title={__("Display item", "vk-blocks")} initialOpen={false}>
-      <CheckboxControl
-        label={__("Image", "vk-blocks")}
+			<CheckboxControl
+				label={__("Title", "vk-blocks")}
+				checked={display_title}
+				onChange={(checked) => setAttributes({ display_title: checked })}
+				help={__("Warning! When you hidden this item, you will lose the content.", "vk-blocks")}
+			/>
+			<CheckboxControl
+				label={__("Excerpt Text", "vk-blocks")}
+        checked={display_excerpt}
+				onChange={(checked) => setAttributes({ display_excerpt: checked })}
+				help={__("Warning! When you hidden this item, you will lose the content.", "vk-blocks")}
+      />
+			<CheckboxControl
+				label={__("Image", "vk-blocks")}
         checked={display_image}
         onChange={(checked) => setAttributes({ display_image: checked })}
       />
-      <CheckboxControl
-        label={__("Button", "vk-blocks")}
+			<CheckboxControl
+       	label={__("Button", "vk-blocks")}
         checked={display_btn}
         onChange={(checked) => setAttributes({ display_btn: checked })}
       />
@@ -147,8 +159,8 @@ export const DisplayItemsControlForCards = (props) => {
           "vk-blocks"
         )}
       </p>
-      <TextControl
-        label={__("Button text", "vk-blocks")}
+			<TextControl
+				label={__("Button text", "vk-blocks")}
         value={btn_text}
         onChange={(value) => setAttributes({ btn_text: value })}
       />

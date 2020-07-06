@@ -122,7 +122,7 @@ export const VKBHeading =(props) => {
 			subtextContent = <RichText.Content
 			tagName={"div"}
 			value={subText}
-			style={subTextClass}
+			style={subTextStyle}
 			className={subTextClass}
 		  />
 		}

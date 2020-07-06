@@ -17,7 +17,7 @@ export const schema = {
 	title: {
 		type: "string",
 		source: "html",
-		selector: "h1,h2,h3,h4,h5,h6",
+		selector: "span",
 		default: ""
 	},
 	titleColor: {
@@ -34,7 +34,7 @@ export const schema = {
 	},
 	subText: {
 		source: "html",
-		selector: "p",
+		selector: "div",
 		default: ""
 	},
 	subTextFlag: {

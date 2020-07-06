@@ -238,7 +238,6 @@ registerBlockType("vk-blocks/heading", {
 	},
 
 	save(props) {
-		console.log(props)
 		return (
 			<div>
 				<VKBHeading {...props} for_={"save"}/>

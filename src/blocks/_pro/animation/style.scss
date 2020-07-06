@@ -1,32 +1,98 @@
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+$vk_animation_short_size: 3em;
+$vk_animation_normal_size: 6em;
+$vk_animation_long_size: 9em;
+
 :root {
 	--vk-animation-size: 3em;
 }
+
 .vk_animation {
 	opacity: 0;
-	transition: all 0.5s ease-out 0.5s;
 	position: relative;
 	&-active {
 		opacity: 1;
 	}
 }
+
+.vk_animation-speed-very-slow {
+    transition: all 2s ease-out 2s;
+}
+
+.vk_animation-speed-slow {
+    transition: all 1.5s ease-out 1.5s;
+}
+
+.vk_animation-speed-normal {
+    transition: all 1s ease-out 1s;
+}
+
+.vk_animation-speed-fast {
+    transition: all 0.5s ease-out 0.5s;
+}
+
+.vk_animation-speed-very-fast {
+    transition: all 0.25s ease-out 0.25s;
+}
+
 .vk_animation-slide-up {
-	top: 3em;
+
+	&.vk_animation-range-short {
+		top: $vk_animation_short_size;
+	}
+
+	&.vk_animation-range-normal {
+		top: $vk_animation_normal_size;
+	}
+
+	&.vk_animation-range-long {
+		top: $vk_animation_long_size;
+	}
+
 	&.vk_animation-active {
 		top: 0;
 	}
+
 }
+
 .vk_animation-slide-right {
-	left: -3em;
+
+	&.vk_animation-range-short {
+		left: - #{$vk_animation_short_size};
+	}
+
+	&.vk_animation-range-normal {
+		left: -  #{$vk_animation_normal_size};
+	}
+
+	&.vk_animation-range-long {
+		left: -  #{$vk_animation_long_size};
+	}
+
 	&.vk_animation-active {
 		left: 0;
 	}
+
 }
+
 .vk_animation-slide-left {
-	right: -3em;
+
+	&.vk_animation-range-short {
+		right: -  #{$vk_animation_short_size};
+	}
+
+	&.vk_animation-range-normal {
+		right: -  #{$vk_animation_normal_size};
+	}
+
+	&.vk_animation-range-long {
+		right: -  #{$vk_animation_long_size};
+	}
+
 	&.vk_animation-active {
 		right: 0;
 	}
+
 }

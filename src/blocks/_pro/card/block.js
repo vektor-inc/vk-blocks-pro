@@ -130,16 +130,18 @@ export const DisplayItemsControlForCards = (props) => {
 	<PanelBody title={ __("Display item", "vk-blocks") } initialOpen={ false }>
 		<CheckboxControl
 			label={ __("Title", "vk-blocks") }
+			className={ "mb-1" }
 			checked={ display_title }
 			onChange={ (checked) => setAttributes({ display_title: checked }) }
-			help={ __("Warning! When you hidden this item, you will lose the content.", "vk-blocks") }
 			/>
+		<p className="alert alert-danger">{ __("Warning! When you hidden this item, you will lose the content.", "vk-blocks") }</p>
 		<CheckboxControl
 			label={ __("Excerpt Text", "vk-blocks") }
+			className={ "mb-1" }
 			checked={ display_excerpt }
 			onChange={ (checked) => setAttributes({ display_excerpt: checked }) }
-			help={ __("Warning! When you hidden this item, you will lose the content.", "vk-blocks") }
       />
+		<p className="alert alert-danger">{ __("Warning! When you hidden this item, you will lose the content.", "vk-blocks") }</p>
 		<CheckboxControl
 			label={ __("Image", "vk-blocks") }
 			checked={ display_image }

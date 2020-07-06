@@ -8,9 +8,7 @@ import classNames from "classnames";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { PanelBody, BaseControl } = wp.components;
-const { RichText, InnerBlocks, InspectorControls, ColorPalette } = vkbBlockEditor;
-const { Fragment } = wp.element;
+const { RichText, InnerBlocks } = vkbBlockEditor;
 
 const BlockIcon = (
   <svg

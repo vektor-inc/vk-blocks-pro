@@ -101,6 +101,12 @@ export const schema1 = {
 }
 
 export const schema2 = {
+	anchor: {
+		type: 'string',
+		source: 'attribute',
+		attribute: 'id',
+		selector: '*',
+	},
 	level: {
 		type: "number",
 		default: 2

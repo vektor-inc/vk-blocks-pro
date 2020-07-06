@@ -1,4 +1,10 @@
 export const schema = {
+	anchor: {
+		type: 'string',
+		source: 'attribute',
+		attribute: 'id',
+		selector: '*',
+	},
 	level: {
 		type: "number",
 		default: 2
@@ -34,7 +40,7 @@ export const schema = {
 	},
 	subText: {
 		source: "html",
-		selector: "div",
+		selector: "p",
 		default: ""
 	},
 	subTextFlag: {

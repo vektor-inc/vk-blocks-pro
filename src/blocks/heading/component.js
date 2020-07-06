@@ -93,7 +93,7 @@ export const VKBHeading =(props) => {
 		let subtextContent;
 		if (subTextFlag === "on") {
 			subtextContent = <RichText
-			tagName={"div"}
+			tagName={"p"}
 			value={subText}
 			onChange={value => setAttributes({ subText: value })}
 			style={subTextStyle}
@@ -120,7 +120,7 @@ export const VKBHeading =(props) => {
 		let subtextContent;
 		if (subTextFlag === "on") {
 			subtextContent = <RichText.Content
-			tagName={"div"}
+			tagName={"p"}
 			value={subText}
 			style={subTextStyle}
 			className={subTextClass}

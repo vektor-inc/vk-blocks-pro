@@ -1,6 +1,25 @@
 import { vkbBlockEditor } from "./../_helper/depModules";
 const { RichText } = vkbBlockEditor;
 const { __ } = wp.i18n; // Import __() from wp.i18n
+import ReactHtmlParser from 'react-html-parser';
+import { Fragment } from "react";
+
+const renderTitle = (level, contents,tStyle, headingStyle ) =>{
+	switch (level) {
+		case 1:
+			return <h1 style={tStyle} className={headingStyle}>{contents}</h1>;
+		case 2:
+			return <h2 style={tStyle} className={headingStyle}>{contents}</h2>;
+		case 3:
+			return <h3 style={tStyle} className={headingStyle}>{contents}</h3>;
+		case 4:
+			return <h4 style={tStyle} className={headingStyle}>{contents}</h4>;
+		case 5:
+			return <h5 style={tStyle} className={headingStyle}>{contents}</h5>;
+		case 6:
+			return <h6 style={tStyle} className={headingStyle}>{contents}</h6>;
+	}
+}
 
 export const VKBHeading =(props) => {
 	const {attributes,setAttributes,for_,clientId} = props
@@ -54,16 +73,13 @@ export const VKBHeading =(props) => {
 	}
 	let subTextClass = `vk_heading_subtext vk_heading_subtext-style-${titleStyle}`;
 
-	let titleAndIcons = "";
-	const replaced = title.replace(/<i class=".*?"><\/i>/g, '')
-	titleAndIcons = fontAwesomeIconBefore + replaced + fontAwesomeIconAfter
-
 	if (for_ === "edit") {
-		return (
-			<div className={containerClass} style={cStyle}>
+
+		let titleContent = <Fragment>
+			{ReactHtmlParser(fontAwesomeIconBefore)}
 				<RichText
-					tagName={tagName}
-					value={titleAndIcons}
+					tagName={"span"}
+					value={title}
 					onChange={(value) => {
 						setAttributes({ title: value} )
 					}}
@@ -71,46 +87,45 @@ export const VKBHeading =(props) => {
 					className={headingStyle}
 					placeholder={__("Input title…", "vk-blocks")}
 				/>
-				{// サブテキスト
-            	(() => {
-				if (subTextFlag === "on") {
-				  return (
-					<RichText
-					  tagName={"div"}
-					  value={subText}
-					  onChange={value => setAttributes({ subText: value })}
-					  style={subTextStyle}
-					  className={subTextClass}
-					  placeholder={__("Input sub text…", "vk-blocks")}
-					/>
-				  );
-				}
-			  })()}
-			</div>
-		);
+				{ReactHtmlParser(fontAwesomeIconAfter)}
+		</Fragment>
+
+		let subtextContent;
+		if (subTextFlag === "on") {
+			subtextContent = <RichText
+			tagName={"div"}
+			value={subText}
+			onChange={value => setAttributes({ subText: value })}
+			style={subTextStyle}
+			className={subTextClass}
+			placeholder={__("Input sub text…", "vk-blocks")}
+		  />
+		}
+
+		return (<div className={containerClass} style={cStyle}>{renderTitle(level, titleContent, tStyle, headingStyle)}{subtextContent}</div>);
+
 	} else if (for_ === "save") {
-		return (
-			<div className={containerClass} style={cStyle}>
-				<RichText.Content
-						tagName={tagName}
-						value={titleAndIcons}
-						style={tStyle}
-						className={headingStyle}
-					/>
-				{// サブテキスト
-            	(() => {
-				if (subTextFlag === "on") {
-				  return (
-					<RichText.Content
-					  tagName={"div"}
-					  value={subText}
-					  style={subTextClass}
-					  className={subTextClass}
-					/>
-				  );
-				}
-			  })()}
-			</div>
-		);
+
+		let titleContent = <Fragment>
+			{ReactHtmlParser(fontAwesomeIconBefore)}
+			<RichText.Content
+				tagName={"span"}
+				value={title}
+				style={tStyle}
+				className={headingStyle}
+			/>
+			{ReactHtmlParser(fontAwesomeIconAfter)}
+		</Fragment>
+
+		let subtextContent;
+		if (subTextFlag === "on") {
+			subtextContent = <RichText.Content
+			tagName={"div"}
+			value={subText}
+			style={subTextClass}
+			className={subTextClass}
+		  />
+		}
+		return (<div className={containerClass} style={cStyle}>{renderTitle(level, titleContent, tStyle, headingStyle)}{subtextContent}</div>);
 	}
 }

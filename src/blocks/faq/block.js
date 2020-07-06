@@ -48,28 +48,19 @@ registerBlockType("vk-blocks/faq", {
   icon: BlockIcon,
   category: "vk-blocks-cat",
   attributes: {
-    heading: {
-      type: "string",
-      source: "html",
-      selector: "dd.vk_faq_title"
-		},
-		content:{
-			type: "string"
-		},
-		colorQ:{
-			type:"string",
-			default:"#e50000"
-		},
-		colorA:{
-			type:"string",
-			default:"#337ab7"
-		}
+	heading: {
+		type: "string",
+		source: "html",
+		selector: "dt"
+	},
+	content:{
+		type: "string"
+	}
   },
   supports: {
-	anchor: true
-	},
-
-	styles: [
+	  anchor: true
+  },
+  styles: [
 		{
 			name: 'vk_faq-normal',
 			label: __( 'Normal', 'vk-blocks' ),
@@ -99,81 +90,39 @@ registerBlockType("vk-blocks/faq", {
 			name: 'vk_faq-border-rounded',
 			label: __( 'Border Rounded', 'vk-blocks' ),
 		},
-
 	],
 
   edit({ attributes, setAttributes, className }) {
-	let { heading, content, colorQ, colorA } = attributes;
+	let { heading, content } = attributes;
 	const TEMPLATE = [
 		[ 'core/paragraph', { content: content} ],
 	];
 
-	//リカバリー時に、attributesのデフォルト値をセット
-	if(!colorQ){
-		colorQ = "#e50000"
-		setAttributes({ colorQ: colorQ })
-	}
-	if(!colorA){
-		colorA = "#337ab7"
-		setAttributes({ colorA: colorA })
-	}
-
     return (
-			<Fragment>
-			<InspectorControls>
-				<PanelBody title={__("Color Settings", "vk-blocks")}>
-					<BaseControl label={__('Question Color', 'vk-blocks')}>
-						<ColorPalette
-							value={colorQ}
-							onChange={(value) => setAttributes({ colorQ: value })}
-						/>
-					</BaseControl>
-					<BaseControl label={__('Answer Color', 'vk-blocks')}>
-						<ColorPalette
-							value={colorA}
-							onChange={(value) => setAttributes({ colorA: value })}
-						/>
-					</BaseControl>
-				</PanelBody>
-			</InspectorControls>
-			<dl className={classNames(className,"vk_faq")}>
-				<div className={"vk_faq_inner_section"}>
-				<dt className={"vk_faq_label"} style={{color:colorQ }}>{__('Q', 'vk-blocks')}</dt>
-				<RichText
-					tagName="dd"
-					className={`vk_faq_title deprecated`}
-					onChange={value => setAttributes({ heading: value })}
-					value={heading}
-					placeholder={__("Please enter a question.", "vk-blocks")}
-				/>
-				</div>
-				<div className={"vk_faq_inner_section vk_faq_inner_section_answer"}>
-				<dt className={"vk_faq_label"} style={{color:colorA}}>{__('A', 'vk-blocks')}</dt>
-				<dd className={`vk_faq_content deprecated`}> <InnerBlocks template={ TEMPLATE }/></dd>
-				</div>
-			</dl>
-			</Fragment>
-		);
+		<dl className={classNames(className,"vk_faq")}>
+        <RichText
+          tagName="dt"
+          className={"vk_faq_title"}
+          onChange={value => setAttributes({ heading: value })}
+          value={heading}
+          placeholder={__("Please enter a question.", "vk-blocks")}
+        />
+		<dd className={`vk_faq_content`}> <InnerBlocks template={ TEMPLATE }/></dd>
+	  	</dl>
+	  );
 	},
 
 	save({ attributes }) {
-	let { heading, colorQ, colorA } = attributes;
-  return (
-			<Fragment>
-      <dl className={`vk_faq`}>
-		  <div className={"vk_faq_inner_section"}>
-			  <dt className={"vk_faq_label"} style={{color:colorQ}}>{__('Q', 'vk-blocks')}</dt>
-			  <RichText.Content
-					tagName="dd"
-					className={`vk_faq_title deprecated`}
-					value={heading}/>
-			</div>
-			<div className={"vk_faq_inner_section vk_faq_inner_section_answer"}>
-				<dt className={"vk_faq_label"} style={{color:colorA}}>{__('A', 'vk-blocks')}</dt>
-				<dd className={`vk_faq_content deprecated`}> <InnerBlocks.Content/></dd>
-			</div>
+	let { heading} = attributes;
+	return (
+		<dl className={`vk_faq`}>
+        <RichText.Content
+          tagName="dt"
+          className={"vk_faq_title"}
+          value={heading}
+        />
+        <dd className={`vk_faq_content`}> <InnerBlocks.Content/></dd>
       </dl>
-			</Fragment>
     );
   },
   deprecated: deprecated

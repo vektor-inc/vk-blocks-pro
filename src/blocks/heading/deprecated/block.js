@@ -57,11 +57,12 @@ export const Deprecated = [
 	{
 		attributes:schema2,
 		save(props) {
-			const {attributes} = props
+			const {attributes,clientId} = props
 			console.log(props)
+			console.log(clientId)
 			console.log(attributes)
 			return (
-				<div id={attributes.anchor}>
+				<div id="vk-htags-fe6db31a-623f-407d-a5de-9e74c2637c5c">
 					<VKBHeading2 attributes={attributes} for_={"save"} />
 				</div>
 			);

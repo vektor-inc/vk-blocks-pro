@@ -184,21 +184,34 @@ $color-danger: #dd3333;
 		}
 	}
 	&.vk_animation-slide-left{
-		right:0;
-		&:before {
-			content:'Slide left';
+		&.vk_animation-range-short,
+		&.vk_animation-range-normal,
+		&.vk_animation-range-long {
+			right:0;
+			&:before {
+				content:'Slide left';
+			}
 		}
 	}
 	&.vk_animation-slide-right{
-		left:0;
-		&:before {
-			content:'Slide right';
+		&.vk_animation-range-short,
+		&.vk_animation-range-normal,
+		&.vk_animation-range-long {
+			right:0;
+			left:0;
+			&:before {
+				content:'Slide right';
+			}
 		}
 	}
 	&.vk_animation-slide-up{
-		top:0;
-		&:before {
-			content:'Slide up';
+		&.vk_animation-range-short,
+		&.vk_animation-range-normal,
+		&.vk_animation-range-long {
+			top:0;
+			&:before {
+				content:'Slide up';
+			}
 		}
 	}
 }

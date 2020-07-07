@@ -124,8 +124,10 @@ registerBlockType("vk-blocks/balloon", {
               onChange={value => setAttributes({ balloonBgColor: value })}
             />
           </PanelBody>
-					<PanelBody title={__("Default Icon Setting", "vk-blocks")}>
+			<PanelBody title={__("Default Icon Setting", "vk-blocks")}>
+				<div className="icon-image-list">
 						{defautIconButtons}
+						</div>
           </PanelBody>
         </InspectorControls>
         <div

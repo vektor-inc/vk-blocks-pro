@@ -3,7 +3,7 @@
  * FaceList Customize.
  */
 function vkblocks_balloon_meta_customize( $wp_customize ) {
-	$max_faces = 5;
+	$max_faces = 15;
 	$max_faces = apply_filters( 'vkblocks_max_faces', $max_faces );
 	global $vk_blocks_prefix;
 

@@ -1,0 +1,14 @@
+.icon-image-list {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.icon-image-list div {
+	width: calc((100% - (10px *  4)) / 5);
+	margin: 0 5px;
+}
+
+.wp-core-ui .icon-image-list .button.button-large {
+	padding: 0;
+	margin: 0;
+}

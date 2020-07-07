@@ -29,6 +29,14 @@ export const schema = {
   col_xl: {
     type: "number",
     default: 3,
+	},
+	display_title: {
+    type: "boolean",
+    default: true,
+	},
+	display_excerpt: {
+    type: "boolean",
+    default: true,
   },
   display_image: {
     type: "boolean",

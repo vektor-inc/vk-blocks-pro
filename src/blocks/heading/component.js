@@ -78,13 +78,13 @@ export const VKBHeading =(props) => {
 	if (fontAwesomeIconBefore) {
 		//add inline css
 		const faIconFragmentBefore= fontAwesomeIconBefore.split('<i');
-		faIconFragmentBefore[0] = ' ' + faIconFragmentBefore[0] + `<i style="color:${fontAwesomeIconColor};" `
+		faIconFragmentBefore[0] = faIconFragmentBefore[0] + `<i style="color:${fontAwesomeIconColor};" `
 		iconBefore = faIconFragmentBefore.join('')
 	}
 	if (fontAwesomeIconAfter) {
 		//add class and inline css
 		const faIconFragmentAfter = fontAwesomeIconAfter.split('<i');
-		faIconFragmentAfter[0] = ' ' + faIconFragmentAfter[0] + `<i style="color:${fontAwesomeIconColor};" `
+		faIconFragmentAfter[0] = faIconFragmentAfter[0] + `<i style="color:${fontAwesomeIconColor};" `
 		iconAfter = faIconFragmentAfter.join('')
 	}
 

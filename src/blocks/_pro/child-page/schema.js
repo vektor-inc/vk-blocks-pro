@@ -1,6 +1,7 @@
 export const schema = {
   selectId: {
-    type: "number",
+		type: "number",
+		default: -1,
   },
   name: {
     type: "string",

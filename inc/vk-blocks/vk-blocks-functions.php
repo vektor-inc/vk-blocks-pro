@@ -293,6 +293,7 @@ function vkblocks_blocks_assets() {
 							array(
 								'selectId'          => array(
 									'type' => 'number',
+									'default' => -1,
 								),
 								'name'              => array(
 									'type'    => 'string',

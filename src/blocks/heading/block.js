@@ -8,10 +8,11 @@ import { VKBHeading } from "./component";
 import { Deprecated } from "./deprecated/block";
 import { vkbBlockEditor } from "./../_helper/depModules";
 import formatNum from "../_helper/formatNum";
+import { FontAwesome } from "./../_helper/font-awesome-new";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RangeControl, PanelBody, RadioControl, SelectControl } = wp.components;
+const { RangeControl, PanelBody, RadioControl, SelectControl, BaseControl } = wp.components;
 const { Fragment } = wp.element;
 const { InspectorControls, ColorPalette, BlockControls, AlignmentToolbar } = vkbBlockEditor;
 const BlockIcon = (
@@ -71,20 +72,20 @@ registerBlockType("vk-blocks/heading", {
 		anchor: true
 	},
 
-	edit({ attributes, setAttributes, className }) {
+	edit( props ) {
+		const { attributes, className, setAttributes } = props
 		const {
 			level,
 			align,
-			title,
 			titleColor,
 			titleSize,
-			subText,
 			subTextFlag,
 			subTextColor,
 			subTextSize,
 			titleStyle,
 			titleMarginBottom,
-			outerMarginBottom
+			outerMarginBottom,
+			fontAwesomeIconColor
 		} = attributes;
 
 		let setTitleFontSize = newLevel => {
@@ -132,7 +133,19 @@ registerBlockType("vk-blocks/heading", {
 								{ label: __("Plain", "vk-blocks"), value: "plain" }
 							]}
 						/>
-						<label>{__("Margin bottom size (rem)", "vk-blocks")}</label>
+					</PanelBody>
+					<PanelBody title={__("Margin Setting", "vk-blocks")}>
+						<label>{__("Margin bottom size of after hedding  (rem)", "vk-blocks")}</label>
+						<RangeControl
+							value={titleMarginBottom}
+							onChange={value => {
+								setAttributes({ titleMarginBottom: formatNum(value, titleMarginBottom) });
+							}}
+							min={-1}
+							max={3}
+							step={0.1}
+						/>
+						<label>{__("Margin bottom size of after this block (rem)", "vk-blocks")}</label>
 						<RangeControl
 							value={outerMarginBottom}
 							onChange={value => {
@@ -168,20 +181,19 @@ registerBlockType("vk-blocks/heading", {
 							max={4}
 							step={0.1}
 						/>
-						<label>{__("Heading margin bottom size (rem)", "vk-blocks")}</label>
-						<RangeControl
-							value={titleMarginBottom}
-							onChange={value => {
-								setAttributes({ titleMarginBottom: formatNum(value, titleMarginBottom) });
-							}}
-							min={-1}
-							max={3}
-							step={0.1}
-						/>
-						<ColorPalette
-							value={titleColor}
-							onChange={value => setAttributes({ titleColor: value })}
-						/>
+						<BaseControl label={ __("Text Color", "vk-blocks") }>
+							<ColorPalette value={titleColor} onChange={value => setAttributes({ titleColor: value })}/>
+						</BaseControl>
+						<h4 className="mt-0 mb-2">{ __('Icon ( Font Awesome )', 'vk-blocks') }</h4>
+						<BaseControl label={ __("Before text", "vk-blocks") }>
+							<FontAwesome attributeName={ "fontAwesomeIconBefore" } { ...props } />
+						</BaseControl>
+						<BaseControl label={ __("After text", "vk-blocks") }>
+							<FontAwesome attributeName={ "fontAwesomeIconAfter" } { ...props } />
+						</BaseControl>
+						<BaseControl label={ __("Icon Color", "vk-blocks") }>
+							<ColorPalette value={fontAwesomeIconColor} onChange={value => setAttributes({ fontAwesomeIconColor: value })}/>
+						</BaseControl>
 					</PanelBody>
 					<PanelBody title={__("Sub Text Settings", "vk-blocks")}>
 						<RadioControl
@@ -210,20 +222,16 @@ registerBlockType("vk-blocks/heading", {
 					</PanelBody>
 				</InspectorControls>
 				<div className={className}>
-					<VKBHeading
-						attributes={attributes}
-						setAttributes={setAttributes}
-						for_={"edit"}
-					/>
+					<VKBHeading {...props} for_={"edit"}/>
 				</div>
 			</Fragment>
 		);
 	},
 
-	save({ attributes, className }) {
+	save(props) {
 		return (
-			<div className={className}>
-				<VKBHeading attributes={attributes} for_={"save"} />
+			<div>
+				<VKBHeading {...props} for_={"save"}/>
 			</div>
 		);
 	},

@@ -69,29 +69,50 @@ registerBlockType("vk-blocks/balloon", {
       <Fragment>
         <InspectorControls>
           <PanelBody title={__("Balloon setting", "vk-blocks")}>
-            <RadioControl
-              label={__("Position", "vk-blocks")}
-              help={__(
-                "Please specify the layout of the balloon.",
-                "vk-blocks"
-              )}
-              selected={balloonAlign}
-              options={[
-                { label: __("Left", "vk-blocks"), value: "position-left" },
-                { label: __("Right", "vk-blocks"), value: "position-right" }
-              ]}
-              onChange={value => setAttributes({ balloonAlign: value })}
-            />
-            <RadioControl
-              label={__("Type", "vk-blocks")}
-              help={__("Please select the type of balloon.", "vk-blocks")}
-              selected={balloonType}
-              options={[
-                { label: __("Serif", "vk-blocks"), value: "type-serif" },
-                { label: __("Thinking", "vk-blocks"), value: "type-think" }
-              ]}
-              onChange={value => setAttributes({ balloonType: value })}
-            />
+
+			<p className={ 'mb-1' }><label>{ __( 'Position', 'vk-blocks' ) }</label></p>
+			<p className={ 'mb-1' }>{ __("Please specify the layout of the balloon.", "vk-blocks")} </p>
+			<ButtonGroup className="mb-3">
+				<Button
+					isSmall
+					isPrimary={ balloonAlign === 'position-left' }
+					isSecondary={ balloonAlign !== 'position-left' }
+					onClick={ () => setAttributes({ balloonAlign: 'position-left' }) }
+				>
+					{ __("Left", "vk-blocks") }
+				</Button>
+				<Button
+					isSmall
+					isPrimary={ balloonAlign === 'position-right' }
+					isSecondary={ balloonAlign !== 'position-right' }
+					onClick={ () => setAttributes({ balloonAlign: 'position-right' }) }
+				>
+					{  __("Right", "vk-blocks") }
+				</Button>
+			</ButtonGroup>
+
+
+			<p className={ 'mb-1' }><label>{ __( 'Type', 'vk-blocks' ) }</label></p>
+			<p className={ 'mb-1' }>{ __("Please select the type of balloon.", "vk-blocks")} </p>
+			<ButtonGroup className="mb-3">
+				<Button
+					isSmall
+					isPrimary={ balloonType === 'type-serif' }
+					isSecondary={ balloonType !== 'type-serif' }
+					onClick={ () => setAttributes({ balloonType: 'type-serif' }) }
+				>
+					{ __("Serif", "vk-blocks") }
+				</Button>
+				<Button
+					isSmall
+					isPrimary={ balloonType === 'type-think' }
+					isSecondary={ balloonType !== 'type-think' }
+					onClick={ () => setAttributes({ balloonType: 'type-think' }) }
+				>
+					{  __("Thinking", "vk-blocks") }
+				</Button>
+			</ButtonGroup>
+
 			<p className={ 'mb-1' }><label>{ __( 'Image Style', 'vk-blocks' ) }</label></p>
 			<ButtonGroup className="mb-3">
 				<Button
@@ -119,6 +140,7 @@ registerBlockType("vk-blocks/balloon", {
 					{ __('Circle', 'vk-blocks') }
 				</Button>
 			</ButtonGroup>
+			<p className={ 'mb-1' }><label>{ __( 'Background color of speech balloon', 'vk-blocks' ) }</label></p>
             <ColorPalette
               value={balloonBgColor}
               onChange={value => setAttributes({ balloonBgColor: value })}

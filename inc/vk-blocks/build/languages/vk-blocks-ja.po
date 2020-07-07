@@ -103,7 +103,7 @@ msgstr "速い"
 
 #: src/blocks/_pro/animation/block.js:70
 msgid "Very Fast"
-msgstr "非常に早い"
+msgstr "非常に速い"
 
 #: src/blocks/_pro/animation/block.js:73
 msgid "Animation range"

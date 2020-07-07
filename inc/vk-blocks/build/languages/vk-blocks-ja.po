@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-KeywordsList: __\n"
@@ -20,8 +20,8 @@ msgstr ""
 msgid "Icon"
 msgstr "アイコン"
 
-#: src/blocks/_helper/font-awesome-new.js:56
-#: src/blocks/border-box/font-awesome-new.js:62
+#: src/blocks/_helper/font-awesome-new.js:59
+#: src/blocks/border-box/font-awesome-new.js:68
 msgid ""
 "If you want to use an icon other than the ones listed above, you can use any "
 "of the icons from Font Awesome's icon list Please select a tag and enter it."
@@ -29,19 +29,19 @@ msgstr ""
 "他のアイコンを使いたい場合は Font Awesome のアイコンリストから選んでタグを入"
 "力してください。"
 
-#: src/blocks/_helper/font-awesome-new.js:57
-#: src/blocks/border-box/font-awesome-new.js:63
+#: src/blocks/_helper/font-awesome-new.js:60
+#: src/blocks/border-box/font-awesome-new.js:69
 msgid "Ex) <i class=\"fas fa-arrow-circle-right\"></i>"
 msgstr "例) <i class=“fas fa-arrow-circle-right”></i>"
 
-#: src/blocks/_helper/font-awesome-new.js:59
+#: src/blocks/_helper/font-awesome-new.js:62
 #: src/blocks/_helper/font-awesome.js:30
-#: src/blocks/border-box/font-awesome-new.js:65
+#: src/blocks/border-box/font-awesome-new.js:71
 msgid "Font Awesome icon list"
 msgstr "Font Awesome アイコンリスト"
 
-#: src/blocks/_helper/font-awesome-new.js:72
-#: src/blocks/border-box/font-awesome-new.js:78
+#: src/blocks/_helper/font-awesome-new.js:75
+#: src/blocks/border-box/font-awesome-new.js:84
 msgid "Select Icon"
 msgstr "アイコンを選択"
 
@@ -57,29 +57,72 @@ msgstr "Font Awesome の class 名を入力してください。"
 msgid "Ex) fas fa-arrow-circle-right"
 msgstr "例) fas fa-arrow-circle-right"
 
-#: src/blocks/_pro/animation/block.js:29
+#: src/blocks/_pro/animation/block.js:31
 msgid "Animation"
 msgstr "アニメーション"
 
-#: src/blocks/_pro/animation/block.js:46
+#: src/blocks/_pro/animation/block.js:48
 msgid "Animation Settings"
 msgstr "アニメーション設定"
 
-#: src/blocks/_pro/animation/block.js:51
+#: src/blocks/_pro/animation/block.js:49
+#, fuzzy
+#| msgid "Opacity Setting"
+msgid "Effect Setting"
+msgstr "透過設定"
+
+#: src/blocks/_pro/animation/block.js:54
 msgid "Fade In"
 msgstr "フェードイン"
 
-#: src/blocks/_pro/animation/block.js:52
+#: src/blocks/_pro/animation/block.js:55
 msgid "Slide Up"
 msgstr "スライドアップ"
 
-#: src/blocks/_pro/animation/block.js:53
+#: src/blocks/_pro/animation/block.js:56
 msgid "Slide Left"
 msgstr "スライド左"
 
-#: src/blocks/_pro/animation/block.js:54
+#: src/blocks/_pro/animation/block.js:57
 msgid "Slide Right"
 msgstr "スライド右"
+
+#: src/blocks/_pro/animation/block.js:61
+msgid "Effect Speed"
+msgstr "エフェクトスピード"
+
+#: src/blocks/_pro/animation/block.js:66
+msgid "Very Slow"
+msgstr "非常に遅い"
+
+#: src/blocks/_pro/animation/block.js:67
+msgid "Slow"
+msgstr "遅い"
+
+#: src/blocks/_pro/animation/block.js:69
+msgid "Fast"
+msgstr "早い"
+
+#: src/blocks/_pro/animation/block.js:70
+msgid "Very Fast"
+msgstr "非常に早い"
+
+#: src/blocks/_pro/animation/block.js:73
+msgid "Effect Range"
+msgstr "エフェクトの距離"
+
+#: src/blocks/_pro/animation/block.js:78
+msgid "Short"
+msgstr "短い"
+
+#: src/blocks/_pro/animation/block.js:79 src/blocks/_pro/outer/block.js:182
+#: src/blocks/button/block.js:158 src/blocks/faq/block.js:64
+msgid "Normal"
+msgstr "標準"
+
+#: src/blocks/_pro/animation/block.js:80
+msgid "Long"
+msgstr "長い"
 
 #: src/blocks/_pro/card-item/block.js:43
 msgid "Card Item"
@@ -93,33 +136,34 @@ msgstr "URL"
 msgid "https://example.com"
 msgstr "https://example.com"
 
-#: src/blocks/_pro/card-item/component.js:110
-#: src/blocks/_pro/card-item/deprecated.js:539
+#: src/blocks/_pro/card-item/component.js:112
+#: src/blocks/_pro/card-item/deprecated.js:788
 #: src/components/advanced-media-upload/index.js:32
 msgid "Delete Image"
 msgstr "画像を削除"
 
-#: src/blocks/_pro/card-item/component.js:164
-#: src/blocks/_pro/card-item/deprecated.js:593
+#: src/blocks/_pro/card-item/component.js:167
+#: src/blocks/_pro/card-item/deprecated.js:842
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
 "tempor incididunt ut labore et dolore magna aliqua. "
 msgstr ""
 
-#: src/blocks/_pro/card-item/component.js:209
-#: src/blocks/_pro/card-item/deprecated.js:638
-#: src/blocks/_pro/icon-card/block.js:105
+#: src/blocks/_pro/card-item/component.js:213
+#: src/blocks/_pro/card-item/deprecated.js:887
+#: src/blocks/_pro/card/block.js:132 src/blocks/_pro/icon-card/block.js:105
 msgid "Title"
 msgstr "タイトルを入力"
 
-#: src/blocks/_pro/card-item/component.js:97
-#: src/blocks/_pro/card-item/deprecated.js:526 src/blocks/balloon/block.js:114
+#: src/blocks/_pro/card-item/component.js:99
+#: src/blocks/_pro/card-item/deprecated.js:775 src/blocks/balloon/block.js:114
 #: src/blocks/flow/block.js:96 src/blocks/pr-blocks/block.js:149
 #: src/blocks/pr-content/component.js:157
 #: src/blocks/pr-content/deprecated/component-deprecated.js:102
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:116
 #: src/blocks/pr-content/deprecated/componentV1.js:185
-#: src/blocks/staff/component.js:88
+#: src/blocks/_pro/card-item/component.js:97
+#: src/blocks/_pro/card-item/deprecated.js:526 src/blocks/staff/component.js:88
 #: src/components/advanced-media-upload/index.js:42
 msgid "Select image"
 msgstr "画像を選択"
@@ -129,22 +173,30 @@ msgstr "画像を選択"
 msgid "Display item"
 msgstr "表示要素"
 
-#: src/blocks/_pro/card/block.js:132
+#: src/blocks/_pro/card/block.js:139
+msgid "Excerpt Text"
+msgstr "抜粋"
+
+#: src/blocks/_pro/card/block.js:144
+msgid "Warning! When you hidden this item, you will lose the content."
+msgstr "注意！この項目を非表示にすると入力されていた内容は失われます。"
+
+#: src/blocks/_pro/card/block.js:146
 #: src/components/display-items-control/index.js:29
 msgid "Image"
 msgstr "画像"
 
-#: src/blocks/_pro/card/block.js:137 src/blocks/button/block.js:46
+#: src/blocks/_pro/card/block.js:151 src/blocks/button/block.js:46
 #: src/components/display-items-control/index.js:58
 msgid "Button"
 msgstr "ボタン"
 
-#: src/blocks/_pro/card/block.js:142
+#: src/blocks/_pro/card/block.js:156
 #: src/components/display-items-control/index.js:75
 msgid "Button option"
 msgstr "ボタンオプション"
 
-#: src/blocks/_pro/card/block.js:145
+#: src/blocks/_pro/card/block.js:159
 #: src/components/display-items-control/index.js:78
 msgid ""
 "Click each card block to set the target url. You can find the url form at "
@@ -153,7 +205,7 @@ msgstr ""
 "ボタンのリンク先は各カードブロックをクリックすると、サイドバーにURL入力フォー"
 "ムが表示されます。"
 
-#: src/blocks/_pro/card/block.js:151
+#: src/blocks/_pro/card/block.js:165
 #: src/components/display-items-control/index.js:84
 msgid "Button text"
 msgstr "ボタンの文字"
@@ -326,10 +378,6 @@ msgstr "レイアウト設定"
 #: src/blocks/_pro/outer/block.js:173
 msgid "Width"
 msgstr "幅"
-
-#: src/blocks/_pro/outer/block.js:182 src/blocks/button/block.js:158
-msgid "Normal"
-msgstr "標準"
 
 #: src/blocks/_pro/outer/block.js:190
 msgid "Full Wide"
@@ -823,41 +871,37 @@ msgstr "文字の後"
 msgid "Apply"
 msgstr ""
 
-#: src/blocks/faq/block.js:81
-msgid "Bgfill Circle"
-msgstr "背景塗り 円形"
+#: src/blocks/faq/block.js:106
+msgid "Please enter a question."
+msgstr "質問を入力してください。"
 
-#: src/blocks/faq/block.js:85
-msgid "Bgfill Square"
-msgstr "背景塗り ピン角"
-
-#: src/blocks/faq/block.js:89
-msgid "Bgfill Rounded"
-msgstr "背景塗り 角丸"
-
-#: src/blocks/faq/block.js:93
-msgid "Border Circle"
-msgstr "枠線 円形"
-
-#: src/blocks/faq/block.js:97
-msgid "Border Square"
-msgstr "枠線 ピン角"
-
-#: src/blocks/faq/block.js:101
-msgid "Border Rounded"
-msgstr "枠線 角丸"
-
-#: src/blocks/faq/block.js:100
-msgid "Please enter a answer."
-msgstr "回答を入力してください。"
-
-#: src/blocks/faq/block.js:56
+#: src/blocks/faq/block.js:45
 msgid "FAQ"
 msgstr "質問と解答"
 
-#: src/blocks/faq/block.js:93
-msgid "Please enter a question."
-msgstr "質問を入力してください。"
+#: src/blocks/faq/block.js:69
+msgid "Bgfill Circle"
+msgstr "背景塗り 円形"
+
+#: src/blocks/faq/block.js:73
+msgid "Bgfill Square"
+msgstr "背景塗り ピン角"
+
+#: src/blocks/faq/block.js:77
+msgid "Bgfill Rounded"
+msgstr "背景塗り 角丸"
+
+#: src/blocks/faq/block.js:81
+msgid "Border Circle"
+msgstr "枠線 円形"
+
+#: src/blocks/faq/block.js:85
+msgid "Border Square"
+msgstr "枠線 ピン角"
+
+#: src/blocks/faq/block.js:89
+msgid "Border Rounded"
+msgstr "枠線 角丸"
 
 #: src/blocks/flow/block.js:16
 msgid "Flow"
@@ -1413,6 +1457,9 @@ msgstr ""
 #: src/translation_dummy.js:3
 msgid "Deactivated VK-Blocks Plugin. Because VK-Blocks Pro running."
 msgstr "Pro版VK-Blocksが起動しているため、VK-Blocksを停止しました。"
+
+#~ msgid "Please enter a answer."
+#~ msgstr "回答を入力してください。"
 
 #~ msgid "Class name of the Font Awesome icon font you want to use:"
 #~ msgstr "アイコンを使う場合は Font Awesome のアイコンのclass名:"

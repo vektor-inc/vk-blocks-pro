@@ -1,4 +1,10 @@
 export const schema = {
+	anchor: {
+		type: 'string',
+		source: 'attribute',
+		attribute: 'id',
+		selector: '*',
+	},
 	level: {
 		type: "number",
 		default: 2
@@ -17,7 +23,7 @@ export const schema = {
 	title: {
 		type: "string",
 		source: "html",
-		selector: "h1,h2,h3,h4,h5,h6",
+		selector: "span",
 		default: ""
 	},
 	titleColor: {
@@ -49,12 +55,16 @@ export const schema = {
 		type: "number",
 		default: 1.2
 	},
-	colorQ: {
-		type: "string",
-		default: "#e50000"
+	fontAwesomeIconBefore: {
+		type: 'string',
+		default: '',
 	},
-	colorA: {
+	fontAwesomeIconAfter: {
+		type: 'string',
+		default:  '',
+	 },
+	 fontAwesomeIconColor: {
 		type: "string",
-		default: "#337ab7"
-	}
+		default: "#000000"
+	},
 };

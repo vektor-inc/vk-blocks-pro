@@ -66,8 +66,8 @@ msgid "Animation Settings"
 msgstr "アニメーション設定"
 
 #: src/blocks/_pro/animation/block.js:49
-msgid "Effect Setting"
-msgstr "エフェクト設定"
+msgid "Animation effect"
+msgstr "アニメーションの効果"
 
 #: src/blocks/_pro/animation/block.js:54
 msgid "Fade In"
@@ -86,8 +86,8 @@ msgid "Slide Right"
 msgstr "スライド右"
 
 #: src/blocks/_pro/animation/block.js:61
-msgid "Effect Speed"
-msgstr "エフェクトスピード"
+msgid "Animation speed"
+msgstr "アニメーションの速度"
 
 #: src/blocks/_pro/animation/block.js:66
 msgid "Very Slow"
@@ -106,8 +106,8 @@ msgid "Very Fast"
 msgstr "非常に早い"
 
 #: src/blocks/_pro/animation/block.js:73
-msgid "Effect Range"
-msgstr "エフェクトの距離"
+msgid "Animation range"
+msgstr "アニメーションの距離"
 
 #: src/blocks/_pro/animation/block.js:78
 msgid "Short"
@@ -270,7 +270,8 @@ msgstr "リンクを別ウィンドウで開く"
 
 #: src/blocks/_pro/icon-card-item/block.js:55
 #: src/blocks/_pro/step-item/block.js:40 src/blocks/border-box/block.js:117
-#: src/blocks/button/block.js:269 src/blocks/pr-content/block.js:175
+#: src/blocks/button/block.js:269 src/blocks/heading/block.js:187
+#: src/blocks/pr-content/block.js:175
 msgid "Icon ( Font Awesome )"
 msgstr "アイコン ( Font Awesome )"
 
@@ -587,7 +588,7 @@ msgstr "アウトライン"
 #: src/blocks/_pro/table-of-contents-new/block.js:56
 #: src/blocks/_pro/table-of-contents/block.js:54
 #: src/blocks/_pro/timeline-item/block.js:99
-#: src/blocks/heading-style/block.js:33 src/blocks/heading/block.js:131
+#: src/blocks/heading-style/block.js:33 src/blocks/heading/block.js:132
 #: src/blocks/list-style/block.js:104 src/blocks/staff/block.js:84
 msgid "Default"
 msgstr "標準"
@@ -643,7 +644,7 @@ msgstr "タイムライン"
 msgid "Alert"
 msgstr "アラート"
 
-#: src/blocks/alert/block.js:48 src/blocks/heading/block.js:125
+#: src/blocks/alert/block.js:48 src/blocks/heading/block.js:126
 msgid "Style Settings"
 msgstr "スタイル設定"
 
@@ -715,7 +716,7 @@ msgstr "フキダシ"
 msgid "Balloon setting"
 msgstr "フキダシ設定"
 
-#: src/blocks/balloon/block.js:73 src/blocks/heading/block.js:188
+#: src/blocks/balloon/block.js:73 src/blocks/heading/block.js:200
 msgid "Position"
 msgstr "位置"
 
@@ -873,11 +874,13 @@ msgstr ""
 "このカスタムカラーはデフォルトのカラーを上書きします。 デフォルトの色を使用し"
 "たい場合は、クリアボタンをクリックしてください。"
 
-#: src/blocks/button/block.js:271 src/blocks/pr-content/block.js:177
+#: src/blocks/button/block.js:271 src/blocks/heading/block.js:188
+#: src/blocks/pr-content/block.js:177
 msgid "Before text"
 msgstr "文字の前"
 
-#: src/blocks/button/block.js:279 src/blocks/pr-content/block.js:185
+#: src/blocks/button/block.js:279 src/blocks/heading/block.js:191
+#: src/blocks/pr-content/block.js:185
 msgid "After text"
 msgstr "文字の後"
 
@@ -973,7 +976,7 @@ msgstr "左右線"
 msgid "Brackets black"
 msgstr "括弧 黒"
 
-#: src/blocks/heading-style/block.js:38 src/blocks/heading/block.js:132
+#: src/blocks/heading-style/block.js:38 src/blocks/heading/block.js:133
 msgid "Plain"
 msgstr "装飾無し"
 
@@ -997,61 +1000,83 @@ msgstr "直線 上下 黒"
 msgid "Solid border bottom black"
 msgstr "直線 下線 黒"
 
-#: src/blocks/heading/block.js:127
+#: src/blocks/heading/block.js:128
 msgid "Heading style"
 msgstr "見出しスタイル"
 
-#: src/blocks/heading/block.js:135
-msgid "Margin bottom size (rem)"
+#: src/blocks/heading/block.js:137
+#, fuzzy
+#| msgid "Heading Settings"
+msgid "Margin Setting"
+msgstr "見出し設定"
+
+#: src/blocks/heading/block.js:138
+#, fuzzy
+#| msgid "Margin bottom size (rem)"
+msgid "Margin bottom size of after hedding  (rem)"
 msgstr "下部の余白"
 
-#: src/blocks/heading/block.js:146
+#: src/blocks/heading/block.js:148
+#, fuzzy
+#| msgid "Margin bottom size (rem)"
+msgid "Margin bottom size of after this block (rem)"
+msgstr "下部の余白"
+
+#: src/blocks/heading/block.js:159
 msgid "Heading Settings"
 msgstr "見出し設定"
 
-#: src/blocks/heading/block.js:147
+#: src/blocks/heading/block.js:160
 msgid "Level"
 msgstr "レベル"
 
-#: src/blocks/heading/block.js:154
+#: src/blocks/heading/block.js:167
 msgid "Text Alignment"
 msgstr "テキストの水平位置"
 
-#: src/blocks/heading/block.js:171
-msgid "Heading margin bottom size (rem)"
-msgstr "見出し下部の余白 (rem)"
+#: src/blocks/heading/block.js:184
+#, fuzzy
+#| msgid "Title Color"
+msgid "Text Color"
+msgstr "見出しの色"
 
-#: src/blocks/heading/block.js:186
+#: src/blocks/heading/block.js:194
+#, fuzzy
+#| msgid "List Icon Color"
+msgid "Icon Color"
+msgstr "リストアイコンの色"
+
+#: src/blocks/heading/block.js:198
 msgid "Sub Text Settings"
 msgstr "サブテキスト設定"
 
-#: src/blocks/heading/block.js:191
+#: src/blocks/heading/block.js:203
 msgid "Display"
 msgstr "表示"
 
-#: src/blocks/heading/block.js:192
+#: src/blocks/heading/block.js:204
 msgid "Hide"
 msgstr "非表示"
 
-#: src/blocks/heading/block.js:196
+#: src/blocks/heading/block.js:208
 msgid "Text size (rem)"
 msgstr "文字サイズ (rem)"
 
-#: src/blocks/heading/block.js:64
+#: src/blocks/heading/block.js:65
 msgid "Heading"
 msgstr "見出し"
 
-#: src/blocks/heading/component.js:108
-#: src/blocks/heading/deprecated/block.js:663
-#: src/blocks/heading/deprecated/component.js:108
-msgid "Input sub text…"
-msgstr "サブテキストを入力"
-
-#: src/blocks/heading/component.js:92
-#: src/blocks/heading/deprecated/block.js:647
-#: src/blocks/heading/deprecated/component.js:92
+#: src/blocks/heading/component.js:101
+#: src/blocks/heading/deprecated/block.js:670
+#: src/blocks/heading/deprecated/component.js:205
 msgid "Input title…"
 msgstr "タイトルを入力"
+
+#: src/blocks/heading/component.js:114
+#: src/blocks/heading/deprecated/block.js:686
+#: src/blocks/heading/deprecated/component.js:221
+msgid "Input sub text…"
+msgstr "サブテキストを入力"
 
 # %s: heading level e.g: "1", "2", "3"
 #. %s: heading level e.g: "1", "2", "3"
@@ -1471,6 +1496,18 @@ msgstr ""
 #: src/translation_dummy.js:3
 msgid "Deactivated VK-Blocks Plugin. Because VK-Blocks Pro running."
 msgstr "Pro版VK-Blocksが起動しているため、VK-Blocksを停止しました。"
+
+#~ msgid "Effect Setting"
+#~ msgstr "エフェクト設定"
+
+#~ msgid "Effect Speed"
+#~ msgstr "エフェクトスピード"
+
+#~ msgid "Effect Range"
+#~ msgstr "エフェクトの距離"
+
+#~ msgid "Heading margin bottom size (rem)"
+#~ msgstr "見出し下部の余白 (rem)"
 
 #~ msgid "Please enter a answer."
 #~ msgstr "回答を入力してください。"

@@ -77,17 +77,19 @@ registerBlockType("vk-blocks/balloon", {
 		if(blockMeta && blockMeta["default_icons"]){
 			defautIconButtons = Object.keys(blockMeta["default_icons"]).map( (icon,index)=> {
 				const iconUrl = blockMeta["default_icons"][icon];
-				return(
-					<div key={index}>
-						<img className={"icon-image"} src={iconUrl} />
-						<Button
-							onClick={()=>{setAttributes({ IconImage: iconUrl })}}
-							className={"button button-large components-button"}
-						>
-							{__("Use this image", "vk-blocks")}
-						</Button>
-					</div>
-				)
+				if(iconUrl){
+					return(
+						<div key={index}>
+							<img className={"icon-image"} src={iconUrl} />
+							<Button
+								onClick={()=>{setAttributes({ IconImage: iconUrl })}}
+								className={"button button-large components-button"}
+							>
+								{__("Use this image", "vk-blocks")}
+							</Button>
+						</div>
+					)
+				}
 			})
 		}
 

@@ -99,7 +99,7 @@ msgstr "遅い"
 
 #: src/blocks/_pro/animation/block.js:69
 msgid "Fast"
-msgstr "早い"
+msgstr "速い"
 
 #: src/blocks/_pro/animation/block.js:70
 msgid "Very Fast"
@@ -1005,22 +1005,16 @@ msgid "Heading style"
 msgstr "見出しスタイル"
 
 #: src/blocks/heading/block.js:137
-#, fuzzy
-#| msgid "Heading Settings"
 msgid "Margin Setting"
-msgstr "見出し設定"
+msgstr "余白設定"
 
 #: src/blocks/heading/block.js:138
-#, fuzzy
-#| msgid "Margin bottom size (rem)"
 msgid "Margin bottom size of after hedding  (rem)"
-msgstr "下部の余白"
+msgstr "見出しテキストの下部の余白 (rem)"
 
 #: src/blocks/heading/block.js:148
-#, fuzzy
-#| msgid "Margin bottom size (rem)"
 msgid "Margin bottom size of after this block (rem)"
-msgstr "下部の余白"
+msgstr "このブロック全体の下部の余白 (rem)"
 
 #: src/blocks/heading/block.js:159
 msgid "Heading Settings"
@@ -1035,16 +1029,12 @@ msgid "Text Alignment"
 msgstr "テキストの水平位置"
 
 #: src/blocks/heading/block.js:184
-#, fuzzy
-#| msgid "Title Color"
 msgid "Text Color"
-msgstr "見出しの色"
+msgstr "文字の色"
 
 #: src/blocks/heading/block.js:194
-#, fuzzy
-#| msgid "List Icon Color"
 msgid "Icon Color"
-msgstr "リストアイコンの色"
+msgstr "アイコンの色"
 
 #: src/blocks/heading/block.js:198
 msgid "Sub Text Settings"

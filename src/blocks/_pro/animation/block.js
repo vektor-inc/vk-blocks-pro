@@ -46,7 +46,7 @@ registerBlockType("vk-blocks/animation", {
 			<Fragment>
 				<InspectorControls>
 					<PanelBody title={ __("Animation Settings", "vk-blocks") }>
-						<label>{__("Effect Setting", "vk-blocks")}</label>
+						<label>{ __("Animation effect", "vk-blocks") }</label>
 						<SelectControl
 							value={ effect }
 							onChange={ value => setAttributes({ effect: value }) }
@@ -58,7 +58,7 @@ registerBlockType("vk-blocks/animation", {
 							] }
 						/>
 
-						<label>{__("Effect Speed", "vk-blocks")}</label>
+						<label>{ __("Animation speed", "vk-blocks") }</label>
 						<SelectControl
 							value={ speed }
 							onChange={ value => setAttributes({ speed: value }) }
@@ -70,7 +70,7 @@ registerBlockType("vk-blocks/animation", {
 								{ label: __("Very Fast", "vk-blocks"), value: "very-fast" },
 							] }
 						/>
-						<label>{__("Effect Range", "vk-blocks")}</label>
+						<label>{ __("Animation range", "vk-blocks") }</label>
 						<SelectControl
 							value={ range }
 							onChange={ value => setAttributes({ range: value }) }
@@ -98,5 +98,5 @@ registerBlockType("vk-blocks/animation", {
 			</div>
 		);
 	},
-    deprecated: deprecated,
+    deprecated,
 });

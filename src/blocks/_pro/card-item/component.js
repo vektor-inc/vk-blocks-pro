@@ -1,6 +1,6 @@
 const { __ } = wp.i18n; // Import __() from wp.i18n
 import { vkbBlockEditor } from "./../../_helper/depModules";
-const { RichText, MediaUpload } = vkbBlockEditor;
+const { RichText, MediaUpload, InnerBlocks } = vkbBlockEditor;
 const { Button } = wp.components;
 const { Fragment } = wp.element;
 const { dispatch } = wp.data;
@@ -16,7 +16,9 @@ export class Component extends React.Component {
       col_sm,
       col_md,
       col_lg,
-      col_xl,
+			col_xl,
+			display_title,
+			display_excerpt,
       display_image,
       display_btn,
       btn_text,
@@ -151,8 +153,9 @@ export class Component extends React.Component {
 
     };
 
-    const renderExcerpt = (align) => {
-      const titleTag = "p";
+    const renderExcerpt = (align,display_excerpt) => {
+			if(display_excerpt){
+				const titleTag = "p";
       const titleClass = `vk_post_excerpt card-text has-text-align-${align.text}`;
       if (isEdit(for_)) {
         return (
@@ -175,7 +178,7 @@ export class Component extends React.Component {
 		value={ excerpt_text }
           />
         );
-
+			}
     };
 
     const renderButton = (display_btn, align) => {
@@ -196,33 +199,35 @@ export class Component extends React.Component {
 		};
 
 
-		const renderTitle = (align) => {
-      const titleTag = "h5";
-      const titleClass = `vk_post_title card-title has-text-align-${align.title}`;
-      if (isEdit(for_)) {
-        return (
-				<RichText
-		tagName={ titleTag }
-		className={ titleClass }
-		value={ title }
-		onChange={ (value) => setAttributes({ title: value }) }
-		placeholder={ __("Title", "vk-blocks") }
-          />
-        );
-      }else if(!isEdit(for_) && !url){
-				return (<RichText.Content
-							tagName={ titleTag }
-							className={ titleClass }
-							value={ title }/>);
-			}else{
-				return (
-					<a href={ url } target={ linkTarget } rel={ rel }>
-						<RichText.Content
-							tagName={ titleTag }
-							className={ titleClass }
-							value={ title }
-										/>
-					</a>);
+		const renderTitle = (align,display_title) => {
+			if(display_title){
+				const titleTag = "h5";
+				const titleClass = `vk_post_title card-title has-text-align-${align.title}`;
+				if (isEdit(for_)) {
+					return (
+					<RichText
+			tagName={ titleTag }
+			className={ titleClass }
+			value={ title }
+			onChange={ (value) => setAttributes({ title: value }) }
+			placeholder={ __("Title", "vk-blocks") }
+						/>
+					);
+				}else if(!isEdit(for_) && !url){
+					return (<RichText.Content
+								tagName={ titleTag }
+								className={ titleClass }
+								value={ title }/>);
+				}else{
+					return (
+						<a href={ url } target={ linkTarget } rel={ rel }>
+							<RichText.Content
+								tagName={ titleTag }
+								className={ titleClass }
+								value={ title }
+											/>
+						</a>);
+				}
 			}
     };
 
@@ -236,8 +241,7 @@ export class Component extends React.Component {
       imageStyle = {};
     }
 
-    const btnClass = display_btn ? "vk_post-btn-display" : "";
-
+		const btnClass = display_btn ? "vk_post-btn-display" : "";
     return (
 	<div
 		className={ `${className} vk_post ${layout} vk_card_item vk_post-col-xs-${convertToGrid(
@@ -252,8 +256,9 @@ export class Component extends React.Component {
       >
 		{ renderImage(display_image) }
 		<div className="vk_post_body card-body">
-			{ renderTitle(align) }
-			{ renderExcerpt(align) }
+			{ renderTitle(align, display_title) }
+			{ renderExcerpt(align, display_excerpt) }
+			{for_ === "edit" ? <InnerBlocks /> : <InnerBlocks.Content />}
 			{ renderButton(display_btn, align) }
 		</div>
 	</div>

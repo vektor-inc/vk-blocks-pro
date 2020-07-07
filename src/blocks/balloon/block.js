@@ -80,12 +80,11 @@ registerBlockType("vk-blocks/balloon", {
 				if(iconUrl){
 					return(
 						<div key={index}>
-							<img className={"icon-image"} src={iconUrl} />
 							<Button
 								onClick={()=>{setAttributes({ IconImage: iconUrl })}}
 								className={"button button-large components-button"}
 							>
-								{__("Use this image", "vk-blocks")}
+								<img className={"icon-image"} src={iconUrl} />
 							</Button>
 						</div>
 					)

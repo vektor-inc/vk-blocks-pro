@@ -2,15 +2,15 @@
 /**
  * FaceList Customize.
  */
-function vkblocks_face_list_customize( $wp_customize ) {
+function vkblocks_balloon_meta_customize( $wp_customize ) {
 	$max_faces = 5;
 	$max_faces = apply_filters( 'vkblocks_max_faces', $max_faces );
 	global $vk_blocks_prefix;
 
 	$wp_customize->add_section(
-		'vk_blocks_face_list_setting',
+		'vk_blocks_balloon_default_icons',
 		array(
-			'title' =>  __( 'Register Baloon Face Image', 'vk-blocks-pro' ),
+			'title' =>  __( 'Balloon: Default Icons', 'vk-blocks-pro' ),
 			'panel' => 'vk_blocks_setting',
 		)
 	);
@@ -18,7 +18,7 @@ function vkblocks_face_list_customize( $wp_customize ) {
 	for ( $i = 1; $i <= $max_faces; $i++ ) {
 		// image.
 		$wp_customize->add_setting(
-			'vk_blocks_face_option[face_image]['. $i . ']',
+			'vk_blocks_balloon_meta[default_icons]['. $i . ']',
 			array(
 				'default'           => '',
 				'type'              => 'option',
@@ -30,15 +30,15 @@ function vkblocks_face_list_customize( $wp_customize ) {
 		$wp_customize->add_control(
 			new WP_Customize_Image_Control(
 				$wp_customize,
-				'vk_blocks_face_option[face_image]['. $i . ']',
+				'vk_blocks_balloon_meta[default_icons]['. $i . ']',
 				array(
-					'label'       => __( 'Face Image ', 'vk-blocks-pro' ) . '[' . $i . '] ',
-					'section'     => 'vk_blocks_face_list_setting',
-					'settings'    => 'vk_blocks_face_option[face_image]['. $i . ']',
+					'label'       => __( 'Default Icon ', 'vk-blocks-pro' ) . '[' . $i . '] ',
+					'section'     => 'vk_blocks_balloon_default_icons',
+					'settings'    => 'vk_blocks_balloon_meta[default_icons]['. $i . ']',
 				)
 			)
 		);
 	}
 
 }
-add_action( 'customize_register', 'vkblocks_face_list_customize' );
+add_action( 'customize_register', 'vkblocks_balloon_meta_customize' );

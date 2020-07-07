@@ -4,10 +4,11 @@
  */
 
 import { vkbBlockEditor } from "./../_helper/depModules";
+const apiFetch = wp.apiFetch;
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RangeControl, RadioControl, PanelBody, Button } = wp.components;
-const { Fragment } = wp.element;
+const {  RadioControl, PanelBody, Button } = wp.components;
+const { Fragment, useState, useEffect } = wp.element;
 const { RichText, InspectorControls, MediaUpload, ColorPalette } = vkbBlockEditor;
 const BlockIcon = (
   <svg
@@ -58,7 +59,37 @@ registerBlockType("vk-blocks/balloon", {
       balloonBgColor,
       balloonAlign,
       IconImage
-    } = attributes;
+		} = attributes;
+
+		const [ blockMeta, setBlockMeta ] = useState(null);
+
+		useEffect(() => {
+			apiFetch( {
+				path: '/vk-blocks/v1/block-meta/balloon/',
+				method: 'GET',
+				parse: true,
+			} ).then( ( result ) => {
+				setBlockMeta(result)
+			} )
+		}, [])
+
+		let defautIconButtons;
+		if(blockMeta && blockMeta["default_icons"]){
+			defautIconButtons = Object.keys(blockMeta["default_icons"]).map( (icon,index)=> {
+				const iconUrl = blockMeta["default_icons"][icon];
+				return(
+					<div key={index}>
+						<img className={"icon-image"} src={iconUrl} />
+						<Button
+							onClick={()=>{setAttributes({ IconImage: iconUrl })}}
+							className={"button button-large components-button"}
+						>
+							{__("Use this image", "vk-blocks")}
+						</Button>
+					</div>
+				)
+			})
+		}
 
     return (
       <Fragment>
@@ -92,8 +123,10 @@ registerBlockType("vk-blocks/balloon", {
               onChange={value => setAttributes({ balloonBgColor: value })}
             />
           </PanelBody>
+					<PanelBody title={__("Default Icon Setting", "vk-blocks")}>
+						{defautIconButtons}
+          </PanelBody>
         </InspectorControls>
-
         <div
           className={`${className} vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType}`}
         >

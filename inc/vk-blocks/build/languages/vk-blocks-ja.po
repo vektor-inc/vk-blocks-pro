@@ -66,10 +66,8 @@ msgid "Animation Settings"
 msgstr "アニメーション設定"
 
 #: src/blocks/_pro/animation/block.js:49
-#, fuzzy
-#| msgid "Opacity Setting"
 msgid "Effect Setting"
-msgstr "透過設定"
+msgstr "エフェクト設定"
 
 #: src/blocks/_pro/animation/block.js:54
 msgid "Fade In"
@@ -116,7 +114,8 @@ msgid "Short"
 msgstr "短い"
 
 #: src/blocks/_pro/animation/block.js:79 src/blocks/_pro/outer/block.js:182
-#: src/blocks/button/block.js:158 src/blocks/faq/block.js:64
+#: src/blocks/balloon/block.js:124 src/blocks/button/block.js:158
+#: src/blocks/faq/block.js:64
 msgid "Normal"
 msgstr "標準"
 
@@ -156,14 +155,13 @@ msgid "Title"
 msgstr "タイトルを入力"
 
 #: src/blocks/_pro/card-item/component.js:99
-#: src/blocks/_pro/card-item/deprecated.js:775 src/blocks/balloon/block.js:114
+#: src/blocks/_pro/card-item/deprecated.js:775 src/blocks/balloon/block.js:168
 #: src/blocks/flow/block.js:96 src/blocks/pr-blocks/block.js:149
 #: src/blocks/pr-content/component.js:157
 #: src/blocks/pr-content/deprecated/component-deprecated.js:102
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:116
 #: src/blocks/pr-content/deprecated/componentV1.js:185
-#: src/blocks/_pro/card-item/component.js:97
-#: src/blocks/_pro/card-item/deprecated.js:526 src/blocks/staff/component.js:88
+#: src/blocks/staff/component.js:88
 #: src/components/advanced-media-upload/index.js:42
 msgid "Select image"
 msgstr "画像を選択"
@@ -423,7 +421,7 @@ msgstr ""
 msgid "Divider Setting"
 msgstr "区切りの設定"
 
-#: src/blocks/_pro/outer/block.js:245 src/blocks/balloon/block.js:81
+#: src/blocks/_pro/outer/block.js:245 src/blocks/balloon/block.js:95
 msgid "Type"
 msgstr "タイプ"
 
@@ -669,7 +667,31 @@ msgstr "Warning"
 msgid "Danger"
 msgstr "Danger"
 
-#: src/blocks/balloon/block.js:119 src/blocks/flow/block.js:97
+#: src/blocks/balloon/block.js:104
+msgid "Serif"
+msgstr "セリフ"
+
+#: src/blocks/balloon/block.js:112
+msgid "Thinking"
+msgstr "吹き出し"
+
+#: src/blocks/balloon/block.js:116
+msgid "Image Style"
+msgstr "画像スタイル"
+
+#: src/blocks/balloon/block.js:132
+msgid "Rounded"
+msgstr "角丸"
+
+#: src/blocks/balloon/block.js:140
+msgid "Circle"
+msgstr "丸抜き"
+
+#: src/blocks/balloon/block.js:143
+msgid "Background color of speech balloon"
+msgstr "吹き出しの背景色"
+
+#: src/blocks/balloon/block.js:173 src/blocks/flow/block.js:97
 #: src/blocks/pr-blocks/block.js:145 src/blocks/pr-content/component.js:164
 #: src/blocks/pr-content/deprecated/component-deprecated.js:106
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:120
@@ -677,11 +699,11 @@ msgstr "Danger"
 msgid "Upload image"
 msgstr "画像をアップロード"
 
-#: src/blocks/balloon/block.js:130
+#: src/blocks/balloon/block.js:184
 msgid "Icon Name"
 msgstr "アイコンの名前"
 
-#: src/blocks/balloon/block.js:139 src/blocks/button/block.js:303
+#: src/blocks/balloon/block.js:193 src/blocks/button/block.js:303
 msgid "Input text"
 msgstr "文字を入力"
 
@@ -689,41 +711,33 @@ msgstr "文字を入力"
 msgid "Ballon"
 msgstr "フキダシ"
 
-#: src/blocks/balloon/block.js:66
+#: src/blocks/balloon/block.js:71
 msgid "Balloon setting"
 msgstr "フキダシ設定"
 
-#: src/blocks/balloon/block.js:68 src/blocks/heading/block.js:188
+#: src/blocks/balloon/block.js:73 src/blocks/heading/block.js:188
 msgid "Position"
 msgstr "位置"
 
-#: src/blocks/balloon/block.js:69
+#: src/blocks/balloon/block.js:74
 msgid "Please specify the layout of the balloon."
 msgstr "吹き出しの配置を指定してください。"
 
-#: src/blocks/balloon/block.js:75 src/blocks/button/block.js:178
+#: src/blocks/balloon/block.js:82 src/blocks/button/block.js:178
 #: src/blocks/pr-content/block.js:203
 #: src/components/display-items-control/index.js:95
 msgid "Left"
 msgstr "左"
 
-#: src/blocks/balloon/block.js:76 src/blocks/button/block.js:194
+#: src/blocks/balloon/block.js:90 src/blocks/button/block.js:194
 #: src/blocks/pr-content/block.js:202
 #: src/components/display-items-control/index.js:103
 msgid "Right"
 msgstr "右"
 
-#: src/blocks/balloon/block.js:82
+#: src/blocks/balloon/block.js:96
 msgid "Please select the type of balloon."
 msgstr "吹き出しのタイプを指定してください。"
-
-#: src/blocks/balloon/block.js:85
-msgid "Serif"
-msgstr "セリフ"
-
-#: src/blocks/balloon/block.js:86
-msgid "Thinking"
-msgstr "吹き出し"
 
 #: src/blocks/border-box/Body.js:21 src/blocks/border-box/deprecated.js:20
 msgid "Please enter a title."

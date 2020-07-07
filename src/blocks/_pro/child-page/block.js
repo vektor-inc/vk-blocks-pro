@@ -52,15 +52,36 @@ registerBlockType("vk-blocks/child-page", {
 
   edit: withSelect((select) => {
     return {
-      postTypes: select("core").getEntityRecords("postType", "page", {
+      pages: select("core").getEntityRecords("postType", "page", {
         _embed: true,
         per_page: -1,
       }),
     };
   })((props) => {
-    const { setAttributes, attributes, postTypes, name } = props;
+    const { setAttributes, attributes, pages, name } = props;
     const { selectId, selfIgnore } = attributes
-    attributes["name"] = name
+		attributes["name"] = name
+		let options = [ { label: __( "This Page", "veu-block" ), value: -1 } ]
+
+			if (pages != undefined) {
+				const l = pages.length
+				let parents = []
+				let i = 0
+				for(i=0;i<l;i++) {
+					if ( pages[i].parent != 0 ) {
+						parents.push(pages[i].parent)
+					}
+				}
+				for(i=0; i < l;i++) {
+					if ( parents.includes(pages[i].id) ) {
+						options.push({
+							label: pages[i].title.rendered,
+							value: pages[i].id
+						})
+					}
+				}
+			}
+
     return (
       <Fragment>
         <InspectorControls>
@@ -74,7 +95,7 @@ registerBlockType("vk-blocks/child-page", {
                 onChange={(value) =>
                   setAttributes({ selectId: parseInt(value, 10) })
                 }
-                options={renderPages(postTypes, props)}
+                options={options}
               />
             </BaseControl>
             <BaseControl>
@@ -99,86 +120,3 @@ registerBlockType("vk-blocks/child-page", {
     return null;
   },
 });
-
-export const renderPages = (postTypes, props) => {
-  const { attributes, setAttributes } = props;
-  const { selectId } = attributes;
-
-  if (postTypes) {
-    let parents = filterParents(postTypes);
-    let children = filterChildren(postTypes);
-
-    children.forEach((child) => {
-      const index = parents.findIndex((parent) => parent.id === child.parent);
-      if (index !== -1) {
-        parents.splice(index, 0, child);
-      } else {
-        parents.push(child);
-      }
-    });
-
-    parents.reverse();
-
-    let formated = formatPulldonwOrder(parents);
-
-    let defaultOption = [
-      {
-        value: 0,
-        label: __("Exsist Already Page", "vk-blocks"),
-      },
-    ];
-    let currentPageId = select("core/editor").getCurrentPostId();
-    let isCurrentPageCreated = postTypes.find(
-      (page) => page.id === currentPageId
-    );
-
-    if (
-      (isCurrentPageCreated === undefined && selectId === undefined) ||
-      selectId === undefined ||
-      (isCurrentPageCreated === undefined && currentPageId === selectId)
-    ) {
-      setAttributes({ selectId: currentPageId });
-      defaultOption = [
-        {
-          value: currentPageId,
-          label: __("Current Page", "vk-blocks"),
-        },
-      ];
-      formated = defaultOption.concat(formated);
-    }
-    return formated;
-  }
-};
-
-export const filterParents = (pages) => {
-  return pages.filter((page) => {
-    if (page.parent === 0) {
-      return true;
-    }
-    return false;
-  });
-};
-
-export const filterChildren = (pages) => {
-  return pages.filter((page) => {
-    if (page.parent !== 0) {
-      return true;
-    }
-    return false;
-  });
-};
-
-export const formatPulldonwOrder = (parents) => {
-  let label;
-  return parents.map((page) => {
-    if (page.parent !== 0) {
-      label = " - " + page.title.rendered + "(Child Page)";
-    } else {
-      label = page.title.rendered;
-    }
-    return {
-      value: page.id,
-      label: __(label, "vk-blocks"),
-    };
-  });
-};

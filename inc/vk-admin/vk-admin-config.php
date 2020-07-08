@@ -67,7 +67,7 @@ function vk_blocks_setting() {
                                     $image = $options['default_icons'][$i]['src'];
                                 }
 								?>
-								<div class="_display<?php echo $i; ?>" style="height:auto">
+								<div class="_display" style="height:auto">
 									<?php if ( $image ) : ?>
 										<img src="<?php echo $image; ?>" style="width:200px;height:auto;" />
 									<?php endif; ?>
@@ -77,13 +77,17 @@ function vk_blocks_setting() {
 									<?php _e( 'Set image', 'vk-blocks' ); ?>
 								</button>
 
-								<input type="hidden" class="__id<?php echo $i; ?>" name="vk_blocks_balloon_meta[default_icons][<?php echo $i; ?>][src]" value="<?php echo esc_attr( $image ); ?>" />
+								<input class="__id" name="vk_blocks_balloon_meta[default_icons][<?php echo $i; ?>][src]" value="<?php echo esc_attr( $image ); ?>" />
 
-								<script type="text/javascript">
+
+                            </td>
+                        </tr>
+                    <?php endfor; ?>
+					<script type="text/javascript">
 									if(veu_default_image_additional == undefined){
 										var veu_default_image_additional = function(e){
-											var d=jQuery(e).parent().children("._display<?php echo $i; ?>");
-											var w=jQuery(e).parent().children('.__id<?php echo $i; ?>')[0];
+											var d=jQuery(e).parent().children("._display");
+											var w=jQuery(e).parent().children('.__id')[0];
 											var u=wp.media({library:{type:'image'},multiple:false}).on('select', function(e){
 												u.state().get('selection').each(function(f){
 													// もともと表示されてた img タグを削除
@@ -96,9 +100,6 @@ function vk_blocks_setting() {
 										};
 									}
 								</script>
-                            </td>
-                        </tr>
-                    <?php endfor; ?>
                 </table>
             </section>
         </div>

@@ -27,21 +27,15 @@ function vk_blocks_setting_menu() {
 }
 add_action( 'admin_menu', 'vk_blocks_setting_menu' );
 
-function vk_blocks_setting_init() {
-	register_setting(
-		'vk_blocks_options',
-		'vk_blocks_options'
-	);
-}
-add_action( 'admin_init', 'vk_blocks_setting_init' );
 
 function vk_blocks_setting() {
-    $options = get_option( 'vk_blocks_balloon_meta' );
+	$options = get_option( 'vk_blocks_balloon_meta' );
     $image_number = 15;
     $image_number = apply_filters( 'vk_blocks_image_number', $image_number );
 	?>
 
-	<form method="post" action="options.php">
+	<form method="post" action="<?php echo esc_url( $_SERVER['REQUEST_URI'] ) ;?>">
+	<?php wp_nonce_field( 'vkb-nonce-key', 'vkb-setting-page' ); ?>
         <div>
             <section>
                 <h3><?php _e( 'Balloon Image Setting', 'vk-blocks' ); ?></h3>
@@ -77,7 +71,7 @@ function vk_blocks_setting() {
 									<?php _e( 'Set image', 'vk-blocks' ); ?>
 								</button>
 
-								<input class="__id" name="vk_blocks_balloon_meta[default_icons][<?php echo $i; ?>][src]" value="<?php echo esc_attr( $image ); ?>" />
+								<input type="hidden" class="__id" name="vk_blocks_balloon_meta[default_icons][<?php echo $i; ?>][src]" value="<?php echo esc_attr( $image ); ?>" />
 
 
                             </td>
@@ -101,6 +95,7 @@ function vk_blocks_setting() {
 									}
 								</script>
                 </table>
+				<?php submit_button(); ?>
             </section>
         </div>
     </form>
@@ -121,3 +116,20 @@ function vk_blocks_setting_page() {
 
 	Vk_Admin::admin_page_frame( $get_page_title, 'vk_blocks_setting', $get_logo_html, $get_menu_html );
 }
+
+function vk_blocks_setting_option_save() {
+	if ( isset( $_POST['vk_blocks_balloon_meta'] ) && $_POST['vk_blocks_balloon_meta'] ) {
+
+		if ( check_admin_referer( 'vkb-nonce-key', 'vkb-setting-page' ) ) {
+			// 保存処理
+			if ( isset( $_POST['vk_blocks_balloon_meta'] ) && $_POST['vk_blocks_balloon_meta'] ) {
+				update_option( 'vk_blocks_balloon_meta', $_POST['vk_blocks_balloon_meta'] );
+			} else {
+				update_option( 'vk_blocks_balloon_meta', '' );
+			}
+
+			wp_safe_redirect( menu_page_url( 'vk_blocks_options', false ) );
+		}
+	}
+}
+add_action( 'admin_init', 'vk_blocks_setting_option_save', 10, 2 );

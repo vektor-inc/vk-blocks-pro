@@ -92,8 +92,15 @@ registerBlockType("vk-blocks/animation", {
 	},
 
 	save(props) {
+		let {effect, speed, range, clientId} = props.attributes;
+
+		//For recovering block.
+		effect = effect ? effect : "slide-up"
+		speed = speed ? speed : "fast"
+		range = range ? range : "short"
+
 		return (
-			<div className={ classNames(`vk_animation vk_animation-${props.attributes.effect} vk_animation-speed-${props.attributes.speed} vk_animation-range-${props.attributes.range} vk_animation-${props.attributes.clientId}`) }>
+			<div className={ classNames(`vk_animation vk_animation-${effect} vk_animation-speed-${speed} vk_animation-range-${range} vk_animation-${clientId}`) }>
 				<InnerBlocks.Content />
 			</div>
 		);

@@ -19,7 +19,7 @@ function vk_blocks_setting_menu() {
 		_x( 'VK Blocks', 'label in admin menu', 'vk-blocks' ),                // Label in menu
 		'edit_theme_options',               // Capability required　このメニューページを閲覧・使用するために最低限必要なユーザーレベルまたはユーザーの種類と権限。
 		'vk_blocks_options',               // ユニークなこのサブメニューページの識別子
-		'vk_blocks_setting'         // メニューページのコンテンツを出力する関数
+		'vk_blocks_setting_page'         // メニューページのコンテンツを出力する関数
 	);
 	if ( ! $custom_page ) {
 		return;
@@ -35,14 +35,16 @@ function vk_blocks_setting() {
 	?>
 
 	<form method="post" action="<?php echo esc_url( $_SERVER['REQUEST_URI'] ) ;?>">
-	<?php wp_nonce_field( 'vkb-nonce-key', 'vkb-setting-page' ); ?>
+		<?php wp_nonce_field( 'vkb-nonce-key', 'vkb-setting-page' ); ?>
         <div>
             <section>
-                <h3><?php _e( 'Balloon Image Setting', 'vk-blocks' ); ?></h3>
+                <h3 id="baloon-image-setting"><?php _e( 'Balloon Image Setting', 'vk-blocks' ); ?></h3>
                 <table class="form-table">
                     <?php for( $i = 1; $i <= $image_number; $i++ ) : ?>
                         <tr>
-							<th><?php _e( 'Ballon Image Name', 'vk-post-author-display' ); ?></th>
+							<th>
+								<?php echo __( 'Ballon Image Name ', 'vk-blocks' ) . '[' . $i . ']'; ?>
+							</th>
                             <?php
                             $name = '';
                             if ( ! empty( $options['default_icons'][$i]['name'] ) ) {
@@ -52,7 +54,9 @@ function vk_blocks_setting() {
 							<td><input type="text" name="vk_blocks_balloon_meta[default_icons][<?php echo $i; ?>][name]" id="author_box_title" value="<?php echo esc_attr( $name ); ?>" style="width:50%;" /></td>
 						</tr>
 						<tr>
-                            <th><?php _e( 'Ballon Image', 'vk-blocks' ) . '[' . $i . ']'; ?></th>
+                            <th>
+								<?php echo __( 'Ballon Image ', 'vk-blocks' ) . '[' . $i . ']'; ?>
+							</th>
 								<td>
 								<?php
                                 // 現在保存されている画像idを取得して表示
@@ -108,6 +112,7 @@ function vk_blocks_setting() {
 /*	Setting Page
 /*-------------------------------------------*/
 function vk_blocks_setting_page() {
+    global $vk_blocks_prefix;
 	$get_page_title = $vk_blocks_prefix . __( 'Main Setting', 'vk-post-author-display' );
 
 	$get_logo_html = '';

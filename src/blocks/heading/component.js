@@ -1,117 +1,150 @@
-const { Component } = wp.element;
 import { vkbBlockEditor } from "./../_helper/depModules";
 const { RichText } = vkbBlockEditor;
 const { __ } = wp.i18n; // Import __() from wp.i18n
+import ReactHtmlParser from 'react-html-parser';
+import { Fragment } from "react";
 
-export class VKBHeading extends Component {
-  render() {
-    const {
-      level,
-      align,
-      title,
-      titleColor,
-      titleSize,
-      subText,
-      subTextFlag,
-      subTextColor,
-      subTextSize,
-      titleStyle,
-      titleMarginBottom,
-      outerMarginBottom
-    } = this.props.attributes;
-    const setAttributes = this.props.setAttributes;
-    let for_ = this.props.for_;
+const renderTitle = (level, contents,tStyle, headingStyle ) =>{
+	switch (level) {
+		case 1:
+			return <h1 style={tStyle} className={headingStyle}>{contents}</h1>;
+		case 2:
+			return <h2 style={tStyle} className={headingStyle}>{contents}</h2>;
+		case 3:
+			return <h3 style={tStyle} className={headingStyle}>{contents}</h3>;
+		case 4:
+			return <h4 style={tStyle} className={headingStyle}>{contents}</h4>;
+		case 5:
+			return <h5 style={tStyle} className={headingStyle}>{contents}</h5>;
+		case 6:
+			return <h6 style={tStyle} className={headingStyle}>{contents}</h6>;
+	}
+}
 
-    let containerClass = `vk_heading vk_heading-style-${titleStyle}`;
-    const tagName = "h" + level;
-    let cStyle;
-    let tStyle;
+export const VKBHeading =(props) => {
+	const {attributes,setAttributes,for_} = props
+	let {
+		level,
+		align,
+		title,
+		titleColor,
+		titleSize,
+		subText,
+		subTextFlag,
+		subTextColor,
+		subTextSize,
+		titleStyle,
+		titleMarginBottom,
+		outerMarginBottom,
+		fontAwesomeIconBefore,
+		fontAwesomeIconAfter,
+		fontAwesomeIconColor
+	} = attributes;
+	let containerClass = `vk_heading vk_heading-style-${titleStyle}`;
+	let cStyle;
+	let tStyle;
 
-    //containerのマージンを切り替え
-    if (outerMarginBottom != null) {
-      cStyle = { marginBottom: outerMarginBottom + `rem` };
-    }
+	//containerのマージンを切り替え
+	if (outerMarginBottom != null) {
+		cStyle = { marginBottom: outerMarginBottom + `rem` };
+	}
 
-    //titleのマージンを切り替え
-    if (titleMarginBottom != null) {
-      tStyle = {
-        color: titleColor,
-        fontSize: titleSize + "rem",
-        marginBottom: titleMarginBottom + "rem",
-        textAlign: align
-      };
-    } else {
-      tStyle = {
-        color: titleColor,
-        fontSize: titleSize + "rem",
-        textAlign: align
-      };
-    }
+	//titleのマージンを切り替え
+	if (titleMarginBottom != null) {
+		tStyle = {
+			color: titleColor,
+			fontSize: titleSize + "rem",
+			marginBottom: titleMarginBottom + "rem",
+			textAlign: align
+		};
+	} else {
+		tStyle = {
+			color: titleColor,
+			fontSize: titleSize + "rem",
+			textAlign: align
+		};
+	}
 
-    if (for_ === "edit") {
-      return (
-        <div className={containerClass} style={cStyle}>
-          <RichText
-            tagName={tagName}
-            value={title}
-            onChange={value => setAttributes({ title: value })}
-            style={tStyle}
-            className={`vk_heading_title vk_heading_title-style-${titleStyle}`}
-            placeholder={__("Input title…", "vk-blocks")}
-          />
-          {// サブテキスト
-            (() => {
-              if (subTextFlag === "on") {
-                return (
-                  <RichText
-                    tagName={"p"}
-                    value={subText}
-                    onChange={value => setAttributes({ subText: value })}
-                    style={{
-                      color: subTextColor,
-                      fontSize: subTextSize + "rem",
-                      textAlign: align
-                    }}
-                    className={`vk_heading_subtext vk_heading_subtext-style-${titleStyle}`}
-                    placeholder={__("Input sub text…", "vk-blocks")}
-                  />
-                );
-              }
-            })()}
-        </div>
-      );
-    } else if (for_ === "save") {
-      return (
-        <div className={containerClass} style={cStyle}>
-          <RichText.Content
-            tagName={tagName}
-            value={title}
-            onChange={value => setAttributes({ title: value })}
-            style={tStyle}
-            className={`vk_heading_title vk_heading_title-style-${titleStyle}`}
-            placeholder={__("Input title…", "vk-blocks")}
-          />
-          {// サブテキスト
-            (() => {
-              if (subTextFlag === "on") {
-                return (
-                  <RichText.Content
-                    tagName={"p"}
-                    value={subText}
-                    onChange={value => setAttributes({ subText: value })}
-                    style={{
-                      color: subTextColor,
-                      fontSize: subTextSize + "rem",
-                      textAlign: align
-                    }}
-                    className={`vk_heading_subtext vk_heading_subtext-style-${titleStyle}`}
-                    placeholder={__("Input sub text…", "vk-blocks")}
-                  />
-                );
-              }
-            })()}
-        </div>
-      );
-    }
-  }
+	let headingStyle = `vk_heading_title vk_heading_title-style-${titleStyle}`;
+	let subTextStyle = {
+		color: subTextColor,
+		fontSize: subTextSize + "rem",
+		textAlign: align
+	}
+	let subTextClass = `vk_heading_subtext vk_heading_subtext-style-${titleStyle}`;
+
+	let iconBefore = '';
+	let iconAfter = '';
+	if (fontAwesomeIconBefore) {
+
+		//for recovering block
+		fontAwesomeIconColor = fontAwesomeIconColor ? fontAwesomeIconColor : "#000000"
+
+		//add inline css
+		const faIconFragmentBefore= fontAwesomeIconBefore.split('<i');
+		faIconFragmentBefore[0] = faIconFragmentBefore[0] + `<i style="color:${fontAwesomeIconColor};" `
+		iconBefore = faIconFragmentBefore.join('')
+	}
+	if (fontAwesomeIconAfter) {
+
+		//for recovering block
+		fontAwesomeIconColor = fontAwesomeIconColor ? fontAwesomeIconColor : "#000000"
+
+		//add class and inline css
+		const faIconFragmentAfter = fontAwesomeIconAfter.split('<i');
+		faIconFragmentAfter[0] = faIconFragmentAfter[0] + `<i style="color:${fontAwesomeIconColor};" `
+		iconAfter = faIconFragmentAfter.join('')
+	}
+
+	if (for_ === "edit") {
+
+		let titleContent = <Fragment>
+			{ReactHtmlParser(iconBefore)}
+				<RichText
+					tagName={"span"}
+					value={title}
+					onChange={(value) => {
+						setAttributes({ title: value} )
+					}}
+					placeholder={__("Input title…", "vk-blocks")}
+				/>
+				{ReactHtmlParser(iconAfter)}
+		</Fragment>
+
+		let subtextContent;
+		if (subTextFlag === "on") {
+			subtextContent = <RichText
+			tagName={"p"}
+			value={subText}
+			onChange={value => setAttributes({ subText: value })}
+			style={subTextStyle}
+			className={subTextClass}
+			placeholder={__("Input sub text…", "vk-blocks")}
+		  />
+		}
+
+		return (<div className={containerClass} style={cStyle}>{renderTitle(level, titleContent, tStyle, headingStyle)}{subtextContent}</div>);
+
+	} else if (for_ === "save") {
+
+		let titleContent = <Fragment>
+			{ReactHtmlParser(iconBefore)}
+			<RichText.Content
+				tagName={"span"}
+				value={title}
+			/>
+			{ReactHtmlParser(iconAfter)}
+		</Fragment>
+
+		let subtextContent;
+		if (subTextFlag === "on") {
+			subtextContent = <RichText.Content
+			tagName={"p"}
+			value={subText}
+			style={subTextStyle}
+			className={subTextClass}
+		  />
+		}
+		return (<div className={containerClass} style={cStyle}>{renderTitle(level, titleContent, tStyle, headingStyle)}{subtextContent}</div>);
+	}
 }

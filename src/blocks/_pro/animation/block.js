@@ -2,8 +2,10 @@
  * card-item block type
  *
  */
+
 import classNames from "classnames";
 import { schema } from "./schema";
+import { deprecated } from './deprecated';
 import {vkbBlockEditor} from "../../_helper/depModules"
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -36,7 +38,7 @@ registerBlockType("vk-blocks/animation", {
 
 	edit(props) {
 		const { className, attributes, setAttributes, clientId } = props;
-		const {effect} = attributes;
+		const {effect, speed, range} = attributes;
 		const customClientId = clientId.replace(/-/g, '');
 		setAttributes({clientId:customClientId})
 
@@ -44,6 +46,7 @@ registerBlockType("vk-blocks/animation", {
 			<Fragment>
 				<InspectorControls>
 					<PanelBody title={ __("Animation Settings", "vk-blocks") }>
+						<label>{ __("Animation effect", "vk-blocks") }</label>
 						<SelectControl
 							value={ effect }
 							onChange={ value => setAttributes({ effect: value }) }
@@ -54,9 +57,32 @@ registerBlockType("vk-blocks/animation", {
 								{ label: __("Slide Right", "vk-blocks"), value: "slide-right" },
 							] }
 						/>
+
+						<label>{ __("Animation speed", "vk-blocks") }</label>
+						<SelectControl
+							value={ speed }
+							onChange={ value => setAttributes({ speed: value }) }
+							options={ [
+								{ label: __("Very Slow", "vk-blocks"), value: "very-slow" },
+								{ label: __("Slow", "vk-blocks"), value: "slow" },
+								{ label: __("Normal", "vk-blocks"), value: "normal" },
+								{ label: __("Fast", "vk-blocks"), value: "fast" },
+								{ label: __("Very Fast", "vk-blocks"), value: "very-fast" },
+							] }
+						/>
+						<label>{ __("Animation range", "vk-blocks") }</label>
+						<SelectControl
+							value={ range }
+							onChange={ value => setAttributes({ range: value }) }
+							options={ [
+								{ label: __("Short", "vk-blocks"), value: "short" },
+								{ label: __("Normal", "vk-blocks"), value: "normal" },
+								{ label: __("Long", "vk-blocks"), value: "long" },
+							] }
+						/>
 					</PanelBody>
 				</InspectorControls>
-				<div className={ classNames(className, `vk_animation vk_animation-${effect} vk_animation-${customClientId}`) }>
+				<div className={ classNames(className, `vk_animation vk_animation-${effect} vk_animation-speed-${speed} vk_animation-range-${range} vk_animation-${customClientId}`) }>
 					<InnerBlocks
 						templateInsertUpdatesSelection={ false }
 					/>
@@ -66,10 +92,18 @@ registerBlockType("vk-blocks/animation", {
 	},
 
 	save(props) {
+		let {effect, speed, range, clientId} = props.attributes;
+
+		//For recovering block.
+		effect = effect ? effect : "slide-up"
+		speed = speed ? speed : "fast"
+		range = range ? range : "short"
+
 		return (
-			<div className={ classNames(`vk_animation vk_animation-${props.attributes.effect} vk_animation-${props.attributes.clientId}`) }>
+			<div className={ classNames(`vk_animation vk_animation-${effect} vk_animation-speed-${speed} vk_animation-range-${range} vk_animation-${clientId}`) }>
 				<InnerBlocks.Content />
 			</div>
 		);
 	},
+    deprecated,
 });

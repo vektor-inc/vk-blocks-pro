@@ -2,9 +2,9 @@
  * heading block type
  *
  */
-import { schema, schema1 } from "./schema";
+import { schema, schema1, schema2 } from "./schema";
 import classNames from "classnames";
-import { VKBHeading } from "./component";
+import { VKBHeading,VKBHeading2 } from "./component";
 const { Fragment, Component } = wp.element;
 import { vkbBlockEditor } from "./../../_helper/depModules";
 const { RichText } = vkbBlockEditor;
@@ -54,6 +54,17 @@ function set_attirbuite(number) {
 }
 
 export const Deprecated = [
+	{
+		attributes:schema2,
+		save(props) {
+			const {attributes} = props
+			return (
+				<div id={attributes.anchor}>
+					<VKBHeading2 attributes={attributes} for_={"save"} />
+				</div>
+			);
+		},
+	},
   {
     attributes: schema1,
     save({ attributes, className }) {
@@ -76,6 +87,12 @@ export const Deprecated = [
   },
   {
     attributes: {
+			anchor: {
+				type: 'string',
+				source: 'attribute',
+				attribute: 'id',
+				selector: '*',
+			},
       level: {
         type: "number",
         default: 2
@@ -443,6 +460,12 @@ export const Deprecated = [
   },
   {
     attributes: {
+			anchor: {
+				type: 'string',
+				source: 'attribute',
+				attribute: 'id',
+				selector: '*',
+			},
       level: {
         type: "number",
         default: 2

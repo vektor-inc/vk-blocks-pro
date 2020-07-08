@@ -59,7 +59,7 @@ export const Deprecated = [
 		save(props) {
 			const {attributes} = props
 			return (
-				<div id="vk-htags-fe6db31a-623f-407d-a5de-9e74c2637c5c">
+				<div id={attributes.anchor}>
 					<VKBHeading2 attributes={attributes} for_={"save"} />
 				</div>
 			);

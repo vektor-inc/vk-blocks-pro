@@ -22,8 +22,8 @@ const renderTitle = (level, contents,tStyle, headingStyle ) =>{
 }
 
 export const VKBHeading =(props) => {
-	const {attributes,setAttributes,for_,clientId} = props
-	const {
+	const {attributes,setAttributes,for_} = props
+	let {
 		level,
 		align,
 		title,
@@ -76,12 +76,20 @@ export const VKBHeading =(props) => {
 	let iconBefore = '';
 	let iconAfter = '';
 	if (fontAwesomeIconBefore) {
+
+		//for recovering block
+		fontAwesomeIconColor = fontAwesomeIconColor ? fontAwesomeIconColor : "#000000"
+
 		//add inline css
 		const faIconFragmentBefore= fontAwesomeIconBefore.split('<i');
 		faIconFragmentBefore[0] = faIconFragmentBefore[0] + `<i style="color:${fontAwesomeIconColor};" `
 		iconBefore = faIconFragmentBefore.join('')
 	}
 	if (fontAwesomeIconAfter) {
+
+		//for recovering block
+		fontAwesomeIconColor = fontAwesomeIconColor ? fontAwesomeIconColor : "#000000"
+
 		//add class and inline css
 		const faIconFragmentAfter = fontAwesomeIconAfter.split('<i');
 		faIconFragmentAfter[0] = faIconFragmentAfter[0] + `<i style="color:${fontAwesomeIconColor};" `

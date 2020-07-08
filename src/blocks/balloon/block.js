@@ -4,10 +4,11 @@
  */
 import { deprecated } from './deprecated';
 import { vkbBlockEditor } from "./../_helper/depModules";
+const apiFetch = wp.apiFetch;
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RangeControl, RadioControl, PanelBody, Button, ButtonGroup } = wp.components;
-const { Fragment } = wp.element;
+const {  ButtonGroup, PanelBody, Button } = wp.components;
+const { Fragment, useState, useEffect } = wp.element;
 const { RichText, InspectorControls, MediaUpload, ColorPalette } = vkbBlockEditor;
 const BlockIcon = (
   <svg
@@ -60,10 +61,41 @@ registerBlockType("vk-blocks/balloon", {
       balloonName,
       balloonType,
       balloonBgColor,
-      balloonAlign,
-	  IconImage,
-	  balloonImageType
+			balloonAlign,
+			IconImage,
+			balloonImageType
     } = attributes;
+
+		const [ blockMeta, setBlockMeta ] = useState(null);
+
+		useEffect(() => {
+			apiFetch( {
+				path: '/vk-blocks/v1/block-meta/balloon/',
+				method: 'GET',
+				parse: true,
+			} ).then( ( result ) => {
+				setBlockMeta(result)
+			} )
+		}, [])
+
+		let defautIconButtons;
+		if(blockMeta && blockMeta["default_icons"]){
+			defautIconButtons = Object.keys(blockMeta["default_icons"]).map( (icon,index)=> {
+				const iconUrl = blockMeta["default_icons"][icon];
+				if(iconUrl){
+					return(
+						<div key={index}>
+							<Button
+								onClick={()=>{setAttributes({ IconImage: iconUrl })}}
+								className={"button button-large components-button"}
+							>
+								<img className={"icon-image"} src={iconUrl} />
+							</Button>
+						</div>
+					)
+				}
+			})
+		}
 
     return (
       <Fragment>
@@ -90,7 +122,6 @@ registerBlockType("vk-blocks/balloon", {
 					{  __("Right", "vk-blocks") }
 				</Button>
 			</ButtonGroup>
-
 
 			<p className={ 'mb-1' }><label>{ __( 'Type', 'vk-blocks' ) }</label></p>
 			<p className={ 'mb-1' }>{ __("Please select the type of balloon.", "vk-blocks")} </p>
@@ -146,8 +177,12 @@ registerBlockType("vk-blocks/balloon", {
               onChange={value => setAttributes({ balloonBgColor: value })}
             />
           </PanelBody>
+			<PanelBody title={__("Default Icon Setting", "vk-blocks")}>
+				<div className="icon-image-list">
+						{defautIconButtons}
+						</div>
+          </PanelBody>
         </InspectorControls>
-
         <div
           className={`${className} vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType}`}
         >
@@ -197,7 +232,7 @@ registerBlockType("vk-blocks/balloon", {
     );
   },
 
-  save({ attributes, className }) {
+  save({ attributes }) {
     const {
       content,
       balloonName,

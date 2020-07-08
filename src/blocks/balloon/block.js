@@ -6,7 +6,7 @@ import { deprecated } from './deprecated';
 import { vkbBlockEditor } from "./../_helper/depModules";
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RangeControl, RadioControl, PanelBody, Button, ButtonGroup } = wp.components;
+const { PanelBody, Button, ButtonGroup } = wp.components;
 const { Fragment } = wp.element;
 const { RichText, InspectorControls, MediaUpload, ColorPalette } = vkbBlockEditor;
 const BlockIcon = (
@@ -55,15 +55,15 @@ registerBlockType("vk-blocks/balloon", {
   },
 
   edit({ attributes, className, setAttributes }) {
-    const {
+    let {
       content,
       balloonName,
       balloonType,
       balloonBgColor,
-      balloonAlign,
-	  IconImage,
-	  balloonImageType
-    } = attributes;
+			balloonAlign,
+			IconImage,
+			balloonImageType
+		} = attributes;
 
     return (
       <Fragment>
@@ -197,16 +197,19 @@ registerBlockType("vk-blocks/balloon", {
     );
   },
 
-  save({ attributes, className }) {
-    const {
+  save({ attributes }) {
+    let {
       content,
       balloonName,
       balloonType,
       balloonBgColor,
-      balloonAlign,
-	  IconImage,
-	  balloonImageType
-    } = attributes;
+			balloonAlign,
+			IconImage,
+			balloonImageType
+		} = attributes;
+
+		//For recovering
+		balloonImageType = balloonImageType ? balloonImageType : "normal"
 
     return (
       <div

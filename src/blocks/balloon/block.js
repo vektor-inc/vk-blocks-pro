@@ -80,22 +80,26 @@ registerBlockType("vk-blocks/balloon", {
 
 		let defautIconButtons;
 		if(blockMeta && blockMeta["default_icons"]){
-			defautIconButtons = Object.keys(blockMeta["default_icons"]).map( (icon,index)=> {
-				const iconUrl = blockMeta["default_icons"][icon];
-				if(iconUrl){
+			defautIconButtons = Object.keys(blockMeta["default_icons"]).map( (index)=> {
+				const defaultIcon= blockMeta["default_icons"][index];
+				if(defaultIcon.src){
 					return(
 						<div key={index}>
 							<Button
-								onClick={()=>{setAttributes({ IconImage: iconUrl })}}
+								onClick={()=>{
+									setAttributes({ IconImage: defaultIcon.src })
+									setAttributes({ balloonName: defaultIcon.name })
+								}}
 								className={"button button-large components-button"}
 							>
-								<img className={"icon-image"} src={iconUrl} />
+								<img className={"icon-image"} src={defaultIcon.src} />
 							</Button>
 						</div>
 					)
 				}
 			})
 		}
+
 
     return (
       <Fragment>
@@ -177,10 +181,11 @@ registerBlockType("vk-blocks/balloon", {
               onChange={value => setAttributes({ balloonBgColor: value })}
             />
           </PanelBody>
-			<PanelBody title={__("Default Icon Setting", "vk-blocks")}>
-				<div className="icon-image-list">
+				<PanelBody title={__("Default Icon Setting", "vk-blocks")}>
+					<div className="icon-image-list">
 						{defautIconButtons}
-						</div>
+					</div>
+					<div>{__( 'You can register default icons from Settings > VK Blocks in Admin.', 'vk-blocks' ) }</div>
           </PanelBody>
         </InspectorControls>
         <div

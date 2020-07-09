@@ -183,12 +183,14 @@
   100% {transform: translate(0px, 0px) rotateZ(0deg)}
 }
 
+.icon-image-list-note:hover{
+	cursor: pointer;
+}
+
 /*********************
 * SmartPhone
 0px - 480px
 ***********************/
-
-
 @media only screen and (max-width: 480px) {
 	.vk_balloon_content{
 		font-size: .9em;

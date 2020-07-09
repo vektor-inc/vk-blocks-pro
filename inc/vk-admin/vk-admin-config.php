@@ -86,8 +86,6 @@ function vk_blocks_setting() {
 										var veu_default_image_additional = function(e){
 											var d=jQuery(e).parent().children("._display");
 											var w=jQuery(e).parent().children('.__id')[0];
-											console.log(wp)
-											console.log(wp.media)
 											var u=wp.media({library:{type:'image'},multiple:false}).on('select', function(e){
 												u.state().get('selection').each(function(f){
 													// もともと表示されてた img タグを削除

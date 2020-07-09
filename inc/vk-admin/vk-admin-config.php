@@ -41,18 +41,6 @@ function vk_blocks_setting() {
                 <h3 id="baloon-image-setting"><?php _e( 'Balloon Image Setting', 'vk-blocks' ); ?></h3>
                 <table class="form-table">
                     <?php for( $i = 1; $i <= $image_number; $i++ ) : ?>
-                        <tr>
-							<th>
-								<?php echo __( 'Ballon Image Name ', 'vk-blocks' ) . '[' . $i . ']'; ?>
-							</th>
-                            <?php
-                            $name = '';
-                            if ( ! empty( $options['default_icons'][$i]['name'] ) ) {
-                                $name = $options['default_icons'][$i]['name'];
-                            }
-                            ?>
-							<td><input type="text" name="vk_blocks_balloon_meta[default_icons][<?php echo $i; ?>][name]" id="author_box_title" value="<?php echo esc_attr( $name ); ?>" style="width:50%;" /></td>
-						</tr>
 						<tr>
                             <th>
 								<?php echo __( 'Ballon Image ', 'vk-blocks' ) . '[' . $i . ']'; ?>
@@ -80,6 +68,18 @@ function vk_blocks_setting() {
 
                             </td>
                         </tr>
+                        <tr>
+							<th>
+								<?php echo __( 'Ballon Image Name ', 'vk-blocks' ) . '[' . $i . ']'; ?>
+							</th>
+                            <?php
+                            $name = '';
+                            if ( ! empty( $options['default_icons'][$i]['name'] ) ) {
+                                $name = $options['default_icons'][$i]['name'];
+                            }
+                            ?>
+							<td><input type="text" name="vk_blocks_balloon_meta[default_icons][<?php echo $i; ?>][name]" id="author_box_title" value="<?php echo esc_attr( $name ); ?>" style="width:50%;" /></td>
+						</tr>
                     <?php endfor; ?>
 					<script type="text/javascript">
 									if(veu_default_image_additional == undefined){

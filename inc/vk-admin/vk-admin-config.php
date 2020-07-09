@@ -38,14 +38,15 @@ function vk_blocks_setting() {
 		<?php wp_nonce_field( 'vkb-nonce-key', 'vkb-setting-page' ); ?>
         <div>
             <section>
-                <h3 id="baloon-image-setting"><?php _e( 'Balloon Image Setting', 'vk-blocks' ); ?></h3>
-                <table class="form-table">
+				<h3 id="baloon-image-setting"><?php _e( 'Balloon Image Setting', 'vk-blocks' ); ?></h3>
+	              <table class="form-table">
+					<tr>
+						<th style="width: 50%; text-align: center;"><?php echo __( 'Ballon Image ', 'vk-blocks' ) ?></th>
+						<th style="width: 50%; text-align: center;"><?php echo __( 'Ballon Image Name ', 'vk-blocks' ); ?></th>
+					</tr>
                     <?php for( $i = 1; $i <= $image_number; $i++ ) : ?>
 						<tr>
-                            <th>
-								<?php echo __( 'Ballon Image ', 'vk-blocks' ) . '[' . $i . ']'; ?>
-							</th>
-								<td>
+								<td style="width: 50%;">
 								<?php
                                 // 現在保存されている画像idを取得して表示
                                 $image = '';
@@ -53,13 +54,13 @@ function vk_blocks_setting() {
                                     $image = $options['default_icons'][$i]['src'];
                                 }
 								?>
-								<div class="_display" style="height:auto">
+								<div class="_display" style="padding:0;margin:0 auto;text-align:center;width:100px;">
 									<?php if ( $image ) : ?>
-										<img src="<?php echo $image; ?>" style="width:200px;height:auto;" />
+										<img src="<?php echo $image; ?>" style="max-width:100%;padding:0;margin:0 auto;width:100%;border-radius:50%;" />
 									<?php endif; ?>
 								</div>
 
-								<button class="button button-default button-block" style="display:block;width:200px;text-align: center; margin:4px 0;" type="button" onclick="veu_default_image_additional(this);">
+								<button class="button button-default button-block" style="display:block;width:200px;text-align: center; margin:4px auto;text-align: center;" type="button" onclick="veu_default_image_additional(this);">
 									<?php _e( 'Set image', 'vk-blocks' ); ?>
 								</button>
 
@@ -67,18 +68,14 @@ function vk_blocks_setting() {
 
 
                             </td>
-                        </tr>
-                        <tr>
-							<th>
-								<?php echo __( 'Ballon Image Name ', 'vk-blocks' ) . '[' . $i . ']'; ?>
-							</th>
+
                             <?php
                             $name = '';
                             if ( ! empty( $options['default_icons'][$i]['name'] ) ) {
                                 $name = $options['default_icons'][$i]['name'];
                             }
                             ?>
-							<td><input type="text" name="vk_blocks_balloon_meta[default_icons][<?php echo $i; ?>][name]" id="author_box_title" value="<?php echo esc_attr( $name ); ?>" style="width:50%;" /></td>
+							<td style="width: 50%;"><input type="text" name="vk_blocks_balloon_meta[default_icons][<?php echo $i; ?>][name]" id="author_box_title" value="<?php echo esc_attr( $name ); ?>" style="width:100%;margin:0 auto;text-align:center;" /></td>
 						</tr>
                     <?php endfor; ?>
 					<script type="text/javascript">

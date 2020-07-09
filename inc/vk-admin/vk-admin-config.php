@@ -54,10 +54,12 @@ function vk_blocks_setting() {
                                     $image = $options['default_icons'][$i]['src'];
                                 }
 								?>
-								<div class="_display" style="padding:0;margin:0 auto;text-align:center;width:100px;">
+								<div class="_display" style="width:100px;margin:0 auto;">
+									<div style="width:100px;height:100px;object-fit:cover;">
 									<?php if ( $image ) : ?>
-										<img src="<?php echo $image; ?>" style="max-width:100%;padding:0;margin:0 auto;width:100%;border-radius:50%;" />
+										<img src="<?php echo $image; ?>" style="width:100px;height:100px;object-fit:cover;border-radius:50%;" />
 									<?php endif; ?>
+									</div>
 								</div>
 
 								<button class="button button-default button-block" style="display:block;width:200px;text-align: center; margin:4px auto;text-align: center;" type="button" onclick="veu_default_image_additional(this);">
@@ -88,7 +90,7 @@ function vk_blocks_setting() {
 													// もともと表示されてた img タグを削除
 													d.children().remove();
 													// 新しく画像タグを挿入
-													d.append(jQuery('<img style="width:200px;mheight:auto">').attr('src',f.toJSON().url));
+													d.append(jQuery('<img style="width:100px;height:100px;object-fit:cover;border-radius:50%;">').attr('src',f.toJSON().url));
 													jQuery(w).val(f.toJSON().url).change(); });
 											});
 											u.open();

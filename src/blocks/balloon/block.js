@@ -182,7 +182,7 @@ registerBlockType("vk-blocks/balloon", {
             />
           </PanelBody>
 				<PanelBody title={__("Default Icon Setting", "vk-blocks")}>
-					<div className="icon-image-list">
+					<div className="icon-image-list mb-2">
 						{defautIconButtons}
 					</div>
 					<div>{__( 'You can register default icons from Settings > VK Blocks in Admin.', 'vk-blocks' ) }</div>

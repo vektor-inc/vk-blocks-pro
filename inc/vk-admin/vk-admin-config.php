@@ -7,7 +7,7 @@ if ( ! class_exists( 'Vk_Admin' ) ) {
 	require_once dirname( __FILE__ ) . '/package/class-vk-admin.php';
 }
 
-$admin_pages = array( 'settings_page_vk_blocks_plugin_options' );
+$admin_pages = array( 'settings_page_vk_blocks_options' );
 Vk_Admin::admin_scripts( $admin_pages );
 
 global $vk_blocks_prefix;
@@ -71,7 +71,7 @@ function vk_blocks_setting() {
 									<?php endif; ?>
 								</div>
 
-								<button class="button button-default button-block" style="display:block;width:200px;text-align: center; margin:4px 0;" onclick="javascript:veu_default_image_additional(this);return false;">
+								<button class="button button-default button-block" style="display:block;width:200px;text-align: center; margin:4px 0;" type="button" onclick="veu_default_image_additional(this);">
 									<?php _e( 'Set image', 'vk-blocks' ); ?>
 								</button>
 
@@ -86,6 +86,8 @@ function vk_blocks_setting() {
 										var veu_default_image_additional = function(e){
 											var d=jQuery(e).parent().children("._display");
 											var w=jQuery(e).parent().children('.__id')[0];
+											console.log(wp)
+											console.log(wp.media)
 											var u=wp.media({library:{type:'image'},multiple:false}).on('select', function(e){
 												u.state().get('selection').each(function(f){
 													// もともと表示されてた img タグを削除

@@ -17,3 +17,19 @@ let mergeSchema = () => {
 };
 
 export const schema = mergeSchema();
+
+export const example  = {
+    attributes: {
+        heading: __("Title", "vk-blocks"),
+		color: "red",
+		faIcon: '<i class="fas fa-user"></i>',
+		innerBlocks: {
+			name: 'core/paragraph',
+			attributes: {
+				content: __(
+					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et eros eu felis.'
+				),
+			},
+		},
+    },
+}

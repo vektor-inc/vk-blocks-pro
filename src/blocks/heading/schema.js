@@ -68,3 +68,25 @@ export const schema = {
 		default: "#000000"
 	},
 };
+
+export const example = {
+	anchor: '',
+	level: 2,
+	align: "left",
+	titleStyle: "default",
+	outerMarginBottom: "",
+	title:  "",
+	titleColor: "#000000",
+	titleSize: 2,
+	titleMarginBottom: 1,
+	subText: "",
+	subTextFlag: {
+		type: "string",
+		default: "on"
+	},
+	subTextColor: "#000000",
+	subTextSize: 1.2,
+	fontAwesomeIconBefore: '',
+	fontAwesomeIconAfter: '',
+	fontAwesomeIconColor: "#000000",
+};

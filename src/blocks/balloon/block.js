@@ -47,12 +47,23 @@ registerBlockType("vk-blocks/balloon", {
     IconImage: {
       type: "string",
       default: null // no image by default!
-	},
-	balloonImageType: {
-		type: "string",
-		default: "normal" // no image by default!
+		},
+		balloonImageType: {
+			type: "string",
+			default: "normal" // no image by default!
 	  },
-  },
+	},
+	example: {
+		attributes: {
+			content:  __("Lorem ipsum dolor sit amet", "vk-blocks"),
+			balloonName:  __("Name", "vk-blocks"),
+			balloonType: "type-serif",
+			balloonBgColor: "#8ed1fc",
+			balloonAlign: "position-left",
+			IconImage: "https://demo.dev3.biz/lightning-pro/wp-content/uploads/2018/02/agent-18762_1920-200x300.jpg",
+			balloonImageType: "normal"
+		},
+	},
 
   edit({ attributes, className, setAttributes }) {
     let {

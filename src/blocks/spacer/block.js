@@ -3,7 +3,7 @@
  *
  */
 import React from "react";
-import { schema } from './schema';
+import { schema,example } from './schema';
 import { SpacerComponent } from "./component";
 import { deprecated } from "./deprecated/deprecated";
 import formatNum from "../_helper/formatNum";
@@ -47,6 +47,7 @@ registerBlockType('vk-blocks/spacer', {
 		className: false,
 		anchor: true,
 	},
+	example:example,
 
     /**
      * The edit function describes the structure of your block in the context of the editor.

@@ -61,3 +61,21 @@ export const schema = {
 		default: '<i class="fas fa-user"></i>'
 	}
 };
+
+export const example = {
+	title: "",
+	titleColor: "",
+	content: "",
+	contentColor: "",
+	url: "",
+	buttonType: "0",
+	buttonColor: "primary",
+	buttonColorCustom: "",
+	buttonText: "",
+	buttonTarget: false,
+	Image: "{}",
+	ImageBorderColor:"",
+	layout: "left",
+	fontAwesomeIconBefore: '<i class="fas fa-user"></i>',
+	fontAwesomeIconAfter: '<i class="fas fa-user"></i>'
+};

@@ -36,6 +36,16 @@ registerBlockType('vk-blocks/flow', {
 			default: null, // no image by default!
 		}
 	},
+	example:{
+		attributes: {
+			heading: __("Title", "vk-blocks"),
+			content: __(
+				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et eros eu felis.'
+			),
+			arrowFlag:  'vk_flow-arrow-on',
+			insertImage: null
+		},
+	},
 
 	edit({ attributes, setAttributes, className, clientId }) {
 		const {

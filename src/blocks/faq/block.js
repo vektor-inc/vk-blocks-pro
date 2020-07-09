@@ -89,6 +89,14 @@ registerBlockType("vk-blocks/faq", {
 			label: __( 'Border Rounded', 'vk-blocks' ),
 		},
 	],
+	example:{
+		attributes: {
+			heading: __("Title", "vk-blocks"),
+			content: __(
+				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et eros eu felis.'
+			),
+		  },
+	},
 
   edit({ attributes, setAttributes, className }) {
 	let { heading, content } = attributes;

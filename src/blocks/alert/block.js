@@ -31,6 +31,12 @@ registerBlockType('vk-blocks/alert', {
 			selector: 'p',
 		}
 	},
+	example: {
+		attributes: {
+			style: 'info',
+			content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+		},
+	},
 
 	edit({ attributes, setAttributes, className }) {
 		const {

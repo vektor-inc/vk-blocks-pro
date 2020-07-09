@@ -93,6 +93,21 @@ registerBlockType('vk-blocks/button', {
 			default:  '',
 		}
 	},
+	example: {
+		attributes: {
+			content:  __("Title", "vk-blocks"),
+			subCaption:  __("Title", "vk-blocks"),
+			buttonUrl: "https://example.com",
+			buttonTarget:false,
+			buttonSize: 'md',
+			buttonType: '0',
+			buttonColor: 'primary',
+			buttonColorCustom: 'undefined',
+			buttonAlign: 'left',
+			fontAwesomeIconBefore:'',
+			fontAwesomeIconAfter: ''
+		}
+	},
 
 	edit(props) {
 		const { attributes, className, setAttributes, isSelected } = props

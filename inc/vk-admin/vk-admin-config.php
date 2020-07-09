@@ -62,7 +62,7 @@ function vk_blocks_setting() {
 									</div>
 								</div>
 
-								<button class="button button-default button-block" style="display:block;width:200px;text-align: center; margin:4px auto;text-align: center;" type="button" onclick="veu_default_image_additional(this);">
+								<button class="button button-default button-block" style="display:block;width:100%;text-align: center; margin:4px auto;text-align: center;" type="button" onclick="veu_default_image_additional(this);">
 									<?php _e( 'Set image', 'vk-blocks' ); ?>
 								</button>
 

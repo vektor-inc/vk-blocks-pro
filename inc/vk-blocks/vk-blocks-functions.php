@@ -9,6 +9,15 @@ function vkblocks_active() {
 	return true;
 }
 
+add_action(
+	'plugins_loaded',
+	function () {
+		// Load language files.
+		$path = dirname( plugin_basename( __FILE__ ) ) . '/build/languages';
+		load_plugin_textdomain( 'vk-blocks', false, $path );
+	}
+);
+
 /*
  Load css
 ---------------------------------------------------------- */

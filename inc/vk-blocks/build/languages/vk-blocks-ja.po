@@ -12,7 +12,7 @@ msgstr ""
 "X-Generator: Poedit 2.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-KeywordsList: __\n"
+"X-Poedit-KeywordsList: __;_ex;_e;_x;_n\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: src/blocks/_helper/font-awesome-new.js:12 src/blocks/border-box/block.js:114
@@ -723,7 +723,7 @@ msgstr "デフォルトアイコン設定"
 #: src/blocks/balloon/block.js:187
 msgid "You can register default icons from Settings > VK Blocks in Admin."
 msgstr ""
-"管理画面の 設定 > VK Blocks から よくつかうアイコンを登録する事ができます"
+"管理画面の 設定 > VK Blocks から よく使うアイコンを登録する事ができます。"
 
 #: src/blocks/balloon/block.js:212 src/blocks/flow/block.js:97
 #: src/blocks/pr-blocks/block.js:145 src/blocks/pr-content/component.js:164
@@ -743,7 +743,7 @@ msgstr "文字を入力"
 
 #: src/blocks/balloon/block.js:25
 msgid "Ballon"
-msgstr "フキダシ"
+msgstr "吹き出し"
 
 #: src/blocks/border-box/Body.js:21 src/blocks/border-box/deprecated.js:20
 msgid "Please enter a title."
@@ -1501,12 +1501,20 @@ msgid "If you change image or name that please click Save Changes button."
 msgstr "画像を変更したら「変更を保存」ボタンをクリックしてください。"
 
 #: src/translation_dummy.js:6
+msgid "Balloon Image Setting"
+msgstr "吹き出し画像設定"
+
+#: src/translation_dummy.js:7
 msgid "Select"
 msgstr "選択"
 
-#: src/translation_dummy.js:7
+#: src/translation_dummy.js:8
 msgid "Delete"
 msgstr "削除"
+
+#: src/translation_dummy.js:9
+msgid "Balloon Image Name"
+msgstr "吹き出し画像の名前"
 
 #~ msgid "Current Page"
 #~ msgstr "現在のページ"

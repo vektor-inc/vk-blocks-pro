@@ -85,14 +85,6 @@ if ( is_admin() && ! is_network_admin() ) {
 
 require_once 'inc/vk-blocks-config.php';
 
-add_action(
-	'plugins_loaded',
-	function () {
-		// Load language files.
-		load_plugin_textdomain( 'vk-blocks', false, 'vk-blocks/inc/vk-blocks/build/languages' );
-	}
-);
-
 /*
   Load updater
 /*-------------------------------------------*/

@@ -1,3 +1,4 @@
+const { __ } = wp.i18n;
 import { faSchema } from "./font-awesome-new";
 
 export const originalSchema = {
@@ -26,9 +27,7 @@ export const example  = {
 		innerBlocks: {
 			name: 'core/paragraph',
 			attributes: {
-				content: __(
-					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et eros eu felis.'
-				),
+				content: __("Lorem ipsum dolor sit amet", "vk-blocks"),
 			},
 		},
     },

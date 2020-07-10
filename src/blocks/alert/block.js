@@ -4,6 +4,7 @@
  */
 import { deprecated } from './deprecated';
 import { vkbBlockEditor } from "./../_helper/depModules";
+import { content } from "./../_helper/example-data"
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -34,7 +35,7 @@ registerBlockType('vk-blocks/alert', {
 	example: {
 		attributes: {
 			style: 'info',
-			content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+			content:content
 		},
 	},
 

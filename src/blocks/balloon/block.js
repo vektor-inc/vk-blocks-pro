@@ -4,6 +4,7 @@
  */
 import { deprecated } from './deprecated';
 import { vkbBlockEditor } from "./../_helper/depModules";
+import { iconPicture, content, iconName, baseColor } from "../_helper/example-data"
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { PanelBody, Button, ButtonGroup } = wp.components;
@@ -55,12 +56,12 @@ registerBlockType("vk-blocks/balloon", {
 	},
 	example: {
 		attributes: {
-			content:  __("Lorem ipsum dolor sit amet", "vk-blocks"),
-			balloonName:  __("Name", "vk-blocks"),
+			content: content,
+			balloonName: iconName,
 			balloonType: "type-serif",
-			balloonBgColor: "#8ed1fc",
+			balloonBgColor: baseColor,
 			balloonAlign: "position-left",
-			IconImage: "https://demo.dev3.biz/lightning-pro/wp-content/uploads/2018/02/agent-18762_1920-200x300.jpg",
+			IconImage: iconPicture,
 			balloonImageType: "normal"
 		},
 	},

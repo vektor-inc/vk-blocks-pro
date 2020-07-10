@@ -4,10 +4,11 @@
  */
 import { deprecated } from './deprecated';
 import { vkbBlockEditor } from "./../_helper/depModules";
+const apiFetch = wp.apiFetch;
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { PanelBody, Button, ButtonGroup } = wp.components;
-const { Fragment } = wp.element;
+const {  ButtonGroup, PanelBody, Button } = wp.components;
+const { Fragment, useState, useEffect } = wp.element;
 const { RichText, InspectorControls, MediaUpload, ColorPalette } = vkbBlockEditor;
 const BlockIcon = (
   <svg
@@ -63,7 +64,41 @@ registerBlockType("vk-blocks/balloon", {
 			balloonAlign,
 			IconImage,
 			balloonImageType
-		} = attributes;
+    	} = attributes;
+		const [ blockMeta, setBlockMeta ] = useState(null);
+
+		useEffect(() => {
+			apiFetch( {
+				path: '/vk-blocks/v1/block-meta/balloon/',
+				method: 'GET',
+				parse: true,
+			} ).then( ( result ) => {
+				setBlockMeta(result)
+			} )
+		}, [])
+
+		let defautIconButtons;
+		if(blockMeta && blockMeta["default_icons"]){
+			defautIconButtons = Object.keys(blockMeta["default_icons"]).map( (index)=> {
+				const defaultIcon= blockMeta["default_icons"][index];
+				if(defaultIcon.src){
+					return(
+						<div key={index}>
+							<Button
+								onClick={()=>{
+									setAttributes({ IconImage: defaultIcon.src })
+									setAttributes({ balloonName: defaultIcon.name })
+								}}
+								className={"button button-large components-button"}
+							>
+								<img className={"icon-image"} src={defaultIcon.src} />
+							</Button>
+						</div>
+					)
+				}
+			})
+		}
+
 
     return (
       <Fragment>
@@ -90,7 +125,6 @@ registerBlockType("vk-blocks/balloon", {
 					{  __("Right", "vk-blocks") }
 				</Button>
 			</ButtonGroup>
-
 
 			<p className={ 'mb-1' }><label>{ __( 'Type', 'vk-blocks' ) }</label></p>
 			<p className={ 'mb-1' }>{ __("Please select the type of balloon.", "vk-blocks")} </p>
@@ -146,8 +180,13 @@ registerBlockType("vk-blocks/balloon", {
               onChange={value => setAttributes({ balloonBgColor: value })}
             />
           </PanelBody>
+				<PanelBody title={__("Default Icon Setting", "vk-blocks")}>
+					<div className="icon-image-list mb-2">
+						{defautIconButtons}
+					</div>
+					<div>{__( 'You can register default icons from Settings > VK Blocks in Admin.', 'vk-blocks' ) }</div>
+          </PanelBody>
         </InspectorControls>
-
         <div
           className={`${className} vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType}`}
         >

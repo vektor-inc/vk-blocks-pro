@@ -1,0 +1,26 @@
+.icon-image-list {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.icon-image-list div {
+	width: calc((100% - (10px * 4)) / 5);
+	margin: 5px;
+}
+
+.icon-image-list div:nth-child(5n + 1) {
+	margin-left: 0;
+}
+
+.icon-image-list div:nth-child(5n) {
+	margin-right: 0;
+}
+
+.wp-core-ui .icon-image-list .button.button-large {
+	padding: 0;
+	margin: 0;
+	width: 40px;
+	height: 40px;
+	object-fit: cover;
+	border-radius: 50%;
+}

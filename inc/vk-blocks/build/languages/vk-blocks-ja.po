@@ -1492,6 +1492,22 @@ msgstr ""
 msgid "Deactivated VK-Blocks Plugin. Because VK-Blocks Pro running."
 msgstr "Pro版VK-Blocksが起動しているため、VK-Blocksを停止しました。"
 
+#: src/translation_dummy.js:4
+msgid "You can register frequently used icon images for speech bubble blocks."
+msgstr "よく使う吹き出し用のアイコン画像を登録する事ができます。"
+
+#: src/translation_dummy.js:5
+msgid "If you change image or name that please click Save Changes button."
+msgstr "画像を変更したら「変更を保存」ボタンをクリックしてください。"
+
+#: src/translation_dummy.js:6
+msgid "Select"
+msgstr "選択"
+
+#: src/translation_dummy.js:7
+msgid "Delete"
+msgstr "削除"
+
 #~ msgid "Current Page"
 #~ msgstr "現在のページ"
 

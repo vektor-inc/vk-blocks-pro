@@ -104,7 +104,7 @@ if ( ! function_exists('vk_blocks_setting') ) {
 									<?php _ex( 'Reset', 'Image Reset', 'vk-blocks' ); ?>
 								</button>
 
-								<input type="text" class="__id" name="vk_blocks_balloon_meta[default_icons][<?php echo $i; ?>][src]" value="<?php echo esc_attr( $image ); ?>" />
+								<input type="hidden" class="__id" name="vk_blocks_balloon_meta[default_icons][<?php echo $i; ?>][src]" value="<?php echo esc_attr( $image ); ?>" />
 
 								<label for="icon_title['<?php echo $i ;?>]" class="balloonIconList_nameLabel"><?php echo __( 'Balloon Image Name ', 'vk-blocks' ); ?></label>
 								<?php

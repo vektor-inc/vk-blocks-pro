@@ -37,7 +37,7 @@ function vk_blocks_setting_page() {
     global $vk_blocks_prefix;
 	$get_page_title = $vk_blocks_prefix . ' ' . __( 'Blocks Setting', 'vk-post-author-display' );
 
-	$get_logo_html = '<img src="'.plugin_dir_url( __FILE__ ).'/images/vk-blocks-logo.png'.'" alt="VK Blocks" />';
+	$get_logo_html = '<img src="'.plugin_dir_url( __FILE__ ).'/images/vk-blocks-logo_ol.svg'.'" alt="VK Blocks" />';
 	$get_logo_html = apply_filters( 'vk_blocks_logo_html', $get_logo_html );
 
 	$get_menu_html  = '<li><a href="#baloon-image-setting">' . __( 'Baloon Image Setting', 'vk-blocks' ) . '</a></li>';

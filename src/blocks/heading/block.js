@@ -171,8 +171,8 @@ registerBlockType("vk-blocks/heading", {
 								setAttributes({ align: value });
 							}}
 						/>
-						<label>{__("Text size (rem)", "vk-blocks")}</label>
 						<RangeControl
+							label={__("Text size (rem)", "vk-blocks")}
 							value={titleSize}
 							onChange={value => {
 								setAttributes({ titleSize: formatNum(value, titleSize) });

@@ -19,9 +19,7 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 		$vk_blocks_prefix .= ' ';
 	}
 
-	global $vk_admin_config_path;
-	$vk_admin_config_path = plugin_dir_path( __DIR__ ) . 'inc/vk-admin/vk-admin-config.php';
-
+	require_once plugin_dir_path( __DIR__ ) . 'inc/vk-admin/vk-admin-config.php';
 	require_once 'vk-blocks/helpers.php';
 	require_once 'vk-components/vk-components-config.php';
 	require_once 'vk-blocks/load-vk-components.php';

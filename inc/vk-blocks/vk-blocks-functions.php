@@ -4,8 +4,8 @@
 require_once dirname( __FILE__ ) . '/view/post-list.php';
 // require_once dirname( __FILE__ ) . '/customize/vk-blocks-customize-config.php';
 
-global $vk_admin_config_path;
-require_once $vk_admin_config_path;
+// VK Blocks の管理画面
+require_once dirname( __FILE__ ) . '/admin/admin.php';
 
 function vkblocks_active() {
 	return true;

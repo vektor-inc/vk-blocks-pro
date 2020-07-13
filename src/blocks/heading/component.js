@@ -45,12 +45,12 @@ export const VKBHeading =(props) => {
 	let tStyle;
 
 	//containerのマージンを切り替え
-	if (outerMarginBottom != null) {
+	if (outerMarginBottom) {
 		cStyle = { marginBottom: outerMarginBottom + `rem` };
 	}
 
 	//titleのマージンを切り替え
-	if (titleMarginBottom != null) {
+	if (titleMarginBottom) {
 		tStyle = {
 			color: titleColor,
 			fontSize: titleSize + "rem",

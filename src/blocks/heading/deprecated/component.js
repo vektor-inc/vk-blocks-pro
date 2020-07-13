@@ -254,9 +254,9 @@ export class VKBHeadingV0_24_1 extends React.Component {
     let tStyle;
 
     //containerのマージンを切り替え
-    if (outerMarginBottom != null) {
+    if (outerMarginBottom !== null) {
       cStyle = { marginBottom: outerMarginBottom + `rem` };
-    }
+		}
 
     //titleのマージンを切り替え
     if (titleMarginBottom != null) {

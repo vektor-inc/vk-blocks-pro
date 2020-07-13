@@ -1,19 +1,14 @@
 <?php
 
 class EntryPoint {
-
-	const NAMESPACE = 'vk-blocks/v1';
-	const ROUTE = '/block-meta';
-	const BLOCK_NAME = '/(?P<name>.+)';
-
 	public function __construct() {
 		add_action( 'rest_api_init', [ $this, '_rest_api_init' ] );
 	}
 
 	public function _rest_api_init() {
 		register_rest_route(
-			self::NAMESPACE,
-			self::ROUTE . self::BLOCK_NAME,
+			'vk-blocks/v1',
+			'/block-meta/(?P<name>.+)',
 			[
 				'methods'  => 'GET',
 				'callback' => [ $this, '_callback' ],
@@ -28,7 +23,6 @@ class EntryPoint {
 
 		$block_name = esc_html($request["name"]);
 		$block_meta = get_option("vk_blocks_" . $block_name . "_meta");
-
 		return rest_ensure_response($block_meta);
 	}
 }

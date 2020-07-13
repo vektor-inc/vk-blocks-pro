@@ -74,7 +74,7 @@ if ( ! function_exists('vk_blocks_setting') ) {
 						<?php _e( 'You can register frequently used icon images for speech bubble blocks.', 'vk-blocks' );?>
 						<?php _e( 'If you change image or name that please click Save Changes button.', 'vk-blocks' );?>
 						</p>
-						<?php $image_default = plugin_dir_url( __FILE__ ).'/no-image.png'; ?>
+						<?php $image_default = VK_BLOCKS_URL.'/admin/images/no-image.png'; ?>
 						<ul class="balloonIconList">
 						<?php for( $i = 1; $i <= $image_number; $i++ ) : ?>
 							<li>

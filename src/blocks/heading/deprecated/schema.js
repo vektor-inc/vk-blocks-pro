@@ -1,3 +1,6 @@
+export const schemav0_24_1 ={
+
+}
 export const schema = {
 	anchor: {
 		type: 'string',

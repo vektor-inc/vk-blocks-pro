@@ -7,8 +7,7 @@ import { deprecated } from "./deprecated/block";
 import { ComponentBlock } from "./component-block";
 import { isNotJSON } from "../_helper/is-not-json";
 import { FontAwesome } from "../_helper/font-awesome-new"
-import { example } from "../heading/schema";
-
+import { iconName, iconUser, title, baseColor, url } from "./../_helper/example-data"
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
@@ -84,17 +83,16 @@ function setExample(number) {
 	const attributes = {};
 
 	for (let i = 1; i <= number; i++) {
-		attributes['heading' + i] = ""
-		attributes['content' + i] = ""
-		attributes['url' + i] = ""
+		attributes['heading' + i] = iconName
+		attributes['content' + i] = title
+		attributes['url' + i] = url
 		attributes['urlOpenType' + i] = false
-		attributes['icon' + i] = '<i class="fas fa-file"></i>'
-		attributes['color' + i] = '#0693e3'
+		attributes['icon' + i] = iconUser
+		attributes['color' + i] = baseColor
 		attributes['bgType' + i] = '0'
 		attributes['insertImage' + i] = ""
 	}
-
-	return attributes;
+	return { attributes: attributes };
 }
 
 

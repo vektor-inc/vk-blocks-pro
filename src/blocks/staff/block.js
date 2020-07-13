@@ -42,7 +42,7 @@ registerBlockType('vk-blocks/staff', {
     icon: BlockIcon,
     category: 'vk-blocks-cat',
 	attributes: schema,
-	example:example,
+	example: example,
 
     edit({ attributes, setAttributes, className }) {
         const {

@@ -1,3 +1,4 @@
+import { iconName, iconPicture, title, baseColor } from "./../_helper/example-data"
 const { __ } = wp.i18n;
 export const schema = {
     vk_staff_text_name: {
@@ -64,17 +65,20 @@ export const schema = {
 };
 
 export const example = {
-    vk_staff_text_name: "",
-    vk_staff_text_caption: "",
-    vk_staff_text_role: "",
-    vk_staff_text_profileTitle: "",
-    vk_staff_text_profileText: "",
-    vk_staff_photo_image: 'Profile Picture',
-    vk_staff_layout:  'default',
-    vk_staff_nameColor: 'inherit',
-    vk_staff_captionColor: 'inherit',
-    vk_staff_positionColor:'inherit',
-    vk_staff_profileTitleColor: 'inherit',
-    vk_staff_profileTextColor: 'inherit',
-    vk_staff_photoBorder: 'default'
-};
+	attributes: {
+		vk_staff_text_name: iconName,
+		vk_staff_text_caption: iconName,
+		vk_staff_text_role: iconName,
+		vk_staff_text_profileTitle: iconName,
+		vk_staff_text_profileText: iconName,
+		vk_staff_photo_image: iconPicture,
+		vk_staff_layout:  'default',
+		vk_staff_nameColor: 'inherit',
+		vk_staff_captionColor: 'inherit',
+		vk_staff_positionColor:'inherit',
+		vk_staff_profileTitleColor: 'inherit',
+		vk_staff_profileTextColor: 'inherit',
+		vk_staff_photoBorder: 'default'
+	}
+}
+

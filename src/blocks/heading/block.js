@@ -71,7 +71,7 @@ registerBlockType("vk-blocks/heading", {
 		customClassName: true,
 		anchor: true
 	},
-	example:example,
+	example: example,
 
 	edit( props ) {
 		const { attributes, className, setAttributes } = props

@@ -5,6 +5,7 @@
 import { deprecated } from "./deprecated";
 import { vkbBlockEditor } from "./../_helper/depModules";
 import classNames from "classnames";
+import { content, title } from "./../_helper/example-data"
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -91,11 +92,16 @@ registerBlockType("vk-blocks/faq", {
 	],
 	example:{
 		attributes: {
-			heading: __("Title", "vk-blocks"),
-			content: __(
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et eros eu felis.'
-			),
-		  },
+			heading: title,
+		},
+		innerBlocks: [
+			{
+				name: 'core/paragraph',
+				attributes: {
+					content: content,
+				},
+			},
+		],
 	},
 
   edit({ attributes, setAttributes, className }) {

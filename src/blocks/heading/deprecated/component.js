@@ -229,7 +229,6 @@ export class VKBHeading2 extends Component {
   }
 }
 
-
 export class VKBHeadingV0_24_1 extends React.Component {
   render() {
     const {

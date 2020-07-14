@@ -184,7 +184,8 @@ registerBlockType("vk-blocks/heading", {
 						<BaseControl label={ __("Text Color", "vk-blocks") }>
 							<ColorPalette value={titleColor} onChange={value => setAttributes({ titleColor: value })}/>
 						</BaseControl>
-						<h4 className="mt-0 mb-2">{ __('Icon ( Font Awesome )', 'vk-blocks') }</h4>
+					</PanelBody>
+					<PanelBody title={__("Font Awesome Icon Settings", "vk-blocks")}>
 						<BaseControl label={ __("Before text", "vk-blocks") }>
 							<FontAwesome attributeName={ "fontAwesomeIconBefore" } { ...props } />
 						</BaseControl>

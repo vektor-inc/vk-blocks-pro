@@ -1,0 +1,19 @@
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+
+.vk_slider_item {
+	display: flex;
+}
+
+.vk_slider_item-align-vertical-{
+	&top{
+		justify-content: flex-start;
+	}
+	&center{
+		justify-content: center;
+	}
+	&bottom{
+		justify-content: flex-end;
+	}
+}

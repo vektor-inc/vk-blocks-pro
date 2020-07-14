@@ -5,6 +5,7 @@
 .vk_block_icon_pro {
 	fill: #c00;
 }
+.editor-block-list-item-vk-blocks-slider:after,
 .editor-block-list-item-vk-blocks-animation:after,
 .editor-block-list-item-vk-blocks-card:after,
 .editor-block-list-item-vk-blocks-child-page:after,
@@ -158,10 +159,17 @@ $color-danger: #dd3333;
 		.wp-block { max-width:100%; }
 	}
 
-// レスポンシブスペーサーの識別用枠線
-.vk_spacer {
-	border: 1px dotted #ccc;
+// 編集画面での識別用枠
+.vk_spacer,
+.vk_slider,
+.vk_animation {
+	border:1px dotted #ccc;
 }
+
+.vk_slider_item{
+	min-height:3em;
+}
+
 // アニメーションブロックの識別用枠線
 .vk_animation {
 	border: 1px dashed #ccc;

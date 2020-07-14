@@ -1,10 +1,10 @@
 const { Fragment } = wp.element;
 import { componentDivider } from "./component-divider";
-import { vkbBlockEditor } from "./../../_helper/depModules";
+import { vkbBlockEditor } from "./../../../_helper/depModules";
 const { InnerBlocks } = vkbBlockEditor;
-import hex2rgba from "../../_helper/hex-to-rgba";
+import hex2rgba from "../../../_helper/hex-to-rgba";
 
-export const OuterBlock = (props) => {
+export const ComponentV3 = (props) => {
 	const {
 		bgPosition,
 		outerWidth,
@@ -81,11 +81,7 @@ export const OuterBlock = (props) => {
 		elm = <InnerBlocks />;
 	} else if ("save") {
 		elm = <InnerBlocks.Content />;
-		if ( classPaddingLR === " vk_outer-paddingLR-none" || classPaddingLR === "" ) {
-			containerClass = "vk_outer_container container";
-		} else {
-			containerClass = "vk_outer_container";
-		}
+		containerClass = "vk_outer_container";
 	}
 
 	//borderColorクリア時に白をセットする

@@ -4,7 +4,7 @@ import {ComponentV3} from './componentv3'
 import {ComponentV2_1} from './componentv2'
 
 export const deprecated = [
-	// -> 0.37.2
+	// -> 0.37.4
 	{
 		attributes: schema_v2,
 		save(props) {

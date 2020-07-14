@@ -10,7 +10,7 @@ if ( ! function_exists('vk_blocks_setting') ) {
 			<?php wp_nonce_field( 'vkb-nonce-key', 'vkb-setting-page' ); ?>
 			<div>
 				<section>
-					<h3 id="baloon-image-setting"><?php _e( 'Balloon Image Setting', 'vk-blocks' ); ?></h3>
+					<h3 id="baloon-image-setting"><?php echo __( 'Balloon Image Setting', 'vk-blocks' ); ?></h3>
 	<style type="text/css">
 	.balloonIconList {
 		width:100%;
@@ -74,7 +74,7 @@ if ( ! function_exists('vk_blocks_setting') ) {
 						<?php _e( 'You can register frequently used icon images for speech bubble blocks.', 'vk-blocks' );?>
 						<?php _e( 'If you change image or name that please click Save Changes button.', 'vk-blocks' );?>
 						</p>
-						<?php $image_default = plugin_dir_url( __FILE__ ).'/no-image.png'; ?>
+						<?php $image_default = VK_BLOCKS_URL.'/admin/images/no-image.png'; ?>
 						<ul class="balloonIconList">
 						<?php for( $i = 1; $i <= $image_number; $i++ ) : ?>
 							<li>
@@ -98,15 +98,15 @@ if ( ! function_exists('vk_blocks_setting') ) {
 								</div>
 
 								<button class="button button-block button-set" type="button" onclick="veu_default_image_additional(this);">
-									<?php _ex( 'Select', 'Image Select', 'vk-blocks' ); ?>
+									<?php echo __( 'Select', 'vk-blocks' ); ?>
 								</button>
 								<button class="button button-block button-delete" type="button" onclick="veu_default_image_delete(this);">
-									<?php _ex( 'Reset', 'Image Reset', 'vk-blocks' ); ?>
+									<?php echo __( 'Delete', 'vk-blocks' ); ?>
 								</button>
 
 								<input type="hidden" class="__id" name="vk_blocks_balloon_meta[default_icons][<?php echo $i; ?>][src]" value="<?php echo esc_attr( $image ); ?>" />
 
-								<label for="icon_title['<?php echo $i ;?>]" class="balloonIconList_nameLabel"><?php echo __( 'Balloon Image Name ', 'vk-blocks' ); ?></label>
+								<label for="icon_title['<?php echo $i ;?>]" class="balloonIconList_nameLabel"><?php echo __( 'Balloon Image Name', 'vk-blocks' ); ?></label>
 								<?php
 									$name = '';
 									if ( ! empty( $options['default_icons'][$i]['name'] ) ) {

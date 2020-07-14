@@ -1,4 +1,4 @@
-import { faSchema } from "./../_helper/font-awesome-new";
+import { faSchema } from "./font-awesome-new";
 
 export const originalSchema = {
 	heading: {

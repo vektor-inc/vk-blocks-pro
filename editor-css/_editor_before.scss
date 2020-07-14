@@ -104,6 +104,10 @@ button.components-button.components-toolbar__control{
 
 // ブロックテンプレートのサイドバー調整CSS読み込み
 @import "./editor_before_template_inserter";
+// アイコンリストCSS読み込み
+@import "./editor_before_icon_list";
+// 吹き出し画像読み込み
+@import "./editor_balloon_image_list";
 
 // VK Outer 編集パネル
 $color-danger: #dd3333;
@@ -140,12 +144,14 @@ $color-danger: #dd3333;
 	/*
 	 アウターが全幅で インナーもコンテンツエリアを突き抜けて広げる処理
 	-----------------------------------------------*/
-	.vk_outer-width-full.vk_outer-paddingLR-use {
+	.vk_outer-width-full.vk_outer-paddingLR-use,
+	.vk_outer-width-full.vk_outer-paddingLR-zero{
 		// コンテンツエリアをはみ出させる
 		.wp-block { max-width:100%; }
 	}
 
-	.is-sidebar-opened & .vk_outer-width-full.vk_outer-paddingLR-use {
+	.is-sidebar-opened & .vk_outer-width-full.vk_outer-paddingLR-use,
+	.is-sidebar-opened & .vk_outer-width-full.vk_outer-paddingLR-zero{
 		// サイドバー表示時に全幅要素がはみ出してサイドバーの下などに入り込むのを防止
 		margin-left: calc( 50% - 50vw + 140px );
 		margin-right: calc( 50% - 50vw + 140px );
@@ -160,6 +166,7 @@ $color-danger: #dd3333;
 // アニメーションブロックの識別用枠線
 .vk_animation {
 	border: 1px dashed #ccc;
+	min-height:3em;
 	// そのままだと編集画面でも消えてしまうので上書き（.wp-block-vk-blocks-animation）がないと負けてしまう
 	&.wp-block-vk-blocks-animation{
 		opacity: 1;
@@ -171,6 +178,7 @@ $color-danger: #dd3333;
 		font-size:10px;
 		background: #eeeeee;
 		padding: .2em .6em;
+		z-index:1000;
 	}
 	&.vk_animation-fade-in{
 		left:0;
@@ -179,21 +187,34 @@ $color-danger: #dd3333;
 		}
 	}
 	&.vk_animation-slide-left{
-		right:0;
-		&:before {
-			content:'Slide left';
+		&.vk_animation-range-short,
+		&.vk_animation-range-normal,
+		&.vk_animation-range-long {
+			right:0;
+			&:before {
+				content:'Slide left';
+			}
 		}
 	}
 	&.vk_animation-slide-right{
-		left:0;
-		&:before {
-			content:'Slide right';
+		&.vk_animation-range-short,
+		&.vk_animation-range-normal,
+		&.vk_animation-range-long {
+			right:0;
+			left:0;
+			&:before {
+				content:'Slide right';
+			}
 		}
 	}
 	&.vk_animation-slide-up{
-		top:0;
-		&:before {
-			content:'Slide up';
+		&.vk_animation-range-short,
+		&.vk_animation-range-normal,
+		&.vk_animation-range-long {
+			top:0;
+			&:before {
+				content:'Slide up';
+			}
 		}
 	}
 }

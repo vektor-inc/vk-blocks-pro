@@ -21,11 +21,11 @@ $media-xl-down: 1199.98px;
 .vk_outer-width-full {
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
-	padding-left: calc(50vw - 50%);
-	padding-right: calc(50vw - 50%);
 }
 // Fit to content area width
-.vk_outer-paddingLR-none {
+.vk_outer-width-full.vk_outer-paddingLR-none {
+	padding-left: calc(50vw - 50%);
+	padding-right: calc(50vw - 50%);
 }
 $padding-none: 1.5em;
 $padding-sm: 2em;
@@ -51,6 +51,10 @@ $padding-xl: 3.5em;
 		padding-left: $padding-xl;
 		padding-right: $padding-xl;
 	}
+}
+.vk_outer-paddingLR-zero {
+	padding-left: 0;
+	padding-right: 0;
 }
 .vk_outer-paddingVertical-use {
 	padding-top: $padding-none;

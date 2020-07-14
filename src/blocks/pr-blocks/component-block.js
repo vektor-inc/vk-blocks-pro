@@ -3,6 +3,7 @@ const { __ } = wp.i18n; // Import __() from wp.i18n
 const { Component } = wp.element;
 import { vkbBlockEditor } from "./../_helper/depModules";
 const { RichText } = vkbBlockEditor;
+import ReactHtmlParser from 'react-html-parser';
 
 export class ComponentBlock extends Component {
 
@@ -92,7 +93,27 @@ export class ComponentBlock extends Component {
 
                 if (!color[blockNumArrIndex]) {
                     color[blockNumArrIndex] = '#0693e3';
-                }
+				}
+
+				let iconColor;
+				if (bgType[blockNumArrIndex] === '0') {
+					iconColor = '#fff'
+				}else{
+					iconColor = color[blockNumArrIndex]
+				}
+
+				let faIcon = icon[blockNumArrIndex]
+				//過去バージョンをリカバリーした時にiconを正常に表示する
+				if( faIcon && !faIcon.match(/<i/)){
+					faIcon = `<i class="${faIcon}"></i>`
+				}
+				//add class and inline css
+				let faIconFragment = faIcon.split(' ');
+				faIconFragment[0] = faIconFragment[0] + ` style="color:${iconColor}" `
+				faIconFragment[1] = faIconFragment[1] + ` vk_prBlocks_item_icon `
+				let faIconTag = faIconFragment.join('')
+
+
                 if (bgType[blockNumArrIndex] === '0') {
 
                     return <div
@@ -101,17 +122,15 @@ export class ComponentBlock extends Component {
                             backgroundColor: color[blockNumArrIndex],
                             border: `1px solid ${color[blockNumArrIndex]}`
                         }}
-                    ><i className={`${icon[blockNumArrIndex]} vk_prBlocks_item_icon`}
-                        style={{ color: '#fff' }}>
-                        </i>
+                    >
+						{ReactHtmlParser(faIconTag)}
                     </div>
                 } else {
                     return <div
-                        className="vk_prBlocks_item_icon_outer"
-                        style={{ backgroundColor: 'transparent', border: '1px solid ' + color[blockNumArrIndex] }}
-                    ><i className={`${icon[blockNumArrIndex]} vk_prBlocks_item_icon`}
-                        style={{ color: color[blockNumArrIndex] }}>
-                        </i>
+                        	className="vk_prBlocks_item_icon_outer"
+                        	style={{ backgroundColor: 'transparent', border: '1px solid ' + color[blockNumArrIndex] }}
+                    		>
+							{ReactHtmlParser(faIconTag)}
                     </div>
                 }
             }

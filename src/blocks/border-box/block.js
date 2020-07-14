@@ -4,7 +4,7 @@
  */
 import Body from "./Body";
 import { schema } from './schema';
-import { FontAwesome } from "./../_helper/font-awesome-new";
+import { FontAwesome } from "./font-awesome-new";
 import { deprecated }  from "./deprecated"
 
 const { __ } = wp.i18n;
@@ -114,6 +114,7 @@ registerBlockType('vk-blocks/border-box', {
 					<PanelBody title={ __('Icon', 'vk-blocks') }>
 						<BaseControl
 							id="dot-fa"
+							label={ __('Icon ( Font Awesome )', 'vk-blocks') }
 						>
 							<FontAwesome
 								attributes={ attributes }
@@ -130,5 +131,5 @@ registerBlockType('vk-blocks/border-box', {
 	save(props) {
 		return <Body for_={ 'save' }{ ...props } />;
 	},
-	deprecated:deprecated
+	deprecated
 });

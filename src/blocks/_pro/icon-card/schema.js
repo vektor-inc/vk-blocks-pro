@@ -22,5 +22,5 @@ export const schema = {
   activeControl: {
     type: "string",
     default: '{"title":"center","text":"center"}',
-  },
+	}
 };

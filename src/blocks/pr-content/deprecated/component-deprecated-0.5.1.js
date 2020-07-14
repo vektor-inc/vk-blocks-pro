@@ -1,13 +1,13 @@
 import { Fontawesome } from "./component-fontawesome-deprecated";
+import React from "react";
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { Button } = wp.components;
-const { Component } = wp.element;
 const { MediaUpload } = wp.editor;
 import { vkbBlockEditor } from "./../../_helper/depModules";
 let { RichText } = vkbBlockEditor;
 
-export class ComponentDeprecated extends Component {
+export class ComponentDeprecated extends React.Component {
 
     render() {
 

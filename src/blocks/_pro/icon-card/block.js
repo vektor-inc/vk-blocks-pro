@@ -21,7 +21,7 @@ const BlockIcon = (
 
 <path d="M288,511.9c68.9,0,125-56.2,125-125s-56.1-125-125-125c-68.9,0-125,56.1-125,125S219.1,511.9,288,511.9z
 	 M288,302.6c46.5,0,84.3,37.8,84.3,84.3s-37.8,84.3-84.3,84.3s-84.3-37.8-84.3-84.3S241.5,302.6,288,302.6z"/>
-<polygon points="270.2,449.9 305.8,449.9 305.8,404.8 351,404.8 351,369.1 305.8,369.1 305.8,323.9 270.2,323.9 
+<polygon points="270.2,449.9 305.8,449.9 305.8,404.8 351,404.8 351,369.1 305.8,369.1 305.8,323.9 270.2,323.9
 	270.2,369.1 225,369.1 225,404.8 270.2,404.8 "/>
 <ellipse transform="matrix(0.1602 -0.9871 0.9871 0.1602 188.3588 329.8069)" cx="288" cy="54.2" rx="51.2" ry="51.2"/>
 <rect x="224.4" y="133.3" width="127.2" height="91.4"/>
@@ -76,7 +76,11 @@ registerBlockType("vk-blocks/icon-card", {
             if (innerBlocks[i] !== undefined) {
 
 							//className以外の値で、子要素のattributesをアップデート
-							const updateAttributes = removeProperty(attributes,"className")
+							let updateAttributes = removeProperty(attributes,"className")
+							updateAttributes = removeProperty(attributes,"faIcon")
+							updateAttributes = removeProperty(attributes,"color")
+							updateAttributes = removeProperty(attributes,"bgType")
+
 							updateBlockAttributes(innerBlocks[i].clientId, updateAttributes);
 
             }

@@ -31,10 +31,6 @@ export const schema = {
 		type: 'Boolean',
 		default: false,
 	},
-	icon:{
-		type: 'string',
-		default: 'fas fa-file',
-	},
 	color:{
 		type: 'string',
 		default: '#0693e3',
@@ -52,5 +48,14 @@ export const schema = {
 		type: 'string',
 		source: 'html',
 		selector: '.vk_icon_card_item_summary',
-	}
+	},
+	faIcon: {
+		type: 'string',
+		default: '<i class="fas fa-user"></i>',
+	},
+	//This attribute is deprecated.
+	icon:{
+		type: 'string',
+		default: 'fas fa-file',
+	},
 };

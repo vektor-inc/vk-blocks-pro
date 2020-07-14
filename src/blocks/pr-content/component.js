@@ -1,13 +1,13 @@
-import React from "react";
 import classNames from "classnames";
 import { Fontawesome } from "./component-fontawesome";
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { Button } = wp.components;
+const { Component } = wp.element;
 import { vkbBlockEditor } from "./../_helper/depModules";
 const { MediaUpload, RichText } = vkbBlockEditor;
 
-export class Component extends React.Component {
+export class PRcontent extends Component {
   render() {
     const attributes = this.props.attributes;
     const {

@@ -3,8 +3,8 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
-Tested up to: 5.4.1
-Stable tag: 0.34.0
+Tested up to: 5.4.2
+Stable tag: 0.37.4
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -26,6 +26,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Button
 * PR Blocks
 * PR Content
+* Border box
 * Title（with sub text）
 * Responsive Spacer
 * Post List [ Pro ]
@@ -33,6 +34,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Timeline [ Pro ]
 * Card [ Pro ]
 * Grid Column [ Pro ]
+* Animation [ Pro ]
 
 [ Editing and correction ]
 
@@ -58,6 +60,51 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.37.4 =
+[ Specification Change ] Admin directory change
+
+= 0.37.3 =
+[ Specification Change ] Admin lib link change
+
+= 0.37.2 =
+[ BugFix] PHP error
+
+= 0.37.1 =
+[ BugFix][ Title ] Setted text elesed 
+
+= 0.37.0 =
+[ Add function ][ Balloon ] Fixed the problem that the entered text disappears
+
+= 0.36.0 =
+[ Add function ][ FAQ ] The answer part has been changed to an inner block and it is now possible to place other than letters
+[ Add function ][ FAQ ] You can now choose the design style
+[ Add function ][ Title ] Icons can be used before and after letters
+[ Add function ][ Balloon ] You can now choose the style of image
+[ Add function ][ Animation(Pro) ] Addition of animation speed/distance specification function
+[ Add function ][ Card(Pro) ] Add an inner block area to the text part You can add and arrange any blocks you like.
+[ Add function ][ Child Page(Pro) ] Do not display pages without child pages in pulldown
+[ Bug fix ][ Timeline(Pro) ] Fixed a bug that color cannot be reset
+
+= 0.35.5 =
+[ Specification Change ][ Border Box ] icon list update
+
+= 0.35.4 =
+[ Bug fix ] [ BorderBox ] icon list layout bug fix
+
+= 0.35.3 =
+build only
+
+= 0.35.2 =
+build only
+
+= 0.35.1 =
+[ Bug fix ][ Step Block ] Can not edit bug fix
+
+= 0.35.0 =
+[ Add function ] Fontawesome icon selector update
+[ Add Setting ][ Outer(Pro) ] Add LR no padding
+[ Specification Change ][ Border Box ] Padding tuning ( Wide screen )
 
 = 0.34.0 =
 [ Add block ][ Animation(Pro) ] 

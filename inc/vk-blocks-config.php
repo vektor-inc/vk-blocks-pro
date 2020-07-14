@@ -19,6 +19,7 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 		$vk_blocks_prefix .= ' ';
 	}
 
+	require_once plugin_dir_path( __DIR__ ) . 'inc/vk-admin/vk-admin-config.php';
 	require_once 'vk-blocks/helpers.php';
 	require_once 'vk-components/vk-components-config.php';
 	require_once 'vk-blocks/load-vk-components.php';
@@ -34,7 +35,10 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 	require_once 'vk-blocks/vk-blocks-functions.php';
 	require_once 'vk-blocks/load-swiper.php';
 	require_once 'vk-blocks/load-animation.php';
-
+	$path = dirname(dirname(__FILE__)) .'/inc/vk-blocks/App/RestAPI/BlockMeta/EntryPoint.php';
+	require_once $path;
+	//BlockMeta用のAPIルートを設定
+	new EntryPoint();
 	/*
 	 出力するCSSが多すぎるので一旦コメントアウト */
 	// require_once( 'vk-blocks/functions-color.php' );

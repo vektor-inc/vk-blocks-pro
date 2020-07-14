@@ -2,30 +2,46 @@ const { __ } = wp.i18n; // Import __() from wp.i18n
 import { vkbBlockEditor } from "../../_helper/depModules";
 const { RichText } = vkbBlockEditor;
 const { Fragment } = wp.element;
-
+import ReactHtmlParser from 'react-html-parser';
 import { convertToGrid } from "../../_helper/convert-to-grid";
 
 export const PRcarditem = (props)=>{
 
 	const {attributes,setAttributes,for_,className}=props;
-	const{color, heading, content, icon, url, urlOpenType, bgType,col_xs,col_sm,col_md,col_lg,col_xl,activeControl}=attributes
+	let {color, heading, content, faIcon, url, icon, urlOpenType, bgType,col_xs,col_sm,col_md,col_lg,col_xl,activeControl}=attributes
 	const align = JSON.parse(activeControl)
 
 	let style;
-	let iconStyle;
+	let iconColor;
+
 	if(bgType == '0'){
 		style = {backgroundColor:`${color}`, border:`1px solid ${color}`}
-		iconStyle = {color:`#ffffff`}
+		iconColor = `#ffffff`
 	}else{
 		style = {backgroundColor:`transparent`, border:`1px solid ${color}`}
-		iconStyle = {color:`${color}`}
+		iconColor = `${color}`
 	}
+
+	//過去バージョンをリカバリーした時にiconを正常に表示する
+	if( faIcon && !faIcon.match(/<i/)){
+		faIcon = `<i class="${faIcon}"></i>`
+
+	//過去のicon attribuet用 deprecated処理
+	}else if( !faIcon && icon && !icon.match(/<i/)){
+		faIcon = `<i class="${icon}"></i>`
+	}
+
+	//add class and inline css
+	let faIconFragment = faIcon.split(' ');
+	faIconFragment[0] = faIconFragment[0] + ` style="color:${iconColor}" `
+	faIconFragment[1] = faIconFragment[1] + ` vk_icon-card_item_icon `
+	let faIconTag = faIconFragment.join('')
 
 	let contents;
 	if(for_ === "edit"){
 		contents = <Fragment>
 			<div className="vk_icon-card_item_icon_outer" style={style}>
-				<i className={`${icon} vk_icon-card_item_icon`} style={iconStyle}/>
+				{ReactHtmlParser(faIconTag)}
 			</div>
 			<RichText
 				className={`vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}`}
@@ -45,7 +61,7 @@ export const PRcarditem = (props)=>{
 	}else if(for_ === "save"){
 		contents = <a href={url} className="vk_icon-card_item_link" target={urlOpenType ? "_blank" : "_self"} rel="noopener noreferrer">
 			<div className="vk_icon-card_item_icon_outer" style={style}>
-				<i className={`${icon} vk_icon-card_item_icon`} style={iconStyle}/>
+				{ReactHtmlParser(faIconTag)}
 			</div>
 			<RichText.Content
 				className={`vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}`}

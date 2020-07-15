@@ -37,6 +37,16 @@
 	}
 }
 
+// 背景色指定
+.vk_borderBox-background {
+	&-transparent {
+		background-color: transparent;
+	}
+	&-white {
+		background-color: #fff;
+	}
+}
+
 /*
 共通指定
 --------------------------------------------*/
@@ -73,12 +83,12 @@
 		@media (min-width: 992px) {
 			padding: 2.1875em 2em 2em;
 		}
-		h1:first-child, 
-		h2:first-child, 
-		h3:first-child, 
-		h4:first-child, 
+		h1:first-child,
+		h2:first-child,
+		h3:first-child,
+		h4:first-child,
 		h5:first-child,
-		h6:first-child {//他のテーマでも対応できるように追加			
+		h6:first-child {//他のテーマでも対応できるように追加
 			margin-top: 0;
 		}
 		p:last-child {

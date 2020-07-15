@@ -556,8 +556,8 @@ msgstr ""
 msgid "Slider Item"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/block.js:52
-msgid "Vertical"
+#: src/blocks/_pro/slider-item/block.js:53
+msgid "Vertical align"
 msgstr ""
 
 #: src/blocks/_pro/slider/block.js:106
@@ -598,29 +598,29 @@ msgstr ""
 msgid "PC"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:140
+#: src/blocks/_pro/slider/block.js:141
 #: src/blocks/spacer/block.js:104
 msgid "Tablet"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:146
+#: src/blocks/_pro/slider/block.js:148
 #: src/blocks/spacer/block.js:110
 msgid "Mobile"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:154
+#: src/blocks/_pro/slider/block.js:157
 msgid "Slider Settings"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:157
+#: src/blocks/_pro/slider/block.js:160
 msgid "Display Navigation "
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:164
+#: src/blocks/_pro/slider/block.js:167
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:171
+#: src/blocks/_pro/slider/block.js:174
 msgid "Delay"
 msgstr ""
 

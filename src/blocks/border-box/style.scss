@@ -40,10 +40,24 @@
 // 背景色指定
 .vk_borderBox-background {
 	&-transparent {
-		background-color: transparent;
+		& .vk_borderBox_body {
+			background-color: transparent;
+		}
+		&.is-style-vk_borderBox-style-solid-kado-tit-onborder .vk_borderBox_title_container,
+		&.is-style-vk_borderBox-style-solid-kado-tit-inner .vk_borderBox_title_container,
+		&.is-style-vk_borderBox-style-solid-kado-iconFeature .vk_borderBox_title_container {
+			background-color: transparent;
+		}
 	}
 	&-white {
-		background-color: #fff;
+		& .vk_borderBox_body {
+			background-color: #fff;
+		}
+		&.is-style-vk_borderBox-style-solid-kado-tit-onborder .vk_borderBox_title_container,
+		&.is-style-vk_borderBox-style-solid-kado-tit-inner .vk_borderBox_title_container,
+		&.is-style-vk_borderBox-style-solid-kado-iconFeature .vk_borderBox_title_container {
+			background-color: #fff;
+		}
 	}
 }
 

@@ -52,7 +52,11 @@ registerBlockType("vk-blocks/balloon", {
 	balloonImageType: {
 		type: "string",
 		default: "normal" // no image by default!
-	  },
+	},
+	balloonAnimation: {
+		type: "string",
+		default: "none" // no image by default!
+	},
   },
 
   edit({ attributes, className, setAttributes }) {
@@ -227,7 +231,7 @@ registerBlockType("vk-blocks/balloon", {
 			</PanelBody>
         </InspectorControls>
         <div
-          className={`${className} vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-${balloonAnimation}`}
+          className={`${className} vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation}`}
         >
           <div className={ `vk_balloon_icon` }>
             <MediaUpload
@@ -283,7 +287,8 @@ registerBlockType("vk-blocks/balloon", {
       balloonBgColor,
 			balloonAlign,
 			IconImage,
-			balloonImageType
+			balloonImageType,
+			balloonAnimation
 		} = attributes;
 
 		//For recovering
@@ -292,7 +297,7 @@ registerBlockType("vk-blocks/balloon", {
 
     return (
       <div
-        className={`vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType}  vk_balloon-animation-${balloonType}`}
+        className={`vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation}`}
       >
         <div className={ `vk_balloon_icon` }>
           {IconImage ? (

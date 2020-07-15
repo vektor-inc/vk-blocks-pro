@@ -162,6 +162,59 @@
 	}
 }//.vk_balloon-position-right
 
+.vk_balloon-animation {
+	&-trembling {
+		animation: trembling 0.1s infinite;
+	}
+	@keyframes trembling {
+		0% {
+			transform: scale(1, 1);
+		}
+		50% {
+			transform: scale(0.98, 0.95)
+		}
+	}
+
+	&-pounding {
+		animation: pounding 1.5s infinite;
+	}
+	@keyframes pounding {
+		0% {
+			transform: scale(1.05)
+		}
+		5% {
+			transform: scale(1)
+		}
+		95% {
+			transform: scale(1)
+		}
+		100% {
+			transform: scale(1.05)
+		}
+	}
+
+	&-shaking {
+		animation: shaking 0.4s infinite;
+	}
+	@keyframes shaking {
+		0% {
+			transform: translate(1px, 1px);
+		}
+		25% {
+			transform: translate(1px, -1px);
+		}
+		50% {
+			transform: translate(-1px, -1px);
+		}
+		75% {
+			transform: translate(-1px, 1px);
+		}
+		100% {
+			transform: translate(1px, 1px);
+		}
+	}
+}
+
 
 .vk_balloon {
   &.animation-vibration{

@@ -63,7 +63,8 @@ registerBlockType("vk-blocks/balloon", {
       balloonBgColor,
 			balloonAlign,
 			IconImage,
-			balloonImageType
+			balloonImageType,
+			balloonAnimation
     	} = attributes;
 		const [ blockMeta, setBlockMeta ] = useState(null);
 
@@ -180,15 +181,53 @@ registerBlockType("vk-blocks/balloon", {
               onChange={value => setAttributes({ balloonBgColor: value })}
             />
           </PanelBody>
-				<PanelBody title={__("Default Icon Setting", "vk-blocks")}>
-					<div className="icon-image-list mb-2">
-						{defautIconButtons}
-					</div>
-					<div>{__( 'You can register default icons from Settings > VK Blocks in Admin.', 'vk-blocks' ) }</div>
-          </PanelBody>
+		  	<PanelBody title={__("Default Icon Setting", "vk-blocks")}>
+				<div className="icon-image-list mb-2">
+					{defautIconButtons}
+				</div>
+				<div>{__( 'You can register default icons from Settings > VK Blocks in Admin.', 'vk-blocks' ) }</div>
+          	</PanelBody>
+		  	<PanelBody title={__("Animation setting", "vk-blocks")}>
+				<p className={ 'mb-1' }><label>{ __( 'Animation', 'vk-blocks' ) }</label></p>
+				<p className={ 'mb-1' }>{ __("Please select the type of animation.", "vk-blocks")} </p>
+				<ButtonGroup className="mb-3">
+					<Button
+						isSmall
+						isPrimary={ balloonAnimation === 'none' }
+						isSecondary={ balloonAnimation !== 'none' }
+						onClick={ () => setAttributes({ balloonAnimation: 'none' }) }
+					>
+						{ __("None", "vk-blocks") }
+					</Button>
+					<Button
+						isSmall
+						isPrimary={ balloonAnimation === 'trembling' }
+						isSecondary={ balloonAnimation !== 'trembling' }
+						onClick={ () => setAttributes({ balloonAnimation: 'trembling' }) }
+					>
+						{  __("Trembling", "vk-blocks") }
+					</Button>
+					<Button
+						isSmall
+						isPrimary={ balloonAnimation === 'pounding' }
+						isSecondary={ balloonAnimation !== 'pounding' }
+						onClick={ () => setAttributes({ balloonAnimation: 'pounding' }) }
+					>
+						{ __("Pounding", "vk-blocks") }
+					</Button>
+					<Button
+						isSmall
+						isPrimary={ balloonAnimation === 'shaking' }
+						isSecondary={ balloonAnimation !== 'shaking' }
+						onClick={ () => setAttributes({ balloonAnimation: 'shaking' }) }
+					>
+						{  __("Shaking", "vk-blocks") }
+					</Button>
+				</ButtonGroup>
+			</PanelBody>
         </InspectorControls>
         <div
-          className={`${className} vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType}`}
+          className={`${className} vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-${balloonAnimation}`}
         >
           <div className={ `vk_balloon_icon` }>
             <MediaUpload
@@ -249,10 +288,11 @@ registerBlockType("vk-blocks/balloon", {
 
 		//For recovering
 		balloonImageType = balloonImageType ? balloonImageType : "normal"
+		balloonAnimation = balloonAnimation ? balloonAnimation : "none";
 
     return (
       <div
-        className={`vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType}`}
+        className={`vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType}  vk_balloon-animation-${balloonType}`}
       >
         <div className={ `vk_balloon_icon` }>
           {IconImage ? (

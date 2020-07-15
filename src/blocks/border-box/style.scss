@@ -43,6 +43,9 @@
 		& .vk_borderBox_body {
 			background-color: transparent;
 		}
+		&.is-style-vk_borderBox-style-solid-kado-tit-onborder.vk_borderBox {
+			background-color: transparent;
+		}
 		&.is-style-vk_borderBox-style-solid-kado-tit-onborder .vk_borderBox_title_container,
 		&.is-style-vk_borderBox-style-solid-kado-tit-inner .vk_borderBox_title_container,
 		&.is-style-vk_borderBox-style-solid-kado-iconFeature .vk_borderBox_title_container {
@@ -52,6 +55,9 @@
 	&-white {
 		& .vk_borderBox_body {
 			background-color: #fff;
+		}
+		&.is-style-vk_borderBox-style-solid-kado-tit-onborder.vk_borderBox {
+			background-color:  #fff;
 		}
 		&.is-style-vk_borderBox-style-solid-kado-tit-onborder .vk_borderBox_title_container,
 		&.is-style-vk_borderBox-style-solid-kado-tit-inner .vk_borderBox_title_container,

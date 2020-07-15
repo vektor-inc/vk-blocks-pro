@@ -158,6 +158,15 @@ $color-danger: #dd3333;
 		// コンテンツエリアをはみ出させる
 		.wp-block { max-width:100%; }
 	}
+	.is-sidebar-opened & .vk_slider.vk_width-full{
+		// サイドバー表示時に全幅要素がはみ出してサイドバーの下などに入り込むのを防止
+		margin-left: calc( 50% - 50vw + 140px );
+		margin-right: calc( 50% - 50vw + 140px );
+		padding-right:0;
+		padding-left:0;
+		width: calc( 100vw - 280px );
+	}
+
 
 // 編集画面での識別用枠
 .vk_spacer,

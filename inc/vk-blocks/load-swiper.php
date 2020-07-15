@@ -24,16 +24,19 @@ function vkblocks_add_slider_front_scripts( $block_content, $block ) {
 
 		$style = "<style type='text/css'>
 		@media (max-width: 576px) {
+			.vk_slider_" . esc_attr($clientId) . ",
 			.vk_slider_" . esc_attr($clientId) . " .vk_slider_item{
 				height:". esc_attr($mobile) . esc_attr($unit) . "!important;
 			}
 		}
 		@media (min-width: 577px) and (max-width: 768px) {
+			.vk_slider_" . esc_attr($clientId) . ",
 			.vk_slider_" . esc_attr($clientId) . " .vk_slider_item{
 				height:". esc_attr($tablet) . esc_attr($unit) . "!important;
 			}
 		}
 		@media (min-width: 769px) {
+			.vk_slider_" . esc_attr($clientId) . ",
 			.vk_slider_" . esc_attr($clientId) . " .vk_slider_item{
 				height:". esc_attr($pc) . esc_attr($unit) . "!important;
 			}
@@ -58,6 +61,7 @@ function vkblocks_add_slider_front_scripts( $block_content, $block ) {
 				// If we need pagination
 				pagination: {
 				  el: '.swiper-pagination',
+				  clickable : true,
 				},
 
 				// Navigation arrows

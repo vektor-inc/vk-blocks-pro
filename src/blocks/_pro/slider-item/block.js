@@ -49,7 +49,8 @@ registerBlockType("vk-blocks/slider-item", {
 				</BlockControls>
 				<InspectorControls>
 					<PanelBody title={ __('Align', 'vk-blocks') }>
-						<BaseControl label={ __('Vertical', 'vk-blocks') }>
+						<BaseControl>
+						<h4 className="mt-0 mb-2">{ __('Vertical align', 'vk-blocks') }</h4>
 							<BlockVerticalAlignmentToolbar
 								onChange={  ( alignment ) => setAttributes( { verticalAlignment: alignment } ) }
 								value={ verticalAlignment }

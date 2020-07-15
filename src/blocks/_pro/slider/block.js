@@ -135,18 +135,21 @@ registerBlockType("vk-blocks/slider", {
 								value={pc}
 								onChange={(value) => setAttributes({ pc: formatNum(value, pc) })}
 								step={0.1}
+								max={ 2000 }
 							/>
 							<RangeControl
 								label={__('Tablet', 'vk-blocks')}
 								value={tablet}
 								onChange={(value) => setAttributes({ tablet: formatNum(value, tablet) })}
 								step={0.1}
+								max={ 2000 }
 							/>
 							<RangeControl
 								label={__('Mobile', 'vk-blocks')}
 								value={mobile}
 								onChange={(value) => setAttributes({ mobile: formatNum(value, mobile) })}
 								step={0.1}
+								max={ 2000 }
 							/>
 						</BaseControl>
 					</PanelBody>

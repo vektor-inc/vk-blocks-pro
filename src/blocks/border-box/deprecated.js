@@ -68,5 +68,29 @@ export const deprecated = [
     save(props) {
       return ( <DepBody for_={ 'save' }{ ...props } />);
     }
-  }
+  },
+  {
+	attributes: {
+		heading: {
+			type: "string",
+			source: "html",
+			selector: "h4"
+		},
+		color: {
+			type: 'string',
+			default: 'red',
+		},
+		faIcon: {
+			type: 'string',
+			default: '',
+		},
+		bgColor: {
+			type: 'string',
+			default: 'transparent'
+		}
+	},
+	save(props) {
+	return ( <DepBody for_={ 'save' }{ ...props } />);
+	}
+}
 ]

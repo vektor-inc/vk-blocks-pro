@@ -7,14 +7,22 @@ const GenerateBgImage = (props) => {
 		bgImage,
 		bgColor,
 		opacity,
+		bgSize,
 	} = attributes;
-
-	console.log(bgColor)
 
 	const mobileViewport = "max-width: 575.98px";
 	const tabletViewport = "min-width: 576px";
 	const pcViewport = "min-width: 1200px";
 	const underPcViewport = "max-width: 1199.98px";
+
+	let backgroundStyle;
+	if("cover" === bgSize){
+		backgroundStyle = `background-size:${bgSize}!important;`
+	}else if("repeat" === bgSize){
+		backgroundStyle = `background-repeat:${bgSize}!important;`
+	}else{
+		backgroundStyle = ``
+	}
 
 	let bgColorWOpacity;
 
@@ -29,19 +37,19 @@ const GenerateBgImage = (props) => {
 	//moible only
 	if (bgImageMobile && !bgImageTablet && !bgImage) {
 		return (
-			<style>{ `.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})}!important;` }</style>
+			<style>{ `.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})!important; ${backgroundStyle}}`}</style>
 		);
 	}
 	//tablet only
 	if (!bgImageMobile && bgImageTablet && !bgImage) {
 		return (
-			<style>{ `.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})}!important;` }</style>
+			<style>{ `.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})!important; ${backgroundStyle}}`}</style>
 		);
 	}
 	//pc only
 	if (!bgImageMobile && !bgImageTablet && bgImage) {
 		return (
-			<style>{ `.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})}!important;` }</style>
+			<style>{ `.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})!important; ${backgroundStyle}}`}</style>
 		);
 	}
 	//pc -mobile
@@ -50,11 +58,11 @@ const GenerateBgImage = (props) => {
 			<style>
 				{ `
           @media screen and (${underPcViewport}) {
-            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})}!important;
-          }
+            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})!important; ${backgroundStyle}}
+         }
           @media screen and (${pcViewport}) {
-            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})}!important;
-          }
+            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})!important; ${backgroundStyle}}
+         }
           ` }
 			</style>
 		);
@@ -65,11 +73,11 @@ const GenerateBgImage = (props) => {
 			<style>
 				{ `
           @media screen and (${underPcViewport}) {
-            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})}!important;
-          }
+            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})!important; ${backgroundStyle}}
+         }
           @media screen and (${pcViewport}) {
-            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})}!important;
-          }
+            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})!important; ${backgroundStyle}}
+         }
           ` }
 			</style>
 		);
@@ -80,11 +88,11 @@ const GenerateBgImage = (props) => {
 			<style>
 				{ `
           @media screen and (${mobileViewport}) {
-            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})}!important;
-          }
+            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})!important; ${backgroundStyle}}
+         }
           @media screen and (${tabletViewport}) {
-            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})}!important;
-          }
+            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})!important; ${backgroundStyle}}
+         }
         ` }
 			</style>
 		);
@@ -95,14 +103,14 @@ const GenerateBgImage = (props) => {
 			<style>
 				{ `
         @media screen and (${mobileViewport}) {
-          .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})}!important;
-        }
+          .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})!important; ${backgroundStyle}}
+       }
         @media screen and (${tabletViewport}) {
-          .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})}!important;
-        }
+          .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})!important; ${backgroundStyle}}
+       }
         @media screen and (${pcViewport}) {
-          .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})}!important;
-        }
+          .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})!important; ${backgroundStyle}}
+       }
         ` }
 			</style>
 		);
@@ -110,7 +118,7 @@ const GenerateBgImage = (props) => {
 	//no background image
 	if (!bgImageMobile && !bgImageTablet && !bgImage) {
 		return (
-			<style>{ `.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity})}!important;` }</style>
+			<style>{ `.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity})!important; ${backgroundStyle}}`}</style>
 		);
 	}
 };

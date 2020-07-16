@@ -14,7 +14,7 @@ const { registerBlockType } = wp.blocks;
 const { Fragment, useEffect } = wp.element;
 const { InspectorControls, BlockControls, BlockAlignmentToolbar} = wp.blockEditor;
 const { select, dispatch } = wp.data;
-const { RangeControl, PanelBody, BaseControl, SelectControl, TextControl } = wp.components;
+const { RangeControl, PanelBody, BaseControl, SelectControl, TextControl, ButtonGroup, Button } = wp.components;
 const { createHigherOrderComponent } = wp.compose;
 const { addFilter } = wp.hooks;
 
@@ -151,6 +151,31 @@ registerBlockType("vk-blocks/slider", {
 								step={0.1}
 								max={ 2000 }
 							/>
+						</BaseControl>
+					</PanelBody>
+					<PanelBody
+						title={ __("Width", "vk-blocks") }
+						initialOpen={ false }
+					>
+						<BaseControl>
+							<ButtonGroup className="mb-3">
+								<Button
+									isSmall
+									isPrimary={ width === 'wide' }
+									isSecondary={ width !== 'wide' }
+									onClick={ () => setAttributes({ width: 'wide' }) }
+								>
+									{ __('wide', 'vk-blocks') }
+								</Button>
+								<Button
+									isSmall
+									isPrimary={ width === 'full' }
+									isSecondary={ width !== 'full' }
+									onClick={ () => setAttributes({ width: 'full' }) }
+								>
+									{ __('Full Wide', 'vk-blocks') }
+								</Button>
+							</ButtonGroup>
 						</BaseControl>
 					</PanelBody>
 					<PanelBody

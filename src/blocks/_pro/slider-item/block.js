@@ -6,7 +6,7 @@ import { schema } from "./schema";
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { Fragment } = wp.element;
-const { InspectorControls, InnerBlocks, BlockControls, BlockVerticalAlignmentToolbar, ColorPalette} = wp.blockEditor;
+const { InspectorControls, BlockControls, BlockVerticalAlignmentToolbar, ColorPalette} = wp.blockEditor;
 const {
 	RangeControl,
 	RadioControl,
@@ -15,7 +15,6 @@ const {
 	ButtonGroup,
 	Button
 } = wp.components;
-import GenerateBgImage from "../../_helper/GenerateBgImage"
 import { AdvancedMediaUpload } from "../../../components/advanced-media-upload";
 import formatNum from "../../_helper/formatNum";
 import SliderItem from "./SliderItem"
@@ -49,15 +48,13 @@ registerBlockType("vk-blocks/slider-item", {
 	},
 
 	edit(props) {
-		const { className, attributes, setAttributes, clientId } = props;
+		const { attributes, setAttributes, clientId } = props;
 		const {
 			verticalAlignment,
 			bgColor,
 			opacity,
-			outerWidth,
 			padding_left_and_right,
-			padding_top_and_bottom,
-
+			bgSize
 		} = attributes;
 
 		setAttributes({clientId:clientId})
@@ -118,52 +115,25 @@ registerBlockType("vk-blocks/slider-item", {
 						>
 							<AdvancedMediaUpload schema={ "bgImageMobile" } { ...props } />
 						</BaseControl>
-						{/* <BaseControl
-							label={ __("Background image Position", "vk-blocks") }
+						<BaseControl
+							label={ __("Background Image Size", "vk-blocks") }
 							help=""
 						>
 							<RadioControl
-								selected={ bgPosition }
+								selected={ bgSize }
 								options={ [
-									{ label: __("normal", "vk-blocks"), value: "normal" },
-									{ label: __("Fixed (Not fixed on iPhone)", "vk-blocks"), value: "fixed" },
-									{
-										label: __(
-											"Parallax (Non-guaranteed)",
-											"vk-blocks"
-										),
-										value: "parallax",
-									},
+									{ label: __("cover", "vk-blocks"), value: "cover" },
+									{ label: __("repeat", "vk-blocks"), value: "repeat" },
 								] }
-								onChange={ (value) => setAttributes({ bgPosition: value }) }
+								onChange={ (value) => setAttributes({ bgSize: value }) }
 							/>
-						</BaseControl> */}
+						</BaseControl>
 					</PanelBody>
 					<PanelBody
 						title={ __("Layout Setting", "vk-blocks") }
 						initialOpen={ false }
 					>
-						<p className={ 'mb-1' }><label>{ __( 'Width', 'vk-blocks' ) }</label></p>
 						<BaseControl>
-							<ButtonGroup className="mb-3">
-								<Button
-									isSmall
-									isPrimary={ outerWidth === 'normal' }
-									isSecondary={ outerWidth !== 'normal' }
-									onClick={ () => setAttributes({ outerWidth: 'normal' }) }
-								>
-									{ __('Normal', 'vk-blocks') }
-								</Button>
-								<Button
-									isSmall
-									isPrimary={ outerWidth === 'full' }
-									isSecondary={ outerWidth !== 'full' }
-									onClick={ () => setAttributes({ outerWidth: 'full' }) }
-								>
-									{ __('Full Wide', 'vk-blocks') }
-								</Button>
-							</ButtonGroup>
-
 							<RadioControl
 								label={ __(
 									"Padding (Left and Right)",
@@ -176,11 +146,11 @@ registerBlockType("vk-blocks/slider-item", {
 										value: "0",
 									},
 									{
-										label: __("Add padding to the Outer area", "vk-blocks"),
+										label: __("Add padding to the Slider area", "vk-blocks"),
 										value: "1",
 									},
 									{
-										label: __("Remove padding from the Outer area", "vk-blocks"),
+										label: __("Remove padding from the Slider area", "vk-blocks"),
 										value: "2",
 									},
 								] }
@@ -188,25 +158,6 @@ registerBlockType("vk-blocks/slider-item", {
 									setAttributes({ padding_left_and_right: value })
 								}
 							/>
-							<RadioControl
-								label={ __("Padding (Top and Bottom)", "vk-blocks") }
-								className={ 'mb-1' }
-								selected={ padding_top_and_bottom }
-								options={ [
-									{ label: __("Use default padding", "vk-blocks"), value: "1" },
-									{
-										label: __(
-											"Do not use default padding",
-											"vk-blocks"
-										),
-										value: "0",
-									},
-								] }
-								onChange={ (value) =>
-									setAttributes({ padding_top_and_bottom: value })
-								}
-							/>
-							<p>{ __( '* If you select "Do not use" that, please set yourself it such as a spacer block.', "vk-blocks" ) }</p>
 						</BaseControl>
 					</PanelBody>
 					<PanelBody

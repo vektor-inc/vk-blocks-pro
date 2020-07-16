@@ -43,13 +43,9 @@ export const schema = {
     type: "number",
     default: 0.5,
 	},
-  outerWidth: {
+  bgSize: {
     type: "string",
-    default: "normal",
-  },
-  bgPosition: {
-    type: "string",
-    default: "normal",
+    default: "repeat",
   },
   padding_left_and_right: {
     type: "string",

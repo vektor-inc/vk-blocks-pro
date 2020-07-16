@@ -6,8 +6,19 @@ import { schema } from "./schema";
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { Fragment } = wp.element;
-const { PanelBody, BaseControl } = wp.components;
-const { InspectorControls, InnerBlocks, BlockControls, BlockVerticalAlignmentToolbar} = wp.blockEditor;
+const { InspectorControls, InnerBlocks, BlockControls, BlockVerticalAlignmentToolbar, ColorPalette} = wp.blockEditor;
+const {
+	RangeControl,
+	RadioControl,
+	PanelBody,
+	BaseControl,
+	ButtonGroup,
+	Button
+} = wp.components;
+import GenerateBgImage from "../../_helper/GenerateBgImage"
+import { AdvancedMediaUpload } from "../../../components/advanced-media-upload";
+import formatNum from "../../_helper/formatNum";
+import SliderItem from "./SliderItem"
 
 const BlockIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 576">
@@ -26,6 +37,7 @@ const BlockIcon = (
 	</svg>
 );
 
+
 registerBlockType("vk-blocks/slider-item", {
 	title: __("Slider Item", "vk-blocks"),
 	icon: BlockIcon,
@@ -37,8 +49,19 @@ registerBlockType("vk-blocks/slider-item", {
 	},
 
 	edit(props) {
-		const { className, attributes, setAttributes } = props;
-		const { verticalAlignment } = attributes;
+		const { className, attributes, setAttributes, clientId } = props;
+		const {
+			verticalAlignment,
+			bgColor,
+			opacity,
+			outerWidth,
+			padding_left_and_right,
+			padding_top_and_bottom,
+
+		} = attributes;
+
+		setAttributes({clientId:clientId})
+
 		return (
 			<Fragment>
 				<BlockControls>
@@ -48,7 +71,148 @@ registerBlockType("vk-blocks/slider-item", {
 					/>
 				</BlockControls>
 				<InspectorControls>
-					<PanelBody title={ __('Align', 'vk-blocks') }>
+				<PanelBody
+						title={ __("Background Setting", "vk-blocks") }
+						initialOpen={ true }
+					>
+						<BaseControl
+							label={ __("Color Setting", "vk-blocks") }
+							help={ __(
+								"Color will overcome background image. If you want to display image, clear background color or set opacity 0.",
+								"vk-blocks"
+							) }
+						>
+							<ColorPalette
+								value={ bgColor }
+								onChange={ (value) => setAttributes( { bgColor: value } ) }
+							/>
+						</BaseControl>
+						<BaseControl label={ __("Opacity Setting", "vk-blocks") }>
+							<RangeControl
+								value={ opacity }
+								onChange={ (value) => {
+									setAttributes({ opacity: formatNum(value, opacity) });
+								} }
+								min={ 0 }
+								max={ 1 }
+								step={ 0.1 }
+							/>
+						</BaseControl>
+						<BaseControl
+							label={ __("Background Image PC", "vk-blocks") }
+							className={ "vk_slider_item_sidebar_bgImage" }
+						>
+							<div className={ "vk_slider_item_sidebar_bgImage_button_container" }>
+								<AdvancedMediaUpload schema={ "bgImage" } { ...props } />
+							</div>
+						</BaseControl>
+						<BaseControl
+							label={ __("Background Image Tablet", "vk-blocks") }
+							className={ "vk_slider_item_sidebar_bgImage" }
+						>
+							<AdvancedMediaUpload schema={ "bgImageTablet" } { ...props } />
+						</BaseControl>
+						<BaseControl
+							label={ __("Background Image Mobile", "vk-blocks") }
+							className={ "vk_slider_item_sidebar_bgImage" }
+						>
+							<AdvancedMediaUpload schema={ "bgImageMobile" } { ...props } />
+						</BaseControl>
+						{/* <BaseControl
+							label={ __("Background image Position", "vk-blocks") }
+							help=""
+						>
+							<RadioControl
+								selected={ bgPosition }
+								options={ [
+									{ label: __("normal", "vk-blocks"), value: "normal" },
+									{ label: __("Fixed (Not fixed on iPhone)", "vk-blocks"), value: "fixed" },
+									{
+										label: __(
+											"Parallax (Non-guaranteed)",
+											"vk-blocks"
+										),
+										value: "parallax",
+									},
+								] }
+								onChange={ (value) => setAttributes({ bgPosition: value }) }
+							/>
+						</BaseControl> */}
+					</PanelBody>
+					<PanelBody
+						title={ __("Layout Setting", "vk-blocks") }
+						initialOpen={ false }
+					>
+						<p className={ 'mb-1' }><label>{ __( 'Width', 'vk-blocks' ) }</label></p>
+						<BaseControl>
+							<ButtonGroup className="mb-3">
+								<Button
+									isSmall
+									isPrimary={ outerWidth === 'normal' }
+									isSecondary={ outerWidth !== 'normal' }
+									onClick={ () => setAttributes({ outerWidth: 'normal' }) }
+								>
+									{ __('Normal', 'vk-blocks') }
+								</Button>
+								<Button
+									isSmall
+									isPrimary={ outerWidth === 'full' }
+									isSecondary={ outerWidth !== 'full' }
+									onClick={ () => setAttributes({ outerWidth: 'full' }) }
+								>
+									{ __('Full Wide', 'vk-blocks') }
+								</Button>
+							</ButtonGroup>
+
+							<RadioControl
+								label={ __(
+									"Padding (Left and Right)",
+									"vk-blocks"
+								) }
+								selected={ padding_left_and_right }
+								options={ [
+									{
+										label: __("Fit to the Content area", "vk-blocks"),
+										value: "0",
+									},
+									{
+										label: __("Add padding to the Outer area", "vk-blocks"),
+										value: "1",
+									},
+									{
+										label: __("Remove padding from the Outer area", "vk-blocks"),
+										value: "2",
+									},
+								] }
+								onChange={ (value) =>
+									setAttributes({ padding_left_and_right: value })
+								}
+							/>
+							<RadioControl
+								label={ __("Padding (Top and Bottom)", "vk-blocks") }
+								className={ 'mb-1' }
+								selected={ padding_top_and_bottom }
+								options={ [
+									{ label: __("Use default padding", "vk-blocks"), value: "1" },
+									{
+										label: __(
+											"Do not use default padding",
+											"vk-blocks"
+										),
+										value: "0",
+									},
+								] }
+								onChange={ (value) =>
+									setAttributes({ padding_top_and_bottom: value })
+								}
+							/>
+							<p>{ __( '* If you select "Do not use" that, please set yourself it such as a spacer block.', "vk-blocks" ) }</p>
+						</BaseControl>
+					</PanelBody>
+					<PanelBody
+						title={ __('Align', 'vk-blocks') }
+						initialOpen={ false }
+					>
 						<BaseControl>
 						<h4 className="mt-0 mb-2">{ __('Vertical align', 'vk-blocks') }</h4>
 							<BlockVerticalAlignmentToolbar
@@ -58,18 +222,14 @@ registerBlockType("vk-blocks/slider-item", {
 						</BaseControl>
 					</PanelBody>
 				</InspectorControls>
-				<div className={ `${className} vk_align-${verticalAlignment}` }>
-					<InnerBlocks />
-				</div>
+				<SliderItem {...props} for_={"edit"}/>
 			</Fragment>
 		);
 	},
 
 	save(props) {
 		return (
-			<div className={ `vk_slider_item swiper-slide vk_align-${props.attributes.verticalAlignment}` }>
-				<InnerBlocks.Content />
-			</div>
+			<SliderItem {...props} for_={"save"}/>
 		);
 	},
 });

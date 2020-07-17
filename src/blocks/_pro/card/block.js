@@ -8,15 +8,19 @@ import { ColumnLayoutControl } from "../../../components/column-layout-control";
 import { CardAlignControls } from "../../../components/card-align-control";
 import { deprecated } from "./deprecated";
 import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
+import formatNum from "../../_helper/formatNum";
 import removeProperty from "../../_helper/removeProperty"
+import { vkbBlockEditor } from "./../../_helper/depModules";
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 const { Fragment } = wp.element;
-const { PanelBody, CheckboxControl, TextControl } = wp.components;
-const { InspectorControls } =
-  wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
+const { RangeControl, PanelBody, BaseControl, SelectControl, TextControl, CheckboxControl } = wp.components;
+const { addFilter } = wp.hooks;
+const { InspectorControls } = vkbBlockEditor;
 const { select, dispatch } = wp.data;
+const { createHigherOrderComponent } = wp.compose;
+
 const BlockIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 576">
 		<path
@@ -46,6 +50,7 @@ const BlockIcon = (
 	</svg>
 );
 const inserterVisible = hiddenNewBlock(5.3);
+export const prefix =  "vk_card_"
 
 registerBlockType("vk-blocks/card", {
   title: __("Card", "vk-blocks"),
@@ -58,8 +63,9 @@ registerBlockType("vk-blocks/card", {
   },
 
   edit(props) {
-    const { attributes, setAttributes, className, clientId, name } = props;
-    attributes.name = name;
+	const { attributes, setAttributes, className, clientId, name } = props;
+	attributes.name = name;
+	let {unit, pc, tablet, mobile} = attributes
 
     const selectEditor = select("core/block-editor")
       ? select("core/block-editor")
@@ -87,10 +93,9 @@ registerBlockType("vk-blocks/card", {
         if (beforeLength !== afterLength) {
           for (let i = 0; i < innerBlocks.length; i++) {
             if (innerBlocks[i] !== undefined) {
-
-							//className以外の値で、子要素のattributesをアップデート
-							const updateAttributes = removeProperty(attributes,"className")
-							updateBlockAttributes(innerBlocks[i].clientId, updateAttributes);
+				//className以外の値で、子要素のattributesをアップデート
+				const updateAttributes = removeProperty(attributes,"className")
+				updateBlockAttributes(innerBlocks[i].clientId, updateAttributes);
 
             }
           }
@@ -103,9 +108,59 @@ registerBlockType("vk-blocks/card", {
 		<InspectorControls>
 			<ColumnLayoutControl { ...props } />
 			<DisplayItemsControlForCards { ...props } />
+			<PanelBody
+			title={__("Height", "vk-blocks")}
+			initialOpen={false}
+			>
+				<SelectControl
+				label={__('Unit Type', 'vk-blocks')}
+				value={unit}
+				onChange={(value) => setAttributes({ unit: value })}
+				options={[
+					{
+						value: 'px',
+						label: __('px', 'vk-blocks'),
+					},
+					{
+						value: 'em',
+						label: __('em', 'vk-blocks'),
+					},
+					{
+						value: 'rem',
+						label: __('rem', 'vk-blocks'),
+					},
+					{
+						value: 'vw',
+						label: __('vw', 'vk-blocks'),
+					}
+				]}
+				/>
+				<BaseControl label={__('Slide Height for each device.', 'vk-blocks')}>
+					<RangeControl
+					label={__('PC', 'vk-blocks')}
+					value={pc}
+					onChange={(value) => setAttributes({ pc: formatNum(value, pc) })}
+					step={0.1}
+					max={ 2000 }
+					/>
+					<RangeControl
+					label={__('Tablet', 'vk-blocks')}
+					value={tablet}
+					onChange={(value) => setAttributes({ tablet: formatNum(value, tablet) })}
+					step={0.1}
+					max={ 2000 }
+					/>
+					<RangeControl
+					label={__('Mobile', 'vk-blocks')}
+					value={mobile}
+					onChange={(value) => setAttributes({ mobile: formatNum(value, mobile) })}
+					step={0.1}
+					max={ 2000 }
+					/>
+				</BaseControl>
+			</PanelBody>
 			<CardAlignControls { ...props } />
 		</InspectorControls>
-
 		<Component
 			attributes={ attributes }
 			className={ className }
@@ -169,3 +224,56 @@ export const DisplayItemsControlForCards = (props) => {
 	</PanelBody>
   );
 };
+
+const generateInlineCss = (attributes) =>{
+	const { clientId, mobile, tablet, pc, unit } = attributes
+	const cardImgSelector = `.${prefix}${clientId} .vk_card_item .vk_post_imgOuter::before`
+	return <style type='text/css'>{`@media (max-width: 576px) {
+		${cardImgSelector}{
+			height:${mobile}${unit}!important;
+		}
+	}
+	@media (min-width: 577px) and (max-width: 768px) {
+		${cardImgSelector}{
+			height:${tablet}${unit}!important;
+		}
+	}
+	@media (min-width: 769px) {
+		${cardImgSelector}{
+			height:${pc}${unit}!important;
+		}
+	}`}</style>
+}
+
+const addInlineEditorCss =  createHigherOrderComponent( ( BlockEdit ) => {
+    return ( props ) => {
+		const { attributes, clientId } = props
+		attributes["clientId"] = clientId
+		const cssTag = generateInlineCss(attributes)
+        return (
+            <Fragment>
+				{cssTag}
+                <BlockEdit { ...props } />
+            </Fragment>
+        );
+    };
+}, "addInlineEditorCss" );
+addFilter( 'editor.BlockEdit', "vk-blocks/card", addInlineEditorCss );
+
+const addInlineFrontCss = (el, type, attributes) => {
+
+	if ("vk-blocks/card" === type.name) {
+		const cssTag = generateInlineCss(attributes)
+		return<div>
+			{cssTag}
+			{el}
+		  </div>
+	}else{
+		return el
+	}
+}
+addFilter(
+  "blocks.getSaveElement",
+  "vk-blocks/card",
+  addInlineFrontCss
+);

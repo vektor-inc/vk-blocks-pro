@@ -3,14 +3,15 @@ const { InnerBlocks } = vkbBlockEditor;
 const { __ } = wp.i18n; // Import __() from wp.i18n
 import { convertToGrid } from "../../_helper/convert-to-grid";
 import React from "react";
+import { prefix } from "./block"
 
 export class Component extends React.Component {
   render() {
     let for_ = this.props.for_;
-    let attributes = this.props.attributes;
+		let attributes = this.props.attributes;
+		const { clientId } = attributes;
     let innerClass = "";
     let className = this.props.className;
-    let containerClass = " vk_card";
     let elm;
     const ALLOWED_BLOCKS = ["vk-blocks/card-item"];
     const TEMPLATE = [ALLOWED_BLOCKS];
@@ -48,6 +49,6 @@ export class Component extends React.Component {
     } else if ("save") {
       elm = <InnerBlocks.Content />;
     }
-    return <div className={`vk_posts ${className}`}>{elm}</div>;
+    return <div className={`vk_posts ${className} ${prefix}${clientId}`}>{elm}</div>;
   }
 }

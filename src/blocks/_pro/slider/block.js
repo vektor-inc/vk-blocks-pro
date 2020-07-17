@@ -54,7 +54,7 @@ registerBlockType("vk-blocks/slider", {
 
 	edit(props) {
 		const { attributes, setAttributes, className, clientId } = props;
-		const { unit, pc, tablet, mobile, autoPlay, autoPlayDelay, navigation, width } = attributes;
+		const { unit, pc, tablet, mobile, autoPlay, autoPlayDelay, navigation, width, loop } = attributes;
 		const { getBlocksByClientId } = select("core/block-editor");
 		const { updateBlockAttributes } = dispatch("core/block-editor");
 
@@ -158,7 +158,7 @@ registerBlockType("vk-blocks/slider", {
 						initialOpen={ false }
 					>
 						<BaseControl>
-							<ButtonGroup className="mb-3">
+							<ButtonGroup>
 								<Button
 									isSmall
 									isPrimary={ width === 'wide' }
@@ -182,10 +182,10 @@ registerBlockType("vk-blocks/slider", {
 						title={ __("Slider Settings", "vk-blocks") }
 						initialOpen={ false }
 					>
-						<BaseControl label={ __("Display Navigation ", "vk-blocks") }>
+						<BaseControl label={ __("Loop ", "vk-blocks") }>
 							<AdvancedToggleControl
-								initialFixedTable={ navigation }
-								schema={ "navigation" }
+								initialFixedTable={ loop }
+								schema={ "loop" }
 								{ ...props }
 							/>
 						</BaseControl>
@@ -200,6 +200,13 @@ registerBlockType("vk-blocks/slider", {
 								value={autoPlayDelay}
 								onChange={value => setAttributes({ autoPlayDelay: formatNum(parseInt(value, 10), parseInt(autoPlayDelay, 10)) })}
 								type={"number"}
+							/>
+						</BaseControl>
+						<BaseControl label={ __("Display Navigation ", "vk-blocks") }>
+							<AdvancedToggleControl
+								initialFixedTable={ navigation }
+								schema={ "navigation" }
+								{ ...props }
 							/>
 						</BaseControl>
 					</PanelBody>
@@ -255,7 +262,7 @@ addFilter(
 const addSwiperConfig = (el, type, attributes) => {
 
 	if ("vk-blocks/slider" === type.name) {
-		const { clientId, navigation, autoPlay, autoPlayDelay, mobile, tablet, pc, unit }  = attributes
+		const { clientId, navigation, autoPlay, autoPlayDelay, mobile, tablet, pc, unit, loop }  = attributes
 
 		let cssTag = `@media (max-width: 576px) {
 			.vk_slider_${clientId},
@@ -304,7 +311,7 @@ const addSwiperConfig = (el, type, attributes) => {
 			<script>{`
 			var swiper${clientId} = new Swiper ('.vk_slider_${clientId}', {
 				// Optional parameters
-				loop: true,
+				loop: ${loop},
 
 				${navigationScripts}
 
@@ -318,6 +325,7 @@ const addSwiperConfig = (el, type, attributes) => {
 				scrollbar: {
 				  el: '.swiper-scrollbar',
 				},
+
 				${autoPlayScripts}
 			  })`
 			  }

@@ -4,7 +4,7 @@ msgstr ""
 "X-Generator: babel-plugin-makepot\n"
 
 #: src/blocks/_helper/font-awesome-new.js:12
-#: src/blocks/border-box/block.js:114
+#: src/blocks/border-box/block.js:138
 #: src/blocks/border-box/font-awesome-new.js:21
 msgid "Icon"
 msgstr ""
@@ -103,7 +103,7 @@ msgstr ""
 
 #: src/blocks/_pro/animation/block.js:79
 #: src/blocks/_pro/outer/block.js:182
-#: src/blocks/_pro/slider-item/block.js:155
+
 #: src/blocks/balloon/block.js:158
 #: src/blocks/button/block.js:158
 #: src/blocks/faq/block.js:64
@@ -262,7 +262,6 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/block.js:55
 #: src/blocks/_pro/step-item/block.js:40
-#: src/blocks/border-box/block.js:117
 #: src/blocks/button/block.js:269
 #: src/blocks/pr-content/block.js:175
 msgid "Icon ( Font Awesome )"
@@ -302,7 +301,7 @@ msgid "Input Content"
 msgstr ""
 
 #: src/blocks/_pro/icon-card/block.js:104
-#: src/blocks/_pro/slider-item/block.js:213
+
 #: src/components/card-align-control/index.js:29
 msgid "Align"
 msgstr ""
@@ -325,7 +324,7 @@ msgid "Background Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:105
-#: src/blocks/_pro/slider-item/block.js:79
+
 #: src/blocks/pr-content/block.js:98
 msgid "Color Setting"
 msgstr ""
@@ -374,7 +373,7 @@ msgid "Parallax (Non-guaranteed)"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:170
-#: src/blocks/_pro/slider-item/block.js:143
+
 #: src/blocks/pr-content/block.js:195
 msgid "Layout Setting"
 msgstr ""
@@ -405,27 +404,26 @@ msgid "Add padding to the Outer area"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:210
-#: src/blocks/_pro/slider-item/block.js:183
+
 msgid "Remove padding from the Outer area"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:219
-#: src/blocks/_pro/slider-item/block.js:192
+
 msgid "Padding (Top and Bottom)"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:223
-#: src/blocks/_pro/slider-item/block.js:196
+
 msgid "Use default padding"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:225
-#: src/blocks/_pro/slider-item/block.js:198
 msgid "Do not use default padding"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:236
-#: src/blocks/_pro/slider-item/block.js:209
+
 msgid ""
 "* If you select \"Do not use\" that, please set yourself it such as a "
 "spacer block."
@@ -575,8 +573,6 @@ msgstr ""
 msgid "Vertical align"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/block.js:42
-msgid "Slider Item"
 msgstr ""
 
 #: src/blocks/_pro/slider/block.js:106
@@ -870,15 +866,31 @@ msgid "Please enter a title."
 msgstr ""
 
 #: src/blocks/border-box/block.js:101
-msgid "Blue"
+msgid "Orange"
 msgstr ""
 
 #: src/blocks/border-box/block.js:105
-msgid "Green"
+msgid "Blue"
 msgstr ""
 
 #: src/blocks/border-box/block.js:109
+msgid "Green"
+msgstr ""
+
+#: src/blocks/border-box/block.js:113
 msgid "Black"
+msgstr ""
+
+#: src/blocks/border-box/block.js:120
+msgid "Background Color"
+msgstr ""
+
+#: src/blocks/border-box/block.js:128
+msgid "Transparent"
+msgstr ""
+
+#: src/blocks/border-box/block.js:132
+msgid "White"
 msgstr ""
 
 #: src/blocks/border-box/block.js:45
@@ -909,12 +921,13 @@ msgstr ""
 msgid "Solid Angle iconFeature"
 msgstr ""
 
-#: src/blocks/border-box/block.js:93
-msgid "Red"
+#: src/blocks/border-box/block.js:89
+#: src/blocks/group-style/block.js:50
+msgid "Border Color"
 msgstr ""
 
 #: src/blocks/border-box/block.js:97
-msgid "Orange"
+msgid "Red"
 msgstr ""
 
 #: src/blocks/button/block.js:129
@@ -1085,10 +1098,6 @@ msgstr ""
 msgid "Shadow"
 msgstr ""
 
-#: src/blocks/group-style/block.js:50
-msgid "Border Color"
-msgstr ""
-
 #: src/blocks/group-style/block.js:99
 msgid "Solid Roundcorner"
 msgstr ""
@@ -1164,6 +1173,7 @@ msgstr ""
 
 #: src/blocks/heading/block.js:188
 msgid "Font Awesome Icon Settings"
+
 msgstr ""
 
 #: src/blocks/heading/block.js:195

@@ -224,6 +224,7 @@ registerBlockType("vk-blocks/slider", {
 	},
 });
 
+// Add column css for editor.
 const vkbwithClientIdClassName = createHigherOrderComponent(
 	(BlockListBlock) => {
 		return (props) => {
@@ -243,9 +244,91 @@ const vkbwithClientIdClassName = createHigherOrderComponent(
 	},
 	"vkbwithClientIdClassName"
 );
-
 addFilter(
 	"editor.BlockListBlock",
 	"vk-blocks/slider-item",
 	vkbwithClientIdClassName
+);
+
+
+// Add swiper-js script for front side.
+const addSwiperConfig = (el, type, attributes) => {
+
+	if ("vk-blocks/slider" === type.name) {
+		const { clientId, navigation, autoPlay, autoPlayDelay, mobile, tablet, pc, unit }  = attributes
+
+		let cssTag = `@media (max-width: 576px) {
+			.vk_slider_${clientId},
+			.vk_slider_${clientId} .vk_slider_item{
+				height:${mobile}${unit}!important;
+			}
+		}
+		@media (min-width: 577px) and (max-width: 768px) {
+			.vk_slider_${clientId},
+			.vk_slider_${clientId} .vk_slider_item{
+				height:${tablet}${unit}!important;
+			}
+		}
+		@media (min-width: 769px) {
+			.vk_slider_${clientId},
+			.vk_slider_${clientId} .vk_slider_item{
+				height:${pc}${unit}!important;
+			}
+		}`
+
+		let autoPlayScripts;
+		if(autoPlay){
+			autoPlayScripts = `autoplay: {
+				delay: ${autoPlayDelay},
+				disableOnInteraction: false,
+			},`
+		}else{
+			autoPlayScripts = ''
+		}
+
+		let navigationScripts;
+		if(navigation){
+			navigationScripts = `
+			// If we need pagination
+			pagination: {
+			  el: '.swiper-pagination',
+			  clickable : true,
+			},`;
+		}else{
+			navigationScripts = ''
+		}
+
+		return<div>
+			{el}
+			<style type='text/css'>{cssTag}</style>
+			<script>{`
+			var swiper${clientId} = new Swiper ('.vk_slider_${clientId}', {
+				// Optional parameters
+				loop: true,
+
+				${navigationScripts}
+
+				// Navigation arrows
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+
+				// And if we need scrollbar
+				scrollbar: {
+				  el: '.swiper-scrollbar',
+				},
+				${autoPlayScripts}
+			  })`
+			  }
+			</script>
+		  </div>
+	}else{
+		return el
+	}
+}
+addFilter(
+  "blocks.getSaveElement",
+  "vk-blocks/slider",
+  addSwiperConfig
 );

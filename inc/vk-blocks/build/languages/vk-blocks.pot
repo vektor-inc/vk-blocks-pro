@@ -103,6 +103,7 @@ msgstr ""
 
 #: src/blocks/_pro/animation/block.js:79
 #: src/blocks/_pro/outer/block.js:182
+#: src/blocks/_pro/slider/block.js:117
 #: src/blocks/balloon/block.js:158
 #: src/blocks/button/block.js:158
 #: src/blocks/faq/block.js:64
@@ -301,7 +302,6 @@ msgid "Input Content"
 msgstr ""
 
 #: src/blocks/_pro/icon-card/block.js:104
-#: src/blocks/_pro/slider-item/block.js:51
 #: src/components/card-align-control/index.js:29
 msgid "Align"
 msgstr ""
@@ -319,33 +319,40 @@ msgid "Columns"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:101
+#: src/blocks/_pro/slider-item/block.js:110
 msgid "Background Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:105
+#: src/blocks/_pro/slider-item/block.js:114
 #: src/blocks/pr-content/block.js:98
 msgid "Color Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:106
+#: src/blocks/_pro/slider-item/block.js:115
 msgid ""
 "Color will overcome background image. If you want to display image, clear "
 "background color or set opacity 0."
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:116
+#: src/blocks/_pro/slider-item/block.js:125
 msgid "Opacity Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:128
+#: src/blocks/_pro/slider-item/block.js:137
 msgid "Background Image PC"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:136
+#: src/blocks/_pro/slider-item/block.js:145
 msgid "Background Image Tablet"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:142
+#: src/blocks/_pro/slider-item/block.js:151
 msgid "Background Image Mobile"
 msgstr ""
 
@@ -366,23 +373,28 @@ msgid "Parallax (Non-guaranteed)"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:170
+#: src/blocks/_pro/slider-item/block.js:72
 #: src/blocks/pr-content/block.js:195
 msgid "Layout Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:173
+#: src/blocks/_pro/slider/block.js:106
 msgid "Width"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:190
+#: src/blocks/_pro/slider/block.js:125
 msgid "Full Wide"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:195
+#: src/blocks/_pro/slider-item/block.js:77
 msgid "Padding (Left and Right)"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:202
+#: src/blocks/_pro/slider-item/block.js:84
 msgid "Fit to the Content area"
 msgstr ""
 
@@ -552,76 +564,100 @@ msgstr ""
 msgid "Post list"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/block.js:30
-msgid "Slider Item"
-msgstr ""
-
-#: src/blocks/_pro/slider-item/block.js:53
+#: src/blocks/_pro/slider-item/block.js:102
 msgid "Vertical align"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:106
+#: src/blocks/_pro/slider-item/block.js:157
+msgid "Background Image Size"
+msgstr ""
+
+#: src/blocks/_pro/slider-item/block.js:163
+msgid "cover"
+msgstr ""
+
+#: src/blocks/_pro/slider-item/block.js:164
+msgid "repeat"
+msgstr ""
+
+#: src/blocks/_pro/slider-item/block.js:41
+msgid "Slider Item"
+msgstr ""
+
+#: src/blocks/_pro/slider-item/block.js:88
+msgid "Add padding to the Slider area"
+msgstr ""
+
+#: src/blocks/_pro/slider-item/block.js:92
+msgid "Remove padding from the Slider area"
+msgstr ""
+
+#: src/blocks/_pro/slider/block.js:131
 msgid "Height"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:110
+#: src/blocks/_pro/slider/block.js:135
 #: src/blocks/spacer/block.js:74
 msgid "Unit Type"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:116
+#: src/blocks/_pro/slider/block.js:141
 #: src/blocks/spacer/block.js:80
 msgid "px"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:120
+#: src/blocks/_pro/slider/block.js:145
 #: src/blocks/spacer/block.js:84
 msgid "em"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:124
+#: src/blocks/_pro/slider/block.js:149
 #: src/blocks/spacer/block.js:88
 msgid "rem"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:128
+#: src/blocks/_pro/slider/block.js:153
 #: src/blocks/spacer/block.js:92
 msgid "vw"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:132
+#: src/blocks/_pro/slider/block.js:157
 msgid "Slide Height for each device."
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:134
+#: src/blocks/_pro/slider/block.js:159
 #: src/blocks/spacer/block.js:98
 msgid "PC"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:141
+#: src/blocks/_pro/slider/block.js:166
 #: src/blocks/spacer/block.js:104
 msgid "Tablet"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:148
+#: src/blocks/_pro/slider/block.js:173
 #: src/blocks/spacer/block.js:110
 msgid "Mobile"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:157
+#: src/blocks/_pro/slider/block.js:182
 msgid "Slider Settings"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:160
-msgid "Display Navigation "
+#: src/blocks/_pro/slider/block.js:185
+msgid "Loop "
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:167
+#: src/blocks/_pro/slider/block.js:192
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:174
+#: src/blocks/_pro/slider/block.js:199
 msgid "Delay"
+msgstr ""
+
+#: src/blocks/_pro/slider/block.js:205
+msgid "Display Navigation "
 msgstr ""
 
 #: src/blocks/_pro/slider/block.js:46

@@ -14,7 +14,7 @@ const { registerBlockType } = wp.blocks;
 const { Fragment, useEffect } = wp.element;
 const { InspectorControls, BlockControls, BlockAlignmentToolbar} = wp.blockEditor;
 const { select, dispatch } = wp.data;
-const { RangeControl, PanelBody, BaseControl, SelectControl, TextControl } = wp.components;
+const { RangeControl, PanelBody, BaseControl, SelectControl, TextControl, ButtonGroup, Button } = wp.components;
 const { createHigherOrderComponent } = wp.compose;
 const { addFilter } = wp.hooks;
 
@@ -54,7 +54,7 @@ registerBlockType("vk-blocks/slider", {
 
 	edit(props) {
 		const { attributes, setAttributes, className, clientId } = props;
-		const { unit, pc, tablet, mobile, autoPlay, autoPlayDelay, navigation, width } = attributes;
+		const { unit, pc, tablet, mobile, autoPlay, autoPlayDelay, navigation, width, loop } = attributes;
 		const { getBlocksByClientId } = select("core/block-editor");
 		const { updateBlockAttributes } = dispatch("core/block-editor");
 
@@ -98,10 +98,35 @@ registerBlockType("vk-blocks/slider", {
 						onChange={ ( nextWidth ) =>
 							setAttributes( { width: nextWidth } )
 						}
-						controls={ [ 'wide', 'full' ] }
+						controls={ [ 'full' ] }
 					/>
 				</BlockControls>
 				<InspectorControls>
+				<PanelBody
+						title={ __("Width", "vk-blocks") }
+						initialOpen={ true }
+					>
+						<BaseControl>
+							<ButtonGroup>
+							<Button
+									isSmall
+									isPrimary={ width === '' }
+									isSecondary={ width !== '' }
+									onClick={ () => setAttributes({ width: '' }) }
+								>
+									{ __('Normal', 'vk-blocks') }
+								</Button>
+								<Button
+									isSmall
+									isPrimary={ width === 'full' }
+									isSecondary={ width !== 'full' }
+									onClick={ () => setAttributes({ width: 'full' }) }
+								>
+									{ __('Full Wide', 'vk-blocks') }
+								</Button>
+							</ButtonGroup>
+						</BaseControl>
+					</PanelBody>
 					<PanelBody
 						title={__("Height", "vk-blocks")}
 						initialOpen={false}
@@ -157,10 +182,10 @@ registerBlockType("vk-blocks/slider", {
 						title={ __("Slider Settings", "vk-blocks") }
 						initialOpen={ false }
 					>
-						<BaseControl label={ __("Display Navigation ", "vk-blocks") }>
+						<BaseControl label={ __("Loop ", "vk-blocks") }>
 							<AdvancedToggleControl
-								initialFixedTable={ navigation }
-								schema={ "navigation" }
+								initialFixedTable={ loop }
+								schema={ "loop" }
 								{ ...props }
 							/>
 						</BaseControl>
@@ -175,6 +200,13 @@ registerBlockType("vk-blocks/slider", {
 								value={autoPlayDelay}
 								onChange={value => setAttributes({ autoPlayDelay: formatNum(parseInt(value, 10), parseInt(autoPlayDelay, 10)) })}
 								type={"number"}
+							/>
+						</BaseControl>
+						<BaseControl label={ __("Display Navigation ", "vk-blocks") }>
+							<AdvancedToggleControl
+								initialFixedTable={ navigation }
+								schema={ "navigation" }
+								{ ...props }
 							/>
 						</BaseControl>
 					</PanelBody>
@@ -199,6 +231,7 @@ registerBlockType("vk-blocks/slider", {
 	},
 });
 
+// Add column css for editor.
 const vkbwithClientIdClassName = createHigherOrderComponent(
 	(BlockListBlock) => {
 		return (props) => {
@@ -218,9 +251,92 @@ const vkbwithClientIdClassName = createHigherOrderComponent(
 	},
 	"vkbwithClientIdClassName"
 );
-
 addFilter(
 	"editor.BlockListBlock",
 	"vk-blocks/slider-item",
 	vkbwithClientIdClassName
+);
+
+
+// Add swiper-js script for front side.
+const addSwiperConfig = (el, type, attributes) => {
+
+	if ("vk-blocks/slider" === type.name) {
+		const { clientId, navigation, autoPlay, autoPlayDelay, mobile, tablet, pc, unit, loop }  = attributes
+
+		let cssTag = `@media (max-width: 576px) {
+			.vk_slider_${clientId},
+			.vk_slider_${clientId} .vk_slider_item{
+				height:${mobile}${unit}!important;
+			}
+		}
+		@media (min-width: 577px) and (max-width: 768px) {
+			.vk_slider_${clientId},
+			.vk_slider_${clientId} .vk_slider_item{
+				height:${tablet}${unit}!important;
+			}
+		}
+		@media (min-width: 769px) {
+			.vk_slider_${clientId},
+			.vk_slider_${clientId} .vk_slider_item{
+				height:${pc}${unit}!important;
+			}
+		}`
+
+		let autoPlayScripts;
+		if(autoPlay){
+			autoPlayScripts = `autoplay: {
+				delay: ${autoPlayDelay},
+				disableOnInteraction: false,
+			},`
+		}else{
+			autoPlayScripts = ''
+		}
+
+		let navigationScripts;
+		if(navigation){
+			navigationScripts = `
+			// If we need pagination
+			pagination: {
+			  el: '.swiper-pagination',
+			  clickable : true,
+			},`;
+		}else{
+			navigationScripts = ''
+		}
+
+		return<div>
+			{el}
+			<style type='text/css'>{cssTag}</style>
+			<script>{`
+			var swiper${clientId} = new Swiper ('.vk_slider_${clientId}', {
+				// Optional parameters
+				loop: ${loop},
+
+				${navigationScripts}
+
+				// Navigation arrows
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+
+				// And if we need scrollbar
+				scrollbar: {
+				  el: '.swiper-scrollbar',
+				},
+
+				${autoPlayScripts}
+			  })`
+			  }
+			</script>
+		  </div>
+	}else{
+		return el
+	}
+}
+addFilter(
+  "blocks.getSaveElement",
+  "vk-blocks/slider",
+  addSwiperConfig
 );

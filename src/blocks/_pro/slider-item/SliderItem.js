@@ -31,19 +31,22 @@ const SliderItem = ( props )=>{
 		elm = <InnerBlocks />;
 	} else if (`save`) {
 		elm = <InnerBlocks.Content />;
-		if ( classPaddingLR === ` ${prefix}-paddingLR-none` || classPaddingLR === "" ) {
-			containerClass = `${prefix}_container container`;
-		} else {
-			containerClass = `${prefix}_container`;
-		}
 	}
 
-    baseClass = classNames(className, containerClass,`vk_slider_item swiper-slide vk_align-${verticalAlignment} ${prefix}-${clientId}`, `${classPaddingLR}`, `${prefix}-paddingVertical-none`)
+	if ( classPaddingLR === ` ${prefix}-paddingLR-none` || classPaddingLR === "" ) {
+		containerClass = `${prefix}_container container`;
+	} else {
+		containerClass = `${prefix}_container`;
+	}
+
+	baseClass = classNames(className, `vk_slider_item swiper-slide vk_valign-${verticalAlignment} ${prefix}-${clientId}`, `${classPaddingLR}`, `${prefix}-paddingVertical-none`)
 
     return(
         <div className={baseClass}>
-            <GenerateBgImage prefix={prefix} clientId={clientId} {...props} />
+			<GenerateBgImage prefix={prefix} clientId={clientId} {...props} />
+			<div className={containerClass}>
 			{elm}
+			</div>
 		</div>
     )
 

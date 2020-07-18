@@ -302,7 +302,6 @@ msgid "Input Content"
 msgstr ""
 
 #: src/blocks/_pro/icon-card/block.js:104
-#: src/blocks/_pro/slider-item/block.js:164
 #: src/components/card-align-control/index.js:29
 msgid "Align"
 msgstr ""
@@ -320,40 +319,40 @@ msgid "Columns"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:101
-#: src/blocks/_pro/slider-item/block.js:103
+#: src/blocks/_pro/slider-item/block.js:110
 msgid "Background Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:105
-#: src/blocks/_pro/slider-item/block.js:107
+#: src/blocks/_pro/slider-item/block.js:114
 #: src/blocks/pr-content/block.js:98
 msgid "Color Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:106
-#: src/blocks/_pro/slider-item/block.js:108
+#: src/blocks/_pro/slider-item/block.js:115
 msgid ""
 "Color will overcome background image. If you want to display image, clear "
 "background color or set opacity 0."
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:116
-#: src/blocks/_pro/slider-item/block.js:118
+#: src/blocks/_pro/slider-item/block.js:125
 msgid "Opacity Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:128
-#: src/blocks/_pro/slider-item/block.js:130
+#: src/blocks/_pro/slider-item/block.js:137
 msgid "Background Image PC"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:136
-#: src/blocks/_pro/slider-item/block.js:138
+#: src/blocks/_pro/slider-item/block.js:145
 msgid "Background Image Tablet"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:142
-#: src/blocks/_pro/slider-item/block.js:144
+#: src/blocks/_pro/slider-item/block.js:151
 msgid "Background Image Mobile"
 msgstr ""
 
@@ -565,20 +564,20 @@ msgstr ""
 msgid "Post list"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/block.js:150
-msgid "Background Image Size"
-msgstr ""
-
-#: src/blocks/_pro/slider-item/block.js:156
-msgid "cover"
+#: src/blocks/_pro/slider-item/block.js:102
+msgid "Vertical align"
 msgstr ""
 
 #: src/blocks/_pro/slider-item/block.js:157
-msgid "repeat"
+msgid "Background Image Size"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/block.js:168
-msgid "Vertical align"
+#: src/blocks/_pro/slider-item/block.js:163
+msgid "cover"
+msgstr ""
+
+#: src/blocks/_pro/slider-item/block.js:164
+msgid "repeat"
 msgstr ""
 
 #: src/blocks/_pro/slider-item/block.js:41

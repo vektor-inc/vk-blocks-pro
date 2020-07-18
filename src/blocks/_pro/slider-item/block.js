@@ -70,7 +70,7 @@ registerBlockType("vk-blocks/slider-item", {
 				<InspectorControls>
 				<PanelBody
 					title={ __("Layout Setting", "vk-blocks") }
-					initialOpen={ false }
+					initialOpen={ true }
 				>
 					<BaseControl>
 						<RadioControl
@@ -98,10 +98,17 @@ registerBlockType("vk-blocks/slider-item", {
 							}
 						/>
 					</BaseControl>
+					<BaseControl>
+						<p className="mt-0 mb-2">{ __('Vertical align', 'vk-blocks') }</p>
+							<BlockVerticalAlignmentToolbar
+								onChange={  ( alignment ) => setAttributes( { verticalAlignment: alignment } ) }
+								value={ verticalAlignment }
+							/>
+						</BaseControl>
 				</PanelBody>
 				<PanelBody
 						title={ __("Background Setting", "vk-blocks") }
-						initialOpen={ true }
+						initialOpen={ false }
 					>
 						<BaseControl
 							label={ __("Color Setting", "vk-blocks") }
@@ -157,18 +164,6 @@ registerBlockType("vk-blocks/slider-item", {
 									{ label: __("repeat", "vk-blocks"), value: "repeat" },
 								] }
 								onChange={ (value) => setAttributes({ bgSize: value }) }
-							/>
-						</BaseControl>
-					</PanelBody>
-					<PanelBody
-						title={ __('Align', 'vk-blocks') }
-						initialOpen={ false }
-					>
-						<BaseControl>
-						<h4 className="mt-0 mb-2">{ __('Vertical align', 'vk-blocks') }</h4>
-							<BlockVerticalAlignmentToolbar
-								onChange={  ( alignment ) => setAttributes( { verticalAlignment: alignment } ) }
-								value={ verticalAlignment }
 							/>
 						</BaseControl>
 					</PanelBody>

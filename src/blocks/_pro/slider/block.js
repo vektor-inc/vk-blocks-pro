@@ -104,7 +104,7 @@ registerBlockType("vk-blocks/slider", {
 				<InspectorControls>
 				<PanelBody
 						title={ __("Width", "vk-blocks") }
-						initialOpen={ false }
+						initialOpen={ true }
 					>
 						<BaseControl>
 							<ButtonGroup>

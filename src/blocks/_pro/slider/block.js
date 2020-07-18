@@ -102,6 +102,39 @@ registerBlockType("vk-blocks/slider", {
 					/>
 				</BlockControls>
 				<InspectorControls>
+				<PanelBody
+						title={ __("Width", "vk-blocks") }
+						initialOpen={ false }
+					>
+						<BaseControl>
+							<ButtonGroup>
+							<Button
+									isSmall
+									isPrimary={ width === '' }
+									isSecondary={ width !== '' }
+									onClick={ () => setAttributes({ width: '' }) }
+								>
+									{ __('Normal', 'vk-blocks') }
+								</Button>
+								<Button
+									isSmall
+									isPrimary={ width === 'wide' }
+									isSecondary={ width !== 'wide' }
+									onClick={ () => setAttributes({ width: 'wide' }) }
+								>
+									{ __('wide', 'vk-blocks') }
+								</Button>
+								<Button
+									isSmall
+									isPrimary={ width === 'full' }
+									isSecondary={ width !== 'full' }
+									onClick={ () => setAttributes({ width: 'full' }) }
+								>
+									{ __('Full Wide', 'vk-blocks') }
+								</Button>
+							</ButtonGroup>
+						</BaseControl>
+					</PanelBody>
 					<PanelBody
 						title={__("Height", "vk-blocks")}
 						initialOpen={false}
@@ -151,31 +184,6 @@ registerBlockType("vk-blocks/slider", {
 								step={0.1}
 								max={ 2000 }
 							/>
-						</BaseControl>
-					</PanelBody>
-					<PanelBody
-						title={ __("Width", "vk-blocks") }
-						initialOpen={ false }
-					>
-						<BaseControl>
-							<ButtonGroup>
-								<Button
-									isSmall
-									isPrimary={ width === 'wide' }
-									isSecondary={ width !== 'wide' }
-									onClick={ () => setAttributes({ width: 'wide' }) }
-								>
-									{ __('wide', 'vk-blocks') }
-								</Button>
-								<Button
-									isSmall
-									isPrimary={ width === 'full' }
-									isSecondary={ width !== 'full' }
-									onClick={ () => setAttributes({ width: 'full' }) }
-								>
-									{ __('Full Wide', 'vk-blocks') }
-								</Button>
-							</ButtonGroup>
 						</BaseControl>
 					</PanelBody>
 					<PanelBody

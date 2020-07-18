@@ -81,7 +81,7 @@ registerBlockType("vk-blocks/slider-item", {
 							selected={ padding_left_and_right }
 							options={ [
 								{
-									label: __("Fit to the Content area", "vk-blocks"),
+									label: __("Fit to the Container area", "vk-blocks"),
 									value: "0",
 								},
 								{

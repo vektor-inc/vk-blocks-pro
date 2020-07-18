@@ -98,7 +98,7 @@ registerBlockType("vk-blocks/slider", {
 						onChange={ ( nextWidth ) =>
 							setAttributes( { width: nextWidth } )
 						}
-						controls={ [ 'wide', 'full' ] }
+						controls={ [ 'full' ] }
 					/>
 				</BlockControls>
 				<InspectorControls>
@@ -115,14 +115,6 @@ registerBlockType("vk-blocks/slider", {
 									onClick={ () => setAttributes({ width: '' }) }
 								>
 									{ __('Normal', 'vk-blocks') }
-								</Button>
-								<Button
-									isSmall
-									isPrimary={ width === 'wide' }
-									isSecondary={ width !== 'wide' }
-									onClick={ () => setAttributes({ width: 'wide' }) }
-								>
-									{ __('wide', 'vk-blocks') }
 								</Button>
 								<Button
 									isSmall

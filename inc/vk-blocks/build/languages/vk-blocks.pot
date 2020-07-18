@@ -385,7 +385,7 @@ msgid "Width"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:190
-#: src/blocks/_pro/slider/block.js:133
+#: src/blocks/_pro/slider/block.js:125
 msgid "Full Wide"
 msgstr ""
 
@@ -593,75 +593,71 @@ msgstr ""
 msgid "Remove padding from the Slider area"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:125
-msgid "wide"
-msgstr ""
-
-#: src/blocks/_pro/slider/block.js:139
+#: src/blocks/_pro/slider/block.js:131
 msgid "Height"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:143
+#: src/blocks/_pro/slider/block.js:135
 #: src/blocks/spacer/block.js:74
 msgid "Unit Type"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:149
+#: src/blocks/_pro/slider/block.js:141
 #: src/blocks/spacer/block.js:80
 msgid "px"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:153
+#: src/blocks/_pro/slider/block.js:145
 #: src/blocks/spacer/block.js:84
 msgid "em"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:157
+#: src/blocks/_pro/slider/block.js:149
 #: src/blocks/spacer/block.js:88
 msgid "rem"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:161
+#: src/blocks/_pro/slider/block.js:153
 #: src/blocks/spacer/block.js:92
 msgid "vw"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:165
+#: src/blocks/_pro/slider/block.js:157
 msgid "Slide Height for each device."
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:167
+#: src/blocks/_pro/slider/block.js:159
 #: src/blocks/spacer/block.js:98
 msgid "PC"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:174
+#: src/blocks/_pro/slider/block.js:166
 #: src/blocks/spacer/block.js:104
 msgid "Tablet"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:181
+#: src/blocks/_pro/slider/block.js:173
 #: src/blocks/spacer/block.js:110
 msgid "Mobile"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:190
+#: src/blocks/_pro/slider/block.js:182
 msgid "Slider Settings"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:193
+#: src/blocks/_pro/slider/block.js:185
 msgid "Loop "
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:200
+#: src/blocks/_pro/slider/block.js:192
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:207
+#: src/blocks/_pro/slider/block.js:199
 msgid "Delay"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:213
+#: src/blocks/_pro/slider/block.js:205
 msgid "Display Navigation "
 msgstr ""
 

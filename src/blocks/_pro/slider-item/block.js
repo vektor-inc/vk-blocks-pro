@@ -69,6 +69,37 @@ registerBlockType("vk-blocks/slider-item", {
 				</BlockControls>
 				<InspectorControls>
 				<PanelBody
+					title={ __("Layout Setting", "vk-blocks") }
+					initialOpen={ false }
+				>
+					<BaseControl>
+						<RadioControl
+							label={ __(
+								"Padding (Left and Right)",
+								"vk-blocks"
+							) }
+							selected={ padding_left_and_right }
+							options={ [
+								{
+									label: __("Fit to the Content area", "vk-blocks"),
+									value: "0",
+								},
+								{
+									label: __("Add padding to the Slider area", "vk-blocks"),
+									value: "1",
+								},
+								{
+									label: __("Remove padding from the Slider area", "vk-blocks"),
+									value: "2",
+								},
+							] }
+							onChange={ (value) =>
+								setAttributes({ padding_left_and_right: value })
+							}
+						/>
+					</BaseControl>
+				</PanelBody>
+				<PanelBody
 						title={ __("Background Setting", "vk-blocks") }
 						initialOpen={ true }
 					>
@@ -126,37 +157,6 @@ registerBlockType("vk-blocks/slider-item", {
 									{ label: __("repeat", "vk-blocks"), value: "repeat" },
 								] }
 								onChange={ (value) => setAttributes({ bgSize: value }) }
-							/>
-						</BaseControl>
-					</PanelBody>
-					<PanelBody
-						title={ __("Layout Setting", "vk-blocks") }
-						initialOpen={ false }
-					>
-						<BaseControl>
-							<RadioControl
-								label={ __(
-									"Padding (Left and Right)",
-									"vk-blocks"
-								) }
-								selected={ padding_left_and_right }
-								options={ [
-									{
-										label: __("Fit to the Content area", "vk-blocks"),
-										value: "0",
-									},
-									{
-										label: __("Add padding to the Slider area", "vk-blocks"),
-										value: "1",
-									},
-									{
-										label: __("Remove padding from the Slider area", "vk-blocks"),
-										value: "2",
-									},
-								] }
-								onChange={ (value) =>
-									setAttributes({ padding_left_and_right: value })
-								}
 							/>
 						</BaseControl>
 					</PanelBody>

@@ -81,11 +81,7 @@ export const OuterBlock = (props) => {
 		elm = <InnerBlocks />;
 	} else if ("save") {
 		elm = <InnerBlocks.Content />;
-		if ( classPaddingLR === " vk_outer-paddingLR-none" || classPaddingLR === "" ) {
-			containerClass = "vk_outer_container container";
-		} else {
-			containerClass = "vk_outer_container";
-		}
+		containerClass = "vk_outer_container";
 	}
 
 	//borderColorクリア時に白をセットする

@@ -10,7 +10,7 @@ import AdvancedUnitControl from "../../components/advanced-unit-control"
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { PanelBody, BaseControl, SelectControl } = wp.components;
+const { PanelBody, BaseControl } = wp.components;
 const { Fragment } = wp.element;
 const { InspectorControls } = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const BlockIcon = (
@@ -35,8 +35,7 @@ registerBlockType('vk-blocks/spacer', {
 	},
 
 	edit(props) {
-		const { attributes, setAttributes, className } = props;
-		const { unit } = attributes;
+		const { attributes, className } = props;
 
 		return (
 			<Fragment>

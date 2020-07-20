@@ -66,7 +66,6 @@ registerBlockType("vk-blocks/card", {
   edit(props) {
 	const { attributes, setAttributes, className, clientId, name } = props;
 	attributes.name = name;
-	let {unit} = attributes
 
     const selectEditor = select("core/block-editor")
       ? select("core/block-editor")
@@ -222,12 +221,14 @@ const generateInlineCss = (attributes) =>{
 
 const addInlineEditorCss =  createHigherOrderComponent( ( BlockEdit ) => {
     return ( props ) => {
+
 		const { attributes, setAttributes, clientId } = props
 		const { unit, pc, tablet, mobile } = attributes
 
-		setAttributes({clientId:clientId})
+		if ("vk-blocks/card" === props.name && ( unit || pc || tablet || mobile )) {
 
-		if( unit || pc || tablet || mobile ){
+			setAttributes({clientId:clientId})
+
 			const cssTag = generateInlineCss(attributes)
 			return (
 				<Fragment>

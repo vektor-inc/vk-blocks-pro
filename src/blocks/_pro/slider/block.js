@@ -7,6 +7,7 @@ import { schema } from "./schema";
 import classNames from "classnames";
 import { convertToGrid } from "../../_helper/convert-to-grid";
 import formatNum from "../../_helper/formatNum";
+import replaceClientId from "../../_helper/replaceClientId"
 import { AdvancedToggleControl } from "./../../../components/advanced-toggle-control";
 import AdvancedViewportControl from "../../../components/advanced-viewport-control"
 import AdvancedUnitControl from "../../../components/advanced-unit-control"
@@ -16,7 +17,7 @@ const { registerBlockType } = wp.blocks;
 const { Fragment, useEffect } = wp.element;
 const { InspectorControls, BlockControls, BlockAlignmentToolbar} = wp.blockEditor;
 const { select, dispatch } = wp.data;
-const { RangeControl, PanelBody, BaseControl, SelectControl, TextControl, ButtonGroup, Button } = wp.components;
+const { PanelBody, BaseControl, TextControl, ButtonGroup, Button } = wp.components;
 const { createHigherOrderComponent } = wp.compose;
 const { addFilter } = wp.hooks;
 
@@ -56,7 +57,7 @@ registerBlockType("vk-blocks/slider", {
 
 	edit(props) {
 		const { attributes, setAttributes, className, clientId } = props;
-		const { unit, autoPlay, autoPlayDelay, navigation, width, loop } = attributes;
+		const { autoPlay, autoPlayDelay, navigation, width, loop } = attributes;
 		const { getBlocksByClientId } = select("core/block-editor");
 		const { updateBlockAttributes } = dispatch("core/block-editor");
 
@@ -65,7 +66,7 @@ registerBlockType("vk-blocks/slider", {
 		let beforeLength;
 		let afterLength;
 
-		let customClientId = clientId.replace(/-/g, '');
+		let customClientId = replaceClientId(clientId);
 
 		useEffect(() => {
 			updateBlockAttributes(clientId, {
@@ -269,7 +270,7 @@ const addSwiperConfig = (el, type, attributes) => {
 			{el}
 			<style type='text/css'>{cssTag}</style>
 			<script>{`
-			var swiper${clientId} = new Swiper ('.vk_slider_${clientId}', {
+			var swiper${replaceClientId(clientId)} = new Swiper ('.vk_slider_${clientId}', {
 				// Optional parameters
 				loop: ${loop},
 

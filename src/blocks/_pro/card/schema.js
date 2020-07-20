@@ -114,4 +114,8 @@ export const schema = {
 		type: 'number',
 		default: 150,
 	},
+	clientId: {
+    type: "string",
+    default: "",
+  },
 };

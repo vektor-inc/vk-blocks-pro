@@ -226,11 +226,21 @@ export const DisplayItemsControlForCards = (props) => {
 };
 
 const generateInlineCss = (attributes) =>{
-	const { clientId, mobile, tablet, pc, unit } = attributes
+	let { clientId, mobile, tablet, pc, unit } = attributes
 
-	// if( undfined === unit){
-	// 	unit
-	// }
+	if( undefined === unit ){
+		unit = "px"
+	}
+	let defaultValue = 150
+	if( undefined === mobile ){
+		mobile = defaultValue
+	}
+	if( undefined === tablet ){
+		tablet = defaultValue
+	}
+	if( undefined === pc ){
+		pc = defaultValue
+	}
 
 
 	const cardImgSelector = `.${prefix}${clientId} .vk_card_item .vk_post_imgOuter::before`
@@ -253,11 +263,12 @@ const generateInlineCss = (attributes) =>{
 
 const addInlineEditorCss =  createHigherOrderComponent( ( BlockEdit ) => {
     return ( props ) => {
-		const { attributes, clientId } = props
+		const { attributes, setAttributes, clientId } = props
 		const { unit, pc, tablet, mobile } = attributes
 
+		setAttributes({clientId:clientId})
+
 		if( unit || pc || tablet || mobile ){
-			attributes["clientId"] = clientId
 			const cssTag = generateInlineCss(attributes)
 			return (
 				<Fragment>
@@ -273,6 +284,7 @@ const addInlineEditorCss =  createHigherOrderComponent( ( BlockEdit ) => {
 addFilter( 'editor.BlockEdit', "vk-blocks/card", addInlineEditorCss );
 
 const addInlineFrontCss = (el, type, attributes) => {
+
 	const { unit, pc, tablet, mobile } = attributes
 	if ("vk-blocks/card" === type.name && ( unit || pc || tablet || mobile )) {
 		const cssTag = generateInlineCss(attributes)

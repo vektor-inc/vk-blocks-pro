@@ -54,7 +54,7 @@ registerBlockType("vk-blocks/slider", {
 
 	edit(props) {
 		const { attributes, setAttributes, className, clientId } = props;
-		const { unit, pc, tablet, mobile, autoPlay, autoPlayDelay, navigation, width, loop } = attributes;
+		const { unit, pc, tablet, mobile, autoPlay, autoPlayDelay, pagenation, width, loop } = attributes;
 		const { getBlocksByClientId } = select("core/block-editor");
 		const { updateBlockAttributes } = dispatch("core/block-editor");
 
@@ -199,10 +199,10 @@ registerBlockType("vk-blocks/slider", {
 								type={"number"}
 							/>
 						</BaseControl>
-						<BaseControl label={ __("Display Navigation ", "vk-blocks") }>
+						<BaseControl label={ __("Display Pagenation", "vk-blocks") }>
 							<AdvancedToggleControl
-								initialFixedTable={ navigation }
-								schema={ "navigation" }
+								initialFixedTable={ pagenation }
+								schema={ "pagenation" }
 								{ ...props }
 							/>
 						</BaseControl>
@@ -259,7 +259,7 @@ addFilter(
 const addSwiperConfig = (el, type, attributes) => {
 
 	if ("vk-blocks/slider" === type.name) {
-		const { clientId, navigation, autoPlay, autoPlayDelay, mobile, tablet, pc, unit, loop }  = attributes
+		const { clientId, pagenation, autoPlay, autoPlayDelay, mobile, tablet, pc, unit, loop }  = attributes
 
 		let cssTag = `@media (max-width: 576px) {
 			.vk_slider_${clientId},
@@ -290,16 +290,16 @@ const addSwiperConfig = (el, type, attributes) => {
 			autoPlayScripts = ''
 		}
 
-		let navigationScripts;
-		if(navigation){
-			navigationScripts = `
+		let pagenationScripts;
+		if(pagenation){
+			pagenationScripts = `
 			// If we need pagination
 			pagination: {
 			  el: '.swiper-pagination',
 			  clickable : true,
 			},`;
 		}else{
-			navigationScripts = ''
+			pagenationScripts = ''
 		}
 
 		return<div>
@@ -310,10 +310,10 @@ const addSwiperConfig = (el, type, attributes) => {
 				// Optional parameters
 				loop: ${loop},
 
-				${navigationScripts}
+				${pagenationScripts}
 
-				// Navigation arrows
-				navigation: {
+				// pagenation arrows
+				pagenation: {
 					nextEl: '.swiper-button-next',
 					prevEl: '.swiper-button-prev',
 				},

@@ -23,7 +23,7 @@ export const schema = {
 		type: "number",
 		default: 2500,
 	},
-	navigation: {
+	pagenation: {
 		type: "boolean",
 		default: true,
 	},

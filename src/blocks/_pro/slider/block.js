@@ -155,26 +155,23 @@ registerBlockType("vk-blocks/slider", {
 							]}
 						/>
 						<BaseControl label={__('Slide Height for each device.', 'vk-blocks')}>
-							<RangeControl
+							<TextControl
 								label={__('PC', 'vk-blocks')}
 								value={pc}
 								onChange={(value) => setAttributes({ pc: formatNum(value, pc) })}
-								step={0.1}
-								max={ 2000 }
+								type={"number"}
 							/>
-							<RangeControl
+							<TextControl
 								label={__('Tablet', 'vk-blocks')}
 								value={tablet}
 								onChange={(value) => setAttributes({ tablet: formatNum(value, tablet) })}
-								step={0.1}
-								max={ 2000 }
+								type={"number"}
 							/>
-							<RangeControl
+							<TextControl
 								label={__('Mobile', 'vk-blocks')}
 								value={mobile}
 								onChange={(value) => setAttributes({ mobile: formatNum(value, mobile) })}
-								step={0.1}
-								max={ 2000 }
+								type={"number"}
 							/>
 						</BaseControl>
 					</PanelBody>
@@ -198,7 +195,7 @@ registerBlockType("vk-blocks/slider", {
 							<TextControl
 								label={__('Change Time', 'vk-blocks')}
 								value={autoPlayDelay}
-								onChange={value => setAttributes({ autoPlayDelay: formatNum(parseInt(value, 10), parseInt(autoPlayDelay, 10)) })}
+								onChange={value => setAttributes({ autoPlayDelay: formatNum(value, autoPlayDelay)})}
 								type={"number"}
 							/>
 						</BaseControl>

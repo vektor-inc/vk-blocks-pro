@@ -16,10 +16,11 @@ const GenerateBgImage = (props) => {
 	const underPcViewport = "max-width: 1199.98px";
 
 	let backgroundStyle;
+	let backgroundPosition = 'background-position:center!important;'
 	if("cover" === bgSize){
-		backgroundStyle = `background-size:${bgSize}!important;`
+		backgroundStyle = `background-size:${bgSize}!important; ${backgroundPosition}`
 	}else if("repeat" === bgSize){
-		backgroundStyle = `background-repeat:${bgSize}!important;`
+		backgroundStyle = `background-repeat:${bgSize}!important; ${backgroundPosition}`
 	}else{
 		backgroundStyle = ``
 	}

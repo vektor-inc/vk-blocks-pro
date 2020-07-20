@@ -230,6 +230,7 @@ const addInlineEditorCss =  createHigherOrderComponent( ( BlockEdit ) => {
 			setAttributes({clientId:clientId})
 
 			const cssTag = generateInlineCss(attributes)
+
 			return (
 				<Fragment>
 					{cssTag}
@@ -240,7 +241,7 @@ const addInlineEditorCss =  createHigherOrderComponent( ( BlockEdit ) => {
 			return <BlockEdit { ...props } />;
 		}
     };
-}, "addInlineEditorCss" );
+}, "addInlineEditorsCss" );
 addFilter( 'editor.BlockEdit', "vk-blocks/card", addInlineEditorCss );
 
 const addInlineFrontCss = (el, type, attributes) => {

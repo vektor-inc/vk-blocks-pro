@@ -7,7 +7,7 @@ import { vkbBlockEditor } from "./../_helper/depModules";
 const apiFetch = wp.apiFetch;
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const {  ButtonGroup, PanelBody, Button } = wp.components;
+const {  ButtonGroup, PanelBody, Button,SelectControl } = wp.components;
 const { Fragment, useState, useEffect } = wp.element;
 const { RichText, InspectorControls, MediaUpload, ColorPalette } = vkbBlockEditor;
 const BlockIcon = (
@@ -192,42 +192,33 @@ registerBlockType("vk-blocks/balloon", {
 				<div>{__( 'You can register default icons from Settings > VK Blocks in Admin.', 'vk-blocks' ) }</div>
           	</PanelBody>
 		  	<PanelBody title={__("Animation setting", "vk-blocks")}>
-				<p className={ 'mb-1' }><label>{ __( 'Animation', 'vk-blocks' ) }</label></p>
 				<p className={ 'mb-1' }>{ __("Please select the type of animation.", "vk-blocks")} </p>
-				<ButtonGroup className="mb-3">
-					<Button
-						isSmall
-						isPrimary={ balloonAnimation === 'none' }
-						isSecondary={ balloonAnimation !== 'none' }
-						onClick={ () => setAttributes({ balloonAnimation: 'none' }) }
-					>
-						{ __("None", "vk-blocks") }
-					</Button>
-					<Button
-						isSmall
-						isPrimary={ balloonAnimation === 'trembling' }
-						isSecondary={ balloonAnimation !== 'trembling' }
-						onClick={ () => setAttributes({ balloonAnimation: 'trembling' }) }
-					>
-						{  __("Trembling", "vk-blocks") }
-					</Button>
-					<Button
-						isSmall
-						isPrimary={ balloonAnimation === 'pounding' }
-						isSecondary={ balloonAnimation !== 'pounding' }
-						onClick={ () => setAttributes({ balloonAnimation: 'pounding' }) }
-					>
-						{ __("Pounding", "vk-blocks") }
-					</Button>
-					<Button
-						isSmall
-						isPrimary={ balloonAnimation === 'shaking' }
-						isSecondary={ balloonAnimation !== 'shaking' }
-						onClick={ () => setAttributes({ balloonAnimation: 'shaking' }) }
-					>
-						{  __("Shaking", "vk-blocks") }
-					</Button>
-				</ButtonGroup>
+				<SelectControl
+					value={ balloonAnimation }
+					onChange={ value => setAttributes({ balloonAnimation: value }) }
+					options={ [
+						{
+							value: "none",
+							label: __("None", "vk-blocks")
+						},
+						{
+							value: "trembling",
+							label: __("Trembling", "vk-blocks")
+						},
+						{
+							value: "trembling-x",
+							label: __("Trembling X", "vk-blocks")
+						},
+						{
+							value: "pounding",
+							label: __("Pounding", "vk-blocks")
+						},
+						{
+							value: "shaking",
+							label: __("Shaking", "vk-blocks")
+						},
+					] }
+					/>	
 			</PanelBody>
         </InspectorControls>
         <div

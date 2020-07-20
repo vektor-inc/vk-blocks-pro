@@ -57,7 +57,7 @@ msgstr "Font Awesome の class 名を入力してください。"
 msgid "Ex) fas fa-arrow-circle-right"
 msgstr "例) fas fa-arrow-circle-right"
 
-#: src/blocks/_pro/animation/block.js:31
+#: src/blocks/_pro/animation/block.js:31 src/blocks/balloon/block.js:195
 msgid "Animation"
 msgstr "アニメーション"
 
@@ -114,7 +114,7 @@ msgid "Short"
 msgstr "短い"
 
 #: src/blocks/_pro/animation/block.js:79 src/blocks/_pro/outer/block.js:182
-#: src/blocks/_pro/slider/block.js:117 src/blocks/balloon/block.js:158
+#: src/blocks/_pro/slider/block.js:117 src/blocks/balloon/block.js:163
 #: src/blocks/button/block.js:158 src/blocks/faq/block.js:64
 msgid "Normal"
 msgstr "標準"
@@ -155,7 +155,7 @@ msgid "Title"
 msgstr "タイトルを入力"
 
 #: src/blocks/_pro/card-item/component.js:99
-#: src/blocks/_pro/card-item/deprecated.js:775 src/blocks/balloon/block.js:207
+#: src/blocks/_pro/card-item/deprecated.js:775 src/blocks/balloon/block.js:258
 #: src/blocks/flow/block.js:96 src/blocks/pr-blocks/block.js:149
 #: src/blocks/pr-content/component.js:157
 #: src/blocks/pr-content/deprecated/component-deprecated.js:102
@@ -419,7 +419,7 @@ msgstr ""
 msgid "Divider Setting"
 msgstr "区切りの設定"
 
-#: src/blocks/_pro/outer/block.js:245 src/blocks/balloon/block.js:129
+#: src/blocks/_pro/outer/block.js:245 src/blocks/balloon/block.js:134
 msgid "Type"
 msgstr "タイプ"
 
@@ -460,7 +460,8 @@ msgid "Border type"
 msgstr "枠線の種類"
 
 #: src/blocks/_pro/outer/block.js:323 src/blocks/_pro/step-item/block.js:101
-#: src/blocks/_pro/timeline-item/block.js:83 src/blocks/staff/block.js:88
+#: src/blocks/_pro/timeline-item/block.js:83 src/blocks/balloon/block.js:204
+#: src/blocks/staff/block.js:88
 msgid "None"
 msgstr "なし"
 
@@ -761,68 +762,96 @@ msgstr "Warning"
 msgid "Danger"
 msgstr "Danger"
 
-#: src/blocks/balloon/block.js:106
+#: src/blocks/balloon/block.js:111
 msgid "Balloon setting"
 msgstr "フキダシ設定"
 
-#: src/blocks/balloon/block.js:108 src/blocks/heading/block.js:201
+#: src/blocks/balloon/block.js:113 src/blocks/heading/block.js:201
 msgid "Position"
 msgstr "位置"
 
-#: src/blocks/balloon/block.js:109
+#: src/blocks/balloon/block.js:114
 msgid "Please specify the layout of the balloon."
 msgstr "吹き出しの配置を指定してください。"
 
-#: src/blocks/balloon/block.js:117 src/blocks/button/block.js:178
+#: src/blocks/balloon/block.js:122 src/blocks/button/block.js:178
 #: src/blocks/pr-content/block.js:203
 #: src/components/display-items-control/index.js:95
 msgid "Left"
 msgstr "左"
 
-#: src/blocks/balloon/block.js:125 src/blocks/button/block.js:194
+#: src/blocks/balloon/block.js:130 src/blocks/button/block.js:194
 #: src/blocks/pr-content/block.js:202
 #: src/components/display-items-control/index.js:103
 msgid "Right"
 msgstr "右"
 
-#: src/blocks/balloon/block.js:130
+#: src/blocks/balloon/block.js:135
 msgid "Please select the type of balloon."
 msgstr "吹き出しのタイプを指定してください。"
 
-#: src/blocks/balloon/block.js:138
+#: src/blocks/balloon/block.js:143
 msgid "Serif"
 msgstr "セリフ"
 
-#: src/blocks/balloon/block.js:146
+#: src/blocks/balloon/block.js:151
 msgid "Thinking"
 msgstr "吹き出し"
 
-#: src/blocks/balloon/block.js:150
+#: src/blocks/balloon/block.js:155
 msgid "Image Style"
 msgstr "画像スタイル"
 
-#: src/blocks/balloon/block.js:166
+#: src/blocks/balloon/block.js:171
 msgid "Rounded"
 msgstr "角丸"
 
-#: src/blocks/balloon/block.js:174
+#: src/blocks/balloon/block.js:179
 msgid "Circle"
 msgstr "丸抜き"
 
-#: src/blocks/balloon/block.js:177
+#: src/blocks/balloon/block.js:182
 msgid "Background color of speech balloon"
 msgstr "吹き出しの背景色"
 
-#: src/blocks/balloon/block.js:183
+#: src/blocks/balloon/block.js:188
 msgid "Default Icon Setting"
 msgstr "デフォルトアイコン設定"
 
-#: src/blocks/balloon/block.js:187
+#: src/blocks/balloon/block.js:192
 msgid "You can register default icons from Settings > VK Blocks in Admin."
 msgstr ""
 "管理画面の 設定 > VK Blocks から よく使うアイコンを登録する事ができます。"
 
-#: src/blocks/balloon/block.js:212 src/blocks/flow/block.js:97
+#: src/blocks/balloon/block.js:194
+msgid "Animation setting"
+msgstr "アニメーション設定"
+
+#: src/blocks/balloon/block.js:196
+msgid "Please select the type of animation."
+msgstr "アニメーションのタイプを指定してください。"
+
+#: src/blocks/balloon/block.js:212
+msgid "Trembling"
+msgstr "ぶるぶる"
+
+#: src/blocks/balloon/block.js:220
+msgid "Trembling X"
+msgstr "ぶるぶる（X方向）"
+
+#: src/blocks/balloon/block.js:228
+msgid "Pounding"
+msgstr "どきどき"
+
+#: src/blocks/balloon/block.js:236
+msgid "Shaking"
+msgstr "ゆらゆら"
+
+#: src/blocks/balloon/block.js:25
+msgid "Ballon"
+msgstr "吹き出し"
+
+#: src/blocks/balloon/block.js:263 src/blocks/flow/block.js:97
 #: src/blocks/pr-blocks/block.js:145 src/blocks/pr-content/component.js:164
 #: src/blocks/pr-content/deprecated/component-deprecated.js:106
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:120
@@ -830,17 +859,13 @@ msgstr ""
 msgid "Upload image"
 msgstr "画像をアップロード"
 
-#: src/blocks/balloon/block.js:223
+#: src/blocks/balloon/block.js:274
 msgid "Icon Name"
 msgstr "アイコンの名前"
 
-#: src/blocks/balloon/block.js:232 src/blocks/button/block.js:303
+#: src/blocks/balloon/block.js:283 src/blocks/button/block.js:303
 msgid "Input text"
 msgstr "文字を入力"
-
-#: src/blocks/balloon/block.js:25
-msgid "Ballon"
-msgstr "吹き出し"
 
 #: src/blocks/border-box/Body.js:21 src/blocks/border-box/deprecated.js:20
 msgid "Please enter a title."
@@ -863,18 +888,16 @@ msgid "Black"
 msgstr "黒"
 
 #: src/blocks/border-box/block.js:120
-#, fuzzy
-#| msgid "Background fill"
 msgid "Background Color"
-msgstr "背景 塗り"
+msgstr "背景色"
 
 #: src/blocks/border-box/block.js:128
 msgid "Transparent"
-msgstr ""
+msgstr "透過"
 
 #: src/blocks/border-box/block.js:132
 msgid "White"
-msgstr ""
+msgstr "白"
 
 #: src/blocks/border-box/block.js:45
 msgid "Border Box"

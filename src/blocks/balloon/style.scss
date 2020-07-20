@@ -168,13 +168,23 @@
 	}
 	@keyframes trembling {
 		0% {
+			transform: rotate(-0.5deg);
+		}
+		50% {
+			transform: rotate(0.5deg);
+		}
+	}
+	&-trembling-x {
+		animation: trembling-x 0.1s infinite;
+	}
+	@keyframes trembling-x {
+		0% {
 			transform: scale(1, 1);
 		}
 		50% {
-			transform: scale(0.98, 0.95)
+			transform: scale(0.99, 0.96);
 		}
 	}
-
 	&-pounding {
 		animation: pounding 1.5s infinite;
 	}

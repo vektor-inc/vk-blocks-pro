@@ -8,14 +8,15 @@ import { ColumnLayoutControl } from "../../../components/column-layout-control";
 import { CardAlignControls } from "../../../components/card-align-control";
 import { deprecated } from "./deprecated";
 import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
-import formatNum from "../../_helper/formatNum";
 import removeProperty from "../../_helper/removeProperty"
 import { vkbBlockEditor } from "./../../_helper/depModules";
+import AdvancedViewportControl from "../../../components/advanced-viewport-control"
+import AdvancedUnitControl from "../../../components/advanced-unit-control"
 
-const { __ } = wp.i18n; // Import __() from wp.i18n
-const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
+const { __ } = wp.i18n;
+const { registerBlockType } = wp.blocks;
 const { Fragment } = wp.element;
-const { RangeControl, PanelBody, BaseControl, SelectControl, TextControl, CheckboxControl } = wp.components;
+const { PanelBody, BaseControl, TextControl, CheckboxControl } = wp.components;
 const { addFilter } = wp.hooks;
 const { InspectorControls } = vkbBlockEditor;
 const { select, dispatch } = wp.data;
@@ -65,7 +66,7 @@ registerBlockType("vk-blocks/card", {
   edit(props) {
 	const { attributes, setAttributes, className, clientId, name } = props;
 	attributes.name = name;
-	let {unit, pc, tablet, mobile} = attributes
+	let {unit} = attributes
 
     const selectEditor = select("core/block-editor")
       ? select("core/block-editor")
@@ -112,51 +113,9 @@ registerBlockType("vk-blocks/card", {
 			title={__("Height", "vk-blocks")}
 			initialOpen={false}
 			>
-				<SelectControl
-				label={__('Unit Type', 'vk-blocks')}
-				value={unit}
-				onChange={(value) => setAttributes({ unit: value })}
-				options={[
-					{
-						value: 'px',
-						label: __('px', 'vk-blocks'),
-					},
-					{
-						value: 'em',
-						label: __('em', 'vk-blocks'),
-					},
-					{
-						value: 'rem',
-						label: __('rem', 'vk-blocks'),
-					},
-					{
-						value: 'vw',
-						label: __('vw', 'vk-blocks'),
-					}
-				]}
-				/>
+				<AdvancedUnitControl {...props} />
 				<BaseControl label={__('Slide Height for each device.', 'vk-blocks')}>
-					<RangeControl
-					label={__('PC', 'vk-blocks')}
-					value={pc}
-					onChange={(value) => setAttributes({ pc: formatNum(value, pc) })}
-					step={0.1}
-					max={ 2000 }
-					/>
-					<RangeControl
-					label={__('Tablet', 'vk-blocks')}
-					value={tablet}
-					onChange={(value) => setAttributes({ tablet: formatNum(value, tablet) })}
-					step={0.1}
-					max={ 2000 }
-					/>
-					<RangeControl
-					label={__('Mobile', 'vk-blocks')}
-					value={mobile}
-					onChange={(value) => setAttributes({ mobile: formatNum(value, mobile) })}
-					step={0.1}
-					max={ 2000 }
-					/>
+					<AdvancedViewportControl {...props} />
 				</BaseControl>
 			</PanelBody>
 			<CardAlignControls { ...props } />

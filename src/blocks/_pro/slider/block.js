@@ -8,6 +8,8 @@ import classNames from "classnames";
 import { convertToGrid } from "../../_helper/convert-to-grid";
 import formatNum from "../../_helper/formatNum";
 import { AdvancedToggleControl } from "./../../../components/advanced-toggle-control";
+import AdvancedViewportControl from "../../../components/advanced-viewport-control"
+import AdvancedUnitControl from "../../../components/advanced-unit-control"
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -54,7 +56,7 @@ registerBlockType("vk-blocks/slider", {
 
 	edit(props) {
 		const { attributes, setAttributes, className, clientId } = props;
-		const { unit, pc, tablet, mobile, autoPlay, autoPlayDelay, navigation, width, loop } = attributes;
+		const { unit, autoPlay, autoPlayDelay, navigation, width, loop } = attributes;
 		const { getBlocksByClientId } = select("core/block-editor");
 		const { updateBlockAttributes } = dispatch("core/block-editor");
 
@@ -131,48 +133,9 @@ registerBlockType("vk-blocks/slider", {
 						title={__("Height", "vk-blocks")}
 						initialOpen={false}
 					>
-						<SelectControl
-							label={__('Unit Type', 'vk-blocks')}
-							value={unit}
-							onChange={(value) => setAttributes({ unit: value })}
-							options={[
-								{
-									value: 'px',
-									label: __('px', 'vk-blocks'),
-								},
-								{
-									value: 'em',
-									label: __('em', 'vk-blocks'),
-								},
-								{
-									value: 'rem',
-									label: __('rem', 'vk-blocks'),
-								},
-								{
-									value: 'vw',
-									label: __('vw', 'vk-blocks'),
-								}
-							]}
-						/>
+						<AdvancedUnitControl {...props} />
 						<BaseControl label={__('Slide Height for each device.', 'vk-blocks')}>
-							<TextControl
-								label={__('PC', 'vk-blocks')}
-								value={pc}
-								onChange={(value) => setAttributes({ pc: formatNum(value, pc) })}
-								type={"number"}
-							/>
-							<TextControl
-								label={__('Tablet', 'vk-blocks')}
-								value={tablet}
-								onChange={(value) => setAttributes({ tablet: formatNum(value, tablet) })}
-								type={"number"}
-							/>
-							<TextControl
-								label={__('Mobile', 'vk-blocks')}
-								value={mobile}
-								onChange={(value) => setAttributes({ mobile: formatNum(value, mobile) })}
-								type={"number"}
-							/>
+							<AdvancedViewportControl {...props} />
 						</BaseControl>
 					</PanelBody>
 					<PanelBody

@@ -37,6 +37,36 @@
 	}
 }
 
+// 背景色指定
+.vk_borderBox-background {
+	&-transparent {
+		& .vk_borderBox_body {
+			background-color: transparent;
+		}
+		&.is-style-vk_borderBox-style-solid-kado-tit-onborder.vk_borderBox {
+			background-color: transparent;
+		}
+		&.is-style-vk_borderBox-style-solid-kado-tit-onborder .vk_borderBox_title_container,
+		&.is-style-vk_borderBox-style-solid-kado-tit-inner .vk_borderBox_title_container,
+		&.is-style-vk_borderBox-style-solid-kado-iconFeature .vk_borderBox_title_container {
+			background-color: transparent;
+		}
+	}
+	&-white {
+		& .vk_borderBox_body {
+			background-color: #fff;
+		}
+		&.is-style-vk_borderBox-style-solid-kado-tit-onborder.vk_borderBox {
+			background-color:  #fff;
+		}
+		&.is-style-vk_borderBox-style-solid-kado-tit-onborder .vk_borderBox_title_container,
+		&.is-style-vk_borderBox-style-solid-kado-tit-inner .vk_borderBox_title_container,
+		&.is-style-vk_borderBox-style-solid-kado-iconFeature .vk_borderBox_title_container {
+			background-color: #fff;
+		}
+	}
+}
+
 /*
 共通指定
 --------------------------------------------*/
@@ -73,12 +103,12 @@
 		@media (min-width: 992px) {
 			padding: 2.1875em 2em 2em;
 		}
-		h1:first-child, 
-		h2:first-child, 
-		h3:first-child, 
-		h4:first-child, 
+		h1:first-child,
+		h2:first-child,
+		h3:first-child,
+		h4:first-child,
 		h5:first-child,
-		h6:first-child {//他のテーマでも対応できるように追加			
+		h6:first-child {//他のテーマでも対応できるように追加
 			margin-top: 0;
 		}
 		p:last-child {
@@ -115,7 +145,7 @@
 			padding: 1.5em 1.5em 1em;
 		}
 		.vk_borderBox_body {
-			background-color: transparent;
+			// background-color: transparent;
 			border: none;
 			padding-top: 0;
 		}

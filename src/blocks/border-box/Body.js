@@ -6,7 +6,7 @@ const { __ } = wp.i18n;
 
 const Body = (props) => {
 	const { setAttributes, attributes, for_, className } = props;
-	const { heading,color,faIcon } = attributes;
+	const { heading,color,faIcon,bgColor } = attributes;
 
 	let inner;
 	let title;
@@ -45,12 +45,12 @@ const Body = (props) => {
 	}
 
 	return (
-		<div className={`vk_borderBox vk_borderBox-color-${color} ${customClass}`}>
+		<div className={`vk_borderBox vk_borderBox-color-${color} vk_borderBox-background-${bgColor} ${customClass}`}>
 			<div className="vk_borderBox_title_container">
 				{ReactHtmlParser(icon)}
 				{title}
 			</div>
-			<div className="vk_borderBox_body">
+			<div className={`vk_borderBox_body`}>
 				{inner}
 			</div>
 		</div>

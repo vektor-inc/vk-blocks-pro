@@ -1,8 +1,7 @@
 /**
- * card-item block type
+ * Animation block
  *
  */
-
 import classNames from "classnames";
 import { schema } from "./schema";
 import { deprecated } from './deprecated';
@@ -11,7 +10,8 @@ const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { InnerBlocks, InspectorControls } = vkbBlockEditor;
 const { PanelBody, SelectControl } = wp.components;
-const { Fragment,useRef } = wp.element;
+const { Fragment } = wp.element;
+const { addFilter } = wp.hooks;
 
 const BlockIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 576">
@@ -107,3 +107,34 @@ registerBlockType("vk-blocks/animation", {
 	},
     deprecated,
 });
+
+
+
+const addAnimationActiveClass = (el, type, attributes) => {
+
+	if ("vk-blocks/animation" === type.name) {
+		return<div>
+		  <script>{`window.addEventListener('load', (event) => {
+			let animationElm = document.querySelector('.vk_animation-${attributes.clientId}');
+			if(animationElm){
+				const observer = new IntersectionObserver((entries) => {
+					if(entries[0].isIntersecting){
+						animationElm.classList.add('vk_animation-active');
+					}else{
+						animationElm.classList.remove('vk_animation-active');
+					}
+				});
+				observer.observe(animationElm);
+			}
+		  }, false);`}</script>
+		  {el}
+		  </div>
+	}else{
+		return el
+	}
+}
+addFilter(
+  "blocks.getSaveElement",
+  "vk-blocks/animation",
+  addAnimationActiveClass
+);

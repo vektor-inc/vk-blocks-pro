@@ -79,37 +79,61 @@ registerBlockType('vk-blocks/border-box', {
 
 	edit(props) {
 		const { attributes, setAttributes } = props;
-		const { color } = attributes;
+		const { color, bgColor } = attributes;
 		return (
 			<Fragment>
 				<InspectorControls>
 					<PanelBody title={ __('Color', 'vk-blocks') }>
-						<SelectControl
-							value={ color }
-							onChange={ value => setAttributes({ color: value }) }
-							options={ [
-								{
-									value: "red",
-									label: __("Red", "vk-blocks")
-								},
-								{
-									value: "orange",
-									label: __("Orange", "vk-blocks")
-								},
-								{
-									value: "blue",
-									label: __("Blue", "vk-blocks")
-								},
-								{
-									value: "green",
-									label: __("Green", "vk-blocks")
-								},
-								{
-									value: "black",
-									label: __("Black", "vk-blocks")
-								}
-							] }
-						/>
+						<BaseControl
+							id="border-color"
+							label={ __('Border Color', 'vk-blocks') }
+						>
+							<SelectControl
+								value={ color }
+								onChange={ value => setAttributes({ color: value }) }
+								options={ [
+									{
+										value: "red",
+										label: __("Red", "vk-blocks")
+									},
+									{
+										value: "orange",
+										label: __("Orange", "vk-blocks")
+									},
+									{
+										value: "blue",
+										label: __("Blue", "vk-blocks")
+									},
+									{
+										value: "green",
+										label: __("Green", "vk-blocks")
+									},
+									{
+										value: "black",
+										label: __("Black", "vk-blocks")
+									}
+								] }
+							/>
+						</BaseControl>
+						<BaseControl
+							id="background-color"
+							label={ __('Background Color', 'vk-blocks') }
+						>
+							<SelectControl
+								value={ bgColor }
+								onChange={ value => setAttributes({ bgColor: value }) }
+								options={ [
+									{
+										value: "transparent",
+										label: __("Transparent", "vk-blocks")
+									},
+									{
+										value: "white",
+										label: __("White", "vk-blocks")
+									},
+								] }
+							/>
+						</BaseControl>
 					</PanelBody>
 					<PanelBody title={ __('Icon', 'vk-blocks') }>
 						<BaseControl

@@ -149,6 +149,11 @@ $color-danger: #dd3333;
 		// コンテンツエリアをはみ出させる
 		.wp-block { max-width:100%; }
 	}
+	.vk_slider_item-width-full.vk_slider_item-paddingLR-use,
+	.vk_slider_item-width-full.vk_slider_item-paddingLR-zero{
+		// コンテンツエリアをはみ出させる
+		.wp-block { max-width:100%; }
+	}
 
 	.is-sidebar-opened & .vk_outer-width-full.vk_outer-paddingLR-use,
 	.is-sidebar-opened & .vk_outer-width-full.vk_outer-paddingLR-zero{
@@ -159,15 +164,38 @@ $color-danger: #dd3333;
 		.wp-block { max-width:100%; }
 	}
 
+	.is-sidebar-opened & .vk_slider_item-width-full.vk_slider_item-paddingLR-use,
+	.is-sidebar-opened & .vk_slider_item-width-full.vk_slider_item-paddingLR-zero{
+		// サイドバー表示時に全幅要素がはみ出してサイドバーの下などに入り込むのを防止
+		margin-left: calc( 50% - 50vw + 140px );
+		margin-right: calc( 50% - 50vw + 140px );
+		// コンテンツエリアをはみ出させる
+		.wp-block { max-width:100%; }
+	}
+
+	.is-sidebar-opened & .vk_slider.vk_width-full{
+		// サイドバー表示時に全幅要素がはみ出してサイドバーの下などに入り込むのを防止
+		margin-left: calc( 50% - 50vw + 140px );
+		margin-right: calc( 50% - 50vw + 140px );
+		padding-right:0;
+		padding-left:0;
+		width: calc( 100vw - 280px );
+	}
+
+
 // 編集画面での識別用枠
 .vk_spacer,
 .vk_slider,
+.vk_slider_item,
 .vk_animation {
 	border:1px dotted #ccc;
 }
 
 .vk_slider_item{
 	min-height:3em;
+	.block-editor-inner-blocks{
+		width: 100%;
+	}
 }
 
 // アニメーションブロックの識別用枠線

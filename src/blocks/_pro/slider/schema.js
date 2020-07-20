@@ -34,5 +34,9 @@ export const schema = {
 	width:{
 		type: "string",
 		default: "",
-	}
+	},
+	loop: {
+		type: "boolean",
+		default: true,
+	},
 };

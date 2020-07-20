@@ -1,24 +1,8 @@
 import { schema, schema_v1,schema_v2 } from "./schema";
 import { ComponentV0, ComponentV1, ComponentForTemplate0, ComponentForTemplate1, ComponentForTemplate2, ComponentForTemplate3, ComponentForTemplate4, ComponentForTemplate5, ComponentForTemplate6 } from "./component";
-import {ComponentV3} from './componentv3'
 import {ComponentV2_1} from './componentv2'
 
 export const deprecated = [
-	// -> 0.37.4
-	{
-		attributes: schema_v2,
-		save(props) {
-			const { attributes, className } = props;
-			return (
-				<ComponentV3
-					clientId={attributes.clientId}
-					attributes={attributes}
-					className={className}
-					for_={"save"}
-				/>
-			);
-		},
-	},
 	//ブロックテンプレート用のdeprecated
 	{
 		attributes: schema_v2,

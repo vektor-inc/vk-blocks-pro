@@ -149,7 +149,7 @@ registerBlockType("vk-blocks/post-list", {
 						<BaseControl label={__("offset", "vk-blocks")}>
 							<TextControl
 								value={offset}
-								onChange={(v) => setAttributes({ offset: formatNum(parseInt(v, 10), parseInt(offset, 10)) })}
+								onChange={(v) => setAttributes({ offset: formatNum( v, offset ) })}
 								type="number"
 								min="0"
 							/>

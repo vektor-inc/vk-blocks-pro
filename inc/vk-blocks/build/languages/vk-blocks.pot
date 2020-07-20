@@ -634,34 +634,34 @@ msgstr ""
 msgid "PC"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:166
+#: src/blocks/_pro/slider/block.js:165
 #: src/blocks/spacer/block.js:104
 msgid "Tablet"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:173
+#: src/blocks/_pro/slider/block.js:171
 #: src/blocks/spacer/block.js:110
 msgid "Mobile"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:182
+#: src/blocks/_pro/slider/block.js:179
 msgid "Slider Settings"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:185
+#: src/blocks/_pro/slider/block.js:182
 msgid "Loop "
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:192
+#: src/blocks/_pro/slider/block.js:189
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:199
+#: src/blocks/_pro/slider/block.js:196
 msgid "Change Time"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:205
-msgid "Display Navigation "
+#: src/blocks/_pro/slider/block.js:202
+msgid "Display Pagination"
 msgstr ""
 
 #: src/blocks/_pro/slider/block.js:46

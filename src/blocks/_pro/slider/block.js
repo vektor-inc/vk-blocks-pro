@@ -57,7 +57,7 @@ registerBlockType("vk-blocks/slider", {
 
 	edit(props) {
 		const { attributes, setAttributes, className, clientId } = props;
-		const { autoPlay, autoPlayDelay, navigation, width, loop } = attributes;
+		const { autoPlay, autoPlayDelay, pagination, width, loop } = attributes;
 		const { getBlocksByClientId } = select("core/block-editor");
 		const { updateBlockAttributes } = dispatch("core/block-editor");
 
@@ -163,10 +163,10 @@ registerBlockType("vk-blocks/slider", {
 								type={"number"}
 							/>
 						</BaseControl>
-						<BaseControl label={ __("Display Navigation ", "vk-blocks") }>
+						<BaseControl label={ __("Display Pagination", "vk-blocks") }>
 							<AdvancedToggleControl
-								initialFixedTable={ navigation }
-								schema={ "navigation" }
+								initialFixedTable={ pagination }
+								schema={ "pagination" }
 								{ ...props }
 							/>
 						</BaseControl>
@@ -223,7 +223,7 @@ addFilter(
 const addSwiperConfig = (el, type, attributes) => {
 
 	if ("vk-blocks/slider" === type.name) {
-		const { clientId, navigation, autoPlay, autoPlayDelay, mobile, tablet, pc, unit, loop }  = attributes
+		const { clientId, pagination, autoPlay, autoPlayDelay, mobile, tablet, pc, unit, loop }  = attributes
 
 		let cssTag = `@media (max-width: 576px) {
 			.vk_slider_${clientId},
@@ -254,16 +254,16 @@ const addSwiperConfig = (el, type, attributes) => {
 			autoPlayScripts = ''
 		}
 
-		let navigationScripts;
-		if(navigation){
-			navigationScripts = `
+		let paginationScripts;
+		if(pagination){
+			paginationScripts = `
 			// If we need pagination
 			pagination: {
 			  el: '.swiper-pagination',
 			  clickable : true,
 			},`;
 		}else{
-			navigationScripts = ''
+			paginationScripts = ''
 		}
 
 		return<div>
@@ -274,9 +274,9 @@ const addSwiperConfig = (el, type, attributes) => {
 				// Optional parameters
 				loop: ${loop},
 
-				${navigationScripts}
+				${paginationScripts}
 
-				// Navigation arrows
+				// navigation arrows
 				navigation: {
 					nextEl: '.swiper-button-next',
 					prevEl: '.swiper-button-prev',

@@ -57,7 +57,7 @@ msgstr "Font Awesome の class 名を入力してください。"
 msgid "Ex) fas fa-arrow-circle-right"
 msgstr "例) fas fa-arrow-circle-right"
 
-#: src/blocks/_pro/animation/block.js:31 src/blocks/balloon/block.js:195
+#: src/blocks/_pro/animation/block.js:31
 msgid "Animation"
 msgstr "アニメーション"
 
@@ -155,7 +155,7 @@ msgid "Title"
 msgstr "タイトルを入力"
 
 #: src/blocks/_pro/card-item/component.js:99
-#: src/blocks/_pro/card-item/deprecated.js:775 src/blocks/balloon/block.js:258
+#: src/blocks/_pro/card-item/deprecated.js:775 src/blocks/balloon/block.js:241
 #: src/blocks/flow/block.js:96 src/blocks/pr-blocks/block.js:149
 #: src/blocks/pr-content/component.js:157
 #: src/blocks/pr-content/deprecated/component-deprecated.js:102
@@ -460,7 +460,7 @@ msgid "Border type"
 msgstr "枠線の種類"
 
 #: src/blocks/_pro/outer/block.js:323 src/blocks/_pro/step-item/block.js:101
-#: src/blocks/_pro/timeline-item/block.js:83 src/blocks/balloon/block.js:204
+#: src/blocks/_pro/timeline-item/block.js:83 src/blocks/balloon/block.js:202
 #: src/blocks/staff/block.js:88
 msgid "None"
 msgstr "なし"
@@ -611,33 +611,33 @@ msgstr "デバイス毎の高さ"
 msgid "PC"
 msgstr "PC"
 
-#: src/blocks/_pro/slider/block.js:166 src/blocks/spacer/block.js:104
+#: src/blocks/_pro/slider/block.js:165 src/blocks/spacer/block.js:104
 msgid "Tablet"
 msgstr "タブレット"
 
-#: src/blocks/_pro/slider/block.js:173 src/blocks/spacer/block.js:110
+#: src/blocks/_pro/slider/block.js:171 src/blocks/spacer/block.js:110
 msgid "Mobile"
 msgstr "モバイル"
 
-#: src/blocks/_pro/slider/block.js:182
+#: src/blocks/_pro/slider/block.js:179
 msgid "Slider Settings"
 msgstr "スライド設定"
 
-#: src/blocks/_pro/slider/block.js:185
+#: src/blocks/_pro/slider/block.js:182
 msgid "Loop "
 msgstr "繰り返し"
 
-#: src/blocks/_pro/slider/block.js:192
+#: src/blocks/_pro/slider/block.js:189
 msgid "AutoPlay"
 msgstr "自動再生"
 
-#: src/blocks/_pro/slider/block.js:199
+#: src/blocks/_pro/slider/block.js:196
 msgid "Change Time"
 msgstr "切り替え時間"
 
-#: src/blocks/_pro/slider/block.js:205
-msgid "Display Navigation "
-msgstr "ナビゲーションの表示"
+#: src/blocks/_pro/slider/block.js:202
+msgid "Display Pagination"
+msgstr "ページネーションの表示"
 
 #: src/blocks/_pro/slider/block.js:46
 msgid "Slider"
@@ -827,31 +827,27 @@ msgstr ""
 msgid "Animation setting"
 msgstr "アニメーション設定"
 
-#: src/blocks/balloon/block.js:196
+#: src/blocks/balloon/block.js:195
 msgid "Please select the type of animation."
 msgstr "アニメーションのタイプを指定してください。"
 
-#: src/blocks/balloon/block.js:212
+#: src/blocks/balloon/block.js:206
 msgid "Trembling"
 msgstr "ぶるぶる"
 
-#: src/blocks/balloon/block.js:220
+#: src/blocks/balloon/block.js:210
 msgid "Trembling X"
 msgstr "ぶるぶる（X方向）"
 
-#: src/blocks/balloon/block.js:228
+#: src/blocks/balloon/block.js:214
 msgid "Pounding"
 msgstr "どきどき"
 
-#: src/blocks/balloon/block.js:236
+#: src/blocks/balloon/block.js:218
 msgid "Shaking"
 msgstr "ゆらゆら"
 
-#: src/blocks/balloon/block.js:25
-msgid "Ballon"
-msgstr "吹き出し"
-
-#: src/blocks/balloon/block.js:263 src/blocks/flow/block.js:97
+#: src/blocks/balloon/block.js:246 src/blocks/flow/block.js:97
 #: src/blocks/pr-blocks/block.js:145 src/blocks/pr-content/component.js:164
 #: src/blocks/pr-content/deprecated/component-deprecated.js:106
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:120
@@ -859,11 +855,15 @@ msgstr "吹き出し"
 msgid "Upload image"
 msgstr "画像をアップロード"
 
-#: src/blocks/balloon/block.js:274
+#: src/blocks/balloon/block.js:25
+msgid "Ballon"
+msgstr "吹き出し"
+
+#: src/blocks/balloon/block.js:257
 msgid "Icon Name"
 msgstr "アイコンの名前"
 
-#: src/blocks/balloon/block.js:283 src/blocks/button/block.js:303
+#: src/blocks/balloon/block.js:266 src/blocks/button/block.js:303
 msgid "Input text"
 msgstr "文字を入力"
 

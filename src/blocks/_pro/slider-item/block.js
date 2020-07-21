@@ -131,6 +131,18 @@ registerBlockType("vk-blocks/slider-item", {
 							/>
 						</BaseControl>
 						<BaseControl
+							label={ __("Background Image Size", "vk-blocks") }
+						>
+							<RadioControl
+								selected={ bgSize }
+								options={ [
+									{ label: __("cover", "vk-blocks"), value: "cover" },
+									{ label: __("repeat", "vk-blocks"), value: "repeat" },
+								] }
+								onChange={ (value) => setAttributes({ bgSize: value }) }
+							/>
+						</BaseControl>
+						<BaseControl
 							label={ __("Background Image PC", "vk-blocks") }
 							className={ "vk_slider_item_sidebar_bgImage" }
 						>
@@ -149,19 +161,6 @@ registerBlockType("vk-blocks/slider-item", {
 							className={ "vk_slider_item_sidebar_bgImage" }
 						>
 							<AdvancedMediaUpload schema={ "bgImageMobile" } { ...props } />
-						</BaseControl>
-						<BaseControl
-							label={ __("Background Image Size", "vk-blocks") }
-							help=""
-						>
-							<RadioControl
-								selected={ bgSize }
-								options={ [
-									{ label: __("cover", "vk-blocks"), value: "cover" },
-									{ label: __("repeat", "vk-blocks"), value: "repeat" },
-								] }
-								onChange={ (value) => setAttributes({ bgSize: value }) }
-							/>
 						</BaseControl>
 					</PanelBody>
 				</InspectorControls>

@@ -1,4 +1,11 @@
-export const schema = {
+export const schema0_37_4 = {
+  postId: {
+    type: "number",
+  },
+  name: {
+    type: "string",
+    default: "",
+  },
   layout: {
     type: "string",
     default: "card",
@@ -39,6 +46,10 @@ export const schema = {
     type: "boolean",
     default: true,
   },
+  display_excerpt: {
+    type: "boolean",
+    default: true,
+  },
   display_date: {
     type: "boolean",
     default: false,
@@ -63,38 +74,28 @@ export const schema = {
     type: "string",
     default: "Read more",
   },
-  title: {
+  btn_align: {
     type: "string",
-    source: "html",
-    selector: "h5.vk_post_title.card-title",
+    default: "text-right",
   },
-  excerpt_text: {
-    type: "string",
-    source: "html",
-    selector: "p.vk_post_excerpt.card-text",
+  numberPosts: {
+    type: "number",
+    default: 6,
   },
-  image: {
+  isCheckedPostType: {
     type: "string",
-    default: null,
+    default: '["post"]',
   },
-  url: {
+  coreTerms: {
     type: "string",
-    default: "",
+    default: "[]",
+  },
+  isCheckedTerms: {
+    type: "string",
+    default: "{}",
   },
   activeControl: {
     type: "string",
     default: '{"title": "left", "text":"left" ,"button":"right"}',
   },
-  linkTarget: {
-    type: "string",
-    source: "attribute",
-    selector: "a",
-    attribute: "target",
-  },
-  rel: {
-    type: "string",
-    source: "attribute",
-    selector: "a",
-    attribute: "rel",
-	}
 };

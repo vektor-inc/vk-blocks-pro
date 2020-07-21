@@ -97,5 +97,25 @@ export const schema = {
   activeControl: {
     type: "string",
     default: '{"title": "left", "text":"left" ,"button":"right"}',
+	},
+	unit: {
+		type: 'string',
+		default: 'px',
+	},
+	pc: {
+		type: 'number',
+		default: 150,
+	},
+	tablet: {
+		type: 'number',
+		default: 150,
+	},
+	mobile: {
+		type: 'number',
+		default: 150,
+	},
+	clientId: {
+    type: "string",
+    default: "",
   },
 };

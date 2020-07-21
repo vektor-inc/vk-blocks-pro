@@ -6,14 +6,17 @@ import { ColumnResponsive } from "./component";
 import { schema } from "./schema";
 import classNames from "classnames";
 import { convertToGrid } from "../../_helper/convert-to-grid";
+import replaceClientId from "../../_helper/replaceClientId"
 import { AdvancedToggleControl } from "./../../../components/advanced-toggle-control";
+import AdvancedViewportControl from "../../../components/advanced-viewport-control"
+import AdvancedUnitControl from "../../../components/advanced-unit-control"
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { Fragment, useEffect } = wp.element;
 const { InspectorControls, BlockControls, BlockAlignmentToolbar} = wp.blockEditor;
 const { select, dispatch } = wp.data;
-const { PanelBody, BaseControl, SelectControl, TextControl, ButtonGroup, Button } = wp.components;
+const { PanelBody, BaseControl, TextControl, ButtonGroup, Button } = wp.components;
 const { createHigherOrderComponent } = wp.compose;
 const { addFilter } = wp.hooks;
 
@@ -46,6 +49,7 @@ registerBlockType("vk-blocks/slider", {
 	icon: BlockIcon,
 	category: "vk-blocks-cat-layout",
 	attributes: schema,
+	description: __( 'Slider is do not move in edit screen.','vk-blocks'),
 	supports: {
 		className: true,
 		inserter: displayInserter,
@@ -53,7 +57,7 @@ registerBlockType("vk-blocks/slider", {
 
 	edit(props) {
 		const { attributes, setAttributes, className, clientId } = props;
-		const { unit, pc, tablet, mobile, autoPlay, autoPlayDelay, pagination, width, loop } = attributes;
+		const { autoPlay, autoPlayDelay, pagination, width, loop } = attributes;
 		const { getBlocksByClientId } = select("core/block-editor");
 		const { updateBlockAttributes } = dispatch("core/block-editor");
 
@@ -62,7 +66,7 @@ registerBlockType("vk-blocks/slider", {
 		let beforeLength;
 		let afterLength;
 
-		let customClientId = clientId.replace(/-/g, '');
+		let customClientId = replaceClientId(clientId);
 
 		useEffect(() => {
 			updateBlockAttributes(clientId, {
@@ -130,48 +134,9 @@ registerBlockType("vk-blocks/slider", {
 						title={__("Height", "vk-blocks")}
 						initialOpen={false}
 					>
-						<SelectControl
-							label={__('Unit Type', 'vk-blocks')}
-							value={unit}
-							onChange={(value) => setAttributes({ unit: value })}
-							options={[
-								{
-									value: 'px',
-									label: __('px', 'vk-blocks'),
-								},
-								{
-									value: 'em',
-									label: __('em', 'vk-blocks'),
-								},
-								{
-									value: 'rem',
-									label: __('rem', 'vk-blocks'),
-								},
-								{
-									value: 'vw',
-									label: __('vw', 'vk-blocks'),
-								}
-							]}
-						/>
+						<AdvancedUnitControl {...props} />
 						<BaseControl label={__('Slide Height for each device.', 'vk-blocks')}>
-							<TextControl
-								label={__('PC', 'vk-blocks')}
-								value={pc}
-								onChange={(value) => setAttributes({ pc: value })}
-								type={"number"}
-							/>
-							<TextControl
-								label={__('Tablet', 'vk-blocks')}
-								value={tablet}
-								onChange={(value) => setAttributes({ tablet: value })}
-								type={"number"}
-							/>
-							<TextControl
-								label={__('Mobile', 'vk-blocks')}
-								value={mobile}
-								onChange={(value) => setAttributes({ mobile: value })}
-								type={"number"}
-							/>
+							<AdvancedViewportControl {...props} />
 						</BaseControl>
 					</PanelBody>
 					<PanelBody
@@ -194,7 +159,7 @@ registerBlockType("vk-blocks/slider", {
 							<TextControl
 								label={__('Change Time', 'vk-blocks')}
 								value={autoPlayDelay}
-								onChange={value => setAttributes({ autoPlayDelay: value })}
+								onChange={value => setAttributes({ autoPlayDelay: parseInt(value,10) })}
 								type={"number"}
 							/>
 						</BaseControl>
@@ -227,24 +192,29 @@ registerBlockType("vk-blocks/slider", {
 	},
 });
 
-const generateHeightCss = (attributes) =>{
+const generateHeightCss = (attributes, for_) =>{
 
 	const { clientId, mobile, tablet, pc, unit }  = attributes
 
+	let cssSelector = ''
+	if("save" === for_){
+		cssSelector = `.vk_slider_${clientId},`
+	}
+
 	return `@media (max-width: 576px) {
-		.vk_slider_${clientId},
+		${cssSelector}
 		.vk_slider_${clientId} .vk_slider_item{
 			height:${mobile}${unit}!important;
 		}
 	}
 	@media (min-width: 577px) and (max-width: 768px) {
-		.vk_slider_${clientId},
+		${cssSelector}
 		.vk_slider_${clientId} .vk_slider_item{
 			height:${tablet}${unit}!important;
 		}
 	}
 	@media (min-width: 769px) {
-		.vk_slider_${clientId},
+		${cssSelector}
 		.vk_slider_${clientId} .vk_slider_item{
 			height:${pc}${unit}!important;
 		}
@@ -256,7 +226,7 @@ const vkbwithClientIdClassName = createHigherOrderComponent(
 	(BlockListBlock) => {
 		return (props) => {
 			if ("vk-blocks/slider" === props.name) {
-				const cssTag = generateHeightCss( props.attributes )
+				const cssTag = generateHeightCss( props.attributes, "edit" )
 				return (
 					<Fragment>
 						<style type='text/css'>{cssTag}</style>
@@ -291,7 +261,7 @@ const addSwiperConfig = (el, type, attributes) => {
 	if ("vk-blocks/slider" === type.name) {
 		const { clientId, pagination, autoPlay, autoPlayDelay, loop }  = attributes
 
-		const cssTag = generateHeightCss( attributes )
+		const cssTag = generateHeightCss( attributes, "save" )
 
 		let autoPlayScripts;
 		if(autoPlay){
@@ -319,7 +289,7 @@ const addSwiperConfig = (el, type, attributes) => {
 			{el}
 			<style type='text/css'>{cssTag}</style>
 			<script>{`
-			var swiper${clientId} = new Swiper ('.vk_slider_${clientId}', {
+			var swiper${replaceClientId(clientId)} = new Swiper ('.vk_slider_${clientId}', {
 				// Optional parameters
 				loop: ${loop},
 

@@ -12,11 +12,8 @@ const {
 	RadioControl,
 	PanelBody,
 	BaseControl,
-	ButtonGroup,
-	Button
 } = wp.components;
 import { AdvancedMediaUpload } from "../../../components/advanced-media-upload";
-import formatNum from "../../_helper/formatNum";
 import SliderItem from "./SliderItem"
 
 const BlockIcon = (
@@ -126,7 +123,7 @@ registerBlockType("vk-blocks/slider-item", {
 							<RangeControl
 								value={ opacity }
 								onChange={ (value) => {
-									setAttributes({ opacity: formatNum(value, opacity) });
+									setAttributes({ opacity: value });
 								} }
 								min={ 0 }
 								max={ 1 }

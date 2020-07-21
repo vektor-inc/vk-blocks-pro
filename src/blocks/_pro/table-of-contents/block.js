@@ -27,7 +27,7 @@ import { vkbBlockEditor } from "../../_helper/depModules";
 const { InspectorControls } = vkbBlockEditor;
 const { addFilter } = wp.hooks;
 const { createHigherOrderComponent } = wp.compose;
-const { dispatch } = wp.data;
+const { dispatch, select } = wp.data;
 
 registerBlockType("vk-blocks/table-of-contents", {
 	title: __("Table of Contents", "vk-blocks"),
@@ -94,49 +94,55 @@ registerBlockType("vk-blocks/table-of-contents", {
 const getHeadings = (props) => {
 	const { className, name, clientId, attributes } = props;
 	const { anchor } = attributes;
-	const allowedBlocks = [
-		"vk-blocks/heading",
-		"vk-blocks/outer",
-		"core/heading",
-		"core/cover",
-		"core/group",
-	];
 
+	const tocs = getBlocksByName("vk-blocks/table-of-contents");
+	const tocClientId = tocs[0] ? tocs[0].clientId : "";
+	const tocAttributes = tocs[0] ? tocs[0].attributes : "";
+	const { updateBlockAttributes } = dispatch("core/block-editor") ? dispatch("core/block-editor") : dispatch("core/editor");
 	const headingList = ["core/heading", "vk-blocks/heading"];
 
-	if (isAllowedBlock(name, allowedBlocks)) {
-		const tocs = getBlocksByName("vk-blocks/table-of-contents");
-		const tocClientId = tocs[0] ? tocs[0].clientId : "";
-		const tocAttributes = tocs[0] ? tocs[0].attributes : "";
+	if (
+		anchor === undefined &&
+		isAllowedBlock(name, headingList) != undefined
+	) {
+		updateBlockAttributes(clientId, {
+			anchor: `vk-htags-${clientId}`,
+		});
+	}
 
-		const { updateBlockAttributes } = dispatch("core/block-editor") ? dispatch("core/block-editor") : dispatch("core/editor");
-		if (
-			anchor === undefined &&
-			isAllowedBlock(name, headingList) != undefined
-		) {
-			updateBlockAttributes(clientId, {
-				anchor: `vk-htags-${clientId}`,
-			});
-		}
+	const asyncToc = asyncGetBlocksByName("vk-blocks/table-of-contents");
+	const open = asyncToc[0] ? asyncToc[0].attributes.open : "";
 
-		const asyncToc = asyncGetBlocksByName("vk-blocks/table-of-contents");
-		const open = asyncToc[0] ? asyncToc[0].attributes.open : "";
+	let headingsRaw = getAllHeadings(headingList);
+	let headings = removeUnnecessaryElements(headingsRaw);
+	let render = returnHtml(headings, tocAttributes, className, open);
 
-		let headingsRaw = getAllHeadings(headingList);
-		let headings = removeUnnecessaryElements(headingsRaw);
-		let render = returnHtml(headings, tocAttributes, className, open);
-
-		if (isAllowedBlock(name, headingList) != undefined) {
-			updateBlockAttributes(tocClientId, {
-				renderHtml: render,
-			});
-		}
+	if (isAllowedBlock(name, headingList) != undefined) {
+		updateBlockAttributes(tocClientId, {
+			renderHtml: render,
+		});
 	}
 };
 
+const doseExistOldTOC = () =>{
+	const blocks = select("core/block-editor").getBlocks()
+	return blocks.find(block => "vk-blocks/table-of-contents" === block.name)
+}
+
 const updateTableOfContents = createHigherOrderComponent((BlockListBlock) => {
 	return (props) => {
-		getHeadings(props);
+		const allowedBlocks = [
+			"vk-blocks/heading",
+			"vk-blocks/outer",
+			"core/heading",
+			"core/cover",
+			"core/group",
+		];
+		if (isAllowedBlock(props.name, allowedBlocks) ) {
+			if(doseExistOldTOC(props.name)){
+				getHeadings(props);
+			}
+		}
 		return <BlockListBlock {...props} />;
 	};
 }, "updateTableOfContents");

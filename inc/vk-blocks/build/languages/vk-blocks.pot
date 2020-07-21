@@ -633,6 +633,10 @@ msgstr ""
 msgid "Slider"
 msgstr ""
 
+#: src/blocks/_pro/slider/block.js:52
+msgid "Slider is do not move in edit screen."
+msgstr ""
+
 #: src/blocks/_pro/step-item/block.js:19
 msgid "Step Item"
 msgstr ""

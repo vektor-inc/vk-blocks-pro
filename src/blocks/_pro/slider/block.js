@@ -16,7 +16,7 @@ const { registerBlockType } = wp.blocks;
 const { Fragment, useEffect } = wp.element;
 const { InspectorControls, BlockControls, BlockAlignmentToolbar} = wp.blockEditor;
 const { select, dispatch } = wp.data;
-const { PanelBody, BaseControl, SelectControl, TextControl, ButtonGroup, Button } = wp.components;
+const { PanelBody, BaseControl, TextControl, ButtonGroup, Button } = wp.components;
 const { createHigherOrderComponent } = wp.compose;
 const { addFilter } = wp.hooks;
 
@@ -191,24 +191,29 @@ registerBlockType("vk-blocks/slider", {
 	},
 });
 
-const generateHeightCss = (attributes) =>{
+const generateHeightCss = (attributes, for_) =>{
 
 	const { clientId, mobile, tablet, pc, unit }  = attributes
 
+	let cssSelector = ''
+	if("save" === for_){
+		cssSelector = `.vk_slider_${clientId},`
+	}
+
 	return `@media (max-width: 576px) {
-		.vk_slider_${clientId},
+		${cssSelector}
 		.vk_slider_${clientId} .vk_slider_item{
 			height:${mobile}${unit}!important;
 		}
 	}
 	@media (min-width: 577px) and (max-width: 768px) {
-		.vk_slider_${clientId},
+		${cssSelector}
 		.vk_slider_${clientId} .vk_slider_item{
 			height:${tablet}${unit}!important;
 		}
 	}
 	@media (min-width: 769px) {
-		.vk_slider_${clientId},
+		${cssSelector}
 		.vk_slider_${clientId} .vk_slider_item{
 			height:${pc}${unit}!important;
 		}
@@ -220,7 +225,7 @@ const vkbwithClientIdClassName = createHigherOrderComponent(
 	(BlockListBlock) => {
 		return (props) => {
 			if ("vk-blocks/slider" === props.name) {
-				const cssTag = generateHeightCss( props.attributes )
+				const cssTag = generateHeightCss( props.attributes, "edit" )
 				return (
 					<Fragment>
 						<style type='text/css'>{cssTag}</style>
@@ -255,7 +260,7 @@ const addSwiperConfig = (el, type, attributes) => {
 	if ("vk-blocks/slider" === type.name) {
 		const { clientId, pagination, autoPlay, autoPlayDelay, loop }  = attributes
 
-		const cssTag = generateHeightCss( attributes )
+		const cssTag = generateHeightCss( attributes, "save" )
 
 		let autoPlayScripts;
 		if(autoPlay){

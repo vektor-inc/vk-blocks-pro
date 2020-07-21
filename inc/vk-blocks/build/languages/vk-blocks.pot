@@ -103,7 +103,7 @@ msgstr ""
 
 #: src/blocks/_pro/animation/block.js:80
 #: src/blocks/_pro/outer/block.js:181
-#: src/blocks/_pro/slider/block.js:119
+#: src/blocks/_pro/slider/block.js:120
 #: src/blocks/balloon/block.js:163
 #: src/blocks/button/block.js:158
 #: src/blocks/faq/block.js:64
@@ -161,12 +161,11 @@ msgid "Select image"
 msgstr ""
 
 #: src/blocks/_pro/card/block.js:112
-#: src/blocks/_pro/slider/block.js:133
-msgid "Height"
+msgid "Image Height"
 msgstr ""
 
 #: src/blocks/_pro/card/block.js:116
-#: src/blocks/_pro/slider/block.js:137
+#: src/blocks/_pro/slider/block.js:138
 msgid "Slide Height for each device."
 msgstr ""
 
@@ -389,12 +388,12 @@ msgid "Layout Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:172
-#: src/blocks/_pro/slider/block.js:108
+#: src/blocks/_pro/slider/block.js:109
 msgid "Width"
 msgstr ""
 
 #: src/blocks/_pro/outer/block.js:189
-#: src/blocks/_pro/slider/block.js:127
+#: src/blocks/_pro/slider/block.js:128
 msgid "Full Wide"
 msgstr ""
 
@@ -606,23 +605,27 @@ msgstr ""
 msgid "Vertical align"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:142
+#: src/blocks/_pro/slider/block.js:134
+msgid "Height"
+msgstr ""
+
+#: src/blocks/_pro/slider/block.js:143
 msgid "Slider Settings"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:145
+#: src/blocks/_pro/slider/block.js:146
 msgid "Loop "
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:152
+#: src/blocks/_pro/slider/block.js:153
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:159
+#: src/blocks/_pro/slider/block.js:160
 msgid "Change Time"
 msgstr ""
 
-#: src/blocks/_pro/slider/block.js:165
+#: src/blocks/_pro/slider/block.js:166
 msgid "Display Pagination"
 msgstr ""
 

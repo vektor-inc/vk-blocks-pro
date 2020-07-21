@@ -49,6 +49,7 @@ registerBlockType("vk-blocks/slider", {
 	icon: BlockIcon,
 	category: "vk-blocks-cat-layout",
 	attributes: schema,
+	description: __( 'Slider is do not move in edit screen.','vk-blocks'),
 	supports: {
 		className: true,
 		inserter: displayInserter,

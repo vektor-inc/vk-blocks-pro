@@ -109,7 +109,7 @@ registerBlockType("vk-blocks/card", {
 			<ColumnLayoutControl { ...props } />
 			<DisplayItemsControlForCards { ...props } />
 			<PanelBody
-			title={__("Height", "vk-blocks")}
+			title={__("Image Height", "vk-blocks")}
 			initialOpen={false}
 			>
 				<AdvancedUnitControl {...props} />

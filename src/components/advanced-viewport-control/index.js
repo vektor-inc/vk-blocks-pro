@@ -12,19 +12,19 @@ const AdvancedViewportControl = (props) => {
 		  <TextControl
 		  	label={__('PC', 'vk-blocks')}
 		  	value={pc}
-			onChange={(value) => setAttributes({ pc: value })}
+			onChange={(value) => setAttributes({ pc: parseFloat(value) })}
 			type={"number"}
 		/>
 		<TextControl
 			label={__('Tablet', 'vk-blocks')}
 			value={tablet}
-			onChange={(value) => setAttributes({ tablet: value })}
+			onChange={(value) => setAttributes({ tablet: parseFloat(value) })}
 			type={"number"}
 		/>
 		<TextControl
 			label={__('Mobile', 'vk-blocks')}
 			value={mobile}
-			onChange={(value) => setAttributes({ mobile: value })}
+			onChange={(value) => setAttributes({ mobile: parseFloat(value) })}
 			type={"number"}
 		/>
 	  </Fragment>

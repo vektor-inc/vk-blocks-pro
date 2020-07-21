@@ -186,20 +186,7 @@ export const DisplayItemsControlForCards = (props) => {
 const generateInlineCss = (attributes) =>{
 	let { clientId, mobile, tablet, pc, unit } = attributes
 
-	if( undefined === unit ){
-		unit = "px"
-	}
-	let defaultValue = 150
-	if( undefined === mobile ){
-		mobile = defaultValue
-	}
-	if( undefined === tablet ){
-		tablet = defaultValue
-	}
-	if( undefined === pc ){
-		pc = defaultValue
-	}
-
+	console.log(attributes)
 
 	const cardImgSelector = `.${prefix}${clientId} .vk_card_item .vk_post_imgOuter::before`
 	return <style type='text/css'>{`@media (max-width: 576px) {
@@ -248,6 +235,7 @@ const addInlineFrontCss = (el, type, attributes) => {
 
 	const { unit, pc, tablet, mobile } = attributes
 	if ("vk-blocks/card" === type.name && ( unit || pc || tablet || mobile )) {
+		console.log(attributes)
 		const cssTag = generateInlineCss(attributes)
 		return<div>
 			{cssTag}

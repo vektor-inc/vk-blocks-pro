@@ -158,7 +158,7 @@ registerBlockType("vk-blocks/slider", {
 							<TextControl
 								label={__('Change Time', 'vk-blocks')}
 								value={autoPlayDelay}
-								onChange={value => setAttributes({ autoPlayDelay: value })}
+								onChange={value => setAttributes({ autoPlayDelay: parseInt(value,10) })}
 								type={"number"}
 							/>
 						</BaseControl>

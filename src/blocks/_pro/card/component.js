@@ -55,6 +55,7 @@ export class Component extends React.Component {
 			className = className.replace( /vk_card_undefined/g , "" )
 		}
 
-    return <div className={classNames('vk_posts', className, `${prefix}${clientId}`)}>{elm}</div>;
+		return <div className={classNames('vk_posts', className, `${prefix}${clientId}`)}>{elm}</div>;
+
   }
 }

@@ -118,9 +118,9 @@ registerBlockType('vk-blocks/button', {
 		}
 
 		if (className) {
-			containerClass = `${className} vk_button vk_button-align-${buttonAlign} vk_button-color-custom`;
-		} else {
 			containerClass = `${className} vk_button vk_button-align-${buttonAlign}`;
+		} else {
+			containerClass = `vk_button vk_button-align-${buttonAlign}`;
 		}
 
 		return (
@@ -338,7 +338,7 @@ registerBlockType('vk-blocks/button', {
 		} = attributes;
 
 		let containerClass = '';
-		if (buttonColorCustom) {
+		if (buttonColorCustom && "undefined" !== buttonColorCustom) {
 
 			containerClass = `vk_button vk_button-color-custom vk_button-align-${buttonAlign}`;
 

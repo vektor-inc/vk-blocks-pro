@@ -4,6 +4,7 @@ const { __ } = wp.i18n; // Import __() from wp.i18n
 import { convertToGrid } from "../../_helper/convert-to-grid";
 import React from "react";
 import { prefix } from "./block"
+import classNames from "classnames";
 
 export class Component extends React.Component {
   render() {
@@ -50,7 +51,10 @@ export class Component extends React.Component {
       elm = <InnerBlocks.Content />;
 		}
 
-		console.log({className,prefix, clientId})
-    return <div className={`vk_posts ${className} ${prefix}${clientId}`}>{elm}</div>;
+		if(className){
+			className = className.replace( /vk_card_undefined/g , "" )
+		}
+
+    return <div className={classNames('vk_posts', className, `${prefix}${clientId}`)}>{elm}</div>;
   }
 }

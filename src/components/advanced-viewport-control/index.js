@@ -4,10 +4,21 @@ const { Fragment } = wp.element;
 const { TextControl } = wp.components;
 
 const AdvancedViewportControl = (props) => {
-  const { attributes, setAttributes } = props;
-  const { pc,tablet,mobile } = attributes
+	const { attributes, setAttributes, initial } = props;
+	let { pc,tablet,mobile } = attributes
+	let { iPc, iTablet, iMobile } = initial
 
-  return (
+	if(!pc){
+		pc = iPc
+	}
+	if(!tablet){
+		tablet = iTablet
+	}
+	if(!mobile){
+		mobile = iMobile
+	}
+
+	return (
 	  <Fragment>
 		  <TextControl
 		  	label={__('PC', 'vk-blocks')}

@@ -43,7 +43,7 @@ registerBlockType('vk-blocks/spacer', {
 					<PanelBody>
 						<AdvancedUnitControl {...props} />
 						<BaseControl label={__('Height for each device.', 'vk-blocks')}>
-							<AdvancedViewportControl {...props} />
+						<AdvancedViewportControl {...props} initial={{ iPc:40, iTablet:30, iMobile:20 }}/>
 						</BaseControl>
 					</PanelBody>
 				</InspectorControls>

@@ -65,8 +65,8 @@ registerBlockType("vk-blocks/card", {
 
   edit(props) {
 	const { attributes, setAttributes, className, clientId, name } = props;
-	let { unit, mobile, tablet, pc } = attributes
 	attributes.name = name;
+	setAttributes({ clientId: clientId })
 
     const selectEditor = select("core/block-editor")
       ? select("core/block-editor")
@@ -116,7 +116,7 @@ registerBlockType("vk-blocks/card", {
 			>
 				<AdvancedUnitControl {...props} />
 				<BaseControl label={__('Slide Height for each device.', 'vk-blocks')}>
-					<AdvancedViewportControl {...props} />
+					<AdvancedViewportControl {...props} initial={{ iPc:150, iTablet:150, iMobile:150 }} />
 				</BaseControl>
 			</PanelBody>
 			<CardAlignControls { ...props } />
@@ -130,9 +130,9 @@ registerBlockType("vk-blocks/card", {
 	</Fragment>
     );
   },
-  save({ attributes, className }) {
+  save({ attributes }) {
     return (
-	<Component attributes={ attributes } className={ className } for_={ "save" } />
+	<Component attributes={ attributes } for_={ "save" } />
     );
   },
   deprecated,

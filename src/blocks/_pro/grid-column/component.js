@@ -19,10 +19,9 @@ export const ColumnResponsive = (props) => {
     innerClass = innerClass + " vk_posts-edit";
 
     elm = (
-      <div>
+      <div className={`${containerClass}`}>
         <InnerBlocks
           //編集画面の追加タグ用に2回目のClassを挿入
-          className={`${containerClass} row`}
           template={TEMPLATE}
           allowedBlocks={ALLOWED_BLOCKS}
         />

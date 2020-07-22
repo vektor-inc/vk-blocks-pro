@@ -65,6 +65,7 @@ registerBlockType("vk-blocks/card", {
 
   edit(props) {
 	const { attributes, setAttributes, className, clientId, name } = props;
+	let { unit, mobile, tablet, pc } = attributes
 	attributes.name = name;
 
     const selectEditor = select("core/block-editor")
@@ -102,7 +103,8 @@ registerBlockType("vk-blocks/card", {
         }
         afterLength = beforeLength;
       }
-    }
+	}
+
     return (
 	<Fragment>
 		<InspectorControls>
@@ -185,6 +187,20 @@ export const DisplayItemsControlForCards = (props) => {
 
 const generateInlineCss = (attributes) =>{
 	let { clientId, mobile, tablet, pc, unit } = attributes
+
+	//For recovering block.
+	if( undefined === unit ){
+		unit = "px"
+	}
+	if( undefined === mobile ){
+		mobile = 150
+	}
+	if( undefined === tablet ){
+		tablet = 150
+	}
+	if( undefined === pc ){
+		pc = 150
+	}
 
 	const cardImgSelector = `.${prefix}${clientId} .vk_card_item .vk_post_imgOuter::before`
 	return <style type='text/css'>{`@media (max-width: 576px) {

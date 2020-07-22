@@ -48,7 +48,9 @@ export class Component extends React.Component {
       );
     } else if ("save") {
       elm = <InnerBlocks.Content />;
-    }
+		}
+
+		console.log({className,prefix, clientId})
     return <div className={`vk_posts ${className} ${prefix}${clientId}`}>{elm}</div>;
   }
 }

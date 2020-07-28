@@ -143,6 +143,16 @@ registerBlockType("vk-blocks/slider", {
 						title={ __("Slider Settings", "vk-blocks") }
 						initialOpen={ false }
 					>
+						<BaseControl label={ __("Effect ", "vk-blocks") }>
+							<SelectControl
+								value={effect}
+								onChange={value => setAttributes({ effect: value })}
+								options={[
+									{ label: __("Slide", "vk-blocks"), value: "slide" },
+									{ label: __("Fade", "vk-blocks"), value: "fade" },
+								]}
+							/>
+						</BaseControl>
 						<BaseControl label={ __("Loop ", "vk-blocks") }>
 							<AdvancedToggleControl
 								initialFixedTable={ loop }
@@ -168,16 +178,6 @@ registerBlockType("vk-blocks/slider", {
 								initialFixedTable={ pagination }
 								schema={ "pagination" }
 								{ ...props }
-							/>
-						</BaseControl>
-						<BaseControl label={ __("Effect ", "vk-blocks") }>
-							<SelectControl
-								value={effect}
-								onChange={value => setAttributes({ effect: value })}
-								options={[
-									{ label: __("Slide", "vk-blocks"), value: "slide" },
-									{ label: __("Fade", "vk-blocks"), value: "fade" },
-								]}
 							/>
 						</BaseControl>
 					</PanelBody>

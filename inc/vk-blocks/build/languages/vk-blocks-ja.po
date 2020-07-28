@@ -150,7 +150,7 @@ msgstr ""
 
 #: src/blocks/_pro/card-item/component.js:213
 #: src/blocks/_pro/card-item/deprecated.js:887
-#: src/blocks/_pro/card/block.js:145 src/blocks/_pro/icon-card/block.js:105
+#: src/blocks/_pro/card/block.js:147 src/blocks/_pro/icon-card/block.js:105
 msgid "Title"
 msgstr "タイトルを入力"
 
@@ -166,43 +166,43 @@ msgstr "タイトルを入力"
 msgid "Select image"
 msgstr "画像を選択"
 
-#: src/blocks/_pro/card/block.js:112
+#: src/blocks/_pro/card/block.js:114
 msgid "Image Height"
 msgstr "画像高さ"
 
-#: src/blocks/_pro/card/block.js:116 src/blocks/_pro/slider/block.js:138
+#: src/blocks/_pro/card/block.js:118 src/blocks/_pro/slider/block.js:138
 msgid "Slide Height for each device."
 msgstr "デバイス毎の高さ"
 
-#: src/blocks/_pro/card/block.js:143
+#: src/blocks/_pro/card/block.js:145
 #: src/components/display-items-control/index.js:26
 msgid "Display item"
 msgstr "表示要素"
 
-#: src/blocks/_pro/card/block.js:152
+#: src/blocks/_pro/card/block.js:154
 msgid "Excerpt Text"
 msgstr "抜粋"
 
-#: src/blocks/_pro/card/block.js:157
+#: src/blocks/_pro/card/block.js:159
 msgid "Warning! When you hidden this item, you will lose the content."
 msgstr "注意！この項目を非表示にすると入力されていた内容は失われます。"
 
-#: src/blocks/_pro/card/block.js:159
+#: src/blocks/_pro/card/block.js:161
 #: src/components/display-items-control/index.js:28
 msgid "Image"
 msgstr "画像"
 
-#: src/blocks/_pro/card/block.js:164 src/blocks/button/block.js:46
+#: src/blocks/_pro/card/block.js:166 src/blocks/button/block.js:46
 #: src/components/display-items-control/index.js:57
 msgid "Button"
 msgstr "ボタン"
 
-#: src/blocks/_pro/card/block.js:169
+#: src/blocks/_pro/card/block.js:171
 #: src/components/display-items-control/index.js:74
 msgid "Button option"
 msgstr "ボタンオプション"
 
-#: src/blocks/_pro/card/block.js:172
+#: src/blocks/_pro/card/block.js:174
 #: src/components/display-items-control/index.js:77
 msgid ""
 "Click each card block to set the target url. You can find the url form at "
@@ -211,7 +211,7 @@ msgstr ""
 "ボタンのリンク先は各カードブロックをクリックすると、サイドバーにURL入力フォー"
 "ムが表示されます。"
 
-#: src/blocks/_pro/card/block.js:178
+#: src/blocks/_pro/card/block.js:180
 #: src/components/display-items-control/index.js:83
 msgid "Button text"
 msgstr "ボタンの文字"
@@ -346,15 +346,15 @@ msgstr ""
 msgid "Opacity Setting"
 msgstr "透過設定"
 
-#: src/blocks/_pro/outer/block.js:127 src/blocks/_pro/slider-item/block.js:134
+#: src/blocks/_pro/outer/block.js:127 src/blocks/_pro/slider-item/block.js:146
 msgid "Background Image PC"
 msgstr "背景画像 ( PC )"
 
-#: src/blocks/_pro/outer/block.js:135 src/blocks/_pro/slider-item/block.js:142
+#: src/blocks/_pro/outer/block.js:135 src/blocks/_pro/slider-item/block.js:154
 msgid "Background Image Tablet"
 msgstr "背景画像 ( タブレット )"
 
-#: src/blocks/_pro/outer/block.js:141 src/blocks/_pro/slider-item/block.js:148
+#: src/blocks/_pro/outer/block.js:141 src/blocks/_pro/slider-item/block.js:160
 msgid "Background Image Mobile"
 msgstr "背景画像背景画像 ( モバイル )"
 
@@ -555,15 +555,15 @@ msgstr "オフセット数"
 msgid "Post list"
 msgstr "投稿リスト"
 
-#: src/blocks/_pro/slider-item/block.js:154
+#: src/blocks/_pro/slider-item/block.js:134
 msgid "Background Image Size"
 msgstr "背景画像サイズ"
 
-#: src/blocks/_pro/slider-item/block.js:160
+#: src/blocks/_pro/slider-item/block.js:139
 msgid "cover"
 msgstr "カバー"
 
-#: src/blocks/_pro/slider-item/block.js:161
+#: src/blocks/_pro/slider-item/block.js:140
 msgid "repeat"
 msgstr "リピート"
 
@@ -596,18 +596,30 @@ msgid "Slider Settings"
 msgstr "スライド設定"
 
 #: src/blocks/_pro/slider/block.js:146
+msgid "Effect "
+msgstr "エフェクト"
+
+#: src/blocks/_pro/slider/block.js:151
+msgid "Slide"
+msgstr "スライド"
+
+#: src/blocks/_pro/slider/block.js:152
+msgid "Fade"
+msgstr "フェード"
+
+#: src/blocks/_pro/slider/block.js:156
 msgid "Loop "
 msgstr "繰り返し"
 
-#: src/blocks/_pro/slider/block.js:153
+#: src/blocks/_pro/slider/block.js:163
 msgid "AutoPlay"
 msgstr "自動再生"
 
-#: src/blocks/_pro/slider/block.js:160
+#: src/blocks/_pro/slider/block.js:170
 msgid "Change Time"
 msgstr "切り替え時間"
 
-#: src/blocks/_pro/slider/block.js:166
+#: src/blocks/_pro/slider/block.js:176
 msgid "Display Pagination"
 msgstr "ページネーションの表示"
 
@@ -617,7 +629,7 @@ msgstr "スライダー"
 
 #: src/blocks/_pro/slider/block.js:52
 msgid "Slider is do not move in edit screen."
-msgstr ""
+msgstr "スライダーは編集画面では動きません。公開画面でプレビューしてください。"
 
 #: src/blocks/_pro/step-item/block.js:19
 msgid "Step Item"
@@ -1488,15 +1500,15 @@ msgstr "rem"
 msgid "vw"
 msgstr "vw"
 
-#: src/components/advanced-viewport-control/index.js:13
+#: src/components/advanced-viewport-control/index.js:24
 msgid "PC"
 msgstr "PC"
 
-#: src/components/advanced-viewport-control/index.js:19
+#: src/components/advanced-viewport-control/index.js:30
 msgid "Tablet"
 msgstr "タブレット"
 
-#: src/components/advanced-viewport-control/index.js:25
+#: src/components/advanced-viewport-control/index.js:36
 msgid "Mobile"
 msgstr "モバイル"
 
@@ -1635,9 +1647,6 @@ msgstr "吹き出し画像の名前"
 
 #~ msgid "Effect Setting"
 #~ msgstr "エフェクト設定"
-
-#~ msgid "Effect Speed"
-#~ msgstr "エフェクトスピード"
 
 #~ msgid "Effect Range"
 #~ msgstr "エフェクトの距離"

@@ -66,6 +66,7 @@ registerBlockType("vk-blocks/card", {
   edit(props) {
 	const { attributes, setAttributes, className, clientId, name } = props;
 	attributes.name = name;
+	setAttributes({ clientId: clientId })
 
     const selectEditor = select("core/block-editor")
       ? select("core/block-editor")
@@ -102,7 +103,8 @@ registerBlockType("vk-blocks/card", {
         }
         afterLength = beforeLength;
       }
-    }
+	}
+
     return (
 	<Fragment>
 		<InspectorControls>
@@ -114,7 +116,7 @@ registerBlockType("vk-blocks/card", {
 			>
 				<AdvancedUnitControl {...props} />
 				<BaseControl label={__('Slide Height for each device.', 'vk-blocks')}>
-					<AdvancedViewportControl {...props} />
+					<AdvancedViewportControl {...props} initial={{ iPc:150, iTablet:150, iMobile:150 }} />
 				</BaseControl>
 			</PanelBody>
 			<CardAlignControls { ...props } />
@@ -128,9 +130,9 @@ registerBlockType("vk-blocks/card", {
 	</Fragment>
     );
   },
-  save({ attributes, className }) {
+  save({ attributes }) {
     return (
-	<Component attributes={ attributes } className={ className } for_={ "save" } />
+	<Component attributes={ attributes } for_={ "save" } />
     );
   },
   deprecated,
@@ -186,20 +188,34 @@ export const DisplayItemsControlForCards = (props) => {
 const generateInlineCss = (attributes) =>{
 	let { clientId, mobile, tablet, pc, unit } = attributes
 
+	//For recovering block.
+	if( undefined === unit ){
+		unit = "px"
+	}
+	if( undefined === mobile ){
+		mobile = 150
+	}
+	if( undefined === tablet ){
+		tablet = 150
+	}
+	if( undefined === pc ){
+		pc = 150
+	}
+
 	const cardImgSelector = `.${prefix}${clientId} .vk_card_item .vk_post_imgOuter::before`
 	return <style type='text/css'>{`@media (max-width: 576px) {
 		${cardImgSelector}{
-			height:${mobile}${unit}!important;
+			padding-top:${mobile}${unit}!important;
 		}
 	}
 	@media (min-width: 577px) and (max-width: 768px) {
 		${cardImgSelector}{
-			height:${tablet}${unit}!important;
+			padding-top:${tablet}${unit}!important;
 		}
 	}
 	@media (min-width: 769px) {
 		${cardImgSelector}{
-			height:${pc}${unit}!important;
+			padding-top:${pc}${unit}!important;
 		}
 	}`}</style>
 }

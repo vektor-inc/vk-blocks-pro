@@ -136,7 +136,7 @@ registerBlockType("vk-blocks/slider", {
 					>
 						<AdvancedUnitControl {...props} />
 						<BaseControl label={__('Slide Height for each device.', 'vk-blocks')}>
-							<AdvancedViewportControl {...props} />
+							<AdvancedViewportControl {...props} initial={{ iPc:600, iTablet:600, iMobile:600 }}/>
 						</BaseControl>
 					</PanelBody>
 					<PanelBody

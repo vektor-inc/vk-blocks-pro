@@ -40,12 +40,6 @@
 		//全幅の時
 		margin: 0 calc(50% - 50vw);
 		width: 100vw;
-		.vk_slider_item {
-			// width: 100vw !important;
-			// .vk_outer-width-full {
-			// 	width: 100%;
-			// }
-		}
 	}
 	.block-list-appender {
 		//管理画面のボタン
@@ -59,14 +53,6 @@
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	p {
-		margin: 0;
-	}
-	a,
-	a:hover {
-		text-decoration: none;
-		color: inherit;
-	}
 }
 
 //pagination

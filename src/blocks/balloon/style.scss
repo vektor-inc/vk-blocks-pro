@@ -42,8 +42,8 @@
 
 .vk_balloon_content {
 	position: relative;
+	width:100%;
 	text-align: left;
-
 	&.editor-rich-text__tinymce[data-is-placeholder-visible=true] {
 		// これがないと未入力時に吹き出しが２重になる
 		position: absolute;

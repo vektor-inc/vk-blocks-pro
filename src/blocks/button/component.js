@@ -82,6 +82,8 @@ export class VKBButton extends Component {
 			aClass = `${aClass} btn-block`;
 		}
 
+
+
 		//過去バージョンをリカバリーした時にiconを正常に表示する
 		if( fontAwesomeIconBefore && !fontAwesomeIconBefore.match(/<i/)){
 			fontAwesomeIconBefore = `<i class="${fontAwesomeIconBefore}"></i>`
@@ -91,12 +93,18 @@ export class VKBButton extends Component {
 		}
 
 		if (fontAwesomeIconBefore) {
+
+			fontAwesomeIconBefore = fontAwesomeIconBefore.replace( / fas/g , "fas" )
+
 			//add class and inline css
 			const faIconFragmentBefore= fontAwesomeIconBefore.split(' ');
 			faIconFragmentBefore[1] = ' ' + faIconFragmentBefore[1] + ` vk_button_link_before `
 			iconBefore = faIconFragmentBefore.join('')
         }
         if (fontAwesomeIconAfter) {
+
+			fontAwesomeIconAfter = fontAwesomeIconAfter.replace( / fas/g , "fas" )
+
 			//add class and inline css
 			const faIconFragmentAfter = fontAwesomeIconAfter.split(' ');
 			faIconFragmentAfter[1] = ' ' + faIconFragmentAfter[1] + ` vk_button_link_after `

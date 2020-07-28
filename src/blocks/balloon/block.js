@@ -7,7 +7,7 @@ import { vkbBlockEditor } from "./../_helper/depModules";
 const apiFetch = wp.apiFetch;
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const {  ButtonGroup, PanelBody, Button } = wp.components;
+const {  ButtonGroup, PanelBody, Button,SelectControl } = wp.components;
 const { Fragment, useState, useEffect } = wp.element;
 const { RichText, InspectorControls, MediaUpload, ColorPalette } = vkbBlockEditor;
 const BlockIcon = (
@@ -52,7 +52,11 @@ registerBlockType("vk-blocks/balloon", {
 	balloonImageType: {
 		type: "string",
 		default: "normal" // no image by default!
-	  },
+	},
+	balloonAnimation: {
+		type: "string",
+		default: "none" // no image by default!
+	},
   },
 
   edit({ attributes, className, setAttributes }) {
@@ -63,7 +67,8 @@ registerBlockType("vk-blocks/balloon", {
       balloonBgColor,
 			balloonAlign,
 			IconImage,
-			balloonImageType
+			balloonImageType,
+			balloonAnimation
     	} = attributes;
 		const [ blockMeta, setBlockMeta ] = useState(null);
 
@@ -180,15 +185,44 @@ registerBlockType("vk-blocks/balloon", {
               onChange={value => setAttributes({ balloonBgColor: value })}
             />
           </PanelBody>
-				<PanelBody title={__("Default Icon Setting", "vk-blocks")}>
-					<div className="icon-image-list mb-2">
-						{defautIconButtons}
-					</div>
-					<div>{__( 'You can register default icons from Settings > VK Blocks in Admin.', 'vk-blocks' ) }</div>
-          </PanelBody>
+		  	<PanelBody title={__("Default Icon Setting", "vk-blocks")}>
+				<div className="icon-image-list mb-2">
+					{defautIconButtons}
+				</div>
+				<div>{__( 'You can register default icons from Settings > VK Blocks in Admin.', 'vk-blocks' ) }</div>
+          	</PanelBody>
+		  	<PanelBody title={__("Animation setting", "vk-blocks")}>
+				<p className={ 'mb-1' }>{ __("Please select the type of animation.", "vk-blocks")} </p>
+				<SelectControl
+					value={ balloonAnimation }
+					onChange={ value => setAttributes({ balloonAnimation: value }) }
+					options={ [
+						{
+							value: "none",
+							label: __("None", "vk-blocks")
+						},
+						{
+							value: "trembling",
+							label: __("Trembling", "vk-blocks")
+						},
+						{
+							value: "trembling-x",
+							label: __("Trembling X", "vk-blocks")
+						},
+						{
+							value: "pounding",
+							label: __("Pounding", "vk-blocks")
+						},
+						{
+							value: "shaking",
+							label: __("Shaking", "vk-blocks")
+						},
+					] }
+					/>	
+			</PanelBody>
         </InspectorControls>
         <div
-          className={`${className} vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType}`}
+          className={`${className} vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation}`}
         >
           <div className={ `vk_balloon_icon` }>
             <MediaUpload
@@ -244,15 +278,17 @@ registerBlockType("vk-blocks/balloon", {
       balloonBgColor,
 			balloonAlign,
 			IconImage,
-			balloonImageType
+			balloonImageType,
+			balloonAnimation
 		} = attributes;
 
 		//For recovering
 		balloonImageType = balloonImageType ? balloonImageType : "normal"
+		balloonAnimation = balloonAnimation ? balloonAnimation : "none";
 
     return (
       <div
-        className={`vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType}`}
+        className={`vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation}`}
       >
         <div className={ `vk_balloon_icon` }>
           {IconImage ? (

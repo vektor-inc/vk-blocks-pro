@@ -7,7 +7,6 @@ import HeadingToolbar from "./heading-toolbar";
 import { VKBHeading } from "./component";
 import { Deprecated } from "./deprecated/block";
 import { vkbBlockEditor } from "./../_helper/depModules";
-import formatNum from "../_helper/formatNum";
 import { FontAwesome } from "./../_helper/font-awesome-new";
 
 const { __ } = wp.i18n;
@@ -139,7 +138,7 @@ registerBlockType("vk-blocks/heading", {
 						<RangeControl
 							value={titleMarginBottom}
 							onChange={value => {
-								setAttributes({ titleMarginBottom: formatNum(value, titleMarginBottom) });
+								setAttributes({ titleMarginBottom: value });
 							}}
 							min={-1}
 							max={3}
@@ -149,7 +148,7 @@ registerBlockType("vk-blocks/heading", {
 						<RangeControl
 							value={outerMarginBottom}
 							onChange={value => {
-								setAttributes({ outerMarginBottom: formatNum(value, outerMarginBottom) });
+								setAttributes({ outerMarginBottom: value });
 							}}
 							min={-1}
 							max={8}
@@ -175,7 +174,7 @@ registerBlockType("vk-blocks/heading", {
 							label={__("Text size (rem)", "vk-blocks")}
 							value={titleSize}
 							onChange={value => {
-								setAttributes({ titleSize: formatNum(value, titleSize) });
+								setAttributes({ titleSize: value });
 							}}
 							min={0.5}
 							max={4}
@@ -184,7 +183,8 @@ registerBlockType("vk-blocks/heading", {
 						<BaseControl label={ __("Text Color", "vk-blocks") }>
 							<ColorPalette value={titleColor} onChange={value => setAttributes({ titleColor: value })}/>
 						</BaseControl>
-						<h4 className="mt-0 mb-2">{ __('Icon ( Font Awesome )', 'vk-blocks') }</h4>
+					</PanelBody>
+					<PanelBody title={__("Font Awesome Icon Settings", "vk-blocks")}>
 						<BaseControl label={ __("Before text", "vk-blocks") }>
 							<FontAwesome attributeName={ "fontAwesomeIconBefore" } { ...props } />
 						</BaseControl>
@@ -209,7 +209,7 @@ registerBlockType("vk-blocks/heading", {
 						<RangeControl
 							value={subTextSize}
 							onChange={value => {
-								setAttributes({ subTextSize: formatNum(value, subTextSize) });
+								setAttributes({ subTextSize: value });
 							}}
 							min={0.5}
 							max={3}

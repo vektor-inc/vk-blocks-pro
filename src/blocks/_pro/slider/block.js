@@ -16,7 +16,7 @@ const { registerBlockType } = wp.blocks;
 const { Fragment, useEffect } = wp.element;
 const { InspectorControls, BlockControls, BlockAlignmentToolbar} = wp.blockEditor;
 const { select, dispatch } = wp.data;
-const { PanelBody, BaseControl, TextControl, ButtonGroup, Button } = wp.components;
+const { PanelBody, BaseControl, TextControl, ButtonGroup, Button, SelectControl } = wp.components;
 const { createHigherOrderComponent } = wp.compose;
 const { addFilter } = wp.hooks;
 
@@ -57,7 +57,7 @@ registerBlockType("vk-blocks/slider", {
 
 	edit(props) {
 		const { attributes, setAttributes, className, clientId } = props;
-		const { autoPlay, autoPlayDelay, pagination, width, loop } = attributes;
+		const { autoPlay, autoPlayDelay, pagination, width, loop, effect } = attributes;
 		const { getBlocksByClientId } = select("core/block-editor");
 		const { updateBlockAttributes } = dispatch("core/block-editor");
 
@@ -170,6 +170,16 @@ registerBlockType("vk-blocks/slider", {
 								{ ...props }
 							/>
 						</BaseControl>
+						<BaseControl label={ __("Effect ", "vk-blocks") }>
+							<SelectControl
+								value={effect}
+								onChange={value => setAttributes({ effect: value })}
+								options={[
+									{ label: __("Slide", "vk-blocks"), value: "slide" },
+									{ label: __("Fade", "vk-blocks"), value: "fade" },
+								]}
+							/>
+						</BaseControl>
 					</PanelBody>
 				</InspectorControls>
 				<ColumnResponsive
@@ -259,7 +269,7 @@ addFilter(
 const addSwiperConfig = (el, type, attributes) => {
 
 	if ("vk-blocks/slider" === type.name) {
-		const { clientId, pagination, autoPlay, autoPlayDelay, loop }  = attributes
+		const { clientId, pagination, autoPlay, autoPlayDelay, loop, effect }  = attributes
 
 		const cssTag = generateHeightCss( attributes, "save" )
 
@@ -292,6 +302,8 @@ const addSwiperConfig = (el, type, attributes) => {
 			var swiper${replaceClientId(clientId)} = new Swiper ('.vk_slider_${clientId}', {
 				// Optional parameters
 				loop: ${loop},
+
+				effect: '${effect}',
 
 				${paginationScripts}
 

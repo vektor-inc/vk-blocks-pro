@@ -5,6 +5,7 @@
 .vk_block_icon_pro {
 	fill: #c00;
 }
+.editor-block-list-item-vk-blocks-slider:after,
 .editor-block-list-item-vk-blocks-animation:after,
 .editor-block-list-item-vk-blocks-card:after,
 .editor-block-list-item-vk-blocks-child-page:after,
@@ -105,6 +106,8 @@ button.components-button.components-toolbar__control{
 @import "./editor_before_template_inserter";
 // アイコンリストCSS読み込み
 @import "./editor_before_icon_list";
+// 吹き出し画像読み込み
+@import "./editor_balloon_image_list";
 
 // VK Outer 編集パネル
 $color-danger: #dd3333;
@@ -134,6 +137,13 @@ $color-danger: #dd3333;
 	}
 }
 
+.vk_slider_item_sidebar_bgImage_button_container img {
+    min-width: 248px;
+}
+
+.mb-2+div.components-toolbar{
+	margin-top: 0!important;
+}
 
 /* editor area *********************************************/
 .edit-post-visual-editor.editor-styles-wrapper{
@@ -143,6 +153,11 @@ $color-danger: #dd3333;
 	-----------------------------------------------*/
 	.vk_outer-width-full.vk_outer-paddingLR-use,
 	.vk_outer-width-full.vk_outer-paddingLR-zero{
+		// コンテンツエリアをはみ出させる
+		.wp-block { max-width:100%; }
+	}
+	.vk_slider_item-width-full.vk_slider_item-paddingLR-use,
+	.vk_slider_item-width-full.vk_slider_item-paddingLR-zero{
 		// コンテンツエリアをはみ出させる
 		.wp-block { max-width:100%; }
 	}
@@ -156,10 +171,40 @@ $color-danger: #dd3333;
 		.wp-block { max-width:100%; }
 	}
 
-// レスポンシブスペーサーの識別用枠線
-.vk_spacer {
-	border: 1px dotted #ccc;
+	.is-sidebar-opened & .vk_slider_item-width-full.vk_slider_item-paddingLR-use,
+	.is-sidebar-opened & .vk_slider_item-width-full.vk_slider_item-paddingLR-zero{
+		// サイドバー表示時に全幅要素がはみ出してサイドバーの下などに入り込むのを防止
+		margin-left: calc( 50% - 50vw + 140px );
+		margin-right: calc( 50% - 50vw + 140px );
+		// コンテンツエリアをはみ出させる
+		.wp-block { max-width:100%; }
+	}
+
+	.is-sidebar-opened & .vk_slider.vk_width-full{
+		// サイドバー表示時に全幅要素がはみ出してサイドバーの下などに入り込むのを防止
+		margin-left: calc( 50% - 50vw + 140px );
+		margin-right: calc( 50% - 50vw + 140px );
+		padding-right:0;
+		padding-left:0;
+		width: calc( 100vw - 280px );
+	}
+
+
+// 編集画面での識別用枠
+.vk_spacer,
+.vk_slider,
+.vk_slider_item,
+.vk_animation {
+	border:1px dotted #ccc;
 }
+
+.vk_slider_item{
+	min-height:3em;
+	.block-editor-inner-blocks{
+		width: 100%;
+	}
+}
+
 // アニメーションブロックの識別用枠線
 .vk_animation {
 	border: 1px dashed #ccc;
@@ -441,9 +486,13 @@ $color-danger: #b52727;
 /*-------------------------------------------*/
 /* .vk_grid-column Layout
 /*-------------------------------------------*/
-.vk_grid-column.row {
+.vk_grid-column .block-editor-inner-blocks .block-editor-block-list__layout {
 	border:none;
+	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
 
 	// colの余分な余白の削除など
 	// col内に入れたブロックにまで反映されないように & > 指定

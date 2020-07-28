@@ -4,11 +4,15 @@
  */
 import { deprecated } from './deprecated';
 import { vkbBlockEditor } from "./../_helper/depModules";
+<<<<<<< HEAD
 import { iconPicture, content, iconName, baseColor } from "../_helper/example-data"
+=======
+const apiFetch = wp.apiFetch;
+>>>>>>> 87526d6699f503c0d75533caefabd7de71a4fbc5
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { PanelBody, Button, ButtonGroup } = wp.components;
-const { Fragment } = wp.element;
+const {  ButtonGroup, PanelBody, Button,SelectControl } = wp.components;
+const { Fragment, useState, useEffect } = wp.element;
 const { RichText, InspectorControls, MediaUpload, ColorPalette } = vkbBlockEditor;
 const BlockIcon = (
   <svg
@@ -22,37 +26,41 @@ const BlockIcon = (
 );
 
 registerBlockType("vk-blocks/balloon", {
-  title: __("Ballon", "vk-blocks"),
-  icon: BlockIcon,
-  category: "vk-blocks-cat",
-  attributes: {
-    content: {
-      source: "html",
-      selector: "p"
-    },
-    balloonName: {
-      source: "html",
-      selector: "figcaption"
-    },
-    balloonType: {
-      type: "string",
-      default: "type-serif"
-    },
-    balloonBgColor: {
-      type: "string"
-    },
-    balloonAlign: {
-      type: "string",
-      default: "position-left"
-    },
-    IconImage: {
-      type: "string",
-      default: null // no image by default!
+	title: __("Ballon", "vk-blocks"),
+	icon: BlockIcon,
+	category: "vk-blocks-cat",
+	attributes: {
+		content: {
+			source: "html",
+			selector: "p"
+		},
+		balloonName: {
+			source: "html",
+			selector: "figcaption"
+		},
+		balloonType: {
+			type: "string",
+			default: "type-serif"
+		},
+		balloonBgColor: {
+			type: "string"
+		},
+		balloonAlign: {
+			type: "string",
+			default: "position-left"
+		},
+		IconImage: {
+			type: "string",
+			default: null // no image by default!
 		},
 		balloonImageType: {
 			type: "string",
 			default: "normal" // no image by default!
-	  },
+		},
+		balloonAnimation: {
+			type: "string",
+			default: "none" // no image by default!
+		},
 	},
 	example: {
 		attributes: {
@@ -74,8 +82,43 @@ registerBlockType("vk-blocks/balloon", {
       balloonBgColor,
 			balloonAlign,
 			IconImage,
-			balloonImageType
-		} = attributes;
+			balloonImageType,
+			balloonAnimation
+    	} = attributes;
+		const [ blockMeta, setBlockMeta ] = useState(null);
+
+		useEffect(() => {
+			apiFetch( {
+				path: '/vk-blocks/v1/block-meta/balloon/',
+				method: 'GET',
+				parse: true,
+			} ).then( ( result ) => {
+				setBlockMeta(result)
+			} )
+		}, [])
+
+		let defautIconButtons;
+		if(blockMeta && blockMeta["default_icons"]){
+			defautIconButtons = Object.keys(blockMeta["default_icons"]).map( (index)=> {
+				const defaultIcon= blockMeta["default_icons"][index];
+				if(defaultIcon.src){
+					return(
+						<div key={index}>
+							<Button
+								onClick={()=>{
+									setAttributes({ IconImage: defaultIcon.src })
+									setAttributes({ balloonName: defaultIcon.name })
+								}}
+								className={"button button-large components-button"}
+							>
+								<img className={"icon-image"} src={defaultIcon.src} />
+							</Button>
+						</div>
+					)
+				}
+			})
+		}
+
 
     return (
       <Fragment>
@@ -102,7 +145,6 @@ registerBlockType("vk-blocks/balloon", {
 					{  __("Right", "vk-blocks") }
 				</Button>
 			</ButtonGroup>
-
 
 			<p className={ 'mb-1' }><label>{ __( 'Type', 'vk-blocks' ) }</label></p>
 			<p className={ 'mb-1' }>{ __("Please select the type of balloon.", "vk-blocks")} </p>
@@ -158,10 +200,44 @@ registerBlockType("vk-blocks/balloon", {
               onChange={value => setAttributes({ balloonBgColor: value })}
             />
           </PanelBody>
+		  	<PanelBody title={__("Default Icon Setting", "vk-blocks")}>
+				<div className="icon-image-list mb-2">
+					{defautIconButtons}
+				</div>
+				<div>{__( 'You can register default icons from Settings > VK Blocks in Admin.', 'vk-blocks' ) }</div>
+          	</PanelBody>
+		  	<PanelBody title={__("Animation setting", "vk-blocks")}>
+				<p className={ 'mb-1' }>{ __("Please select the type of animation.", "vk-blocks")} </p>
+				<SelectControl
+					value={ balloonAnimation }
+					onChange={ value => setAttributes({ balloonAnimation: value }) }
+					options={ [
+						{
+							value: "none",
+							label: __("None", "vk-blocks")
+						},
+						{
+							value: "trembling",
+							label: __("Trembling", "vk-blocks")
+						},
+						{
+							value: "trembling-x",
+							label: __("Trembling X", "vk-blocks")
+						},
+						{
+							value: "pounding",
+							label: __("Pounding", "vk-blocks")
+						},
+						{
+							value: "shaking",
+							label: __("Shaking", "vk-blocks")
+						},
+					] }
+					/>
+			</PanelBody>
         </InspectorControls>
-
         <div
-          className={`${className} vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType}`}
+          className={`${className} vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation}`}
         >
           <div className={ `vk_balloon_icon` }>
             <MediaUpload
@@ -217,15 +293,17 @@ registerBlockType("vk-blocks/balloon", {
       balloonBgColor,
 			balloonAlign,
 			IconImage,
-			balloonImageType
+			balloonImageType,
+			balloonAnimation
 		} = attributes;
 
 		//For recovering
 		balloonImageType = balloonImageType ? balloonImageType : "normal"
+		balloonAnimation = balloonAnimation ? balloonAnimation : "none";
 
     return (
       <div
-        className={`vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType}`}
+        className={`vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation}`}
       >
         <div className={ `vk_balloon_icon` }>
           {IconImage ? (

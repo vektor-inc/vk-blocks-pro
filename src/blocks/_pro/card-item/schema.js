@@ -96,5 +96,5 @@ export const schema = {
     source: "attribute",
     selector: "a",
     attribute: "rel",
-  },
+	}
 };

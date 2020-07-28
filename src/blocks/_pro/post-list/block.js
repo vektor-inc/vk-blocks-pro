@@ -12,7 +12,6 @@ const { InspectorControls } = vkbBlockEditor;
 const ServerSideRender = depServerSideRender();
 import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
 const inserterVisible = hiddenNewBlock(5.3);
-import formatNum from "../../_helper/formatNum";
 
 const BlockIcon = (
 	<svg
@@ -128,7 +127,7 @@ registerBlockType("vk-blocks/post-list", {
 						<BaseControl label={__("Number of Posts", "vk-blocks")}>
 							<RangeControl
 								value={numberPosts}
-								onChange={value => setAttributes({ numberPosts: formatNum(value, numberPosts) })}
+								onChange={value => setAttributes({ numberPosts: value })}
 								min="1"
 								max="100"
 							/>
@@ -149,7 +148,7 @@ registerBlockType("vk-blocks/post-list", {
 						<BaseControl label={__("offset", "vk-blocks")}>
 							<TextControl
 								value={offset}
-								onChange={(v) => setAttributes({ offset: formatNum(parseInt(v, 10), parseInt(offset, 10)) })}
+								onChange={(v) => setAttributes({ offset: parseInt(v,10) })}
 								type="number"
 								min="0"
 							/>

@@ -11,7 +11,12 @@ export const originalSchema = {
 	color: {
 		type: 'string',
 		default: 'red',
+	},
+	bgColor: {
+		type: 'string',
+		default: 'transparent'
 	}
+
 };
 
 let mergeSchema = () => {

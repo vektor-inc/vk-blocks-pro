@@ -6,7 +6,6 @@ const {
 	SelectControl,
 	CheckboxControl
 } = wp.components;
-import formatNum from "../../blocks/_helper/formatNum";
 
 export const DisplayItemsControl = props => {
 	const { setAttributes, attributes } = props;
@@ -63,7 +62,7 @@ export const DisplayItemsControl = props => {
 			<TextControl
 				label={__("Number of days to display the new post mark", "vk-blocks")}
 				value={new_date}
-				onChange={value => setAttributes({ new_date: formatNum(parseInt(value, 10), parseInt(new_date, 10)) })}
+				onChange={value => setAttributes({ new_date: value })}
 				type={"number"}
 			/>
 			<TextControl

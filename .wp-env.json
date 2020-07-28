@@ -1,6 +1,9 @@
 {
-    "core": "https://wordpress.org/wordpress-5.4.2.zip",
+    "core": "https://wordpress.org/latest.zip",
     "plugins": [
         "."
-    ]
+	],
+	"themes":[
+		"https://downloads.wordpress.org/theme/lightning.zip"
+	]
 }

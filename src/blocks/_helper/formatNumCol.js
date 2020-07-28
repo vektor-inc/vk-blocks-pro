@@ -4,6 +4,6 @@ export default (value, initial) => {
 			value = 4;
 		}
 		return value;
-	} 
+	}
 	return initial;
 }

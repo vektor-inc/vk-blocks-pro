@@ -1,4 +1,4 @@
-import { iconName, iconPicture, title, baseColor } from "./../_helper/example-data"
+import { iconPicture, profileTitle, position, profileName, profileLifeTime, content } from "./../_helper/example-data"
 const { __ } = wp.i18n;
 export const schema = {
     vk_staff_text_name: {
@@ -66,11 +66,11 @@ export const schema = {
 
 export const example = {
 	attributes: {
-		vk_staff_text_name: iconName,
-		vk_staff_text_caption: iconName,
-		vk_staff_text_role: iconName,
-		vk_staff_text_profileTitle: iconName,
-		vk_staff_text_profileText: iconName,
+		vk_staff_text_name: profileName,
+		vk_staff_text_caption: profileLifeTime,
+		vk_staff_text_role: position,
+		vk_staff_text_profileTitle: profileTitle,
+		vk_staff_text_profileText: content,
 		vk_staff_photo_image: iconPicture,
 		vk_staff_layout:  'default',
 		vk_staff_nameColor: 'inherit',

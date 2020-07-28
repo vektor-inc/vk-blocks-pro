@@ -54,14 +54,14 @@ const inserterVisible = hiddenNewBlock(5.3);
 export const prefix =  "vk_card_"
 
 registerBlockType("vk-blocks/card", {
-  title: __("Card", "vk-blocks"),
-  icon: BlockIcon,
-  category: "vk-blocks-cat",
-  attributes: schema,
-  supports: {
-    className: true,
-    inserter: inserterVisible
-  },
+	title: __("Card", "vk-blocks"),
+	icon: BlockIcon,
+	category: "vk-blocks-cat",
+	attributes: schema,
+	supports: {
+		className: true,
+		inserter: inserterVisible
+	},
 
   edit(props) {
 	const { attributes, setAttributes, className, clientId, name } = props;

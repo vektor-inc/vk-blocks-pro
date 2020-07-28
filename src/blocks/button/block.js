@@ -6,7 +6,6 @@ import { VKBButton } from "./component";
 import { deprecated } from "./deprecated/deprecated";
 import { vkbBlockEditor } from "./../_helper/depModules";
 import { FontAwesome } from "../_helper/font-awesome-new"
-import { iconName, title, url, iconUser } from "./../_helper/example-data"
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -92,21 +91,6 @@ registerBlockType('vk-blocks/button', {
 		fontAwesomeIconAfter: {
 			type: 'string',
 			default:  '',
-		}
-	},
-	example: {
-		attributes: {
-			content: title,
-			subCaption: iconName,
-			buttonUrl: url,
-			buttonTarget: false,
-			buttonSize: 'md',
-			buttonType: '0',
-			buttonColor: 'primary',
-			buttonColorCustom: 'undefined',
-			buttonAlign: 'center',
-			fontAwesomeIconBefore: iconUser,
-			fontAwesomeIconAfter: iconUser
 		}
 	},
 

@@ -4,11 +4,8 @@
  */
 import { deprecated } from './deprecated';
 import { vkbBlockEditor } from "./../_helper/depModules";
-<<<<<<< HEAD
 import { iconPicture, content, iconName, baseColor } from "../_helper/example-data"
-=======
 const apiFetch = wp.apiFetch;
->>>>>>> 87526d6699f503c0d75533caefabd7de71a4fbc5
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const {  ButtonGroup, PanelBody, Button,SelectControl } = wp.components;

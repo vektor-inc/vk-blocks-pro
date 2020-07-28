@@ -7,6 +7,7 @@ import { schema } from "./schema";
 import { deprecated } from './deprecated';
 import {vkbBlockEditor} from "../../_helper/depModules"
 import replaceClientId from "../../_helper/replaceClientId"
+
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { InnerBlocks, InspectorControls } = vkbBlockEditor;

@@ -205,17 +205,17 @@ const generateInlineCss = (attributes) =>{
 	const cardImgSelector = `.${prefix}${clientId} .vk_card_item .vk_post_imgOuter::before`
 	return <style type='text/css'>{`@media (max-width: 576px) {
 		${cardImgSelector}{
-			height:${mobile}${unit}!important;
+			padding-top:${mobile}${unit}!important;
 		}
 	}
 	@media (min-width: 577px) and (max-width: 768px) {
 		${cardImgSelector}{
-			height:${tablet}${unit}!important;
+			padding-top:${tablet}${unit}!important;
 		}
 	}
 	@media (min-width: 769px) {
 		${cardImgSelector}{
-			height:${pc}${unit}!important;
+			padding-top:${pc}${unit}!important;
 		}
 	}`}</style>
 }

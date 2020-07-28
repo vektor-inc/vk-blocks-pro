@@ -39,4 +39,8 @@ export const schema = {
 		type: "boolean",
 		default: true,
 	},
+	effect: {
+		type: "string",
+		default: "slide",
+	},
 };

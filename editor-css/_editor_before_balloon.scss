@@ -1,4 +1,10 @@
+.wp-block[data-type="vk-blocks/balloon"]::after{
+	content: "";
+	display: block;
+	clear: both;
+}
 .icon-image-list {
+	border:1px solid #ff0000;
 	display: flex;
 	flex-wrap: wrap;
 }

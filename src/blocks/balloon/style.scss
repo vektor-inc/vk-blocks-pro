@@ -40,9 +40,20 @@
 	margin-top: 0.2rem;
 }
 
-.vk_balloon_content {
-	position: relative;
+// .vk_balloon_content_outer は .vk_balloon_content の外側に 0.38.2 から追加
+// 本来 _outer をつけるような親要素のクラスの方が文字数が多くなる手法はとらないが、
+// 既存のクラス名を変更すると既存サイトではHTML構造がもとのままなので崩れてしまうため例外措置。
+.vk_balloon_content_outer{
 	width:100%;
+}
+.vk_balloon_content {
+	.vk_balloon-position-left & {
+		float:left;
+	}
+	.vk_balloon-position-right & {
+		float:right;
+	}
+	position: relative;
 	text-align: left;
 	&.editor-rich-text__tinymce[data-is-placeholder-visible=true] {
 		// これがないと未入力時に吹き出しが２重になる
@@ -93,7 +104,6 @@
 		.vk_balloon_icon{
 			margin-right: 2rem;
 		}
-
 		.vk_balloon_content{
 			&::after{
 				left: 0;

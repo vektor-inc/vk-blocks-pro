@@ -1,3 +1,8 @@
+.wp-block[data-type="vk-blocks/balloon"]::after{
+	content: "";
+	display: block;
+	clear: both;
+}
 .icon-image-list {
 	display: flex;
 	flex-wrap: wrap;

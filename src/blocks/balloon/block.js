@@ -257,6 +257,7 @@ registerBlockType("vk-blocks/balloon", {
               placeholder={__("Icon Name", "vk-blocks")}
             />
           </div>
+		  <div className={ `vk_balloon_content_outer` }>
           <RichText
             style={{ background: balloonBgColor, border: balloonBgColor }}
             tagName="p"
@@ -265,6 +266,7 @@ registerBlockType("vk-blocks/balloon", {
             value={content}
             placeholder={__("Input text", "vk-blocks")}
           />
+		  </div>
         </div>
       </Fragment>
     );
@@ -304,12 +306,15 @@ registerBlockType("vk-blocks/balloon", {
               ""
             )}
         </div>
+		<div className={ `vk_balloon_content_outer` }>
         <RichText.Content
           className={"vk_balloon_content"}
           style={{ background: balloonBgColor, border: balloonBgColor }}
           tagName="p"
           value={content}
         />
+		</div>
+
       </div>
     );
   },

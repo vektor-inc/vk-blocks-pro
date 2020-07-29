@@ -163,23 +163,23 @@
 				border-radius: 50%;
 				border: solid 2px #fff;
 			}
-		}
-		.svg-inline--fa,
-		.fa,
-		.fab,
-		.fas,
-		.far,
-		.fal,
-		.fad {
-			position: absolute;
-			font-size: 1.3em;
-			margin-right: 0;
-			z-index: 100;
-			top: 0%;
-			left: 2.3em;
-			transform: translate(-50%, -50%);
-			-webkit-transform: translate(-50%, -50%);
-			-ms-transform: translate(-50%, -50%);
+			& > .svg-inline--fa,
+			& > .fa,
+			& > .fab,
+			& > .fas,
+			& > .far,
+			& > .fal,
+			& > .fad {
+				position: absolute;
+				font-size: 1.3em;
+				margin-right: 0;
+				z-index: 100;
+				top: 0%;
+				left: 2.3em;
+				transform: translate(-50%, -50%);
+				-webkit-transform: translate(-50%, -50%);
+				-ms-transform: translate(-50%, -50%);
+			}
 		}
 	}
 	&.is-style-vk_borderBox-style-solid-kado-tit-onborder {

@@ -15,7 +15,7 @@ import AdvancedUnitControl from "../../../components/advanced-unit-control"
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { Fragment } = wp.element;
+const { Fragment, useEffect } = wp.element;
 const { PanelBody, BaseControl, TextControl, CheckboxControl } = wp.components;
 const { addFilter } = wp.hooks;
 const { InspectorControls } = vkbBlockEditor;
@@ -220,7 +220,8 @@ const generateInlineCss = (attributes) =>{
 	}`}</style>
 }
 
-const addInlineEditorCss =  createHigherOrderComponent( ( BlockEdit ) => {
+addFilter( 'editor.BlockEdit', "vk-blocks/card-addInlineEditorsCss", createHigherOrderComponent( ( BlockEdit ) => {
+
     return ( props ) => {
 
 		const { attributes, setAttributes, clientId } = props
@@ -228,7 +229,9 @@ const addInlineEditorCss =  createHigherOrderComponent( ( BlockEdit ) => {
 
 		if ("vk-blocks/card" === props.name && ( unit || pc || tablet || mobile )) {
 
-			setAttributes({clientId:clientId})
+			useEffect(()=>{
+				setAttributes({clientId:clientId})
+			},[])
 
 			const cssTag = generateInlineCss(attributes)
 
@@ -241,11 +244,14 @@ const addInlineEditorCss =  createHigherOrderComponent( ( BlockEdit ) => {
 		}else{
 			return <BlockEdit { ...props } />;
 		}
-    };
-}, "addInlineEditorsCss" );
-addFilter( 'editor.BlockEdit', "vk-blocks/card", addInlineEditorCss );
+	};
 
-const addInlineFrontCss = (el, type, attributes) => {
+}, "addInlineEditorsCss" ));
+
+addFilter(
+  "blocks.getSaveElement",
+  "vk-blocks/card-addInlineFrontCss",
+  (el, type, attributes) => {
 
 	const { unit, pc, tablet, mobile } = attributes
 	if ("vk-blocks/card" === type.name && ( unit || pc || tablet || mobile )) {
@@ -257,9 +263,4 @@ const addInlineFrontCss = (el, type, attributes) => {
 	}else{
 		return el
 	}
-}
-addFilter(
-  "blocks.getSaveElement",
-  "vk-blocks/card",
-  addInlineFrontCss
-);
+});

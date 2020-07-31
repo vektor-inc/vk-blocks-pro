@@ -24,7 +24,7 @@ export const is_hidden = (blockName) => {
 	let hiddenReturn =
 		allowed.find((name) => in_string(blockName, name)) !== undefined;
 
-	const excludes = ["core/block", "vk-blocks/card-item", "vk-blocks/icon-card-item"];
+	const excludes = ["core/calendar", "core/latest-comments", "core/archives", "core/tag-cloud", "core/shortcode", "core/rss", "core/rss", "vk-blocks/card-item", "vk-blocks/icon-card-item"];
 	const excludeBlock =
 		excludes.find((excludeName) => in_string(blockName, excludeName)) !==
 		undefined;

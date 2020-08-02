@@ -10,6 +10,16 @@
     margin-bottom: 0.5em;
     line-height: 1.8em;
 }
+.vk_card {
+	&_item {
+	  .vk_post_title.card-title {
+		font-size: 1rem;
+	  }
+	  .vk_post_excerpt.card-text {
+		font-size: 14px;
+	  }
+	}
+  }
 /*-------------------------------------------*/
 /* .vk_icon-card
 /*-------------------------------------------*/

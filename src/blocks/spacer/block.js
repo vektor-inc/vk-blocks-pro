@@ -2,7 +2,7 @@
  * spacer block type
  */
 import React from "react";
-import { schema } from './schema';
+import { schema,example } from './schema';
 import { SpacerComponent } from "./component";
 import { deprecated } from "./deprecated/deprecated";
 import AdvancedViewportControl from "../../components/advanced-viewport-control"
@@ -33,6 +33,7 @@ registerBlockType('vk-blocks/spacer', {
 		className: false,
 		anchor: true,
 	},
+	example:example,
 
 	edit(props) {
 		const { attributes, className } = props;

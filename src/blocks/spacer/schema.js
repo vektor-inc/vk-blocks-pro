@@ -20,3 +20,11 @@ export const schema = {
         default: 20,
     },
 };
+
+export const example = {
+    anchor: null,
+    unit: 'px',
+    pc: 40,
+    tablet: 30,
+    mobile: 20
+};

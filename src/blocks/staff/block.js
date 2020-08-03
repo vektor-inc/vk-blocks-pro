@@ -3,7 +3,7 @@
  *
  */
 import { NewComponent } from "./component";
-import { schema } from './schema';
+import { schema, example } from './schema';
 import { vkbBlockEditor } from "./../_helper/depModules";
 
 const { __ } = wp.i18n;
@@ -41,7 +41,8 @@ registerBlockType('vk-blocks/staff', {
     title: __('Staff', 'vk-blocks'),
     icon: BlockIcon,
     category: 'vk-blocks-cat',
-    attributes: schema,
+	attributes: schema,
+	example: example,
 
     edit({ attributes, setAttributes, className }) {
         const {

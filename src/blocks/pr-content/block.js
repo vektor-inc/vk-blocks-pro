@@ -2,7 +2,7 @@
  * Pr-Content block type
  *
  */
-import { schema } from "./schema";
+import { schema,example } from "./schema";
 import { PRcontent } from "./component";
 import { deprecated } from "./deprecated/deprecated";
 import { FontAwesome } from "./../_helper/font-awesome-new"
@@ -74,6 +74,7 @@ registerBlockType("vk-blocks/pr-content", {
 	icon: BlockIcon, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: "vk-blocks-cat", // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	attributes: schema,
+	example:example,
 
 	edit (props) {
 		const { attributes, className, setAttributes } = props

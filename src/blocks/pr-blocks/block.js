@@ -7,7 +7,7 @@ import { deprecated } from "./deprecated/block";
 import { ComponentBlock } from "./component-block";
 import { isNotJSON } from "../_helper/is-not-json";
 import { FontAwesome } from "../_helper/font-awesome-new"
-
+import { iconName, iconUser, title, baseColor, url } from "./../_helper/example-data"
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
@@ -78,11 +78,30 @@ function set_attributes(number) {
 	return attributes;
 }
 
+function setExample(number) {
+
+	const attributes = {};
+
+	for (let i = 1; i <= number; i++) {
+		attributes['heading' + i] = iconName
+		attributes['content' + i] = title
+		attributes['url' + i] = url
+		attributes['urlOpenType' + i] = false
+		attributes['icon' + i] = iconUser
+		attributes['color' + i] = baseColor
+		attributes['bgType' + i] = '0'
+		attributes['insertImage' + i] = ""
+	}
+	return { attributes: attributes };
+}
+
+
 registerBlockType('vk-blocks/pr-blocks', {
 	title: __('PR Blocks', 'vk-blocks'),
 	icon: BlockIcon,
 	category: 'vk-blocks-cat',
 	attributes: set_attributes(4),
+	example:setExample(4),
 
 	edit(props) {
 		const { attributes, setAttributes, className } = props

@@ -4,6 +4,7 @@
  */
 import { deprecated } from './deprecated'
 import { vkbBlockEditor } from "./../_helper/depModules";
+import { content, title, iconPicture } from "./../_helper/example-data"
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
@@ -35,6 +36,14 @@ registerBlockType('vk-blocks/flow', {
 			type: 'string',
 			default: null, // no image by default!
 		}
+	},
+	example:{
+		attributes: {
+			heading: title,
+			content: content,
+			arrowFlag:  'vk_flow-arrow-on',
+			insertImage: iconPicture
+		},
 	},
 
 	edit({ attributes, setAttributes, className, clientId }) {

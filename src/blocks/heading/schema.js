@@ -1,3 +1,5 @@
+import { iconUser, title, baseColor } from "./../_helper/example-data"
+
 export const schema = {
 	anchor: {
 		type: 'string',
@@ -18,7 +20,7 @@ export const schema = {
 	},
 	outerMarginBottom: {
 		type: "number",
-		default: ""
+		default: 0
 	},
 	title: {
 		type: "string",
@@ -68,3 +70,27 @@ export const schema = {
 		default: "#000000"
 	},
 };
+
+export const example = {
+	attributes:{
+		anchor: "",
+		level: 2,
+		align: "center",
+		titleStyle: "default",
+		outerMarginBottom: 0,
+		title:  title,
+		titleColor: baseColor,
+		titleSize: 2,
+		titleMarginBottom: 1,
+		subText: title,
+		subTextFlag: {
+			type: "string",
+			default: "on"
+		},
+		subTextColor: baseColor,
+		subTextSize: 1.2,
+		fontAwesomeIconBefore: iconUser,
+		fontAwesomeIconAfter: "",
+		fontAwesomeIconColor: baseColor,
+	}
+}

@@ -19,6 +19,9 @@ import "../translation_dummy.js";
 /*WP5.3 以下では読み込まれない*/
 import "./hidden-extension/";
 import "./border-box/block.js";
+import "./faq2/block.js";
+import "./faq2-q/block.js";
+import "./faq2-a/block.js";
 import "./_pro/icon-card-item/block.js";
 import "./_pro/icon-card/block.js";
 import "./_pro/card-item/block.js";

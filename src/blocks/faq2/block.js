@@ -3,7 +3,7 @@
  */
 import { vkbBlockEditor } from "./../_helper/depModules";
 import classNames from "classnames";
-import { content } from "./../_helper/example-data"
+
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -89,9 +89,9 @@ registerBlockType("vk-blocks/faq2", {
 			label: __( 'Border Rounded', 'vk-blocks' ),
 		},
 	],
-	edit( { attributes, setAttributes, className } ) {
+	edit( { className } ) {
 		return (
-			<dl className={ classNames(className,"vk_faq2") }>
+			<div className={ classNames(className,"vk_faq") }>
 				<InnerBlocks
 					templateLock={ true }
 					template={ [
@@ -99,13 +99,13 @@ registerBlockType("vk-blocks/faq2", {
 						[ 'vk-blocks/faq2-a' ],
 					] }
 				/>
-			</dl>
+			</div>
 		);
 	  },
 
-	save({ attributes }) {
+	save() {
 		return (
-			<dl className={ `vk_faq2` }>
+			<dl className={ `vk_faq` }>
 				<InnerBlocks.Content />
 			</dl>
 	 	);

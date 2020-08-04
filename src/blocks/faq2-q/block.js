@@ -2,10 +2,13 @@
  * FAQ Question Block
  */
 import { vkbBlockEditor } from "./../_helper/depModules";
+import classNames from "classnames";
+import { title } from "./../_helper/example-data";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { InnerBlocks } = vkbBlockEditor;
+const { RichText, InnerBlocks } = vkbBlockEditor;
+
 
 const BlockIcon = (
 	<svg
@@ -39,39 +42,61 @@ const BlockIcon = (
 );
 
 registerBlockType("vk-blocks/faq2-q", {
-	title: __("FAQ Answer", "vk-blocks"),
+	title: __("FAQ Question", "vk-blocks"),
 	icon: BlockIcon,
 	category: "vk-blocks-cat",
 	attributes: {
-	  content:{
+		heading: {
+			type: "string",
+			source: "html",
+			selector: "dt"
+		},
+	  	content:{
 		  type: "string"
 	  }
 	},
 	parent: ["vk-blocks/faq2"],
 	supports: {
 		anchor: true,
-		className: true,
+	},
+	example:{
+		attributes: {
+			heading: title,
+		},
 	},
 	edit( { attributes, setAttributes, className } ) {
-		const { content } = attributes;
+		const { heading } = attributes;
 		return (
-			<dt className={`vk-faq-question`}>
-				<InnerBlocks
-					templateLock={ true }
-					template={ [
-						'core/paragraph',
-						{ content: content },
-					] }
+			<dl className={ classNames(className,`vk_faq_question` ) }>
+				<RichText
+					tagName="dt"
+					className={ `vk_faq_title` }
+					onChange={ value => setAttributes({ heading: value }) }
+					value={ heading }
+					placeholder={ __("Please enter a question.", "vk-blocks") }
 				/>
-			</dt>
+				<dd className={ `vk_faq_content` }>
+					<InnerBlocks
+						templateLock={ false }
+					/>
+				</dd>
+			</dl>
 		);
 	  },
 
 	save({ attributes }) {
+		const { heading } = attributes;
 		return (
-			<dd className={ `vk-faq-question` }>
-				<InnerBlocks.Content />
-			</dd>
+			<dl className={ `vk_faq_question` }>
+				<RichText.Content
+					tagName="dt"
+					className={ `vk_faq_title` }
+					value={ heading }
+        		/>
+				<dd className={ `vk_faq_content` }>
+					<InnerBlocks.Content />
+				</dd>
+			</dl>
 	 	);
 	},
 });

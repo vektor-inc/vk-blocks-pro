@@ -9,7 +9,6 @@ const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { RichText, InnerBlocks } = vkbBlockEditor;
 
-
 const BlockIcon = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
@@ -51,9 +50,6 @@ registerBlockType("vk-blocks/faq2-q", {
 			source: "html",
 			selector: "dt"
 		},
-	  	content:{
-		  type: "string"
-	  }
 	},
 	parent: ["vk-blocks/faq2"],
 	supports: {

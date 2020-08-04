@@ -45,9 +45,11 @@ registerBlockType("vk-blocks/faq2-a", {
 	icon: BlockIcon,
 	category: "vk-blocks-cat",
 	attributes: {
-	  content:{
-		  type: "string"
-	  }
+		heading: {
+			type: "string",
+			source: "html",
+			selector: "dt"
+		},
 	},
 	parent: ["vk-blocks/faq2"],
 	supports: {

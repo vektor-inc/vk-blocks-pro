@@ -1,9 +1,7 @@
 /**
- * FAQ Question Block
+ * FAQ Answer Block
  */
 import { vkbBlockEditor } from "./../_helper/depModules";
-import classNames from "classnames";
-import { content } from "./../_helper/example-data"
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -40,8 +38,8 @@ const BlockIcon = (
 	</svg>
 );
 
-registerBlockType("vk-blocks/faq2", {
-	title: __("FAQ Container", "vk-blocks"),
+registerBlockType("vk-blocks/faq2-a", {
+	title: __("FAQ Question", "vk-blocks"),
 	icon: BlockIcon,
 	category: "vk-blocks-cat",
 	attributes: {
@@ -49,28 +47,31 @@ registerBlockType("vk-blocks/faq2", {
 		  type: "string"
 	  }
 	},
+	parent: ["vk-blocks/faq2"],
 	supports: {
-		anchor: true
+		anchor: true,
+		className: true,
 	},
 	edit( { attributes, setAttributes, className } ) {
+		const { content } = attributes;
 		return (
-			<dl className={ classNames(className,"vk_faq2") }>
+			<dd className={`vk-faq-answer`}>
 				<InnerBlocks
 					templateLock={ true }
 					template={ [
-						[ 'vk-blocks/faq2-q' ],
-						[ 'vk-blocks/faq2-a' ],
+						'core/paragraph',
+						{ content: content },
 					] }
 				/>
-			</dl>
+			</dd>
 		);
 	  },
 
 	save({ attributes }) {
 		return (
-			<dl className={ `vk_faq2` }>
+			<dd className={ `vk-faq-answer` }>
 				<InnerBlocks.Content />
-			</dl>
+			</dd>
 	 	);
 	},
 });

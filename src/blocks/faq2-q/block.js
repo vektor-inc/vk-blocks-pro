@@ -1,9 +1,7 @@
 /**
- * FAQ Outer Block
+ * FAQ Question Block
  */
 import { vkbBlockEditor } from "./../_helper/depModules";
-import classNames from "classnames";
-import { content } from "./../_helper/example-data"
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -40,74 +38,40 @@ const BlockIcon = (
 	</svg>
 );
 
-registerBlockType("vk-blocks/faq2", {
-	title: __("FAQ Container", "vk-blocks"),
+registerBlockType("vk-blocks/faq2-q", {
+	title: __("FAQ Answer", "vk-blocks"),
 	icon: BlockIcon,
 	category: "vk-blocks-cat",
 	attributes: {
-	  heading: {
-		  type: "string",
-		  source: "html",
-		  selector: "dt"
-	  },
 	  content:{
 		  type: "string"
 	  }
 	},
+	parent: ["vk-blocks/faq2"],
 	supports: {
 		anchor: true,
 		className: true,
 	},
-	styles: [
-		{
-			name: 'vk_faq-normal',
-			label: __( 'Normal', 'vk-blocks' ),
-			isDefault:true
-		},
-		{
-			name: 'vk_faq-bgfill-circle',
-			label: __( 'Bgfill Circle', 'vk-blocks' )
-		},
-		{
-			name: 'vk_faq-bgfill-square',
-			label: __( 'Bgfill Square', 'vk-blocks' ),
-		},
-		{
-			name: 'vk_faq-bgfill-rounded',
-			label: __( 'Bgfill Rounded', 'vk-blocks' ),
-		},
-		{
-			name: 'vk_faq-border-circle',
-			label: __( 'Border Circle', 'vk-blocks' ),
-		},
-		{
-			name: 'vk_faq-border-square',
-			label: __( 'Border Square', 'vk-blocks' ),
-		},
-		{
-			name: 'vk_faq-border-rounded',
-			label: __( 'Border Rounded', 'vk-blocks' ),
-		},
-	],
 	edit( { attributes, setAttributes, className } ) {
+		const { content } = attributes;
 		return (
-			<dl className={ classNames(className,"vk_faq2") }>
+			<dt className={`vk-faq-question`}>
 				<InnerBlocks
 					templateLock={ true }
 					template={ [
-						[ 'vk-blocks/faq2-q' ],
-						[ 'vk-blocks/faq2-a' ],
+						'core/paragraph',
+						{ content: content },
 					] }
 				/>
-			</dl>
+			</dt>
 		);
 	  },
 
 	save({ attributes }) {
 		return (
-			<dl className={ `vk_faq2` }>
+			<dd className={ `vk-faq-question` }>
 				<InnerBlocks.Content />
-			</dl>
+			</dd>
 	 	);
 	},
 });

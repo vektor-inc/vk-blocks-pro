@@ -91,6 +91,11 @@ $answer-color: #337ab7;
 }
 .vk_faq_title { margin-bottom:0;font-size:18px;font-weight:700;
   &:before { content:"Q";color:#e50000; font-weight: 500; }
+  	p { line-height: 1.7;
+		&:last-child{
+			margin-bottom:0;
+		}
+	}
 }
 .vk_faq_content { margin:0px;
   &:before { content:"A";color:#337ab7; }
@@ -98,5 +103,3 @@ $answer-color: #337ab7;
 	margin-bottom:0;
   }
 }
-//editor画面でずれる
-.editor-styles-wrapper .vk_faq_content .wp-block{ width: auto; }

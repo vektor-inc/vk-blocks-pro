@@ -38,19 +38,19 @@ const GenerateBgImage = (props) => {
 	//moible only
 	if (bgImageMobile && !bgImageTablet && !bgImage) {
 		return (
-			<style>{ `.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})!important; ${backgroundStyle}}`}</style>
+			<style>{ `.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile}); ${backgroundStyle}}`}</style>
 		);
 	}
 	//tablet only
 	if (!bgImageMobile && bgImageTablet && !bgImage) {
 		return (
-			<style>{ `.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})!important; ${backgroundStyle}}`}</style>
+			<style>{ `.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet}); ${backgroundStyle}}`}</style>
 		);
 	}
 	//pc only
 	if (!bgImageMobile && !bgImageTablet && bgImage) {
 		return (
-			<style>{ `.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})!important; ${backgroundStyle}}`}</style>
+			<style>{ `.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage}); ${backgroundStyle}}`}</style>
 		);
 	}
 	//pc -mobile

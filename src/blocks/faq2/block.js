@@ -91,7 +91,7 @@ registerBlockType("vk-blocks/faq2", {
 	],
 	edit( { className } ) {
 		return (
-			<div className={ classNames(className,"vk_faq") }>
+			<dl className={ classNames(className,"vk_faq") }>
 				<InnerBlocks
 					templateLock={ true }
 					template={ [
@@ -99,7 +99,7 @@ registerBlockType("vk-blocks/faq2", {
 						[ 'vk-blocks/faq2-a' ],
 					] }
 				/>
-			</div>
+			</dl>
 		);
 	  },
 

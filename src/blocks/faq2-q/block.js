@@ -3,11 +3,11 @@
  */
 import { vkbBlockEditor } from "./../_helper/depModules";
 import classNames from "classnames";
-import { title } from "./../_helper/example-data";
+import { content } from "./../_helper/example-data";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RichText, InnerBlocks } = vkbBlockEditor;
+const { InnerBlocks } = vkbBlockEditor;
 
 const BlockIcon = (
 	<svg
@@ -45,54 +45,43 @@ registerBlockType("vk-blocks/faq2-q", {
 	icon: BlockIcon,
 	category: "vk-blocks-cat",
 	attributes: {
-		heading: {
-			type: "string",
-			source: "html",
-			selector: "dt"
-		},
+		content:{
+			type: "string"
+		}
 	},
 	parent: ["vk-blocks/faq2"],
 	supports: {
 		anchor: true,
 	},
 	example:{
-		attributes: {
-			heading: title,
-		},
+		innerBlocks: [
+			{
+				name: 'core/paragraph',
+				attributes: {
+					content: content,
+				},
+			},
+		],
 	},
-	edit( { attributes, setAttributes, className } ) {
-		const { heading } = attributes;
+	edit( { attributes, className } ) {
+		const { content } = attributes;
 		return (
-			<dl className={ classNames(className,`vk_faq_question` ) }>
-				<RichText
-					tagName="dt"
-					className={ `vk_faq_title` }
-					onChange={ value => setAttributes({ heading: value }) }
-					value={ heading }
-					placeholder={ __("Please enter a question.", "vk-blocks") }
+			<dt className={ classNames(className,`vk_faq_title` ) }>
+				<InnerBlocks
+					templateLock={ false }
+					template={ [
+						[ 'core/paragraph', { content: content} ],
+					] }
 				/>
-				<dd className={ `vk_faq_content` }>
-					<InnerBlocks
-						templateLock={ false }
-					/>
-				</dd>
-			</dl>
+			</dt>
 		);
 	  },
 
-	save({ attributes }) {
-		const { heading } = attributes;
+	save() {
 		return (
-			<dl className={ `vk_faq_question` }>
-				<RichText.Content
-					tagName="dt"
-					className={ `vk_faq_title` }
-					value={ heading }
-        		/>
-				<dd className={ `vk_faq_content` }>
-					<InnerBlocks.Content />
-				</dd>
-			</dl>
+			<dt className={ `vk_faq_title` }>
+				<InnerBlocks.Content />
+			</dt>
 	 	);
 	},
 });

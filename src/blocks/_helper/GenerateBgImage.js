@@ -59,10 +59,10 @@ const GenerateBgImage = (props) => {
 			<style>
 				{ `
           @media screen and (${underPcViewport}) {
-            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})!important; ${backgroundStyle}}
+            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile}); ${backgroundStyle}}
          }
           @media screen and (${pcViewport}) {
-            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})!important; ${backgroundStyle}}
+            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage}); ${backgroundStyle}}
          }
           ` }
 			</style>
@@ -74,10 +74,10 @@ const GenerateBgImage = (props) => {
 			<style>
 				{ `
           @media screen and (${underPcViewport}) {
-            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})!important; ${backgroundStyle}}
+            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet}); ${backgroundStyle}}
          }
           @media screen and (${pcViewport}) {
-            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})!important; ${backgroundStyle}}
+            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage}); ${backgroundStyle}}
          }
           ` }
 			</style>
@@ -89,10 +89,10 @@ const GenerateBgImage = (props) => {
 			<style>
 				{ `
           @media screen and (${mobileViewport}) {
-            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})!important; ${backgroundStyle}}
+            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile}); ${backgroundStyle}}
          }
           @media screen and (${tabletViewport}) {
-            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})!important; ${backgroundStyle}}
+            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet}); ${backgroundStyle}}
          }
         ` }
 			</style>
@@ -104,13 +104,13 @@ const GenerateBgImage = (props) => {
 			<style>
 				{ `
         @media screen and (${mobileViewport}) {
-          .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})!important; ${backgroundStyle}}
+          .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile}); ${backgroundStyle}}
        }
         @media screen and (${tabletViewport}) {
-          .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})!important; ${backgroundStyle}}
+          .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet}); ${backgroundStyle}}
        }
         @media screen and (${pcViewport}) {
-          .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})!important; ${backgroundStyle}}
+          .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage}); ${backgroundStyle}}
        }
         ` }
 			</style>
@@ -119,7 +119,7 @@ const GenerateBgImage = (props) => {
 	//no background image
 	if (!bgImageMobile && !bgImageTablet && !bgImage) {
 		return (
-			<style>{ `.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity})!important; ${backgroundStyle}}`}</style>
+			<style>{ `.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}); ${backgroundStyle}}`}</style>
 		);
 	}
 };

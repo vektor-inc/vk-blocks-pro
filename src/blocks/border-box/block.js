@@ -3,7 +3,7 @@
  *
  */
 import Body from "./Body";
-import { schema } from './schema';
+import { schema, example } from './schema';
 import { FontAwesome } from "./font-awesome-new";
 import { deprecated }  from "./deprecated"
 
@@ -49,6 +49,8 @@ registerBlockType('vk-blocks/border-box', {
 	supports:{
 		className:true
 	},
+	example:example,
+
 	styles: [
 		{
 			name: 'vk_borderBox-style-solid-kado-tit-tab',

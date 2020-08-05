@@ -4,6 +4,7 @@
  */
 import { deprecated } from './deprecated';
 import { vkbBlockEditor } from "./../_helper/depModules";
+import { iconPicture, content, iconName, baseColor } from "../_helper/example-data"
 const apiFetch = wp.apiFetch;
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -22,42 +23,53 @@ const BlockIcon = (
 );
 
 registerBlockType("vk-blocks/balloon", {
-  title: __("Ballon", "vk-blocks"),
-  icon: BlockIcon,
-  category: "vk-blocks-cat",
-  attributes: {
-    content: {
-      source: "html",
-      selector: "p"
-    },
-    balloonName: {
-      source: "html",
-      selector: "figcaption"
-    },
-    balloonType: {
-      type: "string",
-      default: "type-serif"
-    },
-    balloonBgColor: {
-      type: "string"
-    },
-    balloonAlign: {
-      type: "string",
-      default: "position-left"
-    },
-    IconImage: {
-      type: "string",
-      default: null // no image by default!
+	title: __("Ballon", "vk-blocks"),
+	icon: BlockIcon,
+	category: "vk-blocks-cat",
+	attributes: {
+		content: {
+			source: "html",
+			selector: "p"
+		},
+		balloonName: {
+			source: "html",
+			selector: "figcaption"
+		},
+		balloonType: {
+			type: "string",
+			default: "type-serif"
+		},
+		balloonBgColor: {
+			type: "string"
+		},
+		balloonAlign: {
+			type: "string",
+			default: "position-left"
+		},
+		IconImage: {
+			type: "string",
+			default: null // no image by default!
+		},
+		balloonImageType: {
+			type: "string",
+			default: "normal" // no image by default!
+		},
+		balloonAnimation: {
+			type: "string",
+			default: "none" // no image by default!
+		},
 	},
-	balloonImageType: {
-		type: "string",
-		default: "normal" // no image by default!
+	example: {
+		attributes: {
+			content: content,
+			balloonName: iconName,
+			balloonType: "type-serif",
+			balloonBgColor: baseColor,
+			balloonAlign: "position-left",
+			IconImage: iconPicture,
+			balloonImageType: "normal"
+		},
 	},
-	balloonAnimation: {
-		type: "string",
-		default: "none" // no image by default!
-	},
-  },
 
   edit({ attributes, className, setAttributes }) {
     let {
@@ -218,7 +230,7 @@ registerBlockType("vk-blocks/balloon", {
 							label: __("Shaking", "vk-blocks")
 						},
 					] }
-					/>	
+					/>
 			</PanelBody>
         </InspectorControls>
         <div

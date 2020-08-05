@@ -1,3 +1,4 @@
+import { iconName, iconUser, iconPicture, title, content, baseColor, url } from "./../_helper/example-data"
 export const schema = {
 	title: {
 		source: "html",
@@ -61,3 +62,23 @@ export const schema = {
 		default: '<i class="fas fa-user"></i>'
 	}
 };
+
+export const example = {
+	attributes:{
+		title: title,
+		titleColor: baseColor,
+		content: content,
+		contentColor: baseColor,
+		url: url,
+		buttonType: "0",
+		buttonColor: "primary",
+		buttonColorCustom: "",
+		buttonText: iconName,
+		buttonTarget: false,
+		Image: iconPicture,
+		ImageBorderColor:baseColor,
+		layout: "left",
+		fontAwesomeIconBefore: iconUser,
+		fontAwesomeIconAfter: iconUser
+	}
+}

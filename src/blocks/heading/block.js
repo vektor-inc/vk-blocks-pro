@@ -2,7 +2,7 @@
  * heading block type
  *
  */
-import { schema } from "./schema";
+import { schema, example } from "./schema";
 import HeadingToolbar from "./heading-toolbar";
 import { VKBHeading } from "./component";
 import { Deprecated } from "./deprecated/block";
@@ -70,6 +70,7 @@ registerBlockType("vk-blocks/heading", {
 		customClassName: true,
 		anchor: true
 	},
+	example: example,
 
 	edit( props ) {
 		const { attributes, className, setAttributes } = props

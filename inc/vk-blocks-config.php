@@ -33,8 +33,9 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 
 	require_once 'admin-notices.php';
 	require_once 'vk-blocks/vk-blocks-functions.php';
-	require_once 'vk-blocks/load-swiper.php';
-	$path = dirname(dirname(__FILE__)) .'/inc/vk-blocks/App/RestAPI/BlockMeta/EntryPoint.php';
+    require_once 'vk-blocks/load-swiper.php';
+    require_once plugin_dir_path( __FILE__ ) . '/vk-blocks/vk-blocks-pro-template.php';
+    $path = dirname(dirname(__FILE__)) .'/inc/vk-blocks/App/RestAPI/BlockMeta/EntryPoint.php';
 	require_once $path;
 	//BlockMeta用のAPIルートを設定
 	new EntryPoint();

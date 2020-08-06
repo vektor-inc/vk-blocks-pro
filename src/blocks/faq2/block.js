@@ -95,18 +95,14 @@ registerBlockType("vk-blocks/faq2", {
 				name: 'vk-blocks/faq2-q',
 				attributes: {
 					/* translators: example text. */
-					content: __(
-						'Lorem ipsum dolor'
-					),
+					content: __( 'Lorem ipsum dolor' ),
 				},
 			},
 			{
 				name: 'vk-blocks/faq2-a',
 				attributes: {
 					/* translators: example text. */
-					content: __(
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et eros eu felis.'
-					),
+					content: __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et eros eu felis.' ),
 				},
 			},
 		],

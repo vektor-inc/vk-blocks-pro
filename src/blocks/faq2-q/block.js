@@ -3,7 +3,7 @@
  */
 import { vkbBlockEditor } from "./../_helper/depModules";
 import classNames from "classnames";
-import { content } from "./../_helper/example-data";
+import { title } from "./../_helper/example-data";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -38,7 +38,7 @@ registerBlockType("vk-blocks/faq2-q", {
 			{
 				name: 'core/paragraph',
 				attributes: {
-					content: content,
+					content: title,
 				},
 			},
 		],

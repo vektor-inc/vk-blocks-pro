@@ -3,6 +3,7 @@
  */
 import { vkbBlockEditor } from "./../_helper/depModules";
 import classNames from "classnames";
+import { content, title } from "./../_helper/example-data"
 
 
 const { __ } = wp.i18n;
@@ -95,14 +96,14 @@ registerBlockType("vk-blocks/faq2", {
 				name: 'vk-blocks/faq2-q',
 				attributes: {
 					/* translators: example text. */
-					content: __( 'Lorem ipsum dolor' ),
+					content: title,
 				},
 			},
 			{
 				name: 'vk-blocks/faq2-a',
 				attributes: {
 					/* translators: example text. */
-					content: __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et eros eu felis.' ),
+					content: content,
 				},
 			},
 		],

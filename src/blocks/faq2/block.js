@@ -89,6 +89,28 @@ registerBlockType("vk-blocks/faq2", {
 			label: __( 'Border Rounded', 'vk-blocks' ),
 		},
 	],
+	example: {
+		innerBlocks: [
+			{
+				name: 'vk-blocks/faq2-q',
+				attributes: {
+					/* translators: example text. */
+					content: __(
+						'Lorem ipsum dolor'
+					),
+				},
+			},
+			{
+				name: 'vk-blocks/faq2-a',
+				attributes: {
+					/* translators: example text. */
+					content: __(
+						'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et eros eu felis.'
+					),
+				},
+			},
+		],
+	},
 	edit( { className } ) {
 		return (
 			<dl className={ classNames(className,"vk_faq") }>

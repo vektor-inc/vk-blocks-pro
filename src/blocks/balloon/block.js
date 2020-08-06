@@ -10,7 +10,7 @@ const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const {  ButtonGroup, PanelBody, Button,SelectControl } = wp.components;
 const { Fragment, useState, useEffect } = wp.element;
-const { RichText, InspectorControls, MediaUpload, ColorPalette } = vkbBlockEditor;
+const { RichText, InspectorControls, MediaUpload, ColorPalette, InnerBlocks } = vkbBlockEditor;
 const BlockIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -270,14 +270,13 @@ registerBlockType("vk-blocks/balloon", {
             />
           </div>
 		  <div className={ `vk_balloon_content_outer` }>
-          <RichText
-            style={{ background: balloonBgColor, border: balloonBgColor }}
-            tagName="p"
-            className={"vk_balloon_content"}
-            onChange={value => setAttributes({ content: value })}
-            value={content}
-            placeholder={__("Input text", "vk-blocks")}
-          />
+			  <div className={"vk_balloon_content"} style={{ background: balloonBgColor, border: balloonBgColor }} >
+				<InnerBlocks
+				   template={ [
+						[ 'core/paragraph', { content: content} ],
+					] }
+				/>
+			  </div>
 		  </div>
         </div>
       </Fragment>
@@ -319,12 +318,9 @@ registerBlockType("vk-blocks/balloon", {
             )}
         </div>
 		<div className={ `vk_balloon_content_outer` }>
-        <RichText.Content
-          className={"vk_balloon_content"}
-          style={{ background: balloonBgColor, border: balloonBgColor }}
-          tagName="p"
-          value={content}
-        />
+			<div className={"vk_balloon_content"} style={{ background: balloonBgColor, border: balloonBgColor }} >
+				<InnerBlocks.Content />
+			  </div>
 		</div>
 
       </div>

@@ -9,7 +9,6 @@
 
 	p {
 		word-break: break-all;
-		background: #f5f5f5;
 		padding: 1.1rem 1.4rem;
 	}
 }
@@ -63,6 +62,10 @@
 
 /*	type
 /*-------------------------------------------*/
+.vk_balloon_content {
+	background: #f5f5f5;
+}
+
 .vk_balloon-type-serif{
 	.vk_balloon_content{
 		border-color: #f5f5f5;

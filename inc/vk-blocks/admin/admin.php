@@ -27,12 +27,13 @@ add_action( 'admin_menu', 'vk_blocks_setting_menu' );
 /*-------------------------------------------*/
 function vk_blocks_setting_page() {
     global $vk_blocks_prefix;
-	$get_page_title = $vk_blocks_prefix . ' ' . __( 'Blocks Setting', 'vk-post-author-display' );
+	$get_page_title = $vk_blocks_prefix . ' ' . __( 'Blocks Setting', 'vk-blocks' );
 
 	$get_logo_html = '<img src="'.plugin_dir_url( __FILE__ ).'/images/vk-blocks-logo_ol.svg'.'" alt="VK Blocks" />';
 	$get_logo_html = apply_filters( 'vk_blocks_logo_html', $get_logo_html );
 
-	$get_menu_html  = '<li><a href="#baloon-image-setting">' . __( 'Baloon Image Setting', 'vk-blocks' ) . '</a></li>';
+	$get_menu_html  = '<li><a href="#css-optimize-setting">' . __( 'CSS Optimize Setting', 'vk-blocks' ) . '</a></li>';
+	$get_menu_html .= '<li><a href="#baloon-image-setting">' . __( 'Baloon Image Setting', 'vk-blocks' ) . '</a></li>';
 
 	Vk_Admin::admin_page_frame( $get_page_title, 'vk_blocks_setting', $get_logo_html, $get_menu_html );
 }
@@ -46,6 +47,11 @@ function vk_blocks_setting_option_save() {
 				update_option( 'vk_blocks_balloon_meta', $_POST['vk_blocks_balloon_meta'] );
 			} else {
 				update_option( 'vk_blocks_balloon_meta', '' );
+			}
+			if ( isset( $_POST['vk_blocks_options'] ) && $_POST['vk_blocks_options'] ) {
+				update_option( 'vk_blocks_options', $_POST['vk_blocks_options'] );
+			} else {
+				update_option( 'vk_blocks_options', '' );
 			}
 
 			wp_safe_redirect( menu_page_url( 'vk_blocks_options', false ) );

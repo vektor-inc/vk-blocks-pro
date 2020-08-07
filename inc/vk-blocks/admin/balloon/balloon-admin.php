@@ -4,11 +4,43 @@ if ( ! function_exists('vk_blocks_setting') ) {
 		$options = get_option( 'vk_blocks_balloon_meta' );
 		$image_number = 15;
 		$image_number = apply_filters( 'vk_blocks_image_number', $image_number );
+		$vk_blocks_options = get_option( 'vk_blocks_options' );
+		$css_optimize_array = array(
+			array(
+				'label' => __( 'Nothing to do', 'vk-blocks' ),
+				'value' => 'default',
+			),
+			array(
+				'label' => __( 'Optimize All CSS ( Tree Shaking ) ( Beta )', 'vk-blocks' ),
+				'value' => 'tree-shaking',
+			),
+			array(
+				'label' => __( 'Optimize All CSS ( Tree Shaking + Preload ) ( Beta )', 'vk-blocks' ),
+				'value' => 'optomize-all-css',
+			),
+		);
 		?>
 
 		<form method="post" action="<?php echo esc_url( $_SERVER['REQUEST_URI'] ) ;?>">
 			<?php wp_nonce_field( 'vkb-nonce-key', 'vkb-setting-page' ); ?>
 			<div>
+				<section>
+					<h3 id="css-optimize-setting"><?php echo __( 'CSS Optimize Setting', 'vk-blocks' ); ?></h3>
+					<?php foreach ( $css_optimize_array as $css_optimize ) : ?>
+					<label>
+					<input
+						type="radio"
+						name="vk_blocks_options[css_optimize]"
+						value="<?php echo $css_optimize['value']; ?>"
+						<?php echo checked( $vk_blocks_options['css_optimize'], $css_optimize['value'], true ); ?>
+					>
+					<?php echo $css_optimize['label']; ?>
+					</label>
+					<?php endforeach; ?>
+					<?php submit_button(); ?>
+				</section>
+
+
 				<section>
 					<h3 id="baloon-image-setting"><?php echo __( 'Balloon Image Setting', 'vk-blocks' ); ?></h3>
 	<style type="text/css">

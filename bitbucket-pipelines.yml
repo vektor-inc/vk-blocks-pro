@@ -1,5 +1,5 @@
 # VK Blocks Proから通常版へデプロイする処理
-image: atlassian/default-image:2
+image: node:12.4.0
 
 pipelines:
   branches:

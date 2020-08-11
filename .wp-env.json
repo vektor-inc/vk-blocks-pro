@@ -1,8 +1,7 @@
 {
-    "core": "https://wordpress.org/wordpress-5.5-RC2.zip",
+    "core": "https://wordpress.org/latest.zip",
     "plugins": [
-		".",
-		"../vk-all-in-one-expansion-unit"
+        "."
 	],
 	"themes":[
 		"https://downloads.wordpress.org/theme/lightning.zip"

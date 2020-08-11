@@ -146,7 +146,8 @@ $color-danger: #dd3333;
 }
 
 /* editor area *********************************************/
-.edit-post-visual-editor.editor-styles-wrapper{
+.edit-post-visual-editor.editor-styles-wrapper,
+.components-tab-panel__tab-content{
 
 	/*
 	 アウターが全幅で インナーもコンテンツエリアを突き抜けて広げる処理

@@ -35,7 +35,7 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 	require_once 'vk-blocks/vk-blocks-functions.php';
 
 	//プロ版の設定ファイルを読み込み
-	if(file_exists('vk-blocks-pro-config.php')){
+	if(file_exists(dirname(__FILE__) . '/vk-blocks-pro-config.php')){
 		require_once 'vk-blocks-pro-config.php';
 	}
 

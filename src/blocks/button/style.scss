@@ -72,7 +72,7 @@
 	}
 	.vk_button_link-type-text{
 		&:hover{
-			&.btn-outline-primary{color: var(--color-key);}
+			&.btn-outline-primary{color: #007bff;}
 			&.btn-outline-secondary{color: #6c757d;}
 			&.btn-outline-success{color: #28a745;}
 			&.btn-outline-info{color: #17a2b8;}
@@ -87,7 +87,7 @@
 		//.editor-styles-wrapper a:not([href])に負けるので追加
 		a,
 		a:hover{
-			&.btn-primary{ background-color: var(--color-key); border-color: var(--color-key);}
+			&.btn-primary{ background-color: #007bff; border-color: #007bff; }
 			&.btn-primary,
 			&.btn-secondary,
 			&.btn-success,
@@ -99,13 +99,13 @@
 		}
 		a{
 			&.vk_button_link-type-text:hover.btn-outline-primary{
-				color: var(--color-key);
+				color: #007bff;
 			}
 			&.btn-outline-primary{
-				color: var(--color-key); 
-				border-color: var(--color-key);
+				color: #007bff; 
+				border-color: #007bff;
 				&:hover:not(.vk_button_link-type-text){
-					background-color: var(--color-key);
+					background-color:#007bff;
 				}
 			}
 			&.btn-outline-secondary{color: #6c757d;}

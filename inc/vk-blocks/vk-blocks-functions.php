@@ -11,6 +11,15 @@ function vkblocks_active() {
 	return true;
 }
 
+if ( function_exists( 'lightning_print_css_common' ) ) {
+	add_action('admin_print_styles', 'lightning_print_css_common' );
+}
+
+if ( function_exists( 'katawara_print_css_common' ) ) {
+	add_action('admin_print_styles', 'katawara_print_css_common' );
+}
+
+
 add_action(
 	'plugins_loaded',
 	function () {

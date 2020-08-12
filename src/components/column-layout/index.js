@@ -6,7 +6,7 @@ import formatNumCol from "../../blocks/_helper/formatNumCol";
 export const ColumnLayout = (props) => {
 
 	const { setAttributes, attributes } = props;
-	const { col_xs, col_sm, col_md, col_lg, col_xl } = attributes;
+	const { col_xs, col_sm, col_md, col_lg, col_xl, col_xxl } = attributes;
 
 	const defaultMinMax = {
 		min: "1",
@@ -59,6 +59,17 @@ export const ColumnLayout = (props) => {
 					max={ defaultMinMax.max }
 				/>
 			</BaseControl>
+			<BaseControl
+				label={ __("Column ( Screen size : XX large )", "vk-blocks") }
+			>
+				<RangeControl
+					value={ col_xxl }
+					onChange={ value => setAttributes({ col_xxl: formatNumCol(value, col_xxl) }) }
+					min={ defaultMinMax.min }
+					max={ defaultMinMax.max }
+				/>
+			</BaseControl>
+
 		</Fragment>
 	)
 }

@@ -55,6 +55,10 @@ if (5.3 <= parseFloat(wpVersion)) {
 							type: "boolean",
 							default: false,
 						},
+						vkb_hidden_xxl: {
+							type: "boolean",
+							default: false,
+						},
 						vkb_hidden_xl: {
 							type: "boolean",
 							default: false,
@@ -141,6 +145,12 @@ if (5.3 <= parseFloat(wpVersion)) {
 											schema={ "vkb_hidden_xl" }
 											{ ...props }
 										/>
+										<AdvancedToggleControl
+											label={ __("Hidden ( Screen size : xxl )", "vk-blocks") }
+											initialFixedTable={ props.attributes.vkb_hidden_xxl }
+											schema={ "vkb_hidden_xxl" }
+											{ ...props }
+										/>
 										<p>
 											{ __(
 												"If you want to hide multiple blocks, that first you set to group block and the next, hide for the that group block.",
@@ -167,6 +177,7 @@ if (5.3 <= parseFloat(wpVersion)) {
 		(element, blockType, attributes) => {
 			const {
 				vkb_hidden,
+				vkb_hidden_xxl,
 				vkb_hidden_xl,
 				vkb_hidden_lg,
 				vkb_hidden_md,
@@ -174,8 +185,12 @@ if (5.3 <= parseFloat(wpVersion)) {
 				vkb_hidden_xs,
 			} = attributes;
 
+			if ( ( vkb_hidden_xxl === undefined ) && ( vkb_hidden_xl === true ) ) {
+				vkb_hidden_xxl = true;
+			}
 			if (
 				vkb_hidden ||
+				vkb_hidden_xxl ||
 				vkb_hidden_xl ||
 				vkb_hidden_lg ||
 				vkb_hidden_md ||
@@ -183,6 +198,7 @@ if (5.3 <= parseFloat(wpVersion)) {
 				vkb_hidden_xs
 			) {
 				const custom = vkb_hidden && "vk_hidden";
+				const customXxl = vkb_hidden_xxl && "vk_hidden-xxl";
 				const customXl = vkb_hidden_xl && "vk_hidden-xl";
 				const customLg = vkb_hidden_lg && "vk_hidden-lg";
 				const customMd = vkb_hidden_md && "vk_hidden-md";
@@ -199,6 +215,7 @@ if (5.3 <= parseFloat(wpVersion)) {
 									className: classnames(
 										element.props.className,
 										custom,
+										customXxl,
 										customXl,
 										customLg,
 										customMd,
@@ -224,6 +241,7 @@ if (5.3 <= parseFloat(wpVersion)) {
 			return (props) => {
 				// Add hidden common class
 				const hiddenSomething =
+					props.attributes.vkb_hidden_xxl ||
 					props.attributes.vkb_hidden_xl ||
 						props.attributes.vkb_hidden_lg ||
 						props.attributes.vkb_hidden_md ||

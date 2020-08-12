@@ -70,6 +70,19 @@
 			font-size: 80%;
 		}
 	}
+	.vk_button_link-type-text{
+		&:hover{
+			&.btn-outline-primary{}
+			&.btn-outline-secondary{color: #6c757d;}
+			&.btn-outline-success{color: #28a745;}
+			&.btn-outline-info{color: #17a2b8;}
+			&.btn-outline-warning{color: #ffc107;}
+			&.btn-outline-danger{color: #dc3545;}
+			&.btn-outline-dark{	color: #343a40;}
+		}
+		&.btn-outline-light{ color: #212529; }
+	}
+
 	.editor-styles-wrapper &{ 
 		//.editor-styles-wrapper a:not([href])に負けるので追加
 		a,
@@ -84,6 +97,7 @@
 			}
 		}
 		a{
+			&.vk_button_link-type-text:hover.btn-outline-primary,
 			&.btn-outline-primary{color: #007bff;}
 			&.btn-outline-secondary{color: #6c757d;}
 			&.btn-outline-success{color: #28a745;}
@@ -114,3 +128,4 @@
 		box-shadow: none;
 	}
 }
+

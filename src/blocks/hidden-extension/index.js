@@ -185,9 +185,6 @@ if (5.3 <= parseFloat(wpVersion)) {
 				vkb_hidden_xs,
 			} = attributes;
 
-			if ( ( vkb_hidden_xxl === undefined ) && ( vkb_hidden_xl === true ) ) {
-				vkb_hidden_xxl = true;
-			}
 			if (
 				vkb_hidden ||
 				vkb_hidden_xxl ||

@@ -62,7 +62,7 @@ class VkBlocksPostList {
 			'body_prepend'               => '',
 			'body_append'                => '',
 			'vkb_hidden'                 => $attributes['vkb_hidden'],
-			'vkb_hidden_xl'              => $attributes['vkb_hidden_xxl'],
+			'vkb_hidden_xxl'              => $attributes['vkb_hidden_xxl'],
 			'vkb_hidden_xl'              => $attributes['vkb_hidden_xl'],
 			'vkb_hidden_lg'              => $attributes['vkb_hidden_lg'],
 			'vkb_hidden_md'              => $attributes['vkb_hidden_md'],

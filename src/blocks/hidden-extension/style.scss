@@ -44,7 +44,7 @@ $xxl-min: 1400px;
 		}
 	}
 
-	@media (min-width: $xl-min) {
+	@media (min-width: $xl-min) and (max-width: $xl-max) {
 
 		&-xl {
 			display: none !important;

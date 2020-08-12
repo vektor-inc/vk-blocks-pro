@@ -70,7 +70,19 @@
 			font-size: 80%;
 		}
 	}
-
+	.editor-styles-wrapper &{ 
+		//.editor-styles-wrapper a:not([href])に負けるので追加
+		a,a:hover{
+			&.btn-primary,
+			&.btn-secondary,
+			&.btn-success,
+			&.btn-info,
+			&.btn-danger,
+			&.btn-dark {
+				color: #fff;
+			}
+		}
+	}
 	.editor-rich-text {
 		// Font Awesomeアイコンが管理画面側で改行されないために inline-block を指定
 		display: inline-block;

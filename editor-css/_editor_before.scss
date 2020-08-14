@@ -635,41 +635,7 @@ $color-danger: #b52727;
 	opacity: 0.2;
 }
 
-/* .vk_hidden.vk_hidden は2つじゃないと上書きできない  */
-.vk_hidden.vk_hidden {
-	display: block !important;
-	color: var(--blue);
 
-  &.vk_posts{
-	// display block だとカラムがすべて落ちるため posts は flexで上書き
-	display: flex !important;
-  }
-  @media (max-width: $xs-max) {
-    &-xs {
-      display: block !important;
-    }
-  }
-  @media (min-width: $sm-min) and (max-width: $sm-max) {
-    &-sm {
-      display: block !important;
-    }
-  }
-  @media (min-width: $md-min) and (max-width: $md-max) {
-    &-md {
-      display: block !important;
-    }
-  }
-  @media (min-width: $lg-min) and (max-width: $lg-max) {
-    &-lg {
-      display: block !important;
-    }
-  }
-  @media (min-width: $xl-min) {
-    &-xl {
-      display: block !important;
-    }
-  }
-}
 
 .vk_grid-column .block-list-appender{
   width: 100%;

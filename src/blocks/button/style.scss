@@ -70,7 +70,62 @@
 			font-size: 80%;
 		}
 	}
+	.vk_button_link-type-text{
+		&:hover{
+			&.btn-outline-primary{color: #007bff;}
+			&.btn-outline-secondary{color: #6c757d;}
+			&.btn-outline-success{color: #28a745;}
+			&.btn-outline-info{color: #17a2b8;}
+			&.btn-outline-warning{color: #ffc107;}
+			&.btn-outline-danger{color: #dc3545;}
+			&.btn-outline-dark{	color: #343a40;}
+		}
+		&.btn-outline-light{ color: #212529; }
+	}
 
+	.editor-styles-wrapper &{ 
+		//.editor-styles-wrapper a:not([href])に負けるので追加
+		a,
+		a:hover{
+			&.btn-primary{ background-color: #007bff; border-color: #007bff; }
+			&.btn-primary,
+			&.btn-secondary,
+			&.btn-success,
+			&.btn-info,
+			&.btn-danger,
+			&.btn-dark {
+				color: #fff;
+			}
+		}
+		a{
+			&.vk_button_link-type-text:hover.btn-outline-primary{
+				color: #007bff;
+			}
+			&.btn-outline-primary{
+				color: #007bff; 
+				border-color: #007bff;
+				&:hover:not(.vk_button_link-type-text){
+					background-color:#007bff;
+				}
+			}
+			&.btn-outline-secondary{color: #6c757d;}
+			&.btn-outline-success{color: #28a745;}
+			&.btn-outline-info{color: #17a2b8;}
+			&.btn-outline-warning{color: #ffc107;}
+			&.btn-outline-danger{color: #dc3545;}
+			&.btn-outline-dark{	color: #343a40;}
+		}
+		a:hover{
+			&.btn-outline-primary,
+			&.btn-outline-secondary,
+			&.btn-outline-success,
+			&.btn-outline-info,
+			&.btn-outline-danger,
+			&.btn-outline-dark{
+				color: #fff;
+			}
+		}
+	}
 	.editor-rich-text {
 		// Font Awesomeアイコンが管理画面側で改行されないために inline-block を指定
 		display: inline-block;
@@ -82,3 +137,4 @@
 		box-shadow: none;
 	}
 }
+

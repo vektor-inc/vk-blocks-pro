@@ -1,5 +1,5 @@
 # VK Blocks Proから通常版へデプロイする処理
-image: node:12.4.0
+image: atlassian/default-image:2
 
 pipelines:
   branches:
@@ -8,6 +8,8 @@ pipelines:
       - step:
           name: Deploy
           script:
+            - node -v
+            - npm -v
             # VK BlocksのGithubにアクセスできるユーザーの設定
             - git config --global user.email "info@vektor-inc.co.jp"
             - git config --global user.name "bitbucket-piplines-vk-blocks-pro"

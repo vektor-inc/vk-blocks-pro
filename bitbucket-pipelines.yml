@@ -10,6 +10,8 @@ pipelines:
           script:
             - node -v
             - npm -v
+            - npm install -g npm
+            - npm -v
             # VK BlocksのGithubにアクセスできるユーザーの設定
             - git config --global user.email "info@vektor-inc.co.jp"
             - git config --global user.name "bitbucket-piplines-vk-blocks-pro"

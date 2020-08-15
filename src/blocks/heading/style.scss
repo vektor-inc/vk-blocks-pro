@@ -23,10 +23,8 @@
 	i:last-child {
 		margin-left: 0.2em;
 	}
-	&_title{
-		// これがないとサブテキストとの間に余白が大きくなりすぎる
-		// ただしブロック個別の指定に負けるようにセレクタは重くしてはいけない
-		margin-bottom:0;
+	&_title-subtext-on{
+		margin-bottom:0.5rem;
 	}
 }
 // .vk_heading は指定が強い要素（ Charm ）も消すために必要

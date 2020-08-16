@@ -5,11 +5,11 @@ $css_optimize_array = array(
         'value' => 'default',
     ),
     array(
-        'label' => __( 'Optimize VK Blocks CSS ( Tree Shaking ) ( Beta )', 'vk-blocks' ),
+        'label' => __( 'Optimize VK Blocks CSS ( Tree Shaking )', 'vk-blocks' ) . ' ( Beta )',
         'value' => 'tree-shaking',
     ),
     array(
-        'label' => __( 'Optimize VK Blocks CSS ( Tree Shaking + Preload ) ( Beta )', 'vk-blocks' ),
+        'label' => __( 'Optimize VK Blocks CSS ( Tree Shaking + Preload )', 'vk-blocks' ) . ' ( Beta )',
         'value' => 'optomize-all-css',
     ),
 );

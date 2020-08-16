@@ -7,4 +7,8 @@
 	__( 'Select', 'vk-blocks' )
 	__( 'Delete', 'vk-blocks' )
 	__( 'Balloon Image Name', 'vk-blocks' )
+	__( 'CSS Optimize Setting', 'vk-blocks' )
+	__( 'Nothing to do', 'vk-blocks' )
+	__( 'Optimize VK Blocks CSS ( Tree Shaking )', 'vk-blocks' ) 
+	__( 'Optimize VK Blocks CSS ( Tree Shaking + Preload )', 'vk-blocks' )
 }

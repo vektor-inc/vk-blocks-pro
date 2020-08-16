@@ -1,7 +1,7 @@
 
 <div>
 <section>
-	<h3 id="baloon-image-setting"><?php echo __( 'Balloon Image Setting', 'vk-blocks' ); ?></h3>
+	<h3 id="balloon-image-setting"><?php echo __( 'Balloon Image Setting', 'vk-blocks' ); ?></h3>
 	<style type="text/css">
 	.balloonIconList {
 		width:100%;

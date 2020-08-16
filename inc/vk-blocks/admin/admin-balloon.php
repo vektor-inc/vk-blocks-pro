@@ -10,7 +10,7 @@
 	}
 	.balloonIconList li {
 		box-sizing:border-box;
-		width:30%;
+		width:29.5%;
 		padding:20px 15px 15px;
 		margin:10px;
 		border:1px solid #ccc;

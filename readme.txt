@@ -62,6 +62,8 @@ e.g.
 
 == Changelog ==
 
+[ Add function ] CSS Optimize
+
 = 0.39.5 =
 [ Bug fix ][ slider ] Fix colaps of first view
 

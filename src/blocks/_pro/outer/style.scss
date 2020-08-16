@@ -89,8 +89,10 @@ $padding-xl: 3.5em;
 	}
 }
 .vk_outer-bgPosition-normal {
-	background-attachment: unset;
-	background-size: cover;
+	// background-attachment は !important をつけておかないと
+	// 画面サイズ毎の指定が background に対してされていて attachment が無効化されるため !important を消さないこと
+	background-attachment: unset !important;
+	background-size: cover !important;
 }
 
 .vk_outer_separator {

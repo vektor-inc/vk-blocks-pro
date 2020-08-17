@@ -66,9 +66,6 @@ export const VKBHeading =(props) => {
 	}
 
 	let headingStyle = `vk_heading_title vk_heading_title-style-${titleStyle}`;
-	if (subTextFlag === "on") {
-		headingStyle = headingStyle + ` vk_heading_title-subtext-on`;
-	}
 	let subTextStyle = {
 		color: subTextColor,
 		fontSize: subTextSize + "rem",

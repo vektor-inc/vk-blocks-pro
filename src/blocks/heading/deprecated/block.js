@@ -6,6 +6,7 @@ import { schemav0_24_1, schema, schema1, schema2 } from "./schema";
 import classNames from "classnames";
 import { VKBHeading,VKBHeading2,VKBHeadingV0_24_1 } from "./component";
 import { VKBHeading_0_39_5 } from "./component_0_39_5";
+
 const { Fragment, Component } = wp.element;
 import { vkbBlockEditor } from "./../../_helper/depModules";
 const { RichText } = vkbBlockEditor;

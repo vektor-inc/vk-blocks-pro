@@ -19,28 +19,14 @@ export class Component extends React.Component {
 
     //編集画面とサイト上の切り替え
     if (for_ === "edit") {
-      innerClass = "editting";
-      innerClass = innerClass + " vk_posts-edit";
-      innerClass =
-        innerClass +
-        " vk_posts-edit-col-xs-" +
-        convertToGrid(attributes.col_xs);
-      innerClass =
-        innerClass +
-        " vk_posts-edit-col-sm-" +
-        convertToGrid(attributes.col_sm);
-      innerClass =
-        innerClass +
-        " vk_posts-edit-col-md-" +
-        convertToGrid(attributes.col_md);
-      innerClass =
-        innerClass +
-        " vk_posts-edit-col-lg-" +
-        convertToGrid(attributes.col_lg);
-      innerClass =
-        innerClass +
-        " vk_posts-edit-col-xl-" +
-        convertToGrid(attributes.col_xl);
+		innerClass = "editting";
+		innerClass += innerClass + " vk_posts-edit";
+		innerClass += " vk_posts-edit-col-xs-" + convertToGrid(attributes.col_xs);
+		innerClass += " vk_posts-edit-col-sm-" + convertToGrid(attributes.col_sm);
+		innerClass += " vk_posts-edit-col-md-" + convertToGrid(attributes.col_md);
+		innerClass += " vk_posts-edit-col-lg-" + convertToGrid(attributes.col_lg);
+		innerClass += " vk_posts-edit-col-xl-" + convertToGrid(attributes.col_xl);
+		innerClass += " vk_posts-edit-col-xxl-" + convertToGrid(attributes.col_xxl);
 
       elm = (
         <div className={innerClass}>

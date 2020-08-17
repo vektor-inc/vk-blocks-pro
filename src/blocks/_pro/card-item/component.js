@@ -16,9 +16,10 @@ export class Component extends React.Component {
       col_sm,
       col_md,
       col_lg,
-			col_xl,
-			display_title,
-			display_excerpt,
+		col_xl,
+		col_xxl,
+		display_title,
+		display_excerpt,
       display_image,
       display_btn,
       btn_text,
@@ -205,20 +206,20 @@ export class Component extends React.Component {
 				const titleClass = `vk_post_title card-title has-text-align-${align.title}`;
 				if (isEdit(for_)) {
 					return (
-					<RichText
-			tagName={ titleTag }
-			className={ titleClass }
-			value={ title }
-			onChange={ (value) => setAttributes({ title: value }) }
-			placeholder={ __("Title", "vk-blocks") }
+						<RichText
+							tagName={ titleTag }
+							className={ titleClass }
+							value={ title }
+							onChange={ (value) => setAttributes({ title: value }) }
+							placeholder={ __("Title", "vk-blocks") }
 						/>
 					);
 				}else if(!isEdit(for_) && !url){
 					return (<RichText.Content
-								tagName={ titleTag }
-								className={ titleClass }
-								value={ title }/>);
-				}else{
+						tagName={ titleTag }
+						className={ titleClass }
+						value={ title } />);
+				}
 					return (
 						<a href={ url } target={ linkTarget } rel={ rel }>
 							<RichText.Content
@@ -227,7 +228,7 @@ export class Component extends React.Component {
 								value={ title }
 											/>
 						</a>);
-				}
+				
 			}
     };
 
@@ -235,8 +236,8 @@ export class Component extends React.Component {
     if (image) {
       const imageParsed = JSON.parse(image);
       imageStyle = {
-        backgroundImage: `url(${imageParsed.sizes.full.url})`,
-      };
+				backgroundImage: `url(${imageParsed.sizes.full.url})`,
+			};
     } else {
       imageStyle = {};
     }
@@ -252,13 +253,16 @@ export class Component extends React.Component {
           col_md
         )} vk_post-col-lg-${convertToGrid(
           col_lg
-        )} vk_post-col-xl-${convertToGrid(col_xl)} ${btnClass}` }
+		)} vk_post-col-xl-${convertToGrid(
+			col_xl
+		)} vk_post-col-xxl-${convertToGrid(col_xxl)}
+		${btnClass}` }
       >
 		{ renderImage(display_image) }
 		<div className="vk_post_body card-body">
 			{ renderTitle(align, display_title) }
 			{ renderExcerpt(align, display_excerpt) }
-			{for_ === "edit" ? <InnerBlocks /> : <InnerBlocks.Content />}
+			{ for_ === "edit" ? <InnerBlocks /> : <InnerBlocks.Content /> }
 			{ renderButton(display_btn, align) }
 		</div>
 	</div>

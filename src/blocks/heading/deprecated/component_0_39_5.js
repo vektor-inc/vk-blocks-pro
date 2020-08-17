@@ -1,4 +1,4 @@
-import { vkbBlockEditor } from "./../_helper/depModules";
+import { vkbBlockEditor } from "./../../_helper/depModules";
 const { RichText } = vkbBlockEditor;
 const { __ } = wp.i18n; // Import __() from wp.i18n
 import ReactHtmlParser from 'react-html-parser';
@@ -21,7 +21,7 @@ const renderTitle = (level, contents,tStyle, headingStyle ) =>{
 	}
 }
 
-export const VKBHeading =(props) => {
+export const VKBHeading_0_39_5 =(props) => {
 	const {attributes,setAttributes,for_} = props
 	let {
 		level,
@@ -66,9 +66,6 @@ export const VKBHeading =(props) => {
 	}
 
 	let headingStyle = `vk_heading_title vk_heading_title-style-${titleStyle}`;
-	if (subTextFlag === "on") {
-		headingStyle = headingStyle + ` vk_heading_title-subtext-on`;
-	}
 	let subTextStyle = {
 		color: subTextColor,
 		fontSize: subTextSize + "rem",

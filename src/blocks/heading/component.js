@@ -50,7 +50,7 @@ export const VKBHeading =(props) => {
 	}
 
 	//titleのマージンを切り替え
-	if (titleMarginBottom) {
+	if (titleMarginBottom !== null && titleMarginBottom !== undefined) {
 		tStyle = {
 			color: titleColor,
 			fontSize: titleSize + "rem",

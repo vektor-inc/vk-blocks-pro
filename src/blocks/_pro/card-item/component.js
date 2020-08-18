@@ -10,26 +10,26 @@ import { convertToGrid } from "../../_helper/convert-to-grid";
 export class Component extends React.Component {
   render() {
     const { setAttributes, attributes, className, clientId } = this.props;
-    let {
-      layout,
-      col_xs,
-      col_sm,
-      col_md,
-      col_lg,
+    const {
+		layout,
+		col_xs,
+		col_sm,
+		col_md,
+		col_lg,
 		col_xl,
 		col_xxl,
 		display_title,
 		display_excerpt,
-      display_image,
-      display_btn,
-      btn_text,
-      title,
-      excerpt_text,
-      image,
-      url,
-      activeControl,
-      linkTarget,
-      rel,
+		display_image,
+		display_btn,
+		btn_text,
+		title,
+		excerpt_text,
+		image,
+		url,
+		activeControl,
+		linkTarget,
+		rel,
     } = attributes;
 
     const align = JSON.parse(activeControl);
@@ -48,35 +48,37 @@ export class Component extends React.Component {
     let imgClass;
     let vk_post_body;
     let vk_title;
-    let vk_date;
+	let vk_date;
+	let layoutClass;
     if (layout === "card-horizontal") {
     } else if (layout === "media") {
-      imgContainerClass = "vk_post_imgOuter media-img";
-      imgClass = "vk_post_imgOuter_img";
-      vk_post_body = "media-body";
-      vk_title = " media-title";
-      vk_date = "media-date";
+		layoutClass = "media";
+		imgContainerClass = "vk_post_imgOuter media-img";
+		imgClass = "vk_post_imgOuter_img";
+		vk_post_body = "media-body";
+		vk_title = " media-title";
+		vk_date = "media-date";
     } else if (layout === "card") {
-      layout = layout + " card-post";
-      imgContainerClass = "vk_post_imgOuter";
-      imgClass = "vk_post_imgOuter_img card-img-top";
-      vk_post_body = "card-body";
-      vk_title = "card-title";
-      vk_date = "card-date";
+		layoutClass = "card card-post";
+		imgContainerClass = "vk_post_imgOuter";
+		imgClass = "vk_post_imgOuter_img card-img-top";
+		vk_post_body = "card-body";
+		vk_title = "card-title";
+		vk_date = "card-date";
     } else if (layout === "card-noborder") {
-      layout = "card " + layout + " card-post";
-      imgContainerClass = "vk_post_imgOuter";
-      imgClass = "vk_post_imgOuter_img card-img-top";
-      vk_post_body = "card-body";
-      vk_title = "card-title";
-      vk_date = "card-date";
+		layoutClass = "card card-noborder card-post";
+		imgContainerClass = "vk_post_imgOuter";
+		imgClass = "vk_post_imgOuter_img card-img-top";
+		vk_post_body = "card-body";
+		vk_title = "card-title";
+		vk_date = "card-date";
     } else if (layout === "card-imageRound") {
-      layout = "card card-noborder " + layout + " card-post";
-      imgContainerClass = "vk_post_imgOuter";
-      imgClass = "vk_post_imgOuter_img card-img-top";
-      vk_post_body = "card-body";
-      vk_title = "card-title";
-      vk_date = "card-date";
+		layoutClass = "card card-noborder card-imageRound card-post";
+		imgContainerClass = "vk_post_imgOuter";
+		imgClass = "vk_post_imgOuter_img card-img-top";
+		vk_post_body = "card-body";
+		vk_title = "card-title";
+		vk_date = "card-date";
 	}
 
     const deleteImgBtn = () => {
@@ -228,7 +230,7 @@ export class Component extends React.Component {
 								value={ title }
 											/>
 						</a>);
-				
+
 			}
     };
 
@@ -245,7 +247,7 @@ export class Component extends React.Component {
 		const btnClass = display_btn ? "vk_post-btn-display" : "";
     return (
 	<div
-		className={ `${className} vk_post ${layout} vk_card_item vk_post-col-xs-${convertToGrid(
+		className={ `${className} vk_post ${layoutClass} vk_card_item vk_post-col-xs-${convertToGrid(
           col_xs
         )} vk_post-col-sm-${convertToGrid(
           col_sm
@@ -255,7 +257,9 @@ export class Component extends React.Component {
           col_lg
 		)} vk_post-col-xl-${convertToGrid(
 			col_xl
-		)} vk_post-col-xxl-${convertToGrid(col_xxl)}
+		)} vk_post-col-xxl-${convertToGrid(
+			col_xxl
+		)}
 		${btnClass}` }
       >
 		{ renderImage(display_image) }

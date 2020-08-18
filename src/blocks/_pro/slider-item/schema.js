@@ -19,6 +19,10 @@ export const schema = {
     type: "number",
     default: 1,
   },
+  col_xxl: {
+    type: "number",
+    default: 1,
+  },
 	verticalAlignment: {
 		type: 'string',
 		default: "center",

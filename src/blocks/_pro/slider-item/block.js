@@ -3,6 +3,7 @@
  *
  */
 import { schema } from "./schema";
+import { deprecated } from "./deprecated";
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { Fragment } = wp.element;
@@ -174,4 +175,5 @@ registerBlockType("vk-blocks/slider-item", {
 			<SliderItem {...props} for_={"save"}/>
 		);
 	},
+	deprecated
 });

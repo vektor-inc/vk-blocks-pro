@@ -4,6 +4,7 @@
  */
 import { PRCard } from "./component";
 import { schema } from "./schema";
+import { deprecated } from "./deprecated";
 import { ColumnLayout } from "../../../components/column-layout";
 import { AlignControl } from "../../../components/align-control";
 import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
@@ -124,4 +125,5 @@ registerBlockType("vk-blocks/icon-card", {
       <PRCard attributes={attributes} className={className} for_={"save"} />
     );
   },
+  deprecated
 });

@@ -145,6 +145,7 @@ $color-danger: #dd3333;
 	margin-top: 0!important;
 }
 
+
 /* editor area *********************************************/
 .edit-post-visual-editor.editor-styles-wrapper,
 .components-tab-panel__tab-content{
@@ -644,5 +645,16 @@ $color-danger: #b52727;
 .wp-block-vk-blocks-icon-card{
 	.vk_icon-card_item{
 		margin: 15px auto!important;
+	}
+}
+
+.vk_grid-column {
+	div[data-type="vk-blocks/grid-column-item"]{
+		// これがないとカラムのセルが潰れて中に何もいれられない
+		min-height:30px;
+	}
+	.wp-block-vk-blocks-grid-column-item .block-editor-block-list__layout{
+		// プレースホルダーの文字が枠から左にはみ出す
+		margin-left:0;
 	}
 }

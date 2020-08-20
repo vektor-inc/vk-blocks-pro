@@ -46,7 +46,6 @@ if (5.3 <= parseFloat(wpVersion)) {
 		(settings) => {
 			// If hidden function target block...
 			if (is_hidden(settings.name)) {
-				console.log(settings.attributes);
 				settings.attributes = {
 					// Deploy original settings.attributes to array and...
 					...settings.attributes,
@@ -58,7 +57,7 @@ if (5.3 <= parseFloat(wpVersion)) {
 						},
 						vkb_hidden_xxl: {
 							type: "boolean",
-							default: false,
+							default: null,
 						},
 						vkb_hidden_xl: {
 							type: "boolean",
@@ -176,7 +175,7 @@ if (5.3 <= parseFloat(wpVersion)) {
 		"blocks.getSaveElement",
 		"vk-blocks/hidden-extension",
 		(element, blockType, attributes) => {
-			const {
+			let {
 				vkb_hidden,
 				vkb_hidden_xxl,
 				vkb_hidden_xl,
@@ -185,6 +184,11 @@ if (5.3 <= parseFloat(wpVersion)) {
 				vkb_hidden_sm,
 				vkb_hidden_xs,
 			} = attributes;
+
+			//xxl追加時のdeprecated
+			if(vkb_hidden_xl && null === vkb_hidden_xxl ){
+				vkb_hidden_xxl = true
+			}
 
 			if (
 				vkb_hidden ||

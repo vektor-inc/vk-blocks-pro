@@ -37,4 +37,7 @@ import "./_pro/grid-column-item/block.js";
 import "./_pro/slider/block.js";
 import "./_pro/slider-item/block.js";
 import "./_pro/animation/block.js";
+import "./_pro/accordion/block.js";
+import "./_pro/accordion-trigger/block.js";
+import "./_pro/accordion-target/block.js";
 import "../plugin/menu/block.js";

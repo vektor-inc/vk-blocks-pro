@@ -157,3 +157,10 @@ $padding-xxl: 4em;
 //   margin: 0!important;
 // }
 $color-danger: #b52727;
+
+@media (min-width: $media-xxl-up) {//端が隠れて編集しずらいので追加
+	.edit-post-visual-editor.editor-styles-wrapper .vk_outer-paddingLR-use {
+		padding-left: 6em;
+		padding-right: 6em;
+	}
+}

@@ -44,16 +44,23 @@ $xxl-min: 1400px;
 		}
 	}
 
-	@media (min-width: $xl-min) and (max-width: $xl-max) {
+	@media (min-width: $xl-min) {
 
 		&-xl {
 			display: none !important;
 		}
 	}
 
+	@media (min-width: $xl-min) and (max-width: $xl-max) {
+
+		&-xl-v2 {
+			display: none !important;
+		}
+	}
+
 	@media (min-width: $xxl-min) {
 
-		&-xxl {
+		&-xxl-v2 {
 			display: none !important;
 		}
 	}

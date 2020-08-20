@@ -185,11 +185,6 @@ if (5.3 <= parseFloat(wpVersion)) {
 				vkb_hidden_xs,
 			} = attributes;
 
-			//xxl追加時のdeprecated
-			if(vkb_hidden_xl && null === vkb_hidden_xxl ){
-				vkb_hidden_xxl = true
-			}
-
 			if (
 				vkb_hidden ||
 				vkb_hidden_xxl ||
@@ -200,8 +195,8 @@ if (5.3 <= parseFloat(wpVersion)) {
 				vkb_hidden_xs
 			) {
 				const custom = vkb_hidden && "vk_hidden";
-				const customXxl = vkb_hidden_xxl && "vk_hidden-xxl";
-				const customXl = vkb_hidden_xl && "vk_hidden-xl";
+				const customXxl = vkb_hidden_xxl && "vk_hidden-xxl-v2";
+				const customXl = vkb_hidden_xl && "vk_hidden-xl-v2";
 				const customLg = vkb_hidden_lg && "vk_hidden-lg";
 				const customMd = vkb_hidden_md && "vk_hidden-md";
 				const customSm = vkb_hidden_sm && "vk_hidden-sm";

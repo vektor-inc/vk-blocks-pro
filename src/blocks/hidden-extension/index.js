@@ -46,6 +46,7 @@ if (5.3 <= parseFloat(wpVersion)) {
 		(settings) => {
 			// If hidden function target block...
 			if (is_hidden(settings.name)) {
+				console.log(settings.attributes);
 				settings.attributes = {
 					// Deploy original settings.attributes to array and...
 					...settings.attributes,

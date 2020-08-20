@@ -140,6 +140,7 @@ $vk_animation_long_size: 9em;
 
 	&-trembling-x {
 		animation: trembling-x 0.1s infinite;
+		opacity: 1;
 	}
 
 	@keyframes trembling-x {
@@ -155,6 +156,7 @@ $vk_animation_long_size: 9em;
 
 	&-trembling-y {
 		animation: trembling-y 0.1s infinite;
+		opacity: 1;
 	}
 
 	@keyframes trembling-y {
@@ -170,6 +172,7 @@ $vk_animation_long_size: 9em;
 
 	&-pounding {
 		animation: pounding 1.5s infinite;
+		opacity: 1;
 	}
 
 	@keyframes pounding {
@@ -193,6 +196,7 @@ $vk_animation_long_size: 9em;
 
 	&-shaking {
 		animation: shaking 0.4s infinite;
+		opacity: 1;
 	}
 
 	@keyframes shaking {

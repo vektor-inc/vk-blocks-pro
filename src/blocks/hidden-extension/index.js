@@ -57,7 +57,11 @@ if (5.3 <= parseFloat(wpVersion)) {
 						},
 						vkb_hidden_xxl: {
 							type: "boolean",
-							default: null,
+							default: false,
+						},
+						vkb_hidden_xl_v2: {
+							type: "boolean",
+							default: false,
 						},
 						vkb_hidden_xl: {
 							type: "boolean",
@@ -94,6 +98,14 @@ if (5.3 <= parseFloat(wpVersion)) {
 		createHigherOrderComponent((BlockEdit) => {
 			return (props) => {
 				if (is_hidden(props.name)) {
+
+					//xxl用、deprecated追加
+					if(props.attributes.vkb_hidden_xl && !props.attributes.vkb_hidden_xxl){
+						props.attributes.vkb_hidden_xxl = true
+						props.attributes.vkb_hidden_xl_v2 = true
+						props.attributes.vkb_hidden_xl = false
+					}
+
 					return (
 						<Fragment>
 							<BlockEdit { ...props } />
@@ -141,8 +153,8 @@ if (5.3 <= parseFloat(wpVersion)) {
 										/>
 										<AdvancedToggleControl
 											label={ __("Hidden ( Screen size : xl )", "vk-blocks") }
-											initialFixedTable={ props.attributes.vkb_hidden_xl }
-											schema={ "vkb_hidden_xl" }
+											initialFixedTable={ props.attributes.vkb_hidden_xl_v2 }
+											schema={ "vkb_hidden_xl_v2" }
 											{ ...props }
 										/>
 										<AdvancedToggleControl
@@ -178,6 +190,7 @@ if (5.3 <= parseFloat(wpVersion)) {
 			let {
 				vkb_hidden,
 				vkb_hidden_xxl,
+				vkb_hidden_xl_v2,
 				vkb_hidden_xl,
 				vkb_hidden_lg,
 				vkb_hidden_md,
@@ -188,6 +201,7 @@ if (5.3 <= parseFloat(wpVersion)) {
 			if (
 				vkb_hidden ||
 				vkb_hidden_xxl ||
+				vkb_hidden_xl_v2 ||
 				vkb_hidden_xl ||
 				vkb_hidden_lg ||
 				vkb_hidden_md ||
@@ -195,8 +209,9 @@ if (5.3 <= parseFloat(wpVersion)) {
 				vkb_hidden_xs
 			) {
 				const custom = vkb_hidden && "vk_hidden";
-				const customXxl = vkb_hidden_xxl && "vk_hidden-xxl-v2";
-				const customXl = vkb_hidden_xl && "vk_hidden-xl-v2";
+				const customXxl = vkb_hidden_xxl && "vk_hidden-xxl";
+				const customXl2 = vkb_hidden_xl_v2 && "vk_hidden-xl-v2";
+				const customXl = vkb_hidden_xl && "vk_hidden-xl";
 				const customLg = vkb_hidden_lg && "vk_hidden-lg";
 				const customMd = vkb_hidden_md && "vk_hidden-md";
 				const customSm = vkb_hidden_sm && "vk_hidden-sm";
@@ -213,6 +228,7 @@ if (5.3 <= parseFloat(wpVersion)) {
 										element.props.className,
 										custom,
 										customXxl,
+										customXl2,
 										customXl,
 										customLg,
 										customMd,
@@ -239,14 +255,15 @@ if (5.3 <= parseFloat(wpVersion)) {
 				// Add hidden common class
 				const hiddenSomething =
 					props.attributes.vkb_hidden_xxl ||
+					props.attributes.vkb_hidden_xl_v2 ||
 					props.attributes.vkb_hidden_xl ||
-						props.attributes.vkb_hidden_lg ||
-						props.attributes.vkb_hidden_md ||
-						props.attributes.vkb_hidden_sm ||
-						props.attributes.vkb_hidden_xs ||
-						props.attributes.vkb_hidden
-						? "vk_edit_hidden_warning"
-						: "";
+					props.attributes.vkb_hidden_lg ||
+					props.attributes.vkb_hidden_md ||
+					props.attributes.vkb_hidden_sm ||
+					props.attributes.vkb_hidden_xs ||
+					props.attributes.vkb_hidden
+					? "vk_edit_hidden_warning"
+					: "";
 
 				// Add hidden all class
 				const hiddenClassName = props.attributes.vkb_hidden

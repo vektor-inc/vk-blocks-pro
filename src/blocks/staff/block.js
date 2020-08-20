@@ -56,8 +56,6 @@ registerBlockType('vk-blocks/staff', {
             vk_staff_photoBorder
 		} = attributes;
 
-		console.log(attributes)
-
         return (
             <Fragment>
                 <InspectorControls>

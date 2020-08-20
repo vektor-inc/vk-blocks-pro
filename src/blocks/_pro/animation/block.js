@@ -57,6 +57,10 @@ registerBlockType("vk-blocks/animation", {
 								{ label: __("Slide Up", "vk-blocks"), value: "slide-up" },
 								{ label: __("Slide Left", "vk-blocks"), value: "slide-left" },
 								{ label: __("Slide Right", "vk-blocks"), value: "slide-right" },
+								{ label: __("Trembling Y", "vk-blocks"), value: "trembling-y" },
+								{ label: __("Trembling X", "vk-blocks"), value: "trembling-x" },
+								{ label: __("Pounding", "vk-blocks"), value: "pounding" },
+								{ label: __("Shaking", "vk-blocks"), value: "shaking" },
 							] }
 						/>
 

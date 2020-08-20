@@ -230,6 +230,34 @@ $color-danger: #dd3333;
 			content:'Fade in';
 		}
 	}
+	&.vk_animation-trembling-x{
+		right:0;
+		left: 0;
+		&:before {
+			content:'Trembring X';
+		}
+	}
+	&.vk_animation-trembling-y{
+		right:0;
+		left: 0;
+		&:before {
+			content:'Trembring Y';
+		}
+	}
+	&.vk_animation-pounding{
+		right:0;
+		left: 0;
+		&:before {
+			content:'Pounding';
+		}
+	}
+	&.vk_animation-shaking{
+		right:0;
+		left: 0;
+		&:before {
+			content:'Shaking';
+		}
+	}
 	&.vk_animation-slide-left{
 		&.vk_animation-range-short,
 		&.vk_animation-range-normal,

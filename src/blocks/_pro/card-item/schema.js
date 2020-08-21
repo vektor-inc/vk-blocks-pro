@@ -26,7 +26,7 @@ export const schema = {
 	col_xxl: {
 		type: "number",
 		default: 3,
-		},
+	},
 	display_title: {
     type: "boolean",
     default: true,

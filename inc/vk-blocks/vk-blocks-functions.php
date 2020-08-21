@@ -486,3 +486,16 @@ if ( ! function_exists( 'vkblocks_set_wp_version' ) ) {
 	}
 	add_action( 'admin_head', 'vkblocks_set_wp_version', 10, 0 );
 }
+
+if ( function_exists( 'vkblocks_get_version' ) ) {
+
+	function vkblocks_set_vkbpro_version() {
+		$vkbpro_version = vkblocks_get_version();
+		if($vkbpro_version){
+			echo '<script>',
+			'var vkbproVersion = "' . $vkbpro_version . '";',
+			'</script>';
+		}
+	}
+	add_action( 'admin_head', 'vkblocks_set_vkbpro_version', 10, 0 );
+}

@@ -3,7 +3,6 @@
  *
  */
 import { schema } from "./schema";
-import { deprecated } from "./deprecated";
 import {vkbBlockEditor} from "../../_helper/depModules"
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -43,5 +42,4 @@ registerBlockType("vk-blocks/grid-column-item", {
 			</div>
 		);
 	},
-	deprecated
 });

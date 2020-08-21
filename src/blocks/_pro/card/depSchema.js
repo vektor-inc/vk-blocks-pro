@@ -29,12 +29,16 @@ export const schema0_37_4 = {
   col_xl: {
     type: "number",
     default: 3,
-	},
-	display_title: {
-    type: "boolean",
-    default: true,
-	},
-	display_excerpt: {
+　},
+　col_xxl: {
+	type: "number",
+	default: 3,
+　},
+ display_title: {
+	 type: "boolean",
+	 default: true,
+ },
+ display_excerpt: {
     type: "boolean",
     default: true,
   },
@@ -132,6 +136,10 @@ export const schema0_40_0 = {
 	  type: "number",
 	  default: 3,
 	  },
+	  col_xxl: {
+		type: "number",
+		default: 3,
+	　},
 	  display_title: {
 	  type: "boolean",
 	  default: true,

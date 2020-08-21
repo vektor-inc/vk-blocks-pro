@@ -49,7 +49,7 @@ registerBlockType("vk-blocks/accordion-trigger", {
 						[ 'core/paragraph', { content: content} ],
 					] }
 				/>
-				<span className={ classNames(className,`vk_accordion-trigger-close`) } ></span>
+				<span className={ classNames(className,`vk_accordion-toggle vk_accordion-toggle-close`) } ></span>
 			</div>
 		);
 	  },
@@ -58,7 +58,7 @@ registerBlockType("vk-blocks/accordion-trigger", {
 		return (
 			<div className={ `vk_accordion-trigger` }>
 				<InnerBlocks.Content />
-				<span className={ `vk_accordion-trigger-close` } ></span>
+				<span className={ `vk_accordion-toggle vk_accordion-toggle-close` } ></span>
 			</div>
 
 	 	);

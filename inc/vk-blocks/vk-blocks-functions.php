@@ -124,6 +124,10 @@ function vkblocks_blocks_assets() {
 				'type'    => 'boolean',
 				'default' => false,
 			),
+			'vkb_hidden_xl_v2' => array(
+				'type'    => 'boolean',
+				'default' => false,
+			),
 			'vkb_hidden_xl' => array(
 				'type'    => 'boolean',
 				'default' => false,

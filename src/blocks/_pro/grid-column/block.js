@@ -8,7 +8,6 @@ import { ColumnLayout } from "../../../components/column-layout";
 import classNames from "classnames";
 import { convertToGrid } from "../../_helper/convert-to-grid";
 import {vkbBlockEditor} from "../../_helper/depModules"
-import compareVersions from 'compare-versions';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -16,6 +15,8 @@ const { Fragment } = wp.element;
 const { InspectorControls } =vkbBlockEditor;
 const { select, dispatch } = wp.data;
 const { PanelBody } = wp.components;
+const { createHigherOrderComponent } = wp.compose;
+const { addFilter } = wp.hooks;
 
 const BlockIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 576">
@@ -109,9 +110,6 @@ registerBlockType("vk-blocks/grid-column", {
 	},
 });
 
-const { createHigherOrderComponent } = wp.compose;
-const { addFilter } = wp.hooks;
-
 const vkbwithClientIdClassName = createHigherOrderComponent(
 	(BlockListBlock) => {
 		return (props) => {
@@ -137,58 +135,31 @@ const vkbwithClientIdClassName = createHigherOrderComponent(
 
 addFilter(
 	"editor.BlockListBlock",
-	"vk-blocks/grid-column-item",
+	"vk-blocks/grid-column",
 	vkbwithClientIdClassName
 );
 
-if (window.vkbproVersion && compareVersions(window.vkbproVersion, '0.40.1')) {
-	addFilter(
-		"blocks.getSaveElement",
-		"vk-blocks/hidden-extension",
-		(element, blockType, attributes) => {
-			const { col_xs, col_sm, col_md, col_lg, col_xl, col_xxl } = attributes;
-			if (blockType.name === "vk-blocks/grid-column-item" && element) {
-				element = {
-					...element,
-					...{
-						props: {
-							...element.props,
-							...{
-								className: classNames(
-									element.props.className,
-									`col-${convertToGrid(col_xs)} col-sm-${convertToGrid(col_sm)} col-md-${convertToGrid(col_md)} col-lg-${convertToGrid(col_lg)} col-xl-${convertToGrid(col_xl)} col-xxl-${convertToGrid(col_xxl)}`
-								),
-							},
+addFilter(
+	"blocks.getSaveElement",
+	"vk-blocks/grid-column",
+	(element, blockType, attributes) => {
+		const { col_xs, col_sm, col_md, col_lg, col_xl, col_xxl } = attributes;
+		if (blockType.name === "vk-blocks/grid-column-item" && element) {
+			element = {
+				...element,
+				...{
+					props: {
+						...element.props,
+						...{
+							className: classNames(
+								element.props.className,
+								`col-${convertToGrid(col_xs)} col-sm-${convertToGrid(col_sm)} col-md-${convertToGrid(col_md)} col-lg-${convertToGrid(col_lg)} col-xl-${convertToGrid(col_xl)} col-xxl-${convertToGrid(col_xxl)}`
+							),
 						},
 					},
-				};
-			}
-			return element;
+				},
+			};
 		}
-	);
-}else{
-	addFilter(
-		"blocks.getSaveElement",
-		"vk-blocks/hidden-extension",
-		(element, blockType, attributes) => {
-			const { col_xs, col_sm, col_md, col_lg, col_xl } = attributes;
-			if (blockType.name === "vk-blocks/grid-column-item" && element) {
-				element = {
-					...element,
-					...{
-						props: {
-							...element.props,
-							...{
-								className: classNames(
-									element.props.className,
-									`col-${convertToGrid(col_xs)} col-sm-${convertToGrid(col_sm)} col-md-${convertToGrid(col_md)} col-lg-${convertToGrid(col_lg)} col-xl-${convertToGrid(col_xl)}`
-								),
-							},
-						},
-					},
-				};
-			}
-			return element;
-		}
-	);
-}
+		return element;
+	}
+);

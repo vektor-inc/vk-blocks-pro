@@ -54,8 +54,9 @@ add_action( 'after_setup_theme', 'vk_blocks_optimize_css' );
 function vk_blocks_css_tree_shaking_exclude_class( $inidata ) {
 	$exclude_classes_array = array(
 		'vk_animation-active',
+		'vk_borderBox_title',
 	);
-	$inidata['class']      = array_merge( $inidata['class'], $exclude_classes_array );
+	$inidata['class'] = array_merge( $inidata['class'], $exclude_classes_array );
 
 	return $inidata;
 }

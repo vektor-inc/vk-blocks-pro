@@ -342,7 +342,7 @@ registerBlockType('vk-blocks/button', {
 
 			containerClass = `vk_button vk_button-color-custom vk_button-align-${buttonAlign}`;
 
-		} else if (!buttonColorCustom) {
+		} else {
 
 			containerClass = `vk_button vk_button-align-${buttonAlign}`;
 

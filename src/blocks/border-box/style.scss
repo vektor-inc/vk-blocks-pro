@@ -87,6 +87,7 @@
 			display: inline;
 			font-weight: bold;
 			font-size: 1em;
+			color: inherit; //これがないと見出しデザイン機能に負ける
 		}
 	}
 

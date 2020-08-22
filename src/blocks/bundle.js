@@ -1,4 +1,7 @@
 //Bundle JS
+import "./hidden-extension/";
+import "../translation_dummy.js";
+import "./heading-style/block.js";
 import "./group-style/block.js";
 import "./list-style/block.js";
 import "./highlighter/block.js";
@@ -12,12 +15,9 @@ import "./faq/block.js";
 import "./flow/block.js";
 import "./pr-blocks/block.js";
 import "./pr-content/block.js";
-import "./heading-style/block.js";
 import "./image/block.js";
-import "../translation_dummy.js";
 
 /*WP5.3 以下では読み込まれない*/
-import "./hidden-extension/";
 import "./border-box/block.js";
 import "./faq2/block.js";
 import "./faq2-q/block.js";

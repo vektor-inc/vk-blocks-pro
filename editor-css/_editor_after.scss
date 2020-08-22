@@ -1,1 +1,56 @@
+	/* .vk_hidden.vk_hidden は2つじゃないと上書きできない  */
+.vk_hidden {
+	display: block !important;
+	color: var(--blue);
+
+  &.vk_posts{
+	// display block だとカラムがすべて落ちるため posts は flexで上書き
+	display: flex !important;
+  }
+  @media (max-width: $xs-max) {
+    &-xs {
+	  display: block !important;
+	  &.vk_posts{
+		// display block だとカラムがすべて落ちるため posts は flexで上書き
+		display: flex !important;
+	  }
+    }
+  }
+  @media (min-width: $sm-min) and (max-width: $sm-max) {
+    &-sm {
+	  display: block !important;
+	  &.vk_posts{
+		// display block だとカラムがすべて落ちるため posts は flexで上書き
+		display: flex !important;
+	  }
+    }
+  }
+  @media (min-width: $md-min) and (max-width: $md-max) {
+    &-md {
+	  display: block !important;
+	  &.vk_posts{
+		// display block だとカラムがすべて落ちるため posts は flexで上書き
+		display: flex !important;
+	  }
+    }
+  }
+  @media (min-width: $lg-min) and (max-width: $lg-max) {
+    &-lg {
+	  display: block !important;
+	  &.vk_posts{
+		// display block だとカラムがすべて落ちるため posts は flexで上書き
+		display: flex !important;
+	  }
+    }
+  }
+  @media (min-width: $xl-min) {
+    &-xl {
+	  display: block !important;
+	  &.vk_posts{
+		// display block だとカラムがすべて落ちるため posts は flexで上書き
+		display: flex !important;
+	  }
+    }
+  }
+}
 }

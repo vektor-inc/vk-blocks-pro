@@ -47,7 +47,7 @@ export const schema = {
 	},
 	subTextFlag: {
 		type: "string",
-		default: "on"
+		default: "off"
 	},
 	subTextColor: {
 		type: "string",

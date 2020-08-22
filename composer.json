@@ -1,7 +1,8 @@
 {
   "name": "vektor/vk-blocks-pro",
-  "require": {},
+  "require": {
+    "squizlabs/php_codesniffer": "*"
+  },
   "require-dev": {
-    "squizlabs/php_codesniffer": "^3.5"
   }
 }

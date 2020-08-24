@@ -221,6 +221,35 @@ $vk_animation_long_size: 9em;
 			transform: translate(1px, 1px);
 		}
 	}
+
+
+	&-slow-shaking {
+		animation: slow-shaking 1s infinite;
+		opacity: 1;
+	}
+
+	@keyframes slow-shaking {
+
+		0% {
+			transform: translate(1px, 1px);
+		}
+
+		25% {
+			transform: translate(1px, -1px);
+		}
+
+		50% {
+			transform: translate(-1px, -1px);
+		}
+
+		75% {
+			transform: translate(-1px, 1px);
+		}
+
+		100% {
+			transform: translate(1px, 1px);
+		}
+	}
 }
 
 

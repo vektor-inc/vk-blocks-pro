@@ -258,6 +258,13 @@ $color-danger: #dd3333;
 			content:'Shaking';
 		}
 	}
+	&.vk_animation-slow-shaking{
+		right:0;
+		left: 0;
+		&:before {
+			content:'Slow Shaking';
+		}
+	}
 	&.vk_animation-slide-left{
 		&.vk_animation-range-short,
 		&.vk_animation-range-normal,

@@ -43,7 +43,7 @@ const BlockIcon = (
 );
 
 registerBlockType("vk-blocks/faq", {
-  title: __("FAQ", "vk-blocks"),
+  title: __("Classic FAQ", "vk-blocks"),
   icon: BlockIcon,
   category: "vk-blocks-cat",
   attributes: {

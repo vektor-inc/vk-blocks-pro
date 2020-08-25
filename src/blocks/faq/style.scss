@@ -91,6 +91,11 @@ $answer-color: #337ab7;
 }
 .vk_faq_title { margin-bottom:0;font-size:18px;font-weight:700;
   &:before { content:"Q";color:#e50000; font-weight: 500; }
+  	p { line-height: 1.7;
+		&:last-child{
+			margin-bottom:0;
+		}
+	}
 }
 .vk_faq_content { margin:0px;
   &:before { content:"A";color:#337ab7; }
@@ -98,5 +103,17 @@ $answer-color: #337ab7;
 	margin-bottom:0;
   }
 }
-//editor画面でずれる
-.editor-styles-wrapper .vk_faq_content .wp-block{ width: auto; }
+
+// 編集画面側
+// フロント画面と比べると余白が大きく空くので追加
+.editor-styles-wrapper {
+	.vk_faq{
+		.block-editor-inner-blocks{
+			div.block-editor-block-list__block:not(.is_hovered){  
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+			.wp-block:not(.is_hovered){width: 100%;}
+		}
+	}
+}

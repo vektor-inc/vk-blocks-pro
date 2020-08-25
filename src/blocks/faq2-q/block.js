@@ -48,7 +48,6 @@ registerBlockType("vk-blocks/faq2-q", {
 		return (
 			<dt className={ classNames(className,`vk_faq_title` ) }>
 				<InnerBlocks
-					templateLock={ false }
 					template={ [
 						[ 'core/paragraph', { content: content} ],
 					] }

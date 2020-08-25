@@ -112,7 +112,10 @@ registerBlockType("vk-blocks/faq2", {
 		return (
 			<dl className={ classNames(className,"vk_faq") }>
 				<InnerBlocks
-					templateLock="all"
+					allowedBlocks={ [
+						[ 'vk-blocks/faq2-q' ],
+						[ 'vk-blocks/faq2-a' ],
+					] }
 					template={ [
 						[ 'vk-blocks/faq2-q' ],
 						[ 'vk-blocks/faq2-a' ],

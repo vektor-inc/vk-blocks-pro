@@ -172,6 +172,7 @@ msgstr "短い"
 #: src/blocks/_pro/animation/block.js:86 src/blocks/_pro/outer/block.js:181
 #: src/blocks/_pro/slider/block.js:120 src/blocks/balloon/block.js:175
 #: src/blocks/button/block.js:158 src/blocks/faq/block.js:65
+#: src/blocks/faq2/block.js:65
 msgid "Normal"
 msgstr "標準"
 
@@ -1061,32 +1062,44 @@ msgid "Please enter a question."
 msgstr "質問を入力してください。"
 
 #: src/blocks/faq/block.js:46
-msgid "FAQ"
-msgstr "質問と解答"
+msgid "Classic FAQ"
+msgstr "旧 FAQ"
 
-#: src/blocks/faq/block.js:70
+#: src/blocks/faq/block.js:70 src/blocks/faq2/block.js:70
 msgid "Bgfill Circle"
 msgstr "背景塗り 円形"
 
-#: src/blocks/faq/block.js:74
+#: src/blocks/faq/block.js:74 src/blocks/faq2/block.js:74
 msgid "Bgfill Square"
 msgstr "背景塗り ピン角"
 
-#: src/blocks/faq/block.js:78
+#: src/blocks/faq/block.js:78 src/blocks/faq2/block.js:78
 msgid "Bgfill Rounded"
 msgstr "背景塗り 角丸"
 
-#: src/blocks/faq/block.js:82
+#: src/blocks/faq/block.js:82 src/blocks/faq2/block.js:82
 msgid "Border Circle"
 msgstr "枠線 円形"
 
-#: src/blocks/faq/block.js:86
+#: src/blocks/faq/block.js:86 src/blocks/faq2/block.js:86
 msgid "Border Square"
 msgstr "枠線 ピン角"
 
-#: src/blocks/faq/block.js:90
+#: src/blocks/faq/block.js:90 src/blocks/faq2/block.js:90
 msgid "Border Rounded"
 msgstr "枠線 角丸"
+
+#: src/blocks/faq2-a/block.js:20
+msgid "FAQ Answer"
+msgstr "FAQ 回答"
+
+#: src/blocks/faq2-q/block.js:24
+msgid "FAQ Question"
+msgstr "FAQ 質問"
+
+#: src/blocks/faq2/block.js:45
+msgid "New FAQ"
+msgstr "新 FAQ"
 
 #: src/blocks/flow/block.js:17
 msgid "Flow"
@@ -1698,6 +1711,9 @@ msgstr "削除"
 #: src/translation_dummy.js:9
 msgid "Balloon Image Name"
 msgstr "吹き出し画像の名前"
+
+#~ msgid "FAQ"
+#~ msgstr "質問と解答"
 
 #~ msgid "Current Page"
 #~ msgstr "現在のページ"

@@ -120,6 +120,7 @@ registerBlockType("vk-blocks/faq2", {
 						[ 'vk-blocks/faq2-q' ],
 						[ 'vk-blocks/faq2-a' ],
 					] }
+					templateLock='all'
 				/>
 			</dl>
 		);

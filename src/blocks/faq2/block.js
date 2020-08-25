@@ -42,7 +42,7 @@ const BlockIcon = (
 );
 
 registerBlockType("vk-blocks/faq2", {
-	title: __("FAQ Container", "vk-blocks"),
+	title: __("New FAQ", "vk-blocks"),
 	icon: BlockIcon,
 	category: "vk-blocks-cat",
 	attributes: {
@@ -112,7 +112,7 @@ registerBlockType("vk-blocks/faq2", {
 		return (
 			<dl className={ classNames(className,"vk_faq") }>
 				<InnerBlocks
-					templateLock={ true }
+					templateLock="all"
 					template={ [
 						[ 'vk-blocks/faq2-q' ],
 						[ 'vk-blocks/faq2-a' ],

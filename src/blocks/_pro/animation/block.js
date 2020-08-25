@@ -44,7 +44,6 @@ registerBlockType("vk-blocks/animation", {
 		const customClientId = replaceClientId(clientId);
 		setAttributes({clientId:customClientId})
 
-		if( props.attributes.effect === "slide-up" || props.attributes.effect === "slide-left" || props.attributes.effect === "slide-right" ) {
 			return (
 				<Fragment>
 					<InspectorControls>
@@ -58,14 +57,14 @@ registerBlockType("vk-blocks/animation", {
 									{ label: __("Slide Up", "vk-blocks"), value: "slide-up" },
 									{ label: __("Slide Left", "vk-blocks"), value: "slide-left" },
 									{ label: __("Slide Right", "vk-blocks"), value: "slide-right" },
+									{ label: __("Left Right", "vk-blocks"), value: "left-right" },
+									{ label: __("Up Down", "vk-blocks"), value: "up-down" },
 									{ label: __("Trembling Y", "vk-blocks"), value: "trembling-y" },
 									{ label: __("Trembling X", "vk-blocks"), value: "trembling-x" },
 									{ label: __("Pounding", "vk-blocks"), value: "pounding" },
 									{ label: __("Shaking", "vk-blocks"), value: "shaking" },
-									{ label: __("Slow Shaking", "vk-blocks"), value: "slow-shaking" },
 								] }
 							/>
-
 							<label>{ __("Animation speed", "vk-blocks") }</label>
 							<SelectControl
 								value={ speed }
@@ -97,40 +96,6 @@ registerBlockType("vk-blocks/animation", {
 					</div>
 				</Fragment>
 			);
-		}
-		else{
-			return (
-				<Fragment>
-					<InspectorControls>
-						<PanelBody title={ __("Animation Settings", "vk-blocks") }>
-							<label>{ __("Animation effect", "vk-blocks") }</label>
-							<SelectControl
-								value={ effect }
-								onChange={ value => setAttributes({ effect: value }) }
-								options={ [
-									{ label: __("Fade In", "vk-blocks"), value: "fade-in" },
-									{ label: __("Slide Up", "vk-blocks"), value: "slide-up" },
-									{ label: __("Slide Left", "vk-blocks"), value: "slide-left" },
-									{ label: __("Slide Right", "vk-blocks"), value: "slide-right" },
-									{ label: __("Trembling Y", "vk-blocks"), value: "trembling-y" },
-									{ label: __("Trembling X", "vk-blocks"), value: "trembling-x" },
-									{ label: __("Pounding", "vk-blocks"), value: "pounding" },
-									{ label: __("Shaking", "vk-blocks"), value: "shaking" },
-									{ label: __("Slow Shaking", "vk-blocks"), value: "slow-shaking" },
-								] }
-							/>
-						</PanelBody>
-					</InspectorControls>
-					<div className={ classNames(className, `vk_animation vk_animation-${effect} vk_animation-speed-${speed} vk_animation-range-${range} vk_animation-${customClientId}`) }>
-						<InnerBlocks
-							templateInsertUpdatesSelection={ false }
-						/>
-					</div>
-				</Fragment>
-			);
-		}
-
-
 	},
 
 	save(props) {

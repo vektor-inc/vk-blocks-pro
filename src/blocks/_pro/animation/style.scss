@@ -1,5 +1,4 @@
 /*-------------------------------------------*/
-
 /* CSS
 /*-------------------------------------------*/
 $vk_animation_short_size: 3em;
@@ -137,119 +136,346 @@ $vk_animation_long_size: 9em;
 }
 
 .vk_animation {
+	&-trembling-x,
+	&-trembling-y,
+	&-left-right,
+	&-up-down,
+	&-pounding,
+	&-shaking {
+		opacity: 1;
+		&.vk_animation-speed{
+			&-very-slow {
+				animation-duration: 3s;
+			}
+			&-slow {
+				animation-duration: 1s;	
+			}
+			&-normal {
+				animation-duration: 0.5s;
+			}
+			&-fast {
+				animation-duration: 0.1s;
+			}
+			&-very-fast {
+				animation-duration: 0.05s;
+			}
+		}
+	}
+
+
+	// ぷるぷる X
 
 	&-trembling-x {
 		animation: trembling-x 0.1s infinite;
-		opacity: 1;
+		&.vk_animation-range{
+			&-short {
+				animation-name: trembling-x-short;	
+			}
+			&-normal {
+				animation-name: trembling-x-normal;	
+			}
+			&-long {
+				animation-name: trembling-x-long;	
+			}
+		}
 	}
 
-	@keyframes trembling-x {
-
+	@keyframes trembling-x-short {
 		0% {
 			transform: scale(1, 1);
 		}
-
 		50% {
-			transform: scale(0.99, 0.96);
+			transform: scale(0.99, 0.99);
 		}
 	}
+	@keyframes trembling-x-normal {
+		0% {
+			transform: scale(1, 1);
+		}
+		50% {
+			transform: scale(0.97, 0.97);
+		}
+	}
+	@keyframes trembling-x-long {
+		0% {
+			transform: scale(1, 1);
+		}
+		50% {
+			transform: scale(0.95, 0.95);
+		}
+	}
+
+	// 左右
+
+	&-left-right {
+		animation: left-right 0.1s infinite;
+		&.vk_animation-range{
+			&-short {
+				animation-name: left-right-short;	
+			}
+			&-normal {
+				animation-name: left-right-normal;	
+			}
+			&-long {
+				animation-name: left-right-long;	
+			}
+		}
+	}
+
+	@keyframes left-right-short {
+		0% {
+			transform: translate(1px,0);
+		}
+		50% {
+			transform: translate(-1px,0);
+		}
+		100% {
+			transform: translate(1px,0);
+		}
+	}
+	@keyframes left-right-normal {
+		0% {
+			transform: translate(5px,0);
+		}
+		50% {
+			transform: translate(-5px,0);
+		}
+		100% {
+			transform: translate(5px,0);
+		}
+	}
+	@keyframes left-right-long {
+		0% {
+			transform: translate(15px,0);
+		}
+		50% {
+			transform: translate(-15px,0);
+		}
+		100% {
+			transform: translate(15px,0);
+		}
+	}
+
+	// 上下
+
+	&-up-down {
+		animation: up-down 0.1s infinite;
+		&.vk_animation-range{
+			&-short {
+				animation-name: up-down-short;	
+			}
+			&-normal {
+				animation-name: up-down-normal;	
+			}
+			&-long {
+				animation-name: up-down-long;	
+			}
+		}
+	}
+
+	@keyframes up-down-short {
+		0% {
+			transform: translate(0,1px);
+		}
+		50% {
+			transform: translate(0,-1px);
+		}
+		100% {
+			transform: translate(0,1px);
+		}
+	}
+	@keyframes up-down-normal {
+		0% {
+			transform: translate(0,5px);
+		}
+		50% {
+			transform: translate(0,-5px);
+		}
+		100% {
+			transform: translate(0,5px);
+		}
+	}
+	@keyframes up-down-long {
+		0% {
+			transform: translate(0,15px);
+		}
+		50% {
+			transform: translate(0,-15px);
+		}
+		100% {
+			transform: translate(0,15px);
+		}
+	}
+
+	// ぷるぷる Y
 
 	&-trembling-y {
 		animation: trembling-y 0.1s infinite;
-		opacity: 1;
+		&.vk_animation-range{
+			&-short {
+				animation-name: trembling-y-short;	
+			}
+			&-normal {
+				animation-name: trembling-y-normal;	
+			}
+			&-long {
+				animation-name: trembling-y-long;	
+			}
+		}
 	}
 
-	@keyframes trembling-y {
-
+	@keyframes trembling-y-short {
+		0% {
+			transform: rotate(-0.1deg);
+		}
+		50% {
+			transform: rotate(0.1deg);
+		}
+	}
+	@keyframes trembling-y-normal {
+		0% {
+			transform: rotate(-0.25deg);
+		}
+		50% {
+			transform: rotate(0.25deg);
+		}
+	}
+	@keyframes trembling-y-long {
 		0% {
 			transform: rotate(-0.5deg);
 		}
-
 		50% {
 			transform: rotate(0.5deg);
 		}
 	}
 
+	// どきどき
+
 	&-pounding {
 		animation: pounding 1.5s infinite;
-		opacity: 1;
+		&.vk_animation-range{
+			&-short {
+				animation-name: pounding-short;	
+			}
+			&-normal {
+				animation-name: pounding-normal;	
+			}
+			&-long {
+				animation-name: pounding-long;	
+			}
+		}
 	}
 
-	@keyframes pounding {
-
+	@keyframes pounding-short {
 		0% {
-			transform: scale(1.05);
+			transform: scale(1.03);
 		}
-
 		5% {
 			transform: scale(1);
 		}
-
 		95% {
 			transform: scale(1);
 		}
-
+		100% {
+			transform: scale(1.03);
+		}
+	}
+	@keyframes pounding-normal {
+		0% {
+			transform: scale(1.05);
+		}
+		5% {
+			transform: scale(1);
+		}
+		95% {
+			transform: scale(1);
+		}
 		100% {
 			transform: scale(1.05);
+		}
+	}
+	@keyframes pounding-long {
+		0% {
+			transform: scale(1.1);
+		}
+		5% {
+			transform: scale(1);
+		}
+		95% {
+			transform: scale(1);
+		}
+		100% {
+			transform: scale(1.1);
 		}
 	}
 
 	&-shaking {
 		animation: shaking 0.4s infinite;
-		opacity: 1;
+		&.vk_animation-range{
+			&-short {
+				animation-name: shaking-short;	
+			}
+			&-normal {
+				animation-name: shaking-normal;	
+			}
+			&-long {
+				animation-name: shaking-long;	
+			}
+		}
 	}
 
-	@keyframes shaking {
-
+	@keyframes shaking-short {
 		0% {
-			transform: translate(1px, 1px);
+			transform: translate(1px,-1px);
 		}
-
 		25% {
-			transform: translate(1px, -1px);
-		}
-
-		50% {
-			transform: translate(-1px, -1px);
-		}
-
-		75% {
 			transform: translate(-1px, 1px);
 		}
-
-		100% {
-			transform: translate(1px, 1px);
-		}
-	}
-
-
-	&-slow-shaking {
-		animation: slow-shaking 1s infinite;
-		opacity: 1;
-	}
-
-	@keyframes slow-shaking {
-
-		0% {
-			transform: translate(1px, 1px);
-		}
-
-		25% {
-			transform: translate(1px, -1px);
-		}
-
 		50% {
-			transform: translate(-1px, -1px);
+			transform: translate(-1px,-1px);
 		}
-
 		75% {
-			transform: translate(-1px, 1px);
+			transform: translate(1px,1px);
 		}
-
 		100% {
-			transform: translate(1px, 1px);
+			transform: translate(1px,-1px);
 		}
 	}
+	@keyframes shaking-normal {
+		0% {
+			transform: translate(5px,-5px);
+		}
+		25% {
+			transform: translate(-5px, 5px);
+		}
+		50% {
+			transform: translate(-5px,-5px);
+		}
+		75% {
+			transform: translate(5px,5px);
+		}
+		100% {
+			transform: translate(5px,-5px);
+		}
+	}
+	@keyframes shaking-long {
+		0% {
+			transform: translate(10px,-10px);
+		}
+		25% {
+			transform: translate(-10px, 10px);
+		}
+		50% {
+			transform: translate(-10px,-10px);
+		}
+		75% {
+			transform: translate(10px,10px);
+		}
+		100% {
+			transform: translate(10px,-10px);
+		}
+	}
+
 }
 
 

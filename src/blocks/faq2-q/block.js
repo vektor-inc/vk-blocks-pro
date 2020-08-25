@@ -43,11 +43,15 @@ registerBlockType("vk-blocks/faq2-q", {
 			},
 		],
 	},
-	edit( { className } ) {
+	edit( { attributes, className } ) {
+		const { content } = attributes;
 		return (
 			<dt className={ classNames(className,`vk_faq_title` ) }>
 				<InnerBlocks
 					templateLock={ false }
+					template={ [
+						[ 'core/paragraph', { content: content} ],
+					] }
 				/>
 			</dt>
 		);

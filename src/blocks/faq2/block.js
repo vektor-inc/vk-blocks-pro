@@ -94,17 +94,25 @@ registerBlockType("vk-blocks/faq2", {
 		innerBlocks: [
 			{
 				name: 'vk-blocks/faq2-q',
-				attributes: {
-					/* translators: example text. */
-					content: title,
-				},
+				innerBlocks: [
+					{
+						name: 'core/paragraph',
+						attributes: {
+							content: title,
+						},
+					},
+				],
 			},
 			{
 				name: 'vk-blocks/faq2-a',
-				attributes: {
-					/* translators: example text. */
-					content: content,
-				},
+				innerBlocks: [
+					{
+						name: 'core/paragraph',
+						attributes: {
+							content: content,
+						},
+					},
+				],
 			},
 		],
 	},

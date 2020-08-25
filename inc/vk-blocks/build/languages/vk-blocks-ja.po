@@ -117,41 +117,65 @@ msgstr "スライド左"
 msgid "Slide Right"
 msgstr "スライド右"
 
-#: src/blocks/_pro/animation/block.js:63
+#: src/blocks/_pro/animation/block.js:60
+msgid "Left Right"
+msgstr "左右"
+
+#: src/blocks/_pro/animation/block.js:61
+msgid "Up Down"
+msgstr "上下"
+
+#: src/blocks/_pro/animation/block.js:62
+msgid "Trembling Y"
+msgstr "ぶるぶる（Y方向）"
+
+#: src/blocks/_pro/animation/block.js:63 src/blocks/balloon/block.js:222
+msgid "Trembling X"
+msgstr "ぶるぶる（X方向）"
+
+#: src/blocks/_pro/animation/block.js:64 src/blocks/balloon/block.js:226
+msgid "Pounding"
+msgstr "どきどき"
+
+#: src/blocks/_pro/animation/block.js:65 src/blocks/balloon/block.js:230
+msgid "Shaking"
+msgstr "ゆらゆら"
+
+#: src/blocks/_pro/animation/block.js:68
 msgid "Animation speed"
 msgstr "アニメーションの速度"
 
-#: src/blocks/_pro/animation/block.js:68
+#: src/blocks/_pro/animation/block.js:73
 msgid "Very Slow"
 msgstr "非常に遅い"
 
-#: src/blocks/_pro/animation/block.js:69
+#: src/blocks/_pro/animation/block.js:74
 msgid "Slow"
 msgstr "遅い"
 
-#: src/blocks/_pro/animation/block.js:71
+#: src/blocks/_pro/animation/block.js:76
 msgid "Fast"
 msgstr "速い"
 
-#: src/blocks/_pro/animation/block.js:72
+#: src/blocks/_pro/animation/block.js:77
 msgid "Very Fast"
 msgstr "非常に速い"
 
-#: src/blocks/_pro/animation/block.js:75
+#: src/blocks/_pro/animation/block.js:80
 msgid "Animation range"
 msgstr "アニメーションの距離"
 
-#: src/blocks/_pro/animation/block.js:80
+#: src/blocks/_pro/animation/block.js:85
 msgid "Short"
 msgstr "短い"
 
-#: src/blocks/_pro/animation/block.js:81 src/blocks/_pro/outer/block.js:181
+#: src/blocks/_pro/animation/block.js:86 src/blocks/_pro/outer/block.js:181
 #: src/blocks/_pro/slider/block.js:120 src/blocks/balloon/block.js:175
 #: src/blocks/button/block.js:158 src/blocks/faq/block.js:65
 msgid "Normal"
 msgstr "標準"
 
-#: src/blocks/_pro/animation/block.js:82
+#: src/blocks/_pro/animation/block.js:87
 msgid "Long"
 msgstr "長い"
 
@@ -848,18 +872,6 @@ msgstr "アニメーションのタイプを指定してください。"
 msgid "Trembling"
 msgstr "ぶるぶる"
 
-#: src/blocks/balloon/block.js:222
-msgid "Trembling X"
-msgstr "ぶるぶる（X方向）"
-
-#: src/blocks/balloon/block.js:226
-msgid "Pounding"
-msgstr "どきどき"
-
-#: src/blocks/balloon/block.js:230
-msgid "Shaking"
-msgstr "ゆらゆら"
-
 #: src/blocks/balloon/block.js:258 src/blocks/flow/block.js:106
 #: src/blocks/pr-blocks/block.js:164 src/blocks/pr-content/component.js:164
 #: src/blocks/pr-content/deprecated/component-deprecated.js:106
@@ -1213,14 +1225,18 @@ msgid "Heading"
 msgstr "見出し"
 
 #: src/blocks/heading/component.js:109
-#: src/blocks/heading/deprecated/block.js:390
+#: src/blocks/heading/deprecated/block.js:415
 #: src/blocks/heading/deprecated/component.js:318
+#: src/blocks/heading/deprecated/component_0_39_5.js:109
+#: src/blocks/heading/deprecated/component_0_40_0.js:109
 msgid "Input title…"
 msgstr "タイトルを入力"
 
 #: src/blocks/heading/component.js:122
-#: src/blocks/heading/deprecated/block.js:406
+#: src/blocks/heading/deprecated/block.js:431
 #: src/blocks/heading/deprecated/component.js:334
+#: src/blocks/heading/deprecated/component_0_39_5.js:122
+#: src/blocks/heading/deprecated/component_0_40_0.js:122
 msgid "Input sub text…"
 msgstr "サブテキストを入力"
 

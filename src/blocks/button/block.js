@@ -133,6 +133,14 @@ registerBlockType('vk-blocks/button', {
 							onChange={ (value) => setAttributes({ subCaption: value }) }
 							placeholder={ 'Sub Caption' }
 						/>
+
+						<TextControl
+							label={ __('Button URL', 'vk-blocks') }
+							value={ buttonUrl }
+							onChange={ (value) => setAttributes({ buttonUrl: value }) }
+							placeholder={ 'Button URL' }
+						/>
+
 						<CheckboxControl
 							label={ __('Open link new tab.', 'vk-blocks') }
 							checked={ buttonTarget }
@@ -304,19 +312,8 @@ registerBlockType('vk-blocks/button', {
 								allowedFormats={ ['bold', 'italic', 'strikethrough'] }
 								isSelected={ true }
 							/>
-						} />
-					{ isSelected && (
-						<form
-							className="block-library-button__inline-link"
-							onSubmit={ (event) => event.preventDefault() }>
-							<Dashicon icon="admin-links" />
-							<URLInput
-								value={ buttonUrl }
-								onChange={ (value) => setAttributes({ buttonUrl: value }) }
-							/>
-							<Button icon="editor-break" label={ __('Apply', 'vk-blocks') } type="submit" />
-						</form>
-					) }
+						}
+					/>
 				</div>
 			</Fragment>
 		);

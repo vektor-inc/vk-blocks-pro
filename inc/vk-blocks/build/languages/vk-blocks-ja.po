@@ -9,13 +9,45 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4.1\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-KeywordsList: __;_ex;_e;_x;_n\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: src/blocks/_helper/font-awesome-new.js:12 src/blocks/border-box/block.js:138
+#: src/blocks/_helper/example-data.js:10
+msgid "Theoretical Physicist"
+msgstr ""
+
+#: src/blocks/_helper/example-data.js:11
+msgid "Profile"
+msgstr "プロフィール"
+
+#: src/blocks/_helper/example-data.js:12
+msgid "Albert Einstein"
+msgstr ""
+
+#: src/blocks/_helper/example-data.js:13
+msgid "14 March 1879 – 18 April 1955"
+msgstr ""
+
+#: src/blocks/_helper/example-data.js:2
+msgid "Lorem ipsum dolor"
+msgstr ""
+
+#: src/blocks/_helper/example-data.js:3
+#: src/blocks/_pro/card-item/component.js:167
+#: src/blocks/_pro/card-item/deprecated.js:842
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolore magna aliqua. "
+msgstr ""
+
+#: src/blocks/_helper/example-data.js:4
+msgid "Lorem ipsum"
+msgstr ""
+
+#: src/blocks/_helper/font-awesome-new.js:12 src/blocks/border-box/block.js:140
 #: src/blocks/border-box/font-awesome-new.js:21
 msgid "Icon"
 msgstr "アイコン"
@@ -57,69 +89,94 @@ msgstr "Font Awesome の class 名を入力してください。"
 msgid "Ex) fas fa-arrow-circle-right"
 msgstr "例) fas fa-arrow-circle-right"
 
-#: src/blocks/_pro/animation/block.js:32
+#: src/blocks/_pro/animation/block.js:33
 msgid "Animation"
 msgstr "アニメーション"
 
-#: src/blocks/_pro/animation/block.js:49
+#: src/blocks/_pro/animation/block.js:50
 msgid "Animation Settings"
 msgstr "アニメーション設定"
 
-#: src/blocks/_pro/animation/block.js:50
+#: src/blocks/_pro/animation/block.js:51
 msgid "Animation effect"
 msgstr "アニメーションの効果"
 
-#: src/blocks/_pro/animation/block.js:55
+#: src/blocks/_pro/animation/block.js:56
 msgid "Fade In"
 msgstr "フェードイン"
 
-#: src/blocks/_pro/animation/block.js:56
+#: src/blocks/_pro/animation/block.js:57
 msgid "Slide Up"
 msgstr "スライドアップ"
 
-#: src/blocks/_pro/animation/block.js:57
+#: src/blocks/_pro/animation/block.js:58
 msgid "Slide Left"
 msgstr "スライド左"
 
-#: src/blocks/_pro/animation/block.js:58
+#: src/blocks/_pro/animation/block.js:59
 msgid "Slide Right"
 msgstr "スライド右"
 
+#: src/blocks/_pro/animation/block.js:60
+msgid "Left Right"
+msgstr "左右"
+
+#: src/blocks/_pro/animation/block.js:61
+msgid "Up Down"
+msgstr "上下"
+
 #: src/blocks/_pro/animation/block.js:62
+msgid "Trembling Y"
+msgstr "ぶるぶる（Y方向）"
+
+#: src/blocks/_pro/animation/block.js:63 src/blocks/balloon/block.js:222
+msgid "Trembling X"
+msgstr "ぶるぶる（X方向）"
+
+#: src/blocks/_pro/animation/block.js:64 src/blocks/balloon/block.js:226
+msgid "Pounding"
+msgstr "どきどき"
+
+#: src/blocks/_pro/animation/block.js:65 src/blocks/balloon/block.js:230
+msgid "Shaking"
+msgstr "ゆらゆら"
+
+#: src/blocks/_pro/animation/block.js:68
 msgid "Animation speed"
 msgstr "アニメーションの速度"
 
-#: src/blocks/_pro/animation/block.js:67
+#: src/blocks/_pro/animation/block.js:73
 msgid "Very Slow"
 msgstr "非常に遅い"
 
-#: src/blocks/_pro/animation/block.js:68
+#: src/blocks/_pro/animation/block.js:74
 msgid "Slow"
 msgstr "遅い"
 
-#: src/blocks/_pro/animation/block.js:70
+#: src/blocks/_pro/animation/block.js:76
 msgid "Fast"
 msgstr "速い"
 
-#: src/blocks/_pro/animation/block.js:71
+#: src/blocks/_pro/animation/block.js:77
 msgid "Very Fast"
 msgstr "非常に速い"
 
-#: src/blocks/_pro/animation/block.js:74
+#: src/blocks/_pro/animation/block.js:80
 msgid "Animation range"
 msgstr "アニメーションの距離"
 
-#: src/blocks/_pro/animation/block.js:79
+#: src/blocks/_pro/animation/block.js:85
 msgid "Short"
 msgstr "短い"
 
-#: src/blocks/_pro/animation/block.js:80 src/blocks/_pro/outer/block.js:181
-#: src/blocks/_pro/slider/block.js:120 src/blocks/balloon/block.js:163
-#: src/blocks/button/block.js:158 src/blocks/faq/block.js:64
+#: src/blocks/_pro/animation/block.js:86 src/blocks/_pro/outer/block.js:181
+#: src/blocks/_pro/slider/block.js:120 src/blocks/balloon/block.js:175
+#: src/blocks/button/block.js:158 src/blocks/faq/block.js:65
+#: src/blocks/faq2/block.js:65
 msgid "Normal"
 msgstr "標準"
 
-#: src/blocks/_pro/animation/block.js:81
+#: src/blocks/_pro/animation/block.js:87
 msgid "Long"
 msgstr "長い"
 
@@ -141,13 +198,6 @@ msgstr "https://example.com"
 msgid "Delete Image"
 msgstr "画像を削除"
 
-#: src/blocks/_pro/card-item/component.js:167
-#: src/blocks/_pro/card-item/deprecated.js:842
-msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
-"tempor incididunt ut labore et dolore magna aliqua. "
-msgstr ""
-
 #: src/blocks/_pro/card-item/component.js:213
 #: src/blocks/_pro/card-item/deprecated.js:887
 #: src/blocks/_pro/card/block.js:147 src/blocks/_pro/icon-card/block.js:105
@@ -155,8 +205,8 @@ msgid "Title"
 msgstr "タイトルを入力"
 
 #: src/blocks/_pro/card-item/component.js:99
-#: src/blocks/_pro/card-item/deprecated.js:775 src/blocks/balloon/block.js:241
-#: src/blocks/flow/block.js:96 src/blocks/pr-blocks/block.js:149
+#: src/blocks/_pro/card-item/deprecated.js:775 src/blocks/balloon/block.js:253
+#: src/blocks/flow/block.js:105 src/blocks/pr-blocks/block.js:168
 #: src/blocks/pr-content/component.js:157
 #: src/blocks/pr-content/deprecated/component-deprecated.js:102
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:116
@@ -263,32 +313,32 @@ msgstr "アイコンカードアイテム"
 msgid "PR Block Setting"
 msgstr "PR Block 設定"
 
-#: src/blocks/_pro/icon-card-item/block.js:42 src/blocks/pr-blocks/block.js:287
+#: src/blocks/_pro/icon-card-item/block.js:42 src/blocks/pr-blocks/block.js:306
 msgid "Link URL:"
 msgstr "リンクURL:"
 
 #: src/blocks/_pro/icon-card-item/block.js:49 src/blocks/button/block.js:137
-#: src/blocks/pr-blocks/block.js:294 src/blocks/pr-content/block.js:139
+#: src/blocks/pr-blocks/block.js:313 src/blocks/pr-content/block.js:140
 msgid "Open link new tab."
 msgstr "リンクを別ウィンドウで開く"
 
 #: src/blocks/_pro/icon-card-item/block.js:55
-#: src/blocks/_pro/step-item/block.js:40 src/blocks/border-box/block.js:141
-#: src/blocks/button/block.js:269 src/blocks/pr-content/block.js:175
+#: src/blocks/_pro/step-item/block.js:40 src/blocks/border-box/block.js:143
+#: src/blocks/button/block.js:269 src/blocks/pr-content/block.js:176
 msgid "Icon ( Font Awesome )"
 msgstr "アイコン ( Font Awesome )"
 
-#: src/blocks/_pro/icon-card-item/block.js:75 src/blocks/pr-blocks/block.js:318
+#: src/blocks/_pro/icon-card-item/block.js:75 src/blocks/pr-blocks/block.js:337
 msgid "Icon Background:"
 msgstr "アイコン背景:"
 
 #: src/blocks/_pro/icon-card-item/block.js:78 src/blocks/button/block.js:222
-#: src/blocks/pr-blocks/block.js:321
+#: src/blocks/pr-blocks/block.js:340
 msgid "Solid color"
 msgstr "ベタ塗り"
 
 #: src/blocks/_pro/icon-card-item/block.js:79 src/blocks/button/block.js:230
-#: src/blocks/pr-blocks/block.js:322
+#: src/blocks/pr-blocks/block.js:341
 msgid "No background"
 msgstr "背景なし"
 
@@ -330,7 +380,7 @@ msgid "Background Setting"
 msgstr "背景設定"
 
 #: src/blocks/_pro/outer/block.js:104 src/blocks/_pro/slider-item/block.js:111
-#: src/blocks/pr-content/block.js:98
+#: src/blocks/pr-content/block.js:99
 msgid "Color Setting"
 msgstr "色設定"
 
@@ -375,7 +425,7 @@ msgid "Parallax (Non-guaranteed)"
 msgstr "パララックス（非保証）"
 
 #: src/blocks/_pro/outer/block.js:169 src/blocks/_pro/slider-item/block.js:69
-#: src/blocks/pr-content/block.js:195
+#: src/blocks/pr-content/block.js:196
 msgid "Layout Setting"
 msgstr "レイアウト設定"
 
@@ -427,7 +477,7 @@ msgstr ""
 msgid "Divider Setting"
 msgstr "区切りの設定"
 
-#: src/blocks/_pro/outer/block.js:244 src/blocks/balloon/block.js:134
+#: src/blocks/_pro/outer/block.js:244 src/blocks/balloon/block.js:146
 msgid "Type"
 msgstr "タイプ"
 
@@ -468,14 +518,14 @@ msgid "Border type"
 msgstr "枠線の種類"
 
 #: src/blocks/_pro/outer/block.js:322 src/blocks/_pro/step-item/block.js:101
-#: src/blocks/_pro/timeline-item/block.js:83 src/blocks/balloon/block.js:202
-#: src/blocks/staff/block.js:88
+#: src/blocks/_pro/timeline-item/block.js:83 src/blocks/balloon/block.js:214
+#: src/blocks/staff/block.js:89
 msgid "None"
 msgstr "なし"
 
 #: src/blocks/_pro/outer/block.js:326 src/blocks/_pro/step-item/block.js:78
 #: src/blocks/_pro/timeline-item/block.js:64 src/blocks/group-style/block.js:95
-#: src/blocks/pr-content/block.js:147
+#: src/blocks/pr-content/block.js:148
 msgid "Solid"
 msgstr "直線"
 
@@ -649,8 +699,8 @@ msgid "Ex,6:00AM"
 msgstr "例) 午前 6:00"
 
 #: src/blocks/_pro/step-item/block.js:61
-#: src/blocks/_pro/timeline-item/block.js:41 src/blocks/border-box/block.js:86
-#: src/blocks/staff/block.js:103
+#: src/blocks/_pro/timeline-item/block.js:41 src/blocks/border-box/block.js:88
+#: src/blocks/staff/block.js:104
 msgid "Color"
 msgstr "色"
 
@@ -670,8 +720,8 @@ msgstr "アウトライン"
 #: src/blocks/_pro/table-of-contents-new/block.js:56
 #: src/blocks/_pro/table-of-contents/block.js:54
 #: src/blocks/_pro/timeline-item/block.js:79
-#: src/blocks/heading-style/block.js:33 src/blocks/heading/block.js:131
-#: src/blocks/list-style/block.js:104 src/blocks/staff/block.js:84
+#: src/blocks/heading-style/block.js:33 src/blocks/heading/block.js:132
+#: src/blocks/list-style/block.js:104 src/blocks/staff/block.js:85
 msgid "Default"
 msgstr "標準"
 
@@ -722,168 +772,152 @@ msgstr "ラベル"
 msgid "Timeline"
 msgstr "タイムライン"
 
-#: src/blocks/alert/block.js:17
+#: src/blocks/alert/block.js:18
 msgid "Alert"
 msgstr "アラート"
 
-#: src/blocks/alert/block.js:48 src/blocks/heading/block.js:125
+#: src/blocks/alert/block.js:55 src/blocks/heading/block.js:126
 msgid "Style Settings"
 msgstr "スタイル設定"
 
-#: src/blocks/alert/block.js:53 src/blocks/button/block.js:249
-#: src/blocks/group-style/block.js:131 src/blocks/pr-content/block.js:159
+#: src/blocks/alert/block.js:60 src/blocks/button/block.js:249
+#: src/blocks/group-style/block.js:131 src/blocks/pr-content/block.js:160
 msgid "Success"
 msgstr "Success"
 
-#: src/blocks/alert/block.js:54 src/blocks/button/block.js:250
-#: src/blocks/group-style/block.js:127 src/blocks/pr-content/block.js:160
+#: src/blocks/alert/block.js:61 src/blocks/button/block.js:250
+#: src/blocks/group-style/block.js:127 src/blocks/pr-content/block.js:161
 msgid "Info"
 msgstr "Info"
 
-#: src/blocks/alert/block.js:55 src/blocks/button/block.js:251
-#: src/blocks/group-style/block.js:135 src/blocks/pr-content/block.js:161
+#: src/blocks/alert/block.js:62 src/blocks/button/block.js:251
+#: src/blocks/group-style/block.js:135 src/blocks/pr-content/block.js:162
 msgid "Warning"
 msgstr "Warning"
 
-#: src/blocks/alert/block.js:56 src/blocks/button/block.js:252
-#: src/blocks/group-style/block.js:139 src/blocks/pr-content/block.js:162
+#: src/blocks/alert/block.js:63 src/blocks/button/block.js:252
+#: src/blocks/group-style/block.js:139 src/blocks/pr-content/block.js:163
 msgid "Danger"
 msgstr "Danger"
 
-#: src/blocks/balloon/block.js:111
+#: src/blocks/balloon/block.js:123
 msgid "Balloon setting"
 msgstr "フキダシ設定"
 
-#: src/blocks/balloon/block.js:113 src/blocks/heading/block.js:200
+#: src/blocks/balloon/block.js:125 src/blocks/heading/block.js:201
 msgid "Position"
 msgstr "位置"
 
-#: src/blocks/balloon/block.js:114
+#: src/blocks/balloon/block.js:126
 msgid "Please specify the layout of the balloon."
 msgstr "吹き出しの配置を指定してください。"
 
-#: src/blocks/balloon/block.js:122 src/blocks/button/block.js:178
-#: src/blocks/pr-content/block.js:203
+#: src/blocks/balloon/block.js:134 src/blocks/button/block.js:178
+#: src/blocks/pr-content/block.js:204
 #: src/components/display-items-control/index.js:94
 msgid "Left"
 msgstr "左"
 
-#: src/blocks/balloon/block.js:130 src/blocks/button/block.js:194
-#: src/blocks/pr-content/block.js:202
+#: src/blocks/balloon/block.js:142 src/blocks/button/block.js:194
+#: src/blocks/pr-content/block.js:203
 #: src/components/display-items-control/index.js:102
 msgid "Right"
 msgstr "右"
 
-#: src/blocks/balloon/block.js:135
+#: src/blocks/balloon/block.js:147
 msgid "Please select the type of balloon."
 msgstr "吹き出しのタイプを指定してください。"
 
-#: src/blocks/balloon/block.js:143
+#: src/blocks/balloon/block.js:155
 msgid "Serif"
 msgstr "セリフ"
 
-#: src/blocks/balloon/block.js:151
+#: src/blocks/balloon/block.js:163
 msgid "Thinking"
 msgstr "吹き出し"
 
-#: src/blocks/balloon/block.js:155
+#: src/blocks/balloon/block.js:167
 msgid "Image Style"
 msgstr "画像スタイル"
 
-#: src/blocks/balloon/block.js:171
+#: src/blocks/balloon/block.js:183
 msgid "Rounded"
 msgstr "角丸"
 
-#: src/blocks/balloon/block.js:179
+#: src/blocks/balloon/block.js:191
 msgid "Circle"
 msgstr "丸抜き"
 
-#: src/blocks/balloon/block.js:182
+#: src/blocks/balloon/block.js:194
 msgid "Background color of speech balloon"
 msgstr "吹き出しの背景色"
 
-#: src/blocks/balloon/block.js:188
+#: src/blocks/balloon/block.js:200
 msgid "Default Icon Setting"
 msgstr "デフォルトアイコン設定"
 
-#: src/blocks/balloon/block.js:192
+#: src/blocks/balloon/block.js:204
 msgid "You can register default icons from Settings > VK Blocks in Admin."
 msgstr ""
 "管理画面の 設定 > VK Blocks から よく使うアイコンを登録する事ができます。"
 
-#: src/blocks/balloon/block.js:194
+#: src/blocks/balloon/block.js:206
 msgid "Animation setting"
 msgstr "アニメーション設定"
 
-#: src/blocks/balloon/block.js:195
+#: src/blocks/balloon/block.js:207
 msgid "Please select the type of animation."
 msgstr "アニメーションのタイプを指定してください。"
 
-#: src/blocks/balloon/block.js:206
+#: src/blocks/balloon/block.js:218
 msgid "Trembling"
 msgstr "ぶるぶる"
 
-#: src/blocks/balloon/block.js:210
-msgid "Trembling X"
-msgstr "ぶるぶる（X方向）"
-
-#: src/blocks/balloon/block.js:214
-msgid "Pounding"
-msgstr "どきどき"
-
-#: src/blocks/balloon/block.js:218
-msgid "Shaking"
-msgstr "ゆらゆら"
-
-#: src/blocks/balloon/block.js:246 src/blocks/flow/block.js:97
-#: src/blocks/pr-blocks/block.js:145 src/blocks/pr-content/component.js:164
+#: src/blocks/balloon/block.js:258 src/blocks/flow/block.js:106
+#: src/blocks/pr-blocks/block.js:164 src/blocks/pr-content/component.js:164
 #: src/blocks/pr-content/deprecated/component-deprecated.js:106
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:120
 #: src/blocks/pr-content/deprecated/componentV1.js:192
 msgid "Upload image"
 msgstr "画像をアップロード"
 
-#: src/blocks/balloon/block.js:25
+#: src/blocks/balloon/block.js:26
 msgid "Ballon"
 msgstr "吹き出し"
 
-#: src/blocks/balloon/block.js:257
+#: src/blocks/balloon/block.js:269
 msgid "Icon Name"
 msgstr "アイコンの名前"
-
-#: src/blocks/balloon/block.js:266 src/blocks/button/block.js:303
-msgid "Input text"
-msgstr "文字を入力"
 
 #: src/blocks/border-box/Body.js:21 src/blocks/border-box/deprecated.js:20
 msgid "Please enter a title."
 msgstr "見出しを入力してください。"
 
-#: src/blocks/border-box/block.js:101
+#: src/blocks/border-box/block.js:103
 msgid "Orange"
 msgstr "オレンジ"
 
-#: src/blocks/border-box/block.js:105
+#: src/blocks/border-box/block.js:107
 msgid "Blue"
 msgstr "青"
 
-#: src/blocks/border-box/block.js:109
+#: src/blocks/border-box/block.js:111
 msgid "Green"
 msgstr "緑"
 
-#: src/blocks/border-box/block.js:113
+#: src/blocks/border-box/block.js:115
 msgid "Black"
 msgstr "黒"
 
-#: src/blocks/border-box/block.js:120
+#: src/blocks/border-box/block.js:122
 msgid "Background Color"
 msgstr "背景色"
 
-#: src/blocks/border-box/block.js:128
+#: src/blocks/border-box/block.js:130
 msgid "Transparent"
 msgstr "透過"
 
-#: src/blocks/border-box/block.js:132
+#: src/blocks/border-box/block.js:134
 msgid "White"
 msgstr "白"
 
@@ -891,35 +925,35 @@ msgstr "白"
 msgid "Border Box"
 msgstr "枠線ボックス"
 
-#: src/blocks/border-box/block.js:55
+#: src/blocks/border-box/block.js:57
 msgid "Solid Angle Tab"
 msgstr "直線 ピン角 タブ"
 
-#: src/blocks/border-box/block.js:60
+#: src/blocks/border-box/block.js:62
 msgid "Solid Round Tab"
 msgstr "直線 角丸 タブ"
 
-#: src/blocks/border-box/block.js:64
+#: src/blocks/border-box/block.js:66
 msgid "Solid Angle Banner"
 msgstr "直線 ピン角 バナー"
 
-#: src/blocks/border-box/block.js:68
+#: src/blocks/border-box/block.js:70
 msgid "Solid Angle Onborder"
 msgstr "直線 ピンカド 線上"
 
-#: src/blocks/border-box/block.js:72
+#: src/blocks/border-box/block.js:74
 msgid "Solid Angle Inner"
 msgstr "直線 ピン角 内側"
 
-#: src/blocks/border-box/block.js:76
+#: src/blocks/border-box/block.js:78
 msgid "Solid Angle iconFeature"
 msgstr "直線 ピン角 アイコン"
 
-#: src/blocks/border-box/block.js:89 src/blocks/group-style/block.js:50
+#: src/blocks/border-box/block.js:91 src/blocks/group-style/block.js:50
 msgid "Border Color"
 msgstr "線の色"
 
-#: src/blocks/border-box/block.js:97
+#: src/blocks/border-box/block.js:99
 msgid "Red"
 msgstr "赤"
 
@@ -973,23 +1007,23 @@ msgid ""
 "If you select \"No background\", that you need to select a Custom Color."
 msgstr "もし「背景なし」を選択した場合はカスタムカラーで色を指定してください。"
 
-#: src/blocks/button/block.js:244 src/blocks/pr-content/block.js:154
+#: src/blocks/button/block.js:244 src/blocks/pr-content/block.js:155
 msgid "Default Color:"
 msgstr "標準色:"
 
-#: src/blocks/button/block.js:247 src/blocks/pr-content/block.js:157
+#: src/blocks/button/block.js:247 src/blocks/pr-content/block.js:158
 msgid "Primary"
 msgstr "Primary"
 
-#: src/blocks/button/block.js:248 src/blocks/pr-content/block.js:158
+#: src/blocks/button/block.js:248 src/blocks/pr-content/block.js:159
 msgid "Secondary"
 msgstr "Secondary"
 
-#: src/blocks/button/block.js:253 src/blocks/pr-content/block.js:163
+#: src/blocks/button/block.js:253 src/blocks/pr-content/block.js:164
 msgid "Light"
 msgstr "Light"
 
-#: src/blocks/button/block.js:254 src/blocks/pr-content/block.js:164
+#: src/blocks/button/block.js:254 src/blocks/pr-content/block.js:165
 msgid "Dark"
 msgstr "Dark"
 
@@ -1005,73 +1039,89 @@ msgstr ""
 "このカスタムカラーはデフォルトのカラーを上書きします。 デフォルトの色を使用し"
 "たい場合は、クリアボタンをクリックしてください。"
 
-#: src/blocks/button/block.js:271 src/blocks/heading/block.js:188
-#: src/blocks/pr-content/block.js:177
+#: src/blocks/button/block.js:271 src/blocks/heading/block.js:189
+#: src/blocks/pr-content/block.js:178
 msgid "Before text"
 msgstr "文字の前"
 
-#: src/blocks/button/block.js:279 src/blocks/heading/block.js:191
-#: src/blocks/pr-content/block.js:185
+#: src/blocks/button/block.js:279 src/blocks/heading/block.js:192
+#: src/blocks/pr-content/block.js:186
 msgid "After text"
 msgstr "文字の後"
+
+#: src/blocks/button/block.js:303
+msgid "Input text"
+msgstr "文字を入力"
 
 #: src/blocks/button/block.js:317
 msgid "Apply"
 msgstr ""
 
-#: src/blocks/faq/block.js:106
+#: src/blocks/faq/block.js:120
 msgid "Please enter a question."
 msgstr "質問を入力してください。"
 
-#: src/blocks/faq/block.js:45
-msgid "FAQ"
-msgstr "質問と解答"
+#: src/blocks/faq/block.js:46
+msgid "Classic FAQ"
+msgstr "旧 FAQ"
 
-#: src/blocks/faq/block.js:69
+#: src/blocks/faq/block.js:70 src/blocks/faq2/block.js:70
 msgid "Bgfill Circle"
 msgstr "背景塗り 円形"
 
-#: src/blocks/faq/block.js:73
+#: src/blocks/faq/block.js:74 src/blocks/faq2/block.js:74
 msgid "Bgfill Square"
 msgstr "背景塗り ピン角"
 
-#: src/blocks/faq/block.js:77
+#: src/blocks/faq/block.js:78 src/blocks/faq2/block.js:78
 msgid "Bgfill Rounded"
 msgstr "背景塗り 角丸"
 
-#: src/blocks/faq/block.js:81
+#: src/blocks/faq/block.js:82 src/blocks/faq2/block.js:82
 msgid "Border Circle"
 msgstr "枠線 円形"
 
-#: src/blocks/faq/block.js:85
+#: src/blocks/faq/block.js:86 src/blocks/faq2/block.js:86
 msgid "Border Square"
 msgstr "枠線 ピン角"
 
-#: src/blocks/faq/block.js:89
+#: src/blocks/faq/block.js:90 src/blocks/faq2/block.js:90
 msgid "Border Rounded"
 msgstr "枠線 角丸"
 
-#: src/blocks/flow/block.js:16
+#: src/blocks/faq2-a/block.js:20
+msgid "FAQ Answer"
+msgstr "FAQ 回答"
+
+#: src/blocks/faq2-q/block.js:24
+msgid "FAQ Question"
+msgstr "FAQ 質問"
+
+#: src/blocks/faq2/block.js:45
+msgid "New FAQ"
+msgstr "新 FAQ"
+
+#: src/blocks/flow/block.js:17
 msgid "Flow"
 msgstr "フロー"
 
-#: src/blocks/flow/block.js:51
+#: src/blocks/flow/block.js:60
 msgid "Display of arrow"
 msgstr "矢印の表示"
 
-#: src/blocks/flow/block.js:55
+#: src/blocks/flow/block.js:64
 msgid "Arrow display"
 msgstr "矢印を表示する"
 
-#: src/blocks/flow/block.js:56
+#: src/blocks/flow/block.js:65
 msgid "Arrow hidden"
 msgstr "矢印を表示しない"
 
-#: src/blocks/flow/block.js:74
+#: src/blocks/flow/block.js:83
 msgid "Input title"
 msgstr "タイトルを入力"
 
-#: src/blocks/flow/block.js:82
+#: src/blocks/flow/block.js:91
 msgid "Input content"
 msgstr "説明を入力"
 
@@ -1103,7 +1153,7 @@ msgstr "左右線"
 msgid "Brackets black"
 msgstr "括弧 黒"
 
-#: src/blocks/heading-style/block.js:38 src/blocks/heading/block.js:132
+#: src/blocks/heading-style/block.js:38 src/blocks/heading/block.js:133
 msgid "Plain"
 msgstr "装飾無し"
 
@@ -1127,59 +1177,59 @@ msgstr "直線 上下 黒"
 msgid "Solid border bottom black"
 msgstr "直線 下線 黒"
 
-#: src/blocks/heading/block.js:127
+#: src/blocks/heading/block.js:128
 msgid "Heading style"
 msgstr "見出しスタイル"
 
-#: src/blocks/heading/block.js:136
+#: src/blocks/heading/block.js:137
 msgid "Margin Setting"
 msgstr "余白設定"
 
-#: src/blocks/heading/block.js:137
+#: src/blocks/heading/block.js:138
 msgid "Margin bottom size of after hedding  (rem)"
 msgstr "見出しテキストの下部の余白 (rem)"
 
-#: src/blocks/heading/block.js:147
+#: src/blocks/heading/block.js:148
 msgid "Margin bottom size of after this block (rem)"
 msgstr "このブロック全体の下部の余白 (rem)"
 
-#: src/blocks/heading/block.js:158
+#: src/blocks/heading/block.js:159
 msgid "Heading Settings"
 msgstr "見出し設定"
 
-#: src/blocks/heading/block.js:159
+#: src/blocks/heading/block.js:160
 msgid "Level"
 msgstr "レベル"
 
-#: src/blocks/heading/block.js:166
+#: src/blocks/heading/block.js:167
 msgid "Text Alignment"
 msgstr "テキストの水平位置"
 
-#: src/blocks/heading/block.js:183
+#: src/blocks/heading/block.js:184
 msgid "Text Color"
 msgstr "文字の色"
 
-#: src/blocks/heading/block.js:187
+#: src/blocks/heading/block.js:188
 msgid "Font Awesome Icon Settings"
 msgstr "Font Awesome アイコン設定"
 
-#: src/blocks/heading/block.js:194
+#: src/blocks/heading/block.js:195
 msgid "Icon Color"
 msgstr "アイコンの色"
 
-#: src/blocks/heading/block.js:198
+#: src/blocks/heading/block.js:199
 msgid "Sub Text Settings"
 msgstr "サブテキスト設定"
 
-#: src/blocks/heading/block.js:203
+#: src/blocks/heading/block.js:204
 msgid "Display"
 msgstr "表示"
 
-#: src/blocks/heading/block.js:204
+#: src/blocks/heading/block.js:205
 msgid "Hide"
 msgstr "非表示"
 
-#: src/blocks/heading/block.js:208
+#: src/blocks/heading/block.js:209
 msgid "Text size (rem)"
 msgstr "文字サイズ (rem)"
 
@@ -1188,14 +1238,18 @@ msgid "Heading"
 msgstr "見出し"
 
 #: src/blocks/heading/component.js:109
-#: src/blocks/heading/deprecated/block.js:390
+#: src/blocks/heading/deprecated/block.js:415
 #: src/blocks/heading/deprecated/component.js:318
+#: src/blocks/heading/deprecated/component_0_39_5.js:109
+#: src/blocks/heading/deprecated/component_0_40_0.js:109
 msgid "Input title…"
 msgstr "タイトルを入力"
 
 #: src/blocks/heading/component.js:122
-#: src/blocks/heading/deprecated/block.js:406
+#: src/blocks/heading/deprecated/block.js:431
 #: src/blocks/heading/deprecated/component.js:334
+#: src/blocks/heading/deprecated/component_0_39_5.js:122
+#: src/blocks/heading/deprecated/component_0_40_0.js:122
 msgid "Input sub text…"
 msgstr "サブテキストを入力"
 
@@ -1314,91 +1368,91 @@ msgstr "数字-四角"
 msgid "List Icon Color"
 msgstr "リストアイコンの色"
 
-#: src/blocks/pr-blocks/block.js:160
-msgid "PR Block1 Setting"
-msgstr "PR Block1 設定"
-
-#: src/blocks/pr-blocks/block.js:175
-msgid "Icon 1"
-msgstr "アイコン 1"
-
-#: src/blocks/pr-blocks/block.js:205
-msgid "When you have an image. Image is displayed with priority"
-msgstr "画像を設定した場合は画像が優先して表示されます。"
-
-#: src/blocks/pr-blocks/block.js:207
-msgid "PR Image 1"
-msgstr "PR 画像 1"
-
-#: src/blocks/pr-blocks/block.js:223
-msgid "PR Block2 Setting"
-msgstr "PR Block2 設定"
-
-#: src/blocks/pr-blocks/block.js:238
-msgid "Icon 2"
-msgstr "アイコン 2"
-
-#: src/blocks/pr-blocks/block.js:269
-msgid "PR Image 2"
-msgstr "PR 画像 2"
-
-#: src/blocks/pr-blocks/block.js:285
-msgid "PR Block3 Setting"
-msgstr "PR Block3 設定"
-
-#: src/blocks/pr-blocks/block.js:300
-msgid "Icon 3"
-msgstr "アイコン 3"
-
-#: src/blocks/pr-blocks/block.js:329
-msgid "When you have an image. Image is displayed with priority."
-msgstr "画像を設定した場合は画像が優先して表示されます。"
-
-#: src/blocks/pr-blocks/block.js:331
-msgid "PR Image 3"
-msgstr "PR 画像 3"
-
-#: src/blocks/pr-blocks/block.js:82
+#: src/blocks/pr-blocks/block.js:100
 msgid "PR Blocks"
 msgstr "PR Blocks"
 
-#: src/blocks/pr-content/block.js:101
+#: src/blocks/pr-blocks/block.js:179
+msgid "PR Block1 Setting"
+msgstr "PR Block1 設定"
+
+#: src/blocks/pr-blocks/block.js:194
+msgid "Icon 1"
+msgstr "アイコン 1"
+
+#: src/blocks/pr-blocks/block.js:224
+msgid "When you have an image. Image is displayed with priority"
+msgstr "画像を設定した場合は画像が優先して表示されます。"
+
+#: src/blocks/pr-blocks/block.js:226
+msgid "PR Image 1"
+msgstr "PR 画像 1"
+
+#: src/blocks/pr-blocks/block.js:242
+msgid "PR Block2 Setting"
+msgstr "PR Block2 設定"
+
+#: src/blocks/pr-blocks/block.js:257
+msgid "Icon 2"
+msgstr "アイコン 2"
+
+#: src/blocks/pr-blocks/block.js:288
+msgid "PR Image 2"
+msgstr "PR 画像 2"
+
+#: src/blocks/pr-blocks/block.js:304
+msgid "PR Block3 Setting"
+msgstr "PR Block3 設定"
+
+#: src/blocks/pr-blocks/block.js:319
+msgid "Icon 3"
+msgstr "アイコン 3"
+
+#: src/blocks/pr-blocks/block.js:348
+msgid "When you have an image. Image is displayed with priority."
+msgstr "画像を設定した場合は画像が優先して表示されます。"
+
+#: src/blocks/pr-blocks/block.js:350
+msgid "PR Image 3"
+msgstr "PR 画像 3"
+
+#: src/blocks/pr-content/block.js:102
 msgid "Title Color"
 msgstr "見出しの色"
 
-#: src/blocks/pr-content/block.js:107
+#: src/blocks/pr-content/block.js:108
 msgid "Content Color"
 msgstr "本文の色"
 
-#: src/blocks/pr-content/block.js:113
+#: src/blocks/pr-content/block.js:114
 msgid "Image Border Color"
 msgstr "画像の線の色"
 
-#: src/blocks/pr-content/block.js:121
+#: src/blocks/pr-content/block.js:122
 msgid "Button Setting"
 msgstr "ボタン設定"
 
-#: src/blocks/pr-content/block.js:124
+#: src/blocks/pr-content/block.js:125
 msgid "Button Text"
 msgstr "ボタンの文字"
 
-#: src/blocks/pr-content/block.js:131
+#: src/blocks/pr-content/block.js:132
 msgid "Link URL"
 msgstr "リンクURL"
 
-#: src/blocks/pr-content/block.js:143
+#: src/blocks/pr-content/block.js:144
 msgid "Button Type"
 msgstr "ボタンタイプ"
 
-#: src/blocks/pr-content/block.js:148
+#: src/blocks/pr-content/block.js:149
 msgid "Ghost"
 msgstr "ゴーストボタン"
 
-#: src/blocks/pr-content/block.js:168
+#: src/blocks/pr-content/block.js:169
 msgid "Button Color"
 msgstr "ボタンの色"
 
-#: src/blocks/pr-content/block.js:199
+#: src/blocks/pr-content/block.js:200
 msgid "Layout Type"
 msgstr "レイアウトタイプ"
 
@@ -1424,27 +1478,27 @@ msgstr "本文を入力してください。"
 msgid "Responsive Spacer"
 msgstr "レスポンシブスペーサー"
 
-#: src/blocks/spacer/block.js:45
+#: src/blocks/spacer/block.js:46
 msgid "Height for each device."
 msgstr "デバイス毎の高さ"
 
-#: src/blocks/staff/block.js:105
+#: src/blocks/staff/block.js:106
 msgid "Staff name"
 msgstr "名前"
 
-#: src/blocks/staff/block.js:113
+#: src/blocks/staff/block.js:114
 msgid "Name caption"
 msgstr "名前のキャプション"
 
-#: src/blocks/staff/block.js:121 src/blocks/staff/component.js:58
+#: src/blocks/staff/block.js:122 src/blocks/staff/component.js:58
 msgid "Role position"
 msgstr "役職"
 
-#: src/blocks/staff/block.js:129 src/blocks/staff/component.js:66
+#: src/blocks/staff/block.js:130 src/blocks/staff/component.js:66
 msgid "Profile title"
 msgstr "プロフィールタイトル"
 
-#: src/blocks/staff/block.js:137 src/blocks/staff/component.js:74
+#: src/blocks/staff/block.js:138 src/blocks/staff/component.js:74
 msgid "Profile text"
 msgstr "プロフィールテキスト"
 
@@ -1452,23 +1506,23 @@ msgstr "プロフィールテキスト"
 msgid "Staff"
 msgstr "スタッフ"
 
-#: src/blocks/staff/block.js:61
+#: src/blocks/staff/block.js:62
 msgid "Layout"
 msgstr "レイアウト"
 
-#: src/blocks/staff/block.js:72
+#: src/blocks/staff/block.js:73
 msgid "Image left"
 msgstr "画像 左"
 
-#: src/blocks/staff/block.js:77
+#: src/blocks/staff/block.js:78
 msgid "Image border"
 msgstr "画像の線"
 
-#: src/blocks/staff/block.js:93
+#: src/blocks/staff/block.js:94
 msgid "Alt text"
 msgstr "画像の代替テキスト"
 
-#: src/blocks/staff/block.js:95
+#: src/blocks/staff/block.js:96
 msgid "Set the alt text for profile image"
 msgstr "プロフィール画像の代替テキストを設定します"
 
@@ -1608,6 +1662,22 @@ msgstr "rel属性"
 msgid "VK Blocks Templates"
 msgstr "VK Blocks テンプレート"
 
+#: src/translation_dummy.js:10
+msgid "CSS Optimize Setting"
+msgstr "CSS最適化設定"
+
+#: src/translation_dummy.js:11
+msgid "Nothing to do"
+msgstr "何もしない"
+
+#: src/translation_dummy.js:12
+msgid "Optimize VK Blocks CSS ( Tree Shaking )"
+msgstr "VK Blocks のCSSを最適化する（Tree Shaking）"
+
+#: src/translation_dummy.js:13
+msgid "Optimize VK Blocks CSS ( Tree Shaking + Preload )"
+msgstr "VK Blocks のCSSを最適化する ( Tree Shaking + Preload )"
+
 #: src/translation_dummy.js:2
 msgid "Disabled Blocks module. Because VK-Blocks Plugin running."
 msgstr ""
@@ -1641,6 +1711,9 @@ msgstr "削除"
 #: src/translation_dummy.js:9
 msgid "Balloon Image Name"
 msgstr "吹き出し画像の名前"
+
+#~ msgid "FAQ"
+#~ msgstr "質問と解答"
 
 #~ msgid "Current Page"
 #~ msgstr "現在のページ"

@@ -1,4 +1,4 @@
-import { vkbBlockEditor } from "./../_helper/depModules";
+import { vkbBlockEditor } from "./../../_helper/depModules";
 const { RichText } = vkbBlockEditor;
 const { __ } = wp.i18n; // Import __() from wp.i18n
 import ReactHtmlParser from 'react-html-parser';
@@ -21,7 +21,7 @@ const renderTitle = (level, contents,tStyle, headingStyle ) =>{
 	}
 }
 
-export const VKBHeading =(props) => {
+export const VKBHeading_0_40_0 =(props) => {
 	const {attributes,setAttributes,for_} = props
 	let {
 		level,
@@ -137,6 +137,7 @@ export const VKBHeading =(props) => {
 		</Fragment>
 
 		let subtextContent;
+		console.log(subTextFlag)
 		if (subTextFlag === "on") {
 			subtextContent = <RichText.Content
 			tagName={"p"}

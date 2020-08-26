@@ -3,8 +3,8 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
-Tested up to: 5.4.2
-Stable tag: 0.39.4
+Tested up to: 5.5.0
+Stable tag: 0.41.0
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -35,6 +35,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Card [ Pro ]
 * Grid Column [ Pro ]
 * Animation [ Pro ]
+* Slider [ Pro ]
 
 [ Editing and correction ]
 
@@ -60,6 +61,25 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.41.0 =
+[ Add Function ][ Animation(Pro) ] Add animation variation
+[ Add New Block ][ New FAQ ] Add New FAQ Block
+
+= 0.40.3 =
+[ Bug fix ][ BorderBox ] Fix collapse under the tree shaking
+
+= 0.40.2 =
+[ Bug fix ][ Grid Column ] Fix collapse in edit screen
+
+= 0.40.1 =
+[ Bugfix / Specification Change ][ Heading ] Fix margin of title below, and change default value of title below margin.
+
+= 0.40.0 =
+[ Add function ] CSS Optimize
+
+= 0.39.5 =
+[ Bug fix ][ slider ] Fix colaps of first view
 
 = 0.39.4 =
 [ Bug fix ][ border-box ] Fix btn-primary on editor side.

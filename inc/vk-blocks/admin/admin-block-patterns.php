@@ -1,7 +1,5 @@
 <?php
-global $vk_blocks_default_options;
 $vk_blocks_options  = get_option( 'vk_blocks_options' );
-$vk_blocks_options  = wp_parse_args( $vk_blocks_options, $vk_blocks_default_options );
 $vk_blocks_template = file_exists( VK_BLOCKS_PATH . 'vk-blocks-pro-template.php' ) ? VK_BLOCKS_PATH . 'vk-blocks-pro-template.php' : '';
 ?>
 <section>

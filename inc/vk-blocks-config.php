@@ -45,17 +45,8 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 	//BlockMeta用のAPIルートを設定
 	new EntryPoint();
 
-	global $vk_blocks_default_options;
-	$vk_blocks_default_options    = array(
-		'css_optimize'           => 'default',
-		'hide_wp_block_template' => true,
-		'hide_vk_block_template' => false,
-	);
-
 	// Stop Core Block Template.
-	global $vk_blocks_default_options;
 	$vk_blocks_options  = get_option( 'vk_blocks_options' );
-	$vk_blocks_options = wp_parse_args( $vk_blocks_options, $vk_blocks_default_options );
 	if ( isset( $vk_blocks_options['hide_wp_block_template'] ) ) {
 		remove_theme_support( 'core-block-patterns' );
 	}

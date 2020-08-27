@@ -3,9 +3,6 @@
  * Block Template
  */
 
-// Stop Core Block Template.
-remove_theme_support( 'core-block-patterns' );
-
 /**
  * Block Template
  */

@@ -9,8 +9,9 @@ if ( ! function_exists('vk_blocks_setting') ) {
 
 		<form method="post" action="<?php echo esc_url( $_SERVER['REQUEST_URI'] ) ;?>">
 			<?php wp_nonce_field( 'vkb-nonce-key', 'vkb-setting-page' ); ?>
-			<?php 
+			<?php
 			require_once dirname( __FILE__ ) . '/admin-css-optimize.php';
+			require_once dirname( __FILE__ ) . '/admin-block-patterns.php';
 			require_once dirname( __FILE__ ) . '/admin-balloon.php';
 			?>
 		</form>
@@ -51,6 +52,7 @@ function vk_blocks_setting_page() {
 	$get_logo_html = apply_filters( 'vk_blocks_logo_html', $get_logo_html );
 
 	$get_menu_html  = '<li><a href="#css-optimize-setting">' . __( 'CSS Optimize Setting', 'vk-blocks' ) . '</a></li>';
+	$get_menu_html .= '<li><a href="#block-template-setting">' . __( 'Block Template Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= '<li><a href="#balloon-image-setting">' . __( 'Balloon Image Setting', 'vk-blocks' ) . '</a></li>';
 
 	Vk_Admin::admin_page_frame( $get_page_title, 'vk_blocks_setting', $get_logo_html, $get_menu_html );
@@ -69,7 +71,12 @@ function vk_blocks_setting_option_save() {
 			} else {
 				update_option( 'vk_blocks_balloon_meta', '' );
 			}
-			
+
+			wp_safe_redirect( menu_page_url( 'vk_blocks_options', false ) );
+		}
+	}
+	if ( isset( $_POST['vk_blocks_options'] ) && $_POST['vk_blocks_options'] ) {
+		if ( check_admin_referer( 'vkb-nonce-key', 'vkb-setting-page' ) ) {
 			if ( isset( $_POST['vk_blocks_options'] ) && $_POST['vk_blocks_options'] ) {
 				update_option( 'vk_blocks_options', $_POST['vk_blocks_options'] );
 			} else {

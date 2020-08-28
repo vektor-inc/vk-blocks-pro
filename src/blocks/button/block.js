@@ -94,7 +94,7 @@ registerBlockType('vk-blocks/button', {
 		}
 	},
 	supports:{
-		anchor:true
+		anchor:true,
 	},
 
 	edit(props) {

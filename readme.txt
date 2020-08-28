@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.5.0
-Stable tag: 0.41.1
+Stable tag: 0.41.2
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -62,7 +62,10 @@ e.g.
 
 == Changelog ==
 
-= 0.41.0 =
+= 0.41.2 =
+[ Bug fix ][ Button ] Fix static id of button again.
+
+= 0.41.1 =
 [ Bug fix ][ Button ] Fix static id of button.
 
 = 0.41.0 =

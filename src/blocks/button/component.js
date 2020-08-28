@@ -5,7 +5,7 @@ const { RichText } = vkbBlockEditor;
 
 export const VKBButton =( props )=>{
 	const { attributes, setAttributes, __for } = props
-	const {buttonColorCustom,buttonColor,buttonType,buttonAlign,buttonSize,buttonUrl,buttonTarget,fontAwesomeIconBefore,fontAwesomeIconAfter,subCaption,content } = attributes
+	let {buttonColorCustom,buttonColor,buttonType,buttonAlign,buttonSize,buttonUrl,buttonTarget,fontAwesomeIconBefore,fontAwesomeIconAfter,subCaption,content } = attributes
 	let aClass = '';
 	let aStyle = {};
 	let iconBefore = '';

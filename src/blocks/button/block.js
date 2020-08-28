@@ -11,7 +11,7 @@ const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { RadioControl, PanelBody, BaseControl, CheckboxControl, TextControl, Dashicon, ButtonGroup, Button } = wp.components;
 const { Fragment } = wp.element;
-const { InspectorControls, ColorPalette, URLInput, } = vkbBlockEditor;
+const { RichText, InspectorControls, ColorPalette, URLInput, } = vkbBlockEditor;
 const BlockIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" width="576" height="512" viewBox="0 0 576 512">
 		<g>
@@ -109,6 +109,8 @@ registerBlockType('vk-blocks/button', {
 			buttonColor,
 			buttonColorCustom,
 			buttonAlign,
+			fontAwesomeIconBefore,
+			fontAwesomeIconAfter,
 		} = attributes;
 
 		let containerClass;
@@ -289,7 +291,23 @@ registerBlockType('vk-blocks/button', {
 					</PanelBody>
 				</InspectorControls>
 				<div className={ containerClass }>
-					<VKBButton {...props} __for={"edit"} />
+					<VKBButton lbColorCustom={ buttonColorCustom } lbColor={ buttonColor } lbType={ buttonType }
+						lbAlign={ buttonAlign }
+						lbSize={ buttonSize }
+						lbFontAwesomeIconBefore={ fontAwesomeIconBefore }
+						lbFontAwesomeIconAfter={ fontAwesomeIconAfter }
+						lbsubCaption={ subCaption }
+						lbRichtext={
+							<RichText
+								tagName="span"
+								className={ 'vk_button_link_txt' }
+								onChange={ (value) => setAttributes({ content: value }) }
+								value={ content }
+								placeholder={ __('Input text', 'vk-blocks') }
+								allowedFormats={ ['bold', 'italic', 'strikethrough'] }
+								isSelected={ true }
+							/>
+						} />
 					{ isSelected && (
 						<form
 							className="block-library-button__inline-link"
@@ -307,25 +325,57 @@ registerBlockType('vk-blocks/button', {
 		);
 	},
 
-	save(props) {
-		const { attributes } = props
+	save({ attributes, className }) {
 		const {
+			content,
+			subCaption,
+			buttonUrl,
+			buttonTarget,
+			buttonSize,
+			buttonType,
+			buttonColor,
 			buttonColorCustom,
 			buttonAlign,
+			fontAwesomeIconBefore,
+			fontAwesomeIconAfter,
 		} = attributes;
 
 		let containerClass = '';
 		if (buttonColorCustom && "undefined" !== buttonColorCustom) {
+
 			containerClass = `vk_button vk_button-color-custom vk_button-align-${buttonAlign}`;
+
 		} else {
+
 			containerClass = `vk_button vk_button-align-${buttonAlign}`;
+
+		}
+
+		if (className) {
+			containerClass = className + ' ' + containerClass;
 		}
 
 		return (
 			<div className={ containerClass }>
-				<VKBButton {...props} __for={"save"} />
+
+				<VKBButton lbColorCustom={ buttonColorCustom } lbColor={ buttonColor } lbType={ buttonType }
+					lbAlign={ buttonAlign }
+					lbSize={ buttonSize }
+					lbUrl={ buttonUrl }
+					lbTarget={ buttonTarget }
+					lbFontAwesomeIconBefore={ fontAwesomeIconBefore }
+					lbFontAwesomeIconAfter={ fontAwesomeIconAfter }
+					lbsubCaption={ subCaption }
+					lbRichtext={
+						<RichText.Content
+							tagName="span"
+							className={ 'vk_button_link_txt' }
+							value={ content }
+						/>
+					} />
 			</div>
 		);
 	},
+
 	deprecated
 });

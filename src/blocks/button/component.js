@@ -43,7 +43,7 @@ export class VKBButton extends Component {
 				// カスタムカラーの場合
 			} else {
 				aStyle = {
-					backgroundColor: buttonColorCustom,
+					backgroundColor: buttoncolorcustom,
 					border: `1px solid ${buttonColorCustom}`,
 					color: `#fff`,
 				};
@@ -58,8 +58,8 @@ export class VKBButton extends Component {
 			} else {
 				aStyle = {
 					backgroundColor: 'transparent',
-					border: '1px solid ' + buttonColorCustom,
-					color: buttonColorCustom,
+					border: "1px solid " + buttoncolorcustom,
+					color: buttoncolorcustom,
 				};
 			}
 			// テキストのみ
@@ -71,7 +71,7 @@ export class VKBButton extends Component {
 				// カスタムカラーの場合
 			} else {
 				aStyle = {
-					color: buttonColorCustom,
+					color: buttoncolorcustom,
 				};
 			}
 		}
@@ -114,7 +114,6 @@ export class VKBButton extends Component {
 		return (
 			<a
 				href={ buttonUrl }
-				id={ 'vk_button_link' }
 				style={ aStyle }
 				className={ aClass }
 				role={ 'button' }

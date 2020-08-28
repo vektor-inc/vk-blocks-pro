@@ -4,7 +4,7 @@ if ( ! function_exists('vk_blocks_setting') ) {
 		$options = get_option( 'vk_blocks_balloon_meta' );
 		$image_number = 15;
 		$image_number = apply_filters( 'vk_blocks_image_number', $image_number );
-		$vk_blocks_options = get_option( 'vk_blocks_options' );
+		$vk_blocks_options = vk_blocks_get_options();
 		?>
 
 		<form method="post" action="<?php echo esc_url( $_SERVER['REQUEST_URI'] ) ;?>">

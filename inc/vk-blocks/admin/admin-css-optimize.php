@@ -13,9 +13,8 @@ $css_optimize_array = array(
         'value' => 'optomize-all-css',
     ),
 );
-global $vk_blocks_default_options;
-$vk_blocks_options  = get_option( 'vk_blocks_options' );
-$vk_blocks_options = wp_parse_args( $vk_blocks_options, $vk_blocks_default_options );
+
+$vk_blocks_options  = vk_blocks_get_options();
 ?>
 <section>
 <h3 id="css-optimize-setting"><?php echo __( 'CSS Optimize Setting', 'vk-blocks' ); ?></h3>

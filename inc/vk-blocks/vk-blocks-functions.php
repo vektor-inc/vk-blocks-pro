@@ -20,6 +20,20 @@ add_action(
 	}
 );
 
+/*-------------------------------------------*/
+/*	Get Option
+/*-------------------------------------------*/
+function vk_blocks_get_options() {
+	$options  = get_option( 'vk_blocks_options' );
+	$defaults = array(
+		'hide_wp_block_template' => true,
+		'hide_vk_block_template' => false,
+	);
+	$options = wp_parse_args( $options, $defaults );
+	return $options;
+}
+
+
 /*
  Load css
 ---------------------------------------------------------- */

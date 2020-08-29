@@ -93,6 +93,9 @@ registerBlockType('vk-blocks/button', {
 			default:  '',
 		}
 	},
+	supports:{
+		anchor:true,
+	},
 
 	edit(props) {
 		const { attributes, className, setAttributes, isSelected } = props

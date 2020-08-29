@@ -4,7 +4,7 @@ if ( ! function_exists('vk_blocks_setting') ) {
 		$options = get_option( 'vk_blocks_balloon_meta' );
 		$image_number = 15;
 		$image_number = apply_filters( 'vk_blocks_image_number', $image_number );
-		$vk_blocks_options = vk_blocks_get_options();
+		$vk_blocks_options = vkblocks_get_options();
 		?>
 
 		<form method="post" action="<?php echo esc_url( $_SERVER['REQUEST_URI'] ) ;?>">
@@ -63,7 +63,6 @@ function vk_blocks_setting_page() {
 /*-------------------------------------------*/
 function vk_blocks_setting_option_save() {
 	if ( isset( $_POST['vk_blocks_balloon_meta'] ) && $_POST['vk_blocks_balloon_meta'] ) {
-
 		if ( check_admin_referer( 'vkb-nonce-key', 'vkb-setting-page' ) ) {
 			// 保存処理
 			if ( isset( $_POST['vk_blocks_balloon_meta'] ) && $_POST['vk_blocks_balloon_meta'] ) {
@@ -71,8 +70,6 @@ function vk_blocks_setting_option_save() {
 			} else {
 				update_option( 'vk_blocks_balloon_meta', '' );
 			}
-
-			wp_safe_redirect( menu_page_url( 'vk_blocks_options', false ) );
 		}
 	}
 	if ( isset( $_POST['vk_blocks_options'] ) && $_POST['vk_blocks_options'] ) {
@@ -82,9 +79,8 @@ function vk_blocks_setting_option_save() {
 			} else {
 				update_option( 'vk_blocks_options', '' );
 			}
-
-			wp_safe_redirect( menu_page_url( 'vk_blocks_options', false ) );
 		}
 	}
+	// wp_safe_redirect( menu_page_url( 'vk_blocks_options', false ) );
 }
 add_action( 'admin_init', 'vk_blocks_setting_option_save', 10, 2 );

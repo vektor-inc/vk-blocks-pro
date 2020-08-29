@@ -2,8 +2,8 @@
 
 require_once 'vk-blocks/load-swiper.php';
 
-$vk_blocks_options  = vk_blocks_get_options();
-if( empty( $vk_blocks_options['hide_vk_block_template'] ) ) {
+$vk_blocks_options  = vkblocks_get_options();
+if ( "display" === $vk_blocks_options['display_vk_block_template'] ) {
 	require_once plugin_dir_path( __FILE__ ) . '/vk-blocks/vk-blocks-pro-template.php';
 }
 

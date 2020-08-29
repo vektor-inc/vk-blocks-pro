@@ -14,7 +14,7 @@ $css_optimize_array = array(
     ),
 );
 
-$vk_blocks_options  = vk_blocks_get_options();
+$vk_blocks_options  = vkblocks_get_options();
 ?>
 <section>
 <h3 id="css-optimize-setting"><?php echo __( 'CSS Optimize Setting', 'vk-blocks' ); ?></h3>

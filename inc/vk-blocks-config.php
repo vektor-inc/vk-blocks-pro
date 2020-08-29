@@ -46,8 +46,8 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 	new EntryPoint();
 
 	// Stop Core Block Template.
-	$vk_blocks_options  = vk_blocks_get_options();
-	if ( ! empty( $vk_blocks_options['hide_wp_block_template'] ) ) {
+	$vk_blocks_options  = vkblocks_get_options();
+	if ( "hide" === $vk_blocks_options['display_wp_block_template'] ) {
 		remove_theme_support( 'core-block-patterns' );
 	}
 

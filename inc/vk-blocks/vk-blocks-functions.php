@@ -23,16 +23,25 @@ add_action(
 /*-------------------------------------------*/
 /*	Get Option
 /*-------------------------------------------*/
-function vk_blocks_get_options() {
+function vkblocks_get_options() {
 	$options  = get_option( 'vk_blocks_options' );
 	$defaults = array(
-		'hide_wp_block_template' => true,
-		'hide_vk_block_template' => false,
+		'display_wp_block_template' => 'hide',
+		'display_vk_block_template' => 'display',
 	);
 	$options = wp_parse_args( $options, $defaults );
 	return $options;
 }
-
+function vkblocks_get_selected( $current, $value ) {
+	$selected = '';
+	if ( $current == $value ){
+		$selected = ' selected';
+	}
+	return $selected;
+}
+function vkblocks_the_selected( $current, $value ) {
+	echo vkblocks_get_selected( $current, $value );
+}
 
 /*
  Load css

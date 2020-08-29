@@ -9,7 +9,7 @@
   * Optimize CSS.
   */
 function vk_blocks_optimize_css() {
-	$options = vk_blocks_get_options();
+	$options = vkblocks_get_options();
 
 	if ( ! isset( $options['css_optimize'] ) ) {
 		$options['css_optimize'] = 'default';

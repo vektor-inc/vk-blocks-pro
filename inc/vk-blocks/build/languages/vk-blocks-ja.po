@@ -171,7 +171,7 @@ msgstr "短い"
 
 #: src/blocks/_pro/animation/block.js:86 src/blocks/_pro/outer/block.js:181
 #: src/blocks/_pro/slider/block.js:120 src/blocks/balloon/block.js:175
-#: src/blocks/button/block.js:158 src/blocks/faq/block.js:65
+#: src/blocks/button/block.js:169 src/blocks/faq/block.js:65
 #: src/blocks/faq2/block.js:65
 msgid "Normal"
 msgstr "標準"
@@ -317,14 +317,14 @@ msgstr "PR Block 設定"
 msgid "Link URL:"
 msgstr "リンクURL:"
 
-#: src/blocks/_pro/icon-card-item/block.js:49 src/blocks/button/block.js:137
+#: src/blocks/_pro/icon-card-item/block.js:49 src/blocks/button/block.js:148
 #: src/blocks/pr-blocks/block.js:313 src/blocks/pr-content/block.js:140
 msgid "Open link new tab."
 msgstr "リンクを別ウィンドウで開く"
 
 #: src/blocks/_pro/icon-card-item/block.js:55
 #: src/blocks/_pro/step-item/block.js:40 src/blocks/border-box/block.js:143
-#: src/blocks/button/block.js:269 src/blocks/pr-content/block.js:176
+#: src/blocks/button/block.js:280 src/blocks/pr-content/block.js:176
 msgid "Icon ( Font Awesome )"
 msgstr "アイコン ( Font Awesome )"
 
@@ -332,12 +332,12 @@ msgstr "アイコン ( Font Awesome )"
 msgid "Icon Background:"
 msgstr "アイコン背景:"
 
-#: src/blocks/_pro/icon-card-item/block.js:78 src/blocks/button/block.js:222
+#: src/blocks/_pro/icon-card-item/block.js:78 src/blocks/button/block.js:233
 #: src/blocks/pr-blocks/block.js:340
 msgid "Solid color"
 msgstr "ベタ塗り"
 
-#: src/blocks/_pro/icon-card-item/block.js:79 src/blocks/button/block.js:230
+#: src/blocks/_pro/icon-card-item/block.js:79 src/blocks/button/block.js:241
 #: src/blocks/pr-blocks/block.js:341
 msgid "No background"
 msgstr "背景なし"
@@ -780,22 +780,22 @@ msgstr "アラート"
 msgid "Style Settings"
 msgstr "スタイル設定"
 
-#: src/blocks/alert/block.js:60 src/blocks/button/block.js:249
+#: src/blocks/alert/block.js:60 src/blocks/button/block.js:260
 #: src/blocks/group-style/block.js:131 src/blocks/pr-content/block.js:160
 msgid "Success"
 msgstr "Success"
 
-#: src/blocks/alert/block.js:61 src/blocks/button/block.js:250
+#: src/blocks/alert/block.js:61 src/blocks/button/block.js:261
 #: src/blocks/group-style/block.js:127 src/blocks/pr-content/block.js:161
 msgid "Info"
 msgstr "Info"
 
-#: src/blocks/alert/block.js:62 src/blocks/button/block.js:251
+#: src/blocks/alert/block.js:62 src/blocks/button/block.js:262
 #: src/blocks/group-style/block.js:135 src/blocks/pr-content/block.js:162
 msgid "Warning"
 msgstr "Warning"
 
-#: src/blocks/alert/block.js:63 src/blocks/button/block.js:252
+#: src/blocks/alert/block.js:63 src/blocks/button/block.js:263
 #: src/blocks/group-style/block.js:139 src/blocks/pr-content/block.js:163
 msgid "Danger"
 msgstr "Danger"
@@ -812,13 +812,13 @@ msgstr "位置"
 msgid "Please specify the layout of the balloon."
 msgstr "吹き出しの配置を指定してください。"
 
-#: src/blocks/balloon/block.js:134 src/blocks/button/block.js:178
+#: src/blocks/balloon/block.js:134 src/blocks/button/block.js:189
 #: src/blocks/pr-content/block.js:204
 #: src/components/display-items-control/index.js:94
 msgid "Left"
 msgstr "左"
 
-#: src/blocks/balloon/block.js:142 src/blocks/button/block.js:194
+#: src/blocks/balloon/block.js:142 src/blocks/button/block.js:205
 #: src/blocks/pr-content/block.js:203
 #: src/components/display-items-control/index.js:102
 msgid "Right"
@@ -957,81 +957,85 @@ msgstr "線の色"
 msgid "Red"
 msgstr "赤"
 
-#: src/blocks/button/block.js:129
+#: src/blocks/button/block.js:132
 msgid "Button setting"
 msgstr "ボタン設定"
 
-#: src/blocks/button/block.js:131
+#: src/blocks/button/block.js:134
 msgid "Sub Caption"
 msgstr "サブテキスト"
 
-#: src/blocks/button/block.js:142
+#: src/blocks/button/block.js:141
+msgid "Button URL"
+msgstr "ボタン URL"
+
+#: src/blocks/button/block.js:153
 msgid "Button Size:"
 msgstr "ボタンサイズ:"
 
-#: src/blocks/button/block.js:150
+#: src/blocks/button/block.js:161
 msgid "Large"
 msgstr "大"
 
-#: src/blocks/button/block.js:166
+#: src/blocks/button/block.js:177
 msgid "Small"
 msgstr "小"
 
-#: src/blocks/button/block.js:170
+#: src/blocks/button/block.js:181
 msgid "Button Position:"
 msgstr "ボタンの位置:"
 
-#: src/blocks/button/block.js:186
+#: src/blocks/button/block.js:197
 #: src/components/display-items-control/index.js:98
 msgid "Center"
 msgstr "中央"
 
-#: src/blocks/button/block.js:202
+#: src/blocks/button/block.js:213
 msgid "Wide"
 msgstr "幅広"
 
-#: src/blocks/button/block.js:210
+#: src/blocks/button/block.js:221
 msgid "Block"
 msgstr "全幅"
 
-#: src/blocks/button/block.js:214
+#: src/blocks/button/block.js:225
 msgid "Button Style:"
 msgstr "ボタンスタイル:"
 
-#: src/blocks/button/block.js:238
+#: src/blocks/button/block.js:249
 msgid "Text only"
 msgstr "テキストのみ"
 
-#: src/blocks/button/block.js:241
+#: src/blocks/button/block.js:252
 msgid ""
 "If you select \"No background\", that you need to select a Custom Color."
 msgstr "もし「背景なし」を選択した場合はカスタムカラーで色を指定してください。"
 
-#: src/blocks/button/block.js:244 src/blocks/pr-content/block.js:155
+#: src/blocks/button/block.js:255 src/blocks/pr-content/block.js:155
 msgid "Default Color:"
 msgstr "標準色:"
 
-#: src/blocks/button/block.js:247 src/blocks/pr-content/block.js:158
+#: src/blocks/button/block.js:258 src/blocks/pr-content/block.js:158
 msgid "Primary"
 msgstr "Primary"
 
-#: src/blocks/button/block.js:248 src/blocks/pr-content/block.js:159
+#: src/blocks/button/block.js:259 src/blocks/pr-content/block.js:159
 msgid "Secondary"
 msgstr "Secondary"
 
-#: src/blocks/button/block.js:253 src/blocks/pr-content/block.js:164
+#: src/blocks/button/block.js:264 src/blocks/pr-content/block.js:164
 msgid "Light"
 msgstr "Light"
 
-#: src/blocks/button/block.js:254 src/blocks/pr-content/block.js:165
+#: src/blocks/button/block.js:265 src/blocks/pr-content/block.js:165
 msgid "Dark"
 msgstr "Dark"
 
-#: src/blocks/button/block.js:259
+#: src/blocks/button/block.js:270
 msgid "Custom Color"
 msgstr "カスタムカラー"
 
-#: src/blocks/button/block.js:260
+#: src/blocks/button/block.js:271
 msgid ""
 "This custom color overrides the default color. If you want to use the "
 "default color, click the clear button."
@@ -1039,23 +1043,19 @@ msgstr ""
 "このカスタムカラーはデフォルトのカラーを上書きします。 デフォルトの色を使用し"
 "たい場合は、クリアボタンをクリックしてください。"
 
-#: src/blocks/button/block.js:271 src/blocks/heading/block.js:189
+#: src/blocks/button/block.js:282 src/blocks/heading/block.js:189
 #: src/blocks/pr-content/block.js:178
 msgid "Before text"
 msgstr "文字の前"
 
-#: src/blocks/button/block.js:279 src/blocks/heading/block.js:192
+#: src/blocks/button/block.js:290 src/blocks/heading/block.js:192
 #: src/blocks/pr-content/block.js:186
 msgid "After text"
 msgstr "文字の後"
 
-#: src/blocks/button/block.js:303
+#: src/blocks/button/block.js:314
 msgid "Input text"
 msgstr "文字を入力"
-
-#: src/blocks/button/block.js:317
-msgid "Apply"
-msgstr ""
 
 #: src/blocks/faq/block.js:120
 msgid "Please enter a question."
@@ -1663,54 +1663,62 @@ msgid "VK Blocks Templates"
 msgstr "VK Blocks テンプレート"
 
 #: src/translation_dummy.js:10
+msgid "Delete"
+msgstr "削除"
+
+#: src/translation_dummy.js:11
+msgid "Balloon Image Name"
+msgstr "吹き出し画像の名前"
+
+#: src/translation_dummy.js:12
 msgid "CSS Optimize Setting"
 msgstr "CSS最適化設定"
 
-#: src/translation_dummy.js:11
+#: src/translation_dummy.js:13
 msgid "Nothing to do"
 msgstr "何もしない"
 
-#: src/translation_dummy.js:12
+#: src/translation_dummy.js:14
 msgid "Optimize VK Blocks CSS ( Tree Shaking )"
 msgstr "VK Blocks のCSSを最適化する（Tree Shaking）"
 
-#: src/translation_dummy.js:13
+#: src/translation_dummy.js:15
 msgid "Optimize VK Blocks CSS ( Tree Shaking + Preload )"
 msgstr "VK Blocks のCSSを最適化する ( Tree Shaking + Preload )"
 
 #: src/translation_dummy.js:2
+msgid "Display Block Template Setting"
+msgstr "ブロックテンプレート表示設定"
+
+#: src/translation_dummy.js:3
+msgid "Block Template Setting"
+msgstr "ブロックテンプレート設定"
+
+#: src/translation_dummy.js:4
 msgid "Disabled Blocks module. Because VK-Blocks Plugin running."
 msgstr ""
 "VK-Blocksと競合するため、VK All in One Expansion UnitのBlock機能を停止しまし"
 "た。"
 
-#: src/translation_dummy.js:3
+#: src/translation_dummy.js:5
 msgid "Deactivated VK-Blocks Plugin. Because VK-Blocks Pro running."
 msgstr "Pro版VK-Blocksが起動しているため、VK-Blocksを停止しました。"
 
-#: src/translation_dummy.js:4
+#: src/translation_dummy.js:6
 msgid "You can register frequently used icon images for speech bubble blocks."
 msgstr "よく使う吹き出し用のアイコン画像を登録する事ができます。"
 
-#: src/translation_dummy.js:5
+#: src/translation_dummy.js:7
 msgid "If you change image or name that please click Save Changes button."
 msgstr "画像を変更したら「変更を保存」ボタンをクリックしてください。"
 
-#: src/translation_dummy.js:6
+#: src/translation_dummy.js:8
 msgid "Balloon Image Setting"
 msgstr "吹き出し画像設定"
 
-#: src/translation_dummy.js:7
+#: src/translation_dummy.js:9
 msgid "Select"
 msgstr "選択"
-
-#: src/translation_dummy.js:8
-msgid "Delete"
-msgstr "削除"
-
-#: src/translation_dummy.js:9
-msgid "Balloon Image Name"
-msgstr "吹き出し画像の名前"
 
 #~ msgid "FAQ"
 #~ msgstr "質問と解答"

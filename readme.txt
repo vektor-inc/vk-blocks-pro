@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.5.0
-Stable tag: 0.40.1
+Stable tag: 0.42.1
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -61,6 +61,28 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.42.1 =
+[ Specification Change ][ term color ] Add exclude taxonomy
+
+= 0.42.0 =
+[ Add Function ][ Block Template Setting ] Add Block pattern Display and Hide setting.
+
+= 0.41.2 =
+[ Bug fix ][ Button ] Fix static id of button again.
+
+= 0.41.1 =
+[ Bug fix ][ Button ] Fix static id of button.
+
+= 0.41.0 =
+[ Add Function ][ Animation(Pro) ] Add animation variation
+[ Add New Block ][ New FAQ ] Add New FAQ Block
+
+= 0.40.3 =
+[ Bug fix ][ BorderBox ] Fix collapse under the tree shaking
+
+= 0.40.2 =
+[ Bug fix ][ Grid Column ] Fix collapse in edit screen
 
 = 0.40.1 =
 [ Bugfix / Specification Change ][ Heading ] Fix margin of title below, and change default value of title below margin.

@@ -4,11 +4,17 @@ import { VKBButtonDeprecatedNoOpnnerNoRefererID } from "./component-deprecated-n
 import { VKBButtonDeprecatedSubcaptionNoopennerId } from "./component-deprecated-subcaption-noNoopnnernoreferer-id";
 import { VKBButton } from "../component";
 import { VKBButtonV1 } from "./componentV1"
+import Schema0410 from "./0.41.0/schema"
+import VKBButton0410 from "./0.41.0/block"
 
 import { vkbBlockEditor } from "./../../_helper/depModules";
 const { RichText } = vkbBlockEditor;
 
 export const deprecated = [
+	{
+		attributes:Schema0410,
+		save:VKBButton0410
+	},
 	{
 		attributes: {
 			content: {

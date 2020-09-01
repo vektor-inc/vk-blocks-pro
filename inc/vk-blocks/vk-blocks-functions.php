@@ -20,6 +20,29 @@ add_action(
 	}
 );
 
+/*-------------------------------------------*/
+/*	Get Option
+/*-------------------------------------------*/
+function vkblocks_get_options() {
+	$options  = get_option( 'vk_blocks_options' );
+	$defaults = array(
+		'display_wp_block_template' => 'hide',
+		'display_vk_block_template' => 'display',
+	);
+	$options = wp_parse_args( $options, $defaults );
+	return $options;
+}
+function vkblocks_get_selected( $current, $value ) {
+	$selected = '';
+	if ( $current == $value ){
+		$selected = ' selected';
+	}
+	return $selected;
+}
+function vkblocks_the_selected( $current, $value ) {
+	echo vkblocks_get_selected( $current, $value );
+}
+
 /*
  Load css
 ---------------------------------------------------------- */
@@ -113,7 +136,7 @@ function vkblocks_blocks_assets() {
 
 	if ( defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, '5.0', '>=' ) ) {
 
-		$arr = array( 'alert', 'balloon', 'button', 'faq', 'flow', 'pr-blocks', 'pr-content', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents-new', 'highlighter', 'timeline', 'timeline-item', 'step', 'step-item', 'post-list', 'list-style', 'group-style', 'child-page', 'card', 'card-item', 'grid-column', 'grid-column-item', 'border-box', 'icon-card', 'icon-card-item', 'animation', 'slider', 'slider-item' );// REPLACE-FLAG : このコメントは削除しないで下さい。wp-create-gurten-template.shで削除する基準として左の[//REPLACE-FLAG]を使っています。
+		$arr = array( 'alert', 'balloon', 'button', 'faq', 'flow', 'pr-blocks', 'pr-content', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents-new', 'highlighter', 'timeline', 'timeline-item', 'step', 'step-item', 'post-list', 'list-style', 'group-style', 'child-page', 'card', 'card-item', 'grid-column', 'grid-column-item', 'border-box', 'icon-card', 'icon-card-item', 'animation', 'slider', 'slider-item', 'faq2', 'faq2-q', 'faq2-a' );// REPLACE-FLAG : このコメントは削除しないで下さい。wp-create-gurten-template.shで削除する基準として左の[//REPLACE-FLAG]を使っています。
 
 		$common_attributes = array(
 			'vkb_hidden'    => array(

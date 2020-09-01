@@ -70,6 +70,7 @@
     "@wordpress/list-reusable-blocks": "^1.11.0",
     "@wordpress/plugins": "^2.10.0",
     "@wordpress/viewport": "^2.14.0",
+    "compare-versions": "^3.6.0",
     "gulp-jsmin": "^0.1.5",
     "lodash": "^4.17.19",
     "node-sass": "^4.14.1",

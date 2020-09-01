@@ -136,10 +136,18 @@ function vkblocks_blocks_assets() {
 
 	if ( defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, '5.0', '>=' ) ) {
 
-		$arr = array( 'alert', 'balloon', 'button', 'faq', 'flow', 'pr-blocks', 'pr-content', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents-new', 'highlighter', 'timeline', 'timeline-item', 'step', 'step-item', 'post-list', 'list-style', 'group-style', 'child-page', 'card', 'card-item','grid-column','grid-column-item','border-box', 'icon-card', 'icon-card-item', 'animation', 'slider','slider-item', 'faq2', 'faq2-q', 'faq2-a' );// REPLACE-FLAG : このコメントは削除しないで下さい。wp-create-gurten-template.shで削除する基準として左の[//REPLACE-FLAG]を使っています。
+		$arr = array( 'alert', 'balloon', 'button', 'faq', 'flow', 'pr-blocks', 'pr-content', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents-new', 'highlighter', 'timeline', 'timeline-item', 'step', 'step-item', 'post-list', 'list-style', 'group-style', 'child-page', 'card', 'card-item', 'grid-column', 'grid-column-item', 'border-box', 'icon-card', 'icon-card-item', 'animation', 'slider', 'slider-item', 'faq2', 'faq2-q', 'faq2-a' );// REPLACE-FLAG : このコメントは削除しないで下さい。wp-create-gurten-template.shで削除する基準として左の[//REPLACE-FLAG]を使っています。
 
 		$common_attributes = array(
 			'vkb_hidden'    => array(
+				'type'    => 'boolean',
+				'default' => false,
+			),
+			'vkb_hidden_xxl' => array(
+				'type'    => 'boolean',
+				'default' => false,
+			),
+			'vkb_hidden_xl_v2' => array(
 				'type'    => 'boolean',
 				'default' => false,
 			),
@@ -204,7 +212,7 @@ function vkblocks_blocks_assets() {
 								return '<div><div class="vk_tableOfContents_title">' . __( 'Table of Contents', 'vk-blocks' ) . '</div></div>';
 							}
 						},
-						'supports' => [],
+						'supports'        => array(),
 					)
 				);
 			} elseif ( $value == 'post-list' ) {
@@ -233,6 +241,10 @@ function vkblocks_blocks_assets() {
 										'default' => 3,
 									),
 									'col_lg'            => array(
+										'type'    => 'number',
+										'default' => 3,
+									),
+									'col_xxl'            => array(
 										'type'    => 'number',
 										'default' => 3,
 									),
@@ -319,7 +331,7 @@ function vkblocks_blocks_assets() {
 							'editor_style'    => 'vk-blocks-build-editor-css',
 							'editor_script'   => 'vk-blocks-build-js',
 							'render_callback' => 'vk_blocks_render_post_list',
-							'supports' => [],
+							'supports'        => array(),
 						)
 					); // register_block_type(
 			} elseif ( $value == 'child-page' ) {
@@ -330,7 +342,7 @@ function vkblocks_blocks_assets() {
 						'attributes'      => array_merge(
 							array(
 								'selectId'          => array(
-									'type' => 'number',
+									'type'    => 'number',
 									'default' => -1,
 								),
 								'name'              => array(
@@ -358,6 +370,10 @@ function vkblocks_blocks_assets() {
 									'default' => 2,
 								),
 								'col_xl'            => array(
+									'type'    => 'number',
+									'default' => 2,
+								),
+								'col_xxl'           => array(
 									'type'    => 'number',
 									'default' => 2,
 								),
@@ -431,7 +447,7 @@ function vkblocks_blocks_assets() {
 						'editor_style'    => 'vk-blocks-build-editor-css',
 						'editor_script'   => 'vk-blocks-build-js',
 						'render_callback' => 'vk_blocks_render_post_list',
-						'supports'        => [],
+						'supports'        => array(),
 					)
 				); // register_block_type(
 			} else {
@@ -492,4 +508,17 @@ if ( ! function_exists( 'vkblocks_set_wp_version' ) ) {
 		'</script>';
 	}
 	add_action( 'admin_head', 'vkblocks_set_wp_version', 10, 0 );
+}
+
+if ( function_exists( 'vkblocks_get_version' ) ) {
+
+	function vkblocks_set_vkbpro_version() {
+		$vkbpro_version = vkblocks_get_version();
+		if($vkbpro_version){
+			echo '<script>',
+			'var vkbproVersion = "' . $vkbpro_version . '";',
+			'</script>';
+		}
+	}
+	add_action( 'admin_head', 'vkblocks_set_vkbpro_version', 10, 0 );
 }

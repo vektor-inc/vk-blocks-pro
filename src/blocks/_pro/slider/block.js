@@ -244,8 +244,8 @@ const vkbwithClientIdClassName = createHigherOrderComponent(
 					</Fragment>
 				)
 			}else if (props.name === "vk-blocks/slider-item") {
-				const { col_xs, col_sm, col_md, col_lg, col_xl } = props.attributes;
-				const customClass = classNames(props.className, `col-${convertToGrid(col_xs)} col-sm-${convertToGrid(col_sm)} col-md-${convertToGrid(col_md)} col-lg-${convertToGrid(col_lg)} col-xl-${convertToGrid(col_xl)}`);
+				const { col_xs, col_sm, col_md, col_lg, col_xl, col_xxl } = props.attributes;
+				const customClass = classNames(props.className, `col-${convertToGrid(col_xs)} col-sm-${convertToGrid(col_sm)} col-md-${convertToGrid(col_md)} col-lg-${convertToGrid(col_lg)} col-xl-${convertToGrid(col_xl)} col-xxl-${convertToGrid(col_xxl)} `);
 				return (
 					<BlockListBlock
 						{...props}

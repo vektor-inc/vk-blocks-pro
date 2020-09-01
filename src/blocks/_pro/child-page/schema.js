@@ -31,6 +31,10 @@ export const schema = {
     type: "number",
     default: 2,
   },
+  col_xxl: {
+    type: "number",
+    default: 2,
+  },
   display_image: {
     type: "boolean",
     default: true,

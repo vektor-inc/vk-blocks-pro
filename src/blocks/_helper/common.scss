@@ -364,3 +364,38 @@ ol {
 .has-text-align-center {
 	text-align: center;
 }
+
+/*-------------------------------------------*/
+/* col-xxl
+/*-------------------------------------------*/
+$xxl-min: 1400px;
+.col {
+    @media (min-width: $xxl-min) {
+		&-xxl-2 {
+			width: calc(16.66% - 30px);
+			//bootstrapのcssを上書きしないと表示が崩れるのでflexとmax-widthを追加
+			flex: 1 1 auto;
+			max-width: initial; 
+		}
+		&-xxl-3 {
+			width: calc(25% - 30px);
+			flex: 1 1 auto;
+			max-width: initial;
+		}
+		&-xxl-4 {
+			width: calc(33.3% - 30px);
+			flex: 1 1 auto;
+			max-width: initial;
+		}
+		&-xxl-6 {
+			width: calc(50% - 30px);
+			flex: 1 1 auto;
+			max-width: initial;
+		}
+		&-xxl-12 {
+			width: calc(100% - 30px);
+			flex: 1 1 auto;
+			max-width: initial;
+		}
+	}
+}

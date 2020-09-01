@@ -15,6 +15,8 @@ const { Fragment } = wp.element;
 const { InspectorControls } =vkbBlockEditor;
 const { select, dispatch } = wp.data;
 const { PanelBody } = wp.components;
+const { createHigherOrderComponent } = wp.compose;
+const { addFilter } = wp.hooks;
 
 const BlockIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 576">
@@ -108,15 +110,15 @@ registerBlockType("vk-blocks/grid-column", {
 	},
 });
 
-const { createHigherOrderComponent } = wp.compose;
-const { addFilter } = wp.hooks;
-
 const vkbwithClientIdClassName = createHigherOrderComponent(
 	(BlockListBlock) => {
 		return (props) => {
 			if (props.name === "vk-blocks/grid-column-item") {
-				const { col_xs, col_sm, col_md, col_lg, col_xl } = props.attributes;
-				const customClass = classNames(props.className, `col-${convertToGrid(col_xs)} col-sm-${convertToGrid(col_sm)} col-md-${convertToGrid(col_md)} col-lg-${convertToGrid(col_lg)} col-xl-${convertToGrid(col_xl)}`);
+				const { col_xs, col_sm, col_md, col_lg, col_xl, col_xxl } = props.attributes;
+				const customClass = classNames(
+					props.className,
+					`col-${convertToGrid(col_xs)} col-sm-${convertToGrid(col_sm)} col-md-${convertToGrid(col_md)} col-lg-${convertToGrid(col_lg)} col-xl-${convertToGrid(col_xl)} col-xxl-${convertToGrid(col_xxl)}`
+				);
 				return (
 					<BlockListBlock
 						{...props}
@@ -133,15 +135,15 @@ const vkbwithClientIdClassName = createHigherOrderComponent(
 
 addFilter(
 	"editor.BlockListBlock",
-	"vk-blocks/grid-column-item",
+	"vk-blocks/grid-column",
 	vkbwithClientIdClassName
 );
 
 addFilter(
 	"blocks.getSaveElement",
-	"vk-blocks/hidden-extension",
+	"vk-blocks/grid-column",
 	(element, blockType, attributes) => {
-		const { col_xs, col_sm, col_md, col_lg, col_xl } = attributes;
+		const { col_xs, col_sm, col_md, col_lg, col_xl, col_xxl } = attributes;
 		if (blockType.name === "vk-blocks/grid-column-item" && element) {
 			element = {
 				...element,
@@ -151,7 +153,7 @@ addFilter(
 						...{
 							className: classNames(
 								element.props.className,
-								`col-${convertToGrid(col_xs)} col-sm-${convertToGrid(col_sm)} col-md-${convertToGrid(col_md)} col-lg-${convertToGrid(col_lg)} col-xl-${convertToGrid(col_xl)}`
+								`col-${convertToGrid(col_xs)} col-sm-${convertToGrid(col_sm)} col-md-${convertToGrid(col_md)} col-lg-${convertToGrid(col_lg)} col-xl-${convertToGrid(col_xl)} col-xxl-${convertToGrid(col_xxl)}`
 							),
 						},
 					},

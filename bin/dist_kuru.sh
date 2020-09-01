@@ -1,5 +1,6 @@
 #!/bin/bash
 
+gulp text-domain
 gulp dist
 # zip圧縮
 windowszip dist/vk-blocks-pro

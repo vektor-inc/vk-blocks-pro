@@ -26,13 +26,13 @@ if ( ! class_exists( 'Vk_Admin' ) ) {
 		}
 
 		static function admin_common_css() {
-			wp_enqueue_style( 'vk-admin-style', plugin_dir_url( __FILE__ ) . '/css/vk_admin.css', array(), self::$version, 'all' );
+			wp_enqueue_style( 'vk-admin-style', plugin_dir_url( __FILE__ ) . 'css/vk_admin.css', array(), self::$version, 'all' );
 		}
 
 		static function admin_enqueue_scripts() {
 			wp_enqueue_script( 'jquery' );
 			wp_enqueue_media();
-			wp_enqueue_script( 'vk-admin-js', plugin_dir_url( __FILE__ ) . '/js/vk_admin.js', array( 'jquery' ), self::$version );
+			wp_enqueue_script( 'vk-admin-js', plugin_dir_url( __FILE__ ) . 'js/vk_admin.js', array( 'jquery' ), self::$version );
 		}
 
 		// 管理画面用のjsを読み込むページを配列で指定する
@@ -71,6 +71,16 @@ if ( ! class_exists( 'Vk_Admin' ) ) {
 			}
 
 			$banner .= '<div class="vk-admin-banner-grid">';
+
+			// プラグイン VK Block Patterns を有効化していない人にバナーを表示
+			if ( ! is_plugin_active( 'vk-block-patterns/vk-block-patterns.php' ) ) {
+				if ( $lang == 'ja' ) {
+					$bnr_file_name = 'vk-block-patterns_bnr.jpg';
+				} else {
+					$bnr_file_name = 'vk-block-patterns_bnr.jpg';
+				}
+				$banner .= '<a href="//wordpress.org/plugins/vk-block-patterns/" target="_blank" class="admin_banner"><img src="' . $dir_url . 'images/' . $bnr_file_name . '" alt="VK Block Patterns" /></a>';
+			}
 
 			// プラグイン Link Target Controller を有効化していない人にバナーを表示
 			if ( ! is_plugin_active( 'vk-link-target-controller/vk-link-target-controller.php' ) ) {
@@ -258,7 +268,7 @@ if ( ! class_exists( 'Vk_Admin' ) ) {
 		/*  RSS方針で現在は日本語以外でのみ使用
 		/*--------------------------------------------------*/
 		public static function get_news_from_rss() {
-
+			global $vk_admin_textdomain;
 			$output = '';
 
 			include_once ABSPATH . WPINC . '/feed.php';
@@ -288,7 +298,7 @@ if ( ! class_exists( 'Vk_Admin' ) ) {
 
 					if ( $maxitems == 0 ) {
 						$output .= '<li>';
-						$output .= __( 'Sorry, there is no post', 'vk-post-author-display' );
+						$output .= __( 'Sorry, there is no post', $vk_admin_textdomain );
 						$output .= '</li>';
 					} else {
 						foreach ( $rss_items as $item ) {
@@ -338,11 +348,11 @@ if ( ! class_exists( 'Vk_Admin' ) ) {
 		admin _ Dashboard Widget
 		/*--------------------------------------------------*/
 		public static function dashboard_widget() {
-
+			global $vk_admin_textdomain;
 			if ( self::is_dashboard_active() ) {
 				wp_add_dashboard_widget(
 					'vk_dashboard_widget',
-					__( 'Vektor WordPress Information', 'vk-post-author-display' ),
+					__( 'Vektor WordPress Information', $vk_admin_textdomain ),
 					array( __CLASS__, 'dashboard_widget_body' )
 				);
 			}
@@ -384,7 +394,7 @@ if ( ! class_exists( 'Vk_Admin' ) ) {
 				<div class="adminMain <?php echo $get_layout; ?>">
 
 					<?php if ( $get_layout == 'column_3' ) : ?>
-				<div id="adminContent_sub" class="scrTracking">
+				<div id="adminContent_sub" class="scrTracking adminMain_sub">
 					<div class="pageLogo"><?php echo $get_logo_html; ?></div>
 						<?php if ( $get_page_title ) : ?>
 					<h2 class="page_title"><?php echo $get_page_title; ?></h2>
@@ -404,7 +414,7 @@ if ( ! class_exists( 'Vk_Admin' ) ) {
 					<?php endif; ?>
 				<?php endif; ?>
 
-					<div id="adminContent_main">
+					<div id="adminContent_main" class="adminMain_main">
 					<?php call_user_func_array( $the_body_callback, array() ); ?>
 					</div><!-- [ /#adminContent_main ] -->
 

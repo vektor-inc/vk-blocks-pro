@@ -45,20 +45,10 @@ jobs:
     - run: rm -rf src/*
     - run: cd ../
     # 指定したファイルを除外して、Pro版をコピー&上書き
-    - run: rsync --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/_pro/' --exclude 'vk-blocks-free/' --exclude '.node-version' --exclude 'bin/' --exclude '.git/' --exclude '.gitignore' --exclude '.circleci/' --exclude 'tests/' --exclude '.phpcs.xml.dist' --exclude 'bitbucket-pipelines.yml' --exclude 'package-lock.json' --exclude 'phpunit.xml' --exclude 'phpunit.xml.dist' --exclude 'inc/plugin-update-checker/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvc ./* ./vk-blocks-free/
+    - run: rsync --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'src/outer/' --exclude 'src/table-of-contents/' --exclude 'bin/' --exclude 'tests/' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/_pro/' --exclude 'vk-blocks-free/' --exclude '.node-version' --exclude 'bin/' --exclude '.git/' --exclude '.gitignore' --exclude '.circleci/' --exclude 'tests/' --exclude '.phpcs.xml.dist' --exclude 'bitbucket-pipelines.yml' --exclude 'package-lock.json' --exclude 'phpunit.xml' --exclude 'phpunit.xml.dist' --exclude 'inc/plugin-update-checker/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvc ./* ./vk-blocks-free/
     - run: cd ./vk-blocks-free/
     # push先のブランチを切る
     - run: git checkout -b add/vk-blocks-free
-    # 通常版に元からある不要なファイルを削除
-    - run: remove_files=(tests/ bin/ src/table-of-contents src/outer inc/vk-blocks/build/block-build.css)
-    - run: for remove in "${remove_files[@]}"
-    - run: do
-    - run: if [ -d ${remove} ];then
-    - run: git rm -r ${remove}
-    - run: elif [ -e ${remove} ];then
-    - run: git rm ${remove}
-    - run: fi
-    - run: done
     # Pro版ブロックは読み込まないようjsから削除
     - run: sed -i /_pro/d src/blocks/bundle.js
     # プラグイン名を通常版へリネーム

@@ -37,7 +37,7 @@ jobs:
     - run: ls
     - run: mv vk-blocks/ vk-blocks-free/
     
-    - run: cd vk-blocks-free
+    - run: cd ./vk-blocks-free/
     - run: ls
     - run: rm -rf src/*
     - run: ls

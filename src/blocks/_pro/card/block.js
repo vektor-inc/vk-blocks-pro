@@ -131,9 +131,7 @@ registerBlockType("vk-blocks/card", {
     );
   },
   save({ attributes }) {
-    return (
-	<Component attributes={ attributes } for_={ "save" } />
-    );
+    return (<Component attributes={ attributes } for_={ "save" } />);
   },
   deprecated,
 });

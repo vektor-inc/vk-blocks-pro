@@ -30,6 +30,10 @@ export const schema = {
     type: "number",
     default: 3,
 	},
+	col_xxl: {
+		type: "number",
+		default: 3,
+	},
 	display_title: {
     type: "boolean",
     default: true,

@@ -2,37 +2,65 @@ $xs-max: 575.98px;
 $sm-max: 767.98px;
 $md-max: 991.98px;
 $lg-max: 1199.98px;
+$xl-max: 1399.98px;
+
+
 
 $sm-min: 576px;
 $md-min: 768px;
 $lg-min: 992px;
 $xl-min: 1200px;
+$xxl-min: 1400px;
 
 .vk_hidden {
 	display: none !important;
 	color: var(--blue);
+
 	@media (max-width: $xs-max) {
+
 		&-xs {
 			display: none !important;
 		}
 	}
+
 	@media (min-width: $sm-min) and (max-width: $sm-max) {
+
 		&-sm {
 			display: none !important;
 		}
 	}
+
 	@media (min-width: $md-min) and (max-width: $md-max) {
+
 		&-md {
 			display: none !important;
 		}
 	}
+
 	@media (min-width: $lg-min) and (max-width: $lg-max) {
+
 		&-lg {
 			display: none !important;
 		}
 	}
+
 	@media (min-width: $xl-min) {
+
 		&-xl {
+			display: none !important;
+		}
+	}
+
+	@media (min-width: $xl-min) and (max-width: $xl-max) {
+
+		&-xl-v2 {
+			display: none !important;
+		}
+	}
+
+	@media (min-width: $xxl-min) {
+
+		&-xxl {
 			display: none !important;
 		}
 	}

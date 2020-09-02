@@ -30,9 +30,9 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				'display_btn'                => false,
 				'image_default_url'          => false,
 				'overlay'                    => false,
-				'btn_text'                   => __( 'Read more', 'vk_components_textdomain' ),
+				'btn_text'                   => __( 'Read more', 'vk-blocks' ),
 				'btn_align'                  => 'text-right',
-				'new_text'                   => __( 'New!!', 'vk_components_textdomain' ),
+				'new_text'                   => __( 'New!!', 'vk-blocks' ),
 				'new_date'                   => 7,
 				'textlink'                   => true,
 				'class_outer'                => '',
@@ -114,6 +114,8 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 			$hidden_class = array();
 			if ( ! empty( $options['vkb_hidden'] ) ) {
 				array_push( $hidden_class, 'vk_hidden' );
+			} elseif ( ! empty( $options['vkb_hidden_xxl'] ) ) {
+				array_push( $hidden_class, 'vk_hidden-xxl' );
 			} elseif ( ! empty( $options['vkb_hidden_xl'] ) ) {
 				array_push( $hidden_class, 'vk_hidden-xl' );
 			} elseif ( ! empty( $options['vkb_hidden_lg'] ) ) {
@@ -369,19 +371,19 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 
 			$patterns = array(
 				'card'            => array(
-					'label'             => __( 'Card', 'vk_components_textdomain' ),
+					'label'             => __( 'Card', 'vk-blocks' ),
 					'class_posts_outer' => '',
 				),
 				'card-horizontal' => array(
-					'label'             => __( 'Card Horizontal', 'vk_components_textdomain' ),
+					'label'             => __( 'Card Horizontal', 'vk-blocks' ),
 					'class_posts_outer' => '',
 				),
 				'media'           => array(
-					'label'             => __( 'Media', 'vk_components_textdomain' ),
+					'label'             => __( 'Media', 'vk-blocks' ),
 					'class_posts_outer' => 'media-outer',
 				),
 				'postListText'    => array(
-					'label'             => _x( 'Text 1 Column', 'post list type', 'vk_components_textdomain' ),
+					'label'             => _x( 'Text 1 Column', 'post list type', 'vk-blocks' ),
 					'class_posts_outer' => 'postListText-outer',
 				),
 			);
@@ -555,7 +557,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 		 */
 		public static function get_col_size_classes( $attributes ) {
 			$col_class_array = array();
-			$sizes           = array( 'xs', 'sm', 'md', 'lg', 'xl' );
+			$sizes           = array( 'xs', 'sm', 'md', 'lg', 'xl', 'xxl' );
 			foreach ( $sizes as $key => $size ) {
 				if ( ! empty( $attributes[ 'col_' . $size ] ) ) {
 					$col_class_array[] = 'vk_post-col-' . $size . '-' . self::get_col_converted_size( $attributes[ 'col_' . $size ] );

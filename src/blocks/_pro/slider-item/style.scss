@@ -1,4 +1,5 @@
 /*-------------------------------------------*/
+
 /* CSS
 /*-------------------------------------------*/
 
@@ -6,40 +7,49 @@
 	display: flex;
 }
 
-.vk_slider_item-align-vertical-{
-	&top{
+.vk_slider_item-align-vertical- {
+
+	&top {
 		justify-content: flex-start;
 	}
-	&center{
+
+	&center {
 		justify-content: center;
 	}
-	&bottom{
+
+	&bottom {
 		justify-content: flex-end;
 	}
 }
 
 
 /*-------------------------------------------*/
+
 /* CSS
 /*-------------------------------------------*/
 $media-sm-up: 576px;
 $media-md-up: 768px;
 $media-lg-up: 992px;
 $media-xl-up: 1200px;
+$media-xxl-up: 1400px;
 $media-sm-down: 575.98px;
 $media-md-down: 767.98px;
 $media-lg-down: 991.98px;
 $media-xl-down: 1199.98px;
+$media-xxl-down: 1399.98px;
+
 .vk_slider_item {
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	position: relative;
+
 	.vk_slider_item_container {
 		min-height: 40px;
-		width:100%;
+		width: 100%;
 	}
 }
+
 .vk_slider_item-width-full {
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
@@ -54,26 +64,38 @@ $padding-sm: 2em;
 $padding-md: 2.5em;
 $padding-lg: 3em;
 $padding-xl: 3.5em;
+$padding-xxl: 4em;
+
 .vk_slider_item-paddingLR-use {
 	padding-left: $padding-none;
 	padding-right: $padding-none;
+
 	@media (min-width: $media-sm-up) {
 		padding-left: $padding-sm;
 		padding-right: $padding-sm;
 	}
+
 	@media (min-width: $media-md-up) {
 		padding-left: $padding-md;
 		padding-right: $padding-md;
 	}
+
 	@media (min-width: $media-lg-up) {
 		padding-left: $padding-lg;
 		padding-right: $padding-lg;
 	}
+
 	@media (min-width: $media-xl-up) {
 		padding-left: $padding-xl;
 		padding-right: $padding-xl;
 	}
+
+	@media (min-width: $media-xxl-up) {
+		padding-left: $padding-xxl;
+		padding-right: $padding-xxl;
+	}
 }
+
 .vk_slider_item-paddingLR-zero {
 	padding-left: 0;
 	padding-right: 0;

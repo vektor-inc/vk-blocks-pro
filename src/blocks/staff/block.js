@@ -54,7 +54,7 @@ registerBlockType('vk-blocks/staff', {
             vk_staff_profileTitleColor,
             vk_staff_profileTextColor,
             vk_staff_photoBorder
-        } = attributes;
+		} = attributes;
 
         return (
             <Fragment>

@@ -28,22 +28,20 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install
-    - run: npm run build
-    - run: npx gulp dist
-    - run: cd dist/ && zip -r ${{ env.plugin_name }}.zip ${{ env.plugin_name }}/ && mv ${{ env.plugin_name }}.zip ${GITHUB_WORKSPACE}
-    
     - run: npm install -g npm
     # VK BlocksのGithubにアクセスできるユーザーの設定
     - run: git config --global user.email "info@vektor-inc.co.jp"
     - run: git config --global user.name "bitbucket-piplines-vk-blocks-pro"
     # 通常版をクローン
     - run: git clone https://${GIT_USER}:${GIT_TOKEN}@github.com/${GIT_REPOSITORY}
+    - run: pwd
     - run: mv vk-blocks/ vk-blocks-free/
     
     - run: cd vk-blocks-free
     - run: rm -rf src/*
     - run: cd ../
+    - run: ls
+    - run: pwd
     # 指定したファイルを除外して、Pro版をコピー&上書き
     - run: rsync --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'src/outer/' --exclude 'src/table-of-contents/' --exclude 'bin/' --exclude 'tests/' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/_pro/' --exclude 'vk-blocks-free/' --exclude '.node-version' --exclude 'bin/' --exclude '.git/' --exclude '.gitignore' --exclude '.circleci/' --exclude 'tests/' --exclude '.phpcs.xml.dist' --exclude 'bitbucket-pipelines.yml' --exclude 'package-lock.json' --exclude 'phpunit.xml' --exclude 'phpunit.xml.dist' --exclude 'inc/plugin-update-checker/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvc ./* ./vk-blocks-free/
     - run: cd ./vk-blocks-free/
@@ -51,10 +49,10 @@ jobs:
     - run: git checkout -b add/vk-blocks-free
     - run: ls
     - run: pwd
-    - run: cd src
+    - run: cd .src/
     - run: ls
     - run: pwd
-    - run: cd src/
+    - run: cd .src/
     - run: ls
     - run: pwd
     # Pro版ブロックは読み込まないようjsから削除

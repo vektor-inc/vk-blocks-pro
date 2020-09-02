@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.5.0
-Stable tag: 0.43.0
+Stable tag: 0.43.1
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -62,8 +62,10 @@ e.g.
 
 == Changelog ==
 
-= 0.43.0 =
+= 0.43.1 =
 [ Specification Change ] Cope with xxl size
+[ Specification Change ] Stop ExUnit VK Blcosk on VK Blocks Free
+[ Bug fix ][ Flow block ] Arrow image don't display on using tree shaking
 
 = 0.42.1 =
 [ Specification Change ][ term color ] Add exclude taxonomy

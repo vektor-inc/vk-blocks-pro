@@ -34,7 +34,6 @@ jobs:
     - run: git config --global user.name "bitbucket-piplines-vk-blocks-pro"
     # 通常版をクローン
     - run: git clone https://${GIT_USER}:${GIT_TOKEN}@github.com/${GIT_REPOSITORY}
-    - run: pwd
     - run: ls
     - run: mv vk-blocks/ vk-blocks-free/
     

@@ -54,7 +54,7 @@ jobs:
     - run: cd src
     - run: ls
     - run: pwd
-    - run: cd src/blocks/
+    - run: cd src/
     - run: ls
     - run: pwd
     # Pro版ブロックは読み込まないようjsから削除

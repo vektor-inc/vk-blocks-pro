@@ -47,7 +47,7 @@ if ( ! function_exists( 'vkblocks_deactivate_plugin' ) ) {
 -------------------------------------------*/
 /* 関数名入れると無料版の宣言と被ってエラーになるので一時的な回避処理で無名関数を利用 */
 add_action(
-	'init',
+	'admin_init',
 	function() {
 		$plugin_base_dir = dirname( __FILE__ );
 		include_once ABSPATH . 'wp-admin/includes/plugin.php';
@@ -56,12 +56,12 @@ add_action(
 			if ( function_exists( 'vkblocks_deactivate_plugin' ) ) {
 				vkblocks_deactivate_plugin( 'vk-blocks/vk-blocks.php' );
 			}
-			// Deactive ExUnit included VK Blocks
-			$options = get_option( 'vkExUnit_common_options' );
-			if ( ! empty( $options['active_vk-blocks'] ) ) {
-				$options['active_vk-blocks'] = false;
-				update_option( 'vkExUnit_common_options', $options );
-			}
+		}
+		// Deactive ExUnit included VK Blocks
+		$options = get_option( 'vkExUnit_common_options' );
+		if ( ! empty( $options['active_vk-blocks'] ) ) {
+			$options['active_vk-blocks'] = false;
+			update_option( 'vkExUnit_common_options', $options );
 		}
 	}
 );

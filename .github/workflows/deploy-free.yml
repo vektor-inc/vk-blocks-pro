@@ -51,6 +51,7 @@ jobs:
     - run: git checkout -b add/vk-blocks-free
     # 通常版に元からある不要なファイルを削除
     - run: remove_files=(tests/ bin/ src/table-of-contents src/outer inc/vk-blocks/build/block-build.css)
+    - run: echo remove_files
     - run: for remove in ${remove_files[@]}; do
     - run: if [ -d ${remove} ];then
     - run: git rm -r ${remove}

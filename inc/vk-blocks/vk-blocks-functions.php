@@ -20,8 +20,10 @@ add_action(
 	}
 );
 
-/*-------------------------------------------*/
-/*	Get Option
+/*
+-------------------------------------------*/
+/*
+  Get Option
 /*-------------------------------------------*/
 function vkblocks_get_options() {
 	$options  = get_option( 'vk_blocks_options' );
@@ -29,12 +31,12 @@ function vkblocks_get_options() {
 		'display_wp_block_template' => 'hide',
 		'display_vk_block_template' => 'display',
 	);
-	$options = wp_parse_args( $options, $defaults );
+	$options  = wp_parse_args( $options, $defaults );
 	return $options;
 }
 function vkblocks_get_selected( $current, $value ) {
 	$selected = '';
-	if ( $current == $value ){
+	if ( $current == $value ) {
 		$selected = ' selected';
 	}
 	return $selected;
@@ -139,11 +141,11 @@ function vkblocks_blocks_assets() {
 		$arr = array( 'alert', 'balloon', 'button', 'faq', 'flow', 'pr-blocks', 'pr-content', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents-new', 'highlighter', 'timeline', 'timeline-item', 'step', 'step-item', 'post-list', 'list-style', 'group-style', 'child-page', 'card', 'card-item', 'grid-column', 'grid-column-item', 'border-box', 'icon-card', 'icon-card-item', 'animation', 'slider', 'slider-item', 'faq2', 'faq2-q', 'faq2-a' );// REPLACE-FLAG : このコメントは削除しないで下さい。wp-create-gurten-template.shで削除する基準として左の[//REPLACE-FLAG]を使っています。
 
 		$common_attributes = array(
-			'vkb_hidden'    => array(
+			'vkb_hidden'       => array(
 				'type'    => 'boolean',
 				'default' => false,
 			),
-			'vkb_hidden_xxl' => array(
+			'vkb_hidden_xxl'   => array(
 				'type'    => 'boolean',
 				'default' => false,
 			),
@@ -151,23 +153,23 @@ function vkblocks_blocks_assets() {
 				'type'    => 'boolean',
 				'default' => false,
 			),
-			'vkb_hidden_xl' => array(
+			'vkb_hidden_xl'    => array(
 				'type'    => 'boolean',
 				'default' => false,
 			),
-			'vkb_hidden_lg' => array(
+			'vkb_hidden_lg'    => array(
 				'type'    => 'boolean',
 				'default' => false,
 			),
-			'vkb_hidden_md' => array(
+			'vkb_hidden_md'    => array(
 				'type'    => 'boolean',
 				'default' => false,
 			),
-			'vkb_hidden_sm' => array(
+			'vkb_hidden_sm'    => array(
 				'type'    => 'boolean',
 				'default' => false,
 			),
-			'vkb_hidden_xs' => array(
+			'vkb_hidden_xs'    => array(
 				'type'    => 'boolean',
 				'default' => false,
 			),
@@ -244,7 +246,7 @@ function vkblocks_blocks_assets() {
 										'type'    => 'number',
 										'default' => 3,
 									),
-									'col_xxl'            => array(
+									'col_xxl'           => array(
 										'type'    => 'number',
 										'default' => 3,
 									),
@@ -464,6 +466,19 @@ function vkblocks_blocks_assets() {
 			} // if ( $value === 'table-of-contents' ) {
 		} // foreach ( $arr as $value ) {
 	} // if ( defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, '5.0', '>=' ) ) {
+
+	$dynamic_css = '
+		:root {
+			--vk_flow-arrow: url(' . VK_BLOCKS_URL . 'images/arrow_bottom.svg);
+		}
+	';
+	// delete before after space
+	$dynamic_css = trim( $dynamic_css );
+	// convert tab and br to space
+	$dynamic_css = preg_replace( '/[\n\r\t]/', '', $dynamic_css );
+	// Change multiple spaces to single space
+	$dynamic_css = preg_replace( '/\s(?=\s)/', '', $dynamic_css );
+	wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );
 } // function vkblocks_blocks_assets() {
 add_action( 'init', 'vkblocks_blocks_assets' );
 
@@ -514,7 +529,7 @@ if ( function_exists( 'vkblocks_get_version' ) ) {
 
 	function vkblocks_set_vkbpro_version() {
 		$vkbpro_version = vkblocks_get_version();
-		if($vkbpro_version){
+		if ( $vkbpro_version ) {
 			echo '<script>',
 			'var vkbproVersion = "' . $vkbpro_version . '";',
 			'</script>';

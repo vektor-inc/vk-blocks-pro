@@ -49,6 +49,7 @@ jobs:
     - run: cd ./vk-blocks-free/
     # push先のブランチを切る
     - run: git checkout -b add/vk-blocks-free
+    - run: ls
     # Pro版ブロックは読み込まないようjsから削除
     - run: sed -i /_pro/d src/blocks/bundle.js
     # プラグイン名を通常版へリネーム

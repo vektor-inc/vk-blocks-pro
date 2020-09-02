@@ -36,8 +36,7 @@ jobs:
     - run: git clone https://${GIT_USER}:${GIT_TOKEN}@github.com/${GIT_REPOSITORY}
     - run: ls
     - run: mv vk-blocks/ vk-blocks-free/
-    
-    - run: cd ./vk-blocks-free/
+    - run: cd ${GITHUB_WORKSPACE}/vk-blocks-free/
     - run: ls
     - run: rm -rf src/*
     - run: ls

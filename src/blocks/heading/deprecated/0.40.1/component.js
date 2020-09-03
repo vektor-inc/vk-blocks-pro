@@ -1,4 +1,4 @@
-import { vkbBlockEditor } from "./../../_helper/depModules";
+import { vkbBlockEditor } from "./../../../_helper/depModules";
 const { RichText } = vkbBlockEditor;
 const { __ } = wp.i18n; // Import __() from wp.i18n
 import ReactHtmlParser from 'react-html-parser';
@@ -21,7 +21,7 @@ const renderTitle = (level, contents,tStyle, headingStyle ) =>{
 	}
 }
 
-export const VKBHeading_0_40_0 =(props) => {
+export default (props) => {
 	const {attributes,setAttributes,for_} = props
 	let {
 		level,
@@ -50,7 +50,7 @@ export const VKBHeading_0_40_0 =(props) => {
 	}
 
 	//titleのマージンを切り替え
-	if (titleMarginBottom !== null && titleMarginBottom !== undefined) {
+	if (titleMarginBottom) {
 		tStyle = {
 			color: titleColor,
 			fontSize: titleSize + "rem",

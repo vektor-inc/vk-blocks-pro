@@ -16,10 +16,10 @@ export const deprecated = [
     attributes: schema0_37_4,
     save({ attributes, className }) {
       return (
-        <DeprecatedComponent
-          attributes={attributes}
-          className={className}
-          for_={"save"}
+	<DeprecatedComponent
+		attributes={ attributes }
+		className={ className }
+		for_={ "save" }
         />
       );
     },
@@ -34,11 +34,11 @@ export const deprecated = [
 
 class DeprecatedComponent extends Component {
   render() {
-    let for_ = this.props.for_;
-    let attributes = this.props.attributes;
+    const for_ = this.props.for_;
+    const attributes = this.props.attributes;
     let innerClass = "";
-    let className = this.props.className;
-    let containerClass = " vk_card";
+    const className = this.props.className;
+    const containerClass = " vk_card";
     let elm;
     const ALLOWED_BLOCKS = ["vk-blocks/card-item"];
     const TEMPLATE = [ALLOWED_BLOCKS];
@@ -69,25 +69,25 @@ class DeprecatedComponent extends Component {
         convertToGrid(attributes.col_xl);
 
       elm = (
-        <div className={innerClass}>
-          <InnerBlocks template={TEMPLATE} allowedBlocks={ALLOWED_BLOCKS} />
-        </div>
+	<div className={ innerClass }>
+		<InnerBlocks template={ TEMPLATE } allowedBlocks={ ALLOWED_BLOCKS } />
+	</div>
       );
     } else if ("save") {
       elm = <InnerBlocks.Content />;
     }
-    return <div className={"vk_posts"}>{elm}</div>;
+    return <div className={ "vk_posts" }>{ elm }</div>;
   }
 }
 
 class Component0_37_4 extends Component {
 
   render() {
-    let for_ = this.props.for_;
-    let attributes = this.props.attributes;
+    const for_ = this.props.for_;
+    const attributes = this.props.attributes;
     let innerClass = "";
-    let className = this.props.className;
-    let containerClass = " vk_card";
+    const className = this.props.className;
+    const containerClass = " vk_card";
     let elm;
     const ALLOWED_BLOCKS = ["vk-blocks/card-item"];
     const TEMPLATE = [ALLOWED_BLOCKS];
@@ -118,21 +118,21 @@ class Component0_37_4 extends Component {
         convertToGrid(attributes.col_xl);
 
       elm = (
-        <div className={innerClass}>
-          <InnerBlocks template={TEMPLATE} allowedBlocks={ALLOWED_BLOCKS} />
-        </div>
+	<div className={ innerClass }>
+		<InnerBlocks template={ TEMPLATE } allowedBlocks={ ALLOWED_BLOCKS } />
+	</div>
       );
     } else if ("save") {
       elm = <InnerBlocks.Content />;
     }
-    return <div className={`vk_posts ${className}`}>{elm}</div>;
+    return <div className={ `vk_posts ${className}` }>{ elm }</div>;
   }
 }
 
 export class Component0_40_0 extends Component {
 	render() {
-	  let for_ = this.props.for_;
-		  let attributes = this.props.attributes;
+	  const for_ = this.props.for_;
+		  const attributes = this.props.attributes;
 		  const { clientId } = attributes;
 	  let innerClass = "";
 	  let className = this.props.className;
@@ -166,9 +166,9 @@ export class Component0_40_0 extends Component {
 		  convertToGrid(attributes.col_xl);
 
 		elm = (
-		  <div className={innerClass}>
-			<InnerBlocks template={TEMPLATE} allowedBlocks={ALLOWED_BLOCKS} />
-		  </div>
+			<div className={ innerClass }>
+				<InnerBlocks template={ TEMPLATE } allowedBlocks={ ALLOWED_BLOCKS } />
+			</div>
 		);
 	  } else if ("save") {
 		elm = <InnerBlocks.Content />;
@@ -178,7 +178,7 @@ export class Component0_40_0 extends Component {
 			  className = className.replace( /vk_card_undefined/g , "" )
 		  }
 
-		  return <div className={classNames('vk_posts', className, `${prefix}${clientId}`)}>{elm}</div>;
+		  return <div className={ classNames('vk_posts', className, `${prefix}${clientId}`) }>{ elm }</div>;
 
 	}
   }

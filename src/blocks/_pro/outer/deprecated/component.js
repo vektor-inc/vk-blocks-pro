@@ -49,8 +49,8 @@ export class ComponentForTemplate6 extends Component {
       anchor
     } = this.props.attributes;
 
-    let className = this.props.className;
-    let for_ = this.props.for_;
+    const className = this.props.className;
+    const for_ = this.props.for_;
     let classPaddingLR;
     let classPaddingVertical;
     let classBgPosition;
@@ -137,9 +137,9 @@ export class ComponentForTemplate6 extends Component {
     }
 
     return (
-      <div
-        id={"vk-htags-17"}
-        className={
+	<div
+		id={ "vk-htags-17" }
+		className={
           className +
           " vk_outer" +
           classWidth +
@@ -147,26 +147,26 @@ export class ComponentForTemplate6 extends Component {
           classPaddingVertical +
           classBgPosition
         }
-        style={{
+		style={ {
           background: bgStyle,
           border: borderProperty,
           borderRadius: borderRadiusProperty
-        }}
+        } }
       >
-        {componentDivider(
+		{ componentDivider(
           upper_level,
           upperDividerBgColor,
           whichSideUpper,
           dividerType
-        )}
-        <div className={containerClass}>{elm}</div>
-        {componentDivider(
+        ) }
+		<div className={ containerClass }>{ elm }</div>
+		{ componentDivider(
           lower_level,
           lowerDividerBgColor,
           whichSideLower,
           dividerType
-        )}
-      </div>
+        ) }
+	</div>
     );
   }
 }
@@ -193,8 +193,8 @@ export class ComponentForTemplate5 extends Component {
       anchor
     } = this.props.attributes;
 
-    let className = this.props.className;
-    let for_ = this.props.for_;
+    const className = this.props.className;
+    const for_ = this.props.for_;
     let classPaddingLR;
     let classPaddingVertical;
     let classBgPosition;
@@ -281,9 +281,9 @@ export class ComponentForTemplate5 extends Component {
     }
 
     return (
-      <div
-        id={"vk-htags-15"}
-        className={
+	<div
+		id={ "vk-htags-15" }
+		className={
           className +
           " vk_outer" +
           classWidth +
@@ -291,26 +291,26 @@ export class ComponentForTemplate5 extends Component {
           classPaddingVertical +
           classBgPosition
         }
-        style={{
+		style={ {
           background: bgStyle,
           border: borderProperty,
           borderRadius: borderRadiusProperty
-        }}
+        } }
       >
-        {componentDivider(
+		{ componentDivider(
           upper_level,
           upperDividerBgColor,
           whichSideUpper,
           dividerType
-        )}
-        <div className={containerClass}>{elm}</div>
-        {componentDivider(
+        ) }
+		<div className={ containerClass }>{ elm }</div>
+		{ componentDivider(
           lower_level,
           lowerDividerBgColor,
           whichSideLower,
           dividerType
-        )}
-      </div>
+        ) }
+	</div>
     );
   }
 }
@@ -337,8 +337,8 @@ export class ComponentForTemplate4 extends Component {
       anchor
     } = this.props.attributes;
 
-    let className = this.props.className;
-    let for_ = this.props.for_;
+    const className = this.props.className;
+    const for_ = this.props.for_;
     let classPaddingLR;
     let classPaddingVertical;
     let classBgPosition;
@@ -425,9 +425,9 @@ export class ComponentForTemplate4 extends Component {
     }
 
     return (
-      <div
-        id={"vk-htags-9"}
-        className={
+	<div
+		id={ "vk-htags-9" }
+		className={
           className +
           " vk_outer" +
           classWidth +
@@ -435,26 +435,26 @@ export class ComponentForTemplate4 extends Component {
           classPaddingVertical +
           classBgPosition
         }
-        style={{
+		style={ {
           background: bgStyle,
           border: borderProperty,
           borderRadius: borderRadiusProperty
-        }}
+        } }
       >
-        {componentDivider(
+		{ componentDivider(
           upper_level,
           upperDividerBgColor,
           whichSideUpper,
           dividerType
-        )}
-        <div className={containerClass}>{elm}</div>
-        {componentDivider(
+        ) }
+		<div className={ containerClass }>{ elm }</div>
+		{ componentDivider(
           lower_level,
           lowerDividerBgColor,
           whichSideLower,
           dividerType
-        )}
-      </div>
+        ) }
+	</div>
     );
   }
 }
@@ -481,8 +481,8 @@ export class ComponentForTemplate3 extends Component {
       anchor
     } = this.props.attributes;
 
-    let className = this.props.className;
-    let for_ = this.props.for_;
+    const className = this.props.className;
+    const for_ = this.props.for_;
     let classPaddingLR;
     let classPaddingVertical;
     let classBgPosition;
@@ -569,9 +569,9 @@ export class ComponentForTemplate3 extends Component {
     }
 
     return (
-      <div
-        id={"vk-htags-4"}
-        className={
+	<div
+		id={ "vk-htags-4" }
+		className={
           className +
           " vk_outer" +
           classWidth +
@@ -579,26 +579,26 @@ export class ComponentForTemplate3 extends Component {
           classPaddingVertical +
           classBgPosition
         }
-        style={{
+		style={ {
           background: bgStyle,
           border: borderProperty,
           borderRadius: borderRadiusProperty
-        }}
+        } }
       >
-        {componentDivider(
+		{ componentDivider(
           upper_level,
           upperDividerBgColor,
           whichSideUpper,
           dividerType
-        )}
-        <div className={containerClass}>{elm}</div>
-        {componentDivider(
+        ) }
+		<div className={ containerClass }>{ elm }</div>
+		{ componentDivider(
           lower_level,
           lowerDividerBgColor,
           whichSideLower,
           dividerType
-        )}
-      </div>
+        ) }
+	</div>
     );
   }
 }
@@ -625,8 +625,8 @@ export class ComponentForTemplate2 extends Component {
       anchor
     } = this.props.attributes;
 
-    let className = this.props.className;
-    let for_ = this.props.for_;
+    const className = this.props.className;
+    const for_ = this.props.for_;
     let classPaddingLR;
     let classPaddingVertical;
     let classBgPosition;
@@ -713,9 +713,9 @@ export class ComponentForTemplate2 extends Component {
     }
 
     return (
-      <div
-        id={"vk-htags-5"}
-        className={
+	<div
+		id={ "vk-htags-5" }
+		className={
           className +
           " vk_outer" +
           classWidth +
@@ -723,26 +723,26 @@ export class ComponentForTemplate2 extends Component {
           classPaddingVertical +
           classBgPosition
         }
-        style={{
+		style={ {
           background: bgStyle,
           border: borderProperty,
           borderRadius: borderRadiusProperty
-        }}
+        } }
       >
-        {componentDivider(
+		{ componentDivider(
           upper_level,
           upperDividerBgColor,
           whichSideUpper,
           dividerType
-        )}
-        <div className={containerClass}>{elm}</div>
-        {componentDivider(
+        ) }
+		<div className={ containerClass }>{ elm }</div>
+		{ componentDivider(
           lower_level,
           lowerDividerBgColor,
           whichSideLower,
           dividerType
-        )}
-      </div>
+        ) }
+	</div>
     );
   }
 }
@@ -770,8 +770,8 @@ export class ComponentForTemplate1 extends Component {
       anchor
     } = this.props.attributes;
 
-    let className = this.props.className;
-    let for_ = this.props.for_;
+    const className = this.props.className;
+    const for_ = this.props.for_;
     let classPaddingLR;
     let classPaddingVertical;
     let classBgPosition;
@@ -858,9 +858,9 @@ export class ComponentForTemplate1 extends Component {
     }
 
     return (
-      <div
-        id={"vk-htags-11"}
-        className={
+	<div
+		id={ "vk-htags-11" }
+		className={
           className +
           " vk_outer" +
           classWidth +
@@ -868,26 +868,26 @@ export class ComponentForTemplate1 extends Component {
           classPaddingVertical +
           classBgPosition
         }
-        style={{
+		style={ {
           background: bgStyle,
           border: borderProperty,
           borderRadius: borderRadiusProperty
-        }}
+        } }
       >
-        {componentDivider(
+		{ componentDivider(
           upper_level,
           upperDividerBgColor,
           whichSideUpper,
           dividerType
-        )}
-        <div className={containerClass}>{elm}</div>
-        {componentDivider(
+        ) }
+		<div className={ containerClass }>{ elm }</div>
+		{ componentDivider(
           lower_level,
           lowerDividerBgColor,
           whichSideLower,
           dividerType
-        )}
-      </div>
+        ) }
+	</div>
     );
   }
 }
@@ -914,8 +914,8 @@ export class ComponentForTemplate0 extends Component {
       anchor
     } = this.props.attributes;
 
-    let className = this.props.className;
-    let for_ = this.props.for_;
+    const className = this.props.className;
+    const for_ = this.props.for_;
     let classPaddingLR;
     let classPaddingVertical;
     let classBgPosition;
@@ -1002,9 +1002,9 @@ export class ComponentForTemplate0 extends Component {
     }
 
     return (
-      <div
-        id={"vk-htags-"}
-        className={
+	<div
+		id={ "vk-htags-" }
+		className={
           className +
           " vk_outer" +
           classWidth +
@@ -1012,26 +1012,26 @@ export class ComponentForTemplate0 extends Component {
           classPaddingVertical +
           classBgPosition
         }
-        style={{
+		style={ {
           background: bgStyle,
           border: borderProperty,
           borderRadius: borderRadiusProperty
-        }}
+        } }
       >
-        {componentDivider(
+		{ componentDivider(
           upper_level,
           upperDividerBgColor,
           whichSideUpper,
           dividerType
-        )}
-        <div className={containerClass}>{elm}</div>
-        {componentDivider(
+        ) }
+		<div className={ containerClass }>{ elm }</div>
+		{ componentDivider(
           lower_level,
           lowerDividerBgColor,
           whichSideLower,
           dividerType
-        )}
-      </div>
+        ) }
+	</div>
     );
   }
 }
@@ -1058,8 +1058,8 @@ export class ComponentV1 extends Component {
       anchor
     } = this.props.attributes;
 
-    let className = this.props.className;
-    let for_ = this.props.for_;
+    const className = this.props.className;
+    const for_ = this.props.for_;
     let classPaddingLR;
     let classPaddingVertical;
     let classBgPosition;
@@ -1146,9 +1146,9 @@ export class ComponentV1 extends Component {
     }
 
     return (
-      <div
-        id={anchor}
-        className={
+	<div
+		id={ anchor }
+		className={
           className +
           " vk_outer" +
           classWidth +
@@ -1156,26 +1156,26 @@ export class ComponentV1 extends Component {
           classPaddingVertical +
           classBgPosition
         }
-        style={{
+		style={ {
           background: bgStyle,
           border: borderProperty,
           borderRadius: borderRadiusProperty
-        }}
+        } }
       >
-        {componentDivider(
+		{ componentDivider(
           upper_level,
           upperDividerBgColor,
           whichSideUpper,
           dividerType
-        )}
-        <div className={containerClass}>{elm}</div>
-        {componentDivider(
+        ) }
+		<div className={ containerClass }>{ elm }</div>
+		{ componentDivider(
           lower_level,
           lowerDividerBgColor,
           whichSideLower,
           dividerType
-        )}
-      </div>
+        ) }
+	</div>
     );
   }
 }
@@ -1202,7 +1202,7 @@ export class ComponentV0 extends Component {
       anchor
     } = this.props.attributes;
 
-    let for_ = this.props.for_;
+    const for_ = this.props.for_;
     let classPaddingLR;
     let classPaddingVertical;
     let classBgPosition;
@@ -1289,35 +1289,35 @@ export class ComponentV0 extends Component {
     }
 
     return (
-      <div
-        id={anchor}
-        className={
+	<div
+		id={ anchor }
+		className={
           "vk_outer" +
           classWidth +
           classPaddingLR +
           classPaddingVertical +
           classBgPosition
         }
-        style={{
+		style={ {
           background: bgStyle,
           border: borderProperty,
           borderRadius: borderRadiusProperty
-        }}
+        } }
       >
-        {componentDivider(
+		{ componentDivider(
           upper_level,
           upperDividerBgColor,
           whichSideUpper,
           dividerType
-        )}
-        <div className={containerClass}>{elm}</div>
-        {componentDivider(
+        ) }
+		<div className={ containerClass }>{ elm }</div>
+		{ componentDivider(
           lower_level,
           lowerDividerBgColor,
           whichSideLower,
           dividerType
-        )}
-      </div>
+        ) }
+	</div>
     );
   }
 }

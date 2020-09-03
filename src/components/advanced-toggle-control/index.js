@@ -13,14 +13,14 @@ export const AdvancedToggleControl = (props) => {
 
   const [hasFixedTable, setHasFixedTable] = useState(initialFixedTable);
   return (
-    <ToggleControl
-      label={label}
-      help={hasFixedTable ? helpYes : helpNo}
-      checked={hasFixedTable}
-      onChange={() => {
+	<ToggleControl
+		label={ label }
+		help={ hasFixedTable ? helpYes : helpNo }
+		checked={ hasFixedTable }
+		onChange={ () => {
         setHasFixedTable(!hasFixedTable);
         setAttributes({ [schema]: !hasFixedTable });
-      }}
+      } }
     />
   );
 };

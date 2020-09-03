@@ -8,8 +8,8 @@ import classNames from "classnames";
 
 export class Component extends React.Component {
   render() {
-    let for_ = this.props.for_;
-		let attributes = this.props.attributes;
+    const for_ = this.props.for_;
+		const attributes = this.props.attributes;
 		const { clientId } = attributes;
     let innerClass = "";
     let className = this.props.className;
@@ -29,9 +29,9 @@ export class Component extends React.Component {
 		innerClass += " vk_posts-edit-col-xxl-" + convertToGrid(attributes.col_xxl);
 
       elm = (
-        <div className={innerClass}>
-          <InnerBlocks template={TEMPLATE} allowedBlocks={ALLOWED_BLOCKS} />
-        </div>
+	<div className={ innerClass }>
+		<InnerBlocks template={ TEMPLATE } allowedBlocks={ ALLOWED_BLOCKS } />
+	</div>
       );
     } else if ("save") {
       elm = <InnerBlocks.Content />;
@@ -41,7 +41,7 @@ export class Component extends React.Component {
 			className = className.replace( /vk_card_undefined/g , "" )
 		}
 
-		return <div className={classNames('vk_posts', className, `${prefix}${clientId}`)}>{elm}</div>;
+		return <div className={ classNames('vk_posts', className, `${prefix}${clientId}`) }>{ elm }</div>;
 
   }
 }

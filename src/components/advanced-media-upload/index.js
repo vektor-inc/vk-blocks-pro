@@ -17,34 +17,34 @@ export const AdvancedMediaUpload = (props) => {
 
 	return (
 		<MediaUpload
-			onSelect={(value) => setAttributes({ [schema]: value.url })}
+			onSelect={ (value) => setAttributes({ [schema]: value.url }) }
 			type="image"
-			value={attributes[schema]}
-			render={({ open }) => (
+			value={ attributes[schema] }
+			render={ ({ open }) => (
 				<Fragment>
-					{attributes[schema] ? (
+					{ attributes[schema] ? (
 						<Fragment>
-							<img className={"icon-image"} src={attributes[schema]} />
+							<img className={ "icon-image" } src={ attributes[schema] } />
 							<Button
-								onClick={deleteImgBtn}
-								className={"image-button button button-delete"}
+								onClick={ deleteImgBtn }
+								className={ "image-button button button-delete" }
 							>
-								{__("Delete Image", "vk-blocks")}
+								{ __("Delete Image", "vk-blocks") }
 							</Button>
 						</Fragment>
 					) : (
-							<Fragment>
-								<img className={"icon-image"} src={noImage} />
-								<Button
-									onClick={open}
-									className={"button button-large components-button"}
+						<Fragment>
+							<img className={ "icon-image" } src={ noImage } />
+							<Button
+								onClick={ open }
+								className={ "button button-large components-button" }
 								>
-									{__("Select image", "vk-blocks")}
-								</Button>
-							</Fragment>
-						)}
+								{ __("Select image", "vk-blocks") }
+							</Button>
+						</Fragment>
+						) }
 				</Fragment>
-			)}
+			) }
 		/>
 	);
 };

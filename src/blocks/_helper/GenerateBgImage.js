@@ -16,7 +16,7 @@ const GenerateBgImage = (props) => {
 	const underPcViewport = "max-width: 1199.98px";
 
 	let backgroundStyle;
-	let backgroundPosition = 'background-position:center!important;'
+	const backgroundPosition = 'background-position:center!important;'
 	if("cover" === bgSize){
 		backgroundStyle = `background-size:${bgSize}!important; ${backgroundPosition}`
 	}else if("repeat" === bgSize){
@@ -38,19 +38,19 @@ const GenerateBgImage = (props) => {
 	//moible only
 	if (bgImageMobile && !bgImageTablet && !bgImage) {
 		return (
-			<style>{ `.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile}); ${backgroundStyle}}`}</style>
+			<style>{ `.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile}); ${backgroundStyle}}` }</style>
 		);
 	}
 	//tablet only
 	if (!bgImageMobile && bgImageTablet && !bgImage) {
 		return (
-			<style>{ `.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet}); ${backgroundStyle}}`}</style>
+			<style>{ `.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet}); ${backgroundStyle}}` }</style>
 		);
 	}
 	//pc only
 	if (!bgImageMobile && !bgImageTablet && bgImage) {
 		return (
-			<style>{ `.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage}); ${backgroundStyle}}`}</style>
+			<style>{ `.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage}); ${backgroundStyle}}` }</style>
 		);
 	}
 	//pc -mobile
@@ -119,7 +119,7 @@ const GenerateBgImage = (props) => {
 	//no background image
 	if (!bgImageMobile && !bgImageTablet && !bgImage) {
 		return (
-			<style>{ `.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}); ${backgroundStyle}}`}</style>
+			<style>{ `.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}); ${backgroundStyle}}` }</style>
 		);
 	}
 };

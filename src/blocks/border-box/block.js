@@ -49,7 +49,7 @@ registerBlockType('vk-blocks/border-box', {
 	supports:{
 		className:true
 	},
-	example:example,
+	example,
 
 	styles: [
 		{

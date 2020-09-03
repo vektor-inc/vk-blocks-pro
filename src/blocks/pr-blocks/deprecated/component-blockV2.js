@@ -8,8 +8,8 @@ export class ComponentBlockV2 extends Component {
 
     render() {
 
-        let setAttributes = this.props.setAttributes;
-        let {
+        const setAttributes = this.props.setAttributes;
+        const {
             heading1,
             heading2,
             heading3,
@@ -35,9 +35,9 @@ export class ComponentBlockV2 extends Component {
             insertImage2,
             insertImage3
         } = this.props.attributes;
-        let for_ = this.props.for_;
-        let blockNum = this.props.blockNum;
-        let blockNumArrIndex = this.props.blockNum - 1;
+        const for_ = this.props.for_;
+        const blockNum = this.props.blockNum;
+        const blockNumArrIndex = this.props.blockNum - 1;
 
         const heading = [heading1, heading2, heading3];
         const content = [content1, content2, content3];
@@ -53,42 +53,42 @@ export class ComponentBlockV2 extends Component {
 
         const renderSaveAltImage = (insertImage) => {
             if (isNotJSON(insertImage)) {
-                return <img src={insertImage}
-                    alt='' />
-            } else {
+                return <img src={ insertImage }
+	alt='' />
+            } 
                 const IconImageParse = JSON.parse(insertImage);
-                return <img src={IconImageParse.sizes.full.url}
-                    alt={IconImageParse.alt} />
-            }
+                return <img src={ IconImageParse.sizes.full.url }
+	alt={ IconImageParse.alt } />
+            
         };
 
         const renderItem_image = (insertImage) => {
-            let bgImage = insertImage[blockNumArrIndex];
+            const bgImage = insertImage[blockNumArrIndex];
             if (isNotJSON(bgImage)) {
                 return {
                     backgroundImage: `url(${bgImage})`,
                     backgroundRepeat: 'no-repeat 50% center',
                     backgroundSize: 'cover'
                 }
-            } else {
+            } 
                 const bgImageParse = JSON.parse(bgImage);
                 return {
                     backgroundImage: `url(${bgImageParse.sizes.full.url})`,
                     backgroundRepeat: 'no-repeat 50% center',
                     backgroundSize: 'cover'
                 }
-            }
+            
         };
 
-        let drawElement = (() => {
+        const drawElement = (() => {
 
             if (insertImage[blockNumArrIndex]) {
                 return <div className="vk_prBlocks_item_image"
-                    style={renderItem_image(insertImage)}>
-                    {renderSaveAltImage(insertImage[blockNumArrIndex])}
+	style={ renderItem_image(insertImage) }>
+	{ renderSaveAltImage(insertImage[blockNumArrIndex]) }
                 </div>
 
-            } else {
+            } 
 
                 if (!color[blockNumArrIndex]) {
                     color[blockNumArrIndex] = '#0693e3';
@@ -96,25 +96,25 @@ export class ComponentBlockV2 extends Component {
                 if (bgType[blockNumArrIndex] === '0') {
 
                     return <div
-                        className="vk_prBlocks_item_icon_outer"
-                        style={{
+	className="vk_prBlocks_item_icon_outer"
+	style={ {
                             backgroundColor: color[blockNumArrIndex],
                             border: `1px solid ${color[blockNumArrIndex]}`
-                        }}
-                    ><i className={`${icon[blockNumArrIndex]} vk_prBlocks_item_icon`}
-                        style={{ color: '#fff' }}>
+                        } }
+                    ><i className={ `${icon[blockNumArrIndex]} vk_prBlocks_item_icon` }
+	style={ { color: '#fff' } }>
                         </i>
                     </div>
-                } else {
+                } 
                     return <div
-                        className="vk_prBlocks_item_icon_outer"
-                        style={{ backgroundColor: 'transparent', border: '1px solid ' + color[blockNumArrIndex] }}
-                    ><i className={`${icon[blockNumArrIndex]} vk_prBlocks_item_icon`}
-                        style={{ color: color[blockNumArrIndex] }}>
+	className="vk_prBlocks_item_icon_outer"
+	style={ { backgroundColor: 'transparent', border: '1px solid ' + color[blockNumArrIndex] } }
+                    ><i className={ `${icon[blockNumArrIndex]} vk_prBlocks_item_icon` }
+	style={ { color: color[blockNumArrIndex] } }>
                         </i>
                     </div>
-                }
-            }
+                
+            
         })();
 
 
@@ -124,89 +124,89 @@ export class ComponentBlockV2 extends Component {
             if (blockNum === 1) {
 
                 richTextH1Save = <RichText
-                    className="vk_prBlocks_item_title vk_prBlocks_item_title-1"
-                    tagName={'h3'}
-                    onChange={(value) => setAttributes({ heading1: value })}
-                    value={heading1}
-                    placeholder={__('Input Title', 'vk-blocks')}
+	className="vk_prBlocks_item_title vk_prBlocks_item_title-1"
+	tagName={ 'h3' }
+	onChange={ (value) => setAttributes({ heading1: value }) }
+	value={ heading1 }
+	placeholder={ __('Input Title', 'vk-blocks') }
                 />;
                 richTextPSave = <RichText
-                    className="vk_prBlocks_item_summary vk_prBlocks_item_summary-1"
-                    tagName={'p'}
-                    onChange={(value) => setAttributes({ content1: value })}
-                    value={content1}
-                    placeholder={__('Input Content', 'vk-blocks')}
+	className="vk_prBlocks_item_summary vk_prBlocks_item_summary-1"
+	tagName={ 'p' }
+	onChange={ (value) => setAttributes({ content1: value }) }
+	value={ content1 }
+	placeholder={ __('Input Content', 'vk-blocks') }
                 />;
 
             } else if (blockNum === 2) {
 
                 richTextH1Save = <RichText
-                    className="vk_prBlocks_item_title vk_prBlocks_item_title-2"
-                    tagName={'h3'}
-                    onChange={(value) => setAttributes({ heading2: value })}
-                    value={heading2}
-                    placeholder={__('Input Title', 'vk-blocks')}
+	className="vk_prBlocks_item_title vk_prBlocks_item_title-2"
+	tagName={ 'h3' }
+	onChange={ (value) => setAttributes({ heading2: value }) }
+	value={ heading2 }
+	placeholder={ __('Input Title', 'vk-blocks') }
                 />;
                 richTextPSave = <RichText
-                    className="vk_prBlocks_item_summary vk_prBlocks_item_summary-2"
-                    tagName={'p'}
-                    onChange={(value) => setAttributes({ content2: value })}
-                    value={content2}
-                    placeholder={__('Input Content', 'vk-blocks')}
+	className="vk_prBlocks_item_summary vk_prBlocks_item_summary-2"
+	tagName={ 'p' }
+	onChange={ (value) => setAttributes({ content2: value }) }
+	value={ content2 }
+	placeholder={ __('Input Content', 'vk-blocks') }
                 />;
 
             } else if (blockNum === 3) {
                 richTextH1Save = <RichText
-                    className="vk_prBlocks_item_title vk_prBlocks_item_title-3"
-                    tagName={'h3'}
-                    onChange={(value) => setAttributes({ heading3: value })}
-                    value={heading3}
-                    placeholder={__('Input Title', 'vk-blocks')}
+	className="vk_prBlocks_item_title vk_prBlocks_item_title-3"
+	tagName={ 'h3' }
+	onChange={ (value) => setAttributes({ heading3: value }) }
+	value={ heading3 }
+	placeholder={ __('Input Title', 'vk-blocks') }
                 />;
                 richTextPSave = <RichText
-                    className="vk_prBlocks_item_summary vk_prBlocks_item_summary-3"
-                    tagName={'p'}
-                    onChange={(value) => setAttributes({ content3: value })}
-                    value={content3}
-                    placeholder={__('Input Content', 'vk-blocks')}
+	className="vk_prBlocks_item_summary vk_prBlocks_item_summary-3"
+	tagName={ 'p' }
+	onChange={ (value) => setAttributes({ content3: value }) }
+	value={ content3 }
+	placeholder={ __('Input Content', 'vk-blocks') }
                 />;
             }
 
         } else if (for_ === 'save') {
 
             richTextH1Save = <RichText.Content
-                className={`vk_prBlocks_item_title vk_prBlocks_item_title-${blockNum}`}
-                tagName={'h3'}
-                value={heading[blockNumArrIndex]} />;
+	className={ `vk_prBlocks_item_title vk_prBlocks_item_title-${blockNum}` }
+	tagName={ 'h3' }
+	value={ heading[blockNumArrIndex] } />;
             richTextPSave = <RichText.Content
-                className={`vk_prBlocks_item_summary vk_prBlocks_item_summary-${blockNum}`}
-                tagName={'p'}
-                value={content[blockNumArrIndex]} />;
+	className={ `vk_prBlocks_item_summary vk_prBlocks_item_summary-${blockNum}` }
+	tagName={ 'p' }
+	value={ content[blockNumArrIndex] } />;
         }
 
 
         // aタグ判定
         if (url[blockNumArrIndex] && for_ === 'save') {
             return (
-                <div className="vk_prBlocks_item col-sm-4">
-                    <a href={url[blockNumArrIndex]} className="vk_prBlocks_item_link"
-                        target={urlOpenType[blockNumArrIndex] ? '_blank' : '_self'}
-                        rel="noopener noreferrer">
-                        {drawElement}
-                        {richTextH1Save}
-                        {richTextPSave}
-                    </a>
-                </div>
+	<div className="vk_prBlocks_item col-sm-4">
+		<a href={ url[blockNumArrIndex] } className="vk_prBlocks_item_link"
+			target={ urlOpenType[blockNumArrIndex] ? '_blank' : '_self' }
+			rel="noopener noreferrer">
+			{ drawElement }
+			{ richTextH1Save }
+			{ richTextPSave }
+		</a>
+	</div>
             );
-        } else {
+        } 
             return (
-                <div className="vk_prBlocks_item col-sm-4">
-                    {drawElement}
-                    {richTextH1Save}
-                    {richTextPSave}
-                </div>
+	<div className="vk_prBlocks_item col-sm-4">
+		{ drawElement }
+		{ richTextH1Save }
+		{ richTextPSave }
+	</div>
             );
-        }
+        
 
 
     }

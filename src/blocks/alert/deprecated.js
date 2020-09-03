@@ -20,11 +20,11 @@ export const deprecated = [
                 content
             } = attributes;
             return (
-                <div className={`alert alert-${style}`}>
-                    <RichText.Content
-                        tagName={'p'}
-                        value={content} />
-                </div>
+	<div className={ `alert alert-${style}` }>
+		<RichText.Content
+			tagName={ 'p' }
+			value={ content } />
+	</div>
             );
         },
     }

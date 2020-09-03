@@ -15,18 +15,18 @@ const Body = (props) => {
 		inner = <InnerBlocks />;
 		title = <RichText
 			tagName="h4"
-			className={"vk_borderBox_title"}
-			onChange={value => setAttributes({ heading: value })}
-			value={heading}
-			placeholder={__("Please enter a title.", "vk-blocks")}
+			className={ "vk_borderBox_title" }
+			onChange={ value => setAttributes({ heading: value }) }
+			value={ heading }
+			placeholder={ __("Please enter a title.", "vk-blocks") }
 		/>
 
 	} else if ("save") {
 		inner = <InnerBlocks.Content />;
 		title = <RichText.Content
 			tagName="h4"
-			className={"vk_borderBox_title"}
-			value={heading}
+			className={ "vk_borderBox_title" }
+			value={ heading }
 		/>
 	}
 
@@ -45,13 +45,13 @@ const Body = (props) => {
 	}
 
 	return (
-		<div className={`vk_borderBox vk_borderBox-color-${color} vk_borderBox-background-${bgColor} ${customClass}`}>
+		<div className={ `vk_borderBox vk_borderBox-color-${color} vk_borderBox-background-${bgColor} ${customClass}` }>
 			<div className="vk_borderBox_title_container">
-				{ReactHtmlParser(icon)}
-				{title}
+				{ ReactHtmlParser(icon) }
+				{ title }
 			</div>
-			<div className={`vk_borderBox_body`}>
-				{inner}
+			<div className={ `vk_borderBox_body` }>
+				{ inner }
 			</div>
 		</div>
 	);

@@ -42,12 +42,12 @@ const SliderItem = ( props )=>{
 	baseClass = classNames(className, `vk_slider_item swiper-slide vk_valign-${verticalAlignment} ${prefix}-${clientId}`, `${classPaddingLR}`, `${prefix}-paddingVertical-none`)
 
     return(
-        <div className={baseClass}>
-			<GenerateBgImage prefix={prefix} clientId={clientId} {...props} />
-			<div className={containerClass}>
-			{elm}
-			</div>
+	<div className={ baseClass }>
+		<GenerateBgImage prefix={ prefix } clientId={ clientId } { ...props } />
+		<div className={ containerClass }>
+			{ elm }
 		</div>
+	</div>
     )
 
 

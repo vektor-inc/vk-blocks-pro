@@ -40,7 +40,7 @@ registerBlockType('vk-blocks/flow', {
 	example:{
 		attributes: {
 			heading: title,
-			content: content,
+			content,
 			arrowFlag:  'vk_flow-arrow-on',
 			insertImage: iconPicture
 		},
@@ -57,55 +57,55 @@ registerBlockType('vk-blocks/flow', {
 		return (
 			<Fragment>
 				<InspectorControls>
-					<PanelBody title={__('Display of arrow', 'vk-blocks')}>
+					<PanelBody title={ __('Display of arrow', 'vk-blocks') }>
 						<RadioControl
-							selected={arrowFlag}
-							options={[
+							selected={ arrowFlag }
+							options={ [
 								{ label: __('Arrow display', 'vk-blocks'), value: 'vk_flow-arrow-on' },
 								{ label: __('Arrow hidden', 'vk-blocks'), value: 'vk_flow-arrow-off' },
-							]}
-							onChange={(value) => setAttributes({ arrowFlag: value })}
+							] }
+							onChange={ (value) => setAttributes({ arrowFlag: value }) }
 						/>
 					</PanelBody>
 				</InspectorControls>
 
-				<div className={`${className} ${arrowFlag} vk_flow`}>
-					<div className={'vk_flow_frame'} >
+				<div className={ `${className} ${arrowFlag} vk_flow` }>
+					<div className={ 'vk_flow_frame' } >
 						<dl
-							className={'vk_flow_frame_text'}
+							className={ 'vk_flow_frame_text' }
 						>
 							<RichText
-								key={`${clientId}2`}
+								key={ `${clientId}2` }
 								tagName="dt"
-								className={'vk_flow_frame_text_title'}
-								onChange={(value) => setAttributes({ heading: value })}
-								value={heading}
-								placeholder={__('Input title', 'vk-blocks')}
+								className={ 'vk_flow_frame_text_title' }
+								onChange={ (value) => setAttributes({ heading: value }) }
+								value={ heading }
+								placeholder={ __('Input title', 'vk-blocks') }
 							/>
 							<RichText
-								key={`${clientId}3`}
+								key={ `${clientId}3` }
 								tagName="dd"
-								className={'vk_flow_frame_text_content'}
-								onChange={(value) => setAttributes({ content: value })}
-								value={content}
-								placeholder={__('Input content', 'vk-blocks')}
+								className={ 'vk_flow_frame_text_content' }
+								onChange={ (value) => setAttributes({ content: value }) }
+								value={ content }
+								placeholder={ __('Input content', 'vk-blocks') }
 							/>
 						</dl>
-						<div className={'vk_flow_frame_image'}>
+						<div className={ 'vk_flow_frame_image' }>
 							<MediaUpload
-								onSelect={(value) => setAttributes({ insertImage: value.url })}
+								onSelect={ (value) => setAttributes({ insertImage: value.url }) }
 								type="image"
-								className={'vk_flow_frame_image'}
-								value={insertImage}
-								render={({ open }) => (
+								className={ 'vk_flow_frame_image' }
+								value={ insertImage }
+								render={ ({ open }) => (
 									<Button
-										onClick={open}
-										className={insertImage ? 'image-button' : 'button button-large'}
+										onClick={ open }
+										className={ insertImage ? 'image-button' : 'button button-large' }
 									>
-										{!insertImage ? __('Select image', 'vk-blocks') :
-											<img className={'icon-image'} src={insertImage} alt={__('Upload image', 'vk-blocks')} />}
+										{ !insertImage ? __('Select image', 'vk-blocks') :
+										<img className={ 'icon-image' } src={ insertImage } alt={ __('Upload image', 'vk-blocks') } /> }
 									</Button>
-								)}
+								) }
 							/>
 						</div>
 					</div>
@@ -123,30 +123,30 @@ registerBlockType('vk-blocks/flow', {
 		} = attributes;
 
 		return (
-			<div className={`${className} ${arrowFlag} vk_flow`}>
-				<div className={'vk_flow_frame'}>
-					<dl className={'vk_flow_frame_text'}>
+			<div className={ `${className} ${arrowFlag} vk_flow` }>
+				<div className={ 'vk_flow_frame' }>
+					<dl className={ 'vk_flow_frame_text' }>
 						<RichText.Content
 							tagName="dt"
-							className={'vk_flow_frame_text_title'}
-							value={heading}
+							className={ 'vk_flow_frame_text_title' }
+							value={ heading }
 						/>
 						<RichText.Content
 							tagName="dd"
-							className={'vk_flow_frame_text_content'}
-							value={content}
+							className={ 'vk_flow_frame_text_content' }
+							value={ content }
 						/>
 					</dl>
-					{insertImage ?
-						<div className={'vk_flow_frame_image'}>
+					{ insertImage ?
+						<div className={ 'vk_flow_frame_image' }>
 							<img
-								src={insertImage}
+								src={ insertImage }
 								alt=''
-							/></div> : ''}
+							/></div> : '' }
 				</div>
 			</div>
 		);
 	},
 
-	deprecated: deprecated
+	deprecated
 });

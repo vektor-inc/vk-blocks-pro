@@ -69,7 +69,7 @@ export const deprecated = [
 		},
         save({ attributes, className }) {
 
-            return (<ComponentV1 attributes={attributes} className={className} for_={"save"} />);
+            return (<ComponentV1 attributes={ attributes } className={ className } for_={ "save" } />);
         },
     },
     {
@@ -136,9 +136,9 @@ export const deprecated = [
         save({ attributes, className }) {
 
             return (
-                <ComponentDeprecated
-                    attributes={attributes}
-                    for_={'save'}
+	<ComponentDeprecated
+		attributes={ attributes }
+		for_={ 'save' }
                 />
             );
         },
@@ -206,10 +206,10 @@ export const deprecated = [
         save({ attributes, className }) {
 
             return (
-                <ComponentNoBorderColor
-                    attributes={attributes}
-                    className={className}
-                    for_={'save'}
+	<ComponentNoBorderColor
+		attributes={ attributes }
+		className={ className }
+		for_={ 'save' }
                 />
             );
         },

@@ -37,7 +37,12 @@ msgstr ""
 
 #: src/blocks/_helper/example-data.js:3
 #: src/blocks/_pro/card-item/component.js:170
+<<<<<<< HEAD
 #: src/blocks/_pro/card-item/deprecated.js:1200
+=======
+#: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:157
+#: src/blocks/_pro/card-item/deprecated/index.js:1200
+>>>>>>> develop
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
 "tempor incididunt ut labore et dolore magna aliqua. "
@@ -193,9 +198,16 @@ msgid "https://example.com"
 msgstr "https://example.com"
 
 #: src/blocks/_pro/card-item/component.js:102
+<<<<<<< HEAD
 #: src/blocks/_pro/card-item/deprecated.js:1132 src/blocks/balloon/block.js:253
 #: src/blocks/flow/block.js:105 src/blocks/pr-blocks/block.js:168
 #: src/blocks/pr-content/component.js:157
+=======
+#: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:90
+#: src/blocks/_pro/card-item/deprecated/index.js:1132
+#: src/blocks/balloon/block.js:253 src/blocks/flow/block.js:105
+#: src/blocks/pr-blocks/block.js:168 src/blocks/pr-content/component.js:157
+>>>>>>> develop
 #: src/blocks/pr-content/deprecated/component-deprecated.js:102
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:116
 #: src/blocks/pr-content/deprecated/componentV1.js:185
@@ -205,13 +217,23 @@ msgid "Select image"
 msgstr "画像を選択"
 
 #: src/blocks/_pro/card-item/component.js:115
+<<<<<<< HEAD
 #: src/blocks/_pro/card-item/deprecated.js:1145
+=======
+#: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:103
+#: src/blocks/_pro/card-item/deprecated/index.js:1145
+>>>>>>> develop
 #: src/components/advanced-media-upload/index.js:32
 msgid "Delete Image"
 msgstr "画像を削除"
 
 #: src/blocks/_pro/card-item/component.js:216
+<<<<<<< HEAD
 #: src/blocks/_pro/card-item/deprecated.js:1246
+=======
+#: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:199
+#: src/blocks/_pro/card-item/deprecated/index.js:1246
+>>>>>>> develop
 #: src/blocks/_pro/card/block.js:145 src/blocks/_pro/icon-card/block.js:106
 msgid "Title"
 msgstr "タイトルを入力"
@@ -1238,7 +1260,8 @@ msgid "Heading"
 msgstr "見出し"
 
 #: src/blocks/heading/component.js:109
-#: src/blocks/heading/deprecated/block.js:415
+#: src/blocks/heading/deprecated/0.40.1/component.js:109
+#: src/blocks/heading/deprecated/block.js:417
 #: src/blocks/heading/deprecated/component.js:318
 #: src/blocks/heading/deprecated/component_0_39_5.js:109
 #: src/blocks/heading/deprecated/component_0_40_0.js:109
@@ -1246,7 +1269,8 @@ msgid "Input title…"
 msgstr "タイトルを入力"
 
 #: src/blocks/heading/component.js:122
-#: src/blocks/heading/deprecated/block.js:431
+#: src/blocks/heading/deprecated/0.40.1/component.js:122
+#: src/blocks/heading/deprecated/block.js:433
 #: src/blocks/heading/deprecated/component.js:334
 #: src/blocks/heading/deprecated/component_0_39_5.js:122
 #: src/blocks/heading/deprecated/component_0_40_0.js:122

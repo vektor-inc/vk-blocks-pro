@@ -2,17 +2,17 @@ export default class Component extends React.Component {
 
     render() {
 
-        let {
+        const {
             heading,
             content,
             insertImage,
             arrowFlag,
         } = this.props.attributes;
-        let className = this.props.className;
-        let for_ = this.props.for_;
+        const className = this.props.className;
+        const for_ = this.props.for_;
 
         return (
-            <div className={"vk_your-block-slug"}>hello</div>
+	<div className={ "vk_your-block-slug" }>hello</div>
         );
     }
 }

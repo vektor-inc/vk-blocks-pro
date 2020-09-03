@@ -78,7 +78,7 @@ export const example = {
 		align: "center",
 		titleStyle: "default",
 		outerMarginBottom: 0,
-		title:  title,
+		title,
 		titleColor: baseColor,
 		titleSize: 2,
 		titleMarginBottom: 1,

@@ -8,16 +8,16 @@ import BlockTemplatePanel from "./block-template-panel";
 
 export default function() {
   return (
-    <Fragment>
-      <PluginSidebarMoreMenuItem target="vkbSidebar">
-        {__("VK Blocks Templates", "vk-blocks")}
-      </PluginSidebarMoreMenuItem>
-      <PluginSidebar
-        name="vkbSidebar"
-        title={__("VK Blocks Templates", "vk-blocks")}
+	<Fragment>
+		<PluginSidebarMoreMenuItem target="vkbSidebar">
+			{ __("VK Blocks Templates", "vk-blocks") }
+		</PluginSidebarMoreMenuItem>
+		<PluginSidebar
+			name="vkbSidebar"
+			title={ __("VK Blocks Templates", "vk-blocks") }
       >
-        <BlockTemplatePanel />
-      </PluginSidebar>
-    </Fragment>
+			<BlockTemplatePanel />
+		</PluginSidebar>
+	</Fragment>
   );
 }

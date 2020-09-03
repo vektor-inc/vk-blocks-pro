@@ -4,7 +4,7 @@ const getTaxonomySlugs = (taxonomies) => {
         return false
     }
 
-    let slugs = [];
+    const slugs = [];
     for (let i = 0; i <= taxonomies.length - 1; i++) {
 
         if (taxonomies[i].slug !== 'post_tag') {
@@ -23,7 +23,7 @@ const getTagTaxonomySlugs = (taxonomies) => {
         return false
     }
 
-    let slugs = [];
+    const slugs = [];
     for (let i = 0; i <= taxonomies.length - 1; i++) {
 
         if (taxonomies[i].slug === 'post_tag') {
@@ -38,11 +38,11 @@ const getTagTaxonomySlugs = (taxonomies) => {
 
 const setUpTaxonomyData = (taxonomies, slugs, select) => {
 
-    let Taxonomy = [];
+    const Taxonomy = [];
 
     for (let i = 0; i <= slugs.length - 1; i++) {
 
-        let tax = (select('core').getEntityRecords('taxonomy', slugs[i]));
+        const tax = (select('core').getEntityRecords('taxonomy', slugs[i]));
 
         if (tax != null) {
 

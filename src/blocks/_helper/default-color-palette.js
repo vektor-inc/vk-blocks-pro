@@ -11,14 +11,14 @@ export const dcpSchema = {
 export class DefaultColorPalette extends React.Component {
 
     render() {
-        let {dcpColor} = this.props.attributes;
-        let setAttributes = this.props.setAttributes;
+        const {dcpColor} = this.props.attributes;
+        const setAttributes = this.props.setAttributes;
 
         return (
-            <RadioControl
-                label={__('Default Color:', 'vk-blocks')}
-                selected={dcpColor}
-                options={[
+	<RadioControl
+		label={ __('Default Color:', 'vk-blocks') }
+		selected={ dcpColor }
+		options={ [
                     {label: __('Primary', 'vk-blocks'), value: 'primary'},
                     {label: __('Secondary', 'vk-blocks'), value: 'secondary'},
                     {label: __('Success', 'vk-blocks'), value: 'success'},
@@ -27,8 +27,8 @@ export class DefaultColorPalette extends React.Component {
                     {label: __('Danger', 'vk-blocks'), value: 'danger'},
                     {label: __('Light', 'vk-blocks'), value: 'light'},
                     {label: __('Dark', 'vk-blocks'), value: 'dark'},
-                ]}
-                onChange={(value) => setAttributes({dcpColor: value})}
+                ] }
+		onChange={ (value) => setAttributes({dcpColor: value}) }
             />);
     }
 }

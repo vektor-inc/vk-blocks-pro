@@ -34,7 +34,7 @@ registerBlockType("vk-blocks/faq2-a", {
 			{
 				name: 'core/paragraph',
 				attributes: {
-					content,
+					content: content,
 				},
 			},
 		],

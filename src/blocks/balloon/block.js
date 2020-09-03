@@ -61,7 +61,6 @@ registerBlockType("vk-blocks/balloon", {
 	},
 	example: {
 		attributes: {
-			content,
 			balloonName: iconName,
 			balloonType: "type-serif",
 			balloonBgColor: baseColor,
@@ -69,6 +68,14 @@ registerBlockType("vk-blocks/balloon", {
 			IconImage: iconPicture,
 			balloonImageType: "normal"
 		},
+		innerBlocks: [
+			{
+				name: 'core/paragraph',
+				attributes: {
+					content: content,
+				},
+			},
+		],
 	},
 
   edit({ attributes, className, setAttributes }) {
@@ -270,7 +277,8 @@ registerBlockType("vk-blocks/balloon", {
             />
 			</div>
 			<div className={ `vk_balloon_content_outer` }>
-				<div className={ "vk_balloon_content" } style={ { background: balloonBgColor, border: balloonBgColor } } >
+				<div className={ "vk_balloon_content" } style={ { background: balloonBgColor,
+														border: balloonBgColor, } } >
 					<InnerBlocks
 						templateLock={ false }
 						template={ [
@@ -319,7 +327,8 @@ registerBlockType("vk-blocks/balloon", {
             ) }
 		</div>
 		<div className={ `vk_balloon_content_outer` }>
-			<div className={ "vk_balloon_content" } style={ { background: balloonBgColor, border: balloonBgColor } } >
+			<div className={ "vk_balloon_content" } style={ { background: balloonBgColor,
+													border: balloonBgColor, } } >
 				<InnerBlocks.Content />
 			</div>
 		</div>

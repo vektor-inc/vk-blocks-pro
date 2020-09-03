@@ -567,7 +567,11 @@ $color-danger: #b52727;
 	flex-direction: row;
 	flex-wrap: wrap;
     margin-right: -15px;
-    margin-left: -15px;
+	margin-left: -15px;
+
+	.block-list-appender{
+		height: 100px;
+	}
 
 	// colの余分な余白の削除など
 	// col内に入れたブロックにまで反映されないように & > 指定

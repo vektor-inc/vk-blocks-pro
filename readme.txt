@@ -3,8 +3,8 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
-Tested up to: 5.5.0
-Stable tag: 0.43.0
+Tested up to: 5.5.1
+Stable tag: 0.43.4
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -61,6 +61,15 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+
+[ bug fix ] fix critical error on card and recover to 0.43.0
+
+= 0.43.4(0.42.1) =
+rebuild 0.42.1
+
+= 0.43.3(0.42.1) =
+revert to 0.42.1
 
 = 0.43.0 =
 [ Specification Change ] Cope with xxl size

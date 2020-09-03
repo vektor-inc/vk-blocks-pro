@@ -27,11 +27,9 @@ registerBlockType("vk-blocks/grid-column-item", {
 
 	edit(props) {
 		const { className } = props;
-		const TEMPLATE = [ [ 'core/paragraph', {} ] ];
-
 		return (
 			<div className={ `${className}` }>
-				<InnerBlocks template={ TEMPLATE }/>
+				<InnerBlocks />
 			</div>
 		);
 	},

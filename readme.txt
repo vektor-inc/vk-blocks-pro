@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.5.1
-Stable tag: 0.43.4
+Stable tag: 0.44.0
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -62,8 +62,11 @@ e.g.
 
 == Changelog ==
 
-
-[ bug fix ] fix critical error on card and recover to 0.43.0
+= 0.44.0
+[ Specification Change ] Re Cope with xxl size
+[ bug fix ][ Card(Pro) ] fix critical error on card and recover to 0.43.0
+[ bug fix ][ Child Page(Pro) ] fix use in vk page widget 
+[ bug fix ][ Grid Column(Pro) ] New column drug bug fix
 
 = 0.43.4(0.42.1) =
 rebuild 0.42.1

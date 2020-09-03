@@ -277,8 +277,7 @@ registerBlockType("vk-blocks/balloon", {
             />
 			</div>
 			<div className={ `vk_balloon_content_outer` }>
-				<div className={ "vk_balloon_content" } style={ { background: balloonBgColor,
-														border: balloonBgColor, } } >
+				<div className={ "vk_balloon_content" } style={ { background: balloonBgColor, border: balloonBgColor, } } >
 					<InnerBlocks
 						templateLock={ false }
 						template={ [

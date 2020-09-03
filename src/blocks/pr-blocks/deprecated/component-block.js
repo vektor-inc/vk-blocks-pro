@@ -7,8 +7,8 @@ export class ComponentBlock extends Component {
 
     render() {
 
-        let setAttributes = this.props.setAttributes;
-        let {
+        const setAttributes = this.props.setAttributes;
+        const {
             heading1,
             heading2,
             heading3,
@@ -34,9 +34,9 @@ export class ComponentBlock extends Component {
             insertImage2,
             insertImage3
         } = this.props.attributes;
-        let for_ = this.props.for_;
-        let blockNum = this.props.blockNum;
-        let blockNumArrIndex = this.props.blockNum - 1;
+        const for_ = this.props.for_;
+        const blockNum = this.props.blockNum;
+        const blockNumArrIndex = this.props.blockNum - 1;
 
         const heading = [heading1, heading2, heading3];
         const content = [content1, content2, content3];
@@ -51,24 +51,24 @@ export class ComponentBlock extends Component {
         let richTextPSave = '';
 
 
-        let drawElement = (() => {
+        const drawElement = (() => {
 
             if (insertImage[blockNumArrIndex]) {
 
                 return <div className="vk_prBlocks_item_image"
-                    style={{
+	style={ {
                         backgroundImage: `url(${insertImage[blockNumArrIndex]})`,
                         backgroundRepeat: 'no-repeat 50% center',
                         backgroundSize: 'cover'
-                    }}
+                    } }
                 >
-                    <img
-                        src={insertImage[blockNumArrIndex]}
-                        alt=''
+	<img
+		src={ insertImage[blockNumArrIndex] }
+		alt=''
                     />
                 </div>
 
-            } else {
+            } 
 
                 if (!color[blockNumArrIndex]) {
                     color[blockNumArrIndex] = '#0693e3';
@@ -76,25 +76,25 @@ export class ComponentBlock extends Component {
                 if (bgType[blockNumArrIndex] === '0') {
 
                     return <div
-                        className="vk_prBlocks_item_icon_outer"
-                        style={{
+	className="vk_prBlocks_item_icon_outer"
+	style={ {
                             backgroundColor: color[blockNumArrIndex],
                             border: `1px solid ${color[blockNumArrIndex]}`
-                        }}
-                    ><i className={`${icon[blockNumArrIndex]} vk_prBlocks_item_icon`}
-                        style={{ color: '#fff' }}>
+                        } }
+                    ><i className={ `${icon[blockNumArrIndex]} vk_prBlocks_item_icon` }
+	style={ { color: '#fff' } }>
                         </i>
                     </div>
-                } else {
+                } 
                     return <div
-                        className="vk_prBlocks_item_icon_outer"
-                        style={{ backgroundColor: 'transparent', border: '1px solid ' + color[blockNumArrIndex] }}
-                    ><i className={`${icon[blockNumArrIndex]} vk_prBlocks_item_icon`}
-                        style={{ color: color[blockNumArrIndex] }}>
+	className="vk_prBlocks_item_icon_outer"
+	style={ { backgroundColor: 'transparent', border: '1px solid ' + color[blockNumArrIndex] } }
+                    ><i className={ `${icon[blockNumArrIndex]} vk_prBlocks_item_icon` }
+	style={ { color: color[blockNumArrIndex] } }>
                         </i>
                     </div>
-                }
-            }
+                
+            
         })();
 
 
@@ -104,78 +104,78 @@ export class ComponentBlock extends Component {
             if (blockNum === 1) {
 
                 richTextH1Save = <RichText
-                    className="vk_prBlocks_item_title vk_prBlocks_item_title-1"
-                    tagName={'h1'}
-                    onChange={(value) => setAttributes({ heading1: value })}
-                    value={heading1}
-                    placeholder={__('Input Title', 'vk-blocks')}
+	className="vk_prBlocks_item_title vk_prBlocks_item_title-1"
+	tagName={ 'h1' }
+	onChange={ (value) => setAttributes({ heading1: value }) }
+	value={ heading1 }
+	placeholder={ __('Input Title', 'vk-blocks') }
                 />;
                 richTextPSave = <RichText
-                    className="vk_prBlocks_item_summary vk_prBlocks_item_summary-1"
-                    tagName={'p'}
-                    onChange={(value) => setAttributes({ content1: value })}
-                    value={content1}
-                    placeholder={__('Input Content', 'vk-blocks')}
+	className="vk_prBlocks_item_summary vk_prBlocks_item_summary-1"
+	tagName={ 'p' }
+	onChange={ (value) => setAttributes({ content1: value }) }
+	value={ content1 }
+	placeholder={ __('Input Content', 'vk-blocks') }
                 />;
 
             } else if (blockNum === 2) {
 
                 richTextH1Save = <RichText
-                    className="vk_prBlocks_item_title vk_prBlocks_item_title-2"
-                    tagName={'h1'}
-                    onChange={(value) => setAttributes({ heading2: value })}
-                    value={heading2}
-                    placeholder={__('Input Title', 'vk-blocks')}
+	className="vk_prBlocks_item_title vk_prBlocks_item_title-2"
+	tagName={ 'h1' }
+	onChange={ (value) => setAttributes({ heading2: value }) }
+	value={ heading2 }
+	placeholder={ __('Input Title', 'vk-blocks') }
                 />;
                 richTextPSave = <RichText
-                    className="vk_prBlocks_item_summary vk_prBlocks_item_summary-2"
-                    tagName={'p'}
-                    onChange={(value) => setAttributes({ content2: value })}
-                    value={content2}
-                    placeholder={__('Input Content', 'vk-blocks')}
+	className="vk_prBlocks_item_summary vk_prBlocks_item_summary-2"
+	tagName={ 'p' }
+	onChange={ (value) => setAttributes({ content2: value }) }
+	value={ content2 }
+	placeholder={ __('Input Content', 'vk-blocks') }
                 />;
 
             } else if (blockNum === 3) {
                 richTextH1Save = <RichText
-                    className="vk_prBlocks_item_title vk_prBlocks_item_title-3"
-                    tagName={'h1'}
-                    onChange={(value) => setAttributes({ heading3: value })}
-                    value={heading3}
-                    placeholder={__('Input Title', 'vk-blocks')}
+	className="vk_prBlocks_item_title vk_prBlocks_item_title-3"
+	tagName={ 'h1' }
+	onChange={ (value) => setAttributes({ heading3: value }) }
+	value={ heading3 }
+	placeholder={ __('Input Title', 'vk-blocks') }
                 />;
                 richTextPSave = <RichText
-                    className="vk_prBlocks_item_summary vk_prBlocks_item_summary-3"
-                    tagName={'p'}
-                    onChange={(value) => setAttributes({ content3: value })}
-                    value={content3}
-                    placeholder={__('Input Content', 'vk-blocks')}
+	className="vk_prBlocks_item_summary vk_prBlocks_item_summary-3"
+	tagName={ 'p' }
+	onChange={ (value) => setAttributes({ content3: value }) }
+	value={ content3 }
+	placeholder={ __('Input Content', 'vk-blocks') }
                 />;
             }
 
         } else if (for_ === 'save') {
 
             richTextH1Save = <RichText.Content
-                className={`vk_prBlocks_item_title vk_prBlocks_item_title-${blockNum}`}
-                tagName={'h1'}
-                value={heading[blockNumArrIndex]} />;
+	className={ `vk_prBlocks_item_title vk_prBlocks_item_title-${blockNum}` }
+	tagName={ 'h1' }
+	value={ heading[blockNumArrIndex] } />;
             richTextPSave = <RichText.Content
-                className={`vk_prBlocks_item_summary vk_prBlocks_item_summary-${blockNum}`}
-                tagName={'p'}
-                value={content[blockNumArrIndex]} />;
+	className={ `vk_prBlocks_item_summary vk_prBlocks_item_summary-${blockNum}` }
+	tagName={ 'p' }
+	value={ content[blockNumArrIndex] } />;
         }
 
         return (
-            <div className="vk_prBlocks_item col-sm-4">
-                <a href={url[blockNumArrIndex]}
-                    target={urlOpenType[blockNumArrIndex] ? '_blank' : '_self'}
-                    className="vk_prBlocks_item_link"
-                    rel="noopener noreferrer"
+	<div className="vk_prBlocks_item col-sm-4">
+		<a href={ url[blockNumArrIndex] }
+			target={ urlOpenType[blockNumArrIndex] ? '_blank' : '_self' }
+			className="vk_prBlocks_item_link"
+			rel="noopener noreferrer"
                 >
-                    {drawElement}
-                    {richTextH1Save}
-                    {richTextPSave}
-                </a>
-            </div>
+			{ drawElement }
+			{ richTextH1Save }
+			{ richTextPSave }
+		</a>
+	</div>
         );
 
     }

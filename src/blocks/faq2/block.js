@@ -109,7 +109,7 @@ registerBlockType("vk-blocks/faq2", {
 					{
 						name: 'core/paragraph',
 						attributes: {
-							content: content,
+							content,
 						},
 					},
 				],

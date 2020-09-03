@@ -81,28 +81,28 @@ export class VKBButtonV1 extends Component {
 			aClass = `${aClass} btn-block`;
 		}
 		if (fontAwesomeIconBefore) {
-			iconBefore = <i className={`${fontAwesomeIconBefore} vk_button_link_before`}></i>;
+			iconBefore = <i className={ `${fontAwesomeIconBefore} vk_button_link_before` }></i>;
 		}
 		if (fontAwesomeIconAfter) {
-			iconAfter = <i className={`${fontAwesomeIconAfter} vk_button_link_after`}></i>;
+			iconAfter = <i className={ `${fontAwesomeIconAfter} vk_button_link_after` }></i>;
 		}
 
 		return (
 			<a
-				href={buttonUrl}
-				id={'vk_button_link'}
-				style={aStyle}
-				className={aClass}
-				role={'button'}
-				aria-pressed={true}
-				target={buttonTarget ? '_blank' : null}
-				rel={'noopener noreferrer'}
+				href={ buttonUrl }
+				id={ 'vk_button_link' }
+				style={ aStyle }
+				className={ aClass }
+				role={ 'button' }
+				aria-pressed={ true }
+				target={ buttonTarget ? '_blank' : null }
+				rel={ 'noopener noreferrer' }
 			>
-				{iconBefore}
-				{richText}
-				{iconAfter}
-				{ /*サブキャプションが入力された時のみ表示*/}
-				{subCaption && <p className={'vk_button_link_subCaption'}>{subCaption}</p>}
+				{ iconBefore }
+				{ richText }
+				{ iconAfter }
+				{ /*サブキャプションが入力された時のみ表示*/ }
+				{ subCaption && <p className={ 'vk_button_link_subCaption' }>{ subCaption }</p> }
 			</a>
 		);
 	}

@@ -32,11 +32,11 @@ export const deprecated = [
 
 		  return (
 			  <Fragment>
-		  		<div className={ classNames(`vk_animation vk_animation-${effect} vk_animation-speed-${speed} vk_animation-range-${range} vk_animation-${clientId}`) }>
+				<div className={ classNames(`vk_animation vk_animation-${effect} vk_animation-speed-${speed} vk_animation-range-${range} vk_animation-${clientId}`) }>
 					<InnerBlocks.Content />
 				</div>
 				<script>
-				{`window.addEventListener('load', (event) => {
+					{ `window.addEventListener('load', (event) => {
 					let animationElm = document.querySelector('.vk_animation-${clientId}');
 					const observer = new IntersectionObserver((entries) => {
 						if(entries[0].isIntersecting){
@@ -46,9 +46,9 @@ export const deprecated = [
 						}
 					});
 					observer.observe(animationElm);
-				  }, false);`}
+				  }, false);` }
 				</script>
-				</Fragment>
+			</Fragment>
 				);
 		}
 	},
@@ -65,9 +65,9 @@ export const deprecated = [
         },
         save(props) {
             return (
-                <div className={ classNames(`vk_animation vk_animation-${props.attributes.effect} vk_animation-${props.attributes.clientId}`) }>
-                    <InnerBlocks.Content />
-                </div>
+	<div className={ classNames(`vk_animation vk_animation-${props.attributes.effect} vk_animation-${props.attributes.clientId}`) }>
+		<InnerBlocks.Content />
+	</div>
             );
         },
     }

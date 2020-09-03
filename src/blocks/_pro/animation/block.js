@@ -121,7 +121,7 @@ const addAnimationActiveClass = (el, type, attributes) => {
 
 	if ("vk-blocks/animation" === type.name) {
 		return<div>
-		  <script>{`window.addEventListener('load', (event) => {
+			<script>{ `window.addEventListener('load', (event) => {
 			let animationElm = document.querySelector('.vk_animation-${attributes.clientId}');
 			if(animationElm){
 				const observer = new IntersectionObserver((entries) => {
@@ -133,12 +133,12 @@ const addAnimationActiveClass = (el, type, attributes) => {
 				});
 				observer.observe(animationElm);
 			}
-		  }, false);`}</script>
-		  {el}
+		  }, false);` }</script>
+			{ el }
 		  </div>
-	}else{
-		return el
 	}
+		return el
+	
 }
 addFilter(
   "blocks.getSaveElement",

@@ -24,10 +24,10 @@ export const deprecated = [
 			const { attributes, className } = props;
 			return (
 				<ComponentV2_1
-					clientId={attributes.clientId}
-					attributes={attributes}
-					className={className}
-					for_={"save"}
+					clientId={ attributes.clientId }
+					attributes={ attributes }
+					className={ className }
+					for_={ "save" }
 				/>
 			);
 		},
@@ -37,10 +37,10 @@ export const deprecated = [
     save({ attributes, className }) {
       {
         return (
-          <ComponentForTemplate6
-            attributes={attributes}
-            className={className}
-            for_={"save"}
+	<ComponentForTemplate6
+		attributes={ attributes }
+		className={ className }
+		for_={ "save" }
           />
         );
       }
@@ -51,10 +51,10 @@ export const deprecated = [
     save({ attributes, className }) {
       {
         return (
-          <ComponentForTemplate5
-            attributes={attributes}
-            className={className}
-            for_={"save"}
+	<ComponentForTemplate5
+		attributes={ attributes }
+		className={ className }
+		for_={ "save" }
           />
         );
       }
@@ -65,10 +65,10 @@ export const deprecated = [
     save({ attributes, className }) {
       {
         return (
-          <ComponentForTemplate4
-            attributes={attributes}
-            className={className}
-            for_={"save"}
+	<ComponentForTemplate4
+		attributes={ attributes }
+		className={ className }
+		for_={ "save" }
           />
         );
       }
@@ -79,10 +79,10 @@ export const deprecated = [
     save({ attributes, className }) {
       {
         return (
-          <ComponentForTemplate3
-            attributes={attributes}
-            className={className}
-            for_={"save"}
+	<ComponentForTemplate3
+		attributes={ attributes }
+		className={ className }
+		for_={ "save" }
           />
         );
       }
@@ -93,10 +93,10 @@ export const deprecated = [
     save({ attributes, className }) {
       {
         return (
-          <ComponentForTemplate2
-            attributes={attributes}
-            className={className}
-            for_={"save"}
+	<ComponentForTemplate2
+		attributes={ attributes }
+		className={ className }
+		for_={ "save" }
           />
         );
       }
@@ -107,10 +107,10 @@ export const deprecated = [
     save({ attributes, className }) {
       {
         return (
-          <ComponentForTemplate1
-            attributes={attributes}
-            className={className}
-            for_={"save"}
+	<ComponentForTemplate1
+		attributes={ attributes }
+		className={ className }
+		for_={ "save" }
           />
         );
       }
@@ -121,10 +121,10 @@ export const deprecated = [
     save({ attributes, className }) {
       {
         return (
-          <ComponentForTemplate0
-            attributes={attributes}
-            className={className}
-            for_={"save"}
+	<ComponentForTemplate0
+		attributes={ attributes }
+		className={ className }
+		for_={ "save" }
           />
         );
       }
@@ -136,10 +136,10 @@ export const deprecated = [
     save({ attributes, className }) {
       {
         return (
-          <ComponentV1
-            attributes={attributes}
-            className={className}
-            for_={"save"}
+	<ComponentV1
+		attributes={ attributes }
+		className={ className }
+		for_={ "save" }
           />
         );
       }
@@ -151,7 +151,7 @@ export const deprecated = [
     save({ attributes }) {
       {
         if (vk_blocks_check.is_pro) {
-          return <ComponentV0 attributes={attributes} for_={"save"} />;
+          return <ComponentV0 attributes={ attributes } for_={ "save" } />;
         }
       }
     }

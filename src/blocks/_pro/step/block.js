@@ -61,7 +61,7 @@ registerBlockType("vk-blocks/step", {
 
 	edit({ attributes, setAttributes, className, clientId }) {
 		const { firstDotNum } = attributes;
-		let currentBlock = getBlocksByClientId(clientId);
+		const currentBlock = getBlocksByClientId(clientId);
 		let beforeLength;
 		let afterLength;
 
@@ -70,7 +70,7 @@ registerBlockType("vk-blocks/step", {
 			currentBlock[0] != null &&
 			currentBlock[0].innerBlocks != undefined
 		) {
-			let innerBlocks = currentBlock[0].innerBlocks;
+			const innerBlocks = currentBlock[0].innerBlocks;
 			beforeLength = innerBlocks.length;
 
 			if (
@@ -94,34 +94,34 @@ registerBlockType("vk-blocks/step", {
 		return (
 			<Fragment>
 				<InspectorControls>
-					<PanelBody title={__("First Dot Number", "vk-blocks")}>
+					<PanelBody title={ __("First Dot Number", "vk-blocks") }>
 						<input
 							type="number"
-							id={"dot-number"}
-							onChange={event => {
-								let value = parseInt(event.target.value, 10);
+							id={ "dot-number" }
+							onChange={ event => {
+								const value = parseInt(event.target.value, 10);
 								setAttributes({
 									firstDotNum: value
 								});
-							}}
-							value={firstDotNum}
+							} }
+							value={ firstDotNum }
 							min="1"
 							step="1"
 						/>
 					</PanelBody>
 				</InspectorControls>
 				<Component
-					attributes={attributes}
-					className={className}
-					setAttributes={setAttributes}
-					for_={"edit"}
+					attributes={ attributes }
+					className={ className }
+					setAttributes={ setAttributes }
+					for_={ "edit" }
 				/>
 			</Fragment>
 		);
 	},
 	save({ attributes, className }) {
 		return (
-			<Component attributes={attributes} className={className} for_={"save"} />
+			<Component attributes={ attributes } className={ className } for_={ "save" } />
 		);
 	}
 });
@@ -135,7 +135,7 @@ if (5.3 <= parseFloat(wpVersion)) {
 		"vk-blocks/step",
 		createHigherOrderComponent((BlockEdit) => {
 			let preClientId;
-			let clientIdList = [];
+			const clientIdList = [];
 			return (props) => {
 
 				if (props.name === "vk-blocks/step-item" && -1 === clientIdList.indexOf(props.clientId)) {
@@ -155,7 +155,7 @@ if (5.3 <= parseFloat(wpVersion)) {
 					preClientId = props.clientId;
 					clientIdList.push(props.clientId);
 				}
-				return <BlockEdit {...props} />;
+				return <BlockEdit { ...props } />;
 			};
 		}, "addAutoStepIndexUpdate")
 	);

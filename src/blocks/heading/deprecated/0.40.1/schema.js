@@ -1,6 +1,4 @@
-import { iconUser, title, baseColor } from "./../_helper/example-data"
-
-export const schema = {
+export default {
 	anchor: {
 		type: 'string',
 		source: 'attribute',
@@ -47,7 +45,7 @@ export const schema = {
 	},
 	subTextFlag: {
 		type: "string",
-		default: "off"
+		default: "on"
 	},
 	subTextColor: {
 		type: "string",
@@ -70,27 +68,3 @@ export const schema = {
 		default: "#000000"
 	},
 };
-
-export const example = {
-	attributes:{
-		anchor: "",
-		level: 2,
-		align: "center",
-		titleStyle: "default",
-		outerMarginBottom: 0,
-		title,
-		titleColor: baseColor,
-		titleSize: 2,
-		titleMarginBottom: 1,
-		subText: title,
-		subTextFlag: {
-			type: "string",
-			default: "on"
-		},
-		subTextColor: baseColor,
-		subTextSize: 1.2,
-		fontAwesomeIconBefore: iconUser,
-		fontAwesomeIconAfter: "",
-		fontAwesomeIconColor: baseColor,
-	}
-}

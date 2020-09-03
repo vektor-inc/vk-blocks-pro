@@ -10,9 +10,9 @@ export class Component extends React.Component {
             style,
             styleLine
         } = this.props.attributes;
-        let for_ = this.props.for_;
-        let className = this.props.className;
-        let containerClass = " vk_timeline_item";
+        const for_ = this.props.for_;
+        const className = this.props.className;
+        const containerClass = " vk_timeline_item";
         let elm;
         let styleClass;
         let styleLineClass;
@@ -22,7 +22,7 @@ export class Component extends React.Component {
 
         //編集画面とサイト上の切り替え
         if (for_ === "edit") {
-            elm = <InnerBlocks template={TEMPLATE} />;
+            elm = <InnerBlocks template={ TEMPLATE } />;
         } else if ("save") {
             elm = <InnerBlocks.Content />;
         }
@@ -42,14 +42,14 @@ export class Component extends React.Component {
         }
 
         return (
-            <div className={className + containerClass + styleLineClass}>
-                <div className={"vk_timeline_item_caption"}>{label}</div>
-                <div className={"vk_timeline_item_contentnpm"}>{elm}</div>
-                <div
-                    className={'vk_timeline_item_style' + styleClass}
-                    style={inlineStyle}
+	<div className={ className + containerClass + styleLineClass }>
+		<div className={ "vk_timeline_item_caption" }>{ label }</div>
+		<div className={ "vk_timeline_item_contentnpm" }>{ elm }</div>
+		<div
+			className={ 'vk_timeline_item_style' + styleClass }
+			style={ inlineStyle }
                 />
-            </div>
+	</div>
         );
     }
 }

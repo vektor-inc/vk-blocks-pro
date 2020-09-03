@@ -1,4 +1,4 @@
-import { vkbBlockEditor } from "./../../_helper/depModules";
+import { vkbBlockEditor } from "./../../../_helper/depModules";
 const { RichText } = vkbBlockEditor;
 const { __ } = wp.i18n; // Import __() from wp.i18n
 import ReactHtmlParser from 'react-html-parser';
@@ -50,7 +50,7 @@ export default (props) => {
 	}
 
 	//titleのマージンを切り替え
-	if (titleMarginBottom !== null && titleMarginBottom !== undefined) {
+	if (titleMarginBottom) {
 		tStyle = {
 			color: titleColor,
 			fontSize: titleSize + "rem",
@@ -137,7 +137,6 @@ export default (props) => {
 		</Fragment>
 
 		let subtextContent;
-		console.log(subTextFlag)
 		if (subTextFlag === "on") {
 			subtextContent = <RichText.Content
 				tagName={ "p" }
@@ -146,6 +145,6 @@ export default (props) => {
 				className={ subTextClass }
 		  />
 		}
-		return (<div id="1" className={ containerClass } style={ cStyle }>{ renderTitle(level, titleContent, tStyle, headingStyle) }{ subtextContent }</div>);
+		return (<div className={ containerClass } style={ cStyle }>{ renderTitle(level, titleContent, tStyle, headingStyle) }{ subtextContent }</div>);
 	}
 }

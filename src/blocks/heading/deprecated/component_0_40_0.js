@@ -137,7 +137,6 @@ export const VKBHeading_0_40_0 =(props) => {
 		</Fragment>
 
 		let subtextContent;
-		console.log(subTextFlag)
 		if (subTextFlag === "on") {
 			subtextContent = <RichText.Content
 				tagName={ "p" }
@@ -146,6 +145,6 @@ export const VKBHeading_0_40_0 =(props) => {
 				className={ subTextClass }
 		  />
 		}
-		return (<div id="1" className={ containerClass } style={ cStyle }>{ renderTitle(level, titleContent, tStyle, headingStyle) }{ subtextContent }</div>);
+		return (<div className={ containerClass } style={ cStyle }>{ renderTitle(level, titleContent, tStyle, headingStyle) }{ subtextContent }</div>);
 	}
 }

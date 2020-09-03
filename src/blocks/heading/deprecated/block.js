@@ -7,13 +7,15 @@ import classNames from "classnames";
 import { VKBHeading,VKBHeading2,VKBHeadingV0_24_1 } from "./component";
 import { VKBHeading_0_39_5 } from "./component_0_39_5";
 import { VKBHeading_0_40_0 } from "./component_0_40_0";
+import VKBHeading_0_40_1 from "./0.40.1"
 
 const { Fragment, Component } = wp.element;
-import { vkbBlockEditor } from "./../../_helper/depModules";
+import { vkbBlockEditor } from "../../_helper/depModules";
 const { RichText } = vkbBlockEditor;
 const { __ } = wp.i18n;
 
 export const Deprecated = [
+	VKBHeading_0_40_1,
 	{
 		attributes: schema_0_40_0,
 		save(props) {

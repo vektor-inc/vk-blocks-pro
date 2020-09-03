@@ -61,8 +61,8 @@ registerBlockType("vk-blocks/child-page", {
     const { setAttributes, attributes, pages, name } = props;
     const { selectId, selfIgnore } = attributes
 		attributes.name = name
-		let options = [ { label: __( "This Page", "veu-block" ), value: -1 } ]
-
+		// let options = [ { label: __( "This Page", "veu-block" ), value: -1 } ]
+		let options = []
 		if (pages != undefined) {
 			const l = pages.length
 			const parents = []
@@ -81,11 +81,12 @@ registerBlockType("vk-blocks/child-page", {
 				}
 			}
 		}
-
+		/*
 		const currentPostId = select("core/editor").getCurrentPostId();
 		if(currentPostId){
 			options = options.filter(option => option.value !== currentPostId)
 		}
+		*/
 
     return (
 	<Fragment>

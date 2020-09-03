@@ -1,6 +1,6 @@
 const { __ } = wp.i18n;
 import { vkbBlockEditor } from "../../_helper/depModules";
-const { RichText, MediaUpload } = vkbBlockEditor;
+const { RichText, MediaUpload, InnerBlocks } = vkbBlockEditor;
 const { Button } = wp.components;
 const { Fragment } = wp.element;
 const { dispatch } = wp.data;
@@ -1297,7 +1297,7 @@ export class DepComponentXxlAdd extends React.Component {
 	  </div>
 	  );
 	}
-  }
+}
 
 
 export const deprecated = [

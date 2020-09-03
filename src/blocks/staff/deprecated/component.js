@@ -2,17 +2,17 @@ const { Component } = wp.element;
 export class NewComponent extends Component {
 
     render() {
-        let {
+        const {
             heading,
             content,
             insertImage,
             arrowFlag,
         } = this.props.attributes;
 
-        let for_ = this.props.for_;
+        const for_ = this.props.for_;
 
         return (
-            <div className={"vk_staff"}>hello</div>
+	<div className={ "vk_staff" }>hello</div>
         );
     }
 }

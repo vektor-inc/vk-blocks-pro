@@ -46,11 +46,11 @@ registerBlockType("vk-blocks/table-of-contents-new", {
 			<Fragment>
 				<InspectorControls>
 					<PanelBody>
-						<BaseControl label={__("Style", "vk-blocks")}>
+						<BaseControl label={ __("Style", "vk-blocks") }>
 							<SelectControl
-								value={style}
-								onChange={(value) => setAttributes({ style: value })}
-								options={[
+								value={ style }
+								onChange={ (value) => setAttributes({ style: value }) }
+								options={ [
 									{
 										value: "default",
 										label: __("Default", "vk-blocks"),
@@ -59,14 +59,14 @@ registerBlockType("vk-blocks/table-of-contents-new", {
 										value: "",
 										label: __("No frame", "vk-blocks"),
 									},
-								]}
+								] }
 							/>
 						</BaseControl>
-						<BaseControl label={__("Default Display Status", "vk-blocks")}>
+						<BaseControl label={ __("Default Display Status", "vk-blocks") }>
 							<SelectControl
-								value={open}
-								onChange={(value) => setAttributes({ open: value })}
-								options={[
+								value={ open }
+								onChange={ (value) => setAttributes({ open: value }) }
+								options={ [
 									{
 										value: "open",
 										label: __("OPEN", "vk-blocks"),
@@ -75,18 +75,18 @@ registerBlockType("vk-blocks/table-of-contents-new", {
 										value: "close",
 										label: __("CLOSE", "vk-blocks"),
 									},
-								]}
+								] }
 							/>
 						</BaseControl>
 					</PanelBody>
 				</InspectorControls>
-				<TocBody {...props} />
+				<TocBody { ...props } />
 			</Fragment>
 		);
 	},
 
 	save(props) {
-		return <TocBody {...props} />;
+		return <TocBody { ...props } />;
 	},
 });
 
@@ -112,9 +112,9 @@ const getHeadings = (props) => {
 	const asyncToc = asyncGetBlocksByName("vk-blocks/table-of-contents-new");
 	const open = asyncToc[0] ? asyncToc[0].attributes.open : "";
 
-	let headingsRaw = getAllHeadings(headingList);
-	let headings = removeUnnecessaryElements(headingsRaw);
-	let render = returnHtml(headings, tocAttributes, className, open);
+	const headingsRaw = getAllHeadings(headingList);
+	const headings = removeUnnecessaryElements(headingsRaw);
+	const render = returnHtml(headings, tocAttributes, className, open);
 
 	if (isAllowedBlock(name, headingList) != undefined) {
 		updateBlockAttributes(tocClientId, {
@@ -135,7 +135,7 @@ const updateTableOfContents = createHigherOrderComponent((BlockListBlock) => {
 		if (isAllowedBlock(props.name, allowedBlocks)) {
 			getHeadings(props);
 		}
-		return <BlockListBlock {...props} />;
+		return <BlockListBlock { ...props } />;
 	};
 }, "updateTableOfContents");
 

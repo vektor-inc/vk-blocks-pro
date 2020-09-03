@@ -7,10 +7,10 @@ const AdvancedUnitControl = (props) => {
   const { unit } = attributes
   return (
 	<SelectControl
-		label={__('Unit Type', 'vk-blocks')}
-		value={unit}
-		onChange={(value) => setAttributes({ unit: value })}
-		options={[
+		label={ __('Unit Type', 'vk-blocks') }
+		value={ unit }
+		onChange={ (value) => setAttributes({ unit: value }) }
+		options={ [
 			{
 				value: 'px',
 				label: __('px', 'vk-blocks'),
@@ -27,7 +27,7 @@ const AdvancedUnitControl = (props) => {
 				value: 'vw',
 				label: __('vw', 'vk-blocks'),
 			}
-		]}
+		] }
 	/>
   );
 };

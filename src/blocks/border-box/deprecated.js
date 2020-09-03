@@ -14,18 +14,18 @@ const DepBody = (props) => {
 		inner = <InnerBlocks />;
 		title = <RichText
 			tagName="h4"
-			className={"vk_borderBox_title"}
-			onChange={value => setAttributes({ heading: value })}
-			value={heading}
-			placeholder={__("Please enter a title.", "vk-blocks")}
+			className={ "vk_borderBox_title" }
+			onChange={ value => setAttributes({ heading: value }) }
+			value={ heading }
+			placeholder={ __("Please enter a title.", "vk-blocks") }
 		/>
 
 	} else if ("save") {
 		inner = <InnerBlocks.Content />;
 		title = <RichText.Content
 			tagName="h4"
-			className={"vk_borderBox_title"}
-			value={heading}
+			className={ "vk_borderBox_title" }
+			value={ heading }
 		/>
 	}
 
@@ -36,13 +36,13 @@ const DepBody = (props) => {
 	}
 
 	return (
-		<div className={`vk_borderBox vk_borderBox-color-${color} ${customClass}`}>
+		<div className={ `vk_borderBox vk_borderBox-color-${color} ${customClass}` }>
 			<div className="vk_borderBox_title_container">
-				<i className={`${faIcon}`}></i>
-				{title}
+				<i className={ `${faIcon}` }></i>
+				{ title }
 			</div>
 			<div className="vk_borderBox_body">
-				{inner}
+				{ inner }
 			</div>
 		</div>
 	);

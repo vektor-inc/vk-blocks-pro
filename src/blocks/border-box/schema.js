@@ -19,7 +19,7 @@ export const originalSchema = {
 
 };
 
-let mergeSchema = () => {
+const mergeSchema = () => {
 	return Object.assign(originalSchema, faSchema);
 };
 
@@ -35,7 +35,7 @@ export const example  = {
 		{
 			name: 'core/paragraph',
 			attributes: {
-				content: content,
+				content,
 			},
 		},
 	],

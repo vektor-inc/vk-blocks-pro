@@ -35,7 +35,7 @@ export const deprecated = [
 		},
 		save({ attributes, className }) {
 			return (
-				<DepCompo01 attributes={ attributes } className={ className } for_={"save"} />
+				<DepCompo01 attributes={ attributes } className={ className } for_={ "save" } />
 			);
 		},
 	},

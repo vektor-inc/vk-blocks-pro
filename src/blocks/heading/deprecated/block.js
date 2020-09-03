@@ -19,8 +19,8 @@ export const Deprecated = [
 		save(props) {
 			const {attributes} = props
 			return (
-				<div id={attributes.anchor}>
-					<VKBHeading_0_40_0 {...props} for_={"save"}/>
+				<div id={ attributes.anchor }>
+					<VKBHeading_0_40_0 { ...props } for_={ "save" } />
 				</div>
 			);
 		},
@@ -30,8 +30,8 @@ export const Deprecated = [
 		save(props) {
 			const {attributes} = props
 			return (
-				<div id={attributes.anchor}>
-					<VKBHeading_0_39_5 attributes={attributes} for_={"save"} />
+				<div id={ attributes.anchor }>
+					<VKBHeading_0_39_5 attributes={ attributes } for_={ "save" } />
 				</div>
 			);
 		},
@@ -41,8 +41,8 @@ export const Deprecated = [
 		save(props) {
 			const {attributes} = props
 			return (
-				<div id={attributes.anchor}>
-					<VKBHeading2 attributes={attributes} for_={"save"} />
+				<div id={ attributes.anchor }>
+					<VKBHeading2 attributes={ attributes } for_={ "save" } />
 				</div>
 			);
 		},
@@ -51,9 +51,9 @@ export const Deprecated = [
     attributes: schema1,
     save({ attributes, className }) {
       return (
-        <div className={className} id="vk-htags-a181b726-7749-4bd8-9887-0306c0bc7bd5">
-          <VKBHeading attributes={attributes} for_={"save"} />
-        </div>
+	<div className={ className } id="vk-htags-a181b726-7749-4bd8-9887-0306c0bc7bd5">
+		<VKBHeading attributes={ attributes } for_={ "save" } />
+	</div>
       );
     }
   },
@@ -61,9 +61,9 @@ export const Deprecated = [
     attributes: schema1,
     save({ attributes, className }) {
       return (
-        <div className={className} id="vk-htags--1">
-          <VKBHeading attributes={attributes} for_={"save"} />
-        </div>
+	<div className={ className } id="vk-htags--1">
+		<VKBHeading attributes={ attributes } for_={ "save" } />
+	</div>
       );
     }
   },
@@ -128,7 +128,7 @@ export const Deprecated = [
     },
     save({ attributes, className }) {
       return (
-        <NoAnchor attributes={attributes} className={className} for_={"save"} />
+	<NoAnchor attributes={ attributes } className={ className } for_={ "save" } />
       );
     }
   },
@@ -157,39 +157,39 @@ export const Deprecated = [
       const tagName = "h" + level;
 
       return (
-        <div
-          className={`vk_heading vk_heading-style-${titleStyle}`}
-          style={{ marginBottom: outerMarginBottom + `rem` }}
+	<div
+		className={ `vk_heading vk_heading-style-${titleStyle}` }
+		style={ { marginBottom: outerMarginBottom + `rem` } }
         >
-          <RichText.Content
-            tagName={tagName}
-            value={title}
-            style={{
+		<RichText.Content
+			tagName={ tagName }
+			value={ title }
+			style={ {
               color: titleColor,
               fontSize: titleSize + "rem",
               textAlign: align,
               marginBottom: titleMarginBottom + "rem"
-            }}
-            className={`vk_heading_title vk_heading_title-style-${titleStyle}`}
+            } }
+			className={ `vk_heading_title vk_heading_title-style-${titleStyle}` }
           />
-          {// サブテキスト
+		{ // サブテキスト
             (() => {
               if (subTextFlag === "on") {
                 return (
-                  <RichText.Content
-                    tagName={"p"}
-                    value={subText}
-                    style={{
+	<RichText.Content
+		tagName={ "p" }
+		value={ subText }
+		style={ {
                       color: subTextColor,
                       fontSize: subTextSize + "rem",
                       textAlign: align
-                    }}
-                    className={`vk_heading_subtext vk_heading_subtext-style-${titleStyle}`}
+                    } }
+		className={ `vk_heading_subtext vk_heading_subtext-style-${titleStyle}` }
                   />
                 );
               }
-            })()}
-        </div>
+            })() }
+	</div>
       );
     }
   },
@@ -274,73 +274,73 @@ export const Deprecated = [
       const tagName = "h" + level;
 
       return (
-        <Fragment>
-          {outerMarginBottom == null ? (
-            <div className={`vk_heading vk_heading-style-${titleStyle}`}>
-              <RichText.Content
-                tagName={tagName}
-                value={title}
-                style={{
+	<Fragment>
+		{ outerMarginBottom == null ? (
+			<div className={ `vk_heading vk_heading-style-${titleStyle}` }>
+				<RichText.Content
+					tagName={ tagName }
+					value={ title }
+					style={ {
                   color: titleColor,
                   fontSize: titleSize + "rem",
                   textAlign: align
-                }}
-                className={`vk_heading_title vk_heading_title-style-${titleStyle}`}
+                } }
+					className={ `vk_heading_title vk_heading_title-style-${titleStyle}` }
               />
-              {// サブテキスト
+				{ // サブテキスト
                 (() => {
                   if (subTextFlag === "on") {
                     return (
-                      <RichText.Content
-                        tagName={"p"}
-                        value={subText}
-                        style={{
+	<RichText.Content
+		tagName={ "p" }
+		value={ subText }
+		style={ {
                           color: subTextColor,
                           fontSize: subTextSize + "rem",
                           textAlign: align
-                        }}
-                        className={`vk_heading_subtext vk_heading_subtext-style-${titleStyle}`}
+                        } }
+		className={ `vk_heading_subtext vk_heading_subtext-style-${titleStyle}` }
                       />
                     );
                   }
-                })()}
-            </div>
+                })() }
+			</div>
           ) : (
-              <div
-                className={`vk_heading vk_heading-style-${titleStyle}`}
-                style={{ marginBottom: outerMarginBottom + `rem` }}
+	<div
+		className={ `vk_heading vk_heading-style-${titleStyle}` }
+		style={ { marginBottom: outerMarginBottom + `rem` } }
               >
-                <RichText.Content
-                  tagName={tagName}
-                  value={title}
-                  style={{
+		<RichText.Content
+			tagName={ tagName }
+			value={ title }
+			style={ {
                     color: titleColor,
                     fontSize: titleSize + "rem",
                     textAlign: align,
                     marginBottom: titleMarginBottom + "rem"
-                  }}
-                  className={`vk_heading_title vk_heading_title-style-${titleStyle}`}
+                  } }
+			className={ `vk_heading_title vk_heading_title-style-${titleStyle}` }
                 />
-                {// サブテキスト
+		{ // サブテキスト
                   (() => {
                     if (subTextFlag === "on") {
                       return (
-                        <RichText.Content
-                          tagName={"p"}
-                          value={subText}
-                          style={{
+	<RichText.Content
+		tagName={ "p" }
+		value={ subText }
+		style={ {
                             color: subTextColor,
                             fontSize: subTextSize + "rem",
                             textAlign: align
-                          }}
-                          className={`vk_heading_subtext vk_heading_subtext-style-${titleStyle}`}
+                          } }
+		className={ `vk_heading_subtext vk_heading_subtext-style-${titleStyle}` }
                         />
                       );
                     }
-                  })()}
-              </div>
-            )}
-        </Fragment>
+                  })() }
+	</div>
+            ) }
+	</Fragment>
       );
     }
 	},
@@ -348,8 +348,8 @@ export const Deprecated = [
 		attributes:schemav0_24_1,
 		save({ attributes, className }) {
 			return (
-				<div className={className}>
-					<VKBHeadingV0_24_1 attributes={attributes} for_={"save"} />
+				<div className={ className }>
+					<VKBHeadingV0_24_1 attributes={ attributes } for_={ "save" } />
 				</div>
 			);
 		},
@@ -373,9 +373,9 @@ export class NoAnchor extends Component {
       outerMarginBottom
     } = this.props.attributes;
     const setAttributes = this.props.setAttributes;
-    let className = this.props.className;
-    let for_ = this.props.for_;
-    let containerClass = classNames(
+    const className = this.props.className;
+    const for_ = this.props.for_;
+    const containerClass = classNames(
       className,
       `vk_heading vk_heading-style-${titleStyle}`
     );
@@ -405,35 +405,35 @@ export class NoAnchor extends Component {
     }
 
     return (
-      <div className={containerClass} style={cStyle}>
-        <RichText.Content
-          tagName={tagName}
-          value={title}
-          onChange={value => setAttributes({ title: value })}
-          style={tStyle}
-          className={`vk_heading_title vk_heading_title-style-${titleStyle}`}
-          placeholder={__("Input title…", "vk-blocks")}
+	<div className={ containerClass } style={ cStyle }>
+		<RichText.Content
+			tagName={ tagName }
+			value={ title }
+			onChange={ value => setAttributes({ title: value }) }
+			style={ tStyle }
+			className={ `vk_heading_title vk_heading_title-style-${titleStyle}` }
+			placeholder={ __("Input title…", "vk-blocks") }
         />
-        {// サブテキスト
+		{ // サブテキスト
           (() => {
             if (subTextFlag === "on") {
               return (
-                <RichText.Content
-                  tagName={"p"}
-                  value={subText}
-                  onChange={value => setAttributes({ subText: value })}
-                  style={{
+	<RichText.Content
+		tagName={ "p" }
+		value={ subText }
+		onChange={ value => setAttributes({ subText: value }) }
+		style={ {
                     color: subTextColor,
                     fontSize: subTextSize + "rem",
                     textAlign: align
-                  }}
-                  className={`vk_heading_subtext vk_heading_subtext-style-${titleStyle}`}
-                  placeholder={__("Input sub text…", "vk-blocks")}
+                  } }
+		className={ `vk_heading_subtext vk_heading_subtext-style-${titleStyle}` }
+		placeholder={ __("Input sub text…", "vk-blocks") }
                 />
               );
             }
-          })()}
-      </div>
+          })() }
+	</div>
     );
   }
 }

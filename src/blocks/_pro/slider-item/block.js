@@ -55,7 +55,7 @@ registerBlockType("vk-blocks/slider-item", {
 			bgSize
 		} = attributes;
 
-		setAttributes({clientId:clientId})
+		setAttributes({clientId})
 
 		return (
 			<Fragment>
@@ -66,18 +66,18 @@ registerBlockType("vk-blocks/slider-item", {
 					/>
 				</BlockControls>
 				<InspectorControls>
-				<PanelBody
-					title={ __("Layout Setting", "vk-blocks") }
-					initialOpen={ true }
+					<PanelBody
+						title={ __("Layout Setting", "vk-blocks") }
+						initialOpen={ true }
 				>
-					<BaseControl>
-						<RadioControl
-							label={ __(
+						<BaseControl>
+							<RadioControl
+								label={ __(
 								"Padding (Left and Right)",
 								"vk-blocks"
 							) }
-							selected={ padding_left_and_right }
-							options={ [
+								selected={ padding_left_and_right }
+								options={ [
 								{
 									label: __("Fit to the Container area", "vk-blocks"),
 									value: "0",
@@ -91,20 +91,20 @@ registerBlockType("vk-blocks/slider-item", {
 									value: "2",
 								},
 							] }
-							onChange={ (value) =>
+								onChange={ (value) =>
 								setAttributes({ padding_left_and_right: value })
 							}
 						/>
-					</BaseControl>
-					<BaseControl>
-						<p className="mt-0 mb-2">{ __('Vertical align', 'vk-blocks') }</p>
+						</BaseControl>
+						<BaseControl>
+							<p className="mt-0 mb-2">{ __('Vertical align', 'vk-blocks') }</p>
 							<BlockVerticalAlignmentToolbar
 								onChange={  ( alignment ) => setAttributes( { verticalAlignment: alignment } ) }
 								value={ verticalAlignment }
 							/>
 						</BaseControl>
-				</PanelBody>
-				<PanelBody
+					</PanelBody>
+					<PanelBody
 						title={ __("Background Setting", "vk-blocks") }
 						initialOpen={ false }
 					>
@@ -165,14 +165,14 @@ registerBlockType("vk-blocks/slider-item", {
 						</BaseControl>
 					</PanelBody>
 				</InspectorControls>
-				<SliderItem {...props} for_={"edit"}/>
+				<SliderItem { ...props } for_={ "edit" } />
 			</Fragment>
 		);
 	},
 
 	save(props) {
 		return (
-			<SliderItem {...props} for_={"save"}/>
+			<SliderItem { ...props } for_={ "save" } />
 		);
 	},
 	deprecated

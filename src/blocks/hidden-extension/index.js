@@ -187,7 +187,7 @@ if (5.3 <= parseFloat(wpVersion)) {
 		"blocks.getSaveElement",
 		"vk-blocks/hidden-extension",
 		(element, blockType, attributes) => {
-			let {
+			const {
 				vkb_hidden,
 				vkb_hidden_xxl,
 				vkb_hidden_xl_v2,

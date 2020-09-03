@@ -65,11 +65,11 @@ export const schema = {
 
 export const example = {
 	attributes:{
-		title: title,
+		title,
 		titleColor: baseColor,
-		content: content,
+		content,
 		contentColor: baseColor,
-		url: url,
+		url,
 		buttonType: "0",
 		buttonColor: "primary",
 		buttonColorCustom: "",

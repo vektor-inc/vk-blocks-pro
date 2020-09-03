@@ -4,9 +4,9 @@ export const vkbBlockEditor = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.bl
 export const depServerSideRender = () => {
 	if (wp.serverSideRender) {
 		return wp.serverSideRender;
-	} else {
+	} 
 		return wp.components.ServerSideRender;
-	}
+	
 }
 export const selectEditor = select("core/block-editor")
 	? select("core/block-editor")

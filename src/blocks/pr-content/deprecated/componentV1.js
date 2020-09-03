@@ -8,7 +8,7 @@ const { MediaUpload, RichText } = vkbBlockEditor;
 export class Fontawesome extends Component {
 
 	render() {
-			let {
+			const {
 					buttonText,
 					fontAwesomeIconBefore,
 					fontAwesomeIconAfter,
@@ -19,17 +19,17 @@ export class Fontawesome extends Component {
 
 
 			if (fontAwesomeIconBefore) {
-					iconBefore = <i className={`${fontAwesomeIconBefore} vk_button_link_before`}></i> ;
+					iconBefore = <i className={ `${fontAwesomeIconBefore} vk_button_link_before` }></i> ;
 			}
 			if (fontAwesomeIconAfter) {
-					iconAfter = <i className={`${fontAwesomeIconAfter} vk_button_link_after`}></i>;
+					iconAfter = <i className={ `${fontAwesomeIconAfter} vk_button_link_after` }></i>;
 			}
 
 			return (
 				<Fragment>
-									{iconBefore}
-									<span className="vk_button_link_txt">{buttonText}</span>
-									{iconAfter}
+					{ iconBefore }
+					<span className="vk_button_link_txt">{ buttonText }</span>
+					{ iconAfter }
 				</Fragment>
 			);
 	}
@@ -56,9 +56,9 @@ export class ComponentV1 extends Component {
       fontAwesomeIconAfter
 		} = attributes;
 
-    let setAttributes = this.props.setAttributes;
-    let className = this.props.className;
-    let for_ = this.props.for_;
+    const setAttributes = this.props.setAttributes;
+    const className = this.props.className;
+    const for_ = this.props.for_;
     let containerClass = "vk_prContent";
     let btnClass = "vk_button";
     let aClass = "btn btn-block vk_button_link vk_prContent_colTxt_btn";
@@ -128,155 +128,155 @@ export class ComponentV1 extends Component {
       if (for_ === "edit") {
         if (Image && Image.indexOf("{") === -1) {
           return (
-            <MediaUpload
-              onSelect={value => setAttributes({ Image: value.sizes.full.url })}
-              type=" image"
-              value={Image}
-              render={({ open }) => (
-                <Button
-                  onClick={open}
-                  className={Image ? "image-button" : "button button-large"}
+	<MediaUpload
+		onSelect={ value => setAttributes({ Image: value.sizes.full.url }) }
+		type=" image"
+		value={ Image }
+		render={ ({ open }) => (
+			<Button
+				onClick={ open }
+				className={ Image ? "image-button" : "button button-large" }
                 >
-                  {!Image ? (
+				{ !Image ? (
                     __("Select image", "vk-blocks")
                   ) : (
-                      <img
-                        className={"vk_prContent_colImg_image"}
-                        src={Image}
-                        alt={__("Upload image", "vk-blocks")}
-                        style={{ border: imageBorderProperty }}
+	<img
+		className={ "vk_prContent_colImg_image" }
+		src={ Image }
+		alt={ __("Upload image", "vk-blocks") }
+		style={ { border: imageBorderProperty } }
                       />
-                    )}
-                </Button>
-              )}
+                    ) }
+			</Button>
+              ) }
             />
           );
-        } else {
+        } 
           const ImageParse = JSON.parse(Image);
           return (
-            <MediaUpload
-              onSelect={saveImage}
-              type=" image"
-              value={ImageParse}
-              render={({ open }) => (
-                <Button
-                  onClick={open}
-                  className={
+	<MediaUpload
+		onSelect={ saveImage }
+		type=" image"
+		value={ ImageParse }
+		render={ ({ open }) => (
+			<Button
+				onClick={ open }
+				className={
                     ImageParse ? "image-button" : "button button-large"
                   }
                 >
-                  {Image === null || typeof ImageParse.sizes === "undefined" ? (
+				{ Image === null || typeof ImageParse.sizes === "undefined" ? (
                     __("Select image", "vk-blocks")
                   ) : (
-                      <img
-                        className={"vk_prContent_colImg_image"}
-                        src={ImageParse.sizes.full.url}
-                        alt={ImageParse.alt}
-                        style={{ border: imageBorderProperty }}
+	<img
+		className={ "vk_prContent_colImg_image" }
+		src={ ImageParse.sizes.full.url }
+		alt={ ImageParse.alt }
+		style={ { border: imageBorderProperty } }
                       />
-                    )}
-                </Button>
-              )}
+                    ) }
+			</Button>
+              ) }
             />
           );
-        }
+        
       } else if (for_ === "save") {
         if (!Image) {
           return __("Select image", "vk-blocks");
-        } else {
+        } 
           if (Image && Image.indexOf("{") === -1) {
             return (
-              <img
-                className={"vk_prContent_colImg_image"}
-                src={Image}
-                alt={__("Upload image", "vk-blocks")}
-                style={{ border: imageBorderProperty }}
+	<img
+		className={ "vk_prContent_colImg_image" }
+		src={ Image }
+		alt={ __("Upload image", "vk-blocks") }
+		style={ { border: imageBorderProperty } }
               />
             );
-          } else {
+          } 
             const ImageParse = JSON.parse(Image);
             if (ImageParse && typeof ImageParse.sizes !== "undefined") {
               return (
-                <img
-                  className={"vk_prContent_colImg_image"}
-                  src={ImageParse.sizes.full.url}
-                  alt={ImageParse.alt}
-                  style={{ border: imageBorderProperty }}
+	<img
+		className={ "vk_prContent_colImg_image" }
+		src={ ImageParse.sizes.full.url }
+		alt={ ImageParse.alt }
+		style={ { border: imageBorderProperty } }
                 />
               );
-            } else {
+            } 
               return "";
-            }
-          }
-        }
+            
+          
+        
       }
 		};
 
     return (
-      <div className={containerClass}>
-        <div className="col-sm-6 vk_prContent_colImg">{renderImage(for_)}</div>
-        <div className="col-sm-6 vk_prContent_colTxt">
-          {(() => {
+	<div className={ containerClass }>
+		<div className="col-sm-6 vk_prContent_colImg">{ renderImage(for_) }</div>
+		<div className="col-sm-6 vk_prContent_colTxt">
+			{ (() => {
             if (for_ === "edit") {
               return (
-                <Fragment>
-                  <RichText
-                    tagName="h3"
-                    className={"vk_prContent_colTxt_title"}
-                    onChange={value => setAttributes({ title: value })}
-                    value={title}
-                    placeholder={__("Input title.", "vk-blocks")}
-                    style={{ color: titleColor }}
+	<Fragment>
+		<RichText
+			tagName="h3"
+			className={ "vk_prContent_colTxt_title" }
+			onChange={ value => setAttributes({ title: value }) }
+			value={ title }
+			placeholder={ __("Input title.", "vk-blocks") }
+			style={ { color: titleColor } }
                   />
-                  <RichText
-                    tagName="p"
-                    className={"vk_prContent_colTxt_text"}
-                    onChange={value => setAttributes({ content: value })}
-                    value={content}
-                    placeholder={__("Input content.", "vk-blocks")}
-                    style={{ color: contentColor }}
+		<RichText
+			tagName="p"
+			className={ "vk_prContent_colTxt_text" }
+			onChange={ value => setAttributes({ content: value }) }
+			value={ content }
+			placeholder={ __("Input content.", "vk-blocks") }
+			style={ { color: contentColor } }
                   />
-                </Fragment>
+	</Fragment>
               );
-            } else {
+            } 
               return (
-                <Fragment>
-                  <RichText.Content
-                    tagName="h3"
-                    value={title}
-                    className={"vk_prContent_colTxt_title"}
-                    style={{ color: titleColor }}
+	<Fragment>
+		<RichText.Content
+			tagName="h3"
+			value={ title }
+			className={ "vk_prContent_colTxt_title" }
+			style={ { color: titleColor } }
                   />
-                  <RichText.Content
-                    tagName="p"
-                    className={"vk_prContent_colTxt_text"}
-                    value={content}
-                    style={{ color: contentColor }}
+		<RichText.Content
+			tagName="p"
+			className={ "vk_prContent_colTxt_text" }
+			value={ content }
+			style={ { color: contentColor } }
                   />
-                </Fragment>
+	</Fragment>
               );
-            }
-          })()}
-          {//ボタンテキストが入力されるとボタンを表示。
+            
+          })() }
+			{ //ボタンテキストが入力されるとボタンを表示。
             (() => {
               if (buttonText !== "" && buttonText !== undefined) {
                 return (
-                  <div className={btnClass}>
-                    <a
-                      href={url}
-                      className={aClass}
-                      target={buttonTarget ? "_blank" : null}
-                      style={aStyle}
-                      rel="noopener noreferrer"
+	<div className={ btnClass }>
+		<a
+			href={ url }
+			className={ aClass }
+			target={ buttonTarget ? "_blank" : null }
+			style={ aStyle }
+			rel="noopener noreferrer"
                     >
-                      <Fontawesome attributes={attributes}/>
-                    </a>
-                  </div>
+			<Fontawesome attributes={ attributes } />
+		</a>
+	</div>
                 );
               }
-            })()}
-        </div>
-      </div>
+            })() }
+		</div>
+	</div>
     );
   }
 }

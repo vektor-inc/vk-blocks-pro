@@ -7,17 +7,17 @@ import { Fragment } from "react";
 const renderTitle = (level, contents,tStyle, headingStyle ) =>{
 	switch (level) {
 		case 1:
-			return <h1 style={tStyle} className={headingStyle}>{contents}</h1>;
+			return <h1 style={ tStyle } className={ headingStyle }>{ contents }</h1>;
 		case 2:
-			return <h2 style={tStyle} className={headingStyle}>{contents}</h2>;
+			return <h2 style={ tStyle } className={ headingStyle }>{ contents }</h2>;
 		case 3:
-			return <h3 style={tStyle} className={headingStyle}>{contents}</h3>;
+			return <h3 style={ tStyle } className={ headingStyle }>{ contents }</h3>;
 		case 4:
-			return <h4 style={tStyle} className={headingStyle}>{contents}</h4>;
+			return <h4 style={ tStyle } className={ headingStyle }>{ contents }</h4>;
 		case 5:
-			return <h5 style={tStyle} className={headingStyle}>{contents}</h5>;
+			return <h5 style={ tStyle } className={ headingStyle }>{ contents }</h5>;
 		case 6:
-			return <h6 style={tStyle} className={headingStyle}>{contents}</h6>;
+			return <h6 style={ tStyle } className={ headingStyle }>{ contents }</h6>;
 	}
 }
 
@@ -40,7 +40,7 @@ export const VKBHeading_0_40_0 =(props) => {
 		fontAwesomeIconAfter,
 		fontAwesomeIconColor
 	} = attributes;
-	let containerClass = `vk_heading vk_heading-style-${titleStyle}`;
+	const containerClass = `vk_heading vk_heading-style-${titleStyle}`;
 	let cStyle;
 	let tStyle;
 
@@ -65,13 +65,13 @@ export const VKBHeading_0_40_0 =(props) => {
 		};
 	}
 
-	let headingStyle = `vk_heading_title vk_heading_title-style-${titleStyle}`;
-	let subTextStyle = {
+	const headingStyle = `vk_heading_title vk_heading_title-style-${titleStyle}`;
+	const subTextStyle = {
 		color: subTextColor,
 		fontSize: subTextSize + "rem",
 		textAlign: align
 	}
-	let subTextClass = `vk_heading_subtext vk_heading_subtext-style-${titleStyle}`;
+	const subTextClass = `vk_heading_subtext vk_heading_subtext-style-${titleStyle}`;
 
 	let iconBefore = '';
 	let iconAfter = '';
@@ -98,54 +98,54 @@ export const VKBHeading_0_40_0 =(props) => {
 
 	if (for_ === "edit") {
 
-		let titleContent = <Fragment>
-			{ReactHtmlParser(iconBefore)}
-				<RichText
-					tagName={"span"}
-					value={title}
-					onChange={(value) => {
+		const titleContent = <Fragment>
+			{ ReactHtmlParser(iconBefore) }
+			<RichText
+				tagName={ "span" }
+				value={ title }
+				onChange={ (value) => {
 						setAttributes({ title: value} )
-					}}
-					placeholder={__("Input title…", "vk-blocks")}
+					} }
+				placeholder={ __("Input title…", "vk-blocks") }
 				/>
-				{ReactHtmlParser(iconAfter)}
+			{ ReactHtmlParser(iconAfter) }
 		</Fragment>
 
 		let subtextContent;
 		if (subTextFlag === "on") {
 			subtextContent = <RichText
-			tagName={"p"}
-			value={subText}
-			onChange={value => setAttributes({ subText: value })}
-			style={subTextStyle}
-			className={subTextClass}
-			placeholder={__("Input sub text…", "vk-blocks")}
+				tagName={ "p" }
+				value={ subText }
+				onChange={ value => setAttributes({ subText: value }) }
+				style={ subTextStyle }
+				className={ subTextClass }
+				placeholder={ __("Input sub text…", "vk-blocks") }
 		  />
 		}
 
-		return (<div className={containerClass} style={cStyle}>{renderTitle(level, titleContent, tStyle, headingStyle)}{subtextContent}</div>);
+		return (<div className={ containerClass } style={ cStyle }>{ renderTitle(level, titleContent, tStyle, headingStyle) }{ subtextContent }</div>);
 
 	} else if (for_ === "save") {
 
-		let titleContent = <Fragment>
-			{ReactHtmlParser(iconBefore)}
+		const titleContent = <Fragment>
+			{ ReactHtmlParser(iconBefore) }
 			<RichText.Content
-				tagName={"span"}
-				value={title}
+				tagName={ "span" }
+				value={ title }
 			/>
-			{ReactHtmlParser(iconAfter)}
+			{ ReactHtmlParser(iconAfter) }
 		</Fragment>
 
 		let subtextContent;
 		console.log(subTextFlag)
 		if (subTextFlag === "on") {
 			subtextContent = <RichText.Content
-			tagName={"p"}
-			value={subText}
-			style={subTextStyle}
-			className={subTextClass}
+				tagName={ "p" }
+				value={ subText }
+				style={ subTextStyle }
+				className={ subTextClass }
 		  />
 		}
-		return (<div className={containerClass} style={cStyle}>{renderTitle(level, titleContent, tStyle, headingStyle)}{subtextContent}</div>);
+		return (<div id="1" className={ containerClass } style={ cStyle }>{ renderTitle(level, titleContent, tStyle, headingStyle) }{ subtextContent }</div>);
 	}
 }

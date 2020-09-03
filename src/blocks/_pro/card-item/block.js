@@ -5,7 +5,7 @@
 import { Component } from "./component";
 import { schema } from "./schema";
 import { LinkControl } from "../../../components/link-control";
-import { deprecated } from "./deprecated"
+import { deprecated } from "./deprecated/index"
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;

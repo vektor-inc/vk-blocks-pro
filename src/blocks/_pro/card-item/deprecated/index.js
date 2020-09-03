@@ -1,11 +1,11 @@
 const { __ } = wp.i18n;
-import { vkbBlockEditor } from "../../_helper/depModules";
+import { vkbBlockEditor } from "../../../_helper/depModules";
 const { RichText, MediaUpload, InnerBlocks } = vkbBlockEditor;
 const { Button } = wp.components;
 const { Fragment } = wp.element;
 const { dispatch } = wp.data;
 
-import { convertToGrid } from "../../_helper/convert-to-grid";
+import { convertToGrid } from "../../../_helper/convert-to-grid";
 
 const depSchema = {
   layout: {
@@ -408,13 +408,13 @@ class DepComponent extends React.Component {
 		</div>
 	</Fragment>
           );
-        } 
+        }
           return (
 	<div className={ imgContainerClass } style={ imageStyle }>
 		{ switchAddUrltoImage(url) }
 	</div>
           );
-        
+
       }
     };
 
@@ -426,9 +426,9 @@ class DepComponent extends React.Component {
 		{ overlay }
 	</a>
         );
-      } 
+      }
         return overlay;
-      
+
     };
 
     const renderExcerpt = (align) => {
@@ -447,7 +447,7 @@ class DepComponent extends React.Component {
             ) }
           />
         );
-      } 
+      }
         return (
 	<RichText.Content
 		tagName={ titleTag }
@@ -455,7 +455,7 @@ class DepComponent extends React.Component {
 		value={ excerpt_text }
           />
         );
-      
+
     };
 
     const renderButton = (display_btn, align) => {
@@ -488,7 +488,7 @@ class DepComponent extends React.Component {
 		placeholder={ __("Title", "vk-blocks") }
           />
         );
-      } 
+      }
         return (
 	<a href={ url } target={ linkTarget } rel={ rel }>
 		<RichText.Content
@@ -498,7 +498,7 @@ class DepComponent extends React.Component {
             />
 	</a>
         );
-      
+
     };
 
     let imageStyle;
@@ -1002,7 +1002,7 @@ class DepComponent3 extends React.Component {
 							value={ title }
 										/>
 					</a>);
-			
+
     };
 
     let imageStyle;
@@ -1260,7 +1260,7 @@ export class DepComponentXxlAdd extends React.Component {
 								  value={ title }
 											  />
 						  </a>);
-				  
+
 			  }
 	  };
 
@@ -1299,8 +1299,10 @@ export class DepComponentXxlAdd extends React.Component {
 	}
 }
 
+import CardItem0_20_2 from "./0.20.2/index"
 
 export const deprecated = [
+	CardItem0_20_2,
 	{
 		attributes: depSchema,
 		save(props) {

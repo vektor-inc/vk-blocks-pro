@@ -1,11 +1,28 @@
+@mixin title_design_unset {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	outline: unset;
+	outline-offset: unset;
+	box-shadow: unset;
+	border-radius: unset;
+	overflow: unset;
+	border-top: none;
+	border-bottom: none;
+	&::before,
+	&::after {
+		content: none;
+	}
+}
+
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-
 .vk_card {
   &_item {
     .vk_post_title.card-title {
-      font-size: 1rem;
+	  font-size: 1rem;
+	  @include title_design_unset;
     }
     .vk_post_excerpt.card-text {
       font-size: 14px;
@@ -18,4 +35,8 @@
 			}
 		}
   }
+}
+
+.vk_post_title.card-title {
+	@include title_design_unset;
 }

@@ -1,14 +1,13 @@
 @mixin title_design_unset {
 	position: relative;
-	margin-left: auto;
-	margin-right: auto;
+	background-color: transparent;
 	outline: unset;
 	outline-offset: unset;
 	box-shadow: unset;
-	border-radius: unset;
-	overflow: unset;
-	border-top: none;
-	border-bottom: none;
+	border: none;
+	border-radius:unset;
+	padding: 0;
+	color: inherit;
 	&::before,
 	&::after {
 		content: none;
@@ -37,6 +36,6 @@
   }
 }
 
-.vk_post_title.card-title {
+.vk_post_title {
 	@include title_design_unset;
 }

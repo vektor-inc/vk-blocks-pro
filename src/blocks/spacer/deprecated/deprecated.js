@@ -7,7 +7,7 @@ export const deprecated = [
         attributes: schema,
         save({ attributes }) {
             return (
-                <SpacerComponentV2 attributes={attributes} />
+	<SpacerComponentV2 attributes={ attributes } />
             );
         },
     },
@@ -15,7 +15,7 @@ export const deprecated = [
         attributes: schema,
         save({ attributes }) {
             return (
-                <SpacerComponentV1 attributes={attributes} />
+	<SpacerComponentV1 attributes={ attributes } />
             );
         },
     }

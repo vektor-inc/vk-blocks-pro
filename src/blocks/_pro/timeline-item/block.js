@@ -29,32 +29,32 @@ registerBlockType('vk-blocks/timeline-item', {
 		} = attributes;
 
         return (
-            <Fragment>
-                <InspectorControls>
-                    <PanelBody title={__('label', 'vk-blocks')}>
-                            <TextControl
-                                value={label}
-                                onChange={(value) => setAttributes({label: value})}
-                                placeholder={__('Ex,6:00AM', 'vk-blocks')}
+	<Fragment>
+		<InspectorControls>
+			<PanelBody title={ __('label', 'vk-blocks') }>
+				<TextControl
+					value={ label }
+					onChange={ (value) => setAttributes({label: value}) }
+					placeholder={ __('Ex,6:00AM', 'vk-blocks') }
                             />
-                    </PanelBody>
-                    <PanelBody title={__('Color', 'vk-blocks')}>
-                            <ColorPalette
-                                value={color}
-                                onChange={(value) => {
+			</PanelBody>
+			<PanelBody title={ __('Color', 'vk-blocks') }>
+				<ColorPalette
+					value={ color }
+					onChange={ (value) => {
 									setAttributes({color: value ? value : '#337ab7'})
-								}}
+								} }
                             />
-                    </PanelBody>
-                    <PanelBody title={__('Style', 'vk-blocks')}>
-                        <BaseControl
-                            id="style-dot"
-                            label="Dot Style"
+			</PanelBody>
+			<PanelBody title={ __('Style', 'vk-blocks') }>
+				<BaseControl
+					id="style-dot"
+					label="Dot Style"
                         >
-                            <SelectControl
-                                value={style}
-                                onChange={(value) => setAttributes({style: value})}
-                                options={[
+					<SelectControl
+						value={ style }
+						onChange={ (value) => setAttributes({style: value}) }
+						options={ [
                                     {
                                         value: 'outlined',
                                         label: __('Outlined', 'vk-blocks'),
@@ -63,17 +63,17 @@ registerBlockType('vk-blocks/timeline-item', {
                                         value: 'solid',
                                         label: __('Solid', 'vk-blocks'),
                                     },
-                                ]}
+                                ] }
                             />
-                        </BaseControl>
-                        <BaseControl
-                            id="style-line"
-                            label="Line Style"
+				</BaseControl>
+				<BaseControl
+					id="style-line"
+					label="Line Style"
                         >
-                            <SelectControl
-                                value={styleLine}
-                                onChange={(value) => setAttributes({styleLine: value})}
-                                options={[
+					<SelectControl
+						value={ styleLine }
+						onChange={ (value) => setAttributes({styleLine: value}) }
+						options={ [
                                     {
                                         value: 'default',
                                         label: __('Default', 'vk-blocks'),
@@ -82,22 +82,22 @@ registerBlockType('vk-blocks/timeline-item', {
                                         value: 'none',
                                         label: __('None', 'vk-blocks'),
                                     },
-                                ]}
+                                ] }
                             />
-                        </BaseControl>
-                    </PanelBody>
-                </InspectorControls>
-                <Component
-                    attributes={attributes}
-                    className={className}
-                    setAttributes={setAttributes}
-                    for_={"edit"}
+				</BaseControl>
+			</PanelBody>
+		</InspectorControls>
+		<Component
+			attributes={ attributes }
+			className={ className }
+			setAttributes={ setAttributes }
+			for_={ "edit" }
                 />
-            </Fragment>
+	</Fragment>
         );
     },
 
     save({attributes, className}) {
-        return <Component attributes={attributes} className={className} for_={"save"}/>;
+        return <Component attributes={ attributes } className={ className } for_={ "save" } />;
     },
 });

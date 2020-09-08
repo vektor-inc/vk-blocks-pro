@@ -66,7 +66,7 @@ registerBlockType("vk-blocks/card", {
   edit(props) {
 	const { attributes, setAttributes, className, clientId, name } = props;
 	attributes.name = name;
-	setAttributes({ clientId: clientId })
+	setAttributes({ clientId })
 
     const selectEditor = select("core/block-editor")
       ? select("core/block-editor")
@@ -111,12 +111,12 @@ registerBlockType("vk-blocks/card", {
 			<ColumnLayoutControl { ...props } />
 			<DisplayItemsControlForCards { ...props } />
 			<PanelBody
-			title={__("Image Height", "vk-blocks")}
-			initialOpen={false}
+				title={ __("Image Height", "vk-blocks") }
+				initialOpen={ false }
 			>
-				<AdvancedUnitControl {...props} />
-				<BaseControl label={__('Slide Height for each device.', 'vk-blocks')}>
-					<AdvancedViewportControl {...props} initial={{ iPc:150, iTablet:150, iMobile:150 }} />
+				<AdvancedUnitControl { ...props } />
+				<BaseControl label={ __('Slide Height for each device.', 'vk-blocks') }>
+					<AdvancedViewportControl { ...props } initial={ { iPc:150, iTablet:150, iMobile:150 } } />
 				</BaseControl>
 			</PanelBody>
 			<CardAlignControls { ...props } />
@@ -131,9 +131,7 @@ registerBlockType("vk-blocks/card", {
     );
   },
   save({ attributes }) {
-    return (
-	<Component attributes={ attributes } for_={ "save" } />
-    );
+    return (<Component attributes={ attributes } for_={ "save" } />);
   },
   deprecated,
 });
@@ -203,7 +201,7 @@ const generateInlineCss = (attributes) =>{
 	}
 
 	const cardImgSelector = `.${prefix}${clientId} .vk_card_item .vk_post_imgOuter::before`
-	return <style type='text/css'>{`@media (max-width: 576px) {
+	return <style type='text/css'>{ `@media (max-width: 576px) {
 		${cardImgSelector}{
 			padding-top:${mobile}${unit}!important;
 		}
@@ -217,7 +215,7 @@ const generateInlineCss = (attributes) =>{
 		${cardImgSelector}{
 			padding-top:${pc}${unit}!important;
 		}
-	}`}</style>
+	}` }</style>
 }
 
 addFilter( 'editor.BlockEdit', "vk-blocks/card-addInlineEditorsCss", createHigherOrderComponent( ( BlockEdit ) => {
@@ -230,20 +228,20 @@ addFilter( 'editor.BlockEdit', "vk-blocks/card-addInlineEditorsCss", createHighe
 		if ("vk-blocks/card" === props.name && ( unit || pc || tablet || mobile )) {
 
 			useEffect(()=>{
-				setAttributes({clientId:clientId})
+				setAttributes({clientId})
 			},[])
 
 			const cssTag = generateInlineCss(attributes)
 
 			return (
 				<Fragment>
-					{cssTag}
+					{ cssTag }
 					<BlockEdit { ...props } />
 				</Fragment>
 			);
-		}else{
-			return <BlockEdit { ...props } />;
 		}
+			return <BlockEdit { ...props } />;
+		
 	};
 
 }, "addInlineEditorsCss" ));
@@ -257,10 +255,10 @@ addFilter(
 	if ("vk-blocks/card" === type.name && ( unit || pc || tablet || mobile )) {
 		const cssTag = generateInlineCss(attributes)
 		return<div>
-			{cssTag}
-			{el}
+			{ cssTag }
+			{ el }
 		  </div>
-	}else{
-		return el
 	}
+		return el
+	
 });

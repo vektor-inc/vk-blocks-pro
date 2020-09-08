@@ -1,0 +1,30 @@
+#!/bin/bash
+
+mv vk-blocks/ vk-blocks-free/
+cd ./vk-blocks-free/
+rm -rf src/*
+cd ../
+# 指定したファイルを除外して、Pro版をコピー&上書き
+rsync --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'src/outer/' --exclude 'src/table-of-contents/' --exclude 'bin/' --exclude 'tests/' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/_pro/' --exclude 'vk-blocks-free/' --exclude '.node-version' --exclude 'bin/' --exclude '.git/' --exclude '.gitignore' --exclude '.circleci/' --exclude 'tests/' --exclude '.phpcs.xml.dist' --exclude 'bitbucket-pipelines.yml' --exclude 'package-lock.json' --exclude 'phpunit.xml' --exclude 'phpunit.xml.dist' --exclude 'inc/plugin-update-checker/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvc ./* ./vk-blocks-free/
+cd ./vk-blocks-free/
+# push先のブランチを切る
+git checkout -b add/vk-blocks-free
+# Pro版ブロックは読み込まないようjsから削除
+sed -i /_pro/d src/blocks/bundle.js
+# プラグイン名を通常版へリネーム
+sed -i 3s/Pro// vk-blocks.php
+ # Pro版のブロックslugを配列に追加（後で使用する）
+cd ../
+pro_block_array=($(ls src/blocks/_pro/))
+cd ./vk-blocks-free/
+# Pro版のブロックをphpから削除
+for pro_block in ${pro_block_array[@]}; do
+sed -i s/\,\ \'${pro_block}\'//g inc/vk-blocks/vk-blocks-functions.php
+done
+# ブロックをビルド
+npm install
+npm run build
+# 以下はadd/vk-blocks-freeブランチにpushするための処理
+git add .
+git commit -m"Update from vk-blocks-pro"
+git push -f origin add/vk-blocks-free

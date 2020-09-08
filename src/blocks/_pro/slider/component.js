@@ -29,27 +29,27 @@ export const ColumnResponsive = (props) => {
     innerClass = innerClass + " vk_posts-edit";
 
     elm = (
-      <div>
-        <InnerBlocks
+	<div>
+		<InnerBlocks
           //編集画面の追加タグ用に2回目のClassを挿入
-          className={`${containerClass} row`}
-          template={TEMPLATE}
-          allowedBlocks={ALLOWED_BLOCKS}
+			className={ `${containerClass} row` }
+			template={ TEMPLATE }
+			allowedBlocks={ ALLOWED_BLOCKS }
         />
-      </div>
+	</div>
     );
   } else if ("save") {
     elm = (
-        <InnerBlocks.Content />
+	<InnerBlocks.Content />
 	);
   }
   return (
-		<div className={classNames(`swiper-container vk_slider vk_slider_${clientId}`, alignClass, className)}>
-			<div className={`swiper-wrapper`}>
-				{elm}
-			</div>
-			<div className="swiper-button-next"></div>
-			<div className="swiper-button-prev"></div>
-			{pagination && <div className="swiper-pagination"></div>}
-		</div>);
+	<div className={ classNames(`swiper-container vk_slider vk_slider_${clientId}`, alignClass, className) }>
+		<div className={ `swiper-wrapper` }>
+			{ elm }
+		</div>
+		<div className="swiper-button-next"></div>
+		<div className="swiper-button-prev"></div>
+		{ pagination && <div className="swiper-pagination"></div> }
+	</div>);
 };

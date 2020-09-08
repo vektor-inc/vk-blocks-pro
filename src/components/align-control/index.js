@@ -19,5 +19,5 @@ export const AlignControl = props => {
 		 }
 		};
 	}
-	return (<Toolbar controls={["left", "center", "right"].map(createAlignControl)} />);
+	return (<Toolbar controls={ ["left", "center", "right"].map(createAlignControl) } />);
 };

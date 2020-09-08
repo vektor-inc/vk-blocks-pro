@@ -50,26 +50,26 @@ registerBlockType('vk-blocks/your-block-slug', {
         } = attributes;
 
         return (
-            <Fragment>
-                <InspectorControls>
-                    <PanelBody title={__('Color Setting', 'vk-blocks')}>
-                        <BaseControl label={__('Title Color', 'vk-blocks')}>
-                            <ColorPalette
-                                value={content}
-                                onChange={(value) => setAttributes({ content: value })}
+	<Fragment>
+		<InspectorControls>
+			<PanelBody title={ __('Color Setting', 'vk-blocks') }>
+				<BaseControl label={ __('Title Color', 'vk-blocks') }>
+					<ColorPalette
+						value={ content }
+						onChange={ (value) => setAttributes({ content: value }) }
                             />
-                        </BaseControl>
-                    </PanelBody>
-                </InspectorControls>
-                <div className="vk_your-block-slug">
-                    <div>Editor</div>
-                    <Component
-                        attributes={attributes}
-                        className={className}
-                        for_={'edit'}
+				</BaseControl>
+			</PanelBody>
+		</InspectorControls>
+		<div className="vk_your-block-slug">
+			<div>Editor</div>
+			<Component
+				attributes={ attributes }
+				className={ className }
+				for_={ 'edit' }
                     />
-                </div>
-            </Fragment>
+		</div>
+	</Fragment>
         );
     },
 
@@ -84,14 +84,14 @@ registerBlockType('vk-blocks/your-block-slug', {
     save({ attributes, className }) {
 
         return (
-            <div className="vk_your-block-slug">
-                <div>Front</div>
-                <Component
-                    attributes={attributes}
-                    className={className}
-                    for_={'save'}
+	<div className="vk_your-block-slug">
+		<div>Front</div>
+		<Component
+			attributes={ attributes }
+			className={ className }
+			for_={ 'save' }
                 />
-            </div>
+	</div>
         );
     },
 });

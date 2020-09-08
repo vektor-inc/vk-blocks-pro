@@ -37,11 +37,11 @@ export class Fontawesome extends Component {
 		}
 
         return (
-			<React.Fragment>
-				{ReactHtmlParser(iconBefore)}
-				<span className="vk_button_link_txt">{buttonText}</span>
-				{ReactHtmlParser(iconAfter)}
-          </React.Fragment>
+	<React.Fragment>
+		{ ReactHtmlParser(iconBefore) }
+		<span className="vk_button_link_txt">{ buttonText }</span>
+		{ ReactHtmlParser(iconAfter) }
+	</React.Fragment>
         );
     }
 }

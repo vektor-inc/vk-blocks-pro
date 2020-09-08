@@ -51,15 +51,10 @@
 					margin-top: 30px;
 				}
 			}
+			&:before,
 			&:after {
-				content: "";
-				line-height: 0;
-				display: block;
-				overflow: hidden;
-				position: absolute;
-				bottom: -1px;
-				width: 0;
-				border: none;
+				content: none;
+
 			}
 		}
 		&_text {

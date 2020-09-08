@@ -63,7 +63,8 @@ e.g.
 == Changelog ==
 
 = 0.44.3 =
-* [ Specification change ] abolish Preload
+ [ Specification change ] abolish Preload
+ [ digigin bug fix ] Block heading Digigin font color tuning 
 
 = 0.44.2 =
 * [ digigin bug fix ] Block heading Digigin tuning 

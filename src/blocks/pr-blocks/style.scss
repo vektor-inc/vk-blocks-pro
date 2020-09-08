@@ -38,7 +38,12 @@
 		font-size: 21px;
 		line-height: 1.4em;
 		border: none;
+		border-radius:unset;
 		padding: 0;
+		outline: unset;
+		outline-offset: unset;
+		box-shadow: unset;
+		color: inherit;
 		&::before {
 			content: none;
 		}

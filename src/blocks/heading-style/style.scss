@@ -13,6 +13,7 @@ $color_key: #337ab7;
 	border-radius: unset;
 	overflow: unset;
 	text-align: inherit;
+	color: inherit;
 }
 
 @mixin title_no_bg {
@@ -324,6 +325,8 @@ $color_key: #337ab7;
 				border-bottom: 1px solid #333;
 				position: unset;
 				width: unset;
+				border-left: unset;
+    			border-right: unset;
 				border-top: none;
 			}
 

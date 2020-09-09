@@ -7,11 +7,13 @@ $css_optimize_array = array(
     array(
         'label' => __( 'Optimize VK Blocks CSS ( Tree Shaking )', 'vk-blocks' ) . ' ( Beta )',
         'value' => 'tree-shaking',
-    ),
+	),
+	/*
     array(
         'label' => __( 'Optimize VK Blocks CSS ( Tree Shaking + Preload )', 'vk-blocks' ) . ' ( Beta )',
         'value' => 'optomize-all-css',
-    ),
+	),
+	*/
 );
 
 $vk_blocks_options  = vkblocks_get_options();

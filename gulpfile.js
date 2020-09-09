@@ -16,7 +16,10 @@ const jsmin = require("gulp-jsmin");
 gulp.task('text-domain', function (done) {
 	gulp.src(['./inc/term-color/package/*'])
 	  .pipe(replace(', \'vk_term_color_textdomain\'', ', \'vk-blocks\''))
-	  .pipe(gulp.dest('./inc/term-color/package/'));
+    .pipe(gulp.dest('./inc/term-color/package/'));
+  gulp.src(['./inc/vk-components/package/*'])
+  .pipe(replace(', \'vk_components_textdomain\'', ', \'vk-blocks\''))
+  .pipe(gulp.dest('./inc/vk-components/package/'));
 	done();
   });
 

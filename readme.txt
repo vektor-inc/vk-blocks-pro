@@ -62,6 +62,8 @@ e.g.
 
 == Changelog ==
 
+* [ bug fix ][ border box ] Cope with lightning pro headding design ( balloon )
+
 = 0.44.5 =
 * [ digigin bug fix ] Block heading Digigin text align tuning 
 

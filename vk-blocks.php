@@ -63,7 +63,8 @@ add_action(
 			$options['active_vk-blocks'] = false;
 			update_option( 'vkExUnit_common_options', $options );
 		}
-	}
+	},
+	9999
 );
 
 if ( is_admin() && ! is_network_admin() ) {

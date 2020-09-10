@@ -370,32 +370,27 @@ ol {
 /*-------------------------------------------*/
 $xxl-min: 1400px;
 .col {
+    // Bootstrap4�では xxl サイズがないので独自に追加
     @media (min-width: $xxl-min) {
 		&-xxl-2 {
-			width: calc(16.66% - 30px);
-			//bootstrapのcssを上書きしないと表示が崩れるのでflexとmax-widthを追加
-			flex: 1 1 auto;
-			max-width: initial; 
+			flex: 0 0 16.66667%;
+			max-width: 16.66667%;
 		}
 		&-xxl-3 {
-			width: calc(25% - 30px);
-			flex: 1 1 auto;
-			max-width: initial;
+			flex: 0 0 25%;
+			max-width: 25%;
 		}
 		&-xxl-4 {
-			width: calc(33.3% - 30px);
-			flex: 1 1 auto;
-			max-width: initial;
+			flex: 0 0 33.33333%;
+			max-width: 33.33333%;
 		}
 		&-xxl-6 {
-			width: calc(50% - 30px);
-			flex: 1 1 auto;
-			max-width: initial;
+			flex: 0 0 50%;
+			max-width: 50%;
 		}
 		&-xxl-12 {
-			width: calc(100% - 30px);
-			flex: 1 1 auto;
-			max-width: initial;
+			flex: 0 0 100%;
+			max-width: 100%;
 		}
 	}
 }

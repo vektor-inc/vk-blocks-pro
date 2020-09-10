@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.5.1
-Stable tag: 0.44.9
+Stable tag: 0.44.10
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -62,7 +62,7 @@ e.g.
 
 == Changelog ==
 
-= 0.44.9 =
+= 0.44.10 =
 * [ bug fix ][ Grid column(Pro) ] fix could choice 5 columns
 
 = 0.44.8 =

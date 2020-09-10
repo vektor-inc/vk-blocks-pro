@@ -372,7 +372,6 @@ $xxl-min: 1400px;
 .col {
     @media (min-width: $xxl-min) {
 		&-xxl-2 {
-			//bootstrapのcssを上書きしないと表示が崩れるのでflexとmax-widthを追加
 			flex: 0 0 16.66667%;
 			max-width: 16.66667%;
 		}

@@ -175,4 +175,5 @@ registerBlockType("vk-blocks/faq2", {
 			</dl>
 	 	);
 	},
+	deprecated
 });

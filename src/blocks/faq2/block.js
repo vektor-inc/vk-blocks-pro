@@ -2,6 +2,7 @@
  * FAQ Outer Block
  */
 import { vkbBlockEditor } from "./../_helper/depModules";
+import { deprecated } from "./deprecated";
 import classNames from "classnames";
 import { content, title } from "./../_helper/example-data";
 import replaceClientId from "../../_helper/replaceClientId";

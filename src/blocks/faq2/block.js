@@ -3,12 +3,17 @@
  */
 import { vkbBlockEditor } from "./../_helper/depModules";
 import classNames from "classnames";
-import { content, title } from "./../_helper/example-data"
+import { content, title } from "./../_helper/example-data";
+import replaceClientId from "../../_helper/replaceClientId";
 
-
-const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { InnerBlocks } = vkbBlockEditor;
+const { PanelBody, BaseControl, CheckboxControl } = wp.components;
+const { Fragment } = wp.element;
+const { InspectorControls, InnerBlocks} = vkbBlockEditor;
+const { addFilter } = wp.hooks;
+const { __ } = wp.i18n;
+
+
 
 const BlockIcon = (
 	<svg
@@ -46,13 +51,9 @@ registerBlockType("vk-blocks/faq2", {
 	icon: BlockIcon,
 	category: "vk-blocks-cat",
 	attributes: {
-	  heading: {
-		  type: "string",
-		  source: "html",
-		  selector: "dt"
-	  },
-	  content:{
-		  type: "string"
+	  accordion: {
+		  type: "boolean",
+		  default: false
 	  }
 	},
 	supports: {
@@ -116,27 +117,59 @@ registerBlockType("vk-blocks/faq2", {
 			},
 		],
 	},
-	edit( { className } ) {
+	edit( props ) {
+		const { attributes, setAttributes, className, clientId } = props;
+		const { accordion } = attributes;
+		const customClientId = replaceClientId(clientId);
+		setAttributes({clientId:customClientId})
+
 		return (
-			<dl className={ classNames(className,"vk_faq") }>
-				<InnerBlocks
-					allowedBlocks={ [
-						[ 'vk-blocks/faq2-q' ],
-						[ 'vk-blocks/faq2-a' ],
-					] }
-					template={ [
-						[ 'vk-blocks/faq2-q' ],
-						[ 'vk-blocks/faq2-a' ],
-					] }
-					templateLock='all'
-				/>
-			</dl>
+			<Fragment>
+				<InspectorControls>
+					<PanelBody title={ __("New FAQ Settings", "vk-blocks") }>
+						<BaseControl
+							id={ 'faq2-01' }
+							label={ __( 'Accordion', 'vk-blocks' ) }
+						>
+							<CheckboxControl
+								label={ __(
+									'Set Accordion',
+									'vk-blocks'
+								) }
+								className={ 'mb-1' }
+								checked={ accordion }
+								onChange={ ( checked ) =>
+									setAttributes( { accordion: checked } )
+								}
+							/>
+						</BaseControl>
+					</PanelBody>
+				</InspectorControls>
+				<dl className={ classNames(className,"vk_faq") }>
+					<InnerBlocks
+						allowedBlocks={ [
+							[ 'vk-blocks/faq2-q' ],
+							[ 'vk-blocks/faq2-a' ],
+						] }
+						template={ [
+							[ 'vk-blocks/faq2-q' ],
+							[ 'vk-blocks/faq2-a' ],
+						] }
+						templateLock='all'
+					/>
+				</dl>
+			</Fragment>
+
 		);
 	  },
 
-	save() {
+	save( props ) {
+		const { accordion, clientId } = props.attributes;
+
+		accordion_switch = accordion ? "vk_faq-accordion-on" : '';
+
 		return (
-			<dl className={ `vk_faq` }>
+			<dl className={ `vk_faq ${accordion_switch}` }>
 				<InnerBlocks.Content />
 			</dl>
 	 	);

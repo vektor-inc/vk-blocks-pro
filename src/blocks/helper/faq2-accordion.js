@@ -6,16 +6,16 @@ let vkFaq2AH = [];
 
 let toggleLoop = (i) => {
 
-    vkFaq2AH[i] = vkFaq2Container[i].getElementsByClassName('vk_faq_content').clientHeight;
-    vkFaq2Container[i].getElementsByClassName('vk_faq_content').style.height = '0px';
+    vkFaq2AH[i] = vkFaq2Container[i].querySelector('.vk_faq_content').clientHeight;
+    vkFaq2Container[i].querySelector('.vk_faq_content').style.height = '0px';
 
 
-    vkFaq2Container[i].getElementsByClassName('vk_faq_title').addEventListener('click', () => {
-        vkFaq2A = vkFaq2Container[i].getElementsByClassName('vk_faq_content');
+    vkFaq2Container[i].querySelector('.vk_faq_title').addEventListener('click', () => {
+        vkFaq2A = vkFaq2Container[i].querySelector('.vk_faq_content');
         if (vkFaq2A.style.height !== '0px') {
             vkFaq2A.style.height = '0px';
         } else {
-            nextdd.style.height = vkFaq2AH[i] + 'px';
+            vkFaq2A.style.height = vkFaq2AH[i] + 'px';
         }
 
     }, false);

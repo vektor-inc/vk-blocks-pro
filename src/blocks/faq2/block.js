@@ -5,7 +5,6 @@ import { vkbBlockEditor } from "./../_helper/depModules";
 import { deprecated } from "./deprecated";
 import classNames from "classnames";
 import { content, title } from "./../_helper/example-data";
-import replaceClientId from "../../_helper/replaceClientId";
 
 const { registerBlockType } = wp.blocks;
 const { PanelBody, BaseControl, CheckboxControl } = wp.components;
@@ -119,10 +118,8 @@ registerBlockType("vk-blocks/faq2", {
 		],
 	},
 	edit( props ) {
-		const { attributes, setAttributes, className, clientId } = props;
+		const { attributes, setAttributes, className } = props;
 		const { accordion } = attributes;
-		const customClientId = replaceClientId(clientId);
-		setAttributes({clientId:customClientId})
 
 		return (
 			<Fragment>
@@ -165,7 +162,7 @@ registerBlockType("vk-blocks/faq2", {
 	  },
 
 	save( props ) {
-		const { accordion, clientId } = props.attributes;
+		const { accordion } = props.attributes;
 
 		accordion_switch = accordion ? "vk_faq-accordion-on" : '';
 

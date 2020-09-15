@@ -163,8 +163,7 @@ registerBlockType("vk-blocks/faq2", {
 
 	save( props ) {
 		const { accordion } = props.attributes;
-
-		accordion_switch = accordion ? "vk_faq-accordion-on" : '';
+		let accordion_switch = accordion ? "vk_faq-accordion-on" : '';
 
 		return (
 			<dl className={ `vk_faq ${accordion_switch}` }>

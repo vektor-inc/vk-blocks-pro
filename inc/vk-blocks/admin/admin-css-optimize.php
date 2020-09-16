@@ -7,16 +7,19 @@ $css_optimize_array = array(
     array(
         'label' => __( 'Optimize VK Blocks CSS ( Tree Shaking )', 'vk-blocks' ) . ' ( Beta )',
         'value' => 'tree-shaking',
-    ),
+	),
+	/*
     array(
         'label' => __( 'Optimize VK Blocks CSS ( Tree Shaking + Preload )', 'vk-blocks' ) . ' ( Beta )',
         'value' => 'optomize-all-css',
-    ),
+	),
+	*/
 );
+
+$vk_blocks_options  = vkblocks_get_options();
 ?>
 <section>
 <h3 id="css-optimize-setting"><?php echo __( 'CSS Optimize Setting', 'vk-blocks' ); ?></h3>
-<?php $vk_blocks_options = get_option( 'vk_blocks_options' ); ?>
 <select name="vk_blocks_options[css_optimize]">
 <?php
 foreach ( $css_optimize_array as $css_optimize ) : ?>

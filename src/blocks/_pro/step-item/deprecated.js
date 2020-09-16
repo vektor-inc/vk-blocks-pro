@@ -29,7 +29,7 @@ export const originalSchema = {
         default: 1,
     }
 };
-let mergeSchema = () => {
+const mergeSchema = () => {
     return Object.assign(originalSchema, faSchema);
 };
 export const schema = mergeSchema();
@@ -45,9 +45,9 @@ export class Component extends React.Component {
             dotNum,
             faIcon
         } = this.props.attributes;
-        let for_ = this.props.for_;
-        let className = this.props.className;
-        let containerClass = " vk_step_item";
+        const for_ = this.props.for_;
+        const className = this.props.className;
+        const containerClass = " vk_step_item";
         let elm;
         let styleClass;
         let inlineStyle;
@@ -56,7 +56,7 @@ export class Component extends React.Component {
 
         //編集画面とサイト上の切り替え
         if (for_ === "edit") {
-            elm = <InnerBlocks template={TEMPLATE} />;
+            elm = <InnerBlocks template={ TEMPLATE } />;
         } else if ("save") {
             elm = <InnerBlocks.Content />;
         }
@@ -76,23 +76,23 @@ export class Component extends React.Component {
         }
 
         return (
-            <div className={className + containerClass + styleLineClass}>
-                <div className={"vk_step_item_caption"}>{label}</div>
-                <div className={"vk_step_item_content"}>{elm}</div>
-                <div
-                    className={'vk_step_item_dot' + styleClass}
-                    style={inlineStyle}
+	<div className={ className + containerClass + styleLineClass }>
+		<div className={ "vk_step_item_caption" }>{ label }</div>
+		<div className={ "vk_step_item_content" }>{ elm }</div>
+		<div
+			className={ 'vk_step_item_dot' + styleClass }
+			style={ inlineStyle }
                 >
-                    <div className={'vk_step_item_dot_caption'}>{dotCaption}</div>
-                    {(() => {
+			<div className={ 'vk_step_item_dot_caption' }>{ dotCaption }</div>
+			{ (() => {
                         if (faIcon) {
-                            return <i className={faIcon} />;
+                            return <i className={ faIcon } />;
                         } else if (dotNum) {
-                            return <div className={'vk_step_item_dot_num'}>{dotNum}</div>;
+                            return <div className={ 'vk_step_item_dot_num' }>{ dotNum }</div>;
                         }
-                    })()}
-                </div>
-            </div>
+                    })() }
+		</div>
+	</div>
         );
     }
 }
@@ -108,9 +108,9 @@ export class Component1 extends React.Component {
             dotNum,
             faIcon
         } = this.props.attributes;
-        let for_ = this.props.for_;
-        let className = this.props.className;
-        let containerClass = " vk_step_item";
+        const for_ = this.props.for_;
+        const className = this.props.className;
+        const containerClass = " vk_step_item";
         let elm;
         let styleClass;
         let inlineStyle;
@@ -119,7 +119,7 @@ export class Component1 extends React.Component {
 
         //編集画面とサイト上の切り替え
         if (for_ === "edit") {
-            elm = <InnerBlocks template={TEMPLATE} />;
+            elm = <InnerBlocks template={ TEMPLATE } />;
         } else if ("save") {
             elm = <InnerBlocks.Content />;
         }
@@ -139,23 +139,23 @@ export class Component1 extends React.Component {
         }
 
         return (
-            <div className={className + containerClass + styleLineClass}>
-                <div className={"vk_step_item_caption"}>{label}</div>
-                <div className={"vk_step_item_content"}>{elm}</div>
-                <div
-                    className={'vk_step_item_dot' + styleClass}
-                    style={inlineStyle}
+	<div className={ className + containerClass + styleLineClass }>
+		<div className={ "vk_step_item_caption" }>{ label }</div>
+		<div className={ "vk_step_item_content" }>{ elm }</div>
+		<div
+			className={ 'vk_step_item_dot' + styleClass }
+			style={ inlineStyle }
                 >
-                    <div className={'vk_step_item_dot_caption'}>{dotCaption}</div>
-                    {(() => {
+			<div className={ 'vk_step_item_dot_caption' }>{ dotCaption }</div>
+			{ (() => {
                         if (faIcon) {
-                            return <i className={faIcon} />;
+                            return <i className={ faIcon } />;
                         } else if (dotNum) {
-                            return <div className={'vk_step_item_dot_num'}>{dotNum}</div>;
+                            return <div className={ 'vk_step_item_dot_num' }>{ dotNum }</div>;
                         }
-                    })()}
-                </div>
-            </div>
+                    })() }
+		</div>
+	</div>
         );
     }
 }
@@ -170,9 +170,9 @@ export class StepItem extends Component {
 			dotNum,
 			faIcon
 		} = this.props.attributes;
-		let for_ = this.props.for_;
-		let className = this.props.className;
-		let containerClass = " vk_step_item";
+		const for_ = this.props.for_;
+		const className = this.props.className;
+		const containerClass = " vk_step_item";
 		let elm;
 		let styleClass;
 		let inlineStyle;
@@ -185,7 +185,7 @@ export class StepItem extends Component {
 
 		//編集画面とサイト上の切り替え
 		if (for_ === "edit") {
-			elm = <InnerBlocks template={TEMPLATE} />;
+			elm = <InnerBlocks template={ TEMPLATE } />;
 		} else if ("save") {
 			elm = <InnerBlocks.Content />;
 		}
@@ -205,20 +205,20 @@ export class StepItem extends Component {
 		}
 
 		return (
-			<div className={className + containerClass + styleLineClass}>
-				<div className={"vk_step_item_content"}>{elm}</div>
+			<div className={ className + containerClass + styleLineClass }>
+				<div className={ "vk_step_item_content" }>{ elm }</div>
 				<div
-					className={'vk_step_item_dot' + styleClass}
-					style={inlineStyle}
+					className={ 'vk_step_item_dot' + styleClass }
+					style={ inlineStyle }
 				>
-					<div className={'vk_step_item_dot_caption'}>{dotCaption}</div>
-					{(() => {
+					<div className={ 'vk_step_item_dot_caption' }>{ dotCaption }</div>
+					{ (() => {
 						if (faIcon) {
-							return <i className={faIcon} />;
+							return <i className={ faIcon } />;
 						} else if (dotNum) {
-							return <div className={'vk_step_item_dot_num'}>{dotNum}</div>;
+							return <div className={ 'vk_step_item_dot_num' }>{ dotNum }</div>;
 						}
-					})()}
+					})() }
 				</div>
 			</div>
 		);
@@ -250,19 +250,19 @@ export const deprecated = [
 			}
 		},
         save({ attributes, className }) {
-            return <StepItem attributes={attributes} className={className} for_={"save"} />;
+            return <StepItem attributes={ attributes } className={ className } for_={ "save" } />;
         },
     },
     {
         attributes: schema,
         save({ attributes, className }) {
-            return <Component1 attributes={attributes} className={className} for_={"save"} />;
+            return <Component1 attributes={ attributes } className={ className } for_={ "save" } />;
         },
     },
     {
         attributes: schema,
         save({ attributes, className }) {
-            return <Component attributes={attributes} className={className} for_={"save"} />;
+            return <Component attributes={ attributes } className={ className } for_={ "save" } />;
         },
     }
 ];

@@ -4,7 +4,7 @@ function vkblocks_load_vk_components( $hook_suffix ) {
 
 	$template = wp_get_theme()->Template;
 	// lightning 系（ベクトル）の場合 vk-components はテーマなどで読み込むので必要ない
-	if ( $template == 'lightning' || $template == 'lightning-pro' ) {
+	if ( $template == 'lightning' || $template == 'lightning-pro' || $template == 'katawara' ) {
 		return;
 	}
 

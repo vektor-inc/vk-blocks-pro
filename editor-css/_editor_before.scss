@@ -230,6 +230,55 @@ $color-danger: #dd3333;
 			content:'Fade in';
 		}
 	}
+	&.vk_animation-up-down{
+		right:0;
+		left: 0;
+		&:before {
+			content:'Up Down';
+		}
+	}
+	&.vk_animation-left-right{
+		right:0;
+		left: 0;
+		&:before {
+			content:'Left Right';
+		}
+	}
+	&.vk_animation-trembling-x{
+		right:0;
+		left: 0;
+		&:before {
+			content:'Trembring X';
+		}
+	}
+	&.vk_animation-trembling-y{
+		right:0;
+		left: 0;
+		&:before {
+			content:'Trembring Y';
+		}
+	}
+	&.vk_animation-pounding{
+		right:0;
+		left: 0;
+		&:before {
+			content:'Pounding';
+		}
+	}
+	&.vk_animation-shaking{
+		right:0;
+		left: 0;
+		&:before {
+			content:'Shaking';
+		}
+	}
+	&.vk_animation-slow-shaking{
+		right:0;
+		left: 0;
+		&:before {
+			content:'Slow Shaking';
+		}
+	}
 	&.vk_animation-slide-left{
 		&.vk_animation-range-short,
 		&.vk_animation-range-normal,
@@ -286,11 +335,13 @@ $xs-max: 575.98px;
 $sm-max: 767.98px;
 $md-max: 991.98px;
 $lg-max: 1199.98px;
+$xl-max: 1399.98px;
 
 $sm-min: 576px;
 $md-min: 768px;
 $lg-min: 992px;
 $xl-min: 1200px;
+$xxl-min: 1200px;
 
 $color-danger: #b52727;
 
@@ -483,6 +534,28 @@ $color-danger: #b52727;
 			width: calc(100% - 30px);
 		}
 	}
+	@media (min-width: $xxl-min) {
+		&-col-xxl-2 .editor-block-list__block,
+		&-col-xxl-2 .block-editor-block-list__block {
+			width: calc(16.66% - 30px);
+		}
+		&-col-xxl-3 .editor-block-list__block,
+		&-col-xxl-3 .block-editor-block-list__block {
+			width: calc(25% - 30px);
+		}
+		&-col-xxl-4 .editor-block-list__block,
+		&-col-xxl-4 .block-editor-block-list__block {
+			width: calc(33.3% - 30px);
+		}
+		&-col-xxl-6 .editor-block-list__block,
+		&-col-xxl-6 .block-editor-block-list__block {
+			width: calc(50% - 30px);
+		}
+		&-col-xxl-12 .editor-block-list__block,
+		&-col-xxl-12 .block-editor-block-list__block {
+			width: calc(100% - 30px);
+		}
+	}
 }
 
 /*-------------------------------------------*/
@@ -494,7 +567,11 @@ $color-danger: #b52727;
 	flex-direction: row;
 	flex-wrap: wrap;
     margin-right: -15px;
-    margin-left: -15px;
+	margin-left: -15px;
+
+	.block-list-appender{
+		height: 100px;
+	}
 
 	// colの余分な余白の削除など
 	// col内に入れたブロックにまで反映されないように & > 指定
@@ -619,6 +696,28 @@ $color-danger: #b52727;
 			max-width: var(--vk-width-couter-col-6) ;
 		}
 		& > .col-xl-12 {
+			width: calc(100% - 30px);
+			max-width: var(--vk-width-couter-col-12) ;
+		}
+	}
+	@media (min-width: $xxl-min) {
+		& > .col-xxl-2 {
+			width: calc(16.66% - 30px);
+			max-width: var(--vk-width-couter-col-2) ;
+		}
+		& > .col-xxl-3 {
+			width: calc(25% - 30px);
+			max-width: var(--vk-width-couter-col-3) ;
+		}
+		& > .col-xxl-4 {
+			width: calc(33.3% - 30px);
+			max-width: var(--vk-width-couter-col-4) ;
+		}
+		& > .col-xxl-6 {
+			width: calc(50% - 30px);
+			max-width: var(--vk-width-couter-col-6) ;
+		}
+		& > .col-xxl-12 {
 			width: calc(100% - 30px);
 			max-width: var(--vk-width-couter-col-12) ;
 		}

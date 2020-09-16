@@ -1,4 +1,5 @@
-	/* .vk_hidden.vk_hidden は2つじゃないと上書きできない  */
+
+/* .vk_hidden.vk_hidden は2つじゃないと上書きできない  */
 .vk_hidden {
 	display: block !important;
 	color: var(--blue);
@@ -45,6 +46,15 @@
   }
   @media (min-width: $xl-min) {
     &-xl {
+	  display: block !important;
+	  &.vk_posts{
+		// display block だとカラムがすべて落ちるため posts は flexで上書き
+		display: flex !important;
+	  }
+    }
+  }
+  @media (min-width: $xxl-min) {
+    &-xxl {
 	  display: block !important;
 	  &.vk_posts{
 		// display block だとカラムがすべて落ちるため posts は flexで上書き

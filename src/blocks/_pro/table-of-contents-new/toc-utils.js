@@ -155,15 +155,15 @@ export const returnHtml = (source, attributes, className) => {
 
 			return (
 				<li
-					key={data.clientId}
-					className={`${baseClass} ${baseClass}-h-${level}`}
+					key={ data.clientId }
+					className={ `${baseClass} ${baseClass}-h-${level}` }
 				>
 					<a
-						href={`#${data.attributes.anchor}`}
-						className={`${baseClass}_link`}
+						href={ `#${data.attributes.anchor}` }
+						className={ `${baseClass}_link` }
 					>
-						<span className={`${baseClass}_link_preNumber`}>{preNumber}</span>
-						{content}
+						<span className={ `${baseClass}_link_preNumber` }>{ preNumber }</span>
+						{ content }
 					</a>
 				</li>
 			);

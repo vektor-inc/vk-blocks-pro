@@ -11,13 +11,13 @@ export const deprecated = [
             } = attributes;
 
             return (
-                <div className="vk_staff">
-                    <div>Front</div>
-                    <NewComponent
-                        attributes={attributes}
-                        for_={'save'}
+	<div className="vk_staff">
+		<div>Front</div>
+		<NewComponent
+			attributes={ attributes }
+			for_={ 'save' }
                     />
-                </div>
+	</div>
             );
         },
     }

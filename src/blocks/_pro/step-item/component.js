@@ -14,9 +14,9 @@ export class StepItem extends Component {
 			dotNum,
 			faIcon
 		} = this.props.attributes;
-		let for_ = this.props.for_;
-		let className = this.props.className;
-		let containerClass = " vk_step_item";
+		const for_ = this.props.for_;
+		const className = this.props.className;
+		const containerClass = " vk_step_item";
 		let elm;
 		let styleClass;
 		let inlineStyle;
@@ -29,7 +29,7 @@ export class StepItem extends Component {
 
 		//編集画面とサイト上の切り替え
 		if (for_ === "edit") {
-			elm = <InnerBlocks template={TEMPLATE} />;
+			elm = <InnerBlocks template={ TEMPLATE } />;
 		} else if ("save") {
 			elm = <InnerBlocks.Content />;
 		}
@@ -54,20 +54,20 @@ export class StepItem extends Component {
 		}
 
 		return (
-			<div className={className + containerClass + styleLineClass}>
-				<div className={"vk_step_item_content"}>{elm}</div>
+			<div className={ className + containerClass + styleLineClass }>
+				<div className={ "vk_step_item_content" }>{ elm }</div>
 				<div
-					className={'vk_step_item_dot' + styleClass}
-					style={inlineStyle}
+					className={ 'vk_step_item_dot' + styleClass }
+					style={ inlineStyle }
 				>
-					<div className={'vk_step_item_dot_caption'}>{dotCaption}</div>
-					{(() => {
+					<div className={ 'vk_step_item_dot_caption' }>{ dotCaption }</div>
+					{ (() => {
 						if (faIcon) {
 							return ReactHtmlParser(faIcon);
 						} else if (dotNum) {
-							return <div className={'vk_step_item_dot_num'}>{dotNum}</div>;
+							return <div className={ 'vk_step_item_dot_num' }>{ dotNum }</div>;
 						}
-					})()}
+					})() }
 				</div>
 			</div>
 		);

@@ -20,9 +20,9 @@ export class VKBHeading extends Component {
       outerMarginBottom
     } = this.props.attributes;
     const setAttributes = this.props.setAttributes;
-    let for_ = this.props.for_;
+    const for_ = this.props.for_;
 
-    let containerClass = `vk_heading vk_heading-style-${titleStyle}`;
+    const containerClass = `vk_heading vk_heading-style-${titleStyle}`;
     const tagName = "h" + level;
     let cStyle;
     let tStyle;
@@ -50,67 +50,67 @@ export class VKBHeading extends Component {
 
     if (for_ === "edit") {
       return (
-        <div className={containerClass} style={cStyle}>
-          <RichText
-            tagName={tagName}
-            value={title}
-            onChange={value => setAttributes({ title: value })}
-            style={tStyle}
-            className={`vk_heading_title vk_heading_title-style-${titleStyle}`}
-            placeholder={__("Input title…", "vk-blocks")}
+	<div className={ containerClass } style={ cStyle }>
+		<RichText
+			tagName={ tagName }
+			value={ title }
+			onChange={ value => setAttributes({ title: value }) }
+			style={ tStyle }
+			className={ `vk_heading_title vk_heading_title-style-${titleStyle}` }
+			placeholder={ __("Input title…", "vk-blocks") }
           />
-          {// サブテキスト
+		{ // サブテキスト
             (() => {
               if (subTextFlag === "on") {
                 return (
-                  <RichText
-                    tagName={"p"}
-                    value={subText}
-                    onChange={value => setAttributes({ subText: value })}
-                    style={{
+	<RichText
+		tagName={ "p" }
+		value={ subText }
+		onChange={ value => setAttributes({ subText: value }) }
+		style={ {
                       color: subTextColor,
                       fontSize: subTextSize + "rem",
                       textAlign: align
-                    }}
-                    className={`vk_heading_subtext vk_heading_subtext-style-${titleStyle}`}
-                    placeholder={__("Input sub text…", "vk-blocks")}
+                    } }
+		className={ `vk_heading_subtext vk_heading_subtext-style-${titleStyle}` }
+		placeholder={ __("Input sub text…", "vk-blocks") }
                   />
                 );
               }
-            })()}
-        </div>
+            })() }
+	</div>
       );
     } else if (for_ === "save") {
       return (
-        <div className={containerClass} style={cStyle}>
-          <RichText.Content
-            tagName={tagName}
-            value={title}
-            onChange={value => setAttributes({ title: value })}
-            style={tStyle}
-            className={`vk_heading_title vk_heading_title-style-${titleStyle}`}
-            placeholder={__("Input title…", "vk-blocks")}
+	<div className={ containerClass } style={ cStyle }>
+		<RichText.Content
+			tagName={ tagName }
+			value={ title }
+			onChange={ value => setAttributes({ title: value }) }
+			style={ tStyle }
+			className={ `vk_heading_title vk_heading_title-style-${titleStyle}` }
+			placeholder={ __("Input title…", "vk-blocks") }
           />
-          {// サブテキスト
+		{ // サブテキスト
             (() => {
               if (subTextFlag === "on") {
                 return (
-                  <RichText.Content
-                    tagName={"p"}
-                    value={subText}
-                    onChange={value => setAttributes({ subText: value })}
-                    style={{
+	<RichText.Content
+		tagName={ "p" }
+		value={ subText }
+		onChange={ value => setAttributes({ subText: value }) }
+		style={ {
                       color: subTextColor,
                       fontSize: subTextSize + "rem",
                       textAlign: align
-                    }}
-                    className={`vk_heading_subtext vk_heading_subtext-style-${titleStyle}`}
-                    placeholder={__("Input sub text…", "vk-blocks")}
+                    } }
+		className={ `vk_heading_subtext vk_heading_subtext-style-${titleStyle}` }
+		placeholder={ __("Input sub text…", "vk-blocks") }
                   />
                 );
               }
-            })()}
-        </div>
+            })() }
+	</div>
       );
     }
   }
@@ -133,9 +133,9 @@ export class VKBHeading2 extends Component {
       outerMarginBottom
     } = this.props.attributes;
     const setAttributes = this.props.setAttributes;
-    let for_ = this.props.for_;
+    const for_ = this.props.for_;
 
-    let containerClass = `vk_heading vk_heading-style-${titleStyle}`;
+    const containerClass = `vk_heading vk_heading-style-${titleStyle}`;
     const tagName = "h" + level;
     let cStyle;
     let tStyle;
@@ -163,67 +163,67 @@ export class VKBHeading2 extends Component {
 
     if (for_ === "edit") {
       return (
-        <div className={containerClass} style={cStyle}>
-          <RichText
-            tagName={tagName}
-            value={title}
-            onChange={value => setAttributes({ title: value })}
-            style={tStyle}
-            className={`vk_heading_title vk_heading_title-style-${titleStyle}`}
-            placeholder={__("Input title…", "vk-blocks")}
+	<div className={ containerClass } style={ cStyle }>
+		<RichText
+			tagName={ tagName }
+			value={ title }
+			onChange={ value => setAttributes({ title: value }) }
+			style={ tStyle }
+			className={ `vk_heading_title vk_heading_title-style-${titleStyle}` }
+			placeholder={ __("Input title…", "vk-blocks") }
           />
-          {// サブテキスト
+		{ // サブテキスト
             (() => {
               if (subTextFlag === "on") {
                 return (
-                  <RichText
-                    tagName={"p"}
-                    value={subText}
-                    onChange={value => setAttributes({ subText: value })}
-                    style={{
+	<RichText
+		tagName={ "p" }
+		value={ subText }
+		onChange={ value => setAttributes({ subText: value }) }
+		style={ {
                       color: subTextColor,
                       fontSize: subTextSize + "rem",
                       textAlign: align
-                    }}
-                    className={`vk_heading_subtext vk_heading_subtext-style-${titleStyle}`}
-                    placeholder={__("Input sub text…", "vk-blocks")}
+                    } }
+		className={ `vk_heading_subtext vk_heading_subtext-style-${titleStyle}` }
+		placeholder={ __("Input sub text…", "vk-blocks") }
                   />
                 );
               }
-            })()}
-        </div>
+            })() }
+	</div>
       );
     } else if (for_ === "save") {
       return (
-        <div className={containerClass} style={cStyle}>
-          <RichText.Content
-            tagName={tagName}
-            value={title}
-            onChange={value => setAttributes({ title: value })}
-            style={tStyle}
-            className={`vk_heading_title vk_heading_title-style-${titleStyle}`}
-            placeholder={__("Input title…", "vk-blocks")}
+	<div className={ containerClass } style={ cStyle }>
+		<RichText.Content
+			tagName={ tagName }
+			value={ title }
+			onChange={ value => setAttributes({ title: value }) }
+			style={ tStyle }
+			className={ `vk_heading_title vk_heading_title-style-${titleStyle}` }
+			placeholder={ __("Input title…", "vk-blocks") }
           />
-          {// サブテキスト
+		{ // サブテキスト
             (() => {
               if (subTextFlag === "on") {
                 return (
-                  <RichText.Content
-                    tagName={"p"}
-                    value={subText}
-                    onChange={value => setAttributes({ subText: value })}
-                    style={{
+	<RichText.Content
+		tagName={ "p" }
+		value={ subText }
+		onChange={ value => setAttributes({ subText: value }) }
+		style={ {
                       color: subTextColor,
                       fontSize: subTextSize + "rem",
                       textAlign: align
-                    }}
-                    className={`vk_heading_subtext vk_heading_subtext-style-${titleStyle}`}
-                    placeholder={__("Input sub text…", "vk-blocks")}
+                    } }
+		className={ `vk_heading_subtext vk_heading_subtext-style-${titleStyle}` }
+		placeholder={ __("Input sub text…", "vk-blocks") }
                   />
                 );
               }
-            })()}
-        </div>
+            })() }
+	</div>
       );
     }
   }
@@ -246,9 +246,9 @@ export class VKBHeadingV0_24_1 extends React.Component {
       outerMarginBottom
     } = this.props.attributes;
     const setAttributes = this.props.setAttributes;
-    let for_ = this.props.for_;
+    const for_ = this.props.for_;
 
-    let containerClass = `vk_heading vk_heading-style-${titleStyle}`;
+    const containerClass = `vk_heading vk_heading-style-${titleStyle}`;
     const tagName = "h" + level;
     let cStyle;
     let tStyle;
@@ -276,67 +276,67 @@ export class VKBHeadingV0_24_1 extends React.Component {
 
     if (for_ === "edit") {
       return (
-        <div className={containerClass} style={cStyle}>
-          <RichText
-            tagName={tagName}
-            value={title}
-            onChange={value => setAttributes({ title: value })}
-            style={tStyle}
-            className={`vk_heading_title vk_heading_title-style-${titleStyle}`}
-            placeholder={__("Input title…", "vk-blocks")}
+	<div className={ containerClass } style={ cStyle }>
+		<RichText
+			tagName={ tagName }
+			value={ title }
+			onChange={ value => setAttributes({ title: value }) }
+			style={ tStyle }
+			className={ `vk_heading_title vk_heading_title-style-${titleStyle}` }
+			placeholder={ __("Input title…", "vk-blocks") }
           />
-          {// サブテキスト
+		{ // サブテキスト
           (() => {
             if (subTextFlag === "on") {
               return (
-                <RichText
-                  tagName={"p"}
-                  value={subText}
-                  onChange={value => setAttributes({ subText: value })}
-                  style={{
+	<RichText
+		tagName={ "p" }
+		value={ subText }
+		onChange={ value => setAttributes({ subText: value }) }
+		style={ {
                     color: subTextColor,
                     fontSize: subTextSize + "rem",
                     textAlign: align
-                  }}
-                  className={`vk_heading_subtext vk_heading_subtext-style-${titleStyle}`}
-                  placeholder={__("Input sub text…", "vk-blocks")}
+                  } }
+		className={ `vk_heading_subtext vk_heading_subtext-style-${titleStyle}` }
+		placeholder={ __("Input sub text…", "vk-blocks") }
                 />
               );
             }
-          })()}
-        </div>
+          })() }
+	</div>
       );
     } else if (for_ === "save") {
       return (
-        <div className={containerClass} style={cStyle}>
-          <RichText.Content
-            tagName={tagName}
-            value={title}
-            onChange={value => setAttributes({ title: value })}
-            style={tStyle}
-            className={`vk_heading_title vk_heading_title-style-${titleStyle}`}
-            placeholder={__("Input title…", "vk-blocks")}
+	<div className={ containerClass } style={ cStyle }>
+		<RichText.Content
+			tagName={ tagName }
+			value={ title }
+			onChange={ value => setAttributes({ title: value }) }
+			style={ tStyle }
+			className={ `vk_heading_title vk_heading_title-style-${titleStyle}` }
+			placeholder={ __("Input title…", "vk-blocks") }
           />
-          {// サブテキスト
+		{ // サブテキスト
           (() => {
             if (subTextFlag === "on") {
               return (
-                <RichText.Content
-                  tagName={"p"}
-                  value={subText}
-                  onChange={value => setAttributes({ subText: value })}
-                  style={{
+	<RichText.Content
+		tagName={ "p" }
+		value={ subText }
+		onChange={ value => setAttributes({ subText: value }) }
+		style={ {
                     color: subTextColor,
                     fontSize: subTextSize + "rem",
                     textAlign: align
-                  }}
-                  className={`vk_heading_subtext vk_heading_subtext-style-${titleStyle}`}
-                  placeholder={__("Input sub text…", "vk-blocks")}
+                  } }
+		className={ `vk_heading_subtext vk_heading_subtext-style-${titleStyle}` }
+		placeholder={ __("Input sub text…", "vk-blocks") }
                 />
               );
             }
-          })()}
-        </div>
+          })() }
+	</div>
       );
     }
   }

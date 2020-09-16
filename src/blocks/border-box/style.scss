@@ -96,6 +96,12 @@
 		background: none;
 		padding: 0;
 		border: none;
+		&::before {
+			content: none;
+		}
+		&::after {
+			content: none;
+		}
 	}
 	.vk_borderBox_body {
 		padding: 1.5em;

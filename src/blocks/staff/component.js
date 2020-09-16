@@ -8,7 +8,7 @@ export class NewComponent extends Component {
 
     render() {
 
-        let {
+        const {
             vk_staff_text_name,
             vk_staff_text_caption,
             vk_staff_text_role,
@@ -24,118 +24,118 @@ export class NewComponent extends Component {
             vk_staff_profileTextColor,
             vk_staff_photoBorder
         } = this.props.attributes;
-        let setAttributes = this.props.setAttributes;
-        let className = this.props.className;
-        let for_ = this.props.for_;
+        const setAttributes = this.props.setAttributes;
+        const className = this.props.className;
+        const for_ = this.props.for_;
         let returnELm = '';
 
         if (for_ === 'edit') {
 
-            returnELm = <div className={`${className} vk_staff vk_staff-layout-${vk_staff_layout}`}>
-                <div className={`vk_staff_text`}>
-                    <RichText
-                        tagName="h3"
-                        className={'vk_staff_text_name'}
-                        style={{ color: vk_staff_nameColor }}
-                        onChange={(value) => setAttributes({ vk_staff_text_name: value })}
-                        value={vk_staff_text_name}
-                        placeholder={__('Your Name', 'vk-blocks')}
+            returnELm = <div className={ `${className} vk_staff vk_staff-layout-${vk_staff_layout}` }>
+	<div className={ `vk_staff_text` }>
+		<RichText
+			tagName="h3"
+			className={ 'vk_staff_text_name' }
+			style={ { color: vk_staff_nameColor } }
+			onChange={ (value) => setAttributes({ vk_staff_text_name: value }) }
+			value={ vk_staff_text_name }
+			placeholder={ __('Your Name', 'vk-blocks') }
                     />
-                    <RichText
-                        tagName="p"
-                        className={'vk_staff_text_caption'}
-                        style={{ color: vk_staff_captionColor }}
-                        onChange={(value) => setAttributes({ vk_staff_text_caption: value })}
-                        value={vk_staff_text_caption}
-                        placeholder={__('Caption', 'vk-blocks')}
+		<RichText
+			tagName="p"
+			className={ 'vk_staff_text_caption' }
+			style={ { color: vk_staff_captionColor } }
+			onChange={ (value) => setAttributes({ vk_staff_text_caption: value }) }
+			value={ vk_staff_text_caption }
+			placeholder={ __('Caption', 'vk-blocks') }
                     />
-                    <RichText
-                        tagName="p"
-                        className={'vk_staff_text_role'}
-                        style={{ color: vk_staff_positionColor }}
-                        onChange={(value) => setAttributes({ vk_staff_text_role: value })}
-                        value={vk_staff_text_role}
-                        placeholder={__('Role position', 'vk-blocks')}
+		<RichText
+			tagName="p"
+			className={ 'vk_staff_text_role' }
+			style={ { color: vk_staff_positionColor } }
+			onChange={ (value) => setAttributes({ vk_staff_text_role: value }) }
+			value={ vk_staff_text_role }
+			placeholder={ __('Role position', 'vk-blocks') }
                     />
-                    <RichText
-                        tagName="h4"
-                        className={'vk_staff_text_profileTitle'}
-                        style={{ color: vk_staff_profileTitleColor }}
-                        onChange={(value) => setAttributes({ vk_staff_text_profileTitle: value })}
-                        value={vk_staff_text_profileTitle}
-                        placeholder={__('Profile title', 'vk-blocks')}
+		<RichText
+			tagName="h4"
+			className={ 'vk_staff_text_profileTitle' }
+			style={ { color: vk_staff_profileTitleColor } }
+			onChange={ (value) => setAttributes({ vk_staff_text_profileTitle: value }) }
+			value={ vk_staff_text_profileTitle }
+			placeholder={ __('Profile title', 'vk-blocks') }
                     />
-                    <RichText
-                        tagName="p"
-                        className={'vk_staff_text_profileText'}
-                        style={{ color: vk_staff_profileTextColor }}
-                        onChange={(value) => setAttributes({ vk_staff_text_profileText: value })}
-                        value={vk_staff_text_profileText}
-                        placeholder={__('Profile text', 'vk-blocks')}
+		<RichText
+			tagName="p"
+			className={ 'vk_staff_text_profileText' }
+			style={ { color: vk_staff_profileTextColor } }
+			onChange={ (value) => setAttributes({ vk_staff_text_profileText: value }) }
+			value={ vk_staff_text_profileText }
+			placeholder={ __('Profile text', 'vk-blocks') }
                     />
-                </div>
-                <div className={`vk_staff_photo vk_staff_photo-border-${vk_staff_photoBorder}`}>
-                    <MediaUpload
-                        onSelect={(value) => setAttributes({ vk_staff_photo_image: value.sizes.full.url })}
-                        type="image"
-                        className={'vk_staff_photo_image'}
-                        value={vk_staff_photo_image}
-                        render={({ open }) => (
-                            <Button
-                                onClick={open}
-                                className={vk_staff_photo_image ? 'image-button' : 'button button-large'}
+	</div>
+	<div className={ `vk_staff_photo vk_staff_photo-border-${vk_staff_photoBorder}` }>
+		<MediaUpload
+			onSelect={ (value) => setAttributes({ vk_staff_photo_image: value.sizes.full.url }) }
+			type="image"
+			className={ 'vk_staff_photo_image' }
+			value={ vk_staff_photo_image }
+			render={ ({ open }) => (
+				<Button
+					onClick={ open }
+					className={ vk_staff_photo_image ? 'image-button' : 'button button-large' }
                             >
-                                {!vk_staff_photo_image ? __('Select image', 'vk-blocks') :
-                                    <img className={`vk_staff_photo_image`} src={vk_staff_photo_image}
-                                        alt={__(vk_staff_photo_image_alt, 'vk-blocks')} />}
-                            </Button>
-                        )}
+					{ !vk_staff_photo_image ? __('Select image', 'vk-blocks') :
+					<img className={ `vk_staff_photo_image` } src={ vk_staff_photo_image }
+						alt={ __(vk_staff_photo_image_alt, 'vk-blocks') } /> }
+				</Button>
+                        ) }
                     />
-                </div>
+	</div>
             </div>;
 
         } else if (for_ === 'save') {
 
-            returnELm = <div className={`${className} vk_staff vk_staff-layout-${vk_staff_layout}`}>
-                <div className={`vk_staff_text`}>
-                    <RichText.Content
-                        tagName="h3"
-                        className={'vk_staff_text_name'}
-                        style={{ color: vk_staff_nameColor }}
-                        value={vk_staff_text_name} />
-                    <RichText.Content
-                        tagName="p"
-                        className={'vk_staff_text_caption'}
-                        style={{ color: vk_staff_captionColor }}
-                        value={vk_staff_text_caption}
+            returnELm = <div className={ `${className} vk_staff vk_staff-layout-${vk_staff_layout}` }>
+	<div className={ `vk_staff_text` }>
+		<RichText.Content
+			tagName="h3"
+			className={ 'vk_staff_text_name' }
+			style={ { color: vk_staff_nameColor } }
+			value={ vk_staff_text_name } />
+		<RichText.Content
+			tagName="p"
+			className={ 'vk_staff_text_caption' }
+			style={ { color: vk_staff_captionColor } }
+			value={ vk_staff_text_caption }
                     />
-                    <RichText.Content
-                        tagName="p"
-                        className={'vk_staff_text_role'}
-                        style={{ color: vk_staff_positionColor }}
-                        value={vk_staff_text_role}
+		<RichText.Content
+			tagName="p"
+			className={ 'vk_staff_text_role' }
+			style={ { color: vk_staff_positionColor } }
+			value={ vk_staff_text_role }
                     />
-                    <RichText.Content
-                        tagName="h4"
-                        className={'vk_staff_text_profileTitle'}
-                        style={{ color: vk_staff_profileTitleColor }}
-                        value={vk_staff_text_profileTitle}
+		<RichText.Content
+			tagName="h4"
+			className={ 'vk_staff_text_profileTitle' }
+			style={ { color: vk_staff_profileTitleColor } }
+			value={ vk_staff_text_profileTitle }
                     />
-                    <RichText.Content
-                        tagName="p"
-                        className={'vk_staff_text_profileText'}
-                        style={{ color: vk_staff_profileTextColor }}
-                        value={vk_staff_text_profileText}
+		<RichText.Content
+			tagName="p"
+			className={ 'vk_staff_text_profileText' }
+			style={ { color: vk_staff_profileTextColor } }
+			value={ vk_staff_text_profileText }
                     />
-                </div>
-                {vk_staff_photo_image ?
-                    <div className={`vk_staff_photo vk_staff_photo-border-${vk_staff_photoBorder}`}>
-                        <img className={`vk_staff_photo_image`} src={vk_staff_photo_image} alt={
+	</div>
+	{ vk_staff_photo_image ?
+		<div className={ `vk_staff_photo vk_staff_photo-border-${vk_staff_photoBorder}` }>
+			<img className={ `vk_staff_photo_image` } src={ vk_staff_photo_image } alt={
                             vk_staff_photo_image_alt ? __(vk_staff_photo_image_alt, 'vk-blocks')
                                 :
                                 ""
                         } />
-                    </div>
+		</div>
                     : ''
                 }
             </div>;

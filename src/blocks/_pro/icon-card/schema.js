@@ -19,6 +19,10 @@ export const schema = {
     type: "number",
     default: 3,
   },
+  col_xxl: {
+    type: "number",
+    default: 3,
+  },
   activeControl: {
     type: "string",
     default: '{"title":"center","text":"center"}',

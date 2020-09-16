@@ -3,8 +3,8 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
-Tested up to: 5.5.0
-Stable tag: 0.40.2
+Tested up to: 5.5.1
+Stable tag: 0.44.13
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -61,6 +61,87 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.44.13 =
+* [ digigin bug fix ] vk_heading plain css adjustment 
+
+= 0.44.12 =
+* [ digigin bug fix ] Block heading css adjustment 
+
+= 0.44.11 =
+version only
+
+= 0.44.10 =
+* [ bug fix ][ Grid column(Pro) ] fix could choice 5 columns
+
+= 0.44.9 =
+* rebuild
+
+= 0.44.8 =
+* [ bug fix ][ Grid column(Pro) ] Fix block wrap on xxl
+
+= 0.44.7 =
+* [ bug fix ][ block pattern(Pro) ] Fix block pattern
+
+= 0.44.6 =
+* [ bug fix ][ block pattern(Pro) ] Fix block pattern
+* [ bug fix ] Stop ExUnit VK Blocks 
+* [ bug fix ][ border box ] Cope with lightning pro headding design ( balloon )
+
+= 0.44.5 =
+* [ digigin bug fix ] Block heading Digigin text align tuning 
+
+= 0.44.4 =
+version only
+
+= 0.44.3 =
+ [ Specification change ] abolish Preload
+ [ digigin bug fix ] Block heading Digigin font color tuning 
+
+= 0.44.2 =
+* [ digigin bug fix ] Block heading Digigin tuning 
+
+= 0.44.1 =
+* [ Desigin tuning ] Tag change
+
+= 0.44.0
+[ Specification Change ] Re Cope with xxl size
+[ bug fix ][ Card(Pro) ] fix critical error on card and recover to 0.43.0
+[ bug fix ][ Child Page(Pro) ] fix use in vk page widget 
+[ bug fix ][ Grid Column(Pro) ] New column drug bug fix
+
+= 0.43.4(0.42.1) =
+rebuild 0.42.1
+
+= 0.43.3(0.42.1) =
+revert to 0.42.1
+
+= 0.43.2 =
+Add translate
+
+= 0.43.0 =
+[ Specification Change ] Cope with xxl size
+[ Specification Change ] Stop ExUnit VK Blcosk on VK Blocks Free
+[ Bug fix ][ Flow block ] Arrow image don't display on using tree shaking
+
+= 0.42.1 =
+[ Specification Change ][ term color ] Add exclude taxonomy
+
+= 0.42.0 =
+[ Add Function ][ Block Template Setting ] Add Block pattern Display and Hide setting.
+
+= 0.41.2 =
+[ Bug fix ][ Button ] Fix static id of button again.
+
+= 0.41.1 =
+[ Bug fix ][ Button ] Fix static id of button.
+
+= 0.41.0 =
+[ Add Function ][ Animation(Pro) ] Add animation variation
+[ Add New Block ][ New FAQ ] Add New FAQ Block
+
+= 0.40.3 =
+[ Bug fix ][ BorderBox ] Fix collapse under the tree shaking
 
 = 0.40.2 =
 [ Bug fix ][ Grid Column ] Fix collapse in edit screen

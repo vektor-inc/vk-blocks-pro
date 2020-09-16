@@ -19,18 +19,18 @@ export const deprecated = [
 			const { heading, content } = attributes;
 
 			return (
-			  <dl className={`${className} vk_faq`}>
-				<RichText.Content
-				  tagName="dt"
-				  className={"vk_faq_title"}
-				  value={heading}
+				<dl className={ `${className} vk_faq` }>
+					<RichText.Content
+						tagName="dt"
+						className={ "vk_faq_title" }
+						value={ heading }
 				/>
-				<RichText.Content
-				  tagName="dd"
-				  className={"vk_faq_content"}
-				  value={content}
+					<RichText.Content
+						tagName="dd"
+						className={ "vk_faq_content" }
+						value={ content }
 				/>
-			  </dl>
+				</dl>
 			);
 		  }
 	},
@@ -55,18 +55,18 @@ export const deprecated = [
             } = attributes;
 
             return (
-                <dl className={'vk_faq'}>
-                    <RichText.Content
-                        tagName="dt"
-                        className={'vk_faq_title'}
-                        value={heading}
+	<dl className={ 'vk_faq' }>
+		<RichText.Content
+			tagName="dt"
+			className={ 'vk_faq_title' }
+			value={ heading }
                     />
-                    <RichText.Content
-                        tagName="dd"
-                        className={'vk_faq_content'}
-                        value={content}
+		<RichText.Content
+			tagName="dd"
+			className={ 'vk_faq_content' }
+			value={ content }
                     />
-                </dl>
+	</dl>
             );
         },
     }

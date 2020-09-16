@@ -13,6 +13,16 @@ const replace = require('gulp-replace');
 // js最小化
 const jsmin = require("gulp-jsmin");
 
+gulp.task( 'helper-js', function (done)  {
+	gulp.src('src/blocks/helper/accordion.js')
+	.pipe(jsmin())
+	.pipe(rename({
+		extname: '.min.js'
+	}))
+	.pipe(gulp.dest('./inc/vk-blocks/build/'));
+	done();
+});
+
 gulp.task('text-domain', function (done) {
 	gulp.src(['./inc/term-color/package/*'])
 	  .pipe(replace(', \'vk_term_color_textdomain\'', ', \'vk-blocks\''))

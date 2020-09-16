@@ -63,23 +63,31 @@ registerBlockType("vk-blocks/accordion", {
 		innerBlocks: [
 			{
 				name: 'vk-blocks/accordion-trigger',
-				attributes: {
-					/* translators: example text. */
-					content: title,
-				},
+				innerBlocks: [
+					{
+						name: 'core/paragraph',
+						attributes: {
+							content: title,
+						},
+					},
+				],
 			},
 			{
 				name: 'vk-blocks/accordion-target',
-				attributes: {
-					/* translators: example text. */
-					content: content,
-				},
+				innerBlocks: [
+					{
+						name: 'core/paragraph',
+						attributes: {
+							content: content,
+						},
+					},
+				],
 			},
 		],
 	},
 	edit( { className } ) {
 		return (
-			<div className={ classNames(className,"vk_accordion") }>
+			<div className={ classNames(className,"vk_accordion-container") }>
 				<InnerBlocks
 					templateLock={ true }
 					template={ [
@@ -93,7 +101,7 @@ registerBlockType("vk-blocks/accordion", {
 
 	save() {
 		return (
-			<div className={ `vk_accordion` }>
+			<div className={ `vk_accordion-container` }>
 				<InnerBlocks.Content />
 			</div>
 	 	);

@@ -1,25 +1,31 @@
 
-const vkFaq2Container = document.getElementsByClassName('vk_faq-accordion-on');
-let vkFaq2Q;
-let vkFaq2A;
-
-let toggleLoop = (i) => {
-
-    vkFaq2Container[i].querySelector('.vk_faq_content').style.display = 'none';
+const accordionContainer = document.getElementsByClassName('vk_accordion-container');
+let accordionTarget;
+let accordionToggle;
 
 
-    vkFaq2Container[i].querySelector('.vk_faq_title').addEventListener('click', () => {
-        vkFaq2A = vkFaq2Container[i].querySelector('.vk_faq_content');
-        if (vkFaq2A.style.display !== 'none') {
-            vkFaq2A.style.display = 'none';
+const accordionToggleLoop = (i) => {
+
+    accordionContainer[i].querySelector('.vk_accordion-target').style.display = 'none';
+
+
+    accordionContainer[i].querySelector('.vk_accordion-toggle').addEventListener('click', () => {
+		accordionTarget = accordionContainer[i].querySelector('.vk_accordion-target');
+		accordionToggle = accordionContainer[i].querySelector('.vk_accordion-toggle');
+        if (accordionTarget.style.display !== 'none') {
+			accordionTarget.style.display = 'none';
+			accordionToggle.classList.remove('vk_accordion-toggle-close');
+			accordionToggle.classList.add('vk_accordion-toggle-open');
         } else {
-			vkFaq2A.style.display = 'block';
+			accordionTarget.style.display = 'block';
+			accordionToggle.classList.add('vk_accordion-toggle-close');
+			accordionToggle.classList.remove('vk_accordion-toggle-open');
         }
 
     }, false);
 
 };
 
-for (let i = 0; i < vkFaq2Container.length; i++) {
-	toggleLoop(i);
+for (let i = 0; i < accordionContainer.length; i++) {
+	accordionToggleLoop(i);
 }

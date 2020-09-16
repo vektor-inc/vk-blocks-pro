@@ -89,11 +89,15 @@ registerBlockType("vk-blocks/accordion", {
 		return (
 			<div className={ classNames(className,"vk_accordion-container") }>
 				<InnerBlocks
-					templateLock={ true }
+					allowedBlocks={ [
+						[ 'vk-blocks/accordion-trigger' ],
+						[ 'vk-blocks/accordion-target' ],
+					] }
 					template={ [
 						[ 'vk-blocks/accordion-trigger' ],
 						[ 'vk-blocks/accordion-target' ],
 					] }
+					templateLock='all'
 				/>
 			</div>
 		);

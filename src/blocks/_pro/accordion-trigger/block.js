@@ -1,9 +1,9 @@
 /**
  * FAQ Answer Block
  */
-import { vkbBlockEditor } from "./../_helper/depModules";
+import { vkbBlockEditor } from "./../../_helper/depModules";
 import classNames from "classnames";
-import { content } from "./../_helper/example-data";
+import { content } from "./../../_helper/example-data";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -16,8 +16,8 @@ const BlockIcon = (
 	</svg>
 );
 
-registerBlockType("vk-blocks/faq2-a", {
-	title: __("FAQ Answer", "vk-blocks"),
+registerBlockType("vk-blocks/accordion-trigger", {
+	title: __("Accordion Trigger", "vk-blocks"),
 	icon: BlockIcon,
 	category: "vk-blocks-cat",
 	attributes: {
@@ -25,7 +25,7 @@ registerBlockType("vk-blocks/faq2-a", {
 			type: "string"
 		}
 	},
-	parent: ["vk-blocks/faq2"],
+	parent: ["vk-blocks/accordion"],
 	supports: {
 		anchor: true,
 	},
@@ -42,22 +42,25 @@ registerBlockType("vk-blocks/faq2-a", {
 	edit( { attributes, className } ) {
 		const { content } = attributes;
 		return (
-			<dd className={ classNames(className,`vk_faq_content`) }>
+			<div className={ classNames(className,`vk_accordion-trigger`) }>
 				<InnerBlocks
 					templateLock={ false }
 					template={ [
-						[ 'core/paragraph', { content} ],
+						[ 'core/paragraph', { content: content} ],
 					] }
 				/>
-			</dd>
+				<span className={ classNames(className,`vk_accordion-toggle vk_accordion-toggle-close`) } ></span>
+			</div>
 		);
 	  },
 
 	save() {
 		return (
-			<dd className={ `vk_faq_content` }>
+			<div className={ `vk_accordion-trigger` }>
 				<InnerBlocks.Content />
-			</dd>
+				<span className={ `vk_accordion-toggle vk_accordion-toggle-close` } ></span>
+			</div>
+
 	 	);
 	},
 });

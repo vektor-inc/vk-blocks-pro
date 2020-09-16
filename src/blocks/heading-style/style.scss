@@ -12,6 +12,7 @@ $color_key: #337ab7;
 	box-shadow: unset;
 	border-radius: unset;
 	overflow: unset;
+	color: inherit;
 }
 
 @mixin title_no_bg {
@@ -42,7 +43,6 @@ $color_key: #337ab7;
 
 .is-style-vk-heading {
 	&,
-	.entry-body &,
 	.editor-styles-wrapper & {
 		h3.is-style-vk-heading:after {
 			border-bottom: none !important;
@@ -323,6 +323,8 @@ $color_key: #337ab7;
 				border-bottom: 1px solid #333;
 				position: unset;
 				width: unset;
+				border-left: unset;
+    			border-right: unset;
 				border-top: none;
 			}
 

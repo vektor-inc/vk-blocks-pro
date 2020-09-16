@@ -13,6 +13,9 @@ function vk_blocks_optimize_css() {
 
 	if ( ! isset( $options['css_optimize'] ) ) {
 		$options['css_optimize'] = 'default';
+	} elseif ( 'optomize-all-css' === $options['css_optimize'] ) {
+		$options['css_optimize'] = 'tree-shaking';
+		update_option( 'vk_blocks_options', $options );
 	}
 
 	if ( ! empty( $options['css_optimize'] ) && ( 'optomize-all-css' === $options['css_optimize'] || 'tree-shaking' === $options['css_optimize'] ) ) {
@@ -56,7 +59,7 @@ function vk_blocks_css_tree_shaking_exclude_class( $inidata ) {
 		'vk_animation-active',
 		'vk_borderBox_title',
 	);
-	$inidata['class'] = array_merge( $inidata['class'], $exclude_classes_array );
+	$inidata['class']      = array_merge( $inidata['class'], $exclude_classes_array );
 
 	return $inidata;
 }

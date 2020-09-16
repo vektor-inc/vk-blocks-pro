@@ -38,24 +38,23 @@
 		&_title {
 			background-color: transparent;
 			font-weight: bold;
-			padding: 0;
-			box-shadow: none;
-			border: none;
 			margin-bottom: 0.8em;
+			outline: unset;
+			outline-offset: unset;
+			box-shadow: unset;
+			border: none;
+			border-radius:unset;
+			padding: 0;
+			color: inherit;
 			@media (max-width: 575.98px) {
 				&:first-child {
 					margin-top: 30px;
 				}
 			}
+			&:before,
 			&:after {
-				content: "";
-				line-height: 0;
-				display: block;
-				overflow: hidden;
-				position: absolute;
-				bottom: -1px;
-				width: 0;
-				border: none;
+				content: none;
+
 			}
 		}
 		&_text {

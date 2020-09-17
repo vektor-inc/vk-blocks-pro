@@ -116,26 +116,6 @@ registerBlockType("vk-blocks/faq2", {
 
 		return (
 			<Fragment>
-				<InspectorControls>
-					<PanelBody title={ __("New FAQ Settings", "vk-blocks") }>
-						<BaseControl
-							id={ 'faq2-01' }
-							label={ __( 'Accordion', 'vk-blocks' ) }
-						>
-							<CheckboxControl
-								label={ __(
-									'Set Accordion',
-									'vk-blocks'
-								) }
-								className={ 'mb-1' }
-								checked={ accordion }
-								onChange={ ( checked ) =>
-									setAttributes( { accordion: checked } )
-								}
-							/>
-						</BaseControl>
-					</PanelBody>
-				</InspectorControls>
 				<dl className={ classNames(className,"vk_faq") }>
 					<InnerBlocks
 						allowedBlocks={ [

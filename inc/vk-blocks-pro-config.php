@@ -1,6 +1,7 @@
 <?php
 
 require_once 'vk-blocks/load-swiper.php';
+require_once 'vk-blocks/load-pro-scripts.php';
 
 $vk_blocks_options  = vkblocks_get_options();
 if ( "display" === $vk_blocks_options['display_vk_block_template'] ) {

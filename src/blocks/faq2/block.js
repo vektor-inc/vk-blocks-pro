@@ -50,12 +50,6 @@ registerBlockType("vk-blocks/faq2", {
 	title: __("New FAQ", "vk-blocks"),
 	icon: BlockIcon,
 	category: "vk-blocks-cat",
-	attributes: {
-	  accordion: {
-		  type: "boolean",
-		  default: false
-	  }
-	},
 	supports: {
 		anchor: true,
 		className: true,
@@ -118,8 +112,7 @@ registerBlockType("vk-blocks/faq2", {
 		],
 	},
 	edit( props ) {
-		const { attributes, setAttributes, className } = props;
-		const { accordion } = attributes;
+		const { setAttributes, className } = props;
 
 		return (
 			<Fragment>
@@ -162,11 +155,8 @@ registerBlockType("vk-blocks/faq2", {
 	  },
 
 	save( props ) {
-		const { accordion } = props.attributes;
-		let accordion_switch = accordion ? "vk_faq-accordion-on" : '';
-
 		return (
-			<dl className={ `vk_faq ${accordion_switch}` }>
+			<dl className={ `vk_faq [accordion_switch]` }>
 				<InnerBlocks.Content />
 			</dl>
 	 	);

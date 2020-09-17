@@ -2,6 +2,7 @@
 
 require_once 'vk-blocks/load-swiper.php';
 require_once 'vk-blocks/vk-blocks-pro-functions.php';
+require_once 'vk-blocks/admin-pro/admin-pro.php';
 
 $vk_blocks_options  = vkblocks_get_options();
 if ( "display" === $vk_blocks_options['display_vk_block_template'] ) {

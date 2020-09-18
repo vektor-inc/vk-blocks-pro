@@ -2,13 +2,16 @@
  * FAQ Outer Block
  */
 import { vkbBlockEditor } from "./../_helper/depModules";
+import { deprecated } from "./deprecated";
 import classNames from "classnames";
-import { content, title } from "./../_helper/example-data"
+import { content, title } from "./../_helper/example-data";
 
-
-const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { InnerBlocks } = vkbBlockEditor;
+const { Fragment } = wp.element;
+const { InnerBlocks} = vkbBlockEditor;
+const { __ } = wp.i18n;
+
+
 
 const BlockIcon = (
 	<svg
@@ -45,16 +48,6 @@ registerBlockType("vk-blocks/faq2", {
 	title: __("New FAQ", "vk-blocks"),
 	icon: BlockIcon,
 	category: "vk-blocks-cat",
-	attributes: {
-	  heading: {
-		  type: "string",
-		  source: "html",
-		  selector: "dt"
-	  },
-	  content:{
-		  type: "string"
-	  }
-	},
 	supports: {
 		anchor: true,
 		className: true,
@@ -116,29 +109,35 @@ registerBlockType("vk-blocks/faq2", {
 			},
 		],
 	},
-	edit( { className } ) {
+	edit( props ) {
+		const { className } = props;
+
 		return (
-			<dl className={ classNames(className,"vk_faq") }>
-				<InnerBlocks
-					allowedBlocks={ [
-						[ 'vk-blocks/faq2-q' ],
-						[ 'vk-blocks/faq2-a' ],
-					] }
-					template={ [
-						[ 'vk-blocks/faq2-q' ],
-						[ 'vk-blocks/faq2-a' ],
-					] }
-					templateLock='all'
-				/>
-			</dl>
+			<Fragment>
+				<dl className={ classNames(className,"vk_faq") }>
+					<InnerBlocks
+						allowedBlocks={ [
+							[ 'vk-blocks/faq2-q' ],
+							[ 'vk-blocks/faq2-a' ],
+						] }
+						template={ [
+							[ 'vk-blocks/faq2-q' ],
+							[ 'vk-blocks/faq2-a' ],
+						] }
+						templateLock='all'
+					/>
+				</dl>
+			</Fragment>
+
 		);
 	  },
 
 	save() {
 		return (
-			<dl className={ `vk_faq` }>
+			<dl className={ `vk_faq [accordion_trigger_switch]` }>
 				<InnerBlocks.Content />
 			</dl>
 	 	);
 	},
+	deprecated
 });

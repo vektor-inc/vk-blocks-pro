@@ -134,7 +134,7 @@ registerBlockType("vk-blocks/faq2", {
 
 	save() {
 		return (
-			<dl className={ `vk_faq [accordion_switch]` }>
+			<dl className={ `vk_faq [accordion_trigger_switch]` }>
 				<InnerBlocks.Content />
 			</dl>
 	 	);

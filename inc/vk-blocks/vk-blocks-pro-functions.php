@@ -6,7 +6,7 @@
  */
 
 // Pro 用の管理画面を読み込み.
-require_once 'vk-blocks/admin-pro/admin-pro.php';
+require_once dirname( __FILE__ ) . '/admin-pro/admin-pro.php';
 
 /**
  * デフォルトオプション
@@ -39,15 +39,16 @@ add_action( 'wp_enqueue_scripts', 'vk_blocks_pro_load_scripts' );
  */
 function vk_blocks_pro_new_faq_accordion_control( $block_content, $block ) {
 	$vk_blocks_options  = vkblocks_get_options();
-	if ( has_block( 'vk-blocks/faq2' ) && 'vk-blocks/faq2' === $block['blockName'] ) {
+	// var_dump($vk_blocks_options['new_faq_accordion']);
+	// if ( has_block( 'vk-blocks/faq2' ) ) {
 		if ( 'open' === $vk_blocks_options['new_faq_accordion'] ) {
-			str_replace( '[accordion_switch]', 'vk_faq-acc-open', $block_content );
+			$block_content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-acc-open', $block_content );
 		} elseif ( 'close' === $vk_blocks_options['new_faq_accordion'] ) {
-			str_replace( '[accordion_switch]', 'vk_faq-acc-close', $block_content );
+			$block_content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-acc-close', $block_content );
 		} else {
-			str_replace( '[accordion_switch]', '', $block_content );
+			$block_content = str_replace( '[accordion_trigger_switch]', '', $block_content );
 		}
-	}
+	// }
 	return $block_content;
 }
 add_filter( 'render_block', 'vk_blocks_pro_new_faq_accordion_control', 10, 2 );

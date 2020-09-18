@@ -1,7 +1,7 @@
 <?php
 
-require_once 'vk-blocks/load-swiper.php';
-require_once 'vk-blocks/vk-blocks-pro-functions.php';
+require_once dirname( __FILE__ ) . '/vk-blocks/load-swiper.php';
+require_once dirname( __FILE__ ) . '/vk-blocks/vk-blocks-pro-functions.php';
 
 $vk_blocks_options  = vkblocks_get_options();
 if ( "display" === $vk_blocks_options['display_vk_block_template'] ) {

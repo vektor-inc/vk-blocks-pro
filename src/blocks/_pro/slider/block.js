@@ -10,6 +10,7 @@ import replaceClientId from "../../_helper/replaceClientId"
 import { AdvancedToggleControl } from "./../../../components/advanced-toggle-control";
 import AdvancedViewportControl from "../../../components/advanced-viewport-control"
 import AdvancedUnitControl from "../../../components/advanced-unit-control"
+import deprecated from "./deprecated/deprecated";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -57,7 +58,7 @@ registerBlockType("vk-blocks/slider", {
 
 	edit(props) {
 		const { attributes, setAttributes, className, clientId } = props;
-		const { autoPlay, autoPlayDelay, pagination, width, loop, effect } = attributes;
+		const { autoPlay, autoPlayDelay, pagination, width, loop, effect, speed } = attributes;
 		const { getBlocksByClientId } = select("core/block-editor");
 		const { updateBlockAttributes } = dispatch("core/block-editor");
 
@@ -131,6 +132,16 @@ registerBlockType("vk-blocks/slider", {
 						</BaseControl>
 					</PanelBody>
 					<PanelBody
+						title={ __("Speed", "vk-blocks") }
+						initialOpen={ false }
+					>
+						<TextControl
+							value={ speed }
+							onChange={ value => setAttributes({ speed: parseInt(value,10) }) }
+							type={ "number" }
+							/>
+					</PanelBody>
+					<PanelBody
 						title={ __("Height", "vk-blocks") }
 						initialOpen={ false }
 					>
@@ -200,6 +211,7 @@ registerBlockType("vk-blocks/slider", {
 			/>
 		);
 	},
+	deprecated:deprecated
 });
 
 const generateHeightCss = (attributes, for_) =>{
@@ -269,7 +281,7 @@ addFilter(
 const addSwiperConfig = (el, type, attributes) => {
 
 	if ("vk-blocks/slider" === type.name) {
-		const { clientId, pagination, autoPlay, autoPlayDelay, loop, effect }  = attributes
+		const { clientId, pagination, autoPlay, autoPlayDelay, loop, effect, speed }  = attributes
 
 		const cssTag = generateHeightCss( attributes, "save" )
 
@@ -295,11 +307,21 @@ const addSwiperConfig = (el, type, attributes) => {
 			paginationScripts = ''
 		}
 
+		let speedScripts;
+		if(speed){
+			speedScripts = `speed: ${speed},`
+		}else{
+			speedScripts = ''
+		}
+
 		return<div>
 			{ el }
 			<style type='text/css'>{ cssTag }</style>
 			<script>{ `
 			var swiper${replaceClientId(clientId)} = new Swiper ('.vk_slider_${clientId}', {
+
+				${speedScripts}
+
 				// Optional parameters
 				loop: ${loop},
 
@@ -325,7 +347,7 @@ const addSwiperConfig = (el, type, attributes) => {
 		  </div>
 	}
 		return el
-	
+
 }
 addFilter(
   "blocks.getSaveElement",

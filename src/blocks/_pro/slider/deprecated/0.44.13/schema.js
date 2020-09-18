@@ -1,4 +1,4 @@
-export const schema = {
+export default {
 	unit: {
 		type: 'string',
 		default: 'px',
@@ -42,9 +42,5 @@ export const schema = {
 	effect: {
 		type: "string",
 		default: "slide",
-	},
-	speed: {
-		type: 'number',
-		default: 300,
 	},
 };

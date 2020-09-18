@@ -39,8 +39,7 @@ add_action( 'wp_enqueue_scripts', 'vk_blocks_pro_load_scripts' );
  */
 function vk_blocks_pro_new_faq_accordion_control( $block_content, $block ) {
 	$vk_blocks_options  = vkblocks_get_options();
-	// var_dump($vk_blocks_options['new_faq_accordion']);
-	// if ( has_block( 'vk-blocks/faq2' ) ) {
+	if ( has_block( 'vk-blocks/faq2' ) && 'vk-blocks/faq2' === $block['blockName'] ) {
 		if ( 'open' === $vk_blocks_options['new_faq_accordion'] ) {
 			$block_content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-acc-open', $block_content );
 		} elseif ( 'close' === $vk_blocks_options['new_faq_accordion'] ) {
@@ -48,7 +47,7 @@ function vk_blocks_pro_new_faq_accordion_control( $block_content, $block ) {
 		} else {
 			$block_content = str_replace( '[accordion_trigger_switch]', '', $block_content );
 		}
-	// }
+	}
 	return $block_content;
 }
 add_filter( 'render_block', 'vk_blocks_pro_new_faq_accordion_control', 10, 2 );

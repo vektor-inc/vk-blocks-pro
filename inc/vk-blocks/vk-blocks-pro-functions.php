@@ -5,10 +5,49 @@
  * @package VK Blocks
  */
 
-function vkblocks_pro_load_scripts() {
+// Pro 用の管理画面を読み込み.
+require_once 'vk-blocks/admin-pro/admin-pro.php';
+
+/**
+ * デフォルトオプション
+ */
+function vk_blocks_pro_get_options( $defaults ) {
+	$defaults = array(
+		'new_faq_accordion' => 'disable'
+	);
+	return $defaults;
+}
+add_filter( 'vk_blocks_default_options', 'vk_blocks_pro_get_options' );
+
+/**
+ * Pro 専用のスクリプトの読み込み
+ */
+function vk_blocks_pro_load_scripts() {
 
 	if ( has_block( 'vk-blocks/faq2' ) ) {
 		wp_enqueue_script( 'vk-blocks-faq2', VK_BLOCKS_URL . 'build/faq2.min.js', array(), VK_BLOCKS_VERSION, true );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'vkblocks_pro_load_scripts' );
+add_action( 'wp_enqueue_scripts', 'vk_blocks_pro_load_scripts' );
+
+
+/**
+ * New FAQ 用の開閉制御
+ *
+ * @param string $block_content The block content about to be appended.
+ * @param array  $bkock         The full block, including name and attributes.
+ */
+function vk_blocks_pro_new_faq_accordion_control( $block_content, $block ) {
+	$vk_blocks_options  = vkblocks_get_options();
+	if ( has_block( 'vk-blocks/faq2' ) && 'vk-blocks/faq2' === $block['blockName'] ) {
+		if ( 'open' === $vk_blocks_options['new_faq_accordion'] ) {
+			str_replace( '[accordion_switch]', 'vk_faq-acc-open', $block_content );
+		} elseif ( 'close' === $vk_blocks_options['new_faq_accordion'] ) {
+			str_replace( '[accordion_switch]', 'vk_faq-acc-close', $block_content );
+		} else {
+			str_replace( '[accordion_switch]', '', $block_content );
+		}
+	}
+	return $block_content;
+}
+add_filter( 'render_block', 'vk_blocks_pro_new_faq_accordion_control', 10, 2 );

@@ -7,10 +7,8 @@ import classNames from "classnames";
 import { content, title } from "./../_helper/example-data";
 
 const { registerBlockType } = wp.blocks;
-const { PanelBody, BaseControl, CheckboxControl } = wp.components;
 const { Fragment } = wp.element;
-const { InspectorControls, InnerBlocks} = vkbBlockEditor;
-const { addFilter } = wp.hooks;
+const { InnerBlocks} = vkbBlockEditor;
 const { __ } = wp.i18n;
 
 
@@ -112,7 +110,7 @@ registerBlockType("vk-blocks/faq2", {
 		],
 	},
 	edit( props ) {
-		const { setAttributes, className } = props;
+		const { className } = props;
 
 		return (
 			<Fragment>
@@ -134,7 +132,7 @@ registerBlockType("vk-blocks/faq2", {
 		);
 	  },
 
-	save( props ) {
+	save() {
 		return (
 			<dl className={ `vk_faq [accordion_switch]` }>
 				<InnerBlocks.Content />

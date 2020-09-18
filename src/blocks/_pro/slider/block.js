@@ -10,7 +10,6 @@ import replaceClientId from "../../_helper/replaceClientId"
 import { AdvancedToggleControl } from "./../../../components/advanced-toggle-control";
 import AdvancedViewportControl from "../../../components/advanced-viewport-control"
 import AdvancedUnitControl from "../../../components/advanced-unit-control"
-import deprecated from "./deprecated/deprecated";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -211,7 +210,6 @@ registerBlockType("vk-blocks/slider", {
 			/>
 		);
 	},
-	deprecated:deprecated
 });
 
 const generateHeightCss = (attributes, for_) =>{

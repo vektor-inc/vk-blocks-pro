@@ -1,6 +1,6 @@
 <?php
 /**
- * Load Scripts
+ * VK Blocks Pro Functions
  *
  * @package VK Blocks
  */

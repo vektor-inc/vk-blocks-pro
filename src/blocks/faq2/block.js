@@ -11,8 +11,6 @@ const { Fragment } = wp.element;
 const { InnerBlocks} = vkbBlockEditor;
 const { __ } = wp.i18n;
 
-
-
 const BlockIcon = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
@@ -52,6 +50,7 @@ registerBlockType("vk-blocks/faq2", {
 		anchor: true,
 		className: true,
 	},
+	description: vk_blocks_check.is_pro ? __( 'Block Pro' ) : __( 'Block Free' ),
 	styles: [
 		{
 			name: 'vk_faq-normal',
@@ -111,6 +110,8 @@ registerBlockType("vk-blocks/faq2", {
 	},
 	edit( props ) {
 		const { className } = props;
+
+		// vk_blocks_check.is_pro
 
 		return (
 			<Fragment>

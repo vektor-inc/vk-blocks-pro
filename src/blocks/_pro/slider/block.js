@@ -131,16 +131,6 @@ registerBlockType("vk-blocks/slider", {
 						</BaseControl>
 					</PanelBody>
 					<PanelBody
-						title={ __("Speed", "vk-blocks") }
-						initialOpen={ false }
-					>
-						<TextControl
-							value={ speed }
-							onChange={ value => setAttributes({ speed: parseInt(value,10) }) }
-							type={ "number" }
-							/>
-					</PanelBody>
-					<PanelBody
 						title={ __("Height", "vk-blocks") }
 						initialOpen={ false }
 					>
@@ -177,11 +167,18 @@ registerBlockType("vk-blocks/slider", {
 								{ ...props }
 							/>
 							<TextControl
-								label={ __('Change Time', 'vk-blocks') }
+								label={ __('Display Time', 'vk-blocks') }
 								value={ autoPlayDelay }
 								onChange={ value => setAttributes({ autoPlayDelay: parseInt(value,10) }) }
 								type={ "number" }
 							/>
+						</BaseControl>
+						<BaseControl label={ __("Change Speed", "vk-blocks") }>
+								<TextControl
+									value={ speed }
+									onChange={ value => setAttributes({ speed: parseInt(value,10) }) }
+									type={ "number" }
+									/>
 						</BaseControl>
 						<BaseControl label={ __("Display Pagination", "vk-blocks") }>
 							<AdvancedToggleControl

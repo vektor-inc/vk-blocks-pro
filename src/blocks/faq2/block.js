@@ -113,9 +113,9 @@ registerBlockType("vk-blocks/faq2", {
 
 		let massage;
 		if ( vk_blocks_check.is_pro ) {
-			massage = __( 'If you want to collapse this block, you can set it at Setting > VK Blocks','vk-blocks');
+			massage = __( 'If you want to be collapsing this block, you can set it at Setting > VK Blocks', 'vk-blocks' );
 		} else {
-			massage = __( 'You can collapse this block at VK Blocks Pro','vk-blocks');
+			massage = __( 'You can be collapsing this block at VK Blocks Pro', 'vk-blocks' );
 		}
 
 		return (

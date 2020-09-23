@@ -8,7 +8,8 @@ import { content, title } from "./../_helper/example-data";
 
 const { registerBlockType } = wp.blocks;
 const { Fragment } = wp.element;
-const { InnerBlocks} = vkbBlockEditor;
+const { PanelBody, PanelRow } = wp.components;
+const { InnerBlocks, InspectorControls } = vkbBlockEditor;
 const { __ } = wp.i18n;
 
 const BlockIcon = (
@@ -50,7 +51,6 @@ registerBlockType("vk-blocks/faq2", {
 		anchor: true,
 		className: true,
 	},
-	description: vk_blocks_check.is_pro ? __( 'Block Pro' ) : __( 'Block Free' ),
 	styles: [
 		{
 			name: 'vk_faq-normal',
@@ -111,10 +111,20 @@ registerBlockType("vk-blocks/faq2", {
 	edit( props ) {
 		const { className } = props;
 
-		// vk_blocks_check.is_pro
+		let massage;
+		if ( vk_blocks_check.is_pro ) {
+			massage = __( 'If you want to collapse this block, you can set it at Setting > VK Blocks','vk-blocks');
+		} else {
+			massage = __( 'You can collapse this block at VK Blocks Pro','vk-blocks');
+		}
 
 		return (
 			<Fragment>
+				<InspectorControls>
+					<PanelBody title={ __('Accordion Setting', 'vk-blocks') }>
+						<PanelRow>{ massage }</PanelRow>
+					</PanelBody>
+				</InspectorControls>
 				<dl className={ classNames(className,"vk_faq") }>
 					<InnerBlocks
 						allowedBlocks={ [
@@ -131,6 +141,7 @@ registerBlockType("vk-blocks/faq2", {
 			</Fragment>
 
 		);
+
 	  },
 
 	save() {

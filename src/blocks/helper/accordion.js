@@ -6,20 +6,28 @@ let accordionToggle;
 
 const accordionToggleLoop = (i) => {
 
-    accordionContainer[i].querySelector('.vk_accordion-target').style.display = 'none';
+	if ( accordionContainer[i].querySelector('.vk_accordion-toggle').classList.contains( 'vk_accordion-toggle-open' ) ) {
+		accordionContainer[i].querySelector('.vk_accordion-target').classList.add("vk_accordion-target-open");
+	}
 
+	if ( accordionContainer[i].querySelector('.vk_accordion-toggle').classList.contains( 'vk_accordion-toggle-close' ) ) {
+		accordionContainer[i].querySelector('.vk_accordion-target').classList.add("vk_accordion-target-close");
+	}
 
     accordionContainer[i].querySelector('.vk_accordion-toggle').addEventListener('click', () => {
-		accordionTarget = accordionContainer[i].querySelector('.vk_accordion-target');
 		accordionToggle = accordionContainer[i].querySelector('.vk_accordion-toggle');
-        if (accordionTarget.style.display !== 'none') {
-			accordionTarget.style.display = 'none';
+		accordionTarget = accordionContainer[i].querySelector('.vk_accordion-target');
+        if (accordionToggle.classList.contains( 'vk_accordion-toggle-close' )) {
 			accordionToggle.classList.remove('vk_accordion-toggle-close');
 			accordionToggle.classList.add('vk_accordion-toggle-open');
+			accordionTarget.classList.remove('vk_accordion-target-close');
+			accordionTarget.classList.add('vk_accordion-target-open');
+
         } else {
-			accordionTarget.style.display = 'block';
-			accordionToggle.classList.add('vk_accordion-toggle-close');
 			accordionToggle.classList.remove('vk_accordion-toggle-open');
+			accordionToggle.classList.add('vk_accordion-toggle-close');
+			accordionTarget.classList.remove('vk_accordion-target-open');
+			accordionTarget.classList.add('vk_accordion-target-close');
         }
 
     }, false);

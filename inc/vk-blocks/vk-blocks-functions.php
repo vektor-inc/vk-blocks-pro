@@ -125,13 +125,9 @@ function vkblocks_blocks_assets() {
 	if ( function_exists( 'wp_set_script_translations' ) ) {
 		wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks', plugin_dir_path( __FILE__ ) . 'build/languages' );
 	}
-<<<<<<< HEAD
 
 	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 	if ( is_plugin_active( 'vk-blocks-pro/vk-blocks.php' ) ) {
-=======
-	if ( vk_is_plugin_active( 'vk-blocks-pro/vk-blocks.php' ) ) {
->>>>>>> 20285e4d9b36de76c6f74e055a1bd3eda3f3390d
 		wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_check', array( 'is_pro' => true ) );
 	} else {
 		wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_check', array( 'is_pro' => false ) );

@@ -57,7 +57,7 @@ registerBlockType("vk-blocks/slider", {
 
 	edit(props) {
 		const { attributes, setAttributes, className, clientId } = props;
-		const { autoPlay, autoPlayDelay, pagination, width, loop, effect } = attributes;
+		const { autoPlay, autoPlayDelay, pagination, width, loop, effect, speed } = attributes;
 		const { getBlocksByClientId } = select("core/block-editor");
 		const { updateBlockAttributes } = dispatch("core/block-editor");
 
@@ -167,11 +167,18 @@ registerBlockType("vk-blocks/slider", {
 								{ ...props }
 							/>
 							<TextControl
-								label={ __('Change Time', 'vk-blocks') }
+								label={ __('Display Time', 'vk-blocks') }
 								value={ autoPlayDelay }
 								onChange={ value => setAttributes({ autoPlayDelay: parseInt(value,10) }) }
 								type={ "number" }
 							/>
+						</BaseControl>
+						<BaseControl label={ __("Change Speed", "vk-blocks") }>
+								<TextControl
+									value={ speed }
+									onChange={ value => setAttributes({ speed: parseInt(value,10) }) }
+									type={ "number" }
+									/>
 						</BaseControl>
 						<BaseControl label={ __("Display Pagination", "vk-blocks") }>
 							<AdvancedToggleControl
@@ -269,7 +276,7 @@ addFilter(
 const addSwiperConfig = (el, type, attributes) => {
 
 	if ("vk-blocks/slider" === type.name) {
-		const { clientId, pagination, autoPlay, autoPlayDelay, loop, effect }  = attributes
+		const { clientId, pagination, autoPlay, autoPlayDelay, loop, effect, speed }  = attributes
 
 		const cssTag = generateHeightCss( attributes, "save" )
 
@@ -295,11 +302,21 @@ const addSwiperConfig = (el, type, attributes) => {
 			paginationScripts = ''
 		}
 
+		let speedScripts;
+		if(speed){
+			speedScripts = `speed: ${speed},`
+		}else{
+			speedScripts = ''
+		}
+
 		return<div>
 			{ el }
 			<style type='text/css'>{ cssTag }</style>
 			<script>{ `
 			var swiper${replaceClientId(clientId)} = new Swiper ('.vk_slider_${clientId}', {
+
+				${speedScripts}
+
 				// Optional parameters
 				loop: ${loop},
 
@@ -325,7 +342,7 @@ const addSwiperConfig = (el, type, attributes) => {
 		  </div>
 	}
 		return el
-	
+
 }
 addFilter(
   "blocks.getSaveElement",

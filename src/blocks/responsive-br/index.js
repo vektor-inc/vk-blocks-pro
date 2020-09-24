@@ -30,7 +30,7 @@ registerFormatType(
 						controls={
 							breakPoints.map((breakPoint)=>{
 								return {
-									title: __(`Responsive BR ${breakPoint}`, 'vk-blocks'),
+									title: __(`Responsive BR `, 'vk-blocks') + `( ${breakPoint} )`,
 									icon: 'editor-break',
 									onClick: ()=>{insertBR(value,breakPoint)},
 								}

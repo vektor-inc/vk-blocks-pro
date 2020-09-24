@@ -208,7 +208,7 @@ msgstr "https://example.com"
 #: src/blocks/_pro/card-item/component.js:102
 #: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:90
 #: src/blocks/_pro/card-item/deprecated/index.js:1132
-#: src/blocks/balloon/block.js:260 src/blocks/flow/block.js:105
+#: src/blocks/balloon/block.js:258 src/blocks/flow/block.js:105
 #: src/blocks/pr-blocks/block.js:168 src/blocks/pr-content/component.js:157
 #: src/blocks/pr-content/deprecated/component-deprecated.js:102
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:116
@@ -769,12 +769,12 @@ msgstr "初期表示状態"
 #: src/blocks/_pro/table-of-contents-new/block.js:72
 #: src/blocks/_pro/table-of-contents/block.js:70
 msgid "OPEN"
-msgstr ""
+msgstr "OPEN"
 
 #: src/blocks/_pro/table-of-contents-new/block.js:76
 #: src/blocks/_pro/table-of-contents/block.js:74
 msgid "CLOSE"
-msgstr ""
+msgstr "CLOSE"
 
 #: src/blocks/_pro/timeline-item/block.js:17
 msgid "Timeline Item"
@@ -893,7 +893,7 @@ msgstr "ぶるぶる"
 msgid "Ballon"
 msgstr "吹き出し"
 
-#: src/blocks/balloon/block.js:265 src/blocks/flow/block.js:106
+#: src/blocks/balloon/block.js:263 src/blocks/flow/block.js:106
 #: src/blocks/pr-blocks/block.js:164 src/blocks/pr-content/component.js:164
 #: src/blocks/pr-content/deprecated/component-deprecated.js:106
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:120
@@ -901,7 +901,7 @@ msgstr "吹き出し"
 msgid "Upload image"
 msgstr "画像をアップロード"
 
-#: src/blocks/balloon/block.js:276
+#: src/blocks/balloon/block.js:274
 msgid "Icon Name"
 msgstr "アイコンの名前"
 
@@ -1495,6 +1495,10 @@ msgstr "タイトルを入力してください。"
 #: src/blocks/pr-content/deprecated/componentV1.js:236
 msgid "Input content."
 msgstr "本文を入力してください。"
+
+#: src/blocks/responsive-br/index.js:33
+msgid "Responsive BR "
+msgstr "画面サイズ毎の改行 "
 
 #: src/blocks/spacer/block.js:28
 msgid "Responsive Spacer"

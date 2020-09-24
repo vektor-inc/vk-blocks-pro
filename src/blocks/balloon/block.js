@@ -78,17 +78,17 @@ registerBlockType("vk-blocks/balloon", {
 		],
 	},
 
-  edit({ attributes, className, setAttributes }) {
-    const {
-      content,
-      balloonName,
-      balloonType,
-      balloonBgColor,
+	edit({ attributes, className, setAttributes }) {
+		const {
+			content,
+			balloonName,
+			balloonType,
+			balloonBgColor,
 			balloonAlign,
 			IconImage,
 			balloonImageType,
 			balloonAnimation
-    	} = attributes;
+		} = attributes;
 		const [ blockMeta, setBlockMeta ] = useState(null);
 
 		useEffect(() => {
@@ -124,179 +124,177 @@ registerBlockType("vk-blocks/balloon", {
 		}
 
 
-    return (
-	<Fragment>
-		<InspectorControls>
-			<PanelBody title={ __("Balloon setting", "vk-blocks") }>
+		return (
+			<Fragment>
+				<InspectorControls>
+					<PanelBody title={ __("Balloon setting", "vk-blocks") }>
 
-				<p className={ 'mb-1' }><label>{ __( 'Position', 'vk-blocks' ) }</label></p>
-				<p className={ 'mb-1' }>{ __("Please specify the layout of the balloon.", "vk-blocks") } </p>
-				<ButtonGroup className="mb-3">
-					<Button
-						isSmall
-						isPrimary={ balloonAlign === 'position-left' }
-						isSecondary={ balloonAlign !== 'position-left' }
-						onClick={ () => setAttributes({ balloonAlign: 'position-left' }) }
-				>
-						{ __("Left", "vk-blocks") }
-					</Button>
-					<Button
-						isSmall
-						isPrimary={ balloonAlign === 'position-right' }
-						isSecondary={ balloonAlign !== 'position-right' }
-						onClick={ () => setAttributes({ balloonAlign: 'position-right' }) }
-				>
-						{  __("Right", "vk-blocks") }
-					</Button>
-				</ButtonGroup>
+						<p className={ 'mb-1' }><label>{ __( 'Position', 'vk-blocks' ) }</label></p>
+						<p className={ 'mb-1' }>{ __("Please specify the layout of the balloon.", "vk-blocks") } </p>
+						<ButtonGroup className="mb-3">
+							<Button
+								isSmall
+								isPrimary={ balloonAlign === 'position-left' }
+								isSecondary={ balloonAlign !== 'position-left' }
+								onClick={ () => setAttributes({ balloonAlign: 'position-left' }) }
+							>
+								{ __("Left", "vk-blocks") }
+							</Button>
+							<Button
+								isSmall
+								isPrimary={ balloonAlign === 'position-right' }
+								isSecondary={ balloonAlign !== 'position-right' }
+								onClick={ () => setAttributes({ balloonAlign: 'position-right' }) }
+							>
+								{  __("Right", "vk-blocks") }
+							</Button>
+						</ButtonGroup>
 
-				<p className={ 'mb-1' }><label>{ __( 'Type', 'vk-blocks' ) }</label></p>
-				<p className={ 'mb-1' }>{ __("Please select the type of balloon.", "vk-blocks") } </p>
-				<ButtonGroup className="mb-3">
-					<Button
-						isSmall
-						isPrimary={ balloonType === 'type-serif' }
-						isSecondary={ balloonType !== 'type-serif' }
-						onClick={ () => setAttributes({ balloonType: 'type-serif' }) }
-				>
-						{ __("Serif", "vk-blocks") }
-					</Button>
-					<Button
-						isSmall
-						isPrimary={ balloonType === 'type-think' }
-						isSecondary={ balloonType !== 'type-think' }
-						onClick={ () => setAttributes({ balloonType: 'type-think' }) }
-				>
-						{  __("Thinking", "vk-blocks") }
-					</Button>
-				</ButtonGroup>
+						<p className={ 'mb-1' }><label>{ __( 'Type', 'vk-blocks' ) }</label></p>
+						<p className={ 'mb-1' }>{ __("Please select the type of balloon.", "vk-blocks") } </p>
+						<ButtonGroup className="mb-3">
+							<Button
+								isSmall
+								isPrimary={ balloonType === 'type-serif' }
+								isSecondary={ balloonType !== 'type-serif' }
+								onClick={ () => setAttributes({ balloonType: 'type-serif' }) }
+							>
+								{ __("Serif", "vk-blocks") }
+							</Button>
+							<Button
+								isSmall
+								isPrimary={ balloonType === 'type-think' }
+								isSecondary={ balloonType !== 'type-think' }
+								onClick={ () => setAttributes({ balloonType: 'type-think' }) }
+							>
+								{  __("Thinking", "vk-blocks") }
+							</Button>
+						</ButtonGroup>
 
-				<p className={ 'mb-1' }><label>{ __( 'Image Style', 'vk-blocks' ) }</label></p>
-				<ButtonGroup className="mb-3">
-					<Button
-						isSmall
-						isPrimary={ balloonImageType === 'normal' }
-						isSecondary={ balloonImageType !== 'normal' }
-						onClick={ () => setAttributes({ balloonImageType: 'normal' }) }
+						<p className={ 'mb-1' }><label>{ __( 'Image Style', 'vk-blocks' ) }</label></p>
+						<ButtonGroup className="mb-3">
+							<Button
+								isSmall
+								isPrimary={ balloonImageType === 'normal' }
+								isSecondary={ balloonImageType !== 'normal' }
+								onClick={ () => setAttributes({ balloonImageType: 'normal' }) }
+							>
+								{ __('Normal', 'vk-blocks') }
+							</Button>
+							<Button
+								isSmall
+								isPrimary={ balloonImageType === 'rounded' }
+								isSecondary={ balloonImageType !== 'rounded' }
+								onClick={ () => setAttributes({ balloonImageType: 'rounded' }) }
+							>
+								{ __('Rounded', 'vk-blocks') }
+							</Button>
+							<Button
+								isSmall
+								isPrimary={ balloonImageType === 'circle' }
+								isSecondary={ balloonImageType !== 'circle' }
+								onClick={ () => setAttributes({ balloonImageType: 'circle' }) }
+							>
+								{ __('Circle', 'vk-blocks') }
+							</Button>
+						</ButtonGroup>
+						<p className={ 'mb-1' }><label>{ __( 'Background color of speech balloon', 'vk-blocks' ) }</label></p>
+						<ColorPalette
+							value={ balloonBgColor }
+							onChange={ value => setAttributes({ balloonBgColor: value }) }
+						/>
+					</PanelBody>
+					<PanelBody title={ __("Default Icon Setting", "vk-blocks") }>
+						<div className="icon-image-list mb-2">
+							{ defautIconButtons }
+						</div>
+						<div>{ __( 'You can register default icons from Settings > VK Blocks in Admin.', 'vk-blocks' ) }</div>
+					</PanelBody>
+					<PanelBody title={ __("Animation setting", "vk-blocks") }>
+						<p className={ 'mb-1' }>{ __("Please select the type of animation.", "vk-blocks") } </p>
+						<SelectControl
+							value={ balloonAnimation }
+							onChange={ value => setAttributes({ balloonAnimation: value }) }
+							options={ [
+								{
+									value: "none",
+									label: __("None", "vk-blocks")
+								},
+								{
+									value: "trembling",
+									label: __("Trembling", "vk-blocks")
+								},
+								{
+									value: "trembling-x",
+									label: __("Trembling X", "vk-blocks")
+								},
+								{
+									value: "pounding",
+									label: __("Pounding", "vk-blocks")
+								},
+								{
+									value: "shaking",
+									label: __("Shaking", "vk-blocks")
+								},
+							] }
+							/>
+					</PanelBody>
+				</InspectorControls>
+				<div
+					className={ `${className} vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation}` }
 				>
-						{ __('Normal', 'vk-blocks') }
-					</Button>
-					<Button
-						isSmall
-						isPrimary={ balloonImageType === 'rounded' }
-						isSecondary={ balloonImageType !== 'rounded' }
-						onClick={ () => setAttributes({ balloonImageType: 'rounded' }) }
-				>
-						{ __('Rounded', 'vk-blocks') }
-					</Button>
-					<Button
-						isSmall
-						isPrimary={ balloonImageType === 'circle' }
-						isSecondary={ balloonImageType !== 'circle' }
-						onClick={ () => setAttributes({ balloonImageType: 'circle' }) }
-				>
-						{ __('Circle', 'vk-blocks') }
-					</Button>
-				</ButtonGroup>
-				<p className={ 'mb-1' }><label>{ __( 'Background color of speech balloon', 'vk-blocks' ) }</label></p>
-				<ColorPalette
-					value={ balloonBgColor }
-					onChange={ value => setAttributes({ balloonBgColor: value }) }
-            />
-			</PanelBody>
-			<PanelBody title={ __("Default Icon Setting", "vk-blocks") }>
-				<div className="icon-image-list mb-2">
-					{ defautIconButtons }
+					<div className={ `vk_balloon_icon` }>
+						<MediaUpload
+							onSelect={ value =>	setAttributes({ IconImage: value.sizes.full.url }) }
+							type="image"
+							className={ `vk_balloon_icon_image vk_balloon-image-${balloonImageType}` }
+							value={ IconImage }
+							render={ ({ open }) => (
+								<Button
+									onClick={ open }
+									className={ IconImage ? "image-button" : "button button-large" }
+								>
+									{ !IconImage ? (
+									__("Select image", "vk-blocks")
+									) : (
+										<img
+											className={ `vk_balloon_icon_image vk_balloon-image-${balloonImageType}` }
+											src={ IconImage }
+											alt={ __("Upload image", "vk-blocks") }
+										/>
+									) }
+								</Button>
+							) }
+						/>
+						<RichText
+							tagName="figcaption"
+							className={ "vk_balloon_icon_name" }
+							onChange={ value => setAttributes({ balloonName: value }) }
+							value={ balloonName }
+							placeholder={ __("Icon Name", "vk-blocks") }
+						/>
+					</div>
+					<div className={ `vk_balloon_content_outer` }>
+						<div className={ "vk_balloon_content" } style={ { background: balloonBgColor, border: balloonBgColor, } } >
+							<InnerBlocks
+								templateLock={ false }
+								template={ [
+								[ 'core/paragraph', { content} ],
+								] }
+							/>
+						</div>
+					</div>
 				</div>
-				<div>{ __( 'You can register default icons from Settings > VK Blocks in Admin.', 'vk-blocks' ) }</div>
-			</PanelBody>
-			<PanelBody title={ __("Animation setting", "vk-blocks") }>
-				<p className={ 'mb-1' }>{ __("Please select the type of animation.", "vk-blocks") } </p>
-				<SelectControl
-					value={ balloonAnimation }
-					onChange={ value => setAttributes({ balloonAnimation: value }) }
-					options={ [
-						{
-							value: "none",
-							label: __("None", "vk-blocks")
-						},
-						{
-							value: "trembling",
-							label: __("Trembling", "vk-blocks")
-						},
-						{
-							value: "trembling-x",
-							label: __("Trembling X", "vk-blocks")
-						},
-						{
-							value: "pounding",
-							label: __("Pounding", "vk-blocks")
-						},
-						{
-							value: "shaking",
-							label: __("Shaking", "vk-blocks")
-						},
-					] }
-					/>
-			</PanelBody>
-		</InspectorControls>
-		<div
-			className={ `${className} vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation}` }
-        >
-			<div className={ `vk_balloon_icon` }>
-				<MediaUpload
-					onSelect={ value =>
-                setAttributes({ IconImage: value.sizes.full.url })
-              }
-					type="image"
-					className={ `vk_balloon_icon_image vk_balloon-image-${balloonImageType}` }
-					value={ IconImage }
-					render={ ({ open }) => (
-						<Button
-							onClick={ open }
-							className={ IconImage ? "image-button" : "button button-large" }
-                >
-							{ !IconImage ? (
-                    __("Select image", "vk-blocks")
-                  ) : (
-	<img
-		className={ `vk_balloon_icon_image vk_balloon-image-${balloonImageType}` }
-		src={ IconImage }
-		alt={ __("Upload image", "vk-blocks") }
-                      />
-                    ) }
-						</Button>
-              ) }
-            />
-				<RichText
-					tagName="figcaption"
-					className={ "vk_balloon_icon_name" }
-					onChange={ value => setAttributes({ balloonName: value }) }
-					value={ balloonName }
-					placeholder={ __("Icon Name", "vk-blocks") }
-            />
-			</div>
-			<div className={ `vk_balloon_content_outer` }>
-				<div className={ "vk_balloon_content" } style={ { background: balloonBgColor, border: balloonBgColor, } } >
-					<InnerBlocks
-						templateLock={ false }
-						template={ [
-						[ 'core/paragraph', { content} ],
-					] }
-				/>
-				</div>
-			</div>
-		</div>
-	</Fragment>
-    );
-  },
+			</Fragment>
+		);
+	},
 
-  save({ attributes }) {
-    let {
-      content,
-      balloonName,
-      balloonType,
-      balloonBgColor,
+ 	save({ attributes }) {
+		let {
+			content,
+			balloonName,
+			balloonType,
+			balloonBgColor,
 			balloonAlign,
 			IconImage,
 			balloonImageType,
@@ -307,33 +305,32 @@ registerBlockType("vk-blocks/balloon", {
 		balloonImageType = balloonImageType ? balloonImageType : "normal"
 		balloonAnimation = balloonAnimation ? balloonAnimation : "none";
 
-    return (
-	<div
-		className={ `vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation}` }
-      >
-		<div className={ `vk_balloon_icon` }>
-			{ IconImage ? (
-				<figure>
-					<img className={ `vk_balloon_icon_image vk_balloon-image-${balloonImageType}` } src={ IconImage } alt="" />
-					<RichText.Content
-						tagName="figcaption"
-						className={ "vk_balloon_icon_name" }
-						value={ balloonName }
-              />
-				</figure>
-          ) : (
-              ""
-            ) }
-		</div>
-		<div className={ `vk_balloon_content_outer` }>
-			<div className={ "vk_balloon_content" } style={ { background: balloonBgColor,
-													border: balloonBgColor, } } >
-				<InnerBlocks.Content />
-			</div>
-		</div>
+		return (
+			<div
+				className={ `vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation}` }
+			>
+				<div className={ `vk_balloon_icon` }>
+					{ IconImage ? (
+						<figure>
+							<img className={ `vk_balloon_icon_image vk_balloon-image-${balloonImageType}` } src={ IconImage } alt="" />
+							<RichText.Content
+								tagName="figcaption"
+								className={ "vk_balloon_icon_name" }
+								value={ balloonName }
+					/>
+						</figure>
+				) : (
+					""
+					) }
+				</div>
+				<div className={ `vk_balloon_content_outer` }>
+					<div className={ "vk_balloon_content" } style={ { background: balloonBgColor, border: balloonBgColor, } } >
+						<InnerBlocks.Content />
+					</div>
+				</div>
 
-	</div>
-    );
-  },
-  deprecated,
+			</div>
+		);
+	},
+  	deprecated,
 });

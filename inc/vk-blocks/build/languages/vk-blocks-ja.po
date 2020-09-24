@@ -90,6 +90,18 @@ msgstr "Font Awesome の class 名を入力してください。"
 msgid "Ex) fas fa-arrow-circle-right"
 msgstr "例) fas fa-arrow-circle-right"
 
+#: src/blocks/_pro/accordion-target/block.js:26
+msgid "Accordion Target"
+msgstr ""
+
+#: src/blocks/_pro/accordion-trigger/block.js:20
+msgid "Accordion Trigger"
+msgstr ""
+
+#: src/blocks/_pro/accordion/block.js:45
+msgid "Accordion"
+msgstr ""
+
 #: src/blocks/_pro/animation/block.js:33
 msgid "Animation"
 msgstr "アニメーション"
@@ -130,15 +142,15 @@ msgstr "上下"
 msgid "Trembling Y"
 msgstr "ぶるぶる（Y方向）"
 
-#: src/blocks/_pro/animation/block.js:63 src/blocks/balloon/block.js:222
+#: src/blocks/_pro/animation/block.js:63 src/blocks/balloon/block.js:229
 msgid "Trembling X"
 msgstr "ぶるぶる（X方向）"
 
-#: src/blocks/_pro/animation/block.js:64 src/blocks/balloon/block.js:226
+#: src/blocks/_pro/animation/block.js:64 src/blocks/balloon/block.js:233
 msgid "Pounding"
 msgstr "どきどき"
 
-#: src/blocks/_pro/animation/block.js:65 src/blocks/balloon/block.js:230
+#: src/blocks/_pro/animation/block.js:65 src/blocks/balloon/block.js:237
 msgid "Shaking"
 msgstr "ゆらゆら"
 
@@ -171,7 +183,7 @@ msgid "Short"
 msgstr "短い"
 
 #: src/blocks/_pro/animation/block.js:86 src/blocks/_pro/outer/block.js:181
-#: src/blocks/_pro/slider/block.js:120 src/blocks/balloon/block.js:175
+#: src/blocks/_pro/slider/block.js:120 src/blocks/balloon/block.js:182
 #: src/blocks/button/block.js:169 src/blocks/faq/block.js:65
 #: src/blocks/faq2/block.js:65
 msgid "Normal"
@@ -196,7 +208,7 @@ msgstr "https://example.com"
 #: src/blocks/_pro/card-item/component.js:102
 #: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:90
 #: src/blocks/_pro/card-item/deprecated/index.js:1132
-#: src/blocks/balloon/block.js:253 src/blocks/flow/block.js:105
+#: src/blocks/balloon/block.js:260 src/blocks/flow/block.js:105
 #: src/blocks/pr-blocks/block.js:168 src/blocks/pr-content/component.js:157
 #: src/blocks/pr-content/deprecated/component-deprecated.js:102
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:116
@@ -275,7 +287,7 @@ msgstr "ボタンの文字"
 msgid "Card"
 msgstr "カード"
 
-#: src/blocks/_pro/child-page/block.js:108
+#: src/blocks/_pro/child-page/block.js:109
 #: src/blocks/_pro/post-list/block.js:158
 msgid "Ignore this post"
 msgstr "表示中の投稿をリストから除外する"
@@ -284,16 +296,12 @@ msgstr "表示中の投稿をリストから除外する"
 msgid "Child page list"
 msgstr "子ページリスト"
 
-#: src/blocks/_pro/child-page/block.js:64
-msgid "This Page"
-msgstr "このページ"
-
-#: src/blocks/_pro/child-page/block.js:94
+#: src/blocks/_pro/child-page/block.js:95
 #: src/blocks/_pro/post-list/block.js:108
 msgid "Display conditions"
 msgstr "表示条件"
 
-#: src/blocks/_pro/child-page/block.js:97
+#: src/blocks/_pro/child-page/block.js:98
 msgid "Parent"
 msgstr "親ページ"
 
@@ -481,7 +489,7 @@ msgstr ""
 msgid "Divider Setting"
 msgstr "区切りの設定"
 
-#: src/blocks/_pro/outer/block.js:244 src/blocks/balloon/block.js:146
+#: src/blocks/_pro/outer/block.js:244 src/blocks/balloon/block.js:153
 msgid "Type"
 msgstr "タイプ"
 
@@ -522,7 +530,7 @@ msgid "Border type"
 msgstr "枠線の種類"
 
 #: src/blocks/_pro/outer/block.js:322 src/blocks/_pro/step-item/block.js:101
-#: src/blocks/_pro/timeline-item/block.js:83 src/blocks/balloon/block.js:214
+#: src/blocks/_pro/timeline-item/block.js:83 src/blocks/balloon/block.js:221
 #: src/blocks/staff/block.js:89
 msgid "None"
 msgstr "なし"
@@ -670,10 +678,14 @@ msgid "AutoPlay"
 msgstr "自動再生"
 
 #: src/blocks/_pro/slider/block.js:170
-msgid "Change Time"
-msgstr "切り替え時間"
+msgid "Display Time"
+msgstr "表示時間"
 
 #: src/blocks/_pro/slider/block.js:176
+msgid "Change Speed"
+msgstr "切り替え時間"
+
+#: src/blocks/_pro/slider/block.js:183
 msgid "Display Pagination"
 msgstr "ページネーションの表示"
 
@@ -804,80 +816,84 @@ msgstr "Warning"
 msgid "Danger"
 msgstr "Danger"
 
-#: src/blocks/balloon/block.js:123
+#: src/blocks/balloon/block.js:130
 msgid "Balloon setting"
 msgstr "フキダシ設定"
 
-#: src/blocks/balloon/block.js:125 src/blocks/heading/block.js:201
+#: src/blocks/balloon/block.js:132 src/blocks/heading/block.js:201
 msgid "Position"
 msgstr "位置"
 
-#: src/blocks/balloon/block.js:126
+#: src/blocks/balloon/block.js:133
 msgid "Please specify the layout of the balloon."
 msgstr "吹き出しの配置を指定してください。"
 
-#: src/blocks/balloon/block.js:134 src/blocks/button/block.js:189
+#: src/blocks/balloon/block.js:141 src/blocks/button/block.js:189
 #: src/blocks/pr-content/block.js:204
 #: src/components/display-items-control/index.js:94
 msgid "Left"
 msgstr "左"
 
-#: src/blocks/balloon/block.js:142 src/blocks/button/block.js:205
+#: src/blocks/balloon/block.js:149 src/blocks/button/block.js:205
 #: src/blocks/pr-content/block.js:203
 #: src/components/display-items-control/index.js:102
 msgid "Right"
 msgstr "右"
 
-#: src/blocks/balloon/block.js:147
+#: src/blocks/balloon/block.js:154
 msgid "Please select the type of balloon."
 msgstr "吹き出しのタイプを指定してください。"
 
-#: src/blocks/balloon/block.js:155
+#: src/blocks/balloon/block.js:162
 msgid "Serif"
 msgstr "セリフ"
 
-#: src/blocks/balloon/block.js:163
+#: src/blocks/balloon/block.js:170
 msgid "Thinking"
 msgstr "吹き出し"
 
-#: src/blocks/balloon/block.js:167
+#: src/blocks/balloon/block.js:174
 msgid "Image Style"
 msgstr "画像スタイル"
 
-#: src/blocks/balloon/block.js:183
+#: src/blocks/balloon/block.js:190
 msgid "Rounded"
 msgstr "角丸"
 
-#: src/blocks/balloon/block.js:191
+#: src/blocks/balloon/block.js:198
 msgid "Circle"
 msgstr "丸抜き"
 
-#: src/blocks/balloon/block.js:194
+#: src/blocks/balloon/block.js:201
 msgid "Background color of speech balloon"
 msgstr "吹き出しの背景色"
 
-#: src/blocks/balloon/block.js:200
+#: src/blocks/balloon/block.js:207
 msgid "Default Icon Setting"
 msgstr "デフォルトアイコン設定"
 
-#: src/blocks/balloon/block.js:204
+#: src/blocks/balloon/block.js:211
 msgid "You can register default icons from Settings > VK Blocks in Admin."
 msgstr ""
 "管理画面の 設定 > VK Blocks から よく使うアイコンを登録する事ができます。"
 
-#: src/blocks/balloon/block.js:206
+#: src/blocks/balloon/block.js:213
 msgid "Animation setting"
 msgstr "アニメーション設定"
 
-#: src/blocks/balloon/block.js:207
+#: src/blocks/balloon/block.js:214
 msgid "Please select the type of animation."
 msgstr "アニメーションのタイプを指定してください。"
 
-#: src/blocks/balloon/block.js:218
+#: src/blocks/balloon/block.js:225
 msgid "Trembling"
 msgstr "ぶるぶる"
 
-#: src/blocks/balloon/block.js:258 src/blocks/flow/block.js:106
+#: src/blocks/balloon/block.js:26
+msgid "Ballon"
+msgstr "吹き出し"
+
+#: src/blocks/balloon/block.js:265 src/blocks/flow/block.js:106
 #: src/blocks/pr-blocks/block.js:164 src/blocks/pr-content/component.js:164
 #: src/blocks/pr-content/deprecated/component-deprecated.js:106
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:120
@@ -885,11 +901,7 @@ msgstr "ぶるぶる"
 msgid "Upload image"
 msgstr "画像をアップロード"
 
-#: src/blocks/balloon/block.js:26
-msgid "Ballon"
-msgstr "吹き出し"
-
-#: src/blocks/balloon/block.js:269
+#: src/blocks/balloon/block.js:276
 msgid "Icon Name"
 msgstr "アイコンの名前"
 
@@ -1307,10 +1319,8 @@ msgid "Hidden ( Screen size : xl )"
 msgstr "非表示 ( 画面サイズ : xl )"
 
 #: src/blocks/hidden-extension/index.js:161
-#, fuzzy
-#| msgid "Hidden ( Screen size : xl )"
 msgid "Hidden ( Screen size : xxl )"
-msgstr "非表示 ( 画面サイズ : xl )"
+msgstr "非表示 ( 画面サイズ : xxl )"
 
 #: src/blocks/hidden-extension/index.js:167
 msgid ""
@@ -1606,27 +1616,27 @@ msgstr "表示タイプとカラム"
 msgid "Display type"
 msgstr "表示タイプ"
 
-#: src/components/column-layout/index.js:19
+#: src/components/column-layout/index.js:37
 msgid "Column ( Screen size : Extra small )"
 msgstr "カラム ( 画面サイズ : Extra small )"
 
-#: src/components/column-layout/index.js:28
+#: src/components/column-layout/index.js:48
 msgid "Column ( Screen size : Small )"
 msgstr "カラム ( 画面サイズ : Small )"
 
-#: src/components/column-layout/index.js:36
+#: src/components/column-layout/index.js:58
 msgid "Column ( Screen size : Medium )"
 msgstr "カラム ( 画面サイズ : Medium )"
 
-#: src/components/column-layout/index.js:44
+#: src/components/column-layout/index.js:68
 msgid "Column ( Screen size : Large )"
 msgstr "カラム ( 画面サイズ : Large )"
 
-#: src/components/column-layout/index.js:53
+#: src/components/column-layout/index.js:79
 msgid "Column ( Screen size : Extra large )"
 msgstr "カラム ( 画面サイズ : Extra large )"
 
-#: src/components/column-layout/index.js:63
+#: src/components/column-layout/index.js:91
 msgid "Column ( Screen size : XX large )"
 msgstr "カラム ( 画面サイズ : XX Large )"
 
@@ -1735,6 +1745,9 @@ msgstr "吹き出し画像設定"
 #: src/translation_dummy.js:9
 msgid "Select"
 msgstr "選択"
+
+#~ msgid "This Page"
+#~ msgstr "このページ"
 
 #~ msgid "FAQ"
 #~ msgstr "質問と解答"

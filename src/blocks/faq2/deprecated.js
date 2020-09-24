@@ -1,3 +1,5 @@
+const { InnerBlocks } = vkbBlockEditor;
+
 export const deprecated = [{
 	attributes: {
 		heading: {

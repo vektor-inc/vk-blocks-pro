@@ -2,7 +2,7 @@
 const vkFaq2Container = document.getElementsByClassName('vk_faq-accordion');
 let vkFaq2A;
 
-const toggleLoop = (i) => {
+const FAQ2ToggleLoop = (i) => {
 	if ( vkFaq2Container[i].classList.contains( 'vk_faq-acc-open' ) ) {
 		vkFaq2Container[i].querySelector('.vk_faq_content').classList.add("vk_faq-content-open");
 	}
@@ -36,5 +36,5 @@ const toggleLoop = (i) => {
 };
 
 for (let i = 0; i < vkFaq2Container.length; i++) {
-	toggleLoop(i);
+	FAQ2ToggleLoop(i);
 }

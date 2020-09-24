@@ -43,4 +43,8 @@ export const schema = {
 		type: "string",
 		default: "slide",
 	},
+	speed: {
+		type: 'number',
+		default: 300,
+	},
 };

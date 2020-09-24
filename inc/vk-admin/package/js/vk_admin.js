@@ -2,7 +2,7 @@
 /* メディアアップローダー
 /*-------------------------------------------*/
 jQuery(document).ready(function($){
-    let custom_uploader;
+    var custom_uploader;
 // var media_id = new Array(2);　//配列の宣言
 // media_id[0] = "head_logo";
 // media_id[1] = "foot_logo";
@@ -36,7 +36,7 @@ jQuery(document).ready(function($){
             multiple: false, // falseにすると画像を1つしか選択できなくなる
         });
         custom_uploader.on('select', function() {
-            const images = custom_uploader.state().get('selection');
+            var images = custom_uploader.state().get('selection');
             images.each(function(file){
                 // urlを返す場合
                 jQuery(media_target_src).attr('value', file.toJSON().url );
@@ -66,10 +66,10 @@ jQuery(document).ready(function($){
 jQuery(document).ready(function(){
 
     // サイドバー要素のデフォルトの絶対位置
-    const default_offset = jQuery('.scrTracking').offset();
+    var default_offset = jQuery('.scrTracking').offset();
 
     // コンテンツエリアの高さを取得
-    const contentHeight = jQuery('.adminMain').height();
+    var contentHeight = jQuery('.adminMain').height();
 
     navMove( default_offset, contentHeight );
 
@@ -85,17 +85,17 @@ jQuery(document).ready(function(){
 function navMove( default_offset, contentHeight ){
 
     // ウィンドウの高さを取得
-    const windowHeight = jQuery(window).height();
+    var windowHeight = jQuery(window).height();
 
     // スクロール量
-    const scrollHeight = jQuery(this).scrollTop();
+    var scrollHeight = jQuery(this).scrollTop();
 
-    const marginBottom = 15;
+    var marginBottom = 15;
 
     jQuery('.scrTracking').each(function(i){
 
         // サイドバー要素の高さ
-        const itemHeight = jQuery(this).height();
+        var itemHeight = jQuery(this).height();
 
         // ウィンドウサイズからはみ出すサイズ
         if ( itemHeight < windowHeight ){
@@ -112,7 +112,7 @@ function navMove( default_offset, contentHeight ){
                 if ( scrollHeight > overHeight ) {
                     // はみ出してる高さよりスクロールが大きい場合
                     // スクロール量からはみ出してる高さを引いた余白を追加
-                    const marginTop = scrollHeight - overHeight - default_offset.top - marginBottom;
+                    var marginTop = scrollHeight - overHeight - default_offset['top'] - marginBottom;
                     jQuery(this).css({"margin-top":marginTop});
                 } else {
                     // はみ出してる高さよりスクロールが小さい場合
@@ -135,25 +135,25 @@ function navMove( default_offset, contentHeight ){
 jQuery(document).ready(function(){
     if(!jQuery('body').hasClass('exunit_page_vkExUnit_main_setting')){ return; }
     // 一つ目のセクションの位置を取得
-    const default_offset = jQuery('.adminMain section:first-child').offset();
+    var default_offset = jQuery('.adminMain section:first-child').offset();
 
     // 全てのセクションの上に余白を追加（頭出しがきれいになるようにするため）
     jQuery('.adminMain section').each(function(i){
         if (i != 0){ // 読み込んだ時、一つ目は余白要らない
-            jQuery(this).css({"padding-top":default_offset.top});
+            jQuery(this).css({"padding-top":default_offset["top"]});
         }
     });
 
     jQuery(window).scroll(function () {
         // スクロール量を取得
-        const scroll = jQuery(this).scrollTop();
+        var scroll = jQuery(this).scrollTop();
 
-        if ( scroll < default_offset.top ){
+        if ( scroll < default_offset["top"] ){
             // スクロールが少ない場合は最初のセクションに余白を入れない
             jQuery('.adminMain section:first-child').css({"padding-top":0});
         } else {
             // ある程度スクロールしている状態ならば余白を入れる
-            jQuery('.adminMain section:first-child').css({"padding-top":default_offset.top});
+            jQuery('.adminMain section:first-child').css({"padding-top":default_offset["top"]});
         }
     });
 });

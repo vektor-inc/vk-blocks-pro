@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.5.1
-Stable tag: 0.44.2
+Stable tag: 0.45.1
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -61,6 +61,48 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.45.1 =
+* [ BugFix ] Delete useless file
+
+= 0.45.0 =
+* [ Add function ] Responsive BR
+
+= 0.44.13 =
+* [ digigin bug fix ] vk_heading plain css adjustment 
+
+= 0.44.12 =
+* [ digigin bug fix ] Block heading css adjustment 
+
+= 0.44.11 =
+version only
+
+= 0.44.10 =
+* [ bug fix ][ Grid column(Pro) ] fix could choice 5 columns
+
+= 0.44.9 =
+* rebuild
+
+= 0.44.8 =
+* [ bug fix ][ Grid column(Pro) ] Fix block wrap on xxl
+
+= 0.44.7 =
+* [ bug fix ][ block pattern(Pro) ] Fix block pattern
+
+= 0.44.6 =
+* [ bug fix ][ block pattern(Pro) ] Fix block pattern
+* [ bug fix ] Stop ExUnit VK Blocks 
+* [ bug fix ][ border box ] Cope with lightning pro headding design ( balloon )
+
+= 0.44.5 =
+* [ digigin bug fix ] Block heading Digigin text align tuning 
+
+= 0.44.4 =
+version only
+
+= 0.44.3 =
+ [ Specification change ] abolish Preload
+ [ digigin bug fix ] Block heading Digigin font color tuning 
 
 = 0.44.2 =
 * [ digigin bug fix ] Block heading Digigin tuning 

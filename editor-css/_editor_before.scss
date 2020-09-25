@@ -756,4 +756,10 @@ $color-danger: #b52727;
 		// プレースホルダーの文字が枠から左にはみ出す
 		margin-left:0;
 	}
+	.wp-block-vk-blocks-grid-column-item{
+		.wp-block[data-align="left"], .wp-block[data-align="right"]{
+			//これがないと、グリッドカラムブロック内のボタンを左/右寄せにした時に、ボタンのheightが0になる。
+			height: auto;
+		}
+	}
 }

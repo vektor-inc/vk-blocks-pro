@@ -41,9 +41,9 @@ function vk_blocks_pro_new_faq_accordion_control( $block_content, $block ) {
 	$vk_blocks_options  = vkblocks_get_options();
 	if ( has_block( 'vk-blocks/faq2' ) && 'vk-blocks/faq2' === $block['blockName'] ) {
 		if ( 'open' === $vk_blocks_options['new_faq_accordion'] ) {
-			$block_content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-acc-open', $block_content );
+			$block_content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-accordion-open', $block_content );
 		} elseif ( 'close' === $vk_blocks_options['new_faq_accordion'] ) {
-			$block_content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-acc-close', $block_content );
+			$block_content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-accordion-close', $block_content );
 		} else {
 			$block_content = str_replace( '[accordion_trigger_switch]', '', $block_content );
 		}

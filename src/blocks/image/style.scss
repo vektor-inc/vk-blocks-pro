@@ -9,9 +9,69 @@
         background-color: #fff;
         padding: 10px;
         box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-
         figcaption {
             margin: 8px 0 0;
         }
     }
+
+    &-photoFrame-tilt-right{
+        transform: rotate(-3deg);
+        -moz-transform: rotate(-3deg);
+        -webkit-transform: rotate(-3deg);
+        background-color: #fff;
+        padding: 10px;
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    &-photoFrame-tilt-left{
+        transform: rotate(3deg);
+        -moz-transform: rotate(3deg);
+        -webkit-transform: rotate(3deg);
+        background-color: #fff;
+        padding: 10px;
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    &-wave01 {
+        img{
+            mask-image: url(../images/wave01.svg);
+            // -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            // -webkit-mask-position: 50% 50%;
+            mask-position: 50% 50%;
+            // -webkit-mask-size: contain;
+            mask-size: contain;
+        }
+    }
+
+    &-wave02{
+        img{
+            mask-image: url(../images/wave02.svg);
+            mask-repeat: no-repeat;
+            mask-position: 50% 50%;
+            mask-size: contain;
+
+        }
+    }
+
+    &-wave03{
+        img{
+            mask-image: url(../images/wave03.svg);
+            mask-repeat: no-repeat;
+            mask-position: 50% 50%;
+            mask-size: contain;
+        }
+    }
+    &-wave04{
+        img{
+            mask-image: url(../images/wave04.svg);
+            mask-repeat: no-repeat;
+            mask-position: 50% 50%;
+            mask-size: contain;
+        }
+    }
+    &-shadow{
+
+    }
+
 }

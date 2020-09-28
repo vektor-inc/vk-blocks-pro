@@ -18,6 +18,10 @@ wp.blocks.registerBlockStyle('core/image',
 			label: __('Photo frame Tilt Left', 'vk-blocks'),
 		},
 		{
+			name: 'vk-image-shadow',
+			label: __('Shadow', 'vk-blocks'),
+		},
+		{
 			name: 'vk-image-wave01',
 			label: __('Wave01', 'vk-blocks'),
 		},

@@ -1,4 +1,18 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -e
+
+# $#にbashに渡された引数の個数が入る。
+# -lt は < と同じ
+#下のif文は、引数の個数が1以下ならexitする。
+if [ $# -lt 1 ]; then
+	echo "usage: $0 <version>"
+	exit 1
+fi
+
+# $1には、このスクリプトに渡された第一引数がはいる。
+# tagのバージョンを変数に代入
+version=$1
 
 mv vk-blocks/ vk-blocks-free/
 cd ./vk-blocks-free/
@@ -24,7 +38,12 @@ done
 # ブロックをビルド
 npm install
 npm run build
-# 以下はadd/vk-blocks-freeブランチにpushするための処理
+# 無料版のmasterブランチにpush
 git add .
 git commit -m"Update from vk-blocks-pro"
-git push -f origin add/vk-blocks-free
+git push -f origin master
+# 無料版のレポジトリでタグを切ってpush
+# 無料版の方でも下のGitHubActionが動いて、WordPress公式レポジトリにアップロードされる。
+# https://github.com/vektor-inc/vk-blocks/blob/master/.github/workflows/wp-plugin-deploy.yml
+git tag ${version}
+git push origin ${version}

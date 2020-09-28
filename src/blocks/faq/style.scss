@@ -130,8 +130,7 @@ $answer-color: #337ab7;
 			position: absolute;
 			top: 50%;
 			right: unset;
-			//rightが効かないので…
-			left: 85%;
+			right: 2.4em;
 			content: "";
 			width: 8px;
 			height: 8px;
@@ -141,12 +140,6 @@ $answer-color: #337ab7;
 			-webkit-transition: border-color .3s ease,-webkit-transform .6s ease;
 			transition: border-color .3s ease,transform .6s ease;
 			transition: border-color .3s ease,transform .6s ease,-webkit-transform .6s ease;
-			@media (min-width: 768px) {
-				left: 92%;
-			}
-			@media (min-width: 992px) {
-				left: 95%;
-			}
 		}
 	}
 }
@@ -169,6 +162,9 @@ $answer-color: #337ab7;
 			transform: translate(32px,-2px) rotate(-45deg);
 		}
 
+	}
+	.vk_faq_title{
+		cursor: pointer;
 	}
 }
 //アンサーオープン時

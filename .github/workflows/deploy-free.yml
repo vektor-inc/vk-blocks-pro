@@ -24,6 +24,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    # 通常版をクローン Tagのバージョンを取得。
+    # GITHUB_REFには、refs/tags/0.0.0 が値が入っているので前から10文字を削除して、バージョンのみを取得する。
+    # https://qiita.com/maruware/items/3da1f5866f6f233a1ad1#%E3%82%BF%E3%82%B0%E5%90%8D%E3%82%92%E5%A4%89%E6%95%B0%E3%81%A8%E3%81%97%E3%81%A6%E4%BD%BF%E7%94%A8
+    - name: Get tag version
+      run: echo ::set-env name=RELEASE_VERSION::$(echo ${GITHUB_REF:10})
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
@@ -34,4 +39,5 @@ jobs:
     # VK BlocksのGithubにアクセスできるユーザーの設定
     - run: git config --global user.email "info@vektor-inc.co.jp"
     - run: git config --global user.name "bitbucket-piplines-vk-blocks-pro"
-    - run: bash bin/deploy-free.sh
+    # 無料版にデプロイするスクリプトにタグ名を引数で渡す。
+    - run: bash bin/deploy-free.sh ${{ env.RELEASE_VERSION }}

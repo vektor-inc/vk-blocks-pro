@@ -5,77 +5,58 @@
 import Body from "./Body";
 import { schema, example } from './schema';
 import { FontAwesome } from "./font-awesome-new";
-import { deprecated }  from "./deprecated"
+import { deprecated } from "./deprecated"
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { PanelBody, BaseControl,SelectControl } = wp.components;
+const { PanelBody, BaseControl, SelectControl } = wp.components;
 const { Fragment } = wp.element;
 import { vkbBlockEditor } from "./../_helper/depModules";
 const { InspectorControls } = vkbBlockEditor;
 
 const BlockIcon = (
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		x="0px"
-		y="0px"
-		viewBox="0 0 576 576"
-	>
-		<g>
-			<path d="M121,142.6c0.1,1.4,1.2,2.5,2.7,2.5h10.7c1.4,0,2.6-1.1,2.7-2.5l1.6-30.1c0.1-1.5-1.1-2.8-2.7-2.8h-14
-			c-1.5,0-2.7,1.3-2.7,2.8L121,142.6z" />
-			<path d="M127.5,149.2c5.6-0.9,10.8,2.9,11.7,8.4c0.9,5.6-2.9,10.8-8.4,11.7s-10.8-2.9-11.7-8.4
-			C118.1,155.4,121.9,150.1,127.5,149.2z" />
-			<path d="M528,171.9H384.1V98.6c0-26.8-21.7-48.5-48.5-48.5H48.5C21.7,50.1,0,71.8,0,98.6v119.3h0.1c0,0.7-0.1,1.3-0.1,2v267
-			c0,26.5,21.5,48,48,48h480c26.5,0,48-21.5,48-48v-267C576,193.4,554.5,171.9,528,171.9z M129.1,83.2c30.3,0,54.9,24.6,54.9,54.9
-			c0,12.8-4.4,24.5-11.7,33.8c-10,12.8-25.6,21-43.2,21c-17.5,0-33.1-8.2-43.2-21c-7.3-9.3-11.7-21.1-11.7-33.8
-			C74.2,107.8,98.8,83.2,129.1,83.2z M528,486.9H48v-267h480V486.9z" />
-			<path className="st0" d="M442.4,308.7H133.6c-7.9,0-14.5-6.5-14.5-14.5c0-7.9,6.5-14.5,14.5-14.5h308.9c7.9,0,14.5,6.5,14.5,14.5
-			C456.9,302.2,450.4,308.7,442.4,308.7z" />
-			<path className="st0" d="M442.4,373.5H133.6c-7.9,0-14.5-6.5-14.5-14.5c0-7.9,6.5-14.5,14.5-14.5h308.9c7.9,0,14.5,6.5,14.5,14.5
-			C456.9,367.1,450.4,373.5,442.4,373.5z" />
-			<path className="st0" d="M442.4,438.3H133.6c-7.9,0-14.5-6.5-14.5-14.5c0-7.9,6.5-14.5,14.5-14.5h308.9c7.9,0,14.5,6.5,14.5,14.5
-			C456.9,431.8,450.4,438.3,442.4,438.3z" />
-		</g>
+	<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path fill-rule="evenodd" clip-rule="evenodd" d="M1 1a1 1 0 00-1 1v11.281a1.91 1.91 0 01.108-.003H1.5V7.5h21v13H10.191l.466 1.5H23a1 1 0 001-1V7a1 1 0 00-1-1h-9V2a1 1 0 00-1-1H1zm9 3.75H4v-1.5h6v1.5z" fill="#000" />
+		<path d="M.872 21.992L0 19.484V21a1 1 0 00.872.992zM10.634 17.5H20v-1h-8.416l-.95 1zM12.452 14.5H20v-1h-8.287c.374.223.634.59.739 1zM20 11.5v-1H4v1h16zM10.89 14.778l-3.267.007a.11.11 0 00-.102.076l-.25.722c-.022.076.03.152.103.152h1.27c.095 0 .146.122.08.19L6.7 18.105h.007l1.042 3.397c.022.076-.03.144-.103.144h-1.02a.104.104 0 01-.102-.076L6 19.83c-.029-.106-.168-.106-.205-.007l-.426 1.223a.109.109 0 000 .069l.39 1.481c.014.046.058.084.102.084H9.15c.073 0 .125-.076.103-.145l-1.329-4.277c-.014-.038 0-.084.03-.114l3.016-3.176c.066-.069.015-.19-.08-.19z" fill="#000" />
+		<path d="M7.022 13l-1.99.008a.11.11 0 00-.102.076l-.257.721c-.03.076.03.152.103.152h.836c.074 0 .125.076.103.152l-2.37 6.717a.108.108 0 01-.206 0l-1.703-4.848a.112.112 0 01.103-.152h.859a.11.11 0 01.103.076l.616 1.748a.108.108 0 00.206 0l.954-2.72a.112.112 0 00-.103-.152H.108c-.073 0-.125.076-.103.152l3.127 8.996a.108.108 0 00.205 0l3.787-10.774c.022-.076-.029-.152-.102-.152z" fill="#D8141C" />
 	</svg>
-  );
-
+);
 
 registerBlockType('vk-blocks/border-box', {
 	title: __('Border Box', 'vk-blocks'),
-    icon: BlockIcon,
+	icon: BlockIcon,
 	category: 'vk-blocks-cat',
 	attributes: schema,
-	supports:{
-		className:true
+	supports: {
+		className: true
 	},
 	example,
 
 	styles: [
 		{
 			name: 'vk_borderBox-style-solid-kado-tit-tab',
-			label: __( 'Solid Angle Tab', 'vk-blocks' ),
-			isDefault:true
+			label: __('Solid Angle Tab', 'vk-blocks'),
+			isDefault: true
 		},
 		{
 			name: 'vk_borderBox-style-solid-round-tit-tab',
-			label: __( 'Solid Round Tab', 'vk-blocks' )
+			label: __('Solid Round Tab', 'vk-blocks')
 		},
 		{
 			name: 'vk_borderBox-style-solid-kado-tit-banner',
-			label: __( 'Solid Angle Banner', 'vk-blocks' ),
+			label: __('Solid Angle Banner', 'vk-blocks'),
 		},
 		{
 			name: 'vk_borderBox-style-solid-kado-tit-onborder',
-			label: __( 'Solid Angle Onborder', 'vk-blocks' ),
+			label: __('Solid Angle Onborder', 'vk-blocks'),
 		},
 		{
 			name: 'vk_borderBox-style-solid-kado-tit-inner',
-			label: __( 'Solid Angle Inner', 'vk-blocks' ),
+			label: __('Solid Angle Inner', 'vk-blocks'),
 		},
 		{
 			name: 'vk_borderBox-style-solid-kado-iconFeature',
-			label: __( 'Solid Angle iconFeature', 'vk-blocks' ),
+			label: __('Solid Angle iconFeature', 'vk-blocks'),
 		},
 	],
 
@@ -85,15 +66,15 @@ registerBlockType('vk-blocks/border-box', {
 		return (
 			<Fragment>
 				<InspectorControls>
-					<PanelBody title={ __('Color', 'vk-blocks') }>
+					<PanelBody title={__('Color', 'vk-blocks')}>
 						<BaseControl
 							id="border-color"
-							label={ __('Border Color', 'vk-blocks') }
+							label={__('Border Color', 'vk-blocks')}
 						>
 							<SelectControl
-								value={ color }
-								onChange={ value => setAttributes({ color: value }) }
-								options={ [
+								value={color}
+								onChange={value => setAttributes({ color: value })}
+								options={[
 									{
 										value: "red",
 										label: __("Red", "vk-blocks")
@@ -114,17 +95,17 @@ registerBlockType('vk-blocks/border-box', {
 										value: "black",
 										label: __("Black", "vk-blocks")
 									}
-								] }
+								]}
 							/>
 						</BaseControl>
 						<BaseControl
 							id="background-color"
-							label={ __('Background Color', 'vk-blocks') }
+							label={__('Background Color', 'vk-blocks')}
 						>
 							<SelectControl
-								value={ bgColor }
-								onChange={ value => setAttributes({ bgColor: value }) }
-								options={ [
+								value={bgColor}
+								onChange={value => setAttributes({ bgColor: value })}
+								options={[
 									{
 										value: "transparent",
 										label: __("Transparent", "vk-blocks")
@@ -133,29 +114,29 @@ registerBlockType('vk-blocks/border-box', {
 										value: "white",
 										label: __("White", "vk-blocks")
 									},
-								] }
+								]}
 							/>
 						</BaseControl>
 					</PanelBody>
-					<PanelBody title={ __('Icon', 'vk-blocks') }>
+					<PanelBody title={__('Icon', 'vk-blocks')}>
 						<BaseControl
 							id="dot-fa"
-							label={ __('Icon ( Font Awesome )', 'vk-blocks') }
+							label={__('Icon ( Font Awesome )', 'vk-blocks')}
 						>
 							<FontAwesome
-								attributes={ attributes }
-								setAttributes={ setAttributes }
+								attributes={attributes}
+								setAttributes={setAttributes}
 							/>
 						</BaseControl>
 					</PanelBody>
 				</InspectorControls>
-				<Body for_={ 'edit' } { ...props } />
+				<Body for_={'edit'} {...props} />
 			</Fragment>
 		);
 	},
 
 	save(props) {
-		return <Body for_={ 'save' }{ ...props } />;
+		return <Body for_={'save'}{...props} />;
 	},
 	deprecated
 });

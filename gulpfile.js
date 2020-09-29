@@ -63,6 +63,7 @@ gulp.task("sass", function() {
 gulp.task("sass_editor", function() {
   return gulp
     .src([
+      "./editor-css/_editor_common_core.scss",
       "./editor-css/_editor_before.scss",
       "./src/**/*.scss",
       "./editor-css/_editor_after.scss"

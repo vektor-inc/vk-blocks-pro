@@ -2,13 +2,15 @@
  * FAQ Outer Block
  */
 import { vkbBlockEditor } from "./../_helper/depModules";
+import { deprecated } from "./deprecated";
 import classNames from "classnames";
-import { content, title } from "./../_helper/example-data"
+import { content, title } from "./../_helper/example-data";
 
-
-const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { InnerBlocks } = vkbBlockEditor;
+const { Fragment } = wp.element;
+const { PanelBody, PanelRow } = wp.components;
+const { InnerBlocks, InspectorControls } = vkbBlockEditor;
+const { __ } = wp.i18n;
 
 const BlockIcon = (
 	<svg
@@ -45,16 +47,6 @@ registerBlockType("vk-blocks/faq2", {
 	title: __("New FAQ", "vk-blocks"),
 	icon: BlockIcon,
 	category: "vk-blocks-cat",
-	attributes: {
-	  heading: {
-		  type: "string",
-		  source: "html",
-		  selector: "dt"
-	  },
-	  content:{
-		  type: "string"
-	  }
-	},
 	supports: {
 		anchor: true,
 		className: true,
@@ -116,29 +108,48 @@ registerBlockType("vk-blocks/faq2", {
 			},
 		],
 	},
-	edit( { className } ) {
+	edit( props ) {
+		const { className } = props;
+
+		let massage;
+		if ( vk_blocks_check.is_pro ) {
+			massage = __( 'If you want to be collapsing this block, you can set it at Setting > VK Blocks', 'vk-blocks' );
+		} else {
+			massage = __( 'You can be collapsing this block at VK Blocks Pro', 'vk-blocks' );
+		}
+
 		return (
-			<dl className={ classNames(className,"vk_faq") }>
-				<InnerBlocks
-					allowedBlocks={ [
-						[ 'vk-blocks/faq2-q' ],
-						[ 'vk-blocks/faq2-a' ],
-					] }
-					template={ [
-						[ 'vk-blocks/faq2-q' ],
-						[ 'vk-blocks/faq2-a' ],
-					] }
-					templateLock='all'
-				/>
-			</dl>
+			<Fragment>
+				<InspectorControls>
+					<PanelBody title={ __('Accordion Setting', 'vk-blocks') }>
+						<PanelRow>{ massage }</PanelRow>
+					</PanelBody>
+				</InspectorControls>
+				<dl className={ classNames(className,"vk_faq") }>
+					<InnerBlocks
+						allowedBlocks={ [
+							[ 'vk-blocks/faq2-q' ],
+							[ 'vk-blocks/faq2-a' ],
+						] }
+						template={ [
+							[ 'vk-blocks/faq2-q' ],
+							[ 'vk-blocks/faq2-a' ],
+						] }
+						templateLock='all'
+					/>
+				</dl>
+			</Fragment>
+
 		);
+
 	  },
 
 	save() {
 		return (
-			<dl className={ `vk_faq` }>
+			<dl className={ `vk_faq [accordion_trigger_switch]` }>
 				<InnerBlocks.Content />
 			</dl>
 	 	);
 	},
+	deprecated
 });

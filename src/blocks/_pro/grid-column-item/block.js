@@ -7,6 +7,7 @@ import {vkbBlockEditor} from "../../_helper/depModules"
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { InnerBlocks } = vkbBlockEditor;
+import deprecated from "./deprecated"
 
 const BlockIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 576">
@@ -35,11 +36,11 @@ registerBlockType("vk-blocks/grid-column-item", {
 	},
 
 	save(props) {
-		const { className } = props;
 		return (
-			<div className={ `${className}` }>
+			<div>
 				<InnerBlocks.Content />
 			</div>
 		);
 	},
+	deprecated:deprecated
 });

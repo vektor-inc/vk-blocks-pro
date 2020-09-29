@@ -11,7 +11,17 @@
     mask-position: 50% 50%;
     mask-size: contain;
 }
+
+//コアの角丸
+.is-style-rounded{
+    img {
+        border-radius: .5rem;
+    }
+}
+
+//vk-image
 .is-style-vk-image {
+
     &-border {
         img {
             border: 1px solid #e5e5e5;
@@ -38,11 +48,9 @@
     }
 
     &-shadow{
-        img{
-            box-shadow: 5px 5px 10px rgba(0,0,0,0.25);
-        } 
+        box-shadow: 0 5px 10px rgba(0,0,0,0.15);           
         figcaption{
-            margin: 8px 0 0;
+            padding-bottom: .5em;
         }    
     }
 

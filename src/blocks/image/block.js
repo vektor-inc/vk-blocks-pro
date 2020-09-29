@@ -37,9 +37,6 @@ wp.blocks.registerBlockStyle('core/image',
 			name: 'vk-image-wave04',
 			label: __('Wave04', 'vk-blocks'),
 		},
-		{
-			name: 'vk-image-shadow',
-			label: __('Shadow', 'vk-blocks'),
-		},			
+			
 	]
 );

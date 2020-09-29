@@ -168,7 +168,7 @@ $answer-color: #337ab7;
 	}
 }
 //アンサーオープン時
-.vk_faq-content-open{
+.vk_faq_content-accordion-open{
 	height: auto;
     overflow: hidden;
     opacity: 1;
@@ -176,7 +176,7 @@ $answer-color: #337ab7;
 	margin-bottom: 10px;
 }
 //アンサークローズ時
-.vk_faq-content-close{
+.vk_faq_content-accordion-close{
 	padding-top:0;
 	padding-bottom: 0;
     height: 0;

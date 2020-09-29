@@ -4,11 +4,11 @@ let vkFaq2A;
 
 const FAQ2ToggleLoop = (i) => {
 	if ( vkFaq2Container[i].classList.contains( 'vk_faq-accordion-open' ) ) {
-		vkFaq2Container[i].querySelector('.vk_faq_content').classList.add("vk_faq-content-open");
+		vkFaq2Container[i].querySelector('.vk_faq_content').classList.add("vk_faq_content-accordion-open");
 	}
 
 	if ( vkFaq2Container[i].classList.contains( 'vk_faq-accordion-close' ) ) {
-		vkFaq2Container[i].querySelector('.vk_faq_content').classList.add("vk_faq-content-close");
+		vkFaq2Container[i].querySelector('.vk_faq_content').classList.add("vk_faq_content-accordion-close");
 	}
 
     vkFaq2Container[i].querySelector('.vk_faq_title').addEventListener('click', () => {
@@ -18,16 +18,16 @@ const FAQ2ToggleLoop = (i) => {
 			vkFaq2Container[i].classList.remove( 'vk_faq-accordion-open' );
 			vkFaq2Container[i].classList.add( 'vk_faq-accordion-close' );
 
-			vkFaq2A.classList.remove( 'vk_faq-content-open' );
-			vkFaq2A.classList.add( 'vk_faq-content-close' );
+			vkFaq2A.classList.remove( 'vk_faq_content-accordion-open' );
+			vkFaq2A.classList.add( 'vk_faq_content-accordion-close' );
 
         } else if ( vkFaq2Container[i].classList.contains( 'vk_faq-accordion-close' ) ) {
 
 			vkFaq2Container[i].classList.remove( 'vk_faq-accordion-close' );
 			vkFaq2Container[i].classList.add( 'vk_faq-accordion-open' );
 
-			vkFaq2A.classList.remove( 'vk_faq-content-close' );
-			vkFaq2A.classList.add( 'vk_faq-content-open' );
+			vkFaq2A.classList.remove( 'vk_faq_content-accordion-close' );
+			vkFaq2A.classList.add( 'vk_faq_content-accordion-open' );
 
         }
 

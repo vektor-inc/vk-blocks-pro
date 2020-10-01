@@ -5,7 +5,8 @@
 import Body from "./Body";
 import { schema, example } from './schema';
 import { FontAwesome } from "./font-awesome-new";
-import { deprecated } from "./deprecated"
+import { deprecated } from "./deprecated";
+import BlockIcon from './icon.svg';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -14,17 +15,9 @@ const { Fragment } = wp.element;
 import { vkbBlockEditor } from "./../_helper/depModules";
 const { InspectorControls } = vkbBlockEditor;
 
-const BlockIcon = (
-	<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<path fill-rule="evenodd" clip-rule="evenodd" d="M1 1a1 1 0 00-1 1v11.281a1.91 1.91 0 01.108-.003H1.5V7.5h21v13H10.191l.466 1.5H23a1 1 0 001-1V7a1 1 0 00-1-1h-9V2a1 1 0 00-1-1H1zm9 3.75H4v-1.5h6v1.5z" fill="#000" />
-		<path d="M.872 21.992L0 19.484V21a1 1 0 00.872.992zM10.634 17.5H20v-1h-8.416l-.95 1zM12.452 14.5H20v-1h-8.287c.374.223.634.59.739 1zM20 11.5v-1H4v1h16zM10.89 14.778l-3.267.007a.11.11 0 00-.102.076l-.25.722c-.022.076.03.152.103.152h1.27c.095 0 .146.122.08.19L6.7 18.105h.007l1.042 3.397c.022.076-.03.144-.103.144h-1.02a.104.104 0 01-.102-.076L6 19.83c-.029-.106-.168-.106-.205-.007l-.426 1.223a.109.109 0 000 .069l.39 1.481c.014.046.058.084.102.084H9.15c.073 0 .125-.076.103-.145l-1.329-4.277c-.014-.038 0-.084.03-.114l3.016-3.176c.066-.069.015-.19-.08-.19z" fill="#000" />
-		<path d="M7.022 13l-1.99.008a.11.11 0 00-.102.076l-.257.721c-.03.076.03.152.103.152h.836c.074 0 .125.076.103.152l-2.37 6.717a.108.108 0 01-.206 0l-1.703-4.848a.112.112 0 01.103-.152h.859a.11.11 0 01.103.076l.616 1.748a.108.108 0 00.206 0l.954-2.72a.112.112 0 00-.103-.152H.108c-.073 0-.125.076-.103.152l3.127 8.996a.108.108 0 00.205 0l3.787-10.774c.022-.076-.029-.152-.102-.152z" fill="#D8141C" />
-	</svg>
-);
-
 registerBlockType('vk-blocks/border-box', {
 	title: __('Border Box', 'vk-blocks'),
-	icon: BlockIcon,
+	icon: <BlockIcon />,
 	category: 'vk-blocks-cat',
 	attributes: schema,
 	supports: {

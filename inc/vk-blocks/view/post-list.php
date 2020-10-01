@@ -129,7 +129,7 @@ class VkBlocksPostList {
 			'paged'          => 1,
 			// 0で全件取得
 			'posts_per_page' => intval( $attributes['numberPosts'] ),
-			'order'          => 'DESC',
+			'order'          => $attributes['order'],
 			'orderby'        => $attributes['orderby'],
 			'offset'         => $offset,
 			'post__not_in'   => $post__not_in,

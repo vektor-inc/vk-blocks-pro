@@ -91,6 +91,10 @@ export const schema = {
     type: "number",
     default: 0,
   },
+  order: {
+    type: "string",
+    default: "DESC",
+  },
   orderby: {
     type: "string",
     default: "date",

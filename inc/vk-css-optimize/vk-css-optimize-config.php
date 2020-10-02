@@ -58,6 +58,10 @@ function vk_blocks_css_tree_shaking_exclude_class( $inidata ) {
 	$exclude_classes_array = array(
 		'vk_animation-active',
 		'vk_borderBox_title',
+		'vk_faq-accordion-open',
+		'vk_faq-accordion-close',
+		'vk_faq_content-accordion-open',
+		'vk_faq_content-accordion-close',
 	);
 	$inidata['class']      = array_merge( $inidata['class'], $exclude_classes_array );
 

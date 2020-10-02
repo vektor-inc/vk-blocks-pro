@@ -309,6 +309,10 @@ function vkblocks_blocks_assets() {
 										'type'    => 'string',
 										'default' => '[]',
 									),
+									'order'           => array(
+										'type'    => 'string',
+										'default' => 'DESC',
+									),
 									'orderby'           => array(
 										'type'    => 'string',
 										'default' => 'date',

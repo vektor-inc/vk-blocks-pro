@@ -78,7 +78,7 @@ registerBlockType("vk-blocks/post-list", {
 	edit(props) {
 		const { attributes, setAttributes, name } = props;
 
-		const { numberPosts, isCheckedPostType, isCheckedTerms, offset, orderby, selfIgnore } = attributes;
+		const { numberPosts, isCheckedPostType, isCheckedTerms, offset, order, orderby, selfIgnore } = attributes;
 		attributes.name = name;
 
 		const postTypes = usePostTypes();
@@ -132,6 +132,18 @@ registerBlockType("vk-blocks/post-list", {
 								max="100"
 							/>
 						</BaseControl>
+						<BaseControl label={ __("Order", "vk-blocks") }>
+							<SelectControl
+								value={ order }
+								onChange={ (v) => setAttributes({ order: v }) }
+								options={
+									[
+										{ value: 'ASC', label: __("ASC", "vk-blocks") },
+										{ value: 'DESC', label: __("DESC", "vk-blocks") }
+									]
+								}
+							/>
+						</BaseControl>
 						<BaseControl label={ __("Order by", "vk-blocks") }>
 							<SelectControl
 								value={ orderby }
@@ -140,6 +152,7 @@ registerBlockType("vk-blocks/post-list", {
 									[
 										{ value: 'date', label: __("Published Date", "vk-blocks") },
 										{ value: 'modified', label: __("Modefied Date", "vk-blocks") },
+										{ value: 'title', label: __("Title", "vk-blocks") },
 										{ value: 'rand', label: __("Random", "vk-blocks") }
 									]
 								}

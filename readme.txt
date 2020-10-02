@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.5.1
-Stable tag: 0.46.1
+Stable tag: 0.47.0
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -62,6 +62,8 @@ e.g.
 
 == Changelog ==
 
+= 0.47.0 =
+* [ Add Function ][ Post List(Pro) ] add order by title / add order desc/asc
 
 = 0.46.1 =
 * [ BugFix ][ New FAQ ] Fix accordion system on enable Tree Shaking

@@ -16,6 +16,7 @@ const jsmin = require("gulp-jsmin");
 
 gulp.task( 'helper-js', function (done)  {
 	gulp.src('src/blocks/helper/faq2.js')
+	gulp.src('src/blocks/helper/accordion.js')
 	.pipe(jsmin())
 	.pipe(rename({
 		extname: '.min.js'
@@ -143,6 +144,7 @@ gulp.task("build-dev", gulp.series("js-dev", "sass", "helper-js", "sass_editor",
 
 // Build : Production
 gulp.task("build", gulp.series("js", "sass", "helper-js", "sass_editor","sass_bootstrap","sass_vk_components", "dist_swiper_js", "dist_swiper_css"));
+
 
 // Default Tasks
 gulp.task("default", gulp.series("watch"));

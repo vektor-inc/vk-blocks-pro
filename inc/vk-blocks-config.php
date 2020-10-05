@@ -39,7 +39,6 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 	require_once 'admin-notices.php';
 	require_once 'vk-blocks/vk-blocks-functions.php';
 
-
 	$path = dirname(dirname(__FILE__)) .'/inc/vk-blocks/App/RestAPI/BlockMeta/EntryPoint.php';
 	require_once $path;
 	//BlockMeta用のAPIルートを設定

@@ -1,11 +1,25 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -e
+
+# $#にbashに渡された引数の個数が入る。
+# -lt は < と同じ
+#下のif文は、引数の個数が1以下ならexitする。
+if [ $# -lt 1 ]; then
+	echo "usage: $0 <version>"
+	exit 1
+fi
+
+# $1には、このスクリプトに渡された第一引数がはいる。
+# tagのバージョンを変数に代入
+version=$1
 
 mv vk-blocks/ vk-blocks-free/
 cd ./vk-blocks-free/
 rm -rf src/*
 cd ../
 # 指定したファイルを除外して、Pro版をコピー&上書き
-rsync --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'src/outer/' --exclude 'src/table-of-contents/' --exclude 'bin/' --exclude 'tests/' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/_pro/' --exclude 'vk-blocks-free/' --exclude '.node-version' --exclude 'bin/' --exclude '.git/' --exclude '.gitignore' --exclude '.circleci/' --exclude 'tests/' --exclude '.phpcs.xml.dist' --exclude 'bitbucket-pipelines.yml' --exclude 'package-lock.json' --exclude 'phpunit.xml' --exclude 'phpunit.xml.dist' --exclude 'inc/plugin-update-checker/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvc ./* ./vk-blocks-free/
+rsync --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'src/outer/' --exclude 'src/table-of-contents/' --exclude 'bin/' --exclude 'tests/' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/_pro/' --exclude 'vk-blocks-free/' --exclude '.node-version' --exclude 'bin/' --exclude '.git/' --exclude '.gitignore' --exclude '.circleci/' --exclude 'tests/' --exclude '.phpcs.xml.dist' --exclude 'package-lock.json' --exclude 'phpunit.xml' --exclude 'phpunit.xml.dist' --exclude 'inc/vk-blocks-pro/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvc ./* ./vk-blocks-free/
 cd ./vk-blocks-free/
 # push先のブランチを切る
 git checkout -b add/vk-blocks-free
@@ -24,7 +38,12 @@ done
 # ブロックをビルド
 npm install
 npm run build
-# 以下はadd/vk-blocks-freeブランチにpushするための処理
+# 無料版のmasterブランチにpush
 git add .
 git commit -m"Update from vk-blocks-pro"
-git push -f origin add/vk-blocks-free
+git push -f origin master
+# 無料版のレポジトリでタグを切ってpush
+# 無料版の方でも下のGitHubActionが動いて、WordPress公式レポジトリにアップロードされる。
+# https://github.com/vektor-inc/vk-blocks/blob/master/.github/workflows/wp-plugin-deploy.yml
+git tag ${version}
+git push origin ${version}

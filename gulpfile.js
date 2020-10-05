@@ -9,12 +9,13 @@ const sass = require("gulp-sass");
 const autoprefixer = require("gulp-autoprefixer");
 const cleanCss = require("gulp-clean-css");
 const replace = require('gulp-replace');
-const rename = require('gulp-rename');
+const rename = require("gulp-rename");
 
 // js最小化
 const jsmin = require("gulp-jsmin");
 
 gulp.task( 'helper-js', function (done)  {
+	gulp.src('src/blocks/helper/faq2.js')
 	gulp.src('src/blocks/helper/accordion.js')
 	.pipe(jsmin())
 	.pipe(rename({
@@ -63,6 +64,7 @@ gulp.task("sass", function() {
 gulp.task("sass_editor", function() {
   return gulp
     .src([
+      "./editor-css/_editor_common_core.scss",
       "./editor-css/_editor_before.scss",
       "./src/**/*.scss",
       "./editor-css/_editor_after.scss"
@@ -138,10 +140,11 @@ gulp.task("watch", function() {
 });
 
 //Build : Development
-gulp.task("build-dev", gulp.series("js-dev", "sass", "sass_editor","sass_bootstrap","sass_vk_components", "helper-js", "dist_swiper_js", "dist_swiper_css"));
+gulp.task("build-dev", gulp.series("js-dev", "sass", "helper-js", "sass_editor","sass_bootstrap","sass_vk_components", "dist_swiper_js", "dist_swiper_css"));
 
 // Build : Production
-gulp.task("build", gulp.series("js", "sass", "sass_editor","sass_bootstrap","sass_vk_components", "helper-js", "dist_swiper_js", "dist_swiper_css"));
+gulp.task("build", gulp.series("js", "sass", "helper-js", "sass_editor","sass_bootstrap","sass_vk_components", "dist_swiper_js", "dist_swiper_css"));
+
 
 // Default Tasks
 gulp.task("default", gulp.series("watch"));

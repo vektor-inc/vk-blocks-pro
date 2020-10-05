@@ -11,6 +11,7 @@ const { registerBlockType } = wp.blocks;
 const {  ButtonGroup, PanelBody, Button,SelectControl } = wp.components;
 const { Fragment, useState, useEffect } = wp.element;
 const { RichText, InspectorControls, MediaUpload, ColorPalette, InnerBlocks } = vkbBlockEditor;
+
 const BlockIcon = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"

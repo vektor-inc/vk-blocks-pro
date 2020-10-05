@@ -90,18 +90,6 @@ msgstr "Font Awesome の class 名を入力してください。"
 msgid "Ex) fas fa-arrow-circle-right"
 msgstr "例) fas fa-arrow-circle-right"
 
-#: src/blocks/_pro/accordion-target/block.js:26
-msgid "Accordion Target"
-msgstr ""
-
-#: src/blocks/_pro/accordion-trigger/block.js:20
-msgid "Accordion Trigger"
-msgstr ""
-
-#: src/blocks/_pro/accordion/block.js:45
-msgid "Accordion"
-msgstr ""
-
 #: src/blocks/_pro/animation/block.js:33
 msgid "Animation"
 msgstr "アニメーション"
@@ -142,15 +130,15 @@ msgstr "上下"
 msgid "Trembling Y"
 msgstr "ぶるぶる（Y方向）"
 
-#: src/blocks/_pro/animation/block.js:63 src/blocks/balloon/block.js:229
+#: src/blocks/_pro/animation/block.js:63 src/blocks/balloon/block.js:230
 msgid "Trembling X"
 msgstr "ぶるぶる（X方向）"
 
-#: src/blocks/_pro/animation/block.js:64 src/blocks/balloon/block.js:233
+#: src/blocks/_pro/animation/block.js:64 src/blocks/balloon/block.js:234
 msgid "Pounding"
 msgstr "どきどき"
 
-#: src/blocks/_pro/animation/block.js:65 src/blocks/balloon/block.js:237
+#: src/blocks/_pro/animation/block.js:65 src/blocks/balloon/block.js:238
 msgid "Shaking"
 msgstr "ゆらゆら"
 
@@ -183,9 +171,9 @@ msgid "Short"
 msgstr "短い"
 
 #: src/blocks/_pro/animation/block.js:86 src/blocks/_pro/outer/block.js:181
-#: src/blocks/_pro/slider/block.js:120 src/blocks/balloon/block.js:182
+#: src/blocks/_pro/slider/block.js:120 src/blocks/balloon/block.js:183
 #: src/blocks/button/block.js:169 src/blocks/faq/block.js:65
-#: src/blocks/faq2/block.js:65
+#: src/blocks/faq2/block.js:57
 msgid "Normal"
 msgstr "標準"
 
@@ -208,7 +196,7 @@ msgstr "https://example.com"
 #: src/blocks/_pro/card-item/component.js:102
 #: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:90
 #: src/blocks/_pro/card-item/deprecated/index.js:1132
-#: src/blocks/balloon/block.js:258 src/blocks/flow/block.js:105
+#: src/blocks/balloon/block.js:259 src/blocks/flow/block.js:105
 #: src/blocks/pr-blocks/block.js:168 src/blocks/pr-content/component.js:157
 #: src/blocks/pr-content/deprecated/component-deprecated.js:102
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:116
@@ -305,7 +293,7 @@ msgstr "表示条件"
 msgid "Parent"
 msgstr "親ページ"
 
-#: src/blocks/_pro/grid-column-item/block.js:19
+#: src/blocks/_pro/grid-column-item/block.js:20
 msgid "Grid Column Item"
 msgstr "グリッドカラムアイテム"
 
@@ -489,7 +477,7 @@ msgstr ""
 msgid "Divider Setting"
 msgstr "区切りの設定"
 
-#: src/blocks/_pro/outer/block.js:244 src/blocks/balloon/block.js:153
+#: src/blocks/_pro/outer/block.js:244 src/blocks/balloon/block.js:154
 msgid "Type"
 msgstr "タイプ"
 
@@ -530,7 +518,7 @@ msgid "Border type"
 msgstr "枠線の種類"
 
 #: src/blocks/_pro/outer/block.js:322 src/blocks/_pro/step-item/block.js:101
-#: src/blocks/_pro/timeline-item/block.js:83 src/blocks/balloon/block.js:221
+#: src/blocks/_pro/timeline-item/block.js:83 src/blocks/balloon/block.js:222
 #: src/blocks/staff/block.js:89
 msgid "None"
 msgstr "なし"
@@ -816,84 +804,80 @@ msgstr "Warning"
 msgid "Danger"
 msgstr "Danger"
 
-#: src/blocks/balloon/block.js:130
+#: src/blocks/balloon/block.js:131
 msgid "Balloon setting"
 msgstr "フキダシ設定"
 
-#: src/blocks/balloon/block.js:132 src/blocks/heading/block.js:201
+#: src/blocks/balloon/block.js:133 src/blocks/heading/block.js:201
 msgid "Position"
 msgstr "位置"
 
-#: src/blocks/balloon/block.js:133
+#: src/blocks/balloon/block.js:134
 msgid "Please specify the layout of the balloon."
 msgstr "吹き出しの配置を指定してください。"
 
-#: src/blocks/balloon/block.js:141 src/blocks/button/block.js:189
+#: src/blocks/balloon/block.js:142 src/blocks/button/block.js:189
 #: src/blocks/pr-content/block.js:204
 #: src/components/display-items-control/index.js:94
 msgid "Left"
 msgstr "左"
 
-#: src/blocks/balloon/block.js:149 src/blocks/button/block.js:205
+#: src/blocks/balloon/block.js:150 src/blocks/button/block.js:205
 #: src/blocks/pr-content/block.js:203
 #: src/components/display-items-control/index.js:102
 msgid "Right"
 msgstr "右"
 
-#: src/blocks/balloon/block.js:154
+#: src/blocks/balloon/block.js:155
 msgid "Please select the type of balloon."
 msgstr "吹き出しのタイプを指定してください。"
 
-#: src/blocks/balloon/block.js:162
+#: src/blocks/balloon/block.js:163
 msgid "Serif"
 msgstr "セリフ"
 
-#: src/blocks/balloon/block.js:170
+#: src/blocks/balloon/block.js:171
 msgid "Thinking"
 msgstr "吹き出し"
 
-#: src/blocks/balloon/block.js:174
+#: src/blocks/balloon/block.js:175
 msgid "Image Style"
 msgstr "画像スタイル"
 
-#: src/blocks/balloon/block.js:190
+#: src/blocks/balloon/block.js:191
 msgid "Rounded"
 msgstr "角丸"
 
-#: src/blocks/balloon/block.js:198
+#: src/blocks/balloon/block.js:199
 msgid "Circle"
 msgstr "丸抜き"
 
-#: src/blocks/balloon/block.js:201
+#: src/blocks/balloon/block.js:202
 msgid "Background color of speech balloon"
 msgstr "吹き出しの背景色"
 
-#: src/blocks/balloon/block.js:207
+#: src/blocks/balloon/block.js:208
 msgid "Default Icon Setting"
 msgstr "デフォルトアイコン設定"
 
-#: src/blocks/balloon/block.js:211
+#: src/blocks/balloon/block.js:212
 msgid "You can register default icons from Settings > VK Blocks in Admin."
 msgstr ""
 "管理画面の 設定 > VK Blocks から よく使うアイコンを登録する事ができます。"
 
-#: src/blocks/balloon/block.js:213
+#: src/blocks/balloon/block.js:214
 msgid "Animation setting"
 msgstr "アニメーション設定"
 
-#: src/blocks/balloon/block.js:214
+#: src/blocks/balloon/block.js:215
 msgid "Please select the type of animation."
 msgstr "アニメーションのタイプを指定してください。"
 
-#: src/blocks/balloon/block.js:225
+#: src/blocks/balloon/block.js:226
 msgid "Trembling"
 msgstr "ぶるぶる"
 
-#: src/blocks/balloon/block.js:26
-msgid "Ballon"
-msgstr "吹き出し"
-
-#: src/blocks/balloon/block.js:263 src/blocks/flow/block.js:106
+#: src/blocks/balloon/block.js:264 src/blocks/flow/block.js:106
 #: src/blocks/pr-blocks/block.js:164 src/blocks/pr-content/component.js:164
 #: src/blocks/pr-content/deprecated/component-deprecated.js:106
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:120
@@ -901,7 +885,11 @@ msgstr "吹き出し"
 msgid "Upload image"
 msgstr "画像をアップロード"
 
-#: src/blocks/balloon/block.js:274
+#: src/blocks/balloon/block.js:27
+msgid "Ballon"
+msgstr "吹き出し"
+
+#: src/blocks/balloon/block.js:275
 msgid "Icon Name"
 msgstr "アイコンの名前"
 
@@ -1081,27 +1069,27 @@ msgstr "質問を入力してください。"
 msgid "Classic FAQ"
 msgstr "旧 FAQ"
 
-#: src/blocks/faq/block.js:70 src/blocks/faq2/block.js:70
+#: src/blocks/faq/block.js:70 src/blocks/faq2/block.js:62
 msgid "Bgfill Circle"
 msgstr "背景塗り 円形"
 
-#: src/blocks/faq/block.js:74 src/blocks/faq2/block.js:74
+#: src/blocks/faq/block.js:74 src/blocks/faq2/block.js:66
 msgid "Bgfill Square"
 msgstr "背景塗り ピン角"
 
-#: src/blocks/faq/block.js:78 src/blocks/faq2/block.js:78
+#: src/blocks/faq/block.js:78 src/blocks/faq2/block.js:70
 msgid "Bgfill Rounded"
 msgstr "背景塗り 角丸"
 
-#: src/blocks/faq/block.js:82 src/blocks/faq2/block.js:82
+#: src/blocks/faq/block.js:82 src/blocks/faq2/block.js:74
 msgid "Border Circle"
 msgstr "枠線 円形"
 
-#: src/blocks/faq/block.js:86 src/blocks/faq2/block.js:86
+#: src/blocks/faq/block.js:86 src/blocks/faq2/block.js:78
 msgid "Border Square"
 msgstr "枠線 ピン角"
 
-#: src/blocks/faq/block.js:90 src/blocks/faq2/block.js:90
+#: src/blocks/faq/block.js:90 src/blocks/faq2/block.js:82
 msgid "Border Rounded"
 msgstr "枠線 角丸"
 
@@ -1113,7 +1101,21 @@ msgstr "FAQ 回答"
 msgid "FAQ Question"
 msgstr "FAQ 質問"
 
-#: src/blocks/faq2/block.js:45
+#: src/blocks/faq2/block.js:116
+msgid ""
+"If you want to be collapsing this block, you can set it at Setting > VK "
+"Blocks"
+msgstr "このブロックを折りたたみたい場合は 設定 > VK Blocks から指定できます"
+
+#: src/blocks/faq2/block.js:118
+msgid "You can be collapsing this block at VK Blocks Pro"
+msgstr "Pro版は回答部分を開閉式にできます"
+
+#: src/blocks/faq2/block.js:124
+msgid "Accordion Setting"
+msgstr "アコーディオン設定"
+
+#: src/blocks/faq2/block.js:47
 msgid "New FAQ"
 msgstr "新 FAQ"
 

@@ -32,6 +32,7 @@ function vkblocks_get_options() {
 		'display_wp_block_template' => 'hide',
 		'display_vk_block_template' => 'display',
 	);
+	$defaults = array_merge( $defaults, apply_filters( 'vk_blocks_default_options', array() ) );
 	$options  = wp_parse_args( $options, $defaults );
 	return $options;
 }
@@ -126,20 +127,16 @@ function vkblocks_blocks_assets() {
 		wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks', plugin_dir_path( __FILE__ ) . 'build/languages' );
 	}
 
-	$theme = wp_get_theme();
-	if ( $theme->exists() ) {
-		// 親テーマのテンプレートを取得
-		// 親テーマが lightning-pro か テーマ名が Lightning Pro の時
-		if ( $theme->get( 'Template' ) == 'lightning-pro' || $theme->get( 'Name' ) == 'Lightning Pro' ) {
-			wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_check', array( 'is_pro' => true ) );
-		} else {
-			wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_check', array( 'is_pro' => false ) );
-		}
-	} // if ( $theme->exists() ) {
+	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+	if ( is_plugin_active( 'vk-blocks-pro/vk-blocks.php' ) ) {
+		wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_check', array( 'is_pro' => true ) );
+	} else {
+		wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_check', array( 'is_pro' => false ) );
+	}
 
 	if ( defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, '5.0', '>=' ) ) {
 
-		$arr = array( 'alert', 'balloon', 'button', 'faq', 'flow', 'pr-blocks', 'pr-content', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents-new', 'highlighter', 'timeline', 'timeline-item', 'step', 'step-item', 'post-list', 'list-style', 'group-style', 'child-page', 'card', 'card-item', 'grid-column', 'grid-column-item', 'border-box', 'icon-card', 'icon-card-item', 'animation', 'slider', 'slider-item', 'faq2', 'faq2-q', 'faq2-a', 'accordion', 'accordion-trigger', 'accordion-target', 'responsive-br' );// REPLACE-FLAG : このコメントは削除しないで下さい。wp-create-gurten-template.shで削除する基準として左の[//REPLACE-FLAG]を使っています。
+  	$arr = array( 'alert', 'balloon', 'button', 'faq', 'flow', 'pr-blocks', 'pr-content', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents-new', 'highlighter', 'timeline', 'timeline-item', 'step', 'step-item', 'post-list', 'list-style', 'group-style', 'child-page', 'card', 'card-item', 'grid-column', 'grid-column-item', 'border-box', 'icon-card', 'icon-card-item', 'animation', 'slider', 'slider-item', 'faq2', 'faq2-q', 'faq2-a', 'accordion', 'accordion-trigger', 'accordion-target', 'responsive-br' );// REPLACE-FLAG : このコメントは削除しないで下さい。wp-create-gurten-template.shで削除する基準として左の[//REPLACE-FLAG]を使っています。
 
 		$common_attributes = array(
 			'vkb_hidden'       => array(
@@ -310,6 +307,10 @@ function vkblocks_blocks_assets() {
 									'isCheckedTerms'    => array(
 										'type'    => 'string',
 										'default' => '[]',
+									),
+									'order'           => array(
+										'type'    => 'string',
+										'default' => 'DESC',
 									),
 									'orderby'           => array(
 										'type'    => 'string',

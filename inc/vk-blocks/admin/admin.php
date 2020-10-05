@@ -13,6 +13,7 @@ if ( ! function_exists('vk_blocks_setting') ) {
 			require_once dirname( __FILE__ ) . '/admin-css-optimize.php';
 			require_once dirname( __FILE__ ) . '/admin-block-patterns.php';
 			require_once dirname( __FILE__ ) . '/admin-balloon.php';
+			do_action( 'vk_blocks_pro_admin' );
 			?>
 		</form>
 	<?php
@@ -54,6 +55,7 @@ function vk_blocks_setting_page() {
 	$get_menu_html  = '<li><a href="#css-optimize-setting">' . __( 'CSS Optimize Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= '<li><a href="#block-template-setting">' . __( 'Block Template Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= '<li><a href="#balloon-image-setting">' . __( 'Balloon Image Setting', 'vk-blocks' ) . '</a></li>';
+	$get_menu_html .= apply_filters( 'vk_blocks_pro_menu', '' );
 
 	Vk_Admin::admin_page_frame( $get_page_title, 'vk_blocks_setting', $get_logo_html, $get_menu_html );
 }

@@ -1,5 +1,5 @@
 import { vkbBlockEditor } from "./../_helper/depModules";
-const { RichText } = vkbBlockEditor;
+const { RichText, InnerBlocks } = vkbBlockEditor;
 
 export const deprecated = [
 	{

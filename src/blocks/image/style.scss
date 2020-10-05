@@ -1,4 +1,27 @@
+@mixin photoFrame {
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    figcaption {
+        margin: 8px 0 0;
+    }
+}
+@mixin mask{
+    mask-repeat: no-repeat;
+    mask-position: 50% 50%;
+    mask-size: contain;
+}
+
+//コアの角丸
+.is-style-rounded{
+    img {
+        border-radius: .5rem;
+    }
+}
+
+//vk-image
 .is-style-vk-image {
+
     &-border {
         img {
             border: 1px solid #e5e5e5;
@@ -6,12 +29,57 @@
     }
 
     &-photoFrame {
-        background-color: #fff;
-        padding: 10px;
-        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+        @include photoFrame;
 
-        figcaption {
-            margin: 8px 0 0;
+    }
+
+    &-photoFrame-tilt-right{
+        transform: rotate(-2deg);
+        -moz-transform: rotate(-2deg);
+        -webkit-transform: rotate(-2deg);
+        @include photoFrame;
+    }
+
+    &-photoFrame-tilt-left{
+        transform: rotate(2deg);
+        -moz-transform: rotate(2deg);
+        -webkit-transform: rotate(2deg);
+        @include photoFrame;
+    }
+
+    &-shadow{
+        box-shadow: 0 5px 10px rgba(0,0,0,0.15);           
+        figcaption{
+            padding-bottom: .5em;
+        }    
+    }
+
+    &-wave01 {
+        img{
+            mask-image: url(../images/wave01.svg);
+            @include mask;
         }
     }
+
+    &-wave02{
+        img{
+            mask-image: url(../images/wave02.svg);
+            @include mask;
+
+        }
+    }
+
+    &-wave03{
+        img{
+            mask-image: url(../images/wave03.svg);
+            @include mask;
+        }
+    }
+    &-wave04{
+        img{
+            mask-image: url(../images/wave04.svg);
+            @include mask;
+        }
+    }
+
 }

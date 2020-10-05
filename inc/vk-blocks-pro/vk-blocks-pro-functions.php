@@ -27,6 +27,9 @@ function vk_blocks_pro_load_scripts() {
 	if ( has_block( 'vk-blocks/faq2' ) ) {
 		wp_enqueue_script( 'vk-blocks-faq2', VK_BLOCKS_URL . 'build/faq2.min.js', array(), VK_BLOCKS_VERSION, true );
 	}
+	if ( has_block( 'vk-blocks/accordion' ) ) {
+		wp_enqueue_script( 'vk-blocks-accordion', VK_BLOCKS_URL . 'build/accordion.min.js', array(), VK_BLOCKS_VERSION, true );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'vk_blocks_pro_load_scripts' );
 

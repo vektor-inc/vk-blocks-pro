@@ -2,15 +2,22 @@
     background-color: #fff;
     padding: 10px;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    zoom: 1;
     figcaption {
         margin: 8px 0 0;
     }
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
 }
 @mixin mask{
     mask-repeat: no-repeat;
     mask-position: 50% 50%;
     mask-size: contain;
 }
+
 
 //コアの角丸
 .is-style-rounded{
@@ -48,7 +55,8 @@
     }
 
     &-shadow{
-        box-shadow: 0 5px 10px rgba(0,0,0,0.15);           
+        box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+        overflow: hidden;         
         figcaption{
             padding-bottom: .5em;
         }    

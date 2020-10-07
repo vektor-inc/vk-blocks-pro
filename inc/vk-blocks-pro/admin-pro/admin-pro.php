@@ -14,6 +14,14 @@ function vk_blocks_pro_admin() {
 add_action( 'vk_blocks_pro_admin', 'vk_blocks_pro_admin' );
 
 /**
+ * Vk Blocks Pro Admin
+ */
+function vk_blocks_pro_template_setting() {
+	require_once dirname( __FILE__ ) . '/admin-block-patterns.php';
+}
+add_action( 'vk_blocks_pro_template_setting', 'vk_blocks_pro_template_setting' );
+
+/**
  * Vk Blocks Pro Menu
  */
 function vk_blocks_pro_menu( $pro_menu_html ) {

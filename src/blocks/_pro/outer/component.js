@@ -5,7 +5,7 @@ const { InnerBlocks } = vkbBlockEditor;
 import GenerateBgImage from "../../_helper/GenerateBgImage"
 
 export const OuterBlock = (props) => {
-	const {
+	let {
 		bgPosition,
 		outerWidth,
 		padding_left_and_right,

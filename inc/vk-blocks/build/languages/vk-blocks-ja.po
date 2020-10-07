@@ -217,6 +217,7 @@ msgstr "画像を削除"
 #: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:199
 #: src/blocks/_pro/card-item/deprecated/index.js:1246
 #: src/blocks/_pro/card/block.js:145 src/blocks/_pro/icon-card/block.js:106
+#: src/blocks/_pro/post-list/block.js:155
 msgid "Title"
 msgstr "タイトルを入力"
 
@@ -276,7 +277,7 @@ msgid "Card"
 msgstr "カード"
 
 #: src/blocks/_pro/child-page/block.js:109
-#: src/blocks/_pro/post-list/block.js:158
+#: src/blocks/_pro/post-list/block.js:171
 msgid "Ignore this post"
 msgstr "表示中の投稿をリストから除外する"
 
@@ -582,22 +583,36 @@ msgid "Number of Posts"
 msgstr "表示件数"
 
 #: src/blocks/_pro/post-list/block.js:135
-msgid "Order by"
+#, fuzzy
+#| msgid "Order by"
+msgid "Order"
 msgstr "表示順"
 
 #: src/blocks/_pro/post-list/block.js:141
+msgid "ASC"
+msgstr ""
+
+#: src/blocks/_pro/post-list/block.js:142
+msgid "DESC"
+msgstr ""
+
+#: src/blocks/_pro/post-list/block.js:147
+msgid "Order by"
+msgstr "表示順"
+
+#: src/blocks/_pro/post-list/block.js:153
 msgid "Published Date"
 msgstr "公開日"
 
-#: src/blocks/_pro/post-list/block.js:142
+#: src/blocks/_pro/post-list/block.js:154
 msgid "Modefied Date"
 msgstr "更新日"
 
-#: src/blocks/_pro/post-list/block.js:143
+#: src/blocks/_pro/post-list/block.js:156
 msgid "Random"
 msgstr "ランダム"
 
-#: src/blocks/_pro/post-list/block.js:148
+#: src/blocks/_pro/post-list/block.js:161
 msgid "offset"
 msgstr "オフセット数"
 
@@ -1151,7 +1166,7 @@ msgstr "スティッチ"
 msgid "Border Top Bottom"
 msgstr "直線 上下"
 
-#: src/blocks/group-style/block.js:123
+#: src/blocks/group-style/block.js:123 src/blocks/image/block.js:22
 msgid "Shadow"
 msgstr "シャドウ"
 
@@ -1343,6 +1358,30 @@ msgstr "蛍光マーカー"
 #: src/blocks/image/block.js:10
 msgid "Photo frame"
 msgstr "フォトフレーム"
+
+#: src/blocks/image/block.js:14
+msgid "Photo frame Tilt Right"
+msgstr "フォトフレーム傾き右"
+
+#: src/blocks/image/block.js:18
+msgid "Photo frame Tilt Left"
+msgstr "フォトフレーム傾き左"
+
+#: src/blocks/image/block.js:26
+msgid "Wave01"
+msgstr "流体シェイプ1"
+
+#: src/blocks/image/block.js:30
+msgid "Wave02"
+msgstr "流体シェイプ2"
+
+#: src/blocks/image/block.js:34
+msgid "Wave03"
+msgstr "流体シェイプ3"
+
+#: src/blocks/image/block.js:38
+msgid "Wave04"
+msgstr "流体シェイプ4"
 
 #: src/blocks/image/block.js:6
 msgid "Border"

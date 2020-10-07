@@ -172,7 +172,7 @@ msgstr "短い"
 
 #: src/blocks/_pro/animation/block.js:86 src/blocks/_pro/outer/block.js:181
 #: src/blocks/_pro/slider/block.js:120 src/blocks/balloon/block.js:183
-#: src/blocks/button/block.js:169 src/blocks/faq/block.js:65
+#: src/blocks/button/block.js:169 src/blocks/faq/block.js:67
 #: src/blocks/faq2/block.js:57
 msgid "Normal"
 msgstr "標準"
@@ -1076,35 +1076,49 @@ msgstr "文字の後"
 msgid "Input text"
 msgstr "文字を入力"
 
-#: src/blocks/faq/block.js:120
+#: src/blocks/faq/block.js:112 src/blocks/faq2/block.js:116
+msgid ""
+"If you want to be collapsing this block, you can set it at Setting > VK "
+"Blocks"
+msgstr "このブロックを折りたたみたい場合は 設定 > VK Blocks から指定できます"
+
+#: src/blocks/faq/block.js:114 src/blocks/faq2/block.js:118
+msgid "You can be collapsing this block at VK Blocks Pro"
+msgstr "Pro版は回答部分を開閉式にできます"
+
+#: src/blocks/faq/block.js:124 src/blocks/faq2/block.js:124
+msgid "Accordion Setting"
+msgstr "アコーディオン設定"
+
+#: src/blocks/faq/block.js:134
 msgid "Please enter a question."
 msgstr "質問を入力してください。"
 
-#: src/blocks/faq/block.js:46
+#: src/blocks/faq/block.js:48
 msgid "Classic FAQ"
 msgstr "旧 FAQ"
 
-#: src/blocks/faq/block.js:70 src/blocks/faq2/block.js:62
+#: src/blocks/faq/block.js:72 src/blocks/faq2/block.js:62
 msgid "Bgfill Circle"
 msgstr "背景塗り 円形"
 
-#: src/blocks/faq/block.js:74 src/blocks/faq2/block.js:66
+#: src/blocks/faq/block.js:76 src/blocks/faq2/block.js:66
 msgid "Bgfill Square"
 msgstr "背景塗り ピン角"
 
-#: src/blocks/faq/block.js:78 src/blocks/faq2/block.js:70
+#: src/blocks/faq/block.js:80 src/blocks/faq2/block.js:70
 msgid "Bgfill Rounded"
 msgstr "背景塗り 角丸"
 
-#: src/blocks/faq/block.js:82 src/blocks/faq2/block.js:74
+#: src/blocks/faq/block.js:84 src/blocks/faq2/block.js:74
 msgid "Border Circle"
 msgstr "枠線 円形"
 
-#: src/blocks/faq/block.js:86 src/blocks/faq2/block.js:78
+#: src/blocks/faq/block.js:88 src/blocks/faq2/block.js:78
 msgid "Border Square"
 msgstr "枠線 ピン角"
 
-#: src/blocks/faq/block.js:90 src/blocks/faq2/block.js:82
+#: src/blocks/faq/block.js:92 src/blocks/faq2/block.js:82
 msgid "Border Rounded"
 msgstr "枠線 角丸"
 
@@ -1115,20 +1129,6 @@ msgstr "FAQ 回答"
 #: src/blocks/faq2-q/block.js:24
 msgid "FAQ Question"
 msgstr "FAQ 質問"
-
-#: src/blocks/faq2/block.js:116
-msgid ""
-"If you want to be collapsing this block, you can set it at Setting > VK "
-"Blocks"
-msgstr "このブロックを折りたたみたい場合は 設定 > VK Blocks から指定できます"
-
-#: src/blocks/faq2/block.js:118
-msgid "You can be collapsing this block at VK Blocks Pro"
-msgstr "Pro版は回答部分を開閉式にできます"
-
-#: src/blocks/faq2/block.js:124
-msgid "Accordion Setting"
-msgstr "アコーディオン設定"
 
 #: src/blocks/faq2/block.js:47
 msgid "New FAQ"
@@ -1756,6 +1756,18 @@ msgstr "VK Blocks のCSSを最適化する（Tree Shaking）"
 #: src/translation_dummy.js:15
 msgid "Optimize VK Blocks CSS ( Tree Shaking + Preload )"
 msgstr "VK Blocks のCSSを最適化する ( Tree Shaking + Preload )"
+
+#: src/translation_dummy.js:16
+msgid "Disable accordion"
+msgstr "アコーディオン無効"
+
+#: src/translation_dummy.js:17
+msgid "Enable accordion and default open"
+msgstr "アコーディオン有効 / 初期状態で開く"
+
+#: src/translation_dummy.js:18
+msgid "Enable accordion and default close"
+msgstr "アコーディオン有効 / 初期状態で閉じる"
 
 #: src/translation_dummy.js:2
 msgid "Display Block Template Setting"

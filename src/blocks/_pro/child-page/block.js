@@ -61,7 +61,7 @@ registerBlockType("vk-blocks/child-page", {
     const { setAttributes, attributes, pages, name } = props;
     const { selectId, selfIgnore } = attributes
 		attributes.name = name
-		let options = [ { label: __( "This Page", "veu-block" ), value: -1 } ]
+		let options = [ { label: __( "This Page", "vk-blocks" ), value: -1 } ]
 		if (pages !== undefined && pages !== null ) {
 			const l = pages.length;
 			const parents = []

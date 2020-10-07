@@ -27,7 +27,7 @@ export const schema = {
 
 export const example = {
 	anchor: null,
-	space: 'height',
+	spaceType: 'height',
     unit: 'px',
     pc: 40,
     tablet: 30,

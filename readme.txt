@@ -62,6 +62,8 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ old faq ] cope with accordion
+
 = 0.48.0 =
 * [ BugFix ][ Outer ] Fix bug of border-color clear button.
 * [ Add Style ][ Core/Image ] add extra style to core/image.

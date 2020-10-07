@@ -8,7 +8,7 @@ const AdvancedSpacerControl = (props) => {
   return (
 	<SelectControl
 		label={ __('Space Type', 'vk-blocks') }
-		value={ space }
+		value={ spaceType }
 		onChange={ (value) => setAttributes({ space: value }) }
 		options={ [
 			{

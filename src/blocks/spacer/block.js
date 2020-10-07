@@ -5,6 +5,7 @@ import React from "react";
 import { schema,example } from './schema';
 import { SpacerComponent } from "./component";
 import { deprecated } from "./deprecated/deprecated";
+import AdvancedSpacerControl from "../../components/advanced-spacer-control"
 import AdvancedViewportControl from "../../components/advanced-viewport-control"
 import AdvancedUnitControl from "../../components/advanced-unit-control"
 
@@ -42,6 +43,7 @@ registerBlockType('vk-blocks/spacer', {
 			<Fragment>
 				<InspectorControls>
 					<PanelBody>
+						<AdvancedSpacerControl { ...props } />
 						<AdvancedUnitControl { ...props } />
 						<BaseControl label={ __('Height for each device.', 'vk-blocks') }>
 							<AdvancedViewportControl { ...props } initial={ { iPc:40, iTablet:30, iMobile:20 } } />

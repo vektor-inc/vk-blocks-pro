@@ -61,7 +61,11 @@ registerBlockType("vk-blocks/child-page", {
     const { setAttributes, attributes, pages, name } = props;
     const { selectId, selfIgnore } = attributes
 		attributes.name = name
-		let options = [ { label: __( "Current page", "vk-blocks" ), value: -1 } ]
+
+		// Choice of This Page.
+		let options = [ { label: __( "Current page", "vk-blocks" ), value: -1 } ];
+
+		// Make choice list of pages
 		if (pages !== undefined && pages !== null ) {
 			const l = pages.length;
 			const parents = []
@@ -81,10 +85,13 @@ registerBlockType("vk-blocks/child-page", {
 			}
 		}
 
+		// Remove choice of the page
+		/*
 		const currentPostId = select("core/editor").getCurrentPostId();
 		if(currentPostId){
 			options = options.filter(option => option.value !== currentPostId)
 		}
+		*/
 
 
     return (

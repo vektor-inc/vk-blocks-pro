@@ -22,7 +22,7 @@ export class SpacerComponent extends React.Component {
 						<div className={ 'vk_spacer-display-mobile' } style={ {height: mobile + unit} }></div>
 					</div>
 				);
-			} else if ( space === 'margin-top') {
+			} else if ( spaceType === 'margin-top') {
 				return (
 					<div id={ anchor } className={ classNames('vk_spacer', className) }>
 						<div className={ 'vk_spacer-display-pc' } style={ {marginTop: pc + unit} }></div>

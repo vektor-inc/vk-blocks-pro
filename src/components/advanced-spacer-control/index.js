@@ -15,6 +15,10 @@ const AdvancedSpacerControl = (props) => {
 				value: 'height',
 				label: __('height', 'vk-blocks'),
 			},
+			{
+				value: 'margin-top',
+				label: __('margin-top', 'vk-blocks'),
+			}
 		] }
 	/>
   );

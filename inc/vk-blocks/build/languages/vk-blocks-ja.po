@@ -276,7 +276,7 @@ msgstr "ボタンの文字"
 msgid "Card"
 msgstr "カード"
 
-#: src/blocks/_pro/child-page/block.js:109
+#: src/blocks/_pro/child-page/block.js:108
 #: src/blocks/_pro/post-list/block.js:171
 msgid "Ignore this post"
 msgstr "表示中の投稿をリストから除外する"
@@ -285,12 +285,16 @@ msgstr "表示中の投稿をリストから除外する"
 msgid "Child page list"
 msgstr "子ページリスト"
 
-#: src/blocks/_pro/child-page/block.js:95
+#: src/blocks/_pro/child-page/block.js:64
+msgid "Current page"
+msgstr "現在のページ"
+
+#: src/blocks/_pro/child-page/block.js:94
 #: src/blocks/_pro/post-list/block.js:108
 msgid "Display conditions"
 msgstr "表示条件"
 
-#: src/blocks/_pro/child-page/block.js:98
+#: src/blocks/_pro/child-page/block.js:97
 msgid "Parent"
 msgstr "親ページ"
 
@@ -583,18 +587,16 @@ msgid "Number of Posts"
 msgstr "表示件数"
 
 #: src/blocks/_pro/post-list/block.js:135
-#, fuzzy
-#| msgid "Order by"
 msgid "Order"
 msgstr "表示順"
 
 #: src/blocks/_pro/post-list/block.js:141
 msgid "ASC"
-msgstr ""
+msgstr "昇順"
 
 #: src/blocks/_pro/post-list/block.js:142
 msgid "DESC"
-msgstr ""
+msgstr "降順"
 
 #: src/blocks/_pro/post-list/block.js:147
 msgid "Order by"
@@ -1820,9 +1822,6 @@ msgstr "選択"
 
 #~ msgid "FAQ"
 #~ msgstr "質問と解答"
-
-#~ msgid "Current Page"
-#~ msgstr "現在のページ"
 
 #~ msgid "Effect Setting"
 #~ msgstr "エフェクト設定"

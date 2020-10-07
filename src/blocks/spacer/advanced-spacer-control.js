@@ -1,15 +1,14 @@
-
 const { __ } = wp.i18n;
 const { SelectControl } = wp.components;
 
 const AdvancedSpacerControl = (props) => {
   const { attributes, setAttributes } = props;
-  const { space } = attributes
+  const { spaceType } = attributes
   return (
 	<SelectControl
 		label={ __('Space Type', 'vk-blocks') }
 		value={ spaceType }
-		onChange={ (value) => setAttributes({ space: value }) }
+		onChange={ (value) => setAttributes({ spaceType: value }) }
 		options={ [
 			{
 				value: 'height',

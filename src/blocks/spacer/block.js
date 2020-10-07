@@ -5,7 +5,7 @@ import React from "react";
 import { schema,example } from './schema';
 import { SpacerComponent } from "./component";
 import { deprecated } from "./deprecated/deprecated";
-import AdvancedSpacerControl from "../../components/advanced-spacer-control"
+import AdvancedSpacerControl from "./advanced-spacer-control"
 import AdvancedViewportControl from "../../components/advanced-viewport-control"
 import AdvancedUnitControl from "../../components/advanced-unit-control"
 

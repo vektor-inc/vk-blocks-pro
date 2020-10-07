@@ -6,7 +6,7 @@ export class SpacerComponent extends React.Component {
     render() {
         const {
 			anchor,
-			space,
+			spaceType,
             unit,
             pc,
             tablet,

@@ -14,7 +14,7 @@ export class SpacerComponent extends React.Component {
         } = this.props.attributes;
         const className = this.props.className;
 
-			if ( space === 'height') {
+			if ( spaceType === 'height') {
 				return (
 					<div id={ anchor } className={ classNames('vk_spacer', className) }>
 						<div className={ 'vk_spacer-display-pc' } style={ {height: pc + unit} }></div>

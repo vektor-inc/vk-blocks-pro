@@ -1541,11 +1541,23 @@ msgstr "本文を入力してください。"
 msgid "Responsive BR "
 msgstr "画面サイズ毎の改行 "
 
-#: src/blocks/spacer/block.js:28
+#: src/blocks/spacer/advanced-spacer-control.js:15
+msgid "height"
+msgstr "height"
+
+#: src/blocks/spacer/advanced-spacer-control.js:19
+msgid "margin-top"
+msgstr "margin-top"
+
+#: src/blocks/spacer/advanced-spacer-control.js:9
+msgid "Space Type"
+msgstr "余白タイプ"
+
+#: src/blocks/spacer/block.js:29
 msgid "Responsive Spacer"
 msgstr "レスポンシブスペーサー"
 
-#: src/blocks/spacer/block.js:46
+#: src/blocks/spacer/block.js:48
 msgid "Height for each device."
 msgstr "デバイス毎の高さ"
 

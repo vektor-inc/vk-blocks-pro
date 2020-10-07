@@ -2,7 +2,11 @@ export const schema = {
     anchor: {
         type: 'string',
         default: null,
-    },
+	},
+	spaceType: {
+        type: 'string',
+        default: 'height',
+	},
     unit: {
         type: 'string',
         default: 'px',
@@ -22,7 +26,8 @@ export const schema = {
 };
 
 export const example = {
-    anchor: null,
+	anchor: null,
+	spaceType: 'height',
     unit: 'px',
     pc: 40,
     tablet: 30,

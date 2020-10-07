@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.5.1
-Stable tag: 0.47.0
+Stable tag: 0.48.0
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -61,6 +61,12 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+[ Add Function ][ old faq ] cope with accordion
+
+= 0.48.0 =
+* [ BugFix ][ Outer ] Fix bug of border-color clear button.
+* [ Add Style ][ Core/Image ] add extra style to core/image.
 
 = 0.47.0 =
 * [ Add Function ][ Post List(Pro) ] add order by title / add order desc/asc

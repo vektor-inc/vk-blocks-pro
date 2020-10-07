@@ -61,14 +61,13 @@ registerBlockType("vk-blocks/child-page", {
     const { setAttributes, attributes, pages, name } = props;
     const { selectId, selfIgnore } = attributes
 		attributes.name = name
-		// let options = [ { label: __( "This Page", "veu-block" ), value: -1 } ]
-		let options = []
-		if (pages != undefined) {
-			const l = pages.length
+		let options = [ { label: __( "Current page", "vk-blocks" ), value: -1 } ]
+		if (pages !== undefined && pages !== null ) {
+			const l = pages.length;
 			const parents = []
 			let i = 0
 			for(i=0;i<l;i++) {
-				if ( pages[i].parent != 0 ) {
+				if ( pages[i].parent !== 0 ) {
 					parents.push(pages[i].parent)
 				}
 			}
@@ -81,12 +80,12 @@ registerBlockType("vk-blocks/child-page", {
 				}
 			}
 		}
-		/*
+
 		const currentPostId = select("core/editor").getCurrentPostId();
 		if(currentPostId){
 			options = options.filter(option => option.value !== currentPostId)
 		}
-		*/
+
 
     return (
 	<Fragment>

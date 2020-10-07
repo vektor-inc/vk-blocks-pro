@@ -12,3 +12,4 @@ editor-css/editor-block-build-marge.scss
 ._.DS_Store
 .DS_Store
 vendor/
+*.override.json

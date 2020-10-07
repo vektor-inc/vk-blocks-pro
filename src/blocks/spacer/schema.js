@@ -3,7 +3,7 @@ export const schema = {
         type: 'string',
         default: null,
 	},
-	space: {
+	spaceType: {
         type: 'string',
         default: 'height',
 	},

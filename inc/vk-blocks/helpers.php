@@ -36,40 +36,6 @@ function vkblocks_sanitize_checkbox( $checked ) {
 	}
 }
 
-
-if ( ! function_exists( 'vkblocks_allow_safe_style_css' ) ) {
-
-	/**
-	 * Fix block saving for Non-Super-Admins (no unfiltered_html capability).
-	 * For Non-Super-Admins, some styles & HTML tags/attributes are removed upon saving,
-	 * this allows vkblocks styles from being saved.
-	 *
-	 * For every vkblocks, add the styles used here.
-	 * Inlined styles are the only ones filtered out. Styles inside
-	 * <style> tags are okay.
-	 *
-	 * @see The list of style rules allowed: https://core.trac.wordpress.org/browser/tags/5.2/src/wp-includes/kses.php#L2069
-	 *
-	 * @param array $styles Allowed CSS style rules.
-	 *
-	 * @return array Modified CSS style rules.
-	 */
-	function vkblocks_allow_safe_style_css( $styles ) {
-
-		// var_dump($styles);
-
-		return array_merge( $styles, array(
-			'border-radius',
-			'background-size',
-			'background-repeat',
-			'padding-top:',
-			'height',
-		) );
-	}
-	add_filter( 'safe_style_css', 'vkblocks_allow_safe_style_css' );
-}
-
-
 if ( ! function_exists( 'vkblocks_allow_wp_kses_allowed_html' ) ) {
 
 	/**
@@ -87,78 +53,25 @@ if ( ! function_exists( 'vkblocks_allow_wp_kses_allowed_html' ) ) {
 	 * @return array Modified HTML tags & attributes.
 	 */
 	function vkblocks_allow_wp_kses_allowed_html( $tags, $context ) {
-		$tags['style'] = array();
+		$tags['style'] = array(
+			'type' => true,
+		);
 
 		// Used by Separators & Icons.
 		$tags['svg'] = array(
 			'viewbox' => true,
-			'filter' => true,
-			'enablebackground' => true,
 			'xmlns' => true,
-			'class' => true,
 			'preserveaspectratio' => true,
-			'aria-hidden' => true,
-			'data-*' => true,
-			'role' => true,
-			'height' => true,
-			'width' => true,
 		);
 		$tags['path'] = array(
-			'class' => true,
 			'fill' => true,
 			'd' => true,
 			'strokewidth' => true,
 		);
-		$tags['filter'] = array(
-			'id' => true,
-		);
-		$tags['fegaussianblur'] = array(
-			'in' => true,
-			'stddeviation' => true,
-		);
-		$tags['fecomponenttransfer'] = array();
-		$tags['fefunca'] = array(
-			'type' => true,
-			'slope' => true,
-		);
-		$tags['femerge'] = array();
-		$tags['femergenode'] = array(
-			'in' => true,
-		);
-		// SVG gradients.
-		$tags['stop'] = array(
-			'offset' => true,
-			'style' => true,
-			'stop-color' => true,
-			'stop-opacity' => true,
-		);
-		$tags['linearGradient'] = array(
-			'id' => true,
-			'x1' => true,
-			'x2' => true,
-			'y1' => true,
-			'y2' => true,
-		);
-
-		_vkblocks_common_attributes( $tags, 'div' );
-		_vkblocks_common_attributes( $tags, 'h1' );
-		_vkblocks_common_attributes( $tags, 'h2' );
-		_vkblocks_common_attributes( $tags, 'h3' );
-		_vkblocks_common_attributes( $tags, 'h4' );
-		_vkblocks_common_attributes( $tags, 'h5' );
-		_vkblocks_common_attributes( $tags, 'h6' );
-		_vkblocks_common_attributes( $tags, 'svg' );
 
 		return $tags;
 	}
 
-	function _vkblocks_common_attributes( &$tags, $tag ) {
-		$tags[ $tag ]['aria-hidden'] = true; // Used by Separators & Icons
-		$tags[ $tag ]['aria-expanded'] = true; // Used by Expand block.
-		$tags[ $tag ]['aria-level'] = true; // Used by Accordion block.
-		$tags[ $tag ]['role'] = true; // Used by Accordion block.
-		$tags[ $tag ]['tabindex'] = true; // Used by Accordion block.
-	}
 	add_filter( 'wp_kses_allowed_html', 'vkblocks_allow_wp_kses_allowed_html', 10, 2 );
 }
 
@@ -191,16 +104,24 @@ if ( ! function_exists( 'vkblocks_fix_gt_style_errors' ) ) {
 
 		// Check whether there are any "&gt;" symbols inside <style> tags of
 		// vkblocks blocks.
-		if ( ! preg_match( '%wp:ugb/\w+(.*)?<style>(.*)?&gt;%s', $data['post_content'] ) ) {
+		if ( ! preg_match( '%wp:vk-blocks/\w+(.*)?<style>(.*)?&gt;%s', $data['post_content'] ) || ! preg_match( '%wp:vk-blocks/\w+(.*)?<style type="text/css">(.*)?&gt;%s', $data['post_content'] ) ) {
 			return $data;
 		}
 
 		// Go through each block's "&gt;" and replace them with ">", only do
 		// this for vkblocks blocks.
-		$data['post_content'] = preg_replace_callback( '%wp:ugb/\w+(.*)?/wp:ugb/\w+%s', function( $matches ) {
+		$data['post_content'] = preg_replace_callback( '%wp:vk-blocks/\w+(.*)?/wp:vk-blocks/\w+%s', function( $matches ) {
+
+			// Replace <style type="text/css">
+			return preg_replace_callback( '%<style type="text/css">(.*)?</style>%s', function( $matches ) {
+				return '<style type="text/css">' . preg_replace( '%&gt;%', '>', $matches[1] ) . '</style>';
+			}, $matches[0] );
+
+			// // Replace <style>
 			return preg_replace_callback( '%<style>(.*)?</style>%s', function( $matches ) {
 				return '<style>' . preg_replace( '%&gt;%', '>', $matches[1] ) . '</style>';
 			}, $matches[0] );
+
 			return $content;
 		}, $data['post_content'] );
 

@@ -138,7 +138,7 @@ const addAnimationActiveClass = (el, type, attributes) => {
 		  </div>
 	}
 		return el
-	
+
 }
 addFilter(
   "blocks.getSaveElement",

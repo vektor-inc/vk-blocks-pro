@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.5.1
-Stable tag: 0.48.0
+Stable tag: 0.49.0
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -61,6 +61,13 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+[ Add Function ][ old faq ] cope with accordion
+
+= 0.49.0 =
+* [ Add Function ][ Responsive Spacer ] add space-type (can be select margin-top)
+* [ Add Function ][ Old FAQ ] Can be accordion (Pro version only)
+* [ Bug fix ][ Child page list ] Can be select "this page" ( In case of only one page that has children, can't select that page on other page's put child page list )
 
 = 0.48.0 =
 * [ BugFix ][ Outer ] Fix bug of border-color clear button.

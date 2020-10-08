@@ -539,3 +539,34 @@ if ( function_exists( 'vkblocks_get_version' ) ) {
 	}
 	add_action( 'admin_head', 'vkblocks_set_vkbpro_version', 10, 0 );
 }
+
+
+if ( ! function_exists( 'vkblocks_allow_safe_style_css' ) ) {
+
+	/**
+	 * Fix block saving for Non-Super-Admins (no unfiltered_html capability).
+	 * For Non-Super-Admins, some styles & HTML tags/attributes are removed upon saving,
+	 * this allows vkblocks styles from being saved.
+	 *
+	 * For every vkblocks block, add the styles used here.
+	 * Inlined styles are the only ones filtered out. Styles inside
+	 * <style> tags are okay.
+	 *
+	 * @see The list of style rules allowed: https://core.trac.wordpress.org/browser/tags/5.2/src/wp-includes/kses.php#L2069
+	 *
+	 * @param array $styles Allowed CSS style rules.
+	 *
+	 * @return array Modified CSS style rules.
+	 */
+	function vkblocks_allow_safe_style_css( $styles ) {
+		return array_merge( $styles, array(
+			'background',
+			'background-position',
+			'background-size',
+			'background-repeat',
+			'padding-top:',
+			'height',
+		) );
+	}
+	add_filter( 'safe_style_css', 'vkblocks_allow_safe_style_css' );
+}

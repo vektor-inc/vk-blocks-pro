@@ -53,11 +53,18 @@ if ( ! function_exists( 'vkblocks_allow_wp_kses_allowed_html' ) ) {
 	 * @return array Modified HTML tags & attributes.
 	 */
 	function vkblocks_allow_wp_kses_allowed_html( $tags, $context ) {
+		// Used by Card, Outer Blocks.
 		$tags['style'] = array(
 			'type' => true,
 		);
 
-		// Used by Separators & Icons.
+		// Used by Table of Contents Blocks.
+		$tags['input'] = array(
+			'type' => true,
+			'id' => true,
+		);
+
+		// Used by OuterBlock
 		$tags['svg'] = array(
 			'viewbox' => true,
 			'xmlns' => true,

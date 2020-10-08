@@ -123,7 +123,7 @@ export class PRcontent extends Component {
               ) }
             />
           );
-        } 
+        }
           const ImageParse = JSON.parse(Image);
           return (
 	<MediaUpload
@@ -151,11 +151,11 @@ export class PRcontent extends Component {
               ) }
             />
           );
-        
+
       } else if (for_ === "save") {
         if (!Image) {
           return __("Select image", "vk-blocks");
-        } 
+        }
           if (Image && Image.indexOf("{") === -1) {
             return (
 	<img
@@ -165,7 +165,7 @@ export class PRcontent extends Component {
 		style={ { border: imageBorderProperty } }
               />
             );
-          } 
+          }
             const ImageParse = JSON.parse(Image);
             if (ImageParse && typeof ImageParse.sizes !== "undefined") {
               return (
@@ -176,11 +176,11 @@ export class PRcontent extends Component {
 		style={ { border: imageBorderProperty } }
                 />
               );
-            } 
+            }
               return "";
-            
-          
-        
+
+
+
       }
     };
 
@@ -210,7 +210,7 @@ export class PRcontent extends Component {
                   />
 	</React.Fragment>
               );
-            } 
+            }
               return (
 	<React.Fragment>
 		<RichText.Content
@@ -227,7 +227,7 @@ export class PRcontent extends Component {
                   />
 	</React.Fragment>
               );
-            
+
           })() }
 			{ //ボタンテキストが入力されるとボタンを表示。
             (() => {
@@ -239,7 +239,6 @@ export class PRcontent extends Component {
 			className={ aClass }
 			target={ buttonTarget ? "_blank" : null }
 			style={ aStyle }
-			rel="noopener noreferrer"
                     >
 			<Fontawesome attributes={ attributes } />
 		</a>

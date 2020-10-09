@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.5.1
-Stable tag: 0.49.0
+Stable tag: 0.49.1
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -62,7 +62,9 @@ e.g.
 
 == Changelog ==
 
-[ Add Function ][ old faq ] cope with accordion
+= 0.49.1 =
+* [ Bug fix ][ PR Content ] fix can not click button at textarea
+* [ Bug fix ][ core/image ] fix wave style do not reflected
 
 = 0.49.0 =
 * [ Add Function ][ Responsive Spacer ] add space-type (can be select margin-top)

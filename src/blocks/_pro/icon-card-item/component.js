@@ -61,7 +61,7 @@ export const PRcarditem = (props)=>{
 			/>
 		</Fragment>
 	}else if(for_ === "save"){
-		contents = <a href={ url } className="vk_icon-card_item_link" target={ urlOpenType ? "_blank" : "_self" } rel="noopener noreferrer">
+		contents = <a href={ url } className={ "vk_icon-card_item_link" } target={ urlOpenType ? "_blank" : "_self" }>
 			<div className="vk_icon-card_item_icon_outer" style={ style }>
 				{ ReactHtmlParser(faIconTag) }
 			</div>

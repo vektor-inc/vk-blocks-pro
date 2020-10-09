@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.5.1
-Stable tag: 0.49.2
+Stable tag: 0.49.4
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -61,6 +61,12 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.49.4 =
+Version change only
+
+= 0.49.3 =
+* [ Bug fix ][ core/image ] Fix again wave style do not reflected
 
 = 0.49.2 =
 * [ Bug fix ] fix edit screen white out

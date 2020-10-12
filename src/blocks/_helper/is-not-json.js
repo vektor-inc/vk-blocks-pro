@@ -18,7 +18,7 @@ export const isNotJSON = (insertImage) => {
         return Array.isArray(insertImage);
 
      //それ以外の型であればtrueを返す
-    }
-        return true;
-    
+	}
+    return true;
+
 };

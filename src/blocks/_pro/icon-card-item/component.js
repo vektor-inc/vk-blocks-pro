@@ -89,7 +89,7 @@ export const PRcarditem = (props)=>{
 			/>
 		</Fragment>
 	}else if(for_ === "save"){
-		contents = <div href={ url } className={ "vk_icon-card_item_link" } target={ urlOpenType ? "_blank" : "_self" }>
+		contents = <a href={ url } className={ "vk_icon-card_item_link" } target={ urlOpenType ? "_blank" : "_self" }>
 			<div className="vk_icon-card_item_icon_outer" style={ style }>
 				{ ReactHtmlParser(faIconTag) }
 			</div>
@@ -101,7 +101,7 @@ export const PRcarditem = (props)=>{
 				className={ `vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-${align.text}` }
 				tagName={ 'p' }
 				value={ content } />
-		</div>
+		</a>
 	}
 
 	return (

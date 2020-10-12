@@ -50,6 +50,20 @@ export const PRcarditem = (props)=>{
 				tagName={ 'h3' }
 				onChange={ (value) => props.setAttributes({ heading: value }) }
 				value={ heading }
+				allowedFormats={ [
+					'core/bold',
+					'core/code',
+					'core/image',
+					'core/italic',
+					// 'core/link',
+					'core/strikethrough',
+					// 'core/underline',
+					'core/text-color',
+					'core/superscript',
+					'core/subscript',
+					'vk-blocks/highlighter',
+					'vk-blocks/responsive-br'
+				] }
 				placeholder={ __('Input Title', 'vk-blocks') }
 			 />
 			 <RichText
@@ -57,11 +71,25 @@ export const PRcarditem = (props)=>{
 				tagName={ 'p' }
 				onChange={ (value) => setAttributes({ content: value }) }
 				value={ content }
+				allowedFormats={ [
+					'core/bold',
+					'core/code',
+					'core/image',
+					'core/italic',
+					// 'core/link',
+					'core/strikethrough',
+					// 'core/underline',
+					'core/text-color',
+					'core/superscript',
+					'core/subscript',
+					'vk-blocks/highlighter',
+					'vk-blocks/responsive-br'
+				] }
 				placeholder={ __('Input Content', 'vk-blocks') }
 			/>
 		</Fragment>
 	}else if(for_ === "save"){
-		contents = <a href={ url } className={ "vk_icon-card_item_link" } target={ urlOpenType ? "_blank" : "_self" }>
+		contents = <div href={ url } className={ "vk_icon-card_item_link" } target={ urlOpenType ? "_blank" : "_self" }>
 			<div className="vk_icon-card_item_icon_outer" style={ style }>
 				{ ReactHtmlParser(faIconTag) }
 			</div>
@@ -73,7 +101,7 @@ export const PRcarditem = (props)=>{
 				className={ `vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-${align.text}` }
 				tagName={ 'p' }
 				value={ content } />
-		</a>
+		</div>
 	}
 
 	return (

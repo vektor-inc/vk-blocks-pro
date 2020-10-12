@@ -46,6 +46,7 @@
 			border-radius:unset;
 			padding: 0;
 			color: inherit;
+			line-height: 1.5;
 			@media (max-width: 575.98px) {
 				&:first-child {
 					margin-top: 30px;
@@ -58,7 +59,7 @@
 			}
 		}
 		&_text {
-			line-height: 2em;
+			line-height: 1.8;
 			margin-bottom: 1.7em;
 		}
 		&_btn.btn {

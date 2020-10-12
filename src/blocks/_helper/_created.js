@@ -1,8 +1,5 @@
-const { __ } = wp.i18n;
-const { Fragment } = wp.element;
 const { addFilter } = wp.hooks;
-/* Filter of blocks.registerBlockType
-/*-----------------------------------*/
+
 addFilter(
 	"blocks.registerBlockType",
 	"vk-blocks/_created",
@@ -24,3 +21,14 @@ addFilter(
 		return settings;
 	}
 );
+
+export function addCreatedProps( extraProps, blockType, attributes ) {
+	const blockVersion = window.vkbproVersion;
+
+	if  (blockType.name.match(/vk-blocks/g) && blockVersion ) {
+		extraProps.children.props.attributes._created =blockVersion
+	}
+
+    return extraProps;
+}
+addFilter( 'blocks.getSaveContent.extraProps', 'vk-blocks/add-created', addCreatedProps )

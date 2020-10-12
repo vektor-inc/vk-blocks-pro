@@ -1,8 +1,14 @@
 import { ComponentDeprecated } from "./component-deprecated";
 import { ComponentNoBorderColor } from "./component-no-boder-color";
 import { ComponentV1 } from "./componentV1"
+import Save0_43_0 from "./0.43.0/index"
+import Schema0_43_0 from "./0.43.0/schema"
 
 export const deprecated = [
+	{
+        attributes: Schema0_43_0,
+        save: Save0_43_0,
+    },
 	{
         attributes: {
 			title: {

@@ -275,75 +275,78 @@ addFilter(
 // Add swiper-js script for front side.
 const addSwiperConfig = (el, type, attributes) => {
 
-	if ("vk-blocks/slider" === type.name) {
-		const { clientId, pagination, autoPlay, autoPlayDelay, loop, effect, speed }  = attributes
+	if( !attributes._created ) {
+		if ("vk-blocks/slider" === type.name) {
+			const { clientId, pagination, autoPlay, autoPlayDelay, loop, effect, speed }  = attributes
 
-		const cssTag = generateHeightCss( attributes, "save" )
+			const cssTag = generateHeightCss( attributes, "save" )
 
-		let autoPlayScripts;
-		if(autoPlay){
-			autoPlayScripts = `autoplay: {
-				delay: ${autoPlayDelay},
-				disableOnInteraction: false,
-			},`
-		}else{
-			autoPlayScripts = ''
+			let autoPlayScripts;
+			if(autoPlay){
+				autoPlayScripts = `autoplay: {
+					delay: ${autoPlayDelay},
+					disableOnInteraction: false,
+				},`
+			}else{
+				autoPlayScripts = ''
+			}
+
+			let paginationScripts;
+			if(pagination){
+				paginationScripts = `
+				// If we need pagination
+				pagination: {
+				  el: '.swiper-pagination',
+				  clickable : true,
+				},`;
+			}else{
+				paginationScripts = ''
+			}
+
+			let speedScripts;
+			if(speed){
+				speedScripts = `speed: ${speed},`
+			}else{
+				speedScripts = ''
+			}
+
+			return<div>
+				{ el }
+				<style type='text/css'>{ cssTag }</style>
+				<script>{ `
+				var swiper${replaceClientId(clientId)} = new Swiper ('.vk_slider_${clientId}', {
+
+					${speedScripts}
+
+					// Optional parameters
+					loop: ${loop},
+
+					effect: '${effect}',
+
+					${paginationScripts}
+
+					// navigation arrows
+					navigation: {
+						nextEl: '.swiper-button-next',
+						prevEl: '.swiper-button-prev',
+					},
+
+					// And if we need scrollbar
+					scrollbar: {
+					  el: '.swiper-scrollbar',
+					},
+
+					${autoPlayScripts}
+				  })`
+				  }
+				</script>
+			  </div>
 		}
-
-		let paginationScripts;
-		if(pagination){
-			paginationScripts = `
-			// If we need pagination
-			pagination: {
-			  el: '.swiper-pagination',
-			  clickable : true,
-			},`;
-		}else{
-			paginationScripts = ''
-		}
-
-		let speedScripts;
-		if(speed){
-			speedScripts = `speed: ${speed},`
-		}else{
-			speedScripts = ''
-		}
-
-		return<div>
-			{ el }
-			<style type='text/css'>{ cssTag }</style>
-			<script>{ `
-			var swiper${replaceClientId(clientId)} = new Swiper ('.vk_slider_${clientId}', {
-
-				${speedScripts}
-
-				// Optional parameters
-				loop: ${loop},
-
-				effect: '${effect}',
-
-				${paginationScripts}
-
-				// navigation arrows
-				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
-				},
-
-				// And if we need scrollbar
-				scrollbar: {
-				  el: '.swiper-scrollbar',
-				},
-
-				${autoPlayScripts}
-			  })`
-			  }
-			</script>
-		  </div>
-	}
+	} else {
 		return el
-
+	}
 }
+
 addFilter(
   "blocks.getSaveElement",
   "vk-blocks/slider",

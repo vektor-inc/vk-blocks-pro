@@ -25,7 +25,7 @@ addFilter(
 export function addCreatedProps( extraProps, blockType, attributes ) {
 	const blockVersion = window.vkbproVersion;
 
-	if  (blockType.name.match(/vk-blocks/g) && blockVersion ) {
+	if  (blockType.name.match(/vk-blocks/g) && blockVersion && extraProps.children ) {
 		extraProps.children.props.attributes._created =blockVersion
 	}
 

@@ -314,7 +314,7 @@ registerBlockType('vk-blocks/button', {
 								placeholder={ __('Input text', 'vk-blocks') }
 								allowedFormats={ [
 									'core/bold',
-									'core/code',
+									// 'core/code',
 									// 'core/image',
 									'core/italic',
 									// 'core/link',
@@ -323,7 +323,7 @@ registerBlockType('vk-blocks/button', {
 									// 'core/text-color',
 									'core/superscript',
 									'core/subscript',
-									'vk-blocks/highlighter',
+									// 'vk-blocks/highlighter',
 									'vk-blocks/responsive-br'
 								] }
 								isSelected={ true }

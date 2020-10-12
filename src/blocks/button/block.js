@@ -312,7 +312,20 @@ registerBlockType('vk-blocks/button', {
 								onChange={ (value) => setAttributes({ content: value }) }
 								value={ content }
 								placeholder={ __('Input text', 'vk-blocks') }
-								allowedFormats={ ['bold', 'italic', 'strikethrough'] }
+								allowedFormats={ [
+									'core/bold',
+									'core/code',
+									// 'core/image',
+									'core/italic',
+									// 'core/link',
+									'core/strikethrough',
+									// 'core/underline',
+									// 'core/text-color',
+									'core/superscript',
+									'core/subscript',
+									'vk-blocks/highlighter',
+									'vk-blocks/responsive-br'
+								] }
 								isSelected={ true }
 							/>
 						}

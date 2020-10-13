@@ -1,4 +1,5 @@
 const { addFilter } = wp.hooks;
+const blockVersion = window.vkbproVersion;
 
 addFilter(
 	"blocks.registerBlockType",
@@ -13,7 +14,7 @@ addFilter(
 				...{
 					_created: {
 						type: "string",
-						default: window.vkbproVersion,
+						default: blockVersion,
 					},
 				},
 			};
@@ -24,8 +25,8 @@ addFilter(
 
 const addCreatedProps = ( extraProps, blockType, attributes ) => {
 
-	if  (blockType.name.match(/vk-blocks/g) && window.vkbproVersion ) {
-		attributes._created =blockVersion
+	if  (blockType.name.match(/vk-blocks/g) && blockVersion ) {
+		attributes._created = blockVersion
 	}
 
     return extraProps;

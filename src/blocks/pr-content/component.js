@@ -4,13 +4,13 @@ import { Fontawesome } from "./component-fontawesome";
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { Button } = wp.components;
 const { Component } = wp.element;
-import { vkbBlockEditor } from "./../_helper/depModules";
+import { vkbBlockEditor, fixBrokenUnicode } from "./../_helper/depModules";
 const { MediaUpload, RichText } = vkbBlockEditor;
 
 export class PRcontent extends Component {
   render() {
     const attributes = this.props.attributes;
-    const {
+    let {
       title,
       titleColor,
       content,
@@ -123,7 +123,9 @@ export class PRcontent extends Component {
               ) }
             />
           );
-        }
+				}
+					//ユニコード文字がエスケープされている対策
+					Image = fixBrokenUnicode( Image );
           const ImageParse = JSON.parse(Image);
           return (
 	<MediaUpload
@@ -165,22 +167,24 @@ export class PRcontent extends Component {
 		style={ { border: imageBorderProperty } }
               />
             );
-          }
-            const ImageParse = JSON.parse(Image);
-            if (ImageParse && typeof ImageParse.sizes !== "undefined") {
-              return (
-	<img
-		className={ "vk_prContent_colImg_image" }
-		src={ ImageParse.sizes.full.url }
-		alt={ ImageParse.alt }
-		style={ { border: imageBorderProperty } }
-                />
-              );
-            }
-              return "";
+					}
 
+					//ユニコード文字がエスケープされている対策
+					Image = fixBrokenUnicode( Image );
 
-
+					const ImageParse = JSON.parse(Image);
+					if (ImageParse && typeof ImageParse.sizes !== "undefined") {
+						return (
+							<img
+									className={ "vk_prContent_colImg_image" }
+									src={ ImageParse.sizes.full.url }
+									alt={ ImageParse.alt }
+									style={ { border: imageBorderProperty } }
+								/>
+						);
+					}else{
+						return "";
+					}
       }
     };
 

@@ -71,27 +71,27 @@ figure{
 
         &-wave01 {
             img{
-                mask-image: url(../images/wave01.svg);
+                mask-image: var(--vk_image-mask-wave01);
                 @include mask;
             }
         }
 
         &-wave02{
             img{
-                mask-image: url(../images/wave02.svg);
+                mask-image: var(--vk_image-mask-wave02);
                 @include mask;
             }
         }
 
         &-wave03{
             img{
-                mask-image: url(../images/wave03.svg);
+                mask-image: var(--vk_image-mask-wave03);
                 @include mask;
             }
         }
         &-wave04{
             img{
-                mask-image: url(../images/wave04.svg);
+                mask-image: var(--vk_image-mask-wave04);
                 @include mask;
             }
         }
@@ -147,7 +147,7 @@ figure{
         &-wave01 figure{
             &.alignleft, &.alignright, &.aligncenter{
                 img{
-                    mask-image: --vk_image-mask-wave01;
+                    mask-image: var(--vk_image-mask-wave01);
                     @include mask;
                 }
             }
@@ -156,7 +156,7 @@ figure{
         &-wave02 figure{
             &.alignleft, &.alignright, &.aligncenter{
                 img{
-                    mask-image: --vk_image-mask-wave02;
+                    mask-image: var(--vk_image-mask-wave02);
                     @include mask;
                 }
             }
@@ -165,7 +165,7 @@ figure{
         &-wave03 figure{
             &.alignleft, &.alignright, &.aligncenter{
                 img{
-                    mask-image: --vk_image-mask-wave03;
+                    mask-image: var(--vk_image-mask-wave03);
                     @include mask;
                 }
             }
@@ -174,7 +174,7 @@ figure{
         &-wave04 figure{
             &.alignleft, &.alignright, &.aligncenter{
                 img{
-                    mask-image: --vk_image-mask-wave04;
+                    mask-image: var(--vk_image-mask-wave04);
                     @include mask;
                 }
             }

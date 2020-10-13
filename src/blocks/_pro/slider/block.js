@@ -342,9 +342,8 @@ const addSwiperConfig = (el, type, attributes) => {
 				</script>
 			  </div>
 		}
-	} else {
-		return el
 	}
+	return el
 }
 
 addFilter(

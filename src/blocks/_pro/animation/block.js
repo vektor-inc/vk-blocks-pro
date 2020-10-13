@@ -4,7 +4,7 @@
  */
 import classNames from "classnames";
 import { schema } from "./schema";
-import { deprecated } from './deprecated';
+import { deprecated } from './deprecated/';
 import {vkbBlockEditor} from "../../_helper/depModules"
 import replaceClientId from "../../_helper/replaceClientId"
 

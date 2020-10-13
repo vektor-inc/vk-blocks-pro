@@ -119,7 +119,10 @@ registerBlockType("vk-blocks/animation", {
 
 const addAnimationActiveClass = (el, type, attributes) => {
 
-	if ("vk-blocks/animation" === type.name) {
+	//0.49.8で、jSをfooterに出力するよう構造変更。
+	//0.49.8未満（_created が null）のみフィルターを使う。
+	if ("vk-blocks/animation" === type.name && !attributes._created) {
+
 		return<div>
 			<script>{ `window.addEventListener('load', (event) => {
 			let animationElm = document.querySelector('.vk_animation-${attributes.clientId}');

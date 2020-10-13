@@ -13,7 +13,7 @@ addFilter(
 				...{
 					_created: {
 						type: "string",
-						default: null,
+						default: window.vkbproVersion,
 					},
 				},
 			};
@@ -22,11 +22,10 @@ addFilter(
 	}
 );
 
-export function addCreatedProps( extraProps, blockType, attributes ) {
-	const blockVersion = window.vkbproVersion;
+const addCreatedProps = ( extraProps, blockType, attributes ) => {
 
-	if  (blockType.name.match(/vk-blocks/g) && blockVersion && extraProps.children ) {
-		extraProps.children.props.attributes._created =blockVersion
+	if  (blockType.name.match(/vk-blocks/g) && window.vkbproVersion ) {
+		attributes._created =blockVersion
 	}
 
     return extraProps;

@@ -8,6 +8,7 @@ function vkblocks_register_saved_block_version_postmeta(){
 		'show_in_rest' => true,
 		'single' => true,
 		'type' => 'string',
+		'default' => "",
 	) );
 };
 add_action( 'init', 'vkblocks_register_saved_block_version_postmeta', 10, 0 );

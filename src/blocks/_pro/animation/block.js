@@ -14,6 +14,7 @@ const { InnerBlocks, InspectorControls } = vkbBlockEditor;
 const { PanelBody, SelectControl } = wp.components;
 const { Fragment } = wp.element;
 const { addFilter } = wp.hooks;
+const { select } = wp.data;
 
 const BlockIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 576">
@@ -119,9 +120,12 @@ registerBlockType("vk-blocks/animation", {
 
 const addAnimationActiveClass = (el, type, attributes) => {
 
+	const postMeta = select( 'core/editor' ).getCurrentPost().meta;
+	console.log(postMeta._vkb_saved_block_version);
+
 	//0.49.8で、jSをfooterに出力するよう構造変更。
-	//0.49.8未満（_created が null）のみフィルターを使う。
-	if ("vk-blocks/animation" === type.name && !attributes._created) {
+	//0.49.8未満（_vkb_saved_block_version が ""）のみフィルターを使う。
+	if ("vk-blocks/animation" === type.name && !postMeta._vkb_saved_block_version) {
 
 		return<div>
 			<script>{ `window.addEventListener('load', (event) => {

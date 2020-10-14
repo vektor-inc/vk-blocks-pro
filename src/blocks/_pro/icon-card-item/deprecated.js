@@ -1,5 +1,5 @@
 const { __ } = wp.i18n; // Import __() from wp.i18n
-import { vkbBlockEditor } from "../../_helper/depModules";
+import { vkbBlockEditor, fixBrokenUnicode } from "../../_helper/depModules";
 const { RichText } = vkbBlockEditor;
 const { Fragment } = wp.element;
 import ReactHtmlParser from 'react-html-parser';
@@ -11,7 +11,7 @@ export const DepPRcarditem = (props)=>{
 
 	const {attributes,setAttributes,for_,className}=props;
 	const{color, heading, content, icon, url, urlOpenType, bgType,col_xs,col_sm,col_md,col_lg,col_xl,activeControl}=attributes
-	const align = JSON.parse(activeControl)
+	const align = JSON.parse( fixBrokenUnicode(activeControl));
 
 	let style;
 	let iconStyle;
@@ -85,7 +85,7 @@ export const DepPRcarditem2 = (props)=>{
 
 	const {attributes,setAttributes,for_,className}=props;
 	let {color, heading, content, faIcon, url, icon, urlOpenType, bgType,col_xs,col_sm,col_md,col_lg,col_xl,activeControl}=attributes
-	const align = JSON.parse(activeControl)
+	const align = JSON.parse( fixBrokenUnicode(activeControl) );
 
 	let style;
 	let iconColor;

@@ -124,9 +124,9 @@ export class PRcontent extends Component {
             />
           );
         } else {
-		//ユニコード文字がエスケープされている対策
-		Image = fixBrokenUnicode( Image );
-        const ImageParse = JSON.parse(Image);
+					//ユニコード文字がエスケープされている対策
+					Image = fixBrokenUnicode( Image );
+					const ImageParse = JSON.parse( fixBrokenUnicode(Image) );
           return (
             <MediaUpload
               onSelect={saveImage}
@@ -168,9 +168,9 @@ export class PRcontent extends Component {
               />
             );
           } else {
-		//ユニコード文字がエスケープされている対策
-			Image = fixBrokenUnicode( Image );
-            const ImageParse = JSON.parse(Image);
+						//ユニコード文字がエスケープされている対策
+						Image = fixBrokenUnicode( Image );
+            const ImageParse = JSON.parse( fixBrokenUnicode(Image) );
             if (ImageParse && typeof ImageParse.sizes !== "undefined") {
               return (
                 <img

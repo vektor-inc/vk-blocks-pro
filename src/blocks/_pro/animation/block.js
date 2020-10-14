@@ -7,7 +7,6 @@ import { schema } from "./schema";
 import { deprecated } from './deprecated/';
 import {vkbBlockEditor} from "../../_helper/depModules"
 import replaceClientId from "../../_helper/replaceClientId"
-import compareVersions from 'compare-versions';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -124,8 +123,9 @@ const addAnimationActiveClass = (el, type, attributes) => {
 	const post = select( 'core/editor' ).getCurrentPost();
 	if(post.hasOwnProperty('meta')){
 
-		//0.49.1で、jSをfooterに出力するよう構造変更。
-		if ( "vk-blocks/animation" === type.name && compareVersions(window.vkbproVersion, '0.49.1') <= 0 && !post.meta._vkb_saved_block_version ) {
+		//0.49.8で、jSをfooterに出力するよう構造変更。
+		//0.49.8未満（_vkb_saved_block_version が ""）のみフィルターを使う。
+		if ("vk-blocks/animation" === type.name && !post.meta._vkb_saved_block_version) {
 
 			return<div>
 				<script>{ `window.addEventListener('load', (event) => {

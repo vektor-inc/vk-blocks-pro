@@ -116,16 +116,16 @@ registerBlockType("vk-blocks/animation", {
     deprecated,
 });
 
-
-
 const addAnimationActiveClass = (el, type, attributes) => {
 
 	const post = select( 'core/editor' ).getCurrentPost();
+
 	if(post.hasOwnProperty('meta')){
+		console.log(post.meta._vkb_saved_block_version);
 
 		//0.49.8で、jSをfooterに出力するよう構造変更。
 		//0.49.8未満（_vkb_saved_block_version が ""）のみフィルターを使う。
-		if ("vk-blocks/animation" === type.name && !post.meta._vkb_saved_block_version) {
+		if ("vk-blocks/animation" === type.name && "0.49.8" === post.meta._vkb_saved_block_version ) {
 
 			return<div>
 				<script>{ `window.addEventListener('load', (event) => {

@@ -28,6 +28,10 @@ function vk_blocks_pro_load_scripts() {
 	if ( has_block( 'vk-blocks/faq2' ) || has_block( 'vk-blocks/faq' ) ) {
 		wp_enqueue_script( 'vk-blocks-faq2', VK_BLOCKS_URL . 'build/faq2.min.js', array(), VK_BLOCKS_VERSION, true );
 	}
+	if ( has_block( 'vk-blocks/animation' ) ) {
+		wp_enqueue_script( 'vk-blocks-animation', VK_BLOCKS_URL . 'build/vk-animation.min.js', array(), VK_BLOCKS_VERSION, true );
+	}
+
 }
 add_action( 'wp_enqueue_scripts', 'vk_blocks_pro_load_scripts' );
 

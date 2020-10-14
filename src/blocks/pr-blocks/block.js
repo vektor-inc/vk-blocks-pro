@@ -8,6 +8,7 @@ import { ComponentBlock } from "./component-block";
 import { isNotJSON } from "../_helper/is-not-json";
 import { FontAwesome } from "../_helper/font-awesome-new"
 import { iconName, iconUser, title, baseColor, url } from "./../_helper/example-data"
+import { fixBrokenUnicode } from "./../_helper/depModules";
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
@@ -163,7 +164,7 @@ registerBlockType('vk-blocks/pr-blocks', {
 					<img className={ 'icon-image' } src={ insertImage }
 						alt={ __('Upload image', 'vk-blocks') } />
 			}
-			const IconImageParse = JSON.parse(insertImage);
+			const IconImageParse = JSON.parse( fixBrokenUnicode(insertImage) );
 			return !insertImage
 				? __('Select image', 'vk-blocks')
 				:

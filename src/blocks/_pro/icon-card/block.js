@@ -9,6 +9,7 @@ import { ColumnLayout } from "../../../components/column-layout";
 import { AlignControl } from "../../../components/align-control";
 import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
 import removeProperty from "../../_helper/removeProperty"
+import { fixBrokenUnicode } from "../../_helper/depModules";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -91,7 +92,7 @@ registerBlockType("vk-blocks/icon-card", {
       }
 		}
 
-		const align = JSON.parse(attributes.activeControl)
+		const align = JSON.parse( fixBrokenUnicode(attributes.activeControl) );
 
     return (
 	<Fragment>

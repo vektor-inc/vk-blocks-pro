@@ -1,7 +1,7 @@
 import { isNotJSON } from "../_helper/is-not-json";
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { Component } = wp.element;
-import { vkbBlockEditor } from "./../_helper/depModules";
+import { vkbBlockEditor, fixBrokenUnicode } from "./../_helper/depModules";
 const { RichText } = vkbBlockEditor;
 import ReactHtmlParser from 'react-html-parser';
 
@@ -56,11 +56,11 @@ export class ComponentBlock extends Component {
             if (isNotJSON(insertImage)) {
                 return <img src={ insertImage }
 	alt='' />
-            } 
-                const IconImageParse = JSON.parse(insertImage);
+            }
+                const IconImageParse = JSON.parse( fixBrokenUnicode(insertImage) );
                 return <img src={ IconImageParse.sizes.full.url }
 	alt={ IconImageParse.alt } />
-            
+
         };
 
         const renderItem_image = (insertImage) => {
@@ -71,14 +71,14 @@ export class ComponentBlock extends Component {
                     backgroundRepeat: 'no-repeat 50% center',
                     backgroundSize: 'cover'
                 }
-            } 
-                const bgImageParse = JSON.parse(bgImage);
+            }
+                const bgImageParse = JSON.parse( fixBrokenUnicode(bgImage) );
                 return {
                     backgroundImage: `url(${bgImageParse.sizes.full.url})`,
                     backgroundRepeat: 'no-repeat 50% center',
                     backgroundSize: 'cover'
                 }
-            
+
         };
 
         const drawElement = (() => {
@@ -89,7 +89,7 @@ export class ComponentBlock extends Component {
 	{ renderSaveAltImage(insertImage[blockNumArrIndex]) }
                 </div>
 
-            } 
+            }
 
                 if (!color[blockNumArrIndex]) {
                     color[blockNumArrIndex] = '#0693e3';
@@ -125,15 +125,15 @@ export class ComponentBlock extends Component {
                     >
 	{ ReactHtmlParser(faIconTag) }
                     </div>
-                } 
+                }
                     return <div
 	className="vk_prBlocks_item_icon_outer"
 	style={ { backgroundColor: 'transparent', border: '1px solid ' + color[blockNumArrIndex] } }
                     		>
 	{ ReactHtmlParser(faIconTag) }
                     </div>
-                
-            
+
+
         })();
 
 
@@ -217,7 +217,7 @@ export class ComponentBlock extends Component {
 		</a>
 	</div>
             );
-        } 
+        }
             return (
 	<div className="vk_prBlocks_item col-sm-4">
 		{ drawElement }
@@ -225,7 +225,7 @@ export class ComponentBlock extends Component {
 		{ richTextPSave }
 	</div>
             );
-        
+
 
 
     }

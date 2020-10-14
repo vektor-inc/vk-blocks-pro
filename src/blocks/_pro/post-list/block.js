@@ -6,7 +6,7 @@ const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { RangeControl, PanelBody, BaseControl, SelectControl, CheckboxControl, TextControl } = wp.components;
 const { Fragment } = wp.element;
-import { vkbBlockEditor } from "../../_helper/depModules";
+import { vkbBlockEditor, fixBrokenUnicode } from "../../_helper/depModules";
 import { depServerSideRender } from "../../_helper/depModules";
 const { InspectorControls } = vkbBlockEditor;
 const ServerSideRender = depServerSideRender();
@@ -112,7 +112,7 @@ registerBlockType("vk-blocks/post-list", {
 							<AdvancedCheckboxControl
 								schema={ "isCheckedPostType" }
 								rawData={ postTypesProps }
-								checkedData={ JSON.parse(isCheckedPostType) }
+								checkedData={ JSON.parse( fixBrokenUnicode( isCheckedPostType) ) }
 								{ ...props }
 							/>
 						</BaseControl>
@@ -120,7 +120,7 @@ registerBlockType("vk-blocks/post-list", {
 							<AdvancedCheckboxControl
 								schema={ "isCheckedTerms" }
 								rawData={ taxonomiesProps }
-								checkedData={ JSON.parse(isCheckedTerms) }
+								checkedData={ JSON.parse( fixBrokenUnicode(isCheckedTerms) ) }
 								{ ...props }
 							/>
 						</BaseControl>

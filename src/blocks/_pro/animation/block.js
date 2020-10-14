@@ -120,33 +120,34 @@ registerBlockType("vk-blocks/animation", {
 
 const addAnimationActiveClass = (el, type, attributes) => {
 
-	const postMeta = select( 'core/editor' ).getCurrentPost().meta;
-	console.log(postMeta._vkb_saved_block_version);
+	const postMeta = select( 'core/editor' ).getCurrentPost();
 
-	//0.49.8で、jSをfooterに出力するよう構造変更。
-	//0.49.8未満（_vkb_saved_block_version が ""）のみフィルターを使う。
-	if ("vk-blocks/animation" === type.name && !postMeta._vkb_saved_block_version) {
+	if(postMeta.hasOwnProperty('meta')){
+		//0.49.8で、jSをfooterに出力するよう構造変更。
+		//0.49.8未満（_vkb_saved_block_version が ""）のみフィルターを使う。
+		if ("vk-blocks/animation" === type.name && !postMeta._vkb_saved_block_version) {
 
-		return<div>
-			<script>{ `window.addEventListener('load', (event) => {
-			let animationElm = document.querySelector('.vk_animation-${attributes.clientId}');
-			if(animationElm){
-				const observer = new IntersectionObserver((entries) => {
-					if(entries[0].isIntersecting){
-						animationElm.classList.add('vk_animation-active');
-					}else{
-						animationElm.classList.remove('vk_animation-active');
-					}
-				});
-				observer.observe(animationElm);
-			}
-		  }, false);` }</script>
-			{ el }
-		  </div>
+			return<div>
+				<script>{ `window.addEventListener('load', (event) => {
+				let animationElm = document.querySelector('.vk_animation-${attributes.clientId}');
+				if(animationElm){
+					const observer = new IntersectionObserver((entries) => {
+						if(entries[0].isIntersecting){
+							animationElm.classList.add('vk_animation-active');
+						}else{
+							animationElm.classList.remove('vk_animation-active');
+						}
+					});
+					observer.observe(animationElm);
+				}
+			}, false);` }</script>
+				{ el }
+			</div>
+		}
 	}
-		return el
-
+	return el
 }
+
 addFilter(
   "blocks.getSaveElement",
   "vk-blocks/animation",

@@ -125,7 +125,7 @@ const addAnimationActiveClass = (el, type, attributes) => {
 	if(post.hasOwnProperty('meta')){
 
 		//0.49.1で、jSをfooterに出力するよう構造変更。
-		if ( "vk-blocks/animation" === type.name && compareVersions(window.vkbproVersion, '0.49.1') <= 0 ) {
+		if ( "vk-blocks/animation" === type.name && compareVersions(window.vkbproVersion, '0.49.1') <= 0 && !post.meta._vkb_saved_block_version ) {
 
 			return<div>
 				<script>{ `window.addEventListener('load', (event) => {

@@ -124,8 +124,6 @@ export class PRcontent extends Component {
             />
           );
 				}
-					//ユニコード文字がエスケープされている対策
-					Image = fixBrokenUnicode( Image );
           const ImageParse = JSON.parse( fixBrokenUnicode(Image) );
           return (
 	<MediaUpload
@@ -168,9 +166,6 @@ export class PRcontent extends Component {
               />
             );
 					}
-
-					//ユニコード文字がエスケープされている対策
-					Image = fixBrokenUnicode( Image );
 					const ImageParse = JSON.parse( fixBrokenUnicode(Image) );
 					if (ImageParse && typeof ImageParse.sizes !== "undefined") {
 						return (

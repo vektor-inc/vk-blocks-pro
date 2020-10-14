@@ -277,12 +277,12 @@ addFilter(
 
 // Add swiper-js script for front side.
 const addSwiperConfig = (el, type, attributes) => {
-	const postMeta = select( 'core/editor' ).getCurrentPost();
+	const post = select( 'core/editor' ).getCurrentPost();
 
-	if(postMeta.hasOwnProperty('meta')){
+	if(post.hasOwnProperty('meta')){
 		//0.49.8で、jSをfooterに出力するよう構造変更。
 		//0.49.8未満（_vkb_saved_block_version が ""）のみフィルターを使う。
-		if ("vk-blocks/slider" === type.name && !postMeta._vkb_saved_block_version) {
+		if ("vk-blocks/slider" === type.name && !post.meta._vkb_saved_block_version) {
 			const { clientId, pagination, autoPlay, autoPlayDelay, loop, effect, speed }  = attributes
 			const cssTag = generateHeightCss( attributes, "save" )
 

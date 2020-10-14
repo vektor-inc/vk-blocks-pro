@@ -1,5 +1,4 @@
 //Bundle JS
-import "./_helper/_created"
 import "./hidden-extension/";
 import "../translation_dummy.js";
 import "./heading-style/block.js";

@@ -59,41 +59,15 @@ registerBlockType("vk-blocks/slider", {
 	edit(props) {
 		const { attributes, setAttributes, className, clientId } = props;
 		const { autoPlay, autoPlayDelay, pagination, width, loop, effect, speed } = attributes;
-		const { getBlocksByClientId } = select("core/block-editor");
 		const { updateBlockAttributes } = dispatch("core/block-editor");
-
-		const thisBlock = getBlocksByClientId(clientId);
-
-		let beforeLength;
-		let afterLength;
-
 		const customClientId = replaceClientId(clientId);
 
 		useEffect(() => {
-			updateBlockAttributes(clientId, {
+			updateBlockAttributes( clientId, {
 				clientId:customClientId,
 			});
 		}, [])
 
-		if (
-			thisBlock !== undefined &&
-			thisBlock[0] !== null &&
-			thisBlock[0].innerBlocks !== undefined
-		) {
-			const innerBlocks = thisBlock[0].innerBlocks;
-			beforeLength = innerBlocks.length;
-
-			if (beforeLength !== undefined) {
-				if (beforeLength !== afterLength) {
-					for (let i = 0; i < innerBlocks.length; i++) {
-						if (innerBlocks[i] !== undefined) {
-							updateBlockAttributes(innerBlocks[i].clientId, attributes);
-						}
-					}
-				}
-				afterLength = beforeLength;
-			}
-		}
 		return (
 			<Fragment>
 				<BlockControls>
@@ -277,7 +251,7 @@ addFilter(
 
 /**
  * 	Swiperの設定をフロント側に出力するフィルター。
- *  0.49.8で、jSをfooterに出力するよう構造変更。
+ *  0.49.8で、jSをfooterに出力するよう構造変更。CSSは継続して出力。
  *
  * @param {*} el
  * @param {*} type
@@ -352,6 +326,11 @@ const addSwiperConfig = (el, type, attributes) => {
 				  }
 				</script>
 			  </div>
+
+		//0.49.8以上であれば、CSSを出力。
+		} else if ( "vk-blocks/slider" === type.name && post.meta._vkb_saved_block_version ) {
+			const cssTag = generateHeightCss( attributes, "save" )
+			return <div>{ el }<style type='text/css'>{ cssTag }</style></div>;
 		}
 	}
 	return el

@@ -1,29 +1,5 @@
 window.addEventListener('load', ( event ) => {
 
-	function generateHeightCss ( attributes ) {
-
-		const { clientId, mobile, tablet, pc, unit }  = attributes
-
-		return `@media (max-width: 576px) {
-			.vk_slider_${clientId},
-			.vk_slider_${clientId} .vk_slider_item{
-				height:${mobile}${unit}!important;
-			}
-		}
-		@media (min-width: 577px) and (max-width: 768px) {
-			.vk_slider_${clientId},
-			.vk_slider_${clientId} .vk_slider_item{
-				height:${tablet}${unit}!important;
-			}
-		}
-		@media (min-width: 769px) {
-			.vk_slider_${clientId},
-			.vk_slider_${clientId} .vk_slider_item{
-				height:${pc}${unit}!important;
-			}
-		}`
-	}
-
 	// //data-vkb-slider属性のNodeを取得
 	let sliderNodeList = document.querySelectorAll('[data-vkb-slider]');
 	// 配列に変換。
@@ -33,7 +9,6 @@ window.addEventListener('load', ( event ) => {
 		for(let index in sliderNodeList) {
 			let sliderNode = sliderNodeList[index];
 			let attributes = JSON.parse(sliderNode.getAttribute('data-vkb-slider'))
-			console.log(attributes);
 
 			let autoPlayScripts;
 			if(attributes.autoPlay){

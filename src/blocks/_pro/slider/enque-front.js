@@ -10,59 +10,43 @@ window.addEventListener('load', ( event ) => {
 			let sliderNode = sliderNodeList[index];
 			let attributes = JSON.parse(sliderNode.getAttribute('data-vkb-slider'))
 
-			let autoPlayScripts;
-			if(attributes.autoPlay){
-				autoPlayScripts = `autoplay: {
-					delay: ${attributes.autoPlayDelay},
-					disableOnInteraction: false,
-				},`
-			}else{
-				autoPlayScripts = ''
+			// 変数名にindexを使う
+			eval(`var swiper${index} = new Swiper ('.vk_slider_${attributes.clientId}', {
+					// Optional parameters
+
+					speed: ${attributes.speed},
+
+					loop: ${attributes.loop},
+
+					effect: '${attributes.effect}',
+
+					// navigation arrows
+					navigation: {
+						nextEl: '.swiper-button-next',
+						prevEl: '.swiper-button-prev',
+					},
+
+					// And if we need scrollbar
+					scrollbar: {
+					  el: '.swiper-scrollbar',
+					},
+			});`);
+
+			if( attributes.autoPlay ){
+				eval(`swiper${index}.autoplay.start();`);
+				eval(`swiper${index}.autoplay.delay = ${attributes.autoPlayDelay};`);
+				eval(`swiper${index}.autoplay.disableOnInteraction = false`);
 			}
 
-			let paginationScripts;
-			if(attributes.pagination){
-				paginationScripts = `
-				// If we need pagination
-				pagination: {
-				  el: '.swiper-pagination',
-				  clickable : true,
-				},`;
-			}else{
-				paginationScripts = ''
+			if( attributes.pagination ){
+				eval(`swiper${index}.pagination.init();`);
+				// let pageNationElement = document.querySelector('.swiper-pagination');
+				// console.log(pageNationElement)
+				eval(`swiper${index}.pagination.el = '.swiper-pagination';`);
+				// eval(`swiper${index}.pagination.el = ${pageNationElement};`);
+				eval(`swiper${index}.pagination.clickable = true;`);
+				eval(`swiper${index}.pagination.render();`);
 			}
-
-			let speedScripts;
-			if(attributes.speed){
-				speedScripts = `speed: ${attributes.speed},`
-			}else{
-				speedScripts = ''
-			}
-
-			new Swiper ('.vk_slider_' + attributes.clientId, {
-
-				speedScripts,
-
-				// Optional parameters
-				loop: attributes.loop,
-
-				effect: attributes.effect,
-
-				paginationScripts,
-
-				// navigation arrows
-				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
-				},
-
-				// And if we need scrollbar
-				scrollbar: {
-				  el: '.swiper-scrollbar',
-				},
-
-				autoPlayScripts,
-			})
 		}
 	}
 

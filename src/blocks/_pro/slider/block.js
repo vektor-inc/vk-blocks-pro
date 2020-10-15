@@ -275,12 +275,18 @@ addFilter(
 	vkbwithClientIdClassName
 );
 
-// Add swiper-js script for front side.
+/**
+ * 	Swiperの設定をフロント側に出力するフィルター。
+ *  0.49.8で、jSをfooterに出力するよう構造変更。
+ *
+ * @param {*} el
+ * @param {*} type
+ * @param {*} attributes
+ */
 const addSwiperConfig = (el, type, attributes) => {
 	const post = select( 'core/editor' ).getCurrentPost();
 
 	if(post.hasOwnProperty('meta')){
-		//0.49.8で、jSをfooterに出力するよう構造変更。
 		//0.49.8未満（_vkb_saved_block_version が ""）のみフィルターを使う。
 		if ("vk-blocks/slider" === type.name && !post.meta._vkb_saved_block_version) {
 			const { clientId, pagination, autoPlay, autoPlayDelay, loop, effect, speed }  = attributes

@@ -25,6 +25,10 @@ gulp.task( 'helper-js', function (done)  {
 	.pipe(jsmin())
 	.pipe(rename('vk-animation.min.js'))
 	.pipe(gulp.dest('./inc/vk-blocks/build/'));
+	gulp.src('src/blocks/_pro/slider/enque-front.js')
+	.pipe(jsmin())
+	.pipe(rename('vk-slider.min.js'))
+	.pipe(gulp.dest('./inc/vk-blocks/build/'));
 	done();
 });
 

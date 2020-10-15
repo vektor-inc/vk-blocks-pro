@@ -13,6 +13,10 @@ window.addEventListener('load', ( event ) => {
 			// 変数名にindexを使う
 			eval(`var swiper${index} = new Swiper ('.vk_slider_${attributes.clientId}', {
 					// Optional parameters
+					pagination: {
+						el: '.swiper-pagination',
+						clickable : true,
+					},
 
 					speed: ${attributes.speed},
 
@@ -32,20 +36,16 @@ window.addEventListener('load', ( event ) => {
 					},
 			});`);
 
+			// 自動再生設定
 			if( attributes.autoPlay ){
 				eval(`swiper${index}.autoplay.start();`);
 				eval(`swiper${index}.autoplay.delay = ${attributes.autoPlayDelay};`);
 				eval(`swiper${index}.autoplay.disableOnInteraction = false`);
 			}
 
-			if( attributes.pagination ){
-				eval(`swiper${index}.pagination.init();`);
-				// let pageNationElement = document.querySelector('.swiper-pagination');
-				// console.log(pageNationElement)
-				eval(`swiper${index}.pagination.el = '.swiper-pagination';`);
-				// eval(`swiper${index}.pagination.el = ${pageNationElement};`);
-				eval(`swiper${index}.pagination.clickable = true;`);
-				eval(`swiper${index}.pagination.render();`);
+			// ページネーションがOFFの時非表示
+			if( !attributes.pagination ){
+				eval(`swiper${index}.pagination.destroy();`);
 			}
 		}
 	}

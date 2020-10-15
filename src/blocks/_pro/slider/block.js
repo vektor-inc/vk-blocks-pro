@@ -260,9 +260,9 @@ addFilter(
 const addSwiperConfig = (el, type, attributes) => {
 	const post = select( 'core/editor' ).getCurrentPost();
 
-	if(post.hasOwnProperty('meta')){
-		//0.49.8未満（_vkb_saved_block_version が ""）のみフィルターを使う。
-		if ("vk-blocks/slider" === type.name && !post.meta._vkb_saved_block_version) {
+	if( "vk-blocks/slider" === type.name ){
+		//0.49.8未満（_vkb_saved_block_version が ""）のみJSタグ挿入
+		if( post.hasOwnProperty('meta') && !post.meta._vkb_saved_block_version){
 			const { clientId, pagination, autoPlay, autoPlayDelay, loop, effect, speed }  = attributes
 			const cssTag = generateHeightCss( attributes, "save" )
 
@@ -281,8 +281,8 @@ const addSwiperConfig = (el, type, attributes) => {
 				paginationScripts = `
 				// If we need pagination
 				pagination: {
-				  el: '.swiper-pagination',
-				  clickable : true,
+					el: '.swiper-pagination',
+					clickable : true,
 				},`;
 			}else{
 				paginationScripts = ''
@@ -318,24 +318,22 @@ const addSwiperConfig = (el, type, attributes) => {
 
 					// And if we need scrollbar
 					scrollbar: {
-					  el: '.swiper-scrollbar',
+						el: '.swiper-scrollbar',
 					},
 
 					${autoPlayScripts}
-				  })`
-				  }
+					})`
+					}
 				</script>
-			  </div>
-
-		//0.49.8以上であれば、CSSを出力。
-		} else if ( "vk-blocks/slider" === type.name && post.meta._vkb_saved_block_version ) {
+				</div>
+		} else {
 			const cssTag = generateHeightCss( attributes, "save" )
 			return <div>{ el }<style type='text/css'>{ cssTag }</style></div>;
 		}
+	} else {
+		return el
 	}
-	return el
 }
-
 addFilter(
   "blocks.getSaveElement",
   "vk-blocks/slider",

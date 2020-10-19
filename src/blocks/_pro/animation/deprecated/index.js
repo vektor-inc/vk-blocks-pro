@@ -1,9 +1,16 @@
 import classNames from "classnames";
-import {vkbBlockEditor} from "../../_helper/depModules";
+import {vkbBlockEditor} from "../../../_helper/depModules";
 import { Fragment } from "react";
+import Schema0_49_1 from "./0.49.1/schema"
+import Save0_49_1 from "./0.49.1/index"
+
 const { InnerBlocks } = vkbBlockEditor;
 
 export const deprecated = [
+	{
+		attributes: Schema0_49_1,
+		save: Save0_49_1
+	},
 	{
 		attributes:{
 			effect: {

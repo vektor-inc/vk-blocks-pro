@@ -16,6 +16,7 @@ import "./flow/block.js";
 import "./pr-blocks/block.js";
 import "./pr-content/block.js";
 import "./image/block.js";
+import "./nowrap/block.js";
 
 /*WP5.3 以下では読み込まれない*/
 import "./responsive-br/";

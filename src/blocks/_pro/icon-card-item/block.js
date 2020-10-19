@@ -92,6 +92,6 @@ registerBlockType("vk-blocks/icon-card-item", {
     return <PRcarditem { ...props } for_={ "save" } />;
   },
 
-  deprecated
+//   deprecated
 
 });

@@ -4,13 +4,13 @@ import { Fontawesome } from "./component-fontawesome";
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { Button } = wp.components;
 const { Component } = wp.element;
-import { vkbBlockEditor } from "./../_helper/depModules";
+import { vkbBlockEditor, fixBrokenUnicode } from "./../_helper/depModules";
 const { MediaUpload, RichText } = vkbBlockEditor;
 
 export class PRcontent extends Component {
   render() {
     const attributes = this.props.attributes;
-    const {
+    let {
       title,
       titleColor,
       content,
@@ -123,8 +123,8 @@ export class PRcontent extends Component {
               ) }
             />
           );
-        }
-          const ImageParse = JSON.parse(Image);
+				}
+          const ImageParse = JSON.parse( fixBrokenUnicode(Image) );
           return (
 	<MediaUpload
 		onSelect={ saveImage }
@@ -165,22 +165,20 @@ export class PRcontent extends Component {
 		style={ { border: imageBorderProperty } }
               />
             );
-          }
-            const ImageParse = JSON.parse(Image);
-            if (ImageParse && typeof ImageParse.sizes !== "undefined") {
-              return (
-	<img
-		className={ "vk_prContent_colImg_image" }
-		src={ ImageParse.sizes.full.url }
-		alt={ ImageParse.alt }
-		style={ { border: imageBorderProperty } }
-                />
-              );
-            }
-              return "";
-
-
-
+					}
+					const ImageParse = JSON.parse( fixBrokenUnicode(Image) );
+					if (ImageParse && typeof ImageParse.sizes !== "undefined") {
+						return (
+							<img
+									className={ "vk_prContent_colImg_image" }
+									src={ ImageParse.sizes.full.url }
+									alt={ ImageParse.alt }
+									style={ { border: imageBorderProperty } }
+								/>
+						);
+					}else{
+						return "";
+					}
       }
     };
 

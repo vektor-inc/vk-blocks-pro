@@ -23,7 +23,9 @@
 
 .vk_balloon_icon_image {
 	vertical-align: bottom;
-	max-width: 64px;
+	width: 64px;
+	height: 64px;
+    object-fit: cover;
 }
 
 .vk_balloon-image-rounded {

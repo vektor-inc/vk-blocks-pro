@@ -2,7 +2,7 @@ import classNames from "classnames";
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { Button } = wp.components;
 const { Component,Fragment } = wp.element;
-import { vkbBlockEditor } from "./../../_helper/depModules";
+import { vkbBlockEditor, fixBrokenUnicode } from "./../../_helper/depModules";
 const { MediaUpload, RichText } = vkbBlockEditor;
 
 export class Fontawesome extends Component {
@@ -38,7 +38,7 @@ export class Fontawesome extends Component {
 export class ComponentV1 extends Component {
   render() {
     const attributes = this.props.attributes;
-    const {
+    let {
       title,
       titleColor,
       content,
@@ -151,8 +151,8 @@ export class ComponentV1 extends Component {
               ) }
             />
           );
-        } 
-          const ImageParse = JSON.parse(Image);
+				}
+          const ImageParse = JSON.parse( fixBrokenUnicode(Image) );
           return (
 	<MediaUpload
 		onSelect={ saveImage }
@@ -179,11 +179,11 @@ export class ComponentV1 extends Component {
               ) }
             />
           );
-        
+
       } else if (for_ === "save") {
         if (!Image) {
           return __("Select image", "vk-blocks");
-        } 
+        }
           if (Image && Image.indexOf("{") === -1) {
             return (
 	<img
@@ -193,8 +193,8 @@ export class ComponentV1 extends Component {
 		style={ { border: imageBorderProperty } }
               />
             );
-          } 
-            const ImageParse = JSON.parse(Image);
+					}
+            const ImageParse = JSON.parse( fixBrokenUnicode(Image) );
             if (ImageParse && typeof ImageParse.sizes !== "undefined") {
               return (
 	<img
@@ -204,11 +204,11 @@ export class ComponentV1 extends Component {
 		style={ { border: imageBorderProperty } }
                 />
               );
-            } 
+            }
               return "";
-            
-          
-        
+
+
+
       }
 		};
 
@@ -238,7 +238,7 @@ export class ComponentV1 extends Component {
                   />
 	</Fragment>
               );
-            } 
+            }
               return (
 	<Fragment>
 		<RichText.Content
@@ -255,7 +255,7 @@ export class ComponentV1 extends Component {
                   />
 	</Fragment>
               );
-            
+
           })() }
 			{ //ボタンテキストが入力されるとボタンを表示。
             (() => {

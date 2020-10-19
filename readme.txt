@@ -1,10 +1,10 @@
 === VK Blocks ===
-Contributors: vektor-inc,kurudrive,naoki0h,nc30
+Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.5.1
-Stable tag: 0.49.1
+Stable tag: 0.49.8
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -61,6 +61,29 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.49.8 =
+* [ Bug fix ] fix edit screen white out
+
+= 0.49.7 =
+* [ Bug fix ] fix edit screen white out
+* [ specification change ][ button ] allow some text style
+* [ design specification change ][ PR Content ] Change line height
+
+= 0.49.6 =
+[ digigin bug fix ][ balloon icon ] Fix the icon so that the rectangular image also fits in the square
+
+= 0.49.5 =
+[ editor digigin bug fix ][ balloon icon ] Round trimming of registered icons
+
+= 0.49.4 =
+Version change only
+
+= 0.49.3 =
+* [ Bug fix ][ core/image ] Fix again wave style do not reflected
+
+= 0.49.2 =
+* [ Bug fix ] fix edit screen white out
 
 = 0.49.1 =
 * [ Bug fix ][ PR Content ] fix can not click button at textarea

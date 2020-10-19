@@ -55,7 +55,7 @@ NOTE : `0.0.0`は前のバージョン番号、`1.1.1`は公開するバージ�
 1. 全ての変更を `master`にマージ。
 1. `master`ブランチをローカルにプルし、`git tag 1.1.1` 、`git push origin 1.1.1` 
 
-これで自動で、VWSにPro版が、WordPress.orgに無料版がアップロードされる。
+これで自動で、VWSにPro版が、WordPress.orgに無料版がアップロードされます。
 
 
 ## 公開の仕組み（GitHubAtions） [開発者向け] 

@@ -172,10 +172,10 @@ export const DepPRcarditem2 = (props)=>{
 }
 
 export const deprecated = [
-	// {
-	// 	attributes: Schema0_49_8,
-	// 	save: Save0_49_8
-	// },
+	{
+		attributes: Schema0_49_8,
+		save: Save0_49_8
+	},
 	{
 		attributes: {
 			col_xs: {

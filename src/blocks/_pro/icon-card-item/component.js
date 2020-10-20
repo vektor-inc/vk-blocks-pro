@@ -98,15 +98,11 @@ export const PRcarditem = (props)=>{
 				<div className="vk_icon-card_item_icon_outer" style={ style }>
 					{ ReactHtmlParser(faIconTag) }
 				</div>
-			</a>
-			<a href={ url } className="vk_icon-card_item_link" target={ urlOpenType && "_blank" } rel={ urlOpenType && "noopener noreferrer" }>
 				<RichText.Content
 					className={ `vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}` }
 					tagName={ 'h3' }
 					value={ heading }
 				/>
-			</a>
-			<a href={ url } className="vk_icon-card_item_link" target={ urlOpenType && "_blank" } rel={ urlOpenType && "noopener noreferrer" }>
 				<RichText.Content
 					className={ `vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-${align.text}` }
 					tagName={ 'p' }

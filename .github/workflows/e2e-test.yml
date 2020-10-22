@@ -19,17 +19,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      # get the node version from the .node-version file
-      - name: Read .node-version
-        run: echo "##[set-output name=NODEVERSION;]$(cat .node-version)"
-        id: nodenv
-
-      # setup node based on the version from the .node-version file, fetched in the previous step
-      - name: Setup Node.js (.node-version)
+      # setup node
+      - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: "${{ steps.nodenv.outputs.NODEVERSION }}"
+          node-version: 12.4.0
 
       # run npm install
       - name: npm install
@@ -50,3 +44,4 @@ jobs:
           record: true
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          

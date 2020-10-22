@@ -15,7 +15,8 @@
     "lint:js": "wp-scripts lint-js",
     "lint:css": "wp-scripts lint-style",
     "cypress:open": "cypress open",
-    "test-e2e": "cypress run --config video=false --browser chrome"
+		"test-e2e": "cypress run --config video=false --browser chrome",
+		"test-e2e:headless": "cypress run --config video=false --browser chrome --headless"
   },
   "author": "",
   "license": "MIT",

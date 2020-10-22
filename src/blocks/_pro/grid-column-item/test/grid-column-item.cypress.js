@@ -41,10 +41,7 @@ describe( 'Block: Grid Column Item', () => {
 		helpers.checkForBlockErrors( 'vk-blocks/grid-column-item' );
 	} );
 
-	/**
-	 * Test the accordion block custom classes
-	 */
-	it( 'カスタムクラスがあるか確認', () => {
+	it( 'カスタムクラスを追加して確認', () => {
 		cy.get( '[data-type="vk-blocks/grid-column-item"]' ).first().click();
 		helpers.addCustomBlockClass( 'my-custom-class', 'grid-column-item' );
 

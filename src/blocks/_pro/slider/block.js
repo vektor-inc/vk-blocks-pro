@@ -10,6 +10,7 @@ import replaceClientId from "../../_helper/replaceClientId"
 import { AdvancedToggleControl } from "./../../../components/advanced-toggle-control";
 import AdvancedViewportControl from "../../../components/advanced-viewport-control"
 import AdvancedUnitControl from "../../../components/advanced-unit-control"
+import deprecated from "./deprecated/"
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -58,41 +59,15 @@ registerBlockType("vk-blocks/slider", {
 	edit(props) {
 		const { attributes, setAttributes, className, clientId } = props;
 		const { autoPlay, autoPlayDelay, pagination, width, loop, effect, speed } = attributes;
-		const { getBlocksByClientId } = select("core/block-editor");
 		const { updateBlockAttributes } = dispatch("core/block-editor");
-
-		const thisBlock = getBlocksByClientId(clientId);
-
-		let beforeLength;
-		let afterLength;
-
 		const customClientId = replaceClientId(clientId);
 
 		useEffect(() => {
-			updateBlockAttributes(clientId, {
+			updateBlockAttributes( clientId, {
 				clientId:customClientId,
 			});
 		}, [])
 
-		if (
-			thisBlock !== undefined &&
-			thisBlock[0] !== null &&
-			thisBlock[0].innerBlocks !== undefined
-		) {
-			const innerBlocks = thisBlock[0].innerBlocks;
-			beforeLength = innerBlocks.length;
-
-			if (beforeLength !== undefined) {
-				if (beforeLength !== afterLength) {
-					for (let i = 0; i < innerBlocks.length; i++) {
-						if (innerBlocks[i] !== undefined) {
-							updateBlockAttributes(innerBlocks[i].clientId, attributes);
-						}
-					}
-				}
-				afterLength = beforeLength;
-			}
-		}
 		return (
 			<Fragment>
 				<BlockControls>
@@ -207,6 +182,8 @@ registerBlockType("vk-blocks/slider", {
 			/>
 		);
 	},
+
+	deprecated
 });
 
 const generateHeightCss = (attributes, for_) =>{
@@ -272,77 +249,90 @@ addFilter(
 	vkbwithClientIdClassName
 );
 
-// Add swiper-js script for front side.
+/**
+ * 	Swiperの設定をフロント側に出力するフィルター。
+ *  0.49.8で、jSをfooterに出力するよう構造変更。CSSは継続して出力。
+ *
+ * @param {*} el
+ * @param {*} type
+ * @param {*} attributes
+ */
 const addSwiperConfig = (el, type, attributes) => {
+	const post = select( 'core/editor' ).getCurrentPost();
 
-	if ("vk-blocks/slider" === type.name) {
-		const { clientId, pagination, autoPlay, autoPlayDelay, loop, effect, speed }  = attributes
+	if( "vk-blocks/slider" === type.name ){
+		//0.49.8未満（_vkb_saved_block_version が ""）のみJSタグ挿入
+		if( post.hasOwnProperty('meta') && !post.meta._vkb_saved_block_version){
+			const { clientId, pagination, autoPlay, autoPlayDelay, loop, effect, speed }  = attributes
+			const cssTag = generateHeightCss( attributes, "save" )
 
-		const cssTag = generateHeightCss( attributes, "save" )
+			let autoPlayScripts;
+			if(autoPlay){
+				autoPlayScripts = `autoplay: {
+					delay: ${autoPlayDelay},
+					disableOnInteraction: false,
+				},`
+			}else{
+				autoPlayScripts = ''
+			}
 
-		let autoPlayScripts;
-		if(autoPlay){
-			autoPlayScripts = `autoplay: {
-				delay: ${autoPlayDelay},
-				disableOnInteraction: false,
-			},`
-		}else{
-			autoPlayScripts = ''
+			let paginationScripts;
+			if(pagination){
+				paginationScripts = `
+				// If we need pagination
+				pagination: {
+					el: '.swiper-pagination',
+					clickable : true,
+				},`;
+			}else{
+				paginationScripts = ''
+			}
+
+			let speedScripts;
+			if(speed){
+				speedScripts = `speed: ${speed},`
+			}else{
+				speedScripts = ''
+			}
+
+			return<div>
+				{ el }
+				<style type='text/css'>{ cssTag }</style>
+				<script>{ `
+				var swiper${replaceClientId(clientId)} = new Swiper ('.vk_slider_${clientId}', {
+
+					${speedScripts}
+
+					// Optional parameters
+					loop: ${loop},
+
+					effect: '${effect}',
+
+					${paginationScripts}
+
+					// navigation arrows
+					navigation: {
+						nextEl: '.swiper-button-next',
+						prevEl: '.swiper-button-prev',
+					},
+
+					// And if we need scrollbar
+					scrollbar: {
+						el: '.swiper-scrollbar',
+					},
+
+					${autoPlayScripts}
+					})`
+					}
+				</script>
+				</div>
+		} else {
+			const cssTag = generateHeightCss( attributes, "save" )
+			return <div>{ el }<style type='text/css'>{ cssTag }</style></div>;
 		}
-
-		let paginationScripts;
-		if(pagination){
-			paginationScripts = `
-			// If we need pagination
-			pagination: {
-			  el: '.swiper-pagination',
-			  clickable : true,
-			},`;
-		}else{
-			paginationScripts = ''
-		}
-
-		let speedScripts;
-		if(speed){
-			speedScripts = `speed: ${speed},`
-		}else{
-			speedScripts = ''
-		}
-
-		return<div>
-			{ el }
-			<style type='text/css'>{ cssTag }</style>
-			<script>{ `
-			var swiper${replaceClientId(clientId)} = new Swiper ('.vk_slider_${clientId}', {
-
-				${speedScripts}
-
-				// Optional parameters
-				loop: ${loop},
-
-				effect: '${effect}',
-
-				${paginationScripts}
-
-				// navigation arrows
-				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
-				},
-
-				// And if we need scrollbar
-				scrollbar: {
-				  el: '.swiper-scrollbar',
-				},
-
-				${autoPlayScripts}
-			  })`
-			  }
-			</script>
-		  </div>
-	}
+	} else {
 		return el
-
+	}
 }
 addFilter(
   "blocks.getSaveElement",

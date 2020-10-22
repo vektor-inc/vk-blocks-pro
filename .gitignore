@@ -13,3 +13,4 @@ editor-css/editor-block-build-marge.scss
 .DS_Store
 vendor/
 *.override.json
+*.mp4

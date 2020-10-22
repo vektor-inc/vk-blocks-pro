@@ -31,7 +31,7 @@ export function loginToSite() {
 export function goTo( path = '/wp-admin' ) {
 	cy.visit( Cypress.env( 'testURL' ) + path );
 	return cy.window().then( ( win ) => {
-		win.coblocksLayoutSelector = coblocksLayoutSelector;
+		win
 	} );
 }
 

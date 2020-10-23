@@ -2,7 +2,6 @@ import { loginToSite, disableGutenbergFeatures } from '../helpers';
 import 'cypress-file-upload';
 
 before( function() {
-	console.log("hello");
 	loginToSite();
 	disableGutenbergFeatures();
 } );

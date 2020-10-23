@@ -46,7 +46,7 @@ export function disableGutenbergFeatures() {
 			win.wp.data.dispatch( 'core/edit-post' ).toggleFeature( 'fixedToolbar' );
 		}
 
-		if ( !! win.wp.data.select( 'core/nux' ) ) { // < GB 7.2 || < WP 5.4
+		if ( !! win.wp.data.select( 'core/nux' ) ) {
 			if ( ! win.wp.data.select( 'core/nux' ).areTipsEnabled() ) {
 				return;
 			}

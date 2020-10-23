@@ -35,6 +35,12 @@ jobs:
         run: |
           npx wp-env start
 
+      # run the wp-env setup command (wp-env start)
+      - name: create cypress.env.json
+        run: |
+          touch cypress.env.json
+          echo '{"wpUsername":"admin","wpPassword":"password","testURL":"http://localhost:8888"}' | jq . > cypress.env.json
+
       # run E2E test (Cypress)
       - name: Cypress run
         uses: cypress-io/github-action@v2

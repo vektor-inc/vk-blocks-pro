@@ -14,11 +14,8 @@ export function loginToSite() {
 				// We need to wait a short time before trying to login.
 				cy.wait( 250 );
 
-				cy.get( '#user_login' ).type( 'admin' );
-				cy.get( '#user_pass' ).type( 'password' );
-
-				// cy.get( '#user_login' ).type( Cypress.env( 'wpUsername' ) );
-				// cy.get( '#user_pass' ).type( Cypress.env( 'wpPassword' ) );
+				cy.get( '#user_login' ).type( Cypress.env( 'wpUsername' ) );
+				cy.get( '#user_pass' ).type( Cypress.env( 'wpPassword' ) );
 				cy.get( '#wp-submit' ).click();
 			}
 		} );
@@ -32,9 +29,10 @@ export function loginToSite() {
  * @param {string} path The URI path to go to.
  */
 export function goTo( path = '/wp-admin' ) {
-	cy.visit( 'http://localhost:8888' + path );
-	// cy.visit( Cypress.env( 'testURL' ) + path );
-	return cy.window();
+	cy.visit( Cypress.env( 'testURL' ) + path );
+	return cy.window().then( ( win ) => {
+		win.coblocksLayoutSelector = coblocksLayoutSelector;
+	} );
 }
 
 /**

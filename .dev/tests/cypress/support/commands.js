@@ -3,7 +3,7 @@ import 'cypress-file-upload';
 
 before( function() {
 	loginToSite();
-	disableGutenbergFeatures();
+	// disableGutenbergFeatures();
 } );
 
 // Maintain WordPress logged in state

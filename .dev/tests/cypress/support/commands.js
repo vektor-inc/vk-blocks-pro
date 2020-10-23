@@ -2,8 +2,8 @@ import { loginToSite, disableGutenbergFeatures } from '../helpers';
 import 'cypress-file-upload';
 
 before( function() {
-	loginToSite();
-	disableGutenbergFeatures();
+	// loginToSite();
+	// disableGutenbergFeatures();
 } );
 
 // Maintain WordPress logged in state

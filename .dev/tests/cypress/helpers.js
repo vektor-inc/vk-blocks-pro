@@ -19,7 +19,7 @@ export function loginToSite() {
 		// 	}
 		// } );
 
-	cy.get( '.block-editor-page' ).should( 'exist' );
+	// cy.get( '.block-editor-page' ).should( 'exist' );
 }
 
 /**

@@ -3,6 +3,7 @@ import 'cypress-file-upload';
 
 before( function() {
 	loginToSite();
+	cy.wait( 250 );
 	disableGutenbergFeatures();
 } );
 

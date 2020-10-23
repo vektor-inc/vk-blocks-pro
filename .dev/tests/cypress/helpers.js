@@ -29,7 +29,8 @@ export function loginToSite() {
  * @param {string} path The URI path to go to.
  */
 export function goTo( path = '/wp-admin' ) {
-	cy.visit( Cypress.env( 'testURL' ) + path );
+	cy.visit( 'http://localhost:8888' + path );
+	// cy.visit( Cypress.env( 'testURL' ) + path );
 	return cy.window();
 }
 

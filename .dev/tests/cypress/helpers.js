@@ -14,8 +14,11 @@ export function loginToSite() {
 				// We need to wait a short time before trying to login.
 				cy.wait( 250 );
 
-				cy.get( '#user_login' ).type( Cypress.env( 'wpUsername' ) );
-				cy.get( '#user_pass' ).type( Cypress.env( 'wpPassword' ) );
+				cy.get( '#user_login' ).type( 'admin' );
+				cy.get( '#user_pass' ).type( 'password' );
+
+				// cy.get( '#user_login' ).type( Cypress.env( 'wpUsername' ) );
+				// cy.get( '#user_pass' ).type( Cypress.env( 'wpPassword' ) );
 				cy.get( '#wp-submit' ).click();
 			}
 		} );

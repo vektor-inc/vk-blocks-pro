@@ -15,7 +15,6 @@ export function loginToSite() {
 			cy.get( '#user_login' ).type( Cypress.env( 'wpUsername' ) );
 			cy.get( '#user_pass' ).type( Cypress.env( 'wpPassword' ) );
 			cy.get( '#wp-submit' ).click();
-			cy.wait( 250 );
 		}
 	} );
 

@@ -34,13 +34,18 @@ jobs:
       - name: setup wp env
         run: |
           npx wp-env start
-          
-      # run E2E test (Cypress)
+      
+      # run the wp-env setup command (wp-env start)
       - name: Cypress run
-        uses: cypress-io/github-action@v2
-        with:
-          browser: chrome
-          headless: true
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+        run: |
+          npm run test-e2e:headless
+
+      # # run E2E test (Cypress)
+      # - name: Cypress run
+      #   uses: cypress-io/github-action@v2
+      #   with:
+      #     browser: chrome
+      #     headless: true
+      #   env:
+      #     CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           

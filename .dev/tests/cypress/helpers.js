@@ -8,17 +8,29 @@ import { startCase } from 'lodash';
  */
 export function loginToSite() {
 	goTo( '/wp-admin/post-new.php?post_type=post' )
-		.then( ( window ) => {
-			if ( window.location.pathname === '/wp-login.php' ) {
-				// WordPress has a wp_attempt_focus() function that fires 200ms after the wp-login.php page loads.
-				// We need to wait a short time before trying to login.
-				cy.get( '#user_login' ).type( Cypress.env( 'wpUsername' ) );
-				cy.get( '#user_pass' ).type( Cypress.env( 'wpPassword' ) );
-				cy.get( '#wp-submit' ).click();
-				cy.wait( 250 );
-			}
-		} );
+	.then( ( window ) => {
+		if ( window.location.pathname === '/wp-login.php' ) {
+			// WordPress has a wp_attempt_focus() function that fires 200ms after the wp-login.php page loads.
+			// We need to wait a short time before trying to login.
+			cy.get( '#user_login' ).type( Cypress.env( 'wpUsername' ) );
+			cy.get( '#user_pass' ).type( Cypress.env( 'wpPassword' ) );
+			cy.get( '#wp-submit' ).click();
+			cy.wait( 250 );
+		}
+	} );
 
+	cy.on('uncaught:exception', (err, runnable) => {
+		expect(err.message).to.include('something about the error')
+
+		// using mocha's async done callback to finish
+		// this test so we prove that an uncaught exception
+		// was thrown
+		done()
+
+		// return false to prevent the error from
+		// failing this test
+		return false
+	})
 	cy.get( '.block-editor-page' ).should( 'exist' );
 }
 

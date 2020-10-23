@@ -4,6 +4,26 @@
 import { startCase } from 'lodash';
 
 /**
+ * Internal dependencies.
+ */
+import coblocksLayoutSelector from './cypress-layouts';
+
+/**
+ * Close layout selector.
+ */
+export function closeLayoutSelector() {
+	cy.get( '.coblocks-layout-selector-modal' ).its( 'length' ).then( layoutSelectorModal => {
+		if ( layoutSelectorModal > 0 ) {
+			cy.get( '.coblocks-layout-selector-modal' )
+				.find( '.components-button[aria-label="Close dialog"]' ).first()
+				.click();
+		}
+	} );
+
+	cy.get( '.coblocks-layout-selector-modal' ).should( 'not.exist' );
+}
+
+/**
  * Login to our test WordPress site
  */
 export function loginToSite() {
@@ -12,8 +32,6 @@ export function loginToSite() {
 			if ( window.location.pathname === '/wp-login.php' ) {
 				// WordPress has a wp_attempt_focus() function that fires 200ms after the wp-login.php page loads.
 				// We need to wait a short time before trying to login.
-				cy.wait( 250 );
-
 				cy.get( '#user_login' ).type( Cypress.env( 'wpUsername' ) );
 				cy.get( '#user_pass' ).type( Cypress.env( 'wpPassword' ) );
 				cy.get( '#wp-submit' ).click();
@@ -30,7 +48,9 @@ export function loginToSite() {
  */
 export function goTo( path = '/wp-admin' ) {
 	cy.visit( Cypress.env( 'testURL' ) + path );
-	return cy.window();
+	return cy.window().then( ( win ) => {
+		win.coblocksLayoutSelector = coblocksLayoutSelector;
+	} );
 }
 
 /**

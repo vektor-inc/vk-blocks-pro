@@ -5,7 +5,7 @@ import * as helpers from '../../../../../.dev/tests/cypress/helpers'
 
 describe( 'Block: Grid Column Item', () => {
 	beforeEach( () => {
-		// helpers.addBlockToPost( 'vk-blocks/grid-column', true );
+		helpers.addBlockToPost( 'vk-blocks/grid-column', true );
 	} );
 
 	it( 'ブロック新規挿入時に壊れないかチェック', () => {

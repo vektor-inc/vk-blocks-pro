@@ -4,26 +4,6 @@
 import { startCase } from 'lodash';
 
 /**
- * Internal dependencies.
- */
-import coblocksLayoutSelector from './cypress-layouts';
-
-/**
- * Close layout selector.
- */
-export function closeLayoutSelector() {
-	cy.get( '.coblocks-layout-selector-modal' ).its( 'length' ).then( layoutSelectorModal => {
-		if ( layoutSelectorModal > 0 ) {
-			cy.get( '.coblocks-layout-selector-modal' )
-				.find( '.components-button[aria-label="Close dialog"]' ).first()
-				.click();
-		}
-	} );
-
-	cy.get( '.coblocks-layout-selector-modal' ).should( 'not.exist' );
-}
-
-/**
  * Login to our test WordPress site
  */
 export function loginToSite() {
@@ -48,9 +28,7 @@ export function loginToSite() {
  */
 export function goTo( path = '/wp-admin' ) {
 	cy.visit( Cypress.env( 'testURL' ) + path );
-	return cy.window().then( ( win ) => {
-		win.coblocksLayoutSelector = coblocksLayoutSelector;
-	} );
+	return cy.window();
 }
 
 /**

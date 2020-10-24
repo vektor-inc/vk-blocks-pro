@@ -14,6 +14,38 @@ if ( ! class_exists( 'VK_CSS_Optimize' ) ) {
 		public function __construct() {
 			add_action( 'get_header', array( __CLASS__, 'get_html_start' ), 2147483647 );
 			add_action( 'shutdown', array( __CLASS__, 'get_html_end' ), 0 );
+		public static function get_css_optimize_options(){
+
+			$vk_css_optimize_options = get_option( 'vk_css_optimize_options' );
+
+			if ( ! isset( $vk_css_optimize_options['optimize_css'] ) ) {
+
+				$theme_textdomain = wp_get_theme()->get( 'TextDomain' );
+
+				if ( 'lightning' === $theme_textdomain || 'lightning-pro' === $theme_textdomain ){
+					$options = get_option( 'lightning_theme_options' );
+				} else if ( 'katawara' === $theme_textdomain ){
+					$options = get_option( 'katawara_theme_options' );
+				} else {
+					$options = get_option( 'vk_blocks_options' );
+				}
+				if ( isset( $options['optimize_css'] ) ){
+					$vk_css_optimize_options = array(
+						'optimize_css' => $options['optimize_css'],
+					);
+				}
+				update_option( 'vk_css_optimize_options', $vk_css_optimize_options );
+			}
+
+			return $vk_css_optimize_options;
+		}
+
+
+		public static function is_preload(){
+			$options = VK_CSS_Optimize::get_css_optimize_options();
+			if ( ! empty( $options['optimize_css'] ) && 'optomize-all-css' === $options['optimize_css'] ) {
+				return true;
+			}
 		}
 
 		public static function get_html_start() {
@@ -27,7 +59,8 @@ if ( ! class_exists( 'VK_CSS_Optimize' ) ) {
 		}
 
 		public static function css_optimize( $buffer ) {
-			$options = get_option( 'lightning_theme_options' );
+
+			$options = VK_CSS_Optimize::get_css_optimize_options();
 
 			// CSS Tree Shaking.
 			require_once dirname( __FILE__ ) . '/class-css-tree-shaking.php';

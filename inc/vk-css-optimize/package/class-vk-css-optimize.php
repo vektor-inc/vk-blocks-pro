@@ -14,6 +14,12 @@ if ( ! class_exists( 'VK_CSS_Optimize' ) ) {
 		public function __construct() {
 			add_action( 'get_header', array( __CLASS__, 'get_html_start' ), 2147483647 );
 			add_action( 'shutdown', array( __CLASS__, 'get_html_end' ), 0 );
+			if ( VK_CSS_Optimize::is_preload() ){
+				add_filter( 'style_loader_tag', array( __CLASS__, 'css_preload' ), 10, 4 );
+			}
+		}
+
+
 		public static function get_css_optimize_options(){
 
 			$vk_css_optimize_options = get_option( 'vk_css_optimize_options' );
@@ -90,18 +96,15 @@ if ( ! class_exists( 'VK_CSS_Optimize' ) ) {
 
 			}
 
-			if ( ! empty( $options['optimize_css'] ) && 'optomize-all-css' === $options['optimize_css'] ) {
-				// CSS Preload.
-				$buffer = str_replace(
-					'link rel=\'stylesheet\'',
-					'link rel="preload" as="style" onload="this.onload=null;this.rel=\'stylesheet\'"',
-					$buffer
-				);
-			}
-
 			return $buffer;
 		}
 
+		public static function css_preload( $tag, $handle, $href, $media ) {
+			$tag = "<link rel='preload' id='".$handle."-css' href='".$href."' as='style' onload=\"this.onload=null;this.rel='stylesheet'\"/>\n";
+			$tag .= "<link rel='stylesheet' id='".$handle."-css' href='".$href."' media='print' onload=\"this.media='all'; this.onload=null;\">\n";
+			return $tag;
+		}
+		
 	}
 	new VK_CSS_Optimize();
 }

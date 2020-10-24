@@ -13,9 +13,6 @@ function vk_blocks_optimize_css() {
 
 	if ( ! isset( $options['css_optimize'] ) ) {
 		$options['css_optimize'] = 'default';
-	} elseif ( 'optomize-all-css' === $options['css_optimize'] ) {
-		$options['css_optimize'] = 'tree-shaking';
-		update_option( 'vk_blocks_options', $options );
 	}
 
 	if ( ! empty( $options['css_optimize'] ) && ( 'optomize-all-css' === $options['css_optimize'] || 'tree-shaking' === $options['css_optimize'] ) ) {

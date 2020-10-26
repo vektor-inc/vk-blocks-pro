@@ -7,7 +7,8 @@ import { startCase } from 'lodash';
  * Login to our test WordPress site
  */
 export function loginToSite() {
-	goTo( '/wp-admin/post-new.php?post_type=post' )
+	goTo( '/wp-admin/plugins.php' )
+	// goTo( '/wp-admin/post-new.php?post_type=post' )
 	.then( ( window ) => {
 		if ( window.location.pathname === '/wp-login.php' ) {
 			// WordPress has a wp_attempt_focus() function that fires 200ms after the wp-login.php page loads.

@@ -5,10 +5,7 @@ import * as helpers from '../../../../../.dev/tests/cypress/helpers'
 
 describe( 'Block: Grid Column Item', () => {
 	beforeEach( () => {
-		// cy.get( '[data-type="core/paragraph"]' ).type( '/grid' );
-		// cy.contains("Start writing or type / to choose a block").type( '/grid' );
-		// cy.contains("Grid Column").click();
-		helpers.addBlockToPost( 'core/heading', true );
+		helpers.addBlockToPost( 'vk-blocks/grid-column', true );
 	} );
 
 	it( 'ブロック新規挿入時に壊れないかチェック', () => {

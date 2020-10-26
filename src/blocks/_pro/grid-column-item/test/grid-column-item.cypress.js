@@ -5,7 +5,15 @@ import * as helpers from '../../../../../.dev/tests/cypress/helpers'
 
 describe( 'Block: Grid Column Item', () => {
 	beforeEach( () => {
-		helpers.addBlockToPost( 'vk-blocks/grid-column', true );
+		// cy.get( '[data-type="core/paragraph"]' ).type( '/grid' );
+		cy.contains("Start writing or type / to choose a block").type( '/grid' );
+		cy.contains("Grid Column").click();
+		// helpers.addBlockToPost( 'vk-blocks/grid-column', true );
+	} );
+
+	t( 'プラグインがインストールされているかチェック', () => {
+		// 挿入されたか確認
+		helpers.goTo( '/wp-admin/plugins.php' );
 	} );
 
 	it( 'ブロック新規挿入時に壊れないかチェック', () => {

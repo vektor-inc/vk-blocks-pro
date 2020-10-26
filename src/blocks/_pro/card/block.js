@@ -241,7 +241,7 @@ addFilter( 'editor.BlockEdit', "vk-blocks/card-addInlineEditorsCss", createHighe
 			);
 		}
 			return <BlockEdit { ...props } />;
-		
+
 	};
 
 }, "addInlineEditorsCss" ));
@@ -260,5 +260,5 @@ addFilter(
 		  </div>
 	}
 		return el
-	
+
 });

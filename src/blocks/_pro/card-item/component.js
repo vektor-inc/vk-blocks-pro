@@ -222,7 +222,7 @@ export class Component extends React.Component {
 						tagName={ titleTag }
 						className={ titleClass }
 						value={ title } />);
-				}
+				}else{
 					return (
 						<a href={ url } target={ linkTarget } rel={ rel }>
 							<RichText.Content
@@ -231,7 +231,7 @@ export class Component extends React.Component {
 								value={ title }
 											/>
 						</a>);
-
+				}
 			}
     };
 

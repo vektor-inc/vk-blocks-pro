@@ -62,6 +62,10 @@ e.g.
 
 == Changelog ==
 
+= 0.50.0 =
+* [ Specification Change ][ CSS Optimize ] Common management of CSS optimization function
+* [ Bug fix ][ Icon Card ] Fix endless recovery
+
 = 0.49.8 =
 * [ Bug fix ] fix edit screen white out
 

@@ -11,11 +11,6 @@ describe( 'Block: Grid Column Item', () => {
 		// helpers.addBlockToPost( 'vk-blocks/grid-column', true );
 	} );
 
-	t( 'プラグインがインストールされているかチェック', () => {
-		// 挿入されたか確認
-		helpers.goTo( '/wp-admin/plugins.php' );
-	} );
-
 	it( 'ブロック新規挿入時に壊れないかチェック', () => {
 		// 挿入されたか確認
 		cy.get( '[data-type="vk-blocks/grid-column-item"]' ).should( 'exist' );

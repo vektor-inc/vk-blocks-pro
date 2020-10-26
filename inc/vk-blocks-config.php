@@ -31,6 +31,7 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 	require_once 'template-tags/package/template-tags.php';
 	require_once 'vk-css-optimize/vk-css-optimize-config.php';
 	require_once 'saved-block-version.php';
+	require_once  plugin_dir_path( __DIR__ ) . 'inc/vk-customize-helpers/vk-customize-helpers-config.php';
 
 
 	if ( ! vkblocks_is_lightning() ) {

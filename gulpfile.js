@@ -172,6 +172,9 @@ gulp.task("replace_text_domain", function(done) {
 	// vk-components.
 	gulp.src(["./inc/vk-components/package/*.php"])
 		.pipe(replace("'vk_components_textdomain'","'vk-blocks'"))
+    .pipe(gulp.dest("./inc/vk-components/package/"));
+  gulp.src(["./inc/vk-components/package/*.php"])
+		.pipe(replace("'css_optimize_textdomain'","'vk-blocks'"))
 		.pipe(gulp.dest("./inc/vk-components/package/"));
 	done();
 });

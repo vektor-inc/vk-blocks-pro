@@ -8,9 +8,15 @@ describe( 'Block: Grid Column Item', () => {
 		// cy.get( '[data-type="core/paragraph"]' ).type( '/grid' );
 		// cy.contains("Start writing or type / to choose a block").type( '/grid' );
 		// cy.contains("Grid Column").click();
-		helpers.addBlockToPost( 'vk-blocks/alert', true );
-		helpers.addBlockToPost( 'vk-blocks/balloon', false );
-		helpers.addBlockToPost( 'vk-blocks/staff', false );
+		cy.get( '.edit-post-header-toolbar' ).find( '.edit-post-header-toolbar__inserter-toggle' ).then( ( inserterButton ) => {
+			if ( ! Cypress.$( inserterButton ).hasClass( 'is-pressed' ) ) {
+				cy.get( inserterButton ).click();
+			}
+		} );
+		cy.get('Alert').scrollIntoView();
+		// helpers.addBlockToPost( 'vk-blocks/alert', true );
+		// helpers.addBlockToPost( 'vk-blocks/balloon', false );
+		// helpers.addBlockToPost( 'vk-blocks/staff', false );
 	} );
 
 	it( 'ブロック新規挿入時に壊れないかチェック', () => {

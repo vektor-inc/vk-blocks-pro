@@ -17,8 +17,6 @@ export function loginToSite() {
 			cy.get( '#wp-submit' ).click();
 		}
 	} );
-	goTo( '/wp-admin/plugins.php' )
-	goTo( '/wp-admin/post-new.php?post_type=post' )
 
 	cy.on('uncaught:exception', (err, runnable) => {
 		expect(err.message).to.include('something about the error')

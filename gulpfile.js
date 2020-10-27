@@ -21,6 +21,10 @@ gulp.task( 'helper-js', function (done)  {
 		extname: '.min.js'
 	}))
 	.pipe(gulp.dest('./inc/vk-blocks/build/'));
+	done();
+});
+
+gulp.task( 'helper-js-pro', function (done)  {
 	gulp.src('src/blocks/_pro/animation/enque-front.js')
 	.pipe(jsmin())
 	.pipe(rename('vk-animation.min.js'))
@@ -150,10 +154,12 @@ gulp.task("watch", function() {
 });
 
 //Build : Development
-gulp.task("build-dev", gulp.series("js-dev", "sass", "helper-js", "sass_editor","sass_bootstrap","sass_vk_components", "dist_swiper_js", "dist_swiper_css"));
+gulp.task("build:dev:free", gulp.series("js-dev", "sass", "helper-js", "sass_editor","sass_bootstrap","sass_vk_components", "dist_swiper_js", "dist_swiper_css"));
+gulp.task("build:dev:pro", gulp.series("js-dev", "sass", "helper-js", "helper-js-pro", "sass_editor","sass_bootstrap","sass_vk_components", "dist_swiper_js", "dist_swiper_css"));
 
 // Build : Production
-gulp.task("build", gulp.series("js", "sass", "helper-js", "sass_editor","sass_bootstrap","sass_vk_components", "dist_swiper_js", "dist_swiper_css"));
+gulp.task("build:free", gulp.series("js", "sass", "helper-js", "sass_editor","sass_bootstrap","sass_vk_components", "dist_swiper_js", "dist_swiper_css"));
+gulp.task("build:pro", gulp.series("js", "sass", "helper-js", "helper-js-pro", "sass_editor","sass_bootstrap","sass_vk_components", "dist_swiper_js", "dist_swiper_css"));
 
 // Default Tasks
 gulp.task("default", gulp.series("watch"));

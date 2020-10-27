@@ -4,21 +4,11 @@
  *
  * @package VK Blocks
  */
-	
-function vkblocks_load_css_optimize(){
-	$theme_textdomain = wp_get_theme()->get( 'TextDomain' );
-	// VK Blocks は翻訳作るのが面倒なのでテーマ側が翻訳してある場合はそちらを使う
-	if ( 
-		'lightning' != $theme_textdomain && 
-		'lightning-pro' != $theme_textdomain && 
-		'katawara' != $theme_textdomain
-		){
-			if ( ! class_exists( 'VK_CSS_Optimize' ) ) {
-				require_once dirname( __FILE__ ) . '/package/class-vk-css-optimize.php';
-			}
-		}
-}
-add_action( 'after_setup_theme', 'vkblocks_load_css_optimize',11 );
+
+ /*
+ VK CSS Optimize 本体はExUnitなどで読み込むのでここでは読み込まない
+ 追加したいファイルのみフックで投げる
+ */
 
 function vkblocks_css_tree_shaking_array( $vk_css_tree_shaking_array ){
 	$vk_css_tree_shaking_array[] = array(

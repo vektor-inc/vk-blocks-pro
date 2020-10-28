@@ -13,9 +13,7 @@
     "gulp": "gulp",
     "test": "",
     "lint:js": "wp-scripts lint-js",
-    "lint:css": "wp-scripts lint-style",
-    "cypress:open": "cypress open",
-    "test:e2e": "wp-scripts test-e2e"
+    "lint:css": "wp-scripts lint-style"
   },
   "author": "",
   "license": "MIT",

@@ -10,8 +10,43 @@ window.addEventListener('load', ( event ) => {
 			let sliderNode = sliderNodeList[index];
 			let attributes = JSON.parse(sliderNode.getAttribute('data-vkb-slider'))
 
-			// 変数名にindexを使う
-			eval(`var swiper${index} = new Swiper ('.vk_slider_${attributes.clientId}', {
+			//自動再生がONかOFFによって条件分岐
+			if ( attributes.autoPlay ){
+				// 変数名にindexを使う
+				eval(`var swiper${index} = new Swiper ('.vk_slider_${attributes.clientId}', {
+					// Optional parameters
+					pagination: {
+						el: '.swiper-pagination',
+						clickable : true,
+					},
+
+					autoplay: {
+						delay: ${attributes.autoPlayDelay},
+						disableOnInteraction: false,
+						stopOnLastSlide: ${!attributes.loop}
+					},
+
+					speed: ${attributes.speed},
+
+					loop: ${attributes.loop},
+
+					effect: '${attributes.effect}',
+
+					// navigation arrows
+					navigation: {
+						nextEl: '.swiper-button-next',
+						prevEl: '.swiper-button-prev',
+					},
+
+					// And if we need scrollbar
+					scrollbar: {
+						el: '.swiper-scrollbar',
+					},
+				});`);
+
+			} else {
+
+				eval(`var swiper${index} = new Swiper ('.vk_slider_${attributes.clientId}', {
 					// Optional parameters
 					pagination: {
 						el: '.swiper-pagination',
@@ -32,15 +67,9 @@ window.addEventListener('load', ( event ) => {
 
 					// And if we need scrollbar
 					scrollbar: {
-					  el: '.swiper-scrollbar',
+					el: '.swiper-scrollbar',
 					},
-			});`);
-
-			// 自動再生設定
-			if( attributes.autoPlay ){
-				eval(`swiper${index}.autoplay.start();`);
-				eval(`swiper${index}.autoplay.delay = ${attributes.autoPlayDelay};`);
-				eval(`swiper${index}.autoplay.disableOnInteraction = false`);
+				});`);
 			}
 
 			// ページネーションがOFFの時非表示

@@ -10,7 +10,6 @@ if ( ! function_exists('vk_blocks_setting') ) {
 		<form method="post" action="<?php echo esc_url( $_SERVER['REQUEST_URI'] ) ;?>">
 			<?php wp_nonce_field( 'vkb-nonce-key', 'vkb-setting-page' ); ?>
 			<?php
-			require_once dirname( __FILE__ ) . '/admin-css-optimize.php';
 			require_once dirname( __FILE__ ) . '/admin-block-patterns.php';
 			require_once dirname( __FILE__ ) . '/admin-balloon.php';
 			do_action( 'vk_blocks_pro_admin' );
@@ -52,7 +51,7 @@ function vk_blocks_setting_page() {
 	$get_logo_html = '<img src="'.plugin_dir_url( __FILE__ ).'/images/vk-blocks-logo_ol.svg'.'" alt="VK Blocks" />';
 	$get_logo_html = apply_filters( 'vk_blocks_logo_html', $get_logo_html );
 
-	$get_menu_html  = '<li><a href="#css-optimize-setting">' . __( 'CSS Optimize Setting', 'vk-blocks' ) . '</a></li>';
+	$get_menu_html  = '';
 	$get_menu_html .= '<li><a href="#block-template-setting">' . __( 'Block Template Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= '<li><a href="#balloon-image-setting">' . __( 'Balloon Image Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= apply_filters( 'vk_blocks_pro_menu', '' );

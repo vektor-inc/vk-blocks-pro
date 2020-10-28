@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.5.1
-Stable tag: 0.49.8
+Stable tag: 0.52.0
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -61,6 +61,26 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.52.0 =
+[ Specification Change ][ CSS Optimize ] Delete package
+
+= 0.51.0 =
+[ Specification Change ][ CSS Optimize ] default off / exclude wooCommerce preload
+[ Add function ][ CSS Optimize ] Add exclude handles
+
+= 0.50.3 =
+* [ Other ] version only
+
+= 0.50.2 =
+* [ Other ] version only
+
+= 0.50.1 =
+* [ Other ] version only
+
+= 0.50.0 =
+* [ Specification Change ][ CSS Optimize ] Common management of CSS optimization function
+* [ Bug fix ][ Icon Card ] Fix endless recovery
 
 = 0.49.8 =
 * [ Bug fix ] fix edit screen white out

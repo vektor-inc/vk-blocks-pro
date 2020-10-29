@@ -72,7 +72,16 @@ registerBlockType("vk-blocks/grid-column", {
 				if (beforeLength !== afterLength) {
 					for (let i = 0; i < innerBlocks.length; i++) {
 						if (innerBlocks[i] !== undefined) {
-							updateBlockAttributes(innerBlocks[i].clientId, attributes);
+							updateBlockAttributes(innerBlocks[i].clientId, {
+								name: attributes.name,
+								layout: attributes.layout,
+								col_xs: attributes.col_xs,
+								col_sm: attributes.col_sm,
+								col_md: attributes.col_md,
+								col_lg: attributes.col_lg,
+								col_xl: attributes.col_xl,
+								col_xxl: attributes.col_xxl,
+							});
 						}
 					}
 				}

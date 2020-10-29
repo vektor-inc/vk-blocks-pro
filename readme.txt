@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.5.1
-Stable tag: 0.52.0
+Stable tag: 0.52.1
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -61,6 +61,11 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.52.1 =
+[ Bug fix ][ Grid Column(Pro) ] Fixed a bug that the hidden specification is removed when re-editing
+[ Bug fix ][ Slider(Pro) ] Fix Can not stop loop
+[ Bug fix ][ Outer(Pro) ] Fix cant edit outer block(cant save style tag) on Editor role user
 
 = 0.52.0 =
 [ Specification Change ][ CSS Optimize ] Delete package

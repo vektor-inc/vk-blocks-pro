@@ -86,3 +86,5 @@ gulp dist して zip に圧縮してそのzipファイルをvwsのパッケー�
 ```
 bin/dist_kuru.sh
 ```
+
+naoki!

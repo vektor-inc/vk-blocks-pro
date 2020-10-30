@@ -5,6 +5,7 @@
 import { StepItem } from "./component";
 import { schema } from './schema';
 import { FontAwesome } from "../../_helper/font-awesome-new";
+import BlockIcon from "./icon.svg";
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
@@ -13,11 +14,10 @@ const { Fragment } = wp.element;
 const { InspectorControls, ColorPalette } = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 import { deprecated } from './deprecated';
 
-const BlockIcon = 'arrow-down';
 
 registerBlockType('vk-blocks/step-item', {
 	title: __('Step Item', 'vk-blocks'), // Block title.
-	icon: BlockIcon, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
+	icon: <BlockIcon />, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: 'vk-blocks-cat', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	attributes: schema,
 	parent: ['vk-blocks/step'],

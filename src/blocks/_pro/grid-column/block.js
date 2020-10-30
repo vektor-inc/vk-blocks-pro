@@ -8,6 +8,7 @@ import { ColumnLayout } from "../../../components/column-layout";
 import classNames from "classnames";
 import { convertToGrid } from "../../_helper/convert-to-grid";
 import {vkbBlockEditor} from "../../_helper/depModules"
+import BlockIcon from "./icon.svg";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -18,22 +19,6 @@ const { PanelBody } = wp.components;
 const { createHigherOrderComponent } = wp.compose;
 const { addFilter } = wp.hooks;
 
-const BlockIcon = (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 576">
-		<path d="M456.1,1320.7H118.4v36.6H533V945.2h-35.5v334C497.6,1302.1,479,1320.7,456.1,1320.7z" />
-		<path d="M528,89H48c-26.5,0-48,21.5-48,48v302c0,26.5,21.5,48,48,48h480c26.5,0,48-21.5,48-48V137C576,110.5,554.5,89,528,89z
-	 M528,439H48V137h480V439z" />
-		<g>
-			<path d="M92.4,239.6v96.8c0,14.6,12.1,26.3,26.3,26.3h52.5c14.6,0,26.3-12.1,26.3-26.3v-96.8c0-14.6-12.1-26.3-26.3-26.3h-52.5
-		C104.3,213.3,92.4,225.4,92.4,239.6z" />
-			<path d="M235.5,239.6v96.8c0,14.6,12.1,26.3,26.3,26.3h52.5c14.6,0,26.3-12.1,26.3-26.3v-96.8c0-14.6-12.1-26.3-26.3-26.3h-52.5
-		C247.2,213.3,235.5,225.4,235.5,239.6z" />
-			<path d="M378.6,239.6v96.8c0,14.6,12.1,26.3,26.3,26.3h52.5c14.6,0,26.3-12.1,26.3-26.3v-96.8c0-14.6-12.1-26.3-26.3-26.3h-52.5
-		C390.3,213.3,378.6,225.4,378.6,239.6z" />
-		</g>
-	</svg>
-);
-
 let displayInserter = false;
 if (window.wpVersion && 5.4 <= parseFloat(window.wpVersion)) {
 	displayInserter = true;
@@ -41,7 +26,7 @@ if (window.wpVersion && 5.4 <= parseFloat(window.wpVersion)) {
 
 registerBlockType("vk-blocks/grid-column", {
 	title: __("Grid Column", "vk-blocks"),
-	icon: BlockIcon,
+	icon: <BlockIcon />,
 	category: "vk-blocks-cat-layout",
 	attributes: schema,
 	supports: {

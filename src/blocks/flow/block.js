@@ -5,17 +5,18 @@
 import { deprecated } from './deprecated'
 import { vkbBlockEditor } from "./../_helper/depModules";
 import { content, title, iconPicture } from "./../_helper/example-data"
+import BlockIcon from "./icon.svg";
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 const { RadioControl, PanelBody, Button } = wp.components;
 const { Fragment } = wp.element;
 const { RichText, InspectorControls, MediaUpload } = vkbBlockEditor;
-const BlockIcon = 'arrow-down';
+
 
 registerBlockType('vk-blocks/flow', {
 	title: __('Flow', 'vk-blocks'), // Block title.
-	icon: BlockIcon, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
+	icon: <BlockIcon />, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: 'vk-blocks-cat', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	attributes: {
 		heading: {

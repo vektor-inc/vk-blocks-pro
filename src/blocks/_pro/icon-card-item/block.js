@@ -6,6 +6,7 @@ import { PRcarditem } from "./component";
 import { schema } from "./schema";
 import { deprecated } from "./deprecated"
 import { FontAwesome } from "./../../_helper/font-awesome-new";
+import BlockIcon from "./icon.svg";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -13,16 +14,11 @@ const { PanelBody, BaseControl, TextControl, CheckboxControl, RadioControl} = wp
 const { InspectorControls, ColorPalette  } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const { Fragment } = wp.element;
-const BlockIcon = (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-		<circle cx="287.6" cy="158.9" r="83.8" />
-		<rect x="183.5" y="288.2" width="208.2" height="149.5" />
-	</svg>
-);
+
 
 registerBlockType("vk-blocks/icon-card-item", {
   title: __("Icon Card Item", "vk-blocks"),
-  icon: BlockIcon,
+  icon: <BlockIcon />,
   category: "vk-blocks-cat",
   attributes: schema,
   parent: ["vk-blocks/icon-card"],

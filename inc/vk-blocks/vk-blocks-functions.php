@@ -272,6 +272,10 @@ function vkblocks_blocks_assets() {
 										'type'    => 'boolean',
 										'default' => true,
 									),
+									'display_taxonomies' => array(
+										'type'    => 'boolean',
+										'default' => true,
+									),
 									'display_btn'       => array(
 										'type'    => 'boolean',
 										'default' => false,
@@ -400,6 +404,10 @@ function vkblocks_blocks_assets() {
 								'display_new'       => array(
 									'type'    => 'boolean',
 									'default' => false,
+								),
+								'display_taxonomies' => array(
+									'type'    => 'boolean',
+									'default' => true,
 								),
 								'display_btn'       => array(
 									'type'    => 'boolean',

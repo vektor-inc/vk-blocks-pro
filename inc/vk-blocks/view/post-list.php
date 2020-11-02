@@ -44,6 +44,7 @@ class VkBlocksPostList {
 			'display_excerpt'            => esc_html( $attributes['display_excerpt'] ),
 			'display_date'               => esc_html( $attributes['display_date'] ),
 			'display_new'                => esc_html( $attributes['display_new'] ),
+			'display_taxonomies'         => isset( $attributes['display_taxonomies'] ) ? esc_html( $attributes['display_taxonomies'] ) : null,
 			'display_btn'                => esc_html( $attributes['display_btn'] ),
 			'image_default_url'          => VK_BLOCKS_URL . 'images/no-image.png',
 			'overlay'                    => false,

@@ -6,6 +6,7 @@ import { schema,example } from "./schema";
 import { PRcontent } from "./component";
 import { deprecated } from "./deprecated/deprecated";
 import { FontAwesome } from "./../_helper/font-awesome-new"
+import BlockIcon from "./icon.svg";
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
@@ -19,59 +20,11 @@ const {
 const { Fragment } = wp.element;
 const { InspectorControls, ColorPalette } =
 	wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
-const BlockIcon = (
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		width="576"
-		height="512"
-		viewBox="0 0 576 512"
-	>
-		<g>
-			<path d="M291.7,133.3l0,245.3l-273.1,0l0-245.3L291.7,133.3 M307.2,117.8l-304.2,0l0,276.4l304.2,0L307.2,117.8L307.2,117.8z" />
-			<path
-				d="M560.7,218.8l-213.1,0c-6.1,0-11.1-5-11.1-11.1s5-11.1,11.1-11.1l213.1,0c6.1,0,11.1,5,11.1,11.1
-				C571.8,213.8,566.8,218.8,560.7,218.8z"
-			/>
-			<path
-				d="M560.7,265.4l-213.1,0c-6.1,0-11.1-5-11.1-11.1c0-6.1,5-11.1,11.1-11.1l213.1,0c6.1,0,11.1,5,11.1,11.1
-				C571.8,260.5,566.8,265.4,560.7,265.4z"
-			/>
-			<path
-				d="M560.7,312.1l-213.1,0c-6.1,0-11.1-5-11.1-11.1c0-6.1,5-11.1,11.1-11.1l213.1,0c6.1,0,11.1,5,11.1,11.1
-				C571.8,307.1,566.8,312.1,560.7,312.1z"
-			/>
-			<polygon points="278.4,365.4 31.9,365.4 31.9,287.4 113,182.2 184.4,264.4 229.9,226.5 278.4,290.6 	" />
-			<path
-				d="M360.6,133.3c4.8,0,8.7,3.9,8.7,8.7c0,4.8-3.9,8.7-8.7,8.7c-4.8,0-8.7-3.9-8.7-8.7C351.9,137.2,355.8,133.3,360.6,133.3
-				 M360.6,117.8c-13.4,0-24.2,10.9-24.2,24.2c0,13.4,10.9,24.2,24.2,24.2c13.4,0,24.2-10.9,24.2-24.2
-				C384.9,128.7,374,117.8,360.6,117.8L360.6,117.8z"
-			/>
-			<path
-				d="M423.3,133.3c4.8,0,8.7,3.9,8.7,8.7c0,4.8-3.9,8.7-8.7,8.7c-4.8,0-8.7-3.9-8.7-8.7C414.6,137.2,418.5,133.3,423.3,133.3
-				 M423.3,117.8c-13.4,0-24.2,10.9-24.2,24.2c0,13.4,10.9,24.2,24.2,24.2s24.2-10.9,24.2-24.2C447.6,128.7,436.7,117.8,423.3,117.8
-				L423.3,117.8z"
-			/>
-			<path
-				d="M486,133.3c4.8,0,8.7,3.9,8.7,8.7c0,4.8-3.9,8.7-8.7,8.7c-4.8,0-8.7-3.9-8.7-8.7C477.3,137.2,481.2,133.3,486,133.3
-				 M486,117.8c-13.4,0-24.2,10.9-24.2,24.2c0,13.4,10.9,24.2,24.2,24.2c13.4,0,24.2-10.9,24.2-24.2
-				C510.2,128.7,499.4,117.8,486,117.8L486,117.8z"
-			/>
-			<path
-				d="M548.7,133.3c4.8,0,8.7,3.9,8.7,8.7c0,4.8-3.9,8.7-8.7,8.7s-8.7-3.9-8.7-8.7C540,137.2,543.9,133.3,548.7,133.3
-				 M548.7,117.8c-13.4,0-24.2,10.9-24.2,24.2c0,13.4,10.9,24.2,24.2,24.2c13.4,0,24.2-10.9,24.2-24.2
-				C572.9,128.7,562.1,117.8,548.7,117.8L548.7,117.8z"
-			/>
-			<path
-				d="M566.3,347.6l-224.3,0c-3.1,0-5.6,2.5-5.6,5.6l0,35.5c0,3.1,2.5,5.6,5.6,5.6l224.3,0c3.1,0,5.6-2.5,5.6-5.6v-35.5
-				C571.8,350.1,569.3,347.6,566.3,347.6z M547.1,379.2v-16.6l9.8,8.3L547.1,379.2z"
-			/>
-		</g>
-	</svg>
-);
+
 
 registerBlockType("vk-blocks/pr-content", {
 	title: __("PR Content", "vk-blocks"), // Block title.
-	icon: BlockIcon, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
+	icon: <BlockIcon />, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: "vk-blocks-cat", // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	attributes: schema,
 	example,

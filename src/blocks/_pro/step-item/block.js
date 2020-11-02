@@ -5,6 +5,7 @@
 import { StepItem } from "./component";
 import { schema } from './schema';
 import { FontAwesome } from "../../_helper/font-awesome-new";
+import BlockIcon from "./icon.svg";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -13,7 +14,6 @@ const { Fragment } = wp.element;
 const { InspectorControls, ColorPalette } = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 import { deprecated } from './deprecated';
 
-const BlockIcon = 'arrow-down';
 
 registerBlockType('vk-blocks/step-item', {
 	title: __('Step Item', 'vk-blocks'),

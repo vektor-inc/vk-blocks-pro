@@ -116,9 +116,13 @@ const addAnimationActiveClass = (el, type, attributes) => {
 	const post = select( 'core/editor' ).getCurrentPost();
 
 	console.log(post);
+	if ( post.hasOwnProperty('content') ) {
+		console.log(post.content.match(/<script>/));
+	}
 
 	//0.49.8未満（_vkb_saved_block_version が ""）のみフィルターを使う。
 	if ( "vk-blocks/animation" === type.name && post.hasOwnProperty('meta') && !post.meta._vkb_saved_block_version) {
+		console.log("older than 0.49.8");
 		return<div>
 				<script>{ `window.addEventListener('load', (event) => {
 				let animationElm = document.querySelector('.vk_animation-${attributes.clientId}');
@@ -135,9 +139,10 @@ const addAnimationActiveClass = (el, type, attributes) => {
 			}, false);` }</script>
 				{ el }
 			</div>
-	} else if ( post.hasOwnProperty('content') && post.content.match(/<script>.*<\/script>/)) {
+	} else if ( post.hasOwnProperty('content') && post.content.match(/<script>/)) {
 		console.log("script tag is existed!");
 	} else {
+		console.log("defualt");
 		return el
 	}
 }

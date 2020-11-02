@@ -27,12 +27,13 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				'display_excerpt'            => false,
 				'display_date'               => true,
 				'display_new'                => true,
+				'display_taxonomies'         => false,
 				'display_btn'                => false,
 				'image_default_url'          => false,
 				'overlay'                    => false,
-				'btn_text'                   => __( 'Read more', 'vk-blocks' ),
+				'btn_text'                   => __( 'Read more', 'vk_components_textdomain' ),
 				'btn_align'                  => 'text-right',
-				'new_text'                   => __( 'New!!', 'vk-blocks' ),
+				'new_text'                   => __( 'New!!', 'vk_components_textdomain' ),
 				'new_date'                   => 7,
 				'textlink'                   => true,
 				'class_outer'                => '',
@@ -180,6 +181,8 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 			// Add layout Class
 			if ( $options['layout'] == 'card-horizontal' ) {
 				$class_outer = 'card card-post card-horizontal';
+			} elseif ( $options['layout'] == 'card-noborder' ) {
+				$class_outer = 'card card-noborder';
 			} elseif ( $options['layout'] == 'media' ) {
 				$class_outer = 'media';
 			} elseif ( $options['layout'] == 'postListText' ) {
@@ -282,7 +285,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 			// $attr = wp_parse_args( $attr, $default );
 
 			$layout_type = $options['layout'];
-			if ( $layout_type == 'card-horizontal' ) {
+			if ( $layout_type == 'card-horizontal' || $layout_type == 'card-noborder' ) {
 				$layout_type = 'card';
 			}
 
@@ -329,6 +332,30 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				$html .= '</p>';
 			}
 
+			if ( $options['display_taxonomies'] ) {
+				$args          = array(
+					'template'      => __( '<dt class="vk_post_taxonomy_title">%s</dt><dd class="vk_post_taxonomy_terms">%l</dd>', 'vk_components_textdomain' ),
+					'term_template' => '<a href="%1$s">%2$s</a>',
+				);
+				$taxonomies	= get_the_taxonomies( $post->ID, $args );
+				$exclusion	= array( 'product_type' );
+				// このフィルター名は投稿詳細でも使っているので注意
+				$exclusion	= apply_filters( 'vk_get_display_taxonomies_exclusion', $exclusion );
+
+				if ( is_array( $exclusion ) ){
+					foreach ( $exclusion as $key => $value ){
+						unset( $taxonomies[$value] );
+					}
+				}
+				if ( $taxonomies ) {
+					$html .= '<div class="vk_post_taxonomies">';
+					foreach ( $taxonomies as $key => $value ) {
+						$html .= '<dl class="vk_post_taxonomy vk_post_taxonomy-' . $key . '">' . $value . '</dl>';
+					} // foreach
+					$html .= '</div>';
+				} // if ($taxonomies)
+			}
+
 			if ( $options['display_btn'] ) {
 				$button_options = array(
 					'outer_id'       => '',
@@ -371,19 +398,19 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 
 			$patterns = array(
 				'card'            => array(
-					'label'             => __( 'Card', 'vk-blocks' ),
+					'label'             => __( 'Card', 'vk_components_textdomain' ),
 					'class_posts_outer' => '',
 				),
 				'card-horizontal' => array(
-					'label'             => __( 'Card Horizontal', 'vk-blocks' ),
+					'label'             => __( 'Card Horizontal', 'vk_components_textdomain' ),
 					'class_posts_outer' => '',
 				),
 				'media'           => array(
-					'label'             => __( 'Media', 'vk-blocks' ),
+					'label'             => __( 'Media', 'vk_components_textdomain' ),
 					'class_posts_outer' => 'media-outer',
 				),
 				'postListText'    => array(
-					'label'             => _x( 'Text 1 Column', 'post list type', 'vk-blocks' ),
+					'label'             => _x( 'Text 1 Column', 'post list type', 'vk_components_textdomain' ),
 					'class_posts_outer' => 'postListText-outer',
 				),
 			);

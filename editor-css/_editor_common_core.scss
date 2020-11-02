@@ -6,15 +6,9 @@
 	//ソーシャルアイコン
 	.vk_card_item .block-editor-inner-blocks .block-editor-block-list__layout,//これがないとカード内のインナーブロックで効かない
 	.wp-block-social-links{
-		&.is-style-default,
-		&.is-style-logos-only{
-			.wp-block{
-				&.wp-social-link{
-						width: 36px;
-						height: 36px;
-						margin: 0 8px 0 0;
-					}
-			}
+		.wp-block.wp-social-link{
+			width: auto;
+			margin: 0 8px .8em 0;
 		}
 	}
 }

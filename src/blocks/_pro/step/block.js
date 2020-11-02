@@ -8,16 +8,13 @@ import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
 const inserterVisible = hiddenNewBlock(5.3);
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
-const { registerBlockType, createBlock } = wp.blocks; // Import registerBlockType() from wp.blocks
+const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 const { PanelBody } = wp.components;
-const { Fragment } = wp.element;
-import { vkbBlockEditor } from "../../_helper/depModules"
+const { Fragment, useEffect } = wp.element;
+import { vkbBlockEditor, dispatchEditor } from "../../_helper/depModules"
 const { InspectorControls } = vkbBlockEditor;
-const { useSelect } = wp.data;
-import { selectEditor, dispatchEditor } from "../../_helper/depModules";
-const { getBlocksByClientId } = selectEditor;
-const { updateBlockAttributes, insertBlock } = dispatchEditor;
-const { createHigherOrderComponent } = wp.compose;
+const { updateBlockAttributes } = dispatchEditor;
+import { asyncGetInnerBlocks } from "../../_helper/asyncHooks";
 
 const BlockIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
@@ -49,7 +46,6 @@ const BlockIcon = (
 	</svg>
 );
 
-
 registerBlockType("vk-blocks/step", {
 	title: __("Step", "vk-blocks"), // Block title.
 	icon: BlockIcon, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
@@ -61,35 +57,15 @@ registerBlockType("vk-blocks/step", {
 
 	edit({ attributes, setAttributes, className, clientId }) {
 		const { firstDotNum } = attributes;
-		const currentBlock = getBlocksByClientId(clientId);
-		let beforeLength;
-		let afterLength;
 
-		if (
-			currentBlock != undefined &&
-			currentBlock[0] != null &&
-			currentBlock[0].innerBlocks != undefined
-		) {
-			const innerBlocks = currentBlock[0].innerBlocks;
-			beforeLength = innerBlocks.length;
+		const currentInnerBlocks = asyncGetInnerBlocks( clientId );
 
-			if (
-				beforeLength !== undefined &&
-				beforeLength !== 0 &&
-				beforeLength !== 1
-			) {
-				if (beforeLength !== afterLength) {
-					for (let i = 0; i < innerBlocks.length; i++) {
-						if (innerBlocks[i] !== undefined) {
-							updateBlockAttributes(innerBlocks[i].clientId, {
-								dotNum: firstDotNum + i
-							});
-						}
-					}
-				}
-				afterLength = beforeLength;
-			}
-		}
+		const resetDotNum = useEffect( () => {
+			currentInnerBlocks.forEach( function ( block, index ) {
+				updateBlockAttributes( block.clientId, { dotNum: firstDotNum + index });
+			})
+
+		}, [ attributes.firstDotNum, currentInnerBlocks.length ] );
 
 		return (
 			<Fragment>
@@ -99,10 +75,8 @@ registerBlockType("vk-blocks/step", {
 							type="number"
 							id={ "dot-number" }
 							onChange={ event => {
-								const value = parseInt(event.target.value, 10);
-								setAttributes({
-									firstDotNum: value
-								});
+								const value = parseInt( event.target.value, 10 );
+								setAttributes({ firstDotNum: value });
 							} }
 							value={ firstDotNum }
 							min="1"
@@ -114,6 +88,7 @@ registerBlockType("vk-blocks/step", {
 					attributes={ attributes }
 					className={ className }
 					setAttributes={ setAttributes }
+					resetDotNum={resetDotNum}
 					for_={ "edit" }
 				/>
 			</Fragment>
@@ -125,38 +100,3 @@ registerBlockType("vk-blocks/step", {
 		);
 	}
 });
-
-
-if (5.3 <= parseFloat(wpVersion)) {
-	/* Filter of editor.BlockEdit
-	/*-----------------------------------*/
-	wp.hooks.addFilter(
-		"editor.BlockEdit",
-		"vk-blocks/step",
-		createHigherOrderComponent((BlockEdit) => {
-			let preClientId;
-			const clientIdList = [];
-			return (props) => {
-
-				if (props.name === "vk-blocks/step-item" && -1 === clientIdList.indexOf(props.clientId)) {
-
-					const preAttributes = useSelect(
-						select => {
-							return select("core/block-editor").getBlockAttributes(preClientId);
-						},
-						[]
-					);
-
-					if (null !== preAttributes) {
-						updateBlockAttributes(props.clientId, {
-							dotNum: preAttributes.dotNum + 1
-						})
-					}
-					preClientId = props.clientId;
-					clientIdList.push(props.clientId);
-				}
-				return <BlockEdit { ...props } />;
-			};
-		}, "addAutoStepIndexUpdate")
-	);
-}

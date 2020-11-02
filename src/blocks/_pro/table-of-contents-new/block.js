@@ -25,7 +25,7 @@ import { vkbBlockEditor } from "../../_helper/depModules";
 const { InspectorControls } = vkbBlockEditor;
 const { addFilter } = wp.hooks;
 const { createHigherOrderComponent } = wp.compose;
-const { dispatch } = wp.data;
+const { dispatch, select } = wp.data;
 import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
 const inserterVisible = hiddenNewBlock(5.3);
 import TocBody from './TocBody'
@@ -125,16 +125,24 @@ const getHeadings = (props) => {
 
 const updateTableOfContents = createHigherOrderComponent((BlockListBlock) => {
 	return (props) => {
-		const allowedBlocks = [
-			"vk-blocks/heading",
-			"vk-blocks/outer",
-			"core/heading",
-			"core/cover",
-			"core/group",
-		];
-		if (isAllowedBlock(props.name, allowedBlocks)) {
-			getHeadings(props);
-		}
+
+		// 投稿に目次ブロックがある時のみ、見出しにカスタムIDを追加。
+		const blocks = wp.data.select("core/block-editor").getBlocks();
+		const findBlocks = blocks.find( block => block.name === "vk-blocks/table-of-contents-new" );
+
+		 if ( findBlocks ) {
+			const allowedBlocks = [
+				"vk-blocks/heading",
+				"vk-blocks/outer",
+				"core/heading",
+				"core/cover",
+				"core/group",
+			];
+			if (isAllowedBlock(props.name, allowedBlocks)) {
+				getHeadings(props);
+			}
+		 }
+
 		return <BlockListBlock { ...props } />;
 	};
 }, "updateTableOfContents");

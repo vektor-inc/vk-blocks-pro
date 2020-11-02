@@ -7,6 +7,8 @@ import { deprecated } from "./deprecated/block";
 import toNumber from "../../_helper/to-number";
 import { AdvancedMediaUpload } from "../../../components/advanced-media-upload";
 import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
+import BlockIcon from "./icon.svg";
+
 const inserterVisible = hiddenNewBlock(5.3);
 
 const { __ } = wp.i18n;
@@ -23,33 +25,10 @@ const {
 const { Fragment } = wp.element;
 const { InspectorControls, ColorPalette } =
 	wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
-const BlockIcon = (
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		width="576"
-		height="512"
-		viewBox="0 0 576 512"
-	>
-		<g>
-			<path
-				d="M288,390.2c74,0,134.2-60.3,134.2-134.2S362,121.8,288,121.8S153.8,182,153.8,256S214,390.2,288,390.2z M288,165.5
-			c49.9,0,90.5,40.6,90.5,90.5s-40.6,90.5-90.5,90.5s-90.5-40.6-90.5-90.5S238.1,165.5,288,165.5z"
-			/>
-			<polygon
-				points="266.1,333.3 309.9,333.3 309.9,277.9 365.3,277.9 365.3,234.1 309.9,234.1 309.9,178.7 266.1,178.7 266.1,234.1
-			210.7,234.1 210.7,277.9 266.1,277.9 	"
-			/>
-		</g>
-		<path
-			d="M529,31H49C22.5,31,1,52.5,1,79v352c0,26.5,21.5,48,48,48h480c26.5,0,48-21.5,48-48V79C577,52.5,555.5,31,529,31z M529,431
-		H49V79h480V431z"
-		/>
-	</svg>
-);
 
 registerBlockType("vk-blocks/outer", {
 	title: __("Outer", "vk-blocks"),
-	icon: BlockIcon,
+	icon: <BlockIcon />,
 	category: "vk-blocks-cat-layout",
 	attributes: schema,
 	supports: {

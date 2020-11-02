@@ -115,6 +115,8 @@ registerBlockType("vk-blocks/animation", {
 const addAnimationActiveClass = (el, type, attributes) => {
 	const post = select( 'core/editor' ).getCurrentPost();
 
+	console.log(post);
+
 	//0.49.8未満（_vkb_saved_block_version が ""）のみフィルターを使う。
 	if ( "vk-blocks/animation" === type.name && post.hasOwnProperty('meta') && !post.meta._vkb_saved_block_version) {
 		return<div>
@@ -133,6 +135,8 @@ const addAnimationActiveClass = (el, type, attributes) => {
 			}, false);` }</script>
 				{ el }
 			</div>
+	} else if ( post.hasOwnProperty('content') && post.content.match(/<script>.*<\/script>/)) {
+		console.log("script tag is existed!");
 	} else {
 		return el
 	}

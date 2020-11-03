@@ -14,7 +14,8 @@
     "gulp": "gulp",
     "test": "",
     "lint:js": "wp-scripts lint-js",
-    "lint:css": "wp-scripts lint-style"
+    "lint:css": "wp-scripts lint-style",
+    "test:e2e": "wp-scripts test-e2e"
   },
   "author": "",
   "license": "MIT",
@@ -27,6 +28,7 @@
     "@babel/plugin-transform-react-jsx": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
     "@wordpress/babel-plugin-makepot": "^3.9.0",
+    "@wordpress/e2e-test-utils": "^4.15.0",
     "@wordpress/env": "^2.1.0",
     "@wordpress/eslint-plugin": "^7.3.0",
     "@wordpress/scripts": "^12.5.0",

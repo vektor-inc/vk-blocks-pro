@@ -274,7 +274,7 @@ function vkblocks_blocks_assets() {
 									),
 									'display_taxonomies' => array(
 										'type'    => 'boolean',
-										'default' => true,
+										'default' => false,
 									),
 									'display_btn'       => array(
 										'type'    => 'boolean',
@@ -407,7 +407,7 @@ function vkblocks_blocks_assets() {
 								),
 								'display_taxonomies' => array(
 									'type'    => 'boolean',
-									'default' => true,
+									'default' => false,
 								),
 								'display_btn'       => array(
 									'type'    => 'boolean',

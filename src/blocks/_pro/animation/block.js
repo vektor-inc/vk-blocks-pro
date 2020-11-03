@@ -114,9 +114,8 @@ registerBlockType("vk-blocks/animation", {
  */
 const addAnimationActiveClass = (el, type, attributes) => {
 	const post = select( 'core/editor' ).getCurrentPost();
-
-	//0.49.8未満（_vkb_saved_block_version が ""）のみフィルターを使う。
-	if ( "vk-blocks/animation" === type.name && post.hasOwnProperty('meta') && !post.meta._vkb_saved_block_version) {
+	//0.49.8未満（_vkb_saved_block_version が ""）+ JSのフィルターでscriptタグを追加していたバージョンが対象。
+	if ( "vk-blocks/animation" === type.name && post.hasOwnProperty('meta') && post.content.match(/<script>/) && !post.meta._vkb_saved_block_version) {
 		return<div>
 				<script>{ `window.addEventListener('load', (event) => {
 				let animationElm = document.querySelector('.vk_animation-${attributes.clientId}');

@@ -55,6 +55,10 @@ export const schema = {
     type: "boolean",
     default: false,
   },
+  display_taxonomies: {
+    type: "boolean",
+    default: false,
+  },
   display_btn: {
     type: "boolean",
     default: true,

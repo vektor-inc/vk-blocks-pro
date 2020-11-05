@@ -28,6 +28,7 @@
     "@babel/plugin-transform-react-jsx": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
     "@wordpress/babel-plugin-makepot": "^3.9.0",
+    "@wordpress/blocks": "^6.24.1",
     "@wordpress/e2e-test-utils": "^4.15.0",
     "@wordpress/env": "^2.1.0",
     "@wordpress/eslint-plugin": "^7.3.0",

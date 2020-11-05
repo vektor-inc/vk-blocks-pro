@@ -91,3 +91,8 @@ export const checkForBlockErrors = async ( blockName ) => {
 	expect( await page.$( `[data-type="${blockName}"]` ) ).not.toBeNull();
 	expect( await getPageError() ).toBeNull();
 };
+
+
+export const getVKBlocks = async ( ) => {
+	( await getAllBlocks() ).find( ( block ) => block.category === 'vk-blocks-cat' )
+};

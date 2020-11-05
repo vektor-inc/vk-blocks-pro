@@ -126,6 +126,12 @@ $padding-xxl: 4em;
 	background-size: cover !important;
 }
 
+.vk_outer-bgPosition-repeat {
+	background-attachment: unset !important;
+	background-repeat: repeat !important;
+	background-size: auto !important;
+}
+
 .vk_outer_separator {
 
 	svg {

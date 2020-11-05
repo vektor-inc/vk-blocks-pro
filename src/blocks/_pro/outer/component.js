@@ -44,6 +44,8 @@ export const OuterBlock = (props) => {
 		classBgPosition = " vk_outer-bgPosition-parallax vk-prlx";
 	} else if (bgPosition === "fixed") {
 		classBgPosition = " vk_outer-bgPosition-fixed";
+	} else if (bgPosition === "repeat") {
+		classBgPosition = " vk_outer-bgPosition-repeat";
 	} else {
 		classBgPosition = " vk_outer-bgPosition-normal";
 	}

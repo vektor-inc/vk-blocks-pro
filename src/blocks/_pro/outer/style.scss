@@ -108,8 +108,8 @@ $padding-xxl: 4em;
 }
 
 .vk_outer-bgPosition-fixed {
-	// background-attachment は !important をつけておかないと
-	// 画面サイズ毎の指定が background に対してされていて attachment が無効化されるため !important を消さないこと
+	// background-attachment と background-size は !important をつけておかないと
+	// 画面サイズ毎の指定が background に対してされていて attachment と size が無効化されるため !important を消さないこと
 	background-attachment: fixed !important;
 	background-size: cover !important;
 	// iPhone の時に fixed のままだとバグで反応せずに画像のcoverまで効かなくなって巨大な画像が表示されるので
@@ -120,13 +120,15 @@ $padding-xxl: 4em;
 }
 
 .vk_outer-bgPosition-normal {
-	// background-attachment は !important をつけておかないと
-	// 画面サイズ毎の指定が background に対してされていて attachment が無効化されるため !important を消さないこと
+	// background-attachment と background-size は !important をつけておかないと
+	// 画面サイズ毎の指定が background に対してされていて attachment と size が無効化されるため !important を消さないこと
 	background-attachment: unset !important;
 	background-size: cover !important;
 }
 
 .vk_outer-bgPosition-repeat {
+	// background-attachment と background-size は !important をつけておかないと
+	// 画面サイズ毎の指定が background に対してされていて attachment と size が無効化されるため !important を消さないこと
 	background-attachment: unset !important;
 	background-repeat: repeat !important;
 	background-size: auto !important;

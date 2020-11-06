@@ -26,6 +26,10 @@ import { sortBy, uniq } from 'lodash';
 
 // 	return sortBy( uniq( inserterItemTitles ) );
 // }
+const blocksTitle = async () => { return getAllBlockInserterItemTitles(); }
+console.log(blocksTitle().then((block) => {
+	console.log(block)
+}));
 
 describe( `All Blocks Test`, () => {
 
@@ -43,16 +47,15 @@ describe( `All Blocks Test`, () => {
 		// Insert Block.
 		await insertBlock( "Alert" );
 
+		const insertedBlock = await getAllBlocks();
+		const blockSlug = insertedBlock[0].name;
+
 		// Check if block was inserted and no error.^
-		await helper.checkForBlockErrors( "vk-blocks/alert" );
+		await helper.checkForBlockErrors( blockSlug );
 
 		await openGlobalBlockInserter();
 
 		await page.screenshot({path: `./tests/e2e/screenshot/jserror.png`});
-
-		const hello = await getAllBlockInserterItemTitles();
-
-		console.log(hello);
 
 		// Take Screenshot for debug.
 		// await page.screenshot({path: `./tests/e2e/screenshot/${name}.png`});

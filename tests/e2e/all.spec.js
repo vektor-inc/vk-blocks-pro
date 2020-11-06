@@ -43,28 +43,16 @@ describe( `All Blocks Test`, () => {
 		// Insert Block.
 		await insertBlock( "Alert" );
 
-		// Check if block was inserted and no error.
+		// Check if block was inserted and no error.^
 		await helper.checkForBlockErrors( "vk-blocks/alert" );
 
-		// await openGlobalBlockInserter();
+		await openGlobalBlockInserter();
 
 		await page.screenshot({path: `./tests/e2e/screenshot/jserror.png`});
-		// console.log(await getTitles());
-		// const inserterItemTitles = await page.evaluate( () => {
-		// 	const elms = document.querySelectorAll(
-		// 		'.block-editor-block-types-list__item-title'
-		// 	)
-		// 	const text = Array.from(elms).map(elm => {
-		// 		return elm.innerText
-		// 	})
 
-		// 	return text;
+		const hello = await getAllBlockInserterItemTitles();
 
-		// } );
-
-		// const hello = await getTitles();
-
-		// console.log(hello);
+		console.log(hello);
 
 		// Take Screenshot for debug.
 		// await page.screenshot({path: `./tests/e2e/screenshot/${name}.png`});

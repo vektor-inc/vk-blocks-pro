@@ -23,6 +23,7 @@ import "./border-box/block.js";
 import "./faq2/block.js";
 import "./faq2-q/block.js";
 import "./faq2-a/block.js";
+import "./page-content/block.js";
 import "./_pro/icon-card-item/block.js";
 import "./_pro/icon-card/block.js";
 import "./_pro/card-item/block.js";

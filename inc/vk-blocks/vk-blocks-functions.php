@@ -133,12 +133,39 @@ function vkblocks_blocks_assets() {
 		wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_check', array( 'is_pro' => false ) );
 	}
 
+	/**
+	 * Page List for Page Content Block
+	 */
+	// 選択可能なフォームを生成.
+	$option_posts = array(
+		array(
+			'label' => __( 'Unspecified', 'vk-all-in-one-expansion-unit' ),
+			'value' => -1,
+		),
+	);
+
+	$the_posts = get_posts(
+		array(
+			'posts_per_page' => -1,
+			'post_type'      => 'page',
+		)
+	);
+
+	foreach ( $the_posts as $the_post ) {
+		$option_posts[] = array(
+			'label' => $the_post->post_title,
+			'value' => $the_post->ID,
+		);
+	}
+	// 投稿リストをブロック側に渡す.
+	wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_page_list', $option_posts );
+
 	if ( defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, '5.0', '>=' ) ) {
 
 
 		$arr = array( 'alert', 'balloon', 'button', 'faq', 'flow', 'pr-blocks', 'pr-content', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents-new', 'highlighter', 'timeline', 'timeline-item', 'step', 'step-item', 'post-list', 'list-style', 'group-style', 'child-page', 'card', 'card-item', 'grid-column', 'grid-column-item', 'border-box', 'icon-card', 'icon-card-item', 'animation', 'slider', 'slider-item', 'faq2', 'faq2-q', 'faq2-a', 'responsive-br' );// REPLACE-FLAG : このコメントは削除しないで下さい。wp-create-gurten-template.shで削除する基準として左の[//REPLACE-FLAG]を使っています。
-
-		$common_attributes = array(
+		global $vk_blocks_common_attributes;
+		$vk_blocks_common_attributes = array(
 			'vkb_hidden'       => array(
 				'type'    => 'boolean',
 				'default' => false,
@@ -202,7 +229,7 @@ function vkblocks_blocks_assets() {
 									'default' => '',
 								),
 							),
-							$common_attributes
+							$vk_blocks_common_attributes
 						),
 						'render_callback' => function ( $attributes ) {
 							if ( $attributes['renderHtml'] ) {
@@ -333,7 +360,7 @@ function vkblocks_blocks_assets() {
 										'default' => '',
 									),
 								),
-								$common_attributes
+								$vk_blocks_common_attributes
 							),
 							// 'style'           => 'vk-blocks-build-css',
 							'editor_style'    => 'vk-blocks-build-editor-css',
@@ -454,7 +481,7 @@ function vkblocks_blocks_assets() {
 									'default' => false,
 								),
 							),
-							$common_attributes
+							$vk_blocks_common_attributes
 						),
 						'editor_style'    => 'vk-blocks-build-editor-css',
 						'editor_script'   => 'vk-blocks-build-js',
@@ -475,6 +502,7 @@ function vkblocks_blocks_assets() {
 
 			} // if ( $value === 'table-of-contents' ) {
 		} // foreach ( $arr as $value ) {
+		require_once dirname( __FILE__ ) . '/blocks/page-content/class-vk-page-content-block.php';
 	} // if ( defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, '5.0', '>=' ) ) {
 
 	$dynamic_css = '

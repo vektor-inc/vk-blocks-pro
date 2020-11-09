@@ -1,11 +1,10 @@
 /**
- * highlighter block type
+ * No Wrap
  */
 const {__} = wp.i18n; // Import __() from wp.i18n
 const {registerFormatType, toggleFormat, applyFormat, removeFormat, getActiveFormat} = window.wp.richText;
 const {RichTextToolbarButton, RichTextShortcut, InspectorControls, PanelColorSettings, getColorObjectByColorValue} = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const {Fragment} = wp.element;
-const name = 'vk-blocks/nowrap';
 const BlockIcon = (
 	<svg xmlns="http://www.w3.org/2000/svg" width="576" height="512" viewBox="0 0 576 512">
 		<path d="M26.9,462.2l104.7,39.6l34-34l-73.2-73.2L26.9,462.2z M146.5,231.8c-10.3,9.1-14.4,23.4-10.4,36.6l12.5,41.1l-48.9,48.9
@@ -13,56 +12,32 @@ const BlockIcon = (
 		C417.4,6,385.8,5,364.9,23.4L201,186.6l171.8,171.8l163.1-163.9C554.3,173.6,553.3,142,533.7,122.3L533.7,122.3z" />
 	</svg>
 );
-import hex2rgba from "../_helper/hex-to-rgba";
 
-registerFormatType(name, {
-    title: __('Nowrap', 'vk-blocks'),
-    tagName: 'span',
-    className: 'text-nowrap',
-    attributes: {
-        data: 'data-nowrap',
-        // style: 'style',
+registerFormatType(
+	'vk-blocks/nowrap', {
+   		title: __('No wrap', 'vk-blocks'),
+    	tagName: 'span',
+    	className: 'text-nowrap',
+    	edit(props) {
+			const { value, isActive } = props;
+
+			return (
+				<Fragment>
+					<RichTextToolbarButton
+						icon={ BlockIcon }
+						title={ __('Nowrap', 'vk-blocks') }
+						onClick={ () => {
+							props.onChange (
+								toggleFormat(
+									value,
+									{ type: 'vk-blocks/nowrap' }
+								)
+							);
+						} }
+						isActive={ isActive }
+					/>
+				</Fragment>
+			);
+		}
     },
-    edit(props) {
-        const {value, isActive, onChange} = props;
-        // const alpha = 0.7;
-        // const defaultColor = '#fffd6b';
-        const shortcutType = 'primary';
-        const shortcutChar = "n";
-
-        let activeNowrap;
-        if (isActive) {
-            const activeFormat = getActiveFormat(value, name);
-            activeNowrap = activeFormat.attributes.data;
-        }
-
-        const onToggle = (activeNowrap) => {
-
-            onChange(toggleFormat(value, {
-                type: name,
-                attributes: {
-                    data: activeNowrap,
-                    // style: `background: linear-gradient(transparent 60%,${hex2rgba(activeNowrap, alpha)} 0);`,
-                },
-            } ))
-        };
-
-        return (
-	<Fragment>
-		<RichTextShortcut
-			type={ shortcutType }
-			character={ shortcutChar }
-			onUse={ () => onToggle(activeNowrap) }
-                />
-		<RichTextToolbarButton
-			icon={ BlockIcon }
-			title={ __('Nowrap', 'vk-blocks') }
-			onClick={ () => onToggle(activeNowrap) }
-			isActive={ isActive }
-			shortcutType={ shortcutType }
-			shortcutCharacter={ shortcutChar }
-                />
-	</Fragment>
-        );
-    },
-});
+);

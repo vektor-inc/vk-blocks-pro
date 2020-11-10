@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.5.3
-Stable tag: 0.54.2
+Stable tag: 0.55.0
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -61,6 +61,10 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.55.0 =
+* [ Add function ][ Outer ] Background image repeat
+* [ Bug fix ] fix can not save on some plugin using enviroment
 
 = 0.54.2 =
 * [ Bug fix ][ Slider ] Fix slider broken in page.

@@ -71,14 +71,15 @@
 
 .vk_balloon-type-speech{
 	.vk_balloon_content{
-		border-color: #f5f5f5;
+		// border-color: #f5f5f5;
 		border-radius: .4em;
+
 		&::before,&::after{
 			content: '';
 			position: absolute;
 			width: 0;
 			height: 0;
-			border-width: 10px;
+			border-width: 8px;
 			border-color: transparent;
     		border-style: solid;
 		}
@@ -95,12 +96,12 @@
 			background: inherit;
 		}
 		&::before{
-			width: 20px;
-			height: 20px;
+			width: 14px;
+			height: 14px;
 		}
 		&::after{
-			width: 10px;
-			height: 10px;
+			width: 8px;
+			height: 8px;
 		}
 	}
 }
@@ -110,32 +111,39 @@
 .vk_balloon-position-left{
 	&.vk_balloon-type-speech{
 		.vk_balloon_icon{
-			margin-right: 2rem;
+			margin-right: 1rem;
 		}
 		.vk_balloon_content{
+			&::before{ //outline のborder用
+				left: 0;
+				top: 10px;
+				border-left: 0;
+				margin-left: -10px;
+				border-width: 10px;
+			}
 			&::after{
 				left: 0;
 				top: 12px;
 				border-right-color: inherit;
 				border-left: 0;
-				margin-left: -10px;
+				margin-left: -8px;
 			}
 		}
 	}
 
 	&.vk_balloon-type-think{
 		.vk_balloon_icon{
-			margin-right: 2.5rem;
+			margin-right: 1rem;
 		}
 
 		.vk_balloon_content{
 			&::before{
-				left: -22px;
+				left: -15px;
 				top: 7px;
 			}
 
 			&::after{
-				left: -35px;
+				left: -25px;
 				top: 20px;
 			}
 		}
@@ -145,39 +153,97 @@
 	flex-direction: row-reverse;
 	&.vk_balloon-type-speech{
 		.vk_balloon_icon{
-			margin-left: 2rem;
+			margin-left: 1rem;
 		}
 
 		.vk_balloon_content{
+			&::before{ //outline のborder用
+				right: 0;
+				top: 10px;
+				border-right: 0;
+				margin-right: -10px;
+				border-width: 10px;
+			}
 			&::after{
 				right: 0;
 				top: 12px;
 				border-left-color: inherit;
 				border-right: 0;
-				margin-right: -10px;
+				margin-right: -8px;
 			}
 		}
 	}
 
 	&.vk_balloon-type-think{
 		.vk_balloon_icon{
-			margin-left: 2.5rem;
+			margin-left: 1rem;
 		}
 
 		.vk_balloon_content{
 			&::before{
-				right: -22px;
+				right: -15px;
 				top: 7px;
 			}
 
 			&::after{
-				right: -35px;
+				right: -25px;
 				top: 20px;
 			}
 		}
 	}
 }//.vk_balloon-position-right
 
+
+/*	Shape
+/*-------------------------------------------*/
+// common
+.vk_balloon-outline{
+	border:1px solid #000;
+	background: #fff;
+}
+
+.vk_balloon{
+
+	&.vk_balloon-type-think {
+		.vk_balloon-outline {
+			&::before,&::after{
+				border:1px solid #000;
+				background: #fff;
+			}
+		}
+	}
+	&-position-left{ //位置が左
+		&.vk_balloon-type-speech {
+			.vk_balloon-outline{
+				&::before{
+					border-right-color: #000;
+				}
+				&::after{ //背景無し（白）
+					border-right-color: #fff;
+				}
+			}
+		}
+	}
+	&-position-right{ //位置が右
+		&.vk_balloon-type-speech {
+			.vk_balloon-outline{
+				&::before{
+					border-left-color: #000;
+				}
+				&::after{ //背景無し（白）
+					border-left-color: #fff;
+				}
+			}
+		}
+	}
+
+}
+
+
+
+
+/*	animation
+/*-------------------------------------------*/
 .vk_balloon-animation {
 	&-trembling {
 		animation: trembling 0.1s infinite;
@@ -277,7 +343,7 @@
 	.vk_balloon-type-speech {
 		.vk_balloon_content{
 			&::after {
-				border: 15px solid transparent;
+				// border: 15px solid transparent;
 			}
 		}
 	}
@@ -299,10 +365,9 @@
 		}//.vk_balloon_icon
         .vk_balloon_content{
           display: inline-block;
-          &::after{
-            top: 32px;
-             margin-left: -15px;
-          }
+        //   &::after{
+        //     top: 8px;
+        //   }
         }//.vk_balloon_content
       }//&.vk_balloon-type-speech
 
@@ -314,10 +379,10 @@
 				.vk_balloon_content{
 					display: inline-block;
 
-					&::before{
-						width: 15px;
-						height: 15px;
-					}
+					// &::before{
+					// 	width: 15px;
+					// 	height: 15px;
+					// }
         }
       }
     }//&.vk_balloon-position-left
@@ -334,10 +399,9 @@
 
 				.vk_balloon_content{
 				  display: inline-block;
-				  &::after{
-				    top: 32px;
-					margin-right: -15px;
-				  }
+				//   &::after{
+				//     top: 8px;
+				//   }
 				}
 			}//&.vk_balloon-type-speech
 

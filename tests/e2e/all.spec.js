@@ -10,25 +10,7 @@ import {
 import * as helper from './helper';
 const timeout =  5000;
 
-// import { sortBy, uniq } from 'lodash';
-// export async function getTitles() {
-// 	const inserterItemTitles = await page.evaluate( () => {
-// 		return Array.from(
-// 			document.querySelectorAll(
-// 				'.block-editor-block-types-list__item-title'
-// 			)
-// 		).map( ( inserterItem ) => {
-// 			return inserterItem.innerText;
-// 		} );
-// 	} );
-// 	console.log(inserterItemTitles);
 
-// 	return sortBy( uniq( inserterItemTitles ) );
-// }
-// const blocksTitle = async () => { return getAllBlockInserterItemTitles(); }
-// console.log(blocksTitle().then((block) => {
-// 	console.log(block)
-// }));
 
 describe( `All Blocks Test`, () => {
 
@@ -41,84 +23,79 @@ describe( `All Blocks Test`, () => {
 
 	jest.setTimeout(10000);
 
-	it( 'Test Javascript Error', async () => {
+	const blocks = [
+		//Free
+		{ label: "Alert", slug: "vk-blocks/alert" },
+		{ label: "Ballon", slug: "vk-blocks/balloon" },
+		{ label: "Border Box", slug: "vk-blocks/border-box" },
+		{ label: "Button", slug: "vk-blocks/button" },
+		{ label: "Classic FAQ", slug: "vk-blocks/faq" },
+		{ label: "New FAQ", slug: "vk-blocks/faq2" },
+		{ label: "Flow", slug: "vk-blocks/flow" },
+		{ label: "Heading", slug: "vk-blocks/heading" },
+		{ label: "PR Blocks", slug: "vk-blocks/pr-blocks" },
+		{ label: "PR Content", slug: "vk-blocks/pr-content" },
+		{ label: "Responsive Spacer", slug: "vk-blocks/spacer" },
+		{ label: "Staff", slug: "vk-blocks/staff" },
+		// Pro
+		{ label: "Animation", slug: "vk-blocks/animation" },
+		{ label: "Card", slug: "vk-blocks/card" },
+		{ label: "Child page list", slug: "vk-blocks/child-page" },
+		{ label: "Grid Column", slug: "vk-blocks/grid-column" },
+		{ label: "Icon Card", slug: "vk-blocks/icon-card" },
+		{ label: "Icon Card", slug: "vk-blocks/icon-card" },
+		{ label: "Outer", slug: "vk-blocks/outer" },
+		{ label: "Post list", slug: "vk-blocks/post-list" },
+		{ label: "Slider", slug: "vk-blocks/slider" },
+		{ label: "Step", slug: "vk-blocks/step" },
+		{ label: "Table of Contents", slug: "vk-blocks/table-of-contents-new" },
+		{ label: "Timeline", slug: "vk-blocks/timeline" },
+	];
 
-		//グローバルブロックインサーターを開く
-		await openGlobalBlockInserter();
-		// VK Blocksを検索
-		await page.type('input[placeholder="Search for a block"]', 'vk');
-		// 全てのVK Blocksタイトルを取得
-		const allBlockTitles = await getAllBlockInserterItemTitles();
-		// 全VKブロックを、挿入。
-		allBlockTitles.forEach( async ( blockTitle ) => {
-			console.log(blockTitle)
-			await insertBlock( blockTitle );
-			await page.waitForSelector(`[data-title="${blockTitle}"]`);
-		})
+	blocks.forEach( ( block ) => {
 
-		// const insertedBlock = await getAllBlocks();
-		// console.log(insertedBlock);
+		it( `Test Javascript Error: ${block.label}`, async () => {
 
-		// Check if block was inserted and no error.^
-		// await helper.checkForBlockErrors( blockSlug );
+			await insertBlock( block.label );
 
-		await page.screenshot({path: `./tests/e2e/screenshot/jserror.png`});
+			// Check if block was inserted and no error.^
+			await helper.checkForBlockErrors( block.slug );
 
-		// Take Screenshot for debug.
-		// await page.screenshot({path: `./tests/e2e/screenshot/${name}.png`});
-	});
+			// await page.screenshot({path: `./tests/e2e/screenshot/jserror.png`});
 
-	// it( 'Test PHP Error', async () => {
-	// 	// Insert Block.
-	// 	await insertBlock( "Alert" );
+			// Take Screenshot for debug.
+			// await page.screenshot({path: `./tests/e2e/screenshot/${name}.png`});
+		});
 
-	// 	await publishPost();
+		it( `Test PHP Error: ${block.label}`, async () => {
+			// Insert Block.
+			await insertBlock( block.label );
 
-	// 	const publishUrl = await page.evaluate( () => {
-	// 		// Get publish URL.
-	// 		const publishUrlTag = document.querySelector(".post-publish-panel__postpublish-header.is-opened").innerHTML;
-	// 		const url = publishUrlTag.match(/http.+?"/g);
-	// 		// remove "
-	// 		return url[0].slice(0, -1);
+			await publishPost();
 
-	// 	})
+			const publishUrl = await page.evaluate( () => {
+				// Get publish URL.
+				const publishUrlTag = document.querySelector(".post-publish-panel__postpublish-header.is-opened").innerHTML;
+				const url = publishUrlTag.match(/http.+?"/g);
+				// remove "
+				return url[0].slice(0, -1);
 
-	// 	await page.goto(publishUrl);
+			})
 
-	// 	// Get texts in published post.
-	// 	const contents = await page.evaluate(() => {
-	// 		return document.querySelector(".entry-content").innerText;
-	// 	});
+			await page.goto(publishUrl);
 
-	// 	// Check Error messages.
-	// 	expect( contents.match(/Notice/) ).toBeNull();
-	// 	expect( contents.match(/Warning/) ).toBeNull();
-	// 	expect( contents.match(/Fatal/) ).toBeNull();
+			// Get texts in published post.
+			const contents = await page.evaluate(() => {
+				return document.querySelector(".entry-content").innerText;
+			});
 
-	// 	// For debugging.
-	// 	await page.screenshot({path: `./tests/e2e/screenshot/phperror.png`});
-	// });
+			// Check Error messages.
+			expect( contents.match(/Notice/) ).toBeNull();
+			expect( contents.match(/Warning/) ).toBeNull();
+			expect( contents.match(/Fatal/) ).toBeNull();
+
+			// For debugging.
+			// await page.screenshot({path: `./tests/e2e/screenshot/phperror.png`});
+		});
+	})
 } );
-
-// const e2eTestForAll = ( ) => {
-
-// 	let block = {};
-// 	block.name = "core/image";
-// 	block.title = "Image";
-
-
-
-
-// console.log(helper.getVKBlocks());
-
-// e2eTestForAll()
-
-// console.log(getAllBlocks());
-
-// const vkBlocksAll = getBlockTypes().filter( block => block.category === 'vk-blocks-cat' );
-
-// console.log(vkBlocksAll);
-
-// vkBlocksAll.forEach( vkBlock => {
-// 	e2eTestForAll(vkBlock)
-// } )

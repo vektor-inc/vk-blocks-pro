@@ -10,6 +10,8 @@ import replaceClientId from "../../_helper/replaceClientId"
 import { AdvancedToggleControl } from "./../../../components/advanced-toggle-control";
 import AdvancedViewportControl from "../../../components/advanced-viewport-control"
 import AdvancedUnitControl from "../../../components/advanced-unit-control"
+import deprecated from "./deprecated/"
+import BlockIcon from "./icon.svg";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -20,24 +22,6 @@ const { PanelBody, BaseControl, TextControl, ButtonGroup, Button, SelectControl 
 const { createHigherOrderComponent } = wp.compose;
 const { addFilter } = wp.hooks;
 
-const BlockIcon = (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 576">
-		<path d="M456.1,1320.7H118.4v36.6H533V945.2h-35.5v334C497.6,1302.1,479,1320.7,456.1,1320.7z" />
-		<path d="M56.5,363.5c5.6,7,15.3,2.1,15.3-8V220.4c0-10.1-9.7-15-15.3-8L2.6,280.1c-3.5,4.4-3.5,11.5,0,15.9L56.5,363.5z" />
-		<path d="M519.5,363.5c-5.6,7-15.3,2.1-15.3-8V220.4c0-10.1,9.7-15,15.3-8l53.9,67.6c3.5,4.4,3.5,11.5,0,15.9L519.5,363.5z" />
-		<g>
-			<g>
-				<circle cx="240.3" cy="195.8" r="23.8" />
-				<path d="M181.7,311.7h56h36.7h120c10.6,0,16.4-13.7,9.5-22.6l-64.9-83.6c-5-6.4-13.9-6.4-18.9,0l-52.1,67.1
-				c-5.2,6.7-14.9,6.3-19.6-1l-22.3-34.3c-5-7.6-15.3-7.6-20.3,0L171.5,290C165.7,299.1,171.5,311.7,181.7,311.7z" />
-				<path d="M392.7,404H183.3c-7.8,0-14.1-6.3-14.1-14.1v-24.1c0-7.8,6.3-14.1,14.1-14.1h209.3c7.8,0,14.1,6.3,14.1,14.1v24.1
-				C406.8,397.7,400.5,404,392.7,404z" />
-			</g>
-			<path d="M436.1,87.8H139.9c-25.4,0-46,20.6-46,46v308.3c0,25.4,20.6,46,46,46h296.2c25.4,0,46-20.6,46-46V133.8
-			C482.1,108.5,461.5,87.8,436.1,87.8z M436.1,442.2H139.9V133.8h296.2V442.2z" />
-		</g>
-	</svg>
-);
 
 let displayInserter = false;
 if (window.wpVersion && 5.4 <= parseFloat(window.wpVersion)) {
@@ -46,7 +30,7 @@ if (window.wpVersion && 5.4 <= parseFloat(window.wpVersion)) {
 
 registerBlockType("vk-blocks/slider", {
 	title: __("Slider", "vk-blocks"),
-	icon: BlockIcon,
+	icon: <BlockIcon />,
 	category: "vk-blocks-cat-layout",
 	attributes: schema,
 	description: __( 'Slider is do not move in edit screen.','vk-blocks'),
@@ -58,41 +42,15 @@ registerBlockType("vk-blocks/slider", {
 	edit(props) {
 		const { attributes, setAttributes, className, clientId } = props;
 		const { autoPlay, autoPlayDelay, pagination, width, loop, effect, speed } = attributes;
-		const { getBlocksByClientId } = select("core/block-editor");
 		const { updateBlockAttributes } = dispatch("core/block-editor");
-
-		const thisBlock = getBlocksByClientId(clientId);
-
-		let beforeLength;
-		let afterLength;
-
 		const customClientId = replaceClientId(clientId);
 
 		useEffect(() => {
-			updateBlockAttributes(clientId, {
+			updateBlockAttributes( clientId, {
 				clientId:customClientId,
 			});
 		}, [])
 
-		if (
-			thisBlock !== undefined &&
-			thisBlock[0] !== null &&
-			thisBlock[0].innerBlocks !== undefined
-		) {
-			const innerBlocks = thisBlock[0].innerBlocks;
-			beforeLength = innerBlocks.length;
-
-			if (beforeLength !== undefined) {
-				if (beforeLength !== afterLength) {
-					for (let i = 0; i < innerBlocks.length; i++) {
-						if (innerBlocks[i] !== undefined) {
-							updateBlockAttributes(innerBlocks[i].clientId, attributes);
-						}
-					}
-				}
-				afterLength = beforeLength;
-			}
-		}
 		return (
 			<Fragment>
 				<BlockControls>
@@ -207,6 +165,8 @@ registerBlockType("vk-blocks/slider", {
 			/>
 		);
 	},
+
+	deprecated
 });
 
 const generateHeightCss = (attributes, for_) =>{
@@ -272,77 +232,90 @@ addFilter(
 	vkbwithClientIdClassName
 );
 
-// Add swiper-js script for front side.
+/**
+ * 	Swiperの設定をフロント側に出力するフィルター。
+ *  0.49.8で、jSをfooterに出力するよう構造変更。CSSは継続して出力。
+ *
+ * @param {*} el
+ * @param {*} type
+ * @param {*} attributes
+ */
 const addSwiperConfig = (el, type, attributes) => {
+	const post = select( 'core/editor' ).getCurrentPost();
 
-	if ("vk-blocks/slider" === type.name) {
-		const { clientId, pagination, autoPlay, autoPlayDelay, loop, effect, speed }  = attributes
+	if( "vk-blocks/slider" === type.name ){
+		//0.49.8未満（_vkb_saved_block_version が ""）のみJSタグ挿入
+		if( post.hasOwnProperty('meta') && !post.meta._vkb_saved_block_version){
+			const { clientId, pagination, autoPlay, autoPlayDelay, loop, effect, speed }  = attributes
+			const cssTag = generateHeightCss( attributes, "save" )
 
-		const cssTag = generateHeightCss( attributes, "save" )
+			let autoPlayScripts;
+			if(autoPlay){
+				autoPlayScripts = `autoplay: {
+					delay: ${autoPlayDelay},
+					disableOnInteraction: false,
+				},`
+			}else{
+				autoPlayScripts = ''
+			}
 
-		let autoPlayScripts;
-		if(autoPlay){
-			autoPlayScripts = `autoplay: {
-				delay: ${autoPlayDelay},
-				disableOnInteraction: false,
-			},`
-		}else{
-			autoPlayScripts = ''
+			let paginationScripts;
+			if(pagination){
+				paginationScripts = `
+				// If we need pagination
+				pagination: {
+					el: '.swiper-pagination',
+					clickable : true,
+				},`;
+			}else{
+				paginationScripts = ''
+			}
+
+			let speedScripts;
+			if(speed){
+				speedScripts = `speed: ${speed},`
+			}else{
+				speedScripts = ''
+			}
+
+			return<div>
+				{ el }
+				<style type='text/css'>{ cssTag }</style>
+				<script>{ `
+				var swiper${replaceClientId(clientId)} = new Swiper ('.vk_slider_${clientId}', {
+
+					${speedScripts}
+
+					// Optional parameters
+					loop: ${loop},
+
+					effect: '${effect}',
+
+					${paginationScripts}
+
+					// navigation arrows
+					navigation: {
+						nextEl: '.swiper-button-next',
+						prevEl: '.swiper-button-prev',
+					},
+
+					// And if we need scrollbar
+					scrollbar: {
+						el: '.swiper-scrollbar',
+					},
+
+					${autoPlayScripts}
+					})`
+					}
+				</script>
+				</div>
+		} else {
+			const cssTag = generateHeightCss( attributes, "save" )
+			return <div>{ el }<style type='text/css'>{ cssTag }</style></div>;
 		}
-
-		let paginationScripts;
-		if(pagination){
-			paginationScripts = `
-			// If we need pagination
-			pagination: {
-			  el: '.swiper-pagination',
-			  clickable : true,
-			},`;
-		}else{
-			paginationScripts = ''
-		}
-
-		let speedScripts;
-		if(speed){
-			speedScripts = `speed: ${speed},`
-		}else{
-			speedScripts = ''
-		}
-
-		return<div>
-			{ el }
-			<style type='text/css'>{ cssTag }</style>
-			<script>{ `
-			var swiper${replaceClientId(clientId)} = new Swiper ('.vk_slider_${clientId}', {
-
-				${speedScripts}
-
-				// Optional parameters
-				loop: ${loop},
-
-				effect: '${effect}',
-
-				${paginationScripts}
-
-				// navigation arrows
-				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
-				},
-
-				// And if we need scrollbar
-				scrollbar: {
-				  el: '.swiper-scrollbar',
-				},
-
-				${autoPlayScripts}
-			  })`
-			  }
-			</script>
-		  </div>
-	}
+	} else {
 		return el
-
+	}
 }
 addFilter(
   "blocks.getSaveElement",

@@ -9,19 +9,45 @@ const sass = require("gulp-sass");
 const autoprefixer = require("gulp-autoprefixer");
 const cleanCss = require("gulp-clean-css");
 const replace = require('gulp-replace');
+const rename = require("gulp-rename");
 
 // js最小化
 const jsmin = require("gulp-jsmin");
 
-gulp.task('text-domain', function (done) {
-	gulp.src(['./inc/term-color/package/*'])
-	  .pipe(replace(', \'vk_term_color_textdomain\'', ', \'vk-blocks\''))
-    .pipe(gulp.dest('./inc/term-color/package/'));
-  gulp.src(['./inc/vk-components/package/*'])
-  .pipe(replace(', \'vk_components_textdomain\'', ', \'vk-blocks\''))
-  .pipe(gulp.dest('./inc/vk-components/package/'));
+gulp.task( 'helper-js', function (done)  {
+	gulp.src('src/blocks/helper/faq2.js')
+	.pipe(jsmin())
+	.pipe(rename({
+		extname: '.min.js'
+	}))
+	.pipe(gulp.dest('./inc/vk-blocks/build/'));
 	done();
-  });
+});
+
+gulp.task( 'helper-js-pro', function (done)  {
+	gulp.src('src/blocks/_pro/animation/enque-front.js')
+	.pipe(jsmin())
+	.pipe(rename('vk-animation.min.js'))
+	.pipe(gulp.dest('./inc/vk-blocks/build/'));
+	gulp.src('src/blocks/_pro/slider/enque-front.js')
+	.pipe(jsmin())
+	.pipe(rename('vk-slider.min.js'))
+	.pipe(gulp.dest('./inc/vk-blocks/build/'));
+	done();
+});
+
+// gulp.task('text-domain', function (done) {
+// 	gulp.src(['./inc/term-color/package/*'])
+// 	  .pipe(replace(', \'vk_term_color_textdomain\'', ', \'vk-blocks\''))
+//     .pipe(gulp.dest('./inc/term-color/package/'));
+//   gulp.src(['./inc/vk-components/package/*'])
+//     .pipe(replace(', \'vk_components_textdomain\'', ', \'vk-blocks\''))
+//     .pipe(gulp.dest('./inc/vk-components/package/'));
+//   gulp.src(['./inc/vk-css-optimize/package/*'])
+//     .pipe(replace(', \'css_optimize_textdomain\'', ', \'vk-blocks\''))
+//     .pipe(gulp.dest('./inc/vk-css-optimize/package/'));
+// 	done();
+//   });
 
 gulp.task("sass", function() {
   return (
@@ -52,6 +78,7 @@ gulp.task("sass", function() {
 gulp.task("sass_editor", function() {
   return gulp
     .src([
+      "./editor-css/_editor_common_core.scss",
       "./editor-css/_editor_before.scss",
       "./src/**/*.scss",
       "./editor-css/_editor_after.scss"
@@ -127,16 +154,18 @@ gulp.task("watch", function() {
 });
 
 //Build : Development
-gulp.task("build-dev", gulp.series("js-dev", "sass", "sass_editor","sass_bootstrap","sass_vk_components", "dist_swiper_js", "dist_swiper_css"));
+gulp.task("build:dev:free", gulp.series("js-dev", "sass", "helper-js", "sass_editor","sass_bootstrap","sass_vk_components", "dist_swiper_js", "dist_swiper_css"));
+gulp.task("build:dev:pro", gulp.series("js-dev", "sass", "helper-js", "helper-js-pro", "sass_editor","sass_bootstrap","sass_vk_components", "dist_swiper_js", "dist_swiper_css"));
 
 // Build : Production
-gulp.task("build", gulp.series("js", "sass", "sass_editor","sass_bootstrap","sass_vk_components", "dist_swiper_js", "dist_swiper_css"));
+gulp.task("build:free", gulp.series("js", "sass", "helper-js", "sass_editor","sass_bootstrap","sass_vk_components", "dist_swiper_js", "dist_swiper_css"));
+gulp.task("build:pro", gulp.series("js", "sass", "helper-js", "helper-js-pro", "sass_editor","sass_bootstrap","sass_vk_components", "dist_swiper_js", "dist_swiper_css"));
 
 // Default Tasks
 gulp.task("default", gulp.series("watch"));
 
 // replace_text_domain
-gulp.task("replace_text_domain", function(done) {
+gulp.task("text-domain", function(done) {
 	// font-awesome.
 	gulp.src(["./inc/font-awesome/package/*.php"])
 		.pipe(replace("'vk_font_awesome_version_textdomain'", "'vk-blocks'"))
@@ -152,7 +181,10 @@ gulp.task("replace_text_domain", function(done) {
 	// vk-components.
 	gulp.src(["./inc/vk-components/package/*.php"])
 		.pipe(replace("'vk_components_textdomain'","'vk-blocks'"))
-		.pipe(gulp.dest("./inc/vk-components/package/"));
+    .pipe(gulp.dest("./inc/vk-components/package/"));
+  gulp.src(["./inc/vk-css-optimize/package/*.php"])
+		.pipe(replace("'css_optimize_textdomain'","'vk-blocks'"))
+		.pipe(gulp.dest("./inc/vk-css-optimize/package/"));
 	done();
 });
 

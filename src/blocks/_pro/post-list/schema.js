@@ -51,6 +51,10 @@ export const schema = {
     type: "boolean",
     default: true,
   },
+  display_taxonomies: {
+    type: "boolean",
+    default: false,
+  },
   display_btn: {
     type: "boolean",
     default: false,
@@ -90,6 +94,10 @@ export const schema = {
   offset: {
     type: "number",
     default: 0,
+  },
+  order: {
+    type: "string",
+    default: "DESC",
   },
   orderby: {
     type: "string",

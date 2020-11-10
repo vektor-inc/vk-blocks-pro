@@ -18,6 +18,7 @@ import "./pr-content/block.js";
 import "./image/block.js";
 
 /*WP5.3 以下では読み込まれない*/
+import "./responsive-br/";
 import "./border-box/block.js";
 import "./faq2/block.js";
 import "./faq2-q/block.js";
@@ -40,7 +41,4 @@ import "./_pro/grid-column-item/block.js";
 import "./_pro/slider/block.js";
 import "./_pro/slider-item/block.js";
 import "./_pro/animation/block.js";
-import "./_pro/accordion/block.js";
-import "./_pro/accordion-trigger/block.js";
-import "./_pro/accordion-target/block.js";
 import "../plugin/menu/block.js";

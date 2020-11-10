@@ -3,7 +3,7 @@
  * Plugin Name: VK Blocks Pro
  * Plugin URI: https://github.com/vektor-inc/vk-blocks
  * Description: This is a plugin that extends Gutenberg's blocks.
- * Version: 0.44.13
+ * Version: 0.54.2
  * Author: Vektor,Inc.
  * Author URI: https://vektor-inc.co.jp
  * Text Domain: vk-blocks
@@ -92,9 +92,9 @@ require_once 'inc/vk-blocks-config.php';
 $plugin_base_dir = dirname( __FILE__ );
 if ( strpos( $plugin_base_dir, 'vk-blocks-pro' ) !== false ) {
 
-	$updater_url = dirname( __FILE__ ) . '/inc/plugin-update-checker/plugin-update-checker.php';
+	$updater_url = dirname( __FILE__ ) . '/inc/vk-blocks-pro/plugin-update-checker/plugin-update-checker.php';
 	if ( file_exists( $updater_url ) ) {
-		require dirname( __FILE__ ) . '/inc/plugin-update-checker/plugin-update-checker.php';
+		require dirname( __FILE__ ) . '/inc/vk-blocks-pro/plugin-update-checker/plugin-update-checker.php';
 		$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 			'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=vk-blocks-pro',
 			__FILE__,

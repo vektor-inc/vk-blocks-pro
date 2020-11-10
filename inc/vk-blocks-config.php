@@ -30,6 +30,8 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 	require_once 'term-color/term-color-config.php';
 	require_once 'template-tags/package/template-tags.php';
 	require_once 'vk-css-optimize/vk-css-optimize-config.php';
+	require_once 'saved-block-version.php';
+	require_once  plugin_dir_path( __DIR__ ) . 'inc/vk-customize-helpers/vk-customize-helpers-config.php';
 
 
 	if ( ! vkblocks_is_lightning() ) {
@@ -38,7 +40,7 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 
 	require_once 'admin-notices.php';
 	require_once 'vk-blocks/vk-blocks-functions.php';
-	require_once 'vk-blocks/load-swiper.php';
+
 
 	$path = dirname(dirname(__FILE__)) .'/inc/vk-blocks/App/RestAPI/BlockMeta/EntryPoint.php';
 	require_once $path;

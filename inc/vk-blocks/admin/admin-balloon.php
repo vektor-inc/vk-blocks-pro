@@ -3,10 +3,17 @@
 <section>
 	<h3 id="balloon-image-setting"><?php echo __( 'Balloon Image Setting', 'vk-blocks' ); ?></h3>
 	<style type="text/css">
+	.vk_admin_page .adminMain_main .balloonIconList {
+		margin-left:0;
+	}
+	.vk_admin_page .adminMain_main .balloonIconList li {
+		list-style:none;
+	}
 	.balloonIconList {
 		width:100%;
 		display:flex;
 		flex-wrap: wrap;
+		
 	}
 	.balloonIconList li {
 		box-sizing:border-box;
@@ -17,6 +24,7 @@
 		border-radius:5px;
 		background-color:rgba(255,255,255,0.9);
 		box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);
+		
 	}
 	.balloonIconList_iconFrame {
 		width:100px;

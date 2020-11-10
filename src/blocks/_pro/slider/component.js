@@ -44,7 +44,7 @@ export const ColumnResponsive = (props) => {
 	);
   }
   return (
-	<div className={ classNames(`swiper-container vk_slider vk_slider_${clientId}`, alignClass, className) }>
+	<div data-vkb-slider={JSON.stringify(attributes)} className={ classNames(`swiper-container vk_slider vk_slider_${clientId}`, alignClass, className) }>
 		<div className={ `swiper-wrapper` }>
 			{ elm }
 		</div>

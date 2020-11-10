@@ -44,6 +44,7 @@ class VkBlocksPostList {
 			'display_excerpt'            => esc_html( $attributes['display_excerpt'] ),
 			'display_date'               => esc_html( $attributes['display_date'] ),
 			'display_new'                => esc_html( $attributes['display_new'] ),
+			'display_taxonomies'         => esc_html( $attributes['display_taxonomies'] ),
 			'display_btn'                => esc_html( $attributes['display_btn'] ),
 			'image_default_url'          => VK_BLOCKS_URL . 'images/no-image.png',
 			'overlay'                    => false,
@@ -129,7 +130,7 @@ class VkBlocksPostList {
 			'paged'          => 1,
 			// 0で全件取得
 			'posts_per_page' => intval( $attributes['numberPosts'] ),
-			'order'          => 'DESC',
+			'order'          => $attributes['order'],
 			'orderby'        => $attributes['orderby'],
 			'offset'         => $offset,
 			'post__not_in'   => $post__not_in,

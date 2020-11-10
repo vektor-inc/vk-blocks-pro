@@ -6,6 +6,7 @@ const { Fragment } = wp.element;
 const { dispatch } = wp.data;
 
 import { convertToGrid } from "../../../../_helper/convert-to-grid";
+import { fixBrokenUnicode } from "./../../../../_helper/depModules";
 
 export class Component extends React.Component {
   render() {
@@ -29,7 +30,7 @@ export class Component extends React.Component {
       rel
     } = attributes;
 
-    let align = JSON.parse(activeControl);
+    let align = JSON.parse( fixBrokenUnicode(activeControl) );
     const for_ = this.props.for_;
     let containerClass = " vk_card_item";
 
@@ -76,7 +77,7 @@ export class Component extends React.Component {
     };
 
     const uploadImgBtn = image => {
-      const imageParsed = JSON.parse(image);
+      const imageParsed = JSON.parse( fixBrokenUnicode(image) );
       return (
         <MediaUpload
           onSelect={value => setAttributes({ image: JSON.stringify(value) })}
@@ -214,7 +215,7 @@ export class Component extends React.Component {
 
     let imageStyle;
     if (image) {
-      let imageParsed = JSON.parse(image);
+      let imageParsed = JSON.parse( fixBrokenUnicode(image) );
       imageStyle = {
         backgroundImage: `url(${imageParsed.sizes.full.url})`
       };

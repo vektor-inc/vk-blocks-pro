@@ -39,9 +39,10 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 			border: none;
 			padding: 0;
 			background-color: transparent;
+			display: inline; // これがないと見出しデザインで左右線みたいにflax指定されたときにセンター揃えになってしまう
 			&:before,
 			&:after {
-				border: none;
+				display: none;
 			}
 		}
 

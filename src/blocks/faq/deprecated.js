@@ -1,5 +1,5 @@
 import { vkbBlockEditor } from "./../_helper/depModules";
-const { RichText } = vkbBlockEditor;
+const { RichText, InnerBlocks } = vkbBlockEditor;
 
 export const deprecated = [
 	{
@@ -69,5 +69,32 @@ export const deprecated = [
 	</dl>
             );
         },
-    }
+	},
+	{
+		attributes: {
+			heading: {
+				type: "string",
+				source: "html",
+				selector: "dt"
+			},
+			content:{
+				type: "string"
+			}
+		},
+		save({ attributes }) {
+			const { heading} = attributes;
+			return (
+				<dl className={ `vk_faq` }>
+					<RichText.Content
+						tagName="dt"
+						className={ "vk_faq_title" }
+						value={ heading }
+				/>
+					<dd className={ `vk_faq_content` }>
+						<InnerBlocks.Content />
+					</dd>
+				</dl>
+			);
+		},
+	}
 ];

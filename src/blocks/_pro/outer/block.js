@@ -129,9 +129,9 @@ registerBlockType("vk-blocks/outer", {
 							<RadioControl
 								selected={ bgPosition }
 								options={ [
-									{ label: __( "normal", "vk-blocks"), value: "normal" },
 									{ label: __( "Repeat", "vk-blocks" ), value: "repeat" },
-									{ label: __( "Fixed (Not fixed on iPhone)", "vk-blocks"), value: "fixed" },
+									{ label: __( "Cover", "vk-blocks"), value: "normal" },
+									{ label: __( "Cover fixed (Not fixed on iPhone)", "vk-blocks"), value: "fixed" },
 									{ label: __( "Parallax (Non-guaranteed)", "vk-blocks" ), value: "parallax" },
 								] }
 								onChange={ (value) => setAttributes({ bgPosition: value }) }

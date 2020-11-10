@@ -14,7 +14,7 @@ export const PRcarditem = (props)=>{
 	let style;
 	let iconColor;
 
-	if(bgType == '0'){
+	if(bgType === '0'){
 		style = {backgroundColor: `${color}`,
 									border: `1px solid ${color}`,}
 		iconColor = `#ffffff`
@@ -50,30 +50,66 @@ export const PRcarditem = (props)=>{
 				tagName={ 'h3' }
 				onChange={ (value) => props.setAttributes({ heading: value }) }
 				value={ heading }
+				allowedFormats={ [
+					'core/bold', // 太字
+					'core/code', // インラインコード
+					'core/image',// インライン画像
+					'core/italic', // イタリック
+					// 'core/link', // リンク
+					'core/strikethrough', // 取り消し線
+					'core/underline', // 下線（未実装？）
+					'core/text-color', // 文字色
+					'core/superscript', // 上付き
+					'core/subscript', // 下付き
+					'vk-blocks/highlighter', // 蛍光マーカー
+					'vk-blocks/responsive-br' // Select a direction (レスポンシブ改行)
+				] }
 				placeholder={ __('Input Title', 'vk-blocks') }
-			 />
-			 <RichText
+			/>
+			<RichText
 				className={ `vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-${align.text}` }
 				tagName={ 'p' }
 				onChange={ (value) => setAttributes({ content: value }) }
 				value={ content }
+				allowedFormats={ [
+					'core/bold', // 太字
+					'core/code', // インラインコード
+					'core/image',// インライン画像
+					'core/italic', // イタリック
+					// 'core/link', // リンク
+					'core/strikethrough', // 取り消し線
+					'core/underline', // 下線（未実装？）
+					'core/text-color', // 文字色
+					'core/superscript', // 上付き
+					'core/subscript', // 下付き
+					'vk-blocks/highlighter', // 蛍光マーカー
+					'vk-blocks/responsive-br' // Select a direction (レスポンシブ改行)
+				] }
 				placeholder={ __('Input Content', 'vk-blocks') }
 			/>
 		</Fragment>
 	}else if(for_ === "save"){
-		contents = <a href={ url } className="vk_icon-card_item_link" target={ urlOpenType ? "_blank" : "_self" } rel="noopener noreferrer">
-			<div className="vk_icon-card_item_icon_outer" style={ style }>
-				{ ReactHtmlParser(faIconTag) }
-			</div>
-			<RichText.Content
-				className={ `vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}` }
-				tagName={ 'h3' }
-				value={ heading } />
-			<RichText.Content
-				className={ `vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-${align.text}` }
-				tagName={ 'p' }
-				value={ content } />
-		</a>
+		contents = <Fragment>
+			{/**
+			 * target=_blankで指定すると、WordPressが自動でnoopener noreferrerを付与する。
+			 * ブロックでもrelを付与しないとブロックが壊れる。
+			 */}
+			<a href={ url } className="vk_icon-card_item_link" target={ urlOpenType && "_blank" } rel={ urlOpenType && "noopener noreferrer" }>
+				<div className="vk_icon-card_item_icon_outer" style={ style }>
+					{ ReactHtmlParser(faIconTag) }
+				</div>
+				<RichText.Content
+					className={ `vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}` }
+					tagName={ 'h3' }
+					value={ heading }
+				/>
+				<RichText.Content
+					className={ `vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-${align.text}` }
+					tagName={ 'p' }
+					value={ content }
+				/>
+			</a>
+		</Fragment>
 	}
 
 	return (

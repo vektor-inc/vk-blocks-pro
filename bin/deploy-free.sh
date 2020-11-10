@@ -37,7 +37,7 @@ sed -i s/\,\ \'${pro_block}\'//g inc/vk-blocks/vk-blocks-functions.php
 done
 # ブロックをビルド
 npm install
-npm run build
+npm run build:free
 # 無料版のmasterブランチにpush
 git add .
 git commit -m"Update from vk-blocks-pro"

@@ -53,6 +53,7 @@ $color_key: #337ab7;
 			background-color: transparent;
 			border: none;
 			padding: unset;
+			display: block; // これがないと 左右線のflaxをリセットできない
 
 			&::before,
 			&::after {

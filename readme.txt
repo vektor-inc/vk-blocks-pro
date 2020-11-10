@@ -3,8 +3,8 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,m
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
-Tested up to: 5.5.1
-Stable tag: 0.49.8
+Tested up to: 5.5.3
+Stable tag: 0.54.2
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -61,6 +61,53 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.54.2 =
+* [ Bug fix ][ Slider ] Fix slider broken in page.
+
+= 0.54.1 =
+* [ Design bug fix ] Fix do not effect text align on theming by horizontal border
+
+= 0.54.0 =
+* [ Add function ][ Post list ] Add Card (nonorder) layout and add display taxonomy
+* [ Bug fix ][ Animation ] fix deprecated
+
+= 0.53.2 =
+ [ Bugfix ][ ToC ( Pro )] Fix id Adding System
+
+= 0.53.1 =
+ [ Bugfix ][ Step ( Pro )] Fix Step Number Reset System
+
+= 0.53.0 =
+ [ Design Change ] VK Blocks Icon design change
+
+= 0.52.2 =
+[ Other ] version only
+
+= 0.52.1 =
+[ Bug fix ][ Grid Column(Pro) ] Fixed a bug that the hidden specification is removed when re-editing
+[ Bug fix ][ Slider(Pro) ] Fix Can not stop loop
+[ Bug fix ][ Outer(Pro) ] Fix cant edit outer block(cant save style tag) on Editor role user
+
+= 0.52.0 =
+[ Specification Change ][ CSS Optimize ] Delete package
+
+= 0.51.0 =
+[ Specification Change ][ CSS Optimize ] default off / exclude wooCommerce preload
+[ Add function ][ CSS Optimize ] Add exclude handles
+
+= 0.50.3 =
+* [ Other ] version only
+
+= 0.50.2 =
+* [ Other ] version only
+
+= 0.50.1 =
+* [ Other ] version only
+
+= 0.50.0 =
+* [ Specification Change ][ CSS Optimize ] Common management of CSS optimization function
+* [ Bug fix ][ Icon Card ] Fix endless recovery
 
 = 0.49.8 =
 * [ Bug fix ] fix edit screen white out

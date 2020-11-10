@@ -13,11 +13,11 @@ export const setOptions = name => {
 			},
 			{
 				value: "card-noborder",
-				label: __("Card ( No border )", "vk-blocks")
+				label: __("Card (No border)", "vk-blocks")
 			},
 			{
 				value: "card-imageRound",
-				label: __("Card ( Image Round )", "vk-blocks")
+				label: __("Card (Image Round)", "vk-blocks")
 			}
 		],
 		"vk-blocks/else": [
@@ -26,8 +26,12 @@ export const setOptions = name => {
 				label: __("Card", "vk-blocks")
 			},
 			{
+				value: "card-noborder",
+				label: __("Card (No border)", "vk-blocks")
+			},
+			{
 				value: "card-horizontal",
-				label: __("Card Horizontal", "vk-blocks")
+				label: __("Card (Horizontal)", "vk-blocks")
 			},
 			{
 				value: "media",

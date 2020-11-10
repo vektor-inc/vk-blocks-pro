@@ -65,6 +65,7 @@ e.g.
 = 0.55.0 =
 * [ Add function ][ Outer ] Background image repeat
 * [ Bug fix ] fix can not save on some plugin using enviroment
+* [ Specification Change ][ Headding ] delete font weight specification from Plain style
 
 = 0.54.2 =
 * [ Bug fix ][ Slider ] Fix slider broken in page.

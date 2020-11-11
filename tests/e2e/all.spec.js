@@ -2,15 +2,10 @@ import {
 	createNewPost,
 	enablePageDialogAccept,
 	publishPost,
-	insertBlock,
-	getAllBlocks,
-	getAllBlockInserterItemTitles,
 	openGlobalBlockInserter
 } from '@wordpress/e2e-test-utils';
 import * as helper from './helper';
 const timeout =  5000;
-
-
 
 describe( `All Blocks Test`, () => {
 
@@ -21,48 +16,54 @@ describe( `All Blocks Test`, () => {
 		await createNewPost();
 	} );
 
-	jest.setTimeout(10000);
+	jest.setTimeout(20000);
 
 	// 下の箇所がnull返ってくるので、チェック
 	const blocks = [
 		//Free
-		// { label: "Alert", slug: "vk-blocks/alert" },
-		// { label: "Ballon", slug: "vk-blocks/balloon" },
-		// { label: "Border Box", slug: "vk-blocks/border-box" },
-		{ label: "Button", slug: "vk-blocks/button" },
-		// { label: "Classic FAQ", slug: "vk-blocks/faq" },
-		// { label: "New FAQ", slug: "vk-blocks/faq2" },
-		// { label: "Flow", slug: "vk-blocks/flow" },
-		{ label: "Heading", slug: "vk-blocks/heading" },
-		// { label: "PR Blocks", slug: "vk-blocks/pr-blocks" },
-		// { label: "PR Content", slug: "vk-blocks/pr-content" },
-		// { label: "Responsive Spacer", slug: "vk-blocks/spacer" },
-		// { label: "Staff", slug: "vk-blocks/staff" },
+		{ label: "Alert", slug: "vk-blocks/alert" },
+		{ label: "Ballon", slug: "vk-blocks/balloon" },
+		{ label: "Border Box", slug: "vk-blocks/border-box" },
+		{ label: "Button", slug: "vk-blocks/button", index: 1  },
+		{ label: "Classic FAQ", slug: "vk-blocks/faq" },
+		{ label: "New FAQ", slug: "vk-blocks/faq2" },
+		{ label: "Flow", slug: "vk-blocks/flow" },
+		{ label: "Heading", slug: "vk-blocks/heading", index: 1  },
+		{ label: "PR Blocks", slug: "vk-blocks/pr-blocks" },
+		{ label: "PR Content", slug: "vk-blocks/pr-content" },
+		{ label: "Responsive Spacer", slug: "vk-blocks/spacer" },
+		{ label: "Staff", slug: "vk-blocks/staff" },
 		// Pro
-		// { label: "Animation", slug: "vk-blocks/animation" },
-		{ label: "Card", slug: "vk-blocks/card" },
-		// { label: "Child page list", slug: "vk-blocks/child-page" },
-		// { label: "Grid Column", slug: "vk-blocks/grid-column" },
-		// { label: "Icon Card", slug: "vk-blocks/icon-card" },
-		// { label: "Icon Card", slug: "vk-blocks/icon-card" },
-		// { label: "Outer", slug: "vk-blocks/outer" },
-		// { label: "Post list", slug: "vk-blocks/post-list" },
-		// { label: "Slider", slug: "vk-blocks/slider" },
-		// { label: "Step", slug: "vk-blocks/step" },
-		// { label: "Table of Contents", slug: "vk-blocks/table-of-contents-new" },
-		// { label: "Timeline", slug: "vk-blocks/timeline" },
+		{ label: "Animation", slug: "vk-blocks/animation" },
+		{ label: "Card", slug: "vk-blocks/card", index: 1 },
+		{ label: "Child page list", slug: "vk-blocks/child-page" },
+		{ label: "Grid Column", slug: "vk-blocks/grid-column" },
+		{ label: "Icon Card", slug: "vk-blocks/icon-card" },
+		{ label: "Outer", slug: "vk-blocks/outer" },
+		{ label: "Post list", slug: "vk-blocks/post-list" },
+		{ label: "Slider", slug: "vk-blocks/slider" },
+		{ label: "Step", slug: "vk-blocks/step" },
+		{ label: "Table of Contents", slug: "vk-blocks/table-of-contents-new" },
+		{ label: "Timeline", slug: "vk-blocks/timeline" },
 	];
 
 	blocks.forEach( ( block ) => {
 
 		it( `Test Javascript Error: ${block.label}`, async () => {
 
-			await insertBlock( block.label );
+			// 同名ブロックの誤挿入を避けるためのindexがあるかチェック
+			if ( block.index ) {
+				// indexがあれば、同名のindex番目のブロックを挿入
+				await helper.insertBlockByIndex( block.label, block.index );
+			} else {
+				// indexがなければそのままブロックを挿入
+				await helper.insertBlockByIndex( block.label );
+			}
+
+			// await page.screenshot({path: `./tests/e2e/screenshot/${block.label}.png`});
 
 			// Check if block was inserted and no error.^
 			await helper.checkForBlockErrors( block.slug );
-
-			// await page.screenshot({path: `./tests/e2e/screenshot/jserror.png`});
 
 			// Take Screenshot for debug.
 			// await page.screenshot({path: `./tests/e2e/screenshot/${name}.png`});
@@ -70,7 +71,7 @@ describe( `All Blocks Test`, () => {
 
 		it( `Test PHP Error: ${block.label}`, async () => {
 			// Insert Block.
-			await insertBlock( block.label );
+			await helper.insertBlockByIndex( block.label, block.index );
 
 			await publishPost();
 
@@ -99,4 +100,10 @@ describe( `All Blocks Test`, () => {
 			// await page.screenshot({path: `./tests/e2e/screenshot/phperror.png`});
 		});
 	})
+
+
+
+
+
+
 } );

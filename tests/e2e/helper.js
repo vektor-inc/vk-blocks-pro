@@ -2,7 +2,8 @@ import {
 	clickBlockToolbarButton,
 	getAllBlocks,
 	selectBlockByClientId,
-	getPageError
+	getPageError,
+	searchForBlock,
 } from '@wordpress/e2e-test-utils';
 
 export const selectBlockByName = async ( name ) => {
@@ -92,7 +93,28 @@ export const checkForBlockErrors = async ( blockName ) => {
 	expect( await getPageError() ).toBeNull();
 };
 
+/**
+ * Retrieves the document container by css class and checks to make sure the document's active element is within it
+ */
+async function waitForInserterCloseAndContentFocus() {
+	await page.waitForFunction( () =>
+		document.body
+			.querySelector( '.block-editor-block-list__layout' )
+			.contains( document.activeElement )
+	);
+}
 
-export const getVKBlocks = async ( ) => {
-	( await getAllBlocks() ).find( ( block ) => block.category === 'vk-blocks-cat' )
-};
+/**
+ * 複数の同名ブロックがあった場合、グローバルインサーターに表示された順に、指定したいブロックをindexで指定できる。
+ *
+ * @param {string} searchTerm The text to search the inserter for.
+ */
+export async function insertBlockByIndex( searchTerm, index=0 ) {
+	await searchForBlock( searchTerm );
+	const insertButton = (
+		await page.$x( `//button//span[contains(text(), '${ searchTerm }')]` )
+	 )[ index ];
+	await insertButton.click();
+	// We should wait until the inserter closes and the focus moves to the content.
+	await waitForInserterCloseAndContentFocus();
+}

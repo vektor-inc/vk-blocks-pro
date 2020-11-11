@@ -141,6 +141,11 @@ registerBlockType("vk-blocks/balloon", {
 		}
 
 		let BorderSetting;
+		let borderballoon;
+		let borderimage;
+		let borderwidth;
+		let bordercolor;
+		let bgcolor;
 		if ( balloonBorder === true ) {
 			BorderSetting = <BaseControl>
 				<p className={ 'mb-1' }><label>{ __( 'Border', 'vk-blocks' ) }</label></p>
@@ -156,9 +161,9 @@ registerBlockType("vk-blocks/balloon", {
 					</Button>
 					<Button
 						isSmall
-						isPrimary={ balloonShape === true }
-						isSecondary={ balloonShape !== true }
-						onClick={ () => setAttributes({ balloonShape: true }) }
+						isPrimary={ balloonBorder === true }
+						isSecondary={ balloonBorder !== true }
+						onClick={ () => setAttributes({ balloonBorder: true }) }
 					>
 						{  __("ON", "vk-blocks") }
 					</Button>
@@ -212,6 +217,26 @@ registerBlockType("vk-blocks/balloon", {
 					onChange={ value => setAttributes({ balloonBorderColor: value }) }
 				/>
 			</BaseControl>
+
+			borderballoon = "vk_balloon-balloon-border";
+
+			if ( balloonImageBorder === true ) {
+				borderimage = "vk_balloon-image-border";
+			}
+			else {
+				borderimage = "";
+			}
+
+			if ( balloonBorderWidth === "bold" ) {
+				borderwidth = "vk_balloon-border-bold";
+			}
+			else {
+				borderwidth = "vk_balloon-border-thin";
+			}
+
+			bordercolor  = balloonBorderColor;
+
+			bgcolor      = balloonBgColor;
 		} else {
 			BorderSetting = <BaseControl>
 				<p className={ 'mb-1' }><label>{ __( 'Border', 'vk-blocks' ) }</label></p>
@@ -227,14 +252,21 @@ registerBlockType("vk-blocks/balloon", {
 					</Button>
 					<Button
 						isSmall
-						isPrimary={ balloonShape === true }
-						isSecondary={ balloonShape !== true }
-						onClick={ () => setAttributes({ balloonShape: true }) }
+						isPrimary={ balloonBorder === true }
+						isSecondary={ balloonBorder !== true }
+						onClick={ () => setAttributes({ balloonBorder: true }) }
 					>
 						{  __("ON", "vk-blocks") }
 					</Button>
 				</ButtonGroup>
 			</BaseControl>
+
+			borderballoon = "";
+			borderimage = "";
+			borderwidth = "";
+			bordercolor = balloonBgColor;
+			bgcolor     = balloonBgColor;
+
 		}
 
 
@@ -358,9 +390,12 @@ registerBlockType("vk-blocks/balloon", {
 					</PanelBody>
 				</InspectorControls>
 				<div
-					className={ `${className} vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation}` }
+					className={ `${className} vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation} ${borderwidth}` }
 				>
-					<div className={ `vk_balloon_icon` }>
+					<div
+						className={ `vk_balloon_icon ${borderimage}` }
+						style={ { border: bordercolor, } }
+					>
 						<MediaUpload
 							onSelect={ value =>	setAttributes({ IconImage: value.sizes.full.url }) }
 							type="image"
@@ -391,8 +426,14 @@ registerBlockType("vk-blocks/balloon", {
 							placeholder={ __("Icon Name", "vk-blocks") }
 						/>
 					</div>
-					<div className={ `vk_balloon_content_outer` }>
-						<div className={ "vk_balloon_content" } style={ { background: balloonBgColor, border: balloonBgColor, } } >
+					<div className={ `vk_balloon_content_outer ${borderballoon}` }>
+						<div
+							className={ "vk_balloon_content" }
+							style={ {
+								background: bgcolor,
+								border: bordercolor,
+							} }
+						>
 							<InnerBlocks
 								templateLock={ false }
 								template={ [
@@ -409,10 +450,12 @@ registerBlockType("vk-blocks/balloon", {
 
  	save({ attributes }) {
 		let {
-			content,
 			balloonName,
 			balloonType,
-			balloonShape,
+			balloonBorder,
+			balloonImageBorder,
+			balloonBorderWidth,
+			balloonBorderColor,
 			balloonBgColor,
 			balloonAlign,
 			IconImage,
@@ -421,65 +464,83 @@ registerBlockType("vk-blocks/balloon", {
 		} = attributes;
 
 		//For recovering
-		balloonImageType = balloonImageType ? balloonImageType : "normal"
-		balloonAnimation = balloonAnimation ? balloonAnimation : "none";
+		balloonImageType   = balloonImageType   ? balloonImageType   : "normal";
+		balloonAnimation   = balloonAnimation   ? balloonAnimation   : "none";
+		balloonBorder      = balloonBorder      ? balloonBorder      : false;
+		balloonImageBorder = balloonImageBorder ? balloonImageBorder : false;
+		balloonBorderWidth = balloonBorderWidth ? balloonBorderWidth : "thin";
 
-		if ( "fill" === balloonShape ) {
+		let borderballoon;
+		let borderimage;
+		let borderwidth;
+		let bordercolor;
+		let bgcolor;
 
-			return (
-				<div
-					className={ `vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation}` }
-				>
-					<div className={ `vk_balloon_icon` }>
-						{ IconImage ? (
-							<figure>
-								<img className={ `vk_balloon_icon_image vk_balloon-image-${balloonImageType}` } src={ IconImage } alt="" />
-								<RichText.Content
-									tagName="figcaption"
-									className={ "vk_balloon_icon_name" }
-									value={ balloonName }
-						/>
-							</figure>
-					) : (
-						""
-						) }
-					</div>
-					<div className={ `vk_balloon_content_outer` }>
-						<div className={ "vk_balloon_content" } style={ { background: balloonBgColor, border: balloonBgColor, } } >
-							<InnerBlocks.Content />
-						</div>
-					</div>
+		if ( balloonBorder === true ) {
+			borderballoon = "vk_balloon-balloon-border";
 
-				</div>
-			);
-		} else {
-			return (
-				<div
-					className={ `vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation}` }
-				>
-					<div className={ `vk_balloon_icon` }>
-						{ IconImage ? (
-							<figure>
-								<img className={ `vk_balloon_icon_image vk_balloon-image-${balloonImageType}` } src={ IconImage } alt="" />
-								<RichText.Content
-									tagName="figcaption"
-									className={ "vk_balloon_icon_name" }
-									value={ balloonName }
-						/>
-							</figure>
-					) : (
-						""
-						) }
-					</div>
-					<div className={ `vk_balloon_content_outer` }>
-						<div className={ "vk_balloon_content vk_balloon-outline" } >
-							<InnerBlocks.Content />
-						</div>
-					</div>
+			if ( balloonImageBorder === true ) {
+				borderimage = "vk_balloon-image-border";
+			}
+			else {
+				borderimage = "";
+			}
 
-				</div>
-			);
+			if ( balloonBorderWidth === "bold" ) {
+				borderwidth = "vk_balloon-border-bold";
+			}
+			else {
+				borderwidth = "vk_balloon-border-thin";
+			}
+
+			bordercolor  = balloonBorderColor;
+
+			bgcolor      = balloonBgColor;
 		}
+		else {
+			borderballoon = "";
+			borderimage = "";
+			borderwidth = "";
+			bordercolor = balloonBgColor;
+			bgcolor     = balloonBgColor;
+		}
+
+		return (
+			<div
+				className={ `vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation} ${borderwidth}` }
+			>
+				<div
+					className={ `vk_balloon_icon ${borderimage}` }
+					style={ { border: bordercolor, } }
+				>
+					{ IconImage ? (
+						<figure>
+							<img className={ `vk_balloon_icon_image vk_balloon-image-${balloonImageType}` } src={ IconImage } alt="" />
+							<RichText.Content
+								tagName="figcaption"
+								className={ "vk_balloon_icon_name" }
+								value={ balloonName }
+							/>
+						</figure>
+					) : (
+						""
+					) }
+				</div>
+				<div className={ `vk_balloon_content_outer ${borderballoon}` }>
+					<div
+						className={ "vk_balloon_content" }
+						style={ {
+							background: bgcolor,
+							border: bordercolor,
+						} }
+					>
+						<InnerBlocks.Content />
+					</div>
+				</div>
+
+			</div>
+		);
+
 	},
   	deprecated,
 });

@@ -140,6 +140,26 @@ registerBlockType("vk-blocks/balloon", {
 			setAttributes({ balloonType: "type-speech" })
 		}
 
+		if ( balloonImageType === null || balloonImageType === undefined ) {
+			setAttributes({ balloonImageType: "normal" })
+		}
+
+		if ( balloonAnimation === null || balloonAnimation === undefined ) {
+			setAttributes({ balloonAnimation: "none" })
+		}
+
+		if ( balloonBorder === null || balloonBorder === undefined ) {
+			setAttributes({ balloonBorder: false })
+		}
+
+		if ( balloonImageBorder === null || balloonImageBorder === undefined ) {
+			setAttributes({ balloonImageBorder: false })
+		}
+
+		if ( balloonBorderWidth === null || balloonBorderWidth === undefined ) {
+			setAttributes({ balloonBorderWidth: "thin" })
+		}
+
 		let BorderSetting;
 		let borderballoon;
 		let borderimage;
@@ -449,7 +469,7 @@ registerBlockType("vk-blocks/balloon", {
 	},
 
  	save({ attributes }) {
-		let {
+		const {
 			balloonName,
 			balloonType,
 			balloonBorder,
@@ -462,13 +482,6 @@ registerBlockType("vk-blocks/balloon", {
 			balloonImageType,
 			balloonAnimation
 		} = attributes;
-
-		//For recovering
-		balloonImageType   = balloonImageType   ? balloonImageType   : "normal";
-		balloonAnimation   = balloonAnimation   ? balloonAnimation   : "none";
-		balloonBorder      = balloonBorder      ? balloonBorder      : false;
-		balloonImageBorder = balloonImageBorder ? balloonImageBorder : false;
-		balloonBorderWidth = balloonBorderWidth ? balloonBorderWidth : "thin";
 
 		let borderballoon;
 		let borderimage;

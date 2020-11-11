@@ -10,7 +10,7 @@ import BlockIcon from "./icon.svg";
 const apiFetch = wp.apiFetch;
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const {  ButtonGroup, PanelBody, Button,SelectControl } = wp.components;
+const { ButtonGroup, PanelBody, Button, SelectControl, BaseControl } = wp.components;
 const { Fragment, useState, useEffect } = wp.element;
 const { RichText, InspectorControls, MediaUpload, ColorPalette, InnerBlocks } = vkbBlockEditor;
 
@@ -31,12 +31,25 @@ registerBlockType("vk-blocks/balloon", {
 			type: "string",
 			default: "type-speech"
 		},
-		balloonShape: {
+		balloonBorder: {
+			type: "boolean",
+			default: false
+		},
+		balloonImageBorder: {
+			type: "boolean",
+			default: false
+		},
+		balloonBorderWidth: {
 			type: "string",
-			default: "fill"
+			default: "thin"
+		},
+		balloonBorderColor: {
+			type: "string",
+			default: null
 		},
 		balloonBgColor: {
-			type: "string"
+			type: "string",
+			default: null
 		},
 		balloonAlign: {
 			type: "string",
@@ -79,7 +92,10 @@ registerBlockType("vk-blocks/balloon", {
 			content,
 			balloonName,
 			balloonType,
-			balloonShape,
+			balloonBorder,
+			balloonImageBorder,
+			balloonBorderWidth,
+			balloonBorderColor,
 			balloonBgColor,
 			balloonAlign,
 			IconImage,
@@ -124,11 +140,108 @@ registerBlockType("vk-blocks/balloon", {
 			setAttributes({ balloonType: "type-speech" })
 		}
 
+		let BorderSetting;
+		if ( balloonBorder === true ) {
+			BorderSetting = <BaseControl>
+				<p className={ 'mb-1' }><label>{ __( 'Border', 'vk-blocks' ) }</label></p>
+				<p className={ 'mb-1' }>{ __("Do you want to draw border around balloon?", "vk-blocks") } </p>
+				<ButtonGroup className="mb-3">
+					<Button
+						isSmall
+						isPrimary={ balloonBorder === false }
+						isSecondary={ balloonBorder !== false }
+						onClick={ () => setAttributes({ balloonBorder: false }) }
+					>
+						{ __("OFF", "vk-blocks") }
+					</Button>
+					<Button
+						isSmall
+						isPrimary={ balloonShape === true }
+						isSecondary={ balloonShape !== true }
+						onClick={ () => setAttributes({ balloonShape: true }) }
+					>
+						{  __("ON", "vk-blocks") }
+					</Button>
+				</ButtonGroup>
+
+				<p className={ 'mb-1' }><label>{ __( 'Image Border', 'vk-blocks' ) }</label></p>
+				<p className={ 'mb-1' }>{ __("Do you want to draw border around face?", "vk-blocks") } </p>
+				<ButtonGroup className="mb-3">
+					<Button
+						isSmall
+						isPrimary={ balloonImageBorder === false }
+						isSecondary={ balloonImageBorder !== false }
+						onClick={ () => setAttributes({ balloonImageBorder: false }) }
+					>
+						{ __("OFF", "vk-blocks") }
+					</Button>
+					<Button
+						isSmall
+						isPrimary={ balloonImageBorder === true }
+						isSecondary={ balloonImageBorder !== true }
+						onClick={ () => setAttributes({ balloonImageBorder: true }) }
+					>
+						{  __("ON", "vk-blocks") }
+					</Button>
+				</ButtonGroup>
+
+				<p className={ 'mb-1' }><label>{ __( 'Boder Width', 'vk-blocks' ) }</label></p>
+				<p className={ 'mb-1' }>{ __("Select border width.", "vk-blocks") } </p>
+				<ButtonGroup className="mb-3">
+					<Button
+						isSmall
+						isPrimary={ balloonBorderWidth === "thin" }
+						isSecondary={ balloonBorderWidth !== "thin" }
+						onClick={ () => setAttributes({ balloonBorderWidth: "thin" }) }
+					>
+						{ __("thin", "vk-blocks") }
+					</Button>
+					<Button
+						isSmall
+						isPrimary={ balloonBorderWidth === "bold" }
+						isSecondary={ balloonBorderWidth !== "bold" }
+						onClick={ () => setAttributes({ balloonBorderWidth: "bold" }) }
+					>
+						{  __("bold", "vk-blocks") }
+					</Button>
+				</ButtonGroup>
+
+				<p className={ 'mb-1' }><label>{ __( 'Border color of speech balloon', 'vk-blocks' ) }</label></p>
+				<ColorPalette
+					value={ balloonBorderColor }
+					onChange={ value => setAttributes({ balloonBorderColor: value }) }
+				/>
+			</BaseControl>
+		} else {
+			BorderSetting = <BaseControl>
+				<p className={ 'mb-1' }><label>{ __( 'Border', 'vk-blocks' ) }</label></p>
+				<p className={ 'mb-1' }>{ __("Do you want to draw border around balloon?", "vk-blocks") } </p>
+				<ButtonGroup className="mb-3">
+					<Button
+						isSmall
+						isPrimary={ balloonBorder === false }
+						isSecondary={ balloonBorder !== false }
+						onClick={ () => setAttributes({ balloonBorder: false }) }
+					>
+						{ __("OFF", "vk-blocks") }
+					</Button>
+					<Button
+						isSmall
+						isPrimary={ balloonShape === true }
+						isSecondary={ balloonShape !== true }
+						onClick={ () => setAttributes({ balloonShape: true }) }
+					>
+						{  __("ON", "vk-blocks") }
+					</Button>
+				</ButtonGroup>
+			</BaseControl>
+		}
+
+
 		return (
 			<Fragment>
 				<InspectorControls>
 					<PanelBody title={ __("Balloon setting", "vk-blocks") }>
-
 						<p className={ 'mb-1' }><label>{ __( 'Position', 'vk-blocks' ) }</label></p>
 						<p className={ 'mb-1' }>{ __("Please specify the layout of the balloon.", "vk-blocks") } </p>
 						<ButtonGroup className="mb-3">
@@ -171,27 +284,6 @@ registerBlockType("vk-blocks/balloon", {
 							</Button>
 						</ButtonGroup>
 
-						<p className={ 'mb-1' }><label>{ __( 'Shape', 'vk-blocks' ) }</label></p>
-						<p className={ 'mb-1' }>{ __("Please select the shape of balloon.", "vk-blocks") } </p>
-						<ButtonGroup className="mb-3">
-							<Button
-								isSmall
-								isPrimary={ balloonShape === 'fill' }
-								isSecondary={ balloonShape !== 'fill' }
-								onClick={ () => setAttributes({ balloonShape: 'fill' }) }
-							>
-								{ __("Fill", "vk-blocks") }
-							</Button>
-							<Button
-								isSmall
-								isPrimary={ balloonShape === 'outline' }
-								isSecondary={balloonShape !== 'outline' }
-								onClick={ () => setAttributes({ balloonShape: 'outline' }) }
-							>
-								{  __("Outline", "vk-blocks") }
-							</Button>
-						</ButtonGroup>
-
 						<p className={ 'mb-1' }><label>{ __( 'Image Style', 'vk-blocks' ) }</label></p>
 						<ButtonGroup className="mb-3">
 							<Button
@@ -219,11 +311,15 @@ registerBlockType("vk-blocks/balloon", {
 								{ __('Circle', 'vk-blocks') }
 							</Button>
 						</ButtonGroup>
+
+						{ BorderSetting }
+
 						<p className={ 'mb-1' }><label>{ __( 'Background color of speech balloon', 'vk-blocks' ) }</label></p>
 						<ColorPalette
 							value={ balloonBgColor }
 							onChange={ value => setAttributes({ balloonBgColor: value }) }
 						/>
+
 					</PanelBody>
 					<PanelBody title={ __("Default Icon Setting", "vk-blocks") }>
 						<div className="icon-image-list mb-2">

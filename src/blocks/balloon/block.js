@@ -161,11 +161,11 @@ registerBlockType("vk-blocks/balloon", {
 		}
 
 		let BorderSetting;
-		let borderballoon;
-		let borderimage;
-		let borderwidth;
-		let bordercolor;
-		let bgcolor;
+		let borderballoonclass;
+		let borderimageclass;
+		let borderwidthclass;
+		let bordercolorstyle;
+		let bgcolorstyle;
 		if ( balloonBorder === true ) {
 			BorderSetting = <BaseControl>
 				<p className={ 'mb-1' }><label>{ __( 'Border', 'vk-blocks' ) }</label></p>
@@ -238,25 +238,25 @@ registerBlockType("vk-blocks/balloon", {
 				/>
 			</BaseControl>
 
-			borderballoon = "vk_balloon-balloon-border";
+			borderballoonclass = "vk_balloon-balloon-border";
 
 			if ( balloonImageBorder === true ) {
-				borderimage = "vk_balloon-image-border";
+				borderimageclass = "vk_balloon-image-border";
 			}
 			else {
-				borderimage = "";
+				borderimageclass = "";
 			}
 
 			if ( balloonBorderWidth === "bold" ) {
-				borderwidth = "vk_balloon-border-bold";
+				borderwidthclass = "vk_balloon-border-bold";
 			}
 			else {
-				borderwidth = "vk_balloon-border-thin";
+				borderwidthclass = "vk_balloon-border-thin";
 			}
 
-			bordercolor  = balloonBorderColor;
+			bordercolorstyle  = balloonBorderColor;
 
-			bgcolor      = balloonBgColor;
+			bgcolorstyle      = balloonBgColor;
 		} else {
 			BorderSetting = <BaseControl>
 				<p className={ 'mb-1' }><label>{ __( 'Border', 'vk-blocks' ) }</label></p>
@@ -281,11 +281,11 @@ registerBlockType("vk-blocks/balloon", {
 				</ButtonGroup>
 			</BaseControl>
 
-			borderballoon = "";
-			borderimage = "";
-			borderwidth = "";
-			bordercolor = balloonBgColor;
-			bgcolor     = balloonBgColor;
+			borderballoonclass = "";
+			borderimageclass = "";
+			borderwidthclass = "";
+			bordercolorstyle = balloonBgColor;
+			bgcolorstyle     = balloonBgColor;
 
 		}
 
@@ -410,11 +410,11 @@ registerBlockType("vk-blocks/balloon", {
 					</PanelBody>
 				</InspectorControls>
 				<div
-					className={ `${className} vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation} ${borderwidth}` }
+					className={ `${className} vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation} ${borderwidthclass}` }
 				>
 					<div
-						className={ `vk_balloon_icon ${borderimage}` }
-						style={ { border: bordercolor, } }
+						className={ `vk_balloon_icon ${borderimageclass}` }
+						style={ { border: bordercolorstyle, } }
 					>
 						<MediaUpload
 							onSelect={ value =>	setAttributes({ IconImage: value.sizes.full.url }) }
@@ -446,12 +446,12 @@ registerBlockType("vk-blocks/balloon", {
 							placeholder={ __("Icon Name", "vk-blocks") }
 						/>
 					</div>
-					<div className={ `vk_balloon_content_outer ${borderballoon}` }>
+					<div className={ `vk_balloon_content_outer ${borderballoonclass}` }>
 						<div
 							className={ "vk_balloon_content" }
 							style={ {
-								background: bgcolor,
-								border: bordercolor,
+								background: bgcolorstyle,
+								border: bordercolorstyle,
 							} }
 						>
 							<InnerBlocks
@@ -483,48 +483,48 @@ registerBlockType("vk-blocks/balloon", {
 			balloonAnimation
 		} = attributes;
 
-		let borderballoon;
-		let borderimage;
-		let borderwidth;
-		let bordercolor;
-		let bgcolor;
+		let borderballoonclass;
+		let borderimageclass;
+		let borderwidthclass;
+		let bordercolorstyle;
+		let bgcolorstyle;
 
 		if ( balloonBorder === true ) {
-			borderballoon = "vk_balloon-balloon-border";
+			borderballoonclass = "vk_balloon-balloon-border";
 
 			if ( balloonImageBorder === true ) {
-				borderimage = "vk_balloon-image-border";
+				borderimageclass = "vk_balloon-image-border";
 			}
 			else {
-				borderimage = "";
+				borderimageclass = "";
 			}
 
 			if ( balloonBorderWidth === "bold" ) {
-				borderwidth = "vk_balloon-border-bold";
+				borderwidthclass = "vk_balloon-border-bold";
 			}
 			else {
-				borderwidth = "vk_balloon-border-thin";
+				borderwidthclass = "vk_balloon-border-thin";
 			}
 
-			bordercolor  = balloonBorderColor;
+			bordercolorstyle  = balloonBorderColor;
 
-			bgcolor      = balloonBgColor;
+			bgcolorstyle      = balloonBgColor;
 		}
 		else {
-			borderballoon = "";
-			borderimage = "";
-			borderwidth = "";
-			bordercolor = balloonBgColor;
-			bgcolor     = balloonBgColor;
+			borderballoonclass = "";
+			borderimageclass = "";
+			borderwidthclass = "";
+			bordercolorstyle = balloonBgColor;
+			bgcolorstyle     = balloonBgColor;
 		}
 
 		return (
 			<div
-				className={ `vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation} ${borderwidth}` }
+				className={ `vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation} ${borderwidthclass}` }
 			>
 				<div
-					className={ `vk_balloon_icon ${borderimage}` }
-					style={ { border: bordercolor, } }
+					className={ `vk_balloon_icon ${borderimageclass}` }
+					style={ { border: bordercolorstyle, } }
 				>
 					{ IconImage ? (
 						<figure>
@@ -539,12 +539,12 @@ registerBlockType("vk-blocks/balloon", {
 						""
 					) }
 				</div>
-				<div className={ `vk_balloon_content_outer ${borderballoon}` }>
+				<div className={ `vk_balloon_content_outer ${borderballoonclass}` }>
 					<div
 						className={ "vk_balloon_content" }
 						style={ {
-							background: bgcolor,
-							border: bordercolor,
+							background: bgcolorstyle,
+							border: bordercolorstyle,
 						} }
 					>
 						<InnerBlocks.Content />

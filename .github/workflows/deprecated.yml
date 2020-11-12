@@ -39,6 +39,7 @@ jobs:
 
       - name: checkout ${{ matrix.block-version }}
         run: |
+          git pull --tags
           git checkout -f refs/tags/${{ matrix.block-version }}
           npm run build
 

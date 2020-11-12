@@ -1,4 +1,4 @@
-name: E2E Test | Deprecated
+name: E2E Test | New Version
 
 on:
   push:

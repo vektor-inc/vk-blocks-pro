@@ -1,4 +1,4 @@
-name: E2E Test | Block is not broken
+name: E2E Test | Deprecated
 
 on:
   push:

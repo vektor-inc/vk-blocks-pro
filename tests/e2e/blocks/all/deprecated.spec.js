@@ -13,7 +13,7 @@ describe( `All Deprecated Blocks Test`, () => {
 	beforeEach( async () => {
 		await createNewPost();
 		await helper.movePostsListPage()
-		await page.screenshot({path: `./tests/e2e/screenshot/beforeeach.png`});
+		// await page.screenshot({path: `./tests/e2e/screenshot/beforeeach.png`});
 	} );
 
 	jest.setTimeout(20000);

@@ -1,4 +1,4 @@
-name: E2E Test | Deprecated
+name: E2E | Deprecatedのテスト
 
 on:
   push:
@@ -17,45 +17,43 @@ jobs:
         block-version: [0.55.0, 0.54.2]
     steps:
       - uses: actions/checkout@v2
-
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Build
+      - name: ビルド
         run: |
           npm ci
           npm run build
 
-      # run the wp-env setup command (wp-env start)
-      - name: setup wp env
+      - name: WordPress立ち上げ
         run: |
           npx wp-env start
 
-      - name: prepare for test.
+      - name: テストファイルを移動
         run: |
           mv tests/ ../tests/
 
-      - name: checkout ${{ matrix.block-version }}
+      - name: バージョン ${{ matrix.block-version }} のブロックをチェックアウト
         run: |
           git pull --tags
           git checkout -f refs/tags/${{ matrix.block-version }}
           npm run build
 
-      - name: prepare for test.
+      - name: テストファイルを定位置に戻す
         run: |
           mv ../tests/ ./tests/
 
-      - name: Insert Blocks
+      - name: ブロックを挿入
         run: |
           npx wp-scripts test-e2e tests/e2e/blocks/all/block-is-not-broken.spec.js
 
-      - name: Checkout current branch
+      - name: 最新版のブロックにチェックアウト
         run: |
           git checkout -f ${{github.head_ref}}
           npm run build
 
-      - name: Deprecated test
+      - name: Deprecated テストを実行
         run: |
           npx wp-scripts test-e2e tests/e2e/blocks/all/deprecated.spec.js

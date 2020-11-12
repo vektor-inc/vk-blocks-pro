@@ -1,4 +1,4 @@
-name: E2E Test | New Version
+name: E2E | 最新版のブロックテスト
 
 on:
   push:
@@ -17,21 +17,20 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: インストール node ${{ matrix.node-version }} 
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Build
+      - name: ビルド
         run: |
           npm ci
           npm run build
 
-      # run the wp-env setup command (wp-env start)
-      - name: setup wp env
+      - name: WordPress立ち上げ
         run: |
           npx wp-env start
 
-      - name: Check Block is not broken.
+      - name: ブロックが新規挿入時に壊れてないかチェック
         run: |
           npm run test:e2e tests/e2e/blocks/all/block-is-not-broken.spec.js 

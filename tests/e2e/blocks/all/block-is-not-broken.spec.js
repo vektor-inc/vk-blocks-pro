@@ -4,7 +4,7 @@ import {
 	publishPost,
 	openGlobalBlockInserter
 } from '@wordpress/e2e-test-utils';
-import * as helper from './helper';
+import * as helper from '../../helper';
 const timeout =  5000;
 
 describe( `All Blocks Test`, () => {

@@ -50,6 +50,8 @@ describe( `All Deprecated Blocks Test`, () => {
 
 		it( `Test Deprecated Javascript: ${block.label}`, async () => {
 
+			// await page.screenshot({path: `./tests/e2e/screenshot/beforeeach.png`});
+
 			// 投稿一覧で、ブロック名で保存されている投稿検索
 			await helper.searchPost(block.label);
 
@@ -65,8 +67,6 @@ describe( `All Deprecated Blocks Test`, () => {
 
 			// Check if block was inserted and no error.
 			await helper.checkForBlockErrors( block.slug );
-
-			// await page.screenshot({path: `./tests/e2e/screenshot/beforeeach.png`});
 
 		});
 	})

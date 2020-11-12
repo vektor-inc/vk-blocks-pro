@@ -135,6 +135,7 @@ export const typeTitle = async ( text ) => {
  */
 export const movePostsListPage = async ( text ) => {
 	await page.click('a.menu-icon-post');
+	await page.waitForSelector('#posts-filter');
 }
 
 /**

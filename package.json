@@ -5,17 +5,19 @@
   "main": "gulpfile.js",
   "scripts": {
     "start": "npx wp-env start",
-    "stop": "npx wp-env stop",
+		"stop": "npx wp-env stop",
+		"destroy": "npx wp-env destroy",
     "watch": "gulp watch",
     "build:dev": "gulp build:dev:pro",
     "build": "gulp build:pro && npm run translate",
     "build:free": "gulp build:free && npm run translate",
-    "translate": "./node_modules/.bin/po2json ./inc/vk-blocks/build/languages/vk-blocks-ja.po ./inc/vk-blocks/build/languages/vk-blocks-ja-vk-blocks-build-js.json -f jed",
+		"translate": "./node_modules/.bin/po2json ./inc/vk-blocks/build/languages/vk-blocks-ja.po ./inc/vk-blocks/build/languages/vk-blocks-ja-vk-blocks-build-js.json -f jed",
     "gulp": "gulp",
     "test": "",
     "lint:js": "wp-scripts lint-js",
     "lint:css": "wp-scripts lint-style",
-    "test:e2e": "wp-scripts test-e2e"
+		"test:e2e": "wp-scripts test-e2e",
+		"cli": "npx wp-env run cli"
   },
   "author": "",
   "license": "MIT",

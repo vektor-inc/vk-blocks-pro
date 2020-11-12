@@ -118,3 +118,32 @@ export async function insertBlockByIndex( searchTerm, index=0 ) {
 	// We should wait until the inserter closes and the focus moves to the content.
 	await waitForInserterCloseAndContentFocus();
 }
+
+/**
+ *  タイトルを入力
+ *
+ * @param {*} text
+ */
+export const typeTitle = async ( text ) => {
+	await page.type('textarea[placeholder="Add title"]', text);
+}
+
+/**
+ *  投稿一覧ページへ移動
+ *
+ * @param {*} text
+ */
+export const movePostsListPage = async ( text ) => {
+	await page.click('a.menu-icon-post');
+}
+
+/**
+ * 投稿一覧ページで、特定のタイトルの投稿を探す
+ *
+ * @param {*} postTitle
+ */
+export const searchPost = async ( postTitle ) => {
+	await page.type( 'input#post-search-input', postTitle );
+	await page.click('input#search-submit');
+	await page.waitForSelector('tr.type-post');
+}

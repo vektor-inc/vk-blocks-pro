@@ -12,7 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      tags: (`git tag`)
+      tags: ${{ git tag }}
     strategy:
       matrix:
         node-version: [12.x]

@@ -11,10 +11,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      tags: GIT_TAGS=(`git tag`)
     strategy:
       matrix:
         node-version: [12.x]
-        block-version: [0.55.0, 0.54.2]
+        block-version: [${env.tags[0]}, ${env.tags[1]}, ${env.tags[2]}]
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}

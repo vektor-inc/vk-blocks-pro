@@ -71,37 +71,52 @@
 	padding: 1.1rem 1.4rem;
 }
 
+.vk_balloon_content_before,
+.vk_balloon_content_after {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+
 .vk_balloon-type-speech{
 	.vk_balloon_content{
 		// border-color: #f5f5f5;
 		border-radius: .4em;
 
-		&::before,&::after{
-			content: '';
-			position: absolute;
-			width: 0;
-			height: 0;
-			border-width: 8px;
-			border-color: transparent;
-    		border-style: solid;
+		.vk_balloon_content_before,
+		.vk_balloon_content_after {
+			top: 15px;
+			left: -12px;
+			border-width: 10px 12px 10px 0;
+		}
+		.vk_balloon_content_after {
+		    z-index: 1;
+			border-right-color: inherit;
+		}
+		.vk_balloon_content_before{
+			z-index: 2;
 		}
 	}
 }
 .vk_balloon-type-think{
 	.vk_balloon_content{
 		border-radius: 2rem;
-		&::before,
-		&::after{
+		.vk_balloon_content_before,
+		.vk_balloon_content_after{
 			position: absolute;
 			content: '';
 			border-radius: 50%;
 			background: inherit;
 		}
-		&::before{
+		.vk_balloon_content_before{
 			width: 14px;
 			height: 14px;
 		}
-		&::after{
+		.vk_balloon_content_after{
 			width: 8px;
 			height: 8px;
 		}
@@ -116,20 +131,13 @@
 			margin-right: 1rem;
 		}
 		.vk_balloon_content{
-			&::before{ //outline のborder用
-				left: 0;
-				top: 10px;
-				border-left: 0;
-				margin-left: -10px;
-				border-width: 10px;
+			.vk_balloon_content_before {
+				left:-10px;
 			}
-			&::after{
-				left: 0;
-				top: 12px;
-				border-right-color: inherit;
-				border-left: 0;
-				margin-left: -8px;
+			.vk_balloon_content_after {
+				border-right-color: inherit !important;
 			}
+
 		}
 	}
 
@@ -137,20 +145,20 @@
 		.vk_balloon_icon{
 			margin-right: 1rem;
 		}
-
 		.vk_balloon_content{
-			&::before{
+			.vk_balloon_content_before{
 				left: -15px;
 				top: 7px;
 			}
 
-			&::after{
+			.vk_balloon_content_after {
 				left: -25px;
 				top: 20px;
 			}
 		}
 	}
 }//.vk_balloon-position-left
+
 .vk_balloon-position-right{
 	flex-direction: row-reverse;
 	&.vk_balloon-type-speech{
@@ -180,64 +188,68 @@
 		.vk_balloon_icon{
 			margin-left: 1rem;
 		}
-
 		.vk_balloon_content{
-			&::before{
+			.vk_balloon_content_before{
 				right: -15px;
 				top: 7px;
 			}
 
-			&::after{
+			.vk_balloon_content_after{
 				right: -25px;
-				top: 20px;
+				top: 20px;		
 			}
 		}
 	}
 }//.vk_balloon-position-right
 
 
-/*	Shape
+/*	Border
 /*-------------------------------------------*/
-// common
-.vk_balloon-outline{
-	border:1px solid #000;
-	background: #fff;
-}
-
-.vk_balloon{
-
-	&.vk_balloon-type-think {
-		.vk_balloon-outline {
-			&::before,&::after{
-				border:1px solid #000;
-				background: #fff;
-			}
+//　細い枠線
+.vk_balloon-border-thin{ 
+	.vk_balloon-balloon-border{
+		.vk_balloon_content{ 
+			border-width: 1px;
+			border-style: solid;
 		}
+	}
+	.vk_balloon-image-border{
+			border-width: 1px;
+			border-style: solid;		
 	}
 	&-position-left{ //位置が左
 		&.vk_balloon-type-speech {
-			.vk_balloon-outline{
+			.vk_balloon_content{
 				&::before{
-					border-right-color: #000;
+					// border-right-color: #000;
 				}
 				&::after{ //背景無し（白）
-					border-right-color: #fff;
+					// border-right-color: #fff;
 				}
 			}
 		}
 	}
 	&-position-right{ //位置が右
 		&.vk_balloon-type-speech {
-			.vk_balloon-outline{
+			.vk_balloon_content{
 				&::before{
-					border-left-color: #000;
+					// border-left-color: #000;
 				}
 				&::after{ //背景無し（白）
-					border-left-color: #fff;
+					// border-left-color: #fff;
 				}
 			}
 		}
 	}
+	&.vk_balloon-type-think {
+		.vk_balloon-outline {
+			&::before,&::after{
+				// border:1px solid #000;
+				// background: #fff;
+			}
+		}
+	}
+
 
 }
 

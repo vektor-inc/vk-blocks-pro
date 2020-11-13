@@ -10,7 +10,7 @@ import BlockIcon from "./icon.svg";
 const apiFetch = wp.apiFetch;
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { ButtonGroup, PanelBody, Button, SelectControl, BaseControl } = wp.components;
+const { ButtonGroup, PanelBody, Button, SelectControl, BaseControl, ToggleControl } = wp.components;
 const { Fragment, useState, useEffect } = wp.element;
 const { RichText, InspectorControls, MediaUpload, ColorPalette, InnerBlocks } = vkbBlockEditor;
 
@@ -161,54 +161,28 @@ registerBlockType("vk-blocks/balloon", {
 		}
 
 		let BorderSetting;
-		let borderballoonclass;
-		let borderimageclass;
-		let borderwidthclass;
-		let bordercolorstyle;
-		let bgcolorstyle;
+		let border_balloon_class;
+		let border_image_class;
+		let border_width_class;
+		let border_color_style;
+		let background_color_style;
 		if ( balloonBorder === true ) {
 			BorderSetting = <BaseControl>
 				<p className={ 'mb-1' }><label>{ __( 'Border', 'vk-blocks' ) }</label></p>
 				<p className={ 'mb-1' }>{ __("Do you want to draw border around balloon?", "vk-blocks") } </p>
-				<ButtonGroup className="mb-3">
-					<Button
-						isSmall
-						isPrimary={ balloonBorder === false }
-						isSecondary={ balloonBorder !== false }
-						onClick={ () => setAttributes({ balloonBorder: false }) }
-					>
-						{ __("OFF", "vk-blocks") }
-					</Button>
-					<Button
-						isSmall
-						isPrimary={ balloonBorder === true }
-						isSecondary={ balloonBorder !== true }
-						onClick={ () => setAttributes({ balloonBorder: true }) }
-					>
-						{  __("ON", "vk-blocks") }
-					</Button>
-				</ButtonGroup>
+				<ToggleControl
+					label = { __( "Border on / off", "vk-blocks" ) }
+					checked={ balloonBorder }
+					onChange={ (checked) => setAttributes({ balloonBorder: checked }) }
+				/>
 
-				<p className={ 'mb-1' }><label>{ __( 'Image Border', 'vk-blocks' ) }</label></p>
-				<p className={ 'mb-1' }>{ __("Do you want to draw border around face?", "vk-blocks") } </p>
-				<ButtonGroup className="mb-3">
-					<Button
-						isSmall
-						isPrimary={ balloonImageBorder === false }
-						isSecondary={ balloonImageBorder !== false }
-						onClick={ () => setAttributes({ balloonImageBorder: false }) }
-					>
-						{ __("OFF", "vk-blocks") }
-					</Button>
-					<Button
-						isSmall
-						isPrimary={ balloonImageBorder === true }
-						isSecondary={ balloonImageBorder !== true }
-						onClick={ () => setAttributes({ balloonImageBorder: true }) }
-					>
-						{  __("ON", "vk-blocks") }
-					</Button>
-				</ButtonGroup>
+				<p className={ 'mb-1' }><label>{ __( ' Image Border', 'vk-blocks' ) }</label></p>
+				<p className={ 'mb-1' }>{ __("Do you want to draw border around image?", "vk-blocks") } </p>
+				<ToggleControl
+					label = { __( "Image Border on / off", "vk-blocks" ) }
+					checked={ balloonImageBorder }
+					onChange={ (checked) => setAttributes({ balloonImageBorder: checked }) }
+				/>
 
 				<p className={ 'mb-1' }><label>{ __( 'Boder Width', 'vk-blocks' ) }</label></p>
 				<p className={ 'mb-1' }>{ __("Select border width.", "vk-blocks") } </p>
@@ -238,55 +212,48 @@ registerBlockType("vk-blocks/balloon", {
 				/>
 			</BaseControl>
 
-			borderballoonclass = "vk_balloon-balloon-border";
+			border_balloon_class = "vk_balloon-balloon-border";
 
 			if ( balloonImageBorder === true ) {
-				borderimageclass = "vk_balloon-image-border";
+				border_image_class = "vk_balloon-image-border";
 			}
 			else {
-				borderimageclass = "";
+				border_image_class = "";
 			}
 
 			if ( balloonBorderWidth === "bold" ) {
-				borderwidthclass = "vk_balloon-border-bold";
+				border_width_class = "vk_balloon-border-bold";
 			}
 			else {
-				borderwidthclass = "vk_balloon-border-thin";
+				border_width_class = "vk_balloon-border-thin";
 			}
 
-			bordercolorstyle  = balloonBorderColor;
-
-			bgcolorstyle      = balloonBgColor;
+			border_color_style     = balloonBorderColor;
+			background_color_style = balloonBgColor;
 		} else {
 			BorderSetting = <BaseControl>
 				<p className={ 'mb-1' }><label>{ __( 'Border', 'vk-blocks' ) }</label></p>
 				<p className={ 'mb-1' }>{ __("Do you want to draw border around balloon?", "vk-blocks") } </p>
-				<ButtonGroup className="mb-3">
-					<Button
-						isSmall
-						isPrimary={ balloonBorder === false }
-						isSecondary={ balloonBorder !== false }
-						onClick={ () => setAttributes({ balloonBorder: false }) }
-					>
-						{ __("OFF", "vk-blocks") }
-					</Button>
-					<Button
-						isSmall
-						isPrimary={ balloonBorder === true }
-						isSecondary={ balloonBorder !== true }
-						onClick={ () => setAttributes({ balloonBorder: true }) }
-					>
-						{  __("ON", "vk-blocks") }
-					</Button>
-				</ButtonGroup>
+				<ToggleControl
+					label = { __( "Border on / off", "vk-blocks" ) }
+					checked={ balloonBorder }
+					onChange={ (checked) => setAttributes({ balloonBorder: checked }) }
+				/>
 			</BaseControl>
 
-			borderballoonclass = "";
-			borderimageclass = "";
-			borderwidthclass = "";
-			bordercolorstyle = balloonBgColor;
-			bgcolorstyle     = balloonBgColor;
+			border_balloon_class    = "";
+			border_image_class      = "";
+			border_width_class      = "";
+			border_color_style      = balloonBgColor;
+			background_color_style  = balloonBgColor;
 
+		}
+
+		let triangle_border_color_style;
+		if ( balloonAlign === 'position-right' ) {
+			triangle_border_color_style = `transparent transparent transparent ${background_color_style}`;
+		} else {
+			triangle_border_color_style = `transparent ${background_color_style} transparent transparent`;
 		}
 
 
@@ -410,16 +377,15 @@ registerBlockType("vk-blocks/balloon", {
 					</PanelBody>
 				</InspectorControls>
 				<div
-					className={ `${className} vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation} ${borderwidthclass}` }
+					className={ `${className} vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation} ${border_width_class}` }
 				>
 					<div
-						className={ `vk_balloon_icon ${borderimageclass}` }
-						style={ { border: bordercolorstyle, } }
+						className={ `vk_balloon_icon` }
 					>
 						<MediaUpload
 							onSelect={ value =>	setAttributes({ IconImage: value.sizes.full.url }) }
 							type="image"
-							className={ `vk_balloon_icon_image vk_balloon-image-${balloonImageType}` }
+							className={ `vk_balloon_icon_image vk_balloon-image-${balloonImageType}  ${border_image_class}` }
 							value={ IconImage }
 							render={ ({ open }) => (
 								<Button
@@ -431,6 +397,7 @@ registerBlockType("vk-blocks/balloon", {
 									) : (
 										<img
 											className={ `vk_balloon_icon_image vk_balloon-image-${balloonImageType}` }
+											style={ { borderColor: border_color_style, } }
 											src={ IconImage }
 											alt={ __("Upload image", "vk-blocks") }
 										/>
@@ -446,14 +413,24 @@ registerBlockType("vk-blocks/balloon", {
 							placeholder={ __("Icon Name", "vk-blocks") }
 						/>
 					</div>
-					<div className={ `vk_balloon_content_outer ${borderballoonclass}` }>
+					<div className={ `vk_balloon_content_outer ${border_balloon_class}` }>
 						<div
 							className={ "vk_balloon_content" }
 							style={ {
-								background: bgcolorstyle,
-								border: bordercolorstyle,
+								backgroundColor: background_color_style,
+								borderColor: border_color_style,
 							} }
 						>
+							<span
+								className = { `vk_baloon_content_before`}
+								style     = { { borderColor: triangle_border_color_style, } }
+							>
+							</span>
+							<span
+								className={ `vk_baloon_content_after` }
+								style     = { { borderColor: triangle_border_color_style, } }
+							>
+							</span>
 							<InnerBlocks
 								templateLock={ false }
 								template={ [
@@ -483,52 +460,62 @@ registerBlockType("vk-blocks/balloon", {
 			balloonAnimation
 		} = attributes;
 
-		let borderballoonclass;
-		let borderimageclass;
-		let borderwidthclass;
-		let bordercolorstyle;
-		let bgcolorstyle;
+		let border_balloon_class;
+		let border_image_class;
+		let border_width_class;
+		let border_color_style;
+		let background_color_style;
 
 		if ( balloonBorder === true ) {
-			borderballoonclass = "vk_balloon-balloon-border";
+			border_balloon_class = "vk_balloon-balloon-border";
 
 			if ( balloonImageBorder === true ) {
-				borderimageclass = "vk_balloon-image-border";
+				border_image_class = "vk_balloon-image-border";
 			}
 			else {
-				borderimageclass = "";
+				border_image_class = "";
 			}
 
 			if ( balloonBorderWidth === "bold" ) {
-				borderwidthclass = "vk_balloon-border-bold";
+				border_width_class = "vk_balloon-border-bold";
 			}
 			else {
-				borderwidthclass = "vk_balloon-border-thin";
+				border_width_class = "vk_balloon-border-thin";
 			}
 
-			bordercolorstyle  = balloonBorderColor;
-
-			bgcolorstyle      = balloonBgColor;
+			border_color_style     = balloonBorderColor;
+			background_color_style = balloonBgColor;
 		}
 		else {
-			borderballoonclass = "";
-			borderimageclass = "";
-			borderwidthclass = "";
-			bordercolorstyle = balloonBgColor;
-			bgcolorstyle     = balloonBgColor;
+			border_balloon_class   = "";
+			border_image_class     = "";
+			border_width_class     = "";
+			border_color_style     = balloonBgColor;
+			background_color_style = balloonBgColor;
+		}
+
+		let triangle_border_color_style;
+		if ( balloonAlign === 'position-right' ) {
+			triangle_border_color_style = `transparent transparent transparent ${background_color_style}`;
+		} else {
+			triangle_border_color_style = `transparent ${background_color_style} transparent transparent`;
 		}
 
 		return (
 			<div
-				className={ `vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation} ${borderwidthclass}` }
+				className={ `vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation} ${border_width_class}` }
 			>
 				<div
-					className={ `vk_balloon_icon ${borderimageclass}` }
-					style={ { border: bordercolorstyle, } }
+					className={ `vk_balloon_icon` }
 				>
 					{ IconImage ? (
 						<figure>
-							<img className={ `vk_balloon_icon_image vk_balloon-image-${balloonImageType}` } src={ IconImage } alt="" />
+							<img
+								className={ `vk_balloon_icon_image vk_balloon-image-${balloonImageType}  ${border_image_class}` }
+								style={ { borderColor: border_color_style, } }
+								src={ IconImage }
+								alt=""
+							/>
 							<RichText.Content
 								tagName="figcaption"
 								className={ "vk_balloon_icon_name" }
@@ -539,14 +526,28 @@ registerBlockType("vk-blocks/balloon", {
 						""
 					) }
 				</div>
-				<div className={ `vk_balloon_content_outer ${borderballoonclass}` }>
+				<div className={ `vk_balloon_content_outer ${border_balloon_class}` }>
 					<div
 						className={ "vk_balloon_content" }
 						style={ {
-							background: bgcolorstyle,
-							border: bordercolorstyle,
+							backgroundColor: background_color_style,
+							borderColor: border_color_style,
 						} }
 					>
+						<span
+							className = { `vk_baloon_content_before`}
+							style     = { {
+								borderColor: triangle_border_color_style,
+							} }
+						>
+						</span>
+						<span
+							className={ `vk_baloon_content_after` }
+							style     = { {
+								borderColor: triangle_border_color_style,
+							} }
+						>
+						</span>
 						<InnerBlocks.Content />
 					</div>
 				</div>

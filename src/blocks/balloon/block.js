@@ -422,12 +422,12 @@ registerBlockType("vk-blocks/balloon", {
 							} }
 						>
 							<span
-								className = { `vk_baloon_content_before`}
+								className = { `vk_balloon_content_before`}
 								style     = { { borderColor: triangle_border_color_style, } }
 							>
 							</span>
 							<span
-								className={ `vk_baloon_content_after` }
+								className={ `vk_balloon_content_after` }
 								style     = { { borderColor: triangle_border_color_style, } }
 							>
 							</span>
@@ -535,14 +535,14 @@ registerBlockType("vk-blocks/balloon", {
 						} }
 					>
 						<span
-							className = { `vk_baloon_content_before`}
+							className = { `vk_balloon_content_before`}
 							style     = { {
 								borderColor: triangle_border_color_style,
 							} }
 						>
 						</span>
 						<span
-							className={ `vk_baloon_content_after` }
+							className={ `vk_balloon_content_after` }
 							style     = { {
 								borderColor: triangle_border_color_style,
 							} }

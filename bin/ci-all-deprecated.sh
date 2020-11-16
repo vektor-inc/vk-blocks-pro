@@ -22,14 +22,13 @@ echo $GIT_TAGS_LENGTH
 # 遡ってテストするバージョン
 TEST_VERSIONS=3
 
-for ((i = 0; i < $TEST_VERSIONS; i++))
+for ((i = 1; i < $TEST_VERSIONS; i++))
 do
 # バージョン ${{ matrix.block-version }} のブロックをチェックアウト
 echo ${GIT_TAGS[$i]}
 INDEX=$((GIT_TAGS_LENGTH-i))
 echo $INDEX
-echo ${GIT_TAGS[INDEX]}
-git checkout -f refs/tags/${GIT_TAGS[77]}
+git checkout -f refs/tags/${GIT_TAGS[$INDEX]}
 npm run build
 
 # テストファイルを定位置に戻す

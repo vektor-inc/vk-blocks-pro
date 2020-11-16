@@ -191,119 +191,78 @@
 }//.vk_balloon-position-right
 
 
+:root{
+	// 下の変数の値を php から変更する
+	// 線の太さ
+	--vk-balloon-border-width : 6px;
+	// - 10 - 1 - 線の太さ
+	--vk-balloon-speech-offset : -17px;
+}
+
 /*	Border
 /*-------------------------------------------*/
 //　細い枠線
-.vk_balloon-border-thin{ 
-	.vk_balloon-balloon-border{
+.vk_balloon{
+	// &-contetnBorder-use {
+
+	// }
+	// &-imageBorder-use {
+
+	// }
+	&-balloon-border{
 		.vk_balloon_content{ 
-			border-width: 1px;
+			border-width: var( --vk-balloon-border-width, 1px );
 			border-style: solid;
 		}
 	}
-	.vk_balloon-image-border{
-			border-width: 1px;
+	&-image-border{
+			border-width: var( --vk-balloon-border-width, 1px );
 			border-style: solid;		
 	}
-	&.vk_balloon-position-left{ //位置が左
-		&.vk_balloon-type-speech {
-			.vk_balloon_content{
-				.vk_balloon_content_before{
-					left:-10px;
+	&-position {
+		&-left{ //位置が左
+			&.vk_balloon-type-speech {
+				.vk_balloon_content{
+					.vk_balloon_content_before{
+						left:-10px;
+					}
+					.vk_balloon_content_after{
+						left: var( --vk-balloon-speech-offset, -12px );
+						border-right-color: inherit !important;
+					}
 				}
-				.vk_balloon_content_after{
-					left: -12px;
-					border-right-color: inherit !important;
+			}
+		}
+		&-right{ //位置が右
+			&.vk_balloon-type-speech {
+				.vk_balloon_content{
+					.vk_balloon_content_before {
+						right:-10px;
+					}
+					.vk_balloon_content_after {
+						right: var( --vk-balloon-speech-offset, -12px );
+						border-left-color: inherit !important;
+					}
 				}
-	
 			}
 		}
 	}
-	&.vk_balloon-position-right{ //位置が右
-		&.vk_balloon-type-speech {
-			.vk_balloon_content{
-				.vk_balloon_content_before {
-					right:-10px;
-				}
-				.vk_balloon_content_after {
-					right: -12px;
-					border-left-color: inherit !important;
-				}
-	
-			}
-		}
-	}
-	&.vk_balloon-type-think {
+
+	&-type-think {
 		// border-width: 1px;
 		// border-style: solid;
 		// border-color: inherit !important;
 		.vk_balloon-balloon-border{
 			.vk_balloon_content_before,
 			.vk_balloon_content_after{
-				border-width: 1px;
+				border-width: var( --vk-balloon-border-width, 1px );
 				border-style: solid;
 				border-color: inherit !important;
 			}
 		}
 
 	}
-
-
 }
-//　太い枠線
-.vk_balloon-border-bold{ 
-	.vk_balloon-balloon-border{
-		.vk_balloon_content{ 
-			border-width: 3px;
-			border-style: solid;
-		}
-	}
-	.vk_balloon-image-border{
-		border-width: 3px;
-		border-style: solid;		
-	}
-	&.vk_balloon-position-left{ //位置が左
-		&.vk_balloon-type-speech {
-			.vk_balloon_content{
-				.vk_balloon_content_before{
-					left:-10px;
-				}
-				.vk_balloon_content_after{
-					left: -15px;
-					border-right-color: inherit !important;
-				}
-	
-			}
-		}
-	}
-	&.vk_balloon-position-right{ //位置が右
-		&.vk_balloon-type-speech {
-			.vk_balloon_content{
-				.vk_balloon_content_before {
-					right:-10px;
-				}
-				.vk_balloon_content_after {
-					right: -15px;
-					border-left-color: inherit !important;
-				}
-	
-			}
-		}
-	}
-	&.vk_balloon-type-think {
-		.vk_balloon-balloon-border{
-			.vk_balloon_content_before,
-			.vk_balloon_content_after{
-				border-width: 3px;
-				border-style: solid;
-				border-color: inherit !important;
-			}
-		}
-
-	}
-
-}
-
 
 
 /*	animation

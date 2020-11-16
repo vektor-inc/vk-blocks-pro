@@ -12,6 +12,7 @@ mv tests/ ../tests/
 
 # ここで、タグのループを回す
 GIT_TAGS=(`git tag`)
+GIT_TAGS_LENGTH=${#GIT_TAGS[@]}
 
 # 遡ってテストするバージョン
 TEST_VERSIONS=3
@@ -20,7 +21,10 @@ for ((i = 0; i < $TEST_VERSIONS; i++))
 do
 # バージョン ${{ matrix.block-version }} のブロックをチェックアウト
 git pull --tags
-git checkout -f refs/tags/${GIT_TAGS[$i]}
+echo ${GIT_TAGS[$i]}
+INDEX=$((GIT_TAGS_LENGTH-i))
+echo INDEX
+git checkout -f refs/tags/${GIT_TAGS[$INDEX]}
 npm run build
 
 # テストファイルを定位置に戻す
@@ -36,4 +40,3 @@ npm run build
 # Deprecated テストを実行
 npx wp-scripts test-e2e tests/e2e/blocks/all/deprecated.spec.js
 done
-

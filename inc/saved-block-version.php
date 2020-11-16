@@ -12,6 +12,9 @@ function vkblocks_register_saved_block_version_postmeta(){
 			'single' => true,
 			'type' => 'string',
 			'default' => "",
+			'auth_callback' => function() {
+				return current_user_can( 'edit_posts' );
+			}
 		) );
 	}
 };

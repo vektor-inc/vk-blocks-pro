@@ -170,7 +170,7 @@ msgstr "アニメーションの距離"
 msgid "Short"
 msgstr "短い"
 
-#: src/blocks/_pro/animation/block.js:74 src/blocks/_pro/outer/block.js:160
+#: src/blocks/_pro/animation/block.js:74 src/blocks/_pro/outer/block.js:155
 #: src/blocks/_pro/slider/block.js:78 src/blocks/balloon/block.js:174
 #: src/blocks/button/block.js:141 src/blocks/faq/block.js:38
 #: src/blocks/faq2/block.js:27
@@ -397,59 +397,63 @@ msgid "Background image Position"
 msgstr "背景画像の位置"
 
 #: src/blocks/_pro/outer/block.js:132
-msgid "normal"
-msgstr "標準"
+msgid "Repeat"
+msgstr "リピート"
 
 #: src/blocks/_pro/outer/block.js:133
-msgid "Fixed (Not fixed on iPhone)"
-msgstr "固定（iPhoneでは固定されません）"
+msgid "Cover"
+msgstr "カバー"
+
+#: src/blocks/_pro/outer/block.js:134
+msgid "Cover fixed (Not fixed on iPhone)"
+msgstr "カバー 固定（iPhoneでは固定されません）"
 
 #: src/blocks/_pro/outer/block.js:135
 msgid "Parallax (Non-guaranteed)"
 msgstr "パララックス（非保証）"
 
-#: src/blocks/_pro/outer/block.js:148 src/blocks/_pro/slider-item/block.js:56
+#: src/blocks/_pro/outer/block.js:143 src/blocks/_pro/slider-item/block.js:56
 #: src/blocks/pr-content/block.js:149
 msgid "Layout Setting"
 msgstr "レイアウト設定"
 
-#: src/blocks/_pro/outer/block.js:151 src/blocks/_pro/slider/block.js:67
+#: src/blocks/_pro/outer/block.js:146 src/blocks/_pro/slider/block.js:67
 msgid "Width"
 msgstr "幅"
 
-#: src/blocks/_pro/outer/block.js:168 src/blocks/_pro/slider/block.js:86
+#: src/blocks/_pro/outer/block.js:163 src/blocks/_pro/slider/block.js:86
 msgid "Full Wide"
 msgstr "全幅"
 
-#: src/blocks/_pro/outer/block.js:173 src/blocks/_pro/slider-item/block.js:61
+#: src/blocks/_pro/outer/block.js:168 src/blocks/_pro/slider-item/block.js:61
 msgid "Padding (Left and Right)"
 msgstr "余白 (左右)"
 
-#: src/blocks/_pro/outer/block.js:180
+#: src/blocks/_pro/outer/block.js:175
 msgid "Fit to the Content area"
 msgstr "コンテンツエリアに合わせる"
 
-#: src/blocks/_pro/outer/block.js:184
+#: src/blocks/_pro/outer/block.js:179
 msgid "Add padding to the Outer area"
 msgstr "アウターエリア内に余白を追加する"
 
-#: src/blocks/_pro/outer/block.js:188
+#: src/blocks/_pro/outer/block.js:183
 msgid "Remove padding from the Outer area"
 msgstr "アウターエリア内の余白を無くす"
 
-#: src/blocks/_pro/outer/block.js:197
+#: src/blocks/_pro/outer/block.js:192
 msgid "Padding (Top and Bottom)"
 msgstr "余白 (上下)"
 
-#: src/blocks/_pro/outer/block.js:201
+#: src/blocks/_pro/outer/block.js:196
 msgid "Use default padding"
 msgstr "標準の余白を使用"
 
-#: src/blocks/_pro/outer/block.js:203
+#: src/blocks/_pro/outer/block.js:198
 msgid "Do not use default padding"
 msgstr "標準の余白を使用しない"
 
-#: src/blocks/_pro/outer/block.js:214
+#: src/blocks/_pro/outer/block.js:209
 msgid ""
 "* If you select \"Do not use\" that, please set yourself it such as a spacer "
 "block."
@@ -457,99 +461,99 @@ msgstr ""
 "*「使用しない」を選択した場合はスペーサーブロックなどで任意に設定してくださ"
 "い。"
 
-#: src/blocks/_pro/outer/block.js:218
+#: src/blocks/_pro/outer/block.js:213
 msgid "Divider Setting"
 msgstr "区切りの設定"
 
-#: src/blocks/_pro/outer/block.js:223 src/blocks/balloon/block.js:145
+#: src/blocks/_pro/outer/block.js:218 src/blocks/balloon/block.js:145
 msgid "Type"
 msgstr "タイプ"
 
-#: src/blocks/_pro/outer/block.js:229
+#: src/blocks/_pro/outer/block.js:224
 msgid "Tilt"
 msgstr "傾斜"
 
-#: src/blocks/_pro/outer/block.js:233
+#: src/blocks/_pro/outer/block.js:228
 msgid "Curve"
 msgstr "カーブ"
 
-#: src/blocks/_pro/outer/block.js:237
+#: src/blocks/_pro/outer/block.js:232
 msgid "Wave"
 msgstr "波状"
 
-#: src/blocks/_pro/outer/block.js:241 src/blocks/list-style/block.js:113
+#: src/blocks/_pro/outer/block.js:236 src/blocks/list-style/block.js:113
 msgid "Triangle"
 msgstr "三角"
 
-#: src/blocks/_pro/outer/block.js:246
+#: src/blocks/_pro/outer/block.js:241
 msgid "Upper Divider Level"
 msgstr "上部区切りレベル"
 
-#: src/blocks/_pro/outer/block.js:264
+#: src/blocks/_pro/outer/block.js:259
 msgid "Lower Divider Level"
 msgstr "下部区切りレベル"
 
-#: src/blocks/_pro/outer/block.js:284
+#: src/blocks/_pro/outer/block.js:279
 msgid "Border Setting"
 msgstr "枠線の設定"
 
-#: src/blocks/_pro/outer/block.js:289
+#: src/blocks/_pro/outer/block.js:284
 msgid "Border will disappear when divider effect is applied."
 msgstr "枠線は区切りレベルを適用すると表示されなくなります。"
 
-#: src/blocks/_pro/outer/block.js:295
+#: src/blocks/_pro/outer/block.js:290
 msgid "Border type"
 msgstr "枠線の種類"
 
-#: src/blocks/_pro/outer/block.js:30
-msgid "Outer"
-msgstr "Outer"
-
-#: src/blocks/_pro/outer/block.js:301 src/blocks/_pro/step-item/block.js:101
+#: src/blocks/_pro/outer/block.js:296 src/blocks/_pro/step-item/block.js:101
 #: src/blocks/_pro/timeline-item/block.js:84 src/blocks/balloon/block.js:213
 #: src/blocks/staff/block.js:65
 msgid "None"
 msgstr "なし"
 
-#: src/blocks/_pro/outer/block.js:305 src/blocks/_pro/step-item/block.js:78
+#: src/blocks/_pro/outer/block.js:30
+msgid "Outer"
+msgstr "Outer"
+
+#: src/blocks/_pro/outer/block.js:300 src/blocks/_pro/step-item/block.js:78
 #: src/blocks/_pro/timeline-item/block.js:65 src/blocks/group-style/block.js:95
 #: src/blocks/pr-content/block.js:101
 msgid "Solid"
 msgstr "直線"
 
-#: src/blocks/_pro/outer/block.js:309 src/blocks/group-style/block.js:103
+#: src/blocks/_pro/outer/block.js:304 src/blocks/group-style/block.js:103
 msgid "Dotted"
 msgstr "点線"
 
-#: src/blocks/_pro/outer/block.js:313 src/blocks/group-style/block.js:107
+#: src/blocks/_pro/outer/block.js:308 src/blocks/group-style/block.js:107
 msgid "Dashed"
 msgstr "Dashed"
 
-#: src/blocks/_pro/outer/block.js:317 src/blocks/group-style/block.js:111
+#: src/blocks/_pro/outer/block.js:312 src/blocks/group-style/block.js:111
 msgid "Double"
 msgstr "二重線"
 
-#: src/blocks/_pro/outer/block.js:321
+#: src/blocks/_pro/outer/block.js:316
 msgid "Groove"
 msgstr "Groove"
 
-#: src/blocks/_pro/outer/block.js:325
+#: src/blocks/_pro/outer/block.js:320
 msgid "Ridge"
 msgstr "Ridge"
 
-#: src/blocks/_pro/outer/block.js:329
+#: src/blocks/_pro/outer/block.js:324
 msgid "Inset"
 msgstr "Inset"
 
-#: src/blocks/_pro/outer/block.js:333
+#: src/blocks/_pro/outer/block.js:328
 msgid "Outset"
 msgstr "Outset"
 
-#: src/blocks/_pro/outer/block.js:344
+#: src/blocks/_pro/outer/block.js:339
 msgid "Border width"
 msgstr "枠線の幅"
 
-#: src/blocks/_pro/outer/block.js:351
+#: src/blocks/_pro/outer/block.js:346
 msgid "Border radius"
 msgstr "枠線のRの大きさ"
 
@@ -1823,6 +1827,9 @@ msgstr "吹き出し画像設定"
 #: src/translation_dummy.js:9
 msgid "Select"
 msgstr "選択"
+
+#~ msgid "normal"
+#~ msgstr "標準"
 
 #~ msgid "This Page"
 #~ msgstr "このページ"

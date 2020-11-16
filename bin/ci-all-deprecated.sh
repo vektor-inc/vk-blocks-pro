@@ -10,6 +10,9 @@ npx wp-env start
 # テストファイルを移動
 mv tests/ ../tests/
 
+# リモートのタグをpull
+git pull --tags
+
 # ここで、タグのループを回す
 GIT_TAGS=(`git tag`)
 GIT_TAGS_LENGTH=${#GIT_TAGS[@]}
@@ -20,7 +23,6 @@ TEST_VERSIONS=3
 for ((i = 0; i < $TEST_VERSIONS; i++))
 do
 # バージョン ${{ matrix.block-version }} のブロックをチェックアウト
-git pull --tags
 echo ${GIT_TAGS[$i]}
 INDEX=$((GIT_TAGS_LENGTH-i))
 echo $INDEX

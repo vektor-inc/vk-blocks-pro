@@ -16,6 +16,7 @@ git pull --tags
 # ここで、タグのループを回す
 GIT_TAGS=(`git tag`)
 GIT_TAGS_LENGTH=${#GIT_TAGS[@]}
+echo ${GIT_TAGS[@]}
 echo $GIT_TAGS_LENGTH
 
 # 遡ってテストするバージョン
@@ -27,8 +28,7 @@ do
 echo ${GIT_TAGS[$i]}
 INDEX=$((GIT_TAGS_LENGTH-i))
 echo $INDEX
-echo ${GIT_TAGS[$INDEX]}
-echo ${GIT_TAGS[77]}
+echo ${GIT_TAGS[INDEX]}
 git checkout -f refs/tags/${GIT_TAGS[77]}
 npm run build
 

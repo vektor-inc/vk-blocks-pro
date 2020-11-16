@@ -16,23 +16,19 @@ git pull --tags
 # ここで、タグのループを回す
 GIT_TAGS=(`git tag`)
 GIT_TAGS_LENGTH=${#GIT_TAGS[@]}
-echo ${GIT_TAGS[@]}
-echo $GIT_TAGS_LENGTH
 
 # 遡ってテストするバージョン
-TEST_VERSIONS=3
+TEST_VERSIONS=4
 
 for ((i = 1; i < $TEST_VERSIONS; i++))
 do
 # バージョン ${{ matrix.block-version }} のブロックをチェックアウト
-echo ${GIT_TAGS[$i]}
 INDEX=$((GIT_TAGS_LENGTH-i))
-echo $INDEX
 git checkout -f refs/tags/${GIT_TAGS[$INDEX]}
 npm run build
 
 # テストファイルを定位置に戻す
-cp ../tests/ ./tests/
+cp -r ../tests/ ./tests/
 
 # ブロックを挿入
 npx wp-scripts test-e2e tests/e2e/blocks/all/block-is-not-broken.spec.js

@@ -22,7 +22,7 @@ TEST_VERSIONS=4
 
 for ((i = 1; i < $TEST_VERSIONS; i++))
 do
-# バージョン ${{ matrix.block-version }} のブロックをチェックアウト
+# 指定のバージョンのブロックをチェックアウト
 INDEX=$((GIT_TAGS_LENGTH-i))
 git checkout -f refs/tags/${GIT_TAGS[$INDEX]}
 npm run build

@@ -23,7 +23,8 @@ do
 git pull --tags
 echo ${GIT_TAGS[$i]}
 INDEX=$((GIT_TAGS_LENGTH-i))
-echo INDEX
+echo $INDEX
+echo ${GIT_TAGS[$INDEX]}
 git checkout -f refs/tags/${GIT_TAGS[$INDEX]}
 npm run build
 

@@ -1,7 +1,17 @@
 
 <div>
 <section>
-	<h3 id="balloon-image-setting"><?php echo __( 'Balloon Image Setting', 'vk-blocks' ); ?></h3>
+	<h3 id="balloon-setting"><?php echo __( 'Balloon Setting', 'vk-blocks' ); ?></h3>
+	<h4 id="balloon-border-width-setting"><?php echo __( 'Balloon Border Width Setting', 'vk-blocks' ); ?></h4>
+	<?php
+	$vk_blocks_options = vkblocks_get_options();
+	?>
+	<select class="balloon-border-width-selector" id="balloon-border-width-selector" name="vk_blocks_options[balloon_border_width]">
+		<?php for( $i = 1; $i <= 4; $i++ ) : ?>
+			<option value="<?php echo $i ?>" <?php selected( intval( $vk_blocks_options['balloon_border_width'] ), $i, true ) ?>><?php echo $i; ?>px</option>
+		<?php endfor; ?>
+	</select>
+	<h4 id="balloon-image-setting"><?php echo __( 'Balloon Image Setting', 'vk-blocks' ); ?></h4>
 	<style type="text/css">
 		.vk_admin_page .adminMain_main .balloonIconList {
 			margin-left:0;
@@ -149,15 +159,6 @@
 		}
 	</script>
 
-	<h3 id="balloon-border-width-setting"><?php echo __( 'Balloon Border Width Setting', 'vk-blocks' ); ?></h3>
-	<?php
-	$vk_blocks_options = vkblocks_get_options();
-	?>
-	<select class="balloon-border-width-selector" id="balloon-border-width-selector" name="vk_blocks_options[balloon_border_width]">
-		<?php for( $i = 1; $i <= 4; $i++ ) : ?>
-			<option value="<?php echo $i ?>" <?php selected( intval( $vk_blocks_options['balloon_border_width'] ), $i, true ) ?>><?php echo $i; ?>px</option>
-		<?php endfor; ?>
-	</select>
 	<?php submit_button(); ?>
 </section>
 </div>

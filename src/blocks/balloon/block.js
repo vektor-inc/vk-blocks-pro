@@ -156,14 +156,9 @@ registerBlockType("vk-blocks/balloon", {
 			setAttributes({ balloonImageBorder: false })
 		}
 
-		if ( balloonBorderWidth === null || balloonBorderWidth === undefined ) {
-			setAttributes({ balloonBorderWidth: "thin" })
-		}
-
 		let BorderSetting;
 		let border_balloon_class;
 		let border_image_class;
-		let border_width_class;
 		let border_color_style;
 		let background_color_style;
 		if ( balloonBorder === true ) {
@@ -184,27 +179,6 @@ registerBlockType("vk-blocks/balloon", {
 					onChange={ (checked) => setAttributes({ balloonImageBorder: checked }) }
 				/>
 
-				<p className={ 'mb-1' }><label>{ __( 'Boder Width', 'vk-blocks' ) }</label></p>
-				<p className={ 'mb-1' }>{ __("Select border width.", "vk-blocks") } </p>
-				<ButtonGroup className="mb-3">
-					<Button
-						isSmall
-						isPrimary={ balloonBorderWidth === "thin" }
-						isSecondary={ balloonBorderWidth !== "thin" }
-						onClick={ () => setAttributes({ balloonBorderWidth: "thin" }) }
-					>
-						{ __("thin", "vk-blocks") }
-					</Button>
-					<Button
-						isSmall
-						isPrimary={ balloonBorderWidth === "bold" }
-						isSecondary={ balloonBorderWidth !== "bold" }
-						onClick={ () => setAttributes({ balloonBorderWidth: "bold" }) }
-					>
-						{  __("bold", "vk-blocks") }
-					</Button>
-				</ButtonGroup>
-
 				<p className={ 'mb-1' }><label>{ __( 'Border color of speech balloon', 'vk-blocks' ) }</label></p>
 				<ColorPalette
 					value={ balloonBorderColor }
@@ -219,13 +193,6 @@ registerBlockType("vk-blocks/balloon", {
 			}
 			else {
 				border_image_class = "";
-			}
-
-			if ( balloonBorderWidth === "bold" ) {
-				border_width_class = "vk_balloon-border-bold";
-			}
-			else {
-				border_width_class = "vk_balloon-border-thin";
 			}
 
 			border_color_style     = balloonBorderColor;
@@ -243,7 +210,6 @@ registerBlockType("vk-blocks/balloon", {
 
 			border_balloon_class    = "";
 			border_image_class      = "";
-			border_width_class      = "";
 			border_color_style      = balloonBgColor;
 			background_color_style  = balloonBgColor;
 
@@ -377,7 +343,7 @@ registerBlockType("vk-blocks/balloon", {
 					</PanelBody>
 				</InspectorControls>
 				<div
-					className={ `${className} vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation} ${border_width_class}` }
+					className={ `${className} vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation}` }
 				>
 					<div
 						className={ `vk_balloon_icon` }
@@ -462,7 +428,6 @@ registerBlockType("vk-blocks/balloon", {
 
 		let border_balloon_class;
 		let border_image_class;
-		let border_width_class;
 		let border_color_style;
 		let background_color_style;
 
@@ -476,12 +441,6 @@ registerBlockType("vk-blocks/balloon", {
 				border_image_class = "";
 			}
 
-			if ( balloonBorderWidth === "bold" ) {
-				border_width_class = "vk_balloon-border-bold";
-			}
-			else {
-				border_width_class = "vk_balloon-border-thin";
-			}
 
 			border_color_style     = balloonBorderColor;
 			background_color_style = balloonBgColor;
@@ -489,7 +448,6 @@ registerBlockType("vk-blocks/balloon", {
 		else {
 			border_balloon_class   = "";
 			border_image_class     = "";
-			border_width_class     = "";
 			border_color_style     = balloonBgColor;
 			background_color_style = balloonBgColor;
 		}
@@ -503,7 +461,7 @@ registerBlockType("vk-blocks/balloon", {
 
 		return (
 			<div
-				className={ `vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation} ${border_width_class}` }
+				className={ `vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation}` }
 			>
 				<div
 					className={ `vk_balloon_icon` }

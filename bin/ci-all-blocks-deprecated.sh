@@ -31,12 +31,12 @@ npm run build
 cp -r ../tests/ ./tests/
 
 # 新ブロック挿入テスト
-npx wp-scripts test-e2e tests/e2e/blocks/all/block-is-not-broken.spec.js
+npx wp-scripts test-e2e tests/e2e/blocks/all/all-blocks-valid.spec.js
 
 # 最新版のブロックにチェックアウト
 git checkout -f master
 npm run build
 
 # Deprecated テストを実行
-npx wp-scripts test-e2e tests/e2e/blocks/all/deprecated.spec.js
+npx wp-scripts test-e2e tests/e2e/blocks/all/all-blocks-deprecated.spec.js
 done

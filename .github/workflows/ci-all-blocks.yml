@@ -31,4 +31,4 @@ jobs:
           npx wp-env start
       - name: ブロックが新規挿入時に壊れてないかチェック
         run: |
-          npm run test:e2e tests/e2e/blocks/all/block-is-not-broken.spec.js 
+          npm run test:e2e tests/e2e/blocks/all/all-blocks-valid.spec.js

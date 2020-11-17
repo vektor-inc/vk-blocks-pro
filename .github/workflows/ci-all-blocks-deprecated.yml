@@ -1,4 +1,4 @@
-name: E2E | 新規ブロック + Deprecatedのテスト
+name: E2E | Deprecatedのテスト
 
 on:
   push:

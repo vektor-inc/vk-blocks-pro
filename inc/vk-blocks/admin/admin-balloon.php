@@ -11,6 +11,7 @@
 			<option value="<?php echo $i ?>" <?php selected( intval( $vk_blocks_options['balloon_border_width'] ), $i, true ) ?>><?php echo $i; ?>px</option>
 		<?php endfor; ?>
 	</select>
+	<?php submit_button(); ?>
 	<h4 id="balloon-image-setting"><?php echo __( 'Balloon Image Setting', 'vk-blocks' ); ?></h4>
 	<style type="text/css">
 		.vk_admin_page .adminMain_main .balloonIconList {

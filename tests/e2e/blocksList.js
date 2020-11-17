@@ -1,3 +1,8 @@
+/*
+	label: ブロックのラベル名
+	slug: ブロックのスラッグ
+	index: 同じラベル名のブロックがあった場合、どちらを挿入するか指定する。
+*/
 export default [
 	//Free
 	{ label: "Alert", slug: "vk-blocks/alert" },

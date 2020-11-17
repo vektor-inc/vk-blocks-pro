@@ -3,11 +3,7 @@ name: E2E | 最新版のブロックテスト
 on:
   push:
     branches:
-      - feature/e2e-test-by-wp-scripts
-  # pull_request:
-  #   branches:
-  #     - master
-
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest

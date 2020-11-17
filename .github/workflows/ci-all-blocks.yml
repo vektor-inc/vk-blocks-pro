@@ -26,11 +26,9 @@ jobs:
         run: |
           npm ci
           npm run build
-
       - name: WordPress立ち上げ
         run: |
           npx wp-env start
-
       - name: ブロックが新規挿入時に壊れてないかチェック
         run: |
           npm run test:e2e tests/e2e/blocks/all/block-is-not-broken.spec.js 

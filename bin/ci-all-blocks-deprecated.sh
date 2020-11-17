@@ -30,7 +30,7 @@ npm run build
 # テストファイルを定位置に戻す
 cp -r ../tests/ ./tests/
 
-# ブロックを挿入
+# 新ブロック挿入テスト
 npx wp-scripts test-e2e tests/e2e/blocks/all/block-is-not-broken.spec.js
 
 # 最新版のブロックにチェックアウト

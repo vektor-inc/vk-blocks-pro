@@ -51,6 +51,7 @@ describe( `All Blocks Test`, () => {
 
 			await helper.typeTitle( block.label );
 
+			await page.screenshot({path: `./tests/e2e/screenshot/toc.png`});
 
 			await publishPost();
 

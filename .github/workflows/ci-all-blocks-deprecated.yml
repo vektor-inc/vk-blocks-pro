@@ -1,4 +1,4 @@
-name: E2E | Deprecatedのテスト
+name: E2E | 新規ブロック + Deprecatedのテスト
 
 on:
   push:
@@ -36,4 +36,4 @@ jobs:
     - run: git config --global user.email "info@vektor-inc.co.jp"
     - run: git config --global user.name "bitbucket-piplines-vk-blocks-pro"
     # 無料版にデプロイするスクリプトにタグ名を引数で渡す。
-    - run: bash bin/ci-all-deprecated.sh
+    - run: bash bin/ci-all-blocks-deprecated.sh

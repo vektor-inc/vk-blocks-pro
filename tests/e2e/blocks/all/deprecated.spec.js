@@ -20,7 +20,7 @@ describe( `All Deprecated Blocks Test`, () => {
 		await helper.movePostsListPage()
 	} );
 
-	jest.setTimeout(20000);
+	jest.setTimeout(30000);
 
 	blocks.forEach( ( block ) => {
 
@@ -39,6 +39,8 @@ describe( `All Deprecated Blocks Test`, () => {
 
 			//編集画面ロードされるのを待つ
 			await page.waitForSelector('#editor');
+
+			await page.screenshot({path: `./tests/e2e/screenshot/deprecated-toc.png`});
 
 			//ブロックのエラーが無いか確認
 			await helper.checkForBlockErrors( block.slug );

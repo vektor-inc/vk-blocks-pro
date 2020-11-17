@@ -165,6 +165,7 @@ registerBlockType("vk-blocks/balloon", {
 			BorderSetting = <BaseControl>
 				<p className={ 'mb-1' }><label>{ __( 'Border', 'vk-blocks' ) }</label></p>
 				<p className={ 'mb-1' }>{ __("Do you want to draw border around balloon?", "vk-blocks") } </p>
+				<p className={ 'mb-1' }>{ __("You can change border width on Setting > VK Blocks", "vk-blocks") } </p>
 				<ToggleControl
 					label = { __( "Border on / off", "vk-blocks" ) }
 					checked={ balloonBorder }

@@ -184,20 +184,12 @@
 
 			.vk_balloon_content_after{
 				right: -25px;
-				top: 20px;		
+				top: 20px;
 			}
 		}
 	}
 }//.vk_balloon-position-right
 
-
-:root{
-	// 下の変数の値を php から変更する
-	// 線の太さ
-	--vk-balloon-border-width : 6px;
-	// - 10 - 1 - 線の太さ
-	--vk-balloon-speech-offset : -17px;
-}
 
 /*	Border
 /*-------------------------------------------*/
@@ -210,14 +202,14 @@
 
 	// }
 	&-balloon-border{
-		.vk_balloon_content{ 
+		.vk_balloon_content{
 			border-width: var( --vk-balloon-border-width, 1px );
 			border-style: solid;
 		}
 	}
 	&-image-border{
 			border-width: var( --vk-balloon-border-width, 1px );
-			border-style: solid;		
+			border-style: solid;
 	}
 	&-position {
 		&-left{ //位置が左

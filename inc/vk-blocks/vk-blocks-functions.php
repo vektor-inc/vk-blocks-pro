@@ -3,6 +3,7 @@
 // サーバーサイドレンダリングスクリプトを読み込み。
 require_once dirname( __FILE__ ) . '/view/post-list.php';
 require_once dirname( __FILE__ ) . '/view/responsive-br.php';
+require_once dirname( __FILE__ ) . '/style/balloon.php';
 // require_once dirname( __FILE__ ) . '/customize/vk-blocks-customize-config.php';
 
 // VK Blocks の管理画面
@@ -30,6 +31,7 @@ function vkblocks_get_options() {
 	$options  = get_option( 'vk_blocks_options' );
 	$defaults = array(
 		'display_wp_block_template' => 'hide',
+		'balloon_border_width'      => 1,
 	);
 	$defaults = array_merge( $defaults, apply_filters( 'vk_blocks_default_options', array() ) );
 	$options  = wp_parse_args( $options, $defaults );

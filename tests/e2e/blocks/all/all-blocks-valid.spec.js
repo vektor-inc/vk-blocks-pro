@@ -15,7 +15,7 @@ describe( `All Blocks Test`, () => {
 		await createNewPost();
 	} );
 
-	jest.setTimeout(30000);
+	jest.setTimeout(100000);
 
 	blocks.forEach( ( block ) => {
 

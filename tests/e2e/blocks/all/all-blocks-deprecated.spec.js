@@ -20,7 +20,7 @@ describe( `All Deprecated Blocks Test`, () => {
 		await helper.movePostsListPage()
 	} );
 
-	jest.setTimeout(30000);
+	jest.setTimeout(100000);
 
 	blocks.forEach( ( block ) => {
 

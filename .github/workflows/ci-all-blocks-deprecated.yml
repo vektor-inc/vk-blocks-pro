@@ -3,8 +3,11 @@ name: E2E | Deprecatedのテスト
 on:
   push:
     branches:
-      - master
-      
+      - feature/e2e-test-by-wp-scripts
+  # pull_request:
+  #   branches:
+  #     - master
+
 env:
   plugin_name: vk-blocks-pro
   GIT_TOKEN: ${{ secrets.ACCESSTOKEN_FOR_VK_BLOCKS_FREE }}

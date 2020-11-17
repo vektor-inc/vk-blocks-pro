@@ -195,12 +195,6 @@
 /*-------------------------------------------*/
 //　細い枠線
 .vk_balloon{
-	// &-contetnBorder-use {
-
-	// }
-	// &-imageBorder-use {
-
-	// }
 	&-balloon-border{
 		.vk_balloon_content{
 			border-width: var( --vk-balloon-border-width, 1px );
@@ -214,7 +208,7 @@
 	&-position {
 		&-left{ //位置が左
 			&.vk_balloon-type-speech {
-				.vk_balloon_content{
+				.vk_balloon-balloon-border{
 					.vk_balloon_content_before{
 						left:-10px;
 					}
@@ -227,7 +221,7 @@
 		}
 		&-right{ //位置が右
 			&.vk_balloon-type-speech {
-				.vk_balloon_content{
+				.vk_balloon-balloon-border{
 					.vk_balloon_content_before {
 						right:-10px;
 					}
@@ -241,9 +235,7 @@
 	}
 
 	&-type-think {
-		// border-width: 1px;
-		// border-style: solid;
-		// border-color: inherit !important;
+
 		.vk_balloon-balloon-border{
 			.vk_balloon_content_before,
 			.vk_balloon_content_after{

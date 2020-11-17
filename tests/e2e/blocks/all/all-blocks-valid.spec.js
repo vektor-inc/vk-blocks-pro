@@ -21,7 +21,7 @@ describe( `All Blocks Test`, () => {
 
 		it( `Test Javascript: ${block.label}`, async () => {
 
-			// Insert Block
+			// Insert Block.
 			// 同名ブロックの誤挿入を避けるためのindexがあるかチェック
 			if ( block.index ) {
 				// indexがあれば、同名のindex番目のブロックを挿入

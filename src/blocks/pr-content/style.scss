@@ -47,6 +47,7 @@
 			padding: 0;
 			color: inherit;
 			line-height: 1.5;
+			text-align: left; /* 見出しに左右線デザインを当てられている場合があるので上書きする */
 			@media (max-width: 575.98px) {
 				&:first-child {
 					margin-top: 30px;

@@ -84,9 +84,9 @@ class VK_Page_Content_Block {
 		$page_html = '';
 
 		if ( -1 !== $page_content_id ) {
-			$classes .= 'vk-page-content';
+			$classes .= 'vk_pageContent';
 			if ( isset( $attributes['TargetPost'] ) ) {
-				$classes .= ' vk-page-content_id-' . $page_content_id;
+				$classes .= ' vk_pageContent-id-' . $page_content_id;
 			}
 			if ( isset( $attributes['className'] ) ) {
 				$classes .= ' ' . $attributes['className'];

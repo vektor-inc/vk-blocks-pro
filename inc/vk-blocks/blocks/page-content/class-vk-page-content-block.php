@@ -115,11 +115,13 @@ class VK_Page_Content_Block {
 
 			$page_html .= '<div class="' . $classes . '">';
 			$page_html .= apply_filters( 'vk_page_content', $page_content );
+			$page_html .= '</div>';
+
 			$url = get_edit_post_link( $page_content_id );
 			if ( $url ) {
-				$page_html .= '<a href="' . esc_url( $url ) . '" class="vk_page_editBtn btn btn-secondary" target="_blank">' . __( 'Edit', 'vk-blocks' ) . '</a>';
+				$page_html .= '<a href="' . esc_url( $url ) . '" class="vk_pageContent_editBtn btn btn-outline-primary btn-sm veu_adminEdit" target="_blank">' . __( 'Edit this area', 'vk-blocks' ) . '</a>';
 			}
-			$page_html .= '</div>';
+
 		}
 		return $page_html;
 

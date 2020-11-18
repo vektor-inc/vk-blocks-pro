@@ -1,16 +1,21 @@
 /**
  * No Wrap
  */
+
 const {__} = wp.i18n; // Import __() from wp.i18n
 const {registerFormatType, toggleFormat, applyFormat, removeFormat, getActiveFormat} = window.wp.richText;
 const {RichTextToolbarButton, RichTextShortcut, InspectorControls, PanelColorSettings, getColorObjectByColorValue} = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const {Fragment} = wp.element;
 const BlockIcon = (
-	<svg xmlns="http://www.w3.org/2000/svg" width="576" height="512" viewBox="0 0 576 512">
-		<path d="M26.9,462.2l104.7,39.6l34-34l-73.2-73.2L26.9,462.2z M146.5,231.8c-10.3,9.1-14.4,23.4-10.4,36.6l12.5,41.1l-48.9,48.9
-		L201,459.6l48.8-48.8l41,12.6c13.2,4,27.5,0,36.6-10.3l27.3-29.1L175.5,204.6L146.5,231.8L146.5,231.8z M533.7,122.3L437,25.7
-		C417.4,6,385.8,5,364.9,23.4L201,186.6l171.8,171.8l163.1-163.9C554.3,173.6,553.3,142,533.7,122.3L533.7,122.3z" />
-	</svg>
+
+<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3 4L3 20L5 20L5 4L3 4ZM19 20L21 20L21 4L19 4L19 20ZM14 11L14 8L18 12L14 16L14 13L6.5 13L6.5 12L6.5 11L14 11Z" />
+
+</svg>
+
+
+
 );
 
 registerFormatType(

@@ -56,7 +56,7 @@ registerBlockType( 'vk-blocks/page-content', {
 			editContent = <p>{ __( 'Because no post is selected, The block Will not render', 'vk-blocks' ) }</p>;
 		} else {
 			editContent = <ServerSideRender
-				block="vk-blocks/veu-call-page"
+				block="vk-blocks/page-content"
 				attributes={ props.attributes }
 			/>
 		}

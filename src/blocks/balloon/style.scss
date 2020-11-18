@@ -50,7 +50,7 @@
 	width:100%;
 }
 .vk_balloon_content {
-	max-width: calc(100% - 10%);
+	max-width: calc(100% - 4em);
 	.vk_balloon-position-left & {
 		float:left;
 	}
@@ -193,7 +193,6 @@
 
 /*	Border
 /*-------------------------------------------*/
-//　細い枠線
 .vk_balloon{
 	&-balloon-border{
 		.vk_balloon_content{
@@ -235,7 +234,6 @@
 	}
 
 	&-type-think {
-
 		.vk_balloon-balloon-border{
 			.vk_balloon_content_before,
 			.vk_balloon_content_after{
@@ -345,6 +343,7 @@
 ***********************/
 @media only screen and (max-width: 480px) {
 	.vk_balloon_content{
+		max-width: calc(100% - 2em);
 		font-size: .9em;
 		padding: 1em;
 	}

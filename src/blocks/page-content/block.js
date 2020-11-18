@@ -29,7 +29,7 @@ registerBlockType( 'vk-blocks/page-content', {
 
 		let editContent;
 		if ( TargetPost === -1 ) {
-			editContent = <p>{ __( 'Because no post is selected, The block Will not render', 'vk-blocks' ) }</p>;
+			editContent = <div className="alert alert-warning text-center">{ __( 'Because no post is selected, The block Will not render', 'vk-blocks' ) }</div>;
 		} else {
 			editContent = <ServerSideRender
 				block="vk-blocks/page-content"

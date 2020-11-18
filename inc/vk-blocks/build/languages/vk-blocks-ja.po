@@ -1438,6 +1438,22 @@ msgstr "数字-四角"
 msgid "List Icon Color"
 msgstr "リストアイコンの色"
 
+#: src/blocks/page-content/block.js:12
+msgid "Page Content"
+msgstr "固定ページ本文"
+
+#: src/blocks/page-content/block.js:32
+msgid "Because no post is selected, The block Will not render"
+msgstr "ページが選択されていないためこのブロックはレンダリングされません"
+
+#: src/blocks/page-content/block.js:43
+msgid "Page Setting"
+msgstr "ページ設定"
+
+#: src/blocks/page-content/block.js:50
+msgid "Select Page"
+msgstr "ページを選択"
+
 #: src/blocks/pr-blocks/block.js:164
 msgid "PR Block1 Setting"
 msgstr "PR Block1 設定"
@@ -1827,6 +1843,9 @@ msgstr "吹き出し画像設定"
 #: src/translation_dummy.js:9
 msgid "Select"
 msgstr "選択"
+
+#~ msgid "Page Option"
+#~ msgstr "ページオプション"
 
 #~ msgid "normal"
 #~ msgstr "標準"

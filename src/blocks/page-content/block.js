@@ -40,7 +40,7 @@ registerBlockType( 'vk-blocks/page-content', {
 			<Fragment>
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Page Option', 'vk-blocks' ) }
+						title={ __( 'Page Setting', 'vk-blocks' ) }
 						initialOpen={ true }
 					>
 						<BaseControl

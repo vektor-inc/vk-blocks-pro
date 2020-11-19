@@ -9,6 +9,7 @@
 	outline: unset;
 	outline-offset: unset;
 	box-shadow: none;
+	display: block; /* display:block をつけておかないと左右線デザインでflex指定されて左寄りになる */
 	&:after {
 		content: none;
 		border: none;

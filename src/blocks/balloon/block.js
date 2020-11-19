@@ -157,8 +157,8 @@ registerBlockType("vk-blocks/balloon", {
 		}
 
 		let BorderSetting;
-		let border_balloon_class;
-		let border_image_class;
+		let class_content_border;
+		let class_icon_image_border;
 		let border_color_style;
 		let background_color_style;
 		if ( balloonBorder === true ) {
@@ -187,13 +187,13 @@ registerBlockType("vk-blocks/balloon", {
 				/>
 			</BaseControl>
 
-			border_balloon_class = "vk_balloon-balloon-border";
+			class_content_border = "vk_balloon_content-border-true";
 
 			if ( balloonImageBorder === true ) {
-				border_image_class = "vk_balloon-image-border";
+				class_icon_image_border = "vk_balloon_icon_image-border-true";
 			}
 			else {
-				border_image_class = "";
+				class_icon_image_border = "";
 			}
 
 			border_color_style     = balloonBorderColor;
@@ -209,8 +209,8 @@ registerBlockType("vk-blocks/balloon", {
 				/>
 			</BaseControl>
 
-			border_balloon_class    = "";
-			border_image_class      = "";
+			class_content_border    = "";
+			class_icon_image_border = "";
 			border_color_style      = balloonBgColor;
 			background_color_style  = balloonBgColor;
 
@@ -352,7 +352,7 @@ registerBlockType("vk-blocks/balloon", {
 						<MediaUpload
 							onSelect={ value =>	setAttributes({ IconImage: value.sizes.full.url }) }
 							type="image"
-							className={ `vk_balloon_icon_image vk_balloon-image-${balloonImageType} ${border_image_class}` }
+							className={ `vk_balloon_icon_image vk_balloon-image-${balloonImageType} ${class_icon_image_border}` }
 							value={ IconImage }
 							render={ ({ open }) => (
 								<Button
@@ -363,7 +363,7 @@ registerBlockType("vk-blocks/balloon", {
 									__("Select image", "vk-blocks")
 									) : (
 										<img
-											className={ `vk_balloon_icon_image vk_balloon-image-${balloonImageType} ${border_image_class}` }
+											className={ `vk_balloon_icon_image vk_balloon-image-${balloonImageType} ${class_icon_image_border}` }
 											style={ { borderColor: border_color_style, } }
 											src={ IconImage }
 											alt={ __("Upload image", "vk-blocks") }
@@ -380,9 +380,9 @@ registerBlockType("vk-blocks/balloon", {
 							placeholder={ __("Icon Name", "vk-blocks") }
 						/>
 					</div>
-					<div className={ `vk_balloon_content_outer ${border_balloon_class}` }>
+					<div className={ `vk_balloon_content_outer` }>
 						<div
-							className={ "vk_balloon_content" }
+							className={ `vk_balloon_content ${class_content_border}` }
 							style={ {
 								backgroundColor: background_color_style,
 								borderColor: border_color_style,
@@ -427,19 +427,19 @@ registerBlockType("vk-blocks/balloon", {
 			balloonAnimation
 		} = attributes;
 
-		let border_balloon_class;
-		let border_image_class;
+		let class_content_border;
+		let class_icon_image_border;
 		let border_color_style;
 		let background_color_style;
 
 		if ( balloonBorder === true ) {
-			border_balloon_class = "vk_balloon-balloon-border";
+			class_content_border = "vk_balloon_content-border-true";
 
 			if ( balloonImageBorder === true ) {
-				border_image_class = "vk_balloon-image-border";
+				class_icon_image_border = "vk_balloon-image-border";
 			}
 			else {
-				border_image_class = "";
+				class_icon_image_border = "";
 			}
 
 
@@ -447,8 +447,8 @@ registerBlockType("vk-blocks/balloon", {
 			background_color_style = balloonBgColor;
 		}
 		else {
-			border_balloon_class   = "";
-			border_image_class     = "";
+			class_content_border          = "";
+			class_icon_image_border     = "";
 			border_color_style     = balloonBgColor;
 			background_color_style = balloonBgColor;
 		}
@@ -470,7 +470,7 @@ registerBlockType("vk-blocks/balloon", {
 					{ IconImage ? (
 						<figure>
 							<img
-								className={ `vk_balloon_icon_image vk_balloon-image-${balloonImageType} ${border_image_class}` }
+								className={ `vk_balloon_icon_image vk_balloon-image-${balloonImageType} ${class_icon_image_border}` }
 								style={ { borderColor: border_color_style, } }
 								src={ IconImage }
 								alt=""
@@ -485,7 +485,7 @@ registerBlockType("vk-blocks/balloon", {
 						""
 					) }
 				</div>
-				<div className={ `vk_balloon_content_outer ${border_balloon_class}` }>
+				<div className={ `vk_balloon_content_outer ${class_content_border}` }>
 					<div
 						className={ "vk_balloon_content" }
 						style={ {

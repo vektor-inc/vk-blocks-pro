@@ -213,20 +213,17 @@
 /*	Border
 /*-------------------------------------------*/
 .vk_balloon{
-	&-balloon-border{
-		.vk_balloon_content{
+	&_content,
+	&_icon_image {
+		&-border-true {
 			border-width: var( --vk-balloon-border-width, 1px );
 			border-style: solid;
 		}
 	}
-	&-image-border{
-			border-width: var( --vk-balloon-border-width, 1px );
-			border-style: solid;
-	}
 	&-position {
 		&-left{ //位置が左
 			&.vk_balloon-type-speech {
-				.vk_balloon-balloon-border{
+				.vk_balloon_content-border-true{
 					.vk_balloon_content_before{
 						left:-10px;
 					}
@@ -239,7 +236,7 @@
 		}
 		&-right{ //位置が右
 			&.vk_balloon-type-speech {
-				.vk_balloon-balloon-border{
+				.vk_balloon_content-border-true{
 					.vk_balloon_content_before {
 						right:-10px;
 					}
@@ -253,7 +250,7 @@
 	}
 
 	&-type-think {
-		.vk_balloon-balloon-border{
+		.vk_balloon_content-border-true{
 			.vk_balloon_content_before,
 			.vk_balloon_content_after{
 				border-width: var( --vk-balloon-border-width, 1px );
@@ -261,7 +258,6 @@
 				border-color: inherit !important;
 			}
 		}
-
 	}
 }
 
@@ -430,7 +426,7 @@
 
 			&.vk_balloon-type-think{
 				.vk_balloon_icon{
-				  margin-left: 2rem;
+				  margin-left: 1rem;
 				  margin-right: 0;
 				}
 

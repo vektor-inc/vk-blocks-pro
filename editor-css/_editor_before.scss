@@ -31,8 +31,13 @@
 	padding: 3px 4px;
 }
 
+// ラベル名と説明の文字の太さも大きさも同じでわからないので太字に
 .block-prop-title {
 	font-weight: bold;
+}
+// カードなどで文字位置のalignのツールバーが文字の右に回り込んでしまうため指定
+.components-panel__body .components-base-control__label {
+	display:block;
 }
 
 /* ブロックの種類入れ替えトグルについて、この指定がないと見えてしまう */

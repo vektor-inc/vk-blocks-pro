@@ -221,6 +221,7 @@ div[data-type="vk-blocks/page-content"].is-selected{
 	}
 	.vk_pageContent_editBtn {
 		position: absolute;
+		z-index: 9999;
 		top:-3em;
 		right:0;
 	}

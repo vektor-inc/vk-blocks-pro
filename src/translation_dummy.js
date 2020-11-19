@@ -17,4 +17,5 @@
 	__( 'Enable accordion and default open', 'vk-blocks' )
 	__( 'Enable accordion and default close', 'vk-blocks' )
 	__( 'Edit this area', 'vk-blocks' )
+	__( 'Unspecified', 'vk-blocks' )
 }

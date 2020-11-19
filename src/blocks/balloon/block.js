@@ -163,7 +163,7 @@ registerBlockType("vk-blocks/balloon", {
 		let background_color_style;
 		if ( balloonBorder === true ) {
 			BorderSetting = <BaseControl>
-				<p className={ 'mb-1' }><label>{ __( 'Border', 'vk-blocks' ) }</label></p>
+				<p className={ 'mb-1 block-prop-title' }><label>{ __( 'Border', 'vk-blocks' ) }</label></p>
 				<p className={ 'mb-1' }>{ __("Do you want to draw border around balloon?", "vk-blocks") } </p>
 				<p className={ 'mb-1' }>{ __("You can change border width on Setting > VK Blocks", "vk-blocks") } </p>
 				<ToggleControl
@@ -172,7 +172,7 @@ registerBlockType("vk-blocks/balloon", {
 					onChange={ (checked) => setAttributes({ balloonBorder: checked }) }
 				/>
 
-				<p className={ 'mb-1' }><label>{ __( ' Image Border', 'vk-blocks' ) }</label></p>
+				<p className={ 'mb-1 block-prop-title' }><label>{ __( ' Image Border', 'vk-blocks' ) }</label></p>
 				<p className={ 'mb-1' }>{ __("Do you want to draw border around image?", "vk-blocks") } </p>
 				<ToggleControl
 					label = { __( "Image Border on / off", "vk-blocks" ) }
@@ -180,7 +180,7 @@ registerBlockType("vk-blocks/balloon", {
 					onChange={ (checked) => setAttributes({ balloonImageBorder: checked }) }
 				/>
 
-				<p className={ 'mb-1' }><label>{ __( 'Border color of speech balloon', 'vk-blocks' ) }</label></p>
+				<p className={ 'mb-1 block-prop-title' }><label>{ __( 'Border color of speech balloon', 'vk-blocks' ) }</label></p>
 				<ColorPalette
 					value={ balloonBorderColor }
 					onChange={ value => setAttributes({ balloonBorderColor: value }) }
@@ -200,7 +200,7 @@ registerBlockType("vk-blocks/balloon", {
 			background_color_style = balloonBgColor;
 		} else {
 			BorderSetting = <BaseControl>
-				<p className={ 'mb-1' }><label>{ __( 'Border', 'vk-blocks' ) }</label></p>
+				<p className={ 'mb-1 block-prop-title' }><label>{ __( 'Border', 'vk-blocks' ) }</label></p>
 				<p className={ 'mb-1' }>{ __("Do you want to draw border around balloon?", "vk-blocks") } </p>
 				<ToggleControl
 					label = { __( "Border on / off", "vk-blocks" ) }
@@ -228,7 +228,7 @@ registerBlockType("vk-blocks/balloon", {
 			<Fragment>
 				<InspectorControls>
 					<PanelBody title={ __("Balloon setting", "vk-blocks") }>
-						<p className={ 'mb-1' }><label>{ __( 'Position', 'vk-blocks' ) }</label></p>
+						<p className={ 'mb-1 block-prop-title' }><label>{ __( 'Position', 'vk-blocks' ) }</label></p>
 						<p className={ 'mb-1' }>{ __("Please specify the layout of the balloon.", "vk-blocks") } </p>
 						<ButtonGroup className="mb-3">
 							<Button
@@ -249,7 +249,7 @@ registerBlockType("vk-blocks/balloon", {
 							</Button>
 						</ButtonGroup>
 
-						<p className={ 'mb-1' }><label>{ __( 'Type', 'vk-blocks' ) }</label></p>
+						<p className={ 'mb-1 block-prop-title' }><label>{ __( 'Type', 'vk-blocks' ) }</label></p>
 						<p className={ 'mb-1' }>{ __("Please select the type of balloon.", "vk-blocks") } </p>
 						<ButtonGroup className="mb-3">
 							<Button
@@ -270,7 +270,7 @@ registerBlockType("vk-blocks/balloon", {
 							</Button>
 						</ButtonGroup>
 
-						<p className={ 'mb-1' }><label>{ __( 'Image Style', 'vk-blocks' ) }</label></p>
+						<p className={ 'mb-1 block-prop-title' }><label>{ __( 'Image Style', 'vk-blocks' ) }</label></p>
 						<ButtonGroup className="mb-3">
 							<Button
 								isSmall
@@ -300,7 +300,7 @@ registerBlockType("vk-blocks/balloon", {
 
 						{ BorderSetting }
 
-						<p className={ 'mb-1' }><label>{ __( 'Background color of speech balloon', 'vk-blocks' ) }</label></p>
+						<p className={ 'mb-1 block-prop-title' }><label>{ __( 'Background color of speech balloon', 'vk-blocks' ) }</label></p>
 						<ColorPalette
 							value={ balloonBgColor }
 							onChange={ value => setAttributes({ balloonBgColor: value }) }

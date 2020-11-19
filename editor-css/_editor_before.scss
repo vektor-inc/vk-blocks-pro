@@ -31,6 +31,10 @@
 	padding: 3px 4px;
 }
 
+.block-prop-title {
+	font-weight: bold;
+}
+
 /* ブロックの種類入れ替えトグルについて、この指定がないと見えてしまう */
 .components-button.block-editor-block-switcher__toggle {
 	overflow: hidden;
@@ -59,9 +63,6 @@ button.image-button:not(.button-delete) {
 	&__help {
 		margin-top: 0;
 	}
-	// .components-button {
-	// 	margin-bottom: 0.5em;
-	// }
 }
 
 .components-radio-control__option label {

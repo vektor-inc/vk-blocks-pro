@@ -1,0 +1,103 @@
+.vk_animation {
+	border: 1px dashed #ccc;
+	min-height:3em;
+	// そのままだと編集画面でも消えてしまうので上書き（.wp-block-vk-blocks-animation）がないと負けてしまう
+	&.wp-block-vk-blocks-animation{
+		opacity: 1;
+	}
+	&:before {
+		position:absolute;
+		right:0;
+		top:0;
+		font-size:10px;
+		background: #eeeeee;
+		padding: .2em .6em;
+		z-index:1000;
+	}
+	&.vk_animation-fade-in{
+		left:0;
+		&:before {
+			content:'Fade in';
+		}
+	}
+	&.vk_animation-up-down{
+		right:0;
+		left: 0;
+		&:before {
+			content:'Up Down';
+		}
+	}
+	&.vk_animation-left-right{
+		right:0;
+		left: 0;
+		&:before {
+			content:'Left Right';
+		}
+	}
+	&.vk_animation-trembling-x{
+		right:0;
+		left: 0;
+		&:before {
+			content:'Trembring X';
+		}
+	}
+	&.vk_animation-trembling-y{
+		right:0;
+		left: 0;
+		&:before {
+			content:'Trembring Y';
+		}
+	}
+	&.vk_animation-pounding{
+		right:0;
+		left: 0;
+		&:before {
+			content:'Pounding';
+		}
+	}
+	&.vk_animation-shaking{
+		right:0;
+		left: 0;
+		&:before {
+			content:'Shaking';
+		}
+	}
+	&.vk_animation-slow-shaking{
+		right:0;
+		left: 0;
+		&:before {
+			content:'Slow Shaking';
+		}
+	}
+	&.vk_animation-slide-left{
+		&.vk_animation-range-short,
+		&.vk_animation-range-normal,
+		&.vk_animation-range-long {
+			right:0;
+			&:before {
+				content:'Slide left';
+			}
+		}
+	}
+	&.vk_animation-slide-right{
+		&.vk_animation-range-short,
+		&.vk_animation-range-normal,
+		&.vk_animation-range-long {
+			right:0;
+			left:0;
+			&:before {
+				content:'Slide right';
+			}
+		}
+	}
+	&.vk_animation-slide-up{
+		&.vk_animation-range-short,
+		&.vk_animation-range-normal,
+		&.vk_animation-range-long {
+			top:0;
+			&:before {
+				content:'Slide up';
+			}
+		}
+	}
+}

@@ -44,6 +44,7 @@
 		outline-offset: unset;
 		box-shadow: unset;
 		color: inherit;
+		display: block; /* display:block をつけておかないと左右線デザインでflex指定されて左寄りになる */
 		&::before {
 			content: none;
 		}

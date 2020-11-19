@@ -36,11 +36,29 @@ npm run build
 
 ## CSS name rule
 
+プリフィックスの後は - にする
 ```
-[ prefix ]_[ block name ]_[section name]
-[ prefix ]_[ block name ]_[section name]_[sub section name]
-[ prefix ]_[ block name ]-[Attribute name]-[Attribute property]
+[ prefix ]_[ ブロック名 ]
 ```
+
+各div要素は _ で連結する。一つのdivのクラス名は現状キャメルケース
+```
+[ prefix ]_[ ブロック名 ]_[ divのクラス名 ]
+[ prefix ]_[ ブロック名 ]_[ divのクラス名 ]_[ 子のdivのクラス名 ]
+```
+
+属性の前はハイフンにする
+```
+[ prefix ]_[ ブロック名 ]-[ 属性名 ]-[ 属性値 ]
+[ prefix ]_[ ブロック名 ]_[ 子のdivのクラス名 ]-[ 属性名 ]-[ 属性値 ]
+```
+
+ちなみに 線の あり/なし など
+「属性値なしで -border とかだけでいいんちゃう？」
+と思うケースがあるが、今後も属性値の拡張がありえない場合、たとえば
+線でも あり/なし だけではなく 直線/点線/二重線 など拡張が想定される可能性がありそうな場合は
+-border-solid としておき -border-dotted -border-wave とする事ができるようにしておく。
+何がなんでも あり/なし 以外以外発生しないというケースの場合は -border-true あるいは例外的に -border など属性名だけでも可
 
 ## 公開手順
 
@@ -86,5 +104,3 @@ gulp dist して zip に圧縮してそのzipファイルをvwsのパッケー�
 ```
 bin/dist_kuru.sh
 ```
-
-naoki!

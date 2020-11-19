@@ -31,6 +31,15 @@
 	padding: 3px 4px;
 }
 
+// ラベル名と説明の文字の太さも大きさも同じでわからないので太字に
+.block-prop-title {
+	font-weight: bold;
+}
+// カードなどで文字位置のalignのツールバーが文字の右に回り込んでしまうため指定
+.components-panel__body .components-base-control__label {
+	display:block;
+}
+
 /* ブロックの種類入れ替えトグルについて、この指定がないと見えてしまう */
 .components-button.block-editor-block-switcher__toggle {
 	overflow: hidden;
@@ -59,9 +68,6 @@ button.image-button:not(.button-delete) {
 	&__help {
 		margin-top: 0;
 	}
-	// .components-button {
-	// 	margin-bottom: 0.5em;
-	// }
 }
 
 .components-radio-control__option label {
@@ -207,114 +213,22 @@ $color-danger: #dd3333;
 	}
 }
 
-// アニメーションブロックの識別用枠線
-.vk_animation {
-	border: 1px dashed #ccc;
-	min-height:3em;
-	// そのままだと編集画面でも消えてしまうので上書き（.wp-block-vk-blocks-animation）がないと負けてしまう
-	&.wp-block-vk-blocks-animation{
-		opacity: 1;
+// 固定ページ本文ブロック
+div[data-type="vk-blocks/page-content"].is-selected{
+	.vk_pageContent {
+		border:1px dotted #ccc;
+		opacity: 0.5;
 	}
-	&:before {
-		position:absolute;
+	.vk_pageContent_editBtn {
+		position: absolute;
+		z-index: 9999;
+		top:-3em;
 		right:0;
-		top:0;
-		font-size:10px;
-		background: #eeeeee;
-		padding: .2em .6em;
-		z-index:1000;
-	}
-	&.vk_animation-fade-in{
-		left:0;
-		&:before {
-			content:'Fade in';
-		}
-	}
-	&.vk_animation-up-down{
-		right:0;
-		left: 0;
-		&:before {
-			content:'Up Down';
-		}
-	}
-	&.vk_animation-left-right{
-		right:0;
-		left: 0;
-		&:before {
-			content:'Left Right';
-		}
-	}
-	&.vk_animation-trembling-x{
-		right:0;
-		left: 0;
-		&:before {
-			content:'Trembring X';
-		}
-	}
-	&.vk_animation-trembling-y{
-		right:0;
-		left: 0;
-		&:before {
-			content:'Trembring Y';
-		}
-	}
-	&.vk_animation-pounding{
-		right:0;
-		left: 0;
-		&:before {
-			content:'Pounding';
-		}
-	}
-	&.vk_animation-shaking{
-		right:0;
-		left: 0;
-		&:before {
-			content:'Shaking';
-		}
-	}
-	&.vk_animation-slow-shaking{
-		right:0;
-		left: 0;
-		&:before {
-			content:'Slow Shaking';
-		}
-	}
-	&.vk_animation-slide-left{
-		&.vk_animation-range-short,
-		&.vk_animation-range-normal,
-		&.vk_animation-range-long {
-			right:0;
-			&:before {
-				content:'Slide left';
-			}
-		}
-	}
-	&.vk_animation-slide-right{
-		&.vk_animation-range-short,
-		&.vk_animation-range-normal,
-		&.vk_animation-range-long {
-			right:0;
-			left:0;
-			&:before {
-				content:'Slide right';
-			}
-		}
-	}
-	&.vk_animation-slide-up{
-		&.vk_animation-range-short,
-		&.vk_animation-range-normal,
-		&.vk_animation-range-long {
-			top:0;
-			&:before {
-				content:'Slide up';
-			}
-		}
 	}
 }
 
-table {
-	border: 1px solid #ff0000;
-}
+// アニメーションブロックの識別用枠線
+@import "./editor_before_animation";
 
 /* これがないとGutenberg標準のエディタCSSに負ける */
 h1:first-child.vk_prBlocks_item_title {
@@ -561,168 +475,7 @@ $color-danger: #b52727;
 /*-------------------------------------------*/
 /* .vk_grid-column Layout
 /*-------------------------------------------*/
-.vk_grid-column .block-editor-inner-blocks .block-editor-block-list__layout {
-	border:none;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-    margin-right: -15px;
-	margin-left: -15px;
-
-	.block-list-appender{
-		height: 100px;
-	}
-
-	// colの余分な余白の削除など
-	// col内に入れたブロックにまで反映されないように & > 指定
-	div[class*="col-"].block-editor-block-list__block {
-		flex: inherit;
-		margin:0 15px 15px;
-		padding: 0;
-		outline: 1px dashed #ccc;
-		transition: 1.0s ;
-		&:focus,&:active,&:hover{
-			outline: 1px solid #555d66;
-		}
-		.wp-block-vk-blocks-grid-column-item{
-			padding: 0;
-			width: 100%;
-		}
-	}
-
-	& > .col-xs-2 {
-		width: calc(16.66% - 30px);
-		max-width: var(--vk-width-couter-col-2) ;
-	}
-	& > .col-xs-3 {
-		width: calc(25% - 30px);
-		max-width: var(--vk-width-couter-col-3) ;
-	}
-	& > .col-xs-4 {
-		width: calc(33.3% - 30px);
-		max-width: var(--vk-width-couter-col-4) ;
-	}
-
-	& > .col-xs-6 {
-		width: calc(50% - 30px);
-		max-width: var(--vk-width-couter-col-6) ;
-	}
-
-	& > .col-xs-12 {
-		width: calc(100% - 30px);
-		max-width: var(--vk-width-couter-col-12) ;
-	}
-	@media (min-width: $sm-min) {
-		& > .col-sm-2 {
-			width: calc(16.66% - 30px);
-			max-width: var(--vk-width-couter-col-2) ;
-		}
-		& > .col-sm-3 {
-			width: calc(25% - 30px);
-			max-width: var(--vk-width-couter-col-3) ;
-		}
-		& > .col-sm-4 {
-			width: calc(33.3% - 30px);
-			max-width: var(--vk-width-couter-col-4) ;
-		}
-		& > .col-sm-6 {
-			width: calc(50% - 30px);
-			max-width: var(--vk-width-couter-col-6) ;
-		}
-		& > .col-sm-12 {
-			width: calc(100% - 30px);
-			max-width: var(--vk-width-couter-col-12) ;
-		}
-	}
-	@media (min-width: $md-min) {
-		& > .col-md-2 {
-			width: calc(16.66% - 30px);
-			max-width: var(--vk-width-couter-col-2) ;
-		}
-		& > .col-md-3 {
-			width: calc(25% - 30px);
-			max-width: var(--vk-width-couter-col-3) ;
-		}
-		& > .col-md-4 {
-			width: calc(33.3% - 30px);
-			max-width: var(--vk-width-couter-col-4) ;
-		}
-		& > .col-md-6 {
-			width: calc(50% - 30px);
-			max-width: var(--vk-width-couter-col-6) ;
-		}
-		& > .col-md-12 {
-			width: calc(100% - 30px);
-			max-width: var(--vk-width-couter-col-12) ;
-		}
-	}
-	@media (min-width: $lg-min) {
-		& > .col-lg-2 {
-			width: calc(16.66% - 30px);
-			max-width: var(--vk-width-couter-col-2) ;
-		}
-		& > .col-lg-3{
-			width: calc(25% - 30px);
-			max-width: var(--vk-width-couter-col-3) ;
-		}
-		& > .col-lg-4 {
-			width: calc(33.3% - 30px);
-			max-width: var(--vk-width-couter-col-4) ;
-		}
-		& > .col-lg-6 {
-			width: calc(50% - 30px);
-			max-width: var(--vk-width-couter-col-6) ;
-		}
-		& > .col-lg-12 {
-			width: calc(100% - 30px);
-			max-width: var(--vk-width-couter-col-12) ;
-		}
-	}
-	@media (min-width: $xl-min) {
-		& > .col-xl-2 {
-			width: calc(16.66% - 30px);
-			max-width: var(--vk-width-couter-col-2) ;
-		}
-		& > .col-xl-3 {
-			width: calc(25% - 30px);
-			max-width: var(--vk-width-couter-col-3) ;
-		}
-		& > .col-xl-4 {
-			width: calc(33.3% - 30px);
-			max-width: var(--vk-width-couter-col-4) ;
-		}
-		& > .col-xl-6 {
-			width: calc(50% - 30px);
-			max-width: var(--vk-width-couter-col-6) ;
-		}
-		& > .col-xl-12 {
-			width: calc(100% - 30px);
-			max-width: var(--vk-width-couter-col-12) ;
-		}
-	}
-	@media (min-width: $xxl-min) {
-		& > .col-xxl-2 {
-			width: calc(16.66% - 30px);
-			max-width: var(--vk-width-couter-col-2) ;
-		}
-		& > .col-xxl-3 {
-			width: calc(25% - 30px);
-			max-width: var(--vk-width-couter-col-3) ;
-		}
-		& > .col-xxl-4 {
-			width: calc(33.3% - 30px);
-			max-width: var(--vk-width-couter-col-4) ;
-		}
-		& > .col-xxl-6 {
-			width: calc(50% - 30px);
-			max-width: var(--vk-width-couter-col-6) ;
-		}
-		& > .col-xxl-12 {
-			width: calc(100% - 30px);
-			max-width: var(--vk-width-couter-col-12) ;
-		}
-	}
-}//.vk_grid-column
+@import "./editor_before_grid-column";
 
 /*-------------------------------------------*/
 /* edit hidden block class
@@ -735,31 +488,8 @@ $color-danger: #b52727;
 	opacity: 0.2;
 }
 
-
-
-.vk_grid-column .block-list-appender{
-  width: 100%;
-}
-
 .wp-block-vk-blocks-icon-card{
 	.vk_icon-card_item{
 		margin: 15px auto!important;
-	}
-}
-
-.vk_grid-column {
-	div[data-type="vk-blocks/grid-column-item"]{
-		// これがないとカラムのセルが潰れて中に何もいれられない
-		min-height:30px;
-	}
-	.wp-block-vk-blocks-grid-column-item .block-editor-block-list__layout{
-		// プレースホルダーの文字が枠から左にはみ出す
-		margin-left:0;
-	}
-	.wp-block-vk-blocks-grid-column-item{
-		.wp-block[data-align="left"], .wp-block[data-align="right"]{
-			//これがないと、グリッドカラムブロック内のボタンを左/右寄せにした時に、ボタンのheightが0になる。
-			height: auto;
-		}
 	}
 }

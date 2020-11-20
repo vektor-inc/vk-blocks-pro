@@ -350,7 +350,7 @@ registerBlockType("vk-blocks/balloon", {
 						<MediaUpload
 							onSelect={ value =>	setAttributes({ IconImage: value.sizes.full.url }) }
 							type="image"
-							className={ `vk_balloon_icon_image vk_balloon-image-${balloonImageType} ${class_icon_image_border}` }
+							className={ `vk_balloon_icon_image vk_balloon_icon_image-type-${balloonImageType} ${class_icon_image_border}` }
 							value={ IconImage }
 							render={ ({ open }) => (
 								<Button
@@ -361,7 +361,7 @@ registerBlockType("vk-blocks/balloon", {
 									__("Select image", "vk-blocks")
 									) : (
 										<img
-											className={ `vk_balloon_icon_image vk_balloon-image-${balloonImageType} ${class_icon_image_border}` }
+											className={ `vk_balloon_icon_image vk_balloon_icon_image-type-${balloonImageType} ${class_icon_image_border}` }
 											style={ { borderColor: border_color_style, } }
 											src={ IconImage }
 											alt={ __("Upload image", "vk-blocks") }
@@ -434,7 +434,7 @@ registerBlockType("vk-blocks/balloon", {
 			class_content_border = "vk_balloon_content-border-true";
 
 			if ( balloonImageBorder === true ) {
-				class_icon_image_border = "vk_balloon-image-border";
+				class_icon_image_border = "vk_balloon_icon_image-border-true";
 			}
 			else {
 				class_icon_image_border = "";
@@ -468,7 +468,7 @@ registerBlockType("vk-blocks/balloon", {
 					{ IconImage ? (
 						<figure>
 							<img
-								className={ `vk_balloon_icon_image vk_balloon-image-${balloonImageType} ${class_icon_image_border}` }
+								className={ `vk_balloon_icon_image vk_balloon_icon_image-type-${balloonImageType} ${class_icon_image_border}` }
 								style={ { borderColor: border_color_style, } }
 								src={ IconImage }
 								alt=""

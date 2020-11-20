@@ -5,6 +5,7 @@ inc/vk-blocks/build/*.css
 inc/vk-blocks/build/*.js
 inc/vk-blocks/build/*.js.map
 inc/vk-blocks/build/languages/vk-blocks.pot
+inc/vk-blocks/build/*.js.LICENSE.txt
 editor-css/editor-block-build.scss
 editor-css/editor-block-build.css
 editor-css/editor-block-build.css.map

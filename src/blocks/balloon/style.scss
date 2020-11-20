@@ -19,28 +19,27 @@
 	flex-basis: 80px;
 	flex-shrink: 0;
 	text-align: center;
-}
-
-.vk_balloon_icon_image {
-	vertical-align: bottom;
-	width: 64px;
-	height: 64px;
-    object-fit: cover;
-}
-
-.vk_balloon-image-rounded {
-	border-radius: 4px;
-}
-
-.vk_balloon-image-circle {
-	border-radius: 50%;
-}
-
-.vk_balloon_icon_name {
-	display: block;
-	text-align: center;
-	font-size: 0.7rem;
-	margin-top: 0.3rem;
+	&_image {
+		vertical-align: bottom;
+		width: 64px;
+		height: 64px;
+		object-fit: cover;
+		&-type {
+			&-rounded {
+				border-radius: 4px;
+			}
+			
+			&-circle {
+				border-radius: 50%;
+			}
+		}
+	}
+	&_name {
+		display: block;
+		text-align: center;
+		font-size: 0.7rem;
+		margin-top: 0.3rem;
+	}
 }
 
 // .vk_balloon_content_outer は .vk_balloon_content の外側に 0.38.2 から追加

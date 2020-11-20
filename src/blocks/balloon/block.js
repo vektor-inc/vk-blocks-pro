@@ -483,9 +483,9 @@ registerBlockType("vk-blocks/balloon", {
 						""
 					) }
 				</div>
-				<div className={ `vk_balloon_content_outer ${class_content_border}` }>
+				<div className={ `vk_balloon_content_outer` }>
 					<div
-						className={ "vk_balloon_content" }
+						className={ `vk_balloon_content ${class_content_border}` }
 						style={ {
 							backgroundColor: background_color_style,
 							borderColor: border_color_style,

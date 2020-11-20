@@ -434,7 +434,7 @@ registerBlockType("vk-blocks/balloon", {
 			class_content_border = "vk_balloon_content-border-true";
 
 			if ( balloonImageBorder === true ) {
-				class_icon_image_border = "vk_balloon-image-border";
+				class_icon_image_border = "vk_balloon_icon_image-border-true";
 			}
 			else {
 				class_icon_image_border = "";

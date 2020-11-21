@@ -14,7 +14,11 @@
     "gulp": "gulp",
     "test": "",
     "lint:js": "wp-scripts lint-js",
-    "lint:css": "wp-scripts lint-style"
+    "lint:css": "wp-scripts lint-style",
+	"composer:install:win": "wp-env run composer \"composer install\"",
+    "composer:install:mac": "wp-env run composer 'composer install'",
+    "phpunit:win": "wp-env run phpunit \"phpunit -c /var/www/html/wp-content/plugins/vk-blocks-pro/phpunit.xml.dist --verbose\"",
+    "phpunit:mac": "wp-env run phpunit 'phpunit -c /var/www/html/wp-content/plugins/vk-blocks-pro/phpunit.xml.dist --verbose'"
   },
   "author": "",
   "license": "MIT",

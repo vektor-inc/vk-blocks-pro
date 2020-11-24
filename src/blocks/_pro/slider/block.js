@@ -39,7 +39,7 @@ registerBlockType("vk-blocks/slider", {
 		inserter: displayInserter,
 	},
 
-	edit(props) {
+	edit( props ) {
 		const { attributes, setAttributes, className, clientId } = props;
 		const { autoPlay, autoPlayDelay, pagination, width, loop, effect, speed } = attributes;
 		const { updateBlockAttributes } = dispatch("core/block-editor");
@@ -156,11 +156,10 @@ registerBlockType("vk-blocks/slider", {
 			</Fragment>
 		);
 	},
-	save({ attributes, className }) {
+	save({ attributes }) {
 		return (
 			<ColumnResponsive
 				attributes={ attributes }
-				className={ className }
 				for_={ "save" }
 			/>
 		);
@@ -240,7 +239,8 @@ addFilter(
  * @param {*} type
  * @param {*} attributes
  */
-const addSwiperConfig = (el, type, attributes) => {
+const addSwiperConfig = ( el, type, attributes ) => {
+
 	const post = select( 'core/editor' ).getCurrentPost();
 
 	if( "vk-blocks/slider" === type.name ){
@@ -278,7 +278,7 @@ const addSwiperConfig = (el, type, attributes) => {
 				speedScripts = ''
 			}
 
-			return<div>
+			return<div className={ el.props.className } >
 				{ el }
 				<style type='text/css'>{ cssTag }</style>
 				<script>{ `
@@ -311,7 +311,7 @@ const addSwiperConfig = (el, type, attributes) => {
 				</div>
 		} else {
 			const cssTag = generateHeightCss( attributes, "save" )
-			return <div>{ el }<style type='text/css'>{ cssTag }</style></div>;
+			return <div className={ el.props.className } >{ el }<style type='text/css'>{ cssTag }</style></div>;
 		}
 	} else {
 		return el

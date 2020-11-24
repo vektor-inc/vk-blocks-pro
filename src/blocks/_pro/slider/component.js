@@ -6,9 +6,8 @@ export const ColumnResponsive = (props) => {
 
 	const for_ = props.for_;
 	const attributes = props.attributes;
-	const {pagination,clientId,width} = attributes;
+	const { className, pagination, clientId, width, autoPlay, autoPlayDelay, loop, effect, speed } = attributes;
   	let innerClass = "";
-  	const className = props.className;
   	const containerClass = " vk_grid-column";
 	let elm;
 	let alignClass;
@@ -23,33 +22,45 @@ export const ColumnResponsive = (props) => {
 		alignClass = "vk_width"
 	}
 
-  //編集画面とサイト上の切り替え
-  if (for_ === "edit") {
-    innerClass = "editting";
-    innerClass = innerClass + " vk_posts-edit";
+	//編集画面とサイト上の切り替え
+	if (for_ === "edit") {
+		innerClass = "editting";
+		innerClass = innerClass + " vk_posts-edit";
 
-    elm = (
-	<div>
-		<InnerBlocks
-          //編集画面の追加タグ用に2回目のClassを挿入
-			className={ `${containerClass} row` }
-			template={ TEMPLATE }
-			allowedBlocks={ ALLOWED_BLOCKS }
-        />
-	</div>
-    );
-  } else if ("save") {
-    elm = (
-	<InnerBlocks.Content />
-	);
-  }
-  return (
-	<div data-vkb-slider={JSON.stringify(attributes)} className={ classNames(`swiper-container vk_slider vk_slider_${clientId}`, alignClass, className) }>
-		<div className={ `swiper-wrapper` }>
-			{ elm }
+		elm = (
+		<div>
+			<InnerBlocks
+			//編集画面の追加タグ用に2回目のClassを挿入
+				className={ `${containerClass} row` }
+				template={ TEMPLATE }
+				allowedBlocks={ ALLOWED_BLOCKS }
+			/>
 		</div>
-		<div className="swiper-button-next"></div>
-		<div className="swiper-button-prev"></div>
-		{ pagination && <div className="swiper-pagination"></div> }
-	</div>);
+		);
+	} else if ("save") {
+		elm = (
+		<InnerBlocks.Content />
+		);
+	}
+
+	const sliderData = {
+		autoPlay,
+		autoPlayDelay,
+		pagination,
+		clientId,
+		width,
+		loop,
+		effect,
+		speed,
+	};
+
+	return (
+		<div data-vkb-slider={JSON.stringify(sliderData)} className={ classNames(`swiper-container vk_slider vk_slider_${clientId}`, alignClass ) }>
+			<div className={ `swiper-wrapper` }>
+				{ elm }
+			</div>
+			<div className="swiper-button-next"></div>
+			<div className="swiper-button-prev"></div>
+			{ pagination && <div className="swiper-pagination"></div> }
+		</div>);
 };

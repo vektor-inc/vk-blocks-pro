@@ -3,6 +3,21 @@
 	display: block;
 	clear: both;
 }
+.vk_balloon{
+	figure,
+	p.wp-block{
+		width: 100%;
+	 }
+	 &_icon{
+	 button.image-button{
+		 height: auto;
+	 }
+	}
+}
+.block-editor-block-list__block .block-list-appender{
+	margin: inherit;
+}
+
 .icon-image-list {
 	display: flex;
 	flex-wrap: wrap;
@@ -28,4 +43,10 @@
 	height: 40px;
 	object-fit: cover;
 	border-radius: 50%;
+	img{
+		width: 38px;
+		height: 38px;
+		object-fit: cover;
+		border-radius: 50%;
+	}
 }

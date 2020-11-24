@@ -65,6 +65,7 @@
 		outline-offset: unset;
 		box-shadow: unset;
 		color: inherit;
+		display: block; /* 見出しデザイン設定で左右線指定されるなど display:flec;などが不要された場合対策 */
 		&::before {
 			content: none;
 		}

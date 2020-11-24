@@ -13,7 +13,8 @@ require_once dirname( __FILE__ ) . '/admin-pro/admin-pro.php';
  */
 function vk_blocks_pro_get_options( $defaults ) {
 	$defaults = array(
-		'new_faq_accordion' => 'disable'
+		'display_vk_block_template' => 'display',
+		'new_faq_accordion'         => 'disable'
 	);
 	return $defaults;
 }
@@ -24,12 +25,20 @@ add_filter( 'vk_blocks_default_options', 'vk_blocks_pro_get_options' );
  */
 function vk_blocks_pro_load_scripts() {
 
-	if ( has_block( 'vk-blocks/faq2' ) ) {
+	if ( has_block( 'vk-blocks/faq2' ) || has_block( 'vk-blocks/faq' ) ) {
 		wp_enqueue_script( 'vk-blocks-faq2', VK_BLOCKS_URL . 'build/faq2.min.js', array(), VK_BLOCKS_VERSION, true );
 	}
-	if ( has_block( 'vk-blocks/accordion' ) ) {
-		wp_enqueue_script( 'vk-blocks-accordion', VK_BLOCKS_URL . 'build/accordion.min.js', array(), VK_BLOCKS_VERSION, true );
+
+	if ( has_block( 'vk-blocks/animation' ) ) {
+		wp_enqueue_script( 'vk-blocks-animation', VK_BLOCKS_URL . 'build/vk-animation.min.js', array(), VK_BLOCKS_VERSION, true );
 	}
+
+	if ( has_block( 'vk-blocks/slider' ) ) {
+		wp_enqueue_style( 'vk-blocks-swiper', VK_BLOCKS_URL . 'build/swiper.min.css', array(), VK_BLOCKS_VERSION );
+		wp_enqueue_script( 'vk-blocks-swiper', VK_BLOCKS_URL . 'build/swiper.min.js', array(), VK_BLOCKS_VERSION, true );
+		wp_enqueue_script( 'vk-blocks-slider', VK_BLOCKS_URL . 'build/vk-slider.min.js', array( 'vk-blocks-swiper' ), VK_BLOCKS_VERSION, true );
+	}
+
 }
 add_action( 'wp_enqueue_scripts', 'vk_blocks_pro_load_scripts' );
 
@@ -38,11 +47,11 @@ add_action( 'wp_enqueue_scripts', 'vk_blocks_pro_load_scripts' );
  * New FAQ 用の開閉制御
  *
  * @param string $block_content The block content about to be appended.
- * @param array  $bkock         The full block, including name and attributes.
+ * @param array  $block         The full block, including name and attributes.
  */
 function vk_blocks_pro_new_faq_accordion_control( $block_content, $block ) {
 	$vk_blocks_options  = vkblocks_get_options();
-	if ( has_block( 'vk-blocks/faq2' ) && 'vk-blocks/faq2' === $block['blockName'] ) {
+	if ( has_block( 'vk-blocks/faq2' ) && 'vk-blocks/faq2' === $block['blockName'] || has_block( 'vk-blocks/faq' ) && 'vk-blocks/faq' === $block['blockName'] ) {
 		if ( 'open' === $vk_blocks_options['new_faq_accordion'] ) {
 			$block_content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-accordion-open', $block_content );
 		} elseif ( 'close' === $vk_blocks_options['new_faq_accordion'] ) {

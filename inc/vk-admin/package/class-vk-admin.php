@@ -100,11 +100,11 @@ if ( ! class_exists( 'Vk_Admin' ) ) {
 			// プラグイン VK Block Patterns を有効化していない人にバナーを表示
 			if ( ! self::plugin_exists( 'vk-block-patterns/vk-block-patterns.php' ) ) {
 				if ( $lang == 'ja' ) {
-					$bnr_file_name = 'vk-block-patterns_bnr.jpg';
+					$bnr_file_name = 'vk-block-patterns_bnr_ja.jpg';
 				} else {
-					$bnr_file_name = 'vk-block-patterns_bnr.jpg';
+					$bnr_file_name = 'vk-block-patterns_bnr_en.jpg';
 				}
-				$banner .= '<a href="//wordpress.org/plugins/vk-block-patterns/" target="_blank" class="admin_banner"><img src="' . $dir_url . 'images/' . $bnr_file_name . '" alt="VK Block Patterns" /></a>';
+				$banner .= '<a href="'.admin_url('plugin-install.php?s=vk+block+patterns&tab=search&type=term').'" target="_blank" class="admin_banner"><img src="' . $dir_url . 'images/' . $bnr_file_name . '" alt="VK Block Patterns" /></a>';
 			}
 
 			// プラグイン Link Target Controller を有効化していない人にバナーを表示
@@ -114,7 +114,7 @@ if ( ! class_exists( 'Vk_Admin' ) ) {
 				} else {
 					$bnr_file_name = 'vk-link-target-controller_notxt_bnr.jpg';
 				}
-				$banner .= '<a href="//wordpress.org/plugins/vk-link-target-controller/" target="_blank" class="admin_banner"><img src="' . $dir_url . 'images/' . $bnr_file_name . '" alt="Link Target Controller" /></a>';
+				$banner .= '<a href="' . admin_url( 'plugin-install.php?s=vk+link+target+controller&tab=search&type=term' ) . '" target="_blank" class="admin_banner"><img src="' . $dir_url . 'images/' . $bnr_file_name . '" alt="Link Target Controller" /></a>';
 			}
 
 			// プラグイン VK Aost Author Display を有効化していない人にバナーを表示
@@ -124,7 +124,7 @@ if ( ! class_exists( 'Vk_Admin' ) ) {
 				} else {
 					$bnr_file_name = 'post_author_display_bnr_en.jpg';
 				}
-				$banner .= '<a href="//wordpress.org/plugins/vk-post-author-display/" target="_blank" class="admin_banner"><img src="' . $dir_url . 'images/' . $bnr_file_name . '" alt="VK Post Author
+				$banner .= '<a href="' . admin_url( 'plugin-install.php?s=VK+Post+Author+Display&tab=search&type=term' ) . '" target="_blank" class="admin_banner"><img src="' . $dir_url . 'images/' . $bnr_file_name . '" alt="VK Post Author
 			Display" /></a>';
 			}
 
@@ -204,9 +204,15 @@ if ( ! class_exists( 'Vk_Admin' ) ) {
 
 		public static function get_news_from_rest_api() {
 
-			$html  = '<h4 class="vk-metabox-sub-title">';
-			$html .= 'Vektor WordPress Information';
-			$html .= '<a href="https://www.vektor-inc.co.jp/info-cat/vk-wp-info/?rel=vkadmin" target="_blank" class="vk-metabox-more-link">記事一覧<span aria-hidden="true" class="dashicons dashicons-external"></span></a>';
+			$html = '<h4 class="vk-metabox-sub-title">';
+			$html .= 'Vektor製品更新情報';
+			$html .= '<a href="https://www.vektor-inc.co.jp/product-update/?rel=vkadmin" target="_blank" class="vk-metabox-more-link">記事一覧<span aria-hidden="true" class="dashicons dashicons-external"></span></a>';
+			$html .= '</h4>';
+			$html .= '<ul id="vk-product-update" class="vk-metabox-post-list"></ul>';
+
+			$html .= '<h4 class="vk-metabox-sub-title">';
+			$html .= 'ベクトルからのお知らせ';
+			$html .= '<a href="https://www.vektor-inc.co.jp/info/?rel=vkadmin" target="_blank" class="vk-metabox-more-link">記事一覧<span aria-hidden="true" class="dashicons dashicons-external"></span></a>';
 			$html .= '</h4>';
 			$html .= '<ul id="vk-wp-info" class="vk-metabox-post-list"></ul>';
 
@@ -242,7 +248,7 @@ if ( ! class_exists( 'Vk_Admin' ) ) {
 			jQuery(document).ready(function($){
 
 				// お知らせ
-				$.getJSON( "https://vektor-inc.co.jp/wp-json/wp/v2/info?info-cat=111&per_page=5",
+				$.getJSON( "https://vektor-inc.co.jp/wp-json/wp/v2/info/?per_page=3",
 				function(results) {
 						// 取得したJSONの内容をループする
 						$.each(results, function(i, item) {
@@ -251,6 +257,19 @@ if ( ! class_exists( 'Vk_Admin' ) ) {
 							var formate_date = date.toLocaleDateString();
 							// JSONの内容の要素を</ul>の前に出力する
 							$("ul#vk-wp-info").append('<li><span class="date">'+ formate_date +'</span><a href="' + item.link + '?rel=vkadmin" target="_blank">' + item.title.rendered + '</a></li>');
+						});
+				});
+
+				// 製品更新情報
+				$.getJSON( "https://vektor-inc.co.jp/wp-json/wp/v2/product-update/?per_page=5",
+				function(results) {
+						// 取得したJSONの内容をループする
+						$.each(results, function(i, item) {
+							// 日付のデータを取得
+							var date = new Date(item.date_gmt);
+							var formate_date = date.toLocaleDateString();
+							// JSONの内容の要素を</ul>の前に出力する
+							$("ul#vk-product-update").append('<li><span class="date">'+ formate_date +'</span><a href="' + item.link + '?rel=vkadmin" target="_blank">' + item.title.rendered + '</a></li>');
 						});
 				});
 

@@ -1,5 +1,5 @@
 const { __ } = wp.i18n;
-import { vkbBlockEditor } from "../../../_helper/depModules";
+import { vkbBlockEditor, fixBrokenUnicode } from "../../../_helper/depModules";
 const { RichText, MediaUpload, InnerBlocks } = vkbBlockEditor;
 const { Button } = wp.components;
 const { Fragment } = wp.element;
@@ -316,7 +316,7 @@ class DepComponent extends React.Component {
       rel,
 		} = attributes;
 
-    const align = JSON.parse(activeControl);
+    const align = JSON.parse( fixBrokenUnicode(activeControl) );
     const for_ = this.props.for_;
     const containerClass = " vk_card_item";
 
@@ -363,7 +363,7 @@ class DepComponent extends React.Component {
     };
 
     const uploadImgBtn = (image) => {
-      const imageParsed = JSON.parse(image);
+      const imageParsed = JSON.parse( fixBrokenUnicode(image) );
       return (
 	<MediaUpload
 		onSelect={ (value) => setAttributes({ image: JSON.stringify(value) }) }
@@ -503,7 +503,7 @@ class DepComponent extends React.Component {
 
     let imageStyle;
     if (image) {
-      const imageParsed = JSON.parse(image);
+      const imageParsed = JSON.parse( fixBrokenUnicode(image) );
       imageStyle = {
 				backgroundImage: `url(${imageParsed.sizes.full.url})`,
 			};
@@ -559,7 +559,7 @@ class DepComponent2 extends React.Component {
       rel,
     } = attributes;
 
-    const align = JSON.parse(activeControl);
+    const align = JSON.parse( fixBrokenUnicode( activeControl) );
     const for_ = this.props.for_;
     const containerClass = " vk_card_item";
 
@@ -613,7 +613,7 @@ class DepComponent2 extends React.Component {
     };
 
     const uploadImgBtn = (image) => {
-      const imageParsed = JSON.parse(image);
+      const imageParsed = JSON.parse( fixBrokenUnicode(image) );
       return (
 	<MediaUpload
 		onSelect={ (value) => setAttributes({ image: JSON.stringify(value) }) }
@@ -754,7 +754,7 @@ class DepComponent2 extends React.Component {
 
     let imageStyle;
     if (image) {
-      const imageParsed = JSON.parse(image);
+      const imageParsed = JSON.parse( fixBrokenUnicode(image) );
       imageStyle = {
 				backgroundImage: `url(${imageParsed.sizes.full.url})`,
 			};
@@ -808,7 +808,7 @@ class DepComponent3 extends React.Component {
       rel,
     } = attributes;
 
-    const align = JSON.parse(activeControl);
+    const align = JSON.parse( fixBrokenUnicode(activeControl) );
     const for_ = this.props.for_;
     const containerClass = " vk_card_item";
 
@@ -862,7 +862,7 @@ class DepComponent3 extends React.Component {
     };
 
     const uploadImgBtn = (image) => {
-      const imageParsed = JSON.parse(image);
+      const imageParsed = JSON.parse( fixBrokenUnicode(image) );
       return (
 	<MediaUpload
 		onSelect={ (value) => setAttributes({ image: JSON.stringify(value) }) }
@@ -1007,7 +1007,7 @@ class DepComponent3 extends React.Component {
 
     let imageStyle;
     if (image) {
-      const imageParsed = JSON.parse(image);
+      const imageParsed = JSON.parse( fixBrokenUnicode(image) );
       imageStyle = {
 				backgroundImage: `url(${imageParsed.sizes.full.url})`,
 			};
@@ -1064,7 +1064,7 @@ export class DepComponentXxlAdd extends React.Component {
 		rel,
 	  } = attributes;
 
-	  const align = JSON.parse(activeControl);
+	  const align = JSON.parse( fixBrokenUnicode(activeControl) );
 	  const for_ = this.props.for_;
 	  const containerClass = " vk_card_item";
 
@@ -1118,7 +1118,7 @@ export class DepComponentXxlAdd extends React.Component {
 	  };
 
 	  const uploadImgBtn = (image) => {
-		const imageParsed = JSON.parse(image);
+		const imageParsed = JSON.parse( fixBrokenUnicode(image) );
 		return (
 			<MediaUpload
 				onSelect={ (value) => setAttributes({ image: JSON.stringify(value) }) }
@@ -1266,7 +1266,7 @@ export class DepComponentXxlAdd extends React.Component {
 
 	  let imageStyle;
 	  if (image) {
-		const imageParsed = JSON.parse(image);
+		const imageParsed = JSON.parse( fixBrokenUnicode(image) );
 		imageStyle = {
 			backgroundImage: `url(${imageParsed.sizes.full.url})`,
 		};

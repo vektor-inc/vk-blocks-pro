@@ -1,6 +1,6 @@
 import React from "react";
-import { SpacerComponentV1, SpacerComponentV2 } from "./component";
-import { schema } from './schema';
+import { SpacerComponentV1, SpacerComponentV2, SpacerComponentV3 } from "./component";
+import { schema, schemaV3 } from './schema';
 
 export const deprecated = [
     {
@@ -16,6 +16,14 @@ export const deprecated = [
         save({ attributes }) {
             return (
 	<SpacerComponentV1 attributes={ attributes } />
+            );
+        },
+	},
+	{
+        attributes: schemaV3,
+        save({ attributes }) {
+            return (
+	<SpacerComponentV3 attributes={ attributes } />
             );
         },
     }

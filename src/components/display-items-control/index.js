@@ -15,6 +15,7 @@ export const DisplayItemsControl = props => {
 		display_excerpt,
 		display_date,
 		display_new,
+		display_taxonomies,
 		display_btn,
 		new_date,
 		new_text,
@@ -51,6 +52,12 @@ export const DisplayItemsControl = props => {
 				label={ __("New mark", "vk-blocks") }
 				checked={ display_new }
 				onChange={ checked => setAttributes({ display_new: checked }) }
+			/>
+
+			<CheckboxControl
+				label={ __("Taxonomies", "vk-blocks") }
+				checked={ display_taxonomies }
+				onChange={ checked => setAttributes({ display_taxonomies: checked }) }
 			/>
 
 			<CheckboxControl

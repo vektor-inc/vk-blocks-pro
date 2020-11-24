@@ -1,5 +1,5 @@
 const { __ } = wp.i18n; // Import __() from wp.i18n
-import { vkbBlockEditor } from "./../../_helper/depModules";
+import { vkbBlockEditor, fixBrokenUnicode } from "./../../_helper/depModules";
 const { RichText, MediaUpload, InnerBlocks } = vkbBlockEditor;
 const { Button } = wp.components;
 const { Fragment } = wp.element;
@@ -32,7 +32,8 @@ export class Component extends React.Component {
 		rel,
     } = attributes;
 
-    const align = JSON.parse(activeControl);
+	//ユニコード文字がエスケープされている対策
+    const align = JSON.parse( fixBrokenUnicode( activeControl ) );
     const for_ = this.props.for_;
     const containerClass = " vk_card_item";
 
@@ -88,7 +89,7 @@ export class Component extends React.Component {
     };
 
     const uploadImgBtn = (image) => {
-      const imageParsed = JSON.parse(image);
+      const imageParsed = JSON.parse( fixBrokenUnicode(image) );
       return (
 	<MediaUpload
 		onSelect={ (value) => setAttributes({ image: JSON.stringify(value) }) }
@@ -221,7 +222,7 @@ export class Component extends React.Component {
 						tagName={ titleTag }
 						className={ titleClass }
 						value={ title } />);
-				}
+				}else{
 					return (
 						<a href={ url } target={ linkTarget } rel={ rel }>
 							<RichText.Content
@@ -230,13 +231,13 @@ export class Component extends React.Component {
 								value={ title }
 											/>
 						</a>);
-
+				}
 			}
     };
 
     let imageStyle;
     if (image) {
-      const imageParsed = JSON.parse(image);
+      const imageParsed = JSON.parse( fixBrokenUnicode(image) );
       imageStyle = {
 				backgroundImage: `url(${imageParsed.sizes.full.url})`,
 			};

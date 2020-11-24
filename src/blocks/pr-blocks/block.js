@@ -8,30 +8,15 @@ import { ComponentBlock } from "./component-block";
 import { isNotJSON } from "../_helper/is-not-json";
 import { FontAwesome } from "../_helper/font-awesome-new"
 import { iconName, iconUser, title, baseColor, url } from "./../_helper/example-data"
+import { fixBrokenUnicode } from "./../_helper/depModules";
+import BlockIcon from "./icon.svg";
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 const { RadioControl, PanelBody, Button, BaseControl, CheckboxControl, TextControl } = wp.components;
 const { Fragment } = wp.element;
 const { InspectorControls, MediaUpload, ColorPalette } = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
-const BlockIcon = (
-	<svg xmlns="http://www.w3.org/2000/svg" width="576" height="512" viewBox="0 0 576 512">
-		<g>
-			<g>
-				<circle cx="288" cy="186.2" r="60" />
-				<rect x="213.5" y="278.8" width="149" height="107" />
-			</g>
-			<g>
-				<circle cx="74.5" cy="186.2" r="60" />
-				<rect y="278.8" width="149" height="107" />
-			</g>
-			<g>
-				<circle cx="501.5" cy="186.2" r="60" />
-				<rect x="427" y="278.8" width="149" height="107" />
-			</g>
-		</g>
-	</svg>
-);
+
 
 function set_attributes(number) {
 
@@ -98,7 +83,7 @@ function setExample(number) {
 
 registerBlockType('vk-blocks/pr-blocks', {
 	title: __('PR Blocks', 'vk-blocks'),
-	icon: BlockIcon,
+	icon: <BlockIcon />,
 	category: 'vk-blocks-cat',
 	attributes: set_attributes(4),
 	example:setExample(4),
@@ -163,7 +148,7 @@ registerBlockType('vk-blocks/pr-blocks', {
 					<img className={ 'icon-image' } src={ insertImage }
 						alt={ __('Upload image', 'vk-blocks') } />
 			}
-			const IconImageParse = JSON.parse(insertImage);
+			const IconImageParse = JSON.parse( fixBrokenUnicode(insertImage) );
 			return !insertImage
 				? __('Select image', 'vk-blocks')
 				:

@@ -1,3 +1,6 @@
+:root {
+	--vk-margin-elem:2rem;
+}
 /*-------------------------------------------*/
 /* リストデザイン
 /*-------------------------------------------*/
@@ -211,7 +214,10 @@ ol {
 
 @mixin pad-mag {
 	padding: 1.8em;
-	margin: 1.2em 0;
+	margin-top:1.2em; // IE fall back
+	margin-bottom:1.2em; // IE fall back
+	margin-top: var( --vk-margin-elem );
+	margin-bottom: var( --vk-margin-elem );
 }
 @mixin inner-item-pad-mag {
 	h2,
@@ -260,7 +266,7 @@ ol {
 				@include inner-item-pad-mag;
 			}
 			&-stitch {
-				margin: 1em 0;
+				margin: 1em auto;
 				padding: 0.5em;
 				border-radius: 8px;
 				@include inner-item-pad-mag;
@@ -343,6 +349,22 @@ ol {
 		}
 	}
 } //.wp-block-group
+
+
+/*-------------------------------------------*/
+/* Group Block
+/*-------------------------------------------*/
+.editor-styles-wrapper .wp-block-group {
+	& > div:last-child {
+		*:nth-last-child(2) { 
+			margin-bottom:0;
+		}
+	}
+	// これがないとコアに勝手にwidthが左右1em余白をあけられる
+	.wp-block{
+		width:auto;
+	}
+}
 
 /*-------------------------------------------*/
 /* YouTube

@@ -4,13 +4,13 @@ import { Fontawesome } from "./component-fontawesome";
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { Button } = wp.components;
 const { Component } = wp.element;
-import { vkbBlockEditor } from "./../_helper/depModules";
+import { vkbBlockEditor, fixBrokenUnicode } from "./../_helper/depModules";
 const { MediaUpload, RichText } = vkbBlockEditor;
 
 export class PRcontent extends Component {
   render() {
     const attributes = this.props.attributes;
-    const {
+    let {
       title,
       titleColor,
       content,
@@ -123,8 +123,8 @@ export class PRcontent extends Component {
               ) }
             />
           );
-        } 
-          const ImageParse = JSON.parse(Image);
+				}
+          const ImageParse = JSON.parse( fixBrokenUnicode(Image) );
           return (
 	<MediaUpload
 		onSelect={ saveImage }
@@ -151,11 +151,11 @@ export class PRcontent extends Component {
               ) }
             />
           );
-        
+
       } else if (for_ === "save") {
         if (!Image) {
           return __("Select image", "vk-blocks");
-        } 
+        }
           if (Image && Image.indexOf("{") === -1) {
             return (
 	<img
@@ -165,22 +165,20 @@ export class PRcontent extends Component {
 		style={ { border: imageBorderProperty } }
               />
             );
-          } 
-            const ImageParse = JSON.parse(Image);
-            if (ImageParse && typeof ImageParse.sizes !== "undefined") {
-              return (
-	<img
-		className={ "vk_prContent_colImg_image" }
-		src={ ImageParse.sizes.full.url }
-		alt={ ImageParse.alt }
-		style={ { border: imageBorderProperty } }
-                />
-              );
-            } 
-              return "";
-            
-          
-        
+					}
+					const ImageParse = JSON.parse( fixBrokenUnicode(Image) );
+					if (ImageParse && typeof ImageParse.sizes !== "undefined") {
+						return (
+							<img
+									className={ "vk_prContent_colImg_image" }
+									src={ ImageParse.sizes.full.url }
+									alt={ ImageParse.alt }
+									style={ { border: imageBorderProperty } }
+								/>
+						);
+					}else{
+						return "";
+					}
       }
     };
 
@@ -210,7 +208,7 @@ export class PRcontent extends Component {
                   />
 	</React.Fragment>
               );
-            } 
+            }
               return (
 	<React.Fragment>
 		<RichText.Content
@@ -227,7 +225,7 @@ export class PRcontent extends Component {
                   />
 	</React.Fragment>
               );
-            
+
           })() }
 			{ //ボタンテキストが入力されるとボタンを表示。
             (() => {
@@ -239,7 +237,6 @@ export class PRcontent extends Component {
 			className={ aClass }
 			target={ buttonTarget ? "_blank" : null }
 			style={ aStyle }
-			rel="noopener noreferrer"
                     >
 			<Fontawesome attributes={ attributes } />
 		</a>

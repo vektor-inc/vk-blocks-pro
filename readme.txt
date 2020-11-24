@@ -1,10 +1,10 @@
 === VK Blocks ===
-Contributors: vektor-inc,kurudrive,naoki0h,nc30
+Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
-Tested up to: 5.5.1
-Stable tag: 0.47.0
+Tested up to: 5.5.3
+Stable tag: 0.56.3
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -29,6 +29,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Border box
 * Title（with sub text）
 * Responsive Spacer
+* Page Content
 * Post List [ Pro ]
 * Step [ Pro ]
 * Timeline [ Pro ]
@@ -61,6 +62,107 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.56.3 =
+* [ Bug fix ][ Balloon ] fix border bug
+
+= 0.56.2 =
+* [ Bug fix ][ Balloon ] fix border bug
+
+= 0.56.1 =
+
+= 0.56.0 =
+* [ Add Block ] Add Page Content Block
+* [ Add Function ] Add nowrap
+* [ Add Function ][ Balloon ] Add border function
+
+= 0.55.0 =
+* [ Add function ][ Outer ] Background image repeat
+* [ Bug fix ] fix can not save on some plugin using enviroment
+* [ Specification Change ][ Headding ] delete font weight specification from Plain style
+
+= 0.54.2 =
+* [ Bug fix ][ Slider ] Fix slider broken in page.
+
+= 0.54.1 =
+* [ Design bug fix ] Fix do not effect text align on theming by horizontal border
+
+= 0.54.0 =
+* [ Add function ][ Post list ] Add Card (nonorder) layout and add display taxonomy
+* [ Bug fix ][ Animation ] fix deprecated
+
+= 0.53.2 =
+ [ Bugfix ][ ToC ( Pro )] Fix id Adding System
+
+= 0.53.1 =
+ [ Bugfix ][ Step ( Pro )] Fix Step Number Reset System
+
+= 0.53.0 =
+ [ Design Change ] VK Blocks Icon design change
+
+= 0.52.2 =
+[ Other ] version only
+
+= 0.52.1 =
+[ Bug fix ][ Grid Column(Pro) ] Fixed a bug that the hidden specification is removed when re-editing
+[ Bug fix ][ Slider(Pro) ] Fix Can not stop loop
+[ Bug fix ][ Outer(Pro) ] Fix cant edit outer block(cant save style tag) on Editor role user
+
+= 0.52.0 =
+[ Specification Change ][ CSS Optimize ] Delete package
+
+= 0.51.0 =
+[ Specification Change ][ CSS Optimize ] default off / exclude wooCommerce preload
+[ Add function ][ CSS Optimize ] Add exclude handles
+
+= 0.50.3 =
+* [ Other ] version only
+
+= 0.50.2 =
+* [ Other ] version only
+
+= 0.50.1 =
+* [ Other ] version only
+
+= 0.50.0 =
+* [ Specification Change ][ CSS Optimize ] Common management of CSS optimization function
+* [ Bug fix ][ Icon Card ] Fix endless recovery
+
+= 0.49.8 =
+* [ Bug fix ] fix edit screen white out
+
+= 0.49.7 =
+* [ Bug fix ] fix edit screen white out
+* [ specification change ][ button ] allow some text style
+* [ design specification change ][ PR Content ] Change line height
+
+= 0.49.6 =
+[ digigin bug fix ][ balloon icon ] Fix the icon so that the rectangular image also fits in the square
+
+= 0.49.5 =
+[ editor digigin bug fix ][ balloon icon ] Round trimming of registered icons
+
+= 0.49.4 =
+Version change only
+
+= 0.49.3 =
+* [ Bug fix ][ core/image ] Fix again wave style do not reflected
+
+= 0.49.2 =
+* [ Bug fix ] fix edit screen white out
+
+= 0.49.1 =
+* [ Bug fix ][ PR Content ] fix can not click button at textarea
+* [ Bug fix ][ core/image ] fix wave style do not reflected
+
+= 0.49.0 =
+* [ Add Function ][ Responsive Spacer ] add space-type (can be select margin-top)
+* [ Add Function ][ Old FAQ ] Can be accordion (Pro version only)
+* [ Bug fix ][ Child page list ] Can be select "this page" ( In case of only one page that has children, can't select that page on other page's put child page list )
+
+= 0.48.0 =
+* [ BugFix ][ Outer ] Fix bug of border-color clear button.
+* [ Add Style ][ Core/Image ] add extra style to core/image.
 
 = 0.47.0 =
 * [ Add Function ][ Post List(Pro) ] add order by title / add order desc/asc

@@ -13,4 +13,9 @@
 	__( 'Nothing to do', 'vk-blocks' )
 	__( 'Optimize VK Blocks CSS ( Tree Shaking )', 'vk-blocks' ) 
 	__( 'Optimize VK Blocks CSS ( Tree Shaking + Preload )', 'vk-blocks' )
+	__( 'Disable accordion', 'vk-blocks' )
+	__( 'Enable accordion and default open', 'vk-blocks' )
+	__( 'Enable accordion and default close', 'vk-blocks' )
+	__( 'Edit this area', 'vk-blocks' )
+	__( 'Unspecified', 'vk-blocks' )
 }

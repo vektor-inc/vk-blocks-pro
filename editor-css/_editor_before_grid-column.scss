@@ -1,0 +1,186 @@
+/*-------------------------------------------*/
+/* .vk_grid-column Layout
+/*-------------------------------------------*/
+.vk_grid-column .block-editor-inner-blocks .block-editor-block-list__layout {
+	border:none;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+    margin-right: -15px;
+	margin-left: -15px;
+
+	.block-list-appender{
+		height: 100px;
+	}
+
+	// colの余分な余白の削除など
+	// col内に入れたブロックにまで反映されないように & > 指定
+	div[class*="col-"].block-editor-block-list__block {
+		flex: inherit;
+		margin:0 15px 15px;
+		padding: 0;
+		outline: 1px dashed #ccc;
+		transition: 1.0s ;
+		&:focus,&:active,&:hover{
+			outline: 1px solid #555d66;
+		}
+		.wp-block-vk-blocks-grid-column-item{
+			padding: 0;
+			width: 100%;
+		}
+	}
+
+	& > .col-xs-2 {
+		width: calc(16.66% - 30px);
+		max-width: var(--vk-width-couter-col-2) ;
+	}
+	& > .col-xs-3 {
+		width: calc(25% - 30px);
+		max-width: var(--vk-width-couter-col-3) ;
+	}
+	& > .col-xs-4 {
+		width: calc(33.3% - 30px);
+		max-width: var(--vk-width-couter-col-4) ;
+	}
+
+	& > .col-xs-6 {
+		width: calc(50% - 30px);
+		max-width: var(--vk-width-couter-col-6) ;
+	}
+
+	& > .col-xs-12 {
+		width: calc(100% - 30px);
+		max-width: var(--vk-width-couter-col-12) ;
+	}
+	@media (min-width: $sm-min) {
+		& > .col-sm-2 {
+			width: calc(16.66% - 30px);
+			max-width: var(--vk-width-couter-col-2) ;
+		}
+		& > .col-sm-3 {
+			width: calc(25% - 30px);
+			max-width: var(--vk-width-couter-col-3) ;
+		}
+		& > .col-sm-4 {
+			width: calc(33.3% - 30px);
+			max-width: var(--vk-width-couter-col-4) ;
+		}
+		& > .col-sm-6 {
+			width: calc(50% - 30px);
+			max-width: var(--vk-width-couter-col-6) ;
+		}
+		& > .col-sm-12 {
+			width: calc(100% - 30px);
+			max-width: var(--vk-width-couter-col-12) ;
+		}
+	}
+	@media (min-width: $md-min) {
+		& > .col-md-2 {
+			width: calc(16.66% - 30px);
+			max-width: var(--vk-width-couter-col-2) ;
+		}
+		& > .col-md-3 {
+			width: calc(25% - 30px);
+			max-width: var(--vk-width-couter-col-3) ;
+		}
+		& > .col-md-4 {
+			width: calc(33.3% - 30px);
+			max-width: var(--vk-width-couter-col-4) ;
+		}
+		& > .col-md-6 {
+			width: calc(50% - 30px);
+			max-width: var(--vk-width-couter-col-6) ;
+		}
+		& > .col-md-12 {
+			width: calc(100% - 30px);
+			max-width: var(--vk-width-couter-col-12) ;
+		}
+	}
+	@media (min-width: $lg-min) {
+		& > .col-lg-2 {
+			width: calc(16.66% - 30px);
+			max-width: var(--vk-width-couter-col-2) ;
+		}
+		& > .col-lg-3{
+			width: calc(25% - 30px);
+			max-width: var(--vk-width-couter-col-3) ;
+		}
+		& > .col-lg-4 {
+			width: calc(33.3% - 30px);
+			max-width: var(--vk-width-couter-col-4) ;
+		}
+		& > .col-lg-6 {
+			width: calc(50% - 30px);
+			max-width: var(--vk-width-couter-col-6) ;
+		}
+		& > .col-lg-12 {
+			width: calc(100% - 30px);
+			max-width: var(--vk-width-couter-col-12) ;
+		}
+	}
+	@media (min-width: $xl-min) {
+		& > .col-xl-2 {
+			width: calc(16.66% - 30px);
+			max-width: var(--vk-width-couter-col-2) ;
+		}
+		& > .col-xl-3 {
+			width: calc(25% - 30px);
+			max-width: var(--vk-width-couter-col-3) ;
+		}
+		& > .col-xl-4 {
+			width: calc(33.3% - 30px);
+			max-width: var(--vk-width-couter-col-4) ;
+		}
+		& > .col-xl-6 {
+			width: calc(50% - 30px);
+			max-width: var(--vk-width-couter-col-6) ;
+		}
+		& > .col-xl-12 {
+			width: calc(100% - 30px);
+			max-width: var(--vk-width-couter-col-12) ;
+		}
+	}
+	@media (min-width: $xxl-min) {
+		& > .col-xxl-2 {
+			width: calc(16.66% - 30px);
+			max-width: var(--vk-width-couter-col-2) ;
+		}
+		& > .col-xxl-3 {
+			width: calc(25% - 30px);
+			max-width: var(--vk-width-couter-col-3) ;
+		}
+		& > .col-xxl-4 {
+			width: calc(33.3% - 30px);
+			max-width: var(--vk-width-couter-col-4) ;
+		}
+		& > .col-xxl-6 {
+			width: calc(50% - 30px);
+			max-width: var(--vk-width-couter-col-6) ;
+		}
+		& > .col-xxl-12 {
+			width: calc(100% - 30px);
+			max-width: var(--vk-width-couter-col-12) ;
+		}
+	}
+}//.vk_grid-column
+
+.vk_grid-column .block-list-appender{
+	width: 100%;
+}
+
+.vk_grid-column {
+	div[data-type="vk-blocks/grid-column-item"]{
+		// これがないとカラムのセルが潰れて中に何もいれられない
+		min-height:30px;
+	}
+	.wp-block-vk-blocks-grid-column-item .block-editor-block-list__layout{
+		// プレースホルダーの文字が枠から左にはみ出す
+		margin-left:0;
+	}
+	.wp-block-vk-blocks-grid-column-item{
+		.wp-block[data-align="left"], .wp-block[data-align="right"]{
+			//これがないと、グリッドカラムブロック内のボタンを左/右寄せにした時に、ボタンのheightが0になる。
+			height: auto;
+		}
+	}
+}

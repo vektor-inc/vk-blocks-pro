@@ -130,15 +130,15 @@ msgstr "上下"
 msgid "Trembling Y"
 msgstr "ぶるぶる（Y方向）"
 
-#: src/blocks/_pro/animation/block.js:51 src/blocks/balloon/block.js:221
+#: src/blocks/_pro/animation/block.js:51 src/blocks/balloon/block.js:330
 msgid "Trembling X"
 msgstr "ぶるぶる（X方向）"
 
-#: src/blocks/_pro/animation/block.js:52 src/blocks/balloon/block.js:225
+#: src/blocks/_pro/animation/block.js:52 src/blocks/balloon/block.js:334
 msgid "Pounding"
 msgstr "どきどき"
 
-#: src/blocks/_pro/animation/block.js:53 src/blocks/balloon/block.js:229
+#: src/blocks/_pro/animation/block.js:53 src/blocks/balloon/block.js:338
 msgid "Shaking"
 msgstr "ゆらゆら"
 
@@ -171,7 +171,7 @@ msgid "Short"
 msgstr "短い"
 
 #: src/blocks/_pro/animation/block.js:74 src/blocks/_pro/outer/block.js:155
-#: src/blocks/_pro/slider/block.js:78 src/blocks/balloon/block.js:174
+#: src/blocks/_pro/slider/block.js:78 src/blocks/balloon/block.js:279
 #: src/blocks/button/block.js:141 src/blocks/faq/block.js:38
 #: src/blocks/faq2/block.js:27
 msgid "Normal"
@@ -196,7 +196,7 @@ msgstr "https://example.com"
 #: src/blocks/_pro/card-item/component.js:103
 #: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:91
 #: src/blocks/_pro/card-item/deprecated/index.js:1132
-#: src/blocks/balloon/block.js:250 src/blocks/flow/block.js:106
+#: src/blocks/balloon/block.js:361 src/blocks/flow/block.js:106
 #: src/blocks/pr-blocks/block.js:153 src/blocks/pr-content/component.js:157
 #: src/blocks/pr-content/deprecated/0.43.0/component.js:157
 #: src/blocks/pr-content/deprecated/component-deprecated.js:102
@@ -465,7 +465,7 @@ msgstr ""
 msgid "Divider Setting"
 msgstr "区切りの設定"
 
-#: src/blocks/_pro/outer/block.js:218 src/blocks/balloon/block.js:145
+#: src/blocks/_pro/outer/block.js:218 src/blocks/balloon/block.js:250
 msgid "Type"
 msgstr "タイプ"
 
@@ -506,7 +506,7 @@ msgid "Border type"
 msgstr "枠線の種類"
 
 #: src/blocks/_pro/outer/block.js:296 src/blocks/_pro/step-item/block.js:101
-#: src/blocks/_pro/timeline-item/block.js:84 src/blocks/balloon/block.js:213
+#: src/blocks/_pro/timeline-item/block.js:84 src/blocks/balloon/block.js:322
 #: src/blocks/staff/block.js:65
 msgid "None"
 msgstr "なし"
@@ -825,84 +825,108 @@ msgstr "Warning"
 msgid "Danger"
 msgstr "Danger"
 
-#: src/blocks/balloon/block.js:122
-msgid "Balloon setting"
-msgstr "フキダシ設定"
+#: src/blocks/balloon/block.js:173
+msgid " Image Border"
+msgstr "画像の線"
 
-#: src/blocks/balloon/block.js:124 src/blocks/heading/block.js:158
-msgid "Position"
-msgstr "位置"
-
-#: src/blocks/balloon/block.js:125
-msgid "Please specify the layout of the balloon."
-msgstr "吹き出しの配置を指定してください。"
-
-#: src/blocks/balloon/block.js:133 src/blocks/button/block.js:161
-#: src/blocks/pr-content/block.js:157
-#: src/components/display-items-control/index.js:101
-msgid "Left"
-msgstr "左"
-
-#: src/blocks/balloon/block.js:141 src/blocks/button/block.js:177
-#: src/blocks/pr-content/block.js:156
-#: src/components/display-items-control/index.js:109
-msgid "Right"
-msgstr "右"
-
-#: src/blocks/balloon/block.js:146
-msgid "Please select the type of balloon."
-msgstr "吹き出しのタイプを指定してください。"
-
-#: src/blocks/balloon/block.js:154
-msgid "Serif"
-msgstr "セリフ"
-
-#: src/blocks/balloon/block.js:162
-msgid "Thinking"
-msgstr "吹き出し"
-
-#: src/blocks/balloon/block.js:166
-msgid "Image Style"
-msgstr "画像スタイル"
+#: src/blocks/balloon/block.js:175
+msgid "Add border to image"
+msgstr "画像に枠線を追加する"
 
 #: src/blocks/balloon/block.js:18
 msgid "Ballon"
 msgstr "吹き出し"
 
+#: src/blocks/balloon/block.js:180
+msgid "* You can change border width on Setting > VK Blocks"
+msgstr "* 線の太さは 管理画面の 設定 > VK Blocks から選択する事ができます。"
+
 #: src/blocks/balloon/block.js:182
+msgid "Border color of speech balloon"
+msgstr "吹き出しの線の色"
+
+#: src/blocks/balloon/block.js:202 src/blocks/image/block.js:6
+msgid "Border"
+msgstr "枠線"
+
+#: src/blocks/balloon/block.js:204
+msgid "Add border to balloon"
+msgstr "吹き出しに枠線を追加する"
+
+#: src/blocks/balloon/block.js:228
+msgid "Balloon setting"
+msgstr "フキダシ設定"
+
+#: src/blocks/balloon/block.js:229 src/blocks/heading/block.js:158
+msgid "Position"
+msgstr "位置"
+
+#: src/blocks/balloon/block.js:230
+msgid "Please specify the layout of the balloon."
+msgstr "吹き出しの配置を指定してください。"
+
+#: src/blocks/balloon/block.js:238 src/blocks/button/block.js:161
+#: src/blocks/pr-content/block.js:157
+#: src/components/display-items-control/index.js:101
+msgid "Left"
+msgstr "左"
+
+#: src/blocks/balloon/block.js:246 src/blocks/button/block.js:177
+#: src/blocks/pr-content/block.js:156
+#: src/components/display-items-control/index.js:109
+msgid "Right"
+msgstr "右"
+
+#: src/blocks/balloon/block.js:251
+msgid "Please select the type of balloon."
+msgstr "吹き出しのタイプを指定してください。"
+
+#: src/blocks/balloon/block.js:259
+msgid "Speech"
+msgstr "吹き出し"
+
+#: src/blocks/balloon/block.js:267
+msgid "Thinking"
+msgstr "もくもく"
+
+#: src/blocks/balloon/block.js:271
+msgid "Image Style"
+msgstr "画像スタイル"
+
+#: src/blocks/balloon/block.js:287
 msgid "Rounded"
 msgstr "角丸"
 
-#: src/blocks/balloon/block.js:190
+#: src/blocks/balloon/block.js:295
 msgid "Circle"
 msgstr "丸抜き"
 
-#: src/blocks/balloon/block.js:193
+#: src/blocks/balloon/block.js:301
 msgid "Background color of speech balloon"
 msgstr "吹き出しの背景色"
 
-#: src/blocks/balloon/block.js:199
+#: src/blocks/balloon/block.js:308
 msgid "Default Icon Setting"
 msgstr "デフォルトアイコン設定"
 
-#: src/blocks/balloon/block.js:203
+#: src/blocks/balloon/block.js:312
 msgid "You can register default icons from Settings > VK Blocks in Admin."
 msgstr ""
 "管理画面の 設定 > VK Blocks から よく使うアイコンを登録する事ができます。"
 
-#: src/blocks/balloon/block.js:205
+#: src/blocks/balloon/block.js:314
 msgid "Animation setting"
 msgstr "アニメーション設定"
 
-#: src/blocks/balloon/block.js:206
+#: src/blocks/balloon/block.js:315
 msgid "Please select the type of animation."
 msgstr "アニメーションのタイプを指定してください。"
 
-#: src/blocks/balloon/block.js:217
+#: src/blocks/balloon/block.js:326
 msgid "Trembling"
 msgstr "ぶるぶる"
 
-#: src/blocks/balloon/block.js:255 src/blocks/flow/block.js:107
+#: src/blocks/balloon/block.js:367 src/blocks/flow/block.js:107
 #: src/blocks/pr-blocks/block.js:149 src/blocks/pr-content/component.js:164
 #: src/blocks/pr-content/deprecated/0.43.0/component.js:164
 #: src/blocks/pr-content/deprecated/component-deprecated.js:106
@@ -911,7 +935,7 @@ msgstr "ぶるぶる"
 msgid "Upload image"
 msgstr "画像をアップロード"
 
-#: src/blocks/balloon/block.js:266
+#: src/blocks/balloon/block.js:378
 msgid "Icon Name"
 msgstr "アイコンの名前"
 
@@ -1390,10 +1414,6 @@ msgstr "流体シェイプ3"
 msgid "Wave04"
 msgstr "流体シェイプ4"
 
-#: src/blocks/image/block.js:6
-msgid "Border"
-msgstr "枠線"
-
 #: src/blocks/list-style/block.js:109
 msgid "Arrow"
 msgstr "矢印"
@@ -1437,6 +1457,22 @@ msgstr "数字-四角"
 #: src/blocks/list-style/block.js:58
 msgid "List Icon Color"
 msgstr "リストアイコンの色"
+
+#: src/blocks/page-content/block.js:12
+msgid "Page Content"
+msgstr "固定ページ本文"
+
+#: src/blocks/page-content/block.js:32
+msgid "Because no post is selected, The block Will not render"
+msgstr "ページが選択されていないためこのブロックはレンダリングされません"
+
+#: src/blocks/page-content/block.js:43
+msgid "Page Setting"
+msgstr "ページ設定"
+
+#: src/blocks/page-content/block.js:50
+msgid "Select Page"
+msgstr "ページを選択"
 
 #: src/blocks/pr-blocks/block.js:164
 msgid "PR Block1 Setting"
@@ -1794,9 +1830,17 @@ msgstr "アコーディオン有効 / 初期状態で開く"
 msgid "Enable accordion and default close"
 msgstr "アコーディオン有効 / 初期状態で閉じる"
 
+#: src/translation_dummy.js:19
+msgid "Edit this area"
+msgstr "このエリアを編集"
+
 #: src/translation_dummy.js:2
 msgid "Display Block Template Setting"
 msgstr "ブロックテンプレート表示設定"
+
+#: src/translation_dummy.js:20
+msgid "Unspecified"
+msgstr "未指定"
 
 #: src/translation_dummy.js:3
 msgid "Block Template Setting"
@@ -1827,6 +1871,22 @@ msgstr "吹き出し画像設定"
 #: src/translation_dummy.js:9
 msgid "Select"
 msgstr "選択"
+
+#, fuzzy
+#~| msgid "Border Color"
+#~ msgid "Border on / off"
+#~ msgstr "線の色"
+
+#, fuzzy
+#~| msgid "Image Border Color"
+#~ msgid "Image Border on / off"
+#~ msgstr "画像の線の色"
+
+#~ msgid "Serif"
+#~ msgstr "セリフ"
+
+#~ msgid "Page Option"
+#~ msgstr "ページオプション"
 
 #~ msgid "normal"
 #~ msgstr "標準"

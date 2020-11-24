@@ -15,7 +15,9 @@ const rename = require("gulp-rename");
 const jsmin = require("gulp-jsmin");
 
 gulp.task( 'helper-js', function (done)  {
-	gulp.src('src/blocks/helper/faq2.js')
+	gulp.src([
+		'src/blocks/helper/faq2.js',
+	])
 	.pipe(jsmin())
 	.pipe(rename({
 		extname: '.min.js'

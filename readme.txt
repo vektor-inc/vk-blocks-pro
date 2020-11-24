@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.5.3
-Stable tag: 0.55.0
+Stable tag: 0.56.3
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -29,6 +29,7 @@ This is a plugin that extends Gutenberg's blocks.
 * Border box
 * Title（with sub text）
 * Responsive Spacer
+* Page Content
 * Post List [ Pro ]
 * Step [ Pro ]
 * Timeline [ Pro ]
@@ -61,6 +62,19 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.56.3 =
+* [ Bug fix ][ Balloon ] fix border bug
+
+= 0.56.2 =
+* [ Bug fix ][ Balloon ] fix border bug
+
+= 0.56.1 =
+
+= 0.56.0 =
+* [ Add Block ] Add Page Content Block
+* [ Add Function ] Add nowrap
+* [ Add Function ][ Balloon ] Add border function
 
 = 0.55.0 =
 * [ Add function ][ Outer ] Background image repeat

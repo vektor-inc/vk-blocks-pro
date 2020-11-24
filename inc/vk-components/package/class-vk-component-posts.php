@@ -31,9 +31,9 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				'display_btn'                => false,
 				'image_default_url'          => false,
 				'overlay'                    => false,
-				'btn_text'                   => __( 'Read more', 'vk_components_textdomain' ),
+				'btn_text'                   => __( 'Read more', 'vk-blocks' ),
 				'btn_align'                  => 'text-right',
-				'new_text'                   => __( 'New!!', 'vk_components_textdomain' ),
+				'new_text'                   => __( 'New!!', 'vk-blocks' ),
 				'new_date'                   => 7,
 				'textlink'                   => true,
 				'class_outer'                => '',
@@ -307,7 +307,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 
 			if ( $options['display_new'] ) {
 				$today = date_i18n( 'U' );
-				$entry = get_the_time( 'U' );
+				$entry = get_the_time( 'U', $post );
 				$kiji  = date( 'U', ( $today - $entry ) ) / 86400;
 				if ( $options['new_date'] > $kiji ) {
 					$html .= '<span class="vk_post_title_new">' . $options['new_text'] . '</span>';
@@ -398,19 +398,19 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 
 			$patterns = array(
 				'card'            => array(
-					'label'             => __( 'Card', 'vk_components_textdomain' ),
+					'label'             => __( 'Card', 'vk-blocks' ),
 					'class_posts_outer' => '',
 				),
 				'card-horizontal' => array(
-					'label'             => __( 'Card Horizontal', 'vk_components_textdomain' ),
+					'label'             => __( 'Card Horizontal', 'vk-blocks' ),
 					'class_posts_outer' => '',
 				),
 				'media'           => array(
-					'label'             => __( 'Media', 'vk_components_textdomain' ),
+					'label'             => __( 'Media', 'vk-blocks' ),
 					'class_posts_outer' => 'media-outer',
 				),
 				'postListText'    => array(
-					'label'             => _x( 'Text 1 Column', 'post list type', 'vk_components_textdomain' ),
+					'label'             => _x( 'Text 1 Column', 'post list type', 'vk-blocks' ),
 					'class_posts_outer' => 'postListText-outer',
 				),
 			);

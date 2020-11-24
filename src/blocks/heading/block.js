@@ -91,6 +91,12 @@ registerBlockType("vk-blocks/heading", {
 							onChange={ setTitleFontSize }
 						/>
 					</ToolbarGroup>
+					<AlignmentToolbar
+						value={ align }
+						onChange={ ( value ) => {
+							setAttributes( { align: value } );
+						} }
+					/>
 				</BlockControls>
 				<InspectorControls>
 					<PanelBody title={ __("Style Settings", "vk-blocks") }>
@@ -127,14 +133,6 @@ registerBlockType("vk-blocks/heading", {
 						/>
 					</PanelBody>
 					<PanelBody title={ __("Heading Settings", "vk-blocks") }>
-						<label>{ __("Level", "vk-blocks") }</label>
-						<p>{ __("Text Alignment") }</p>
-						<AlignmentToolbar
-							value={ align }
-							onChange={ value => {
-								setAttributes({ align: value });
-							} }
-						/>
 						<RangeControl
 							label={ __("Text size (rem)", "vk-blocks") }
 							value={ titleSize }

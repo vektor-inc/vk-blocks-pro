@@ -104,3 +104,8 @@ gulp dist して zip に圧縮してそのzipファイルをvwsのパッケー�
 ```
 bin/dist_kuru.sh
 ```
+
+## NodeJSのバージョン
+`.node-version`を参照してください。
+
+## 公開の仕組み（GitHubAtions） [開発者向け] 

@@ -34,10 +34,6 @@ function vkblocks_css_tree_shaking_exclude_class( $inidata ) {
 		'vk_faq-accordion-close',
 		'vk_faq_content-accordion-open',
 		'vk_faq_content-accordion-close',
-		'vk_accordion-toggle-open',
-		'vk_accordion-toggle-close',
-		'vk_accordion-target-open',
-		'vk_accordion-target-close',
 	);
 	$inidata['class']      = array_merge( $inidata['class'], $exclude_classes_array );
 

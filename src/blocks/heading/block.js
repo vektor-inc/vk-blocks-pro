@@ -3,18 +3,31 @@
  *
  */
 import { schema, example } from "./schema";
-import HeadingToolbar from "./heading-toolbar";
 import { VKBHeading } from "./component";
 import { Deprecated } from "./deprecated/block";
 import { vkbBlockEditor } from "./../_helper/depModules";
 import { FontAwesome } from "./../_helper/font-awesome-new";
 import BlockIcon from "./icon.svg";
 
+import HeadingLevelDropdown from './heading-level-dropdown';
+
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { RangeControl, PanelBody, RadioControl, SelectControl, BaseControl } = wp.components;
+const {
+	RangeControl,
+	PanelBody,
+	RadioControl,
+	SelectControl,
+	BaseControl,
+	ToolbarGroup,
+} = wp.components;
 const { Fragment } = wp.element;
-const { InspectorControls, ColorPalette, BlockControls, AlignmentToolbar } = vkbBlockEditor;
+const {
+	InspectorControls,
+	ColorPalette,
+	BlockControls,
+	AlignmentToolbar,
+} = vkbBlockEditor;
 
 registerBlockType("vk-blocks/heading", {
 
@@ -42,7 +55,7 @@ registerBlockType("vk-blocks/heading", {
 			titleStyle,
 			titleMarginBottom,
 			outerMarginBottom,
-			fontAwesomeIconColor
+			fontAwesomeIconColor,
 		} = attributes;
 
 		const setTitleFontSize = newLevel => {
@@ -72,11 +85,17 @@ registerBlockType("vk-blocks/heading", {
 		return (
 			<Fragment>
 				<BlockControls>
-					<HeadingToolbar
-						minLevel={ 2 }
-						maxLevel={ 5 }
-						selectedLevel={ level }
-						onChange={ setTitleFontSize }
+					<ToolbarGroup>
+						<HeadingLevelDropdown
+							selectedLevel={ level }
+							onChange={ setTitleFontSize }
+						/>
+					</ToolbarGroup>
+					<AlignmentToolbar
+						value={ align }
+						onChange={ ( value ) => {
+							setAttributes( { align: value } );
+						} }
 					/>
 				</BlockControls>
 				<InspectorControls>
@@ -114,20 +133,6 @@ registerBlockType("vk-blocks/heading", {
 						/>
 					</PanelBody>
 					<PanelBody title={ __("Heading Settings", "vk-blocks") }>
-						<label>{ __("Level", "vk-blocks") }</label>
-						<HeadingToolbar
-							minLevel={ 1 }
-							maxLevel={ 7 }
-							selectedLevel={ level }
-							onChange={ setTitleFontSize }
-						/>
-						<p>{ __("Text Alignment") }</p>
-						<AlignmentToolbar
-							value={ align }
-							onChange={ value => {
-								setAttributes({ align: value });
-							} }
-						/>
 						<RangeControl
 							label={ __("Text size (rem)", "vk-blocks") }
 							value={ titleSize }

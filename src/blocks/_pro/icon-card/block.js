@@ -11,6 +11,7 @@ import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
 import removeProperty from "../../_helper/removeProperty"
 import { fixBrokenUnicode } from "../../_helper/depModules";
 import BlockIcon from "./icon.svg";
+import { title, content, iconUser } from "../../_helper/example-data";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -30,7 +31,91 @@ registerBlockType("vk-blocks/icon-card", {
     className: true,
     inserter: inserterVisible
   },
-
+  example: {
+	attributes: {
+		col_xs: 1,
+		col_sm: 2,
+		col_md: 3,
+		col_lg: 3,
+		col_xl: 4,
+		col_xxl: 4,
+		activeControl: '{"title":"center","text":"center"}',
+	},
+	innerBlocks: [
+		{
+			name: 'vk-blocks/icon-card-item',
+			attributes: {
+				col_xs: 1,
+				col_sm: 2,
+				col_md: 3,
+				col_lg: 3,
+				col_xl: 4,
+				col_xxl: 4,
+				activeControl: '{"title":"center","text":"center"}',
+				urlOpenType: false,
+				color: '#0693e3',
+				bgType: '1',
+				heading: title,
+				content: content,
+				faIcon: iconUser,
+			},
+		},
+		{
+			name: 'vk-blocks/icon-card-item',
+			attributes: {
+				col_xs: 1,
+				col_sm: 2,
+				col_md: 3,
+				col_lg: 3,
+				col_xl: 4,
+				col_xxl: 4,
+				activeControl: '{"title":"center","text":"center"}',
+				urlOpenType: false,
+				color: '#0693e3',
+				bgType: '1',
+				heading: title,
+				content: content,
+				faIcon: iconUser,
+			},
+		},
+		{
+			name: 'vk-blocks/icon-card-item',
+			attributes: {
+				col_xs: 1,
+				col_sm: 2,
+				col_md: 3,
+				col_lg: 3,
+				col_xl: 4,
+				col_xxl: 4,
+				activeControl: '{"title":"center","text":"center"}',
+				urlOpenType: false,
+				color: '#0693e3',
+				bgType: '1',
+				heading: title,
+				content: content,
+				faIcon: iconUser,
+			},
+		},
+		{
+			name: 'vk-blocks/icon-card-item',
+			attributes: {
+				col_xs: 1,
+				col_sm: 2,
+				col_md: 3,
+				col_lg: 3,
+				col_xl: 4,
+				col_xxl: 4,
+				activeControl: '{"title":"center","text":"center"}',
+				urlOpenType: false,
+				color: '#0693e3',
+				bgType: '1',
+				heading: title,
+				content: content,
+				faIcon: iconUser,
+			},
+		},
+	],
+  },
   edit(props) {
     const { attributes, setAttributes, className, clientId, name } = props;
     attributes.name = name;
@@ -111,5 +196,5 @@ registerBlockType("vk-blocks/icon-card", {
 	<PRCard attributes={ attributes } className={ className } for_={ "save" } />
     );
   },
-  deprecated
+  deprecated,
 });

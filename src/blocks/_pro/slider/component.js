@@ -6,7 +6,7 @@ export const ColumnResponsive = (props) => {
 
 	const for_ = props.for_;
 	const attributes = props.attributes;
-	const { className, pagination, clientId, width, autoPlay, autoPlayDelay, loop, effect, speed } = attributes;
+	const { pagination, clientId, width, autoPlay, autoPlayDelay, loop, effect, speed } = attributes;
   	let innerClass = "";
   	const containerClass = " vk_grid-column";
 	let elm;

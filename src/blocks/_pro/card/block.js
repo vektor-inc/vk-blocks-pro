@@ -71,8 +71,7 @@ registerBlockType("vk-blocks/card", {
 					activeControl: '{"title": "left", "text":"left", "button":"right"}',
 					title: title,
 					excerpt_text: content,
-					// 画像の形式は？
-					// image: pictureJson,
+					image: pictureJson,
 				},
 			},
 		],

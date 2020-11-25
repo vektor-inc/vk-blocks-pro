@@ -6,7 +6,7 @@ export const iconUser = '<i class="fas fa-user"></i>';
 export const iconPicture = 'https://demo.dev3.biz/lightning-pro/wp-content/uploads/2018/02/agent-18762_1920-200x300.jpg';
 export const baseColor = '#8ed1fc';
 export const url = 'https://example.com';
-export const pictureJson = `{'alt':'Example Image','sizes':{'full':{'url':'${ iconPicture }'}}}`;
+export const pictureJson = `{"alt":"Example Image","sizes":{"full":{"url":"${ iconPicture }"}}}`;
 export const position = __( 'Theoretical Physicist', 'vk-blocks' );
 export const profileTitle = __( 'Profile', 'vk-blocks' );
 export const profileName = __( 'Albert Einstein', 'vk-blocks' );

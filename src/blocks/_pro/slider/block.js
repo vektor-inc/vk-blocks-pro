@@ -315,16 +315,12 @@ const addSwiperConfig = ( el, type, attributes ) => {
 			// 保存したブロックのバージョンが0.56.4以下の時
 			} else if ( compareVersions('0.56.4', post.meta._vkb_saved_block_version) ) {
 
-				console.log("pass > 0.56.3")
-				console.log(post.meta._vkb_saved_block_version)
-				console.log(attributes)
-
 				const cssTag = generateHeightCss( attributes, "save" )
 				return <div>{ el }<style type='text/css'>{ cssTag }</style></div>;
 			}
 
 		} else {
-			console.log("nomal")
+
 			const cssTag = generateHeightCss( attributes, "save" )
 			return <div className={ el.props.className } >{ el }<style type='text/css'>{ cssTag }</style></div>;
 		}

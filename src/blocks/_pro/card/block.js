@@ -12,6 +12,7 @@ import removeProperty from "../../_helper/removeProperty"
 import { vkbBlockEditor } from "./../../_helper/depModules";
 import AdvancedViewportControl from "../../../components/advanced-viewport-control"
 import AdvancedUnitControl from "../../../components/advanced-unit-control"
+import { title, content, pictureJson } from "../../_helper/example-data";
 import BlockIcon from "./icon.svg";
 
 const { __ } = wp.i18n;
@@ -35,7 +36,47 @@ registerBlockType("vk-blocks/card", {
 		className: true,
 		inserter: inserterVisible
 	},
-
+	example: {
+		attributes: {
+			layout: 'card',
+			col_xs: 1,
+			col_sm: 1,
+			col_md: 1,
+			col_lg: 1,
+			col_xl: 1,
+			col_xxl: 1,
+			display_title: true,
+			display_excerpt: true,
+			display_image: true,
+			display_btn: true,
+			btn_text: "Read more",
+			activeControl: '{"title": "left", "text":"left", "button":"right"}',
+		},
+		innerBlocks: [
+			{
+				name: 'vk-blocks/card-item',
+				attributes: {
+					layout: 'card',
+					col_xs: 1,
+					col_sm: 1,
+					col_md: 1,
+					col_lg: 1,
+					col_xl: 1,
+					col_xxl: 1,
+					display_title: true,
+					display_excerpt: true,
+					display_image: true,
+					display_btn: true,
+					btn_text: "Read more",
+					activeControl: '{"title": "left", "text":"left", "button":"right"}',
+					title: title,
+					excerpt_text: content,
+					// 画像の形式は？
+					// image: pictureJson,
+				},
+			},
+		],
+	},
   edit(props) {
 	const { attributes, setAttributes, className, clientId, name } = props;
 	attributes.name = name;

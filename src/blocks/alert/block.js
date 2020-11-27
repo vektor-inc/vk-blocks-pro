@@ -5,7 +5,8 @@
 import { deprecated } from './deprecated';
 import { vkbBlockEditor } from "./../_helper/depModules";
 import { content } from "./../_helper/example-data"
-import BlockIcon from "./icon.svg";
+import icon from "./icon.svg";
+import metadata from './block.json';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -13,26 +14,28 @@ const { PanelBody, SelectControl } = wp.components;
 const { InspectorControls, RichText } = vkbBlockEditor;
 const { Fragment } = wp.element;
 
+const { name } = metadata;
+export { metadata, name };
 
 registerBlockType('vk-blocks/alert', {
 
 	title: __('Alert', 'vk-blocks'),
 
-	icon: <BlockIcon />,
+	icon,
 
 	category: 'vk-blocks-cat',
 
-	attributes: {
-		style: {
-			type: 'string',
-			default: 'info',
-		},
-		content: {
-			type: 'string',
-			source: 'html',
-			selector: 'p',
-		}
-	},
+	// attributes: {
+	// 	style: {
+	// 		type: 'string',
+	// 		default: 'info',
+	// 	},
+	// 	content: {
+	// 		type: 'string',
+	// 		source: 'html',
+	// 		selector: 'p',
+	// 	}
+	// },
 	example: {
 		attributes: {
 			style: 'info',

@@ -43,8 +43,6 @@ import {
  */
 } from '../../e2e-tests/fixtures/utils';
 
-
-
 const blockBasenames = getAvailableBlockFixturesBasenames();
 
 function normalizeParsedBlocks( blocks ) {
@@ -69,7 +67,10 @@ function normalizeParsedBlocks( blocks ) {
 describe( 'full post content fixture', () => {
 	beforeAll( async () => {
 		const blockMetadataFiles = await glob(
-			'packages/block-library/src/*/block.json'
+			// NOTE: VK Blocks用のパスに置き換え。
+			// TODO: プロ用プラグインのパスを追加。
+			'../../src/blocks/*/block.json'
+			// 'packages/block-library/src/*/block.json'
 		);
 		const blockDefinitions = fromPairs(
 			blockMetadataFiles.map( ( file ) => {

@@ -2,7 +2,7 @@ const { InnerBlocks } = wp.blockEditor;
 const { __ } = wp.i18n; // Import __() from wp.i18n
 import classNames from "classnames";
 
-export const ColumnResponsive = (props) => {
+export const ColumnResponsive0563 = (props) => {
 
 	const for_ = props.for_;
 	const attributes = props.attributes;
@@ -43,8 +43,9 @@ export const ColumnResponsive = (props) => {
 	<InnerBlocks.Content />
 	);
   }
+
   return (
-	<div className={ classNames(`swiper-container vk_slider vk_slider_${clientId}`, alignClass, className) }>
+	<div data-vkb-slider={JSON.stringify(attributes)} className={ classNames(`swiper-container vk_slider vk_slider_${clientId}`, alignClass, className) }>
 		<div className={ `swiper-wrapper` }>
 			{ elm }
 		</div>

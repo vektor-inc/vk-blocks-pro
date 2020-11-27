@@ -6,6 +6,8 @@ import { Component } from "./component";
 import { schema } from './schema';
 import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
 import BlockIcon from "./icon.svg";
+import { title } from "../../_helper/example-data";
+
 const inserterVisible = hiddenNewBlock(5.3);
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
@@ -33,7 +35,29 @@ registerBlockType('vk-blocks/timeline', {
     attributes: schema,
     supports: {
         inserter: inserterVisible
-    },
+	},
+	example: {
+		innerBlocks: [
+			{
+				name: 'vk-blocks/timeline-item',
+				attributes: {
+					label: '6:00AM',
+					color: '#337ab7',
+					style: 'outlined',
+					styleLine: 'default',
+				},
+				innerBlocks: [
+					{
+						name: 'core/heading',
+						attributes: {
+							level: 4,
+							content: title,
+						},
+					},
+				],
+			},
+		],
+	},
 
     /**
      * The edit function describes the structure of your block in the context of the editor.

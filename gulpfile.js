@@ -17,6 +17,7 @@ const jsmin = require("gulp-jsmin");
 gulp.task( 'helper-js', function (done)  {
 	gulp.src([
 		'src/blocks/helper/faq2.js',
+		'src/blocks/helper/accordion.js'
 	])
 	.pipe(jsmin())
 	.pipe(rename({

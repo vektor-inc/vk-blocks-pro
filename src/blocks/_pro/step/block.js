@@ -16,6 +16,7 @@ import { vkbBlockEditor, dispatchEditor } from "../../_helper/depModules"
 const { InspectorControls } = vkbBlockEditor;
 const { updateBlockAttributes } = dispatchEditor;
 import { asyncGetInnerBlocks } from "../../_helper/asyncHooks";
+import { title, content } from "../../_helper/example-data";
 
 
 registerBlockType("vk-blocks/step", {
@@ -24,9 +25,41 @@ registerBlockType("vk-blocks/step", {
 	category: "vk-blocks-cat", // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	attributes: schema,
 	supports: {
-		inserter: inserterVisible
+		inserter: inserterVisible,
 	},
-
+	example: {
+		attributes: {
+			firstDotNum: 1,
+		},
+		innerBlocks: [
+			{
+				name: 'vk-blocks/step-item',
+				attributes: {
+					color: '#337ab7',
+					style: 'solid',
+					styleLine: 'default',
+					dotCaption: 'STEP',
+					dotNum: 1,
+					faIcon: '',
+				},
+				innerBlocks: [
+					{
+						name: 'core/heading',
+						attributes: {
+							level: 4,
+							content: title,
+						},
+					},
+					{
+						name: 'core/paragraph',
+						attributes: {
+							content: content,
+						},
+					},
+				],
+			},
+		],
+	},
 	edit({ attributes, setAttributes, className, clientId }) {
 		const { firstDotNum } = attributes;
 

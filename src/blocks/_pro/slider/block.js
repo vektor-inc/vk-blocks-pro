@@ -12,6 +12,7 @@ import AdvancedViewportControl from "../../../components/advanced-viewport-contr
 import AdvancedUnitControl from "../../../components/advanced-unit-control"
 import deprecated from "./deprecated/"
 import BlockIcon from "./icon.svg";
+import compareVersions from 'compare-versions';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -39,7 +40,7 @@ registerBlockType("vk-blocks/slider", {
 		inserter: displayInserter,
 	},
 
-	edit(props) {
+	edit( props ) {
 		const { attributes, setAttributes, className, clientId } = props;
 		const { autoPlay, autoPlayDelay, pagination, width, loop, effect, speed } = attributes;
 		const { updateBlockAttributes } = dispatch("core/block-editor");
@@ -156,16 +157,14 @@ registerBlockType("vk-blocks/slider", {
 			</Fragment>
 		);
 	},
-	save({ attributes, className }) {
+	save({ attributes }) {
 		return (
 			<ColumnResponsive
 				attributes={ attributes }
-				className={ className }
 				for_={ "save" }
 			/>
 		);
 	},
-
 	deprecated
 });
 
@@ -240,78 +239,90 @@ addFilter(
  * @param {*} type
  * @param {*} attributes
  */
-const addSwiperConfig = (el, type, attributes) => {
+const addSwiperConfig = ( el, type, attributes ) => {
+
 	const post = select( 'core/editor' ).getCurrentPost();
 
 	if( "vk-blocks/slider" === type.name ){
-		//0.49.8未満（_vkb_saved_block_version が ""）のみJSタグ挿入
-		if( post.hasOwnProperty('meta') && !post.meta._vkb_saved_block_version){
-			const { clientId, pagination, autoPlay, autoPlayDelay, loop, effect, speed }  = attributes
-			const cssTag = generateHeightCss( attributes, "save" )
 
-			let autoPlayScripts;
-			if(autoPlay){
-				autoPlayScripts = `autoplay: {
-					delay: ${autoPlayDelay},
-					disableOnInteraction: false,
-				},`
-			}else{
-				autoPlayScripts = ''
+		if (  post.hasOwnProperty('meta') ){
+			//0.49.8未満（_vkb_saved_block_version が ""）のみJSタグ挿入
+			if( !post.meta._vkb_saved_block_version ){
+				const { clientId, pagination, autoPlay, autoPlayDelay, loop, effect, speed }  = attributes
+				const cssTag = generateHeightCss( attributes, "save" )
+
+				let autoPlayScripts;
+				if(autoPlay){
+					autoPlayScripts = `autoplay: {
+						delay: ${autoPlayDelay},
+						disableOnInteraction: false,
+					},`
+				}else{
+					autoPlayScripts = ''
+				}
+
+				let paginationScripts;
+				if(pagination){
+					paginationScripts = `
+					// If we need pagination
+					pagination: {
+						el: '.swiper-pagination',
+						clickable : true,
+					},`;
+				}else{
+					paginationScripts = ''
+				}
+
+				let speedScripts;
+				if(speed){
+					speedScripts = `speed: ${speed},`
+				}else{
+					speedScripts = ''
+				}
+
+				return<div className={ el.props.className } >
+					{ el }
+					<style type='text/css'>{ cssTag }</style>
+					<script>{ `
+					var swiper${replaceClientId(clientId)} = new Swiper ('.vk_slider_${clientId}', {
+
+						${speedScripts}
+
+						// Optional parameters
+						loop: ${loop},
+
+						effect: '${effect}',
+
+						${paginationScripts}
+
+						// navigation arrows
+						navigation: {
+							nextEl: '.swiper-button-next',
+							prevEl: '.swiper-button-prev',
+						},
+
+						// And if we need scrollbar
+						scrollbar: {
+							el: '.swiper-scrollbar',
+						},
+
+						${autoPlayScripts}
+						})`
+						}
+					</script>
+					</div>
+
+			// 保存したブロックのバージョンが0.56.4以下の時
+			} else if ( compareVersions('0.56.4', post.meta._vkb_saved_block_version) ) {
+
+				const cssTag = generateHeightCss( attributes, "save" )
+				return <div>{ el }<style type='text/css'>{ cssTag }</style></div>;
 			}
 
-			let paginationScripts;
-			if(pagination){
-				paginationScripts = `
-				// If we need pagination
-				pagination: {
-					el: '.swiper-pagination',
-					clickable : true,
-				},`;
-			}else{
-				paginationScripts = ''
-			}
-
-			let speedScripts;
-			if(speed){
-				speedScripts = `speed: ${speed},`
-			}else{
-				speedScripts = ''
-			}
-
-			return<div>
-				{ el }
-				<style type='text/css'>{ cssTag }</style>
-				<script>{ `
-				var swiper${replaceClientId(clientId)} = new Swiper ('.vk_slider_${clientId}', {
-
-					${speedScripts}
-
-					// Optional parameters
-					loop: ${loop},
-
-					effect: '${effect}',
-
-					${paginationScripts}
-
-					// navigation arrows
-					navigation: {
-						nextEl: '.swiper-button-next',
-						prevEl: '.swiper-button-prev',
-					},
-
-					// And if we need scrollbar
-					scrollbar: {
-						el: '.swiper-scrollbar',
-					},
-
-					${autoPlayScripts}
-					})`
-					}
-				</script>
-				</div>
 		} else {
+
 			const cssTag = generateHeightCss( attributes, "save" )
-			return <div>{ el }<style type='text/css'>{ cssTag }</style></div>;
+			return <div className={ el.props.className } >{ el }<style type='text/css'>{ cssTag }</style></div>;
 		}
 	} else {
 		return el

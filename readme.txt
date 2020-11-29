@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.0
 Tested up to: 5.5.3
-Stable tag: 0.57.2
+Stable tag: 0.57.3
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -62,6 +62,9 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.57.3 =
+[ Bug fix ][ nowrap ] fix can not work not bootstrap themes.
 
 = 0.57.2 =
 [ Other ] Cope with block sample preview

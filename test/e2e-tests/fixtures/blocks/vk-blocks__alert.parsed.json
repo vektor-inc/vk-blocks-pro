@@ -1,0 +1,11 @@
+[
+    {
+        "blockName": "vk-blocks/alert",
+        "attrs": {},
+        "innerBlocks": [],
+        "innerHTML": "\n<div class=\"wp-block-vk-blocks-alert undefined alert alert-info\"><p>Welcome to VK Blocks / Pro !</p></div>\n",
+        "innerContent": [
+            "\n<div class=\"wp-block-vk-blocks-alert undefined alert alert-info\"><p>Welcome to VK Blocks / Pro !</p></div>\n"
+        ]
+    }
+]

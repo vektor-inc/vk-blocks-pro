@@ -1,0 +1,12 @@
+[
+    {
+        "clientId": "_clientId_0",
+        "name": "vk-blocks/alert",
+        "isValid": false,
+        "attributes": {
+            "className": "alert-info"
+        },
+        "innerBlocks": [],
+        "originalContent": "<div class=\"wp-block-vk-blocks-alert undefined alert alert-info\"><p>Welcome to VK Blocks / Pro !</p></div>"
+    }
+]

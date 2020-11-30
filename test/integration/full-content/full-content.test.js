@@ -45,6 +45,8 @@ import {
 
 const blockBasenames = getAvailableBlockFixturesBasenames();
 
+import { getCustomBlocks } from '../../../src/blocks/bundle';
+
 function normalizeParsedBlocks( blocks ) {
 	return blocks.map( ( block, index ) => {
 		// Clone and remove React-instance-specific stuff; also, attribute
@@ -82,13 +84,21 @@ describe( 'full post content fixture', () => {
 		// NOTE: ファイルの最初で読み込みに変更
 		// Load all hooks that modify blocks
 		// require( '../../../packages/editor/src/hooks' );
-		registerCoreBlocks();
-		if ( process.env.GUTENBERG_PHASE === 2 ) {
-			__experimentalRegisterExperimentalCoreBlocks( true );
-		}
+
+		//TODO: 下のコアブロックを取得する関数の代わりに、カスタムブロック一覧の引数を渡す
+		// registerCoreBlocks();
+
+		// カスタムブロックを登録
+		// const customBlocks = getCustomBlocks();
+		// registerCoreBlocks( customBlocks );
+
+		// if ( process.env.GUTENBERG_PHASE === 2 ) {
+		// 	__experimentalRegisterExperimentalCoreBlocks( true );
+		// }
 	} );
 
 	blockBasenames.forEach( ( basename ) => {
+
 		it( basename, () => {
 			const {
 				filename: htmlFixtureFileName,
@@ -219,11 +229,16 @@ describe( 'full post content fixture', () => {
 		} );
 	} );
 
+	/**
+	 * テスト実行
+	 *
+	*/
 	it( 'should be present for each block', () => {
 		const errors = [];
 
 		getBlockTypes()
 			.map( ( block ) => block.name )
+
 			// We don't want tests for each oembed provider, which all have the same
 			// `save` functions and attributes.
 			// The `core/template` is not worth testing here because it's never saved, it's covered better in e2e tests.
@@ -231,6 +246,7 @@ describe( 'full post content fixture', () => {
 				( name ) => ! [ 'core/embed', 'core/template' ].includes( name )
 			)
 			.forEach( ( name ) => {
+				console.log(name)
 				const nameToFilename = blockNameToFixtureBasename( name );
 				const foundFixtures = blockBasenames
 					.filter(

@@ -1,46 +1,90 @@
 //Bundle JS
-import "./hidden-extension/";
-import "../translation_dummy.js";
-import "./heading-style/block.js";
-import "./group-style/block.js";
-import "./list-style/block.js";
-import "./highlighter/block.js";
-import "./staff/block.js";
-import "./spacer/block.js";
-import "./heading/block.js";
-import "./alert/block.js";
-import "./balloon/block.js";
-import "./button/block.js";
-import "./faq/block.js";
-import "./flow/block.js";
-import "./pr-blocks/block.js";
-import "./pr-content/block.js";
-import "./image/block.js";
-import "./nowrap/block.js";
+// import "./hidden-extension/";
+// import "../translation_dummy.js";
+// import "./heading-style/block.js";
+// import "./group-style/block.js";
+// import "./list-style/block.js";
+// import "./highlighter/block.js";
+// import "./staff/block.js";
+// import "./spacer/block.js";
+// import "./heading/block.js";
+import * as alert from './alert/block.js';
+// import "./alert/block.js";
+// import "./balloon/block.js";
+// import "./button/block.js";
+// import "./faq/block.js";
+// import "./flow/block.js";
+// import "./pr-blocks/block.js";
+// import "./pr-content/block.js";
+// import "./image/block.js";
+// import "./nowrap/block.js";
 
 /*WP5.3 以下では読み込まれない*/
-import "./responsive-br/";
-import "./border-box/block.js";
-import "./faq2/block.js";
-import "./faq2-q/block.js";
-import "./faq2-a/block.js";
-import "./page-content/block.js";
-import "./_pro/icon-card-item/block.js";
-import "./_pro/icon-card/block.js";
-import "./_pro/card-item/block.js";
-import "./_pro/card/block.js";
-import "./_pro/child-page/block.js";
-import "./_pro/post-list/block.js";
-import "./_pro/outer/block.js";
-import "./_pro/table-of-contents/block.js";
-import "./_pro/table-of-contents-new/block.js";
-import "./_pro/step-item/block.js";
-import "./_pro/step/block.js";
-import "./_pro/timeline-item/block.js";
-import "./_pro/timeline/block.js";
-import "./_pro/grid-column/block.js";
-import "./_pro/grid-column-item/block.js";
-import "./_pro/slider/block.js";
-import "./_pro/slider-item/block.js";
-import "./_pro/animation/block.js";
-import "../plugin/menu/block.js";
+// import "./responsive-br/";
+// import "./border-box/block.js";
+// import "./faq2/block.js";
+// import "./faq2-q/block.js";
+// import "./faq2-a/block.js";
+// import "./page-content/block.js";
+// import "./_pro/icon-card-item/block.js";
+// import "./_pro/icon-card/block.js";
+// import "./_pro/card-item/block.js";
+// import "./_pro/card/block.js";
+// import "./_pro/child-page/block.js";
+// import "./_pro/post-list/block.js";
+// import "./_pro/outer/block.js";
+// import "./_pro/table-of-contents/block.js";
+// import "./_pro/table-of-contents-new/block.js";
+// import "./_pro/step-item/block.js";
+// import "./_pro/step/block.js";
+// import "./_pro/timeline-item/block.js";
+// import "./_pro/timeline/block.js";
+// import "./_pro/grid-column/block.js";
+// import "./_pro/grid-column-item/block.js";
+// import "./_pro/slider/block.js";
+// import "./_pro/slider-item/block.js";
+// import "./_pro/animation/block.js";
+// import "../plugin/menu/block.js";
+
+/**
+ * 配列形式で指定のスラッグのブロックを取得する関数
+ *
+ * @example
+ * ```js
+ * import { getCustomBlocks } from 'custom-block-list.js';
+ *
+ * const customBlocks = getCustomBlocks();
+ * ```
+ * Gutenbergの以下のファイルをコピーし、__experimentalGetCoreBlocks を修正。
+ * https://github.com/WordPress/gutenberg/blob/5cd71f42499173e6d6f10a20a4b066f3aab77e34/packages/block-library/src/index.js
+ */
+
+export const getCustomBlocks = () => [
+	// staff,
+	// spacer,
+	// heading,
+	alert,
+	// balloon,
+	// button,
+	// faq,
+	// flow,
+	// pr-blocks,
+	// pr-content,
+	// image,
+	// responsive-br,
+	// border-box,
+	// faq2,
+	// page-content,
+	// icon-card,
+	// card,
+	// child-page,
+	// post-list,
+	// outer,
+	// table-of-contents,
+	// table-of-contents-new,
+	// step,
+	// timeline,
+	// grid-column,
+	// slider,
+	// animation
+];

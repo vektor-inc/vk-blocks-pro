@@ -1,12 +1,10 @@
-const { InnerBlocks } = wp.editor;
-const { __ } = wp.i18n; // Import __() from wp.i18n
-const { Component } = wp.element;
+import {vkbBlockEditor} from "../../_helper/depModules"
+const { InnerBlocks } =vkbBlockEditor;
+const { __ } = wp.i18n;
 
-export const ColumnResponsive = (props) => {
+export const ColumnResponsive = ( props ) => {
   const for_ = props.for_;
-  const attributes = props.attributes;
   let innerClass = "";
-  const className = props.className;
   const containerClass = " vk_grid-column";
   let elm;
 

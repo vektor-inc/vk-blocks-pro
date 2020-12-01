@@ -1,4 +1,3 @@
-// import Depreated0_56_3 from "./0.56.3"
 import { ColumnResponsive0574 } from "./0.57.4";
 
 const blockAttributes = {
@@ -42,7 +41,7 @@ export default [
 		attributes: blockAttributes,
 		save({ attributes, className }) {
 			return (
-				<ColumnResponsive
+				<ColumnResponsive0574
 					attributes={ attributes }
 					className={ className }
 					for_={ "save" }

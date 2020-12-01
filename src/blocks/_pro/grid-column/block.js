@@ -10,6 +10,7 @@ import { convertToGrid } from "../../_helper/convert-to-grid";
 import {vkbBlockEditor} from "../../_helper/depModules"
 import BlockIcon from "./icon.svg";
 import deprecated from "./deprecated/"
+import compareVersions from 'compare-versions';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -139,7 +140,10 @@ addFilter(
 	"blocks.getSaveElement",
 	"vk-blocks/grid-column",
 	(element, blockType, attributes) => {
+
+		const post = select( 'core/editor' ).getCurrentPost();
 		const { col_xs, col_sm, col_md, col_lg, col_xl, col_xxl } = attributes;
+
 		if (blockType.name === "vk-blocks/grid-column-item" && element) {
 			element = {
 				...element,
@@ -155,7 +159,13 @@ addFilter(
 					},
 				},
 			};
-		} else if ( blockType.name === "vk-blocks/grid-column" && element ) {
+		} else if (
+			blockType.name === "vk-blocks/grid-column" &&
+			element &&
+			post.hasOwnProperty('meta') &&
+			// VK Blocks Pro 0.57.4以上の場合
+			compareVersions('0.57.4', post.meta._vkb_saved_block_version) > 0
+		) {
 			return (
 				<div className={element.props.className}>
 					{element}

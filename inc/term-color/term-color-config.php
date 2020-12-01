@@ -20,12 +20,12 @@ function vkblocks_term_color_taxonomies_custom( $taxonomies ) {
 }
 
 	/*
-	読み込みタイミングをafter_setup_themeにしておかないと
-	テーマから対象taxonomyの指定がある場合に効かない
+	読み込みタイミングを init にしておかないと
+	init で作成されたカスタム分類に対応できない
 	★★★★★★ 関数のprefixは固有のものに変更する事 ★★★★★★
 	*/
 
-add_action( 'after_setup_theme', 'vkblocks_load_term_color' );
+add_action( 'init', 'vkblocks_load_term_color' );
 function vkblocks_load_term_color() {
 	require_once( 'package/class.term-color.php' );
 }

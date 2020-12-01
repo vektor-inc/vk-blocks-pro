@@ -155,6 +155,12 @@ addFilter(
 					},
 				},
 			};
+		} else if ( blockType.name === "vk-blocks/grid-column" && element ) {
+			return (
+				<div className={element.props.className}>
+					{element}
+				</div>
+			)
 		}
 		return element;
 	}

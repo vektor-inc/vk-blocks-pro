@@ -9,7 +9,6 @@ import classNames from "classnames";
 import { convertToGrid } from "../../_helper/convert-to-grid";
 import {vkbBlockEditor} from "../../_helper/depModules"
 import BlockIcon from "./icon.svg";
-import deprecated from "./deprecated/"
 import compareVersions from 'compare-versions';
 
 const { __ } = wp.i18n;
@@ -103,8 +102,7 @@ registerBlockType("vk-blocks/grid-column", {
 				for_={ "save" }
 			/>
 		);
-	},
-	deprecated
+	}
 });
 
 const vkbwithClientIdClassName = createHigherOrderComponent(

@@ -1,12 +1,8 @@
 const { InnerBlocks } = wp.editor;
-const { __ } = wp.i18n; // Import __() from wp.i18n
-const { Component } = wp.element;
 
-export const ColumnResponsive = (props) => {
+export const ColumnResponsive0574 = (props) => {
   const for_ = props.for_;
-  const attributes = props.attributes;
   let innerClass = "";
-  const className = props.className;
   const containerClass = " vk_grid-column";
   let elm;
 

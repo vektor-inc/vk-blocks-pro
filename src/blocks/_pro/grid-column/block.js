@@ -21,7 +21,7 @@ const { createHigherOrderComponent } = wp.compose;
 const { addFilter } = wp.hooks;
 
 let displayInserter = false;
-if ( window.wpVersion && compareVersions("5.4", window.wpVersion) > 0 ){
+if ( window.wpVersion && compareVersions(window.wpVersion, "5.4") > 0 ){
 	displayInserter = true;
 }
 

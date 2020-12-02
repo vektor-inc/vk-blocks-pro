@@ -15,16 +15,16 @@ module.exports = {
 	entry: './src/blocks/bundle.js',
 	output: {
 		filename: './inc/vk-blocks/build/block-build.js',
-		// library: ['wp', '[name]'],
-    	// libraryTarget: 'window',
+		library: ['wp', '[name]'],
+    	libraryTarget: 'window',
 	},
-	//add every value to externals by Array.reduce().
-	// externals: wplib.reduce((externals, lib) => {
-	// 	externals[`@wordpress/${ lib }`] = {
-	// 	  window: ['wp', lib],
-	// 	};
-	// 	return externals;
-	// }, {}),
+	// add every value to externals by Array.reduce().
+	externals: wplib.reduce((externals, lib) => {
+		externals[`@wordpress/${ lib }`] = {
+		  window: ['wp', lib],
+		};
+		return externals;
+	}, {}),
 	module: {
 		rules: [
 			{
@@ -61,8 +61,10 @@ module.exports = {
 				use: {
 					loader: 'babel-loader',
 					options: {
-						presets: [ '@babel/preset-env' ],
+						presets: [ '@babel/preset-react ' ],
+						// presets: [ '@babel/preset-env' ],
 						plugins: [
+							'@babel/plugin-syntax-jsx',
 							'@babel/plugin-transform-react-jsx',
 							[
 								// JSをスキャンして、potを作成/アップデート

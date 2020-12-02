@@ -2,26 +2,15 @@
  * Alert block type
  *
  */
-// import { deprecated } from './deprecated';
-// import { vkbBlockEditor } from "./../_helper/depModules";
+import { deprecated } from './deprecated';
 // import { content } from "./../_helper/example-data"
-// import icon from "./icon.svg";
-import { code as icon } from '@wordpress/icons';
+import icon from "./icon.svg";
 import metadata from './block.json';
-
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
 import { PanelBody, SelectControl } from '@wordpress/components';
-import { InspectorControls, RichText } from '@wordpress/block-editor';
+import { InspectorControls, RichText } from '@wordpress/editor';
 import { Fragment } from '@wordpress/element';
-
-// const { __ } = wp.i18n;
-// const { registerBlockType } = wp.blocks;
-// const { PanelBody, SelectControl } = wp.components;
-// const { InspectorControls, RichText } = vkbBlockEditor;
-// const { Fragment } = wp.element;
-
-
 const { name } = metadata;
 export { metadata, name };
 
@@ -31,20 +20,20 @@ registerBlockType('vk-blocks/alert', {
 
 	icon,
 
-	category: 'common',
-	// category: 'vk-blocks-cat',
+	// category: 'common',
+	category: 'vk-blocks-cat',
 
-	// attributes: {
-	// 	style: {
-	// 		type: 'string',
-	// 		default: 'info',
-	// 	},
-	// 	content: {
-	// 		type: 'string',
-	// 		source: 'html',
-	// 		selector: 'p',
-	// 	}
-	// },
+	attributes: {
+		style: {
+			type: 'string',
+			default: 'info',
+		},
+		content: {
+			type: 'string',
+			source: 'html',
+			selector: 'p',
+		}
+	},
 	// example: {
 	// 	attributes: {
 	// 		style: 'info',

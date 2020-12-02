@@ -1,5 +1,4 @@
-import { vkbBlockEditor } from "./../_helper/depModules";
-const { RichText } = vkbBlockEditor;
+import { RichText } from '@wordpress/editor';
 
 export const deprecated = [
     {

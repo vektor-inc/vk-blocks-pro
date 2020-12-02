@@ -1,8 +1,30 @@
+const wplib = [
+	'blocks',
+	'components',
+	'date',
+	'editor',
+	'element',
+	'i18n',
+	'utils',
+	'data',
+	'icons',
+	'block-editor'
+];
+
 module.exports = {
 	entry: './src/blocks/bundle.js',
 	output: {
 		filename: './inc/vk-blocks/build/block-build.js',
+		// library: ['wp', '[name]'],
+    	// libraryTarget: 'window',
 	},
+	//add every value to externals by Array.reduce().
+	// externals: wplib.reduce((externals, lib) => {
+	// 	externals[`@wordpress/${ lib }`] = {
+	// 	  window: ['wp', lib],
+	// 	};
+	// 	return externals;
+	// }, {}),
 	module: {
 		rules: [
 			{

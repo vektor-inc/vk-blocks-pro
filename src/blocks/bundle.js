@@ -8,8 +8,8 @@
 // import "./staff/block.js";
 // import "./spacer/block.js";
 // import "./heading/block.js";
-import * as alert from './alert/block.js';
-// import "./alert/block.js";
+// import * as alert from './alert/block.js';
+import "./alert/block.js";
 // import "./balloon/block.js";
 // import "./button/block.js";
 // import "./faq/block.js";

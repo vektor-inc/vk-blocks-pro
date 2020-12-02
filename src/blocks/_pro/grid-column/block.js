@@ -21,7 +21,7 @@ const { createHigherOrderComponent } = wp.compose;
 const { addFilter } = wp.hooks;
 
 let displayInserter = false;
-if ( window.wpVersion && compareVersions(window.wpVersion, "5.4") > 0 ){
+if ( window.wpVersion && compareVersions( window.wpVersion, "5.4" ) > 0 ){
 	displayInserter = true;
 }
 
@@ -162,7 +162,7 @@ addFilter(
 			element &&
 			post.hasOwnProperty('meta') &&
 			// VK Blocks Pro 0.57.4以上の場合
-			compareVersions('0.57.4', post.meta._vkb_saved_block_version) > 0
+			compareVersions( post.meta._vkb_saved_block_version, '0.57.4' ) > 0
 		) {
 			return (
 				<div className={element.props.className}>

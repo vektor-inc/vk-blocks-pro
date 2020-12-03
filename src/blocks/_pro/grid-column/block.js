@@ -9,6 +9,8 @@ import classNames from "classnames";
 import { convertToGrid } from "../../_helper/convert-to-grid";
 import {vkbBlockEditor} from "../../_helper/depModules"
 import BlockIcon from "./icon.svg";
+import compareVersions from 'compare-versions';
+import deprecated from "./deprecated/"
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -20,7 +22,7 @@ const { createHigherOrderComponent } = wp.compose;
 const { addFilter } = wp.hooks;
 
 let displayInserter = false;
-if (window.wpVersion && 5.4 <= parseFloat(window.wpVersion)) {
+if ( window.wpVersion && compareVersions( window.wpVersion, "5.4" ) > 0 ){
 	displayInserter = true;
 }
 
@@ -93,15 +95,17 @@ registerBlockType("vk-blocks/grid-column", {
 			</Fragment>
 		);
 	},
-	save({ attributes, className }) {
+	save({ attributes }) {
 		return (
-			<ColumnResponsive
-				attributes={ attributes }
-				className={ className }
-				for_={ "save" }
-			/>
+			<div>
+				<ColumnResponsive
+					attributes={ attributes }
+					for_={ "save" }
+				/>
+			</div>
 		);
 	},
+	deprecated
 });
 
 const vkbwithClientIdClassName = createHigherOrderComponent(
@@ -137,9 +141,12 @@ addFilter(
 	"blocks.getSaveElement",
 	"vk-blocks/grid-column",
 	(element, blockType, attributes) => {
+
+		const post = select( 'core/editor' ).getCurrentPost();
 		const { col_xs, col_sm, col_md, col_lg, col_xl, col_xxl } = attributes;
+
 		if (blockType.name === "vk-blocks/grid-column-item" && element) {
-			element = {
+			return {
 				...element,
 				...{
 					props: {
@@ -154,6 +161,7 @@ addFilter(
 				},
 			};
 		}
+
 		return element;
 	}
 );

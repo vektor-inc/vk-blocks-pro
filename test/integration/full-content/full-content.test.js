@@ -9,8 +9,7 @@ import { format } from 'util';
  *  NOTE: beforeAll内の require( '../../../packages/editor/src/hooks' ); の代わりに必要なフックを読み込み。
  *  https://github.com/WordPress/gutenberg/tree/master/packages/editor/src/hooks
  */
-import '@wordpress/editor';
-
+// import '@wordpress/editor';
 
 /**
  * WordPress dependencies
@@ -22,10 +21,10 @@ import {
 	unstable__bootstrapServerSideBlockDefinitions, // eslint-disable-line camelcase
 } from '@wordpress/blocks';
 import { parse as grammarParse } from '@wordpress/block-serialization-default-parser';
-import {
-	registerCoreBlocks,
-	__experimentalRegisterExperimentalCoreBlocks,
-} from '@wordpress/block-library';
+// import {
+// 	registerCoreBlocks,
+// 	__experimentalRegisterExperimentalCoreBlocks,
+// } from '@wordpress/block-library';
 //eslint-disable-next-line no-restricted-syntax
 import {
 	blockNameToFixtureBasename,
@@ -45,7 +44,7 @@ import {
 
 const blockBasenames = getAvailableBlockFixturesBasenames();
 
-import { getCustomBlocks } from '../../../src/blocks/bundle';
+// import { getCustomBlocks } from '../../../src/blocks/bundle';
 
 function normalizeParsedBlocks( blocks ) {
 	return blocks.map( ( block, index ) => {

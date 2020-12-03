@@ -10,16 +10,16 @@ const transpiledPackageNames = glob( 'packages/*/src/index.js' ).map(
 
 module.exports = {
 	rootDir: '../../',
-	moduleNameMapper: {
-		[ `@wordpress\\/(${ transpiledPackageNames.join(
-			'|'
-		) })$` ]: 'packages/$1/src',
-	},
+	// moduleNameMapper: {
+	// 	[ `@wordpress\\/(${ transpiledPackageNames.join(
+	// 		'|'
+	// 	) })$` ]: 'packages/$1/src',
+	// },
 	preset: '@wordpress/jest-preset-default',
 	setupFiles: [
-		'<rootDir>/test/unit/config/global-mocks.js',
-		'<rootDir>/test/unit/config/gutenberg-phase.js',
-		'<rootDir>/test/unit/config/register-context.js',
+		// '<rootDir>/test/unit/config/global-mocks.js',
+		// '<rootDir>/test/unit/config/gutenberg-phase.js',
+		// '<rootDir>/test/unit/config/register-context.js',
 	],
 	testURL: 'http://localhost',
 	testPathIgnorePatterns: [
@@ -32,10 +32,13 @@ module.exports = {
 		'<rootDir>/.+.native.js$',
 		'/packages/react-native-*',
 	],
+	// transform: {
+	// 	'^.+\\.[jt]sx?$': '<rootDir>/test/unit/scripts/babel-transformer.js',
+	// },
 	transform: {
-		'^.+\\.[jt]sx?$': '<rootDir>/test/unit/scripts/babel-transformer.js',
+		"^.+\\.jsx?$": "babel-jest"
 	},
-	snapshotSerializers: [ 'enzyme-to-json/serializer', 'jest-emotion' ],
+	snapshotSerializers: [ 'enzyme-to-json/serializer', '@emotion/jest' ],
 	watchPlugins: [
 		'jest-watch-typeahead/filename',
 		'jest-watch-typeahead/testname',

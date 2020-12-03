@@ -21,7 +21,7 @@ module.exports = {
 	 * @return {string} The cache key for the file.
 	 */
 	getCacheKey( src, filename, ...args ) {
-		const isBlockIndex = /block-library[\/\\]src[\/\\].+[\/\\]index\.js/.test(
+		const isBlockIndex = /src[\/\\]blocks[\/\\].+[\/\\]block\.js/.test(
 			filename
 		);
 
@@ -29,7 +29,7 @@ module.exports = {
 			return babelJestTransformer.getCacheKey( src, filename, ...args );
 		}
 
-		const blockJSONFilename = filename.replace( 'index.js', 'block.json' );
+		const blockJSONFilename = filename.replace( 'block.js', 'block.json' );
 
 		if ( ! fs.existsSync( blockJSONFilename ) ) {
 			return babelJestTransformer.getCacheKey( src, filename, ...args );

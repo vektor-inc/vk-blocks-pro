@@ -61,7 +61,7 @@ module.exports = {
 				use: {
 					loader: 'babel-loader',
 					options: {
-						presets: [ '@babel/preset-react ' ],
+						presets: ['@babel/preset-env', '@babel/preset-react'],
 						// presets: [ '@babel/preset-env' ],
 						plugins: [
 							'@babel/plugin-syntax-jsx',
@@ -79,4 +79,11 @@ module.exports = {
 			},
 		],
 	},
+	env: {
+		test: { // <-- NODE_ENV=testの場合のみpluginが有効になる
+			plugins: [
+				'transform-es2015-modules-commonjs'
+			]
+		}
+	}
 };

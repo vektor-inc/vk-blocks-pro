@@ -2,4 +2,4 @@
 window.wp = window.wp || {};
 window.wp.oldEditor = {};
 
-export * from '../../../../packages/block-library/src';
+export * from '../../../../src/blocks';

@@ -10,6 +10,7 @@ import { convertToGrid } from "../../_helper/convert-to-grid";
 import {vkbBlockEditor} from "../../_helper/depModules"
 import BlockIcon from "./icon.svg";
 import compareVersions from 'compare-versions';
+import deprecated from "./deprecated/"
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -94,15 +95,17 @@ registerBlockType("vk-blocks/grid-column", {
 			</Fragment>
 		);
 	},
-	save({ attributes, className }) {
+	save({ attributes }) {
 		return (
-			<ColumnResponsive
-				attributes={ attributes }
-				className={ className }
-				for_={ "save" }
-			/>
+			<div>
+				<ColumnResponsive
+					attributes={ attributes }
+					for_={ "save" }
+				/>
+			</div>
 		);
-	}
+	},
+	deprecated
 });
 
 const vkbwithClientIdClassName = createHigherOrderComponent(
@@ -143,7 +146,7 @@ addFilter(
 		const { col_xs, col_sm, col_md, col_lg, col_xl, col_xxl } = attributes;
 
 		if (blockType.name === "vk-blocks/grid-column-item" && element) {
-			element = {
+			return {
 				...element,
 				...{
 					props: {
@@ -157,19 +160,8 @@ addFilter(
 					},
 				},
 			};
-		} else if (
-			blockType.name === "vk-blocks/grid-column" &&
-			element &&
-			post.hasOwnProperty('meta') &&
-			// VK Blocks Pro 0.57.4以上の場合
-			compareVersions( post.meta._vkb_saved_block_version, '0.57.4' ) > 0
-		) {
-			return (
-				<div className={element.props.className}>
-					{element}
-				</div>
-			)
 		}
+
 		return element;
 	}
 );

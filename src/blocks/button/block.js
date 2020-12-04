@@ -287,7 +287,7 @@ registerBlockType( 'vk-blocks/button', {
 									value: 'dark',
 								},
 							] }
-							onChange={ ( value ) => SetAttributes( { buttonColor: value } )	}
+							onChange={ ( value ) => setAttributes( { buttonColor: value } )	}
 						/>
 						<BaseControl
 							id={ `vk_block_baloon_custom_color` }

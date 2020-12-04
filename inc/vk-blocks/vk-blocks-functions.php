@@ -17,7 +17,7 @@ add_action(
 	'plugins_loaded',
 	function () {
 		// Load language files.
-		$path = dirname( plugin_basename( __FILE__ ) ) . '/build/languages';
+		$path = dirname( plugin_basename( __FILE__ ) ) . '/languages';
 		load_plugin_textdomain( 'vk-blocks', false, $path );
 	}
 );
@@ -125,7 +125,7 @@ function vkblocks_blocks_assets() {
 	);
 
 	if ( function_exists( 'wp_set_script_translations' ) ) {
-		wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks', plugin_dir_path( __FILE__ ) . 'build/languages' );
+		wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks', plugin_dir_path( __FILE__ ) . 'languages' );
 	}
 
 	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );

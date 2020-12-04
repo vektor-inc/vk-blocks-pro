@@ -125,19 +125,8 @@ gulp.task("sass_vk_components", function() {
     .pipe(gulp.dest("./inc/vk-blocks/build/"));
 });
 
-// Transpile and Compile Sass and Bundle it.
-// gulp.task("js-dev", function() {
-//   return webpackStream(webpackDev, webpack).pipe(gulp.dest("./"));
-// });
-
-// gulp.task("js", function() {
-//   return webpackStream(webpackProd, webpack).pipe(gulp.dest("./"));
-// });
-
 // watch
 gulp.task("watch", function() {
-  // gulp.watch("src/**/*.js", gulp.parallel("js"));
-//   gulp.watch("src/**/*.js", gulp.parallel("js-dev"));
   gulp.watch("editor-css/_editor_before.scss", gulp.parallel("sass_editor"));
   // gulp.watch("editor-css/*.scss", gulp.parallel("sass_editor"));
   gulp.watch("src/**/*.scss", gulp.series("sass", "sass_editor"));

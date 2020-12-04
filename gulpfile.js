@@ -12,7 +12,7 @@ const jsmin = require("gulp-jsmin");
 
 gulp.task( 'helper-js', function (done)  {
 	gulp.src([
-		'src/blocks/helper/faq2.js',
+		'src/blocks/faq2/faq2.js',
 	])
 	.pipe(jsmin())
 	.pipe(rename({

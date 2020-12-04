@@ -1,8 +1,9 @@
 const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
 module.exports = {
 	...defaultConfig,
-	entry: './src/blocks/bundle.js',
+	entry: __dirname + '/src/blocks/bundle.js',
 	output: {
-		filename: './inc/vk-blocks/build/block-build.js',
+		path: __dirname + '/inc/vk-blocks/build/',
+		filename: 'block-build.js',
 	}
 };

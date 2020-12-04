@@ -43,6 +43,10 @@ export const schema = {
     type: "boolean",
     default: false,
   },
+  display_author: {
+    type: "boolean",
+    default: false,
+  },
   display_date: {
     type: "boolean",
     default: true,

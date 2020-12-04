@@ -292,6 +292,10 @@ function vkblocks_blocks_assets() {
 										'type'    => 'boolean',
 										'default' => false,
 									),
+									'display_author'   => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
 									'display_date'      => array(
 										'type'    => 'boolean',
 										'default' => true,

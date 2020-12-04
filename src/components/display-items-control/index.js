@@ -13,6 +13,7 @@ export const DisplayItemsControl = props => {
 		display_image,
 		display_image_overlay_term,
 		display_excerpt,
+		display_author,
 		display_date,
 		display_new,
 		display_taxonomies,
@@ -41,6 +42,11 @@ export const DisplayItemsControl = props => {
 				label={ __("Excerpt", "vk-blocks") }
 				checked={ display_excerpt }
 				onChange={ checked => setAttributes({ display_excerpt: checked }) }
+			/>
+			<CheckboxControl
+				label={ __("Author", "vk-blocks") }
+				checked={ display_author }
+				onChange={ checked => setAttributes({ display_author: checked }) }
 			/>
 			<CheckboxControl
 				label={ __("Date", "vk-blocks") }

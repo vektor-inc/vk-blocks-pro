@@ -46,6 +46,7 @@ registerBlockType("vk-blocks/post-list", {
 			display_image: true,
 			display_image_overlay_term: true,
 			display_excerpt: false,
+			display_author: false,
 			display_date: true,
 			display_new: true,
 			display_taxonomies: false,

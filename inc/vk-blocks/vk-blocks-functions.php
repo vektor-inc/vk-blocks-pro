@@ -17,7 +17,7 @@ add_action(
 	'plugins_loaded',
 	function () {
 		// Load language files.
-		$path = dirname( plugin_basename( __FILE__ ) ) . '/languages';
+		$path = dirname( plugin_basename( __FILE__ ) ) . '/build/languages';
 		load_plugin_textdomain( 'vk-blocks', false, $path );
 	}
 );
@@ -125,7 +125,7 @@ function vkblocks_blocks_assets() {
 	);
 
 	if ( function_exists( 'wp_set_script_translations' ) ) {
-		wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks', plugin_dir_path( __FILE__ ) . 'languages' );
+		wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks', plugin_dir_path( __FILE__ ) . 'build/languages' );
 	}
 
 	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
@@ -292,6 +292,10 @@ function vkblocks_blocks_assets() {
 										'type'    => 'boolean',
 										'default' => false,
 									),
+									'display_author'   => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
 									'display_date'      => array(
 										'type'    => 'boolean',
 										'default' => true,
@@ -424,6 +428,10 @@ function vkblocks_blocks_assets() {
 								'display_excerpt'   => array(
 									'type'    => 'boolean',
 									'default' => true,
+								),
+								'display_author'   => array(
+									'type'    => 'boolean',
+									'default' => false,
 								),
 								'display_date'      => array(
 									'type'    => 'boolean',
@@ -561,8 +569,12 @@ if ( ! function_exists( 'vkblocks_blocks_categories' ) ) {
 if ( ! function_exists( 'vkblocks_set_wp_version' ) ) {
 	function vkblocks_set_wp_version() {
 		global $wp_version;
+
+		// RC版の - を削除
+		$_wp_version =strstr($wp_version,'-',true);
+
 		echo '<script>',
-			'var wpVersion = "' . $wp_version . '";',
+			'var wpVersion = "' . $_wp_version . '";',
 		'</script>';
 	}
 	add_action( 'admin_head', 'vkblocks_set_wp_version', 10, 0 );

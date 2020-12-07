@@ -1,4 +1,4 @@
-import { iconPicture, profileTitle, position, profileName, profileLifeTime, content } from "./../_helper/example-data"
+import { iconPicture, profileTitle, position, profileName, profileLifeTime, content } from "./../../utils/example-data"
 const { __ } = wp.i18n;
 export const schema = {
     vk_staff_text_name: {

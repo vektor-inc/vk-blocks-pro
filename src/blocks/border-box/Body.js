@@ -1,4 +1,4 @@
-import { vkbBlockEditor } from "../_helper/depModules";
+import { vkbBlockEditor } from "../../utils/depModules";
 import classNames from "classnames";
 import ReactHtmlParser from 'react-html-parser';
 const { InnerBlocks, RichText } = vkbBlockEditor;

@@ -6,8 +6,8 @@ import { ColumnResponsive } from "./component";
 import { schema } from "./schema";
 import { ColumnLayout } from "../../../components/column-layout";
 import classNames from "classnames";
-import { convertToGrid } from "../../_helper/convert-to-grid";
-import {vkbBlockEditor} from "../../_helper/depModules"
+import { convertToGrid } from "../../../utils/convert-to-grid";
+import {vkbBlockEditor} from "../../../utils/depModules"
 import BlockIcon from "./icon.svg";
 import compareVersions from 'compare-versions';
 import deprecated from "./deprecated/"

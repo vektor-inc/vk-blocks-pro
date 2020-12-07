@@ -5,10 +5,10 @@
 import React from "react";
 import { deprecated } from "./deprecated/block";
 import { ComponentBlock } from "./component-block";
-import { isNotJSON } from "../_helper/is-not-json";
-import { FontAwesome } from "../_helper/font-awesome-new"
-import { iconName, iconUser, title, baseColor, url } from "./../_helper/example-data"
-import { fixBrokenUnicode } from "./../_helper/depModules";
+import { isNotJSON } from "../../utils/is-not-json";
+import { FontAwesome } from "../../utils/font-awesome-new"
+import { iconName, iconUser, title, baseColor, url } from "./../../utils/example-data"
+import { fixBrokenUnicode } from "./../../utils/depModules";
 import BlockIcon from "./icon.svg";
 
 const { __ } = wp.i18n; // Import __() from wp.i18n

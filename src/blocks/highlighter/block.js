@@ -7,7 +7,7 @@ const {RichTextToolbarButton, RichTextShortcut, InspectorControls, PanelColorSet
 const {Fragment} = wp.element;
 const name = 'vk-blocks/highlighter';
 
-import hex2rgba from "../_helper/hex-to-rgba";
+import hex2rgba from "../../utils/hex-to-rgba";
 import BlockIcon from "./icon.svg";
 
 registerFormatType(name, {

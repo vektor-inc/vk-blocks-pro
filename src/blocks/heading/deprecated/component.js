@@ -1,4 +1,4 @@
-import { vkbBlockEditor } from "./../../_helper/depModules";
+import { vkbBlockEditor } from "./../../../utils/depModules";
 const { RichText } = vkbBlockEditor;
 const { __ } = wp.i18n;
 const { Component } = wp.element;

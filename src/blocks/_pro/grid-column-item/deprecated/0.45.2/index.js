@@ -1,5 +1,5 @@
 const { __ } = wp.i18n;
-import {vkbBlockEditor} from "../../../../_helper/depModules"
+import {vkbBlockEditor} from "../../../../../utils/depModules"
 const { InnerBlocks } = vkbBlockEditor;
 import schema from "./schema";
 

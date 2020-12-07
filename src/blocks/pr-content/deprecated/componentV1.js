@@ -2,7 +2,7 @@ import classNames from "classnames";
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { Button } = wp.components;
 const { Component,Fragment } = wp.element;
-import { vkbBlockEditor, fixBrokenUnicode } from "./../../_helper/depModules";
+import { vkbBlockEditor, fixBrokenUnicode } from "./../../../utils/depModules";
 const { MediaUpload, RichText } = vkbBlockEditor;
 
 export class Fontawesome extends Component {

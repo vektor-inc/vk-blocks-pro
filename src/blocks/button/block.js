@@ -4,9 +4,9 @@
  */
 import { VKBButton } from './component';
 import { deprecated } from './deprecated/deprecated';
-import { vkbBlockEditor } from './../_helper/depModules';
-import { title, iconName, url, iconUser } from './../_helper/example-data';
-import { FontAwesome } from '../_helper/font-awesome-new';
+import { vkbBlockEditor } from './../../utils/depModules';
+import { title, iconName, url, iconUser } from './../../utils/example-data';
+import { FontAwesome } from '../../utils/font-awesome-new';
 import BlockIcon from './icon.svg';
 
 const { __ } = wp.i18n;

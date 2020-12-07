@@ -3,7 +3,7 @@
  *
  */
 import { schema } from "./schema";
-import {vkbBlockEditor} from "../../_helper/depModules"
+import {vkbBlockEditor} from "../../../utils/depModules"
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { InnerBlocks } = vkbBlockEditor;

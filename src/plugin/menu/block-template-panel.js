@@ -1,4 +1,4 @@
-import {vkbBlockEditor} from "./../../blocks/_helper/depModules"
+import {vkbBlockEditor} from "../../utils/depModules"
 
 const { first, last } = window.lodash;
 

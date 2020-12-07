@@ -1,10 +1,10 @@
 /**
  * FAQ Outer Block
  */
-import { vkbBlockEditor } from "./../_helper/depModules";
+import { vkbBlockEditor } from "./../../utils/depModules";
 import { deprecated } from "./deprecated";
 import classNames from "classnames";
-import { content, title } from "./../_helper/example-data";
+import { content, title } from "./../../utils/example-data";
 import BlockIcon from "./icon.svg";
 
 const { registerBlockType } = wp.blocks;

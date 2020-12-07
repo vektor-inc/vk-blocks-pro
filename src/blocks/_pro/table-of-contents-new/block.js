@@ -21,12 +21,12 @@ const {
 	BaseControl,
 } = wp.components;
 const { Fragment } = wp.element;
-import { vkbBlockEditor } from "../../_helper/depModules";
+import { vkbBlockEditor } from "../../../utils/depModules";
 const { InspectorControls } = vkbBlockEditor;
 const { addFilter } = wp.hooks;
 const { createHigherOrderComponent } = wp.compose;
 const { dispatch, select } = wp.data;
-import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
+import { hiddenNewBlock } from "../../../utils/hiddenNewBlock"
 const inserterVisible = hiddenNewBlock(5.3);
 import TocBody from './TocBody'
 

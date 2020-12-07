@@ -4,7 +4,7 @@
  */
 import { NewComponent } from "./component";
 import { schema, example } from './schema';
-import { vkbBlockEditor } from "./../_helper/depModules";
+import { vkbBlockEditor } from "./../../utils/depModules";
 import BlockIcon from "./icon.svg";
 
 const { __ } = wp.i18n;

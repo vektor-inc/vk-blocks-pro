@@ -4,7 +4,7 @@ import React from "react";
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { Button } = wp.components;
 const { MediaUpload } = wp.editor;
-import { vkbBlockEditor } from "./../../_helper/depModules";
+import { vkbBlockEditor } from "./../../../utils/depModules";
 const { RichText } = vkbBlockEditor;
 
 export class ComponentDeprecated extends React.Component {
@@ -133,7 +133,7 @@ export class ComponentDeprecated extends React.Component {
                                         />
 	</React.Fragment>
                                 );
-                            } 
+                            }
                                 return (
 	<React.Fragment>
 		<RichText.Content
@@ -149,7 +149,7 @@ export class ComponentDeprecated extends React.Component {
 			style={ { color: contentColor } }
                                         />
 	</React.Fragment>);
-                            
+
                         })()
                     }
 			{

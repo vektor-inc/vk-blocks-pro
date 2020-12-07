@@ -2,7 +2,7 @@ import { ComponentBlock } from "./component-block";
 import { ComponentBlockV2 } from "./component-blockV2"
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
-import { vkbBlockEditor } from "./../../_helper/depModules";
+import { vkbBlockEditor } from "./../../../utils/depModules";
 const { RichText } = vkbBlockEditor;
 
 function set_attributes(number) {
@@ -185,7 +185,7 @@ export const deprecated = [
                                         />
                                     </div>
 
-                                } 
+                                }
 
                                     if (!color1) {
                                         color1 = '#0693e3';
@@ -203,7 +203,7 @@ export const deprecated = [
 	style={ { color: '#fff' } }>
                                             </i>
                                         </div>
-                                    } 
+                                    }
                                         return <div
 	className="vk_prBlocks_item_icon_outer"
 	style={ { backgroundColor: 'transparent', border: '1px solid ' + color1 } }
@@ -211,8 +211,8 @@ export const deprecated = [
 	style={ { color: color1 } }>
                                             </i>
                                         </div>
-                                    
-                                
+
+
                             })() }
 				<RichText.Content
 					className="vk_prBlocks_item_title vk_prBlocks_item_title-1"
@@ -247,7 +247,7 @@ export const deprecated = [
                                         />
                                     </div>
 
-                                } 
+                                }
                                     if (!color2) {
                                         color2 = '#0693e3';
                                         bgType2 === '0';
@@ -263,7 +263,7 @@ export const deprecated = [
 	style={ { color: '#fff' } }>
                                             </i>
                                         </div>
-                                    } 
+                                    }
                                         return <div
 	className="vk_prBlocks_item_icon_outer"
 	style={ { backgroundColor: 'transparent', border: '1px solid ' + color2 } }
@@ -271,8 +271,8 @@ export const deprecated = [
 	style={ { color: color2 } }>
                                             </i>
                                         </div>
-                                    
-                                
+
+
                             })() }
 				<RichText.Content
 					className="vk_prBlocks_item_title vk_prBlocks_item_title-2"
@@ -308,7 +308,7 @@ export const deprecated = [
                                         />
                                     </div>
 
-                                } 
+                                }
                                     if (!color3) {
                                         color3 = '#0693e3';
                                         bgType3 === '0';
@@ -324,7 +324,7 @@ export const deprecated = [
 	style={ { color: '#fff' } }>
                                             </i>
                                         </div>
-                                    } 
+                                    }
                                         return <div
 	className="vk_prBlocks_item_icon_outer"
 	style={ { backgroundColor: 'transparent', border: '1px solid ' + color3 } }
@@ -332,8 +332,8 @@ export const deprecated = [
 	style={ { color: color3 } }>
                                             </i>
                                         </div>
-                                    
-                                
+
+
                             })() }
 				<RichText.Content
 					className="vk_prBlocks_item_title vk_prBlocks_item_title-3"

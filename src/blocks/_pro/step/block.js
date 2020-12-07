@@ -4,7 +4,7 @@
  */
 import { Component } from "./component";
 import { schema } from "./schema";
-import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
+import { hiddenNewBlock } from "../../../utils/hiddenNewBlock"
 import BlockIcon from "./icon.svg";
 const inserterVisible = hiddenNewBlock(5.3);
 
@@ -12,11 +12,11 @@ const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 const { PanelBody } = wp.components;
 const { Fragment, useEffect } = wp.element;
-import { vkbBlockEditor, dispatchEditor } from "../../_helper/depModules"
+import { vkbBlockEditor, dispatchEditor } from "../../../utils/depModules"
 const { InspectorControls } = vkbBlockEditor;
 const { updateBlockAttributes } = dispatchEditor;
-import { asyncGetInnerBlocks } from "../../_helper/asyncHooks";
-import { title, content } from "../../_helper/example-data";
+import { asyncGetInnerBlocks } from "../../../utils/asyncHooks";
+import { title, content } from "../../../utils/example-data";
 
 
 registerBlockType("vk-blocks/step", {

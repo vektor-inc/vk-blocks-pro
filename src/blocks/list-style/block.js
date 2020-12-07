@@ -2,7 +2,7 @@
  * list-style block type
  *
  */
-import {convertColorClass} from "../_helper/color-code-to-class.js";
+import {convertColorClass} from "../../utils/color-code-to-class.js";
 
 const {assign} = lodash;
 const {__} = wp.i18n;

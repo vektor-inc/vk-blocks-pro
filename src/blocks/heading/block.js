@@ -5,8 +5,8 @@
 import { schema, example } from "./schema";
 import { VKBHeading } from "./component";
 import { Deprecated } from "./deprecated/block";
-import { vkbBlockEditor } from "./../_helper/depModules";
-import { FontAwesome } from "./../_helper/font-awesome-new";
+import { vkbBlockEditor } from "./../../utils/depModules";
+import { FontAwesome } from "./../../utils/font-awesome-new";
 import BlockIcon from "./icon.svg";
 
 import HeadingLevelDropdown from './heading-level-dropdown';

@@ -4,7 +4,7 @@
  */
 import Component from "./component";
 import { schema } from './schema';
-import { vkbBlockEditor } from "./../_helper/depModules";
+import { vkbBlockEditor } from "./../../utils/depModules";
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks

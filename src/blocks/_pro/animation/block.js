@@ -5,8 +5,8 @@
 import classNames from "classnames";
 import { schema } from "./schema";
 import { deprecated } from './deprecated/';
-import {vkbBlockEditor} from "../../_helper/depModules"
-import replaceClientId from "../../_helper/replaceClientId"
+import {vkbBlockEditor} from "../../../utils/depModules"
+import replaceClientId from "../../../utils/replaceClientId"
 import BlockIcon from "./icon.svg";
 
 const { __ } = wp.i18n;

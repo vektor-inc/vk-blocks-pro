@@ -6,11 +6,11 @@ const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { RangeControl, PanelBody, BaseControl, SelectControl, CheckboxControl, TextControl } = wp.components;
 const { Fragment } = wp.element;
-import { vkbBlockEditor, fixBrokenUnicode } from "../../_helper/depModules";
-import { depServerSideRender } from "../../_helper/depModules";
+import { vkbBlockEditor, fixBrokenUnicode } from "../../../utils/depModules";
+import { depServerSideRender } from "../../../utils/depModules";
 const { InspectorControls } = vkbBlockEditor;
 const ServerSideRender = depServerSideRender();
-import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
+import { hiddenNewBlock } from "../../../utils/hiddenNewBlock"
 import BlockIcon from "./icon.svg";
 const inserterVisible = hiddenNewBlock(5.3);
 

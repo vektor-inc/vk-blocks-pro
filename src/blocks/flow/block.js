@@ -3,8 +3,8 @@
  *
  */
 import { deprecated } from './deprecated'
-import { vkbBlockEditor } from "./../_helper/depModules";
-import { content, title, iconPicture } from "./../_helper/example-data"
+import { vkbBlockEditor } from "./../../utils/depModules";
+import { content, title, iconPicture } from "./../../utils/example-data"
 import BlockIcon from "./icon.svg";
 
 const { __ } = wp.i18n; // Import __() from wp.i18n

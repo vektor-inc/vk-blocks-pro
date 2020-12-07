@@ -5,7 +5,7 @@
 import { schema,example } from "./schema";
 import { PRcontent } from "./component";
 import { deprecated } from "./deprecated/deprecated";
-import { FontAwesome } from "./../_helper/font-awesome-new"
+import { FontAwesome } from "./../../utils/font-awesome-new"
 import BlockIcon from "./icon.svg";
 
 const { __ } = wp.i18n; // Import __() from wp.i18n

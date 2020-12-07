@@ -1,4 +1,4 @@
-import { iconName, iconUser, iconPicture, title, content, baseColor, url } from "./../_helper/example-data"
+import { iconName, iconUser, iconPicture, title, content, baseColor, url } from "./../../utils/example-data"
 export const schema = {
 	title: {
 		source: "html",

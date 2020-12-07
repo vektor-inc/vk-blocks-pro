@@ -4,9 +4,9 @@
  */
 import { Component } from "./component";
 import { schema } from './schema';
-import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
+import { hiddenNewBlock } from "../../../utils/hiddenNewBlock"
 import BlockIcon from "./icon.svg";
-import { title } from "../../_helper/example-data";
+import { title } from "../../../utils/example-data";
 
 const inserterVisible = hiddenNewBlock(5.3);
 

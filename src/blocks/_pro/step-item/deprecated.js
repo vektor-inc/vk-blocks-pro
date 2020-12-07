@@ -1,7 +1,7 @@
-import { vkbBlockEditor } from "./../../_helper/depModules";
+import { vkbBlockEditor } from "./../../../utils/depModules";
 const { InnerBlocks } = vkbBlockEditor;
 const { __ } = wp.i18n; // Import __() from wp.i18n
-import { faSchema } from "../../_helper/font-awesome";
+import { faSchema } from "../../../utils/font-awesome";
 
 export const originalSchema = {
     label: {

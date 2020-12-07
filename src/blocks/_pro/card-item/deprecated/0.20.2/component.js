@@ -5,8 +5,8 @@ const { Button } = wp.components;
 const { Fragment } = wp.element;
 const { dispatch } = wp.data;
 
-import { convertToGrid } from "../../../../_helper/convert-to-grid";
-import { fixBrokenUnicode } from "./../../../../_helper/depModules";
+import { convertToGrid } from "../../../../../utils/convert-to-grid";
+import { fixBrokenUnicode } from "./../../../../../utils/depModules";
 
 export class Component extends React.Component {
   render() {

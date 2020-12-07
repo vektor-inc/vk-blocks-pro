@@ -5,8 +5,8 @@
 import { ColumnResponsive } from "./component";
 import { schema } from "./schema";
 import classNames from "classnames";
-import { convertToGrid } from "../../_helper/convert-to-grid";
-import replaceClientId from "../../_helper/replaceClientId"
+import { convertToGrid } from "../../../utils/convert-to-grid";
+import replaceClientId from "../../../utils/replaceClientId"
 import { AdvancedToggleControl } from "./../../../components/advanced-toggle-control";
 import AdvancedViewportControl from "../../../components/advanced-viewport-control"
 import AdvancedUnitControl from "../../../components/advanced-unit-control"

@@ -4,7 +4,7 @@
  */
 import { StepItem } from "./component";
 import { schema } from './schema';
-import { FontAwesome } from "../../_helper/font-awesome-new";
+import { FontAwesome } from "../../../utils/font-awesome-new";
 import BlockIcon from "./icon.svg";
 
 const { __ } = wp.i18n;

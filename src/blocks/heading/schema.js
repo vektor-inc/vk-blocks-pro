@@ -1,4 +1,4 @@
-import { iconUser, title, baseColor } from "./../_helper/example-data"
+import { iconUser, title, baseColor } from "./../../utils/example-data"
 
 export const schema = {
 	anchor: {

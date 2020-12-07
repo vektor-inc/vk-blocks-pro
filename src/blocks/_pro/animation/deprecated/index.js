@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import {vkbBlockEditor} from "../../../_helper/depModules";
+import {vkbBlockEditor} from "../../../../utils/depModules";
 import { Fragment } from "react";
 import Schema0_49_1 from "./0.49.1/schema"
 import Save0_49_1 from "./0.49.1/index"

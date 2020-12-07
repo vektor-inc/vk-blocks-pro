@@ -4,9 +4,9 @@
 import { OuterBlock } from "./component";
 import { schema } from "./schema";
 import { deprecated } from "./deprecated/block";
-import toNumber from "../../_helper/to-number";
+import toNumber from "../../../utils/to-number";
 import { AdvancedMediaUpload } from "../../../components/advanced-media-upload";
-import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
+import { hiddenNewBlock } from "../../../utils/hiddenNewBlock"
 import BlockIcon from "./icon.svg";
 
 const inserterVisible = hiddenNewBlock(5.3);

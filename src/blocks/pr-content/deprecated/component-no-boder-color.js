@@ -4,7 +4,7 @@ import { Fontawesome } from "./component-fontawesome-deprecated";
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { Button } = wp.components;
-import { vkbBlockEditor } from "./../../_helper/depModules";
+import { vkbBlockEditor } from "./../../../utils/depModules";
 const { MediaUpload, RichText } = vkbBlockEditor;
 
 export class ComponentNoBorderColor extends React.Component {
@@ -146,7 +146,7 @@ export class ComponentNoBorderColor extends React.Component {
                                         />
 	</React.Fragment>
                                 );
-                            } 
+                            }
                                 return (
 	<React.Fragment>
 		<RichText.Content
@@ -162,7 +162,7 @@ export class ComponentNoBorderColor extends React.Component {
 			style={ { color: contentColor } }
                                         />
 	</React.Fragment>);
-                            
+
                         })()
                     }
 			{

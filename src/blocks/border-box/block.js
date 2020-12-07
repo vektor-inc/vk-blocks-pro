@@ -12,7 +12,7 @@ const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { PanelBody, BaseControl,SelectControl } = wp.components;
 const { Fragment } = wp.element;
-import { vkbBlockEditor } from "./../_helper/depModules";
+import { vkbBlockEditor } from "./../../utils/depModules";
 const { InspectorControls } = vkbBlockEditor;
 
 

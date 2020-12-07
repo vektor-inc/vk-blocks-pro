@@ -20,10 +20,10 @@ const {
 	SelectControl,
 	BaseControl,
 } = wp.components;
-import { depServerSideRender } from "../../_helper/depModules";
+import { depServerSideRender } from "../../../utils/depModules";
 const ServerSideRender = depServerSideRender();
 const { Fragment } = wp.element;
-import { vkbBlockEditor } from "../../_helper/depModules";
+import { vkbBlockEditor } from "../../../utils/depModules";
 const { InspectorControls } = vkbBlockEditor;
 const { addFilter } = wp.hooks;
 const { createHigherOrderComponent } = wp.compose;

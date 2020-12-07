@@ -569,8 +569,12 @@ if ( ! function_exists( 'vkblocks_blocks_categories' ) ) {
 if ( ! function_exists( 'vkblocks_set_wp_version' ) ) {
 	function vkblocks_set_wp_version() {
 		global $wp_version;
+
+		// RC版の - を削除
+		$_wp_version =strstr($wp_version,'-',true);
+
 		echo '<script>',
-			'var wpVersion = "' . $wp_version . '";',
+			'var wpVersion = "' . $_wp_version . '";',
 		'</script>';
 	}
 	add_action( 'admin_head', 'vkblocks_set_wp_version', 10, 0 );

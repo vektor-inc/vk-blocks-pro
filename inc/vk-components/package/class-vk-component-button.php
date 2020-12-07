@@ -142,7 +142,7 @@ if ( ! class_exists( 'VK_Components_Button' ) ) {
 
 			// ゴーストだろうが塗りだろうが、ホバー時は背景塗りにするのでゴーストかどうかの条件分岐は関係ない
 
-			$color = VK../utilss::color_mode_check( $options['btn_color_bg'] );
+			$color = VK_Helpers::color_mode_check( $options['btn_color_bg'] );
 			if ( $color['brightness'] > 0.8 ) {
 				$style_text_hover = 'color:#000;';
 			} else {
@@ -188,7 +188,7 @@ if ( ! class_exists( 'VK_Components_Button' ) ) {
 
 			} elseif ( ! $options['btn_ghost'] ) {
 
-				$style_bg_hover = 'background-color:' . VK../utilss::color_auto_modifi( $options['btn_color_bg'], 1.2 ) . ';';
+				$style_bg_hover = 'background-color:' . VK_Helpers::color_auto_modifi( $options['btn_color_bg'], 1.2 ) . ';';
 			}
 			return $style_bg_hover;
 		}
@@ -221,7 +221,7 @@ if ( ! class_exists( 'VK_Components_Button' ) ) {
 			if ( $options['btn_ghost'] ) {
 				$style_border_hover = 'border-color:' . $options['btn_color_bg'] . ';';
 			} else {
-				$style_border_hover = 'border-color:' . VK../utilss::color_auto_modifi( $options['btn_color_bg'], 1.2 ) . ';';
+				$style_border_hover = 'border-color:' . VK_Helpers::color_auto_modifi( $options['btn_color_bg'], 1.2 ) . ';';
 			}
 			return $style_border_hover;
 		}

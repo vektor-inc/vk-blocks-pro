@@ -4,7 +4,7 @@
  */
 import { content } from "../../utils/example-data"
 import { ReactComponent as Icon } from './icon.svg';
-import deprecated from './deprecated';
+import deprecated from './deprecated/index';
 import edit from './edit';
 import metadata from './block.json';
 import save from './save';

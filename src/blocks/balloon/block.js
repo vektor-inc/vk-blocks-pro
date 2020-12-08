@@ -88,6 +88,9 @@ registerBlockType("vk-blocks/balloon", {
 	},
 
 	edit({ attributes, className, setAttributes }) {
+
+		console.log(className)
+
 		const {
 			content,
 			balloonName,

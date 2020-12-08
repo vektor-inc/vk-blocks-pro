@@ -1,7 +1,9 @@
 import { vkbBlockEditor } from "@vkblocks/utils/depModules";
 const  { RichText } = vkbBlockEditor;
 
-export default function save( { attributes } ) {
+export default function save( { attributes, className } ) {
+	console.log(className)
+
 	const {
 		style,
 		content

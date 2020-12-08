@@ -12,5 +12,8 @@
 			"source": "html",
 			"selector": "p"
 		}
+	},
+	"supports": {
+		"className": true
 	}
 }

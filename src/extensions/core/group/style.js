@@ -2,8 +2,8 @@
  * group-style block type
  *
  */
-import { convertColorClass } from "../../utils/color-code-to-class.js";
-import { vkbBlockEditor } from "./../../utils/depModules";
+import { convertColorClass } from "@vkblocks/utils/color-code-to-class.js";
+import { vkbBlockEditor } from "@vkblocks/utils/depModules";
 
 const { assign } = lodash;
 const { __ } = wp.i18n;

@@ -32,9 +32,7 @@
     "@wordpress/env": "^2.1.0",
     "@wordpress/scripts": "^12.5.0",
     "babel-loader": "^8.2.1",
-    "npm-check-updates": "^10.2.2",
-    "po2json": "^1.0.0-beta-3",
-    "url-loader": "^4.1.1",
+    "babel-plugin-module-resolver": "^4.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-clean-css": "^4.3.0",
@@ -45,7 +43,10 @@
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^2.0.0",
     "gulp-replace": "^1.0.0",
-    "gulp-sass": "^4.1.0"
+    "gulp-sass": "^4.1.0",
+    "npm-check-updates": "^10.2.2",
+    "po2json": "^1.0.0-beta-3",
+    "url-loader": "^4.1.1"
   },
   "dependencies": {
     "@wordpress/components": "^11.1.1",

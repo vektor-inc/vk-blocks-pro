@@ -18,6 +18,11 @@ module.exports = {
 					options: {
 						presets: [ '@babel/preset-env' ],
 						plugins: [
+							["module-resolver", {
+								"alias": {
+								  "@vkblocks": "./src"
+								}
+							}],
 							'@babel/plugin-transform-react-jsx',
 							[
 								// JSをスキャンして、potを作成/アップデート

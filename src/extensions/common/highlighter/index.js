@@ -7,7 +7,7 @@ const {RichTextToolbarButton, RichTextShortcut, InspectorControls, PanelColorSet
 const {Fragment} = wp.element;
 const name = 'vk-blocks/highlighter';
 
-import hex2rgba from "../../utils/hex-to-rgba";
+import hex2rgba from "@vkblocks/utils/hex-to-rgba";
 import { ReactComponent as Icon } from './icon.svg';
 
 registerFormatType(name, {
@@ -84,7 +84,7 @@ registerFormatType(name, {
 			onUse={ () => onToggle(activeColor) }
                 />
 		<RichTextToolbarButton
-			icon={ BlockIcon }
+			icon={ Icon }
 			title={ __('Highlighter', 'vk-blocks') }
 			onClick={ () => onToggle(activeColor) }
 			isActive={ isActive }

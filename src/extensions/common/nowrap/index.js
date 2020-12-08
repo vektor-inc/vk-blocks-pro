@@ -19,7 +19,7 @@ registerFormatType(
 			return (
 				<Fragment>
 					<RichTextToolbarButton
-						icon={ BlockIcon }
+						icon={ Icon }
 						title={ __('Nowrap', 'vk-blocks') }
 						onClick={ () => {
 							props.onChange (

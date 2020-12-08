@@ -1,10 +1,12 @@
 //Bundle JS
-import "./hidden-extension/";
 import "../translation_dummy.js";
-import "./heading-style/block.js";
-import "./group-style/block.js";
-import "./list-style/block.js";
-import "./highlighter/block.js";
+import "../extensions/core/heading/style";
+import "../extensions/core/group/style";
+import "../extensions/core/list/style";
+import "../extensions/core/image/style";
+import "../extensions/common/hidden-extension";
+import "../extensions/common/highlighter";
+import "../extensions/common/nowrap";
 import "./staff/block.js";
 import "./spacer/block.js";
 import "./heading/block.js";
@@ -15,11 +17,9 @@ import "./faq/block.js";
 import "./flow/block.js";
 import "./pr-blocks/block.js";
 import "./pr-content/block.js";
-import "./image/block.js";
-import "./nowrap/block.js";
 
 /*WP5.3 以下では読み込まれない*/
-import "./responsive-br/";
+import "../extensions/common/responsive-br";
 import "./border-box/block.js";
 import "./faq2/block.js";
 import "./faq2-q/block.js";

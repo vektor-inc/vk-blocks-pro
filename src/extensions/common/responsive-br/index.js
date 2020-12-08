@@ -1,5 +1,4 @@
-import BlockIcon from './icon.svg';
-
+import { ReactComponent as Icon } from './icon.svg';
 const { __ } = wp.i18n;
 const { registerFormatType, insert } = wp.richText;
 const { BlockControls } = wp.blockEditor;

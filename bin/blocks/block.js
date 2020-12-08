@@ -11,7 +11,7 @@ const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.b
 const { RangeControl, RadioControl, PanelBody, Button, PanelColor, BaseControl } = wp.components;
 const { Fragment } = wp.element;
 const { RichText, InspectorControls, MediaUpload, ColorPalette } = vkbBlockEditor;
-const BlockIcon = 'arrow-down';
+const Icon = 'arrow-down';
 
 /**
  * Register: a Gutenberg Block.
@@ -29,7 +29,7 @@ const BlockIcon = 'arrow-down';
 registerBlockType('vk-blocks/your-block-slug', {
     // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
     title: __('your-block-slug', 'vk-blocks'), // Block title.
-    icon: BlockIcon, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
+    icon: Icon, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
     category: 'vk-blocks-cat', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
     attributes: schema,
 

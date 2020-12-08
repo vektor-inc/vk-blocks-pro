@@ -17,7 +17,7 @@ import { deprecated } from './deprecated';
 
 registerBlockType('vk-blocks/step-item', {
 	title: __('Step Item', 'vk-blocks'),
-	icon: BlockIcon,
+	icon: Icon,
 	category: 'vk-blocks-cat',
 	attributes: schema,
 	parent: ['vk-blocks/step'],

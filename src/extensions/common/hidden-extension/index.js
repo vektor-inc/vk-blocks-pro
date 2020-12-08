@@ -5,7 +5,7 @@ const { PanelBody, BaseControl } = wp.components;
 const { InspectorControls } =
 	wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const { createHigherOrderComponent } = wp.compose;
-import { AdvancedToggleControl } from "../../components/advanced-toggle-control";
+import { AdvancedToggleControl } from "@vkblocks/components/advanced-toggle-control";
 import classnames from "classnames";
 
 // Check the keyword including str or not

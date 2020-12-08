@@ -6,7 +6,7 @@ import Body from "./Body";
 import { schema, example } from './schema';
 import { FontAwesome } from "./font-awesome-new";
 import { deprecated }  from "./deprecated"
-import BlockIcon from "./icon.svg";
+import { ReactComponent as Icon } from './icon.svg';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -18,7 +18,7 @@ const { InspectorControls } = vkbBlockEditor;
 
 registerBlockType('vk-blocks/border-box', {
 	title: __('Border Box', 'vk-blocks'),
-    icon: <BlockIcon />,
+    icon: <Icon />,
 	category: 'vk-blocks-cat',
 	attributes: schema,
 	supports:{

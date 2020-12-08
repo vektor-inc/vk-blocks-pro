@@ -7,7 +7,7 @@ import { deprecated } from "./deprecated/block";
 import toNumber from "../../../utils/to-number";
 import { AdvancedMediaUpload } from "../../../components/advanced-media-upload";
 import { hiddenNewBlock } from "../../../utils/hiddenNewBlock"
-import BlockIcon from "./icon.svg";
+import { ReactComponent as Icon } from './icon.svg';
 
 const inserterVisible = hiddenNewBlock(5.3);
 
@@ -28,7 +28,7 @@ const { InspectorControls, ColorPalette } =
 
 registerBlockType("vk-blocks/outer", {
 	title: __("Outer", "vk-blocks"),
-	icon: <BlockIcon />,
+	icon: <Icon />,
 	category: "vk-blocks-cat-layout",
 	attributes: schema,
 	supports: {

@@ -11,7 +11,7 @@ import { depServerSideRender } from "../../../utils/depModules";
 const { InspectorControls } = vkbBlockEditor;
 const ServerSideRender = depServerSideRender();
 import { hiddenNewBlock } from "../../../utils/hiddenNewBlock"
-import BlockIcon from "./icon.svg";
+import { ReactComponent as Icon } from './icon.svg';
 const inserterVisible = hiddenNewBlock(5.3);
 
 
@@ -28,7 +28,7 @@ import { flat } from "../../../utils/multi-array-flaten";
 
 registerBlockType("vk-blocks/post-list", {
 	title: __("Post list", "vk-blocks"),
-	icon: <BlockIcon />,
+	icon: <Icon />,
 	category: "vk-blocks-cat",
 	attributes: schema,
 	supports: {

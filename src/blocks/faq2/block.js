@@ -5,7 +5,7 @@ import { vkbBlockEditor } from "./../../utils/depModules";
 import { deprecated } from "./deprecated";
 import classNames from "classnames";
 import { content, title } from "./../../utils/example-data";
-import BlockIcon from "./icon.svg";
+import { ReactComponent as Icon } from './icon.svg';
 
 const { registerBlockType } = wp.blocks;
 const { Fragment } = wp.element;
@@ -15,7 +15,7 @@ const { __ } = wp.i18n;
 
 registerBlockType("vk-blocks/faq2", {
 	title: __("New FAQ", "vk-blocks"),
-	icon: <BlockIcon />,
+	icon: <Icon />,
 	category: "vk-blocks-cat",
 	supports: {
 		anchor: true,

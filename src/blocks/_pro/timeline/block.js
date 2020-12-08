@@ -5,7 +5,7 @@
 import { Component } from "./component";
 import { schema } from './schema';
 import { hiddenNewBlock } from "../../../utils/hiddenNewBlock"
-import BlockIcon from "./icon.svg";
+import { ReactComponent as Icon } from './icon.svg';
 import { title } from "../../../utils/example-data";
 
 const inserterVisible = hiddenNewBlock(5.3);
@@ -30,7 +30,7 @@ const { Fragment } = wp.element;
 registerBlockType('vk-blocks/timeline', {
     // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
     title: __('Timeline', 'vk-blocks'), // Block title.
-    icon: <BlockIcon />, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
+    icon: <Icon />, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
     category: 'vk-blocks-cat', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
     attributes: schema,
     supports: {

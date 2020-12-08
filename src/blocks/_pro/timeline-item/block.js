@@ -5,7 +5,7 @@
 import {Component} from "./component";
 import {schema} from './schema';
 import React from "react";
-import BlockIcon from "./icon.svg";
+import { ReactComponent as Icon } from './icon.svg';
 
 const {__} = wp.i18n;
 const {registerBlockType} = wp.blocks;
@@ -16,7 +16,7 @@ const {InspectorControls,ColorPalette } = wp.blockEditor && wp.blockEditor.Block
 
 registerBlockType('vk-blocks/timeline-item', {
     title: __('Timeline Item', 'vk-blocks'),
-    icon: <BlockIcon />,
+    icon: <Icon />,
     category: 'vk-blocks-cat',
     attributes: schema,
     parent: [ 'vk-blocks/timeline' ],

@@ -45,7 +45,7 @@ registerFormatType( `vk-blocks/responsive-br`, {
 								title:
 									__( `Responsive BR `, 'vk-blocks' ) +
 									`( ${ breakPoint } )`,
-								icon: <BlockIcon />,
+								icon: <Icon />,
 								onClick: () => {
 									insertBR( value, breakPoint );
 								},

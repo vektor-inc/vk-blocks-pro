@@ -8,7 +8,7 @@ const {Fragment} = wp.element;
 const name = 'vk-blocks/highlighter';
 
 import hex2rgba from "../../utils/hex-to-rgba";
-import BlockIcon from "./icon.svg";
+import { ReactComponent as Icon } from './icon.svg';
 
 registerFormatType(name, {
     title: __('Highlighter', 'vk-blocks'),

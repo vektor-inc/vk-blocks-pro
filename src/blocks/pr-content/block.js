@@ -6,7 +6,7 @@ import { schema,example } from "./schema";
 import { PRcontent } from "./component";
 import { deprecated } from "./deprecated/deprecated";
 import { FontAwesome } from "./../../utils/font-awesome-new"
-import BlockIcon from "./icon.svg";
+import { ReactComponent as Icon } from './icon.svg';
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
@@ -24,7 +24,7 @@ const { InspectorControls, ColorPalette } =
 
 registerBlockType("vk-blocks/pr-content", {
 	title: __("PR Content", "vk-blocks"), // Block title.
-	icon: <BlockIcon />, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
+	icon: <Icon />, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: "vk-blocks-cat", // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	attributes: schema,
 	example,

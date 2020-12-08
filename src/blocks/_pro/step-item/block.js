@@ -5,7 +5,7 @@
 import { StepItem } from "./component";
 import { schema } from './schema';
 import { FontAwesome } from "../../../utils/font-awesome-new";
-import BlockIcon from "./icon.svg";
+import { ReactComponent as Icon } from './icon.svg';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;

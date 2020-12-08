@@ -4,7 +4,7 @@
  */
 import { schema } from "./schema";
 import { deprecated } from "./deprecated";
-import BlockIcon from "./icon.svg";
+import { ReactComponent as Icon } from './icon.svg';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -23,7 +23,7 @@ import SliderItem from "./SliderItem"
 
 registerBlockType("vk-blocks/slider-item", {
 	title: __("Slider Item", "vk-blocks"),
-	icon: <BlockIcon />,
+	icon: <Icon />,
 	category: "vk-blocks-cat",
 	attributes: schema,
 	parent: ["vk-blocks/slider"],

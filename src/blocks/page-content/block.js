@@ -1,4 +1,4 @@
-import BlockIcon from "./icon.svg";
+import { ReactComponent as Icon } from './icon.svg';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -10,7 +10,7 @@ const React = wp.element
 
 registerBlockType( 'vk-blocks/page-content', {
 	title: __('Page Content','vk-blocks' ),
-	icon: <BlockIcon />,
+	icon: <Icon />,
 	category: "vk-blocks-cat",
 	attributes: {
 		TargetPost: {

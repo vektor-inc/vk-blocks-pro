@@ -1,7 +1,7 @@
 /**
  * No Wrap
  */
-import BlockIcon from "./icon.svg";
+import { ReactComponent as Icon } from './icon.svg';
 
 const {__} = wp.i18n; // Import __() from wp.i18n
 const {registerFormatType, toggleFormat, applyFormat, removeFormat, getActiveFormat} = window.wp.richText;

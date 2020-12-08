@@ -11,7 +11,7 @@ import { AdvancedToggleControl } from "./../../../components/advanced-toggle-con
 import AdvancedViewportControl from "../../../components/advanced-viewport-control"
 import AdvancedUnitControl from "../../../components/advanced-unit-control"
 import deprecated from "./deprecated/"
-import BlockIcon from "./icon.svg";
+import { ReactComponent as Icon } from './icon.svg';
 import compareVersions from 'compare-versions';
 
 const { __ } = wp.i18n;
@@ -31,7 +31,7 @@ if (window.wpVersion && 5.4 <= parseFloat(window.wpVersion)) {
 
 registerBlockType("vk-blocks/slider", {
 	title: __("Slider", "vk-blocks"),
-	icon: <BlockIcon />,
+	icon: <Icon />,
 	category: "vk-blocks-cat-layout",
 	attributes: schema,
 	description: __( 'Slider is do not move in edit screen.','vk-blocks'),

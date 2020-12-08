@@ -7,7 +7,7 @@ import { VKBHeading } from "./component";
 import { Deprecated } from "./deprecated/block";
 import { vkbBlockEditor } from "./../../utils/depModules";
 import { FontAwesome } from "./../../utils/font-awesome-new";
-import BlockIcon from "./icon.svg";
+import { ReactComponent as Icon } from './icon.svg';
 
 import HeadingLevelDropdown from './heading-level-dropdown';
 
@@ -32,7 +32,7 @@ const {
 registerBlockType("vk-blocks/heading", {
 
 	title: __("Heading", "vk-blocks"),
-	icon: <BlockIcon />,
+	icon: <Icon />,
 	category: "vk-blocks-cat",
 	attributes: schema,
 	supports: {

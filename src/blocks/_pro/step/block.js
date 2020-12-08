@@ -5,7 +5,7 @@
 import { Component } from "./component";
 import { schema } from "./schema";
 import { hiddenNewBlock } from "../../../utils/hiddenNewBlock"
-import BlockIcon from "./icon.svg";
+import { ReactComponent as Icon } from './icon.svg';
 const inserterVisible = hiddenNewBlock(5.3);
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
@@ -21,7 +21,7 @@ import { title, content } from "../../../utils/example-data";
 
 registerBlockType("vk-blocks/step", {
 	title: __("Step", "vk-blocks"), // Block title.
-	icon: <BlockIcon />, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
+	icon: <Icon />, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: "vk-blocks-cat", // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	attributes: schema,
 	supports: {

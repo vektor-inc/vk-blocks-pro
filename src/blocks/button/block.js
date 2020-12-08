@@ -7,7 +7,7 @@ import { deprecated } from './deprecated/deprecated';
 import { vkbBlockEditor } from './../../utils/depModules';
 import { title, iconName, url, iconUser } from './../../utils/example-data';
 import { FontAwesome } from '../../utils/font-awesome-new';
-import BlockIcon from './icon.svg';
+import { ReactComponent as Icon } from './icon.svg';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -25,7 +25,7 @@ const { RichText, InspectorControls, ColorPalette } = vkbBlockEditor;
 
 registerBlockType( 'vk-blocks/button', {
 	title: __( 'Button', 'vk-blocks' ),
-	icon: <BlockIcon />,
+	icon: <Icon />,
 	category: 'vk-blocks-cat',
 	attributes: {
 		content: {

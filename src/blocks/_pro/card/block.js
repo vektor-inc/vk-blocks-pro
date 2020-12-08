@@ -13,7 +13,7 @@ import { vkbBlockEditor } from "./../../../utils/depModules";
 import AdvancedViewportControl from "../../../components/advanced-viewport-control"
 import AdvancedUnitControl from "../../../components/advanced-unit-control"
 import { title, content, pictureJson } from "../../../utils/example-data";
-import BlockIcon from "./icon.svg";
+import { ReactComponent as Icon } from './icon.svg';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -29,7 +29,7 @@ export const prefix =  "vk_card_"
 
 registerBlockType("vk-blocks/card", {
 	title: __("Card", "vk-blocks"),
-	icon: <BlockIcon />,
+	icon: <Icon />,
 	category: "vk-blocks-cat",
 	attributes: schema,
 	supports: {

@@ -5,7 +5,7 @@
 import { deprecated } from './deprecated';
 import { vkbBlockEditor } from "./../../utils/depModules";
 import { content } from "./../../utils/example-data"
-import BlockIcon from "./icon.svg";
+import { ReactComponent as Icon } from './icon.svg';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -18,7 +18,7 @@ registerBlockType('vk-blocks/alert', {
 
 	title: __('Alert', 'vk-blocks'),
 
-	icon: <BlockIcon />,
+	icon: <Icon />,
 
 	category: 'vk-blocks-cat',
 

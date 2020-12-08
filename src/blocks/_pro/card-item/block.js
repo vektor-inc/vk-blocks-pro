@@ -6,7 +6,7 @@ import { Component } from "./component";
 import { schema } from "./schema";
 import { LinkControl } from "../../../components/link-control";
 import { deprecated } from "./deprecated/index"
-import BlockIcon from "./icon.svg";
+import { ReactComponent as Icon } from './icon.svg';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -18,7 +18,7 @@ const { Fragment } = wp.element;
 
 registerBlockType("vk-blocks/card-item", {
   title: __("Card Item", "vk-blocks"),
-  icon: <BlockIcon />,
+  icon: <Icon />,
   category: "vk-blocks-cat",
   attributes: schema,
   parent: ["vk-blocks/card"],

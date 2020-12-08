@@ -11,7 +11,7 @@ import {
 	removeUnnecessaryElements,
 	asyncGetBlocksByName,
 } from "./toc-utils";
-import BlockIcon from "./icon.svg";
+import { ReactComponent as Icon } from './icon.svg';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -32,7 +32,7 @@ import TocBody from './TocBody'
 
 registerBlockType("vk-blocks/table-of-contents-new", {
 	title: __("Table of Contents", "vk-blocks"),
-	icon: <BlockIcon />,
+	icon: <Icon />,
 	category: "vk-blocks-cat",
 	attributes: schema,
 	supports: {

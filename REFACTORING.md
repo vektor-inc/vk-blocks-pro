@@ -1,7 +1,7 @@
 # VK Blocks リファクタリング項目
 
 ## 全体
-- extensionsに移動。
+- ✅ extensionsに移動。
 - ブロックの登録方法を変更：[ブロックの登録| Gutenberg](https://github.com/WordPress/gutenberg/blob/master/packages/block-library/src/index.js)
 - ✅ svgの読み込み統一
 - ✅ utils と _helper 統合

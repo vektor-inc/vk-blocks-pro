@@ -1,3 +1,7 @@
+// Import Blocks | リファクタリング後の新方式で読み込み
+import { registerVKBlocks } from "./index"
+registerVKBlocks();
+
 //Bundle JS
 import "../translation_dummy.js";
 import "../extensions/core/heading/style";
@@ -10,7 +14,7 @@ import "../extensions/common/nowrap";
 import "./staff/block.js";
 import "./spacer/block.js";
 import "./heading/block.js";
-import "./alert/block.js";
+import "./alert/index.js";
 import "./balloon/block.js";
 import "./button/block.js";
 import "./faq/block.js";

@@ -6,11 +6,6 @@ import '@wordpress/notices';
 import '@wordpress/block-editor';
 import {
 	registerBlockType,
-	setDefaultBlockName,
-	setFreeformContentHandlerName,
-	setUnregisteredTypeHandlerName,
-	setGroupingBlockName,
-	unstable__bootstrapServerSideBlockDefinitions, // eslint-disable-line camelcase
 } from '@wordpress/blocks';
 
 /**
@@ -28,10 +23,7 @@ const registerBlock = ( block ) => {
 	if ( ! block ) {
 		return;
 	}
-	const { metadata, settings, name } = block;
-	if ( metadata ) {
-		unstable__bootstrapServerSideBlockDefinitions( { [ name ]: metadata } );
-	}
+	const { settings, name } = block;
 	registerBlockType( name, settings );
 };
 
@@ -67,13 +59,4 @@ export const registerVKBlocks = (
 	blocks = __getVKBlocks()
 ) => {
 	blocks.forEach( registerBlock );
-
-	setDefaultBlockName( paragraph.name );
-	if ( window.wp && window.wp.oldEditor ) {
-		setFreeformContentHandlerName( classic.name );
-	}
-	setUnregisteredTypeHandlerName( missing.name );
-	setGroupingBlockName( group.name );
 };
-
-registerVKBlocks();

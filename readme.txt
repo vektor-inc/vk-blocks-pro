@@ -63,6 +63,12 @@ e.g.
 
 == Changelog ==
 
+= 0.58.6 =
+[ Bug fix ] Change for WordPress5.6
+
+= 0.58.5 =
+[ Bug fix ] Change for WordPress5.6
+
 = 0.58.4 =
 [ Bug fix ] Change for WordPress5.6
 

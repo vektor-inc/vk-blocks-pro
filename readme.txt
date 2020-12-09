@@ -2,7 +2,7 @@
 Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips
 Donate link:
 Tags: Gutenberg,FAQ,alert
-Requires at least: 5.0
+Requires at least: 5.3
 Tested up to: 5.6
 Stable tag: 0.58.6
 Requires PHP: 5.6.0

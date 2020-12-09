@@ -570,7 +570,7 @@ if ( ! function_exists( 'vkblocks_set_wp_version' ) ) {
 	function vkblocks_set_wp_version() {
 		global $wp_version;
 
-		// RC版場合
+		// RC版の場合
 		if(strpos($wp_version,'-') !== false){
 			$_wp_version = strstr($wp_version,'-',true);
 		} else {

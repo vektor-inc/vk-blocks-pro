@@ -6,8 +6,6 @@ require_once dirname( __FILE__ ) . '/view/responsive-br.php';
 require_once dirname( __FILE__ ) . '/style/balloon.php';
 // require_once dirname( __FILE__ ) . '/customize/vk-blocks-customize-config.php';
 
-require_once VK_BLOCKS_SRC_PATH . '/blocks/alert/index.php';
-
 // VK Blocks の管理画面
 require_once dirname( __FILE__ ) . '/admin/admin.php';
 
@@ -78,46 +76,46 @@ if ( ! function_exists( 'vkblocks_enqueue_point' ) ) {
  */
 add_action( 'after_setup_theme', 'vkblocks_enqueue_point' );
 
+function is_lager_than_wp( $target_version, $syntax=">=" ) {
+	global $wp_version;
+	return defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, $target_version, $syntax );
+}
+
 function vkblocks_blocks_assets() {
 
+	// CSSを登録
 	wp_register_style( 'vk-blocks-build-css', VK_BLOCKS_URL . 'build/block-build.css', array(), VK_BLOCKS_VERSION );
 	wp_register_style( 'vk-blocks-build-editor-css', VK_BLOCKS_URL . 'build/block-build-editor.css', array(), VK_BLOCKS_VERSION );
 
-	global $wp_version;
-	if ( defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, '5.3', '>=' ) ) {
-		$dependency = array(
-			'wp-block-editor',
-			'wp-blocks',
-			'wp-i18n',
-			'wp-element',
-			'wp-editor',
-			'wp-hooks',
-			'wp-compose',
-			'wp-edit-post',
-			'wp-components',
-			'wp-data',
-			'wp-plugins',
-			'wp-hooks',
-			'wp-api-fetch',
-			'wp-viewport',
-		);
-	} else {
-		$dependency = array(
-			'wp-blocks',
-			'wp-i18n',
-			'wp-element',
-			'wp-editor',
-			'wp-hooks',
-			'wp-compose',
-			'wp-edit-post',
-			'wp-components',
-			'wp-data',
-			'wp-plugins',
-			'wp-hooks',
-			'wp-api-fetch',
-			'wp-viewport',
+	//依存関係を定義
+	$dependency = array(
+		'wp-blocks',
+		'wp-i18n',
+		'wp-element',
+		'wp-editor',
+		'wp-hooks',
+		'wp-compose',
+		'wp-edit-post',
+		'wp-components',
+		'wp-data',
+		'wp-plugins',
+		'wp-hooks',
+		'wp-api-fetch',
+		'wp-viewport',
+	);
+	$dependency_wp53 = array(
+		'wp-block-editor',
+	);
+
+	//wp5.3以上で使えるAPIを追加。
+	if( is_lager_than_wp('5.3') ){
+		$dependency = array_merge(
+			$dependency,
+			$dependency_wp53
 		);
 	}
+
+	//ブロックのJavascriptを登録
 	wp_register_script(
 		'vk-blocks-build-js',
 		VK_BLOCKS_URL . 'build/block-build.js',
@@ -126,10 +124,12 @@ function vkblocks_blocks_assets() {
 		true
 	);
 
+	//翻訳を追加
 	if ( function_exists( 'wp_set_script_translations' ) ) {
 		wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks', plugin_dir_path( __FILE__ ) . 'build/languages' );
 	}
 
+	// プロ版の値をフロントエンドに出力
 	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 	if ( is_plugin_active( 'vk-blocks-pro/vk-blocks.php' ) ) {
 		wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_check', array( 'is_pro' => true ) );
@@ -164,9 +164,24 @@ function vkblocks_blocks_assets() {
 	// 投稿リストをブロック側に渡す.
 	wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_page_list', $option_posts );
 
-	if ( defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, '5.0', '>=' ) ) {
 
-		$arr = array( 'balloon', 'button', 'faq', 'flow', 'pr-blocks', 'pr-content', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents-new', 'highlighter', 'timeline', 'timeline-item', 'step', 'step-item', 'post-list', 'list-style', 'group-style', 'child-page', 'card', 'card-item', 'grid-column', 'grid-column-item', 'border-box', 'icon-card', 'icon-card-item', 'animation', 'slider', 'slider-item', 'faq2', 'faq2-q', 'faq2-a', 'responsive-br', 'nowrap' );// REPLACE-FLAG : このコメントは削除しないで下さい。wp-create-gurten-template.shで削除する基準として左の[//REPLACE-FLAG]を使っています。
+	if( is_lager_than_wp('5.0') ){
+
+		//register_blockで読み込むブロック
+		$arr = array( 'balloon', 'button', 'faq', 'flow', 'pr-blocks', 'pr-content', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents-new', 'highlighter', 'timeline', 'timeline-item', 'step', 'step-item', 'post-list', 'list-style', 'group-style', 'child-page', 'card', 'card-item', 'grid-column', 'grid-column-item', 'border-box', 'icon-card', 'icon-card-item', 'animation', 'slider', 'slider-item', 'faq2', 'faq2-q', 'faq2-a', 'responsive-br', 'nowrap' );
+		//register_block_type_from_metadataで読み込むブロック
+		$arr_wp56 = array( 'alert' );
+
+		if(function_exists('register_block_type_from_metadata')){
+			require_once VK_BLOCKS_SRC_PATH . '/blocks/alert/index.php';
+
+		} else {
+			$arr = array_merge(
+				$arr,
+				$arr_wp56
+			);
+		}
+
 		global $vk_blocks_common_attributes;
 		$vk_blocks_common_attributes = array(
 			'vkb_hidden'       => array(

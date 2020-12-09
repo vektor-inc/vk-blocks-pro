@@ -6,6 +6,8 @@ require_once dirname( __FILE__ ) . '/view/responsive-br.php';
 require_once dirname( __FILE__ ) . '/style/balloon.php';
 // require_once dirname( __FILE__ ) . '/customize/vk-blocks-customize-config.php';
 
+require_once VK_BLOCKS_SRC_PATH . '/blocks/alert/index.php';
+
 // VK Blocks の管理画面
 require_once dirname( __FILE__ ) . '/admin/admin.php';
 

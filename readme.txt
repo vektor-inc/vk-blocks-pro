@@ -9,6 +9,8 @@ Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
+うひょー
+
 This is a plugin that extends Gutenberg's blocks.
 
 == Description ==

@@ -7,6 +7,7 @@ import '@wordpress/block-editor';
 import {
 	registerBlockType,
 } from '@wordpress/blocks';
+import compareVersions from 'compare-versions';
 
 /**
  * Internal dependencies
@@ -23,7 +24,20 @@ const registerBlock = ( block ) => {
 	if ( ! block ) {
 		return;
 	}
-	const { settings, name } = block;
+
+	let { metadata, settings, name } = block;
+
+	//WP5.5未満の場合
+	if ( compareVersions( window.wpVersion, "5.5" ) < 0 ){
+		//nameを削除
+		delete metadata.name;
+		//カテゴリ等を追加
+		settings = {
+			...settings,
+			...metadata
+		}
+
+	}
 	registerBlockType( name, settings );
 };
 

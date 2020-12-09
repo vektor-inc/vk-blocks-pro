@@ -35,9 +35,6 @@ const registerBlock = ( block ) => {
 	registerBlockType( name, settings );
 };
 
-registerBlock( alert )
-
-
 /**
  * Function to get all the core blocks in an array.
  *
@@ -66,15 +63,17 @@ export const __getVKBlocks = () => [
  * registerCoreBlocks();
  * ```
  */
-// export const registerVKBlocks = (
-// 	blocks = __getVKBlocks()
-// ) => {
-// 	blocks.forEach( registerBlock );
+export const registerVKBlocks = (
+	blocks = __getVKBlocks()
+) => {
+	blocks.forEach( registerBlock );
 
-// 	// setDefaultBlockName( paragraph.name );
-// 	// if ( window.wp && window.wp.oldEditor ) {
-// 	// 	setFreeformContentHandlerName( classic.name );
-// 	// }
-// 	// setUnregisteredTypeHandlerName( missing.name );
-// 	// setGroupingBlockName( group.name );
-// };
+	setDefaultBlockName( paragraph.name );
+	if ( window.wp && window.wp.oldEditor ) {
+		setFreeformContentHandlerName( classic.name );
+	}
+	setUnregisteredTypeHandlerName( missing.name );
+	setGroupingBlockName( group.name );
+};
+
+registerVKBlocks();

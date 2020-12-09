@@ -5,7 +5,6 @@ import { vkbBlockEditor } from "@vkblocks/utils/depModules";
 const  { InspectorControls, RichText } = vkbBlockEditor;
 
 export default function AlertEdit( { attributes, setAttributes, className } ) {
-	console.log(className)
 	const {
 		style,
 		content

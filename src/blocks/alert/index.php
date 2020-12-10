@@ -14,6 +14,18 @@ if( function_exists('register_block_type_from_metadata')) {
 			)
 		);
 	}
-	add_action( 'init', 'register_block_vk_alert', 99 );
 }
+
+function register_block_vk_alert_deprecated_wp55() {
+	register_block_type(
+		'vk-blocks/alert',
+		array(
+			'editor_style' => 'vk-blocks-build-editor-css',
+			'editor_script' => 'vk-blocks-build-js',
+		)
+	);
+}
+
+add_action( 'init', 'register_block_vk_alert', 99 );
+
 

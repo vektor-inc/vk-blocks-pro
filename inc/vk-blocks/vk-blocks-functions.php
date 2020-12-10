@@ -13,18 +13,21 @@ function vkblocks_active() {
 	return true;
 }
 
+add_action( 'plugins_loaded', function() {
+	// Load language files.
+	$path = dirname( plugin_basename( __FILE__ ) ) . '/build/languages';
+	load_plugin_textdomain( 'vk-blocks', false, $path );
+
+}, 10, 0 );
+
+//　このリファクタリングはやめて、1つ前に戻そう
+// 理由: このリファクタリングすることで確認コストが発生するだけで、問題を解決していない。
+// このリファクタリングをするぐらいであれば、テストを書く。
 
 class VKB_Block_Setup {
 
 	public function __construct() {
-		add_action( 'plugins_loaded', array( $this, 'register_textdomain' ), 10, 0 );
 		add_action( 'init', array( $this, 'register_blocks_assets' ), 10, 0 );
-	}
-
-	function register_textdomain() {
-		// Load language files.
-		$path = dirname( plugin_basename( __FILE__ ) ) . '/build/languages';
-		load_plugin_textdomain( 'vk-blocks', false, $path );
 	}
 
 	function register_css(){
@@ -51,6 +54,39 @@ class VKB_Block_Setup {
 		$dynamic_css = preg_replace( '/\s(?=\s)/', '', $dynamic_css );
 		wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );
 	}
+
+	function get_dependencies(){
+
+		//依存関係を定義
+		$dependency = array(
+			'wp-blocks',
+			'wp-i18n',
+			'wp-element',
+			'wp-editor',
+			'wp-hooks',
+			'wp-compose',
+			'wp-edit-post',
+			'wp-components',
+			'wp-data',
+			'wp-plugins',
+			'wp-hooks',
+			'wp-api-fetch',
+			'wp-viewport',
+		);
+		$dependency_wp53 = array(
+			'wp-block-editor',
+		);
+
+		//wp5.3以上で使えるAPIを追加。
+		if( $this->is_lager_than_wp('5.3') ){
+			$dependency = array_merge(
+				$dependency,
+				$dependency_wp53
+			);
+		}
+		return $dependency;
+	}
+
 
 	function get_blocks_for_register() {
 		//register_blockで読み込むブロック
@@ -428,37 +464,6 @@ class VKB_Block_Setup {
 		} // foreach ( $blocks as $block ) {
 	}
 
-	function get_block_dependencies(){
-
-		//依存関係を定義
-		$dependency = array(
-			'wp-blocks',
-			'wp-i18n',
-			'wp-element',
-			'wp-editor',
-			'wp-hooks',
-			'wp-compose',
-			'wp-edit-post',
-			'wp-components',
-			'wp-data',
-			'wp-plugins',
-			'wp-hooks',
-			'wp-api-fetch',
-			'wp-viewport',
-		);
-		$dependency_wp53 = array(
-			'wp-block-editor',
-		);
-
-		//wp5.3以上で使えるAPIを追加。
-		if( $this->is_lager_than_wp('5.3') ){
-			$dependency = array_merge(
-				$dependency,
-				$dependency_wp53
-			);
-		}
-		return $dependency;
-	}
 
 	function register_extra_value() {
 		/**
@@ -506,9 +511,11 @@ class VKB_Block_Setup {
 
 		//Cssを登録
 		$this->register_css();
+		//ダイナミックCSSを追加
+		$this->register_dynamic_css();
 
 		//依存関係を取得
-		$dependency = $this->get_block_dependencies();
+		$dependency = $this->get_dependencies();
 
 		//ブロックのJavascriptを登録
 		wp_register_script(
@@ -523,9 +530,7 @@ class VKB_Block_Setup {
 		$this->register_extra_value();
 
 		//翻訳を追加
-		if ( function_exists( 'wp_set_script_translations' ) ) {
-			wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks', plugin_dir_path( __FILE__ ) . 'build/languages' );
-		}
+		wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks', plugin_dir_path( __FILE__ ) . 'build/languages' );
 
 		//登録するブロックのslugを取得
 		$blocks = $this->get_blocks_for_register();
@@ -539,8 +544,7 @@ class VKB_Block_Setup {
 		require_once dirname( __FILE__ ) . '/blocks/page-content/class-vk-page-content-block.php';
 		new VK_Page_Content_Block( $vkb_common_attributes );
 
-		//ダイナミックCSSを追加
-		$this->register_dynamic_css();
+
 
 	}
 }

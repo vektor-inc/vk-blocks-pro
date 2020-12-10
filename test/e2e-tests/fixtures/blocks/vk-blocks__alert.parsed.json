@@ -3,9 +3,9 @@
         "blockName": "vk-blocks/alert",
         "attrs": {},
         "innerBlocks": [],
-        "innerHTML": "\n<div class=\"wp-block-vk-blocks-alert alert alert-info\"><p>Welcome to VK Blocks!</p></div>\n",
+        "innerHTML": "\n<div class=\"wp-block-vk-blocks-alert alert alert-info\"><p>Hello World!</p></div>\n",
         "innerContent": [
-            "\n<div class=\"wp-block-vk-blocks-alert alert alert-info\"><p>Welcome to VK Blocks!</p></div>\n"
+            "\n<div class=\"wp-block-vk-blocks-alert alert alert-info\"><p>Hello World!</p></div>\n"
         ]
     }
 ]

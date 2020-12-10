@@ -11,3 +11,7 @@ editor-css/editor-block-build-marge.scss
 .DS_Store
 vendor/
 *.override.json
+src/blocks/**/style.css
+src/blocks/**/style.css.map
+src/blocks/_pro/**/style.css
+src/blocks/_pro/**/style.css.map

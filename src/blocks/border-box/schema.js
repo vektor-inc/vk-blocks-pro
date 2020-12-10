@@ -1,6 +1,6 @@
 const { __ } = wp.i18n;
 import { faSchema } from "./font-awesome-new";
-import { title, iconUser, content } from "../_helper/example-data"
+import { title, iconUser, content } from "../../utils/example-data"
 
 export const originalSchema = {
 	heading: {

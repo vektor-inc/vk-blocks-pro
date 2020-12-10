@@ -7,7 +7,7 @@ import { VKBButtonV1 } from "./componentV1"
 import Schema0410 from "./0.41.0/schema"
 import VKBButton0410 from "./0.41.0/block"
 
-import { vkbBlockEditor } from "./../../_helper/depModules";
+import { vkbBlockEditor } from "./../../../utils/depModules";
 const { RichText } = vkbBlockEditor;
 
 export const deprecated = [

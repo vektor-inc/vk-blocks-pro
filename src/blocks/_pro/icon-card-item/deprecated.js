@@ -1,9 +1,9 @@
 const { __ } = wp.i18n; // Import __() from wp.i18n
-import { vkbBlockEditor, fixBrokenUnicode } from "../../_helper/depModules";
+import { vkbBlockEditor, fixBrokenUnicode } from "../../../utils/depModules";
 const { RichText } = vkbBlockEditor;
 const { Fragment } = wp.element;
 import ReactHtmlParser from 'react-html-parser';
-import { convertToGrid } from "../../_helper/convert-to-grid";
+import { convertToGrid } from "../../../utils/convert-to-grid";
 
 
 

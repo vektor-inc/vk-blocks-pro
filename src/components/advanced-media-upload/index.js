@@ -4,7 +4,7 @@ const { Fragment } = wp.element;
 const { MediaUpload } =
 	wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const { dispatch } = wp.data;
-import noImage from "../../../inc/vk-blocks/images/no-image.png";
+import noImage from "../../../inc/vk-blocks/images/no-image.svg";
 
 export const AdvancedMediaUpload = (props) => {
 	const { schema, clientId, setAttributes, attributes } = props;

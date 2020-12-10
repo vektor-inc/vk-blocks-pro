@@ -1,5 +1,5 @@
 import { VKBButton } from "./component";
-import { vkbBlockEditor } from "./../../../_helper/depModules";
+import { vkbBlockEditor } from "./../../../../utils/depModules";
 const { RichText } = vkbBlockEditor;
 
 export default ({ attributes, className }) => {

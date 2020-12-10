@@ -11,18 +11,18 @@ const { Fragment } = wp.element
 const { InspectorControls } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor
 const { withSelect, select } = wp.data
-import { depServerSideRender } from "../../_helper/depModules"
+import { depServerSideRender } from "../../../utils/depModules"
 const ServerSideRender = depServerSideRender()
 import { schema } from "./schema"
 import { DisplayItemsControl } from "../../../components/display-items-control"
 import { ColumnLayoutControl } from "../../../components/column-layout-control"
-import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
-import BlockIcon from "./icon.svg";
+import { hiddenNewBlock } from "../../../utils/hiddenNewBlock"
+import { ReactComponent as Icon } from './icon.svg';
 const inserterVisible = hiddenNewBlock(5.3)
 
 registerBlockType("vk-blocks/child-page", {
   title: __("Child page list", "vk-blocks"),
-  icon: <BlockIcon />,
+  icon: <Icon />,
   category: "vk-blocks-cat",
   attributes: schema,
   supports: {

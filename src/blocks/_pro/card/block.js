@@ -7,13 +7,13 @@ import { schema } from "./schema";
 import { ColumnLayoutControl } from "../../../components/column-layout-control";
 import { CardAlignControls } from "../../../components/card-align-control";
 import { deprecated } from "./deprecated";
-import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
-import removeProperty from "../../_helper/removeProperty"
-import { vkbBlockEditor } from "./../../_helper/depModules";
+import { hiddenNewBlock } from "../../../utils/hiddenNewBlock"
+import removeProperty from "../../../utils/removeProperty"
+import { vkbBlockEditor } from "./../../../utils/depModules";
 import AdvancedViewportControl from "../../../components/advanced-viewport-control"
 import AdvancedUnitControl from "../../../components/advanced-unit-control"
-import { title, content, pictureJson } from "../../_helper/example-data";
-import BlockIcon from "./icon.svg";
+import { title, content, pictureJson } from "../../../utils/example-data";
+import { ReactComponent as Icon } from './icon.svg';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -29,7 +29,7 @@ export const prefix =  "vk_card_"
 
 registerBlockType("vk-blocks/card", {
 	title: __("Card", "vk-blocks"),
-	icon: <BlockIcon />,
+	icon: <Icon />,
 	category: "vk-blocks-cat",
 	attributes: schema,
 	supports: {

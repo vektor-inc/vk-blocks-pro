@@ -1,6 +1,7 @@
 import { __ } from '@wordpress/i18n';
 
-import { vkbBlockEditor } from './../_helper/depModules';
+import { vkbBlockEditor } from "./../../utils/depModules";
+
 const { RichText } = vkbBlockEditor;
 import ReactHtmlParser from 'react-html-parser';
 import { Fragment } from 'react';

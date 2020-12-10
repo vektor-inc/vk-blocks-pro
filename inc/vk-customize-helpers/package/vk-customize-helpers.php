@@ -26,7 +26,7 @@ if ( ! function_exists( 'vk_register_customize_helpers' ) ){
                 } // public function render_content() {
             } // class Custom_Text_Control extends WP_Customize_Control
         }
-    
+
         if ( ! class_exists( 'Custom_Html_Control' ) ) {
             class Custom_Html_Control extends WP_Customize_Control {
                 public $type             = 'customtext';

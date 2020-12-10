@@ -4,8 +4,9 @@
  */
 import { NewComponent } from "./component";
 import { schema, example } from './schema';
-import { vkbBlockEditor } from "./../_helper/depModules";
-import BlockIcon from "./icon.svg";
+import { vkbBlockEditor } from "./../../utils/depModules";
+import { ReactComponent as Icon } from './icon.svg';
+
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -15,7 +16,7 @@ const { InspectorControls, ColorPalette } = vkbBlockEditor;
 
 registerBlockType('vk-blocks/staff', {
     title: __('Staff', 'vk-blocks'),
-    icon: <BlockIcon />,
+    icon: <Icon/>,
     category: 'vk-blocks-cat',
 	attributes: schema,
 	example,

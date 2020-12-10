@@ -3,7 +3,7 @@
  *
  */
 import classNames from "classnames";
-import {vkbBlockEditor} from "../../../../_helper/depModules"
+import {vkbBlockEditor} from "../../../../../utils/depModules"
 const { InnerBlocks } = vkbBlockEditor;
 
 export default ( props ) => {

@@ -1,5 +1,5 @@
 import { componentDivider } from "./component-divider";
-import { vkbBlockEditor } from "./../../../_helper/depModules";
+import { vkbBlockEditor } from "./../../../../utils/depModules";
 const { InnerBlocks } = vkbBlockEditor;
 const { Component } = wp.element;
 

@@ -1,6 +1,6 @@
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { Component } = wp.element;
-import { vkbBlockEditor } from "./../../_helper/depModules";
+import { vkbBlockEditor } from "./../../../utils/depModules";
 const { RichText } = vkbBlockEditor;
 
 export class ComponentBlock extends Component {
@@ -68,7 +68,7 @@ export class ComponentBlock extends Component {
                     />
                 </div>
 
-            } 
+            }
 
                 if (!color[blockNumArrIndex]) {
                     color[blockNumArrIndex] = '#0693e3';
@@ -85,7 +85,7 @@ export class ComponentBlock extends Component {
 	style={ { color: '#fff' } }>
                         </i>
                     </div>
-                } 
+                }
                     return <div
 	className="vk_prBlocks_item_icon_outer"
 	style={ { backgroundColor: 'transparent', border: '1px solid ' + color[blockNumArrIndex] } }
@@ -93,8 +93,8 @@ export class ComponentBlock extends Component {
 	style={ { color: color[blockNumArrIndex] } }>
                         </i>
                     </div>
-                
-            
+
+
         })();
 
 

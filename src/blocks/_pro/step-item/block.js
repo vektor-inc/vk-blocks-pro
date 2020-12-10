@@ -4,8 +4,8 @@
  */
 import { StepItem } from "./component";
 import { schema } from './schema';
-import { FontAwesome } from "../../_helper/font-awesome-new";
-import BlockIcon from "./icon.svg";
+import { FontAwesome } from "../../../utils/font-awesome-new";
+import { ReactComponent as Icon } from './icon.svg';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -17,7 +17,7 @@ import { deprecated } from './deprecated';
 
 registerBlockType('vk-blocks/step-item', {
 	title: __('Step Item', 'vk-blocks'),
-	icon: BlockIcon,
+	icon: Icon,
 	category: 'vk-blocks-cat',
 	attributes: schema,
 	parent: ['vk-blocks/step'],

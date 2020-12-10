@@ -7,11 +7,11 @@ import { schema } from "./schema";
 import { deprecated } from "./deprecated";
 import { ColumnLayout } from "../../../components/column-layout";
 import { AlignControl } from "../../../components/align-control";
-import { hiddenNewBlock } from "../../_helper/hiddenNewBlock"
-import removeProperty from "../../_helper/removeProperty"
-import { fixBrokenUnicode } from "../../_helper/depModules";
-import BlockIcon from "./icon.svg";
-import { title, content, iconUser } from "../../_helper/example-data";
+import { hiddenNewBlock } from "../../../utils/hiddenNewBlock"
+import removeProperty from "../../../utils/removeProperty"
+import { fixBrokenUnicode } from "../../../utils/depModules";
+import { ReactComponent as Icon } from './icon.svg';
+import { title, content, iconUser } from "../../../utils/example-data";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -24,7 +24,7 @@ const inserterVisible = hiddenNewBlock(5.3);
 
 registerBlockType("vk-blocks/icon-card", {
   title: __("Icon Card", "vk-blocks"),
-  icon: <BlockIcon />,
+  icon: <Icon />,
   category: "vk-blocks-cat",
   attributes: schema,
   supports: {

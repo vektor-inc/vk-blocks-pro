@@ -5,11 +5,11 @@
 import React from "react";
 import { deprecated } from "./deprecated/block";
 import { ComponentBlock } from "./component-block";
-import { isNotJSON } from "../_helper/is-not-json";
-import { FontAwesome } from "../_helper/font-awesome-new"
-import { iconName, iconUser, title, baseColor, url } from "./../_helper/example-data"
-import { fixBrokenUnicode } from "./../_helper/depModules";
-import BlockIcon from "./icon.svg";
+import { isNotJSON } from "../../utils/is-not-json";
+import { FontAwesome } from "../../utils/font-awesome-new"
+import { iconName, iconUser, title, baseColor, url } from "./../../utils/example-data"
+import { fixBrokenUnicode } from "./../../utils/depModules";
+import { ReactComponent as Icon } from './icon.svg';
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
@@ -83,7 +83,7 @@ function setExample(number) {
 
 registerBlockType('vk-blocks/pr-blocks', {
 	title: __('PR Blocks', 'vk-blocks'),
-	icon: <BlockIcon />,
+	icon: <Icon />,
 	category: 'vk-blocks-cat',
 	attributes: set_attributes(4),
 	example:setExample(4),

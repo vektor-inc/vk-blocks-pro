@@ -5,9 +5,9 @@
 import classNames from "classnames";
 import { schema } from "./schema";
 import { deprecated } from './deprecated/';
-import {vkbBlockEditor} from "../../_helper/depModules"
-import replaceClientId from "../../_helper/replaceClientId"
-import BlockIcon from "./icon.svg";
+import {vkbBlockEditor} from "../../../utils/depModules"
+import replaceClientId from "../../../utils/replaceClientId"
+import { ReactComponent as Icon } from './icon.svg';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -19,7 +19,7 @@ const { select } = wp.data;
 
 registerBlockType("vk-blocks/animation", {
 	title: __("Animation", "vk-blocks"),
-	icon: <BlockIcon />,
+	icon: <Icon />,
 	category: "vk-blocks-cat",
 	attributes: schema,
 	supports: {

@@ -11,7 +11,7 @@ import {
 	removeUnnecessaryElements,
 	asyncGetBlocksByName,
 } from "./toc-utils";
-import BlockIcon from "./icon.svg";
+import { ReactComponent as Icon } from './icon.svg';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -20,10 +20,10 @@ const {
 	SelectControl,
 	BaseControl,
 } = wp.components;
-import { depServerSideRender } from "../../_helper/depModules";
+import { depServerSideRender } from "../../../utils/depModules";
 const ServerSideRender = depServerSideRender();
 const { Fragment } = wp.element;
-import { vkbBlockEditor } from "../../_helper/depModules";
+import { vkbBlockEditor } from "../../../utils/depModules";
 const { InspectorControls } = vkbBlockEditor;
 const { addFilter } = wp.hooks;
 const { createHigherOrderComponent } = wp.compose;
@@ -31,7 +31,7 @@ const { dispatch, select } = wp.data;
 
 registerBlockType("vk-blocks/table-of-contents", {
 	title: __("Table of Contents", "vk-blocks"),
-	icon: <BlockIcon />,
+	icon: <Icon />,
 	category: "vk-blocks-cat",
 	attributes: schema,
 	supports: {

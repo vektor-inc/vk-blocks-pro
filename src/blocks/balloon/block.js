@@ -3,9 +3,9 @@
  *
  */
 import { deprecated } from './deprecated';
-import { vkbBlockEditor } from "./../_helper/depModules";
-import { iconPicture, content, iconName, baseColor } from "../_helper/example-data"
-import BlockIcon from "./icon.svg";
+import { vkbBlockEditor } from "./../../utils/depModules";
+import { iconPicture, content, iconName, baseColor } from "../../utils/example-data"
+import { ReactComponent as Icon } from './icon.svg';
 
 const apiFetch = wp.apiFetch;
 const { __ } = wp.i18n;
@@ -16,7 +16,7 @@ const { RichText, InspectorControls, MediaUpload, ColorPalette, InnerBlocks } = 
 
 registerBlockType("vk-blocks/balloon", {
 	title: __("Ballon", "vk-blocks"),
-	icon: <BlockIcon />,
+	icon: <Icon />,
 	category: "vk-blocks-cat",
 	attributes: {
 		content: {
@@ -88,6 +88,9 @@ registerBlockType("vk-blocks/balloon", {
 	},
 
 	edit({ attributes, className, setAttributes }) {
+
+		console.log(className)
+
 		const {
 			content,
 			balloonName,

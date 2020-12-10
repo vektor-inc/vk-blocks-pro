@@ -3,9 +3,9 @@
  *
  */
 import { deprecated } from './deprecated'
-import { vkbBlockEditor } from "./../_helper/depModules";
-import { content, title, iconPicture } from "./../_helper/example-data"
-import BlockIcon from "./icon.svg";
+import { vkbBlockEditor } from "./../../utils/depModules";
+import { content, title, iconPicture } from "./../../utils/example-data"
+import { ReactComponent as Icon } from './icon.svg';
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
@@ -16,7 +16,7 @@ const { RichText, InspectorControls, MediaUpload } = vkbBlockEditor;
 
 registerBlockType('vk-blocks/flow', {
 	title: __('Flow', 'vk-blocks'), // Block title.
-	icon: <BlockIcon />, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
+	icon: <Icon />, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: 'vk-blocks-cat', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	attributes: {
 		heading: {

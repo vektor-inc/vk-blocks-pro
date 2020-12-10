@@ -1,10 +1,10 @@
 /**
  * FAQ Question Block
  */
-import { vkbBlockEditor } from "./../_helper/depModules";
+import { vkbBlockEditor } from "./../../utils/depModules";
 import classNames from "classnames";
-import { title } from "./../_helper/example-data";
-import BlockIcon from "./icon.svg";
+import { title } from "./../../utils/example-data";
+import { ReactComponent as Icon } from './icon.svg';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -12,7 +12,7 @@ const { InnerBlocks } = vkbBlockEditor;
 
 registerBlockType("vk-blocks/faq2-q", {
 	title: __("FAQ Question", "vk-blocks"),
-	icon: <BlockIcon />,
+	icon: <Icon />,
 	category: "vk-blocks-cat",
 	attributes: {
 		content:{

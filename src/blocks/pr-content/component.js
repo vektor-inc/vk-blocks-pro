@@ -4,7 +4,7 @@ import { Fontawesome } from "./component-fontawesome";
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { Button } = wp.components;
 const { Component } = wp.element;
-import { vkbBlockEditor, fixBrokenUnicode } from "./../_helper/depModules";
+import { vkbBlockEditor, fixBrokenUnicode } from "./../../utils/depModules";
 const { MediaUpload, RichText } = vkbBlockEditor;
 
 export class PRcontent extends Component {

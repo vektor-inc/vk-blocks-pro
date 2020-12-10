@@ -1,6 +1,6 @@
 import classNames from "classnames";
 const { InnerBlocks} = wp.blockEditor;
-import GenerateBgImage from "../../_helper/GenerateBgImage"
+import GenerateBgImage from "../../../utils/GenerateBgImage"
 const prefix = "vk_slider_item";
 
 const SliderItem = ( props )=>{

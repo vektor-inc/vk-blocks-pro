@@ -8,7 +8,7 @@ import { deprecated } from "./deprecated/deprecated";
 import AdvancedSpacerControl from "./advanced-spacer-control"
 import AdvancedViewportControl from "../../components/advanced-viewport-control"
 import AdvancedUnitControl from "../../components/advanced-unit-control"
-import BlockIcon from "./icon.svg";
+import { ReactComponent as Icon } from './icon.svg';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -18,7 +18,7 @@ const { InspectorControls } = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.bl
 
 registerBlockType('vk-blocks/spacer', {
 	title: __('Responsive Spacer', 'vk-blocks'),
-	icon: <BlockIcon />,
+	icon: <Icon />,
 	category: 'vk-blocks-cat-layout',
 	attributes: schema,
 	supports: {

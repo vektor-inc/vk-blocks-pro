@@ -1,7 +1,7 @@
-import { vkbBlockEditor } from "./../../_helper/depModules";
+import { vkbBlockEditor } from "./../../../utils/depModules";
 const { InnerBlocks } = vkbBlockEditor;
 const { __ } = wp.i18n; // Import __() from wp.i18n
-import { convertToGrid } from "../../_helper/convert-to-grid";
+import { convertToGrid } from "../../../utils/convert-to-grid";
 import React from "react";
 import { prefix } from "./block"
 import classNames from "classnames";

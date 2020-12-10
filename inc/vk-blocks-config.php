@@ -13,6 +13,9 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
     // Set asset Path.
 	define( 'VK_BLOCKS_PATH', plugin_dir_path( __FILE__ ) . 'vk-blocks/' );
 
+	// Set src path.
+	define( 'VK_BLOCKS_SRC_PATH', plugin_dir_path( dirname( __FILE__ ) ) . 'src/' );
+
 	// Set version number.
 	define( 'VK_BLOCKS_VERSION', vkblocks_get_version() );
 

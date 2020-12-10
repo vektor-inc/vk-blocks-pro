@@ -6,9 +6,9 @@ import { ColumnResponsive } from "./component";
 import { schema } from "./schema";
 import { ColumnLayout } from "../../../components/column-layout";
 import classNames from "classnames";
-import { convertToGrid } from "../../_helper/convert-to-grid";
-import {vkbBlockEditor} from "../../_helper/depModules"
-import BlockIcon from "./icon.svg";
+import { convertToGrid } from "../../../utils/convert-to-grid";
+import {vkbBlockEditor} from "../../../utils/depModules"
+import { ReactComponent as Icon } from './icon.svg';
 import compareVersions from 'compare-versions';
 import deprecated from "./deprecated/"
 
@@ -28,7 +28,7 @@ if ( window.wpVersion && compareVersions( window.wpVersion, "5.4" ) > 0 ){
 
 registerBlockType("vk-blocks/grid-column", {
 	title: __("Grid Column", "vk-blocks"),
-	icon: <BlockIcon />,
+	icon: <Icon />,
 	category: "vk-blocks-cat-layout",
 	attributes: schema,
 	supports: {

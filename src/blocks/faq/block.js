@@ -3,10 +3,10 @@
  *
  */
 import { deprecated } from "./deprecated";
-import { vkbBlockEditor } from "./../_helper/depModules";
+import { vkbBlockEditor } from "./../../utils/depModules";
 import classNames from "classnames";
-import { content, title } from "./../_helper/example-data"
-import BlockIcon from "./icon.svg";
+import { content, title } from "./../../utils/example-data"
+import { ReactComponent as Icon } from './icon.svg';
 
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
@@ -17,7 +17,7 @@ const { RichText, InnerBlocks, InspectorControls } = vkbBlockEditor;
 
 registerBlockType("vk-blocks/faq", {
   title: __("Classic FAQ", "vk-blocks"),
-  icon: <BlockIcon />,
+  icon: <Icon />,
   category: "vk-blocks-cat",
   attributes: {
 	heading: {

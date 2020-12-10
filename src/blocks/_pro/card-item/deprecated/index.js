@@ -1,11 +1,11 @@
 const { __ } = wp.i18n;
-import { vkbBlockEditor, fixBrokenUnicode } from "../../../_helper/depModules";
+import { vkbBlockEditor, fixBrokenUnicode } from "../../../../utils/depModules";
 const { RichText, MediaUpload, InnerBlocks } = vkbBlockEditor;
 const { Button } = wp.components;
 const { Fragment } = wp.element;
 const { dispatch } = wp.data;
 
-import { convertToGrid } from "../../../_helper/convert-to-grid";
+import { convertToGrid } from "../../../../utils/convert-to-grid";
 
 const depSchema = {
   layout: {

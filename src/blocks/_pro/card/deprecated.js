@@ -2,8 +2,8 @@ const { InnerBlocks } = vkbBlockEditor;
 const { Component } = wp.element;
 const { __ } = wp.i18n;
 import { schema0_37_4, schema0_40_0 } from "./depSchema"
-import { vkbBlockEditor } from "./../../_helper/depModules";
-import { convertToGrid } from "../../_helper/convert-to-grid";
+import { vkbBlockEditor } from "./../../../utils/depModules";
+import { convertToGrid } from "../../../utils/convert-to-grid";
 import classNames from "classnames";
 const prefix =  "vk_card_"
 

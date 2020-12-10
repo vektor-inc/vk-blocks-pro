@@ -1,7 +1,7 @@
-import { isNotJSON } from "./../../_helper/is-not-json";
+import { isNotJSON } from "./../../../utils/is-not-json";
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { Component } = wp.element;
-import { vkbBlockEditor, fixBrokenUnicode } from "./../../_helper/depModules";
+import { vkbBlockEditor, fixBrokenUnicode } from "./../../../utils/depModules";
 const { RichText } = vkbBlockEditor;
 
 export class ComponentBlockV2 extends Component {

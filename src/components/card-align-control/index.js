@@ -1,8 +1,8 @@
 const { __ } = wp.i18n;
 const { PanelBody, BaseControl } = wp.components;
 import { AlignControl } from "../align-control";
-import { capitalize } from "../../blocks/_helper/capitalize";
-import { fixBrokenUnicode } from "./../../blocks/_helper/depModules"
+import { capitalize } from "../../utils/capitalize";
+import { fixBrokenUnicode } from "../../utils/depModules"
 
 export const CardAlignControls = (props) => {
   const { attributes } = props;

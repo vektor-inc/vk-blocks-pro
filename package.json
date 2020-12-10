@@ -13,6 +13,7 @@
     "translate": "./node_modules/.bin/po2json ./inc/vk-blocks/languages/vk-blocks-ja.po ./inc/vk-blocks/languages/vk-blocks-ja-vk-blocks-build-js.json -f jed",
     "gulp": "gulp",
     "lint:js": "wp-scripts lint-js",
+    "format:js": "wp-scripts format-js",
     "lint:css": "wp-scripts lint-style",
     "composer:install:win": "wp-env run composer \"composer install\"",
     "composer:install:mac": "wp-env run composer 'composer install'",
@@ -46,6 +47,7 @@
     "gulp-sass": "^4.1.0",
     "npm-check-updates": "^10.2.2",
     "po2json": "^1.0.0-beta-3",
+    "prettier": "^2.2.1",
     "url-loader": "^4.1.1"
   },
   "dependencies": {

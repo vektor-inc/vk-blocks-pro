@@ -13,160 +13,46 @@ function vkblocks_active() {
 	return true;
 }
 
-add_action(
-	'plugins_loaded',
-	function () {
+
+class VKB_Block_Setup {
+
+	public function __construct() {
+		add_action( 'plugins_loaded', array( $this, 'register_textdomain' ), 10, 0 );
+		add_action( 'init', array( $this, 'register_blocks_assets' ), 10, 0 );
+	}
+
+	function register_textdomain() {
 		// Load language files.
 		$path = dirname( plugin_basename( __FILE__ ) ) . '/build/languages';
 		load_plugin_textdomain( 'vk-blocks', false, $path );
 	}
-);
 
-/*
--------------------------------------------*/
-/*
-  Get Option
-/*-------------------------------------------*/
-function vkblocks_get_options() {
-	$options  = get_option( 'vk_blocks_options' );
-	$defaults = array(
-		'display_wp_block_template' => 'hide',
-		'balloon_border_width'      => 1,
-	);
-	$defaults = array_merge( $defaults, apply_filters( 'vk_blocks_default_options', array() ) );
-	$options  = wp_parse_args( $options, $defaults );
-	return $options;
-}
-function vkblocks_get_selected( $current, $value ) {
-	$selected = '';
-	if ( $current == $value ) {
-		$selected = ' selected';
+	function register_css(){
+		// CSSを登録
+		wp_register_style( 'vk-blocks-build-css', VK_BLOCKS_URL . 'build/block-build.css', array(), VK_BLOCKS_VERSION );
+		wp_register_style( 'vk-blocks-build-editor-css', VK_BLOCKS_URL . 'build/block-build-editor.css', array(), VK_BLOCKS_VERSION );
 	}
-	return $selected;
-}
-function vkblocks_the_selected( $current, $value ) {
-	echo vkblocks_get_selected( $current, $value );
-}
 
-/*
- Load css
----------------------------------------------------------- */
-if ( ! function_exists( 'vkblocks_add_styles' ) ) {
-	function vkblocks_add_styles() {
-		wp_enqueue_style( 'vk-blocks-build-css' );
-	};
-}
-// Load css at footer
-if ( ! function_exists( 'vkblocks_enqueue_point' ) ) {
-	function vkblocks_enqueue_point() {
-		$hook_point = apply_filters( 'vkblocks_enqueue_point', 'wp_enqueue_scripts' );
-		// Front css
-		add_action( $hook_point, 'vkblocks_add_styles' );
-
-		// Admin css
-		if ( is_admin() ) {
-			add_action( 'enqueue_block_assets', 'vkblocks_add_styles' );
+	function register_dynamic_css(){
+		$dynamic_css = '
+		:root {
+			--vk_flow-arrow: url(' . VK_BLOCKS_URL . 'images/arrow_bottom.svg);
+			--vk_image-mask-wave01: url(' . VK_BLOCKS_URL . 'images/wave01.svg);
+			--vk_image-mask-wave02: url(' . VK_BLOCKS_URL . 'images/wave02.svg);
+			--vk_image-mask-wave03: url(' . VK_BLOCKS_URL . 'images/wave03.svg);
+			--vk_image-mask-wave04: url(' . VK_BLOCKS_URL . 'images/wave04.svg);
 		}
-	};
-}
-
-/**
- * Reason of Using through the after_setup_theme is
- * to be able to change the action hook point of css load from theme..
- */
-add_action( 'after_setup_theme', 'vkblocks_enqueue_point' );
-
-function is_lager_than_wp( $target_version, $syntax=">=" ) {
-	global $wp_version;
-	return defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, $target_version, $syntax );
-}
-
-function vkblocks_blocks_assets() {
-
-	// CSSを登録
-	wp_register_style( 'vk-blocks-build-css', VK_BLOCKS_URL . 'build/block-build.css', array(), VK_BLOCKS_VERSION );
-	wp_register_style( 'vk-blocks-build-editor-css', VK_BLOCKS_URL . 'build/block-build-editor.css', array(), VK_BLOCKS_VERSION );
-
-	//依存関係を定義
-	$dependency = array(
-		'wp-blocks',
-		'wp-i18n',
-		'wp-element',
-		'wp-editor',
-		'wp-hooks',
-		'wp-compose',
-		'wp-edit-post',
-		'wp-components',
-		'wp-data',
-		'wp-plugins',
-		'wp-hooks',
-		'wp-api-fetch',
-		'wp-viewport',
-	);
-	$dependency_wp53 = array(
-		'wp-block-editor',
-	);
-
-	//wp5.3以上で使えるAPIを追加。
-	if( is_lager_than_wp('5.3') ){
-		$dependency = array_merge(
-			$dependency,
-			$dependency_wp53
-		);
+		';
+		// delete before after space
+		$dynamic_css = trim( $dynamic_css );
+		// convert tab and br to space
+		$dynamic_css = preg_replace( '/[\n\r\t]/', '', $dynamic_css );
+		// Change multiple spaces to single space
+		$dynamic_css = preg_replace( '/\s(?=\s)/', '', $dynamic_css );
+		wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );
 	}
 
-	//ブロックのJavascriptを登録
-	wp_register_script(
-		'vk-blocks-build-js',
-		VK_BLOCKS_URL . 'build/block-build.js',
-		$dependency,
-		VK_BLOCKS_VERSION,
-		true
-	);
-
-	//翻訳を追加
-	if ( function_exists( 'wp_set_script_translations' ) ) {
-		wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks', plugin_dir_path( __FILE__ ) . 'build/languages' );
-	}
-
-	// プロ版の値をフロントエンドに出力
-	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-	if ( is_plugin_active( 'vk-blocks-pro/vk-blocks.php' ) ) {
-		wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_check', array( 'is_pro' => true ) );
-	} else {
-		wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_check', array( 'is_pro' => false ) );
-	}
-
-	/**
-	 * Page List for Page Content Block
-	 */
-	// 選択可能なフォームを生成.
-	$option_posts = array(
-		array(
-			'label' => __( 'Unspecified', 'vk-all-in-one-expansion-unit' ),
-			'value' => -1,
-		),
-	);
-
-	$the_posts = get_posts(
-		array(
-			'posts_per_page' => -1,
-			'post_type'      => 'page',
-		)
-	);
-
-	foreach ( $the_posts as $the_post ) {
-		$option_posts[] = array(
-			'label' => $the_post->post_title,
-			'value' => $the_post->ID,
-		);
-	}
-	// 投稿リストをブロック側に渡す.
-	wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_page_list', $option_posts );
-
-
-	if( is_lager_than_wp('5.0') ){
-
+	function get_blocks_for_register() {
 		//register_blockで読み込むブロック
 		$arr = array( 'balloon', 'button', 'faq', 'flow', 'pr-blocks', 'pr-content', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents-new', 'highlighter', 'timeline', 'timeline-item', 'step', 'step-item', 'post-list', 'list-style', 'group-style', 'child-page', 'card', 'card-item', 'grid-column', 'grid-column-item', 'border-box', 'icon-card', 'icon-card-item', 'animation', 'slider', 'slider-item', 'faq2', 'faq2-q', 'faq2-a', 'responsive-br', 'nowrap' );
 		//register_block_type_from_metadataで読み込むブロック
@@ -174,7 +60,6 @@ function vkblocks_blocks_assets() {
 
 		if(function_exists('register_block_type_from_metadata')){
 			require_once VK_BLOCKS_SRC_PATH . '/blocks/alert/index.php';
-
 		} else {
 			$arr = array_merge(
 				$arr,
@@ -182,8 +67,12 @@ function vkblocks_blocks_assets() {
 			);
 		}
 
-		global $vk_blocks_common_attributes;
-		$vk_blocks_common_attributes = array(
+		return $arr;
+	}
+
+	function get_common_attributes_for_server_side_blocks() {
+
+		return array(
 			'vkb_hidden'       => array(
 				'type'    => 'boolean',
 				'default' => false,
@@ -218,337 +107,496 @@ function vkblocks_blocks_assets() {
 			),
 		);
 
-		foreach ( $arr as $value ) {
+	}
 
-			if ( $value === 'table-of-contents' ) {
+	function get_server_side_block_args ( $block ) {
 
-				register_block_type(
-					'vk-blocks/' . $value,
-					array(
-						// 'style'        => 'vk-blocks-build-css',
-						'editor_style'    => 'vk-blocks-build-editor-css',
-						'editor_script'   => 'vk-blocks-build-js',
-						'attributes'      => array_merge(
-							array(
-								'style'      => array(
-									'type'    => 'string',
-									'default' => '',
-								),
-								'renderHtml' => array(
-									'type'    => 'string',
-									'default' => '',
-								),
-								'open'       => array(
-									'type'    => 'string',
-									'default' => 'open',
-								),
-								'className'  => array(
-									'type'    => 'string',
-									'default' => '',
-								),
-							),
-							$vk_blocks_common_attributes
-						),
-						'render_callback' => function ( $attributes ) {
-							if ( $attributes['renderHtml'] ) {
-								$custom_class = esc_attr( $attributes['className'] ) . ' ';
-								return preg_replace( '/class="/', 'class="' . $custom_class, $attributes['renderHtml'], 1 );
-							} else {
-								return '<div><div class="vk_tableOfContents_title">' . __( 'Table of Contents', 'vk-blocks' ) . '</div></div>';
-							}
-						},
-						'supports'        => array(),
-					)
+		switch ($block) {
+			case 'table-of-contents':
+				$attributes = array(
+					'style'      => array(
+						'type'    => 'string',
+						'default' => '',
+					),
+					'renderHtml' => array(
+						'type'    => 'string',
+						'default' => '',
+					),
+					'open'       => array(
+						'type'    => 'string',
+						'default' => 'open',
+					),
+					'className'  => array(
+						'type'    => 'string',
+						'default' => '',
+					),
 				);
-			} elseif ( $value == 'post-list' ) {
-					register_block_type(
-						'vk-blocks/' . $value,
-						array(
-							'attributes'      => array_merge(
-								array(
-									'name'              => array(
-										'type' => 'string',
-									),
-									'layout'            => array(
-										'type'    => 'string',
-										'default' => 'card',
-									),
-									'col_xs'            => array(
-										'type'    => 'number',
-										'default' => 1,
-									),
-									'col_sm'            => array(
-										'type'    => 'number',
-										'default' => 2,
-									),
-									'col_md'            => array(
-										'type'    => 'number',
-										'default' => 3,
-									),
-									'col_lg'            => array(
-										'type'    => 'number',
-										'default' => 3,
-									),
-									'col_xxl'           => array(
-										'type'    => 'number',
-										'default' => 3,
-									),
-									'col_xl'            => array(
-										'type'    => 'number',
-										'default' => 3,
-									),
-									'display_image'     => array(
-										'type'    => 'boolean',
-										'default' => true,
-									),
-									'display_image_overlay_term' => array(
-										'type'    => 'boolean',
-										'default' => true,
-									),
-									'display_excerpt'   => array(
-										'type'    => 'boolean',
-										'default' => false,
-									),
-									'display_author'   => array(
-										'type'    => 'boolean',
-										'default' => false,
-									),
-									'display_date'      => array(
-										'type'    => 'boolean',
-										'default' => true,
-									),
-									'display_new'       => array(
-										'type'    => 'boolean',
-										'default' => true,
-									),
-									'display_taxonomies' => array(
-										'type'    => 'boolean',
-										'default' => false,
-									),
-									'display_btn'       => array(
-										'type'    => 'boolean',
-										'default' => false,
-									),
-									'new_date'          => array(
-										'type'    => 'number',
-										'default' => 7,
-									),
-									'new_text'          => array(
-										'type'    => 'string',
-										'default' => 'New!!',
-									),
-									'btn_text'          => array(
-										'type'    => 'string',
-										'default' => 'Read more',
-									),
-									'btn_align'         => array(
-										'type'    => 'string',
-										'default' => 'text-right',
-									),
-									'numberPosts'       => array(
-										'type'    => 'number',
-										'default' => 6,
-									),
-									'isCheckedPostType' => array(
-										'type'    => 'string',
-										'default' => '["post"]',
-									),
-									'coreTerms'         => array(
-										'type'    => 'string',
-										'default' => '{}',
-									),
-									'isCheckedTerms'    => array(
-										'type'    => 'string',
-										'default' => '[]',
-									),
-									'order'           => array(
-										'type'    => 'string',
-										'default' => 'DESC',
-									),
-									'orderby'           => array(
-										'type'    => 'string',
-										'default' => 'date',
-									),
-									'offset'            => array(
-										'type'    => 'number',
-										'default' => 0,
-									),
-									'selfIgnore'        => array(
-										'type'    => 'boolean',
-										'default' => false,
-									),
-									'className'         => array(
-										'type'    => 'string',
-										'default' => '',
-									),
-								),
-								$vk_blocks_common_attributes
-							),
-							// 'style'           => 'vk-blocks-build-css',
-							'editor_style'    => 'vk-blocks-build-editor-css',
-							'editor_script'   => 'vk-blocks-build-js',
-							'render_callback' => 'vk_blocks_render_post_list',
-							'supports'        => array(),
-						)
-					); // register_block_type(
-			} elseif ( $value == 'child-page' ) {
+				$render_callback = function ( $attributes ) {
+					if ( $attributes['renderHtml'] ) {
+						$custom_class = esc_attr( $attributes['className'] ) . ' ';
+						return preg_replace( '/class="/', 'class="' . $custom_class, $attributes['renderHtml'], 1 );
+					} else {
+						return '<div><div class="vk_tableOfContents_title">' . __( 'Table of Contents', 'vk-blocks' ) . '</div></div>';
+					}
+				};
+				break;
 
-				register_block_type(
-					'vk-blocks/' . $value,
-					array(
-						'attributes'      => array_merge(
-							array(
-								'selectId'          => array(
-									'type'    => 'number',
-									'default' => -1,
-								),
-								'name'              => array(
-									'type'    => 'string',
-									'default' => '',
-								),
-								'layout'            => array(
-									'type'    => 'string',
-									'default' => 'card-horizontal',
-								),
-								'col_xs'            => array(
-									'type'    => 'number',
-									'default' => 1,
-								),
-								'col_sm'            => array(
-									'type'    => 'number',
-									'default' => 2,
-								),
-								'col_md'            => array(
-									'type'    => 'number',
-									'default' => 2,
-								),
-								'col_lg'            => array(
-									'type'    => 'number',
-									'default' => 2,
-								),
-								'col_xl'            => array(
-									'type'    => 'number',
-									'default' => 2,
-								),
-								'col_xxl'           => array(
-									'type'    => 'number',
-									'default' => 2,
-								),
-								'display_image'     => array(
-									'type'    => 'boolean',
-									'default' => true,
-								),
-								'display_image_overlay_term' => array(
-									'type'    => 'boolean',
-									'default' => true,
-								),
-								'display_excerpt'   => array(
-									'type'    => 'boolean',
-									'default' => true,
-								),
-								'display_author'   => array(
-									'type'    => 'boolean',
-									'default' => false,
-								),
-								'display_date'      => array(
-									'type'    => 'boolean',
-									'default' => false,
-								),
-								'display_new'       => array(
-									'type'    => 'boolean',
-									'default' => false,
-								),
-								'display_taxonomies' => array(
-									'type'    => 'boolean',
-									'default' => false,
-								),
-								'display_btn'       => array(
-									'type'    => 'boolean',
-									'default' => true,
-								),
-								'new_date'          => array(
-									'type'    => 'number',
-									'default' => 7,
-								),
-								'new_text'          => array(
-									'type'    => 'string',
-									'default' => 'New!!',
-								),
-								'btn_text'          => array(
-									'type'    => 'string',
-									'default' => 'Read more',
-								),
-								'btn_align'         => array(
-									'type'    => 'string',
-									'default' => 'text-right',
-								),
-								'numberPosts'       => array(
-									'type'    => 'number',
-									'default' => 6,
-								),
-								'isCheckedPostType' => array(
-									'type'    => 'string',
-									'default' => '["post"]',
-								),
-								'coreTerms'         => array(
-									'type'    => 'string',
-									'default' => '{}',
-								),
-								'isCheckedTerms'    => array(
-									'type'    => 'string',
-									'default' => '[]',
-								),
-								'className'         => array(
-									'type'    => 'string',
-									'default' => '',
-								),
-								'selfIgnore'        => array(
-									'type'    => 'boolean',
-									'default' => false,
-								),
-							),
-							$vk_blocks_common_attributes
-						),
-						'editor_style'    => 'vk-blocks-build-editor-css',
-						'editor_script'   => 'vk-blocks-build-js',
-						'render_callback' => 'vk_blocks_render_post_list',
-						'supports'        => array(),
-					)
-				); // register_block_type(
+			case 'post-list':
+				$attributes = array(
+					'name'              => array(
+						'type' => 'string',
+					),
+					'layout'            => array(
+						'type'    => 'string',
+						'default' => 'card',
+					),
+					'col_xs'            => array(
+						'type'    => 'number',
+						'default' => 1,
+					),
+					'col_sm'            => array(
+						'type'    => 'number',
+						'default' => 2,
+					),
+					'col_md'            => array(
+						'type'    => 'number',
+						'default' => 3,
+					),
+					'col_lg'            => array(
+						'type'    => 'number',
+						'default' => 3,
+					),
+					'col_xxl'           => array(
+						'type'    => 'number',
+						'default' => 3,
+					),
+					'col_xl'            => array(
+						'type'    => 'number',
+						'default' => 3,
+					),
+					'display_image'     => array(
+						'type'    => 'boolean',
+						'default' => true,
+					),
+					'display_image_overlay_term' => array(
+						'type'    => 'boolean',
+						'default' => true,
+					),
+					'display_excerpt'   => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+					'display_author'   => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+					'display_date'      => array(
+						'type'    => 'boolean',
+						'default' => true,
+					),
+					'display_new'       => array(
+						'type'    => 'boolean',
+						'default' => true,
+					),
+					'display_taxonomies' => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+					'display_btn'       => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+					'new_date'          => array(
+						'type'    => 'number',
+						'default' => 7,
+					),
+					'new_text'          => array(
+						'type'    => 'string',
+						'default' => 'New!!',
+					),
+					'btn_text'          => array(
+						'type'    => 'string',
+						'default' => 'Read more',
+					),
+					'btn_align'         => array(
+						'type'    => 'string',
+						'default' => 'text-right',
+					),
+					'numberPosts'       => array(
+						'type'    => 'number',
+						'default' => 6,
+					),
+					'isCheckedPostType' => array(
+						'type'    => 'string',
+						'default' => '["post"]',
+					),
+					'coreTerms'         => array(
+						'type'    => 'string',
+						'default' => '{}',
+					),
+					'isCheckedTerms'    => array(
+						'type'    => 'string',
+						'default' => '[]',
+					),
+					'order'           => array(
+						'type'    => 'string',
+						'default' => 'DESC',
+					),
+					'orderby'           => array(
+						'type'    => 'string',
+						'default' => 'date',
+					),
+					'offset'            => array(
+						'type'    => 'number',
+						'default' => 0,
+					),
+					'selfIgnore'        => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+					'className'         => array(
+						'type'    => 'string',
+						'default' => '',
+					),
+				);
+				$render_callback = 'vk_blocks_render_post_list';
+				break;
+			case 'child-page':
+				$attributes = array(
+					'selectId'          => array(
+						'type'    => 'number',
+						'default' => -1,
+					),
+					'name'              => array(
+						'type'    => 'string',
+						'default' => '',
+					),
+					'layout'            => array(
+						'type'    => 'string',
+						'default' => 'card-horizontal',
+					),
+					'col_xs'            => array(
+						'type'    => 'number',
+						'default' => 1,
+					),
+					'col_sm'            => array(
+						'type'    => 'number',
+						'default' => 2,
+					),
+					'col_md'            => array(
+						'type'    => 'number',
+						'default' => 2,
+					),
+					'col_lg'            => array(
+						'type'    => 'number',
+						'default' => 2,
+					),
+					'col_xl'            => array(
+						'type'    => 'number',
+						'default' => 2,
+					),
+					'col_xxl'           => array(
+						'type'    => 'number',
+						'default' => 2,
+					),
+					'display_image'     => array(
+						'type'    => 'boolean',
+						'default' => true,
+					),
+					'display_image_overlay_term' => array(
+						'type'    => 'boolean',
+						'default' => true,
+					),
+					'display_excerpt'   => array(
+						'type'    => 'boolean',
+						'default' => true,
+					),
+					'display_author'   => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+					'display_date'      => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+					'display_new'       => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+					'display_taxonomies' => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+					'display_btn'       => array(
+						'type'    => 'boolean',
+						'default' => true,
+					),
+					'new_date'          => array(
+						'type'    => 'number',
+						'default' => 7,
+					),
+					'new_text'          => array(
+						'type'    => 'string',
+						'default' => 'New!!',
+					),
+					'btn_text'          => array(
+						'type'    => 'string',
+						'default' => 'Read more',
+					),
+					'btn_align'         => array(
+						'type'    => 'string',
+						'default' => 'text-right',
+					),
+					'numberPosts'       => array(
+						'type'    => 'number',
+						'default' => 6,
+					),
+					'isCheckedPostType' => array(
+						'type'    => 'string',
+						'default' => '["post"]',
+					),
+					'coreTerms'         => array(
+						'type'    => 'string',
+						'default' => '{}',
+					),
+					'isCheckedTerms'    => array(
+						'type'    => 'string',
+						'default' => '[]',
+					),
+					'className'         => array(
+						'type'    => 'string',
+						'default' => '',
+					),
+					'selfIgnore'        => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+				);
+				$render_callback = 'vk_blocks_render_post_list';
+				break;
+			default:
+				$attributes = false;
+				$render_callback = false;
+		}
+
+		if( $attributes && $render_callback ) {
+			return array( "attributes" => $attributes, "render_callback" => $render_callback);
+		} else {
+			return false;
+		}
+	}
+
+	function is_lager_than_wp( $target_version, $syntax=">=" ) {
+		global $wp_version;
+		return defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, $target_version, $syntax );
+	}
+
+	function register_blocks( $blocks ) {
+
+		foreach ( $blocks as $block ) {
+
+			//サーバーサイドブロック
+			$block_args = $this->get_server_side_block_args( $block );
+			if( $block_args ) {
+
+				$common_attributes = $this->get_common_attributes_for_server_side_blocks();
+				$block_args = array(
+					'attributes'      => array_merge(
+						$block_args["attributes"],
+						$common_attributes
+					),
+					'editor_style'    => 'vk-blocks-build-editor-css',
+					'editor_script'   => 'vk-blocks-build-js',
+					'render_callback' => $block_args["render_callback"],
+					'supports'        => array(),
+				);
+			// デフォルトブロック
 			} else {
 
-				register_block_type(
-					'vk-blocks/' . $value,
-					array(
-						// 'style'         => 'vk-blocks-build-css',
-						'editor_style'  => 'vk-blocks-build-editor-css',
-						'editor_script' => 'vk-blocks-build-js',
-					)
+				$block_args = array(
+					// 'style'         => 'vk-blocks-build-css',
+					'editor_style'  => 'vk-blocks-build-editor-css',
+					'editor_script' => 'vk-blocks-build-js',
 				);
+			}
 
-			} // if ( $value === 'table-of-contents' ) {
-		} // foreach ( $arr as $value ) {
-		require_once dirname( __FILE__ ) . '/blocks/page-content/class-vk-page-content-block.php';
-	} // if ( defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, '5.0', '>=' ) ) {
+			register_block_type(
+				'vk-blocks/' . $block,
+				$block_args
+			);
 
-	$dynamic_css = '
-		:root {
-			--vk_flow-arrow: url(' . VK_BLOCKS_URL . 'images/arrow_bottom.svg);
-			--vk_image-mask-wave01: url(' . VK_BLOCKS_URL . 'images/wave01.svg);
-			--vk_image-mask-wave02: url(' . VK_BLOCKS_URL . 'images/wave02.svg);
-			--vk_image-mask-wave03: url(' . VK_BLOCKS_URL . 'images/wave03.svg);
-			--vk_image-mask-wave04: url(' . VK_BLOCKS_URL . 'images/wave04.svg);
+		} // foreach ( $blocks as $block ) {
+	}
+
+	function get_block_dependencies(){
+
+		//依存関係を定義
+		$dependency = array(
+			'wp-blocks',
+			'wp-i18n',
+			'wp-element',
+			'wp-editor',
+			'wp-hooks',
+			'wp-compose',
+			'wp-edit-post',
+			'wp-components',
+			'wp-data',
+			'wp-plugins',
+			'wp-hooks',
+			'wp-api-fetch',
+			'wp-viewport',
+		);
+		$dependency_wp53 = array(
+			'wp-block-editor',
+		);
+
+		//wp5.3以上で使えるAPIを追加。
+		if( $this->is_lager_than_wp('5.3') ){
+			$dependency = array_merge(
+				$dependency,
+				$dependency_wp53
+			);
 		}
-	';
-	// delete before after space
-	$dynamic_css = trim( $dynamic_css );
-	// convert tab and br to space
-	$dynamic_css = preg_replace( '/[\n\r\t]/', '', $dynamic_css );
-	// Change multiple spaces to single space
-	$dynamic_css = preg_replace( '/\s(?=\s)/', '', $dynamic_css );
-	wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );
-} // function vkblocks_blocks_assets() {
-add_action( 'init', 'vkblocks_blocks_assets', 10 );
+		return $dependency;
+	}
+
+	function register_extra_value() {
+		/**
+		 * Page List for Page Content Block
+		 */
+		// 選択可能なフォームを生成.
+		$option_posts = array(
+			array(
+				'label' => __( 'Unspecified', 'vk-all-in-one-expansion-unit' ),
+				'value' => -1,
+			),
+		);
+
+		$the_posts = get_posts(
+			array(
+				'posts_per_page' => -1,
+				'post_type'      => 'page',
+			)
+		);
+
+		foreach ( $the_posts as $the_post ) {
+			$option_posts[] = array(
+				'label' => $the_post->post_title,
+				'value' => $the_post->ID,
+			);
+		}
+		// 投稿リストをブロック側に渡す.
+		wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_page_list', $option_posts );
+
+		// プロ版の値をフロントエンドに出力
+		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		if ( is_plugin_active( 'vk-blocks-pro/vk-blocks.php' ) ) {
+			wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_check', array( 'is_pro' => true ) );
+		} else {
+			wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_check', array( 'is_pro' => false ) );
+		}
+	}
+
+	function register_blocks_assets() {
+
+		//WP5.0未満の場合は return
+		if( ! $this->is_lager_than_wp('5.0') ){
+			return;
+		}
+
+		//Cssを登録
+		$this->register_css();
+
+		//依存関係を取得
+		$dependency = $this->get_block_dependencies();
+
+		//ブロックのJavascriptを登録
+		wp_register_script(
+			'vk-blocks-build-js',
+			VK_BLOCKS_URL . 'build/block-build.js',
+			$dependency,
+			VK_BLOCKS_VERSION,
+			true
+		);
+
+		// wp_localize_scriptで設定値を渡す
+		$this->register_extra_value();
+
+		//翻訳を追加
+		if ( function_exists( 'wp_set_script_translations' ) ) {
+			wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks', plugin_dir_path( __FILE__ ) . 'build/languages' );
+		}
+
+		//登録するブロックのslugを取得
+		$blocks = $this->get_blocks_for_register();
+
+		//ブロックを登録
+		$this->register_blocks( $blocks );
+
+		//VK Blocks共通のattributtesを取得
+		$vkb_common_attributes = $this->get_common_attributes_for_server_side_blocks();
+
+		require_once dirname( __FILE__ ) . '/blocks/page-content/class-vk-page-content-block.php';
+		new VK_Page_Content_Block( $vkb_common_attributes );
+
+		//ダイナミックCSSを追加
+		$this->register_dynamic_css();
+
+	}
+}
+
+new VKB_Block_Setup();
+
+/*-------------------------------------------*/
+/*  Get Option
+/*-------------------------------------------*/
+function vkblocks_get_options() {
+	$options  = get_option( 'vk_blocks_options' );
+	$defaults = array(
+		'display_wp_block_template' => 'hide',
+		'balloon_border_width'      => 1,
+	);
+	$defaults = array_merge( $defaults, apply_filters( 'vk_blocks_default_options', array() ) );
+	$options  = wp_parse_args( $options, $defaults );
+	return $options;
+}
+function vkblocks_get_selected( $current, $value ) {
+	$selected = '';
+	if ( $current == $value ) {
+		$selected = ' selected';
+	}
+	return $selected;
+}
+function vkblocks_the_selected( $current, $value ) {
+	echo vkblocks_get_selected( $current, $value );
+}
+/*
+ Load css
+---------------------------------------------------------- */
+if ( ! function_exists( 'vkblocks_add_styles' ) ) {
+	function vkblocks_add_styles() {
+		wp_enqueue_style( 'vk-blocks-build-css' );
+	};
+}
+// Load css at footer
+if ( ! function_exists( 'vkblocks_enqueue_point' ) ) {
+	function vkblocks_enqueue_point() {
+		$hook_point = apply_filters( 'vkblocks_enqueue_point', 'wp_enqueue_scripts' );
+		// Front css
+		add_action( $hook_point, 'vkblocks_add_styles' );
+
+		// Admin css
+		if ( is_admin() ) {
+			add_action( 'enqueue_block_assets', 'vkblocks_add_styles' );
+		}
+	};
+}
+/**
+ * Reason of Using through the after_setup_theme is
+ * to be able to change the action hook point of css load from theme..
+ */
+add_action( 'after_setup_theme', 'vkblocks_enqueue_point' );
+
 
 // Add Block Category,
 if ( ! function_exists( 'vkblocks_blocks_categories' ) ) {

@@ -7,10 +7,15 @@
 
 class VK_Page_Content_Block {
 
+	private $vk_blocks_common_attributes;
+
 	// Constructor
-	public function __construct() {
-		add_action( 'init', array( __CLASS__, 'register_block' ), 15 );
-		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'load_scripts' ) );
+	public function __construct( $vk_blocks_common_attributes ) {
+
+		$this->vk_blocks_common_attributes = $vk_blocks_common_attributes;
+
+		add_action( 'init', array( $this, 'register_block' ), 15 );
+		add_action( 'wp_enqueue_scripts', array( $this, 'load_scripts' ) );
 		add_filter( 'vk_page_content', 'do_blocks', 9 );
 		add_filter( 'vk_page_content', 'wptexturize' );
 		add_filter( 'vk_page_content', 'convert_smilies', 20 );
@@ -21,12 +26,11 @@ class VK_Page_Content_Block {
 		add_filter( 'vk_page_content', 'capital_P_dangit', 11 );
 	}
 
-	public static function register_block() {
+	public function register_block() {
 		if ( ! function_exists( 'register_block_type' ) ) {
 			return;
 		}
 
-		global $vk_blocks_common_attributes;
 		register_block_type(
 			'vk-blocks/page-content',
 			array(
@@ -43,7 +47,7 @@ class VK_Page_Content_Block {
 							'default' => -1
 						),
 					),
-					$vk_blocks_common_attributes
+					$this->vk_blocks_common_attributes
 				),
 				'supports' => [],
 				'render_callback' => array( __CLASS__, 'block_callback'),
@@ -61,7 +65,7 @@ class VK_Page_Content_Block {
 
 		$page_content_id = ! empty( $attributes['TargetPost'] ) ? $attributes['TargetPost'] : -1;
 		$page_content    = get_post( $page_content_id )->post_content;
-		self::load_scripts( $page_content );
+		$this->load_scripts( $page_content );
 
 		$vk_blocks_options  = vkblocks_get_options();
 		if ( has_block( 'vk-blocks/faq2', $page_content ) || has_block( 'vk-blocks/faq', $page_content ) ) {
@@ -132,7 +136,7 @@ class VK_Page_Content_Block {
 	 *
 	 * @param html $page_content Contents
 	 */
-	public static function load_scripts( $page_content ) {
+	public function load_scripts( $page_content ) {
 		if ( has_block( 'vk-blocks/faq2', $page_content ) || has_block( 'vk-blocks/faq', $page_content ) ) {
 			wp_enqueue_script( 'vk-blocks-faq2', VK_BLOCKS_URL . 'build/faq2.min.js', array(), VK_BLOCKS_VERSION, true );
 		}
@@ -146,4 +150,3 @@ class VK_Page_Content_Block {
 		}
 	}
 }
-new VK_Page_Content_Block();

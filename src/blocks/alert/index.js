@@ -2,14 +2,14 @@
  * Alert block type
  *
  */
-import { content } from "../../utils/example-data"
+import { content } from '../../utils/example-data';
 import { ReactComponent as Icon } from './icon.svg';
 import deprecated from './deprecated/index';
 import edit from './edit';
 import metadata from './block.json';
 import save from './save';
 
-import  { __ } from "@wordpress/i18n";
+import { __ } from '@wordpress/i18n';
 
 const { name } = metadata;
 
@@ -21,7 +21,7 @@ export const settings = {
 	example: {
 		attributes: {
 			style: 'info',
-			content
+			content,
 		},
 	},
 	save,

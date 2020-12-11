@@ -6,17 +6,26 @@ import {
 	PanelBody,
 	BaseControl,
 	SelectControl,
+	Button,
 } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
-import { InspectorControls, ColorPalette } from '@wordpress/block-editor';
-
-// Internal  dependencies
-import { NewComponent } from './component';
+import {
+	InspectorControls,
+	ColorPalette,
+	useBlockProps,
+	RichText,
+	MediaUpload,
+} from '@wordpress/block-editor';
 
 export default function StaffEdit({ attributes, setAttributes, className }) {
 	const instanceId = useInstanceId(StaffEdit);
 	const id = `vkblocks-staff-${instanceId}`;
 	const {
+		vkStaffTextName,
+		vkStaffTextCaption,
+		vkStaffTextRole,
+		vkStaffTextProfileTitle,
+		vkStaffTextProfileText,
+		vkStaffPhotoImage,
 		vkStaffPhotoImageAlt,
 		vkStaffLayout,
 		vkStaffNameColor,
@@ -28,7 +37,7 @@ export default function StaffEdit({ attributes, setAttributes, className }) {
 	} = attributes;
 
 	return (
-		<Fragment>
+		<>
 			<InspectorControls>
 				<PanelBody title={__('Layout', 'vk-blocks')}>
 					<SelectControl
@@ -147,12 +156,103 @@ export default function StaffEdit({ attributes, setAttributes, className }) {
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>
-			<NewComponent
-				attributes={attributes}
-				setAttributes={setAttributes}
-				className={className}
-				for_={'edit'}
-			/>
-		</Fragment>
+
+			<div {...useBlockProps()}>
+				<div
+					className={`${className} vk_staff vk_staff-layout-${vkStaffLayout}`}
+				>
+					<div className={`vk_staff_text`}>
+						<RichText
+							tagName="h3"
+							className={'vk_staff_text_name'}
+							style={{ color: vkStaffNameColor }}
+							onChange={(value) =>
+								setAttributes({ vkStaffTextName: value })
+							}
+							value={vkStaffTextName}
+							placeholder={__('Your Name', 'vk-blocks')}
+						/>
+						<RichText
+							tagName="p"
+							className={'vk_staff_text_caption'}
+							style={{ color: vkStaffCaptionColor }}
+							onChange={(value) =>
+								setAttributes({ vkStaffTextCaption: value })
+							}
+							value={vkStaffTextCaption}
+							placeholder={__('Caption', 'vk-blocks')}
+						/>
+						<RichText
+							tagName="p"
+							className={'vk_staff_text_role'}
+							style={{ color: vkStaffPositionColor }}
+							onChange={(value) =>
+								setAttributes({ vkStaffTextRole: value })
+							}
+							value={vkStaffTextRole}
+							placeholder={__('Role position', 'vk-blocks')}
+						/>
+						<RichText
+							tagName="h4"
+							className={'vk_staff_text_profile_title'}
+							style={{ color: vkStaffProfileTitleColor }}
+							onChange={(value) =>
+								setAttributes({
+									vkStaffTextProfileTitle: value,
+								})
+							}
+							value={vkStaffTextProfileTitle}
+							placeholder={__('Profile title', 'vk-blocks')}
+						/>
+						<RichText
+							tagName="p"
+							className={'vk_staff_text_profile_text'}
+							style={{ color: vkStaffProfileTextColor }}
+							onChange={(value) =>
+								setAttributes({
+									vkStaffTextProfileText: value,
+								})
+							}
+							value={vkStaffTextProfileText}
+							placeholder={__('Profile text', 'vk-blocks')}
+						/>
+					</div>
+					<div
+						className={`vk_staff_photo vk_staff_photo-border-${vkStaffPhotoBorder}`}
+					>
+						<MediaUpload
+							onSelect={(value) =>
+								setAttributes({
+									vkStaffPhotoImage: value.sizes.full.url,
+								})
+							}
+							type="image"
+							className={'vk_staff_photo_image'}
+							value={vkStaffPhotoImage}
+							render={({ open }) => (
+								<Button
+									onClick={open}
+									className={
+										vkStaffPhotoImage
+											? 'image-button'
+											: 'button button-large'
+									}
+								>
+									{!vkStaffPhotoImage ? (
+										__('Select image', 'vk-blocks')
+									) : (
+										<img
+											className={`vk_staff_photo_image`}
+											src={vkStaffPhotoImage}
+											alt={vkStaffPhotoImageAlt}
+										/>
+									)}
+								</Button>
+							)}
+						/>
+					</div>
+				</div>
+			</div>
+		</>
 	);
 }

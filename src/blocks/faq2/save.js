@@ -1,4 +1,4 @@
-import { vkbBlockEditor } from '@vkblocks/utils/depModules';
+import { InnerBlocks } from '@vkblocks/utils/depModules';
 
 const { InnerBlocks } = vkbBlockEditor;
 

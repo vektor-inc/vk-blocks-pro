@@ -1,7 +1,5 @@
-import { vkbBlockEditor } from '@vkblocks/utils/depModules';
+import { InnerBlocks } from '@wordpress/block-editor';
 import classNames from "classnames";
-
-const { InnerBlocks } = vkbBlockEditor;
 
 export default function edit( { className } ) {
 	return (

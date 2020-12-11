@@ -1,10 +1,8 @@
-import { vkbBlockEditor } from '@vkblocks/utils/depModules';
+import { InnerBlocks, InspectorControls } from '@wordpress/block-editor';
 import { Fragment } from "@wordpress/element";
 import { PanelBody, PanelRow } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import classNames from "classnames";
-
-const { InnerBlocks, InspectorControls } = vkbBlockEditor;
 
 export default function edit( props ) {
 	const { className } = props;

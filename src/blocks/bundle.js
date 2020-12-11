@@ -11,7 +11,7 @@ import "@vkblocks/blocks/staff/block.js";
 import "@vkblocks/blocks/spacer/block.js";
 import "@vkblocks/blocks/heading/block.js";
 import "@vkblocks/blocks/alert/index.js";
-import "@vkblocks/blocks/balloon/block.js";
+import "@vkblocks/blocks/balloon/";
 import "@vkblocks/blocks/button/block.js";
 import "@vkblocks/blocks/faq/block.js";
 import "@vkblocks/blocks/flow/block.js";

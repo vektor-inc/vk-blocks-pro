@@ -1,0 +1,58 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/balloon",
+	"category": "vk-blocks-cat",
+	"attributes": {
+		"content": {
+			"source": "html",
+			"selector": "p"
+		},
+		"balloonName": {
+			"source": "html",
+			"selector": "figcaption"
+		},
+		"balloonType": {
+			"type": "string",
+			"default": "type-speech"
+		},
+		"balloonBorder": {
+			"type": "boolean",
+			"default": false
+		},
+		"balloonImageBorder": {
+			"type": "boolean",
+			"default": false
+		},
+		"balloonBorderWidth": {
+			"type": "string",
+			"default": "thin"
+		},
+		"balloonBorderColor": {
+			"type": "string",
+			"default": null
+		},
+		"balloonBgColor": {
+			"type": "string",
+			"default": null
+		},
+		"balloonAlign": {
+			"type": "string",
+			"default": "position-left"
+		},
+		"IconImage": {
+			"type": "string",
+			"defaul": null
+		},
+		"balloonImageType": {
+			"type": "string",
+			"default": "normal"
+		},
+		"balloonAnimation": {
+			"type": "string",
+			"default": "none"
+		}
+	},
+	"supports": {
+		"className": true
+	}
+}

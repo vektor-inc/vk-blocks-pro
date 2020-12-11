@@ -5,8 +5,8 @@
   "main": "gulpfile.js",
   "scripts": {
     "start": "wp-env start",
-		"stop": "wp-env stop",
-		"destroy": "wp-env destroy",
+    "stop": "wp-env stop",
+    "destroy": "wp-env destroy",
     "watch": "gulp watch",
     "build:dev": "wp-scripts build --config webpack.config.js --mode=development && gulp build:dev:pro",
     "build": "wp-scripts build --config webpack.config.js && gulp build:pro && npm run translate",

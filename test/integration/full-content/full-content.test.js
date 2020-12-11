@@ -67,8 +67,6 @@ function normalizeParsedBlocks( blocks ) {
 
 describe( 'full post content fixture', () => {
 
-	let wpVersionSpy;
-
 	beforeAll( async () => {
 		const blockMetadataFiles = await glob(
 			// NOTE: VK Blocks用のパスに置き換え。

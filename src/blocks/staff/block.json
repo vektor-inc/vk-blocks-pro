@@ -3,22 +3,22 @@
 	"name": "vk-blocks/staff",
 	"category": "vk-blocks-cat",
 	"attributes": {
-		"vk_staff_text_name": {
+		"vkStaffTextName": {
             "type": "string",
             "source": "html",
             "selector": "h3"
         },
-        "vk_staff_text_caption": {
+        "vkStaffTextCaption": {
             "type": "string",
             "source": "html",
-            "selector": "p.vk_staff_text_caption"
+            "selector": "p.vkStaffTextCaption"
         },
-        "vk_staff_text_role": {
+        "vkStaffTextRole": {
             "type": "string",
             "source": "html",
-            "selector": "p.vk_staff_text_role"
+            "selector": "p.vkStaffTextRole"
         },
-        "vk_staff_text_profileTitle": {
+        "vkStaffTextProfileTitle": {
             "type": "string",
             "source": "html",
             "selector": "h4"

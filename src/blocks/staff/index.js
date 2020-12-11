@@ -5,7 +5,14 @@
 
 // WordPress  dependencies
 import { __ } from '@wordpress/i18n';
-import { iconPicture, profileTitle, position, profileName, profileLifeTime, content } from "@vkblocks/utils/example-data"
+import {
+	iconPicture,
+	profileTitle,
+	position,
+	profileName,
+	profileLifeTime,
+	content,
+} from '@vkblocks/utils/example-data';
 
 // Internal dependencies
 import { ReactComponent as Icon } from './icon.svg';
@@ -22,20 +29,20 @@ export const settings = {
 	icon: <Icon />,
 	example: {
 		attributes: {
-			vk_staff_text_name: profileName,
-			vk_staff_text_caption: profileLifeTime,
-			vk_staff_text_role: position,
-			vk_staff_text_profileTitle: profileTitle,
-			vk_staff_text_profileText: content,
-			vk_staff_photo_image: iconPicture,
-			vk_staff_layout: 'default',
-			vk_staff_nameColor: 'inherit',
-			vk_staff_captionColor: 'inherit',
-			vk_staff_positionColor: 'inherit',
-			vk_staff_profileTitleColor: 'inherit',
-			vk_staff_profileTextColor: 'inherit',
-			vk_staff_photoBorder: 'default'
-		}
+			vkStaffTextName: profileName,
+			vkStaffTextCaption: profileLifeTime,
+			vkStaffTextRole: position,
+			vkStaffTextProfileTitle: profileTitle,
+			vkStaffTextProfileText: content,
+			vkStaffPhotoImage: iconPicture,
+			vkStaffLayout: 'default',
+			vkStaffNameColor: 'inherit',
+			vkStaffCaptionColor: 'inherit',
+			vkStaffPositionColor: 'inherit',
+			vkStaffProfileTitleColor: 'inherit',
+			vkStaffProfileTextColor: 'inherit',
+			vkStaffPhotoBorder: 'default',
+		},
 	},
 	edit,
 	save,

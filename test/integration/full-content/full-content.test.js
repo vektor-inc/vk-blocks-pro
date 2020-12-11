@@ -66,6 +66,9 @@ function normalizeParsedBlocks( blocks ) {
 }
 
 describe( 'full post content fixture', () => {
+
+	let wpVersionSpy;
+
 	beforeAll( async () => {
 		const blockMetadataFiles = await glob(
 			// NOTE: VK Blocks用のパスに置き換え。
@@ -86,6 +89,12 @@ describe( 'full post content fixture', () => {
 		// NOTE: ファイルの最初で読み込みに変更
 		// Load all hooks that modify blocks
 		// require( '../../../packages/editor/src/hooks' );
+
+		// VK Blocksが出力している wpVersion を定義
+		Object.defineProperty( window, 'wpVersion', {
+			value: '5.6',
+			writable: false,
+		} );
 
 		//TODO: 下のコアブロックを取得する関数の代わりに、カスタムブロック一覧の引数を渡す
 		// registerCoreBlocks();

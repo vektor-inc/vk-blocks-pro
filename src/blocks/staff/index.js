@@ -5,10 +5,9 @@
 
 // WordPress  dependencies
 import { __ } from '@wordpress/i18n';
-// import { registerBlockType } from '@wordpress/blocks';
+import { iconPicture, profileTitle, position, profileName, profileLifeTime, content } from "@vkblocks/utils/example-data"
 
 // Internal dependencies
-import { example } from './schema';
 import { ReactComponent as Icon } from './icon.svg';
 import edit from './edit';
 import save from './save';
@@ -21,18 +20,23 @@ export { metadata, name };
 export const settings = {
 	title: __('Staff', 'vk-blocks'),
 	icon: <Icon />,
-	example,
+	example: {
+		attributes: {
+			vk_staff_text_name: profileName,
+			vk_staff_text_caption: profileLifeTime,
+			vk_staff_text_role: position,
+			vk_staff_text_profileTitle: profileTitle,
+			vk_staff_text_profileText: content,
+			vk_staff_photo_image: iconPicture,
+			vk_staff_layout: 'default',
+			vk_staff_nameColor: 'inherit',
+			vk_staff_captionColor: 'inherit',
+			vk_staff_positionColor: 'inherit',
+			vk_staff_profileTitleColor: 'inherit',
+			vk_staff_profileTextColor: 'inherit',
+			vk_staff_photoBorder: 'default'
+		}
+	},
 	edit,
 	save,
 };
-
-// registerBlockType('vk-blocks/staff', {
-// 	...metadata,
-//     title: __('Staff', 'vk-blocks'),
-//     icon: <Icon/>,
-//     category: 'vk-blocks-cat',
-// 	// attributes: schema,
-// 	example,
-// 	edit,
-// 	save,
-// });

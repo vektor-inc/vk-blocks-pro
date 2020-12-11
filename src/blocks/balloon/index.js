@@ -3,7 +3,7 @@
  *
  */
 import { deprecated } from './deprecated';
-import { vkbBlockEditor } from "./../../utils/depModules";
+import { vkbBlockEditor } from "../../utils/depModules";
 import { iconPicture, content, iconName, baseColor } from "../../utils/example-data"
 import { ReactComponent as Icon } from './icon.svg';
 

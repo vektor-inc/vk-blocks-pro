@@ -175,8 +175,8 @@ function vkblocks_blocks_assets() {
 		if(function_exists('register_block_type_from_metadata')){
 			require_once VK_BLOCKS_SRC_PATH . '/blocks/alert/index.php';
 			require_once VK_BLOCKS_SRC_PATH . '/blocks/faq2/index.php';
-			require_once VK_BLOCKS_SRC_PATH . '/blocks/faq2_a/index.php';
-			require_once VK_BLOCKS_SRC_PATH . '/blocks/faq2_q/index.php';
+			require_once VK_BLOCKS_SRC_PATH . '/blocks/faq2-a/index.php';
+			require_once VK_BLOCKS_SRC_PATH . '/blocks/faq2-q/index.php';
 		} else {
 			$arr = array_merge(
 				$arr,

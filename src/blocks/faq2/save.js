@@ -1,6 +1,4 @@
-import { InnerBlocks } from '@vkblocks/utils/depModules';
-
-const { InnerBlocks } = vkbBlockEditor;
+import { InnerBlocks } from '@wordpress/block-editor';
 
 export default function save() {
 	return (

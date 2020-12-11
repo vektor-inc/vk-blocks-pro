@@ -44,7 +44,7 @@ import {
 
 const blockBasenames = getAvailableBlockFixturesBasenames();
 
-// import { getCustomBlocks } from '../../../src/blocks/bundle';
+import { registerVKBlocks } from '../../../src/blocks/index';
 
 function normalizeParsedBlocks( blocks ) {
 	return blocks.map( ( block, index ) => {
@@ -70,22 +70,26 @@ describe( 'full post content fixture', () => {
 		const blockMetadataFiles = await glob(
 			// NOTE: VK Blocks用のパスに置き換え。
 			// TODO: プロ用プラグインのパスを追加。
-			'../../src/blocks/*/block.json'
+			'../../../src/blocks/alert/block.json'
 			// 'packages/block-library/src/*/block.json'
 		);
+
 		const blockDefinitions = fromPairs(
 			blockMetadataFiles.map( ( file ) => {
 				const { name, ...metadata } = require( file );
 				return [ name, metadata ];
 			} )
 		);
+
 		unstable__bootstrapServerSideBlockDefinitions( blockDefinitions );
+
 		// NOTE: ファイルの最初で読み込みに変更
 		// Load all hooks that modify blocks
 		// require( '../../../packages/editor/src/hooks' );
 
 		//TODO: 下のコアブロックを取得する関数の代わりに、カスタムブロック一覧の引数を渡す
 		// registerCoreBlocks();
+		registerVKBlocks();
 
 		// カスタムブロックを登録
 		// const customBlocks = getCustomBlocks();
@@ -99,6 +103,8 @@ describe( 'full post content fixture', () => {
 	blockBasenames.forEach( ( basename ) => {
 
 		it( basename, () => {
+
+			// フィクスチャーの元データを取得
 			const {
 				filename: htmlFixtureFileName,
 				file: htmlFixtureContent,
@@ -109,17 +115,26 @@ describe( 'full post content fixture', () => {
 				);
 			}
 
+			//JSON化したブロックを取得
 			const {
 				filename: parsedJSONFixtureFileName,
 				file: parsedJSONFixtureContent,
 			} = getBlockFixtureParsedJSON( basename );
+
+			// パースしたブロックを取得
 			const parserOutputActual = grammarParse( htmlFixtureContent );
+
 			let parserOutputExpectedString;
+			//JSON化したブロックがある場合、結果として返す
 			if ( parsedJSONFixtureContent ) {
 				parserOutputExpectedString = parsedJSONFixtureContent;
+
+			// 環境変数を渡すと、フィクスチャー生成
 			} else if ( process.env.GENERATE_MISSING_FIXTURES ) {
+
 				parserOutputExpectedString =
 					JSON.stringify( parserOutputActual, null, 4 ) + '\n';
+				//.parsed.json 生成
 				writeBlockFixtureParsedJSON(
 					basename,
 					parserOutputExpectedString
@@ -171,10 +186,16 @@ describe( 'full post content fixture', () => {
 
 			if ( jsonFixtureContent ) {
 				blocksExpectedString = jsonFixtureContent;
+
+			// 環境変数を渡すと、フィクスチャー生成
 			} else if ( process.env.GENERATE_MISSING_FIXTURES ) {
+
 				blocksExpectedString =
 					JSON.stringify( blocksActualNormalized, null, 4 ) + '\n';
+
+				//.json 生成
 				writeBlockFixtureJSON( basename, blocksExpectedString );
+
 			} else {
 				throw new Error(
 					`Missing fixture file: ${ jsonFixtureFileName }`

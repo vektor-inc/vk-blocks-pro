@@ -1,8 +1,7 @@
 import { __ } from '@wordpress/i18n';
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
-import { vkbBlockEditor } from '@vkblocks/utils/depModules';
-const { InspectorControls, RichText } = vkbBlockEditor;
+import { InspectorControls, RichText } from '@wordpress/block-editor';
 
 export default function AlertEdit({ attributes, setAttributes, className }) {
 	const { style, content } = attributes;

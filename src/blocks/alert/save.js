@@ -1,5 +1,4 @@
-import { vkbBlockEditor } from '@vkblocks/utils/depModules';
-const { RichText } = vkbBlockEditor;
+import { RichText } from '@wordpress/block-editor';
 
 export default function save({ attributes }) {
 	const { style, content } = attributes;

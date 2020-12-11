@@ -33,3 +33,5 @@
 - lintとformatを導入
 - テスト追加
 - depModuleの書き方調査
+    - depModule廃止: depModule を '@wordpress/block-editor' に置き換え。
+    - 理由： VK Blocks のrequire バージョンを 5.3 に引き上げるため。

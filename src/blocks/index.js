@@ -3,7 +3,7 @@
  */
 import '@wordpress/core-data';
 import '@wordpress/notices';
-import '@wordpress/block-editor';
+// import '@wordpress/block-editor';
 import {
 	registerBlockType,
 } from '@wordpress/blocks';

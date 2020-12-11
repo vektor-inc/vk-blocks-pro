@@ -27,10 +27,10 @@ export default function edit({ attributes, className, setAttributes }) {
 			path: '/vk-blocks/v1/block-meta/balloon/',
 			method: 'GET',
 			parse: true,
-		} ).then( ( result ) => {
+		} ).then( result => {
 			setBlockMeta(result)
-		} )
-	}, [])
+		} );
+	}, []);
 
 	let defautIconButtons;
 	if(blockMeta && blockMeta.default_icons){

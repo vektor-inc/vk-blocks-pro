@@ -1,4 +1,6 @@
+// Internal  dependencies
 import { NewComponent } from "./component";
+
 export default function save({ attributes }) {
     return (
 <NewComponent

@@ -1,7 +1,10 @@
+// WordPress  dependencies
 import { __ } from '@wordpress/i18n';
 import { TextControl, PanelBody, BaseControl, SelectControl } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 import { InspectorControls, ColorPalette } from '@wordpress/block-editor';
+
+// Internal  dependencies
 import { NewComponent } from "./component";
 
 export default function StaffEdit({ attributes, setAttributes, className }) {

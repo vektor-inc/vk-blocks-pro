@@ -2,6 +2,7 @@ import { vkbBlockEditor } from '@vkblocks/utils/depModules';
 import { Fragment } from "@wordpress/element";
 import { PanelBody, PanelRow } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
+import classNames from "classnames";
 
 const { InnerBlocks, InspectorControls } = vkbBlockEditor;
 
@@ -39,4 +40,4 @@ export default function edit( props ) {
 
 	);
 
-  }
+}

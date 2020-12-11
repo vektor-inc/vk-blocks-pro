@@ -172,11 +172,10 @@ function vkblocks_blocks_assets() {
 		//register_block_type_from_metadataで読み込むブロック
 		$arr_wp56 = array( 'alert', 'faq2', 'faq2-q', 'faq2-a' );
 
-		if(function_exists('register_block_type_from_metadata')){
-			require_once VK_BLOCKS_SRC_PATH . '/blocks/alert/index.php';
-			require_once VK_BLOCKS_SRC_PATH . '/blocks/faq2/index.php';
-			require_once VK_BLOCKS_SRC_PATH . '/blocks/faq2-a/index.php';
-			require_once VK_BLOCKS_SRC_PATH . '/blocks/faq2-q/index.php';
+		if( function_exists( 'register_block_type_from_metadata' ) ) {
+			foreach ( $arr_wp56 as $array ) {
+				require_once VK_BLOCKS_SRC_PATH . '/blocks/' . $array . '/index.php';
+			}
 		} else {
 			$arr = array_merge(
 				$arr,

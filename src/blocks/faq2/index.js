@@ -1,13 +1,13 @@
 /**
  * FAQ Outer Block
  */
-import { content } from '../../utils/example-data';
+import { title, content } from '../../utils/example-data';
 import { ReactComponent as Icon } from './icon.svg';
-import deprecated from './deprecated/index';
 import edit from './edit';
 import metadata from './block.json';
 import save from './save';
 import { __ } from '@wordpress/i18n';
+import deprecated from './deprecated/index';
 
 const { name } = metadata;
 
@@ -16,11 +16,6 @@ export { metadata, name };
 export const settings = {
 	title: __("New FAQ", "vk-blocks"),
 	icon: <Icon />,
-	category: "vk-blocks-cat",
-	supports: {
-		anchor: true,
-		className: true,
-	},
 	styles: [
 		{
 			name: 'vk_faq-normal',

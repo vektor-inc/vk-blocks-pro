@@ -1,4 +1,6 @@
-const { InnerBlocks, InspectorControls } = vkbBlockEditor;
+import { vkbBlockEditor } from '@vkblocks/utils/depModules';
+
+const { InnerBlocks } = vkbBlockEditor;
 
 export default function save() {
 	return (

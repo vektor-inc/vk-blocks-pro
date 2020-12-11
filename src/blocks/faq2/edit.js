@@ -1,3 +1,4 @@
+import { vkbBlockEditor } from '@vkblocks/utils/depModules';
 import { Fragment } from "@wordpress/element";
 import { PanelBody, PanelRow } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";

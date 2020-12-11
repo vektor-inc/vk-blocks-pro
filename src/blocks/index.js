@@ -6,6 +6,7 @@ import '@wordpress/notices';
 // import '@wordpress/block-editor';
 import {
 	registerBlockType,
+	unstable__bootstrapServerSideBlockDefinitions, // eslint-disable-line camelcase
 } from '@wordpress/blocks';
 import compareVersions from 'compare-versions';
 
@@ -37,6 +38,10 @@ const registerBlock = ( block ) => {
 			...metadata
 		}
 
+	} else {
+		if ( metadata ) {
+			unstable__bootstrapServerSideBlockDefinitions( { [ name ]: metadata } );
+		}
 	}
 	registerBlockType( name, settings );
 };

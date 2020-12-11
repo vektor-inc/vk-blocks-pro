@@ -16,15 +16,17 @@ import { format } from 'util';
  */
 import {
 	getBlockTypes,
+	getCategories,
+	setCategories,
 	parse,
 	serialize,
 	unstable__bootstrapServerSideBlockDefinitions, // eslint-disable-line camelcase
 } from '@wordpress/blocks';
 import { parse as grammarParse } from '@wordpress/block-serialization-default-parser';
-// import {
-// 	registerCoreBlocks,
-// 	__experimentalRegisterExperimentalCoreBlocks,
-// } from '@wordpress/block-library';
+import {
+	registerCoreBlocks,
+	__experimentalRegisterExperimentalCoreBlocks,
+} from '@wordpress/block-library';
 //eslint-disable-next-line no-restricted-syntax
 import {
 	blockNameToFixtureBasename,
@@ -94,13 +96,21 @@ describe( 'full post content fixture', () => {
 			writable: false,
 		} );
 
-		//TODO: 下のコアブロックを取得する関数の代わりに、カスタムブロック一覧の引数を渡す
+		//コアブロック登録
 		// registerCoreBlocks();
-		registerVKBlocks();
 
-		// カスタムブロックを登録
-		// const customBlocks = getCustomBlocks();
-		// registerCoreBlocks( customBlocks );
+		// ブロックカテゴリー取得
+		const blockCategories = getCategories();
+
+		// カスタムカテゴリー追加
+		setCategories([
+			...blockCategories,
+			{slug: 'vk-blocks-cat', title: 'VKBlocks'},
+			{slug: 'vk-blocks-cat-layout', title: 'VKBlocks Layout'},
+		])
+
+		//カスタムブロック登録
+		registerVKBlocks();
 
 		// if ( process.env.GUTENBERG_PHASE === 2 ) {
 		// 	__experimentalRegisterExperimentalCoreBlocks( true );
@@ -273,7 +283,6 @@ describe( 'full post content fixture', () => {
 				( name ) => ! [ 'core/embed', 'core/template' ].includes( name )
 			)
 			.forEach( ( name ) => {
-				console.log(name)
 				const nameToFilename = blockNameToFixtureBasename( name );
 				const foundFixtures = blockBasenames
 					.filter(

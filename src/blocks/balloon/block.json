@@ -29,11 +29,11 @@
 		},
 		"balloonBorderColor": {
 			"type": "string",
-			"default": null
+			"default": "#cccccc"
 		},
 		"balloonBgColor": {
 			"type": "string",
-			"default": null
+			"default": "#f5f5f5"
 		},
 		"balloonAlign": {
 			"type": "string",

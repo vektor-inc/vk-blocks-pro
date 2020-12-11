@@ -46,7 +46,7 @@ import {
 
 const blockBasenames = getAvailableBlockFixturesBasenames();
 
-import { registerVKBlocks } from '../../../src/blocks/index';
+import { registerVKBlocks } from '@vkblocks/blocks';
 
 function normalizeParsedBlocks( blocks ) {
 	return blocks.map( ( block, index ) => {
@@ -73,7 +73,7 @@ describe( 'full post content fixture', () => {
 		const blockMetadataFiles = await glob(
 			// NOTE: VK Blocks用のパスに置き換え。
 			// TODO: プロ用プラグインのパスを追加。
-			'../../../src/blocks/alert/block.json'
+			'@vkblocks/blocks/alert/block.json'
 			// 'packages/block-library/src/*/block.json'
 		);
 

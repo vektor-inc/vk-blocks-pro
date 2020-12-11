@@ -47,32 +47,14 @@ const registerBlock = ( block ) => {
 };
 
 /**
- * Function to get all the core blocks in an array.
- *
- * @example
- * ```js
- * import { __experimentalGetCoreBlocks } from '@wordpress/block-library';
- *
- * const coreBlocks = __experimentalGetCoreBlocks();
- * ```
+ * Function to get all the VK Blocks in an array.
  */
 export const __getVKBlocks = () => [
-	// Common blocks are grouped at the top to prioritize their display
-	// in various contexts — like the inserter and auto-complete components.
 	alert,
 ];
 
 /**
- * Function to register core blocks provided by the block editor.
- *
- * @param {Array} blocks An optional array of the core blocks being registered.
- *
- * @example
- * ```js
- * import { registerCoreBlocks } from '@wordpress/block-library';
- *
- * registerCoreBlocks();
- * ```
+ * Function to register VK Blocks.
  */
 export const registerVKBlocks = (
 	blocks = __getVKBlocks()

@@ -14,6 +14,8 @@ import compareVersions from 'compare-versions';
  */
 import * as alert from './alert';
 import * as faq2 from './faq2';
+import * as faq2a from './faq2-a';
+import * as faq2q from './faq2-q';
 
 /**
  * Function to register an individual block.
@@ -57,6 +59,8 @@ export const __getVKBlocks = () => [
 	// in various contexts — like the inserter and auto-complete components.
 	alert,
 	faq2,
+	faq2a,
+	faq2q
 ];
 
 /**

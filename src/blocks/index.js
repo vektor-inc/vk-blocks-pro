@@ -13,6 +13,7 @@ import compareVersions from 'compare-versions';
  * Internal dependencies
  */
 import * as alert from './alert';
+import * as staff from './staff';
 
 /**
  * Function to register an individual block.
@@ -55,6 +56,7 @@ export const __getVKBlocks = () => [
 	// Common blocks are grouped at the top to prioritize their display
 	// in various contexts — like the inserter and auto-complete components.
 	alert,
+	staff
 ];
 
 /**

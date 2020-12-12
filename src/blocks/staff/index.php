@@ -16,4 +16,3 @@ if( function_exists('register_block_type_from_metadata')) {
 	}
 	add_action( 'init', 'register_block_vk_staff', 99 );
 }
-

@@ -1,3 +1,6 @@
+import classnames from 'classnames';
+// import { pick } from 'lodash';
+
 // WordPress  dependencies
 import { useInstanceId } from '@wordpress/compose';
 import { __ } from '@wordpress/i18n';
@@ -13,12 +16,28 @@ import {
 	ColorPalette,
 	useBlockProps,
 	RichText,
+	//MediaPlaceholder
 	MediaUpload,
 } from '@wordpress/block-editor';
+// import { image as icon } from '@wordpress/icons';
+
+// pick imageProps
+// export const pickRelevantMediaFiles = (image) => {
+// 	const imageProps = pick(image, ['alt', 'id', 'link', 'caption']);
+// 	imageProps.url =
+// 		get(image, ['sizes', 'large', 'url']) ||
+// 		get(image, ['media_details', 'sizes', 'large', 'source_url']) ||
+// 		image.url;
+// 	return imageProps;
+// };
 
 export default function StaffEdit({ attributes, setAttributes, className }) {
 	const instanceId = useInstanceId(StaffEdit);
-	const id = `vkblocks-staff-${instanceId}`;
+	const vkStaffNameColorId = `vk_staff_name-color-${instanceId}`;
+	const vkStaffCaptionColorId = `vk_staff_caption-color-${instanceId}`;
+	const vkStaffPositionColorId = `vk_staff_position-color-${instanceId}`;
+	const vkStaffProfileTitleColorId = `vk_staff_profileTitle-color-${instanceId}`;
+	const vkStaffProfileTextColorId = `vk_staff_profileText-color-${instanceId}`;
 	const {
 		vkStaffTextName,
 		vkStaffTextCaption,
@@ -35,6 +54,30 @@ export default function StaffEdit({ attributes, setAttributes, className }) {
 		vkStaffProfileTextColor,
 		vkStaffPhotoBorder,
 	} = attributes;
+
+	const classes = classnames('vk_staff', {
+		[className]: !!className,
+		[`vk_staff-layout-${vkStaffLayout}`]: !!vkStaffLayout,
+	});
+
+	// const mediaPlaceholder = (
+	// 	<MediaPlaceholder
+	// 		icon={ <BlockIcon icon={ icon } /> }
+	// 		onSelect={ onSelectImage }
+	// 		onSelectURL={ onSelectURL }
+	// 		notices={ noticeUI }
+	// 		onError={ onUploadError }
+	// 		accept="image/*"
+	// 		allowedTypes={ ALLOWED_MEDIA_TYPES }
+	// 		value={ { id, src } }
+	// 		mediaPreview={ mediaPreview }
+	// 		disableMediaButtons={ url }
+	// 	/>
+	// );
+
+	// const figureClasses = classnames('vk_staff_photo', {
+	// 	[`vk_staff_photo-border-${vkStaffPhotoBorder}`]: !!vkStaffPhotoBorder,
+	// });
 
 	return (
 		<>
@@ -93,9 +136,12 @@ export default function StaffEdit({ attributes, setAttributes, className }) {
 					</BaseControl>
 				</PanelBody>
 				<PanelBody title={__('Color', 'vk-blocks')}>
-					<BaseControl id={id} label={__('Staff name', 'vk-blocks')}>
+					<BaseControl
+						id={vkStaffNameColorId}
+						label={__('Staff name', 'vk-blocks')}
+					>
 						<ColorPalette
-							id={id}
+							id={vkStaffNameColorId}
 							value={vkStaffNameColor}
 							onChange={(value) =>
 								setAttributes({ vkStaffNameColor: value })
@@ -103,11 +149,11 @@ export default function StaffEdit({ attributes, setAttributes, className }) {
 						/>
 					</BaseControl>
 					<BaseControl
-						id={id}
+						id={vkStaffCaptionColorId}
 						label={__('Name caption', 'vk-blocks')}
 					>
 						<ColorPalette
-							id={id}
+							id={vkStaffCaptionColorId}
 							value={vkStaffCaptionColor}
 							onChange={(value) =>
 								setAttributes({ vkStaffCaptionColor: value })
@@ -115,11 +161,11 @@ export default function StaffEdit({ attributes, setAttributes, className }) {
 						/>
 					</BaseControl>
 					<BaseControl
-						id={id}
+						id={vkStaffPositionColorId}
 						label={__('Role position', 'vk-blocks')}
 					>
 						<ColorPalette
-							id={id}
+							id={vkStaffPositionColorId}
 							value={vkStaffPositionColor}
 							onChange={(value) =>
 								setAttributes({ vkStaffPositionColor: value })
@@ -127,11 +173,11 @@ export default function StaffEdit({ attributes, setAttributes, className }) {
 						/>
 					</BaseControl>
 					<BaseControl
-						id={id}
+						id={vkStaffProfileTitleColorId}
 						label={__('Profile title', 'vk-blocks')}
 					>
 						<ColorPalette
-							id={id}
+							id={vkStaffProfileTitleColorId}
 							value={vkStaffProfileTitleColor}
 							onChange={(value) =>
 								setAttributes({
@@ -141,11 +187,11 @@ export default function StaffEdit({ attributes, setAttributes, className }) {
 						/>
 					</BaseControl>
 					<BaseControl
-						id={id}
+						id={vkStaffProfileTextColorId}
 						label={__('Profile text', 'vk-blocks')}
 					>
 						<ColorPalette
-							id={id}
+							id={vkStaffProfileTextColorId}
 							value={vkStaffProfileTextColor}
 							onChange={(value) =>
 								setAttributes({
@@ -157,100 +203,96 @@ export default function StaffEdit({ attributes, setAttributes, className }) {
 				</PanelBody>
 			</InspectorControls>
 
-			<div {...useBlockProps()}>
+			<div {...useBlockProps({ className: classes })}>
+				<div className={'vk_staff_text'}>
+					<RichText
+						tagName="h3"
+						className={'vk_staff_text_name'}
+						style={{ color: vkStaffNameColor }}
+						onChange={(value) =>
+							setAttributes({ vkStaffTextName: value })
+						}
+						value={vkStaffTextName}
+						placeholder={__('Your Name', 'vk-blocks')}
+					/>
+					<RichText
+						tagName="p"
+						className={'vk_staff_text_caption'}
+						style={{ color: vkStaffCaptionColor }}
+						onChange={(value) =>
+							setAttributes({ vkStaffTextCaption: value })
+						}
+						value={vkStaffTextCaption}
+						placeholder={__('Caption', 'vk-blocks')}
+					/>
+					<RichText
+						tagName="p"
+						className={'vk_staff_text_role'}
+						style={{ color: vkStaffPositionColor }}
+						onChange={(value) =>
+							setAttributes({ vkStaffTextRole: value })
+						}
+						value={vkStaffTextRole}
+						placeholder={__('Role position', 'vk-blocks')}
+					/>
+					<RichText
+						tagName="h4"
+						className={'vk_staff_text_profileTitle'}
+						style={{ color: vkStaffProfileTitleColor }}
+						onChange={(value) =>
+							setAttributes({
+								vkStaffTextProfileTitle: value,
+							})
+						}
+						value={vkStaffTextProfileTitle}
+						placeholder={__('Profile title', 'vk-blocks')}
+					/>
+					<RichText
+						tagName="p"
+						className={'vk_staff_text_profileText'}
+						style={{ color: vkStaffProfileTextColor }}
+						onChange={(value) =>
+							setAttributes({
+								vkStaffTextProfileText: value,
+							})
+						}
+						value={vkStaffTextProfileText}
+						placeholder={__('Profile text', 'vk-blocks')}
+					/>
+				</div>
 				<div
-					className={`${className} vk_staff vk_staff-layout-${vkStaffLayout}`}
+					className={`vk_staff_photo vk_staff_photo-border-${vkStaffPhotoBorder}`}
 				>
-					<div className={`vk_staff_text`}>
-						<RichText
-							tagName="h3"
-							className={'vk_staff_text_name'}
-							style={{ color: vkStaffNameColor }}
-							onChange={(value) =>
-								setAttributes({ vkStaffTextName: value })
-							}
-							value={vkStaffTextName}
-							placeholder={__('Your Name', 'vk-blocks')}
-						/>
-						<RichText
-							tagName="p"
-							className={'vk_staff_text_caption'}
-							style={{ color: vkStaffCaptionColor }}
-							onChange={(value) =>
-								setAttributes({ vkStaffTextCaption: value })
-							}
-							value={vkStaffTextCaption}
-							placeholder={__('Caption', 'vk-blocks')}
-						/>
-						<RichText
-							tagName="p"
-							className={'vk_staff_text_role'}
-							style={{ color: vkStaffPositionColor }}
-							onChange={(value) =>
-								setAttributes({ vkStaffTextRole: value })
-							}
-							value={vkStaffTextRole}
-							placeholder={__('Role position', 'vk-blocks')}
-						/>
-						<RichText
-							tagName="h4"
-							className={'vk_staff_text_profile_title'}
-							style={{ color: vkStaffProfileTitleColor }}
-							onChange={(value) =>
-								setAttributes({
-									vkStaffTextProfileTitle: value,
-								})
-							}
-							value={vkStaffTextProfileTitle}
-							placeholder={__('Profile title', 'vk-blocks')}
-						/>
-						<RichText
-							tagName="p"
-							className={'vk_staff_text_profile_text'}
-							style={{ color: vkStaffProfileTextColor }}
-							onChange={(value) =>
-								setAttributes({
-									vkStaffTextProfileText: value,
-								})
-							}
-							value={vkStaffTextProfileText}
-							placeholder={__('Profile text', 'vk-blocks')}
-						/>
-					</div>
-					<div
-						className={`vk_staff_photo vk_staff_photo-border-${vkStaffPhotoBorder}`}
-					>
-						<MediaUpload
-							onSelect={(value) =>
-								setAttributes({
-									vkStaffPhotoImage: value.sizes.full.url,
-								})
-							}
-							type="image"
-							className={'vk_staff_photo_image'}
-							value={vkStaffPhotoImage}
-							render={({ open }) => (
-								<Button
-									onClick={open}
-									className={
-										vkStaffPhotoImage
-											? 'image-button'
-											: 'button button-large'
-									}
-								>
-									{!vkStaffPhotoImage ? (
-										__('Select image', 'vk-blocks')
-									) : (
-										<img
-											className={`vk_staff_photo_image`}
-											src={vkStaffPhotoImage}
-											alt={vkStaffPhotoImageAlt}
-										/>
-									)}
-								</Button>
-							)}
-						/>
-					</div>
+					<MediaUpload
+						onSelect={(value) =>
+							setAttributes({
+								vkStaffPhotoImage: value.sizes.full.url,
+							})
+						}
+						type="image"
+						className={'vk_staff_photo_image'}
+						value={vkStaffPhotoImage}
+						render={({ open }) => (
+							<Button
+								onClick={open}
+								className={
+									vkStaffPhotoImage
+										? 'image-button'
+										: 'button button-large'
+								}
+							>
+								{!vkStaffPhotoImage ? (
+									__('Select image', 'vk-blocks')
+								) : (
+									<img
+										className={'vk_staff_photo_image'}
+										src={vkStaffPhotoImage}
+										alt={vkStaffPhotoImageAlt}
+									/>
+								)}
+							</Button>
+						)}
+					/>
 				</div>
 			</div>
 		</>

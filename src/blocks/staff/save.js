@@ -1,4 +1,5 @@
 import classnames from 'classnames';
+
 // WordPress  dependencies
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 
@@ -25,6 +26,10 @@ export default function save({ attributes, className }) {
 		[`vk_staff-layout-${vkStaffLayout}`]: !!vkStaffLayout,
 	});
 
+	const figureClasses = classnames('vk_staff_photo', {
+		[`vk_staff_photo-border-${vkStaffPhotoBorder}`]: !!vkStaffPhotoBorder,
+	});
+
 	return (
 		<div {...useBlockProps.save({ className: classes })}>
 			<div className={`vk_staff_text`}>
@@ -48,27 +53,25 @@ export default function save({ attributes, className }) {
 				/>
 				<RichText.Content
 					tagName="h4"
-					className={'vk_staff_text_profile_title'}
+					className={'vk_staff_text_profileTitle'}
 					style={{ color: vkStaffProfileTitleColor }}
 					value={vkStaffTextProfileTitle}
 				/>
 				<RichText.Content
 					tagName="p"
-					className={'vk_staff_text_profile_text'}
+					className={'vk_staff_text_profileText'}
 					style={{ color: vkStaffProfileTextColor }}
 					value={vkStaffTextProfileText}
 				/>
 			</div>
 			{vkStaffPhotoImage ? (
-				<div
-					className={`vk_staff_photo vk_staff_photo-border-${vkStaffPhotoBorder}`}
-				>
+				<figure className={figureClasses}>
 					<img
 						className={`vk_staff_photo_image`}
 						src={vkStaffPhotoImage}
 						alt={vkStaffPhotoImageAlt}
 					/>
-				</div>
+				</figure>
 			) : (
 				''
 			)}

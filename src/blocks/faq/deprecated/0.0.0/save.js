@@ -1,4 +1,4 @@
-const { RichText } = '@wordpress/block-editor';
+import  { RichText } from '@wordpress/block-editor';
 
 export default function save({ attributes, className }) {
 	const { heading, content } = attributes;

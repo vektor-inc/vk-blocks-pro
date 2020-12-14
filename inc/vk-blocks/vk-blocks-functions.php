@@ -168,13 +168,14 @@ function vkblocks_blocks_assets() {
 	if( is_lager_than_wp('5.0') ){
 
 		//register_blockで読み込むブロック
-		$arr = array( 'balloon', 'button', 'faq', 'flow', 'pr-blocks', 'pr-content', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents-new', 'highlighter', 'timeline', 'timeline-item', 'step', 'step-item', 'post-list', 'list-style', 'group-style', 'child-page', 'card', 'card-item', 'grid-column', 'grid-column-item', 'border-box', 'icon-card', 'icon-card-item', 'animation', 'slider', 'slider-item', 'faq2', 'faq2-q', 'faq2-a', 'responsive-br', 'nowrap' );
+		$arr = array( 'balloon', 'button', 'flow', 'pr-blocks', 'pr-content', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents-new', 'highlighter', 'timeline', 'timeline-item', 'step', 'step-item', 'post-list', 'list-style', 'group-style', 'child-page', 'card', 'card-item', 'grid-column', 'grid-column-item', 'border-box', 'icon-card', 'icon-card-item', 'animation', 'slider', 'slider-item', 'faq2', 'faq2-q', 'faq2-a', 'responsive-br', 'nowrap' );
 		//register_block_type_from_metadataで読み込むブロック
-		$arr_wp56 = array( 'alert' );
+		$arr_wp56 = array( 'alert', 'faq' );
 
 		if(function_exists('register_block_type_from_metadata')){
-			require_once VK_BLOCKS_SRC_PATH . '/blocks/alert/index.php';
-
+			foreach ( $arr_wp56 as $array ) {
+				require_once VK_BLOCKS_SRC_PATH . '/blocks/' . $array . '/index.php';
+			}
 		} else {
 			$arr = array_merge(
 				$arr,

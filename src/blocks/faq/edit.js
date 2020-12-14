@@ -11,8 +11,12 @@ export default function edit({ attributes, setAttributes, className }) {
 	}
 	const { heading, content } = attributes;
 	const TEMPLATE = [
-		[ 'core/paragraph', { content} ],
+		[ 'core/paragraph', { content } ],
 	];
+
+	const blockProps = useBlockProps( {
+		className: `vk_faq`,
+	} );
 
 	return (
 		<Fragment>
@@ -21,7 +25,7 @@ export default function edit({ attributes, setAttributes, className }) {
 					<PanelRow>{ massage }</PanelRow>
 				</PanelBody>
 			</InspectorControls>
-			<dl className={ classNames(className,"vk_faq") }>
+			<dl className={ ...blockProps }>
 				<RichText
 					tagName="dt"
 					className={ "vk_faq_title" }

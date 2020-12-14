@@ -85,7 +85,6 @@ if ( is_admin() && ! is_network_admin() ) {
 }
 
 require_once 'inc/vk-blocks-config.php';
-
 /*
   Load updater
 /*-------------------------------------------*/

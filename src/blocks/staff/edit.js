@@ -1,8 +1,6 @@
 import classnames from 'classnames';
-// import { pick } from 'lodash';
 
 // WordPress  dependencies
-import { useInstanceId } from '@wordpress/compose';
 import { __ } from '@wordpress/i18n';
 import {
 	TextControl,
@@ -16,28 +14,20 @@ import {
 	ColorPalette,
 	useBlockProps,
 	RichText,
-	//MediaPlaceholder
 	MediaUpload,
 } from '@wordpress/block-editor';
-// import { image as icon } from '@wordpress/icons';
 
-// pick imageProps
-// export const pickRelevantMediaFiles = (image) => {
-// 	const imageProps = pick(image, ['alt', 'id', 'link', 'caption']);
-// 	imageProps.url =
-// 		get(image, ['sizes', 'large', 'url']) ||
-// 		get(image, ['media_details', 'sizes', 'large', 'source_url']) ||
-// 		image.url;
-// 	return imageProps;
-// };
-
-export default function StaffEdit({ attributes, setAttributes, className }) {
-	const instanceId = useInstanceId(StaffEdit);
-	const vkStaffNameColorId = `vk_staff_name-color-${instanceId}`;
-	const vkStaffCaptionColorId = `vk_staff_caption-color-${instanceId}`;
-	const vkStaffPositionColorId = `vk_staff_position-color-${instanceId}`;
-	const vkStaffProfileTitleColorId = `vk_staff_profileTitle-color-${instanceId}`;
-	const vkStaffProfileTextColorId = `vk_staff_profileText-color-${instanceId}`;
+export default function StaffEdit({
+	attributes,
+	setAttributes,
+	className,
+	clientId,
+}) {
+	const vkStaffNameColorId = `vk_staff_name-color-${clientId}`;
+	const vkStaffCaptionColorId = `vk_staff_caption-color-${clientId}`;
+	const vkStaffPositionColorId = `vk_staff_position-color-${clientId}`;
+	const vkStaffProfileTitleColorId = `vk_staff_profileTitle-color-${clientId}`;
+	const vkStaffProfileTextColorId = `vk_staff_profileText-color-${clientId}`;
 	const {
 		vkStaffTextName,
 		vkStaffTextCaption,
@@ -60,24 +50,51 @@ export default function StaffEdit({ attributes, setAttributes, className }) {
 		[`vk_staff-layout-${vkStaffLayout}`]: !!vkStaffLayout,
 	});
 
-	// const mediaPlaceholder = (
-	// 	<MediaPlaceholder
-	// 		icon={ <BlockIcon icon={ icon } /> }
-	// 		onSelect={ onSelectImage }
-	// 		onSelectURL={ onSelectURL }
-	// 		notices={ noticeUI }
-	// 		onError={ onUploadError }
-	// 		accept="image/*"
-	// 		allowedTypes={ ALLOWED_MEDIA_TYPES }
-	// 		value={ { id, src } }
-	// 		mediaPreview={ mediaPreview }
-	// 		disableMediaButtons={ url }
-	// 	/>
-	// );
-
 	// const figureClasses = classnames('vk_staff_photo', {
 	// 	[`vk_staff_photo-border-${vkStaffPhotoBorder}`]: !!vkStaffPhotoBorder,
 	// });
+
+	const blockProps = useBlockProps({
+		className: classes,
+	});
+
+	// TODO! renderImage
+	const renderImage = () => {
+		if (vkStaffPhotoImage) {
+			return (
+				<MediaUpload
+					onSelect={(value) =>
+						setAttributes({
+							vkStaffPhotoImage: value.sizes.full.url,
+						})
+					}
+					type="image"
+					value={vkStaffPhotoImage}
+					render={({ open }) => (
+						<Button
+							onClick={open}
+							className={
+								vkStaffPhotoImage
+									? 'image-button'
+									: 'button button-large'
+							}
+						>
+							{!vkStaffPhotoImage ? (
+								__('Select image', 'vk-blocks')
+							) : (
+								<img
+									className={'vk_staff_photo_image'}
+									src={vkStaffPhotoImage}
+									alt={__('Upload image', 'vk-blocks')}
+									style={{ border: vkStaffPhotoBorder }}
+								/>
+							)}
+						</Button>
+					)}
+				/>
+			);
+		}
+	};
 
 	return (
 		<>
@@ -203,7 +220,7 @@ export default function StaffEdit({ attributes, setAttributes, className }) {
 				</PanelBody>
 			</InspectorControls>
 
-			<div {...useBlockProps({ className: classes })}>
+			<div {...blockProps}>
 				<div className={'vk_staff_text'}>
 					<RichText
 						tagName="h3"
@@ -260,9 +277,9 @@ export default function StaffEdit({ attributes, setAttributes, className }) {
 						placeholder={__('Profile text', 'vk-blocks')}
 					/>
 				</div>
-				<div
-					className={`vk_staff_photo vk_staff_photo-border-${vkStaffPhotoBorder}`}
-				>
+				<div className={'vk_staff_photo'}>{renderImage()}</div>
+
+				{/* <div className={figureClasses}>
 					<MediaUpload
 						onSelect={(value) =>
 							setAttributes({
@@ -293,7 +310,7 @@ export default function StaffEdit({ attributes, setAttributes, className }) {
 							</Button>
 						)}
 					/>
-				</div>
+				</div> */}
 			</div>
 		</>
 	);

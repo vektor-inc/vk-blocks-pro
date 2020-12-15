@@ -1,34 +1,63 @@
 import classnames from 'classnames';
 
 // WordPress  dependencies
+import { __ } from '@wordpress/i18n';
 import { useBlockProps, RichText } from '@wordpress/block-editor';
+
+import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
 
 export default function save({ attributes, className }) {
 	const {
+		imageBorderProperty,
 		vkStaffTextName,
 		vkStaffTextCaption,
 		vkStaffTextRole,
 		vkStaffTextProfileTitle,
 		vkStaffTextProfileText,
 		vkStaffPhotoImage,
-		vkStaffPhotoImageAlt,
+		//vkStaffPhotoImageAlt,
 		vkStaffLayout,
 		vkStaffNameColor,
 		vkStaffCaptionColor,
 		vkStaffPositionColor,
 		vkStaffProfileTitleColor,
 		vkStaffProfileTextColor,
-		vkStaffPhotoBorder,
+		//vkStaffPhotoBorder,
 	} = attributes;
 
 	const classes = classnames('vk_staff', {
 		[className]: !!className,
 		[`vk_staff-layout-${vkStaffLayout}`]: !!vkStaffLayout,
 	});
-
-	const figureClasses = classnames('vk_staff_photo', {
-		[`vk_staff_photo-border-${vkStaffPhotoBorder}`]: !!vkStaffPhotoBorder,
-	});
+	const renderImage = () => {
+		if (!vkStaffPhotoImage) {
+			return __('Select image', 'vk-blocks');
+		}
+		if (vkStaffPhotoImage && vkStaffPhotoImage.indexOf('{') === -1) {
+			return (
+				<img
+					className={'vk_staff_photo_image'}
+					src={vkStaffPhotoImage}
+					alt={__('Upload image', 'vk-blocks')}
+					style={{ border: imageBorderProperty }}
+				/>
+			);
+		}
+		const ImageParse = JSON.parse(fixBrokenUnicode(vkStaffPhotoImage));
+		if (ImageParse && typeof ImageParse.sizes !== 'undefined') {
+			return (
+				<img
+					className={'vk_staff_photo_image'}
+					src={ImageParse.sizes.full.url}
+					alt={ImageParse.alt}
+					style={{ border: imageBorderProperty }}
+				/>
+			);
+		}
+	};
+	// const figureClasses = classnames('vk_staff_photo', {
+	// 	[`vk_staff_photo-border-${vkStaffPhotoBorder}`]: !!vkStaffPhotoBorder,
+	// });
 
 	return (
 		<div {...useBlockProps.save({ className: classes })}>
@@ -64,7 +93,7 @@ export default function save({ attributes, className }) {
 					value={vkStaffTextProfileText}
 				/>
 			</div>
-			{vkStaffPhotoImage ? (
+			{/* {vkStaffPhotoImage ? (
 				<figure className={figureClasses}>
 					<img
 						className={`vk_staff_photo_image`}
@@ -74,7 +103,8 @@ export default function save({ attributes, className }) {
 				</figure>
 			) : (
 				''
-			)}
+			)} */}
+			<div className={'vk_staff_photo'}>{renderImage()}</div>
 		</div>
 
 		// <NewComponent

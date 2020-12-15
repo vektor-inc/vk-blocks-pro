@@ -15,3 +15,4 @@ src/blocks/**/style.css
 src/blocks/**/style.css.map
 src/blocks/_pro/**/style.css
 src/blocks/_pro/**/style.css.map
+.vscode/

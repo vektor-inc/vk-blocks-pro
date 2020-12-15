@@ -1,0 +1,33 @@
+[
+    {
+        "clientId": "_clientId_0",
+        "name": "vk-blocks/faq2",
+        "isValid": true,
+        "attributes": {
+            "className": "is-style-vk_faq-bgfill-circle"
+        },
+        "innerBlocks": [
+            {
+                "clientId": "_clientId_0",
+                "name": "vk-blocks/faq2-q",
+                "isValid": false,
+                "attributes": {
+                    "className": "wp-block-vk-blocks-faq2-q"
+                },
+                "innerBlocks": [],
+                "originalContent": "<dt class=\"wp-block-vk-blocks-faq2-q vk_faq_title\"></dt>"
+            },
+            {
+                "clientId": "_clientId_1",
+                "name": "vk-blocks/faq2-a",
+                "isValid": false,
+                "attributes": {
+                    "className": "wp-block-vk-blocks-faq2-a"
+                },
+                "innerBlocks": [],
+                "originalContent": "<dd class=\"wp-block-vk-blocks-faq2-a vk_faq_content\"></dd>"
+            }
+        ],
+        "originalContent": "<dl class=\"wp-block-vk-blocks-faq2 vk_faq [accordion_trigger_switch] is-style-vk_faq-bgfill-circle\">\n\t\n\t</dl>"
+    }
+]

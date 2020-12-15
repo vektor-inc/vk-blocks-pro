@@ -1,11 +1,16 @@
-import { InnerBlocks, InspectorControls } from '@wordpress/block-editor';
+import {
+	InnerBlocks,
+	InspectorControls,
+	useBlockProps,
+} from '@wordpress/block-editor';
 import { Fragment } from '@wordpress/element';
 import { PanelBody, PanelRow } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import classNames from 'classnames';
 
-export default function edit(props) {
-	const { className } = props;
+export default function FAQ2Edit() {
+	const blockProps = useBlockProps({
+		className: 'vk_faq',
+	});
 
 	let massage;
 	// eslint-disable-next-line no-undef
@@ -28,7 +33,7 @@ export default function edit(props) {
 					<PanelRow>{massage}</PanelRow>
 				</PanelBody>
 			</InspectorControls>
-			<dl className={classNames(className, 'vk_faq')}>
+			<dl {...blockProps}>
 				<InnerBlocks
 					allowedBlocks={[['vk-blocks/faq2-q'], ['vk-blocks/faq2-a']]}
 					template={[['vk-blocks/faq2-q'], ['vk-blocks/faq2-a']]}

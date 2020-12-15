@@ -2,8 +2,8 @@ import { InnerBlocks } from '@wordpress/block-editor';
 
 export default function save() {
 	return (
-		<dl className={`vk_faq`}>
+		<dd className={ `vk_faq_content` }>
 			<InnerBlocks.Content />
-		</dl>
-	);
+		</dd>
+	 );
 }

@@ -2,26 +2,22 @@
     {
         "blockName": "vk-blocks/balloon",
         "attrs": {
-            "balloonBorder": true,
-            "balloonBorderColor": "#000000",
-            "balloonBgColor": "#abb8c3",
-            "IconImage": "https://www.drill-lancer.com/wordpress/wp-content/uploads/media/b-man.png",
-            "balloonImageType": "circle"
+            "IconImage": "https://www.drill-lancer.com/wordpress/wp-content/uploads/media/b-man.png"
         },
         "innerBlocks": [
             {
                 "blockName": "core/paragraph",
                 "attrs": {},
                 "innerBlocks": [],
-                "innerHTML": "\n\t<p>吹き出しぶろっくだよ～</p>\n\t",
+                "innerHTML": "\n\t<p>7777</p>\n\t",
                 "innerContent": [
-                    "\n\t<p>吹き出しぶろっくだよ～</p>\n\t"
+                    "\n\t<p>7777</p>\n\t"
                 ]
             }
         ],
-        "innerHTML": "\n<div class=\"wp-block-vk-blocks-balloon vk_balloon vk_balloon-position-left vk_balloon-type-speech vk_balloon-animation-none\"><div class=\"vk_balloon_icon\"><figure><img class=\"vk_balloon_icon_image vk_balloon_icon_image-type-circle \" style=\"border-color:#000000\" src=\"https://www.drill-lancer.com/wordpress/wp-content/uploads/media/b-man.png\" alt=\"\"/><figcaption class=\"vk_balloon_icon_name\">あああ</figcaption></figure></div><div class=\"vk_balloon_content_outer\"><div class=\"vk_balloon_content vk_balloon_content-border-true\" style=\"background-color:#abb8c3;border-color:#000000\"><span class=\"vk_balloon_content_before\" style=\"border-color:transparent #abb8c3 transparent transparent\"></span><span class=\"vk_balloon_content_after\" style=\"border-color:transparent #abb8c3 transparent transparent\"></span></div></div></div>\n\t",
+        "innerHTML": "\n<div class=\"wp-block-vk-blocks-balloon vk_balloon vk_balloon-position-left vk_balloon-type-speech vk_balloon-animation-none\"><div class=\"vk_balloon_icon\"><figure><img class=\"vk_balloon_icon_image vk_balloon_icon_image-type-normal \" style=\"border-color:#f5f5f5\" src=\"https://www.drill-lancer.com/wordpress/wp-content/uploads/media/b-man.png\" alt=\"\"/><figcaption class=\"vk_balloon_icon_name\">7777</figcaption></figure></div><div class=\"vk_balloon_content_outer\"><div class=\"vk_balloon_content \" style=\"background-color:#f5f5f5;border-color:#f5f5f5\"><span class=\"vk_balloon_content_before\" style=\"border-color:transparent #f5f5f5 transparent transparent\"></span><span class=\"vk_balloon_content_after\" style=\"border-color:transparent #f5f5f5 transparent transparent\"></span></div></div></div>\n\t",
         "innerContent": [
-            "\n<div class=\"wp-block-vk-blocks-balloon vk_balloon vk_balloon-position-left vk_balloon-type-speech vk_balloon-animation-none\"><div class=\"vk_balloon_icon\"><figure><img class=\"vk_balloon_icon_image vk_balloon_icon_image-type-circle \" style=\"border-color:#000000\" src=\"https://www.drill-lancer.com/wordpress/wp-content/uploads/media/b-man.png\" alt=\"\"/><figcaption class=\"vk_balloon_icon_name\">あああ</figcaption></figure></div><div class=\"vk_balloon_content_outer\"><div class=\"vk_balloon_content vk_balloon_content-border-true\" style=\"background-color:#abb8c3;border-color:#000000\"><span class=\"vk_balloon_content_before\" style=\"border-color:transparent #abb8c3 transparent transparent\"></span><span class=\"vk_balloon_content_after\" style=\"border-color:transparent #abb8c3 transparent transparent\"></span>",
+            "\n<div class=\"wp-block-vk-blocks-balloon vk_balloon vk_balloon-position-left vk_balloon-type-speech vk_balloon-animation-none\"><div class=\"vk_balloon_icon\"><figure><img class=\"vk_balloon_icon_image vk_balloon_icon_image-type-normal \" style=\"border-color:#f5f5f5\" src=\"https://www.drill-lancer.com/wordpress/wp-content/uploads/media/b-man.png\" alt=\"\"/><figcaption class=\"vk_balloon_icon_name\">7777</figcaption></figure></div><div class=\"vk_balloon_content_outer\"><div class=\"vk_balloon_content \" style=\"background-color:#f5f5f5;border-color:#f5f5f5\"><span class=\"vk_balloon_content_before\" style=\"border-color:transparent #f5f5f5 transparent transparent\"></span><span class=\"vk_balloon_content_after\" style=\"border-color:transparent #f5f5f5 transparent transparent\"></span>",
             null,
             "</div></div></div>\n\t"
         ]

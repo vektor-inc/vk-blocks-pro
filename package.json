@@ -50,7 +50,7 @@
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^3.0",
     "memize": "^1.1.0",
-    "npm-check-updates": "^10.2.3",
+    "npm-check-updates": "^10.2.5",
     "postcss-loader": "^4.1.0",
     "react-html-parser": "^2.0.2",
     "run-sequence": "^2.2.1",
@@ -59,9 +59,9 @@
     "svg-react-loader": "^0.4.6",
     "url-loader": "^4.1.1",
     "vinyl-named": "^1.1.0",
-    "webpack": "^5.10.0",
+    "webpack": "^5.10.1",
     "webpack-cli": "^4.2.0",
-    "webpack-merge": "^5.4.1",
+    "webpack-merge": "^5.7.0",
     "webpack-stream": "^6.1.1"
   },
   "dependencies": {

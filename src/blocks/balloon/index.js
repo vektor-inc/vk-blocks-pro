@@ -36,7 +36,7 @@ export const settings = {
 			{
 				name: 'core/paragraph',
 				attributes: {
-					content: content,
+					content,
 				},
 			},
 		],

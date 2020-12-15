@@ -6,7 +6,6 @@ export default function save({ attributes }) {
 		balloonType,
 		balloonBorder,
 		balloonImageBorder,
-		balloonBorderWidth,
 		balloonBorderColor,
 		balloonBgColor,
 		balloonAlign,
@@ -15,34 +14,34 @@ export default function save({ attributes }) {
 		balloonAnimation,
 	} = attributes;
 
-	let class_content_border;
-	let class_icon_image_border;
-	let border_color_style;
-	let background_color_style;
+	let classContentBorder;
+	let classIconImageBorder;
+	let borderColorStyle;
+	let backgroundColorStyle;
 
 	if (balloonBorder === true) {
-		class_content_border = 'vk_balloon_content-border-true';
+		classContentBorder = 'vk_balloon_content-border-true';
 
 		if (balloonImageBorder === true) {
-			class_icon_image_border = 'vk_balloon_icon_image-border-true';
+			classIconImageBorder = 'vk_balloon_icon_image-border-true';
 		} else {
-			class_icon_image_border = '';
+			classIconImageBorder = '';
 		}
 
-		border_color_style = balloonBorderColor;
-		background_color_style = balloonBgColor;
+		borderColorStyle = balloonBorderColor;
+		backgroundColorStyle = balloonBgColor;
 	} else {
-		class_content_border = '';
-		class_icon_image_border = '';
-		border_color_style = balloonBgColor;
-		background_color_style = balloonBgColor;
+		classContentBorder = '';
+		classIconImageBorder = '';
+		borderColorStyle = balloonBgColor;
+		backgroundColorStyle = balloonBgColor;
 	}
 
-	let triangle_border_color_style;
+	let triangleBorderColorStyle;
 	if (balloonAlign === 'position-right') {
-		triangle_border_color_style = `transparent transparent transparent ${background_color_style}`;
+		triangleBorderColorStyle = `transparent transparent transparent ${backgroundColorStyle}`;
 	} else {
-		triangle_border_color_style = `transparent ${background_color_style} transparent transparent`;
+		triangleBorderColorStyle = `transparent ${backgroundColorStyle} transparent transparent`;
 	}
 
 	return (
@@ -53,8 +52,8 @@ export default function save({ attributes }) {
 				{IconImage ? (
 					<figure>
 						<img
-							className={`vk_balloon_icon_image vk_balloon_icon_image-type-${balloonImageType} ${class_icon_image_border}`}
-							style={{ borderColor: border_color_style }}
+							className={`vk_balloon_icon_image vk_balloon_icon_image-type-${balloonImageType} ${classIconImageBorder}`}
+							style={{ borderColor: borderColorStyle }}
 							src={IconImage}
 							alt=""
 						/>
@@ -70,22 +69,22 @@ export default function save({ attributes }) {
 			</div>
 			<div className={`vk_balloon_content_outer`}>
 				<div
-					className={`vk_balloon_content ${class_content_border}`}
+					className={`vk_balloon_content ${classContentBorder}`}
 					style={{
-						backgroundColor: background_color_style,
-						borderColor: border_color_style,
+						backgroundColor: backgroundColorStyle,
+						borderColor: borderColorStyle,
 					}}
 				>
 					<span
 						className={`vk_balloon_content_before`}
 						style={{
-							borderColor: triangle_border_color_style,
+							borderColor: triangleBorderColorStyle,
 						}}
 					></span>
 					<span
 						className={`vk_balloon_content_after`}
 						style={{
-							borderColor: triangle_border_color_style,
+							borderColor: triangleBorderColorStyle,
 						}}
 					></span>
 					<InnerBlocks.Content />

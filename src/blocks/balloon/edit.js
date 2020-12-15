@@ -18,14 +18,13 @@ import {
 import { Fragment, useState, useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
-export default function edit({ attributes, className, setAttributes }) {
+export default function BalloonEdit({ attributes, setAttributes }) {
 	const {
 		content,
 		balloonName,
 		balloonType,
 		balloonBorder,
 		balloonImageBorder,
-		balloonBorderWidth,
 		balloonBorderColor,
 		balloonBgColor,
 		balloonAlign,
@@ -50,8 +49,11 @@ export default function edit({ attributes, className, setAttributes }) {
 		defautIconButtons = Object.keys(blockMeta.default_icons).map(
 			(index) => {
 				const defaultIcon = blockMeta.default_icons[index];
+
+				let contentIcon = '';
+
 				if (defaultIcon.src) {
-					return (
+					contentIcon = (
 						<div key={index}>
 							<Button
 								onClick={() => {
@@ -69,11 +71,13 @@ export default function edit({ attributes, className, setAttributes }) {
 								<img
 									className={'icon-image'}
 									src={defaultIcon.src}
+									alt={defaultIcon.name}
 								/>
 							</Button>
 						</div>
 					);
 				}
+				return contentIcon;
 			}
 		);
 	}
@@ -99,15 +103,15 @@ export default function edit({ attributes, className, setAttributes }) {
 	}
 
 	let BorderSetting;
-	let class_content_border;
-	let class_icon_image_border;
-	let border_color_style;
-	let background_color_style;
+	let contentBorderClass;
+	let iconImageBorderClass;
+	let borderColorStyle;
+	let backgroundColorStyle;
 	if (balloonBorder === true) {
 		BorderSetting = (
 			<BaseControl>
 				<p className={'mb-1 block-prop-title'}>
-					<label>{__('Border', 'vk-blocks')}</label>
+					{__('Border', 'vk-blocks')}{' '}
 				</p>
 				<ToggleControl
 					label={__('Add border to balloon', 'vk-blocks')}
@@ -118,7 +122,7 @@ export default function edit({ attributes, className, setAttributes }) {
 				/>
 
 				<p className={'mb-1 block-prop-title'}>
-					<label>{__(' Image Border', 'vk-blocks')}</label>
+					{__(' Image Border', 'vk-blocks')}
 				</p>
 				<ToggleControl
 					label={__('Add border to image', 'vk-blocks')}
@@ -136,9 +140,7 @@ export default function edit({ attributes, className, setAttributes }) {
 				</p>
 
 				<p className={'mb-1 block-prop-title'}>
-					<label>
-						{__('Border color of speech balloon', 'vk-blocks')}
-					</label>
+					{__('Border color of speech balloon', 'vk-blocks')}
 				</p>
 				<ColorPalette
 					value={balloonBorderColor}
@@ -149,21 +151,21 @@ export default function edit({ attributes, className, setAttributes }) {
 			</BaseControl>
 		);
 
-		class_content_border = 'vk_balloon_content-border-true';
+		contentBorderClass = 'vk_balloon_content-border-true';
 
 		if (balloonImageBorder === true) {
-			class_icon_image_border = 'vk_balloon_icon_image-border-true';
+			iconImageBorderClass = 'vk_balloon_icon_image-border-true';
 		} else {
-			class_icon_image_border = '';
+			iconImageBorderClass = '';
 		}
 
-		border_color_style = balloonBorderColor;
-		background_color_style = balloonBgColor;
+		borderColorStyle = balloonBorderColor;
+		backgroundColorStyle = balloonBgColor;
 	} else {
 		BorderSetting = (
 			<BaseControl>
 				<p className={'mb-1 block-prop-title'}>
-					<label>{__('Border', 'vk-blocks')}</label>
+					{__('Border', 'vk-blocks')}
 				</p>
 				<ToggleControl
 					label={__('Add border to balloon', 'vk-blocks')}
@@ -175,17 +177,17 @@ export default function edit({ attributes, className, setAttributes }) {
 			</BaseControl>
 		);
 
-		class_content_border = '';
-		class_icon_image_border = '';
-		border_color_style = balloonBgColor;
-		background_color_style = balloonBgColor;
+		contentBorderClass = '';
+		iconImageBorderClass = '';
+		borderColorStyle = balloonBgColor;
+		backgroundColorStyle = balloonBgColor;
 	}
 
-	let triangle_border_color_style;
+	let triangleBorderColorStyle;
 	if (balloonAlign === 'position-right') {
-		triangle_border_color_style = `transparent transparent transparent ${background_color_style}`;
+		triangleBorderColorStyle = `transparent transparent transparent ${backgroundColorStyle}`;
 	} else {
-		triangle_border_color_style = `transparent ${background_color_style} transparent transparent`;
+		triangleBorderColorStyle = `transparent ${backgroundColorStyle} transparent transparent`;
 	}
 
 	const blockProps = useBlockProps({
@@ -197,7 +199,7 @@ export default function edit({ attributes, className, setAttributes }) {
 			<InspectorControls>
 				<PanelBody title={__('Balloon setting', 'vk-blocks')}>
 					<p className={'mb-1 block-prop-title'}>
-						<label>{__('Position', 'vk-blocks')}</label>
+						{__('Position', 'vk-blocks')}
 					</p>
 					<p className={'mb-1'}>
 						{__(
@@ -231,7 +233,7 @@ export default function edit({ attributes, className, setAttributes }) {
 					</ButtonGroup>
 
 					<p className={'mb-1 block-prop-title'}>
-						<label>{__('Type', 'vk-blocks')}</label>
+						{__('Type', 'vk-blocks')}
 					</p>
 					<p className={'mb-1'}>
 						{__('Please select the type of balloon.', 'vk-blocks')}{' '}
@@ -260,7 +262,7 @@ export default function edit({ attributes, className, setAttributes }) {
 					</ButtonGroup>
 
 					<p className={'mb-1 block-prop-title'}>
-						<label>{__('Image Style', 'vk-blocks')}</label>
+						{__('Image Style', 'vk-blocks')}
 					</p>
 					<ButtonGroup className="mb-3">
 						<Button
@@ -298,12 +300,7 @@ export default function edit({ attributes, className, setAttributes }) {
 					{BorderSetting}
 
 					<p className={'mb-1 block-prop-title'}>
-						<label>
-							{__(
-								'Background color of speech balloon',
-								'vk-blocks'
-							)}
-						</label>
+						{__('Background color of speech balloon', 'vk-blocks')}
 					</p>
 					<ColorPalette
 						value={balloonBgColor}
@@ -367,7 +364,7 @@ export default function edit({ attributes, className, setAttributes }) {
 							setAttributes({ IconImage: value.sizes.full.url })
 						}
 						type="image"
-						className={`vk_balloon_icon_image vk_balloon_icon_image-type-${balloonImageType} ${class_icon_image_border}`}
+						className={`vk_balloon_icon_image vk_balloon_icon_image-type-${balloonImageType} ${iconImageBorderClass}`}
 						value={IconImage}
 						render={({ open }) => (
 							<Button
@@ -382,9 +379,9 @@ export default function edit({ attributes, className, setAttributes }) {
 									__('Select image', 'vk-blocks')
 								) : (
 									<img
-										className={`vk_balloon_icon_image vk_balloon_icon_image-type-${balloonImageType} ${class_icon_image_border}`}
+										className={`vk_balloon_icon_image vk_balloon_icon_image-type-${balloonImageType} ${iconImageBorderClass}`}
 										style={{
-											borderColor: border_color_style,
+											borderColor: borderColorStyle,
 										}}
 										src={IconImage}
 										alt={__('Upload image', 'vk-blocks')}
@@ -405,19 +402,19 @@ export default function edit({ attributes, className, setAttributes }) {
 				</div>
 				<div className={`vk_balloon_content_outer`}>
 					<div
-						className={`vk_balloon_content ${class_content_border}`}
+						className={`vk_balloon_content ${contentBorderClass}`}
 						style={{
-							backgroundColor: background_color_style,
-							borderColor: border_color_style,
+							backgroundColor: backgroundColorStyle,
+							borderColor: borderColorStyle,
 						}}
 					>
 						<span
 							className={`vk_balloon_content_before`}
-							style={{ borderColor: triangle_border_color_style }}
+							style={{ borderColor: triangleBorderColorStyle }}
 						></span>
 						<span
 							className={`vk_balloon_content_after`}
-							style={{ borderColor: triangle_border_color_style }}
+							style={{ borderColor: triangleBorderColorStyle }}
 						></span>
 						<InnerBlocks
 							templateLock={false}

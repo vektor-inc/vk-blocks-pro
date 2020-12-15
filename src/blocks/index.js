@@ -14,6 +14,15 @@ import compareVersions from 'compare-versions';
  * Internal dependencies
  */
 import * as alert from './alert';
+import * as prContent from './pr-content';
+
+/**
+ * Function to get all the VK Blocks in an array.
+ */
+export const __getVKBlocks = () => [
+	alert,
+	prContent
+];
 
 /**
  * Function to register an individual block.
@@ -45,13 +54,6 @@ const registerBlock = ( block ) => {
 	}
 	registerBlockType( name, settings );
 };
-
-/**
- * Function to get all the VK Blocks in an array.
- */
-export const __getVKBlocks = () => [
-	alert,
-];
 
 /**
  * Function to register VK Blocks.

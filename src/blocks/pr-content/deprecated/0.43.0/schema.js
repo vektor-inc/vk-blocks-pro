@@ -1,63 +1,63 @@
 export default {
 	title: {
-		source: "html",
-		selector: ".vk_prContent_colTxt_title"
+		source: 'html',
+		selector: '.vk_prContent_colTxt_title',
 	},
 	titleColor: {
-		type: "string",
-		default: ""
+		type: 'string',
+		default: '',
 	},
 	content: {
-		source: "html",
-		selector: ".vk_prContent_colTxt_text"
+		source: 'html',
+		selector: '.vk_prContent_colTxt_text',
 	},
 	contentColor: {
-		type: "string",
-		default: ""
+		type: 'string',
+		default: '',
 	},
 	url: {
-		type: "string",
-		default: ""
+		type: 'string',
+		default: '',
 	},
 	buttonType: {
-		type: "string",
-		default: "0"
+		type: 'string',
+		default: '0',
 	},
 	buttonColor: {
-		type: "string",
-		default: "primary"
+		type: 'string',
+		default: 'primary',
 	},
 	buttonColorCustom: {
-		type: "string",
-		default: ""
+		type: 'string',
+		default: '',
 	},
 	buttonText: {
-		source: "html",
-		selector: ".vk_button_link_txt",
-		default: ""
+		source: 'html',
+		selector: '.vk_button_link_txt',
+		default: '',
 	},
 	buttonTarget: {
-		type: "Boolean",
-		default: false
+		type: 'Boolean',
+		default: false,
 	},
 	Image: {
-		type: "string",
-		default: "{}"
+		type: 'string',
+		default: '{}',
 	},
 	ImageBorderColor: {
-		type: "string",
-		default: ""
+		type: 'string',
+		default: '',
 	},
 	layout: {
-		type: "string",
-		default: "left"
+		type: 'string',
+		default: 'left',
 	},
 	fontAwesomeIconBefore: {
-		type: "string",
-		default: '<i class="fas fa-user"></i>'
+		type: 'string',
+		default: '<i class="fas fa-user"></i>',
 	},
 	fontAwesomeIconAfter: {
-		type: "string",
-		default: '<i class="fas fa-user"></i>'
-	}
+		type: 'string',
+		default: '<i class="fas fa-user"></i>',
+	},
 };

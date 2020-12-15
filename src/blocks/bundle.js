@@ -19,7 +19,6 @@ import "@vkblocks/blocks/button/block.js";
 import "@vkblocks/blocks/faq/block.js";
 import "@vkblocks/blocks/flow/block.js";
 import "@vkblocks/blocks/pr-blocks/block.js";
-import "@vkblocks/blocks/pr-content/block.js";
 
 // /*WP5.3 以下では読み込まれない*/
 import "@vkblocks/extensions/common/responsive-br";

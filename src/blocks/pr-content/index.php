@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Registers the `vk-blocks/alert` block.
+ * Registers the `vk-blocks/pr-content` block.
  */
 if( function_exists('register_block_type_from_metadata')) {
 
-	function register_block_vkb_alert() {
+	function register_block_vkb_pr_content() {
 		register_block_type_from_metadata(
 			__DIR__,
 			array(
@@ -14,6 +14,6 @@ if( function_exists('register_block_type_from_metadata')) {
 			)
 		);
 	}
-	add_action( 'init', 'register_block_vkb_alert', 99 );
+	add_action( 'init', 'register_block_vkb_pr_content', 99 );
 }
 

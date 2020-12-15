@@ -1,3 +1,7 @@
+// Import Blocks | リファクタリング後の新方式で読み込み
+import { registerVKBlocks } from "@vkblocks/blocks/"
+registerVKBlocks();
+
 //Bundle JS
 import "@vkblocks/translation_dummy.js";
 import "@vkblocks/extensions/core/heading/style";
@@ -43,7 +47,3 @@ import "@vkblocks/blocks/_pro/grid-column-item/block.js";
 import "@vkblocks/blocks/_pro/slider/block.js";
 import "@vkblocks/blocks/_pro/slider-item/block.js";
 import "@vkblocks/blocks/_pro/animation/block.js";
-
-// Import Blocks | リファクタリング後の新方式で読み込み
-import { registerVKBlocks } from "@vkblocks/blocks/"
-registerVKBlocks();

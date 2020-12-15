@@ -6,6 +6,7 @@ import '@wordpress/notices';
 // import '@wordpress/block-editor';
 import {
 	registerBlockType,
+	unstable__bootstrapServerSideBlockDefinitions, // eslint-disable-line camelcase
 } from '@wordpress/blocks';
 import compareVersions from 'compare-versions';
 
@@ -38,38 +39,24 @@ const registerBlock = ( block ) => {
 			...metadata
 		}
 
+	} else {
+		if ( metadata ) {
+			unstable__bootstrapServerSideBlockDefinitions( { [ name ]: metadata } );
+		}
 	}
 	registerBlockType( name, settings );
 };
 
 /**
- * Function to get all the core blocks in an array.
- *
- * @example
- * ```js
- * import { __experimentalGetCoreBlocks } from '@wordpress/block-library';
- *
- * const coreBlocks = __experimentalGetCoreBlocks();
- * ```
+ * Function to get all the VK Blocks in an array.
  */
 export const __getVKBlocks = () => [
-	// Common blocks are grouped at the top to prioritize their display
-	// in various contexts — like the inserter and auto-complete components.
 	alert,
 	balloon
 ];
 
 /**
- * Function to register core blocks provided by the block editor.
- *
- * @param {Array} blocks An optional array of the core blocks being registered.
- *
- * @example
- * ```js
- * import { registerCoreBlocks } from '@wordpress/block-library';
- *
- * registerCoreBlocks();
- * ```
+ * Function to register VK Blocks.
  */
 export const registerVKBlocks = (
 	blocks = __getVKBlocks()

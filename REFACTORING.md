@@ -38,3 +38,4 @@
 - component.jsの廃止（ __for プロップスに、edit と save という値を渡して切り分けするのをヤメたい）
     - 新しくコンポーネントを作る時は、その関数コンポーネントが返すUIの名前にする。
 - useBlockProps導入
+    - 参考：https://github.com/WordPress/gutenberg/blob/master/docs/designers-developers/developers/tutorials/block-tutorial/writing-your-first-block-type.md

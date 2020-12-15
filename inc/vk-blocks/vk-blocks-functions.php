@@ -176,7 +176,6 @@ function vkblocks_blocks_assets() {
 			foreach ( $arr_wp56 as $array ) {
 				require_once VK_BLOCKS_SRC_PATH . '/blocks/' . $array . '/index.php';
 			}
-
 		} else {
 			$arr = array_merge(
 				$arr,

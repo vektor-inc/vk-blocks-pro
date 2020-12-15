@@ -3,7 +3,12 @@
  *
  */
 
-import { iconPicture, content, iconName, baseColor } from "../../utils/example-data"
+import {
+	iconPicture,
+	content,
+	iconName,
+	baseColor,
+} from '../../utils/example-data';
 import deprecated from './deprecated/';
 import { ReactComponent as Icon } from './icon.svg';
 import { __ } from '@wordpress/i18n';
@@ -16,16 +21,16 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-	title: __("Ballon", "vk-blocks"),
+	title: __('Ballon', 'vk-blocks'),
 	icon: <Icon />,
 	example: {
 		attributes: {
 			balloonName: iconName,
-			balloonType: "type-speech",
+			balloonType: 'type-speech',
 			balloonBgColor: baseColor,
-			balloonAlign: "position-left",
+			balloonAlign: 'position-left',
 			IconImage: iconPicture,
-			balloonImageType: "normal"
+			balloonImageType: 'normal',
 		},
 		innerBlocks: [
 			{
@@ -38,5 +43,5 @@ export const settings = {
 	},
 	edit,
 	save,
-  	deprecated,
+	deprecated,
 };

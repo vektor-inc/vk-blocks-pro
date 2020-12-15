@@ -8,27 +8,27 @@ import save005 from './0.58.6/save';
 const blockAttributes = {
 	attributes: {
 		content: {
-			source: "html",
-			selector: "p"
+			source: 'html',
+			selector: 'p',
 		},
 		balloonName: {
-			source: "html",
-			selector: "figcaption"
+			source: 'html',
+			selector: 'figcaption',
 		},
 		balloonType: {
-			type: "string",
-			default: "type-serif"
+			type: 'string',
+			default: 'type-serif',
 		},
 		balloonBgColor: {
-			type: "string"
+			type: 'string',
 		},
 		balloonAlign: {
-			type: "string",
-			default: "position-left"
+			type: 'string',
+			default: 'position-left',
 		},
 		IconImage: {
-			type: "string",
-			default: null // no image by default!
+			type: 'string',
+			default: null, // no image by default!
 		},
 	},
 };
@@ -42,8 +42,8 @@ const deprecated = [
 		attributes: {
 			...blockAttributes,
 			balloonImageType: {
-				type: "string",
-				default: "normal"
+				type: 'string',
+				default: 'normal',
 			},
 		},
 		save: save001,
@@ -52,12 +52,12 @@ const deprecated = [
 		attributes: {
 			...blockAttributes,
 			balloonImageType: {
-				type: "string",
-				default: "normal" // no image by default!
+				type: 'string',
+				default: 'normal', // no image by default!
 			},
 			balloonAnimation: {
-				type: "string",
-				default: "none" // no image by default!
+				type: 'string',
+				default: 'none', // no image by default!
 			},
 		},
 		save: save002,
@@ -66,12 +66,12 @@ const deprecated = [
 		attributes: {
 			...blockAttributes,
 			balloonImageType: {
-				type: "string",
-				default: "normal" // no image by default!
+				type: 'string',
+				default: 'normal', // no image by default!
 			},
 			balloonAnimation: {
-				type: "string",
-				default: "none" // no image by default!
+				type: 'string',
+				default: 'none', // no image by default!
 			},
 		},
 		save: save003,
@@ -80,28 +80,28 @@ const deprecated = [
 		attributes: {
 			...blockAttributes,
 			balloonImageType: {
-				type: "string",
-				default: "normal" // no image by default!
+				type: 'string',
+				default: 'normal', // no image by default!
 			},
 			balloonAnimation: {
-				type: "string",
-				default: "none" // no image by default!
+				type: 'string',
+				default: 'none', // no image by default!
 			},
 			balloonBorder: {
-				type: "boolean",
-				default: false
+				type: 'boolean',
+				default: false,
 			},
 			balloonImageBorder: {
-				type: "boolean",
-				default: false
+				type: 'boolean',
+				default: false,
 			},
 			balloonBorderWidth: {
-				type: "string",
-				default: "thin"
+				type: 'string',
+				default: 'thin',
 			},
 			balloonBorderColor: {
-				type: "string",
-				default: null
+				type: 'string',
+				default: null,
 			},
 		},
 		save: save004,
@@ -110,28 +110,28 @@ const deprecated = [
 		attributes: {
 			...blockAttributes,
 			balloonImageType: {
-				type: "string",
-				default: "normal" // no image by default!
+				type: 'string',
+				default: 'normal', // no image by default!
 			},
 			balloonAnimation: {
-				type: "string",
-				default: "none" // no image by default!
+				type: 'string',
+				default: 'none', // no image by default!
 			},
 			balloonBorder: {
-				type: "boolean",
-				default: false
+				type: 'boolean',
+				default: false,
 			},
 			balloonImageBorder: {
-				type: "boolean",
-				default: false
+				type: 'boolean',
+				default: false,
 			},
 			balloonBorderWidth: {
-				type: "string",
-				default: "thin"
+				type: 'string',
+				default: 'thin',
 			},
 			balloonBorderColor: {
-				type: "string",
-				default: null
+				type: 'string',
+				default: null,
 			},
 		},
 		save: save005,

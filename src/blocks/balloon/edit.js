@@ -1,4 +1,4 @@
-import { RichText, InspectorControls, MediaUpload, ColorPalette, InnerBlocks, , useBlockProps } from '@wordpress/block-editor';
+import { RichText, InspectorControls, MediaUpload, ColorPalette, InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import apiFetch from '@wordpress/api-fetch';
 import { ButtonGroup, PanelBody, Button, SelectControl, BaseControl, ToggleControl } from '@wordpress/components';
 import { Fragment, useState, useEffect } from '@wordpress/element';

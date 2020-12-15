@@ -10,6 +10,7 @@ import { __ } from '@wordpress/i18n';
 
 export default function FAQEdit({ attributes, setAttributes }) {
 	let massage;
+	// eslint-disable-next-line no-undef
 	if (vk_blocks_check.is_pro) {
 		massage = __(
 			'If you want to be collapsing this block, you can set it at Setting > VK Blocks',

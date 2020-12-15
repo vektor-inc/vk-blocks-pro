@@ -1,4 +1,4 @@
-import { RichText, InspectorControls, MediaUpload, ColorPalette, InnerBlocks } from '@wordpress/block-editor';
+import { RichText, InspectorControls, MediaUpload, ColorPalette, InnerBlocks, , useBlockProps } from '@wordpress/block-editor';
 import apiFetch from '@wordpress/api-fetch';
 import { ButtonGroup, PanelBody, Button, SelectControl, BaseControl, ToggleControl } from '@wordpress/components';
 import { Fragment, useState, useEffect } from '@wordpress/element';
@@ -139,6 +139,10 @@ export default function edit({ attributes, className, setAttributes }) {
 		triangle_border_color_style = `transparent ${background_color_style} transparent transparent`;
 	}
 
+	const blockProps = useBlockProps( {
+		className: `vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation}`,
+	} );
+
 
 	return (
 		<Fragment>
@@ -259,9 +263,7 @@ export default function edit({ attributes, className, setAttributes }) {
 						/>
 				</PanelBody>
 			</InspectorControls>
-			<div
-				className={ `${className} vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation}` }
-			>
+			<div { ...blockProps } >
 				<div
 					className={ `vk_balloon_icon` }
 				>

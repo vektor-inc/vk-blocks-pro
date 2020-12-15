@@ -50,7 +50,7 @@ export default function save({ attributes }) {
 
 	return (
 		<div
-			className={ `vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation}` }
+		{ ...useBlockProps.save( { className: `vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation}` } ) }
 		>
 			<div
 				className={ `vk_balloon_icon` }

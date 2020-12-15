@@ -17,7 +17,7 @@ import "@vkblocks/blocks/heading/block.js";
 import "@vkblocks/blocks/balloon/block.js";
 import "@vkblocks/blocks/button/block.js";
 import "@vkblocks/blocks/faq/block.js";
-import "@vkblocks/blocks/flow/block.js";
+import "@vkblocks/blocks/flow/";
 import "@vkblocks/blocks/pr-blocks/block.js";
 import "@vkblocks/blocks/pr-content/block.js";
 

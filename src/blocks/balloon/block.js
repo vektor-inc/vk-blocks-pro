@@ -45,11 +45,11 @@ registerBlockType("vk-blocks/balloon", {
 		},
 		balloonBorderColor: {
 			type: "string",
-			default: null
+			default: "#cccccc"
 		},
 		balloonBgColor: {
 			type: "string",
-			default: null
+			default: "#f5f5f5"
 		},
 		balloonAlign: {
 			type: "string",
@@ -182,7 +182,7 @@ registerBlockType("vk-blocks/balloon", {
 				<p className={ 'mb-1 block-prop-title' }><label>{ __( 'Border color of speech balloon', 'vk-blocks' ) }</label></p>
 				<ColorPalette
 					value={ balloonBorderColor }
-					onChange={ value => setAttributes({ balloonBorderColor: value }) }
+					onChange={ (value) => setAttributes({ balloonBorderColor: value }) }
 				/>
 			</BaseControl>
 

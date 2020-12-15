@@ -10,20 +10,16 @@
             {
                 "clientId": "_clientId_0",
                 "name": "vk-blocks/faq2-q",
-                "isValid": false,
-                "attributes": {
-                    "className": "wp-block-vk-blocks-faq2-q"
-                },
+                "isValid": true,
+                "attributes": {},
                 "innerBlocks": [],
                 "originalContent": "<dt class=\"wp-block-vk-blocks-faq2-q vk_faq_title\"></dt>"
             },
             {
                 "clientId": "_clientId_1",
                 "name": "vk-blocks/faq2-a",
-                "isValid": false,
-                "attributes": {
-                    "className": "wp-block-vk-blocks-faq2-a"
-                },
+                "isValid": true,
+                "attributes": {},
                 "innerBlocks": [],
                 "originalContent": "<dd class=\"wp-block-vk-blocks-faq2-a vk_faq_content\"></dd>"
             }

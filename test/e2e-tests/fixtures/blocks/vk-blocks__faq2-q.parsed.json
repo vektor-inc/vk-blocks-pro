@@ -1,0 +1,23 @@
+[
+    {
+        "blockName": "vk-blocks/faq2-q",
+        "attrs": {},
+        "innerBlocks": [
+            {
+                "blockName": "core/paragraph",
+                "attrs": {},
+                "innerBlocks": [],
+                "innerHTML": "\n\t<p>質問を入力してください</p>\n\t",
+                "innerContent": [
+                    "\n\t<p>質問を入力してください</p>\n\t"
+                ]
+            }
+        ],
+        "innerHTML": "\n<dt class=\"wp-block-vk-blocks-faq2-q vk_faq_title\"></dt>\n\t",
+        "innerContent": [
+            "\n<dt class=\"wp-block-vk-blocks-faq2-q vk_faq_title\">",
+            null,
+            "</dt>\n\t"
+        ]
+    }
+]

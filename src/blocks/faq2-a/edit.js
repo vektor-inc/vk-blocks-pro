@@ -1,15 +1,12 @@
-import { InnerBlocks } from '@wordpress/block-editor';
-import classNames from "classnames";
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
-export default function edit( { className } ) {
+export default function FAQ2AEdit() {
+	const blockProps = useBlockProps({
+		className: 'vk_faq_content',
+	});
 	return (
-		<dd className={ classNames(className,`vk_faq_content`) }>
-			<InnerBlocks
-				templateLock={ false }
-				template={ [
-					[ 'core/paragraph' ],
-				] }
-			/>
+		<dd {...blockProps}>
+			<InnerBlocks templateLock={false} template={[['core/paragraph']]} />
 		</dd>
 	);
 }

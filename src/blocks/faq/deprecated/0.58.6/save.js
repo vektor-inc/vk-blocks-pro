@@ -1,15 +1,15 @@
-import  { RichText, InnerBlocks } from '@wordpress/block-editor';
+import { RichText, InnerBlocks } from '@wordpress/block-editor';
 
 export default function save({ attributes }) {
-	const { heading} = attributes;
+	const { heading } = attributes;
 	return (
-		<dl className={ `vk_faq [accordion_trigger_switch]` }>
+		<dl className={`vk_faq [accordion_trigger_switch]`}>
 			<RichText.Content
 				tagName="dt"
-				className={ "vk_faq_title" }
-				value={ heading }
+				className={'vk_faq_title'}
+				value={heading}
 			/>
-			<dd className={ `vk_faq_content` }>
+			<dd className={`vk_faq_content`}>
 				<InnerBlocks.Content />
 			</dd>
 		</dl>

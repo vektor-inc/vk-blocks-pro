@@ -1,20 +1,20 @@
-import  { RichText } from '@wordpress/block-editor';
+import { RichText } from '@wordpress/block-editor';
 
 export default function save({ attributes, className }) {
 	const { heading, content } = attributes;
 
 	return (
-		<dl className={ `${className} vk_faq` }>
+		<dl className={`${className} vk_faq`}>
 			<RichText.Content
 				tagName="dt"
-				className={ "vk_faq_title" }
-				value={ heading }
-		/>
+				className={'vk_faq_title'}
+				value={heading}
+			/>
 			<RichText.Content
 				tagName="dd"
-				className={ "vk_faq_content" }
-				value={ content }
-		/>
+				className={'vk_faq_content'}
+				value={content}
+			/>
 		</dl>
 	);
 }

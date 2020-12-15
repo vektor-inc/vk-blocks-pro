@@ -1,100 +1,97 @@
-import { vkbBlockEditor } from "./../../utils/depModules";
+import { vkbBlockEditor } from './../../utils/depModules';
 const { RichText, InnerBlocks } = vkbBlockEditor;
 
 export const deprecated = [
 	{
-		attributes:{
+		attributes: {
 			heading: {
-			  type: "string",
-			  source: "html",
-			  selector: "dt"
+				type: 'string',
+				source: 'html',
+				selector: 'dt',
 			},
 			content: {
-			  type: "string",
-			  source: "html",
-			  selector: "dd"
-			}
+				type: 'string',
+				source: 'html',
+				selector: 'dd',
+			},
 		},
 		save({ attributes, className }) {
 			const { heading, content } = attributes;
 
 			return (
-				<dl className={ `${className} vk_faq` }>
+				<dl className={`${className} vk_faq`}>
 					<RichText.Content
 						tagName="dt"
-						className={ "vk_faq_title" }
-						value={ heading }
-				/>
+						className={'vk_faq_title'}
+						value={heading}
+					/>
 					<RichText.Content
 						tagName="dd"
-						className={ "vk_faq_content" }
-						value={ content }
-				/>
+						className={'vk_faq_content'}
+						value={content}
+					/>
 				</dl>
 			);
-		  }
-	},
-    {
-        attributes: {
-            heading: {
-                type: 'string',
-                source: 'html',
-                selector: 'dt',
-            },
-            content: {
-                type: 'string',
-                source: 'html',
-                selector: 'dd',
-            }
-        },
-
-        save({ attributes }) {
-            const {
-                heading,
-                content
-            } = attributes;
-
-            return (
-	<dl className={ 'vk_faq' }>
-		<RichText.Content
-			tagName="dt"
-			className={ 'vk_faq_title' }
-			value={ heading }
-                    />
-		<RichText.Content
-			tagName="dd"
-			className={ 'vk_faq_content' }
-			value={ content }
-                    />
-	</dl>
-            );
-        },
+		},
 	},
 	{
 		attributes: {
 			heading: {
-				type: "string",
-				source: "html",
-				selector: "dt"
+				type: 'string',
+				source: 'html',
+				selector: 'dt',
 			},
-			content:{
-				type: "string"
-			}
+			content: {
+				type: 'string',
+				source: 'html',
+				selector: 'dd',
+			},
 		},
+
 		save({ attributes }) {
-			const { heading} = attributes;
+			const { heading, content } = attributes;
+
 			return (
-				<dl className={ `vk_faq` }>
+				<dl className={'vk_faq'}>
 					<RichText.Content
 						tagName="dt"
-						className={ "vk_faq_title" }
-						value={ heading }
-				/>
-					<dd className={ `vk_faq_content` }>
+						className={'vk_faq_title'}
+						value={heading}
+					/>
+					<RichText.Content
+						tagName="dd"
+						className={'vk_faq_content'}
+						value={content}
+					/>
+				</dl>
+			);
+		},
+	},
+	{
+		attributes: {
+			heading: {
+				type: 'string',
+				source: 'html',
+				selector: 'dt',
+			},
+			content: {
+				type: 'string',
+			},
+		},
+		save({ attributes }) {
+			const { heading } = attributes;
+			return (
+				<dl className={`vk_faq`}>
+					<RichText.Content
+						tagName="dt"
+						className={'vk_faq_title'}
+						value={heading}
+					/>
+					<dd className={`vk_faq_content`}>
 						<InnerBlocks.Content />
 					</dd>
 				</dl>
 			);
 		},
-	}
+	},
 ];

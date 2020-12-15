@@ -5,15 +5,15 @@ import save003 from './0.58.6/save';
 
 const blockAttributes = {
 	heading: {
-		type: "string",
-		source: "html",
-		selector: "dt"
-	  },
-	  content: {
-		type: "string",
-		source: "html",
-		selector: "dd"
-	}
+		type: 'string',
+		source: 'html',
+		selector: 'dt',
+	},
+	content: {
+		type: 'string',
+		source: 'html',
+		selector: 'dd',
+	},
 };
 
 const deprecated = [

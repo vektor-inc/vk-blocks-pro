@@ -1,1 +1,13 @@
-[]
+[
+    {
+        "clientId": "_clientId_0",
+        "name": "vk-blocks/alert",
+        "isValid": true,
+        "attributes": {
+            "style": "info",
+            "content": "Hello World!"
+        },
+        "innerBlocks": [],
+        "originalContent": "<div class=\"wp-block-vk-blocks-alert alert alert-info\"><p>Hello World!</p></div>"
+    }
+]

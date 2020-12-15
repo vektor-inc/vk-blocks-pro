@@ -1,4 +1,4 @@
-const { __ } = wp.i18n;
+import { __ } from '@wordpress/i18n';
 export const title = __( 'Lorem ipsum dolor', 'vk-blocks' );
 export const content = __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ', 'vk-blocks' );
 export const iconName = __( 'Lorem ipsum', 'vk-blocks' );

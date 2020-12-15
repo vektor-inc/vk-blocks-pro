@@ -1,4 +1,4 @@
-const { select, dispatch } = wp.data;
+import { select, dispatch } from '@wordpress/data';
 
 export const vkbBlockEditor = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 export const depServerSideRender = () => {

@@ -3,13 +3,13 @@ import save000 from './0.0.0/save';
 const blockAttributes = {
 	attributes: {
 		heading: {
-			type: "string",
-			source: "html",
-			selector: "dt"
+			type: 'string',
+			source: 'html',
+			selector: 'dt',
 		},
-		content:{
-			type: "string"
-		}
+		content: {
+			type: 'string',
+		},
 	},
 };
 

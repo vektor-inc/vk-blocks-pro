@@ -4,8 +4,8 @@ const { InnerBlocks } = vkbBlockEditor;
 
 export default function save() {
 	return (
-		<dl className={ `vk_faq` }>
+		<dl className={`vk_faq`}>
 			<InnerBlocks.Content />
 		</dl>
-	 );
+	);
 }

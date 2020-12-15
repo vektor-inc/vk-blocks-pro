@@ -3,6 +3,7 @@ import save001 from './0.0.1/save';
 import save002 from './0.0.2/save';
 import save003 from './0.0.3/save';
 import save004 from './0.0.4/save';
+import save005 from './0.58.6/save';
 
 const blockAttributes = {
 	attributes: {
@@ -104,6 +105,36 @@ const deprecated = [
 			},
 		},
 		save: save004,
+	},
+	{
+		attributes: {
+			...blockAttributes,
+			balloonImageType: {
+				type: "string",
+				default: "normal" // no image by default!
+			},
+			balloonAnimation: {
+				type: "string",
+				default: "none" // no image by default!
+			},
+			balloonBorder: {
+				type: "boolean",
+				default: false
+			},
+			balloonImageBorder: {
+				type: "boolean",
+				default: false
+			},
+			balloonBorderWidth: {
+				type: "string",
+				default: "thin"
+			},
+			balloonBorderColor: {
+				type: "string",
+				default: null
+			},
+		},
+		save: save005,
 	},
 ];
 export default deprecated;

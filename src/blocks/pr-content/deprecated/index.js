@@ -1,7 +1,7 @@
 import save000 from './0.0.0';
 import save001 from './0.0.1';
 import save002 from './0.0.2';
-import save0_5_0 from './0.5.0';
+import save0_5_1 from './0.5.1';
 import save0_43_0 from './0.43.0';
 
 const blockAttributes = {
@@ -87,7 +87,7 @@ const deprecated = [
 	},
 	{
 		attributes: blockAttributes2,
-		save: save0_5_0,
+		save: save0_5_1,
 	},
 	{
 		attributes: blockAttributes2,

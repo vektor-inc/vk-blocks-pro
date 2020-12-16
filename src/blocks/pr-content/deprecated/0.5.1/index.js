@@ -6,7 +6,7 @@ import { __ } from '@wordpress/i18n';
 import { Button } from '@wordpress/components';
 import { Component } from '@wordpress/element';
 import { MediaUpload, RichText } from '@wordpress/block-editor';
-import { Fontawesome } from './component-fontawesome-deprecated';
+import { Fontawesome } from '../component-fontawesome-deprecated';
 
 export class PRcontent extends Component {
 	render() {

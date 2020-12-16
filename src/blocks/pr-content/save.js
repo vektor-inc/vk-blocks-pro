@@ -1,19 +1,80 @@
 import { RichText, useBlockProps } from '@wordpress/block-editor';
+import {
+	getButtonClass,
+	getLinkClass,
+	getLinkStyle,
+	getFontawesomeIcon,
+	getContainerClass,
+} from './utils';
+import { PrContentMediaUpload } from './mediaUpload';
+import ReactHtmlParser from 'react-html-parser';
 
 export default function save({ attributes }) {
-	const { style, content } = attributes;
+	const {
+		title,
+		titleColor,
+		content,
+		contentColor,
+		url,
+		buttonType,
+		buttonColorCustom,
+		buttonText,
+		buttonTarget,
+		Image,
+		ImageBorderColor,
+		layout,
+		fontAwesomeIconBefore,
+		fontAwesomeIconAfter,
+	} = attributes;
 
-	// return (
-	// 	<div { ...useBlockProps.save( { className: `alert alert-${style}`} ) }>
-	// 		<RichText.Content tagName={'p'} value={content} />
-	// 	</div>
-	// );
+	const containerClass = getContainerClass(layout);
+	const btnClass = getButtonClass(buttonColorCustom);
+	const linkClass = getLinkClass(buttonColorCustom, buttonType);
+	const linkStyle = getLinkStyle(buttonColorCustom, buttonType);
+	const { iconBefore, iconAfter } = getFontawesomeIcon(
+		fontAwesomeIconBefore,
+		fontAwesomeIconAfter
+	);
 
 	return (
-		<PRcontent
-			attributes={attributes}
-			className={className}
-			for_={'save'}
-		/>
+		<div {...useBlockProps.save({ className: containerClass })}>
+			<div className="col-sm-6 vk_prContent_colImg">
+				<PrContentMediaUpload
+					Image={Image}
+					ImageBorderColor={ImageBorderColor}
+				/>
+			</div>
+			<div className="col-sm-6 vk_prContent_colTxt">
+				<RichText.Content
+					tagName="h3"
+					value={title}
+					className={'vk_prContent_colTxt_title'}
+					style={{ color: titleColor }}
+				/>
+				<RichText.Content
+					tagName="p"
+					className={'vk_prContent_colTxt_text'}
+					value={content}
+					style={{ color: contentColor }}
+				/>
+				{buttonText && (
+					<div className={btnClass}>
+						<a
+							href={url}
+							className={linkClass}
+							target={buttonTarget ? '_blank' : null}
+							style={linkStyle}
+							rel={"noopener"}
+						>
+							{ReactHtmlParser(iconBefore)}
+							<span className="vk_button_link_txt">
+								{buttonText}
+							</span>
+							{ReactHtmlParser(iconAfter)}
+						</a>
+					</div>
+				)}
+			</div>
+		</div>
 	);
 }

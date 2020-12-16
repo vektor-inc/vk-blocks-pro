@@ -1,9 +1,16 @@
 import { __ } from '@wordpress/i18n';
-import { PanelBody } from '@wordpress/components';
+import {
+	PanelBody,
+	BaseControl,
+	TextControl,
+	CheckboxControl,
+	RadioControl,
+} from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 import {
 	InspectorControls,
 	RichText,
+	ColorPalette,
 	useBlockProps,
 } from '@wordpress/block-editor';
 import {
@@ -13,14 +20,15 @@ import {
 	getLinkStyle,
 	getFontawesomeIcon,
 } from './utils';
-import { PrContentMediaUpload } from './mediaUpload';
+import { PrContentMediaUploadEdit } from './mediaUpload';
+import { FontAwesome } from '@vkblocks/utils/font-awesome-new';
+import ReactHtmlParser from 'react-html-parser';
 
-export default function PrcontentEdit({
-	attributes,
-	setAttributes,
-}) {
+export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 	const {
+		title,
 		titleColor,
+		content,
 		contentColor,
 		url,
 		buttonType,
@@ -28,24 +36,23 @@ export default function PrcontentEdit({
 		buttonColorCustom,
 		buttonText,
 		buttonTarget,
+		Image,
 		ImageBorderColor,
 		layout,
 		fontAwesomeIconBefore,
 		fontAwesomeIconAfter,
 	} = attributes;
 
+	const containerClass = getContainerClass(layout);
+	const btnClass = getButtonClass(buttonColorCustom);
+	const linkClass = getLinkClass(buttonColor, buttonColorCustom, buttonType);
+	const linkStyle = getLinkStyle(buttonColorCustom, buttonType);
+	const iconBefore = getFontawesomeIcon(fontAwesomeIconBefore);
+	const iconAfter = getFontawesomeIcon(fontAwesomeIconAfter);
+
 	const blockProps = useBlockProps({
 		className: containerClass,
 	});
-
-	const containerClass = getContainerClass(layout);
-	const btnClass = getButtonClass(buttonColorCustom);
-	const linkClass = getLinkClass(buttonColorCustom, buttonType);
-	const linkStyle = getLinkStyle(buttonColorCustom, buttonType);
-	const { iconBefore, iconAfter } = getFontawesomeIcon(
-		fontAwesomeIconBefore,
-		fontAwesomeIconAfter
-	);
 
 	return (
 		<Fragment>
@@ -54,7 +61,10 @@ export default function PrcontentEdit({
 					title={__('Color Setting', 'vk-blocks')}
 					initialOpen={false}
 				>
-					<BaseControl label={__('Title Color', 'vk-blocks')}>
+					<BaseControl
+						id={`vk_prContent_titleColor-${clientId}`}
+						label={__('Title Color', 'vk-blocks')}
+					>
 						<ColorPalette
 							value={titleColor}
 							onChange={(value) =>
@@ -62,7 +72,10 @@ export default function PrcontentEdit({
 							}
 						/>
 					</BaseControl>
-					<BaseControl label={__('Content Color', 'vk-blocks')}>
+					<BaseControl
+						id={`vk_prContent_contentColor-${clientId}`}
+						label={__('Content Color', 'vk-blocks')}
+					>
 						<ColorPalette
 							value={contentColor}
 							onChange={(value) =>
@@ -70,7 +83,10 @@ export default function PrcontentEdit({
 							}
 						/>
 					</BaseControl>
-					<BaseControl label={__('Image Border Color', 'vk-blocks')}>
+					<BaseControl
+						id={`vk_prContent_image-borderColor-${clientId}`}
+						label={__('Image Border Color', 'vk-blocks')}
+					>
 						<ColorPalette
 							value={ImageBorderColor}
 							onChange={(value) =>
@@ -83,7 +99,10 @@ export default function PrcontentEdit({
 					title={__('Button Setting', 'vk-blocks')}
 					initialOpen={false}
 				>
-					<BaseControl label={__('Button Text', 'vk-blocks')}>
+					<BaseControl
+						id={`vk_prContent_buttonText-${clientId}`}
+						label={__('Button Text', 'vk-blocks')}
+					>
 						<TextControl
 							value={buttonText}
 							onChange={(value) =>
@@ -92,7 +111,10 @@ export default function PrcontentEdit({
 							placeholder={'Input button text.'}
 						/>
 					</BaseControl>
-					<BaseControl label={__('Link URL', 'vk-blocks')}>
+					<BaseControl
+						id={`vk_prContent_linkUrl-${clientId}`}
+						label={__('Link URL', 'vk-blocks')}
+					>
 						<TextControl
 							value={url}
 							onChange={(value) => setAttributes({ url: value })}
@@ -106,7 +128,10 @@ export default function PrcontentEdit({
 							setAttributes({ buttonTarget: checked })
 						}
 					/>
-					<BaseControl label={__('Button Type', 'vk-blocks')}>
+					<BaseControl
+						id={`vk_prContent_buttonType-${clientId}`}
+						label={__('Button Type', 'vk-blocks')}
+					>
 						<RadioControl
 							selected={buttonType}
 							options={[
@@ -150,7 +175,10 @@ export default function PrcontentEdit({
 							setAttributes({ buttonColor: value })
 						}
 					/>
-					<BaseControl label={__('Button Color', 'vk-blocks')}>
+					<BaseControl
+						id={`vk_prContent_buttonColor-${clientId}`}
+						label={__('Button Color', 'vk-blocks')}
+					>
 						<ColorPalette
 							value={buttonColorCustom}
 							onChange={(value) =>
@@ -158,20 +186,32 @@ export default function PrcontentEdit({
 							}
 						/>
 					</BaseControl>
-					<BaseControl>
+					<BaseControl id={`vk_prContent_icon-${clientId}`}>
 						<h4 className="mt-0 mb-2">
 							{__('Icon ( Font Awesome )', 'vk-blocks')}
 						</h4>
-						<BaseControl label={__('Before text', 'vk-blocks')}>
+						<BaseControl
+							id={`vk_prContent_icon_beforeText${clientId}`}
+							label={__('Before text', 'vk-blocks')}
+						>
 							<FontAwesome
 								attributeName={'fontAwesomeIconBefore'}
-								{...props}
+								{...{
+									attributes,
+									setAttributes,
+								}}
 							/>
 						</BaseControl>
-						<BaseControl label={__('After text', 'vk-blocks')}>
+						<BaseControl
+							id={`vk_prContent_icon_afterText-${clientId}`}
+							label={__('After text', 'vk-blocks')}
+						>
 							<FontAwesome
 								attributeName={'fontAwesomeIconAfter'}
-								{...props}
+								{...{
+									attributes,
+									setAttributes,
+								}}
 							/>
 						</BaseControl>
 					</BaseControl>
@@ -193,7 +233,11 @@ export default function PrcontentEdit({
 			</InspectorControls>
 			<div {...blockProps}>
 				<div className="col-sm-6 vk_prContent_colImg">
-					<PrContentMediaUpload />
+					<PrContentMediaUploadEdit
+						ImageBorderColor={ImageBorderColor}
+						setAttributes={setAttributes}
+						Image={Image}
+					/>
 				</div>
 				<div className="col-sm-6 vk_prContent_colTxt">
 					<RichText
@@ -219,6 +263,7 @@ export default function PrcontentEdit({
 								className={linkClass}
 								target={buttonTarget ? '_blank' : null}
 								style={linkStyle}
+								rel={"noopener"}
 							>
 								{ReactHtmlParser(iconBefore)}
 								<span className="vk_button_link_txt">

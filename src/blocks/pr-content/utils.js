@@ -16,7 +16,7 @@ export const getButtonClass = (buttonColorCustom) => {
 	return btnClass;
 };
 
-export const getLinkClass = (buttonColorCustom, buttonType) => {
+export const getLinkClass = (buttonColor, buttonColorCustom, buttonType) => {
 	let linkClass = 'btn btn-block vk_button_link vk_prContent_colTxt_btn';
 
 	if (buttonColorCustom) {
@@ -56,40 +56,21 @@ export const getLinkStyle = (buttonColorCustom, buttonType) => {
 	return linkStyle;
 };
 
-export const getFontawesomeIcon = (
-	fontAwesomeIconBefore,
-	fontAwesomeIconAfter
-) => {
-	let iconBefore = '';
-	let faIconFragmentBefore;
-	let iconAfter = '';
-	let faIconFragmentAfter;
+export const getFontawesomeIcon = (fontAwesomeIconSelector) => {
+	let icon = '';
+	let faIconDatas;
 
 	//過去バージョンをリカバリーした時にiconを正常に表示する
-	if (fontAwesomeIconBefore && !fontAwesomeIconBefore.match(/<i/)) {
-		fontAwesomeIconBefore = `<i class="${fontAwesomeIconBefore}"></i>`;
-	}
-	if (fontAwesomeIconAfter && !fontAwesomeIconAfter.match(/<i/)) {
-		fontAwesomeIconAfter = `<i class="${fontAwesomeIconAfter}"></i>`;
+	if (fontAwesomeIconSelector && !fontAwesomeIconSelector.match(/<i/)) {
+		fontAwesomeIconSelector = `<i class="${fontAwesomeIconSelector}"></i>`;
 	}
 
-	if (fontAwesomeIconBefore) {
+	if (fontAwesomeIconSelector) {
 		//add class and inline css
-		faIconFragmentBefore = fontAwesomeIconBefore.split(' ');
-		faIconFragmentBefore[1] =
-			' ' + faIconFragmentBefore[1] + ` vk_button_link_before `;
-		iconBefore = faIconFragmentBefore.join('');
-	}
-	if (fontAwesomeIconAfter) {
-		//add class and inline css
-		faIconFragmentAfter = fontAwesomeIconAfter.split(' ');
-		faIconFragmentAfter[1] =
-			' ' + faIconFragmentAfter[1] + ` vk_button_link_after `;
-		iconAfter = faIconFragmentAfter.join('');
+		faIconDatas = fontAwesomeIconSelector.split(' ');
+		faIconDatas[1] = ' ' + faIconDatas[1] + ` vk_button_link_before `;
+		icon = faIconDatas.join('');
 	}
 
-	return {
-		iconBefore: iconBefore,
-		iconAfter: iconAfter,
-	};
+	return icon;
 };

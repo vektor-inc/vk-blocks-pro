@@ -4,7 +4,7 @@ import { ComponentV1 } from './componentV1';
 import Save0_43_0 from './0.43.0/index';
 import Schema0_43_0 from './0.43.0/schema';
 
-export const deprecated = [
+const deprecated = [
 	{
 		attributes: Schema0_43_0,
 		save: Save0_43_0,
@@ -221,3 +221,5 @@ export const deprecated = [
 		},
 	},
 ];
+
+export default deprecated;

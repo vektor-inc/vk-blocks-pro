@@ -4,7 +4,7 @@
  */
 import { __ } from '@wordpress/i18n';
 import { ReactComponent as Icon } from './icon.svg';
-// import deprecated from './deprecated';
+import deprecated from './deprecated';
 import edit from './edit';
 import metadata from './block.json';
 import save from './save';
@@ -23,7 +23,7 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-	title: __('Alert', 'vk-blocks'),
+	title: __('PR Content', 'vk-blocks'),
 	icon: <Icon />,
 	example: {
 		attributes: {
@@ -46,5 +46,5 @@ export const settings = {
 	},
 	edit,
 	save,
-	// deprecated,
+	deprecated,
 };

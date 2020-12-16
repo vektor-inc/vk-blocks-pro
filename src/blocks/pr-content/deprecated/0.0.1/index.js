@@ -1,13 +1,10 @@
-import React from 'react';
-import classNames from 'classnames';
-import { Fontawesome } from './component-fontawesome-deprecated';
+import { __ } from '@wordpress/i18n';
+import { Button } from '@wordpress/components';
+import { Component } from '@wordpress/element';
+import { MediaUpload, RichText } from '@wordpress/block-editor';
+import { Fontawesome } from '../component-fontawesome-deprecated';
 
-const { __ } = wp.i18n; // Import __() from wp.i18n
-const { Button } = wp.components;
-import { vkbBlockEditor } from './../../../utils/depModules';
-const { MediaUpload, RichText } = vkbBlockEditor;
-
-export class ComponentNoBorderColor extends React.Component {
+export class PRContent extends Component {
 	render() {
 		const attributes = this.props.attributes;
 		const {
@@ -27,28 +24,17 @@ export class ComponentNoBorderColor extends React.Component {
 			fontAwesomeIconBefore,
 			fontAwesomeIconAfter,
 		} = attributes;
-
 		const setAttributes = this.props.setAttributes;
-		const className = this.props.className;
 		const for_ = this.props.for_;
 		let containerClass = 'vk_prContent';
 		let btnClass = 'vk_button';
 		let aClass = 'btn btn-block vk_button_link vk_prContent_colTxt_btn';
 		let aStyle = {};
-		let imageBorderProperty = '';
 
 		if (layout === 'right') {
-			containerClass = classNames(
-				className,
-				containerClass,
-				'vk_prContent-layout-imageRight'
-			);
+			containerClass = `${containerClass} vk_prContent-layout-imageRight`;
 		} else {
-			containerClass = classNames(
-				className,
-				containerClass,
-				'vk_prContent-layout-imageLeft'
-			);
+			containerClass = `${containerClass} vk_prContent-layout-imageLeft`;
 		}
 
 		if (buttonColorCustom) {
@@ -83,13 +69,6 @@ export class ComponentNoBorderColor extends React.Component {
 			}
 		}
 
-		//borderColorが指定されなかった場合はボーダーを非表示に
-		if (ImageBorderColor === null || ImageBorderColor === undefined) {
-			imageBorderProperty = 'none';
-		} else {
-			imageBorderProperty = `1px solid ${ImageBorderColor}`;
-		}
-
 		return (
 			<div className={containerClass}>
 				<div className="col-sm-6 vk_prContent_colImg">
@@ -122,7 +101,7 @@ export class ComponentNoBorderColor extends React.Component {
 												'vk-blocks'
 											)}
 											style={{
-												border: imageBorderProperty,
+												border: `1px solid ${ImageBorderColor}`,
 											}}
 										/>
 									)}
@@ -136,7 +115,7 @@ export class ComponentNoBorderColor extends React.Component {
 							className={'vk_prContent_colImg_image'}
 							src={Image}
 							alt={__('Upload image', 'vk-blocks')}
-							style={{ border: imageBorderProperty }}
+							style={{ border: `1px solid ${ImageBorderColor}` }}
 						/>
 					)}
 				</div>
@@ -219,4 +198,13 @@ export class ComponentNoBorderColor extends React.Component {
 			</div>
 		);
 	}
+}
+
+export default function save({ attributes, className }) {
+	return (
+		<PRContent
+			attributes={attributes}
+			for_={'save'}
+		/>
+	);
 }

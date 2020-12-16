@@ -1,6 +1,6 @@
-import React from 'react';
+import { Component } from '@wordpress/element';
 
-export class Fontawesome extends React.Component {
+export class Fontawesome extends Component {
 	render() {
 		const {
 			buttonText,

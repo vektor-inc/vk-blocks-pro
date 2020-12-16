@@ -1,16 +1,51 @@
-import { Fontawesome } from './component-fontawesome-deprecated';
-import React from 'react';
+import { __ } from '@wordpress/i18n';
+import { Button } from '@wordpress/components';
+import { Component, Fragment } from '@wordpress/element';
+import { MediaUpload, RichText } from '@wordpress/block-editor';
 
-const { __ } = wp.i18n; // Import __() from wp.i18n
-const { Button } = wp.components;
-const { MediaUpload } = wp.editor;
-import { vkbBlockEditor } from './../../../utils/depModules';
-const { RichText } = vkbBlockEditor;
+import classNames from 'classnames';
+import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
 
-export class ComponentDeprecated extends React.Component {
+export class Fontawesome extends Component {
+	render() {
+		const {
+			buttonText,
+			fontAwesomeIconBefore,
+			fontAwesomeIconAfter,
+		} = this.props.attributes;
+
+		let iconBefore = '';
+		let iconAfter = '';
+
+		if (fontAwesomeIconBefore) {
+			iconBefore = (
+				<i
+					className={`${fontAwesomeIconBefore} vk_button_link_before`}
+				></i>
+			);
+		}
+		if (fontAwesomeIconAfter) {
+			iconAfter = (
+				<i
+					className={`${fontAwesomeIconAfter} vk_button_link_after`}
+				></i>
+			);
+		}
+
+		return (
+			<Fragment>
+				{iconBefore}
+				<span className="vk_button_link_txt">{buttonText}</span>
+				{iconAfter}
+			</Fragment>
+		);
+	}
+}
+
+export class PRContent extends Component {
 	render() {
 		const attributes = this.props.attributes;
-		const {
+		let {
 			title,
 			titleColor,
 			content,
@@ -27,17 +62,28 @@ export class ComponentDeprecated extends React.Component {
 			fontAwesomeIconBefore,
 			fontAwesomeIconAfter,
 		} = attributes;
+
 		const setAttributes = this.props.setAttributes;
+		const className = this.props.className;
 		const for_ = this.props.for_;
 		let containerClass = 'vk_prContent';
 		let btnClass = 'vk_button';
 		let aClass = 'btn btn-block vk_button_link vk_prContent_colTxt_btn';
 		let aStyle = {};
+		let imageBorderProperty = 'none';
 
 		if (layout === 'right') {
-			containerClass = `${containerClass} vk_prContent-layout-imageRight`;
+			containerClass = classNames(
+				className,
+				containerClass,
+				'vk_prContent-layout-imageRight'
+			);
 		} else {
-			containerClass = `${containerClass} vk_prContent-layout-imageLeft`;
+			containerClass = classNames(
+				className,
+				containerClass,
+				'vk_prContent-layout-imageLeft'
+			);
 		}
 
 		if (buttonColorCustom) {
@@ -72,10 +118,23 @@ export class ComponentDeprecated extends React.Component {
 			}
 		}
 
-		return (
-			<article className={containerClass}>
-				<div className="col-sm-6 vk_prContent_colImg">
-					{for_ === 'edit' ? (
+		//borderColorが指定されなかった場合はボーダーを非表示に
+		if (ImageBorderColor) {
+			imageBorderProperty = `1px solid ${ImageBorderColor}`;
+		} else {
+			imageBorderProperty = `none`;
+		}
+
+		const saveImage = (value) => {
+			if (value) {
+				setAttributes({ Image: JSON.stringify(value) });
+			}
+		};
+
+		const renderImage = (for_) => {
+			if (for_ === 'edit') {
+				if (Image && Image.indexOf('{') === -1) {
+					return (
 						<MediaUpload
 							onSelect={(value) =>
 								setAttributes({ Image: value.sizes.full.url })
@@ -104,29 +163,84 @@ export class ComponentDeprecated extends React.Component {
 												'vk-blocks'
 											)}
 											style={{
-												border: `1px solid ${ImageBorderColor}`,
+												border: imageBorderProperty,
 											}}
 										/>
 									)}
 								</Button>
 							)}
 						/>
-					) : !Image ? (
-						__('Select image', 'vk-blocks')
-					) : (
+					);
+				}
+				const ImageParse = JSON.parse(fixBrokenUnicode(Image));
+				return (
+					<MediaUpload
+						onSelect={saveImage}
+						type=" image"
+						value={ImageParse}
+						render={({ open }) => (
+							<Button
+								onClick={open}
+								className={
+									ImageParse
+										? 'image-button'
+										: 'button button-large'
+								}
+							>
+								{Image === null ||
+								typeof ImageParse.sizes === 'undefined' ? (
+									__('Select image', 'vk-blocks')
+								) : (
+									<img
+										className={'vk_prContent_colImg_image'}
+										src={ImageParse.sizes.full.url}
+										alt={ImageParse.alt}
+										style={{ border: imageBorderProperty }}
+									/>
+								)}
+							</Button>
+						)}
+					/>
+				);
+			} else if (for_ === 'save') {
+				if (!Image) {
+					return __('Select image', 'vk-blocks');
+				}
+				if (Image && Image.indexOf('{') === -1) {
+					return (
 						<img
 							className={'vk_prContent_colImg_image'}
 							src={Image}
 							alt={__('Upload image', 'vk-blocks')}
-							style={{ border: `1px solid ${ImageBorderColor}` }}
+							style={{ border: imageBorderProperty }}
 						/>
-					)}
+					);
+				}
+				const ImageParse = JSON.parse(fixBrokenUnicode(Image));
+				if (ImageParse && typeof ImageParse.sizes !== 'undefined') {
+					return (
+						<img
+							className={'vk_prContent_colImg_image'}
+							src={ImageParse.sizes.full.url}
+							alt={ImageParse.alt}
+							style={{ border: imageBorderProperty }}
+						/>
+					);
+				}
+				return '';
+			}
+		};
+
+		return (
+			<div className={containerClass}>
+				<div className="col-sm-6 vk_prContent_colImg">
+					{renderImage(for_)}
 				</div>
 				<div className="col-sm-6 vk_prContent_colTxt">
 					{(() => {
 						if (for_ === 'edit') {
 							return (
-								<React.Fragment>
+								<Fragment>
 									<RichText
 										tagName="h3"
 										className={'vk_prContent_colTxt_title'}
@@ -153,11 +267,11 @@ export class ComponentDeprecated extends React.Component {
 										)}
 										style={{ color: contentColor }}
 									/>
-								</React.Fragment>
+								</Fragment>
 							);
 						}
 						return (
-							<React.Fragment>
+							<Fragment>
 								<RichText.Content
 									tagName="h3"
 									value={title}
@@ -170,7 +284,7 @@ export class ComponentDeprecated extends React.Component {
 									value={content}
 									style={{ color: contentColor }}
 								/>
-							</React.Fragment>
+							</Fragment>
 						);
 					})()}
 					{
@@ -185,8 +299,8 @@ export class ComponentDeprecated extends React.Component {
 											target={
 												buttonTarget ? '_blank' : null
 											}
-											rel="noopener noreferrer"
 											style={aStyle}
+											rel="noopener noreferrer"
 										>
 											<Fontawesome
 												attributes={attributes}
@@ -198,7 +312,17 @@ export class ComponentDeprecated extends React.Component {
 						})()
 					}
 				</div>
-			</article>
+			</div>
 		);
 	}
+}
+
+export default function save({ attributes, className }) {
+	return (
+		<PRContent
+			attributes={attributes}
+			className={className}
+			for_={'save'}
+		/>
+	);
 }

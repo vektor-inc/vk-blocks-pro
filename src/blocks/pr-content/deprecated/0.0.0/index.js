@@ -1,50 +1,15 @@
+import { __ } from '@wordpress/i18n';
+import { Button } from '@wordpress/components';
+import { Component } from '@wordpress/element';
+import { MediaUpload, RichText } from '@wordpress/block-editor';
+
 import classNames from 'classnames';
-const { __ } = wp.i18n; // Import __() from wp.i18n
-const { Button } = wp.components;
-const { Component, Fragment } = wp.element;
-import { vkbBlockEditor, fixBrokenUnicode } from './../../../utils/depModules';
-const { MediaUpload, RichText } = vkbBlockEditor;
+import { Fontawesome } from '../component-fontawesome-deprecated';
 
-export class Fontawesome extends Component {
-	render() {
-		const {
-			buttonText,
-			fontAwesomeIconBefore,
-			fontAwesomeIconAfter,
-		} = this.props.attributes;
-
-		let iconBefore = '';
-		let iconAfter = '';
-
-		if (fontAwesomeIconBefore) {
-			iconBefore = (
-				<i
-					className={`${fontAwesomeIconBefore} vk_button_link_before`}
-				></i>
-			);
-		}
-		if (fontAwesomeIconAfter) {
-			iconAfter = (
-				<i
-					className={`${fontAwesomeIconAfter} vk_button_link_after`}
-				></i>
-			);
-		}
-
-		return (
-			<Fragment>
-				{iconBefore}
-				<span className="vk_button_link_txt">{buttonText}</span>
-				{iconAfter}
-			</Fragment>
-		);
-	}
-}
-
-export class ComponentV1 extends Component {
+class PRContent extends Component {
 	render() {
 		const attributes = this.props.attributes;
-		let {
+		const {
 			title,
 			titleColor,
 			content,
@@ -69,7 +34,7 @@ export class ComponentV1 extends Component {
 		let btnClass = 'vk_button';
 		let aClass = 'btn btn-block vk_button_link vk_prContent_colTxt_btn';
 		let aStyle = {};
-		let imageBorderProperty = 'none';
+		let imageBorderProperty = '';
 
 		if (layout === 'right') {
 			containerClass = classNames(
@@ -118,22 +83,16 @@ export class ComponentV1 extends Component {
 		}
 
 		//borderColorが指定されなかった場合はボーダーを非表示に
-		if (ImageBorderColor) {
-			imageBorderProperty = `1px solid ${ImageBorderColor}`;
+		if (ImageBorderColor === null || ImageBorderColor === undefined) {
+			imageBorderProperty = 'none';
 		} else {
-			imageBorderProperty = `none`;
+			imageBorderProperty = `1px solid ${ImageBorderColor}`;
 		}
 
-		const saveImage = (value) => {
-			if (value) {
-				setAttributes({ Image: JSON.stringify(value) });
-			}
-		};
-
-		const renderImage = (for_) => {
-			if (for_ === 'edit') {
-				if (Image && Image.indexOf('{') === -1) {
-					return (
+		return (
+			<div className={containerClass}>
+				<div className="col-sm-6 vk_prContent_colImg">
+					{for_ === 'edit' ? (
 						<MediaUpload
 							onSelect={(value) =>
 								setAttributes({ Image: value.sizes.full.url })
@@ -169,77 +128,22 @@ export class ComponentV1 extends Component {
 								</Button>
 							)}
 						/>
-					);
-				}
-				const ImageParse = JSON.parse(fixBrokenUnicode(Image));
-				return (
-					<MediaUpload
-						onSelect={saveImage}
-						type=" image"
-						value={ImageParse}
-						render={({ open }) => (
-							<Button
-								onClick={open}
-								className={
-									ImageParse
-										? 'image-button'
-										: 'button button-large'
-								}
-							>
-								{Image === null ||
-								typeof ImageParse.sizes === 'undefined' ? (
-									__('Select image', 'vk-blocks')
-								) : (
-									<img
-										className={'vk_prContent_colImg_image'}
-										src={ImageParse.sizes.full.url}
-										alt={ImageParse.alt}
-										style={{ border: imageBorderProperty }}
-									/>
-								)}
-							</Button>
-						)}
-					/>
-				);
-			} else if (for_ === 'save') {
-				if (!Image) {
-					return __('Select image', 'vk-blocks');
-				}
-				if (Image && Image.indexOf('{') === -1) {
-					return (
+					) : !Image ? (
+						__('Select image', 'vk-blocks')
+					) : (
 						<img
 							className={'vk_prContent_colImg_image'}
 							src={Image}
 							alt={__('Upload image', 'vk-blocks')}
 							style={{ border: imageBorderProperty }}
 						/>
-					);
-				}
-				const ImageParse = JSON.parse(fixBrokenUnicode(Image));
-				if (ImageParse && typeof ImageParse.sizes !== 'undefined') {
-					return (
-						<img
-							className={'vk_prContent_colImg_image'}
-							src={ImageParse.sizes.full.url}
-							alt={ImageParse.alt}
-							style={{ border: imageBorderProperty }}
-						/>
-					);
-				}
-				return '';
-			}
-		};
-
-		return (
-			<div className={containerClass}>
-				<div className="col-sm-6 vk_prContent_colImg">
-					{renderImage(for_)}
+					)}
 				</div>
 				<div className="col-sm-6 vk_prContent_colTxt">
 					{(() => {
 						if (for_ === 'edit') {
 							return (
-								<Fragment>
+								<React.Fragment>
 									<RichText
 										tagName="h3"
 										className={'vk_prContent_colTxt_title'}
@@ -266,11 +170,11 @@ export class ComponentV1 extends Component {
 										)}
 										style={{ color: contentColor }}
 									/>
-								</Fragment>
+								</React.Fragment>
 							);
 						}
 						return (
-							<Fragment>
+							<React.Fragment>
 								<RichText.Content
 									tagName="h3"
 									value={title}
@@ -283,7 +187,7 @@ export class ComponentV1 extends Component {
 									value={content}
 									style={{ color: contentColor }}
 								/>
-							</Fragment>
+							</React.Fragment>
 						);
 					})()}
 					{
@@ -314,4 +218,14 @@ export class ComponentV1 extends Component {
 			</div>
 		);
 	}
+}
+
+export default function save({ attributes, className }) {
+	return (
+		<PRContent
+			attributes={attributes}
+			className={className}
+			for_={'save'}
+		/>
+	);
 }

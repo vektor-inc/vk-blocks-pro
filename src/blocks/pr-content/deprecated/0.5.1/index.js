@@ -1,12 +1,14 @@
-import React from 'react';
+/**
+ * Pr-Content block type
+ *
+ */
+import { __ } from '@wordpress/i18n';
+import { Button } from '@wordpress/components';
+import { Component } from '@wordpress/element';
+import { MediaUpload, RichText } from '@wordpress/block-editor';
 import { Fontawesome } from './component-fontawesome-deprecated';
 
-const { __ } = wp.i18n; // Import __() from wp.i18n
-const { Button } = wp.components;
-import { vkbBlockEditor } from './../../../utils/depModules';
-const { MediaUpload, RichText } = vkbBlockEditor;
-
-export class ComponentDeprecated extends React.Component {
+export class PRcontent extends Component {
 	render() {
 		const attributes = this.props.attributes;
 		const {
@@ -72,7 +74,7 @@ export class ComponentDeprecated extends React.Component {
 		}
 
 		return (
-			<div className={containerClass}>
+			<article className={containerClass}>
 				<div className="col-sm-6 vk_prContent_colImg">
 					{for_ === 'edit' ? (
 						<MediaUpload
@@ -184,8 +186,8 @@ export class ComponentDeprecated extends React.Component {
 											target={
 												buttonTarget ? '_blank' : null
 											}
-											style={aStyle}
 											rel="noopener noreferrer"
+											style={aStyle}
 										>
 											<Fontawesome
 												attributes={attributes}
@@ -197,7 +199,17 @@ export class ComponentDeprecated extends React.Component {
 						})()
 					}
 				</div>
-			</div>
+			</article>
 		);
 	}
+}
+
+export default function save({ attributes, className }) {
+	return (
+		<PRcontent
+			attributes={attributes}
+			className={className}
+			for_={'save'}
+		/>
+	);
 }

@@ -1,4 +1,4 @@
-import { Component } from '@wordpress/element';
+import { Fragment, Component } from '@wordpress/element';
 
 export class Fontawesome extends Component {
 	render() {
@@ -27,11 +27,11 @@ export class Fontawesome extends Component {
 		}
 
 		return (
-			<React.Fragment>
+			<Fragment>
 				{iconBefore}
 				<span className="vk_button_link_txt">{buttonText}</span>
 				{iconAfter}
-			</React.Fragment>
+			</Fragment>
 		);
 	}
 }

@@ -1,6 +1,7 @@
-const { RadioControl, TextControl } = wp.components;
-const { Fragment } = wp.element;
-const { __ } = wp.i18n;
+import { __ } from '@wordpress/i18n';
+import { RadioControl, TextControl } from '@wordpress/components';
+import { Fragment } from '@wordpress/element';
+
 import AdvancedPopOverControl from "../components/advanced-popover-control"
 
 export const FontAwesome = (props) => {

@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
 import { Button } from '@wordpress/components';
-import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
+import { fixBrokenUnicode } from '@vkblocks/utils/fixBrokenUnicode';
 import { MediaUpload } from '@wordpress/block-editor';
 
 // 過去に保存された画像か確認

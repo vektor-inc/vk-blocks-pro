@@ -4,7 +4,7 @@
  */
 import { __ } from '@wordpress/i18n';
 import { Button } from '@wordpress/components';
-import { Component } from '@wordpress/element';
+import { Fragment, Component } from '@wordpress/element';
 import { MediaUpload, RichText } from '@wordpress/block-editor';
 
 import classNames from 'classnames';
@@ -220,7 +220,7 @@ export class PRcontent extends Component {
 					{(() => {
 						if (for_ === 'edit') {
 							return (
-								<React.Fragment>
+								<Fragment>
 									<RichText
 										tagName="h3"
 										className={'vk_prContent_colTxt_title'}
@@ -247,11 +247,11 @@ export class PRcontent extends Component {
 										)}
 										style={{ color: contentColor }}
 									/>
-								</React.Fragment>
+								</Fragment>
 							);
 						} else {
 							return (
-								<React.Fragment>
+								<Fragment>
 									<RichText.Content
 										tagName="h3"
 										value={title}
@@ -264,7 +264,7 @@ export class PRcontent extends Component {
 										value={content}
 										style={{ color: contentColor }}
 									/>
-								</React.Fragment>
+								</Fragment>
 							);
 						}
 					})()}

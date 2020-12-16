@@ -8,7 +8,7 @@ import { Component } from '@wordpress/element';
 import { MediaUpload, RichText } from '@wordpress/block-editor';
 
 import classNames from 'classnames';
-import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
+import { fixBrokenUnicode } from '@vkblocks/utils/fixBrokenUnicode';
 import { Fontawesome } from './component-fontawesome';
 
 export class PRcontent extends Component {

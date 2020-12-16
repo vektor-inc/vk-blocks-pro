@@ -24,6 +24,7 @@ export const isValidJson = ( value ) => {
 	return true
 };
 
+//fixBrokenUnicode.jsに同じ関数がある。リファクタリング後に移行。
 export const fixBrokenUnicode = ( text ) => {
 	if ( !isValidJson( text ) ) {
 		text = text.replace( /u0022/g, '"' );

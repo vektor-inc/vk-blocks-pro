@@ -4,7 +4,7 @@ import { Component, Fragment } from '@wordpress/element';
 import { MediaUpload, RichText } from '@wordpress/block-editor';
 
 import classNames from 'classnames';
-import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
+import { fixBrokenUnicode } from '@vkblocks/utils/fixBrokenUnicode';
 
 export class Fontawesome extends Component {
 	render() {

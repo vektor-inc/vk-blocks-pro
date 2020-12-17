@@ -45,4 +45,4 @@ import "@vkblocks/blocks/_pro/grid-column/block.js";
 import "@vkblocks/blocks/_pro/grid-column-item/block.js";
 import "@vkblocks/blocks/_pro/slider/block.js";
 import "@vkblocks/blocks/_pro/slider-item/block.js";
-import "@vkblocks/blocks/_pro/animation/block.js";
+import "@vkblocks/blocks/_pro/animation/";

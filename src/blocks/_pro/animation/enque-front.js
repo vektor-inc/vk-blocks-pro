@@ -1,5 +1,6 @@
 window.addEventListener(
 	'load',
+	// eslint-disable-next-line no-unused-vars
 	(event) => {
 		//vk_animationクラスのNodeを取得
 		let animationNodeList = document.querySelectorAll('.vk_animation');
@@ -7,11 +8,12 @@ window.addEventListener(
 		animationNodeList = Array.from(animationNodeList);
 
 		if (animationNodeList) {
-			for (let index in animationNodeList) {
-				let animationNode = animationNodeList[index];
+			for (const index in animationNodeList) {
+				const animationNode = animationNodeList[index];
 
 				// 取得した要素が表示された時に、activeクラスを追加
-				let observe = new IntersectionObserver((entries) => {
+				// eslint-disable-next-line no-undef
+				const observe = new IntersectionObserver((entries) => {
 					if (entries[0].isIntersecting) {
 						animationNode.classList.add('vk_animation-active');
 					} else {

@@ -3,6 +3,8 @@ import save001 from './0.0.1';
 import save002 from './0.0.2';
 import save0_5_1 from './0.5.1';
 import save0_43_0 from './0.43.0';
+import save0_58_9 from './0.58.9';
+
 
 const blockAttributes = {
 	title: {
@@ -76,13 +78,19 @@ const blockAttributes2 = {
 	...blockAttributes.fontAwesomeIconAfter.default='',
 }
 
+const blockAttributes3 = {
+	...blockAttributes2,
+	...blockAttributes2.fontAwesomeIconBefore.default='<i class="fas fa-user"></i>',
+	...blockAttributes2.fontAwesomeIconAfter.default='<i class="fas fa-user"></i>',
+}
+
 const deprecated = [
 	{
-		attributes: {
-			...blockAttributes2,
-			...blockAttributes2.fontAwesomeIconBefore.default='<i class="fas fa-user"></i>',
-			...blockAttributes2.fontAwesomeIconAfter.default='<i class="fas fa-user"></i>',
-		},
+		attributes: blockAttributes3,
+		save: save0_58_9,
+	},
+	{
+		attributes: blockAttributes3,
 		save: save0_43_0,
 	},
 	{

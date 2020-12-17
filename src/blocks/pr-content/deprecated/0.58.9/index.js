@@ -9,7 +9,7 @@ import { MediaUpload, RichText } from '@wordpress/block-editor';
 
 import classNames from 'classnames';
 import { fixBrokenUnicode } from '@vkblocks/utils/fixBrokenUnicode';
-import { Fontawesome } from './component-fontawesome';
+import { Fontawesome } from '../component-fontawesome';
 
 export class PRcontent extends Component {
 	render() {
@@ -239,9 +239,9 @@ export class PRcontent extends Component {
 		  <a
 			  href={ url }
 			  className={ aClass }
-			  target={ buttonTarget ? "_blank" : null }
+			  target={ buttonTarget && "_blank" }
 			  style={ aStyle }
-			  rel="noopener"
+			  rel={　buttonTarget && 'noopener'　}
 			  >
 			  <Fontawesome attributes={ attributes } />
 		  </a>
@@ -254,6 +254,7 @@ export class PRcontent extends Component {
 	  );
 	}
   }
+
 
 export default function save({ attributes, className }) {
 	return (

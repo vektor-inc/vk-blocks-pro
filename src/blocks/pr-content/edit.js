@@ -263,7 +263,7 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 								className={linkClass}
 								target={buttonTarget && '_blank'}
 								style={linkStyle}
-								rel={buttonTarget && 'noopener'}
+								rel={buttonTarget ? 'noopener' : undefined}
 							>
 								{ReactHtmlParser(iconBefore)}
 								<span className="vk_button_link_txt">

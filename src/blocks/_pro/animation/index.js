@@ -34,7 +34,8 @@ export const settings = {
  * @param {*} attributes
  */
 const addAnimationActiveClass = (el, type, attributes) => {
-	if ( 5.6 <= parseFloat(wpVersion) ) {
+	// eslint-disable-next-line no-undef
+	if (5.6 <= parseFloat(wpVersion)) {
 		return;
 	}
 	const post = select('core/editor').getCurrentPost();

@@ -14,6 +14,18 @@ export default function AnimationEdit(props) {
 	const customClientId = replaceClientId(clientId);
 	setAttributes({ clientId: customClientId });
 
+	if (effect === undefined || effect === null) {
+		setAttributes({ effect: 'slide-up' });
+	}
+
+	if (speed === undefined || speed === null) {
+		setAttributes({ speed: 'fast' });
+	}
+
+	if (range === undefined || range === null) {
+		setAttributes({ range: 'short' });
+	}
+
 	const blockProps = useBlockProps({
 		className: `vk_animation vk_animation-${effect} vk_animation-speed-${speed} vk_animation-range-${range} vk_animation-${customClientId}`,
 	});

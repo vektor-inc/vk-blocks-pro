@@ -17,6 +17,7 @@ export default function save({ attributes }) {
 		contentColor,
 		url,
 		buttonType,
+		buttonColor,
 		buttonColorCustom,
 		buttonText,
 		buttonTarget,
@@ -29,12 +30,10 @@ export default function save({ attributes }) {
 
 	const containerClass = getContainerClass(layout);
 	const btnClass = getButtonClass(buttonColorCustom);
-	const linkClass = getLinkClass(buttonColorCustom, buttonType);
+	const linkClass = getLinkClass(buttonColor, buttonColorCustom, buttonType);
 	const linkStyle = getLinkStyle(buttonColorCustom, buttonType);
-	const { iconBefore, iconAfter } = getFontawesomeIcon(
-		fontAwesomeIconBefore,
-		fontAwesomeIconAfter
-	);
+	const iconBefore = getFontawesomeIcon(fontAwesomeIconBefore);
+	const iconAfter = getFontawesomeIcon(fontAwesomeIconAfter);
 
 	return (
 		<div {...useBlockProps.save({ className: containerClass })}>

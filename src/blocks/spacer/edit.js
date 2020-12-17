@@ -1,24 +1,38 @@
+import classnames from 'classnames';
+
 import { __ } from '@wordpress/i18n';
 import { PanelBody, BaseControl } from '@wordpress/components';
-import { InspectorControls } from '@wordpress/block-editor';
+import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 
 import AdvancedViewportControl from '@vkblocks/components/advanced-viewport-control';
 import AdvancedUnitControl from '@vkblocks/components/advanced-unit-control';
 
-import { SpacerComponent } from './component';
 import AdvancedSpacerControl from './advanced-spacer-control';
 
-export default function SpacerEdit(attributes, className, clientId) {
+import Spacers from './spacers';
+
+export default function SpacerEdit({
+	attributes,
+	setAttributes,
+	className,
+	clientId,
+}) {
+	const { spaceType, unit, pc, tablet, mobile } = attributes;
+
+	const blockProps = useBlockProps({ className: classnames('vk_spacer') });
+
 	return (
 		<>
 			<InspectorControls>
 				<PanelBody>
 					<AdvancedSpacerControl
 						attributes={attributes}
+						setAttributes={setAttributes}
 						className={className}
 					/>
 					<AdvancedUnitControl
 						attributes={attributes}
+						setAttributes={setAttributes}
 						className={className}
 					/>
 					<BaseControl
@@ -27,6 +41,7 @@ export default function SpacerEdit(attributes, className, clientId) {
 					>
 						<AdvancedViewportControl
 							attributes={attributes}
+							setAttributes={setAttributes}
 							className={className}
 							initial={{ iPc: 40, iTablet: 30, iMobile: 20 }}
 							id={`vk_spacer-viewPort-${clientId}`}
@@ -35,7 +50,15 @@ export default function SpacerEdit(attributes, className, clientId) {
 				</PanelBody>
 			</InspectorControls>
 
-			<SpacerComponent attributes={attributes} className={className} />
+			<div {...blockProps}>
+				<Spacers
+					type={spaceType}
+					pcSize={pc}
+					tabletSize={tablet}
+					mobileSize={mobile}
+					unit={unit}
+				/>
+			</div>
 		</>
 	);
 }

@@ -34,6 +34,9 @@ export const settings = {
  * @param {*} attributes
  */
 const addAnimationActiveClass = (el, type, attributes) => {
+	if ( 5.6 <= parseFloat(wpVersion) ) {
+		return;
+	}
 	const post = select('core/editor').getCurrentPost();
 	//0.49.8未満（_vkb_saved_block_version が ""）+ JSのフィルターでscriptタグを追加していたバージョンが対象。
 	if (

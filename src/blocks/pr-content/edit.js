@@ -256,8 +256,6 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 						placeholder={__('Input content.', 'vk-blocks')}
 						style={{ color: contentColor }}
 					/>
-					{console.log("--------------------buttonTarget---------------")}
-					{console.log(buttonTarget)}
 					{buttonText && (
 						<div className={btnClass}>
 							<a

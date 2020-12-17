@@ -56,8 +56,6 @@ export default function save({ attributes }) {
 					value={content}
 					style={{ color: contentColor }}
 				/>
-				{console.log("--------------------buttonTarget---------------")}
-				{console.log(buttonTarget)}
 				{buttonText && (
 					<div className={btnClass}>
 						<a

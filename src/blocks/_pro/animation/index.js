@@ -4,6 +4,7 @@
  */
 import { ReactComponent as Icon } from './icon.svg';
 import { __ } from '@wordpress/i18n';
+import compareVersions from 'compare-versions';
 
 import metadata from './block.json';
 import edit from './edit';
@@ -34,9 +35,8 @@ export const settings = {
  * @param {*} attributes
  */
 const addAnimationActiveClass = (el, type, attributes) => {
-	// eslint-disable-next-line no-undef
-	if (5.6 <= parseFloat(wpVersion)) {
-		return　el;
+	if (window.wpVersion && compareVersions(window.wpVersion, '5.6') >= 0) {
+		return el;
 	}
 	const post = select('core/editor').getCurrentPost();
 	//0.49.8未満（_vkb_saved_block_version が ""）+ JSのフィルターでscriptタグを追加していたバージョンが対象。

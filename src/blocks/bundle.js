@@ -12,7 +12,7 @@ import "@vkblocks/extensions/common/hidden-extension";
 import "@vkblocks/extensions/common/highlighter";
 import "@vkblocks/extensions/common/nowrap";
 import "@vkblocks/blocks/staff/block.js";
-import "@vkblocks/blocks/spacer/block.js";
+import "@vkblocks/blocks/spacer/";
 import "@vkblocks/blocks/heading/block.js";
 import "@vkblocks/blocks/balloon/block.js";
 import "@vkblocks/blocks/button/block.js";

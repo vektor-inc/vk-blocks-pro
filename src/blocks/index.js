@@ -14,6 +14,7 @@ import compareVersions from 'compare-versions';
  * Internal dependencies
  */
 import * as alert from './alert';
+import * as spacer from './spacer';
 
 /**
  * Function to register an individual block.
@@ -51,6 +52,7 @@ const registerBlock = ( block ) => {
  */
 export const __getVKBlocks = () => [
 	alert,
+	spacer
 ];
 
 /**

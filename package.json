@@ -17,6 +17,7 @@
     "format:js": "wp-scripts format-js",
     "lint:css": "wp-scripts lint-style",
     "lint:alert": "wp-scripts format-js src/blocks/alert && wp-scripts lint-js src/blocks/alert",
+    "lint:spacer": "wp-scripts format-js src/blocks/spacer && wp-scripts lint-js src/blocks/spacer",
     "fixtures:clean": "rimraf \"packages/e2e-tests/fixtures/blocks/*.+(json|serialized.html)\"",
     "fixtures:generate": "cross-env GENERATE_MISSING_FIXTURES=y npm run test-unit",
     "fixtures:regenerate": "npm run fixtures:clean && npm run fixtures:generate",

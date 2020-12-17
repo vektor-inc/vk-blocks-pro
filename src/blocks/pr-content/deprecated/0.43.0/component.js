@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { Fontawesome } from "./component-fontawesome";
+import { Fontawesome } from "../component-fontawesome";
 
 const { __ } = wp.i18n;
 const { Button } = wp.components;

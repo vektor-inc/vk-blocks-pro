@@ -3,8 +3,14 @@ import { ComponentNoBorderColor } from "./component-no-boder-color";
 import { ComponentV1 } from "./componentV1"
 import Save0_43_0 from "./0.43.0/index"
 import Schema0_43_0 from "./0.43.0/schema"
+import Save0_58_7 from "./0.58.7"
+import Schema0_58_7 from "./0.58.7/schema"
 
 export const deprecated = [
+	{
+        attributes: Schema0_58_7,
+        save: Save0_58_7,
+    },
 	{
         attributes: Schema0_43_0,
         save: Save0_43_0,

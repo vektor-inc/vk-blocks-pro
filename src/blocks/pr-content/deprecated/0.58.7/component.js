@@ -1,10 +1,10 @@
 import classNames from "classnames";
-import { Fontawesome } from "./component-fontawesome";
+import { Fontawesome } from "../component-fontawesome";
 
-const { __ } = wp.i18n; // Import __() from wp.i18n
+const { __ } = wp.i18n;
 const { Button } = wp.components;
 const { Component } = wp.element;
-import { vkbBlockEditor, fixBrokenUnicode } from "./../_helper/depModules";
+import { vkbBlockEditor, fixBrokenUnicode } from "./../../../_helper/depModules";
 const { MediaUpload, RichText } = vkbBlockEditor;
 
 export class PRcontent extends Component {
@@ -235,9 +235,8 @@ export class PRcontent extends Component {
 		<a
 			href={ url }
 			className={ aClass }
-			target={ buttonTarget && "_blank" }
+			target={ buttonTarget ? "_blank" : null }
 			style={ aStyle }
-			rel={　buttonTarget && 'noopener'　}
 			>
 			<Fontawesome attributes={ attributes } />
 		</a>

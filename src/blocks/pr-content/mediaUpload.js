@@ -30,15 +30,26 @@ export const PrContentMediaUploadEdit = ({
 	//画像のURL保存
 	const setImageURL = (value) =>
 		setAttributes({ Image: value.sizes.full.url });
+
 	//画像のJSONオブジェクト保存
 	const setImageJSON = (value) => {
+
 		if (value) {
-			setAttributes({ Image: JSON.stringify(value) });
+
+			// JSONデータから抜き出し
+			const image = {
+				"alt":value.alt,
+				"sizes": {
+					"full":{
+						"url":value.sizes.full.url
+					}
+				}
+			}
+
+			setAttributes({ Image: JSON.stringify(image) });
 		}
 	};
 	const getImagePlaceHolderDeprecated = (Image, imageBorderSettings) => {
-		console.log('getImagePlaceHolderDeprecated');
-
 		if (!Image) {
 			return __('Select image', 'vk-blocks');
 		}

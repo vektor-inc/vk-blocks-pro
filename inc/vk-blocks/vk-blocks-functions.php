@@ -183,7 +183,8 @@ function vkblocks_blocks_assets() {
 		} else {
 			$arr = array_merge(
 				$arr,
-				$arr_wp56
+				$arr_wp56,
+				$arr_wp56_pro
 			);
 		}
 

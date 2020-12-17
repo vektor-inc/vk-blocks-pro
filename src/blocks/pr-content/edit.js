@@ -256,14 +256,16 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 						placeholder={__('Input content.', 'vk-blocks')}
 						style={{ color: contentColor }}
 					/>
+					{console.log("--------------------buttonTarget---------------")}
+					{console.log(buttonTarget)}
 					{buttonText && (
 						<div className={btnClass}>
 							<a
 								href={url}
 								className={linkClass}
-								target={buttonTarget ? '_blank' : null}
+								target={buttonTarget && '_blank'}
 								style={linkStyle}
-								rel={"noopener"}
+								rel={buttonTarget && 'noopener'}
 							>
 								{ReactHtmlParser(iconBefore)}
 								<span className="vk_button_link_txt">

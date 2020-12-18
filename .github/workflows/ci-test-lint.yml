@@ -29,9 +29,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+
+    - name: ビルド
     - run: npm install
     - run: npm run build
-    # 各ブロックのlintを実行
+
+    - name: 各ブロックのlintを実行
     - run: npm run lint
-    # 後方互換テスト実行
+
+    - name: 後方互換テスト実行
     - run: npm run fixtures:regenerate

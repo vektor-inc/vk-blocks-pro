@@ -4,27 +4,27 @@ import { fixBrokenUnicode } from '@vkblocks/utils/fixBrokenUnicode';
 import { MediaUpload } from '@wordpress/block-editor';
 
 // 過去に保存された画像か確認
-export const isDeprecatedImage = (Image) => {
-	return Image && Image.indexOf('{') === -1;
+export const isDeprecatedImage = (image) => {
+	return image && image.indexOf('{') === -1;
 };
 
 // 画像の枠線設定を取得
-export const getImageBorder = (ImageBorderColor) => {
+export const getImageBorder = (imageBorderColor) => {
 	let imageBorderSettings = 'none';
 	//borderColorが指定されなかった場合はボーダーを非表示に
-	if (ImageBorderColor) {
-		imageBorderSettings = `1px solid ${ImageBorderColor}`;
+	if (imageBorderColor) {
+		imageBorderSettings = `1px solid ${imageBorderColor}`;
 	}
 	return imageBorderSettings;
 };
 
 export const PrContentMediaUploadEdit = ({
-	ImageBorderColor,
+	imageBorderColor,
 	setAttributes,
 	Image,
 }) => {
 	/* eslint no-unused-vars: 0 */
-	const imageBorderSettings = getImageBorder(ImageBorderColor);
+	const imageBorderSettings = getImageBorder(imageBorderColor);
 	const prContentDatas = {};
 
 	//画像のURL保存
@@ -33,48 +33,46 @@ export const PrContentMediaUploadEdit = ({
 
 	//画像のJSONオブジェクト保存
 	const setImageJSON = (value) => {
-
 		if (value) {
-
 			// JSONデータから抜き出し
-			const image = {
-				"alt":value.alt,
-				"sizes": {
-					"full":{
-						"url":value.sizes.full.url
-					}
-				}
-			}
+			const imageData = {
+				alt: value.alt,
+				sizes: {
+					full: {
+						url: value.sizes.full.url,
+					},
+				},
+			};
 
-			setAttributes({ Image: JSON.stringify(image) });
+			setAttributes({ Image: JSON.stringify(imageData) });
 		}
 	};
-	const getImagePlaceHolderDeprecated = (Image, imageBorderSettings) => {
-		if (!Image) {
+	const getImagePlaceHolderDeprecated = (image, borderSettings) => {
+		if (!image) {
 			return __('Select image', 'vk-blocks');
 		}
 		return (
 			<img
 				className={'vk_prContent_colImg_image'}
-				src={Image}
+				src={image}
 				alt={__('Upload image', 'vk-blocks')}
-				style={{ border: imageBorderSettings }}
+				style={{ border: borderSettings }}
 			/>
 		);
 	};
 
-	const getImagePlaceHolder = (Image, imageBorderSettings) => {
-		Image = JSON.parse(fixBrokenUnicode(Image));
+	const getImagePlaceHolder = (image, borderSettings) => {
+		image = JSON.parse(fixBrokenUnicode(image));
 
-		if (Image === null || typeof Image.sizes === 'undefined') {
+		if (image === null || typeof image.sizes === 'undefined') {
 			return __('Select image', 'vk-blocks');
 		}
 		return (
 			<img
 				className={'vk_prContent_colImg_image'}
-				src={Image.sizes.full.url}
-				alt={Image.alt}
-				style={{ border: imageBorderSettings }}
+				src={image.sizes.full.url}
+				alt={image.alt}
+				style={{ border: borderSettings }}
 			/>
 		);
 	};
@@ -116,12 +114,13 @@ export const PrContentMediaUploadEdit = ({
 	);
 };
 
-export const PrContentMediaUpload = ({ Image, ImageBorderColor }) => {
-	const imageBorderSettings = getImageBorder(ImageBorderColor);
-
+export const PrContentMediaUpload = ({ Image, imageBorderColor }) => {
 	if (!Image) {
-		return __('Select image', 'vk-blocks');
+		return __('Select Image', 'vk-blocks');
 	}
+
+	const imageBorderSettings = getImageBorder(imageBorderColor);
+
 	if (Image && Image.indexOf('{') === -1) {
 		return (
 			<img
@@ -132,13 +131,13 @@ export const PrContentMediaUpload = ({ Image, ImageBorderColor }) => {
 			/>
 		);
 	}
-	const ImageParse = JSON.parse(fixBrokenUnicode(Image));
-	if (ImageParse && typeof ImageParse.sizes !== 'undefined') {
+	const imageParse = JSON.parse(fixBrokenUnicode(Image));
+	if (imageParse && typeof imageParse.sizes !== 'undefined') {
 		return (
 			<img
 				className={'vk_prContent_colImg_image'}
-				src={ImageParse.sizes.full.url}
-				alt={ImageParse.alt}
+				src={imageParse.sizes.full.url}
+				alt={imageParse.alt}
 				style={{ border: imageBorderSettings }}
 			/>
 		);

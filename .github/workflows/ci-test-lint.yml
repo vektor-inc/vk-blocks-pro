@@ -25,17 +25,22 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Node.js ${{ matrix.node-version }} 使用
+    - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: ビルド
-    - run: npm install
-    - run: npm run build
+    - name: Build
+      run: |
+        npm install
+        npm run build
 
-    - name: 各ブロックのlintを実行
-    - run: npm run lint
-
-    - name: 後方互換テスト実行
-    - run: npm run fixtures:regenerate
+    # 各ブロックのlintを実行
+    - name: Run lint.
+      run: |
+        npm run lint
+    
+    # 後方互換テスト実行
+    - name: Run deprecated test.
+      run: |
+          npm run fixtures:regenerate

@@ -1,7 +1,7 @@
 ---
-name: "[XXX] リファクタリング"
+name: "[BlockName] リファクタリング"
 about: ブロックリファクタリング用のIssueテンプレートです。
-title: "[XXX] リファクタリング"
+title: "[BlockName] リファクタリング"
 labels: ''
 assignees: ''
 

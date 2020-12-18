@@ -17,6 +17,18 @@ import * as alert from './alert';
 import * as faq2 from './faq2';
 import * as faq2a from './faq2-a';
 import * as faq2q from './faq2-q';
+import * as prContent from './pr-content';
+
+/**
+ * Function to get all the VK Blocks in an array.
+ */
+export const __getVKBlocks = () => [
+	alert,
+	prContent,
+	faq2,
+	faq2a,
+	faq2q
+];
 
 /**
  * Function to register an individual block.
@@ -48,16 +60,6 @@ const registerBlock = ( block ) => {
 	}
 	registerBlockType( name, settings );
 };
-
-/**
- * Function to get all the VK Blocks in an array.
- */
-export const __getVKBlocks = () => [
-	alert,
-	faq2,
-	faq2a,
-	faq2q
-];
 
 /**
  * Function to register VK Blocks.

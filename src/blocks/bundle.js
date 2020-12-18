@@ -27,7 +27,7 @@ import "@vkblocks/blocks/border-box/block.js";
 import "@vkblocks/blocks/faq2/block.js";
 import "@vkblocks/blocks/faq2-q/block.js";
 import "@vkblocks/blocks/faq2-a/block.js";
-import "@vkblocks/blocks/page-content/block.js";
+import "@vkblocks/blocks/page-content/";
 import "@vkblocks/blocks/_pro/icon-card-item/block.js";
 import "@vkblocks/blocks/_pro/icon-card/block.js";
 import "@vkblocks/blocks/_pro/card-item/block.js";

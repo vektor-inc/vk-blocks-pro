@@ -43,6 +43,7 @@
     "@wordpress/blocks": "^6.24.2",
     "@wordpress/env": "^2.1.0",
     "@wordpress/scripts": "^12.5.0",
+    "@wordpress/server-side-render": "^1.20.0",
     "babel-loader": "^8.2.2",
     "babel-plugin-inline-json-import": "^0.3.2",
     "babel-plugin-module-resolver": "^4.0.0",

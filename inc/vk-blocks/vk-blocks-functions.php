@@ -170,7 +170,7 @@ function vkblocks_blocks_assets() {
 		//register_blockで読み込むブロック
 		$arr = array( 'balloon', 'button', 'faq', 'flow', 'pr-blocks', 'pr-content', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents-new', 'highlighter', 'timeline', 'timeline-item', 'step', 'step-item', 'post-list', 'list-style', 'group-style', 'child-page', 'card', 'card-item', 'grid-column', 'grid-column-item', 'border-box', 'icon-card', 'icon-card-item', 'animation', 'slider', 'slider-item', 'faq2', 'faq2-q', 'faq2-a', 'responsive-br', 'nowrap' );
 		//register_block_type_from_metadataで読み込むブロック
-		$arr_wp56 = array( 'alert' );
+		$arr_wp56 = array( 'alert', 'page-content' );
 
 		if( function_exists('register_block_type_from_metadata') ){
 			foreach ( $arr_wp56 as $array ) {
@@ -529,7 +529,6 @@ function vkblocks_blocks_assets() {
 
 			} // if ( $value === 'table-of-contents' ) {
 		} // foreach ( $arr as $value ) {
-		require_once dirname( __FILE__ ) . '/blocks/page-content/class-vk-page-content-block.php';
 	} // if ( defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, '5.0', '>=' ) ) {
 
 	$dynamic_css = '

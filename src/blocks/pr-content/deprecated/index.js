@@ -1,10 +1,9 @@
-import save000 from './0.0.0';
-import save001 from './0.0.1';
-import save002 from './0.0.2';
-import save0_5_1 from './0.5.1';
-import save0_43_0 from './0.43.0';
-import save0_58_9 from './0.58.9';
-
+import save000 from './0.0.0/save';
+import save001 from './0.0.1/save';
+import save002 from './0.0.2/save';
+import save0_5_1 from './0.5.1/save';
+import save0_43_0 from './0.43.0/save';
+import save0_58_9 from './0.58.9/save';
 
 const blockAttributes = {
 	title: {

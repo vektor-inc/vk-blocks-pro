@@ -1,7 +1,7 @@
 ---
-name: "[XXX] リファクタリング"
+name: "[BlockName] リファクタリング"
 about: ブロックリファクタリング用のIssueテンプレートです。
-title: "[XXX] リファクタリング"
+title: "[BlockName] リファクタリング"
 labels: ''
 assignees: ''
 
@@ -21,3 +21,5 @@ assignees: ''
 - [ ]  save関数で返すコンポーネントの外側に必ず要素を持つ、save関数のclassを削除
  - [ ] [deprecated](https://github.com/vektor-inc/vk-blocks-pro/tree/feature/deprecated-test/src/blocks/alert/deprecated)の書き直し
  - [ ] [deprecatedのテスト](https://github.com/vektor-inc/vk-blocks-pro/tree/feature/deprecated-test/test/e2e-tests/fixtures/blocks)追加
+    - [ ] 修正版テスト追加
+    - [ ] 直前のバージョンのテスト追加

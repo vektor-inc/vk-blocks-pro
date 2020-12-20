@@ -109,6 +109,14 @@ function vk_page_content_render_callback( $attributes, $content = '' ) {
 		}
 
 	}
+	add_filter( 'vk_page_content', 'do_blocks', 9 );
+	add_filter( 'vk_page_content', 'wptexturize' );
+	add_filter( 'vk_page_content', 'convert_smilies', 20 );
+	add_filter( 'vk_page_content', 'shortcode_unautop' );
+	add_filter( 'vk_page_content', 'prepend_attachment' );
+	add_filter( 'vk_page_content', 'wp_filter_content_tags' );
+	add_filter( 'vk_page_content', 'do_shortcode', 11 );
+	add_filter( 'vk_page_content', 'capital_P_dangit', 11 );
 	return $page_html;
 }
 

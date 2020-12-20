@@ -10,7 +10,7 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-	title: __('Page Content','vk-blocks' ),
+	title: __('Page Content', 'vk-blocks'),
 	icon: <Icon />,
-	edit
+	edit,
 };

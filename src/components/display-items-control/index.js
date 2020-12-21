@@ -1,11 +1,11 @@
-const { __ } = wp.i18n;
-const {
+import { __ } from '@wordpress/i18n';
+import {
 	PanelBody,
 	BaseControl,
 	TextControl,
 	SelectControl,
 	CheckboxControl
-} = wp.components;
+} from '@wordpress/components';
 
 export const DisplayItemsControl = props => {
 	const { setAttributes, attributes } = props;

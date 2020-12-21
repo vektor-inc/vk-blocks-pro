@@ -1,5 +1,6 @@
 import { select, dispatch } from '@wordpress/data';
 
+/*
 export const vkbBlockEditor = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 export const depServerSideRender = () => {
 	if (wp.serverSideRender) {
@@ -8,6 +9,7 @@ export const depServerSideRender = () => {
 		return wp.components.ServerSideRender;
 
 }
+*/
 export const selectEditor = select("core/block-editor")
 	? select("core/block-editor")
 	: select("core/editor");

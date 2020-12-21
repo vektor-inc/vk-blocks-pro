@@ -1,15 +1,18 @@
 import { __ } from '@wordpress/i18n';
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
-import { InspectorControls, RichText, useBlockProps } from '@wordpress/block-editor';
+import {
+	InspectorControls,
+	RichText,
+	useBlockProps,
+} from '@wordpress/block-editor';
 
-export default function AlertEdit({ attributes, setAttributes, className }) {
-
+export default function AlertEdit({ attributes, setAttributes }) {
 	const { style, content } = attributes;
 
-	const blockProps = useBlockProps( {
+	const blockProps = useBlockProps({
 		className: `alert alert-${style}`,
-	} );
+	});
 
 	return (
 		<Fragment>
@@ -36,10 +39,10 @@ export default function AlertEdit({ attributes, setAttributes, className }) {
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<div { ...blockProps }>
+			<div {...blockProps}>
 				<RichText
 					tagName="p"
-					onChange={ (value) => setAttributes({ content: value }) }
+					onChange={(value) => setAttributes({ content: value })}
 					value={content}
 				/>
 			</div>

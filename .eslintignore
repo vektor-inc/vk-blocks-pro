@@ -1,0 +1,3 @@
+**/deprecated/*.js
+!**/deprecated/index.js
+**/deprecated/**/*.js

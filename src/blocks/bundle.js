@@ -20,14 +20,13 @@ import "@vkblocks/blocks/button/block.js";
 import "@vkblocks/blocks/faq/block.js";
 import "@vkblocks/blocks/flow/block.js";
 import "@vkblocks/blocks/pr-blocks/block.js";
-import "@vkblocks/blocks/pr-content/block.js";
 
 // /*WP5.3 以下では読み込まれない*/
 import "@vkblocks/extensions/common/responsive-br";
 import "@vkblocks/blocks/border-box/block.js";
-import "@vkblocks/blocks/faq2/block.js";
-import "@vkblocks/blocks/faq2-q/block.js";
-import "@vkblocks/blocks/faq2-a/block.js";
+import "@vkblocks/blocks/faq2/";
+import "@vkblocks/blocks/faq2-q/";
+import "@vkblocks/blocks/faq2-a/";
 import "@vkblocks/blocks/page-content/block.js";
 import "@vkblocks/blocks/_pro/icon-card-item/block.js";
 import "@vkblocks/blocks/_pro/icon-card/block.js";

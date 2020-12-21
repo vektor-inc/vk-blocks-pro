@@ -7,7 +7,7 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 
-export default function AlertEdit({ attributes, setAttributes, className }) {
+export default function AlertEdit({ attributes, setAttributes }) {
 	const { style, content } = attributes;
 
 	const blockProps = useBlockProps({

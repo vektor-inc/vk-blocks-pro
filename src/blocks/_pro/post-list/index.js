@@ -2,32 +2,40 @@
  * post-list block type
  *
  */
-const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
-const {
+// import React
+import { ReactComponent as Icon } from './icon.svg';
+
+// import WordPress Scripts
+import { __ } from '@wordpress/i18n';
+import {
 	RangeControl,
 	PanelBody,
 	BaseControl,
 	SelectControl,
 	CheckboxControl,
 	TextControl,
-} = wp.components;
-const { Fragment } = wp.element;
-import { vkbBlockEditor, fixBrokenUnicode } from '../../../utils/depModules';
-import { depServerSideRender } from '../../../utils/depModules';
-const { InspectorControls } = vkbBlockEditor;
-const ServerSideRender = depServerSideRender();
-import { ReactComponent as Icon } from './icon.svg';
+} from '@wordpress/components';
+import { Fragment } from '@wordpress/element';
+import { registerBlockType } from '@wordpress/blocks';
 
-import { DisplayItemsControl } from '../../../components/display-items-control';
-import { ColumnLayoutControl } from '../../../components/column-layout-control';
-import { AdvancedCheckboxControl } from '../../../components/advanced-checkbox-control';
+
+// Load VK Blocks Utils
 import {
 	usePostTypes,
 	useTaxonomies,
 	useTermsGroupbyTaxnomy,
 } from '../../../utils/hooks';
 import { flat } from '../../../utils/multi-array-flaten';
+import { fixBrokenUnicode } from '../../../utils/depModules';
+import { depServerSideRender } from '../../../utils/depModules';
+import { InspectorControls } from '@wordpress/block-editor';
+const ServerSideRender = depServerSideRender();
+
+
+// Load VK Blocks Compornents
+import { DisplayItemsControl } from '../../../components/display-items-control';
+import { ColumnLayoutControl } from '../../../components/column-layout-control';
+import { AdvancedCheckboxControl } from '../../../components/advanced-checkbox-control';
 
 registerBlockType('vk-blocks/post-list', {
 	title: __('Post list', 'vk-blocks'),

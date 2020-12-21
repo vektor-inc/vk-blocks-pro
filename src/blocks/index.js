@@ -16,6 +16,11 @@ import compareVersions from 'compare-versions';
 import * as alert from './alert';
 import * as prContent from './pr-content';
 import * as postList from './_pro/post-list';
+import * as faq2 from './faq2';
+import * as faq2a from './faq2-a';
+import * as faq2q from './faq2-q';
+import * as balloon from './balloon';
+import * as faq from './faq';
 
 /**
  * Function to get all the VK Blocks in an array.
@@ -24,6 +29,11 @@ export const __getVKBlocks = () => [
 	alert,
 	prContent,
 	postList
+	faq2,
+	faq2a,
+	faq2q,
+	balloon,
+	faq
 ];
 
 /**

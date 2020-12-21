@@ -99,7 +99,7 @@ if( function_exists('register_block_type_from_metadata')) {
 						),
 						'isCheckedPostType'          => array(
 							'type'    => 'string',
-							'default' => '["post"]',
+							'default' => '[]',
 						),
 						'coreTerms'                  => array(
 							'type'    => 'string',
@@ -133,7 +133,6 @@ if( function_exists('register_block_type_from_metadata')) {
 					$vk_blocks_common_attributes
 				),
 				'render_callback' => 'vk_blocks_render_post_list',
-				'supports'        => array(),
 			)
 		);
 	}

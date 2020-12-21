@@ -8,13 +8,13 @@ import {
 	TextControl,
 } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
-import { fixBrokenUnicode } from '@vkblocks/utils/fixBrokenUnicode';
 import { ServerSideRender } from '@wordpress/server-side-render';
 import { InspectorControls } from '@wordpress/block-editor';
 
-import { DisplayItemsControl } from '@vkblocks/components/display-items-control';
-import { ColumnLayoutControl } from '@vkblocks/components/column-layout-control';
-import { AdvancedCheckboxControl } from '@vkblocks/components/advanced-checkbox-control';
+import { fixBrokenUnicode } from '@vkblocks/utils/fixBrokenUnicode';
+import { DisplayItemsControl } from '@vkblocks/components/display-items-control/index';
+import { ColumnLayoutControl } from '@vkblocks/components/column-layout-control/index';
+import { AdvancedCheckboxControl } from '@vkblocks/components/advanced-checkbox-control/index';
 import {
 	usePostTypes,
 	useTaxonomies,

@@ -35,7 +35,7 @@ export const settings = {
 			btn_text: 'Read more',
 			btn_align: 'text-right',
 			numberPosts: 6,
-			isCheckedPostType: '["post","page"]',
+			isCheckedPostType: '["post"]',
 			order: 'DESC',
 			orderby: 'date',
 		},

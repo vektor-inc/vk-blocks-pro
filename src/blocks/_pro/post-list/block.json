@@ -1,6 +1,6 @@
 {
 	"apiVersion": 2,
-	"name": "vvk-blocks/post-list",
+	"name": "vk-blocks/post-list",
 	"category": "vk-blocks-cat",
 	"attributes": {
 		"name": {
@@ -85,7 +85,7 @@
 		},
 		"isCheckedPostType": {
 			"type": "string",
-			"default": "[\"post\"]"
+			"default": "[]"
 		},
 		"coreTerms": {
 			"type": "string",
@@ -115,5 +115,8 @@
 			"type": "string",
 			"default": ""
 		}
+	},
+	"supports": {
+		"className": true
 	}
 }

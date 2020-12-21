@@ -24,18 +24,17 @@ import {
 	usePostTypes,
 	useTaxonomies,
 	useTermsGroupbyTaxnomy,
-} from '../../../utils/hooks';
-import { flat } from '../../../utils/multi-array-flaten';
-import { fixBrokenUnicode } from '../../../utils/depModules';
-import { depServerSideRender } from '../../../utils/depModules';
+} from '@vkblocks/utils/hooks';
+import { flat } from '@vkblocks/utils/multi-array-flaten';
+import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
+import ServerSideRender from '@wordpress/server-side-render';
 import { InspectorControls } from '@wordpress/block-editor';
-const ServerSideRender = depServerSideRender();
 
 
 // Load VK Blocks Compornents
-import { DisplayItemsControl } from '../../../components/display-items-control';
-import { ColumnLayoutControl } from '../../../components/column-layout-control';
-import { AdvancedCheckboxControl } from '../../../components/advanced-checkbox-control';
+import { DisplayItemsControl } from '@vkblocks/components/display-items-control';
+import { ColumnLayoutControl } from '@vkblocks/components/column-layout-control';
+import { AdvancedCheckboxControl } from '@vkblocks/components/advanced-checkbox-control';
 
 registerBlockType('vk-blocks/post-list', {
 	title: __('Post list', 'vk-blocks'),

@@ -85,7 +85,7 @@
 		},
 		"isCheckedPostType": {
 			"type": "string",
-			"default": "['post']"
+			"default": "[\"post\"]"
 		},
 		"coreTerms": {
 			"type": "string",
@@ -115,8 +115,5 @@
 			"type": "string",
 			"default": ""
 		}
-	},
-	"supports": {
-		"className": true
 	}
 }

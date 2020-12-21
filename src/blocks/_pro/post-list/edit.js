@@ -19,8 +19,8 @@ import {
 	usePostTypes,
 	useTaxonomies,
 	useTermsGroupbyTaxnomy,
-} from '@vkblocks//utils/hooks';
-import { flat } from '@vkblocks//utils/multi-array-flaten';
+} from '@vkblocks/utils/hooks';
+import { flat } from '@vkblocks/utils/multi-array-flaten';
 
 export default function PostListEdit(props) {
 	const { attributes, setAttributes, name } = props;
@@ -65,6 +65,7 @@ export default function PostListEdit(props) {
 				>
 					<BaseControl
 						label={__('Filter by PostTypes', 'vk-blocks')}
+						id={'vk_postList-postType'}
 					>
 						<AdvancedCheckboxControl
 							schema={'isCheckedPostType'}
@@ -77,6 +78,7 @@ export default function PostListEdit(props) {
 					</BaseControl>
 					<BaseControl
 						label={__('Filter by Taxonomy Terms', 'vk-blocks')}
+						id={'vk_postList-taxonomy'}
 					>
 						<AdvancedCheckboxControl
 							schema={'isCheckedTerms'}
@@ -87,7 +89,10 @@ export default function PostListEdit(props) {
 							{...props}
 						/>
 					</BaseControl>
-					<BaseControl label={__('Number of Posts', 'vk-blocks')}>
+					<BaseControl
+						label={__('Number of Posts', 'vk-blocks')}
+						id={'vk_postList-number'}
+					>
 						<RangeControl
 							value={numberPosts}
 							onChange={(value) =>
@@ -97,7 +102,10 @@ export default function PostListEdit(props) {
 							max="100"
 						/>
 					</BaseControl>
-					<BaseControl label={__('Order', 'vk-blocks')}>
+					<BaseControl
+						label={__('Order', 'vk-blocks')}
+						id={'vk_postList-order'}
+					>
 						<SelectControl
 							value={order}
 							onChange={(v) => setAttributes({ order: v })}
@@ -113,17 +121,17 @@ export default function PostListEdit(props) {
 							]}
 						/>
 					</BaseControl>
-					<BaseControl label={__('Order by', 'vk-blocks')}>
+					<BaseControl
+						label={__('Order by', 'vk-blocks')}
+						id={'vk_postList-orderBy'}
+					>
 						<SelectControl
 							value={orderby}
 							onChange={(v) => setAttributes({ orderby: v })}
 							options={[
 								{
 									value: 'date',
-									label: __(
-										'Published Date',
-										'vk-blocks'
-									),
+									label: __('Published Date', 'vk-blocks'),
 								},
 								{
 									value: 'modified',
@@ -140,7 +148,10 @@ export default function PostListEdit(props) {
 							]}
 						/>
 					</BaseControl>
-					<BaseControl label={__('offset', 'vk-blocks')}>
+					<BaseControl
+						label={__('offset', 'vk-blocks')}
+						id={'vk_postList-offset'}
+					>
 						<TextControl
 							value={offset}
 							onChange={(v) =>
@@ -154,9 +165,7 @@ export default function PostListEdit(props) {
 						<CheckboxControl
 							label={__('Ignore this post', 'vk-blocks')}
 							checked={selfIgnore}
-							onChange={(v) =>
-								setAttributes({ selfIgnore: v })
-							}
+							onChange={(v) => setAttributes({ selfIgnore: v })}
 						/>
 					</BaseControl>
 				</PanelBody>

@@ -15,13 +15,15 @@ import compareVersions from 'compare-versions';
  */
 import * as alert from './alert';
 import * as prContent from './pr-content';
+import * as postList from './_pro/post-list';
 
 /**
  * Function to get all the VK Blocks in an array.
  */
 export const __getVKBlocks = () => [
 	alert,
-	prContent
+	prContent,
+	postList
 ];
 
 /**

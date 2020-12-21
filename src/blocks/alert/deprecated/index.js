@@ -1,4 +1,4 @@
-import save000 from './0.0.0/save';
+import save000 from './0.0.0';
 
 const blockAttributes = {
 	style: {
@@ -9,7 +9,7 @@ const blockAttributes = {
 		type: 'string',
 		source: 'html',
 		selector: 'p',
-	}
+	},
 };
 
 const deprecated = [

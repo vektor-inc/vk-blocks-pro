@@ -25,15 +25,16 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				'display_image'              => true,
 				'display_image_overlay_term' => true,
 				'display_excerpt'            => false,
+				'display_author'             => false,
 				'display_date'               => true,
 				'display_new'                => true,
 				'display_taxonomies'         => false,
 				'display_btn'                => false,
 				'image_default_url'          => false,
 				'overlay'                    => false,
-				'btn_text'                   => __( 'Read more', 'vk-blocks' ),
+				'btn_text'                   => __( 'Read more', 'vk_components_textdomain' ),
 				'btn_align'                  => 'text-right',
-				'new_text'                   => __( 'New!!', 'vk-blocks' ),
+				'new_text'                   => __( 'New!!', 'vk_components_textdomain' ),
 				'new_date'                   => 7,
 				'textlink'                   => true,
 				'class_outer'                => '',
@@ -332,6 +333,28 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				$html .= '</p>';
 			}
 
+			if ( $options['display_author'] ) {
+				$author = get_the_author();
+				if ( $author ) {
+					$html .= '<p class="vcard vk_post_author" itemprop="author">';
+
+					// VK Post Author Display の画像を取得
+					$profile_image_id = get_the_author_meta( 'user_profile_image' );
+					$html .= '<span class="vk_post_author_image">';
+					if ( $profile_image_id ) {
+						$profile_image_src = wp_get_attachment_image_src( $profile_image_id, 'thumbnail' );
+						$html      .= '<img class="vk_post_author_image" src="' . $profile_image_src[0] . '" alt="' . esc_attr( $author ) . '" />';
+					} else {
+						$html .= get_avatar( get_the_author_meta( 'email' ), 100 );
+					}
+					$html .= '</span>';
+
+					$html .= '<span class="fn vk_post_author_name" itemprop="name">';
+					$html .= esc_html( $author );
+					$html .= '</span></p>';
+				} // if author
+			}
+
 			if ( $options['display_taxonomies'] ) {
 				$args          = array(
 					'template'      => '<dt class="vk_post_taxonomy_title"><span class="vk_post_taxonomy_title_inner">%s</span></dt><dd class="vk_post_taxonomy_terms">%l</dd>',
@@ -398,19 +421,19 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 
 			$patterns = array(
 				'card'            => array(
-					'label'             => __( 'Card', 'vk-blocks' ),
+					'label'             => __( 'Card', 'vk_components_textdomain' ),
 					'class_posts_outer' => '',
 				),
 				'card-horizontal' => array(
-					'label'             => __( 'Card Horizontal', 'vk-blocks' ),
+					'label'             => __( 'Card Horizontal', 'vk_components_textdomain' ),
 					'class_posts_outer' => '',
 				),
 				'media'           => array(
-					'label'             => __( 'Media', 'vk-blocks' ),
+					'label'             => __( 'Media', 'vk_components_textdomain' ),
 					'class_posts_outer' => 'media-outer',
 				),
 				'postListText'    => array(
-					'label'             => _x( 'Text 1 Column', 'post list type', 'vk-blocks' ),
+					'label'             => _x( 'Text 1 Column', 'post list type', 'vk_components_textdomain' ),
 					'class_posts_outer' => 'postListText-outer',
 				),
 			);

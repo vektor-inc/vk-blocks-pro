@@ -28,7 +28,7 @@ import * as faq from './faq';
 export const __getVKBlocks = () => [
 	alert,
 	prContent,
-	postList
+	postList,
 	faq2,
 	faq2a,
 	faq2q,

@@ -14,6 +14,7 @@ import compareVersions from 'compare-versions';
  * Internal dependencies
  */
 import * as alert from './alert';
+import * as balloon from './balloon';
 import * as faq2 from './faq2';
 import * as faq2a from './faq2-a';
 import * as faq2q from './faq2-q';
@@ -27,7 +28,8 @@ export const __getVKBlocks = () => [
 	prContent,
 	faq2,
 	faq2a,
-	faq2q
+	faq2q,
+	balloon
 ];
 
 /**

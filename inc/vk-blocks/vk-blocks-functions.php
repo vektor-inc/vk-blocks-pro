@@ -164,11 +164,10 @@ function vkblocks_blocks_assets() {
 	// 投稿リストをブロック側に渡す.
 	wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_page_list', $option_posts );
 
-
 	if( is_lager_than_wp('5.0') ){
 
 		//register_blockで読み込むブロック
-		$arr = array( 'button', 'faq', 'flow', 'pr-blocks', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents-new', 'highlighter', 'timeline', 'timeline-item', 'step', 'step-item', 'post-list', 'list-style', 'group-style', 'child-page', 'card', 'card-item', 'grid-column', 'grid-column-item', 'border-box', 'icon-card', 'icon-card-item', 'animation', 'slider', 'slider-item', 'responsive-br', 'nowrap' );
+		$arr = array( 'button', 'flow', 'pr-blocks', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents-new', 'highlighter', 'timeline', 'timeline-item', 'step', 'step-item', 'post-list', 'list-style', 'group-style', 'child-page', 'card', 'card-item', 'grid-column', 'grid-column-item', 'border-box', 'icon-card', 'icon-card-item', 'animation', 'slider', 'slider-item', 'responsive-br', 'nowrap' );
 		//register_block_type_from_metadataで読み込むブロック
 		$arr_wp56 = array(
 			'alert',
@@ -176,7 +175,8 @@ function vkblocks_blocks_assets() {
 			'faq2',
 			'faq2-q',
 			'faq2-a',
-			'balloon'
+			'balloon',
+			'faq'
 		);
 
     if( function_exists('register_block_type_from_metadata') ){

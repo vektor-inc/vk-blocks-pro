@@ -14,11 +14,12 @@ import compareVersions from 'compare-versions';
  * Internal dependencies
  */
 import * as alert from './alert';
-import * as balloon from './balloon';
+import * as prContent from './pr-content';
 import * as faq2 from './faq2';
 import * as faq2a from './faq2-a';
 import * as faq2q from './faq2-q';
-import * as prContent from './pr-content';
+import * as balloon from './balloon';
+import * as faq from './faq';
 
 /**
  * Function to get all the VK Blocks in an array.
@@ -29,7 +30,8 @@ export const __getVKBlocks = () => [
 	faq2,
 	faq2a,
 	faq2q,
-	balloon
+	balloon,
+	faq
 ];
 
 /**

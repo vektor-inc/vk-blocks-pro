@@ -7,7 +7,7 @@ const {
 	CheckboxControl
 } = wp.components;
 
-export const DisplayItemsControl = props => {
+export const DisplayItemsControl = ( props ) => {
 	const { setAttributes, attributes } = props;
 	const {
 		display_image,

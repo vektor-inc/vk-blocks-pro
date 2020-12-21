@@ -1,8 +1,8 @@
 const { CheckboxControl } = wp.components;
 const { useState } = wp.element;
-import { destructiveDeleteFromArray } from "../../utils/delete-from-array";
+import { destructiveDeleteFromArray } from "@vkblocks/utils/delete-from-array";
 
-export const AdvancedCheckboxControl = props => {
+export const AdvancedCheckboxControl = ( props ) => {
 	const { schema, rawData, checkedData, setAttributes } = props;
 
 	if (!rawData || !checkedData) return false;

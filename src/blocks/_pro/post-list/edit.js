@@ -12,15 +12,16 @@ import { ServerSideRender } from '@wordpress/server-side-render';
 import { InspectorControls } from '@wordpress/block-editor';
 
 import { fixBrokenUnicode } from '@vkblocks/utils/fixBrokenUnicode';
-import { DisplayItemsControl } from '@vkblocks/components/display-items-control/index';
-import { ColumnLayoutControl } from '@vkblocks/components/column-layout-control/index';
-import { AdvancedCheckboxControl } from '@vkblocks/components/advanced-checkbox-control/index';
 import {
 	usePostTypes,
 	useTaxonomies,
 	useTermsGroupbyTaxnomy,
 } from '@vkblocks/utils/hooks';
 import { flat } from '@vkblocks/utils/multi-array-flaten';
+
+import { DisplayItemsControl } from '@vkblocks/components/display-items-control/';
+import { ColumnLayoutControl } from '@vkblocks/components/column-layout-control/';
+import { AdvancedCheckboxControl } from '@vkblocks/components/advanced-checkbox-control/';
 
 export default function PostListEdit(props) {
 	const { attributes, setAttributes, name } = props;

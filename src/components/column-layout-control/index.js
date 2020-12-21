@@ -2,9 +2,9 @@ const { __ } = wp.i18n;
 const { PanelBody, BaseControl, SelectControl } = wp.components;
 const { Component } = wp.element;
 const { createHigherOrderComponent, compose } = wp.compose;
-import { ColumnLayout } from "../column-layout";
+import { ColumnLayout } from "@vkblocks/components/column-layout";
 
-export const setOptions = name => {
+export const setOptions = ( name ) => {
 	const options = {
 		"vk-blocks/card": [
 			{

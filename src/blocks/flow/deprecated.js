@@ -1,29 +1,30 @@
 import { vkbBlockEditor } from "./../_helper/depModules";
 const { RichText } = vkbBlockEditor;
 
+const blockAttributes = {
+	heading: {
+		type: 'string',
+		source: 'html',
+		selector: 'dt',
+	},
+	content: {
+		type: 'string',
+		source: 'html',
+		selector: 'dd',
+	},
+	arrowFlag: {
+		type: 'string',
+		default: 'vk_flow-arrow-on',
+	},
+	insertImage: {
+		type: 'string',
+		default: null, // no image by default!
+	}
+}
+
 export const deprecated = [
     {
-        attributes: {
-            heading: {
-                type: 'string',
-                source: 'html',
-                selector: 'dt',
-            },
-            content: {
-                type: 'string',
-                source: 'html',
-                selector: 'dd',
-            },
-            arrowFlag: {
-                type: 'string',
-                default: 'vk_flow-arrow-on',
-            },
-            insertImage: {
-                type: 'string',
-                default: null, // no image by default!
-            }
-        },
-
+        attributes: blockAttributes,
         save({ attributes }) {
             const {
                 heading,
@@ -33,28 +34,28 @@ export const deprecated = [
             } = attributes;
 
             return (
-	<div className={ `${arrowFlag} vk_flow` }>
-		<div className={ 'vk_flow_frame' }>
-			<dl className={ 'vk_flow_frame_text' }>
-				<RichText.Content
-					tagName="dt"
-					className={ 'vk_flow_frame_text_title' }
-					value={ heading }
-                            />
-				<RichText.Content
-					tagName="dd"
-					className={ 'vk_flow_frame_text_content' }
-					value={ content }
-                            />
-			</dl>
-			{ insertImage ?
-				<div className={ 'vk_flow_frame_image' }>
-					<img
-						src={ insertImage }
-						alt=''
-                                /></div> : '' }
-		</div>
-	</div>
+				<div className={ `${arrowFlag} vk_flow` }>
+					<div className={ 'vk_flow_frame' }>
+						<dl className={ 'vk_flow_frame_text' }>
+							<RichText.Content
+								tagName="dt"
+								className={ 'vk_flow_frame_text_title' }
+								value={ heading }
+										/>
+							<RichText.Content
+								tagName="dd"
+								className={ 'vk_flow_frame_text_content' }
+								value={ content }
+										/>
+						</dl>
+						{ insertImage ?
+							<div className={ 'vk_flow_frame_image' }>
+								<img
+									src={ insertImage }
+									alt=''
+											/></div> : '' }
+					</div>
+				</div>
             );
         },
     }

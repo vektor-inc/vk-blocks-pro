@@ -18,12 +18,10 @@ export default function save({ attributes }) {
 						value={content}
 					/>
 				</dl>
-				{insertImage ? (
+				{insertImage && (
 					<div className={'vk_flow_frame_image'}>
 						<img src={insertImage} alt="" />
 					</div>
-				) : (
-					''
 				)}
 			</div>
 		</div>

@@ -195,9 +195,7 @@ registerBlockType('vk-blocks/child-page', {
 								options={options}
 							/>
 						</BaseControl>
-						<BaseControl
-							id={`vk_childPage-ignoreThisPost`}
-						>
+						<BaseControl id={`vk_childPage-ignoreThisPost`}>
 							<CheckboxControl
 								label={__('Ignore this post', 'vk-blocks')}
 								checked={selfIgnore}

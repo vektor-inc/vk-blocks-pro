@@ -1,7 +1,7 @@
 import save000 from "./0.0.0/save"
 import save001 from "./0.0.1/save"
-import save002 from "./0.49.1/save"
-import save003 from "./0.58.7/save"
+import save0_49_1 from "./0.49.1/save"
+import save0_58_7 from "./0.58.7/save"
 
 const blockAttributes = {
 	effect: {
@@ -27,7 +27,7 @@ export const deprecated = [
 				default: "short",
 			},
 		},
-		save: save003
+		save: save0_58_7
 	},
 	{
 		attributes:	{
@@ -41,7 +41,7 @@ export const deprecated = [
 				default: "short",
 			},
 		},
-		save: save002
+		save: save0_49_1
 	},
 	{
 		attributes:	{

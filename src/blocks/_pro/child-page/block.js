@@ -13,11 +13,10 @@ import {
 } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 import { InspectorControls } from '@wordpress/block-editor';
-// import { withSelect, select } from '@wordpress/data';
 import { withSelect } from '@wordpress/data';
 import ServerSideRender from '@wordpress/server-side-render';
-import { DisplayItemsControl } from '../../../components/display-items-control';
-import { ColumnLayoutControl } from '../../../components/column-layout-control';
+import { DisplayItemsControl } from '@vkblocks/components/display-items-control';
+import { ColumnLayoutControl } from '@vkblocks/components/column-layout-control';
 import { ReactComponent as Icon } from './icon.svg';
 
 registerBlockType('vk-blocks/child-page', {

@@ -115,7 +115,7 @@ registerBlockType('vk-blocks/flow', {
 		);
 	},
 
-	save({ attributes, className }) {
+	save({ attributes }) {
 		const {
 			heading,
 			content,
@@ -124,7 +124,7 @@ registerBlockType('vk-blocks/flow', {
 		} = attributes;
 
 		return (
-			<div className={ `${className} ${arrowFlag} vk_flow` }>
+			<div className={ `${arrowFlag} vk_flow` }>
 				<div className={ 'vk_flow_frame' }>
 					<dl className={ 'vk_flow_frame_text' }>
 						<RichText.Content

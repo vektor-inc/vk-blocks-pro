@@ -1,81 +1,64 @@
-import classNames from "classnames";
-import {vkbBlockEditor} from "../../../../utils/depModules";
-import { Fragment } from "react";
-import Schema0_49_1 from "./0.49.1/schema"
-import Save0_49_1 from "./0.49.1/index"
+import save000 from "./0.0.0/save"
+import save001 from "./0.0.1/save"
+import save002 from "./0.49.1/save"
+import save003 from "./0.58.7/save"
 
-const { InnerBlocks } = vkbBlockEditor;
+const blockAttributes = {
+	effect: {
+		type: "string",
+		default: "slide-up",
+	},
+	clientId: {
+		type: "string",
+		default: "",
+	},
+};
 
 export const deprecated = [
 	{
-		attributes: Schema0_49_1,
-		save: Save0_49_1
+		attributes:	{
+			...blockAttributes,
+			speed: {
+				type: "string",
+				default: "fast",
+			},
+			range: {
+				type: "string",
+				default: "short",
+			},
+		},
+		save: save003
 	},
 	{
-		attributes:{
-			effect: {
-			  type: "string",
-			  default: "slide-up",
-		  },
-		  speed: {
-			  type: "string",
-			  default: "fast",
-		  },
-		  range: {
-			  type: "string",
-			  default: "short",
-		  },
-		  clientId: {
-			  type: "string",
-			  default: "",
-		  },
-	  },
-	  save(props) {
-		  let {effect, speed, range, clientId} = props.attributes;
-		  //For recovering block.
-		  effect = effect ? effect : "slide-up"
-		  speed = speed ? speed : "fast"
-		  range = range ? range : "short"
-
-		  return (
-			  <Fragment>
-				<div className={ classNames(`vk_animation vk_animation-${effect} vk_animation-speed-${speed} vk_animation-range-${range} vk_animation-${clientId}`) }>
-					<InnerBlocks.Content />
-				</div>
-				<script>
-					{ `window.addEventListener('load', (event) => {
-					let animationElm = document.querySelector('.vk_animation-${clientId}');
-					const observer = new IntersectionObserver((entries) => {
-						if(entries[0].isIntersecting){
-							animationElm.classList.add('vk_animation-active');
-						}else{
-							animationElm.classList.remove('vk_animation-active');
-						}
-					});
-					observer.observe(animationElm);
-				  }, false);` }
-				</script>
-			</Fragment>
-				);
-		}
+		attributes:	{
+			...blockAttributes,
+			speed: {
+				type: "string",
+				default: "fast",
+			},
+			range: {
+				type: "string",
+				default: "short",
+			},
+		},
+		save: save002
 	},
-    {
-        attributes: {
-			effect: {
+	{
+		attributes:	{
+			...blockAttributes,
+			speed: {
 				type: "string",
-				default: "slide-up",
+				default: "fast",
 			},
-			clientId: {
+			range: {
 				type: "string",
-				default: "",
+				default: "short",
 			},
-        },
-        save(props) {
-            return (
-	<div className={ classNames(`vk_animation vk_animation-${props.attributes.effect} vk_animation-${props.attributes.clientId}`) }>
-		<InnerBlocks.Content />
-	</div>
-            );
-        },
-    }
+		},
+		save001,
+	},
+	{
+		attributes: blockAttributes,
+		save000,
+	}
 ];

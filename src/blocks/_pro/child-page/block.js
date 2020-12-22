@@ -181,7 +181,10 @@ registerBlockType('vk-blocks/child-page', {
 						title={__('Display conditions', 'vk-blocks')}
 						initialOpen={false}
 					>
-						<BaseControl label={__('Parent', 'vk-blocks')}>
+						<BaseControl
+							label={__('Parent', 'vk-blocks')}
+							id={`vk_childPage-parent`}
+						>
 							<SelectControl
 								value={selectId}
 								onChange={(value) =>
@@ -192,7 +195,9 @@ registerBlockType('vk-blocks/child-page', {
 								options={options}
 							/>
 						</BaseControl>
-						<BaseControl>
+						<BaseControl
+							id={`vk_childPage-ignoreThisPost`}
+						>
 							<CheckboxControl
 								label={__('Ignore this post', 'vk-blocks')}
 								checked={selfIgnore}

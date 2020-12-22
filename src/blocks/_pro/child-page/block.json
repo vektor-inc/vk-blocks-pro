@@ -1,15 +1,19 @@
 {
 	"apiVersion": 2,
-	"name": "vk-blocks/post-list",
+	"name": "vk-blocks/child-page",
 	"category": "vk-blocks-cat",
 	"attributes": {
+		"selectId": {
+			"type": "number",
+			"default": -1
+		},
 		"name": {
 			"type": "string",
 			"default": ""
 		},
 		"layout": {
 			"type": "string",
-			"default": "card"
+			"default": "card-horizontal"
 		},
 		"col_xs": {
 			"type": "number",
@@ -21,19 +25,19 @@
 		},
 		"col_md": {
 			"type": "number",
-			"default": 3
+			"default": 2
 		},
 		"col_lg": {
 			"type": "number",
-			"default": 3
+			"default": 2
 		},
 		"col_xl": {
 			"type": "number",
-			"default": 3
+			"default": 2
 		},
 		"col_xxl": {
 			"type": "number",
-			"default": 3
+			"default": 2
 		},
 		"display_image": {
 			"type": "boolean",
@@ -45,7 +49,7 @@
 		},
 		"display_excerpt": {
 			"type": "boolean",
-			"default": false
+			"default": true
 		},
 		"display_author": {
 			"type": "boolean",
@@ -53,11 +57,11 @@
 		},
 		"display_date": {
 			"type": "boolean",
-			"default": true
+			"default": false
 		},
 		"display_new": {
 			"type": "boolean",
-			"default": true
+			"default": false
 		},
 		"display_taxonomies": {
 			"type": "boolean",
@@ -65,7 +69,7 @@
 		},
 		"display_btn": {
 			"type": "boolean",
-			"default": false
+			"default": true
 		},
 		"new_date": {
 			"type": "number",
@@ -99,25 +103,13 @@
 			"type": "string",
 			"default": "[]"
 		},
-		"order": {
+		"className": {
 			"type": "string",
-			"default": "DESC"
-		},
-		"orderby": {
-			"type": "string",
-			"default": "date"
-		},
-		"offset": {
-			"type": "number",
-			"default": 0
+			"default": ""
 		},
 		"selfIgnore": {
 			"type": "boolean",
 			"default": false
-		},
-		"className": {
-			"type": "string",
-			"default":""
 		}
 	},
 	"supports": {

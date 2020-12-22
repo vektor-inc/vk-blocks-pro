@@ -167,7 +167,7 @@ function vkblocks_blocks_assets() {
 	if( is_lager_than_wp('5.0') ){
 
 		//register_blockで読み込むブロック
-		$arr = array( 'button', 'flow', 'pr-blocks', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents-new', 'highlighter', 'timeline', 'timeline-item', 'step', 'step-item', 'list-style', 'group-style', 'child-page', 'card', 'card-item', 'grid-column', 'grid-column-item', 'border-box', 'icon-card', 'icon-card-item', 'animation', 'slider', 'slider-item', 'responsive-br', 'nowrap' );
+		$arr = array( 'button', 'flow', 'pr-blocks', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents-new', 'highlighter', 'timeline', 'timeline-item', 'step', 'step-item', 'list-style', 'group-style', 'card', 'card-item', 'grid-column', 'grid-column-item', 'border-box', 'icon-card', 'icon-card-item', 'animation', 'slider', 'slider-item', 'responsive-br', 'nowrap' );
 		//register_block_type_from_metadataで読み込むブロック
 		$arr_wp56 = array(
 			'alert',
@@ -179,6 +179,7 @@ function vkblocks_blocks_assets() {
 			'faq'
 		);
 		$arr_wp56_pro = array(
+			'child-page',
 			'post-list',
 		);
 
@@ -275,130 +276,6 @@ function vkblocks_blocks_assets() {
 						'supports'        => array(),
 					)
 				);
-			} elseif ( $value == 'child-page' ) {
-
-				register_block_type(
-					'vk-blocks/' . $value,
-					array(
-						'attributes'      => array_merge(
-							array(
-								'selectId'          => array(
-									'type'    => 'number',
-									'default' => -1,
-								),
-								'name'              => array(
-									'type'    => 'string',
-									'default' => '',
-								),
-								'layout'            => array(
-									'type'    => 'string',
-									'default' => 'card-horizontal',
-								),
-								'col_xs'            => array(
-									'type'    => 'number',
-									'default' => 1,
-								),
-								'col_sm'            => array(
-									'type'    => 'number',
-									'default' => 2,
-								),
-								'col_md'            => array(
-									'type'    => 'number',
-									'default' => 2,
-								),
-								'col_lg'            => array(
-									'type'    => 'number',
-									'default' => 2,
-								),
-								'col_xl'            => array(
-									'type'    => 'number',
-									'default' => 2,
-								),
-								'col_xxl'           => array(
-									'type'    => 'number',
-									'default' => 2,
-								),
-								'display_image'     => array(
-									'type'    => 'boolean',
-									'default' => true,
-								),
-								'display_image_overlay_term' => array(
-									'type'    => 'boolean',
-									'default' => true,
-								),
-								'display_excerpt'   => array(
-									'type'    => 'boolean',
-									'default' => true,
-								),
-								'display_author'   => array(
-									'type'    => 'boolean',
-									'default' => false,
-								),
-								'display_date'      => array(
-									'type'    => 'boolean',
-									'default' => false,
-								),
-								'display_new'       => array(
-									'type'    => 'boolean',
-									'default' => false,
-								),
-								'display_taxonomies' => array(
-									'type'    => 'boolean',
-									'default' => false,
-								),
-								'display_btn'       => array(
-									'type'    => 'boolean',
-									'default' => true,
-								),
-								'new_date'          => array(
-									'type'    => 'number',
-									'default' => 7,
-								),
-								'new_text'          => array(
-									'type'    => 'string',
-									'default' => 'New!!',
-								),
-								'btn_text'          => array(
-									'type'    => 'string',
-									'default' => 'Read more',
-								),
-								'btn_align'         => array(
-									'type'    => 'string',
-									'default' => 'text-right',
-								),
-								'numberPosts'       => array(
-									'type'    => 'number',
-									'default' => 6,
-								),
-								'isCheckedPostType' => array(
-									'type'    => 'string',
-									'default' => '["post"]',
-								),
-								'coreTerms'         => array(
-									'type'    => 'string',
-									'default' => '{}',
-								),
-								'isCheckedTerms'    => array(
-									'type'    => 'string',
-									'default' => '[]',
-								),
-								'className'         => array(
-									'type'    => 'string',
-									'default' => '',
-								),
-								'selfIgnore'        => array(
-									'type'    => 'boolean',
-									'default' => false,
-								),
-							),
-							$vk_blocks_common_attributes
-						),
-						'editor_style'    => 'vk-blocks-build-editor-css',
-						'editor_script'   => 'vk-blocks-build-js',
-						'render_callback' => 'vk_blocks_render_post_list',
-						'supports'        => array(),
-					)
-				); // register_block_type(
 			} else {
 
 				register_block_type(

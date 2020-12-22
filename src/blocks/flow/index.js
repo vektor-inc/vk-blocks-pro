@@ -17,7 +17,7 @@ export { metadata, name };
 
 export const settings = {
 	title: __('Flow', 'vk-blocks'), // Block title.
-	icon: <Icon />, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
+	icon: <Icon />,
 	example: {
 		attributes: {
 			heading: title,

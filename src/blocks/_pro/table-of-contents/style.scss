@@ -5,6 +5,9 @@ $toc-left-margin: 1rem;
 
 .vk_tableOfContents {
 	margin-top: 3.5em;
+	&:first-child {
+		margin-top: 0;
+	}
 	margin-bottom: 3.5em;
 	position: relative;
 	&-style-default {

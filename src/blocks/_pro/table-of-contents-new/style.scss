@@ -49,10 +49,10 @@ $toc-left-margin: 1rem;
 			}
 			&_link {
 				color: #333;
-				border-bottom: 1px solid #ccc;
+				border-bottom: none;
 				&:hover {
 					text-decoration: none;
-					border-bottom: none;
+					border-bottom: 1px solid #ccc;
 				}
 			}
 		}

@@ -2,10 +2,15 @@
  * spacer block type
  */
 
+/**
+ * WordPress dependencies
+ */
 import { __ } from '@wordpress/i18n';
 
+/**
+ * Internal dependencies
+ */
 import { ReactComponent as Icon } from './icon.svg';
-
 import metadata from './block.json';
 import edit from './edit';
 import save from './save';

@@ -1,6 +1,16 @@
+/**
+ * External dependencies
+ */
 import classnames from 'classnames';
+
+/**
+ * WordPress dependencies
+ */
 import { useBlockProps } from '@wordpress/block-editor';
 
+/**
+ * Internal dependencies
+ */
 import Spacers from './spacers';
 
 export default function save({ attributes }) {

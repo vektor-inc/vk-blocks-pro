@@ -1,9 +1,8 @@
 // Spacers
 
-function Spacer({ style, viewPort }) {
+const Spacer = ({ style, viewPort }) => {
 	return <div className={`vk_spacer-display-${viewPort}`} style={style} />;
-}
-
+};
 export default function Spacers({
 	type,
 	pcSize,
@@ -13,7 +12,7 @@ export default function Spacers({
 }) {
 	if (type === 'height') {
 		return (
-			<div>
+			<>
 				<Spacer viewPort={'pc'} style={{ height: pcSize + unit }} />
 				<Spacer
 					viewPort={'tablet'}
@@ -23,11 +22,11 @@ export default function Spacers({
 					viewPort={'mobile'}
 					style={{ height: mobileSize + unit }}
 				/>
-			</div>
+			</>
 		);
 	} else if (type === 'margin-top') {
 		return (
-			<div>
+			<>
 				<Spacer viewPort={'pc'} style={{ marginTop: pcSize + unit }} />
 				<Spacer
 					viewPort={'tablet'}
@@ -37,7 +36,7 @@ export default function Spacers({
 					viewPort={'mobile'}
 					style={{ marginTop: mobileSize + unit }}
 				/>
-			</div>
+			</>
 		);
 	}
 }

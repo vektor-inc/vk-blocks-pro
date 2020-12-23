@@ -24,8 +24,8 @@ if( function_exists('register_block_type_from_metadata')) {
  * @param array $attributes attributes.
  * @param html  $content content.
  */
-function vk_page_content_render_callback( $attributes, $content = '' ) {
-	if ( has_block( 'vk-blocks/faq2', $content ) || has_block( 'vk-blocks/faq', $content ) ) {
+function vk_faq2_render_callback( $attributes, $content = '' ) {
+	if ( has_block( 'vk-blocks/faq2', $content ) ) {
 		if ( 'open' === $vk_blocks_options['new_faq_accordion'] ) {
 			$content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-accordion-open', $content );
 		} elseif ( 'close' === $vk_blocks_options['new_faq_accordion'] ) {

@@ -18,16 +18,16 @@ class PageContentBlockTest extends WP_UnitTestCase {
 		parent::setUp();
 
 		$page = array(
-			'post_title'    => '固定ページ',
-			'post_content'  => '固定ページの本文。',
+			'post_title'    => '固定ページタイトル',
+			'post_content'  => '<!-- wp:paragraph --><p>固定ページ本文</p><!-- /wp:paragraph -->',
 			'post_type'     => 'page',
 			'post_status'   => 'publish',
 		);
 		$this->page_id = wp_insert_post( $page );
 
 		$post = array(
-			'post_title'    => '投稿',
-			'post_content'  => '投稿ページの本文。',
+			'post_title'    => '投稿タイトル',
+			'post_content'  => '<!-- wp:paragraph --><p>投稿本文</p><!-- /wp:paragraph -->',
 			'post_status'   => 'publish',
 		);
 		$this->post_id = wp_insert_post( $post );
@@ -51,11 +51,30 @@ class PageContentBlockTest extends WP_UnitTestCase {
 			'TargetPost' => $this->page_id,
 		);
 
-		$actual = vk_page_content_render_callback( $attributes );
-		$expected = '"<div class="vk_pageContent vk_pageContent-id-' . intval($this->page_id) . ' "><!-- wp:paragraph --><p>固定ページの本文。</p><!-- /wp:paragraph --></div><a href="http://localhost:8888/wp-admin/post.php?post=' . intval($this->page_id) . '&#038;action=edit" class="vk_pageContent_editBtn btn btn-outline-primary btn-sm veu_adminEdit" target="_blank">Edit this area</a>"';
+		$this->set_current_user( 'administrator' );
 
-		$this->assertSame( $expected, $actual);
+		$actual = vk_page_content_render_callback( $attributes );
+		$expected = '<div class="vk_pageContent vk_pageContent-id-' . intval($this->page_id) . ' "><!-- wp:paragraph --><p>固定ページ本文</p><!-- /wp:paragraph --></div><a href="http://localhost:8889/wp-admin/post.php?post=' . intval($this->page_id) . '&#038;action=edit" class="vk_pageContent_editBtn btn btn-outline-primary btn-sm veu_adminEdit" target="_blank">Edit this area</a>';
+
+		$this->assertEquals( $expected, $actual );
 
 	}
-}
-;
+
+	/**
+     * Add user and set the user as current user.
+     *
+     * @param  string $role administrator, editor, author, contributor ...
+     * @return none
+     */
+    public function set_current_user( $role ) {
+		$user = $this->factory()->user->create_and_get( array(
+			'role' => $role,
+		) );
+
+		/*
+			* Set $user as current user
+			*/
+		wp_set_current_user( $user->ID, $user->user_login );
+		}
+
+};

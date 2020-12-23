@@ -1,14 +1,14 @@
 <?php
 /**
- * Class SampleTest
+ * Class PageContentBlockTest
  *
  * @package Vk_Blocks_Pro
  */
 
 /**
- * Sample test case.
+ * page-content block test case.
  */
-class SampleTest extends WP_UnitTestCase {
+class PageContentBlockTest extends WP_UnitTestCase {
 
 	public $post_id; // PageContentブロックを挿入する投稿
 	public $page_id; // PageContentブロックで表示する固定ページ
@@ -56,9 +56,7 @@ class SampleTest extends WP_UnitTestCase {
 		];
 		$response = wp_remote_get( $url, $args );
 
-		echo $response;
-
-		var_dump($response);
+        $this->assertSame('2204', $response);
 
 		// Replace this with some actual testing code.
 		$this->assertTrue( true );

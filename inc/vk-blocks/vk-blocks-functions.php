@@ -137,33 +137,6 @@ function vkblocks_blocks_assets() {
 		wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_check', array( 'is_pro' => false ) );
 	}
 
-	/**
-	 * Page List for Page Content Block
-	 */
-	// 選択可能なフォームを生成.
-	$option_posts = array(
-		array(
-			'label' => __( 'Unspecified', 'vk-all-in-one-expansion-unit' ),
-			'value' => -1,
-		),
-	);
-
-	$the_posts = get_posts(
-		array(
-			'posts_per_page' => -1,
-			'post_type'      => 'page',
-		)
-	);
-
-	foreach ( $the_posts as $the_post ) {
-		$option_posts[] = array(
-			'label' => $the_post->post_title,
-			'value' => $the_post->ID,
-		);
-	}
-	// 投稿リストをブロック側に渡す.
-	wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_page_list', $option_posts );
-
 	if( is_lager_than_wp('5.0') ){
 
 		//register_blockで読み込むブロック

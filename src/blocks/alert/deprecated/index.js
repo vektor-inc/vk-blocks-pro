@@ -1,4 +1,4 @@
-import save000 from './0.0.0';
+import save000 from './0.0.0/save';
 
 const blockAttributes = {
 	style: {

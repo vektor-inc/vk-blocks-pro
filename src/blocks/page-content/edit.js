@@ -2,12 +2,32 @@ import { __ } from '@wordpress/i18n';
 import { Fragment } from '@wordpress/element';
 import { PanelBody, BaseControl, SelectControl } from '@wordpress/components';
 import { InspectorControls } from '@wordpress/block-editor';
-import { ServerSideRender } from '@wordpress/server-side-render';
+import ServerSideRender from '@wordpress/server-side-render';
+import { usePosts } from '@vkblocks/utils/hooks';
 
-export default function edit(props) {
-	const { attributes, setAttributes } = props;
+const getPagesSelect = (pages) => {
+	const defaultSelect = [
+		{
+			label: __('Unspecified', 'vk-blocks'),
+			value: -1,
+		},
+	];
+	const pagesSelect = pages.map((page) => {
+		return {
+			label: page.title.rendered,
+			value: page.id,
+		};
+	});
 
+	return defaultSelect.concat(pagesSelect);
+};
+
+export default function PageContentEdit({ attributes, setAttributes }) {
 	const { TargetPost } = attributes;
+
+	const pages = usePosts({ slug: 'page' }, { per_page: -1 });
+
+	const pagesSelect = getPagesSelect(pages);
 
 	let editContent;
 	if (TargetPost === -1) {
@@ -23,10 +43,11 @@ export default function edit(props) {
 		editContent = (
 			<ServerSideRender
 				block="vk-blocks/page-content"
-				attributes={props.attributes}
+				attributes={attributes}
 			/>
 		);
 	}
+
 	return (
 		<Fragment>
 			<InspectorControls>
@@ -38,8 +59,7 @@ export default function edit(props) {
 						<SelectControl
 							label={__('Select Page', 'vk-blocks')}
 							value={TargetPost}
-							// eslint-disable-next-line no-undef, camelcase
-							options={vk_blocks_page_list}
+							options={pagesSelect}
 							onChange={(value) =>
 								setAttributes({
 									TargetPost: parseInt(value, 10),

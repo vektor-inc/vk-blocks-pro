@@ -1,5 +1,4 @@
 import { ReactComponent as Icon } from './icon.svg';
-import { React } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
 import metadata from './block.json';

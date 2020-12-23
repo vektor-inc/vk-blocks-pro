@@ -19,7 +19,7 @@ class PageContentBlockTest extends WP_UnitTestCase {
 
 		$page = array(
 			'post_title'    => '固定ページ',
-			'post_content'  => 'This is my page.',
+			'post_content'  => '固定ページの本文。',
 			'post_type'     => 'page',
 			'post_status'   => 'publish',
 		);
@@ -27,7 +27,7 @@ class PageContentBlockTest extends WP_UnitTestCase {
 
 		$post = array(
 			'post_title'    => '投稿',
-			'post_content'  => 'This is my post.',
+			'post_content'  => '投稿ページの本文。',
 			'post_status'   => 'publish',
 		);
 		$this->post_id = wp_insert_post( $post );
@@ -54,9 +54,12 @@ class PageContentBlockTest extends WP_UnitTestCase {
 				'content-type' => 'application/json'
 			]
 		];
-		$response = wp_remote_get( $url, $args );
+		$actual = wp_remote_get( $url, $args );
+		$expected = json_encode(array(
+			"rendered" => "<div class=\"vk_pageContent vk_pageContent-id-" . intval($page_id) . "\"><!-- wp:paragraph -->\n<p>\u56fa\u5b9a\u30da\u30fc\u30b8\u306e\u672c\u6587\u3002<\/p>\n<!-- \/wp:paragraph --><\/div><a href=\"http:\/\/localhost:8888\/wp-admin\/post.php?post=" . intval($page_id) . "&#038;action=edit\" class=\"vk_pageContent_editBtn btn btn-outline-primary btn-sm veu_adminEdit\" target=\"_blank\">Edit this area<\/a>"
+		));
 
-        $this->assertSame('2204', $response);
+		$this->assertSame( $expected, $actual);
 
 		// Replace this with some actual testing code.
 		$this->assertTrue( true );

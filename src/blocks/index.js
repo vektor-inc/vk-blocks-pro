@@ -21,6 +21,8 @@ import * as faq2q from './faq2-q';
 import * as balloon from './balloon';
 import * as faq from './faq';
 import * as flow from './flow';
+import * as pageContent from './page-content';
+import * as animation from './_pro/animation';
 
 /**
  * Function to get all the VK Blocks in an array.
@@ -33,7 +35,9 @@ export const __getVKBlocks = () => [
 	faq2q,
 	balloon,
 	faq,
-	flow
+	flow,
+	pageContent,
+	animation
 ];
 
 /**

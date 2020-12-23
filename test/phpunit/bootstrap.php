@@ -1,6 +1,6 @@
 <?php
 // Require composer dependencies.
-require_once dirname( dirname( __FILE__ ) ) . '/vendor/autoload.php';
+require_once dirname( dirname( dirname( __FILE__ ) ) ) . '/vendor/autoload.php';
 
 // If we're running in WP's build directory, ensure that WP knows that, too.
 if ( 'build' === getenv( 'LOCAL_DIR' ) ) {
@@ -18,7 +18,7 @@ if ( ! $_tests_dir ) {
 
 // See if we're installed inside an existing WP dev instance.
 if ( ! $_tests_dir ) {
-	$_try_tests_dir = dirname( __FILE__ ) . '/../../../../../tests/phpunit';
+	$_try_tests_dir = dirname( __FILE__ ) . '/../../../../../test/phpunit';
 	if ( file_exists( $_try_tests_dir . '/includes/functions.php' ) ) {
 		$_tests_dir = $_try_tests_dir;
 	}
@@ -39,7 +39,7 @@ define( 'GUTENBERG_LOAD_VENDOR_SCRIPTS', false );
  * Manually load the plugin being tested.
  */
 function _manually_load_plugin() {
-	register_theme_directory( dirname( __FILE__ ) . '/../../' ); switch_theme('lightning-pro'); search_theme_directories();
+	require_once dirname( dirname( dirname( __FILE__ ) ) ) . '/vk-blocks.php';
 }
 tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );
 

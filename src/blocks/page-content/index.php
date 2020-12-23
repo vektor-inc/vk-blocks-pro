@@ -117,6 +117,7 @@ function vk_page_content_render_callback( $attributes, $content = '' ) {
 	add_filter( 'vk_page_content', 'wp_filter_content_tags' );
 	add_filter( 'vk_page_content', 'do_shortcode', 11 );
 	add_filter( 'vk_page_content', 'capital_P_dangit', 11 );
+
 	return $page_html;
 }
 

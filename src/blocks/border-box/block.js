@@ -3,8 +3,8 @@
  *
  */
 import Body from './Body';
-import { schema, example } from './schema';
-import { FontAwesome } from './font-awesome-new';
+import { title, iconUser, content } from '@vkblocks/utils/example-data';
+import { FontAwesome } from '@vkblocks/utils/font-awesome-new';
 import { deprecated } from './deprecated';
 import { ReactComponent as Icon } from './icon.svg';
 
@@ -18,11 +18,43 @@ registerBlockType('vk-blocks/border-box', {
 	title: __('Border Box', 'vk-blocks'),
 	icon: <Icon />,
 	category: 'vk-blocks-cat',
-	attributes: schema,
+	attributes: {
+		heading: {
+			type: 'string',
+			source: 'html',
+			selector: 'h4',
+		},
+		color: {
+			type: 'string',
+			default: 'red',
+		},
+		bgColor: {
+			type: 'string',
+			default: 'transparent',
+		},
+		faIcon: {
+			type: 'string',
+			default: '',
+		},
+	},
 	supports: {
 		className: true,
 	},
-	example,
+	example: {
+		attributes: {
+			heading: title,
+			color: 'red',
+			faIcon: iconUser,
+		},
+		innerBlocks: [
+			{
+				name: 'core/paragraph',
+				attributes: {
+					content,
+				},
+			},
+		],
+	},
 	styles: [
 		{
 			name: 'vk_borderBox-style-solid-kado-tit-tab',

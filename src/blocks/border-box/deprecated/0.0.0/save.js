@@ -1,12 +1,14 @@
 import classNames from 'classnames';
-import ReactHtmlParser from 'react-html-parser';
-import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
+import { InnerBlocks, RichText } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 
+export default function save( props ) {
+	return <DepBody for_={'save'} {...props} />;
+}
 
-const Body = (props) => {
+export const DepBody = (props) => {
 	const { setAttributes, attributes, for_, className } = props;
-	const { heading, color, faIcon, bgColor } = attributes;
+	const { heading, color, faIcon } = attributes;
 
 	let inner;
 	let title;
@@ -42,24 +44,15 @@ const Body = (props) => {
 		);
 	}
 
-	//iタグでdeprecatedが効かなかったので追加。
-	let icon;
-	if (faIcon.indexOf('<i class="') === -1) {
-		icon = `<i class="${faIcon}"></i>`;
-	} else {
-		icon = faIcon;
-	}
-
 	return (
 		<div
-			className={`vk_borderBox vk_borderBox-color-${color} vk_borderBox-background-${bgColor} ${customClass}`}
+			className={`vk_borderBox vk_borderBox-color-${color} ${customClass}`}
 		>
 			<div className="vk_borderBox_title_container">
-				{ReactHtmlParser(icon)}
+				<i className={`${faIcon}`}></i>
 				{title}
 			</div>
-			<div className={`vk_borderBox_body`}>{inner}</div>
+			<div className="vk_borderBox_body">{inner}</div>
 		</div>
 	);
 };
-export default Body;

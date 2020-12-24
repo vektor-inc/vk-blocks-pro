@@ -1,10 +1,13 @@
 import classNames from 'classnames';
 import ReactHtmlParser from 'react-html-parser';
-import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
+import { InnerBlocks, RichText } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 
+export default function save(props) {
+	return <DepBody for_={'save'} {...props} />;
+}
 
-const Body = (props) => {
+export const DepBody = (props) => {
 	const { setAttributes, attributes, for_, className } = props;
 	const { heading, color, faIcon, bgColor } = attributes;
 
@@ -62,4 +65,3 @@ const Body = (props) => {
 		</div>
 	);
 };
-export default Body;

@@ -16,13 +16,12 @@ import compareVersions from 'compare-versions';
 import * as alert from './alert';
 import * as prContent from './pr-content';
 import * as postList from './_pro/post-list';
+import * as childPage from './_pro/child-page';
 import * as faq2 from './faq2';
 import * as faq2a from './faq2-a';
 import * as faq2q from './faq2-q';
 import * as balloon from './balloon';
 import * as faq from './faq';
-import * as flow from './flow';
-import * as pageContent from './page-content';
 import * as animation from './_pro/animation';
 
 /**
@@ -32,13 +31,12 @@ export const __getVKBlocks = () => [
 	alert,
 	prContent,
 	postList,
+	childPage,
 	faq2,
 	faq2a,
 	faq2q,
 	balloon,
 	faq,
-	flow,
-	pageContent,
 	animation
 ];
 

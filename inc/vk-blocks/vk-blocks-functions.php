@@ -137,10 +137,37 @@ function vkblocks_blocks_assets() {
 		wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_check', array( 'is_pro' => false ) );
 	}
 
+	/**
+	 * Page List for Page Content Block
+	 */
+	// 選択可能なフォームを生成.
+	$option_posts = array(
+		array(
+			'label' => __( 'Unspecified', 'vk-all-in-one-expansion-unit' ),
+			'value' => -1,
+		),
+	);
+
+	$the_posts = get_posts(
+		array(
+			'posts_per_page' => -1,
+			'post_type'      => 'page',
+		)
+	);
+
+	foreach ( $the_posts as $the_post ) {
+		$option_posts[] = array(
+			'label' => $the_post->post_title,
+			'value' => $the_post->ID,
+		);
+	}
+	// 投稿リストをブロック側に渡す.
+	wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_page_list', $option_posts );
+
 	if( is_lager_than_wp('5.0') ){
 
 		//register_blockで読み込むブロック
-		$arr = array( 'child-page', 'button', 'pr-blocks', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents-new', 'highlighter', 'timeline', 'timeline-item', 'step', 'step-item', 'list-style', 'group-style', 'child-page', 'card', 'card-item', 'grid-column', 'grid-column-item', 'border-box', 'icon-card', 'icon-card-item', 'slider', 'slider-item', 'responsive-br', 'nowrap' );
+		$arr = array( 'button', 'flow', 'pr-blocks', 'outer', 'spacer', 'heading', 'staff', 'table-of-contents-new', 'highlighter', 'timeline', 'timeline-item', 'step', 'step-item', 'list-style', 'group-style', 'card', 'card-item', 'grid-column', 'grid-column-item', 'border-box', 'icon-card', 'icon-card-item', 'slider', 'slider-item', 'responsive-br', 'nowrap' );
 		//register_block_type_from_metadataで読み込むブロック
 		$arr_wp56 = array(
 			'alert',
@@ -149,12 +176,11 @@ function vkblocks_blocks_assets() {
 			'faq2-q',
 			'faq2-a',
 			'balloon',
-			'faq',
-			'flow',
-			'page-content'
+			'faq'
 		);
 		$arr_wp56_pro = array(
-			'animation',
+      'animation',
+			'child-page',
 			'post-list',
 		);
 
@@ -264,6 +290,7 @@ function vkblocks_blocks_assets() {
 
 			} // if ( $value === 'table-of-contents' ) {
 		} // foreach ( $arr as $value ) {
+		require_once dirname( __FILE__ ) . '/blocks/page-content/class-vk-page-content-block.php';
 	} // if ( defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, '5.0', '>=' ) ) {
 
 	$dynamic_css = '

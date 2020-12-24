@@ -62,7 +62,8 @@ export const PRcarditem = (props)=>{
 					'core/superscript', // 上付き
 					'core/subscript', // 下付き
 					'vk-blocks/highlighter', // 蛍光マーカー
-					'vk-blocks/responsive-br' // Select a direction (レスポンシブ改行)
+					'vk-blocks/responsive-br', // Select a direction (レスポンシブ改行)
+					'vk-blocks/nowrap' //no-wrap
 				] }
 				placeholder={ __('Input Title', 'vk-blocks') }
 			/>
@@ -83,7 +84,8 @@ export const PRcarditem = (props)=>{
 					'core/superscript', // 上付き
 					'core/subscript', // 下付き
 					'vk-blocks/highlighter', // 蛍光マーカー
-					'vk-blocks/responsive-br' // Select a direction (レスポンシブ改行)
+					'vk-blocks/responsive-br', // Select a direction (レスポンシブ改行)
+					'vk-blocks/nowrap' //no-wrap
 				] }
 				placeholder={ __('Input Content', 'vk-blocks') }
 			/>

@@ -356,7 +356,8 @@ registerBlockType( 'vk-blocks/button', {
 									'core/superscript',
 									'core/subscript',
 									// 'vk-blocks/highlighter',
-									'vk-blocks/responsive-br',
+									'vk-blocks/responsive-br', // Select a direction (レスポンシブ改行)
+									'vk-blocks/nowrap' //no-wrap
 								] }
 								isSelected={ true }
 							/>

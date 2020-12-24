@@ -8,12 +8,11 @@ import { FontAwesome } from "./font-awesome-new";
 import { deprecated }  from "./deprecated"
 import { ReactComponent as Icon } from './icon.svg';
 
-const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
-const { PanelBody, BaseControl,SelectControl } = wp.components;
-const { Fragment } = wp.element;
-import { vkbBlockEditor } from "./../../utils/depModules";
-const { InspectorControls } = vkbBlockEditor;
+import { __ } from '@wordpress/i18n';
+import { registerBlockType } from '@wordpress/blocks';
+import { PanelBody, BaseControl,SelectControl } from '@wordpress/components';
+import { Fragment } from '@wordpress/element';
+import { InspectorControls } from '@wordpress/block-editor';
 
 
 registerBlockType('vk-blocks/border-box', {

@@ -25,6 +25,7 @@
     "lint:animation": "wp-scripts format-js src/blocks/_pro/animation && wp-scripts lint-js src/blocks/_pro/animation --fix",
     "lint:page-content": "wp-scripts format-js src/blocks/page-content && wp-scripts lint-js src/blocks/page-content --fix",
 	"lint:flow": "wp-scripts format-js src/blocks/flow && wp-scripts lint-js src/blocks/flow --fix",
+	"lint:utils": "wp-scripts format-js src/utils && wp-scripts lint-js src/utils --fix",
     "fixtures:clean": "rimraf \"packages/e2e-tests/fixtures/blocks/*.+(json|serialized.html)\"",
     "fixtures:generate": "cross-env GENERATE_MISSING_FIXTURES=y npm run test-unit",
     "fixtures:regenerate": "npm run build && npm run fixtures:clean && npm run fixtures:generate",

@@ -1,9 +1,10 @@
 export default (value, initial) => {
-	if (value || value == 0) {
+	let returnValue = initial;
+	if (value || value === 0 || value === undefined || value === null) {
 		if (value === 5) {
 			value = 4;
 		}
-		return value;
+		returnValue = value;
 	}
-	return initial;
+	return returnValue;
 };

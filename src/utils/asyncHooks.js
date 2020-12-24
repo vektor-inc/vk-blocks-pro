@@ -1,6 +1,6 @@
-const { useSelect } = wp.data;
+import { useSelect } from '@wordpress/data';
 
-export const asyncGetInnerBlocks = (clientId) =>
+export const AsyncGetInnerBlocks = (clientId) =>
 	useSelect((select) => {
 		const { getBlocks } = select('core/block-editor');
 		//getBlocks(clientId)で、innerBlocksを取得

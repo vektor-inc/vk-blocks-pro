@@ -15,7 +15,7 @@ const { Fragment, useEffect } = wp.element;
 import { vkbBlockEditor, dispatchEditor } from "../../../utils/depModules"
 const { InspectorControls } = vkbBlockEditor;
 const { updateBlockAttributes } = dispatchEditor;
-import { asyncGetInnerBlocks } from "../../../utils/asyncHooks";
+import { AsyncGetInnerBlocks } from "../../../utils/asyncHooks";
 import { title, content } from "../../../utils/example-data";
 
 
@@ -63,7 +63,7 @@ registerBlockType("vk-blocks/step", {
 	edit({ attributes, setAttributes, className, clientId }) {
 		const { firstDotNum } = attributes;
 
-		const currentInnerBlocks = asyncGetInnerBlocks( clientId );
+		const currentInnerBlocks = AsyncGetInnerBlocks( clientId );
 
 		const resetDotNum = useEffect( () => {
 			currentInnerBlocks.forEach( function ( block, index ) {

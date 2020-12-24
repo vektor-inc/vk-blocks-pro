@@ -1,6 +1,6 @@
-const { TextControl } = wp.components;
-const { Fragment, Component } = wp.element;
-const { __ } = wp.i18n;
+import { TextControl } from '@wordpress/components';
+import { Fragment, Component } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 export const faSchema = {
 	faIcon: {

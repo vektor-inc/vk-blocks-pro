@@ -1,5 +1,5 @@
-const { RadioControl } = wp.components;
-const { __ } = wp.i18n;
+import { RadioControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export const dcpSchema = {
 	dcpColor: {
@@ -7,7 +7,7 @@ export const dcpSchema = {
 		default: 'primary',
 	},
 };
-
+// eslint-disable-next-line no-undef
 export class DefaultColorPalette extends React.Component {
 	render() {
 		const { dcpColor } = this.props.attributes;

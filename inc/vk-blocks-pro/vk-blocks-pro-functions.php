@@ -62,6 +62,8 @@ function vk_blocks_pro_new_faq_accordion_control( $block_content, $block ) {
 	2. その固定ページを VK 固定ページ本文ウィジェットで呼び出す
 	上記をすると正常動作する
 	*/
+	// var_dump( $block_content );
+	// var_dump( $block );
 	$vk_blocks_options  = vkblocks_get_options();
 	if ( has_block( 'vk-blocks/faq2' ) && 'vk-blocks/faq2' === $block['blockName'] || has_block( 'vk-blocks/faq' ) && 'vk-blocks/faq' === $block['blockName'] ) {
 		if ( 'open' === $vk_blocks_options['new_faq_accordion'] ) {

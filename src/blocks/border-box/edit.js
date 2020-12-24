@@ -25,15 +25,18 @@ export default function BorderBoxEdit(props) {
 		/>
 	);
 
+	const blockProps = useBlockProps({
+		className: `vk_borderBox vk_borderBox-color-${color} vk_borderBox-background-${bgColor}`,
+	});
+
+	console.log('blockProps = ' + blockProps );
+/*
 	let customClass = className;
 	//Defaultクラスを設定
 	if (-1 === className.indexOf('is-style-')) {
-		customClass = 'is-style-vk_borderBox-style-solid-kado-tit-tab';
+		customClass += 'is-style-vk_borderBox-style-solid-kado-tit-tab';
 	}
-
-	const blockProps = useBlockProps({
-		className: `vk_borderBox vk_borderBox-color-${color} vk_borderBox-background-${bgColor} ${customClass}`,
-	});
+	*/
 
 	//iタグでdeprecatedが効かなかったので追加。
 	let icon;

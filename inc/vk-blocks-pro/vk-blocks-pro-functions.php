@@ -51,17 +51,15 @@ add_action( 'wp_enqueue_scripts', 'vk_blocks_pro_load_scripts' );
  */
 function vk_blocks_pro_new_faq_accordion_control( $block_content, $block ) {
 	/*
-	echo '
 	これが読まれているのかの検証方法
 	1. 設定 > VK Blocks から FAQ のアコーディオンを有効化しておく
 	2. 固定ページに FAQ2 ブロックを設置して保存
 	3. VK 固定ページウィジェットで作った固定ページを読み込み
 	4. ブラウザの開発者ツールで[accordion_trigger_switch]が残っていないか確認
 
-	or
-
-	そもそも echo ごとコメントアウトしてるのでこのコメントアウトを解除するのも可
-	';
+	P.S.
+	1. 固定ページで VK 固定ページ本文ブロックで呼び出し保存
+	2. そのページを VK 固定ページ本文ウィジェットで呼び出すと正常動作する
 	*/
 	$vk_blocks_options  = vkblocks_get_options();
 	if ( has_block( 'vk-blocks/faq2' ) && 'vk-blocks/faq2' === $block['blockName'] || has_block( 'vk-blocks/faq' ) && 'vk-blocks/faq' === $block['blockName'] ) {

@@ -11,7 +11,7 @@ import {
 import ReactHtmlParser from 'react-html-parser';
 
 export default function BorderBoxEdit(props) {
-	const { attributes, setAttributes, className } = props;
+	const { attributes, setAttributes } = props;
 	const { heading, color, faIcon, bgColor } = attributes;
 
 	const inner = <InnerBlocks />;
@@ -29,14 +29,11 @@ export default function BorderBoxEdit(props) {
 		className: `vk_borderBox vk_borderBox-color-${color} vk_borderBox-background-${bgColor}`,
 	});
 
-	console.log('blockProps = ' + blockProps );
-/*
-	let customClass = className;
 	//Defaultクラスを設定
-	if (-1 === className.indexOf('is-style-')) {
-		customClass += 'is-style-vk_borderBox-style-solid-kado-tit-tab';
+	if (-1 === blockProps.className.indexOf('is-style-')) {
+		blockProps.className +=
+			' is-style-vk_borderBox-style-solid-kado-tit-tab';
 	}
-	*/
 
 	//iタグでdeprecatedが効かなかったので追加。
 	let icon;

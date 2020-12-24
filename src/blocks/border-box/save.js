@@ -2,7 +2,7 @@ import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
 import ReactHtmlParser from 'react-html-parser';
 
 export default function save(props) {
-	const { attributes, className } = props;
+	const { attributes } = props;
 	const { heading, color, faIcon, bgColor } = attributes;
 
 	const inner = <InnerBlocks.Content />;
@@ -14,10 +14,14 @@ export default function save(props) {
 		/>
 	);
 
-	let customClass = className;
+	const blockProps = useBlockProps.save({
+		className: `vk_borderBox vk_borderBox-color-${color} vk_borderBox-background-${bgColor}`,
+	});
+
 	//Defaultクラスを設定
-	if (-1 === className.indexOf('is-style-')) {
-		customClass = 'is-style-vk_borderBox-style-solid-kado-tit-tab';
+	if (-1 === blockProps.className.indexOf('is-style-')) {
+		blockProps.className +=
+			' is-style-vk_borderBox-style-solid-kado-tit-tab';
 	}
 
 	//iタグでdeprecatedが効かなかったので追加。
@@ -29,11 +33,7 @@ export default function save(props) {
 	}
 
 	return (
-		<div
-			{...useBlockProps.save({
-				className: `vk_borderBox vk_borderBox-color-${color} vk_borderBox-background-${bgColor} ${customClass}`,
-			})}
-		>
+		<div {...blockProps}>
 			<div className="vk_borderBox_title_container">
 				{ReactHtmlParser(icon)}
 				{title}

@@ -2,54 +2,52 @@
  * Title group block type
  *
  */
-import Body from "./Body";
+import Body from './Body';
 import { schema, example } from './schema';
-import { FontAwesome } from "./font-awesome-new";
-import { deprecated }  from "./deprecated"
+import { FontAwesome } from './font-awesome-new';
+import { deprecated } from './deprecated';
 import { ReactComponent as Icon } from './icon.svg';
 
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
-import { PanelBody, BaseControl,SelectControl } from '@wordpress/components';
+import { PanelBody, BaseControl, SelectControl } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 import { InspectorControls } from '@wordpress/block-editor';
 
-
 registerBlockType('vk-blocks/border-box', {
 	title: __('Border Box', 'vk-blocks'),
-    icon: <Icon />,
+	icon: <Icon />,
 	category: 'vk-blocks-cat',
 	attributes: schema,
-	supports:{
-		className:true
+	supports: {
+		className: true,
 	},
 	example,
-
 	styles: [
 		{
 			name: 'vk_borderBox-style-solid-kado-tit-tab',
-			label: __( 'Solid Angle Tab', 'vk-blocks' ),
-			isDefault:true
+			label: __('Solid Angle Tab', 'vk-blocks'),
+			isDefault: true,
 		},
 		{
 			name: 'vk_borderBox-style-solid-round-tit-tab',
-			label: __( 'Solid Round Tab', 'vk-blocks' )
+			label: __('Solid Round Tab', 'vk-blocks'),
 		},
 		{
 			name: 'vk_borderBox-style-solid-kado-tit-banner',
-			label: __( 'Solid Angle Banner', 'vk-blocks' ),
+			label: __('Solid Angle Banner', 'vk-blocks'),
 		},
 		{
 			name: 'vk_borderBox-style-solid-kado-tit-onborder',
-			label: __( 'Solid Angle Onborder', 'vk-blocks' ),
+			label: __('Solid Angle Onborder', 'vk-blocks'),
 		},
 		{
 			name: 'vk_borderBox-style-solid-kado-tit-inner',
-			label: __( 'Solid Angle Inner', 'vk-blocks' ),
+			label: __('Solid Angle Inner', 'vk-blocks'),
 		},
 		{
 			name: 'vk_borderBox-style-solid-kado-iconFeature',
-			label: __( 'Solid Angle iconFeature', 'vk-blocks' ),
+			label: __('Solid Angle iconFeature', 'vk-blocks'),
 		},
 	],
 
@@ -59,77 +57,81 @@ registerBlockType('vk-blocks/border-box', {
 		return (
 			<Fragment>
 				<InspectorControls>
-					<PanelBody title={ __('Color', 'vk-blocks') }>
+					<PanelBody title={__('Color', 'vk-blocks')}>
 						<BaseControl
 							id="border-color"
-							label={ __('Border Color', 'vk-blocks') }
+							label={__('Border Color', 'vk-blocks')}
 						>
 							<SelectControl
-								value={ color }
-								onChange={ value => setAttributes({ color: value }) }
-								options={ [
+								value={color}
+								onChange={(value) =>
+									setAttributes({ color: value })
+								}
+								options={[
 									{
-										value: "red",
-										label: __("Red", "vk-blocks")
+										value: 'red',
+										label: __('Red', 'vk-blocks'),
 									},
 									{
-										value: "orange",
-										label: __("Orange", "vk-blocks")
+										value: 'orange',
+										label: __('Orange', 'vk-blocks'),
 									},
 									{
-										value: "blue",
-										label: __("Blue", "vk-blocks")
+										value: 'blue',
+										label: __('Blue', 'vk-blocks'),
 									},
 									{
-										value: "green",
-										label: __("Green", "vk-blocks")
+										value: 'green',
+										label: __('Green', 'vk-blocks'),
 									},
 									{
-										value: "black",
-										label: __("Black", "vk-blocks")
-									}
-								] }
+										value: 'black',
+										label: __('Black', 'vk-blocks'),
+									},
+								]}
 							/>
 						</BaseControl>
 						<BaseControl
 							id="background-color"
-							label={ __('Background Color', 'vk-blocks') }
+							label={__('Background Color', 'vk-blocks')}
 						>
 							<SelectControl
-								value={ bgColor }
-								onChange={ value => setAttributes({ bgColor: value }) }
-								options={ [
+								value={bgColor}
+								onChange={(value) =>
+									setAttributes({ bgColor: value })
+								}
+								options={[
 									{
-										value: "transparent",
-										label: __("Transparent", "vk-blocks")
+										value: 'transparent',
+										label: __('Transparent', 'vk-blocks'),
 									},
 									{
-										value: "white",
-										label: __("White", "vk-blocks")
+										value: 'white',
+										label: __('White', 'vk-blocks'),
 									},
-								] }
+								]}
 							/>
 						</BaseControl>
 					</PanelBody>
-					<PanelBody title={ __('Icon', 'vk-blocks') }>
+					<PanelBody title={__('Icon', 'vk-blocks')}>
 						<BaseControl
 							id="dot-fa"
-							label={ __('Icon ( Font Awesome )', 'vk-blocks') }
+							label={__('Icon ( Font Awesome )', 'vk-blocks')}
 						>
 							<FontAwesome
-								attributes={ attributes }
-								setAttributes={ setAttributes }
+								attributes={attributes}
+								setAttributes={setAttributes}
 							/>
 						</BaseControl>
 					</PanelBody>
 				</InspectorControls>
-				<Body for_={ 'edit' } { ...props } />
+				<Body for_={'edit'} {...props} />
 			</Fragment>
 		);
 	},
 
 	save(props) {
-		return <Body for_={ 'save' }{ ...props } />;
+		return <Body for_={'save'} {...props} />;
 	},
-	deprecated
+	deprecated,
 });

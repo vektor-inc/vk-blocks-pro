@@ -1,12 +1,12 @@
 const { __ } = wp.i18n;
-import { faSchema } from "./font-awesome-new";
-import { title, iconUser, content } from "../../utils/example-data"
+import { faSchema } from './font-awesome-new';
+import { title, iconUser, content } from '../../utils/example-data';
 
 export const originalSchema = {
 	heading: {
-		type: "string",
-		source: "html",
-		selector: "h4"
+		type: 'string',
+		source: 'html',
+		selector: 'h4',
 	},
 	color: {
 		type: 'string',
@@ -14,9 +14,8 @@ export const originalSchema = {
 	},
 	bgColor: {
 		type: 'string',
-		default: 'transparent'
-	}
-
+		default: 'transparent',
+	},
 };
 
 const mergeSchema = () => {
@@ -25,10 +24,10 @@ const mergeSchema = () => {
 
 export const schema = mergeSchema();
 
-export const example  = {
-    attributes: {
-        heading: title,
-		color: "red",
+export const example = {
+	attributes: {
+		heading: title,
+		color: 'red',
 		faIcon: iconUser,
 	},
 	innerBlocks: [
@@ -39,4 +38,4 @@ export const example  = {
 			},
 		},
 	],
-}
+};

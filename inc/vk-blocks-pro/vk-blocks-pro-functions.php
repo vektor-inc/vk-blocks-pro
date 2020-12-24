@@ -59,7 +59,7 @@ function vk_blocks_pro_new_faq_accordion_control( $block_content, $block ) {
 
 	P.S.
 	1. 固定ページで VK 固定ページ本文ブロックで呼び出し保存
-	2. そのページを VK 固定ページ本文ウィジェットで呼び出す
+	2. その固定ページを VK 固定ページ本文ウィジェットで呼び出す
 	上記をすると正常動作する
 	*/
 	$vk_blocks_options  = vkblocks_get_options();

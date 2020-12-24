@@ -40,7 +40,7 @@
     "> 5%"
   ],
   "devDependencies": {
-    "@babel/plugin-transform-react-jsx": "^7.12.11",
+    "@babel/plugin-transform-react-jsx": "^7.12.12",
     "@babel/preset-env": "^7.12.11",
     "@emotion/babel-plugin": "^11.1.2",
     "@wordpress/babel-plugin-makepot": "^3.10.0",

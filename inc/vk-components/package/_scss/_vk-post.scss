@@ -5,7 +5,7 @@ https://github.com/vektor-inc/vektor-wp-libraries
 */
 
 /* Bootstrap Adjuster */
-$border_primary: 1px solid #e5e5e5;
+$border_primary: 1px solid var(--vk-color-border-hr,#e5e5e5 );
 $color_font_default: #464646;
 $margin_post_item_element: 0.8rem;
 $margin_post_item_element_narrow: 0.4rem;
@@ -14,6 +14,7 @@ $margin_post_item_element_narrow: 0.4rem;
 	--vk-font-size-xs:11px;
 	--vk-color-link-text: #c00;
 	--vk-color-link-text-hover: #c00;
+	--vk-color-border-hr: #e5e5e5;
 }
 
 $xs-max: 575.98px;
@@ -197,6 +198,22 @@ $xxl-min: 1400px;
 		font-size: var(--vk-font-size-xs);
 		margin-top: $margin_post_item_element_narrow;
 		color: #666;
+	}
+	&_author {
+		margin: $margin_post_item_element 0;
+		&_image {
+			margin-right:10px;
+			img{
+				width:24px;
+				height:24px;
+				object-fit:cover;
+				border-radius:50%;
+				object-position:0px 0px;
+			}
+		}
+		&_name{
+			font-size:var(--vk-font-size-xs);
+		}
 	}
 	&_taxonomies {
 		margin-top:$margin_post_item_element;

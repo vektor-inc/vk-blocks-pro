@@ -15,6 +15,7 @@ import {
 	RichText,
 	InspectorControls,
 	ColorPalette,
+	useBlockProps,
 } from '@wordpress/block-editor';
 
 export default function ButtonEdit(props) {

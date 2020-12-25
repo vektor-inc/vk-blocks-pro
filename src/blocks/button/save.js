@@ -1,6 +1,5 @@
-import { __ } from '@wordpress/i18n';
 import { VKBButton } from './component';
-import { RichText } from '@wordpress/block-editor';
+import { RichText, useBlockProps } from '@wordpress/block-editor';
 
 export default function save({ attributes }) {
 	const {
@@ -29,7 +28,7 @@ export default function save({ attributes }) {
 	});
 
 	return (
-		<div  {...blockProps}>
+		<div {...blockProps}>
 			<VKBButton
 				lbColorCustom={buttonColorCustom}
 				lbColor={buttonColor}

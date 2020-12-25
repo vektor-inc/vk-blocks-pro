@@ -1,9 +1,10 @@
 import { VKBButton } from './component';
 import { RichText } from '@wordpress/block-editor';
 
-export default function save({ attributes }) {
+export default function save({ attributes, className }) {
 	const {
 		content,
+		subCaption,
 		buttonUrl,
 		buttonTarget,
 		buttonSize,
@@ -16,11 +17,14 @@ export default function save({ attributes }) {
 	} = attributes;
 
 	let containerClass = '';
-
-	if (buttonColorCustom) {
+	if (buttonColorCustom && 'undefined' !== buttonColorCustom) {
 		containerClass = `vk_button vk_button-color-custom vk_button-align-${buttonAlign}`;
-	} else if (!buttonColorCustom) {
+	} else {
 		containerClass = `vk_button vk_button-align-${buttonAlign}`;
+	}
+
+	if (className) {
+		containerClass = className + ' ' + containerClass;
 	}
 
 	return (
@@ -35,9 +39,10 @@ export default function save({ attributes }) {
 				lbTarget={buttonTarget}
 				lbFontAwesomeIconBefore={fontAwesomeIconBefore}
 				lbFontAwesomeIconAfter={fontAwesomeIconAfter}
+				lbsubCaption={subCaption}
 				lbRichtext={
 					<RichText.Content
-						tagName="span"
+						tagName={'span'}
 						className={'vk_button_link_txt'}
 						value={content}
 					/>

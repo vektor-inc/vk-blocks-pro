@@ -1,10 +1,10 @@
-import save0_0_0 from "./0.0.0/save";
-import save0_0_1 from "./0.0.1/save";
-import save0_0_2 from "./0.0.2/save";
-import save0_0_3 from "./0.0.3/save";
-import save0_0_4 from "./0.0.4/save";
-import save0_0_5 from "./0.0.5/save";
-import save0_41_0 from "./0.41.0/save"
+import save0_0_0 from './0.0.0/save';
+import save0_0_1 from './0.0.1/save';
+import save0_0_2 from './0.0.2/save';
+import save0_0_3 from './0.0.3/save';
+import save0_0_4 from './0.0.4/save';
+import save0_0_5 from './0.0.5/save';
+import save0_41_0 from './0.41.0/save';
 
 const blockAttributes = {
 	content: {
@@ -68,7 +68,7 @@ export const deprecated = [
 			...blockAttributes,
 			subCaption: {
 				type: 'string',
-				default: "",
+				default: '',
 			},
 		},
 		save0_0_2,
@@ -78,7 +78,7 @@ export const deprecated = [
 			...blockAttributes,
 			subCaption: {
 				type: 'string',
-				default: "",
+				default: '',
 			},
 		},
 		save0_0_3,
@@ -88,7 +88,7 @@ export const deprecated = [
 			...blockAttributes,
 			subCaption: {
 				type: 'string',
-				default: "",
+				default: '',
 			},
 		},
 		save0_0_4,
@@ -98,7 +98,7 @@ export const deprecated = [
 			...blockAttributes,
 			subCaption: {
 				type: 'string',
-				default: "",
+				default: '',
 			},
 		},
 		save0_0_5,
@@ -108,9 +108,9 @@ export const deprecated = [
 			...blockAttributes,
 			subCaption: {
 				type: 'string',
-				default: "",
+				default: '',
 			},
 		},
 		save0_41_0,
-	}
+	},
 ];

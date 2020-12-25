@@ -2,86 +2,21 @@
  * Button block type
  *
  */
-import { registerBlockType } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
 import { ReactComponent as Icon } from './icon.svg';
-import { title, iconName, url, iconUser } from '../../utils/example-data';
-import { deprecated } from './deprecated';
+import { title, iconName, url, iconUser } from '@vkblocks/utils/example-data';
+import edit from './edit';
+import metadata from './block.json';
+import save from './save';
+import { deprecated } from './deprecated/';
 
-import { VKBButton } from './component';
+const { name } = metadata;
 
-import { FontAwesome } from '../../utils/font-awesome-new';
+export { metadata, name };
 
-import {
-	RadioControl,
-	PanelBody,
-	BaseControl,
-	CheckboxControl,
-	TextControl,
-	ButtonGroup,
-	Button,
-} from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
-import {
-	RichText,
-	InspectorControls,
-	ColorPalette,
-} from '@wordpress/block-editor';
-
-registerBlockType('vk-blocks/button', {
+export const settings = {
 	title: __('Button', 'vk-blocks'),
 	icon: <Icon />,
-	category: 'vk-blocks-cat',
-	attributes: {
-		content: {
-			type: 'string',
-			source: 'html',
-			selector: 'span',
-		},
-		subCaption: {
-			type: 'string',
-			default: '',
-		},
-		buttonUrl: {
-			type: 'string',
-			default: '',
-		},
-		buttonTarget: {
-			type: 'Boolean',
-			default: false,
-		},
-		buttonSize: {
-			type: 'string',
-			default: 'md',
-		},
-		buttonType: {
-			type: 'string',
-			default: '0',
-		},
-		buttonColor: {
-			type: 'string',
-			default: 'primary',
-		},
-		buttonColorCustom: {
-			type: 'string',
-			default: 'undefined',
-		},
-		buttonAlign: {
-			type: 'string',
-			default: 'left',
-		},
-		fontAwesomeIconBefore: {
-			type: 'string',
-			default: '',
-		},
-		fontAwesomeIconAfter: {
-			type: 'string',
-			default: '',
-		},
-	},
-	supports: {
-		anchor: true,
-	},
 	example: {
 		attributes: {
 			content: iconName,
@@ -100,4 +35,4 @@ registerBlockType('vk-blocks/button', {
 	edit,
 	save,
 	deprecated,
-});
+};

@@ -14,6 +14,7 @@ import compareVersions from 'compare-versions';
  * Internal dependencies
  */
 import * as alert from './alert';
+import * as button from './button';
 import * as borderBox from './border-box';
 import * as prContent from './pr-content';
 import * as faq2 from './faq2';
@@ -30,6 +31,7 @@ import * as animation from './_pro/animation';
  */
 export const __getVKBlocks = () => [
 	alert,
+	button,
 	borderBox,
 	prContent,
 	faq2,

@@ -46,7 +46,6 @@ export const __getVKBlocks = () => [
 	animation,
 	postList,
 	childPage,
-	borderBox,
 ];
 
 /**

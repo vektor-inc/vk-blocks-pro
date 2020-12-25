@@ -1,4 +1,4 @@
-import { ComponentBlock } from './component';
+import { ComponentBlockEdit } from './component';
 import { isNotJSON } from '@vkblocks/utils/is-not-json';
 import { FontAwesome } from '@vkblocks/utils/font-awesome-new';
 
@@ -341,23 +341,20 @@ export default function PrBlocksEdit(props) {
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
-				<ComponentBlock
+				<ComponentBlockEdit
 					attributes={attributes}
 					setAttributes={setAttributes}
 					blockNum={1}
-					for_={'edit'}
 				/>
-				<ComponentBlock
+				<ComponentBlockEdit
 					attributes={attributes}
 					setAttributes={setAttributes}
 					blockNum={2}
-					for_={'edit'}
 				/>
-				<ComponentBlock
+				<ComponentBlockEdit
 					attributes={attributes}
 					setAttributes={setAttributes}
 					blockNum={3}
-					for_={'edit'}
 				/>
 			</div>
 		</Fragment>

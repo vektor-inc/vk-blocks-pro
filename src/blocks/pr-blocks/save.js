@@ -1,4 +1,4 @@
-import { ComponentBlock } from './component';
+import { ComponentBlockSave } from './component';
 import { useBlockProps } from '@wordpress/block-editor';
 
 export default function save(props) {
@@ -11,21 +11,9 @@ export default function save(props) {
 
 	return (
 		<div {...blockProps}>
-			<ComponentBlock
-				attributes={attributes}
-				blockNum={1}
-				for_={'save'}
-			/>
-			<ComponentBlock
-				attributes={attributes}
-				blockNum={2}
-				for_={'save'}
-			/>
-			<ComponentBlock
-				attributes={attributes}
-				blockNum={3}
-				for_={'save'}
-			/>
+			<ComponentBlockSave attributes={attributes} blockNum={1} />
+			<ComponentBlockSave attributes={attributes} blockNum={2} />
+			<ComponentBlockSave attributes={attributes} blockNum={3} />
 		</div>
 	);
 }

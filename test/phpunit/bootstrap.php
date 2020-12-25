@@ -36,12 +36,17 @@ require_once $_tests_dir . '/includes/functions.php';
 define( 'GUTENBERG_LOAD_VENDOR_SCRIPTS', false );
 
 /**
- * Manually load the plugin being tested.
+ * テストするプラグインを読み込み
  */
 function _manually_load_plugin() {
 	require_once dirname( dirname( dirname( __FILE__ ) ) ) . '/vk-blocks.php';
 }
 tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );
+
+/**
+ *  utilsを読み込み
+ */
+require_once dirname(__FILE__) . '/utils.php';
 
 /**
  * Adds a wp_die handler for use during tests.

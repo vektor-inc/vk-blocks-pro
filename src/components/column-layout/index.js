@@ -1,7 +1,7 @@
-const { __ } = wp.i18n;
-const { RangeControl, BaseControl } = wp.components;
-const { Fragment } = wp.element;
-import formatNumCol from "../../utils/formatNumCol";
+import { __ } from '@wordpress/i18n';
+import { RangeControl, BaseControl } from '@wordpress/components';
+import { Fragment } from '@wordpress/element';
+import formatNumCol from '@vkblocks/utils/formatNumCol';
 
 export const ColumnLayout = (props) => {
 

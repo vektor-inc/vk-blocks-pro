@@ -20,10 +20,6 @@ const blockAttributes = {
 
 const deprecated = [
 	{
-		attributes: blockAttributes,
-		save: save000,
-	},
-	{
 		attributes: {
 			...blockAttributes,
 			bgColor: {
@@ -33,5 +29,9 @@ const deprecated = [
 		},
 		save: save001,
 	},
+	{
+		attributes: blockAttributes,
+		save: save000,
+	}
 ];
 export default deprecated;

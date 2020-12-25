@@ -9,7 +9,7 @@ import { title, iconUser, content } from '@vkblocks/utils/example-data';
 import metadata from './block.json';
 import edit from './edit';
 import save from './save';
-import { deprecated } from './deprecated';
+import deprecated from './deprecated';
 
 const { name } = metadata;
 

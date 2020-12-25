@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Registers the `vk-blocks/child-page` block.
  */
@@ -125,7 +124,14 @@ if( function_exists('register_block_type_from_metadata')) {
 					),
 					$vk_blocks_common_attributes
 				),
-				'render_callback' => 'vk_blocks_render_post_list',
+				'render_callback' => function( $attributes ){
+
+					$wp_query     = VkBlocksPostList::get_loop_query_child( $attributes );
+					$options_loop = array( 'class_loop_outer' => 'vk_childPage' );
+
+					return VkBlocksPostList::render_post_list( $attributes, $wp_query, $options_loop );
+
+				},
 			)
 		);
 	}

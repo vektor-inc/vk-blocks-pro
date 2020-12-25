@@ -16,6 +16,7 @@
     "lint": "run-s lint:*",
 	"lint:alert": "wp-scripts format-js src/blocks/alert && wp-scripts lint-js src/blocks/alert --fix",
 	"lint:border-box": "wp-scripts format-js src/blocks/border-box && wp-scripts lint-js src/blocks/border-box --fix",
+	"lint:button": "wp-scripts format-js src/blocks/button && wp-scripts lint-js src/blocks/button --fix",
     "lint:pr-content": "wp-scripts format-js src/blocks/pr-content/ && wp-scripts lint-js src/blocks/pr-content/ --fix",
     "lint:faq2": "wp-scripts format-js src/blocks/faq2 && wp-scripts lint-js src/blocks/faq2 --fix",
     "lint:faq2-q": "wp-scripts format-js src/blocks/faq2-q && wp-scripts lint-js src/blocks/faq2-q --fix",

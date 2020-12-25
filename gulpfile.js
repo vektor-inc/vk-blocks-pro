@@ -103,6 +103,30 @@ gulp.task("dist_swiper_css", function() {
     .pipe(gulp.dest("./inc/vk-blocks/build/"));
 });
 
+// replace_text_domain
+gulp.task("text-domain", function(done) {
+	// font-awesome.
+	gulp.src(["./inc/font-awesome/package/*.php"])
+		.pipe(replace("'vk_font_awesome_version_textdomain'", "'vk-blocks'"))
+		.pipe(gulp.dest("./inc/font-awesome/package/"));
+	// term-color.
+	gulp.src(["./inc/term-color/package/*.php"])
+		.pipe(replace("'vk_term_color_textdomain'","'vk-blocks'"))
+		.pipe(gulp.dest("./inc/term-color/package/"));
+	// template-tag.
+	gulp.src(["./inc/template-tags/package/*.php"])
+		.pipe(replace("'vk-all-in-one-expansion-unit'","'vk-blocks'"))
+		.pipe(gulp.dest("./inc/template-tags/package/"));
+	// vk-components.
+	gulp.src(["./inc/vk-components/package/*.php"])
+		.pipe(replace("'vk_components_textdomain'","'vk-blocks'"))
+    .pipe(gulp.dest("./inc/vk-components/package/"));
+  gulp.src(["./inc/vk-css-optimize/package/*.php"])
+		.pipe(replace("'css_optimize_textdomain'","'vk-blocks'"))
+		.pipe(gulp.dest("./inc/vk-css-optimize/package/"));
+	done();
+});
+
 // VK Block で使用しているBootstrapのみコンパイル
 // ※ Lightning 以外のテーマで利用の際に読込
 gulp.task("sass_bootstrap", function() {
@@ -150,30 +174,6 @@ gulp.task("build:pro", gulp.series( "text-domain", "sass", "helper-js", "helper-
 
 // Default Tasks
 gulp.task("default", gulp.series("watch"));
-
-// replace_text_domain
-gulp.task("text-domain", function(done) {
-	// font-awesome.
-	gulp.src(["./inc/font-awesome/package/*.php"])
-		.pipe(replace("'vk_font_awesome_version_textdomain'", "'vk-blocks'"))
-		.pipe(gulp.dest("./inc/font-awesome/package/"));
-	// term-color.
-	gulp.src(["./inc/term-color/package/*.php"])
-		.pipe(replace("'vk_term_color_textdomain'","'vk-blocks'"))
-		.pipe(gulp.dest("./inc/term-color/package/"));
-	// template-tag.
-	gulp.src(["./inc/template-tags/package/*.php"])
-		.pipe(replace("'vk-all-in-one-expansion-unit'","'vk-blocks'"))
-		.pipe(gulp.dest("./inc/template-tags/package/"));
-	// vk-components.
-	gulp.src(["./inc/vk-components/package/*.php"])
-		.pipe(replace("'vk_components_textdomain'","'vk-blocks'"))
-    .pipe(gulp.dest("./inc/vk-components/package/"));
-  gulp.src(["./inc/vk-css-optimize/package/*.php"])
-		.pipe(replace("'css_optimize_textdomain'","'vk-blocks'"))
-		.pipe(gulp.dest("./inc/vk-css-optimize/package/"));
-	done();
-});
 
 // copy dist ////////////////////////////////////////////////
 

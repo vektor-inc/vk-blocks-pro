@@ -1,4 +1,4 @@
-const { Component } = wp.element;
+import { Component } from '@wordpress/element';
 
 export class VKBButton extends Component {
 
@@ -15,7 +15,6 @@ export class VKBButton extends Component {
         const fontAwesomeIconAfter = this.props.lbFontAwesomeIconAfter;
         const richText = this.props.lbRichtext;
         const subCaption = this.props.lbsubCaption;
-        const containerClass = '';
         let aClass = '';
         let aStyle = {};
         let iconBefore = '';
@@ -41,8 +40,10 @@ export class VKBButton extends Component {
                     color: buttonColorCustom
                 };
             }
+
             // カスタムカラーじゃない場合
         } else if (!buttonColorCustom) {
+
             // 塗り
             if (buttonType === '0') {
                 aClass = `${aClass} btn-${buttonSize} btn-${buttonColor}`;
@@ -59,6 +60,8 @@ export class VKBButton extends Component {
             aClass = `${aClass} btn-block`;
         }
 
+
+
         if (fontAwesomeIconBefore) {
             iconBefore = <i className={ `${fontAwesomeIconBefore} vk_button_link_before` }></i>;
         }
@@ -70,12 +73,11 @@ export class VKBButton extends Component {
 	<a
 		href={ buttonUrl }
 		id={ 'vk_button_link' }
-		style={ aStyle }
 		className={ aClass }
 		role={ 'button' }
 		aria-pressed={ true }
+		style={ aStyle }
 		target={ buttonTarget ? '_blank' : null }
-		rel={ 'noopener noreferrer' }
             >
 		{ iconBefore }
 		{ richText }

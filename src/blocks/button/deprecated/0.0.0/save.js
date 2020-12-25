@@ -1,11 +1,9 @@
 import { VKBButton } from "./component";
-import { vkbBlockEditor } from "./../../../../utils/depModules";
-const { RichText } = vkbBlockEditor;
+import { RichText } from '@wordpress/block-editor';
 
-export default ({ attributes, className }) => {
+export default function save({ attributes }) {
 	const {
 		content,
-		subCaption,
 		buttonUrl,
 		buttonTarget,
 		buttonSize,
@@ -18,18 +16,15 @@ export default ({ attributes, className }) => {
 	} = attributes;
 
 	let containerClass = '';
-	if (buttonColorCustom && "undefined" !== buttonColorCustom) {
+
+	if (buttonColorCustom) {
 
 		containerClass = `vk_button vk_button-color-custom vk_button-align-${buttonAlign}`;
 
-	} else {
+	} else if (!buttonColorCustom) {
 
 		containerClass = `vk_button vk_button-align-${buttonAlign}`;
 
-	}
-
-	if (className) {
-		containerClass = className + ' ' + containerClass;
 	}
 
 	return (
@@ -42,7 +37,6 @@ export default ({ attributes, className }) => {
 				lbTarget={ buttonTarget }
 				lbFontAwesomeIconBefore={ fontAwesomeIconBefore }
 				lbFontAwesomeIconAfter={ fontAwesomeIconAfter }
-				lbsubCaption={ subCaption }
 				lbRichtext={
 					<RichText.Content
 						tagName="span"

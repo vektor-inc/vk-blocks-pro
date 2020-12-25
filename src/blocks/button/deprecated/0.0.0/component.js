@@ -1,6 +1,6 @@
-const { Component } = wp.element;
+import { Component } from '@wordpress/element';
 
-export class VKBButtonDeprecatedSubcaptionNoopennerId extends Component {
+export class VKBButton extends Component {
 
     render() {
 
@@ -14,8 +14,6 @@ export class VKBButtonDeprecatedSubcaptionNoopennerId extends Component {
         const fontAwesomeIconBefore = this.props.lbFontAwesomeIconBefore;
         const fontAwesomeIconAfter = this.props.lbFontAwesomeIconAfter;
         const richText = this.props.lbRichtext;
-        const subCaption = this.props.lbsubCaption;
-        const containerClass = '';
         let aClass = '';
         let aStyle = {};
         let iconBefore = '';
@@ -73,7 +71,6 @@ export class VKBButtonDeprecatedSubcaptionNoopennerId extends Component {
         return (
 	<a
 		href={ buttonUrl }
-		id={ 'vk_button_link' }
 		className={ aClass }
 		role={ 'button' }
 		aria-pressed={ true }
@@ -83,8 +80,7 @@ export class VKBButtonDeprecatedSubcaptionNoopennerId extends Component {
 		{ iconBefore }
 		{ richText }
 		{ iconAfter }
-		{ /*サブキャプションが入力された時のみ表示*/ }
-		{ subCaption && <p className={ 'vk_button_link_subCaption' }>{ subCaption }</p> }
+
 	</a>
         );
     }

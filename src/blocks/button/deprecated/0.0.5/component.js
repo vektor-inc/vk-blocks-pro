@@ -1,6 +1,6 @@
-const { Component } = wp.element;
+import { Component } from '@wordpress/element';
 
-export class VKBButtonV1 extends Component {
+export class VKBButton extends Component {
 
 	render() {
 
@@ -15,7 +15,6 @@ export class VKBButtonV1 extends Component {
 		const fontAwesomeIconAfter = this.props.lbFontAwesomeIconAfter;
 		const richText = this.props.lbRichtext;
 		const subCaption = this.props.lbsubCaption;
-		const containerClass = '';
 		let aClass = '';
 		let aStyle = {};
 		let iconBefore = '';

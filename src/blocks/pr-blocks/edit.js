@@ -1,8 +1,8 @@
-import { ComponentBlock } from './component-block';
-import { isNotJSON } from '../../utils/is-not-json';
-import { FontAwesome } from '../../utils/font-awesome-new';
+import { ComponentBlock } from './component';
+import { isNotJSON } from '@vkblocks/utils/is-not-json';
+import { FontAwesome } from '@vkblocks/utils/font-awesome-new';
 
-import { fixBrokenUnicode } from '../../utils/depModules';
+import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
 
 import { __ } from '@wordpress/i18n'; // Import __() from wp.i18n
 

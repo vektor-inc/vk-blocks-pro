@@ -1,18 +1,7 @@
 {
 	"apiVersion": 2,
-	"name": "vk-blocks/alert",
+	"name": "vk-blocks/pr-blocks",
 	"category": "vk-blocks-cat",
-	"attributes": {
-		"style": {
-			"type": "string",
-			"default": "info"
-		},
-		"content": {
-			"type": "string",
-			"source": "html",
-			"selector": "p"
-		}
-	},
 	"supports": {
 		"className": true
 	}

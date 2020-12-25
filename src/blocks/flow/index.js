@@ -2,7 +2,7 @@
  * Flow block type
  *
  */
-import { deprecated } from './deprecated/';
+import deprecated from './deprecated/';
 import { ReactComponent as Icon } from './icon.svg';
 import { content, title, iconPicture } from '../../utils/example-data';
 import edit from './edit';

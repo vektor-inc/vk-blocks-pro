@@ -1,8 +1,8 @@
-const { __ } = wp.i18n;
-const { PanelBody, BaseControl, SelectControl } = wp.components;
-const { Component } = wp.element;
-const { createHigherOrderComponent, compose } = wp.compose;
-import { ColumnLayout } from "../column-layout";
+import { __ } from '@wordpress/i18n';
+import { PanelBody, BaseControl, SelectControl } from '@wordpress/components';
+import { Component } from '@wordpress/element';
+import { createHigherOrderComponent, compose } from '@wordpress/compose';
+import { ColumnLayout } from "@vkblocks/components/column-layout";
 
 export const setOptions = name => {
 	const options = {

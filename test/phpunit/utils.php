@@ -5,7 +5,6 @@ function replaceURL( $url ) {
 	return str_replace('http://localhost:8888','http://localhost:8889',$url);
 }
 
-
 function unescapeHTML( $html ) {
 	// バックスラッシュを削除
 	$html = str_replace('\\','',$html);

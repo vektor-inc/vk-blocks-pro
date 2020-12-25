@@ -15,7 +15,6 @@ import "@vkblocks/blocks/staff/block.js";
 import "@vkblocks/blocks/spacer/block.js";
 import "@vkblocks/blocks/heading/block.js";
 import "@vkblocks/blocks/button/block.js";
-import "@vkblocks/blocks/pr-blocks/block.js";
 
 // /*WP5.3 以下では読み込まれない*/
 import "@vkblocks/extensions/common/responsive-br";

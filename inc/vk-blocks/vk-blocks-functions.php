@@ -145,16 +145,16 @@ function vkblocks_blocks_assets() {
 		//register_block_type_from_metadataで読み込むブロック
 		$arr_wp56 = array(
 			'alert',
-			'pr-content',
+			'balloon',
+			'border-box',
+			'faq',
 			'faq2',
 			'faq2-q',
 			'faq2-a',
-			'balloon',
-			'faq',
 			'flow',
 			'pr-blocks',
+			'pr-content',
 			'page-content',
-			'border-box',
 		);
 		$arr_wp56_pro = array(
 			'animation',

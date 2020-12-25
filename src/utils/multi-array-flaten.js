@@ -1,3 +1,3 @@
-export const flat = (multiple_array) => {
-	return [].concat(...multiple_array);
+export const flat = (multipleArray) => {
+	return [].concat(...multipleArray);
 };

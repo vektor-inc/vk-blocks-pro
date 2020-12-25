@@ -32,13 +32,13 @@ const setUpTaxonomyData = (taxonomies, slugs, select) => {
 	for (let i = 0; i <= slugs.length - 1; i++) {
 		const tax = select('core').getEntityRecords('taxonomy', slugs[i]);
 
-		if (tax != null) {
-			for (let i = 0; i <= tax.length - 1; i++) {
-				if (tax[i].slug != null) {
-					Taxonomy[tax[i].slug] = {
-						name: tax[i].name,
-						slug: tax[i].slug,
-						taxonomyType: tax[i].taxonomy,
+		if (tax !== null && tax !== undefined) {
+			for (let j = 0; j <= tax.length - 1; j++) {
+				if (tax[j].slug !== null && tax[j].slug !== undefined) {
+					Taxonomy[tax[j].slug] = {
+						name: tax[j].name,
+						slug: tax[j].slug,
+						taxonomyType: tax[j].taxonomy,
 					};
 				}
 			}

@@ -7,15 +7,15 @@ import schema002 from './0.0.2/schema';
 
 export const deprecated = [
 	{
-		attributes: schema000(4),
-		save000,
+		attributes: schema002(4),
+		save002,
 	},
 	{
 		attributes: schema001(4),
 		save001,
 	},
 	{
-		attributes: schema002(4),
-		save002,
+		attributes: schema000(4),
+		save000,
 	},
 ];

@@ -1,4 +1,4 @@
-import { useSelect } from '@wordpress/data'
+import { useSelect } from '@wordpress/data';
 
 export const usePostTypes = () => {
   return useSelect(select => {

@@ -1,13 +1,18 @@
 import { select, dispatch } from '@wordpress/data';
+import * as blockEditor from '@wordpress/block-editor';
+import * as Editor from '@wordpress/editor';
+import ServerSideRender from '@wordpress/server-side-render';
+import * as Components from '@wordpress/components';
 
-export const vkbBlockEditor = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
+export const vkbBlockEditor = blockEditor && blockEditor.BlockEdit ? blockEditor : Editor;
 export const depServerSideRender = () => {
-	if (wp.serverSideRender) {
-		return wp.serverSideRender;
+	if ( ServerSideRender ) {
+		return ServerSideRender;
 	}
-		return wp.components.ServerSideRender;
+		return Components.ServerSideRender;
 
 }
+
 export const selectEditor = select("core/block-editor")
 	? select("core/block-editor")
 	: select("core/editor");

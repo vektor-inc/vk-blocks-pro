@@ -1,16 +1,16 @@
 import { ComponentBlock } from './component';
+import { useBlockProps } from '@wordpress/block-editor';
 
 export default function save(props) {
-	const { attributes, className } = props;
-	let containerClass;
-	if (className) {
-		containerClass = `${className} vk_prBlocks row`;
-	} else {
-		containerClass = `vk_prBlocks row`;
-	}
+	const { attributes } = props;
+	const containerClass = `vk_prBlocks row`;
+
+	const blockProps = useBlockProps.save({
+		className: containerClass,
+	});
 
 	return (
-		<div className={containerClass}>
+		<div {...blockProps}>
 			<ComponentBlock
 				attributes={attributes}
 				blockNum={1}

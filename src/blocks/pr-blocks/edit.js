@@ -19,10 +19,11 @@ import {
 	InspectorControls,
 	MediaUpload,
 	ColorPalette,
+	useBlockProps,
 } from '@wordpress/block-editor';
 
-export default function prBlocksEdit(props) {
-	const { attributes, setAttributes, className } = props;
+export default function PrBlocksEdit(props) {
+	const { attributes, setAttributes } = props;
 	const {
 		url1,
 		url2,
@@ -41,12 +42,11 @@ export default function prBlocksEdit(props) {
 		insertImage3,
 	} = attributes;
 
-	let containerClass;
-	if (className) {
-		containerClass = `${className} vk_prBlocks row`;
-	} else {
-		containerClass = `vk_prBlocks row`;
-	}
+	const containerClass = `vk_prBlocks row`;
+
+	const blockProps = useBlockProps({
+		className: containerClass,
+	});
 
 	const uploadNonAltImage1 = (insertImage) => {
 		if (isNotJSON(insertImage)) {
@@ -340,7 +340,7 @@ export default function prBlocksEdit(props) {
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>
-			<div className={containerClass}>
+			<div {...blockProps}>
 				<ComponentBlock
 					attributes={attributes}
 					setAttributes={setAttributes}

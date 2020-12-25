@@ -2,8 +2,5 @@
     "core": null,
     "plugins": [
         "."
-	],
-	"themes": [
-		"lightning"
 	]
 }

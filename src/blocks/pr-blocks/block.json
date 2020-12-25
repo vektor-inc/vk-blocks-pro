@@ -18,6 +18,11 @@
 			"source": "html",
 			"selector": ".vk_prBlocks_item_title-3"
 		},
+		"heading4" :{
+			"type": "string",
+			"source": "html",
+			"selector": ".vk_prBlocks_item_title-4"
+		},
 		"content1": {
 			"type": "string",
 			"source": "html",
@@ -33,6 +38,11 @@
 			"source": "html",
 			"selector": "p.vk_prBlocks_item_summary-3"
 		},
+		"content4": {
+			"type": "string",
+			"source": "html",
+			"selector": "p.vk_prBlocks_item_summary-4"
+		},
 		"url1": {
 			"type": "string",
 			"default": ""
@@ -42,6 +52,10 @@
 			"default": ""
 		},
 		"url3": {
+			"type": "string",
+			"default": ""
+		},
+		"url4": {
 			"type": "string",
 			"default": ""
 		},
@@ -57,6 +71,10 @@
 			"type": "Boolean",
 			"default": false
 		},
+		"urlOpenType4": {
+			"type": "Boolean",
+			"default": false
+		},
 		"icon1": {
 			"type": "string",
 			"default": "<i class=\"fas fa-file\"></i>"
@@ -66,6 +84,10 @@
 			"default": "<i class=\"fas fa-file\"></i>"
 		},
 		"icon3": {
+			"type": "string",
+			"default": "<i class=\"fas fa-file\"></i>"
+		},
+		"icon4": {
 			"type": "string",
 			"default": "<i class=\"fas fa-file\"></i>"
 		},
@@ -81,6 +103,10 @@
 			"type": "string",
 			"default": "#0693e3"
 		},
+		"color4":{
+			"type": "string",
+			"default": "#0693e3"
+		},
 		"bgType1": {
 			"type": "string",
 			"default": "0"
@@ -93,6 +119,10 @@
 			"type": "string",
 			"default": "0"
 		},
+		"bgType4": {
+			"type": "string",
+			"default": "0"
+		},
 		"insertImage1": {
 			"type": "string",
 			"default": ""
@@ -102,6 +132,10 @@
 			"default": ""
 		},
 		"insertImage3": {
+			"type": "string",
+			"default": ""
+		},
+		"insertImage4": {
 			"type": "string",
 			"default": ""
 		}

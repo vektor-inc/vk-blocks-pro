@@ -1,16 +1,16 @@
-export const isValidJson = ( value ) => {
+export const isValidJson = (value) => {
 	try {
-		JSON.parse( value )
+		JSON.parse(value);
 	} catch (e) {
-		return false
+		return false;
 	}
-	return true
+	return true;
 };
 
-export const fixBrokenUnicode = ( text ) => {
-	if ( !isValidJson( text ) ) {
-		text = text.replace( /u0022/g, '"' );
+export const fixBrokenUnicode = (text) => {
+	if (!isValidJson(text)) {
+		text = text.replace(/u0022/g, '"');
 	}
 
 	return text;
-}
+};

@@ -19,7 +19,6 @@ import "@vkblocks/blocks/pr-blocks/block.js";
 
 // /*WP5.3 以下では読み込まれない*/
 import "@vkblocks/extensions/common/responsive-br";
-import "@vkblocks/blocks/border-box/block.js";
 import "@vkblocks/blocks/_pro/icon-card-item/block.js";
 import "@vkblocks/blocks/_pro/icon-card/block.js";
 import "@vkblocks/blocks/_pro/card-item/block.js";

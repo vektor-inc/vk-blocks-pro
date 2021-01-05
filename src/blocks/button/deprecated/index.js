@@ -5,6 +5,8 @@ import save0_0_3 from './0.0.3/save';
 import save0_0_4 from './0.0.4/save';
 import save0_0_5 from './0.0.5/save';
 import save0_41_0 from './0.41.0/save';
+import save0_59_0 from './0.59.0/save';
+import save0_59_1 from './0.59.1/save';
 
 const blockAttributes = {
 	content: {
@@ -112,5 +114,25 @@ export const deprecated = [
 			},
 		},
 		save0_41_0,
+	},
+	{
+		attributes: {
+			...blockAttributes,
+			subCaption: {
+				type: 'string',
+				default: '',
+			},
+		},
+		save0_59_0,
+	},
+	{
+		attributes: {
+			...blockAttributes,
+			subCaption: {
+				type: 'string',
+				default: '',
+			},
+		},
+		save0_59_1,
 	},
 ];

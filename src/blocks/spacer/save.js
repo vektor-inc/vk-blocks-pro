@@ -13,10 +13,10 @@ import { useBlockProps } from '@wordpress/block-editor';
  */
 import Spacers from './spacers';
 
-export default function save({ attributes }) {
+export default function save({ attributes, anchor }) {
 	const { spaceType, unit, pc, tablet, mobile } = attributes;
 	return (
-		<div {...useBlockProps.save({ className: classnames('vk_spacer') })}>
+		<div {...useBlockProps.save({ className: classnames('vk_spacer'), id: anchor })}>
 			<Spacers
 				type={spaceType}
 				pcSize={pc}

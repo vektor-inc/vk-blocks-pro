@@ -1,7 +1,7 @@
 import save000 from './0.0.0/save';
 import save001 from './0.0.1/save';
 import save002 from './0.0.2/save';
-
+import save0_57_4 from './0.57.4/save';
 export const blockAttributes = {
     unit: {
         type: 'string',
@@ -41,5 +41,9 @@ export const deprecated = [
     {
         attributes: blockAttributes003,
         save: save002,
+    },
+    {
+        attributes: blockAttributes003,
+        save: save0_57_4,
     },
 ];

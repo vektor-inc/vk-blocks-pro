@@ -23,11 +23,11 @@ export default function SpacerEdit({
 	setAttributes,
 	className,
 	clientId,
-	//anchor
+	anchor
 }) {
 	const { spaceType, unit, pc, tablet, mobile } = attributes;
 
-	const blockProps = useBlockProps({ className: classnames('vk_spacer') });
+	const blockProps = useBlockProps({ className: classnames('vk_spacer'), id: anchor });
 
 	return (
 		<>

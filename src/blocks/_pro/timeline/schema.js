@@ -1,3 +1,1 @@
-export const schema = {
-
-};
+export const schema = {};

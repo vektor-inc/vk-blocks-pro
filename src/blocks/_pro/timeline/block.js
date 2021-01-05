@@ -2,11 +2,11 @@
  * timeline block type
  *
  */
-import { Component } from "./component";
+import { Component } from './component';
 import { schema } from './schema';
-import { hiddenNewBlock } from "../../../utils/hiddenNewBlock"
+import { hiddenNewBlock } from '../../../utils/hiddenNewBlock';
 import { ReactComponent as Icon } from './icon.svg';
-import { title } from "../../../utils/example-data";
+import { title } from '../../../utils/example-data';
 
 const inserterVisible = hiddenNewBlock(5.3);
 
@@ -28,13 +28,13 @@ const { Fragment } = wp.element;
  *                             registered; otherwise `undefined`.
  */
 registerBlockType('vk-blocks/timeline', {
-    // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-    title: __('Timeline', 'vk-blocks'), // Block title.
-    icon: <Icon />, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
-    category: 'vk-blocks-cat', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
-    attributes: schema,
-    supports: {
-        inserter: inserterVisible
+	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
+	title: __('Timeline', 'vk-blocks'), // Block title.
+	icon: <Icon />, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
+	category: 'vk-blocks-cat', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
+	attributes: schema,
+	supports: {
+		inserter: inserterVisible,
 	},
 	example: {
 		innerBlocks: [
@@ -59,40 +59,52 @@ registerBlockType('vk-blocks/timeline', {
 		],
 	},
 
-    /**
-     * The edit function describes the structure of your block in the context of the editor.
-     * This represents what the editor will render when the block is used.
-     *
-     * The "edit" property must be a valid function.
-     *
-     * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
-     */
-    edit({ attributes, setAttributes, className }) {
+	/**
+	 * The edit function describes the structure of your block in the context of the editor.
+	 * This represents what the editor will render when the block is used.
+	 *
+	 * The "edit" property must be a valid function.
+	 *
+	 * @param root0
+	 * @param root0.attributes
+	 * @param root0.setAttributes
+	 * @param root0.className
+	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
+	 */
+	edit({ attributes, setAttributes, className }) {
+		return (
+			<Fragment>
+				<Component
+					attributes={attributes}
+					className={className}
+					setAttributes={setAttributes}
+					for_={'edit'}
+				/>
+			</Fragment>
+		);
+	},
 
-        return (
-	<Fragment>
-		<Component
-			attributes={ attributes }
-			className={ className }
-			setAttributes={ setAttributes }
-			for_={ "edit" }
-                />
-	</Fragment>
-        );
-    },
+	/**
+	 * The save function define className }> which the different attributes should be combined
+	 * into the final markup, which is then serialized by Gutenberg into post_content.
+	 *
+	 * The "save" property must be specified and must be a valid function.
+	 *
+	 * @param root0
+	 * @param root0.attributes
+	 * @param root0.className
+	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
+	 */
+	save({ attributes, className }) {
+		return (
+			<Component
+				attributes={attributes}
+				className={className}
+				for_={'save'}
+			/>
+		);
+	},
 
-    /**
-     * The save function define className }> which the different attributes should be combined
-     * into the final markup, which is then serialized by Gutenberg into post_content.
-     *
-     * The "save" property must be specified and must be a valid function.
-     *
-     * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
-     */
-    save({ attributes, className }) {
-        return <Component attributes={ attributes } className={ className } for_={ "save" } />;
-    },
-
-    //Please comment out, when you need to use deprecated.
-    // deprecated:deprecated
+	//Please comment out, when you need to use deprecated.
+	// deprecated:deprecated
 });

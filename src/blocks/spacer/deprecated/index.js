@@ -31,19 +31,19 @@ const blockAttributes003 = {
 
 export const deprecated = [
     {
-        attributes: blockAttributes,
-        save: save000,
-    },
-    {
-        attributes: blockAttributes,
-        save: save001,
+        attributes: blockAttributes003,
+        save: save0_57_4,
     },
     {
         attributes: blockAttributes003,
         save: save002,
     },
     {
-        attributes: blockAttributes003,
-        save: save0_57_4,
+        attributes: blockAttributes,
+        save: save001,
+    },
+    {
+        attributes: blockAttributes,
+        save: save000,
     },
 ];

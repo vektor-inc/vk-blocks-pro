@@ -1,6 +1,6 @@
 import { InnerBlocks } from '@wordpress/block-editor';
+import React from "react";
 
-// eslint-disable-next-line no-undef
 export class Component extends React.Component {
 	render() {
 		const { label, color, style, styleLine } = this.props.attributes;

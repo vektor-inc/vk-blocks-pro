@@ -235,9 +235,9 @@ export class PRcontent extends Component {
 		<a
 			href={ url }
 			className={ aClass }
-			target={ buttonTarget && "_blank" }
+			target={ buttonTarget ? "_blank" : undefined }
 			style={ aStyle }
-			rel={　buttonTarget && 'noopener'　}
+			rel={　buttonTarget ? 'noopener' : undefined　}
 			>
 			<Fontawesome attributes={ attributes } />
 		</a>

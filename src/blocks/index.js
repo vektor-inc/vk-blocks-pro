@@ -13,6 +13,7 @@ import compareVersions from 'compare-versions';
 /**
  * Internal dependencies
  */
+import * as timeline from './_pro/timeline';
 import * as alert from './alert';
 import * as prContent from './pr-content';
 import * as faq2 from './faq2';
@@ -31,6 +32,7 @@ import * as borderBox from './border-box';
  * Function to get all the VK Blocks in an array.
  */
 export const __getVKBlocks = () => [
+	timeline,
 	alert,
 	prContent,
 	faq2,

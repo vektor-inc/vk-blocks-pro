@@ -23,13 +23,16 @@ export const blockAttributes = {
 
 const blockAttributes003 = {
 	...blockAttributes,
-	...blockAttributes.anchor.default=null,
 	...blockAttributes.pc.default=40,
 	...blockAttributes.tablet.default=30,
-	...blockAttributes.mobile.default=20,
+    ...blockAttributes.mobile.default=20,
+    anchor: {
+        type: 'string',
+        default: null,
+	},
 }
 
-export const deprecated = [
+const deprecated = [
     {
         attributes: blockAttributes003,
         save: save0_57_4,
@@ -47,3 +50,5 @@ export const deprecated = [
         save: save000,
     },
 ];
+
+export default deprecated;

@@ -1,6 +1,8 @@
-
-const { __ } = wp.i18n;
-const { SelectControl } = wp.components;
+/**
+ * WordPress dependencies
+ */
+import { __ } from '@wordpress/i18n';
+import { SelectControl } from '@wordpress/components';
 
 const AdvancedUnitControl = (props) => {
   const { attributes, setAttributes } = props;

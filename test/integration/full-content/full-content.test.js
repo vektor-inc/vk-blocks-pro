@@ -1,30 +1,21 @@
 /**
  * External dependencies
  */
-import glob from 'fast-glob';
-import { fromPairs, omit, startsWith, get } from 'lodash';
+import { omit, startsWith, get } from 'lodash';
 import { format } from 'util';
-
-/**
- *  NOTE: beforeAll内の require( '../../../packages/editor/src/hooks' ); の代わりに必要なフックを読み込み。
- *  https://github.com/WordPress/gutenberg/tree/master/packages/editor/src/hooks
- */
-// import '@wordpress/editor';
 
 /**
  * WordPress dependencies
  */
 import {
 	getBlockTypes,
+	getCategories,
+	setCategories,
 	parse,
 	serialize,
-	unstable__bootstrapServerSideBlockDefinitions, // eslint-disable-line camelcase
 } from '@wordpress/blocks';
 import { parse as grammarParse } from '@wordpress/block-serialization-default-parser';
-// import {
-// 	registerCoreBlocks,
-// 	__experimentalRegisterExperimentalCoreBlocks,
-// } from '@wordpress/block-library';
+
 //eslint-disable-next-line no-restricted-syntax
 import {
 	blockNameToFixtureBasename,
@@ -44,7 +35,7 @@ import {
 
 const blockBasenames = getAvailableBlockFixturesBasenames();
 
-import { registerVKBlocks } from '../../../src/blocks/index';
+import { registerVKBlocks } from '@vkblocks/blocks';
 
 function normalizeParsedBlocks( blocks ) {
 	return blocks.map( ( block, index ) => {
@@ -68,25 +59,6 @@ function normalizeParsedBlocks( blocks ) {
 describe( 'full post content fixture', () => {
 
 	beforeAll( async () => {
-		const blockMetadataFiles = await glob(
-			// NOTE: VK Blocks用のパスに置き換え。
-			// TODO: プロ用プラグインのパスを追加。
-			'../../../src/blocks/alert/block.json'
-			// 'packages/block-library/src/*/block.json'
-		);
-
-		const blockDefinitions = fromPairs(
-			blockMetadataFiles.map( ( file ) => {
-				const { name, ...metadata } = require( file );
-				return [ name, metadata ];
-			} )
-		);
-
-		unstable__bootstrapServerSideBlockDefinitions( blockDefinitions );
-
-		// NOTE: ファイルの最初で読み込みに変更
-		// Load all hooks that modify blocks
-		// require( '../../../packages/editor/src/hooks' );
 
 		// VK Blocksが出力している wpVersion を定義
 		Object.defineProperty( window, 'wpVersion', {
@@ -94,17 +66,19 @@ describe( 'full post content fixture', () => {
 			writable: false,
 		} );
 
-		//TODO: 下のコアブロックを取得する関数の代わりに、カスタムブロック一覧の引数を渡す
-		// registerCoreBlocks();
+		// ブロックカテゴリー取得
+		const blockCategories = getCategories();
+
+		// カスタムカテゴリー追加
+		setCategories([
+			...blockCategories,
+			{slug: 'vk-blocks-cat', title: 'VKBlocks'},
+			{slug: 'vk-blocks-cat-layout', title: 'VKBlocks Layout'},
+		])
+
+		//カスタムブロック登録
 		registerVKBlocks();
 
-		// カスタムブロックを登録
-		// const customBlocks = getCustomBlocks();
-		// registerCoreBlocks( customBlocks );
-
-		// if ( process.env.GUTENBERG_PHASE === 2 ) {
-		// 	__experimentalRegisterExperimentalCoreBlocks( true );
-		// }
 	} );
 
 	blockBasenames.forEach( ( basename ) => {
@@ -270,10 +244,9 @@ describe( 'full post content fixture', () => {
 			// `save` functions and attributes.
 			// The `core/template` is not worth testing here because it's never saved, it's covered better in e2e tests.
 			.filter(
-				( name ) => ! [ 'core/embed', 'core/template' ].includes( name )
+				( name ) => ! [ 'core/embed', 'core/template', 'vk-blocks/page-content', 'vk-blocks/post-list', 'vk-blocks/child-page' ].includes( name )
 			)
 			.forEach( ( name ) => {
-				console.log(name)
 				const nameToFilename = blockNameToFixtureBasename( name );
 				const foundFixtures = blockBasenames
 					.filter(

@@ -6,6 +6,7 @@ import '@wordpress/notices';
 // import '@wordpress/block-editor';
 import {
 	registerBlockType,
+	unstable__bootstrapServerSideBlockDefinitions, // eslint-disable-line camelcase
 } from '@wordpress/blocks';
 import compareVersions from 'compare-versions';
 
@@ -14,6 +15,38 @@ import compareVersions from 'compare-versions';
  */
 import * as alert from './alert';
 import * as staff from './staff';
+import * as prContent from './pr-content';
+import * as faq2 from './faq2';
+import * as faq2a from './faq2-a';
+import * as faq2q from './faq2-q';
+import * as balloon from './balloon';
+import * as faq from './faq';
+import * as flow from './flow';
+import * as pageContent from './page-content';
+import * as animation from './_pro/animation';
+import * as postList from './_pro/post-list';
+import * as childPage from './_pro/child-page';
+import * as borderBox from './border-box';
+
+/**
+ * Function to get all the VK Blocks in an array.
+ */
+export const __getVKBlocks = () => [
+	alert,
+	prContent,
+	faq2,
+	faq2a,
+	faq2q,
+	balloon,
+	faq,
+	flow,
+	pageContent,
+	animation,
+	postList,
+	childPage,
+	borderBox,
+	staff,
+];
 
 /**
  * Function to register an individual block.
@@ -38,38 +71,16 @@ const registerBlock = ( block ) => {
 			...metadata
 		}
 
+	} else {
+		if ( metadata ) {
+			unstable__bootstrapServerSideBlockDefinitions( { [ name ]: metadata } );
+		}
 	}
 	registerBlockType( name, settings );
 };
 
 /**
- * Function to get all the core blocks in an array.
- *
- * @example
- * ```js
- * import { __experimentalGetCoreBlocks } from '@wordpress/block-library';
- *
- * const coreBlocks = __experimentalGetCoreBlocks();
- * ```
- */
-export const __getVKBlocks = () => [
-	// Common blocks are grouped at the top to prioritize their display
-	// in various contexts — like the inserter and auto-complete components.
-	alert,
-	staff
-];
-
-/**
- * Function to register core blocks provided by the block editor.
- *
- * @param {Array} blocks An optional array of the core blocks being registered.
- *
- * @example
- * ```js
- * import { registerCoreBlocks } from '@wordpress/block-library';
- *
- * registerCoreBlocks();
- * ```
+ * Function to register VK Blocks.
  */
 export const registerVKBlocks = (
 	blocks = __getVKBlocks()

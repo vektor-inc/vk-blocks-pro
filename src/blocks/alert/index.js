@@ -2,7 +2,7 @@
  * Alert block type
  *
  */
-import { content } from '../../utils/example-data';
+import { content } from '@vkblocks/utils/example-data';
 import { ReactComponent as Icon } from './icon.svg';
 import deprecated from './deprecated/index';
 import edit from './edit';

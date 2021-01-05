@@ -1,0 +1,15 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/faq",
+	"category": "vk-blocks-cat",
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"source": "html",
+			"selector": "dt"
+		}
+	},
+	"supports": {
+		"anchor": true
+	}
+}

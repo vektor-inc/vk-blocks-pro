@@ -1,1 +1,3 @@
-/src/blocks/staff/deprecated/0.58/
+**/deprecated/*.js
+!**/deprecated/index.js
+**/deprecated/**/*.js

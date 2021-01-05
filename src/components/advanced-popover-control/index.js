@@ -1,6 +1,6 @@
-const { Button, Popover, IconButton } = wp.components;
-const { Fragment, createRef, Component } = wp.element;
-const { __ } = wp.i18n;
+import { __ } from '@wordpress/i18n';
+import { Button, Popover } from '@wordpress/components';
+import { Fragment, createRef, Component } from '@wordpress/element';
 
 export default class AdvancedPopOverControl extends Component {
 	constructor(props) {

@@ -9,7 +9,7 @@ const blockAttributes = {
 		type: 'string',
 		source: 'html',
 		selector: 'p',
-	}
+	},
 };
 
 const deprecated = [

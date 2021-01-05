@@ -2,37 +2,22 @@
  * timeline block type
  *
  */
-import { Component } from './component';
-import { schema } from './schema';
-import { hiddenNewBlock } from '../../../utils/hiddenNewBlock';
+import { hiddenNewBlock } from '@vkblocks/utils/hiddenNewBlock';
 import { ReactComponent as Icon } from './icon.svg';
-import { title } from '../../../utils/example-data';
+import { title } from '@vkblocks/utils/example-data';
+import { __ } from '@wordpress/i18n';
+import { Fragment } from '@wordpress/element';
+import { registerBlockType } from '@wordpress/blocks';
+import { InnerBlocks } from '@wordpress/block-editor';
 
 const inserterVisible = hiddenNewBlock(5.3);
 
-const { __ } = wp.i18n; // Import __() from wp.i18n
-const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
-const { Fragment } = wp.element;
-
-/**
- * Register: a Gutenberg Block.
- *
- * Registers a new block provided a unique name and an object defining its
- * behavior. Once registered, the block is made editor as an option to any
- * editor interface where blocks are implemented.
- *
- * @link https://wordpress.org/gutenberg/handbook/block-api/
- * @param  {string}   name     Block name.
- * @param  {Object}   settings Block settings.
- * @return {?WPBlock}          The block, if it has been successfully
- *                             registered; otherwise `undefined`.
- */
 registerBlockType('vk-blocks/timeline', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
 	title: __('Timeline', 'vk-blocks'), // Block title.
 	icon: <Icon />, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: 'vk-blocks-cat', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
-	attributes: schema,
+	attributes: {},
 	supports: {
 		inserter: inserterVisible,
 	},
@@ -59,49 +44,27 @@ registerBlockType('vk-blocks/timeline', {
 		],
 	},
 
-	/**
-	 * The edit function describes the structure of your block in the context of the editor.
-	 * This represents what the editor will render when the block is used.
-	 *
-	 * The "edit" property must be a valid function.
-	 *
-	 * @param root0
-	 * @param root0.attributes
-	 * @param root0.setAttributes
-	 * @param root0.className
-	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
-	 */
-	edit({ attributes, setAttributes, className }) {
+	edit({ className }) {
+		const containerClass = ' vk_timeline';
+		const ALLOWED_BLOCKS = ['vk-blocks/timeline-item'];
+		const TEMPLATE = [ALLOWED_BLOCKS];
 		return (
 			<Fragment>
-				<Component
-					attributes={attributes}
-					className={className}
-					setAttributes={setAttributes}
-					for_={'edit'}
-				/>
+				<div className={className + containerClass}>
+					<InnerBlocks
+						template={TEMPLATE}
+						allowedBlocks={ALLOWED_BLOCKS}
+					/>
+				</div>
 			</Fragment>
 		);
 	},
-
-	/**
-	 * The save function define className }> which the different attributes should be combined
-	 * into the final markup, which is then serialized by Gutenberg into post_content.
-	 *
-	 * The "save" property must be specified and must be a valid function.
-	 *
-	 * @param root0
-	 * @param root0.attributes
-	 * @param root0.className
-	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
-	 */
-	save({ attributes, className }) {
+	save({ className }) {
+		const containerClass = ' vk_timeline';
 		return (
-			<Component
-				attributes={attributes}
-				className={className}
-				for_={'save'}
-			/>
+			<div className={className + containerClass}>
+				<InnerBlocks.Content />
+			</div>
 		);
 	},
 

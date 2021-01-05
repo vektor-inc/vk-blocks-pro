@@ -1,5 +1,4 @@
-import { vkbBlockEditor } from './../../../utils/depModules';
-const { InnerBlocks } = vkbBlockEditor;
+import { InnerBlocks } from '@wordpress/block-editor';
 
 export class Component extends React.Component {
 	render() {

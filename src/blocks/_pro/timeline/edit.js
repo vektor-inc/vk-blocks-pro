@@ -1,4 +1,5 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import { Fragment } from '@wordpress/element';
 
 export default function TilelineEdit() {
 	const blockProps = useBlockProps({
@@ -7,8 +8,13 @@ export default function TilelineEdit() {
 	const ALLOWED_BLOCKS = ['vk-blocks/timeline-item'];
 	const TEMPLATE = [ALLOWED_BLOCKS];
 	return (
-		<div {...blockProps}>
-			<InnerBlocks template={TEMPLATE} allowedBlocks={ALLOWED_BLOCKS} />
-		</div>
+		<Fragment>
+			<div {...blockProps}>
+				<InnerBlocks
+					template={TEMPLATE}
+					allowedBlocks={ALLOWED_BLOCKS}
+				/>
+			</div>
+		</Fragment>
 	);
 }

@@ -3,7 +3,6 @@
  *
  */
 import { Component } from './component';
-import { schema } from './schema';
 import React from 'react';
 import { ReactComponent as Icon } from './icon.svg';
 
@@ -18,7 +17,24 @@ registerBlockType('vk-blocks/timeline-item', {
 	title: __('Timeline Item', 'vk-blocks'),
 	icon: <Icon />,
 	category: 'vk-blocks-cat',
-	attributes: schema,
+	attributes: {
+		label: {
+			type: 'string',
+			default: '6:00AM',
+		},
+		color: {
+			type: 'string',
+			default: '#337ab7',
+		},
+		style: {
+			type: 'string',
+			default: 'outlined',
+		},
+		styleLine: {
+			type: 'string',
+			default: 'default',
+		},
+	},
 	parent: ['vk-blocks/timeline'],
 
 	edit({ attributes, setAttributes, className }) {

@@ -2,27 +2,29 @@
  * step block type
  *
  */
-import { Component } from "./component";
+
+/**
+ * WordPress dependencies
+ */
+import { __ } from '@wordpress/i18n';
+import { registerBlockType } from "@wordpress/blocks";
+
+/**
+ * Internal dependencies
+ */
 import { schema } from "./schema";
-import { hiddenNewBlock } from "../../../utils/hiddenNewBlock"
-import { ReactComponent as Icon } from './icon.svg';
+import { hiddenNewBlock } from "../../../utils/hiddenNewBlock";
 const inserterVisible = hiddenNewBlock(5.3);
+import { ReactComponent as Icon } from './icon.svg';
 
-const { __ } = wp.i18n; // Import __() from wp.i18n
-const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
-const { PanelBody } = wp.components;
-const { Fragment, useEffect } = wp.element;
-import { vkbBlockEditor, dispatchEditor } from "../../../utils/depModules"
-const { InspectorControls } = vkbBlockEditor;
-const { updateBlockAttributes } = dispatchEditor;
-import { asyncGetInnerBlocks } from "../../../utils/asyncHooks";
 import { title, content } from "../../../utils/example-data";
-
+import { edit } from "./edit";
+import { save } from "./save";
 
 registerBlockType("vk-blocks/step", {
 	title: __("Step", "vk-blocks"), // Block title.
-	icon: <Icon />, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
-	category: "vk-blocks-cat", // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
+	icon: <Icon />,
+	category: "vk-blocks-cat",
 	attributes: schema,
 	supports: {
 		inserter: inserterVisible,
@@ -60,48 +62,6 @@ registerBlockType("vk-blocks/step", {
 			},
 		],
 	},
-	edit({ attributes, setAttributes, className, clientId }) {
-		const { firstDotNum } = attributes;
-
-		const currentInnerBlocks = asyncGetInnerBlocks( clientId );
-
-		const resetDotNum = useEffect( () => {
-			currentInnerBlocks.forEach( function ( block, index ) {
-				updateBlockAttributes( block.clientId, { dotNum: firstDotNum + index });
-			})
-
-		}, [ attributes.firstDotNum, currentInnerBlocks.length ] );
-
-		return (
-			<Fragment>
-				<InspectorControls>
-					<PanelBody title={ __("First Dot Number", "vk-blocks") }>
-						<input
-							type="number"
-							id={ "dot-number" }
-							onChange={ event => {
-								const value = parseInt( event.target.value, 10 );
-								setAttributes({ firstDotNum: value });
-							} }
-							value={ firstDotNum }
-							min="1"
-							step="1"
-						/>
-					</PanelBody>
-				</InspectorControls>
-				<Component
-					attributes={ attributes }
-					className={ className }
-					setAttributes={ setAttributes }
-					resetDotNum={resetDotNum}
-					for_={ "edit" }
-				/>
-			</Fragment>
-		);
-	},
-	save({ attributes, className }) {
-		return (
-			<Component attributes={ attributes } className={ className } for_={ "save" } />
-		);
-	}
+	edit,
+	save
 });

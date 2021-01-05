@@ -199,6 +199,7 @@ msgstr "https://example.com"
 #: src/blocks/balloon/block.js:361 src/blocks/flow/block.js:106
 #: src/blocks/pr-blocks/block.js:153 src/blocks/pr-content/component.js:157
 #: src/blocks/pr-content/deprecated/0.43.0/component.js:157
+#: src/blocks/pr-content/deprecated/0.58.7/component.js:157
 #: src/blocks/pr-content/deprecated/component-deprecated.js:102
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:116
 #: src/blocks/pr-content/deprecated/componentV1.js:185
@@ -220,7 +221,7 @@ msgstr "画像を削除"
 #: src/blocks/_pro/card/block.js:158 src/blocks/_pro/icon-card/block.js:123
 #: src/blocks/_pro/post-list/block.js:141
 msgid "Title"
-msgstr "タイトルを入力"
+msgstr "タイトル"
 
 #: src/blocks/_pro/card/block.js:127
 msgid "Image Height"
@@ -929,6 +930,7 @@ msgstr "ぶるぶる"
 #: src/blocks/balloon/block.js:367 src/blocks/flow/block.js:107
 #: src/blocks/pr-blocks/block.js:149 src/blocks/pr-content/component.js:164
 #: src/blocks/pr-content/deprecated/0.43.0/component.js:164
+#: src/blocks/pr-content/deprecated/0.58.7/component.js:164
 #: src/blocks/pr-content/deprecated/component-deprecated.js:106
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:120
 #: src/blocks/pr-content/deprecated/componentV1.js:192
@@ -1572,6 +1574,7 @@ msgstr "ボタンタイプ"
 
 #: src/blocks/pr-content/component.js:198
 #: src/blocks/pr-content/deprecated/0.43.0/component.js:200
+#: src/blocks/pr-content/deprecated/0.58.7/component.js:198
 #: src/blocks/pr-content/deprecated/component-deprecated.js:122
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:136
 #: src/blocks/pr-content/deprecated/componentV1.js:228
@@ -1580,6 +1583,7 @@ msgstr "タイトルを入力してください。"
 
 #: src/blocks/pr-content/component.js:206
 #: src/blocks/pr-content/deprecated/0.43.0/component.js:208
+#: src/blocks/pr-content/deprecated/0.58.7/component.js:206
 #: src/blocks/pr-content/deprecated/component-deprecated.js:130
 #: src/blocks/pr-content/deprecated/component-no-boder-color.js:144
 #: src/blocks/pr-content/deprecated/componentV1.js:236
@@ -1703,22 +1707,26 @@ msgid "Card (No border)"
 msgstr "カード（線なし）"
 
 #: src/components/column-layout-control/index.js:34
+msgid "Card (Intext)"
+msgstr "カード（インテキスト）"
+
+#: src/components/column-layout-control/index.js:38
 msgid "Card (Horizontal)"
 msgstr "カード（水平）"
 
-#: src/components/column-layout-control/index.js:38
+#: src/components/column-layout-control/index.js:42
 msgid "Media"
 msgstr "メディア"
 
-#: src/components/column-layout-control/index.js:42
+#: src/components/column-layout-control/index.js:46
 msgid "Text 1 Column"
 msgstr "テキスト１カラム"
 
-#: src/components/column-layout-control/index.js:62
+#: src/components/column-layout-control/index.js:66
 msgid "Display type and columns"
 msgstr "表示タイプとカラム"
 
-#: src/components/column-layout-control/index.js:65
+#: src/components/column-layout-control/index.js:69
 msgid "Display type"
 msgstr "表示タイプ"
 

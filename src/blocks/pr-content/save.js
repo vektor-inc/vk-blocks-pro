@@ -63,8 +63,7 @@ export default function save({ attributes }) {
 							className={linkClass}
 							target={buttonTarget ? '_blank' : undefined}
 							style={linkStyle}
-							// eslint-disable-next-line react/jsx-no-target-blank
-							rel={buttonTarget ? 'noopener noreferrer' : undefined}
+							rel={buttonTarget ? 'noopener' : undefined}
 						>
 							{ReactHtmlParser(iconBefore)}
 							<span className="vk_button_link_txt">

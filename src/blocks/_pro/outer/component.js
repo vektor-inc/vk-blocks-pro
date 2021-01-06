@@ -1,8 +1,8 @@
 const { Fragment } = wp.element;
-import { componentDivider } from "./component-divider";
-import { vkbBlockEditor } from "./../../../utils/depModules";
+import { componentDivider } from './component-divider';
+import { vkbBlockEditor } from './../../../utils/depModules';
 const { InnerBlocks } = vkbBlockEditor;
-import GenerateBgImage from "../../../utils/GenerateBgImage"
+import GenerateBgImage from '../../../utils/GenerateBgImage';
 
 export const OuterBlock = (props) => {
 	let {
@@ -40,55 +40,55 @@ export const OuterBlock = (props) => {
 	classWidth = ` vk_outer-width-${outerWidth}`;
 
 	//classBgPositionのクラス切り替え
-	if (bgPosition === "parallax") {
-		classBgPosition = " vk_outer-bgPosition-parallax vk-prlx";
-	} else if (bgPosition === "fixed") {
-		classBgPosition = " vk_outer-bgPosition-fixed";
-	} else if (bgPosition === "repeat") {
-		classBgPosition = " vk_outer-bgPosition-repeat";
+	if (bgPosition === 'parallax') {
+		classBgPosition = ' vk_outer-bgPosition-parallax vk-prlx';
+	} else if (bgPosition === 'fixed') {
+		classBgPosition = ' vk_outer-bgPosition-fixed';
+	} else if (bgPosition === 'repeat') {
+		classBgPosition = ' vk_outer-bgPosition-repeat';
 	} else {
-		classBgPosition = " vk_outer-bgPosition-normal";
+		classBgPosition = ' vk_outer-bgPosition-normal';
 	}
 
 	//classPaddingLRのクラス切り替え
-	classPaddingLR = "";
-	if ( padding_left_and_right === "0") {
-		classPaddingLR = " vk_outer-paddingLR-none";
-	} else if ( padding_left_and_right === "1") {
-		classPaddingLR = " vk_outer-paddingLR-use";
-	} else if ( padding_left_and_right === "2") {
+	classPaddingLR = '';
+	if (padding_left_and_right === '0') {
+		classPaddingLR = ' vk_outer-paddingLR-none';
+	} else if (padding_left_and_right === '1') {
+		classPaddingLR = ' vk_outer-paddingLR-use';
+	} else if (padding_left_and_right === '2') {
 		// Fit to content area width
-		classPaddingLR = " vk_outer-paddingLR-zero";
+		classPaddingLR = ' vk_outer-paddingLR-zero';
 	}
 
 	//classPaddingVerticalのクラス切り替え
-	if (padding_top_and_bottom === "1") {
-		classPaddingVertical = " vk_outer-paddingVertical-use";
+	if (padding_top_and_bottom === '1') {
+		classPaddingVertical = ' vk_outer-paddingVertical-use';
 	} else {
-		classPaddingVertical = " vk_outer-paddingVertical-none";
+		classPaddingVertical = ' vk_outer-paddingVertical-none';
 	}
 
 	//上側セクションの傾き切り替え
 	if (upper_level) {
-		whichSideUpper = "upper";
+		whichSideUpper = 'upper';
 	}
 
 	//下側セクションの傾き切り替え
 	if (lower_level) {
-		whichSideLower = "lower";
+		whichSideLower = 'lower';
 	}
 
 	//編集画面とサイト上の切り替え
-	if (for_ === "edit") {
+	if (for_ === 'edit') {
 		elm = <InnerBlocks />;
-	} else if ("save") {
+	} else if ('save') {
 		elm = <InnerBlocks.Content />;
-		containerClass = "vk_outer_container";
+		containerClass = 'vk_outer_container';
 	}
 
 	//borderColorクリア時に白をセットする
 	if (!borderColor) {
-		borderColor = "#fff";
+		borderColor = '#fff';
 	}
 
 	//Dividerエフェクトがない時のみ枠線を追加
@@ -96,7 +96,7 @@ export const OuterBlock = (props) => {
 		borderProperty = `${borderWidth}px ${borderStyle} ${borderColor}`;
 		borderRadiusProperty = `${borderRadius}px`;
 	} else {
-		borderProperty = "none";
+		borderProperty = 'none';
 		borderRadiusProperty = `0px`;
 	}
 
@@ -123,25 +123,25 @@ export const OuterBlock = (props) => {
 
 	return (
 		<div
-			id={ anchor }
+			id={anchor}
 			className={
-			"vkb-outer-" +
-			clientId +
-			" " +
-			className +
-			" vk_outer" +
-			classWidth +
-			classPaddingLR +
-			classPaddingVertical +
-			classBgPosition
-		}
-			style={ {
-			border: borderProperty,
-			borderRadius: borderRadiusProperty,
-		} }
+				'vkb-outer-' +
+				clientId +
+				' ' +
+				className +
+				' vk_outer' +
+				classWidth +
+				classPaddingLR +
+				classPaddingVertical +
+				classBgPosition
+			}
+			style={{
+				border: borderProperty,
+				borderRadius: borderRadiusProperty,
+			}}
 		>
-			<GenerateBgImage prefix={ "vkb-outer" } { ...props } />
-			<OuterBlockInner { ...defaultProps } />
+			<GenerateBgImage prefix={'vkb-outer'} {...props} />
+			<OuterBlockInner {...defaultProps} />
 		</div>
 	);
 };
@@ -162,19 +162,19 @@ const OuterBlockInner = (props) => {
 	return (
 		<Fragment>
 			<div>
-				{ componentDivider(
+				{componentDivider(
 					upper_level,
 					upperDividerBgColor,
 					whichSideUpper,
 					dividerType
-				) }
-				<div className={ containerClass }>{ elm }</div>
-				{ componentDivider(
+				)}
+				<div className={containerClass}>{elm}</div>
+				{componentDivider(
 					lower_level,
 					lowerDividerBgColor,
 					whichSideLower,
 					dividerType
-				) }
+				)}
 			</div>
 		</Fragment>
 	);

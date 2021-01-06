@@ -75,13 +75,13 @@ ol {
 		li {
 			position: relative;
 			list-style: none;
-
+			padding-left: .5em;
 			&:before {
 				position: absolute;
 				left: 0;
 				counter-increment: number;
 				content: counter(number);
-				margin-left: -2.4em;
+				margin-left: -1.8em;
 				background: #222;
 				color: #fff;
 				text-indent: 0;
@@ -104,7 +104,7 @@ ol {
 		li {
 			position: relative;
 			list-style: none;
-
+			padding-left: .5em;
 			&:before {
 				position: absolute;
 				left: -0.3em;

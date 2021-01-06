@@ -25,6 +25,7 @@ if( function_exists('register_block_type_from_metadata')) {
  * @param html  $content content.
  */
 function vk_faq2_render_callback( $attributes, $content = '' ) {
+	$vk_blocks_options  = vkblocks_get_options();
 	if ( has_block( 'vk-blocks/faq2', $content ) ) {
 		if ( 'open' === $vk_blocks_options['new_faq_accordion'] ) {
 			$content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-accordion-open', $content );

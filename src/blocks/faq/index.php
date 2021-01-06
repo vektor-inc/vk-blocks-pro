@@ -27,14 +27,16 @@ if( function_exists('register_block_type_from_metadata')) {
 function vk_faq_render_callback( $attributes, $content = '' ) {
 	$vk_blocks_options  = vkblocks_get_options();
 	if ( has_block( 'vk-blocks/faq', $content ) ) {
-		if ( 'open' === $vk_blocks_options['new_faq_accordion'] ) {
+		if ( ! empty( $vk_blocks_options['new_faq_accordion'] ) && 'open' === $vk_blocks_options['new_faq_accordion'] ) {
 			$content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-accordion-open', $content );
-		} elseif ( 'close' === $vk_blocks_options['new_faq_accordion'] ) {
+		} elseif ( ! empty( $vk_blocks_options['new_faq_accordion'] ) && 'close' === $vk_blocks_options['new_faq_accordion'] ) {
 			$content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-accordion-close', $content );
 		} else {
 			$content = str_replace( '[accordion_trigger_switch]', '', $content );
 		}
 	}
-	vk_blocks_pro_load_scripts();
+	if ( function_exists( 'vk_blocks_pro_load_scripts' ) ) {
+		vk_blocks_pro_load_scripts();
+	}
 	return $content;
 }

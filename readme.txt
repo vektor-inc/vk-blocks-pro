@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.3
 Tested up to: 5.6
-Stable tag: 0.59.1
+Stable tag: 0.60.0
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -62,6 +62,13 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 0.60.0 =
+[ Add function ][ Post List ] Add Card Intext layout on post list block
+[ Bug fix ][ Button ] In case of using gtag fix Button block Text area can't click
+[ Bug fix ][ Slider ] Fix In case of using full width but not become full width in edit screen (WP5.6)
+[ Bug fix ][ Slider ] Fix block pattern needs recovery
+[ Design Tuning ] list block number square
 
 = 0.59.0 =
 [ Specification Change ][ Table of content ] delete text under line

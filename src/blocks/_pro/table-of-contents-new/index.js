@@ -97,7 +97,7 @@ const updateTableOfContents = createHigherOrderComponent((BlockListBlock) => {
 }, 'updateTableOfContents');
 
 // eslint-disable-next-line no-undef
-if ( window.wpVersion && compareVersions( window.wpVersion, "5.3" ) >= 0  ){
+if (window.wpVersion && compareVersions(window.wpVersion, '5.3') >= 0) {
 	addFilter(
 		'editor.BlockListBlock',
 		'vk-blocks/table-of-contents-new',

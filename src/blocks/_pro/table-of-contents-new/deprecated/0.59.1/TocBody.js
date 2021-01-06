@@ -15,7 +15,8 @@ const TocBody = (props) => {
 				<label
 					className={ `tab-label vk_tableOfContents_openCloseBtn button_status button_status-${open}` }
 					htmlFor="chck1"
-				/>
+				>
+				</label>
 				<ul className={ `vk_tableOfContents_list tab_content-${open}` }>
 					{ ReactHtmlParser(renderHtml) }
 				</ul>

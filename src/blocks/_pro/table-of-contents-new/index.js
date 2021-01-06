@@ -2,7 +2,6 @@
  * table-of-contents-new-new block type
  */
 
-import { schema } from './schema';
 import {
 	isAllowedBlock,
 	getBlocksByName,
@@ -12,84 +11,32 @@ import {
 	AsyncGetBlocksByName,
 } from './toc-utils';
 import { ReactComponent as Icon } from './icon.svg';
+import compareVersions from 'compare-versions';
 
 import { __ } from '@wordpress/i18n';
-import { registerBlockType } from '@wordpress/blocks';
-import { PanelBody, SelectControl, BaseControl } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
-import { InspectorControls } from '@wordpress/block-editor';
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { dispatch } from '@wordpress/data';
-import TocBody from './TocBody';
 
-registerBlockType('vk-blocks/table-of-contents-new', {
+import metadata from './block.json';
+import edit from './edit';
+import save from './save';
+import deprecated from './deprecated/';
+
+const { name } = metadata;
+
+export { metadata, name };
+
+export const settings = {
 	title: __('Table of Contents', 'vk-blocks'),
 	icon: <Icon />,
-	category: 'vk-blocks-cat',
-	attributes: schema,
-	edit(props) {
-		const { attributes, setAttributes } = props;
-		const { style, open } = attributes;
-		return (
-			<Fragment>
-				<InspectorControls>
-					<PanelBody>
-						<BaseControl
-							id={`vk-toc-style`}
-							label={__('Style', 'vk-blocks')}
-						>
-							<SelectControl
-								value={style}
-								onChange={(value) =>
-									setAttributes({ style: value })
-								}
-								options={[
-									{
-										value: 'default',
-										label: __('Default', 'vk-blocks'),
-									},
-									{
-										value: '',
-										label: __('No frame', 'vk-blocks'),
-									},
-								]}
-							/>
-						</BaseControl>
-						<BaseControl
-							id={`vk_toc-displayStaus`}
-							label={__('Default Display Status', 'vk-blocks')}
-						>
-							<SelectControl
-								value={open}
-								onChange={(value) =>
-									setAttributes({ open: value })
-								}
-								options={[
-									{
-										value: 'open',
-										label: __('OPEN', 'vk-blocks'),
-									},
-									{
-										value: 'close',
-										label: __('CLOSE', 'vk-blocks'),
-									},
-								]}
-							/>
-						</BaseControl>
-					</PanelBody>
-				</InspectorControls>
-				<TocBody {...props} />
-			</Fragment>
-		);
-	},
-
-	save(props) {
-		return <TocBody {...props} />;
-	},
-});
+	edit,
+	save,
+	deprecated,
+};
 
 const getHeadings = (props) => {
+	// eslint-disable-next-line no-shadow
 	const { className, name, clientId, attributes } = props;
 	const { anchor } = attributes;
 
@@ -150,7 +97,7 @@ const updateTableOfContents = createHigherOrderComponent((BlockListBlock) => {
 }, 'updateTableOfContents');
 
 // eslint-disable-next-line no-undef
-if (5.3 <= parseFloat(wpVersion)) {
+if ( window.wpVersion && compareVersions( window.wpVersion, "5.3" ) >= 0  ){
 	addFilter(
 		'editor.BlockListBlock',
 		'vk-blocks/table-of-contents-new',

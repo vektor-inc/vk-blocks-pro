@@ -25,7 +25,7 @@ export const getBlocksByName = (blockName) => {
 
 export const getAllHeadings = (headingList) => {
 	const { getBlocks } = select('core/block-editor');
-	let tempBlock = '';
+	let tempBlock;
 	return getBlocks().map((block) => {
 		if (1 <= block.innerBlocks.length) {
 			tempBlock = block.innerBlocks.filter(

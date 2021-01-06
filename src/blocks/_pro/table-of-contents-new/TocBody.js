@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import ReactHtmlParser from 'react-html-parser';
-const { __ } = wp.i18n;
+import { __ } from '@wordpress/i18n';
 
 const TocBody = (props) => {
 	const { className, attributes } = props;
@@ -18,11 +18,13 @@ const TocBody = (props) => {
 				<div className={'vk_tableOfContents_title'}>
 					{__('Table of Contents', 'vk-blocks')}
 				</div>
-				<input type="checkbox" id="chck1" />
+
 				<label
 					className={`tab-label vk_tableOfContents_openCloseBtn button_status button_status-${open}`}
 					htmlFor="chck1"
-				/>
+				>
+					<input type="checkbox" id="chck1" />
+				</label>
 				<ul className={`vk_tableOfContents_list tab_content-${open}`}>
 					{ReactHtmlParser(renderHtml)}
 				</ul>

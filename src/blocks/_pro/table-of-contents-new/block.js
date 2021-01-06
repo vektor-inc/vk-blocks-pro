@@ -9,21 +9,18 @@ import {
 	returnHtml,
 	getAllHeadings,
 	removeUnnecessaryElements,
-	asyncGetBlocksByName,
+	AsyncGetBlocksByName,
 } from './toc-utils';
 import { ReactComponent as Icon } from './icon.svg';
 
-const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
-const { PanelBody, SelectControl, BaseControl } = wp.components;
-const { Fragment } = wp.element;
-import { vkbBlockEditor } from '../../../utils/depModules';
-const { InspectorControls } = vkbBlockEditor;
-const { addFilter } = wp.hooks;
-const { createHigherOrderComponent } = wp.compose;
-const { dispatch, select } = wp.data;
-import { hiddenNewBlock } from '../../../utils/hiddenNewBlock';
-const inserterVisible = hiddenNewBlock(5.3);
+import { __ } from '@wordpress/i18n';
+import { registerBlockType } from '@wordpress/blocks';
+import { PanelBody, SelectControl, BaseControl } from '@wordpress/components';
+import { Fragment } from '@wordpress/element';
+import { InspectorControls } from '@wordpress/block-editor';
+import { addFilter } from '@wordpress/hooks';
+import { createHigherOrderComponent } from '@wordpress/compose';
+import { dispatch } from '@wordpress/data';
 import TocBody from './TocBody';
 
 registerBlockType('vk-blocks/table-of-contents-new', {
@@ -31,10 +28,6 @@ registerBlockType('vk-blocks/table-of-contents-new', {
 	icon: <Icon />,
 	category: 'vk-blocks-cat',
 	attributes: schema,
-	supports: {
-		inserter: inserterVisible,
-	},
-
 	edit(props) {
 		const { attributes, setAttributes } = props;
 		const { style, open } = attributes;
@@ -42,7 +35,10 @@ registerBlockType('vk-blocks/table-of-contents-new', {
 			<Fragment>
 				<InspectorControls>
 					<PanelBody>
-						<BaseControl label={__('Style', 'vk-blocks')}>
+						<BaseControl
+							id={`vk-toc-style`}
+							label={__('Style', 'vk-blocks')}
+						>
 							<SelectControl
 								value={style}
 								onChange={(value) =>
@@ -61,6 +57,7 @@ registerBlockType('vk-blocks/table-of-contents-new', {
 							/>
 						</BaseControl>
 						<BaseControl
+							id={`vk_toc-displayStaus`}
 							label={__('Default Display Status', 'vk-blocks')}
 						>
 							<SelectControl
@@ -106,21 +103,21 @@ const getHeadings = (props) => {
 
 	if (
 		anchor === undefined &&
-		isAllowedBlock(name, headingList) != undefined
+		isAllowedBlock(name, headingList) !== undefined
 	) {
 		updateBlockAttributes(clientId, {
 			anchor: `vk-htags-${clientId}`,
 		});
 	}
 
-	const asyncToc = asyncGetBlocksByName('vk-blocks/table-of-contents-new');
+	const asyncToc = AsyncGetBlocksByName('vk-blocks/table-of-contents-new');
 	const open = asyncToc[0] ? asyncToc[0].attributes.open : '';
 
 	const headingsRaw = getAllHeadings(headingList);
 	const headings = removeUnnecessaryElements(headingsRaw);
 	const render = returnHtml(headings, tocAttributes, className, open);
 
-	if (isAllowedBlock(name, headingList) != undefined) {
+	if (isAllowedBlock(name, headingList) !== undefined) {
 		updateBlockAttributes(tocClientId, {
 			renderHtml: render,
 		});
@@ -152,6 +149,7 @@ const updateTableOfContents = createHigherOrderComponent((BlockListBlock) => {
 	};
 }, 'updateTableOfContents');
 
+// eslint-disable-next-line no-undef
 if (5.3 <= parseFloat(wpVersion)) {
 	addFilter(
 		'editor.BlockListBlock',

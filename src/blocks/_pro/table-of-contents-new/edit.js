@@ -61,7 +61,6 @@ export default function TOCEdit(props) {
 					<div className={'vk_tableOfContents_title'}>
 						{__('Table of Contents', 'vk-blocks')}
 					</div>
-
 					<label
 						className={`tab-label vk_tableOfContents_openCloseBtn button_status button_status-${open}`}
 						htmlFor="chck1"

@@ -1,8 +1,8 @@
 const { Fragment } = wp.element;
-import { componentDivider } from "./component-divider";
-import { vkbBlockEditor } from "./../../../../utils/depModules";
+import { componentDivider } from './component-divider';
+import { vkbBlockEditor } from '../../../../utils/depModules';
 const { InnerBlocks } = vkbBlockEditor;
-import hex2rgba from "./../../../../utils/hex-to-rgba";
+import hex2rgba from '../../../../utils/hex-to-rgba';
 
 export const ComponentV2_1 = (props) => {
 	const {
@@ -40,49 +40,49 @@ export const ComponentV2_1 = (props) => {
 	classWidth = ` vk_outer-width-${outerWidth}`;
 
 	//classBgPositionのクラス切り替え
-	if (bgPosition === "parallax") {
-		classBgPosition = " vk_outer-bgPosition-parallax vk-prlx";
-	} else if (bgPosition === "fixed") {
-		classBgPosition = " vk_outer-bgPosition-fixed";
+	if (bgPosition === 'parallax') {
+		classBgPosition = ' vk_outer-bgPosition-parallax vk-prlx';
+	} else if (bgPosition === 'fixed') {
+		classBgPosition = ' vk_outer-bgPosition-fixed';
 	} else {
-		classBgPosition = " vk_outer-bgPosition-normal";
+		classBgPosition = ' vk_outer-bgPosition-normal';
 	}
 
 	//classPaddingLRのクラス切り替え
-	if (padding_left_and_right === "1") {
-		classPaddingLR = " vk_outer-paddingLR-use";
+	if (padding_left_and_right === '1') {
+		classPaddingLR = ' vk_outer-paddingLR-use';
 	} else {
-		classPaddingLR = " vk_outer-paddingLR-none";
+		classPaddingLR = ' vk_outer-paddingLR-none';
 	}
 
 	//classPaddingVerticalのクラス切り替え
-	if (padding_top_and_bottom === "1") {
-		classPaddingVertical = " vk_outer-paddingVertical-use";
+	if (padding_top_and_bottom === '1') {
+		classPaddingVertical = ' vk_outer-paddingVertical-use';
 	} else {
-		classPaddingVertical = " vk_outer-paddingVertical-none";
+		classPaddingVertical = ' vk_outer-paddingVertical-none';
 	}
 
 	//上側セクションの傾き切り替え
 	if (upper_level) {
-		whichSideUpper = "upper";
+		whichSideUpper = 'upper';
 	}
 
 	//下側セクションの傾き切り替え
 	if (lower_level) {
-		whichSideLower = "lower";
+		whichSideLower = 'lower';
 	}
 
 	//編集画面とサイト上の切り替え
-	if (for_ === "edit") {
+	if (for_ === 'edit') {
 		elm = <InnerBlocks />;
-	} else if ("save") {
+	} else if ('save') {
 		elm = <InnerBlocks.Content />;
-		containerClass = "vk_outer_container";
+		containerClass = 'vk_outer_container';
 	}
 
 	//borderColorクリア時に白をセットする
 	if (!borderColor) {
-		borderColor = "#fff";
+		borderColor = '#fff';
 	}
 
 	//Dividerエフェクトがない時のみ枠線を追加
@@ -90,7 +90,7 @@ export const ComponentV2_1 = (props) => {
 		borderProperty = `${borderWidth}px ${borderStyle} ${borderColor}`;
 		borderRadiusProperty = `${borderRadius}px`;
 	} else {
-		borderProperty = "none";
+		borderProperty = 'none';
 		borderRadiusProperty = `0px`;
 	}
 
@@ -117,8 +117,8 @@ export const ComponentV2_1 = (props) => {
 
 	return (
 		<Fragment>
-			<GenerateMediaqueryCss { ...props } />
-			<OuterBlockInner { ...defaultProps } />
+			<GenerateMediaqueryCss {...props} />
+			<OuterBlockInner {...defaultProps} />
 		</Fragment>
 	);
 };
@@ -133,10 +133,10 @@ const GenerateMediaqueryCss = (props) => {
 		opacity,
 	} = attributes;
 
-	const mobileViewport = "max-width: 575.98px";
-	const tabletViewport = "min-width: 576px";
-	const pcViewport = "min-width: 1200px";
-	const underPcViewport = "max-width: 1199.98px";
+	const mobileViewport = 'max-width: 575.98px';
+	const tabletViewport = 'min-width: 576px';
+	const pcViewport = 'min-width: 1200px';
+	const underPcViewport = 'max-width: 1199.98px';
 
 	let bgColorWOpacity;
 
@@ -145,39 +145,39 @@ const GenerateMediaqueryCss = (props) => {
 		bgColorWOpacity = hex2rgba(bgColor, opacity);
 	} else {
 		//背景色をクリアした時は、白に変更
-		bgColorWOpacity = hex2rgba("#fff", opacity);
+		bgColorWOpacity = hex2rgba('#fff', opacity);
 	}
 
 	//moible only
 	if (bgImageMobile && !bgImageTablet && !bgImage) {
 		return (
-			<style>{ `.vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})}!important;` }</style>
+			<style>{`.vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})}!important;`}</style>
 		);
 	}
 	//tablet only
 	if (!bgImageMobile && bgImageTablet && !bgImage) {
 		return (
-			<style>{ `.vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})}!important;` }</style>
+			<style>{`.vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})}!important;`}</style>
 		);
 	}
 	//pc only
 	if (!bgImageMobile && !bgImageTablet && bgImage) {
 		return (
-			<style>{ `.vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})}!important;` }</style>
+			<style>{`.vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})}!important;`}</style>
 		);
 	}
 	//pc -mobile
 	if (bgImageMobile && !bgImageTablet && bgImage) {
 		return (
 			<style>
-				{ `
+				{`
           @media screen and (${underPcViewport}) {
             .vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})}!important;
           }
           @media screen and (${pcViewport}) {
             .vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})}!important;
           }
-          ` }
+          `}
 			</style>
 		);
 	}
@@ -185,14 +185,14 @@ const GenerateMediaqueryCss = (props) => {
 	if (!bgImageMobile && bgImageTablet && bgImage) {
 		return (
 			<style>
-				{ `
+				{`
           @media screen and (${underPcViewport}) {
             .vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})}!important;
           }
           @media screen and (${pcViewport}) {
             .vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})}!important;
           }
-          ` }
+          `}
 			</style>
 		);
 	}
@@ -200,14 +200,14 @@ const GenerateMediaqueryCss = (props) => {
 	if (bgImageMobile && bgImageTablet && !bgImage) {
 		return (
 			<style>
-				{ `
+				{`
           @media screen and (${mobileViewport}) {
             .vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})}!important;
           }
           @media screen and (${tabletViewport}) {
             .vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})}!important;
           }
-        ` }
+        `}
 			</style>
 		);
 	}
@@ -215,7 +215,7 @@ const GenerateMediaqueryCss = (props) => {
 	if (bgImageMobile && bgImageTablet && bgImage) {
 		return (
 			<style>
-				{ `
+				{`
         @media screen and (${mobileViewport}) {
           .vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})}!important;
         }
@@ -225,14 +225,14 @@ const GenerateMediaqueryCss = (props) => {
         @media screen and (${pcViewport}) {
           .vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})}!important;
         }
-        ` }
+        `}
 			</style>
 		);
 	}
 	//no background image
 	if (!bgImageMobile && !bgImageTablet && !bgImage) {
 		return (
-			<style>{ `.vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity})}!important;` }</style>
+			<style>{`.vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity})}!important;`}</style>
 		);
 	}
 };
@@ -262,36 +262,36 @@ const OuterBlockInner = (props) => {
 	return (
 		<Fragment>
 			<div
-				id={ anchor }
+				id={anchor}
 				className={
-					"vkb-outer-" +
+					'vkb-outer-' +
 					clientId +
-					" " +
+					' ' +
 					className +
-					" vk_outer" +
+					' vk_outer' +
 					classWidth +
 					classPaddingLR +
 					classPaddingVertical +
 					classBgPosition
 				}
-				style={ {
+				style={{
 					border: borderProperty,
 					borderRadius: borderRadiusProperty,
-				} }
+				}}
 			>
-				{ componentDivider(
+				{componentDivider(
 					upper_level,
 					upperDividerBgColor,
 					whichSideUpper,
 					dividerType
-				) }
-				<div className={ containerClass }>{ elm }</div>
-				{ componentDivider(
+				)}
+				<div className={containerClass}>{elm}</div>
+				{componentDivider(
 					lower_level,
 					lowerDividerBgColor,
 					whichSideLower,
 					dividerType
-				) }
+				)}
 			</div>
 		</Fragment>
 	);

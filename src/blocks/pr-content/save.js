@@ -57,13 +57,16 @@ export default function save({ attributes }) {
 					style={{ color: contentColor }}
 				/>
 				{buttonText && (
+					/* eslint react/jsx-no-target-blank: 0 */
 					<div className={btnClass}>
 						<a
 							href={url}
 							className={linkClass}
 							target={buttonTarget ? '_blank' : undefined}
 							style={linkStyle}
-							rel={buttonTarget ? 'noopener' : undefined}
+							rel={
+								buttonTarget ? 'noopener noreferrer' : undefined
+							}
 						>
 							{ReactHtmlParser(iconBefore)}
 							<span className="vk_button_link_txt">

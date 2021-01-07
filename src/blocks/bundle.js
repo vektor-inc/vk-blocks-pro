@@ -12,7 +12,6 @@ import "@vkblocks/extensions/common/hidden-extension";
 import "@vkblocks/extensions/common/highlighter";
 import "@vkblocks/extensions/common/nowrap";
 import "@vkblocks/blocks/staff/block.js";
-import "@vkblocks/blocks/spacer/block.js";
 import "@vkblocks/blocks/heading/block.js";
 import "@vkblocks/blocks/pr-blocks/block.js";
 
@@ -22,8 +21,6 @@ import "@vkblocks/blocks/_pro/icon-card-item/block.js";
 import "@vkblocks/blocks/_pro/icon-card/block.js";
 import "@vkblocks/blocks/_pro/card-item/block.js";
 import "@vkblocks/blocks/_pro/card/block.js";
-import "@vkblocks/blocks/_pro/child-page/block.js";
-import "@vkblocks/blocks/_pro/post-list/block.js";
 import "@vkblocks/blocks/_pro/outer/block.js";
 import "@vkblocks/blocks/_pro/table-of-contents/block.js";
 import "@vkblocks/blocks/_pro/table-of-contents-new/block.js";

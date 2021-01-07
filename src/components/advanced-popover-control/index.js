@@ -1,4 +1,3 @@
-import { __ } from '@wordpress/i18n';
 import { Button, Popover } from '@wordpress/components';
 import { Fragment, createRef, Component } from '@wordpress/element';
 
@@ -10,7 +9,8 @@ export default class AdvancedPopOverControl extends Component {
 	}
 
 	render() {
-		const popverBtnClass = "apc-icon-btn components-button is-secondary is-small";
+		const popverBtnClass =
+			'apc-icon-btn components-button is-secondary is-small';
 
 		const handleOpen = () => {
 			this.setState({ open: !this.state.open });
@@ -35,26 +35,26 @@ export default class AdvancedPopOverControl extends Component {
 				<div className="components-base-control">
 					<div
 						className={
-							"vk-blocks-button-icon-control__wrapper components-base-control__field"
+							'vk-blocks-button-icon-control__wrapper components-base-control__field'
 						}
 					>
 						<Button
 							isTertiary
-							className={ `${popverBtnClass} mb-1` }
-							onClick={ handleOpen }
-							ref={ this.buttonRef }
+							className={`${popverBtnClass} mb-1`}
+							onClick={handleOpen}
+							ref={this.buttonRef}
 						>
-							{ this.props.label }
+							{this.props.label}
 						</Button>
-						{ this.state.open && this.buttonRef.current && (
+						{this.state.open && this.buttonRef.current && (
 							<Popover
-								anchorRect={ this.buttonRef.current.getBoundingClientRect() }
-								children={ this.props.renderComp }
-								onFocusOutside={ handleOnClickOutside }
-								focusOnMount={ "container" }
-								className={ "vk-blocks-advanced-popover-control" }
+								anchorRect={this.buttonRef.current.getBoundingClientRect()}
+								children={this.props.renderComp}
+								onFocusOutside={handleOnClickOutside}
+								focusOnMount={'container'}
+								className={'vk-blocks-advanced-popover-control'}
 							></Popover>
-						) }
+						)}
 					</div>
 				</div>
 			</Fragment>

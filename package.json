@@ -29,6 +29,7 @@
     "lint:border-box": "wp-scripts format-js src/blocks/border-box && wp-scripts lint-js src/blocks/border-box --fix",
 	"lint:advanced-checkbox-control": "wp-scripts format-js src/components/advanced-checkbox-control && wp-scripts lint-js src/components/advanced-checkbox-control --fix",
 	"lint:advanced-media-upload": "wp-scripts format-js src/components/advanced-media-upload && wp-scripts lint-js src/components/advanced-media-upload --fix",
+	"lint:advanced-popover-control": "wp-scripts format-js src/components/advanced-popover-control && wp-scripts lint-js src/components/advanced-popover-control --fix",
 	"lint:utils": "wp-scripts format-js src/utils && wp-scripts lint-js src/utils --fix",
     "fixtures:clean": "rimraf \"test/e2e-tests/fixtures/blocks/*.+(json|serialized.html)\"",
     "fixtures:generate": "cross-env GENERATE_MISSING_FIXTURES=y wp-scripts test-unit-js --config test/jest.config.js test/integration/full-content/full-content.test.js",

@@ -14,6 +14,11 @@ import compareVersions from 'compare-versions';
  * Internal dependencies
  */
 import * as alert from './alert';
+<<<<<<< HEAD
+=======
+import * as button from './button';
+import * as borderBox from './border-box';
+>>>>>>> 1c52eee738b6911a324f82985bd6a7c542688b87
 import * as prContent from './pr-content';
 import * as faq2 from './faq2';
 import * as faq2a from './faq2-a';
@@ -25,16 +30,24 @@ import * as pageContent from './page-content';
 import * as animation from './_pro/animation';
 import * as postList from './_pro/post-list';
 import * as childPage from './_pro/child-page';
+<<<<<<< HEAD
 import * as borderBox from './border-box';
 import * as spacer from './spacer';
 import * as button from './button';
 
+=======
+>>>>>>> 1c52eee738b6911a324f82985bd6a7c542688b87
 
 /**
  * Function to get all the VK Blocks in an array.
  */
 export const __getVKBlocks = () => [
 	alert,
+<<<<<<< HEAD
+=======
+	button,
+	borderBox,
+>>>>>>> 1c52eee738b6911a324f82985bd6a7c542688b87
 	prContent,
 	faq2,
 	faq2a,
@@ -46,9 +59,12 @@ export const __getVKBlocks = () => [
 	animation,
 	postList,
 	childPage,
+<<<<<<< HEAD
 	borderBox,
 	spacer,
 	button
+=======
+>>>>>>> 1c52eee738b6911a324f82985bd6a7c542688b87
 ];
 
 /**

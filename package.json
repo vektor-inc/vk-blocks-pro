@@ -37,6 +37,7 @@
 	"lint:card-align-control": "wp-scripts format-js src/components/card-align-control && wp-scripts lint-js src/components/card-align-control --fix",
 	"lint:column-layout": "wp-scripts format-js src/components/column-layout && wp-scripts lint-js src/components/column-layout --fix",
 	"lint:column-layout-control": "wp-scripts format-js src/components/column-layout-control && wp-scripts lint-js src/components/column-layout-control --fix",
+	"lint:display-items-control": "wp-scripts format-js src/components/display-items-control && wp-scripts lint-js src/components/display-items-control --fix",
 	"lint:utils": "wp-scripts format-js src/utils && wp-scripts lint-js src/utils --fix",
     "fixtures:clean": "rimraf \"test/e2e-tests/fixtures/blocks/*.+(json|serialized.html)\"",
     "fixtures:generate": "cross-env GENERATE_MISSING_FIXTURES=y wp-scripts test-unit-js --config test/jest.config.js test/integration/full-content/full-content.test.js",

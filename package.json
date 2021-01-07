@@ -32,6 +32,7 @@
 	"lint:advanced-popover-control": "wp-scripts format-js src/components/advanced-popover-control && wp-scripts lint-js src/components/advanced-popover-control --fix",
 	"lint:advanced-toggle-control": "wp-scripts format-js src/components/advanced-toggle-control && wp-scripts lint-js src/components/advanced-toggle-control --fix",
 	"lint:advanced-unit-control": "wp-scripts format-js src/components/advanced-unit-control && wp-scripts lint-js src/components/advanced-unit-control --fix",
+	"lint:advanced-viewport-control": "wp-scripts format-js src/components/advanced-viewport-control && wp-scripts lint-js src/components/advanced-viewport-control --fix",
 	"lint:utils": "wp-scripts format-js src/utils && wp-scripts lint-js src/utils --fix",
     "fixtures:clean": "rimraf \"test/e2e-tests/fixtures/blocks/*.+(json|serialized.html)\"",
     "fixtures:generate": "cross-env GENERATE_MISSING_FIXTURES=y wp-scripts test-unit-js --config test/jest.config.js test/integration/full-content/full-content.test.js",

@@ -57,6 +57,7 @@ export default function save({ attributes }) {
 					style={{ color: contentColor }}
 				/>
 				{buttonText && (
+					/* eslint react/jsx-no-target-blank: 0 */
 					<div className={btnClass}>
 						{/* eslint-disable-next-line react/jsx-no-target-blank*/}
 						<a

@@ -1,8 +1,8 @@
 const { Fragment } = wp.element;
 import { componentDivider } from './component-divider';
-import { vkbBlockEditor } from './../../../utils/depModules';
+import { vkbBlockEditor } from '@vkblocks/utils/depModules';
 const { InnerBlocks } = vkbBlockEditor;
-import GenerateBgImage from '../../../utils/GenerateBgImage';
+import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
 
 export const OuterBlock = (props) => {
 	let {

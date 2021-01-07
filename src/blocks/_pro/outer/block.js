@@ -4,16 +4,13 @@
 import { OuterBlock } from './component';
 import { schema } from './schema';
 import { deprecated } from './deprecated';
-import toNumber from '../../../utils/to-number';
-import { AdvancedMediaUpload } from '../../../components/advanced-media-upload';
-import { hiddenNewBlock } from '../../../utils/hiddenNewBlock';
+import toNumber from '@vkblocks/utils/to-number';
+import { AdvancedMediaUpload } from '@vkblocks/components/advanced-media-upload';
+import { hiddenNewBlock } from '@vkblocks/utils/hiddenNewBlock';
 import { ReactComponent as Icon } from './icon.svg';
-
-const inserterVisible = hiddenNewBlock(5.3);
-
-const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
-const {
+import { __ } from '@wordpress/i18n';
+import { registerBlockType } from '@wordpress/blocks';
+import {
 	RangeControl,
 	RadioControl,
 	PanelBody,
@@ -21,21 +18,100 @@ const {
 	SelectControl,
 	ButtonGroup,
 	Button,
-} = wp.components;
-const { Fragment } = wp.element;
-const { InspectorControls, ColorPalette } =
-	wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
+} from '@wordpress/components';
+import { Fragment } from '@wordpress/element';
+import { InspectorControls, ColorPalette } from '@wordpress/block-eEditor';
+
 
 registerBlockType('vk-blocks/outer', {
 	title: __('Outer', 'vk-blocks'),
 	icon: <Icon />,
 	category: 'vk-blocks-cat-layout',
-	attributes: schema,
+	attributes: {
+		bgColor: {
+			type: 'string',
+			default: '#f3f4f5',
+		},
+		defaultBgColor: {
+			type: 'string',
+			default: '#f3f4f5',
+		},
+		bgImage: {
+			type: 'string',
+			default: null,
+		},
+		bgImageTablet: {
+			type: 'string',
+			default: null,
+		},
+		bgImageMobile: {
+			type: 'string',
+			default: null,
+		},
+		outerWidth: {
+			type: 'string',
+			default: 'normal',
+		},
+		bgPosition: {
+			type: 'string',
+			default: 'normal',
+		},
+		padding_left_and_right: {
+			type: 'string',
+			default: '0',
+		},
+		padding_top_and_bottom: {
+			type: 'string',
+			default: '1',
+		},
+		opacity: {
+			type: 'number',
+			default: 0.5,
+		},
+		upper_level: {
+			type: 'number',
+			default: 0,
+		},
+		lower_level: {
+			type: 'number',
+			default: 0,
+		},
+		dividerType: {
+			type: 'string',
+			default: 'tilt',
+		},
+		upperDividerBgColor: {
+			type: 'string',
+			default: '#fff',
+		},
+		lowerDividerBgColor: {
+			type: 'string',
+			default: '#fff',
+		},
+		borderWidth: {
+			type: 'number',
+			default: 0,
+		},
+		borderStyle: {
+			type: 'string',
+			default: 'none',
+		},
+		borderColor: {
+			type: 'string',
+			default: '#000',
+		},
+		borderRadius: {
+			type: 'number',
+			default: 0,
+		},
+		clientId: {
+			type: 'string',
+			default: null,
+		},
+	},
 	supports: {
 		anchor: true,
-		inserter: inserterVisible,
 	},
-
 	edit(props) {
 		const { attributes, setAttributes, className, clientId } = props;
 		const {

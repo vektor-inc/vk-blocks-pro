@@ -1,12 +1,12 @@
 export const hiddenNewBlock = (version) => {
+	if (!Number(version)) {
+		return;
+	}
 
-    if (!Number(version)) {
-        return;
-    }
-
-    let inserterVisible = true;
-    if (version > parseFloat(wpVersion)) {
-        inserterVisible = false
-    }
-    return inserterVisible;
-}
+	let inserterVisible = true;
+	// eslint-disable-next-line no-undef
+	if (version > parseFloat(wpVersion)) {
+		inserterVisible = false;
+	}
+	return inserterVisible;
+};

@@ -1,0 +1,27 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/border-box",
+	"category": "vk-blocks-cat",
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"source": "html",
+			"selector": "h4"
+		},
+		"color": {
+			"type": "string",
+			"default": "red"
+		},
+		"bgColor": {
+			"type": "string",
+			"default": "transparent"
+		},
+		"faIcon": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"className": true
+	}
+}

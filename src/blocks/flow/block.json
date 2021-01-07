@@ -1,0 +1,28 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/flow",
+	"category": "vk-blocks-cat",
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"source": "html",
+			"selector": "dt"
+		},
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": "dd"
+		},
+		"arrowFlag": {
+			"type": "string",
+			"default": "vk_flow-arrow-on"
+		},
+		"insertImage": {
+			"type": "string",
+			"default": null
+		}
+	},
+	"supports": {
+		"className": true
+	}
+}

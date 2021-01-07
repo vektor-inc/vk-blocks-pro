@@ -1,5 +1,5 @@
-const { CheckboxControl } = wp.components;
-const { useState } = wp.element;
+import { CheckboxControl } from '@wordpress/components';
+import { useState } from '@wordpress/element';
 import { destructiveDeleteFromArray } from "../../utils/delete-from-array";
 
 export const AdvancedCheckboxControl = props => {

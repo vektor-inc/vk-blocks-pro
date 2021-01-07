@@ -33,5 +33,5 @@ export const settings = {
 	},
 	edit,
 	save,
-	deprecated
+	deprecated,
 };

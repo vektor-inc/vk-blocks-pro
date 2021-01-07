@@ -257,7 +257,7 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 						style={{ color: contentColor }}
 					/>
 					{buttonText && (
-						// eslint-disable-next-line jsx-no-target-blank
+						// eslint-disable-next-line react/jsx-no-target-blank
 						<div className={btnClass}>
 							<a
 								href={url}

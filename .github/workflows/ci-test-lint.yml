@@ -43,4 +43,4 @@ jobs:
     # 後方互換テスト実行
     - name: Run deprecated test.
       run: |
-          npm run fixtures:regenerate
+          npm run test-unit

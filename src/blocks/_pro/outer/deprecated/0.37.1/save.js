@@ -1,4 +1,4 @@
-import { OuterBlock0371 } from './component.js.js.js';
+import { OuterBlock0371 } from './component';
 
 export default function save(props) {
 	const { attributes } = props;

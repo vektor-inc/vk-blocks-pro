@@ -7,7 +7,8 @@ export default function save({ attributes }) {
 			{...useBlockProps.save({
 				className: `vk_faq [accordion_trigger_switch]`,
 			})}
-		>			<RichText.Content
+		>
+			<RichText.Content
 				tagName="dt"
 				className={'vk_faq_title'}
 				value={heading}

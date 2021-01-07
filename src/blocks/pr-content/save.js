@@ -63,7 +63,9 @@ export default function save({ attributes }) {
 							className={linkClass}
 							target={buttonTarget ? '_blank' : undefined}
 							style={linkStyle}
-							rel={buttonTarget ? 'noopener noreferrer' : undefined}
+							rel={
+								buttonTarget ? 'noreferrer noopener' : undefined
+							}
 						>
 							{ReactHtmlParser(iconBefore)}
 							<span className="vk_button_link_txt">

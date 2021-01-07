@@ -20,15 +20,6 @@ function vk_blocks_pro_get_options( $defaults ) {
 }
 add_filter( 'vk_blocks_default_options', 'vk_blocks_pro_get_options' );
 
-
-function vk_blocks_pro_load_scripts_faq2(){
-}
-function vk_blocks_pro_load_scripts_animation(){
-}
-function vk_blocks_pro_load_scripts_slider(){
-
-}
-
 /**
  * Pro 専用のスクリプトの読み込み
  */

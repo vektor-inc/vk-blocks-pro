@@ -45,6 +45,7 @@ export const __getVKBlocks = () => [
 	postList,
 	childPage,
 	borderBox,
+	spacer
 ];
 
 /**

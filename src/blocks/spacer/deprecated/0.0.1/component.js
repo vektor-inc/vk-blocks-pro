@@ -1,6 +1,6 @@
-import React from 'react';
+import { Component } from '@wordpress/element';
 
-export class SpacerComponent extends React.Component {
+export class SpacerComponent extends Component {
 
     render() {
         const {

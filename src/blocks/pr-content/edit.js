@@ -257,13 +257,13 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 						style={{ color: contentColor }}
 					/>
 					{buttonText && (
+						/* eslint react/jsx-no-target-blank: 0 */
 						<div className={btnClass}>
 							<a
 								href={url}
 								className={linkClass}
 								target={buttonTarget ? '_blank' : undefined}
 								style={linkStyle}
-								// eslint-disable-next-line react/jsx-no-target-blank
 								rel={
 									buttonTarget
 										? 'noopener noreferrer'

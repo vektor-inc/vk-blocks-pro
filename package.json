@@ -29,7 +29,7 @@
     "lint:child-page": "wp-scripts format-js src/blocks/_pro/child-page && wp-scripts lint-js src/blocks/_pro/child-page --fix",
     "lint:border-box": "wp-scripts format-js src/blocks/border-box && wp-scripts lint-js src/blocks/border-box --fix",
     "lint:utils": "wp-scripts format-js src/utils && wp-scripts lint-js src/utils --fix",
-	"fixtures:clean": "rimraf \"test/e2e-tests/fixtures/blocks/*.+(json|serialized.html)\"",
+    "fixtures:clean": "rimraf \"test/e2e-tests/fixtures/blocks/*.+(json|serialized.html)\"",
     "fixtures:generate": "cross-env GENERATE_MISSING_FIXTURES=y wp-scripts test-unit-js --config test/jest.config.js test/integration/full-content/full-content.test.js",
     "fixtures:regenerate": "npm run build && npm run fixtures:clean && npm run fixtures:generate",
     "test-unit": "npm run fixtures:regenerate",

@@ -26,7 +26,7 @@ export default function FAQEdit({ attributes, setAttributes }) {
 	const TEMPLATE = [['core/paragraph', { content }]];
 
 	const blockProps = useBlockProps({
-		className: `vk_faq`,
+		className: `vk_faq [accordion_trigger_switch]`,
 	});
 
 	return (

@@ -57,6 +57,7 @@ export default function save({ attributes }) {
 					style={{ color: contentColor }}
 				/>
 				{buttonText && (
+					// eslint-disable-next-line jsx-no-target-blank
 					<div className={btnClass}>
 						<a
 							href={url}
@@ -64,7 +65,7 @@ export default function save({ attributes }) {
 							target={buttonTarget ? '_blank' : undefined}
 							style={linkStyle}
 							rel={
-								buttonTarget ? 'noreferrer noopener' : undefined
+								buttonTarget ? 'noopener noreferrer' : undefined
 							}
 						>
 							{ReactHtmlParser(iconBefore)}

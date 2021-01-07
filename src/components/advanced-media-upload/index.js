@@ -1,9 +1,8 @@
-const { __ } = wp.i18n; // Import __() from wp.i18n
-const { Button } = wp.components;
-const { Fragment } = wp.element;
-const { MediaUpload } =
-	wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
-const { dispatch } = wp.data;
+import { __ } from '@wordpress/i18n'; // Import __() from wp.i18n
+import { Button } from '@wordpress/components';
+import { Fragment } from '@wordpress/element';
+import { MediaUpload } from '@wordpress/block-editor';
+import { dispatch } from '@wordpress/data';
 import noImage from "../../../inc/vk-blocks/images/no-image.svg";
 
 export const AdvancedMediaUpload = (props) => {

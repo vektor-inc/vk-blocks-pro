@@ -33,7 +33,7 @@ export default function save(props) {
 	let borderRadiusProperty;
 
 	//幅のクラス切り替え
-	const classWidth = ` vk_outer-width-${outerWidth}`;
+	const classWidth = `vk_outer-width-${outerWidth}`;
 
 	//classBgPositionのクラス切り替え
 	if (bgPosition === 'parallax') {

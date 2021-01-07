@@ -3,7 +3,7 @@
  */
 import { OuterBlock } from './component';
 import { schema } from './schema';
-import { deprecated } from './deprecated/block';
+import { deprecated } from './deprecated';
 import toNumber from '../../../utils/to-number';
 import { AdvancedMediaUpload } from '../../../components/advanced-media-upload';
 import { hiddenNewBlock } from '../../../utils/hiddenNewBlock';

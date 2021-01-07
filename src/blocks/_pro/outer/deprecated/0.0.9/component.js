@@ -1,16 +1,19 @@
-const { Fragment } = wp.element;
-import { componentDivider } from './component-divider';
-import { vkbBlockEditor } from '../../../../utils/depModules';
-const { InnerBlocks } = vkbBlockEditor;
-import hex2rgba from '../../../../utils/hex-to-rgba';
+import { componentDivider } from '../0.37.1/component-divider';
+import { InnerBlocks } from '@wordpress/block-editor';
+import { Fragment } from '@wordpress/element';
+import hex2rgba from '@vkblocks/utils/hex-to-rgba';
 
-export const OuterBlock0_37_1 = (props) => {
-	const {
+export const componentV2 = (props) => {
+	let {
 		bgPosition,
 		outerWidth,
+		// eslint-disable-next-line camelcase
 		padding_left_and_right,
+		// eslint-disable-next-line camelcase
 		padding_top_and_bottom,
+		// eslint-disable-next-line camelcase
 		upper_level,
+		// eslint-disable-next-line camelcase
 		lower_level,
 		upperDividerBgColor,
 		lowerDividerBgColor,
@@ -37,6 +40,7 @@ export const OuterBlock0_37_1 = (props) => {
 	let borderRadiusProperty;
 
 	//幅のクラス切り替え
+	// eslint-disable-next-line prefer-const
 	classWidth = ` vk_outer-width-${outerWidth}`;
 
 	//classBgPositionのクラス切り替え
@@ -49,17 +53,15 @@ export const OuterBlock0_37_1 = (props) => {
 	}
 
 	//classPaddingLRのクラス切り替え
-	classPaddingLR = '';
-	if (padding_left_and_right === '0') {
-		classPaddingLR = ' vk_outer-paddingLR-none';
-	} else if (padding_left_and_right === '1') {
+	// eslint-disable-next-line camelcase
+	if (padding_left_and_right === '1') {
 		classPaddingLR = ' vk_outer-paddingLR-use';
-	} else if (padding_left_and_right === '2') {
-		// Fit to content area width
-		classPaddingLR = ' vk_outer-paddingLR-zero';
+	} else {
+		classPaddingLR = ' vk_outer-paddingLR-none';
 	}
 
 	//classPaddingVerticalのクラス切り替え
+	// eslint-disable-next-line camelcase
 	if (padding_top_and_bottom === '1') {
 		classPaddingVertical = ' vk_outer-paddingVertical-use';
 	} else {
@@ -67,11 +69,13 @@ export const OuterBlock0_37_1 = (props) => {
 	}
 
 	//上側セクションの傾き切り替え
+	// eslint-disable-next-line camelcase
 	if (upper_level) {
 		whichSideUpper = 'upper';
 	}
 
 	//下側セクションの傾き切り替え
+	// eslint-disable-next-line camelcase
 	if (lower_level) {
 		whichSideLower = 'lower';
 	}
@@ -90,6 +94,7 @@ export const OuterBlock0_37_1 = (props) => {
 	}
 
 	//Dividerエフェクトがない時のみ枠線を追加
+	// eslint-disable-next-line camelcase
 	if (upper_level === 0 && lower_level === 0) {
 		borderProperty = `${borderWidth}px ${borderStyle} ${borderColor}`;
 		borderRadiusProperty = `${borderRadius}px`;
@@ -120,27 +125,10 @@ export const OuterBlock0_37_1 = (props) => {
 	};
 
 	return (
-		<div
-			id={anchor}
-			className={
-				'vkb-outer-' +
-				clientId +
-				' ' +
-				className +
-				' vk_outer' +
-				classWidth +
-				classPaddingLR +
-				classPaddingVertical +
-				classBgPosition
-			}
-			style={{
-				border: borderProperty,
-				borderRadius: borderRadiusProperty,
-			}}
-		>
+		<Fragment>
 			<GenerateMediaqueryCss {...props} />
 			<OuterBlockInner {...defaultProps} />
-		</div>
+		</Fragment>
 	);
 };
 
@@ -260,12 +248,23 @@ const GenerateMediaqueryCss = (props) => {
 
 const OuterBlockInner = (props) => {
 	const {
+		clientId,
+		anchor,
+		className,
+		classWidth,
+		classPaddingLR,
+		classPaddingVertical,
+		classBgPosition,
+		borderProperty,
+		borderRadiusProperty,
+		// eslint-disable-next-line camelcase
 		upper_level,
 		upperDividerBgColor,
 		whichSideUpper,
 		dividerType,
 		containerClass,
 		elm,
+		// eslint-disable-next-line camelcase
 		lower_level,
 		lowerDividerBgColor,
 		whichSideLower,
@@ -273,7 +272,24 @@ const OuterBlockInner = (props) => {
 
 	return (
 		<Fragment>
-			<div>
+			<div
+				id={anchor}
+				className={
+					'vkb-outer-' +
+					clientId +
+					' ' +
+					className +
+					' vk_outer' +
+					classWidth +
+					classPaddingLR +
+					classPaddingVertical +
+					classBgPosition
+				}
+				style={{
+					border: borderProperty,
+					borderRadius: borderRadiusProperty,
+				}}
+			>
 				{componentDivider(
 					upper_level,
 					upperDividerBgColor,

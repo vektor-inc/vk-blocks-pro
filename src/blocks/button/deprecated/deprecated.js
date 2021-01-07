@@ -17,6 +17,7 @@ const { RichText } = vkbBlockEditor;
 export const deprecated = [
 	{
 		attributes:Schema0600,
+		// 1系に要追加
 		save:VKBButton0600
 	},
 	{

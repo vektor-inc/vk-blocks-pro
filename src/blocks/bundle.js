@@ -23,7 +23,6 @@ import "@vkblocks/blocks/_pro/icon-card-item/block.js";
 import "@vkblocks/blocks/_pro/icon-card/block.js";
 import "@vkblocks/blocks/_pro/card-item/block.js";
 import "@vkblocks/blocks/_pro/card/block.js";
-import "@vkblocks/blocks/_pro/outer/block.js";
 import "@vkblocks/blocks/_pro/table-of-contents/block.js";
 import "@vkblocks/blocks/_pro/table-of-contents-new/block.js";
 import "@vkblocks/blocks/_pro/step-item/block.js";

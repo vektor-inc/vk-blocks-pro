@@ -58,6 +58,7 @@ export default function save({ attributes }) {
 				/>
 				{buttonText && (
 					<div className={btnClass}>
+						{/* eslint-disable-next-line react/jsx-no-target-blank*/}
 						<a
 							href={url}
 							className={linkClass}

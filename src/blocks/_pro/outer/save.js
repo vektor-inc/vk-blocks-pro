@@ -1,11 +1,10 @@
-const { Fragment } = wp.element;
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { componentDivider } from './component-divider';
-import { vkbBlockEditor } from '@vkblocks/utils/depModules';
-const { InnerBlocks } = vkbBlockEditor;
 import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
 
-export const OuterBlock = (props) => {
-	let {
+export default function save(props) {
+	const { attributes, clientId } = props;
+	const {
 		bgPosition,
 		outerWidth,
 		// eslint-disable-next-line camelcase
@@ -23,26 +22,18 @@ export const OuterBlock = (props) => {
 		borderStyle,
 		borderColor,
 		borderRadius,
-		anchor,
-	} = props.attributes;
+	} = attributes;
 
-	const { clientId } = props;
-	const className = props.className;
-	const for_ = props.for_;
 	let classPaddingLR;
 	let classPaddingVertical;
 	let classBgPosition;
-	let classWidth;
-	let elm;
-	let containerClass;
 	let whichSideUpper;
 	let whichSideLower;
 	let borderProperty;
 	let borderRadiusProperty;
 
 	//幅のクラス切り替え
-	// eslint-disable-next-line prefer-const
-	classWidth = ` vk_outer-width-${outerWidth}`;
+	const classWidth = ` vk_outer-width-${outerWidth}`;
 
 	//classBgPositionのクラス切り替え
 	if (bgPosition === 'parallax') {
@@ -90,17 +81,7 @@ export const OuterBlock = (props) => {
 	}
 
 	//編集画面とサイト上の切り替え
-	if (for_ === 'edit') {
-		elm = <InnerBlocks />;
-	} else if ('save') {
-		elm = <InnerBlocks.Content />;
-		containerClass = 'vk_outer_container';
-	}
-
-	//borderColorクリア時に白をセットする
-	if (!borderColor) {
-		borderColor = '#fff';
-	}
+	const containerClass = 'vk_outer_container';
 
 	//Dividerエフェクトがない時のみ枠線を追加
 	// eslint-disable-next-line camelcase
@@ -112,69 +93,18 @@ export const OuterBlock = (props) => {
 		borderRadiusProperty = `0px`;
 	}
 
-	const defaultProps = {
-		clientId,
-		anchor,
-		className,
-		classWidth,
-		classPaddingLR,
-		classPaddingVertical,
-		classBgPosition,
-		borderProperty,
-		borderRadiusProperty,
-		upper_level,
-		upperDividerBgColor,
-		whichSideUpper,
-		dividerType,
-		containerClass,
-		elm,
-		lower_level,
-		lowerDividerBgColor,
-		whichSideLower,
-	};
-
+	const blockProps = useBlockProps.save({
+		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
+	});
 	return (
 		<div
-			id={anchor}
-			className={
-				'vkb-outer-' +
-				clientId +
-				' ' +
-				className +
-				' vk_outer' +
-				classWidth +
-				classPaddingLR +
-				classPaddingVertical +
-				classBgPosition
-			}
+			{...blockProps}
 			style={{
 				border: borderProperty,
 				borderRadius: borderRadiusProperty,
 			}}
 		>
 			<GenerateBgImage prefix={'vkb-outer'} {...props} />
-			<OuterBlockInner {...defaultProps} />
-		</div>
-	);
-};
-
-const OuterBlockInner = (props) => {
-	const {
-		// eslint-disable-next-line camelcase
-		upper_level,
-		upperDividerBgColor,
-		whichSideUpper,
-		dividerType,
-		containerClass,
-		elm,
-		// eslint-disable-next-line camelcase
-		lower_level,
-		lowerDividerBgColor,
-		whichSideLower,
-	} = props;
-
-	return (
-		<Fragment>
 			<div>
 				{componentDivider(
 					upper_level,
@@ -182,7 +112,9 @@ const OuterBlockInner = (props) => {
 					whichSideUpper,
 					dividerType
 				)}
-				<div className={containerClass}>{elm}</div>
+				<div className={containerClass}>
+					<InnerBlocks.Content />
+				</div>
 				{componentDivider(
 					lower_level,
 					lowerDividerBgColor,
@@ -190,6 +122,6 @@ const OuterBlockInner = (props) => {
 					dividerType
 				)}
 			</div>
-		</Fragment>
+		</div>
 	);
-};
+}

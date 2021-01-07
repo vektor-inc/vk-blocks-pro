@@ -43,10 +43,14 @@ registerBlockType('vk-blocks/outer', {
 			defaultBgColor,
 			bgPosition,
 			outerWidth,
+			// eslint-disable-next-line camelcase
 			padding_left_and_right,
+			// eslint-disable-next-line camelcase
 			padding_top_and_bottom,
 			opacity,
+			// eslint-disable-next-line camelcase
 			upper_level,
+			// eslint-disable-next-line camelcase
 			lower_level,
 			upperDividerBgColor,
 			lowerDividerBgColor,
@@ -59,7 +63,7 @@ registerBlockType('vk-blocks/outer', {
 
 		//save clientId for using in Class.
 		setAttributes({ clientId });
-
+		// eslint-disable-next-line no-shadow
 		const setColorIfUndefined = (bgColor) => {
 			if (bgColor === undefined) {
 				bgColor = defaultBgColor;
@@ -67,6 +71,7 @@ registerBlockType('vk-blocks/outer', {
 			return bgColor;
 		};
 
+		// eslint-disable-next-line no-shadow
 		const setBgColor = (bgColor) => {
 			bgColor = setColorIfUndefined(bgColor);
 			setAttributes({ bgColor });
@@ -80,6 +85,7 @@ registerBlockType('vk-blocks/outer', {
 						initialOpen={false}
 					>
 						<BaseControl
+							id={`vk_outer-colorSetting`}
 							label={__('Color Setting', 'vk-blocks')}
 							help={__(
 								'Color will overcome background image. If you want to display image, clear background color or set opacity 0.',
@@ -91,7 +97,10 @@ registerBlockType('vk-blocks/outer', {
 								onChange={(value) => setBgColor(value)}
 							/>
 						</BaseControl>
-						<BaseControl label={__('Opacity Setting', 'vk-blocks')}>
+						<BaseControl
+							label={__('Opacity Setting', 'vk-blocks')}
+							id={`vk_outer-opacitySetting`}
+						>
 							<RangeControl
 								value={opacity}
 								onChange={(value) => {
@@ -105,6 +114,7 @@ registerBlockType('vk-blocks/outer', {
 						<BaseControl
 							label={__('Background Image PC', 'vk-blocks')}
 							className={'vk_outer_sidebar_bgImage'}
+							id={`vk_outer-bgImagePC`}
 						>
 							<div
 								className={
@@ -120,6 +130,7 @@ registerBlockType('vk-blocks/outer', {
 						<BaseControl
 							label={__('Background Image Tablet', 'vk-blocks')}
 							className={'vk_outer_sidebar_bgImage'}
+							id={`vk_outer-bgImageTablet`}
 						>
 							<AdvancedMediaUpload
 								schema={'bgImageTablet'}
@@ -129,6 +140,7 @@ registerBlockType('vk-blocks/outer', {
 						<BaseControl
 							label={__('Background Image Mobile', 'vk-blocks')}
 							className={'vk_outer_sidebar_bgImage'}
+							id={`vk_outer-bgImageMobile`}
 						>
 							<AdvancedMediaUpload
 								schema={'bgImageMobile'}
@@ -138,6 +150,7 @@ registerBlockType('vk-blocks/outer', {
 						<BaseControl
 							label={__('Background image Position', 'vk-blocks')}
 							help=""
+							id={`vk_outer-bgPosition`}
 						>
 							<RadioControl
 								selected={bgPosition}
@@ -176,10 +189,11 @@ registerBlockType('vk-blocks/outer', {
 						title={__('Layout Setting', 'vk-blocks')}
 						initialOpen={false}
 					>
-						<p className={'mb-1'}>
-							<label>{__('Width', 'vk-blocks')}</label>
-						</p>
-						<BaseControl>
+						<BaseControl
+							label={__('Width', 'vk-blocks')}
+							className={'vk_outer_sidebar_bgImage'}
+							id={`vk_outer-width`}
+						>
 							<ButtonGroup className="mb-3">
 								<Button
 									isSmall
@@ -208,6 +222,7 @@ registerBlockType('vk-blocks/outer', {
 									'Padding (Left and Right)',
 									'vk-blocks'
 								)}
+								// eslint-disable-next-line camelcase
 								selected={padding_left_and_right}
 								options={[
 									{
@@ -244,6 +259,7 @@ registerBlockType('vk-blocks/outer', {
 									'vk-blocks'
 								)}
 								className={'mb-1'}
+								// eslint-disable-next-line camelcase
 								selected={padding_top_and_bottom}
 								options={[
 									{
@@ -308,11 +324,14 @@ registerBlockType('vk-blocks/outer', {
 						</BaseControl>
 						<BaseControl
 							label={__('Upper Divider Level', 'vk-blocks')}
+							id={`vk_outer-upperDividerLevel`}
 						>
 							<RangeControl
+								// eslint-disable-next-line camelcase
 								value={upper_level}
 								onChange={(value) =>
 									setAttributes({
+										// eslint-disable-next-line camelcase
 										upper_level: toNumber(value, -100, 100),
 									})
 								}
@@ -332,11 +351,14 @@ registerBlockType('vk-blocks/outer', {
 						</BaseControl>
 						<BaseControl
 							label={__('Lower Divider Level', 'vk-blocks')}
+							id={`vk_outer-lowerDividerLevel`}
 						>
 							<RangeControl
+								// eslint-disable-next-line camelcase
 								value={lower_level}
 								onChange={(value) =>
 									setAttributes({
+										// eslint-disable-next-line camelcase
 										lower_level: toNumber(value, -100, 100),
 									})
 								}
@@ -420,7 +442,10 @@ registerBlockType('vk-blocks/outer', {
 								}
 							/>
 						</BaseControl>
-						<BaseControl label={__('Border width', 'vk-blocks')}>
+						<BaseControl
+							label={__('Border width', 'vk-blocks')}
+							id={`vk_outer-borderWidth`}
+						>
 							<RangeControl
 								value={borderWidth}
 								onChange={(value) =>
@@ -429,7 +454,10 @@ registerBlockType('vk-blocks/outer', {
 								min="0"
 							/>
 						</BaseControl>
-						<BaseControl label={__('Border radius', 'vk-blocks')}>
+						<BaseControl
+							label={__('Border radius', 'vk-blocks')}
+							id={`vk_outer-borderRadius`}
+						>
 							<RangeControl
 								value={borderRadius}
 								onChange={(value) =>

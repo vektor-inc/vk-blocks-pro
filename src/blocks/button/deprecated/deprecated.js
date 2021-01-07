@@ -8,11 +8,17 @@ import Schema0410 from "./0.41.0/schema"
 import VKBButton0410 from "./0.41.0/block"
 import Schema0591 from "./0.59.1/schema"
 import VKBButton0591 from "./0.59.1/block"
+import Schema0600 from "./0.60.0/schema"
+import VKBButton0600 from "./0.60.0/block"
 
 import { vkbBlockEditor } from "./../../_helper/depModules";
 const { RichText } = vkbBlockEditor;
 
 export const deprecated = [
+	{
+		attributes:Schema0600,
+		save:VKBButton0600
+	},
 	{
 		attributes:Schema0591,
 		save:VKBButton0591

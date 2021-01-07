@@ -22,15 +22,11 @@ add_filter( 'vk_blocks_default_options', 'vk_blocks_pro_get_options' );
 
 
 function vk_blocks_pro_load_scripts_faq2(){
-	wp_enqueue_script( 'vk-blocks-faq2', VK_BLOCKS_URL . 'build/faq2.min.js', array(), VK_BLOCKS_VERSION, true );
 }
 function vk_blocks_pro_load_scripts_animation(){
-	wp_enqueue_script( 'vk-blocks-animation', VK_BLOCKS_URL . 'build/vk-animation.min.js', array(), VK_BLOCKS_VERSION, true );
 }
 function vk_blocks_pro_load_scripts_slider(){
-	wp_enqueue_style( 'vk-blocks-swiper', VK_BLOCKS_URL . 'build/swiper.min.css', array(), VK_BLOCKS_VERSION );
-	wp_enqueue_script( 'vk-blocks-swiper', VK_BLOCKS_URL . 'build/swiper.min.js', array(), VK_BLOCKS_VERSION, true );
-	wp_enqueue_script( 'vk-blocks-slider', VK_BLOCKS_URL . 'build/vk-slider.min.js', array( 'vk-blocks-swiper' ), VK_BLOCKS_VERSION, true );
+
 }
 
 /**
@@ -38,30 +34,18 @@ function vk_blocks_pro_load_scripts_slider(){
  */
 function vk_blocks_pro_load_scripts() {
 
-	// フロントページが投稿一覧の場合はpostIDを取得できないので、強制読み込み。
-	// TODO: 速度改善のためにウィジェットの有無で読み込む
-	if(is_front_page() && is_home() ){
+	// has_blockで、ウィジェッ内のブロックが判別できないので、常時読み込みに変更。
+	// TODO: 高速化のために、各ウィジェットの有効化を is_active_widget で判定し読み込み切り替える実装の余地あり。
 
-		vk_blocks_pro_load_scripts_faq2();
-		vk_blocks_pro_load_scripts_animation();
-		vk_blocks_pro_load_scripts_slider();
+	// Faq Block
+	wp_enqueue_script( 'vk-blocks-faq2', VK_BLOCKS_URL . 'build/faq2.min.js', array(), VK_BLOCKS_VERSION, true );
 
-	}else{
+	// Animation Block
+	wp_enqueue_script( 'vk-blocks-animation', VK_BLOCKS_URL . 'build/vk-animation.min.js', array(), VK_BLOCKS_VERSION, true );
 
-		$current_post_id = get_the_ID();
-
-		if ( has_block( 'vk-blocks/faq2', $current_post_id ) || has_block( 'vk-blocks/faq', $current_post_id ) ) {
-			vk_blocks_pro_load_scripts_faq2();
-		}
-
-		if ( has_block( 'vk-blocks/animation', $current_post_id ) ) {
-			vk_blocks_pro_load_scripts_animation();
-		}
-
-		if ( has_block( 'vk-blocks/slider', $current_post_id ) ) {
-			vk_blocks_pro_load_scripts_slider();
-		}
-	}
-
+	// Slider Block
+	wp_enqueue_style( 'vk-blocks-swiper', VK_BLOCKS_URL . 'build/swiper.min.css', array(), VK_BLOCKS_VERSION );
+	wp_enqueue_script( 'vk-blocks-swiper', VK_BLOCKS_URL . 'build/swiper.min.js', array(), VK_BLOCKS_VERSION, true );
+	wp_enqueue_script( 'vk-blocks-slider', VK_BLOCKS_URL . 'build/vk-slider.min.js', array( 'vk-blocks-swiper' ), VK_BLOCKS_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'vk_blocks_pro_load_scripts' );

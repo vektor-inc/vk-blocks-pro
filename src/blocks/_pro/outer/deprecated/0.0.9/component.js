@@ -3,7 +3,7 @@ import { InnerBlocks } from '@wordpress/block-editor';
 import { Fragment } from '@wordpress/element';
 import hex2rgba from '@vkblocks/utils/hex-to-rgba';
 
-export const componentV2 = (props) => {
+export const ComponentV2 = (props) => {
 	let {
 		bgPosition,
 		outerWidth,

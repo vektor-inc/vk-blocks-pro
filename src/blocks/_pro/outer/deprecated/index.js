@@ -9,6 +9,7 @@ import save007 from './0.0.7/save';
 import save008 from './0.0.8/save';
 import save009 from './0.0.9/save';
 import save0371 from './0.37.1/save';
+import save0600 from './0.60.0/save';
 
 const blockAttributes = {
 	bgColor: {
@@ -79,6 +80,28 @@ const blockAttributes = {
 
 export const deprecated = [
 	//ブロックテンプレート用のdeprecated
+	{
+		attributes: {
+			...blockAttributes,
+			defaultBgColor: {
+				type: 'string',
+				default: '#f3f4f5',
+			},
+			bgImageTablet: {
+				type: 'string',
+				default: null,
+			},
+			bgImageMobile: {
+				type: 'string',
+				default: null,
+			},
+			clientId: {
+				type: 'string',
+				default: null,
+			},
+		},
+		save0600,
+	},
 	{
 		attributes: {
 			...blockAttributes,

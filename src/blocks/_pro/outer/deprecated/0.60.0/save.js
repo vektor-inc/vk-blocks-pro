@@ -1,12 +1,11 @@
-import { ComponentV2 } from './component.js';
+import { OuterBlock } from './component';
 
 export default function save(props) {
-	const { attributes, className } = props;
+	const { attributes } = props;
 	return (
-		<ComponentV2
+		<OuterBlock
 			clientId={attributes.clientId}
 			attributes={attributes}
-			className={className}
 			for_={'save'}
 		/>
 	);

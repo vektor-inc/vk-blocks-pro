@@ -1,10 +1,10 @@
+const { Fragment } = wp.element;
 import { componentDivider } from './component-divider';
-import { InnerBlocks } from '@wordpress/block-editor';
-import { Fragment } from '@wordpress/element';
-import hex2rgba from '@vkblocks/utils/hex-to-rgba';
+import { vkbBlockEditor } from './../../../utils/depModules';
+const { InnerBlocks } = vkbBlockEditor;
+import GenerateBgImage from '../../../utils/GenerateBgImage';
 
-// eslint-disable-next-line camelcase
-export const OuterBlock0371 = (props) => {
+export const OuterBlock = (props) => {
 	let {
 		bgPosition,
 		outerWidth,
@@ -49,6 +49,8 @@ export const OuterBlock0371 = (props) => {
 		classBgPosition = ' vk_outer-bgPosition-parallax vk-prlx';
 	} else if (bgPosition === 'fixed') {
 		classBgPosition = ' vk_outer-bgPosition-fixed';
+	} else if (bgPosition === 'repeat') {
+		classBgPosition = ' vk_outer-bgPosition-repeat';
 	} else {
 		classBgPosition = ' vk_outer-bgPosition-normal';
 	}
@@ -120,14 +122,12 @@ export const OuterBlock0371 = (props) => {
 		classBgPosition,
 		borderProperty,
 		borderRadiusProperty,
-		// eslint-disable-next-line camelcase
 		upper_level,
 		upperDividerBgColor,
 		whichSideUpper,
 		dividerType,
 		containerClass,
 		elm,
-		// eslint-disable-next-line camelcase
 		lower_level,
 		lowerDividerBgColor,
 		whichSideLower,
@@ -152,124 +152,10 @@ export const OuterBlock0371 = (props) => {
 				borderRadius: borderRadiusProperty,
 			}}
 		>
-			<GenerateMediaqueryCss {...props} />
+			<GenerateBgImage prefix={'vkb-outer'} {...props} />
 			<OuterBlockInner {...defaultProps} />
 		</div>
 	);
-};
-
-const GenerateMediaqueryCss = (props) => {
-	const { attributes, clientId } = props;
-	const {
-		bgImageMobile,
-		bgImageTablet,
-		bgImage,
-		bgColor,
-		opacity,
-	} = attributes;
-
-	const mobileViewport = 'max-width: 575.98px';
-	const tabletViewport = 'min-width: 576px';
-	const pcViewport = 'min-width: 1200px';
-	const underPcViewport = 'max-width: 1199.98px';
-
-	let bgColorWOpacity;
-
-	//hexからrgbaに変換
-	if (bgColor) {
-		bgColorWOpacity = hex2rgba(bgColor, opacity);
-	} else {
-		//背景色をクリアした時は、白に変更
-		bgColorWOpacity = hex2rgba('#fff', opacity);
-	}
-
-	//moible only
-	if (bgImageMobile && !bgImageTablet && !bgImage) {
-		return (
-			<style>{`.vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})}!important;`}</style>
-		);
-	}
-	//tablet only
-	if (!bgImageMobile && bgImageTablet && !bgImage) {
-		return (
-			<style>{`.vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})}!important;`}</style>
-		);
-	}
-	//pc only
-	if (!bgImageMobile && !bgImageTablet && bgImage) {
-		return (
-			<style>{`.vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})}!important;`}</style>
-		);
-	}
-	//pc -mobile
-	if (bgImageMobile && !bgImageTablet && bgImage) {
-		return (
-			<style>
-				{`
-          @media screen and (${underPcViewport}) {
-            .vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})}!important;
-          }
-          @media screen and (${pcViewport}) {
-            .vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})}!important;
-          }
-          `}
-			</style>
-		);
-	}
-	//pc -tablet
-	if (!bgImageMobile && bgImageTablet && bgImage) {
-		return (
-			<style>
-				{`
-          @media screen and (${underPcViewport}) {
-            .vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})}!important;
-          }
-          @media screen and (${pcViewport}) {
-            .vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})}!important;
-          }
-          `}
-			</style>
-		);
-	}
-	//tablet - mobile
-	if (bgImageMobile && bgImageTablet && !bgImage) {
-		return (
-			<style>
-				{`
-          @media screen and (${mobileViewport}) {
-            .vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})}!important;
-          }
-          @media screen and (${tabletViewport}) {
-            .vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})}!important;
-          }
-        `}
-			</style>
-		);
-	}
-	//pc -tablet - mobile
-	if (bgImageMobile && bgImageTablet && bgImage) {
-		return (
-			<style>
-				{`
-        @media screen and (${mobileViewport}) {
-          .vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile})}!important;
-        }
-        @media screen and (${tabletViewport}) {
-          .vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet})}!important;
-        }
-        @media screen and (${pcViewport}) {
-          .vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage})}!important;
-        }
-        `}
-			</style>
-		);
-	}
-	//no background image
-	if (!bgImageMobile && !bgImageTablet && !bgImage) {
-		return (
-			<style>{`.vkb-outer-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity})}!important;`}</style>
-		);
-	}
 };
 
 const OuterBlockInner = (props) => {

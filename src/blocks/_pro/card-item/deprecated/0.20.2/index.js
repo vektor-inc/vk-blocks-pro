@@ -1,11 +1,11 @@
-import { Component } from "./component";
-import { schema } from "./schema";
+import { Component } from './component';
+import { schema } from './schema';
 
 const Save = (props) => {
-    return <Component value={props} for_={"save"} />;
-}
+	return <Component value={props} for_={'save'} />;
+};
 
 export default {
-	attributes:schema,
-	save:Save
-}
+	attributes: schema,
+	save: Save,
+};

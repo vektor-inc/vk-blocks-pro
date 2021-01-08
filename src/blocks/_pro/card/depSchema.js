@@ -1,231 +1,223 @@
 export const schema0_37_4 = {
-  postId: {
-    type: "number",
-  },
-  name: {
-    type: "string",
-    default: "",
-  },
-  layout: {
-    type: "string",
-    default: "card",
-  },
-  col_xs: {
-    type: "number",
-    default: 1,
-  },
-  col_sm: {
-    type: "number",
-    default: 2,
-  },
-  col_md: {
-    type: "number",
-    default: 3,
-  },
-  col_lg: {
-    type: "number",
-    default: 3,
-  },
-  col_xl: {
-    type: "number",
-    default: 3,
-　},
-　col_xxl: {
-	type: "number",
-	default: 3,
-　},
- display_title: {
-	 type: "boolean",
-	 default: true,
- },
- display_excerpt: {
-    type: "boolean",
-    default: true,
-  },
-  display_image: {
-    type: "boolean",
-    default: true,
-  },
-  display_image_overlay_term: {
-    type: "boolean",
-    default: true,
-  },
-  display_excerpt: {
-    type: "boolean",
-    default: true,
-  },
-  display_date: {
-    type: "boolean",
-    default: false,
-  },
-  display_new: {
-    type: "boolean",
-    default: true,
-  },
-  display_btn: {
-    type: "boolean",
-    default: true,
-  },
-  new_date: {
-    type: "number",
-    default: 7,
-  },
-  new_text: {
-    type: "string",
-    default: "New!!",
-  },
-  btn_text: {
-    type: "string",
-    default: "Read more",
-  },
-  btn_align: {
-    type: "string",
-    default: "text-right",
-  },
-  numberPosts: {
-    type: "number",
-    default: 6,
-  },
-  isCheckedPostType: {
-    type: "string",
-    default: '["post"]',
-  },
-  coreTerms: {
-    type: "string",
-    default: "[]",
-  },
-  isCheckedTerms: {
-    type: "string",
-    default: "{}",
-  },
-  activeControl: {
-    type: "string",
-    default: '{"title": "left", "text":"left" ,"button":"right"}',
-  },
+	postId: {
+		type: 'number',
+	},
+	name: {
+		type: 'string',
+		default: '',
+	},
+	layout: {
+		type: 'string',
+		default: 'card',
+	},
+	col_xs: {
+		type: 'number',
+		default: 1,
+	},
+	col_sm: {
+		type: 'number',
+		default: 2,
+	},
+	col_md: {
+		type: 'number',
+		default: 3,
+	},
+	col_lg: {
+		type: 'number',
+		default: 3,
+	},
+	col_xl: {
+		type: 'number',
+		default: 3,
+	},
+	col_xxl: {
+		type: 'number',
+		default: 3,
+	},
+	display_title: {
+		type: 'boolean',
+		default: true,
+	},
+	display_excerpt: {
+		type: 'boolean',
+		default: true,
+	},
+	display_image: {
+		type: 'boolean',
+		default: true,
+	},
+	display_image_overlay_term: {
+		type: 'boolean',
+		default: true,
+	},
+	display_date: {
+		type: 'boolean',
+		default: false,
+	},
+	display_new: {
+		type: 'boolean',
+		default: true,
+	},
+	display_btn: {
+		type: 'boolean',
+		default: true,
+	},
+	new_date: {
+		type: 'number',
+		default: 7,
+	},
+	new_text: {
+		type: 'string',
+		default: 'New!!',
+	},
+	btn_text: {
+		type: 'string',
+		default: 'Read more',
+	},
+	btn_align: {
+		type: 'string',
+		default: 'text-right',
+	},
+	numberPosts: {
+		type: 'number',
+		default: 6,
+	},
+	isCheckedPostType: {
+		type: 'string',
+		default: '["post"]',
+	},
+	coreTerms: {
+		type: 'string',
+		default: '[]',
+	},
+	isCheckedTerms: {
+		type: 'string',
+		default: '{}',
+	},
+	activeControl: {
+		type: 'string',
+		default: '{"title": "left", "text":"left" ,"button":"right"}',
+	},
 };
 
 export const schema0_40_0 = {
 	postId: {
-	  type: "number",
+		type: 'number',
 	},
 	name: {
-	  type: "string",
-	  default: "",
+		type: 'string',
+		default: '',
 	},
 	layout: {
-	  type: "string",
-	  default: "card",
+		type: 'string',
+		default: 'card',
 	},
 	col_xs: {
-	  type: "number",
-	  default: 1,
+		type: 'number',
+		default: 1,
 	},
 	col_sm: {
-	  type: "number",
-	  default: 2,
+		type: 'number',
+		default: 2,
 	},
 	col_md: {
-	  type: "number",
-	  default: 3,
+		type: 'number',
+		default: 3,
 	},
 	col_lg: {
-	  type: "number",
-	  default: 3,
+		type: 'number',
+		default: 3,
 	},
 	col_xl: {
-	  type: "number",
-	  default: 3,
-	  },
-	  col_xxl: {
-		type: "number",
+		type: 'number',
 		default: 3,
-	　},
-	  display_title: {
-	  type: "boolean",
-	  default: true,
-	  },
-	  display_excerpt: {
-	  type: "boolean",
-	  default: true,
 	},
-	display_image: {
-	  type: "boolean",
-	  default: true,
+	col_xxl: {
+		type: 'number',
+		default: 3,
 	},
-	display_image_overlay_term: {
-	  type: "boolean",
-	  default: true,
+	display_title: {
+		type: 'boolean',
+		default: true,
 	},
 	display_excerpt: {
-	  type: "boolean",
-	  default: true,
+		type: 'boolean',
+		default: true,
+	},
+	display_image: {
+		type: 'boolean',
+		default: true,
+	},
+	display_image_overlay_term: {
+		type: 'boolean',
+		default: true,
 	},
 	display_date: {
-	  type: "boolean",
-	  default: false,
+		type: 'boolean',
+		default: false,
 	},
 	display_new: {
-	  type: "boolean",
-	  default: true,
+		type: 'boolean',
+		default: true,
 	},
 	display_btn: {
-	  type: "boolean",
-	  default: true,
+		type: 'boolean',
+		default: true,
 	},
 	new_date: {
-	  type: "number",
-	  default: 7,
+		type: 'number',
+		default: 7,
 	},
 	new_text: {
-	  type: "string",
-	  default: "New!!",
+		type: 'string',
+		default: 'New!!',
 	},
 	btn_text: {
-	  type: "string",
-	  default: "Read more",
+		type: 'string',
+		default: 'Read more',
 	},
 	btn_align: {
-	  type: "string",
-	  default: "text-right",
+		type: 'string',
+		default: 'text-right',
 	},
 	numberPosts: {
-	  type: "number",
-	  default: 6,
+		type: 'number',
+		default: 6,
 	},
 	isCheckedPostType: {
-	  type: "string",
-	  default: '["post"]',
+		type: 'string',
+		default: '["post"]',
 	},
 	coreTerms: {
-	  type: "string",
-	  default: "[]",
+		type: 'string',
+		default: '[]',
 	},
 	isCheckedTerms: {
-	  type: "string",
-	  default: "{}",
+		type: 'string',
+		default: '{}',
 	},
 	activeControl: {
-	  type: "string",
-	  default: '{"title": "left", "text":"left" ,"button":"right"}',
-	  },
-	  unit: {
-		  type: 'string',
-		  default: 'px',
-	  },
-	  pc: {
-		  type: 'number',
-		  default: 150,
-	  },
-	  tablet: {
-		  type: 'number',
-		  default: 150,
-	  },
-	  mobile: {
-		  type: 'number',
-		  default: 150,
-	  },
-	  clientId: {
-	  type: "string",
-	  default: "",
+		type: 'string',
+		default: '{"title": "left", "text":"left" ,"button":"right"}',
 	},
-  };
+	unit: {
+		type: 'string',
+		default: 'px',
+	},
+	pc: {
+		type: 'number',
+		default: 150,
+	},
+	tablet: {
+		type: 'number',
+		default: 150,
+	},
+	mobile: {
+		type: 'number',
+		default: 150,
+	},
+	clientId: {
+		type: 'string',
+		default: '',
+	},
+};

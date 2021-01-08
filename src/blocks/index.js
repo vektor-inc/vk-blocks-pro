@@ -18,15 +18,19 @@ import * as card from './_pro/card';
 import * as cardItem from './_pro/card-item';
 import * as childPage from './_pro/child-page';
 import * as postList from './_pro/post-list';
+import * as timeline from './_pro/timeline';
+import * as timelineItem from './_pro/timeline-item';
 import * as alert from './alert';
 import * as balloon from './balloon';
 import * as borderBox from './border-box';
-import * as flow from './flow';
+import * as button from './button';
 import * as faq from './faq';
 import * as faq2 from './faq2';
 import * as faq2a from './faq2-a';
 import * as faq2q from './faq2-q';
+import * as flow from './flow';
 import * as pageContent from './page-content';
+import * as prBlocks from './pr-blocks';
 import * as prContent from './pr-content';
 import * as spacer from './spacer';
 
@@ -39,17 +43,21 @@ export const __getVKBlocks = () => [
 	cardItem,
 	childPage,
 	postList,
+	timeline,
+	timelineItem,
 	alert,
 	balloon,
 	borderBox,
+  button,
 	faq,
 	faq2,
 	faq2a,
 	faq2q,
 	flow,
 	pageContent,
-	prContent,
-	spacer
+   prBlocks,
+	prContent, 
+ 	spacer,	
 ];
 
 /**

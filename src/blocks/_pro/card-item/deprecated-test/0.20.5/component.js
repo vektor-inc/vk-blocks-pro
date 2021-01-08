@@ -1,18 +1,16 @@
 import { __ } from '@wordpress/i18n';
-import { fixBrokenUnicode } from '../0.20.3/node_modules/@vkblocks/utils/depModules';
+import { fixBrokenUnicode } from '../0.20.6/node_modules/@vkblocks/utils/depModules';
 import { RichText, MediaUpload } from '@wordpress/block-editor';
 import { Button } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 import { dispatch } from '@wordpress/data';
-import { convertToGrid } from '../0.20.3/node_modules/@vkblocks/utils/convert-to-grid';
+import { convertToGrid } from '../0.20.6/node_modules/@vkblocks/utils/convert-to-grid';
 import React from 'react';
 
-export class DepComponent2 extends React.Component {
+export class DepComponent3 extends React.Component {
 	render() {
-		const { setAttributes, attributes, clientId } = this.props.value;
-
+		const { setAttributes, attributes, className, clientId } = this.props;
 		let {
-			className,
 			layout,
 			// eslint-disable-next-line camelcase
 			col_xs,
@@ -167,7 +165,6 @@ export class DepComponent2 extends React.Component {
 						// eslint-disable-next-line camelcase
 						value={excerpt_text}
 						onChange={(value) =>
-							// eslint-disable-next-line camelcase
 							setAttributes({ excerpt_text: value })
 						}
 						placeholder={__(
@@ -201,7 +198,7 @@ export class DepComponent2 extends React.Component {
 							target={linkTarget}
 							rel={rel}
 						>
-							{/* eslint-disable-next-line camelcase*/}
+							{/*eslint-disable-next-line camelcase */}
 							{btn_text}
 						</a>
 					</div>
@@ -221,6 +218,14 @@ export class DepComponent2 extends React.Component {
 						value={title}
 						onChange={(value) => setAttributes({ title: value })}
 						placeholder={__('Title', 'vk-blocks')}
+					/>
+				);
+			} else if (!isEdit(for_) && !url) {
+				return (
+					<RichText.Content
+						tagName={titleTag}
+						className={titleClass}
+						value={title}
 					/>
 				);
 			}
@@ -245,7 +250,7 @@ export class DepComponent2 extends React.Component {
 			imageStyle = {};
 		}
 
-		// eslint-disable-next-line camelcase,no-shadow
+		// eslint-disable-next-line camelcase
 		const btnClass = display_btn ? 'vk_post-btn-display' : '';
 
 		return (
@@ -264,7 +269,6 @@ export class DepComponent2 extends React.Component {
 				<div className="vk_post_body card-body">
 					{renderTitle(align)}
 					{renderExcerpt(align)}
-
 					{renderButton(display_btn, align)}
 				</div>
 			</div>

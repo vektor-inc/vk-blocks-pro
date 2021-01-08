@@ -1,10 +1,10 @@
 import { __ } from '@wordpress/i18n';
-import { fixBrokenUnicode } from '../../deprecated-test/0.20.3/node_modules/@vkblocks/utils/depModules';
+import { fixBrokenUnicode } from '../../deprecated-test/0.20.6/node_modules/@vkblocks/utils/depModules';
 import { RichText, MediaUpload } from '@wordpress/block-editor';
 import { Button } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 import { dispatch } from '@wordpress/data';
-import { convertToGrid } from '../../deprecated-test/0.20.3/node_modules/@vkblocks/utils/convert-to-grid';
+import { convertToGrid } from '../../deprecated-test/0.20.6/node_modules/@vkblocks/utils/convert-to-grid';
 
 // eslint-disable-next-line no-undef
 export class DepComponent extends React.Component {

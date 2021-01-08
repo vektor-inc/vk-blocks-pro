@@ -1,5 +1,5 @@
-import { DepComponentXxlAdd } from './component';
+import { DepComponent } from './component';
 
 export default function save(props) {
-	return <DepComponentXxlAdd {...props} for_={'save'} />;
+	return <DepComponent value={props} for_={'save'} />;
 }

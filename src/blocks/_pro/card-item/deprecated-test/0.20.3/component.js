@@ -1,15 +1,15 @@
 import { __ } from '@wordpress/i18n';
-import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
-import { RichText, MediaUpload, InnerBlocks } from '@wordpress/block-editor';
+import { fixBrokenUnicode } from '../0.20.6/node_modules/@vkblocks/utils/depModules';
+import { RichText, MediaUpload } from '@wordpress/block-editor';
 import { Button } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 import { dispatch } from '@wordpress/data';
-import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
+import { convertToGrid } from '../0.20.6/node_modules/@vkblocks/utils/convert-to-grid';
 import React from 'react';
 
-export class DepComponentXxlAdd extends React.Component {
+export class DepComponent extends React.Component {
 	render() {
-		const { setAttributes, attributes, className, clientId } = this.props;
+		const { setAttributes, attributes, clientId } = this.props.value;
 		let {
 			layout,
 			// eslint-disable-next-line camelcase
@@ -22,10 +22,6 @@ export class DepComponentXxlAdd extends React.Component {
 			col_lg,
 			// eslint-disable-next-line camelcase
 			col_xl,
-			// eslint-disable-next-line camelcase
-			display_title,
-			// eslint-disable-next-line camelcase
-			display_excerpt,
 			// eslint-disable-next-line camelcase
 			display_image,
 			// eslint-disable-next-line camelcase
@@ -62,9 +58,6 @@ export class DepComponentXxlAdd extends React.Component {
 			imgContainerClass = 'vk_post_imgOuter';
 		} else if (layout === 'card-noborder') {
 			layout = 'card ' + layout + ' card-post';
-			imgContainerClass = 'vk_post_imgOuter';
-		} else if (layout === 'card-imageRound') {
-			layout = 'card card-noborder ' + layout + ' card-post';
 			imgContainerClass = 'vk_post_imgOuter';
 		}
 
@@ -121,7 +114,7 @@ export class DepComponentXxlAdd extends React.Component {
 
 		// eslint-disable-next-line camelcase,no-shadow
 		const renderImage = (display_image) => {
-			// eslint-disable-next-line camelcase
+			// eslint-disable-next-line camelcase,
 			if (display_image) {
 				if (isEdit(for_)) {
 					return (
@@ -157,48 +150,43 @@ export class DepComponentXxlAdd extends React.Component {
 			return overlay;
 		};
 
-		// eslint-disable-next-line no-shadow,camelcase
-		const renderExcerpt = (align, display_excerpt) => {
-			// eslint-disable-next-line camelcase
-			if (display_excerpt) {
-				const titleTag = 'p';
-				const titleClass = `vk_post_excerpt card-text has-text-align-${align.text}`;
-				if (isEdit(for_)) {
-					return (
-						<RichText
-							tagName={titleTag}
-							className={titleClass}
-							// eslint-disable-next-line camelcase
-							value={excerpt_text}
-							onChange={(value) =>
-								setAttributes({ excerpt_text: value })
-							}
-							placeholder={__(
-								'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-								'vk-blocks'
-							)}
-						/>
-					);
-				}
+		// eslint-disable-next-line no-shadow
+		const renderExcerpt = (align) => {
+			const titleTag = 'p';
+			const titleClass = `vk_post_excerpt card-text text-${align.text}`;
+			if (isEdit(for_)) {
 				return (
-					<RichText.Content
+					<RichText
 						tagName={titleTag}
 						className={titleClass}
-						// eslint-disable-next-line camelcase
+						// eslint-disable-next-line camelcase,
 						value={excerpt_text}
+						onChange={(value) =>
+							setAttributes({ excerpt_text: value })
+						}
+						placeholder={__(
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+							'vk-blocks'
+						)}
 					/>
 				);
 			}
+			return (
+				<RichText.Content
+					tagName={titleTag}
+					className={titleClass}
+					// eslint-disable-next-line camelcase,
+					value={excerpt_text}
+				/>
+			);
 		};
 
-		// eslint-disable-next-line no-shadow,camelcase
+		// eslint-disable-next-line camelcase,no-shadow
 		const renderButton = (display_btn, align) => {
-			// eslint-disable-next-line camelcase
+			// eslint-disable-next-line camelcase,
 			if (display_btn) {
 				return (
-					<div
-						className={`vk_post_btnOuter has-text-align-${align.button}`}
-					>
+					<div className={`vk_post_btnOuter text-${align.button}`}>
 						<a
 							className={`btn btn-primary vk_post_btn`}
 							href={url}
@@ -213,43 +201,30 @@ export class DepComponentXxlAdd extends React.Component {
 			}
 		};
 
-		// eslint-disable-next-line camelcase,no-shadow
-		const renderTitle = (align, display_title) => {
-			// eslint-disable-next-line camelcase
-			if (display_title) {
-				const titleTag = 'h5';
-				const titleClass = `vk_post_title card-title has-text-align-${align.title}`;
-				if (isEdit(for_)) {
-					return (
-						<RichText
-							tagName={titleTag}
-							className={titleClass}
-							value={title}
-							onChange={(value) =>
-								setAttributes({ title: value })
-							}
-							placeholder={__('Title', 'vk-blocks')}
-						/>
-					);
-				} else if (!isEdit(for_) && !url) {
-					return (
-						<RichText.Content
-							tagName={titleTag}
-							className={titleClass}
-							value={title}
-						/>
-					);
-				}
+		// eslint-disable-next-line no-shadow
+		const renderTitle = (align) => {
+			const titleTag = 'h5';
+			const titleClass = `vk_post_title card-title text-${align.title}`;
+			if (isEdit(for_)) {
 				return (
-					<a href={url} target={linkTarget} rel={rel}>
-						<RichText.Content
-							tagName={titleTag}
-							className={titleClass}
-							value={title}
-						/>
-					</a>
+					<RichText
+						tagName={titleTag}
+						className={titleClass}
+						value={title}
+						onChange={(value) => setAttributes({ title: value })}
+						placeholder={__('Title', 'vk-blocks')}
+					/>
 				);
 			}
+			return (
+				<a href={url} target={linkTarget} rel={rel}>
+					<RichText.Content
+						tagName={titleTag}
+						className={titleClass}
+						value={title}
+					/>
+				</a>
+			);
 		};
 
 		let imageStyle;
@@ -262,11 +237,12 @@ export class DepComponentXxlAdd extends React.Component {
 			imageStyle = {};
 		}
 
-		// eslint-disable-next-line camelcase
+		// eslint-disable-next-line camelcase,
 		const btnClass = display_btn ? 'vk_post-btn-display' : '';
+
 		return (
 			<div
-				className={`${className} vk_post ${layout} vk_card_item vk_post-col-xs-${convertToGrid(
+				className={`vk_post ${layout} vk_card_item vk_post-col-xs-${convertToGrid(
 					col_xs
 				)} vk_post-col-sm-${convertToGrid(
 					col_sm
@@ -278,13 +254,8 @@ export class DepComponentXxlAdd extends React.Component {
 			>
 				{renderImage(display_image)}
 				<div className="vk_post_body card-body">
-					{renderTitle(align, display_title)}
-					{renderExcerpt(align, display_excerpt)}
-					{for_ === 'edit' ? (
-						<InnerBlocks />
-					) : (
-						<InnerBlocks.Content />
-					)}
+					{renderTitle(align)}
+					{renderExcerpt(align)}
 					{renderButton(display_btn, align)}
 				</div>
 			</div>

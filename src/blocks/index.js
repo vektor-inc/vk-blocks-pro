@@ -30,6 +30,7 @@ import * as childPage from './_pro/child-page';
 import * as borderBox from './border-box';
 import * as spacer from './spacer';
 import * as button from './button';
+import * as prBlocks from './pr-blocks';
 
 /**
  * Function to get all the VK Blocks in an array.
@@ -51,7 +52,8 @@ export const __getVKBlocks = () => [
 	childPage,
 	borderBox,
 	spacer,
-	button
+	button,
+	prBlocks
 ];
 
 /**

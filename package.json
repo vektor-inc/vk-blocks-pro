@@ -13,16 +13,9 @@
     "build:free": "wp-scripts build --config webpack.config.js && gulp build:free && npm run translate",
     "translate": "./node_modules/.bin/po2json ./inc/vk-blocks/languages/vk-blocks-ja.po ./inc/vk-blocks/languages/vk-blocks-ja-vk-blocks-build-js.json -f jed",
     "gulp": "gulp",
-<<<<<<< HEAD
-	"lint": "run-s lint:*",
-	"lint:alert": "wp-scripts format-js src/blocks/alert && wp-scripts lint-js src/blocks/alert --fix",
-    "lint:border-box": "wp-scripts format-js src/blocks/border-box && wp-scripts lint-js src/blocks/border-box --fix",
-=======
     "lint": "run-s lint:*",
     "lint:alert": "wp-scripts format-js src/blocks/alert && wp-scripts lint-js src/blocks/alert --fix",
->>>>>>> ede71fe30d75af0514fc65fe09c276c511102f5f
     "lint:pr-content": "wp-scripts format-js src/blocks/pr-content/ && wp-scripts lint-js src/blocks/pr-content/ --fix",
-    "lint:pr-blocks": "wp-scripts format-js src/blocks/pr-blocks/ && wp-scripts lint-js src/blocks/pr-blocks/ --fix",
     "lint:faq2": "wp-scripts format-js src/blocks/faq2 && wp-scripts lint-js src/blocks/faq2 --fix",
     "lint:faq2-q": "wp-scripts format-js src/blocks/faq2-q && wp-scripts lint-js src/blocks/faq2-q --fix",
     "lint:faq2-a": "wp-scripts format-js src/blocks/faq2-a && wp-scripts lint-js src/blocks/faq2-a --fix",
@@ -32,22 +25,16 @@
     "lint:page-content": "wp-scripts format-js src/blocks/page-content && wp-scripts lint-js src/blocks/page-content --fix",
     "lint:flow": "wp-scripts format-js src/blocks/flow && wp-scripts lint-js src/blocks/flow --fix",
     "lint:post-list": "wp-scripts format-js src/blocks/_pro/post-list && wp-scripts lint-js src/blocks/_pro/post-list --fix",
-<<<<<<< HEAD
-	"lint:child-page": "wp-scripts format-js src/blocks/_pro/child-page && wp-scripts lint-js src/blocks/_pro/child-page --fix",
-	"lint:utils": "wp-scripts format-js src/utils && wp-scripts lint-js src/utils --fix",
-    "fixtures:clean": "rimraf \"packages/e2e-tests/fixtures/blocks/*.+(json|serialized.html)\"",
-    "fixtures:generate": "cross-env GENERATE_MISSING_FIXTURES=y npm run test-unit",
-=======
 		"lint:child-page": "wp-scripts format-js src/blocks/_pro/child-page && wp-scripts lint-js src/blocks/_pro/child-page --fix",
 		"lint:border-box": "wp-scripts format-js src/blocks/border-box && wp-scripts lint-js src/blocks/border-box --fix",
 		"lint:spacer": "wp-scripts format-js src/blocks/spacer && wp-scripts lint-js src/blocks/spacer --fix",
 		"lint:button": "wp-scripts format-js src/blocks/button && wp-scripts lint-js src/blocks/button --fix",
+		"lint:pr-blocks": "wp-scripts format-js src/blocks/pr-blocks/ && wp-scripts lint-js src/blocks/pr-blocks/ --fix",
 		"lint:advanced-unit-control": "wp-scripts format-js src/components/advanced-unit-control && wp-scripts lint-js src/components/advanced-unit-control",
     "lint:advanced-viewport-control": "wp-scripts format-js src/components/advanced-viewport-control && wp-scripts lint-js src/components/advanced-viewport-control",
 		"lint:utils": "wp-scripts format-js src/utils && wp-scripts lint-js src/utils --fix",
 		"fixtures:clean": "rimraf \"test/e2e-tests/fixtures/blocks/*.+(json|serialized.html)\"",
     "fixtures:generate": "cross-env GENERATE_MISSING_FIXTURES=y wp-scripts test-unit-js --config test/jest.config.js test/integration/full-content/full-content.test.js",
->>>>>>> ede71fe30d75af0514fc65fe09c276c511102f5f
     "fixtures:regenerate": "npm run build && npm run fixtures:clean && npm run fixtures:generate",
     "test-unit": "npm run fixtures:regenerate",
     "composer:install:win": "wp-env run composer \"composer install\"",

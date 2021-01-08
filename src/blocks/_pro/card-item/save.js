@@ -1,26 +1,10 @@
-import { __ } from '@wordpress/i18n';
-import { LinkControl } from '@vkblocks/components/link-control';
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
-import {
-	RichText,
-	MediaUpload,
-	InnerBlocks,
-	InspectorControls,
-	useBlockProps,
-} from '@wordpress/block-editor';
-import {
-	Button,
-	PanelBody,
-	BaseControl,
-	TextControl,
-} from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
-import { dispatch } from '@wordpress/data';
+import { RichText, InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 import React from 'react';
 
-export default function CardItemEdit(props) {
-	const { setAttributes, attributes, clientId } = props;
+export default function save(props) {
+	const { attributes } = props;
 	const {
 		layout,
 		// eslint-disable-next-line camelcase
@@ -75,70 +59,29 @@ export default function CardItemEdit(props) {
 		imgContainerClass = 'vk_post_imgOuter';
 	}
 
-	const deleteImgBtn = () => {
-		dispatch('core/editor').updateBlockAttributes(clientId, {
-			image: null,
-		});
-	};
-
-	// eslint-disable-next-line no-shadow
-	const uploadImgBtn = (image) => {
-		const imageParsed = JSON.parse(fixBrokenUnicode(image));
-		return (
-			<MediaUpload
-				onSelect={(value) =>
-					setAttributes({ image: JSON.stringify(value) })
-				}
-				type="image"
-				className={'vk_post_imgOuter_img card-img-top'}
-				value={image}
-				render={({ open }) => (
-					<Fragment>
-						{!imageParsed ? (
-							<Button
-								onClick={open}
-								className={'button button-large'}
-							>
-								{__('Select image', 'vk-blocks')}
-							</Button>
-						) : (
-							<Fragment>
-								<img
-									className={
-										'vk_post_imgOuter_img card-img-top'
-									}
-									src={imageParsed.sizes.full.url}
-									alt={imageParsed.alt}
-								/>
-								<Button
-									onClick={deleteImgBtn}
-									className={
-										'image-button button button-delete'
-									}
-								>
-									{__('Delete Image', 'vk-blocks')}
-								</Button>
-							</Fragment>
-						)}
-					</Fragment>
-				)}
-			/>
-		);
-	};
-
 	// eslint-disable-next-line camelcase,no-shadow
 	const renderImage = (display_image) => {
 		// eslint-disable-next-line camelcase
 		if (display_image) {
 			return (
-				<Fragment>
-					<div className={imgContainerClass} style={imageStyle}>
-						<div className="card-img-overlay"></div>
-						{uploadImgBtn(image)}
-					</div>
-				</Fragment>
+				<div className={imgContainerClass} style={imageStyle}>
+					{switchAddUrltoImage(url)}
+				</div>
 			);
 		}
+	};
+
+	// eslint-disable-next-line no-shadow
+	const switchAddUrltoImage = (url) => {
+		const overlay = <div className="card-img-overlay"></div>;
+		if (url) {
+			return (
+				<a href={url} target={linkTarget} rel={rel}>
+					{overlay}
+				</a>
+			);
+		}
+		return overlay;
 	};
 
 	// eslint-disable-next-line camelcase,no-shadow
@@ -148,16 +91,11 @@ export default function CardItemEdit(props) {
 			const titleTag = 'p';
 			const titleClass = `vk_post_excerpt card-text has-text-align-${align.text}`;
 			return (
-				<RichText
+				<RichText.Content
 					tagName={titleTag}
 					className={titleClass}
 					// eslint-disable-next-line camelcase
 					value={excerpt_text}
-					onChange={(value) => setAttributes({ excerpt_text: value })}
-					placeholder={__(
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-						'vk-blocks'
-					)}
 				/>
 			);
 		}
@@ -191,14 +129,23 @@ export default function CardItemEdit(props) {
 		if (display_title) {
 			const titleTag = 'h5';
 			const titleClass = `vk_post_title card-title has-text-align-${align.title}`;
+			if (!url) {
+				return (
+					<RichText.Content
+						tagName={titleTag}
+						className={titleClass}
+						value={title}
+					/>
+				);
+			}
 			return (
-				<RichText
-					tagName={titleTag}
-					className={titleClass}
-					value={title}
-					onChange={(value) => setAttributes({ title: value })}
-					placeholder={__('Title', 'vk-blocks')}
-				/>
+				<a href={url} target={linkTarget} rel={rel}>
+					<RichText.Content
+						tagName={titleTag}
+						className={titleClass}
+						value={title}
+					/>
+				</a>
 			);
 		}
 	};
@@ -216,7 +163,7 @@ export default function CardItemEdit(props) {
 	// eslint-disable-next-line camelcase
 	const btnClass = display_btn ? 'vk_post-btn-display' : '';
 
-	const blockProps = useBlockProps({
+	const blockProps = useBlockProps.save({
 		className: `vk_post ${layoutClass} vk_card_item vk_post-col-xs-${convertToGrid(
 			col_xs
 		)} vk_post-col-sm-${convertToGrid(
@@ -230,30 +177,15 @@ export default function CardItemEdit(props) {
 		)} vk_post-col-xxl-${convertToGrid(col_xxl)}
 ${btnClass}`,
 	});
-
 	return (
-		<Fragment>
-			<InspectorControls>
-				<PanelBody title={__('URL', 'vk-blocks')}>
-					<BaseControl id="sidebar-card-block-url">
-						<TextControl
-							value={url}
-							onChange={(value) => setAttributes({ url: value })}
-							placeholder={__('https://example.com', 'vk-blocks')}
-						/>
-					</BaseControl>
-					<LinkControl blockName={'card'} {...props} />
-				</PanelBody>
-			</InspectorControls>
-			<div {...blockProps}>
-				{renderImage(display_image)}
-				<div className="vk_post_body card-body">
-					{renderTitle(align, display_title)}
-					{renderExcerpt(align, display_excerpt)}
-					<InnerBlocks />
-					{renderButton(display_btn, align)}
-				</div>
+		<div {...blockProps}>
+			{renderImage(display_image)}
+			<div className="vk_post_body card-body">
+				{renderTitle(align, display_title)}
+				{renderExcerpt(align, display_excerpt)}
+				<InnerBlocks.Content />
+				{renderButton(display_btn, align)}
 			</div>
-		</Fragment>
+		</div>
 	);
 }

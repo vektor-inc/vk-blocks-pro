@@ -15,6 +15,7 @@ import compareVersions from 'compare-versions';
  */
 import * as animation from './_pro/animation';
 import * as card from './_pro/card';
+import * as cardItem from './_pro/card-item';
 import * as childPage from './_pro/child-page';
 import * as postList from './_pro/post-list';
 import * as alert from './alert';
@@ -35,9 +36,9 @@ import * as spacer from './spacer';
 export const __getVKBlocks = () => [
 	animation,
 	card,
+	cardItem,
 	childPage,
 	postList,
-	card,
 	alert,
 	balloon,
 	borderBox,

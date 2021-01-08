@@ -373,12 +373,6 @@ export class ComponentBlockEdit extends Component {
 			content1,
 			content2,
 			content3,
-			url1,
-			url2,
-			url3,
-			urlOpenType1,
-			urlOpenType2,
-			urlOpenType3,
 			icon1,
 			icon2,
 			icon3,
@@ -392,12 +386,9 @@ export class ComponentBlockEdit extends Component {
 			insertImage2,
 			insertImage3,
 		} = this.props.attributes;
-		const for_ = this.props.for_;
 		const blockNum = this.props.blockNum;
 		const blockNumArrIndex = this.props.blockNum - 1;
 
-		const url = [url1, url2, url3];
-		const urlOpenType = [urlOpenType1, urlOpenType2, urlOpenType3];
 		const icon = [icon1, icon2, icon3];
 		const color = [color1, color2, color3];
 		const bgType = [bgType1, bgType2, bgType3];
@@ -556,25 +547,6 @@ export class ComponentBlockEdit extends Component {
 			);
 		}
 
-		// aタグ判定
-		if (url[blockNumArrIndex] && for_ === 'save') {
-			return (
-				<div className="vk_prBlocks_item col-sm-4">
-					<a
-						href={url[blockNumArrIndex]}
-						className="vk_prBlocks_item_link"
-						target={
-							urlOpenType[blockNumArrIndex] ? '_blank' : '_self'
-						}
-						rel="noopener noreferrer"
-					>
-						{drawElement}
-						{richTextH1Save}
-						{richTextPSave}
-					</a>
-				</div>
-			);
-		}
 		return (
 			<div className="vk_prBlocks_item col-sm-4">
 				{drawElement}

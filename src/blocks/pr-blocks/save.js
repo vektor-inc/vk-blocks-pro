@@ -49,7 +49,6 @@ export class ComponentBlockSave extends Component {
 			insertImage2,
 			insertImage3,
 		} = this.props.attributes;
-		const for_ = this.props.for_;
 		const blockNum = this.props.blockNum;
 		const blockNumArrIndex = this.props.blockNum - 1;
 
@@ -171,30 +170,18 @@ export class ComponentBlockSave extends Component {
 			/>
 		);
 
-		// aタグ判定
-		if (url[blockNumArrIndex] && for_ === 'save') {
-			return (
-				<div className="vk_prBlocks_item col-sm-4">
-					<a
-						href={url[blockNumArrIndex]}
-						className="vk_prBlocks_item_link"
-						target={
-							urlOpenType[blockNumArrIndex] ? '_blank' : '_self'
-						}
-						rel="noopener noreferrer"
-					>
-						{drawElement}
-						{richTextH1Save}
-						{richTextPSave}
-					</a>
-				</div>
-			);
-		}
 		return (
 			<div className="vk_prBlocks_item col-sm-4">
-				{drawElement}
-				{richTextH1Save}
-				{richTextPSave}
+				<a
+					href={url[blockNumArrIndex]}
+					className="vk_prBlocks_item_link"
+					target={urlOpenType[blockNumArrIndex] ? '_blank' : '_self'}
+					rel="noopener noreferrer"
+				>
+					{drawElement}
+					{richTextH1Save}
+					{richTextPSave}
+				</a>
 			</div>
 		);
 	}

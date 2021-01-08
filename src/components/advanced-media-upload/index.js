@@ -5,31 +5,27 @@ import { dispatch } from '@wordpress/data';
 import noImage from '../../../inc/vk-blocks/images/no-image.svg';
 
 export const AdvancedMediaUpload = (props) => {
-	const { url, clientId, setAttributes, attributes, alt } = props;
+	const { schema, clientId, setAttributes, attributes } = props;
 
 	const deleteImgBtn = () => {
 		dispatch('core/editor').updateBlockAttributes(clientId, {
-			[url]: null,
-			[alt]: null,
+			[schema]: null,
 		});
 	};
 
 	return (
 		<MediaUpload
-			onSelect={(value) => {
-				setAttributes({ [url]: value.url });
-				setAttributes({ [alt]: value.alt });
-			}}
+			onSelect={(value) => setAttributes({ [schema]: value.url })}
 			type="image"
-			value={attributes[url]}
+			value={attributes[schema]}
 			render={({ open }) => (
 				<>
-					{attributes[url] ? (
+					{attributes[schema] ? (
 						<>
+							{/* eslint-disable-next-line jsx-a11y/alt-text*/}
 							<img
 								className={'icon-image'}
-								src={attributes[url]}
-								alt={attributes[alt]}
+								src={attributes[schema]}
 							/>
 							<Button
 								onClick={deleteImgBtn}
@@ -40,11 +36,8 @@ export const AdvancedMediaUpload = (props) => {
 						</>
 					) : (
 						<>
-							<img
-								className={'icon-image'}
-								src={noImage}
-								alt={''}
-							/>
+							{/* eslint-disable-next-line jsx-a11y/alt-text*/}
+							<img className={'icon-image'} src={noImage} />
 							<Button
 								onClick={open}
 								className={

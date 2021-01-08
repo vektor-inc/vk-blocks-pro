@@ -10,7 +10,6 @@ import {
 	ButtonGroup,
 	Button,
 } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
 import {
 	InspectorControls,
 	ColorPalette,
@@ -42,10 +41,9 @@ export default function OuterEdit(props) {
 		borderStyle,
 		borderColor,
 		borderRadius,
-		blockId
 	} = attributes;
 
-	setAttributes({ blockId: clientId });
+	setAttributes({ clientId });
 
 	let classPaddingLR;
 	let classPaddingVertical;
@@ -126,11 +124,11 @@ export default function OuterEdit(props) {
 	}
 
 	const blockProps = useBlockProps({
-		className: `vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
+		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 	});
 
 	return (
-		<Fragment>
+		<>
 			<InspectorControls>
 				<PanelBody
 					title={__('Background Setting', 'vk-blocks')}
@@ -542,6 +540,6 @@ export default function OuterEdit(props) {
 					)}
 				</div>
 			</div>
-		</Fragment>
+		</>
 	);
 }

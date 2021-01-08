@@ -42,10 +42,11 @@ export default function OuterEdit(props) {
 		borderStyle,
 		borderColor,
 		borderRadius,
+		blockID
 	} = attributes;
 
 	//save clientId for using in Class.
-	// setAttributes({ blockId: clientId });
+	setAttributes({ blockID: clientId });
 
 	let classPaddingLR;
 	let classPaddingVertical;
@@ -126,8 +127,9 @@ export default function OuterEdit(props) {
 	}
 
 	const blockProps = useBlockProps({
-		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
+		className: `vkb-outer-${blockID} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 	});
+	console.log(blockProps);
 
 	return (
 		<Fragment>

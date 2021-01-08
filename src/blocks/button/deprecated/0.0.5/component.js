@@ -1,5 +1,4 @@
 import { Component } from '@wordpress/element';
-import ReactHtmlParser from 'react-html-parser';
 
 export class VKBButton extends Component {
 	render() {
@@ -10,8 +9,8 @@ export class VKBButton extends Component {
 		const buttonSize = this.props.lbSize;
 		const buttonUrl = this.props.lbUrl;
 		const buttonTarget = this.props.lbTarget;
-		let fontAwesomeIconBefore = this.props.lbFontAwesomeIconBefore;
-		let fontAwesomeIconAfter = this.props.lbFontAwesomeIconAfter;
+		const fontAwesomeIconBefore = this.props.lbFontAwesomeIconBefore;
+		const fontAwesomeIconAfter = this.props.lbFontAwesomeIconAfter;
 		const richText = this.props.lbRichtext;
 		const subCaption = this.props.lbsubCaption;
 		let aClass = '';
@@ -42,7 +41,7 @@ export class VKBButton extends Component {
 				// カスタムカラーの場合
 			} else {
 				aStyle = {
-					backgroundColor: `${buttonColorCustom}`,
+					backgroundColor: buttonColorCustom,
 					border: `1px solid ${buttonColorCustom}`,
 					color: `#fff`,
 				};
@@ -61,8 +60,8 @@ export class VKBButton extends Component {
 			} else {
 				aStyle = {
 					backgroundColor: 'transparent',
-					border: `1px solid ${buttonColorCustom}`,
-					color: `${buttonColorCustom}`,
+					border: '1px solid ' + buttonColorCustom,
+					color: buttonColorCustom,
 				};
 			}
 			// テキストのみ
@@ -78,7 +77,7 @@ export class VKBButton extends Component {
 				// カスタムカラーの場合
 			} else {
 				aStyle = {
-					color: `${buttonColorCustom}`,
+					color: buttonColorCustom,
 				};
 			}
 		}
@@ -88,50 +87,35 @@ export class VKBButton extends Component {
 		if (buttonAlign === 'block') {
 			aClass = `${aClass} btn-block`;
 		}
-
-		//過去バージョンをリカバリーした時にiconを正常に表示する
-		if (fontAwesomeIconBefore && !fontAwesomeIconBefore.match(/<i/)) {
-			fontAwesomeIconBefore = `<i class="${fontAwesomeIconBefore}"></i>`;
-		}
-		if (fontAwesomeIconAfter && !fontAwesomeIconAfter.match(/<i/)) {
-			fontAwesomeIconAfter = `<i class="${fontAwesomeIconAfter}"></i>`;
-		}
-
 		if (fontAwesomeIconBefore) {
-			fontAwesomeIconBefore = fontAwesomeIconBefore.replace(
-				/ fas/g,
-				'fas'
+			iconBefore = (
+				<i
+					className={`${fontAwesomeIconBefore} vk_button_link_before`}
+				></i>
 			);
-
-			//add class and inline css
-			const faIconFragmentBefore = fontAwesomeIconBefore.split(' ');
-			faIconFragmentBefore[1] =
-				' ' + faIconFragmentBefore[1] + ` vk_button_link_before `;
-			iconBefore = faIconFragmentBefore.join('');
 		}
 		if (fontAwesomeIconAfter) {
-			fontAwesomeIconAfter = fontAwesomeIconAfter.replace(/ fas/g, 'fas');
-
-			//add class and inline css
-			const faIconFragmentAfter = fontAwesomeIconAfter.split(' ');
-			faIconFragmentAfter[1] =
-				' ' + faIconFragmentAfter[1] + ` vk_button_link_after `;
-			iconAfter = faIconFragmentAfter.join('');
+			iconAfter = (
+				<i
+					className={`${fontAwesomeIconAfter} vk_button_link_after`}
+				></i>
+			);
 		}
 
 		return (
-			/* eslint react/jsx-no-target-blank: 0 */
 			<a
 				href={buttonUrl}
+				id={'vk_button_link'}
 				style={aStyle}
 				className={aClass}
 				role={'button'}
 				aria-pressed={true}
 				target={buttonTarget ? '_blank' : null}
+				rel={'noopener noreferrer'}
 			>
-				{ReactHtmlParser(iconBefore)}
+				{iconBefore}
 				{richText}
-				{ReactHtmlParser(iconAfter)}
+				{iconAfter}
 				{/*サブキャプションが入力された時のみ表示*/}
 				{subCaption && (
 					<p className={'vk_button_link_subCaption'}>{subCaption}</p>

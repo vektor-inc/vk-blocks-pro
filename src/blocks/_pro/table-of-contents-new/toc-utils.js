@@ -1,5 +1,5 @@
-import ReactDOMServer from "react-dom/server";
-const { useSelect, select } = wp.data;
+import ReactDOMServer from 'react-dom/server';
+import { useSelect, select } from '@wordpress/data';
 
 export const isAllowedBlock = (name, allowedBlocks) => {
 	return allowedBlocks.find((blockName) => blockName === name);
@@ -11,27 +11,31 @@ export const transformToOneDimensionalArray = (multiDimensionalarray) => {
 	}, []);
 };
 
-export const asyncGetBlocksByName = (blockName) =>
+export const AsyncGetBlocksByName = (blockName) =>
+	// eslint-disable-next-line no-shadow
 	useSelect((select) => {
-		const { getBlocks } = select("core/block-editor");
-		return getBlocks().filter((block) => block.name == blockName);
+		const { getBlocks } = select('core/block-editor');
+		return getBlocks().filter((block) => block.name === blockName);
 	}, []);
 
 export const getBlocksByName = (blockName) => {
-	const { getBlocks } = select("core/block-editor");
-	return getBlocks().filter((block) => block.name == blockName);
+	const { getBlocks } = select('core/block-editor');
+	return getBlocks().filter((block) => block.name === blockName);
 };
 
 export const getAllHeadings = (headingList) => {
-	const { getBlocks } = select("core/block-editor");
+	const { getBlocks } = select('core/block-editor');
+	let tempBlock;
 	return getBlocks().map((block) => {
 		if (1 <= block.innerBlocks.length) {
-			return block.innerBlocks.filter(
-				(block) => headingList.indexOf(block.name) != -1
+			tempBlock = block.innerBlocks.filter(
+				// eslint-disable-next-line no-shadow
+				(block) => headingList.indexOf(block.name) !== -1
 			);
-		} else if (headingList.indexOf(block.name) != -1) {
-			return block;
+		} else if (headingList.indexOf(block.name) !== -1) {
+			tempBlock = block;
 		}
+		return tempBlock;
 	});
 };
 
@@ -40,23 +44,23 @@ export const removeUnnecessaryElements = (headingsRaw) => {
 		headingsRaw
 	);
 	return oneDimensionArrayStoredHeading.filter(
-		(heading) => heading != undefined
+		(heading) => heading !== undefined
 	);
 };
 
 export const returnHtml = (source, attributes, className) => {
 	const { style } = attributes;
 	if (!className) {
-		className = "vk_tableOfContents";
+		className = 'vk_tableOfContents';
 	} else {
-		className = className + " vk_tableOfContents";
+		className = className + ' vk_tableOfContents';
 	}
 
 	if (style) {
-		className = className + " vk_tableOfContents-style-" + style;
+		className = className + ' vk_tableOfContents-style-' + style;
 	}
 
-	const countSeparater = ".";
+	const countSeparater = '.';
 	let h2Count = 0;
 	let h3Count = 0;
 	let h4Count = 0;
@@ -67,16 +71,15 @@ export const returnHtml = (source, attributes, className) => {
 			return 1;
 		}
 		return count;
-
 	};
 
-	let returnHtmlContent = "";
+	let returnHtmlContent = '';
 	if (source) {
 		returnHtmlContent = source.map((data) => {
-			const baseClass = "vk_tableOfContents_list_item";
+			const baseClass = 'vk_tableOfContents_list_item';
 
 			const level = data.attributes.level;
-			let preNumber = "";
+			let preNumber = '';
 
 			if (level === 2) {
 				h2Count++;
@@ -142,7 +145,7 @@ export const returnHtml = (source, attributes, className) => {
 					h6Count;
 			}
 
-			preNumber = preNumber + ". ";
+			preNumber = preNumber + '. ';
 
 			let content = data.attributes.content
 				? data.attributes.content
@@ -155,15 +158,17 @@ export const returnHtml = (source, attributes, className) => {
 
 			return (
 				<li
-					key={ data.clientId }
-					className={ `${baseClass} ${baseClass}-h-${level}` }
+					key={data.clientId}
+					className={`${baseClass} ${baseClass}-h-${level}`}
 				>
 					<a
-						href={ `#${data.attributes.anchor}` }
-						className={ `${baseClass}_link` }
+						href={`#${data.attributes.anchor}`}
+						className={`${baseClass}_link`}
 					>
-						<span className={ `${baseClass}_link_preNumber` }>{ preNumber }</span>
-						{ content }
+						<span className={`${baseClass}_link_preNumber`}>
+							{preNumber}
+						</span>
+						{content}
 					</a>
 				</li>
 			);

@@ -13,8 +13,6 @@ import "@vkblocks/extensions/common/highlighter";
 import "@vkblocks/extensions/common/nowrap";
 import "@vkblocks/blocks/staff/block.js";
 import "@vkblocks/blocks/heading/block.js";
-import "@vkblocks/blocks/button/block.js";
-import "@vkblocks/blocks/pr-blocks/block.js";
 
 // /*WP5.3 以下では読み込まれない*/
 import "@vkblocks/extensions/common/responsive-br";
@@ -23,12 +21,8 @@ import "@vkblocks/blocks/_pro/icon-card/block.js";
 import "@vkblocks/blocks/_pro/card-item/block.js";
 import "@vkblocks/blocks/_pro/card/block.js";
 import "@vkblocks/blocks/_pro/outer/block.js";
-import "@vkblocks/blocks/_pro/table-of-contents/block.js";
-import "@vkblocks/blocks/_pro/table-of-contents-new/block.js";
 import "@vkblocks/blocks/_pro/step-item/block.js";
 import "@vkblocks/blocks/_pro/step/block.js";
-import "@vkblocks/blocks/_pro/timeline-item/block.js";
-import "@vkblocks/blocks/_pro/timeline/block.js";
 import "@vkblocks/blocks/_pro/grid-column/block.js";
 import "@vkblocks/blocks/_pro/grid-column-item/block.js";
 import "@vkblocks/blocks/_pro/slider/block.js";

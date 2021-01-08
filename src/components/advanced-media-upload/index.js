@@ -6,11 +6,11 @@ import { dispatch } from '@wordpress/data';
 import noImage from "../../../inc/vk-blocks/images/no-image.svg";
 
 export const AdvancedMediaUpload = (props) => {
-	const { url, clientId, setAttributes, attributes, alt } = props;
+	const { schema, clientId, setAttributes, attributes, alt } = props;
 
 	const deleteImgBtn = () => {
 		dispatch('core/editor').updateBlockAttributes(clientId, {
-			[url]: null,
+			[schema]: null,
 			[alt]:null
 		});
 	};
@@ -18,18 +18,18 @@ export const AdvancedMediaUpload = (props) => {
 	return (
 		<MediaUpload
 			onSelect={(value) => {
-				setAttributes({ [url]: value.url });
+				setAttributes({ [schema]: value.url });
 				setAttributes({ [alt]: value.alt });
 			}}
 			type="image"
-			value={attributes[url]}
+			value={attributes[schema]}
 			render={({ open }) => (
 				<Fragment>
-					{attributes[url] ? (
+					{attributes[schema] ? (
 						<Fragment>
 							<img
 								className={'icon-image'}
-								src={attributes[url]}
+								src={attributes[schema]}
 								alt={attributes[alt]}
 							/>
 							<Button

@@ -542,7 +542,6 @@ export default function OuterEdit(props) {
 					)}
 				</div>
 			</div>
-			);
 		</Fragment>
 	);
 }

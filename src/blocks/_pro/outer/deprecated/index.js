@@ -78,7 +78,7 @@ const blockAttributes = {
 	},
 };
 
-export const deprecated = [
+const deprecated = [
 	//ブロックテンプレート用のdeprecated
 	{
 		attributes: {
@@ -231,3 +231,5 @@ export const deprecated = [
 		save000,
 	},
 ];
+
+export default deprecated;

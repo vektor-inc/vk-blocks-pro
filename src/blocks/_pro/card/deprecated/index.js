@@ -1,4 +1,9 @@
-export const schema = {
+import save000 from './0.0.0/save';
+import save0374 from './0.37.4/save';
+import save0400 from './0.40.0/save';
+import save0601 from './0.60.1/save';
+
+const blockAttributes = {
 	postId: {
 		type: 'number',
 	},
@@ -50,10 +55,6 @@ export const schema = {
 		type: 'boolean',
 		default: true,
 	},
-	display_excerpt: {
-		type: 'boolean',
-		default: true,
-	},
 	display_date: {
 		type: 'boolean',
 		default: false,
@@ -102,24 +103,68 @@ export const schema = {
 		type: 'string',
 		default: '{"title": "left", "text":"left" ,"button":"right"}',
 	},
-	unit: {
-		type: 'string',
-		default: 'px',
-	},
-	pc: {
-		type: 'number',
-		default: 150,
-	},
-	tablet: {
-		type: 'number',
-		default: 150,
-	},
-	mobile: {
-		type: 'number',
-		default: 150,
-	},
-	clientId: {
-		type: 'string',
-		default: '',
-	},
 };
+
+const deprecated = [
+	{
+		attributes: {
+			...blockAttributes,
+			unit: {
+				type: 'string',
+				default: 'px',
+			},
+			pc: {
+				type: 'number',
+				default: 150,
+			},
+			tablet: {
+				type: 'number',
+				default: 150,
+			},
+			mobile: {
+				type: 'number',
+				default: 150,
+			},
+			clientId: {
+				type: 'string',
+				default: '',
+			},
+		},
+		save: save0601,
+	},
+	{
+		attributes: {
+			...blockAttributes,
+			unit: {
+				type: 'string',
+				default: 'px',
+			},
+			pc: {
+				type: 'number',
+				default: 150,
+			},
+			tablet: {
+				type: 'number',
+				default: 150,
+			},
+			mobile: {
+				type: 'number',
+				default: 150,
+			},
+			clientId: {
+				type: 'string',
+				default: '',
+			},
+		},
+		save: save0400,
+	},
+	{
+		attributes: blockAttributes,
+		save: save0374,
+	},
+	{
+		attributes: blockAttributes,
+		save: save000,
+	},
+];
+export default deprecated;

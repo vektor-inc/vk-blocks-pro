@@ -3,38 +3,158 @@
  *
  */
 import { Component } from './component';
-import { schema } from './schema';
-import { ColumnLayoutControl } from '../../../components/column-layout-control';
-import { CardAlignControls } from '../../../components/card-align-control';
+import { ColumnLayoutControl } from '@vkblocks/components/column-layout-control';
+import { CardAlignControls } from '@vkblocks/components/card-align-control';
 import { deprecated } from './deprecated';
-import { hiddenNewBlock } from '../../../utils/hiddenNewBlock';
-import removeProperty from '../../../utils/removeProperty';
-import { vkbBlockEditor } from './../../../utils/depModules';
-import AdvancedViewportControl from '../../../components/advanced-viewport-control';
-import AdvancedUnitControl from '../../../components/advanced-unit-control';
-import { title, content, pictureJson } from '../../../utils/example-data';
+import removeProperty from '@vkblocks/utils/removeProperty';
+import AdvancedViewportControl from '@vkblocks/components/advanced-viewport-control';
+import AdvancedUnitControl from '@vkblocks/components/advanced-unit-control';
+import { title, content, pictureJson } from '@vkblocks/utils/example-data';
 import { ReactComponent as Icon } from './icon.svg';
 
-const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
-const { Fragment, useEffect } = wp.element;
-const { PanelBody, BaseControl, TextControl, CheckboxControl } = wp.components;
-const { addFilter } = wp.hooks;
-const { InspectorControls } = vkbBlockEditor;
-const { select, dispatch } = wp.data;
-const { createHigherOrderComponent } = wp.compose;
+import { __ } from '@wordpress/i18n';
+import { registerBlockType } from '@wordpress/blocks';
+import { Fragment, useEffect } from '@wordpress/element';
+import {
+	PanelBody,
+	BaseControl,
+	TextControl,
+	CheckboxControl,
+} from '@wordpress/components';
+import { addFilter } from '@wordpress/hooks';
+import { InspectorControls } from '@wordpress/block-editor';
+import { select, dispatch } from '@wordpress/data';
+import { createHigherOrderComponent } from '@wordpress/compose';
 
-const inserterVisible = hiddenNewBlock(5.3);
 export const prefix = 'vk_card_';
 
 registerBlockType('vk-blocks/card', {
 	title: __('Card', 'vk-blocks'),
 	icon: <Icon />,
 	category: 'vk-blocks-cat',
-	attributes: schema,
+	attributes: {
+		postId: {
+			type: 'number',
+		},
+		name: {
+			type: 'string',
+			default: '',
+		},
+		layout: {
+			type: 'string',
+			default: 'card',
+		},
+		col_xs: {
+			type: 'number',
+			default: 1,
+		},
+		col_sm: {
+			type: 'number',
+			default: 2,
+		},
+		col_md: {
+			type: 'number',
+			default: 3,
+		},
+		col_lg: {
+			type: 'number',
+			default: 3,
+		},
+		col_xl: {
+			type: 'number',
+			default: 3,
+		},
+		col_xxl: {
+			type: 'number',
+			default: 3,
+		},
+		display_title: {
+			type: 'boolean',
+			default: true,
+		},
+		display_excerpt: {
+			type: 'boolean',
+			default: true,
+		},
+		display_image: {
+			type: 'boolean',
+			default: true,
+		},
+		display_image_overlay_term: {
+			type: 'boolean',
+			default: true,
+		},
+		display_date: {
+			type: 'boolean',
+			default: false,
+		},
+		display_new: {
+			type: 'boolean',
+			default: true,
+		},
+		display_btn: {
+			type: 'boolean',
+			default: true,
+		},
+		new_date: {
+			type: 'number',
+			default: 7,
+		},
+		new_text: {
+			type: 'string',
+			default: 'New!!',
+		},
+		btn_text: {
+			type: 'string',
+			default: 'Read more',
+		},
+		btn_align: {
+			type: 'string',
+			default: 'text-right',
+		},
+		numberPosts: {
+			type: 'number',
+			default: 6,
+		},
+		isCheckedPostType: {
+			type: 'string',
+			default: '["post"]',
+		},
+		coreTerms: {
+			type: 'string',
+			default: '[]',
+		},
+		isCheckedTerms: {
+			type: 'string',
+			default: '{}',
+		},
+		activeControl: {
+			type: 'string',
+			default: '{"title": "left", "text":"left" ,"button":"right"}',
+		},
+		unit: {
+			type: 'string',
+			default: 'px',
+		},
+		pc: {
+			type: 'number',
+			default: 150,
+		},
+		tablet: {
+			type: 'number',
+			default: 150,
+		},
+		mobile: {
+			type: 'number',
+			default: 150,
+		},
+		clientId: {
+			type: 'string',
+			default: '',
+		},
+	},
 	supports: {
 		className: true,
-		inserter: inserterVisible,
 	},
 	example: {
 		attributes: {

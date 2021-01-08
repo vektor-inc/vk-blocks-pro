@@ -2,7 +2,6 @@
  * timeline-item block type
  *
  */
-import React from 'react';
 import { ReactComponent as Icon } from './icon.svg';
 import { __ } from '@wordpress/i18n';
 

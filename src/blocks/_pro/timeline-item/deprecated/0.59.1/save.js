@@ -1,8 +1,8 @@
-import { Component } from './component';
+import { TimlineItem } from './component';
 
 export default function save({ attributes, className }) {
 	return (
-		<Component
+		<TimlineItem
 			attributes={attributes}
 			className={className}
 			for_={'save'}

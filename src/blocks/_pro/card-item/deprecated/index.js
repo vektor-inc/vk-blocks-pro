@@ -3,6 +3,7 @@ import save0203 from './0.20.3/save';
 import save0204 from './0.20.4/save';
 import save0205 from './0.20.5/save';
 import save0206 from './0.20.6/save';
+import save0601 from './0.60.1/save';
 
 const blockAttributes = {
 	layout: {
@@ -90,6 +91,32 @@ const blockAttributes = {
 };
 
 export const deprecated = [
+	{
+		attributes: {
+			...blockAttributes,
+			col_xxl: {
+				type: 'number',
+				default: 3,
+			},
+			display_title: {
+				type: 'boolean',
+				default: true,
+			},
+			display_excerpt: {
+				type: 'boolean',
+				default: true,
+			},
+			display_image: {
+				type: 'boolean',
+				default: true,
+			},
+			display_image_overlay_term: {
+				type: 'boolean',
+				default: true,
+			},
+		},
+		save0601,
+	},
 	{
 		attributes: {
 			...blockAttributes,

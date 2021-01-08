@@ -1,15 +1,15 @@
 import { __ } from '@wordpress/i18n';
-import { fixBrokenUnicode } from '../0.20.3/node_modules/@vkblocks/utils/depModules';
+import { fixBrokenUnicode } from '../../deprecated-test/0.20.3/node_modules/@vkblocks/utils/depModules';
 import { RichText, MediaUpload } from '@wordpress/block-editor';
 import { Button } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 import { dispatch } from '@wordpress/data';
-import { convertToGrid } from '../0.20.3/node_modules/@vkblocks/utils/convert-to-grid';
-import React from 'react';
+import { convertToGrid } from '../../deprecated-test/0.20.3/node_modules/@vkblocks/utils/convert-to-grid';
 
-export class DepComponent3 extends React.Component {
+// eslint-disable-next-line no-undef
+export class DepComponent extends React.Component {
 	render() {
-		const { setAttributes, attributes, className, clientId } = this.props;
+		const { setAttributes, attributes, clientId } = this.props.value;
 		let {
 			layout,
 			// eslint-disable-next-line camelcase
@@ -58,9 +58,6 @@ export class DepComponent3 extends React.Component {
 			imgContainerClass = 'vk_post_imgOuter';
 		} else if (layout === 'card-noborder') {
 			layout = 'card ' + layout + ' card-post';
-			imgContainerClass = 'vk_post_imgOuter';
-		} else if (layout === 'card-imageRound') {
-			layout = 'card card-noborder ' + layout + ' card-post';
 			imgContainerClass = 'vk_post_imgOuter';
 		}
 
@@ -117,7 +114,7 @@ export class DepComponent3 extends React.Component {
 
 		// eslint-disable-next-line camelcase,no-shadow
 		const renderImage = (display_image) => {
-			// eslint-disable-next-line camelcase
+			// eslint-disable-next-line camelcase,
 			if (display_image) {
 				if (isEdit(for_)) {
 					return (
@@ -156,13 +153,13 @@ export class DepComponent3 extends React.Component {
 		// eslint-disable-next-line no-shadow
 		const renderExcerpt = (align) => {
 			const titleTag = 'p';
-			const titleClass = `vk_post_excerpt card-text has-text-align-${align.text}`;
+			const titleClass = `vk_post_excerpt card-text text-${align.text}`;
 			if (isEdit(for_)) {
 				return (
 					<RichText
 						tagName={titleTag}
 						className={titleClass}
-						// eslint-disable-next-line camelcase
+						// eslint-disable-next-line camelcase,
 						value={excerpt_text}
 						onChange={(value) =>
 							setAttributes({ excerpt_text: value })
@@ -178,7 +175,7 @@ export class DepComponent3 extends React.Component {
 				<RichText.Content
 					tagName={titleTag}
 					className={titleClass}
-					// eslint-disable-next-line camelcase
+					// eslint-disable-next-line camelcase,
 					value={excerpt_text}
 				/>
 			);
@@ -186,19 +183,17 @@ export class DepComponent3 extends React.Component {
 
 		// eslint-disable-next-line camelcase,no-shadow
 		const renderButton = (display_btn, align) => {
-			// eslint-disable-next-line camelcase
+			// eslint-disable-next-line camelcase,
 			if (display_btn) {
 				return (
-					<div
-						className={`vk_post_btnOuter has-text-align-${align.button}`}
-					>
+					<div className={`vk_post_btnOuter text-${align.button}`}>
 						<a
 							className={`btn btn-primary vk_post_btn`}
 							href={url}
 							target={linkTarget}
 							rel={rel}
 						>
-							{/*eslint-disable-next-line camelcase */}
+							{/* eslint-disable-next-line camelcase*/}
 							{btn_text}
 						</a>
 					</div>
@@ -209,7 +204,7 @@ export class DepComponent3 extends React.Component {
 		// eslint-disable-next-line no-shadow
 		const renderTitle = (align) => {
 			const titleTag = 'h5';
-			const titleClass = `vk_post_title card-title has-text-align-${align.title}`;
+			const titleClass = `vk_post_title card-title text-${align.title}`;
 			if (isEdit(for_)) {
 				return (
 					<RichText
@@ -218,14 +213,6 @@ export class DepComponent3 extends React.Component {
 						value={title}
 						onChange={(value) => setAttributes({ title: value })}
 						placeholder={__('Title', 'vk-blocks')}
-					/>
-				);
-			} else if (!isEdit(for_) && !url) {
-				return (
-					<RichText.Content
-						tagName={titleTag}
-						className={titleClass}
-						value={title}
 					/>
 				);
 			}
@@ -250,12 +237,12 @@ export class DepComponent3 extends React.Component {
 			imageStyle = {};
 		}
 
-		// eslint-disable-next-line camelcase
+		// eslint-disable-next-line camelcase,
 		const btnClass = display_btn ? 'vk_post-btn-display' : '';
 
 		return (
 			<div
-				className={`${className} vk_post ${layout} vk_card_item vk_post-col-xs-${convertToGrid(
+				className={`vk_post ${layout} vk_card_item vk_post-col-xs-${convertToGrid(
 					col_xs
 				)} vk_post-col-sm-${convertToGrid(
 					col_sm

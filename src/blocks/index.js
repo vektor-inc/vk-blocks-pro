@@ -14,7 +14,6 @@ import compareVersions from 'compare-versions';
  * Internal dependencies
  */
 import * as alert from './alert';
-import * as spacer from './spacer';
 import * as prContent from './pr-content';
 import * as faq2 from './faq2';
 import * as faq2a from './faq2-a';
@@ -27,6 +26,8 @@ import * as animation from './_pro/animation';
 import * as postList from './_pro/post-list';
 import * as childPage from './_pro/child-page';
 import * as borderBox from './border-box';
+import * as spacer from './spacer';
+import * as button from './button';
 
 /**
  * Function to get all the VK Blocks in an array.
@@ -45,7 +46,8 @@ export const __getVKBlocks = () => [
 	postList,
 	childPage,
 	borderBox,
-	spacer
+	spacer,
+	button
 ];
 
 /**

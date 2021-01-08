@@ -1,9 +1,7 @@
-const { Component } = wp.element;
+import { Component } from '@wordpress/element';
 
-export class VKBButtonV1 extends Component {
-
+export class VKBButton extends Component {
 	render() {
-
 		const buttonColorCustom = this.props.lbColorCustom;
 		const buttonColor = this.props.lbColor;
 		const buttonType = this.props.lbType;
@@ -15,7 +13,6 @@ export class VKBButtonV1 extends Component {
 		const fontAwesomeIconAfter = this.props.lbFontAwesomeIconAfter;
 		const richText = this.props.lbRichtext;
 		const subCaption = this.props.lbsubCaption;
-		const containerClass = '';
 		let aClass = '';
 		let aStyle = {};
 		let iconBefore = '';
@@ -24,18 +21,20 @@ export class VKBButtonV1 extends Component {
 		aStyle = null;
 		aClass = `vk_button_link`;
 
-		if (buttonType == '0' || buttonType == null || buttonType == '1') {
+		if (buttonType === '0' || buttonType === null || buttonType === '1') {
 			aClass = `${aClass} btn`;
 		} else {
 			aClass = `${aClass} vk_button_link-type-text`;
 		}
 
 		// 塗り
-		if (buttonType == '0' || buttonType === null) {
-
+		if (buttonType === '0' || buttonType === null) {
 			// 規定カラーの場合
-			if (buttonColorCustom == 'undefined' || buttonColorCustom == undefined || buttonColorCustom === null) {
-
+			if (
+				buttonColorCustom === 'undefined' ||
+				buttonColorCustom === undefined ||
+				buttonColorCustom === null
+			) {
 				aClass = `${aClass} btn-${buttonColor}`;
 				aStyle = null;
 
@@ -50,7 +49,11 @@ export class VKBButtonV1 extends Component {
 			// 塗りなし
 		} else if (buttonType === '1') {
 			// 規定カラーの場合
-			if (buttonColorCustom == 'undefined' || buttonColorCustom == undefined || buttonColorCustom === null) {
+			if (
+				buttonColorCustom === 'undefined' ||
+				buttonColorCustom === undefined ||
+				buttonColorCustom === null
+			) {
 				aClass = `${aClass} btn-outline-${buttonColor}`;
 				aStyle = null;
 				// カスタムカラーの場合
@@ -64,7 +67,11 @@ export class VKBButtonV1 extends Component {
 			// テキストのみ
 		} else if (buttonType === '2') {
 			// 規定カラーの場合
-			if (buttonColorCustom == 'undefined' || buttonColorCustom == undefined || buttonColorCustom === null) {
+			if (
+				buttonColorCustom === 'undefined' ||
+				buttonColorCustom === undefined ||
+				buttonColorCustom === null
+			) {
 				aClass = `${aClass} btn-outline-${buttonColor}`;
 				aStyle = null;
 				// カスタムカラーの場合
@@ -81,28 +88,38 @@ export class VKBButtonV1 extends Component {
 			aClass = `${aClass} btn-block`;
 		}
 		if (fontAwesomeIconBefore) {
-			iconBefore = <i className={ `${fontAwesomeIconBefore} vk_button_link_before` }></i>;
+			iconBefore = (
+				<i
+					className={`${fontAwesomeIconBefore} vk_button_link_before`}
+				></i>
+			);
 		}
 		if (fontAwesomeIconAfter) {
-			iconAfter = <i className={ `${fontAwesomeIconAfter} vk_button_link_after` }></i>;
+			iconAfter = (
+				<i
+					className={`${fontAwesomeIconAfter} vk_button_link_after`}
+				></i>
+			);
 		}
 
 		return (
 			<a
-				href={ buttonUrl }
-				id={ 'vk_button_link' }
-				style={ aStyle }
-				className={ aClass }
-				role={ 'button' }
-				aria-pressed={ true }
-				target={ buttonTarget ? '_blank' : null }
-				rel={ 'noopener noreferrer' }
+				href={buttonUrl}
+				id={'vk_button_link'}
+				style={aStyle}
+				className={aClass}
+				role={'button'}
+				aria-pressed={true}
+				target={buttonTarget ? '_blank' : null}
+				rel={'noopener noreferrer'}
 			>
-				{ iconBefore }
-				{ richText }
-				{ iconAfter }
-				{ /*サブキャプションが入力された時のみ表示*/ }
-				{ subCaption && <p className={ 'vk_button_link_subCaption' }>{ subCaption }</p> }
+				{iconBefore}
+				{richText}
+				{iconAfter}
+				{/*サブキャプションが入力された時のみ表示*/}
+				{subCaption && (
+					<p className={'vk_button_link_subCaption'}>{subCaption}</p>
+				)}
 			</a>
 		);
 	}

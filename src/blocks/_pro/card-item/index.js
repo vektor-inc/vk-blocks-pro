@@ -126,35 +126,7 @@ registerBlockType('vk-blocks/card-item', {
 	supports: {
 		className: true,
 	},
-
-	edit(props) {
-		const { setAttributes, attributes } = props;
-		const { url } = attributes;
-
-		return (
-			<Fragment>
-				<InspectorControls>
-					<PanelBody title={__('URL', 'vk-blocks')}>
-						<BaseControl id="sidebar-card-block-url">
-							<TextControl
-								value={url}
-								onChange={(value) =>
-									setAttributes({ url: value })
-								}
-								placeholder={__(
-									'https://example.com',
-									'vk-blocks'
-								)}
-							/>
-						</BaseControl>
-						<LinkControl blockName={'card'} {...props} />
-					</PanelBody>
-				</InspectorControls>
-				<Component {...props} for_={'edit'} />
-			</Fragment>
-		);
-	},
-
+	edit,
 	save(props) {
 		return <Component {...props} for_={'save'} />;
 	},

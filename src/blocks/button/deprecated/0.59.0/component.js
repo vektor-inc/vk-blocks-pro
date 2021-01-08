@@ -120,7 +120,6 @@ export class VKBButton extends Component {
 		}
 
 		return (
-			/* eslint react/jsx-no-target-blank: 0 */
 			<a
 				href={buttonUrl}
 				style={aStyle}
@@ -128,6 +127,7 @@ export class VKBButton extends Component {
 				role={'button'}
 				aria-pressed={true}
 				target={buttonTarget ? '_blank' : null}
+				rel={'noopener noreferrer'}
 			>
 				{ReactHtmlParser(iconBefore)}
 				{richText}

@@ -1,10 +1,7 @@
 import { isNotJSON } from '@vkblocks/utils/is-not-json';
 import { FontAwesome } from '@vkblocks/utils/font-awesome-new';
-
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
-
-import { __ } from '@wordpress/i18n'; // Import __() from wp.i18n
-
+import { __ } from '@wordpress/i18n';
 import {
 	RadioControl,
 	PanelBody,

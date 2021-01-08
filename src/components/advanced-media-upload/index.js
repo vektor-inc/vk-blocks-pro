@@ -1,9 +1,8 @@
 import { __ } from '@wordpress/i18n'; // Import __() from wp.i18n
 import { Button } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
 import { MediaUpload } from '@wordpress/block-editor';
 import { dispatch } from '@wordpress/data';
-import noImage from "../../../inc/vk-blocks/images/no-image.svg";
+import noImage from '../../../inc/vk-blocks/images/no-image.svg';
 
 export const AdvancedMediaUpload = (props) => {
 	const { schema, clientId, setAttributes, attributes } = props;
@@ -11,21 +10,19 @@ export const AdvancedMediaUpload = (props) => {
 	const deleteImgBtn = () => {
 		dispatch('core/editor').updateBlockAttributes(clientId, {
 			[schema]: null,
-			[alt]:null
 		});
 	};
 
 	return (
 		<MediaUpload
-			onSelect={(value) => {
-				setAttributes({ [schema]: value.url });
-			}}
+			onSelect={(value) => setAttributes({ [schema]: value.url })}
 			type="image"
 			value={attributes[schema]}
 			render={({ open }) => (
-				<Fragment>
+				<>
 					{attributes[schema] ? (
-						<Fragment>
+						<>
+							{/* eslint-disable-next-line jsx-a11y/alt-text*/}
 							<img
 								className={'icon-image'}
 								src={attributes[schema]}
@@ -36,14 +33,11 @@ export const AdvancedMediaUpload = (props) => {
 							>
 								{__('Delete Image', 'vk-blocks')}
 							</Button>
-						</Fragment>
+						</>
 					) : (
-						<Fragment>
-							<img
-								className={'icon-image'}
-								src={noImage}
-								alt={''}
-							/>
+						<>
+							{/* eslint-disable-next-line jsx-a11y/alt-text*/}
+							<img className={'icon-image'} src={noImage} />
 							<Button
 								onClick={open}
 								className={
@@ -52,9 +46,9 @@ export const AdvancedMediaUpload = (props) => {
 							>
 								{__('Select image', 'vk-blocks')}
 							</Button>
-						</Fragment>
+						</>
 					)}
-				</Fragment>
+				</>
 			)}
 		/>
 	);

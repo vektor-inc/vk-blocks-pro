@@ -13,8 +13,6 @@ import compareVersions from 'compare-versions';
 /**
  * Internal dependencies
  */
-import * as timeline from './_pro/timeline';
-import * as timelineItem from './_pro/timeline-item';
 import * as alert from './alert';
 import * as prContent from './pr-content';
 import * as faq2 from './faq2';
@@ -31,13 +29,14 @@ import * as borderBox from './border-box';
 import * as spacer from './spacer';
 import * as button from './button';
 import * as prBlocks from './pr-blocks';
+import * as timeline from './_pro/timeline';
+import * as timelineItem from './_pro/timeline-item';
+import * as tableofContentsNew from './_pro/table-of-contents-new';
 
 /**
  * Function to get all the VK Blocks in an array.
  */
 export const __getVKBlocks = () => [
-	timeline,
-	timelineItem,
 	alert,
 	prContent,
 	faq2,
@@ -53,7 +52,10 @@ export const __getVKBlocks = () => [
 	borderBox,
 	spacer,
 	button,
-	prBlocks
+	prBlocks,
+	timeline,
+	timelineItem,
+	tableofContentsNew,
 ];
 
 /**

@@ -2,7 +2,7 @@
  * PR Block block type
  *
  */
-import { __ } from '@wordpress/i18n'; // Import __() from wp.i18n
+import { __ } from '@wordpress/i18n';
 import { ReactComponent as Icon } from './icon.svg';
 import {
 	iconName,

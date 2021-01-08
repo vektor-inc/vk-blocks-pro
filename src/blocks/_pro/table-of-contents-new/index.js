@@ -11,12 +11,11 @@ import {
 	AsyncGetBlocksByName,
 } from './toc-utils';
 import { ReactComponent as Icon } from './icon.svg';
-import compareVersions from 'compare-versions';
 
 import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
-import { dispatch } from '@wordpress/data';
+import { select, dispatch } from '@wordpress/data';
 
 import metadata from './block.json';
 import edit from './edit';
@@ -43,9 +42,7 @@ const getHeadings = (props) => {
 	const tocs = getBlocksByName('vk-blocks/table-of-contents-new');
 	const tocClientId = tocs[0] ? tocs[0].clientId : '';
 	const tocAttributes = tocs[0] ? tocs[0].attributes : '';
-	const { updateBlockAttributes } = dispatch('core/block-editor')
-		? dispatch('core/block-editor')
-		: dispatch('core/editor');
+	const { updateBlockAttributes } = dispatch('core/block-editor');
 	const headingList = ['core/heading', 'vk-blocks/heading'];
 
 	if (
@@ -74,7 +71,7 @@ const getHeadings = (props) => {
 const updateTableOfContents = createHigherOrderComponent((BlockListBlock) => {
 	return (props) => {
 		// 投稿に目次ブロックがある時のみ、見出しにカスタムIDを追加。
-		const blocks = wp.data.select('core/block-editor').getBlocks();
+		const blocks = select('core/block-editor').getBlocks();
 		const findBlocks = blocks.find(
 			(block) => block.name === 'vk-blocks/table-of-contents-new'
 		);
@@ -96,11 +93,8 @@ const updateTableOfContents = createHigherOrderComponent((BlockListBlock) => {
 	};
 }, 'updateTableOfContents');
 
-// eslint-disable-next-line no-undef
-if (window.wpVersion && compareVersions(window.wpVersion, '5.3') >= 0) {
-	addFilter(
-		'editor.BlockListBlock',
-		'vk-blocks/table-of-contents-new',
-		updateTableOfContents
-	);
-}
+addFilter(
+	'editor.BlockListBlock',
+	'vk-blocks/table-of-contents-new',
+	updateTableOfContents
+);

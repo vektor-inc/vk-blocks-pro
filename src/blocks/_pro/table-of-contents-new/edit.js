@@ -10,6 +10,7 @@ export default function TOCEdit(props) {
 	const blockProps = useBlockProps({
 		className: `vk_tableOfContents vk_tableOfContents-style-${style} tabs`,
 	});
+	/* eslint jsx-a11y/label-has-associated-control: 0 */
 	return (
 		<Fragment>
 			<InspectorControls>
@@ -61,12 +62,11 @@ export default function TOCEdit(props) {
 					<div className={'vk_tableOfContents_title'}>
 						{__('Table of Contents', 'vk-blocks')}
 					</div>
+					<input type="checkbox" id="chck1" />
 					<label
 						className={`tab-label vk_tableOfContents_openCloseBtn button_status button_status-${open}`}
 						htmlFor="chck1"
-					>
-						<input type="checkbox" id="chck1" />
-					</label>
+					/>
 					<ul
 						className={`vk_tableOfContents_list tab_content-${open}`}
 					>

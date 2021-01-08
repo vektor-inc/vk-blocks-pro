@@ -1,6 +1,5 @@
 import { __ } from '@wordpress/i18n'; // Import __() from wp.i18n
 import { Button } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
 import { MediaUpload } from '@wordpress/block-editor';
 import { dispatch } from '@wordpress/data';
 import noImage from '../../../inc/vk-blocks/images/no-image.svg';
@@ -24,9 +23,9 @@ export const AdvancedMediaUpload = (props) => {
 			type="image"
 			value={attributes[url]}
 			render={({ open }) => (
-				<Fragment>
+				<>
 					{attributes[url] ? (
-						<Fragment>
+						<>
 							<img
 								className={'icon-image'}
 								src={attributes[url]}
@@ -38,9 +37,9 @@ export const AdvancedMediaUpload = (props) => {
 							>
 								{__('Delete Image', 'vk-blocks')}
 							</Button>
-						</Fragment>
+						</>
 					) : (
-						<Fragment>
+						<>
 							<img
 								className={'icon-image'}
 								src={noImage}
@@ -54,9 +53,9 @@ export const AdvancedMediaUpload = (props) => {
 							>
 								{__('Select image', 'vk-blocks')}
 							</Button>
-						</Fragment>
+						</>
 					)}
-				</Fragment>
+				</>
 			)}
 		/>
 	);

@@ -9,7 +9,7 @@ import { VKBHeading_0_39_5 } from "./component_0_39_5";
 import { VKBHeading_0_40_0 } from "./component_0_40_0";
 import VKBHeading_0_40_1 from "./0.40.1"
 
-const { Fragment, Component } = wp.element;
+const { Component } = wp.element;
 import { vkbBlockEditor } from "../../../utils/depModules";
 const { RichText } = vkbBlockEditor;
 const { __ } = wp.i18n;
@@ -276,7 +276,7 @@ export const Deprecated = [
       const tagName = "h" + level;
 
       return (
-	<Fragment>
+	<>
 		{ outerMarginBottom == null ? (
 			<div className={ `vk_heading vk_heading-style-${titleStyle}` }>
 				<RichText.Content
@@ -342,7 +342,7 @@ export const Deprecated = [
                   })() }
 	</div>
             ) }
-	</Fragment>
+	</>
       );
     }
 	},

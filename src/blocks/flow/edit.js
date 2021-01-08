@@ -7,7 +7,6 @@ import {
 import { __ } from '@wordpress/i18n';
 
 import { RadioControl, PanelBody, Button } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
 
 export default function FlowEdit({ attributes, setAttributes, clientId }) {
 	const { heading, content, insertImage, arrowFlag } = attributes;
@@ -16,7 +15,7 @@ export default function FlowEdit({ attributes, setAttributes, clientId }) {
 	});
 
 	return (
-		<Fragment>
+		<>
 			<InspectorControls>
 				<PanelBody title={__('Display of arrow', 'vk-blocks')}>
 					<RadioControl
@@ -97,6 +96,6 @@ export default function FlowEdit({ attributes, setAttributes, clientId }) {
 					</div>
 				</div>
 			</div>
-		</Fragment>
+		</>
 	);
 }

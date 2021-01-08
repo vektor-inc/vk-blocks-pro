@@ -1,5 +1,5 @@
 import { Button, Popover } from '@wordpress/components';
-import { Fragment, createRef, Component } from '@wordpress/element';
+import { createRef, Component } from '@wordpress/element';
 
 export default class AdvancedPopOverControl extends Component {
 	constructor(props) {
@@ -31,7 +31,7 @@ export default class AdvancedPopOverControl extends Component {
 		};
 
 		return (
-			<Fragment>
+			<>
 				<div className="components-base-control">
 					<div
 						className={
@@ -57,7 +57,7 @@ export default class AdvancedPopOverControl extends Component {
 						)}
 					</div>
 				</div>
-			</Fragment>
+			</>
 		);
 	}
 }

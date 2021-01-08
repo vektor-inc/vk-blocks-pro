@@ -1,4 +1,3 @@
-const { Fragment } = wp.element;
 import { componentDivider } from "./component-divider";
 import { vkbBlockEditor } from "./../../../utils/depModules";
 const { InnerBlocks } = vkbBlockEditor;
@@ -160,7 +159,7 @@ const OuterBlockInner = (props) => {
 	} = props;
 
 	return (
-		<Fragment>
+		<>
 			<div>
 				{ componentDivider(
 					upper_level,
@@ -176,6 +175,6 @@ const OuterBlockInner = (props) => {
 					dividerType
 				) }
 			</div>
-		</Fragment>
+		</>
 	);
 };

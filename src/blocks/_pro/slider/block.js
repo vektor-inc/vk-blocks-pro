@@ -16,7 +16,7 @@ import compareVersions from 'compare-versions';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { Fragment, useEffect } = wp.element;
+const { useEffect } = wp.element;
 const { InspectorControls, BlockControls, BlockAlignmentToolbar} = wp.blockEditor;
 const { select, dispatch } = wp.data;
 const { PanelBody, BaseControl, TextControl, ButtonGroup, Button, SelectControl } = wp.components;
@@ -53,7 +53,7 @@ registerBlockType("vk-blocks/slider", {
 		}, [])
 
 		return (
-			<Fragment>
+			<>
 				<BlockControls>
 					<BlockAlignmentToolbar
 						value={ width }
@@ -154,7 +154,7 @@ registerBlockType("vk-blocks/slider", {
 					setAttributes={ setAttributes }
 					for_={ "edit" }
 				/>
-			</Fragment>
+			</>
 		);
 	},
 	save({ attributes }) {
@@ -204,10 +204,10 @@ const vkbwithClientIdClassName = createHigherOrderComponent(
 			if ("vk-blocks/slider" === props.name) {
 				const cssTag = generateHeightCss( props.attributes, "edit" )
 				return (
-					<Fragment>
+					<>
 						<style type='text/css'>{ cssTag }</style>
 						<BlockListBlock { ...props } />
-					</Fragment>
+					</>
 				)
 			}
 			return <BlockListBlock { ...props } />;

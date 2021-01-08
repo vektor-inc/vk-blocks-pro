@@ -1,6 +1,5 @@
 import { __ } from '@wordpress/i18n';
 import { RangeControl, BaseControl } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
 import formatNumCol from '@vkblocks/utils/formatNumCol';
 
 export const ColumnLayout = (props) => {
@@ -32,7 +31,7 @@ export const ColumnLayout = (props) => {
 	];
 
 	return (
-		<Fragment>
+		<>
 			<BaseControl
 				label={__('Column ( Screen size : Extra small )', 'vk-blocks')}
 				id={'vk_columns-xs'}
@@ -129,6 +128,6 @@ export const ColumnLayout = (props) => {
 					step={1}
 				/>
 			</BaseControl>
-		</Fragment>
+		</>
 	);
 };

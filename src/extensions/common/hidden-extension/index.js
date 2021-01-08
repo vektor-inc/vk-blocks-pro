@@ -1,5 +1,4 @@
 const { __ } = wp.i18n;
-const { Fragment } = wp.element;
 const { addFilter } = wp.hooks;
 const { PanelBody, BaseControl } = wp.components;
 const { InspectorControls } =
@@ -107,7 +106,7 @@ if (5.3 <= parseFloat(wpVersion)) {
 					}
 
 					return (
-						<Fragment>
+						<>
 							<BlockEdit { ...props } />
 							<InspectorControls>
 								<PanelBody
@@ -172,7 +171,7 @@ if (5.3 <= parseFloat(wpVersion)) {
 									</BaseControl>
 								</PanelBody>
 							</InspectorControls>
-						</Fragment>
+						</>
 					);
 				}
 				// IF not hidden function target block that return original BlockEdit

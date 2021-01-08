@@ -7,32 +7,21 @@ import {
 	CheckboxControl,
 } from '@wordpress/components';
 
+/* eslint camelcase: 0 */
 export const DisplayItemsControl = (props) => {
 	const { setAttributes, attributes } = props;
 	const {
-		// eslint-disable-next-line camelcase
 		display_image,
-		// eslint-disable-next-line camelcase
 		display_image_overlay_term,
-		// eslint-disable-next-line camelcase
 		display_excerpt,
-		// eslint-disable-next-line camelcase
 		display_author,
-		// eslint-disable-next-line camelcase
 		display_date,
-		// eslint-disable-next-line camelcase
 		display_new,
-		// eslint-disable-next-line camelcase
 		display_taxonomies,
-		// eslint-disable-next-line camelcase
 		display_btn,
-		// eslint-disable-next-line camelcase
 		new_date,
-		// eslint-disable-next-line camelcase
 		new_text,
-		// eslint-disable-next-line camelcase
 		btn_text,
-		// eslint-disable-next-line camelcase
 		btn_align,
 	} = attributes;
 
@@ -40,7 +29,6 @@ export const DisplayItemsControl = (props) => {
 		<PanelBody title={__('Display item', 'vk-blocks')} initialOpen={false}>
 			<CheckboxControl
 				label={__('Image', 'vk-blocks')}
-				// eslint-disable-next-line camelcase
 				checked={display_image}
 				onChange={(checked) =>
 					setAttributes({ display_image: checked })
@@ -48,7 +36,6 @@ export const DisplayItemsControl = (props) => {
 			/>
 			<CheckboxControl
 				label={__('Term name', 'vk-blocks')}
-				// eslint-disable-next-line camelcase
 				checked={display_image_overlay_term}
 				onChange={(checked) =>
 					setAttributes({ display_image_overlay_term: checked })
@@ -56,7 +43,6 @@ export const DisplayItemsControl = (props) => {
 			/>
 			<CheckboxControl
 				label={__('Excerpt', 'vk-blocks')}
-				// eslint-disable-next-line camelcase
 				checked={display_excerpt}
 				onChange={(checked) =>
 					setAttributes({ display_excerpt: checked })
@@ -64,7 +50,6 @@ export const DisplayItemsControl = (props) => {
 			/>
 			<CheckboxControl
 				label={__('Author', 'vk-blocks')}
-				// eslint-disable-next-line camelcase
 				checked={display_author}
 				onChange={(checked) =>
 					setAttributes({ display_author: checked })
@@ -72,21 +57,18 @@ export const DisplayItemsControl = (props) => {
 			/>
 			<CheckboxControl
 				label={__('Date', 'vk-blocks')}
-				// eslint-disable-next-line camelcase
 				checked={display_date}
 				onChange={(checked) => setAttributes({ display_date: checked })}
 			/>
 
 			<CheckboxControl
 				label={__('New mark', 'vk-blocks')}
-				// eslint-disable-next-line camelcase
 				checked={display_new}
 				onChange={(checked) => setAttributes({ display_new: checked })}
 			/>
 
 			<CheckboxControl
 				label={__('Taxonomies', 'vk-blocks')}
-				// eslint-disable-next-line camelcase
 				checked={display_taxonomies}
 				onChange={(checked) =>
 					setAttributes({ display_taxonomies: checked })
@@ -95,7 +77,6 @@ export const DisplayItemsControl = (props) => {
 
 			<CheckboxControl
 				label={__('Button', 'vk-blocks')}
-				// eslint-disable-next-line camelcase
 				checked={display_btn}
 				onChange={(checked) => setAttributes({ display_btn: checked })}
 			/>
@@ -105,14 +86,12 @@ export const DisplayItemsControl = (props) => {
 					'Number of days to display the new post mark',
 					'vk-blocks'
 				)}
-				// eslint-disable-next-line camelcase
 				value={new_date}
 				onChange={(value) => setAttributes({ new_date: value })}
 				type={'number'}
 			/>
 			<TextControl
 				label={__('New post mark', 'vk-blocks')}
-				// eslint-disable-next-line camelcase
 				value={new_text}
 				onChange={(value) => setAttributes({ new_text: value })}
 			/>
@@ -127,7 +106,6 @@ export const DisplayItemsControl = (props) => {
 			</p>
 			<TextControl
 				label={__('Button text', 'vk-blocks')}
-				// eslint-disable-next-line camelcase
 				value={btn_text}
 				onChange={(value) => setAttributes({ btn_text: value })}
 			/>
@@ -136,7 +114,6 @@ export const DisplayItemsControl = (props) => {
 				id={'vk_displayItem-buttonAlign'}
 			>
 				<SelectControl
-					// eslint-disable-next-line camelcase
 					value={btn_align}
 					onChange={(value) => setAttributes({ btn_align: value })}
 					options={[

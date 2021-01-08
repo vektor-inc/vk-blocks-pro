@@ -2,7 +2,6 @@ import { vkbBlockEditor } from "./../../../../utils/depModules";
 const { RichText } = vkbBlockEditor;
 const { __ } = wp.i18n; // Import __() from wp.i18n
 import ReactHtmlParser from 'react-html-parser';
-import { Fragment } from "react";
 
 const renderTitle = (level, contents,tStyle, headingStyle ) =>{
 	switch (level) {
@@ -98,7 +97,7 @@ export default (props) => {
 
 	if (for_ === "edit") {
 
-		const titleContent = <Fragment>
+		const titleContent = <>
 			{ ReactHtmlParser(iconBefore) }
 			<RichText
 				tagName={ "span" }
@@ -109,7 +108,7 @@ export default (props) => {
 				placeholder={ __("Input title…", "vk-blocks") }
 				/>
 			{ ReactHtmlParser(iconAfter) }
-		</Fragment>
+		</>
 
 		let subtextContent;
 		if (subTextFlag === "on") {
@@ -127,14 +126,14 @@ export default (props) => {
 
 	} else if (for_ === "save") {
 
-		const titleContent = <Fragment>
+		const titleContent = <>
 			{ ReactHtmlParser(iconBefore) }
 			<RichText.Content
 				tagName={ "span" }
 				value={ title }
 			/>
 			{ ReactHtmlParser(iconAfter) }
-		</Fragment>
+		</>
 
 		let subtextContent;
 		if (subTextFlag === "on") {

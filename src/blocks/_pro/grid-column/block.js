@@ -14,7 +14,6 @@ import deprecated from "./deprecated/"
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { Fragment } = wp.element;
 const { InspectorControls } =vkbBlockEditor;
 const { select, dispatch } = wp.data;
 const { PanelBody } = wp.components;
@@ -77,7 +76,7 @@ registerBlockType("vk-blocks/grid-column", {
 		}
 
 		return (
-			<Fragment>
+			<>
 				<InspectorControls>
 					<PanelBody
 						title={ __("Layout Columns", "vk-blocks") }
@@ -92,7 +91,7 @@ registerBlockType("vk-blocks/grid-column", {
 					setAttributes={ setAttributes }
 					for_={ "edit" }
 				/>
-			</Fragment>
+			</>
 		);
 	},
 	save({ attributes }) {

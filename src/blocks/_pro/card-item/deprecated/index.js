@@ -2,7 +2,6 @@ const { __ } = wp.i18n;
 import { vkbBlockEditor, fixBrokenUnicode } from "../../../../utils/depModules";
 const { RichText, MediaUpload, InnerBlocks } = vkbBlockEditor;
 const { Button } = wp.components;
-const { Fragment } = wp.element;
 const { dispatch } = wp.data;
 
 import { convertToGrid } from "../../../../utils/convert-to-grid";
@@ -371,13 +370,13 @@ class DepComponent extends React.Component {
 		className={ "vk_post_imgOuter_img card-img-top" }
 		value={ image }
 		render={ ({ open }) => (
-			<Fragment>
+			<>
 				{ !imageParsed ? (
 					<Button onClick={ open } className={ "button button-large" }>
 						{ __("Select image", "vk-blocks") }
 					</Button>
               ) : (
-	<Fragment>
+	<>
 		<img
 			className={ "vk_post_imgOuter_img card-img-top" }
 			src={ imageParsed.sizes.full.url }
@@ -389,9 +388,9 @@ class DepComponent extends React.Component {
                     >
 			{ __("Delete Image", "vk-blocks") }
 		</Button>
-	</Fragment>
+	</>
                 ) }
-			</Fragment>
+			</>
           ) }
         />
       );
@@ -401,12 +400,12 @@ class DepComponent extends React.Component {
       if (display_image) {
         if (isEdit(for_)) {
           return (
-	<Fragment>
+	<>
 		<div className={ imgContainerClass } style={ imageStyle }>
 			<div className="card-img-overlay"></div>
 			{ uploadImgBtn(image) }
 		</div>
-	</Fragment>
+	</>
           );
         }
           return (
@@ -621,13 +620,13 @@ class DepComponent2 extends React.Component {
 		className={ "vk_post_imgOuter_img card-img-top" }
 		value={ image }
 		render={ ({ open }) => (
-			<Fragment>
+			<>
 				{ !imageParsed ? (
 					<Button onClick={ open } className={ "button button-large" }>
 						{ __("Select image", "vk-blocks") }
 					</Button>
               ) : (
-	<Fragment>
+	<>
 		<img
 			className={ "vk_post_imgOuter_img card-img-top" }
 			src={ imageParsed.sizes.full.url }
@@ -639,9 +638,9 @@ class DepComponent2 extends React.Component {
                     >
 			{ __("Delete Image", "vk-blocks") }
 		</Button>
-	</Fragment>
+	</>
                 ) }
-			</Fragment>
+			</>
           ) }
         />
       );
@@ -651,12 +650,12 @@ class DepComponent2 extends React.Component {
       if (display_image) {
         if (isEdit(for_)) {
           return (
-	<Fragment>
+	<>
 		<div className={ imgContainerClass } style={ imageStyle }>
 			<div className="card-img-overlay"></div>
 			{ uploadImgBtn(image) }
 		</div>
-	</Fragment>
+	</>
           );
         }
           return (
@@ -870,13 +869,13 @@ class DepComponent3 extends React.Component {
 		className={ "vk_post_imgOuter_img card-img-top" }
 		value={ image }
 		render={ ({ open }) => (
-			<Fragment>
+			<>
 				{ !imageParsed ? (
 					<Button onClick={ open } className={ "button button-large" }>
 						{ __("Select image", "vk-blocks") }
 					</Button>
               ) : (
-	<Fragment>
+	<>
 		<img
 			className={ "vk_post_imgOuter_img card-img-top" }
 			src={ imageParsed.sizes.full.url }
@@ -888,9 +887,9 @@ class DepComponent3 extends React.Component {
                     >
 			{ __("Delete Image", "vk-blocks") }
 		</Button>
-	</Fragment>
+	</>
                 ) }
-			</Fragment>
+			</>
           ) }
         />
       );
@@ -900,12 +899,12 @@ class DepComponent3 extends React.Component {
       if (display_image) {
         if (isEdit(for_)) {
           return (
-	<Fragment>
+	<>
 		<div className={ imgContainerClass } style={ imageStyle }>
 			<div className="card-img-overlay"></div>
 			{ uploadImgBtn(image) }
 		</div>
-	</Fragment>
+	</>
           );
         }
           return (
@@ -1126,13 +1125,13 @@ export class DepComponentXxlAdd extends React.Component {
 				className={ "vk_post_imgOuter_img card-img-top" }
 				value={ image }
 				render={ ({ open }) => (
-					<Fragment>
+					<>
 						{ !imageParsed ? (
 							<Button onClick={ open } className={ "button button-large" }>
 								{ __("Select image", "vk-blocks") }
 							</Button>
 				) : (
-					<Fragment>
+					<>
 						<img
 							className={ "vk_post_imgOuter_img card-img-top" }
 							src={ imageParsed.sizes.full.url }
@@ -1144,9 +1143,9 @@ export class DepComponentXxlAdd extends React.Component {
 					  >
 							{ __("Delete Image", "vk-blocks") }
 						</Button>
-					</Fragment>
+					</>
 				  ) }
-					</Fragment>
+					</>
 			) }
 		  />
 		);
@@ -1156,12 +1155,12 @@ export class DepComponentXxlAdd extends React.Component {
 		if (display_image) {
 		  if (isEdit(for_)) {
 			return (
-				<Fragment>
+				<>
 					<div className={ imgContainerClass } style={ imageStyle }>
 						<div className="card-img-overlay"></div>
 						{ uploadImgBtn(image) }
 					</div>
-				</Fragment>
+				</>
 			);
 		  }
 			return (

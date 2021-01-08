@@ -1,7 +1,6 @@
 const { __ } = wp.i18n; // Import __() from wp.i18n
 import { vkbBlockEditor, fixBrokenUnicode } from "../../../../../utils/depModules";
 const { RichText } = vkbBlockEditor;
-const { Fragment } = wp.element;
 import ReactHtmlParser from 'react-html-parser';
 import { convertToGrid } from "../../../../../utils/convert-to-grid";
 
@@ -41,7 +40,7 @@ export const PRcarditem = (props)=>{
 
 	let contents;
 	if(for_ === "edit"){
-		contents = <Fragment>
+		contents = <>
 			<div className="vk_icon-card_item_icon_outer" style={ style }>
 				{ ReactHtmlParser(faIconTag) }
 			</div>
@@ -59,7 +58,7 @@ export const PRcarditem = (props)=>{
 				value={ content }
 				placeholder={ __('Input Content', 'vk-blocks') }
 			/>
-		</Fragment>
+		</>
 	}else if(for_ === "save"){
 		contents = <a href={ url } className="vk_icon-card_item_link" target={ urlOpenType ? "_blank" : "_self" } rel="noopener noreferrer">
 			<div className="vk_icon-card_item_icon_outer" style={ style }>

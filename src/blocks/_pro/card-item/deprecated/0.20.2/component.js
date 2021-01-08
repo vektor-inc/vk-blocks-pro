@@ -2,7 +2,6 @@ const { __ } = wp.i18n; // Import __() from wp.i18n
 const { RichText, MediaUpload } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 const { Button } = wp.components;
-const { Fragment } = wp.element;
 const { dispatch } = wp.data;
 
 import { convertToGrid } from "../../../../../utils/convert-to-grid";
@@ -85,13 +84,13 @@ export class Component extends React.Component {
           className={"vk_post_imgOuter_img card-img-top"}
           value={image}
           render={({ open }) => (
-            <Fragment>
+            <>
               {!imageParsed ? (
                 <Button onClick={open} className={"button button-large"}>
                   {__("Select image", "vk-blocks")}
                 </Button>
               ) : (
-                <Fragment>
+                <>
                   <img
                     className={"vk_post_imgOuter_img card-img-top"}
                     src={imageParsed.sizes.full.url}
@@ -103,9 +102,9 @@ export class Component extends React.Component {
                   >
                     {__("Delete Image", "vk-blocks")}
                   </Button>
-                </Fragment>
+                </>
               )}
-            </Fragment>
+            </>
           )}
         />
       );
@@ -115,12 +114,12 @@ export class Component extends React.Component {
       if (display_image) {
         if (isEdit(for_)) {
           return (
-            <Fragment>
+            <>
               <div className={imgContainerClass} style={imageStyle}>
                 <div className="card-img-overlay"></div>
                 {uploadImgBtn(image)}
               </div>
-            </Fragment>
+            </>
           );
         } else {
           return (

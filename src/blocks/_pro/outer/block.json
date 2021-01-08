@@ -79,7 +79,7 @@
 			"type": "number",
 			"default": 0
 		},
-		"clientId": {
+		"blockId": {
 			"type": "string",
 			"default": null
 		}

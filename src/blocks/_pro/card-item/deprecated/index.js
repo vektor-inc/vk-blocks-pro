@@ -1,13 +1,15 @@
-const { __ } = wp.i18n;
-import { vkbBlockEditor, fixBrokenUnicode } from '../../../../utils/depModules';
-const { RichText, MediaUpload, InnerBlocks } = vkbBlockEditor;
-const { Button } = wp.components;
-const { Fragment } = wp.element;
-const { dispatch } = wp.data;
+import { __ } from from '@wordpress/i18n';
+import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
+import { RichText, MediaUpload, InnerBlocks } from '@wordpress/block-editor';
+import { Button } from '@wordpress/components';
+import { Fragment } from '@wordpress/element';
+import { dispatch } from '@wordpress/data';
 
-import { convertToGrid } from '../../../../utils/convert-to-grid';
+import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 
-const depSchema = {
+
+
+const blockAttributes = {
 	layout: {
 		type: 'string',
 		default: 'card',

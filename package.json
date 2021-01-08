@@ -29,6 +29,8 @@
 		"lint:border-box": "wp-scripts format-js src/blocks/border-box && wp-scripts lint-js src/blocks/border-box --fix",
 		"lint:spacer": "wp-scripts format-js src/blocks/spacer && wp-scripts lint-js src/blocks/spacer --fix",
 		"lint:button": "wp-scripts format-js src/blocks/button && wp-scripts lint-js src/blocks/button --fix",
+		"lint:timeline": "wp-scripts format-js src/blocks/_pro/timeline && wp-scripts lint-js src/blocks/_pro/timeline --fix",
+		"lint:timeline-item": "wp-scripts format-js src/blocks/_pro/timeline-item && wp-scripts lint-js src/blocks/_pro/timeline-item --fix",
 		"lint:advanced-unit-control": "wp-scripts format-js src/components/advanced-unit-control && wp-scripts lint-js src/components/advanced-unit-control",
     "lint:advanced-viewport-control": "wp-scripts format-js src/components/advanced-viewport-control && wp-scripts lint-js src/components/advanced-viewport-control",
 		"lint:utils": "wp-scripts format-js src/utils && wp-scripts lint-js src/utils --fix",

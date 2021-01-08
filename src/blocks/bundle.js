@@ -26,8 +26,6 @@ import "@vkblocks/blocks/_pro/table-of-contents/block.js";
 import "@vkblocks/blocks/_pro/table-of-contents-new/block.js";
 import "@vkblocks/blocks/_pro/step-item/block.js";
 import "@vkblocks/blocks/_pro/step/block.js";
-import "@vkblocks/blocks/_pro/timeline-item/block.js";
-import "@vkblocks/blocks/_pro/timeline/block.js";
 import "@vkblocks/blocks/_pro/grid-column/block.js";
 import "@vkblocks/blocks/_pro/grid-column-item/block.js";
 import "@vkblocks/blocks/_pro/slider/block.js";

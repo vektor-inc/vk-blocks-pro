@@ -3,7 +3,7 @@ import { componentDivider } from './component-divider';
 import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
 
 export default function save(props) {
-	const { attributes, clientId } = props;
+	const { attributes } = props;
 	const {
 		bgPosition,
 		outerWidth,
@@ -22,7 +22,7 @@ export default function save(props) {
 		borderStyle,
 		borderColor,
 		borderRadius,
-		blockId
+		blockId,
 	} = attributes;
 
 	let classPaddingLR;

@@ -41,7 +41,7 @@ export default function OuterEdit(props) {
 		borderStyle,
 		borderColor,
 		borderRadius,
-		blockId
+		blockId,
 	} = attributes;
 
 	setAttributes({ blockId: clientId });

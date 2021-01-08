@@ -17,7 +17,10 @@ export const AdvancedMediaUpload = (props) => {
 
 	return (
 		<MediaUpload
-			onSelect={(value) => {setAttributes({ [url]: value.url }); setAttributes({ [alt]: value.alt })}}
+			onSelect={(value) => {
+				setAttributes({ [url]: value.url });
+				setAttributes({ [alt]: value.alt });
+			}}
 			type="image"
 			value={attributes[url]}
 			render={({ open }) => (

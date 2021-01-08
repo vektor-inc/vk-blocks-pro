@@ -120,6 +120,7 @@ export class VKBButton extends Component {
 		}
 
 		return (
+			/* eslint react/jsx-no-target-blank: 0 */
 			<a
 				href={buttonUrl}
 				style={aStyle}

@@ -147,14 +147,14 @@ function vkblocks_blocks_assets() {
 			'alert',
 			'balloon',
 			'border-box',
-      'button'
+			'button',
 			'faq',
 			'faq2',
 			'faq2-q',
 			'faq2-a',
 			'flow',
-      'page-content',
-			'pr-blocks',			
+			'page-content',
+			'pr-blocks',
 			'pr-content',
 			'spacer',
 		);

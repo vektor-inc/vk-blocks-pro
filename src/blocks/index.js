@@ -48,16 +48,16 @@ export const __getVKBlocks = () => [
 	alert,
 	balloon,
 	borderBox,
-  button,
+	button,
 	faq,
 	faq2,
 	faq2a,
 	faq2q,
 	flow,
 	pageContent,
-   prBlocks,
-	prContent, 
- 	spacer,	
+	prBlocks,
+	prContent,
+	spacer,
 ];
 
 /**

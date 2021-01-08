@@ -27,6 +27,12 @@ import * as animation from './_pro/animation';
 import * as postList from './_pro/post-list';
 import * as childPage from './_pro/child-page';
 import * as borderBox from './border-box';
+import * as spacer from './spacer';
+import * as button from './button';
+import * as prBlocks from './pr-blocks';
+import * as timeline from './_pro/timeline';
+import * as timelineItem from './_pro/timeline-item';
+import * as tableofContentsNew from './_pro/table-of-contents-new';
 
 /**
  * Function to get all the VK Blocks in an array.
@@ -46,6 +52,12 @@ export const __getVKBlocks = () => [
 	postList,
 	childPage,
 	borderBox,
+	spacer,
+	button,
+	prBlocks,
+	timeline,
+	timelineItem,
+	tableofContentsNew,
 ];
 
 /**

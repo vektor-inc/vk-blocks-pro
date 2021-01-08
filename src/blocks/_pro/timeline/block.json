@@ -1,0 +1,9 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/timeline",
+	"category": "vk-blocks-cat",
+	"attributes": {},
+	"supports": {
+		"className": true
+	}
+}

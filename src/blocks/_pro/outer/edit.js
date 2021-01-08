@@ -21,7 +21,7 @@ import { componentDivider } from './component-divider';
 import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
 
 export default function OuterEdit(props) {
-	const { attributes, setAttributes } = props;
+	const { attributes, setAttributes, clientId } = props;
 	const {
 		bgColor,
 		bgPosition,
@@ -42,7 +42,10 @@ export default function OuterEdit(props) {
 		borderStyle,
 		borderColor,
 		borderRadius,
+		blockId
 	} = attributes;
+
+	setAttributes({ blockId: clientId });
 
 	let classPaddingLR;
 	let classPaddingVertical;
@@ -123,7 +126,7 @@ export default function OuterEdit(props) {
 	}
 
 	const blockProps = useBlockProps({
-		className: `vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
+		className: `vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 	});
 
 	return (

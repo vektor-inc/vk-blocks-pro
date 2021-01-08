@@ -22,6 +22,7 @@ export default function save(props) {
 		borderStyle,
 		borderColor,
 		borderRadius,
+		blockId
 	} = attributes;
 
 	let classPaddingLR;
@@ -94,7 +95,7 @@ export default function save(props) {
 	}
 
 	const blockProps = useBlockProps.save({
-		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
+		className: `vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 	});
 	return (
 		<div

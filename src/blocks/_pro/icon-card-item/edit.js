@@ -189,6 +189,7 @@ export default function IconCardItemedit(props) {
 						'core/subscript', // 下付き
 						'vk-blocks/highlighter', // 蛍光マーカー
 						'vk-blocks/responsive-br', // Select a direction (レスポンシブ改行)
+						'vk-blocks/nowrap', // nowrap
 					]}
 					placeholder={__('Input Content', 'vk-blocks')}
 				/>

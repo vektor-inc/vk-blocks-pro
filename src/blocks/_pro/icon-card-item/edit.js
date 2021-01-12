@@ -5,6 +5,7 @@ import {
 	RichText,
 	InspectorControls,
 	ColorPalette,
+	useBlockProps,
 } from '@wordpress/block-editor';
 import ReactHtmlParser from 'react-html-parser';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
@@ -18,7 +19,7 @@ import {
 
 /* eslint camelcase: 0 */
 export default function IconCardItemedit(props) {
-	const { setAttributes, attributes, className } = props;
+	const { setAttributes, attributes } = props;
 	let {
 		color,
 		heading,
@@ -69,6 +70,20 @@ export default function IconCardItemedit(props) {
 	faIconFragment[0] = faIconFragment[0] + ` style="color:${iconColor}" `;
 	faIconFragment[1] = faIconFragment[1] + ` vk_icon-card_item_icon `;
 	const faIconTag = faIconFragment.join('');
+
+	const blockProps = useBlockProps({
+		className: `vk_post vk_icon-card_item vk_post-col-xs-${convertToGrid(
+			col_xs
+		)} vk_post-col-sm-${convertToGrid(
+			col_sm
+		)} vk_post-col-md-${convertToGrid(
+			col_md
+		)} vk_post-col-lg-${convertToGrid(
+			col_lg
+		)} vk_post-col-xl-${convertToGrid(
+			col_xl
+		)} vk_post-col-xxl-${convertToGrid(col_xxl)}`,
+	});
 
 	return (
 		<>
@@ -129,19 +144,7 @@ export default function IconCardItemedit(props) {
 				</PanelBody>
 			</InspectorControls>
 
-			<div
-				className={`${className} vk_post vk_icon-card_item vk_post-col-xs-${convertToGrid(
-					col_xs
-				)} vk_post-col-sm-${convertToGrid(
-					col_sm
-				)} vk_post-col-md-${convertToGrid(
-					col_md
-				)} vk_post-col-lg-${convertToGrid(
-					col_lg
-				)} vk_post-col-xl-${convertToGrid(
-					col_xl
-				)} vk_post-col-xxl-${convertToGrid(col_xxl)}`}
-			>
+			<div {...blockProps}>
 				<div className="vk_icon-card_item_icon_outer" style={style}>
 					{ReactHtmlParser(faIconTag)}
 				</div>

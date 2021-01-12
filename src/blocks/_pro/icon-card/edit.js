@@ -5,13 +5,17 @@ import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
 
 import { __ } from '@wordpress/i18n';
 import { PanelBody, BaseControl } from '@wordpress/components';
-import { InspectorControls, InnerBlocks } from '@wordpress/block-editor';
+import {
+	InspectorControls,
+	InnerBlocks,
+	useBlockProps,
+} from '@wordpress/block-editor';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 import React from 'react';
 import { select, dispatch } from '@wordpress/data';
 
 export default function IconCardEdit(props) {
-	const { attributes, className, clientId, name } = props;
+	const { attributes, clientId, name } = props;
 	attributes.name = name;
 	let innerClass = '';
 	const ALLOWED_BLOCKS = ['vk-blocks/icon-card-item'];
@@ -74,6 +78,10 @@ export default function IconCardEdit(props) {
 	innerClass += ' vk_posts-edit-col-xl-' + convertToGrid(attributes.col_xl);
 	innerClass += ' vk_posts-edit-col-xxl-' + convertToGrid(attributes.col_xxl);
 
+	const blockProps = useBlockProps({
+		className: `vk_posts`,
+	});
+
 	return (
 		<>
 			<InspectorControls>
@@ -108,7 +116,7 @@ export default function IconCardEdit(props) {
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>
-			<div className={`vk_posts ${className}`}>
+			<div {...blockProps}>
 				<div className={innerClass}>
 					<InnerBlocks
 						template={TEMPLATE}

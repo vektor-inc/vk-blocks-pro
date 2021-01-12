@@ -1,11 +1,11 @@
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
-import { RichText } from '@wordpress/block-editor';
+import { RichText, useBlockProps } from '@wordpress/block-editor';
 import ReactHtmlParser from 'react-html-parser';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 
 /* eslint camelcase: 0 */
 export default function save(props) {
-	const { attributes, className } = props;
+	const { attributes } = props;
 	let {
 		color,
 		heading,
@@ -56,20 +56,23 @@ export default function save(props) {
 	faIconFragment[0] = faIconFragment[0] + ` style="color:${iconColor}" `;
 	faIconFragment[1] = faIconFragment[1] + ` vk_icon-card_item_icon `;
 	const faIconTag = faIconFragment.join('');
+
+	const blockProps = useBlockProps.save({
+		className: `vk_post vk_icon-card_item vk_post-col-xs-${convertToGrid(
+			col_xs
+		)} vk_post-col-sm-${convertToGrid(
+			col_sm
+		)} vk_post-col-md-${convertToGrid(
+			col_md
+		)} vk_post-col-lg-${convertToGrid(
+			col_lg
+		)} vk_post-col-xl-${convertToGrid(
+			col_xl
+		)} vk_post-col-xxl-${convertToGrid(col_xxl)}`,
+	});
+
 	return (
-		<div
-			className={`${className} vk_post vk_icon-card_item vk_post-col-xs-${convertToGrid(
-				col_xs
-			)} vk_post-col-sm-${convertToGrid(
-				col_sm
-			)} vk_post-col-md-${convertToGrid(
-				col_md
-			)} vk_post-col-lg-${convertToGrid(
-				col_lg
-			)} vk_post-col-xl-${convertToGrid(
-				col_xl
-			)} vk_post-col-xxl-${convertToGrid(col_xxl)}`}
-		>
+		<div {...blockProps}>
 			{/*
 			 target=_blankで指定すると、WordPressが自動でnoopener noreferrerを付与する。
 			 ブロックでもrelを付与しないとブロックが壊れる。

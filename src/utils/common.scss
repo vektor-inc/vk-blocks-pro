@@ -6,6 +6,10 @@
 	white-space: nowrap;
 }
 
+.components-toolbar {
+    align-items: center;
+}
+
 /*-------------------------------------------*/
 /* リストデザイン
 /*-------------------------------------------*/
@@ -361,7 +365,7 @@ ol {
 /*-------------------------------------------*/
 .editor-styles-wrapper .wp-block-group {
 	& > div:last-child {
-		*:nth-last-child(2) { 
+		*:nth-last-child(2) {
 			margin-bottom:0;
 		}
 	}

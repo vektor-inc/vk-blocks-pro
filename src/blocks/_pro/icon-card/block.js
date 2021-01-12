@@ -3,7 +3,7 @@
  *
  */
 import { PRCard } from './component';
-import { deprecated } from './deprecated';
+import { deprecated } from './deprecated/';
 import { ColumnLayout } from '@vkblocks/components/column-layout';
 import { AlignControl } from '@vkblocks/components/align-control';
 import removeProperty from '@vkblocks/utils/removeProperty';

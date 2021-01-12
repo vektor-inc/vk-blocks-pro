@@ -1,6 +1,6 @@
 import { InnerBlocks } from '@wordpress/block-editor';
 import { Component } from '@wordpress/element';
-import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
+import { convertToGrid } from './deprecated/0.0.0/node_modules/@vkblocks/utils/convert-to-grid';
 import React from 'react';
 
 export class PRCard extends Component {

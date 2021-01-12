@@ -1,12 +1,24 @@
+import { FontAwesome } from '@vkblocks/utils/font-awesome-new';
 import { __ } from '@wordpress/i18n';
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
-import { RichText } from '@wordpress/block-editor';
+import {
+	RichText,
+	InspectorControls,
+	ColorPalette,
+} from '@wordpress/block-editor';
 import ReactHtmlParser from 'react-html-parser';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
+import {
+	PanelBody,
+	BaseControl,
+	TextControl,
+	CheckboxControl,
+	RadioControl,
+} from '@wordpress/components';
 
 /* eslint camelcase: 0 */
-export const PRcarditem = (props) => {
-	const { attributes, setAttributes, for_, className } = props;
+export default function IconCardItemedit(props) {
+	const { setAttributes, attributes, className } = props;
 	let {
 		color,
 		heading,
@@ -30,7 +42,10 @@ export const PRcarditem = (props) => {
 	let iconColor;
 
 	if (bgType === '0') {
-		style = { backgroundColor: `${color}`, border: `1px solid ${color}` };
+		style = {
+			backgroundColor: `${color}`,
+			border: `1px solid ${color}`,
+		};
 		iconColor = `#ffffff`;
 	} else {
 		style = {
@@ -55,10 +70,78 @@ export const PRcarditem = (props) => {
 	faIconFragment[1] = faIconFragment[1] + ` vk_icon-card_item_icon `;
 	const faIconTag = faIconFragment.join('');
 
-	let contents;
-	if (for_ === 'edit') {
-		contents = (
-			<>
+	return (
+		<>
+			<InspectorControls>
+				<PanelBody title={__('PR Block Setting', 'vk-blocks')}>
+					<BaseControl
+						label={__('Link URL:', 'vk-blocks')}
+						id={`vk_iconCardItem-url`}
+					>
+						<TextControl
+							value={url}
+							onChange={(value) => setAttributes({ url: value })}
+						/>
+						<CheckboxControl
+							label={__('Open link new tab.', 'vk-blocks')}
+							checked={urlOpenType}
+							onChange={(checked) =>
+								setAttributes({ urlOpenType: checked })
+							}
+						/>
+					</BaseControl>
+					<BaseControl
+						label={__('Icon ( Font Awesome )', 'vk-blocks')}
+						id={`vk_iconCardItem-icon`}
+					>
+						<FontAwesome attributeName={'faIcon'} {...props} />
+					</BaseControl>
+					<BaseControl>
+						<ColorPalette
+							value={color}
+							onChange={(value) => {
+								if (value) {
+									setAttributes({ color: value });
+								} else {
+									setAttributes({ color: '#0693e3' });
+									setAttributes({ bgType: '0' });
+								}
+							}}
+						/>
+						<RadioControl
+							label={__('Icon Background:', 'vk-blocks')}
+							selected={bgType}
+							options={[
+								{
+									label: __('Solid color', 'vk-blocks'),
+									value: '0',
+								},
+								{
+									label: __('No background', 'vk-blocks'),
+									value: '1',
+								},
+							]}
+							onChange={(value) =>
+								setAttributes({ bgType: value })
+							}
+						/>
+					</BaseControl>
+				</PanelBody>
+			</InspectorControls>
+
+			<div
+				className={`${className} vk_post vk_icon-card_item vk_post-col-xs-${convertToGrid(
+					col_xs
+				)} vk_post-col-sm-${convertToGrid(
+					col_sm
+				)} vk_post-col-md-${convertToGrid(
+					col_md
+				)} vk_post-col-lg-${convertToGrid(
+					col_lg
+				)} vk_post-col-xl-${convertToGrid(
+					col_xl
+				)} vk_post-col-xxl-${convertToGrid(col_xxl)}`}
+			>
 				<div className="vk_icon-card_item_icon_outer" style={style}>
 					{ReactHtmlParser(faIconTag)}
 				</div>
@@ -106,54 +189,7 @@ export const PRcarditem = (props) => {
 					]}
 					placeholder={__('Input Content', 'vk-blocks')}
 				/>
-			</>
-		);
-	} else if (for_ === 'save') {
-		contents = (
-			<>
-				{/*
-				 target=_blankで指定すると、WordPressが自動でnoopener noreferrerを付与する。
-				 ブロックでもrelを付与しないとブロックが壊れる。
-				 */}
-				<a
-					href={url}
-					className="vk_icon-card_item_link"
-					target={urlOpenType && '_blank'}
-					rel={urlOpenType && 'noopener noreferrer'}
-				>
-					<div className="vk_icon-card_item_icon_outer" style={style}>
-						{ReactHtmlParser(faIconTag)}
-					</div>
-					<RichText.Content
-						className={`vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}`}
-						tagName={'h3'}
-						value={heading}
-					/>
-					<RichText.Content
-						className={`vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-${align.text}`}
-						tagName={'p'}
-						value={content}
-					/>
-				</a>
-			</>
-		);
-	}
-
-	return (
-		<div
-			className={`${className} vk_post vk_icon-card_item vk_post-col-xs-${convertToGrid(
-				col_xs
-			)} vk_post-col-sm-${convertToGrid(
-				col_sm
-			)} vk_post-col-md-${convertToGrid(
-				col_md
-			)} vk_post-col-lg-${convertToGrid(
-				col_lg
-			)} vk_post-col-xl-${convertToGrid(
-				col_xl
-			)} vk_post-col-xxl-${convertToGrid(col_xxl)}`}
-		>
-			{contents}
-		</div>
+			</div>
+		</>
 	);
-};
+}

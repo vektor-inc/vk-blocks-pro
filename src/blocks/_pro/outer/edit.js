@@ -49,7 +49,7 @@ export default function OuterEdit(props) {
 	let borderProperty;
 	let borderRadiusProperty;
 
-	setAttributes({clientId});
+	setAttributes({ clientId });
 
 	//幅のクラス切り替え
 	// eslint-disable-next-line prefer-const
@@ -67,7 +67,7 @@ export default function OuterEdit(props) {
 	}
 
 	//classPaddingLRのクラス切り替え
-	classPaddingLR = ''
+	classPaddingLR = '';
 	if (padding_left_and_right === '0') {
 		classPaddingLR = ' vk_outer-paddingLR-none';
 	} else if (padding_left_and_right === '1') {
@@ -258,7 +258,6 @@ export default function OuterEdit(props) {
 
 						<RadioControl
 							label={__('Padding (Left and Right)', 'vk-blocks')}
-
 							selected={padding_left_and_right}
 							options={[
 								{
@@ -292,7 +291,6 @@ export default function OuterEdit(props) {
 						<RadioControl
 							label={__('Padding (Top and Bottom)', 'vk-blocks')}
 							className={'mb-1'}
-
 							selected={padding_top_and_bottom}
 							options={[
 								{
@@ -360,11 +358,9 @@ export default function OuterEdit(props) {
 						id={`vk_outer-upperDividerLevel`}
 					>
 						<RangeControl
-
 							value={upper_level}
 							onChange={(value) =>
 								setAttributes({
-
 									upper_level: toNumber(value, -100, 100),
 								})
 							}
@@ -387,11 +383,9 @@ export default function OuterEdit(props) {
 						id={`vk_outer-lowerDividerLevel`}
 					>
 						<RangeControl
-
 							value={lower_level}
 							onChange={(value) =>
 								setAttributes({
-
 									lower_level: toNumber(value, -100, 100),
 								})
 							}
@@ -511,7 +505,11 @@ export default function OuterEdit(props) {
 					borderRadius: borderRadiusProperty,
 				}}
 			>
-				<GenerateBgImage prefix={'vkb-outer'} clientId={clientId} {...props} />
+				<GenerateBgImage
+					prefix={'vkb-outer'}
+					clientId={clientId}
+					{...props}
+				/>
 				<div>
 					{componentDivider(
 						upper_level,

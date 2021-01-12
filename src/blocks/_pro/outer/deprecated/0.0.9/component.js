@@ -1,6 +1,5 @@
-import { componentDivider } from '../0.37.1/component-divider';
+import { componentDivider } from '../component-divider';
 import { InnerBlocks } from '@wordpress/block-editor';
-import { Fragment } from '@wordpress/element';
 import hex2rgba from '@vkblocks/utils/hex-to-rgba';
 
 export const ComponentV2 = (props) => {

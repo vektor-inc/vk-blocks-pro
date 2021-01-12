@@ -19,7 +19,7 @@ export default function save(props) {
 		borderStyle,
 		borderColor,
 		borderRadius,
-		clientId
+		clientId,
 	} = attributes;
 
 	let classPaddingLR;
@@ -45,7 +45,7 @@ export default function save(props) {
 	}
 
 	//classPaddingLRのクラス切り替え
-	classPaddingLR = ''
+	classPaddingLR = '';
 	if (padding_left_and_right === '0') {
 		classPaddingLR = ' vk_outer-paddingLR-none';
 	} else if (padding_left_and_right === '1') {
@@ -95,7 +95,11 @@ export default function save(props) {
 				borderRadius: borderRadiusProperty,
 			}}
 		>
-			<GenerateBgImage prefix={'vkb-outer'} clientId={clientId} {...props} />
+			<GenerateBgImage
+				prefix={'vkb-outer'}
+				clientId={clientId}
+				{...props}
+			/>
 			<div>
 				{componentDivider(
 					upper_level,

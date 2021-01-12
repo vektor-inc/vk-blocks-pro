@@ -8,8 +8,8 @@ import save006 from './0.0.6/save';
 import save007 from './0.0.7/save';
 import save008 from './0.0.8/save';
 import save009 from './0.0.9/save';
-import save0371 from './0.37.1/save';
-import save0600 from './0.60.0/save';
+import save0_37_1 from './0.37.1/save';
+import save0_60_0 from './0.60.0/save';
 
 const blockAttributes = {
 	bgColor: {
@@ -100,7 +100,7 @@ const deprecated = [
 				default: null,
 			},
 		},
-		save0600,
+		save0_60_0,
 	},
 	{
 		attributes: {
@@ -122,7 +122,7 @@ const deprecated = [
 				default: null,
 			},
 		},
-		save0371,
+		save0_37_1,
 	},
 	{
 		attributes: {

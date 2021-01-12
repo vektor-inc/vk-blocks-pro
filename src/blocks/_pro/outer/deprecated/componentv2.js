@@ -1,4 +1,3 @@
-const { Fragment } = wp.element;
 import { componentDivider } from "./component-divider";
 import { vkbBlockEditor } from "./../../../../utils/depModules";
 const { InnerBlocks } = vkbBlockEditor;
@@ -116,10 +115,10 @@ export const ComponentV2_1 = (props) => {
 	};
 
 	return (
-		<Fragment>
+		<>
 			<GenerateMediaqueryCss { ...props } />
 			<OuterBlockInner { ...defaultProps } />
-		</Fragment>
+		</>
 	);
 };
 
@@ -260,7 +259,7 @@ const OuterBlockInner = (props) => {
 	} = props;
 
 	return (
-		<Fragment>
+		<>
 			<div
 				id={ anchor }
 				className={
@@ -293,6 +292,6 @@ const OuterBlockInner = (props) => {
 					dividerType
 				) }
 			</div>
-		</Fragment>
+		</>
 	);
 };

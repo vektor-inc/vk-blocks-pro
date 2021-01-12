@@ -22,7 +22,6 @@ const {
 	ButtonGroup,
 	Button
 } = wp.components;
-const { Fragment } = wp.element;
 const { InspectorControls, ColorPalette } =
 	wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 
@@ -73,7 +72,7 @@ registerBlockType("vk-blocks/outer", {
 		};
 
 		return (
-			<Fragment>
+			<>
 				<InspectorControls>
 					<PanelBody
 						title={ __("Background Setting", "vk-blocks") }
@@ -361,7 +360,7 @@ registerBlockType("vk-blocks/outer", {
 					className={ className }
 					for_={ "edit" }
 				/>
-			</Fragment>
+			</>
 		);
 	},
 

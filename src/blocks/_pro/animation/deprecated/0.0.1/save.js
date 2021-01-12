@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import { Fragment } from '@wordpress/element';
 import { InnerBlocks } from '@wordpress/block-editor';
 
 export default function save( props ) {
@@ -10,7 +9,7 @@ export default function save( props ) {
 	range = range ? range : "short"
 
 	return (
-		<Fragment>
+		<>
 			<div
 				className={ classNames(`vk_animation vk_animation-${effect} vk_animation-speed-${speed} vk_animation-range-${range} vk_animation-${clientId}`) }
 			>
@@ -29,6 +28,6 @@ export default function save( props ) {
 				observer.observe(animationElm);
 				}, false);` }
 			</script>
-		</Fragment>
+		</>
 	);
 }

@@ -5,7 +5,6 @@ import {
 	SelectControl,
 	CheckboxControl,
 } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
 import { InspectorControls } from '@wordpress/block-editor';
 import { withSelect } from '@wordpress/data';
 import ServerSideRender from '@wordpress/server-side-render';
@@ -56,7 +55,7 @@ export default withSelect((select) => {
 	*/
 
 	return (
-		<Fragment>
+		<>
 			<InspectorControls>
 				<PanelBody
 					title={__('Display conditions', 'vk-blocks')}
@@ -91,6 +90,6 @@ export default withSelect((select) => {
 				block="vk-blocks/child-page"
 				attributes={attributes}
 			/>
-		</Fragment>
+		</>
 	);
 });

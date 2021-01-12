@@ -21,7 +21,6 @@ const {
 	BaseControl,
 	ToolbarGroup,
 } = wp.components;
-const { Fragment } = wp.element;
 const {
 	InspectorControls,
 	ColorPalette,
@@ -83,7 +82,7 @@ registerBlockType("vk-blocks/heading", {
 			}
 		};
 		return (
-			<Fragment>
+			<>
 				<BlockControls>
 					<ToolbarGroup>
 						<HeadingLevelDropdown
@@ -187,7 +186,7 @@ registerBlockType("vk-blocks/heading", {
 				<div className={ className }>
 					<VKBHeading { ...props } for_={ "edit" } />
 				</div>
-			</Fragment>
+			</>
 		);
 	},
 

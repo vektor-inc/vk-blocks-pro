@@ -17,7 +17,7 @@ import { ReactComponent as Icon } from './icon.svg';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { Fragment, useEffect } = wp.element;
+const { useEffect } = wp.element;
 const { PanelBody, BaseControl, TextControl, CheckboxControl } = wp.components;
 const { addFilter } = wp.hooks;
 const { InspectorControls } = vkbBlockEditor;
@@ -119,7 +119,7 @@ registerBlockType("vk-blocks/card", {
 	}
 
     return (
-	<Fragment>
+	<>
 		<InspectorControls>
 			<ColumnLayoutControl { ...props } />
 			<DisplayItemsControlForCards { ...props } />
@@ -140,7 +140,7 @@ registerBlockType("vk-blocks/card", {
 			setAttributes={ setAttributes }
 			for_={ "edit" }
         />
-	</Fragment>
+	</>
     );
   },
   save({ attributes }) {
@@ -247,10 +247,10 @@ addFilter( 'editor.BlockEdit', "vk-blocks/card-addInlineEditorsCss", createHighe
 			const cssTag = generateInlineCss(attributes)
 
 			return (
-				<Fragment>
+				<>
 					{ cssTag }
 					<BlockEdit { ...props } />
-				</Fragment>
+				</>
 			);
 		}
 			return <BlockEdit { ...props } />;

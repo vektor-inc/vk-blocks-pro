@@ -10,7 +10,7 @@ import {
 	CheckboxControl,
 	TextControl,
 } from '@wordpress/components';
-import { Fragment, Component } from '@wordpress/element';
+import { Component } from '@wordpress/element';
 import {
 	InspectorControls,
 	MediaUpload,
@@ -96,7 +96,7 @@ export default function PrBlocksEdit(props) {
 	};
 
 	return (
-		<Fragment>
+		<>
 			<InspectorControls>
 				<PanelBody title={__('PR Block1 Setting', 'vk-blocks')}>
 					<BaseControl
@@ -356,7 +356,7 @@ export default function PrBlocksEdit(props) {
 					blockNum={3}
 				/>
 			</div>
-		</Fragment>
+		</>
 	);
 }
 

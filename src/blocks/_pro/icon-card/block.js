@@ -15,7 +15,6 @@ import { title, content, iconUser } from "../../../utils/example-data";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { Fragment } = wp.element;
 const { PanelBody,BaseControl} = wp.components;
 const { InspectorControls } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
@@ -111,7 +110,7 @@ registerBlockType("vk-blocks/icon-card", {
 		const align = JSON.parse( fixBrokenUnicode(attributes.activeControl) );
 
     return (
-	<Fragment>
+	<>
 		<InspectorControls>
 			<PanelBody
 				title={ __("Columns", "vk-blocks") }
@@ -134,7 +133,7 @@ registerBlockType("vk-blocks/icon-card", {
 			setAttributes={ setAttributes }
 			for_={ "edit" }
         />
-	</Fragment>
+	</>
     );
   },
   save({ attributes, className }) {

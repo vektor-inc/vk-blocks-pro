@@ -1,6 +1,5 @@
 import { __ } from '@wordpress/i18n';
 import { PanelBody, SelectControl, BaseControl } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import ReactHtmlParser from 'react-html-parser';
 
@@ -12,7 +11,7 @@ export default function TOCEdit(props) {
 	});
 	/* eslint jsx-a11y/label-has-associated-control: 0 */
 	return (
-		<Fragment>
+		<>
 			<InspectorControls>
 				<PanelBody>
 					<BaseControl
@@ -74,6 +73,6 @@ export default function TOCEdit(props) {
 					</ul>
 				</div>
 			</div>
-		</Fragment>
+		</>
 	);
 }

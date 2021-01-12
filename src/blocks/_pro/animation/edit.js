@@ -6,7 +6,6 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 import { PanelBody, SelectControl } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
 
 export default function AnimationEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -31,7 +30,7 @@ export default function AnimationEdit(props) {
 	});
 
 	return (
-		<Fragment>
+		<>
 			<InspectorControls>
 				<PanelBody title={__('Animation Settings', 'vk-blocks')}>
 					{__('Animation effect', 'vk-blocks')}
@@ -132,6 +131,6 @@ export default function AnimationEdit(props) {
 			<div {...blockProps}>
 				<InnerBlocks templateInsertUpdatesSelection={false} />
 			</div>
-		</Fragment>
+		</>
 	);
 }

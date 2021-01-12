@@ -6,7 +6,6 @@ import { ReactComponent as Icon } from './icon.svg';
 const {__} = wp.i18n; // Import __() from wp.i18n
 const {registerFormatType, toggleFormat, applyFormat, removeFormat, getActiveFormat} = window.wp.richText;
 const {RichTextToolbarButton, RichTextShortcut, InspectorControls, PanelColorSettings, getColorObjectByColorValue} = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
-const {Fragment} = wp.element;
 
 registerFormatType(
 	'vk-blocks/nowrap', {
@@ -17,7 +16,7 @@ registerFormatType(
 			const { value, isActive } = props;
 
 			return (
-				<Fragment>
+				<>
 					<RichTextToolbarButton
 						icon={ Icon }
 						title={ __('Nowrap', 'vk-blocks') }
@@ -31,7 +30,7 @@ registerFormatType(
 						} }
 						isActive={ isActive }
 					/>
-				</Fragment>
+				</>
 			);
 		}
     },

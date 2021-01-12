@@ -7,7 +7,6 @@ import { vkbBlockEditor } from "@vkblocks/utils/depModules";
 
 const { assign } = lodash;
 const { __ } = wp.i18n;
-const { Fragment } = wp.element;
 const { addFilter } = wp.hooks;
 const { PanelBody } = wp.components;
 const { InspectorControls, ColorPalette } = vkbBlockEditor;
@@ -43,7 +42,7 @@ export const addBlockControl = createHigherOrderComponent(BlockEdit => {
       }
 
       return (
-	<Fragment>
+	<>
 		<BlockEdit { ...props } />
 		<InspectorControls>
 			<PanelBody
@@ -80,7 +79,7 @@ export const addBlockControl = createHigherOrderComponent(BlockEdit => {
               />
 			</PanelBody>
 		</InspectorControls>
-	</Fragment>
+	</>
       );
     }
     return <BlockEdit { ...props } />;

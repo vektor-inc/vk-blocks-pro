@@ -98,7 +98,7 @@ export const VKBHeading =(props) => {
 
 	if (for_ === "edit") {
 
-		const titleContent = <Fragment>
+		const titleContent = <>
 			{ ReactHtmlParser(iconBefore) }
 			<RichText
 				tagName={ "span" }
@@ -109,7 +109,7 @@ export const VKBHeading =(props) => {
 				placeholder={ __("Input title…", "vk-blocks") }
 				/>
 			{ ReactHtmlParser(iconAfter) }
-		</Fragment>
+		</>
 
 		let subtextContent;
 		if (subTextFlag === "on") {
@@ -127,14 +127,14 @@ export const VKBHeading =(props) => {
 
 	} else if (for_ === "save") {
 
-		const titleContent = <Fragment>
+		const titleContent = <>
 			{ ReactHtmlParser(iconBefore) }
 			<RichText.Content
 				tagName={ "span" }
 				value={ title }
 			/>
 			{ ReactHtmlParser(iconAfter) }
-		</Fragment>
+		</>
 
 		let subtextContent;
 		if (subTextFlag === "on") {

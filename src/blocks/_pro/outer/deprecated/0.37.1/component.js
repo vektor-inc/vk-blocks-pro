@@ -1,6 +1,5 @@
 import { componentDivider } from './component-divider';
 import { InnerBlocks } from '@wordpress/block-editor';
-import { Fragment } from '@wordpress/element';
 import hex2rgba from '@vkblocks/utils/hex-to-rgba';
 
 // eslint-disable-next-line camelcase
@@ -288,7 +287,7 @@ const OuterBlockInner = (props) => {
 	} = props;
 
 	return (
-		<Fragment>
+		<>
 			<div>
 				{componentDivider(
 					upper_level,
@@ -304,6 +303,6 @@ const OuterBlockInner = (props) => {
 					dividerType
 				)}
 			</div>
-		</Fragment>
+		</>
 	);
 };

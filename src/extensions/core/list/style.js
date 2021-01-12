@@ -6,7 +6,6 @@ import {convertColorClass} from "@vkblocks/utils/color-code-to-class.js";
 
 const {assign} = lodash;
 const {__} = wp.i18n;
-const {Fragment} = wp.element;
 const {addFilter} = wp.hooks;
 const {
     PanelBody,
@@ -52,7 +51,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
                 activeColor = '#fffd6b';
             }
             return (
-	<Fragment>
+	<>
 		<BlockEdit { ...props } />
 		<InspectorControls>
 			<PanelBody title={ __('List Icon Color', 'vk-blocks') } initialOpen={ false }
@@ -87,7 +86,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
                             />
 			</PanelBody>
 		</InspectorControls>
-	</Fragment>
+	</>
             );
         }
         return <BlockEdit { ...props } />;

@@ -10,7 +10,6 @@ import { ReactComponent as Icon } from './icon.svg';
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { PanelBody, BaseControl, SelectControl, TextControl } = wp.components;
-const { Fragment } = wp.element;
 const { InspectorControls, ColorPalette } = wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 import { deprecated } from './deprecated';
 
@@ -32,7 +31,7 @@ registerBlockType('vk-blocks/step-item', {
 		} = attributes;
 
 		return (
-			<Fragment>
+			<>
 				<InspectorControls>
 					<PanelBody title={ __('Step Mark', 'vk-blocks') }>
 						<BaseControl
@@ -110,7 +109,7 @@ registerBlockType('vk-blocks/step-item', {
 					className={ className }
 					for_={ "edit" }
 				/>
-			</Fragment>
+			</>
 		);
 	},
 

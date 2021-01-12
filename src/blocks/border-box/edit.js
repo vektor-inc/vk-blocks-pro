@@ -1,7 +1,6 @@
 import { __ } from '@wordpress/i18n';
 import { FontAwesome } from '@vkblocks/utils/font-awesome-new';
 import { PanelBody, BaseControl, SelectControl } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
 import {
 	InspectorControls,
 	InnerBlocks,
@@ -44,7 +43,7 @@ export default function BorderBoxEdit(props) {
 	}
 
 	return (
-		<Fragment>
+		<>
 			<InspectorControls>
 				<PanelBody title={__('Color', 'vk-blocks')}>
 					<BaseControl
@@ -124,6 +123,6 @@ export default function BorderBoxEdit(props) {
 				</div>
 				<div className={`vk_borderBox_body`}>{inner}</div>
 			</div>
-		</Fragment>
+		</>
 	);
 }

@@ -1,6 +1,5 @@
 import { componentDivider } from './component-divider';
 import { InnerBlocks } from '@wordpress/block-editor';
-import { Fragment } from '@wordpress/element';
 import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
 
 export const OuterBlock = (props) => {
@@ -173,7 +172,7 @@ const OuterBlockInner = (props) => {
 	} = props;
 
 	return (
-		<Fragment>
+		<>
 			<div>
 				{componentDivider(
 					upper_level,
@@ -189,6 +188,6 @@ const OuterBlockInner = (props) => {
 					dividerType
 				)}
 			</div>
-		</Fragment>
+		</>
 	);
 };

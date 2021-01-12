@@ -1,0 +1,379 @@
+/**
+ * outer block type
+ */
+import { OuterBlock } from "./component";
+import { schema } from "./schema";
+import { deprecated } from "./deprecated/block";
+import toNumber from "../../../utils/to-number";
+import { AdvancedMediaUpload } from "../../../components/advanced-media-upload";
+import { hiddenNewBlock } from "../../../utils/hiddenNewBlock"
+import { ReactComponent as Icon } from './icon.svg';
+
+const inserterVisible = hiddenNewBlock(5.3);
+
+const { __ } = wp.i18n;
+const { registerBlockType } = wp.blocks;
+const {
+	RangeControl,
+	RadioControl,
+	PanelBody,
+	BaseControl,
+	SelectControl,
+	ButtonGroup,
+	Button
+} = wp.components;
+const { InspectorControls, ColorPalette } =
+	wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
+
+registerBlockType("vk-blocks/outer", {
+	title: __("Outer", "vk-blocks"),
+	icon: <Icon />,
+	category: "vk-blocks-cat-layout",
+	attributes: schema,
+	supports: {
+		anchor: true,
+		inserter: inserterVisible
+	},
+
+	edit(props) {
+		const { attributes, setAttributes, className, clientId } = props;
+		const {
+			bgColor,
+			defaultBgColor,
+			bgPosition,
+			outerWidth,
+			padding_left_and_right,
+			padding_top_and_bottom,
+			opacity,
+			upper_level,
+			lower_level,
+			upperDividerBgColor,
+			lowerDividerBgColor,
+			dividerType,
+			borderWidth,
+			borderStyle,
+			borderColor,
+			borderRadius,
+		} = attributes;
+
+		//save clientId for using in Class.
+		setAttributes({ clientId });
+
+		const setColorIfUndefined = (bgColor) => {
+			if (bgColor === undefined) {
+				bgColor = defaultBgColor;
+			}
+			return bgColor;
+		};
+
+		const setBgColor = (bgColor) => {
+			bgColor = setColorIfUndefined(bgColor);
+			setAttributes({ bgColor });
+		};
+
+		return (
+			<>
+				<InspectorControls>
+					<PanelBody
+						title={ __("Background Setting", "vk-blocks") }
+						initialOpen={ false }
+					>
+						<BaseControl
+							label={ __("Color Setting", "vk-blocks") }
+							help={ __(
+								"Color will overcome background image. If you want to display image, clear background color or set opacity 0.",
+								"vk-blocks"
+							) }
+						>
+							<ColorPalette
+								value={ bgColor }
+								onChange={ (value) => setBgColor(value) }
+							/>
+						</BaseControl>
+						<BaseControl label={ __("Opacity Setting", "vk-blocks") }>
+							<RangeControl
+								value={ opacity }
+								onChange={ (value) => {
+									setAttributes({ opacity: value });
+								} }
+								min={ 0 }
+								max={ 1 }
+								step={ 0.1 }
+							/>
+						</BaseControl>
+						<BaseControl
+							label={ __("Background Image PC", "vk-blocks") }
+							className={ "vk_outer_sidebar_bgImage" }
+						>
+							<div className={ "vk_outer_sidebar_bgImage_button_container" }>
+								<AdvancedMediaUpload schema={ "bgImage" } { ...props } />
+							</div>
+						</BaseControl>
+						<BaseControl
+							label={ __("Background Image Tablet", "vk-blocks") }
+							className={ "vk_outer_sidebar_bgImage" }
+						>
+							<AdvancedMediaUpload schema={ "bgImageTablet" } { ...props } />
+						</BaseControl>
+						<BaseControl
+							label={ __("Background Image Mobile", "vk-blocks") }
+							className={ "vk_outer_sidebar_bgImage" }
+						>
+							<AdvancedMediaUpload schema={ "bgImageMobile" } { ...props } />
+						</BaseControl>
+						<BaseControl
+							label={ __("Background image Position", "vk-blocks") }
+							help=""
+						>
+							<RadioControl
+								selected={ bgPosition }
+								options={ [
+									{ label: __( "Repeat", "vk-blocks" ), value: "repeat" },
+									{ label: __( "Cover", "vk-blocks"), value: "normal" },
+									{ label: __( "Cover fixed (Not fixed on iPhone)", "vk-blocks"), value: "fixed" },
+									{ label: __( "Parallax (Non-guaranteed)", "vk-blocks" ), value: "parallax" },
+								] }
+								onChange={ (value) => setAttributes({ bgPosition: value }) }
+							/>
+						</BaseControl>
+					</PanelBody>
+
+					<PanelBody
+						title={ __("Layout Setting", "vk-blocks") }
+						initialOpen={ false }
+					>
+						<p className={ 'mb-1' }><label>{ __( 'Width', 'vk-blocks' ) }</label></p>
+						<BaseControl>
+							<ButtonGroup className="mb-3">
+								<Button
+									isSmall
+									isPrimary={ outerWidth === 'normal' }
+									isSecondary={ outerWidth !== 'normal' }
+									onClick={ () => setAttributes({ outerWidth: 'normal' }) }
+								>
+									{ __('Normal', 'vk-blocks') }
+								</Button>
+								<Button
+									isSmall
+									isPrimary={ outerWidth === 'full' }
+									isSecondary={ outerWidth !== 'full' }
+									onClick={ () => setAttributes({ outerWidth: 'full' }) }
+								>
+									{ __('Full Wide', 'vk-blocks') }
+								</Button>
+							</ButtonGroup>
+
+							<RadioControl
+								label={ __(
+									"Padding (Left and Right)",
+									"vk-blocks"
+								) }
+								selected={ padding_left_and_right }
+								options={ [
+									{
+										label: __("Fit to the Content area", "vk-blocks"),
+										value: "0",
+									},
+									{
+										label: __("Add padding to the Outer area", "vk-blocks"),
+										value: "1",
+									},
+									{
+										label: __("Remove padding from the Outer area", "vk-blocks"),
+										value: "2",
+									},
+								] }
+								onChange={ (value) =>
+									setAttributes({ padding_left_and_right: value })
+								}
+							/>
+							<RadioControl
+								label={ __("Padding (Top and Bottom)", "vk-blocks") }
+								className={ 'mb-1' }
+								selected={ padding_top_and_bottom }
+								options={ [
+									{ label: __("Use default padding", "vk-blocks"), value: "1" },
+									{
+										label: __(
+											"Do not use default padding",
+											"vk-blocks"
+										),
+										value: "0",
+									},
+								] }
+								onChange={ (value) =>
+									setAttributes({ padding_top_and_bottom: value })
+								}
+							/>
+							<p>{ __( '* If you select "Do not use" that, please set yourself it such as a spacer block.', "vk-blocks" ) }</p>
+						</BaseControl>
+					</PanelBody>
+					<PanelBody
+						title={ __("Divider Setting", "vk-blocks") }
+						initialOpen={ false }
+					>
+						<BaseControl>
+							<SelectControl
+								label={ __("Type", "vk-blocks") }
+								value={ dividerType }
+								onChange={ (value) => setAttributes({ dividerType: value }) }
+								options={ [
+									{
+										value: "tilt",
+										label: __("Tilt", "vk-blocks"),
+									},
+									{
+										value: "curve",
+										label: __("Curve", "vk-blocks"),
+									},
+									{
+										value: "wave",
+										label: __("Wave", "vk-blocks"),
+									},
+									{
+										value: "triangle",
+										label: __("Triangle", "vk-blocks"),
+									},
+								] }
+							/>
+						</BaseControl>
+						<BaseControl label={ __("Upper Divider Level", "vk-blocks") }>
+							<RangeControl
+								value={ upper_level }
+								onChange={ (value) =>
+									setAttributes({ upper_level: toNumber(value, -100, 100) })
+								}
+								min="-100"
+								max="100"
+							/>
+						</BaseControl>
+						<BaseControl>
+							<ColorPalette
+								value={ upperDividerBgColor }
+								onChange={ (value) =>
+									setAttributes({ upperDividerBgColor: value })
+								}
+							/>
+						</BaseControl>
+						<BaseControl label={ __("Lower Divider Level", "vk-blocks") }>
+							<RangeControl
+								value={ lower_level }
+								onChange={ (value) =>
+									setAttributes({ lower_level: toNumber(value, -100, 100) })
+								}
+								min="-100"
+								max="100"
+							/>
+						</BaseControl>
+						<BaseControl>
+							<ColorPalette
+								value={ lowerDividerBgColor }
+								onChange={ (value) =>
+									setAttributes({ lowerDividerBgColor: value })
+								}
+							/>
+						</BaseControl>
+					</PanelBody>
+					<PanelBody
+						title={ __("Border Setting", "vk-blocks") }
+						initialOpen={ false }
+					>
+						<BaseControl>
+							<p>
+								{ __(
+									"Border will disappear when divider effect is applied.",
+									"vk-blocks"
+								) }
+							</p>
+							<SelectControl
+								label={ __("Border type", "vk-blocks") }
+								value={ borderStyle }
+								onChange={ (value) => setAttributes({ borderStyle: value }) }
+								options={ [
+									{
+										value: "none",
+										label: __("None", "vk-blocks"),
+									},
+									{
+										value: "solid",
+										label: __("Solid", "vk-blocks"),
+									},
+									{
+										value: "dotted",
+										label: __("Dotted", "vk-blocks"),
+									},
+									{
+										value: "dashed",
+										label: __("Dashed", "vk-blocks"),
+									},
+									{
+										value: "double",
+										label: __("Double", "vk-blocks"),
+									},
+									{
+										value: "groove",
+										label: __("Groove", "vk-blocks"),
+									},
+									{
+										value: "ridge",
+										label: __("Ridge", "vk-blocks"),
+									},
+									{
+										value: "inset",
+										label: __("Inset", "vk-blocks"),
+									},
+									{
+										value: "outset",
+										label: __("Outset", "vk-blocks"),
+									},
+								] }
+							/>
+						</BaseControl>
+						<BaseControl>
+							<ColorPalette
+								value={ borderColor }
+								onChange={ (value) => setAttributes({ borderColor: value }) }
+							/>
+						</BaseControl>
+						<BaseControl label={ __("Border width", "vk-blocks") }>
+							<RangeControl
+								value={ borderWidth }
+								onChange={ (value) => setAttributes({ borderWidth: value }) }
+								min="0"
+							/>
+						</BaseControl>
+						<BaseControl label={ __("Border radius", "vk-blocks") }>
+							<RangeControl
+								value={ borderRadius }
+								onChange={ (value) =>
+									setAttributes({ borderRadius: toNumber(value, -100, 100) })
+								}
+								min="-100"
+								max="100"
+							/>
+						</BaseControl>
+					</PanelBody>
+				</InspectorControls>
+				<OuterBlock
+					clientId={ clientId }
+					attributes={ attributes }
+					className={ className }
+					for_={ "edit" }
+				/>
+			</>
+		);
+	},
+
+	save(props) {
+		const { attributes } = props;
+		return (
+			<OuterBlock
+				clientId={ attributes.clientId }
+				attributes={ attributes }
+				for_={ "save" }
+			/>
+		);
+	},
+
+	deprecated,
+});

@@ -1,5 +1,5 @@
 import { TextControl } from '@wordpress/components';
-import { Fragment, Component } from '@wordpress/element';
+import { Component } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
 export const faSchema = {
@@ -15,7 +15,7 @@ export class FontAwesome extends Component {
 		const setAttributes = this.props.setAttributes;
 
 		return (
-			<Fragment>
+			<>
 				<TextControl
 					label={__('Font Awesome', 'vk-blocks')}
 					value={faIcon}
@@ -35,7 +35,7 @@ export class FontAwesome extends Component {
 						{__('Font Awesome icon list', 'vk-blocks')}
 					</a>
 				</p>
-			</Fragment>
+			</>
 		);
 	}
 }

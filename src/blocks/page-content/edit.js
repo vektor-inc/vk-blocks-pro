@@ -1,5 +1,4 @@
 import { __ } from '@wordpress/i18n';
-import { Fragment } from '@wordpress/element';
 import { PanelBody, BaseControl, SelectControl } from '@wordpress/components';
 import { InspectorControls } from '@wordpress/block-editor';
 import ServerSideRender from '@wordpress/server-side-render';
@@ -49,7 +48,7 @@ export default function PageContentEdit({ attributes, setAttributes }) {
 	}
 
 	return (
-		<Fragment>
+		<>
 			<InspectorControls>
 				<PanelBody
 					title={__('Page Setting', 'vk-blocks')}
@@ -70,6 +69,6 @@ export default function PageContentEdit({ attributes, setAttributes }) {
 				</PanelBody>
 			</InspectorControls>
 			{editContent}
-		</Fragment>
+		</>
 	);
 }

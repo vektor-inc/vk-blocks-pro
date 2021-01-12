@@ -10,7 +10,6 @@ import {
 	ButtonGroup,
 	Button,
 } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
 import {
 	RichText,
 	InspectorControls,
@@ -46,7 +45,7 @@ export default function ButtonEdit(props) {
 	});
 
 	return (
-		<Fragment>
+		<>
 			<InspectorControls>
 				<PanelBody title={__('Button setting', 'vk-blocks')}>
 					<TextControl
@@ -318,6 +317,6 @@ export default function ButtonEdit(props) {
 					}
 				/>
 			</div>
-		</Fragment>
+		</>
 	);
 }

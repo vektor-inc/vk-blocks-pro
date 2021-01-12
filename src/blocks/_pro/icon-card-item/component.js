@@ -1,7 +1,6 @@
 const { __ } = wp.i18n; // Import __() from wp.i18n
 import { vkbBlockEditor, fixBrokenUnicode } from "../../../utils/depModules";
 const { RichText } = vkbBlockEditor;
-const { Fragment } = wp.element;
 import ReactHtmlParser from 'react-html-parser';
 import { convertToGrid } from "../../../utils/convert-to-grid";
 
@@ -41,7 +40,7 @@ export const PRcarditem = (props)=>{
 
 	let contents;
 	if(for_ === "edit"){
-		contents = <Fragment>
+		contents = <>
 			<div className="vk_icon-card_item_icon_outer" style={ style }>
 				{ ReactHtmlParser(faIconTag) }
 			</div>
@@ -87,9 +86,9 @@ export const PRcarditem = (props)=>{
 				] }
 				placeholder={ __('Input Content', 'vk-blocks') }
 			/>
-		</Fragment>
+		</>
 	}else if(for_ === "save"){
-		contents = <Fragment>
+		contents = <>
 			{/**
 			 * target=_blankで指定すると、WordPressが自動でnoopener noreferrerを付与する。
 			 * ブロックでもrelを付与しないとブロックが壊れる。
@@ -109,7 +108,7 @@ export const PRcarditem = (props)=>{
 					value={ content }
 				/>
 			</a>
-		</Fragment>
+		</>
 	}
 
 	return (

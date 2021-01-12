@@ -125,17 +125,10 @@ export const ComponentV2 = (props) => {
 	};
 
 	return (
-<<<<<<< HEAD:src/blocks/_pro/outer/deprecated/0.0.9/component.js
-		<Fragment>
-			<GenerateMediaqueryCss {...props} />
-			<OuterBlockInner {...defaultProps} />
-		</Fragment>
-=======
 		<>
 			<GenerateMediaqueryCss { ...props } />
 			<OuterBlockInner { ...defaultProps } />
 		</>
->>>>>>> 201aad8662be32e06027f7a45c2d1bf074ab2aaf:src/blocks/_pro/outer/deprecated/componentv2.js
 	);
 };
 

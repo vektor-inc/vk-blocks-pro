@@ -150,7 +150,7 @@ export const OuterBlock = (props) => {
 				borderRadius: borderRadiusProperty,
 			}}
 		>
-			<GenerateBgImage prefix={'vkb-outer'} {...props} />
+			<GenerateBgImage prefix={'vkb-outer'} clientId={clientId} {...props} />
 			<OuterBlockInner {...defaultProps} />
 		</div>
 	);

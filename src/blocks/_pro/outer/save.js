@@ -2,18 +2,15 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { componentDivider } from './component-divider';
 import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
 
+/* eslint eslint-disable-next-line camelcase: 0 */
 export default function save(props) {
 	const { attributes } = props;
 	const {
 		bgPosition,
 		outerWidth,
-		// eslint-disable-next-line camelcase
 		padding_left_and_right,
-		// eslint-disable-next-line camelcase
 		padding_top_and_bottom,
-		// eslint-disable-next-line camelcase
 		upper_level,
-		// eslint-disable-next-line camelcase
 		lower_level,
 		upperDividerBgColor,
 		lowerDividerBgColor,
@@ -22,7 +19,7 @@ export default function save(props) {
 		borderStyle,
 		borderColor,
 		borderRadius,
-		blockId,
+		clientId
 	} = attributes;
 
 	let classPaddingLR;
@@ -48,35 +45,29 @@ export default function save(props) {
 	}
 
 	//classPaddingLRのクラス切り替え
-	classPaddingLR = '';
-	// eslint-disable-next-line camelcase
+	classPaddingLR = ''
 	if (padding_left_and_right === '0') {
 		classPaddingLR = ' vk_outer-paddingLR-none';
-		// eslint-disable-next-line camelcase
 	} else if (padding_left_and_right === '1') {
 		classPaddingLR = ' vk_outer-paddingLR-use';
-		// eslint-disable-next-line camelcase
 	} else if (padding_left_and_right === '2') {
 		// Fit to content area width
 		classPaddingLR = ' vk_outer-paddingLR-zero';
 	}
 
-	//classPaddingVerticalのクラス切り替え
-	// eslint-disable-next-line camelcase
+	//classPaddingVerticalのクラス切り替
 	if (padding_top_and_bottom === '1') {
 		classPaddingVertical = ' vk_outer-paddingVertical-use';
 	} else {
 		classPaddingVertical = ' vk_outer-paddingVertical-none';
 	}
 
-	//上側セクションの傾き切り替え
-	// eslint-disable-next-line camelcase
+	//上側セクションの傾き切り替
 	if (upper_level) {
 		whichSideUpper = 'upper';
 	}
 
-	//下側セクションの傾き切り替え
-	// eslint-disable-next-line camelcase
+	//下側セクションの傾き切り替
 	if (lower_level) {
 		whichSideLower = 'lower';
 	}
@@ -84,8 +75,7 @@ export default function save(props) {
 	//編集画面とサイト上の切り替え
 	const containerClass = 'vk_outer_container';
 
-	//Dividerエフェクトがない時のみ枠線を追加
-	// eslint-disable-next-line camelcase
+	//Dividerエフェクトがない時のみ枠線を追
 	if (upper_level === 0 && lower_level === 0) {
 		borderProperty = `${borderWidth}px ${borderStyle} ${borderColor}`;
 		borderRadiusProperty = `${borderRadius}px`;
@@ -95,7 +85,7 @@ export default function save(props) {
 	}
 
 	const blockProps = useBlockProps.save({
-		className: `vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
+		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 	});
 	return (
 		<div
@@ -105,7 +95,7 @@ export default function save(props) {
 				borderRadius: borderRadiusProperty,
 			}}
 		>
-			<GenerateBgImage prefix={'vkb-outer'} {...props} />
+			<GenerateBgImage prefix={'vkb-outer'} clientId={clientId} {...props} />
 			<div>
 				{componentDivider(
 					upper_level,

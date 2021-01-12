@@ -23,8 +23,11 @@ import React from 'react';
 
 export default function CardEdit(props) {
 	const { attributes, setAttributes, clientId, name } = props;
+	const { blockId } = attributes;
 	attributes.name = name;
+	attributes.clientId = clientId;
 	setAttributes({ clientId });
+	setAttributes({ blockId: clientId });
 
 	const selectEditor = select('core/block-editor')
 		? select('core/block-editor')
@@ -81,7 +84,7 @@ export default function CardEdit(props) {
 	innerClass += ' vk_posts-edit-col-xxl-' + convertToGrid(attributes.col_xxl);
 
 	const blockProps = useBlockProps({
-		className: `vk_posts vk_card_${clientId}`,
+		className: `vk_posts vk_card_${blockId}`,
 	});
 
 	return (

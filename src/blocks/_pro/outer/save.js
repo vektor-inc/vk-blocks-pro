@@ -2,7 +2,7 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { componentDivider } from './component-divider';
 import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
 
-/* eslint eslint-disable-next-line camelcase: 0 */
+/* eslint camelcase: 0 */
 export default function save(props) {
 	const { attributes } = props;
 	const {

@@ -19,7 +19,7 @@ import {
 import { componentDivider } from './component-divider';
 import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
 
-/* eslint eslint-disable-next-line camelcase: 0 */
+/* eslint camelcase: 0 */
 export default function OuterEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const {

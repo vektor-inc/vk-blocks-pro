@@ -1,4 +1,5 @@
 import save000 from './0.0.0/save';
+import save0601 from './0.60.1/save';
 
 const blockAttributes = {
 	col_xs: {
@@ -28,6 +29,16 @@ const blockAttributes = {
 };
 
 const deprecated = [
+	{
+		attributes: {
+			...blockAttributes,
+			col_xxl: {
+				type: 'number',
+				default: 3,
+			},
+		},
+		save: save0601,
+	},
 	{
 		attributes: blockAttributes,
 		save: save000,

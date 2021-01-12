@@ -1,8 +1,8 @@
 import { __, sprintf } from '@wordpress/i18n';
 import { PanelBody, BaseControl } from '@wordpress/components';
-import { AlignControl } from '../align-control';
-import { capitalize } from '../../utils/capitalize';
-import { fixBrokenUnicode } from '../../utils/depModules';
+import { AlignControl } from '@vkblocks/components/align-control';
+import { capitalize } from '@vkblocks/utils/capitalize';
+import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
 
 export const CardAlignControls = (props) => {
 	const { attributes } = props;

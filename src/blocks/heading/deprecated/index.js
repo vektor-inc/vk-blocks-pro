@@ -1,4 +1,7 @@
-export default {
+import save000 from './0.0.0/save';
+import save001 from './0.0.1/save';
+
+const blockAttributes = {
 	anchor: {
 		type: 'string',
 		source: 'attribute',
@@ -18,12 +21,11 @@ export default {
 	},
 	outerMarginBottom: {
 		type: 'number',
-		default: 0,
 	},
 	title: {
 		type: 'string',
 		source: 'html',
-		selector: 'span',
+		selector: 'h1,h2,h3,h4,h5,h6',
 		default: '',
 	},
 	titleColor: {
@@ -32,11 +34,10 @@ export default {
 	},
 	titleSize: {
 		type: 'number',
-		default: 2,
+		default: 2.6,
 	},
 	titleMarginBottom: {
 		type: 'number',
-		default: 1,
 	},
 	subText: {
 		source: 'html',
@@ -53,18 +54,18 @@ export default {
 	},
 	subTextSize: {
 		type: 'number',
-		default: 1.2,
-	},
-	fontAwesomeIconBefore: {
-		type: 'string',
-		default: '',
-	},
-	fontAwesomeIconAfter: {
-		type: 'string',
-		default: '',
-	},
-	fontAwesomeIconColor: {
-		type: 'string',
-		default: '#000000',
+		default: 1.8,
 	},
 };
+
+const deprecated = [
+	{
+		attributes: blockAttributes,
+		save: save001,
+	},
+	{
+		attributes: blockAttributes,
+		save: save000,
+	},
+];
+export default deprecated;

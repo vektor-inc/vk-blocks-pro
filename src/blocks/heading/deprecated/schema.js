@@ -1,55 +1,55 @@
-export const schemav0_24_1 ={
+export const schemav0_24_1 = {
 	level: {
-	  type: "number",
-	  default: 2
+		type: 'number',
+		default: 2,
 	},
 	align: {
-	  type: "string"
+		type: 'string',
 	},
 	titleStyle: {
-	  type: "string",
-	  default: "default"
+		type: 'string',
+		default: 'default',
 	},
 	outerMarginBottom: {
-	  type: "number",
-	  default: null
+		type: 'number',
+		default: null,
 	},
 	title: {
-	  type: "string",
-	  source: "html",
-	  selector: "h1,h2,h3,h4,h5,h6",
-	  default: ""
+		type: 'string',
+		source: 'html',
+		selector: 'h1,h2,h3,h4,h5,h6',
+		default: '',
 	},
 	titleColor: {
-	  type: "string",
-	  default: "#000000"
+		type: 'string',
+		default: '#000000',
 	},
 	titleSize: {
-	  type: "number",
-	  default: 2
+		type: 'number',
+		default: 2,
 	},
 	titleMarginBottom: {
-	  type: "number",
-	  default: 1
+		type: 'number',
+		default: 1,
 	},
 	subText: {
-	  source: "html",
-	  selector: "p",
-	  default: ""
+		source: 'html',
+		selector: 'p',
+		default: '',
 	},
 	subTextFlag: {
-	  type: "string",
-	  default: "on"
+		type: 'string',
+		default: 'on',
 	},
 	subTextColor: {
-	  type: "string",
-	  default: "#000000"
+		type: 'string',
+		default: '#000000',
 	},
 	subTextSize: {
-	  type: "number",
-	  default: 1.2
-	}
-}
+		type: 'number',
+		default: 1.2,
+	},
+};
 
 export const schema = {
 	anchor: {
@@ -58,54 +58,54 @@ export const schema = {
 		attribute: 'id',
 		selector: '*',
 	},
-    level: {
-        type: 'number',
-        default: 2,
-    },
-    align: {
-        type: 'string',
-    },
-    titleStyle: {
-        type: 'string',
-        default: 'default',
-    },
-    outerMarginBottom: {
-        type: 'number',
-    },
-    title: {
-        type: 'string',
-        source: 'html',
-        selector: 'h1,h2,h3,h4,h5,h6',
-        default: '',
-    },
-    titleColor: {
-        type: 'string',
-        default: '#000000',
-    },
-    titleSize: {
-        type: 'number',
-        default: 2.6,
-    },
-    titleMarginBottom: {
-        type: 'number',
-    },
-    subText: {
-        source: 'html',
-        selector: 'p',
-        default: '',
-    },
-    subTextFlag: {
-        type: 'string',
-        default: 'on',
-    },
-    subTextColor: {
-        type: 'string',
-        default: '#000000',
-    },
-    subTextSize: {
-        type: 'number',
-        default: 1.8,
-    },
+	level: {
+		type: 'number',
+		default: 2,
+	},
+	align: {
+		type: 'string',
+	},
+	titleStyle: {
+		type: 'string',
+		default: 'default',
+	},
+	outerMarginBottom: {
+		type: 'number',
+	},
+	title: {
+		type: 'string',
+		source: 'html',
+		selector: 'h1,h2,h3,h4,h5,h6',
+		default: '',
+	},
+	titleColor: {
+		type: 'string',
+		default: '#000000',
+	},
+	titleSize: {
+		type: 'number',
+		default: 2.6,
+	},
+	titleMarginBottom: {
+		type: 'number',
+	},
+	subText: {
+		source: 'html',
+		selector: 'p',
+		default: '',
+	},
+	subTextFlag: {
+		type: 'string',
+		default: 'on',
+	},
+	subTextColor: {
+		type: 'string',
+		default: '#000000',
+	},
+	subTextSize: {
+		type: 'number',
+		default: 1.8,
+	},
 };
 
 export const schema1 = {
@@ -115,55 +115,55 @@ export const schema1 = {
 		attribute: 'id',
 		selector: '*',
 	},
-    level: {
-        type: 'number',
-        default: 2,
-    },
-    align: {
-        type: 'string',
-    },
-    titleStyle: {
-        type: 'string',
-        default: 'default',
-    },
-    outerMarginBottom: {
-        type: 'number',
-    },
-    title: {
-        type: 'string',
-        source: 'html',
-        selector: 'h1,h2,h3,h4,h5,h6',
-        default: '',
-    },
-    titleColor: {
-        type: 'string',
-        default: '#000000',
-    },
-    titleSize: {
-        type: 'number',
-        default: 2.6,
-    },
-    titleMarginBottom: {
-        type: 'number',
-    },
-    subText: {
-        source: 'html',
-        selector: 'p',
-        default: '',
-    },
-    subTextFlag: {
-        type: 'string',
-        default: 'on',
-    },
-    subTextColor: {
-        type: 'string',
-        default: '#000000',
-    },
-    subTextSize: {
-        type: 'number',
-        default: 1.8,
-    },
-}
+	level: {
+		type: 'number',
+		default: 2,
+	},
+	align: {
+		type: 'string',
+	},
+	titleStyle: {
+		type: 'string',
+		default: 'default',
+	},
+	outerMarginBottom: {
+		type: 'number',
+	},
+	title: {
+		type: 'string',
+		source: 'html',
+		selector: 'h1,h2,h3,h4,h5,h6',
+		default: '',
+	},
+	titleColor: {
+		type: 'string',
+		default: '#000000',
+	},
+	titleSize: {
+		type: 'number',
+		default: 2.6,
+	},
+	titleMarginBottom: {
+		type: 'number',
+	},
+	subText: {
+		source: 'html',
+		selector: 'p',
+		default: '',
+	},
+	subTextFlag: {
+		type: 'string',
+		default: 'on',
+	},
+	subTextColor: {
+		type: 'string',
+		default: '#000000',
+	},
+	subTextSize: {
+		type: 'number',
+		default: 1.8,
+	},
+};
 
 export const schema2 = {
 	anchor: {
@@ -173,56 +173,56 @@ export const schema2 = {
 		selector: '*',
 	},
 	level: {
-		type: "number",
-		default: 2
+		type: 'number',
+		default: 2,
 	},
 	align: {
-		type: "string"
+		type: 'string',
 	},
 	titleStyle: {
-		type: "string",
-		default: "default"
+		type: 'string',
+		default: 'default',
 	},
 	outerMarginBottom: {
-		type: "number",
-		default: ""
+		type: 'number',
+		default: '',
 	},
 	title: {
-		type: "string",
-		source: "html",
-		selector: "h1,h2,h3,h4,h5,h6",
-		default: ""
+		type: 'string',
+		source: 'html',
+		selector: 'h1,h2,h3,h4,h5,h6',
+		default: '',
 	},
 	titleColor: {
-		type: "string",
-		default: "#000000"
+		type: 'string',
+		default: '#000000',
 	},
 	titleSize: {
-		type: "number",
-		default: 2
+		type: 'number',
+		default: 2,
 	},
 	titleMarginBottom: {
-		type: "number",
-		default: 1
+		type: 'number',
+		default: 1,
 	},
 	subText: {
-		source: "html",
-		selector: "p",
-		default: ""
+		source: 'html',
+		selector: 'p',
+		default: '',
 	},
 	subTextFlag: {
-		type: "string",
-		default: "on"
+		type: 'string',
+		default: 'on',
 	},
 	subTextColor: {
-		type: "string",
-		default: "#000000"
+		type: 'string',
+		default: '#000000',
 	},
 	subTextSize: {
-		type: "number",
-		default: 1.2
-	}
-}
+		type: 'number',
+		default: 1.2,
+	},
+};
 
 export const schema_0_40_0 = {
 	anchor: {
@@ -232,54 +232,54 @@ export const schema_0_40_0 = {
 		selector: '*',
 	},
 	level: {
-		type: "number",
-		default: 2
+		type: 'number',
+		default: 2,
 	},
 	align: {
-		type: "string"
+		type: 'string',
 	},
 	titleStyle: {
-		type: "string",
-		default: "default"
+		type: 'string',
+		default: 'default',
 	},
 	outerMarginBottom: {
-		type: "number",
-		default: 0
+		type: 'number',
+		default: 0,
 	},
 	title: {
-		type: "string",
-		source: "html",
-		selector: "span",
-		default: ""
+		type: 'string',
+		source: 'html',
+		selector: 'span',
+		default: '',
 	},
 	titleColor: {
-		type: "string",
-		default: "#000000"
+		type: 'string',
+		default: '#000000',
 	},
 	titleSize: {
-		type: "number",
-		default: 2
+		type: 'number',
+		default: 2,
 	},
 	titleMarginBottom: {
-		type: "number",
-		default: 1
+		type: 'number',
+		default: 1,
 	},
 	subText: {
-		source: "html",
-		selector: "p",
-		default: ""
+		source: 'html',
+		selector: 'p',
+		default: '',
 	},
 	subTextFlag: {
-		type: "string",
-		default: "on"
+		type: 'string',
+		default: 'on',
 	},
 	subTextColor: {
-		type: "string",
-		default: "#000000"
+		type: 'string',
+		default: '#000000',
 	},
 	subTextSize: {
-		type: "number",
-		default: 1.2
+		type: 'number',
+		default: 1.2,
 	},
 	fontAwesomeIconBefore: {
 		type: 'string',
@@ -287,10 +287,10 @@ export const schema_0_40_0 = {
 	},
 	fontAwesomeIconAfter: {
 		type: 'string',
-		default:  '',
-	 },
-	 fontAwesomeIconColor: {
-		type: "string",
-		default: "#000000"
+		default: '',
+	},
+	fontAwesomeIconColor: {
+		type: 'string',
+		default: '#000000',
 	},
 };

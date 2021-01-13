@@ -2,11 +2,11 @@
  * heading block type
  *
  */
-import { schema, example } from "./schema";
-import { VKBHeading } from "./component";
-import { Deprecated } from "./deprecated/block";
-import { vkbBlockEditor } from "./../../utils/depModules";
-import { FontAwesome } from "./../../utils/font-awesome-new";
+import { schema, example } from './schema';
+import { VKBHeading } from './component';
+import { Deprecated } from './deprecated/block';
+import { vkbBlockEditor } from './../../utils/depModules';
+import { FontAwesome } from './../../utils/font-awesome-new';
 import { ReactComponent as Icon } from './icon.svg';
 
 import HeadingLevelDropdown from './heading-level-dropdown';
@@ -28,21 +28,20 @@ const {
 	AlignmentToolbar,
 } = vkbBlockEditor;
 
-registerBlockType("vk-blocks/heading", {
-
-	title: __("Heading", "vk-blocks"),
+registerBlockType('vk-blocks/heading', {
+	title: __('Heading', 'vk-blocks'),
 	icon: <Icon />,
-	category: "vk-blocks-cat",
+	category: 'vk-blocks-cat',
 	attributes: schema,
 	supports: {
 		className: true,
 		customClassName: true,
-		anchor: true
+		anchor: true,
 	},
 	example,
 
-	edit( props ) {
-		const { attributes, className, setAttributes } = props
+	edit(props) {
+		const { attributes, className, setAttributes } = props;
 		const {
 			level,
 			align,
@@ -57,7 +56,7 @@ registerBlockType("vk-blocks/heading", {
 			fontAwesomeIconColor,
 		} = attributes;
 
-		const setTitleFontSize = newLevel => {
+		const setTitleFontSize = (newLevel) => {
 			setAttributes({ level: newLevel });
 
 			switch (newLevel) {
@@ -86,105 +85,153 @@ registerBlockType("vk-blocks/heading", {
 				<BlockControls>
 					<ToolbarGroup>
 						<HeadingLevelDropdown
-							selectedLevel={ level }
-							onChange={ setTitleFontSize }
+							selectedLevel={level}
+							onChange={setTitleFontSize}
 						/>
 					</ToolbarGroup>
 					<AlignmentToolbar
-						value={ align }
-						onChange={ ( value ) => {
-							setAttributes( { align: value } );
-						} }
+						value={align}
+						onChange={(value) => {
+							setAttributes({ align: value });
+						}}
 					/>
 				</BlockControls>
 				<InspectorControls>
-					<PanelBody title={ __("Style Settings", "vk-blocks") }>
+					<PanelBody title={__('Style Settings', 'vk-blocks')}>
 						<SelectControl
-							label={ __("Heading style", "vk-blocks") }
-							value={ titleStyle }
-							onChange={ value => setAttributes({ titleStyle: value }) }
-							options={ [
-								{ label: __("Default", "vk-blocks"), value: "default" },
-								{ label: __("Plain", "vk-blocks"), value: "plain" }
-							] }
+							label={__('Heading style', 'vk-blocks')}
+							value={titleStyle}
+							onChange={(value) =>
+								setAttributes({ titleStyle: value })
+							}
+							options={[
+								{
+									label: __('Default', 'vk-blocks'),
+									value: 'default',
+								},
+								{
+									label: __('Plain', 'vk-blocks'),
+									value: 'plain',
+								},
+							]}
 						/>
 					</PanelBody>
-					<PanelBody title={ __("Margin Setting", "vk-blocks") }>
-						<label>{ __("Margin bottom size of after hedding  (rem)", "vk-blocks") }</label>
+					<PanelBody title={__('Margin Setting', 'vk-blocks')}>
+						<label>
+							{__(
+								'Margin bottom size of after hedding  (rem)',
+								'vk-blocks'
+							)}
+						</label>
 						<RangeControl
-							value={ titleMarginBottom }
-							onChange={ value => {
+							value={titleMarginBottom}
+							onChange={(value) => {
 								setAttributes({ titleMarginBottom: value });
-							} }
-							min={ -1 }
-							max={ 3 }
-							step={ 0.1 }
+							}}
+							min={-1}
+							max={3}
+							step={0.1}
 						/>
-						<label>{ __("Margin bottom size of after this block (rem)", "vk-blocks") }</label>
+						<label>
+							{__(
+								'Margin bottom size of after this block (rem)',
+								'vk-blocks'
+							)}
+						</label>
 						<RangeControl
-							value={ outerMarginBottom }
-							onChange={ value => {
+							value={outerMarginBottom}
+							onChange={(value) => {
 								setAttributes({ outerMarginBottom: value });
-							} }
-							min={ -1 }
-							max={ 8 }
-							step={ 0.1 }
+							}}
+							min={-1}
+							max={8}
+							step={0.1}
 						/>
 					</PanelBody>
-					<PanelBody title={ __("Heading Settings", "vk-blocks") }>
+					<PanelBody title={__('Heading Settings', 'vk-blocks')}>
 						<RangeControl
-							label={ __("Text size (rem)", "vk-blocks") }
-							value={ titleSize }
-							onChange={ value => {
+							label={__('Text size (rem)', 'vk-blocks')}
+							value={titleSize}
+							onChange={(value) => {
 								setAttributes({ titleSize: value });
-							} }
-							min={ 0.5 }
-							max={ 4 }
-							step={ 0.1 }
+							}}
+							min={0.5}
+							max={4}
+							step={0.1}
 						/>
-						<BaseControl label={ __("Text Color", "vk-blocks") }>
-							<ColorPalette value={ titleColor } onChange={ value => setAttributes({ titleColor: value }) } />
+						<BaseControl label={__('Text Color', 'vk-blocks')}>
+							<ColorPalette
+								value={titleColor}
+								onChange={(value) =>
+									setAttributes({ titleColor: value })
+								}
+							/>
 						</BaseControl>
 					</PanelBody>
-					<PanelBody title={ __("Font Awesome Icon Settings", "vk-blocks") }>
-						<BaseControl label={ __("Before text", "vk-blocks") }>
-							<FontAwesome attributeName={ "fontAwesomeIconBefore" } { ...props } />
+					<PanelBody
+						title={__('Font Awesome Icon Settings', 'vk-blocks')}
+					>
+						<BaseControl label={__('Before text', 'vk-blocks')}>
+							<FontAwesome
+								attributeName={'fontAwesomeIconBefore'}
+								{...props}
+							/>
 						</BaseControl>
-						<BaseControl label={ __("After text", "vk-blocks") }>
-							<FontAwesome attributeName={ "fontAwesomeIconAfter" } { ...props } />
+						<BaseControl label={__('After text', 'vk-blocks')}>
+							<FontAwesome
+								attributeName={'fontAwesomeIconAfter'}
+								{...props}
+							/>
 						</BaseControl>
-						<BaseControl label={ __("Icon Color", "vk-blocks") }>
-							<ColorPalette value={ fontAwesomeIconColor } onChange={ value => setAttributes({ fontAwesomeIconColor: value }) } />
+						<BaseControl label={__('Icon Color', 'vk-blocks')}>
+							<ColorPalette
+								value={fontAwesomeIconColor}
+								onChange={(value) =>
+									setAttributes({
+										fontAwesomeIconColor: value,
+									})
+								}
+							/>
 						</BaseControl>
 					</PanelBody>
-					<PanelBody title={ __("Sub Text Settings", "vk-blocks") }>
+					<PanelBody title={__('Sub Text Settings', 'vk-blocks')}>
 						<RadioControl
-							label={ __("Position", "vk-blocks") }
-							selected={ subTextFlag }
-							options={ [
-								{ label: __("Display", "vk-blocks"), value: "on" },
-								{ label: __("Hide", "vk-blocks"), value: "off" }
-							] }
-							onChange={ value => setAttributes({ subTextFlag: value }) }
+							label={__('Position', 'vk-blocks')}
+							selected={subTextFlag}
+							options={[
+								{
+									label: __('Display', 'vk-blocks'),
+									value: 'on',
+								},
+								{
+									label: __('Hide', 'vk-blocks'),
+									value: 'off',
+								},
+							]}
+							onChange={(value) =>
+								setAttributes({ subTextFlag: value })
+							}
 						/>
-						<label>{ __("Text size (rem)", "vk-blocks") }</label>
+						<label>{__('Text size (rem)', 'vk-blocks')}</label>
 						<RangeControl
-							value={ subTextSize }
-							onChange={ value => {
+							value={subTextSize}
+							onChange={(value) => {
 								setAttributes({ subTextSize: value });
-							} }
-							min={ 0.5 }
-							max={ 3 }
-							step={ 0.1 }
+							}}
+							min={0.5}
+							max={3}
+							step={0.1}
 						/>
 						<ColorPalette
-							value={ subTextColor }
-							onChange={ value => setAttributes({ subTextColor: value }) }
+							value={subTextColor}
+							onChange={(value) =>
+								setAttributes({ subTextColor: value })
+							}
 						/>
 					</PanelBody>
 				</InspectorControls>
-				<div className={ className }>
-					<VKBHeading { ...props } for_={ "edit" } />
+				<div className={className}>
+					<VKBHeading {...props} for_={'edit'} />
 				</div>
 			</>
 		);
@@ -193,9 +240,9 @@ registerBlockType("vk-blocks/heading", {
 	save(props) {
 		return (
 			<div>
-				<VKBHeading { ...props } for_={ "save" } />
+				<VKBHeading {...props} for_={'save'} />
 			</div>
 		);
 	},
-	deprecated: Deprecated
+	deprecated: Deprecated,
 });

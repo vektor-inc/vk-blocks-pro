@@ -14,6 +14,7 @@ import compareVersions from 'compare-versions';
  * Internal dependencies
  */
 import * as gridColumn from './_pro/grid-column';
+import * as gridColumnItem from './_pro/grid-column-item';
 import * as outer from './_pro/outer';
 import * as alert from './alert';
 import * as prContent from './pr-content';
@@ -40,6 +41,7 @@ import * as tableofContentsNew from './_pro/table-of-contents-new';
  */
 export const __getVKBlocks = () => [
 	gridColumn,
+	gridColumnItem,
 	outer,
 	alert,
 	prContent,

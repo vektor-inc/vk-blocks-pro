@@ -6,60 +6,66 @@ import '@wordpress/notices';
 // import '@wordpress/block-editor';
 import {
 	registerBlockType,
-	unstable__bootstrapServerSideBlockDefinitions, // eslint-disable-line camelcase
+	unstable__bootstrapServerSideBlockDefinitions,
 } from '@wordpress/blocks';
 import compareVersions from 'compare-versions';
 
 /**
  * Internal dependencies
  */
-import * as iconCard from './_pro/icon-card';
-import * as iconCardItem from './_pro/icon-card-item';
 import * as alert from './alert';
-import * as prContent from './pr-content';
+import * as balloon from './balloon';
+import * as borderBox from './border-box';
+import * as button from './button';
+import * as faq from './faq';
 import * as faq2 from './faq2';
 import * as faq2a from './faq2-a';
 import * as faq2q from './faq2-q';
-import * as balloon from './balloon';
-import * as faq from './faq';
 import * as flow from './flow';
 import * as pageContent from './page-content';
-import * as animation from './_pro/animation';
-import * as postList from './_pro/post-list';
-import * as childPage from './_pro/child-page';
-import * as borderBox from './border-box';
-import * as spacer from './spacer';
-import * as button from './button';
 import * as prBlocks from './pr-blocks';
+import * as prContent from './pr-content';
+import * as spacer from './spacer';
+import * as animation from './_pro/animation';
+import * as card from './_pro/card';
+import * as cardItem from './_pro/card-item';
+import * as childPage from './_pro/child-page';
+import * as postList from './_pro/post-list';
 import * as timeline from './_pro/timeline';
 import * as timelineItem from './_pro/timeline-item';
+import * as outer from './_pro/outer';
 import * as tableofContentsNew from './_pro/table-of-contents-new';
+import * as iconCard from './_pro/icon-card';
+import * as iconCardItem from './_pro/icon-card-item';
 
 /**
  * Function to get all the VK Blocks in an array.
  */
 export const __getVKBlocks = () => [
-	iconCard,
-	iconCardItem,
 	alert,
-	prContent,
+	balloon,
+	borderBox,
+	button,
+	faq,
 	faq2,
 	faq2a,
 	faq2q,
-	balloon,
-	faq,
 	flow,
 	pageContent,
-	animation,
-	postList,
-	childPage,
-	borderBox,
-	spacer,
-	button,
 	prBlocks,
+	prContent,
+	spacer,
+	animation,
+	card,
+	cardItem,
+	childPage,
+	postList,
 	timeline,
 	timelineItem,
+	outer,
 	tableofContentsNew,
+	iconCard,
+	iconCardItem
 ];
 
 /**

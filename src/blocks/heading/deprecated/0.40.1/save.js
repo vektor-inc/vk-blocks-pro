@@ -3,17 +3,11 @@
  *
  */
 import VKBHeading from './component';
-import Schema from './schema';
 
-const Save = (props) => {
+export default function save(props) {
 	return (
 		<div>
 			<VKBHeading {...props} for_={'save'} />
 		</div>
 	);
-};
-
-export default {
-	attributes: Schema,
-	save: Save,
-};
+}

@@ -1,7 +1,7 @@
 import { RichText } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 import ReactHtmlParser from 'react-html-parser';
-
+/* eslint camelcase: 0 */
 const renderTitle = (level, contents, tStyle, headingStyle) => {
 	switch (level) {
 		case 1:

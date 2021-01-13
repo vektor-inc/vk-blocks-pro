@@ -1,6 +1,7 @@
 import { Component } from '@wordpress/element';
 import { RichText } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
+import classNames from 'classnames';
 
 export class NoAnchor extends Component {
 	render() {
@@ -20,7 +21,6 @@ export class NoAnchor extends Component {
 		} = this.props.attributes;
 		const setAttributes = this.props.setAttributes;
 		const className = this.props.className;
-		const for_ = this.props.for_;
 		const containerClass = classNames(
 			className,
 			`vk_heading vk_heading-style-${titleStyle}`
@@ -30,12 +30,12 @@ export class NoAnchor extends Component {
 		let tStyle;
 
 		//containerのマージンを切り替え
-		if (outerMarginBottom != null) {
+		if (outerMarginBottom !== null) {
 			cStyle = { marginBottom: outerMarginBottom + `rem` };
 		}
 
 		//titleのマージンを切り替え
-		if (titleMarginBottom != null) {
+		if (titleMarginBottom !== null) {
 			tStyle = {
 				color: titleColor,
 				fontSize: titleSize + 'rem',

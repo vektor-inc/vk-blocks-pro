@@ -1,5 +1,5 @@
-import {VKBHeadingV0_24_1} from './component';
-
+import { VKBHeadingV0_24_1 } from './component';
+/* eslint camelcase: 0 */
 export default function save({ attributes, className }) {
 	return (
 		<div className={className}>

@@ -1,7 +1,8 @@
 import { RichText } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
-import React from "react";
+import React from 'react';
 
+/* eslint camelcase: 0 */
 export class VKBHeadingV0_24_1 extends React.Component {
 	render() {
 		const {
@@ -32,7 +33,7 @@ export class VKBHeadingV0_24_1 extends React.Component {
 		}
 
 		//titleのマージンを切り替え
-		if (titleMarginBottom != null) {
+		if (titleMarginBottom !== null) {
 			tStyle = {
 				color: titleColor,
 				fontSize: titleSize + 'rem',

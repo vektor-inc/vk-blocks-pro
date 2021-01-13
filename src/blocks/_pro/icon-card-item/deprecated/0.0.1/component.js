@@ -5,7 +5,7 @@ import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 import ReactHtmlParser from 'react-html-parser';
 
 /* eslint camelcase: 0 */
-export const PRcarditem = (props) => {
+export const DepPRcarditem2 = (props) => {
 	const { attributes, setAttributes, for_, className } = props;
 	let {
 		color,
@@ -21,7 +21,6 @@ export const PRcarditem = (props) => {
 		col_md,
 		col_lg,
 		col_xl,
-		col_xxl,
 		activeControl,
 	} = attributes;
 	const align = JSON.parse(fixBrokenUnicode(activeControl));
@@ -115,9 +114,7 @@ export const PRcarditem = (props) => {
 				col_md
 			)} vk_post-col-lg-${convertToGrid(
 				col_lg
-			)} vk_post-col-xl-${convertToGrid(
-				col_xl
-			)} vk_post-col-xxl-${convertToGrid(col_xxl)}`}
+			)} vk_post-col-xl-${convertToGrid(col_xl)}`}
 		>
 			{contents}
 		</div>

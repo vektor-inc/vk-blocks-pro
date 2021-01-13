@@ -1,12 +1,11 @@
-import { __ } from '@wordpress/i18n';
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
-import { RichText } from '@wordpress/block-editor';
-import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
+import { RichText, useBlockProps } from '@wordpress/block-editor';
 import ReactHtmlParser from 'react-html-parser';
+import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 
 /* eslint camelcase: 0 */
-export const PRcarditem = (props) => {
-	const { attributes, setAttributes, for_, className } = props;
+export default function save(props) {
+	const { attributes } = props;
 	let {
 		color,
 		heading,
@@ -30,7 +29,10 @@ export const PRcarditem = (props) => {
 	let iconColor;
 
 	if (bgType === '0') {
-		style = { backgroundColor: `${color}`, border: `1px solid ${color}` };
+		style = {
+			backgroundColor: `${color}`,
+			border: `1px solid ${color}`,
+		};
 		iconColor = `#ffffff`;
 	} else {
 		style = {
@@ -55,38 +57,31 @@ export const PRcarditem = (props) => {
 	faIconFragment[1] = faIconFragment[1] + ` vk_icon-card_item_icon `;
 	const faIconTag = faIconFragment.join('');
 
-	let contents;
-	if (for_ === 'edit') {
-		contents = (
-			<>
-				<div className="vk_icon-card_item_icon_outer" style={style}>
-					{ReactHtmlParser(faIconTag)}
-				</div>
-				<RichText
-					className={`vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}`}
-					tagName={'h3'}
-					onChange={(value) =>
-						props.setAttributes({ heading: value })
-					}
-					value={heading}
-					placeholder={__('Input Title', 'vk-blocks')}
-				/>
-				<RichText
-					className={`vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-${align.text}`}
-					tagName={'p'}
-					onChange={(value) => setAttributes({ content: value })}
-					value={content}
-					placeholder={__('Input Content', 'vk-blocks')}
-				/>
-			</>
-		);
-	} else if (for_ === 'save') {
-		contents = (
+	const blockProps = useBlockProps.save({
+		className: `vk_post vk_icon-card_item vk_post-col-xs-${convertToGrid(
+			col_xs
+		)} vk_post-col-sm-${convertToGrid(
+			col_sm
+		)} vk_post-col-md-${convertToGrid(
+			col_md
+		)} vk_post-col-lg-${convertToGrid(
+			col_lg
+		)} vk_post-col-xl-${convertToGrid(
+			col_xl
+		)} vk_post-col-xxl-${convertToGrid(col_xxl)}`,
+	});
+
+	return (
+		<div {...blockProps}>
+			{/*
+			 target=_blankで指定すると、WordPressが自動でnoopener noreferrerを付与する。
+			 ブロックでもrelを付与しないとブロックが壊れる。
+			 */}
 			<a
 				href={url}
 				className="vk_icon-card_item_link"
-				target={urlOpenType ? '_blank' : '_self'}
-				rel="noopener noreferrer"
+				target={urlOpenType && '_blank'}
+				rel={urlOpenType && 'noopener noreferrer'}
 			>
 				<div className="vk_icon-card_item_icon_outer" style={style}>
 					{ReactHtmlParser(faIconTag)}
@@ -102,24 +97,6 @@ export const PRcarditem = (props) => {
 					value={content}
 				/>
 			</a>
-		);
-	}
-
-	return (
-		<div
-			className={`${className} vk_post vk_icon-card_item vk_post-col-xs-${convertToGrid(
-				col_xs
-			)} vk_post-col-sm-${convertToGrid(
-				col_sm
-			)} vk_post-col-md-${convertToGrid(
-				col_md
-			)} vk_post-col-lg-${convertToGrid(
-				col_lg
-			)} vk_post-col-xl-${convertToGrid(
-				col_xl
-			)} vk_post-col-xxl-${convertToGrid(col_xxl)}`}
-		>
-			{contents}
 		</div>
 	);
-};
+}

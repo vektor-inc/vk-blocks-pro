@@ -1,307 +1,107 @@
-const { __ } = wp.i18n; // Import __() from wp.i18n
-import { vkbBlockEditor, fixBrokenUnicode } from "../../../../utils/depModules";
-const { RichText } = vkbBlockEditor;
-import ReactHtmlParser from 'react-html-parser';
-import { convertToGrid } from "../../../../utils/convert-to-grid";
-import Schema0_49_8 from "./0.49.8/schema"
-import Save0_49_8 from "./0.49.8/index"
+import save000 from './0.0.0/save';
+import save001 from './0.0.1/save';
+import save0_49_8 from './0.49.8/save';
+import save0_60_1 from './0.60.1/save';
 
-export const DepPRcarditem = (props)=>{
-
-	const {attributes,setAttributes,for_,className}=props;
-	const{color, heading, content, icon, url, urlOpenType, bgType,col_xs,col_sm,col_md,col_lg,col_xl,activeControl}=attributes
-	const align = JSON.parse( fixBrokenUnicode(activeControl));
-
-	let style;
-	let iconStyle;
-	if(bgType == '0'){
-		style = {backgroundColor: `${color}`,
-																							border: `1px solid ${color}`,}
-		iconStyle = {color: `##fff`,}
-	}else{
-		style = {backgroundColor: `transparent`,
-																							border: `1px solid ${color}`,}
-		iconStyle = {color: `${color}`,}
-	}
-
-	let contents;
-	if(for_ === "edit"){
-		contents = <>
-			<div className="vk_icon-card_item_icon_outer" style={ style }>
-				<i className={ `${icon} vk_icon-card_item_icon` } style={ iconStyle } />
-			</div>
-			<RichText
-				className={ `vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}` }
-				tagName={ 'h3' }
-				onChange={ (value) => props.setAttributes({ heading: value }) }
-				value={ heading }
-				placeholder={ __('Input Title', 'vk-blocks') }
-			 />
-			 <RichText
-				className={ `vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-${align.text}` }
-				tagName={ 'p' }
-				onChange={ (value) => setAttributes({ content: value }) }
-				value={ content }
-				placeholder={ __('Input Content', 'vk-blocks') }
-			/>
-		</>
-	}else if(for_ === "save"){
-		contents = <a href={ url } className="vk_icon-card_item_link" target={ urlOpenType ? "_blank" : "_self" } rel="noopener noreferrer">
-			<div className="vk_icon-card_item_icon_outer" style={ style }>
-				<i className={ `${icon} vk_icon-card_item_icon` } style={ iconStyle } />
-			</div>
-			<RichText.Content
-				className={ `vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}` }
-				tagName={ 'h3' }
-				value={ heading } />
-			<RichText.Content
-				className={ `vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-${align.text}` }
-				tagName={ 'p' }
-				value={ content } />
-		</a>
-	}
-
-	return (
-		<div
-			className={ `${className} vk_post vk_icon-card_item vk_post-col-xs-${convertToGrid(
-				col_xs
-			)} vk_post-col-sm-${convertToGrid(
-				col_sm
-			)} vk_post-col-md-${convertToGrid(
-				col_md
-			)} vk_post-col-lg-${convertToGrid(
-				col_lg
-			)} vk_post-col-xl-${convertToGrid(
-				col_xl
-			)}` }
-		>
-			{ contents }
-		</div>
-	);
-}
-
-export const DepPRcarditem2 = (props)=>{
-
-	const {attributes,setAttributes,for_,className}=props;
-	let {color, heading, content, faIcon, url, icon, urlOpenType, bgType,col_xs,col_sm,col_md,col_lg,col_xl,activeControl}=attributes
-	const align = JSON.parse( fixBrokenUnicode(activeControl) );
-
-	let style;
-	let iconColor;
-
-	if(bgType == '0'){
-		style = {backgroundColor: `${color}`,
-																					border: `1px solid ${color}`,}
-		iconColor = `#ffffff`
-	}else{
-		style = {backgroundColor: `transparent`,
-																					border: `1px solid ${color}`,}
-		iconColor = `${color}`
-	}
-
-	//過去バージョンをリカバリーした時にiconを正常に表示する
-	if( faIcon && !faIcon.match(/<i/)){
-		faIcon = `<i class="${faIcon}"></i>`
-
-	//過去のicon attribuet用 deprecated処理
-	}else if( !faIcon && icon && !icon.match(/<i/)){
-		faIcon = `<i class="${icon}"></i>`
-	}
-
-	//add class and inline css
-	const faIconFragment = faIcon.split(' ');
-	faIconFragment[0] = faIconFragment[0] + ` style="color:${iconColor}" `
-	faIconFragment[1] = faIconFragment[1] + ` vk_icon-card_item_icon `
-	const faIconTag = faIconFragment.join('')
-
-	let contents;
-	if(for_ === "edit"){
-		contents = <>
-			<div className="vk_icon-card_item_icon_outer" style={ style }>
-				{ ReactHtmlParser(faIconTag) }
-			</div>
-			<RichText
-				className={ `vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}` }
-				tagName={ 'h3' }
-				onChange={ (value) => props.setAttributes({ heading: value }) }
-				value={ heading }
-				placeholder={ __('Input Title', 'vk-blocks') }
-			 />
-			 <RichText
-				className={ `vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-${align.text}` }
-				tagName={ 'p' }
-				onChange={ (value) => setAttributes({ content: value }) }
-				value={ content }
-				placeholder={ __('Input Content', 'vk-blocks') }
-			/>
-		</>
-	}else if(for_ === "save"){
-		contents = <a href={ url } className="vk_icon-card_item_link" target={ urlOpenType ? "_blank" : "_self" } rel="noopener noreferrer">
-			<div className="vk_icon-card_item_icon_outer" style={ style }>
-				{ ReactHtmlParser(faIconTag) }
-			</div>
-			<RichText.Content
-				className={ `vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}` }
-				tagName={ 'h3' }
-				value={ heading } />
-			<RichText.Content
-				className={ `vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-${align.text}` }
-				tagName={ 'p' }
-				value={ content } />
-		</a>
-	}
-
-	return (
-		<div
-			className={ `${className} vk_post vk_icon-card_item vk_post-col-xs-${convertToGrid(
-				col_xs
-			)} vk_post-col-sm-${convertToGrid(
-				col_sm
-			)} vk_post-col-md-${convertToGrid(
-				col_md
-			)} vk_post-col-lg-${convertToGrid(
-				col_lg
-			)} vk_post-col-xl-${convertToGrid(
-				col_xl
-			)}` }
-		>
-			{ contents }
-		</div>
-	);
-}
-
-export const deprecated = [
-	{
-		attributes: Schema0_49_8,
-		save: Save0_49_8
+const blockAttributes = {
+	col_xs: {
+		type: 'number',
+		default: 1,
 	},
+	col_sm: {
+		type: 'number',
+		default: 2,
+	},
+	col_md: {
+		type: 'number',
+		default: 3,
+	},
+	col_lg: {
+		type: 'number',
+		default: 3,
+	},
+	col_xl: {
+		type: 'number',
+		default: 3,
+	},
+	url: {
+		type: 'string',
+		default: '',
+	},
+	activeControl: {
+		type: 'string',
+		default: '{"title":"center","text":"center"}',
+	},
+	urlOpenType: {
+		type: 'Boolean',
+		default: false,
+	},
+	icon: {
+		type: 'string',
+		default: 'fas fa-file',
+	},
+	color: {
+		type: 'string',
+		default: '#0693e3',
+	},
+	bgType: {
+		type: 'string',
+		default: '1',
+	},
+	heading: {
+		type: 'string',
+		source: 'html',
+		selector: '.vk_icon-card_item_title',
+	},
+	content: {
+		type: 'string',
+		source: 'html',
+		selector: '.vk_icon_card_item_summary',
+	},
+};
+
+const deprecated = [
 	{
 		attributes: {
-			col_xs: {
-				type: "number",
-				default: 1,
-			},
-			col_sm: {
-				type: "number",
-				default: 2,
-			},
-			col_md: {
-				type: "number",
-				default: 3,
-			},
-			col_lg: {
-				type: "number",
-				default: 3,
-			},
-			col_xl: {
-				type: "number",
-				default: 3,
-			},
-			url: {
-				type: "string",
-				default: "",
-			},
-			activeControl: {
-				type: "string",
-				default: '{"title":"center","text":"center"}',
-			},
-			urlOpenType:{
-				type: 'Boolean',
-				default: false,
-			},
-			icon:{
-				type: 'string',
-				default: 'fas fa-file',
-			},
-			color:{
-				type: 'string',
-				default: '#0693e3',
-			},
-			bgType:{
-				type: 'string',
-				default: '1',
-			},
-			heading:{
-				type: 'string',
-				source: 'html',
-				selector: '.vk_icon-card_item_title',
-			},
-			content:{
-				type: 'string',
-				source: 'html',
-				selector: '.vk_icon_card_item_summary',
-			}
-		},
-		save(props) {
-			return (
-				<DepPRcarditem { ...props } for_={ "save" } />
-			);
-		},
-	},
-	{
-		attributes: {
-			col_xs: {
-			  type: "number",
-			  default: 1,
-			},
-			col_sm: {
-			  type: "number",
-			  default: 2,
-			},
-			col_md: {
-			  type: "number",
-			  default: 3,
-			},
-			col_lg: {
-			  type: "number",
-			  default: 3,
-			},
-			col_xl: {
-			  type: "number",
-			  default: 3,
-			},
-			url: {
-			  type: "string",
-			  default: "",
-			},
-			activeControl: {
-			  type: "string",
-			  default: '{"title":"center","text":"center"}',
-			},
-			urlOpenType:{
-				type: 'Boolean',
-				default: false,
-			},
-			color:{
-				type: 'string',
-				default: '#0693e3',
-			},
-			bgType:{
-				type: 'string',
-				default: '1',
-			},
-			heading:{
-				type: 'string',
-				source: 'html',
-				selector: '.vk_icon-card_item_title',
-			},
-			content:{
-				type: 'string',
-				source: 'html',
-				selector: '.vk_icon_card_item_summary',
-			},
+			...blockAttributes,
 			faIcon: {
 				type: 'string',
 				default: '<i class="fas fa-user"></i>',
 			},
-			//This attribute is deprecated.
-			icon:{
-				type: 'string',
-				default: 'fas fa-file',
+			col_xxl: {
+				type: 'number',
+				default: 3,
 			},
 		},
-		save(props) {
-			return <DepPRcarditem2 { ...props } for_={ "save" } />;
+		save: save0_60_1,
+	},
+	{
+		attributes: {
+			...blockAttributes,
+			faIcon: {
+				type: 'string',
+				default: '<i class="fas fa-user"></i>',
+			},
+			col_xxl: {
+				type: 'number',
+				default: 3,
+			},
 		},
+		save: save0_49_8,
+	},
+	{
+		attributes: {
+			...blockAttributes,
+			faIcon: {
+				type: 'string',
+				default: '<i class="fas fa-user"></i>',
+			},
+		},
+		save: save001,
+	},
+	{
+		attributes: blockAttributes,
+		save: save000,
 	},
 ];
+export default deprecated;

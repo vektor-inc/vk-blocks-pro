@@ -1,7 +1,7 @@
 import save000 from './0.0.0/save';
 import save001 from './0.0.1/save';
-import save0498 from './0.49.8/save';
-import save0601 from './0.60.1/save';
+import save0_49_8 from './0.49.8/save';
+import save0_60_1 from './0.60.1/save';
 
 const blockAttributes = {
 	col_xs: {
@@ -73,7 +73,7 @@ const deprecated = [
 				default: 3,
 			},
 		},
-		save: save0601,
+		save: save0_60_1,
 	},
 	{
 		attributes: {
@@ -87,7 +87,7 @@ const deprecated = [
 				default: 3,
 			},
 		},
-		save: save0498,
+		save: save0_49_8,
 	},
 	{
 		attributes: {

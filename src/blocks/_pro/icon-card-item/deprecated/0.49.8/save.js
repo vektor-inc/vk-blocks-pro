@@ -1,5 +1,5 @@
-import PRcarditem from './component';
+import { PRcarditem } from './component';
 
-export default (props) => {
+export default function save(props) {
 	return <PRcarditem {...props} for_={'save'} />;
 };

@@ -88,7 +88,7 @@ export default function IconCardItemedit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('PR Block Setting', 'vk-blocks')}>
+				<PanelBody title={__('Icon Card Setting', 'vk-blocks')}>
 					<BaseControl
 						label={__('Link URL:', 'vk-blocks')}
 						id={`vk_iconCardItem-url`}

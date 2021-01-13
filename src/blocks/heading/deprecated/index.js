@@ -1,13 +1,13 @@
-import save000 from './0.0.0/save';
-import save001 from './0.0.1/save';
+import save0_24_1 from './0.24.1/save';
+import save0_24_2 from './0.24.2/save';
+import save0_24_3 from './0.24.3/save';
+import save0_24_4 from './0.24.4/save';
+import save0_24_5 from './0.24.5/save';
+import save0_24_6 from './0.24.6/save';
+import save0_24_7 from './0.24.7/save';
+import save0_39_5 from './0.39.5/save';
 
 const blockAttributes = {
-	anchor: {
-		type: 'string',
-		source: 'attribute',
-		attribute: 'id',
-		selector: '*',
-	},
 	level: {
 		type: 'number',
 		default: 2,
@@ -60,12 +60,92 @@ const blockAttributes = {
 
 const deprecated = [
 	{
-		attributes: blockAttributes,
-		save: save001,
+		attributes: {
+			...blockAttributes,
+			anchor: {
+				type: 'string',
+				source: 'attribute',
+				attribute: 'id',
+				selector: '*',
+			},
+		},
+		save: save0_39_5,
+	},
+	{
+		attributes: {
+			...blockAttributes,
+			anchor: {
+				type: 'string',
+				source: 'attribute',
+				attribute: 'id',
+				selector: '*',
+			},
+		},
+		save: save0_24_7,
+	},
+	{
+		attributes: {
+			...blockAttributes,
+			anchor: {
+				type: 'string',
+				source: 'attribute',
+				attribute: 'id',
+				selector: '*',
+			},
+		},
+		save: save0_24_6,
+	},
+	{
+		attributes: {
+			...blockAttributes,
+			anchor: {
+				type: 'string',
+				source: 'attribute',
+				attribute: 'id',
+				selector: '*',
+			},
+		},
+		save: save0_24_5,
+	},
+	{
+		attributes: {
+			...blockAttributes,
+			anchor: {
+				type: 'string',
+				source: 'attribute',
+				attribute: 'id',
+				selector: '*',
+			},
+		},
+		save: save0_24_4,
+	},
+	{
+		attributes: {
+			...blockAttributes,
+			anchor: {
+				type: 'string',
+				source: 'attribute',
+				attribute: 'id',
+				selector: '*',
+			},
+		},
+		save: save0_24_3,
+	},
+	{
+		attributes: {
+			...blockAttributes,
+			anchor: {
+				type: 'string',
+				source: 'attribute',
+				attribute: 'id',
+				selector: '*',
+			},
+		},
+		save: save0_24_2,
 	},
 	{
 		attributes: blockAttributes,
-		save: save000,
+		save: save0_24_1,
 	},
 ];
 export default deprecated;

@@ -1,10 +1,8 @@
-import { vkbBlockEditor } from '../../../utils/depModules';
-const { RichText } = vkbBlockEditor;
-const { __ } = wp.i18n;
-const { Component } = wp.element;
+import { RichText } from '@wordpress/block-editor';
+import { __ } from '@wordpress/i18n';
+import React from "react";
 
-
-export class VKBHeading2 extends Component {
+export class VKBHeadingV0_24_1 extends React.Component {
 	render() {
 		const {
 			level,
@@ -29,7 +27,7 @@ export class VKBHeading2 extends Component {
 		let tStyle;
 
 		//containerのマージンを切り替え
-		if (outerMarginBottom != null) {
+		if (outerMarginBottom !== null) {
 			cStyle = { marginBottom: outerMarginBottom + `rem` };
 		}
 
@@ -130,4 +128,3 @@ export class VKBHeading2 extends Component {
 		}
 	}
 }
-

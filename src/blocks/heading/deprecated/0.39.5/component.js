@@ -1,6 +1,5 @@
-import { vkbBlockEditor } from '../../../utils/depModules';
-const { RichText } = vkbBlockEditor;
-const { __ } = wp.i18n; // Import __() from wp.i18n
+import { RichText } from '@wordpress/block-editor';
+import { __ } from '@wordpress/i18n';
 import ReactHtmlParser from 'react-html-parser';
 
 const renderTitle = (level, contents, tStyle, headingStyle) => {

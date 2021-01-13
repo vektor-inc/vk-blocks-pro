@@ -1,8 +1,6 @@
-import { vkbBlockEditor } from '../../../utils/depModules';
-const { RichText } = vkbBlockEditor;
-const { __ } = wp.i18n;
-const { Component } = wp.element;
-
+import { Component } from '@wordpress/element';
+import { RichText } from '@wordpress/block-editor';
+import { __ } from '@wordpress/i18n';
 
 export class VKBHeading2 extends Component {
 	render() {
@@ -130,4 +128,3 @@ export class VKBHeading2 extends Component {
 		}
 	}
 }
-

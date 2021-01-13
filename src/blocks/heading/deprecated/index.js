@@ -10,6 +10,7 @@ import save0_24_7 from './0.24.7/save';
 import save0_39_5 from './0.39.5/save';
 import save0_40_0 from './0.40.0/save';
 import save0_40_1 from './0.40.1/save';
+import save0_60_1 from './0.60.1/save';
 
 const blockAttributes = {
 	level: {
@@ -63,6 +64,30 @@ const blockAttributes = {
 };
 
 const deprecated = [
+	{
+		attributes: {
+			...blockAttributes,
+			anchor: {
+				type: 'string',
+				source: 'attribute',
+				attribute: 'id',
+				selector: '*',
+			},
+			fontAwesomeIconBefore: {
+				type: 'string',
+				default: '',
+			},
+			fontAwesomeIconAfter: {
+				type: 'string',
+				default: '',
+			},
+			fontAwesomeIconColor: {
+				type: 'string',
+				default: '#000000',
+			},
+		},
+		save: save0_60_1,
+	},
 	{
 		attributes: {
 			...blockAttributes,

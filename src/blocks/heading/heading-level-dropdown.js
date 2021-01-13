@@ -17,23 +17,6 @@ const POPOVER_PROPS = {
 	isAlternate: true,
 };
 
-/**
- * HeadingLevelDropdown props.
- *
- * @typedef WPHeadingLevelDropdownProps
- *
- * @property {number}                 selectedLevel The chosen heading level.
- * @property {(newValue:number)=>any} onChange      Callback to run when
- *                                                  toolbar value is changed.
- */
-
-/**
- * Dropdown for selecting a heading level (1 through 6).
- *
- * @param {WPHeadingLevelDropdownProps} props Component props.
- *
- * @return {WPComponent} The toolbar.
- */
 export default function HeadingLevelDropdown({ selectedLevel, onChange }) {
 	return (
 		<Dropdown

@@ -4,29 +4,27 @@
  */
 import { schema, example } from './schema';
 import { VKBHeading } from './component';
-import { Deprecated } from './deprecated/block';
-import { vkbBlockEditor } from './../../utils/depModules';
-import { FontAwesome } from './../../utils/font-awesome-new';
+import { deprecated } from './deprecated/';
+import { FontAwesome } from '@vkblocks/utils/font-awesome-new';
 import { ReactComponent as Icon } from './icon.svg';
 
 import HeadingLevelDropdown from './heading-level-dropdown';
-
-const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
-const {
+import { __ } from '@wordpress/i18n';
+import { registerBlockType } from '@wordpress/blocks';
+import {
 	RangeControl,
 	PanelBody,
 	RadioControl,
 	SelectControl,
 	BaseControl,
 	ToolbarGroup,
-} = wp.components;
-const {
+} from '@wordpress/components';
+import {
 	InspectorControls,
 	ColorPalette,
 	BlockControls,
 	AlignmentToolbar,
-} = vkbBlockEditor;
+} from '@wordpress/block-editor';
 
 registerBlockType('vk-blocks/heading', {
 	title: __('Heading', 'vk-blocks'),
@@ -117,12 +115,12 @@ registerBlockType('vk-blocks/heading', {
 						/>
 					</PanelBody>
 					<PanelBody title={__('Margin Setting', 'vk-blocks')}>
-						<label>
+						<p>
 							{__(
-								'Margin bottom size of after hedding  (rem)',
+								'Margin bottom size of after hedding (rem)',
 								'vk-blocks'
 							)}
-						</label>
+						</p>
 						<RangeControl
 							value={titleMarginBottom}
 							onChange={(value) => {
@@ -132,12 +130,12 @@ registerBlockType('vk-blocks/heading', {
 							max={3}
 							step={0.1}
 						/>
-						<label>
+						<p>
 							{__(
 								'Margin bottom size of after this block (rem)',
 								'vk-blocks'
 							)}
-						</label>
+						</p>
 						<RangeControl
 							value={outerMarginBottom}
 							onChange={(value) => {
@@ -159,7 +157,10 @@ registerBlockType('vk-blocks/heading', {
 							max={4}
 							step={0.1}
 						/>
-						<BaseControl label={__('Text Color', 'vk-blocks')}>
+						<BaseControl
+							label={__('Text Color', 'vk-blocks')}
+							id={`vk_heading_textColor`}
+						>
 							<ColorPalette
 								value={titleColor}
 								onChange={(value) =>
@@ -171,19 +172,28 @@ registerBlockType('vk-blocks/heading', {
 					<PanelBody
 						title={__('Font Awesome Icon Settings', 'vk-blocks')}
 					>
-						<BaseControl label={__('Before text', 'vk-blocks')}>
+						<BaseControl
+							label={__('Before text', 'vk-blocks')}
+							id={`vk_heading_beforeText`}
+						>
 							<FontAwesome
 								attributeName={'fontAwesomeIconBefore'}
 								{...props}
 							/>
 						</BaseControl>
-						<BaseControl label={__('After text', 'vk-blocks')}>
+						<BaseControl
+							label={__('After text', 'vk-blocks')}
+							id={`vk_heading_afterText`}
+						>
 							<FontAwesome
 								attributeName={'fontAwesomeIconAfter'}
 								{...props}
 							/>
 						</BaseControl>
-						<BaseControl label={__('Icon Color', 'vk-blocks')}>
+						<BaseControl
+							label={__('Icon Color', 'vk-blocks')}
+							id={`vk_heading_iconColor`}
+						>
 							<ColorPalette
 								value={fontAwesomeIconColor}
 								onChange={(value) =>
@@ -212,7 +222,7 @@ registerBlockType('vk-blocks/heading', {
 								setAttributes({ subTextFlag: value })
 							}
 						/>
-						<label>{__('Text size (rem)', 'vk-blocks')}</label>
+						<p>{__('Text size (rem)', 'vk-blocks')}</p>
 						<RangeControl
 							value={subTextSize}
 							onChange={(value) => {
@@ -244,5 +254,5 @@ registerBlockType('vk-blocks/heading', {
 			</div>
 		);
 	},
-	deprecated: Deprecated,
+	deprecated,
 });

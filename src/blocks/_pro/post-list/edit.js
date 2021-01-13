@@ -8,7 +8,6 @@ import {
 	CheckboxControl,
 	TextControl,
 } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
 import ServerSideRender from '@wordpress/server-side-render';
 import { InspectorControls } from '@wordpress/block-editor';
 
@@ -61,7 +60,7 @@ export default function PostListEdit(props) {
 	const taxonomiesProps = flat(taxonomiesPropsRaw);
 
 	return (
-		<Fragment>
+		<>
 			<InspectorControls>
 				<PanelBody
 					title={__('Display conditions', 'vk-blocks')}
@@ -180,6 +179,6 @@ export default function PostListEdit(props) {
 				block="vk-blocks/post-list"
 				attributes={attributes}
 			/>
-		</Fragment>
+		</>
 	);
 }

@@ -15,7 +15,7 @@ import {
 	BaseControl,
 	ToggleControl,
 } from '@wordpress/components';
-import { Fragment, useState, useEffect } from '@wordpress/element';
+import { useState, useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
 export default function BalloonEdit({ attributes, setAttributes }) {
@@ -195,7 +195,7 @@ export default function BalloonEdit({ attributes, setAttributes }) {
 	});
 
 	return (
-		<Fragment>
+		<>
 			<InspectorControls>
 				<PanelBody title={__('Balloon setting', 'vk-blocks')}>
 					<p className={'mb-1 block-prop-title'}>
@@ -423,6 +423,6 @@ export default function BalloonEdit({ attributes, setAttributes }) {
 					</div>
 				</div>
 			</div>
-		</Fragment>
+		</>
 	);
 }

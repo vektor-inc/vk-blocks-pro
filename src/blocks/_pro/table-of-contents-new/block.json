@@ -1,0 +1,26 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/table-of-contents-new",
+	"category": "vk-blocks-cat",
+	"attributes": {
+		"style": {
+			"type": "string",
+			"default": "default"
+		},
+		"renderHtml": {
+			"type": "string",
+			"default": ""
+		},
+		"open": {
+			"type": "string",
+			"default": "open"
+		},
+		"className": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"className": true
+	}
+}

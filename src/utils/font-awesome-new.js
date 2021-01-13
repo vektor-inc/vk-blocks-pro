@@ -1,6 +1,5 @@
 import { __ } from '@wordpress/i18n';
 import { BaseControl, RadioControl, TextControl } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
 
 import AdvancedPopOverControl from '@vkblocks/components/advanced-popover-control';
 
@@ -8,7 +7,7 @@ export const FontAwesome = (props) => {
 	const { attributeName, attributes, setAttributes } = props;
 
 	const render = (
-		<Fragment>
+		<>
 			<BaseControl
 				className={'components-base-control__label'}
 				id={`vk_fa_icon_list`}
@@ -208,11 +207,11 @@ export const FontAwesome = (props) => {
 					{__('Font Awesome icon list', 'vk-blocks')}
 				</a>
 			</p>
-		</Fragment>
+		</>
 	);
 
 	return (
-		<Fragment>
+		<>
 			<TextControl
 				value={attributes[attributeName]}
 				onChange={(value) => setAttributes({ [attributeName]: value })}
@@ -224,6 +223,6 @@ export const FontAwesome = (props) => {
 				renderComp={render}
 				setAttributes={setAttributes}
 			/>
-		</Fragment>
+		</>
 	);
 };

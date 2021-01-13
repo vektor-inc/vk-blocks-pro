@@ -22,6 +22,7 @@ import * as faq2 from './faq2';
 import * as faq2a from './faq2-a';
 import * as faq2q from './faq2-q';
 import * as flow from './flow';
+import * as heading from './heading';
 import * as pageContent from './page-content';
 import * as prBlocks from './pr-blocks';
 import * as prContent from './pr-content';
@@ -49,6 +50,7 @@ export const __getVKBlocks = () => [
 	faq2a,
 	faq2q,
 	flow,
+	heading,
 	pageContent,
 	prBlocks,
 	prContent,

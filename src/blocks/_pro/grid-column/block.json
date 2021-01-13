@@ -1,7 +1,7 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/grid-column",
-	"category": "vk-blocks-cat",
+	"category": "vk-blocks-cat-layout",
 	"attributes": {
 		"name": {
 			"type": "string",

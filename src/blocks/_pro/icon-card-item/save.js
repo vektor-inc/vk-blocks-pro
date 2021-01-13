@@ -74,6 +74,10 @@ export default function save(props) {
 	let blockContent = '';
 	if (url !== null && url !== undefined) {
 		blockContent = (
+			/*
+			 target=_blankで指定すると、WordPressが自動でnoopener noreferrerを付与する。
+			 ブロックでもrelを付与しないとブロックが壊れる。
+			 */
 			<a
 				href={url}
 				className="vk_icon-card_item_link"
@@ -115,13 +119,5 @@ export default function save(props) {
 		);
 	}
 
-	return (
-		<div {...blockProps}>
-			{/*
-			 target=_blankで指定すると、WordPressが自動でnoopener noreferrerを付与する。
-			 ブロックでもrelを付与しないとブロックが壊れる。
-			 */}
-			{blockContent}
-		</div>
-	);
+	return <div {...blockProps}>{blockContent}</div>;
 }

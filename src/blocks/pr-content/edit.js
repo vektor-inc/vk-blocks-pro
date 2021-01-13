@@ -6,7 +6,6 @@ import {
 	CheckboxControl,
 	RadioControl,
 } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
 import {
 	InspectorControls,
 	RichText,
@@ -55,7 +54,7 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 	});
 
 	return (
-		<Fragment>
+		<>
 			<InspectorControls>
 				<PanelBody
 					title={__('Color Setting', 'vk-blocks')}
@@ -280,6 +279,6 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 					)}
 				</div>
 			</div>
-		</Fragment>
+		</>
 	);
 }

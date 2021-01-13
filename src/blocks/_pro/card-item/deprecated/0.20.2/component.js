@@ -2,12 +2,11 @@ import { __ } from '@wordpress/i18n';
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
 import { RichText, MediaUpload } from '@wordpress/block-editor';
 import { Button } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
+import { Component } from '@wordpress/element';
 import { dispatch } from '@wordpress/data';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
-import React from 'react';
 
-export class Component extends React.Component {
+export class CardItem extends Component {
 	render() {
 		const { setAttributes, attributes, clientId } = this.props.value;
 		let {
@@ -67,75 +66,61 @@ export class Component extends React.Component {
 			});
 		};
 
-		// eslint-disable-next-line no-shadow
-		const uploadImgBtn = (image) => {
-			const imageParsed = JSON.parse(fixBrokenUnicode(image));
-			return (
-				<MediaUpload
-					onSelect={(value) =>
-						setAttributes({ image: JSON.stringify(value) })
-					}
-					type="image"
-					className={'vk_post_imgOuter_img card-img-top'}
-					value={image}
-					render={({ open }) => (
-						<Fragment>
-							{!imageParsed ? (
-								<Button
-									onClick={open}
-									className={'button button-large'}
-								>
-									{__('Select image', 'vk-blocks')}
-								</Button>
-							) : (
-								<Fragment>
-									<img
-										className={
-											'vk_post_imgOuter_img card-img-top'
-										}
-										src={imageParsed.sizes.full.url}
-										alt={imageParsed.alt}
-									/>
-									<Button
-										onClick={deleteImgBtn}
-										className={
-											'image-button button button-delete'
-										}
-									>
-										{__('Delete Image', 'vk-blocks')}
-									</Button>
-								</Fragment>
-							)}
-						</Fragment>
-					)}
-				/>
-			);
-		};
+    const uploadImgBtn = image => {
+      const imageParsed = JSON.parse( fixBrokenUnicode(image) );
+      return (
+        <MediaUpload
+          onSelect={value => setAttributes({ image: JSON.stringify(value) })}
+          type="image"
+          className={"vk_post_imgOuter_img card-img-top"}
+          value={image}
+          render={({ open }) => (
+            <>
+              {!imageParsed ? (
+                <Button onClick={open} className={"button button-large"}>
+                  {__("Select image", "vk-blocks")}
+                </Button>
+              ) : (
+                <>
+                  <img
+                    className={"vk_post_imgOuter_img card-img-top"}
+                    src={imageParsed.sizes.full.url}
+                    alt={imageParsed.alt}
+                  />
+                  <Button
+                    onClick={deleteImgBtn}
+                    className={"image-button button button-delete"}
+                  >
+                    {__("Delete Image", "vk-blocks")}
+                  </Button>
+                </>
+              )}
+            </>
+          )}
+        />
+      );
+    };
 
-		// eslint-disable-next-line camelcase,no-shadow
-		const renderImage = (display_image) => {
-			// eslint-disable-next-line camelcase
-			if (display_image) {
-				if (isEdit(for_)) {
-					return (
-						<Fragment>
-							<div
-								className={imgContainerClass}
-								style={imageStyle}
-							>
-								<div className="card-img-overlay"></div>
-								{uploadImgBtn(image)}
-							</div>
-						</Fragment>
-					);
-				}
-				return (
-					<div className={imgContainerClass} style={imageStyle}>
-						{switchAddUrltoImage(url)}
-					</div>
-				);
-			}
-		};
+    const renderImage = display_image => {
+      if (display_image) {
+        if (isEdit(for_)) {
+          return (
+            <>
+              <div className={imgContainerClass} style={imageStyle}>
+                <div className="card-img-overlay"></div>
+                {uploadImgBtn(image)}
+              </div>
+            </>
+          );
+        } else {
+          return (
+            <div className={imgContainerClass} style={imageStyle}>
+              {switchAddUrltoImage(url)}
+            </div>
+          );
+        }
+      }
+	};
 
 		// eslint-disable-next-line no-shadow
 		const switchAddUrltoImage = (url) => {

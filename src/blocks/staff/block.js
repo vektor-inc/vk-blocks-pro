@@ -11,7 +11,6 @@ import { ReactComponent as Icon } from './icon.svg';
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { TextControl, PanelBody, BaseControl, SelectControl } = wp.components;
-const { Fragment } = wp.element;
 const { InspectorControls, ColorPalette } = vkbBlockEditor;
 
 registerBlockType('vk-blocks/staff', {
@@ -34,7 +33,7 @@ registerBlockType('vk-blocks/staff', {
 		} = attributes;
 
         return (
-	<Fragment>
+	<>
 		<InspectorControls>
 			<PanelBody title={ __('Layout', 'vk-blocks') }>
 				<SelectControl
@@ -127,7 +126,7 @@ registerBlockType('vk-blocks/staff', {
 			className={ className }
 			for_={ 'edit' }
                 />
-	</Fragment>
+	</>
         );
     },
 

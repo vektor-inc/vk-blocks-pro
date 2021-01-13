@@ -19,7 +19,6 @@ import {
 } from '@wordpress/block-editor';
 import { select, dispatch } from '@wordpress/data';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
-import React from 'react';
 
 export default function CardEdit(props) {
 	const { attributes, setAttributes, clientId, name } = props;

@@ -1,6 +1,5 @@
 import { __ } from '@wordpress/i18n';
 import { PanelBody, SelectControl } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
 import {
 	InspectorControls,
 	RichText,
@@ -15,7 +14,7 @@ export default function AlertEdit({ attributes, setAttributes }) {
 	});
 
 	return (
-		<Fragment>
+		<>
 			<InspectorControls>
 				<PanelBody title={__('Style Settings', 'vk-blocks')}>
 					<SelectControl
@@ -46,6 +45,6 @@ export default function AlertEdit({ attributes, setAttributes }) {
 					value={content}
 				/>
 			</div>
-		</Fragment>
+		</>
 	);
 }

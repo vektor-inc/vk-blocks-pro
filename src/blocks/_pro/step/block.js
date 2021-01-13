@@ -11,7 +11,7 @@ const inserterVisible = hiddenNewBlock(5.3);
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 const { PanelBody } = wp.components;
-const { Fragment, useEffect } = wp.element;
+const { useEffect } = wp.element;
 import { vkbBlockEditor, dispatchEditor } from "../../../utils/depModules"
 const { InspectorControls } = vkbBlockEditor;
 const { updateBlockAttributes } = dispatchEditor;
@@ -73,7 +73,7 @@ registerBlockType("vk-blocks/step", {
 		}, [ attributes.firstDotNum, currentInnerBlocks.length ] );
 
 		return (
-			<Fragment>
+			<>
 				<InspectorControls>
 					<PanelBody title={ __("First Dot Number", "vk-blocks") }>
 						<input
@@ -96,7 +96,7 @@ registerBlockType("vk-blocks/step", {
 					resetDotNum={resetDotNum}
 					for_={ "edit" }
 				/>
-			</Fragment>
+			</>
 		);
 	},
 	save({ attributes, className }) {

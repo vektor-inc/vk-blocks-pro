@@ -1,7 +1,6 @@
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
 import { RichText, InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
-import React from 'react';
 
 export default function save(props) {
 	const { attributes } = props;

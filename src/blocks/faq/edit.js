@@ -1,4 +1,3 @@
-import { Fragment } from '@wordpress/element';
 import { PanelBody, PanelRow } from '@wordpress/components';
 import {
 	RichText,
@@ -30,7 +29,7 @@ export default function FAQEdit({ attributes, setAttributes }) {
 	});
 
 	return (
-		<Fragment>
+		<>
 			<InspectorControls>
 				<PanelBody title={__('Accordion Setting', 'vk-blocks')}>
 					<PanelRow>{massage}</PanelRow>
@@ -48,6 +47,6 @@ export default function FAQEdit({ attributes, setAttributes }) {
 					<InnerBlocks template={TEMPLATE} />
 				</dd>
 			</dl>
-		</Fragment>
+		</>
 	);
 }

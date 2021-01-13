@@ -9,7 +9,6 @@ import { vkbBlockEditor } from "./../../utils/depModules";
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 const { RangeControl, RadioControl, PanelBody, Button, PanelColor, BaseControl } = wp.components;
-const { Fragment } = wp.element;
 const { RichText, InspectorControls, MediaUpload, ColorPalette } = vkbBlockEditor;
 const Icon = 'arrow-down';
 
@@ -50,7 +49,7 @@ registerBlockType('vk-blocks/your-block-slug', {
         } = attributes;
 
         return (
-	<Fragment>
+	<>
 		<InspectorControls>
 			<PanelBody title={ __('Color Setting', 'vk-blocks') }>
 				<BaseControl label={ __('Title Color', 'vk-blocks') }>
@@ -69,7 +68,7 @@ registerBlockType('vk-blocks/your-block-slug', {
 				for_={ 'edit' }
                     />
 		</div>
-	</Fragment>
+	</>
         );
     },
 

@@ -1,9 +1,9 @@
-import save0202 from './0.20.2/save';
-import save0203 from './0.20.3/save';
-import save0204 from './0.20.4/save';
-import save0205 from './0.20.5/save';
-import save0206 from './0.20.6/save';
-import save0601 from './0.60.1/save';
+import save0_20_2 from './0.20.2/save';
+import save0_20_3 from './0.20.3/save';
+import save0_20_4 from './0.20.4/save';
+import save0_20_5 from './0.20.5/save';
+import save0_20_6 from './0.20.6/save';
+import save0_60_1 from './0.60.1/save';
 
 const blockAttributes = {
 	layout: {
@@ -83,12 +83,12 @@ const blockAttributes = {
 		attribute: 'target',
 	},
 	rel: {
-		type: 'string',
-		source: 'attribute',
-		selector: 'a',
-		attribute: 'rel',
-	},
-};
+	  type: "string",
+	  source: "attribute",
+	  selector: "a",
+	  attribute: "rel",
+	  }
+  };
 
 export const deprecated = [
 	{
@@ -115,7 +115,7 @@ export const deprecated = [
 				default: true,
 			},
 		},
-		save0601,
+		save0_60_1,
 	},
 	{
 		attributes: {
@@ -137,7 +137,7 @@ export const deprecated = [
 				default: true,
 			},
 		},
-		save0206,
+		save0_20_6,
 	},
 	{
 		attributes: {
@@ -159,7 +159,7 @@ export const deprecated = [
 				default: true,
 			},
 		},
-		save0205,
+		save0_20_5,
 	},
 	{
 		attributes: {
@@ -181,7 +181,7 @@ export const deprecated = [
 				default: true,
 			},
 		},
-		save0204,
+		save0_20_4,
 	},
 	{
 		attributes: {
@@ -203,10 +203,10 @@ export const deprecated = [
 				default: true,
 			},
 		},
-		save0203,
+		save0_20_3,
 	},
 	{
 		attributes: blockAttributes,
-		save0202,
+		save0_20_2,
 	},
 ];

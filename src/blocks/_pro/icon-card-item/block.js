@@ -13,8 +13,6 @@ const { registerBlockType } = wp.blocks;
 const { PanelBody, BaseControl, TextControl, CheckboxControl, RadioControl} = wp.components;
 const { InspectorControls, ColorPalette  } =
   wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
-const { Fragment } = wp.element;
-
 
 registerBlockType("vk-blocks/icon-card-item", {
   title: __("Icon Card Item", "vk-blocks"),
@@ -31,7 +29,7 @@ registerBlockType("vk-blocks/icon-card-item", {
 	const { url , urlOpenType, color, bgType} = attributes;
 
     return (
-	<Fragment>
+	<>
 		<InspectorControls>
 			<PanelBody title={ __('PR Block Setting', 'vk-blocks') }>
 				<BaseControl
@@ -80,7 +78,7 @@ registerBlockType("vk-blocks/icon-card-item", {
 			</PanelBody>
 		</InspectorControls>
 		<PRcarditem { ...props } for_={ "edit" } />
-	</Fragment>
+	</>
     );
   },
 

@@ -1,36 +1,31 @@
 import { __ } from '@wordpress/i18n'; // Import __() from wp.i18n
 import { Button } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
 import { MediaUpload } from '@wordpress/block-editor';
 import { dispatch } from '@wordpress/data';
 import noImage from '../../../inc/vk-blocks/images/no-image.svg';
 
 export const AdvancedMediaUpload = (props) => {
-	const { url, clientId, setAttributes, attributes, alt } = props;
+	const { schema, clientId, setAttributes, attributes } = props;
 
 	const deleteImgBtn = () => {
 		dispatch('core/editor').updateBlockAttributes(clientId, {
-			[url]: null,
-			[alt]: null,
+			[schema]: null,
 		});
 	};
 
 	return (
 		<MediaUpload
-			onSelect={(value) => {
-				setAttributes({ [url]: value.url });
-				setAttributes({ [alt]: value.alt });
-			}}
+			onSelect={(value) => setAttributes({ [schema]: value.url })}
 			type="image"
-			value={attributes[url]}
+			value={attributes[schema]}
 			render={({ open }) => (
-				<Fragment>
-					{attributes[url] ? (
-						<Fragment>
+				<>
+					{attributes[schema] ? (
+						<>
+							{/* eslint-disable-next-line jsx-a11y/alt-text*/}
 							<img
 								className={'icon-image'}
-								src={attributes[url]}
-								alt={attributes[alt]}
+								src={attributes[schema]}
 							/>
 							<Button
 								onClick={deleteImgBtn}
@@ -38,14 +33,11 @@ export const AdvancedMediaUpload = (props) => {
 							>
 								{__('Delete Image', 'vk-blocks')}
 							</Button>
-						</Fragment>
+						</>
 					) : (
-						<Fragment>
-							<img
-								className={'icon-image'}
-								src={noImage}
-								alt={''}
-							/>
+						<>
+							{/* eslint-disable-next-line jsx-a11y/alt-text*/}
+							<img className={'icon-image'} src={noImage} />
 							<Button
 								onClick={open}
 								className={
@@ -54,9 +46,9 @@ export const AdvancedMediaUpload = (props) => {
 							>
 								{__('Select image', 'vk-blocks')}
 							</Button>
-						</Fragment>
+						</>
 					)}
-				</Fragment>
+				</>
 			)}
 		/>
 	);

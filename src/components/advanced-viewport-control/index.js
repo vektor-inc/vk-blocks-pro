@@ -2,7 +2,6 @@
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { Fragment } from '@wordpress/element';
 import { TextControl } from '@wordpress/components';
 
 const AdvancedViewportControl = (props) => {
@@ -21,7 +20,7 @@ const AdvancedViewportControl = (props) => {
 	}
 
 	return (
-		<Fragment>
+		<>
 			<TextControl
 				label={__('PC', 'vk-blocks')}
 				value={pc}
@@ -44,7 +43,7 @@ const AdvancedViewportControl = (props) => {
 				}
 				type={'number'}
 			/>
-		</Fragment>
+		</>
 	);
 };
 export default AdvancedViewportControl;

@@ -1,11 +1,11 @@
 import { InnerBlocks } from '@wordpress/block-editor';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
-import React from 'react';
+import { Component } from '@wordpress/element';
 import classNames from 'classnames';
 
 const prefix = 'vk_card_';
 
-export class Component extends React.Component {
+export class Card extends Component {
 	render() {
 		const for_ = this.props.for_;
 		const attributes = this.props.attributes;

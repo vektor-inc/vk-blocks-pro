@@ -3,7 +3,6 @@ import {
 	InspectorControls,
 	useBlockProps,
 } from '@wordpress/block-editor';
-import { Fragment } from '@wordpress/element';
 import { PanelBody, PanelRow } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
@@ -27,7 +26,7 @@ export default function FAQ2Edit() {
 	}
 
 	return (
-		<Fragment>
+		<>
 			<InspectorControls>
 				<PanelBody title={__('Accordion Setting', 'vk-blocks')}>
 					<PanelRow>{massage}</PanelRow>
@@ -40,6 +39,6 @@ export default function FAQ2Edit() {
 					templateLock="all"
 				/>
 			</dl>
-		</Fragment>
+		</>
 	);
 }

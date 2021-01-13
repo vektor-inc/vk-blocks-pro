@@ -17,7 +17,6 @@ import {
 import { Fragment } from '@wordpress/element';
 import { dispatch } from '@wordpress/data';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
-import React from 'react';
 
 export default function CardItemEdit(props) {
 	const { setAttributes, attributes, clientId } = props;

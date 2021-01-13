@@ -5,7 +5,6 @@ import {
 	SelectControl,
 	TextControl,
 } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -42,7 +41,7 @@ export default function TimelineItemEdit({ attributes, setAttributes }) {
 	});
 
 	return (
-		<Fragment>
+		<>
 			<InspectorControls>
 				<PanelBody title={__('label', 'vk-blocks')}>
 					<TextControl
@@ -110,6 +109,6 @@ export default function TimelineItemEdit({ attributes, setAttributes }) {
 					style={inlineStyle}
 				/>
 			</div>
-		</Fragment>
+		</>
 	);
 }

@@ -1,5 +1,5 @@
-import { Component } from './component';
+import { Card } from './component';
 
 export default function save({ attributes }) {
-	return <Component attributes={attributes} for_={'save'} />;
+	return <Card attributes={attributes} for_={'save'} />;
 }

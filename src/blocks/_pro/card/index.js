@@ -9,7 +9,6 @@ import { __ } from '@wordpress/i18n';
 import { Fragment, useEffect } from '@wordpress/element';
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
-import React from 'react';
 
 export const prefix = 'vk_card_';
 

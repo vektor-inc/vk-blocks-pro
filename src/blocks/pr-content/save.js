@@ -59,14 +59,15 @@ export default function save({ attributes }) {
 				{buttonText && (
 					/* eslint react/jsx-no-target-blank: 0 */
 					<div className={btnClass}>
+						{/* eslint-disable-next-line react/jsx-no-target-blank*/}
 						<a
 							href={url}
 							className={linkClass}
-							target={buttonTarget ? '_blank' : undefined}
-							style={linkStyle}
 							rel={
 								buttonTarget ? 'noopener noreferrer' : undefined
 							}
+							style={linkStyle}
+							target={buttonTarget ? '_blank' : undefined}
 						>
 							{ReactHtmlParser(iconBefore)}
 							<span className="vk_button_link_txt">

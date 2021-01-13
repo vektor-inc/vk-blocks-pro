@@ -97,12 +97,13 @@ button.components-button.components-toolbar__control{
     width: 30px;
 }
 
-.components-toolbar__control.components-button {
-    width: 36px;
-    height: 36px;
-    padding: 3px;
-    outline: none;
-}
+// コアのスタイルと競合するので一旦コメントアウトしておく
+// .components-toolbar__control.components-button {
+//     width: 36px;
+//     height: 36px;
+//     padding: 3px;
+//     outline: none;
+// }
 
 .editor-url-input input[type="text"] {
 	width: 100%;

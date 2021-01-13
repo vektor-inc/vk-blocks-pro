@@ -89,7 +89,8 @@ export const PRcarditem = (props)=>{
 			/>
 		</Fragment>
 	}else if(for_ === "save"){
-		contents = <Fragment>
+		if ( url !== undefined && url !== null) {
+			contents = <Fragment>
 			{/**
 			 * target=_blankで指定すると、WordPressが自動でnoopener noreferrerを付与する。
 			 * ブロックでもrelを付与しないとブロックが壊れる。
@@ -110,6 +111,24 @@ export const PRcarditem = (props)=>{
 				/>
 			</a>
 		</Fragment>
+		} else {
+			contents = <Fragment>
+			<div className="vk_icon-card_item_icon_outer" style={ style }>
+					{ ReactHtmlParser(faIconTag) }
+				</div>
+				<RichText.Content
+					className={ `vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}` }
+					tagName={ 'h3' }
+					value={ heading }
+				/>
+				<RichText.Content
+					className={ `vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-${align.text}` }
+					tagName={ 'p' }
+					value={ content }
+				/>
+		</Fragment>
+		}
+
 	}
 
 	return (

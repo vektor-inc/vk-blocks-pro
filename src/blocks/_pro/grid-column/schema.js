@@ -1,34 +1,34 @@
 export const schema = {
 	name: {
-		type: "string",
-		default: "grid-column-item",
+		type: 'string',
+		default: 'grid-column-item',
 	},
 	layout: {
-		type: "string",
-		default: "card",
+		type: 'string',
+		default: 'card',
 	},
 	col_xs: {
-		type: "number",
+		type: 'number',
 		default: 1,
 	},
 	col_sm: {
-		type: "number",
+		type: 'number',
 		default: 2,
 	},
 	col_md: {
-		type: "number",
+		type: 'number',
 		default: 3,
 	},
 	col_lg: {
-		type: "number",
+		type: 'number',
 		default: 3,
 	},
 	col_xl: {
-		type: "number",
+		type: 'number',
 		default: 3,
 	},
 	col_xxl: {
-		type: "number",
+		type: 'number',
 		default: 3,
 	},
 };

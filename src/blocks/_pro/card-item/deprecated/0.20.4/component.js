@@ -6,10 +6,12 @@ import { Component } from '@wordpress/element';
 import { dispatch } from '@wordpress/data';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 
-export class CardItem extends Component {
+export class DepComponent2 extends Component {
 	render() {
 		const { setAttributes, attributes, clientId } = this.props.value;
+
 		let {
+			className,
 			layout,
 			// eslint-disable-next-line camelcase
 			col_xs,
@@ -58,6 +60,9 @@ export class CardItem extends Component {
 		} else if (layout === 'card-noborder') {
 			layout = 'card ' + layout + ' card-post';
 			imgContainerClass = 'vk_post_imgOuter';
+		} else if (layout === 'card-imageRound') {
+			layout = 'card card-noborder ' + layout + ' card-post';
+			imgContainerClass = 'vk_post_imgOuter';
 		}
 
 		const deleteImgBtn = () => {
@@ -66,61 +71,75 @@ export class CardItem extends Component {
 			});
 		};
 
-    const uploadImgBtn = image => {
-      const imageParsed = JSON.parse( fixBrokenUnicode(image) );
-      return (
-        <MediaUpload
-          onSelect={value => setAttributes({ image: JSON.stringify(value) })}
-          type="image"
-          className={"vk_post_imgOuter_img card-img-top"}
-          value={image}
-          render={({ open }) => (
-            <>
-              {!imageParsed ? (
-                <Button onClick={open} className={"button button-large"}>
-                  {__("Select image", "vk-blocks")}
-                </Button>
-              ) : (
-                <>
-                  <img
-                    className={"vk_post_imgOuter_img card-img-top"}
-                    src={imageParsed.sizes.full.url}
-                    alt={imageParsed.alt}
-                  />
-                  <Button
-                    onClick={deleteImgBtn}
-                    className={"image-button button button-delete"}
-                  >
-                    {__("Delete Image", "vk-blocks")}
-                  </Button>
-                </>
-              )}
-            </>
-          )}
-        />
-      );
-    };
+		// eslint-disable-next-line no-shadow
+		const uploadImgBtn = (image) => {
+			const imageParsed = JSON.parse(fixBrokenUnicode(image));
+			return (
+				<MediaUpload
+					onSelect={(value) =>
+						setAttributes({ image: JSON.stringify(value) })
+					}
+					type="image"
+					className={'vk_post_imgOuter_img card-img-top'}
+					value={image}
+					render={({ open }) => (
+						<>
+							{!imageParsed ? (
+								<Button
+									onClick={open}
+									className={'button button-large'}
+								>
+									{__('Select image', 'vk-blocks')}
+								</Button>
+							) : (
+								<>
+									<img
+										className={
+											'vk_post_imgOuter_img card-img-top'
+										}
+										src={imageParsed.sizes.full.url}
+										alt={imageParsed.alt}
+									/>
+									<Button
+										onClick={deleteImgBtn}
+										className={
+											'image-button button button-delete'
+										}
+									>
+										{__('Delete Image', 'vk-blocks')}
+									</Button>
+								</>
+							)}
+						</>
+					)}
+				/>
+			);
+		};
 
-    const renderImage = display_image => {
-      if (display_image) {
-        if (isEdit(for_)) {
-          return (
-            <>
-              <div className={imgContainerClass} style={imageStyle}>
-                <div className="card-img-overlay"></div>
-                {uploadImgBtn(image)}
-              </div>
-            </>
-          );
-        } else {
-          return (
-            <div className={imgContainerClass} style={imageStyle}>
-              {switchAddUrltoImage(url)}
-            </div>
-          );
-        }
-      }
-	};
+		// eslint-disable-next-line camelcase,no-shadow
+		const renderImage = (display_image) => {
+			// eslint-disable-next-line camelcase
+			if (display_image) {
+				if (isEdit(for_)) {
+					return (
+						<>
+							<div
+								className={imgContainerClass}
+								style={imageStyle}
+							>
+								<div className="card-img-overlay"></div>
+								{uploadImgBtn(image)}
+							</div>
+						</>
+					);
+				}
+				return (
+					<div className={imgContainerClass} style={imageStyle}>
+						{switchAddUrltoImage(url)}
+					</div>
+				);
+			}
+		};
 
 		// eslint-disable-next-line no-shadow
 		const switchAddUrltoImage = (url) => {
@@ -138,7 +157,7 @@ export class CardItem extends Component {
 		// eslint-disable-next-line no-shadow
 		const renderExcerpt = (align) => {
 			const titleTag = 'p';
-			const titleClass = `vk_post_excerpt card-text text-${align.text}`;
+			const titleClass = `vk_post_excerpt card-text has-text-align-${align.text}`;
 			if (isEdit(for_)) {
 				return (
 					<RichText
@@ -147,6 +166,7 @@ export class CardItem extends Component {
 						// eslint-disable-next-line camelcase
 						value={excerpt_text}
 						onChange={(value) =>
+							// eslint-disable-next-line camelcase
 							setAttributes({ excerpt_text: value })
 						}
 						placeholder={__(
@@ -167,19 +187,23 @@ export class CardItem extends Component {
 		};
 
 		// eslint-disable-next-line camelcase,no-shadow
-		const renderButton = (display_btn) => {
+		const renderButton = (display_btn, align) => {
 			// eslint-disable-next-line camelcase
 			if (display_btn) {
 				return (
-					<a
-						className={`btn btn-primary vk_post_btn`}
-						href={url}
-						target={linkTarget}
-						rel={rel}
+					<div
+						className={`vk_post_btnOuter has-text-align-${align.button}`}
 					>
-						{/* eslint-disable-next-line camelcase*/}
-						{btn_text}
-					</a>
+						<a
+							className={`btn btn-primary vk_post_btn`}
+							href={url}
+							target={linkTarget}
+							rel={rel}
+						>
+							{/* eslint-disable-next-line camelcase*/}
+							{btn_text}
+						</a>
+					</div>
 				);
 			}
 		};
@@ -187,7 +211,7 @@ export class CardItem extends Component {
 		// eslint-disable-next-line no-shadow
 		const renderTitle = (align) => {
 			const titleTag = 'h5';
-			const titleClass = `vk_post_title card-title text-${align.title}`;
+			const titleClass = `vk_post_title card-title has-text-align-${align.title}`;
 			if (isEdit(for_)) {
 				return (
 					<RichText
@@ -220,12 +244,12 @@ export class CardItem extends Component {
 			imageStyle = {};
 		}
 
-		// eslint-disable-next-line camelcase
+		// eslint-disable-next-line camelcase,no-shadow
 		const btnClass = display_btn ? 'vk_post-btn-display' : '';
 
 		return (
 			<div
-				className={`vk_post ${layout} vk_card_item vk_post-col-xs-${convertToGrid(
+				className={`${className} vk_post ${layout} vk_card_item vk_post-col-xs-${convertToGrid(
 					col_xs
 				)} vk_post-col-sm-${convertToGrid(
 					col_sm
@@ -239,9 +263,8 @@ export class CardItem extends Component {
 				<div className="vk_post_body card-body">
 					{renderTitle(align)}
 					{renderExcerpt(align)}
-					<div className={`vk_post_btnOuter text-${align.button}`}>
-						{renderButton(display_btn)}
-					</div>
+
+					{renderButton(display_btn, align)}
 				</div>
 			</div>
 		);

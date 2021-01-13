@@ -6,8 +6,10 @@ export default function GridColumnItemEdit() {
 	});
 
 	return (
-		<div {...blockProps}>
-			<InnerBlocks />
-		</div>
+		<>
+			<div {...blockProps}>
+				<InnerBlocks />
+			</div>
+		</>
 	);
 }

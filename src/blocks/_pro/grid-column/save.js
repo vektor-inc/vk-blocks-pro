@@ -5,10 +5,12 @@ export default function save() {
 		className: `vk_grid-column`,
 	});
 	return (
-		<div {...blockProps}>
-			<div className={'row'}>
-				<InnerBlocks.Content />
+		<>
+			<div {...blockProps}>
+				<div className={'row'}>
+					<InnerBlocks.Content />
+				</div>
 			</div>
-		</div>
+		</>
 	);
 }

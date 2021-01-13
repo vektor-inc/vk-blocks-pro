@@ -6,8 +6,10 @@ export default function save() {
 	});
 
 	return (
-		<div {...blockProps}>
-			<InnerBlocks.Content />
-		</div>
+		<>
+			<div {...blockProps}>
+				<InnerBlocks.Content />
+			</div>
+		</>
 	);
 }

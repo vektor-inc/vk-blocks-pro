@@ -5,7 +5,6 @@ import AdvancedViewportControl from '@vkblocks/components/advanced-viewport-cont
 import AdvancedUnitControl from '@vkblocks/components/advanced-unit-control';
 
 import { __ } from '@wordpress/i18n';
-import { Fragment } from '@wordpress/element';
 import {
 	PanelBody,
 	BaseControl,
@@ -20,6 +19,7 @@ import {
 import { select, dispatch } from '@wordpress/data';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 
+/* eslint camelcase: 0 */
 export default function CardEdit(props) {
 	const { attributes, setAttributes, clientId, name } = props;
 	const { blockId } = attributes;
@@ -87,7 +87,7 @@ export default function CardEdit(props) {
 	});
 
 	return (
-		<Fragment>
+		<>
 			<InspectorControls>
 				<ColumnLayoutControl {...props} />
 				<DisplayItemsControlForCards {...props} />
@@ -120,22 +120,17 @@ export default function CardEdit(props) {
 					/>
 				</div>
 			</div>
-		</Fragment>
+		</>
 	);
 }
 
 export const DisplayItemsControlForCards = (props) => {
 	const { setAttributes, attributes } = props;
 	const {
-		// eslint-disable-next-line camelcase
 		display_title,
-		// eslint-disable-next-line camelcase
 		display_excerpt,
-		// eslint-disable-next-line camelcase
 		display_image,
-		// eslint-disable-next-line camelcase
 		display_btn,
-		// eslint-disable-next-line camelcase
 		btn_text,
 	} = attributes;
 	return (
@@ -143,7 +138,6 @@ export const DisplayItemsControlForCards = (props) => {
 			<CheckboxControl
 				label={__('Title', 'vk-blocks')}
 				className={'mb-1'}
-				// eslint-disable-next-line camelcase
 				checked={display_title}
 				onChange={(checked) =>
 					setAttributes({ display_title: checked })
@@ -158,7 +152,6 @@ export const DisplayItemsControlForCards = (props) => {
 			<CheckboxControl
 				label={__('Excerpt Text', 'vk-blocks')}
 				className={'mb-1'}
-				// eslint-disable-next-line camelcase
 				checked={display_excerpt}
 				onChange={(checked) =>
 					setAttributes({ display_excerpt: checked })
@@ -172,7 +165,6 @@ export const DisplayItemsControlForCards = (props) => {
 			</p>
 			<CheckboxControl
 				label={__('Image', 'vk-blocks')}
-				// eslint-disable-next-line camelcase
 				checked={display_image}
 				onChange={(checked) =>
 					setAttributes({ display_image: checked })
@@ -180,7 +172,6 @@ export const DisplayItemsControlForCards = (props) => {
 			/>
 			<CheckboxControl
 				label={__('Button', 'vk-blocks')}
-				// eslint-disable-next-line camelcase
 				checked={display_btn}
 				onChange={(checked) => setAttributes({ display_btn: checked })}
 			/>
@@ -195,7 +186,6 @@ export const DisplayItemsControlForCards = (props) => {
 			</p>
 			<TextControl
 				label={__('Button text', 'vk-blocks')}
-				// eslint-disable-next-line camelcase
 				value={btn_text}
 				onChange={(value) => setAttributes({ btn_text: value })}
 			/>

@@ -2,34 +2,24 @@ import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
 import { RichText, InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 
+/* eslint camelcase: 0 */
+/* eslint no-shadow: 0 */
 export default function save(props) {
 	const { attributes } = props;
 	const {
 		layout,
-		// eslint-disable-next-line camelcase
 		col_xs,
-		// eslint-disable-next-line camelcase
 		col_sm,
-		// eslint-disable-next-line camelcase
 		col_md,
-		// eslint-disable-next-line camelcase
 		col_lg,
-		// eslint-disable-next-line camelcase
 		col_xl,
-		// eslint-disable-next-line camelcase
 		col_xxl,
-		// eslint-disable-next-line camelcase
 		display_title,
-		// eslint-disable-next-line camelcase
 		display_excerpt,
-		// eslint-disable-next-line camelcase
 		display_image,
-		// eslint-disable-next-line camelcase
 		display_btn,
-		// eslint-disable-next-line camelcase
 		btn_text,
 		title,
-		// eslint-disable-next-line camelcase
 		excerpt_text,
 		image,
 		url,
@@ -57,10 +47,7 @@ export default function save(props) {
 		layoutClass = 'card card-noborder card-imageRound card-post';
 		imgContainerClass = 'vk_post_imgOuter';
 	}
-
-	// eslint-disable-next-line camelcase,no-shadow
 	const renderImage = (display_image) => {
-		// eslint-disable-next-line camelcase
 		if (display_image) {
 			return (
 				<div className={imgContainerClass} style={imageStyle}>
@@ -82,10 +69,7 @@ export default function save(props) {
 		}
 		return overlay;
 	};
-
-	// eslint-disable-next-line camelcase,no-shadow
 	const renderExcerpt = (align, display_excerpt) => {
-		// eslint-disable-next-line camelcase
 		if (display_excerpt) {
 			const titleTag = 'p';
 			const titleClass = `vk_post_excerpt card-text has-text-align-${align.text}`;
@@ -93,16 +77,12 @@ export default function save(props) {
 				<RichText.Content
 					tagName={titleTag}
 					className={titleClass}
-					// eslint-disable-next-line camelcase
 					value={excerpt_text}
 				/>
 			);
 		}
 	};
-
-	// eslint-disable-next-line camelcase,no-shadow
 	const renderButton = (display_btn, align) => {
-		// eslint-disable-next-line camelcase
 		if (display_btn) {
 			return (
 				<div
@@ -121,10 +101,7 @@ export default function save(props) {
 			);
 		}
 	};
-
-	// eslint-disable-next-line camelcase,no-shadow
 	const renderTitle = (align, display_title) => {
-		// eslint-disable-next-line camelcase
 		if (display_title) {
 			const titleTag = 'h5';
 			const titleClass = `vk_post_title card-title has-text-align-${align.title}`;
@@ -158,8 +135,6 @@ export default function save(props) {
 	} else {
 		imageStyle = {};
 	}
-
-	// eslint-disable-next-line camelcase
 	const btnClass = display_btn ? 'vk_post-btn-display' : '';
 
 	const blockProps = useBlockProps.save({

@@ -1,5 +1,5 @@
-import { Component } from './component';
+import { CardItem } from './component';
 
 export default function save(props) {
-	return <Component {...props} for_={'save'} />;
+	return <CardItem {...props} for_={'save'} />;
 }

@@ -14,38 +14,27 @@ import {
 	BaseControl,
 	TextControl,
 } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
 import { dispatch } from '@wordpress/data';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 
+/* eslint camelcase: 0 */
+/* eslint no-shadow: 0 */
 export default function CardItemEdit(props) {
 	const { setAttributes, attributes, clientId } = props;
 	const {
 		layout,
-		// eslint-disable-next-line camelcase
 		col_xs,
-		// eslint-disable-next-line camelcase
 		col_sm,
-		// eslint-disable-next-line camelcase
 		col_md,
-		// eslint-disable-next-line camelcase
 		col_lg,
-		// eslint-disable-next-line camelcase
 		col_xl,
-		// eslint-disable-next-line camelcase
 		col_xxl,
-		// eslint-disable-next-line camelcase
 		display_title,
-		// eslint-disable-next-line camelcase
 		display_excerpt,
-		// eslint-disable-next-line camelcase
 		display_image,
-		// eslint-disable-next-line camelcase
 		display_btn,
-		// eslint-disable-next-line camelcase
 		btn_text,
 		title,
-		// eslint-disable-next-line camelcase
 		excerpt_text,
 		image,
 		url,
@@ -80,7 +69,6 @@ export default function CardItemEdit(props) {
 		});
 	};
 
-	// eslint-disable-next-line no-shadow
 	const uploadImgBtn = (image) => {
 		const imageParsed = JSON.parse(fixBrokenUnicode(image));
 		return (
@@ -92,7 +80,7 @@ export default function CardItemEdit(props) {
 				className={'vk_post_imgOuter_img card-img-top'}
 				value={image}
 				render={({ open }) => (
-					<Fragment>
+					<>
 						{!imageParsed ? (
 							<Button
 								onClick={open}
@@ -101,7 +89,7 @@ export default function CardItemEdit(props) {
 								{__('Select image', 'vk-blocks')}
 							</Button>
 						) : (
-							<Fragment>
+							<>
 								<img
 									className={
 										'vk_post_imgOuter_img card-img-top'
@@ -117,32 +105,28 @@ export default function CardItemEdit(props) {
 								>
 									{__('Delete Image', 'vk-blocks')}
 								</Button>
-							</Fragment>
+							</>
 						)}
-					</Fragment>
+					</>
 				)}
 			/>
 		);
 	};
 
-	// eslint-disable-next-line camelcase,no-shadow
 	const renderImage = (display_image) => {
-		// eslint-disable-next-line camelcase
 		if (display_image) {
 			return (
-				<Fragment>
+				<>
 					<div className={imgContainerClass} style={imageStyle}>
 						<div className="card-img-overlay"></div>
 						{uploadImgBtn(image)}
 					</div>
-				</Fragment>
+				</>
 			);
 		}
 	};
 
-	// eslint-disable-next-line camelcase,no-shadow
 	const renderExcerpt = (align, display_excerpt) => {
-		// eslint-disable-next-line camelcase
 		if (display_excerpt) {
 			const titleTag = 'p';
 			const titleClass = `vk_post_excerpt card-text has-text-align-${align.text}`;
@@ -150,7 +134,6 @@ export default function CardItemEdit(props) {
 				<RichText
 					tagName={titleTag}
 					className={titleClass}
-					// eslint-disable-next-line camelcase
 					value={excerpt_text}
 					onChange={(value) => setAttributes({ excerpt_text: value })}
 					placeholder={__(
@@ -162,9 +145,7 @@ export default function CardItemEdit(props) {
 		}
 	};
 
-	// eslint-disable-next-line camelcase,no-shadow
 	const renderButton = (display_btn, align) => {
-		// eslint-disable-next-line camelcase
 		if (display_btn) {
 			return (
 				<div
@@ -176,17 +157,13 @@ export default function CardItemEdit(props) {
 						target={linkTarget}
 						rel={rel}
 					>
-						{/* eslint-disable-next-line camelcase */}
 						{btn_text}
 					</a>
 				</div>
 			);
 		}
 	};
-
-	// eslint-disable-next-line camelcase,no-shadow
 	const renderTitle = (align, display_title) => {
-		// eslint-disable-next-line camelcase
 		if (display_title) {
 			const titleTag = 'h5';
 			const titleClass = `vk_post_title card-title has-text-align-${align.title}`;
@@ -211,8 +188,6 @@ export default function CardItemEdit(props) {
 	} else {
 		imageStyle = {};
 	}
-
-	// eslint-disable-next-line camelcase
 	const btnClass = display_btn ? 'vk_post-btn-display' : '';
 
 	const blockProps = useBlockProps({
@@ -231,7 +206,7 @@ ${btnClass}`,
 	});
 
 	return (
-		<Fragment>
+		<>
 			<InspectorControls>
 				<PanelBody title={__('URL', 'vk-blocks')}>
 					<BaseControl id="sidebar-card-block-url">
@@ -253,6 +228,6 @@ ${btnClass}`,
 					{renderButton(display_btn, align)}
 				</div>
 			</div>
-		</Fragment>
+		</>
 	);
 }

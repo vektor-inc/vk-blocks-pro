@@ -2,12 +2,11 @@ import { __ } from '@wordpress/i18n';
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
 import { RichText, MediaUpload, InnerBlocks } from '@wordpress/block-editor';
 import { Button } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
+import { Component } from '@wordpress/element';
 import { dispatch } from '@wordpress/data';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
-import React from 'react';
 
-export class DepComponentXxlAdd extends React.Component {
+export class DepComponentXxlAdd extends Component {
 	render() {
 		const { setAttributes, attributes, className, clientId } = this.props;
 		let {
@@ -86,7 +85,7 @@ export class DepComponentXxlAdd extends React.Component {
 					className={'vk_post_imgOuter_img card-img-top'}
 					value={image}
 					render={({ open }) => (
-						<Fragment>
+						<>
 							{!imageParsed ? (
 								<Button
 									onClick={open}
@@ -95,7 +94,7 @@ export class DepComponentXxlAdd extends React.Component {
 									{__('Select image', 'vk-blocks')}
 								</Button>
 							) : (
-								<Fragment>
+								<>
 									<img
 										className={
 											'vk_post_imgOuter_img card-img-top'
@@ -111,9 +110,9 @@ export class DepComponentXxlAdd extends React.Component {
 									>
 										{__('Delete Image', 'vk-blocks')}
 									</Button>
-								</Fragment>
+								</>
 							)}
-						</Fragment>
+						</>
 					)}
 				/>
 			);
@@ -125,7 +124,7 @@ export class DepComponentXxlAdd extends React.Component {
 			if (display_image) {
 				if (isEdit(for_)) {
 					return (
-						<Fragment>
+						<>
 							<div
 								className={imgContainerClass}
 								style={imageStyle}
@@ -133,7 +132,7 @@ export class DepComponentXxlAdd extends React.Component {
 								<div className="card-img-overlay"></div>
 								{uploadImgBtn(image)}
 							</div>
-						</Fragment>
+						</>
 					);
 				}
 				return (

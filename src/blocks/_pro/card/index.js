@@ -6,7 +6,7 @@ import { title, content, pictureJson } from '@vkblocks/utils/example-data';
 import { ReactComponent as Icon } from './icon.svg';
 
 import { __ } from '@wordpress/i18n';
-import { Fragment, useEffect } from '@wordpress/element';
+import { useEffect } from '@wordpress/element';
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
 
@@ -125,10 +125,10 @@ addFilter(
 				const cssTag = generateInlineCss(attributes);
 
 				return (
-					<Fragment>
+					<>
 						{cssTag}
 						<BlockEdit {...props} />
-					</Fragment>
+					</>
 				);
 			}
 			return <BlockEdit {...props} />;

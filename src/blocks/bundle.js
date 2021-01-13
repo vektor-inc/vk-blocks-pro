@@ -15,8 +15,6 @@ import "@vkblocks/blocks/staff/block.js";
 
 // /*WP5.3 以下では読み込まれない*/
 import "@vkblocks/extensions/common/responsive-br";
-import "@vkblocks/blocks/_pro/icon-card-item/block.js";
-import "@vkblocks/blocks/_pro/icon-card/block.js";
 import "@vkblocks/blocks/_pro/step-item/block.js";
 import "@vkblocks/blocks/_pro/step/block.js";
 import "@vkblocks/blocks/_pro/grid-column/block.js";

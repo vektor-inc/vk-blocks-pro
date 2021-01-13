@@ -36,6 +36,8 @@ import * as timeline from './_pro/timeline';
 import * as timelineItem from './_pro/timeline-item';
 import * as outer from './_pro/outer';
 import * as tableofContentsNew from './_pro/table-of-contents-new';
+import * as iconCard from './_pro/icon-card';
+import * as iconCardItem from './_pro/icon-card-item';
 
 /**
  * Function to get all the VK Blocks in an array.
@@ -64,6 +66,8 @@ export const __getVKBlocks = () => [
 	timelineItem,
 	outer,
 	tableofContentsNew,
+	iconCard,
+	iconCardItem
 ];
 
 /**

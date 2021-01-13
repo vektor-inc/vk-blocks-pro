@@ -2,18 +2,16 @@ import { __ } from '@wordpress/i18n';
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
 import { RichText } from '@wordpress/block-editor';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
-import ReactHtmlParser from 'react-html-parser';
 
 /* eslint camelcase: 0 */
-export const PRcarditem = (props) => {
+export const DepPRcarditem = (props) => {
 	const { attributes, setAttributes, for_, className } = props;
-	let {
+	const {
 		color,
 		heading,
 		content,
-		faIcon,
-		url,
 		icon,
+		url,
 		urlOpenType,
 		bgType,
 		col_xs,
@@ -21,46 +19,32 @@ export const PRcarditem = (props) => {
 		col_md,
 		col_lg,
 		col_xl,
-		col_xxl,
 		activeControl,
 	} = attributes;
 	const align = JSON.parse(fixBrokenUnicode(activeControl));
 
 	let style;
-	let iconColor;
-
+	let iconStyle;
 	if (bgType === '0') {
 		style = { backgroundColor: `${color}`, border: `1px solid ${color}` };
-		iconColor = `#ffffff`;
+		iconStyle = { color: `##fff` };
 	} else {
 		style = {
 			backgroundColor: `transparent`,
 			border: `1px solid ${color}`,
 		};
-		iconColor = `${color}`;
+		iconStyle = { color: `${color}` };
 	}
-
-	//過去バージョンをリカバリーした時にiconを正常に表示する
-	if (faIcon && !faIcon.match(/<i/)) {
-		faIcon = `<i class="${faIcon}"></i>`;
-
-		//過去のicon attribuet用 deprecated処理
-	} else if (!faIcon && icon && !icon.match(/<i/)) {
-		faIcon = `<i class="${icon}"></i>`;
-	}
-
-	//add class and inline css
-	const faIconFragment = faIcon.split(' ');
-	faIconFragment[0] = faIconFragment[0] + ` style="color:${iconColor}" `;
-	faIconFragment[1] = faIconFragment[1] + ` vk_icon-card_item_icon `;
-	const faIconTag = faIconFragment.join('');
 
 	let contents;
 	if (for_ === 'edit') {
 		contents = (
 			<>
 				<div className="vk_icon-card_item_icon_outer" style={style}>
-					{ReactHtmlParser(faIconTag)}
+					<i
+						className={`${icon} vk_icon-card_item_icon`}
+						style={iconStyle}
+					/>
 				</div>
 				<RichText
 					className={`vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}`}
@@ -89,7 +73,10 @@ export const PRcarditem = (props) => {
 				rel="noopener noreferrer"
 			>
 				<div className="vk_icon-card_item_icon_outer" style={style}>
-					{ReactHtmlParser(faIconTag)}
+					<i
+						className={`${icon} vk_icon-card_item_icon`}
+						style={iconStyle}
+					/>
 				</div>
 				<RichText.Content
 					className={`vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}`}
@@ -115,9 +102,7 @@ export const PRcarditem = (props) => {
 				col_md
 			)} vk_post-col-lg-${convertToGrid(
 				col_lg
-			)} vk_post-col-xl-${convertToGrid(
-				col_xl
-			)} vk_post-col-xxl-${convertToGrid(col_xxl)}`}
+			)} vk_post-col-xl-${convertToGrid(col_xl)}`}
 		>
 			{contents}
 		</div>

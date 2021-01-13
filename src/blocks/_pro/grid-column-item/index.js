@@ -2,7 +2,6 @@
  * card-item block type
  *
  */
-import { schema } from './schema';
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
 import { InnerBlocks } from '@wordpress/block-editor';
@@ -113,6 +112,7 @@ registerBlockType('vk-blocks/grid-column-item', {
 	supports: {
 		className: true,
 	},
+	edit,
 
 	edit(props) {
 		const { className } = props;

@@ -10,9 +10,6 @@ export const ColumnResponsive0574 = (props) => {
 
 	//編集画面とサイト上の切り替え
 	if (for_ === 'edit') {
-		innerClass = 'editting';
-		innerClass = innerClass + ' vk_posts-edit';
-
 		elm = (
 			<div className={`${containerClass}`}>
 				<InnerBlocks

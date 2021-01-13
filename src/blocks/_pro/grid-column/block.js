@@ -4,21 +4,20 @@
  */
 import { ColumnResponsive } from './component';
 import { schema } from './schema';
-import { ColumnLayout } from '../../../components/column-layout';
+import { ColumnLayout } from '@vkblocks/components/column-layout';
 import classNames from 'classnames';
-import { convertToGrid } from '../../../utils/convert-to-grid';
-import { vkbBlockEditor } from '../../../utils/depModules';
+import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 import { ReactComponent as Icon } from './icon.svg';
 import compareVersions from 'compare-versions';
 import deprecated from './deprecated/';
 
-const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
-const { InspectorControls } = vkbBlockEditor;
-const { select, dispatch } = wp.data;
-const { PanelBody } = wp.components;
-const { createHigherOrderComponent } = wp.compose;
-const { addFilter } = wp.hooks;
+import { __ } from '@wordpress/i18n';
+import { registerBlockType } from '@wordpress/blocks';
+import { InspectorControls } from '@wordpress/block-editor';
+import { select, dispatch } from '@wordpress/data';
+import { PanelBody } from '@wordpress/components';
+import { createHigherOrderComponent } from '@wordpress/compose';
+import { addFilter } from '@wordpress/hooks';
 
 let displayInserter = false;
 if (window.wpVersion && compareVersions(window.wpVersion, '5.4') > 0) {
@@ -34,9 +33,9 @@ registerBlockType('vk-blocks/grid-column', {
 		className: true,
 		inserter: displayInserter,
 	},
-
+	/* eslint camelcase: 0 */
 	edit(props) {
-		const { attributes, setAttributes, className, clientId, name } = props;
+		const { attributes, setAttributes, className, clientId } = props;
 
 		const { getBlocksByClientId } = select('core/block-editor');
 		const { updateBlockAttributes } = dispatch('core/block-editor');
@@ -103,7 +102,7 @@ registerBlockType('vk-blocks/grid-column', {
 	},
 	deprecated,
 });
-
+/* eslint camelcase: 0 */
 const vkbwithClientIdClassName = createHigherOrderComponent(
 	(BlockListBlock) => {
 		return (props) => {
@@ -144,7 +143,6 @@ addFilter(
 	'blocks.getSaveElement',
 	'vk-blocks/grid-column',
 	(element, blockType, attributes) => {
-		const post = select('core/editor').getCurrentPost();
 		const { col_xs, col_sm, col_md, col_lg, col_xl, col_xxl } = attributes;
 
 		if (blockType.name === 'vk-blocks/grid-column-item' && element) {

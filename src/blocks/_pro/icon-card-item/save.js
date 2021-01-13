@@ -71,12 +71,9 @@ export default function save(props) {
 		)} vk_post-col-xxl-${convertToGrid(col_xxl)}`,
 	});
 
-	return (
-		<div {...blockProps}>
-			{/*
-			 target=_blankで指定すると、WordPressが自動でnoopener noreferrerを付与する。
-			 ブロックでもrelを付与しないとブロックが壊れる。
-			 */}
+	let blockContent = '';
+	if (url !== null && url !== undefined) {
+		blockContent = (
 			<a
 				href={url}
 				className="vk_icon-card_item_link"
@@ -97,6 +94,34 @@ export default function save(props) {
 					value={content}
 				/>
 			</a>
+		);
+	} else {
+		blockContent = (
+			<>
+				<div className="vk_icon-card_item_icon_outer" style={style}>
+					{ReactHtmlParser(faIconTag)}
+				</div>
+				<RichText.Content
+					className={`vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}`}
+					tagName={'h3'}
+					value={heading}
+				/>
+				<RichText.Content
+					className={`vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-${align.text}`}
+					tagName={'p'}
+					value={content}
+				/>
+			</>
+		);
+	}
+
+	return (
+		<div {...blockProps}>
+			{/*
+			 target=_blankで指定すると、WordPressが自動でnoopener noreferrerを付与する。
+			 ブロックでもrelを付与しないとブロックが壊れる。
+			 */}
+			{blockContent}
 		</div>
 	);
 }

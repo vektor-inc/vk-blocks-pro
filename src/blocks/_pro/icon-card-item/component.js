@@ -109,7 +109,7 @@ export const PRcarditem = (props) => {
 			</Fragment>
 		);
 	} else if (for_ === 'save') {
-		if (url !== undefined && url !== null) {
+		if (url !== undefined && url !== null && url !== '') {
 			contents = (
 				<Fragment>
 					{/**

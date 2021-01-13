@@ -71,9 +71,27 @@ export default function save(props) {
 		)} vk_post-col-xxl-${convertToGrid(col_xxl)}`,
 	});
 
-	let blockContent = '';
+	const blockContent = (
+		<>
+			<div className="vk_icon-card_item_icon_outer" style={style}>
+				{ReactHtmlParser(faIconTag)}
+			</div>
+			<RichText.Content
+				className={`vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}`}
+				tagName={'h3'}
+				value={heading}
+			/>
+			<RichText.Content
+				className={`vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-${align.text}`}
+				tagName={'p'}
+				value={content}
+			/>
+		</>
+	);
+
+	let blockContentWrapper = '';
 	if (url !== null && url !== undefined && url !== '') {
-		blockContent = (
+		blockContentWrapper = (
 			/*
 			 target=_blankで指定すると、WordPressが自動でnoopener noreferrerを付与する。
 			 ブロックでもrelを付与しないとブロックが壊れる。
@@ -84,40 +102,12 @@ export default function save(props) {
 				target={urlOpenType && '_blank'}
 				rel={urlOpenType && 'noopener noreferrer'}
 			>
-				<div className="vk_icon-card_item_icon_outer" style={style}>
-					{ReactHtmlParser(faIconTag)}
-				</div>
-				<RichText.Content
-					className={`vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}`}
-					tagName={'h3'}
-					value={heading}
-				/>
-				<RichText.Content
-					className={`vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-${align.text}`}
-					tagName={'p'}
-					value={content}
-				/>
+				{blockContent}
 			</a>
 		);
 	} else {
-		blockContent = (
-			<>
-				<div className="vk_icon-card_item_icon_outer" style={style}>
-					{ReactHtmlParser(faIconTag)}
-				</div>
-				<RichText.Content
-					className={`vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}`}
-					tagName={'h3'}
-					value={heading}
-				/>
-				<RichText.Content
-					className={`vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-${align.text}`}
-					tagName={'p'}
-					value={content}
-				/>
-			</>
-		);
+		blockContentWrapper = blockContent;
 	}
 
-	return <div {...blockProps}>{blockContent}</div>;
+	return <div {...blockProps}>{blockContentWrapper}</div>;
 }

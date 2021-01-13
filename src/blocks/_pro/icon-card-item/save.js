@@ -72,7 +72,7 @@ export default function save(props) {
 	});
 
 	let blockContent = '';
-	if (url !== null && url !== undefined) {
+	if (url !== null && url !== undefined && url !== '') {
 		blockContent = (
 			/*
 			 target=_blankで指定すると、WordPressが自動でnoopener noreferrerを付与する。

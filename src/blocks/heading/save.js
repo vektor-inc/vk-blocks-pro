@@ -1,4 +1,4 @@
-import { RichText } from '@wordpress/block-editor';
+import { RichText, useBlockProps } from '@wordpress/block-editor';
 
 import ReactHtmlParser from 'react-html-parser';
 
@@ -142,8 +142,13 @@ export default function save(props) {
 			/>
 		);
 	}
+
+	const blockProps = useBlockProps.save({
+		className: ``,
+	});
+
 	return (
-		<div>
+		<div {...blockProps}>
 			<div className={containerClass} style={cStyle}>
 				{renderTitle(level, titleContent, tStyle, headingStyle)}
 				{subtextContent}

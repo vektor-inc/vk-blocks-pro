@@ -1,9 +1,9 @@
 /**
  * WordPress dependencies
  */
-const { Dropdown, Toolbar, ToolbarButton, ToolbarGroup } = wp.components;
-const { __, sprintf } = wp.i18n;
-const { DOWN } = wp.keycodes;
+import{ Dropdown, Toolbar, ToolbarButton, ToolbarGroup } from '@wordpress/components';
+import { __, sprintf } from '@wordpress/i18n';
+import { DOWN } from '@wordpress/keycodes';
 
 /**
  * Internal dependencies

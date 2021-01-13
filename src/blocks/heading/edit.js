@@ -16,6 +16,7 @@ import {
 	BlockControls,
 	AlignmentToolbar,
 	RichText,
+	useBlockProps,
 } from '@wordpress/block-editor';
 
 import ReactHtmlParser from 'react-html-parser';
@@ -62,7 +63,7 @@ const renderTitle = (level, contents, tStyle, headingStyle) => {
 };
 
 export default function HeaddingEdit(props) {
-	const { attributes, className, setAttributes } = props;
+	const { attributes, setAttributes } = props;
 	let {
 		level,
 		align,
@@ -196,6 +197,10 @@ export default function HeaddingEdit(props) {
 			/>
 		);
 	}
+
+	const blockProps = useBlockProps({
+		className: ``,
+	});
 
 	return (
 		<>
@@ -359,7 +364,7 @@ export default function HeaddingEdit(props) {
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<div className={className}>
+			<div {...blockProps}>
 				<div className={containerClass} style={cStyle}>
 					{renderTitle(level, titleContent, tStyle, headingStyle)}
 					{subtextContent}

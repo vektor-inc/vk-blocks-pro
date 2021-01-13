@@ -1,7 +1,7 @@
 /**
  * WordPress dependencies
  */
-const { Path, SVG } = wp.components;
+import { Path, SVG } from '@wordpress/components';
 
 /**
  * HeadingLevelIcon props.

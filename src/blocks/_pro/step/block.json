@@ -1,0 +1,14 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/step",
+	"category": "vk-blocks-cat",
+	"attributes": {
+		"firstDotNum": {
+			"type": "number",
+			"default": 1
+		}
+	},
+	"supports": {
+		"className": true
+	}
+}

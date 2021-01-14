@@ -203,7 +203,7 @@ export default function SliderEdit(props) {
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>
-			<div data-vkb-slider={JSON.stringify(sliderData)} {...blockProps}>
+			<div {...blockProps} data-vkb-slider={JSON.stringify(sliderData)}>
 				<div className={`swiper-wrapper`}>
 					<div>
 						<InnerBlocks

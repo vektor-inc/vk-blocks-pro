@@ -51,9 +51,7 @@ export default function GridColumnEdit(props) {
 	const ALLOWED_BLOCKS = [['vk-blocks/grid-column-item']];
 	const TEMPLATE = ALLOWED_BLOCKS;
 
-	const blockProps = useBlockProps({
-		className: `vk_grid-column`,
-	});
+	const blockProps = useBlockProps();
 
 	return (
 		<>

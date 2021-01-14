@@ -17,7 +17,7 @@ export default function save({ attributes }) {
 	)} col-xxl-${convertToGrid(col_xxl)}`;
 
 	const blockProps = useBlockProps.save({
-		className: `vk_grid-column-item ${columnClass}`,
+		className: columnClass,
 	});
 
 	return (

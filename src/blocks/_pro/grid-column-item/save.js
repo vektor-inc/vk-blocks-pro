@@ -1,8 +1,23 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 
-export default function save() {
+export default function save({ attributes }) {
+
+	const { col_xs, col_sm, col_md, col_lg, col_xl, col_xxl } = attributes;
+	const columnClass = `col-${convertToGrid(
+		col_xs
+	)} col-sm-${convertToGrid(
+		col_sm
+	)} col-md-${convertToGrid(
+		col_md
+	)} col-lg-${convertToGrid(
+		col_lg
+	)} col-xl-${convertToGrid(
+		col_xl
+	)} col-xxl-${convertToGrid(col_xxl)}`;
+
 	const blockProps = useBlockProps.save({
-		className: `vk_grid-column-item`,
+		className: `vk_grid-column-item ${columnClass}`,
 	});
 
 	return (

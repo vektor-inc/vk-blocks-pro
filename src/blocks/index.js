@@ -13,6 +13,8 @@ import compareVersions from 'compare-versions';
 /**
  * Internal dependencies
  */
+import * as slider from './_pro/slider';
+import * as sliderItem from './_pro/slider-item';
 import * as alert from './alert';
 import * as balloon from './balloon';
 import * as borderBox from './border-box';
@@ -42,6 +44,8 @@ import * as iconCardItem from './_pro/icon-card-item';
  * Function to get all the VK Blocks in an array.
  */
 export const __getVKBlocks = () => [
+	slider,
+	sliderItem,
 	alert,
 	balloon,
 	borderBox,

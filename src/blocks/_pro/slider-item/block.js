@@ -4,10 +4,11 @@
  */
 import { schema } from "./schema";
 import { deprecated } from "./deprecated";
-import { ReactComponent as Icon } from './icon.svg';
+import BlockIcon from "./icon.svg";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
+const { Fragment } = wp.element;
 const { InspectorControls, BlockControls, BlockVerticalAlignmentToolbar, ColorPalette} = wp.blockEditor;
 const {
 	RangeControl,
@@ -22,7 +23,7 @@ import SliderItem from "./SliderItem"
 
 registerBlockType("vk-blocks/slider-item", {
 	title: __("Slider Item", "vk-blocks"),
-	icon: <Icon />,
+	icon: <BlockIcon />,
 	category: "vk-blocks-cat",
 	attributes: schema,
 	parent: ["vk-blocks/slider"],
@@ -43,7 +44,7 @@ registerBlockType("vk-blocks/slider-item", {
 		setAttributes({clientId})
 
 		return (
-			<>
+			<Fragment>
 				<BlockControls>
 					<BlockVerticalAlignmentToolbar
 						onChange={  ( alignment ) => setAttributes( { verticalAlignment: alignment } ) }
@@ -151,7 +152,7 @@ registerBlockType("vk-blocks/slider-item", {
 					</PanelBody>
 				</InspectorControls>
 				<SliderItem { ...props } for_={ "edit" } />
-			</>
+			</Fragment>
 		);
 	},
 

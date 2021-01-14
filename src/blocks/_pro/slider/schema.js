@@ -16,32 +16,32 @@ export const schema = {
 		default: 600,
 	},
 	autoPlay: {
-		type: "boolean",
+		type: 'boolean',
 		default: true,
 	},
 	autoPlayDelay: {
-		type: "number",
+		type: 'number',
 		default: 2500,
 	},
 	pagination: {
-		type: "boolean",
+		type: 'boolean',
 		default: true,
 	},
 	clientId: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
-	width:{
-		type: "string",
-		default: "",
+	width: {
+		type: 'string',
+		default: '',
 	},
 	loop: {
-		type: "boolean",
+		type: 'boolean',
 		default: true,
 	},
 	effect: {
-		type: "string",
-		default: "slide",
+		type: 'string',
+		default: 'slide',
 	},
 	speed: {
 		type: 'number',

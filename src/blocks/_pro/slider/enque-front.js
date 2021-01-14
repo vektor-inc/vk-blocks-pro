@@ -1,19 +1,24 @@
-window.addEventListener('load', ( event ) => {
+window.addEventListener(
+	'load',
+	(event) => {
+		// //data-vkb-slider属性のNodeを取得
+		let sliderNodeList = document.querySelectorAll('[data-vkb-slider]');
+		// 配列に変換。
+		sliderNodeList = Array.from(sliderNodeList);
 
-	// //data-vkb-slider属性のNodeを取得
-	let sliderNodeList = document.querySelectorAll('[data-vkb-slider]');
-	// 配列に変換。
-	sliderNodeList = Array.from( sliderNodeList );
+		if (sliderNodeList) {
+			for (const index in sliderNodeList) {
+				const sliderNode = sliderNodeList[index];
+				const attributes = JSON.parse(
+					sliderNode.getAttribute('data-vkb-slider')
+				);
 
-	if(sliderNodeList){
-		for(let index in sliderNodeList) {
-			let sliderNode = sliderNodeList[index];
-			let attributes = JSON.parse(sliderNode.getAttribute('data-vkb-slider'))
-
-			//自動再生がONかOFFによって条件分岐
-			if ( attributes.autoPlay ){
-				// 変数名にindexを使う
-				eval(`var swiper${index} = new Swiper ('.vk_slider_${attributes.clientId}', {
+				//自動再生がONかOFFによって条件分岐
+				if (attributes.autoPlay) {
+					// 変数名にindexを使う
+					eval(`var swiper${index} = new Swiper ('.vk_slider_${
+						attributes.clientId
+					}', {
 					// Optional parameters
 					pagination: {
 						el: '.swiper-pagination',
@@ -43,10 +48,8 @@ window.addEventListener('load', ( event ) => {
 						el: '.swiper-scrollbar',
 					},
 				});`);
-
-			} else {
-
-				eval(`var swiper${index} = new Swiper ('.vk_slider_${attributes.clientId}', {
+				} else {
+					eval(`var swiper${index} = new Swiper ('.vk_slider_${attributes.clientId}', {
 					// Optional parameters
 					pagination: {
 						el: '.swiper-pagination',
@@ -70,15 +73,14 @@ window.addEventListener('load', ( event ) => {
 					el: '.swiper-scrollbar',
 					},
 				});`);
-			}
+				}
 
-			// ページネーションがOFFの時非表示
-			if( !attributes.pagination ){
-				eval(`swiper${index}.pagination.destroy();`);
+				// ページネーションがOFFの時非表示
+				if (!attributes.pagination) {
+					eval(`swiper${index}.pagination.destroy();`);
+				}
 			}
 		}
-	}
-
-}, false);
-
-
+	},
+	false
+);

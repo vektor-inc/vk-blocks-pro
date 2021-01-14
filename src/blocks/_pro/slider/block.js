@@ -4,35 +4,33 @@
  */
 import { ColumnResponsive } from './component';
 import { schema } from './schema';
-import classNames from 'classnames';
-import { convertToGrid } from '../../_helper/convert-to-grid';
-import replaceClientId from '../../_helper/replaceClientId';
-import { AdvancedToggleControl } from './../../../components/advanced-toggle-control';
-import AdvancedViewportControl from '../../../components/advanced-viewport-control';
-import AdvancedUnitControl from '../../../components/advanced-unit-control';
+import replaceClientId from '@vkblocks/utils/replaceClientId';
+import { AdvancedToggleControl } from '@vkblocks/components/advanced-toggle-control';
+import AdvancedViewportControl from '@vkblocks/components/advanced-viewport-control';
+import AdvancedUnitControl from '@vkblocks/components/advanced-unit-control';
 import deprecated from './deprecated/';
 import BlockIcon from './icon.svg';
 import compareVersions from 'compare-versions';
 
-const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
-const { Fragment, useEffect } = wp.element;
-const {
+import { __ } from '@wordpress/i18n';
+import { registerBlockType } from '@wordpress/blocks';
+import { Fragment, useEffect } from '@wordpress/element';
+import {
 	InspectorControls,
 	BlockControls,
 	BlockAlignmentToolbar,
-} = wp.blockEditor;
-const { select, dispatch } = wp.data;
-const {
+} from '@wordpress/block-editor';
+import { select, dispatch } from '@wordpress/data';
+import {
 	PanelBody,
 	BaseControl,
 	TextControl,
 	ButtonGroup,
 	Button,
 	SelectControl,
-} = wp.components;
-const { createHigherOrderComponent } = wp.compose;
-const { addFilter } = wp.hooks;
+} from '@wordpress/components';
+import { createHigherOrderComponent } from '@wordpress/compose';
+import { addFilter } from '@wordpress/hooks';
 
 let displayInserter = false;
 if (window.wpVersion && 5.4 <= parseFloat(window.wpVersion)) {
@@ -86,7 +84,7 @@ registerBlockType('vk-blocks/slider', {
 						title={__('Width', 'vk-blocks')}
 						initialOpen={true}
 					>
-						<BaseControl>
+						<BaseControl id={`vk_slider-width`}>
 							<ButtonGroup>
 								<Button
 									isSmall
@@ -119,6 +117,7 @@ registerBlockType('vk-blocks/slider', {
 								'Slide Height for each device.',
 								'vk-blocks'
 							)}
+							id={`vk_slider-SlideHeight`}
 						>
 							<AdvancedViewportControl
 								{...props}
@@ -134,7 +133,10 @@ registerBlockType('vk-blocks/slider', {
 						title={__('Slider Settings', 'vk-blocks')}
 						initialOpen={false}
 					>
-						<BaseControl label={__('Effect ', 'vk-blocks')}>
+						<BaseControl
+							label={__('Effect ', 'vk-blocks')}
+							id={`vk_slider-effect`}
+						>
 							<SelectControl
 								value={effect}
 								onChange={(value) =>
@@ -152,14 +154,20 @@ registerBlockType('vk-blocks/slider', {
 								]}
 							/>
 						</BaseControl>
-						<BaseControl label={__('Loop ', 'vk-blocks')}>
+						<BaseControl
+							label={__('Loop ', 'vk-blocks')}
+							id={`vk_slider-loop`}
+						>
 							<AdvancedToggleControl
 								initialFixedTable={loop}
 								schema={'loop'}
 								{...props}
 							/>
 						</BaseControl>
-						<BaseControl label={__('AutoPlay', 'vk-blocks')}>
+						<BaseControl
+							label={__('AutoPlay', 'vk-blocks')}
+							id={`vk_slider-autoPlay`}
+						>
 							<AdvancedToggleControl
 								initialFixedTable={autoPlay}
 								schema={'autoPlay'}
@@ -176,7 +184,10 @@ registerBlockType('vk-blocks/slider', {
 								type={'number'}
 							/>
 						</BaseControl>
-						<BaseControl label={__('Change Speed', 'vk-blocks')}>
+						<BaseControl
+							label={__('Change Speed', 'vk-blocks')}
+							id={`vk_slider-changeSpeed`}
+						>
 							<TextControl
 								value={speed}
 								onChange={(value) =>
@@ -189,6 +200,7 @@ registerBlockType('vk-blocks/slider', {
 						</BaseControl>
 						<BaseControl
 							label={__('Display Pagination', 'vk-blocks')}
+							id={`vk_slider-displayPagination`}
 						>
 							<AdvancedToggleControl
 								initialFixedTable={pagination}

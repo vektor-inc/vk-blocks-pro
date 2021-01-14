@@ -3,7 +3,7 @@
  *
  */
 import replaceClientId from '@vkblocks/utils/replaceClientId';
-import BlockIcon from './icon.svg';
+import { ReactComponent as Icon } from './icon.svg';
 import compareVersions from 'compare-versions';
 
 import { __ } from '@wordpress/i18n';
@@ -23,7 +23,7 @@ export { metadata, name };
 
 export const settings = {
 	title: __('Slider', 'vk-blocks'),
-	icon: <BlockIcon />,
+	icon: <Icon />,
 	description: __('Slider is do not move in edit screen.', 'vk-blocks'),
 	edit,
 	save,

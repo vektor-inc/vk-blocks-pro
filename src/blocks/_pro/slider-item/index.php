@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Registers the `vk-blocks/slider` block.
+ * Registers the `vk-blocks/slider-item` block.
  */
 if( function_exists('register_block_type_from_metadata')) {
 
-	function register_block_vkb_slider() {
+	function register_block_vkb_slider_item() {
 		register_block_type_from_metadata(
 			__DIR__,
 			array(
@@ -14,5 +14,5 @@ if( function_exists('register_block_type_from_metadata')) {
 			)
 		);
 	}
-	add_action( 'init', 'register_block_vkb_slider', 99 );
+	add_action( 'init', 'register_block_vkb_slider_item', 99 );
 }

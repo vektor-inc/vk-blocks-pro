@@ -31,6 +31,8 @@ import * as card from './_pro/card';
 import * as cardItem from './_pro/card-item';
 import * as childPage from './_pro/child-page';
 import * as postList from './_pro/post-list';
+import * as step from './_pro/step';
+import * as stepItem from './_pro/step-item';
 import * as timeline from './_pro/timeline';
 import * as timelineItem from './_pro/timeline-item';
 import * as outer from './_pro/outer';
@@ -60,6 +62,8 @@ export const __getVKBlocks = () => [
 	cardItem,
 	childPage,
 	postList,
+	step,
+	stepItem,
 	timeline,
 	timelineItem,
 	outer,

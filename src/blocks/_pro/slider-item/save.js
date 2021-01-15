@@ -1,11 +1,10 @@
 /* eslint camelcase: 0 */
-import classNames from 'classnames';
-import { InnerBlocks } from '@wordpress/block-editor';
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
 const prefix = 'vk_slider_item';
 
 export default function save(props) {
-	const { className, attributes } = props;
+	const { attributes } = props;
 	const { verticalAlignment, padding_left_and_right, clientId } = attributes;
 	let classPaddingLR;
 	let containerClass;
@@ -30,14 +29,11 @@ export default function save(props) {
 		containerClass = `${prefix}_container`;
 	}
 
-	const baseClass = classNames(
-		className,
-		`vk_slider_item swiper-slide vk_valign-${verticalAlignment} ${prefix}-${clientId}`,
-		`${classPaddingLR}`,
-		`${prefix}-paddingVertical-none`
-	);
+	const blockProps = useBlockProps.save({
+		className: `vk_slider_item swiper-slide vk_valign-${verticalAlignment} ${prefix}-${clientId} ${classPaddingLR} ${prefix}-paddingVertical-none`,
+	});
 	return (
-		<div className={baseClass}>
+		<div {...blockProps}>
 			<GenerateBgImage prefix={prefix} clientId={clientId} {...props} />
 			<div className={containerClass}>
 				<InnerBlocks.Content />

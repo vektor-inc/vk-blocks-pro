@@ -37,7 +37,7 @@ export default function save({ attributes }) {
 	});
 
 	return (
-		<div data-vkb-slider={JSON.stringify(sliderData)} {...blockProps}>
+		<div {...blockProps} data-vkb-slider={JSON.stringify(sliderData)} >
 			<div className={`swiper-wrapper`}>
 				<InnerBlocks.Content />
 			</div>

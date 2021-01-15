@@ -11,10 +11,8 @@ import {
 import compareVersions from 'compare-versions';
 
 /**
- * Internal dependencies
+ * Blocks
  */
-import * as slider from './_pro/slider';
-import * as sliderItem from './_pro/slider-item';
 import * as alert from './alert';
 import * as balloon from './balloon';
 import * as borderBox from './border-box';
@@ -24,6 +22,7 @@ import * as faq2 from './faq2';
 import * as faq2a from './faq2-a';
 import * as faq2q from './faq2-q';
 import * as flow from './flow';
+import * as heading from './heading';
 import * as pageContent from './page-content';
 import * as prBlocks from './pr-blocks';
 import * as prContent from './pr-content';
@@ -39,13 +38,27 @@ import * as outer from './_pro/outer';
 import * as tableofContentsNew from './_pro/table-of-contents-new';
 import * as iconCard from './_pro/icon-card';
 import * as iconCardItem from './_pro/icon-card-item';
+import * as gridColumn from './_pro/grid-column';
+import * as gridColumnItem from './_pro/grid-column-item';
+import * as slider from './_pro/slider';
+import * as sliderItem from './_pro/slider-item';
+
+/**
+ * Extensions
+ */
+import "@vkblocks/extensions/common/hidden-extension";
+import "@vkblocks/extensions/common/highlighter";
+import "@vkblocks/extensions/common/nowrap";
+import "@vkblocks/extensions/common/responsive-br";
+import "@vkblocks/extensions/core/heading/style";
+import "@vkblocks/extensions/core/group/style";
+import "@vkblocks/extensions/core/list/style";
+import "@vkblocks/extensions/core/image/style";
 
 /**
  * Function to get all the VK Blocks in an array.
  */
 export const __getVKBlocks = () => [
-	slider,
-	sliderItem,
 	alert,
 	balloon,
 	borderBox,
@@ -55,6 +68,7 @@ export const __getVKBlocks = () => [
 	faq2a,
 	faq2q,
 	flow,
+	heading,
 	pageContent,
 	prBlocks,
 	prContent,
@@ -69,7 +83,11 @@ export const __getVKBlocks = () => [
 	outer,
 	tableofContentsNew,
 	iconCard,
-	iconCardItem
+	iconCardItem,
+	gridColumn,
+	gridColumnItem,
+	slider,
+	sliderItem,
 ];
 
 /**

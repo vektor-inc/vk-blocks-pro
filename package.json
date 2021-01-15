@@ -41,6 +41,7 @@
 		"lint:icon-card-item": "wp-scripts format-js src/blocks/_pro/icon-card-item && wp-scripts lint-js src/blocks/_pro/icon-card-item --fix",
 		"lint:grid-column": "wp-scripts format-js src/blocks/_pro/grid-column && wp-scripts lint-js src/blocks/_pro/grid-column --fix",
 		"lint:grid-column-item": "wp-scripts format-js src/blocks/_pro/grid-column-item && wp-scripts lint-js src/blocks/_pro/grid-column-item --fix",
+		"lint:extensions": "wp-scripts format-js src/extensions/ && wp-scripts lint-js src/extensions/ --fix",
 		"lint:components": "wp-scripts format-js src/components/ && wp-scripts lint-js src/components/ --fix",
 		"lint:utils": "wp-scripts format-js src/utils && wp-scripts lint-js src/utils --fix",
     "fixtures:clean": "rimraf \"test/e2e-tests/fixtures/blocks/*.+(json|serialized.html)\"",

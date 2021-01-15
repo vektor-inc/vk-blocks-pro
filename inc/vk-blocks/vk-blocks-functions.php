@@ -140,7 +140,7 @@ function vkblocks_blocks_assets() {
 	if( is_lager_than_wp('5.0') ){
 
 		//register_blockで読み込むブロック
-		$arr = array( 'heading', 'staff', 'highlighter', 'step', 'step-item', 'list-style', 'group-style', 'grid-column', 'grid-column-item', 'slider', 'slider-item', 'responsive-br', 'nowrap' );
+		$arr = array( 'heading', 'staff', 'highlighter', 'step', 'step-item', 'list-style', 'group-style', 'slider', 'slider-item', 'responsive-br', 'nowrap' );
 		//register_block_type_from_metadataで読み込むブロック
 		$arr_wp56 = array(
 			'alert',
@@ -158,6 +158,8 @@ function vkblocks_blocks_assets() {
 			'spacer',
 		);
 		$arr_wp56_pro = array(
+			'grid-column',
+			'grid-column-item',
 			'animation',
 			'card',
 			'card-item',

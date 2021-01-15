@@ -23,6 +23,10 @@ gulp.task( 'helper-js', function (done)  {
 });
 
 gulp.task( 'helper-js-pro', function (done)  {
+	gulp.src('src/blocks/_pro/accordion/enque-front.js')
+	.pipe(jsmin())
+	.pipe(rename('vk-accordion.min.js'))
+	.pipe(gulp.dest('./inc/vk-blocks/build/'));
 	gulp.src('src/blocks/_pro/animation/enque-front.js')
 	.pipe(jsmin())
 	.pipe(rename('vk-animation.min.js'))

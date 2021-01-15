@@ -159,19 +159,22 @@ function vkblocks_blocks_assets() {
 			'spacer',
 		);
 		$arr_wp56_pro = array(
-			'grid-column',
-			'grid-column-item',
+			'accordion',
+			'accordion-target',
+			'accordion-trigger',
 			'animation',
 			'card',
 			'card-item',
 			'child-page',
+			'grid-column',
+			'grid-column-item',
 			'icon-card',
-      'icon-card-item',
+			'icon-card-item',
+			'outer',
 			'post-list',
+			'table-of-contents-new',
 			'timeline',
 			'timeline-item',
-			'table-of-contents-new',
-			'outer',
 		);
 
     if( function_exists('register_block_type_from_metadata') ){

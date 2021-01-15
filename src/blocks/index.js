@@ -13,6 +13,7 @@ import compareVersions from 'compare-versions';
 /**
  * Internal dependencies
  */
+//free
 import * as alert from './alert';
 import * as balloon from './balloon';
 import * as borderBox from './border-box';
@@ -27,19 +28,27 @@ import * as pageContent from './page-content';
 import * as prBlocks from './pr-blocks';
 import * as prContent from './pr-content';
 import * as spacer from './spacer';
+
+//pro
+import * as accordion from './_pro/accordion';
+import * as accordionTarget from './_pro/accordion-target';
+import * as accordionTrigger from './_pro/accordion-trigger';
 import * as animation from './_pro/animation';
 import * as card from './_pro/card';
 import * as cardItem from './_pro/card-item';
 import * as childPage from './_pro/child-page';
-import * as postList from './_pro/post-list';
-import * as timeline from './_pro/timeline';
-import * as timelineItem from './_pro/timeline-item';
-import * as outer from './_pro/outer';
-import * as tableofContentsNew from './_pro/table-of-contents-new';
-import * as iconCard from './_pro/icon-card';
-import * as iconCardItem from './_pro/icon-card-item';
 import * as gridColumn from './_pro/grid-column';
 import * as gridColumnItem from './_pro/grid-column-item';
+import * as iconCard from './_pro/icon-card';
+import * as iconCardItem from './_pro/icon-card-item';
+import * as outer from './_pro/outer';
+import * as postList from './_pro/post-list';
+import * as tableofContentsNew from './_pro/table-of-contents-new';
+import * as timeline from './_pro/timeline';
+import * as timelineItem from './_pro/timeline-item';
+
+
+
 
 /**
  * Function to get all the VK Blocks in an array.
@@ -59,19 +68,22 @@ export const __getVKBlocks = () => [
 	prBlocks,
 	prContent,
 	spacer,
+	accordion,
+	accordionTarget,
+	accordionTrigger,
 	animation,
 	card,
 	cardItem,
 	childPage,
-	postList,
-	timeline,
-	timelineItem,
-	outer,
-	tableofContentsNew,
-	iconCard,
-	iconCardItem,
 	gridColumn,
 	gridColumnItem,
+	iconCard,
+	iconCardItem,
+	outer,
+	postList,
+	tableofContentsNew,
+	timeline,
+	timelineItem,
 ];
 
 /**

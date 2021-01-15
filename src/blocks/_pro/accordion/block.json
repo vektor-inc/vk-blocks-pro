@@ -1,0 +1,10 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/accordion",
+	"category": "vk-blocks-cat",
+	"attributes": {},
+	"supports": {
+		"anchor": true,
+		"className": true
+	}
+}

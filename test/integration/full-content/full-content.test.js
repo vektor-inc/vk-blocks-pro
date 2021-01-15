@@ -56,6 +56,20 @@ function normalizeParsedBlocks( blocks ) {
 	} );
 }
 
+function exportSliderBlockSavedVersion( basename ){
+	//sliderはフィルターフックを使ってるので普通にテストはできない
+
+	// TODO: 正規表現でbasenameからバージョンを取得して、Object.definePropertyでバージョンを出力する
+
+	// basename = vk-blocks__pr-content__deprecated-0-58-9
+	// VK Blocksが出力している wpVersion を定義
+
+	// Object.defineProperty( window, 'wpVersion', {
+	// 	value: '5.6',
+	// 	writable: false,
+	// } );
+}
+
 describe( 'full post content fixture', () => {
 
 	beforeAll( async () => {
@@ -244,7 +258,7 @@ describe( 'full post content fixture', () => {
 			// `save` functions and attributes.
 			// The `core/template` is not worth testing here because it's never saved, it's covered better in e2e tests.
 			.filter(
-				( name ) => ! [ 'core/embed', 'core/template', 'vk-blocks/page-content', 'vk-blocks/post-list', 'vk-blocks/child-page', 'vk-blocks/card-item', 'vk-blocks/icon-card-item', 'vk-blocks/grid-column-item' ].includes( name )
+				( name ) => ! [ 'core/embed', 'core/template', 'vk-blocks/page-content', 'vk-blocks/post-list', 'vk-blocks/child-page', 'vk-blocks/card-item', 'vk-blocks/icon-card-item', 'vk-blocks/grid-column-item', 'vk-blocks/slider-item' ].includes( name )
 			)
 			.forEach( ( name ) => {
 				const nameToFilename = blockNameToFixtureBasename( name );

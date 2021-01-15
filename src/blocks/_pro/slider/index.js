@@ -134,7 +134,7 @@ const addSwiperConfig = (el, type, attributes) => {
 				}
 
 				return (
-					<>
+					<div className={el.props.className}>
 						{el}
 						<style type="text/css">{cssTag}</style>
 						<script>
@@ -164,24 +164,25 @@ const addSwiperConfig = (el, type, attributes) => {
 						${autoPlayScripts}
 						})`}
 						</script>
-					</>
+					</div>
 				);
 
-				// 保存したブロックのバージョンが0.56.4以下の時
+			// 保存したブロックのバージョンが0.56.4以下の時
 			} else if (
 				compareVersions('0.56.4', post.meta._vkb_saved_block_version) >
 				0
 			) {
 				const cssTag = generateHeightCss(attributes, cssSelector);
 				return (
-					<>
+					<div>
 						{el}
 						<style type="text/css">{cssTag}</style>
-					</>
+					</div>
 				);
 			}
 		}
 
+		//最新版
 		const cssTag = generateHeightCss(attributes, cssSelector);
 		return (
 			<>

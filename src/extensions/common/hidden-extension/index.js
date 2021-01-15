@@ -231,7 +231,7 @@ addFilter(
 
 /* Filter of blocks.getSaveElement
 	/*-----------------------------------*/
-wp.hooks.addFilter(
+addFilter(
 	'blocks.getSaveElement',
 	'vk-blocks/hidden-extension',
 	(element, blockType, attributes) => {
@@ -295,7 +295,7 @@ wp.hooks.addFilter(
 
 /* Filter of editor.BlockListBlock
 	/*-----------------------------------*/
-wp.hooks.addFilter(
+addFilter(
 	'editor.BlockListBlock',
 	'vk-blocks/hidden-extension',
 	createHigherOrderComponent((BlockListBlock) => {

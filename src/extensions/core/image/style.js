@@ -1,6 +1,7 @@
 import { __ } from '@wordpress/i18n';
+import { registerBlockStyle } from '@wordpress/blocks';
 
-wp.blocks.registerBlockStyle('core/image', [
+registerBlockStyle('core/image', [
 	{
 		name: 'vk-image-border',
 		label: __('Border', 'vk-blocks'),

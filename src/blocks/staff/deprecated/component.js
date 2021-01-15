@@ -1,4 +1,5 @@
-const { Component } = wp.element;
+import { Component } from '@wordpress/element';
+
 export class NewComponent extends Component {
 
     render() {

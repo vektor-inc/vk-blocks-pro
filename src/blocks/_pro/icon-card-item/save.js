@@ -71,32 +71,43 @@ export default function save(props) {
 		)} vk_post-col-xxl-${convertToGrid(col_xxl)}`,
 	});
 
-	return (
-		<div {...blockProps}>
-			{/*
+	const blockContent = (
+		<>
+			<div className="vk_icon-card_item_icon_outer" style={style}>
+				{ReactHtmlParser(faIconTag)}
+			</div>
+			<RichText.Content
+				className={`vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}`}
+				tagName={'h3'}
+				value={heading}
+			/>
+			<RichText.Content
+				className={`vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-${align.text}`}
+				tagName={'p'}
+				value={content}
+			/>
+		</>
+	);
+
+	let blockContentWrapper = '';
+	if (url !== null && url !== undefined && url !== '') {
+		blockContentWrapper = (
+			/*
 			 target=_blankで指定すると、WordPressが自動でnoopener noreferrerを付与する。
 			 ブロックでもrelを付与しないとブロックが壊れる。
-			 */}
+			 */
 			<a
 				href={url}
 				className="vk_icon-card_item_link"
 				target={urlOpenType && '_blank'}
 				rel={urlOpenType && 'noopener noreferrer'}
 			>
-				<div className="vk_icon-card_item_icon_outer" style={style}>
-					{ReactHtmlParser(faIconTag)}
-				</div>
-				<RichText.Content
-					className={`vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}`}
-					tagName={'h3'}
-					value={heading}
-				/>
-				<RichText.Content
-					className={`vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-${align.text}`}
-					tagName={'p'}
-					value={content}
-				/>
+				{blockContent}
 			</a>
-		</div>
-	);
+		);
+	} else {
+		blockContentWrapper = blockContent;
+	}
+
+	return <div {...blockProps}>{blockContentWrapper}</div>;
 }

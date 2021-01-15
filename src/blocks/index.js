@@ -38,6 +38,8 @@ import * as outer from './_pro/outer';
 import * as tableofContentsNew from './_pro/table-of-contents-new';
 import * as iconCard from './_pro/icon-card';
 import * as iconCardItem from './_pro/icon-card-item';
+import * as gridColumn from './_pro/grid-column';
+import * as gridColumnItem from './_pro/grid-column-item';
 
 /**
  * Function to get all the VK Blocks in an array.
@@ -67,7 +69,9 @@ export const __getVKBlocks = () => [
 	outer,
 	tableofContentsNew,
 	iconCard,
-	iconCardItem
+	iconCardItem,
+	gridColumn,
+	gridColumnItem,
 ];
 
 /**

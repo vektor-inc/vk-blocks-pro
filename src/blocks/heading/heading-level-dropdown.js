@@ -1,7 +1,12 @@
 /**
  * WordPress dependencies
  */
-import{ Dropdown, Toolbar, ToolbarButton, ToolbarGroup } from '@wordpress/components';
+import {
+	Dropdown,
+	Toolbar,
+	ToolbarButton,
+	ToolbarGroup,
+} from '@wordpress/components';
 import { __, sprintf } from '@wordpress/i18n';
 import { DOWN } from '@wordpress/keycodes';
 

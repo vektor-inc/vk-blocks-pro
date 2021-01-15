@@ -13,7 +13,7 @@ import compareVersions from 'compare-versions';
 /**
  * Internal dependencies
  */
-//free
+/* free */
 import * as alert from './alert';
 import * as balloon from './balloon';
 import * as borderBox from './border-box';
@@ -29,7 +29,7 @@ import * as prBlocks from './pr-blocks';
 import * as prContent from './pr-content';
 import * as spacer from './spacer';
 
-//pro
+/* pro */
 import * as accordion from './_pro/accordion';
 import * as accordionTarget from './_pro/accordion-target';
 import * as accordionTrigger from './_pro/accordion-trigger';
@@ -54,6 +54,7 @@ import * as timelineItem from './_pro/timeline-item';
  * Function to get all the VK Blocks in an array.
  */
 export const __getVKBlocks = () => [
+	/* free */
 	alert,
 	balloon,
 	borderBox,
@@ -68,6 +69,7 @@ export const __getVKBlocks = () => [
 	prBlocks,
 	prContent,
 	spacer,
+	/* pro */
 	accordion,
 	accordionTarget,
 	accordionTrigger,

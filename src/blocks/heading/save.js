@@ -1,5 +1,5 @@
-import { RichText } from '@wordpress/block-editor';
-import { __ } from '@wordpress/i18n';
+import { RichText, useBlockProps } from '@wordpress/block-editor';
+
 import ReactHtmlParser from 'react-html-parser';
 
 const renderTitle = (level, contents, tStyle, headingStyle) => {
@@ -43,8 +43,8 @@ const renderTitle = (level, contents, tStyle, headingStyle) => {
 	}
 };
 
-export default (props) => {
-	const { attributes, setAttributes, for_ } = props;
+export default function save(props) {
+	const { attributes } = props;
 	let {
 		level,
 		align,
@@ -72,7 +72,7 @@ export default (props) => {
 	}
 
 	//titleのマージンを切り替え
-	if (titleMarginBottom) {
+	if (titleMarginBottom !== null && titleMarginBottom !== undefined) {
 		tStyle = {
 			color: titleColor,
 			fontSize: titleSize + 'rem',
@@ -123,68 +123,36 @@ export default (props) => {
 			`<i style="color:${fontAwesomeIconColor};" `;
 		iconAfter = faIconFragmentAfter.join('');
 	}
+	const titleContent = (
+		<>
+			{ReactHtmlParser(iconBefore)}
+			<RichText.Content tagName={'span'} value={title} />
+			{ReactHtmlParser(iconAfter)}
+		</>
+	);
 
-	if (for_ === 'edit') {
-		const titleContent = (
-			<>
-				{ReactHtmlParser(iconBefore)}
-				<RichText
-					tagName={'span'}
-					value={title}
-					onChange={(value) => {
-						setAttributes({ title: value });
-					}}
-					placeholder={__('Input title…', 'vk-blocks')}
-				/>
-				{ReactHtmlParser(iconAfter)}
-			</>
-		);
-
-		let subtextContent;
-		if (subTextFlag === 'on') {
-			subtextContent = (
-				<RichText
-					tagName={'p'}
-					value={subText}
-					onChange={(value) => setAttributes({ subText: value })}
-					style={subTextStyle}
-					className={subTextClass}
-					placeholder={__('Input sub text…', 'vk-blocks')}
-				/>
-			);
-		}
-
-		return (
-			<div className={containerClass} style={cStyle}>
-				{renderTitle(level, titleContent, tStyle, headingStyle)}
-				{subtextContent}
-			</div>
-		);
-	} else if (for_ === 'save') {
-		const titleContent = (
-			<>
-				{ReactHtmlParser(iconBefore)}
-				<RichText.Content tagName={'span'} value={title} />
-				{ReactHtmlParser(iconAfter)}
-			</>
-		);
-
-		let subtextContent;
-		if (subTextFlag === 'on') {
-			subtextContent = (
-				<RichText.Content
-					tagName={'p'}
-					value={subText}
-					style={subTextStyle}
-					className={subTextClass}
-				/>
-			);
-		}
-		return (
-			<div className={containerClass} style={cStyle}>
-				{renderTitle(level, titleContent, tStyle, headingStyle)}
-				{subtextContent}
-			</div>
+	let subtextContent;
+	if (subTextFlag === 'on') {
+		subtextContent = (
+			<RichText.Content
+				tagName={'p'}
+				value={subText}
+				style={subTextStyle}
+				className={subTextClass}
+			/>
 		);
 	}
-};
+
+	const blockProps = useBlockProps.save({
+		className: ``,
+	});
+
+	return (
+		<div {...blockProps}>
+			<div className={containerClass} style={cStyle}>
+				{renderTitle(level, titleContent, tStyle, headingStyle)}
+				{subtextContent}
+			</div>
+		</div>
+	);
+}

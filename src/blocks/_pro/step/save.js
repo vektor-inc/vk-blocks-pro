@@ -1,10 +1,13 @@
-import { InnerBlocks } from '@wordpress/block-editor';
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import React from 'react';
 
-export default function save({ className }) {
+export default function save() {
 	const containerClass = ' vk_step';
+	const blockProps = useBlockProps.save({
+		className: `${containerClass}`,
+	});
 	return (
-		<div className={className + containerClass}>
+		<div  {...blockProps}>
 			<InnerBlocks.Content />
 		</div>
 	);

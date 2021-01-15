@@ -1,13 +1,38 @@
 import { __ } from '@wordpress/i18n'; // Import __() from wp.i18n
 import { PanelBody } from '@wordpress/components';
-import { InspectorControls, InnerBlocks } from '@wordpress/block-editor';
+import { InspectorControls, InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import { useEffect } from '@wordpress/element';
+
 import React from 'react';
 
-export default function StepEdit({ attributes, setAttributes, className }) {
+import { dispatchEditor } from '@vkblocks/utils/depModules';
+import { asyncGetInnerBlocks } from '@vkblocks/utils/asyncHooks';
+
+const { updateBlockAttributes } = dispatchEditor;
+
+export default function StepEdit({
+	attributes,
+	setAttributes,
+	clientId,
+}) {
 	const { firstDotNum } = attributes;
 	const containerClass = ' vk_step';
 	const ALLOWED_BLOCKS = ['vk-blocks/step-item'];
 	const TEMPLATE = [ALLOWED_BLOCKS];
+
+	const currentInnerBlocks = asyncGetInnerBlocks(clientId);
+
+	useEffect(() => {
+		currentInnerBlocks.forEach(function (block, index) {
+			updateBlockAttributes(block.clientId, {
+				dotNum: firstDotNum + index,
+			});
+		});
+	}, [attributes.firstDotNum, currentInnerBlocks.length]);
+
+	const blockProps = useBlockProps({
+		className: `${containerClass}`,
+	});
 
 	return (
 		<>
@@ -26,7 +51,7 @@ export default function StepEdit({ attributes, setAttributes, className }) {
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<div className={className + containerClass}>
+			<div {...blockProps}>
 				<InnerBlocks
 					allowedBlocks={ALLOWED_BLOCKS}
 					template={TEMPLATE}

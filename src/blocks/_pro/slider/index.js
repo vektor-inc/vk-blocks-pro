@@ -134,7 +134,7 @@ const addSwiperConfig = (el, type, attributes) => {
 				}
 
 				return (
-					<div className={el.props.className}>
+					<>
 						{el}
 						<style type="text/css">{cssTag}</style>
 						<script>
@@ -164,7 +164,7 @@ const addSwiperConfig = (el, type, attributes) => {
 						${autoPlayScripts}
 						})`}
 						</script>
-					</div>
+					</>
 				);
 
 				// 保存したブロックのバージョンが0.56.4以下の時
@@ -174,20 +174,20 @@ const addSwiperConfig = (el, type, attributes) => {
 			) {
 				const cssTag = generateHeightCss(attributes, cssSelector);
 				return (
-					<div>
+					<>
 						{el}
 						<style type="text/css">{cssTag}</style>
-					</div>
+					</>
 				);
 			}
 		}
 
 		const cssTag = generateHeightCss(attributes, cssSelector);
 		return (
-			<div className={el.props.className}>
+			<>
 				{el}
 				<style type="text/css">{cssTag}</style>
-			</div>
+			</>
 		);
 	}
 	return el;

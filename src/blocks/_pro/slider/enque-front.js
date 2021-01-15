@@ -1,87 +1,75 @@
 /* eslint no-eval: 0 */
-window.addEventListener(
-	'load',
-	(event) => {
-		// //data-vkb-slider属性のNodeを取得
-		let sliderNodeList = document.querySelectorAll('[data-vkb-slider]');
-		// 配列に変換。
-		sliderNodeList = Array.from(sliderNodeList);
+window.onload = () => {
+	// //data-vkb-slider属性のNodeを取得
+	let sliderNodeList = document.querySelectorAll('[data-vkb-slider]');
+	// 配列に変換。
+	sliderNodeList = Array.from(sliderNodeList);
 
-		if (sliderNodeList) {
-			for (const index in sliderNodeList) {
-				const sliderNode = sliderNodeList[index];
-				const attributes = JSON.parse(
-					sliderNode.getAttribute('data-vkb-slider')
-				);
+	if (sliderNodeList) {
+		for (const index in sliderNodeList) {
+			const sliderNode = sliderNodeList[index];
+			const attributes = JSON.parse(
+				sliderNode.getAttribute('data-vkb-slider')
+			);
 
-				//自動再生がONかOFFによって条件分岐
-				if (attributes.autoPlay) {
-					// 変数名にindexを使う
-					eval(`var swiper${index} = new Swiper ('.vk_slider_${
-						attributes.clientId
-					}', {
-					// Optional parameters
-					pagination: {
-						el: '.swiper-pagination',
-						clickable : true,
-					},
+			//自動再生がONかOFFによって条件分岐
+			if (attributes.autoPlay) {
+				// 変数名にindexを使う
+				eval(`var swiper${index} = new Swiper ('.vk_slider_${
+					attributes.clientId
+				}', {
+				// Optional parameters
+				pagination: {
+					el: '.swiper-pagination',
+					clickable : true,
+				},
 
-					autoplay: {
-						delay: ${attributes.autoPlayDelay},
-						disableOnInteraction: false,
-						stopOnLastSlide: ${!attributes.loop}
-					},
+				autoplay: {
+					delay: ${attributes.autoPlayDelay},
+					disableOnInteraction: false,
+					stopOnLastSlide: ${!attributes.loop}
+				},
 
-					speed: ${attributes.speed},
+				speed: ${attributes.speed},
 
-					loop: ${attributes.loop},
+				loop: ${attributes.loop},
 
-					effect: '${attributes.effect}',
+				effect: '${attributes.effect}',
 
-					// navigation arrows
-					navigation: {
-						nextEl: '.swiper-button-next',
-						prevEl: '.swiper-button-prev',
-					},
+				// navigation arrows
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
 
-					// And if we need scrollbar
-					scrollbar: {
-						el: '.swiper-scrollbar',
-					},
-				});`);
-				} else {
-					eval(`var swiper${index} = new Swiper ('.vk_slider_${attributes.clientId}', {
-					// Optional parameters
-					pagination: {
-						el: '.swiper-pagination',
-						clickable : true,
-					},
+			});`);
+			} else {
+				eval(`var swiper${index} = new Swiper ('.vk_slider_${attributes.clientId}', {
+				// Optional parameters
+				pagination: {
+					el: '.swiper-pagination',
+					clickable : true,
+				},
 
-					speed: ${attributes.speed},
+				speed: ${attributes.speed},
 
-					loop: ${attributes.loop},
+				loop: ${attributes.loop},
 
-					effect: '${attributes.effect}',
+				effect: '${attributes.effect}',
 
-					// navigation arrows
-					navigation: {
-						nextEl: '.swiper-button-next',
-						prevEl: '.swiper-button-prev',
-					},
-
-					// And if we need scrollbar
-					scrollbar: {
-					el: '.swiper-scrollbar',
-					},
-				});`);
+				// navigation arrows
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
 				}
 
-				// ページネーションがOFFの時非表示
-				if (!attributes.pagination) {
-					eval(`swiper${index}.pagination.destroy();`);
-				}
+			});`);
+			}
+
+			// ページネーションがOFFの時非表示
+			if (!attributes.pagination) {
+				eval(`swiper${index}.pagination.destroy();`);
 			}
 		}
-	},
-	false
-);
+	}
+}

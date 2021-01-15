@@ -43,7 +43,7 @@ const renderTitle = (level, contents, tStyle, headingStyle) => {
 	}
 };
 
-export default (props) => {
+export const VKBHeading = (props) => {
 	const { attributes, setAttributes, for_ } = props;
 	let {
 		level,
@@ -72,7 +72,7 @@ export default (props) => {
 	}
 
 	//titleのマージンを切り替え
-	if (titleMarginBottom) {
+	if (titleMarginBottom !== null && titleMarginBottom !== undefined) {
 		tStyle = {
 			color: titleColor,
 			fontSize: titleSize + 'rem',

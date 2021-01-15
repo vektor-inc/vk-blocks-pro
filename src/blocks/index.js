@@ -22,6 +22,7 @@ import * as faq2 from './faq2';
 import * as faq2a from './faq2-a';
 import * as faq2q from './faq2-q';
 import * as flow from './flow';
+import * as heading from './heading';
 import * as pageContent from './page-content';
 import * as prBlocks from './pr-blocks';
 import * as prContent from './pr-content';
@@ -37,6 +38,8 @@ import * as outer from './_pro/outer';
 import * as tableofContentsNew from './_pro/table-of-contents-new';
 import * as iconCard from './_pro/icon-card';
 import * as iconCardItem from './_pro/icon-card-item';
+import * as gridColumn from './_pro/grid-column';
+import * as gridColumnItem from './_pro/grid-column-item';
 
 /**
  * Function to get all the VK Blocks in an array.
@@ -51,6 +54,7 @@ export const __getVKBlocks = () => [
 	faq2a,
 	faq2q,
 	flow,
+	heading,
 	pageContent,
 	prBlocks,
 	prContent,
@@ -65,7 +69,9 @@ export const __getVKBlocks = () => [
 	outer,
 	tableofContentsNew,
 	iconCard,
-	iconCardItem
+	iconCardItem,
+	gridColumn,
+	gridColumnItem,
 ];
 
 /**

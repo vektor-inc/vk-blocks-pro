@@ -11,13 +11,9 @@ const rename = require("gulp-rename");
 const jsmin = require("gulp-jsmin");
 
 gulp.task( 'helper-js', function (done)  {
-	gulp.src([
-		'src/blocks/faq2/faq2.js',
-	])
+	gulp.src('src/blocks/faq2/enque-front.js')
 	.pipe(jsmin())
-	.pipe(rename({
-		extname: '.min.js'
-	}))
+	.pipe(rename('vk-faq2.min.js'))
 	.pipe(gulp.dest('./inc/vk-blocks/build/'));
 	done();
 });

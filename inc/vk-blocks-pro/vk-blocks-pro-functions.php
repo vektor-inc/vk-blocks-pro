@@ -32,7 +32,7 @@ function vk_blocks_pro_load_scripts() {
 	wp_enqueue_script( 'vk-blocks-accordion', VK_BLOCKS_URL . 'build/vk-accordion.min.js', array(), VK_BLOCKS_VERSION, true );
 
 	// Faq Block
-	wp_enqueue_script( 'vk-blocks-faq2', VK_BLOCKS_URL . 'build/faq2.min.js', array(), VK_BLOCKS_VERSION, true );
+	wp_enqueue_script( 'vk-blocks-faq2', VK_BLOCKS_URL . 'build/vk-faq2.min.js', array(), VK_BLOCKS_VERSION, true );
 
 	// Animation Block
 	wp_enqueue_script( 'vk-blocks-animation', VK_BLOCKS_URL . 'build/vk-animation.min.js', array(), VK_BLOCKS_VERSION, true );

@@ -1,5 +1,5 @@
-import { __ } from '@woedpress/i18n'; // Import __() from wp.i18n
-import { PanelBody } from '@woedpress/components';
+import { __ } from '@wordpress/i18n'; // Import __() from wp.i18n
+import { PanelBody } from '@wordpress/components';
 import { InspectorControls, InnerBlocks } from '@wordpress/block-editor';
 import React from 'react';
 

@@ -2,11 +2,9 @@
 import save0_60_1 from './0.60.1/save';
 
 const blockAttributes = {
-	attributes: {
-		firstDotNum: {
-			type: 'number',
-			default: 1,
-		},
+	firstDotNum: {
+		type: 'number',
+		default: 1,
 	},
 };
 

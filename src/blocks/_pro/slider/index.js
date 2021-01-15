@@ -7,7 +7,6 @@ import { ReactComponent as Icon } from './icon.svg';
 import compareVersions from 'compare-versions';
 
 import { __ } from '@wordpress/i18n';
-import { Fragment } from '@wordpress/element';
 import { select } from '@wordpress/data';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { addFilter } from '@wordpress/hooks';
@@ -30,13 +29,8 @@ export const settings = {
 	deprecated,
 };
 
-const generateHeightCss = (attributes, for_) => {
+const generateHeightCss = (attributes, cssSelector = '') => {
 	const { clientId, mobile, tablet, pc, unit } = attributes;
-
-	let cssSelector = '';
-	if ('save' === for_) {
-		cssSelector = `.vk_slider_${clientId},`;
-	}
 
 	return `@media (max-width: 576px) {
 		${cssSelector}
@@ -63,12 +57,12 @@ const vkbwithClientIdClassName = createHigherOrderComponent(
 	(BlockListBlock) => {
 		return (props) => {
 			if ('vk-blocks/slider' === props.name) {
-				const cssTag = generateHeightCss(props.attributes, 'edit');
+				const cssTag = generateHeightCss(props.attributes, '');
 				return (
-					<Fragment>
+					<>
 						<style type="text/css">{cssTag}</style>
 						<BlockListBlock {...props} />
-					</Fragment>
+					</>
 				);
 			}
 			return <BlockListBlock {...props} />;
@@ -94,19 +88,21 @@ const addSwiperConfig = (el, type, attributes) => {
 	const post = select('core/editor').getCurrentPost();
 
 	if ('vk-blocks/slider' === type.name) {
+		const {
+			clientId,
+			pagination,
+			autoPlay,
+			autoPlayDelay,
+			loop,
+			effect,
+			speed,
+		} = attributes;
+		const cssSelector = `.vk_slider_${clientId},`;
+
 		if (post.hasOwnProperty('meta')) {
 			//0.49.8未満（_vkb_saved_block_version が ""）のみJSタグ挿入
 			if (!post.meta._vkb_saved_block_version) {
-				const {
-					clientId,
-					pagination,
-					autoPlay,
-					autoPlayDelay,
-					loop,
-					effect,
-					speed,
-				} = attributes;
-				const cssTag = generateHeightCss(attributes, 'save');
+				const cssTag = generateHeightCss(attributes, cssSelector);
 
 				let autoPlayScripts;
 				if (autoPlay) {
@@ -143,7 +139,7 @@ const addSwiperConfig = (el, type, attributes) => {
 						<style type="text/css">{cssTag}</style>
 						<script>
 							{`
-					var swiper${replaceClientId(clientId)} = new Swiper ('.vk_slider_${clientId}', {
+						var swiper${replaceClientId(clientId)} = new Swiper ('.vk_slider_${clientId}', {
 
 						${speedScripts}
 
@@ -176,7 +172,7 @@ const addSwiperConfig = (el, type, attributes) => {
 				compareVersions('0.56.4', post.meta._vkb_saved_block_version) >
 				0
 			) {
-				const cssTag = generateHeightCss(attributes, 'save');
+				const cssTag = generateHeightCss(attributes, cssSelector);
 				return (
 					<div>
 						{el}
@@ -186,7 +182,7 @@ const addSwiperConfig = (el, type, attributes) => {
 			}
 		}
 
-		const cssTag = generateHeightCss(attributes, 'save');
+		const cssTag = generateHeightCss(attributes, cssSelector);
 		return (
 			<div className={el.props.className}>
 				{el}

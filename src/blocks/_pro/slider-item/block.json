@@ -2,7 +2,7 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/slider-item",
 	"category": "vk-blocks-cat-layout",
-	"parent": "['vk-blocks/slider']",
+	"parent": [ "vk-blocks/slider"] ,
 	"attributes": {
 		"verticalAlignment": {
 			"type": "string",

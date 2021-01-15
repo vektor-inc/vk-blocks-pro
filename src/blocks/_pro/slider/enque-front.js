@@ -1,5 +1,3 @@
-/* eslint @wordpress/no-global-event-listener: 0 */
-/* eslint no-unused-vars: 0 */
 /* eslint no-eval: 0 */
 window.addEventListener(
 	'load',

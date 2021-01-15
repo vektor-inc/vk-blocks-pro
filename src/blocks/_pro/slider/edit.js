@@ -3,7 +3,7 @@ import { AdvancedToggleControl } from '@vkblocks/components/advanced-toggle-cont
 import AdvancedViewportControl from '@vkblocks/components/advanced-viewport-control';
 import AdvancedUnitControl from '@vkblocks/components/advanced-unit-control';
 import { __ } from '@wordpress/i18n';
-import { Fragment, useEffect } from '@wordpress/element';
+import { useEffect } from '@wordpress/element';
 import {
 	InspectorControls,
 	BlockControls,
@@ -66,11 +66,11 @@ export default function SliderEdit(props) {
 	};
 
 	const blockProps = useBlockProps({
-		className: `swiper-container vk_slider vk_slider_${clientId} ${alignClass}`,
+		className: `swiper-container vk_slider vk_slider_${customClientId} ${alignClass}`,
 	});
 
 	return (
-		<Fragment>
+		<>
 			<BlockControls>
 				<BlockAlignmentToolbar
 					value={width}
@@ -218,6 +218,6 @@ export default function SliderEdit(props) {
 				<div className="swiper-button-prev"></div>
 				{pagination && <div className="swiper-pagination"></div>}
 			</div>
-		</Fragment>
+		</>
 	);
 }

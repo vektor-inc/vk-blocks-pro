@@ -97,7 +97,7 @@ addFilter(
 
 /* Filter of editor.BlockEdit
 	/*-----------------------------------*/
-wp.hooks.addFilter(
+addFilter(
 	'editor.BlockEdit',
 	'vk-blocks/hidden-extension',
 	createHigherOrderComponent((BlockEdit) => {

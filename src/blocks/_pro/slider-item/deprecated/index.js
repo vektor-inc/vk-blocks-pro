@@ -1,27 +1,8 @@
 /* eslint camelcase: 0 */
 import save0_0_0 from './0.0.0/save';
+import save0_60_1 from './0.60.1/save';
 
 const blockAttributes = {
-	col_xs: {
-		type: 'number',
-		default: 1,
-	},
-	col_sm: {
-		type: 'number',
-		default: 1,
-	},
-	col_md: {
-		type: 'number',
-		default: 1,
-	},
-	col_lg: {
-		type: 'number',
-		default: 1,
-	},
-	col_xl: {
-		type: 'number',
-		default: 1,
-	},
 	verticalAlignment: {
 		type: 'string',
 		default: 'center',
@@ -64,9 +45,41 @@ const blockAttributes = {
 	},
 };
 
+const blockAttributes2 = {
+	col_xs: {
+		type: 'number',
+		default: 1,
+	},
+	col_sm: {
+		type: 'number',
+		default: 1,
+	},
+	col_md: {
+		type: 'number',
+		default: 1,
+	},
+	col_lg: {
+		type: 'number',
+		default: 1,
+	},
+	col_xl: {
+		type: 'number',
+		default: 1,
+	},
+}
+
 export default [
 	{
-		attributes: blockAttributes,
+		attributes: {
+			... blockAttributes
+		},
+		save0_60_1,
+	},
+	{
+		attributes: {
+			... blockAttributes2,
+			... blockAttributes
+		},
 		save0_0_0,
 	},
 ];

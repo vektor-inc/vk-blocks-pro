@@ -85,6 +85,7 @@ addFilter(
  * @param {*} attributes
  */
 const addSwiperConfig = (el, type, attributes) => {
+
 	const post = select('core/editor').getCurrentPost();
 
 	if ('vk-blocks/slider' === type.name) {
@@ -100,6 +101,7 @@ const addSwiperConfig = (el, type, attributes) => {
 		const cssSelector = `.vk_slider_${clientId},`;
 
 		if (post.hasOwnProperty('meta')) {
+
 			//0.49.8未満（_vkb_saved_block_version が ""）のみJSタグ挿入
 			if (!post.meta._vkb_saved_block_version) {
 				const cssTag = generateHeightCss(attributes, cssSelector);
@@ -166,7 +168,6 @@ const addSwiperConfig = (el, type, attributes) => {
 						</script>
 					</div>
 				);
-
 			// 保存したブロックのバージョンが0.56.4以下の時
 			} else if (
 				compareVersions('0.56.4', post.meta._vkb_saved_block_version) >

@@ -1,21 +1,28 @@
+/**
+ * External dependencies
+ */
 import classnames from 'classnames';
 
-// WordPress  dependencies
+/**
+ * WordPress dependencies
+ */
 import { __ } from '@wordpress/i18n';
 import {
 	TextControl,
 	PanelBody,
 	BaseControl,
 	SelectControl,
-	Button,
 } from '@wordpress/components';
 import {
 	InspectorControls,
 	ColorPalette,
 	useBlockProps,
-	RichText,
-	MediaUpload,
 } from '@wordpress/block-editor';
+
+/**
+ * Internal dependencies
+ */
+import { StaffCardEdit } from './staffCard';
 
 export default function StaffEdit({
 	attributes,
@@ -23,87 +30,40 @@ export default function StaffEdit({
 	className,
 	clientId,
 }) {
+	// id生成
 	const vkStaffNameColorId = `vk_staff_name-color-${clientId}`;
 	const vkStaffCaptionColorId = `vk_staff_caption-color-${clientId}`;
 	const vkStaffPositionColorId = `vk_staff_position-color-${clientId}`;
 	const vkStaffProfileTitleColorId = `vk_staff_profileTitle-color-${clientId}`;
 	const vkStaffProfileTextColorId = `vk_staff_profileText-color-${clientId}`;
 	const {
-		vkStaffTextName,
-		vkStaffTextCaption,
-		vkStaffTextRole,
-		vkStaffTextProfileTitle,
-		vkStaffTextProfileText,
-		vkStaffPhotoImage,
-		vkStaffPhotoImageAlt,
-		vkStaffLayout,
-		vkStaffNameColor,
-		vkStaffCaptionColor,
-		vkStaffPositionColor,
-		vkStaffProfileTitleColor,
-		vkStaffProfileTextColor,
-		vkStaffPhotoBorder,
+		vk_staff_layout, // eslint-disable-line camelcase
+		vk_staff_nameColor, // eslint-disable-line camelcase
+		vk_staff_captionColor, // eslint-disable-line camelcase
+		vk_staff_positionColor, // eslint-disable-line camelcase
+		vk_staff_profileTitleColor, // eslint-disable-line camelcase
+		vk_staff_profileTextColor, // eslint-disable-line camelcase
+		vk_staff_photo_image_alt, // eslint-disable-line camelcase
+		vk_staff_photoBorder, // eslint-disable-line camelcase
 	} = attributes;
 
 	const classes = classnames('vk_staff', {
 		[className]: !!className,
-		[`vk_staff-layout-${vkStaffLayout}`]: !!vkStaffLayout,
+		[`vk_staff-layout-${vk_staff_layout}`]: !!vk_staff_layout, // eslint-disable-line camelcase
 	});
-
-	// const figureClasses = classnames('vk_staff_photo', {
-	// 	[`vk_staff_photo-border-${vkStaffPhotoBorder}`]: !!vkStaffPhotoBorder,
-	// });
 
 	const blockProps = useBlockProps({
 		className: classes,
 	});
-
-	// TODO! renderImage
-	const renderImage = () => {
-		if (vkStaffPhotoImage) {
-			return (
-				<MediaUpload
-					onSelect={(value) =>
-						setAttributes({
-							vkStaffPhotoImage: value.sizes.full.url,
-						})
-					}
-					type="image"
-					value={vkStaffPhotoImage}
-					render={({ open }) => (
-						<Button
-							onClick={open}
-							className={
-								vkStaffPhotoImage
-									? 'image-button'
-									: 'button button-large'
-							}
-						>
-							{!vkStaffPhotoImage ? (
-								__('Select image', 'vk-blocks')
-							) : (
-								<img
-									className={'vk_staff_photo_image'}
-									src={vkStaffPhotoImage}
-									alt={__('Upload image', 'vk-blocks')}
-									style={{ border: vkStaffPhotoBorder }}
-								/>
-							)}
-						</Button>
-					)}
-				/>
-			);
-		}
-	};
 
 	return (
 		<>
 			<InspectorControls>
 				<PanelBody title={__('Layout', 'vk-blocks')}>
 					<SelectControl
-						value={vkStaffLayout}
-						onChange={(value) =>
-							setAttributes({ vkStaffLayout: value })
+						value={vk_staff_layout} // eslint-disable-line camelcase
+						onChange={
+							(value) => setAttributes({ vk_staff_layout: value }) // eslint-disable-line camelcase
 						}
 						options={[
 							{
@@ -119,9 +79,10 @@ export default function StaffEdit({
 				</PanelBody>
 				<PanelBody title={__('Image border', 'vk-blocks')}>
 					<SelectControl
-						value={vkStaffPhotoBorder}
-						onChange={(value) =>
-							setAttributes({ vkStaffPhotoBorder: value })
+						value={vk_staff_photoBorder} // eslint-disable-line camelcase
+						onChange={
+							(value) =>
+								setAttributes({ vk_staff_photoBorder: value }) // eslint-disable-line camelcase
 						}
 						options={[
 							{
@@ -143,10 +104,10 @@ export default function StaffEdit({
 						)}
 					>
 						<TextControl
-							value={vkStaffPhotoImageAlt}
+							value={vk_staff_photo_image_alt} // eslint-disable-line camelcase
 							onChange={(value) =>
 								setAttributes({
-									vkStaffPhotoImageAlt: value,
+									vk_staff_photo_image_alt: value, // eslint-disable-line camelcase
 								})
 							}
 						/>
@@ -159,9 +120,10 @@ export default function StaffEdit({
 					>
 						<ColorPalette
 							id={vkStaffNameColorId}
-							value={vkStaffNameColor}
-							onChange={(value) =>
-								setAttributes({ vkStaffNameColor: value })
+							value={vk_staff_nameColor} // eslint-disable-line camelcase
+							onChange={
+								(value) =>
+									setAttributes({ vk_staff_nameColor: value }) // eslint-disable-line camelcase
 							}
 						/>
 					</BaseControl>
@@ -171,9 +133,11 @@ export default function StaffEdit({
 					>
 						<ColorPalette
 							id={vkStaffCaptionColorId}
-							value={vkStaffCaptionColor}
+							value={vk_staff_captionColor} // eslint-disable-line camelcase
 							onChange={(value) =>
-								setAttributes({ vkStaffCaptionColor: value })
+								setAttributes({
+									vk_staff_captionColor: value, // eslint-disable-line camelcase
+								})
 							}
 						/>
 					</BaseControl>
@@ -183,9 +147,11 @@ export default function StaffEdit({
 					>
 						<ColorPalette
 							id={vkStaffPositionColorId}
-							value={vkStaffPositionColor}
+							value={vk_staff_positionColor} // eslint-disable-line camelcase
 							onChange={(value) =>
-								setAttributes({ vkStaffPositionColor: value })
+								setAttributes({
+									vk_staff_positionColor: value, // eslint-disable-line camelcase
+								})
 							}
 						/>
 					</BaseControl>
@@ -195,10 +161,10 @@ export default function StaffEdit({
 					>
 						<ColorPalette
 							id={vkStaffProfileTitleColorId}
-							value={vkStaffProfileTitleColor}
+							value={vk_staff_profileTitleColor} // eslint-disable-line camelcase
 							onChange={(value) =>
 								setAttributes({
-									vkStaffProfileTitleColor: value,
+									vk_staff_profileTitleColor: value, // eslint-disable-line camelcase
 								})
 							}
 						/>
@@ -209,10 +175,10 @@ export default function StaffEdit({
 					>
 						<ColorPalette
 							id={vkStaffProfileTextColorId}
-							value={vkStaffProfileTextColor}
+							value={vk_staff_profileTextColor} // eslint-disable-line camelcase
 							onChange={(value) =>
 								setAttributes({
-									vkStaffProfileTextColor: value,
+									vk_staff_profileTextColor: value, // eslint-disable-line camelcase
 								})
 							}
 						/>
@@ -221,96 +187,11 @@ export default function StaffEdit({
 			</InspectorControls>
 
 			<div {...blockProps}>
-				<div className={'vk_staff_text'}>
-					<RichText
-						tagName="h3"
-						className={'vk_staff_text_name'}
-						style={{ color: vkStaffNameColor }}
-						onChange={(value) =>
-							setAttributes({ vkStaffTextName: value })
-						}
-						value={vkStaffTextName}
-						placeholder={__('Your Name', 'vk-blocks')}
-					/>
-					<RichText
-						tagName="p"
-						className={'vk_staff_text_caption'}
-						style={{ color: vkStaffCaptionColor }}
-						onChange={(value) =>
-							setAttributes({ vkStaffTextCaption: value })
-						}
-						value={vkStaffTextCaption}
-						placeholder={__('Caption', 'vk-blocks')}
-					/>
-					<RichText
-						tagName="p"
-						className={'vk_staff_text_role'}
-						style={{ color: vkStaffPositionColor }}
-						onChange={(value) =>
-							setAttributes({ vkStaffTextRole: value })
-						}
-						value={vkStaffTextRole}
-						placeholder={__('Role position', 'vk-blocks')}
-					/>
-					<RichText
-						tagName="h4"
-						className={'vk_staff_text_profileTitle'}
-						style={{ color: vkStaffProfileTitleColor }}
-						onChange={(value) =>
-							setAttributes({
-								vkStaffTextProfileTitle: value,
-							})
-						}
-						value={vkStaffTextProfileTitle}
-						placeholder={__('Profile title', 'vk-blocks')}
-					/>
-					<RichText
-						tagName="p"
-						className={'vk_staff_text_profileText'}
-						style={{ color: vkStaffProfileTextColor }}
-						onChange={(value) =>
-							setAttributes({
-								vkStaffTextProfileText: value,
-							})
-						}
-						value={vkStaffTextProfileText}
-						placeholder={__('Profile text', 'vk-blocks')}
-					/>
-				</div>
-				<div className={'vk_staff_photo'}>{renderImage()}</div>
-
-				{/* <div className={figureClasses}>
-					<MediaUpload
-						onSelect={(value) =>
-							setAttributes({
-								vkStaffPhotoImage: value.sizes.full.url,
-							})
-						}
-						type="image"
-						className={'vk_staff_photo_image'}
-						value={vkStaffPhotoImage}
-						render={({ open }) => (
-							<Button
-								onClick={open}
-								className={
-									vkStaffPhotoImage
-										? 'image-button'
-										: 'button button-large'
-								}
-							>
-								{!vkStaffPhotoImage ? (
-									__('Select image', 'vk-blocks')
-								) : (
-									<img
-										className={'vk_staff_photo_image'}
-										src={vkStaffPhotoImage}
-										alt={vkStaffPhotoImageAlt}
-									/>
-								)}
-							</Button>
-						)}
-					/>
-				</div> */}
+				<StaffCardEdit
+					attributes={attributes}
+					setAttributes={setAttributes}
+					className={className}
+				/>
 			</div>
 		</>
 	);

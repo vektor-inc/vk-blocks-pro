@@ -17,12 +17,13 @@ import {
 	InspectorControls,
 	ColorPalette,
 	useBlockProps,
+	RichText,
 } from '@wordpress/block-editor';
 
 /**
  * Internal dependencies
  */
-import { StaffCardEdit } from './staffCard';
+import { StaffMediaUploadEdit } from './staffMediaUpload';
 
 export default function StaffEdit({
 	attributes,
@@ -45,6 +46,11 @@ export default function StaffEdit({
 		vk_staff_profileTextColor, // eslint-disable-line camelcase
 		vk_staff_photo_image_alt, // eslint-disable-line camelcase
 		vk_staff_photoBorder, // eslint-disable-line camelcase
+		vk_staff_text_name, // eslint-disable-line camelcase
+		vk_staff_text_caption, // eslint-disable-line camelcase
+		vk_staff_text_role, // eslint-disable-line camelcase
+		vk_staff_text_profileTitle, // eslint-disable-line camelcase
+		vk_staff_text_profileText, // eslint-disable-line camelcase
 	} = attributes;
 
 	const classes = classnames('vk_staff', {
@@ -187,10 +193,64 @@ export default function StaffEdit({
 			</InspectorControls>
 
 			<div {...blockProps}>
-				<StaffCardEdit
+				<div className={`vk_staff_text`}>
+					<RichText
+						tagName="h3"
+						className={'vk_staff_text_name'}
+						style={{ color: vk_staff_nameColor }} // eslint-disable-line camelcase
+						onChange={(value) =>
+							setAttributes({ vk_staff_text_name: value })
+						}
+						value={vk_staff_text_name} // eslint-disable-line camelcase
+						placeholder={__('Your Name', 'vk-blocks')}
+					/>
+					<RichText
+						tagName="p"
+						className={'vk_staff_text_caption'}
+						style={{ color: vk_staff_captionColor }} // eslint-disable-line camelcase
+						onChange={(value) =>
+							setAttributes({ vk_staff_text_caption: value })
+						}
+						value={vk_staff_text_caption} // eslint-disable-line camelcase
+						placeholder={__('Caption', 'vk-blocks')}
+					/>
+					<RichText
+						tagName="p"
+						className={'vk_staff_text_role'}
+						style={{ color: vk_staff_positionColor }} // eslint-disable-line camelcase
+						onChange={(value) =>
+							setAttributes({ vk_staff_text_role: value })
+						}
+						value={vk_staff_text_role} // eslint-disable-line camelcase
+						placeholder={__('Role position', 'vk-blocks')}
+					/>
+					<RichText
+						tagName="h4"
+						className={'vk_staff_text_profileTitle'}
+						style={{ color: vk_staff_profileTitleColor }} // eslint-disable-line camelcase
+						onChange={(value) =>
+							setAttributes({ vk_staff_text_profileTitle: value })
+						}
+						value={vk_staff_text_profileTitle} // eslint-disable-line camelcase
+						placeholder={__('Profile title', 'vk-blocks')}
+					/>
+					<RichText
+						tagName="p"
+						className={'vk_staff_text_profileText'}
+						style={{ color: vk_staff_profileTextColor }} // eslint-disable-line camelcase
+						onChange={
+							(value) =>
+								setAttributes({
+									vk_staff_text_profileText: value,
+								}) // eslint-disable-line camelcase
+						}
+						value={vk_staff_text_profileText} // eslint-disable-line camelcase
+						placeholder={__('Profile text', 'vk-blocks')}
+					/>
+				</div>
+				<StaffMediaUploadEdit
 					attributes={attributes}
 					setAttributes={setAttributes}
-					className={className}
 				/>
 			</div>
 		</>

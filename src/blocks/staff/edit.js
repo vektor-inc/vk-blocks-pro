@@ -23,7 +23,7 @@ import {
 /**
  * Internal dependencies
  */
-import { StaffMediaUploadEdit } from './staffMediaUpload';
+import StaffMediaUpload from './staffMediaUpload';
 
 export default function StaffEdit({
 	attributes,
@@ -248,7 +248,7 @@ export default function StaffEdit({
 						placeholder={__('Profile text', 'vk-blocks')}
 					/>
 				</div>
-				<StaffMediaUploadEdit
+				<StaffMediaUpload
 					attributes={attributes}
 					setAttributes={setAttributes}
 				/>

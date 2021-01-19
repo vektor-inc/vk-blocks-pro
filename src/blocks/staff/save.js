@@ -7,7 +7,7 @@ import classnames from 'classnames';
  */
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 
-import { StaffMediaUploadSave } from './staffMediaUpload';
+import StaffMediaUpload from './staffMediaUpload';
 
 export default function save({ attributes, setAttributes, className }) {
 	const {
@@ -63,7 +63,7 @@ export default function save({ attributes, setAttributes, className }) {
 					value={vk_staff_text_profileText} // eslint-disable-line camelcase
 				/>
 			</div>
-			<StaffMediaUploadSave
+			<StaffMediaUpload
 				attributes={attributes}
 				setAttributes={setAttributes}
 			/>

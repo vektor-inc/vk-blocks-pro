@@ -3,7 +3,7 @@ wp.blocks.registerBlockStyle('core/image',
 	[
 		{
 			name: 'vk-image-rounded',
-			label: __('Rounded', 'vk-blocks'),
+			label: __('Rounded02', 'vk-blocks'),
 		},
 		{
 			name: 'vk-image-border',

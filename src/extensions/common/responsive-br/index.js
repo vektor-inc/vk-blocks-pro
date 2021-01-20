@@ -1,20 +1,21 @@
+/* eslint no-shadow: 0 */
 import { ReactComponent as Icon } from './icon.svg';
-const { __ } = wp.i18n;
-const { registerFormatType, insert } = wp.richText;
-const { BlockControls } = wp.blockEditor;
-const { Toolbar, DropdownMenu } = wp.components;
+import { __ } from '@wordpress/i18n';
+import { registerFormatType, insert } from '@wordpress/rich-text';
+import { BlockControls } from '@wordpress/block-editor';
+import { Toolbar, DropdownMenu } from '@wordpress/components';
 
-const breakPoints = [ 'xs', 'sm', 'md', 'lg', 'xl', 'xxl' ];
-registerFormatType( `vk-blocks/responsive-br`, {
-	title: __( `Responsive Br`, 'vk-blocks' ),
+const breakPoints = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'];
+registerFormatType(`vk-blocks/responsive-br`, {
+	title: __(`Responsive Br`, 'vk-blocks'),
 	tagName: 'br',
 	className: null,
-	edit: ( props ) => {
+	edit: (props) => {
 		const { onChange, value } = props;
 
-		const insertBR = ( value, breakPoint ) => {
+		const insertBR = (value, breakPoint) => {
 			onChange(
-				insert( value, `[br-${ breakPoint }]`, value.start, value.end )
+				insert(value, `[br-${breakPoint}]`, value.start, value.end)
 			);
 		};
 
@@ -39,20 +40,20 @@ registerFormatType( `vk-blocks/responsive-br`, {
 							</svg>
 						}
 						label="Select a direction"
-						controls={ breakPoints.map( ( breakPoint ) => {
+						controls={breakPoints.map((breakPoint) => {
 							return {
 								title:
-									__( `Responsive BR `, 'vk-blocks' ) +
-									`( ${ breakPoint } )`,
+									__(`Responsive BR `, 'vk-blocks') +
+									`( ${breakPoint} )`,
 								icon: <Icon />,
 								onClick: () => {
-									insertBR( value, breakPoint );
+									insertBR(value, breakPoint);
 								},
 							};
-						} ) }
+						})}
 					/>
 				</Toolbar>
 			</BlockControls>
 		);
 	},
-} );
+});

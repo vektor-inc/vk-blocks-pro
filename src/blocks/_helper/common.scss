@@ -360,11 +360,6 @@ ol {
 /* Group Block
 /*-------------------------------------------*/
 .editor-styles-wrapper .wp-block-group {
-	& > div:last-child {
-		*:nth-last-child(2) { 
-			margin-bottom:0;
-		}
-	}
 	// これがないとコアに勝手にwidthが左右1em余白をあけられる
 	.wp-block{
 		width:auto;

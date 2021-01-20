@@ -12,18 +12,15 @@ import {
 	PanelBody,
 	BaseControl,
 	SelectControl,
+	Button,
 } from '@wordpress/components';
 import {
 	InspectorControls,
 	ColorPalette,
 	useBlockProps,
 	RichText,
+	MediaUpload,
 } from '@wordpress/block-editor';
-
-/**
- * Internal dependencies
- */
-import StaffMediaUpload from './staffMediaUpload';
 
 export default function StaffEdit({
 	attributes,
@@ -51,6 +48,7 @@ export default function StaffEdit({
 		vk_staff_text_role, // eslint-disable-line camelcase
 		vk_staff_text_profileTitle, // eslint-disable-line camelcase
 		vk_staff_text_profileText, // eslint-disable-line camelcase
+		vk_staff_photo_image, // eslint-disable-line camelcase
 	} = attributes;
 
 	const classes = classnames('vk_staff', {
@@ -60,6 +58,11 @@ export default function StaffEdit({
 
 	const blockProps = useBlockProps({
 		className: classes,
+	});
+
+	// 画像の線のクラスとimgタグの親タグのクラス名を生成.
+	const imgBorderClassName = classnames('vk_staff_photo', {
+		[`vk_staff_photo-border-${vk_staff_photoBorder}`]: !!vk_staff_photoBorder, // eslint-disable-line camelcase
 	});
 
 	return (
@@ -248,10 +251,37 @@ export default function StaffEdit({
 						placeholder={__('Profile text', 'vk-blocks')}
 					/>
 				</div>
-				<StaffMediaUpload
-					attributes={attributes}
-					setAttributes={setAttributes}
-				/>
+				<div className={imgBorderClassName}>
+					<MediaUpload
+						onSelect={(value) =>
+							setAttributes({
+								vk_staff_photo_image: value.sizes.full.url,
+							})
+						}
+						type="image"
+						value={vk_staff_photo_image} // eslint-disable-line camelcase
+						render={({ open }) => (
+							<Button
+								onClick={open}
+								className={
+									vk_staff_photo_image // eslint-disable-line camelcase
+										? 'image-button'
+										: 'button button-large'
+								}
+							>
+								{!vk_staff_photo_image ? ( // eslint-disable-line camelcase
+									__('Select image', 'vk-blocks')
+								) : (
+									<img
+										className={`vk_staff_photo_image`}
+										src={vk_staff_photo_image} // eslint-disable-line camelcase
+										alt={vk_staff_photo_image_alt} // eslint-disable-line camelcase
+									/>
+								)}
+							</Button>
+						)}
+					/>
+				</div>
 			</div>
 		</>
 	);

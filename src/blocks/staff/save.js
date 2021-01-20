@@ -7,9 +7,9 @@ import classnames from 'classnames';
  */
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 
-import StaffMediaUpload from './staffMediaUpload';
+// import StaffMediaUpload from './staffMediaUpload';
 
-export default function save({ attributes, setAttributes, className }) {
+export default function save({ attributes, className }) {
 	const {
 		vk_staff_layout, // eslint-disable-line camelcase
 		vk_staff_text_name, // eslint-disable-line camelcase
@@ -22,11 +22,19 @@ export default function save({ attributes, setAttributes, className }) {
 		vk_staff_positionColor, // eslint-disable-line camelcase
 		vk_staff_profileTitleColor, // eslint-disable-line camelcase
 		vk_staff_profileTextColor, // eslint-disable-line camelcase
+		vk_staff_photo_image, // eslint-disable-line camelcase
+		vk_staff_photo_image_alt, // eslint-disable-line camelcase
+		vk_staff_photoBorder, // eslint-disable-line camelcase
 	} = attributes;
 
 	const classes = classnames('vk_staff', {
 		[className]: !!className,
 		[`vk_staff-layout-${vk_staff_layout}`]: !!vk_staff_layout, // eslint-disable-line camelcase
+	});
+
+	// 画像の線のクラスとimgタグの親タグのクラス名を生成.
+	const imgBorderClassName = classnames('vk_staff_photo', {
+		[`vk_staff_photo-border-${vk_staff_photoBorder}`]: !!vk_staff_photoBorder, // eslint-disable-line camelcase
 	});
 
 	return (
@@ -63,10 +71,15 @@ export default function save({ attributes, setAttributes, className }) {
 					value={vk_staff_text_profileText} // eslint-disable-line camelcase
 				/>
 			</div>
-			<StaffMediaUpload
-				attributes={attributes}
-				setAttributes={setAttributes}
-			/>
+			{vk_staff_photo_image && (
+				<div className={imgBorderClassName}>
+					<img
+						className={`vk_staff_photo_image`}
+						src={vk_staff_photo_image} // eslint-disable-line camelcase
+						alt={vk_staff_photo_image_alt} // eslint-disable-line camelcase
+					/>
+				</div>
+			)}
 		</div>
 	);
 }

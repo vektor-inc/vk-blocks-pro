@@ -22,6 +22,7 @@ import { ReactComponent as Icon } from './icon.svg';
 
 import edit from './edit';
 import save from './save';
+import deprecated from './deprecated/index';
 import metadata from './block.json';
 
 const { name } = metadata;
@@ -50,4 +51,5 @@ export const settings = {
 	},
 	edit,
 	save,
+	deprecated,
 };

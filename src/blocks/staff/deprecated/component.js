@@ -1,8 +1,8 @@
-const { __ } = wp.i18n;
-import { vkbBlockEditor } from "./../../utils/depModules";
+import { __ } from '@wordpress/i18n';
+import { Button } from '@wordpress/components';
+import { Component } from '@wordpress/element';
+import { vkbBlockEditor } from "../../../utils/depModules";
 const { RichText, MediaUpload } = vkbBlockEditor;
-const { Button } = wp.components;
-const { Component } = wp.element;
 
 export class NewComponent extends Component {
 

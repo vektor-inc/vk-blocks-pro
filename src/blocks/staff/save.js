@@ -71,7 +71,7 @@ export default function save({ attributes, className }) {
 					value={vk_staff_text_profileText} // eslint-disable-line camelcase
 				/>
 			</div>
-			{vk_staff_photo_image && (
+			{vk_staff_photo_image && ( // eslint-disable-line camelcase
 				<div className={imgBorderClassName}>
 					<img
 						className={`vk_staff_photo_image`}

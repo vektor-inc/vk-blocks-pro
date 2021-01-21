@@ -11,22 +11,25 @@ const lessThan = (compareVersion) =>{
 
 export default function deprecatedHooks( el, attributes ){
 
-	if ( lessThan('1.0.0')) {
+	if(lessThan("0.49.7")){
+		console.log("0.49.7以下")
+		// 0.49.7以下
+		return <SliderHook0_49_7 attributes={attributes}/>
+
+	}else if ( lessThan('1.0.0')) {
+		console.log("0.6.1以下")
 		//0.6.1以下
-		<SliderHook0_60_1
+		return <SliderHook0_60_1
 			el={el}
 			attributes={attributes}
 		/>
 
 	} else if ( lessThan('0.56.4') ) {
+		console.log("0.56.4以下")
 		// 0.56.4以下
-		<SliderHook0_56_4
+		return <SliderHook0_56_4
 			el={el}
 			attributes={attributes}
 		/>
-
-	} else {
-		// 0.49.7以下
-		return <SliderHook0_49_7 attributes={attributes}/>
 	}
 }

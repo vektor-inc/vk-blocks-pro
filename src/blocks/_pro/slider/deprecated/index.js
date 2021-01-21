@@ -57,14 +57,14 @@ const blockAttributes = {
 export default [
 	{
 		attributes: blockAttributes,
-		save0_60_1,
+		save: save0_60_1,
 	},
 	{
 		attributes: blockAttributes,
-		save0_56_3,
+		save: save0_56_3,
 	},
 	{
 		attributes: blockAttributes,
-		save0_49_1,
+		save: save0_49_1,
 	},
 ];

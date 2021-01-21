@@ -19,7 +19,6 @@ import {
 import { select, dispatch } from '@wordpress/data';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 
-/* eslint camelcase: 0 */
 export default function CardEdit(props) {
 	const { attributes, setAttributes, clientId, name } = props;
 	const { blockId } = attributes;
@@ -127,18 +126,18 @@ export default function CardEdit(props) {
 export const DisplayItemsControlForCards = (props) => {
 	const { setAttributes, attributes } = props;
 	const {
-		display_title,
-		display_excerpt,
-		display_image,
-		display_btn,
-		btn_text,
+		display_title, //eslint-disable-line camelcase
+		display_excerpt, //eslint-disable-line camelcase
+		display_image, //eslint-disable-line camelcase
+		display_btn, //eslint-disable-line camelcase
+		btn_text, //eslint-disable-line camelcase
 	} = attributes;
 	return (
 		<PanelBody title={__('Display item', 'vk-blocks')} initialOpen={false}>
 			<CheckboxControl
 				label={__('Title', 'vk-blocks')}
 				className={'mb-1'}
-				checked={display_title}
+				checked={display_title} //eslint-disable-line camelcase
 				onChange={(checked) =>
 					setAttributes({ display_title: checked })
 				}
@@ -152,7 +151,7 @@ export const DisplayItemsControlForCards = (props) => {
 			<CheckboxControl
 				label={__('Excerpt Text', 'vk-blocks')}
 				className={'mb-1'}
-				checked={display_excerpt}
+				checked={display_excerpt} //eslint-disable-line camelcase
 				onChange={(checked) =>
 					setAttributes({ display_excerpt: checked })
 				}
@@ -165,14 +164,14 @@ export const DisplayItemsControlForCards = (props) => {
 			</p>
 			<CheckboxControl
 				label={__('Image', 'vk-blocks')}
-				checked={display_image}
+				checked={display_image} //eslint-disable-line camelcase
 				onChange={(checked) =>
 					setAttributes({ display_image: checked })
 				}
 			/>
 			<CheckboxControl
 				label={__('Button', 'vk-blocks')}
-				checked={display_btn}
+				checked={display_btn} //eslint-disable-line camelcase
 				onChange={(checked) => setAttributes({ display_btn: checked })}
 			/>
 			<h4 className={'postList_itemCard_button-option'}>
@@ -186,7 +185,7 @@ export const DisplayItemsControlForCards = (props) => {
 			</p>
 			<TextControl
 				label={__('Button text', 'vk-blocks')}
-				value={btn_text}
+				value={btn_text} //eslint-disable-line camelcase
 				onChange={(value) => setAttributes({ btn_text: value })}
 			/>
 		</PanelBody>

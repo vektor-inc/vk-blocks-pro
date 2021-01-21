@@ -1,5 +1,5 @@
 import { VKBHeading_0_39_5 } from './component';
-/* eslint camelcase: 0 */
+
 export default function save(props) {
 	const { attributes } = props;
 	return (

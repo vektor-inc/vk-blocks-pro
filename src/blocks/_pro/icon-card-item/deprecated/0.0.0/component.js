@@ -3,7 +3,6 @@ import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
 import { RichText } from '@wordpress/block-editor';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 
-/* eslint camelcase: 0 */
 export const DepPRcarditem = (props) => {
 	const { attributes, setAttributes, for_, className } = props;
 	const {

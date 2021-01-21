@@ -8,7 +8,6 @@ import {
 import { select, dispatch } from '@wordpress/data';
 import { PanelBody } from '@wordpress/components';
 
-/* eslint camelcase: 0 */
 export default function GridColumnEdit(props) {
 	const { attributes, clientId } = props;
 

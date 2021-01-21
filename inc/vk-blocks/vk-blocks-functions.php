@@ -321,3 +321,16 @@ if ( function_exists( 'vkblocks_get_version' ) ) {
 	}
 	add_action( 'admin_head', 'vkblocks_set_vkbpro_version', 10, 0 );
 }
+
+function vkblocks_set_vkb_saved_block_version() {
+	// $current_post_id = $post_object->ID;
+	$post_id = get_the_ID();
+	$_vkb_saved_block_version = get_post_meta($post_id, '_vkb_saved_block_version', true);
+	if ( $_vkb_saved_block_version ) {
+		echo '<script>',
+		'var vkbSavedBlockVersion = "' . $_vkb_saved_block_version . '";',
+		'</script>';
+	}
+}
+add_action( 'admin_head', 'vkblocks_set_vkb_saved_block_version' );
+

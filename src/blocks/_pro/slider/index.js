@@ -2,16 +2,13 @@
  * Slider block type
  *
  */
-import replaceClientId from '@vkblocks/utils/replaceClientId';
 import { ReactComponent as Icon } from './icon.svg';
-import compareVersions from 'compare-versions';
-
 import { __ } from '@wordpress/i18n';
-import { select } from '@wordpress/data';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { addFilter } from '@wordpress/hooks';
 
-import deprecated from './deprecated/';
+import deprecatedHooks from './deprecated/hooks'
+import deprecated from './deprecated/save';
 import edit from './edit';
 import metadata from './block.json';
 import save from './save';
@@ -86,112 +83,32 @@ addFilter(
  */
 const addSwiperConfig = (el, type, attributes) => {
 
-	const post = select('core/editor').getCurrentPost();
+	const savedBlockVersion = window.vkbSavedBlockVersion;
+	const currentBlockVersion = window.vkbproVersion;
 
-	if ('vk-blocks/slider' === type.name) {
-		const {
-			clientId,
-			pagination,
-			autoPlay,
-			autoPlayDelay,
-			loop,
-			effect,
-			speed,
-		} = attributes;
-		const cssSelector = `.vk_slider_${clientId},`;
+	console.log({savedBlockVersion})
+	console.log({currentBlockVersion})
 
-		if (post.hasOwnProperty('meta')) {
+	const cssSelector = `.vk_slider_${attributes.clientId},`;
 
-			//0.49.8未満（_vkb_saved_block_version が ""）のみJSタグ挿入
-			if (!post.meta._vkb_saved_block_version) {
-				const cssTag = generateHeightCss(attributes, cssSelector);
+	if ('vk-blocks/slider' === type.name && savedBlockVersion) {
 
-				let autoPlayScripts;
-				if (autoPlay) {
-					autoPlayScripts = `autoplay: {
-						delay: ${autoPlayDelay},
-						disableOnInteraction: false,
-					},`;
-				} else {
-					autoPlayScripts = '';
-				}
-
-				let paginationScripts;
-				if (pagination) {
-					paginationScripts = `
-					// If we need pagination
-					pagination: {
-						el: '.swiper-pagination',
-						clickable : true,
-					},`;
-				} else {
-					paginationScripts = '';
-				}
-
-				let speedScripts;
-				if (speed) {
-					speedScripts = `speed: ${speed},`;
-				} else {
-					speedScripts = '';
-				}
-
-				return (
-					<div className={el.props.className}>
-						{el}
-						<style type="text/css">{cssTag}</style>
-						<script>
-							{`
-						var swiper${replaceClientId(clientId)} = new Swiper ('.vk_slider_${clientId}', {
-
-						${speedScripts}
-
-						// Optional parameters
-						loop: ${loop},
-
-						effect: '${effect}',
-
-						${paginationScripts}
-
-						// navigation arrows
-						navigation: {
-							nextEl: '.swiper-button-next',
-							prevEl: '.swiper-button-prev',
-						},
-
-						// And if we need scrollbar
-						scrollbar: {
-							el: '.swiper-scrollbar',
-						},
-
-						${autoPlayScripts}
-						})`}
-						</script>
-					</div>
-				);
-			// 保存したブロックのバージョンが0.56.4以下の時
-			} else if (
-				compareVersions('0.56.4', post.meta._vkb_saved_block_version) >
-				0
-			) {
-				const cssTag = generateHeightCss(attributes, cssSelector);
-				return (
-					<div>
-						{el}
-						<style type="text/css">{cssTag}</style>
-					</div>
-				);
-			}
+		if (savedBlockVersion === currentBlockVersion) {
+			//最新版
+			const cssTag = generateHeightCss(attributes, cssSelector);
+			return (
+				<>
+					{el}
+					<style type="text/css">{cssTag}</style>
+				</>
+			);
+		} else {
+			return deprecatedHooks(el,attributes);
 		}
 
-		//最新版
-		const cssTag = generateHeightCss(attributes, cssSelector);
-		return (
-			<>
-				{el}
-				<style type="text/css">{cssTag}</style>
-			</>
-		);
+	} else {
+		// Slider以外のブロック
+		return el;
 	}
-	return el;
 };
 addFilter('blocks.getSaveElement', 'vk-blocks/slider', addSwiperConfig);

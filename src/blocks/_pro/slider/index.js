@@ -6,6 +6,7 @@ import { ReactComponent as Icon } from './icon.svg';
 import { __ } from '@wordpress/i18n';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { addFilter } from '@wordpress/hooks';
+import isElInFilterDeprecated from '@vkblocks/utils/isElInFilterDeprecated'
 
 import deprecatedHooks from './deprecated/hooks'
 import deprecated from './deprecated/save';
@@ -116,19 +117,24 @@ const addSwiperConfig = (el, type, attributes) => {
 
 	if ('vk-blocks/slider' === type.name && savedBlockVersion) {
 
-		if (savedBlockVersion === currentBlockVersion) {
+		console.log({el})
+		console.log({"isElInFilterDeprecated(el)":isElInFilterDeprecated(el)})
+		console.log(!isElInFilterDeprecated(el))
+
+		if (isElInFilterDeprecated(el)) {
+			{el}
+			return deprecatedHooks(el,attributes);
+		} else {
+			console.log("最新版")
+
 			//最新版
 			const cssTag = generateHeightCss(attributes, cssSelector);
-			const containerClass = getContainerClass(el)
-			console.log(el)
 			return (
-				<div className={containerClass}>
+				<>
 					{el}
 					<style type="text/css">{cssTag}</style>
-				</div>
+				</>
 			);
-		} else {
-			return deprecatedHooks(el,attributes);
 		}
 
 	} else {

@@ -31,5 +31,11 @@ export default function deprecatedHooks( el, attributes ){
 			el={el}
 			attributes={attributes}
 		/>
+	} else {
+		console.log("1.0.0に変換した後に壊れた時のフォールバック")
+		return <SliderHook0_60_1
+			el={el}
+			attributes={attributes}
+		/>
 	}
 }

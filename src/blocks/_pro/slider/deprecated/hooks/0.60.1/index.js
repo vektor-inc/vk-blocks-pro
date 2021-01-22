@@ -30,5 +30,7 @@ export default function SliderHook0_60_1( {el,attributes}) {
 	const cssSelector = `.vk_slider_${clientId},`;
 	const cssTag = generateHeightCss( attributes, cssSelector )
 	const containerClass = getContainerClass(el)
+	console.log({containerClass})
 	return <div className={ containerClass }>{ el }<style type='text/css'>{ cssTag }</style></div>;
+
 }

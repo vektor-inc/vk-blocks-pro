@@ -50,29 +50,6 @@ const generateHeightCss = (attributes, cssSelector = '') => {
 	}`;
 };
 
-/**
- * スライダーブロックの外側の要素のClassを取得。
- *
- * @param {*} el
- */
-const getContainerClass = (el) =>{
-
-	if(!el.hasOwnProperty('props')){
-		return
-	}
-
-	let containerClass = "";
-	if(el.props.hasOwnProperty('className')){
-		containerClass = el.props.className
-
-	//WP5.6でBlockEditorのデータ構造が変更。
-	} else if(el.props.hasOwnProperty('blockProps')) {
-		containerClass = el.props.blockProps.className
-	}
-
-	return containerClass;
-}
-
 // Add column css for editor.
 const vkbwithClientIdClassName = createHigherOrderComponent(
 	(BlockListBlock) => {
@@ -107,6 +84,10 @@ addFilter(
  */
 const addSwiperConfig = (el, type, attributes) => {
 
+	console.log(type)
+	console.log(attributes)
+
+
 	const savedBlockVersion = window.vkbSavedBlockVersion;
 	const currentBlockVersion = window.vkbproVersion;
 
@@ -117,6 +98,7 @@ const addSwiperConfig = (el, type, attributes) => {
 
 	if ('vk-blocks/slider' === type.name && savedBlockVersion) {
 
+		//TODO: _saved_block_versionだと、
 		console.log({el})
 		console.log({"isElInFilterDeprecated(el)":isElInFilterDeprecated(el)})
 		console.log(!isElInFilterDeprecated(el))

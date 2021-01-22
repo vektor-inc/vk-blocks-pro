@@ -35,6 +35,7 @@ export const settings = {
  * @param {*} attributes
  */
 const addAnimationActiveClass = (el, type, attributes) => {
+	console.log(type)
 	if (window.wpVersion && compareVersions(window.wpVersion, '5.6') >= 0) {
 		return el;
 	}

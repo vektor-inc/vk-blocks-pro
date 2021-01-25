@@ -5,7 +5,7 @@ import SliderHook0_60_1 from './0.60.1'
 export default function deprecatedHooks( el, attributes, saveFunName ){
 
 	if("save_0_60_1_save_save" === saveFunName) {
-
+		// 0.60.1
 		return <SliderHook0_60_1
 			el={el}
 			attributes={attributes}

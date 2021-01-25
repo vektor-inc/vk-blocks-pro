@@ -8,7 +8,7 @@ import {
 	InnerBlocks,
 	useBlockProps,
 } from '@wordpress/block-editor';
-
+import { dispatch } from '@wordpress/data';
 import {
 	RangeControl,
 	RadioControl,
@@ -29,7 +29,8 @@ export default function SliderItemEdit(props) {
 		bgSize,
 	} = attributes;
 
-	setAttributes({ clientId });
+	attributes.clientId = clientId;
+	// dispatch('core/editor').updateBlockAttributes(clientId, {clientId});
 
 	//classPaddingLRのクラス切り替え
 	let classPaddingLR = '';

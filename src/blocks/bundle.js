@@ -11,7 +11,6 @@ import "@vkblocks/extensions/core/image/style";
 import "@vkblocks/extensions/common/hidden-extension";
 import "@vkblocks/extensions/common/highlighter";
 import "@vkblocks/extensions/common/nowrap";
-import "@vkblocks/blocks/staff/block.js";
 
 // /*WP5.3 以下では読み込まれない*/
 import "@vkblocks/extensions/common/responsive-br";

@@ -1,7 +1,6 @@
 /**
  * highlighter block type
  */
-/* eslint no-shadow: 0 */
 import { __ } from '@wordpress/i18n'; // Import __() from wp.i18n
 import {
 	registerFormatType,
@@ -42,14 +41,14 @@ registerFormatType(name, {
 			activeColor = activeFormat.attributes.data;
 		}
 
-		const setColorIfUndefined = (activeColor) => {
+		const setColorIfUndefined = () => {
 			if (activeColor === undefined) {
 				activeColor = defaultColor;
 			}
 			return activeColor;
 		};
 
-		const onToggle = (activeColor) => {
+		const onToggle = () => {
 			activeColor = setColorIfUndefined(activeColor);
 
 			onChange(

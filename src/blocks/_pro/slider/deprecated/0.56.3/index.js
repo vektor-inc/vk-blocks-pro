@@ -1,5 +1,5 @@
 const { InnerBlocks } = wp.blockEditor;
-const { __ } = wp.i18n; // Import __() from wp.i18n
+const { __ } = wp.i18n;
 import classNames from "classnames";
 
 export const ColumnResponsive0563 = (props) => {

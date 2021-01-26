@@ -3,7 +3,7 @@
  *
  */
 import { ReactComponent as Icon } from './icon.svg';
-import { __ } from '@wordpress/i18n'; // Import __() from wp.i18n
+import { __ } from '@wordpress/i18n';
 import { title, content } from '@vkblocks/utils/example-data';
 
 import deprecated from './deprecated/index';

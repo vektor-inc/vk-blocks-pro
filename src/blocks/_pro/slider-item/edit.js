@@ -29,8 +29,7 @@ export default function SliderItemEdit(props) {
 		bgSize,
 	} = attributes;
 
-	attributes.clientId = clientId;
-	// dispatch('core/editor').updateBlockAttributes(clientId, {clientId});
+	attributes.clientId = clientId
 
 	//classPaddingLRのクラス切り替え
 	let classPaddingLR = '';

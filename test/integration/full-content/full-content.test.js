@@ -66,6 +66,9 @@ describe( 'full post content fixture', () => {
 			writable: false,
 		} );
 
+		// Load all hooks that modify blocks
+		require( './../../../src/blocks/_pro/slider' );
+
 		// ブロックカテゴリー取得
 		const blockCategories = getCategories();
 

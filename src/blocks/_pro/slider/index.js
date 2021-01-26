@@ -89,7 +89,12 @@ const addSwiperConfig = (el, type, attributes) => {
 
 		const saveFunName = type.save.name;
 
-		if('slider_save_save' === saveFunName) {
+		console.log(type)
+		console.log(saveFunName)
+
+		// save : build でビルド時
+		// slider_save_save : build:dev でビルド時
+		if('save' === saveFunName || 'slider_save_save' === saveFunName) {
 			//最新版
 			const cssTag = generateHeightCss(attributes, cssSelector);
 			return (

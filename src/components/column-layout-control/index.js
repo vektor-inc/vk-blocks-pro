@@ -52,7 +52,7 @@ export const setOptions = (name) => {
 
 const ColumnLayoutControlRaw = () =>
 	createHigherOrderComponent(
-		() =>
+		(WrappedComponent) =>
 			class extends Component {
 				render() {
 					const { setAttributes, attributes } = this.props;
@@ -74,7 +74,7 @@ const ColumnLayoutControlRaw = () =>
 									options={setOptions(name)}
 								/>
 							</BaseControl>
-							<ColumnLayout {...this.props} />
+							<WrappedComponent {...this.props} />
 						</PanelBody>
 					);
 				}

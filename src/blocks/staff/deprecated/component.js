@@ -1,8 +1,7 @@
 import { __ } from '@wordpress/i18n';
 import { Button } from '@wordpress/components';
 import { Component } from '@wordpress/element';
-import { vkbBlockEditor } from "../../../utils/depModules";
-const { RichText, MediaUpload } = vkbBlockEditor;
+import { RichText, MediaUpload } from '@wordpress/block-editor';
 
 export class NewComponent extends Component {
 

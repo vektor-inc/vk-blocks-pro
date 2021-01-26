@@ -11,7 +11,6 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
-import React from 'react';
 import { select, dispatch } from '@wordpress/data';
 
 export default function IconCardEdit(props) {

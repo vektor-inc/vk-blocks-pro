@@ -1,9 +1,7 @@
-import { __ } from '@wordpress/i18n'; // Import __() from wp.i18n
+import { __ } from '@wordpress/i18n';
 import { PanelBody } from '@wordpress/components';
 import { InspectorControls, InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
-
-import React from 'react';
 
 import { dispatchEditor } from '@vkblocks/utils/depModules';
 import { asyncGetInnerBlocks } from '@vkblocks/utils/asyncHooks';

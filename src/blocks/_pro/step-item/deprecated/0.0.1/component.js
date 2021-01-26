@@ -1,7 +1,7 @@
 import { InnerBlocks } from '@wordpress/block-editor';
-import React from 'react';
+import { Component } from '@wordpress/element';
 
-export class Component extends React.Component {
+export class StepItem extends Component {
 	render() {
 		const {
 			label,

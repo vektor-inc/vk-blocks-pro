@@ -1,8 +1,8 @@
-import { Component } from './component';
+import { Step } from './component';
 
 export default function save({ attributes, className }) {
 	return (
-		<Component
+		<Step
 			attributes={attributes}
 			className={className}
 			for_={'save'}

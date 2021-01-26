@@ -27,6 +27,7 @@ import * as pageContent from './page-content';
 import * as prBlocks from './pr-blocks';
 import * as prContent from './pr-content';
 import * as spacer from './spacer';
+import * as staff from './staff';
 import * as animation from './_pro/animation';
 import * as card from './_pro/card';
 import * as cardItem from './_pro/card-item';
@@ -61,6 +62,7 @@ export const __getVKBlocks = () => [
 	prBlocks,
 	prContent,
 	spacer,
+	staff,
 	animation,
 	card,
 	cardItem,

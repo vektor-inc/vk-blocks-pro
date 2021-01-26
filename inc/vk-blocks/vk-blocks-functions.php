@@ -157,6 +157,7 @@ function vkblocks_blocks_assets() {
 			'pr-blocks',
 			'pr-content',
 			'spacer',
+			'staff',
 		);
 		$arr_wp56_pro = array(
 			'grid-column',

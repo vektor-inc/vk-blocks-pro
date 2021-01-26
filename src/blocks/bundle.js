@@ -11,10 +11,7 @@ import "@vkblocks/extensions/core/image/style";
 import "@vkblocks/extensions/common/hidden-extension";
 import "@vkblocks/extensions/common/highlighter";
 import "@vkblocks/extensions/common/nowrap";
-
-// /*WP5.3 以下では読み込まれない*/
 import "@vkblocks/extensions/common/responsive-br";
-import "@vkblocks/blocks/_pro/step-item/block.js";
-import "@vkblocks/blocks/_pro/step/block.js";
+
 import "@vkblocks/blocks/_pro/slider/block.js";
 import "@vkblocks/blocks/_pro/slider-item/block.js";

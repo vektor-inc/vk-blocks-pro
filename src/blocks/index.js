@@ -41,6 +41,8 @@ import * as iconCard from './_pro/icon-card';
 import * as iconCardItem from './_pro/icon-card-item';
 import * as gridColumn from './_pro/grid-column';
 import * as gridColumnItem from './_pro/grid-column-item';
+import * as step from './_pro/step';
+import * as stepItem from './_pro/step-item';
 
 /**
  * Function to get all the VK Blocks in an array.
@@ -66,6 +68,8 @@ export const __getVKBlocks = () => [
 	cardItem,
 	childPage,
 	postList,
+	step,
+	stepItem,
 	timeline,
 	timelineItem,
 	outer,

@@ -11,7 +11,6 @@ import metadata from './block.json';
 import save from './save';
 
 import { __ } from '@wordpress/i18n';
-import React from 'react';
 
 const { name } = metadata;
 

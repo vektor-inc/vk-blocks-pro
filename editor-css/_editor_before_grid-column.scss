@@ -1,7 +1,7 @@
 /*-------------------------------------------*/
-/* .vk_grid-column Layout
+/* .wp-block-vk-blocks-grid-column Layout
 /*-------------------------------------------*/
-.vk_grid-column .block-editor-inner-blocks .block-editor-block-list__layout {
+.wp-block-vk-blocks-grid-column .block-editor-inner-blocks .block-editor-block-list__layout {
 	border:none;
 	display: flex;
 	flex-direction: row;
@@ -162,13 +162,13 @@
 			max-width: var(--vk-width-couter-col-12) ;
 		}
 	}
-}//.vk_grid-column
+}//.wp-block-vk-blocks-grid-column 
 
-.vk_grid-column .block-list-appender{
+.wp-block-vk-blocks-grid-column  .block-list-appender{
 	width: 100%;
 }
 
-.vk_grid-column {
+.wp-block-vk-blocks-grid-column  {
 	div[data-type="vk-blocks/grid-column-item"]{
 		// これがないとカラムのセルが潰れて中に何もいれられない
 		min-height:30px;
@@ -176,6 +176,7 @@
 	.wp-block-vk-blocks-grid-column-item .block-editor-block-list__layout{
 		// プレースホルダーの文字が枠から左にはみ出す
 		margin-left:0;
+		margin-right: 0;
 	}
 	.wp-block-vk-blocks-grid-column-item{
 		.wp-block[data-align="left"], .wp-block[data-align="right"]{

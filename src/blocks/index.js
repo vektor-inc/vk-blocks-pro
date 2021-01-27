@@ -137,3 +137,6 @@ export const registerVKBlocks = (
 ) => {
 	blocks.forEach( registerBlock );
 };
+
+// リファクタリング後の新方式で読み込み
+registerVKBlocks();

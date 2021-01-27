@@ -1,6 +1,7 @@
 import { __ } from '@wordpress/i18n';
 
-wp.blocks.registerBlockStyle('core/image', [
+import { registerBlockStyle } from '@wordpress/blocks';
+registerBlockStyle('core/image', [
 	{
 		name: 'vk-image-rounded',
 		label: __('Rounded02', 'vk-blocks'),

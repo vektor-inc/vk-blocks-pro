@@ -97,7 +97,8 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 
 addFilter('editor.BlockEdit', 'vk-blocks/list-style', addBlockControl);
 
-wp.blocks.registerBlockStyle('core/list', [
+import { registerBlockStyle } from '@wordpress/blocks';
+registerBlockStyle('core/list', [
 	{
 		name: 'vk-default',
 		label: __('Default', 'vk-blocks'),

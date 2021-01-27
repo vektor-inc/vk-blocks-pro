@@ -98,7 +98,8 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 
 addFilter('editor.BlockEdit', 'vk-blocks/group-style', addBlockControl);
 
-wp.blocks.registerBlockStyle('core/group', [
+import { registerBlockStyle } from '@wordpress/blocks';
+registerBlockStyle('core/group', [
 	{
 		name: 'vk-group-solid',
 		label: __('Solid', 'vk-blocks'),

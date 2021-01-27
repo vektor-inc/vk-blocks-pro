@@ -23,7 +23,8 @@ export const addAttribute = (settings) => {
 };
 addFilter('blocks.registerBlockType', 'vk-blocks/heading-style', addAttribute);
 
-wp.blocks.registerBlockStyle('core/heading', [
+import { registerBlockStyle } from '@wordpress/blocks';
+registerBlockStyle('core/heading', [
 	{
 		name: 'vk-heading-default',
 		label: __('Default', 'vk-blocks'),

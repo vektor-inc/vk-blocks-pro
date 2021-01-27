@@ -30,7 +30,6 @@ add_action(
 function vkblocks_get_options() {
 	$options  = get_option( 'vk_blocks_options' );
 	$defaults = array(
-		'display_wp_block_template' => 'hide',
 		'balloon_border_width'      => 1,
 	);
 	$defaults = array_merge( $defaults, apply_filters( 'vk_blocks_default_options', array() ) );

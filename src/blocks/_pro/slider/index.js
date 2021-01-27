@@ -85,17 +85,13 @@ const addSwiperConfig = (el, type, attributes) => {
 
 	const cssSelector = `.vk_slider_${attributes.clientId},`;
 
-	if ('vk-blocks/slider' === type.name && type.save.name) {
+	if ('vk-blocks/slider' === type.name) {
 
-		const saveFunName = type.save.name;
+		//現在実行されている deprecated内の save関数のindexを取得
+		const deprecatedFuncIndex = deprecated.findIndex( item => item.save === type.save)
 
-		console.log(type)
-		console.log(saveFunName)
-
-		// save : build でビルド時
-		// slider_save_save : build:dev でビルド時
-		if('save' === saveFunName || 'slider_save_save' === saveFunName) {
-			//最新版
+		// 最新版
+		if( -1 === deprecatedFuncIndex ) {
 			const cssTag = generateHeightCss(attributes, cssSelector);
 			return (
 				<>
@@ -103,9 +99,11 @@ const addSwiperConfig = (el, type, attributes) => {
 					<style type="text/css">{cssTag}</style>
 				</>
 			);
+
+		//後方互換
 		} else {
-			//後方互換
-			return deprecatedHooks( el, attributes, saveFunName );
+			const DeprecatedHook = deprecatedHooks[deprecatedFuncIndex]
+			return <DeprecatedHook el={el} attributes={attributes}/>;
 		}
 
 	} else {

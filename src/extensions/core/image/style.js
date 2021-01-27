@@ -2,6 +2,10 @@ import { __ } from '@wordpress/i18n';
 
 wp.blocks.registerBlockStyle('core/image', [
 	{
+		name: 'vk-image-rounded',
+		label: __('Rounded', 'vk-blocks'),
+	},
+	{
 		name: 'vk-image-border',
 		label: __('Border', 'vk-blocks'),
 	},

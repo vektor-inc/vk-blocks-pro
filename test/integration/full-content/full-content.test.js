@@ -247,7 +247,7 @@ describe( 'full post content fixture', () => {
 			// `save` functions and attributes.
 			// The `core/template` is not worth testing here because it's never saved, it's covered better in e2e tests.
 			.filter(
-				( name ) => ! [ 'core/embed', 'core/template', 'vk-blocks/page-content', 'vk-blocks/post-list', 'vk-blocks/child-page', 'vk-blocks/card-item', 'vk-blocks/icon-card-item', 'vk-blocks/grid-column-item', 'vk-blocks/slider-item' ].includes( name )
+				( name ) => ! [ 'core/embed', 'core/template', 'vk-blocks/page-content', 'vk-blocks/post-list', 'vk-blocks/child-page', 'vk-blocks/card-item', 'vk-blocks/icon-card-item', 'vk-blocks/grid-column-item', 'vk-blocks/step-item', 'vk-blocks/slider-item' ].includes( name )
 			)
 			.forEach( ( name ) => {
 				const nameToFilename = blockNameToFixtureBasename( name );

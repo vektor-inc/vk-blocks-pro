@@ -27,6 +27,7 @@ import * as pageContent from './page-content';
 import * as prBlocks from './pr-blocks';
 import * as prContent from './pr-content';
 import * as spacer from './spacer';
+import * as staff from './staff';
 import * as animation from './_pro/animation';
 import * as card from './_pro/card';
 import * as cardItem from './_pro/card-item';
@@ -40,20 +41,24 @@ import * as iconCard from './_pro/icon-card';
 import * as iconCardItem from './_pro/icon-card-item';
 import * as gridColumn from './_pro/grid-column';
 import * as gridColumnItem from './_pro/grid-column-item';
+import * as step from './_pro/step';
+import * as stepItem from './_pro/step-item';
 import * as slider from './_pro/slider';
 import * as sliderItem from './_pro/slider-item';
 
 /**
  * Extensions
  */
-import "@vkblocks/extensions/common/hidden-extension";
-import "@vkblocks/extensions/common/highlighter";
-import "@vkblocks/extensions/common/nowrap";
-import "@vkblocks/extensions/common/responsive-br";
+import "@vkblocks/translation_dummy.js";
 import "@vkblocks/extensions/core/heading/style";
 import "@vkblocks/extensions/core/group/style";
 import "@vkblocks/extensions/core/list/style";
 import "@vkblocks/extensions/core/image/style";
+import "@vkblocks/extensions/common/hidden-extension";
+import "@vkblocks/extensions/common/highlighter";
+import "@vkblocks/extensions/common/nowrap";
+import "@vkblocks/extensions/common/responsive-br";
+
 
 /**
  * Function to get all the VK Blocks in an array.
@@ -73,11 +78,14 @@ export const __getVKBlocks = () => [
 	prBlocks,
 	prContent,
 	spacer,
+	staff,
 	animation,
 	card,
 	cardItem,
 	childPage,
 	postList,
+	step,
+	stepItem,
 	timeline,
 	timelineItem,
 	outer,

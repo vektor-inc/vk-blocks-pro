@@ -1,7 +1,6 @@
 import { InnerBlocks } from '@wordpress/block-editor';
 import { Component } from '@wordpress/element';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
-import React from 'react';
 
 export class DepCompo01 extends Component {
 	render() {

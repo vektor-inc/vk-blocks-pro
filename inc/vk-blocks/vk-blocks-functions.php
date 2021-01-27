@@ -30,7 +30,6 @@ add_action(
 function vkblocks_get_options() {
 	$options  = get_option( 'vk_blocks_options' );
 	$defaults = array(
-		'display_wp_block_template' => 'hide',
 		'balloon_border_width'      => 1,
 	);
 	$defaults = array_merge( $defaults, apply_filters( 'vk_blocks_default_options', array() ) );
@@ -139,8 +138,6 @@ function vkblocks_blocks_assets() {
 
 	if( is_lager_than_wp('5.0') ){
 
-		//register_blockで読み込むブロック
-		$arr = array( 'staff', 'step', 'step-item' );
 		//register_block_type_from_metadataで読み込むブロック
 		$arr_wp56 = array(
 			'alert',
@@ -156,7 +153,8 @@ function vkblocks_blocks_assets() {
 			'page-content',
 			'pr-blocks',
 			'pr-content',
-			'spacer'
+			'spacer',
+			'staff',
 		);
 		$arr_wp56_pro = array(
 			'grid-column',
@@ -168,6 +166,8 @@ function vkblocks_blocks_assets() {
 			'icon-card',
 			'icon-card-item',
 			'post-list',
+			'step',
+			'step-item',
 			'timeline',
 			'timeline-item',
 			'table-of-contents-new',
@@ -183,12 +183,6 @@ function vkblocks_blocks_assets() {
 			foreach ( $arr_wp56_pro as $array ) {
 				require_once VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $array . '/index.php';
 			}
-		} else {
-			$arr = array_merge(
-				$arr,
-				$arr_wp56,
-				$arr_wp56_pro
-			);
 		}
 
 		global $vk_blocks_common_attributes;
@@ -227,16 +221,6 @@ function vkblocks_blocks_assets() {
 			),
 		);
 
-		foreach ( $arr as $value ) {
-			register_block_type(
-				'vk-blocks/' . $value,
-				array(
-					// 'style'         => 'vk-blocks-build-css',
-					'editor_style'  => 'vk-blocks-build-editor-css',
-					'editor_script' => 'vk-blocks-build-js',
-				)
-			);
-		} // foreach ( $arr as $value ) {
 	} // if ( defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, '5.0', '>=' ) ) {
 
 	$dynamic_css = '

@@ -1,4 +1,4 @@
-const { Component } = wp.element;
+import { Component } from '@wordpress/element';
 import ReactHtmlParser from 'react-html-parser';
 
 export class VKBButton extends Component {

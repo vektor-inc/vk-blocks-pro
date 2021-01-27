@@ -4,8 +4,7 @@
  */
 
 import { VKBButton } from './component';
-import { vkbBlockEditor } from "./../../../_helper/depModules";
-const { RichText } = vkbBlockEditor;
+import { RichText } from '@wordpress/block-editor';
 
 export default function save( { attributes, className } ) {
 	const {

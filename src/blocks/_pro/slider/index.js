@@ -7,7 +7,7 @@ import { __ } from '@wordpress/i18n';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { addFilter } from '@wordpress/hooks';
 
-import deprecatedHooks from './deprecated/hooks'
+import deprecatedHooks from './deprecated/hooks';
 import deprecated from './deprecated/save';
 import edit from './edit';
 import metadata from './block.json';
@@ -82,16 +82,16 @@ addFilter(
  * @param {*} attributes
  */
 const addSwiperConfig = (el, type, attributes) => {
-
 	const cssSelector = `.vk_slider_${attributes.clientId},`;
 
 	if ('vk-blocks/slider' === type.name) {
-
 		//現在実行されている deprecated内の save関数のindexを取得
-		const deprecatedFuncIndex = deprecated.findIndex( item => item.save === type.save)
+		const deprecatedFuncIndex = deprecated.findIndex(
+			(item) => item.save === type.save
+		);
 
 		// 最新版
-		if( -1 === deprecatedFuncIndex ) {
+		if (-1 === deprecatedFuncIndex) {
 			const cssTag = generateHeightCss(attributes, cssSelector);
 			return (
 				<>
@@ -100,15 +100,12 @@ const addSwiperConfig = (el, type, attributes) => {
 				</>
 			);
 
-		//後方互換
-		} else {
-			const DeprecatedHook = deprecatedHooks[deprecatedFuncIndex]
-			return <DeprecatedHook el={el} attributes={attributes}/>;
+			//後方互換
 		}
-
-	} else {
-		// Slider以外のブロック
-		return el;
+		const DeprecatedHook = deprecatedHooks[deprecatedFuncIndex];
+		return <DeprecatedHook el={el} attributes={attributes} />;
 	}
+	// Slider以外のブロック
+	return el;
 };
 addFilter('blocks.getSaveElement', 'vk-blocks/slider', addSwiperConfig);

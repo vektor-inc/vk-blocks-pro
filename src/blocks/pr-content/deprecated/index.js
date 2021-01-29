@@ -3,6 +3,7 @@ import save001 from './0.0.1/save';
 import save002 from './0.0.2/save';
 import save0_5_1 from './0.5.1/save';
 import save0_43_0 from './0.43.0/save';
+import save0_58_7 from './0.58.7/save';
 import save0_58_9 from './0.58.9/save';
 
 const blockAttributes = {
@@ -87,6 +88,10 @@ const deprecated = [
 	{
 		attributes: blockAttributes3,
 		save: save0_58_9,
+	},
+	{
+		attributes: blockAttributes3,
+		save: save0_58_7,
 	},
 	{
 		attributes: blockAttributes3,

@@ -68,21 +68,23 @@ const blockAttributes = {
 
 const blockAttributes2 = {
 	...blockAttributes,
-	...blockAttributes.titleColor.default='',
-	...blockAttributes.contentColor.default='',
-	...blockAttributes.url.default='',
-	...blockAttributes.buttonColorCustom.default='',
-	...blockAttributes.Image.default='{}',
-	...blockAttributes.ImageBorderColor.default='',
-	...blockAttributes.fontAwesomeIconBefore.default='',
-	...blockAttributes.fontAwesomeIconAfter.default='',
-}
+	...(blockAttributes.titleColor.default = ''),
+	...(blockAttributes.contentColor.default = ''),
+	...(blockAttributes.url.default = ''),
+	...(blockAttributes.buttonColorCustom.default = ''),
+	...(blockAttributes.Image.default = '{}'),
+	...(blockAttributes.ImageBorderColor.default = ''),
+	...(blockAttributes.fontAwesomeIconBefore.default = ''),
+	...(blockAttributes.fontAwesomeIconAfter.default = ''),
+};
 
 const blockAttributes3 = {
 	...blockAttributes2,
-	...blockAttributes2.fontAwesomeIconBefore.default='<i class="fas fa-user"></i>',
-	...blockAttributes2.fontAwesomeIconAfter.default='<i class="fas fa-user"></i>',
-}
+	...(blockAttributes2.fontAwesomeIconBefore.default =
+		'<i class="fas fa-user"></i>'),
+	...(blockAttributes2.fontAwesomeIconAfter.default =
+		'<i class="fas fa-user"></i>'),
+};
 
 const deprecated = [
 	{

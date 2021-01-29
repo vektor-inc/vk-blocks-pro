@@ -23,8 +23,10 @@ export default function GridColumnEdit(props) {
 			if( thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
 
 				const thisInnerBlocks = thisBlock[0].innerBlocks;
-				thisInnerBlocks.forEach(function( element, index ){
-					updateBlockAttributes(thisInnerBlocks[index].clientId, {
+
+				thisInnerBlocks.forEach(function( thisInnerBlock ){
+
+					updateBlockAttributes(thisInnerBlock.clientId, {
 						name: attributes.name,
 						layout: attributes.layout,
 						col_xs: attributes.col_xs,
@@ -37,7 +39,7 @@ export default function GridColumnEdit(props) {
 				})
 			}
 		}
-		,[thisBlock,attributes]
+		,[ thisBlock, attributes ]
 	);
 
 	const ALLOWED_BLOCKS = [['vk-blocks/grid-column-item']];

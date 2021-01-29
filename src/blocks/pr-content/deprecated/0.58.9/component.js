@@ -1,11 +1,10 @@
 import classNames from "classnames";
-import { Fontawesome } from "../component-fontawesome";
-
-const { __ } = wp.i18n; // Import __() from wp.i18n
-const { Button } = wp.components;
-const { Component } = wp.element;
-import { vkbBlockEditor, fixBrokenUnicode } from "./../../../_helper/depModules";
-const { MediaUpload, RichText } = vkbBlockEditor;
+import { __ } from '@wordpress/i18n';
+import { Button } from '@wordpress/components';
+import { Component } from '@wordpress/element';
+import { MediaUpload, RichText } from '@wordpress/block-editor';
+import { fixBrokenUnicode } from '@vkblocks/utils/fixBrokenUnicode';
+import { Fontawesome } from '../component-fontawesome';
 
 export class PRcontent extends Component {
   render() {

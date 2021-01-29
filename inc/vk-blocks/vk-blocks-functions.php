@@ -82,43 +82,17 @@ function is_lager_than_wp( $target_version, $syntax=">=" ) {
 
 function vkblocks_blocks_assets() {
 
+	$asset_file = include plugin_dir_path( __FILE__ ) . '/build/block-build.asset.php';
+
 	// CSSを登録
 	wp_register_style( 'vk-blocks-build-css', VK_BLOCKS_URL . 'build/block-build.css', array(), VK_BLOCKS_VERSION );
 	wp_register_style( 'vk-blocks-build-editor-css', VK_BLOCKS_URL . 'build/block-build-editor.css', array(), VK_BLOCKS_VERSION );
-
-	//依存関係を定義
-	$dependency = array(
-		'wp-blocks',
-		'wp-i18n',
-		'wp-element',
-		'wp-editor',
-		'wp-hooks',
-		'wp-compose',
-		'wp-edit-post',
-		'wp-components',
-		'wp-data',
-		'wp-plugins',
-		'wp-hooks',
-		'wp-api-fetch',
-		'wp-viewport',
-	);
-	$dependency_wp53 = array(
-		'wp-block-editor',
-	);
-
-	//wp5.3以上で使えるAPIを追加。
-	if( is_lager_than_wp('5.3') ){
-		$dependency = array_merge(
-			$dependency,
-			$dependency_wp53
-		);
-	}
 
 	//ブロックのJavascriptを登録
 	wp_register_script(
 		'vk-blocks-build-js',
 		VK_BLOCKS_URL . 'build/block-build.js',
-		$dependency,
+		$asset_file['dependencies'],
 		VK_BLOCKS_VERSION,
 		true
 	);

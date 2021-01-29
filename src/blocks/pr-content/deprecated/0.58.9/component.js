@@ -5,6 +5,7 @@ import { Component } from '@wordpress/element';
 import { MediaUpload, RichText } from '@wordpress/block-editor';
 import { fixBrokenUnicode } from '@vkblocks/utils/fixBrokenUnicode';
 import { Fontawesome } from '../component-fontawesome';
+import React from 'react';
 
 export class PRcontent extends Component {
   render() {

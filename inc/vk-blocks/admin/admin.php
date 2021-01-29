@@ -10,7 +10,6 @@ if ( ! function_exists('vk_blocks_setting') ) {
 		<form method="post" action="<?php echo esc_url( $_SERVER['REQUEST_URI'] ) ;?>">
 			<?php wp_nonce_field( 'vkb-nonce-key', 'vkb-setting-page' ); ?>
 			<?php
-			require_once dirname( __FILE__ ) . '/admin-block-patterns.php';
 			require_once dirname( __FILE__ ) . '/admin-balloon.php';
 			do_action( 'vk_blocks_pro_admin' );
 			?>

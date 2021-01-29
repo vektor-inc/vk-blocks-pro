@@ -5,7 +5,7 @@ import {
 	SelectControl,
 	CheckboxControl,
 } from '@wordpress/components';
-import { InspectorControls } from '@wordpress/block-editor';
+import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { withSelect } from '@wordpress/data';
 import ServerSideRender from '@wordpress/server-side-render';
 import { DisplayItemsControl } from '@vkblocks/components/display-items-control';
@@ -54,6 +54,8 @@ export default withSelect((select) => {
 	}
 	*/
 
+	const blockProps = useBlockProps();
+
 	return (
 		<>
 			<InspectorControls>
@@ -86,10 +88,12 @@ export default withSelect((select) => {
 				<ColumnLayoutControl {...props} />
 				<DisplayItemsControl {...props} />
 			</InspectorControls>
-			<ServerSideRender
-				block="vk-blocks/child-page"
-				attributes={attributes}
-			/>
+			<div {...blockProps}>
+				<ServerSideRender
+					block="vk-blocks/child-page"
+					attributes={attributes}
+				/>
+			</div>
 		</>
 	);
 });

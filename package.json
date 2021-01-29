@@ -44,6 +44,8 @@
     "lint:grid-column-item": "wp-scripts format-js src/blocks/_pro/grid-column-item && wp-scripts lint-js src/blocks/_pro/grid-column-item --fix",
 		"lint:step": "wp-scripts format-js src/blocks/_pro/step && wp-scripts lint-js src/blocks/_pro/step --fix",
 		"lint:step-item": "wp-scripts format-js src/blocks/_pro/step-item && wp-scripts lint-js src/blocks/_pro/step-item --fix",
+		"lint:slider": "wp-scripts format-js src/blocks/_pro/slider && wp-scripts lint-js src/blocks/_pro/slider --fix",
+    "lint:slider-item": "wp-scripts format-js src/blocks/_pro/slider-item && wp-scripts lint-js src/blocks/_pro/slider-item --fix",
 		"lint:extensions": "wp-scripts format-js src/extensions/ && wp-scripts lint-js src/extensions/ --fix",
     "lint:components": "wp-scripts format-js src/components/ && wp-scripts lint-js src/components/ --fix",
     "lint:utils": "wp-scripts format-js src/utils && wp-scripts lint-js src/utils --fix",
@@ -54,7 +56,10 @@
     "composer:install:win": "wp-env run composer \"composer install\"",
     "composer:install:mac": "wp-env run composer 'composer install'",
     "phpunit:win": "wp-env run phpunit \"phpunit -c /var/www/html/wp-content/plugins/vk-blocks-pro/phpunit.xml.dist --verbose\"",
-    "phpunit:mac": "wp-env run phpunit 'phpunit -c /var/www/html/wp-content/plugins/vk-blocks-pro/phpunit.xml.dist --verbose'"
+    "phpunit:mac": "wp-env run phpunit 'phpunit -c /var/www/html/wp-content/plugins/vk-blocks-pro/phpunit.xml.dist --verbose'",
+    "cli": "wp-env run cli",
+    "show:savedVersion": "bash -c 'npm run cli wp post meta get $0 _vkb_saved_block_version'",
+    "update:savedVersion": "bash -c 'npm run cli wp post meta update $0 _vkb_saved_block_version $1'"
   },
   "author": "",
   "license": "MIT",

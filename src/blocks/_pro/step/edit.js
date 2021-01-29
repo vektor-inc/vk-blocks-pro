@@ -1,6 +1,10 @@
 import { __ } from '@wordpress/i18n';
 import { PanelBody } from '@wordpress/components';
-import { InspectorControls, InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import {
+	InspectorControls,
+	InnerBlocks,
+	useBlockProps,
+} from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
 
 import { dispatchEditor } from '@vkblocks/utils/depModules';
@@ -8,11 +12,7 @@ import { asyncGetInnerBlocks } from '@vkblocks/utils/asyncHooks';
 
 const { updateBlockAttributes } = dispatchEditor;
 
-export default function StepEdit({
-	attributes,
-	setAttributes,
-	clientId,
-}) {
+export default function StepEdit({ attributes, setAttributes, clientId }) {
 	const { firstDotNum } = attributes;
 	const containerClass = ' vk_step';
 	const ALLOWED_BLOCKS = ['vk-blocks/step-item'];

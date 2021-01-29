@@ -138,8 +138,6 @@ function vkblocks_blocks_assets() {
 
 	if( is_lager_than_wp('5.0') ){
 
-		//register_blockで読み込むブロック
-		$arr = array( 'slider', 'slider-item' );
 		//register_block_type_from_metadataで読み込むブロック
 		$arr_wp56 = array(
 			'alert',
@@ -166,7 +164,7 @@ function vkblocks_blocks_assets() {
 			'card-item',
 			'child-page',
 			'icon-card',
-      'icon-card-item',
+			'icon-card-item',
 			'post-list',
 			'step',
 			'step-item',
@@ -174,6 +172,8 @@ function vkblocks_blocks_assets() {
 			'timeline-item',
 			'table-of-contents-new',
 			'outer',
+			'slider',
+			'slider-item',
 		);
 
     if( function_exists('register_block_type_from_metadata') ){
@@ -183,12 +183,6 @@ function vkblocks_blocks_assets() {
 			foreach ( $arr_wp56_pro as $array ) {
 				require_once VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $array . '/index.php';
 			}
-		} else {
-			$arr = array_merge(
-				$arr,
-				$arr_wp56,
-				$arr_wp56_pro
-			);
 		}
 
 		global $vk_blocks_common_attributes;
@@ -227,61 +221,6 @@ function vkblocks_blocks_assets() {
 			),
 		);
 
-		foreach ( $arr as $value ) {
-
-			if ( $value === 'table-of-contents' ) {
-
-				register_block_type(
-					'vk-blocks/' . $value,
-					array(
-						// 'style'        => 'vk-blocks-build-css',
-						'editor_style'    => 'vk-blocks-build-editor-css',
-						'editor_script'   => 'vk-blocks-build-js',
-						'attributes'      => array_merge(
-							array(
-								'style'      => array(
-									'type'    => 'string',
-									'default' => '',
-								),
-								'renderHtml' => array(
-									'type'    => 'string',
-									'default' => '',
-								),
-								'open'       => array(
-									'type'    => 'string',
-									'default' => 'open',
-								),
-								'className'  => array(
-									'type'    => 'string',
-									'default' => '',
-								),
-							),
-							$vk_blocks_common_attributes
-						),
-						'render_callback' => function ( $attributes ) {
-							if ( $attributes['renderHtml'] ) {
-								$custom_class = esc_attr( $attributes['className'] ) . ' ';
-								return preg_replace( '/class="/', 'class="' . $custom_class, $attributes['renderHtml'], 1 );
-							} else {
-								return '<div><div class="vk_tableOfContents_title">' . __( 'Table of Contents', 'vk-blocks' ) . '</div></div>';
-							}
-						},
-						'supports'        => array(),
-					)
-				);
-			} else {
-
-				register_block_type(
-					'vk-blocks/' . $value,
-					array(
-						// 'style'         => 'vk-blocks-build-css',
-						'editor_style'  => 'vk-blocks-build-editor-css',
-						'editor_script' => 'vk-blocks-build-js',
-					)
-				);
-
-			} // if ( $value === 'table-of-contents' ) {
-		} // foreach ( $arr as $value ) {
 	} // if ( defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, '5.0', '>=' ) ) {
 
 	$dynamic_css = '
@@ -314,7 +253,7 @@ if ( ! function_exists( 'vkblocks_blocks_categories' ) ) {
 			array(
 				array(
 					'slug'  => 'vk-blocks-cat',
-					'title' => $vk_blocks_prefix . __( 'Blocks', 'vk-all-in-one-expansion-unit' ),
+					'title' => $vk_blocks_prefix . __( 'Blocks', 'vk-blocks' ),
 					'icon'  => '',
 				),
 			)
@@ -324,7 +263,7 @@ if ( ! function_exists( 'vkblocks_blocks_categories' ) ) {
 			array(
 				array(
 					'slug'  => 'vk-blocks-cat-layout',
-					'title' => $vk_blocks_prefix . __( 'Blocks Layout', 'vk-all-in-one-expansion-unit' ),
+					'title' => $vk_blocks_prefix . __( 'Blocks Layout', 'vk-blocks' ),
 					'icon'  => '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z" /><path d="M19 13H5v-2h14v2z" /></svg>',
 				),
 			)
@@ -366,3 +305,16 @@ if ( function_exists( 'vkblocks_get_version' ) ) {
 	}
 	add_action( 'admin_head', 'vkblocks_set_vkbpro_version', 10, 0 );
 }
+
+function vkblocks_set_vkb_saved_block_version() {
+	// $current_post_id = $post_object->ID;
+	$post_id = get_the_ID();
+	$_vkb_saved_block_version = get_post_meta($post_id, '_vkb_saved_block_version', true);
+	if ( $_vkb_saved_block_version ) {
+		echo '<script>',
+		'var vkbSavedBlockVersion = "' . $_vkb_saved_block_version . '";',
+		'</script>';
+	}
+}
+add_action( 'admin_head', 'vkblocks_set_vkb_saved_block_version' );
+

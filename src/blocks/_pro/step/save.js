@@ -6,7 +6,7 @@ export default function save() {
 		className: `${containerClass}`,
 	});
 	return (
-		<div  {...blockProps}>
+		<div {...blockProps}>
 			<InnerBlocks.Content />
 		</div>
 	);

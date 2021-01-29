@@ -201,10 +201,5 @@ export class PRContent extends Component {
 }
 
 export default function save({ attributes, className }) {
-	return (
-		<PRContent
-			attributes={attributes}
-			for_={'save'}
-		/>
-	);
+	return <PRContent attributes={attributes} for_={'save'} />;
 }

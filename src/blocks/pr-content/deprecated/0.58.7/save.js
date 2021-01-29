@@ -3,7 +3,8 @@
  *
  */
 import { PRcontent } from './component';
-export default function save({ attributes, className }) {
+export default function save(props) {
+	const { attributes, className } = props;
 	return (
 		<PRcontent
 			attributes={attributes}

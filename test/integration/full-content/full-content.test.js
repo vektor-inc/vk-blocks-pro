@@ -35,7 +35,7 @@ import {
 
 const blockBasenames = getAvailableBlockFixturesBasenames();
 
-import { registerVKBlocks } from '@vkblocks/blocks';
+import { registerVKBlocks } from '@vkblocks/blocks/bundle'
 
 function normalizeParsedBlocks( blocks ) {
 	return blocks.map( ( block, index ) => {

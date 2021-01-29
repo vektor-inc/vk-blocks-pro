@@ -5,6 +5,7 @@
 import { assign } from 'lodash';
 import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
+import { registerBlockStyle } from '@wordpress/blocks';
 
 const isValidBlockType = (name) => {
 	const validBlockTypes = ['core/heading'];
@@ -23,7 +24,7 @@ export const addAttribute = (settings) => {
 };
 addFilter('blocks.registerBlockType', 'vk-blocks/heading-style', addAttribute);
 
-wp.blocks.registerBlockStyle('core/heading', [
+registerBlockStyle('core/heading', [
 	{
 		name: 'vk-heading-default',
 		label: __('Default', 'vk-blocks'),

@@ -1,11 +1,10 @@
 /**
  * WordPress dependenciess
  */
-const { lodash } = window;
-const { range } = lodash;
-const { __, sprintf } = wp.i18n;
-const { Component } = wp.element;
-const { Toolbar } = wp.components;
+import { range } from 'lodash';
+import { __, sprintf } from '@wordpress/i18n';
+import { Component } from '@wordpress/element';
+import { Toolbar } from '@wordpress/components';
 
 class HeadingToolbar extends Component {
 	createLevelControl(targetLevel, selectedLevel, onChange) {

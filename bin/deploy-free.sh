@@ -24,7 +24,7 @@ cd ./vk-blocks-free/
 # push先のブランチを切る
 git checkout -b add/vk-blocks-free
 # Pro版ブロックは読み込まないようjsから削除
-sed -i /_pro/d src/blocks/bundle.js
+sed -i /_pro/d src/blocks/index.js
 # プラグイン名を通常版へリネーム
 sed -i 3s/Pro// vk-blocks.php
  # Pro版のブロックslugを配列に追加（後で使用する）

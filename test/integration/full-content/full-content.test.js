@@ -35,7 +35,7 @@ import {
 
 const blockBasenames = getAvailableBlockFixturesBasenames();
 
-import { registerVKBlocks } from '@vkblocks/blocks';
+import { registerVKBlocks } from '@vkblocks/blocks/bundle'
 
 function normalizeParsedBlocks( blocks ) {
 	return blocks.map( ( block, index ) => {
@@ -65,6 +65,9 @@ describe( 'full post content fixture', () => {
 			value: '5.6',
 			writable: false,
 		} );
+
+		// Load all hooks that modify blocks
+		require( './../../../src/blocks/_pro/slider' );
 
 		// ブロックカテゴリー取得
 		const blockCategories = getCategories();
@@ -244,7 +247,7 @@ describe( 'full post content fixture', () => {
 			// `save` functions and attributes.
 			// The `core/template` is not worth testing here because it's never saved, it's covered better in e2e tests.
 			.filter(
-				( name ) => ! [ 'core/embed', 'core/template', 'vk-blocks/page-content', 'vk-blocks/post-list', 'vk-blocks/child-page', 'vk-blocks/card-item', 'vk-blocks/icon-card-item', 'vk-blocks/grid-column-item', 'vk-blocks/step-item', 'vk-blocks/timeline-item', 'vk-blocks/grid-column-item', 'vk-blocks/faq2-a', 'vk-blocks/faq2-q',   ].includes( name )
+				( name ) => ! [ 'core/embed', 'core/template', 'vk-blocks/page-content', 'vk-blocks/post-list', 'vk-blocks/child-page', 'vk-blocks/card-item', 'vk-blocks/icon-card-item', 'vk-blocks/grid-column-item', 'vk-blocks/step-item', 'vk-blocks/timeline-item', 'vk-blocks/grid-column-item', 'vk-blocks/faq2-a', 'vk-blocks/faq2-q', 'vk-blocks/slider-item'   ].includes( name )
 			)
 			.forEach( ( name ) => {
 				const nameToFilename = blockNameToFixtureBasename( name );

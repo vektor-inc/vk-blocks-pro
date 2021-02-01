@@ -1,5 +1,5 @@
 import ReactDOMServer from 'react-dom/server';
-import { useSelect, select } from '@wordpress/data';
+import { select } from '@wordpress/data';
 
 export const isAllowedBlock = (name, allowedBlocks) => {
 	return allowedBlocks.find((blockName) => blockName === name);

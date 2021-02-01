@@ -10,8 +10,7 @@ import {
 	getAllHeadings,
 	removeUnnecessaryElements,
 } from './toc-utils';
-import { useCurrentBlocks, useBlocksByName } from '@vkblocks/utils/hooks'
-
+import { useCurrentBlocks, useBlocksByName } from '@vkblocks/utils/hooks';
 
 export default function TOCEdit(props) {
 	const { attributes, setAttributes, className } = props;
@@ -21,58 +20,66 @@ export default function TOCEdit(props) {
 	});
 
 	const blocks = useCurrentBlocks();
-	const findBlocks = useBlocksByName('vk-blocks/table-of-contents-new')
+	const findBlocks = useBlocksByName('vk-blocks/table-of-contents-new');
 
-	useEffect(()=>{
-
+	useEffect(() => {
 		// 投稿に目次ブロックがなければ処理を実行しない
-		if(!findBlocks) {
-			return
+		if (!findBlocks) {
+			return;
 		}
 
-		blocks.forEach(function(block){
-
+		blocks.forEach(function (block) {
 			const { updateBlockAttributes } = dispatch('core/block-editor');
-			const headingBlocks= ['core/heading', 'vk-blocks/heading'];
-			const hasInnerBlocks = ['vk-blocks/outer', 'core/cover', 'core/group'];
+			const headingBlocks = ['core/heading', 'vk-blocks/heading'];
+			const hasInnerBlocks = [
+				'vk-blocks/outer',
+				'core/cover',
+				'core/group',
+			];
 
 			// 見出しにカスタムIDを追加
-			if(block.attributes.anchor === undefined && isAllowedBlock(block.name, headingBlocks)){
-
+			if (
+				block.attributes.anchor === undefined &&
+				isAllowedBlock(block.name, headingBlocks)
+			) {
 				updateBlockAttributes(block.clientId, {
 					anchor: `vk-htags-${block.clientId}`,
 				});
 
-			// InnerBlock内の見出しにカスタムIDを追加
-			} else if(isAllowedBlock(block.name, hasInnerBlocks)){
-
-				block.innerBlocks.forEach(function(innerBlock){
-
+				// InnerBlock内の見出しにカスタムIDを追加
+			} else if (isAllowedBlock(block.name, hasInnerBlocks)) {
+				block.innerBlocks.forEach(function (innerBlock) {
 					// 見出しにカスタムIDを追加
-					if(innerBlock.attributes.anchor === undefined && isAllowedBlock(innerBlock.name, headingBlocks)){
-
+					if (
+						innerBlock.attributes.anchor === undefined &&
+						isAllowedBlock(innerBlock.name, headingBlocks)
+					) {
 						updateBlockAttributes(innerBlock.clientId, {
 							anchor: `vk-htags-${innerBlock.clientId}`,
 						});
 					}
-				})
-			}
-
-			// 目次ブロックをアップデート
-			if(isAllowedBlock(block.name, ['vk-blocks/table-of-contents-new'])){
-
-				const open = block.attributes.open;
-				const headingsRaw = getAllHeadings(headingBlocks);
-				const headings = removeUnnecessaryElements(headingsRaw);
-				const render = returnHtml(headings, block.attributes, className, open);
-
-				updateBlockAttributes( block.clientId , {
-					renderHtml: render,
 				});
 			}
 
-		})
-	},[blocks])
+			// 目次ブロックをアップデート
+			if (
+				isAllowedBlock(block.name, ['vk-blocks/table-of-contents-new'])
+			) {
+				const headingsRaw = getAllHeadings(headingBlocks);
+				const headings = removeUnnecessaryElements(headingsRaw);
+				const render = returnHtml(
+					headings,
+					block.attributes,
+					className,
+					block.attributes.open
+				);
+
+				updateBlockAttributes(block.clientId, {
+					renderHtml: render,
+				});
+			}
+		});
+	}, [blocks]);
 
 	/* eslint jsx-a11y/label-has-associated-control: 0 */
 	return (

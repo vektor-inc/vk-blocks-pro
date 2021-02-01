@@ -2,22 +2,8 @@
  * table-of-contents-new-new block type
  */
 
-import {
-	isAllowedBlock,
-	getBlocksByName,
-	returnHtml,
-	getAllHeadings,
-	removeUnnecessaryElements,
-	AsyncGetBlocksByName,
-} from './toc-utils';
 import { ReactComponent as Icon } from './icon.svg';
-
 import { __ } from '@wordpress/i18n';
-import { addFilter } from '@wordpress/hooks';
-import { createHigherOrderComponent } from '@wordpress/compose';
-import { select, dispatch } from '@wordpress/data';
-import { useEffect } from '@wordpress/element';
-
 import metadata from './block.json';
 import edit from './edit';
 import save from './save';
@@ -34,72 +20,3 @@ export const settings = {
 	save,
 	deprecated,
 };
-
-const GetHeadings = (props) => {
-	// eslint-disable-next-line no-shadow
-	const { className, name, clientId, attributes } = props;
-	const { anchor } = attributes;
-
-	const tocs = getBlocksByName('vk-blocks/table-of-contents-new');
-	const tocClientId = tocs[0] ? tocs[0].clientId : '';
-	const tocAttributes = tocs[0] ? tocs[0].attributes : '';
-	const { updateBlockAttributes } = dispatch('core/block-editor');
-	const headingList = ['core/heading', 'vk-blocks/heading'];
-
-	useEffect(() => {
-		if (
-			anchor === undefined &&
-			isAllowedBlock(name, headingList) !== undefined
-		) {
-			updateBlockAttributes(clientId, {
-				anchor: `vk-htags-${clientId}`,
-			});
-		}
-	}, [clientId]);
-
-	const asyncToc = AsyncGetBlocksByName('vk-blocks/table-of-contents-new');
-	const open = asyncToc[0] ? asyncToc[0].attributes.open : '';
-
-	const headingsRaw = getAllHeadings(headingList);
-	const headings = removeUnnecessaryElements(headingsRaw);
-	const render = returnHtml(headings, tocAttributes, className, open);
-
-	useEffect(() => {
-		if (isAllowedBlock(name, headingList) !== undefined) {
-			updateBlockAttributes(tocClientId, {
-				renderHtml: render,
-			});
-		}
-	}, [render]);
-};
-
-const updateTableOfContents = createHigherOrderComponent((BlockListBlock) => {
-	return (props) => {
-		// 投稿に目次ブロックがある時のみ、見出しにカスタムIDを追加。
-		const blocks = select('core/block-editor').getBlocks();
-		const findBlocks = blocks.find(
-			(block) => block.name === 'vk-blocks/table-of-contents-new'
-		);
-
-		if (findBlocks) {
-			const allowedBlocks = [
-				'vk-blocks/heading',
-				'vk-blocks/outer',
-				'core/heading',
-				'core/cover',
-				'core/group',
-			];
-			if (isAllowedBlock(props.name, allowedBlocks)) {
-				GetHeadings(props);
-			}
-		}
-
-		return <BlockListBlock {...props} />;
-	};
-}, 'updateTableOfContents');
-
-addFilter(
-	'editor.BlockListBlock',
-	'vk-blocks/table-of-contents-new',
-	updateTableOfContents
-);

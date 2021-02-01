@@ -1,5 +1,5 @@
 import ReactDOMServer from 'react-dom/server';
-import { useSelect, select } from '@wordpress/data';
+import { select } from '@wordpress/data';
 
 export const isAllowedBlock = (name, allowedBlocks) => {
 	return allowedBlocks.find((blockName) => blockName === name);
@@ -10,13 +10,6 @@ export const transformToOneDimensionalArray = (multiDimensionalarray) => {
 		return accumulator.concat(currentValue);
 	}, []);
 };
-
-export const AsyncGetBlocksByName = (blockName) =>
-	// eslint-disable-next-line no-shadow
-	useSelect((select) => {
-		const { getBlocks } = select('core/block-editor');
-		return getBlocks().filter((block) => block.name === blockName);
-	}, []);
 
 export const getBlocksByName = (blockName) => {
 	const { getBlocks } = select('core/block-editor');

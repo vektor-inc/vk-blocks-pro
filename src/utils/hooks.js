@@ -75,3 +75,16 @@ export const useCurrentPostType = () => {
 		return select('core/editor').getCurrentPostType();
 	});
 };
+
+export const useCurrentBlocks = () => {
+	return useSelect((select) => {
+		return select('core/block-editor').getBlocks();
+	});
+};
+
+export const useBlocksByName = (blockName) =>
+	// eslint-disable-next-line no-shadow
+	useSelect((select) => {
+		const { getBlocks } = select('core/block-editor');
+		return getBlocks().filter((block) => block.name === blockName);
+	}, []);

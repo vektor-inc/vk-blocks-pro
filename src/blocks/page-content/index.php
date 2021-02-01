@@ -46,7 +46,7 @@ if( function_exists('register_block_type_from_metadata')) {
 function vk_page_content_render_callback( $attributes, $content = '' ) {
 
 	$page_content_id = ! empty( $attributes['TargetPost'] ) ? $attributes['TargetPost'] : -1;
-	$page_content    = get_post( $page_content_id )->post_content;
+	$page_content    = -1 !== $page_content_id ? get_post( $page_content_id )->post_content : '';
 	vk_page_content_enqueue_scripts( $page_content );
 
 	$vk_blocks_options  = vkblocks_get_options();

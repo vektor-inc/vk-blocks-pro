@@ -30,6 +30,10 @@ export const setOptions = (name) => {
 				label: __('Card (No border)', 'vk-blocks'),
 			},
 			{
+				value: 'card-intext',
+				label: __('Card (Intext)', 'vk-blocks'),
+			},
+			{
 				value: 'card-horizontal',
 				label: __('Card (Horizontal)', 'vk-blocks'),
 			},

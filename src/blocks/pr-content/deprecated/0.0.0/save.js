@@ -23,8 +23,6 @@ class PRContent extends Component {
 			Image,
 			ImageBorderColor,
 			layout,
-			fontAwesomeIconBefore,
-			fontAwesomeIconAfter,
 		} = attributes;
 
 		const setAttributes = this.props.setAttributes;

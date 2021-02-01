@@ -50,12 +50,6 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 	//BlockMeta用のAPIルートを設定
 	new EntryPoint();
 
-	// Stop Core Block Template.
-	$vk_blocks_options  = vkblocks_get_options();
-	if ( "hide" === $vk_blocks_options['display_wp_block_template'] ) {
-		remove_theme_support( 'core-block-patterns' );
-	}
-
 	//プロ版の設定ファイルを読み込み
 	if(file_exists(dirname(__FILE__) . '/vk-blocks-pro-config.php')){
 		require_once 'vk-blocks-pro-config.php';

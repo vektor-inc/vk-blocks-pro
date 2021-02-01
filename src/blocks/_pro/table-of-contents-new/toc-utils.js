@@ -11,13 +11,6 @@ export const transformToOneDimensionalArray = (multiDimensionalarray) => {
 	}, []);
 };
 
-export const AsyncGetBlocksByName = (blockName) =>
-	// eslint-disable-next-line no-shadow
-	useSelect((select) => {
-		const { getBlocks } = select('core/block-editor');
-		return getBlocks().filter((block) => block.name === blockName);
-	}, []);
-
 export const getBlocksByName = (blockName) => {
 	const { getBlocks } = select('core/block-editor');
 	return getBlocks().filter((block) => block.name === blockName);

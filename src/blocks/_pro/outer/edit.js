@@ -16,6 +16,7 @@ import {
 	InnerBlocks,
 	useBlockProps,
 } from '@wordpress/block-editor';
+import { useEffect } from '@wordpress/element';
 import { componentDivider } from './component-divider';
 import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
 
@@ -49,7 +50,11 @@ export default function OuterEdit(props) {
 	let borderProperty;
 	let borderRadiusProperty;
 
-	setAttributes({ clientId });
+	useEffect(() => {
+		if (clientId) {
+			setAttributes({ clientId });
+		}
+	}, [clientId]);
 
 	//幅のクラス切り替え
 	// eslint-disable-next-line prefer-const

@@ -16,6 +16,7 @@ import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { select, dispatch } from '@wordpress/data';
+import { useEffect } from '@wordpress/element';
 
 import metadata from './block.json';
 import edit from './edit';
@@ -45,14 +46,19 @@ const getHeadings = (props) => {
 	const { updateBlockAttributes } = dispatch('core/block-editor');
 	const headingList = ['core/heading', 'vk-blocks/heading'];
 
-	if (
-		anchor === undefined &&
-		isAllowedBlock(name, headingList) !== undefined
-	) {
-		updateBlockAttributes(clientId, {
-			anchor: `vk-htags-${clientId}`,
-		});
-	}
+	useEffect(
+		() => {
+			if (
+				anchor === undefined &&
+				isAllowedBlock(name, headingList) !== undefined
+			) {
+				updateBlockAttributes(clientId, {
+					anchor: `vk-htags-${clientId}`,
+				});
+			}
+		}
+		,[ clientId ]
+	);
 
 	const asyncToc = AsyncGetBlocksByName('vk-blocks/table-of-contents-new');
 	const open = asyncToc[0] ? asyncToc[0].attributes.open : '';
@@ -61,11 +67,17 @@ const getHeadings = (props) => {
 	const headings = removeUnnecessaryElements(headingsRaw);
 	const render = returnHtml(headings, tocAttributes, className, open);
 
-	if (isAllowedBlock(name, headingList) !== undefined) {
-		updateBlockAttributes(tocClientId, {
-			renderHtml: render,
-		});
-	}
+	useEffect(
+		() => {
+			if (isAllowedBlock(name, headingList) !== undefined) {
+				updateBlockAttributes(tocClientId, {
+					renderHtml: render,
+				});
+			}
+		}
+		,[ render ]
+	);
+
 };
 
 const updateTableOfContents = createHigherOrderComponent((BlockListBlock) => {

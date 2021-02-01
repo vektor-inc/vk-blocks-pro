@@ -26,7 +26,7 @@ class VkBlocksPostList {
 			'display_image'              => esc_html( $attributes['display_image'] ),
 			'display_image_overlay_term' => esc_html( $attributes['display_image_overlay_term'] ),
 			'display_excerpt'            => esc_html( $attributes['display_excerpt'] ),
-			'display_author'            => esc_html( $attributes['display_author'] ),
+			'display_author'             => esc_html( $attributes['display_author'] ),
 			'display_date'               => esc_html( $attributes['display_date'] ),
 			'display_new'                => esc_html( $attributes['display_new'] ),
 			'display_taxonomies'         => esc_html( $attributes['display_taxonomies'] ),

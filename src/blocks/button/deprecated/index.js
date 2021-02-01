@@ -7,6 +7,7 @@ import save0_0_5 from './0.0.5/save';
 import save0_41_0 from './0.41.0/save';
 import save0_59_0 from './0.59.0/save';
 import save0_59_1 from './0.59.1/save';
+import save0_60_0 from './0.60.0/save';
 
 const blockAttributes = {
 	content: {
@@ -56,14 +57,12 @@ export const deprecated = [
 	{
 		attributes: {
 			...blockAttributes,
+			subCaption: {
+				type: 'string',
+				default: '',
+			},
 		},
-		save0_0_0,
-	},
-	{
-		attributes: {
-			...blockAttributes,
-		},
-		save0_0_1,
+		save0_60_0,
 	},
 	{
 		attributes: {
@@ -73,47 +72,7 @@ export const deprecated = [
 				default: '',
 			},
 		},
-		save0_0_2,
-	},
-	{
-		attributes: {
-			...blockAttributes,
-			subCaption: {
-				type: 'string',
-				default: '',
-			},
-		},
-		save0_0_3,
-	},
-	{
-		attributes: {
-			...blockAttributes,
-			subCaption: {
-				type: 'string',
-				default: '',
-			},
-		},
-		save0_0_4,
-	},
-	{
-		attributes: {
-			...blockAttributes,
-			subCaption: {
-				type: 'string',
-				default: '',
-			},
-		},
-		save0_0_5,
-	},
-	{
-		attributes: {
-			...blockAttributes,
-			subCaption: {
-				type: 'string',
-				default: '',
-			},
-		},
-		save0_41_0,
+		save0_59_1,
 	},
 	{
 		attributes: {
@@ -133,6 +92,58 @@ export const deprecated = [
 				default: '',
 			},
 		},
-		save0_59_1,
+		save0_41_0,
+	},
+	{
+		attributes: {
+			...blockAttributes,
+			subCaption: {
+				type: 'string',
+				default: '',
+			},
+		},
+		save0_0_5,
+	},
+	{
+		attributes: {
+			...blockAttributes,
+			subCaption: {
+				type: 'string',
+				default: '',
+			},
+		},
+		save0_0_4,
+	},
+	{
+		attributes: {
+			...blockAttributes,
+			subCaption: {
+				type: 'string',
+				default: '',
+			},
+		},
+		save0_0_3,
+	},
+	{
+		attributes: {
+			...blockAttributes,
+			subCaption: {
+				type: 'string',
+				default: '',
+			},
+		},
+		save0_0_2,
+	},
+	{
+		attributes: {
+			...blockAttributes,
+		},
+		save0_0_1,
+	},
+	{
+		attributes: {
+			...blockAttributes,
+		},
+		save0_0_0,
 	},
 ];

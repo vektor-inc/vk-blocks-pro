@@ -3,7 +3,7 @@
  */
 import { ReactComponent as Icon } from './icon.svg';
 
-import { __ } from '@wordpress/i18n'; // Import __() from wp.i18n
+import { __ } from '@wordpress/i18n';
 import { registerFormatType, toggleFormat } from '@wordpress/rich-text';
 import { RichTextToolbarButton } from '@wordpress/block-editor';
 

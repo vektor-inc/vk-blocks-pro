@@ -1,4 +1,4 @@
-window.onload = () => {
+window.addEventListener('load', function(){
 	//vk_animationクラスのNodeを取得
 	let animationNodeList = document.querySelectorAll('.vk_animation');
 	// 配列に変換。
@@ -20,4 +20,4 @@ window.onload = () => {
 			observe.observe(animationNode);
 		}
 	}
-};
+});

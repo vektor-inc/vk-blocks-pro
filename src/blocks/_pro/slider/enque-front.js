@@ -1,5 +1,4 @@
-/* eslint no-eval: 0 */
-window.onload = () => {
+window.addEventListener('load', function(){
 	// //data-vkb-slider属性のNodeを取得
 	let sliderNodeList = document.querySelectorAll('[data-vkb-slider]');
 	// 配列に変換。
@@ -72,4 +71,4 @@ window.onload = () => {
 			}
 		}
 	}
-};
+});

@@ -18,29 +18,24 @@ export default function GridColumnEdit(props) {
 
 	const thisBlock = getBlocksByClientId(clientId);
 
-	useEffect(
-		() => {
-			if( thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
+	useEffect(() => {
+		if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
+			const thisInnerBlocks = thisBlock[0].innerBlocks;
 
-				const thisInnerBlocks = thisBlock[0].innerBlocks;
-
-				thisInnerBlocks.forEach(function( thisInnerBlock ){
-
-					updateBlockAttributes(thisInnerBlock.clientId, {
-						name: attributes.name,
-						layout: attributes.layout,
-						col_xs: attributes.col_xs,
-						col_sm: attributes.col_sm,
-						col_md: attributes.col_md,
-						col_lg: attributes.col_lg,
-						col_xl: attributes.col_xl,
-						col_xxl: attributes.col_xxl,
-					});
-				})
-			}
+			thisInnerBlocks.forEach(function (thisInnerBlock) {
+				updateBlockAttributes(thisInnerBlock.clientId, {
+					name: attributes.name,
+					layout: attributes.layout,
+					col_xs: attributes.col_xs,
+					col_sm: attributes.col_sm,
+					col_md: attributes.col_md,
+					col_lg: attributes.col_lg,
+					col_xl: attributes.col_xl,
+					col_xxl: attributes.col_xxl,
+				});
+			});
 		}
-		,[ thisBlock, attributes ]
-	);
+	}, [thisBlock, attributes]);
 
 	const ALLOWED_BLOCKS = [['vk-blocks/grid-column-item']];
 	const TEMPLATE = ALLOWED_BLOCKS;

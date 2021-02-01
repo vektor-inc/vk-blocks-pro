@@ -13,14 +13,11 @@ export default function AnimationEdit(props) {
 	const { effect, speed, range } = attributes;
 	const customClientId = replaceClientId(clientId);
 
-	useEffect(
-		() => {
-			if( customClientId ) {
-				setAttributes({ clientId: customClientId });
-			}
+	useEffect(() => {
+		if (customClientId) {
+			setAttributes({ clientId: customClientId });
 		}
-		,[ customClientId ]
-	);
+	}, [customClientId]);
 
 	if (effect === undefined || effect === null) {
 		setAttributes({ effect: 'slide-up' });

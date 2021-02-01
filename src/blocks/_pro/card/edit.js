@@ -32,29 +32,25 @@ export default function CardEdit(props) {
 
 	const thisBlock = getBlocksByClientId(clientId);
 
-	useEffect(
-		() => {
-			if( thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
+	useEffect(() => {
+		if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
+			setAttributes({ clientId });
+			setAttributes({ blockId: clientId });
 
-				setAttributes({ clientId });
-				setAttributes({ blockId: clientId });
-
-				const thisInnerBlocks = thisBlock[0].innerBlocks;
-				thisInnerBlocks.forEach(function( thisInnerBlock ){
-					//className以外の値で、子要素のattributesをアップデート
-					const updateAttributes = removeProperty(
-						attributes,
-						'className'
-					);
-					updateBlockAttributes(
-						thisInnerBlock.clientId,
-						updateAttributes
-					);
-				})
-			}
+			const thisInnerBlocks = thisBlock[0].innerBlocks;
+			thisInnerBlocks.forEach(function (thisInnerBlock) {
+				//className以外の値で、子要素のattributesをアップデート
+				const updateAttributes = removeProperty(
+					attributes,
+					'className'
+				);
+				updateBlockAttributes(
+					thisInnerBlock.clientId,
+					updateAttributes
+				);
+			});
 		}
-		,[ thisBlock, attributes, clientId]
-	);
+	}, [thisBlock, attributes, clientId]);
 
 	let innerClass = '';
 	const ALLOWED_BLOCKS = ['vk-blocks/card-item'];

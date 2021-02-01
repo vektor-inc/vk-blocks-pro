@@ -50,14 +50,11 @@ export default function OuterEdit(props) {
 	let borderProperty;
 	let borderRadiusProperty;
 
-	useEffect(
-		() => {
-			if( clientId ) {
-				setAttributes({ clientId });
-			}
+	useEffect(() => {
+		if (clientId) {
+			setAttributes({ clientId });
 		}
-		,[ clientId ]
-	);
+	}, [clientId]);
 
 	//幅のクラス切り替え
 	// eslint-disable-next-line prefer-const

@@ -35,7 +35,7 @@ export const settings = {
 	deprecated,
 };
 
-const getHeadings = (props) => {
+const GetHeadings = (props) => {
 	// eslint-disable-next-line no-shadow
 	const { className, name, clientId, attributes } = props;
 	const { anchor } = attributes;
@@ -46,19 +46,16 @@ const getHeadings = (props) => {
 	const { updateBlockAttributes } = dispatch('core/block-editor');
 	const headingList = ['core/heading', 'vk-blocks/heading'];
 
-	useEffect(
-		() => {
-			if (
-				anchor === undefined &&
-				isAllowedBlock(name, headingList) !== undefined
-			) {
-				updateBlockAttributes(clientId, {
-					anchor: `vk-htags-${clientId}`,
-				});
-			}
+	useEffect(() => {
+		if (
+			anchor === undefined &&
+			isAllowedBlock(name, headingList) !== undefined
+		) {
+			updateBlockAttributes(clientId, {
+				anchor: `vk-htags-${clientId}`,
+			});
 		}
-		,[ clientId ]
-	);
+	}, [clientId]);
 
 	const asyncToc = AsyncGetBlocksByName('vk-blocks/table-of-contents-new');
 	const open = asyncToc[0] ? asyncToc[0].attributes.open : '';
@@ -67,17 +64,13 @@ const getHeadings = (props) => {
 	const headings = removeUnnecessaryElements(headingsRaw);
 	const render = returnHtml(headings, tocAttributes, className, open);
 
-	useEffect(
-		() => {
-			if (isAllowedBlock(name, headingList) !== undefined) {
-				updateBlockAttributes(tocClientId, {
-					renderHtml: render,
-				});
-			}
+	useEffect(() => {
+		if (isAllowedBlock(name, headingList) !== undefined) {
+			updateBlockAttributes(tocClientId, {
+				renderHtml: render,
+			});
 		}
-		,[ render ]
-	);
-
+	}, [render]);
 };
 
 const updateTableOfContents = createHigherOrderComponent((BlockListBlock) => {
@@ -97,7 +90,7 @@ const updateTableOfContents = createHigherOrderComponent((BlockListBlock) => {
 				'core/group',
 			];
 			if (isAllowedBlock(props.name, allowedBlocks)) {
-				getHeadings(props);
+				GetHeadings(props);
 			}
 		}
 

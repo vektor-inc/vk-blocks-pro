@@ -25,30 +25,23 @@ export default function IconCardEdit(props) {
 	const { updateBlockAttributes } = dispatch('core/block-editor');
 	const thisBlock = getBlocksByClientId(clientId);
 
-	useEffect(
-		() => {
-			if( thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
+	useEffect(() => {
+		if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
+			const thisInnerBlocks = thisBlock[0].innerBlocks;
+			thisInnerBlocks.forEach(function (thisInnerBlock) {
+				//className以外の値で、子要素のattributesをアップデート
+				let updateAttributes = removeProperty(attributes, 'className');
+				updateAttributes = removeProperty(attributes, 'faIcon');
+				updateAttributes = removeProperty(attributes, 'color');
+				updateAttributes = removeProperty(attributes, 'bgType');
 
-				const thisInnerBlocks = thisBlock[0].innerBlocks;
-				thisInnerBlocks.forEach(function( thisInnerBlock ){
-					//className以外の値で、子要素のattributesをアップデート
-					let updateAttributes = removeProperty(
-						attributes,
-						'className'
-					);
-					updateAttributes = removeProperty(attributes, 'faIcon');
-					updateAttributes = removeProperty(attributes, 'color');
-					updateAttributes = removeProperty(attributes, 'bgType');
-
-					updateBlockAttributes(
-						thisInnerBlock.clientId,
-						updateAttributes
-					);
-				})
-			}
+				updateBlockAttributes(
+					thisInnerBlock.clientId,
+					updateAttributes
+				);
+			});
 		}
-		,[ thisBlock, attributes ]
-	);
+	}, [thisBlock, attributes]);
 
 	const align = JSON.parse(fixBrokenUnicode(attributes.activeControl));
 

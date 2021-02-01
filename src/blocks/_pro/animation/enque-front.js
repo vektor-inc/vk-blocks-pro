@@ -1,4 +1,4 @@
-window.addEventListener('load', function(){
+document.defaultView.addEventListener('load', function () {
 	//vk_animationクラスのNodeを取得
 	let animationNodeList = document.querySelectorAll('.vk_animation');
 	// 配列に変換。

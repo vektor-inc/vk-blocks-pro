@@ -15,10 +15,39 @@ import {
 	InspectorControls,
 	PanelColorSettings,
 } from '@wordpress/block-editor';
-const name = 'vk-blocks/highlighter';
 
 import hex2rgba from '@vkblocks/utils/hex-to-rgba';
 import { ReactComponent as Icon } from './icon.svg';
+
+const name = 'vk-blocks/highlighter';
+const alpha = 0.7;
+const defaultColor = '#fffd6b';
+
+// 色が指定されていなかったらデフォルトカラーを指定する
+const setColorIfUndefined = (color) => {
+	if (color === undefined) {
+		color = defaultColor;
+	}
+	return color;
+};
+
+//
+const hightliterOnToggle = (color) => {
+	color = setColorIfUndefined(color);
+
+	onChange(
+		toggleFormat(value, {
+			type: name,
+			attributes: {
+				data: color,
+				style: `background: linear-gradient(transparent 60%,${hex2rgba(
+					color,
+					alpha
+				)} 0);`,
+			},
+		})
+	);
+};
 
 registerFormatType(name, {
 	title: __('Highlighter', 'vk-blocks'),
@@ -30,40 +59,34 @@ registerFormatType(name, {
 	},
 	edit(props) {
 		const { value, isActive, onChange } = props;
-		const alpha = 0.7;
-		const defaultColor = '#fffd6b';
 		const shortcutType = 'primary';
 		const shortcutChar = 'h';
 
-		let activeColor;
+		let heightlightColor;
 		if (isActive) {
 			const activeFormat = getActiveFormat(value, name);
-			activeColor = activeFormat.attributes.data;
+			heightlightColor = activeFormat.attributes.data;
 		}
 
-		const setColorIfUndefined = () => {
-			if (activeColor === undefined) {
-				activeColor = defaultColor;
-			}
-			return activeColor;
-		};
+		// const onToggle = (heightlightColor) => {
+		// 	heightlightColor = setColorIfUndefined(
+		// 		heightlightColor,
+		// 		defaultColor
+		// 	);
 
-		const onToggle = () => {
-			activeColor = setColorIfUndefined(activeColor);
-
-			onChange(
-				toggleFormat(value, {
-					type: name,
-					attributes: {
-						data: activeColor,
-						style: `background: linear-gradient(transparent 60%,${hex2rgba(
-							activeColor,
-							alpha
-						)} 0);`,
-					},
-				})
-			);
-		};
+		// 	onChange(
+		// 		toggleFormat(value, {
+		// 			type: name,
+		// 			attributes: {
+		// 				data: heightlightColor,
+		// 				style: `background: linear-gradient(transparent 60%,${hex2rgba(
+		// 					heightlightColor,
+		// 					alpha
+		// 				)} 0);`,
+		// 			},
+		// 		})
+		// 	);
+		// };
 
 		return (
 			<>
@@ -73,7 +96,7 @@ registerFormatType(name, {
 						initialOpen={false}
 						colorSettings={[
 							{
-								value: activeColor,
+								value: heightlightColor,
 								onChange: (color) => {
 									if (color) {
 										onChange(
@@ -100,12 +123,12 @@ registerFormatType(name, {
 				<RichTextShortcut
 					type={shortcutType}
 					character={shortcutChar}
-					onUse={() => onToggle(activeColor)}
+					onUse={() => hightliterOnToggle(heightlightColor)}
 				/>
 				<RichTextToolbarButton
 					icon={Icon}
 					title={__('Highlighter', 'vk-blocks')}
-					onClick={() => onToggle(activeColor)}
+					onClick={() => hightliterOnToggle(heightlightColor)}
 					isActive={isActive}
 					shortcutType={shortcutType}
 					shortcutCharacter={shortcutChar}

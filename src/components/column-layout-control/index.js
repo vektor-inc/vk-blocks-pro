@@ -54,11 +54,9 @@ export const setOptions = (name) => {
 	return options['vk-blocks/else'];
 };
 
-// eslint-disable-next-line no-shadow,no-unused-vars
-const ColumnLayoutControlRaw = (ColumnLayout) =>
+const ColumnLayoutControlRaw = () =>
 	createHigherOrderComponent(
-		// eslint-disable-next-line no-shadow
-		(ColumnLayout) =>
+		(WrappedComponent) =>
 			class extends Component {
 				render() {
 					const { setAttributes, attributes } = this.props;
@@ -80,7 +78,7 @@ const ColumnLayoutControlRaw = (ColumnLayout) =>
 									options={setOptions(name)}
 								/>
 							</BaseControl>
-							<ColumnLayout {...this.props} />
+							<WrappedComponent {...this.props} />
 						</PanelBody>
 					);
 				}

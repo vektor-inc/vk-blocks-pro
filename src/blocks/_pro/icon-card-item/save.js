@@ -3,7 +3,6 @@ import { RichText, useBlockProps } from '@wordpress/block-editor';
 import ReactHtmlParser from 'react-html-parser';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 
-/* eslint camelcase: 0 */
 export default function save(props) {
 	const { attributes } = props;
 	let {
@@ -15,12 +14,12 @@ export default function save(props) {
 		icon,
 		urlOpenType,
 		bgType,
-		col_xs,
-		col_sm,
-		col_md,
-		col_lg,
-		col_xl,
-		col_xxl,
+		col_xs, //eslint-disable-line camelcase
+		col_sm, //eslint-disable-line camelcase
+		col_md, //eslint-disable-line camelcase
+		col_lg, //eslint-disable-line camelcase
+		col_xl, //eslint-disable-line camelcase
+		col_xxl, //eslint-disable-line camelcase
 		activeControl,
 	} = attributes;
 	const align = JSON.parse(fixBrokenUnicode(activeControl));

@@ -4,13 +4,11 @@ import { destructiveDeleteFromArray } from '@vkblocks/utils/delete-from-array';
 
 export const AdvancedCheckboxControl = (props) => {
 	const { schema, rawData, checkedData, setAttributes } = props;
+	const [checkedState, setCheckedState] = useState(checkedData);
 
 	if (!rawData || !checkedData) return false;
 
-	// eslint-disable-next-line react-hooks/rules-of-hooks
-	const [checkedState, setCheckedState] = useState(checkedData);
-	// eslint-disable-next-line no-shadow
-	const advancedSetAttributes = (schema, saveData) => {
+	const advancedSetAttributes = (saveData) => {
 		setAttributes({ [schema]: JSON.stringify(saveData) });
 	};
 

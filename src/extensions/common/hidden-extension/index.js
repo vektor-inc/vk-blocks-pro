@@ -7,12 +7,14 @@ import { AdvancedToggleControl } from '@vkblocks/components/advanced-toggle-cont
 import classnames from 'classnames';
 
 // Check the keyword including str or not
+// eslint-disable-next-line camelcase
 export const in_string = (str, keyword) => {
 	// If keyword was included that return ( true or false )
 	return str.indexOf(keyword) !== -1;
 };
-/* eslint camelcase: 0 */
+
 // The checking block is hidden function target or not
+// eslint-disable-next-line camelcase
 export const is_hidden = (blockName) => {
 	// Target of hidden function active
 	const allowed = ['core', 'vk-blocks'];
@@ -236,34 +238,34 @@ addFilter(
 	'vk-blocks/hidden-extension',
 	(element, blockType, attributes) => {
 		const {
-			vkb_hidden,
-			vkb_hidden_xxl,
-			vkb_hidden_xl_v2,
-			vkb_hidden_xl,
-			vkb_hidden_lg,
-			vkb_hidden_md,
-			vkb_hidden_sm,
-			vkb_hidden_xs,
+			vkb_hidden, // eslint-disable-line camelcase
+			vkb_hidden_xxl, // eslint-disable-line camelcase
+			vkb_hidden_xl_v2, // eslint-disable-line camelcase
+			vkb_hidden_xl, // eslint-disable-line camelcase
+			vkb_hidden_lg, // eslint-disable-line camelcase
+			vkb_hidden_md, // eslint-disable-line camelcase
+			vkb_hidden_sm, // eslint-disable-line camelcase
+			vkb_hidden_xs, // eslint-disable-line camelcase
 		} = attributes;
 
 		if (
-			vkb_hidden ||
-			vkb_hidden_xxl ||
-			vkb_hidden_xl_v2 ||
-			vkb_hidden_xl ||
-			vkb_hidden_lg ||
-			vkb_hidden_md ||
-			vkb_hidden_sm ||
-			vkb_hidden_xs
+			vkb_hidden || // eslint-disable-line camelcase
+			vkb_hidden_xxl || // eslint-disable-line camelcase
+			vkb_hidden_xl_v2 || // eslint-disable-line camelcase
+			vkb_hidden_xl || // eslint-disable-line camelcase
+			vkb_hidden_lg || // eslint-disable-line camelcase
+			vkb_hidden_md || // eslint-disable-line camelcase
+			vkb_hidden_sm || // eslint-disable-line camelcase
+			vkb_hidden_xs // eslint-disable-line camelcase
 		) {
-			const custom = vkb_hidden && 'vk_hidden';
-			const customXxl = vkb_hidden_xxl && 'vk_hidden-xxl';
-			const customXl2 = vkb_hidden_xl_v2 && 'vk_hidden-xl-v2';
-			const customXl = vkb_hidden_xl && 'vk_hidden-xl';
-			const customLg = vkb_hidden_lg && 'vk_hidden-lg';
-			const customMd = vkb_hidden_md && 'vk_hidden-md';
-			const customSm = vkb_hidden_sm && 'vk_hidden-sm';
-			const customXs = vkb_hidden_xs && 'vk_hidden-xs';
+			const custom = vkb_hidden && 'vk_hidden'; // eslint-disable-line camelcase
+			const customXxl = vkb_hidden_xxl && 'vk_hidden-xxl'; // eslint-disable-line camelcase
+			const customXl2 = vkb_hidden_xl_v2 && 'vk_hidden-xl-v2'; // eslint-disable-line camelcase
+			const customXl = vkb_hidden_xl && 'vk_hidden-xl'; // eslint-disable-line camelcase
+			const customLg = vkb_hidden_lg && 'vk_hidden-lg'; // eslint-disable-line camelcase
+			const customMd = vkb_hidden_md && 'vk_hidden-md'; // eslint-disable-line camelcase
+			const customSm = vkb_hidden_sm && 'vk_hidden-sm'; // eslint-disable-line camelcase
+			const customXs = vkb_hidden_xs && 'vk_hidden-xs'; // eslint-disable-line camelcase
 
 			if (element) {
 				element = {

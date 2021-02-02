@@ -1,4 +1,3 @@
-/* eslint camelcase: 0 */
 import save0_57_4 from './0.57.4/save';
 import save0_60_1 from './0.60.1/save';
 

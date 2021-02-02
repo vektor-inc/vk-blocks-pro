@@ -7,6 +7,7 @@ import save0_0_5 from './0.0.5/save';
 import save0_41_0 from './0.41.0/save';
 import save0_59_0 from './0.59.0/save';
 import save0_59_1 from './0.59.1/save';
+import save0_60_0 from './0.60.0/save';
 import save0_60_1 from './0.60.1/save';
 
 const blockAttributes = {

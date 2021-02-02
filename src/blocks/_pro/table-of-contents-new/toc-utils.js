@@ -22,8 +22,7 @@ export const getAllHeadings = (headingList) => {
 	return getBlocks().map((block) => {
 		if (1 <= block.innerBlocks.length) {
 			tempBlock = block.innerBlocks.filter(
-				// eslint-disable-next-line no-shadow
-				(block) => headingList.indexOf(block.name) !== -1
+				() => headingList.indexOf(block.name) !== -1
 			);
 		} else if (headingList.indexOf(block.name) !== -1) {
 			tempBlock = block;

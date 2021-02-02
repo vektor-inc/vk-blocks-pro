@@ -6,18 +6,17 @@ import { Toolbar, DropdownMenu } from '@wordpress/components';
 
 const breakPoints = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'];
 
+// 改行を挿入する
+const insertBR = (value, onChange, breakPoint) => {
+	onChange(insert(value, `[br-${breakPoint}]`, value.start, value.end));
+};
+
 registerFormatType(`vk-blocks/responsive-br`, {
 	title: __(`Responsive Br`, 'vk-blocks'),
 	tagName: 'br',
 	className: null,
 	edit: (props) => {
 		const { onChange, value } = props;
-
-		const insertBR = (breakPoint) => {
-			onChange(
-				insert(value, `[br-${breakPoint}]`, value.start, value.end)
-			);
-		};
 
 		return (
 			<BlockControls>
@@ -47,7 +46,7 @@ registerFormatType(`vk-blocks/responsive-br`, {
 									`( ${breakPoint} )`,
 								icon: <Icon />,
 								onClick: () => {
-									insertBR(breakPoint);
+									insertBR(value, onChange, breakPoint);
 								},
 							};
 						})}

@@ -31,8 +31,8 @@ const setColorIfUndefined = (color) => {
 	return color;
 };
 
-//
-const hightliterOnToggle = (color) => {
+//ハイライトカラーが選択されたら
+const hightliterOnToggle = ({ color, value, onChange }) => {
 	color = setColorIfUndefined(color);
 
 	onChange(
@@ -67,26 +67,6 @@ registerFormatType(name, {
 			const activeFormat = getActiveFormat(value, name);
 			heightlightColor = activeFormat.attributes.data;
 		}
-
-		// const onToggle = (heightlightColor) => {
-		// 	heightlightColor = setColorIfUndefined(
-		// 		heightlightColor,
-		// 		defaultColor
-		// 	);
-
-		// 	onChange(
-		// 		toggleFormat(value, {
-		// 			type: name,
-		// 			attributes: {
-		// 				data: heightlightColor,
-		// 				style: `background: linear-gradient(transparent 60%,${hex2rgba(
-		// 					heightlightColor,
-		// 					alpha
-		// 				)} 0);`,
-		// 			},
-		// 		})
-		// 	);
-		// };
 
 		return (
 			<>
@@ -123,12 +103,24 @@ registerFormatType(name, {
 				<RichTextShortcut
 					type={shortcutType}
 					character={shortcutChar}
-					onUse={() => hightliterOnToggle(heightlightColor)}
+					onUse={() =>
+						hightliterOnToggle({
+							heightlightColor,
+							value,
+							onChange,
+						})
+					}
 				/>
 				<RichTextToolbarButton
 					icon={Icon}
 					title={__('Highlighter', 'vk-blocks')}
-					onClick={() => hightliterOnToggle(heightlightColor)}
+					onClick={() =>
+						hightliterOnToggle({
+							heightlightColor,
+							value,
+							onChange,
+						})
+					}
 					isActive={isActive}
 					shortcutType={shortcutType}
 					shortcutCharacter={shortcutChar}

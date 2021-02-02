@@ -17,7 +17,55 @@ import {
 import { dispatch } from '@wordpress/data';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 
-/* eslint no-shadow: 0 */
+// アップロードイメージボタン
+const uploadImgBtn = ({ image, clientId, setAttributes }) => {
+	const imageParsed = JSON.parse(fixBrokenUnicode(image));
+
+	// イメージボタンを削除
+	const deleteImgBtn = () => {
+		dispatch('core/editor').updateBlockAttributes(clientId, {
+			image: null,
+		});
+	};
+
+	return (
+		<MediaUpload
+			onSelect={(value) =>
+				setAttributes({ image: JSON.stringify(value) })
+			}
+			type="image"
+			className={'vk_post_imgOuter_img card-img-top'}
+			value={image}
+			render={({ open }) => (
+				<>
+					{!imageParsed ? (
+						<Button
+							onClick={open}
+							className={'button button-large'}
+						>
+							{__('Select image', 'vk-blocks')}
+						</Button>
+					) : (
+						<>
+							<img
+								className={'vk_post_imgOuter_img card-img-top'}
+								src={imageParsed.sizes.full.url}
+								alt={imageParsed.alt}
+							/>
+							<Button
+								onClick={deleteImgBtn}
+								className={'image-button button button-delete'}
+							>
+								{__('Delete Image', 'vk-blocks')}
+							</Button>
+						</>
+					)}
+				</>
+			)}
+		/>
+	);
+};
+
 export default function CardItemEdit(props) {
 	const { setAttributes, attributes, clientId } = props;
 	const {
@@ -62,129 +110,6 @@ export default function CardItemEdit(props) {
 		imgContainerClass = 'vk_post_imgOuter';
 	}
 
-	const deleteImgBtn = () => {
-		dispatch('core/editor').updateBlockAttributes(clientId, {
-			image: null,
-		});
-	};
-
-	const uploadImgBtn = (image) => {
-		const imageParsed = JSON.parse(fixBrokenUnicode(image));
-		return (
-			<MediaUpload
-				onSelect={(value) =>
-					setAttributes({ image: JSON.stringify(value) })
-				}
-				type="image"
-				className={'vk_post_imgOuter_img card-img-top'}
-				value={image}
-				render={({ open }) => (
-					<>
-						{!imageParsed ? (
-							<Button
-								onClick={open}
-								className={'button button-large'}
-							>
-								{__('Select image', 'vk-blocks')}
-							</Button>
-						) : (
-							<>
-								<img
-									className={
-										'vk_post_imgOuter_img card-img-top'
-									}
-									src={imageParsed.sizes.full.url}
-									alt={imageParsed.alt}
-								/>
-								<Button
-									onClick={deleteImgBtn}
-									className={
-										'image-button button button-delete'
-									}
-								>
-									{__('Delete Image', 'vk-blocks')}
-								</Button>
-							</>
-						)}
-					</>
-				)}
-			/>
-		);
-	};
-	//eslint-disable-next-line camelcase
-	const renderImage = (display_image) => {
-		//eslint-disable-next-line camelcase
-		if (display_image) {
-			return (
-				<>
-					<div className={imgContainerClass} style={imageStyle}>
-						<div className="card-img-overlay"></div>
-						{uploadImgBtn(image)}
-					</div>
-				</>
-			);
-		}
-	};
-	//eslint-disable-next-line camelcase
-	const renderExcerpt = (align, display_excerpt) => {
-		//eslint-disable-next-line camelcase
-		if (display_excerpt) {
-			const titleTag = 'p';
-			const titleClass = `vk_post_excerpt card-text has-text-align-${align.text}`;
-			return (
-				<RichText
-					tagName={titleTag}
-					className={titleClass}
-					value={excerpt_text} //eslint-disable-line camelcase
-					onChange={(value) => setAttributes({ excerpt_text: value })}
-					placeholder={__(
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-						'vk-blocks'
-					)}
-				/>
-			);
-		}
-	};
-	//eslint-disable-next-line camelcase
-	const renderButton = (display_btn, align) => {
-		//eslint-disable-next-line camelcase
-		if (display_btn) {
-			return (
-				<div
-					className={`vk_post_btnOuter has-text-align-${align.button}`}
-				>
-					<a
-						className={`btn btn-primary vk_post_btn`}
-						href={url}
-						target={linkTarget}
-						rel={rel}
-					>
-						{
-							btn_text //eslint-disable-line camelcase
-						}
-					</a>
-				</div>
-			);
-		}
-	};
-	//eslint-disable-next-line camelcase
-	const renderTitle = (align, display_title) => {
-		//eslint-disable-next-line camelcase
-		if (display_title) {
-			const titleTag = 'h5';
-			const titleClass = `vk_post_title card-title has-text-align-${align.title}`;
-			return (
-				<RichText
-					tagName={titleTag}
-					className={titleClass}
-					value={title}
-					onChange={(value) => setAttributes({ title: value })}
-					placeholder={__('Title', 'vk-blocks')}
-				/>
-			);
-		}
-	};
-
 	let imageStyle;
 	if (image) {
 		const imageParsed = JSON.parse(fixBrokenUnicode(image));
@@ -226,12 +151,55 @@ ${btnClass}`,
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
-				{renderImage(display_image)}
+				{display_image && ( //eslint-disable-line camelcase
+					<div className={imgContainerClass} style={imageStyle}>
+						<div className="card-img-overlay"></div>
+						{uploadImgBtn({ image, clientId, setAttributes })}
+					</div>
+				)}
 				<div className="vk_post_body card-body">
-					{renderTitle(align, display_title)}
-					{renderExcerpt(align, display_excerpt)}
+					{display_title && ( //eslint-disable-line camelcase
+						<RichText
+							tagName={'h5'}
+							className={`vk_post_title card-title has-text-align-${align.title}`}
+							value={title}
+							onChange={(value) =>
+								setAttributes({ title: value })
+							}
+							placeholder={__('Title', 'vk-blocks')}
+						/>
+					)}
+					{display_excerpt && ( //eslint-disable-line camelcase
+						<RichText
+							tagName={'p'}
+							className={`vk_post_excerpt card-text has-text-align-${align.text}`}
+							value={excerpt_text} //eslint-disable-line camelcase
+							onChange={(value) =>
+								setAttributes({ excerpt_text: value })
+							}
+							placeholder={__(
+								'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+								'vk-blocks'
+							)}
+						/>
+					)}
 					<InnerBlocks />
-					{renderButton(display_btn, align)}
+					{display_btn && ( //eslint-disable-line camelcase
+						<div
+							className={`vk_post_btnOuter has-text-align-${align.button}`}
+						>
+							<a
+								className={`btn btn-primary vk_post_btn`}
+								href={url}
+								target={linkTarget}
+								rel={rel}
+							>
+								{
+									btn_text //eslint-disable-line camelcase
+								}
+							</a>
+						</div>
+					)}
 				</div>
 			</div>
 		</>

@@ -85,6 +85,6 @@ const ColumnLayoutControlRaw = createHigherOrderComponent(
 	'ColumnLayoutControlRaw'
 );
 
-export const ColumnLayoutControl = compose([ColumnLayoutControlRaw])(
+export const ColumnLayoutControl = compose(ColumnLayoutControlRaw)(
 	ColumnLayout
 );

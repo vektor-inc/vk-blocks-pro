@@ -92,7 +92,7 @@ function vkblocks_blocks_assets() {
 	wp_register_script(
 		'vk-blocks-build-js',
 		VK_BLOCKS_URL . 'build/block-build.js',
-		$asset_file['dependencies'],
+		[],
 		VK_BLOCKS_VERSION,
 		true
 	);

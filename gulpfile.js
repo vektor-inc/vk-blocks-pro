@@ -203,7 +203,8 @@ gulp.task("dist", function() {
         "!./src/**",
         "!./bin/**",
         "!./editor-css/**",
-        "!./node_modules/**"
+				"!./node_modules/**",
+				"!./inc/vk-blocks/build/block-build.asset.php",
       ],
       { base: "./" }
     )

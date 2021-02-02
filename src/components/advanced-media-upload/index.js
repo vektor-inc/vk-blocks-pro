@@ -1,4 +1,4 @@
-import { __ } from '@wordpress/i18n'; // Import __() from wp.i18n
+import { __ } from '@wordpress/i18n';
 import { Button } from '@wordpress/components';
 import { MediaUpload } from '@wordpress/block-editor';
 import { dispatch } from '@wordpress/data';

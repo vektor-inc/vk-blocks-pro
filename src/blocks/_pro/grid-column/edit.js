@@ -7,6 +7,7 @@ import {
 } from '@wordpress/block-editor';
 import { select, dispatch } from '@wordpress/data';
 import { PanelBody } from '@wordpress/components';
+import { useEffect } from '@wordpress/element';
 
 export default function GridColumnEdit(props) {
 	const { attributes, clientId } = props;
@@ -16,40 +17,27 @@ export default function GridColumnEdit(props) {
 
 	const thisBlock = getBlocksByClientId(clientId);
 
-	let beforeLength;
-	let afterLength;
+	useEffect(() => {
+		if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
+			const thisInnerBlocks = thisBlock[0].innerBlocks;
 
-	if (
-		thisBlock !== undefined &&
-		thisBlock[0] !== null &&
-		thisBlock[0].innerBlocks !== undefined
-	) {
-		const innerBlocks = thisBlock[0].innerBlocks;
-		beforeLength = innerBlocks.length;
-
-		if (beforeLength !== undefined) {
-			if (beforeLength !== afterLength) {
-				for (let i = 0; i < innerBlocks.length; i++) {
-					if (innerBlocks[i] !== undefined) {
-						updateBlockAttributes(innerBlocks[i].clientId, {
-							name: attributes.name,
-							layout: attributes.layout,
-							col_xs: attributes.col_xs,
-							col_sm: attributes.col_sm,
-							col_md: attributes.col_md,
-							col_lg: attributes.col_lg,
-							col_xl: attributes.col_xl,
-							col_xxl: attributes.col_xxl,
-						});
-					}
-				}
-			}
-			afterLength = beforeLength;
+			thisInnerBlocks.forEach(function (thisInnerBlock) {
+				updateBlockAttributes(thisInnerBlock.clientId, {
+					name: attributes.name,
+					layout: attributes.layout,
+					col_xs: attributes.col_xs,
+					col_sm: attributes.col_sm,
+					col_md: attributes.col_md,
+					col_lg: attributes.col_lg,
+					col_xl: attributes.col_xl,
+					col_xxl: attributes.col_xxl,
+				});
+			});
 		}
-	}
+	}, [thisBlock, attributes]);
+
 	const ALLOWED_BLOCKS = [['vk-blocks/grid-column-item']];
 	const TEMPLATE = ALLOWED_BLOCKS;
-
 	const blockProps = useBlockProps();
 
 	return (

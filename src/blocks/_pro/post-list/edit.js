@@ -9,7 +9,7 @@ import {
 	TextControl,
 } from '@wordpress/components';
 import ServerSideRender from '@wordpress/server-side-render';
-import { InspectorControls } from '@wordpress/block-editor';
+import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 
 // Load VK Blocks Utils
 import {
@@ -58,6 +58,8 @@ export default function PostListEdit(props) {
 		});
 	}, terms);
 	const taxonomiesProps = flat(taxonomiesPropsRaw);
+
+	const blockProps = useBlockProps();
 
 	return (
 		<>
@@ -175,10 +177,12 @@ export default function PostListEdit(props) {
 				<ColumnLayoutControl {...props} />
 				<DisplayItemsControl {...props} />
 			</InspectorControls>
-			<ServerSideRender
-				block="vk-blocks/post-list"
-				attributes={attributes}
-			/>
+			<div {...blockProps}>
+				<ServerSideRender
+					block="vk-blocks/post-list"
+					attributes={attributes}
+				/>
+			</div>
 		</>
 	);
 }

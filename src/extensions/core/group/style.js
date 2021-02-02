@@ -3,13 +3,13 @@
  *
  */
 import { convertColorClass } from '@vkblocks/utils/color-code-to-class.js';
-
 import { assign } from 'lodash';
 import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
 import { PanelBody } from '@wordpress/components';
 import { InspectorControls, ColorPalette } from '@wordpress/block-editor';
 import { createHigherOrderComponent } from '@wordpress/compose';
+import { registerBlockStyle } from '@wordpress/blocks';
 
 const isValidBlockType = (name) => {
 	const validBlockTypes = ['core/group'];
@@ -98,7 +98,7 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 
 addFilter('editor.BlockEdit', 'vk-blocks/group-style', addBlockControl);
 
-wp.blocks.registerBlockStyle('core/group', [
+registerBlockStyle('core/group', [
 	{
 		name: 'vk-group-solid',
 		label: __('Solid', 'vk-blocks'),

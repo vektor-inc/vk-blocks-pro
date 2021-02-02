@@ -1,7 +1,8 @@
 import { RichText } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
-import React from 'react';
-export class VKBHeadingV0_24_1 extends React.Component {
+import { Component } from '@wordpress/element'
+
+export class VKBHeadingV0_24_1 extends Component {
 	render() {
 		const {
 			level,

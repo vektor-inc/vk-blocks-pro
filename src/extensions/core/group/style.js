@@ -3,7 +3,6 @@
  *
  */
 import { convertColorClass } from '@vkblocks/utils/color-code-to-class.js';
-
 import { assign } from 'lodash';
 import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';

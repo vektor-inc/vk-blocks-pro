@@ -1,13 +1,8 @@
-/**
- * Pr-Content block type
- *
- */
+import classNames from 'classnames';
 import { __ } from '@wordpress/i18n';
 import { Button } from '@wordpress/components';
 import { Component } from '@wordpress/element';
 import { MediaUpload, RichText } from '@wordpress/block-editor';
-
-import classNames from 'classnames';
 import { fixBrokenUnicode } from '@vkblocks/utils/fixBrokenUnicode';
 import { Fontawesome } from '../component-fontawesome';
 
@@ -164,9 +159,7 @@ export class PRcontent extends Component {
 										className={'vk_prContent_colImg_image'}
 										src={ImageParse.sizes.full.url}
 										alt={ImageParse.alt}
-										style={{
-											border: imageBorderProperty,
-										}}
+										style={{ border: imageBorderProperty }}
 									/>
 								)}
 							</Button>
@@ -267,11 +260,9 @@ export class PRcontent extends Component {
 										<a
 											href={url}
 											className={aClass}
-											target={
-												buttonTarget ? '_blank' : null
-											}
+											target={buttonTarget && '_blank'}
 											style={aStyle}
-											rel="noopener noreferrer"
+											rel={buttonTarget && 'noopener'}
 										>
 											<Fontawesome
 												attributes={attributes}
@@ -286,14 +277,4 @@ export class PRcontent extends Component {
 			</div>
 		);
 	}
-}
-
-export default function save({ attributes, className }) {
-	return (
-		<PRcontent
-			attributes={attributes}
-			className={className}
-			for_={'save'}
-		/>
-	);
 }

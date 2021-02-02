@@ -57,14 +57,12 @@ export const deprecated = [
 	{
 		attributes: {
 			...blockAttributes,
+			subCaption: {
+				type: 'string',
+				default: '',
+			},
 		},
-		save0_0_0,
-	},
-	{
-		attributes: {
-			...blockAttributes,
-		},
-		save0_0_1,
+		save0_60_0,
 	},
 	{
 		attributes: {
@@ -74,47 +72,7 @@ export const deprecated = [
 				default: '',
 			},
 		},
-		save0_0_2,
-	},
-	{
-		attributes: {
-			...blockAttributes,
-			subCaption: {
-				type: 'string',
-				default: '',
-			},
-		},
-		save0_0_3,
-	},
-	{
-		attributes: {
-			...blockAttributes,
-			subCaption: {
-				type: 'string',
-				default: '',
-			},
-		},
-		save0_0_4,
-	},
-	{
-		attributes: {
-			...blockAttributes,
-			subCaption: {
-				type: 'string',
-				default: '',
-			},
-		},
-		save0_0_5,
-	},
-	{
-		attributes: {
-			...blockAttributes,
-			subCaption: {
-				type: 'string',
-				default: '',
-			},
-		},
-		save0_41_0,
+		save0_59_1,
 	},
 	{
 		attributes: {
@@ -134,7 +92,59 @@ export const deprecated = [
 				default: '',
 			},
 		},
-		save0_59_1,
+		save0_41_0,
+	},
+	{
+		attributes: {
+			...blockAttributes,
+			subCaption: {
+				type: 'string',
+				default: '',
+			},
+		},
+		save0_0_5,
+	},
+	{
+		attributes: {
+			...blockAttributes,
+			subCaption: {
+				type: 'string',
+				default: '',
+			},
+		},
+		save0_0_4,
+	},
+	{
+		attributes: {
+			...blockAttributes,
+			subCaption: {
+				type: 'string',
+				default: '',
+			},
+		},
+		save0_0_3,
+	},
+	{
+		attributes: {
+			...blockAttributes,
+			subCaption: {
+				type: 'string',
+				default: '',
+			},
+		},
+		save0_0_2,
+	},
+	{
+		attributes: {
+			...blockAttributes,
+		},
+		save0_0_1,
+	},
+	{
+		attributes: {
+			...blockAttributes,
+		},
+		save0_0_0,
 	},
 	{
 		attributes: {

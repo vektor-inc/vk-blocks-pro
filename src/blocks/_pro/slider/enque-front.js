@@ -1,5 +1,4 @@
-/* eslint no-eval: 0 */
-window.onload = () => {
+document.defaultView.addEventListener('load', function () {
 	// //data-vkb-slider属性のNodeを取得
 	let sliderNodeList = document.querySelectorAll('[data-vkb-slider]');
 	// 配列に変換。
@@ -15,6 +14,7 @@ window.onload = () => {
 			//自動再生がONかOFFによって条件分岐
 			if (attributes.autoPlay) {
 				// 変数名にindexを使う
+				// eslint-disable-next-line no-eval
 				eval(`var swiper${index} = new Swiper ('.vk_slider_${
 					attributes.clientId
 				}', {
@@ -44,6 +44,7 @@ window.onload = () => {
 
 			});`);
 			} else {
+				// eslint-disable-next-line no-eval
 				eval(`var swiper${index} = new Swiper ('.vk_slider_${attributes.clientId}', {
 				// Optional parameters
 				pagination: {
@@ -68,8 +69,9 @@ window.onload = () => {
 
 			// ページネーションがOFFの時非表示
 			if (!attributes.pagination) {
+				// eslint-disable-next-line no-eval
 				eval(`swiper${index}.pagination.destroy();`);
 			}
 		}
 	}
-};
+});

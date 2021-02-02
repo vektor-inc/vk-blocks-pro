@@ -125,7 +125,7 @@ function vkblocks_blocks_assets() {
 
 	//翻訳を追加
 	if ( function_exists( 'wp_set_script_translations' ) ) {
-		wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks', plugin_dir_path( __FILE__ ) . 'build/languages' );
+		wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks', plugin_dir_path( __FILE__ ) . 'languages' );
 	}
 
 	// プロ版の値をフロントエンドに出力

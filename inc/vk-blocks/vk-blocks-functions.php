@@ -82,8 +82,6 @@ function is_lager_than_wp( $target_version, $syntax=">=" ) {
 
 function vkblocks_blocks_assets() {
 
-	$asset_file = include plugin_dir_path( __FILE__ ) . '/build/block-build.asset.php';
-
 	// CSSを登録
 	wp_register_style( 'vk-blocks-build-css', VK_BLOCKS_URL . 'build/block-build.css', array(), VK_BLOCKS_VERSION );
 	wp_register_style( 'vk-blocks-build-editor-css', VK_BLOCKS_URL . 'build/block-build-editor.css', array(), VK_BLOCKS_VERSION );

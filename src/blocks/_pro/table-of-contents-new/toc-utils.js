@@ -16,20 +16,33 @@ export const getBlocksByName = (blockName) => {
 	return getBlocks().filter((block) => block.name === blockName);
 };
 
-export const getAllHeadings = (headingList) => {
+export const getHeadings = (headingBlocks) => {
+
 	const { getBlocks } = select('core/block-editor');
-	let tempBlock;
+
 	return getBlocks().map((block) => {
-		if (1 <= block.innerBlocks.length) {
-			tempBlock = block.innerBlocks.filter(
-				// eslint-disable-next-line no-shadow
-				(block) => headingList.indexOf(block.name) !== -1
-			);
-		} else if (headingList.indexOf(block.name) !== -1) {
-			tempBlock = block;
+		if(isAllowedBlock(block.name, headingBlocks)){
+			return block
 		}
-		return tempBlock;
 	});
+};
+
+export const getInnerHeadings = (headingBlocks, hasInnerBlocks) => {
+
+	const { getBlocks } = select('core/block-editor');
+	let headings = []
+
+	getBlocks().forEach( function(block){
+		if (isAllowedBlock(block.name, hasInnerBlocks)) {
+			block.innerBlocks.forEach(function(block){
+				if(isAllowedBlock(block.name, headingBlocks)){
+					headings.push(block)
+				}
+			})
+		}
+	});
+
+	return headings
 };
 
 export const removeUnnecessaryElements = (headingsRaw) => {

@@ -7,7 +7,8 @@ import ReactHtmlParser from 'react-html-parser';
 import {
 	isAllowedBlock,
 	returnHtml,
-	getAllHeadings,
+	getHeadings,
+	getInnerHeadings,
 	removeUnnecessaryElements,
 } from './toc-utils';
 import { useCurrentBlocks, useBlocksByName } from '@vkblocks/utils/hooks';
@@ -65,10 +66,12 @@ export default function TOCEdit(props) {
 			if (
 				isAllowedBlock(block.name, ['vk-blocks/table-of-contents-new'])
 			) {
-				const headingsRaw = getAllHeadings(headingBlocks);
-				const headings = removeUnnecessaryElements(headingsRaw);
+				const headings = getHeadings(headingBlocks);
+				const innerHeadings = getInnerHeadings(headingBlocks, hasInnerBlocks)
+				const allHeadings = headings.concat(innerHeadings);
+				// const headings = removeUnnecessaryElements(headingsRaw);
 				const render = returnHtml(
-					headings,
+					allHeadings,
 					block.attributes,
 					className,
 					block.attributes.open

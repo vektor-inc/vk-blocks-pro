@@ -90,6 +90,8 @@ export const PrContentMediaUploadEdit = ({
 		prContentDatas.getImagePlaceHolder = getImagePlaceHolder;
 	}
 
+	let imageJudgment = ( Image !== null && Image !== undefined && Image !== '' && Image !=='{}' );
+
 	return (
 		<MediaUpload
 			onSelect={prContentDatas.setImage}
@@ -99,7 +101,7 @@ export const PrContentMediaUploadEdit = ({
 				<Button
 					onClick={open}
 					className={
-						prContentDatas.value
+						imageJudgment
 							? 'image-button'
 							: 'button button-large'
 					}

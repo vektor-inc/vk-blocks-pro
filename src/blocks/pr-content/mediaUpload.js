@@ -90,8 +90,7 @@ export const PrContentMediaUploadEdit = ({
 		prContentDatas.getImagePlaceHolder = getImagePlaceHolder;
 	}
 
-	const imageJudgment =
-		Image !== null && Image !== undefined && Image !== '' && Image !== '{}';
+	const is_image_upload = prContentDatas.value !== null || prContentDatas.value !== undefined || prContentDatas.value !== '' || prContentDatas.value !== {};
 
 	return (
 		<MediaUpload
@@ -102,7 +101,7 @@ export const PrContentMediaUploadEdit = ({
 				<Button
 					onClick={open}
 					className={
-						imageJudgment ? 'image-button' : 'button button-large'
+						is_image_upload ? 'image-button' : 'button button-large'
 					}
 				>
 					{prContentDatas.getImagePlaceHolder(
@@ -133,7 +132,7 @@ export const PrContentMediaUpload = ({ Image, imageBorderColor }) => {
 		);
 	}
 	const imageParse = JSON.parse(fixBrokenUnicode(Image));
-	if (imageParse && typeof imageParse.sizes !== 'undefined') {
+	if (imageParse && typeof imageParse.sizes === 'undefined') {
 		return (
 			<img
 				className={'vk_prContent_colImg_image'}

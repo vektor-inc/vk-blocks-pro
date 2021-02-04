@@ -131,8 +131,5 @@
 			"type": "string",
 			"default": ""
 		}
-	},
-	"supports": {
-		"className": true
 	}
 }

@@ -10,8 +10,8 @@ import ServerSideRender from '@wordpress/server-side-render';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 
 // Load VK Blocks Compornents
-import { DisplayItemsControl } from '../select-post-list/node_modules/@vkblocks/components/display-items-control';
-import { ColumnLayoutControl } from '../select-post-list/node_modules/@vkblocks/components/column-layout-control';
+import { DisplayItemsControl } from '@vkblocks/components/display-items-control';
+import { ColumnLayoutControl } from '@vkblocks/components/column-layout-control';
 
 export default function PostListEdit(props) {
 	const { attributes, setAttributes, name } = props;

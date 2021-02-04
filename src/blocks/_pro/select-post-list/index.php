@@ -14,6 +14,10 @@ if( function_exists('register_block_type_from_metadata')) {
 				'editor_script'   => 'vk-blocks-build-js',
 				'attributes'    => array_merge(
 					array(
+						'className'                     => array(
+							'type'    => 'string',
+							'default' => 'card',
+						),
 						'layout'                     => array(
 							'type'    => 'string',
 							'default' => 'card',
@@ -191,6 +195,7 @@ if( function_exists('register_block_type_from_metadata')) {
 		);
 
 		$options = array(
+			'className'                  => "",
 			'layout'                     => esc_html( $attributes['layout'] ),
 			'col_xs'                     => esc_html( $attributes['col_xs'] ),
 			'col_sm'                     => esc_html( $attributes['col_sm'] ),

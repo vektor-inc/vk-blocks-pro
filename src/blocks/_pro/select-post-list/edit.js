@@ -14,7 +14,7 @@ import { DisplayItemsControl } from '@vkblocks/components/display-items-control'
 import { ColumnLayoutControl } from '@vkblocks/components/column-layout-control';
 
 export default function PostListEdit(props) {
-	const { attributes, setAttributes, name } = props;
+	const { attributes, setAttributes } = props;
 
 	const {
 		numberPosts,
@@ -31,7 +31,6 @@ export default function PostListEdit(props) {
 		postUrl11,
 		postUrl12,
 	} = attributes;
-	attributes.name = name;
 
 	let urlInput = '';
 	const homeUrl = vk_blocks_site_url; // eslint-disable-line camelcase,no-undef
@@ -52,7 +51,7 @@ export default function PostListEdit(props) {
 		);
 	}
 	if (numberPosts >= 2) {
-		urlInput += (
+		urlInput = (
 			<TextControl
 				label={__('Internal Post URL', 'vk-Blocks') + '02'}
 				value={postUrl2}
@@ -228,6 +227,38 @@ export default function PostListEdit(props) {
 		);
 	}
 
+	let editContent = '';
+	if (
+		postUrl1 !== '' ||
+		postUrl2 !== '' ||
+		postUrl3 !== '' ||
+		postUrl4 !== '' ||
+		postUrl5 !== '' ||
+		postUrl6 !== '' ||
+		postUrl7 !== '' ||
+		postUrl8 !== '' ||
+		postUrl9 !== '' ||
+		postUrl10 !== '' ||
+		postUrl11 !== '' ||
+		postUrl12 !== ''
+	) {
+		editContent = (
+			<ServerSideRender
+				block="vk-blocks/select-post-list"
+				attributes={attributes}
+			/>
+		);
+	} else {
+		editContent = (
+			<div className="alert alert-warning text-center">
+				{__(
+					'Because no post is selected, The block Will not render',
+					'vk-blocks'
+				)}
+			</div>
+		);
+	}
+
 	const blockProps = useBlockProps();
 
 	return (
@@ -308,12 +339,7 @@ export default function PostListEdit(props) {
 				<ColumnLayoutControl {...props} />
 				<DisplayItemsControl {...props} />
 			</InspectorControls>
-			<div {...blockProps}>
-				<ServerSideRender
-					block="vk-blocks/select-post-list"
-					attributes={attributes}
-				/>
-			</div>
+			<div {...blockProps}>{editContent}</div>
 		</>
 	);
 }

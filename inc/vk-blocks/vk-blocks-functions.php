@@ -142,6 +142,7 @@ function vkblocks_blocks_assets() {
 			'icon-card',
 			'icon-card-item',
 			'post-list',
+			'select-post-list',
 			'step',
 			'step-item',
 			'timeline',

@@ -3,10 +3,6 @@
 	"name": "vk-blocks/select-post-list",
 	"category": "vk-blocks-cat",
 	"attributes": {
-		"name": {
-			"type": "string",
-			"default": ""
-		},
 		"layout": {
 			"type": "string",
 			"default": "card"

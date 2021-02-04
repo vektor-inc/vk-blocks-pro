@@ -51,7 +51,7 @@ export default function PostListEdit(props) {
 		);
 	}
 	if (numberPosts >= 2) {
-		urlInput = (
+		urlInput += (
 			<TextControl
 				label={__('Internal Post URL', 'vk-Blocks') + '02'}
 				value={postUrl2}

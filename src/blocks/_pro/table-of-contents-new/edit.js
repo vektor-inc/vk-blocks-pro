@@ -69,7 +69,7 @@ export default function TOCEdit(props) {
 				const headings = getHeadings(headingBlocks);
 				const innerHeadings = getInnerHeadings(headingBlocks, hasInnerBlocks)
 				const allHeadings = headings.concat(innerHeadings);
-				// const headings = removeUnnecessaryElements(headingsRaw);
+
 				const render = returnHtml(
 					allHeadings,
 					block.attributes,

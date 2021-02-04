@@ -5,26 +5,10 @@ export const isAllowedBlock = (name, allowedBlocks) => {
 	return allowedBlocks.find((blockName) => blockName === name);
 };
 
-export const transformToOneDimensionalArray = (multiDimensionalarray) => {
-	return multiDimensionalarray.reduce((accumulator, currentValue) => {
-		return accumulator.concat(currentValue);
-	}, []);
-};
-
-export const getBlocksByName = (blockName) => {
-	const { getBlocks } = select('core/block-editor');
-	return getBlocks().filter((block) => block.name === blockName);
-};
-
 export const getHeadings = (headingBlocks) => {
 
 	const { getBlocks } = select('core/block-editor');
-
-	return getBlocks().map((block) => {
-		if(isAllowedBlock(block.name, headingBlocks)){
-			return block
-		}
-	});
+	return getBlocks().filter( block => isAllowedBlock(block.name, headingBlocks))
 };
 
 export const getInnerHeadings = (headingBlocks, hasInnerBlocks) => {
@@ -43,15 +27,6 @@ export const getInnerHeadings = (headingBlocks, hasInnerBlocks) => {
 	});
 
 	return headings
-};
-
-export const removeUnnecessaryElements = (headingsRaw) => {
-	const oneDimensionArrayStoredHeading = transformToOneDimensionalArray(
-		headingsRaw
-	);
-	return oneDimensionArrayStoredHeading.filter(
-		(heading) => heading !== undefined
-	);
 };
 
 export const returnHtml = (source, attributes, className) => {

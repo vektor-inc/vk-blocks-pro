@@ -230,8 +230,12 @@ if( function_exists('register_block_type_from_metadata')) {
 		for ( $i = 1; $i <= $attributes['numberPosts']; $i++ ) {
 			if ( ! empty( $attributes[ 'postUrl' . $i ] ) ) {
 				$post_url   = esc_url( $attributes[ 'postUrl' . $i ] );
-				$post_id    = url_to_postid( $post_url );
-				$post__in[] = $post_id;
+				if ( ! empty( $post_url ) ) {
+					$post_id    = url_to_postid( $post_url );
+					if ( ! empty( $post_id ) ) {
+						$post__in[] = $post_id;
+					}
+				}
 			}
 		}
 

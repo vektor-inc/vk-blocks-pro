@@ -32,10 +32,21 @@ export default function PostListEdit(props) {
 		postUrl12,
 	} = attributes;
 
-	let urlInput = '';
+	let urlInput1 = '';
+	let urlInput2 = '';
+	let urlInput3 = '';
+	let urlInput4 = '';
+	let urlInput5 = '';
+	let urlInput6 = '';
+	let urlInput7 = '';
+	let urlInput8 = '';
+	let urlInput9 = '';
+	let urlInput10 = '';
+	let urlInput11 = '';
+	let urlInput12 = '';
 	const homeUrl = vk_blocks_site_url; // eslint-disable-line camelcase,no-undef
 	if (numberPosts >= 1) {
-		urlInput = (
+		urlInput1 = (
 			<TextControl
 				label={__('Internal Post URL', 'vk-Blocks') + '01'}
 				value={postUrl1}
@@ -51,7 +62,7 @@ export default function PostListEdit(props) {
 		);
 	}
 	if (numberPosts >= 2) {
-		urlInput += (
+		urlInput2 = (
 			<TextControl
 				label={__('Internal Post URL', 'vk-Blocks') + '02'}
 				value={postUrl2}
@@ -67,7 +78,7 @@ export default function PostListEdit(props) {
 		);
 	}
 	if (numberPosts >= 3) {
-		urlInput += (
+		urlInput3 = (
 			<TextControl
 				label={__('Internal Post URL', 'vk-Blocks') + '03'}
 				value={postUrl3}
@@ -83,7 +94,7 @@ export default function PostListEdit(props) {
 		);
 	}
 	if (numberPosts >= 4) {
-		urlInput += (
+		urlInput4 = (
 			<TextControl
 				label={__('Internal Post URL', 'vk-Blocks') + '04'}
 				value={postUrl4}
@@ -99,7 +110,7 @@ export default function PostListEdit(props) {
 		);
 	}
 	if (numberPosts >= 5) {
-		urlInput += (
+		urlInput5 = (
 			<TextControl
 				label={__('Internal Post URL', 'vk-Blocks') + '05'}
 				value={postUrl5}
@@ -115,7 +126,7 @@ export default function PostListEdit(props) {
 		);
 	}
 	if (numberPosts >= 6) {
-		urlInput += (
+		urlInput6 = (
 			<TextControl
 				label={__('Internal Post URL', 'vk-Blocks') + '06'}
 				value={postUrl6}
@@ -131,7 +142,7 @@ export default function PostListEdit(props) {
 		);
 	}
 	if (numberPosts >= 7) {
-		urlInput += (
+		urlInput7 = (
 			<TextControl
 				label={__('Internal Post URL', 'vk-Blocks') + '07'}
 				value={postUrl7}
@@ -147,7 +158,7 @@ export default function PostListEdit(props) {
 		);
 	}
 	if (numberPosts >= 8) {
-		urlInput += (
+		urlInput8 = (
 			<TextControl
 				label={__('Internal Post URL', 'vk-Blocks') + '08'}
 				value={postUrl8}
@@ -163,7 +174,7 @@ export default function PostListEdit(props) {
 		);
 	}
 	if (numberPosts >= 9) {
-		urlInput += (
+		urlInput9 = (
 			<TextControl
 				label={__('Internal Post URL', 'vk-Blocks') + '09'}
 				value={postUrl9}
@@ -179,7 +190,7 @@ export default function PostListEdit(props) {
 		);
 	}
 	if (numberPosts >= 10) {
-		urlInput += (
+		urlInput10 = (
 			<TextControl
 				label={__('Internal Post URL', 'vk-Blocks') + '10'}
 				value={postUrl10}
@@ -195,7 +206,7 @@ export default function PostListEdit(props) {
 		);
 	}
 	if (numberPosts >= 11) {
-		urlInput += (
+		urlInput11 = (
 			<TextControl
 				label={__('Internal Post URL', 'vk-Blocks') + '11'}
 				value={postUrl11}
@@ -211,7 +222,7 @@ export default function PostListEdit(props) {
 		);
 	}
 	if (numberPosts >= 12) {
-		urlInput += (
+		urlInput12 = (
 			<TextControl
 				label={__('Internal Post URL', 'vk-Blocks') + '12'}
 				value={postUrl12}
@@ -333,7 +344,18 @@ export default function PostListEdit(props) {
 						label={__('Post Urls', 'vk-blocks')}
 						id={`vk_postList-postUrl`}
 					>
-						{urlInput}
+						{urlInput1}
+						{urlInput2}
+						{urlInput3}
+						{urlInput4}
+						{urlInput5}
+						{urlInput6}
+						{urlInput7}
+						{urlInput8}
+						{urlInput9}
+						{urlInput10}
+						{urlInput11}
+						{urlInput12}
 					</BaseControl>
 				</PanelBody>
 				<ColumnLayoutControl {...props} />

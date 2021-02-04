@@ -6,27 +6,27 @@ export const isAllowedBlock = (name, allowedBlocks) => {
 };
 
 export const getHeadings = (headingBlocks) => {
-
 	const { getBlocks } = select('core/block-editor');
-	return getBlocks().filter( block => isAllowedBlock(block.name, headingBlocks))
+	return getBlocks().filter((block) =>
+		isAllowedBlock(block.name, headingBlocks)
+	);
 };
 
 export const getInnerHeadings = (headingBlocks, hasInnerBlocks) => {
-
 	const { getBlocks } = select('core/block-editor');
-	let headings = []
+	const headings = [];
 
-	getBlocks().forEach( function(block){
+	getBlocks().forEach(function (block) {
 		if (isAllowedBlock(block.name, hasInnerBlocks)) {
-			block.innerBlocks.forEach(function(block){
-				if(isAllowedBlock(block.name, headingBlocks)){
-					headings.push(block)
+			block.innerBlocks.forEach(function (innerBlock) {
+				if (isAllowedBlock(innerBlock.name, headingBlocks)) {
+					headings.push(innerBlock);
 				}
-			})
+			});
 		}
 	});
 
-	return headings
+	return headings;
 };
 
 export const returnHtml = (source, attributes, className) => {

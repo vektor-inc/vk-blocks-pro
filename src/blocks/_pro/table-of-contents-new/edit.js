@@ -9,7 +9,6 @@ import {
 	returnHtml,
 	getHeadings,
 	getInnerHeadings,
-	removeUnnecessaryElements,
 } from './toc-utils';
 import { useCurrentBlocks, useBlocksByName } from '@vkblocks/utils/hooks';
 
@@ -67,7 +66,10 @@ export default function TOCEdit(props) {
 				isAllowedBlock(block.name, ['vk-blocks/table-of-contents-new'])
 			) {
 				const headings = getHeadings(headingBlocks);
-				const innerHeadings = getInnerHeadings(headingBlocks, hasInnerBlocks)
+				const innerHeadings = getInnerHeadings(
+					headingBlocks,
+					hasInnerBlocks
+				);
 				const allHeadings = headings.concat(innerHeadings);
 
 				const render = returnHtml(

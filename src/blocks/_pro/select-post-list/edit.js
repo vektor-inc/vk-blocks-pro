@@ -34,12 +34,19 @@ export default function PostListEdit(props) {
 	attributes.name = name;
 
 	let urlInput = '';
+	const homeUrl = vk_blocks_site_url; // eslint-disable-line camelcase,no-undef
 	if (numberPosts >= 1) {
 		urlInput = (
 			<TextControl
 				label={__('Internal Post URL', 'vk-Blocks') + '01'}
 				value={postUrl01}
-				onChange={(v) => setAttributes({ postUrl01: v })}
+				onChange={(v) => {
+					if (v.indexOf(homeUrl) !== -1) {
+						setAttributes({ postUrl01: v });
+					} else {
+						setAttributes({ postUrl01: '' });
+					}
+				}}
 				type="string"
 			/>
 		);
@@ -49,7 +56,13 @@ export default function PostListEdit(props) {
 			<TextControl
 				label={__('Internal Post URL', 'vk-Blocks') + '02'}
 				value={postUrl02}
-				onChange={(v) => setAttributes({ postUrl02: v })}
+				onChange={(v) => {
+					if (v.indexOf(homeUrl) !== -1) {
+						setAttributes({ postUrl02: v });
+					} else {
+						setAttributes({ postUrl02: '' });
+					}
+				}}
 				type="string"
 			/>
 		);
@@ -59,7 +72,13 @@ export default function PostListEdit(props) {
 			<TextControl
 				label={__('Internal Post URL', 'vk-Blocks') + '03'}
 				value={postUrl03}
-				onChange={(v) => setAttributes({ postUrl03: v })}
+				onChange={(v) => {
+					if (v.indexOf(homeUrl) !== -1) {
+						setAttributes({ postUrl03: v });
+					} else {
+						setAttributes({ postUrl03: '' });
+					}
+				}}
 				type="string"
 			/>
 		);
@@ -69,7 +88,13 @@ export default function PostListEdit(props) {
 			<TextControl
 				label={__('Internal Post URL', 'vk-Blocks') + '04'}
 				value={postUrl04}
-				onChange={(v) => setAttributes({ postUrl04: v })}
+				onChange={(v) => {
+					if (v.indexOf(homeUrl) !== -1) {
+						setAttributes({ postUrl04: v });
+					} else {
+						setAttributes({ postUrl04: '' });
+					}
+				}}
 				type="string"
 			/>
 		);
@@ -79,7 +104,13 @@ export default function PostListEdit(props) {
 			<TextControl
 				label={__('Internal Post URL', 'vk-Blocks') + '05'}
 				value={postUrl05}
-				onChange={(v) => setAttributes({ postUrl05: v })}
+				onChange={(v) => {
+					if (v.indexOf(homeUrl) !== -1) {
+						setAttributes({ postUrl05: v });
+					} else {
+						setAttributes({ postUrl05: '' });
+					}
+				}}
 				type="string"
 			/>
 		);
@@ -89,7 +120,13 @@ export default function PostListEdit(props) {
 			<TextControl
 				label={__('Internal Post URL', 'vk-Blocks') + '06'}
 				value={postUrl06}
-				onChange={(v) => setAttributes({ postUrl06: v })}
+				onChange={(v) => {
+					if (v.indexOf(homeUrl) !== -1) {
+						setAttributes({ postUrl06: v });
+					} else {
+						setAttributes({ postUrl06: '' });
+					}
+				}}
 				type="string"
 			/>
 		);
@@ -99,7 +136,13 @@ export default function PostListEdit(props) {
 			<TextControl
 				label={__('Internal Post URL', 'vk-Blocks') + '07'}
 				value={postUrl07}
-				onChange={(v) => setAttributes({ postUrl07: v })}
+				onChange={(v) => {
+					if (v.indexOf(homeUrl) !== -1) {
+						setAttributes({ postUrl07: v });
+					} else {
+						setAttributes({ postUrl07: '' });
+					}
+				}}
 				type="string"
 			/>
 		);
@@ -109,7 +152,13 @@ export default function PostListEdit(props) {
 			<TextControl
 				label={__('Internal Post URL', 'vk-Blocks') + '08'}
 				value={postUrl08}
-				onChange={(v) => setAttributes({ postUrl08: v })}
+				onChange={(v) => {
+					if (v.indexOf(homeUrl) !== -1) {
+						setAttributes({ postUrl08: v });
+					} else {
+						setAttributes({ postUrl08: '' });
+					}
+				}}
 				type="string"
 			/>
 		);
@@ -119,7 +168,13 @@ export default function PostListEdit(props) {
 			<TextControl
 				label={__('Internal Post URL', 'vk-Blocks') + '09'}
 				value={postUrl09}
-				onChange={(v) => setAttributes({ postUrl09: v })}
+				onChange={(v) => {
+					if (v.indexOf(homeUrl) !== -1) {
+						setAttributes({ postUrl09: v });
+					} else {
+						setAttributes({ postUrl09: '' });
+					}
+				}}
 				type="string"
 			/>
 		);
@@ -129,7 +184,13 @@ export default function PostListEdit(props) {
 			<TextControl
 				label={__('Internal Post URL', 'vk-Blocks') + '10'}
 				value={postUrl10}
-				onChange={(v) => setAttributes({ postUrl10: v })}
+				onChange={(v) => {
+					if (v.indexOf(homeUrl) !== -1) {
+						setAttributes({ postUrl10: v });
+					} else {
+						setAttributes({ postUrl10: '' });
+					}
+				}}
 				type="string"
 			/>
 		);
@@ -139,7 +200,13 @@ export default function PostListEdit(props) {
 			<TextControl
 				label={__('Internal Post URL', 'vk-Blocks') + '11'}
 				value={postUrl11}
-				onChange={(v) => setAttributes({ postUrl11: v })}
+				onChange={(v) => {
+					if (v.indexOf(homeUrl) !== -1) {
+						setAttributes({ postUrl11: v });
+					} else {
+						setAttributes({ postUrl11: '' });
+					}
+				}}
 				type="string"
 			/>
 		);
@@ -149,7 +216,13 @@ export default function PostListEdit(props) {
 			<TextControl
 				label={__('Internal Post URL', 'vk-Blocks') + '12'}
 				value={postUrl12}
-				onChange={(v) => setAttributes({ postUrl12: v })}
+				onChange={(v) => {
+					if (v.indexOf(homeUrl) !== -1) {
+						setAttributes({ postUrl12: v });
+					} else {
+						setAttributes({ postUrl12: '' });
+					}
+				}}
 				type="string"
 			/>
 		);

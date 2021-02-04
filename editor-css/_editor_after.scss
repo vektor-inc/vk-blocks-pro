@@ -1,3 +1,12 @@
+.wp-block.vk_prBlocks,
+.wp-block.vk_posts {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.vk_tableOfContents_openCloseBtn {
+	display: block;
+}
 
 /* .vk_hidden.vk_hidden は2つじゃないと上書きできない  */
 .vk_hidden {

@@ -37,7 +37,7 @@ export default function PostListEdit(props) {
 	if (numberPosts >= 1) {
 		urlInput = (
 			<TextControl
-				label={__('Post URL', 'vk-Blocks') + '01'}
+				label={__('Internal Post URL', 'vk-Blocks') + '01'}
 				value={postUrl01}
 				onChange={(v) => setAttributes({ postUrl01: v })}
 				type="string"
@@ -47,7 +47,7 @@ export default function PostListEdit(props) {
 	if (numberPosts >= 2) {
 		urlInput += (
 			<TextControl
-				label={__('Post URL', 'vk-Blocks') + '02'}
+				label={__('Internal Post URL', 'vk-Blocks') + '02'}
 				value={postUrl02}
 				onChange={(v) => setAttributes({ postUrl02: v })}
 				type="string"
@@ -57,7 +57,7 @@ export default function PostListEdit(props) {
 	if (numberPosts >= 3) {
 		urlInput += (
 			<TextControl
-				label={__('Post URL', 'vk-Blocks') + '03'}
+				label={__('Internal Post URL', 'vk-Blocks') + '03'}
 				value={postUrl03}
 				onChange={(v) => setAttributes({ postUrl03: v })}
 				type="string"
@@ -67,7 +67,7 @@ export default function PostListEdit(props) {
 	if (numberPosts >= 4) {
 		urlInput += (
 			<TextControl
-				label={__('Post URL', 'vk-Blocks') + '04'}
+				label={__('Internal Post URL', 'vk-Blocks') + '04'}
 				value={postUrl04}
 				onChange={(v) => setAttributes({ postUrl04: v })}
 				type="string"
@@ -77,7 +77,7 @@ export default function PostListEdit(props) {
 	if (numberPosts >= 5) {
 		urlInput += (
 			<TextControl
-				label={__('Post URL', 'vk-Blocks') + '05'}
+				label={__('Internal Post URL', 'vk-Blocks') + '05'}
 				value={postUrl05}
 				onChange={(v) => setAttributes({ postUrl05: v })}
 				type="string"
@@ -87,7 +87,7 @@ export default function PostListEdit(props) {
 	if (numberPosts >= 6) {
 		urlInput += (
 			<TextControl
-				label={__('Post URL', 'vk-Blocks') + '06'}
+				label={__('Internal Post URL', 'vk-Blocks') + '06'}
 				value={postUrl06}
 				onChange={(v) => setAttributes({ postUrl06: v })}
 				type="string"
@@ -97,7 +97,7 @@ export default function PostListEdit(props) {
 	if (numberPosts >= 7) {
 		urlInput += (
 			<TextControl
-				label={__('Post URL', 'vk-Blocks') + '07'}
+				label={__('Internal Post URL', 'vk-Blocks') + '07'}
 				value={postUrl07}
 				onChange={(v) => setAttributes({ postUrl07: v })}
 				type="string"
@@ -107,7 +107,7 @@ export default function PostListEdit(props) {
 	if (numberPosts >= 8) {
 		urlInput += (
 			<TextControl
-				label={__('Post URL', 'vk-Blocks') + '08'}
+				label={__('Internal Post URL', 'vk-Blocks') + '08'}
 				value={postUrl08}
 				onChange={(v) => setAttributes({ postUrl08: v })}
 				type="string"
@@ -117,7 +117,7 @@ export default function PostListEdit(props) {
 	if (numberPosts >= 9) {
 		urlInput += (
 			<TextControl
-				label={__('Post URL', 'vk-Blocks') + '09'}
+				label={__('Internal Post URL', 'vk-Blocks') + '09'}
 				value={postUrl09}
 				onChange={(v) => setAttributes({ postUrl09: v })}
 				type="string"
@@ -127,7 +127,7 @@ export default function PostListEdit(props) {
 	if (numberPosts >= 10) {
 		urlInput += (
 			<TextControl
-				label={__('Post URL', 'vk-Blocks') + '10'}
+				label={__('Internal Post URL', 'vk-Blocks') + '10'}
 				value={postUrl10}
 				onChange={(v) => setAttributes({ postUrl10: v })}
 				type="string"
@@ -137,7 +137,7 @@ export default function PostListEdit(props) {
 	if (numberPosts >= 11) {
 		urlInput += (
 			<TextControl
-				label={__('Post URL', 'vk-Blocks') + '11'}
+				label={__('Internal Post URL', 'vk-Blocks') + '11'}
 				value={postUrl11}
 				onChange={(v) => setAttributes({ postUrl11: v })}
 				type="string"
@@ -147,7 +147,7 @@ export default function PostListEdit(props) {
 	if (numberPosts >= 12) {
 		urlInput += (
 			<TextControl
-				label={__('Post URL', 'vk-Blocks') + '12'}
+				label={__('Internal Post URL', 'vk-Blocks') + '12'}
 				value={postUrl12}
 				onChange={(v) => setAttributes({ postUrl12: v })}
 				type="string"

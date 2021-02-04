@@ -8,7 +8,7 @@ export const AdvancedCheckboxControl = (props) => {
 
 	if (!rawData || !checkedData) return false;
 
-	const advancedSetAttributes = (saveData) => {
+	const advancedSetAttributes = (schema,saveData) => {
 		setAttributes({ [schema]: JSON.stringify(saveData) });
 	};
 

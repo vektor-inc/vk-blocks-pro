@@ -87,39 +87,39 @@
 			"type": "number",
 			"default": 6
 		},
-		"postUrl01": {
+		"postUrl1": {
 			"type": "string",
 			"default": ""
 		},
-		"postUrl02": {
+		"postUrl2": {
 			"type": "string",
 			"default": ""
 		},
-		"postUrl03": {
+		"postUrl3": {
 			"type": "string",
 			"default": ""
 		},
-		"postUrl04": {
+		"postUrl4": {
 			"type": "string",
 			"default": ""
 		},
-		"postUrl05": {
+		"postUrl5": {
 			"type": "string",
 			"default": ""
 		},
-		"postUrl06": {
+		"postUrl6": {
 			"type": "string",
 			"default": ""
 		},
-		"postUrl07": {
+		"postUrl7": {
 			"type": "string",
 			"default": ""
 		},
-		"postUrl08": {
+		"postUrl8": {
 			"type": "string",
 			"default": ""
 		},
-		"postUrl09": {
+		"postUrl9": {
 			"type": "string",
 			"default": ""
 		},

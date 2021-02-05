@@ -13,7 +13,7 @@
     "build:free": "wp-scripts build --config webpack.config.js && gulp build:free && npm run translate",
     "translate": "./node_modules/.bin/po2json ./inc/vk-blocks/languages/vk-blocks-ja.po ./inc/vk-blocks/languages/vk-blocks-ja-vk-blocks-build-js.json -f jed",
     "gulp": "gulp",
-    "lint": "run-s lint:*",
+    "lint": "wp-scripts format-js src/ && wp-scripts lint-js src/ --fix",
     "lint:alert": "wp-scripts format-js src/blocks/alert && wp-scripts lint-js src/blocks/alert --fix",
     "lint:pr-content": "wp-scripts format-js src/blocks/pr-content/ && wp-scripts lint-js src/blocks/pr-content/ --fix",
     "lint:faq2": "wp-scripts format-js src/blocks/faq2 && wp-scripts lint-js src/blocks/faq2 --fix",
@@ -119,5 +119,10 @@
     "memize": "^1.1.0",
     "react-dom": "^16.14.0",
     "react-html-parser": "^2.0.2"
-  }
+	},
+	"husky": {
+		"hooks": {
+			"pre-push": "npm run lint"
+		}
+	}
 }

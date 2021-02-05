@@ -162,8 +162,6 @@ if( function_exists('register_block_type_from_metadata')) {
 			}
 		}
 
-		var_dump( $options );
-
 		if ( ! empty( $post ) && ! empty( $options ) ) {
 			$content = VK_Component_Posts::get_view( $post, $options );
 		}

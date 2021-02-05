@@ -14,10 +14,6 @@ if( function_exists('register_block_type_from_metadata')) {
 				'editor_script'   => 'vk-blocks-build-js',
 				'attributes'    => array_merge(
 					array(
-						'className'                     => array(
-							'type'    => 'string',
-							'default' => 'card',
-						),
 						'layout'                     => array(
 							'type'    => 'string',
 							'default' => 'card',
@@ -94,58 +90,6 @@ if( function_exists('register_block_type_from_metadata')) {
 							'type'    => 'string',
 							'default' => 'text-right',
 						),
-						'numberPosts'                => array(
-							'type'    => 'number',
-							'default' => 6,
-						),
-						'postUrl1'                => array(
-							'type'    => 'string',
-							'default' => '',
-						),
-						'postUrl2'                => array(
-							'type'    => 'string',
-							'default' => '',
-						),
-						'postUrl3'                => array(
-							'type'    => 'string',
-							'default' => '',
-						),
-						'postUrl4'                => array(
-							'type'    => 'string',
-							'default' => '',
-						),
-						'postUrl5'                => array(
-							'type'    => 'string',
-							'default' => '',
-						),
-						'postUrl6'                => array(
-							'type'    => 'string',
-							'default' => '',
-						),
-						'postUrl7'                => array(
-							'type'    => 'string',
-							'default' => '',
-						),
-						'postUrl8'                => array(
-							'type'    => 'string',
-							'default' => '',
-						),
-						'postUrl9'                => array(
-							'type'    => 'string',
-							'default' => '',
-						),
-						'postUrl10'                => array(
-							'type'    => 'string',
-							'default' => '',
-						),
-						'postUrl11'                => array(
-							'type'    => 'string',
-							'default' => '',
-						),
-						'postUrl12'                => array(
-							'type'    => 'string',
-							'default' => '',
-						),
 					),
 					$vk_blocks_common_attributes
 				),
@@ -177,87 +121,11 @@ if( function_exists('register_block_type_from_metadata')) {
 				'new_date'                   => 7,
 				'new_text'                   => 'New!!',
 				'btn_text'                   => 'Read more',
-				'btn_align'                  =>'text-right',
-				'numberPosts'                => 6,
-				'postUrl1'                   => '',
-				'postUrl2'                   => '',
-				'postUrl3'                   => '',
-				'postUrl4'                   => '',
-				'postUrl5'                   => '',
-				'postUrl6'                   => '',
-				'postUrl7'                   => '',
-				'postUrl8'                   => '',
-				'postUrl9'                   => '',
-				'postUrl10'                  => '',
-				'postUrl11'                  => '',
-				'postUrl12'                  => '',
+				'btn_align'                  => 'text-right',
 			)
 		);
-
-		$options = array(
-			'className'                  => "",
-			'layout'                     => esc_html( $attributes['layout'] ),
-			'col_xs'                     => esc_html( $attributes['col_xs'] ),
-			'col_sm'                     => esc_html( $attributes['col_sm'] ),
-			'col_md'                     => esc_html( $attributes['col_md'] ),
-			'col_lg'                     => esc_html( $attributes['col_lg'] ),
-			'col_xl'                     => esc_html( $attributes['col_xl'] ),
-			'col_xxl'                    => esc_html( $attributes['col_xxl'] ),
-			'display_image'              => esc_html( $attributes['display_image'] ),
-			'display_image_overlay_term' => esc_html( $attributes['display_image_overlay_term'] ),
-			'display_excerpt'            => esc_html( $attributes['display_excerpt'] ),
-			'display_author'             => esc_html( $attributes['display_author'] ),
-			'display_date'               => esc_html( $attributes['display_date'] ),
-			'display_new'                => esc_html( $attributes['display_new'] ),
-			'display_taxonomies'         => esc_html( $attributes['display_taxonomies'] ),
-			'display_btn'                => esc_html( $attributes['display_btn'] ),
-			'image_default_url'          => VK_BLOCKS_URL . 'images/no-image.png',
-			'new_text'                   => esc_html( $attributes['new_text'] ),
-			'new_date'                   => esc_html( $attributes['new_date'] ),
-			'btn_text'                   => esc_html( $attributes['btn_text'] ),
-			'btn_align'                  => esc_html( $attributes['btn_align'] ),
-			'overlay'                    => false,
-			'slug'                       => '',
-			'class_outer'                => '',
-			'class_title'                => '',
-			'body_prepend'               => '',
-			'body_append'                => '',
-			'vkb_hidden'                 => $attributes['vkb_hidden'],
-			'vkb_hidden_xxl'             => $attributes['vkb_hidden_xxl'],
-			'vkb_hidden_xl'              => $attributes['vkb_hidden_xl'],
-			'vkb_hidden_lg'              => $attributes['vkb_hidden_lg'],
-			'vkb_hidden_md'              => $attributes['vkb_hidden_md'],
-			'vkb_hidden_sm'              => $attributes['vkb_hidden_sm'],
-			'vkb_hidden_xs'              => $attributes['vkb_hidden_xs'],
-		);
-
-		$post__in = array();
-		for ( $i = 1; $i <= $attributes['numberPosts']; $i++ ) {
-			if ( ! empty( $attributes[ 'postUrl' . $i ] ) ) {
-				$post_url = esc_url( $attributes[ 'postUrl' . $i ] );
-				if ( ! empty( $post_url ) ) {
-					$post_id = url_to_postid( $post_url );
-					if ( ! empty( $post_id ) ) {
-						$post__in[] = $post_id;
-					}
-				}
-			}
-		}
-
-		$query_args = array(
-			'post_type'           => 'any',
-			'post__in'            => $post__in,
-			'ignore_sticky_posts' => true,
-		);
-
-		$wp_query = new WP_Query( $query_args );
-		$options_loop = array( 'class_loop_outer' => 'vk_postList' );
-		$content = VK_Component_Posts::get_loop( $wp_query, $options, $options_loop );
-
-		wp_reset_query();
-		wp_reset_postdata();
+		add_filter( 'vk_blocks_select_post_list_options', $attributes );
 
 		return $content;
-
 	}
 }

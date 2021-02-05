@@ -3,10 +3,6 @@
 	"name": "vk-blocks/select-post-list",
 	"category": "vk-blocks-cat",
 	"attributes": {
-		"className": {
-			"type": "string",
-			"default":""
-		},
 		"layout": {
 			"type": "string",
 			"default": "card"
@@ -82,61 +78,9 @@
 		"btn_align": {
 			"type": "string",
 			"default": "text-right"
-		},
-		"numberPosts": {
-			"type": "number",
-			"default": 6
-		},
-		"postUrl1": {
-			"type": "string",
-			"default": ""
-		},
-		"postUrl2": {
-			"type": "string",
-			"default": ""
-		},
-		"postUrl3": {
-			"type": "string",
-			"default": ""
-		},
-		"postUrl4": {
-			"type": "string",
-			"default": ""
-		},
-		"postUrl5": {
-			"type": "string",
-			"default": ""
-		},
-		"postUrl6": {
-			"type": "string",
-			"default": ""
-		},
-		"postUrl7": {
-			"type": "string",
-			"default": ""
-		},
-		"postUrl8": {
-			"type": "string",
-			"default": ""
-		},
-		"postUrl9": {
-			"type": "string",
-			"default": ""
-		},
-		"postUrl10": {
-			"type": "string",
-			"default": ""
-		},
-		"postUrl11": {
-			"type": "string",
-			"default": ""
-		},
-		"postUrl12": {
-			"type": "string",
-			"default": ""
 		}
 	},
 	"supports": {
-		"className": false
+		"className": true
 	}
 }

@@ -11,6 +11,7 @@ import { __ } from '@wordpress/i18n';
 // import block files
 import metadata from './block.json';
 import edit from './edit';
+import save from './save';
 
 const { name } = metadata;
 
@@ -20,4 +21,5 @@ export const settings = {
 	title: __('Select Post list', 'vk-blocks'),
 	icon: <Icon />,
 	edit,
+	save,
 };

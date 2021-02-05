@@ -55,7 +55,7 @@ export default function OuterEdit(props) {
 
 	useEffect(() => {
 		if (clientId) {
-			updateBlockAttributes(clientId, {clientId});
+			updateBlockAttributes(clientId, { clientId });
 		}
 	}, [clientId]);
 

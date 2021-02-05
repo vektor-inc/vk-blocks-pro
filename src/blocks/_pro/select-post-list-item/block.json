@@ -1,0 +1,95 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/select-post-list-item",
+	"category": "vk-blocks-cat",
+	"parent": "vk-blocks/select-post-list",
+	"attributes": {
+		"className":{
+			"type": "string",
+			"default": ""
+		},
+		"url": {
+			"type": "string",
+			"default": ""
+		},
+		"layout": {
+			"type": "string",
+			"default": "card"
+		},
+		"col_xs": {
+			"type": "number",
+			"default": 1
+		},
+		"col_sm": {
+			"type": "number",
+			"default": 2
+		},
+		"col_md": {
+			"type": "number",
+			"default": 3
+		},
+		"col_lg": {
+			"type": "number",
+			"default": 3
+		},
+		"col_xl": {
+			"type": "number",
+			"default": 3
+		},
+		"col_xxl": {
+			"type": "number",
+			"default": 3
+		},
+		"display_image": {
+			"type": "boolean",
+			"default": true
+		},
+		"display_image_overlay_term": {
+			"type": "boolean",
+			"default": true
+		},
+		"display_excerpt": {
+			"type": "boolean",
+			"default": false
+		},
+		"display_author": {
+			"type": "boolean",
+			"default": false
+		},
+		"display_date": {
+			"type": "boolean",
+			"default": true
+		},
+		"display_new": {
+			"type": "boolean",
+			"default": true
+		},
+		"display_taxonomies": {
+			"type": "boolean",
+			"default": false
+		},
+		"display_btn": {
+			"type": "boolean",
+			"default": false
+		},
+		"new_date": {
+			"type": "number",
+			"default": 7
+		},
+		"new_text": {
+			"type": "string",
+			"default": "New!!"
+		},
+		"btn_text": {
+			"type": "string",
+			"default": "Read more"
+		},
+		"btn_align": {
+			"type": "string",
+			"default": "text-right"
+		}
+	},
+	"supports": {
+		"className": true
+	}
+}

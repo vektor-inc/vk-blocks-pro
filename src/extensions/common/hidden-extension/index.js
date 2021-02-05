@@ -32,6 +32,7 @@ export const is_hidden = (blockName) => {
 		'core/rss',
 		'vk-blocks/card-item',
 		'vk-blocks/icon-card-item',
+		'vk-blocks/select-post-list-item',
 	];
 	const excludeBlock =
 		excludes.find((excludeName) => in_string(blockName, excludeName)) !==

@@ -42,6 +42,7 @@ import * as iconCardItem from './_pro/icon-card-item';
 import * as gridColumn from './_pro/grid-column';
 import * as gridColumnItem from './_pro/grid-column-item';
 import * as selectPostList from './_pro/select-post-list';
+import * as selectPostListItem from './_pro/select-post-list-item';
 import * as step from './_pro/step';
 import * as stepItem from './_pro/step-item';
 import * as slider from './_pro/slider';
@@ -96,6 +97,7 @@ export const __getVKBlocks = () => [
 	gridColumn,
 	gridColumnItem,
 	selectPostList,
+	selectPostListItem,
 	slider,
 	sliderItem,
 ];

@@ -13,7 +13,7 @@
     "build:free": "wp-scripts build --config webpack.config.js && gulp build:free && npm run translate",
     "translate": "./node_modules/.bin/po2json ./inc/vk-blocks/languages/vk-blocks-ja.po ./inc/vk-blocks/languages/vk-blocks-ja-vk-blocks-build-js.json -f jed",
     "gulp": "gulp",
-    "lint": "run-s lint:*",
+    "lint": "wp-scripts format-js src/ && wp-scripts lint-js src/ --fix",
     "lint:alert": "wp-scripts format-js src/blocks/alert && wp-scripts lint-js src/blocks/alert --fix",
     "lint:pr-content": "wp-scripts format-js src/blocks/pr-content/ && wp-scripts lint-js src/blocks/pr-content/ --fix",
     "lint:faq2": "wp-scripts format-js src/blocks/faq2 && wp-scripts lint-js src/blocks/faq2 --fix",
@@ -81,6 +81,7 @@
     "babel-loader": "^8.2.2",
     "babel-plugin-inline-json-import": "^0.3.2",
     "babel-plugin-module-resolver": "^4.1.0",
+    "classnames": "^2.2.6",
     "cross-env": "^7.0.3",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
@@ -93,15 +94,15 @@
     "gulp-rename": "^2.0.0",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.1.0",
+    "husky": "^4.3.8",
     "jest-transform-stub": "^2.0.0",
-    "npm-run-all": "^4.1.5",
     "npm-check-updates": "^10.2.5",
+    "npm-run-all": "^4.1.5",
     "po2json": "^1.0.0-beta-3",
     "prettier": "^2.2.1",
+    "react": "^16.14.0",
     "rimraf": "^3.0.2",
-    "url-loader": "^4.1.1",
-    "classnames": "^2.2.6",
-    "react": "^16.14.0"
+    "url-loader": "^4.1.1"
   },
   "dependencies": {
     "@wordpress/components": "^12.0.1",
@@ -119,5 +120,10 @@
     "memize": "^1.1.0",
     "react-dom": "^16.14.0",
     "react-html-parser": "^2.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint"
+    }
   }
 }

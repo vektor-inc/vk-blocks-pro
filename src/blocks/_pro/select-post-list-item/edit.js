@@ -36,10 +36,10 @@ export default function SelectPostListItemEdit(props) {
 			<InspectorControls>
 				<PanelBody
 					title={__('Select Post List Item Setting', 'vk-blocks')}
-					initialOpen={false}
+					initialOpen={true}
 				>
 					<TextControl
-						label={__('Internal Post URL', 'vk-blocks')}
+						label={__('Input Internal Post URL', 'vk-blocks')}
 						value={url}
 						type="string"
 						onChange={(v) => {

@@ -198,6 +198,9 @@ div[data-type="vk-blocks/page-content"].is-selected{
 	}
 }
 
+// 選択投稿リストブロックの編集用CSS
+@import "./_editor_before_select-post";
+
 // アニメーションブロックの識別用枠線
 @import "./editor_before_animation";
 
@@ -478,5 +481,5 @@ $color-danger: #b52727;
 	}
 	&::after {
 		border: none;
-	}	
+	}
 }

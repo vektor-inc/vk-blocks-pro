@@ -22,7 +22,7 @@ import { useEffect } from '@wordpress/element';
 
 /* eslint camelcase: 0 */
 export default function CardEdit(props) {
-	const { attributes, setAttributes, clientId, name } = props;
+	const { attributes, clientId, name } = props;
 	const { blockId } = attributes;
 	attributes.name = name;
 	attributes.clientId = clientId;
@@ -34,8 +34,8 @@ export default function CardEdit(props) {
 
 	useEffect(() => {
 		if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
-			setAttributes({ clientId });
-			setAttributes({ blockId: clientId });
+			updateBlockAttributes(clientId, { clientId });
+			updateBlockAttributes(clientId, { blockId: clientId });
 
 			const thisInnerBlocks = thisBlock[0].innerBlocks;
 			thisInnerBlocks.forEach(function (thisInnerBlock) {

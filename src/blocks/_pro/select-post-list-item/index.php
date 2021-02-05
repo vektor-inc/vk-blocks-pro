@@ -133,14 +133,17 @@ if( function_exists('register_block_type_from_metadata')) {
 
 		$content = '';
 		$post    = '';
-		$options = array(
-			'layout'                     => $attributes['layout'],
+		$columns = array(
 			'col_xs'                     => $attributes['col_xs'],
 			'col_sm'                     => $attributes['col_sm'],
 			'col_md'                     => $attributes['col_md'],
 			'col_lg'                     => $attributes['col_lg'],
 			'col_xl'                     => $attributes['col_xl'],
 			'col_xxl'                    => $attributes['col_xxl'],
+		);
+
+		$options = array(
+			'layout'                     => $attributes['layout'],
 			'display_image'              => $attributes['display_image'],
 			'display_image_overlay_term' => $attributes['display_image_overlay_term'],
 			'display_excerpt'            => $attributes['display_excerpt'],
@@ -153,7 +156,23 @@ if( function_exists('register_block_type_from_metadata')) {
 			'new_text'                   => $attributes['new_text'],
 			'btn_text'                   => $attributes['btn_text'],
 			'btn_align'                  => $attributes['btn_align'],
+			'image_default_url'          => VK_BLOCKS_URL . 'images/no-image.png',
+			'overlay'                    => false,
+			'slug'                       => '',
 		);
+		if ( $options['layout'] !== 'postListText' ) {
+			// If get info of column that deploy col to class annd add
+			if ( empty( $options['class_outer'] ) ) {
+				$options['class_outer'] = VK_Component_Posts::get_col_size_classes( $columns );
+			} else {
+				$options['class_outer'] .= ' ' . VK_Component_Posts::get_col_size_classes( $columns );
+			}
+		}
+
+
+
+
+
 
 		if ( ! empty( $attributes['url'] ) ) {
 			$post_id = url_to_postid( $attributes['url'] );

@@ -7,7 +7,7 @@ import { TextControl, PanelBody } from '@wordpress/components';
 
 export default function SelectPostListItemEdit(props) {
 	const { attributes, setAttributes } = props;
-	const { url } = attributes;
+	const url = attributes.url;
 	const blockProps = useBlockProps();
 
 	let editContent = '';

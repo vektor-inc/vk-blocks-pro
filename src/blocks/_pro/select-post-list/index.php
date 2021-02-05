@@ -6,7 +6,6 @@
 if( function_exists('register_block_type_from_metadata')) {
 
 	function register_block_vkb_select_post_list() {
-		global $vk_blocks_common_attributes;
 		register_block_type_from_metadata(
 			__DIR__,
 			array(

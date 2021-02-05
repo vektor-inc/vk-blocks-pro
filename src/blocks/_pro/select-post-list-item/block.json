@@ -2,7 +2,7 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/select-post-list-item",
 	"category": "vk-blocks-cat",
-	"parent": "vk-blocks/select-post-list",
+	"parent": ["vk-blocks/select-post-list"],
 	"attributes": {
 		"className":{
 			"type": "string",

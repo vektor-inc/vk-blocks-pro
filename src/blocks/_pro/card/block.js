@@ -79,7 +79,6 @@ registerBlockType("vk-blocks/card", {
   edit(props) {
 	const { attributes, setAttributes, className, clientId, name } = props;
 	attributes.name = name;
-	setAttributes({ clientId })
 
     const selectEditor = select("core/block-editor")
       ? select("core/block-editor")
@@ -89,7 +88,9 @@ registerBlockType("vk-blocks/card", {
       : dispatch("core/editor");
 
     const { getBlocksByClientId } = selectEditor;
-    const { updateBlockAttributes } = dispatchEditor;
+	const { updateBlockAttributes } = dispatchEditor;
+
+	updateBlockAttributes(clientId, { clientId });
 
     const currentBlock = getBlocksByClientId(clientId);
     let beforeLength;

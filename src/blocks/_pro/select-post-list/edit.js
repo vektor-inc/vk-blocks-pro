@@ -37,11 +37,17 @@ export default function SelectPostListEdit(props) {
 		btn_align, //eslint-disable-line camelcase
 	} = attributes;
 	// eslint-disable-next-line camelcase
-	const columnClass = `vk_select-post-edit-col-${convertToGrid(col_xs)} vk_select-post-edit-col-sm-${convertToGrid(
+	const columnClass = `vk_select-post-edit-col-${convertToGrid(
+		col_xs
+	)} vk_select-post-edit-col-sm-${convertToGrid(
 		col_sm
-	)} vk_select-post-edit-col-md-${convertToGrid(col_md)} vk_select-post-edit-col-lg-${convertToGrid(
+	)} vk_select-post-edit-col-md-${convertToGrid(
+		col_md
+	)} vk_select-post-edit-col-lg-${convertToGrid(
 		col_lg
-	)} vk_select-post-edit-col-xl-${convertToGrid(col_xl)} vk_select-post-edit-col-xxl-${convertToGrid(col_xxl)}`;
+	)} vk_select-post-edit-col-xl-${convertToGrid(
+		col_xl
+	)} vk_select-post-edit-col-xxl-${convertToGrid(col_xxl)}`;
 
 	const { getBlocksByClientId } = select('core/block-editor');
 	const { updateBlockAttributes } = dispatch('core/block-editor');
@@ -82,14 +88,14 @@ export default function SelectPostListEdit(props) {
 	const TEMPLATE = [ALLOWED_BLOCKS];
 
 	let addColumnClass;
-	if (layout !== 'postListText' ) {
+	if (layout !== 'postListText') {
 		addColumnClass = columnClass;
 	} else {
 		addColumnClass = '';
 	}
 
 	const blockProps = useBlockProps({
-		className: `vk_posts vk_posts-postType-post vk_posts-layout-${layout} vk_postList vk_selectPostList-edit　${addColumnClass}`,
+		className: `vk_posts vk_posts-postType-post vk_posts-layout-${layout} vk_postList vk_selectPostList-edit ${addColumnClass}`,
 	});
 
 	return (

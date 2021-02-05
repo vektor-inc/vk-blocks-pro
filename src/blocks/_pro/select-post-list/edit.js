@@ -10,9 +10,38 @@ import { select, dispatch } from '@wordpress/data';
 // Load VK Blocks Compornents
 import { DisplayItemsControl } from '@vkblocks/components/display-items-control';
 import { ColumnLayoutControl } from '@vkblocks/components/column-layout-control';
+import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 
 export default function SelectPostListEdit(props) {
 	const { attributes, clientId } = props;
+	// eslint-disable-next-line camelcase
+	const {
+		layout, //eslint-disable-line camelcase
+		col_xs, //eslint-disable-line camelcase
+		col_sm, //eslint-disable-line camelcase
+		col_md, //eslint-disable-line camelcase
+		col_lg, //eslint-disable-line camelcase
+		col_xl, //eslint-disable-line camelcase
+		col_xxl, //eslint-disable-line camelcase
+		display_image, //eslint-disable-line camelcase
+		display_image_overlay_term, //eslint-disable-line camelcase
+		display_excerpt, //eslint-disable-line camelcase
+		display_author, //eslint-disable-line camelcase
+		display_date, //eslint-disable-line camelcase
+		display_new, //eslint-disable-line camelcase
+		display_taxonomies, //eslint-disable-line camelcase
+		display_btn, //eslint-disable-line camelcase
+		new_date, //eslint-disable-line camelcase
+		new_text, //eslint-disable-line camelcase
+		btn_text, //eslint-disable-line camelcase
+		btn_align, //eslint-disable-line camelcase
+	} = attributes;
+	// eslint-disable-next-line camelcase
+	const columnClass = `vk_select-post-edit-col-${convertToGrid(col_xs)} vk_select-post-edit-col-sm-${convertToGrid(
+		col_sm
+	)} vk_select-post-edit-col-md-${convertToGrid(col_md)} vk_select-post-edit-col-lg-${convertToGrid(
+		col_lg
+	)} vk_select-post-edit-col-xl-${convertToGrid(col_xl)} vk_select-post-edit-col-xxl-${convertToGrid(col_xxl)}`;
 
 	const { getBlocksByClientId } = select('core/block-editor');
 	const { updateBlockAttributes } = dispatch('core/block-editor');
@@ -25,26 +54,25 @@ export default function SelectPostListEdit(props) {
 
 			thisInnerBlocks.forEach(function (thisInnerBlock) {
 				updateBlockAttributes(thisInnerBlock.clientId, {
-					layout: attributes.layout,
-					col_xs: attributes.col_xs,
-					col_sm: attributes.col_sm,
-					col_md: attributes.col_md,
-					col_lg: attributes.col_lg,
-					col_xl: attributes.col_xl,
-					col_xxl: attributes.col_xxl,
-					display_image: attributes.display_image,
-					display_image_overlay_term:
-						attributes.display_image_overlay_term,
-					display_excerpt: attributes.display_excerpt,
-					display_author: attributes.display_author,
-					display_date: attributes.display_date,
-					display_new: attributes.display_new,
-					display_taxonomies: attributes.display_taxonomies,
-					display_btn: attributes.display_btn,
-					new_date: attributes.new_date,
-					new_text: attributes.new_text,
-					btn_text: attributes.btn_text,
-					btn_align: attributes.btn_align,
+					layout,
+					col_xs,
+					col_sm,
+					col_md,
+					col_lg,
+					col_xl,
+					col_xxl,
+					display_image,
+					display_image_overlay_term,
+					display_excerpt,
+					display_author,
+					display_date,
+					display_new,
+					display_taxonomies,
+					display_btn,
+					new_date,
+					new_text,
+					btn_text,
+					btn_align,
 				});
 			});
 		}
@@ -54,7 +82,7 @@ export default function SelectPostListEdit(props) {
 	const TEMPLATE = [ALLOWED_BLOCKS];
 
 	const blockProps = useBlockProps({
-		className: `vk_posts vk_posts-postType-post vk_posts-layout-${attributes.layout} vk_postList`,
+		className: `vk_posts vk_posts-postType-post vk_posts-layout-${layout} vk_postList ${columnClass}`,
 	});
 
 	return (

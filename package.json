@@ -31,7 +31,7 @@
     "lint:spacer": "wp-scripts format-js src/blocks/spacer && wp-scripts lint-js src/blocks/spacer --fix",
     "lint:staff": "wp-scripts format-js ./src/blocks/staff & wp-scripts lint-js ./src/blocks/staff",
     "lint:button": "wp-scripts format-js src/blocks/button && wp-scripts lint-js src/blocks/button --fix",
-		"lint:pr-blocks": "wp-scripts format-js src/blocks/pr-blocks/ && wp-scripts lint-js src/blocks/pr-blocks/ --fix",
+    "lint:pr-blocks": "wp-scripts format-js src/blocks/pr-blocks/ && wp-scripts lint-js src/blocks/pr-blocks/ --fix",
     "lint:timeline": "wp-scripts format-js src/blocks/_pro/timeline && wp-scripts lint-js src/blocks/_pro/timeline --fix",
     "lint:timeline-item": "wp-scripts format-js src/blocks/_pro/timeline-item && wp-scripts lint-js src/blocks/_pro/timeline-item --fix",
     "lint:table-of-contents-new": "wp-scripts format-js src/blocks/_pro/table-of-contents-new && wp-scripts lint-js src/blocks/_pro/table-of-contents-new --fix",
@@ -42,14 +42,14 @@
     "lint:icon-card-item": "wp-scripts format-js src/blocks/_pro/icon-card-item && wp-scripts lint-js src/blocks/_pro/icon-card-item --fix",
     "lint:grid-column": "wp-scripts format-js src/blocks/_pro/grid-column && wp-scripts lint-js src/blocks/_pro/grid-column --fix",
     "lint:grid-column-item": "wp-scripts format-js src/blocks/_pro/grid-column-item && wp-scripts lint-js src/blocks/_pro/grid-column-item --fix",
-		"lint:step": "wp-scripts format-js src/blocks/_pro/step && wp-scripts lint-js src/blocks/_pro/step --fix",
-		"lint:step-item": "wp-scripts format-js src/blocks/_pro/step-item && wp-scripts lint-js src/blocks/_pro/step-item --fix",
-		"lint:slider": "wp-scripts format-js src/blocks/_pro/slider && wp-scripts lint-js src/blocks/_pro/slider --fix",
+    "lint:step": "wp-scripts format-js src/blocks/_pro/step && wp-scripts lint-js src/blocks/_pro/step --fix",
+    "lint:step-item": "wp-scripts format-js src/blocks/_pro/step-item && wp-scripts lint-js src/blocks/_pro/step-item --fix",
+    "lint:slider": "wp-scripts format-js src/blocks/_pro/slider && wp-scripts lint-js src/blocks/_pro/slider --fix",
     "lint:slider-item": "wp-scripts format-js src/blocks/_pro/slider-item && wp-scripts lint-js src/blocks/_pro/slider-item --fix",
-		"lint:extensions": "wp-scripts format-js src/extensions/ && wp-scripts lint-js src/extensions/ --fix",
+    "lint:extensions": "wp-scripts format-js src/extensions/ && wp-scripts lint-js src/extensions/ --fix",
     "lint:components": "wp-scripts format-js src/components/ && wp-scripts lint-js src/components/ --fix",
     "lint:utils": "wp-scripts format-js src/utils && wp-scripts lint-js src/utils --fix",
-		"fixtures:clean": "rimraf \"test/e2e-tests/fixtures/blocks/*.+(json|serialized.html)\"",
+    "fixtures:clean": "rimraf \"test/e2e-tests/fixtures/blocks/*.+(json|serialized.html)\"",
     "fixtures:generate": "cross-env GENERATE_MISSING_FIXTURES=y wp-scripts test-unit-js --config test/jest.config.js test/integration/full-content/full-content.test.js",
     "fixtures:regenerate": "npm run build && npm run fixtures:clean && npm run fixtures:generate",
     "test-unit": "npm run fixtures:regenerate",
@@ -81,6 +81,7 @@
     "babel-loader": "^8.2.2",
     "babel-plugin-inline-json-import": "^0.3.2",
     "babel-plugin-module-resolver": "^4.1.0",
+    "classnames": "^2.2.6",
     "cross-env": "^7.0.3",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
@@ -93,15 +94,15 @@
     "gulp-rename": "^2.0.0",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.1.0",
+    "husky": "^4.3.8",
     "jest-transform-stub": "^2.0.0",
-    "npm-run-all": "^4.1.5",
     "npm-check-updates": "^10.2.5",
+    "npm-run-all": "^4.1.5",
     "po2json": "^1.0.0-beta-3",
     "prettier": "^2.2.1",
+    "react": "^16.14.0",
     "rimraf": "^3.0.2",
-    "url-loader": "^4.1.1",
-    "classnames": "^2.2.6",
-    "react": "^16.14.0"
+    "url-loader": "^4.1.1"
   },
   "dependencies": {
     "@wordpress/components": "^12.0.1",
@@ -119,10 +120,10 @@
     "memize": "^1.1.0",
     "react-dom": "^16.14.0",
     "react-html-parser": "^2.0.2"
-	},
-	"husky": {
-		"hooks": {
-			"pre-push": "npm run lint"
-		}
-	}
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint"
+    }
+  }
 }

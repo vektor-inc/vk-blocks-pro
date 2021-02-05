@@ -34,8 +34,9 @@ export default function CardEdit(props) {
 
 	useEffect(() => {
 		if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
-			setAttributes({ clientId });
-			setAttributes({ blockId: clientId });
+
+			updateBlockAttributes(clientId, {clientId});
+			updateBlockAttributes(clientId, { blockId: clientId });
 
 			const thisInnerBlocks = thisBlock[0].innerBlocks;
 			thisInnerBlocks.forEach(function (thisInnerBlock) {

@@ -89,7 +89,7 @@ export default function SelectPostListEdit(props) {
 	}
 
 	const blockProps = useBlockProps({
-		className: `vk_posts vk_posts-postType-post vk_posts-layout-${layout} vk_postList ${addColumnClass}`,
+		className: `vk_posts vk_posts-postType-post vk_posts-layout-${layout} vk_postList vk_selectPostList-edit　${addColumnClass}`,
 	});
 
 	return (

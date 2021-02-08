@@ -79,44 +79,31 @@ registerBlockType("vk-blocks/card", {
   edit(props) {
 	const { attributes, setAttributes, className, clientId, name } = props;
 	attributes.name = name;
-	setAttributes({ clientId })
 
-    const selectEditor = select("core/block-editor")
-      ? select("core/block-editor")
-      : select("core/editor");
-    const dispatchEditor = dispatch("core/block-editor")
-      ? dispatch("core/block-editor")
-      : dispatch("core/editor");
+	const { getBlocksByClientId } = select('core/block-editor');
+	const { updateBlockAttributes } = dispatch('core/block-editor');
 
-    const { getBlocksByClientId } = selectEditor;
-    const { updateBlockAttributes } = dispatchEditor;
+	const thisBlock = getBlocksByClientId(clientId);
 
-    const currentBlock = getBlocksByClientId(clientId);
-    let beforeLength;
-		let afterLength;
+	useEffect(() => {
+		if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
 
-    if (
-      currentBlock !== undefined &&
-      currentBlock[0] !== null &&
-      currentBlock[0].innerBlocks !== undefined
-    ) {
-      const innerBlocks = currentBlock[0].innerBlocks;
-      beforeLength = innerBlocks.length;
+			updateBlockAttributes(clientId, { clientId });
 
-      if (beforeLength !== undefined) {
-        if (beforeLength !== afterLength) {
-          for (let i = 0; i < innerBlocks.length; i++) {
-            if (innerBlocks[i] !== undefined) {
+			const thisInnerBlocks = thisBlock[0].innerBlocks;
+			thisInnerBlocks.forEach(function (thisInnerBlock) {
 				//className以外の値で、子要素のattributesをアップデート
-				const updateAttributes = removeProperty(attributes,"className")
-				updateBlockAttributes(innerBlocks[i].clientId, updateAttributes);
-
-            }
-          }
-        }
-        afterLength = beforeLength;
-      }
-	}
+				const updateAttributes = removeProperty(
+					attributes,
+					'className'
+				);
+				updateBlockAttributes(
+					thisInnerBlock.clientId,
+					updateAttributes
+				);
+			});
+		}
+	}, [thisBlock, attributes, clientId]);
 
     return (
 	<Fragment>
@@ -235,13 +222,15 @@ addFilter( 'editor.BlockEdit', "vk-blocks/card-addInlineEditorsCss", createHighe
 
     return ( props ) => {
 
-		const { attributes, setAttributes, clientId } = props
+		const { attributes, clientId } = props
 		const { unit, pc, tablet, mobile } = attributes
 
 		if ("vk-blocks/card" === props.name && ( unit || pc || tablet || mobile )) {
 
+			const { updateBlockAttributes } = dispatch('core/block-editor');
+
 			useEffect(()=>{
-				setAttributes({clientId})
+				updateBlockAttributes(clientId, { clientId });
 			},[])
 
 			const cssTag = generateInlineCss(attributes)

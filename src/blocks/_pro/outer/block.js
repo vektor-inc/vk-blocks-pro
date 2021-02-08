@@ -22,7 +22,8 @@ const {
 	ButtonGroup,
 	Button
 } = wp.components;
-const { Fragment } = wp.element;
+const { Fragment, useEffect } = wp.element;
+const { dispatch } = wp.data;
 const { InspectorControls, ColorPalette } =
 	wp.blockEditor && wp.blockEditor.BlockEdit ? wp.blockEditor : wp.editor;
 
@@ -57,8 +58,14 @@ registerBlockType("vk-blocks/outer", {
 			borderRadius,
 		} = attributes;
 
+		const { updateBlockAttributes } = dispatch('core/block-editor');
+
 		//save clientId for using in Class.
-		setAttributes({ clientId });
+		useEffect(() => {
+			if (clientId) {
+				updateBlockAttributes(clientId, { clientId });
+			}
+		}, [clientId]);
 
 		const setColorIfUndefined = (bgColor) => {
 			if (bgColor === undefined) {

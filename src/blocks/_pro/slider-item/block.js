@@ -8,7 +8,7 @@ import BlockIcon from "./icon.svg";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { Fragment } = wp.element;
+const { Fragment, useEffect } = wp.element;
 const { InspectorControls, BlockControls, BlockVerticalAlignmentToolbar, ColorPalette} = wp.blockEditor;
 const {
 	RangeControl,
@@ -16,6 +16,7 @@ const {
 	PanelBody,
 	BaseControl,
 } = wp.components;
+const { select, dispatch } = wp.data;
 import { AdvancedMediaUpload } from "../../../components/advanced-media-upload";
 import SliderItem from "./SliderItem"
 
@@ -41,7 +42,10 @@ registerBlockType("vk-blocks/slider-item", {
 			bgSize
 		} = attributes;
 
-		setAttributes({clientId})
+		const { updateBlockAttributes } = dispatch("core/block-editor");
+		useEffect(() => {
+			updateBlockAttributes( clientId, { clientId });
+		}, [])
 
 		return (
 			<Fragment>

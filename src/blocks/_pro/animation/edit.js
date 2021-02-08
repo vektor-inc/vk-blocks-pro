@@ -7,15 +7,17 @@ import {
 } from '@wordpress/block-editor';
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
+import { dispatch } from '@wordpress/data';
 
 export default function AnimationEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const { effect, speed, range } = attributes;
 	const customClientId = replaceClientId(clientId);
+	const { updateBlockAttributes } = dispatch('core/block-editor');
 
 	useEffect(() => {
 		if (customClientId) {
-			setAttributes({ clientId: customClientId });
+			updateBlockAttributes( clientId, { clientId: customClientId} );
 		}
 	}, [customClientId]);
 

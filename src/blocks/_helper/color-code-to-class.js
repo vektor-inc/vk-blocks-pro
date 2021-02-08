@@ -35,5 +35,8 @@ export const convertColorClass = (color) => {
 
         case '#313131':
             return 'vk-has-very-dark-gray-color';
+
+		case '#ffffff':
+			return 'vk-has-white-color';
     }
 };

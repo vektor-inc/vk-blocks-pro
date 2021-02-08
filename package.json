@@ -33,7 +33,7 @@
     "@wordpress/babel-plugin-makepot": "^4.0.1",
     "@wordpress/env": "^3.0.2",
     "@wordpress/eslint-plugin": "^8.0.2",
-    "@wordpress/scripts": "^13.0.3",
+    "@wordpress/scripts": "12.2.1",
     "autoprefixer": "^10.2.4",
     "babel-loader": "^8.2.2",
     "classnames": "^2.2.6",

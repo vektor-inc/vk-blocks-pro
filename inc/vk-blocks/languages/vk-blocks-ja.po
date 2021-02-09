@@ -845,7 +845,7 @@ msgstr "* 線の太さは 管理画面の 設定 > VK Blocks から選択する�
 msgid "Border color of speech balloon"
 msgstr "吹き出しの線の色"
 
-#: src/blocks/balloon/block.js:202 src/blocks/image/block.js:6
+#: src/blocks/balloon/block.js:202 src/blocks/image/block.js:10
 msgid "Border"
 msgstr "枠線"
 
@@ -1197,7 +1197,7 @@ msgstr "スティッチ"
 msgid "Border Top Bottom"
 msgstr "直線 上下"
 
-#: src/blocks/group-style/block.js:123 src/blocks/image/block.js:22
+#: src/blocks/group-style/block.js:123 src/blocks/image/block.js:26
 msgid "Shadow"
 msgstr "シャドウ"
 
@@ -1386,31 +1386,35 @@ msgstr "ハイライトカラー"
 msgid "Highlighter"
 msgstr "蛍光マーカー"
 
-#: src/blocks/image/block.js:10
+#: src/blocks/image/block.js:6
+msgid "Rounded02"
+msgstr "角丸2"
+
+#: src/blocks/image/block.js:14
 msgid "Photo frame"
 msgstr "フォトフレーム"
 
-#: src/blocks/image/block.js:14
+#: src/blocks/image/block.js:18
 msgid "Photo frame Tilt Right"
 msgstr "フォトフレーム傾き右"
 
-#: src/blocks/image/block.js:18
+#: src/blocks/image/block.js:22
 msgid "Photo frame Tilt Left"
 msgstr "フォトフレーム傾き左"
 
-#: src/blocks/image/block.js:26
+#: src/blocks/image/block.js:30
 msgid "Wave01"
 msgstr "流体シェイプ1"
 
-#: src/blocks/image/block.js:30
+#: src/blocks/image/block.js:34
 msgid "Wave02"
 msgstr "流体シェイプ2"
 
-#: src/blocks/image/block.js:34
+#: src/blocks/image/block.js:38
 msgid "Wave03"
 msgstr "流体シェイプ3"
 
-#: src/blocks/image/block.js:38
+#: src/blocks/image/block.js:42
 msgid "Wave04"
 msgstr "流体シェイプ4"
 

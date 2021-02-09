@@ -47,7 +47,10 @@ export default function PostListEdit(props) {
 		};
 	});
 	// メディアと再利用ブロックを除外
-	postTypesProps = postTypesProps.filter( postType => 'attachment' !== postType.slug && 'wp_block' !== postType.slug )
+	postTypesProps = postTypesProps.filter(
+		(postType) =>
+			'attachment' !== postType.slug && 'wp_block' !== postType.slug
+	);
 
 	const taxonomies = useTaxonomies();
 	const terms = useTermsGroupbyTaxnomy(taxonomies);

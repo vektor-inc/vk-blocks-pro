@@ -7,7 +7,7 @@ export const AdvancedCheckboxControl = (props) => {
 	const [checkedState, setCheckedState] = useState(checkedData);
 
 	if (!rawData || !checkedData) return false;
-	// eslint-disable-next-line no-shadow
+
 	const advancedSetAttributes = (schema, saveData) => {
 		setAttributes({ [schema]: JSON.stringify(saveData) });
 	};

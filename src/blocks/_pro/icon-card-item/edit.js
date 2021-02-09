@@ -17,7 +17,6 @@ import {
 	RadioControl,
 } from '@wordpress/components';
 
-/* eslint camelcase: 0 */
 export default function IconCardItemedit(props) {
 	const { setAttributes, attributes } = props;
 	let {
@@ -29,12 +28,12 @@ export default function IconCardItemedit(props) {
 		icon,
 		urlOpenType,
 		bgType,
-		col_xs,
-		col_sm,
-		col_md,
-		col_lg,
-		col_xl,
-		col_xxl,
+		col_xs, //eslint-disable-line camelcase
+		col_sm, //eslint-disable-line camelcase
+		col_md, //eslint-disable-line camelcase
+		col_lg, //eslint-disable-line camelcase
+		col_xl, //eslint-disable-line camelcase
+		col_xxl, //eslint-disable-line camelcase
 		activeControl,
 	} = attributes;
 	const align = JSON.parse(fixBrokenUnicode(activeControl));

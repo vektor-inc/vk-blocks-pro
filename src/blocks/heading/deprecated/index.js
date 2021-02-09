@@ -1,5 +1,3 @@
-/* eslint camelcase: 0 */
-
 import save0_24_1 from './0.24.1/save';
 import save0_24_2 from './0.24.2/save';
 import save0_24_3 from './0.24.3/save';

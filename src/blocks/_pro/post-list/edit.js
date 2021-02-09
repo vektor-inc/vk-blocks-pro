@@ -40,12 +40,14 @@ export default function PostListEdit(props) {
 	attributes.name = name;
 
 	const postTypes = usePostTypes();
-	const postTypesProps = postTypes.map((postType) => {
+	let postTypesProps = postTypes.map((postType) => {
 		return {
 			label: postType.name,
 			slug: postType.slug,
 		};
 	});
+	// メディアと再利用ブロックを除外
+	postTypesProps = postTypesProps.filter( postType => 'attachment' !== postType.slug && 'wp_block' !== postType.slug )
 
 	const taxonomies = useTaxonomies();
 	const terms = useTermsGroupbyTaxnomy(taxonomies);

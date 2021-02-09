@@ -11,8 +11,8 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
-import React from 'react';
 import { select, dispatch } from '@wordpress/data';
+import { useEffect } from '@wordpress/element';
 
 export default function IconCardEdit(props) {
 	const { attributes, clientId, name } = props;
@@ -21,51 +21,27 @@ export default function IconCardEdit(props) {
 	const ALLOWED_BLOCKS = ['vk-blocks/icon-card-item'];
 	const TEMPLATE = [ALLOWED_BLOCKS];
 
-	const selectEditor = select('core/block-editor')
-		? select('core/block-editor')
-		: select('core/editor');
-	const dispatchEditor = dispatch('core/block-editor')
-		? dispatch('core/block-editor')
-		: dispatch('core/editor');
+	const { getBlocksByClientId } = select('core/block-editor');
+	const { updateBlockAttributes } = dispatch('core/block-editor');
+	const thisBlock = getBlocksByClientId(clientId);
 
-	const { getBlocksByClientId } = selectEditor;
-	const { updateBlockAttributes } = dispatchEditor;
+	useEffect(() => {
+		if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
+			const thisInnerBlocks = thisBlock[0].innerBlocks;
+			thisInnerBlocks.forEach(function (thisInnerBlock) {
+				//className以外の値で、子要素のattributesをアップデート
+				let updateAttributes = removeProperty(attributes, 'className');
+				updateAttributes = removeProperty(attributes, 'faIcon');
+				updateAttributes = removeProperty(attributes, 'color');
+				updateAttributes = removeProperty(attributes, 'bgType');
 
-	const currentBlock = getBlocksByClientId(clientId);
-	let beforeLength;
-	let afterLength;
-
-	if (
-		currentBlock !== undefined &&
-		currentBlock[0] !== null &&
-		currentBlock[0].innerBlocks !== undefined
-	) {
-		const innerBlocks = currentBlock[0].innerBlocks;
-		beforeLength = innerBlocks.length;
-
-		if (beforeLength !== undefined) {
-			if (beforeLength !== afterLength) {
-				for (let i = 0; i < innerBlocks.length; i++) {
-					if (innerBlocks[i] !== undefined) {
-						//className以外の値で、子要素のattributesをアップデート
-						let updateAttributes = removeProperty(
-							attributes,
-							'className'
-						);
-						updateAttributes = removeProperty(attributes, 'faIcon');
-						updateAttributes = removeProperty(attributes, 'color');
-						updateAttributes = removeProperty(attributes, 'bgType');
-
-						updateBlockAttributes(
-							innerBlocks[i].clientId,
-							updateAttributes
-						);
-					}
-				}
-			}
-			afterLength = beforeLength;
+				updateBlockAttributes(
+					thisInnerBlock.clientId,
+					updateAttributes
+				);
+			});
 		}
-	}
+	}, [thisBlock, attributes]);
 
 	const align = JSON.parse(fixBrokenUnicode(attributes.activeControl));
 

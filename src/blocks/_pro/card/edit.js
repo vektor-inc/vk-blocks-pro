@@ -18,57 +18,39 @@ import {
 } from '@wordpress/block-editor';
 import { select, dispatch } from '@wordpress/data';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
+import { useEffect } from '@wordpress/element';
 
-/* eslint camelcase: 0 */
 export default function CardEdit(props) {
-	const { attributes, setAttributes, clientId, name } = props;
+	const { attributes, clientId, name } = props;
 	const { blockId } = attributes;
 	attributes.name = name;
 	attributes.clientId = clientId;
-	setAttributes({ clientId });
-	setAttributes({ blockId: clientId });
 
-	const selectEditor = select('core/block-editor')
-		? select('core/block-editor')
-		: select('core/editor');
-	const dispatchEditor = dispatch('core/block-editor')
-		? dispatch('core/block-editor')
-		: dispatch('core/editor');
+	const { getBlocksByClientId } = select('core/block-editor');
+	const { updateBlockAttributes } = dispatch('core/block-editor');
 
-	const { getBlocksByClientId } = selectEditor;
-	const { updateBlockAttributes } = dispatchEditor;
+	const thisBlock = getBlocksByClientId(clientId);
 
-	const currentBlock = getBlocksByClientId(clientId);
-	let beforeLength;
-	let afterLength;
+	useEffect(() => {
+		if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
+			updateBlockAttributes(clientId, { clientId });
+			updateBlockAttributes(clientId, { blockId: clientId });
 
-	if (
-		currentBlock !== undefined &&
-		currentBlock[0] !== null &&
-		currentBlock[0].innerBlocks !== undefined
-	) {
-		const innerBlocks = currentBlock[0].innerBlocks;
-		beforeLength = innerBlocks.length;
-
-		if (beforeLength !== undefined) {
-			if (beforeLength !== afterLength) {
-				for (let i = 0; i < innerBlocks.length; i++) {
-					if (innerBlocks[i] !== undefined) {
-						//className以外の値で、子要素のattributesをアップデート
-						const updateAttributes = removeProperty(
-							attributes,
-							'className'
-						);
-						updateBlockAttributes(
-							innerBlocks[i].clientId,
-							updateAttributes
-						);
-					}
-				}
-			}
-			afterLength = beforeLength;
+			const thisInnerBlocks = thisBlock[0].innerBlocks;
+			thisInnerBlocks.forEach(function (thisInnerBlock) {
+				//className以外の値で、子要素のattributesをアップデート
+				const updateAttributes = removeProperty(
+					attributes,
+					'className'
+				);
+				updateBlockAttributes(
+					thisInnerBlock.clientId,
+					updateAttributes
+				);
+			});
 		}
-	}
+	}, [thisBlock, attributes, clientId]);
+
 	let innerClass = '';
 	const ALLOWED_BLOCKS = ['vk-blocks/card-item'];
 	const TEMPLATE = [ALLOWED_BLOCKS];
@@ -127,18 +109,18 @@ export default function CardEdit(props) {
 export const DisplayItemsControlForCards = (props) => {
 	const { setAttributes, attributes } = props;
 	const {
-		display_title,
-		display_excerpt,
-		display_image,
-		display_btn,
-		btn_text,
+		display_title, //eslint-disable-line camelcase
+		display_excerpt, //eslint-disable-line camelcase
+		display_image, //eslint-disable-line camelcase
+		display_btn, //eslint-disable-line camelcase
+		btn_text, //eslint-disable-line camelcase
 	} = attributes;
 	return (
 		<PanelBody title={__('Display item', 'vk-blocks')} initialOpen={false}>
 			<CheckboxControl
 				label={__('Title', 'vk-blocks')}
 				className={'mb-1'}
-				checked={display_title}
+				checked={display_title} //eslint-disable-line camelcase
 				onChange={(checked) =>
 					setAttributes({ display_title: checked })
 				}
@@ -152,7 +134,7 @@ export const DisplayItemsControlForCards = (props) => {
 			<CheckboxControl
 				label={__('Excerpt Text', 'vk-blocks')}
 				className={'mb-1'}
-				checked={display_excerpt}
+				checked={display_excerpt} //eslint-disable-line camelcase
 				onChange={(checked) =>
 					setAttributes({ display_excerpt: checked })
 				}
@@ -165,14 +147,14 @@ export const DisplayItemsControlForCards = (props) => {
 			</p>
 			<CheckboxControl
 				label={__('Image', 'vk-blocks')}
-				checked={display_image}
+				checked={display_image} //eslint-disable-line camelcase
 				onChange={(checked) =>
 					setAttributes({ display_image: checked })
 				}
 			/>
 			<CheckboxControl
 				label={__('Button', 'vk-blocks')}
-				checked={display_btn}
+				checked={display_btn} //eslint-disable-line camelcase
 				onChange={(checked) => setAttributes({ display_btn: checked })}
 			/>
 			<h4 className={'postList_itemCard_button-option'}>
@@ -186,7 +168,7 @@ export const DisplayItemsControlForCards = (props) => {
 			</p>
 			<TextControl
 				label={__('Button text', 'vk-blocks')}
-				value={btn_text}
+				value={btn_text} //eslint-disable-line camelcase
 				onChange={(value) => setAttributes({ btn_text: value })}
 			/>
 		</PanelBody>

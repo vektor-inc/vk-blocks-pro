@@ -2,16 +2,15 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { componentDivider } from './component-divider';
 import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
 
-/* eslint camelcase: 0 */
 export default function save(props) {
 	const { attributes } = props;
 	const {
 		bgPosition,
 		outerWidth,
-		padding_left_and_right,
-		padding_top_and_bottom,
-		upper_level,
-		lower_level,
+		padding_left_and_right, //eslint-disable-line camelcase
+		padding_top_and_bottom, //eslint-disable-line camelcase
+		upper_level, //eslint-disable-line camelcase
+		lower_level, //eslint-disable-line camelcase
 		upperDividerBgColor,
 		lowerDividerBgColor,
 		dividerType,
@@ -46,16 +45,20 @@ export default function save(props) {
 
 	//classPaddingLRのクラス切り替え
 	classPaddingLR = '';
+	//eslint-disable-next-line camelcase
 	if (padding_left_and_right === '0') {
 		classPaddingLR = ' vk_outer-paddingLR-none';
+		//eslint-disable-next-line camelcase
 	} else if (padding_left_and_right === '1') {
 		classPaddingLR = ' vk_outer-paddingLR-use';
+		//eslint-disable-next-line camelcase
 	} else if (padding_left_and_right === '2') {
 		// Fit to content area width
 		classPaddingLR = ' vk_outer-paddingLR-zero';
 	}
 
 	//classPaddingVerticalのクラス切り替
+	//eslint-disable-next-line camelcase
 	if (padding_top_and_bottom === '1') {
 		classPaddingVertical = ' vk_outer-paddingVertical-use';
 	} else {
@@ -63,11 +66,13 @@ export default function save(props) {
 	}
 
 	//上側セクションの傾き切り替
+	//eslint-disable-next-line camelcase
 	if (upper_level) {
 		whichSideUpper = 'upper';
 	}
 
 	//下側セクションの傾き切り替
+	//eslint-disable-next-line camelcase
 	if (lower_level) {
 		whichSideLower = 'lower';
 	}
@@ -76,6 +81,7 @@ export default function save(props) {
 	const containerClass = 'vk_outer_container';
 
 	//Dividerエフェクトがない時のみ枠線を追
+	//eslint-disable-next-line camelcase
 	if (upper_level === 0 && lower_level === 0) {
 		borderProperty = `${borderWidth}px ${borderStyle} ${borderColor}`;
 		borderRadiusProperty = `${borderRadius}px`;

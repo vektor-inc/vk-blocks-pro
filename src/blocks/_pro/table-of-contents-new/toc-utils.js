@@ -1,51 +1,32 @@
 import ReactDOMServer from 'react-dom/server';
-import { useSelect, select } from '@wordpress/data';
+import { select } from '@wordpress/data';
 
 export const isAllowedBlock = (name, allowedBlocks) => {
 	return allowedBlocks.find((blockName) => blockName === name);
 };
 
-export const transformToOneDimensionalArray = (multiDimensionalarray) => {
-	return multiDimensionalarray.reduce((accumulator, currentValue) => {
-		return accumulator.concat(currentValue);
-	}, []);
+export const getHeadings = (headingBlocks) => {
+	const { getBlocks } = select('core/block-editor');
+	return getBlocks().filter((block) =>
+		isAllowedBlock(block.name, headingBlocks)
+	);
 };
 
-export const AsyncGetBlocksByName = (blockName) =>
-	// eslint-disable-next-line no-shadow
-	useSelect((select) => {
-		const { getBlocks } = select('core/block-editor');
-		return getBlocks().filter((block) => block.name === blockName);
-	}, []);
-
-export const getBlocksByName = (blockName) => {
+export const getInnerHeadings = (headingBlocks, hasInnerBlocks) => {
 	const { getBlocks } = select('core/block-editor');
-	return getBlocks().filter((block) => block.name === blockName);
-};
+	const headings = [];
 
-export const getAllHeadings = (headingList) => {
-	const { getBlocks } = select('core/block-editor');
-	let tempBlock;
-	return getBlocks().map((block) => {
-		if (1 <= block.innerBlocks.length) {
-			tempBlock = block.innerBlocks.filter(
-				// eslint-disable-next-line no-shadow
-				(block) => headingList.indexOf(block.name) !== -1
-			);
-		} else if (headingList.indexOf(block.name) !== -1) {
-			tempBlock = block;
+	getBlocks().forEach(function (block) {
+		if (isAllowedBlock(block.name, hasInnerBlocks)) {
+			block.innerBlocks.forEach(function (innerBlock) {
+				if (isAllowedBlock(innerBlock.name, headingBlocks)) {
+					headings.push(innerBlock);
+				}
+			});
 		}
-		return tempBlock;
 	});
-};
 
-export const removeUnnecessaryElements = (headingsRaw) => {
-	const oneDimensionArrayStoredHeading = transformToOneDimensionalArray(
-		headingsRaw
-	);
-	return oneDimensionArrayStoredHeading.filter(
-		(heading) => heading !== undefined
-	);
+	return headings;
 };
 
 export const returnHtml = (source, attributes, className) => {

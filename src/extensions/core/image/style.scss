@@ -14,7 +14,7 @@
        display: block;
        margin: 8px 0 0;
 
-        
+
     }
 }
 @mixin mask{
@@ -24,15 +24,13 @@
 }
 
 //左寄せ、右寄せが未指定の場合はfigureに.is-style-vk-image のクラス名が付く
-figure{ 
+figure{
     &.is-style-vk-image {
- 
         &-rounded {
             img {
                 border-radius: .5rem;
             }
         }
-
         &-border {
             img {
                 border: 1px solid #e5e5e5;
@@ -64,7 +62,7 @@ figure{
 
             figcaption{
                 display: block;
-            }    
+            }
         }
 
         &-wave01 {
@@ -98,7 +96,7 @@ figure{
 }
 
 //左寄せ、右寄せを指定した場合はdivのほうに.is-style-vk-image のクラス名が付くので、以下を追加する必要がある
-.wp-block-image{ 
+.wp-block-image{
     &.is-style-vk-image {
         &-border figure{
             &.alignleft, &.alignright, &.aligncenter{
@@ -138,8 +136,8 @@ figure{
 
                 figcaption{
                     display: block;
-                }   
-            } 
+                }
+            }
         }
 
         &-wave01 figure{

@@ -128,6 +128,7 @@ export class VKBButton extends Component {
 				role={'button'}
 				aria-pressed={true}
 				target={buttonTarget ? '_blank' : null}
+				rel={'noopener'}
 			>
 				{ReactHtmlParser(iconBefore)}
 				{richText}

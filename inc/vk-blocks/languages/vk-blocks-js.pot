@@ -1,0 +1,370 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"X-Generator: babel-plugin-makepot\n"
+
+#: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:152
+#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:166
+#: src/utils/example-data.js:3
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolore magna aliqua. "
+msgstr ""
+
+#: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:198
+#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:214
+#: src/blocks/_pro/card/edit.js:121
+msgid "Title"
+msgstr ""
+
+#: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:81
+#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:87
+#: src/blocks/pr-blocks/edit.js:88
+#: src/blocks/pr-content/deprecated/0.0.1/save.js:112
+#: src/blocks/pr-content/deprecated/0.58.9/component.js:171
+msgid "Select image"
+msgstr ""
+
+#: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:94
+#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:104
+msgid "Delete Image"
+msgstr ""
+
+#: src/blocks/_pro/card/edit.js:119
+msgid "Display item"
+msgstr ""
+
+#: src/blocks/_pro/card/edit.js:135
+msgid "Excerpt Text"
+msgstr ""
+
+#: src/blocks/_pro/card/edit.js:143
+msgid "Warning! When you hidden this item, you will lose the content."
+msgstr ""
+
+#: src/blocks/_pro/card/edit.js:149
+msgid "Image"
+msgstr ""
+
+#: src/blocks/_pro/card/edit.js:156
+msgid "Button"
+msgstr ""
+
+#: src/blocks/_pro/card/edit.js:161
+msgid "Button option"
+msgstr ""
+
+#: src/blocks/_pro/card/edit.js:164
+msgid ""
+"Click each card block to set the target url. You can find the url form at "
+"it's sidebar."
+msgstr ""
+
+#: src/blocks/_pro/card/edit.js:170
+msgid "Button text"
+msgstr ""
+
+#: src/blocks/_pro/card/edit.js:77
+msgid "Image Height"
+msgstr ""
+
+#: src/blocks/_pro/card/edit.js:82
+#: src/blocks/_pro/slider/edit.js:112
+msgid "Slide Height for each device."
+msgstr ""
+
+#: src/blocks/_pro/child-page/index.js:18
+msgid "Child page list"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/index.js:18
+msgid "Grid Column Item"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:101
+msgid "Full Wide"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:107
+msgid "Height"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:126
+msgid "Slider Settings"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:130
+msgid "Effect "
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:140
+msgid "Slide"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:144
+msgid "Fade"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:151
+msgid "Loop "
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:161
+msgid "AutoPlay"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:170
+msgid "Display Time"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:181
+msgid "Change Speed"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:195
+msgid "Display Pagination"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:84
+msgid "Width"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:93
+msgid "Normal"
+msgstr ""
+
+#: src/blocks/_pro/timeline-item/edit.js:46
+msgid "label"
+msgstr ""
+
+#: src/blocks/_pro/timeline-item/edit.js:50
+msgid "Ex,6:00AM"
+msgstr ""
+
+#: src/blocks/_pro/timeline-item/edit.js:53
+msgid "Color"
+msgstr ""
+
+#: src/blocks/_pro/timeline-item/edit.js:63
+msgid "Style"
+msgstr ""
+
+#: src/blocks/_pro/timeline-item/edit.js:73
+msgid "Outlined"
+msgstr ""
+
+#: src/blocks/_pro/timeline-item/edit.js:77
+msgid "Solid"
+msgstr ""
+
+#: src/blocks/_pro/timeline-item/edit.js:91
+#: src/extensions/core/heading/style.js:30
+msgid "Default"
+msgstr ""
+
+#: src/blocks/_pro/timeline-item/edit.js:95
+msgid "None"
+msgstr ""
+
+#: src/blocks/_pro/timeline/index.js:19
+msgid "Timeline"
+msgstr ""
+
+#: src/blocks/flow/index.js:19
+msgid "Flow"
+msgstr ""
+
+#: src/blocks/pr-blocks/deprecated/0.0.1/component.js:148
+#: src/blocks/pr-blocks/deprecated/0.0.2/component.js:176
+#: src/blocks/pr-blocks/edit.js:533
+msgid "Input Title"
+msgstr ""
+
+#: src/blocks/pr-blocks/deprecated/0.0.1/component.js:157
+#: src/blocks/pr-blocks/deprecated/0.0.2/component.js:185
+#: src/blocks/pr-blocks/edit.js:542
+msgid "Input Content"
+msgstr ""
+
+#: src/blocks/pr-blocks/edit.js:101
+msgid "PR Block1 Setting"
+msgstr ""
+
+#: src/blocks/pr-blocks/edit.js:119
+msgid "Icon 1"
+msgstr ""
+
+#: src/blocks/pr-blocks/edit.js:154
+msgid "When you have an image. Image is displayed with priority"
+msgstr ""
+
+#: src/blocks/pr-blocks/edit.js:160
+msgid "PR Image 1"
+msgstr ""
+
+#: src/blocks/pr-blocks/edit.js:181
+msgid "PR Block2 Setting"
+msgstr ""
+
+#: src/blocks/pr-blocks/edit.js:199
+msgid "Icon 2"
+msgstr ""
+
+#: src/blocks/pr-blocks/edit.js:240
+msgid "PR Image 2"
+msgstr ""
+
+#: src/blocks/pr-blocks/edit.js:261
+msgid "PR Block3 Setting"
+msgstr ""
+
+#: src/blocks/pr-blocks/edit.js:263
+msgid "Link URL:"
+msgstr ""
+
+#: src/blocks/pr-blocks/edit.js:271
+msgid "Open link new tab."
+msgstr ""
+
+#: src/blocks/pr-blocks/edit.js:279
+msgid "Icon 3"
+msgstr ""
+
+#: src/blocks/pr-blocks/edit.js:295
+msgid "Icon Background:"
+msgstr ""
+
+#: src/blocks/pr-blocks/edit.js:299
+msgid "Solid color"
+msgstr ""
+
+#: src/blocks/pr-blocks/edit.js:303
+msgid "No background"
+msgstr ""
+
+#: src/blocks/pr-blocks/edit.js:314
+msgid "When you have an image. Image is displayed with priority."
+msgstr ""
+
+#: src/blocks/pr-blocks/edit.js:320
+msgid "PR Image 3"
+msgstr ""
+
+#: src/blocks/pr-blocks/edit.js:82
+#: src/blocks/pr-content/deprecated/0.0.1/save.js:117
+#: src/blocks/pr-content/deprecated/0.58.9/component.js:178
+msgid "Upload image"
+msgstr ""
+
+#: src/blocks/pr-content/deprecated/0.0.1/save.js:134
+#: src/blocks/pr-content/deprecated/0.58.9/component.js:215
+msgid "Input title."
+msgstr ""
+
+#: src/blocks/pr-content/deprecated/0.0.1/save.js:147
+#: src/blocks/pr-content/deprecated/0.58.9/component.js:228
+msgid "Input content."
+msgstr ""
+
+#: src/blocks/spacer/edit.js:50
+msgid "Height for each device."
+msgstr ""
+
+#: src/blocks/staff/index.js:33
+msgid "Staff"
+msgstr ""
+
+#: src/components/link-control/index.js:37
+msgid "Link target"
+msgstr ""
+
+#: src/components/link-control/index.js:41
+msgid "Open in new tab"
+msgstr ""
+
+#: src/components/link-control/index.js:46
+msgid "Link rel"
+msgstr ""
+
+#: src/extensions/core/heading/style.js:103
+msgid "Both ends"
+msgstr ""
+
+#: src/extensions/core/heading/style.js:123
+msgid "Brackets black"
+msgstr ""
+
+#: src/extensions/core/heading/style.js:35
+msgid "Plain"
+msgstr ""
+
+#: src/extensions/core/heading/style.js:51
+msgid "Background fill lightgray"
+msgstr ""
+
+#: src/extensions/core/heading/style.js:67
+msgid "Double border top and bottom black"
+msgstr ""
+
+#: src/extensions/core/heading/style.js:75
+msgid "Double border bottom black"
+msgstr ""
+
+#: src/extensions/core/heading/style.js:83
+msgid "Solid border top and bottom black"
+msgstr ""
+
+#: src/extensions/core/heading/style.js:91
+msgid "Solid border bottom black"
+msgstr ""
+
+#: src/extensions/core/heading/style.js:99
+msgid "Dotted border bottom black"
+msgstr ""
+
+#: src/utils/example-data.js:14
+msgid "Theoretical Physicist"
+msgstr ""
+
+#: src/utils/example-data.js:15
+msgid "Profile"
+msgstr ""
+
+#: src/utils/example-data.js:16
+msgid "Albert Einstein"
+msgstr ""
+
+#: src/utils/example-data.js:17
+msgid "14 March 1879 – 18 April 1955"
+msgstr ""
+
+#: src/utils/example-data.js:2
+msgid "Lorem ipsum dolor"
+msgstr ""
+
+#: src/utils/example-data.js:7
+msgid "Lorem ipsum"
+msgstr ""
+
+#: src/utils/font-awesome-new.js:14
+msgid "Icon"
+msgstr ""
+
+#: src/utils/font-awesome-new.js:193
+msgid ""
+"If you want to use an icon other than the ones listed above, you can use "
+"any of the icons from Font Awesome's icon list Please select a tag and "
+"enter it."
+msgstr ""
+
+#: src/utils/font-awesome-new.js:198
+msgid "Ex) <i class=\"fas fa-arrow-circle-right\"></i>"
+msgstr ""
+
+#: src/utils/font-awesome-new.js:207
+msgid "Font Awesome icon list"
+msgstr ""
+
+#: src/utils/font-awesome-new.js:222
+msgid "Select Icon"
+msgstr ""

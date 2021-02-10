@@ -2,17 +2,15 @@ import { CheckboxControl } from '@wordpress/components';
 import { useState } from '@wordpress/element';
 import { destructiveDeleteFromArray } from '@vkblocks/utils/delete-from-array';
 
+const advancedSetAttributes = (schema, saveData, setAttributes) => {
+	setAttributes({ [schema]: JSON.stringify(saveData) });
+};
+
 export const AdvancedCheckboxControl = (props) => {
 	const { schema, rawData, checkedData, setAttributes } = props;
+	const [checkedState, setCheckedState] = useState(checkedData);
 
 	if (!rawData || !checkedData) return false;
-
-	// eslint-disable-next-line react-hooks/rules-of-hooks
-	const [checkedState, setCheckedState] = useState(checkedData);
-	// eslint-disable-next-line no-shadow
-	const advancedSetAttributes = (schema, saveData) => {
-		setAttributes({ [schema]: JSON.stringify(saveData) });
-	};
 
 	const checkBoxComponents = rawData.map((data) => {
 		return (
@@ -27,7 +25,12 @@ export const AdvancedCheckboxControl = (props) => {
 						destructiveDeleteFromArray(checkedState, data.slug);
 					}
 					setCheckedState(checkedState);
-					advancedSetAttributes.bind(null, schema, checkedState)();
+					advancedSetAttributes.bind(
+						null,
+						schema,
+						checkedState,
+						setAttributes
+					)();
 				}}
 			/>
 		);

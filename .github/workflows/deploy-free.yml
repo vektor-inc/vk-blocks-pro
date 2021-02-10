@@ -18,10 +18,6 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [12.x]
-
     steps:
     - uses: actions/checkout@v2
     # 通常版をクローン Tagのバージョンを取得。
@@ -29,11 +25,18 @@ jobs:
     # https://qiita.com/maruware/items/3da1f5866f6f233a1ad1#%E3%82%BF%E3%82%B0%E5%90%8D%E3%82%92%E5%A4%89%E6%95%B0%E3%81%A8%E3%81%97%E3%81%A6%E4%BD%BF%E7%94%A8
     - name: Get tag version
       run: echo "RELEASE_VERSION=$(echo ${GITHUB_REF:10})" >> $GITHUB_ENV
-    # https://qiita.com/shonansurvivors/items/f256a0443d346f09448e
-    - name: Use Node.js ${{ matrix.node-version }}
+
+    # get the node version from the .node-version file
+    - name: Read .node-version
+      run: echo "##[set-output name=NODEVERSION;]$(cat .node-version)"
+      id: nodenv
+
+    # setup node based on the version from the .node-version file, fetched in the previous step
+    - name: Setup Node.js (.node-version)
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: "${{ steps.nodenv.outputs.NODEVERSION }}"
+
     - run: npm install -g npm
     # 通常版をクローン
     - run: git clone https://${GIT_USER}:${GIT_TOKEN}@github.com/${GIT_REPOSITORY}

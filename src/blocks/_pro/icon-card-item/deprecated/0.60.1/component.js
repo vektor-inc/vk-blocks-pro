@@ -4,7 +4,6 @@ import { RichText } from '@wordpress/block-editor';
 import ReactHtmlParser from 'react-html-parser';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 
-/* eslint camelcase: 0 */
 export const PRcarditem = (props) => {
 	const { attributes, setAttributes, for_, className } = props;
 	let {

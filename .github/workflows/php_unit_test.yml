@@ -6,7 +6,6 @@ on:
       - master
       - develop
       - ^feature/.+
-      - feature/deprecated-test
 
 jobs:
   php_unit:
@@ -27,9 +26,18 @@ jobs:
           MYSQL_PASSWORD: wordpress
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
+
+    # get the node version from the .node-version file
+    - name: Read .node-version
+      run: echo "##[set-output name=NODEVERSION;]$(cat .node-version)"
+      id: nodenv
+
+    # setup node based on the version from the .node-version file, fetched in the previous step
+    - name: Setup Node.js (.node-version)
+      uses: actions/setup-node@v1
       with:
-        node-version: 12.x
+        node-version: "${{ steps.nodenv.outputs.NODEVERSION }}"
+
     - name: Cache multiple paths
       uses: actions/cache@v2
       with:

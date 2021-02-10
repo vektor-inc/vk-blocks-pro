@@ -17,21 +17,21 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
+import { dispatch } from '@wordpress/data';
 import { componentDivider } from './component-divider';
 import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
 
-/* eslint camelcase: 0 */
 export default function OuterEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const {
 		bgColor,
 		bgPosition,
 		outerWidth,
-		padding_left_and_right,
-		padding_top_and_bottom,
+		padding_left_and_right, //eslint-disable-line camelcase
+		padding_top_and_bottom, //eslint-disable-line camelcase
 		opacity,
-		upper_level,
-		lower_level,
+		upper_level, //eslint-disable-line camelcase
+		lower_level, //eslint-disable-line camelcase
 		upperDividerBgColor,
 		lowerDividerBgColor,
 		dividerType,
@@ -50,9 +50,11 @@ export default function OuterEdit(props) {
 	let borderProperty;
 	let borderRadiusProperty;
 
+	const { updateBlockAttributes } = dispatch('core/block-editor');
+
 	useEffect(() => {
 		if (clientId) {
-			setAttributes({ clientId });
+			updateBlockAttributes(clientId, { clientId });
 		}
 	}, [clientId]);
 
@@ -73,16 +75,20 @@ export default function OuterEdit(props) {
 
 	//classPaddingLRのクラス切り替え
 	classPaddingLR = '';
+	//eslint-disable-next-line camelcase
 	if (padding_left_and_right === '0') {
 		classPaddingLR = ' vk_outer-paddingLR-none';
+		//eslint-disable-next-line camelcase
 	} else if (padding_left_and_right === '1') {
 		classPaddingLR = ' vk_outer-paddingLR-use';
+		//eslint-disable-next-line camelcase
 	} else if (padding_left_and_right === '2') {
 		// Fit to content area width
 		classPaddingLR = ' vk_outer-paddingLR-zero';
 	}
 
 	//classPaddingVerticalのクラス切り替
+	//eslint-disable-next-line camelcase
 	if (padding_top_and_bottom === '1') {
 		classPaddingVertical = ' vk_outer-paddingVertical-use';
 	} else {
@@ -90,11 +96,13 @@ export default function OuterEdit(props) {
 	}
 
 	//上側セクションの傾き切り替
+	//eslint-disable-next-line camelcase
 	if (upper_level) {
 		whichSideUpper = 'upper';
 	}
 
 	//下側セクションの傾き切り替
+	//eslint-disable-next-line camelcase
 	if (lower_level) {
 		whichSideLower = 'lower';
 	}
@@ -110,6 +118,7 @@ export default function OuterEdit(props) {
 	}
 
 	//Dividerエフェクトがない時のみ枠線を追
+	//eslint-disable-next-line camelcase
 	if (upper_level === 0 && lower_level === 0) {
 		borderProperty = `${borderWidth}px ${borderStyle} ${borderColor}`;
 		borderRadiusProperty = `${borderRadius}px`;
@@ -263,7 +272,7 @@ export default function OuterEdit(props) {
 
 						<RadioControl
 							label={__('Padding (Left and Right)', 'vk-blocks')}
-							selected={padding_left_and_right}
+							selected={padding_left_and_right} //eslint-disable-line camelcase
 							options={[
 								{
 									label: __(
@@ -296,7 +305,7 @@ export default function OuterEdit(props) {
 						<RadioControl
 							label={__('Padding (Top and Bottom)', 'vk-blocks')}
 							className={'mb-1'}
-							selected={padding_top_and_bottom}
+							selected={padding_top_and_bottom} //eslint-disable-line camelcase
 							options={[
 								{
 									label: __(
@@ -363,7 +372,7 @@ export default function OuterEdit(props) {
 						id={`vk_outer-upperDividerLevel`}
 					>
 						<RangeControl
-							value={upper_level}
+							value={upper_level} //eslint-disable-line camelcase
 							onChange={(value) =>
 								setAttributes({
 									upper_level: toNumber(value, -100, 100),
@@ -388,7 +397,7 @@ export default function OuterEdit(props) {
 						id={`vk_outer-lowerDividerLevel`}
 					>
 						<RangeControl
-							value={lower_level}
+							value={lower_level} //eslint-disable-line camelcase
 							onChange={(value) =>
 								setAttributes({
 									lower_level: toNumber(value, -100, 100),

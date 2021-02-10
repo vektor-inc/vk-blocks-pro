@@ -1,2 +1,2 @@
-import { registerVKBlocks } from '@vkblocks/blocks/bundle'
+import { registerVKBlocks } from '@vkblocks/blocks/bundle';
 registerVKBlocks();

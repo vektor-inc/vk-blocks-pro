@@ -71,8 +71,6 @@
     "> 5%"
   ],
   "devDependencies": {
-    "@babel/plugin-transform-react-jsx": "^7.12.13",
-    "@babel/preset-env": "^7.12.13",
     "@emotion/babel-plugin": "^11.1.2",
     "@wordpress/babel-plugin-makepot": "^4.0.1",
     "@wordpress/block-editor": "^5.2.6",
@@ -81,9 +79,7 @@
     "@wordpress/blocks": "^7.0.3",
     "@wordpress/env": "^3.0.2",
     "@wordpress/scripts": "12.6.1",
-    "babel-loader": "^8.2.2",
     "babel-plugin-inline-json-import": "^0.3.2",
-    "babel-plugin-module-resolver": "^4.1.0",
     "classnames": "^2.2.6",
     "cross-env": "^7.0.3",
     "gulp": "^4.0.2",

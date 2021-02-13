@@ -2,7 +2,32 @@ import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
 import { RichText, InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 
-/* eslint no-shadow: 0 */
+// タイトルタグを表示
+const renderTitleTag = (align, title) => {
+	return (
+		<RichText.Content
+			tagName={'h5'}
+			className={`vk_post_title card-title has-text-align-${align.title}`}
+			value={title}
+		/>
+	);
+};
+// タイトルタグをリンク付きか否かで出し分ける
+//eslint-disable-next-line camelcase
+const renderTitle = ({ align, title, display_title, url, linkTarget, rel }) => {
+	//eslint-disable-next-line camelcase
+	if (display_title) {
+		if (!url) {
+			return <renderTitleTag align={(align, title)} />;
+		}
+		return (
+			<a href={url} target={linkTarget} rel={rel}>
+				<renderTitleTag align={(align, title)} />
+			</a>
+		);
+	}
+};
+
 export default function save(props) {
 	const { attributes } = props;
 	const {
@@ -46,93 +71,6 @@ export default function save(props) {
 		layoutClass = 'card card-noborder card-imageRound card-post';
 		imgContainerClass = 'vk_post_imgOuter';
 	}
-	//eslint-disable-next-line camelcase
-	const renderImage = (display_image) => {
-		//eslint-disable-next-line camelcase
-		if (display_image) {
-			return (
-				<div className={imgContainerClass} style={imageStyle}>
-					{switchAddUrltoImage(url)}
-				</div>
-			);
-		}
-	};
-
-	// eslint-disable-next-line no-shadow
-	const switchAddUrltoImage = (url) => {
-		const overlay = <div className="card-img-overlay"></div>;
-		if (url) {
-			return (
-				<a href={url} target={linkTarget} rel={rel}>
-					{overlay}
-				</a>
-			);
-		}
-		return overlay;
-	};
-	//eslint-disable-next-line camelcase
-	const renderExcerpt = (align, display_excerpt) => {
-		//eslint-disable-next-line camelcase
-		if (display_excerpt) {
-			const titleTag = 'p';
-			const titleClass = `vk_post_excerpt card-text has-text-align-${align.text}`;
-			return (
-				<RichText.Content
-					tagName={titleTag}
-					className={titleClass}
-					value={excerpt_text} //eslint-disable-line camelcase
-				/>
-			);
-		}
-	};
-	//eslint-disable-next-line camelcase
-	const renderButton = (display_btn, align) => {
-		//eslint-disable-next-line camelcase
-		if (display_btn) {
-			return (
-				<div
-					className={`vk_post_btnOuter has-text-align-${align.button}`}
-				>
-					<a
-						className={`btn btn-primary vk_post_btn`}
-						href={url}
-						target={linkTarget}
-						rel={rel}
-					>
-						{
-							btn_text //eslint-disable-line camelcase
-						}
-					</a>
-				</div>
-			);
-		}
-	};
-	//eslint-disable-next-line camelcase
-	const renderTitle = (align, display_title) => {
-		//eslint-disable-next-line camelcase
-		if (display_title) {
-			const titleTag = 'h5';
-			const titleClass = `vk_post_title card-title has-text-align-${align.title}`;
-			if (!url) {
-				return (
-					<RichText.Content
-						tagName={titleTag}
-						className={titleClass}
-						value={title}
-					/>
-				);
-			}
-			return (
-				<a href={url} target={linkTarget} rel={rel}>
-					<RichText.Content
-						tagName={titleTag}
-						className={titleClass}
-						value={title}
-					/>
-				</a>
-			);
-		}
-	};
 
 	let imageStyle;
 	if (image) {
@@ -161,12 +99,48 @@ ${btnClass}`,
 	});
 	return (
 		<div {...blockProps}>
-			{renderImage(display_image)}
+			{display_image && ( //eslint-disable-line camelcase
+				<div className={imgContainerClass} style={imageStyle}>
+					{url && (
+						<a href={url} target={linkTarget} rel={rel}>
+							<div className="card-img-overlay"></div>
+						</a>
+					)}
+				</div>
+			)}
 			<div className="vk_post_body card-body">
-				{renderTitle(align, display_title)}
-				{renderExcerpt(align, display_excerpt)}
+				{renderTitle({
+					align,
+					title,
+					display_title,
+					url,
+					linkTarget,
+					rel,
+				})}
+				{display_excerpt && ( //eslint-disable-line camelcase
+					<RichText.Content
+						tagName={'p'}
+						className={`vk_post_excerpt card-text has-text-align-${align.text}`}
+						value={excerpt_text} //eslint-disable-line camelcase
+					/>
+				)}
 				<InnerBlocks.Content />
-				{renderButton(display_btn, align)}
+				{display_btn && ( //eslint-disable-line camelcase
+					<div
+						className={`vk_post_btnOuter has-text-align-${align.button}`}
+					>
+						<a
+							className={`btn btn-primary vk_post_btn`}
+							href={url}
+							target={linkTarget}
+							rel={rel}
+						>
+							{
+								btn_text //eslint-disable-line camelcase
+							}
+						</a>
+					</div>
+				)}
 			</div>
 		</div>
 	);

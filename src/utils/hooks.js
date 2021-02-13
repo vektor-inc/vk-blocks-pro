@@ -83,6 +83,7 @@ export const useCurrentBlocks = () => {
 };
 
 export const useBlocksByName = (blockName) =>
+	// eslint-disable-next-line no-shadow
 	useSelect((select) => {
 		const { getBlocks } = select('core/block-editor');
 		return getBlocks().filter((block) => block.name === blockName);

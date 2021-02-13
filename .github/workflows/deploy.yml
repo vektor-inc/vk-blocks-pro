@@ -15,16 +15,20 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [12.x]
-
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
+
+    # get the node version from the .node-version file
+    - name: Read .node-version
+      run: echo "##[set-output name=NODEVERSION;]$(cat .node-version)"
+      id: nodenv
+
+    # setup node based on the version from the .node-version file, fetched in the previous step
+    - name: Setup Node.js (.node-version)
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: "${{ steps.nodenv.outputs.NODEVERSION }}"
+
     - run: npm install
     - run: npm run build
     - run: npx gulp dist

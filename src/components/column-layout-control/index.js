@@ -54,38 +54,37 @@ export const setOptions = (name) => {
 	return options['vk-blocks/else'];
 };
 
-const ColumnLayoutControlRaw = () =>
-	createHigherOrderComponent(
-		(WrappedComponent) =>
-			class extends Component {
-				render() {
-					const { setAttributes, attributes } = this.props;
-					const { layout, name } = attributes;
-					return (
-						<PanelBody
-							title={__('Display type and columns', 'vk-blocks')}
-							initialOpen={false}
+const ColumnLayoutControlRaw = createHigherOrderComponent(
+	(WrappedComponent) =>
+		class extends Component {
+			render() {
+				const { setAttributes, attributes } = this.props;
+				const { layout, name } = attributes;
+				return (
+					<PanelBody
+						title={__('Display type and columns', 'vk-blocks')}
+						initialOpen={false}
+					>
+						<BaseControl
+							label={__('Display type', 'vk-blocks')}
+							id={'vk_column-displayType'}
 						>
-							<BaseControl
-								label={__('Display type', 'vk-blocks')}
-								id={'vk_column-displayType'}
-							>
-								<SelectControl
-									value={layout}
-									onChange={(value) =>
-										setAttributes({ layout: value })
-									}
-									options={setOptions(name)}
-								/>
-							</BaseControl>
-							<WrappedComponent {...this.props} />
-						</PanelBody>
-					);
-				}
-			},
-		'ColumnLayoutControlRaw'
-	);
+							<SelectControl
+								value={layout}
+								onChange={(value) =>
+									setAttributes({ layout: value })
+								}
+								options={setOptions(name)}
+							/>
+						</BaseControl>
+						<WrappedComponent {...this.props} />
+					</PanelBody>
+				);
+			}
+		},
+	'ColumnLayoutControlRaw'
+);
 
-export const ColumnLayoutControl = compose(ColumnLayoutControlRaw())(
+export const ColumnLayoutControl = compose(ColumnLayoutControlRaw)(
 	ColumnLayout
 );

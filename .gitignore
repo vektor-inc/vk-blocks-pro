@@ -2,6 +2,7 @@
 node_modules/
 dist/
 inc/vk-blocks/build/*
+inc/vk-blocks/languages/vk-blocks-js.pot
 inc/vk-blocks/languages/vk-blocks.pot
 editor-css/editor-block-build.scss
 editor-css/editor-block-build.css

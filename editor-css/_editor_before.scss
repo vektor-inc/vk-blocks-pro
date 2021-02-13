@@ -198,6 +198,9 @@ div[data-type="vk-blocks/page-content"].is-selected{
 	}
 }
 
+// 選択投稿リストブロックの編集用CSS
+@import "./_editor_before_select-post";
+
 // アニメーションブロックの識別用枠線
 @import "./editor_before_animation";
 
@@ -459,8 +462,24 @@ $color-danger: #b52727;
 	opacity: 0.2;
 }
 
-.wp-block-vk-blocks-icon-card{
-	.vk_icon-card_item{
-		margin: 15px auto!important;
+.vk_icon-card_item_title {//Added not to decorate
+	background-color: transparent;
+	margin-top: 0.9em;
+	margin-bottom: 0.6em;
+	font-size: 21px;
+	line-height: 1.4em;
+	border: none;
+	border-radius:unset;
+	padding: 0;
+	outline: unset;
+	outline-offset: unset;
+	box-shadow: unset;
+	color: inherit;
+	display: block;
+	&::before {
+		content: none;
+	}
+	&::after {
+		border: none;
 	}
 }

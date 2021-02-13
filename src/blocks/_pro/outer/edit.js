@@ -17,6 +17,7 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
+import { dispatch } from '@wordpress/data';
 import { componentDivider } from './component-divider';
 import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
 
@@ -49,9 +50,11 @@ export default function OuterEdit(props) {
 	let borderProperty;
 	let borderRadiusProperty;
 
+	const { updateBlockAttributes } = dispatch('core/block-editor');
+
 	useEffect(() => {
 		if (clientId) {
-			setAttributes({ clientId });
+			updateBlockAttributes(clientId, { clientId });
 		}
 	}, [clientId]);
 

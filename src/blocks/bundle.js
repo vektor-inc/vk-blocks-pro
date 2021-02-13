@@ -6,7 +6,7 @@ import '@wordpress/notices';
 // import '@wordpress/block-editor';
 import {
 	registerBlockType,
-	unstable__bootstrapServerSideBlockDefinitions,
+	unstable__bootstrapServerSideBlockDefinitions, // eslint-disable-line camelcase
 } from '@wordpress/blocks';
 import compareVersions from 'compare-versions';
 
@@ -41,6 +41,8 @@ import * as iconCard from './_pro/icon-card';
 import * as iconCardItem from './_pro/icon-card-item';
 import * as gridColumn from './_pro/grid-column';
 import * as gridColumnItem from './_pro/grid-column-item';
+import * as selectPostList from './_pro/select-post-list';
+import * as selectPostListItem from './_pro/select-post-list-item';
 import * as step from './_pro/step';
 import * as stepItem from './_pro/step-item';
 import * as slider from './_pro/slider';
@@ -49,16 +51,15 @@ import * as sliderItem from './_pro/slider-item';
 /**
  * Extensions
  */
-import "@vkblocks/translation_dummy.js";
-import "@vkblocks/extensions/core/heading/style";
-import "@vkblocks/extensions/core/group/style";
-import "@vkblocks/extensions/core/list/style";
-import "@vkblocks/extensions/core/image/style";
-import "@vkblocks/extensions/common/hidden-extension";
-import "@vkblocks/extensions/common/highlighter";
-import "@vkblocks/extensions/common/nowrap";
-import "@vkblocks/extensions/common/responsive-br";
-
+import '@vkblocks/translation_dummy.js';
+import '@vkblocks/extensions/core/heading/style';
+import '@vkblocks/extensions/core/group/style';
+import '@vkblocks/extensions/core/list/style';
+import '@vkblocks/extensions/core/image/style';
+import '@vkblocks/extensions/common/hidden-extension';
+import '@vkblocks/extensions/common/highlighter';
+import '@vkblocks/extensions/common/nowrap';
+import '@vkblocks/extensions/common/responsive-br';
 
 /**
  * Function to get all the VK Blocks in an array.
@@ -94,6 +95,8 @@ export const __getVKBlocks = () => [
 	iconCardItem,
 	gridColumn,
 	gridColumnItem,
+	selectPostList,
+	selectPostListItem,
 	slider,
 	sliderItem,
 ];
@@ -104,36 +107,33 @@ export const __getVKBlocks = () => [
  * @param {Object} block The block to be registered.
  *
  */
-const registerBlock = ( block ) => {
-	if ( ! block ) {
+const registerBlock = (block) => {
+	if (!block) {
 		return;
 	}
 
 	let { metadata, settings, name } = block;
 
 	//WP5.5未満の場合
-	if ( compareVersions( window.wpVersion, "5.5" ) < 0 ){
+	if (compareVersions(window.wpVersion, '5.5') < 0) {
 		//nameを削除
 		delete metadata.name;
 		//カテゴリ等を追加
 		settings = {
 			...settings,
-			...metadata
-		}
-
-	} else {
-		if ( metadata ) {
-			unstable__bootstrapServerSideBlockDefinitions( { [ name ]: metadata } );
-		}
+			...metadata,
+		};
+	} else if (metadata) {
+		unstable__bootstrapServerSideBlockDefinitions({ [name]: metadata }); // eslint-disable-line camelcase
 	}
-	registerBlockType( name, settings );
+	registerBlockType(name, settings);
 };
 
 /**
  * Function to register VK Blocks.
+ *
+ * @param {*} blocks
  */
-export const registerVKBlocks = (
-	blocks = __getVKBlocks()
-) => {
-	blocks.forEach( registerBlock );
+export const registerVKBlocks = (blocks = __getVKBlocks()) => {
+	blocks.forEach(registerBlock);
 };

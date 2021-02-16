@@ -3,8 +3,8 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,m
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.6
-Tested up to: 5.5.3
-Stable tag: 0.57.4
+Tested up to: 5.6.1
+Stable tag: 1.0.0
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -62,6 +62,9 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 1.0.0 =
+[ Other ][All] Refactoring all blocks.
 
 = 0.57.4 =
 [ Specification Change ] Load Term Color on init

@@ -41,7 +41,6 @@ sed -i s/\,\ \'${pro_block}\'//g inc/vk-blocks/vk-blocks-functions.php
 done
 # Pro版のブロックをbundle.jsから削除
 sed -i "s/import vkblocksPro from '\.\/bundle-pro'/const vkblocksPro = \[\]/g" src/blocks/bundle.js
-cat src/blocks/bundle.js
 # ブロックをビルド
 npm install
 npm run build:free

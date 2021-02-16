@@ -9,7 +9,7 @@ import {
 	unstable__bootstrapServerSideBlockDefinitions, // eslint-disable-line camelcase
 } from '@wordpress/blocks';
 import compareVersions from 'compare-versions';
-import blocksPro from './bundle-pro';
+import vkblocksPro from './bundle-pro';
 
 /**
  * Blocks

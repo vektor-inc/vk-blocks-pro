@@ -41,9 +41,16 @@ sed -i s/\,\ \'${pro_block}\'//g inc/vk-blocks/vk-blocks-functions.php
 done
 # Pro版のブロックをbundle.jsから削除
 sed -i "s/import vkblocksPro from '\.\/bundle-pro'/const vkblocksPro = \[\]/g" src/blocks/bundle.js
+
+# 権限の問題でwebpackから生成できないようなので仮ファル作成
+touch inc/vk-blocs/languages/vk-blocks-js.pot
 # ブロックをビルド
 npm install
 npm run build:free
+
+# 仮ファル削除
+rm -f inc/vk-blocs/languages/vk-blocks-js.pot
+
 # 無料版のmasterブランチにpush
 git add .
 git commit -m"Update from vk-blocks-pro"

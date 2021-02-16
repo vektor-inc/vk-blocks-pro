@@ -40,7 +40,7 @@ for pro_block in ${pro_block_array[@]}; do
 sed -i s/\,\ \'${pro_block}\'//g inc/vk-blocks/vk-blocks-functions.php
 done
 # Pro版のブロックをphpから削除
-sed -i s/import blocksPro from \'\.\/bundle-pro\'/const blocksPro = \[\]/g src/blocks/bundle.js
+sed -i "s/import vkblocksPro from '\.\/bundle-pro'/const vkblocksPro = \[\]/g" src/blocks/bundle.js
 cat src/blocks/bundle.js
 # # ブロックをビルド
 # npm install

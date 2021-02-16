@@ -51,7 +51,6 @@ import * as sliderItem from './_pro/slider-item';
 /**
  * Extensions
  */
-import '@vkblocks/translation_dummy.js';
 import '@vkblocks/extensions/core/heading/style';
 import '@vkblocks/extensions/core/group/style';
 import '@vkblocks/extensions/core/list/style';

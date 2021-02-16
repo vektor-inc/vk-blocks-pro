@@ -39,18 +39,18 @@ cd ./vk-blocks/
 for pro_block in ${pro_block_array[@]}; do
 sed -i s/\,\ \'${pro_block}\'//g inc/vk-blocks/vk-blocks-functions.php
 done
-# Pro版のブロックをphpから削除
+# Pro版のブロックをbundle.jsから削除
 sed -i "s/import vkblocksPro from '\.\/bundle-pro'/const vkblocksPro = \[\]/g" src/blocks/bundle.js
 cat src/blocks/bundle.js
-# # ブロックをビルド
-# npm install
-# npm run build:free
-# # 無料版のmasterブランチにpush
-# git add .
-# git commit -m"Update from vk-blocks-pro"
-# git push -f origin master
-# # 無料版のレポジトリでタグを切ってpush
-# # 無料版の方でも下のGitHubActionが動いて、WordPress公式レポジトリにアップロードされる。
-# # https://github.com/vektor-inc/vk-blocks/blob/master/.github/workflows/wp-plugin-deploy.yml
-# git tag ${version}
-# git push origin ${version}
+# ブロックをビルド
+npm install
+npm run build:free
+# 無料版のmasterブランチにpush
+git add .
+git commit -m"Update from vk-blocks-pro"
+git push -f origin master
+# 無料版のレポジトリでタグを切ってpush
+# 無料版の方でも下のGitHubActionが動いて、WordPress公式レポジトリにアップロードされる。
+# https://github.com/vektor-inc/vk-blocks/blob/master/.github/workflows/wp-plugin-deploy.yml
+git tag ${version}
+git push origin ${version}

@@ -42,8 +42,7 @@ import '@vkblocks/extensions/common/highlighter';
 import '@vkblocks/extensions/common/nowrap';
 import '@vkblocks/extensions/common/responsive-br';
 
-
-const blocks = [
+const vkBlocks = [
 	alert,
 	balloon,
 	borderBox,
@@ -64,7 +63,7 @@ const blocks = [
 /**
  * Function to get all the VK Blocks in an array.
  */
-export const __getVKBlocks = () => blocks.concat(blocksPro);
+export const __getVKBlocks = () => vkBlocks.concat(vkblocksPro);
 
 /**
  * Function to register an individual block.

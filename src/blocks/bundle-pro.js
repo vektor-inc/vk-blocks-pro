@@ -21,7 +21,7 @@ import * as stepItem from './_pro/step-item';
 import * as slider from './_pro/slider';
 import * as sliderItem from './_pro/slider-item';
 
-const blocksPro = [
+const vkblocksPro = [
 	animation,
 	card,
 	cardItem,
@@ -40,7 +40,7 @@ const blocksPro = [
 	selectPostList,
 	selectPostListItem,
 	slider,
-	sliderItem
-]
+	sliderItem,
+];
 
-export default blocksPro;
+export default vkblocksPro;

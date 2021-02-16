@@ -15,6 +15,7 @@ fi
 version=$1
 
 mv vk-blocks/ vk-blocks-free/
+ls
 cd ./vk-blocks-free/
 rm -rf src/*
 cd ../

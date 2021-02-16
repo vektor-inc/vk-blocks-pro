@@ -73,13 +73,13 @@ export default [
 		attributes: {
 			... blockAttributes
 		},
-		save0_60_1,
+		save: save0_60_1,
 	},
 	{
 		attributes: {
 			... blockAttributes2,
 			... blockAttributes
 		},
-		save0_0_0,
+		save: save0_0_0,
 	},
 ];

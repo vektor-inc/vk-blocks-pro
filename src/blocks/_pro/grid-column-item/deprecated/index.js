@@ -101,11 +101,11 @@ const blockAttributes = {
 const deprecated = [
 	{
 		attributes: blockAttributes,
-		save0_60_1,
+		save: save0_60_1,
 	},
 	{
 		attributes: blockAttributes,
-		save0_45_2,
+		save: save0_45_2,
 	},
 ];
 export default deprecated;

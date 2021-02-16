@@ -100,7 +100,7 @@ const deprecated = [
 				default: null,
 			},
 		},
-		save0_60_0,
+		save: save0_60_0,
 	},
 	{
 		attributes: {
@@ -122,7 +122,7 @@ const deprecated = [
 				default: null,
 			},
 		},
-		save0_37_1,
+		save: save0_37_1,
 	},
 	{
 		attributes: {
@@ -144,7 +144,7 @@ const deprecated = [
 				default: null,
 			},
 		},
-		save009,
+		save: save009,
 	},
 	{
 		attributes: {
@@ -154,7 +154,7 @@ const deprecated = [
 				default: '#f3f4f5',
 			},
 		},
-		save008,
+		save: save008,
 	},
 	{
 		attributes: {
@@ -164,7 +164,7 @@ const deprecated = [
 				default: '#f3f4f5',
 			},
 		},
-		save007,
+		save: save007,
 	},
 	{
 		attributes: {
@@ -174,7 +174,7 @@ const deprecated = [
 				default: '#f3f4f5',
 			},
 		},
-		save006,
+		save: save006,
 	},
 	{
 		attributes: {
@@ -184,7 +184,7 @@ const deprecated = [
 				default: '#f3f4f5',
 			},
 		},
-		save005,
+		save: save005,
 	},
 	{
 		attributes: {
@@ -194,7 +194,7 @@ const deprecated = [
 				default: '#f3f4f5',
 			},
 		},
-		save004,
+		save: save004,
 	},
 	{
 		attributes: {
@@ -204,7 +204,7 @@ const deprecated = [
 				default: '#f3f4f5',
 			},
 		},
-		save003,
+		save: save003,
 	},
 	{
 		attributes: {
@@ -214,7 +214,7 @@ const deprecated = [
 				default: '#f3f4f5',
 			},
 		},
-		save002,
+		save: save002,
 	},
 	{
 		attributes: {
@@ -224,11 +224,11 @@ const deprecated = [
 				default: '#f3f4f5',
 			},
 		},
-		save001,
+		save: save001,
 	},
 	{
 		attributes: blockAttributes,
-		save000,
+		save: save000,
 	},
 ];
 

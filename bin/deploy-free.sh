@@ -14,14 +14,16 @@ fi
 # tagのバージョンを変数に代入
 version=$1
 
-mv vk-blocks/ vk-blocks-free/
-ls
-cd ./vk-blocks-free/
+# Cloneした無料版のディレクトリに移動
+cd ./vk-blocks/
+# src/を削除
 rm -rf src/*
+# Pro版のディレクトリに移動
 cd ../
-# 指定したファイルを除外して、Pro版をコピー&上書き
-rsync --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'bin/' --exclude 'tests/' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/_pro/' --exclude 'vk-blocks-free/' --exclude '.git/' --exclude '.gitignore' --exclude 'inc/vk-blocks-pro/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvc ./* ./vk-blocks-free/
-cd ./vk-blocks-free/
+# 指定したファイルを除外して、Pro版を無料版へコピー&上書き
+rsync --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'bin/' --exclude 'tests/' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/_pro/' --exclude 'vk-blocks-free/' --exclude '.git/' --exclude '.gitignore' --exclude 'inc/vk-blocks-pro/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvc ./* ./vk-blocks/
+# 無料版のディレクトリに移動
+cd ./vk-blocks/
 # push先のブランチを切る
 git checkout -b add/vk-blocks-free
 # Pro版ブロックは読み込まないようjsから削除
@@ -31,7 +33,8 @@ sed -i 3s/Pro// vk-blocks.php
  # Pro版のブロックslugを配列に追加（後で使用する）
 cd ../
 pro_block_array=($(ls src/blocks/_pro/))
-cd ./vk-blocks-free/
+# 無料版のディレクトリに移動
+cd ./vk-blocks/
 # Pro版のブロックをphpから削除
 for pro_block in ${pro_block_array[@]}; do
 sed -i s/\,\ \'${pro_block}\'//g inc/vk-blocks/vk-blocks-functions.php

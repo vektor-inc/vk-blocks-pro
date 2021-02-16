@@ -63,6 +63,9 @@ e.g.
 
 == Changelog ==
 
+= 1.0.2 =
+[ Bug fix ] fix bug when instert block.
+
 = 1.0.1 =
 
 = 1.0.0 =

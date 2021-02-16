@@ -43,6 +43,12 @@ done
 sed -i "s/import vkblocksPro from '\.\/bundle-pro'/const vkblocksPro = \[\]/g" src/blocks/bundle.js
 
 # 権限の問題でwebpackから生成できないようなので仮ファル作成
+cd inc/vk-blocks/
+ls
+cd languages/
+ls
+cd ../../../
+ls
 touch inc/vk-blocks/languages/vk-blocks-js.pot
 # ブロックをビルド
 npm install

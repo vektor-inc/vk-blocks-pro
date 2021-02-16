@@ -195,11 +195,11 @@ gulp.task("dist", function() {
         "./**/*.less",
         "./**/*.png",
         "./inc/**",
+				"./src/**",
         "!./compile.bat",
         "!./config.rb",
         "!./tests/**",
         "!./dist/**",
-        "!./src/**",
         "!./bin/**",
         "!./editor-css/**",
         "!./node_modules/**"

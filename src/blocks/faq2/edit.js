@@ -1,5 +1,5 @@
 import {
-	InnerBlocks,
+	__experimentalUseInnerBlocksProps as useInnerBlocksProps,
 	InspectorControls,
 	useBlockProps,
 } from '@wordpress/block-editor';
@@ -9,6 +9,12 @@ import { __ } from '@wordpress/i18n';
 export default function FAQ2Edit() {
 	const blockProps = useBlockProps({
 		className: 'vk_faq',
+	});
+
+	const innerBlocksProps = useInnerBlocksProps(blockProps, {
+		allowedBlocks: [['vk-blocks/faq2-q'], ['vk-blocks/faq2-a']],
+		template: [['vk-blocks/faq2-q'], ['vk-blocks/faq2-a']],
+		templateLock: 'all',
 	});
 
 	let massage;
@@ -32,13 +38,7 @@ export default function FAQ2Edit() {
 					<PanelRow>{massage}</PanelRow>
 				</PanelBody>
 			</InspectorControls>
-			<dl {...blockProps}>
-				<InnerBlocks
-					allowedBlocks={[['vk-blocks/faq2-q'], ['vk-blocks/faq2-a']]}
-					template={[['vk-blocks/faq2-q'], ['vk-blocks/faq2-a']]}
-					templateLock="all"
-				/>
-			</dl>
+			<dl {...innerBlocksProps} />
 		</>
 	);
 }

@@ -21,7 +21,7 @@ rm -rf src/*
 # Pro版のディレクトリに移動
 cd ../
 # 指定したファイルを除外して、Pro版を無料版へコピー&上書き
-rsync --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'bin/' --exclude 'tests/' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/_pro/' --exclude 'vk-blocks-free/' --exclude '.git/' --exclude '.gitignore' --exclude 'inc/vk-blocks-pro/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvc ./* ./vk-blocks/
+rsync --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'bin/' --exclude 'tests/' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/_pro/' --exclude 'src/blocks/bundle-pro.js' --exclude 'vk-blocks/' --exclude '.git/' --exclude '.gitignore' --exclude 'inc/vk-blocks-pro/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvc ./* ./vk-blocks/
 # 無料版のディレクトリに移動
 cd ./vk-blocks/
 # push先のブランチを切る
@@ -39,15 +39,18 @@ cd ./vk-blocks/
 for pro_block in ${pro_block_array[@]}; do
 sed -i s/\,\ \'${pro_block}\'//g inc/vk-blocks/vk-blocks-functions.php
 done
-# ブロックをビルド
-npm install
-npm run build:free
-# 無料版のmasterブランチにpush
-git add .
-git commit -m"Update from vk-blocks-pro"
-git push -f origin master
-# 無料版のレポジトリでタグを切ってpush
-# 無料版の方でも下のGitHubActionが動いて、WordPress公式レポジトリにアップロードされる。
-# https://github.com/vektor-inc/vk-blocks/blob/master/.github/workflows/wp-plugin-deploy.yml
-git tag ${version}
-git push origin ${version}
+# Pro版のブロックをphpから削除
+sed -i s/import blocksPro from \'\.\/bundle-pro\'/const blocksPro = \[\]/g src/blocks/bundle.js
+cat src/blocks/bundle.js
+# # ブロックをビルド
+# npm install
+# npm run build:free
+# # 無料版のmasterブランチにpush
+# git add .
+# git commit -m"Update from vk-blocks-pro"
+# git push -f origin master
+# # 無料版のレポジトリでタグを切ってpush
+# # 無料版の方でも下のGitHubActionが動いて、WordPress公式レポジトリにアップロードされる。
+# # https://github.com/vektor-inc/vk-blocks/blob/master/.github/workflows/wp-plugin-deploy.yml
+# git tag ${version}
+# git push origin ${version}

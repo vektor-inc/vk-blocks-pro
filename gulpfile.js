@@ -200,6 +200,7 @@ gulp.task("dist", function() {
         "!./config.rb",
         "!./tests/**",
         "!./dist/**",
+				"!./test/**",
         "!./bin/**",
         "!./editor-css/**",
         "!./node_modules/**"

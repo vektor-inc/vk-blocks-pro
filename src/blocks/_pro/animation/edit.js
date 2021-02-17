@@ -16,22 +16,23 @@ export default function AnimationEdit(props) {
 	const { updateBlockAttributes } = dispatch('core/block-editor');
 
 	useEffect(() => {
-		if (customClientId) {
-			updateBlockAttributes(clientId, { clientId: customClientId });
+		if (clientId === undefined || clientId === null || clientId === '' ) {
+			setAttributes({clientId});
 		}
-	}, [customClientId]);
+		if (effect === undefined || effect === null || effect === '' ) {
+			setAttributes({ effect: 'slide-up' });
+		}
 
-	if (effect === undefined || effect === null) {
-		setAttributes({ effect: 'slide-up' });
-	}
+		if (speed === undefined || speed === null || speed === '') {
+			setAttributes({ speed: 'fast' });
+		}
 
-	if (speed === undefined || speed === null) {
-		setAttributes({ speed: 'fast' });
-	}
+		if (range === undefined || range === null || range === '' ) {
+			setAttributes({ range: 'short' });
+		}
+	}, [clientId]);
 
-	if (range === undefined || range === null) {
-		setAttributes({ range: 'short' });
-	}
+
 
 	const blockProps = useBlockProps({
 		className: `vk_animation vk_animation-${effect} vk_animation-speed-${speed} vk_animation-range-${range} vk_animation-${customClientId}`,
@@ -137,7 +138,7 @@ export default function AnimationEdit(props) {
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
-				<InnerBlocks templateInsertUpdatesSelection={false} />
+				<InnerBlocks />
 			</div>
 		</>
 	);

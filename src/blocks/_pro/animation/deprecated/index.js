@@ -55,11 +55,11 @@ const deprecated = [
 				default: "short",
 			},
 		},
-		save001,
+		save: save001,
 	},
 	{
 		attributes: blockAttributes,
-		save000,
+		save: save000,
 	}
 ];
 

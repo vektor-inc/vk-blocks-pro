@@ -36,7 +36,7 @@ const deprecated = [
 				default: '',
 			},
 		},
-		save0_60_1,
+		save: save0_60_1,
 	},
 	{
 		attributes: {
@@ -46,7 +46,7 @@ const deprecated = [
 				default: '',
 			},
 		},
-		save0_0_2,
+		save: save0_0_2,
 	},
 	{
 		attributes: {
@@ -56,11 +56,11 @@ const deprecated = [
 				default: '',
 			},
 		},
-		save0_0_1,
+		save: save0_0_1,
 	},
 	{
 		attributes: blockAttributes,
-		save0_0_0,
+		save: save0_0_0,
 	},
 ];
 export default deprecated;

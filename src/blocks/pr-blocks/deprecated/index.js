@@ -10,18 +10,18 @@ import schema0_59_0 from './0.59.0/schema';
 export const deprecated = [
 	{
 		attributes: schema0_59_0(4),
-		save0_59_0,
+		save: save0_59_0,
 	},
 	{
 		attributes: schema002(4),
-		save002,
+		save: save002,
 	},
 	{
 		attributes: schema001(4),
-		save001,
+		save: save001,
 	},
 	{
 		attributes: schema000(4),
-		save000,
+		save: save000,
 	},
 ];

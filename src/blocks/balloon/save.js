@@ -1,7 +1,7 @@
 import { RichText, InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 export default function save({ attributes }) {
-	const {
+	let {
 		balloonName,
 		balloonType,
 		balloonBorder,
@@ -13,6 +13,48 @@ export default function save({ attributes }) {
 		balloonImageType,
 		balloonAnimation,
 	} = attributes;
+
+	balloonType =
+		balloonType !== undefined &&
+		balloonType !== null &&
+		balloonType !== 'type-serif'
+			? balloonType
+			: 'type-speech';
+
+	balloonAlign =
+		balloonAlign !== undefined && balloonAlign !== null
+			? balloonAlign
+			: 'position-left';
+
+	balloonImageType =
+		balloonImageType !== undefined && balloonImageType !== null
+			? balloonImageType
+			: 'normal';
+
+	balloonAnimation =
+		balloonAnimation !== undefined && balloonAnimation !== null
+			? balloonAnimation
+			: 'none';
+
+	balloonBorder =
+		balloonBorder !== undefined && balloonBorder !== null
+			? balloonBorder
+			: false;
+
+	balloonImageBorder =
+		balloonImageBorder !== undefined && balloonImageBorder !== null
+			? balloonImageBorder
+			: false;
+
+	balloonBorderColor =
+		balloonBorderColor !== undefined && balloonBorderColor !== null
+			? balloonBorderColor
+			: '#cccccc';
+
+	balloonBgColor =
+		balloonBgColor !== undefined && balloonBgColor !== null
+			? balloonBgColor
+			: '#f5f5f5';
 
 	let contentBorderClass;
 	let iconImageBorderClass;

@@ -82,7 +82,11 @@ export default function BalloonEdit({ attributes, setAttributes }) {
 		);
 	}
 
-	if (balloonType === 'type-serif' || balloonType === null || balloonType === undefined) {
+	if (
+		balloonType === 'type-serif' ||
+		balloonType === null ||
+		balloonType === undefined
+	) {
 		setAttributes({ balloonType: 'type-speech' });
 	}
 

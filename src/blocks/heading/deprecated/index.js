@@ -5,6 +5,7 @@ import save0_24_4 from './0.24.4/save';
 import save0_24_5 from './0.24.5/save';
 import save0_24_6 from './0.24.6/save';
 import save0_24_7 from './0.24.7/save';
+import save0_37_1 from './0.37.1/save';
 import save0_39_5 from './0.39.5/save';
 import save0_40_0 from './0.40.0/save';
 import save0_40_1 from './0.40.1/save';
@@ -37,10 +38,11 @@ const blockAttributes = {
 	},
 	titleSize: {
 		type: 'number',
-		default: 2.6,
+		default: 2, // version < 0.17.7 は デフォルト値が 2.6
 	},
 	titleMarginBottom: {
-		type: 'number',
+		type: "number",
+		default: 1
 	},
 	subText: {
 		source: 'html',
@@ -57,94 +59,52 @@ const blockAttributes = {
 	},
 	subTextSize: {
 		type: 'number',
-		default: 1.8,
+		default: 1.2,
 	},
 };
 
+const blockAttributes2 = {
+	anchor: {
+		type: 'string',
+		source: 'attribute',
+		attribute: 'id',
+		selector: '*',
+	},
+	...blockAttributes,
+	fontAwesomeIconBefore: {
+		type: 'string',
+		default: '',
+	},
+	fontAwesomeIconAfter: {
+		type: 'string',
+		default: '',
+	},
+	fontAwesomeIconColor: {
+		type: 'string',
+		default: '#000000',
+	},
+}
+
 const deprecated = [
 	{
-		attributes: {
-			...blockAttributes,
-			anchor: {
-				type: 'string',
-				source: 'attribute',
-				attribute: 'id',
-				selector: '*',
-			},
-			fontAwesomeIconBefore: {
-				type: 'string',
-				default: '',
-			},
-			fontAwesomeIconAfter: {
-				type: 'string',
-				default: '',
-			},
-			fontAwesomeIconColor: {
-				type: 'string',
-				default: '#000000',
-			},
-		},
+		attributes: blockAttributes2,
 		save: save0_60_1,
 	},
 	{
-		attributes: {
-			...blockAttributes,
-			anchor: {
-				type: 'string',
-				source: 'attribute',
-				attribute: 'id',
-				selector: '*',
-			},
-			fontAwesomeIconBefore: {
-				type: 'string',
-				default: '',
-			},
-			fontAwesomeIconAfter: {
-				type: 'string',
-				default: '',
-			},
-			fontAwesomeIconColor: {
-				type: 'string',
-				default: '#000000',
-			},
-		},
+		attributes: blockAttributes2,
 		save: save0_40_1,
 	},
 	{
-		attributes: {
-			...blockAttributes,
-			anchor: {
-				type: 'string',
-				source: 'attribute',
-				attribute: 'id',
-				selector: '*',
-			},
-			fontAwesomeIconBefore: {
-				type: 'string',
-				default: '',
-			},
-			fontAwesomeIconAfter: {
-				type: 'string',
-				default: '',
-			},
-			fontAwesomeIconColor: {
-				type: 'string',
-				default: '#000000',
-			},
-		},
+		attributes: blockAttributes2,
 		save: save0_40_0,
 	},
 	{
-		attributes: {
-			...blockAttributes,
-			anchor: {
-				type: 'string',
-				source: 'attribute',
-				attribute: 'id',
-				selector: '*',
-			},
-		},
+		attributes: blockAttributes2,
 		save: save0_39_5,
+	},
+	{
+		attributes: blockAttributes2,
+		save: save0_37_1,
 	},
 	{
 		attributes: {

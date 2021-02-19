@@ -65,7 +65,8 @@ function vkblocks_css_tree_shaking_exclude_class( $inidata ) {
 		'vk_post-col-xxl-3',
 		'vk_post-col-xxl-2',
 	);
-	$inidata['class']      = array_merge( $inidata['class'], $exclude_classes_array );
+
+	$inidata['class'] = array_unique( array_merge( $inidata['class'], $exclude_classes_array ) );
 
 	return $inidata;
 }

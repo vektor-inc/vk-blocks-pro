@@ -8,30 +8,28 @@ import save0_58_6 from './0.58.6/save';
 import save0_58_7 from './0.58.7/save';
 
 const blockAttributes = {
-	attributes: {
-		content: {
-			source: 'html',
-			selector: 'p',
-		},
-		balloonName: {
-			source: 'html',
-			selector: 'figcaption',
-		},
-		balloonType: {
-			type: 'string',
-			default: 'type-serif',
-		},
-		balloonBgColor: {
-			type: 'string',
-		},
-		balloonAlign: {
-			type: 'string',
-			default: 'position-left',
-		},
-		IconImage: {
-			type: 'string',
-			default: null, // no image by default!
-		},
+	content: {
+		source: 'html',
+		selector: 'p',
+	},
+	balloonName: {
+		source: 'html',
+		selector: 'figcaption',
+	},
+	balloonType: {
+		type: 'string',
+		default: 'type-serif',
+	},
+	balloonBgColor: {
+		type: 'string',
+	},
+	balloonAlign: {
+		type: 'string',
+		default: 'position-left',
+	},
+	IconImage: {
+		type: 'string',
+		default: null, // no image by default!
 	},
 };
 
@@ -84,37 +82,37 @@ const blockAttributes4 = {
 }
 
 const deprecated = [
-	// {
-	// 	attributes: blockAttributes4,
-	// 	save: save0_58_7,
-	// },
-	// {
-	// 	attributes: blockAttributes4,
-	// 	save: save0_58_6,
-	// },
-	// {
-	// 	attributes: blockAttributes4,
-	// 	save: save004,
-	// },
-	// {
-	// 	attributes: blockAttributes3,
-	// 	save: save003,
-	// },
-	// {
-	// 	attributes: blockAttributes3,
-	// 	save: save002,
-	// },
+	{
+		attributes: blockAttributes4,
+		save: save0_58_7,
+	},
+	{
+		attributes: blockAttributes4,
+		save: save0_58_6,
+	},
+	{
+		attributes: blockAttributes4,
+		save: save004,
+	},
+	{
+		attributes: blockAttributes3,
+		save: save003,
+	},
+	{
+		attributes: blockAttributes3,
+		save: save002,
+	},
 	{
 		attributes: blockAttributes2,
 		save:save0_37_1,
 	},
-	// {
-	// 	attributes: blockAttributes2,
-	// 	save: save001,
-	// },
-	// {
-	// 	attributes: blockAttributes,
-	// 	save: save000,
-	// },
+	{
+		attributes: blockAttributes2,
+		save: save001,
+	},
+	{
+		attributes: blockAttributes,
+		save: save000,
+	},
 ];
 export default deprecated;

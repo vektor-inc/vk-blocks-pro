@@ -2,6 +2,11 @@ import { RichText, InnerBlocks } from '@wordpress/block-editor';
 
 export default function save({ attributes }) {
 
+	console.log("-------------------hehehehehe")
+
+
+	console.log({attributes})
+
 	let {
 		content,
 		balloonName,

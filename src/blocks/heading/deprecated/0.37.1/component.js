@@ -44,8 +44,6 @@ export const VKBHeading =(props) => {
 	let cStyle;
 	let tStyle;
 
-	console.log({attributes})
-
 	//containerのマージンを切り替え
 	if (outerMarginBottom) {
 		cStyle = { marginBottom: outerMarginBottom + `rem` };

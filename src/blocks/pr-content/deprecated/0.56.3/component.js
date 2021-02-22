@@ -36,26 +36,6 @@ export class PRcontent extends Component {
 	  let aStyle = {};
 	  let imageBorderProperty = "none";
 
-	  console.log({titleColor},{contentColor})
-
-	  let titleStyle
-	  let contentStyle
-
-	  if(titleColor && titleColor !== "") {
-		titleStyle = { color: titleColor }
-	  } else {
-		titleStyle = {}
-	  }
-
-	  if(contentColor && contentColor !== "") {
-		contentStyle = { color: contentColor }
-	  } else {
-		contentStyle = {}
-	  }
-
-	  console.log({titleStyle},{contentStyle})
-
-
 	  if (layout === "right") {
 		containerClass = classNames(
 		  className,
@@ -215,7 +195,7 @@ export class PRcontent extends Component {
 				onChange={ value => setAttributes({ title: value }) }
 				value={ title }
 				placeholder={ __("Input title.", "vk-blocks") }
-				style={ titleStyle }
+				style={ { color: titleColor } }
 						/>
 			<RichText
 				tagName="p"
@@ -223,7 +203,7 @@ export class PRcontent extends Component {
 				onChange={ value => setAttributes({ content: value }) }
 				value={ content }
 				placeholder={ __("Input content.", "vk-blocks") }
-				style={ contentStyle }
+				style={ { color: contentColor } }
 						/>
 		</Fragment>
 					);
@@ -234,13 +214,13 @@ export class PRcontent extends Component {
 				tagName="h3"
 				value={ title }
 				className={ "vk_prContent_colTxt_title" }
-				style={ titleStyle }
+				style={ { color: titleColor } }
 						/>
 			<RichText.Content
 				tagName="p"
 				className={ "vk_prContent_colTxt_text" }
 				value={ content }
-				style={ contentStyle }
+				style={ { color: contentColor } }
 						/>
 		</Fragment>
 					);

@@ -95,38 +95,38 @@ const deprecated = [
 		attributes: blockAttributes3,
 		save: save003,
 	},
-	// {
-	// 	attributes: blockAttributes3,
-	// 	save: save0_58_9,
-	// },
-	// {
-	// 	attributes: blockAttributes3,
-	// 	save: save0_58_7,
-	// },
-	// {
-	// 	attributes: blockAttributes3,
-	// 	save: save0_56_3,
-	// },
-	// {
-	// 	attributes: blockAttributes3,
-	// 	save: save0_43_0,
-	// },
-	// {
-	// 	attributes: blockAttributes2,
-	// 	save: save0_5_1,
-	// },
-	// {
-	// 	attributes: blockAttributes2,
-	// 	save: save002,
-	// },
-	// {
-	// 	attributes: blockAttributes,
-	// 	save: save001,
-	// },
-	// {
-	// 	attributes: blockAttributes,
-	// 	save: save000,
-	// },
+	{
+		attributes: blockAttributes3,
+		save: save0_58_9,
+	},
+	{
+		attributes: blockAttributes3,
+		save: save0_58_7,
+	},
+	{
+		attributes: blockAttributes3,
+		save: save0_56_3,
+	},
+	{
+		attributes: blockAttributes3,
+		save: save0_43_0,
+	},
+	{
+		attributes: blockAttributes2,
+		save: save0_5_1,
+	},
+	{
+		attributes: blockAttributes2,
+		save: save002,
+	},
+	{
+		attributes: blockAttributes,
+		save: save001,
+	},
+	{
+		attributes: blockAttributes,
+		save: save000,
+	},
 ];
 
 export default deprecated;

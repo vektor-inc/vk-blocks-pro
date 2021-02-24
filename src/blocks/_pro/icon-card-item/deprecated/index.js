@@ -78,6 +78,8 @@ const blockAttributes3 = {
 }
 
 const deprecated = [
+	// Fix: https://github.com/vektor-inc/vk-blocks-pro/issues/349
+	// 独自後方互換処理のための、後方互換を追加
 	{
 		attributes: blockAttributes3,
 		save:save0_0_2

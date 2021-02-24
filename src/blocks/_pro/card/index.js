@@ -87,8 +87,7 @@ const generateInlineCss = (attributes) => {
 	}
 
 	const cardImgSelector = `.${prefix}${clientId} .vk_card_item .vk_post_imgOuter::before`;
-	return (
-		<style type="text/css">{`@media (max-width: 576px) {
+	return (`@media (max-width: 576px) {
 		${cardImgSelector}{
 			padding-top:${mobile}${unit}!important;
 		}
@@ -102,8 +101,7 @@ const generateInlineCss = (attributes) => {
 		${cardImgSelector}{
 			padding-top:${pc}${unit}!important;
 		}
-	}`}</style>
-	);
+	}`);
 };
 
 addFilter(
@@ -112,12 +110,8 @@ addFilter(
 	createHigherOrderComponent((BlockEdit) => {
 		return (props) => {
 			const { attributes, setAttributes, clientId } = props;
-			const { unit, pc, tablet, mobile } = attributes;
 
-			if (
-				'vk-blocks/card' === props.name &&
-				(unit || pc || tablet || mobile)
-			) {
+			if ('vk-blocks/card' === props.name) {
 				useEffect(() => {
 					setAttributes({ clientId });
 				}, []);
@@ -126,7 +120,7 @@ addFilter(
 
 				return (
 					<>
-						{cssTag}
+						<style type="text/css">{cssTag}</style>
 						<BlockEdit {...props} />
 					</>
 				);
@@ -140,17 +134,13 @@ addFilter(
 	'blocks.getSaveElement',
 	'vk-blocks/card-addInlineFrontCss',
 	(el, type, attributes) => {
-		const { unit, pc, tablet, mobile } = attributes;
-		if (
-			'vk-blocks/card' === type.name &&
-			(unit || pc || tablet || mobile)
-		) {
+		if ( 'vk-blocks/card' === type.name ) {
 			const cssTag = generateInlineCss(attributes);
 			return (
-				<div>
-					{cssTag}
+				<>
 					{el}
-				</div>
+					<style type="text/css">{cssTag}</style>
+				</>
 			);
 		}
 		return el;

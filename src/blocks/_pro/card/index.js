@@ -87,7 +87,7 @@ const generateInlineCss = (attributes) => {
 	}
 
 	const cardImgSelector = `.${prefix}${clientId} .vk_card_item .vk_post_imgOuter::before`;
-	return (`@media (max-width: 576px) {
+	return `@media (max-width: 576px) {
 		${cardImgSelector}{
 			padding-top:${mobile}${unit}!important;
 		}
@@ -101,7 +101,7 @@ const generateInlineCss = (attributes) => {
 		${cardImgSelector}{
 			padding-top:${pc}${unit}!important;
 		}
-	}`);
+	}`;
 };
 
 addFilter(
@@ -134,7 +134,7 @@ addFilter(
 	'blocks.getSaveElement',
 	'vk-blocks/card-addInlineFrontCss',
 	(el, type, attributes) => {
-		if ( 'vk-blocks/card' === type.name ) {
+		if ('vk-blocks/card' === type.name) {
 			const cssTag = generateInlineCss(attributes);
 			return (
 				<>

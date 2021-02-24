@@ -4,6 +4,7 @@ import save0_0_2 from './0.0.2/save';
 import save0_0_3 from './0.0.3/save';
 import save0_0_4 from './0.0.4/save';
 import save0_0_5 from './0.0.5/save';
+import save0_0_6 from './0.0.6/save';
 import save0_41_0 from './0.41.0/save';
 import save0_59_0 from './0.59.0/save';
 import save0_59_1 from './0.59.1/save';
@@ -54,15 +55,23 @@ const blockAttributes = {
 	},
 };
 
+const blockAttributes2 = {
+	...blockAttributes,
+	subCaption: {
+		type: 'string',
+		default: '',
+	},
+}
+
 export const deprecated = [
+	// Fix: https://github.com/vektor-inc/vk-blocks-pro/issues/356
+	// 独自後方互換処理のための、後方互換を追加
 	{
-		attributes: {
-			...blockAttributes,
-			subCaption: {
-				type: 'string',
-				default: '',
-			},
-		},
+		attributes: blockAttributes2,
+		save: save0_0_6,
+	},
+	{
+		attributes: blockAttributes2,
 		save: save0_60_0,
 	},
 	{

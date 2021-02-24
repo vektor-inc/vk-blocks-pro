@@ -1,5 +1,6 @@
 import save000 from './0.0.0/save';
 import save001 from './0.0.1/save';
+import save0_0_2 from './0.0.2/save';
 import save0_49_8 from './0.49.8/save';
 import save0_60_1 from './0.60.1/save';
 
@@ -60,43 +61,37 @@ const blockAttributes = {
 	},
 };
 
+const blockAttributes2 = {
+	...blockAttributes,
+	faIcon: {
+		type: 'string',
+		default: '<i class="fas fa-user"></i>',
+	}
+}
+
+const blockAttributes3 = {
+	...blockAttributes2,
+	col_xxl: {
+		type: 'number',
+		default: 3,
+	}
+}
+
 const deprecated = [
 	{
-		attributes: {
-			...blockAttributes,
-			faIcon: {
-				type: 'string',
-				default: '<i class="fas fa-user"></i>',
-			},
-			col_xxl: {
-				type: 'number',
-				default: 3,
-			},
-		},
+		attributes: blockAttributes3,
+		save:save0_0_2
+	},
+	{
+		attributes: blockAttributes3,
 		save: save0_60_1,
 	},
 	{
-		attributes: {
-			...blockAttributes,
-			faIcon: {
-				type: 'string',
-				default: '<i class="fas fa-user"></i>',
-			},
-			col_xxl: {
-				type: 'number',
-				default: 3,
-			},
-		},
+		attributes: blockAttributes3,
 		save: save0_49_8,
 	},
 	{
-		attributes: {
-			...blockAttributes,
-			faIcon: {
-				type: 'string',
-				default: '<i class="fas fa-user"></i>',
-			},
-		},
+		attributes: blockAttributes2,
 		save: save001,
 	},
 	{

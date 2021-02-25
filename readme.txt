@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.6
 Tested up to: 5.6.1
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -62,6 +62,15 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 1.0.5 =
+* [ Bug fix ][ Animation ] [ Balloon ][ Heading ][ PR Content ][ Icon Card ] Fix data by old versoin needs recovery.
+* [ Design bug fix ][ QA Block ] Fix style in editor.
+* [ Design bug fix ][ Button ] Fix style of sub caption.
+
+* [ Add Block ] Add Page Content Block
+* [ Add Function ] Add nowrap
+* [ Add Function ][ Balloon ] Add border function
 
 = 1.0.4 =
 [ Bug fix ][Table of Contents] fix bug for deprecated.

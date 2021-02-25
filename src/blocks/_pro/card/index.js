@@ -15,7 +15,8 @@ export const prefix = 'vk_card_';
 import metadata from './block.json';
 import edit from './edit';
 import save from './save';
-import deprecated from './deprecated/index';
+import deprecatedHooks from './deprecated/hooks';
+import deprecated from './deprecated/save';
 const { name } = metadata;
 
 export { metadata, name };
@@ -120,8 +121,8 @@ addFilter(
 
 				return (
 					<>
-						<style type="text/css">{cssTag}</style>
 						<BlockEdit {...props} />
+						<style type="text/css">{cssTag}</style>
 					</>
 				);
 			}
@@ -135,13 +136,44 @@ addFilter(
 	'vk-blocks/card-addInlineFrontCss',
 	(el, type, attributes) => {
 		if ('vk-blocks/card' === type.name) {
-			const cssTag = generateInlineCss(attributes);
-			return (
-				<>
-					{el}
-					<style type="text/css">{cssTag}</style>
-				</>
+
+			//現在実行されている deprecated内の save関数のindexを取得
+			const deprecatedFuncIndex = deprecated.findIndex(
+				(item) => item.save === type.save
 			);
+
+			const cssTag = generateInlineCss(attributes);
+
+			// 最新版
+			if (-1 === deprecatedFuncIndex) {
+				// NOTE: useBlockProps + style要素を挿入する場合、useBlockPropsを使った要素が最初（上）にこないと、
+				// カスタムクラスを追加する処理が失敗する
+				return (
+					<>
+						{el}
+						<style type="text/css">{cssTag}</style>
+					</>
+				);
+
+			//後方互換
+			} else {
+				return (
+					<div>
+						<style type="text/css">{cssTag}</style>
+						{el}
+					</div>
+				);
+			}
+
+			let DeprecatedHook;
+			// Deprecated Hooks が Deprecated Save関数より少ない場合にエラーが出ないように。
+			if(deprecatedHooks.length > deprecatedFuncIndex) {
+				DeprecatedHook = deprecatedHooks[deprecatedFuncIndex];
+			} else {
+				DeprecatedHook = deprecatedHooks[deprecatedHooks.length - 1];
+			}
+			return <DeprecatedHook el={el} attributes={attributes} />;
+
 		}
 		return el;
 	}

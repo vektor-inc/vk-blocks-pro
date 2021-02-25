@@ -136,7 +136,6 @@ addFilter(
 	'vk-blocks/card-addInlineFrontCss',
 	(el, type, attributes) => {
 		if ('vk-blocks/card' === type.name) {
-
 			//現在実行されている deprecated内の save関数のindexを取得
 			const deprecatedFuncIndex = deprecated.findIndex(
 				(item) => item.save === type.save
@@ -155,24 +154,18 @@ addFilter(
 					</>
 				);
 
-			//後方互換
+				//後方互換
 			} else {
-				return (
-					<div>
-						<style type="text/css">{cssTag}</style>
-						{el}
-					</div>
-				);
-			}
 
-			let DeprecatedHook;
-			// Deprecated Hooks が Deprecated Save関数より少ない場合にエラーが出ないように。
-			if(deprecatedHooks.length > deprecatedFuncIndex) {
-				DeprecatedHook = deprecatedHooks[deprecatedFuncIndex];
-			} else {
-				DeprecatedHook = deprecatedHooks[deprecatedHooks.length - 1];
+				let DeprecatedHook
+				// Deprecated Hooks が Deprecated Save関数より少ない場合にエラーが出ないように。
+				if (deprecatedHooks.length > deprecatedFuncIndex) {
+					DeprecatedHook = deprecatedHooks[deprecatedFuncIndex];
+				} else {
+					DeprecatedHook = deprecatedHooks[deprecatedHooks.length - 1];
+				}
+				return <DeprecatedHook el={el} attributes={attributes} />;
 			}
-			return <DeprecatedHook el={el} attributes={attributes} />;
 
 		}
 		return el;

@@ -1,5 +1,5 @@
 .vk_button {
-	margin: 5px 0;
+	margin: 5px auto; /* 他テーマで0だと左寄せになる場合があるのでautoに変更 */
 	text-align: center; /* テキストのみの時のセンター揃え */
 	&-color-custom {
 		a:hover {
@@ -8,7 +8,7 @@
 		}
 	}
 
-	&-align {
+	&.vk_button-align {
 		&-left {
 			text-align: left;
 		}
@@ -35,7 +35,7 @@
 		}
 	}
 
-	&_link {
+	.vk_button_link {
 		min-width: 100px;
 		min-height: 30px;
 
@@ -53,6 +53,7 @@
 			padding-top: 0.7em;
 			padding-bottom: 0.6em;
 			user-select: text;
+			text-decoration: none; /* 他テーマでunderlineがつくので追加 */
 		}
 
 		&_before {

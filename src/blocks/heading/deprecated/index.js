@@ -1,4 +1,3 @@
-import save0_17_7 from './0.17.7/save';
 import save0_24_1 from './0.24.1/save';
 import save0_24_2 from './0.24.2/save';
 import save0_24_3 from './0.24.3/save';
@@ -6,6 +5,7 @@ import save0_24_4 from './0.24.4/save';
 import save0_24_5 from './0.24.5/save';
 import save0_24_6 from './0.24.6/save';
 import save0_24_7 from './0.24.7/save';
+import save0_26_8 from './0.26.8/save';
 import save0_37_1 from './0.37.1/save';
 import save0_39_5 from './0.39.5/save';
 import save0_40_0 from './0.40.0/save';
@@ -110,6 +110,16 @@ const deprecated = [
 	{
 		attributes: {
 			...blockAttributes,
+			outerMarginBottom: {
+				type: 'number',
+				default: null
+			},
+		},
+		save: save0_26_8,
+	},
+	{
+		attributes: {
+			...blockAttributes,
 			anchor: {
 				type: 'string',
 				source: 'attribute',
@@ -182,10 +192,6 @@ const deprecated = [
 	{
 		attributes: blockAttributes,
 		save: save0_24_1,
-	},
-	{
-		attributes: blockAttributes,
-		save: save0_17_7,
 	},
 ];
 export default deprecated;

@@ -68,22 +68,28 @@
 }
 
 //管理画面
+// 
 .edit-post-visual-editor.editor-styles-wrapper {
 	.swiper-button-prev,
 	.swiper-button-next {
 		//button非表示
 		display: none;
 	}
-	.swiper-container.vk_width-full {
+	.swiper-container.vk_slider.vk_width-full {
 		//全幅の時
-
-		.wp-block-vk-blocks-slider-item {
+		margin-left: -10px;
+		margin-right: -10px;
+		width: calc(100% - -20px);
+		max-width: 100vw;
+		.vk_slider_item {
 			margin: auto;
-			.vk_outer-paddingLR-use {
-				//メニューに隠れて編集しずらいため
-				@media (min-width: 768px) {
-					margin-left: calc(50% - 50vw + 200px);
-					margin-right: calc(50% - 50vw + 200px);
+			&.vk_slider_item-paddingLR-use,
+			&.vk_slider_item-paddingLR-zero{
+				.vk_slider_item_container{ 
+						max-width:100%;
+					.wp-block{
+						max-width:100%;						
+					}
 				}
 			}
 		}

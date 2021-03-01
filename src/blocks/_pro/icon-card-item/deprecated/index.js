@@ -84,21 +84,21 @@ const deprecated = [
 		attributes: blockAttributes3,
 		save:save0_0_2
 	},
-	{
-		attributes: blockAttributes3,
-		save: save0_60_1,
-	},
-	{
-		attributes: blockAttributes3,
-		save: save0_49_8,
-	},
-	{
-		attributes: blockAttributes2,
-		save: save001,
-	},
-	{
-		attributes: blockAttributes,
-		save: save000,
-	},
+	// {
+	// 	attributes: blockAttributes3,
+	// 	save: save0_60_1,
+	// },
+	// {
+	// 	attributes: blockAttributes3,
+	// 	save: save0_49_8,
+	// },
+	// {
+	// 	attributes: blockAttributes2,
+	// 	save: save001,
+	// },
+	// {
+	// 	attributes: blockAttributes,
+	// 	save: save000,
+	// },
 ];
 export default deprecated;

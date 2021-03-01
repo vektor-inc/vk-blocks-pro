@@ -2,8 +2,6 @@
 /* Layout
 /*-------------------------------------------*/
 .vk_prContent {
-	margin-left: -15px;
-	margin-right: -15px;
 	@media (min-width: 576px) {
 		display: flex;
 		.col-sm-6 {
@@ -20,10 +18,12 @@
 
 			&-imageLeft .vk_prContent_colImg {
 				padding-right: 2em;
+				padding-left: 0;
 			}
 
 			&-imageRight .vk_prContent_colImg {
 				padding-left: 2em;
+				padding-right: 0;
 			}
 		}
 	} // @media (min-width: 768px) {
@@ -32,10 +32,11 @@
 /*-------------------------------------------*/
 /* others
 /*-------------------------------------------*/
+// 編集画面でcssの指定が軽くて負けるので.vk_prContent .vk_prContent_colTxt を先に記述
 .vk_prContent {
-	&_colTxt {
+	.vk_prContent_colTxt {
 		vertical-align: top;
-		&_title {
+		.vk_prContent_colTxt_title { 
 			background-color: transparent;
 			font-weight: bold;
 			margin-bottom: 0.8em;
@@ -68,8 +69,8 @@
 				font-size: 16px;
 			}
 		}
-	} // &_colTxt {
-	&_colImg {
+	} // .vk_prContent_colTxt
+	.vk_prContent_colImg {
 		&_image {
 			max-width: 100%;
 			height: auto;

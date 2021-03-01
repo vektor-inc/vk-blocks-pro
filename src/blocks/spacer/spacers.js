@@ -24,19 +24,12 @@ export default function Spacers({
 				/>
 			</>
 		);
-	} else {
-		return (
-			<>
-				<Spacer viewPort={'pc'} style={{ height: pcSize + unit }} />
-				<Spacer
-					viewPort={'tablet'}
-					style={{ height: tabletSize + unit }}
-				/>
-				<Spacer
-					viewPort={'mobile'}
-					style={{ height: mobileSize + unit }}
-				/>
-			</>
-		);
 	}
+	return (
+		<>
+			<Spacer viewPort={'pc'} style={{ height: pcSize + unit }} />
+			<Spacer viewPort={'tablet'} style={{ height: tabletSize + unit }} />
+			<Spacer viewPort={'mobile'} style={{ height: mobileSize + unit }} />
+		</>
+	);
 }

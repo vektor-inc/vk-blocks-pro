@@ -155,18 +155,15 @@ addFilter(
 				);
 
 				//後方互換
-			} else {
-
-				let DeprecatedHook
-				// Deprecated Hooks が Deprecated Save関数より少ない場合にエラーが出ないように。
-				if (deprecatedHooks.length > deprecatedFuncIndex) {
-					DeprecatedHook = deprecatedHooks[deprecatedFuncIndex];
-				} else {
-					DeprecatedHook = deprecatedHooks[deprecatedHooks.length - 1];
-				}
-				return <DeprecatedHook el={el} attributes={attributes} />;
 			}
-
+			let DeprecatedHook;
+			// Deprecated Hooks が Deprecated Save関数より少ない場合にエラーが出ないように。
+			if (deprecatedHooks.length > deprecatedFuncIndex) {
+				DeprecatedHook = deprecatedHooks[deprecatedFuncIndex];
+			} else {
+				DeprecatedHook = deprecatedHooks[deprecatedHooks.length - 1];
+			}
+			return <DeprecatedHook el={el} attributes={attributes} />;
 		}
 		return el;
 	}

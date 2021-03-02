@@ -14,30 +14,34 @@ fi
 # tagのバージョンを変数に代入
 version=$1
 
-echo "コピー前のディレクトリ確認"
-cd inc/vk-blocks/
-ls
-pwd
-cd ../../
+# echo "コピー前のディレクトリ確認"
+# cd inc/vk-blocks/
+# ls
+# pwd
+# cd ../../
 
-# Cloneした無料版のディレクトリに移動
-cd ./vk-blocks/
-# src/を削除
-rm -rf src/*
-# Pro版のディレクトリに移動
-cd ../
-pwd
+# # Cloneした無料版のディレクトリに移動
+# cd ./vk-blocks/
+# # src/を削除
+# rm -rf src/*
+# # Pro版のディレクトリに移動
+# cd ../
+# pwd
+
 # 指定したファイルを除外して、Pro版を無料版へコピー&上書き
 echo "rsync dry run"
-rsync --include 'inc/vk-blocks/languages/*.pot' --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'bin/' --exclude 'test/' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/_pro/' --exclude 'src/blocks/bundle-pro.js' --exclude 'vk-blocks/' --exclude '.git/' --exclude '.gitignore' --exclude 'inc/vk-blocks-pro/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvcn ./* ./vk-blocks/
+# rsync --include 'inc/vk-blocks/languages/*.pot' --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'bin/' --exclude 'test/' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/_pro/' --exclude 'src/blocks/bundle-pro.js' --exclude 'vk-blocks/' --exclude '.git/' --exclude '.gitignore' --exclude 'inc/vk-blocks-pro/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvcn ./* ./vk-blocks/
 # 指定したファイルを除外して、Pro版を無料版へコピー&上書き
-rsync --include 'inc/vk-blocks/languages/*.pot' --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'bin/' --exclude 'test/' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/_pro/' --exclude 'src/blocks/bundle-pro.js' --exclude 'vk-blocks/' --exclude '.git/' --exclude '.gitignore' --exclude 'inc/vk-blocks-pro/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvc ./* ./vk-blocks/
+# rsync --include 'inc/vk-blocks/languages/*.pot' --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'bin/' --exclude 'test/' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/_pro/' --exclude 'src/blocks/bundle-pro.js' --exclude 'vk-blocks/' --exclude '.git/' --exclude '.gitignore' --exclude 'inc/vk-blocks-pro/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvc ./* ./vk-blocks/
+ls
+rsync -arvc ./* ./vk-blocks/
+
 # 無料版のディレクトリに移動
 cd ./vk-blocks/
 
-echo "コピー後のディレクトリ確認"
-ls
-pwd
+# echo "コピー後のディレクトリ確認"
+# ls
+# pwd
 
 echo "コピー後のinc/ディレクトリ内確認"
 cd inc/vk-blocks/
@@ -79,11 +83,11 @@ npm run build:free
 # rm -f inc/vk-blocks/languages/vk-blocks-js.pot
 
 # 無料版のmasterブランチにpush
-git add .
-git commit -m"Update from vk-blocks-pro"
-git push -f origin master
+# git add .
+# git commit -m"Update from vk-blocks-pro"
+# git push -f origin master
 # 無料版のレポジトリでタグを切ってpush
 # 無料版の方でも下のGitHubActionが動いて、WordPress公式レポジトリにアップロードされる。
 # https://github.com/vektor-inc/vk-blocks/blob/master/.github/workflows/wp-plugin-deploy.yml
-git tag ${version}
-git push origin ${version}
+# git tag ${version}
+# git push origin ${version}

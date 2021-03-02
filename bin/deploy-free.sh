@@ -34,7 +34,7 @@ echo "rsync dry run"
 # 指定したファイルを除外して、Pro版を無料版へコピー&上書き
 # rsync --include 'inc/vk-blocks/languages/*.pot' --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'bin/' --exclude 'test/' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/_pro/' --exclude 'src/blocks/bundle-pro.js' --exclude 'vk-blocks/' --exclude '.git/' --exclude '.gitignore' --exclude 'inc/vk-blocks-pro/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvc ./* ./vk-blocks/
 ls
-rsync -arvc ./* ./vk-blocks/
+rsync -arvc --exclude 'test/' --exclude 'bin/' --exclude 'src/blocks/_pro/' ./* ./vk-blocks/
 
 # 無料版のディレクトリに移動
 cd ./vk-blocks/
@@ -66,6 +66,10 @@ sed -i s/\,\ \'${pro_block}\'//g inc/vk-blocks/vk-blocks-functions.php
 done
 # Pro版のブロックをbundle.jsから削除
 sed -i "s/import vkblocksPro from '\.\/bundle-pro'/const vkblocksPro = \[\]/g" src/blocks/bundle.js
+
+
+
+
 
 # 権限の問題でwebpackから生成できないようなので仮ファル作成
 # cd inc/vk-blocks/

@@ -14,17 +14,16 @@ fi
 # tagのバージョンを変数に代入
 version=$1
 
-# Cloneした無料版のディレクトリに移動
-cd ./vk-blocks/
-# src/を削除
-rm -rf src/*
-
 echo "コピー前のディレクトリ確認"
 cd inc/
 ls
 pwd
 cd ../
 
+# Cloneした無料版のディレクトリに移動
+cd ./vk-blocks/
+# src/を削除
+rm -rf src/*
 # Pro版のディレクトリに移動
 cd ../
 # 指定したファイルを除外して、Pro版を無料版へコピー&上書き

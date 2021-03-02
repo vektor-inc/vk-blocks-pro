@@ -14,15 +14,15 @@ fi
 # tagのバージョンを変数に代入
 version=$1
 
-echo "初期ディレクトリ確認"
-ls
-pwd
 # Cloneした無料版のディレクトリに移動
 cd ./vk-blocks/
 # src/を削除
 rm -rf src/*
 # Pro版のディレクトリに移動
 cd ../
+# 指定したファイルを除外して、Pro版を無料版へコピー&上書き
+echo "rsync dry run"
+rsync --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'bin/' --exclude 'tests/' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/_pro/' --exclude 'src/blocks/bundle-pro.js' --exclude 'vk-blocks/' --exclude '.git/' --exclude '.gitignore' --exclude 'inc/vk-blocks-pro/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvcn ./* ./vk-blocks/
 # 指定したファイルを除外して、Pro版を無料版へコピー&上書き
 rsync --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'bin/' --exclude 'tests/' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/_pro/' --exclude 'src/blocks/bundle-pro.js' --exclude 'vk-blocks/' --exclude '.git/' --exclude '.gitignore' --exclude 'inc/vk-blocks-pro/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvc ./* ./vk-blocks/
 # 無料版のディレクトリに移動

@@ -26,6 +26,7 @@ cd ./vk-blocks/
 rm -rf src/*
 # Pro版のディレクトリに移動
 cd ../
+pwd
 # 指定したファイルを除外して、Pro版を無料版へコピー&上書き
 echo "rsync dry run"
 rsync --include 'inc/vk-blocks/languages/' --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'bin/' --exclude 'test/' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/_pro/' --exclude 'src/blocks/bundle-pro.js' --exclude 'vk-blocks/' --exclude '.git/' --exclude '.gitignore' --exclude 'inc/vk-blocks-pro/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvcn ./* ./vk-blocks/
@@ -63,19 +64,19 @@ done
 sed -i "s/import vkblocksPro from '\.\/bundle-pro'/const vkblocksPro = \[\]/g" src/blocks/bundle.js
 
 # 権限の問題でwebpackから生成できないようなので仮ファル作成
-cd inc/vk-blocks/
-ls
-cd languages/
-ls
-cd ../../../
-ls
-touch inc/vk-blocks/languages/vk-blocks-js.pot
+# cd inc/vk-blocks/
+# ls
+# cd languages/
+# ls
+# cd ../../../
+# ls
+# touch inc/vk-blocks/languages/vk-blocks-js.pot
 # ブロックをビルド
 npm install
 npm run build:free
 
 # 仮ファル削除
-rm -f inc/vk-blocks/languages/vk-blocks-js.pot
+# rm -f inc/vk-blocks/languages/vk-blocks-js.pot
 
 # 無料版のmasterブランチにpush
 git add .

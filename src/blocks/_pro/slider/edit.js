@@ -210,7 +210,7 @@ export default function SliderEdit(props) {
 					</BaseControl>
 					<BaseControl
 						label={__('Display Multi Images per View', 'vk-blocks')}
-						id={`vk_slider-autoPlay`}
+						id={`vk_slider-MultiImage`}
 					>
 						<TextControl
 							label={__('Images per View', 'vk-blocks')}

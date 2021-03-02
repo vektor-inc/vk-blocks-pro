@@ -32,7 +32,7 @@ export default function SliderEdit(props) {
 		effect,
 		speed,
 		slidesPerView,
-		slidesPerGroup
+		slidesPerGroup,
 	} = attributes;
 	const { updateBlockAttributes } = dispatch('core/block-editor');
 	const customClientId = replaceClientId(clientId);
@@ -44,13 +44,13 @@ export default function SliderEdit(props) {
 	}, []);
 
 	// slidesPerView 互換設定
-	if ( slidesPerView === undefined ) {
+	if (slidesPerView === undefined) {
 		setAttributes({
 			slidesPerView: 1,
 		});
 	}
 	// slidesPerGroup 互換設定
-	if ( slidesPerGroup === undefined ) {
+	if (slidesPerGroup === undefined) {
 		setAttributes({
 			slidesPerGroup: 1,
 		});
@@ -79,7 +79,7 @@ export default function SliderEdit(props) {
 		effect,
 		speed,
 		slidesPerView,
-		slidesPerGroup
+		slidesPerGroup,
 	};
 
 	const blockProps = useBlockProps({

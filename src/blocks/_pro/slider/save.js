@@ -11,19 +11,19 @@ export default function save({ attributes }) {
 		effect,
 		speed,
 		slidesPerView,
-		slidesPerGroup
+		slidesPerGroup,
 	} = attributes;
 	let alignClass;
 
 	// slidesPerView 互換設定
-	if ( slidesPerView === undefined ) {
+	if (slidesPerView === undefined) {
 		slidesPerView = 1;
 	}
 	// slidesPerGroup 互換設定
-	if ( slidesPerGroup === undefined ) {
+	if (slidesPerGroup === undefined) {
 		slidesPerGroup = 1;
 	}
-	
+
 	const sliderData = {
 		autoPlay,
 		autoPlayDelay,
@@ -34,7 +34,7 @@ export default function save({ attributes }) {
 		effect,
 		speed,
 		slidesPerView,
-		slidesPerGroup
+		slidesPerGroup,
 	};
 
 	if ('full' === width) {

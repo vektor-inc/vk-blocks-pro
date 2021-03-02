@@ -14,6 +14,9 @@ fi
 # tagのバージョンを変数に代入
 version=$1
 
+cd inc/vk-blocks/
+ls
+pwd
 # Cloneした無料版のディレクトリに移動
 cd ./vk-blocks/
 # src/を削除

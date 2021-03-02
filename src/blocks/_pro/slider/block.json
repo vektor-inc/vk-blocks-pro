@@ -51,11 +51,11 @@
 			"type": "number",
 			"default": 300
 		},
-		"slidesPerGroup": {
+		"slidesPerView": {
 			"type": "number",
 			"default": 1
 		},
-		"slidesPerView": {
+		"slidesPerGroup": {
 			"type": "number",
 			"default": 1
 		}

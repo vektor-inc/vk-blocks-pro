@@ -14,7 +14,7 @@ fi
 # tagのバージョンを変数に代入
 version=$1
 
-cd inc/vk-blocks/
+echo "初期ディレクトリ確認"
 ls
 pwd
 # Cloneした無料版のディレクトリに移動
@@ -27,6 +27,13 @@ cd ../
 rsync --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'bin/' --exclude 'tests/' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/_pro/' --exclude 'src/blocks/bundle-pro.js' --exclude 'vk-blocks/' --exclude '.git/' --exclude '.gitignore' --exclude 'inc/vk-blocks-pro/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvc ./* ./vk-blocks/
 # 無料版のディレクトリに移動
 cd ./vk-blocks/
+echo "コピー後のディレクトリ確認"
+ls
+pwd
+echo "コピー後のinc/ディレクトリ内確認"
+cd inc/vk-blocks/
+ls
+pwd
 # push先のブランチを切る
 git checkout -b add/vk-blocks-free
 # Pro版ブロックは読み込まないようjsから削除

@@ -15,10 +15,10 @@ fi
 version=$1
 
 echo "コピー前のディレクトリ確認"
-cd inc/
+cd inc/vk-blocks/
 ls
 pwd
-cd ../
+cd ../../
 
 # Cloneした無料版のディレクトリに移動
 cd ./vk-blocks/
@@ -33,13 +33,17 @@ rsync --include 'inc/vk-blocks/languages/' --exclude 'inc/vk-blocks/build/block-
 rsync --include 'inc/vk-blocks/languages/' --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'bin/' --exclude 'test/' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/_pro/' --exclude 'src/blocks/bundle-pro.js' --exclude 'vk-blocks/' --exclude '.git/' --exclude '.gitignore' --exclude 'inc/vk-blocks-pro/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvc ./* ./vk-blocks/
 # 無料版のディレクトリに移動
 cd ./vk-blocks/
+
 echo "コピー後のディレクトリ確認"
 ls
 pwd
+
 echo "コピー後のinc/ディレクトリ内確認"
 cd inc/vk-blocks/
 ls
 pwd
+cd ../../
+
 # push先のブランチを切る
 git checkout -b add/vk-blocks-free
 # Pro版ブロックは読み込まないようjsから削除

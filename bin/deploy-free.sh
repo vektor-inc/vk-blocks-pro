@@ -20,35 +20,10 @@ cd ./vk-blocks/
 rm -rf src/*
 # Pro版のディレクトリに移動
 cd ../
-
-echo "コピー前のディレクトリ確認"
-ls
-pwd
-
 # 指定したファイルを除外して、Pro版を無料版へコピー&上書き
-# echo "rsync dry run"
-# rsync --include 'inc/vk-blocks/languages/*.pot' --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'bin/' --exclude 'test/' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/_pro/' --exclude 'src/blocks/bundle-pro.js' --exclude 'vk-blocks/' --exclude '.git/' --exclude '.gitignore' --exclude 'inc/vk-blocks-pro/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvcn ./* ./vk-blocks/
-# 指定したファイルを除外して、Pro版を無料版へコピー&上書き
-rsync -arvc --exclude 'test/' --exclude 'bin/' --exclude 'src/blocks/_pro/' --exclude 'inc/vk-blocks-pro/' --exclude '.git/' --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/bundle-pro.js' --exclude '.gitignore' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' ./* ./vk-blocks/
-
-# TODO:  これだと通った。順番に追加していく or 上から削って確認。上の ./vk-blocks/が怪しそう。
-# rsync -arvc --exclude 'test/' --exclude 'bin/' --exclude 'src/blocks/_pro/' ./* ./vk-blocks/
-
+rsync -arvc --exclude 'vk-blocks/' --exclude 'test/' --exclude 'bin/' --exclude 'src/blocks/_pro/' --exclude 'inc/vk-blocks-pro/' --exclude '.git/' --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/bundle-pro.js' --exclude '.gitignore' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' ./* ./vk-blocks/
 # 無料版のディレクトリに移動
 cd ./vk-blocks/
-
-echo "コピー後のディレクトリ確認"
-ls
-pwd
-
-echo "コピー後のinc/ディレクトリ内確認"
-cd inc/vk-blocks/
-ls
-pwd
-cd ../../
-
-# push先のブランチを切る
-git checkout -b add/vk-blocks-free
 # Pro版ブロックは読み込まないようjsから削除
 sed -i /_pro/d src/blocks/index.js
 # プラグイン名を通常版へリネーム
@@ -64,29 +39,15 @@ sed -i s/\,\ \'${pro_block}\'//g inc/vk-blocks/vk-blocks-functions.php
 done
 # Pro版のブロックをbundle.jsから削除
 sed -i "s/import vkblocksPro from '\.\/bundle-pro'/const vkblocksPro = \[\]/g" src/blocks/bundle.js
-
-
-# 権限の問題でwebpackから生成できないようなので仮ファル作成
-# cd inc/vk-blocks/
-# ls
-# cd languages/
-# ls
-# cd ../../../
-# ls
-# touch inc/vk-blocks/languages/vk-blocks-js.pot
 # ブロックをビルド
 npm install
 npm run build:free
-
-# 仮ファル削除
-# rm -f inc/vk-blocks/languages/vk-blocks-js.pot
-
 # 無料版のmasterブランチにpush
-# git add .
-# git commit -m"Update from vk-blocks-pro"
-# git push -f origin master
+git add .
+git commit -m"Update from vk-blocks-pro"
+git push -f origin master
 # 無料版のレポジトリでタグを切ってpush
 # 無料版の方でも下のGitHubActionが動いて、WordPress公式レポジトリにアップロードされる。
 # https://github.com/vektor-inc/vk-blocks/blob/master/.github/workflows/wp-plugin-deploy.yml
-# git tag ${version}
-# git push origin ${version}
+git tag ${version}
+git push origin ${version}

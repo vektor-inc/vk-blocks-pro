@@ -38,6 +38,7 @@ jobs:
         node-version: "${{ steps.nodenv.outputs.NODEVERSION }}"
 
     - run: npm install -g npm
+    - run: ls
     - run: pwd
     - run: cd ../
     - run: ls
@@ -46,6 +47,9 @@ jobs:
     # VK BlocksのGithubにアクセスできるユーザーの設定
     - run: git config --global user.email "info@vektor-inc.co.jp"
     - run: git config --global user.name "bitbucket-piplines-vk-blocks-pro"
+    - run: ls
+    - run: pwd
+    - run: cd ../
     - run: ls
     - run: pwd
     # # 無料版にデプロイするスクリプトにタグ名を引数で渡す。

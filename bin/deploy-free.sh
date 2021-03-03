@@ -25,7 +25,7 @@ cd ../
 # echo "rsync dry run"
 # rsync --include 'inc/vk-blocks/languages/*.pot' --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'bin/' --exclude 'test/' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/_pro/' --exclude 'src/blocks/bundle-pro.js' --exclude 'vk-blocks/' --exclude '.git/' --exclude '.gitignore' --exclude 'inc/vk-blocks-pro/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvcn ./* ./vk-blocks/
 # 指定したファイルを除外して、Pro版を無料版へコピー&上書き
-rsync -arvc --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/bundle-pro.js' --exclude '.git/' --exclude '.gitignore' --exclude 'inc/vk-blocks-pro/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' ./* ./vk-blocks/
+rsync -arvc --exclude 'test/' --exclude 'bin/' --exclude 'src/blocks/_pro/' --exclude 'inc/vk-blocks-pro/' --exclude '.git/' --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/bundle-pro.js' --exclude '.gitignore' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' ./* ./vk-blocks/
 ls
 
 # TODO:  これだと通った。順番に追加していく or 上から削って確認。上の ./vk-blocks/が怪しそう。

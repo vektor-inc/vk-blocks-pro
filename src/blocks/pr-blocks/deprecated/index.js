@@ -6,8 +6,14 @@ import save002 from './0.0.2/save';
 import schema002 from './0.0.2/schema';
 import save0_59_0 from './0.59.0/save';
 import schema0_59_0 from './0.59.0/schema';
+import save1_0_7 from './1.0.7/save';
+import schema1_0_7 from './1.0.7/schema';
 
 export const deprecated = [
+	{
+		attributes: schema1_0_7(4),
+		save: save1_0_7,
+	},
 	{
 		attributes: schema0_59_0(4),
 		save: save0_59_0,

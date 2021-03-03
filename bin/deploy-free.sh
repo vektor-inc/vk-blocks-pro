@@ -34,9 +34,9 @@ ls
 # 無料版のディレクトリに移動
 cd ./vk-blocks/
 
-# echo "コピー後のディレクトリ確認"
-# ls
-# pwd
+echo "コピー後のディレクトリ確認"
+ls
+pwd
 
 echo "コピー後のinc/ディレクトリ内確認"
 cd inc/vk-blocks/

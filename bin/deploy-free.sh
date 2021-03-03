@@ -14,16 +14,18 @@ fi
 # tagのバージョンを変数に代入
 version=$1
 
+# Cloneしたディレクトリ名を rsync の exclude オプションで重複しないように変更
+mv vk-blocks/ vk-blocks-copy-target/
 # Cloneした無料版のディレクトリに移動
-cd ./vk-blocks/
+cd ./vk-blocks-copy-target/
 # src/を削除
 rm -rf src/*
 # Pro版のディレクトリに移動
 cd ../
 # 指定したファイルを除外して、Pro版を無料版へコピー&上書き
-rsync -arvc --exclude 'vk-blocks/' --exclude 'test/' --exclude 'bin/' --exclude 'src/blocks/_pro/' --exclude 'inc/vk-blocks-pro/' --exclude '.git/' --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/bundle-pro.js' --exclude '.gitignore' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' ./* ./vk-blocks/
+rsync -arvc --exclude 'vk-blocks-copy-target/' --exclude 'test/' --exclude 'bin/' --exclude 'src/blocks/_pro/' --exclude 'inc/vk-blocks-pro/' --exclude '.git/' --exclude '.github/' --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/bundle-pro.js' --exclude '.gitignore' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' ./* ./vk-blocks-copy-target/
 # 無料版のディレクトリに移動
-cd ./vk-blocks/
+cd ./vk-blocks-copy-target/
 # Pro版ブロックは読み込まないようjsから削除
 sed -i /_pro/d src/blocks/index.js
 # プラグイン名を通常版へリネーム
@@ -32,7 +34,7 @@ sed -i 3s/Pro// vk-blocks.php
 cd ../
 pro_block_array=($(ls src/blocks/_pro/))
 # 無料版のディレクトリに移動
-cd ./vk-blocks/
+cd ./vk-blocks-copy-target/
 # Pro版のブロックをphpから削除
 for pro_block in ${pro_block_array[@]}; do
 sed -i s/\,\ \'${pro_block}\'//g inc/vk-blocks/vk-blocks-functions.php

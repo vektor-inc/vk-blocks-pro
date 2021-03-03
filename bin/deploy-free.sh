@@ -23,7 +23,7 @@ rm -rf src/*
 # Pro版のディレクトリに移動
 cd ../
 # 指定したファイルを除外して、Pro版を無料版へコピー&上書き
-rsync -arvc --exclude 'vk-blocks-copy-target/' --exclude 'test/' --exclude 'bin/' --exclude 'src/blocks/_pro/' --exclude 'inc/vk-blocks-pro/' --exclude '.git/' --exclude '.github/' --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/bundle-pro.js' --exclude '.gitignore' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' ./* ./vk-blocks-copy-target/
+rsync -arvc --exclude 'vk-blocks-copy-target/' --exclude 'test/' --exclude 'bin/' --exclude 'src/blocks/_pro/' --exclude 'inc/vk-blocks-pro/' --exclude '.git/' --exclude '.github/' --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/bundle-pro.js' --exclude '.gitignore' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' --exclude 'vk-blocks-pro.code-workspace' ./* ./vk-blocks-copy-target/
 # 無料版のディレクトリに移動
 cd ./vk-blocks-copy-target/
 # Pro版ブロックは読み込まないようjsから削除
@@ -51,5 +51,5 @@ git push -f origin master
 # 無料版のレポジトリでタグを切ってpush
 # 無料版の方でも下のGitHubActionが動いて、WordPress公式レポジトリにアップロードされる。
 # https://github.com/vektor-inc/vk-blocks/blob/master/.github/workflows/wp-plugin-deploy.yml
-git tag ${version}
-git push origin ${version}
+# git tag ${version}
+# git push origin ${version}

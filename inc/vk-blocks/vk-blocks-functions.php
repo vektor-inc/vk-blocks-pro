@@ -159,7 +159,9 @@ function vkblocks_blocks_assets() {
 				require_once VK_BLOCKS_SRC_PATH . '/blocks/' . $array . '/index.php';
 			}
 			foreach ( $arr_wp56_pro as $array ) {
-				require_once VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $array . '/index.php';
+				if(file_exists(VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $array . '/index.php')){
+					require_once VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $array . '/index.php';
+				}
 			}
 		}
 

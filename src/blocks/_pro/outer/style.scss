@@ -19,19 +19,19 @@ $media-xxl-down: 1399.98px;
 	background-size: cover;
 	background-repeat: no-repeat;
 	position: relative;
+	transform: translateZ(0); // Safari 1px bug 対応
 
 	.vk_outer_container {
 		min-height: 40px;
 	}
 }
 //iOS Safari での1pxズレの予防のため　Only Safari 10.1+
-@media not all and (min-resolution: 0.001dpcm) {
-	@supports (-webkit-appearance: none) {
-		.wp-block-vk-blocks-outer {
-			margin-top: -0.4px;
-		}
+@supports (-webkit-touch-callout: none) {
+	.wp-block-vk-blocks-outer {
+		margin-top: -0.45px;
 	}
 }
+
 
 .vk_outer-width-full {
 	margin-left: calc(50% - 50vw);

@@ -169,29 +169,19 @@ export class ComponentBlockSave extends Component {
 				value={content[blockNumArrIndex]}
 			/>
 		);
-		if (url[blockNumArrIndex]) {
-			return (
-				<div className="vk_prBlocks_item col-sm-4">
-					<a
-						href={url[blockNumArrIndex]}
-						className="vk_prBlocks_item_link"
-						target={
-							urlOpenType[blockNumArrIndex] ? '_blank' : '_self'
-						}
-						rel="noopener noreferrer"
-					>
-						{drawElement}
-						{richTextH1Save}
-						{richTextPSave}
-					</a>
-				</div>
-			);
-		}
+
 		return (
 			<div className="vk_prBlocks_item col-sm-4">
-				{drawElement}
-				{richTextH1Save}
-				{richTextPSave}
+				<a
+					href={url[blockNumArrIndex]}
+					className="vk_prBlocks_item_link"
+					target={urlOpenType[blockNumArrIndex] ? '_blank' : '_self'}
+					rel="noopener noreferrer"
+				>
+					{drawElement}
+					{richTextH1Save}
+					{richTextPSave}
+				</a>
 			</div>
 		);
 	}

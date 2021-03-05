@@ -57,10 +57,9 @@ export const returnHtml = (sources, attributes, className) => {
 	let returnHtmlContent = '';
 	if (sources) {
 		returnHtmlContent = sources.map((source) => {
-
 			const baseClass = 'vk_tableOfContents_list_item';
 
-			const data = source.block
+			const data = source.block;
 
 			const level = data.attributes.level;
 

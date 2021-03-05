@@ -44,7 +44,7 @@ class PageContentBlockTest extends WP_UnitTestCase {
 		$this->set_current_user( 'administrator' );
 
 		$actual = vk_page_content_render_callback( $attributes );
-		$expected = unescapeHTML('<div class=\"vk_pageContent vk_pageContent-id-' . intval($this->page_id) . ' \"><!-- wp:paragraph --><p>This is my page.<\/p><!-- \/wp:paragraph --><\/div><a href=\"http:\/\/localhost:8888\/wp-admin\/post.php?post=' . intval($this->page_id) . '&#038;action=edit\" class=\"vk_pageContent_editBtn btn btn-outline-primary btn-sm veu_adminEdit\" target=\"_blank\">Edit this area<\/a>');
+		$expected = unescapeHTML('<div class=\"vk_pageContent vk_pageContent-id-' . intval($this->page_id) . ' \"><p>This is my page.<\/p><\/div><a href=\"http:\/\/localhost:8888\/wp-admin\/post.php?post=' . intval($this->page_id) . '&#038;action=edit\" class=\"vk_pageContent_editBtn btn btn-outline-primary btn-sm veu_adminEdit\" target=\"_blank\">Edit this area<\/a>');
 
 		$this->assertEquals( $expected, $actual );
 

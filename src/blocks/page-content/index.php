@@ -34,18 +34,7 @@ if( function_exists('register_block_type_from_metadata')) {
 			)
 		);
 	}
-
 	add_action( 'init', 'register_block_vk_page_content', 99 );
-
-	// Add fiter for render post content
-	add_filter( 'vk_page_content', 'do_blocks', 9 );
-	add_filter( 'vk_page_content', 'wptexturize' );
-	add_filter( 'vk_page_content', 'convert_smilies', 20 );
-	add_filter( 'vk_page_content', 'shortcode_unautop' );
-	add_filter( 'vk_page_content', 'prepend_attachment' );
-	add_filter( 'vk_page_content', 'wp_filter_content_tags' );
-	add_filter( 'vk_page_content', 'do_shortcode', 11 );
-	add_filter( 'vk_page_content', 'capital_P_dangit', 11 );
 }
 
 /**
@@ -54,7 +43,7 @@ if( function_exists('register_block_type_from_metadata')) {
  * @param array $attributes attributes.
  * @param html  $content content.
  */
-function vk_page_content_render_callback( $attributes ) {
+function vk_page_content_render_callback( $attributes, $content = '' ) {
 
 	$page_content_id = ! empty( $attributes['TargetPost'] ) ? $attributes['TargetPost'] : -1;
 	$page_content    = -1 !== $page_content_id ? get_post( $page_content_id )->post_content : '';
@@ -120,6 +109,14 @@ function vk_page_content_render_callback( $attributes ) {
 		}
 
 	}
+	add_filter( 'vk_page_content', 'do_blocks', 9 );
+	add_filter( 'vk_page_content', 'wptexturize' );
+	add_filter( 'vk_page_content', 'convert_smilies', 20 );
+	add_filter( 'vk_page_content', 'shortcode_unautop' );
+	add_filter( 'vk_page_content', 'prepend_attachment' );
+	add_filter( 'vk_page_content', 'wp_filter_content_tags' );
+	add_filter( 'vk_page_content', 'do_shortcode', 11 );
+	add_filter( 'vk_page_content', 'capital_P_dangit', 11 );
 
 	return $page_html;
 }

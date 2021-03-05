@@ -29,7 +29,7 @@ export const getInnerHeadings = (headingBlocks, hasInnerBlocks) => {
 	return headings;
 };
 
-export const returnHtml = (source, attributes, className) => {
+export const returnHtml = (sources, attributes, className) => {
 	const { style } = attributes;
 	if (!className) {
 		className = 'vk_tableOfContents';
@@ -55,11 +55,15 @@ export const returnHtml = (source, attributes, className) => {
 	};
 
 	let returnHtmlContent = '';
-	if (source) {
-		returnHtmlContent = source.map((data) => {
+	if (sources) {
+		returnHtmlContent = sources.map((source) => {
+
 			const baseClass = 'vk_tableOfContents_list_item';
 
+			const data = source.block
+
 			const level = data.attributes.level;
+
 			let preNumber = '';
 
 			if (level === 2) {

@@ -1,7 +1,7 @@
 import { __ } from '@wordpress/i18n';
 import { PanelBody, SelectControl, BaseControl } from '@wordpress/components';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
-import { dispatch } from '@wordpress/data';
+import { dispatch, select } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
 import ReactHtmlParser from 'react-html-parser';
 import {
@@ -30,6 +30,8 @@ export default function TOCEdit(props) {
 
 		blocks.forEach(function (block) {
 			const { updateBlockAttributes } = dispatch('core/block-editor');
+			const { getBlockOrder, getBlockRootClientId } = select('core/block-editor');
+
 			const headingBlocks = ['core/heading', 'vk-blocks/heading'];
 			const hasInnerBlocks = [
 				'vk-blocks/outer',
@@ -65,6 +67,8 @@ export default function TOCEdit(props) {
 			if (
 				isAllowedBlock(block.name, ['vk-blocks/table-of-contents-new'])
 			) {
+
+				const blocksOrder = getBlockOrder();
 				const headings = getHeadings(headingBlocks);
 				const innerHeadings = getInnerHeadings(
 					headingBlocks,
@@ -72,8 +76,24 @@ export default function TOCEdit(props) {
 				);
 				const allHeadings = headings.concat(innerHeadings);
 
+				const allHeadingsSorted = allHeadings.map( ( heading ) => {
+
+					const index = blocksOrder.indexOf(heading.clientId)
+					const rootIndex = blocksOrder.indexOf(getBlockRootClientId(heading.clientId))
+					let finalIndex
+
+					if ( index >= 0){
+						finalIndex = index
+					} else if ( rootIndex >= 0) {
+						finalIndex = rootIndex
+					}
+
+					return { 'index': finalIndex, 'block': heading }
+				 } )
+				allHeadingsSorted.sort((first, second) => first.index - second.index );
+
 				const render = returnHtml(
-					allHeadings,
+					allHeadingsSorted,
 					block.attributes,
 					className,
 					block.attributes.open

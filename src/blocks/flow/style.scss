@@ -1,64 +1,74 @@
 //*      .flowBox
 
 /*-------------------------------------------*/
-.vk_flow-arrow-on::after {
-	position: static;
-	content: "";
-	background: var(--vk_flow-arrow) center 50% no-repeat;
-	background-size: 50px 50px;
-	display: block;
-	overflow: hidden;
-	height: 50px;
-	width: 50px;
-	margin: 0 auto;
+.vk_flow{ // 編集画面でcssの指定が軽くて負けるので、優先させるため記述
+	.vk_flow_frame {
+		display: flex;
+		padding: 20px 25px;
+		border: 3px solid #e5e5e5;
+		margin: 0;
+		justify-content: space-between;
+	}
+
+	.vk_flow_frame_text {
+		display: block;
+		overflow: hidden;
+		margin: 0;
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	.vk_flow_frame_text_title,
+	.vk_flow_frame_text_content {
+		padding-left: 0;
+		border: none;
+	}
+
+	.vk_flow_frame_text_title {
+		border-bottom: 1px dotted #ccc;
+		margin: 0 0 10px;
+		padding: 0 0 5px;
+		font-size: 1.2em;
+	}
+
+	.vk_flow_frame_text_content {
+		margin-bottom: 0;
+	}
+
+	.vk_flow_frame_image {
+		max-width: 150px;
+		margin-left: 15px;
+		box-sizing: border-box;
+	}
+
+	&.vk_flow-arrow-on::after {
+		position: relative;
+		content: "";
+		background: var(--vk_flow-arrow) center 50% no-repeat;
+		background-size: 50px 50px;
+		display: block;
+		overflow: hidden;
+		height: 50px;
+		width: 50px;
+		margin: 0 auto;
+	}
+	
+	&.vk_flow-arrow-off {
+		padding-bottom: 0;
+		margin-bottom: 30px;
+	}
+	
+	&.vk_flow-arrow-off::after {
+		content: "";
+		font-size: 0;
+		background-image: none;
+	}
 }
 
-.vk_flow-arrow-off {
-	padding-bottom: 0;
-	margin-bottom: 30px;
-}
-
-.vk_flow-arrow-off::after {
-	content: "";
-	font-size: 0;
-	background-image: none;
-}
-
-.vk_flow_frame {
-	display: flex;
-	padding: 20px 25px;
-	border: 3px solid #e5e5e5;
-	margin: 0;
-	justify-content: space-between;
-}
-
-.vk_flow_frame_text {
-	display: block;
-	overflow: hidden;
-	margin: 0;
-	width: 100%;
-	box-sizing: border-box;
-}
-
-.vk_flow_frame_text_title,
-.vk_flow_frame_text_content {
-	padding-left: 0;
-	border: none;
-}
-
-.vk_flow_frame_text_title {
-	border-bottom: 1px dotted #ccc;
-	margin: 0 0 10px;
-	padding: 0 0 5px;
-	font-size: 1.2em;
-}
-
-.vk_flow_frame_text_content {
-	margin-bottom: 0;
-}
-
-.vk_flow_frame_image {
-	max-width: 150px;
-	margin-left: 15px;
-	box-sizing: border-box;
+//編集画面
+.block-editor-block-list__layout .block-editor-block-list__block{
+	&.vk_flow-arrow-on:focus:after{
+		position: relative;
+		box-shadow: none;
+	}
 }

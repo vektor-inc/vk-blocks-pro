@@ -100,12 +100,12 @@ msgstr ""
 msgid "Animation"
 msgstr ""
 
-#: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:152
-#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:166
-#: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:172
-#: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:169
-#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:175
-#: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:180
+#: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:149
+#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:151
+#: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:156
+#: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:154
+#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:157
+#: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:161
 #: src/blocks/_pro/card-item/edit.js:140
 #: src/utils/example-data.js:3
 msgid ""
@@ -113,12 +113,12 @@ msgid ""
 "tempor incididunt ut labore et dolore magna aliqua. "
 msgstr ""
 
-#: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:198
-#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:214
-#: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:222
-#: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:219
-#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:230
-#: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:235
+#: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:190
+#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:194
+#: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:201
+#: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:199
+#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:206
+#: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:210
 #: src/blocks/_pro/card-item/edit.js:182
 #: src/blocks/_pro/card/edit.js:121
 #: src/blocks/_pro/icon-card/edit.js:72
@@ -127,11 +127,11 @@ msgid "Title"
 msgstr ""
 
 #: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:81
-#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:87
-#: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:92
-#: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:90
-#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:94
-#: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:99
+#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:77
+#: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:82
+#: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:80
+#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:82
+#: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:86
 #: src/blocks/_pro/card-item/edit.js:88
 #: src/blocks/balloon/edit.js:379
 #: src/blocks/flow/edit.js:82
@@ -153,11 +153,11 @@ msgid "Select image"
 msgstr ""
 
 #: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:94
-#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:104
-#: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:109
-#: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:107
-#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:111
-#: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:116
+#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:94
+#: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:99
+#: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:97
+#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:99
+#: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:103
 #: src/blocks/_pro/card-item/edit.js:105
 #: src/components/advanced-media-upload/index.js:34
 msgid "Delete Image"
@@ -714,7 +714,7 @@ msgid "Slider is do not move in edit screen."
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:110
-#: src/blocks/_pro/table-of-contents-new/edit.js:106
+#: src/blocks/_pro/table-of-contents-new/edit.js:130
 #: src/blocks/_pro/timeline-item/edit.js:91
 #: src/blocks/heading/edit.js:231
 #: src/blocks/staff/edit.js:99
@@ -744,7 +744,7 @@ msgid "Color"
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:82
-#: src/blocks/_pro/table-of-contents-new/edit.js:96
+#: src/blocks/_pro/table-of-contents-new/edit.js:120
 #: src/blocks/_pro/timeline-item/edit.js:63
 msgid "Style"
 msgstr ""
@@ -767,25 +767,25 @@ msgid "Step"
 msgstr ""
 
 #: src/blocks/_pro/table-of-contents-new/deprecated/0.59.1/save.js:19
-#: src/blocks/_pro/table-of-contents-new/edit.js:139
+#: src/blocks/_pro/table-of-contents-new/edit.js:163
 #: src/blocks/_pro/table-of-contents-new/index.js:17
 #: src/blocks/_pro/table-of-contents-new/save.js:16
 msgid "Table of Contents"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:110
+#: src/blocks/_pro/table-of-contents-new/edit.js:134
 msgid "No frame"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:117
+#: src/blocks/_pro/table-of-contents-new/edit.js:141
 msgid "Default Display Status"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:125
+#: src/blocks/_pro/table-of-contents-new/edit.js:149
 msgid "OPEN"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:129
+#: src/blocks/_pro/table-of-contents-new/edit.js:153
 msgid "CLOSE"
 msgstr ""
 

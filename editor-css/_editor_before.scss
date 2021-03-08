@@ -307,9 +307,14 @@ $color-danger: #b52727;
 			margin-top: 0;
 		}
 	}
-	.block-list-appender {
-		clear: both;
-		width: 100%;
+
+} //.vk_posts > .vk_posts-edit
+
+.block-list-appender {
+	clear: both;
+	width: 100%;
+	.block-editor-button-block-appender{ //5.7で中央に
+		margin: 0 auto;
 	}
 }
 

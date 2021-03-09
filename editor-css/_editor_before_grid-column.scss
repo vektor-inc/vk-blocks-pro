@@ -12,7 +12,7 @@
 	.block-list-appender{
 		height: 100px;
 	}
-	//inner-blocksの中のinner-blocksが崩れるので追加
+	//inner-blocksの中のinner-blocksのcss打ち消し
 	.block-editor-inner-blocks .block-editor-block-list__layout{
 		display: unset;
 		flex-direction:unset;
@@ -173,8 +173,12 @@
 	//インサーターの調整
 	
 	.wp-block-vk-blocks-grid-column-item + .block-list-appender.wp-block {
-		border: 1px solid #ccc;
+		border: 1px dashed #ccc;
 		margin: 0 15px 15px;
+		&:hover{
+			border-style: solid;
+			border-color:$color-hover;
+		}
 		.block-editor-button-block-appender {
 			position: absolute;
 			top: 0;

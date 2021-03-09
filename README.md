@@ -47,7 +47,7 @@ npm run translate
 
 
 ## デプロイ
-デプロイの手順は[wiki](https://github.com/vektor-inc/vk-blocks-pro/wiki/%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4)を参考に
+手順は[wiki](https://github.com/vektor-inc/vk-blocks-pro/wiki/%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4)を参考に
 
 
 ## CSS 命名規則

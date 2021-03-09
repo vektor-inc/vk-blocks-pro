@@ -1,8 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
-"POT-Creation-Date: 2021-03-01 12:09+0900\n"
-"PO-Revision-Date: 2021-03-01 13:08+0900\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
+"POT-Creation-Date: 2021-03-09T08:27:11+00:00\n"
+"PO-Revision-Date: 2021-03-09 17:31+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -22,12 +23,600 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 
+#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:104
+#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:111
+msgid "Delete Image"
+msgstr "画像を削除"
+
+#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:166
+#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:175
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolore magna aliqua. "
+msgstr ""
+"あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくし"
+"い森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。"
+
+#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:214
+#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:230
+msgid "Title"
+msgstr "タイトルを入力"
+
+#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:87
+#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:94
+#: src/blocks/balloon/edit.js:379 src/blocks/pr-content/mediaUpload.js:68
+msgid "Select image"
+msgstr "画像を選択"
+
+#: src/blocks/_pro/grid-column-item/index.js:18
+msgid "Grid Column Item"
+msgstr "グリッドカラムアイテム"
+
+#: src/blocks/_pro/outer/edit.js:138
+msgid "Background Setting"
+msgstr "背景設定"
+
+#: src/blocks/_pro/outer/edit.js:143
+msgid "Color Setting"
+msgstr "色設定"
+
+#: src/blocks/_pro/outer/edit.js:144
+msgid ""
+"Color will overcome background image. If you want to display image, clear "
+"background color or set opacity 0."
+msgstr ""
+"色を指定すると画像よりも優先されます。画像を表示したい場合は、背景色をクリア"
+"するか、不透明度を0に設定します。"
+
+#: src/blocks/_pro/outer/edit.js:157
+msgid "Opacity Setting"
+msgstr "透過設定"
+
+#: src/blocks/_pro/outer/edit.js:171
+msgid "Background Image PC"
+msgstr "背景画像 ( PC )"
+
+#: src/blocks/_pro/outer/edit.js:187
+msgid "Background Image Tablet"
+msgstr "背景画像 ( タブレット )"
+
+#: src/blocks/_pro/outer/edit.js:197
+msgid "Background Image Mobile"
+msgstr "背景画像背景画像 ( モバイル )"
+
+#: src/blocks/_pro/outer/edit.js:207
+msgid "Background image Position"
+msgstr "背景画像の位置"
+
+#: src/blocks/_pro/outer/edit.js:215
+msgid "Repeat"
+msgstr "リピート"
+
+#: src/blocks/_pro/outer/edit.js:219
+msgid "Cover"
+msgstr "カバー"
+
+#: src/blocks/_pro/outer/edit.js:223
+msgid "Cover fixed (Not fixed on iPhone)"
+msgstr "カバー 固定（iPhoneでは固定されません）"
+
+#: src/blocks/_pro/outer/edit.js:230
+msgid "Parallax (Non-guaranteed)"
+msgstr "パララックス（非保証）"
+
+#: src/blocks/_pro/outer/edit.js:245
+msgid "Layout Setting"
+msgstr "レイアウト設定"
+
+#: src/blocks/_pro/outer/edit.js:248 src/blocks/_pro/slider/edit.js:109
+msgid "Width"
+msgstr "幅"
+
+#: src/blocks/_pro/outer/edit.js:259 src/blocks/_pro/slider/edit.js:118
+#: src/blocks/balloon/edit.js:276 src/blocks/faq/index.js:27
+msgid "Normal"
+msgstr "標準"
+
+#: src/blocks/_pro/outer/edit.js:269 src/blocks/_pro/slider/edit.js:126
+msgid "Full Wide"
+msgstr "全幅"
+
+#: src/blocks/_pro/outer/edit.js:274
+msgid "Padding (Left and Right)"
+msgstr "余白 (左右)"
+
+#: src/blocks/_pro/outer/edit.js:278
+msgid "Fit to the Content area"
+msgstr "コンテンツエリアに合わせる"
+
+#: src/blocks/_pro/outer/edit.js:285
+msgid "Add padding to the Outer area"
+msgstr "アウターエリア内に余白を追加する"
+
+#: src/blocks/_pro/outer/edit.js:292
+msgid "Remove padding from the Outer area"
+msgstr "アウターエリア内の余白を無くす"
+
+#: src/blocks/_pro/outer/edit.js:306
+msgid "Padding (Top and Bottom)"
+msgstr "余白 (上下)"
+
+#: src/blocks/_pro/outer/edit.js:311
+msgid "Use default padding"
+msgstr "標準の余白を使用"
+
+#: src/blocks/_pro/outer/edit.js:318
+msgid "Do not use default padding"
+msgstr "標準の余白を使用しない"
+
+#: src/blocks/_pro/outer/edit.js:332
+msgid ""
+"* If you select \"Do not use\" that, please set yourself it such as a spacer "
+"block."
+msgstr ""
+"*「使用しない」を選択した場合はスペーサーブロックなどで任意に設定してくださ"
+"い。"
+
+#: src/blocks/_pro/outer/edit.js:340
+msgid "Divider Setting"
+msgstr "区切りの設定"
+
+#: src/blocks/_pro/outer/edit.js:345 src/blocks/balloon/edit.js:236
+msgid "Type"
+msgstr "タイプ"
+
+#: src/blocks/_pro/outer/edit.js:353
+msgid "Tilt"
+msgstr "傾斜"
+
+#: src/blocks/_pro/outer/edit.js:357
+msgid "Curve"
+msgstr "カーブ"
+
+#: src/blocks/_pro/outer/edit.js:361
+msgid "Wave"
+msgstr "波状"
+
+#: src/blocks/_pro/outer/edit.js:365
+msgid "Triangle"
+msgstr "三角"
+
+#: src/blocks/_pro/outer/edit.js:371
+msgid "Upper Divider Level"
+msgstr "上部区切りレベル"
+
+#: src/blocks/_pro/outer/edit.js:396
+msgid "Lower Divider Level"
+msgstr "下部区切りレベル"
+
+#: src/blocks/_pro/outer/edit.js:422
+msgid "Border Setting"
+msgstr "枠線の設定"
+
+#: src/blocks/_pro/outer/edit.js:427
+msgid "Border will disappear when divider effect is applied."
+msgstr "枠線は区切りレベルを適用すると表示されなくなります。"
+
+#: src/blocks/_pro/outer/edit.js:433
+msgid "Border type"
+msgstr "枠線の種類"
+
+#: src/blocks/_pro/outer/edit.js:441 src/blocks/balloon/edit.js:338
+msgid "None"
+msgstr "なし"
+
+#: src/blocks/_pro/outer/edit.js:445
+msgid "Solid"
+msgstr "直線"
+
+#: src/blocks/_pro/outer/edit.js:449
+msgid "Dotted"
+msgstr "点線"
+
+#: src/blocks/_pro/outer/edit.js:453
+msgid "Dashed"
+msgstr "Dashed"
+
+#: src/blocks/_pro/outer/edit.js:457
+msgid "Double"
+msgstr "二重線"
+
+#: src/blocks/_pro/outer/edit.js:461
+msgid "Groove"
+msgstr "Groove"
+
+#: src/blocks/_pro/outer/edit.js:465
+msgid "Ridge"
+msgstr "Ridge"
+
+#: src/blocks/_pro/outer/edit.js:469
+msgid "Inset"
+msgstr "Inset"
+
+#: src/blocks/_pro/outer/edit.js:473
+msgid "Outset"
+msgstr "Outset"
+
+#: src/blocks/_pro/outer/edit.js:487
+msgid "Border width"
+msgstr "枠線の幅"
+
+#: src/blocks/_pro/outer/edit.js:499
+msgid "Border radius"
+msgstr "枠線のRの大きさ"
+
+#: src/blocks/_pro/slider/edit.js:132
+msgid "Height"
+msgstr "高さ"
+
+#: src/blocks/_pro/slider/edit.js:137
+msgid "Slide Height for each device."
+msgstr "デバイス毎の高さ"
+
+#: src/blocks/_pro/slider/edit.js:151
+msgid "Slider Settings"
+msgstr "スライド設定"
+
+#: src/blocks/_pro/slider/edit.js:155
+msgid "Effect "
+msgstr "エフェクト"
+
+#: src/blocks/_pro/slider/edit.js:165
+msgid "Slide"
+msgstr "スライド"
+
+#: src/blocks/_pro/slider/edit.js:169
+msgid "Fade"
+msgstr "フェード"
+
+#: src/blocks/_pro/slider/edit.js:176
+msgid "Loop "
+msgstr "繰り返し"
+
+#: src/blocks/_pro/slider/edit.js:186
+msgid "AutoPlay"
+msgstr "自動再生"
+
+#: src/blocks/_pro/slider/edit.js:195
+msgid "Display Time"
+msgstr "表示時間"
+
+#: src/blocks/_pro/slider/edit.js:206
+msgid "Change Speed"
+msgstr "切り替え時間"
+
+#: src/blocks/_pro/slider/edit.js:220
+msgid "Display Multi Images per View"
+msgstr "画像を複数枚表示する"
+
+#: src/blocks/_pro/slider/edit.js:224
+msgid "Images per View"
+msgstr "１度に表示する画像の枚数"
+
+#: src/blocks/_pro/slider/edit.js:234
+msgid "Move Images per Slide"
+msgstr "１度の動作で動かす枚数"
+
+#: src/blocks/_pro/slider/edit.js:244
+msgid "Space of between slides"
+msgstr "スライド間の余白"
+
+#: src/blocks/_pro/slider/edit.js:255
+msgid "Display Pagination"
+msgstr "ページネーションの表示"
+
+#: src/blocks/_pro/step/edit.js:38
+msgid "First Dot Number"
+msgstr "ステップの開始番号"
+
+#: src/blocks/_pro/timeline/index.js:19
+msgid "Timeline"
+msgstr "タイムライン"
+
+#: src/blocks/balloon/edit.js:125
+msgid " Image Border"
+msgstr "画像の線"
+
+#: src/blocks/balloon/edit.js:128
+msgid "Add border to image"
+msgstr "画像に枠線を追加する"
+
+#: src/blocks/balloon/edit.js:136
+msgid "* You can change border width on Setting > VK Blocks"
+msgstr "* 線の太さは 管理画面の 設定 > VK Blocks から選択する事ができます。"
+
+#: src/blocks/balloon/edit.js:143
+msgid "Border color of speech balloon"
+msgstr "吹き出しの線の色"
+
+#: src/blocks/balloon/edit.js:168
+msgid "Border"
+msgstr "枠線"
+
+#: src/blocks/balloon/edit.js:171
+msgid "Add border to balloon"
+msgstr "吹き出しに枠線を追加する"
+
+#: src/blocks/balloon/edit.js:200
+msgid "Balloon setting"
+msgstr "吹き出しブロック設定"
+
+#: src/blocks/balloon/edit.js:202
+msgid "Position"
+msgstr "位置"
+
+#: src/blocks/balloon/edit.js:205
+msgid "Please specify the layout of the balloon."
+msgstr "吹き出しの配置を指定してください。"
+
+#: src/blocks/balloon/edit.js:219
+msgid "Left"
+msgstr "左"
+
+#: src/blocks/balloon/edit.js:231
+msgid "Right"
+msgstr "右"
+
+#: src/blocks/balloon/edit.js:239
+msgid "Please select the type of balloon."
+msgstr "吹き出しのタイプを指定してください。"
+
+#: src/blocks/balloon/edit.js:250
+msgid "Speech"
+msgstr "吹き出し"
+
+#: src/blocks/balloon/edit.js:260
+msgid "Thinking"
+msgstr "もくもく"
+
+#: src/blocks/balloon/edit.js:265
+msgid "Image Style"
+msgstr "画像スタイル"
+
+#: src/blocks/balloon/edit.js:286
+msgid "Rounded"
+msgstr "角丸２"
+
+#: src/blocks/balloon/edit.js:296
+msgid "Circle"
+msgstr "丸抜き"
+
+#: src/blocks/balloon/edit.js:303
+msgid "Background color of speech balloon"
+msgstr "吹き出しの背景色"
+
+#: src/blocks/balloon/edit.js:312
+msgid "Default Icon Setting"
+msgstr "デフォルトアイコン設定"
+
+#: src/blocks/balloon/edit.js:317
+msgid "You can register default icons from Settings > VK Blocks in Admin."
+msgstr ""
+"管理画面の 設定 > VK Blocks から よく使うアイコンを登録する事ができます。"
+
+#: src/blocks/balloon/edit.js:323
+msgid "Animation setting"
+msgstr "アニメーション設定"
+
+#: src/blocks/balloon/edit.js:325
+msgid "Please select the type of animation."
+msgstr "アニメーションのタイプを指定してください。"
+
+#: src/blocks/balloon/edit.js:342
+msgid "Trembling"
+msgstr "ぶるぶる"
+
+#: src/blocks/balloon/edit.js:346
+msgid "Trembling X"
+msgstr "ぶるぶる（X方向）"
+
+#: src/blocks/balloon/edit.js:350
+msgid "Pounding"
+msgstr "どきどき"
+
+#: src/blocks/balloon/edit.js:354
+msgid "Shaking"
+msgstr "ゆらゆら"
+
+#: src/blocks/balloon/edit.js:387 src/blocks/pr-content/mediaUpload.js:130
+msgid "Upload image"
+msgstr "画像をアップロード"
+
+#: src/blocks/balloon/edit.js:400
+msgid "Icon Name"
+msgstr "アイコンの名前"
+
+#: src/blocks/border-box/edit.js:104
+msgid "Icon"
+msgstr "アイコン"
+
+#: src/blocks/border-box/edit.js:107
+msgid "Icon ( Font Awesome )"
+msgstr "アイコン ( Font Awesome )"
+
+#: src/blocks/border-box/edit.js:23
+msgid "Please enter a title."
+msgstr "見出しを入力してください。"
+
+#: src/blocks/border-box/edit.js:48
+#: inc/term-color/package/class.term-color.php:41
+#: inc/term-color/package/class.term-color.php:56
+#: inc/term-color/package/class.term-color.php:130
+msgid "Color"
+msgstr "色"
+
+#: src/blocks/border-box/edit.js:51
+msgid "Border Color"
+msgstr "線の色"
+
+#: src/blocks/border-box/edit.js:61
+msgid "Red"
+msgstr "赤"
+
+#: src/blocks/border-box/edit.js:65
+msgid "Orange"
+msgstr "オレンジ"
+
+#: src/blocks/border-box/edit.js:69
+msgid "Blue"
+msgstr "青"
+
+#: src/blocks/border-box/edit.js:73
+msgid "Green"
+msgstr "緑"
+
+#: src/blocks/border-box/edit.js:77
+msgid "Black"
+msgstr "黒"
+
+#: src/blocks/border-box/edit.js:84
+msgid "Background Color"
+msgstr "背景色"
+
+#: src/blocks/border-box/edit.js:94
+msgid "Transparent"
+msgstr "透過"
+
+#: src/blocks/border-box/edit.js:98
+msgid "White"
+msgstr "白"
+
+#: src/blocks/faq/index.js:22
+msgid "Classic FAQ"
+msgstr "旧 FAQ"
+
+#: src/blocks/faq/index.js:32
+msgid "Bgfill Circle"
+msgstr "背景塗り 円形"
+
+#: src/blocks/faq/index.js:36
+msgid "Bgfill Square"
+msgstr "背景塗り ピン角"
+
+#: src/blocks/faq/index.js:40
+msgid "Bgfill Rounded"
+msgstr "背景塗り 角丸"
+
+#: src/blocks/faq/index.js:44
+msgid "Border Circle"
+msgstr "枠線 円形"
+
+#: src/blocks/faq/index.js:48
+msgid "Border Square"
+msgstr "枠線 ピン角"
+
+#: src/blocks/faq/index.js:52
+msgid "Border Rounded"
+msgstr "枠線 角丸"
+
+#: src/blocks/heading/deprecated/0.40.1/component.js:137
+msgid "Input title…"
+msgstr "タイトルを入力"
+
+#: src/blocks/heading/deprecated/0.40.1/component.js:152
+msgid "Input sub text…"
+msgstr "サブテキストを入力"
+
+#: src/blocks/pr-blocks/index.js:24
+#| msgid "Blocks"
+msgid "PR Blocks"
+msgstr "PR Blocks"
+
+#: src/blocks/pr-content/mediaUpload.js:120
+msgid "Select Image"
+msgstr "画像を選択"
+
+#: src/components/advanced-viewport-control/index.js:25
+msgid "PC"
+msgstr "PC"
+
+#: src/components/advanced-viewport-control/index.js:31
+msgid "Tablet"
+msgstr "タブレット"
+
+#: src/components/advanced-viewport-control/index.js:39
+msgid "Mobile"
+msgstr "モバイル"
+
+#. %s is align.
+#: src/components/card-align-control/index.js:24
+msgid "Align %s"
+msgstr "表示位置"
+
+#: src/components/card-align-control/index.js:34
+msgid "Align"
+msgstr "表示位置"
+
+#: src/extensions/common/responsive-br/index.js:45
+msgid "Responsive BR "
+msgstr "画面サイズ毎の改行 "
+
+#: src/extensions/core/heading/style.js:103
+msgid "Both ends"
+msgstr "左右線"
+
+#: src/extensions/core/heading/style.js:123
+msgid "Brackets black"
+msgstr "括弧 黒"
+
+#: src/extensions/core/heading/style.js:30
+msgid "Default"
+msgstr "標準"
+
+#: src/extensions/core/heading/style.js:35
+msgid "Plain"
+msgstr "装飾無し"
+
+#: src/extensions/core/heading/style.js:51
+msgid "Background fill lightgray"
+msgstr "背景塗り 灰色"
+
+#: src/extensions/core/heading/style.js:67
+msgid "Double border top and bottom black"
+msgstr "二重線 上下線 黒"
+
+#: src/extensions/core/heading/style.js:75
+msgid "Double border bottom black"
+msgstr "二重線 下線 黒"
+
+#: src/extensions/core/heading/style.js:83
+msgid "Solid border top and bottom black"
+msgstr "直線 上下 黒"
+
+#: src/extensions/core/heading/style.js:91
+msgid "Solid border bottom black"
+msgstr "直線 下線 黒"
+
+#: src/extensions/core/heading/style.js:99
+msgid "Dotted border bottom black"
+msgstr "点線 下線 黒"
+
+#. Plugin Name of the plugin
+msgid "VK Blocks Pro"
+msgstr "VK Blocks Pro"
+
+#. Plugin URI of the plugin
+msgid "https://github.com/vektor-inc/vk-blocks"
+msgstr "https://github.com/vektor-inc/vk-blocks"
+
+#. Description of the plugin
+msgid "This is a plugin that extends Gutenberg's blocks."
+msgstr "Gutenbergのブロックを拡張するプラグインです。"
+
+#. Author of the plugin
+msgid "Vektor,Inc."
+msgstr "Vektor,Inc."
+
+#. Author URI of the plugin
+msgid "https://vektor-inc.co.jp"
+msgstr "https://vektor-inc.co.jp"
+
 #: inc/admin-notices.php:24
 msgid "We've released VK Blocks Pro!"
 msgstr "VK Blocks Pro を公開しました!"
 
-#: inc/admin-notices.php:32
-#, php-format
+#. translators: 1: opening a tag, 2: closing a tag
+#: inc/admin-notices.php:31
 msgid ""
 "Thank you for using VK Blocks. We've released VK Blocks Pro. It has more "
 "custom blocks to build web site more easily. If you are interested in VK "
@@ -47,7 +636,6 @@ msgid "See more"
 msgstr "続きを見る"
 
 #: inc/admin-notices.php:45
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:404
 msgid "Dismiss this notice"
 msgstr "通知を無視"
 
@@ -74,7 +662,6 @@ msgid "4.7 will be abolished in the near future."
 msgstr "4.7は将来的に廃止されます。"
 
 #: inc/template-tags/package/template-tags.php:146
-#, php-format
 msgid "Author: %s"
 msgstr "投稿者: %s"
 
@@ -95,63 +682,16 @@ msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr "Y年n月j日"
 
-#: inc/template-tags/package/template-tags.php:155
-msgctxt "post format archive title"
-msgid "Asides"
-msgstr "アサイド"
-
-#: inc/template-tags/package/template-tags.php:157
-msgctxt "post format archive title"
-msgid "Galleries"
-msgstr "ギャラリー"
-
-#: inc/template-tags/package/template-tags.php:159
-msgctxt "post format archive title"
-msgid "Images"
-msgstr "画像"
-
-#: inc/template-tags/package/template-tags.php:161
-msgctxt "post format archive title"
-msgid "Videos"
-msgstr "動画"
-
-#: inc/template-tags/package/template-tags.php:163
-msgctxt "post format archive title"
-msgid "Quotes"
-msgstr "引用"
-
-#: inc/template-tags/package/template-tags.php:165
-msgctxt "post format archive title"
-msgid "Links"
-msgstr "リンク"
-
-#: inc/template-tags/package/template-tags.php:167
-msgctxt "post format archive title"
-msgid "Statuses"
-msgstr "ステータス"
-
-#: inc/template-tags/package/template-tags.php:169
-msgctxt "post format archive title"
-msgid "Audio"
-msgstr "オーディオ"
-
-#: inc/template-tags/package/template-tags.php:171
-msgctxt "post format archive title"
-msgid "Chats"
-msgstr "チャット"
-
 #: inc/template-tags/package/template-tags.php:187
 msgid "Archives"
 msgstr "アーカイブ"
 
 #: inc/template-tags/package/template-tags.php:218
 #: inc/template-tags/package/template-tags.php:226
-#, php-format
 msgid "About %s"
 msgstr "%s　について"
 
 #: inc/template-tags/package/template-tags.php:231
-#, php-format
 msgctxt "Yearly archive description"
 msgid "Article of %s."
 msgstr "%s の記事."
@@ -159,497 +699,36 @@ msgstr "%s の記事."
 #: inc/template-tags/package/template-tags.php:235
 #: inc/template-tags/package/template-tags.php:239
 #: inc/template-tags/package/template-tags.php:244
-#, php-format
 msgctxt "Archive description"
 msgid "Article of %s."
 msgstr "%s の記事."
 
 #: inc/template-tags/package/template-tags.php:261
-#, php-format
 msgid "Page of %s"
 msgstr "%sのページ"
 
-#: inc/term-color/package/class.term-color.php:41
-#: inc/term-color/package/class.term-color.php:56
-#: inc/term-color/package/class.term-color.php:130
-msgid "Color"
-msgstr "色"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:333
 #: inc/tgm-plugin-activation/tgm-config.php:77
 msgid "Install Required Plugins"
 msgstr "必須プラグインのインストール"
 
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:334
 #: inc/tgm-plugin-activation/tgm-config.php:78
 msgid "Install Plugins"
 msgstr "プラグインのインストール"
 
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:335
 #: inc/tgm-plugin-activation/tgm-config.php:79
-#, php-format
 msgid "Installing Plugin: %s"
 msgstr "プラグインのインストール中: %s"
 
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:336
 #: inc/tgm-plugin-activation/tgm-config.php:80
 msgid "Something went wrong with the plugin API."
 msgstr "プラグイン API で問題が発生しました。"
 
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:338
-#: inc/tgm-plugin-activation/tgm-config.php:82
-#, php-format
+#: inc/tgm-plugin-activation/tgm-config.php:81
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] "このテーマは下記プラグインを必要としています：%1$s。"
 
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:343
-#, php-format
-msgid "This theme recommends the following plugin: %1$s."
-msgid_plural "This theme recommends the following plugins: %1$s."
-msgstr[0] "このテーマは下記プラグインを推奨しています：%1$s。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:348
-#: inc/tgm-plugin-activation/tgm-config.php:92
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to install the %1$s "
-"plugin."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to install the %1$s "
-"plugins."
-msgstr[0] "%1$sプラグインをインストールするための適切な権限がありません。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:353
-#: inc/tgm-plugin-activation/tgm-config.php:97
-#, php-format
-msgid ""
-"The following plugin needs to be updated to its latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgid_plural ""
-"The following plugins need to be updated to their latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgstr[0] ""
-"このテーマとの最大の互換性を確保するには、次のプラグインを最新バージョンに更"
-"新する必要があります： %1$s。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:358
-#: inc/tgm-plugin-activation/tgm-config.php:102
-#, php-format
-msgid "There is an update available for: %1$s."
-msgid_plural "There are updates available for the following plugins: %1$s."
-msgstr[0] "次のプラグインの更新が利用可能です：%1$s。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:363
-#: inc/tgm-plugin-activation/tgm-config.php:107
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to update the %1$s plugin."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to update the %1$s "
-"plugins."
-msgstr[0] "%1$sプラグインを更新するための適切な権限がありません。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:368
-#: inc/tgm-plugin-activation/tgm-config.php:112
-#, php-format
-msgid "The following required plugin is currently inactive: %1$s."
-msgid_plural "The following required plugins are currently inactive: %1$s."
-msgstr[0] "必須プラグインが現在有効化されていません： %1$s。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:373
-#: inc/tgm-plugin-activation/tgm-config.php:117
-#, php-format
-msgid "The following recommended plugin is currently inactive: %1$s."
-msgid_plural "The following recommended plugins are currently inactive: %1$s."
-msgstr[0] "推奨プラグインが現在有効化されていません： %1$s。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:378
-#: inc/tgm-plugin-activation/tgm-config.php:122
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to activate the %1$s "
-"plugin."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to activate the %1$s "
-"plugins."
-msgstr[0] "%1$sプラグインを有効化するための適切な権限がありません。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:383
-#: inc/tgm-plugin-activation/tgm-config.php:127
-msgid "Begin installing plugin"
-msgid_plural "Begin installing plugins"
-msgstr[0] "プラグインのインストールを開始"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:388
-#: inc/tgm-plugin-activation/tgm-config.php:132
-msgid "Begin updating plugin"
-msgid_plural "Begin updating plugins"
-msgstr[0] "プラグインの更新を開始する"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:393
-#: inc/tgm-plugin-activation/tgm-config.php:137
-msgid "Begin activating plugin"
-msgid_plural "Begin activating plugins"
-msgstr[0] "プラグインの有効化を開始"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:397
-#: inc/tgm-plugin-activation/tgm-config.php:141
-msgid "Return to Required Plugins Installer"
-msgstr "必須プラグインのインストール画面に戻る"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:398
-msgid "Return to the dashboard"
-msgstr "ダッシュボードに戻る"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:399
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3042
-#: inc/tgm-plugin-activation/tgm-config.php:142
-msgid "Plugin activated successfully."
-msgstr "プラグインを有効化しました。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:400
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2845
-#: inc/tgm-plugin-activation/tgm-config.php:143
-msgid "The following plugin was activated successfully:"
-msgid_plural "The following plugins were activated successfully:"
-msgstr[0] "次のプラグインを有効化しました:"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:401
-#: inc/tgm-plugin-activation/tgm-config.php:144
-#, php-format
-msgid "No action taken. Plugin %1$s was already active."
-msgstr "操作を実行しませんでした。プラグイン %1$s はすでに有効化されています。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:402
-#: inc/tgm-plugin-activation/tgm-config.php:145
-#, php-format
-msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. "
-"Please update the plugin."
-msgstr ""
-"プラグインを有効化できませんでした。このテーマはプラグイン %s の現在のバー"
-"ジョンをサポートしていません。プラグインを更新してください。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:403
-#: inc/tgm-plugin-activation/tgm-config.php:146
-#, php-format
-msgid "All plugins installed and activated successfully. %1$s"
-msgstr "すべてのプラグインを正常にインストールし、有効化しました。 %1$s"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:405
-#: inc/tgm-plugin-activation/tgm-config.php:147
-msgid "Please contact the administrator of this site for help."
-msgstr "ヘルプが必要な場合はこのサイトの管理者にお問い合わせください。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:520
-msgid "This plugin needs to be updated to be compatible with your theme."
-msgstr ""
-"使用中のテーマとの互換性を保つため、このプラグインを更新する必要があります。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:521
-msgid "Update Required"
-msgstr "プラグインの更新が必要"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:635
-msgid "Set the parent_slug config variable instead."
-msgstr "代わりに、parent_slug構成変数を設定してください。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:826
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3460
-msgid "Return to the Dashboard"
-msgstr "ダッシュボードへ戻る"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:934
-msgid ""
-"The remote plugin package does not contain a folder with the desired slug "
-"and renaming did not work."
-msgstr ""
-"リモートプラグインパッケージに必要なフォルダーが存在しないため、名前の変更が"
-"できませんでした。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:934
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:942
-msgid ""
-"Please contact the plugin provider and ask them to package their plugin "
-"according to the WordPress guidelines."
-msgstr ""
-"プラグインの開発者に連絡し、WordPressガイドラインに従ってプラグインをパッケー"
-"ジ化するよう依頼してください。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:942
-msgid ""
-"The remote plugin package consists of more than one file, but the files are "
-"not packaged in a folder."
-msgstr ""
-"リモートプラグインパッケージは複数のファイルで構成されていますが、ファイルは"
-"フォルダーにパッケージ化されていません。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1124
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2841
-msgctxt "plugin A *and* plugin B"
-msgid "and"
-msgstr "と"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1894
-#, php-format
-msgctxt "%s = version number"
-msgid "TGMPA v%s"
-msgstr "TGMPA v%s"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2180
-msgid "Required"
-msgstr "必須"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2183
-msgid "Recommended"
-msgstr "推奨"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2199
-msgid "WordPress Repository"
-msgstr "WordPress 公式ディレクトリ"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2202
-msgid "External Source"
-msgstr "外部ソース"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2205
-msgid "Pre-Packaged"
-msgstr "プリパッケージ"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2222
-msgid "Not Installed"
-msgstr "未インストール"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2226
-msgid "Installed But Not Activated"
-msgstr "停止中"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2228
-msgid "Active"
-msgstr "有効"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2234
-msgid "Required Update not Available"
-msgstr "必要な更新が利用不可"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2237
-msgid "Requires Update"
-msgstr "更新が必要"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2240
-msgid "Update recommended"
-msgstr "更新を推奨"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2248
-#, php-format
-msgctxt "%1$s = install status, %2$s = update status"
-msgid "%1$s, %2$s"
-msgstr "%1$s、%2$s"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2293
-#, php-format
-msgctxt "plugins"
-msgid "All <span class=\"count\">(%s)</span>"
-msgid_plural "All <span class=\"count\">(%s)</span>"
-msgstr[0] "すべて <span class=\"count\">(%s)</span>"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2296
-#, php-format
-msgid "To Install <span class=\"count\">(%s)</span>"
-msgid_plural "To Install <span class=\"count\">(%s)</span>"
-msgstr[0] "未インストール <span class=\"count\">(%s)</span>"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2299
-#, php-format
-msgid "Update Available <span class=\"count\">(%s)</span>"
-msgid_plural "Update Available <span class=\"count\">(%s)</span>"
-msgstr[0] "更新可能 <span class=\"count\">(%s)</span>"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2302
-#, php-format
-msgid "To Activate <span class=\"count\">(%s)</span>"
-msgid_plural "To Activate <span class=\"count\">(%s)</span>"
-msgstr[0] "停止中 <span class=\"count\">(%s)</span>"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2384
-msgctxt "as in: \"version nr unknown\""
-msgid "unknown"
-msgstr "不明"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2392
-msgid "Installed version:"
-msgstr "インストール済みバージョン:"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2400
-msgid "Minimum required version:"
-msgstr "最低要求バージョン:"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2412
-msgid "Available version:"
-msgstr "利用可能なバージョン:"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2435
-#, php-format
-msgid ""
-"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
-"Dashboard</a>"
-msgstr ""
-"インストール・更新・有効化するべきプラグインはありません。<a href=\"%1$s\">"
-"ダッシュボードに戻る</a>"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2449
-msgid "Plugin"
-msgstr "プラグイン"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2450
-msgid "Source"
-msgstr "取得元"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2451
-msgid "Type"
-msgstr "タイプ"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2455
-msgid "Version"
-msgstr "バージョン"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2456
-msgid "Status"
-msgstr "状態"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2504
-#, php-format
-msgctxt "%2$s = plugin name in screen reader markup"
-msgid "Install %2$s"
-msgstr "%2$sをインストール"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2508
-#, php-format
-msgctxt "%2$s = plugin name in screen reader markup"
-msgid "Update %2$s"
-msgstr "%2$sを更新"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2513
-#, php-format
-msgctxt "%2$s = plugin name in screen reader markup"
-msgid "Activate %2$s"
-msgstr "%2$sを有効化"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2583
-msgid "Upgrade message from the plugin author:"
-msgstr "プラグインの作者から更新通知があります。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2616
-msgid "Install"
-msgstr "インストール"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2622
-msgid "Update"
-msgstr "更新"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2625
-msgid "Activate"
-msgstr "有効化"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2656
-msgid "No plugins were selected to be installed. No action taken."
-msgstr "インストールするプラグインが選択されていません。処理を中断しました。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2658
-msgid "No plugins were selected to be updated. No action taken."
-msgstr "更新するプラグインが選択されていません。処理を中断しました。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2694
-msgid "No plugins are available to be installed at this time."
-msgstr "現在インストール可能なプラグインはありません。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2696
-msgid "No plugins are available to be updated at this time."
-msgstr "現在更新可能なプラグインはありません。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2801
-msgid "No plugins were selected to be activated. No action taken."
-msgstr ""
-"選択されたプラグインは全て有効化されています。何もする必要はありません。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2827
-msgid "No plugins are available to be activated at this time."
-msgstr "現在、有効化できるプラグインはありません。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3041
-msgid "Plugin activation failed."
-msgstr "プラグインの有効化に失敗しました。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3379
-#, php-format
-msgid "Updating Plugin %1$s (%2$d/%3$d)"
-msgstr "プラグインを更新中 %1$s (%2$d/%3$d)"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3381
-#, php-format
-msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr "<strong>%2$s</strong>%1$s のインストール中にエラーが発生しました。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3382
-#, php-format
-msgid "The installation of %1$s failed."
-msgstr "%1$s のインストールに失敗しました。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3386
-msgid ""
-"The installation and activation process is starting. This process may take a "
-"while on some hosts, so please be patient."
-msgstr ""
-"インストールと有効化を開始しました。環境によっては時間がかかる場合がありま"
-"す。しばらくお待ちください。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3387
-#, php-format
-msgid "%1$s installed and activated successfully."
-msgstr "%1$s を正常にインストールし、有効化しました。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3388
-msgid "All installations and activations have been completed."
-msgstr "すべてのインストールと有効化が完了しました。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3389
-#, php-format
-msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr "プラグインをインストール、有効化中 %1$s (%2$d/%3$d)"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3392
-msgid ""
-"The installation process is starting. This process may take a while on some "
-"hosts, so please be patient."
-msgstr ""
-"更新プロセスを開始しました。環境によっては時間がかかる場合があります。しばら"
-"くお待ちください。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3393
-#, php-format
-msgid "%1$s installed successfully."
-msgstr "%1$sのインストールが完了しました。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3394
-msgid "All installations have been completed."
-msgstr "すべてのインストールが完了しました。"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3395
-#, php-format
-msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr "プラグインをインストール中 %1$s (%2$d/%3$d)"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3400
-msgid "Show Details"
-msgstr "詳細を表示"
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3400
-msgid "Hide Details"
-msgstr "詳細を非表示"
-
-#: inc/tgm-plugin-activation/tgm-config.php:87
-#, php-format
+#: inc/tgm-plugin-activation/tgm-config.php:86
 msgid ""
 "This theme recommends the following plugin: %1$s.<br>Many additional "
 "functions are available for free."
@@ -660,13 +739,104 @@ msgstr[0] ""
 "このテーマは下記プラグインを必要としています：%1$s。<br>これらのプラグインは"
 "無償で利用可能です。"
 
-#: inc/vk-admin/package/class-vk-admin.php:340
-msgid "Sorry, there is no post"
-msgstr "お知らせはありません"
+#: inc/tgm-plugin-activation/tgm-config.php:91
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugins."
+msgstr[0] "%1$sプラグインをインストールするための適切な権限がありません。"
 
-#: inc/vk-admin/package/class-vk-admin.php:394
-msgid "Vektor WordPress Information"
-msgstr "Vektor WordPress Information"
+#: inc/tgm-plugin-activation/tgm-config.php:96
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+"このテーマとの最大の互換性を確保するには、次のプラグインを最新バージョンに更"
+"新する必要があります： %1$s。"
+
+#: inc/tgm-plugin-activation/tgm-config.php:101
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] "次のプラグインの更新が利用可能です：%1$s。"
+
+#: inc/tgm-plugin-activation/tgm-config.php:106
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %1$s plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %1$s "
+"plugins."
+msgstr[0] "%1$sプラグインを更新するための適切な権限がありません。"
+
+#: inc/tgm-plugin-activation/tgm-config.php:111
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] "必須プラグインが現在有効化されていません： %1$s。"
+
+#: inc/tgm-plugin-activation/tgm-config.php:116
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] "推奨プラグインが現在有効化されていません： %1$s。"
+
+#: inc/tgm-plugin-activation/tgm-config.php:121
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugins."
+msgstr[0] "%1$sプラグインを有効化するための適切な権限がありません。"
+
+#: inc/tgm-plugin-activation/tgm-config.php:126
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] "プラグインのインストールを開始"
+
+#: inc/tgm-plugin-activation/tgm-config.php:131
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] "プラグインの更新を開始する"
+
+#: inc/tgm-plugin-activation/tgm-config.php:136
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] "プラグインの有効化を開始"
+
+#: inc/tgm-plugin-activation/tgm-config.php:141
+msgid "Return to Required Plugins Installer"
+msgstr "必須プラグインのインストール画面に戻る"
+
+#: inc/tgm-plugin-activation/tgm-config.php:142
+msgid "Plugin activated successfully."
+msgstr "プラグインを有効化しました。"
+
+#: inc/tgm-plugin-activation/tgm-config.php:143
+msgid "The following plugin was activated successfully:"
+msgstr "次のプラグインを有効化しました:"
+
+#: inc/tgm-plugin-activation/tgm-config.php:144
+msgid "No action taken. Plugin %1$s was already active."
+msgstr "操作を実行しませんでした。プラグイン %1$s はすでに有効化されています。"
+
+#: inc/tgm-plugin-activation/tgm-config.php:145
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+"プラグインを有効化できませんでした。このテーマはプラグイン %s の現在のバー"
+"ジョンをサポートしていません。プラグインを更新してください。"
+
+#: inc/tgm-plugin-activation/tgm-config.php:146
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "すべてのプラグインを正常にインストールし、有効化しました。 %1$s"
+
+#: inc/tgm-plugin-activation/tgm-config.php:147
+msgid "Please contact the administrator of this site for help."
+msgstr "ヘルプが必要な場合はこのサイトの管理者にお問い合わせください。"
 
 #: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:7
 msgid "Disable accordion"
@@ -684,46 +854,6 @@ msgstr "アコーディオン有効 / 初期状態で閉じる"
 #: inc/vk-blocks-pro/admin-pro/admin-pro.php:20
 msgid "FAQ Setting"
 msgstr "FAQ ブロックの設定"
-
-#: inc/vk-blocks-pro/plugin-update-checker/Puc/v4p8/Plugin/Ui.php:54
-msgid "View details"
-msgstr "詳細を見る"
-
-#: inc/vk-blocks-pro/plugin-update-checker/Puc/v4p8/Plugin/Ui.php:77
-#, php-format
-msgid "More information about %s"
-msgstr "%sについての詳細"
-
-#: inc/vk-blocks-pro/plugin-update-checker/Puc/v4p8/Plugin/Ui.php:128
-msgid "Check for updates"
-msgstr "アップデートを確認"
-
-#: inc/vk-blocks-pro/plugin-update-checker/Puc/v4p8/Plugin/Ui.php:213
-#, php-format
-msgctxt "the plugin title"
-msgid "The %s plugin is up to date."
-msgstr "%s プラグインは最新です。"
-
-#: inc/vk-blocks-pro/plugin-update-checker/Puc/v4p8/Plugin/Ui.php:215
-#, php-format
-msgctxt "the plugin title"
-msgid "A new version of the %s plugin is available."
-msgstr "%sプラグインの新しいバージョンが利用可能です。"
-
-#: inc/vk-blocks-pro/plugin-update-checker/Puc/v4p8/Plugin/Ui.php:217
-#, php-format
-msgctxt "the plugin title"
-msgid "Could not determine if updates are available for %s."
-msgstr "%1$s.に対して利用可能なアップデートがあるか確認できませんでした"
-
-#: inc/vk-blocks-pro/plugin-update-checker/Puc/v4p8/Plugin/Ui.php:223
-#, php-format
-msgid "Unknown update checker status \"%s\""
-msgstr "不明なアップデートチェッカーステータス \"%s\""
-
-#: inc/vk-blocks-pro/plugin-update-checker/Puc/v4p8/Vcs/PluginUpdateChecker.php:98
-msgid "There is no changelog available."
-msgstr "利用可能な変更履歴がありません。"
 
 #: inc/vk-blocks/admin/admin-balloon.php:4 inc/vk-blocks/admin/admin.php:55
 msgid "Balloon Setting"
@@ -773,19 +903,6 @@ msgstr "Blocks 設定"
 #: inc/vk-blocks/admin/admin.php:54
 msgid "Block Template Setting"
 msgstr "ブロックテンプレート設定"
-
-#: inc/vk-blocks/customize/balloon.php:13
-msgid "Balloon: Default Icons"
-msgstr "吹き出しブロック：デフォルトアイコン設定"
-
-#: inc/vk-blocks/customize/balloon.php:35
-msgid "Default Icon "
-msgstr "デフォルトアイコン設定"
-
-#: inc/vk-blocks/customize/vk-blocks-customize-config.php:12
-#: inc/vk-blocks/load-bootstrap.php:83
-msgid "Setting"
-msgstr "設定"
 
 #: inc/vk-blocks/load-bootstrap.php:49
 msgid "VK Blocks Bootstrap Setting"
@@ -844,37 +961,346 @@ msgctxt "post list type"
 msgid "Text 1 Column"
 msgstr "テキスト 1 カラム"
 
+#: src/blocks/page-content/index.php:108
+msgid "Edit this area"
+msgstr "このエリアを編集"
+
 #: vk-blocks.php:80
 msgid "Disabled Blocks module. Because VK-Blocks Plugin running."
 msgstr ""
 "VK-Blocksと競合するため、VK All in One Expansion UnitのBlock機能を停止しまし"
 "た。"
 
-#. Plugin Name of the plugin/theme
-msgid "VK Blocks Pro"
-msgstr "VK Blocks Pro"
+#~ msgctxt "post format archive title"
+#~ msgid "Asides"
+#~ msgstr "アサイド"
 
-#. Plugin URI of the plugin/theme
-msgid "https://github.com/vektor-inc/vk-blocks"
-msgstr "https://github.com/vektor-inc/vk-blocks"
+#~ msgctxt "post format archive title"
+#~ msgid "Galleries"
+#~ msgstr "ギャラリー"
 
-#. Description of the plugin/theme
-msgid "This is a plugin that extends Gutenberg's blocks."
-msgstr "Gutenbergのブロックを拡張するプラグインです。"
+#~ msgctxt "post format archive title"
+#~ msgid "Images"
+#~ msgstr "画像"
 
-#. Author of the plugin/theme
-msgid "Vektor,Inc."
-msgstr "Vektor,Inc."
+#~ msgctxt "post format archive title"
+#~ msgid "Videos"
+#~ msgstr "動画"
 
-#. Author URI of the plugin/theme
-msgid "https://vektor-inc.co.jp"
-msgstr "https://vektor-inc.co.jp"
+#~ msgctxt "post format archive title"
+#~ msgid "Quotes"
+#~ msgstr "引用"
+
+#~ msgctxt "post format archive title"
+#~ msgid "Links"
+#~ msgstr "リンク"
+
+#~ msgctxt "post format archive title"
+#~ msgid "Statuses"
+#~ msgstr "ステータス"
+
+#~ msgctxt "post format archive title"
+#~ msgid "Audio"
+#~ msgstr "オーディオ"
+
+#~ msgctxt "post format archive title"
+#~ msgid "Chats"
+#~ msgstr "チャット"
+
+#, php-format
+#~ msgid "This theme recommends the following plugin: %1$s."
+#~ msgid_plural "This theme recommends the following plugins: %1$s."
+#~ msgstr[0] "このテーマは下記プラグインを推奨しています：%1$s。"
+
+#~ msgid "Return to the dashboard"
+#~ msgstr "ダッシュボードに戻る"
+
+#~ msgid "This plugin needs to be updated to be compatible with your theme."
+#~ msgstr ""
+#~ "使用中のテーマとの互換性を保つため、このプラグインを更新する必要がありま"
+#~ "す。"
+
+#~ msgid "Update Required"
+#~ msgstr "プラグインの更新が必要"
+
+#~ msgid "Set the parent_slug config variable instead."
+#~ msgstr "代わりに、parent_slug構成変数を設定してください。"
+
+#~ msgid "Return to the Dashboard"
+#~ msgstr "ダッシュボードへ戻る"
+
+#~ msgid ""
+#~ "The remote plugin package does not contain a folder with the desired slug "
+#~ "and renaming did not work."
+#~ msgstr ""
+#~ "リモートプラグインパッケージに必要なフォルダーが存在しないため、名前の変更"
+#~ "ができませんでした。"
+
+#~ msgid ""
+#~ "Please contact the plugin provider and ask them to package their plugin "
+#~ "according to the WordPress guidelines."
+#~ msgstr ""
+#~ "プラグインの開発者に連絡し、WordPressガイドラインに従ってプラグインをパッ"
+#~ "ケージ化するよう依頼してください。"
+
+#~ msgid ""
+#~ "The remote plugin package consists of more than one file, but the files "
+#~ "are not packaged in a folder."
+#~ msgstr ""
+#~ "リモートプラグインパッケージは複数のファイルで構成されていますが、ファイル"
+#~ "はフォルダーにパッケージ化されていません。"
+
+#~ msgctxt "plugin A *and* plugin B"
+#~ msgid "and"
+#~ msgstr "と"
+
+#, php-format
+#~ msgctxt "%s = version number"
+#~ msgid "TGMPA v%s"
+#~ msgstr "TGMPA v%s"
+
+#~ msgid "Required"
+#~ msgstr "必須"
+
+#~ msgid "Recommended"
+#~ msgstr "推奨"
+
+#~ msgid "WordPress Repository"
+#~ msgstr "WordPress 公式ディレクトリ"
+
+#~ msgid "External Source"
+#~ msgstr "外部ソース"
+
+#~ msgid "Pre-Packaged"
+#~ msgstr "プリパッケージ"
+
+#~ msgid "Not Installed"
+#~ msgstr "未インストール"
+
+#~ msgid "Installed But Not Activated"
+#~ msgstr "停止中"
+
+#~ msgid "Active"
+#~ msgstr "有効"
+
+#~ msgid "Required Update not Available"
+#~ msgstr "必要な更新が利用不可"
+
+#~ msgid "Requires Update"
+#~ msgstr "更新が必要"
+
+#~ msgid "Update recommended"
+#~ msgstr "更新を推奨"
+
+#, php-format
+#~ msgctxt "%1$s = install status, %2$s = update status"
+#~ msgid "%1$s, %2$s"
+#~ msgstr "%1$s、%2$s"
+
+#, php-format
+#~ msgctxt "plugins"
+#~ msgid "All <span class=\"count\">(%s)</span>"
+#~ msgid_plural "All <span class=\"count\">(%s)</span>"
+#~ msgstr[0] "すべて <span class=\"count\">(%s)</span>"
+
+#, php-format
+#~ msgid "To Install <span class=\"count\">(%s)</span>"
+#~ msgid_plural "To Install <span class=\"count\">(%s)</span>"
+#~ msgstr[0] "未インストール <span class=\"count\">(%s)</span>"
+
+#, php-format
+#~ msgid "Update Available <span class=\"count\">(%s)</span>"
+#~ msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+#~ msgstr[0] "更新可能 <span class=\"count\">(%s)</span>"
+
+#, php-format
+#~ msgid "To Activate <span class=\"count\">(%s)</span>"
+#~ msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+#~ msgstr[0] "停止中 <span class=\"count\">(%s)</span>"
+
+#~ msgctxt "as in: \"version nr unknown\""
+#~ msgid "unknown"
+#~ msgstr "不明"
+
+#~ msgid "Installed version:"
+#~ msgstr "インストール済みバージョン:"
+
+#~ msgid "Minimum required version:"
+#~ msgstr "最低要求バージョン:"
+
+#~ msgid "Available version:"
+#~ msgstr "利用可能なバージョン:"
+
+#, php-format
+#~ msgid ""
+#~ "No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
+#~ "Dashboard</a>"
+#~ msgstr ""
+#~ "インストール・更新・有効化するべきプラグインはありません。<a href=\"%1$s"
+#~ "\">ダッシュボードに戻る</a>"
+
+#~ msgid "Plugin"
+#~ msgstr "プラグイン"
+
+#~ msgid "Source"
+#~ msgstr "取得元"
+
+#~ msgid "Version"
+#~ msgstr "バージョン"
+
+#~ msgid "Status"
+#~ msgstr "状態"
+
+#, php-format
+#~ msgctxt "%2$s = plugin name in screen reader markup"
+#~ msgid "Install %2$s"
+#~ msgstr "%2$sをインストール"
+
+#, php-format
+#~ msgctxt "%2$s = plugin name in screen reader markup"
+#~ msgid "Update %2$s"
+#~ msgstr "%2$sを更新"
+
+#, php-format
+#~ msgctxt "%2$s = plugin name in screen reader markup"
+#~ msgid "Activate %2$s"
+#~ msgstr "%2$sを有効化"
+
+#~ msgid "Upgrade message from the plugin author:"
+#~ msgstr "プラグインの作者から更新通知があります。"
+
+#~ msgid "Install"
+#~ msgstr "インストール"
+
+#~ msgid "Update"
+#~ msgstr "更新"
+
+#~ msgid "Activate"
+#~ msgstr "有効化"
+
+#~ msgid "No plugins were selected to be installed. No action taken."
+#~ msgstr ""
+#~ "インストールするプラグインが選択されていません。処理を中断しました。"
+
+#~ msgid "No plugins were selected to be updated. No action taken."
+#~ msgstr "更新するプラグインが選択されていません。処理を中断しました。"
+
+#~ msgid "No plugins are available to be installed at this time."
+#~ msgstr "現在インストール可能なプラグインはありません。"
+
+#~ msgid "No plugins are available to be updated at this time."
+#~ msgstr "現在更新可能なプラグインはありません。"
+
+#~ msgid "No plugins were selected to be activated. No action taken."
+#~ msgstr ""
+#~ "選択されたプラグインは全て有効化されています。何もする必要はありません。"
+
+#~ msgid "No plugins are available to be activated at this time."
+#~ msgstr "現在、有効化できるプラグインはありません。"
+
+#~ msgid "Plugin activation failed."
+#~ msgstr "プラグインの有効化に失敗しました。"
+
+#, php-format
+#~ msgid "Updating Plugin %1$s (%2$d/%3$d)"
+#~ msgstr "プラグインを更新中 %1$s (%2$d/%3$d)"
+
+#, php-format
+#~ msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+#~ msgstr "<strong>%2$s</strong>%1$s のインストール中にエラーが発生しました。"
+
+#, php-format
+#~ msgid "The installation of %1$s failed."
+#~ msgstr "%1$s のインストールに失敗しました。"
+
+#~ msgid ""
+#~ "The installation and activation process is starting. This process may "
+#~ "take a while on some hosts, so please be patient."
+#~ msgstr ""
+#~ "インストールと有効化を開始しました。環境によっては時間がかかる場合がありま"
+#~ "す。しばらくお待ちください。"
+
+#, php-format
+#~ msgid "%1$s installed and activated successfully."
+#~ msgstr "%1$s を正常にインストールし、有効化しました。"
+
+#~ msgid "All installations and activations have been completed."
+#~ msgstr "すべてのインストールと有効化が完了しました。"
+
+#, php-format
+#~ msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+#~ msgstr "プラグインをインストール、有効化中 %1$s (%2$d/%3$d)"
+
+#~ msgid ""
+#~ "The installation process is starting. This process may take a while on "
+#~ "some hosts, so please be patient."
+#~ msgstr ""
+#~ "更新プロセスを開始しました。環境によっては時間がかかる場合があります。しば"
+#~ "らくお待ちください。"
+
+#, php-format
+#~ msgid "%1$s installed successfully."
+#~ msgstr "%1$sのインストールが完了しました。"
+
+#~ msgid "All installations have been completed."
+#~ msgstr "すべてのインストールが完了しました。"
+
+#, php-format
+#~ msgid "Installing Plugin %1$s (%2$d/%3$d)"
+#~ msgstr "プラグインをインストール中 %1$s (%2$d/%3$d)"
+
+#~ msgid "Show Details"
+#~ msgstr "詳細を表示"
+
+#~ msgid "Hide Details"
+#~ msgstr "詳細を非表示"
+
+#~ msgid "Sorry, there is no post"
+#~ msgstr "お知らせはありません"
+
+#~ msgid "Vektor WordPress Information"
+#~ msgstr "Vektor WordPress Information"
+
+#~ msgid "View details"
+#~ msgstr "詳細を見る"
+
+#, php-format
+#~ msgid "More information about %s"
+#~ msgstr "%sについての詳細"
+
+#~ msgid "Check for updates"
+#~ msgstr "アップデートを確認"
+
+#, php-format
+#~ msgctxt "the plugin title"
+#~ msgid "The %s plugin is up to date."
+#~ msgstr "%s プラグインは最新です。"
+
+#, php-format
+#~ msgctxt "the plugin title"
+#~ msgid "A new version of the %s plugin is available."
+#~ msgstr "%sプラグインの新しいバージョンが利用可能です。"
+
+#, php-format
+#~ msgctxt "the plugin title"
+#~ msgid "Could not determine if updates are available for %s."
+#~ msgstr "%1$s.に対して利用可能なアップデートがあるか確認できませんでした"
+
+#, php-format
+#~ msgid "Unknown update checker status \"%s\""
+#~ msgstr "不明なアップデートチェッカーステータス \"%s\""
+
+#~ msgid "There is no changelog available."
+#~ msgstr "利用可能な変更履歴がありません。"
+
+#~ msgid "Balloon: Default Icons"
+#~ msgstr "吹き出しブロック：デフォルトアイコン設定"
+
+#~ msgid "Setting"
+#~ msgstr "設定"
 
 #~ msgid "Profile"
 #~ msgstr "プロフィール"
-
-#~ msgid "Icon"
-#~ msgstr "アイコン"
 
 #~ msgid ""
 #~ "If you want to use an icon other than the ones listed above, you can use "
@@ -926,15 +1352,6 @@ msgstr "https://vektor-inc.co.jp"
 #~ msgid "Trembling Y"
 #~ msgstr "ぶるぶる（Y方向）"
 
-#~ msgid "Trembling X"
-#~ msgstr "ぶるぶる（X方向）"
-
-#~ msgid "Pounding"
-#~ msgstr "どきどき"
-
-#~ msgid "Shaking"
-#~ msgstr "ゆらゆら"
-
 #~ msgid "Animation speed"
 #~ msgstr "アニメーションの速度"
 
@@ -956,9 +1373,6 @@ msgstr "https://vektor-inc.co.jp"
 #~ msgid "Short"
 #~ msgstr "短い"
 
-#~ msgid "Normal"
-#~ msgstr "標準"
-
 #~ msgid "Long"
 #~ msgstr "長い"
 
@@ -970,15 +1384,6 @@ msgstr "https://vektor-inc.co.jp"
 
 #~ msgid "https://example.com"
 #~ msgstr "https://example.com"
-
-#~ msgid "Select image"
-#~ msgstr "画像を選択"
-
-#~ msgid "Delete Image"
-#~ msgstr "画像を削除"
-
-#~ msgid "Title"
-#~ msgstr "タイトルを入力"
 
 #~ msgid "Display item"
 #~ msgstr "表示要素"
@@ -1008,9 +1413,6 @@ msgstr "https://vektor-inc.co.jp"
 #~ msgid "Image Height"
 #~ msgstr "画像高さ"
 
-#~ msgid "Slide Height for each device."
-#~ msgstr "デバイス毎の高さ"
-
 #~ msgid "Child page list"
 #~ msgstr "子ページリスト"
 
@@ -1022,9 +1424,6 @@ msgstr "https://vektor-inc.co.jp"
 
 #~ msgid "Parent"
 #~ msgstr "親ページ"
-
-#~ msgid "Grid Column Item"
-#~ msgstr "グリッドカラムアイテム"
 
 #~ msgid "Grid Column"
 #~ msgstr "グリッドカラム"
@@ -1040,9 +1439,6 @@ msgstr "https://vektor-inc.co.jp"
 
 #~ msgid "Open link new tab."
 #~ msgstr "リンクを別ウィンドウで開く"
-
-#~ msgid "Icon ( Font Awesome )"
-#~ msgstr "アイコン ( Font Awesome )"
 
 #~ msgid "Icon Background:"
 #~ msgstr "アイコン背景:"
@@ -1065,154 +1461,11 @@ msgstr "https://vektor-inc.co.jp"
 #~ msgid "Columns"
 #~ msgstr "カラム"
 
-#~ msgid "Align"
-#~ msgstr "表示位置"
-
 #~ msgid "Text"
 #~ msgstr "テキスト"
 
-#~ msgid "Background Image PC"
-#~ msgstr "背景画像 ( PC )"
-
-#~ msgid "Background Image Tablet"
-#~ msgstr "背景画像 ( タブレット )"
-
-#~ msgid "Background Image Mobile"
-#~ msgstr "背景画像背景画像 ( モバイル )"
-
-#~ msgid "Background image Position"
-#~ msgstr "背景画像の位置"
-
-#~ msgid "Repeat"
-#~ msgstr "リピート"
-
-#~ msgid "Cover"
-#~ msgstr "カバー"
-
-#~ msgid "Cover fixed (Not fixed on iPhone)"
-#~ msgstr "カバー 固定（iPhoneでは固定されません）"
-
-#~ msgid "Parallax (Non-guaranteed)"
-#~ msgstr "パララックス（非保証）"
-
-#~ msgid "Layout Setting"
-#~ msgstr "レイアウト設定"
-
-#~ msgid "Width"
-#~ msgstr "幅"
-
-#~ msgid "Full Wide"
-#~ msgstr "全幅"
-
-#~ msgid "Padding (Left and Right)"
-#~ msgstr "余白 (左右)"
-
-#~ msgid "Fit to the Content area"
-#~ msgstr "コンテンツエリアに合わせる"
-
-#~ msgid "Add padding to the Outer area"
-#~ msgstr "アウターエリア内に余白を追加する"
-
-#~ msgid "Remove padding from the Outer area"
-#~ msgstr "アウターエリア内の余白を無くす"
-
-#~ msgid "Padding (Top and Bottom)"
-#~ msgstr "余白 (上下)"
-
-#~ msgid "Use default padding"
-#~ msgstr "標準の余白を使用"
-
-#~ msgid "Do not use default padding"
-#~ msgstr "標準の余白を使用しない"
-
-#~ msgid ""
-#~ "* If you select \"Do not use\" that, please set yourself it such as a "
-#~ "spacer block."
-#~ msgstr ""
-#~ "*「使用しない」を選択した場合はスペーサーブロックなどで任意に設定してくだ"
-#~ "さい。"
-
-#~ msgid "Divider Setting"
-#~ msgstr "区切りの設定"
-
-#~ msgid "Tilt"
-#~ msgstr "傾斜"
-
-#~ msgid "Curve"
-#~ msgstr "カーブ"
-
-#~ msgid "Wave"
-#~ msgstr "波状"
-
-#~ msgid "Triangle"
-#~ msgstr "三角"
-
-#~ msgid "Upper Divider Level"
-#~ msgstr "上部区切りレベル"
-
-#~ msgid "Lower Divider Level"
-#~ msgstr "下部区切りレベル"
-
-#~ msgid "Border Setting"
-#~ msgstr "枠線の設定"
-
-#~ msgid "Border will disappear when divider effect is applied."
-#~ msgstr "枠線は区切りレベルを適用すると表示されなくなります。"
-
-#~ msgid "Border type"
-#~ msgstr "枠線の種類"
-
-#~ msgid "None"
-#~ msgstr "なし"
-
 #~ msgid "Outer"
 #~ msgstr "Outer"
-
-#~ msgid "Solid"
-#~ msgstr "直線"
-
-#~ msgid "Dotted"
-#~ msgstr "点線"
-
-#~ msgid "Dashed"
-#~ msgstr "Dashed"
-
-#~ msgid "Double"
-#~ msgstr "二重線"
-
-#~ msgid "Groove"
-#~ msgstr "Groove"
-
-#~ msgid "Ridge"
-#~ msgstr "Ridge"
-
-#~ msgid "Inset"
-#~ msgstr "Inset"
-
-#~ msgid "Outset"
-#~ msgstr "Outset"
-
-#~ msgid "Border width"
-#~ msgstr "枠線の幅"
-
-#~ msgid "Border radius"
-#~ msgstr "枠線のRの大きさ"
-
-#~ msgid "Background Setting"
-#~ msgstr "背景設定"
-
-#~ msgid "Color Setting"
-#~ msgstr "色設定"
-
-#~ msgid ""
-#~ "Color will overcome background image. If you want to display image, clear "
-#~ "background color or set opacity 0."
-#~ msgstr ""
-#~ "色を指定すると画像よりも優先されます。画像を表示したい場合は、背景色をクリ"
-#~ "アするか、不透明度を0に設定します。"
-
-#~ msgid "Opacity Setting"
-#~ msgstr "透過設定"
 
 #~ msgid "ASC"
 #~ msgstr "昇順"
@@ -1271,42 +1524,12 @@ msgstr "https://vektor-inc.co.jp"
 #~ msgid "Vertical align"
 #~ msgstr "縦揃え"
 
-#~ msgid "Slider Settings"
-#~ msgstr "スライド設定"
-
-#~ msgid "Effect "
-#~ msgstr "エフェクト"
-
-#~ msgid "Slide"
-#~ msgstr "スライド"
-
-#~ msgid "Fade"
-#~ msgstr "フェード"
-
-#~ msgid "Loop "
-#~ msgstr "繰り返し"
-
-#~ msgid "AutoPlay"
-#~ msgstr "自動再生"
-
-#~ msgid "Display Time"
-#~ msgstr "表示時間"
-
-#~ msgid "Change Speed"
-#~ msgstr "切り替え時間"
-
-#~ msgid "Display Pagination"
-#~ msgstr "ページネーションの表示"
-
 #~ msgid "Slider"
 #~ msgstr "スライダー"
 
 #~ msgid "Slider is do not move in edit screen."
 #~ msgstr ""
 #~ "スライダーは編集画面では動きません。公開画面でプレビューしてください。"
-
-#~ msgid "Height"
-#~ msgstr "高さ"
 
 #~ msgid "Step Item"
 #~ msgstr "ステップ要素"
@@ -1327,14 +1550,8 @@ msgstr "https://vektor-inc.co.jp"
 #~ msgid "Outlined"
 #~ msgstr "アウトライン"
 
-#~ msgid "Default"
-#~ msgstr "標準"
-
 #~ msgid "Step"
 #~ msgstr "ステップ"
-
-#~ msgid "First Dot Number"
-#~ msgstr "ステップの開始番号"
 
 #~ msgid "Table of Contents"
 #~ msgstr "目次"
@@ -1357,9 +1574,6 @@ msgstr "https://vektor-inc.co.jp"
 #~ msgid "label"
 #~ msgstr "ラベル"
 
-#~ msgid "Timeline"
-#~ msgstr "タイムライン"
-
 #~ msgid "Alert"
 #~ msgstr "アラート"
 
@@ -1378,84 +1592,8 @@ msgstr "https://vektor-inc.co.jp"
 #~ msgid "Danger"
 #~ msgstr "Danger"
 
-#~ msgid " Image Border"
-#~ msgstr "画像の線"
-
-#~ msgid "Add border to image"
-#~ msgstr "画像に枠線を追加する"
-
 #~ msgid "Ballon"
 #~ msgstr "吹き出し"
-
-#~ msgid "* You can change border width on Setting > VK Blocks"
-#~ msgstr "* 線の太さは 管理画面の 設定 > VK Blocks から選択する事ができます。"
-
-#~ msgid "Border color of speech balloon"
-#~ msgstr "吹き出しの線の色"
-
-#~ msgid "Border"
-#~ msgstr "枠線"
-
-#~ msgid "Add border to balloon"
-#~ msgstr "吹き出しに枠線を追加する"
-
-#~ msgid "Position"
-#~ msgstr "位置"
-
-#~ msgid "Please specify the layout of the balloon."
-#~ msgstr "吹き出しの配置を指定してください。"
-
-#~ msgid "Left"
-#~ msgstr "左"
-
-#~ msgid "Right"
-#~ msgstr "右"
-
-#~ msgid "Please select the type of balloon."
-#~ msgstr "吹き出しのタイプを指定してください。"
-
-#~ msgid "Speech"
-#~ msgstr "吹き出し"
-
-#~ msgid "Thinking"
-#~ msgstr "もくもく"
-
-#~ msgid "Image Style"
-#~ msgstr "画像スタイル"
-
-#~ msgid "Circle"
-#~ msgstr "丸抜き"
-
-#~ msgid "Background color of speech balloon"
-#~ msgstr "吹き出しの背景色"
-
-#~ msgid "You can register default icons from Settings > VK Blocks in Admin."
-#~ msgstr ""
-#~ "管理画面の 設定 > VK Blocks から よく使うアイコンを登録する事ができます。"
-
-#~ msgid "Animation setting"
-#~ msgstr "アニメーション設定"
-
-#~ msgid "Please select the type of animation."
-#~ msgstr "アニメーションのタイプを指定してください。"
-
-#~ msgid "Trembling"
-#~ msgstr "ぶるぶる"
-
-#~ msgid "Upload image"
-#~ msgstr "画像をアップロード"
-
-#~ msgid "Icon Name"
-#~ msgstr "アイコンの名前"
-
-#~ msgid "Please enter a title."
-#~ msgstr "見出しを入力してください。"
-
-#~ msgid "Transparent"
-#~ msgstr "透過"
-
-#~ msgid "White"
-#~ msgstr "白"
 
 #~ msgid "Border Box"
 #~ msgstr "枠線ボックス"
@@ -1477,27 +1615,6 @@ msgstr "https://vektor-inc.co.jp"
 
 #~ msgid "Solid Angle iconFeature"
 #~ msgstr "直線 ピン角 アイコン"
-
-#~ msgid "Border Color"
-#~ msgstr "線の色"
-
-#~ msgid "Red"
-#~ msgstr "赤"
-
-#~ msgid "Orange"
-#~ msgstr "オレンジ"
-
-#~ msgid "Blue"
-#~ msgstr "青"
-
-#~ msgid "Green"
-#~ msgstr "緑"
-
-#~ msgid "Black"
-#~ msgstr "黒"
-
-#~ msgid "Background Color"
-#~ msgstr "背景色"
 
 #~ msgid "Button setting"
 #~ msgstr "ボタン設定"
@@ -1574,27 +1691,6 @@ msgstr "https://vektor-inc.co.jp"
 #~ msgid "Please enter a question."
 #~ msgstr "質問を入力してください。"
 
-#~ msgid "Classic FAQ"
-#~ msgstr "旧 FAQ"
-
-#~ msgid "Bgfill Circle"
-#~ msgstr "背景塗り 円形"
-
-#~ msgid "Bgfill Square"
-#~ msgstr "背景塗り ピン角"
-
-#~ msgid "Bgfill Rounded"
-#~ msgstr "背景塗り 角丸"
-
-#~ msgid "Border Circle"
-#~ msgstr "枠線 円形"
-
-#~ msgid "Border Square"
-#~ msgstr "枠線 ピン角"
-
-#~ msgid "Border Rounded"
-#~ msgstr "枠線 角丸"
-
 #~ msgid ""
 #~ "If you want to be collapsing this block, you can set it at Setting > VK "
 #~ "Blocks"
@@ -1646,33 +1742,6 @@ msgstr "https://vektor-inc.co.jp"
 #~ msgid "Solid Roundcorner"
 #~ msgstr "直線 角丸"
 
-#~ msgid "Dotted border bottom black"
-#~ msgstr "点線 下線 黒"
-
-#~ msgid "Both ends"
-#~ msgstr "左右線"
-
-#~ msgid "Brackets black"
-#~ msgstr "括弧 黒"
-
-#~ msgid "Plain"
-#~ msgstr "装飾無し"
-
-#~ msgid "Background fill lightgray"
-#~ msgstr "背景塗り 灰色"
-
-#~ msgid "Double border top and bottom black"
-#~ msgstr "二重線 上下線 黒"
-
-#~ msgid "Double border bottom black"
-#~ msgstr "二重線 下線 黒"
-
-#~ msgid "Solid border top and bottom black"
-#~ msgstr "直線 上下 黒"
-
-#~ msgid "Solid border bottom black"
-#~ msgstr "直線 下線 黒"
-
 #~ msgid "Margin bottom size of after this block (rem)"
 #~ msgstr "このブロック全体の下部の余白 (rem)"
 
@@ -1717,12 +1786,6 @@ msgstr "https://vektor-inc.co.jp"
 
 #~ msgid "Margin bottom size of after hedding  (rem)"
 #~ msgstr "見出しテキストの下部の余白 (rem)"
-
-#~ msgid "Input title…"
-#~ msgstr "タイトルを入力"
-
-#~ msgid "Input sub text…"
-#~ msgstr "サブテキストを入力"
 
 # %s: heading level e.g: "1", "2", "3"
 #~ msgid "Heading %d"
@@ -1775,9 +1838,6 @@ msgstr "https://vektor-inc.co.jp"
 
 #~ msgid "Highlighter"
 #~ msgstr "蛍光マーカー"
-
-#~ msgid "Rounded02"
-#~ msgstr "角丸2"
 
 #~ msgid "Photo frame"
 #~ msgstr "フォトフレーム"
@@ -1908,9 +1968,6 @@ msgstr "https://vektor-inc.co.jp"
 #~ msgid "Input content."
 #~ msgstr "本文を入力してください。"
 
-#~ msgid "Responsive BR "
-#~ msgstr "画面サイズ毎の改行 "
-
 #~ msgid "height"
 #~ msgstr "height"
 
@@ -1976,15 +2033,6 @@ msgstr "https://vektor-inc.co.jp"
 
 #~ msgid "vw"
 #~ msgstr "vw"
-
-#~ msgid "PC"
-#~ msgstr "PC"
-
-#~ msgid "Tablet"
-#~ msgstr "タブレット"
-
-#~ msgid "Mobile"
-#~ msgstr "モバイル"
 
 #~ msgid "Card (Image Round)"
 #~ msgstr "カード（画像丸抜き）"
@@ -2063,9 +2111,6 @@ msgstr "https://vektor-inc.co.jp"
 
 #~ msgid "Optimize VK Blocks CSS ( Tree Shaking + Preload )"
 #~ msgstr "VK Blocks のCSSを最適化する ( Tree Shaking + Preload )"
-
-#~ msgid "Edit this area"
-#~ msgstr "このエリアを編集"
 
 #~ msgid "Display Block Template Setting"
 #~ msgstr "ブロックテンプレート表示設定"

@@ -48,7 +48,7 @@ function vkb_register_required_plugins() {
 		array(
 			'name'     => 'VK Block Patterns', // The plugin name.
 			'slug'     => 'vk-block-patterns', // The plugin slug (typically the folder name).
-			'required' => true, // If false, the plugin is only 'recommended' instead of required.
+			'required' => false, // If false, the plugin is only 'recommended' instead of required.
 		),
 	);
 

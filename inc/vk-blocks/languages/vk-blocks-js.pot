@@ -122,7 +122,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/edit.js:182
 #: src/blocks/_pro/card/edit.js:121
 #: src/blocks/_pro/icon-card/edit.js:72
-#: src/blocks/_pro/post-list/edit.js:152
+#: src/blocks/_pro/post-list/edit.js:164
 msgid "Title"
 msgstr ""
 
@@ -235,7 +235,7 @@ msgid "Current page"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:63
-#: src/blocks/_pro/post-list/edit.js:73
+#: src/blocks/_pro/post-list/edit.js:97
 msgid "Display conditions"
 msgstr ""
 
@@ -244,7 +244,7 @@ msgid "Parent"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:82
-#: src/blocks/_pro/post-list/edit.js:176
+#: src/blocks/_pro/post-list/edit.js:188
 msgid "Ignore this post"
 msgstr ""
 
@@ -564,47 +564,47 @@ msgstr ""
 msgid "Outer"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:103
-msgid "Number of Posts"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:116
-msgid "Order"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:125
-msgid "ASC"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:129
-msgid "DESC"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:135
-msgid "Order by"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:144
-msgid "Published Date"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:148
-msgid "Modefied Date"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:156
-msgid "Random"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:162
-msgid "offset"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:77
+#: src/blocks/_pro/post-list/edit.js:101
 msgid "Filter by PostTypes"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:90
+#: src/blocks/_pro/post-list/edit.js:115
+msgid "Number of Posts"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:128
+msgid "Order"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:137
+msgid "ASC"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:141
+msgid "DESC"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:147
+msgid "Order by"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:156
+msgid "Published Date"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:160
+msgid "Modefied Date"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:168
+msgid "Random"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:174
+msgid "offset"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:75
 msgid "Filter by Taxonomy Terms"
 msgstr ""
 

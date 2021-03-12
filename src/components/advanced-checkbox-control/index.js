@@ -11,7 +11,7 @@ export const AdvancedCheckboxControl = (props) => {
 		rawData,
 		checkedData,
 		setAttributes,
-		setStateFunction,
+		saveState,
 	} = props;
 
 	if (!rawData || !checkedData) return false;
@@ -24,7 +24,7 @@ export const AdvancedCheckboxControl = (props) => {
 				checked={checkedData.some((item) => item === data.slug)}
 				onChange={(value) => {
 					if (value) {
-						setStateFunction(data.slug);
+						saveState(data.slug);
 					} else {
 						destructiveDeleteFromArray(checkedData, data.slug);
 					}

@@ -1,5 +1,5 @@
 // import WordPress Scripts
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import {
 	RangeControl,
 	PanelBody,
@@ -41,10 +41,18 @@ export default function PostListEdit(props) {
 	const [isCheckedTermsData, setIsCheckedTermsData] = useState(
 		JSON.parse(fixBrokenUnicode(isCheckedTerms))
 	);
+	const [isCheckedPostTypeData, setIsCheckedPostTypeData] = useState(
+		JSON.parse(fixBrokenUnicode(isCheckedPostType))
+	);
 
-	const saveState = (termId) => {
+	const saveStateTerms = (termId) => {
 		isCheckedTermsData.push(termId);
 		setIsCheckedTermsData(isCheckedTermsData);
+	};
+
+	const saveStatePostTypes = (slug) => {
+		isCheckedPostTypeData.push(slug);
+		setIsCheckedPostTypeData(isCheckedPostTypeData);
 	};
 
 	const postTypes = usePostTypes();
@@ -64,10 +72,10 @@ export default function PostListEdit(props) {
 	const terms = useTermsGroupbyTaxnomy(taxonomies);
 
 	// key を BaseControlのlabelに代入。valueの配列をmapでAdvancedCheckboxControlに渡す
-	const taxonomiesCheckBox = Object.keys(terms).map(function (
+	const taxonomiesCheckBox = Object.keys(terms).map(function(
 		taxonomy,
-		index
-	) {
+		index,
+	){
 		const taxonomiesProps = this[taxonomy].map((term) => {
 			return {
 				label: term.name,
@@ -77,7 +85,11 @@ export default function PostListEdit(props) {
 
 		return (
 			<BaseControl
-				label={__('Filter by Taxonomy Terms', 'vk-blocks')}
+				label={sprintf(
+					// translators: Filter by %s
+					__('Filter by %s', 'vk-blocks'),
+					taxonomy
+				)}
 				id={`vk_postList-terms`}
 				key={index}
 			>
@@ -85,13 +97,12 @@ export default function PostListEdit(props) {
 					schema={'isCheckedTerms'}
 					rawData={taxonomiesProps}
 					checkedData={isCheckedTermsData}
-					setStateFunction={saveState}
+					saveState={saveStateTerms}
 					{...props}
 				/>
 			</BaseControl>
 		);
-	},
-	terms);
+	},terms);
 
 	const blockProps = useBlockProps();
 
@@ -109,9 +120,8 @@ export default function PostListEdit(props) {
 						<AdvancedCheckboxControl
 							schema={'isCheckedPostType'}
 							rawData={postTypesProps}
-							checkedData={JSON.parse(
-								fixBrokenUnicode(isCheckedPostType)
-							)}
+							checkedData={isCheckedPostTypeData}
+							saveState={saveStatePostTypes}
 							{...props}
 						/>
 					</BaseControl>

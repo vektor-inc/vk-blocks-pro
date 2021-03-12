@@ -122,7 +122,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/edit.js:182
 #: src/blocks/_pro/card/edit.js:121
 #: src/blocks/_pro/icon-card/edit.js:72
-#: src/blocks/_pro/post-list/edit.js:164
+#: src/blocks/_pro/post-list/edit.js:179
 msgid "Title"
 msgstr ""
 
@@ -235,7 +235,7 @@ msgid "Current page"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:63
-#: src/blocks/_pro/post-list/edit.js:97
+#: src/blocks/_pro/post-list/edit.js:113
 msgid "Display conditions"
 msgstr ""
 
@@ -244,7 +244,7 @@ msgid "Parent"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:82
-#: src/blocks/_pro/post-list/edit.js:188
+#: src/blocks/_pro/post-list/edit.js:203
 msgid "Ignore this post"
 msgstr ""
 
@@ -564,48 +564,49 @@ msgstr ""
 msgid "Outer"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:101
+#: src/blocks/_pro/post-list/edit.js:117
 msgid "Filter by PostTypes"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:115
+#: src/blocks/_pro/post-list/edit.js:130
 msgid "Number of Posts"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:128
+#: src/blocks/_pro/post-list/edit.js:143
 msgid "Order"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:137
+#: src/blocks/_pro/post-list/edit.js:152
 msgid "ASC"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:141
+#: src/blocks/_pro/post-list/edit.js:156
 msgid "DESC"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:147
+#: src/blocks/_pro/post-list/edit.js:162
 msgid "Order by"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:156
+#: src/blocks/_pro/post-list/edit.js:171
 msgid "Published Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:160
+#: src/blocks/_pro/post-list/edit.js:175
 msgid "Modefied Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:168
+#: src/blocks/_pro/post-list/edit.js:183
 msgid "Random"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:174
+#: src/blocks/_pro/post-list/edit.js:189
 msgid "offset"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:75
-msgid "Filter by Taxonomy Terms"
+#: src/blocks/_pro/post-list/edit.js:90
+#. Filter by %s
+msgid "Filter by %s"
 msgstr ""
 
 #: src/blocks/_pro/post-list/index.js:20

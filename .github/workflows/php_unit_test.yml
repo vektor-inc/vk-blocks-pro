@@ -49,7 +49,10 @@ jobs:
         php-version: ${{ matrix.php }}
     - name: install npm scripts
       run: npm install
-    - name: install composer packages
-      run: ./node_modules/@wordpress/env/bin/wp-env start
-    - run: ./node_modules/@wordpress/env/bin/wp-env run composer 'composer install'
-    - run: ./node_modules/@wordpress/env/bin/wp-env run phpunit 'phpunit -c /var/www/html/wp-content/plugins/vk-blocks-pro/phpunit.xml.dist --verbose'
+      # run the wp-env setup command (wp-env start)
+    - name: setup wp env
+      run: npm run wp-env
+    - name: setup wp env
+      run: |
+        npm run composer:install:mac
+        npm run phpunit:mac

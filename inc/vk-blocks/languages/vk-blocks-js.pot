@@ -20,7 +20,7 @@ msgid "Short"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:123
-#: src/blocks/_pro/outer/edit.js:280
+#: src/blocks/_pro/outer/edit.js:285
 #: src/blocks/_pro/slider/edit.js:93
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95
@@ -350,162 +350,162 @@ msgstr ""
 msgid "Icon Card"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:159
+#: src/blocks/_pro/outer/edit.js:164
 #: src/blocks/_pro/slider-item/edit.js:122
 msgid "Background Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:164
+#: src/blocks/_pro/outer/edit.js:169
 #: src/blocks/_pro/slider-item/edit.js:126
 #: src/blocks/pr-content/edit.js:60
 msgid "Color Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:165
+#: src/blocks/_pro/outer/edit.js:170
 #: src/blocks/_pro/slider-item/edit.js:128
 msgid ""
 "Color will overcome background image. If you want to display image, clear "
 "background color or set opacity 0."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:178
+#: src/blocks/_pro/outer/edit.js:183
 #: src/blocks/_pro/slider-item/edit.js:141
 msgid "Opacity Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:192
+#: src/blocks/_pro/outer/edit.js:197
 #: src/blocks/_pro/slider-item/edit.js:176
 msgid "Background Image PC"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:208
+#: src/blocks/_pro/outer/edit.js:213
 #: src/blocks/_pro/slider-item/edit.js:192
 msgid "Background Image Tablet"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:218
+#: src/blocks/_pro/outer/edit.js:223
 #: src/blocks/_pro/slider-item/edit.js:202
 msgid "Background Image Mobile"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:228
+#: src/blocks/_pro/outer/edit.js:233
 msgid "Background image Position"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:236
+#: src/blocks/_pro/outer/edit.js:241
 msgid "Repeat"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:240
+#: src/blocks/_pro/outer/edit.js:245
 msgid "Cover"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:244
+#: src/blocks/_pro/outer/edit.js:249
 msgid "Cover fixed (Not fixed on iPhone)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:251
+#: src/blocks/_pro/outer/edit.js:256
 msgid "Parallax (Non-guaranteed)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:266
+#: src/blocks/_pro/outer/edit.js:271
 #: src/blocks/_pro/slider-item/edit.js:70
 #: src/blocks/pr-content/edit.js:219
 msgid "Layout Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:269
+#: src/blocks/_pro/outer/edit.js:274
 #: src/blocks/_pro/slider/edit.js:84
 msgid "Width"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:290
+#: src/blocks/_pro/outer/edit.js:295
 #: src/blocks/_pro/slider/edit.js:101
 msgid "Full Wide"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:295
+#: src/blocks/_pro/outer/edit.js:300
 #: src/blocks/_pro/slider-item/edit.js:75
 msgid "Padding (Left and Right)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:299
+#: src/blocks/_pro/outer/edit.js:304
 msgid "Fit to the Content area"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:306
+#: src/blocks/_pro/outer/edit.js:311
 msgid "Add padding to the Outer area"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:313
+#: src/blocks/_pro/outer/edit.js:318
 msgid "Remove padding from the Outer area"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:327
+#: src/blocks/_pro/outer/edit.js:332
 msgid "Padding (Top and Bottom)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:332
+#: src/blocks/_pro/outer/edit.js:337
 msgid "Use default padding"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:339
+#: src/blocks/_pro/outer/edit.js:344
 msgid "Do not use default padding"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:353
+#: src/blocks/_pro/outer/edit.js:358
 msgid ""
 "* If you select \"Do not use\" that, please set yourself it such as a "
 "spacer block."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:361
+#: src/blocks/_pro/outer/edit.js:366
 msgid "Divider Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:366
+#: src/blocks/_pro/outer/edit.js:371
 #: src/blocks/balloon/edit.js:236
 msgid "Type"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:374
+#: src/blocks/_pro/outer/edit.js:379
 msgid "Tilt"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:378
+#: src/blocks/_pro/outer/edit.js:383
 msgid "Curve"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:382
+#: src/blocks/_pro/outer/edit.js:387
 msgid "Wave"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:386
+#: src/blocks/_pro/outer/edit.js:391
 #: src/extensions/core/list/style.js:113
 msgid "Triangle"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:392
+#: src/blocks/_pro/outer/edit.js:397
 msgid "Upper Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:417
+#: src/blocks/_pro/outer/edit.js:422
 msgid "Lower Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:443
+#: src/blocks/_pro/outer/edit.js:448
 msgid "Border Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:448
+#: src/blocks/_pro/outer/edit.js:453
 msgid "Border will disappear when divider effect is applied."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:454
+#: src/blocks/_pro/outer/edit.js:459
 msgid "Border type"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:462
+#: src/blocks/_pro/outer/edit.js:467
 #: src/blocks/_pro/step-item/edit.js:114
 #: src/blocks/_pro/timeline-item/edit.js:95
 #: src/blocks/balloon/edit.js:338
@@ -513,7 +513,7 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:466
+#: src/blocks/_pro/outer/edit.js:471
 #: src/blocks/_pro/step-item/edit.js:92
 #: src/blocks/_pro/timeline-item/edit.js:77
 #: src/blocks/pr-content/edit.js:137
@@ -521,50 +521,50 @@ msgstr ""
 msgid "Solid"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:470
+#: src/blocks/_pro/outer/edit.js:475
 #: src/extensions/core/group/style.js:112
 msgid "Dotted"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:474
+#: src/blocks/_pro/outer/edit.js:479
 #: src/extensions/core/group/style.js:116
 msgid "Dashed"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:478
+#: src/blocks/_pro/outer/edit.js:483
 #: src/extensions/core/group/style.js:120
 msgid "Double"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:482
+#: src/blocks/_pro/outer/edit.js:487
 msgid "Groove"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:486
+#: src/blocks/_pro/outer/edit.js:491
 msgid "Ridge"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:490
+#: src/blocks/_pro/outer/edit.js:495
 msgid "Inset"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:494
+#: src/blocks/_pro/outer/edit.js:499
 msgid "Outset"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:508
+#: src/blocks/_pro/outer/edit.js:513
 msgid "Border width"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:520
+#: src/blocks/_pro/outer/edit.js:525
 msgid "Border radius"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:536
+#: src/blocks/_pro/outer/edit.js:541
 msgid "Container Inner Space Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:540
+#: src/blocks/_pro/outer/edit.js:545
 msgid "Side Space"
 msgstr ""
 

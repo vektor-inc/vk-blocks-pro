@@ -104,8 +104,8 @@ export default function save(props) {
 	let conternerInnerSpaceProperty = {};
 	if (innerSideSpace !== 0) {
 		conternerInnerSpaceProperty = {
-			paddingLeft: innerSideSpace,
-			paddingRight: innerSideSpace,
+			paddingLeft: `${innerSideSpace}rem`,
+			paddingRight: `${innerSideSpace}rem`,
 		};
 	}
 

@@ -52,7 +52,11 @@ jobs:
       # run the wp-env setup command (wp-env start)
     - name: setup wp env
       run: npm run start
-    - name: setup wp env
-      run: |
-        npm run composer:install:mac
-        npm run phpunit:mac
+    - uses: actions/checkout@v2
+    - uses: php-actions/composer@v5 # or alternative dependency management
+    - uses: php-actions/phpunit@v2
+
+    # - name: setup wp env
+    #   run: |
+    #     npm run composer:install:mac
+    #     npm run phpunit:mac

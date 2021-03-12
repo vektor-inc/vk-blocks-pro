@@ -39,6 +39,7 @@ export default function OuterEdit(props) {
 		borderStyle,
 		borderColor,
 		borderRadius,
+		innerSideSpace,
 	} = attributes;
 
 	let classPaddingLR;
@@ -47,8 +48,6 @@ export default function OuterEdit(props) {
 	let containerClass;
 	let whichSideUpper;
 	let whichSideLower;
-	let borderProperty;
-	let borderRadiusProperty;
 
 	const { updateBlockAttributes } = dispatch('core/block-editor');
 
@@ -57,6 +56,13 @@ export default function OuterEdit(props) {
 			updateBlockAttributes(clientId, { clientId });
 		}
 	}, [clientId]);
+
+	// 前バージョンとの互換処理
+	if (innerSideSpace === undefined || innerSideSpace === null) {
+		setAttributes({
+			innerSideSpace: 0,
+		});
+	}
 
 	//幅のクラス切り替え
 	// eslint-disable-next-line prefer-const
@@ -118,13 +124,33 @@ export default function OuterEdit(props) {
 	}
 
 	//Dividerエフェクトがない時のみ枠線を追
-	//eslint-disable-next-line camelcase
-	if (upper_level === 0 && lower_level === 0) {
-		borderProperty = `${borderWidth}px ${borderStyle} ${borderColor}`;
-		borderRadiusProperty = `${borderRadius}px`;
-	} else {
-		borderProperty = 'none';
-		borderRadiusProperty = `0px`;
+	let borderStyleProperty = {};
+
+	if (
+		upper_level === 0 && //eslint-disable-line camelcase
+		lower_level === 0 && //eslint-disable-line camelcase
+		borderWidth > 0 &&
+		borderStyle !== 'none'
+	) {
+		borderStyleProperty = {
+			border: `${borderWidth}px ${borderStyle} ${borderColor}`,
+			borderRadius: `${borderRadius}px`,
+		};
+		//eslint-disable-next-line camelcase
+	} else if (upper_level !== 0 || lower_level !== 0) {
+		//eslint-disable-line camelcase
+		borderStyleProperty = {
+			border: `none`,
+			borderRadius: `0px`,
+		};
+	}
+
+	let conternerInnerSpaceProperty = {};
+	if (innerSideSpace !== 0) {
+		conternerInnerSpaceProperty = {
+			paddingLeft: innerSideSpace,
+			paddingRight: innerSideSpace,
+		};
 	}
 
 	const blockProps = useBlockProps({
@@ -511,14 +537,28 @@ export default function OuterEdit(props) {
 						/>
 					</BaseControl>
 				</PanelBody>
+				<PanelBody
+					title={__('Container Inner Space Setting', 'vk-blocks')}
+					initialOpen={false}
+				>
+					<BaseControl
+						label={__('Side Space', 'vk-blocks')}
+						id={`vk_outer-innerSideSpace`}
+					>
+						<RangeControl
+							value={innerSideSpace}
+							onChange={(value) =>
+								setAttributes({
+									innerSideSpace: toNumber(value, 0, 100),
+								})
+							}
+							min="0"
+							max="100"
+						/>
+					</BaseControl>
+				</PanelBody>
 			</InspectorControls>
-			<div
-				{...blockProps}
-				style={{
-					border: borderProperty,
-					borderRadius: borderRadiusProperty,
-				}}
-			>
+			<div {...blockProps} style={borderStyleProperty}>
 				<GenerateBgImage
 					prefix={'vkb-outer'}
 					clientId={clientId}
@@ -531,7 +571,10 @@ export default function OuterEdit(props) {
 						whichSideUpper,
 						dividerType
 					)}
-					<div className={containerClass}>
+					<div
+						className={containerClass}
+						style={conternerInnerSpaceProperty}
+					>
 						<InnerBlocks />
 					</div>
 					{componentDivider(

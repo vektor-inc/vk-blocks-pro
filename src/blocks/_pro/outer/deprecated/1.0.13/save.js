@@ -1,5 +1,5 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
-import { componentDivider } from './component-divider';
+import { componentDivider } from './../component-divider';
 import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
 
 export default function save(props) {
@@ -19,7 +19,6 @@ export default function save(props) {
 		borderColor,
 		borderRadius,
 		clientId,
-		innerSideSpace,
 	} = attributes;
 
 	let classPaddingLR;
@@ -27,6 +26,8 @@ export default function save(props) {
 	let classBgPosition;
 	let whichSideUpper;
 	let whichSideLower;
+	let borderProperty;
+	let borderRadiusProperty;
 
 	//幅のクラス切り替え
 	const classWidth = `vk_outer-width-${outerWidth}`;
@@ -80,40 +81,26 @@ export default function save(props) {
 	const containerClass = 'vk_outer_container';
 
 	//Dividerエフェクトがない時のみ枠線を追
-	let borderStyleProperty = {};
 	//eslint-disable-next-line camelcase
-	if (
-		upper_level === 0 && //eslint-disable-line camelcase
-		lower_level === 0 && //eslint-disable-line camelcase
-		borderWidth > 0 &&
-		borderStyle !== 'none'
-	) {
-		borderStyleProperty = {
-			border: `${borderWidth}px ${borderStyle} ${borderColor}`,
-			borderRadius: `${borderRadius}px`,
-		};
-		//eslint-disable-next-line camelcase
-	} else if (upper_level !== 0 || lower_level !== 0) {
-		//eslint-disable-line camelcase
-		borderStyleProperty = {
-			border: `none`,
-			borderRadius: `0px`,
-		};
-	}
-
-	let conternerInnerSpaceProperty = {};
-	if (innerSideSpace !== 0) {
-		conternerInnerSpaceProperty = {
-			paddingLeft: innerSideSpace,
-			paddingRight: innerSideSpace,
-		};
+	if (upper_level === 0 && lower_level === 0) {
+		borderProperty = `${borderWidth}px ${borderStyle} ${borderColor}`;
+		borderRadiusProperty = `${borderRadius}px`;
+	} else {
+		borderProperty = 'none';
+		borderRadiusProperty = `0px`;
 	}
 
 	const blockProps = useBlockProps.save({
 		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 	});
 	return (
-		<div {...blockProps} style={borderStyleProperty}>
+		<div
+			{...blockProps}
+			style={{
+				border: borderProperty,
+				borderRadius: borderRadiusProperty,
+			}}
+		>
 			<GenerateBgImage
 				prefix={'vkb-outer'}
 				clientId={clientId}
@@ -126,10 +113,7 @@ export default function save(props) {
 					whichSideUpper,
 					dividerType
 				)}
-				<div
-					className={containerClass}
-					style={conternerInnerSpaceProperty}
-				>
+				<div className={containerClass}>
 					<InnerBlocks.Content />
 				</div>
 				{componentDivider(

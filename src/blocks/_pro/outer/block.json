@@ -82,6 +82,10 @@
 		"clientId": {
 			"type": "string",
 			"default": null
+		},
+		"innerSideSpace": {
+			"type": "number",
+			"default": 0
 		}
 	},
 	"supports": {

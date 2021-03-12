@@ -162,6 +162,7 @@ $xxl-min: 1400px;
 .vk_post {
 	margin-left: 15px;
 	margin-right: 15px;
+	a,
 	a:hover {
 		text-decoration: none;
 	}
@@ -180,6 +181,7 @@ $xxl-min: 1400px;
 		font-size: 14px;
 		line-height: 1.4;
 		font-weight: bold;
+		margin-top: 0;
 		margin-bottom: 0;
 		a {
 			color: var(--vk-color-text-body);

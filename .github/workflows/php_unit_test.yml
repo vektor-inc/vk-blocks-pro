@@ -51,7 +51,7 @@ jobs:
       run: npm install
       # run the wp-env setup command (wp-env start)
     - name: setup wp env
-      run: npm run wp-env
+      run: npm run start
     - name: setup wp env
       run: |
         npm run composer:install:mac

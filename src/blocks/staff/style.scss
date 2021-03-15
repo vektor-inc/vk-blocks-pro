@@ -33,7 +33,7 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 			&_name {
 				text-align: left;
 				box-shadow: none;
-				font-size: 2.5rem;
+				font-size: calc(var(--vk-size-text) * 2.5 );
 				font-family: $font_serif;
 				line-height: 1;
 				margin-bottom: 0.5rem;
@@ -65,7 +65,8 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 				padding-top: 0;
 				padding-left: 0;
 				padding-bottom: 2px;
-				margin-bottom: 1.2rem;
+				margin-top:calc(var(--vk-size-text) * 1.5);
+				margin-bottom: calc(var(--vk-size-text) * 1.2 );
 				border-top: none;
 				border-left: none;
 				border-bottom: 1px solid #ccc;

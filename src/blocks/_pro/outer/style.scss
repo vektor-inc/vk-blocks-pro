@@ -176,21 +176,6 @@ $color-danger: #b52727;
 
 
 /*-------------------------------------------*/
-/* テーマ個別追加css
-/*-------------------------------------------*/
-//Twenty Twentyは.entry-content の下の全ての要素に対してmax-widthとwidth指定があるのでOuter幅がズレる
-//Twenty Twenty用に以下を追記する必要があるので追記
-.entry-content .vk_outer-width-full{//全幅でコンテンツエリアにあわせる
-	max-width: unset !important;
-    width: unset !important;
-	&.vk_outer-paddingLR-none .vk_outer_container {
-		max-width: 58rem;
-		width: calc(100% - 4rem);
-		margin: auto;
-	}
-}
-
-/*-------------------------------------------*/
 /* 管理画面
 /*-------------------------------------------*/
 :root {

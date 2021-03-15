@@ -563,37 +563,7 @@ export default function OuterEdit(props) {
 						id={`vk_outer-innerSideSpace`}
 					>
 						<RangeControl
-							label={__('PC', 'vk-blocks')}
-							value={innerSideSpaceValuePC}
-							onChange={(value) =>
-								setAttributes({
-									innerSideSpaceValuePC: toNumber(
-										value,
-										0,
-										100
-									),
-								})
-							}
-							min="0"
-							max="1140"
-						/>
-						<RangeControl
-							label={__('Tablet', 'vk-blocks')}
-							value={innerSideSpaceValueTablet}
-							onChange={(value) =>
-								setAttributes({
-									innerSideSpaceValueTablet: toNumber(
-										value,
-										0,
-										100
-									),
-								})
-							}
-							min="0"
-							max="1140"
-						/>
-						<RangeControl
-							label={__('Momile', 'vk-blocks')}
+							label={__('Mobile', 'vk-blocks')}
 							value={innerSideSpaceValueMobile}
 							onChange={(value) =>
 								setAttributes({
@@ -605,7 +575,37 @@ export default function OuterEdit(props) {
 								})
 							}
 							min="0"
-							max="1140"
+							max="100"
+						/>
+						<RangeControl
+							label={__('Tablet', 'vk-blocks')}
+							value={innerSideSpaceValueTablet}
+							onChange={(value) =>
+								setAttributes({
+									innerSideSpaceValueTablet: toNumber(
+										value,
+										0,
+										200
+									),
+								})
+							}
+							min="0"
+							max="200"
+						/>
+						<RangeControl
+							label={__('PC', 'vk-blocks')}
+							value={innerSideSpaceValuePC}
+							onChange={(value) =>
+								setAttributes({
+									innerSideSpaceValuePC: toNumber(
+										value,
+										0,
+										300
+									),
+								})
+							}
+							min="0"
+							max="300"
 						/>
 						<SelectControl
 							label={__('Unit Type', 'vk-blocks')}

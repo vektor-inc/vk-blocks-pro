@@ -19,7 +19,10 @@ export default function save(props) {
 		borderColor,
 		borderRadius,
 		clientId,
-		innerSideSpace,
+		innerSideSpaceValuePC,
+		innerSideSpaceValueTablet,
+		innerSideSpaceValueMobile,
+		innerSideSpaceUnit,
 	} = attributes;
 
 	let classPaddingLR;
@@ -101,44 +104,67 @@ export default function save(props) {
 		};
 	}
 
-	let conternerInnerSpaceProperty = {};
-	if (innerSideSpace !== 0) {
-		conternerInnerSpaceProperty = {
-			paddingLeft: `${innerSideSpace}rem`,
-			paddingRight: `${innerSideSpace}rem`,
-		};
+	let OuterInlineStyle = '<style>';
+	if (innerSideSpaceValueMobile !== 0 && innerSideSpaceUnit !== undefined) {
+		OuterInlineStyle += `
+			.${containerClass} {
+				paddingLeft: ${innerSideSpaceValueMobile}${innerSideSpaceUnit};
+				paddingRight: ${innerSideSpaceValueMobile}${innerSideSpaceUnit};
+			}
+		`;
 	}
+	if (innerSideSpaceValueTablet !== 0 && innerSideSpaceUnit !== undefined) {
+		OuterInlineStyle += `
+			@media and (min-width:577px) {
+				.${containerClass} {
+					paddingLeft: ${innerSideSpaceValueTablet}${innerSideSpaceUnit};
+					paddingRight: ${innerSideSpaceValueTablet}${innerSideSpaceUnit};
+				}
+			}
+		`;
+	}
+	if (innerSideSpaceValuePC !== 0 && innerSideSpaceUnit !== undefined) {
+		OuterInlineStyle += `
+			@media and (min-width:769px) {
+				.${containerClass} {
+					paddingLeft: ${innerSideSpaceValuePC}${innerSideSpaceUnit};
+					paddingRight: ${innerSideSpaceValuePC}${innerSideSpaceUnit};
+				}
+			}
+		`;
+	}
+	OuterInlineStyle += '</style>';
 
 	const blockProps = useBlockProps.save({
 		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 	});
 	return (
-		<div {...blockProps} style={borderStyleProperty}>
-			<GenerateBgImage
-				prefix={'vkb-outer'}
-				clientId={clientId}
-				{...props}
-			/>
-			<div>
-				{componentDivider(
-					upper_level,
-					upperDividerBgColor,
-					whichSideUpper,
-					dividerType
-				)}
-				<div
-					className={containerClass}
-					style={conternerInnerSpaceProperty}
-				>
-					<InnerBlocks.Content />
+		<>
+			<div {...blockProps} style={borderStyleProperty}>
+				<GenerateBgImage
+					prefix={'vkb-outer'}
+					clientId={clientId}
+					{...props}
+				/>
+				<div>
+					{componentDivider(
+						upper_level,
+						upperDividerBgColor,
+						whichSideUpper,
+						dividerType
+					)}
+					<div className={containerClass}>
+						<InnerBlocks.Content />
+					</div>
+					{componentDivider(
+						lower_level,
+						lowerDividerBgColor,
+						whichSideLower,
+						dividerType
+					)}
 				</div>
-				{componentDivider(
-					lower_level,
-					lowerDividerBgColor,
-					whichSideLower,
-					dividerType
-				)}
 			</div>
-		</div>
+			{OuterInlineStyle}
+		</>
 	);
 }

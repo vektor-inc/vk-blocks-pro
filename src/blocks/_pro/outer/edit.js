@@ -39,15 +39,19 @@ export default function OuterEdit(props) {
 		borderStyle,
 		borderColor,
 		borderRadius,
-		innerSideSpace,
+		innerSideSpaceValuePC,
+		innerSideSpaceValueTablet,
+		innerSideSpaceValueMobile,
+		innerSideSpaceUnit,
 	} = attributes;
 
 	let classPaddingLR;
 	let classPaddingVertical;
 	let classBgPosition;
-	let containerClass;
 	let whichSideUpper;
 	let whichSideLower;
+
+	const containerClass = 'vk_outer_container';
 
 	const { updateBlockAttributes } = dispatch('core/block-editor');
 
@@ -58,9 +62,30 @@ export default function OuterEdit(props) {
 	}, [clientId]);
 
 	// 前バージョンとの互換処理
-	if (innerSideSpace === undefined || innerSideSpace === null) {
+	if (innerSideSpaceValuePC === undefined || innerSideSpaceValuePC === null) {
 		setAttributes({
-			innerSideSpace: 0,
+			innerSideSpaceValuePC: 0,
+		});
+	}
+	if (
+		innerSideSpaceValueTablet === undefined ||
+		innerSideSpaceValueTablet === null
+	) {
+		setAttributes({
+			innerSideSpaceValueTablet: 0,
+		});
+	}
+	if (
+		innerSideSpaceValueMobile === undefined ||
+		innerSideSpaceValueMobile === null
+	) {
+		setAttributes({
+			innerSideSpaceValueTablet: 0,
+		});
+	}
+	if (innerSideSpaceUnit === undefined || innerSideSpaceUnit === null) {
+		setAttributes({
+			innerSideSpaceUnit: 'px',
 		});
 	}
 
@@ -144,14 +169,43 @@ export default function OuterEdit(props) {
 			borderRadius: `0px`,
 		};
 	}
-
-	let conternerInnerSpaceProperty = {};
-	if (innerSideSpace !== 0) {
-		conternerInnerSpaceProperty = {
-			paddingLeft: `${innerSideSpace}rem`,
-			paddingRight: `${innerSideSpace}rem`,
-		};
+	if (innerSideSpaceValueMobile !== 0 && innerSideSpaceUnit !== undefined) {
+		OuterInlineStylePC = `
+			.${containerClass} {
+				paddingLeft: ${innerSideSpaceValueMobile}${innerSideSpaceUnit};
+				paddingRight: ${innerSideSpaceValueMobile}${innerSideSpaceUnit};
+			}
+		`;
 	}
+	if (innerSideSpaceValueTablet !== 0 && innerSideSpaceUnit !== undefined) {
+		OuterInlineStyleTablet =
+			@media and (minWidth:577px) {
+				.${containerClass} {
+					paddingLeft: ${innerSideSpaceValueTablet}${innerSideSpaceUnit};
+					paddingRight: ${innerSideSpaceValueTablet}${innerSideSpaceUnit};
+				}
+			}
+		;
+	}
+	if (innerSideSpaceValuePC !== 0 && innerSideSpaceUnit !== undefined) {
+		OuterInlineStyleMobile = `
+			@media and (min-width:769px) {
+				.${containerClass} {
+					paddingLeft: ${innerSideSpaceValuePC}${innerSideSpaceUnit};
+					paddingRight: ${innerSideSpaceValuePC}${innerSideSpaceUnit};
+				}
+			}
+		`;
+	}
+
+	let OuterInlineStyle = (
+
+	<style>
+		{OuterInlineStylePC}
+
+	</style>);
+
+
 
 	const blockProps = useBlockProps({
 		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
@@ -546,14 +600,76 @@ export default function OuterEdit(props) {
 						id={`vk_outer-innerSideSpace`}
 					>
 						<RangeControl
-							value={innerSideSpace}
+							label={__('PC', 'vk-blocks')}
+							value={innerSideSpaceValuePC}
 							onChange={(value) =>
 								setAttributes({
-									innerSideSpace: toNumber(value, 0, 100),
+									innerSideSpaceValuePC: toNumber(
+										value,
+										0,
+										100
+									),
 								})
 							}
 							min="0"
-							max="100"
+							max="1140"
+						/>
+						<RangeControl
+							label={__('Tablet', 'vk-blocks')}
+							value={innerSideSpaceValueTablet}
+							onChange={(value) =>
+								setAttributes({
+									innerSideSpaceValueTablet: toNumber(
+										value,
+										0,
+										100
+									),
+								})
+							}
+							min="0"
+							max="1140"
+						/>
+						<RangeControl
+							label={__('Momile', 'vk-blocks')}
+							value={innerSideSpaceValueMobile}
+							onChange={(value) =>
+								setAttributes({
+									innerSideSpaceValueMobile: toNumber(
+										value,
+										0,
+										100
+									),
+								})
+							}
+							min="0"
+							max="1140"
+						/>
+						<SelectControl
+							label={__('Unit Type', 'vk-blocks')}
+							value={innerSideSpaceUnit}
+							onChange={(value) =>
+								setAttributes({
+									innerSideSpaceUnit: value,
+								})
+							}
+							options={[
+								{
+									value: 'px',
+									label: __('px', 'vk-blocks'),
+								},
+								{
+									value: 'em',
+									label: __('em', 'vk-blocks'),
+								},
+								{
+									value: 'rem',
+									label: __('rem', 'vk-blocks'),
+								},
+								{
+									value: 'vw',
+									label: __('vw', 'vk-blocks'),
+								},
+							]}
 						/>
 					</BaseControl>
 				</PanelBody>
@@ -571,10 +687,7 @@ export default function OuterEdit(props) {
 						whichSideUpper,
 						dividerType
 					)}
-					<div
-						className={containerClass}
-						style={conternerInnerSpaceProperty}
-					>
+					<div className={containerClass}>
 						<InnerBlocks />
 					</div>
 					{componentDivider(
@@ -585,6 +698,7 @@ export default function OuterEdit(props) {
 					)}
 				</div>
 			</div>
+			{OuterInlineStyle}
 		</>
 	);
 }

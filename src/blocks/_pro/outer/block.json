@@ -83,9 +83,21 @@
 			"type": "string",
 			"default": null
 		},
-		"innerSideSpace": {
+		"innerSideSpaceValuePC": {
 			"type": "number",
 			"default": 0
+		},
+		"innerSideSpaceValueTablet": {
+			"type": "number",
+			"default": 0
+		},
+		"innerSideSpaceValueMobile": {
+			"type": "number",
+			"default": 0
+		},
+		"innerSideSpaceUnit": {
+			"type": "string",
+			"default": "px"
 		}
 	},
 	"supports": {

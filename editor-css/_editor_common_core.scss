@@ -11,5 +11,9 @@
 			margin: 0 8px .8em 0;
 		}
 	}
+	//Twenty Twentyテーマ用
+	.editor-styles-wrapper ul li{ 
+		margin-bottom:calc( var(--vk-size-text) * 0.8 );
+	}
 }
 

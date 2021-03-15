@@ -64,7 +64,9 @@ ol {
 			li {
 				list-style: none;
 				position: relative;
-				margin: 0 0 calc( var(--vk-size-text) * 0.8 ) 0;
+				margin-top:0;
+				margin-left: 0;
+				margin-bottom:calc( var(--vk-size-text) * 0.8 );
 				line-height: calc( var(--vk-size-text) * 1.65 );
 			}
 		}

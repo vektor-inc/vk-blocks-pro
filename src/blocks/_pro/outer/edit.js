@@ -555,86 +555,80 @@ export default function OuterEdit(props) {
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
-					title={__('Container Inner Space Setting', 'vk-blocks')}
+					title={__(
+						'Container Inner Side Space Setting',
+						'vk-blocks'
+					)}
 					initialOpen={false}
 				>
-					<BaseControl
-						label={__('Side Space', 'vk-blocks')}
-						id={`vk_outer-innerSideSpace`}
-					>
-						<RangeControl
-							label={__('Mobile', 'vk-blocks')}
-							value={innerSideSpaceValueMobile}
-							onChange={(value) =>
-								setAttributes({
-									innerSideSpaceValueMobile: toNumber(
-										value,
-										0,
-										100
-									),
-								})
-							}
-							min="0"
-							max="100"
-						/>
-						<RangeControl
-							label={__('Tablet', 'vk-blocks')}
-							value={innerSideSpaceValueTablet}
-							onChange={(value) =>
-								setAttributes({
-									innerSideSpaceValueTablet: toNumber(
-										value,
-										0,
-										200
-									),
-								})
-							}
-							min="0"
-							max="200"
-						/>
-						<RangeControl
-							label={__('PC', 'vk-blocks')}
-							value={innerSideSpaceValuePC}
-							onChange={(value) =>
-								setAttributes({
-									innerSideSpaceValuePC: toNumber(
-										value,
-										0,
-										300
-									),
-								})
-							}
-							min="0"
-							max="300"
-						/>
-						<SelectControl
-							label={__('Unit Type', 'vk-blocks')}
-							value={innerSideSpaceUnit}
-							onChange={(value) =>
-								setAttributes({
-									innerSideSpaceUnit: value,
-								})
-							}
-							options={[
-								{
-									value: 'px',
-									label: __('px', 'vk-blocks'),
-								},
-								{
-									value: 'em',
-									label: __('em', 'vk-blocks'),
-								},
-								{
-									value: 'rem',
-									label: __('rem', 'vk-blocks'),
-								},
-								{
-									value: 'vw',
-									label: __('vw', 'vk-blocks'),
-								},
-							]}
-						/>
-					</BaseControl>
+					<RangeControl
+						label={__('Mobile', 'vk-blocks')}
+						value={innerSideSpaceValueMobile}
+						onChange={(value) =>
+							setAttributes({
+								innerSideSpaceValueMobile: toNumber(
+									value,
+									0,
+									100
+								),
+							})
+						}
+						min="0"
+						max="100"
+					/>
+					<RangeControl
+						label={__('Tablet', 'vk-blocks')}
+						value={innerSideSpaceValueTablet}
+						onChange={(value) =>
+							setAttributes({
+								innerSideSpaceValueTablet: toNumber(
+									value,
+									0,
+									200
+								),
+							})
+						}
+						min="0"
+						max="200"
+					/>
+					<RangeControl
+						label={__('PC', 'vk-blocks')}
+						value={innerSideSpaceValuePC}
+						onChange={(value) =>
+							setAttributes({
+								innerSideSpaceValuePC: toNumber(value, 0, 300),
+							})
+						}
+						min="0"
+						max="300"
+					/>
+					<SelectControl
+						label={__('Unit Type', 'vk-blocks')}
+						value={innerSideSpaceUnit}
+						onChange={(value) =>
+							setAttributes({
+								innerSideSpaceUnit: value,
+							})
+						}
+						options={[
+							{
+								value: 'px',
+								label: __('px', 'vk-blocks'),
+							},
+							{
+								value: 'em',
+								label: __('em', 'vk-blocks'),
+							},
+							{
+								value: 'rem',
+								label: __('rem', 'vk-blocks'),
+							},
+							{
+								value: 'vw',
+								label: __('vw', 'vk-blocks'),
+							},
+						]}
+					/>
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps} style={borderStyleProperty}>

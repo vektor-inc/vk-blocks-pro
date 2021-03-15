@@ -3,880 +3,30 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/_pro/animation/edit.js:104
-msgid "Fast"
-msgstr ""
-
-#: src/blocks/_pro/animation/edit.js:108
-msgid "Very Fast"
-msgstr ""
-
-#: src/blocks/_pro/animation/edit.js:113
-msgid "Animation range"
-msgstr ""
-
-#: src/blocks/_pro/animation/edit.js:119
-msgid "Short"
-msgstr ""
-
-#: src/blocks/_pro/animation/edit.js:123
-#: src/blocks/_pro/outer/edit.js:333
-#: src/blocks/_pro/slider/edit.js:93
-#: src/blocks/balloon/edit.js:276
-#: src/blocks/button/edit.js:95
-#: src/blocks/faq/index.js:27
-#: src/blocks/faq2/index.js:22
-msgid "Normal"
-msgstr ""
-
-#: src/blocks/_pro/animation/edit.js:127
-msgid "Long"
-msgstr ""
-
-#: src/blocks/_pro/animation/edit.js:38
-msgid "Animation Settings"
-msgstr ""
-
-#: src/blocks/_pro/animation/edit.js:39
-msgid "Animation effect"
-msgstr ""
-
-#: src/blocks/_pro/animation/edit.js:45
-msgid "Fade In"
-msgstr ""
-
-#: src/blocks/_pro/animation/edit.js:49
-msgid "Slide Up"
-msgstr ""
-
-#: src/blocks/_pro/animation/edit.js:53
-msgid "Slide Left"
-msgstr ""
-
-#: src/blocks/_pro/animation/edit.js:57
-msgid "Slide Right"
-msgstr ""
-
-#: src/blocks/_pro/animation/edit.js:61
-msgid "Left Right"
-msgstr ""
-
-#: src/blocks/_pro/animation/edit.js:65
-msgid "Up Down"
-msgstr ""
-
-#: src/blocks/_pro/animation/edit.js:69
-msgid "Trembling Y"
-msgstr ""
-
-#: src/blocks/_pro/animation/edit.js:73
-#: src/blocks/balloon/edit.js:346
-msgid "Trembling X"
-msgstr ""
-
-#: src/blocks/_pro/animation/edit.js:77
-#: src/blocks/balloon/edit.js:350
-msgid "Pounding"
-msgstr ""
-
-#: src/blocks/_pro/animation/edit.js:81
-#: src/blocks/balloon/edit.js:354
-msgid "Shaking"
-msgstr ""
-
-#: src/blocks/_pro/animation/edit.js:86
-msgid "Animation speed"
-msgstr ""
-
-#: src/blocks/_pro/animation/edit.js:92
-msgid "Very Slow"
-msgstr ""
-
-#: src/blocks/_pro/animation/edit.js:96
-msgid "Slow"
-msgstr ""
-
-#: src/blocks/_pro/animation/index.js:20
-msgid "Animation"
-msgstr ""
-
-#: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:149
-#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:151
-#: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:156
-#: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:154
-#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:157
-#: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:161
-#: src/blocks/_pro/card-item/edit.js:140
-#: src/utils/example-data.js:3
-msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
-"tempor incididunt ut labore et dolore magna aliqua. "
-msgstr ""
-
-#: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:190
-#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:194
-#: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:201
-#: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:199
-#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:206
-#: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:210
-#: src/blocks/_pro/card-item/edit.js:182
-#: src/blocks/_pro/card/edit.js:121
-#: src/blocks/_pro/icon-card/edit.js:72
-#: src/blocks/_pro/post-list/edit.js:152
-msgid "Title"
-msgstr ""
-
-#: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:81
-#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:77
-#: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:82
-#: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:80
-#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:82
-#: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:86
-#: src/blocks/_pro/card-item/edit.js:88
-#: src/blocks/balloon/edit.js:379
-#: src/blocks/flow/edit.js:82
-#: src/blocks/pr-blocks/edit.js:88
-#: src/blocks/pr-content/deprecated/0.0.0/save.js:130
-#: src/blocks/pr-content/deprecated/0.0.1/save.js:112
-#: src/blocks/pr-content/deprecated/0.0.2/save.js:207
-#: src/blocks/pr-content/deprecated/0.0.3/component.js:178
-#: src/blocks/pr-content/deprecated/0.43.0/save.js:178
-#: src/blocks/pr-content/deprecated/0.5.1/save.js:116
-#: src/blocks/pr-content/deprecated/0.56.3/component.js:156
-#: src/blocks/pr-content/deprecated/0.58.7/component.js:171
-#: src/blocks/pr-content/deprecated/0.58.9/component.js:171
-#: src/blocks/pr-content/mediaUpload.js:68
-#: src/blocks/staff/deprecated/component.js:87
-#: src/blocks/staff/edit.js:273
-#: src/components/advanced-media-upload/index.js:47
-msgid "Select image"
-msgstr ""
-
-#: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:94
-#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:94
-#: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:99
-#: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:97
-#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:99
-#: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:103
-#: src/blocks/_pro/card-item/edit.js:105
-#: src/components/advanced-media-upload/index.js:34
-msgid "Delete Image"
-msgstr ""
-
-#: src/blocks/_pro/card-item/edit.js:217
-msgid "URL"
-msgstr ""
-
-#: src/blocks/_pro/card-item/edit.js:222
-msgid "https://example.com"
-msgstr ""
-
-#: src/blocks/_pro/card-item/index.js:18
-msgid "Card Item"
-msgstr ""
-
-#: src/blocks/_pro/card/edit.js:119
-#: src/components/display-items-control/index.js:28
-msgid "Display item"
-msgstr ""
-
-#: src/blocks/_pro/card/edit.js:135
-msgid "Excerpt Text"
-msgstr ""
-
-#: src/blocks/_pro/card/edit.js:143
-msgid "Warning! When you hidden this item, you will lose the content."
-msgstr ""
-
-#: src/blocks/_pro/card/edit.js:149
-#: src/components/display-items-control/index.js:30
-msgid "Image"
-msgstr ""
-
-#: src/blocks/_pro/card/edit.js:156
-#: src/blocks/button/index.js:18
-#: src/components/display-items-control/index.js:78
-msgid "Button"
-msgstr ""
-
-#: src/blocks/_pro/card/edit.js:161
-#: src/components/display-items-control/index.js:98
-msgid "Button option"
-msgstr ""
-
-#: src/blocks/_pro/card/edit.js:164
-#: src/components/display-items-control/index.js:101
-msgid ""
-"Click each card block to set the target url. You can find the url form at "
-"it's sidebar."
-msgstr ""
-
-#: src/blocks/_pro/card/edit.js:170
-#: src/components/display-items-control/index.js:107
-msgid "Button text"
-msgstr ""
-
-#: src/blocks/_pro/card/edit.js:77
-msgid "Image Height"
-msgstr ""
-
-#: src/blocks/_pro/card/edit.js:82
-#: src/blocks/_pro/slider/edit.js:112
-msgid "Slide Height for each device."
-msgstr ""
-
-#: src/blocks/_pro/card/index.js:25
-#: src/components/column-layout-control/index.js:26
-msgid "Card"
-msgstr ""
-
-#: src/blocks/_pro/child-page/edit.js:27
-msgid "Current page"
-msgstr ""
-
-#: src/blocks/_pro/child-page/edit.js:63
-#: src/blocks/_pro/post-list/edit.js:73
-msgid "Display conditions"
-msgstr ""
-
-#: src/blocks/_pro/child-page/edit.js:67
-msgid "Parent"
-msgstr ""
-
-#: src/blocks/_pro/child-page/edit.js:82
-#: src/blocks/_pro/post-list/edit.js:176
-msgid "Ignore this post"
-msgstr ""
-
-#: src/blocks/_pro/child-page/index.js:18
-msgid "Child page list"
-msgstr ""
-
-#: src/blocks/_pro/grid-column-item/index.js:18
-msgid "Grid Column Item"
-msgstr ""
-
-#: src/blocks/_pro/grid-column/edit.js:47
-msgid "Layout Columns"
-msgstr ""
-
-#: src/blocks/_pro/grid-column/index.js:17
-msgid "Grid Column"
-msgstr ""
-
-#: src/blocks/_pro/icon-card-item/deprecated/0.0.0/component.js:55
-#: src/blocks/_pro/icon-card-item/deprecated/0.0.1/component.js:70
-#: src/blocks/_pro/icon-card-item/deprecated/0.49.8/component.js:71
-#: src/blocks/_pro/icon-card-item/deprecated/0.60.1/component.js:85
-#: src/blocks/_pro/icon-card-item/edit.js:171
-#: src/blocks/pr-blocks/deprecated/0.0.1/component.js:148
-#: src/blocks/pr-blocks/deprecated/0.0.2/component.js:176
-#: src/blocks/pr-blocks/deprecated/0.59.0/component.js:191
-#: src/blocks/pr-blocks/edit.js:533
-msgid "Input Title"
-msgstr ""
-
-#: src/blocks/_pro/icon-card-item/deprecated/0.0.0/component.js:62
-#: src/blocks/_pro/icon-card-item/deprecated/0.0.1/component.js:77
-#: src/blocks/_pro/icon-card-item/deprecated/0.49.8/component.js:78
-#: src/blocks/_pro/icon-card-item/deprecated/0.60.1/component.js:106
-#: src/blocks/_pro/icon-card-item/edit.js:193
-#: src/blocks/pr-blocks/deprecated/0.0.1/component.js:157
-#: src/blocks/pr-blocks/deprecated/0.0.2/component.js:185
-#: src/blocks/pr-blocks/deprecated/0.59.0/component.js:200
-#: src/blocks/pr-blocks/edit.js:542
-msgid "Input Content"
-msgstr ""
-
-#: src/blocks/_pro/icon-card-item/edit.js:100
-#: src/blocks/button/edit.js:70
-#: src/blocks/pr-blocks/edit.js:271
-#: src/blocks/pr-content/edit.js:124
-msgid "Open link new tab."
-msgstr ""
-
-#: src/blocks/_pro/icon-card-item/edit.js:108
-#: src/blocks/_pro/step-item/edit.js:57
-#: src/blocks/border-box/edit.js:107
-#: src/blocks/button/edit.js:258
-#: src/blocks/pr-content/edit.js:190
-msgid "Icon ( Font Awesome )"
-msgstr ""
-
-#: src/blocks/_pro/icon-card-item/edit.js:126
-#: src/blocks/pr-blocks/edit.js:295
-msgid "Icon Background:"
-msgstr ""
-
-#: src/blocks/_pro/icon-card-item/edit.js:130
-#: src/blocks/button/edit.js:173
-#: src/blocks/pr-blocks/edit.js:299
-msgid "Solid color"
-msgstr ""
-
-#: src/blocks/_pro/icon-card-item/edit.js:134
-#: src/blocks/button/edit.js:181
-#: src/blocks/pr-blocks/edit.js:303
-msgid "No background"
-msgstr ""
-
-#: src/blocks/_pro/icon-card-item/edit.js:90
-msgid "Icon Card Setting"
-msgstr ""
-
-#: src/blocks/_pro/icon-card-item/edit.js:92
-#: src/blocks/pr-blocks/edit.js:263
-msgid "Link URL:"
-msgstr ""
-
-#: src/blocks/_pro/icon-card-item/index.js:19
-msgid "Icon Card Item"
-msgstr ""
-
-#: src/blocks/_pro/icon-card/edit.js:65
-msgid "Columns"
-msgstr ""
-
-#: src/blocks/_pro/icon-card/edit.js:70
-#: src/components/card-align-control/index.js:34
-msgid "Align"
-msgstr ""
-
-#: src/blocks/_pro/icon-card/edit.js:83
-msgid "Text"
-msgstr ""
-
-#: src/blocks/_pro/icon-card/index.js:20
-msgid "Icon Card"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:212
-#: src/blocks/_pro/slider-item/edit.js:122
-msgid "Background Setting"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:217
-#: src/blocks/_pro/slider-item/edit.js:126
-#: src/blocks/pr-content/edit.js:60
-msgid "Color Setting"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:218
-#: src/blocks/_pro/slider-item/edit.js:128
-msgid ""
-"Color will overcome background image. If you want to display image, clear "
-"background color or set opacity 0."
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:231
-#: src/blocks/_pro/slider-item/edit.js:141
-msgid "Opacity Setting"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:245
-#: src/blocks/_pro/slider-item/edit.js:176
-msgid "Background Image PC"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:261
-#: src/blocks/_pro/slider-item/edit.js:192
-msgid "Background Image Tablet"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:271
-#: src/blocks/_pro/slider-item/edit.js:202
-msgid "Background Image Mobile"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:281
-msgid "Background image Position"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:289
-msgid "Repeat"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:293
-msgid "Cover"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:297
-msgid "Cover fixed (Not fixed on iPhone)"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:304
-msgid "Parallax (Non-guaranteed)"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:319
-#: src/blocks/_pro/slider-item/edit.js:70
-#: src/blocks/pr-content/edit.js:219
-msgid "Layout Setting"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:322
-#: src/blocks/_pro/slider/edit.js:84
-msgid "Width"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:343
-#: src/blocks/_pro/slider/edit.js:101
-msgid "Full Wide"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:348
-#: src/blocks/_pro/slider-item/edit.js:75
-msgid "Padding (Left and Right)"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:352
-msgid "Fit to the Content area"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:359
-msgid "Add padding to the Outer area"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:366
-msgid "Remove padding from the Outer area"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:380
-msgid "Padding (Top and Bottom)"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:385
-msgid "Use default padding"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:392
-msgid "Do not use default padding"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:406
-msgid ""
-"* If you select \"Do not use\" that, please set yourself it such as a "
-"spacer block."
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:414
-msgid "Divider Setting"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:419
-#: src/blocks/balloon/edit.js:236
-msgid "Type"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:427
-msgid "Tilt"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:431
-msgid "Curve"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:435
-msgid "Wave"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:439
-#: src/extensions/core/list/style.js:113
-msgid "Triangle"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:445
-msgid "Upper Divider Level"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:470
-msgid "Lower Divider Level"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:496
-msgid "Border Setting"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:501
-msgid "Border will disappear when divider effect is applied."
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:507
-msgid "Border type"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:515
-#: src/blocks/_pro/step-item/edit.js:114
-#: src/blocks/_pro/timeline-item/edit.js:95
-#: src/blocks/balloon/edit.js:338
-#: src/blocks/staff/edit.js:103
-msgid "None"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:519
-#: src/blocks/_pro/step-item/edit.js:92
-#: src/blocks/_pro/timeline-item/edit.js:77
-#: src/blocks/pr-content/edit.js:137
-#: src/extensions/core/group/style.js:104
-msgid "Solid"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:523
-#: src/extensions/core/group/style.js:112
-msgid "Dotted"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:527
-#: src/extensions/core/group/style.js:116
-msgid "Dashed"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:531
-#: src/extensions/core/group/style.js:120
-msgid "Double"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:535
-msgid "Groove"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:539
-msgid "Ridge"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:543
-msgid "Inset"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:547
-msgid "Outset"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:561
-msgid "Border width"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:573
-msgid "Border radius"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:589
-msgid "Container Inner Space Setting"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:593
-msgid "Side Space"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:597
-#: src/components/advanced-viewport-control/index.js:25
-msgid "PC"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:612
-#: src/components/advanced-viewport-control/index.js:31
-msgid "Tablet"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:627
-msgid "Momile"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:642
-#: src/components/advanced-unit-control/index.js:12
-msgid "Unit Type"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:652
-#: src/components/advanced-unit-control/index.js:18
-msgid "px"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:656
-#: src/components/advanced-unit-control/index.js:22
-msgid "em"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:660
-#: src/components/advanced-unit-control/index.js:26
-msgid "rem"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:664
-#: src/components/advanced-unit-control/index.js:30
-msgid "vw"
-msgstr ""
-
-#: src/blocks/_pro/outer/index.js:17
-msgid "Outer"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:103
-msgid "Number of Posts"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:116
-msgid "Order"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:125
-msgid "ASC"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:129
-msgid "DESC"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:135
-msgid "Order by"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:144
-msgid "Published Date"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:148
-msgid "Modefied Date"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:156
-msgid "Random"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:162
-msgid "offset"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:77
-msgid "Filter by PostTypes"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:90
-msgid "Filter by Taxonomy Terms"
-msgstr ""
-
-#: src/blocks/_pro/post-list/index.js:20
-msgid "Post list"
-msgstr ""
-
-#: src/blocks/_pro/select-post-list-item/edit.js:24
-#: src/blocks/page-content/edit.js:35
-msgid "Because no post is selected, The block Will not render"
-msgstr ""
-
-#: src/blocks/_pro/select-post-list-item/edit.js:38
-msgid "Select Post List Item Setting"
-msgstr ""
-
-#: src/blocks/_pro/select-post-list-item/edit.js:42
-msgid "Input Internal Post URL"
-msgstr ""
-
-#: src/blocks/_pro/select-post-list-item/index.js:20
-msgid "Selected Post List Item"
-msgstr ""
-
-#: src/blocks/_pro/select-post-list/index.js:21
-msgid "Selected Post List"
-msgstr ""
-
-#: src/blocks/_pro/slider-item/edit.js:108
-msgid "Vertical align"
-msgstr ""
-
-#: src/blocks/_pro/slider-item/edit.js:155
-msgid "Background Image Size"
-msgstr ""
-
-#: src/blocks/_pro/slider-item/edit.js:162
-msgid "cover"
-msgstr ""
-
-#: src/blocks/_pro/slider-item/edit.js:166
-msgid "repeat"
-msgstr ""
-
-#: src/blocks/_pro/slider-item/edit.js:79
-msgid "Fit to the Container area"
-msgstr ""
-
-#: src/blocks/_pro/slider-item/edit.js:86
-msgid "Add padding to the Slider area"
-msgstr ""
-
-#: src/blocks/_pro/slider-item/edit.js:93
-msgid "Remove padding from the Slider area"
-msgstr ""
-
-#: src/blocks/_pro/slider-item/index.js:18
-msgid "Slider Item"
-msgstr ""
-
-#: src/blocks/_pro/slider/edit.js:107
-msgid "Height"
-msgstr ""
-
-#: src/blocks/_pro/slider/edit.js:126
-msgid "Slider Settings"
-msgstr ""
-
-#: src/blocks/_pro/slider/edit.js:130
-msgid "Effect "
-msgstr ""
-
-#: src/blocks/_pro/slider/edit.js:140
-msgid "Slide"
-msgstr ""
-
-#: src/blocks/_pro/slider/edit.js:144
-msgid "Fade"
-msgstr ""
-
-#: src/blocks/_pro/slider/edit.js:151
-msgid "Loop "
-msgstr ""
-
-#: src/blocks/_pro/slider/edit.js:161
-msgid "AutoPlay"
-msgstr ""
-
-#: src/blocks/_pro/slider/edit.js:170
-msgid "Display Time"
-msgstr ""
-
-#: src/blocks/_pro/slider/edit.js:181
-msgid "Change Speed"
-msgstr ""
-
-#: src/blocks/_pro/slider/edit.js:195
-msgid "Display Pagination"
-msgstr ""
-
-#: src/blocks/_pro/slider/index.js:21
-msgid "Slider"
-msgstr ""
-
-#: src/blocks/_pro/slider/index.js:23
-msgid "Slider is do not move in edit screen."
-msgstr ""
-
-#: src/blocks/_pro/step-item/edit.js:110
-#: src/blocks/_pro/table-of-contents-new/edit.js:130
-#: src/blocks/_pro/timeline-item/edit.js:91
-#: src/blocks/heading/edit.js:231
-#: src/blocks/staff/edit.js:99
-#: src/extensions/core/heading/style.js:30
-#: src/extensions/core/list/style.js:104
-msgid "Default"
-msgstr ""
-
-#: src/blocks/_pro/step-item/edit.js:54
-msgid "Step Mark"
-msgstr ""
-
-#: src/blocks/_pro/step-item/edit.js:58
-msgid "If Font Awesome tags entered, it will overrides the number."
-msgstr ""
-
-#: src/blocks/_pro/step-item/edit.js:72
-#: src/blocks/_pro/timeline-item/edit.js:50
-msgid "Ex,6:00AM"
-msgstr ""
-
-#: src/blocks/_pro/step-item/edit.js:76
-#: src/blocks/_pro/timeline-item/edit.js:53
-#: src/blocks/border-box/edit.js:48
-#: src/blocks/staff/edit.js:125
-msgid "Color"
-msgstr ""
-
-#: src/blocks/_pro/step-item/edit.js:82
-#: src/blocks/_pro/table-of-contents-new/edit.js:120
-#: src/blocks/_pro/timeline-item/edit.js:63
-msgid "Style"
-msgstr ""
-
-#: src/blocks/_pro/step-item/edit.js:96
-#: src/blocks/_pro/timeline-item/edit.js:73
-msgid "Outlined"
-msgstr ""
-
-#: src/blocks/_pro/step-item/index.js:18
-msgid "Step Item"
-msgstr ""
-
-#: src/blocks/_pro/step/edit.js:38
-msgid "First Dot Number"
-msgstr ""
-
-#: src/blocks/_pro/step/index.js:19
-msgid "Step"
-msgstr ""
-
-#: src/blocks/_pro/table-of-contents-new/deprecated/0.59.1/save.js:19
-#: src/blocks/_pro/table-of-contents-new/edit.js:163
-#: src/blocks/_pro/table-of-contents-new/index.js:17
-#: src/blocks/_pro/table-of-contents-new/save.js:16
-msgid "Table of Contents"
-msgstr ""
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:134
-msgid "No frame"
-msgstr ""
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:141
-msgid "Default Display Status"
-msgstr ""
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:149
-msgid "OPEN"
-msgstr ""
-
-#: src/blocks/_pro/table-of-contents-new/edit.js:153
-msgid "CLOSE"
-msgstr ""
-
-#: src/blocks/_pro/timeline-item/edit.js:46
-msgid "label"
-msgstr ""
-
-#: src/blocks/_pro/timeline-item/index.js:18
-msgid "Timeline Item"
-msgstr ""
-
-#: src/blocks/_pro/timeline/index.js:19
-msgid "Timeline"
-msgstr ""
-
 #: src/blocks/alert/edit.js:19
-#: src/blocks/heading/edit.js:222
 msgid "Style Settings"
 msgstr ""
 
 #: src/blocks/alert/edit.js:25
 #: src/blocks/button/edit.js:212
-#: src/blocks/pr-content/edit.js:158
 #: src/extensions/core/group/style.js:140
 msgid "Success"
 msgstr ""
 
 #: src/blocks/alert/edit.js:28
 #: src/blocks/button/edit.js:216
-#: src/blocks/pr-content/edit.js:161
 #: src/extensions/core/group/style.js:136
 msgid "Info"
 msgstr ""
 
 #: src/blocks/alert/edit.js:30
 #: src/blocks/button/edit.js:220
-#: src/blocks/pr-content/edit.js:163
 #: src/extensions/core/group/style.js:144
 msgid "Warning"
 msgstr ""
 
 #: src/blocks/alert/edit.js:34
 #: src/blocks/button/edit.js:224
-#: src/blocks/pr-content/edit.js:167
 #: src/extensions/core/group/style.js:148
 msgid "Danger"
 msgstr ""
@@ -915,7 +65,6 @@ msgid "Balloon setting"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:202
-#: src/blocks/heading/edit.js:333
 msgid "Position"
 msgstr ""
 
@@ -925,16 +74,16 @@ msgstr ""
 
 #: src/blocks/balloon/edit.js:219
 #: src/blocks/button/edit.js:119
-#: src/blocks/pr-content/edit.js:227
-#: src/components/display-items-control/index.js:121
 msgid "Left"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:231
 #: src/blocks/button/edit.js:139
-#: src/blocks/pr-content/edit.js:226
-#: src/components/display-items-control/index.js:129
 msgid "Right"
+msgstr ""
+
+#: src/blocks/balloon/edit.js:236
+msgid "Type"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:239
@@ -951,6 +100,13 @@ msgstr ""
 
 #: src/blocks/balloon/edit.js:265
 msgid "Image Style"
+msgstr ""
+
+#: src/blocks/balloon/edit.js:276
+#: src/blocks/button/edit.js:95
+#: src/blocks/faq/index.js:27
+#: src/blocks/faq2/index.js:22
+msgid "Normal"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:286
@@ -981,23 +137,31 @@ msgstr ""
 msgid "Please select the type of animation."
 msgstr ""
 
+#: src/blocks/balloon/edit.js:338
+msgid "None"
+msgstr ""
+
 #: src/blocks/balloon/edit.js:342
 msgid "Trembling"
 msgstr ""
 
+#: src/blocks/balloon/edit.js:346
+msgid "Trembling X"
+msgstr ""
+
+#: src/blocks/balloon/edit.js:350
+msgid "Pounding"
+msgstr ""
+
+#: src/blocks/balloon/edit.js:354
+msgid "Shaking"
+msgstr ""
+
+#: src/blocks/balloon/edit.js:379
+msgid "Select image"
+msgstr ""
+
 #: src/blocks/balloon/edit.js:387
-#: src/blocks/flow/edit.js:87
-#: src/blocks/pr-blocks/edit.js:82
-#: src/blocks/pr-content/deprecated/0.0.0/save.js:135
-#: src/blocks/pr-content/deprecated/0.0.1/save.js:117
-#: src/blocks/pr-content/deprecated/0.0.2/save.js:214
-#: src/blocks/pr-content/deprecated/0.0.3/component.js:185
-#: src/blocks/pr-content/deprecated/0.43.0/save.js:185
-#: src/blocks/pr-content/deprecated/0.5.1/save.js:121
-#: src/blocks/pr-content/deprecated/0.56.3/component.js:163
-#: src/blocks/pr-content/deprecated/0.58.7/component.js:178
-#: src/blocks/pr-content/deprecated/0.58.9/component.js:178
-#: src/blocks/pr-content/mediaUpload.js:130
 msgid "Upload image"
 msgstr ""
 
@@ -1007,54 +171,6 @@ msgstr ""
 
 #: src/blocks/balloon/index.js:24
 msgid "Ballon"
-msgstr ""
-
-#: src/blocks/border-box/deprecated/0.0.0/save.js:24
-#: src/blocks/border-box/deprecated/0.0.1/save.js:25
-#: src/blocks/border-box/edit.js:23
-msgid "Please enter a title."
-msgstr ""
-
-#: src/blocks/border-box/edit.js:104
-#: src/utils/font-awesome-new.js:14
-msgid "Icon"
-msgstr ""
-
-#: src/blocks/border-box/edit.js:51
-#: src/extensions/core/group/style.js:47
-msgid "Border Color"
-msgstr ""
-
-#: src/blocks/border-box/edit.js:61
-msgid "Red"
-msgstr ""
-
-#: src/blocks/border-box/edit.js:65
-msgid "Orange"
-msgstr ""
-
-#: src/blocks/border-box/edit.js:69
-msgid "Blue"
-msgstr ""
-
-#: src/blocks/border-box/edit.js:73
-msgid "Green"
-msgstr ""
-
-#: src/blocks/border-box/edit.js:77
-msgid "Black"
-msgstr ""
-
-#: src/blocks/border-box/edit.js:84
-msgid "Background Color"
-msgstr ""
-
-#: src/blocks/border-box/edit.js:94
-msgid "Transparent"
-msgstr ""
-
-#: src/blocks/border-box/edit.js:98
-msgid "White"
 msgstr ""
 
 #: src/blocks/border-box/index.js:19
@@ -1094,7 +210,6 @@ msgid "Button Position:"
 msgstr ""
 
 #: src/blocks/button/edit.js:129
-#: src/components/display-items-control/index.js:125
 msgid "Center"
 msgstr ""
 
@@ -1110,6 +225,14 @@ msgstr ""
 msgid "Button Style:"
 msgstr ""
 
+#: src/blocks/button/edit.js:173
+msgid "Solid color"
+msgstr ""
+
+#: src/blocks/button/edit.js:181
+msgid "No background"
+msgstr ""
+
 #: src/blocks/button/edit.js:189
 msgid "Text only"
 msgstr ""
@@ -1119,27 +242,22 @@ msgid "If you select \"No background\", that you need to select a Custom Color."
 msgstr ""
 
 #: src/blocks/button/edit.js:200
-#: src/blocks/pr-content/edit.js:146
 msgid "Default Color:"
 msgstr ""
 
 #: src/blocks/button/edit.js:204
-#: src/blocks/pr-content/edit.js:150
 msgid "Primary"
 msgstr ""
 
 #: src/blocks/button/edit.js:208
-#: src/blocks/pr-content/edit.js:154
 msgid "Secondary"
 msgstr ""
 
 #: src/blocks/button/edit.js:228
-#: src/blocks/pr-content/edit.js:170
 msgid "Light"
 msgstr ""
 
 #: src/blocks/button/edit.js:232
-#: src/blocks/pr-content/edit.js:171
 msgid "Dark"
 msgstr ""
 
@@ -1153,15 +271,15 @@ msgid ""
 "default color, click the clear button."
 msgstr ""
 
+#: src/blocks/button/edit.js:258
+msgid "Icon ( Font Awesome )"
+msgstr ""
+
 #: src/blocks/button/edit.js:262
-#: src/blocks/heading/edit.js:300
-#: src/blocks/pr-content/edit.js:194
 msgid "Before text"
 msgstr ""
 
 #: src/blocks/button/edit.js:271
-#: src/blocks/heading/edit.js:309
-#: src/blocks/pr-content/edit.js:206
 msgid "After text"
 msgstr ""
 
@@ -1181,6 +299,10 @@ msgstr ""
 msgid "Button URL"
 msgstr ""
 
+#: src/blocks/button/edit.js:70
+msgid "Open link new tab."
+msgstr ""
+
 #: src/blocks/button/edit.js:78
 msgid "Button Size:"
 msgstr ""
@@ -1189,25 +311,8 @@ msgstr ""
 msgid "Large"
 msgstr ""
 
-#: src/blocks/faq/edit.js:14
-#: src/blocks/faq2/edit.js:17
-msgid ""
-"If you want to be collapsing this block, you can set it at Setting > VK "
-"Blocks"
-msgstr ""
-
-#: src/blocks/faq/edit.js:19
-#: src/blocks/faq2/edit.js:22
-msgid "You can be collapsing this block at VK Blocks Pro"
-msgstr ""
-
-#: src/blocks/faq/edit.js:34
-#: src/blocks/faq2/edit.js:31
-msgid "Accordion Setting"
-msgstr ""
-
-#: src/blocks/faq/edit.js:44
-msgid "Please enter a question."
+#: src/blocks/button/index.js:18
+msgid "Button"
 msgstr ""
 
 #: src/blocks/faq/index.js:22
@@ -1256,454 +361,32 @@ msgstr ""
 msgid "New FAQ"
 msgstr ""
 
-#: src/blocks/flow/edit.js:20
-msgid "Display of arrow"
-msgstr ""
-
-#: src/blocks/flow/edit.js:25
-msgid "Arrow display"
-msgstr ""
-
-#: src/blocks/flow/edit.js:29
-msgid "Arrow hidden"
-msgstr ""
-
-#: src/blocks/flow/edit.js:51
-msgid "Input title"
-msgstr ""
-
-#: src/blocks/flow/edit.js:61
-msgid "Input content"
-msgstr ""
-
 #: src/blocks/flow/index.js:19
 msgid "Flow"
-msgstr ""
-
-#: src/blocks/heading/deprecated/0.24.1/component.js:117
-#: src/blocks/heading/deprecated/0.24.4/component.js:80
-#: src/blocks/heading/deprecated/0.24.5/component.js:117
-#: src/blocks/heading/deprecated/0.24.6/component.js:117
-#: src/blocks/heading/deprecated/0.24.7/component.js:117
-#: src/blocks/heading/deprecated/0.37.1/component.js:122
-#: src/blocks/heading/deprecated/0.39.5/component.js:152
-#: src/blocks/heading/deprecated/0.40.0/component.js:152
-#: src/blocks/heading/deprecated/0.40.1/component.js:152
-#: src/blocks/heading/deprecated/0.60.1/component.js:152
-#: src/blocks/heading/edit.js:196
-msgid "Input sub text…"
-msgstr ""
-
-#: src/blocks/heading/deprecated/0.24.1/component.js:98
-#: src/blocks/heading/deprecated/0.24.4/component.js:61
-#: src/blocks/heading/deprecated/0.24.5/component.js:98
-#: src/blocks/heading/deprecated/0.24.6/component.js:98
-#: src/blocks/heading/deprecated/0.24.7/component.js:98
-#: src/blocks/heading/deprecated/0.37.1/component.js:109
-#: src/blocks/heading/deprecated/0.39.5/component.js:137
-#: src/blocks/heading/deprecated/0.40.0/component.js:137
-#: src/blocks/heading/deprecated/0.40.1/component.js:137
-#: src/blocks/heading/deprecated/0.60.1/component.js:137
-#: src/blocks/heading/edit.js:181
-msgid "Input title…"
-msgstr ""
-
-#: src/blocks/heading/edit.js:224
-msgid "Heading style"
-msgstr ""
-
-#: src/blocks/heading/edit.js:235
-#: src/extensions/core/heading/style.js:35
-msgid "Plain"
-msgstr ""
-
-#: src/blocks/heading/edit.js:241
-msgid "Margin Setting"
-msgstr ""
-
-#: src/blocks/heading/edit.js:243
-msgid "Margin bottom size of after hedding (rem)"
-msgstr ""
-
-#: src/blocks/heading/edit.js:258
-msgid "Margin bottom size of after this block (rem)"
-msgstr ""
-
-#: src/blocks/heading/edit.js:273
-msgid "Heading Settings"
-msgstr ""
-
-#: src/blocks/heading/edit.js:285
-msgid "Text Color"
-msgstr ""
-
-#: src/blocks/heading/edit.js:297
-msgid "Font Awesome Icon Settings"
-msgstr ""
-
-#: src/blocks/heading/edit.js:318
-msgid "Icon Color"
-msgstr ""
-
-#: src/blocks/heading/edit.js:331
-msgid "Sub Text Settings"
-msgstr ""
-
-#: src/blocks/heading/edit.js:337
-msgid "Display"
-msgstr ""
-
-#: src/blocks/heading/edit.js:341
-msgid "Hide"
-msgstr ""
-
-#: src/blocks/heading/edit.js:349
-msgid "Text size (rem)"
-msgstr ""
-
-#: src/blocks/heading/heading-level-dropdown.js:53
-msgid "Change heading level"
-msgstr ""
-
-#: src/blocks/heading/heading-level-dropdown.js:68
-#. %s: heading level e.g: "1", "2", "3"
-msgid "Heading %d"
 msgstr ""
 
 #: src/blocks/heading/index.js:19
 msgid "Heading"
 msgstr ""
 
-#: src/blocks/page-content/edit.js:10
-msgid "Unspecified"
-msgstr ""
-
-#: src/blocks/page-content/edit.js:56
-msgid "Page Setting"
-msgstr ""
-
-#: src/blocks/page-content/edit.js:61
-msgid "Select Page"
-msgstr ""
-
 #: src/blocks/page-content/index.js:12
 msgid "Page Content"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:101
-msgid "PR Block1 Setting"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:119
-msgid "Icon 1"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:154
-msgid "When you have an image. Image is displayed with priority"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:160
-msgid "PR Image 1"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:181
-msgid "PR Block2 Setting"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:199
-msgid "Icon 2"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:240
-msgid "PR Image 2"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:261
-msgid "PR Block3 Setting"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:279
-msgid "Icon 3"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:314
-msgid "When you have an image. Image is displayed with priority."
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:320
-msgid "PR Image 3"
 msgstr ""
 
 #: src/blocks/pr-blocks/index.js:24
 msgid "PR Blocks"
 msgstr ""
 
-#: src/blocks/pr-content/deprecated/0.0.0/save.js:152
-#: src/blocks/pr-content/deprecated/0.0.1/save.js:134
-#: src/blocks/pr-content/deprecated/0.0.2/save.js:251
-#: src/blocks/pr-content/deprecated/0.0.3/component.js:222
-#: src/blocks/pr-content/deprecated/0.43.0/save.js:222
-#: src/blocks/pr-content/deprecated/0.5.1/save.js:138
-#: src/blocks/pr-content/deprecated/0.56.3/component.js:197
-#: src/blocks/pr-content/deprecated/0.58.7/component.js:215
-#: src/blocks/pr-content/deprecated/0.58.9/component.js:215
-#: src/blocks/pr-content/edit.js:247
-msgid "Input title."
-msgstr ""
-
-#: src/blocks/pr-content/deprecated/0.0.0/save.js:165
-#: src/blocks/pr-content/deprecated/0.0.1/save.js:147
-#: src/blocks/pr-content/deprecated/0.0.2/save.js:264
-#: src/blocks/pr-content/deprecated/0.0.3/component.js:235
-#: src/blocks/pr-content/deprecated/0.43.0/save.js:235
-#: src/blocks/pr-content/deprecated/0.5.1/save.js:151
-#: src/blocks/pr-content/deprecated/0.56.3/component.js:205
-#: src/blocks/pr-content/deprecated/0.58.7/component.js:228
-#: src/blocks/pr-content/deprecated/0.58.9/component.js:228
-#: src/blocks/pr-content/edit.js:255
-msgid "Input content."
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:103
-msgid "Button Text"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:115
-msgid "Link URL"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:132
-msgid "Button Type"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:138
-msgid "Ghost"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:179
-msgid "Button Color"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:223
-msgid "Layout Type"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:65
-msgid "Title Color"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:76
-msgid "Content Color"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:87
-msgid "Image Border Color"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:98
-msgid "Button Setting"
-msgstr ""
-
 #: src/blocks/pr-content/index.js:26
 msgid "PR Content"
-msgstr ""
-
-#: src/blocks/pr-content/mediaUpload.js:120
-msgid "Select Image"
-msgstr ""
-
-#: src/blocks/spacer/advanced-spacer-control.js:15
-msgid "height"
-msgstr ""
-
-#: src/blocks/spacer/advanced-spacer-control.js:19
-msgid "margin-top"
-msgstr ""
-
-#: src/blocks/spacer/advanced-spacer-control.js:9
-msgid "Space Type"
-msgstr ""
-
-#: src/blocks/spacer/edit.js:50
-msgid "Height for each device."
 msgstr ""
 
 #: src/blocks/spacer/index.js:24
 msgid "Responsive Spacer"
 msgstr ""
 
-#: src/blocks/staff/deprecated/component.js:41
-#: src/blocks/staff/edit.js:208
-msgid "Your Name"
-msgstr ""
-
-#: src/blocks/staff/deprecated/component.js:49
-#: src/blocks/staff/edit.js:218
-msgid "Caption"
-msgstr ""
-
-#: src/blocks/staff/deprecated/component.js:57
-#: src/blocks/staff/edit.js:228
-msgid "Role position"
-msgstr ""
-
-#: src/blocks/staff/deprecated/component.js:65
-#: src/blocks/staff/edit.js:238
-msgid "Profile title"
-msgstr ""
-
-#: src/blocks/staff/deprecated/component.js:73
-#: src/blocks/staff/edit.js:251
-msgid "Profile text"
-msgstr ""
-
-#: src/blocks/staff/edit.js:108
-msgid "Alt text"
-msgstr ""
-
-#: src/blocks/staff/edit.js:110
-msgid "Set the alt text for profile image"
-msgstr ""
-
-#: src/blocks/staff/edit.js:128
-msgid "Staff name"
-msgstr ""
-
-#: src/blocks/staff/edit.js:141
-msgid "Name caption"
-msgstr ""
-
-#: src/blocks/staff/edit.js:71
-msgid "Layout"
-msgstr ""
-
-#: src/blocks/staff/edit.js:84
-msgid "Image left"
-msgstr ""
-
-#: src/blocks/staff/edit.js:89
-msgid "Image border"
-msgstr ""
-
 #: src/blocks/staff/index.js:33
 msgid "Staff"
-msgstr ""
-
-#: src/components/advanced-viewport-control/index.js:39
-msgid "Mobile"
-msgstr ""
-
-#: src/components/card-align-control/index.js:24
-#. %s is align.
-msgid "Align %s"
-msgstr ""
-
-#: src/components/column-layout-control/index.js:20
-msgid "Card (Image Round)"
-msgstr ""
-
-#: src/components/column-layout-control/index.js:30
-msgid "Card (No border)"
-msgstr ""
-
-#: src/components/column-layout-control/index.js:34
-msgid "Card (Intext)"
-msgstr ""
-
-#: src/components/column-layout-control/index.js:38
-msgid "Card (Horizontal)"
-msgstr ""
-
-#: src/components/column-layout-control/index.js:42
-msgid "Media"
-msgstr ""
-
-#: src/components/column-layout-control/index.js:46
-msgid "Text 1 Column"
-msgstr ""
-
-#: src/components/column-layout-control/index.js:65
-msgid "Display type and columns"
-msgstr ""
-
-#: src/components/column-layout-control/index.js:69
-msgid "Display type"
-msgstr ""
-
-#: src/components/column-layout/index.js:100
-msgid "Column ( Screen size : Extra large )"
-msgstr ""
-
-#: src/components/column-layout/index.js:116
-msgid "Column ( Screen size : XX large )"
-msgstr ""
-
-#: src/components/column-layout/index.js:36
-msgid "Column ( Screen size : Extra small )"
-msgstr ""
-
-#: src/components/column-layout/index.js:52
-msgid "Column ( Screen size : Small )"
-msgstr ""
-
-#: src/components/column-layout/index.js:68
-msgid "Column ( Screen size : Medium )"
-msgstr ""
-
-#: src/components/column-layout/index.js:84
-msgid "Column ( Screen size : Large )"
-msgstr ""
-
-#: src/components/display-items-control/index.js:112
-msgid "Button align"
-msgstr ""
-
-#: src/components/display-items-control/index.js:37
-msgid "Term name"
-msgstr ""
-
-#: src/components/display-items-control/index.js:44
-msgid "Excerpt"
-msgstr ""
-
-#: src/components/display-items-control/index.js:51
-msgid "Author"
-msgstr ""
-
-#: src/components/display-items-control/index.js:58
-msgid "Date"
-msgstr ""
-
-#: src/components/display-items-control/index.js:64
-msgid "New mark"
-msgstr ""
-
-#: src/components/display-items-control/index.js:70
-msgid "Taxonomies"
-msgstr ""
-
-#: src/components/display-items-control/index.js:82
-msgid "New mark option"
-msgstr ""
-
-#: src/components/display-items-control/index.js:84
-msgid "Number of days to display the new post mark"
-msgstr ""
-
-#: src/components/display-items-control/index.js:93
-msgid "New post mark"
-msgstr ""
-
-#: src/components/link-control/index.js:37
-msgid "Link target"
-msgstr ""
-
-#: src/components/link-control/index.js:41
-msgid "Open in new tab"
-msgstr ""
-
-#: src/components/link-control/index.js:46
-msgid "Link rel"
 msgstr ""
 
 #: src/extensions/common/hidden-extension/index.js:123
@@ -1775,8 +458,24 @@ msgstr ""
 msgid "Responsive BR "
 msgstr ""
 
+#: src/extensions/core/group/style.js:104
+msgid "Solid"
+msgstr ""
+
 #: src/extensions/core/group/style.js:108
 msgid "Solid Roundcorner"
+msgstr ""
+
+#: src/extensions/core/group/style.js:112
+msgid "Dotted"
+msgstr ""
+
+#: src/extensions/core/group/style.js:116
+msgid "Dashed"
+msgstr ""
+
+#: src/extensions/core/group/style.js:120
+msgid "Double"
 msgstr ""
 
 #: src/extensions/core/group/style.js:124
@@ -1792,12 +491,25 @@ msgstr ""
 msgid "Shadow"
 msgstr ""
 
+#: src/extensions/core/group/style.js:47
+msgid "Border Color"
+msgstr ""
+
 #: src/extensions/core/heading/style.js:103
 msgid "Both ends"
 msgstr ""
 
 #: src/extensions/core/heading/style.js:123
 msgid "Brackets black"
+msgstr ""
+
+#: src/extensions/core/heading/style.js:30
+#: src/extensions/core/list/style.js:104
+msgid "Default"
+msgstr ""
+
+#: src/extensions/core/heading/style.js:35
+msgid "Plain"
 msgstr ""
 
 #: src/extensions/core/heading/style.js:51
@@ -1860,6 +572,10 @@ msgstr ""
 msgid "Arrow"
 msgstr ""
 
+#: src/extensions/core/list/style.js:113
+msgid "Triangle"
+msgstr ""
+
 #: src/extensions/core/list/style.js:117
 msgid "Check"
 msgstr ""
@@ -1920,25 +636,12 @@ msgstr ""
 msgid "Lorem ipsum dolor"
 msgstr ""
 
+#: src/utils/example-data.js:3
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolore magna aliqua. "
+msgstr ""
+
 #: src/utils/example-data.js:7
 msgid "Lorem ipsum"
-msgstr ""
-
-#: src/utils/font-awesome-new.js:193
-msgid ""
-"If you want to use an icon other than the ones listed above, you can use "
-"any of the icons from Font Awesome's icon list Please select a tag and "
-"enter it."
-msgstr ""
-
-#: src/utils/font-awesome-new.js:198
-msgid "Ex) <i class=\"fas fa-arrow-circle-right\"></i>"
-msgstr ""
-
-#: src/utils/font-awesome-new.js:207
-msgid "Font Awesome icon list"
-msgstr ""
-
-#: src/utils/font-awesome-new.js:222
-msgid "Select Icon"
 msgstr ""

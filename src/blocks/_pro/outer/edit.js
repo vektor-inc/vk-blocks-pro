@@ -169,43 +169,6 @@ export default function OuterEdit(props) {
 			borderRadius: `0px`,
 		};
 	}
-	if (innerSideSpaceValueMobile !== 0 && innerSideSpaceUnit !== undefined) {
-		OuterInlineStylePC = `
-			.${containerClass} {
-				paddingLeft: ${innerSideSpaceValueMobile}${innerSideSpaceUnit};
-				paddingRight: ${innerSideSpaceValueMobile}${innerSideSpaceUnit};
-			}
-		`;
-	}
-	if (innerSideSpaceValueTablet !== 0 && innerSideSpaceUnit !== undefined) {
-		OuterInlineStyleTablet =
-			@media and (minWidth:577px) {
-				.${containerClass} {
-					paddingLeft: ${innerSideSpaceValueTablet}${innerSideSpaceUnit};
-					paddingRight: ${innerSideSpaceValueTablet}${innerSideSpaceUnit};
-				}
-			}
-		;
-	}
-	if (innerSideSpaceValuePC !== 0 && innerSideSpaceUnit !== undefined) {
-		OuterInlineStyleMobile = `
-			@media and (min-width:769px) {
-				.${containerClass} {
-					paddingLeft: ${innerSideSpaceValuePC}${innerSideSpaceUnit};
-					paddingRight: ${innerSideSpaceValuePC}${innerSideSpaceUnit};
-				}
-			}
-		`;
-	}
-
-	let OuterInlineStyle = (
-
-	<style>
-		{OuterInlineStylePC}
-
-	</style>);
-
-
 
 	const blockProps = useBlockProps({
 		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
@@ -698,7 +661,6 @@ export default function OuterEdit(props) {
 					)}
 				</div>
 			</div>
-			{OuterInlineStyle}
 		</>
 	);
 }

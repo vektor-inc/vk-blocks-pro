@@ -19,10 +19,6 @@ export default function save(props) {
 		borderColor,
 		borderRadius,
 		clientId,
-		innerSideSpaceValuePC,
-		innerSideSpaceValueTablet,
-		innerSideSpaceValueMobile,
-		innerSideSpaceUnit,
 	} = attributes;
 
 	let classPaddingLR;
@@ -104,37 +100,6 @@ export default function save(props) {
 		};
 	}
 
-	let OuterInlineStyle = '<style>';
-	if (innerSideSpaceValueMobile !== 0 && innerSideSpaceUnit !== undefined) {
-		OuterInlineStyle += `
-			.${containerClass} {
-				paddingLeft: ${innerSideSpaceValueMobile}${innerSideSpaceUnit};
-				paddingRight: ${innerSideSpaceValueMobile}${innerSideSpaceUnit};
-			}
-		`;
-	}
-	if (innerSideSpaceValueTablet !== 0 && innerSideSpaceUnit !== undefined) {
-		OuterInlineStyle += `
-			@media and (min-width:577px) {
-				.${containerClass} {
-					paddingLeft: ${innerSideSpaceValueTablet}${innerSideSpaceUnit};
-					paddingRight: ${innerSideSpaceValueTablet}${innerSideSpaceUnit};
-				}
-			}
-		`;
-	}
-	if (innerSideSpaceValuePC !== 0 && innerSideSpaceUnit !== undefined) {
-		OuterInlineStyle += `
-			@media and (min-width:769px) {
-				.${containerClass} {
-					paddingLeft: ${innerSideSpaceValuePC}${innerSideSpaceUnit};
-					paddingRight: ${innerSideSpaceValuePC}${innerSideSpaceUnit};
-				}
-			}
-		`;
-	}
-	OuterInlineStyle += '</style>';
-
 	const blockProps = useBlockProps.save({
 		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 	});
@@ -164,7 +129,6 @@ export default function save(props) {
 					)}
 				</div>
 			</div>
-			{OuterInlineStyle}
 		</>
 	);
 }

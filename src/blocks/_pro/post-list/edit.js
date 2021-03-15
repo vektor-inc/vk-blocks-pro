@@ -72,10 +72,10 @@ export default function PostListEdit(props) {
 	const terms = useTermsGroupbyTaxnomy(taxonomies);
 
 	// key を BaseControlのlabelに代入。valueの配列をmapでAdvancedCheckboxControlに渡す
-	const taxonomiesCheckBox = Object.keys(terms).map(function(
+	const taxonomiesCheckBox = Object.keys(terms).map(function (
 		taxonomy,
-		index,
-	){
+		index
+	) {
 		const taxonomiesProps = this[taxonomy].map((term) => {
 			return {
 				label: term.name,
@@ -102,7 +102,8 @@ export default function PostListEdit(props) {
 				/>
 			</BaseControl>
 		);
-	},terms);
+	},
+	terms);
 
 	const blockProps = useBlockProps();
 

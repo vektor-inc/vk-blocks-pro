@@ -1,5 +1,4 @@
 import { CheckboxControl } from '@wordpress/components';
-import { useState } from '@wordpress/element';
 import { destructiveDeleteFromArray } from '@vkblocks/utils/delete-from-array';
 
 const advancedSetAttributes = (schema, saveData, setAttributes) => {
@@ -7,8 +6,7 @@ const advancedSetAttributes = (schema, saveData, setAttributes) => {
 };
 
 export const AdvancedCheckboxControl = (props) => {
-	const { schema, rawData, checkedData, setAttributes } = props;
-	const [checkedState, setCheckedState] = useState(checkedData);
+	const { schema, rawData, checkedData, setAttributes, saveState } = props;
 
 	if (!rawData || !checkedData) return false;
 
@@ -17,18 +15,17 @@ export const AdvancedCheckboxControl = (props) => {
 			<CheckboxControl
 				key={data.slug}
 				label={data.label}
-				checked={checkedState.some((item) => item === data.slug)}
+				checked={checkedData.some((item) => item === data.slug)}
 				onChange={(value) => {
 					if (value) {
-						checkedState.push(data.slug);
+						saveState(data.slug);
 					} else {
-						destructiveDeleteFromArray(checkedState, data.slug);
+						destructiveDeleteFromArray(checkedData, data.slug);
 					}
-					setCheckedState(checkedState);
 					advancedSetAttributes.bind(
 						null,
 						schema,
-						checkedState,
+						checkedData,
 						setAttributes
 					)();
 				}}

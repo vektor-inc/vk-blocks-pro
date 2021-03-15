@@ -17,7 +17,7 @@ add_action(
 	'plugins_loaded',
 	function () {
 		// Load language files.
-		$path = dirname( plugin_basename( __FILE__ ) ) . '/build/languages';
+		$path = dirname( plugin_basename( __FILE__ ) ) . '/languages';
 		load_plugin_textdomain( 'vk-blocks', false, $path );
 	}
 );

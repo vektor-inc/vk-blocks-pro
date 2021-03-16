@@ -11,7 +11,11 @@
 			margin: 0 8px .8em 0;
 		}
 	}
-	//Twenty Twentyテーマ用
+	//他テーマ（Twenty Twenty）上書き用
+	.editor-styles-wrapper .wp-block-image figcaption{
+		display: block;
+	}
+	//他テーマ（Twenty Twenty）上書き用
 	.editor-styles-wrapper ul li{ 
 		margin-bottom:calc( var(--vk-size-text) * 0.8 );
 	}

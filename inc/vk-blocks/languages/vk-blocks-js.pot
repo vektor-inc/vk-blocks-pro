@@ -1765,6 +1765,10 @@ msgstr ""
 msgid "Nowrap"
 msgstr ""
 
+#: src/extensions/common/responsive-br/index.js:41
+msgid "Responsive BR"
+msgstr ""
+
 #: src/extensions/common/responsive-br/index.js:45
 msgid "Responsive BR "
 msgstr ""

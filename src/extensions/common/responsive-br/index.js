@@ -2,7 +2,7 @@ import { ReactComponent as Icon } from './icon.svg';
 import { __ } from '@wordpress/i18n';
 import { registerFormatType, insert } from '@wordpress/rich-text';
 import { BlockControls } from '@wordpress/block-editor';
-import { Toolbar, DropdownMenu } from '@wordpress/components';
+import { ToolbarGroup, DropdownMenu } from '@wordpress/components';
 
 const breakPoints = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'];
 
@@ -20,7 +20,7 @@ registerFormatType(`vk-blocks/responsive-br`, {
 
 		return (
 			<BlockControls>
-				<Toolbar label="Options">
+				<ToolbarGroup>
 					<DropdownMenu
 						icon={
 							<svg
@@ -38,7 +38,7 @@ registerFormatType(`vk-blocks/responsive-br`, {
 								/>
 							</svg>
 						}
-						label={__(`Responsive BR `, 'vk-blocks')}
+						label={__(`Responsive BR`, 'vk-blocks')}
 						controls={breakPoints.map((breakPoint) => {
 							return {
 								title:
@@ -51,7 +51,7 @@ registerFormatType(`vk-blocks/responsive-br`, {
 							};
 						})}
 					/>
-				</Toolbar>
+				</ToolbarGroup>
 			</BlockControls>
 		);
 	},

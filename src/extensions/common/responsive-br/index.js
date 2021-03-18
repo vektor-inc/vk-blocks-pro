@@ -38,7 +38,7 @@ registerFormatType(`vk-blocks/responsive-br`, {
 								/>
 							</svg>
 						}
-						label="Select a direction"
+						label={__(`Responsive BR `, 'vk-blocks')}
 						controls={breakPoints.map((breakPoint) => {
 							return {
 								title:

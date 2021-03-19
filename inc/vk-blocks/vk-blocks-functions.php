@@ -28,7 +28,7 @@ add_action(
 add_filter(
 	'body_class',
 	function( $class ) {
-		$class[] = 'vk-blocks-body';
+		$class[] = 'vk-blocks';
 		return $class;
 	}
 );

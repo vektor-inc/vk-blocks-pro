@@ -20,7 +20,7 @@ msgid "Short"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:123
-#: src/blocks/_pro/outer/edit.js:259
+#: src/blocks/_pro/outer/edit.js:302
 #: src/blocks/_pro/slider/edit.js:93
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95
@@ -122,7 +122,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/edit.js:182
 #: src/blocks/_pro/card/edit.js:121
 #: src/blocks/_pro/icon-card/edit.js:72
-#: src/blocks/_pro/post-list/edit.js:152
+#: src/blocks/_pro/post-list/edit.js:180
 msgid "Title"
 msgstr ""
 
@@ -235,7 +235,7 @@ msgid "Current page"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:63
-#: src/blocks/_pro/post-list/edit.js:73
+#: src/blocks/_pro/post-list/edit.js:114
 msgid "Display conditions"
 msgstr ""
 
@@ -244,7 +244,7 @@ msgid "Parent"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:82
-#: src/blocks/_pro/post-list/edit.js:176
+#: src/blocks/_pro/post-list/edit.js:204
 msgid "Ignore this post"
 msgstr ""
 
@@ -350,162 +350,162 @@ msgstr ""
 msgid "Icon Card"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:138
+#: src/blocks/_pro/outer/edit.js:181
 #: src/blocks/_pro/slider-item/edit.js:122
 msgid "Background Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:143
+#: src/blocks/_pro/outer/edit.js:186
 #: src/blocks/_pro/slider-item/edit.js:126
 #: src/blocks/pr-content/edit.js:60
 msgid "Color Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:144
+#: src/blocks/_pro/outer/edit.js:187
 #: src/blocks/_pro/slider-item/edit.js:128
 msgid ""
 "Color will overcome background image. If you want to display image, clear "
 "background color or set opacity 0."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:157
+#: src/blocks/_pro/outer/edit.js:200
 #: src/blocks/_pro/slider-item/edit.js:141
 msgid "Opacity Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:171
+#: src/blocks/_pro/outer/edit.js:214
 #: src/blocks/_pro/slider-item/edit.js:176
 msgid "Background Image PC"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:187
+#: src/blocks/_pro/outer/edit.js:230
 #: src/blocks/_pro/slider-item/edit.js:192
 msgid "Background Image Tablet"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:197
+#: src/blocks/_pro/outer/edit.js:240
 #: src/blocks/_pro/slider-item/edit.js:202
 msgid "Background Image Mobile"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:207
+#: src/blocks/_pro/outer/edit.js:250
 msgid "Background image Position"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:215
+#: src/blocks/_pro/outer/edit.js:258
 msgid "Repeat"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:219
+#: src/blocks/_pro/outer/edit.js:262
 msgid "Cover"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:223
+#: src/blocks/_pro/outer/edit.js:266
 msgid "Cover fixed (Not fixed on iPhone)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:230
+#: src/blocks/_pro/outer/edit.js:273
 msgid "Parallax (Non-guaranteed)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:245
+#: src/blocks/_pro/outer/edit.js:288
 #: src/blocks/_pro/slider-item/edit.js:70
 #: src/blocks/pr-content/edit.js:219
 msgid "Layout Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:248
+#: src/blocks/_pro/outer/edit.js:291
 #: src/blocks/_pro/slider/edit.js:84
 msgid "Width"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:269
+#: src/blocks/_pro/outer/edit.js:312
 #: src/blocks/_pro/slider/edit.js:101
 msgid "Full Wide"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:274
+#: src/blocks/_pro/outer/edit.js:317
 #: src/blocks/_pro/slider-item/edit.js:75
 msgid "Padding (Left and Right)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:278
+#: src/blocks/_pro/outer/edit.js:321
 msgid "Fit to the Content area"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:285
+#: src/blocks/_pro/outer/edit.js:328
 msgid "Add padding to the Outer area"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:292
+#: src/blocks/_pro/outer/edit.js:335
 msgid "Remove padding from the Outer area"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:306
+#: src/blocks/_pro/outer/edit.js:349
 msgid "Padding (Top and Bottom)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:311
+#: src/blocks/_pro/outer/edit.js:354
 msgid "Use default padding"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:318
+#: src/blocks/_pro/outer/edit.js:361
 msgid "Do not use default padding"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:332
+#: src/blocks/_pro/outer/edit.js:375
 msgid ""
 "* If you select \"Do not use\" that, please set yourself it such as a "
 "spacer block."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:340
+#: src/blocks/_pro/outer/edit.js:383
 msgid "Divider Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:345
+#: src/blocks/_pro/outer/edit.js:388
 #: src/blocks/balloon/edit.js:236
 msgid "Type"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:353
+#: src/blocks/_pro/outer/edit.js:396
 msgid "Tilt"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:357
+#: src/blocks/_pro/outer/edit.js:400
 msgid "Curve"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:361
+#: src/blocks/_pro/outer/edit.js:404
 msgid "Wave"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:365
+#: src/blocks/_pro/outer/edit.js:408
 #: src/extensions/core/list/style.js:113
 msgid "Triangle"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:371
+#: src/blocks/_pro/outer/edit.js:414
 msgid "Upper Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:396
+#: src/blocks/_pro/outer/edit.js:439
 msgid "Lower Divider Level"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:422
+#: src/blocks/_pro/outer/edit.js:465
 msgid "Border Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:427
+#: src/blocks/_pro/outer/edit.js:470
 msgid "Border will disappear when divider effect is applied."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:433
+#: src/blocks/_pro/outer/edit.js:476
 msgid "Border type"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:441
+#: src/blocks/_pro/outer/edit.js:484
 #: src/blocks/_pro/step-item/edit.js:114
 #: src/blocks/_pro/timeline-item/edit.js:95
 #: src/blocks/balloon/edit.js:338
@@ -513,7 +513,7 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:445
+#: src/blocks/_pro/outer/edit.js:488
 #: src/blocks/_pro/step-item/edit.js:92
 #: src/blocks/_pro/timeline-item/edit.js:77
 #: src/blocks/pr-content/edit.js:137
@@ -521,91 +521,136 @@ msgstr ""
 msgid "Solid"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:449
+#: src/blocks/_pro/outer/edit.js:492
 #: src/extensions/core/group/style.js:112
 msgid "Dotted"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:453
+#: src/blocks/_pro/outer/edit.js:496
 #: src/extensions/core/group/style.js:116
 msgid "Dashed"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:457
+#: src/blocks/_pro/outer/edit.js:500
 #: src/extensions/core/group/style.js:120
 msgid "Double"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:461
+#: src/blocks/_pro/outer/edit.js:504
 msgid "Groove"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:465
+#: src/blocks/_pro/outer/edit.js:508
 msgid "Ridge"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:469
+#: src/blocks/_pro/outer/edit.js:512
 msgid "Inset"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:473
+#: src/blocks/_pro/outer/edit.js:516
 msgid "Outset"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:487
+#: src/blocks/_pro/outer/edit.js:530
 msgid "Border width"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:499
+#: src/blocks/_pro/outer/edit.js:542
 msgid "Border radius"
 msgstr ""
 
-#: src/blocks/_pro/outer/index.js:17
+#: src/blocks/_pro/outer/edit.js:558
+msgid "Container Inner Side Space Setting"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:565
+#: src/components/advanced-viewport-control/index.js:39
+msgid "Mobile"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:580
+#: src/components/advanced-viewport-control/index.js:31
+msgid "Tablet"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:595
+#: src/components/advanced-viewport-control/index.js:25
+msgid "PC"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:606
+#: src/components/advanced-unit-control/index.js:12
+msgid "Unit Type"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:616
+#: src/components/advanced-unit-control/index.js:18
+msgid "px"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:620
+#: src/components/advanced-unit-control/index.js:22
+msgid "em"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:624
+#: src/components/advanced-unit-control/index.js:26
+msgid "rem"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:628
+#: src/components/advanced-unit-control/index.js:30
+msgid "vw"
+msgstr ""
+
+#: src/blocks/_pro/outer/index.js:20
 msgid "Outer"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:103
-msgid "Number of Posts"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:116
-msgid "Order"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:125
-msgid "ASC"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:129
-msgid "DESC"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:135
-msgid "Order by"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:144
-msgid "Published Date"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:148
-msgid "Modefied Date"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:156
-msgid "Random"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:162
-msgid "offset"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:77
+#: src/blocks/_pro/post-list/edit.js:118
 msgid "Filter by PostTypes"
 msgstr ""
 
+#: src/blocks/_pro/post-list/edit.js:131
+msgid "Number of Posts"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:144
+msgid "Order"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:153
+msgid "ASC"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:157
+msgid "DESC"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:163
+msgid "Order by"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:172
+msgid "Published Date"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:176
+msgid "Modefied Date"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:184
+msgid "Random"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:190
+msgid "offset"
+msgstr ""
+
 #: src/blocks/_pro/post-list/edit.js:90
-msgid "Filter by Taxonomy Terms"
+#. Filter by %s
+msgid "Filter by %s"
 msgstr ""
 
 #: src/blocks/_pro/post-list/index.js:20
@@ -1540,38 +1585,6 @@ msgstr ""
 
 #: src/blocks/staff/index.js:33
 msgid "Staff"
-msgstr ""
-
-#: src/components/advanced-unit-control/index.js:12
-msgid "Unit Type"
-msgstr ""
-
-#: src/components/advanced-unit-control/index.js:18
-msgid "px"
-msgstr ""
-
-#: src/components/advanced-unit-control/index.js:22
-msgid "em"
-msgstr ""
-
-#: src/components/advanced-unit-control/index.js:26
-msgid "rem"
-msgstr ""
-
-#: src/components/advanced-unit-control/index.js:30
-msgid "vw"
-msgstr ""
-
-#: src/components/advanced-viewport-control/index.js:25
-msgid "PC"
-msgstr ""
-
-#: src/components/advanced-viewport-control/index.js:31
-msgid "Tablet"
-msgstr ""
-
-#: src/components/advanced-viewport-control/index.js:39
-msgid "Mobile"
 msgstr ""
 
 #: src/components/card-align-control/index.js:24

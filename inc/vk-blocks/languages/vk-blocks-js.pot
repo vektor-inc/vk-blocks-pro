@@ -225,7 +225,7 @@ msgstr ""
 msgid "Slide Height for each device."
 msgstr ""
 
-#: src/blocks/_pro/card/index.js:25
+#: src/blocks/_pro/card/index.js:26
 #: src/components/column-layout-control/index.js:26
 msgid "Card"
 msgstr ""
@@ -750,11 +750,11 @@ msgstr ""
 msgid "Display Pagination"
 msgstr ""
 
-#: src/blocks/_pro/slider/index.js:22
+#: src/blocks/_pro/slider/index.js:23
 msgid "Slider"
 msgstr ""
 
-#: src/blocks/_pro/slider/index.js:24
+#: src/blocks/_pro/slider/index.js:25
 msgid "Slider is do not move in edit screen."
 msgstr ""
 

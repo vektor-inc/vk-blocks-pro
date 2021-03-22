@@ -111,7 +111,7 @@ addFilter(
 			if (-1 === deprecatedFuncIndex) {
 				// NOTE: useBlockProps + style要素を挿入する場合、useBlockPropsを使った要素が最初（上）にこないと、
 				// カスタムクラスを追加する処理が失敗する
-				el = filterHiddenControl( el, attributes );
+				el = filterHiddenControl(el, attributes);
 				return (
 					<>
 						{el}

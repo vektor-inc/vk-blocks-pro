@@ -95,7 +95,7 @@ const addSwiperConfig = (el, type, attributes) => {
 		// 最新版
 		if (-1 === deprecatedFuncIndex) {
 			const cssTag = generateHeightCss(attributes, cssSelector);
-			el = filterHiddenControl( el, attributes );
+			el = filterHiddenControl(el, attributes);
 			return (
 				<>
 					{el}

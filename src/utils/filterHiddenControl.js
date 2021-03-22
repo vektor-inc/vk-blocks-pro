@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 
-export const filterHiddenControl = (el, attributes ) => {
+export const filterHiddenControl = (el, attributes) => {
 	const {
 		vkb_hidden, // eslint-disable-line camelcase
 		vkb_hidden_xxl, // eslint-disable-line camelcase
@@ -56,4 +56,4 @@ export const filterHiddenControl = (el, attributes ) => {
 		}
 	}
 	return el;
-}
+};

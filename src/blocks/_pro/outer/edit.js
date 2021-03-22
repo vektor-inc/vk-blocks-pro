@@ -172,6 +172,7 @@ export default function OuterEdit(props) {
 
 	const blockProps = useBlockProps({
 		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
+		style: borderStyleProperty,
 	});
 
 	return (
@@ -631,7 +632,7 @@ export default function OuterEdit(props) {
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<div {...blockProps} style={borderStyleProperty}>
+			<div {...blockProps}>
 				<GenerateBgImage
 					prefix={'vkb-outer'}
 					clientId={clientId}

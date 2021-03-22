@@ -102,10 +102,11 @@ export default function save(props) {
 
 	const blockProps = useBlockProps.save({
 		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
+		style: borderStyleProperty,
 	});
 	return (
 		<>
-			<div {...blockProps} style={borderStyleProperty}>
+			<div {...blockProps}>
 				<GenerateBgImage
 					prefix={'vkb-outer'}
 					clientId={clientId}

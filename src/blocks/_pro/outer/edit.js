@@ -91,39 +91,39 @@ export default function OuterEdit(props) {
 
 	//幅のクラス切り替え
 	// eslint-disable-next-line prefer-const
-	const classWidth = ` vk_outer-width-${outerWidth}`;
+	const classWidth = `vk_outer-width-${outerWidth}`;
 
 	//classBgPositionのクラス切り替え
 	if (bgPosition === 'parallax') {
-		classBgPosition = ' vk_outer-bgPosition-parallax vk-prlx';
+		classBgPosition = 'vk_outer-bgPosition-parallax vk-prlx';
 	} else if (bgPosition === 'fixed') {
-		classBgPosition = ' vk_outer-bgPosition-fixed';
+		classBgPosition = 'vk_outer-bgPosition-fixed';
 	} else if (bgPosition === 'repeat') {
-		classBgPosition = ' vk_outer-bgPosition-repeat';
+		classBgPosition = 'vk_outer-bgPosition-repeat';
 	} else {
-		classBgPosition = ' vk_outer-bgPosition-normal';
+		classBgPosition = 'vk_outer-bgPosition-normal';
 	}
 
 	//classPaddingLRのクラス切り替え
 	classPaddingLR = '';
 	//eslint-disable-next-line camelcase
 	if (padding_left_and_right === '0') {
-		classPaddingLR = ' vk_outer-paddingLR-none';
+		classPaddingLR = 'vk_outer-paddingLR-none';
 		//eslint-disable-next-line camelcase
 	} else if (padding_left_and_right === '1') {
-		classPaddingLR = ' vk_outer-paddingLR-use';
+		classPaddingLR = 'vk_outer-paddingLR-use';
 		//eslint-disable-next-line camelcase
 	} else if (padding_left_and_right === '2') {
 		// Fit to content area width
-		classPaddingLR = ' vk_outer-paddingLR-zero';
+		classPaddingLR = 'vk_outer-paddingLR-zero';
 	}
 
 	//classPaddingVerticalのクラス切り替
 	//eslint-disable-next-line camelcase
 	if (padding_top_and_bottom === '1') {
-		classPaddingVertical = ' vk_outer-paddingVertical-use';
+		classPaddingVertical = 'vk_outer-paddingVertical-use';
 	} else {
-		classPaddingVertical = ' vk_outer-paddingVertical-none';
+		classPaddingVertical = 'vk_outer-paddingVertical-none';
 	}
 
 	//上側セクションの傾き切り替

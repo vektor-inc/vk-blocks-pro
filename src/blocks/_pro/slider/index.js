@@ -13,7 +13,6 @@ import deprecated from './deprecated/save';
 import edit from './edit';
 import metadata from './block.json';
 import save from './save';
-import classnames from 'classnames';
 
 const { name } = metadata;
 

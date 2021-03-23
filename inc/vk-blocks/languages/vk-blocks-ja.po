@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2021-03-09T08:27:11+00:00\n"
-"PO-Revision-Date: 2021-03-09 17:31+0900\n"
+"POT-Creation-Date: 2021-03-23T05:00:16+00:00\n"
+"PO-Revision-Date: 2021-03-23 14:00+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -23,573 +23,9 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 
-#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:104
-#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:111
-msgid "Delete Image"
-msgstr "画像を削除"
-
-#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:166
-#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:175
-msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
-"tempor incididunt ut labore et dolore magna aliqua. "
-msgstr ""
-"あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくし"
-"い森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。"
-
-#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:214
-#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:230
-msgid "Title"
-msgstr "タイトルを入力"
-
-#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:87
-#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:94
-#: src/blocks/balloon/edit.js:379 src/blocks/pr-content/mediaUpload.js:68
-msgid "Select image"
-msgstr "画像を選択"
-
-#: src/blocks/_pro/grid-column-item/index.js:18
-msgid "Grid Column Item"
-msgstr "グリッドカラムアイテム"
-
-#: src/blocks/_pro/outer/edit.js:138
-msgid "Background Setting"
-msgstr "背景設定"
-
-#: src/blocks/_pro/outer/edit.js:143
-msgid "Color Setting"
-msgstr "色設定"
-
-#: src/blocks/_pro/outer/edit.js:144
-msgid ""
-"Color will overcome background image. If you want to display image, clear "
-"background color or set opacity 0."
-msgstr ""
-"色を指定すると画像よりも優先されます。画像を表示したい場合は、背景色をクリア"
-"するか、不透明度を0に設定します。"
-
-#: src/blocks/_pro/outer/edit.js:157
-msgid "Opacity Setting"
-msgstr "透過設定"
-
-#: src/blocks/_pro/outer/edit.js:171
-msgid "Background Image PC"
-msgstr "背景画像 ( PC )"
-
-#: src/blocks/_pro/outer/edit.js:187
-msgid "Background Image Tablet"
-msgstr "背景画像 ( タブレット )"
-
-#: src/blocks/_pro/outer/edit.js:197
-msgid "Background Image Mobile"
-msgstr "背景画像背景画像 ( モバイル )"
-
-#: src/blocks/_pro/outer/edit.js:207
-msgid "Background image Position"
-msgstr "背景画像の位置"
-
-#: src/blocks/_pro/outer/edit.js:215
-msgid "Repeat"
-msgstr "リピート"
-
-#: src/blocks/_pro/outer/edit.js:219
-msgid "Cover"
-msgstr "カバー"
-
-#: src/blocks/_pro/outer/edit.js:223
-msgid "Cover fixed (Not fixed on iPhone)"
-msgstr "カバー 固定（iPhoneでは固定されません）"
-
-#: src/blocks/_pro/outer/edit.js:230
-msgid "Parallax (Non-guaranteed)"
-msgstr "パララックス（非保証）"
-
-#: src/blocks/_pro/outer/edit.js:245
-msgid "Layout Setting"
-msgstr "レイアウト設定"
-
-#: src/blocks/_pro/outer/edit.js:248 src/blocks/_pro/slider/edit.js:109
-msgid "Width"
-msgstr "幅"
-
-#: src/blocks/_pro/outer/edit.js:259 src/blocks/_pro/slider/edit.js:118
-#: src/blocks/balloon/edit.js:276 src/blocks/faq/index.js:27
-msgid "Normal"
-msgstr "標準"
-
-#: src/blocks/_pro/outer/edit.js:269 src/blocks/_pro/slider/edit.js:126
-msgid "Full Wide"
-msgstr "全幅"
-
-#: src/blocks/_pro/outer/edit.js:274
-msgid "Padding (Left and Right)"
-msgstr "余白 (左右)"
-
-#: src/blocks/_pro/outer/edit.js:278
-msgid "Fit to the Content area"
-msgstr "コンテンツエリアに合わせる"
-
-#: src/blocks/_pro/outer/edit.js:285
-msgid "Add padding to the Outer area"
-msgstr "アウターエリア内に余白を追加する"
-
-#: src/blocks/_pro/outer/edit.js:292
-msgid "Remove padding from the Outer area"
-msgstr "アウターエリア内の余白を無くす"
-
-#: src/blocks/_pro/outer/edit.js:306
-msgid "Padding (Top and Bottom)"
-msgstr "余白 (上下)"
-
-#: src/blocks/_pro/outer/edit.js:311
-msgid "Use default padding"
-msgstr "標準の余白を使用"
-
-#: src/blocks/_pro/outer/edit.js:318
-msgid "Do not use default padding"
-msgstr "標準の余白を使用しない"
-
-#: src/blocks/_pro/outer/edit.js:332
-msgid ""
-"* If you select \"Do not use\" that, please set yourself it such as a spacer "
-"block."
-msgstr ""
-"*「使用しない」を選択した場合はスペーサーブロックなどで任意に設定してくださ"
-"い。"
-
-#: src/blocks/_pro/outer/edit.js:340
-msgid "Divider Setting"
-msgstr "区切りの設定"
-
-#: src/blocks/_pro/outer/edit.js:345 src/blocks/balloon/edit.js:236
-msgid "Type"
-msgstr "タイプ"
-
-#: src/blocks/_pro/outer/edit.js:353
-msgid "Tilt"
-msgstr "傾斜"
-
-#: src/blocks/_pro/outer/edit.js:357
-msgid "Curve"
-msgstr "カーブ"
-
-#: src/blocks/_pro/outer/edit.js:361
-msgid "Wave"
-msgstr "波状"
-
-#: src/blocks/_pro/outer/edit.js:365
-msgid "Triangle"
-msgstr "三角"
-
-#: src/blocks/_pro/outer/edit.js:371
-msgid "Upper Divider Level"
-msgstr "上部区切りレベル"
-
-#: src/blocks/_pro/outer/edit.js:396
-msgid "Lower Divider Level"
-msgstr "下部区切りレベル"
-
-#: src/blocks/_pro/outer/edit.js:422
-msgid "Border Setting"
-msgstr "枠線の設定"
-
-#: src/blocks/_pro/outer/edit.js:427
-msgid "Border will disappear when divider effect is applied."
-msgstr "枠線は区切りレベルを適用すると表示されなくなります。"
-
-#: src/blocks/_pro/outer/edit.js:433
-msgid "Border type"
-msgstr "枠線の種類"
-
-#: src/blocks/_pro/outer/edit.js:441 src/blocks/balloon/edit.js:338
-msgid "None"
-msgstr "なし"
-
-#: src/blocks/_pro/outer/edit.js:445
-msgid "Solid"
-msgstr "直線"
-
-#: src/blocks/_pro/outer/edit.js:449
-msgid "Dotted"
-msgstr "点線"
-
-#: src/blocks/_pro/outer/edit.js:453
-msgid "Dashed"
-msgstr "Dashed"
-
-#: src/blocks/_pro/outer/edit.js:457
-msgid "Double"
-msgstr "二重線"
-
-#: src/blocks/_pro/outer/edit.js:461
-msgid "Groove"
-msgstr "Groove"
-
-#: src/blocks/_pro/outer/edit.js:465
-msgid "Ridge"
-msgstr "Ridge"
-
-#: src/blocks/_pro/outer/edit.js:469
-msgid "Inset"
-msgstr "Inset"
-
-#: src/blocks/_pro/outer/edit.js:473
-msgid "Outset"
-msgstr "Outset"
-
-#: src/blocks/_pro/outer/edit.js:487
-msgid "Border width"
-msgstr "枠線の幅"
-
-#: src/blocks/_pro/outer/edit.js:499
-msgid "Border radius"
-msgstr "枠線のRの大きさ"
-
-#: src/blocks/_pro/slider/edit.js:132
-msgid "Height"
-msgstr "高さ"
-
-#: src/blocks/_pro/slider/edit.js:137
-msgid "Slide Height for each device."
-msgstr "デバイス毎の高さ"
-
-#: src/blocks/_pro/slider/edit.js:151
-msgid "Slider Settings"
-msgstr "スライド設定"
-
-#: src/blocks/_pro/slider/edit.js:155
-msgid "Effect "
-msgstr "エフェクト"
-
-#: src/blocks/_pro/slider/edit.js:165
-msgid "Slide"
-msgstr "スライド"
-
-#: src/blocks/_pro/slider/edit.js:169
-msgid "Fade"
-msgstr "フェード"
-
-#: src/blocks/_pro/slider/edit.js:176
-msgid "Loop "
-msgstr "繰り返し"
-
-#: src/blocks/_pro/slider/edit.js:186
-msgid "AutoPlay"
-msgstr "自動再生"
-
-#: src/blocks/_pro/slider/edit.js:195
-msgid "Display Time"
-msgstr "表示時間"
-
-#: src/blocks/_pro/slider/edit.js:206
-msgid "Change Speed"
-msgstr "切り替え時間"
-
-#: src/blocks/_pro/slider/edit.js:220
-msgid "Display Multi Images per View"
-msgstr "画像を複数枚表示する"
-
-#: src/blocks/_pro/slider/edit.js:224
-msgid "Images per View"
-msgstr "１度に表示する画像の枚数"
-
-#: src/blocks/_pro/slider/edit.js:234
-msgid "Move Images per Slide"
-msgstr "１度の動作で動かす枚数"
-
-#: src/blocks/_pro/slider/edit.js:244
-msgid "Space of between slides"
-msgstr "スライド間の余白"
-
-#: src/blocks/_pro/slider/edit.js:255
-msgid "Display Pagination"
-msgstr "ページネーションの表示"
-
-#: src/blocks/_pro/step/edit.js:38
-msgid "First Dot Number"
-msgstr "ステップの開始番号"
-
-#: src/blocks/_pro/timeline/index.js:19
-msgid "Timeline"
-msgstr "タイムライン"
-
-#: src/blocks/balloon/edit.js:125
-msgid " Image Border"
-msgstr "画像の線"
-
-#: src/blocks/balloon/edit.js:128
-msgid "Add border to image"
-msgstr "画像に枠線を追加する"
-
-#: src/blocks/balloon/edit.js:136
-msgid "* You can change border width on Setting > VK Blocks"
-msgstr "* 線の太さは 管理画面の 設定 > VK Blocks から選択する事ができます。"
-
-#: src/blocks/balloon/edit.js:143
-msgid "Border color of speech balloon"
-msgstr "吹き出しの線の色"
-
-#: src/blocks/balloon/edit.js:168
-msgid "Border"
-msgstr "枠線"
-
-#: src/blocks/balloon/edit.js:171
-msgid "Add border to balloon"
-msgstr "吹き出しに枠線を追加する"
-
-#: src/blocks/balloon/edit.js:200
-msgid "Balloon setting"
-msgstr "吹き出しブロック設定"
-
-#: src/blocks/balloon/edit.js:202
-msgid "Position"
-msgstr "位置"
-
-#: src/blocks/balloon/edit.js:205
-msgid "Please specify the layout of the balloon."
-msgstr "吹き出しの配置を指定してください。"
-
-#: src/blocks/balloon/edit.js:219
-msgid "Left"
-msgstr "左"
-
-#: src/blocks/balloon/edit.js:231
-msgid "Right"
-msgstr "右"
-
-#: src/blocks/balloon/edit.js:239
-msgid "Please select the type of balloon."
-msgstr "吹き出しのタイプを指定してください。"
-
-#: src/blocks/balloon/edit.js:250
-msgid "Speech"
-msgstr "吹き出し"
-
-#: src/blocks/balloon/edit.js:260
-msgid "Thinking"
-msgstr "もくもく"
-
-#: src/blocks/balloon/edit.js:265
-msgid "Image Style"
-msgstr "画像スタイル"
-
-#: src/blocks/balloon/edit.js:286
-msgid "Rounded"
-msgstr "角丸２"
-
-#: src/blocks/balloon/edit.js:296
-msgid "Circle"
-msgstr "丸抜き"
-
-#: src/blocks/balloon/edit.js:303
-msgid "Background color of speech balloon"
-msgstr "吹き出しの背景色"
-
-#: src/blocks/balloon/edit.js:312
-msgid "Default Icon Setting"
-msgstr "デフォルトアイコン設定"
-
-#: src/blocks/balloon/edit.js:317
-msgid "You can register default icons from Settings > VK Blocks in Admin."
-msgstr ""
-"管理画面の 設定 > VK Blocks から よく使うアイコンを登録する事ができます。"
-
-#: src/blocks/balloon/edit.js:323
-msgid "Animation setting"
-msgstr "アニメーション設定"
-
-#: src/blocks/balloon/edit.js:325
-msgid "Please select the type of animation."
-msgstr "アニメーションのタイプを指定してください。"
-
-#: src/blocks/balloon/edit.js:342
-msgid "Trembling"
-msgstr "ぶるぶる"
-
-#: src/blocks/balloon/edit.js:346
-msgid "Trembling X"
-msgstr "ぶるぶる（X方向）"
-
-#: src/blocks/balloon/edit.js:350
-msgid "Pounding"
-msgstr "どきどき"
-
-#: src/blocks/balloon/edit.js:354
-msgid "Shaking"
-msgstr "ゆらゆら"
-
-#: src/blocks/balloon/edit.js:387 src/blocks/pr-content/mediaUpload.js:130
-msgid "Upload image"
-msgstr "画像をアップロード"
-
-#: src/blocks/balloon/edit.js:400
-msgid "Icon Name"
-msgstr "アイコンの名前"
-
-#: src/blocks/border-box/edit.js:104
-msgid "Icon"
-msgstr "アイコン"
-
-#: src/blocks/border-box/edit.js:107
-msgid "Icon ( Font Awesome )"
-msgstr "アイコン ( Font Awesome )"
-
-#: src/blocks/border-box/edit.js:23
-msgid "Please enter a title."
-msgstr "見出しを入力してください。"
-
-#: src/blocks/border-box/edit.js:48
-#: inc/term-color/package/class.term-color.php:41
-#: inc/term-color/package/class.term-color.php:56
-#: inc/term-color/package/class.term-color.php:130
-msgid "Color"
-msgstr "色"
-
-#: src/blocks/border-box/edit.js:51
-msgid "Border Color"
-msgstr "線の色"
-
-#: src/blocks/border-box/edit.js:61
-msgid "Red"
-msgstr "赤"
-
-#: src/blocks/border-box/edit.js:65
-msgid "Orange"
-msgstr "オレンジ"
-
-#: src/blocks/border-box/edit.js:69
-msgid "Blue"
-msgstr "青"
-
-#: src/blocks/border-box/edit.js:73
-msgid "Green"
-msgstr "緑"
-
-#: src/blocks/border-box/edit.js:77
-msgid "Black"
-msgstr "黒"
-
-#: src/blocks/border-box/edit.js:84
-msgid "Background Color"
-msgstr "背景色"
-
-#: src/blocks/border-box/edit.js:94
-msgid "Transparent"
-msgstr "透過"
-
-#: src/blocks/border-box/edit.js:98
-msgid "White"
-msgstr "白"
-
-#: src/blocks/faq/index.js:22
-msgid "Classic FAQ"
-msgstr "旧 FAQ"
-
-#: src/blocks/faq/index.js:32
-msgid "Bgfill Circle"
-msgstr "背景塗り 円形"
-
-#: src/blocks/faq/index.js:36
-msgid "Bgfill Square"
-msgstr "背景塗り ピン角"
-
-#: src/blocks/faq/index.js:40
-msgid "Bgfill Rounded"
-msgstr "背景塗り 角丸"
-
-#: src/blocks/faq/index.js:44
-msgid "Border Circle"
-msgstr "枠線 円形"
-
-#: src/blocks/faq/index.js:48
-msgid "Border Square"
-msgstr "枠線 ピン角"
-
-#: src/blocks/faq/index.js:52
-msgid "Border Rounded"
-msgstr "枠線 角丸"
-
-#: src/blocks/heading/deprecated/0.40.1/component.js:137
-msgid "Input title…"
-msgstr "タイトルを入力"
-
-#: src/blocks/heading/deprecated/0.40.1/component.js:152
-msgid "Input sub text…"
-msgstr "サブテキストを入力"
-
-#: src/blocks/pr-blocks/index.js:24
-#| msgid "Blocks"
-msgid "PR Blocks"
-msgstr "PR Blocks"
-
-#: src/blocks/pr-content/mediaUpload.js:120
-msgid "Select Image"
-msgstr "画像を選択"
-
-#: src/components/advanced-viewport-control/index.js:25
-msgid "PC"
-msgstr "PC"
-
-#: src/components/advanced-viewport-control/index.js:31
-msgid "Tablet"
-msgstr "タブレット"
-
-#: src/components/advanced-viewport-control/index.js:39
-msgid "Mobile"
-msgstr "モバイル"
-
-#. %s is align.
-#: src/components/card-align-control/index.js:24
-msgid "Align %s"
-msgstr "表示位置"
-
-#: src/components/card-align-control/index.js:34
-msgid "Align"
-msgstr "表示位置"
-
-#: src/extensions/common/responsive-br/index.js:45
-msgid "Responsive BR "
-msgstr "画面サイズ毎の改行 "
-
-#: src/extensions/core/heading/style.js:103
-msgid "Both ends"
-msgstr "左右線"
-
-#: src/extensions/core/heading/style.js:123
-msgid "Brackets black"
-msgstr "括弧 黒"
-
-#: src/extensions/core/heading/style.js:30
-msgid "Default"
-msgstr "標準"
-
-#: src/extensions/core/heading/style.js:35
-msgid "Plain"
-msgstr "装飾無し"
-
-#: src/extensions/core/heading/style.js:51
-msgid "Background fill lightgray"
-msgstr "背景塗り 灰色"
-
-#: src/extensions/core/heading/style.js:67
-msgid "Double border top and bottom black"
-msgstr "二重線 上下線 黒"
-
-#: src/extensions/core/heading/style.js:75
-msgid "Double border bottom black"
-msgstr "二重線 下線 黒"
-
-#: src/extensions/core/heading/style.js:83
-msgid "Solid border top and bottom black"
-msgstr "直線 上下 黒"
-
-#: src/extensions/core/heading/style.js:91
-msgid "Solid border bottom black"
-msgstr "直線 下線 黒"
-
-#: src/extensions/core/heading/style.js:99
-msgid "Dotted border bottom black"
-msgstr "点線 下線 黒"
+#: src/extensions/common/nowrap/index.js:21
+msgid "No wrap"
+msgstr "No wrap"
 
 #. Plugin Name of the plugin
 msgid "VK Blocks Pro"
@@ -706,6 +142,12 @@ msgstr "%s の記事."
 #: inc/template-tags/package/template-tags.php:261
 msgid "Page of %s"
 msgstr "%sのページ"
+
+#: inc/term-color/package/class.term-color.php:41
+#: inc/term-color/package/class.term-color.php:56
+#: inc/term-color/package/class.term-color.php:130
+msgid "Color"
+msgstr "色"
 
 #: inc/tgm-plugin-activation/tgm-config.php:77
 msgid "Install Required Plugins"
@@ -851,11 +293,14 @@ msgid "Enable accordion and default close "
 msgstr "アコーディオン有効 / 初期状態で閉じる"
 
 #: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:23
+msgid "FAQ Block Setting"
+msgstr "FAQ Blocks 設定"
+
 #: inc/vk-blocks-pro/admin-pro/admin-pro.php:20
 msgid "FAQ Setting"
 msgstr "FAQ ブロックの設定"
 
-#: inc/vk-blocks/admin/admin-balloon.php:4 inc/vk-blocks/admin/admin.php:55
+#: inc/vk-blocks/admin/admin-balloon.php:4
 msgid "Balloon Setting"
 msgstr "吹き出しブロック設定"
 
@@ -901,8 +346,8 @@ msgid "Blocks Setting"
 msgstr "Blocks 設定"
 
 #: inc/vk-blocks/admin/admin.php:54
-msgid "Block Template Setting"
-msgstr "ブロックテンプレート設定"
+msgid "Balloon Block Setting"
+msgstr "吹き出しブロック設定"
 
 #: inc/vk-blocks/load-bootstrap.php:49
 msgid "VK Blocks Bootstrap Setting"
@@ -966,10 +411,720 @@ msgid "Edit this area"
 msgstr "このエリアを編集"
 
 #: vk-blocks.php:80
-msgid "Disabled Blocks module. Because VK-Blocks Plugin running."
+msgid ""
+"Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks "
+"Plugin running."
 msgstr ""
-"VK-Blocksと競合するため、VK All in One Expansion UnitのBlock機能を停止しまし"
+"VK-Blocksと競合するため、VK All in One Expansion Unitの Block機能を停止しまし"
 "た。"
+
+#~ msgid "Fast"
+#~ msgstr "速い"
+
+#~ msgid "Very Fast"
+#~ msgstr "非常に速い"
+
+#~ msgid "Animation range"
+#~ msgstr "アニメーションの距離"
+
+#~ msgid "Short"
+#~ msgstr "短い"
+
+#~ msgid "Normal"
+#~ msgstr "標準"
+
+#~ msgid "Long"
+#~ msgstr "長い"
+
+#~ msgid "Animation Settings"
+#~ msgstr "アニメーション設定"
+
+#~ msgid "Animation effect"
+#~ msgstr "アニメーションの効果"
+
+#~ msgid "Fade In"
+#~ msgstr "フェードイン"
+
+#~ msgid "Slide Up"
+#~ msgstr "スライドアップ"
+
+#~ msgid "Slide Left"
+#~ msgstr "スライド左"
+
+#~ msgid "Slide Right"
+#~ msgstr "スライド右"
+
+#~ msgid "Left Right"
+#~ msgstr "左右"
+
+#~ msgid "Up Down"
+#~ msgstr "上下"
+
+#~ msgid "Trembling Y"
+#~ msgstr "ぶるぶる（Y方向）"
+
+#~ msgid "Trembling X"
+#~ msgstr "ぶるぶる（X方向）"
+
+#~ msgid "Pounding"
+#~ msgstr "どきどき"
+
+#~ msgid "Shaking"
+#~ msgstr "ゆらゆら"
+
+#~ msgid "Animation speed"
+#~ msgstr "アニメーションの速度"
+
+#~ msgid "Very Slow"
+#~ msgstr "非常に遅い"
+
+#~ msgid "Slow"
+#~ msgstr "遅い"
+
+#~ msgid "Animation"
+#~ msgstr "アニメーション"
+
+#~ msgid "Grid Column"
+#~ msgstr "グリッドカラム"
+
+#~ msgid "Number of Posts"
+#~ msgstr "表示件数"
+
+#~ msgid "Order"
+#~ msgstr "表示順"
+
+#~ msgid "ASC"
+#~ msgstr "昇順"
+
+#~ msgid "DESC"
+#~ msgstr "降順"
+
+#~ msgid "Order by"
+#~ msgstr "表示順"
+
+#~ msgid "Published Date"
+#~ msgstr "公開日"
+
+#~ msgid "Modefied Date"
+#~ msgstr "更新日"
+
+#~ msgid "Title"
+#~ msgstr "タイトルを入力"
+
+#~ msgid "Random"
+#~ msgstr "ランダム"
+
+#~ msgid "offset"
+#~ msgstr "オフセット数"
+
+#~ msgid "Ignore this post"
+#~ msgstr "この投稿を除く"
+
+#~ msgid "Display conditions"
+#~ msgstr "表示条件"
+
+#~ msgid "Filter by PostTypes"
+#~ msgstr "投稿タイプ"
+
+#~ msgid "Filter by Taxonomy Terms"
+#~ msgstr "分類"
+
+#~ msgid "Post list"
+#~ msgstr "投稿リスト"
+
+#~ msgid "Slider Item"
+#~ msgstr "スライダーアイテム"
+
+#~ msgid "Width"
+#~ msgstr "幅"
+
+#~ msgid "Full Wide"
+#~ msgstr "全幅"
+
+#~ msgid "Height"
+#~ msgstr "高さ"
+
+#~ msgid "Slide Height for each device."
+#~ msgstr "デバイス毎の高さ"
+
+#~ msgid "Slider Settings"
+#~ msgstr "スライド設定"
+
+#~ msgid "Effect "
+#~ msgstr "エフェクト"
+
+#~ msgid "Slide"
+#~ msgstr "スライド"
+
+#~ msgid "Fade"
+#~ msgstr "フェード"
+
+#~ msgid "Loop "
+#~ msgstr "繰り返し"
+
+#~ msgid "AutoPlay"
+#~ msgstr "自動再生"
+
+#~ msgid "Display Time"
+#~ msgstr "表示時間"
+
+#~ msgid "Change Speed"
+#~ msgstr "切り替え時間"
+
+#~ msgid "Display Multi Images per View"
+#~ msgstr "画像を複数枚表示する"
+
+#~ msgid "Images per View"
+#~ msgstr "１度に表示する画像の枚数"
+
+#~ msgid "Move Images per Slide"
+#~ msgstr "１度の動作で動かす枚数"
+
+#~ msgid "Space of between slides"
+#~ msgstr "スライド間の余白"
+
+#~ msgid "Display Pagination"
+#~ msgstr "ページネーションの表示"
+
+#~ msgid "Default"
+#~ msgstr "標準"
+
+#~ msgid "None"
+#~ msgstr "なし"
+
+#~ msgid "Step Mark"
+#~ msgstr "ステップマーク"
+
+#~ msgid "Icon ( Font Awesome )"
+#~ msgstr "アイコン ( Font Awesome )"
+
+#~ msgid "If Font Awesome tags entered, it will overrides the number."
+#~ msgstr ""
+#~ "Font Awesome の class 名が入力されている場合は数字は上書きされます。"
+
+#~ msgid "Ex,6:00AM"
+#~ msgstr "例) 午前 6:00"
+
+#~ msgid "Style"
+#~ msgstr "スタイル"
+
+#~ msgid "Solid"
+#~ msgstr "直線"
+
+#~ msgid "Outlined"
+#~ msgstr "アウトライン"
+
+#~ msgid "Alert"
+#~ msgstr "アラート"
+
+#~ msgid "Small"
+#~ msgstr "小"
+
+#~ msgid "Button Position:"
+#~ msgstr "ボタンの位置:"
+
+#~ msgid "Left"
+#~ msgstr "左"
+
+#~ msgid "Center"
+#~ msgstr "中央"
+
+#~ msgid "Right"
+#~ msgstr "右"
+
+#~ msgid "Wide"
+#~ msgstr "幅広"
+
+#~ msgid "Block"
+#~ msgstr "Block"
+
+#~ msgid "Button Style:"
+#~ msgstr "ボタンスタイル:"
+
+#~ msgid "Solid color"
+#~ msgstr "ベタ塗り"
+
+#~ msgid "No background"
+#~ msgstr "背景なし"
+
+#~ msgid "Text only"
+#~ msgstr "テキストのみ"
+
+#~ msgid ""
+#~ "If you select \"No background\", that you need to select a Custom Color."
+#~ msgstr ""
+#~ "もし「背景なし」を選択した場合はカスタムカラーで色を指定してください。"
+
+#~ msgid "Default Color:"
+#~ msgstr "標準色:"
+
+#~ msgid "Primary"
+#~ msgstr "Primary"
+
+#~ msgid "Secondary"
+#~ msgstr "Secondary"
+
+#~ msgid "Success"
+#~ msgstr "Success"
+
+#~ msgid "Info"
+#~ msgstr "Info"
+
+#~ msgid "Warning"
+#~ msgstr "Warning"
+
+#~ msgid "Danger"
+#~ msgstr "Danger"
+
+#~ msgid "Light"
+#~ msgstr "Light"
+
+#~ msgid "Dark"
+#~ msgstr "Dark"
+
+#~ msgid "Custom Color"
+#~ msgstr "カスタムカラー"
+
+#~ msgid ""
+#~ "This custom color overrides the default color. If you want to use the "
+#~ "default color, click the clear button."
+#~ msgstr ""
+#~ "このカスタムカラーはデフォルトのカラーを上書きします。 デフォルトの色を使"
+#~ "用したい場合は、クリアボタンをクリックしてください。"
+
+#~ msgid "Before text"
+#~ msgstr "文字の前"
+
+#~ msgid "After text"
+#~ msgstr "文字の後"
+
+#~ msgid "Input text"
+#~ msgstr "文字を入力"
+
+#~ msgid "Button setting"
+#~ msgstr "ボタン設定"
+
+#~ msgid "Sub Caption"
+#~ msgstr "サブテキスト"
+
+#~ msgid "Button URL"
+#~ msgstr "ボタン URL"
+
+#~ msgid "Open link new tab."
+#~ msgstr "リンクを別ウィンドウで開く"
+
+#~ msgid "Button Size:"
+#~ msgstr "ボタンサイズ:"
+
+#~ msgid "Large"
+#~ msgstr "大"
+
+#~ msgid "Button"
+#~ msgstr "ボタン"
+
+#~ msgid "Input sub text…"
+#~ msgstr "サブテキストを入力"
+
+#~ msgid "Input title…"
+#~ msgstr "タイトルを入力"
+
+#~ msgid "Unspecified"
+#~ msgstr "未指定"
+
+#~ msgid "Because no post is selected, The block Will not render"
+#~ msgstr "ページが選択されていないためこのブロックはレンダリングされません"
+
+#~ msgid "Page Setting"
+#~ msgstr "ページ設定"
+
+#~ msgid "Select Page"
+#~ msgstr "ページを選択"
+
+#~ msgid "Page Content"
+#~ msgstr "固定ページ本文"
+
+#~ msgid "Input Title"
+#~ msgstr "タイトルを入力"
+
+#~ msgid "Input Content"
+#~ msgstr "文章を入力してください"
+
+#~ msgid "Select image"
+#~ msgstr "画像を選択"
+
+#~ msgid "Upload image"
+#~ msgstr "画像をアップロード"
+
+#~ msgid "Input title."
+#~ msgstr "タイトルを入力してください。"
+
+#~ msgid "Input content."
+#~ msgstr "本文を入力してください。"
+
+#~ msgid "Button Text"
+#~ msgstr "ボタンの文字"
+
+#~ msgid "Link URL"
+#~ msgstr "リンクURL"
+
+#~ msgid "Button Type"
+#~ msgstr "ボタンタイプ"
+
+#~ msgid "Ghost"
+#~ msgstr "ゴーストボタン"
+
+#~ msgid "Button Color"
+#~ msgstr "ボタンの色"
+
+#~ msgid "Layout Setting"
+#~ msgstr "レイアウト設定"
+
+#~ msgid "Layout Type"
+#~ msgstr "レイアウトタイプ"
+
+#~ msgid "Color Setting"
+#~ msgstr "色設定"
+
+#~ msgid "Title Color"
+#~ msgstr "見出しの色"
+
+#~ msgid "Content Color"
+#~ msgstr "本文の色"
+
+#~ msgid "Image Border Color"
+#~ msgstr "画像の線の色"
+
+#~ msgid "Button Setting"
+#~ msgstr "ボタン設定"
+
+#~ msgid "Link target"
+#~ msgstr "リンクターゲット"
+
+#~ msgid "Open in new tab"
+#~ msgstr "リンクを別ウィンドウで開く"
+
+#~ msgid "Link rel"
+#~ msgstr "rel属性"
+
+#~ msgid "Delete Image"
+#~ msgstr "画像を削除"
+
+#~ msgid ""
+#~ "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
+#~ "tempor incididunt ut labore et dolore magna aliqua. "
+#~ msgstr ""
+#~ "あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつく"
+#~ "しい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。"
+
+#~ msgid "Grid Column Item"
+#~ msgstr "グリッドカラムアイテム"
+
+#~ msgid "Background Setting"
+#~ msgstr "背景設定"
+
+#~ msgid ""
+#~ "Color will overcome background image. If you want to display image, clear "
+#~ "background color or set opacity 0."
+#~ msgstr ""
+#~ "色を指定すると画像よりも優先されます。画像を表示したい場合は、背景色をクリ"
+#~ "アするか、不透明度を0に設定します。"
+
+#~ msgid "Opacity Setting"
+#~ msgstr "透過設定"
+
+#~ msgid "Background Image PC"
+#~ msgstr "背景画像 ( PC )"
+
+#~ msgid "Background Image Tablet"
+#~ msgstr "背景画像 ( タブレット )"
+
+#~ msgid "Background Image Mobile"
+#~ msgstr "背景画像背景画像 ( モバイル )"
+
+#~ msgid "Background image Position"
+#~ msgstr "背景画像の位置"
+
+#~ msgid "Repeat"
+#~ msgstr "リピート"
+
+#~ msgid "Cover"
+#~ msgstr "カバー"
+
+#~ msgid "Cover fixed (Not fixed on iPhone)"
+#~ msgstr "カバー 固定（iPhoneでは固定されません）"
+
+#~ msgid "Parallax (Non-guaranteed)"
+#~ msgstr "パララックス（非保証）"
+
+#~ msgid "Padding (Left and Right)"
+#~ msgstr "余白 (左右)"
+
+#~ msgid "Fit to the Content area"
+#~ msgstr "コンテンツエリアに合わせる"
+
+#~ msgid "Add padding to the Outer area"
+#~ msgstr "アウターエリア内に余白を追加する"
+
+#~ msgid "Remove padding from the Outer area"
+#~ msgstr "アウターエリア内の余白を無くす"
+
+#~ msgid "Padding (Top and Bottom)"
+#~ msgstr "余白 (上下)"
+
+#~ msgid "Use default padding"
+#~ msgstr "標準の余白を使用"
+
+#~ msgid "Do not use default padding"
+#~ msgstr "標準の余白を使用しない"
+
+#~ msgid ""
+#~ "* If you select \"Do not use\" that, please set yourself it such as a "
+#~ "spacer block."
+#~ msgstr ""
+#~ "*「使用しない」を選択した場合はスペーサーブロックなどで任意に設定してくだ"
+#~ "さい。"
+
+#~ msgid "Divider Setting"
+#~ msgstr "区切りの設定"
+
+#~ msgid "Type"
+#~ msgstr "タイプ"
+
+#~ msgid "Tilt"
+#~ msgstr "傾斜"
+
+#~ msgid "Curve"
+#~ msgstr "カーブ"
+
+#~ msgid "Wave"
+#~ msgstr "波状"
+
+#~ msgid "Triangle"
+#~ msgstr "三角"
+
+#~ msgid "Upper Divider Level"
+#~ msgstr "上部区切りレベル"
+
+#~ msgid "Lower Divider Level"
+#~ msgstr "下部区切りレベル"
+
+#~ msgid "Border Setting"
+#~ msgstr "枠線の設定"
+
+#~ msgid "Border will disappear when divider effect is applied."
+#~ msgstr "枠線は区切りレベルを適用すると表示されなくなります。"
+
+#~ msgid "Border type"
+#~ msgstr "枠線の種類"
+
+#~ msgid "Dotted"
+#~ msgstr "点線"
+
+#~ msgid "Dashed"
+#~ msgstr "Dashed"
+
+#~ msgid "Double"
+#~ msgstr "二重線"
+
+#~ msgid "Groove"
+#~ msgstr "Groove"
+
+#~ msgid "Ridge"
+#~ msgstr "Ridge"
+
+#~ msgid "Inset"
+#~ msgstr "Inset"
+
+#~ msgid "Outset"
+#~ msgstr "Outset"
+
+#~ msgid "Border width"
+#~ msgstr "枠線の幅"
+
+#~ msgid "Border radius"
+#~ msgstr "枠線のRの大きさ"
+
+#~ msgid "First Dot Number"
+#~ msgstr "ステップの開始番号"
+
+#~ msgid "Timeline"
+#~ msgstr "タイムライン"
+
+#~ msgid " Image Border"
+#~ msgstr "画像の線"
+
+#~ msgid "Add border to image"
+#~ msgstr "画像に枠線を追加する"
+
+#~ msgid "* You can change border width on Setting > VK Blocks"
+#~ msgstr "* 線の太さは 管理画面の 設定 > VK Blocks から選択する事ができます。"
+
+#~ msgid "Border color of speech balloon"
+#~ msgstr "吹き出しの線の色"
+
+#~ msgid "Border"
+#~ msgstr "枠線"
+
+#~ msgid "Add border to balloon"
+#~ msgstr "吹き出しに枠線を追加する"
+
+#~ msgid "Balloon setting"
+#~ msgstr "吹き出しブロック設定"
+
+#~ msgid "Position"
+#~ msgstr "位置"
+
+#~ msgid "Please specify the layout of the balloon."
+#~ msgstr "吹き出しの配置を指定してください。"
+
+#~ msgid "Please select the type of balloon."
+#~ msgstr "吹き出しのタイプを指定してください。"
+
+#~ msgid "Speech"
+#~ msgstr "吹き出し"
+
+#~ msgid "Thinking"
+#~ msgstr "もくもく"
+
+#~ msgid "Image Style"
+#~ msgstr "画像スタイル"
+
+#~ msgid "Rounded"
+#~ msgstr "角丸２"
+
+#~ msgid "Circle"
+#~ msgstr "丸抜き"
+
+#~ msgid "Background color of speech balloon"
+#~ msgstr "吹き出しの背景色"
+
+#~ msgid "Default Icon Setting"
+#~ msgstr "デフォルトアイコン設定"
+
+#~ msgid "You can register default icons from Settings > VK Blocks in Admin."
+#~ msgstr ""
+#~ "管理画面の 設定 > VK Blocks から よく使うアイコンを登録する事ができます。"
+
+#~ msgid "Animation setting"
+#~ msgstr "アニメーション設定"
+
+#~ msgid "Please select the type of animation."
+#~ msgstr "アニメーションのタイプを指定してください。"
+
+#~ msgid "Trembling"
+#~ msgstr "ぶるぶる"
+
+#~ msgid "Icon Name"
+#~ msgstr "アイコンの名前"
+
+#~ msgid "Icon"
+#~ msgstr "アイコン"
+
+#~ msgid "Please enter a title."
+#~ msgstr "見出しを入力してください。"
+
+#~ msgid "Border Color"
+#~ msgstr "線の色"
+
+#~ msgid "Red"
+#~ msgstr "赤"
+
+#~ msgid "Orange"
+#~ msgstr "オレンジ"
+
+#~ msgid "Blue"
+#~ msgstr "青"
+
+#~ msgid "Green"
+#~ msgstr "緑"
+
+#~ msgid "Black"
+#~ msgstr "黒"
+
+#~ msgid "Background Color"
+#~ msgstr "背景色"
+
+#~ msgid "Transparent"
+#~ msgstr "透過"
+
+#~ msgid "White"
+#~ msgstr "白"
+
+#~ msgid "Classic FAQ"
+#~ msgstr "旧 FAQ"
+
+#~ msgid "Bgfill Circle"
+#~ msgstr "背景塗り 円形"
+
+#~ msgid "Bgfill Square"
+#~ msgstr "背景塗り ピン角"
+
+#~ msgid "Bgfill Rounded"
+#~ msgstr "背景塗り 角丸"
+
+#~ msgid "Border Circle"
+#~ msgstr "枠線 円形"
+
+#~ msgid "Border Square"
+#~ msgstr "枠線 ピン角"
+
+#~ msgid "Border Rounded"
+#~ msgstr "枠線 角丸"
+
+#~| msgid "Blocks"
+#~ msgid "PR Blocks"
+#~ msgstr "PR Blocks"
+
+#~ msgid "Select Image"
+#~ msgstr "画像を選択"
+
+#~ msgid "PC"
+#~ msgstr "PC"
+
+#~ msgid "Tablet"
+#~ msgstr "タブレット"
+
+#~ msgid "Mobile"
+#~ msgstr "モバイル"
+
+#~ msgid "Align %s"
+#~ msgstr "表示位置"
+
+#~ msgid "Align"
+#~ msgstr "表示位置"
+
+#~ msgid "Responsive BR "
+#~ msgstr "画面サイズ毎の改行 "
+
+#~ msgid "Both ends"
+#~ msgstr "左右線"
+
+#~ msgid "Brackets black"
+#~ msgstr "括弧 黒"
+
+#~ msgid "Plain"
+#~ msgstr "装飾無し"
+
+#~ msgid "Background fill lightgray"
+#~ msgstr "背景塗り 灰色"
+
+#~ msgid "Double border top and bottom black"
+#~ msgstr "二重線 上下線 黒"
+
+#~ msgid "Double border bottom black"
+#~ msgstr "二重線 下線 黒"
+
+#~ msgid "Solid border top and bottom black"
+#~ msgstr "直線 上下 黒"
+
+#~ msgid "Solid border bottom black"
+#~ msgstr "直線 下線 黒"
+
+#~ msgid "Dotted border bottom black"
+#~ msgstr "点線 下線 黒"
+
+#~ msgid "Block Template Setting"
+#~ msgstr "ブロックテンプレート設定"
 
 #~ msgctxt "post format archive title"
 #~ msgid "Asides"
@@ -1255,9 +1410,6 @@ msgstr ""
 #~ msgid "Hide Details"
 #~ msgstr "詳細を非表示"
 
-#~ msgid "Sorry, there is no post"
-#~ msgstr "お知らせはありません"
-
 #~ msgid "Vektor WordPress Information"
 #~ msgstr "Vektor WordPress Information"
 
@@ -1322,60 +1474,6 @@ msgstr ""
 #~ msgid "Ex) fas fa-arrow-circle-right"
 #~ msgstr "例) fas fa-arrow-circle-right"
 
-#~ msgid "Animation"
-#~ msgstr "アニメーション"
-
-#~ msgid "Animation Settings"
-#~ msgstr "アニメーション設定"
-
-#~ msgid "Animation effect"
-#~ msgstr "アニメーションの効果"
-
-#~ msgid "Fade In"
-#~ msgstr "フェードイン"
-
-#~ msgid "Slide Up"
-#~ msgstr "スライドアップ"
-
-#~ msgid "Slide Left"
-#~ msgstr "スライド左"
-
-#~ msgid "Slide Right"
-#~ msgstr "スライド右"
-
-#~ msgid "Left Right"
-#~ msgstr "左右"
-
-#~ msgid "Up Down"
-#~ msgstr "上下"
-
-#~ msgid "Trembling Y"
-#~ msgstr "ぶるぶる（Y方向）"
-
-#~ msgid "Animation speed"
-#~ msgstr "アニメーションの速度"
-
-#~ msgid "Very Slow"
-#~ msgstr "非常に遅い"
-
-#~ msgid "Slow"
-#~ msgstr "遅い"
-
-#~ msgid "Fast"
-#~ msgstr "速い"
-
-#~ msgid "Very Fast"
-#~ msgstr "非常に速い"
-
-#~ msgid "Animation range"
-#~ msgstr "アニメーションの距離"
-
-#~ msgid "Short"
-#~ msgstr "短い"
-
-#~ msgid "Long"
-#~ msgstr "長い"
-
 #~ msgid "Card Item"
 #~ msgstr "カードアイテム"
 
@@ -1393,9 +1491,6 @@ msgstr ""
 
 #~ msgid "Warning! When you hidden this item, you will lose the content."
 #~ msgstr "注意！この項目を非表示にすると入力されていた内容は失われます。"
-
-#~ msgid "Button"
-#~ msgstr "ボタン"
 
 #~ msgid "Button option"
 #~ msgstr "ボタンオプション"
@@ -1419,14 +1514,8 @@ msgstr ""
 #~ msgid "Current page"
 #~ msgstr "現在のページ"
 
-#~ msgid "Display conditions"
-#~ msgstr "表示条件"
-
 #~ msgid "Parent"
 #~ msgstr "親ページ"
-
-#~ msgid "Grid Column"
-#~ msgstr "グリッドカラム"
 
 #~ msgid "Layout Columns"
 #~ msgstr "カラムレイアウト"
@@ -1434,26 +1523,8 @@ msgstr ""
 #~ msgid "Icon Card Item"
 #~ msgstr "アイコンカードアイテム"
 
-#~ msgid "Link URL:"
-#~ msgstr "リンクURL:"
-
-#~ msgid "Open link new tab."
-#~ msgstr "リンクを別ウィンドウで開く"
-
 #~ msgid "Icon Background:"
 #~ msgstr "アイコン背景:"
-
-#~ msgid "Solid color"
-#~ msgstr "ベタ塗り"
-
-#~ msgid "No background"
-#~ msgstr "背景なし"
-
-#~ msgid "Input Title"
-#~ msgstr "タイトルを入力"
-
-#~ msgid "Input Content"
-#~ msgstr "文章を入力してください"
 
 #~ msgid "Icon Card"
 #~ msgstr "アイコンカード"
@@ -1467,39 +1538,6 @@ msgstr ""
 #~ msgid "Outer"
 #~ msgstr "Outer"
 
-#~ msgid "ASC"
-#~ msgstr "昇順"
-
-#~ msgid "DESC"
-#~ msgstr "降順"
-
-#~ msgid "Order by"
-#~ msgstr "表示順"
-
-#~ msgid "Published Date"
-#~ msgstr "公開日"
-
-#~ msgid "Modefied Date"
-#~ msgstr "更新日"
-
-#~ msgid "offset"
-#~ msgstr "オフセット数"
-
-#~ msgid "Post list"
-#~ msgstr "投稿リスト"
-
-#~ msgid "Filter by PostTypes"
-#~ msgstr "投稿タイプ"
-
-#~ msgid "Filter by Taxonomy Terms"
-#~ msgstr "分類"
-
-#~ msgid "Number of Posts"
-#~ msgstr "表示件数"
-
-#~ msgid "Order"
-#~ msgstr "表示順"
-
 #~ msgid "Background Image Size"
 #~ msgstr "背景画像サイズ"
 
@@ -1508,9 +1546,6 @@ msgstr ""
 
 #~ msgid "repeat"
 #~ msgstr "リピート"
-
-#~ msgid "Slider Item"
-#~ msgstr "スライダーアイテム"
 
 #~ msgid "Fit to the Container area"
 #~ msgstr "コンテナエリアに合わせる"
@@ -1533,22 +1568,6 @@ msgstr ""
 
 #~ msgid "Step Item"
 #~ msgstr "ステップ要素"
-
-#~ msgid "Step Mark"
-#~ msgstr "ステップマーク"
-
-#~ msgid "If Font Awesome tags entered, it will overrides the number."
-#~ msgstr ""
-#~ "Font Awesome の class 名が入力されている場合は数字は上書きされます。"
-
-#~ msgid "Ex,6:00AM"
-#~ msgstr "例) 午前 6:00"
-
-#~ msgid "Style"
-#~ msgstr "スタイル"
-
-#~ msgid "Outlined"
-#~ msgstr "アウトライン"
 
 #~ msgid "Step"
 #~ msgstr "ステップ"
@@ -1574,23 +1593,8 @@ msgstr ""
 #~ msgid "label"
 #~ msgstr "ラベル"
 
-#~ msgid "Alert"
-#~ msgstr "アラート"
-
 #~ msgid "Style Settings"
 #~ msgstr "スタイル設定"
-
-#~ msgid "Success"
-#~ msgstr "Success"
-
-#~ msgid "Info"
-#~ msgstr "Info"
-
-#~ msgid "Warning"
-#~ msgstr "Warning"
-
-#~ msgid "Danger"
-#~ msgstr "Danger"
 
 #~ msgid "Ballon"
 #~ msgstr "吹き出し"
@@ -1615,78 +1619,6 @@ msgstr ""
 
 #~ msgid "Solid Angle iconFeature"
 #~ msgstr "直線 ピン角 アイコン"
-
-#~ msgid "Button setting"
-#~ msgstr "ボタン設定"
-
-#~ msgid "Sub Caption"
-#~ msgstr "サブテキスト"
-
-#~ msgid "Button URL"
-#~ msgstr "ボタン URL"
-
-#~ msgid "Button Size:"
-#~ msgstr "ボタンサイズ:"
-
-#~ msgid "Large"
-#~ msgstr "大"
-
-#~ msgid "Small"
-#~ msgstr "小"
-
-#~ msgid "Button Position:"
-#~ msgstr "ボタンの位置:"
-
-#~ msgid "Center"
-#~ msgstr "中央"
-
-#~ msgid "Wide"
-#~ msgstr "幅広"
-
-#~ msgid "Button Style:"
-#~ msgstr "ボタンスタイル:"
-
-#~ msgid "Text only"
-#~ msgstr "テキストのみ"
-
-#~ msgid ""
-#~ "If you select \"No background\", that you need to select a Custom Color."
-#~ msgstr ""
-#~ "もし「背景なし」を選択した場合はカスタムカラーで色を指定してください。"
-
-#~ msgid "Default Color:"
-#~ msgstr "標準色:"
-
-#~ msgid "Primary"
-#~ msgstr "Primary"
-
-#~ msgid "Secondary"
-#~ msgstr "Secondary"
-
-#~ msgid "Light"
-#~ msgstr "Light"
-
-#~ msgid "Dark"
-#~ msgstr "Dark"
-
-#~ msgid "Custom Color"
-#~ msgstr "カスタムカラー"
-
-#~ msgid ""
-#~ "This custom color overrides the default color. If you want to use the "
-#~ "default color, click the clear button."
-#~ msgstr ""
-#~ "このカスタムカラーはデフォルトのカラーを上書きします。 デフォルトの色を使"
-#~ "用したい場合は、クリアボタンをクリックしてください。"
-
-#~ msgid "Before text"
-#~ msgstr "文字の前"
-
-#~ msgid "After text"
-#~ msgstr "文字の後"
-
-#~ msgid "Input text"
-#~ msgstr "文字を入力"
 
 #~ msgid "Please enter a question."
 #~ msgstr "質問を入力してください。"
@@ -1780,9 +1712,6 @@ msgstr ""
 
 #~ msgid "Heading style"
 #~ msgstr "見出しスタイル"
-
-#~ msgid "Margin Setting"
-#~ msgstr "余白設定"
 
 #~ msgid "Margin bottom size of after hedding  (rem)"
 #~ msgstr "見出しテキストの下部の余白 (rem)"
@@ -1890,15 +1819,6 @@ msgstr ""
 #~ msgid "List Icon Color"
 #~ msgstr "リストアイコンの色"
 
-#~ msgid "Page Content"
-#~ msgstr "固定ページ本文"
-
-#~ msgid "Because no post is selected, The block Will not render"
-#~ msgstr "ページが選択されていないためこのブロックはレンダリングされません"
-
-#~ msgid "Select Page"
-#~ msgstr "ページを選択"
-
 #~ msgid "PR Block1 Setting"
 #~ msgstr "PR Block1 設定"
 
@@ -1932,41 +1852,8 @@ msgstr ""
 #~ msgid "PR Image 3"
 #~ msgstr "PR 画像 3"
 
-#~ msgid "Ghost"
-#~ msgstr "ゴーストボタン"
-
-#~ msgid "Button Color"
-#~ msgstr "ボタンの色"
-
-#~ msgid "Layout Type"
-#~ msgstr "レイアウトタイプ"
-
 #~ msgid "PR Content"
 #~ msgstr "PR Content"
-
-#~ msgid "Title Color"
-#~ msgstr "見出しの色"
-
-#~ msgid "Content Color"
-#~ msgstr "本文の色"
-
-#~ msgid "Image Border Color"
-#~ msgstr "画像の線の色"
-
-#~ msgid "Button Setting"
-#~ msgstr "ボタン設定"
-
-#~ msgid "Button Text"
-#~ msgstr "ボタンの文字"
-
-#~ msgid "Button Type"
-#~ msgstr "ボタンタイプ"
-
-#~ msgid "Input title."
-#~ msgstr "タイトルを入力してください。"
-
-#~ msgid "Input content."
-#~ msgstr "本文を入力してください。"
 
 #~ msgid "height"
 #~ msgstr "height"
@@ -2088,15 +1975,6 @@ msgstr ""
 #~ msgid "Button align"
 #~ msgstr "ボタンの位置"
 
-#~ msgid "Link target"
-#~ msgstr "リンクターゲット"
-
-#~ msgid "Open in new tab"
-#~ msgstr "リンクを別ウィンドウで開く"
-
-#~ msgid "Link rel"
-#~ msgstr "rel属性"
-
 #~ msgid "VK Blocks Templates"
 #~ msgstr "VK Blocks テンプレート"
 
@@ -2114,9 +1992,6 @@ msgstr ""
 
 #~ msgid "Display Block Template Setting"
 #~ msgstr "ブロックテンプレート表示設定"
-
-#~ msgid "Unspecified"
-#~ msgstr "未指定"
 
 #~ msgid "Deactivated VK-Blocks Plugin. Because VK-Blocks Pro running."
 #~ msgstr "Pro版VK-Blocksが起動しているため、VK-Blocksを停止しました。"

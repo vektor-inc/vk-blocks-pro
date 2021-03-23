@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "POT-Creation-Date: 2021-03-23T05:08:44+00:00\n"
-"PO-Revision-Date: 2021-03-23 14:09+0900\n"
+"PO-Revision-Date: 2021-03-23 14:12+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -2031,7 +2031,7 @@ msgstr "プラグインのインストール"
 
 #: inc/tgm-plugin-activation/tgm-config.php:79
 msgid "Installing Plugin: %s"
-msgstr "プラグインのインストール中: %s"
+msgstr "プラグイン %s をインストール中"
 
 #: inc/tgm-plugin-activation/tgm-config.php:80
 msgid "Something went wrong with the plugin API."

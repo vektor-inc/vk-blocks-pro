@@ -108,4 +108,4 @@ const addSwiperConfig = (el, type, attributes) => {
 	// Slider以外のブロック
 	return el;
 };
-addFilter('blocks.getSaveElement', 'vk-blocks/slider', addSwiperConfig);
+addFilter('blocks.getSaveElement', 'vk-blocks/slider', addSwiperConfig, 11);

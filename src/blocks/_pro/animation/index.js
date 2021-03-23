@@ -55,5 +55,6 @@ const addAnimationActiveClass = (el, type, attributes) => {
 addFilter(
 	'blocks.getSaveElement',
 	'vk-blocks/animation',
-	addAnimationActiveClass
+	addAnimationActiveClass,
+	11
 );

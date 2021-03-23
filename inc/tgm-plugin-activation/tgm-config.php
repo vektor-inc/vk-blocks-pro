@@ -22,7 +22,7 @@
  */
 require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
 
-add_action( 'tgmpa_register', 'vkfs_register_required_plugins' );
+add_action( 'tgmpa_register', 'vkb_register_required_plugins' );
 /**
  * Register the required plugins for this theme.
  *
@@ -37,7 +37,7 @@ add_action( 'tgmpa_register', 'vkfs_register_required_plugins' );
  * This function is hooked into tgmpa_init, which is fired within the
  * TGM_Plugin_Activation class constructor.
  */
-function vkfs_register_required_plugins() {
+function vkb_register_required_plugins() {
 	/*
 	 * Array of plugin arrays. Required keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also required.
@@ -48,7 +48,7 @@ function vkfs_register_required_plugins() {
 		array(
 			'name'     => 'VK Block Patterns', // The plugin name.
 			'slug'     => 'vk-block-patterns', // The plugin slug (typically the folder name).
-			'required' => true, // If false, the plugin is only 'recommended' instead of required.
+			'required' => false, // If false, the plugin is only 'recommended' instead of required.
 		),
 	);
 

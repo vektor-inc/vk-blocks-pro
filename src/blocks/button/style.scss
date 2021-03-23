@@ -1,3 +1,12 @@
+$vk-color-primary:#007bff;
+$vk-color-secondary: #6c757d;
+$vk-color-success: #28a745;
+$vk-color-info:#17a2b8;
+$vk-color-warning:#ffc107;
+$vk-color-danger: #dc3545;
+$vk-color-light:#f8f9fa;
+$vk-color-dark:#343a40;
+
 .vk_button {
 	margin: 5px auto; /* 他テーマで0だと左寄せになる場合があるのでautoに変更 */
 	text-align: center; /* テキストのみの時のセンター揃え */
@@ -73,13 +82,13 @@
 	}
 	.vk_button_link-type-text{
 		&:hover{
-			&.btn-outline-primary{color: #007bff;}
-			&.btn-outline-secondary{color: #6c757d;}
-			&.btn-outline-success{color: #28a745;}
-			&.btn-outline-info{color: #17a2b8;}
-			&.btn-outline-warning{color: #ffc107;}
-			&.btn-outline-danger{color: #dc3545;}
-			&.btn-outline-dark{	color: #343a40;}
+			&.btn-outline-primary{color: $vk-color-primary;}
+			&.btn-outline-secondary{color: $vk-color-secondary;}
+			&.btn-outline-success{color:$vk-color-success;}
+			&.btn-outline-info{color: $vk-color-info;}
+			&.btn-outline-warning{color: $vk-color-warning;}
+			&.btn-outline-danger{color: $vk-color-danger;}
+			&.btn-outline-dark{	color: $vk-color-dark;}
 		}
 		&.btn-outline-light{ color: #212529; }
 	}
@@ -88,7 +97,7 @@
 		//.editor-styles-wrapper a:not([href])に負けるので追加
 		a,
 		a:hover{
-			&.btn-primary{ background-color: #007bff; border-color: #007bff; }
+			&.btn-primary{ background-color: $vk-color-primary; border-color:$vk-color-primary; }
 			&.btn-primary,
 			&.btn-secondary,
 			&.btn-success,
@@ -100,21 +109,22 @@
 		}
 		a{
 			&.vk_button_link-type-text:hover.btn-outline-primary{
-				color: #007bff;
+				color: $vk-color-primary;
 			}
 			&.btn-outline-primary{
-				color: #007bff; 
-				border-color: #007bff;
+				color: $vk-color-primary; 
+				border-color:$vk-color-primary;
 				&:hover:not(.vk_button_link-type-text){
-					background-color:#007bff;
+					background-color:$vk-color-primary;
 				}
 			}
-			&.btn-outline-secondary{color: #6c757d;}
-			&.btn-outline-success{color: #28a745;}
-			&.btn-outline-info{color: #17a2b8;}
-			&.btn-outline-warning{color: #ffc107;}
-			&.btn-outline-danger{color: #dc3545;}
-			&.btn-outline-dark{	color: #343a40;}
+			&.btn-outline-secondary{color: $vk-color-secondary;}
+			&.btn-outline-success{color: $vk-color-success;}
+			&.btn-outline-info{color: $vk-color-info;}
+			&.btn-outline-warning{color: $vk-color-warning;}
+			&.btn-outline-danger{color: $vk-color-danger;}
+			&.btn-outline-light{color: $vk-color-light;}
+			&.btn-outline-dark{	color: $vk-color-dark;}
 		}
 		a:hover{
 			&.btn-outline-primary,

@@ -1,5 +1,5 @@
 // import WordPress Scripts
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import {
 	RangeControl,
 	PanelBody,
@@ -8,6 +8,7 @@ import {
 	CheckboxControl,
 	TextControl,
 } from '@wordpress/components';
+import { useState } from '@wordpress/element';
 import ServerSideRender from '@wordpress/server-side-render';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 
@@ -17,7 +18,6 @@ import {
 	useTaxonomies,
 	useTermsGroupbyTaxnomy,
 } from '@vkblocks/utils/hooks';
-import { flat } from '@vkblocks/utils/multi-array-flaten';
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
 
 // Load VK Blocks Compornents
@@ -27,7 +27,6 @@ import { AdvancedCheckboxControl } from '@vkblocks/components/advanced-checkbox-
 
 export default function PostListEdit(props) {
 	const { attributes, setAttributes, name } = props;
-
 	const {
 		numberPosts,
 		isCheckedPostType,
@@ -38,6 +37,23 @@ export default function PostListEdit(props) {
 		selfIgnore,
 	} = attributes;
 	attributes.name = name;
+
+	const [isCheckedTermsData, setIsCheckedTermsData] = useState(
+		JSON.parse(fixBrokenUnicode(isCheckedTerms))
+	);
+	const [isCheckedPostTypeData, setIsCheckedPostTypeData] = useState(
+		JSON.parse(fixBrokenUnicode(isCheckedPostType))
+	);
+
+	const saveStateTerms = (termId) => {
+		isCheckedTermsData.push(termId);
+		setIsCheckedTermsData(isCheckedTermsData);
+	};
+
+	const saveStatePostTypes = (slug) => {
+		isCheckedPostTypeData.push(slug);
+		setIsCheckedPostTypeData(isCheckedPostTypeData);
+	};
 
 	const postTypes = usePostTypes();
 	let postTypesProps = postTypes.map((postType) => {
@@ -54,15 +70,40 @@ export default function PostListEdit(props) {
 
 	const taxonomies = useTaxonomies();
 	const terms = useTermsGroupbyTaxnomy(taxonomies);
-	const taxonomiesPropsRaw = Object.keys(terms).map(function (taxonomy) {
-		return this[taxonomy].map((term) => {
+
+	// key を BaseControlのlabelに代入。valueの配列をmapでAdvancedCheckboxControlに渡す
+	const taxonomiesCheckBox = Object.keys(terms).map(function (
+		taxonomy,
+		index
+	) {
+		const taxonomiesProps = this[taxonomy].map((term) => {
 			return {
 				label: term.name,
 				slug: term.id,
 			};
 		});
-	}, terms);
-	const taxonomiesProps = flat(taxonomiesPropsRaw);
+
+		return (
+			<BaseControl
+				label={sprintf(
+					// translators: Filter by %s
+					__('Filter by %s', 'vk-blocks'),
+					taxonomy
+				)}
+				id={`vk_postList-terms`}
+				key={index}
+			>
+				<AdvancedCheckboxControl
+					schema={'isCheckedTerms'}
+					rawData={taxonomiesProps}
+					checkedData={isCheckedTermsData}
+					saveState={saveStateTerms}
+					{...props}
+				/>
+			</BaseControl>
+		);
+	},
+	terms);
 
 	const blockProps = useBlockProps();
 
@@ -80,25 +121,12 @@ export default function PostListEdit(props) {
 						<AdvancedCheckboxControl
 							schema={'isCheckedPostType'}
 							rawData={postTypesProps}
-							checkedData={JSON.parse(
-								fixBrokenUnicode(isCheckedPostType)
-							)}
+							checkedData={isCheckedPostTypeData}
+							saveState={saveStatePostTypes}
 							{...props}
 						/>
 					</BaseControl>
-					<BaseControl
-						label={__('Filter by Taxonomy Terms', 'vk-blocks')}
-						id={`vk_postList-terms`}
-					>
-						<AdvancedCheckboxControl
-							schema={'isCheckedTerms'}
-							rawData={taxonomiesProps}
-							checkedData={JSON.parse(
-								fixBrokenUnicode(isCheckedTerms)
-							)}
-							{...props}
-						/>
-					</BaseControl>
+					{taxonomiesCheckBox}
 					<BaseControl
 						label={__('Number of Posts', 'vk-blocks')}
 						id={`vk_postList-numberPosts`}

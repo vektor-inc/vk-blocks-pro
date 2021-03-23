@@ -17,7 +17,7 @@ add_action(
 	'plugins_loaded',
 	function () {
 		// Load language files.
-		$path = dirname( plugin_basename( __FILE__ ) ) . '/build/languages';
+		$path = dirname( plugin_basename( __FILE__ ) ) . '/languages';
 		load_plugin_textdomain( 'vk-blocks', false, $path );
 	}
 );
@@ -110,7 +110,7 @@ function vkblocks_blocks_assets() {
 		wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_check', array( 'is_pro' => false ) );
 	}
 	// ホーム URL を渡す用
-	wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_home_url', home_url( '/' ) );
+	wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_params', array( 'home_url' => home_url( '/' ) ) );
 
 	if( is_lager_than_wp('5.0') ){
 
@@ -159,7 +159,9 @@ function vkblocks_blocks_assets() {
 				require_once VK_BLOCKS_SRC_PATH . '/blocks/' . $array . '/index.php';
 			}
 			foreach ( $arr_wp56_pro as $array ) {
-				require_once VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $array . '/index.php';
+				if(file_exists(VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $array . '/index.php')){
+					require_once VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $array . '/index.php';
+				}
 			}
 		}
 

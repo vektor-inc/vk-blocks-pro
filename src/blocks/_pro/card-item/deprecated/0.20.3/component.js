@@ -11,24 +11,15 @@ export class DepComponent extends Component {
 		const { setAttributes, attributes, clientId } = this.props.value;
 		let {
 			layout,
-			// eslint-disable-next-line camelcase
 			col_xs,
-			// eslint-disable-next-line camelcase
 			col_sm,
-			// eslint-disable-next-line camelcase
 			col_md,
-			// eslint-disable-next-line camelcase
 			col_lg,
-			// eslint-disable-next-line camelcase
 			col_xl,
-			// eslint-disable-next-line camelcase
 			display_image,
-			// eslint-disable-next-line camelcase
 			display_btn,
-			// eslint-disable-next-line camelcase
 			btn_text,
 			title,
-			// eslint-disable-next-line camelcase
 			excerpt_text,
 			image,
 			url,
@@ -66,7 +57,6 @@ export class DepComponent extends Component {
 			});
 		};
 
-		// eslint-disable-next-line no-shadow
 		const uploadImgBtn = (image) => {
 			const imageParsed = JSON.parse(fixBrokenUnicode(image));
 			return (
@@ -111,9 +101,7 @@ export class DepComponent extends Component {
 			);
 		};
 
-		// eslint-disable-next-line camelcase,no-shadow
 		const renderImage = (display_image) => {
-			// eslint-disable-next-line camelcase,
 			if (display_image) {
 				if (isEdit(for_)) {
 					return (
@@ -136,7 +124,6 @@ export class DepComponent extends Component {
 			}
 		};
 
-		// eslint-disable-next-line no-shadow
 		const switchAddUrltoImage = (url) => {
 			const overlay = <div className="card-img-overlay"></div>;
 			if (url) {
@@ -149,7 +136,6 @@ export class DepComponent extends Component {
 			return overlay;
 		};
 
-		// eslint-disable-next-line no-shadow
 		const renderExcerpt = (align) => {
 			const titleTag = 'p';
 			const titleClass = `vk_post_excerpt card-text text-${align.text}`;
@@ -158,7 +144,6 @@ export class DepComponent extends Component {
 					<RichText
 						tagName={titleTag}
 						className={titleClass}
-						// eslint-disable-next-line camelcase,
 						value={excerpt_text}
 						onChange={(value) =>
 							setAttributes({ excerpt_text: value })
@@ -174,15 +159,12 @@ export class DepComponent extends Component {
 				<RichText.Content
 					tagName={titleTag}
 					className={titleClass}
-					// eslint-disable-next-line camelcase,
 					value={excerpt_text}
 				/>
 			);
 		};
 
-		// eslint-disable-next-line camelcase,no-shadow
 		const renderButton = (display_btn, align) => {
-			// eslint-disable-next-line camelcase,
 			if (display_btn) {
 				return (
 					<div className={`vk_post_btnOuter text-${align.button}`}>
@@ -192,7 +174,6 @@ export class DepComponent extends Component {
 							target={linkTarget}
 							rel={rel}
 						>
-							{/* eslint-disable-next-line camelcase*/}
 							{btn_text}
 						</a>
 					</div>
@@ -200,7 +181,6 @@ export class DepComponent extends Component {
 			}
 		};
 
-		// eslint-disable-next-line no-shadow
 		const renderTitle = (align) => {
 			const titleTag = 'h5';
 			const titleClass = `vk_post_title card-title text-${align.title}`;
@@ -236,7 +216,6 @@ export class DepComponent extends Component {
 			imageStyle = {};
 		}
 
-		// eslint-disable-next-line camelcase,
 		const btnClass = display_btn ? 'vk_post-btn-display' : '';
 
 		return (

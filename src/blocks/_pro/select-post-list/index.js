@@ -18,7 +18,7 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-	title: __('Select Post List', 'vk-blocks'),
+	title: __('Selected Post List', 'vk-blocks'),
 	icon: <Icon />,
 	edit,
 	save,

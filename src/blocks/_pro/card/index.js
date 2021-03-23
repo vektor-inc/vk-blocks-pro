@@ -9,7 +9,6 @@ import { __ } from '@wordpress/i18n';
 import { useEffect } from '@wordpress/element';
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
-import { filterHiddenControl } from '@vkblocks/utils/filterHiddenControl';
 
 export const prefix = 'vk_card_';
 
@@ -147,7 +146,6 @@ addFilter(
 				// NOTE: useBlockProps + style要素を挿入する場合、useBlockPropsを使った要素が最初（上）にこないと、
 				// カスタムクラスを追加する処理が失敗する
 				const cssTag = generateInlineCss(attributes);
-				el = filterHiddenControl(el, attributes);
 				return (
 					<>
 						{el}
@@ -167,5 +165,6 @@ addFilter(
 			return <DeprecatedHook el={el} attributes={attributes} />;
 		}
 		return el;
-	}
+	},
+	11
 );

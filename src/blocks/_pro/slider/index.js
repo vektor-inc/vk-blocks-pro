@@ -6,7 +6,6 @@ import { ReactComponent as Icon } from './icon.svg';
 import { __ } from '@wordpress/i18n';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { addFilter } from '@wordpress/hooks';
-import { filterHiddenControl } from '@vkblocks/utils/filterHiddenControl';
 
 import deprecatedHooks from './deprecated/hooks';
 import deprecated from './deprecated/save';
@@ -94,7 +93,6 @@ const addSwiperConfig = (el, type, attributes) => {
 		// 最新版
 		if (-1 === deprecatedFuncIndex) {
 			const cssTag = generateHeightCss(attributes, cssSelector);
-			el = filterHiddenControl(el, attributes);
 			return (
 				<>
 					{el}
@@ -110,4 +108,4 @@ const addSwiperConfig = (el, type, attributes) => {
 	// Slider以外のブロック
 	return el;
 };
-addFilter('blocks.getSaveElement', 'vk-blocks/slider', addSwiperConfig);
+addFilter('blocks.getSaveElement', 'vk-blocks/slider', addSwiperConfig, 11);

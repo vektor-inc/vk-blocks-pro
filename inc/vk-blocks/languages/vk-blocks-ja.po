@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2021-03-03T06:06:50+00:00\n"
-"PO-Revision-Date: 2021-03-03 15:12+0900\n"
+"POT-Creation-Date: 2021-03-23T05:08:44+00:00\n"
+"PO-Revision-Date: 2021-03-23 14:09+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -39,8 +39,8 @@ msgstr "アニメーションの距離"
 msgid "Short"
 msgstr "短い"
 
-#: src/blocks/_pro/animation/edit.js:123 src/blocks/_pro/outer/edit.js:259
-#: src/blocks/_pro/slider/edit.js:93 src/blocks/balloon/edit.js:276
+#: src/blocks/_pro/animation/edit.js:123 src/blocks/_pro/outer/edit.js:303
+#: src/blocks/_pro/slider/edit.js:118 src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95 src/blocks/faq/index.js:27
 #: src/blocks/faq2/index.js:22
 msgid "Normal"
@@ -114,12 +114,12 @@ msgstr "遅い"
 msgid "Animation"
 msgstr "アニメーション"
 
-#: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:152
-#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:166
-#: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:172
-#: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:169
-#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:175
-#: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:180
+#: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:149
+#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:151
+#: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:156
+#: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:154
+#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:157
+#: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:161
 #: src/blocks/_pro/card-item/edit.js:140 src/utils/example-data.js:3
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
@@ -128,23 +128,23 @@ msgstr ""
 "あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくし"
 "い森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。"
 
-#: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:198
-#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:214
-#: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:222
-#: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:219
-#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:230
-#: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:235
+#: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:190
+#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:194
+#: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:201
+#: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:199
+#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:206
+#: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:210
 #: src/blocks/_pro/card-item/edit.js:182 src/blocks/_pro/card/edit.js:121
-#: src/blocks/_pro/icon-card/edit.js:72 src/blocks/_pro/post-list/edit.js:152
+#: src/blocks/_pro/icon-card/edit.js:72 src/blocks/_pro/post-list/edit.js:180
 msgid "Title"
 msgstr "タイトルを入力"
 
 #: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:81
-#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:87
-#: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:92
-#: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:90
-#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:94
-#: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:99
+#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:77
+#: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:82
+#: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:80
+#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:82
+#: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:86
 #: src/blocks/_pro/card-item/edit.js:88 src/blocks/balloon/edit.js:379
 #: src/blocks/flow/edit.js:82 src/blocks/pr-blocks/edit.js:88
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:130
@@ -163,11 +163,11 @@ msgid "Select image"
 msgstr "画像を選択"
 
 #: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:94
-#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:104
-#: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:109
-#: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:107
-#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:111
-#: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:116
+#: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:94
+#: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:99
+#: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:97
+#: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:99
+#: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:103
 #: src/blocks/_pro/card-item/edit.js:105
 #: src/components/advanced-media-upload/index.js:34
 msgid "Delete Image"
@@ -231,7 +231,7 @@ msgstr "ボタンの文字"
 msgid "Image Height"
 msgstr "画像高さ"
 
-#: src/blocks/_pro/card/edit.js:82 src/blocks/_pro/slider/edit.js:112
+#: src/blocks/_pro/card/edit.js:82 src/blocks/_pro/slider/edit.js:137
 msgid "Slide Height for each device."
 msgstr "デバイス毎の高さ"
 
@@ -245,7 +245,7 @@ msgstr "カード"
 msgid "Current page"
 msgstr "現在のページ"
 
-#: src/blocks/_pro/child-page/edit.js:63 src/blocks/_pro/post-list/edit.js:73
+#: src/blocks/_pro/child-page/edit.js:63 src/blocks/_pro/post-list/edit.js:114
 msgid "Display conditions"
 msgstr "表示条件"
 
@@ -253,9 +253,9 @@ msgstr "表示条件"
 msgid "Parent"
 msgstr "親ページ"
 
-#: src/blocks/_pro/child-page/edit.js:82 src/blocks/_pro/post-list/edit.js:176
+#: src/blocks/_pro/child-page/edit.js:82 src/blocks/_pro/post-list/edit.js:204
 msgid "Ignore this post"
-msgstr "この投稿を無視する"
+msgstr "この投稿を除く"
 
 #: src/blocks/_pro/child-page/index.js:18
 msgid "Child page list"
@@ -328,7 +328,7 @@ msgstr "アイコンカード設定"
 
 #: src/blocks/_pro/icon-card-item/edit.js:92 src/blocks/pr-blocks/edit.js:263
 msgid "Link URL:"
-msgstr "リンクURL:"
+msgstr "リンク URL:"
 
 #: src/blocks/_pro/icon-card-item/index.js:19
 msgid "Icon Card Item"
@@ -351,16 +351,16 @@ msgstr "テキスト"
 msgid "Icon Card"
 msgstr "アイコンカード"
 
-#: src/blocks/_pro/outer/edit.js:138 src/blocks/_pro/slider-item/edit.js:122
+#: src/blocks/_pro/outer/edit.js:182 src/blocks/_pro/slider-item/edit.js:122
 msgid "Background Setting"
 msgstr "背景設定"
 
-#: src/blocks/_pro/outer/edit.js:143 src/blocks/_pro/slider-item/edit.js:126
+#: src/blocks/_pro/outer/edit.js:187 src/blocks/_pro/slider-item/edit.js:126
 #: src/blocks/pr-content/edit.js:60
 msgid "Color Setting"
 msgstr "色設定"
 
-#: src/blocks/_pro/outer/edit.js:144 src/blocks/_pro/slider-item/edit.js:128
+#: src/blocks/_pro/outer/edit.js:188 src/blocks/_pro/slider-item/edit.js:128
 msgid ""
 "Color will overcome background image. If you want to display image, clear "
 "background color or set opacity 0."
@@ -368,84 +368,84 @@ msgstr ""
 "色を指定すると画像よりも優先されます。画像を表示したい場合は、背景色をクリア"
 "するか、不透明度を0に設定します。"
 
-#: src/blocks/_pro/outer/edit.js:157 src/blocks/_pro/slider-item/edit.js:141
+#: src/blocks/_pro/outer/edit.js:201 src/blocks/_pro/slider-item/edit.js:141
 msgid "Opacity Setting"
 msgstr "透過設定"
 
-#: src/blocks/_pro/outer/edit.js:171 src/blocks/_pro/slider-item/edit.js:176
+#: src/blocks/_pro/outer/edit.js:215 src/blocks/_pro/slider-item/edit.js:176
 msgid "Background Image PC"
 msgstr "背景画像 ( PC )"
 
-#: src/blocks/_pro/outer/edit.js:187 src/blocks/_pro/slider-item/edit.js:192
+#: src/blocks/_pro/outer/edit.js:231 src/blocks/_pro/slider-item/edit.js:192
 msgid "Background Image Tablet"
 msgstr "背景画像 ( タブレット )"
 
-#: src/blocks/_pro/outer/edit.js:197 src/blocks/_pro/slider-item/edit.js:202
+#: src/blocks/_pro/outer/edit.js:241 src/blocks/_pro/slider-item/edit.js:202
 msgid "Background Image Mobile"
 msgstr "背景画像背景画像 ( モバイル )"
 
-#: src/blocks/_pro/outer/edit.js:207
+#: src/blocks/_pro/outer/edit.js:251
 msgid "Background image Position"
 msgstr "背景画像の位置"
 
-#: src/blocks/_pro/outer/edit.js:215
+#: src/blocks/_pro/outer/edit.js:259
 msgid "Repeat"
 msgstr "リピート"
 
-#: src/blocks/_pro/outer/edit.js:219
+#: src/blocks/_pro/outer/edit.js:263
 msgid "Cover"
 msgstr "カバー"
 
-#: src/blocks/_pro/outer/edit.js:223
+#: src/blocks/_pro/outer/edit.js:267
 msgid "Cover fixed (Not fixed on iPhone)"
 msgstr "カバー 固定（iPhoneでは固定されません）"
 
-#: src/blocks/_pro/outer/edit.js:230
+#: src/blocks/_pro/outer/edit.js:274
 msgid "Parallax (Non-guaranteed)"
 msgstr "パララックス（非保証）"
 
-#: src/blocks/_pro/outer/edit.js:245 src/blocks/_pro/slider-item/edit.js:70
+#: src/blocks/_pro/outer/edit.js:289 src/blocks/_pro/slider-item/edit.js:70
 #: src/blocks/pr-content/edit.js:219
 msgid "Layout Setting"
 msgstr "レイアウト設定"
 
-#: src/blocks/_pro/outer/edit.js:248 src/blocks/_pro/slider/edit.js:84
+#: src/blocks/_pro/outer/edit.js:292 src/blocks/_pro/slider/edit.js:109
 msgid "Width"
 msgstr "幅"
 
-#: src/blocks/_pro/outer/edit.js:269 src/blocks/_pro/slider/edit.js:101
+#: src/blocks/_pro/outer/edit.js:313 src/blocks/_pro/slider/edit.js:126
 msgid "Full Wide"
 msgstr "全幅"
 
-#: src/blocks/_pro/outer/edit.js:274 src/blocks/_pro/slider-item/edit.js:75
+#: src/blocks/_pro/outer/edit.js:318 src/blocks/_pro/slider-item/edit.js:75
 msgid "Padding (Left and Right)"
 msgstr "余白 (左右)"
 
-#: src/blocks/_pro/outer/edit.js:278
+#: src/blocks/_pro/outer/edit.js:322
 msgid "Fit to the Content area"
 msgstr "コンテンツエリアに合わせる"
 
-#: src/blocks/_pro/outer/edit.js:285
+#: src/blocks/_pro/outer/edit.js:329
 msgid "Add padding to the Outer area"
 msgstr "アウターエリア内に余白を追加する"
 
-#: src/blocks/_pro/outer/edit.js:292
+#: src/blocks/_pro/outer/edit.js:336
 msgid "Remove padding from the Outer area"
 msgstr "アウターエリア内の余白を無くす"
 
-#: src/blocks/_pro/outer/edit.js:306
+#: src/blocks/_pro/outer/edit.js:350
 msgid "Padding (Top and Bottom)"
 msgstr "余白 (上下)"
 
-#: src/blocks/_pro/outer/edit.js:311
+#: src/blocks/_pro/outer/edit.js:355
 msgid "Use default padding"
 msgstr "標準の余白を使用"
 
-#: src/blocks/_pro/outer/edit.js:318
+#: src/blocks/_pro/outer/edit.js:362
 msgid "Do not use default padding"
 msgstr "標準の余白を使用しない"
 
-#: src/blocks/_pro/outer/edit.js:332
+#: src/blocks/_pro/outer/edit.js:376
 msgid ""
 "* If you select \"Do not use\" that, please set yourself it such as a spacer "
 "block."
@@ -453,145 +453,190 @@ msgstr ""
 "*「使用しない」を選択した場合はスペーサーブロックなどで任意に設定してくださ"
 "い。"
 
-#: src/blocks/_pro/outer/edit.js:340
+#: src/blocks/_pro/outer/edit.js:384
 msgid "Divider Setting"
 msgstr "区切りの設定"
 
-#: src/blocks/_pro/outer/edit.js:345 src/blocks/balloon/edit.js:236
+#: src/blocks/_pro/outer/edit.js:389 src/blocks/balloon/edit.js:236
 msgid "Type"
 msgstr "タイプ"
 
-#: src/blocks/_pro/outer/edit.js:353
+#: src/blocks/_pro/outer/edit.js:397
 msgid "Tilt"
 msgstr "傾斜"
 
-#: src/blocks/_pro/outer/edit.js:357
+#: src/blocks/_pro/outer/edit.js:401
 msgid "Curve"
 msgstr "カーブ"
 
-#: src/blocks/_pro/outer/edit.js:361
+#: src/blocks/_pro/outer/edit.js:405
 msgid "Wave"
 msgstr "波状"
 
-#: src/blocks/_pro/outer/edit.js:365 src/extensions/core/list/style.js:113
+#: src/blocks/_pro/outer/edit.js:409 src/extensions/core/list/style.js:113
 msgid "Triangle"
 msgstr "三角"
 
-#: src/blocks/_pro/outer/edit.js:371
+#: src/blocks/_pro/outer/edit.js:415
 msgid "Upper Divider Level"
 msgstr "上部区切りレベル"
 
-#: src/blocks/_pro/outer/edit.js:396
+#: src/blocks/_pro/outer/edit.js:440
 msgid "Lower Divider Level"
 msgstr "下部区切りレベル"
 
-#: src/blocks/_pro/outer/edit.js:422
+#: src/blocks/_pro/outer/edit.js:466
 msgid "Border Setting"
 msgstr "枠線の設定"
 
-#: src/blocks/_pro/outer/edit.js:427
+#: src/blocks/_pro/outer/edit.js:471
 msgid "Border will disappear when divider effect is applied."
 msgstr "枠線は区切りレベルを適用すると表示されなくなります。"
 
-#: src/blocks/_pro/outer/edit.js:433
+#: src/blocks/_pro/outer/edit.js:477
 msgid "Border type"
 msgstr "枠線の種類"
 
-#: src/blocks/_pro/outer/edit.js:441 src/blocks/_pro/step-item/edit.js:114
+#: src/blocks/_pro/outer/edit.js:485 src/blocks/_pro/step-item/edit.js:114
 #: src/blocks/_pro/timeline-item/edit.js:95 src/blocks/balloon/edit.js:338
 #: src/blocks/staff/edit.js:103
 msgid "None"
 msgstr "なし"
 
-#: src/blocks/_pro/outer/edit.js:445 src/blocks/_pro/step-item/edit.js:92
+#: src/blocks/_pro/outer/edit.js:489 src/blocks/_pro/step-item/edit.js:92
 #: src/blocks/_pro/timeline-item/edit.js:77 src/blocks/pr-content/edit.js:137
 #: src/extensions/core/group/style.js:104
 msgid "Solid"
 msgstr "直線"
 
-#: src/blocks/_pro/outer/edit.js:449 src/extensions/core/group/style.js:112
+#: src/blocks/_pro/outer/edit.js:493 src/extensions/core/group/style.js:112
 msgid "Dotted"
 msgstr "点線"
 
-#: src/blocks/_pro/outer/edit.js:453 src/extensions/core/group/style.js:116
+#: src/blocks/_pro/outer/edit.js:497 src/extensions/core/group/style.js:116
 msgid "Dashed"
 msgstr "Dashed"
 
-#: src/blocks/_pro/outer/edit.js:457 src/extensions/core/group/style.js:120
+#: src/blocks/_pro/outer/edit.js:501 src/extensions/core/group/style.js:120
 msgid "Double"
 msgstr "二重線"
 
-#: src/blocks/_pro/outer/edit.js:461
+#: src/blocks/_pro/outer/edit.js:505
 msgid "Groove"
 msgstr "Groove"
 
-#: src/blocks/_pro/outer/edit.js:465
+#: src/blocks/_pro/outer/edit.js:509
 msgid "Ridge"
 msgstr "Ridge"
 
-#: src/blocks/_pro/outer/edit.js:469
+#: src/blocks/_pro/outer/edit.js:513
 msgid "Inset"
 msgstr "Inset"
 
-#: src/blocks/_pro/outer/edit.js:473
+#: src/blocks/_pro/outer/edit.js:517
 msgid "Outset"
 msgstr "Outset"
 
-#: src/blocks/_pro/outer/edit.js:487
+#: src/blocks/_pro/outer/edit.js:531
 msgid "Border width"
 msgstr "枠線の幅"
 
-#: src/blocks/_pro/outer/edit.js:499
+#: src/blocks/_pro/outer/edit.js:543
 msgid "Border radius"
 msgstr "枠線のRの大きさ"
 
-#: src/blocks/_pro/outer/index.js:17
+#: src/blocks/_pro/outer/edit.js:559
+msgid "Container Inner Side Space Setting"
+msgstr "コンテナ内側のスペース設定"
+
+#: src/blocks/_pro/outer/edit.js:566
+#: src/components/advanced-viewport-control/index.js:39
+msgid "Mobile"
+msgstr "モバイル"
+
+#: src/blocks/_pro/outer/edit.js:581
+#: src/components/advanced-viewport-control/index.js:31
+msgid "Tablet"
+msgstr "タブレット"
+
+#: src/blocks/_pro/outer/edit.js:596
+#: src/components/advanced-viewport-control/index.js:25
+msgid "PC"
+msgstr "PC"
+
+#: src/blocks/_pro/outer/edit.js:607
+#: src/components/advanced-unit-control/index.js:12
+msgid "Unit Type"
+msgstr "単位"
+
+#: src/blocks/_pro/outer/edit.js:617
+#: src/components/advanced-unit-control/index.js:18
+msgid "px"
+msgstr "px"
+
+#: src/blocks/_pro/outer/edit.js:621
+#: src/components/advanced-unit-control/index.js:22
+msgid "em"
+msgstr "em"
+
+#: src/blocks/_pro/outer/edit.js:625
+#: src/components/advanced-unit-control/index.js:26
+msgid "rem"
+msgstr "rem"
+
+#: src/blocks/_pro/outer/edit.js:629
+#: src/components/advanced-unit-control/index.js:30
+msgid "vw"
+msgstr "vw"
+
+#: src/blocks/_pro/outer/index.js:20
 msgid "Outer"
 msgstr "Outer"
 
-#: src/blocks/_pro/post-list/edit.js:103
-msgid "Number of Posts"
-msgstr "表示件数"
-
-#: src/blocks/_pro/post-list/edit.js:116
-msgid "Order"
-msgstr "表示順"
-
-#: src/blocks/_pro/post-list/edit.js:125
-msgid "ASC"
-msgstr "昇順"
-
-#: src/blocks/_pro/post-list/edit.js:129
-msgid "DESC"
-msgstr "降順"
-
-#: src/blocks/_pro/post-list/edit.js:135
-msgid "Order by"
-msgstr "表示順"
-
-#: src/blocks/_pro/post-list/edit.js:144
-msgid "Published Date"
-msgstr "公開日"
-
-#: src/blocks/_pro/post-list/edit.js:148
-msgid "Modefied Date"
-msgstr "更新日"
-
-#: src/blocks/_pro/post-list/edit.js:156
-msgid "Random"
-msgstr "ランダム"
-
-#: src/blocks/_pro/post-list/edit.js:162
-msgid "offset"
-msgstr "オフセット数"
-
-#: src/blocks/_pro/post-list/edit.js:77
+#: src/blocks/_pro/post-list/edit.js:118
 msgid "Filter by PostTypes"
 msgstr "投稿タイプ"
 
+#: src/blocks/_pro/post-list/edit.js:131
+msgid "Number of Posts"
+msgstr "表示件数"
+
+#: src/blocks/_pro/post-list/edit.js:144
+msgid "Order"
+msgstr "表示順"
+
+#: src/blocks/_pro/post-list/edit.js:153
+msgid "ASC"
+msgstr "昇順"
+
+#: src/blocks/_pro/post-list/edit.js:157
+msgid "DESC"
+msgstr "降順"
+
+#: src/blocks/_pro/post-list/edit.js:163
+msgid "Order by"
+msgstr "表示順"
+
+#: src/blocks/_pro/post-list/edit.js:172
+msgid "Published Date"
+msgstr "公開日"
+
+#: src/blocks/_pro/post-list/edit.js:176
+msgid "Modefied Date"
+msgstr "更新日"
+
+#: src/blocks/_pro/post-list/edit.js:184
+msgid "Random"
+msgstr "ランダム"
+
+#: src/blocks/_pro/post-list/edit.js:190
+msgid "offset"
+msgstr "オフセット数"
+
+#. Filter by %s
 #: src/blocks/_pro/post-list/edit.js:90
-msgid "Filter by Taxonomy Terms"
-msgstr "分類"
+msgid "Filter by %s"
+msgstr "%sで絞り込み"
 
 #: src/blocks/_pro/post-list/index.js:20
 msgid "Post list"
@@ -650,43 +695,59 @@ msgstr "スライダーアイテムエリア内の余白を無くす"
 msgid "Slider Item"
 msgstr "スライダーアイテム"
 
-#: src/blocks/_pro/slider/edit.js:107
+#: src/blocks/_pro/slider/edit.js:132
 msgid "Height"
 msgstr "高さ"
 
-#: src/blocks/_pro/slider/edit.js:126
+#: src/blocks/_pro/slider/edit.js:151
 msgid "Slider Settings"
 msgstr "スライド設定"
 
-#: src/blocks/_pro/slider/edit.js:130
+#: src/blocks/_pro/slider/edit.js:155
 msgid "Effect "
 msgstr "エフェクト"
 
-#: src/blocks/_pro/slider/edit.js:140
+#: src/blocks/_pro/slider/edit.js:165
 msgid "Slide"
 msgstr "スライド"
 
-#: src/blocks/_pro/slider/edit.js:144
+#: src/blocks/_pro/slider/edit.js:169
 msgid "Fade"
 msgstr "フェード"
 
-#: src/blocks/_pro/slider/edit.js:151
+#: src/blocks/_pro/slider/edit.js:176
 msgid "Loop "
 msgstr "繰り返し"
 
-#: src/blocks/_pro/slider/edit.js:161
+#: src/blocks/_pro/slider/edit.js:186
 msgid "AutoPlay"
 msgstr "自動再生"
 
-#: src/blocks/_pro/slider/edit.js:170
+#: src/blocks/_pro/slider/edit.js:195
 msgid "Display Time"
 msgstr "表示時間"
 
-#: src/blocks/_pro/slider/edit.js:181
+#: src/blocks/_pro/slider/edit.js:206
 msgid "Change Speed"
 msgstr "切り替え時間"
 
-#: src/blocks/_pro/slider/edit.js:195
+#: src/blocks/_pro/slider/edit.js:220
+msgid "Display Multi Images per View"
+msgstr "画像を複数枚表示する"
+
+#: src/blocks/_pro/slider/edit.js:224
+msgid "Images per View"
+msgstr "１度に表示する画像の枚数"
+
+#: src/blocks/_pro/slider/edit.js:234
+msgid "Move Images per Slide"
+msgstr "１度の動作で動かす枚数"
+
+#: src/blocks/_pro/slider/edit.js:244
+msgid "Space of between slides"
+msgstr "スライド間の余白"
+
+#: src/blocks/_pro/slider/edit.js:255
 msgid "Display Pagination"
 msgstr "ページネーションの表示"
 
@@ -699,7 +760,7 @@ msgid "Slider is do not move in edit screen."
 msgstr "スライダーは編集画面では動きません。公開画面でプレビューしてください。"
 
 #: src/blocks/_pro/step-item/edit.js:110
-#: src/blocks/_pro/table-of-contents-new/edit.js:106
+#: src/blocks/_pro/table-of-contents-new/edit.js:130
 #: src/blocks/_pro/timeline-item/edit.js:91 src/blocks/heading/edit.js:231
 #: src/blocks/staff/edit.js:99 src/extensions/core/heading/style.js:30
 #: src/extensions/core/list/style.js:104
@@ -728,7 +789,7 @@ msgid "Color"
 msgstr "色"
 
 #: src/blocks/_pro/step-item/edit.js:82
-#: src/blocks/_pro/table-of-contents-new/edit.js:96
+#: src/blocks/_pro/table-of-contents-new/edit.js:120
 #: src/blocks/_pro/timeline-item/edit.js:63
 msgid "Style"
 msgstr "スタイル"
@@ -751,25 +812,25 @@ msgid "Step"
 msgstr "ステップ"
 
 #: src/blocks/_pro/table-of-contents-new/deprecated/0.59.1/save.js:19
-#: src/blocks/_pro/table-of-contents-new/edit.js:139
+#: src/blocks/_pro/table-of-contents-new/edit.js:163
 #: src/blocks/_pro/table-of-contents-new/index.js:17
 #: src/blocks/_pro/table-of-contents-new/save.js:16
 msgid "Table of Contents"
 msgstr "目次"
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:110
+#: src/blocks/_pro/table-of-contents-new/edit.js:134
 msgid "No frame"
 msgstr "枠無し"
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:117
+#: src/blocks/_pro/table-of-contents-new/edit.js:141
 msgid "Default Display Status"
 msgstr "初期表示状態"
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:125
+#: src/blocks/_pro/table-of-contents-new/edit.js:149
 msgid "OPEN"
 msgstr "OPEN"
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:129
+#: src/blocks/_pro/table-of-contents-new/edit.js:153
 msgid "CLOSE"
 msgstr "CLOSE"
 
@@ -879,7 +940,7 @@ msgstr "画像スタイル"
 
 #: src/blocks/balloon/edit.js:286
 msgid "Rounded"
-msgstr "角丸"
+msgstr "角丸２"
 
 #: src/blocks/balloon/edit.js:296
 msgid "Circle"
@@ -1026,7 +1087,7 @@ msgstr "幅広"
 
 #: src/blocks/button/edit.js:159
 msgid "Block"
-msgstr "ブロック"
+msgstr "Block"
 
 #: src/blocks/button/edit.js:164
 msgid "Button Style:"
@@ -1230,7 +1291,6 @@ msgid "Margin Setting"
 msgstr "余白設定"
 
 #: src/blocks/heading/edit.js:243
-#| msgid "Margin bottom size of after hedding  (rem)"
 msgid "Margin bottom size of after hedding (rem)"
 msgstr "見出し下部の余白サイズ ( rem )"
 
@@ -1494,42 +1554,10 @@ msgstr "画像の線"
 msgid "Staff"
 msgstr "スタッフ"
 
-#: src/components/advanced-unit-control/index.js:12
-msgid "Unit Type"
-msgstr "単位"
-
-#: src/components/advanced-unit-control/index.js:18
-msgid "px"
-msgstr "px"
-
-#: src/components/advanced-unit-control/index.js:22
-msgid "em"
-msgstr "em"
-
-#: src/components/advanced-unit-control/index.js:26
-msgid "rem"
-msgstr "rem"
-
-#: src/components/advanced-unit-control/index.js:30
-msgid "vw"
-msgstr "vw"
-
-#: src/components/advanced-viewport-control/index.js:25
-msgid "PC"
-msgstr "PC"
-
-#: src/components/advanced-viewport-control/index.js:31
-msgid "Tablet"
-msgstr "タブレット"
-
-#: src/components/advanced-viewport-control/index.js:39
-msgid "Mobile"
-msgstr "モバイル"
-
 #. %s is align.
 #: src/components/card-align-control/index.js:24
 msgid "Align %s"
-msgstr "表示位置 %s"
+msgstr "表示位置"
 
 #: src/components/column-layout-control/index.js:20
 msgid "Card (Image Round)"
@@ -1701,13 +1729,9 @@ msgstr "蛍光マーカー"
 msgid "Highlight Color"
 msgstr "ハイライトカラー"
 
-#: src/extensions/common/nowrap/index.js:11
-msgid "No wrap"
-msgstr "Pas d'enveloppe"
-
 #: src/extensions/common/nowrap/index.js:21
-msgid "Nowrap"
-msgstr "Nowrap"
+msgid "No wrap"
+msgstr "No wrap"
 
 #: src/extensions/common/responsive-br/index.js:45
 msgid "Responsive BR "
@@ -2141,11 +2165,14 @@ msgid "Enable accordion and default close "
 msgstr "アコーディオン有効 / 初期状態で閉じる"
 
 #: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:23
+msgid "FAQ Block Setting"
+msgstr "FAQ Blocks 設定"
+
 #: inc/vk-blocks-pro/admin-pro/admin-pro.php:20
 msgid "FAQ Setting"
 msgstr "FAQ ブロックの設定"
 
-#: inc/vk-blocks/admin/admin-balloon.php:4 inc/vk-blocks/admin/admin.php:55
+#: inc/vk-blocks/admin/admin-balloon.php:4
 msgid "Balloon Setting"
 msgstr "吹き出しブロック設定"
 
@@ -2191,8 +2218,8 @@ msgid "Blocks Setting"
 msgstr "Blocks 設定"
 
 #: inc/vk-blocks/admin/admin.php:54
-msgid "Block Template Setting"
-msgstr "ブロックテンプレート設定"
+msgid "Balloon Block Setting"
+msgstr "吹き出しブロック設定"
 
 #: inc/vk-blocks/load-bootstrap.php:49
 msgid "VK Blocks Bootstrap Setting"
@@ -2214,11 +2241,11 @@ msgstr ""
 msgid "No Post is selected"
 msgstr "投稿が選択されていません"
 
-#: inc/vk-blocks/vk-blocks-functions.php:234
+#: inc/vk-blocks/vk-blocks-functions.php:236
 msgid "Blocks"
 msgstr "Blocks"
 
-#: inc/vk-blocks/vk-blocks-functions.php:244
+#: inc/vk-blocks/vk-blocks-functions.php:246
 msgid "Blocks Layout"
 msgstr "ブロックレイアウト"
 
@@ -2243,15 +2270,23 @@ msgctxt "post list type"
 msgid "Text 1 Column"
 msgstr "テキスト 1 カラム"
 
-#: src/blocks/page-content/index.php:108
+#: src/blocks/page-content/index.php:118
 msgid "Edit this area"
 msgstr "このエリアを編集"
 
 #: vk-blocks.php:80
-msgid "Disabled Blocks module. Because VK-Blocks Plugin running."
+msgid ""
+"Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks "
+"Plugin running."
 msgstr ""
-"VK-Blocksと競合するため、VK All in One Expansion UnitのBlock機能を停止しまし"
+"VK-Blocksと競合するため、VK All in One Expansion Unitの Block機能を停止しまし"
 "た。"
+
+#~ msgid "Filter by Taxonomy Terms"
+#~ msgstr "分類"
+
+#~ msgid "Block Template Setting"
+#~ msgstr "ブロックテンプレート設定"
 
 #~ msgctxt "post format archive title"
 #~ msgid "Asides"

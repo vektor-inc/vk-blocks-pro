@@ -21,7 +21,7 @@ msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:123
 #: src/blocks/_pro/outer/edit.js:303
-#: src/blocks/_pro/slider/edit.js:93
+#: src/blocks/_pro/slider/edit.js:118
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95
 #: src/blocks/faq/index.js:27
@@ -221,7 +221,7 @@ msgid "Image Height"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:82
-#: src/blocks/_pro/slider/edit.js:112
+#: src/blocks/_pro/slider/edit.js:137
 msgid "Slide Height for each device."
 msgstr ""
 
@@ -415,12 +415,12 @@ msgid "Layout Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:292
-#: src/blocks/_pro/slider/edit.js:84
+#: src/blocks/_pro/slider/edit.js:109
 msgid "Width"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:313
-#: src/blocks/_pro/slider/edit.js:101
+#: src/blocks/_pro/slider/edit.js:126
 msgid "Full Wide"
 msgstr ""
 
@@ -710,43 +710,59 @@ msgstr ""
 msgid "Slider Item"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:107
+#: src/blocks/_pro/slider/edit.js:132
 msgid "Height"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:126
+#: src/blocks/_pro/slider/edit.js:151
 msgid "Slider Settings"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:130
+#: src/blocks/_pro/slider/edit.js:155
 msgid "Effect "
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:140
+#: src/blocks/_pro/slider/edit.js:165
 msgid "Slide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:144
+#: src/blocks/_pro/slider/edit.js:169
 msgid "Fade"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:151
+#: src/blocks/_pro/slider/edit.js:176
 msgid "Loop "
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:161
+#: src/blocks/_pro/slider/edit.js:186
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:170
+#: src/blocks/_pro/slider/edit.js:195
 msgid "Display Time"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:181
+#: src/blocks/_pro/slider/edit.js:206
 msgid "Change Speed"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:195
+#: src/blocks/_pro/slider/edit.js:220
+msgid "Display Multi Images per View"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:224
+msgid "Images per View"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:234
+msgid "Move Images per Slide"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:244
+msgid "Space of between slides"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:255
 msgid "Display Pagination"
 msgstr ""
 
@@ -1757,12 +1773,8 @@ msgstr ""
 msgid "Highlight Color"
 msgstr ""
 
-#: src/extensions/common/nowrap/index.js:11
-msgid "No wrap"
-msgstr ""
-
 #: src/extensions/common/nowrap/index.js:21
-msgid "Nowrap"
+msgid "No wrap"
 msgstr ""
 
 #: src/extensions/common/responsive-br/index.js:45

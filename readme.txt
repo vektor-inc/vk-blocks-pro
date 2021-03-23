@@ -3,8 +3,8 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,m
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.6
-Tested up to: 5.5.3
-Stable tag: 0.57.4
+Tested up to: 5.6.1
+Stable tag: 1.0.15
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -62,6 +62,61 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 1.0.15 =
+[ Bug fix ][ Outer ] Fixed a bug where hiding doesn't work.
+
+= 1.0.14 =
+[ Specification Change ][ PostList ] Filter terms by taxonomy in sidebar.
+[ Translation ] Fix translation in balloon settings.
+
+= 1.0.13 =
+[ Bug fix ][ Editor ] Fix editor CSS of Grid Column, Card, Icon Card, Select Post.
+
+= 1.0.12 =
+[ Bug fix ][Table Of Contents] fix table of contents order bug.
+
+= 1.0.11 =
+[ Bug fix ][PageContent] fix bug can not use newline.
+
+= 1.0.10 =
+[ Translation ] Fix translation.
+
+= 1.0.9 =
+[ Other ] version only
+
+= 1.0.8 =
+[ Fix Translation System ] fix command to generate pot file.
+
+= 1.0.7 =
+[ Fix deprecated ][ Card ] fix decprecated.
+[ Design bug fix ][ Image ] fix style bug for core/image block.
+
+= 1.0.6 =
+[ Design bug fix ][ Slider ] [ Staff ][ PR Blocks ][ PR Content ] fix style bug for katawara.
+
+= 1.0.5 =
+* [ Bug fix ][ Animation ] [ Balloon ][ Heading ][ PR Content ][ Icon Card ] Fix data by old versoin needs recovery.
+* [ Design bug fix ][ QA Block ] Fix style in editor.
+* [ Design bug fix ][ Button ] Fix style of sub caption.
+
+* [ Add Block ] Add Page Content Block
+* [ Add Function ] Add nowrap
+* [ Add Function ][ Balloon ] Add border function
+
+= 1.0.4 =
+[ Bug fix ][Table of Contents] fix bug for deprecated.
+
+= 1.0.3 =
+[ Bug fix ][Spacer] fix bug for deprecated.
+
+= 1.0.2 =
+[ Bug fix ] fix bug when instert block.
+
+= 1.0.1 =
+
+= 1.0.0 =
+[ Other ][All] Refactoring all blocks.
 
 = 0.57.4 =
 [ Specification Change ] Load Term Color on init

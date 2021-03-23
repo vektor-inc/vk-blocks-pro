@@ -14,27 +14,33 @@ fi
 # tagのバージョンを変数に代入
 version=$1
 
-mv vk-blocks/ vk-blocks-free/
-cd ./vk-blocks-free/
+# Cloneしたディレクトリ名を rsync の exclude オプションで重複しないように変更
+mv vk-blocks/ vk-blocks-copy-target/
+# Cloneした無料版のディレクトリに移動
+cd ./vk-blocks-copy-target/
+# src/を削除
 rm -rf src/*
+# Pro版のディレクトリに移動
 cd ../
-# 指定したファイルを除外して、Pro版をコピー&上書き
-rsync --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'bin/' --exclude 'tests/' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/_pro/' --exclude 'vk-blocks-free/' --exclude '.git/' --exclude '.gitignore' --exclude 'inc/vk-blocks-pro/' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' -arvc ./* ./vk-blocks-free/
-cd ./vk-blocks-free/
-# push先のブランチを切る
-git checkout -b add/vk-blocks-free
+# 指定したファイルを除外して、Pro版を無料版へコピー&上書き
+rsync -arvc --exclude 'vk-blocks-copy-target/' --exclude 'test/' --exclude 'bin/' --exclude 'src/blocks/_pro/' --exclude 'inc/vk-blocks-pro/' --exclude '.git/' --exclude '.github/' --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/bundle-pro.js' --exclude '.gitignore' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' --exclude 'vk-blocks-pro.code-workspace' --exclude 'phpunit.xml.dist' ./* ./vk-blocks-copy-target/
+# 無料版のディレクトリに移動
+cd ./vk-blocks-copy-target/
 # Pro版ブロックは読み込まないようjsから削除
-sed -i /_pro/d src/blocks/bundle.js
+sed -i /_pro/d src/blocks/index.js
 # プラグイン名を通常版へリネーム
 sed -i 3s/Pro// vk-blocks.php
  # Pro版のブロックslugを配列に追加（後で使用する）
 cd ../
 pro_block_array=($(ls src/blocks/_pro/))
-cd ./vk-blocks-free/
+# 無料版のディレクトリに移動
+cd ./vk-blocks-copy-target/
 # Pro版のブロックをphpから削除
 for pro_block in ${pro_block_array[@]}; do
 sed -i s/\,\ \'${pro_block}\'//g inc/vk-blocks/vk-blocks-functions.php
 done
+# Pro版のブロックをbundle.jsから削除
+sed -i "s/import vkblocksPro from '\.\/bundle-pro'/const vkblocksPro = \[\]/g" src/blocks/bundle.js
 # ブロックをビルド
 npm install
 npm run build:free

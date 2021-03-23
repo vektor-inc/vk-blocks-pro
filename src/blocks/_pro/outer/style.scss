@@ -13,16 +13,25 @@ $media-lg-down: 991.98px;
 $media-xl-down: 1199.98px;
 $media-xxl-down: 1399.98px;
 
-.vk_outer {
+//.wp-block-vk-blocks-outerがないと打ち消されてしまうので追加
+.wp-block-vk-blocks-outer.vk_outer {
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	position: relative;
+	transform: translateZ(0); // Safari 1px bug 対応
 
 	.vk_outer_container {
 		min-height: 40px;
 	}
 }
+//iOS Safari での1pxズレの予防のため　Only Safari 10.1+
+@supports (-webkit-touch-callout: none) {
+	.wp-block-vk-blocks-outer {
+		margin-top: -0.45px;
+	}
+}
+
 
 .vk_outer-width-full {
 	margin-left: calc(50% - 50vw);
@@ -64,7 +73,6 @@ $padding-xxl: 4em;
 		padding-right: $padding-xl;
 	}
 
-
 	@media (min-width: $media-xxl-up) {
 		padding-left: $padding-xxl;
 		padding-right: $padding-xxl;
@@ -100,7 +108,6 @@ $padding-xxl: 4em;
 		padding-bottom: $padding-xl;
 	}
 
-
 	@media (min-width: $media-xxl-up) {
 		padding-top: $padding-xxl;
 		padding-bottom: $padding-xxl;
@@ -135,7 +142,6 @@ $padding-xxl: 4em;
 }
 
 .vk_outer_separator {
-
 	svg {
 		display: block;
 		max-height: 100px;
@@ -147,7 +153,6 @@ $padding-xxl: 4em;
 }
 
 .vk_outer_separator-position-upper {
-
 	svg {
 		top: 0;
 		transform: rotate(180deg);
@@ -155,20 +160,69 @@ $padding-xxl: 4em;
 }
 
 .vk_outer_separator-position-lower {
-
 	svg {
 		bottom: 0;
 	}
 }
 
-// .editor-block-list__block-edit{
-//   margin: 0!important;
-// }
 $color-danger: #b52727;
 
-@media (min-width: $media-xxl-up) {//端が隠れて編集しずらいので追加
-	.edit-post-visual-editor.editor-styles-wrapper .vk_outer-paddingLR-use {
-		padding-left: 6em;
-		padding-right: 6em;
+/*-------------------------------------------*/
+/* 管理画面
+/*-------------------------------------------*/
+:root {
+	--padding-left: 0;
+	--padding-right: 0;
+}
+
+.vk_outer-paddingLR-use {
+	--padding-left: 1.5em;
+	--padding-right: 1.5em;
+	@media (min-width: $media-sm-up) {
+		--padding-left: 2em;
+		--padding-right: 2em;
+	}
+	@media (min-width: $media-md-up) {
+		--padding-left: 2.5em;
+		--padding-right: 2.5em;
+	}
+	@media (min-width: $media-lg-up) {
+		--padding-left: 3em;
+		--padding-right: 3em;
+	}
+	@media (min-width: $media-xl-up) {
+		--padding-left: 3.5em;
+		--padding-right: 3.5em;
+	}
+	@media (min-width: $media-xxl-up) {
+		--padding-left: 4em;
+		--padding-right: 4em;
+	}
+}
+
+.edit-post-visual-editor {
+	.wp-block-vk-blocks-outer.vk_outer.vk_outer-width-full {
+		width: 100%;
+		max-width: 100vw;
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 0;
+		padding-right: 0;
+		&.vk_outer-paddingLR-use,
+		&.vk_outer-paddingLR-zero {
+			width: 100%;
+			max-width: 100vw;
+
+			padding-left: var(--padding-left);
+			padding-right: var(--padding-right);
+
+			.block-editor-inner-blocks {
+				max-width: 100vw;
+			}
+		}
+		.block-editor-inner-blocks {
+			max-width: 1110px;
+			margin: auto;
+		}
 	}
 }

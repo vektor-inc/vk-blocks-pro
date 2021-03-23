@@ -14,7 +14,7 @@ import { Fontawesome } from '../component-fontawesome';
 export class PRcontent extends Component {
 	render() {
 		const attributes = this.props.attributes;
-		let {
+		const {
 			title,
 			titleColor,
 			content,
@@ -32,9 +32,9 @@ export class PRcontent extends Component {
 			fontAwesomeIconAfter,
 		} = attributes;
 
-		let setAttributes = this.props.setAttributes;
-		let className = this.props.className;
-		let for_ = this.props.for_;
+		const setAttributes = this.props.setAttributes;
+		const className = this.props.className;
+		const for_ = this.props.for_;
 		let containerClass = 'vk_prContent';
 		let btnClass = 'vk_button';
 		let aClass = 'btn btn-block vk_button_link vk_prContent_colTxt_btn';
@@ -140,74 +140,65 @@ export class PRcontent extends Component {
 							)}
 						/>
 					);
-				} else {
-					const ImageParse = JSON.parse(fixBrokenUnicode(Image));
-					return (
-						<MediaUpload
-							onSelect={saveImage}
-							type=" image"
-							value={ImageParse}
-							render={({ open }) => (
-								<Button
-									onClick={open}
-									className={
-										ImageParse
-											? 'image-button'
-											: 'button button-large'
-									}
-								>
-									{Image === null ||
-									typeof ImageParse.sizes === 'undefined' ? (
-										__('Select image', 'vk-blocks')
-									) : (
-										<img
-											className={
-												'vk_prContent_colImg_image'
-											}
-											src={ImageParse.sizes.full.url}
-											alt={ImageParse.alt}
-											style={{
-												border: imageBorderProperty,
-											}}
-										/>
-									)}
-								</Button>
-							)}
-						/>
-					);
 				}
+				const ImageParse = JSON.parse(fixBrokenUnicode(Image));
+				return (
+					<MediaUpload
+						onSelect={saveImage}
+						type=" image"
+						value={ImageParse}
+						render={({ open }) => (
+							<Button
+								onClick={open}
+								className={
+									ImageParse
+										? 'image-button'
+										: 'button button-large'
+								}
+							>
+								{Image === null ||
+								typeof ImageParse.sizes === 'undefined' ? (
+									__('Select image', 'vk-blocks')
+								) : (
+									<img
+										className={'vk_prContent_colImg_image'}
+										src={ImageParse.sizes.full.url}
+										alt={ImageParse.alt}
+										style={{
+											border: imageBorderProperty,
+										}}
+									/>
+								)}
+							</Button>
+						)}
+					/>
+				);
 			} else if (for_ === 'save') {
 				if (!Image) {
 					return __('Select image', 'vk-blocks');
-				} else {
-					if (Image && Image.indexOf('{') === -1) {
-						return (
-							<img
-								className={'vk_prContent_colImg_image'}
-								src={Image}
-								alt={__('Upload image', 'vk-blocks')}
-								style={{ border: imageBorderProperty }}
-							/>
-						);
-					} else {
-						const ImageParse = JSON.parse(fixBrokenUnicode(Image));
-						if (
-							ImageParse &&
-							typeof ImageParse.sizes !== 'undefined'
-						) {
-							return (
-								<img
-									className={'vk_prContent_colImg_image'}
-									src={ImageParse.sizes.full.url}
-									alt={ImageParse.alt}
-									style={{ border: imageBorderProperty }}
-								/>
-							);
-						} else {
-							return '';
-						}
-					}
 				}
+				if (Image && Image.indexOf('{') === -1) {
+					return (
+						<img
+							className={'vk_prContent_colImg_image'}
+							src={Image}
+							alt={__('Upload image', 'vk-blocks')}
+							style={{ border: imageBorderProperty }}
+						/>
+					);
+				}
+				const ImageParse = JSON.parse(fixBrokenUnicode(Image));
+				if (ImageParse && typeof ImageParse.sizes !== 'undefined') {
+					return (
+						<img
+							className={'vk_prContent_colImg_image'}
+							src={ImageParse.sizes.full.url}
+							alt={ImageParse.alt}
+							style={{ border: imageBorderProperty }}
+						/>
+					);
+				}
+				return '';
 			}
 		};
 
@@ -249,24 +240,23 @@ export class PRcontent extends Component {
 									/>
 								</>
 							);
-						} else {
-							return (
-								<>
-									<RichText.Content
-										tagName="h3"
-										value={title}
-										className={'vk_prContent_colTxt_title'}
-										style={{ color: titleColor }}
-									/>
-									<RichText.Content
-										tagName="p"
-										className={'vk_prContent_colTxt_text'}
-										value={content}
-										style={{ color: contentColor }}
-									/>
-								</>
-							);
 						}
+						return (
+							<>
+								<RichText.Content
+									tagName="h3"
+									value={title}
+									className={'vk_prContent_colTxt_title'}
+									style={{ color: titleColor }}
+								/>
+								<RichText.Content
+									tagName="p"
+									className={'vk_prContent_colTxt_text'}
+									value={content}
+									style={{ color: contentColor }}
+								/>
+							</>
+						);
 					})()}
 					{
 						//ボタンテキストが入力されるとボタンを表示。

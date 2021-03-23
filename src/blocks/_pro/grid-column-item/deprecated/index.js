@@ -1,4 +1,3 @@
-/* eslint camelcase: 0 */
 import save0_45_2 from './0.45.2/save';
 import save0_60_1 from './0.60.1/save';
 
@@ -102,11 +101,11 @@ const blockAttributes = {
 const deprecated = [
 	{
 		attributes: blockAttributes,
-		save0_60_1,
+		save: save0_60_1,
 	},
 	{
 		attributes: blockAttributes,
-		save0_45_2,
+		save: save0_45_2,
 	},
 ];
 export default deprecated;

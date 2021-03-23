@@ -1,10 +1,20 @@
-const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
+let defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
+defaultConfig.module.rules.splice(0, 1) // JSをトランスパイルするルールを削除。下の独自ルールでPOTファイルを上書きして空にしてしまう。
+const path = require( 'path' );
+
 module.exports = {
 	...defaultConfig,
-	entry: __dirname + '/src/blocks/bundle.js',
+	entry: __dirname + '/src/blocks/index.js',
 	output: {
 		path: __dirname + '/inc/vk-blocks/build/',
 		filename: 'block-build.js',
+	},
+	resolve: {
+		...defaultConfig.resolve,
+		alias: {
+			...defaultConfig.resolve.alias,
+			'@vkblocks': path.resolve( __dirname, 'src' ),
+		},
 	},
 	module: {
 		...defaultConfig.module,
@@ -12,29 +22,25 @@ module.exports = {
 			...defaultConfig.module.rules,
 			{
 				test: /\.js$/,
-				exclude: /(node_modules|bower_components)/,
+				exclude: /(node_modules)/,
 				use: {
 					loader: 'babel-loader',
 					options: {
-						presets: [ '@babel/preset-env' ],
+						cacheDirectory: false, // キャッシュをOFF。理由：vk-blocks-js.pot を消した時に変更箇所以外の文字列が抽出されなくなる。
+						babelrc: false, // babelrcを反映させない
+						configFile: false, // babel.config.jsonを反映させない
+						presets: [ "@wordpress/default" ],
 						plugins: [
-							["module-resolver", {
-								"alias": {
-								  "@vkblocks": "./src"
-								}
-							}],
-							'@babel/plugin-transform-react-jsx',
 							[
-								// JSをスキャンして、potを作成/アップデート
-								'@wordpress/babel-plugin-makepot',
+								"@wordpress/babel-plugin-makepot",
 								{
-									output: __dirname + `/inc/vk-blocks/languages/vk-blocks.pot`,
-								},
-							],
+									"output": "inc/vk-blocks/languages/vk-blocks-js.pot"
+								}
+							]
 						],
-					},
-				},
-			},
-		],
-	},
+					}
+				}
+			}
+		]
+	}
 };

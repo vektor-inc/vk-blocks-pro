@@ -45,7 +45,7 @@ export class Fontawesome extends Component {
 export class PRContent extends Component {
 	render() {
 		const attributes = this.props.attributes;
-		let {
+		const {
 			title,
 			titleColor,
 			content,

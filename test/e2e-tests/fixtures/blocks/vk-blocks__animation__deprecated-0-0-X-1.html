@@ -1,0 +1,19 @@
+<!-- wp:vk-blocks/animation {"clientId":"8cca6ad55c864ad7a47631c53ee4fe7c"} -->
+<div><script>window.addEventListener('load', (event) => {
+	let animationElm = document.querySelector('.vk_animation-8cca6ad55c864ad7a47631c53ee4fe7c');
+	if(animationElm){
+		const observer = new IntersectionObserver((entries) => {
+			if(entries[0].isIntersecting){
+				animationElm.classList.add('vk_animation-active');
+			}else{
+				animationElm.classList.remove('vk_animation-active');
+			}
+		});
+		observer.observe(animationElm);
+	}
+}, false);</script><div class="wp-block-vk-blocks-animation vk_animation vk_animation-slide-up vk_animation-speed-fast vk_animation-range-short vk_animation-8cca6ad55c864ad7a47631c53ee4fe7c">
+<!-- wp:paragraph -->
+<p>ああ</p>
+<!-- /wp:paragraph -->
+</div></div>
+<!-- /wp:vk-blocks/animation -->

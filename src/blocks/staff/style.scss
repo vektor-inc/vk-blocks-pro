@@ -24,85 +24,90 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 	}
 }
 
-//
-.vk_staff {
+// 編集画面でcssの指定が軽くて負けるので.vk_staff .vk_staff_text を先に記述
+.vk_staff{ 
 	display: block;
-	overflow: hidden;
-	&_text {
-		&_name {
-			text-align: left;
-			box-shadow: none;
-			font-size: 2.5rem;
-			font-family: $font_serif;
-			line-height: 1;
-			margin-bottom: 0.5rem;
-			border: none;
-			padding: 0;
-			background-color: transparent;
-			display: inline; // これがないと見出しデザインで左右線みたいにflax指定されたときにセンター揃えになってしまう
-			&:before,
-			&:after {
-				display: none;
+	overflow: hidden;		
+	.vk_staff_text {
+		.vk_staff_text{
+			&_name {
+				text-align: left;
+				box-shadow: none;
+				font-size: 2.5rem;
+				font-family: $font_serif;
+				line-height: 1;
+				margin-bottom: 0.5rem;
+				border: none;
+				padding: 0;
+				background-color: transparent;
+				display: inline; // これがないと見出しデザインで左右線みたいにflax指定されたときにセンター揃えになってしまう
+				&:before,
+				&:after {
+					display: none;
+				}
+			}
+
+			&_caption {
+				font-family: $font_serif;
+				font-size: 14px;
+				display: block;
+				margin: 0 0 0.5rem 4px;
+				letter-spacing: 5px;
+			}
+			&_role {
+				font-size: 14px;
+				line-height: 1.6em;
+				font-family: $font_serif;
+			}
+			&_profileTitle {
+				font-size: 18px;
+				font-family: $font_serif;
+				padding-top: 0;
+				padding-left: 0;
+				padding-bottom: 2px;
+				margin-bottom: 1.2rem;
+				border-top: none;
+				border-left: none;
+				border-bottom: 1px solid #ccc;
+				background: none;
+				&:before,
+				&:after {
+					border: none;
+				}
+			}
+			&_profileText {
+				font-size: 14px;
+			}
+		}
+	} //.vk_staff_text
+
+		.vk_staff_photo {
+			display: block;
+			vertical-align: top;
+			text-align: center;
+			button {
+				width: 100%;
+			}
+			.image-button {
+				padding: 0;
+				margin: 0;
+				display: block;
+				height: 100%; // これがないと画像の枠が潰れる
+			}
+			&-border-default {
+				border: 4px solid #efefef;
+				padding: 1px;
+			}
+			&-border-none {
+				border: none;
+			}
+			&_image {
+				width: 100%;
+				margin: 0;
+				display: block;
 			}
 		}
 
-		&_caption {
-			font-family: $font_serif;
-			font-size: 14px;
-			display: block;
-			margin: 0 0 0.5rem 4px;
-			letter-spacing: 5px;
-		}
-		&_role {
-			font-size: 14px;
-			line-height: 1.6em;
-			font-family: $font_serif;
-		}
-		&_profileTitle {
-			font-size: 18px;
-			font-family: $font_serif;
-			padding-top: 0;
-			padding-left: 0;
-			padding-bottom: 2px;
-			margin-bottom: 1.2rem;
-			border-top: none;
-			border-bottom: 1px solid #ccc;
-			background: none;
-			&:before,
-			&:after {
-				border: none;
-			}
-		}
-		&_profileText {
-			font-size: 14px;
-		}
-	}
-	&_photo {
-		display: block;
-		vertical-align: top;
-		text-align: center;
-		button {
-			width: 100%;
-		}
-		.image-button {
-			padding: 0;
-			margin: 0;
-			display: block;
-			height: 100%; // これがないと画像の枠が潰れる
-		}
-		&-border-default {
-			border: 4px solid #efefef;
-			padding: 1px;
-		}
-		&-border-none {
-			border: none;
-		}
-		&_image {
-			width: 100%;
-			margin: 0;
-			display: block;
-		}
-	}
 }
 
 // Lightning で幅広の１カラムテンプレート時補正

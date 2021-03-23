@@ -30,6 +30,10 @@ export const setOptions = (name) => {
 				label: __('Card (No border)', 'vk-blocks'),
 			},
 			{
+				value: 'card-intext',
+				label: __('Card (Intext)', 'vk-blocks'),
+			},
+			{
 				value: 'card-horizontal',
 				label: __('Card (Horizontal)', 'vk-blocks'),
 			},
@@ -50,40 +54,37 @@ export const setOptions = (name) => {
 	return options['vk-blocks/else'];
 };
 
-// eslint-disable-next-line no-shadow,no-unused-vars
-const ColumnLayoutControlRaw = (ColumnLayout) =>
-	createHigherOrderComponent(
-		// eslint-disable-next-line no-shadow
-		(ColumnLayout) =>
-			class extends Component {
-				render() {
-					const { setAttributes, attributes } = this.props;
-					const { layout, name } = attributes;
-					return (
-						<PanelBody
-							title={__('Display type and columns', 'vk-blocks')}
-							initialOpen={false}
+const ColumnLayoutControlRaw = createHigherOrderComponent(
+	(WrappedComponent) =>
+		class extends Component {
+			render() {
+				const { setAttributes, attributes } = this.props;
+				const { layout, name } = attributes;
+				return (
+					<PanelBody
+						title={__('Display type and columns', 'vk-blocks')}
+						initialOpen={false}
+					>
+						<BaseControl
+							label={__('Display type', 'vk-blocks')}
+							id={'vk_column-displayType'}
 						>
-							<BaseControl
-								label={__('Display type', 'vk-blocks')}
-								id={'vk_column-displayType'}
-							>
-								<SelectControl
-									value={layout}
-									onChange={(value) =>
-										setAttributes({ layout: value })
-									}
-									options={setOptions(name)}
-								/>
-							</BaseControl>
-							<ColumnLayout {...this.props} />
-						</PanelBody>
-					);
-				}
-			},
-		'ColumnLayoutControlRaw'
-	);
+							<SelectControl
+								value={layout}
+								onChange={(value) =>
+									setAttributes({ layout: value })
+								}
+								options={setOptions(name)}
+							/>
+						</BaseControl>
+						<WrappedComponent {...this.props} />
+					</PanelBody>
+				);
+			}
+		},
+	'ColumnLayoutControlRaw'
+);
 
-export const ColumnLayoutControl = compose(ColumnLayoutControlRaw())(
+export const ColumnLayoutControl = compose(ColumnLayoutControlRaw)(
 	ColumnLayout
 );

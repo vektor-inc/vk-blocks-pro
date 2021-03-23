@@ -17,7 +17,7 @@ add_action(
 	'plugins_loaded',
 	function () {
 		// Load language files.
-		$path = dirname( plugin_basename( __FILE__ ) ) . '/build/languages';
+		$path = dirname( plugin_basename( __FILE__ ) ) . '/languages';
 		load_plugin_textdomain( 'vk-blocks', false, $path );
 	}
 );
@@ -30,7 +30,6 @@ add_action(
 function vkblocks_get_options() {
 	$options  = get_option( 'vk_blocks_options' );
 	$defaults = array(
-		'display_wp_block_template' => 'hide',
 		'balloon_border_width'      => 1,
 	);
 	$defaults = array_merge( $defaults, apply_filters( 'vk_blocks_default_options', array() ) );
@@ -83,50 +82,24 @@ function is_lager_than_wp( $target_version, $syntax=">=" ) {
 
 function vkblocks_blocks_assets() {
 
+	$asset_file = include plugin_dir_path( __FILE__ ) . '/build/block-build.asset.php';
+
 	// CSSを登録
 	wp_register_style( 'vk-blocks-build-css', VK_BLOCKS_URL . 'build/block-build.css', array(), VK_BLOCKS_VERSION );
 	wp_register_style( 'vk-blocks-build-editor-css', VK_BLOCKS_URL . 'build/block-build-editor.css', array(), VK_BLOCKS_VERSION );
-
-	//依存関係を定義
-	$dependency = array(
-		'wp-blocks',
-		'wp-i18n',
-		'wp-element',
-		'wp-editor',
-		'wp-hooks',
-		'wp-compose',
-		'wp-edit-post',
-		'wp-components',
-		'wp-data',
-		'wp-plugins',
-		'wp-hooks',
-		'wp-api-fetch',
-		'wp-viewport',
-	);
-	$dependency_wp53 = array(
-		'wp-block-editor',
-	);
-
-	//wp5.3以上で使えるAPIを追加。
-	if( is_lager_than_wp('5.3') ){
-		$dependency = array_merge(
-			$dependency,
-			$dependency_wp53
-		);
-	}
 
 	//ブロックのJavascriptを登録
 	wp_register_script(
 		'vk-blocks-build-js',
 		VK_BLOCKS_URL . 'build/block-build.js',
-		$dependency,
+		$asset_file['dependencies'],
 		VK_BLOCKS_VERSION,
 		true
 	);
 
 	//翻訳を追加
 	if ( function_exists( 'wp_set_script_translations' ) ) {
-		wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks', plugin_dir_path( __FILE__ ) . 'build/languages' );
+		wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks', plugin_dir_path( __FILE__ ) . 'languages' );
 	}
 
 	// プロ版の値をフロントエンドに出力
@@ -136,11 +109,11 @@ function vkblocks_blocks_assets() {
 	} else {
 		wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_check', array( 'is_pro' => false ) );
 	}
+	// ホーム URL を渡す用
+	wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_params', array( 'home_url' => home_url( '/' ) ) );
 
 	if( is_lager_than_wp('5.0') ){
 
-		//register_blockで読み込むブロック
-		$arr = array( 'staff', 'highlighter', 'step', 'step-item', 'list-style', 'group-style', 'slider', 'slider-item', 'responsive-br', 'nowrap' );
 		//register_block_type_from_metadataで読み込むブロック
 		$arr_wp56 = array(
 			'alert',
@@ -157,6 +130,7 @@ function vkblocks_blocks_assets() {
 			'pr-blocks',
 			'pr-content',
 			'spacer',
+			'staff',
 		);
 		$arr_wp56_pro = array(
 			'accordion',
@@ -172,6 +146,12 @@ function vkblocks_blocks_assets() {
 			'icon-card-item',
 			'outer',
 			'post-list',
+			'select-post-list',
+			'select-post-list-item',
+			'slider',
+			'slider-item',
+			'step',
+			'step-item',
 			'table-of-contents-new',
 			'timeline',
 			'timeline-item',
@@ -182,14 +162,10 @@ function vkblocks_blocks_assets() {
 				require_once VK_BLOCKS_SRC_PATH . '/blocks/' . $array . '/index.php';
 			}
 			foreach ( $arr_wp56_pro as $array ) {
-				require_once VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $array . '/index.php';
+				if(file_exists(VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $array . '/index.php')){
+					require_once VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $array . '/index.php';
+				}
 			}
-		} else {
-			$arr = array_merge(
-				$arr,
-				$arr_wp56,
-				$arr_wp56_pro
-			);
 		}
 
 		global $vk_blocks_common_attributes;
@@ -228,61 +204,6 @@ function vkblocks_blocks_assets() {
 			),
 		);
 
-		foreach ( $arr as $value ) {
-
-			if ( $value === 'table-of-contents' ) {
-
-				register_block_type(
-					'vk-blocks/' . $value,
-					array(
-						// 'style'        => 'vk-blocks-build-css',
-						'editor_style'    => 'vk-blocks-build-editor-css',
-						'editor_script'   => 'vk-blocks-build-js',
-						'attributes'      => array_merge(
-							array(
-								'style'      => array(
-									'type'    => 'string',
-									'default' => '',
-								),
-								'renderHtml' => array(
-									'type'    => 'string',
-									'default' => '',
-								),
-								'open'       => array(
-									'type'    => 'string',
-									'default' => 'open',
-								),
-								'className'  => array(
-									'type'    => 'string',
-									'default' => '',
-								),
-							),
-							$vk_blocks_common_attributes
-						),
-						'render_callback' => function ( $attributes ) {
-							if ( $attributes['renderHtml'] ) {
-								$custom_class = esc_attr( $attributes['className'] ) . ' ';
-								return preg_replace( '/class="/', 'class="' . $custom_class, $attributes['renderHtml'], 1 );
-							} else {
-								return '<div><div class="vk_tableOfContents_title">' . __( 'Table of Contents', 'vk-blocks' ) . '</div></div>';
-							}
-						},
-						'supports'        => array(),
-					)
-				);
-			} else {
-
-				register_block_type(
-					'vk-blocks/' . $value,
-					array(
-						// 'style'         => 'vk-blocks-build-css',
-						'editor_style'  => 'vk-blocks-build-editor-css',
-						'editor_script' => 'vk-blocks-build-js',
-					)
-				);
-
-			} // if ( $value === 'table-of-contents' ) {
-		} // foreach ( $arr as $value ) {
 	} // if ( defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, '5.0', '>=' ) ) {
 
 	$dynamic_css = '
@@ -315,7 +236,7 @@ if ( ! function_exists( 'vkblocks_blocks_categories' ) ) {
 			array(
 				array(
 					'slug'  => 'vk-blocks-cat',
-					'title' => $vk_blocks_prefix . __( 'Blocks', 'vk-all-in-one-expansion-unit' ),
+					'title' => $vk_blocks_prefix . __( 'Blocks', 'vk-blocks' ),
 					'icon'  => '',
 				),
 			)
@@ -325,7 +246,7 @@ if ( ! function_exists( 'vkblocks_blocks_categories' ) ) {
 			array(
 				array(
 					'slug'  => 'vk-blocks-cat-layout',
-					'title' => $vk_blocks_prefix . __( 'Blocks Layout', 'vk-all-in-one-expansion-unit' ),
+					'title' => $vk_blocks_prefix . __( 'Blocks Layout', 'vk-blocks' ),
 					'icon'  => '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z" /><path d="M19 13H5v-2h14v2z" /></svg>',
 				),
 			)
@@ -367,3 +288,16 @@ if ( function_exists( 'vkblocks_get_version' ) ) {
 	}
 	add_action( 'admin_head', 'vkblocks_set_vkbpro_version', 10, 0 );
 }
+
+function vkblocks_set_vkb_saved_block_version() {
+	// $current_post_id = $post_object->ID;
+	$post_id = get_the_ID();
+	$_vkb_saved_block_version = get_post_meta($post_id, '_vkb_saved_block_version', true);
+	if ( $_vkb_saved_block_version ) {
+		echo '<script>',
+		'var vkbSavedBlockVersion = "' . $_vkb_saved_block_version . '";',
+		'</script>';
+	}
+}
+add_action( 'admin_head', 'vkblocks_set_vkb_saved_block_version' );
+

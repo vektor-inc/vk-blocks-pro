@@ -9,22 +9,22 @@ export const isDeprecatedImage = (image) => {
 };
 
 // 画像の枠線設定を取得
-export const getImageBorder = (imageBorderColor) => {
+export const getImageBorder = (ImageBorderColor) => {
 	let imageBorderSettings = 'none';
 	//borderColorが指定されなかった場合はボーダーを非表示に
-	if (imageBorderColor) {
-		imageBorderSettings = `1px solid ${imageBorderColor}`;
+	if (ImageBorderColor) {
+		imageBorderSettings = `1px solid ${ImageBorderColor}`;
 	}
 	return imageBorderSettings;
 };
 
 export const PrContentMediaUploadEdit = ({
-	imageBorderColor,
+	ImageBorderColor,
 	setAttributes,
 	Image,
 }) => {
 	/* eslint no-unused-vars: 0 */
-	const imageBorderSettings = getImageBorder(imageBorderColor);
+	const imageBorderSettings = getImageBorder(ImageBorderColor);
 	const prContentDatas = {};
 
 	//画像のURL保存
@@ -90,6 +90,9 @@ export const PrContentMediaUploadEdit = ({
 		prContentDatas.getImagePlaceHolder = getImagePlaceHolder;
 	}
 
+	const isImageUpload =
+		Image !== null && Image !== undefined && Image !== '' && Image !== '{}';
+
 	return (
 		<MediaUpload
 			onSelect={prContentDatas.setImage}
@@ -99,9 +102,7 @@ export const PrContentMediaUploadEdit = ({
 				<Button
 					onClick={open}
 					className={
-						prContentDatas.value
-							? 'image-button'
-							: 'button button-large'
+						isImageUpload ? 'image-button' : 'button button-large'
 					}
 				>
 					{prContentDatas.getImagePlaceHolder(
@@ -114,12 +115,12 @@ export const PrContentMediaUploadEdit = ({
 	);
 };
 
-export const PrContentMediaUpload = ({ Image, imageBorderColor }) => {
+export const PrContentMediaUpload = ({ Image, ImageBorderColor }) => {
 	if (!Image) {
 		return __('Select Image', 'vk-blocks');
 	}
 
-	const imageBorderSettings = getImageBorder(imageBorderColor);
+	const imageBorderSettings = getImageBorder(ImageBorderColor);
 
 	if (Image && Image.indexOf('{') === -1) {
 		return (

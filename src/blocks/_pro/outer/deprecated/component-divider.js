@@ -3,7 +3,6 @@ const componentDivider = (level, color, whichSide, dividerType) => {
 	let sectionClass;
 	let lenderDivider;
 
-	// eslint-disable-next-line no-shadow
 	const tiltSectionStyle = (level, color) => {
 		if (level > 0) {
 			return (
@@ -27,7 +26,6 @@ const componentDivider = (level, color, whichSide, dividerType) => {
 		}
 	};
 
-	// eslint-disable-next-line no-shadow
 	const curveSectionStyle = (level, color) => {
 		if (level > 0) {
 			return (
@@ -48,7 +46,6 @@ const componentDivider = (level, color, whichSide, dividerType) => {
 		}
 	};
 
-	// eslint-disable-next-line no-shadow
 	const waveSectionStyle = (level, color) => {
 		if (level > 0) {
 			return (
@@ -73,7 +70,6 @@ const componentDivider = (level, color, whichSide, dividerType) => {
 		}
 	};
 
-	// eslint-disable-next-line no-shadow
 	const triangleSectionStyle = (level, color) => {
 		const absLevel = Math.abs(level);
 		const DivideAbs4 = absLevel / 4;
@@ -128,7 +124,6 @@ const componentDivider = (level, color, whichSide, dividerType) => {
 	}
 
 	//classにdividerTypeを追加
-	// eslint-disable-next-line prefer-const
 	sectionClass = dividerType;
 
 	//upper-paddingを追加

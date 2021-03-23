@@ -78,7 +78,6 @@ gulp.task("sass_editor", function() {
     .src([
       "./editor-css/_editor_common_core.scss",
       "./editor-css/_editor_before.scss",
-      "./src/**/*.scss",
       "./editor-css/_editor_after.scss"
     ])
     .pipe(concat("editor-block-build-marge.scss"))
@@ -196,11 +195,12 @@ gulp.task("dist", function() {
         "./**/*.less",
         "./**/*.png",
         "./inc/**",
+				"./src/**",
         "!./compile.bat",
         "!./config.rb",
         "!./tests/**",
         "!./dist/**",
-        "!./src/**",
+				"!./test/**",
         "!./bin/**",
         "!./editor-css/**",
         "!./node_modules/**"

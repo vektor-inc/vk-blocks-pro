@@ -10,21 +10,7 @@ export default function Spacers({
 	mobileSize,
 	unit,
 }) {
-	if (type === 'height') {
-		return (
-			<>
-				<Spacer viewPort={'pc'} style={{ height: pcSize + unit }} />
-				<Spacer
-					viewPort={'tablet'}
-					style={{ height: tabletSize + unit }}
-				/>
-				<Spacer
-					viewPort={'mobile'}
-					style={{ height: mobileSize + unit }}
-				/>
-			</>
-		);
-	} else if (type === 'margin-top') {
+	if (type === 'margin-top') {
 		return (
 			<>
 				<Spacer viewPort={'pc'} style={{ marginTop: pcSize + unit }} />
@@ -39,4 +25,11 @@ export default function Spacers({
 			</>
 		);
 	}
+	return (
+		<>
+			<Spacer viewPort={'pc'} style={{ height: pcSize + unit }} />
+			<Spacer viewPort={'tablet'} style={{ height: tabletSize + unit }} />
+			<Spacer viewPort={'mobile'} style={{ height: mobileSize + unit }} />
+		</>
+	);
 }

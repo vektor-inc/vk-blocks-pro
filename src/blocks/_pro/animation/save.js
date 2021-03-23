@@ -1,7 +1,11 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 export default function save(props) {
-	const { effect, speed, range, clientId } = props.attributes;
+	let { effect, speed, range, clientId } = props.attributes;
+	//For recovering block.
+	effect = effect ? effect : 'slide-up';
+	speed = speed ? speed : 'fast';
+	range = range ? range : 'short';
 
 	return (
 		<div

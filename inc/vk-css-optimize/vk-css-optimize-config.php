@@ -34,8 +34,39 @@ function vkblocks_css_tree_shaking_exclude_class( $inidata ) {
 		'vk_faq-accordion-close',
 		'vk_faq_content-accordion-open',
 		'vk_faq_content-accordion-close',
+		'vk_post-col-xs-12',
+		'vk_post-col-xs-6',
+		'vk_post-col-xs-4',
+		'vk_post-col-xs-3',
+		'vk_post-col-xs-2',
+		'vk_post-col-sm-12',
+		'vk_post-col-sm-6',
+		'vk_post-col-sm-4',
+		'vk_post-col-sm-3',
+		'vk_post-col-sm-2',
+		'vk_post-col-md-12',
+		'vk_post-col-md-6',
+		'vk_post-col-md-4',
+		'vk_post-col-md-3',
+		'vk_post-col-md-2',
+		'vk_post-col-lg-12',
+		'vk_post-col-lg-6',
+		'vk_post-col-lg-4',
+		'vk_post-col-lg-3',
+		'vk_post-col-lg-2',
+		'vk_post-col-xl-12',
+		'vk_post-col-xl-6',
+		'vk_post-col-xl-4',
+		'vk_post-col-xl-3',
+		'vk_post-col-xl-2',
+		'vk_post-col-xxl-12',
+		'vk_post-col-xxl-6',
+		'vk_post-col-xxl-4',
+		'vk_post-col-xxl-3',
+		'vk_post-col-xxl-2',
 	);
-	$inidata['class']      = array_merge( $inidata['class'], $exclude_classes_array );
+
+	$inidata['class'] = array_unique( array_merge( $inidata['class'], $exclude_classes_array ) );
 
 	return $inidata;
 }

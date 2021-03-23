@@ -115,7 +115,7 @@ const deprecated = [
 				default: true,
 			},
 		},
-		save0_60_1,
+		save: save0_60_1,
 	},
 	{
 		attributes: {
@@ -137,7 +137,7 @@ const deprecated = [
 				default: true,
 			},
 		},
-		save0_20_6,
+		save: save0_20_6,
 	},
 	{
 		attributes: {
@@ -159,7 +159,7 @@ const deprecated = [
 				default: true,
 			},
 		},
-		save0_20_5,
+		save: save0_20_5,
 	},
 	{
 		attributes: {
@@ -181,7 +181,7 @@ const deprecated = [
 				default: true,
 			},
 		},
-		save0_20_4,
+		save: save0_20_4,
 	},
 	{
 		attributes: {
@@ -203,11 +203,11 @@ const deprecated = [
 				default: true,
 			},
 		},
-		save0_20_3,
+		save: save0_20_3,
 	},
 	{
 		attributes: blockAttributes,
-		save0_20_2,
+		save: save0_20_2,
 	},
 ];
 

@@ -1,3 +1,6 @@
+$border_radius: .5rem;
+$border_primary: 1px solid #e5e5e5;
+
 @mixin photoFrame {
     background-color: #fff;
     padding: 10px;
@@ -10,34 +13,53 @@
     &.alignright{
         margin: 0 0 .5em 1em;
     }
+    &.alignwide{ //幅広の場合はunsetでfit-contentを打ち消し
+        width:auto;
+    }
     figcaption {
        display: block;
        margin: 8px 0 0;
-
-        
     }
 }
+@mixin photoFrame-tilt-right { 
+    transform: rotate(-2deg);
+    -moz-transform: rotate(-2deg);
+    -webkit-transform: rotate(-2deg);
+}
+@mixin photoFrame-tilt-left {   
+    transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    -webkit-transform: rotate(2deg);
+}
+
 @mixin mask{
     mask-repeat: no-repeat;
     mask-position: 50% 50%;
     mask-size: contain;
 }
 
-
-//コアの角丸
-.is-style-rounded{
-    img {
-        border-radius: .5rem;
+@mixin shadow {
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    width: fit-content;
+    figcaption{
+        display: block;
+    }
+    &.alignwide{ //幅広の場合はunsetでfit-contentを打ち消し
+        width: unset;
     }
 }
 
 //左寄せ、右寄せが未指定の場合はfigureに.is-style-vk-image のクラス名が付く
-figure{ 
+figure{
     &.is-style-vk-image {
-        
+        &-rounded {
+            img {
+                border-radius: $border_radius;
+            }
+        }
         &-border {
             img {
-                border: 1px solid #e5e5e5;
+                border: $border_primary;
             }
         }
 
@@ -47,26 +69,17 @@ figure{
         }
 
         &-photoFrame-tilt-right{
-            transform: rotate(-2deg);
-            -moz-transform: rotate(-2deg);
-            -webkit-transform: rotate(-2deg);
             @include photoFrame;
+            @include photoFrame-tilt-right;
         }
 
         &-photoFrame-tilt-left{
-            transform: rotate(2deg);
-            -moz-transform: rotate(2deg);
-            -webkit-transform: rotate(2deg);
             @include photoFrame;
+            @include photoFrame-tilt-left;
         }
 
         &-shadow{
-            box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-            width: fit-content;
-
-            figcaption{
-                display: block;
-            }    
+            @include shadow;
         }
 
         &-wave01 {
@@ -100,12 +113,19 @@ figure{
 }
 
 //左寄せ、右寄せを指定した場合はdivのほうに.is-style-vk-image のクラス名が付くので、以下を追加する必要がある
-.wp-block-image{ 
+.wp-block-image{
     &.is-style-vk-image {
+        &-rounded figure{
+            &.alignleft, &.alignright, &.aligncenter{
+                img {
+                    border-radius: $border_radius;
+                }
+            }
+        }
         &-border figure{
             &.alignleft, &.alignright, &.aligncenter{
                 img {
-                    border: 1px solid #e5e5e5;
+                    border: $border_primary;
                 }
             }
         }
@@ -117,31 +137,23 @@ figure{
 
         &-photoFrame-tilt-right, &-photoFrame-tilt-right figure{
             &.alignleft, &.alignright, &.aligncenter{
-                transform: rotate(-2deg);
-                -moz-transform: rotate(-2deg);
-                -webkit-transform: rotate(-2deg);
                 @include photoFrame;
+                @include photoFrame-tilt-right;
             }
         }
 
         &-photoFrame-tilt-left, &-photoFrame-tilt-left figure{
             &.alignleft, &.alignright, &.aligncenter{
-                transform: rotate(2deg);
-                -moz-transform: rotate(2deg);
-                -webkit-transform: rotate(2deg);
                 @include photoFrame;
+                @include photoFrame-tilt-left;
             }
         }
 
         &-shadow figure{
             &.alignleft, &.alignright, &.aligncenter{
-                box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-                width: fit-content;
+                @include shadow;
 
-                figcaption{
-                    display: block;
-                }   
-            } 
+            }
         }
 
         &-wave01 figure{

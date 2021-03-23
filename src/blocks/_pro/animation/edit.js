@@ -1,4 +1,3 @@
-import replaceClientId from '@vkblocks/utils/replaceClientId';
 import { __ } from '@wordpress/i18n';
 import {
 	InnerBlocks,
@@ -6,27 +5,31 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 import { PanelBody, SelectControl } from '@wordpress/components';
+import { useEffect } from '@wordpress/element';
 
 export default function AnimationEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const { effect, speed, range } = attributes;
-	const customClientId = replaceClientId(clientId);
-	setAttributes({ clientId: customClientId });
 
-	if (effect === undefined || effect === null) {
-		setAttributes({ effect: 'slide-up' });
-	}
+	useEffect(() => {
+		if (clientId === undefined || clientId === null || clientId === '') {
+			setAttributes({ clientId });
+		}
+		if (effect === undefined || effect === null || effect === '') {
+			setAttributes({ effect: 'slide-up' });
+		}
 
-	if (speed === undefined || speed === null) {
-		setAttributes({ speed: 'fast' });
-	}
+		if (speed === undefined || speed === null || speed === '') {
+			setAttributes({ speed: 'fast' });
+		}
 
-	if (range === undefined || range === null) {
-		setAttributes({ range: 'short' });
-	}
+		if (range === undefined || range === null || range === '') {
+			setAttributes({ range: 'short' });
+		}
+	}, [clientId]);
 
 	const blockProps = useBlockProps({
-		className: `vk_animation vk_animation-${effect} vk_animation-speed-${speed} vk_animation-range-${range} vk_animation-${customClientId}`,
+		className: `vk_animation vk_animation-${effect} vk_animation-speed-${speed} vk_animation-range-${range} vk_animation-${clientId}`,
 	});
 
 	return (
@@ -129,7 +132,7 @@ export default function AnimationEdit(props) {
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
-				<InnerBlocks templateInsertUpdatesSelection={false} />
+				<InnerBlocks />
 			</div>
 		</>
 	);

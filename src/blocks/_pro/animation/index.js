@@ -4,15 +4,13 @@
  */
 import { ReactComponent as Icon } from './icon.svg';
 import { __ } from '@wordpress/i18n';
-import compareVersions from 'compare-versions';
-
 import metadata from './block.json';
 import edit from './edit';
 import save from './save';
-import deprecated from './deprecated/';
+import deprecatedHooks from './deprecated/hooks';
+import deprecated from './deprecated/save';
 
 import { addFilter } from '@wordpress/hooks';
-import { select } from '@wordpress/data';
 
 const { name } = metadata;
 
@@ -35,41 +33,28 @@ export const settings = {
  * @param {*} attributes
  */
 const addAnimationActiveClass = (el, type, attributes) => {
-	if (window.wpVersion && compareVersions(window.wpVersion, '5.6') >= 0) {
-		return el;
-	}
-	const post = select('core/editor').getCurrentPost();
-	//0.49.8未満（_vkb_saved_block_version が ""）+ JSのフィルターでscriptタグを追加していたバージョンが対象。
-	if (
-		'vk-blocks/animation' === type.name &&
-		post.hasOwnProperty('meta') &&
-		post.content.match(/<script>/) &&
-		!post.meta._vkb_saved_block_version
-	) {
-		el = (
-			<div>
-				<script>{`window.addEventListener('load', (event) => {
-				let animationElm = document.querySelector('.vk_animation-${attributes.clientId}');
-				if(animationElm){
-					const observer = new IntersectionObserver((entries) => {
-						if(entries[0].isIntersecting){
-							animationElm.classList.add('vk_animation-active');
-						}else{
-							animationElm.classList.remove('vk_animation-active');
-						}
-					});
-					observer.observe(animationElm);
-				}
-			}, false);`}</script>
-				{el}
-			</div>
+	if ('vk-blocks/animation' === type.name) {
+		//現在実行されている deprecated内の save関数のindexを取得
+		const deprecatedFuncIndex = deprecated.findIndex(
+			(item) => item.save === type.save
 		);
+
+		// 最新版
+		if (-1 === deprecatedFuncIndex) {
+			return el;
+
+			//後方互換
+		}
+		const DeprecatedHook = deprecatedHooks[0];
+		return <DeprecatedHook el={el} attributes={attributes} />;
 	}
+	// Slider以外のブロック
 	return el;
 };
 
 addFilter(
 	'blocks.getSaveElement',
 	'vk-blocks/animation',
-	addAnimationActiveClass
+	addAnimationActiveClass,
+	11
 );

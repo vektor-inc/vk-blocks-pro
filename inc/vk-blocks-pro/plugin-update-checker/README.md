@@ -28,6 +28,8 @@ From the users' perspective, it works just like with plugins and themes hosted o
 Getting Started
 ---------------
 
+*Note:* In each of the below examples, part of the instructions are to create an instance of the update checker class. It's recommended to do this either during the `plugins_loaded` action or outside of any hooks. If you do it only during an `admin_*` action, then updates will not be visible to a wide variety of WordPress maanagement tools; they will only be visible to logged-in users on dashboard pages.
+
 ### Self-hosted Plugins and Themes
 
 1. Download [the latest release](https://github.com/YahnisElsts/plugin-update-checker/releases/latest) and copy the `plugin-update-checker` directory to your plugin or theme.
@@ -244,8 +246,8 @@ BitBucket doesn't have an equivalent to GitHub's releases, so the process is sli
 	
 	Alternatively, if you're using a self-hosted GitLab instance, initialize the update checker like this:
 	```php
-    $myUpdateChecker = new Puc_v4p8_Vcs_PluginUpdateChecker(
-        new Puc_v4p8_Vcs_GitLabApi('https://myserver.com/user-name/repo-name/'),
+    $myUpdateChecker = new Puc_v4p10_Vcs_PluginUpdateChecker(
+        new Puc_v4p10_Vcs_GitLabApi('https://myserver.com/user-name/repo-name/'),
         __FILE__,
         'unique-plugin-or-theme-slug'
     );
@@ -253,8 +255,8 @@ BitBucket doesn't have an equivalent to GitHub's releases, so the process is sli
    ```
    If you're using a self-hosted GitLab instance and [subgroups or nested groups](https://docs.gitlab.com/ce/user/group/subgroups/index.html), you have to tell the update checker which parts of the URL are subgroups:
    ```php
-       $myUpdateChecker = new Puc_v4p8_Vcs_PluginUpdateChecker(
-           new Puc_v4p8_Vcs_GitLabApi('https://myserver.com/group-name/subgroup-level1/subgroup-level2/subgroup-level3/repo-name/', null, 'subgroup-level1/subgroup-level2/subgroup-level3'),
+       $myUpdateChecker = new Puc_v4p10_Vcs_PluginUpdateChecker(
+           new Puc_v4p10_Vcs_GitLabApi('https://myserver.com/group-name/subgroup-level1/subgroup-level2/subgroup-level3/repo-name/', null, 'subgroup-level1/subgroup-level2/subgroup-level3'),
            __FILE__,
            'unique-plugin-or-theme-slug'
        );
@@ -293,6 +295,7 @@ Resources
 
 - [This blog post](http://w-shadow.com/blog/2010/09/02/automatic-updates-for-any-plugin/) has more information about the update checker API. *Slightly out of date.*
 - [Debug Bar](https://wordpress.org/plugins/debug-bar/) - useful for testing and debugging the update checker.
+- [Update format reference](https://docs.google.com/spreadsheets/d/1eOBbW7Go2qEQXReOOCdidMTf_tDYRq4JfegcO1CBPIs/edit?usp=sharing) - describes all fields supported by the JSON-based update information format used by the update checker. Only covers plugins. Themes use a similar but more limited format.
 - [Securing download links](http://w-shadow.com/blog/2013/03/19/plugin-updates-securing-download-links/) - a general overview.
 - [A GUI for entering download credentials](http://open-tools.net/documentation/tutorial-automatic-updates.html#wordpress)
 - [Theme Update Checker](http://w-shadow.com/blog/2011/06/02/automatic-updates-for-commercial-themes/) - an older, theme-only variant of this update checker.

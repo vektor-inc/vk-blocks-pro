@@ -10,6 +10,7 @@ import save008 from './0.0.8/save';
 import save009 from './0.0.9/save';
 import save0_37_1 from './0.37.1/save';
 import save0_60_0 from './0.60.0/save';
+import save1_0_13 from './1.0.13/save';
 
 const blockAttributes = {
 	bgColor: {
@@ -100,7 +101,7 @@ const deprecated = [
 				default: null,
 			},
 		},
-		save0_60_0,
+		save: save1_0_13,
 	},
 	{
 		attributes: {
@@ -122,7 +123,7 @@ const deprecated = [
 				default: null,
 			},
 		},
-		save0_37_1,
+		save: save0_60_0,
 	},
 	{
 		attributes: {
@@ -144,7 +145,29 @@ const deprecated = [
 				default: null,
 			},
 		},
-		save009,
+		save: save0_37_1,
+	},
+	{
+		attributes: {
+			...blockAttributes,
+			defaultBgColor: {
+				type: 'string',
+				default: '#f3f4f5',
+			},
+			bgImageTablet: {
+				type: 'string',
+				default: null,
+			},
+			bgImageMobile: {
+				type: 'string',
+				default: null,
+			},
+			clientId: {
+				type: 'string',
+				default: null,
+			},
+		},
+		save: save009,
 	},
 	{
 		attributes: {
@@ -154,7 +177,7 @@ const deprecated = [
 				default: '#f3f4f5',
 			},
 		},
-		save008,
+		save: save008,
 	},
 	{
 		attributes: {
@@ -164,7 +187,7 @@ const deprecated = [
 				default: '#f3f4f5',
 			},
 		},
-		save007,
+		save: save007,
 	},
 	{
 		attributes: {
@@ -174,7 +197,7 @@ const deprecated = [
 				default: '#f3f4f5',
 			},
 		},
-		save006,
+		save: save006,
 	},
 	{
 		attributes: {
@@ -184,7 +207,7 @@ const deprecated = [
 				default: '#f3f4f5',
 			},
 		},
-		save005,
+		save: save005,
 	},
 	{
 		attributes: {
@@ -194,7 +217,7 @@ const deprecated = [
 				default: '#f3f4f5',
 			},
 		},
-		save004,
+		save: save004,
 	},
 	{
 		attributes: {
@@ -204,7 +227,7 @@ const deprecated = [
 				default: '#f3f4f5',
 			},
 		},
-		save003,
+		save: save003,
 	},
 	{
 		attributes: {
@@ -214,7 +237,7 @@ const deprecated = [
 				default: '#f3f4f5',
 			},
 		},
-		save002,
+		save: save002,
 	},
 	{
 		attributes: {
@@ -224,11 +247,11 @@ const deprecated = [
 				default: '#f3f4f5',
 			},
 		},
-		save001,
+		save: save001,
 	},
 	{
 		attributes: blockAttributes,
-		save000,
+		save: save000,
 	},
 ];
 

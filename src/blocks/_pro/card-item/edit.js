@@ -17,25 +17,24 @@ import {
 import { dispatch } from '@wordpress/data';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 
-/* eslint camelcase: 0 */
 /* eslint no-shadow: 0 */
 export default function CardItemEdit(props) {
 	const { setAttributes, attributes, clientId } = props;
 	const {
 		layout,
-		col_xs,
-		col_sm,
-		col_md,
-		col_lg,
-		col_xl,
-		col_xxl,
-		display_title,
-		display_excerpt,
-		display_image,
-		display_btn,
-		btn_text,
+		col_xs, //eslint-disable-line camelcase
+		col_sm, //eslint-disable-line camelcase
+		col_md, //eslint-disable-line camelcase
+		col_lg, //eslint-disable-line camelcase
+		col_xl, //eslint-disable-line camelcase
+		col_xxl, //eslint-disable-line camelcase
+		display_title, //eslint-disable-line camelcase
+		display_excerpt, //eslint-disable-line camelcase
+		display_image, //eslint-disable-line camelcase
+		display_btn, //eslint-disable-line camelcase
+		btn_text, //eslint-disable-line camelcase
 		title,
-		excerpt_text,
+		excerpt_text, //eslint-disable-line camelcase
 		image,
 		url,
 		activeControl,
@@ -112,8 +111,9 @@ export default function CardItemEdit(props) {
 			/>
 		);
 	};
-
+	//eslint-disable-next-line camelcase
 	const renderImage = (display_image) => {
+		//eslint-disable-next-line camelcase
 		if (display_image) {
 			return (
 				<>
@@ -125,8 +125,9 @@ export default function CardItemEdit(props) {
 			);
 		}
 	};
-
+	//eslint-disable-next-line camelcase
 	const renderExcerpt = (align, display_excerpt) => {
+		//eslint-disable-next-line camelcase
 		if (display_excerpt) {
 			const titleTag = 'p';
 			const titleClass = `vk_post_excerpt card-text has-text-align-${align.text}`;
@@ -134,7 +135,7 @@ export default function CardItemEdit(props) {
 				<RichText
 					tagName={titleTag}
 					className={titleClass}
-					value={excerpt_text}
+					value={excerpt_text} //eslint-disable-line camelcase
 					onChange={(value) => setAttributes({ excerpt_text: value })}
 					placeholder={__(
 						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
@@ -144,8 +145,9 @@ export default function CardItemEdit(props) {
 			);
 		}
 	};
-
+	//eslint-disable-next-line camelcase
 	const renderButton = (display_btn, align) => {
+		//eslint-disable-next-line camelcase
 		if (display_btn) {
 			return (
 				<div
@@ -157,13 +159,17 @@ export default function CardItemEdit(props) {
 						target={linkTarget}
 						rel={rel}
 					>
-						{btn_text}
+						{
+							btn_text //eslint-disable-line camelcase
+						}
 					</a>
 				</div>
 			);
 		}
 	};
+	//eslint-disable-next-line camelcase
 	const renderTitle = (align, display_title) => {
+		//eslint-disable-next-line camelcase
 		if (display_title) {
 			const titleTag = 'h5';
 			const titleClass = `vk_post_title card-title has-text-align-${align.title}`;
@@ -188,7 +194,7 @@ export default function CardItemEdit(props) {
 	} else {
 		imageStyle = {};
 	}
-	const btnClass = display_btn ? 'vk_post-btn-display' : '';
+	const btnClass = display_btn ? 'vk_post-btn-display' : ''; //eslint-disable-line camelcase
 
 	const blockProps = useBlockProps({
 		className: `vk_post ${layoutClass} vk_card_item vk_post-col-xs-${convertToGrid(

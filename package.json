@@ -122,11 +122,6 @@
 		"memize": "^1.1.0",
 		"react-dom": "^16.14.0",
 		"react-html-parser": "^2.0.2"
-	},
-	"husky": {
-		"hooks": {
-			"pre-comit": "npm run lint",
-			"pre-push": "npm run lint"
-		}
 	}
+
 }

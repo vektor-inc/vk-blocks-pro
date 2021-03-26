@@ -16,31 +16,44 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-	title: __('Step', 'vk-blocks'), // Block title.
+	title: __('Tab', 'vk-blocks'), // Block title.
 	icon: <Icon />, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	example: {
-		attributes: {
-			firstDotNum: 1,
-		},
 		innerBlocks: [
 			{
-				name: 'vk-blocks/step-item',
+				name: 'vk-blocks/tab-item',
 				attributes: {
-					color: '#337ab7',
-					style: 'solid',
-					styleLine: 'default',
-					dotCaption: 'STEP',
-					dotNum: 1,
-					faIcon: '',
+					title,
 				},
 				innerBlocks: [
 					{
-						name: 'core/heading',
+						name: 'core/paragraph',
 						attributes: {
-							level: 4,
-							content: title,
+							content,
 						},
 					},
+				],
+			},
+			{
+				name: 'vk-blocks/tab-item',
+				attributes: {
+					title,
+				},
+				innerBlocks: [
+					{
+						name: 'core/paragraph',
+						attributes: {
+							content,
+						},
+					},
+				],
+			},
+			{
+				name: 'vk-blocks/tab-item',
+				attributes: {
+					title,
+				},
+				innerBlocks: [
 					{
 						name: 'core/paragraph',
 						attributes: {

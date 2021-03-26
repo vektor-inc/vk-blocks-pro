@@ -2,56 +2,56 @@
  * Tab Block
  *
  */
- import { ReactComponent as Icon } from './icon.svg';
- import { __ } from '@wordpress/i18n';
- import { title, content } from '@vkblocks/utils/example-data';
+import { ReactComponent as Icon } from './icon.svg';
+import { __ } from '@wordpress/i18n';
+import { title, content } from '@vkblocks/utils/example-data';
 
- import deprecated from './deprecated/index';
- import edit from './edit';
- import metadata from './block.json';
- import save from './save';
+import deprecated from './deprecated/index';
+import edit from './edit';
+import metadata from './block.json';
+import save from './save';
 
- const { name } = metadata;
+const { name } = metadata;
 
- export { metadata, name };
+export { metadata, name };
 
- export const settings = {
-	 title: __('Step', 'vk-blocks'), // Block title.
-	 icon: <Icon />, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
-	 example: {
-		 attributes: {
-			 firstDotNum: 1,
-		 },
-		 innerBlocks: [
-			 {
-				 name: 'vk-blocks/step-item',
-				 attributes: {
-					 color: '#337ab7',
-					 style: 'solid',
-					 styleLine: 'default',
-					 dotCaption: 'STEP',
-					 dotNum: 1,
-					 faIcon: '',
-				 },
-				 innerBlocks: [
-					 {
-						 name: 'core/heading',
-						 attributes: {
-							 level: 4,
-							 content: title,
-						 },
-					 },
-					 {
-						 name: 'core/paragraph',
-						 attributes: {
-							 content,
-						 },
-					 },
-				 ],
-			 },
-		 ],
-	 },
-	 edit,
-	 save,
-	 deprecated,
- };
+export const settings = {
+	title: __('Step', 'vk-blocks'), // Block title.
+	icon: <Icon />, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
+	example: {
+		attributes: {
+			firstDotNum: 1,
+		},
+		innerBlocks: [
+			{
+				name: 'vk-blocks/step-item',
+				attributes: {
+					color: '#337ab7',
+					style: 'solid',
+					styleLine: 'default',
+					dotCaption: 'STEP',
+					dotNum: 1,
+					faIcon: '',
+				},
+				innerBlocks: [
+					{
+						name: 'core/heading',
+						attributes: {
+							level: 4,
+							content: title,
+						},
+					},
+					{
+						name: 'core/paragraph',
+						attributes: {
+							content,
+						},
+					},
+				],
+			},
+		],
+	},
+	edit,
+	save,
+	deprecated,
+};

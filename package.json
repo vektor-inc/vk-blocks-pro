@@ -128,5 +128,5 @@
 		"hooks": {
 		  "pre-push": "npm run lint"
 		}
-	  }
+	}
 }

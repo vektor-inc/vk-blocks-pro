@@ -112,17 +112,19 @@ export default function HeaddingEdit(props) {
 	let tStyle;
 
 	//containerのマージンを切り替え
-	if (outerMarginBottom) {
+	if (outerMarginBottom !== null && outerMarginBottom !== undefined && outerMarginBottom !== '') {
 		cStyle = { marginBottom: outerMarginBottom + `rem` };
+	} else {
+		cStyle = {};
 	}
 
 	//titleのマージンを切り替え
-	if (titleMarginBottom !== null && titleMarginBottom !== undefined) {
+	if (titleMarginBottom !== null && titleMarginBottom !== undefined && titleMarginBottom !== '') {
 		tStyle = {
 			color: titleColor,
 			fontSize: titleSize + 'rem',
 			marginBottom: titleMarginBottom + 'rem',
-			textAlign: align,
+			textAlign: align,titleMarginBottom
 		};
 	} else {
 		tStyle = {
@@ -241,7 +243,7 @@ export default function HeaddingEdit(props) {
 				<PanelBody title={__('Margin Setting', 'vk-blocks')}>
 					<p>
 						{__(
-							'Margin bottom size of after hedding (rem)',
+							'Margin between Heading and sub text (rem)',
 							'vk-blocks'
 						)}
 					</p>
@@ -253,6 +255,8 @@ export default function HeaddingEdit(props) {
 						min={-1}
 						max={3}
 						step={0.1}
+						allowReset={ true }
+						resetFallbackValue={ "" }
 					/>
 					<p>
 						{__(
@@ -268,6 +272,8 @@ export default function HeaddingEdit(props) {
 						min={-1}
 						max={8}
 						step={0.1}
+						allowReset={ true }
+						resetFallbackValue={ "" }
 					/>
 				</PanelBody>
 				<PanelBody title={__('Heading Settings', 'vk-blocks')}>

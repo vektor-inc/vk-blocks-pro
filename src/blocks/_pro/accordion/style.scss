@@ -3,31 +3,36 @@
 	--vk-size-text: 16px;
 }
 
+/* style
+--------------------------------------------*/
+.is-style-vk_accordion{
+	&-normal{
 
-
+	}
+	&-rounded{
+		border-radius: .3rem;
+	}
+	&-bgnone{
+		.vk_accordion-trigger{
+			background: transparent;
+		}
+	}
+}
 
 
 /*      vk_accordion
 /*-------------------------------------------*/
-.vk_accordion-container { 
-	display:block;
-	overflow:hidden;
-	border-bottom:1px solid var(--vk-color-border);
-	padding:0px 0px 1em; 
-	margin: 0 auto 1em auto;
-	width:100%; 
-	position: relative;
-
-
-
-} //.vk_faq 
-
 
 /*      開閉機能
 /*-------------------------------------------*/
 .vk_accordion{
 	&-container{
-		padding-bottom: 0;
+		display:block;
+		overflow:hidden;
+		border-bottom:1px solid var(--vk-color-border);
+		margin: 0 auto 1em auto;
+		width:100%; 
+		position: relative;
 		border-bottom:none;
 		p:first-of-type{
 			margin-bottom:0;
@@ -35,38 +40,41 @@
 	}
 	&-trigger{
 		border: none;
-		padding:calc( var(--vk-size-text) * 0.8 );
+		padding:calc( var(--vk-size-text) * 0.8 )calc( var(--vk-size-text) * 2 )calc( var(--vk-size-text) * 0.8 ) calc( var(--vk-size-text) * 0.8 );
     	margin: 0;
     	position: relative;
-    	font-weight: bold;
     	font-size: 16px;
 		background-color: rgba(0,0,0,.05);
     	// border-bottom: 1px dotted var(--vk-color-border);
 		cursor: pointer;
+		.vk_accordion-toggle{
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			&-close,
+			&-open{
+				padding-bottom: 0;
+				margin-bottom: 0;
 
-		.vk_accordion-toggle-close,
-		.vk_accordion-toggle-open{
-			padding-bottom: 0;
-			margin-bottom: 0;
-
-				//矢印共通デザイン
-				&::after{
-					position: absolute;
-					top: 50%;
-					right: unset;
-					right: 2.4em;
-					content: "";
-					width: 8px;
-					height: 8px;
-					border-right: 1px solid #222;
-					border-top: 1px solid #222;
-					transition: border-color .3s ease,-webkit-transform .6s ease;
-					-webkit-transition: border-color .3s ease,-webkit-transform .6s ease;
-					transition: border-color .3s ease,transform .6s ease;
-					transition: border-color .3s ease,transform .6s ease,-webkit-transform .6s ease;
-				}
-			
-		}
+					//矢印共通デザイン
+					&::after{
+						position: absolute;
+						top: 50%;
+						right: unset;
+						right: 4rem;
+						content: "";
+						width: 8px;
+						height: 8px;
+						border-right: 1px solid #222;
+						border-top: 1px solid #222;
+						transition: border-color .3s ease,-webkit-transform .6s ease;
+						-webkit-transition: border-color .3s ease,-webkit-transform .6s ease;
+						transition: border-color .3s ease,transform .6s ease;
+						transition: border-color .3s ease,transform .6s ease,-webkit-transform .6s ease;
+					}			
+			}
+		}//.vk_accordion-toggle
 
 		//矢印開閉時の向き
 		.vk_accordion-toggle{
@@ -109,7 +117,7 @@
 	}
 
 
-}
+}//.vk_accordion
 
 
 /*      編集画面

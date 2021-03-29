@@ -16,6 +16,21 @@ export { metadata, name };
 export const settings = {
 	title: __('Accordion', 'vk-blocks'),
 	icon: <Icon />,
+	styles: [
+		{
+			name: 'vk_accordion-normal',
+			label: __('Normal', 'vk-blocks'),
+			isDefault: true,
+		},
+		{
+			name: 'vk_accordion-rounded',
+			label: __('Rounded', 'vk-blocks'),
+		},
+		{
+			name: 'vk_accordion-bgnone',
+			label: __('Bgnone', 'vk-blocks'),
+		},
+	],
 	example: {
 		innerBlocks: [
 			{

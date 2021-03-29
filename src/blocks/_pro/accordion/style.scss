@@ -1,0 +1,128 @@
+:root{
+	--vk-color-border: rgba(0,0,0,.12);
+	--vk-size-text: 16px;
+}
+
+
+
+
+
+/*      vk_accordion
+/*-------------------------------------------*/
+.vk_accordion-container { 
+	display:block;
+	overflow:hidden;
+	border-bottom:1px solid var(--vk-color-border);
+	padding:0px 0px 1em; 
+	margin: 0 auto 1em auto;
+	width:100%; 
+	position: relative;
+
+
+
+} //.vk_faq 
+
+
+/*      開閉機能
+/*-------------------------------------------*/
+.vk_accordion{
+	&-container{
+		padding-bottom: 0;
+		border-bottom:none;
+		p:first-of-type{
+			margin-bottom:0;
+		}
+	}
+	&-trigger{
+		border: none;
+		padding:calc( var(--vk-size-text) * 0.8 );
+    	margin: 0;
+    	position: relative;
+    	font-weight: bold;
+    	font-size: 16px;
+		background-color: rgba(0,0,0,.05);
+    	// border-bottom: 1px dotted var(--vk-color-border);
+		cursor: pointer;
+
+		.vk_accordion-toggle-close,
+		.vk_accordion-toggle-open{
+			padding-bottom: 0;
+			margin-bottom: 0;
+
+				//矢印共通デザイン
+				&::after{
+					position: absolute;
+					top: 50%;
+					right: unset;
+					right: 2.4em;
+					content: "";
+					width: 8px;
+					height: 8px;
+					border-right: 1px solid #222;
+					border-top: 1px solid #222;
+					transition: border-color .3s ease,-webkit-transform .6s ease;
+					-webkit-transition: border-color .3s ease,-webkit-transform .6s ease;
+					transition: border-color .3s ease,transform .6s ease;
+					transition: border-color .3s ease,transform .6s ease,-webkit-transform .6s ease;
+				}
+			
+		}
+
+		//矢印開閉時の向き
+		.vk_accordion-toggle{
+			&-close{
+
+				&::after {
+					-webkit-transform: translate(32px, -5px) rotate(135deg);
+					transform: translate(32px, -5px) rotate(135deg);
+
+				}
+			}
+			&-open{
+
+				&::after {
+					-webkit-transform: translate(32px,-2px) rotate(-45deg);
+					transform: translate(32px,-2px) rotate(-45deg);
+				}
+
+			}
+		}//.vk_accordion-toggle
+
+	}//&-trigger
+	&-target{
+		padding:calc( var(--vk-size-text) * 0.8 );
+		//オープン時
+		&-open{
+			height: auto;
+			overflow: hidden;
+			opacity: 1;
+			transition: .25s;
+			margin-bottom: 10px;
+		}
+		//クローズ時
+		&-close{
+			padding-top:0;
+			padding-bottom: 0;
+			height: 0;
+			opacity: 0;
+		}
+	}
+
+
+}
+
+
+/*      編集画面
+/*-------------------------------------------*/
+// フロント画面と比べると余白が大きく空くので追加
+.editor-styles-wrapper {
+	// .vk_faq{
+	// 	.block-editor-inner-blocks{
+	// 		div.block-editor-block-list__block:not(.is_hovered){
+	// 			margin-top: 0;
+	// 			margin-bottom: 0;
+	// 		}
+	// 		.wp-block:not(.is_hovered){width: 100%;}
+	// 	}
+	// }
+}

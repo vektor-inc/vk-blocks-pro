@@ -12,13 +12,11 @@ export default function save(props) {
 	const tablabels = '';
 
 	return (
-		<>
-			<div {...blockProps}>
-				<ul className="vk_tab_labels">{tablabels}</ul>
-				<div className="vk_tab_bodys">
-					<InnerBlocks.Content />
-				</div>
+		<div {...blockProps}>
+			<ul className="vk_tab_labels">{tablabels}</ul>
+			<div className="vk_tab_bodys">
+				<InnerBlocks.Content />
 			</div>
-		</>
+		</div>
 	);
 }

@@ -23,9 +23,6 @@ import * as tableofContentsNew from './_pro/table-of-contents-new';
 import * as timeline from './_pro/timeline';
 import * as timelineItem from './_pro/timeline-item';
 
-
-
-
 const vkblocksPro = [
 	animation,
 	card,
@@ -36,7 +33,7 @@ const vkblocksPro = [
 	iconCard,
 	iconCardItem,
 	outer,
-	postList,	
+	postList,
 	step,
 	stepItem,
 	selectPostList,

@@ -1,12 +1,12 @@
-import { InspectorControls,InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import {
+	InspectorControls,
+	InnerBlocks,
+	useBlockProps,
+} from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 import { useEffect } from '@wordpress/element';
 import { dispatch } from '@wordpress/data';
-import {	
-	PanelBody,
-	BaseControl,
-	TextControl,
-} from '@wordpress/components';
+import { PanelBody, BaseControl, TextControl } from '@wordpress/components';
 
 export default function TabItemEdit(props) {
 	const { attributes, setAttributes, clientId } = props;

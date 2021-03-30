@@ -31,9 +31,6 @@ export default function SliderEdit(props) {
 		loop,
 		effect,
 		speed,
-		slidesPerView,
-		slidesPerGroup,
-		spaceBetween,
 	} = attributes;
 	const { updateBlockAttributes } = dispatch('core/block-editor');
 	const customClientId = replaceClientId(clientId);
@@ -43,25 +40,6 @@ export default function SliderEdit(props) {
 			clientId: customClientId,
 		});
 	}, []);
-
-	// slidesPerView 互換設定
-	if (slidesPerView === undefined) {
-		setAttributes({
-			slidesPerView: 1,
-		});
-	}
-	// slidesPerGroup 互換設定
-	if (slidesPerGroup === undefined) {
-		setAttributes({
-			slidesPerGroup: 1,
-		});
-	}
-	// spaceBetween 互換設定
-	if (spaceBetween === undefined) {
-		setAttributes({
-			spaceBetween: 0,
-		});
-	}
 
 	const containerClass = ' vk_grid-column';
 	let alignClass;
@@ -85,9 +63,6 @@ export default function SliderEdit(props) {
 		loop,
 		effect,
 		speed,
-		slidesPerView,
-		slidesPerGroup,
-		spaceBetween,
 	};
 
 	const blockProps = useBlockProps({
@@ -211,41 +186,6 @@ export default function SliderEdit(props) {
 							onChange={(value) =>
 								setAttributes({
 									speed: parseInt(value, 10),
-								})
-							}
-							type={'number'}
-						/>
-					</BaseControl>
-					<BaseControl
-						label={__('Display Multi Images per View', 'vk-blocks')}
-						id={`vk_slider-MultiImage`}
-					>
-						<TextControl
-							label={__('Images per View', 'vk-blocks')}
-							value={slidesPerView}
-							onChange={(value) =>
-								setAttributes({
-									slidesPerView: parseInt(value, 10),
-								})
-							}
-							type={'number'}
-						/>
-						<TextControl
-							label={__('Move Images per Slide', 'vk-blocks')}
-							value={slidesPerGroup}
-							onChange={(value) =>
-								setAttributes({
-									slidesPerGroup: parseInt(value, 10),
-								})
-							}
-							type={'number'}
-						/>
-						<TextControl
-							label={__('Space of between slides', 'vk-blocks')}
-							value={spaceBetween}
-							onChange={(value) =>
-								setAttributes({
-									spaceBetween: parseInt(value, 10),
 								})
 							}
 							type={'number'}

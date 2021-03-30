@@ -32,12 +32,6 @@ document.defaultView.addEventListener('load', function () {
 
 				speed: ${attributes.speed},
 
-				slidesPerView: ${attributes.slidesPerView},
-
-				slidesPerGroup: ${attributes.slidesPerGroup},
-
-				spaceBetween: ${attributes.spaceBetween},
-
 				loop: ${attributes.loop},
 
 				effect: '${attributes.effect}',
@@ -59,10 +53,6 @@ document.defaultView.addEventListener('load', function () {
 				},
 
 				speed: ${attributes.speed},
-
-				slidesPerView: ${attributes.slidesPerView},
-
-				slidesPerGroup: ${attributes.slidesPerGroup},
 
 				loop: ${attributes.loop},
 

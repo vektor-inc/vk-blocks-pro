@@ -20,7 +20,7 @@ $new_faq_accordion_array = array(
 $vk_blocks_options  = vkblocks_get_options();
 ?>
 <section>
-<h3 id="faq-setting"><?php echo __( 'FAQ Setting', 'vk-blocks' ); ?></h3>
+<h3 id="faq-setting"><?php echo __( 'FAQ Block Setting', 'vk-blocks' ); ?></h3>
 <select name="vk_blocks_options[new_faq_accordion]">
 <?php
 foreach ( $new_faq_accordion_array as $new_faq_accordion ) : ?>

@@ -1,7 +1,7 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 export default function save({ attributes }) {
-	let {
+	const {
 		pagination,
 		clientId,
 		width,
@@ -10,24 +10,8 @@ export default function save({ attributes }) {
 		loop,
 		effect,
 		speed,
-		slidesPerView,
-		slidesPerGroup,
-		spaceBetween,
 	} = attributes;
 	let alignClass;
-
-	// slidesPerView 互換設定
-	if (slidesPerView === undefined) {
-		slidesPerView = 1;
-	}
-	// slidesPerGroup 互換設定
-	if (slidesPerGroup === undefined) {
-		slidesPerGroup = 1;
-	}
-	// slidesPerGroup 互換設定
-	if (spaceBetween === undefined) {
-		spaceBetween = 0;
-	}
 
 	const sliderData = {
 		autoPlay,
@@ -38,9 +22,6 @@ export default function save({ attributes }) {
 		loop,
 		effect,
 		speed,
-		slidesPerView,
-		slidesPerGroup,
-		spaceBetween,
 	};
 
 	if ('full' === width) {

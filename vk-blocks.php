@@ -77,7 +77,7 @@ if ( is_admin() && ! is_network_admin() ) {
 			'admin_notices',
 			function() {
 				echo '<div class="updated notice"><p>';
-				echo __( 'Disabled Blocks module. Because VK-Blocks Plugin running.', 'vk-blocks' );
+				echo __( 'Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks Plugin running.', 'vk-blocks' );
 				echo '</p></div>';
 			}
 		);

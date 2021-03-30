@@ -63,7 +63,8 @@
 		"cli": "wp-env run cli",
 		"show:savedVersion": "bash -c 'npm run cli wp post meta get $0 _vkb_saved_block_version'",
 		"update:savedVersion": "bash -c 'npm run cli wp post meta update $0 _vkb_saved_block_version $1'",
-		"reinstall": "rm -rf node_modules/ && npm install && npm run build"
+		"reinstall": "rm -rf node_modules/ && npm install && npm run build",
+		"prepare": "husky install"
 	},
 	"author": "",
 	"license": "MIT",
@@ -123,5 +124,4 @@
 		"react-dom": "16.14.0",
 		"react-html-parser": "^2.0.2"
 	}
-
 }

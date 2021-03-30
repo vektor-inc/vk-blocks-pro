@@ -2,6 +2,7 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/tab-item",
 	"category": "vk-blocks-cat",
+	"parent": ["vk-blocks/tab"],
 	"attributes": {
 		"tabLabel": {
 			"type": "string",

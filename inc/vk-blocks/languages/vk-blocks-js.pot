@@ -819,7 +819,7 @@ msgstr ""
 msgid "Tab Item"
 msgstr ""
 
-#: src/blocks/_pro/tab/index.js:18
+#: src/blocks/_pro/tab/index.js:17
 msgid "Tab"
 msgstr ""
 

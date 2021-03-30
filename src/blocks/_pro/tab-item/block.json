@@ -1,8 +1,12 @@
 {
 	"apiVersion": 2,
-	"name": "vk-blocks/tab",
+	"name": "vk-blocks/tab-item",
 	"category": "vk-blocks-cat",
 	"attributes": {
+		"tabLabel": {
+			"type": "string",
+			"default": ""
+		},
 		"clientId": {
 			"type": "string",
 			"default": ""

@@ -811,6 +811,18 @@ msgstr ""
 msgid "Step"
 msgstr ""
 
+#: src/blocks/_pro/tab-item/edit.js:32
+msgid "Tab item setting"
+msgstr ""
+
+#: src/blocks/_pro/tab-item/index.js:17
+msgid "Tab Item"
+msgstr ""
+
+#: src/blocks/_pro/tab/index.js:18
+msgid "Tab"
+msgstr ""
+
 #: src/blocks/_pro/table-of-contents-new/deprecated/0.59.1/save.js:19
 #: src/blocks/_pro/table-of-contents-new/edit.js:163
 #: src/blocks/_pro/table-of-contents-new/index.js:17

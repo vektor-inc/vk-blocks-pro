@@ -6,7 +6,6 @@ import { ReactComponent as Icon } from './icon.svg';
 import { __ } from '@wordpress/i18n';
 import { title, content } from '@vkblocks/utils/example-data';
 
-import deprecated from './deprecated/index';
 import edit from './edit';
 import metadata from './block.json';
 import save from './save';
@@ -66,5 +65,4 @@ export const settings = {
 	},
 	edit,
 	save,
-	deprecated,
 };

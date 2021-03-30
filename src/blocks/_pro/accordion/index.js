@@ -23,8 +23,17 @@ export const settings = {
 			isDefault: true,
 		},
 		{
+			name: 'vk_accordion-normal-border',
+			label: __('Normal Border', 'vk-blocks'),
+			isDefault: true,
+		},
+		{
 			name: 'vk_accordion-rounded',
 			label: __('Rounded', 'vk-blocks'),
+		},
+		{
+			name: 'vk_accordion-rounded-border',
+			label: __('Rounded Border', 'vk-blocks'),
 		},
 		{
 			name: 'vk_accordion-bgnone',

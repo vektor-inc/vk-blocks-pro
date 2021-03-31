@@ -124,7 +124,7 @@ export default function HeaddingEdit(props) {
 			color: titleColor,
 			fontSize: titleSize + 'rem',
 			marginBottom: titleMarginBottom + 'rem',
-			textAlign: align,titleMarginBottom
+			textAlign: align
 		};
 	} else {
 		tStyle = {

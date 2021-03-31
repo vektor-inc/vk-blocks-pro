@@ -32,6 +32,7 @@ jobs:
     - run: |
       npm install
       npm install -g @wordpress/env
+      wp-env start
     - run: npm run build
     - run: npx gulp dist
     - run: cd dist/ && zip -r ${{ env.plugin_name }}.zip ${{ env.plugin_name }}/ && mv ${{ env.plugin_name }}.zip ${GITHUB_WORKSPACE}

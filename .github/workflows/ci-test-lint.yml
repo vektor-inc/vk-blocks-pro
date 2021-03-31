@@ -36,7 +36,7 @@ jobs:
     - name: Build
       run: |
         npm install
-        npm install -g @wordpress/env
+        wp-env start
         npm run build
 
     # 各ブロックのlintを実行

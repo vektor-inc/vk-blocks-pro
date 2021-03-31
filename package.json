@@ -56,7 +56,7 @@
 		"fixtures:generate": "cross-env GENERATE_MISSING_FIXTURES=y wp-scripts test-unit-js --config test/jest.config.js test/integration/full-content/full-content.test.js",
 		"fixtures:regenerate": "npm run build && npm run fixtures:clean && npm run fixtures:generate",
 		"test-unit": "npm run fixtures:regenerate",
-		"composer": "wp-env run composer \"composer install\"",
+		"composer:install": "wp-env run composer \"composer install\"",
 		"phpunit": "wp-env run phpunit \"phpunit -c /var/www/html/wp-content/plugins/vk-blocks-pro/phpunit.xml.dist --verbose\"",
 		"cli": "wp-env run cli",
 		"show:savedVersion": "bash -c 'npm run cli wp post meta get $0 _vkb_saved_block_version'",

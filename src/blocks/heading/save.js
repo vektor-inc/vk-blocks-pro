@@ -72,7 +72,11 @@ export default function save(props) {
 	}
 
 	//titleのマージンを切り替え
-	if (titleMarginBottom !== null && titleMarginBottom !== undefined && titleMarginBottom !== '') {
+	if (
+		titleMarginBottom !== null &&
+		titleMarginBottom !== undefined &&
+		titleMarginBottom !== ''
+	) {
 		tStyle = {
 			color: titleColor,
 			fontSize: titleSize + 'rem',

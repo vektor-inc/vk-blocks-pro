@@ -104,6 +104,10 @@ gulp.task("dist_swiper_css", function() {
 
 // replace_text_domain
 gulp.task("text-domain", function(done) {
+	// vk-admin.
+	gulp.src(["./inc/vk-admin/package/*.php"])
+		.pipe(replace("vk_admin_textdomain","vk-blocks"))
+		.pipe(gulp.dest("./inc/vk-admin/package/"));
 	// font-awesome.
 	gulp.src(["./inc/font-awesome/package/*.php"])
 		.pipe(replace("'vk_font_awesome_version_textdomain'", "'vk-blocks'"))

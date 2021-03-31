@@ -10,6 +10,7 @@ This is a plugin that extends Gutenberg's blocks.
 ## 依存関係のインストール
 ```
 npm install
+npm install -g @wordpress/env
 ```
 
 ## 開発環境の立ち上げ
@@ -17,10 +18,13 @@ npm install
 npm start
 ```
 
-## ビルド
+## ビルド & 翻訳
 ```
 // 本番環境用
 npm build
+
+// 翻訳のみ
+npm run translate
 
 // 開発用（開発者ツールのconsoleでログが追いやすくなる）
 npm run build:dev

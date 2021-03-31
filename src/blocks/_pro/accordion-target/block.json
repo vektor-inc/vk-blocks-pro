@@ -2,7 +2,7 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/accordion-target",
 	"category": "vk-blocks-cat",
-	"parent": "['vk-blocks/accordion']",
+	"parent": ["vk-blocks/accordion"],
 	"attributes": {},
 	"supports": {
 		"anchor": true,

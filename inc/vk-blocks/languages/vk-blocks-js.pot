@@ -7,12 +7,57 @@ msgstr ""
 msgid "Accordion Target"
 msgstr ""
 
+#: src/blocks/_pro/accordion-trigger/edit.js:39
+#: src/blocks/heading/edit.js:297
+msgid "Font Awesome Icon Settings"
+msgstr ""
+
+#: src/blocks/_pro/accordion-trigger/edit.js:42
+#: src/blocks/button/edit.js:262
+#: src/blocks/heading/edit.js:300
+#: src/blocks/pr-content/edit.js:194
+msgid "Before text"
+msgstr ""
+
+#: src/blocks/_pro/accordion-trigger/edit.js:51
+#: src/blocks/heading/edit.js:318
+msgid "Icon Color"
+msgstr ""
+
 #: src/blocks/_pro/accordion-trigger/index.js:16
 msgid "Accordion Trigger"
 msgstr ""
 
 #: src/blocks/_pro/accordion/index.js:17
 msgid "Accordion"
+msgstr ""
+
+#: src/blocks/_pro/accordion/index.js:22
+#: src/blocks/_pro/animation/edit.js:123
+#: src/blocks/_pro/outer/edit.js:303
+#: src/blocks/_pro/slider/edit.js:118
+#: src/blocks/balloon/edit.js:276
+#: src/blocks/button/edit.js:95
+#: src/blocks/faq/index.js:27
+#: src/blocks/faq2/index.js:22
+msgid "Normal"
+msgstr ""
+
+#: src/blocks/_pro/accordion/index.js:27
+msgid "Normal Border"
+msgstr ""
+
+#: src/blocks/_pro/accordion/index.js:32
+#: src/blocks/balloon/edit.js:286
+msgid "Rounded"
+msgstr ""
+
+#: src/blocks/_pro/accordion/index.js:36
+msgid "Rounded Border"
+msgstr ""
+
+#: src/blocks/_pro/accordion/index.js:40
+msgid "Bgnone"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:104
@@ -29,16 +74,6 @@ msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:119
 msgid "Short"
-msgstr ""
-
-#: src/blocks/_pro/animation/edit.js:123
-#: src/blocks/_pro/outer/edit.js:303
-#: src/blocks/_pro/slider/edit.js:118
-#: src/blocks/balloon/edit.js:276
-#: src/blocks/button/edit.js:95
-#: src/blocks/faq/index.js:27
-#: src/blocks/faq2/index.js:22
-msgid "Normal"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:127
@@ -979,10 +1014,6 @@ msgstr ""
 msgid "Image Style"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:286
-msgid "Rounded"
-msgstr ""
-
 #: src/blocks/balloon/edit.js:296
 msgid "Circle"
 msgstr ""
@@ -1179,12 +1210,6 @@ msgid ""
 "default color, click the clear button."
 msgstr ""
 
-#: src/blocks/button/edit.js:262
-#: src/blocks/heading/edit.js:300
-#: src/blocks/pr-content/edit.js:194
-msgid "Before text"
-msgstr ""
-
 #: src/blocks/button/edit.js:271
 #: src/blocks/heading/edit.js:309
 #: src/blocks/pr-content/edit.js:206
@@ -1361,14 +1386,6 @@ msgstr ""
 
 #: src/blocks/heading/edit.js:285
 msgid "Text Color"
-msgstr ""
-
-#: src/blocks/heading/edit.js:297
-msgid "Font Awesome Icon Settings"
-msgstr ""
-
-#: src/blocks/heading/edit.js:318
-msgid "Icon Color"
 msgstr ""
 
 #: src/blocks/heading/edit.js:331

@@ -1,7 +1,7 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 export default function save(props) {
-	const { attributes } = props;
+	const { attributes, innerBlocks } = props;
 	const { clientId } = attributes;
 
 	const blockProps = useBlockProps.save({

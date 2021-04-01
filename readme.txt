@@ -63,6 +63,9 @@ e.g.
 
 == Changelog ==
 
+= 1.1.0 =
+* [ Specification Change ][ Slider Block ] Display multiple images on one slide.
+
 = 1.0.16 =
 [ Specification Change ] Update VK-Admin Library
 

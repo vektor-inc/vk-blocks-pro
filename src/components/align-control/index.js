@@ -7,14 +7,13 @@ export const AlignControl = (props) => {
 	const { setAttributes, schema, initial, component } = props;
 	const [activeControl, setActiveControl] = useState(initial);
 
-
 	function createAlignControl(align) {
 		let alignIcon = '';
-		if ( align === 'left' ) {
+		if (align === 'left') {
 			alignIcon = alignLeft;
-		} else if ( align === 'center' ) {
+		} else if (align === 'center') {
 			alignIcon = alignCenter;
-		} else if ( align === 'right' ) {
+		} else if (align === 'right') {
 			alignIcon = alignRight;
 		}
 		return {

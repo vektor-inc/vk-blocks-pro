@@ -33,6 +33,23 @@ export const usePostTypeTaxonomies = (postType) => {
 	);
 };
 
+
+export const useTerms = (keyname, taxonomies) => {
+	return useSelect(
+		(select) => {
+			const obj = {};
+			for (const taxonomy of taxonomies) {
+				obj[taxonomy[keyname]] =
+					select('core').getEntityRecords('taxonomy', taxonomy.slug, {
+						per_page: -1,
+					}) || [];
+			}
+			return obj;
+		},
+		[taxonomies]
+	);		
+};
+
 export const useTermsGroupbyTaxnomy = (taxonomies) => {
 	return useSelect(
 		(select) => {

@@ -7,23 +7,6 @@ msgstr ""
 msgid "Accordion Target"
 msgstr ""
 
-#: src/blocks/_pro/accordion-trigger/edit.js:39
-#: src/blocks/heading/edit.js:297
-msgid "Font Awesome Icon Settings"
-msgstr ""
-
-#: src/blocks/_pro/accordion-trigger/edit.js:42
-#: src/blocks/button/edit.js:262
-#: src/blocks/heading/edit.js:300
-#: src/blocks/pr-content/edit.js:194
-msgid "Before text"
-msgstr ""
-
-#: src/blocks/_pro/accordion-trigger/edit.js:51
-#: src/blocks/heading/edit.js:318
-msgid "Icon Color"
-msgstr ""
-
 #: src/blocks/_pro/accordion-trigger/index.js:16
 msgid "Accordion Trigger"
 msgstr ""
@@ -1210,6 +1193,12 @@ msgid ""
 "default color, click the clear button."
 msgstr ""
 
+#: src/blocks/button/edit.js:262
+#: src/blocks/heading/edit.js:300
+#: src/blocks/pr-content/edit.js:194
+msgid "Before text"
+msgstr ""
+
 #: src/blocks/button/edit.js:271
 #: src/blocks/heading/edit.js:309
 #: src/blocks/pr-content/edit.js:206
@@ -1386,6 +1375,14 @@ msgstr ""
 
 #: src/blocks/heading/edit.js:285
 msgid "Text Color"
+msgstr ""
+
+#: src/blocks/heading/edit.js:297
+msgid "Font Awesome Icon Settings"
+msgstr ""
+
+#: src/blocks/heading/edit.js:318
+msgid "Icon Color"
 msgstr ""
 
 #: src/blocks/heading/edit.js:331

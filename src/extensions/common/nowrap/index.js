@@ -18,7 +18,7 @@ registerFormatType('vk-blocks/nowrap', {
 			<>
 				<RichTextToolbarButton
 					icon={Icon}
-					title={__('Nowrap', 'vk-blocks')}
+					title={__('No wrap', 'vk-blocks')}
 					onClick={() => {
 						props.onChange(
 							toggleFormat(value, { type: 'vk-blocks/nowrap' })

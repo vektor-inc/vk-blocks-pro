@@ -43,9 +43,7 @@ done
 sed -i "s/import vkblocksPro from '\.\/bundle-pro'/const vkblocksPro = \[\]/g" src/blocks/bundle.js
 # ブロックをビルド
 npm install
-npm install -g @wordpress/env
-wp-env start
-npm run build:free
+]npm run build:free
 # 無料版のmasterブランチにpush
 git add .
 git commit -m"Update from vk-blocks-pro"

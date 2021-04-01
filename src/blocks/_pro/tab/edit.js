@@ -1,6 +1,6 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
-import { dispatch } from '@wordpress/data';
+import { select, dispatch } from '@wordpress/data';
 
 export default function TabEdit(props) {
 	const { attributes, clientId } = props;
@@ -17,12 +17,26 @@ export default function TabEdit(props) {
 		}
 	}, [clientId]);
 
+	const parentBlock = select('core/editor').getBlocksByClientId(clientId)[0];
+	const childBlocks = parentBlock.innerBlocks;
+
+	let tablabels = '';
+	if (childBlocks) {
+		tablabels = childBlocks.map((block, index) => (
+			<li
+				id={`vk_tab_labels_label-${block.attributes.clientId}`}
+				className={`vk_tab_labels_label`}
+				key={index}
+			>
+				{block.attributes.tabLabel}
+			</li>
+		));
+	}
+
 	const blockProps = useBlockProps({
 		className: `vk_tab`,
 		id: `vk-tab-id-${clientId}`,
 	});
-
-	const tablabels = '';
 
 	return (
 		<>

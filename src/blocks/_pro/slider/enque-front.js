@@ -36,8 +36,6 @@ document.defaultView.addEventListener('load', function () {
 
 				slidesPerGroup: ${attributes.slidesPerGroup},
 
-				spaceBetween: ${attributes.spaceBetween},
-
 				loop: ${attributes.loop},
 
 				effect: '${attributes.effect}',

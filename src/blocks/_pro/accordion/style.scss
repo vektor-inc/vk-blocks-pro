@@ -32,8 +32,12 @@
 			background: transparent;
 			border-bottom: 1px dotted var(--vk-color-border);
 		}
-		.vk_accordion-target {
-
+	}
+	&-bgnone-border{
+		border: 1px solid var(--vk-color-border);
+		.vk_accordion-trigger{
+			background: transparent;
+			border-bottom: 1px dotted var(--vk-color-border);
 		}
 	}
 }

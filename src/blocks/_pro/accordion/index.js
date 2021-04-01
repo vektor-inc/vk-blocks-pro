@@ -39,6 +39,10 @@ export const settings = {
 			name: 'vk_accordion-bgnone',
 			label: __('Bgnone', 'vk-blocks'),
 		},
+		{
+			name: 'vk_accordion-bgnone-border',
+			label: __('Bgnone Border', 'vk-blocks'),
+		},
 	],
 	example: {
 		innerBlocks: [

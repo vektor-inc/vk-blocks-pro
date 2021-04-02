@@ -20,6 +20,7 @@ export default function TabEdit(props) {
 	const parentBlock = select('core/editor').getBlocksByClientId(clientId)[0];
 	const childBlocks = parentBlock.innerBlocks;
 
+	let tabList = '';
 	let tablabels = '';
 	if (childBlocks) {
 		tablabels = childBlocks.map((block, index) => (
@@ -31,6 +32,7 @@ export default function TabEdit(props) {
 				{block.attributes.tabLabel}
 			</li>
 		));
+		tabList = <ul className="vk_tab_labels">{tablabels}</ul>;
 	}
 
 	const blockProps = useBlockProps({
@@ -41,7 +43,7 @@ export default function TabEdit(props) {
 	return (
 		<>
 			<div {...blockProps}>
-				<ul className="vk_tab_labels">{tablabels}</ul>
+				{tabList}
 				<div className="vk_tab_bodys">
 					<InnerBlocks
 						allowedBlocks={ALLOWED_BLOCKS}

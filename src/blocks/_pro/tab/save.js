@@ -9,6 +9,7 @@ export default function save(props) {
 		id: `vk-tab-id-${clientId}`,
 	});
 
+	let tabList = '';
 	let tablabels = '';
 	if (innerBlocks) {
 		tablabels = innerBlocks.map((block, index) => (
@@ -20,11 +21,12 @@ export default function save(props) {
 				{block.attributes.tabLabel}
 			</li>
 		));
+		tabList = <ul className="vk_tab_labels">{tablabels}</ul>;
 	}
 
 	return (
 		<div {...blockProps}>
-			<ul className="vk_tab_labels">{tablabels}</ul>
+			{tabList}
 			<div className="vk_tab_bodys">
 				<InnerBlocks.Content />
 			</div>

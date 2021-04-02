@@ -1,7 +1,7 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
 import { select, dispatch } from '@wordpress/data';
-import { renderToString } from 'react-dom/server';
+import { renderToStaticMarkup } from 'react-dom/server';
 
 export default function TabEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -40,7 +40,7 @@ export default function TabEdit(props) {
 
 	useEffect(() => {
 		if (tabList) {
-			setAttributes({ tabListHtml: renderToString(tabList) });
+			setAttributes({ tabListHtml: renderToStaticMarkup(tabList) });
 		}
 	}, [tabList]);
 

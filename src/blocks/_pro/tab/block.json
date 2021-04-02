@@ -6,6 +6,10 @@
 		"clientId": {
 			"type": "string",
 			"default": ""
+		},
+		"tabListHtml": {
+			"type": "string",
+			"default": ""
 		}
 	},
 	"supports": {

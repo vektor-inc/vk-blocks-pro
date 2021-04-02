@@ -1,9 +1,10 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
 import { select, dispatch } from '@wordpress/data';
+import { renderToString } from 'react-dom/server';
 
 export default function TabEdit(props) {
-	const { attributes, clientId } = props;
+	const { attributes, setAttributes, clientId } = props;
 	attributes.clientId = clientId;
 
 	const ALLOWED_BLOCKS = ['vk-blocks/tab-item'];
@@ -34,6 +35,12 @@ export default function TabEdit(props) {
 		));
 		tabList = <ul className="vk_tab_labels">{tablabels}</ul>;
 	}
+
+	useEffect(() => {
+		if (tabList) {
+			setAttributes({ tabListHtml: renderToString(tabList) });
+		}
+	}, [tabList]);
 
 	const blockProps = useBlockProps({
 		className: `vk_tab`,

@@ -9,7 +9,18 @@ export default function save(props) {
 		id: `vk-tab-id-${clientId}`,
 	});
 
-	const tablabels = '';
+	let tablabels = '';
+	if (innerBlocks) {
+		tablabels = innerBlocks.map((block, index) => (
+			<li
+				id={`vk_tab_labels_label-${block.attributes.clientId}`}
+				className={`vk_tab_labels_label`}
+				key={index}
+			>
+				{block.attributes.tabLabel}
+			</li>
+		));
+	}
 
 	return (
 		<div {...blockProps}>

@@ -33,7 +33,9 @@ export default function TabEdit(props) {
 				{block.attributes.tabLabel}
 			</li>
 		));
-		tabList = <ul className="vk_tab_labels">{tablabels}</ul>;
+		if (tablabels) {
+			tabList = <ul className="vk_tab_labels">{tablabels}</ul>;
+		}
 	}
 
 	useEffect(() => {

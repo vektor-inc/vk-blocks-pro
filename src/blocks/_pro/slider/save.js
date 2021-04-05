@@ -12,7 +12,6 @@ export default function save({ attributes }) {
 		speed,
 		slidesPerView,
 		slidesPerGroup,
-		spaceBetween,
 	} = attributes;
 	let alignClass;
 
@@ -23,10 +22,6 @@ export default function save({ attributes }) {
 	// slidesPerGroup 互換設定
 	if (slidesPerGroup === undefined) {
 		slidesPerGroup = 1;
-	}
-	// slidesPerGroup 互換設定
-	if (spaceBetween === undefined) {
-		spaceBetween = 0;
 	}
 
 	const sliderData = {
@@ -40,7 +35,6 @@ export default function save({ attributes }) {
 		speed,
 		slidesPerView,
 		slidesPerGroup,
-		spaceBetween,
 	};
 
 	if ('full' === width) {

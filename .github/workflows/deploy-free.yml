@@ -37,7 +37,10 @@ jobs:
       with:
         node-version: "${{ steps.nodenv.outputs.NODEVERSION }}"
 
-    - run: npm install -g npm
+    - run: |
+        npm install
+        npm install -g @wordpress/env
+        wp-env start
     # 通常版をクローン
     - run: git clone https://${GIT_USER}:${GIT_TOKEN}@github.com/${GIT_REPOSITORY}
     # VK BlocksのGithubにアクセスできるユーザーの設定

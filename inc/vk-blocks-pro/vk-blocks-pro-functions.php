@@ -36,5 +36,8 @@ function vk_blocks_pro_load_scripts() {
 
 	// Slider Block
 	wp_enqueue_script( 'vk-blocks-slider', VK_BLOCKS_URL . 'build/vk-slider.min.js', array( 'vk-swiper-script' ), VK_BLOCKS_VERSION, true );
+
+	// Tab Block
+	wp_enqueue_script( 'vk-blocks-tab', VK_BLOCKS_URL . 'build/vk-tab.min.js', array(), VK_BLOCKS_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'vk_blocks_pro_load_scripts' );

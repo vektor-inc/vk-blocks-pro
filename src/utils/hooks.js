@@ -33,9 +33,6 @@ export const usePostTypeTaxonomies = (postType) => {
 	);
 };
 
-
-
-
 export const useTermsGroupbyTaxnomy = (taxonomies) => {
 	return useSelect(
 		(select) => {

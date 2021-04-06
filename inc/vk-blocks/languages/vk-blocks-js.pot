@@ -1773,6 +1773,10 @@ msgstr ""
 msgid "No wrap"
 msgstr ""
 
+#: src/extensions/common/responsive-br/index.js:41
+msgid "Responsive BR"
+msgstr ""
+
 #: src/extensions/common/responsive-br/index.js:45
 msgid "Responsive BR "
 msgstr ""

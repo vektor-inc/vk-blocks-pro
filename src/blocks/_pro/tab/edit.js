@@ -28,13 +28,13 @@ export default function TabEdit(props) {
 
 	useEffect(() => {
 		if (childBlocks) {
-			childBlocks.forEach((block, index) => {
+			childBlocks.forEach((childBlock, index) => {
 				if (firstActive === index) {
-					updateBlockAttributes(block.clientId, {
+					updateBlockAttributes(childBlock.clientId, {
 						tabBodyActive: true,
 					});
 				} else {
-					updateBlockAttributes(block.clientId, {
+					updateBlockAttributes(childBlock.clientId, {
 						tabBodyActive: false,
 					});
 				}
@@ -45,18 +45,18 @@ export default function TabEdit(props) {
 	let tabList = '';
 	let tablabels = '';
 	if (childBlocks) {
-		tablabels = childBlocks.map((block, index) => {
+		tablabels = childBlocks.map((childBlock, index) => {
 			let activeLabelClass = '';
 			if (firstActive === index) {
 				activeLabelClass = 'vk_tab_labels_label-state-active';
 			}
 			return (
 				<li
-					id={`vk_tab_labels_label-${block.attributes.clientId}`}
+					id={`vk_tab_labels_label-${childBlock.attributes.clientId}`}
 					className={`vk_tab_labels_label ${activeLabelClass}`}
 					key={index}
 				>
-					{block.attributes.tabLabel}
+					{childBlock.attributes.tabLabel}
 				</li>
 			);
 		});

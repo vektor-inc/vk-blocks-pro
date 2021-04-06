@@ -10,10 +10,19 @@ import { PanelBody, BaseControl, TextControl } from '@wordpress/components';
 
 export default function TabItemEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
-	const { tabLabel } = attributes;
+	const { tabLabel, tabBodyActive } = attributes;
 	attributes.clientId = clientId;
 
 	const { updateBlockAttributes } = dispatch('core/block-editor');
+
+	if (tabBodyActive === undefined) {
+		setAttributes({ tabBodyActive: false });
+	}
+
+	let activeBodyClass = '';
+	if (tabBodyActive === true) {
+		activeBodyClass = 'vk_tab_bodys_body-state-active';
+	}
 
 	useEffect(() => {
 		if (clientId) {
@@ -22,7 +31,7 @@ export default function TabItemEdit(props) {
 	}, [clientId]);
 
 	const blockProps = useBlockProps({
-		className: `vk_tab_bodys_body`,
+		className: `vk_tab_bodys_body ${activeBodyClass}`,
 		id: `vk_tab_bodys_body-${clientId}`,
 	});
 

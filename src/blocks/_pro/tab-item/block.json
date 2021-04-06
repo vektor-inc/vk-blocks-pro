@@ -11,6 +11,10 @@
 		"clientId": {
 			"type": "string",
 			"default": ""
+		},
+		"tabBodyActive": {
+			"type": "boolean",
+			"default": false
 		}
 	},
 	"supports": {

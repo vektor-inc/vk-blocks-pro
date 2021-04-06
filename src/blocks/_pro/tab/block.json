@@ -10,6 +10,10 @@
 		"tabListHtml": {
 			"type": "string",
 			"default": ""
+		},
+		"firstActive": {
+			"type": "string",
+			"default": 0
 		}
 	},
 	"supports": {

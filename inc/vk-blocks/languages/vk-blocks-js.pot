@@ -823,7 +823,7 @@ msgstr ""
 msgid "Step"
 msgstr ""
 
-#: src/blocks/_pro/tab-item/edit.js:32
+#: src/blocks/_pro/tab-item/edit.js:41
 msgid "Tab item setting"
 msgstr ""
 

@@ -77,13 +77,13 @@ export default function PostListEdit(props) {
 	const taxonomies = useTaxonomies();
 
 	// タクソノミー名をキーとしたタームの一覧
-	const termsByTaxonomyName = useTerms('rest_base', taxonomies);
+	const termsByTaxonomyRestbase= useTerms('rest_base', taxonomies);
 
 	const replaceIsCheckedTermData = (termIds, termName, newIds) => {
 		
 		const removedTermIds = termIds.filter( termId => {
 			let find = false;
-			termsByTaxonomyName[termName].forEach(term => {
+			termsByTaxonomyRestbase[termName].forEach(term => {
 				if (term.id == termId) {
 					find = true;
 				}
@@ -91,7 +91,6 @@ export default function PostListEdit(props) {
 			return !find;
 		});
 		
-
 		return removedTermIds.concat(newIds);
 	}
 
@@ -101,36 +100,34 @@ export default function PostListEdit(props) {
 		index
 	) {
 
-		if ( ! termsByTaxonomyName[taxonomy.rest_base]) {
+		if ( ! termsByTaxonomyRestbase[taxonomy.rest_base]) {
 			return null;
 		}
-
 		
-		const termsMapByName = termsByTaxonomyName[taxonomy.rest_base].reduce((acc, term) => {
+		
+		if ( taxonomy.hierarchical === true ) {
+		//	return null;
+		}
+
+		const termsMapByName = termsByTaxonomyRestbase[taxonomy.rest_base].reduce((acc, term) => {
 			return {
 				...acc,
 				[ term.name ]: term
 			}
 		}, {});
-		const termsMapById = termsByTaxonomyName[taxonomy.rest_base].reduce((acc, term) => {
+		const termsMapById = termsByTaxonomyRestbase[taxonomy.rest_base].reduce((acc, term) => {
 			return {
 				...acc,
 				[ term.id ]: term
 			}
 		}, {});
+	
 		
-
-
-
-
-		//console.log(termsMapById);
-
-		const termNames = termsByTaxonomyName[taxonomy.rest_base].map((term) => {
-			console.log(term.name);
+		const termNames = termsByTaxonomyRestbase[taxonomy.rest_base].map((term) => {
 			return term.name
 		});
 
-		return termsByTaxonomyName[taxonomy.rest_base] && termsByTaxonomyName[taxonomy.rest_base].length > 0 ? (
+		return termsByTaxonomyRestbase[taxonomy.rest_base] && termsByTaxonomyRestbase[taxonomy.rest_base].length > 0 ? (
 			<FormTokenField
 				key={taxonomy.rest_base}
 				label={taxonomy.labels.name}
@@ -155,23 +152,28 @@ export default function PostListEdit(props) {
 	taxonomies);
 
 	// key を BaseControlのlabelに代入。valueの配列をmapでAdvancedCheckboxControlに渡す
-	const taxonomiesCheckBox = Object.keys(termsByTaxonomyName).map(function (
+	const taxonomiesCheckBox = taxonomies.map(function (
 		taxonomy,
 		index
 	) {
-		const taxonomiesProps = this[taxonomy].map((term) => {
+		const taxonomiesProps = termsByTaxonomyRestbase[taxonomy.rest_base].map((term) => {
 			return {
 				label: term.name,
 				slug: term.id,
 			};
 		});
 
+
+		if (taxonomy.hierarchical === false) {
+		//	return;
+		}
+
 		return (
 			<BaseControl
 				label={sprintf(
 					// translators: Filter by %s
 					__('Filter by %s', 'vk-blocks'),
-					taxonomy
+					taxonomy.rest_base
 				)}
 				id={`vk_postList-terms`}
 				key={index}
@@ -186,7 +188,7 @@ export default function PostListEdit(props) {
 			</BaseControl>
 		);
 	},
-	termsByTaxonomyName);
+	termsByTaxonomyRestbase);
 
 	const blockProps = useBlockProps();
 

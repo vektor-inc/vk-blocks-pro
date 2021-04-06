@@ -19,16 +19,16 @@ export default function TabItemEdit(props) {
 		setAttributes({ tabBodyActive: false });
 	}
 
-	let activeBodyClass = '';
-	if (tabBodyActive === true) {
-		activeBodyClass = 'vk_tab_bodys_body-state-active';
-	}
-
 	useEffect(() => {
 		if (clientId) {
 			updateBlockAttributes(clientId, { clientId });
 		}
 	}, [clientId]);
+
+	let activeBodyClass = '';
+	if (tabBodyActive === true) {
+		activeBodyClass = 'vk_tab_bodys_body-state-active';
+	}
 
 	const blockProps = useBlockProps({
 		className: `vk_tab_bodys_body ${activeBodyClass}`,

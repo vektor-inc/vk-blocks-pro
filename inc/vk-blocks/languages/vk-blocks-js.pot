@@ -21,7 +21,7 @@ msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:123
 #: src/blocks/_pro/outer/edit.js:303
-#: src/blocks/_pro/slider/edit.js:117
+#: src/blocks/_pro/slider/edit.js:116
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95
 #: src/blocks/faq/index.js:27
@@ -221,7 +221,7 @@ msgid "Image Height"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:82
-#: src/blocks/_pro/slider/edit.js:136
+#: src/blocks/_pro/slider/edit.js:135
 msgid "Slide Height for each device."
 msgstr ""
 
@@ -415,12 +415,12 @@ msgid "Layout Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:292
-#: src/blocks/_pro/slider/edit.js:108
+#: src/blocks/_pro/slider/edit.js:107
 msgid "Width"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:313
-#: src/blocks/_pro/slider/edit.js:125
+#: src/blocks/_pro/slider/edit.js:124
 msgid "Full Wide"
 msgstr ""
 
@@ -710,55 +710,55 @@ msgstr ""
 msgid "Slider Item"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:131
+#: src/blocks/_pro/slider/edit.js:130
 msgid "Height"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:150
+#: src/blocks/_pro/slider/edit.js:149
 msgid "Slider Settings"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:154
+#: src/blocks/_pro/slider/edit.js:153
 msgid "Effect "
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:164
+#: src/blocks/_pro/slider/edit.js:163
 msgid "Slide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:168
+#: src/blocks/_pro/slider/edit.js:167
 msgid "Fade"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:175
+#: src/blocks/_pro/slider/edit.js:174
 msgid "Loop "
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:185
+#: src/blocks/_pro/slider/edit.js:184
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:194
+#: src/blocks/_pro/slider/edit.js:193
 msgid "Display Time"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:205
+#: src/blocks/_pro/slider/edit.js:204
 msgid "Change Speed"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:219
+#: src/blocks/_pro/slider/edit.js:218
 msgid "Display Multi Images per View"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:223
+#: src/blocks/_pro/slider/edit.js:222
 msgid "Images per View"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:233
+#: src/blocks/_pro/slider/edit.js:232
 msgid "Move Images per Slide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:244
+#: src/blocks/_pro/slider/edit.js:243
 msgid "Display Pagination"
 msgstr ""
 

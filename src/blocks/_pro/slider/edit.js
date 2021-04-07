@@ -62,7 +62,6 @@ export default function SliderEdit(props) {
 		});
 	}
 
-
 	const containerClass = ' vk_grid-column';
 	let alignClass;
 	const ALLOWED_BLOCKS = [['vk-blocks/slider-item']];

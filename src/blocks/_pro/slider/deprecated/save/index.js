@@ -53,13 +53,25 @@ const blockAttributes = {
 	},
 	speed: {
 		type: 'number',
-		default: 500,
+		default: 300,
 	},
+};
+
+const blockAttributes2 = {
+	...blockAttributes,
+	slidesPerView: {
+		type: 'number',
+		default: 1
+	},
+	slidesPerGroup: {
+		type: 'number',
+		default: 1
+	}
 };
 
 export default [
 	{
-		attributes: blockAttributes,
+		attributes: blockAttributes2,
 		save: save1_1_0,
 	},
 	{

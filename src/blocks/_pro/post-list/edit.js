@@ -72,11 +72,11 @@ export default function PostListEdit(props) {
 	const taxonomies = useTaxonomies();
 	const termsByTaxonomyRestbase = useTermsGroupbyTaxnomy(taxonomies);
 
-	const replaceIsCheckedTermData = (termIds, taxonomyRestbase, newIds) => {
-		const removedTermIds = termIds.filter((termId) => {
+	const replaceIsCheckedTermData = (taxonomyRestbase, termIds, newIds) => {
+		const removedTermIds = termIds.filter( termId => {
 			let find = false;
-			termsByTaxonomyRestbase[taxonomyRestbase].forEach((term) => {
-				if (term.id === termId) {
+			termsByTaxonomyRestbase[taxonomyRestbase].forEach( term => {
+				if ( term.id === termId ) {
 					find = true;
 				}
 			});
@@ -85,39 +85,30 @@ export default function PostListEdit(props) {
 		return removedTermIds.concat(newIds);
 	};
 
-	const termFormTokenFields = taxonomies.map(function (taxonomy) {
-		if (!termsByTaxonomyRestbase[taxonomy.rest_base]) {
+	const termFormTokenFields = taxonomies.map( taxonomy => {
+		if ( ! termsByTaxonomyRestbase[taxonomy.rest_base] ) {
 			return null;
 		}
 
-		if (taxonomy.hierarchical === true) {
+		if ( taxonomy.hierarchical === true ) {
 			return null;
 		}
 
-		const termsMapByName = termsByTaxonomyRestbase[
-			taxonomy.rest_base
-		].reduce((acc, term) => {
+		const termsMapByName = termsByTaxonomyRestbase[taxonomy.rest_base].reduce( (acc, term) => {
 			return {
 				...acc,
 				[term.name]: term,
 			};
 		}, {});
 
-		const termsMapById = termsByTaxonomyRestbase[taxonomy.rest_base].reduce(
-			(acc, term) => {
-				return {
-					...acc,
-					[term.id]: term,
-				};
-			},
-			{}
-		);
+		const termsMapById = termsByTaxonomyRestbase[taxonomy.rest_base].reduce( (acc, term) => {
+			return {
+				...acc,
+				[term.id]: term,
+			};
+		}, {});
 
-		const termNames = termsByTaxonomyRestbase[taxonomy.rest_base].map(
-			(term) => {
-				return term.name;
-			}
-		);
+		const termNames = termsByTaxonomyRestbase[taxonomy.rest_base].map( term => term.name );
 
 		return termsByTaxonomyRestbase[taxonomy.rest_base] &&
 			termsByTaxonomyRestbase[taxonomy.rest_base].length > 0 ? (
@@ -125,28 +116,28 @@ export default function PostListEdit(props) {
 				key={taxonomy.rest_base}
 				label={taxonomy.labels.name}
 				value={isCheckedTermsData
-					.filter((termId) => {
+					.filter( termId => {
 						return termId in termsMapById;
-					})
-					.map((termId) => {
+					} )
+					.map( termId => {
 						return termsMapById[termId].name;
-					})}
+					} )}
 				suggestions={termNames}
 				onChange={(newTerms) => {
-					const termIds = newTerms.map((termName) => {
+					const termIds = newTerms.map( termName => {
 						return termsMapByName[termName].id;
-					});
+					} );
 					const replacedIsCheckedTermsData = replaceIsCheckedTermData(
-						isCheckedTermsData,
 						taxonomy.rest_base,
+						isCheckedTermsData,
 						termIds
 					);
 					setIsCheckedTermsData(replacedIsCheckedTermsData);
-					setAttributes({
+					setAttributes( {
 						isCheckedTerms: JSON.stringify(
 							replacedIsCheckedTermsData
 						),
-					});
+					} );
 				}}
 			></FormTokenField>
 		) : null;

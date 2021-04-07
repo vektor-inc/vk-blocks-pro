@@ -122,7 +122,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/edit.js:182
 #: src/blocks/_pro/card/edit.js:121
 #: src/blocks/_pro/icon-card/edit.js:72
-#: src/blocks/_pro/post-list/edit.js:264
+#: src/blocks/_pro/post-list/edit.js:221
 msgid "Title"
 msgstr ""
 
@@ -235,7 +235,7 @@ msgid "Current page"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:63
-#: src/blocks/_pro/post-list/edit.js:197
+#: src/blocks/_pro/post-list/edit.js:155
 msgid "Display conditions"
 msgstr ""
 
@@ -244,7 +244,7 @@ msgid "Parent"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:82
-#: src/blocks/_pro/post-list/edit.js:288
+#: src/blocks/_pro/post-list/edit.js:245
 msgid "Ignore this post"
 msgstr ""
 
@@ -608,48 +608,43 @@ msgstr ""
 msgid "Outer"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:174
-#. Filter by %s
-msgid "Filter by %s"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:201
+#: src/blocks/_pro/post-list/edit.js:159
 msgid "Filter by PostTypes"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:215
+#: src/blocks/_pro/post-list/edit.js:172
 msgid "Number of Posts"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:228
+#: src/blocks/_pro/post-list/edit.js:185
 msgid "Order"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:237
+#: src/blocks/_pro/post-list/edit.js:194
 msgid "ASC"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:241
+#: src/blocks/_pro/post-list/edit.js:198
 msgid "DESC"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:247
+#: src/blocks/_pro/post-list/edit.js:204
 msgid "Order by"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:256
+#: src/blocks/_pro/post-list/edit.js:213
 msgid "Published Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:260
+#: src/blocks/_pro/post-list/edit.js:217
 msgid "Modefied Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:268
+#: src/blocks/_pro/post-list/edit.js:225
 msgid "Random"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:274
+#: src/blocks/_pro/post-list/edit.js:231
 msgid "offset"
 msgstr ""
 

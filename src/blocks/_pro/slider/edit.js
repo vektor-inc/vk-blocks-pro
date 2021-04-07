@@ -55,6 +55,13 @@ export default function SliderEdit(props) {
 			slidesPerGroup: 1,
 		});
 	}
+	// slidesPerGroup 互換設定
+	if (speed === undefined) {
+		setAttributes({
+			speed: 300,
+		});
+	}
+
 
 	const containerClass = ' vk_grid-column';
 	let alignClass;

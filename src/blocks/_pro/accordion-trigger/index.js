@@ -1,5 +1,5 @@
 /**
- * FAQ Answer Block
+ * Accordion Trigger Block
  */
 import { ReactComponent as Icon } from './icon.svg';
 import { __ } from '@wordpress/i18n';

@@ -25,7 +25,6 @@ export const settings = {
 		{
 			name: 'vk_accordion-normal-border',
 			label: __('Normal Border', 'vk-blocks'),
-			isDefault: true,
 		},
 		{
 			name: 'vk_accordion-rounded',
@@ -37,11 +36,11 @@ export const settings = {
 		},
 		{
 			name: 'vk_accordion-bgnone',
-			label: __('Bgnone', 'vk-blocks'),
+			label: __('No background color', 'vk-blocks'),
 		},
 		{
 			name: 'vk_accordion-bgnone-border',
-			label: __('Bgnone Border', 'vk-blocks'),
+			label: __('No background color Border', 'vk-blocks'),
 		},
 	],
 	example: {

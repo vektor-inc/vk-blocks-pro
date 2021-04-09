@@ -42,7 +42,6 @@ export const settings = {
 			name: 'vk_accordion-with-background-color-rounded-border',
 			label: __('With background color Rounded Border', 'vk-blocks'),
 		},
-
 	],
 	example: {
 		innerBlocks: [

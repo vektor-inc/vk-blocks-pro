@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
 Tested up to: 5.7
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,7 +63,9 @@ e.g.
 
 == Changelog ==
 
+= 1.2.2 =
 * [ Specification Change ][ Slider ] Fix default slide speed and use cubic-bezier.
+* [ Bug fix ] Fix FontAwsome Popup in case of WP5.7
 
 = 1.2.1 =
 * [ Bug fix ] Fix translate of VK Blocks Setting

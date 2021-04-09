@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+* [ Specification Change ][ Slider ] Fix default slide speed and use cubic-bezier.
+
 = 1.2.1 =
 * [ Bug fix ] Fix translate of VK Blocks Setting
 

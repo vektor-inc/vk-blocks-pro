@@ -123,6 +123,9 @@
 	}//&-trigger
 	&-target{
 		padding:calc( var(--vk-size-text) * 1 );
+		p:last-of-type{
+			margin-bottom: 0;
+		}
 		//オープン時
 		&-open{
 			height: auto;

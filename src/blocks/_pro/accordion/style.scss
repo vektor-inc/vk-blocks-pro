@@ -17,6 +17,9 @@
 		.vk_accordion-trigger{
 			border-bottom:none;
 			background-color: rgba(0,0,0,.05);
+			.vk_accordion-toggle-open{
+				border-bottom: none;
+			}
 		}
 	}
 	&-background-color-border{
@@ -30,6 +33,9 @@
 		.vk_accordion-trigger{
 			border-bottom:none;
 			background-color: rgba(0,0,0,.05);
+			.vk_accordion-toggle-open{
+				border-bottom: none;
+			}
 		}
 	}
 	&-background-color-rounded-border{
@@ -67,7 +73,6 @@
     	position: relative;
     	font-size: 16px;
 		background: transparent;
-		border-bottom: 1px dotted var(--vk-color-border);
 		cursor: pointer;
 		p:first-of-type{
 			margin-bottom:0;
@@ -75,8 +80,12 @@
 		.vk_accordion-toggle{
 			position: absolute;
 			top: 0;
+			left: 0;
 			width: 100%;
 			height: 100%;
+			&-open{
+				border-bottom: 1px dotted var(--vk-color-border);
+			}
 			&-close,
 			&-open{
 				padding-bottom: 0;

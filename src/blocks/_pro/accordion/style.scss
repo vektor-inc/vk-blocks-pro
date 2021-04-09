@@ -12,31 +12,27 @@
 	}
 	&-no-background-color-border{
 		border: 1px solid var(--vk-color-border);
-		// .vk_accordion-trigger{
-		// 	background: transparent;
-		// 	border-bottom: 1px dotted var(--vk-color-border);
-		// }
 	}
-	&-with-background-color{
+	&-background-color{
 		.vk_accordion-trigger{
 			border-bottom:none;
 			background-color: rgba(0,0,0,.05);
 		}
 	}
-	&-with-background-color-border{
+	&-background-color-border{
 		border: 1px solid var(--vk-color-border);
 		.vk_accordion-trigger{
 			background-color: rgba(0,0,0,.05);
 		}
 	}
-	&-with-background-color-rounded{
+	&-background-color-rounded{
 		border-radius: calc(var(--vk-size-text) * 0.5 );
 		.vk_accordion-trigger{
 			border-bottom:none;
 			background-color: rgba(0,0,0,.05);
 		}
 	}
-	&-with-background-color-rounded-border{
+	&-background-color-rounded-border{
 		border: 1px solid var(--vk-color-border);
 		border-radius: calc(var(--vk-size-text) * 0.5 );
 		.vk_accordion-trigger{
@@ -59,9 +55,6 @@
 		margin: 0 auto 1em auto;
 		width:100%; 
 		position: relative;
-		p:first-of-type{
-			margin-bottom:0;
-		}
 	}
 	&-trigger{
 		border: none;
@@ -76,6 +69,9 @@
 		background: transparent;
 		border-bottom: 1px dotted var(--vk-color-border);
 		cursor: pointer;
+		p:first-of-type{
+			margin-bottom:0;
+		}
 		.vk_accordion-toggle{
 			position: absolute;
 			top: 0;
@@ -154,6 +150,10 @@
 .editor-styles-wrapper {
 	.vk_accordion-trigger {//編集画面では押せないのでカーソルをunset
 		cursor:unset;
+		.block-editor-block-list__block {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
 		.vk_accordion-toggle {//absoluteだとテキスト編集できないので
 			position: unset;
 		}

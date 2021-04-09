@@ -24,23 +24,23 @@ export const settings = {
 		},
 		{
 			name: 'vk_accordion-no-background-color-border',
-			label: __('No background color Border', 'vk-blocks'),
+			label: __('No background color / Border', 'vk-blocks'),
 		},
 		{
-			name: 'vk_accordion-with-background-color',
-			label: __('With background color', 'vk-blocks'),
+			name: 'vk_accordion-background-color',
+			label: __('Background color', 'vk-blocks'),
 		},
 		{
-			name: 'vk_accordion-with-background-color-border',
-			label: __('With background color Border', 'vk-blocks'),
+			name: 'vk_accordion-background-color-border',
+			label: __('Background color / Border', 'vk-blocks'),
 		},
 		{
-			name: 'vk_accordion-with-background-color-rounded',
-			label: __('With background color Rounded', 'vk-blocks'),
+			name: 'vk_accordion-background-color-rounded',
+			label: __('Background color / Rounded ', 'vk-blocks'),
 		},
 		{
-			name: 'vk_accordion-with-background-color-rounded-border',
-			label: __('With background color Rounded Border', 'vk-blocks'),
+			name: 'vk_accordion-background-color-rounded-border',
+			label: __('Background color / Rounded / Border', 'vk-blocks'),
 		},
 	],
 	example: {

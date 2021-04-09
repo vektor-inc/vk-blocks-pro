@@ -38,7 +38,7 @@ jobs:
         npm install
         npm install -g @wordpress/env
         wp-env start
-        composer global require wp-cli/wp-cli-bundle
+        wp-env run composer 'composer global require wp-cli/wp-cli-bundle'
         npm run build
 
     # 各ブロックのlintを実行

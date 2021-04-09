@@ -7,39 +7,43 @@
 /* style
 --------------------------------------------*/
 .is-style-vk_accordion{
-	&-normal-border{
-		border: 1px solid var(--vk-color-border);
-		.vk_accordion-trigger{
-			border-bottom: 1px dotted var(--vk-color-border);
-		}
-	}
-	&-rounded{
-		border-radius: calc(var(--vk-size-text) * 0.5 );
-		.vk_accordion-trigger{
-
-		}
-	}
-	&-rounded-border{
-		border: 1px solid var(--vk-color-border);
-		border-radius: calc(var(--vk-size-text) * 0.5 );
-		.vk_accordion-trigger{
-			border-bottom: 1px dotted var(--vk-color-border);
-		}
-	}
-	&-bgnone{
+	&-no-background-color{
 		border-bottom:1px solid var(--vk-color-border);
+	}
+	&-no-background-color-border{
+		border: 1px solid var(--vk-color-border);
+		// .vk_accordion-trigger{
+		// 	background: transparent;
+		// 	border-bottom: 1px dotted var(--vk-color-border);
+		// }
+	}
+	&-with-background-color{
 		.vk_accordion-trigger{
-			background: transparent;
-			border-bottom: 1px dotted var(--vk-color-border);
+			border-bottom:none;
+			background-color: rgba(0,0,0,.05);
 		}
 	}
-	&-bgnone-border{
+	&-with-background-color-border{
 		border: 1px solid var(--vk-color-border);
 		.vk_accordion-trigger{
-			background: transparent;
-			border-bottom: 1px dotted var(--vk-color-border);
+			background-color: rgba(0,0,0,.05);
 		}
 	}
+	&-with-background-color-rounded{
+		border-radius: calc(var(--vk-size-text) * 0.5 );
+		.vk_accordion-trigger{
+			border-bottom:none;
+			background-color: rgba(0,0,0,.05);
+		}
+	}
+	&-with-background-color-rounded-border{
+		border: 1px solid var(--vk-color-border);
+		border-radius: calc(var(--vk-size-text) * 0.5 );
+		.vk_accordion-trigger{
+			background-color: rgba(0,0,0,.05);
+		}
+	}
+
 }
 
 
@@ -69,8 +73,8 @@
 		margin-bottom: -1px;
     	position: relative;
     	font-size: 16px;
-		background-color: rgba(0,0,0,.05);
-    	// border-bottom: 1px dotted var(--vk-color-border);
+		background: transparent;
+		border-bottom: 1px dotted var(--vk-color-border);
 		cursor: pointer;
 		.vk_accordion-toggle{
 			position: absolute;
@@ -81,7 +85,6 @@
 			&-open{
 				padding-bottom: 0;
 				margin-bottom: 0;
-
 					//矢印共通デザイン
 					&::after{
 						position: absolute;

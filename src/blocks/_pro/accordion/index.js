@@ -18,30 +18,31 @@ export const settings = {
 	icon: <Icon />,
 	styles: [
 		{
-			name: 'vk_accordion-normal',
-			label: __('Normal', 'vk-blocks'),
+			name: 'vk_accordion-no-background-color',
+			label: __('No background color', 'vk-blocks'),
 			isDefault: true,
 		},
 		{
-			name: 'vk_accordion-normal-border',
-			label: __('Normal Border', 'vk-blocks'),
-		},
-		{
-			name: 'vk_accordion-rounded',
-			label: __('Rounded', 'vk-blocks'),
-		},
-		{
-			name: 'vk_accordion-rounded-border',
-			label: __('Rounded Border', 'vk-blocks'),
-		},
-		{
-			name: 'vk_accordion-bgnone',
-			label: __('No background color', 'vk-blocks'),
-		},
-		{
-			name: 'vk_accordion-bgnone-border',
+			name: 'vk_accordion-no-background-color-border',
 			label: __('No background color Border', 'vk-blocks'),
 		},
+		{
+			name: 'vk_accordion-with-background-color',
+			label: __('With background color', 'vk-blocks'),
+		},
+		{
+			name: 'vk_accordion-with-background-color-border',
+			label: __('With background color Border', 'vk-blocks'),
+		},
+		{
+			name: 'vk_accordion-with-background-color-rounded',
+			label: __('With background color Rounded', 'vk-blocks'),
+		},
+		{
+			name: 'vk_accordion-with-background-color-rounded-border',
+			label: __('With background color Rounded Border', 'vk-blocks'),
+		},
+
 	],
 	example: {
 		innerBlocks: [

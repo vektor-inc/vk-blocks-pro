@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2021-03-23T05:08:44+00:00\n"
-"PO-Revision-Date: 2021-04-07 14:05+0900\n"
+"POT-Creation-Date: 2021-04-12T06:52:10+02:00\n"
+"PO-Revision-Date: 2021-04-12 14:19+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -23,6 +23,42 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 
+#: src/blocks/_pro/accordion-target/index.js:16
+msgid "Accordion Target"
+msgstr "アコーディオン設定 コンテンツ"
+
+#: src/blocks/_pro/accordion-trigger/index.js:16
+msgid "Accordion Trigger"
+msgstr "アコーディオン設定 タイトル"
+
+#: src/blocks/_pro/accordion/index.js:17
+msgid "Accordion"
+msgstr "アコーディオン設定"
+
+#: src/blocks/_pro/accordion/index.js:22
+msgid "No background color"
+msgstr "背景なし"
+
+#: src/blocks/_pro/accordion/index.js:27
+msgid "No background color / Border"
+msgstr "背景なし / 枠線"
+
+#: src/blocks/_pro/accordion/index.js:31
+msgid "Background color"
+msgstr "背景あり"
+
+#: src/blocks/_pro/accordion/index.js:35
+msgid "Background color / Border"
+msgstr "背景あり / 枠線"
+
+#: src/blocks/_pro/accordion/index.js:39
+msgid "Background color / Rounded "
+msgstr "背景あり / 角丸"
+
+#: src/blocks/_pro/accordion/index.js:43
+msgid "Background color / Rounded / Border"
+msgstr " 背景あり / 角丸 / 枠線 "
+
 #: src/blocks/_pro/animation/edit.js:104
 msgid "Fast"
 msgstr "速い"
@@ -40,9 +76,9 @@ msgid "Short"
 msgstr "短い"
 
 #: src/blocks/_pro/animation/edit.js:123 src/blocks/_pro/outer/edit.js:303
-#: src/blocks/_pro/slider/edit.js:118 src/blocks/balloon/edit.js:276
-#: src/blocks/button/edit.js:95 src/blocks/faq/index.js:27
-#: src/blocks/faq2/index.js:22
+#: src/blocks/_pro/slider/edit.js:110 src/blocks/balloon/edit.js:276
+#: src/blocks/button/edit.js:95 src/blocks/faq2/index.js:22
+#: src/blocks/faq/index.js:27
 msgid "Normal"
 msgstr "標準"
 
@@ -231,12 +267,13 @@ msgstr "ボタンの文字"
 msgid "Image Height"
 msgstr "画像高さ"
 
-#: src/blocks/_pro/card/edit.js:82 src/blocks/_pro/slider/edit.js:137
+#: src/blocks/_pro/card/edit.js:82 src/blocks/_pro/slider/edit.js:129
 msgid "Slide Height for each device."
 msgstr "デバイス毎の高さ"
 
 #: src/blocks/_pro/card/index.js:25
 #: src/components/column-layout-control/index.js:26
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:446
 #: inc/vk-components/package/class-vk-component-posts.php:446
 msgid "Card"
 msgstr "カード"
@@ -409,11 +446,11 @@ msgstr "パララックス（非保証）"
 msgid "Layout Setting"
 msgstr "レイアウト設定"
 
-#: src/blocks/_pro/outer/edit.js:292 src/blocks/_pro/slider/edit.js:109
+#: src/blocks/_pro/outer/edit.js:292 src/blocks/_pro/slider/edit.js:101
 msgid "Width"
 msgstr "幅"
 
-#: src/blocks/_pro/outer/edit.js:313 src/blocks/_pro/slider/edit.js:126
+#: src/blocks/_pro/outer/edit.js:313 src/blocks/_pro/slider/edit.js:118
 msgid "Full Wide"
 msgstr "全幅"
 
@@ -695,59 +732,55 @@ msgstr "スライダーアイテムエリア内の余白を無くす"
 msgid "Slider Item"
 msgstr "スライダーアイテム"
 
-#: src/blocks/_pro/slider/edit.js:132
+#: src/blocks/_pro/slider/edit.js:124
 msgid "Height"
 msgstr "高さ"
 
-#: src/blocks/_pro/slider/edit.js:151
+#: src/blocks/_pro/slider/edit.js:143
 msgid "Slider Settings"
 msgstr "スライド設定"
 
-#: src/blocks/_pro/slider/edit.js:155
+#: src/blocks/_pro/slider/edit.js:147
 msgid "Effect "
 msgstr "エフェクト"
 
-#: src/blocks/_pro/slider/edit.js:165
+#: src/blocks/_pro/slider/edit.js:157
 msgid "Slide"
 msgstr "スライド"
 
-#: src/blocks/_pro/slider/edit.js:169
+#: src/blocks/_pro/slider/edit.js:161
 msgid "Fade"
 msgstr "フェード"
 
-#: src/blocks/_pro/slider/edit.js:176
+#: src/blocks/_pro/slider/edit.js:168
 msgid "Loop "
 msgstr "繰り返し"
 
-#: src/blocks/_pro/slider/edit.js:186
+#: src/blocks/_pro/slider/edit.js:178
 msgid "AutoPlay"
 msgstr "自動再生"
 
-#: src/blocks/_pro/slider/edit.js:195
+#: src/blocks/_pro/slider/edit.js:187
 msgid "Display Time"
 msgstr "表示時間"
 
-#: src/blocks/_pro/slider/edit.js:206
+#: src/blocks/_pro/slider/edit.js:198
 msgid "Change Speed"
 msgstr "切り替え時間"
 
-#: src/blocks/_pro/slider/edit.js:220
+#: src/blocks/_pro/slider/edit.js:212
 msgid "Display Multi Images per View"
 msgstr "画像を複数枚表示する"
 
-#: src/blocks/_pro/slider/edit.js:224
+#: src/blocks/_pro/slider/edit.js:216
 msgid "Images per View"
 msgstr "１度に表示する画像の枚数"
 
-#: src/blocks/_pro/slider/edit.js:234
+#: src/blocks/_pro/slider/edit.js:226
 msgid "Move Images per Slide"
 msgstr "１度の動作で動かす枚数"
 
-#: src/blocks/_pro/slider/edit.js:244
-msgid "Space of between slides"
-msgstr "スライド間の余白"
-
-#: src/blocks/_pro/slider/edit.js:255
+#: src/blocks/_pro/slider/edit.js:237
 msgid "Display Pagination"
 msgstr "ページネーションの表示"
 
@@ -782,7 +815,11 @@ msgstr "例) 午前 6:00"
 
 #: src/blocks/_pro/step-item/edit.js:76
 #: src/blocks/_pro/timeline-item/edit.js:53 src/blocks/border-box/edit.js:48
-#: src/blocks/staff/edit.js:125 inc/term-color/package/class.term-color.php:41
+#: src/blocks/staff/edit.js:125
+#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:41
+#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:56
+#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:130
+#: inc/term-color/package/class.term-color.php:41
 #: inc/term-color/package/class.term-color.php:56
 #: inc/term-color/package/class.term-color.php:130
 msgid "Color"
@@ -1168,52 +1205,6 @@ msgstr "ボタンサイズ:"
 msgid "Large"
 msgstr "大"
 
-#: src/blocks/faq/edit.js:14 src/blocks/faq2/edit.js:17
-msgid ""
-"If you want to be collapsing this block, you can set it at Setting > VK "
-"Blocks"
-msgstr "このブロックを折りたたみたい場合は 設定 > VK Blocks から指定できます"
-
-#: src/blocks/faq/edit.js:19 src/blocks/faq2/edit.js:22
-msgid "You can be collapsing this block at VK Blocks Pro"
-msgstr "Pro版は回答部分を開閉式にできます"
-
-#: src/blocks/faq/edit.js:34 src/blocks/faq2/edit.js:31
-msgid "Accordion Setting"
-msgstr "アコーディオン設定"
-
-#: src/blocks/faq/edit.js:44
-msgid "Please enter a question."
-msgstr "質問を入力してください。"
-
-#: src/blocks/faq/index.js:22
-msgid "Classic FAQ"
-msgstr "旧 FAQ"
-
-#: src/blocks/faq/index.js:32 src/blocks/faq2/index.js:27
-msgid "Bgfill Circle"
-msgstr "背景塗り 円形"
-
-#: src/blocks/faq/index.js:36 src/blocks/faq2/index.js:31
-msgid "Bgfill Square"
-msgstr "背景塗り ピン角"
-
-#: src/blocks/faq/index.js:40 src/blocks/faq2/index.js:35
-msgid "Bgfill Rounded"
-msgstr "背景塗り 角丸"
-
-#: src/blocks/faq/index.js:44 src/blocks/faq2/index.js:39
-msgid "Border Circle"
-msgstr "枠線 円形"
-
-#: src/blocks/faq/index.js:48 src/blocks/faq2/index.js:43
-msgid "Border Square"
-msgstr "枠線 ピン角"
-
-#: src/blocks/faq/index.js:52 src/blocks/faq2/index.js:47
-msgid "Border Rounded"
-msgstr "枠線 角丸"
-
 #: src/blocks/faq2-a/index.js:17
 msgid "FAQ Answer"
 msgstr "FAQ 回答"
@@ -1222,9 +1213,55 @@ msgstr "FAQ 回答"
 msgid "FAQ Question"
 msgstr "FAQ 質問"
 
+#: src/blocks/faq2/edit.js:17 src/blocks/faq/edit.js:14
+msgid ""
+"If you want to be collapsing this block, you can set it at Setting > VK "
+"Blocks"
+msgstr "このブロックを折りたたみたい場合は 設定 > VK Blocks から指定できます"
+
+#: src/blocks/faq2/edit.js:22 src/blocks/faq/edit.js:19
+msgid "You can be collapsing this block at VK Blocks Pro"
+msgstr "Pro版は回答部分を開閉式にできます"
+
+#: src/blocks/faq2/edit.js:31 src/blocks/faq/edit.js:34
+msgid "Accordion Setting"
+msgstr "アコーディオン設定"
+
 #: src/blocks/faq2/index.js:17
 msgid "New FAQ"
 msgstr "新 FAQ"
+
+#: src/blocks/faq2/index.js:27 src/blocks/faq/index.js:32
+msgid "Bgfill Circle"
+msgstr "背景塗り 円形"
+
+#: src/blocks/faq2/index.js:31 src/blocks/faq/index.js:36
+msgid "Bgfill Square"
+msgstr "背景塗り ピン角"
+
+#: src/blocks/faq2/index.js:35 src/blocks/faq/index.js:40
+msgid "Bgfill Rounded"
+msgstr "背景塗り 角丸"
+
+#: src/blocks/faq2/index.js:39 src/blocks/faq/index.js:44
+msgid "Border Circle"
+msgstr "枠線 円形"
+
+#: src/blocks/faq2/index.js:43 src/blocks/faq/index.js:48
+msgid "Border Square"
+msgstr "枠線 ピン角"
+
+#: src/blocks/faq2/index.js:47 src/blocks/faq/index.js:52
+msgid "Border Rounded"
+msgstr "枠線 角丸"
+
+#: src/blocks/faq/edit.js:44
+msgid "Please enter a question."
+msgstr "質問を入力してください。"
+
+#: src/blocks/faq/index.js:22
+msgid "Classic FAQ"
+msgstr "旧 FAQ"
 
 #: src/blocks/flow/edit.js:20
 msgid "Display of arrow"
@@ -1576,6 +1613,7 @@ msgid "Card (Horizontal)"
 msgstr "カード（水平）"
 
 #: src/components/column-layout-control/index.js:42
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:458
 #: inc/vk-components/package/class-vk-component-posts.php:458
 msgid "Media"
 msgstr "メディア"
@@ -1732,6 +1770,12 @@ msgstr "ハイライトカラー"
 #: src/extensions/common/nowrap/index.js:21
 msgid "No wrap"
 msgstr "No wrap"
+
+#: src/extensions/common/responsive-br/index.js:41
+#, fuzzy
+#| msgid "Responsive BR "
+msgid "Responsive BR"
+msgstr "画面サイズ毎の改行 "
 
 #: src/extensions/common/responsive-br/index.js:45
 msgid "Responsive BR "
@@ -1925,12 +1969,12 @@ msgstr "Vektor,Inc."
 msgid "https://vektor-inc.co.jp"
 msgstr "https://vektor-inc.co.jp"
 
-#: inc/admin-notices.php:24
+#: dist/vk-blocks-pro/inc/admin-notices.php:24 inc/admin-notices.php:24
 msgid "We've released VK Blocks Pro!"
 msgstr "VK Blocks Pro を公開しました!"
 
 #. translators: 1: opening a tag, 2: closing a tag
-#: inc/admin-notices.php:31
+#: dist/vk-blocks-pro/inc/admin-notices.php:31 inc/admin-notices.php:31
 msgid ""
 "Thank you for using VK Blocks. We've released VK Blocks Pro. It has more "
 "custom blocks to build web site more easily. If you are interested in VK "
@@ -1941,75 +1985,97 @@ msgstr ""
 "れています。VK Blocks Proに興味がある方は、この記事%1$sを読んでみてください。"
 "詳しくは%2$s"
 
-#: inc/admin-notices.php:35 inc/admin-notices.php:41
+#: dist/vk-blocks-pro/inc/admin-notices.php:35
+#: dist/vk-blocks-pro/inc/admin-notices.php:41 inc/admin-notices.php:35
+#: inc/admin-notices.php:41
 msgid "https://www.vektor-inc.co.jp/service/wordpress-plugins/vk-blocks/"
 msgstr "https://www.vektor-inc.co.jp/service/wordpress-plugins/vk-blocks/"
 
-#: inc/admin-notices.php:42
+#: dist/vk-blocks-pro/inc/admin-notices.php:42 inc/admin-notices.php:42
 msgid "See more"
 msgstr "続きを見る"
 
-#: inc/admin-notices.php:45
+#: dist/vk-blocks-pro/inc/admin-notices.php:45 inc/admin-notices.php:45
 msgid "Dismiss this notice"
 msgstr "通知を無視"
 
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:42
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:57
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:42
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:57
 msgid "Not recommended"
 msgstr "非推奨"
 
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:89
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:91
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:89
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:91
 msgid "Ex ) "
 msgstr "例) "
 
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:200
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:200
 msgid "Font Awesome"
 msgstr "Font Awesome:"
 
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:223
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:223
 msgid "Font Awesome Version"
 msgstr "Font Awesome バージョン"
 
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:226
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:226
 msgid "4.7 will be abolished in the near future."
 msgstr "4.7は将来的に廃止されます。"
 
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:146
 #: inc/template-tags/package/template-tags.php:146
 msgid "Author: %s"
 msgstr "投稿者: %s"
 
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:148
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:230
 #: inc/template-tags/package/template-tags.php:148
 #: inc/template-tags/package/template-tags.php:230
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr "Y年"
 
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:150
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:234
 #: inc/template-tags/package/template-tags.php:150
 #: inc/template-tags/package/template-tags.php:234
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr "Y年n月"
 
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:152
 #: inc/template-tags/package/template-tags.php:152
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr "Y年n月j日"
 
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:187
 #: inc/template-tags/package/template-tags.php:187
 msgid "Archives"
 msgstr "アーカイブ"
 
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:218
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:226
 #: inc/template-tags/package/template-tags.php:218
 #: inc/template-tags/package/template-tags.php:226
 msgid "About %s"
 msgstr "%s　について"
 
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:231
 #: inc/template-tags/package/template-tags.php:231
 msgctxt "Yearly archive description"
 msgid "Article of %s."
 msgstr "%s の記事."
 
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:235
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:239
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:244
 #: inc/template-tags/package/template-tags.php:235
 #: inc/template-tags/package/template-tags.php:239
 #: inc/template-tags/package/template-tags.php:244
@@ -2017,9 +2083,167 @@ msgctxt "Archive description"
 msgid "Article of %s."
 msgstr "%s の記事."
 
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:261
 #: inc/template-tags/package/template-tags.php:261
 msgid "Page of %s"
 msgstr "%sのページ"
+
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:7
+#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:7
+msgid "Disable accordion"
+msgstr "アコーディオン無効"
+
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:11
+#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:11
+msgid "Enable accordion and default open "
+msgstr "アコーディオン有効 / 初期状態で開く"
+
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:15
+#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:15
+msgid "Enable accordion and default close "
+msgstr "アコーディオン有効 / 初期状態で閉じる"
+
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:23
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-pro.php:20
+#: inc/vk-blocks-pro/admin-pro/admin-pro.php:20
+msgid "FAQ Setting"
+msgstr "FAQ ブロックの設定"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:4
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:55
+#: inc/vk-blocks/admin/admin-balloon.php:4
+msgid "Balloon Setting"
+msgstr "吹き出しブロック設定"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:5
+#: inc/vk-blocks/admin/admin-balloon.php:5
+msgid "Balloon Border Width Setting"
+msgstr "吹き出しの線幅の設定"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:15
+#: inc/vk-blocks/admin/admin-balloon.php:15
+msgid "Balloon Image Setting"
+msgstr "吹き出し画像設定"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:82
+#: inc/vk-blocks/admin/admin-balloon.php:82
+msgid "You can register frequently used icon images for speech bubble blocks."
+msgstr "よく使う吹き出し用のアイコン画像を登録する事ができます。"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:83
+#: inc/vk-blocks/admin/admin-balloon.php:83
+msgid "If you change image or name that please click Save Changes button."
+msgstr "画像を変更したら「変更を保存」ボタンをクリックしてください。"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:109
+#: inc/vk-blocks/admin/admin-balloon.php:109
+msgid "Select"
+msgstr "選択"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:112
+#: inc/vk-blocks/admin/admin-balloon.php:112
+msgid "Delete"
+msgstr "削除"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:117
+#: inc/vk-blocks/admin/admin-balloon.php:117
+msgid "Balloon Image Name"
+msgstr "吹き出し画像の名前"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:31
+#: inc/vk-blocks/admin/admin.php:31
+msgid "Blocks setting"
+msgstr "Blocks 設定"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:32
+#: inc/vk-blocks/admin/admin.php:32
+msgctxt "label in admin menu"
+msgid "Blocks"
+msgstr "Blocks"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:48
+#: inc/vk-blocks/admin/admin.php:48
+msgid "Blocks Setting"
+msgstr "Blocks 設定"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:54
+msgid "Block Template Setting"
+msgstr "ブロックテンプレート設定"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/load-bootstrap.php:49
+#: inc/vk-blocks/load-bootstrap.php:49
+msgid "VK Blocks Bootstrap Setting"
+msgstr "VK Blocks Bootstrapの設定"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/load-bootstrap.php:66
+#: inc/vk-blocks/load-bootstrap.php:66
+msgid "Loading Bootstrap4"
+msgstr "Bootstrap4の読み込み"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/load-bootstrap.php:67
+#: inc/vk-blocks/load-bootstrap.php:67
+msgid ""
+"Check here to load Bootstrap4. If your theme or plugins loading Bootstrap4, "
+"uncheck here."
+msgstr ""
+"Bootstrap4を読み込む場合はここにチェックを入れてください。テーマやプラグイン"
+"がBootstrap4を読み込む場合は、ここのチェックを外してください。"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/view/post-list.php:164
+#: inc/vk-blocks/view/post-list.php:164
+msgid "No Post is selected"
+msgstr "投稿が選択されていません"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:234
+#: inc/vk-blocks/vk-blocks-functions.php:239
+msgid "Blocks"
+msgstr "Blocks"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:244
+#: inc/vk-blocks/vk-blocks-functions.php:249
+msgid "Blocks Layout"
+msgstr "ブロックレイアウト"
+
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:35
+#: inc/vk-components/package/class-vk-component-posts.php:35
+msgid "Read more"
+msgstr "続きを読む"
+
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:37
+#: inc/vk-components/package/class-vk-component-posts.php:37
+msgid "New!!"
+msgstr "New!!"
+
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:450
+#: inc/vk-components/package/class-vk-component-posts.php:450
+msgid "Card Noborder"
+msgstr "カード（線なし）"
+
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:454
+#: inc/vk-components/package/class-vk-component-posts.php:454
+msgid "Card Horizontal"
+msgstr "カード（水平）"
+
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:462
+#: inc/vk-components/package/class-vk-component-posts.php:462
+msgctxt "post list type"
+msgid "Text 1 Column"
+msgstr "テキスト 1 カラム"
+
+#: dist/vk-blocks-pro/src/blocks/page-content/index.php:108
+#: src/blocks/page-content/index.php:118
+msgid "Edit this area"
+msgstr "このエリアを編集"
+
+#: dist/vk-blocks-pro/vk-blocks.php:80
+#, fuzzy
+#| msgid ""
+#| "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks "
+#| "Plugin running."
+msgid "Disabled Blocks module. Because VK-Blocks Plugin running."
+msgstr ""
+"VK-Blocksと競合するため、VK All in One Expansion Unitの Block機能を停止しまし"
+"た。"
 
 #: inc/tgm-plugin-activation/tgm-config.php:77
 msgid "Install Required Plugins"
@@ -2152,127 +2376,23 @@ msgstr "すべてのプラグインを正常にインストールし、有効化
 msgid "Please contact the administrator of this site for help."
 msgstr "ヘルプが必要な場合はこのサイトの管理者にお問い合わせください。"
 
-#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:7
-msgid "Disable accordion"
-msgstr "アコーディオン無効"
+#: inc/vk-admin/package/class-vk-admin.php:340
+#, fuzzy
+#| msgid "Ignore this post"
+msgid "Sorry, there is no post"
+msgstr "この投稿を除く"
 
-#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:11
-msgid "Enable accordion and default open "
-msgstr "アコーディオン有効 / 初期状態で開く"
-
-#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:15
-msgid "Enable accordion and default close "
-msgstr "アコーディオン有効 / 初期状態で閉じる"
+#: inc/vk-admin/package/class-vk-admin.php:394
+msgid "Vektor WordPress Information"
+msgstr "Vektor WordPress Information"
 
 #: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:23
 msgid "FAQ Block Setting"
 msgstr "FAQ Blocks 設定"
 
-#: inc/vk-blocks-pro/admin-pro/admin-pro.php:20
-msgid "FAQ Setting"
-msgstr "FAQ ブロックの設定"
-
-#: inc/vk-blocks/admin/admin-balloon.php:4
-msgid "Balloon Setting"
-msgstr "吹き出しブロック設定"
-
-#: inc/vk-blocks/admin/admin-balloon.php:5
-msgid "Balloon Border Width Setting"
-msgstr "吹き出しの線幅の設定"
-
-#: inc/vk-blocks/admin/admin-balloon.php:15
-msgid "Balloon Image Setting"
-msgstr "吹き出し画像設定"
-
-#: inc/vk-blocks/admin/admin-balloon.php:82
-msgid "You can register frequently used icon images for speech bubble blocks."
-msgstr "よく使う吹き出し用のアイコン画像を登録する事ができます。"
-
-#: inc/vk-blocks/admin/admin-balloon.php:83
-msgid "If you change image or name that please click Save Changes button."
-msgstr "画像を変更したら「変更を保存」ボタンをクリックしてください。"
-
-#: inc/vk-blocks/admin/admin-balloon.php:109
-msgid "Select"
-msgstr "選択"
-
-#: inc/vk-blocks/admin/admin-balloon.php:112
-msgid "Delete"
-msgstr "削除"
-
-#: inc/vk-blocks/admin/admin-balloon.php:117
-msgid "Balloon Image Name"
-msgstr "吹き出し画像の名前"
-
-#: inc/vk-blocks/admin/admin.php:31
-msgid "Blocks setting"
-msgstr "Blocks 設定"
-
-#: inc/vk-blocks/admin/admin.php:32
-msgctxt "label in admin menu"
-msgid "Blocks"
-msgstr "Blocks"
-
-#: inc/vk-blocks/admin/admin.php:48
-msgid "Blocks Setting"
-msgstr "Blocks 設定"
-
 #: inc/vk-blocks/admin/admin.php:54
 msgid "Balloon Block Setting"
 msgstr "吹き出しブロック設定"
-
-#: inc/vk-blocks/load-bootstrap.php:49
-msgid "VK Blocks Bootstrap Setting"
-msgstr "VK Blocks Bootstrapの設定"
-
-#: inc/vk-blocks/load-bootstrap.php:66
-msgid "Loading Bootstrap4"
-msgstr "Bootstrap4の読み込み"
-
-#: inc/vk-blocks/load-bootstrap.php:67
-msgid ""
-"Check here to load Bootstrap4. If your theme or plugins loading Bootstrap4, "
-"uncheck here."
-msgstr ""
-"Bootstrap4を読み込む場合はここにチェックを入れてください。テーマやプラグイン"
-"がBootstrap4を読み込む場合は、ここのチェックを外してください。"
-
-#: inc/vk-blocks/view/post-list.php:164
-msgid "No Post is selected"
-msgstr "投稿が選択されていません"
-
-#: inc/vk-blocks/vk-blocks-functions.php:236
-msgid "Blocks"
-msgstr "Blocks"
-
-#: inc/vk-blocks/vk-blocks-functions.php:246
-msgid "Blocks Layout"
-msgstr "ブロックレイアウト"
-
-#: inc/vk-components/package/class-vk-component-posts.php:35
-msgid "Read more"
-msgstr "続きを読む"
-
-#: inc/vk-components/package/class-vk-component-posts.php:37
-msgid "New!!"
-msgstr "New!!"
-
-#: inc/vk-components/package/class-vk-component-posts.php:450
-msgid "Card Noborder"
-msgstr "カード（線なし）"
-
-#: inc/vk-components/package/class-vk-component-posts.php:454
-msgid "Card Horizontal"
-msgstr "カード（水平）"
-
-#: inc/vk-components/package/class-vk-component-posts.php:462
-msgctxt "post list type"
-msgid "Text 1 Column"
-msgstr "テキスト 1 カラム"
-
-#: src/blocks/page-content/index.php:118
-msgid "Edit this area"
-msgstr "このエリアを編集"
 
 #: vk-blocks.php:80
 msgid ""
@@ -2282,11 +2402,11 @@ msgstr ""
 "VK-Blocksと競合するため、VK All in One Expansion Unitの Block機能を停止しまし"
 "た。"
 
+#~ msgid "Space of between slides"
+#~ msgstr "スライド間の余白"
+
 #~ msgid "Filter by Taxonomy Terms"
 #~ msgstr "分類"
-
-#~ msgid "Block Template Setting"
-#~ msgstr "ブロックテンプレート設定"
 
 #~ msgctxt "post format archive title"
 #~ msgid "Asides"
@@ -2567,9 +2687,6 @@ msgstr ""
 
 #~ msgid "Hide Details"
 #~ msgstr "詳細を非表示"
-
-#~ msgid "Vektor WordPress Information"
-#~ msgstr "Vektor WordPress Information"
 
 #~ msgid "View details"
 #~ msgstr "詳細を見る"

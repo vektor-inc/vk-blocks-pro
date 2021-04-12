@@ -16,35 +16,27 @@ msgid "Accordion"
 msgstr ""
 
 #: src/blocks/_pro/accordion/index.js:22
-#: src/blocks/_pro/animation/edit.js:123
-#: src/blocks/_pro/outer/edit.js:303
-#: src/blocks/_pro/slider/edit.js:118
-#: src/blocks/balloon/edit.js:276
-#: src/blocks/button/edit.js:95
-#: src/blocks/faq2/index.js:22
-#: src/blocks/faq/index.js:27
-msgid "Normal"
+msgid "No background color"
 msgstr ""
 
 #: src/blocks/_pro/accordion/index.js:27
-msgid "Normal Border"
+msgid "No background color / Border"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:32
-#: src/blocks/balloon/edit.js:286
-msgid "Rounded"
+#: src/blocks/_pro/accordion/index.js:31
+msgid "Background color"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:36
-msgid "Rounded Border"
+#: src/blocks/_pro/accordion/index.js:35
+msgid "Background color / Border"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:40
-msgid "Bgnone"
+#: src/blocks/_pro/accordion/index.js:39
+msgid "Background color / Rounded "
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:44
-msgid "Bgnone Border"
+#: src/blocks/_pro/accordion/index.js:43
+msgid "Background color / Rounded / Border"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:104
@@ -1005,6 +997,10 @@ msgstr ""
 
 #: src/blocks/balloon/edit.js:265
 msgid "Image Style"
+msgstr ""
+
+#: src/blocks/balloon/edit.js:286
+msgid "Rounded"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:296

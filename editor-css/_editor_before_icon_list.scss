@@ -3,6 +3,8 @@
 /*-------------------------------------------*/
 .vk-blocks-advanced-popover-control {
 	.components-popover__content {
+		min-width: 260px;
+		margin-left: -46px !important;
 		padding: 20px 15px;
 		.vk_icon_list {
 			margin-top: 5px;

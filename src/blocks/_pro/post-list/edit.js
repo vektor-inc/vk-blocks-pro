@@ -84,7 +84,7 @@ export default function PostListEdit(props) {
 		});
 		return removedTermIds.concat(newIds);
 	};
-	//onsole.log(taxonomies.map( t => t ));
+
 	const termFormTokenFields = taxonomies.filter((taxonomy) => {
 		return ! taxonomy.hierarchical && termsByTaxonomyName[taxonomy.slug]
 	})

@@ -146,40 +146,33 @@ if( function_exists('register_block_type_from_metadata')) {
 			)
 		);
 
-	
-	$the_taxonomies = get_taxonomies(
-		array(
-			'public'  => true,
-			'show_ui' => true,
-		),
-		'objects',
-		'and'
-	);
+		$the_taxonomies = get_taxonomies(
+			array(
+				'public'  => true,
+				'show_ui' => true,
+			),
+			'objects',
+			'and'
+		);
 
-	$term_by_taxonomy_name = array();
-	
-	foreach ( $the_taxonomies as $the_taxonomy ) {
-		$terms = get_terms( $the_taxonomy->name, array('hide_empty' => false)  );
-		$term_by_taxonomy_name[$the_taxonomy->name] = array_map(function($term) {
-			return array ( 
-				'term_id' => $term->term_id,
-				'name' => $term->name
-			);
-		},$terms);
+		$term_by_taxonomy_name = array();						
+		foreach ( $the_taxonomies as $the_taxonomy ) {
+			$terms = get_terms( $the_taxonomy->name, array('hide_empty' => false)  );
+			$term_by_taxonomy_name[$the_taxonomy->name] = array_map(function($term) {
+				return array( 
+					'term_id' => $term->term_id,
+					'name' => $term->name
+				);
+			},$terms);			
+		}	
 
-		
-	}
-
-	wp_localize_script(
-		'vk-blocks-build-js',
-		'vk_block_post_type_params',
-		array(
-			'term_by_taxonomy_name'                   => $term_by_taxonomy_name
-		)
-	);
-	
-
-
+		wp_localize_script(
+			'vk-blocks-build-js',
+			'vk_block_post_type_params',
+			array(
+				'term_by_taxonomy_name' => $term_by_taxonomy_name
+			)
+		);
 	}
 	add_action( 'init', 'register_block_vkb_post_list', 99 );
 }

@@ -68,8 +68,8 @@ msgstr ""
 #: src/blocks/_pro/slider/edit.js:110
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95
-#: src/blocks/faq/index.js:27
 #: src/blocks/faq2/index.js:22
+#: src/blocks/faq/index.js:27
 msgid "Normal"
 msgstr ""
 

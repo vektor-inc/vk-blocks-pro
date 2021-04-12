@@ -2,14 +2,21 @@
 
 This is a plugin that extends Gutenberg's blocks.
 
+## 環境構築（Windows編）
+- XAMPP 7.4 系をインストール：https://www.apachefriends.org/download.html
+- Composer をインストール：https://www.apachefriends.org/download.html
+- VS Code で Git Bash を使えるようにしておく：https://qiita.com/daikiozawa/items/48a9fe0e2898c7dd78ae
+
 ## 前提
 - Docker
-- WP-CLI（[インストール方法](https://github.com/vektor-inc/vk-blocks-pro/wiki/WP-CLI%E3%82%92%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%AB%E3%81%AB%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB)）
+- @wordpress/env をグローバルインストール( ```npm install -g @wordpress/env``` )
 - NodeJS、NPM
 
 ## 依存関係のインストール
 ```
 npm install
+npm install -g @wordpress/env
+composer global require wp-cli/wp-cli-bundle
 ```
 
 ## 開発環境の立ち上げ
@@ -17,10 +24,13 @@ npm install
 npm start
 ```
 
-## ビルド
+## ビルド & 翻訳
 ```
 // 本番環境用
 npm build
+
+// 翻訳のみ
+npm run translate
 
 // 開発用（開発者ツールのconsoleでログが追いやすくなる）
 npm run build:dev

@@ -160,8 +160,17 @@
 /*-------------------------------------------*/
 // フロント画面と比べると余白が大きく空くので追加
 .editor-styles-wrapper {
-	.vk_accordion-trigger {//編集画面では押せないのでカーソルをunset
-		cursor:unset;
+	.is-style-vk_accordion-no-background-color,
+	.is-style-vk_accordion-no-background-color-border,
+	.is-style-vk_accordion-background-color-border,
+	.is-style-vk_accordion-background-color-rounded-border {
+		.vk_accordion-trigger {//フロント画面では.vk_accordion-toggle-openが付くクラスに対してborder-bottomが付いているので、編集画面では追加で記述
+			border-bottom: 1px dotted var(--vk-color-border);
+		}
+	}
+	.vk_accordion-trigger {
+
+		cursor:unset; //編集画面では押せないのでカーソルをunset
 		.block-editor-block-list__block {
 			margin-top: 0;
 			margin-bottom: 0;

@@ -21,9 +21,9 @@ function vk_faq2_render_callback( $block_content, $block ) {
 
 	$vk_blocks_options  = vkblocks_get_options();
 	if ( 'vk-blocks/faq2' === $block['blockName'] ) {
-		if ( 'open' === $vk_blocks_options['new_faq_accordion'] ) {
+		if ( ! empty( $vk_blocks_options['new_faq_accordion'] ) && 'open' === $vk_blocks_options['new_faq_accordion'] ) {
 			$block_content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-accordion-open', $block_content );
-		} elseif ( 'close' === $vk_blocks_options['new_faq_accordion'] ) {
+		} elseif ( ! empty( $vk_blocks_options['new_faq_accordion'] ) && 'close' === $vk_blocks_options['new_faq_accordion'] ) {
 			$block_content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-accordion-close', $block_content );
 		} else {
 			$block_content = str_replace( '[accordion_trigger_switch]', '', $block_content );

@@ -112,7 +112,7 @@ export default function PostListEdit(props) {
 			);
 
 			return termsByTaxonomyName[taxonomy.slug] &&
-				termsByTaxonomyName[taxonomy.slug].length > 0 ? (
+				termsByTaxonomyName[taxonomy.slug]?.length > 0 ? (
 				<FormTokenField
 					key={taxonomy.slug}
 					label={sprintf(
@@ -153,7 +153,7 @@ export default function PostListEdit(props) {
 		.filter((taxonomy) => {
 			return (
 				taxonomy.hierarchical === true &&
-				termsByTaxonomyName[taxonomy.slug].length
+				termsByTaxonomyName[taxonomy.slug]?.length
 			);
 		})
 		.map(function (taxonomy, index) {

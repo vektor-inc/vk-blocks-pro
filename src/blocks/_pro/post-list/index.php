@@ -148,8 +148,7 @@ if( function_exists('register_block_type_from_metadata')) {
 
 		$the_taxonomies = get_taxonomies(
 			array(
-				'public'  => true,
-				'show_ui' => true,
+				
 			),
 			'objects',
 			'and'

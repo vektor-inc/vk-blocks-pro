@@ -3,9 +3,9 @@
 This is a plugin that extends Gutenberg's blocks.
 
 ## 環境構築（Windows編）
-- XAMPP 7.4 系をインストール：https://www.apachefriends.org/download.html
-- Composer をインストール：https://www.apachefriends.org/download.html
-- VS Code で Git Bash を使えるようにしておく：https://qiita.com/daikiozawa/items/48a9fe0e2898c7dd78ae
+- XAMPP 7.4 系をインストール
+- Composer をインストール
+- VS Code で Git Bash を使えるようにしておく
 
 ## 前提
 - Docker

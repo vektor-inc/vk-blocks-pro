@@ -2,6 +2,11 @@
 
 This is a plugin that extends Gutenberg's blocks.
 
+## 環境構築（Windows編）
+- XAMPP 7.4 系をインストール：https://www.apachefriends.org/download.html
+- Composer をインストール：https://www.apachefriends.org/download.html
+- VS Code で Git Bash を使えるようにしておく：https://qiita.com/daikiozawa/items/48a9fe0e2898c7dd78ae
+
 ## 前提
 - Docker
 - @wordpress/env をグローバルインストール( ```npm install -g @wordpress/env``` )
@@ -11,6 +16,7 @@ This is a plugin that extends Gutenberg's blocks.
 ```
 npm install
 npm install -g @wordpress/env
+composer global require wp-cli/wp-cli-bundle
 ```
 
 ## 開発環境の立ち上げ

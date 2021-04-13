@@ -63,6 +63,9 @@ e.g.
 
 == Changelog ==
 
+* [ Bug fix / Specification Change ][ Post List ] Fix too many tags and change tag UI
+* [ Bug fix ][ Slider ] Bug fix under css optimize
+
 = 1.2.3 =
 * [ Bug fix ][ FAQ2 ] Fix PHP notices.
 

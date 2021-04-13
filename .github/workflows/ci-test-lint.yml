@@ -32,12 +32,17 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: "${{ steps.nodenv.outputs.NODEVERSION }}"
+    - name: Setup PHP 7.4
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: 7.4
 
     - name: Build
       run: |
         npm install
         npm install -g @wordpress/env
         wp-env start
+        composer global require wp-cli/wp-cli-bundle
         npm run build
 
     # 各ブロックのlintを実行

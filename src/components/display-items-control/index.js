@@ -34,7 +34,7 @@ export const DisplayItemsControl = (props) => {
 				}
 			/>
 			<CheckboxControl
-				label={__('Term name', 'vk-blocks')}
+				label={__("Term's name on Image", 'vk-blocks')}
 				checked={display_image_overlay_term} //eslint-disable-line camelcase
 				onChange={(checked) =>
 					setAttributes({ display_image_overlay_term: checked })
@@ -67,7 +67,7 @@ export const DisplayItemsControl = (props) => {
 			/>
 
 			<CheckboxControl
-				label={__('Taxonomies', 'vk-blocks')}
+				label={__('Taxonomies (all)', 'vk-blocks')}
 				checked={display_taxonomies} //eslint-disable-line camelcase
 				onChange={(checked) =>
 					setAttributes({ display_taxonomies: checked })

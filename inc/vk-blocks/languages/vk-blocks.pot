@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.2.2\n"
+"Project-Id-Version: VK Blocks Pro 1.2.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-09T10:13:54+02:00\n"
+"POT-Creation-Date: 2021-04-14T03:12:08+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: vk-blocks\n"
@@ -35,8 +35,8 @@ msgstr ""
 #: src/blocks/_pro/slider/edit.js:110
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95
-#: src/blocks/faq2/index.js:22
 #: src/blocks/faq/index.js:27
+#: src/blocks/faq2/index.js:22
 msgid "Normal"
 msgstr ""
 
@@ -131,7 +131,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/edit.js:182
 #: src/blocks/_pro/card/edit.js:121
 #: src/blocks/_pro/icon-card/edit.js:72
-#: src/blocks/_pro/post-list/edit.js:180
+#: src/blocks/_pro/post-list/edit.js:263
 msgid "Title"
 msgstr ""
 
@@ -243,7 +243,7 @@ msgid "Current page"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:63
-#: src/blocks/_pro/post-list/edit.js:114
+#: src/blocks/_pro/post-list/edit.js:196
 msgid "Display conditions"
 msgstr ""
 
@@ -252,7 +252,7 @@ msgid "Parent"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:82
-#: src/blocks/_pro/post-list/edit.js:204
+#: src/blocks/_pro/post-list/edit.js:287
 msgid "Ignore this post"
 msgstr ""
 
@@ -612,49 +612,49 @@ msgstr ""
 msgid "Outer"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:118
+#. Filter by %s
+#: src/blocks/_pro/post-list/edit.js:173
+msgid "Filter by %s"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:200
 msgid "Filter by PostTypes"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:131
+#: src/blocks/_pro/post-list/edit.js:214
 msgid "Number of Posts"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:144
+#: src/blocks/_pro/post-list/edit.js:227
 msgid "Order"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:153
+#: src/blocks/_pro/post-list/edit.js:236
 msgid "ASC"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:157
+#: src/blocks/_pro/post-list/edit.js:240
 msgid "DESC"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:163
+#: src/blocks/_pro/post-list/edit.js:246
 msgid "Order by"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:172
+#: src/blocks/_pro/post-list/edit.js:255
 msgid "Published Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:176
+#: src/blocks/_pro/post-list/edit.js:259
 msgid "Modefied Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:184
+#: src/blocks/_pro/post-list/edit.js:267
 msgid "Random"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:190
+#: src/blocks/_pro/post-list/edit.js:273
 msgid "offset"
-msgstr ""
-
-#. Filter by %s
-#: src/blocks/_pro/post-list/edit.js:90
-msgid "Filter by %s"
 msgstr ""
 
 #: src/blocks/_pro/post-list/index.js:20
@@ -1204,61 +1204,19 @@ msgstr ""
 msgid "Large"
 msgstr ""
 
-#: src/blocks/faq2-a/index.js:17
-msgid "FAQ Answer"
-msgstr ""
-
-#: src/blocks/faq2-q/index.js:17
-msgid "FAQ Question"
-msgstr ""
-
-#: src/blocks/faq2/edit.js:17
 #: src/blocks/faq/edit.js:14
+#: src/blocks/faq2/edit.js:17
 msgid "If you want to be collapsing this block, you can set it at Setting > VK Blocks"
 msgstr ""
 
-#: src/blocks/faq2/edit.js:22
 #: src/blocks/faq/edit.js:19
+#: src/blocks/faq2/edit.js:22
 msgid "You can be collapsing this block at VK Blocks Pro"
 msgstr ""
 
-#: src/blocks/faq2/edit.js:31
 #: src/blocks/faq/edit.js:34
+#: src/blocks/faq2/edit.js:31
 msgid "Accordion Setting"
-msgstr ""
-
-#: src/blocks/faq2/index.js:17
-msgid "New FAQ"
-msgstr ""
-
-#: src/blocks/faq2/index.js:27
-#: src/blocks/faq/index.js:32
-msgid "Bgfill Circle"
-msgstr ""
-
-#: src/blocks/faq2/index.js:31
-#: src/blocks/faq/index.js:36
-msgid "Bgfill Square"
-msgstr ""
-
-#: src/blocks/faq2/index.js:35
-#: src/blocks/faq/index.js:40
-msgid "Bgfill Rounded"
-msgstr ""
-
-#: src/blocks/faq2/index.js:39
-#: src/blocks/faq/index.js:44
-msgid "Border Circle"
-msgstr ""
-
-#: src/blocks/faq2/index.js:43
-#: src/blocks/faq/index.js:48
-msgid "Border Square"
-msgstr ""
-
-#: src/blocks/faq2/index.js:47
-#: src/blocks/faq/index.js:52
-msgid "Border Rounded"
 msgstr ""
 
 #: src/blocks/faq/edit.js:44
@@ -1267,6 +1225,48 @@ msgstr ""
 
 #: src/blocks/faq/index.js:22
 msgid "Classic FAQ"
+msgstr ""
+
+#: src/blocks/faq/index.js:32
+#: src/blocks/faq2/index.js:27
+msgid "Bgfill Circle"
+msgstr ""
+
+#: src/blocks/faq/index.js:36
+#: src/blocks/faq2/index.js:31
+msgid "Bgfill Square"
+msgstr ""
+
+#: src/blocks/faq/index.js:40
+#: src/blocks/faq2/index.js:35
+msgid "Bgfill Rounded"
+msgstr ""
+
+#: src/blocks/faq/index.js:44
+#: src/blocks/faq2/index.js:39
+msgid "Border Circle"
+msgstr ""
+
+#: src/blocks/faq/index.js:48
+#: src/blocks/faq2/index.js:43
+msgid "Border Square"
+msgstr ""
+
+#: src/blocks/faq/index.js:52
+#: src/blocks/faq2/index.js:47
+msgid "Border Rounded"
+msgstr ""
+
+#: src/blocks/faq2-a/index.js:17
+msgid "FAQ Answer"
+msgstr ""
+
+#: src/blocks/faq2-q/index.js:17
+msgid "FAQ Question"
+msgstr ""
+
+#: src/blocks/faq2/index.js:17
+msgid "New FAQ"
 msgstr ""
 
 #: src/blocks/flow/edit.js:20

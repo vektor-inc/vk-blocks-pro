@@ -24,8 +24,8 @@ msgstr ""
 #: src/blocks/_pro/slider/edit.js:110
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95
-#: src/blocks/faq2/index.js:22
 #: src/blocks/faq/index.js:27
+#: src/blocks/faq2/index.js:22
 msgid "Normal"
 msgstr ""
 
@@ -1199,63 +1199,21 @@ msgstr ""
 msgid "Large"
 msgstr ""
 
-#: src/blocks/faq2-a/index.js:17
-msgid "FAQ Answer"
-msgstr ""
-
-#: src/blocks/faq2-q/index.js:17
-msgid "FAQ Question"
-msgstr ""
-
-#: src/blocks/faq2/edit.js:17
 #: src/blocks/faq/edit.js:14
+#: src/blocks/faq2/edit.js:17
 msgid ""
 "If you want to be collapsing this block, you can set it at Setting > VK "
 "Blocks"
 msgstr ""
 
-#: src/blocks/faq2/edit.js:22
 #: src/blocks/faq/edit.js:19
+#: src/blocks/faq2/edit.js:22
 msgid "You can be collapsing this block at VK Blocks Pro"
 msgstr ""
 
-#: src/blocks/faq2/edit.js:31
 #: src/blocks/faq/edit.js:34
+#: src/blocks/faq2/edit.js:31
 msgid "Accordion Setting"
-msgstr ""
-
-#: src/blocks/faq2/index.js:17
-msgid "New FAQ"
-msgstr ""
-
-#: src/blocks/faq2/index.js:27
-#: src/blocks/faq/index.js:32
-msgid "Bgfill Circle"
-msgstr ""
-
-#: src/blocks/faq2/index.js:31
-#: src/blocks/faq/index.js:36
-msgid "Bgfill Square"
-msgstr ""
-
-#: src/blocks/faq2/index.js:35
-#: src/blocks/faq/index.js:40
-msgid "Bgfill Rounded"
-msgstr ""
-
-#: src/blocks/faq2/index.js:39
-#: src/blocks/faq/index.js:44
-msgid "Border Circle"
-msgstr ""
-
-#: src/blocks/faq2/index.js:43
-#: src/blocks/faq/index.js:48
-msgid "Border Square"
-msgstr ""
-
-#: src/blocks/faq2/index.js:47
-#: src/blocks/faq/index.js:52
-msgid "Border Rounded"
 msgstr ""
 
 #: src/blocks/faq/edit.js:44
@@ -1264,6 +1222,48 @@ msgstr ""
 
 #: src/blocks/faq/index.js:22
 msgid "Classic FAQ"
+msgstr ""
+
+#: src/blocks/faq/index.js:32
+#: src/blocks/faq2/index.js:27
+msgid "Bgfill Circle"
+msgstr ""
+
+#: src/blocks/faq/index.js:36
+#: src/blocks/faq2/index.js:31
+msgid "Bgfill Square"
+msgstr ""
+
+#: src/blocks/faq/index.js:40
+#: src/blocks/faq2/index.js:35
+msgid "Bgfill Rounded"
+msgstr ""
+
+#: src/blocks/faq/index.js:44
+#: src/blocks/faq2/index.js:39
+msgid "Border Circle"
+msgstr ""
+
+#: src/blocks/faq/index.js:48
+#: src/blocks/faq2/index.js:43
+msgid "Border Square"
+msgstr ""
+
+#: src/blocks/faq/index.js:52
+#: src/blocks/faq2/index.js:47
+msgid "Border Rounded"
+msgstr ""
+
+#: src/blocks/faq2-a/index.js:17
+msgid "FAQ Answer"
+msgstr ""
+
+#: src/blocks/faq2-q/index.js:17
+msgid "FAQ Question"
+msgstr ""
+
+#: src/blocks/faq2/index.js:17
+msgid "New FAQ"
 msgstr ""
 
 #: src/blocks/flow/edit.js:20

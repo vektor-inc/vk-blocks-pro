@@ -8,7 +8,7 @@
 --------------------------------------------*/
 .is-style-vk_accordion{
 	&-no-background-color{
-		border-bottom:1px solid var(--vk-color-border);
+		
 	}
 	&-no-background-color-border{
 		border: 1px solid var(--vk-color-border);
@@ -61,6 +61,11 @@
 		margin: 0 auto 1em auto;
 		width:100%; 
 		position: relative;
+	}
+	//ブロックを配置した時にisDefaultに設置したclassが付かない（スタイルをクリックしたときにclassが付く）ので、共通のclass名にcssを追加して、
+	//「背景なし」以外ののスタイルに付かないようにnot指定をする必要がある
+	&-container:not(.is-style-vk_accordion-no-background-color-border):not(.is-style-vk_accordion-background-color):not(.is-style-vk_accordion-background-color-border):not(.is-style-vk_accordion-background-color-rounded):not(.is-style-vk_accordion-background-color-rounded-border) {
+		border-bottom: 1px solid var(--vk-color-border);
 	}
 	&-trigger{
 		border: none;
@@ -158,20 +163,24 @@
 
 /*      編集画面
 /*-------------------------------------------*/
-// フロント画面と比べると余白が大きく空くので追加
+
 .editor-styles-wrapper {
-	.is-style-vk_accordion-no-background-color,
-	.is-style-vk_accordion-no-background-color-border,
-	.is-style-vk_accordion-background-color-border,
-	.is-style-vk_accordion-background-color-rounded-border {
-		.vk_accordion-trigger {//フロント画面では.vk_accordion-toggle-openが付くクラスに対してborder-bottomが付いているので、編集画面では追加で記述
+	.wp-block-vk-blocks-accordion:not(.is-style-vk_accordion-background-color):not(.is-style-vk_accordion-background-color-rounded) {
+		.vk_accordion-trigger {
+			//フロント画面では.vk_accordion-toggle-openが付くクラスに対してborder-bottomが付いているので、編集画面では追加で記述
 			border-bottom: 1px dotted var(--vk-color-border);
 		}
 	}
+	//ブロックを配置した時にisDefaultに設置したclassが付かない（スタイルをクリックしたときにclassが付く）ので、共通のclass名にcssを追加して、
+	//「背景なし」以外ののスタイルに付かないようにnot指定をする必要がある
+	.wp-block-vk-blocks-accordion:not(.is-style-vk_accordion-no-background-color-border):not(.is-style-vk_accordion-background-color):not(.is-style-vk_accordion-background-color-border):not(.is-style-vk_accordion-background-color-rounded):not(.is-style-vk_accordion-background-color-rounded-border) {
+		border: 1px dashed #ccc;
+	}
 	.vk_accordion-trigger {
 
-		cursor:unset; //編集画面では押せないのでカーソルをunset
+		cursor:unset; //編集画面では展開しないのでカーソルをunset
 		.block-editor-block-list__block {
+			// 余白が大きく空くので追加
 			margin-top: 0;
 			margin-bottom: 0;
 		}

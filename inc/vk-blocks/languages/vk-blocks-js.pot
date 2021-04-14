@@ -1665,7 +1665,7 @@ msgid "Button align"
 msgstr ""
 
 #: src/components/display-items-control/index.js:37
-msgid "Term name"
+msgid "Term's name on Image"
 msgstr ""
 
 #: src/components/display-items-control/index.js:44
@@ -1685,7 +1685,7 @@ msgid "New mark"
 msgstr ""
 
 #: src/components/display-items-control/index.js:70
-msgid "Taxonomies"
+msgid "Taxonomies (all)"
 msgstr ""
 
 #: src/components/display-items-control/index.js:82

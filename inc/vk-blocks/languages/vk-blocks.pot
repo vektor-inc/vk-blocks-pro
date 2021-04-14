@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-14T04:55:22+00:00\n"
+"POT-Creation-Date: 2021-04-14T05:05:10+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: vk-blocks\n"
@@ -1669,7 +1669,7 @@ msgid "Button align"
 msgstr ""
 
 #: src/components/display-items-control/index.js:37
-msgid "Term name"
+msgid "Term's name on Image"
 msgstr ""
 
 #: src/components/display-items-control/index.js:44
@@ -1689,7 +1689,7 @@ msgid "New mark"
 msgstr ""
 
 #: src/components/display-items-control/index.js:70
-msgid "Taxonomies"
+msgid "Taxonomies (all)"
 msgstr ""
 
 #: src/components/display-items-control/index.js:82

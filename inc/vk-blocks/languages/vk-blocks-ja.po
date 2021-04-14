@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2021-03-23T05:08:44+00:00\n"
-"PO-Revision-Date: 2021-04-14 11:40+0900\n"
+"POT-Creation-Date: 2021-04-13T07:01:44+00:00\n"
+"PO-Revision-Date: 2021-04-13 16:01+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -23,6 +23,42 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 
+#: src/blocks/_pro/accordion-target/index.js:16
+msgid "Accordion Target"
+msgstr "アコーディオンコンテンツ"
+
+#: src/blocks/_pro/accordion-trigger/index.js:16
+msgid "Accordion Trigger"
+msgstr "アコーディオンタイトル"
+
+#: src/blocks/_pro/accordion/index.js:17
+msgid "Accordion"
+msgstr "アコーディオン"
+
+#: src/blocks/_pro/accordion/index.js:22
+msgid "No background color"
+msgstr "背景なし"
+
+#: src/blocks/_pro/accordion/index.js:27
+msgid "No background color / Border"
+msgstr "背景なし / 枠線"
+
+#: src/blocks/_pro/accordion/index.js:31
+msgid "Background color"
+msgstr "背景あり"
+
+#: src/blocks/_pro/accordion/index.js:35
+msgid "Background color / Border"
+msgstr "背景あり / 枠線"
+
+#: src/blocks/_pro/accordion/index.js:39
+msgid "Background color / Rounded "
+msgstr "背景あり / 角丸"
+
+#: src/blocks/_pro/accordion/index.js:43
+msgid "Background color / Rounded / Border"
+msgstr " 背景あり / 角丸 / 枠線 "
+
 #: src/blocks/_pro/animation/edit.js:104
 msgid "Fast"
 msgstr "速い"
@@ -40,7 +76,7 @@ msgid "Short"
 msgstr "短い"
 
 #: src/blocks/_pro/animation/edit.js:123 src/blocks/_pro/outer/edit.js:303
-#: src/blocks/_pro/slider/edit.js:118 src/blocks/balloon/edit.js:276
+#: src/blocks/_pro/slider/edit.js:110 src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95 src/blocks/faq/index.js:27
 #: src/blocks/faq2/index.js:22
 msgid "Normal"
@@ -231,7 +267,7 @@ msgstr "ボタンの文字"
 msgid "Image Height"
 msgstr "画像高さ"
 
-#: src/blocks/_pro/card/edit.js:82 src/blocks/_pro/slider/edit.js:137
+#: src/blocks/_pro/card/edit.js:82 src/blocks/_pro/slider/edit.js:129
 msgid "Slide Height for each device."
 msgstr "デバイス毎の高さ"
 
@@ -409,11 +445,11 @@ msgstr "パララックス（非保証）"
 msgid "Layout Setting"
 msgstr "レイアウト設定"
 
-#: src/blocks/_pro/outer/edit.js:292 src/blocks/_pro/slider/edit.js:109
+#: src/blocks/_pro/outer/edit.js:292 src/blocks/_pro/slider/edit.js:101
 msgid "Width"
 msgstr "幅"
 
-#: src/blocks/_pro/outer/edit.js:313 src/blocks/_pro/slider/edit.js:126
+#: src/blocks/_pro/outer/edit.js:313 src/blocks/_pro/slider/edit.js:118
 msgid "Full Wide"
 msgstr "全幅"
 
@@ -695,59 +731,55 @@ msgstr "スライダーアイテムエリア内の余白を無くす"
 msgid "Slider Item"
 msgstr "スライダーアイテム"
 
-#: src/blocks/_pro/slider/edit.js:132
+#: src/blocks/_pro/slider/edit.js:124
 msgid "Height"
 msgstr "高さ"
 
-#: src/blocks/_pro/slider/edit.js:151
+#: src/blocks/_pro/slider/edit.js:143
 msgid "Slider Settings"
 msgstr "スライド設定"
 
-#: src/blocks/_pro/slider/edit.js:155
+#: src/blocks/_pro/slider/edit.js:147
 msgid "Effect "
 msgstr "エフェクト"
 
-#: src/blocks/_pro/slider/edit.js:165
+#: src/blocks/_pro/slider/edit.js:157
 msgid "Slide"
 msgstr "スライド"
 
-#: src/blocks/_pro/slider/edit.js:169
+#: src/blocks/_pro/slider/edit.js:161
 msgid "Fade"
 msgstr "フェード"
 
-#: src/blocks/_pro/slider/edit.js:176
+#: src/blocks/_pro/slider/edit.js:168
 msgid "Loop "
 msgstr "繰り返し"
 
-#: src/blocks/_pro/slider/edit.js:186
+#: src/blocks/_pro/slider/edit.js:178
 msgid "AutoPlay"
 msgstr "自動再生"
 
-#: src/blocks/_pro/slider/edit.js:195
+#: src/blocks/_pro/slider/edit.js:187
 msgid "Display Time"
 msgstr "表示時間"
 
-#: src/blocks/_pro/slider/edit.js:206
+#: src/blocks/_pro/slider/edit.js:198
 msgid "Change Speed"
 msgstr "切り替え時間"
 
-#: src/blocks/_pro/slider/edit.js:220
+#: src/blocks/_pro/slider/edit.js:212
 msgid "Display Multi Images per View"
 msgstr "画像を複数枚表示する"
 
-#: src/blocks/_pro/slider/edit.js:224
+#: src/blocks/_pro/slider/edit.js:216
 msgid "Images per View"
 msgstr "１度に表示する画像の枚数"
 
-#: src/blocks/_pro/slider/edit.js:234
+#: src/blocks/_pro/slider/edit.js:226
 msgid "Move Images per Slide"
 msgstr "１度の動作で動かす枚数"
 
-#: src/blocks/_pro/slider/edit.js:244
-msgid "Space of between slides"
-msgstr "スライド間の余白"
-
-#: src/blocks/_pro/slider/edit.js:255
+#: src/blocks/_pro/slider/edit.js:237
 msgid "Display Pagination"
 msgstr "ページネーションの表示"
 
@@ -1733,6 +1765,10 @@ msgstr "ハイライトカラー"
 msgid "No wrap"
 msgstr "No wrap"
 
+#: src/extensions/common/responsive-br/index.js:41
+msgid "Responsive BR"
+msgstr "画面サイズ毎の改行 "
+
 #: src/extensions/common/responsive-br/index.js:45
 msgid "Responsive BR "
 msgstr "画面サイズ毎の改行 "
@@ -2153,6 +2189,14 @@ msgstr "すべてのプラグインを正常にインストールし、有効化
 msgid "Please contact the administrator of this site for help."
 msgstr "ヘルプが必要な場合はこのサイトの管理者にお問い合わせください。"
 
+#: inc/vk-admin/package/class-vk-admin.php:340
+msgid "Sorry, there is no post"
+msgstr "申し訳ありませんが投稿がありません。"
+
+#: inc/vk-admin/package/class-vk-admin.php:394
+msgid "Vektor WordPress Information"
+msgstr "Vektor WordPress Information"
+
 #: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:7
 msgid "Disable accordion"
 msgstr "アコーディオン無効"
@@ -2242,11 +2286,11 @@ msgstr ""
 msgid "No Post is selected"
 msgstr "投稿が選択されていません"
 
-#: inc/vk-blocks/vk-blocks-functions.php:236
+#: inc/vk-blocks/vk-blocks-functions.php:239
 msgid "Blocks"
 msgstr "Blocks"
 
-#: inc/vk-blocks/vk-blocks-functions.php:246
+#: inc/vk-blocks/vk-blocks-functions.php:249
 msgid "Blocks Layout"
 msgstr "ブロックレイアウト"
 
@@ -2283,11 +2327,23 @@ msgstr ""
 "VK-Blocksと競合するため、VK All in One Expansion Unitの Block機能を停止しまし"
 "た。"
 
-#~ msgid "Filter by Taxonomy Terms"
-#~ msgstr "分類"
-
 #~ msgid "Block Template Setting"
 #~ msgstr "ブロックテンプレート設定"
+
+#, fuzzy
+#~| msgid ""
+#~| "Disabled Blocks module on VK All in One Expansion Unit. Because VK-"
+#~| "Blocks Plugin running."
+#~ msgid "Disabled Blocks module. Because VK-Blocks Plugin running."
+#~ msgstr ""
+#~ "VK-Blocksと競合するため、VK All in One Expansion Unitの Block機能を停止し"
+#~ "ました。"
+
+#~ msgid "Space of between slides"
+#~ msgstr "スライド間の余白"
+
+#~ msgid "Filter by Taxonomy Terms"
+#~ msgstr "分類"
 
 #~ msgctxt "post format archive title"
 #~ msgid "Asides"
@@ -2550,9 +2606,6 @@ msgstr ""
 
 #~ msgid "Hide Details"
 #~ msgstr "詳細を非表示"
-
-#~ msgid "Vektor WordPress Information"
-#~ msgstr "Vektor WordPress Information"
 
 #~ msgid "View details"
 #~ msgstr "詳細を見る"

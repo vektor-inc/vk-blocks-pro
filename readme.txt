@@ -2,9 +2,9 @@
 Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips
 Donate link:
 Tags: Gutenberg,FAQ,alert
-Requires at least: 5.6
-Tested up to: 5.6.1
-Stable tag: 1.0.16
+Requires at least: 5.7
+Tested up to: 5.7
+Stable tag: 1.2.4
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -62,6 +62,27 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 1.2.4 =
+* [ Bug fix / Specification Change ][ Post List ] Fix too many tags and change tag UI
+* [ Bug fix ][ Slider ] Bug fix under css optimize
+
+= 1.2.3 =
+* [ Bug fix ][ FAQ2 ] Fix PHP notices.
+
+= 1.2.2 =
+* [ Specification Change ][ Slider ] Fix default slide speed and use cubic-bezier.
+* [ Bug fix ] Fix FontAwsome Popup in case of WP5.7
+
+= 1.2.1 =
+* [ Bug fix ] Fix translate of VK Blocks Setting
+
+= 1.2.0 =
+* [ Specification Change ] Cope with swiper load tree shaking (improvement of load speed)
+* [ Bug fix ] toolbar icon display
+
+= 1.1.0 =
+* [ Specification Change ][ Slider Block ] Display multiple images on one slide.
 
 = 1.0.16 =
 [ Specification Change ] Update VK-Admin Library

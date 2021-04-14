@@ -49,7 +49,7 @@
 		},
 		"speed": {
 			"type": "number",
-			"default": 300
+			"default": 500
 		},
 		"slidesPerView": {
 			"type": "number",
@@ -58,10 +58,6 @@
 		"slidesPerGroup": {
 			"type": "number",
 			"default": 1
-		},
-		"spaceBetween": {
-			"type": "number",
-			"default": 0
 		}
 	},
 	"supports": {

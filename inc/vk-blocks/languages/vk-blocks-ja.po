@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2021-03-31T01:45:10+00:00\n"
-"PO-Revision-Date: 2021-03-31 11:50+0900\n"
+"POT-Creation-Date: 2021-03-23T05:08:44+00:00\n"
+"PO-Revision-Date: 2021-04-07 14:05+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -761,7 +761,7 @@ msgstr "スライダーは編集画面では動きません。公開画面でプ
 
 #: src/blocks/_pro/step-item/edit.js:110
 #: src/blocks/_pro/table-of-contents-new/edit.js:130
-#: src/blocks/_pro/timeline-item/edit.js:91 src/blocks/heading/edit.js:233
+#: src/blocks/_pro/timeline-item/edit.js:91 src/blocks/heading/edit.js:231
 #: src/blocks/staff/edit.js:99 src/extensions/core/heading/style.js:30
 #: src/extensions/core/list/style.js:104
 msgid "Default"
@@ -846,7 +846,7 @@ msgstr "タイムライン要素"
 msgid "Timeline"
 msgstr "タイムライン"
 
-#: src/blocks/alert/edit.js:19 src/blocks/heading/edit.js:224
+#: src/blocks/alert/edit.js:19 src/blocks/heading/edit.js:222
 msgid "Style Settings"
 msgstr "スタイル設定"
 
@@ -902,7 +902,7 @@ msgstr "吹き出しに枠線を追加する"
 msgid "Balloon setting"
 msgstr "吹き出しブロック設定"
 
-#: src/blocks/balloon/edit.js:202 src/blocks/heading/edit.js:339
+#: src/blocks/balloon/edit.js:202 src/blocks/heading/edit.js:333
 msgid "Position"
 msgstr "位置"
 
@@ -1134,12 +1134,12 @@ msgstr ""
 "このカスタムカラーはデフォルトのカラーを上書きします。 デフォルトの色を使用し"
 "たい場合は、クリアボタンをクリックしてください。"
 
-#: src/blocks/button/edit.js:262 src/blocks/heading/edit.js:306
+#: src/blocks/button/edit.js:262 src/blocks/heading/edit.js:300
 #: src/blocks/pr-content/edit.js:194
 msgid "Before text"
 msgstr "文字の前"
 
-#: src/blocks/button/edit.js:271 src/blocks/heading/edit.js:315
+#: src/blocks/button/edit.js:271 src/blocks/heading/edit.js:309
 #: src/blocks/pr-content/edit.js:206
 msgid "After text"
 msgstr "文字の後"
@@ -1260,7 +1260,7 @@ msgstr "フロー"
 #: src/blocks/heading/deprecated/0.40.0/component.js:152
 #: src/blocks/heading/deprecated/0.40.1/component.js:152
 #: src/blocks/heading/deprecated/0.60.1/component.js:152
-#: src/blocks/heading/edit.js:198
+#: src/blocks/heading/edit.js:196
 msgid "Input sub text…"
 msgstr "サブテキストを入力"
 
@@ -1274,59 +1274,59 @@ msgstr "サブテキストを入力"
 #: src/blocks/heading/deprecated/0.40.0/component.js:137
 #: src/blocks/heading/deprecated/0.40.1/component.js:137
 #: src/blocks/heading/deprecated/0.60.1/component.js:137
-#: src/blocks/heading/edit.js:183
+#: src/blocks/heading/edit.js:181
 msgid "Input title…"
 msgstr "タイトルを入力"
 
-#: src/blocks/heading/edit.js:226
+#: src/blocks/heading/edit.js:224
 msgid "Heading style"
 msgstr "見出しスタイル"
 
-#: src/blocks/heading/edit.js:237 src/extensions/core/heading/style.js:35
+#: src/blocks/heading/edit.js:235 src/extensions/core/heading/style.js:35
 msgid "Plain"
 msgstr "装飾無し"
 
-#: src/blocks/heading/edit.js:243
+#: src/blocks/heading/edit.js:241
 msgid "Margin Setting"
 msgstr "余白設定"
 
-#: src/blocks/heading/edit.js:245
-msgid "Margin between Heading and sub text (rem)"
-msgstr "見出しとサブテキストの余白サイズ（rem）"
+#: src/blocks/heading/edit.js:243
+msgid "Margin bottom size of after hedding (rem)"
+msgstr "見出し下部の余白サイズ ( rem )"
 
-#: src/blocks/heading/edit.js:262
+#: src/blocks/heading/edit.js:258
 msgid "Margin bottom size of after this block (rem)"
-msgstr "このブロック全体の下部の余白( rem )"
+msgstr "このブロック全体の下部の余白 (rem)"
 
-#: src/blocks/heading/edit.js:279
+#: src/blocks/heading/edit.js:273
 msgid "Heading Settings"
 msgstr "見出し設定"
 
-#: src/blocks/heading/edit.js:291
+#: src/blocks/heading/edit.js:285
 msgid "Text Color"
 msgstr "文字の色"
 
-#: src/blocks/heading/edit.js:303
+#: src/blocks/heading/edit.js:297
 msgid "Font Awesome Icon Settings"
 msgstr "Font Awesome アイコン設定"
 
-#: src/blocks/heading/edit.js:324
+#: src/blocks/heading/edit.js:318
 msgid "Icon Color"
 msgstr "アイコンの色"
 
-#: src/blocks/heading/edit.js:337
+#: src/blocks/heading/edit.js:331
 msgid "Sub Text Settings"
 msgstr "サブテキスト設定"
 
-#: src/blocks/heading/edit.js:343
+#: src/blocks/heading/edit.js:337
 msgid "Display"
 msgstr "表示"
 
-#: src/blocks/heading/edit.js:347
+#: src/blocks/heading/edit.js:341
 msgid "Hide"
 msgstr "非表示"
 
-#: src/blocks/heading/edit.js:355
+#: src/blocks/heading/edit.js:349
 msgid "Text size (rem)"
 msgstr "文字サイズ (rem)"
 
@@ -2152,16 +2152,6 @@ msgstr "すべてのプラグインを正常にインストールし、有効化
 msgid "Please contact the administrator of this site for help."
 msgstr "ヘルプが必要な場合はこのサイトの管理者にお問い合わせください。"
 
-#: inc/vk-admin/package/class-vk-admin.php:340
-#, fuzzy
-#| msgid "Ignore this post"
-msgid "Sorry, there is no post"
-msgstr "この投稿を除く"
-
-#: inc/vk-admin/package/class-vk-admin.php:394
-msgid "Vektor WordPress Information"
-msgstr "Vektor WordPress Information"
-
 #: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:7
 msgid "Disable accordion"
 msgstr "アコーディオン無効"
@@ -2188,7 +2178,7 @@ msgstr "吹き出しブロック設定"
 
 #: inc/vk-blocks/admin/admin-balloon.php:5
 msgid "Balloon Border Width Setting"
-msgstr "吹き出し画像設定"
+msgstr "吹き出しの線幅の設定"
 
 #: inc/vk-blocks/admin/admin-balloon.php:15
 msgid "Balloon Image Setting"
@@ -2291,9 +2281,6 @@ msgid ""
 msgstr ""
 "VK-Blocksと競合するため、VK All in One Expansion Unitの Block機能を停止しまし"
 "た。"
-
-#~ msgid "Margin bottom size of after hedding (rem)"
-#~ msgstr "見出し下部の余白サイズ ( rem )"
 
 #~ msgid "Filter by Taxonomy Terms"
 #~ msgstr "分類"
@@ -2580,6 +2567,9 @@ msgstr ""
 
 #~ msgid "Hide Details"
 #~ msgstr "詳細を非表示"
+
+#~ msgid "Vektor WordPress Information"
+#~ msgstr "Vektor WordPress Information"
 
 #~ msgid "View details"
 #~ msgstr "詳細を見る"

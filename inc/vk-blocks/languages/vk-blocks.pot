@@ -2,14 +2,22 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
+<<<<<<< HEAD
 "Project-Id-Version: VK Blocks Pro 1.0.16\n"
+=======
+"Project-Id-Version: VK Blocks Pro 1.2.2\n"
+>>>>>>> master
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2021-03-31T01:45:10+00:00\n"
+=======
+"POT-Creation-Date: 2021-04-09T10:13:54+02:00\n"
+>>>>>>> master
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: vk-blocks\n"
@@ -32,11 +40,11 @@ msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:123
 #: src/blocks/_pro/outer/edit.js:303
-#: src/blocks/_pro/slider/edit.js:118
+#: src/blocks/_pro/slider/edit.js:110
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95
-#: src/blocks/faq/index.js:27
 #: src/blocks/faq2/index.js:22
+#: src/blocks/faq/index.js:27
 msgid "Normal"
 msgstr ""
 
@@ -228,7 +236,7 @@ msgid "Image Height"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:82
-#: src/blocks/_pro/slider/edit.js:137
+#: src/blocks/_pro/slider/edit.js:129
 msgid "Slide Height for each device."
 msgstr ""
 
@@ -421,12 +429,12 @@ msgid "Layout Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:292
-#: src/blocks/_pro/slider/edit.js:109
+#: src/blocks/_pro/slider/edit.js:101
 msgid "Width"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:313
-#: src/blocks/_pro/slider/edit.js:126
+#: src/blocks/_pro/slider/edit.js:118
 msgid "Full Wide"
 msgstr ""
 
@@ -714,59 +722,55 @@ msgstr ""
 msgid "Slider Item"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:132
+#: src/blocks/_pro/slider/edit.js:124
 msgid "Height"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:151
+#: src/blocks/_pro/slider/edit.js:143
 msgid "Slider Settings"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:155
+#: src/blocks/_pro/slider/edit.js:147
 msgid "Effect "
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:165
+#: src/blocks/_pro/slider/edit.js:157
 msgid "Slide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:169
+#: src/blocks/_pro/slider/edit.js:161
 msgid "Fade"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:176
+#: src/blocks/_pro/slider/edit.js:168
 msgid "Loop "
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:186
+#: src/blocks/_pro/slider/edit.js:178
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:195
+#: src/blocks/_pro/slider/edit.js:187
 msgid "Display Time"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:206
+#: src/blocks/_pro/slider/edit.js:198
 msgid "Change Speed"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:220
+#: src/blocks/_pro/slider/edit.js:212
 msgid "Display Multi Images per View"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:224
+#: src/blocks/_pro/slider/edit.js:216
 msgid "Images per View"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:234
+#: src/blocks/_pro/slider/edit.js:226
 msgid "Move Images per Slide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:244
-msgid "Space of between slides"
-msgstr ""
-
-#: src/blocks/_pro/slider/edit.js:255
+#: src/blocks/_pro/slider/edit.js:237
 msgid "Display Pagination"
 msgstr ""
 
@@ -1208,59 +1212,6 @@ msgstr ""
 msgid "Large"
 msgstr ""
 
-#: src/blocks/faq/edit.js:14
-#: src/blocks/faq2/edit.js:17
-msgid "If you want to be collapsing this block, you can set it at Setting > VK Blocks"
-msgstr ""
-
-#: src/blocks/faq/edit.js:19
-#: src/blocks/faq2/edit.js:22
-msgid "You can be collapsing this block at VK Blocks Pro"
-msgstr ""
-
-#: src/blocks/faq/edit.js:34
-#: src/blocks/faq2/edit.js:31
-msgid "Accordion Setting"
-msgstr ""
-
-#: src/blocks/faq/edit.js:44
-msgid "Please enter a question."
-msgstr ""
-
-#: src/blocks/faq/index.js:22
-msgid "Classic FAQ"
-msgstr ""
-
-#: src/blocks/faq/index.js:32
-#: src/blocks/faq2/index.js:27
-msgid "Bgfill Circle"
-msgstr ""
-
-#: src/blocks/faq/index.js:36
-#: src/blocks/faq2/index.js:31
-msgid "Bgfill Square"
-msgstr ""
-
-#: src/blocks/faq/index.js:40
-#: src/blocks/faq2/index.js:35
-msgid "Bgfill Rounded"
-msgstr ""
-
-#: src/blocks/faq/index.js:44
-#: src/blocks/faq2/index.js:39
-msgid "Border Circle"
-msgstr ""
-
-#: src/blocks/faq/index.js:48
-#: src/blocks/faq2/index.js:43
-msgid "Border Square"
-msgstr ""
-
-#: src/blocks/faq/index.js:52
-#: src/blocks/faq2/index.js:47
-msgid "Border Rounded"
-msgstr ""
-
 #: src/blocks/faq2-a/index.js:17
 msgid "FAQ Answer"
 msgstr ""
@@ -1269,8 +1220,61 @@ msgstr ""
 msgid "FAQ Question"
 msgstr ""
 
+#: src/blocks/faq2/edit.js:17
+#: src/blocks/faq/edit.js:14
+msgid "If you want to be collapsing this block, you can set it at Setting > VK Blocks"
+msgstr ""
+
+#: src/blocks/faq2/edit.js:22
+#: src/blocks/faq/edit.js:19
+msgid "You can be collapsing this block at VK Blocks Pro"
+msgstr ""
+
+#: src/blocks/faq2/edit.js:31
+#: src/blocks/faq/edit.js:34
+msgid "Accordion Setting"
+msgstr ""
+
 #: src/blocks/faq2/index.js:17
 msgid "New FAQ"
+msgstr ""
+
+#: src/blocks/faq2/index.js:27
+#: src/blocks/faq/index.js:32
+msgid "Bgfill Circle"
+msgstr ""
+
+#: src/blocks/faq2/index.js:31
+#: src/blocks/faq/index.js:36
+msgid "Bgfill Square"
+msgstr ""
+
+#: src/blocks/faq2/index.js:35
+#: src/blocks/faq/index.js:40
+msgid "Bgfill Rounded"
+msgstr ""
+
+#: src/blocks/faq2/index.js:39
+#: src/blocks/faq/index.js:44
+msgid "Border Circle"
+msgstr ""
+
+#: src/blocks/faq2/index.js:43
+#: src/blocks/faq/index.js:48
+msgid "Border Square"
+msgstr ""
+
+#: src/blocks/faq2/index.js:47
+#: src/blocks/faq/index.js:52
+msgid "Border Rounded"
+msgstr ""
+
+#: src/blocks/faq/edit.js:44
+msgid "Please enter a question."
+msgstr ""
+
+#: src/blocks/faq/index.js:22
+msgid "Classic FAQ"
 msgstr ""
 
 #: src/blocks/flow/edit.js:20
@@ -1774,6 +1778,10 @@ msgstr ""
 
 #: src/extensions/common/nowrap/index.js:21
 msgid "No wrap"
+msgstr ""
+
+#: src/extensions/common/responsive-br/index.js:41
+msgid "Responsive BR"
 msgstr ""
 
 #: src/extensions/common/responsive-br/index.js:45

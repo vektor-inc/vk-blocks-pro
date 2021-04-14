@@ -1,4 +1,5 @@
 /* eslint camelcase: 0 */
+import save1_2_1 from './1.2.1/save';
 import save1_0_6 from './1.0.6/save';
 import save0_60_1 from './0.60.1/save';
 import save0_56_3 from './0.56.3/save';
@@ -57,6 +58,10 @@ const blockAttributes = {
 };
 
 export default [
+	{
+		attributes: blockAttributes,
+		save: save1_2_1,
+	},
 	{
 		attributes: blockAttributes,
 		save: save1_0_6,

@@ -3,9 +3,9 @@
 This is a plugin that extends Gutenberg's blocks.
 
 ## 環境構築（Windows編）
-- XAMPP 7.4 系をインストール：https://www.apachefriends.org/download.html
-- Composer をインストール：https://www.apachefriends.org/download.html
-- VS Code で Git Bash を使えるようにしておく：https://qiita.com/daikiozawa/items/48a9fe0e2898c7dd78ae
+- XAMPP 7.4 系をインストール
+- Composer をインストール
+- VS Code で Git Bash を使えるようにしておく
 
 ## 前提
 - Docker
@@ -55,6 +55,12 @@ npm run translate
 翻訳は PoEdit などを使って `.po` ファイルを開いて編集するが、
 新たに翻訳箇所が追加された場合はメニューから「potファイルから更新」を選んで更新する
 
+## PHPUnitテスト
+
+```
+composer install
+npm run phpunit
+```
 
 ## デプロイ
 手順は[wiki](https://github.com/vektor-inc/vk-blocks-pro/wiki/%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4)を参考に

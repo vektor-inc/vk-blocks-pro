@@ -10,6 +10,7 @@ import save0_39_5 from './0.39.5/save';
 import save0_40_0 from './0.40.0/save';
 import save0_40_1 from './0.40.1/save';
 import save0_60_1 from './0.60.1/save';
+import save1_2_4 from './1.2.4/save';
 
 const blockAttributes = {
 	level: {
@@ -86,6 +87,79 @@ const blockAttributes2 = {
 }
 
 const deprecated = [
+	{
+	attributes: {
+		"anchor": {
+			"type": "string",
+			"source": "attribute",
+			"attribute": "id",
+			"selector": "*"
+		},
+		"level": {
+			"type": "number",
+			"default": 2
+		},
+		"align": {
+			"type": "string"
+		},
+		"titleStyle": {
+			"type": "string",
+			"default": "default"
+		},
+		"outerMarginBottom": {
+			"type": "number",
+			"default": 0
+		},
+		"title": {
+			"type": "string",
+			"source": "html",
+			"selector": "span",
+			"default": ""
+		},
+		"titleColor": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"titleSize": {
+			"type": "number",
+			"default": 2
+		},
+		"titleMarginBottom": {
+			"type": "number",
+			"default": 1
+		},
+		"subText": {
+			"source": "html",
+			"selector": "p",
+			"default": ""
+		},
+		"subTextFlag": {
+			"type": "string",
+			"default": "off"
+		},
+		"subTextColor": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"subTextSize": {
+			"type": "number",
+			"default": 1.2
+		},
+		"fontAwesomeIconBefore": {
+			"type": "string",
+			"default": ""
+		},
+		"fontAwesomeIconAfter": {
+			"type": "string",
+			"default": ""
+		},
+		"fontAwesomeIconColor": {
+			"type": "string",
+			"default": "#000000"
+		}
+	},
+		save: save1_2_4,
+	},
 	{
 		attributes: blockAttributes2,
 		save: save0_60_1,

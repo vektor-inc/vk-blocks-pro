@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "POT-Creation-Date: 2021-03-23T05:08:44+00:00\n"
-"PO-Revision-Date: 2021-04-07 14:05+0900\n"
+"PO-Revision-Date: 2021-04-14 11:40+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 1.8.1\n"
 "X-Poedit-Basepath: ../../..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -1621,8 +1621,8 @@ msgid "Button align"
 msgstr "ボタンの位置"
 
 #: src/components/display-items-control/index.js:37
-msgid "Term name"
-msgstr "分類名"
+msgid "Term's name on Image"
+msgstr "画像右上分類名"
 
 #: src/components/display-items-control/index.js:44
 msgid "Excerpt"
@@ -1641,8 +1641,8 @@ msgid "New mark"
 msgstr "新着表示"
 
 #: src/components/display-items-control/index.js:70
-msgid "Taxonomies"
-msgstr "分類"
+msgid "Taxonomies (all)"
+msgstr "分類（全項目）"
 
 #: src/components/display-items-control/index.js:82
 msgid "New mark option"
@@ -1749,7 +1749,8 @@ msgstr "スティッチ"
 msgid "Border Top Bottom"
 msgstr "直線 上下"
 
-#: src/extensions/core/group/style.js:132 src/extensions/core/image/style.js:31
+#: src/extensions/core/group/style.js:132
+#: src/extensions/core/image/style.js:31
 msgid "Shadow"
 msgstr "シャドウ"
 
@@ -2320,7 +2321,6 @@ msgstr ""
 #~ msgid "Chats"
 #~ msgstr "チャット"
 
-#, php-format
 #~ msgid "This theme recommends the following plugin: %1$s."
 #~ msgid_plural "This theme recommends the following plugins: %1$s."
 #~ msgstr[0] "このテーマは下記プラグインを推奨しています：%1$s。"
@@ -2367,7 +2367,6 @@ msgstr ""
 #~ msgid "and"
 #~ msgstr "と"
 
-#, php-format
 #~ msgctxt "%s = version number"
 #~ msgid "TGMPA v%s"
 #~ msgstr "TGMPA v%s"
@@ -2405,28 +2404,23 @@ msgstr ""
 #~ msgid "Update recommended"
 #~ msgstr "更新を推奨"
 
-#, php-format
 #~ msgctxt "%1$s = install status, %2$s = update status"
 #~ msgid "%1$s, %2$s"
 #~ msgstr "%1$s、%2$s"
 
-#, php-format
 #~ msgctxt "plugins"
 #~ msgid "All <span class=\"count\">(%s)</span>"
 #~ msgid_plural "All <span class=\"count\">(%s)</span>"
 #~ msgstr[0] "すべて <span class=\"count\">(%s)</span>"
 
-#, php-format
 #~ msgid "To Install <span class=\"count\">(%s)</span>"
 #~ msgid_plural "To Install <span class=\"count\">(%s)</span>"
 #~ msgstr[0] "未インストール <span class=\"count\">(%s)</span>"
 
-#, php-format
 #~ msgid "Update Available <span class=\"count\">(%s)</span>"
 #~ msgid_plural "Update Available <span class=\"count\">(%s)</span>"
 #~ msgstr[0] "更新可能 <span class=\"count\">(%s)</span>"
 
-#, php-format
 #~ msgid "To Activate <span class=\"count\">(%s)</span>"
 #~ msgid_plural "To Activate <span class=\"count\">(%s)</span>"
 #~ msgstr[0] "停止中 <span class=\"count\">(%s)</span>"
@@ -2444,7 +2438,6 @@ msgstr ""
 #~ msgid "Available version:"
 #~ msgstr "利用可能なバージョン:"
 
-#, php-format
 #~ msgid ""
 #~ "No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
 #~ "Dashboard</a>"
@@ -2464,17 +2457,14 @@ msgstr ""
 #~ msgid "Status"
 #~ msgstr "状態"
 
-#, php-format
 #~ msgctxt "%2$s = plugin name in screen reader markup"
 #~ msgid "Install %2$s"
 #~ msgstr "%2$sをインストール"
 
-#, php-format
 #~ msgctxt "%2$s = plugin name in screen reader markup"
 #~ msgid "Update %2$s"
 #~ msgstr "%2$sを更新"
 
-#, php-format
 #~ msgctxt "%2$s = plugin name in screen reader markup"
 #~ msgid "Activate %2$s"
 #~ msgstr "%2$sを有効化"
@@ -2514,15 +2504,12 @@ msgstr ""
 #~ msgid "Plugin activation failed."
 #~ msgstr "プラグインの有効化に失敗しました。"
 
-#, php-format
 #~ msgid "Updating Plugin %1$s (%2$d/%3$d)"
 #~ msgstr "プラグインを更新中 %1$s (%2$d/%3$d)"
 
-#, php-format
 #~ msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 #~ msgstr "<strong>%2$s</strong>%1$s のインストール中にエラーが発生しました。"
 
-#, php-format
 #~ msgid "The installation of %1$s failed."
 #~ msgstr "%1$s のインストールに失敗しました。"
 
@@ -2533,14 +2520,12 @@ msgstr ""
 #~ "インストールと有効化を開始しました。環境によっては時間がかかる場合がありま"
 #~ "す。しばらくお待ちください。"
 
-#, php-format
 #~ msgid "%1$s installed and activated successfully."
 #~ msgstr "%1$s を正常にインストールし、有効化しました。"
 
 #~ msgid "All installations and activations have been completed."
 #~ msgstr "すべてのインストールと有効化が完了しました。"
 
-#, php-format
 #~ msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 #~ msgstr "プラグインをインストール、有効化中 %1$s (%2$d/%3$d)"
 
@@ -2551,14 +2536,12 @@ msgstr ""
 #~ "更新プロセスを開始しました。環境によっては時間がかかる場合があります。しば"
 #~ "らくお待ちください。"
 
-#, php-format
 #~ msgid "%1$s installed successfully."
 #~ msgstr "%1$sのインストールが完了しました。"
 
 #~ msgid "All installations have been completed."
 #~ msgstr "すべてのインストールが完了しました。"
 
-#, php-format
 #~ msgid "Installing Plugin %1$s (%2$d/%3$d)"
 #~ msgstr "プラグインをインストール中 %1$s (%2$d/%3$d)"
 
@@ -2574,29 +2557,24 @@ msgstr ""
 #~ msgid "View details"
 #~ msgstr "詳細を見る"
 
-#, php-format
 #~ msgid "More information about %s"
 #~ msgstr "%sについての詳細"
 
 #~ msgid "Check for updates"
 #~ msgstr "アップデートを確認"
 
-#, php-format
 #~ msgctxt "the plugin title"
 #~ msgid "The %s plugin is up to date."
 #~ msgstr "%s プラグインは最新です。"
 
-#, php-format
 #~ msgctxt "the plugin title"
 #~ msgid "A new version of the %s plugin is available."
 #~ msgstr "%sプラグインの新しいバージョンが利用可能です。"
 
-#, php-format
 #~ msgctxt "the plugin title"
 #~ msgid "Could not determine if updates are available for %s."
 #~ msgstr "%1$s.に対して利用可能なアップデートがあるか確認できませんでした"
 
-#, php-format
 #~ msgid "Unknown update checker status \"%s\""
 #~ msgstr "不明なアップデートチェッカーステータス \"%s\""
 

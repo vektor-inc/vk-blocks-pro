@@ -24,8 +24,8 @@ msgstr ""
 #: src/blocks/_pro/slider/edit.js:110
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95
-#: src/blocks/faq2/index.js:22
 #: src/blocks/faq/index.js:27
+#: src/blocks/faq2/index.js:22
 msgid "Normal"
 msgstr ""
 
@@ -773,7 +773,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:110
 #: src/blocks/_pro/table-of-contents-new/edit.js:130
 #: src/blocks/_pro/timeline-item/edit.js:91
-#: src/blocks/heading/edit.js:233
+#: src/blocks/heading/edit.js:241
 #: src/blocks/staff/edit.js:99
 #: src/extensions/core/heading/style.js:30
 #: src/extensions/core/list/style.js:104
@@ -859,7 +859,7 @@ msgid "Timeline"
 msgstr ""
 
 #: src/blocks/alert/edit.js:19
-#: src/blocks/heading/edit.js:224
+#: src/blocks/heading/edit.js:232
 msgid "Style Settings"
 msgstr ""
 
@@ -925,7 +925,7 @@ msgid "Balloon setting"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:202
-#: src/blocks/heading/edit.js:339
+#: src/blocks/heading/edit.js:347
 msgid "Position"
 msgstr ""
 
@@ -1164,13 +1164,13 @@ msgid ""
 msgstr ""
 
 #: src/blocks/button/edit.js:262
-#: src/blocks/heading/edit.js:306
+#: src/blocks/heading/edit.js:314
 #: src/blocks/pr-content/edit.js:194
 msgid "Before text"
 msgstr ""
 
 #: src/blocks/button/edit.js:271
-#: src/blocks/heading/edit.js:315
+#: src/blocks/heading/edit.js:323
 #: src/blocks/pr-content/edit.js:206
 msgid "After text"
 msgstr ""
@@ -1199,63 +1199,21 @@ msgstr ""
 msgid "Large"
 msgstr ""
 
-#: src/blocks/faq2-a/index.js:17
-msgid "FAQ Answer"
-msgstr ""
-
-#: src/blocks/faq2-q/index.js:17
-msgid "FAQ Question"
-msgstr ""
-
-#: src/blocks/faq2/edit.js:17
 #: src/blocks/faq/edit.js:14
+#: src/blocks/faq2/edit.js:17
 msgid ""
 "If you want to be collapsing this block, you can set it at Setting > VK "
 "Blocks"
 msgstr ""
 
-#: src/blocks/faq2/edit.js:22
 #: src/blocks/faq/edit.js:19
+#: src/blocks/faq2/edit.js:22
 msgid "You can be collapsing this block at VK Blocks Pro"
 msgstr ""
 
-#: src/blocks/faq2/edit.js:31
 #: src/blocks/faq/edit.js:34
+#: src/blocks/faq2/edit.js:31
 msgid "Accordion Setting"
-msgstr ""
-
-#: src/blocks/faq2/index.js:17
-msgid "New FAQ"
-msgstr ""
-
-#: src/blocks/faq2/index.js:27
-#: src/blocks/faq/index.js:32
-msgid "Bgfill Circle"
-msgstr ""
-
-#: src/blocks/faq2/index.js:31
-#: src/blocks/faq/index.js:36
-msgid "Bgfill Square"
-msgstr ""
-
-#: src/blocks/faq2/index.js:35
-#: src/blocks/faq/index.js:40
-msgid "Bgfill Rounded"
-msgstr ""
-
-#: src/blocks/faq2/index.js:39
-#: src/blocks/faq/index.js:44
-msgid "Border Circle"
-msgstr ""
-
-#: src/blocks/faq2/index.js:43
-#: src/blocks/faq/index.js:48
-msgid "Border Square"
-msgstr ""
-
-#: src/blocks/faq2/index.js:47
-#: src/blocks/faq/index.js:52
-msgid "Border Rounded"
 msgstr ""
 
 #: src/blocks/faq/edit.js:44
@@ -1264,6 +1222,48 @@ msgstr ""
 
 #: src/blocks/faq/index.js:22
 msgid "Classic FAQ"
+msgstr ""
+
+#: src/blocks/faq/index.js:32
+#: src/blocks/faq2/index.js:27
+msgid "Bgfill Circle"
+msgstr ""
+
+#: src/blocks/faq/index.js:36
+#: src/blocks/faq2/index.js:31
+msgid "Bgfill Square"
+msgstr ""
+
+#: src/blocks/faq/index.js:40
+#: src/blocks/faq2/index.js:35
+msgid "Bgfill Rounded"
+msgstr ""
+
+#: src/blocks/faq/index.js:44
+#: src/blocks/faq2/index.js:39
+msgid "Border Circle"
+msgstr ""
+
+#: src/blocks/faq/index.js:48
+#: src/blocks/faq2/index.js:43
+msgid "Border Square"
+msgstr ""
+
+#: src/blocks/faq/index.js:52
+#: src/blocks/faq2/index.js:47
+msgid "Border Rounded"
+msgstr ""
+
+#: src/blocks/faq2-a/index.js:17
+msgid "FAQ Answer"
+msgstr ""
+
+#: src/blocks/faq2-q/index.js:17
+msgid "FAQ Question"
+msgstr ""
+
+#: src/blocks/faq2/index.js:17
+msgid "New FAQ"
 msgstr ""
 
 #: src/blocks/flow/edit.js:20
@@ -1300,7 +1300,7 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:152
 #: src/blocks/heading/deprecated/0.40.1/component.js:152
 #: src/blocks/heading/deprecated/0.60.1/component.js:152
-#: src/blocks/heading/edit.js:198
+#: src/blocks/heading/edit.js:206
 msgid "Input sub text…"
 msgstr ""
 
@@ -1314,60 +1314,60 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:137
 #: src/blocks/heading/deprecated/0.40.1/component.js:137
 #: src/blocks/heading/deprecated/0.60.1/component.js:137
-#: src/blocks/heading/edit.js:183
+#: src/blocks/heading/edit.js:191
 msgid "Input title…"
 msgstr ""
 
-#: src/blocks/heading/edit.js:226
+#: src/blocks/heading/edit.js:234
 msgid "Heading style"
 msgstr ""
 
-#: src/blocks/heading/edit.js:237
+#: src/blocks/heading/edit.js:245
 #: src/extensions/core/heading/style.js:35
 msgid "Plain"
 msgstr ""
 
-#: src/blocks/heading/edit.js:243
+#: src/blocks/heading/edit.js:251
 msgid "Margin Setting"
 msgstr ""
 
-#: src/blocks/heading/edit.js:245
+#: src/blocks/heading/edit.js:253
 msgid "Margin between Heading and sub text (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:262
+#: src/blocks/heading/edit.js:270
 msgid "Margin bottom size of after this block (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:279
+#: src/blocks/heading/edit.js:287
 msgid "Heading Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:291
+#: src/blocks/heading/edit.js:299
 msgid "Text Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:303
+#: src/blocks/heading/edit.js:311
 msgid "Font Awesome Icon Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:324
+#: src/blocks/heading/edit.js:332
 msgid "Icon Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:337
+#: src/blocks/heading/edit.js:345
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:343
+#: src/blocks/heading/edit.js:351
 msgid "Display"
 msgstr ""
 
-#: src/blocks/heading/edit.js:347
+#: src/blocks/heading/edit.js:355
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/heading/edit.js:355
+#: src/blocks/heading/edit.js:363
 msgid "Text size (rem)"
 msgstr ""
 

@@ -182,8 +182,8 @@ msgstr ""
 #: src/blocks/pr-content/deprecated/0.58.7/component.js:171
 #: src/blocks/pr-content/deprecated/0.58.9/component.js:171
 #: src/blocks/pr-content/mediaUpload.js:68
-#: src/blocks/staff/deprecated/component.js:87
-#: src/blocks/staff/edit.js:273
+#: src/blocks/staff/deprecated/component.js:96
+#: src/blocks/staff/edit.js:308
 #: src/components/advanced-media-upload/index.js:47
 msgid "Select image"
 msgstr ""
@@ -545,7 +545,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:114
 #: src/blocks/_pro/timeline-item/edit.js:95
 #: src/blocks/balloon/edit.js:338
-#: src/blocks/staff/edit.js:103
+#: src/blocks/staff/edit.js:119
 msgid "None"
 msgstr ""
 
@@ -810,7 +810,7 @@ msgstr ""
 #: src/blocks/_pro/table-of-contents-new/edit.js:130
 #: src/blocks/_pro/timeline-item/edit.js:91
 #: src/blocks/heading/edit.js:231
-#: src/blocks/staff/edit.js:99
+#: src/blocks/staff/edit.js:218
 #: src/extensions/core/heading/style.js:30
 #: src/extensions/core/list/style.js:104
 msgid "Default"
@@ -832,7 +832,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:76
 #: src/blocks/_pro/timeline-item/edit.js:53
 #: src/blocks/border-box/edit.js:48
-#: src/blocks/staff/edit.js:125
+#: src/blocks/staff/edit.js:141
 msgid "Color"
 msgstr ""
 
@@ -1578,57 +1578,69 @@ msgstr ""
 msgid "Responsive Spacer"
 msgstr ""
 
-#: src/blocks/staff/deprecated/component.js:41
-#: src/blocks/staff/edit.js:208
+#: src/blocks/staff/deprecated/component.js:50
+#: src/blocks/staff/edit.js:243
 msgid "Your Name"
 msgstr ""
 
-#: src/blocks/staff/deprecated/component.js:49
-#: src/blocks/staff/edit.js:218
+#: src/blocks/staff/deprecated/component.js:58
+#: src/blocks/staff/edit.js:253
 msgid "Caption"
 msgstr ""
 
-#: src/blocks/staff/deprecated/component.js:57
-#: src/blocks/staff/edit.js:228
+#: src/blocks/staff/deprecated/component.js:66
+#: src/blocks/staff/edit.js:263
 msgid "Role position"
 msgstr ""
 
-#: src/blocks/staff/deprecated/component.js:65
-#: src/blocks/staff/edit.js:238
+#: src/blocks/staff/deprecated/component.js:74
+#: src/blocks/staff/edit.js:273
 msgid "Profile title"
 msgstr ""
 
-#: src/blocks/staff/deprecated/component.js:73
-#: src/blocks/staff/edit.js:251
+#: src/blocks/staff/deprecated/component.js:82
+#: src/blocks/staff/edit.js:286
 msgid "Profile text"
 msgstr ""
 
-#: src/blocks/staff/edit.js:108
-msgid "Alt text"
-msgstr ""
-
-#: src/blocks/staff/edit.js:110
-msgid "Set the alt text for profile image"
-msgstr ""
-
-#: src/blocks/staff/edit.js:128
-msgid "Staff name"
-msgstr ""
-
-#: src/blocks/staff/edit.js:141
-msgid "Name caption"
-msgstr ""
-
-#: src/blocks/staff/edit.js:71
-msgid "Layout"
-msgstr ""
-
-#: src/blocks/staff/edit.js:84
+#: src/blocks/staff/edit.js:100
 msgid "Image left"
 msgstr ""
 
-#: src/blocks/staff/edit.js:89
+#: src/blocks/staff/edit.js:105
 msgid "Image border"
+msgstr ""
+
+#: src/blocks/staff/edit.js:124
+msgid "Alt text"
+msgstr ""
+
+#: src/blocks/staff/edit.js:126
+msgid "Set the alt text for profile image"
+msgstr ""
+
+#: src/blocks/staff/edit.js:144
+msgid "Staff name"
+msgstr ""
+
+#: src/blocks/staff/edit.js:157
+msgid "Name caption"
+msgstr ""
+
+#: src/blocks/staff/edit.js:212
+msgid "Font"
+msgstr ""
+
+#: src/blocks/staff/edit.js:214
+msgid "Default Font:"
+msgstr ""
+
+#: src/blocks/staff/edit.js:222
+msgid "minchoBody"
+msgstr ""
+
+#: src/blocks/staff/edit.js:87
+msgid "Layout"
 msgstr ""
 
 #: src/blocks/staff/index.js:33

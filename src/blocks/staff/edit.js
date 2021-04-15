@@ -10,6 +10,7 @@ import { __ } from '@wordpress/i18n';
 import {
 	TextControl,
 	PanelBody,
+	RadioControl,
 	BaseControl,
 	SelectControl,
 	Button,
@@ -49,6 +50,7 @@ export default function StaffEdit({
 		vk_staff_text_profileTitle, // eslint-disable-line camelcase
 		vk_staff_text_profileText, // eslint-disable-line camelcase
 		vk_staff_photo_image, // eslint-disable-line camelcase
+		vk_staff_fontFamily,
 	} = attributes;
 
 	const classes = classnames('vk_staff', {
@@ -64,6 +66,20 @@ export default function StaffEdit({
 	const imgBorderClassName = classnames('vk_staff_photo', {
 		[`vk_staff_photo-border-${vk_staff_photoBorder}`]: !!vk_staff_photoBorder, // eslint-disable-line camelcase
 	});
+
+	let staffTextClassName = classnames;
+	if (vk_staff_fontFamily === '1') {
+		staffTextClassName = classnames(
+			'vk_staff_text',
+			staffTextClassName,
+			'vk_staff-headingFont-serif'
+		);
+	} else {
+		staffTextClassName = classnames(
+			'vk_staff_text',
+			staffTextClassName,
+		);
+	}
 
 	return (
 		<>
@@ -193,10 +209,29 @@ export default function StaffEdit({
 						/>
 					</BaseControl>
 				</PanelBody>
+				<PanelBody title={__('Font', 'vk-blocks')}>
+					<RadioControl
+						label={__('Default Font:', 'vk-blocks')}
+						selected={vk_staff_fontFamily}
+						options={[
+							{
+								label: __('Default', 'vk-blocks'),
+								value: '0',
+							},
+							{
+								label: __('minchoBody', 'vk-blocks'),
+								value: '1',
+							},
+						]}
+						onChange={(value) =>
+							setAttributes({ vk_staff_fontFamily: value })
+						}
+					/>
+				</PanelBody>
 			</InspectorControls>
 
 			<div {...blockProps}>
-				<div className={`vk_staff_text`}>
+				<div className={staffTextClassName}>
 					<RichText
 						tagName="h3"
 						className={'vk_staff_text_name'}

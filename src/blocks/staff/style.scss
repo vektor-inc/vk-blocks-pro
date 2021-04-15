@@ -34,7 +34,6 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 				text-align: left;
 				box-shadow: none;
 				font-size: 2.5rem;
-				font-family: $font_serif;
 				line-height: 1;
 				margin-bottom: 0.5rem;
 				border: none;
@@ -48,7 +47,6 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 			}
 
 			&_caption {
-				font-family: $font_serif;
 				font-size: 14px;
 				display: block;
 				margin: 0 0 0.5rem 4px;
@@ -57,11 +55,9 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 			&_role {
 				font-size: 14px;
 				line-height: 1.6em;
-				font-family: $font_serif;
 			}
 			&_profileTitle {
 				font-size: 18px;
-				font-family: $font_serif;
 				padding-top: 0;
 				padding-left: 0;
 				padding-bottom: 2px;
@@ -80,6 +76,23 @@ $font_serif: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
 			}
 		}
 	} //.vk_staff_text
+
+	.vk_staff-headingFont-serif {
+		.vk_staff_text{
+			&_name {
+				font-family: $font_serif;
+			}
+			&_caption {
+				font-family: $font_serif;
+			}
+			&_role {
+				font-family: $font_serif;
+			}
+			&_profileTitle {
+				font-family: $font_serif;
+			}
+		}
+	}
 
 		.vk_staff_photo {
 			display: block;

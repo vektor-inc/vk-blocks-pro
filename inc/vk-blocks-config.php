@@ -25,35 +25,35 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 		$vk_blocks_prefix .= ' ';
 	}
 
-	require_once plugin_dir_path( __DIR__ ) . 'inc/vk-admin/vk-admin-config.php';
-	require_once 'vk-blocks/helpers.php';
-	require_once 'vk-components/vk-components-config.php';
-	require_once 'vk-blocks/load-vk-components.php';
-	require_once 'font-awesome/font-awesome-config.php';
-	require_once 'term-color/term-color-config.php';
-	require_once 'template-tags/package/template-tags.php';
-	require_once 'vk-css-optimize/vk-css-optimize-config.php';
-	require_once 'vk-swiper/config.php';
-	require_once  plugin_dir_path( __DIR__ ) . 'inc/vk-customize-helpers/vk-customize-helpers-config.php';
-	require_once  plugin_dir_path( __DIR__ ) . 'inc/tgm-plugin-activation/tgm-config.php';
+	require_once plugin_dir_path( __FILE__ ) . 'vk-admin/vk-admin-config.php';
+	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/helpers.php';
+	require_once plugin_dir_path( __FILE__ ) . 'vk-components/vk-components-config.php';
+	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/load-vk-components.php';
+	require_once plugin_dir_path( __FILE__ ) . 'font-awesome/font-awesome-config.php';
+	require_once plugin_dir_path( __FILE__ ) . 'term-color/term-color-config.php';
+	require_once plugin_dir_path( __FILE__ ) . 'template-tags/package/template-tags.php';
+	require_once plugin_dir_path( __FILE__ ) . 'vk-css-optimize/vk-css-optimize-config.php';
+	require_once plugin_dir_path( __FILE__ ) . 'vk-swiper/config.php';
+	require_once plugin_dir_path( __FILE__ ) . 'vk-customize-helpers/vk-customize-helpers-config.php';
+	require_once plugin_dir_path( __FILE__ ) . 'tgm-plugin-activation/tgm-config.php';
 
 
 	if ( ! vkblocks_is_lightning() ) {
-		require_once 'vk-blocks/load-bootstrap.php';
+		require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/load-bootstrap.php';
 	}
 
-	require_once 'admin-notices.php';
-	require_once 'vk-blocks/vk-blocks-functions.php';
+	require_once plugin_dir_path( __FILE__ ) . 'admin-notices.php';
+	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/vk-blocks-functions.php';
 
 
-	$path = dirname(dirname(__FILE__)) .'/inc/vk-blocks/App/RestAPI/BlockMeta/EntryPoint.php';
+	$path = plugin_dir_path( __FILE__ ) . 'vk-blocks/App/RestAPI/BlockMeta/EntryPoint.php';
 	require_once $path;
 	//BlockMeta用のAPIルートを設定
 	new EntryPoint();
 
 	//プロ版の設定ファイルを読み込み
-	if(file_exists(dirname(__FILE__) . '/vk-blocks-pro-config.php')){
-		require_once 'vk-blocks-pro-config.php';
+	if( file_exists( plugin_dir_path( __FILE__ ) . 'vk-blocks-pro-config.php' ) ){
+		require_once plugin_dir_path( __FILE__ ) . 'vk-blocks-pro-config.php';
 	}
 
 	/*

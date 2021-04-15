@@ -1,6 +1,9 @@
 /**
  *  Pro Blocks
  */
+import * as accordion from './_pro/accordion';
+import * as accordionTarget from './_pro/accordion-target';
+import * as accordionTrigger from './_pro/accordion-trigger';
 import * as animation from './_pro/animation';
 import * as card from './_pro/card';
 import * as cardItem from './_pro/card-item';
@@ -24,6 +27,9 @@ import * as timeline from './_pro/timeline';
 import * as timelineItem from './_pro/timeline-item';
 
 const vkblocksPro = [
+	accordion,
+	accordionTarget,
+	accordionTrigger,
 	animation,
 	card,
 	cardItem,
@@ -38,6 +44,8 @@ const vkblocksPro = [
 	stepItem,
 	selectPostList,
 	selectPostListItem,
+	step,
+	stepItem,
 	slider,
 	sliderItem,
 	tab,

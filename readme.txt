@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
 Tested up to: 5.7
-Stable tag: 1.2.0
+Stable tag: 1.3.1
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -62,6 +62,29 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 1.3.1 =
+* [ Bug fix ][ Accordion ] Supports Tree Shaking and add Pro Icon
+* [ Bug fix ] Fix relative path to full path
+
+= 1.3.0 =
+* [ Add New Block ][ Accordion ] Add New Accordion Block
+* [ Translation ][ Post List ] Corrected the notation of the classification name
+* [ Specification Change ][ Card ] Remove link tag from title
+
+= 1.2.4 =
+* [ Bug fix / Specification Change ][ Post List ] Fix too many tags and change tag UI
+* [ Bug fix ][ Slider ] Bug fix under css optimize
+
+= 1.2.3 =
+* [ Bug fix ][ FAQ2 ] Fix PHP notices.
+
+= 1.2.2 =
+* [ Specification Change ][ Slider ] Fix default slide speed and use cubic-bezier.
+* [ Bug fix ] Fix FontAwsome Popup in case of WP5.7
+
+= 1.2.1 =
+* [ Bug fix ] Fix translate of VK Blocks Setting
 
 = 1.2.0 =
 * [ Specification Change ] Cope with swiper load tree shaking (improvement of load speed)

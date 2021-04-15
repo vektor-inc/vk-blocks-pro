@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2021-04-13T07:01:44+00:00\n"
-"PO-Revision-Date: 2021-04-13 16:01+0900\n"
+"POT-Creation-Date: 2021-04-15T04:39:04+00:00\n"
+"PO-Revision-Date: 2021-04-15 13:41+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.1\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-Basepath: ../../..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -171,9 +171,9 @@ msgstr ""
 #: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:206
 #: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:210
 #: src/blocks/_pro/card-item/edit.js:182 src/blocks/_pro/card/edit.js:121
-#: src/blocks/_pro/icon-card/edit.js:72 src/blocks/_pro/post-list/edit.js:180
+#: src/blocks/_pro/icon-card/edit.js:72 src/blocks/_pro/post-list/edit.js:263
 msgid "Title"
-msgstr "タイトルを入力"
+msgstr "タイトル"
 
 #: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:81
 #: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:77
@@ -281,7 +281,7 @@ msgstr "カード"
 msgid "Current page"
 msgstr "現在のページ"
 
-#: src/blocks/_pro/child-page/edit.js:63 src/blocks/_pro/post-list/edit.js:114
+#: src/blocks/_pro/child-page/edit.js:63 src/blocks/_pro/post-list/edit.js:196
 msgid "Display conditions"
 msgstr "表示条件"
 
@@ -289,7 +289,7 @@ msgstr "表示条件"
 msgid "Parent"
 msgstr "親ページ"
 
-#: src/blocks/_pro/child-page/edit.js:82 src/blocks/_pro/post-list/edit.js:204
+#: src/blocks/_pro/child-page/edit.js:82 src/blocks/_pro/post-list/edit.js:287
 msgid "Ignore this post"
 msgstr "この投稿を除く"
 
@@ -375,7 +375,7 @@ msgid "Columns"
 msgstr "カラム"
 
 #: src/blocks/_pro/icon-card/edit.js:70
-#: src/components/card-align-control/index.js:34
+#: src/components/card-align-control/index.js:33
 msgid "Align"
 msgstr "表示位置"
 
@@ -629,50 +629,50 @@ msgstr "vw"
 msgid "Outer"
 msgstr "Outer"
 
-#: src/blocks/_pro/post-list/edit.js:118
+#. Filter by %s
+#: src/blocks/_pro/post-list/edit.js:173
+msgid "Filter by %s"
+msgstr "%sで絞り込み"
+
+#: src/blocks/_pro/post-list/edit.js:200
 msgid "Filter by PostTypes"
 msgstr "投稿タイプ"
 
-#: src/blocks/_pro/post-list/edit.js:131
+#: src/blocks/_pro/post-list/edit.js:214
 msgid "Number of Posts"
 msgstr "表示件数"
 
-#: src/blocks/_pro/post-list/edit.js:144
+#: src/blocks/_pro/post-list/edit.js:227
 msgid "Order"
 msgstr "表示順"
 
-#: src/blocks/_pro/post-list/edit.js:153
+#: src/blocks/_pro/post-list/edit.js:236
 msgid "ASC"
 msgstr "昇順"
 
-#: src/blocks/_pro/post-list/edit.js:157
+#: src/blocks/_pro/post-list/edit.js:240
 msgid "DESC"
 msgstr "降順"
 
-#: src/blocks/_pro/post-list/edit.js:163
+#: src/blocks/_pro/post-list/edit.js:246
 msgid "Order by"
 msgstr "表示順"
 
-#: src/blocks/_pro/post-list/edit.js:172
+#: src/blocks/_pro/post-list/edit.js:255
 msgid "Published Date"
 msgstr "公開日"
 
-#: src/blocks/_pro/post-list/edit.js:176
+#: src/blocks/_pro/post-list/edit.js:259
 msgid "Modefied Date"
 msgstr "更新日"
 
-#: src/blocks/_pro/post-list/edit.js:184
+#: src/blocks/_pro/post-list/edit.js:267
 msgid "Random"
 msgstr "ランダム"
 
-#: src/blocks/_pro/post-list/edit.js:190
+#: src/blocks/_pro/post-list/edit.js:273
 msgid "offset"
 msgstr "オフセット数"
-
-#. Filter by %s
-#: src/blocks/_pro/post-list/edit.js:90
-msgid "Filter by %s"
-msgstr "%sで絞り込み"
 
 #: src/blocks/_pro/post-list/index.js:20
 msgid "Post list"
@@ -1586,11 +1586,6 @@ msgstr "画像の線"
 msgid "Staff"
 msgstr "スタッフ"
 
-#. %s is align.
-#: src/components/card-align-control/index.js:24
-msgid "Align %s"
-msgstr "表示位置"
-
 #: src/components/column-layout-control/index.js:20
 msgid "Card (Image Round)"
 msgstr "カード（画像丸抜き）"
@@ -1785,8 +1780,7 @@ msgstr "スティッチ"
 msgid "Border Top Bottom"
 msgstr "直線 上下"
 
-#: src/extensions/core/group/style.js:132
-#: src/extensions/core/image/style.js:31
+#: src/extensions/core/group/style.js:132 src/extensions/core/image/style.js:31
 msgid "Shadow"
 msgstr "シャドウ"
 
@@ -2326,6 +2320,9 @@ msgid ""
 msgstr ""
 "VK-Blocksと競合するため、VK All in One Expansion Unitの Block機能を停止しまし"
 "た。"
+
+#~ msgid "Align %1$s"
+#~ msgstr "%1$sの表示位置"
 
 #~ msgid "Block Template Setting"
 #~ msgstr "ブロックテンプレート設定"

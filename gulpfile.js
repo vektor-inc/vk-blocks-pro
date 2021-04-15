@@ -10,15 +10,15 @@ const rename = require("gulp-rename");
 // js最小化
 const jsmin = require("gulp-jsmin");
 
-gulp.task( 'helper-js', function (done)  {
+gulp.task('helper-js', function (done) {
 	gulp.src('src/blocks/faq2/enque-front.js')
-	.pipe(jsmin())
-	.pipe(rename('vk-faq2.min.js'))
-	.pipe(gulp.dest('./inc/vk-blocks/build/'));
+		.pipe(jsmin())
+		.pipe(rename('vk-faq2.min.js'))
+		.pipe(gulp.dest('./inc/vk-blocks/build/'));
 	done();
 });
 
-gulp.task( 'helper-js-pro', function (done)  {
+gulp.task('helper-js-pro', function (done) {
 	gulp.src('src/blocks/_pro/accordion/enque-front.js')
 		.pipe(jsmin())
 		.pipe(rename('vk-accordion.min.js'))

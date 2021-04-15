@@ -27,5 +27,5 @@ function vkblocks_term_color_taxonomies_custom( $taxonomies ) {
 
 add_action( 'init', 'vkblocks_load_term_color' );
 function vkblocks_load_term_color() {
-	require_once( 'package/class.term-color.php' );
+	require_once dirname( __FILE__ ) . 'package/class.term-color.php';
 }

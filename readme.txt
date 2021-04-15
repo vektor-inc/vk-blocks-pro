@@ -64,7 +64,8 @@ e.g.
 == Changelog ==
 
 = 1.3.1 =
-* [ Bug fix ][ Accordion ] Supports Tree Shaking
+* [ Bug fix ][ Accordion ] Supports Tree Shaking and add Pro Icon
+* [ Bug fix ] Fix relative path to full path
 
 = 1.3.0 =
 * [ Add New Block ][ Accordion ] Add New Accordion Block

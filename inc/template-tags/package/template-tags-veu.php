@@ -133,7 +133,7 @@ if ( ! function_exists( 'veu_is_cta_active' ) ) {
 	}
 }
 
-require_once dirname( __FILE__ ) . 'template-tags-veu-old.php';
+require_once dirname( __FILE__ ) . '/template-tags-veu-old.php';
 
 
 function veu_is_parent_metabox_display() {

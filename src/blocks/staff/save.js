@@ -25,7 +25,7 @@ export default function save({ attributes, className }) {
 		vk_staff_photo_image, // eslint-disable-line camelcase
 		vk_staff_photo_image_alt, // eslint-disable-line camelcase
 		vk_staff_photoBorder, // eslint-disable-line camelcase
-		vk_staff_fontFamily
+		vk_staff_fontFamily,
 	} = attributes;
 
 	const classes = classnames('vk_staff', {
@@ -46,15 +46,12 @@ export default function save({ attributes, className }) {
 			'vk_staff-headingFont-serif'
 		);
 	} else {
-		staffTextClassName = classnames(
-			'vk_staff_text',
-			staffTextClassName,
-		);
+		staffTextClassName = classnames('vk_staff_text', staffTextClassName);
 	}
 
 	return (
 		<div {...useBlockProps.save({ className: classes })}>
-			<div className={ staffTextClassName }>
+			<div className={staffTextClassName}>
 				<RichText.Content
 					tagName="h3"
 					className={'vk_staff_text_name'}

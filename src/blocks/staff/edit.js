@@ -75,10 +75,7 @@ export default function StaffEdit({
 			'vk_staff-headingFont-serif'
 		);
 	} else {
-		staffTextClassName = classnames(
-			'vk_staff_text',
-			staffTextClassName,
-		);
+		staffTextClassName = classnames('vk_staff_text', staffTextClassName);
 	}
 
 	return (

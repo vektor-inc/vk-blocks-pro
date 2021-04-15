@@ -67,16 +67,12 @@ export default function save(props) {
 	let tStyle;
 
 	//containerのマージンを切り替え
-	if (outerMarginBottom) {
+	if (outerMarginBottom !== null && outerMarginBottom !== undefined) {
 		cStyle = { marginBottom: outerMarginBottom + `rem` };
 	}
 
 	//titleのマージンを切り替え
-	if (
-		titleMarginBottom !== null &&
-		titleMarginBottom !== undefined &&
-		titleMarginBottom !== ''
-	) {
+	if (titleMarginBottom !== null && titleMarginBottom !== undefined) {
 		tStyle = {
 			color: titleColor,
 			fontSize: titleSize + 'rem',

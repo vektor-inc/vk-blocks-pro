@@ -12,7 +12,7 @@ if ( ! class_exists( 'Vk_Font_Awesome_Versions' ) ) {
 		global $set_enqueue_handle_style;
 		$set_enqueue_handle_style = 'vkExUnit_common_style';
 
-		require_once dirname( __FILE__ ) . 'package/class-vk-font-awesome-versions.php';
+		require_once dirname( __FILE__ ) . '/package/class-vk-font-awesome-versions.php';
 	}
 
 }

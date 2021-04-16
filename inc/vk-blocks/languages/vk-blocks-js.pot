@@ -3,6 +3,42 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
+#: src/blocks/_pro/accordion-target/index.js:16
+msgid "Accordion Target"
+msgstr ""
+
+#: src/blocks/_pro/accordion-trigger/index.js:16
+msgid "Accordion Trigger"
+msgstr ""
+
+#: src/blocks/_pro/accordion/index.js:17
+msgid "Accordion"
+msgstr ""
+
+#: src/blocks/_pro/accordion/index.js:22
+msgid "No background color"
+msgstr ""
+
+#: src/blocks/_pro/accordion/index.js:27
+msgid "No background color / Border"
+msgstr ""
+
+#: src/blocks/_pro/accordion/index.js:31
+msgid "Background color"
+msgstr ""
+
+#: src/blocks/_pro/accordion/index.js:35
+msgid "Background color / Border"
+msgstr ""
+
+#: src/blocks/_pro/accordion/index.js:39
+msgid "Background color / Rounded "
+msgstr ""
+
+#: src/blocks/_pro/accordion/index.js:43
+msgid "Background color / Rounded / Border"
+msgstr ""
+
 #: src/blocks/_pro/animation/edit.js:104
 msgid "Fast"
 msgstr ""
@@ -146,8 +182,8 @@ msgstr ""
 #: src/blocks/pr-content/deprecated/0.58.7/component.js:171
 #: src/blocks/pr-content/deprecated/0.58.9/component.js:171
 #: src/blocks/pr-content/mediaUpload.js:68
-#: src/blocks/staff/deprecated/component.js:87
-#: src/blocks/staff/edit.js:273
+#: src/blocks/staff/deprecated/0.58/component.js:96
+#: src/blocks/staff/edit.js:305
 #: src/components/advanced-media-upload/index.js:47
 msgid "Select image"
 msgstr ""
@@ -509,7 +545,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:114
 #: src/blocks/_pro/timeline-item/edit.js:95
 #: src/blocks/balloon/edit.js:338
-#: src/blocks/staff/edit.js:103
+#: src/blocks/staff/edit.js:116
 msgid "None"
 msgstr ""
 
@@ -773,8 +809,8 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:110
 #: src/blocks/_pro/table-of-contents-new/edit.js:130
 #: src/blocks/_pro/timeline-item/edit.js:91
-#: src/blocks/heading/edit.js:241
-#: src/blocks/staff/edit.js:99
+#: src/blocks/heading/edit.js:231
+#: src/blocks/staff/edit.js:112
 #: src/extensions/core/heading/style.js:30
 #: src/extensions/core/list/style.js:104
 msgid "Default"
@@ -796,7 +832,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:76
 #: src/blocks/_pro/timeline-item/edit.js:53
 #: src/blocks/border-box/edit.js:48
-#: src/blocks/staff/edit.js:125
+#: src/blocks/staff/edit.js:138
 msgid "Color"
 msgstr ""
 
@@ -859,7 +895,7 @@ msgid "Timeline"
 msgstr ""
 
 #: src/blocks/alert/edit.js:19
-#: src/blocks/heading/edit.js:232
+#: src/blocks/heading/edit.js:222
 msgid "Style Settings"
 msgstr ""
 
@@ -925,7 +961,7 @@ msgid "Balloon setting"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:202
-#: src/blocks/heading/edit.js:347
+#: src/blocks/heading/edit.js:333
 msgid "Position"
 msgstr ""
 
@@ -1164,13 +1200,13 @@ msgid ""
 msgstr ""
 
 #: src/blocks/button/edit.js:262
-#: src/blocks/heading/edit.js:314
+#: src/blocks/heading/edit.js:300
 #: src/blocks/pr-content/edit.js:194
 msgid "Before text"
 msgstr ""
 
 #: src/blocks/button/edit.js:271
-#: src/blocks/heading/edit.js:323
+#: src/blocks/heading/edit.js:309
 #: src/blocks/pr-content/edit.js:206
 msgid "After text"
 msgstr ""
@@ -1300,7 +1336,7 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:152
 #: src/blocks/heading/deprecated/0.40.1/component.js:152
 #: src/blocks/heading/deprecated/0.60.1/component.js:152
-#: src/blocks/heading/edit.js:206
+#: src/blocks/heading/edit.js:196
 msgid "Input sub text…"
 msgstr ""
 
@@ -1314,60 +1350,60 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:137
 #: src/blocks/heading/deprecated/0.40.1/component.js:137
 #: src/blocks/heading/deprecated/0.60.1/component.js:137
-#: src/blocks/heading/edit.js:191
+#: src/blocks/heading/edit.js:181
 msgid "Input title…"
 msgstr ""
 
-#: src/blocks/heading/edit.js:234
+#: src/blocks/heading/edit.js:224
 msgid "Heading style"
 msgstr ""
 
-#: src/blocks/heading/edit.js:245
+#: src/blocks/heading/edit.js:235
 #: src/extensions/core/heading/style.js:35
 msgid "Plain"
 msgstr ""
 
-#: src/blocks/heading/edit.js:251
+#: src/blocks/heading/edit.js:241
 msgid "Margin Setting"
 msgstr ""
 
-#: src/blocks/heading/edit.js:253
-msgid "Margin between Heading and sub text (rem)"
+#: src/blocks/heading/edit.js:243
+msgid "Margin bottom size of after hedding (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:270
+#: src/blocks/heading/edit.js:258
 msgid "Margin bottom size of after this block (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:287
+#: src/blocks/heading/edit.js:273
 msgid "Heading Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:299
+#: src/blocks/heading/edit.js:285
 msgid "Text Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:311
+#: src/blocks/heading/edit.js:297
 msgid "Font Awesome Icon Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:332
+#: src/blocks/heading/edit.js:318
 msgid "Icon Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:345
+#: src/blocks/heading/edit.js:331
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:351
+#: src/blocks/heading/edit.js:337
 msgid "Display"
 msgstr ""
 
-#: src/blocks/heading/edit.js:355
+#: src/blocks/heading/edit.js:341
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/heading/edit.js:363
+#: src/blocks/heading/edit.js:349
 msgid "Text size (rem)"
 msgstr ""
 
@@ -1385,6 +1421,7 @@ msgid "Heading"
 msgstr ""
 
 #: src/blocks/page-content/edit.js:10
+#: src/blocks/staff/edit.js:215
 msgid "Unspecified"
 msgstr ""
 
@@ -1542,57 +1579,69 @@ msgstr ""
 msgid "Responsive Spacer"
 msgstr ""
 
-#: src/blocks/staff/deprecated/component.js:41
-#: src/blocks/staff/edit.js:208
+#: src/blocks/staff/deprecated/0.58/component.js:50
+#: src/blocks/staff/edit.js:240
 msgid "Your Name"
 msgstr ""
 
-#: src/blocks/staff/deprecated/component.js:49
-#: src/blocks/staff/edit.js:218
+#: src/blocks/staff/deprecated/0.58/component.js:58
+#: src/blocks/staff/edit.js:250
 msgid "Caption"
 msgstr ""
 
-#: src/blocks/staff/deprecated/component.js:57
-#: src/blocks/staff/edit.js:228
+#: src/blocks/staff/deprecated/0.58/component.js:66
+#: src/blocks/staff/edit.js:260
 msgid "Role position"
 msgstr ""
 
-#: src/blocks/staff/deprecated/component.js:65
-#: src/blocks/staff/edit.js:238
+#: src/blocks/staff/deprecated/0.58/component.js:74
+#: src/blocks/staff/edit.js:270
 msgid "Profile title"
 msgstr ""
 
-#: src/blocks/staff/deprecated/component.js:73
-#: src/blocks/staff/edit.js:251
+#: src/blocks/staff/deprecated/0.58/component.js:82
+#: src/blocks/staff/edit.js:283
 msgid "Profile text"
 msgstr ""
 
-#: src/blocks/staff/edit.js:108
+#: src/blocks/staff/edit.js:102
+msgid "Image border"
+msgstr ""
+
+#: src/blocks/staff/edit.js:121
 msgid "Alt text"
 msgstr ""
 
-#: src/blocks/staff/edit.js:110
+#: src/blocks/staff/edit.js:123
 msgid "Set the alt text for profile image"
 msgstr ""
 
-#: src/blocks/staff/edit.js:128
+#: src/blocks/staff/edit.js:141
 msgid "Staff name"
 msgstr ""
 
-#: src/blocks/staff/edit.js:141
+#: src/blocks/staff/edit.js:154
 msgid "Name caption"
 msgstr ""
 
-#: src/blocks/staff/edit.js:71
-msgid "Layout"
+#: src/blocks/staff/edit.js:209
+msgid "Heading Font"
+msgstr ""
+
+#: src/blocks/staff/edit.js:211
+msgid "Font"
+msgstr ""
+
+#: src/blocks/staff/edit.js:219
+msgid "minchoBody"
 msgstr ""
 
 #: src/blocks/staff/edit.js:84
-msgid "Image left"
+msgid "Layout"
 msgstr ""
 
-#: src/blocks/staff/edit.js:89
-msgid "Image border"
+#: src/blocks/staff/edit.js:97
+msgid "Image left"
 msgstr ""
 
 #: src/blocks/staff/index.js:33
@@ -1665,7 +1714,7 @@ msgid "Button align"
 msgstr ""
 
 #: src/components/display-items-control/index.js:37
-msgid "Term name"
+msgid "Term's name on Image"
 msgstr ""
 
 #: src/components/display-items-control/index.js:44
@@ -1685,7 +1734,7 @@ msgid "New mark"
 msgstr ""
 
 #: src/components/display-items-control/index.js:70
-msgid "Taxonomies"
+msgid "Taxonomies (all)"
 msgstr ""
 
 #: src/components/display-items-control/index.js:82

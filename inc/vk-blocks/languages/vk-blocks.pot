@@ -2,25 +2,53 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-<<<<<<< HEAD
-"Project-Id-Version: VK Blocks Pro 1.0.16\n"
-=======
-"Project-Id-Version: VK Blocks Pro 1.2.2\n"
->>>>>>> master
+"Project-Id-Version: VK Blocks Pro 1.3.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-<<<<<<< HEAD
-"POT-Creation-Date: 2021-03-31T01:45:10+00:00\n"
-=======
-"POT-Creation-Date: 2021-04-09T10:13:54+02:00\n"
->>>>>>> master
+"POT-Creation-Date: 2021-04-16T05:37:49+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: vk-blocks\n"
+
+#: src/blocks/_pro/accordion-target/index.js:16
+msgid "Accordion Target"
+msgstr ""
+
+#: src/blocks/_pro/accordion-trigger/index.js:16
+msgid "Accordion Trigger"
+msgstr ""
+
+#: src/blocks/_pro/accordion/index.js:17
+msgid "Accordion"
+msgstr ""
+
+#: src/blocks/_pro/accordion/index.js:22
+msgid "No background color"
+msgstr ""
+
+#: src/blocks/_pro/accordion/index.js:27
+msgid "No background color / Border"
+msgstr ""
+
+#: src/blocks/_pro/accordion/index.js:31
+msgid "Background color"
+msgstr ""
+
+#: src/blocks/_pro/accordion/index.js:35
+msgid "Background color / Border"
+msgstr ""
+
+#: src/blocks/_pro/accordion/index.js:39
+msgid "Background color / Rounded "
+msgstr ""
+
+#: src/blocks/_pro/accordion/index.js:43
+msgid "Background color / Rounded / Border"
+msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:104
 msgid "Fast"
@@ -43,8 +71,8 @@ msgstr ""
 #: src/blocks/_pro/slider/edit.js:110
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95
-#: src/blocks/faq2/index.js:22
 #: src/blocks/faq/index.js:27
+#: src/blocks/faq2/index.js:22
 msgid "Normal"
 msgstr ""
 
@@ -139,7 +167,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/edit.js:182
 #: src/blocks/_pro/card/edit.js:121
 #: src/blocks/_pro/icon-card/edit.js:72
-#: src/blocks/_pro/post-list/edit.js:180
+#: src/blocks/_pro/post-list/edit.js:263
 msgid "Title"
 msgstr ""
 
@@ -163,8 +191,8 @@ msgstr ""
 #: src/blocks/pr-content/deprecated/0.58.7/component.js:171
 #: src/blocks/pr-content/deprecated/0.58.9/component.js:171
 #: src/blocks/pr-content/mediaUpload.js:68
-#: src/blocks/staff/deprecated/component.js:87
-#: src/blocks/staff/edit.js:273
+#: src/blocks/staff/deprecated/0.58/component.js:96
+#: src/blocks/staff/edit.js:305
 #: src/components/advanced-media-upload/index.js:47
 msgid "Select image"
 msgstr ""
@@ -251,7 +279,7 @@ msgid "Current page"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:63
-#: src/blocks/_pro/post-list/edit.js:114
+#: src/blocks/_pro/post-list/edit.js:196
 msgid "Display conditions"
 msgstr ""
 
@@ -260,7 +288,7 @@ msgid "Parent"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:82
-#: src/blocks/_pro/post-list/edit.js:204
+#: src/blocks/_pro/post-list/edit.js:287
 msgid "Ignore this post"
 msgstr ""
 
@@ -521,7 +549,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:114
 #: src/blocks/_pro/timeline-item/edit.js:95
 #: src/blocks/balloon/edit.js:338
-#: src/blocks/staff/edit.js:103
+#: src/blocks/staff/edit.js:116
 msgid "None"
 msgstr ""
 
@@ -620,49 +648,49 @@ msgstr ""
 msgid "Outer"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:118
+#. Filter by %s
+#: src/blocks/_pro/post-list/edit.js:173
+msgid "Filter by %s"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:200
 msgid "Filter by PostTypes"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:131
+#: src/blocks/_pro/post-list/edit.js:214
 msgid "Number of Posts"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:144
+#: src/blocks/_pro/post-list/edit.js:227
 msgid "Order"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:153
+#: src/blocks/_pro/post-list/edit.js:236
 msgid "ASC"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:157
+#: src/blocks/_pro/post-list/edit.js:240
 msgid "DESC"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:163
+#: src/blocks/_pro/post-list/edit.js:246
 msgid "Order by"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:172
+#: src/blocks/_pro/post-list/edit.js:255
 msgid "Published Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:176
+#: src/blocks/_pro/post-list/edit.js:259
 msgid "Modefied Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:184
+#: src/blocks/_pro/post-list/edit.js:267
 msgid "Random"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:190
+#: src/blocks/_pro/post-list/edit.js:273
 msgid "offset"
-msgstr ""
-
-#. Filter by %s
-#: src/blocks/_pro/post-list/edit.js:90
-msgid "Filter by %s"
 msgstr ""
 
 #: src/blocks/_pro/post-list/index.js:20
@@ -785,8 +813,8 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:110
 #: src/blocks/_pro/table-of-contents-new/edit.js:130
 #: src/blocks/_pro/timeline-item/edit.js:91
-#: src/blocks/heading/edit.js:233
-#: src/blocks/staff/edit.js:99
+#: src/blocks/heading/edit.js:231
+#: src/blocks/staff/edit.js:112
 #: src/extensions/core/heading/style.js:30
 #: src/extensions/core/list/style.js:104
 msgid "Default"
@@ -808,7 +836,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:76
 #: src/blocks/_pro/timeline-item/edit.js:53
 #: src/blocks/border-box/edit.js:48
-#: src/blocks/staff/edit.js:125
+#: src/blocks/staff/edit.js:138
 #: inc/term-color/package/class.term-color.php:41
 #: inc/term-color/package/class.term-color.php:56
 #: inc/term-color/package/class.term-color.php:130
@@ -874,7 +902,7 @@ msgid "Timeline"
 msgstr ""
 
 #: src/blocks/alert/edit.js:19
-#: src/blocks/heading/edit.js:224
+#: src/blocks/heading/edit.js:222
 msgid "Style Settings"
 msgstr ""
 
@@ -940,7 +968,7 @@ msgid "Balloon setting"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:202
-#: src/blocks/heading/edit.js:339
+#: src/blocks/heading/edit.js:333
 msgid "Position"
 msgstr ""
 
@@ -1177,13 +1205,13 @@ msgid "This custom color overrides the default color. If you want to use the def
 msgstr ""
 
 #: src/blocks/button/edit.js:262
-#: src/blocks/heading/edit.js:306
+#: src/blocks/heading/edit.js:300
 #: src/blocks/pr-content/edit.js:194
 msgid "Before text"
 msgstr ""
 
 #: src/blocks/button/edit.js:271
-#: src/blocks/heading/edit.js:315
+#: src/blocks/heading/edit.js:309
 #: src/blocks/pr-content/edit.js:206
 msgid "After text"
 msgstr ""
@@ -1212,61 +1240,19 @@ msgstr ""
 msgid "Large"
 msgstr ""
 
-#: src/blocks/faq2-a/index.js:17
-msgid "FAQ Answer"
-msgstr ""
-
-#: src/blocks/faq2-q/index.js:17
-msgid "FAQ Question"
-msgstr ""
-
-#: src/blocks/faq2/edit.js:17
 #: src/blocks/faq/edit.js:14
+#: src/blocks/faq2/edit.js:17
 msgid "If you want to be collapsing this block, you can set it at Setting > VK Blocks"
 msgstr ""
 
-#: src/blocks/faq2/edit.js:22
 #: src/blocks/faq/edit.js:19
+#: src/blocks/faq2/edit.js:22
 msgid "You can be collapsing this block at VK Blocks Pro"
 msgstr ""
 
-#: src/blocks/faq2/edit.js:31
 #: src/blocks/faq/edit.js:34
+#: src/blocks/faq2/edit.js:31
 msgid "Accordion Setting"
-msgstr ""
-
-#: src/blocks/faq2/index.js:17
-msgid "New FAQ"
-msgstr ""
-
-#: src/blocks/faq2/index.js:27
-#: src/blocks/faq/index.js:32
-msgid "Bgfill Circle"
-msgstr ""
-
-#: src/blocks/faq2/index.js:31
-#: src/blocks/faq/index.js:36
-msgid "Bgfill Square"
-msgstr ""
-
-#: src/blocks/faq2/index.js:35
-#: src/blocks/faq/index.js:40
-msgid "Bgfill Rounded"
-msgstr ""
-
-#: src/blocks/faq2/index.js:39
-#: src/blocks/faq/index.js:44
-msgid "Border Circle"
-msgstr ""
-
-#: src/blocks/faq2/index.js:43
-#: src/blocks/faq/index.js:48
-msgid "Border Square"
-msgstr ""
-
-#: src/blocks/faq2/index.js:47
-#: src/blocks/faq/index.js:52
-msgid "Border Rounded"
 msgstr ""
 
 #: src/blocks/faq/edit.js:44
@@ -1275,6 +1261,48 @@ msgstr ""
 
 #: src/blocks/faq/index.js:22
 msgid "Classic FAQ"
+msgstr ""
+
+#: src/blocks/faq/index.js:32
+#: src/blocks/faq2/index.js:27
+msgid "Bgfill Circle"
+msgstr ""
+
+#: src/blocks/faq/index.js:36
+#: src/blocks/faq2/index.js:31
+msgid "Bgfill Square"
+msgstr ""
+
+#: src/blocks/faq/index.js:40
+#: src/blocks/faq2/index.js:35
+msgid "Bgfill Rounded"
+msgstr ""
+
+#: src/blocks/faq/index.js:44
+#: src/blocks/faq2/index.js:39
+msgid "Border Circle"
+msgstr ""
+
+#: src/blocks/faq/index.js:48
+#: src/blocks/faq2/index.js:43
+msgid "Border Square"
+msgstr ""
+
+#: src/blocks/faq/index.js:52
+#: src/blocks/faq2/index.js:47
+msgid "Border Rounded"
+msgstr ""
+
+#: src/blocks/faq2-a/index.js:17
+msgid "FAQ Answer"
+msgstr ""
+
+#: src/blocks/faq2-q/index.js:17
+msgid "FAQ Question"
+msgstr ""
+
+#: src/blocks/faq2/index.js:17
+msgid "New FAQ"
 msgstr ""
 
 #: src/blocks/flow/edit.js:20
@@ -1311,7 +1339,7 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:152
 #: src/blocks/heading/deprecated/0.40.1/component.js:152
 #: src/blocks/heading/deprecated/0.60.1/component.js:152
-#: src/blocks/heading/edit.js:198
+#: src/blocks/heading/edit.js:196
 msgid "Input sub text…"
 msgstr ""
 
@@ -1325,60 +1353,60 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:137
 #: src/blocks/heading/deprecated/0.40.1/component.js:137
 #: src/blocks/heading/deprecated/0.60.1/component.js:137
-#: src/blocks/heading/edit.js:183
+#: src/blocks/heading/edit.js:181
 msgid "Input title…"
 msgstr ""
 
-#: src/blocks/heading/edit.js:226
+#: src/blocks/heading/edit.js:224
 msgid "Heading style"
 msgstr ""
 
-#: src/blocks/heading/edit.js:237
+#: src/blocks/heading/edit.js:235
 #: src/extensions/core/heading/style.js:35
 msgid "Plain"
 msgstr ""
 
-#: src/blocks/heading/edit.js:243
+#: src/blocks/heading/edit.js:241
 msgid "Margin Setting"
 msgstr ""
 
-#: src/blocks/heading/edit.js:245
-msgid "Margin between Heading and sub text (rem)"
+#: src/blocks/heading/edit.js:243
+msgid "Margin bottom size of after hedding (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:262
+#: src/blocks/heading/edit.js:258
 msgid "Margin bottom size of after this block (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:279
+#: src/blocks/heading/edit.js:273
 msgid "Heading Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:291
+#: src/blocks/heading/edit.js:285
 msgid "Text Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:303
+#: src/blocks/heading/edit.js:297
 msgid "Font Awesome Icon Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:324
+#: src/blocks/heading/edit.js:318
 msgid "Icon Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:337
+#: src/blocks/heading/edit.js:331
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:343
+#: src/blocks/heading/edit.js:337
 msgid "Display"
 msgstr ""
 
-#: src/blocks/heading/edit.js:347
+#: src/blocks/heading/edit.js:341
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/heading/edit.js:355
+#: src/blocks/heading/edit.js:349
 msgid "Text size (rem)"
 msgstr ""
 
@@ -1396,6 +1424,7 @@ msgid "Heading"
 msgstr ""
 
 #: src/blocks/page-content/edit.js:10
+#: src/blocks/staff/edit.js:215
 msgid "Unspecified"
 msgstr ""
 
@@ -1553,57 +1582,69 @@ msgstr ""
 msgid "Responsive Spacer"
 msgstr ""
 
-#: src/blocks/staff/deprecated/component.js:41
-#: src/blocks/staff/edit.js:208
+#: src/blocks/staff/deprecated/0.58/component.js:50
+#: src/blocks/staff/edit.js:240
 msgid "Your Name"
 msgstr ""
 
-#: src/blocks/staff/deprecated/component.js:49
-#: src/blocks/staff/edit.js:218
+#: src/blocks/staff/deprecated/0.58/component.js:58
+#: src/blocks/staff/edit.js:250
 msgid "Caption"
 msgstr ""
 
-#: src/blocks/staff/deprecated/component.js:57
-#: src/blocks/staff/edit.js:228
+#: src/blocks/staff/deprecated/0.58/component.js:66
+#: src/blocks/staff/edit.js:260
 msgid "Role position"
 msgstr ""
 
-#: src/blocks/staff/deprecated/component.js:65
-#: src/blocks/staff/edit.js:238
+#: src/blocks/staff/deprecated/0.58/component.js:74
+#: src/blocks/staff/edit.js:270
 msgid "Profile title"
 msgstr ""
 
-#: src/blocks/staff/deprecated/component.js:73
-#: src/blocks/staff/edit.js:251
+#: src/blocks/staff/deprecated/0.58/component.js:82
+#: src/blocks/staff/edit.js:283
 msgid "Profile text"
 msgstr ""
 
-#: src/blocks/staff/edit.js:108
+#: src/blocks/staff/edit.js:102
+msgid "Image border"
+msgstr ""
+
+#: src/blocks/staff/edit.js:121
 msgid "Alt text"
 msgstr ""
 
-#: src/blocks/staff/edit.js:110
+#: src/blocks/staff/edit.js:123
 msgid "Set the alt text for profile image"
 msgstr ""
 
-#: src/blocks/staff/edit.js:128
+#: src/blocks/staff/edit.js:141
 msgid "Staff name"
 msgstr ""
 
-#: src/blocks/staff/edit.js:141
+#: src/blocks/staff/edit.js:154
 msgid "Name caption"
 msgstr ""
 
-#: src/blocks/staff/edit.js:71
-msgid "Layout"
+#: src/blocks/staff/edit.js:209
+msgid "Heading Font"
+msgstr ""
+
+#: src/blocks/staff/edit.js:211
+msgid "Font"
+msgstr ""
+
+#: src/blocks/staff/edit.js:219
+msgid "minchoBody"
 msgstr ""
 
 #: src/blocks/staff/edit.js:84
-msgid "Image left"
+msgid "Layout"
 msgstr ""
 
-#: src/blocks/staff/edit.js:89
-msgid "Image border"
+#: src/blocks/staff/edit.js:97
+msgid "Image left"
 msgstr ""
 
 #: src/blocks/staff/index.js:33
@@ -1677,7 +1718,7 @@ msgid "Button align"
 msgstr ""
 
 #: src/components/display-items-control/index.js:37
-msgid "Term name"
+msgid "Term's name on Image"
 msgstr ""
 
 #: src/components/display-items-control/index.js:44
@@ -1697,7 +1738,7 @@ msgid "New mark"
 msgstr ""
 
 #: src/components/display-items-control/index.js:70
-msgid "Taxonomies"
+msgid "Taxonomies (all)"
 msgstr ""
 
 #: src/components/display-items-control/index.js:82
@@ -2272,11 +2313,11 @@ msgstr ""
 msgid "No Post is selected"
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:236
+#: inc/vk-blocks/vk-blocks-functions.php:239
 msgid "Blocks"
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:246
+#: inc/vk-blocks/vk-blocks-functions.php:249
 msgid "Blocks Layout"
 msgstr ""
 

@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2021-04-13T07:01:44+00:00\n"
-"PO-Revision-Date: 2021-04-13 16:01+0900\n"
+"POT-Creation-Date: 2021-04-16T08:24:19+00:00\n"
+"PO-Revision-Date: 2021-04-16 17:26+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.1\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-Basepath: ../../..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -171,7 +171,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:206
 #: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:210
 #: src/blocks/_pro/card-item/edit.js:182 src/blocks/_pro/card/edit.js:121
-#: src/blocks/_pro/icon-card/edit.js:72 src/blocks/_pro/post-list/edit.js:180
+#: src/blocks/_pro/icon-card/edit.js:72 src/blocks/_pro/post-list/edit.js:263
 msgid "Title"
 msgstr "タイトルを入力"
 
@@ -193,7 +193,8 @@ msgstr "タイトルを入力"
 #: src/blocks/pr-content/deprecated/0.58.7/component.js:171
 #: src/blocks/pr-content/deprecated/0.58.9/component.js:171
 #: src/blocks/pr-content/mediaUpload.js:68
-#: src/blocks/staff/deprecated/component.js:87 src/blocks/staff/edit.js:273
+#: src/blocks/staff/deprecated/0.58/component.js:96
+#: src/blocks/staff/edit.js:305
 #: src/components/advanced-media-upload/index.js:47
 msgid "Select image"
 msgstr "画像を選択"
@@ -281,7 +282,7 @@ msgstr "カード"
 msgid "Current page"
 msgstr "現在のページ"
 
-#: src/blocks/_pro/child-page/edit.js:63 src/blocks/_pro/post-list/edit.js:114
+#: src/blocks/_pro/child-page/edit.js:63 src/blocks/_pro/post-list/edit.js:196
 msgid "Display conditions"
 msgstr "表示条件"
 
@@ -289,7 +290,7 @@ msgstr "表示条件"
 msgid "Parent"
 msgstr "親ページ"
 
-#: src/blocks/_pro/child-page/edit.js:82 src/blocks/_pro/post-list/edit.js:204
+#: src/blocks/_pro/child-page/edit.js:82 src/blocks/_pro/post-list/edit.js:287
 msgid "Ignore this post"
 msgstr "この投稿を除く"
 
@@ -535,7 +536,7 @@ msgstr "枠線の種類"
 
 #: src/blocks/_pro/outer/edit.js:485 src/blocks/_pro/step-item/edit.js:114
 #: src/blocks/_pro/timeline-item/edit.js:95 src/blocks/balloon/edit.js:338
-#: src/blocks/staff/edit.js:103
+#: src/blocks/staff/edit.js:116
 msgid "None"
 msgstr "なし"
 
@@ -629,50 +630,50 @@ msgstr "vw"
 msgid "Outer"
 msgstr "Outer"
 
-#: src/blocks/_pro/post-list/edit.js:118
+#. Filter by %s
+#: src/blocks/_pro/post-list/edit.js:173
+msgid "Filter by %s"
+msgstr "%sで絞り込み"
+
+#: src/blocks/_pro/post-list/edit.js:200
 msgid "Filter by PostTypes"
 msgstr "投稿タイプ"
 
-#: src/blocks/_pro/post-list/edit.js:131
+#: src/blocks/_pro/post-list/edit.js:214
 msgid "Number of Posts"
 msgstr "表示件数"
 
-#: src/blocks/_pro/post-list/edit.js:144
+#: src/blocks/_pro/post-list/edit.js:227
 msgid "Order"
 msgstr "表示順"
 
-#: src/blocks/_pro/post-list/edit.js:153
+#: src/blocks/_pro/post-list/edit.js:236
 msgid "ASC"
 msgstr "昇順"
 
-#: src/blocks/_pro/post-list/edit.js:157
+#: src/blocks/_pro/post-list/edit.js:240
 msgid "DESC"
 msgstr "降順"
 
-#: src/blocks/_pro/post-list/edit.js:163
+#: src/blocks/_pro/post-list/edit.js:246
 msgid "Order by"
 msgstr "表示順"
 
-#: src/blocks/_pro/post-list/edit.js:172
+#: src/blocks/_pro/post-list/edit.js:255
 msgid "Published Date"
 msgstr "公開日"
 
-#: src/blocks/_pro/post-list/edit.js:176
+#: src/blocks/_pro/post-list/edit.js:259
 msgid "Modefied Date"
 msgstr "更新日"
 
-#: src/blocks/_pro/post-list/edit.js:184
+#: src/blocks/_pro/post-list/edit.js:267
 msgid "Random"
 msgstr "ランダム"
 
-#: src/blocks/_pro/post-list/edit.js:190
+#: src/blocks/_pro/post-list/edit.js:273
 msgid "offset"
 msgstr "オフセット数"
-
-#. Filter by %s
-#: src/blocks/_pro/post-list/edit.js:90
-msgid "Filter by %s"
-msgstr "%sで絞り込み"
 
 #: src/blocks/_pro/post-list/index.js:20
 msgid "Post list"
@@ -793,8 +794,8 @@ msgstr "スライダーは編集画面では動きません。公開画面でプ
 
 #: src/blocks/_pro/step-item/edit.js:110
 #: src/blocks/_pro/table-of-contents-new/edit.js:130
-#: src/blocks/_pro/timeline-item/edit.js:91 src/blocks/heading/edit.js:231
-#: src/blocks/staff/edit.js:99 src/extensions/core/heading/style.js:30
+#: src/blocks/_pro/timeline-item/edit.js:91 src/blocks/heading/edit.js:241
+#: src/blocks/staff/edit.js:112 src/extensions/core/heading/style.js:30
 #: src/extensions/core/list/style.js:104
 msgid "Default"
 msgstr "標準"
@@ -814,7 +815,7 @@ msgstr "例) 午前 6:00"
 
 #: src/blocks/_pro/step-item/edit.js:76
 #: src/blocks/_pro/timeline-item/edit.js:53 src/blocks/border-box/edit.js:48
-#: src/blocks/staff/edit.js:125 inc/term-color/package/class.term-color.php:41
+#: src/blocks/staff/edit.js:138 inc/term-color/package/class.term-color.php:41
 #: inc/term-color/package/class.term-color.php:56
 #: inc/term-color/package/class.term-color.php:130
 msgid "Color"
@@ -878,7 +879,7 @@ msgstr "タイムライン要素"
 msgid "Timeline"
 msgstr "タイムライン"
 
-#: src/blocks/alert/edit.js:19 src/blocks/heading/edit.js:222
+#: src/blocks/alert/edit.js:19 src/blocks/heading/edit.js:232
 msgid "Style Settings"
 msgstr "スタイル設定"
 
@@ -934,7 +935,7 @@ msgstr "吹き出しに枠線を追加する"
 msgid "Balloon setting"
 msgstr "吹き出しブロック設定"
 
-#: src/blocks/balloon/edit.js:202 src/blocks/heading/edit.js:333
+#: src/blocks/balloon/edit.js:202 src/blocks/heading/edit.js:347
 msgid "Position"
 msgstr "位置"
 
@@ -1166,12 +1167,12 @@ msgstr ""
 "このカスタムカラーはデフォルトのカラーを上書きします。 デフォルトの色を使用し"
 "たい場合は、クリアボタンをクリックしてください。"
 
-#: src/blocks/button/edit.js:262 src/blocks/heading/edit.js:300
+#: src/blocks/button/edit.js:262 src/blocks/heading/edit.js:314
 #: src/blocks/pr-content/edit.js:194
 msgid "Before text"
 msgstr "文字の前"
 
-#: src/blocks/button/edit.js:271 src/blocks/heading/edit.js:309
+#: src/blocks/button/edit.js:271 src/blocks/heading/edit.js:323
 #: src/blocks/pr-content/edit.js:206
 msgid "After text"
 msgstr "文字の後"
@@ -1292,7 +1293,7 @@ msgstr "フロー"
 #: src/blocks/heading/deprecated/0.40.0/component.js:152
 #: src/blocks/heading/deprecated/0.40.1/component.js:152
 #: src/blocks/heading/deprecated/0.60.1/component.js:152
-#: src/blocks/heading/edit.js:196
+#: src/blocks/heading/edit.js:206
 msgid "Input sub text…"
 msgstr "サブテキストを入力"
 
@@ -1306,59 +1307,59 @@ msgstr "サブテキストを入力"
 #: src/blocks/heading/deprecated/0.40.0/component.js:137
 #: src/blocks/heading/deprecated/0.40.1/component.js:137
 #: src/blocks/heading/deprecated/0.60.1/component.js:137
-#: src/blocks/heading/edit.js:181
+#: src/blocks/heading/edit.js:191
 msgid "Input title…"
 msgstr "タイトルを入力"
 
-#: src/blocks/heading/edit.js:224
+#: src/blocks/heading/edit.js:234
 msgid "Heading style"
 msgstr "見出しスタイル"
 
-#: src/blocks/heading/edit.js:235 src/extensions/core/heading/style.js:35
+#: src/blocks/heading/edit.js:245 src/extensions/core/heading/style.js:35
 msgid "Plain"
 msgstr "装飾無し"
 
-#: src/blocks/heading/edit.js:241
+#: src/blocks/heading/edit.js:251
 msgid "Margin Setting"
 msgstr "余白設定"
 
-#: src/blocks/heading/edit.js:243
-msgid "Margin bottom size of after hedding (rem)"
-msgstr "見出し下部の余白サイズ ( rem )"
+#: src/blocks/heading/edit.js:253
+msgid "Margin between Heading and sub text (rem)"
+msgstr ""
 
-#: src/blocks/heading/edit.js:258
+#: src/blocks/heading/edit.js:270
 msgid "Margin bottom size of after this block (rem)"
 msgstr "このブロック全体の下部の余白 (rem)"
 
-#: src/blocks/heading/edit.js:273
+#: src/blocks/heading/edit.js:287
 msgid "Heading Settings"
 msgstr "見出し設定"
 
-#: src/blocks/heading/edit.js:285
+#: src/blocks/heading/edit.js:299
 msgid "Text Color"
 msgstr "文字の色"
 
-#: src/blocks/heading/edit.js:297
+#: src/blocks/heading/edit.js:311
 msgid "Font Awesome Icon Settings"
 msgstr "Font Awesome アイコン設定"
 
-#: src/blocks/heading/edit.js:318
+#: src/blocks/heading/edit.js:332
 msgid "Icon Color"
 msgstr "アイコンの色"
 
-#: src/blocks/heading/edit.js:331
+#: src/blocks/heading/edit.js:345
 msgid "Sub Text Settings"
 msgstr "サブテキスト設定"
 
-#: src/blocks/heading/edit.js:337
+#: src/blocks/heading/edit.js:351
 msgid "Display"
 msgstr "表示"
 
-#: src/blocks/heading/edit.js:341
+#: src/blocks/heading/edit.js:355
 msgid "Hide"
 msgstr "非表示"
 
-#: src/blocks/heading/edit.js:349
+#: src/blocks/heading/edit.js:363
 msgid "Text size (rem)"
 msgstr "文字サイズ (rem)"
 
@@ -1376,7 +1377,7 @@ msgstr "見出し %d"
 msgid "Heading"
 msgstr "見出し"
 
-#: src/blocks/page-content/edit.js:10
+#: src/blocks/page-content/edit.js:10 src/blocks/staff/edit.js:215
 msgid "Unspecified"
 msgstr "未指定"
 
@@ -1534,57 +1535,50 @@ msgstr "デバイス毎の高さ"
 msgid "Responsive Spacer"
 msgstr "レスポンシブスペーサー"
 
-#: src/blocks/staff/deprecated/component.js:41 src/blocks/staff/edit.js:208
+#: src/blocks/staff/deprecated/0.58/component.js:50
+#: src/blocks/staff/edit.js:240
 msgid "Your Name"
 msgstr "名前"
 
-#: src/blocks/staff/deprecated/component.js:49 src/blocks/staff/edit.js:218
+#: src/blocks/staff/deprecated/0.58/component.js:58
+#: src/blocks/staff/edit.js:250
 msgid "Caption"
 msgstr "キャプション"
 
-#: src/blocks/staff/deprecated/component.js:57 src/blocks/staff/edit.js:228
+#: src/blocks/staff/deprecated/0.58/component.js:66
+#: src/blocks/staff/edit.js:260
 msgid "Role position"
 msgstr "役職"
 
-#: src/blocks/staff/deprecated/component.js:65 src/blocks/staff/edit.js:238
+#: src/blocks/staff/deprecated/0.58/component.js:74
+#: src/blocks/staff/edit.js:270
 msgid "Profile title"
 msgstr "プロフィールタイトル"
 
-#: src/blocks/staff/deprecated/component.js:73 src/blocks/staff/edit.js:251
+#: src/blocks/staff/deprecated/0.58/component.js:82
+#: src/blocks/staff/edit.js:283
 msgid "Profile text"
 msgstr "プロフィールテキスト"
 
-#: src/blocks/staff/edit.js:108
-msgid "Alt text"
-msgstr "画像の代替テキスト"
-
-#: src/blocks/staff/edit.js:110
-msgid "Set the alt text for profile image"
-msgstr "プロフィール画像の代替テキストを設定します"
-
-#: src/blocks/staff/edit.js:128
-msgid "Staff name"
-msgstr "名前"
-
-#: src/blocks/staff/edit.js:141
-msgid "Name caption"
-msgstr "名前のキャプション"
-
-#: src/blocks/staff/edit.js:71
-msgid "Layout"
-msgstr "レイアウト"
-
-#: src/blocks/staff/edit.js:84
-msgid "Image left"
-msgstr "画像 左"
-
-#: src/blocks/staff/edit.js:89
+#: src/blocks/staff/edit.js:102
 msgid "Image border"
 msgstr "画像の線"
 
-#: src/blocks/staff/index.js:33
-msgid "Staff"
-msgstr "スタッフ"
+#: src/blocks/staff/edit.js:121
+msgid "Alt text"
+msgstr "画像の代替テキスト"
+
+#: src/blocks/staff/edit.js:123
+msgid "Set the alt text for profile image"
+msgstr "プロフィール画像の代替テキストを設定します"
+
+#: src/blocks/staff/edit.js:141
+msgid "Staff name"
+msgstr "名前"
+
+#: src/blocks/staff/edit.js:154
+msgid "Name caption"
+msgstr "名前のキャプション"
 
 #: src/blocks/staff/edit.js:209
 msgid "Heading Font"
@@ -1594,13 +1588,21 @@ msgstr "見出しのフォント"
 msgid "Font"
 msgstr "フォント"
 
-#: src/blocks/staff/edit.js:215
-msgid "Unspecified"
-msgstr "指定しない"
-
-#: src/blocks/staff/edit.js:211
+#: src/blocks/staff/edit.js:219
 msgid "minchoBody"
 msgstr "明朝体にする"
+
+#: src/blocks/staff/edit.js:84
+msgid "Layout"
+msgstr "レイアウト"
+
+#: src/blocks/staff/edit.js:97
+msgid "Image left"
+msgstr "画像 左"
+
+#: src/blocks/staff/index.js:33
+msgid "Staff"
+msgstr "スタッフ"
 
 #. %s is align.
 #: src/components/card-align-control/index.js:24
@@ -1801,8 +1803,7 @@ msgstr "スティッチ"
 msgid "Border Top Bottom"
 msgstr "直線 上下"
 
-#: src/extensions/core/group/style.js:132
-#: src/extensions/core/image/style.js:31
+#: src/extensions/core/group/style.js:132 src/extensions/core/image/style.js:31
 msgid "Shadow"
 msgstr "シャドウ"
 
@@ -2342,6 +2343,9 @@ msgid ""
 msgstr ""
 "VK-Blocksと競合するため、VK All in One Expansion Unitの Block機能を停止しまし"
 "た。"
+
+#~ msgid "Margin bottom size of after hedding (rem)"
+#~ msgstr "見出し下部の余白サイズ ( rem )"
 
 #~ msgid "Block Template Setting"
 #~ msgstr "ブロックテンプレート設定"

@@ -64,7 +64,7 @@ e.g.
 == Changelog ==
 
 
-* [ Bug fix ][ Button ] Fix width of 'Wide' on editor.
+* [ Bug fix ][ Button ] Fix Button width of 'Wide' on editor.
 * [ Bug fix / Specification Change ][ Staff ] Add font selector of heading, mintyo or not.
 
 = 1.3.1 =

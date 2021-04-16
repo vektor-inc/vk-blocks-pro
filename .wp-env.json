@@ -2,9 +2,5 @@
     "core": null,
     "plugins": [
         "."
-	],
-    "themes": [
-        "../lightning",
-        "../lightning-pro"
-    ]
+	]
 }

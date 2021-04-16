@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-16T01:57:43+00:00\n"
+"POT-Creation-Date: 2021-04-16T02:45:08+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: vk-blocks\n"
@@ -191,7 +191,7 @@ msgstr ""
 #: src/blocks/pr-content/deprecated/0.58.7/component.js:171
 #: src/blocks/pr-content/deprecated/0.58.9/component.js:171
 #: src/blocks/pr-content/mediaUpload.js:68
-#: src/blocks/staff/deprecated/component.js:96
+#: src/blocks/staff/deprecated/0.58/component.js:96
 #: src/blocks/staff/edit.js:305
 #: src/components/advanced-media-upload/index.js:47
 msgid "Select image"
@@ -1582,27 +1582,27 @@ msgstr ""
 msgid "Responsive Spacer"
 msgstr ""
 
-#: src/blocks/staff/deprecated/component.js:50
+#: src/blocks/staff/deprecated/0.58/component.js:50
 #: src/blocks/staff/edit.js:240
 msgid "Your Name"
 msgstr ""
 
-#: src/blocks/staff/deprecated/component.js:58
+#: src/blocks/staff/deprecated/0.58/component.js:58
 #: src/blocks/staff/edit.js:250
 msgid "Caption"
 msgstr ""
 
-#: src/blocks/staff/deprecated/component.js:66
+#: src/blocks/staff/deprecated/0.58/component.js:66
 #: src/blocks/staff/edit.js:260
 msgid "Role position"
 msgstr ""
 
-#: src/blocks/staff/deprecated/component.js:74
+#: src/blocks/staff/deprecated/0.58/component.js:74
 #: src/blocks/staff/edit.js:270
 msgid "Profile title"
 msgstr ""
 
-#: src/blocks/staff/deprecated/component.js:82
+#: src/blocks/staff/deprecated/0.58/component.js:82
 #: src/blocks/staff/edit.js:283
 msgid "Profile text"
 msgstr ""

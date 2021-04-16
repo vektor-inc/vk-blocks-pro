@@ -40,8 +40,6 @@ const vkblocksPro = [
 	iconCardItem,
 	outer,
 	postList,
-	step,
-	stepItem,
 	selectPostList,
 	selectPostListItem,
 	step,

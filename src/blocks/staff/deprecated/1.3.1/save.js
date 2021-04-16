@@ -1,4 +1,4 @@
-import { NewComponent } from "../component";
+import { NewComponent } from "./../component";
 
 export default function save({ attributes }) {
     return (

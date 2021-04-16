@@ -63,6 +63,10 @@
         "vk_staff_photoBorder": {
             "type": "string",
             "default": "default"
+        },
+        "vk_staff_fontFamily": {
+            "type": "string",
+            "default": "0"
         }
-	}
+    }
 }

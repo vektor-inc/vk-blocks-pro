@@ -1586,6 +1586,22 @@ msgstr "画像の線"
 msgid "Staff"
 msgstr "スタッフ"
 
+#: src/blocks/staff/edit.js:209
+msgid "Heading Font"
+msgstr "見出しのフォント"
+
+#: src/blocks/staff/edit.js:211
+msgid "Font"
+msgstr "フォント"
+
+#: src/blocks/staff/edit.js:215
+msgid "Unspecified"
+msgstr "指定しない"
+
+#: src/blocks/staff/edit.js:211
+msgid "minchoBody"
+msgstr "明朝体にする"
+
 #. %s is align.
 #: src/components/card-align-control/index.js:24
 msgid "Align %s"

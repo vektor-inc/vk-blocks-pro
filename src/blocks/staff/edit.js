@@ -206,13 +206,13 @@ export default function StaffEdit({
 						/>
 					</BaseControl>
 				</PanelBody>
-				<PanelBody title={__('Font', 'vk-blocks')}>
+				<PanelBody title={__('Heading Font', 'vk-blocks')}>
 					<RadioControl
-						label={__('Default Font:', 'vk-blocks')}
+						label={__('Font', 'vk-blocks')}
 						selected={vk_staff_fontFamily}
 						options={[
 							{
-								label: __('Default', 'vk-blocks'),
+								label: __('Unspecified', 'vk-blocks'),
 								value: '0',
 							},
 							{

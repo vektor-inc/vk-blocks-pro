@@ -63,7 +63,7 @@ e.g.
 
 == Changelog ==
 
-
+* [ Bug fix ][ Heading Extention ] Fix editor css is not reflected.
 * [ Bug fix ][ Button ] Fix Button width of 'Wide' on editor.
 * [ Bug fix / Specification Change ][ Staff ] Add font selector of heading, mintyo or not.
 

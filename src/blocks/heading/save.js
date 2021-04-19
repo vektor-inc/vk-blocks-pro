@@ -69,8 +69,7 @@ export default function save(props) {
 	//containerのマージンを切り替え
 	if (
 		outerMarginBottom !== null &&
-		outerMarginBottom !== undefined &&
-		outerMarginBottom !== ''
+		outerMarginBottom !== undefined
 	) {
 		cStyle = { marginBottom: outerMarginBottom + `rem` };
 	}
@@ -78,8 +77,7 @@ export default function save(props) {
 	//titleのマージンを切り替え
 	if (
 		titleMarginBottom !== null &&
-		titleMarginBottom !== undefined &&
-		titleMarginBottom !== ''
+		titleMarginBottom !== undefined
 	) {
 		tStyle = {
 			color: titleColor,

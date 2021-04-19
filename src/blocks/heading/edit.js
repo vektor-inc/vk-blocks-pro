@@ -114,8 +114,7 @@ export default function HeaddingEdit(props) {
 	//containerのマージンを切り替え
 	if (
 		outerMarginBottom !== null &&
-		outerMarginBottom !== undefined &&
-		outerMarginBottom !== ''
+		outerMarginBottom !== undefined
 	) {
 		cStyle = { marginBottom: outerMarginBottom + `rem` };
 	} else {
@@ -125,8 +124,7 @@ export default function HeaddingEdit(props) {
 	//titleのマージンを切り替え
 	if (
 		titleMarginBottom !== null &&
-		titleMarginBottom !== undefined &&
-		titleMarginBottom !== ''
+		titleMarginBottom !== undefined
 	) {
 		tStyle = {
 			color: titleColor,
@@ -264,7 +262,7 @@ export default function HeaddingEdit(props) {
 						max={3}
 						step={0.1}
 						allowReset={true}
-						resetFallbackValue={''}
+						resetFallbackValue={null}
 					/>
 					<p>
 						{__(
@@ -281,7 +279,7 @@ export default function HeaddingEdit(props) {
 						max={8}
 						step={0.1}
 						allowReset={true}
-						resetFallbackValue={''}
+						resetFallbackValue={null}
 					/>
 				</PanelBody>
 				<PanelBody title={__('Heading Settings', 'vk-blocks')}>

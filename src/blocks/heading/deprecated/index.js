@@ -157,7 +157,6 @@ const blockAttributes_1_3_1 = {
 	}
 }
 
-
 const deprecated = [
 	{
 		attributes: blockAttributes_1_3_1,

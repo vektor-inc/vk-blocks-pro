@@ -3,6 +3,10 @@
 	"name": "vk-blocks/heading",
 	"category": "vk-blocks-cat",
 	"attributes": {
+		"noMargin": {
+			"type": "Boolean",
+			"default": true
+		},
 		"anchor": {
 			"type": "string",
 			"source": "attribute",
@@ -22,7 +26,7 @@
 		},
 		"outerMarginBottom": {
 			"type": "number",
-			"default": null
+			"default": 3
 		},
 		"title": {
 			"type": "string",
@@ -40,7 +44,7 @@
 		},
 		"titleMarginBottom": {
 			"type": "number",
-			"default": null
+			"default": 3
 		},
 		"subText": {
 			"source": "html",

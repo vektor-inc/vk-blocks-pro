@@ -65,6 +65,7 @@ const renderTitle = (level, contents, tStyle, headingStyle) => {
 export default function HeaddingEdit(props) {
 	const { attributes, setAttributes } = props;
 	let {
+		noMargin,
 		level,
 		align,
 		title,
@@ -110,6 +111,9 @@ export default function HeaddingEdit(props) {
 	const containerClass = `vk_heading vk_heading-style-${titleStyle}`;
 	let cStyle;
 	let tStyle;
+
+	console.log(noMargin);
+
 
 	//containerのマージンを切り替え
 	if (

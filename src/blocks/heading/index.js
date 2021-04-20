@@ -21,6 +21,7 @@ export const settings = {
 	category: 'vk-blocks-cat',
 	example: {
 		attributes: {
+			noMargin: null,
 			anchor: '',
 			level: 2,
 			align: 'center',

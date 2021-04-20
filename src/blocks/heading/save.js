@@ -46,6 +46,7 @@ const renderTitle = (level, contents, tStyle, headingStyle) => {
 export default function save(props) {
 	const { attributes } = props;
 	let {
+		noMargin,
 		level,
 		align,
 		title,
@@ -66,11 +67,9 @@ export default function save(props) {
 	let cStyle;
 	let tStyle;
 
+
 	//containerのマージンを切り替え
-	if (
-		outerMarginBottom !== null &&
-		outerMarginBottom !== undefined
-	) {
+	if ( outerMarginBottom ) {
 		cStyle = { marginBottom: outerMarginBottom + `rem` };
 	}
 

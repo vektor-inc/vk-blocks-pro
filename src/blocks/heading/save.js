@@ -69,7 +69,6 @@ export default function save(props) {
 
 	// v.1.3.1以前で設置済みのブロックの処理
 	if (noMargin === undefined) {
-		
 		// 0以外の数値がセットされていれば、margin-bottomをレンダリング
 		if (outerMarginBottom) {
 			cStyle = { marginBottom: outerMarginBottom + `rem` };

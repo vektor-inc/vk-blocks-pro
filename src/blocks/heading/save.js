@@ -68,9 +68,24 @@ export default function save(props) {
 	let tStyle;
 
 
-	//containerのマージンを切り替え
-	if ( outerMarginBottom ) {
-		cStyle = { marginBottom: outerMarginBottom + `rem` };
+	// v.1.3.1以前で設置済みのブロックの処理
+	if (noMargin === undefined) {
+
+		// 0以外の数値がセットされていれば、margin-bottomをレンダリング
+		if ( outerMarginBottom ) {
+			cStyle = { marginBottom: outerMarginBottom + `rem` };
+		}
+
+	// v.1.3.1以降で設置するブロック
+	} else {
+		
+		// 0の場合も、margin-bottomをレンダリング
+		if (
+			outerMarginBottom !== null　&&
+			outerMarginBottom !== undefined 
+		) {
+			cStyle = { marginBottom: outerMarginBottom + `rem` };
+		}
 	}
 
 	//titleのマージンを切り替え

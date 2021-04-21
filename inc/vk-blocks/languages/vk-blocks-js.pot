@@ -809,7 +809,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:110
 #: src/blocks/_pro/table-of-contents-new/edit.js:130
 #: src/blocks/_pro/timeline-item/edit.js:91
-#: src/blocks/heading/edit.js:243
+#: src/blocks/heading/edit.js:257
 #: src/blocks/staff/edit.js:112
 #: src/extensions/core/heading/style.js:30
 #: src/extensions/core/list/style.js:104
@@ -895,7 +895,7 @@ msgid "Timeline"
 msgstr ""
 
 #: src/blocks/alert/edit.js:19
-#: src/blocks/heading/edit.js:234
+#: src/blocks/heading/edit.js:248
 msgid "Style Settings"
 msgstr ""
 
@@ -961,7 +961,7 @@ msgid "Balloon setting"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:202
-#: src/blocks/heading/edit.js:349
+#: src/blocks/heading/edit.js:363
 msgid "Position"
 msgstr ""
 
@@ -1200,13 +1200,13 @@ msgid ""
 msgstr ""
 
 #: src/blocks/button/edit.js:262
-#: src/blocks/heading/edit.js:316
+#: src/blocks/heading/edit.js:330
 #: src/blocks/pr-content/edit.js:194
 msgid "Before text"
 msgstr ""
 
 #: src/blocks/button/edit.js:271
-#: src/blocks/heading/edit.js:325
+#: src/blocks/heading/edit.js:339
 #: src/blocks/pr-content/edit.js:206
 msgid "After text"
 msgstr ""
@@ -1336,7 +1336,7 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:152
 #: src/blocks/heading/deprecated/0.40.1/component.js:152
 #: src/blocks/heading/deprecated/0.60.1/component.js:152
-#: src/blocks/heading/edit.js:208
+#: src/blocks/heading/edit.js:222
 msgid "Input sub text…"
 msgstr ""
 
@@ -1350,60 +1350,60 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:137
 #: src/blocks/heading/deprecated/0.40.1/component.js:137
 #: src/blocks/heading/deprecated/0.60.1/component.js:137
-#: src/blocks/heading/edit.js:193
+#: src/blocks/heading/edit.js:207
 msgid "Input title…"
 msgstr ""
 
-#: src/blocks/heading/edit.js:236
+#: src/blocks/heading/edit.js:250
 msgid "Heading style"
 msgstr ""
 
-#: src/blocks/heading/edit.js:247
+#: src/blocks/heading/edit.js:261
 #: src/extensions/core/heading/style.js:35
 msgid "Plain"
 msgstr ""
 
-#: src/blocks/heading/edit.js:253
+#: src/blocks/heading/edit.js:267
 msgid "Margin Setting"
 msgstr ""
 
-#: src/blocks/heading/edit.js:255
+#: src/blocks/heading/edit.js:269
 msgid "Margin between Heading and sub text (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:272
+#: src/blocks/heading/edit.js:286
 msgid "Margin bottom size of after this block (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:289
+#: src/blocks/heading/edit.js:303
 msgid "Heading Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:301
+#: src/blocks/heading/edit.js:315
 msgid "Text Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:313
+#: src/blocks/heading/edit.js:327
 msgid "Font Awesome Icon Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:334
+#: src/blocks/heading/edit.js:348
 msgid "Icon Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:347
+#: src/blocks/heading/edit.js:361
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:353
+#: src/blocks/heading/edit.js:367
 msgid "Display"
 msgstr ""
 
-#: src/blocks/heading/edit.js:357
+#: src/blocks/heading/edit.js:371
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/heading/edit.js:365
+#: src/blocks/heading/edit.js:379
 msgid "Text size (rem)"
 msgstr ""
 

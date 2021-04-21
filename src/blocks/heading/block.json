@@ -26,7 +26,7 @@
 		},
 		"outerMarginBottom": {
 			"type": "number",
-			"default": 3
+			"default": null
 		},
 		"title": {
 			"type": "string",
@@ -44,7 +44,7 @@
 		},
 		"titleMarginBottom": {
 			"type": "number",
-			"default": 3
+			"default": null
 		},
 		"subText": {
 			"source": "html",

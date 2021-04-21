@@ -69,24 +69,20 @@ export default function save(props) {
 
 	// v.1.3.1以前で設置済みのブロックの処理
 	if (noMargin === undefined) {
-
 		// 0指定の場合は、NULLをセットする。
 		if (outerMarginBottom === 0) {
 			outerMarginBottom = null;
 		}
-
 		// 新ブロックに切り替える
 		noMargin = true;
-
-		// v.1.3.1以降で設置するブロック
-	} 
+	}
 
 	// スタイルを出力
 	if (outerMarginBottom !== null && outerMarginBottom !== undefined) {
 		cStyle = { marginBottom: outerMarginBottom + `rem` };
 	} else {
 		cStyle = {};
-	}	
+	}
 
 	//titleのマージンを切り替え
 	if (titleMarginBottom !== null && titleMarginBottom !== undefined) {

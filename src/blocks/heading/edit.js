@@ -114,36 +114,24 @@ export default function HeaddingEdit(props) {
 
 	// v.1.3.1以前で設置済みのブロックの処理
 	if (noMargin === undefined) {
-
 		// 0指定の場合は、NULLをセットする。
-		if ( outerMarginBottom === 0) {
-			setAttributes({outerMarginBottom: null});
+		if (outerMarginBottom === 0) {
+			setAttributes({ outerMarginBottom: null });
 		}
 
 		// 新ブロックに切り替える
-		setAttributes({noMargin: true});
+		setAttributes({ noMargin: true });
+	}
 
-		// スタイルを出力
-		if ( outerMarginBottom !== null && outerMarginBottom !== undefined ) {
-			cStyle = { marginBottom: outerMarginBottom + `rem` };
-		} else {
-			cStyle = {};
-		}
-
+	// スタイルを出力
+	if (outerMarginBottom !== null && outerMarginBottom !== undefined) {
+		cStyle = { marginBottom: outerMarginBottom + `rem` };
 	} else {
-		//containerのマージンを切り替え
-		if ( outerMarginBottom !== null && outerMarginBottom !== undefined ) {
-			cStyle = { marginBottom: outerMarginBottom + `rem` };
-		} else {
-			cStyle = {};
-		}		
+		cStyle = {};
 	}
 
 	//titleのマージンを切り替え
-	if (
-		titleMarginBottom !== null &&
-		titleMarginBottom !== undefined
-	) {
+	if (titleMarginBottom !== null && titleMarginBottom !== undefined) {
 		tStyle = {
 			color: titleColor,
 			fontSize: titleSize + 'rem',
@@ -274,7 +262,10 @@ export default function HeaddingEdit(props) {
 					<RangeControl
 						value={titleMarginBottom}
 						onChange={(value) => {
-							setAttributes({ titleMarginBottom: value, noMargin: true });
+							setAttributes({
+								titleMarginBottom: value,
+								noMargin: true,
+							});
 						}}
 						min={-1}
 						max={3}
@@ -291,7 +282,10 @@ export default function HeaddingEdit(props) {
 					<RangeControl
 						value={outerMarginBottom}
 						onChange={(value) => {
-							setAttributes({ outerMarginBottom: value, noMargin: true });
+							setAttributes({
+								outerMarginBottom: value,
+								noMargin: true,
+							});
 						}}
 						min={-1}
 						max={8}

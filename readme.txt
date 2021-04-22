@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+* [ Design bug fix ][ Grid Column ] Add padding bottom to front screen
+
 = 1.3.2 =
 * [ Bug fix ][ Card ] Fix sentence of align control.
 * [ Bug fix ][ Heading Extention ] Fix editor css is not reflected.

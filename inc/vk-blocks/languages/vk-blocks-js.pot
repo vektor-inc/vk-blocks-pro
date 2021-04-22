@@ -374,7 +374,7 @@ msgid "Columns"
 msgstr ""
 
 #: src/blocks/_pro/icon-card/edit.js:70
-#: src/components/card-align-control/index.js:34
+#: src/components/card-align-control/index.js:33
 msgid "Align"
 msgstr ""
 
@@ -1646,11 +1646,6 @@ msgstr ""
 
 #: src/blocks/staff/index.js:33
 msgid "Staff"
-msgstr ""
-
-#: src/components/card-align-control/index.js:24
-#. %s is align.
-msgid "Align %s"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:20

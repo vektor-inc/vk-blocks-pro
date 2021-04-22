@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-16T06:02:46+00:00\n"
+"POT-Creation-Date: 2021-04-22T00:36:10+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: vk-blocks\n"
@@ -382,7 +382,7 @@ msgid "Columns"
 msgstr ""
 
 #: src/blocks/_pro/icon-card/edit.js:70
-#: src/components/card-align-control/index.js:34
+#: src/components/card-align-control/index.js:33
 msgid "Align"
 msgstr ""
 
@@ -1651,11 +1651,6 @@ msgstr ""
 msgid "Staff"
 msgstr ""
 
-#. %s is align.
-#: src/components/card-align-control/index.js:24
-msgid "Align %s"
-msgstr ""
-
 #: src/components/column-layout-control/index.js:20
 msgid "Card (Image Round)"
 msgstr ""
@@ -2346,6 +2341,6 @@ msgstr ""
 msgid "Edit this area"
 msgstr ""
 
-#: vk-blocks.php:80
+#: vk-blocks.php:81
 msgid "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks Plugin running."
 msgstr ""

@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+*[ Design bug fix ][ Image ] fix style vk-image-rounded bug for core/image block.
+
 = 1.3.2 =
 * [ Bug fix ][ Card ] Fix sentence of align control.
 * [ Bug fix ][ Heading Extention ] Fix editor css is not reflected.

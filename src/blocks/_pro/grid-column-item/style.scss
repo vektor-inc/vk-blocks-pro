@@ -1,9 +1,11 @@
+@import "../../../../editor-css/variables";
+
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
 .wp-block-vk-blocks-grid-column-item{
   box-sizing: border-box;
-  margin-bottom: 15px;
+  margin-bottom: $col_margin_bottom;
   img {
     max-width: 100%;
   }

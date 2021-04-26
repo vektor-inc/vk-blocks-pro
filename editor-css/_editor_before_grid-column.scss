@@ -24,7 +24,7 @@
 	// col内に入れたブロックにまで反映されないように & > 指定
 	div[class*="col-"].block-editor-block-list__block {
 		flex: inherit;
-		margin:0 15px 15px;
+		margin: 0 $col_margin_lateral $col_margin_bottom;
 		padding: 0;
 		outline: 1px dashed #ccc;
 		transition: 1.0s ;
@@ -174,7 +174,7 @@
 	
 	.wp-block-vk-blocks-grid-column-item + .block-list-appender.wp-block {
 		border: 1px dashed #ccc;
-		margin: 0 15px 15px;
+		margin: 0 $col_margin_lateral $col_margin_bottom;
 		&:hover{
 			border-style: solid;
 			border-color:$color-hover;

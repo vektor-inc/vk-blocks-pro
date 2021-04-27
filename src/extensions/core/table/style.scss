@@ -1,0 +1,22 @@
+
+.wp-block-table{
+    &.is-style-vk-table {
+
+        &-border {
+            th,td{
+                border:var(--vk-color-border-hr);
+            }
+        }
+        &-border-stripes{
+            tr:nth-child(odd) {
+                background-color: #f0f0f0;
+            }
+            th,td{
+                border:var(--vk-color-border-hr);
+            }
+
+        }
+
+    }
+}
+

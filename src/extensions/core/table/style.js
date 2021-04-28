@@ -9,6 +9,6 @@ registerBlockStyle('core/table', [
 
 	{
 		name: 'vk-table-border-stripes',
-		label: __('Border Stripes', 'vk-blocks'),
+		label: __('Border / Stripes', 'vk-blocks'),
 	},
 ]);

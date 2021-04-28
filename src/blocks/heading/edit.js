@@ -112,7 +112,7 @@ export default function HeaddingEdit(props) {
 	let tStyle;
 
 	//containerのマージンを切り替え
-	if (outerMarginBottom) {
+	if (outerMarginBottom !== null && outerMarginBottom !== undefined) {
 		cStyle = { marginBottom: outerMarginBottom + `rem` };
 	}
 
@@ -253,6 +253,8 @@ export default function HeaddingEdit(props) {
 						min={-1}
 						max={3}
 						step={0.1}
+						allowReset={true}
+                		resetFallbackValue={null}  						
 					/>
 					<p>
 						{__(
@@ -268,6 +270,8 @@ export default function HeaddingEdit(props) {
 						min={-1}
 						max={8}
 						step={0.1}
+						allowReset={true}
+                		resetFallbackValue={null}   
 					/>
 				</PanelBody>
 				<PanelBody title={__('Heading Settings', 'vk-blocks')}>

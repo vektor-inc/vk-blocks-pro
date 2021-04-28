@@ -254,7 +254,7 @@ export default function HeaddingEdit(props) {
 						max={3}
 						step={0.1}
 						allowReset={true}
-                		resetFallbackValue={null}  						
+						resetFallbackValue={null}
 					/>
 					<p>
 						{__(
@@ -271,7 +271,7 @@ export default function HeaddingEdit(props) {
 						max={8}
 						step={0.1}
 						allowReset={true}
-                		resetFallbackValue={null}   
+						resetFallbackValue={null}
 					/>
 				</PanelBody>
 				<PanelBody title={__('Heading Settings', 'vk-blocks')}>

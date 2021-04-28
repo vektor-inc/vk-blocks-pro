@@ -1,22 +1,37 @@
 
 .wp-block-table{
+    thead th,tfoot td{
+        font-weight: bold;
+    }
     &.is-style-vk-table {
 
         &-border {
             th,td{
-                border:var(--vk-color-border-hr);
-            }
+                border:1px solid var(--vk-color-border-hr);
+            }          
         }
         &-border-stripes{
-            tr:nth-child(odd) {
+            tbody tr:nth-child(odd) {
                 background-color: #f0f0f0;
             }
             th,td{
-                border:var(--vk-color-border-hr);
+                border:1px solid var(--vk-color-border-hr);
             }
-
         }
 
     }
 }
 
+//編集画面
+.editor-styles-wrapper .wp-block-table{
+    &.is-style-regular{
+        th,td{
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+    }
+    tfoot { 
+        border-top: 1px solid var(--vk-color-border-hr);
+    }
+}

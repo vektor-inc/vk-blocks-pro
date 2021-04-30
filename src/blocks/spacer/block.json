@@ -29,7 +29,7 @@
         },
         "settingType": {
             "type": "string",
-            "default": "_number"
+            "default": "vk_block-margin-md"
         }
 	},
 	"supports": {

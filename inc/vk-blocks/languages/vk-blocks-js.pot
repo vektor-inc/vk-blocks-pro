@@ -1952,7 +1952,7 @@ msgid "List Icon Color"
 msgstr ""
 
 #: src/extensions/core/table/style.js:12
-msgid "Border Stripes"
+msgid "Border / Stripes"
 msgstr ""
 
 #: src/utils/example-data.js:14

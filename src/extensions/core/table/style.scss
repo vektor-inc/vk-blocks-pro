@@ -21,17 +21,3 @@
 
     }
 }
-
-//編集画面
-.editor-styles-wrapper .wp-block-table{
-    &.is-style-regular{
-        th,td{
-            border-top: none;
-            border-left: none;
-            border-right: none;
-        }
-    }
-    tfoot { 
-        border-top: 1px solid var(--vk-color-border-hr);
-    }
-}

@@ -1,0 +1,23 @@
+
+.wp-block-table{
+    thead th,tfoot td{
+        font-weight: bold;
+    }
+    &.is-style-vk-table {
+
+        &-border {
+            th,td{
+                border:1px solid var(--vk-color-border-hr);
+            }          
+        }
+        &-border-stripes{
+            tbody tr:nth-child(odd) {
+                background-color: #f0f0f0;
+            }
+            th,td{
+                border:1px solid var(--vk-color-border-hr);
+            }
+        }
+
+    }
+}

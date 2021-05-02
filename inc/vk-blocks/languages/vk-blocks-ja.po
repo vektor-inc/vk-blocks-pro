@@ -1376,10 +1376,6 @@ msgstr "見出し %d"
 msgid "Heading"
 msgstr "見出し"
 
-#: src/blocks/page-content/edit.js:10
-msgid "Unspecified"
-msgstr "未指定"
-
 #: src/blocks/page-content/edit.js:56
 msgid "Page Setting"
 msgstr "ページ設定"

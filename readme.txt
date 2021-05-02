@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+*[ Design bug fix ][ flow ] fix dd bug on Lightning G3 and so on
+
 = 1.3.3 =
 *[ Design bug fix ][ Image ] fix style vk-image-rounded bug for core/image block.
 

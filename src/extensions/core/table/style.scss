@@ -8,10 +8,10 @@
         &-border {
             th,td{
                 border:1px solid var(--vk-color-border-hr);
-            }          
+            }
         }
         &-border-stripes{
-            tbody tr:nth-child(odd) {
+            tbody tr:nth-child(2n+1) {
                 background-color: #f0f0f0;
             }
             th,td{

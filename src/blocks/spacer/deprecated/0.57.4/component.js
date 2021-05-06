@@ -13,7 +13,6 @@ export class SpacerComponent extends Component {
             mobile,
         } = this.props.attributes;
         const className = this.props.className;
-			console.log("SP:" + spaceType);
 			if ( spaceType === 'height') {
 				return (
 					<div id={ anchor } className={ classNames('vk_spacer', className) }>

@@ -34,8 +34,10 @@ const blockAttributes003 = {
 }
 
 const deprecated = [
+    /*
     {
-        attributes: {
+        attributes: 
+        {
             "anchor": {
             "type": "string",
             "default": null
@@ -62,7 +64,7 @@ const deprecated = [
         },
       },
         save: save1_3_2,
-    },
+    },   */
     {
         attributes: blockAttributes003,
         save: save0_57_4,

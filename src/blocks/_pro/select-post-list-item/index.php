@@ -16,6 +16,10 @@ if( function_exists('register_block_type_from_metadata')) {
 						'type'    => 'string',
 						'default' => '',
 					),
+					'opensInNewTab'              => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
 					'layout'                     => array(
 						'type'    => 'string',
 						'default' => 'card',
@@ -108,6 +112,7 @@ if( function_exists('register_block_type_from_metadata')) {
 			$attributes,
 			array(
 				'url'                        => '',
+				'opensInNewTab'				 => false,
 				'layout'                     => 'card',
 				'col_xs'                     => 1,
 				'col_sm'                     => 2,

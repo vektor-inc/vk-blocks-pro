@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+* [ Bug fix ][ image ] fix image/photo-frame
+
 = 1.3.6 =
 * [ Bug fix ][ table ] fix border/stripe
 

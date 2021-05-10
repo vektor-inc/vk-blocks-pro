@@ -86,10 +86,10 @@ export default function SpacerEdit({
 					>{__('Small', 'vk-blocks')}</Button>
 					<Button
 						isSmall
-						isPrimary={settingType === 'vk_block-margin-md'}
-						isSecondary={settingType !== 'vk_block-margin-md'}
+						isPrimary={settingType === 'vk_block-margin-mv'}
+						isSecondary={settingType !== 'vk_block-margin-mv'}
 						onClick={() =>
-							setAttributes({ settingType: 'vk_block-margin-md' })
+							setAttributes({ settingType: 'vk_block-margin-mv' })
 						}
 					>{__('Middle', 'vk-blocks')}</Button>
 					<Button

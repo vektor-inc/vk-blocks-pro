@@ -34,37 +34,36 @@ const blockAttributes003 = {
 }
 
 const deprecated = [
-    /*
     {
         attributes: 
         {
             "anchor": {
             "type": "string",
             "default": null
+            },
+            "spaceType": {
+                "type": "string",
+                "default": "height"
+            },
+            "unit": {
+                "type": "string",
+                "default": "px"
+            },
+            "pc": {
+                "type": "number",
+                "default": 40
+            },
+            "tablet": {
+                "type": "number",
+                "default": 30
+            },
+            "mobile": {
+                "type": "number",
+                "default": 20
+            },
         },
-        "spaceType": {
-            "type": "string",
-            "default": "height"
-        },
-        "unit": {
-            "type": "string",
-            "default": "px"
-        },
-        "pc": {
-            "type": "number",
-            "default": 40
-        },
-        "tablet": {
-            "type": "number",
-            "default": 30
-        },
-        "mobile": {
-            "type": "number",
-            "default": 20
-        },
-      },
         save: save1_3_2,
-    },   */
+    }, 
     {
         attributes: blockAttributes003,
         save: save0_57_4,

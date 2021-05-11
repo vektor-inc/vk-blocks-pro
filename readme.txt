@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+* [ Bug fix ][ border-box ] Fix not being able to drag and drop other blocks.
+
 = 1.3.7 =
 * [ Bug fix ][ image ] fix image/photo-frame
 

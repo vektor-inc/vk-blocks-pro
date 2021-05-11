@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
 Tested up to: 5.7
-Stable tag: 1.3.1
+Stable tag: 1.3.7
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,6 +63,28 @@ e.g.
 
 == Changelog ==
 
+* [ Specification Change ][ Select Post List Item (Pro) ] search URL by postname.
+* [ Bug fix ][ border-box ] Fix not being able to drag and drop other blocks.
+
+= 1.3.7 =
+* [ Bug fix ][ image ] fix image/photo-frame
+
+= 1.3.6 =
+* [ Bug fix ][ table ] fix border/stripe
+
+= 1.3.5 =
+* [ Bug fix ] Fix translattion
+
+= 1.3.4 =
+* [ Design bug fix ][ flow ] fix dd bug on Lightning G3 and so on
+* [ Add style ][ table ] border table / border/stripe
+* [ Bug fix ][ Slider ] fix css bug under active css optimize
+
+= 1.3.3 =
+*[ Design bug fix ][ Image ] fix style vk-image-rounded bug for core/image block.
+
+= 1.3.2 =
+* [ Bug fix ][ Card ] Fix sentence of align control.
 * [ Bug fix ][ Heading Extention ] Fix editor css is not reflected.
 * [ Bug fix ][ Button ] Fix Button width of 'Wide' on editor.
 * [ Bug fix / Specification Change ][ Staff ] Add font selector of heading, mintyo or not.

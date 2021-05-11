@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-16T09:08:43+00:00\n"
+"POT-Creation-Date: 2021-05-11T05:02:44+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: vk-blocks\n"
@@ -2058,49 +2058,53 @@ msgstr ""
 msgid "4.7 will be abolished in the near future."
 msgstr ""
 
-#: inc/template-tags/package/template-tags.php:146
+#. translators:
+#: inc/template-tags/package/template-tags.php:147
 msgid "Author: %s"
 msgstr ""
 
-#: inc/template-tags/package/template-tags.php:148
-#: inc/template-tags/package/template-tags.php:230
+#: inc/template-tags/package/template-tags.php:149
+#: inc/template-tags/package/template-tags.php:232
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: inc/template-tags/package/template-tags.php:150
-#: inc/template-tags/package/template-tags.php:234
+#: inc/template-tags/package/template-tags.php:151
+#: inc/template-tags/package/template-tags.php:237
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: inc/template-tags/package/template-tags.php:152
+#: inc/template-tags/package/template-tags.php:153
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr ""
 
-#: inc/template-tags/package/template-tags.php:187
+#: inc/template-tags/package/template-tags.php:188
 msgid "Archives"
 msgstr ""
 
-#: inc/template-tags/package/template-tags.php:218
-#: inc/template-tags/package/template-tags.php:226
+#. translators:
+#: inc/template-tags/package/template-tags.php:220
+#: inc/template-tags/package/template-tags.php:228
 msgid "About %s"
 msgstr ""
 
-#: inc/template-tags/package/template-tags.php:231
+#. translators:
+#: inc/template-tags/package/template-tags.php:234
 msgctxt "Yearly archive description"
 msgid "Article of %s."
 msgstr ""
 
-#: inc/template-tags/package/template-tags.php:235
-#: inc/template-tags/package/template-tags.php:239
+#. translators:
 #: inc/template-tags/package/template-tags.php:244
+#: inc/template-tags/package/template-tags.php:249
 msgctxt "Archive description"
 msgid "Article of %s."
 msgstr ""
 
-#: inc/template-tags/package/template-tags.php:261
+#. translators:
+#: inc/template-tags/package/template-tags.php:267
 msgid "Page of %s"
 msgstr ""
 
@@ -2112,111 +2116,127 @@ msgstr ""
 msgid "Install Plugins"
 msgstr ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:79
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/tgm-config.php:80
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:80
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/tgm-config.php:81
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:81
+#. translators:
+#: inc/tgm-plugin-activation/tgm-config.php:83
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:86
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/tgm-config.php:89
 msgid "This theme recommends the following plugin: %1$s.<br>Many additional functions are available for free."
 msgid_plural "This theme recommends the following plugins: %1$s.<br>Many additional functions are available for free."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:91
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/tgm-config.php:95
 msgid "Sorry, but you do not have the correct permissions to install the %1$s plugin."
 msgid_plural "Sorry, but you do not have the correct permissions to install the %1$s plugins."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:96
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/tgm-config.php:101
 msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
 msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:101
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/tgm-config.php:107
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:106
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/tgm-config.php:113
 msgid "Sorry, but you do not have the correct permissions to update the %1$s plugin."
 msgid_plural "Sorry, but you do not have the correct permissions to update the %1$s plugins."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:111
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/tgm-config.php:119
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:116
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/tgm-config.php:125
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:121
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/tgm-config.php:131
 msgid "Sorry, but you do not have the correct permissions to activate the %1$s plugin."
 msgid_plural "Sorry, but you do not have the correct permissions to activate the %1$s plugins."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:126
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/tgm-config.php:137
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:131
+#: inc/tgm-plugin-activation/tgm-config.php:142
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:136
+#: inc/tgm-plugin-activation/tgm-config.php:147
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:141
+#: inc/tgm-plugin-activation/tgm-config.php:152
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:142
+#: inc/tgm-plugin-activation/tgm-config.php:153
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:143
+#: inc/tgm-plugin-activation/tgm-config.php:154
 msgid "The following plugin was activated successfully:"
 msgstr ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:144
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/tgm-config.php:156
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:145
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/tgm-config.php:158
 msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
 msgstr ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:146
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/tgm-config.php:160
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:147
+#. translators: %s = dashboard link.
+#: inc/tgm-plugin-activation/tgm-config.php:162
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 

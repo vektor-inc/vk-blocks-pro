@@ -236,7 +236,8 @@ if ( ! function_exists( 'vk_get_page_description' ) ) {
 			} elseif ( is_month() ) {
 				$description_date  = get_the_date( _x( 'F Y', 'monthly archives date format', 'vk-blocks' ) );
 				// translators:
-				$page_description  = sprintf( _x( 'Article of %s.', 'Archive description', // translators:'vk-blocks' ), $description_date );
+				$page_description  = sprintf( _x( 'Article of %s.', 'Archive description', 'vk-blocks' ), $description_date );
+				// translators:
 				$page_description .= ' ' . get_bloginfo( 'name' ) . ' ' . get_bloginfo( 'description' );
 			} elseif ( is_author() ) {
 				$userObj           = get_queried_object();

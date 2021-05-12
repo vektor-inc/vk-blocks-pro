@@ -333,7 +333,7 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:108
 #: src/blocks/_pro/step-item/edit.js:57
-#: src/blocks/border-box/edit.js:107
+#: src/blocks/border-box/edit.js:109
 #: src/blocks/button/edit.js:258
 #: src/blocks/pr-content/edit.js:190
 msgid "Icon ( Font Awesome )"
@@ -839,7 +839,7 @@ msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:76
 #: src/blocks/_pro/timeline-item/edit.js:53
-#: src/blocks/border-box/edit.js:48
+#: src/blocks/border-box/edit.js:50
 #: src/blocks/staff/edit.js:138
 msgid "Color"
 msgstr ""
@@ -957,6 +957,7 @@ msgstr ""
 
 #: src/blocks/balloon/edit.js:168
 #: src/extensions/core/image/style.js:15
+#: src/extensions/core/table/style.js:7
 msgid "Border"
 msgstr ""
 
@@ -1065,50 +1066,50 @@ msgstr ""
 
 #: src/blocks/border-box/deprecated/0.0.0/save.js:24
 #: src/blocks/border-box/deprecated/0.0.1/save.js:25
-#: src/blocks/border-box/edit.js:23
+#: src/blocks/border-box/edit.js:25
 msgid "Please enter a title."
 msgstr ""
 
-#: src/blocks/border-box/edit.js:104
+#: src/blocks/border-box/edit.js:100
+msgid "White"
+msgstr ""
+
+#: src/blocks/border-box/edit.js:106
 #: src/utils/font-awesome-new.js:14
 msgid "Icon"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:51
+#: src/blocks/border-box/edit.js:53
 #: src/extensions/core/group/style.js:47
 msgid "Border Color"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:61
+#: src/blocks/border-box/edit.js:63
 msgid "Red"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:65
+#: src/blocks/border-box/edit.js:67
 msgid "Orange"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:69
+#: src/blocks/border-box/edit.js:71
 msgid "Blue"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:73
+#: src/blocks/border-box/edit.js:75
 msgid "Green"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:77
+#: src/blocks/border-box/edit.js:79
 msgid "Black"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:84
+#: src/blocks/border-box/edit.js:86
 msgid "Background Color"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:94
+#: src/blocks/border-box/edit.js:96
 msgid "Transparent"
-msgstr ""
-
-#: src/blocks/border-box/edit.js:98
-msgid "White"
 msgstr ""
 
 #: src/blocks/border-box/index.js:19
@@ -1656,11 +1657,6 @@ msgstr ""
 msgid "Staff"
 msgstr ""
 
-#: src/components/card-align-control/index.js:24
-#. %s is align.
-msgid "Align %s"
-msgstr ""
-
 #: src/components/column-layout-control/index.js:20
 msgid "Card (Image Round)"
 msgstr ""
@@ -1961,6 +1957,10 @@ msgstr ""
 
 #: src/extensions/core/list/style.js:47
 msgid "List Icon Color"
+msgstr ""
+
+#: src/extensions/core/table/style.js:12
+msgid "Border / Stripes"
 msgstr ""
 
 #: src/utils/example-data.js:14

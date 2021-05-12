@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-05-12T02:12:59+00:00\n"
+"POT-Creation-Date: 2021-05-12T02:21:04+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: vk-blocks\n"
@@ -821,7 +821,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:110
 #: src/blocks/_pro/table-of-contents-new/edit.js:130
 #: src/blocks/_pro/timeline-item/edit.js:91
-#: src/blocks/heading/edit.js:233
+#: src/blocks/heading/edit.js:231
 #: src/blocks/staff/edit.js:112
 #: src/extensions/core/heading/style.js:30
 #: src/extensions/core/list/style.js:104
@@ -910,7 +910,7 @@ msgid "Timeline"
 msgstr ""
 
 #: src/blocks/alert/edit.js:19
-#: src/blocks/heading/edit.js:224
+#: src/blocks/heading/edit.js:222
 msgid "Style Settings"
 msgstr ""
 
@@ -976,7 +976,7 @@ msgid "Balloon setting"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:202
-#: src/blocks/heading/edit.js:339
+#: src/blocks/heading/edit.js:333
 msgid "Position"
 msgstr ""
 
@@ -1213,13 +1213,13 @@ msgid "This custom color overrides the default color. If you want to use the def
 msgstr ""
 
 #: src/blocks/button/edit.js:262
-#: src/blocks/heading/edit.js:306
+#: src/blocks/heading/edit.js:300
 #: src/blocks/pr-content/edit.js:194
 msgid "Before text"
 msgstr ""
 
 #: src/blocks/button/edit.js:271
-#: src/blocks/heading/edit.js:315
+#: src/blocks/heading/edit.js:309
 #: src/blocks/pr-content/edit.js:206
 msgid "After text"
 msgstr ""
@@ -1347,7 +1347,7 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:152
 #: src/blocks/heading/deprecated/0.40.1/component.js:152
 #: src/blocks/heading/deprecated/0.60.1/component.js:152
-#: src/blocks/heading/edit.js:198
+#: src/blocks/heading/edit.js:196
 msgid "Input sub text…"
 msgstr ""
 
@@ -1361,60 +1361,60 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:137
 #: src/blocks/heading/deprecated/0.40.1/component.js:137
 #: src/blocks/heading/deprecated/0.60.1/component.js:137
-#: src/blocks/heading/edit.js:183
+#: src/blocks/heading/edit.js:181
 msgid "Input title…"
 msgstr ""
 
-#: src/blocks/heading/edit.js:226
+#: src/blocks/heading/edit.js:224
 msgid "Heading style"
 msgstr ""
 
-#: src/blocks/heading/edit.js:237
+#: src/blocks/heading/edit.js:235
 #: src/extensions/core/heading/style.js:35
 msgid "Plain"
 msgstr ""
 
-#: src/blocks/heading/edit.js:243
+#: src/blocks/heading/edit.js:241
 msgid "Margin Setting"
 msgstr ""
 
-#: src/blocks/heading/edit.js:245
-msgid "Margin between Heading and sub text (rem)"
+#: src/blocks/heading/edit.js:243
+msgid "Margin bottom size of after hedding (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:262
+#: src/blocks/heading/edit.js:258
 msgid "Margin bottom size of after this block (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:279
+#: src/blocks/heading/edit.js:273
 msgid "Heading Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:291
+#: src/blocks/heading/edit.js:285
 msgid "Text Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:303
+#: src/blocks/heading/edit.js:297
 msgid "Font Awesome Icon Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:324
+#: src/blocks/heading/edit.js:318
 msgid "Icon Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:337
+#: src/blocks/heading/edit.js:331
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:343
+#: src/blocks/heading/edit.js:337
 msgid "Display"
 msgstr ""
 
-#: src/blocks/heading/edit.js:347
+#: src/blocks/heading/edit.js:341
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/heading/edit.js:355
+#: src/blocks/heading/edit.js:349
 msgid "Text size (rem)"
 msgstr ""
 

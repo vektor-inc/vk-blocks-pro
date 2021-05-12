@@ -67,7 +67,7 @@ export default function save(props) {
 	let tStyle;
 
 	//containerのマージンを切り替え
-	if (outerMarginBottom !== null && outerMarginBottom !== undefined) {
+	if (outerMarginBottom) {
 		cStyle = { marginBottom: outerMarginBottom + `rem` };
 	}
 

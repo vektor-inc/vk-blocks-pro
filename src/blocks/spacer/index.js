@@ -30,9 +30,9 @@ export const settings = {
 		pc: 40,
 		tablet: 30,
 		mobile: 20,
-		spaceSize: 'custom'
+		spaceSize: 'custom',
 	},
 	edit,
 	save,
-	deprecated
+	deprecated,
 };

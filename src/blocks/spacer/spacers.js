@@ -12,12 +12,11 @@ export default function Spacers({
 	mobileSize,
 	unit,
 }) {
-
 	const SPACE_SIZE_CLASSNAMES = {
-		small:  "vk_block-margin-sm",
-		medium: "vk_block-margin-md",
-		large:  "vk_block-margin-lg",
-	} 
+		small: 'vk_block-margin-sm',
+		medium: 'vk_block-margin-md',
+		large: 'vk_block-margin-lg',
+	};
 
 	if (spaceSize !== undefined && SPACE_SIZE_CLASSNAMES[spaceSize]) {
 		return <div className={SPACE_SIZE_CLASSNAMES[spaceSize]} />;
@@ -45,5 +44,4 @@ export default function Spacers({
 			<Spacer viewPort={'mobile'} style={{ height: mobileSize + unit }} />
 		</>
 	);
-	
 }

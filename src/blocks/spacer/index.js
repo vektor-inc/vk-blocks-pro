@@ -30,7 +30,7 @@ export const settings = {
 		pc: 40,
 		tablet: 30,
 		mobile: 20,
-		settingType: '_number'
+		spaceSize: 'custom'
 	},
 	edit,
 	save,

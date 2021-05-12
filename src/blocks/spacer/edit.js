@@ -25,18 +25,18 @@ export default function SpacerEdit({
 	clientId,
 	anchor,
 }) {
-	const { spaceType, unit, pc, tablet, mobile, settingType } = attributes;
+	const { spaceType, unit, pc, tablet, mobile, spaceSize } = attributes;
 
 	const blockProps = useBlockProps({
 		className: classnames('vk_spacer'),
 		id: anchor,
 	});
-
-	if (settingType === undefined) {
-		setAttributes( {settingType: '_number'} );
+	console.log(spaceSize);
+	if (spaceSize === undefined) {
+		setAttributes( {spaceSize: 'custom'} );
 	}
 
-	const numberSetting = (settingType == '_number') ?
+	const numberSetting = (spaceSize == 'custom') ?
 		(
 		<Fragment>
 			<AdvancedSpacerControl
@@ -64,59 +64,52 @@ export default function SpacerEdit({
 		</Fragment>
 	) : '';
 	
-
-
-
-
-
-
 	return (
 		<>
 			<InspectorControls>
 			<PanelBody
-					title={__('Spacer Setting', 'vk-blocks')}>
+					title={__('Spacer Settings', 'vk-blocks')}>
 				<ButtonGroup className="mb-3">
 					<Button
 						isSmall
-						isPrimary={settingType === 'vk_block-margin-sm'}
-						isSecondary={settingType !== 'vk_block-margin-sm'}
+						isPrimary={spaceSize === 'small'}
+						isSecondary={spaceSize !== 'small'}
 						onClick={() =>
-							setAttributes({ settingType: 'vk_block-margin-sm' })
+							setAttributes({ spaceSize: 'small' })
 						}
 					>{__('Small', 'vk-blocks')}</Button>
 					<Button
 						isSmall
-						isPrimary={settingType === 'vk_block-margin-md'}
-						isSecondary={settingType !== 'vk_block-margin-md'}
+						isPrimary={spaceSize === 'medium'}
+						isSecondary={spaceSize !== 'medium'}
 						onClick={() =>
-							setAttributes({ settingType: 'vk_block-margin-md' })
+							setAttributes({ spaceSize: 'medium' })
 						}
-					>{__('Middle', 'vk-blocks')}</Button>
+					>{__('Medium', 'vk-blocks')}</Button>
 					<Button
 						isSmall
-						isPrimary={settingType === 'vk_block-margin-lg'}
-						isSecondary={settingType !== 'vk_block-margin-lg'}
+						isPrimary={spaceSize === 'large'}
+						isSecondary={spaceSize !== 'large'}
 						onClick={() =>
-							setAttributes({ settingType: 'vk_block-margin-lg' })
+							setAttributes({ spaceSize: 'large' })
 						}
 					>{__('Large', 'vk-blocks')}</Button>
 					<Button
 						isSmall
-						isPrimary={settingType === '_number'}
-						isSecondary={settingType !== '_number'}
+						isPrimary={spaceSize === 'custom'}
+						isSecondary={spaceSize !== 'custom'}
 						onClick={() =>
-							setAttributes({ settingType: '_number' })
+							setAttributes({ spaceSize: 'custom' })
 						}
-					>{__('Number', 'vk-blocks')}</Button>
+					>{__('Custom', 'vk-blocks')}</Button>
 				</ButtonGroup>
 				{numberSetting}
 			</PanelBody>
-
 			</InspectorControls>
 
 			<div {...blockProps}>
 				<Spacers
-					settingType={settingType}
+					spaceSize={spaceSize}
 					type={spaceType}
 					pcSize={pc}
 					tabletSize={tablet}

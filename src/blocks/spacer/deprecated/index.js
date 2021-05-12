@@ -20,6 +20,10 @@ export const blockAttributes = {
         type: 'number',
         default: 10,
     },
+    spaceType: {
+        type: "string",
+        default: "height"
+    },    
 };
 
 const blockAttributes003 = {

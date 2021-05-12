@@ -4,9 +4,8 @@ const Spacer = ({ style, viewPort }) => {
 	return <div className={`vk_spacer-display-${viewPort}`} style={style} />;
 };
 
-
 export default function Spacers({
-	settingType,
+	spaceSize,
 	type,
 	pcSize,
 	tabletSize,
@@ -14,31 +13,37 @@ export default function Spacers({
 	unit,
 }) {
 
-	if (settingType === '_number' || settingType === undefined) {
+	const SPACE_SIZE_CLASSNAMES = {
+		small:  "vk_block-margin-sm",
+		medium: "vk_block-margin-md",
+		large:  "vk_block-margin-lg",
+	} 
 
-		if (type === 'margin-top') {
-			return (
-				<>
-					<Spacer viewPort={'pc'} style={{ marginTop: pcSize + unit }} />
-					<Spacer
-						viewPort={'tablet'}
-						style={{ marginTop: tabletSize + unit }}
-					/>
-					<Spacer
-						viewPort={'mobile'}
-						style={{ marginTop: mobileSize + unit }}
-					/>
-				</>
-			);
-		}
+	if (spaceSize !== undefined && SPACE_SIZE_CLASSNAMES[spaceSize]) {
+		return <div className={SPACE_SIZE_CLASSNAMES[spaceSize]} />;
+	}
+
+	if (type === 'margin-top') {
 		return (
 			<>
-				<Spacer viewPort={'pc'} style={{ height: pcSize + unit }} />
-				<Spacer viewPort={'tablet'} style={{ height: tabletSize + unit }} />
-				<Spacer viewPort={'mobile'} style={{ height: mobileSize + unit }} />
+				<Spacer viewPort={'pc'} style={{ marginTop: pcSize + unit }} />
+				<Spacer
+					viewPort={'tablet'}
+					style={{ marginTop: tabletSize + unit }}
+				/>
+				<Spacer
+					viewPort={'mobile'}
+					style={{ marginTop: mobileSize + unit }}
+				/>
 			</>
 		);
-	} else {
-		return <div className={settingType} />;
 	}
+	return (
+		<>
+			<Spacer viewPort={'pc'} style={{ height: pcSize + unit }} />
+			<Spacer viewPort={'tablet'} style={{ height: tabletSize + unit }} />
+			<Spacer viewPort={'mobile'} style={{ height: mobileSize + unit }} />
+		</>
+	);
+	
 }

@@ -27,9 +27,9 @@
             "type": "number",
             "default": 20
         },
-        "settingType": {
+        "spaceSize": {
             "type": "string",
-            "default": "vk_block-margin-md"
+            "default": "medium"
         }
 	},
 	"supports": {

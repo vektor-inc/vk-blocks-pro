@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2021-05-11T07:59:11+00:00\n"
-"PO-Revision-Date: 2021-05-12 15:14+0900\n"
+"POT-Creation-Date: 2021-05-12T14:54:52+00:00\n"
+"PO-Revision-Date: 2021-05-12 23:59+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -1102,7 +1102,7 @@ msgstr "直線 ピン角 内側"
 msgid "Solid Angle iconFeature"
 msgstr "直線 ピン角 アイコン"
 
-#: src/blocks/button/edit.js:103 src/blocks/spacer/edit.js:86
+#: src/blocks/button/edit.js:103 src/blocks/spacer/edit.js:80
 msgid "Small"
 msgstr "小"
 
@@ -1198,7 +1198,7 @@ msgstr "ボタン URL"
 msgid "Button Size:"
 msgstr "ボタンサイズ:"
 
-#: src/blocks/button/edit.js:87 src/blocks/spacer/edit.js:102
+#: src/blocks/button/edit.js:87 src/blocks/spacer/edit.js:96
 msgid "Large"
 msgstr "大"
 
@@ -1528,20 +1528,20 @@ msgstr "margin-top"
 msgid "Space Type"
 msgstr "余白タイプ"
 
-#: src/blocks/spacer/edit.js:110
-msgid "Number"
+#: src/blocks/spacer/edit.js:104
+msgid "Custom"
 msgstr "数値指定"
 
 #: src/blocks/spacer/edit.js:53
 msgid "Height for each device."
 msgstr "デバイス毎の高さ"
 
-#: src/blocks/spacer/edit.js:77
-msgid "Spacer Setting"
+#: src/blocks/spacer/edit.js:71
+msgid "Spacer Settings"
 msgstr "余白サイズ設定"
 
-#: src/blocks/spacer/edit.js:94
-msgid "Middle"
+#: src/blocks/spacer/edit.js:88
+msgid "Medium"
 msgstr "中"
 
 #: src/blocks/spacer/index.js:24
@@ -2445,6 +2445,12 @@ msgid ""
 msgstr ""
 "VK-Blocksと競合するため、VK All in One Expansion Unitの Block機能を停止しまし"
 "た。"
+
+#~ msgid "Number"
+#~ msgstr "数値指定"
+
+#~ msgid "Middle"
+#~ msgstr "中"
 
 #, fuzzy
 #~| msgid "VK Blocks Templates"

@@ -11,7 +11,7 @@ const blockAttributes = {
 const deprecated = [
 	{
 		attributes: blockAttributes,
-		save0_60_1,
+		save: save0_60_1,
 	},
 ];
 export default deprecated;

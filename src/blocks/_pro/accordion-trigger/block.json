@@ -1,0 +1,20 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/accordion-trigger",
+	"category": "vk-blocks-cat",
+	"parent": ["vk-blocks/accordion"],
+	"attributes": {
+		"fontAwesomeIconBefore": {
+			"type": "string",
+			"default": ""
+		},
+		"fontAwesomeIconColor": {
+			"type": "string",
+			"default": "#000000"
+		}
+	},
+	"supports": {
+		"anchor": true,
+		"className": true
+	}
+}

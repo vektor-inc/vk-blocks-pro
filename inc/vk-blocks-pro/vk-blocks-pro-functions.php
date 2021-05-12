@@ -28,15 +28,16 @@ function vk_blocks_pro_load_scripts() {
 	// has_blockで、ウィジェッ内のブロックが判別できないので、常時読み込みに変更。
 	// TODO: 高速化のために、各ウィジェットの有効化を is_active_widget で判定し読み込み切り替える実装の余地あり。
 
+	// Accordion Block
+	wp_enqueue_script( 'vk-blocks-accordion', VK_BLOCKS_URL . 'build/vk-accordion.min.js', array(), VK_BLOCKS_VERSION, true );
+
 	// Faq Block
-	wp_enqueue_script( 'vk-blocks-faq2', VK_BLOCKS_URL . 'build/faq2.min.js', array(), VK_BLOCKS_VERSION, true );
+	wp_enqueue_script( 'vk-blocks-faq2', VK_BLOCKS_URL . 'build/vk-faq2.min.js', array(), VK_BLOCKS_VERSION, true );
 
 	// Animation Block
 	wp_enqueue_script( 'vk-blocks-animation', VK_BLOCKS_URL . 'build/vk-animation.min.js', array(), VK_BLOCKS_VERSION, true );
 
 	// Slider Block
-	wp_enqueue_style( 'vk-blocks-swiper', VK_BLOCKS_URL . 'build/swiper.min.css', array(), VK_BLOCKS_VERSION );
-	wp_enqueue_script( 'vk-blocks-swiper', VK_BLOCKS_URL . 'build/swiper.min.js', array(), VK_BLOCKS_VERSION, true );
-	wp_enqueue_script( 'vk-blocks-slider', VK_BLOCKS_URL . 'build/vk-slider.min.js', array( 'vk-blocks-swiper' ), VK_BLOCKS_VERSION, true );
+	wp_enqueue_script( 'vk-blocks-slider', VK_BLOCKS_URL . 'build/vk-slider.min.js', array( 'vk-swiper-script' ), VK_BLOCKS_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'vk_blocks_pro_load_scripts' );

@@ -15,7 +15,8 @@ export const prefix = 'vk_card_';
 import metadata from './block.json';
 import edit from './edit';
 import save from './save';
-import deprecated from './deprecated/index';
+import deprecatedHooks from './deprecated/hooks';
+import deprecated from './deprecated/save';
 const { name } = metadata;
 
 export { metadata, name };
@@ -87,8 +88,7 @@ const generateInlineCss = (attributes) => {
 	}
 
 	const cardImgSelector = `.${prefix}${clientId} .vk_card_item .vk_post_imgOuter::before`;
-	return (
-		<style type="text/css">{`@media (max-width: 576px) {
+	return `@media (max-width: 576px) {
 		${cardImgSelector}{
 			padding-top:${mobile}${unit}!important;
 		}
@@ -102,8 +102,7 @@ const generateInlineCss = (attributes) => {
 		${cardImgSelector}{
 			padding-top:${pc}${unit}!important;
 		}
-	}`}</style>
-	);
+	}`;
 };
 
 addFilter(
@@ -112,12 +111,8 @@ addFilter(
 	createHigherOrderComponent((BlockEdit) => {
 		return (props) => {
 			const { attributes, setAttributes, clientId } = props;
-			const { unit, pc, tablet, mobile } = attributes;
 
-			if (
-				'vk-blocks/card' === props.name &&
-				(unit || pc || tablet || mobile)
-			) {
+			if ('vk-blocks/card' === props.name) {
 				useEffect(() => {
 					setAttributes({ clientId });
 				}, []);
@@ -126,8 +121,8 @@ addFilter(
 
 				return (
 					<>
-						{cssTag}
 						<BlockEdit {...props} />
+						<style type="text/css">{cssTag}</style>
 					</>
 				);
 			}
@@ -140,19 +135,36 @@ addFilter(
 	'blocks.getSaveElement',
 	'vk-blocks/card-addInlineFrontCss',
 	(el, type, attributes) => {
-		const { unit, pc, tablet, mobile } = attributes;
-		if (
-			'vk-blocks/card' === type.name &&
-			(unit || pc || tablet || mobile)
-		) {
-			const cssTag = generateInlineCss(attributes);
-			return (
-				<div>
-					{cssTag}
-					{el}
-				</div>
+		if ('vk-blocks/card' === type.name) {
+			//現在実行されている deprecated内の save関数のindexを取得
+			const deprecatedFuncIndex = deprecated.findIndex(
+				(item) => item.save === type.save
 			);
+
+			// 最新版
+			if (-1 === deprecatedFuncIndex) {
+				// NOTE: useBlockProps + style要素を挿入する場合、useBlockPropsを使った要素が最初（上）にこないと、
+				// カスタムクラスを追加する処理が失敗する
+				const cssTag = generateInlineCss(attributes);
+				return (
+					<>
+						{el}
+						<style type="text/css">{cssTag}</style>
+					</>
+				);
+
+				//後方互換
+			}
+			let DeprecatedHook;
+			// Deprecated Hooks が Deprecated Save関数より少ない場合にエラーが出ないように。
+			if (deprecatedHooks.length > deprecatedFuncIndex) {
+				DeprecatedHook = deprecatedHooks[deprecatedFuncIndex];
+			} else {
+				DeprecatedHook = deprecatedHooks[deprecatedHooks.length - 1];
+			}
+			return <DeprecatedHook el={el} attributes={attributes} />;
 		}
 		return el;
-	}
+	},
+	11
 );

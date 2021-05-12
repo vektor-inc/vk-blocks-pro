@@ -113,23 +113,12 @@ export default function save(props) {
 		if (display_title) {
 			const titleTag = 'h5';
 			const titleClass = `vk_post_title card-title has-text-align-${align.title}`;
-			if (!url) {
-				return (
-					<RichText.Content
-						tagName={titleTag}
-						className={titleClass}
-						value={title}
-					/>
-				);
-			}
 			return (
-				<a href={url} target={linkTarget} rel={rel}>
-					<RichText.Content
-						tagName={titleTag}
-						className={titleClass}
-						value={title}
-					/>
-				</a>
+				<RichText.Content
+					tagName={titleTag}
+					className={titleClass}
+					value={title}
+				/>
 			);
 		}
 	};

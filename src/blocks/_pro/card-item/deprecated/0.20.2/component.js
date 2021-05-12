@@ -122,7 +122,6 @@ export class CardItem extends Component {
       }
 	};
 
-		// eslint-disable-next-line no-shadow
 		const switchAddUrltoImage = (url) => {
 			const overlay = <div className="card-img-overlay"></div>;
 			if (url) {
@@ -135,7 +134,6 @@ export class CardItem extends Component {
 			return overlay;
 		};
 
-		// eslint-disable-next-line no-shadow
 		const renderExcerpt = (align) => {
 			const titleTag = 'p';
 			const titleClass = `vk_post_excerpt card-text text-${align.text}`;
@@ -144,7 +142,6 @@ export class CardItem extends Component {
 					<RichText
 						tagName={titleTag}
 						className={titleClass}
-						// eslint-disable-next-line camelcase
 						value={excerpt_text}
 						onChange={(value) =>
 							setAttributes({ excerpt_text: value })
@@ -160,15 +157,12 @@ export class CardItem extends Component {
 				<RichText.Content
 					tagName={titleTag}
 					className={titleClass}
-					// eslint-disable-next-line camelcase
 					value={excerpt_text}
 				/>
 			);
 		};
 
-		// eslint-disable-next-line camelcase,no-shadow
 		const renderButton = (display_btn) => {
-			// eslint-disable-next-line camelcase
 			if (display_btn) {
 				return (
 					<a
@@ -177,14 +171,12 @@ export class CardItem extends Component {
 						target={linkTarget}
 						rel={rel}
 					>
-						{/* eslint-disable-next-line camelcase*/}
 						{btn_text}
 					</a>
 				);
 			}
 		};
 
-		// eslint-disable-next-line no-shadow
 		const renderTitle = (align) => {
 			const titleTag = 'h5';
 			const titleClass = `vk_post_title card-title text-${align.title}`;
@@ -220,7 +212,6 @@ export class CardItem extends Component {
 			imageStyle = {};
 		}
 
-		// eslint-disable-next-line camelcase
 		const btnClass = display_btn ? 'vk_post-btn-display' : '';
 
 		return (

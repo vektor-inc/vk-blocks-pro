@@ -4,6 +4,7 @@ import save0_20_4 from './0.20.4/save';
 import save0_20_5 from './0.20.5/save';
 import save0_20_6 from './0.20.6/save';
 import save0_60_1 from './0.60.1/save';
+import save1_2_4 from './1.2.4/save';
 
 const blockAttributes = {
 	layout: {
@@ -87,127 +88,66 @@ const blockAttributes = {
 	  source: "attribute",
 	  selector: "a",
 	  attribute: "rel",
-	  }
-  };
+	}
+};
+
+const blockAttributes2 = {
+	...blockAttributes,
+	display_image: {
+		type: 'boolean',
+		default: true,
+	},
+	display_image_overlay_term: {
+		type: 'boolean',
+		default: true,
+	},
+	display_title: {
+		type: 'boolean',
+		default: true,
+	},
+	display_excerpt: {
+		type: 'boolean',
+		default: true,
+	},
+}
+
+const blockAttributes3 = {
+	...blockAttributes2,
+	col_xxl: {
+		type: 'number',
+		default: 3,
+	},
+}
+
 
 const deprecated = [
 	{
-		attributes: {
-			...blockAttributes,
-			col_xxl: {
-				type: 'number',
-				default: 3,
-			},
-			display_title: {
-				type: 'boolean',
-				default: true,
-			},
-			display_excerpt: {
-				type: 'boolean',
-				default: true,
-			},
-			display_image: {
-				type: 'boolean',
-				default: true,
-			},
-			display_image_overlay_term: {
-				type: 'boolean',
-				default: true,
-			},
-		},
-		save0_60_1,
+		attributes: blockAttributes3,
+		save: save1_2_4,
 	},
 	{
-		attributes: {
-			...blockAttributes,
-			display_image: {
-				type: 'boolean',
-				default: true,
-			},
-			display_image_overlay_term: {
-				type: 'boolean',
-				default: true,
-			},
-			display_title: {
-				type: 'boolean',
-				default: true,
-			},
-			display_excerpt: {
-				type: 'boolean',
-				default: true,
-			},
-		},
-		save0_20_6,
+		attributes: blockAttributes3,
+		save: save0_60_1,
 	},
 	{
-		attributes: {
-			...blockAttributes,
-			display_image: {
-				type: 'boolean',
-				default: true,
-			},
-			display_image_overlay_term: {
-				type: 'boolean',
-				default: true,
-			},
-			display_title: {
-				type: 'boolean',
-				default: true,
-			},
-			display_excerpt: {
-				type: 'boolean',
-				default: true,
-			},
-		},
-		save0_20_5,
+		attributes: blockAttributes2,
+		save: save0_20_6,
 	},
 	{
-		attributes: {
-			...blockAttributes,
-			display_image: {
-				type: 'boolean',
-				default: true,
-			},
-			display_image_overlay_term: {
-				type: 'boolean',
-				default: true,
-			},
-			display_title: {
-				type: 'boolean',
-				default: true,
-			},
-			display_excerpt: {
-				type: 'boolean',
-				default: true,
-			},
-		},
-		save0_20_4,
+		attributes: blockAttributes2,
+		save: save0_20_5,
 	},
 	{
-		attributes: {
-			...blockAttributes,
-			display_image: {
-				type: 'boolean',
-				default: true,
-			},
-			display_image_overlay_term: {
-				type: 'boolean',
-				default: true,
-			},
-			display_title: {
-				type: 'boolean',
-				default: true,
-			},
-			display_excerpt: {
-				type: 'boolean',
-				default: true,
-			},
-		},
-		save0_20_3,
+		attributes: blockAttributes2,
+		save: save0_20_4,
+	},
+	{
+		attributes: blockAttributes2,
+		save: save0_20_3,
 	},
 	{
 		attributes: blockAttributes,
-		save0_20_2,
+		save: save0_20_2,
 	},
 ];
 

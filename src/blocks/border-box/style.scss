@@ -71,7 +71,7 @@
 共通指定
 --------------------------------------------*/
 .vk_borderBox {
-	margin: 0 0 2em;
+	margin: 0 auto 2em;
 	position: relative;
 	.vk_borderBox_title_container {
 		margin: 0;
@@ -88,21 +88,20 @@
 			font-weight: bold;
 			font-size: 1em;
 			color: inherit; //これがないと見出しデザイン機能に負ける
+
+			/* FortやJPNSTYLEなどデフォルトで装飾指定のあるものの対応 */
+			background: none;
+			padding: 0;
+			border: none;
+			&::before {
+				content: none;
+			}
+			&::after {
+				content: none;
+			}
 		}
 	}
 
-	.vk_borderBox_title {
-		/* FortやJPNSTYLEなどデフォルトで装飾指定のあるものの対応 */
-		background: none;
-		padding: 0;
-		border: none;
-		&::before {
-			content: none;
-		}
-		&::after {
-			content: none;
-		}
-	}
 	.vk_borderBox_body {
 		padding: 1.5em;
 		border-width: 2px;

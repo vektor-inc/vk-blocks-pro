@@ -39,16 +39,19 @@ export default function OuterEdit(props) {
 		borderStyle,
 		borderColor,
 		borderRadius,
+		innerSideSpaceValuePC,
+		innerSideSpaceValueTablet,
+		innerSideSpaceValueMobile,
+		innerSideSpaceUnit,
 	} = attributes;
 
 	let classPaddingLR;
 	let classPaddingVertical;
 	let classBgPosition;
-	let containerClass;
 	let whichSideUpper;
 	let whichSideLower;
-	let borderProperty;
-	let borderRadiusProperty;
+
+	const containerClass = 'vk_outer_container';
 
 	const { updateBlockAttributes } = dispatch('core/block-editor');
 
@@ -58,41 +61,69 @@ export default function OuterEdit(props) {
 		}
 	}, [clientId]);
 
+	// 前バージョンとの互換処理
+	if (innerSideSpaceValuePC === undefined || innerSideSpaceValuePC === null) {
+		setAttributes({
+			innerSideSpaceValuePC: 0,
+		});
+	}
+	if (
+		innerSideSpaceValueTablet === undefined ||
+		innerSideSpaceValueTablet === null
+	) {
+		setAttributes({
+			innerSideSpaceValueTablet: 0,
+		});
+	}
+	if (
+		innerSideSpaceValueMobile === undefined ||
+		innerSideSpaceValueMobile === null
+	) {
+		setAttributes({
+			innerSideSpaceValueTablet: 0,
+		});
+	}
+	if (innerSideSpaceUnit === undefined || innerSideSpaceUnit === null) {
+		setAttributes({
+			innerSideSpaceUnit: 'px',
+		});
+	}
+
 	//幅のクラス切り替え
 	// eslint-disable-next-line prefer-const
-	const classWidth = ` vk_outer-width-${outerWidth}`;
+	const classWidth = `vk_outer-width-${outerWidth}`;
 
 	//classBgPositionのクラス切り替え
 	if (bgPosition === 'parallax') {
-		classBgPosition = ' vk_outer-bgPosition-parallax vk-prlx';
+		classBgPosition = 'vk_outer-bgPosition-parallax vk-prlx';
 	} else if (bgPosition === 'fixed') {
-		classBgPosition = ' vk_outer-bgPosition-fixed';
+		classBgPosition = 'vk_outer-bgPosition-fixed';
 	} else if (bgPosition === 'repeat') {
-		classBgPosition = ' vk_outer-bgPosition-repeat';
+		classBgPosition = 'vk_outer-bgPosition-repeat';
 	} else {
-		classBgPosition = ' vk_outer-bgPosition-normal';
+		classBgPosition = 'vk_outer-bgPosition-normal';
 	}
 
 	//classPaddingLRのクラス切り替え
 	classPaddingLR = '';
 	//eslint-disable-next-line camelcase
 	if (padding_left_and_right === '0') {
-		classPaddingLR = ' vk_outer-paddingLR-none';
+		classPaddingLR = 'vk_outer-paddingLR-none';
 		//eslint-disable-next-line camelcase
 	} else if (padding_left_and_right === '1') {
-		classPaddingLR = ' vk_outer-paddingLR-use';
+		classPaddingLR = 'vk_outer-paddingLR-use';
 		//eslint-disable-next-line camelcase
 	} else if (padding_left_and_right === '2') {
 		// Fit to content area width
-		classPaddingLR = ' vk_outer-paddingLR-zero';
+		classPaddingLR = 'vk_outer-paddingLR-zero';
 	}
 
 	//classPaddingVerticalのクラス切り替
 	//eslint-disable-next-line camelcase
 	if (padding_top_and_bottom === '1') {
-		classPaddingVertical = ' vk_outer-paddingVertical-use';
+		classPaddingVertical = 'vk_outer-paddingVertical-use';
 	} else {
-		classPaddingVertical = ' vk_outer-paddingVertical-none';
+		classPaddingVertical = 'vk_outer-paddingVertical-none';
 	}
 
 	//上側セクションの傾き切り替
@@ -118,17 +149,30 @@ export default function OuterEdit(props) {
 	}
 
 	//Dividerエフェクトがない時のみ枠線を追
-	//eslint-disable-next-line camelcase
-	if (upper_level === 0 && lower_level === 0) {
-		borderProperty = `${borderWidth}px ${borderStyle} ${borderColor}`;
-		borderRadiusProperty = `${borderRadius}px`;
-	} else {
-		borderProperty = 'none';
-		borderRadiusProperty = `0px`;
+	let borderStyleProperty = {};
+
+	if (
+		upper_level === 0 && //eslint-disable-line camelcase
+		lower_level === 0 && //eslint-disable-line camelcase
+		borderWidth > 0 &&
+		borderStyle !== 'none'
+	) {
+		borderStyleProperty = {
+			border: `${borderWidth}px ${borderStyle} ${borderColor}`,
+			borderRadius: `${borderRadius}px`,
+		};
+		//eslint-disable-next-line camelcase
+	} else if (upper_level !== 0 || lower_level !== 0) {
+		//eslint-disable-line camelcase
+		borderStyleProperty = {
+			border: `none`,
+			borderRadius: `0px`,
+		};
 	}
 
 	const blockProps = useBlockProps({
 		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
+		style: borderStyleProperty,
 	});
 
 	return (
@@ -511,14 +555,84 @@ export default function OuterEdit(props) {
 						/>
 					</BaseControl>
 				</PanelBody>
+				<PanelBody
+					title={__(
+						'Container Inner Side Space Setting',
+						'vk-blocks'
+					)}
+					initialOpen={false}
+				>
+					<RangeControl
+						label={__('Mobile', 'vk-blocks')}
+						value={innerSideSpaceValueMobile}
+						onChange={(value) =>
+							setAttributes({
+								innerSideSpaceValueMobile: toNumber(
+									value,
+									0,
+									100
+								),
+							})
+						}
+						min="0"
+						max="100"
+					/>
+					<RangeControl
+						label={__('Tablet', 'vk-blocks')}
+						value={innerSideSpaceValueTablet}
+						onChange={(value) =>
+							setAttributes({
+								innerSideSpaceValueTablet: toNumber(
+									value,
+									0,
+									200
+								),
+							})
+						}
+						min="0"
+						max="200"
+					/>
+					<RangeControl
+						label={__('PC', 'vk-blocks')}
+						value={innerSideSpaceValuePC}
+						onChange={(value) =>
+							setAttributes({
+								innerSideSpaceValuePC: toNumber(value, 0, 300),
+							})
+						}
+						min="0"
+						max="300"
+					/>
+					<SelectControl
+						label={__('Unit Type', 'vk-blocks')}
+						value={innerSideSpaceUnit}
+						onChange={(value) =>
+							setAttributes({
+								innerSideSpaceUnit: value,
+							})
+						}
+						options={[
+							{
+								value: 'px',
+								label: __('px', 'vk-blocks'),
+							},
+							{
+								value: 'em',
+								label: __('em', 'vk-blocks'),
+							},
+							{
+								value: 'rem',
+								label: __('rem', 'vk-blocks'),
+							},
+							{
+								value: 'vw',
+								label: __('vw', 'vk-blocks'),
+							},
+						]}
+					/>
+				</PanelBody>
 			</InspectorControls>
-			<div
-				{...blockProps}
-				style={{
-					border: borderProperty,
-					borderRadius: borderRadiusProperty,
-				}}
-			>
+			<div {...blockProps}>
 				<GenerateBgImage
 					prefix={'vkb-outer'}
 					clientId={clientId}

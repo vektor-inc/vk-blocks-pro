@@ -1,3 +1,7 @@
+:root{
+	--vk-color-border: rgba(0,0,0,.12);
+}
+
 $question-color: #e50000;
 $answer-color: #337ab7;
 
@@ -16,6 +20,36 @@ $answer-color: #337ab7;
 @mixin answer-bordercolor() {
 	border: 1px solid $answer-color;
 	color: $answer-color;
+}
+
+@mixin vk_faq-common($fweight:bold) {
+	border:none;
+	padding: 0.8em 0.8em 0.8em 48px;
+	margin: 0;
+	position: relative;
+	font-weight: $fweight;
+	&:before {
+		position: absolute;
+		left:0;
+		top: 0.5em;
+		font-weight: 500;
+		font-size:22px;
+		line-height: 105%;
+		width: 1.5em;
+		height: 1.5em;
+		line-height: 1.5em;
+		text-align: center;
+		position: absolute;
+		font-family:"areal";
+	}
+	p{
+		&:first-of-type{
+			margin-top:0;
+		}
+		&:last-child{
+			margin-bottom:0;
+		}
+	}
 }
 
 /* style
@@ -68,120 +102,110 @@ $answer-color: #337ab7;
 
 /*      .qaItem
 /*-------------------------------------------*/
-.vk_faq { display:block; overflow:hidden;border-bottom:1px solid rgba(0,0,0,.12); padding:0px 0px 1em; margin: 0 0 1em 0; width:100%; position: relative; }
-.vk_faq_title,
-.vk_faq_content {
-	border:none;
-	padding: 0.8em 0.8em 0.8em 48px;
+.vk_faq { 
+	display:block;
+	overflow:hidden;
+	border-bottom:1px solid var(--vk-color-border);
+	padding:0px 0px 1em; 
+	margin: 0 auto 1em auto;
+	width:100%; 
 	position: relative;
-	&:before {
-		position: absolute;
-		left:0;
-		top: 0.5em;
-		font-weight: 500;
-		font-size:22px;
-		line-height: 105%;
-		width: 1.5em;
-		height: 1.5em;
-		line-height: 1.5em;
-		text-align: center;
-		position: absolute;
-		font-family:"areal";
-	}
-}
-.vk_faq_title {
-	margin-bottom:0;
-	font-size:16px;
-	font-weight:700;
-	border-bottom: 1px dotted rgba(0,0,0,.12);
-  &:before { content:"Q";color:#e50000; font-weight: 500; }
-  	p { line-height: 1.7;
-		&:last-child{
-			margin-bottom:0;
+
+	.vk_faq_title {	
+		@include vk_faq-common();
+		font-size:16px;
+		border-bottom: 1px dotted var(--vk-color-border);
+		&:before { content:"Q";color:#e50000; font-weight: 500; }
+		p { 
+			line-height: 1.7;
+		}
+		@media (min-width: 768px) {
+			font-size:18px;
 		}
 	}
-	@media (min-width: 768px) {
-		font-size:18px;
+	.vk_faq_content {
+		@include vk_faq-common(normal);
+		transition: .25s;
+		&:before { content:"A";color:#337ab7; }
+
 	}
-}
-.vk_faq_content {
-	margin:0px;
-	transition: .25s;
-	&:before { content:"A";color:#337ab7; }
-	p:last-child{
-	margin-bottom:0;
-	}
-}
+} //.vk_faq 
 
 
 /*      開閉機能
 /*-------------------------------------------*/
-.vk_faq-accordion-close,
-.vk_faq-accordion-open{
-	padding-bottom: 0;
-	margin-bottom: 0;
-	.vk_faq_title{
-		padding-right: 2em;
-		@media (min-width: 768px) {
-			padding-right: 2.5em;
-		}
-		//矢印共通デザイン
-		&::after{
-			position: absolute;
-			top: 50%;
-			right: unset;
-			right: 2.4em;
-			content: "";
-			width: 8px;
-			height: 8px;
-			border-right: 1px solid #222;
-			border-top: 1px solid #222;
-			transition: border-color .3s ease,-webkit-transform .6s ease;
-			-webkit-transition: border-color .3s ease,-webkit-transform .6s ease;
-			transition: border-color .3s ease,transform .6s ease;
-			transition: border-color .3s ease,transform .6s ease,-webkit-transform .6s ease;
-		}
-	}
-}
-//矢印開閉時の向き
-.vk_faq-accordion{
-	&-close{
+.vk_faq{
+	&.vk_faq-accordion-close,
+	&.vk_faq-accordion-open{
+		padding-bottom: 0;
+		margin-bottom: 0;
 		.vk_faq_title{
-			border-bottom: none;
-		}
-		.vk_faq_title::after {
-			-webkit-transform: translate(32px, -5px) rotate(135deg);
-			transform: translate(32px, -5px) rotate(135deg);
-
+			padding-right: 2em;
+			@media (min-width: 768px) {
+				padding-right: 2.5em;
+			}
+			//矢印共通デザイン
+			&::after{
+				position: absolute;
+				top: 50%;
+				right: unset;
+				right: 2.4em;
+				content: "";
+				width: 8px;
+				height: 8px;
+				border-right: 1px solid #222;
+				border-top: 1px solid #222;
+				transition: border-color .3s ease,-webkit-transform .6s ease;
+				-webkit-transition: border-color .3s ease,-webkit-transform .6s ease;
+				transition: border-color .3s ease,transform .6s ease;
+				transition: border-color .3s ease,transform .6s ease,-webkit-transform .6s ease;
+			}
 		}
 	}
-	&-open{
 
-		.vk_faq_title::after {
-			-webkit-transform: translate(32px,-2px) rotate(-45deg);
-			transform: translate(32px,-2px) rotate(-45deg);
+	//矢印開閉時の向き
+	&.vk_faq-accordion{
+		&-close{
+			.vk_faq_title{
+				border-bottom: none;
+			}
+			.vk_faq_title::after {
+				-webkit-transform: translate(32px, -5px) rotate(135deg);
+				transform: translate(32px, -5px) rotate(135deg);
+
+			}
 		}
+		&-open{
 
+			.vk_faq_title::after {
+				-webkit-transform: translate(32px,-2px) rotate(-45deg);
+				transform: translate(32px,-2px) rotate(-45deg);
+			}
+
+		}
+		.vk_faq_title{
+			cursor: pointer;
+		}
 	}
-	.vk_faq_title{
-		cursor: pointer;
+
+	//アンサーオープン時
+	.vk_faq_content-accordion-open{
+		height: auto;
+		overflow: hidden;
+		opacity: 1;
+		transition: .25s;
+		margin-bottom: 10px;
 	}
+	//アンサークローズ時
+	.vk_faq_content-accordion-close{
+		padding-top:0;
+		padding-bottom: 0;
+		height: 0;
+		opacity: 0;
+	}
+
 }
-//アンサーオープン時
-.vk_faq_content-accordion-open{
-	height: auto;
-    overflow: hidden;
-    opacity: 1;
-	transition: .25s;
-	margin-bottom: 10px;
-}
-//アンサークローズ時
-.vk_faq_content-accordion-close{
-	padding-top:0;
-	padding-bottom: 0;
-    height: 0;
-    opacity: 0;
-}
+
 
 /*      編集画面
 /*-------------------------------------------*/

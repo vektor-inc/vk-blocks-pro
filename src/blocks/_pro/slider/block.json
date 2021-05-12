@@ -49,7 +49,15 @@
 		},
 		"speed": {
 			"type": "number",
-			"default": 300
+			"default": 500
+		},
+		"slidesPerView": {
+			"type": "number",
+			"default": 1
+		},
+		"slidesPerGroup": {
+			"type": "number",
+			"default": 1
 		}
 	},
 	"supports": {

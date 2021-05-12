@@ -28,64 +28,66 @@
 		margin-bottom: 1.5em;
 	}
 }
-.vk_icon-card_item {
-	&_link {
-		color: #333;
-		&:hover {
+.wp-block-vk-blocks-icon-card{ //編集画面で負けるので先頭に追加
+	.vk_icon-card_item {
+		&_link {
 			color: #333;
-			text-decoration: none;
+			&:hover {
+				color: #333;
+				text-decoration: none;
+			}
 		}
-	}
-	&_icon_outer {
-		display: block;
-		position: relative;
-		margin: 0 auto;
-		width: 80px;
-		height: 80px;
-		border-radius: 50%;
-	}
-	&_icon {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translateY(-50%) translateX(-50%);
-		font-size: 36px;
-		color: #fff;
-	}
-	&_title {
-		background-color: transparent;
-		margin-top: 0.9em;
-		margin-bottom: 0.6em;
-		font-size: 21px;
-		line-height: 1.4em;
-		border: none;
-		border-radius:unset;
-		padding: 0;
-		outline: unset;
-		outline-offset: unset;
-		box-shadow: unset;
-		color: inherit;
-		display: block; /* 見出しデザイン設定で左右線指定されるなど display:flec;などが不要された場合対策 */
-		&::before {
-			content: none;
+		&_icon_outer {
+			display: block;
+			position: relative;
+			margin: 0 auto;
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
 		}
-		&::after {
+		&_icon {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translateY(-50%) translateX(-50%);
+			font-size: 36px;
+			color: #fff;
+		}
+		&_title {
+			background-color: transparent;
+			margin-top: 0.9em;
+			margin-bottom: 0.6em;
+			font-size: 21px;
+			line-height: 1.4em;
 			border: none;
+			border-radius:unset;
+			padding: 0;
+			outline: unset;
+			outline-offset: unset;
+			box-shadow: unset;
+			color: inherit;
+			display: block; /* 見出しデザイン設定で左右線指定されるなど display:flec;などが不要された場合対策 */
+			&::before {
+				content: none;
+			}
+			&::after {
+				border: none;
+			}
 		}
-	}
-	&_image {
-		position: relative;
-		display: block;
-		width: 120px;
-		height: 120px;
-		margin: 0 auto;
-		overflow: hidden;
-		border-radius: 50%;
-		text-indent: -9999px;
-	}
-	&_summary {
-		margin-bottom: 0.5em;
-		text-align: center;
-		line-height: 1.8em;
+		&_image {
+			position: relative;
+			display: block;
+			width: 120px;
+			height: 120px;
+			margin: 0 auto;
+			overflow: hidden;
+			border-radius: 50%;
+			text-indent: -9999px;
+		}
+		&_summary {
+			margin-bottom: 0.5em;
+			text-align: center;
+			line-height: 1.8em;
+		}
 	}
 }

@@ -2,14 +2,21 @@
 
 This is a plugin that extends Gutenberg's blocks.
 
+## 環境構築（Windows編）
+- XAMPP 7.4 系をインストール
+- Composer をインストール
+- VS Code で Git Bash を使えるようにしておく
+
 ## 前提
 - Docker
-- WP-CLI（ローカルにインストール）
+- @wordpress/env をグローバルインストール( ```npm install -g @wordpress/env``` )
 - NodeJS、NPM
 
 ## 依存関係のインストール
 ```
 npm install
+npm install -g @wordpress/env
+composer global require wp-cli/wp-cli-bundle
 ```
 
 ## 開発環境の立ち上げ
@@ -17,10 +24,13 @@ npm install
 npm start
 ```
 
-## ビルド
+## ビルド & 翻訳
 ```
 // 本番環境用
 npm build
+
+// 翻訳のみ
+npm run translate
 
 // 開発用（開発者ツールのconsoleでログが追いやすくなる）
 npm run build:dev
@@ -45,22 +55,15 @@ npm run translate
 翻訳は PoEdit などを使って `.po` ファイルを開いて編集するが、
 新たに翻訳箇所が追加された場合はメニューから「potファイルから更新」を選んで更新する
 
+## PHPUnitテスト
+
+```
+composer install
+npm run phpunit
+```
 
 ## デプロイ
-
-1. 以下のファイルのバージョンを、公開するバージョンで置き換える。
-    - `vk-blocks.php`の `Version: 0.0.0`
-    - `readme.txt`の `Stable tag: 0.0.0`
-
-1. `readem.txt`の`== Changelog ==`に、修正内容を追加。
-1. 1,2の修正後、コミットメッセージ `[change Version] 1.1.1` でコミット & プッシュ。
-1. 全ての変更を `master`にマージ。
-1. `master`ブランチをローカルにプルし、`git tag 1.1.1` 、`git push origin 1.1.1` 
-
-これで自動で、VWSにPro版が、WordPress.orgに無料版がアップロードされます。
-
-- 注 : `0.0.0`は前のバージョン番号、`1.1.1`は公開するバージョン番号。
-
+手順は[wiki](https://github.com/vektor-inc/vk-blocks-pro/wiki/%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4)を参考に
 
 
 ## CSS 命名規則
@@ -88,3 +91,4 @@ npm run translate
 線でも あり/なし だけではなく 直線/点線/二重線 など拡張が想定される可能性がありそうな場合は
 -border-solid としておき -border-dotted -border-wave とする事ができるようにしておく。
 何がなんでも あり/なし 以外以外発生しないというケースの場合は -border-true あるいは例外的に -border など属性名だけでも可
+

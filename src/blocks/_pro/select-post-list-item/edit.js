@@ -29,7 +29,7 @@ export default function SelectPostListItemEdit(props) {
 		);
 	}
 
-	const homeUrl = vk_blocks_home_url; //eslint-disable-line no-undef,camelcase
+	const homeUrl = vk_blocks_params.home_url; //eslint-disable-line no-undef,camelcase
 
 	return (
 		<>

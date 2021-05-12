@@ -693,17 +693,25 @@ msgstr ""
 msgid "Post list"
 msgstr ""
 
-#: src/blocks/_pro/select-post-list-item/edit.js:24
+#: src/blocks/_pro/select-post-list-item/edit.js:116
+msgid "Submit"
+msgstr ""
+
+#: src/blocks/_pro/select-post-list-item/edit.js:32
 #: src/blocks/page-content/edit.js:35
 msgid "Because no post is selected, The block Will not render"
 msgstr ""
 
-#: src/blocks/_pro/select-post-list-item/edit.js:38
-msgid "Select Post List Item Setting"
+#: src/blocks/_pro/select-post-list-item/edit.js:64
+msgid "Unlink"
 msgstr ""
 
-#: src/blocks/_pro/select-post-list-item/edit.js:42
+#: src/blocks/_pro/select-post-list-item/edit.js:65
 msgid "Input Internal Post URL"
+msgstr ""
+
+#: src/blocks/_pro/select-post-list-item/edit.js:83
+msgid "Search or type url"
 msgstr ""
 
 #: src/blocks/_pro/select-post-list-item/index.js:20
@@ -809,7 +817,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:110
 #: src/blocks/_pro/table-of-contents-new/edit.js:130
 #: src/blocks/_pro/timeline-item/edit.js:91
-#: src/blocks/heading/edit.js:239
+#: src/blocks/heading/edit.js:233
 #: src/blocks/staff/edit.js:112
 #: src/extensions/core/heading/style.js:30
 #: src/extensions/core/list/style.js:104
@@ -895,7 +903,7 @@ msgid "Timeline"
 msgstr ""
 
 #: src/blocks/alert/edit.js:19
-#: src/blocks/heading/edit.js:230
+#: src/blocks/heading/edit.js:224
 msgid "Style Settings"
 msgstr ""
 
@@ -961,7 +969,7 @@ msgid "Balloon setting"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:202
-#: src/blocks/heading/edit.js:345
+#: src/blocks/heading/edit.js:339
 msgid "Position"
 msgstr ""
 
@@ -1200,13 +1208,13 @@ msgid ""
 msgstr ""
 
 #: src/blocks/button/edit.js:262
-#: src/blocks/heading/edit.js:312
+#: src/blocks/heading/edit.js:306
 #: src/blocks/pr-content/edit.js:194
 msgid "Before text"
 msgstr ""
 
 #: src/blocks/button/edit.js:271
-#: src/blocks/heading/edit.js:321
+#: src/blocks/heading/edit.js:315
 #: src/blocks/pr-content/edit.js:206
 msgid "After text"
 msgstr ""
@@ -1336,7 +1344,7 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:152
 #: src/blocks/heading/deprecated/0.40.1/component.js:152
 #: src/blocks/heading/deprecated/0.60.1/component.js:152
-#: src/blocks/heading/edit.js:204
+#: src/blocks/heading/edit.js:198
 msgid "Input sub text…"
 msgstr ""
 
@@ -1350,60 +1358,60 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:137
 #: src/blocks/heading/deprecated/0.40.1/component.js:137
 #: src/blocks/heading/deprecated/0.60.1/component.js:137
-#: src/blocks/heading/edit.js:189
+#: src/blocks/heading/edit.js:183
 msgid "Input title…"
 msgstr ""
 
-#: src/blocks/heading/edit.js:232
+#: src/blocks/heading/edit.js:226
 msgid "Heading style"
 msgstr ""
 
-#: src/blocks/heading/edit.js:243
+#: src/blocks/heading/edit.js:237
 #: src/extensions/core/heading/style.js:35
 msgid "Plain"
 msgstr ""
 
-#: src/blocks/heading/edit.js:249
+#: src/blocks/heading/edit.js:243
 msgid "Margin Setting"
 msgstr ""
 
-#: src/blocks/heading/edit.js:251
+#: src/blocks/heading/edit.js:245
 msgid "Margin between Heading and sub text (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:268
+#: src/blocks/heading/edit.js:262
 msgid "Margin bottom size of after this block (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:285
+#: src/blocks/heading/edit.js:279
 msgid "Heading Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:297
+#: src/blocks/heading/edit.js:291
 msgid "Text Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:309
+#: src/blocks/heading/edit.js:303
 msgid "Font Awesome Icon Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:330
+#: src/blocks/heading/edit.js:324
 msgid "Icon Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:343
+#: src/blocks/heading/edit.js:337
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:349
+#: src/blocks/heading/edit.js:343
 msgid "Display"
 msgstr ""
 
-#: src/blocks/heading/edit.js:353
+#: src/blocks/heading/edit.js:347
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/heading/edit.js:361
+#: src/blocks/heading/edit.js:355
 msgid "Text size (rem)"
 msgstr ""
 

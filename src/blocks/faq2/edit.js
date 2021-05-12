@@ -1,5 +1,5 @@
 import {
-	__experimentalUseInnerBlocksProps as useInnerBlocksProps,
+	__experimentalUseInnerBlocksProps as useInnerBlocksProps, // eslint-disable-line @wordpress/no-unsafe-wp-apis
 	InspectorControls,
 	useBlockProps,
 } from '@wordpress/block-editor';

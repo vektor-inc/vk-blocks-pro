@@ -63,7 +63,7 @@ e.g.
 
 == Changelog ==
 
-* [ Specification Change ][ Select Post List Item (Pro) ] search URL by postname.
+= 1.3.8 =
 * [ Bug fix ][ border-box ] Fix not being able to drag and drop other blocks.
 
 = 1.3.7 =

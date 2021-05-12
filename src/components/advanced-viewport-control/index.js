@@ -2,7 +2,7 @@
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { TextControl } from '@wordpress/components';
+import { NumberControl } from '@wordpress/components';
 
 const AdvancedViewportControl = (props) => {
 	const { attributes, setAttributes, initial } = props;
@@ -21,13 +21,15 @@ const AdvancedViewportControl = (props) => {
 
 	return (
 		<>
-			<TextControl
+			<NumberControl
 				label={__('PC', 'vk-blocks')}
 				value={pc}
-				onChange={(value) => setAttributes({ pc: parseFloat(value) })}
+				onChange={(value) =>
+					setAttributes({ pc: parseFloat(value) })
+				}
 				type={'number'}
 			/>
-			<TextControl
+			<NumberControl
 				label={__('Tablet', 'vk-blocks')}
 				value={tablet}
 				onChange={(value) =>
@@ -35,7 +37,7 @@ const AdvancedViewportControl = (props) => {
 				}
 				type={'number'}
 			/>
-			<TextControl
+			<NumberControl
 				label={__('Mobile', 'vk-blocks')}
 				value={mobile}
 				onChange={(value) =>

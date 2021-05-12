@@ -33,6 +33,7 @@
 
 	.vk_flow_frame_text_content {
 		margin-bottom: 0;
+		margin-left:0;
 	}
 
 	.vk_flow_frame_image {
@@ -52,12 +53,12 @@
 		width: 50px;
 		margin: 0 auto;
 	}
-	
+
 	&.vk_flow-arrow-off {
 		padding-bottom: 0;
 		margin-bottom: 30px;
 	}
-	
+
 	&.vk_flow-arrow-off::after {
 		content: "";
 		font-size: 0;

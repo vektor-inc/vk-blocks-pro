@@ -1,4 +1,4 @@
-import { __, sprintf } from '@wordpress/i18n';
+import { __ } from '@wordpress/i18n';
 import { PanelBody, BaseControl } from '@wordpress/components';
 import { AlignControl } from '@vkblocks/components/align-control';
 import { capitalize } from '@vkblocks/utils/capitalize';
@@ -21,7 +21,7 @@ export const CardAlignControls = (props) => {
 			<BaseControl
 				key={index}
 				// translators: %s is align.
-				label={sprintf(__('Align %s', 'vk-blocks'), capitalize(label))}
+				label={__(capitalize(label), 'vk-blocks')} // eslint-disable-line @wordpress/i18n-no-variables
 				id={'vk_card-align'}
 			>
 				<AlignControl schema={schema} {...props} />

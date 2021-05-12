@@ -1,8 +1,17 @@
 // import WordPress Scripts
 import { __ } from '@wordpress/i18n';
-import { useBlockProps, BlockControls, __experimentalLinkControlSearchInput as LinkControlSearchInput } from '@wordpress/block-editor';
+import {
+	useBlockProps,
+	BlockControls,
+	__experimentalLinkControlSearchInput as LinkControlSearchInput, // eslint-disable-line @wordpress/no-unsafe-wp-apis
+} from '@wordpress/block-editor';
 import ServerSideRender from '@wordpress/server-side-render';
-import { ToolbarGroup, ToolbarButton, Dropdown, Button } from '@wordpress/components';
+import {
+	ToolbarGroup,
+	ToolbarButton,
+	Dropdown,
+	Button,
+} from '@wordpress/components';
 import { link, linkOff, keyboardReturn } from '@wordpress/icons';
 
 export default function SelectPostListItemEdit(props) {
@@ -37,7 +46,7 @@ export default function SelectPostListItemEdit(props) {
 					<Dropdown
 						renderToggle={({ isOpen, onToggle }) => {
 							const setLink = () => {
-								if (isOpen && (url !== '')) {
+								if (isOpen && url !== '') {
 									// linkOff
 									setAttributes({ url: '' });
 								}
@@ -46,9 +55,18 @@ export default function SelectPostListItemEdit(props) {
 							return (
 								<ToolbarButton
 									aria-expanded={isOpen}
-									icon={(url !== '') && isOpen ? linkOff : link}
-									isActive={(url !== '') && isOpen ? true : false}
-									label={(url !== '') && isOpen ? __('Unlink') : __('Input Internal Post URL', 'vk-blocks')}
+									icon={url !== '' && isOpen ? linkOff : link}
+									isActive={
+										url !== '' && isOpen ? true : false
+									}
+									label={
+										url !== '' && isOpen
+											? __('Unlink')
+											: __(
+													'Input Internal Post URL',
+													'vk-blocks'
+											  )
+									}
 									onClick={setLink}
 								/>
 							);
@@ -62,20 +80,30 @@ export default function SelectPostListItemEdit(props) {
 									<div className="block-editor-link-control__search-input-wrapper">
 										<LinkControlSearchInput
 											className="block-editor-link-control__search-input"
-											placeholder={__('Search or type url')}
+											placeholder={__(
+												'Search or type url'
+											)}
 											allowDirectEntry={false}
 											withURLSuggestion={false}
 											withCreateSuggestion={false}
 											value={url}
 											onChange={(v) => {
-												setAttributes({ url: v })
+												setAttributes({ url: v });
 											}}
 											onSelect={(v) => {
 												if (v.url !== '') {
-													if (v.url.indexOf(homeUrl) !== -1) {
-														setAttributes({ url: v.url });
+													if (
+														v.url.indexOf(
+															homeUrl
+														) !== -1
+													) {
+														setAttributes({
+															url: v.url,
+														});
 													} else {
-														setAttributes({ url: '' });
+														setAttributes({
+															url: '',
+														});
 														v.url = '';
 													}
 												}
@@ -93,7 +121,7 @@ export default function SelectPostListItemEdit(props) {
 										</LinkControlSearchInput>
 									</div>
 								</div>
-							)
+							);
 						}}
 					/>
 				</ToolbarGroup>

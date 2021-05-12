@@ -3,7 +3,7 @@
  */
 import { __ } from '@wordpress/i18n';
 import {
-	__experimentalNumberControl as NumberControl // eslint-disable-line @wordpress/no-unsafe-wp-apis
+	__experimentalNumberControl as NumberControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
 } from '@wordpress/components';
 
 const AdvancedViewportControl = (props) => {
@@ -27,9 +27,7 @@ const AdvancedViewportControl = (props) => {
 				className={'components-base-control'}
 				label={__('PC', 'vk-blocks')}
 				value={pc}
-				onChange={(value) =>
-					setAttributes({ pc: parseFloat(value) })
-				}
+				onChange={(value) => setAttributes({ pc: parseFloat(value) })}
 			/>
 			<NumberControl
 				className={'components-base-control'}

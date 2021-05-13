@@ -1757,10 +1757,6 @@ msgstr ""
 msgid "Link rel"
 msgstr ""
 
-#: src/extensions/common/font-size-extension/index.js:87
-msgid "Font Size"
-msgstr ""
-
 #: src/extensions/common/hidden-extension/index.js:123
 msgid "Hidden Settings"
 msgstr ""
@@ -1816,6 +1812,14 @@ msgstr ""
 
 #: src/extensions/common/highlighter/index.js:98
 msgid "Highlight Color"
+msgstr ""
+
+#: src/extensions/common/inline-font-size/index.js:13
+msgid "Inline font size"
+msgstr ""
+
+#: src/extensions/common/inline-font-size/index.js:28
+msgid "Inline Font Size"
 msgstr ""
 
 #: src/extensions/common/nowrap/index.js:21

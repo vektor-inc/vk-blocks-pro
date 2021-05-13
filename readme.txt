@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
 Tested up to: 5.7
-Stable tag: 1.3.7
+Stable tag: 1.3.8
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -64,6 +64,7 @@ e.g.
 == Changelog ==
 
 = 1.3.8 =
+* [ Bug fix ][ page ] To be use private page
 * [ Bug fix ][ border-box ] Fix not being able to drag and drop other blocks.
 
 = 1.3.7 =

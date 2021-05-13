@@ -694,7 +694,7 @@ msgid "Post list"
 msgstr ""
 
 #: src/blocks/_pro/select-post-list-item/edit.js:24
-#: src/blocks/page-content/edit.js:35
+#: src/blocks/page-content/edit.js:38
 msgid "Because no post is selected, The block Will not render"
 msgstr ""
 
@@ -1426,11 +1426,11 @@ msgstr ""
 msgid "Unspecified"
 msgstr ""
 
-#: src/blocks/page-content/edit.js:56
+#: src/blocks/page-content/edit.js:59
 msgid "Page Setting"
 msgstr ""
 
-#: src/blocks/page-content/edit.js:61
+#: src/blocks/page-content/edit.js:64
 msgid "Select Page"
 msgstr ""
 

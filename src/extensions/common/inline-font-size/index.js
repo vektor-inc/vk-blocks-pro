@@ -13,12 +13,12 @@ import {
 	RichTextToolbarButton,
 	RichTextShortcut,
 	InspectorControls,
-	PanelColorSettings,
+	TextControl,
 } from '@wordpress/block-editor';
 
 import { ReactComponent as Icon } from './icon.svg';
 
-const name = 'vk-blocks/font-size-extension';
+const name = 'vk-blocks/inline-font-size';
 const defaultFontSize = 16;
 
 // 色が指定されていなかったらデフォルトカラーを指定する
@@ -30,18 +30,16 @@ const setFontSizeIfUndefined = (fontSize) => {
 };
 
 //ハイライトカラーが選択されたら
-const fontSizeOnToggle = ({ fontSize, value, onChange }) => {
+const fontSizeOnToggle = ({ fontSize, value }) => {
 	fontSize = setFontSizeIfUndefined(fontSize);
 
-	onChange(
-		toggleFormat(value, {
-			type: name,
-			attributes: {
-				data: fontSize,
-				style: `font-size: ${fontSize}px;`,
-			},
-		})
-	);
+	toggleFormat(value, {
+		type: name,
+		attributes: {
+			fontSize,
+			style: `font-size: ${fontSize}px;`,
+		},
+	});
 };
 
 registerFormatType(name, {
@@ -49,42 +47,51 @@ registerFormatType(name, {
 	tagName: 'span',
 	className: 'vk_fontSize',
 	attributes: {
-		data: 16,
+		fontSize: 16,
 		style: 'font-size:16px',
 	},
 	edit(props) {
-		const { value, isActive, onChange } = props;
+		const { value, isActive } = props;
 		const shortcutType = 'primary';
 		const shortcutChar = 'f';
 
 		let selectedFontSize;
 		if (isActive) {
 			const activeFormat = getActiveFormat(value, name);
-			selectedFontSize = activeFormat.attributes.data;
+			selectedFontSize = activeFormat.attributes.fontSize;
 		}
 
 		return (
 			<>
-				<InspectorControls></InspectorControls>
-				<RichTextShortcut
-					type={shortcutType}
-					character={shortcutChar}
-					onUse={() =>
-						fontSizeOnToggle({
-							selectedFontSize,
-							value,
-							onChange,
-						})
-					}
-				/>
+				<InspectorControls>
+					<TextControl
+						label="Additional CSS Class"
+						value={selectedFontSize}
+						onChange={(fontSize) => {
+							if (fontSize) {
+								applyFormat(value, {
+									type: name,
+									attributes: {
+										fontSize,
+										style: `font-size: ${fontSize}px;`,
+									},
+								});
+								return;
+							}
+							removeFormat(value, name);
+						}}
+					/>
+				</InspectorControls>
 				<RichTextToolbarButton
 					icon={Icon}
 					title={__('Font Size', 'vk-blocks')}
 					onClick={() =>
-						fontSizeOnToggle({
-							selectedFontSize,
-							value,
-							onChange,
+						toggleFormat(value, {
+							type: name,
+							attributes: {
+								fontSize,
+								style: `font-size: ${fontSize}px;`,
+							},
 						})
 					}
 					isActive={isActive}

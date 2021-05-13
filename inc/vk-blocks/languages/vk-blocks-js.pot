@@ -1757,7 +1757,7 @@ msgstr ""
 msgid "Link rel"
 msgstr ""
 
-#: src/extensions/common/font-size-extension/index.js:82
+#: src/extensions/common/font-size-extension/index.js:87
 msgid "Font Size"
 msgstr ""
 

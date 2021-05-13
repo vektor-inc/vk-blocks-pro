@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-05-13T05:11:49+00:00\n"
+"POT-Creation-Date: 2021-05-13T05:31:16+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: vk-blocks\n"
@@ -1761,7 +1761,7 @@ msgstr ""
 msgid "Link rel"
 msgstr ""
 
-#: src/extensions/common/font-size-extension/index.js:82
+#: src/extensions/common/font-size-extension/index.js:87
 msgid "Font Size"
 msgstr ""
 

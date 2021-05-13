@@ -16,96 +16,62 @@ import {
 	PanelColorSettings,
 } from '@wordpress/block-editor';
 
-import hex2rgba from '@vkblocks/utils/hex-to-rgba';
 import { ReactComponent as Icon } from './icon.svg';
 
-const name = 'vk-blocks/highlighter';
-const alpha = 0.7;
-const defaultColor = '#fffd6b';
+const name = 'vk-blocks/font-size-extension';
+const defaultFontSize = 16;
 
 // 色が指定されていなかったらデフォルトカラーを指定する
-const setColorIfUndefined = (color) => {
-	if (color === undefined) {
-		color = defaultColor;
+const setFontSizeIfUndefined = (fontSize) => {
+	if (fontSize === undefined) {
+		fontSize = defaultFontSize;
 	}
-	return color;
+	return fontSize;
 };
 
 //ハイライトカラーが選択されたら
-const hightliterOnToggle = ({ color, value, onChange }) => {
-	color = setColorIfUndefined(color);
+const fontSizeOnToggle = ({ fontSize, value, onChange }) => {
+	fontSize = setFontSizeIfUndefined(fontSize);
 
 	onChange(
 		toggleFormat(value, {
 			type: name,
 			attributes: {
-				data: color,
-				style: `background: linear-gradient(transparent 60%,${hex2rgba(
-					color,
-					alpha
-				)} 0);`,
+				data: fontSize,
+				style: `font-size: ${fontSize}px;`,
 			},
 		})
 	);
 };
 
 registerFormatType(name, {
-	title: __('Highlighter', 'vk-blocks'),
+	title: __('Font Size', 'vk-blocks'),
 	tagName: 'span',
-	className: 'vk_highlighter',
+	className: 'vk_fontSize',
 	attributes: {
-		data: 'data-color',
-		style: 'style',
+		data: 16,
+		style: 'font-size:16px',
 	},
 	edit(props) {
 		const { value, isActive, onChange } = props;
 		const shortcutType = 'primary';
-		const shortcutChar = 'h';
+		const shortcutChar = 'f';
 
-		let heightlightColor;
+		let selectedFontSize;
 		if (isActive) {
 			const activeFormat = getActiveFormat(value, name);
-			heightlightColor = activeFormat.attributes.data;
+			selectedFontSize = activeFormat.attributes.data;
 		}
 
 		return (
 			<>
-				<InspectorControls>
-					<PanelColorSettings
-						title={__('Highlighter', 'vk-blocks')}
-						initialOpen={false}
-						colorSettings={[
-							{
-								value: heightlightColor,
-								onChange: (color) => {
-									if (color) {
-										onChange(
-											applyFormat(value, {
-												type: name,
-												attributes: {
-													data: color,
-													style: `background: linear-gradient(transparent 60%,${hex2rgba(
-														color,
-														0.7
-													)} 0);`,
-												},
-											})
-										);
-										return;
-									}
-									onChange(removeFormat(value, name));
-								},
-								label: __('Highlight Color', 'vk-blocks'),
-							},
-						]}
-					/>
-				</InspectorControls>
+				<InspectorControls></InspectorControls>
 				<RichTextShortcut
 					type={shortcutType}
 					character={shortcutChar}
 					onUse={() =>
-						hightliterOnToggle({
-							heightlightColor,
+						fontSizeOnToggle({
+							selectedFontSize,
 							value,
 							onChange,
 						})
@@ -113,10 +79,10 @@ registerFormatType(name, {
 				/>
 				<RichTextToolbarButton
 					icon={Icon}
-					title={__('Highlighter', 'vk-blocks')}
+					title={__('Font Size', 'vk-blocks')}
 					onClick={() =>
-						hightliterOnToggle({
-							heightlightColor,
+						fontSizeOnToggle({
+							selectedFontSize,
 							value,
 							onChange,
 						})

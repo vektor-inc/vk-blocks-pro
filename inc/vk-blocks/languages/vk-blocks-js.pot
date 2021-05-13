@@ -62,6 +62,7 @@ msgstr ""
 #: src/blocks/button/edit.js:95
 #: src/blocks/faq/index.js:27
 #: src/blocks/faq2/index.js:22
+#: src/extensions/common/font-size-extension/index.js:28
 msgid "Normal"
 msgstr ""
 
@@ -1133,6 +1134,7 @@ msgid "Solid Angle iconFeature"
 msgstr ""
 
 #: src/blocks/button/edit.js:103
+#: src/extensions/common/font-size-extension/index.js:23
 msgid "Small"
 msgstr ""
 
@@ -1755,6 +1757,18 @@ msgstr ""
 
 #: src/components/link-control/index.js:46
 msgid "Link rel"
+msgstr ""
+
+#: src/extensions/common/font-size-extension/index.js:33
+msgid "Big"
+msgstr ""
+
+#: src/extensions/common/font-size-extension/index.js:38
+msgid "Extra big"
+msgstr ""
+
+#: src/extensions/common/font-size-extension/index.js:69
+msgid "Font Size Extention"
 msgstr ""
 
 #: src/extensions/common/hidden-extension/index.js:123

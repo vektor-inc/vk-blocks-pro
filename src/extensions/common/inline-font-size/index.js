@@ -12,7 +12,7 @@ const name = 'vk-blocks/inline-font-size';
 registerFormatType(name, {
 	title: __('Inline font size', 'vk-blocks'),
 	tagName: 'span',
-	className: 'vk_inlineFontSize',
+	className: 'vk_inline-font-size',
 	attributes: {
 		style: 'style',
 	},
@@ -20,6 +20,7 @@ registerFormatType(name, {
 		const { value, isActive } = props;
 		const shortcutType = 'primary';
 		const shortcutChar = 'h';
+		const selectedFontSize = 16;
 
 		return (
 			<>
@@ -31,7 +32,7 @@ registerFormatType(name, {
 							toggleFormat(value, {
 								type: name,
 								attributes: {
-									style: `font-size: 16px;`,
+									style: `font-size: ${selectedFontSize}px;`,
 								},
 							})
 						)

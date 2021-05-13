@@ -1818,7 +1818,7 @@ msgstr ""
 msgid "Inline font size"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:28
+#: src/extensions/common/inline-font-size/index.js:29
 msgid "Inline Font Size"
 msgstr ""
 

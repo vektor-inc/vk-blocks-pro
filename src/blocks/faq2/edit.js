@@ -33,8 +33,8 @@ export default function FAQ2Edit() {
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
-				<div className="vk_faq-content-before"></div>
-				<dl className="vk_faq-content">
+				<div className="vk_faq-header"></div>
+				<dl className="vk_faq-body">
 					<InnerBlocks
 						allowedBlocks={[
 							['vk-blocks/faq2-q'],
@@ -44,7 +44,7 @@ export default function FAQ2Edit() {
 						templateLock="all"
 					/>
 				</dl>
-				<div className="vk_faq-content-after"></div>
+				<div className="vk_faq-footer"></div>
 			</div>
 		</>
 	);

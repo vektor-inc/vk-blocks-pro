@@ -691,7 +691,7 @@ msgstr "選択投稿リストアイテム"
 
 #: src/blocks/_pro/select-post-list-item/edit.js:42
 msgid "Input Internal Post URL"
-msgstr "このサイトのの投稿の URL を入力してください"
+msgstr "このサイトの投稿の URL を入力してください"
 
 #: src/blocks/_pro/select-post-list-item/index.js:20
 msgid "Selected Post List Item"

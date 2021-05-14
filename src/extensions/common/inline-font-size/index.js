@@ -2,8 +2,20 @@
  * highlighter block type
  */
 import { __ } from '@wordpress/i18n';
-import { registerFormatType, toggleFormat } from '@wordpress/rich-text';
-import { RichTextToolbarButton } from '@wordpress/block-editor';
+import {
+	registerFormatType,
+	toggleFormat,
+	applyFormat,
+	removeFormat,
+	getActiveFormat,
+} from '@wordpress/rich-text';
+
+import {
+	RichTextToolbarButton,
+	InspectorControls,
+} from '@wordpress/block-editor';
+
+import { FontSizePicker, PanelBody } from '@wordpress/components';
 
 import { ReactComponent as Icon } from './icon.svg';
 
@@ -14,29 +26,93 @@ registerFormatType(name, {
 	tagName: 'span',
 	className: 'vk_inline-font-size',
 	attributes: {
+		data: 'data-value',
 		style: 'style',
 	},
 	edit(props) {
-		const { value, isActive } = props;
+		const { value, isActive, onChange } = props;
 		const shortcutType = 'primary';
 		const shortcutChar = 'h';
-		const selectedFontSize = 16;
+
+		// 選択した font-size を格納
+		let selectedFontSize;
+
+		if (isActive) {
+			const activeFormat = getActiveFormat(value, name);
+			selectedFontSize = activeFormat.attributes.data;
+		}
+
+		const fontSizes = [
+			{
+				name: __('Small'),
+				slug: 'small',
+				size: '12px',
+			},
+			{
+				name: __('Normal'),
+				slug: 'normal',
+				size: '16px',
+			},
+			{
+				name: __('Big'),
+				slug: 'big',
+				size: '18px',
+			},
+			{
+				name: __('Extra big'),
+				slug: 'extra-big',
+				size: '21px',
+			},
+		];
+
+		const fallbackFontSize = 16;
 
 		return (
 			<>
+				<InspectorControls>
+					<PanelBody
+						title={__('Inline Font Size Settings', 'vk-blocks')}
+						initialOpen={false}
+					>
+						<FontSizePicker
+							fontSizes={fontSizes}
+							value={selectedFontSize}
+							fallbackFontSize={fallbackFontSize}
+							onChange={(newFontSize) => {
+								if (newFontSize) {
+									onChange(
+										applyFormat(value, {
+											type: name,
+											attributes: {
+												data: `${newFontSize}`,
+												style: `font-size: ${newFontSize};`,
+											},
+										})
+									);
+									return;
+								}
+								onChange(removeFormat(value, name));
+							}}
+						/>
+					</PanelBody>
+				</InspectorControls>
 				<RichTextToolbarButton
 					icon={Icon}
 					title={__('Inline Font Size', 'vk-blocks')}
-					onClick={() =>
+					onClick={() => {
+						if (selectedFontSize === undefined) {
+							selectedFontSize = fallbackFontSize;
+						}
 						props.onChange(
 							toggleFormat(value, {
 								type: name,
 								attributes: {
-									style: `font-size: ${selectedFontSize}px;`,
+									data: `${selectedFontSize}`,
+									style: `font-size: ${selectedFontSize};`,
 								},
 							})
-						)
-					}
+						);
+					}}
 					isActive={isActive}
 					shortcutType={shortcutType}
 					shortcutCharacter={shortcutChar}

@@ -62,6 +62,7 @@ msgstr ""
 #: src/blocks/button/edit.js:95
 #: src/blocks/faq/index.js:27
 #: src/blocks/faq2/index.js:22
+#: src/extensions/common/inline-font-size/index.js:52
 msgid "Normal"
 msgstr ""
 
@@ -1133,6 +1134,7 @@ msgid "Solid Angle iconFeature"
 msgstr ""
 
 #: src/blocks/button/edit.js:103
+#: src/extensions/common/inline-font-size/index.js:47
 msgid "Small"
 msgstr ""
 
@@ -1814,12 +1816,24 @@ msgstr ""
 msgid "Highlight Color"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:13
+#: src/extensions/common/inline-font-size/index.js:101
+msgid "Inline Font Size"
+msgstr ""
+
+#: src/extensions/common/inline-font-size/index.js:25
 msgid "Inline font size"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:29
-msgid "Inline Font Size"
+#: src/extensions/common/inline-font-size/index.js:57
+msgid "Big"
+msgstr ""
+
+#: src/extensions/common/inline-font-size/index.js:62
+msgid "Extra big"
+msgstr ""
+
+#: src/extensions/common/inline-font-size/index.js:74
+msgid "Inline Font Size Settings"
 msgstr ""
 
 #: src/extensions/common/nowrap/index.js:21

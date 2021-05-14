@@ -6,8 +6,8 @@ export default function AccordionEdit() {
 	});
 	return (
 		<div {...blockProps}>
-			<div className="vk_accordion-content-before"></div>
-			<div className="vk_accordion-content">
+			<div className="vk_accordion-header"></div>
+			<div className="vk_accordion-body">
 				<InnerBlocks
 					allowedBlocks={[
 						['vk-blocks/accordion-trigger'],
@@ -20,7 +20,7 @@ export default function AccordionEdit() {
 					templateLock="all"
 				/>
 			</div>
-			<div className="vk_accordion-content-after"></div>
+			<div className="vk_accordion-footer"></div>
 		</div>
 	);
 }

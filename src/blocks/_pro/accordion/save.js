@@ -7,11 +7,11 @@ export default function save() {
 
 	return (
 		<div {...blockProps}>
-			<div className="vk_accordion-content-before"></div>
-			<div className="vk_accordion-content">
+			<div className="vk_accordion-header"></div>
+			<div className="vk_accordion-body">
 				<InnerBlocks.Content />
 			</div>
-			<div className="vk_accordion-content-after"></div>
+			<div className="vk_accordion-footer"></div>
 		</div>
 	);
 }

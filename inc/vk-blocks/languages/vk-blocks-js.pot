@@ -329,6 +329,7 @@ msgstr ""
 #: src/blocks/pr-content/deprecated/0.43.0/save.js:178
 #: src/blocks/pr-content/deprecated/0.5.1/save.js:116
 #: src/blocks/pr-content/mediaUpload.js:68
+#: src/blocks/staff/deprecated/0.58/component.js:96
 #: src/blocks/staff/edit.js:305
 msgid "Select image"
 msgstr ""
@@ -649,10 +650,14 @@ msgstr ""
 msgid "Flow"
 msgstr ""
 
+#: src/blocks/heading/deprecated/0.39.5/component.js:137
+#: src/blocks/heading/deprecated/0.60.1/component.js:137
 #: src/blocks/heading/edit.js:181
 msgid "Input title…"
 msgstr ""
 
+#: src/blocks/heading/deprecated/0.39.5/component.js:152
+#: src/blocks/heading/deprecated/0.60.1/component.js:152
 #: src/blocks/heading/edit.js:196
 msgid "Input sub text…"
 msgstr ""
@@ -744,11 +749,15 @@ msgstr ""
 msgid "Page Content"
 msgstr ""
 
+#: src/blocks/pr-blocks/deprecated/0.0.1/component.js:148
+#: src/blocks/pr-blocks/deprecated/0.0.2/component.js:176
 #: src/blocks/pr-blocks/deprecated/0.59.0/component.js:191
 #: src/blocks/pr-blocks/edit.js:533
 msgid "Input Title"
 msgstr ""
 
+#: src/blocks/pr-blocks/deprecated/0.0.1/component.js:157
+#: src/blocks/pr-blocks/deprecated/0.0.2/component.js:185
 #: src/blocks/pr-blocks/deprecated/0.59.0/component.js:200
 #: src/blocks/pr-blocks/edit.js:542
 msgid "Input Content"
@@ -904,6 +913,31 @@ msgstr ""
 msgid "Responsive Spacer"
 msgstr ""
 
+#: src/blocks/staff/deprecated/0.58/component.js:50
+#: src/blocks/staff/edit.js:240
+msgid "Your Name"
+msgstr ""
+
+#: src/blocks/staff/deprecated/0.58/component.js:58
+#: src/blocks/staff/edit.js:250
+msgid "Caption"
+msgstr ""
+
+#: src/blocks/staff/deprecated/0.58/component.js:66
+#: src/blocks/staff/edit.js:260
+msgid "Role position"
+msgstr ""
+
+#: src/blocks/staff/deprecated/0.58/component.js:74
+#: src/blocks/staff/edit.js:270
+msgid "Profile title"
+msgstr ""
+
+#: src/blocks/staff/deprecated/0.58/component.js:82
+#: src/blocks/staff/edit.js:283
+msgid "Profile text"
+msgstr ""
+
 #: src/blocks/staff/edit.js:102
 msgid "Image border"
 msgstr ""
@@ -936,26 +970,6 @@ msgstr ""
 msgid "minchoBody"
 msgstr ""
 
-#: src/blocks/staff/edit.js:240
-msgid "Your Name"
-msgstr ""
-
-#: src/blocks/staff/edit.js:250
-msgid "Caption"
-msgstr ""
-
-#: src/blocks/staff/edit.js:260
-msgid "Role position"
-msgstr ""
-
-#: src/blocks/staff/edit.js:270
-msgid "Profile title"
-msgstr ""
-
-#: src/blocks/staff/edit.js:283
-msgid "Profile text"
-msgstr ""
-
 #: src/blocks/staff/edit.js:84
 msgid "Layout"
 msgstr ""
@@ -966,6 +980,38 @@ msgstr ""
 
 #: src/blocks/staff/index.js:33
 msgid "Staff"
+msgstr ""
+
+#: src/components/advanced-unit-control/index.js:12
+msgid "Unit Type"
+msgstr ""
+
+#: src/components/advanced-unit-control/index.js:18
+msgid "px"
+msgstr ""
+
+#: src/components/advanced-unit-control/index.js:22
+msgid "em"
+msgstr ""
+
+#: src/components/advanced-unit-control/index.js:26
+msgid "rem"
+msgstr ""
+
+#: src/components/advanced-unit-control/index.js:30
+msgid "vw"
+msgstr ""
+
+#: src/components/advanced-viewport-control/index.js:25
+msgid "PC"
+msgstr ""
+
+#: src/components/advanced-viewport-control/index.js:31
+msgid "Tablet"
+msgstr ""
+
+#: src/components/advanced-viewport-control/index.js:39
+msgid "Mobile"
 msgstr ""
 
 #: src/extensions/common/hidden-extension/index.js:123

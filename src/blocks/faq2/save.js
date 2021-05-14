@@ -1,13 +1,16 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 export default function save() {
+	const blockProps = useBlockProps.save({
+		className: 'vk_faq',
+	});
 	return (
-		<dl
-			{...useBlockProps.save({
-				className: `vk_faq [accordion_trigger_switch]`,
-			})}
-		>
-			<InnerBlocks.Content />
-		</dl>
+		<div {...blockProps}>
+			<div className="vk_faq-content-before"></div>
+			<dl className="vk_faq-content">
+				<InnerBlocks.Content />
+			</dl>
+			<div className="vk_faq-content-after"></div>
+		</div>
 	);
 }

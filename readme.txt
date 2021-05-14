@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ tlanslate ] in Select Post List Item
+
 = 1.3.9 =
 [ Bug fix ][ page ] To be use private page
 

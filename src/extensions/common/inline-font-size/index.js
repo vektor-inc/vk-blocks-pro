@@ -44,22 +44,22 @@ registerFormatType(name, {
 
 		const fontSizes = [
 			{
-				name: __('Small'),
+				name: __('Small', 'vk-blocks'),
 				slug: 'small',
 				size: '12px',
 			},
 			{
-				name: __('Normal'),
+				name: __('Normal', 'vk-blocks'),
 				slug: 'normal',
 				size: '16px',
 			},
 			{
-				name: __('Big'),
+				name: __('Big', 'vk-blocks'),
 				slug: 'big',
 				size: '18px',
 			},
 			{
-				name: __('Extra big'),
+				name: __('Extra big', 'vk-blocks'),
 				slug: 'extra-big',
 				size: '21px',
 			},

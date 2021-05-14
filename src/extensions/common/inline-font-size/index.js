@@ -26,7 +26,7 @@ registerFormatType(name, {
 	tagName: 'span',
 	className: 'vk_inline-font-size',
 	attributes: {
-		data: 'data-value',
+		data: 'data-fontSize',
 		style: 'style',
 	},
 	edit(props) {

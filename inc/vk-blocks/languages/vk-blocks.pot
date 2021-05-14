@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-05-14T01:17:19+00:00\n"
+"POT-Creation-Date: 2021-05-14T02:18:56+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: vk-blocks\n"
@@ -73,7 +73,7 @@ msgstr ""
 #: src/blocks/button/edit.js:95
 #: src/blocks/faq/index.js:27
 #: src/blocks/faq2/index.js:22
-#: src/extensions/common/inline-font-size/index.js:51
+#: src/extensions/common/inline-font-size/index.js:52
 msgid "Normal"
 msgstr ""
 
@@ -1141,7 +1141,7 @@ msgid "Solid Angle iconFeature"
 msgstr ""
 
 #: src/blocks/button/edit.js:103
-#: src/extensions/common/inline-font-size/index.js:46
+#: src/extensions/common/inline-font-size/index.js:47
 msgid "Small"
 msgstr ""
 
@@ -1815,24 +1815,24 @@ msgstr ""
 msgid "Highlight Color"
 msgstr ""
 
+#: src/extensions/common/inline-font-size/index.js:101
+msgid "Inline Font Size"
+msgstr ""
+
 #: src/extensions/common/inline-font-size/index.js:25
 msgid "Inline font size"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:56
+#: src/extensions/common/inline-font-size/index.js:57
 msgid "Big"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:61
+#: src/extensions/common/inline-font-size/index.js:62
 msgid "Extra big"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:73
+#: src/extensions/common/inline-font-size/index.js:74
 msgid "Inline Font Size Settings"
-msgstr ""
-
-#: src/extensions/common/inline-font-size/index.js:93
-msgid "Inline Font Size"
 msgstr ""
 
 #: src/extensions/common/nowrap/index.js:21

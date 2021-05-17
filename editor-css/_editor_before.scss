@@ -97,6 +97,8 @@ button.image-button:not(.button-delete) {
 @import "./editor_before_button";
 // テーブル
 @import "./editor_before_table";
+// 枠線ボックス
+@import "./editor_before_border-box";
 
 // VK Outer 編集パネル
 $color-danger: #dd3333;

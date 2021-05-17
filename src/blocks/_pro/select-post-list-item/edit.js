@@ -61,7 +61,7 @@ export default function SelectPostListItemEdit(props) {
 
 									<form
 										className="block-editor-link-control__search-input-wrapper"
-										onSubmit={(event) => {
+										onSubmit={() => {
 											if (url.indexOf(homeUrl) === -1) {
 												setAttributes({ url: '' });
 											}

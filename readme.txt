@@ -63,6 +63,7 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ][Select Post List Item]setting from toolbar and enable search URL
 [ Bug fix ][ tlanslate ] in Select Post List Item
 
 = 1.3.9 =

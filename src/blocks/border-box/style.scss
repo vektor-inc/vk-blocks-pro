@@ -101,7 +101,6 @@
 			}
 		}
 	}
-
 	.vk_borderBox_body {
 		padding: 1.5em;
 		border-width: 2px;
@@ -109,22 +108,14 @@
 		@media (min-width: 992px) {
 			padding: 2.1875em 2em 2em;
 		}
-		h1:first-child,
-		h2:first-child,
-		h3:first-child,
-		h4:first-child,
-		h5:first-child,
-		h6:first-child {//他のテーマでも対応できるように追加
-			margin-top: 0;
-		}
-		p:last-child {
-			margin-bottom: 0;
-		}
-		:first-child {
-			margin-top: 0;
-		}
-		:last-child {
-			margin-bottom: 0;
+		// ボックス内要素の最初と最後の要素のmarginを削除
+		& > * {
+			&:first-child {
+				margin-top: 0;
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 	}
 }

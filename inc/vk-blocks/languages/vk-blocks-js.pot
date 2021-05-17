@@ -1417,7 +1417,7 @@ msgstr ""
 msgid "Heading %d"
 msgstr ""
 
-#: src/blocks/heading/index.js:19
+#: src/blocks/heading/index.js:20
 msgid "Heading"
 msgstr ""
 

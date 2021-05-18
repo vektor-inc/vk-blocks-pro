@@ -693,16 +693,20 @@ msgstr ""
 msgid "Post list"
 msgstr ""
 
-#: src/blocks/_pro/select-post-list-item/edit.js:24
+#: src/blocks/_pro/select-post-list-item/edit.js:102
+msgid "Submit"
+msgstr ""
+
+#: src/blocks/_pro/select-post-list-item/edit.js:34
 #: src/blocks/page-content/edit.js:38
 msgid "Because no post is selected, The block Will not render"
 msgstr ""
 
-#: src/blocks/_pro/select-post-list-item/edit.js:38
-msgid "Select Post List Item Setting"
+#: src/blocks/_pro/select-post-list-item/edit.js:66
+msgid "Unlink"
 msgstr ""
 
-#: src/blocks/_pro/select-post-list-item/edit.js:42
+#: src/blocks/_pro/select-post-list-item/edit.js:67
 msgid "Input Internal Post URL"
 msgstr ""
 

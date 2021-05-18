@@ -117,6 +117,19 @@ export default function BorderBoxEdit(props) {
 						/>
 					</BaseControl>
 				</PanelBody>
+				<PanelBody
+					title={__('Margin', 'vk-blocks')}
+					initialOpen={false}
+				>
+					<BaseControl>
+						<p>
+							{__(
+								"The margin-top of the first element and the margin-bottom of the last element in the border block will be automatically set to 0.If you want to add margins at the beginning and end, use a spacer block to specify height instead of margin.",
+								'vk-blocks'
+							)}
+						</p>
+					</BaseControl>
+				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
 				<div className="vk_borderBox_title_container">

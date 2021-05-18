@@ -1,9 +1,18 @@
 // import WordPress Scripts
 import { __ } from '@wordpress/i18n';
-import { useBlockProps, BlockControls, URLInput } from '@wordpress/block-editor';
+import {
+	useBlockProps,
+	BlockControls,
+	URLInput,
+} from '@wordpress/block-editor';
 import ServerSideRender from '@wordpress/server-side-render';
 
-import { ToolbarGroup, ToolbarButton, Dropdown, Button } from '@wordpress/components';
+import {
+	ToolbarGroup,
+	ToolbarButton,
+	Dropdown,
+	Button,
+} from '@wordpress/components';
 import { link, linkOff, keyboardReturn } from '@wordpress/icons';
 
 export default function SelectPostListItemEdit(props) {
@@ -39,7 +48,7 @@ export default function SelectPostListItemEdit(props) {
 					<Dropdown
 						renderToggle={({ isOpen, onToggle }) => {
 							const setLink = () => {
-								if (isOpen && (url !== '')) {
+								if (isOpen && url !== '') {
 									// linkOff
 									setAttributes({ url: '' });
 								}
@@ -48,9 +57,18 @@ export default function SelectPostListItemEdit(props) {
 							return (
 								<ToolbarButton
 									aria-expanded={isOpen}
-									icon={(url !== '') && isOpen ? linkOff : link}
-									isActive={(url !== '') && isOpen ? true : false}
-									label={(url !== '') && isOpen ? __('Unlink') : __('Input Internal Post URL', 'vk-blocks')}
+									icon={url !== '' && isOpen ? linkOff : link}
+									isActive={
+										url !== '' && isOpen ? true : false
+									}
+									label={
+										url !== '' && isOpen
+											? __('Unlink')
+											: __(
+													'Input Internal Post URL',
+													'vk-blocks'
+											  )
+									}
 									onClick={setLink}
 								/>
 							);
@@ -58,7 +76,6 @@ export default function SelectPostListItemEdit(props) {
 						renderContent={(params) => {
 							return (
 								<div className="block-editor-url-input__button block-editor-link-control">
-
 									<form
 										className="block-editor-link-control__search-input-wrapper"
 										onSubmit={() => {
@@ -73,7 +90,7 @@ export default function SelectPostListItemEdit(props) {
 												value={url}
 												onChange={(v, post) => {
 													setAttributes({ url: v });
-													if (post && post.title){
+													if (post && post.title) {
 														// select post
 														params.onClose();
 													}

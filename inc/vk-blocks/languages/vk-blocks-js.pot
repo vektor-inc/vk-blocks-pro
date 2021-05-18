@@ -333,7 +333,7 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:108
 #: src/blocks/_pro/step-item/edit.js:57
-#: src/blocks/border-box/edit.js:109
+#: src/blocks/border-box/edit.js:122
 #: src/blocks/button/edit.js:258
 #: src/blocks/pr-content/edit.js:190
 msgid "Icon ( Font Awesome )"
@@ -693,16 +693,20 @@ msgstr ""
 msgid "Post list"
 msgstr ""
 
-#: src/blocks/_pro/select-post-list-item/edit.js:24
+#: src/blocks/_pro/select-post-list-item/edit.js:102
+msgid "Submit"
+msgstr ""
+
+#: src/blocks/_pro/select-post-list-item/edit.js:34
 #: src/blocks/page-content/edit.js:38
 msgid "Because no post is selected, The block Will not render"
 msgstr ""
 
-#: src/blocks/_pro/select-post-list-item/edit.js:38
-msgid "Select Post List Item Setting"
+#: src/blocks/_pro/select-post-list-item/edit.js:66
+msgid "Unlink"
 msgstr ""
 
-#: src/blocks/_pro/select-post-list-item/edit.js:42
+#: src/blocks/_pro/select-post-list-item/edit.js:67
 msgid "Input Internal Post URL"
 msgstr ""
 
@@ -831,7 +835,7 @@ msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:76
 #: src/blocks/_pro/timeline-item/edit.js:53
-#: src/blocks/border-box/edit.js:50
+#: src/blocks/border-box/edit.js:63
 #: src/blocks/staff/edit.js:138
 msgid "Color"
 msgstr ""
@@ -1062,46 +1066,58 @@ msgstr ""
 msgid "Please enter a title."
 msgstr ""
 
-#: src/blocks/border-box/edit.js:100
+#: src/blocks/border-box/edit.js:109
+msgid "Transparent"
+msgstr ""
+
+#: src/blocks/border-box/edit.js:113
 msgid "White"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:106
+#: src/blocks/border-box/edit.js:119
 #: src/utils/font-awesome-new.js:14
 msgid "Icon"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:53
+#: src/blocks/border-box/edit.js:51
+msgid "Margin"
+msgstr ""
+
+#: src/blocks/border-box/edit.js:56
+msgid ""
+"The margin-top of the first element and the margin-bottom of the last "
+"element in the border block will be automatically set to 0.If you want to "
+"add margins at the beginning and end, use a spacer block to specify height "
+"instead of margin."
+msgstr ""
+
+#: src/blocks/border-box/edit.js:66
 #: src/extensions/core/group/style.js:47
 msgid "Border Color"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:63
+#: src/blocks/border-box/edit.js:76
 msgid "Red"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:67
+#: src/blocks/border-box/edit.js:80
 msgid "Orange"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:71
+#: src/blocks/border-box/edit.js:84
 msgid "Blue"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:75
+#: src/blocks/border-box/edit.js:88
 msgid "Green"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:79
+#: src/blocks/border-box/edit.js:92
 msgid "Black"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:86
+#: src/blocks/border-box/edit.js:99
 msgid "Background Color"
-msgstr ""
-
-#: src/blocks/border-box/edit.js:96
-msgid "Transparent"
 msgstr ""
 
 #: src/blocks/border-box/index.js:19

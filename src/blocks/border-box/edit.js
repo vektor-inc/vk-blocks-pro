@@ -13,7 +13,9 @@ export default function BorderBoxEdit(props) {
 	const { attributes, setAttributes } = props;
 	const { heading, color, faIcon, bgColor } = attributes;
 
-	const inner = <InnerBlocks />;
+	const inner = (
+		<InnerBlocks templateLock={false} template={[['core/paragraph']]} />
+	);
 	const title = (
 		<RichText
 			tagName="h4"

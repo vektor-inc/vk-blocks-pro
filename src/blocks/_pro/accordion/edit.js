@@ -6,17 +6,21 @@ export default function AccordionEdit() {
 	});
 	return (
 		<div {...blockProps}>
-			<InnerBlocks
-				allowedBlocks={[
-					['vk-blocks/accordion-trigger'],
-					['vk-blocks/accordion-target'],
-				]}
-				template={[
-					['vk-blocks/accordion-trigger'],
-					['vk-blocks/accordion-target'],
-				]}
-				templateLock="all"
-			/>
+			<div className="vk_accordion-header"></div>
+			<div className="vk_accordion-body">
+				<InnerBlocks
+					allowedBlocks={[
+						['vk-blocks/accordion-trigger'],
+						['vk-blocks/accordion-target'],
+					]}
+					template={[
+						['vk-blocks/accordion-trigger'],
+						['vk-blocks/accordion-target'],
+					]}
+					templateLock="all"
+				/>
+			</div>
+			<div className="vk_accordion-footer"></div>
 		</div>
 	);
 }

@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
 Tested up to: 5.7
-Stable tag: 1.3.9
+Stable tag: 1.4.0
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,8 +63,13 @@ e.g.
 
 == Changelog ==
 
-[ Specification Change ][Select Post List Item]setting from toolbar and enable search URL
+= 1.4.0 =
+[ Improvement ][ title ] Convert to VK Blocks Title from core title block 
+[ Improvement ][ Select Post List Item ]setting from toolbar and enable search URL
 [ Bug fix ][ tlanslate ] in Select Post List Item
+[ Bug fix ][ New FAQ ] Fix multiple select
+[ Bug fix ][ Accordion ] Fix multiple select
+[ Specification Change ][ Border Box ] Delete margin-top from first element / delete margin-bottom from last element
 
 = 1.3.9 =
 [ Bug fix ][ page ] To be use private page

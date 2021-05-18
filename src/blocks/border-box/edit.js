@@ -47,7 +47,7 @@ export default function BorderBoxEdit(props) {
 	return (
 		<>
 			<InspectorControls>
-			<PanelBody
+				<PanelBody
 					title={__('Margin', 'vk-blocks')}
 					initialOpen={false}
 				>

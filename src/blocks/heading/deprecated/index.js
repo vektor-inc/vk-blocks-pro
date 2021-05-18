@@ -90,52 +90,6 @@ const blockAttributes1_3_2 = {
 	...blockAttributes2,
 	...blockAttributes2.outerMarginBottom.default= 0,
 	...blockAttributes2.title.selector="span",
-		type: "string",
-		source: "html",
-		selector: "span",
-		default: ""
-	},
-	titleColor: {
-		type: "string",
-		default: "#000000"
-	},
-	titleSize: {
-		type: "number",
-		default: 2
-	},
-	titleMarginBottom: {
-		type: "number",
-		default: 1
-	},
-	subText: {
-		source: "html",
-		selector: "p",
-		default: ""
-	},
-	subTextFlag: {
-		type: "string",
-		default: "off"
-	},
-	subTextColor: {
-		type: "string",
-		default: "#000000"
-	},
-	subTextSize: {
-		type: "number",
-		default: 1.2
-	},
-	fontAwesomeIconBefore: {
-		type: "string",
-		default: ""
-	},
-	fontAwesomeIconAfter: {
-		type: "string",
-		default: ""
-	},
-	fontAwesomeIconColor: {
-		type: "string",
-		default: "#000000"
-	}
 }
 
 const deprecated = [

@@ -87,73 +87,54 @@ const blockAttributes2 = {
 }
 
 const blockAttributes1_3_2 = {
-	"anchor": {
-		"type": "string",
-		"source": "attribute",
-		"attribute": "id",
-		"selector": "*"
+	...blockAttributes2,
+	...blockAttributes2.outerMarginBottom.default= 0,
+	...blockAttributes2.title.selector="span",
+		type: "string",
+		source: "html",
+		selector: "span",
+		default: ""
 	},
-	"level": {
-		"type": "number",
-		"default": 2
+	titleColor: {
+		type: "string",
+		default: "#000000"
 	},
-	"align": {
-		"type": "string"
+	titleSize: {
+		type: "number",
+		default: 2
 	},
-	"titleStyle": {
-		"type": "string",
-		"default": "default"
+	titleMarginBottom: {
+		type: "number",
+		default: 1
 	},
-	"outerMarginBottom": {
-		"type": "number",
-		"default": 0
+	subText: {
+		source: "html",
+		selector: "p",
+		default: ""
 	},
-	"title": {
-		"type": "string",
-		"source": "html",
-		"selector": "span",
-		"default": ""
+	subTextFlag: {
+		type: "string",
+		default: "off"
 	},
-	"titleColor": {
-		"type": "string",
-		"default": "#000000"
+	subTextColor: {
+		type: "string",
+		default: "#000000"
 	},
-	"titleSize": {
-		"type": "number",
-		"default": 2
+	subTextSize: {
+		type: "number",
+		default: 1.2
 	},
-	"titleMarginBottom": {
-		"type": "number",
-		"default": 1
+	fontAwesomeIconBefore: {
+		type: "string",
+		default: ""
 	},
-	"subText": {
-		"source": "html",
-		"selector": "p",
-		"default": ""
+	fontAwesomeIconAfter: {
+		type: "string",
+		default: ""
 	},
-	"subTextFlag": {
-		"type": "string",
-		"default": "off"
-	},
-	"subTextColor": {
-		"type": "string",
-		"default": "#000000"
-	},
-	"subTextSize": {
-		"type": "number",
-		"default": 1.2
-	},
-	"fontAwesomeIconBefore": {
-		"type": "string",
-		"default": ""
-	},
-	"fontAwesomeIconAfter": {
-		"type": "string",
-		"default": ""
-	},
-	"fontAwesomeIconColor": {
-		"type": "string",
-		"default": "#000000"
+	fontAwesomeIconColor: {
+		type: "string",
+		default: "#000000"
 	}
 }
 

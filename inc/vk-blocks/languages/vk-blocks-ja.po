@@ -691,7 +691,7 @@ msgstr "選択投稿リストアイテム"
 
 #: src/blocks/_pro/select-post-list-item/edit.js:42
 msgid "Input Internal Post URL"
-msgstr "このサイトのの投稿の URL を入力してください"
+msgstr "このサイトの投稿の URL を入力してください"
 
 #: src/blocks/_pro/select-post-list-item/index.js:20
 msgid "Selected Post List Item"
@@ -1107,6 +1107,14 @@ msgstr "直線 ピン角 内側"
 #: src/blocks/border-box/index.js:61
 msgid "Solid Angle iconFeature"
 msgstr "直線 ピン角 アイコン"
+
+#: src/blocks/border-box/index.js:121
+msgid "Margin"
+msgstr "余白"
+
+#: src/blocks/border-box/index.js:127
+msgid "The margin-top of the first element and the margin-bottom of the last element in the border block will be automatically set to 0.If you want to add margins at the beginning and end, use a spacer block to specify height instead of margin."
+msgstr "枠線ブロック内の最初の要素の margin-top と 最後の要素の margin-bottom は自動的に0になります。最初と最後に余白をつけたい場合はスペーサーブロックなどで margin指定ではなくheight指定でご利用ください。"
 
 #: src/blocks/button/edit.js:103
 msgid "Small"

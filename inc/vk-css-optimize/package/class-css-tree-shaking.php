@@ -11,6 +11,7 @@ If you want to change this file, please change the original file.
  *
  * Version: 1.0.2
  * Author: enomoto@celtislab
+ * Modefied: Vektor:Inc.
  * Author URI: https://celtislab.net/
  * License: GPLv2
  */
@@ -250,7 +251,8 @@ class CSS_tree_shaking {
 		$css = self::atrule_store( $css );
 		$css = self::tree_shaking( $css );
 		$css = self::atrule_restore( $css );
-		$css = self::tree_shaking4var( $css );
+		// 変数のTreeshaking は必要なのに除外されてしまうので停止
+		// $css = self::tree_shaking4var( $css );
 		return $css;
 	}
 }

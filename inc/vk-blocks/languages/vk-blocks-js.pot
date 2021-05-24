@@ -1387,7 +1387,7 @@ msgid "Margin Setting"
 msgstr ""
 
 #: src/blocks/heading/edit.js:243
-msgid "Margin bottom size of after hedding (rem)"
+msgid "Margin between Heading and sub text (rem)"
 msgstr ""
 
 #: src/blocks/heading/edit.js:260

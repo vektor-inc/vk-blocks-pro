@@ -241,7 +241,7 @@ export default function HeaddingEdit(props) {
 				<PanelBody title={__('Margin Setting', 'vk-blocks')}>
 					<p>
 						{__(
-							'Margin bottom size of after hedding (rem)',
+							'Margin between Heading and sub text (rem)',
 							'vk-blocks'
 						)}
 					</p>

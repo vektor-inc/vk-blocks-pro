@@ -1,4 +1,6 @@
+import toNumber from '@vkblocks/utils/to-number';
 import { ColumnLayout } from '@vkblocks/components/column-layout';
+import AdvancedUnitControl from '@vkblocks/components/advanced-unit-control';
 import { __ } from '@wordpress/i18n';
 import {
 	InspectorControls,
@@ -6,7 +8,7 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 import { select, dispatch } from '@wordpress/data';
-import { PanelBody } from '@wordpress/components';
+import { PanelBody, TextControl, RangeControl } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 
 export default function GridColumnEdit(props) {
@@ -31,6 +33,8 @@ export default function GridColumnEdit(props) {
 					col_lg: attributes.col_lg,
 					col_xl: attributes.col_xl,
 					col_xxl: attributes.col_xxl,
+					margin_bottom: attributes.margin_bottom,
+					unit: attributes.unit,
 				});
 			});
 		}
@@ -39,6 +43,7 @@ export default function GridColumnEdit(props) {
 	const ALLOWED_BLOCKS = [['vk-blocks/grid-column-item']];
 	const TEMPLATE = ALLOWED_BLOCKS;
 	const blockProps = useBlockProps();
+	const margin_bottom = attributes.margin_bottom;
 
 	return (
 		<>
@@ -48,6 +53,23 @@ export default function GridColumnEdit(props) {
 					initialOpen={false}
 				>
 					<ColumnLayout {...props} />
+				</PanelBody>
+				<PanelBody
+					title={__('Column Margin Bottom Setting', 'vk-blocks')}
+					initialOpen={true}
+				>
+					<RangeControl
+						label={__('Margin Bottom', 'vk-blocks')}
+						value={margin_bottom}
+						onChange={(value) =>
+							props.setAttributes({
+								margin_bottom: toNumber(value, 0, 100),
+							})
+						}
+						min="0"
+						max="100"
+					/>
+					<AdvancedUnitControl {...props} />
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>

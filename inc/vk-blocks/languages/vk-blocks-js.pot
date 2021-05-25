@@ -293,8 +293,16 @@ msgstr ""
 msgid "Grid Column Item"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:47
+#: src/blocks/_pro/grid-column/edit.js:52
 msgid "Layout Columns"
+msgstr ""
+
+#: src/blocks/_pro/grid-column/edit.js:58
+msgid "Column Margin Bottom Setting"
+msgstr ""
+
+#: src/blocks/_pro/grid-column/edit.js:62
+msgid "Margin Bottom"
 msgstr ""
 
 #: src/blocks/_pro/grid-column/index.js:17

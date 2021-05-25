@@ -56,7 +56,7 @@ export default function GridColumnEdit(props) {
 				</PanelBody>
 				<PanelBody
 					title={__('Column Margin Bottom Setting', 'vk-blocks')}
-					initialOpen={true}
+					initialOpen={false}
 				>
 					<RangeControl
 						label={__('Margin Bottom', 'vk-blocks')}

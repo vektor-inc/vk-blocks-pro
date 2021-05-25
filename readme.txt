@@ -63,13 +63,15 @@ e.g.
 
 == Changelog ==
 
+[ Improvement ][ Grid Column Item ] enable setting bottom margin
+
 = 1.4.1 =
 [ Specification Change ] Stop exclude CSS Var by Tree shaking
 
 = 1.4.0 =
 [ Improvement ][ title ] Convert to VK Blocks Title from core title block 
 [ Improvement ][ Select Post List Item ]setting from toolbar and enable search URL
-[ Bug fix ][ tlanslate ] in Select Post List Item
+[ Bug fix ][ translate ] in Select Post List Item
 [ Bug fix ][ New FAQ ] Fix multiple select
 [ Bug fix ][ Accordion ] Fix multiple select
 [ Specification Change ][ Border Box ] Delete margin-top from first element / delete margin-bottom from last element

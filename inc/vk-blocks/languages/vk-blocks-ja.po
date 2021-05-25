@@ -3,22 +3,20 @@ msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "POT-Creation-Date: 2021-05-02T05:07:26+00:00\n"
-"PO-Revision-Date: 2021-05-02 17:27+0900\n"
+"PO-Revision-Date: 2021-05-25 23:41+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.3\n"
+"X-Generator: Poedit 1.8.1\n"
 "X-Poedit-Basepath: ../../..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: vk-blocks.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
@@ -157,12 +155,8 @@ msgstr "アニメーション"
 #: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:157
 #: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:161
 #: src/blocks/_pro/card-item/edit.js:140 src/utils/example-data.js:3
-msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
-"tempor incididunt ut labore et dolore magna aliqua. "
-msgstr ""
-"あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくし"
-"い森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。"
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+msgstr "あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。"
 
 #: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:190
 #: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:194
@@ -252,12 +246,8 @@ msgstr "ボタンオプション"
 
 #: src/blocks/_pro/card/edit.js:164
 #: src/components/display-items-control/index.js:101
-msgid ""
-"Click each card block to set the target url. You can find the url form at "
-"it's sidebar."
-msgstr ""
-"ボタンのリンク先は各カードブロックをクリックすると、サイドバーにURL入力フォー"
-"ムが表示されます。"
+msgid "Click each card block to set the target url. You can find the url form at it's sidebar."
+msgstr "ボタンのリンク先は各カードブロックをクリックすると、サイドバーにURL入力フォームが表示されます。"
 
 #: src/blocks/_pro/card/edit.js:170
 #: src/components/display-items-control/index.js:107
@@ -305,6 +295,14 @@ msgstr "グリッドカラムアイテム"
 #: src/blocks/_pro/grid-column/edit.js:47
 msgid "Layout Columns"
 msgstr "カラムレイアウト"
+
+#: src/blocks/_pro/grid-column/edit.js:58
+msgid "Column Margin Bottom Setting"
+msgstr "カラムの下部の余白設定"
+
+#: src/blocks/_pro/grid-column/edit.js:62
+msgid "Margin Bottom"
+msgstr "下部の余白"
 
 #: src/blocks/_pro/grid-column/index.js:17
 msgid "Grid Column"
@@ -398,12 +396,8 @@ msgid "Color Setting"
 msgstr "色設定"
 
 #: src/blocks/_pro/outer/edit.js:188 src/blocks/_pro/slider-item/edit.js:128
-msgid ""
-"Color will overcome background image. If you want to display image, clear "
-"background color or set opacity 0."
-msgstr ""
-"色を指定すると画像よりも優先されます。画像を表示したい場合は、背景色をクリア"
-"するか、不透明度を0に設定します。"
+msgid "Color will overcome background image. If you want to display image, clear background color or set opacity 0."
+msgstr "色を指定すると画像よりも優先されます。画像を表示したい場合は、背景色をクリアするか、不透明度を0に設定します。"
 
 #: src/blocks/_pro/outer/edit.js:201 src/blocks/_pro/slider-item/edit.js:141
 msgid "Opacity Setting"
@@ -484,12 +478,8 @@ msgid "Do not use default padding"
 msgstr "標準の余白を使用しない"
 
 #: src/blocks/_pro/outer/edit.js:376
-msgid ""
-"* If you select \"Do not use\" that, please set yourself it such as a spacer "
-"block."
-msgstr ""
-"*「使用しない」を選択した場合はスペーサーブロックなどで任意に設定してくださ"
-"い。"
+msgid "* If you select \"Do not use\" that, please set yourself it such as a spacer block."
+msgstr "*「使用しない」を選択した場合はスペーサーブロックなどで任意に設定してください。"
 
 #: src/blocks/_pro/outer/edit.js:384
 msgid "Divider Setting"
@@ -996,8 +986,7 @@ msgstr "デフォルトアイコン設定"
 
 #: src/blocks/balloon/edit.js:317
 msgid "You can register default icons from Settings > VK Blocks in Admin."
-msgstr ""
-"管理画面の 設定 > VK Blocks から よく使うアイコンを登録する事ができます。"
+msgstr "管理画面の 設定 > VK Blocks から よく使うアイコンを登録する事ができます。"
 
 #: src/blocks/balloon/edit.js:323
 msgid "Animation setting"
@@ -1146,8 +1135,7 @@ msgid "Text only"
 msgstr "テキストのみ"
 
 #: src/blocks/button/edit.js:193
-msgid ""
-"If you select \"No background\", that you need to select a Custom Color."
+msgid "If you select \"No background\", that you need to select a Custom Color."
 msgstr "もし「背景なし」を選択した場合はカスタムカラーで色を指定してください。"
 
 #: src/blocks/button/edit.js:200 src/blocks/pr-content/edit.js:146
@@ -1175,12 +1163,8 @@ msgid "Custom Color"
 msgstr "カスタムカラー"
 
 #: src/blocks/button/edit.js:243
-msgid ""
-"This custom color overrides the default color. If you want to use the "
-"default color, click the clear button."
-msgstr ""
-"このカスタムカラーはデフォルトのカラーを上書きします。 デフォルトの色を使用し"
-"たい場合は、クリアボタンをクリックしてください。"
+msgid "This custom color overrides the default color. If you want to use the default color, click the clear button."
+msgstr "このカスタムカラーはデフォルトのカラーを上書きします。 デフォルトの色を使用したい場合は、クリアボタンをクリックしてください。"
 
 #: src/blocks/button/edit.js:262 src/blocks/heading/edit.js:300
 #: src/blocks/pr-content/edit.js:194
@@ -1217,9 +1201,7 @@ msgid "Large"
 msgstr "大"
 
 #: src/blocks/faq/edit.js:14 src/blocks/faq2/edit.js:17
-msgid ""
-"If you want to be collapsing this block, you can set it at Setting > VK "
-"Blocks"
+msgid "If you want to be collapsing this block, you can set it at Setting > VK Blocks"
 msgstr "このブロックを折りたたみたい場合は 設定 > VK Blocks から指定できます"
 
 #: src/blocks/faq/edit.js:19 src/blocks/faq2/edit.js:22
@@ -1741,13 +1723,8 @@ msgid "Hidden at screel size"
 msgstr "非表示にする画面サイズ"
 
 #: src/extensions/common/hidden-extension/index.js:134
-msgid ""
-"Note : This function is display hidden only. Actually Block is output to "
-"HTML.Pleade don't use you must not bisible item.Don't use it for blocks you "
-"really don't want to display."
-msgstr ""
-"注意 : この機能はあくまでHTMLに出力される要素を非表示にするだけです。本当に見"
-"せてはいけない要素には使わないでください。"
+msgid "Note : This function is display hidden only. Actually Block is output to HTML.Pleade don't use you must not bisible item.Don't use it for blocks you really don't want to display."
+msgstr "注意 : この機能はあくまでHTMLに出力される要素を非表示にするだけです。本当に見せてはいけない要素には使わないでください。"
 
 #: src/extensions/common/hidden-extension/index.js:140
 msgid "Hidden ( Screen size : all )"
@@ -1778,12 +1755,8 @@ msgid "Hidden ( Screen size : xxl )"
 msgstr "非表示 ( 画面サイズ : xxl )"
 
 #: src/extensions/common/hidden-extension/index.js:217
-msgid ""
-"If you want to hide multiple blocks, that first you set to group block and "
-"the next, hide for the that group block."
-msgstr ""
-"複数のブロックを非表示にする場合は、最初にグループブロックに設定し、そのグ"
-"ループブロックに対して非表示にします。"
+msgid "If you want to hide multiple blocks, that first you set to group block and the next, hide for the that group block."
+msgstr "複数のブロックを非表示にする場合は、最初にグループブロックに設定し、そのグループブロックに対して非表示にします。"
 
 #: src/extensions/common/highlighter/index.js:116
 msgid "Highlighter"
@@ -1817,7 +1790,8 @@ msgstr "スティッチ"
 msgid "Border Top Bottom"
 msgstr "直線 上下"
 
-#: src/extensions/core/group/style.js:132 src/extensions/core/image/style.js:31
+#: src/extensions/core/group/style.js:132
+#: src/extensions/core/image/style.js:31
 msgid "Shadow"
 msgstr "シャドウ"
 
@@ -1958,12 +1932,8 @@ msgid "Lorem ipsum"
 msgstr "ロレム・アプサム"
 
 #: src/utils/font-awesome-new.js:193
-msgid ""
-"If you want to use an icon other than the ones listed above, you can use any "
-"of the icons from Font Awesome's icon list Please select a tag and enter it."
-msgstr ""
-"他のアイコンを使いたい場合は Font Awesome のアイコンリストから選んでタグを入"
-"力してください。"
+msgid "If you want to use an icon other than the ones listed above, you can use any of the icons from Font Awesome's icon list Please select a tag and enter it."
+msgstr "他のアイコンを使いたい場合は Font Awesome のアイコンリストから選んでタグを入力してください。"
 
 #: src/utils/font-awesome-new.js:198
 msgid "Ex) <i class=\"fas fa-arrow-circle-right\"></i>"
@@ -2004,15 +1974,8 @@ msgstr "VK Blocks Pro を公開しました!"
 
 #. translators: 1: opening a tag, 2: closing a tag
 #: dist/vk-blocks-pro/inc/admin-notices.php:31 inc/admin-notices.php:31
-msgid ""
-"Thank you for using VK Blocks. We've released VK Blocks Pro. It has more "
-"custom blocks to build web site more easily. If you are interested in VK "
-"Blocks Pro, Please read %1$s this post %2$s for more details."
-msgstr ""
-"いつもVK Blocksをご利用いただきありがとうございます。この度、VK Blocks Proを"
-"リリースしました。より簡単にWebサイトを構築するためのカスタムブロックが追加さ"
-"れています。VK Blocks Proに興味がある方は、この記事%1$sを読んでみてください。"
-"詳しくは%2$s"
+msgid "Thank you for using VK Blocks. We've released VK Blocks Pro. It has more custom blocks to build web site more easily. If you are interested in VK Blocks Pro, Please read %1$s this post %2$s for more details."
+msgstr "いつもVK Blocksをご利用いただきありがとうございます。この度、VK Blocks Proをリリースしました。より簡単にWebサイトを構築するためのカスタムブロックが追加されています。VK Blocks Proに興味がある方は、この記事%1$sを読んでみてください。詳しくは%2$s"
 
 #: dist/vk-blocks-pro/inc/admin-notices.php:35
 #: dist/vk-blocks-pro/inc/admin-notices.php:41 inc/admin-notices.php:35
@@ -2304,12 +2267,8 @@ msgstr "Bootstrap4の読み込み"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/load-bootstrap.php:67
 #: inc/vk-blocks/load-bootstrap.php:67
-msgid ""
-"Check here to load Bootstrap4. If your theme or plugins loading Bootstrap4, "
-"uncheck here."
-msgstr ""
-"Bootstrap4を読み込む場合はここにチェックを入れてください。テーマやプラグイン"
-"がBootstrap4を読み込む場合は、ここのチェックを外してください。"
+msgid "Check here to load Bootstrap4. If your theme or plugins loading Bootstrap4, uncheck here."
+msgstr "Bootstrap4を読み込む場合はここにチェックを入れてください。テーマやプラグインがBootstrap4を読み込む場合は、ここのチェックを外してください。"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/view/post-list.php:180
 #: inc/vk-blocks/view/post-list.php:164
@@ -2348,14 +2307,8 @@ msgstr "CSSの軽量化から除外するCSSのclass名"
 
 #: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:107
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:115
-msgid ""
-"If you choose \"Active Tree shaking\" that delete the useless css.If you "
-"using active css class that please fill in class name. Ex) btn-active,slide-"
-"active,scrolled"
-msgstr ""
-"Tree shaking を有効にしている場合、使用していないCSSは削除されます。もし使用"
-"している動的クラスがある場合はクラス名を入力してください。 例）btn-active,"
-"slide-active,scrolled"
+msgid "If you choose \"Active Tree shaking\" that delete the useless css.If you using active css class that please fill in class name. Ex) btn-active,slide-active,scrolled"
+msgstr "Tree shaking を有効にしている場合、使用していないCSSは削除されます。もし使用している動的クラスがある場合はクラス名を入力してください。 例）btn-active,slide-active,scrolled"
 
 #: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:124
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:132
@@ -2408,35 +2361,19 @@ msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] "このテーマは下記プラグインを必要としています：%1$s。"
 
 #: inc/tgm-plugin-activation/tgm-config.php:86
-msgid ""
-"This theme recommends the following plugin: %1$s.<br>Many additional "
-"functions are available for free."
-msgid_plural ""
-"This theme recommends the following plugins: %1$s.<br>Many additional "
-"functions are available for free."
-msgstr[0] ""
-"このテーマは下記プラグインを必要としています：%1$s。<br>これらのプラグインは"
-"無償で利用可能です。"
+msgid "This theme recommends the following plugin: %1$s.<br>Many additional functions are available for free."
+msgid_plural "This theme recommends the following plugins: %1$s.<br>Many additional functions are available for free."
+msgstr[0] "このテーマは下記プラグインを必要としています：%1$s。<br>これらのプラグインは無償で利用可能です。"
 
 #: inc/tgm-plugin-activation/tgm-config.php:91
-msgid ""
-"Sorry, but you do not have the correct permissions to install the %1$s "
-"plugin."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to install the %1$s "
-"plugins."
+msgid "Sorry, but you do not have the correct permissions to install the %1$s plugin."
+msgid_plural "Sorry, but you do not have the correct permissions to install the %1$s plugins."
 msgstr[0] "%1$sプラグインをインストールするための適切な権限がありません。"
 
 #: inc/tgm-plugin-activation/tgm-config.php:96
-msgid ""
-"The following plugin needs to be updated to its latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgid_plural ""
-"The following plugins need to be updated to their latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgstr[0] ""
-"このテーマとの最大の互換性を確保するには、次のプラグインを最新バージョンに更"
-"新する必要があります： %1$s。"
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgstr[0] "このテーマとの最大の互換性を確保するには、次のプラグインを最新バージョンに更新する必要があります： %1$s。"
 
 #: inc/tgm-plugin-activation/tgm-config.php:101
 msgid "There is an update available for: %1$s."
@@ -2444,11 +2381,8 @@ msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] "次のプラグインの更新が利用可能です：%1$s。"
 
 #: inc/tgm-plugin-activation/tgm-config.php:106
-msgid ""
-"Sorry, but you do not have the correct permissions to update the %1$s plugin."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to update the %1$s "
-"plugins."
+msgid "Sorry, but you do not have the correct permissions to update the %1$s plugin."
+msgid_plural "Sorry, but you do not have the correct permissions to update the %1$s plugins."
 msgstr[0] "%1$sプラグインを更新するための適切な権限がありません。"
 
 #: inc/tgm-plugin-activation/tgm-config.php:111
@@ -2462,12 +2396,8 @@ msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] "推奨プラグインが現在有効化されていません： %1$s。"
 
 #: inc/tgm-plugin-activation/tgm-config.php:121
-msgid ""
-"Sorry, but you do not have the correct permissions to activate the %1$s "
-"plugin."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to activate the %1$s "
-"plugins."
+msgid "Sorry, but you do not have the correct permissions to activate the %1$s plugin."
+msgid_plural "Sorry, but you do not have the correct permissions to activate the %1$s plugins."
 msgstr[0] "%1$sプラグインを有効化するための適切な権限がありません。"
 
 #: inc/tgm-plugin-activation/tgm-config.php:126
@@ -2502,12 +2432,8 @@ msgid "No action taken. Plugin %1$s was already active."
 msgstr "操作を実行しませんでした。プラグイン %1$s はすでに有効化されています。"
 
 #: inc/tgm-plugin-activation/tgm-config.php:145
-msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. "
-"Please update the plugin."
-msgstr ""
-"プラグインを有効化できませんでした。このテーマはプラグイン %s の現在のバー"
-"ジョンをサポートしていません。プラグインを更新してください。"
+msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
+msgstr "プラグインを有効化できませんでした。このテーマはプラグイン %s の現在のバージョンをサポートしていません。プラグインを更新してください。"
 
 #: inc/tgm-plugin-activation/tgm-config.php:146
 msgid "All plugins installed and activated successfully. %1$s"
@@ -2563,22 +2489,12 @@ msgid "Text 1 Column"
 msgstr "テキスト 1 カラム"
 
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:181
-msgid ""
-"If you choose \"Active Preload CSS\" that css load timing was changed.If you "
-"have any do not want to preload css file that please fill in handle(id) "
-"name. Ex) pluginname_a-style,pluginname_b-css"
-msgstr ""
-"もし「Preload CSS を有効」に設定した場合、CSSの読み込みタイミングが変更されま"
-"す。プリロードしたくないファイルがある場合は、ハンドル名（id）を入力してくだ"
-"さい。 例）pluginname_a-style,pluginname_b-css"
+msgid "If you choose \"Active Preload CSS\" that css load timing was changed.If you have any do not want to preload css file that please fill in handle(id) name. Ex) pluginname_a-style,pluginname_b-css"
+msgstr "もし「Preload CSS を有効」に設定した場合、CSSの読み込みタイミングが変更されます。プリロードしたくないファイルがある場合は、ハンドル名（id）を入力してください。 例）pluginname_a-style,pluginname_b-css"
 
 #: vk-blocks.php:81
-msgid ""
-"Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks "
-"Plugin running."
-msgstr ""
-"VK-Blocksと競合するため、VK All in One Expansion Unitの Block機能を停止しまし"
-"た。"
+msgid "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks Plugin running."
+msgstr "VK-Blocksと競合するため、VK All in One Expansion Unitの Block機能を停止しました。"
 
 #~ msgid "Align %s"
 #~ msgstr "表示位置"
@@ -2632,9 +2548,7 @@ msgstr ""
 #~ msgstr "ダッシュボードに戻る"
 
 #~ msgid "This plugin needs to be updated to be compatible with your theme."
-#~ msgstr ""
-#~ "使用中のテーマとの互換性を保つため、このプラグインを更新する必要がありま"
-#~ "す。"
+#~ msgstr "使用中のテーマとの互換性を保つため、このプラグインを更新する必要があります。"
 
 #~ msgid "Update Required"
 #~ msgstr "プラグインの更新が必要"
@@ -2645,26 +2559,14 @@ msgstr ""
 #~ msgid "Return to the Dashboard"
 #~ msgstr "ダッシュボードへ戻る"
 
-#~ msgid ""
-#~ "The remote plugin package does not contain a folder with the desired slug "
-#~ "and renaming did not work."
-#~ msgstr ""
-#~ "リモートプラグインパッケージに必要なフォルダーが存在しないため、名前の変更"
-#~ "ができませんでした。"
+#~ msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
+#~ msgstr "リモートプラグインパッケージに必要なフォルダーが存在しないため、名前の変更ができませんでした。"
 
-#~ msgid ""
-#~ "Please contact the plugin provider and ask them to package their plugin "
-#~ "according to the WordPress guidelines."
-#~ msgstr ""
-#~ "プラグインの開発者に連絡し、WordPressガイドラインに従ってプラグインをパッ"
-#~ "ケージ化するよう依頼してください。"
+#~ msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
+#~ msgstr "プラグインの開発者に連絡し、WordPressガイドラインに従ってプラグインをパッケージ化するよう依頼してください。"
 
-#~ msgid ""
-#~ "The remote plugin package consists of more than one file, but the files "
-#~ "are not packaged in a folder."
-#~ msgstr ""
-#~ "リモートプラグインパッケージは複数のファイルで構成されていますが、ファイル"
-#~ "はフォルダーにパッケージ化されていません。"
+#~ msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
+#~ msgstr "リモートプラグインパッケージは複数のファイルで構成されていますが、ファイルはフォルダーにパッケージ化されていません。"
 
 #~ msgctxt "plugin A *and* plugin B"
 #~ msgid "and"
@@ -2741,12 +2643,8 @@ msgstr ""
 #~ msgid "Available version:"
 #~ msgstr "利用可能なバージョン:"
 
-#~ msgid ""
-#~ "No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
-#~ "Dashboard</a>"
-#~ msgstr ""
-#~ "インストール・更新・有効化するべきプラグインはありません。<a href=\"%1$s"
-#~ "\">ダッシュボードに戻る</a>"
+#~ msgid "No plugins to install, update or activate. <a href=\"%1$s\">Return to the Dashboard</a>"
+#~ msgstr "インストール・更新・有効化するべきプラグインはありません。<a href=\"%1$s\">ダッシュボードに戻る</a>"
 
 #~ msgid "Plugin"
 #~ msgstr "プラグイン"
@@ -2785,8 +2683,7 @@ msgstr ""
 #~ msgstr "有効化"
 
 #~ msgid "No plugins were selected to be installed. No action taken."
-#~ msgstr ""
-#~ "インストールするプラグインが選択されていません。処理を中断しました。"
+#~ msgstr "インストールするプラグインが選択されていません。処理を中断しました。"
 
 #~ msgid "No plugins were selected to be updated. No action taken."
 #~ msgstr "更新するプラグインが選択されていません。処理を中断しました。"
@@ -2798,8 +2695,7 @@ msgstr ""
 #~ msgstr "現在更新可能なプラグインはありません。"
 
 #~ msgid "No plugins were selected to be activated. No action taken."
-#~ msgstr ""
-#~ "選択されたプラグインは全て有効化されています。何もする必要はありません。"
+#~ msgstr "選択されたプラグインは全て有効化されています。何もする必要はありません。"
 
 #~ msgid "No plugins are available to be activated at this time."
 #~ msgstr "現在、有効化できるプラグインはありません。"
@@ -2816,12 +2712,8 @@ msgstr ""
 #~ msgid "The installation of %1$s failed."
 #~ msgstr "%1$s のインストールに失敗しました。"
 
-#~ msgid ""
-#~ "The installation and activation process is starting. This process may "
-#~ "take a while on some hosts, so please be patient."
-#~ msgstr ""
-#~ "インストールと有効化を開始しました。環境によっては時間がかかる場合がありま"
-#~ "す。しばらくお待ちください。"
+#~ msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+#~ msgstr "インストールと有効化を開始しました。環境によっては時間がかかる場合があります。しばらくお待ちください。"
 
 #~ msgid "%1$s installed and activated successfully."
 #~ msgstr "%1$s を正常にインストールし、有効化しました。"
@@ -2832,12 +2724,8 @@ msgstr ""
 #~ msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 #~ msgstr "プラグインをインストール、有効化中 %1$s (%2$d/%3$d)"
 
-#~ msgid ""
-#~ "The installation process is starting. This process may take a while on "
-#~ "some hosts, so please be patient."
-#~ msgstr ""
-#~ "更新プロセスを開始しました。環境によっては時間がかかる場合があります。しば"
-#~ "らくお待ちください。"
+#~ msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+#~ msgstr "更新プロセスを開始しました。環境によっては時間がかかる場合があります。しばらくお待ちください。"
 
 #~ msgid "%1$s installed successfully."
 #~ msgstr "%1$sのインストールが完了しました。"
@@ -2948,19 +2836,11 @@ msgstr ""
 #~ msgid "Font Awesome:"
 #~ msgstr "Font Awesome:"
 
-#~ msgid ""
-#~ "Enter Font Awesome Class.This icon will appear before text. Ex) fas fa-"
-#~ "arrow-circle-right"
-#~ msgstr ""
-#~ "Font Awesome の class 名を入力してください。このアイコンは文字の前に表示さ"
-#~ "れます。 例) fas fa-arrow-circle-right"
+#~ msgid "Enter Font Awesome Class.This icon will appear before text. Ex) fas fa-arrow-circle-right"
+#~ msgstr "Font Awesome の class 名を入力してください。このアイコンは文字の前に表示されます。 例) fas fa-arrow-circle-right"
 
-#~ msgid ""
-#~ "Enter Font Awesome Class.This icon will appear after text. Ex) fas fa-"
-#~ "external-link-alt"
-#~ msgstr ""
-#~ "Font Awesome の class 名を入力してください。このアイコンは文字の後に表示さ"
-#~ "れます。 例) fas fa-external-link-alt"
+#~ msgid "Enter Font Awesome Class.This icon will appear after text. Ex) fas fa-external-link-alt"
+#~ msgstr "Font Awesome の class 名を入力してください。このアイコンは文字の後に表示されます。 例) fas fa-external-link-alt"
 
 #~ msgid "Fixed"
 #~ msgstr "固定"
@@ -3132,14 +3012,10 @@ msgstr ""
 #~ msgstr "リンクを同じウィンドウで開く"
 
 #~ msgid "Enter Font Awesome Class.This icon will appear before text."
-#~ msgstr ""
-#~ "Font Awesome の class 名を入力してください。このアイコンは文字の前に表示さ"
-#~ "れます。"
+#~ msgstr "Font Awesome の class 名を入力してください。このアイコンは文字の前に表示されます。"
 
 #~ msgid "Enter Font Awesome Class.This icon will appear after text."
-#~ msgstr ""
-#~ "Font Awesome の class 名を入力してください。このアイコンは文字の後に表示さ"
-#~ "れます。"
+#~ msgstr "Font Awesome の class 名を入力してください。このアイコンは文字の後に表示されます。"
 
 #~ msgid "Width Setting"
 #~ msgstr "幅設定"

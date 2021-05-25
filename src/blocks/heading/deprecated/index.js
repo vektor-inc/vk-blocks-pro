@@ -72,6 +72,12 @@ const blockAttributes2 = {
 		selector: '*',
 	},
 	...blockAttributes,
+	title: {
+		type: 'string',
+		source: 'html',
+		selector: 'span',
+		default: '',
+	},		
 	fontAwesomeIconBefore: {
 		type: 'string',
 		default: '',
@@ -86,15 +92,17 @@ const blockAttributes2 = {
 	},
 }
 
-const blockAttributes1_3_2 = {
+const blockAttributes3 = {
 	...blockAttributes2,
-	...blockAttributes2.outerMarginBottom.default= 0,
-	...blockAttributes2.title.selector="span",
+	outerMarginBottom: {
+		type: 'number',
+		default: 0
+	}
 }
 
 const deprecated = [
 	{
-		attributes: blockAttributes1_3_2,
+		attributes: blockAttributes3,
 		save: save1_3_2,
 	},
 	{

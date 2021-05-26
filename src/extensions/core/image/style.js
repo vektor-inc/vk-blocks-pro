@@ -7,8 +7,8 @@ registerBlockStyle('core/image', [
 		label: __('Rounded02', 'vk-blocks'),
 	},
 	{
-		name: 'vk-image-rounded',
-		label: __('Rounded02', 'vk-blocks'),
+		name: 'vk-image-circle',
+		label: __('Perfect circle', 'vk-blocks'),
 	},
 	{
 		name: 'vk-image-border',

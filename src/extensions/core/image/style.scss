@@ -1,6 +1,9 @@
 
 $border_radius: .5rem;
 $border_primary: 1px solid #e5e5e5;
+:root {
+    --vk-circle-image-size: min(80vw, 400px);
+}
 
 @mixin photoFrame {
     background-color: #fff;
@@ -50,10 +53,8 @@ $border_primary: 1px solid #e5e5e5;
     }
 }
 
-
 //左寄せ、右寄せが未指定の場合はfigureに.is-style-vk-image のクラス名が付く
 //figure.wp-block-imageの「.wp-block-image」をつけないと、角丸2のスタイルがつかないので追加
-
 
 figure.wp-block-image{
     // width: fit-content;
@@ -61,6 +62,13 @@ figure.wp-block-image{
         &-rounded {
             img {
                 border-radius: $border_radius;
+            }
+        }
+        &-circle {
+            img {
+                object-fit: cover;
+                mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='50'/%3E%3C/svg%3E");
+                @include mask;
             }
         }
         &-border {

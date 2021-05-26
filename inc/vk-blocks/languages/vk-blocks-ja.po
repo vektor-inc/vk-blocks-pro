@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2021-05-12T14:54:52+00:00\n"
-"PO-Revision-Date: 2021-05-12 23:59+0900\n"
+"POT-Creation-Date: 2021-05-02T05:07:26+00:00\n"
+"PO-Revision-Date: 2021-05-02 17:27+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 2.4.3\n"
 "X-Poedit-Basepath: ../../..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -340,7 +340,7 @@ msgid "Open link new tab."
 msgstr "リンクを別ウィンドウで開く"
 
 #: src/blocks/_pro/icon-card-item/edit.js:108
-#: src/blocks/_pro/step-item/edit.js:57 src/blocks/border-box/edit.js:109
+#: src/blocks/_pro/step-item/edit.js:57 src/blocks/border-box/edit.js:107
 #: src/blocks/button/edit.js:258 src/blocks/pr-content/edit.js:190
 msgid "Icon ( Font Awesome )"
 msgstr "アイコン ( Font Awesome )"
@@ -430,6 +430,7 @@ msgid "Repeat"
 msgstr "リピート"
 
 #: src/blocks/_pro/outer/edit.js:263
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:22
 msgid "Cover"
 msgstr "カバー"
 
@@ -814,8 +815,12 @@ msgid "Ex,6:00AM"
 msgstr "例) 午前 6:00"
 
 #: src/blocks/_pro/step-item/edit.js:76
-#: src/blocks/_pro/timeline-item/edit.js:53 src/blocks/border-box/edit.js:50
-#: src/blocks/staff/edit.js:138 inc/term-color/package/class.term-color.php:41
+#: src/blocks/_pro/timeline-item/edit.js:53 src/blocks/border-box/edit.js:48
+#: src/blocks/staff/edit.js:138
+#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:41
+#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:56
+#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:130
+#: inc/term-color/package/class.term-color.php:41
 #: inc/term-color/package/class.term-color.php:56
 #: inc/term-color/package/class.term-color.php:130
 msgid "Color"
@@ -848,6 +853,7 @@ msgstr "ステップ"
 #: src/blocks/_pro/table-of-contents-new/edit.js:163
 #: src/blocks/_pro/table-of-contents-new/index.js:17
 #: src/blocks/_pro/table-of-contents-new/save.js:16
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:240
 msgid "Table of Contents"
 msgstr "目次"
 
@@ -1030,49 +1036,49 @@ msgstr "吹き出し"
 
 #: src/blocks/border-box/deprecated/0.0.0/save.js:24
 #: src/blocks/border-box/deprecated/0.0.1/save.js:25
-#: src/blocks/border-box/edit.js:25
+#: src/blocks/border-box/edit.js:23
 msgid "Please enter a title."
 msgstr "見出しを入力してください。"
 
-#: src/blocks/border-box/edit.js:100
-msgid "White"
-msgstr "白"
-
-#: src/blocks/border-box/edit.js:106 src/utils/font-awesome-new.js:14
+#: src/blocks/border-box/edit.js:104 src/utils/font-awesome-new.js:14
 msgid "Icon"
 msgstr "アイコン"
 
-#: src/blocks/border-box/edit.js:53 src/extensions/core/group/style.js:47
+#: src/blocks/border-box/edit.js:51 src/extensions/core/group/style.js:47
 msgid "Border Color"
 msgstr "線の色"
 
-#: src/blocks/border-box/edit.js:63
+#: src/blocks/border-box/edit.js:61
 msgid "Red"
 msgstr "赤"
 
-#: src/blocks/border-box/edit.js:67
+#: src/blocks/border-box/edit.js:65
 msgid "Orange"
 msgstr "オレンジ"
 
-#: src/blocks/border-box/edit.js:71
+#: src/blocks/border-box/edit.js:69
 msgid "Blue"
 msgstr "青"
 
-#: src/blocks/border-box/edit.js:75
+#: src/blocks/border-box/edit.js:73
 msgid "Green"
 msgstr "緑"
 
-#: src/blocks/border-box/edit.js:79
+#: src/blocks/border-box/edit.js:77
 msgid "Black"
 msgstr "黒"
 
-#: src/blocks/border-box/edit.js:86
+#: src/blocks/border-box/edit.js:84
 msgid "Background Color"
 msgstr "背景色"
 
-#: src/blocks/border-box/edit.js:96
+#: src/blocks/border-box/edit.js:94
 msgid "Transparent"
 msgstr "透過"
+
+#: src/blocks/border-box/edit.js:98
+msgid "White"
+msgstr "白"
 
 #: src/blocks/border-box/index.js:19
 msgid "Border Box"
@@ -1102,7 +1108,15 @@ msgstr "直線 ピン角 内側"
 msgid "Solid Angle iconFeature"
 msgstr "直線 ピン角 アイコン"
 
-#: src/blocks/button/edit.js:103 src/blocks/spacer/edit.js:80
+#: src/blocks/border-box/index.js:121
+msgid "Margin"
+msgstr "余白"
+
+#: src/blocks/border-box/index.js:127
+msgid "The margin-top of the first element and the margin-bottom of the last element in the border block will be automatically set to 0.If you want to add margins at the beginning and end, use a spacer block to specify height instead of margin."
+msgstr "枠線ブロック内の最初の要素の margin-top と 最後の要素の margin-bottom は自動的に0になります。最初と最後に余白をつけたい場合はスペーサーブロックなどで margin指定ではなくheight指定でご利用ください。"
+
+#: src/blocks/button/edit.js:103
 msgid "Small"
 msgstr "小"
 
@@ -1198,7 +1212,7 @@ msgstr "ボタン URL"
 msgid "Button Size:"
 msgstr "ボタンサイズ:"
 
-#: src/blocks/button/edit.js:87 src/blocks/spacer/edit.js:96
+#: src/blocks/button/edit.js:87
 msgid "Large"
 msgstr "大"
 
@@ -1353,10 +1367,14 @@ msgid "Sub Text Settings"
 msgstr "サブテキスト設定"
 
 #: src/blocks/heading/edit.js:337
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-block-patterns.php:11
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-block-patterns.php:12
 msgid "Display"
 msgstr "表示"
 
 #: src/blocks/heading/edit.js:341
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-block-patterns.php:10
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-block-patterns.php:11
 msgid "Hide"
 msgstr "非表示"
 
@@ -1528,21 +1546,9 @@ msgstr "margin-top"
 msgid "Space Type"
 msgstr "余白タイプ"
 
-#: src/blocks/spacer/edit.js:104
-msgid "Custom"
-msgstr "数値指定"
-
-#: src/blocks/spacer/edit.js:53
+#: src/blocks/spacer/edit.js:50
 msgid "Height for each device."
 msgstr "デバイス毎の高さ"
-
-#: src/blocks/spacer/edit.js:71
-msgid "Spacer Settings"
-msgstr "余白サイズ設定"
-
-#: src/blocks/spacer/edit.js:88
-msgid "Medium"
-msgstr "中"
 
 #: src/blocks/spacer/index.js:24
 msgid "Responsive Spacer"
@@ -1972,6 +1978,7 @@ msgid "Select Icon"
 msgstr "アイコンを選択"
 
 #. Plugin Name of the plugin
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:15
 msgid "VK Blocks Pro"
 msgstr "VK Blocks Pro"
 
@@ -1991,12 +1998,12 @@ msgstr "Vektor,Inc."
 msgid "https://vektor-inc.co.jp"
 msgstr "https://vektor-inc.co.jp"
 
-#: inc/admin-notices.php:24
+#: dist/vk-blocks-pro/inc/admin-notices.php:24 inc/admin-notices.php:24
 msgid "We've released VK Blocks Pro!"
 msgstr "VK Blocks Pro を公開しました!"
 
 #. translators: 1: opening a tag, 2: closing a tag
-#: inc/admin-notices.php:31
+#: dist/vk-blocks-pro/inc/admin-notices.php:31 inc/admin-notices.php:31
 msgid ""
 "Thank you for using VK Blocks. We've released VK Blocks Pro. It has more "
 "custom blocks to build web site more easily. If you are interested in VK "
@@ -2007,90 +2014,377 @@ msgstr ""
 "れています。VK Blocks Proに興味がある方は、この記事%1$sを読んでみてください。"
 "詳しくは%2$s"
 
-#: inc/admin-notices.php:35 inc/admin-notices.php:41
+#: dist/vk-blocks-pro/inc/admin-notices.php:35
+#: dist/vk-blocks-pro/inc/admin-notices.php:41 inc/admin-notices.php:35
+#: inc/admin-notices.php:41
 msgid "https://www.vektor-inc.co.jp/service/wordpress-plugins/vk-blocks/"
 msgstr "https://www.vektor-inc.co.jp/service/wordpress-plugins/vk-blocks/"
 
-#: inc/admin-notices.php:42
+#: dist/vk-blocks-pro/inc/admin-notices.php:42 inc/admin-notices.php:42
 msgid "See more"
 msgstr "続きを見る"
 
-#: inc/admin-notices.php:45
+#: dist/vk-blocks-pro/inc/admin-notices.php:45 inc/admin-notices.php:45
 msgid "Dismiss this notice"
 msgstr "通知を無視"
 
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:42
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:57
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:42
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:57
 msgid "Not recommended"
 msgstr "非推奨"
 
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:89
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:91
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:89
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:91
 msgid "Ex ) "
 msgstr "例) "
 
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:200
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:200
 msgid "Font Awesome"
 msgstr "Font Awesome:"
 
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:223
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:223
 msgid "Font Awesome Version"
 msgstr "Font Awesome バージョン"
 
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:226
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:226
 msgid "4.7 will be abolished in the near future."
 msgstr "4.7は将来的に廃止されます。"
 
-#. translators:
-#: inc/template-tags/package/template-tags.php:147
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:146
+#: inc/template-tags/package/template-tags.php:146
 msgid "Author: %s"
 msgstr "投稿者: %s"
 
-#: inc/template-tags/package/template-tags.php:149
-#: inc/template-tags/package/template-tags.php:232
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:148
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:230
+#: inc/template-tags/package/template-tags.php:148
+#: inc/template-tags/package/template-tags.php:230
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr "Y年"
 
-#: inc/template-tags/package/template-tags.php:151
-#: inc/template-tags/package/template-tags.php:237
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:150
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:234
+#: inc/template-tags/package/template-tags.php:150
+#: inc/template-tags/package/template-tags.php:234
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr "Y年n月"
 
-#: inc/template-tags/package/template-tags.php:153
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:152
+#: inc/template-tags/package/template-tags.php:152
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr "Y年n月j日"
 
-#: inc/template-tags/package/template-tags.php:188
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:187
+#: inc/template-tags/package/template-tags.php:187
 msgid "Archives"
 msgstr "アーカイブ"
 
-#. translators:
-#: inc/template-tags/package/template-tags.php:220
-#: inc/template-tags/package/template-tags.php:228
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:218
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:226
+#: inc/template-tags/package/template-tags.php:218
+#: inc/template-tags/package/template-tags.php:226
 msgid "About %s"
 msgstr "%s　について"
 
-#. translators:
-#: inc/template-tags/package/template-tags.php:234
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:231
+#: inc/template-tags/package/template-tags.php:231
 msgctxt "Yearly archive description"
 msgid "Article of %s."
 msgstr "%s の記事."
 
-#. translators:
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:235
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:239
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:244
+#: inc/template-tags/package/template-tags.php:235
 #: inc/template-tags/package/template-tags.php:239
-#: inc/template-tags/package/template-tags.php:245
-#: inc/template-tags/package/template-tags.php:250
+#: inc/template-tags/package/template-tags.php:244
 msgctxt "Archive description"
 msgid "Article of %s."
 msgstr "%s の記事."
 
-#. translators:
-#: inc/template-tags/package/template-tags.php:268
+#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:261
+#: inc/template-tags/package/template-tags.php:261
 msgid "Page of %s"
 msgstr "%sのページ"
+
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-block-patterns.php:7
+#, fuzzy
+#| msgid "VK Blocks Templates"
+msgid "VK Blocks Template"
+msgstr "VK Blocks テンプレート"
+
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:7
+#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:7
+msgid "Disable accordion"
+msgstr "アコーディオン無効"
+
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:11
+#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:11
+msgid "Enable accordion and default open "
+msgstr "アコーディオン有効 / 初期状態で開く"
+
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:15
+#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:15
+msgid "Enable accordion and default close "
+msgstr "アコーディオン有効 / 初期状態で閉じる"
+
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:23
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-pro.php:28
+#: inc/vk-blocks-pro/admin-pro/admin-pro.php:20
+msgid "FAQ Setting"
+msgstr "FAQ ブロックの設定"
+
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:32
+#, fuzzy
+#| msgid "Full Wide"
+msgid "Full Wide Title Set"
+msgstr "全幅"
+
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:42
+msgid "Searvice"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:52
+#, fuzzy
+#| msgid "About %s"
+msgid "About"
+msgstr "%s　について"
+
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:62
+#, fuzzy
+#| msgid "Icon Card Setting"
+msgid "Icon Card Set"
+msgstr "アイコンカード設定"
+
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:72
+msgid "Information ( Text )"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:82
+msgid "Information ( Card )"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:92
+#, fuzzy
+#| msgid "Latest Posts"
+msgid "Feature Posts"
+msgstr "新着記事"
+
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:102
+msgid "Call To Action"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:112
+msgid "Contact"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:122
+msgid "Step set"
+msgstr "ステップセット"
+
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:132
+msgid "Border box"
+msgstr "枠線ボックス"
+
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:142
+#, fuzzy
+#| msgid "Slider Item"
+msgid "Slider Template"
+msgstr "スライダーアイテム"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:4
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:56
+#: inc/vk-blocks/admin/admin-balloon.php:4
+msgid "Balloon Setting"
+msgstr "吹き出しブロック設定"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:5
+#: inc/vk-blocks/admin/admin-balloon.php:5
+msgid "Balloon Border Width Setting"
+msgstr "吹き出しの線幅の設定"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:15
+#: inc/vk-blocks/admin/admin-balloon.php:15
+msgid "Balloon Image Setting"
+msgstr "吹き出し画像設定"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:82
+#: inc/vk-blocks/admin/admin-balloon.php:82
+msgid "You can register frequently used icon images for speech bubble blocks."
+msgstr "よく使う吹き出し用のアイコン画像を登録する事ができます。"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:83
+#: inc/vk-blocks/admin/admin-balloon.php:83
+msgid "If you change image or name that please click Save Changes button."
+msgstr "画像を変更したら「変更を保存」ボタンをクリックしてください。"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:109
+#: inc/vk-blocks/admin/admin-balloon.php:109
+msgid "Select"
+msgstr "選択"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:112
+#: inc/vk-blocks/admin/admin-balloon.php:112
+msgid "Delete"
+msgstr "削除"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:117
+#: inc/vk-blocks/admin/admin-balloon.php:117
+msgid "Balloon Image Name"
+msgstr "吹き出し画像の名前"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-block-patterns.php:5
+msgid "Display Block Template Setting"
+msgstr "ブロックテンプレート表示設定"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-block-patterns.php:8
+msgid "WordPress Block Template"
+msgstr "WordPress ブロックテンプレート"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-css-optimize.php:4
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:85
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:151
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:93
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:159
+msgid "Nothing to do"
+msgstr "何もしない"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-css-optimize.php:8
+msgid "Optimize VK Blocks CSS ( Tree Shaking )"
+msgstr "VK Blocks のCSSを最適化する（Tree Shaking）"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-css-optimize.php:22
+msgid "CSS Optimize Setting"
+msgstr "CSS最適化設定"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:32
+#: inc/vk-blocks/admin/admin.php:31
+msgid "Blocks setting"
+msgstr "Blocks 設定"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:33
+#: inc/vk-blocks/admin/admin.php:32
+msgctxt "label in admin menu"
+msgid "Blocks"
+msgstr "Blocks"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:49
+#: inc/vk-blocks/admin/admin.php:48
+msgid "Blocks Setting"
+msgstr "Blocks 設定"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:55
+msgid "Block Template Setting"
+msgstr "ブロックテンプレート設定"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/blocks/page-content/class-vk-page-content-block.php:122
+#: src/blocks/page-content/index.php:118
+msgid "Edit this area"
+msgstr "このエリアを編集"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/load-bootstrap.php:49
+#: inc/vk-blocks/load-bootstrap.php:49
+msgid "VK Blocks Bootstrap Setting"
+msgstr "VK Blocks Bootstrapの設定"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/load-bootstrap.php:66
+#: inc/vk-blocks/load-bootstrap.php:66
+msgid "Loading Bootstrap4"
+msgstr "Bootstrap4の読み込み"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/load-bootstrap.php:67
+#: inc/vk-blocks/load-bootstrap.php:67
+msgid ""
+"Check here to load Bootstrap4. If your theme or plugins loading Bootstrap4, "
+"uncheck here."
+msgstr ""
+"Bootstrap4を読み込む場合はここにチェックを入れてください。テーマやプラグイン"
+"がBootstrap4を読み込む場合は、ここのチェックを外してください。"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/view/post-list.php:180
+#: inc/vk-blocks/view/post-list.php:164
+msgid "No Post is selected"
+msgstr "投稿が選択されていません"
+
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:39
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:47
+msgid "CSS Optimize ( Speed up ) Settings"
+msgstr "CSS最適化（高速化）設定"
+
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:58
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:66
+msgid "Tree shaking"
+msgstr "Tree shaking"
+
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:79
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:87
+msgid "Tree shaking activation settings"
+msgstr "Tree shaking 有効化設定"
+
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:83
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:91
+msgid "Output only the main CSS of the page inline"
+msgstr "主要なCSSのみインラインで出力します"
+
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:86
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:94
+msgid "Active Tree shaking (Recomend)"
+msgstr "Tree shakingを有効化（推奨）"
+
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:103
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:111
+msgid "Exclude class of Tree shaking"
+msgstr "CSSの軽量化から除外するCSSのclass名"
+
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:107
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:115
+msgid ""
+"If you choose \"Active Tree shaking\" that delete the useless css.If you "
+"using active css class that please fill in class name. Ex) btn-active,slide-"
+"active,scrolled"
+msgstr ""
+"Tree shaking を有効にしている場合、使用していないCSSは削除されます。もし使用"
+"している動的クラスがある場合はクラス名を入力してください。 例）btn-active,"
+"slide-active,scrolled"
+
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:124
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:132
+msgid "Preload CSS"
+msgstr "Preload CSS"
+
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:145
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:153
+msgid "Preload CSS activation settings"
+msgstr "Preload CSS 有効化設定"
+
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:148
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:156
+msgid "Preload css except for critical css"
+msgstr "クリティカルなCSSを除いてCSSをプリロードします"
+
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:152
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:160
+msgid "Active Preload CSS (Recomend)"
+msgstr "Preload CSS を有効化（推奨）"
+
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:169
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:177
+msgid "Exclude class of Preload CSS"
+msgstr "Preload CSSから除外するハンドル名"
+
+#: dist/vk-blocks-pro/vk-blocks.php:80
+msgid "Disabled Blocks module. Because VK-Blocks Plugin running."
+msgstr ""
 
 #: inc/tgm-plugin-activation/tgm-config.php:77
 msgid "Install Required Plugins"
@@ -2100,24 +2394,20 @@ msgstr "必須プラグインのインストール"
 msgid "Install Plugins"
 msgstr "プラグインのインストール"
 
-#. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:80
+#: inc/tgm-plugin-activation/tgm-config.php:79
 msgid "Installing Plugin: %s"
 msgstr "プラグイン %s をインストール中"
 
-#. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:81
+#: inc/tgm-plugin-activation/tgm-config.php:80
 msgid "Something went wrong with the plugin API."
 msgstr "プラグイン API で問題が発生しました。"
 
-#. translators:
-#: inc/tgm-plugin-activation/tgm-config.php:83
+#: inc/tgm-plugin-activation/tgm-config.php:81
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] "このテーマは下記プラグインを必要としています：%1$s。"
 
-#. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:89
+#: inc/tgm-plugin-activation/tgm-config.php:86
 msgid ""
 "This theme recommends the following plugin: %1$s.<br>Many additional "
 "functions are available for free."
@@ -2128,8 +2418,7 @@ msgstr[0] ""
 "このテーマは下記プラグインを必要としています：%1$s。<br>これらのプラグインは"
 "無償で利用可能です。"
 
-#. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:95
+#: inc/tgm-plugin-activation/tgm-config.php:91
 msgid ""
 "Sorry, but you do not have the correct permissions to install the %1$s "
 "plugin."
@@ -2138,8 +2427,7 @@ msgid_plural ""
 "plugins."
 msgstr[0] "%1$sプラグインをインストールするための適切な権限がありません。"
 
-#. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:101
+#: inc/tgm-plugin-activation/tgm-config.php:96
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
 "maximum compatibility with this theme: %1$s."
@@ -2150,14 +2438,12 @@ msgstr[0] ""
 "このテーマとの最大の互換性を確保するには、次のプラグインを最新バージョンに更"
 "新する必要があります： %1$s。"
 
-#. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:107
+#: inc/tgm-plugin-activation/tgm-config.php:101
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] "次のプラグインの更新が利用可能です：%1$s。"
 
-#. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:113
+#: inc/tgm-plugin-activation/tgm-config.php:106
 msgid ""
 "Sorry, but you do not have the correct permissions to update the %1$s plugin."
 msgid_plural ""
@@ -2165,20 +2451,17 @@ msgid_plural ""
 "plugins."
 msgstr[0] "%1$sプラグインを更新するための適切な権限がありません。"
 
-#. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:119
+#: inc/tgm-plugin-activation/tgm-config.php:111
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] "必須プラグインが現在有効化されていません： %1$s。"
 
-#. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:125
+#: inc/tgm-plugin-activation/tgm-config.php:116
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] "推奨プラグインが現在有効化されていません： %1$s。"
 
-#. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:131
+#: inc/tgm-plugin-activation/tgm-config.php:121
 msgid ""
 "Sorry, but you do not have the correct permissions to activate the %1$s "
 "plugin."
@@ -2187,41 +2470,38 @@ msgid_plural ""
 "plugins."
 msgstr[0] "%1$sプラグインを有効化するための適切な権限がありません。"
 
-#. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:137
+#: inc/tgm-plugin-activation/tgm-config.php:126
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] "プラグインのインストールを開始"
 
-#: inc/tgm-plugin-activation/tgm-config.php:142
+#: inc/tgm-plugin-activation/tgm-config.php:131
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] "プラグインの更新を開始する"
 
-#: inc/tgm-plugin-activation/tgm-config.php:147
+#: inc/tgm-plugin-activation/tgm-config.php:136
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] "プラグインの有効化を開始"
 
-#: inc/tgm-plugin-activation/tgm-config.php:152
+#: inc/tgm-plugin-activation/tgm-config.php:141
 msgid "Return to Required Plugins Installer"
 msgstr "必須プラグインのインストール画面に戻る"
 
-#: inc/tgm-plugin-activation/tgm-config.php:153
+#: inc/tgm-plugin-activation/tgm-config.php:142
 msgid "Plugin activated successfully."
 msgstr "プラグインを有効化しました。"
 
-#: inc/tgm-plugin-activation/tgm-config.php:154
+#: inc/tgm-plugin-activation/tgm-config.php:143
 msgid "The following plugin was activated successfully:"
 msgstr "次のプラグインを有効化しました:"
 
-#. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:156
+#: inc/tgm-plugin-activation/tgm-config.php:144
 msgid "No action taken. Plugin %1$s was already active."
 msgstr "操作を実行しませんでした。プラグイン %1$s はすでに有効化されています。"
 
-#. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:158
+#: inc/tgm-plugin-activation/tgm-config.php:145
 msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
 "Please update the plugin."
@@ -2229,13 +2509,11 @@ msgstr ""
 "プラグインを有効化できませんでした。このテーマはプラグイン %s の現在のバー"
 "ジョンをサポートしていません。プラグインを更新してください。"
 
-#. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:160
+#: inc/tgm-plugin-activation/tgm-config.php:146
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr "すべてのプラグインを正常にインストールし、有効化しました。 %1$s"
 
-#. translators: %s = dashboard link.
-#: inc/tgm-plugin-activation/tgm-config.php:162
+#: inc/tgm-plugin-activation/tgm-config.php:147
 msgid "Please contact the administrator of this site for help."
 msgstr "ヘルプが必要な場合はこのサイトの管理者にお問い合わせください。"
 
@@ -2247,94 +2525,13 @@ msgstr "申し訳ありませんが投稿がありません。"
 msgid "Vektor WordPress Information"
 msgstr "Vektor WordPress Information"
 
-#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:7
-msgid "Disable accordion"
-msgstr "アコーディオン無効"
-
-#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:11
-msgid "Enable accordion and default open "
-msgstr "アコーディオン有効 / 初期状態で開く"
-
-#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:15
-msgid "Enable accordion and default close "
-msgstr "アコーディオン有効 / 初期状態で閉じる"
-
 #: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:23
 msgid "FAQ Block Setting"
 msgstr "FAQ Blocks 設定"
 
-#: inc/vk-blocks-pro/admin-pro/admin-pro.php:20
-msgid "FAQ Setting"
-msgstr "FAQ ブロックの設定"
-
-#: inc/vk-blocks/admin/admin-balloon.php:4
-msgid "Balloon Setting"
-msgstr "吹き出しブロック設定"
-
-#: inc/vk-blocks/admin/admin-balloon.php:5
-msgid "Balloon Border Width Setting"
-msgstr "吹き出しの線幅の設定"
-
-#: inc/vk-blocks/admin/admin-balloon.php:15
-msgid "Balloon Image Setting"
-msgstr "吹き出し画像設定"
-
-#: inc/vk-blocks/admin/admin-balloon.php:82
-msgid "You can register frequently used icon images for speech bubble blocks."
-msgstr "よく使う吹き出し用のアイコン画像を登録する事ができます。"
-
-#: inc/vk-blocks/admin/admin-balloon.php:83
-msgid "If you change image or name that please click Save Changes button."
-msgstr "画像を変更したら「変更を保存」ボタンをクリックしてください。"
-
-#: inc/vk-blocks/admin/admin-balloon.php:109
-msgid "Select"
-msgstr "選択"
-
-#: inc/vk-blocks/admin/admin-balloon.php:112
-msgid "Delete"
-msgstr "削除"
-
-#: inc/vk-blocks/admin/admin-balloon.php:117
-msgid "Balloon Image Name"
-msgstr "吹き出し画像の名前"
-
-#: inc/vk-blocks/admin/admin.php:31
-msgid "Blocks setting"
-msgstr "Blocks 設定"
-
-#: inc/vk-blocks/admin/admin.php:32
-msgctxt "label in admin menu"
-msgid "Blocks"
-msgstr "Blocks"
-
-#: inc/vk-blocks/admin/admin.php:48
-msgid "Blocks Setting"
-msgstr "Blocks 設定"
-
 #: inc/vk-blocks/admin/admin.php:54
 msgid "Balloon Block Setting"
 msgstr "吹き出しブロック設定"
-
-#: inc/vk-blocks/load-bootstrap.php:49
-msgid "VK Blocks Bootstrap Setting"
-msgstr "VK Blocks Bootstrapの設定"
-
-#: inc/vk-blocks/load-bootstrap.php:66
-msgid "Loading Bootstrap4"
-msgstr "Bootstrap4の読み込み"
-
-#: inc/vk-blocks/load-bootstrap.php:67
-msgid ""
-"Check here to load Bootstrap4. If your theme or plugins loading Bootstrap4, "
-"uncheck here."
-msgstr ""
-"Bootstrap4を読み込む場合はここにチェックを入れてください。テーマやプラグイン"
-"がBootstrap4を読み込む場合は、ここのチェックを外してください。"
-
-#: inc/vk-blocks/view/post-list.php:164
-msgid "No Post is selected"
-msgstr "投稿が選択されていません"
 
 #: inc/vk-blocks/vk-blocks-functions.php:239
 msgid "Blocks"
@@ -2365,65 +2562,6 @@ msgctxt "post list type"
 msgid "Text 1 Column"
 msgstr "テキスト 1 カラム"
 
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:47
-msgid "CSS Optimize ( Speed up ) Settings"
-msgstr "CSS最適化（高速化）設定"
-
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:66
-msgid "Tree shaking"
-msgstr "Tree shaking"
-
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:87
-msgid "Tree shaking activation settings"
-msgstr "Tree shaking 有効化設定"
-
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:91
-msgid "Output only the main CSS of the page inline"
-msgstr "主要なCSSのみインラインで出力します"
-
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:93
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:159
-msgid "Nothing to do"
-msgstr "何もしない"
-
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:94
-msgid "Active Tree shaking (Recomend)"
-msgstr "Tree shakingを有効化（推奨）"
-
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:111
-msgid "Exclude class of Tree shaking"
-msgstr "CSSの軽量化から除外するCSSのclass名"
-
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:115
-msgid ""
-"If you choose \"Active Tree shaking\" that delete the useless css.If you "
-"using active css class that please fill in class name. Ex) btn-active,slide-"
-"active,scrolled"
-msgstr ""
-"Tree shaking を有効にしている場合、使用していないCSSは削除されます。もし使用"
-"している動的クラスがある場合はクラス名を入力してください。 例）btn-active,"
-"slide-active,scrolled"
-
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:132
-msgid "Preload CSS"
-msgstr "Preload CSS"
-
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:153
-msgid "Preload CSS activation settings"
-msgstr "Preload CSS 有効化設定"
-
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:156
-msgid "Preload css except for critical css"
-msgstr "クリティカルなCSSを除いてCSSをプリロードします"
-
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:160
-msgid "Active Preload CSS (Recomend)"
-msgstr "Preload CSS を有効化（推奨）"
-
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:177
-msgid "Exclude class of Preload CSS"
-msgstr "Preload CSSから除外するハンドル名"
-
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:181
 msgid ""
 "If you choose \"Active Preload CSS\" that css load timing was changed.If you "
@@ -2434,10 +2572,6 @@ msgstr ""
 "す。プリロードしたくないファイルがある場合は、ハンドル名（id）を入力してくだ"
 "さい。 例）pluginname_a-style,pluginname_b-css"
 
-#: src/blocks/page-content/index.php:118
-msgid "Edit this area"
-msgstr "このエリアを編集"
-
 #: vk-blocks.php:81
 msgid ""
 "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks "
@@ -2445,63 +2579,6 @@ msgid ""
 msgstr ""
 "VK-Blocksと競合するため、VK All in One Expansion Unitの Block機能を停止しまし"
 "た。"
-
-#~ msgid "Number"
-#~ msgstr "数値指定"
-
-#~ msgid "Middle"
-#~ msgstr "中"
-
-#, fuzzy
-#~| msgid "VK Blocks Templates"
-#~ msgid "VK Blocks Template"
-#~ msgstr "VK Blocks テンプレート"
-
-#, fuzzy
-#~| msgid "Full Wide"
-#~ msgid "Full Wide Title Set"
-#~ msgstr "全幅"
-
-#, fuzzy
-#~| msgid "About %s"
-#~ msgid "About"
-#~ msgstr "%s　について"
-
-#, fuzzy
-#~| msgid "Icon Card Setting"
-#~ msgid "Icon Card Set"
-#~ msgstr "アイコンカード設定"
-
-#, fuzzy
-#~| msgid "Latest Posts"
-#~ msgid "Feature Posts"
-#~ msgstr "新着記事"
-
-#~ msgid "Step set"
-#~ msgstr "ステップセット"
-
-#~ msgid "Border box"
-#~ msgstr "枠線ボックス"
-
-#, fuzzy
-#~| msgid "Slider Item"
-#~ msgid "Slider Template"
-#~ msgstr "スライダーアイテム"
-
-#~ msgid "Display Block Template Setting"
-#~ msgstr "ブロックテンプレート表示設定"
-
-#~ msgid "WordPress Block Template"
-#~ msgstr "WordPress ブロックテンプレート"
-
-#~ msgid "Optimize VK Blocks CSS ( Tree Shaking )"
-#~ msgstr "VK Blocks のCSSを最適化する（Tree Shaking）"
-
-#~ msgid "CSS Optimize Setting"
-#~ msgstr "CSS最適化設定"
-
-#~ msgid "Block Template Setting"
-#~ msgstr "ブロックテンプレート設定"
 
 #~ msgid "Align %s"
 #~ msgstr "表示位置"

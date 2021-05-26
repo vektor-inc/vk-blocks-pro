@@ -28,9 +28,18 @@ export const blockAttributes = {
 
 const blockAttributes003 = {
 	...blockAttributes,
-	...blockAttributes.pc.default=40,
-	...blockAttributes.tablet.default=30,
-    ...blockAttributes.mobile.default=20,
+    pc: {
+        type: 'number',
+        default: 40,
+    },
+    tablet: {
+        type: 'number',
+        default: 30,
+    },
+    mobile: {
+        type: 'number',
+        default: 20,
+    },
     anchor: {
         type: 'string',
         default: null,

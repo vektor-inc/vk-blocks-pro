@@ -1,9 +1,6 @@
 
 $border_radius: .5rem;
 $border_primary: 1px solid #e5e5e5;
-:root {
-    --vk-circle-image-size: min(80vw, 400px);
-}
 
 @mixin photoFrame {
     background-color: #fff;

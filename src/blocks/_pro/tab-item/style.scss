@@ -1,0 +1,61 @@
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+:root {
+	--vk-color-border: rgba(0,0,0,.12);
+	--vk-size-text: 16px;
+}
+
+.vk_tab{
+	margin-bottom: calc( var(--vk-size-text) * 2);
+	&_labels{
+		padding: 0;
+		margin: 0;
+		display: flex;
+		.vk_tab_labels_label{
+			list-style: none;
+			text-align: center;
+			padding: 10px;
+			cursor: pointer;
+			flex-grow: 1;
+			// border-top:1px solid var(--vk-color-border);
+			// border-left:1px solid var(--vk-color-border);
+			// border-right:1px solid var(--vk-color-border);
+			background-color: rgba(0,0,0,.05);
+			border-radius:5px 5px 0 0;
+			margin:0 calc( var(--vk-size-text) * 0.25 );
+			&:first-child{
+				margin-left:0;
+			}
+			&:last-child{
+				margin-right: 0;
+			}
+			&.vk_tab_labels_label-state-active{
+				background-color: #f00;
+				color: #fff;
+			}
+		}
+		
+	}
+}
+
+.vk_tab_bodys{
+	// border: 1px solid var(--vk-color-border);
+	padding-top: calc( var(--vk-size-text) * 2);
+	.vk_tab_bodys_body {
+		display: none;
+		&.vk_tab_bodys_body-state-active{
+			display: block;
+		}
+	}
+}
+
+/*      編集画面
+/*-------------------------------------------*/
+.editor-styles-wrapper{
+	ul.vk_tab_labels{
+		margin:0;
+		padding: 0;
+	}
+
+}

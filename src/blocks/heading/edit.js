@@ -116,6 +116,16 @@ export default function HeaddingEdit(props) {
 		cStyle = { marginBottom: outerMarginBottom + `rem` };
 	}
 
+	// タイトル文字色リセット時
+	if (!titleColor) {
+		setAttributes({ titleColor: '#000000' });
+	}
+
+	// サブテキスト文字色リセット時
+	if (!subTextColor) {
+		setAttributes({ subTextColor: '#000000' });
+	}
+
 	//titleのマージンを切り替え
 	if (titleMarginBottom !== null && titleMarginBottom !== undefined) {
 		tStyle = {

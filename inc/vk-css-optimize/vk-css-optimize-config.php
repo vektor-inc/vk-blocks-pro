@@ -6,9 +6,12 @@
  */
 
  /*
- VK CSS Optimize 本体はExUnitなどで読み込むのでここでは読み込まない
- 追加したいファイルのみフックで投げる
+ VK CSS Optimize 本体はExUnitなどで読み込むのでここでは読み込まず
+ 追加したいファイルのみフックで投げるはずだったが単体売りするかもしれないので一応本体を同梱
  */
+if ( ! class_exists( 'VK_CSS_Optimize' ) ) {
+	require_once dirname( __FILE__ ) . '/package/class-vk-css-optimize.php';
+}
 
 function vkblocks_css_tree_shaking_array( $vk_css_tree_shaking_array ){
 	$vk_css_tree_shaking_array[] = array(

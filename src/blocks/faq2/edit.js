@@ -32,13 +32,20 @@ export default function FAQ2Edit() {
 					<PanelRow>{massage}</PanelRow>
 				</PanelBody>
 			</InspectorControls>
-			<dl {...blockProps}>
-				<InnerBlocks
-					allowedBlocks={[['vk-blocks/faq2-q'], ['vk-blocks/faq2-a']]}
-					template={[['vk-blocks/faq2-q'], ['vk-blocks/faq2-a']]}
-					templateLock="all"
-				/>
-			</dl>
+			<div {...blockProps}>
+				<div className="vk_faq-header"></div>
+				<dl className="vk_faq-body">
+					<InnerBlocks
+						allowedBlocks={[
+							['vk-blocks/faq2-q'],
+							['vk-blocks/faq2-a'],
+						]}
+						template={[['vk-blocks/faq2-q'], ['vk-blocks/faq2-a']]}
+						templateLock="all"
+					/>
+				</dl>
+				<div className="vk_faq-footer"></div>
+			</div>
 		</>
 	);
 }

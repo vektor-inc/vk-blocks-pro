@@ -21,17 +21,26 @@ export class NewComponent extends Component {
             vk_staff_positionColor,
             vk_staff_profileTitleColor,
             vk_staff_profileTextColor,
-            vk_staff_photoBorder
+            vk_staff_photoBorder,
+            vk_staff_fontFamily
         } = this.props.attributes;
         const setAttributes = this.props.setAttributes;
         const className = this.props.className;
         const for_ = this.props.for_;
         let returnELm = '';
 
+        let staffTextClassName = 'vk_staff_text';
+        if (vk_staff_fontFamily === '1') {
+          staffTextClassName = classnames(
+            staffTextClassName,
+            'vk_staff-headingFont-serif'
+          );
+        }
+
         if (for_ === 'edit') {
 
             returnELm = <div className={ `${className} vk_staff vk_staff-layout-${vk_staff_layout}` }>
-	<div className={ `vk_staff_text` }>
+	<div className={ staffTextClassName }>
 		<RichText
 			tagName="h3"
 			className={ 'vk_staff_text_name' }
@@ -96,7 +105,7 @@ export class NewComponent extends Component {
         } else if (for_ === 'save') {
 
             returnELm = <div className={ `${className} vk_staff vk_staff-layout-${vk_staff_layout}` }>
-	<div className={ `vk_staff_text` }>
+	<div className={ staffTextClassName }>
 		<RichText.Content
 			tagName="h3"
 			className={ 'vk_staff_text_name' }

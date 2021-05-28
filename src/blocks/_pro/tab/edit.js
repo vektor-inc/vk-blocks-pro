@@ -1,7 +1,8 @@
-import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import { InnerBlocks, useBlockProps, RichText } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
 import { select, dispatch } from '@wordpress/data';
 import { renderToStaticMarkup } from 'react-dom/server';
+import { __, sprintf } from '@wordpress/i18n';
 
 export default function TabEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -43,8 +44,34 @@ export default function TabEdit(props) {
 	}, [childBlocks]);
 
 	let tabList = '';
+	let tablabelsEdit = '';
 	let tablabels = '';
 	if (childBlocks) {
+		tablabelsEdit = childBlocks.map((childBlock, index) => {
+			let activeLabelClass = '';
+			if (firstActive === index) {
+				activeLabelClass = 'vk_tab_labels_label-state-active';
+			}
+
+			return (
+				<RichText
+					tagName="li"
+					id={`vk_tab_labels_label-${childBlock.attributes.clientId}`}
+					className={`vk_tab_labels_label ${activeLabelClass}`}
+					key={index}
+					value={childBlock.attributes.tabLabel}
+					onChange={(content) => {
+						updateBlockAttributes(childBlock.clientId, {
+							tabLabel: content,
+						});
+					}}
+					placeholder={
+						// translators: Tab label [i]
+						sprintf(__('Tab Label [ %s ]'), index + 1)
+					}
+				/>
+			);
+		});
 		tablabels = childBlocks.map((childBlock, index) => {
 			let activeLabelClass = '';
 			if (firstActive === index) {
@@ -60,6 +87,7 @@ export default function TabEdit(props) {
 				</li>
 			);
 		});
+
 		if (tablabels) {
 			tabList = <ul className="vk_tab_labels">{tablabels}</ul>;
 		}
@@ -79,7 +107,7 @@ export default function TabEdit(props) {
 	return (
 		<>
 			<div {...blockProps}>
-				{tabList}
+				{tablabelsEdit}
 				<div className="vk_tab_bodys">
 					<InnerBlocks
 						allowedBlocks={ALLOWED_BLOCKS}

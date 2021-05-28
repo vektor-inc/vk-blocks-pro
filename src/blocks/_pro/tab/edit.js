@@ -111,7 +111,6 @@ export default function TabEdit(props) {
 			);
 		});
 		tablabelsEdit = <ul className="vk_tab_labels">{tablabelsEditList}</ul>;
-
 		tablabels = childBlocks.map((childBlock, index) => {
 			let activeLabelClass = '';
 			if (firstActive === index) {

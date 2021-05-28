@@ -45,10 +45,11 @@ export default function TabEdit(props) {
 	}, [childBlocks]);
 
 	let tabList = '';
+	let tablabelsEditList = '';
 	let tablabelsEdit = '';
 	let tablabels = '';
 	if (childBlocks) {
-		tablabelsEdit = childBlocks.map((childBlock, index) => {
+		tablabelsEditList = childBlocks.map((childBlock, index) => {
 			let activeLabelClass = '';
 			if (firstActive === index) {
 				activeLabelClass = 'vk_tab_labels_label-state-active';
@@ -73,6 +74,7 @@ export default function TabEdit(props) {
 				/>
 			);
 		});
+		tablabelsEdit = <ul className="vk_tab_labels">{tablabelsEditList}</ul>;
 		tablabels = childBlocks.map((childBlock, index) => {
 			let activeLabelClass = '';
 			if (firstActive === index) {

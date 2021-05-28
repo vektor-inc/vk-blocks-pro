@@ -24,7 +24,8 @@ export default function TabEdit(props) {
 		}
 	}, [clientId]);
 
-	const parentBlock = select('core/editor').getBlocksByClientId(clientId)[0];
+	const parentBlock =
+		select('core/block-editor').getBlocksByClientId(clientId)[0];
 	const childBlocks = parentBlock.innerBlocks;
 
 	useEffect(() => {

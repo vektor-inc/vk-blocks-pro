@@ -32,7 +32,10 @@ export default function TabItemEdit(props) {
 	return (
 		<>
 			<div {...blockProps}>
-				<InnerBlocks />
+				<InnerBlocks
+					templateLock={false}
+					template={[['core/paragraph']]}
+				/>
 			</div>
 		</>
 	);

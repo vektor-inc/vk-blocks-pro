@@ -33,7 +33,7 @@ export default function GridColumnEdit(props) {
 					col_lg: attributes.col_lg,
 					col_xl: attributes.col_xl,
 					col_xxl: attributes.col_xxl,
-					margin_bottom: attributes.margin_bottom,
+					marginBottom: attributes.marginBottom,
 					unit: attributes.unit,
 				});
 			});
@@ -43,7 +43,7 @@ export default function GridColumnEdit(props) {
 	const ALLOWED_BLOCKS = [['vk-blocks/grid-column-item']];
 	const TEMPLATE = ALLOWED_BLOCKS;
 	const blockProps = useBlockProps();
-	const margin_bottom = attributes.margin_bottom;
+	const marginBottom = attributes.marginBottom;
 
 	return (
 		<>
@@ -60,14 +60,14 @@ export default function GridColumnEdit(props) {
 				>
 					<RangeControl
 						label={__('Margin Bottom', 'vk-blocks')}
-						value={margin_bottom}
+						value={marginBottom}
 						onChange={(value) =>
 							props.setAttributes({
-								margin_bottom: toNumber(value, 0, 100),
+								marginBottom: toNumber(value, 0, 100),
 							})
 						}
-						min="0"
-						max="100"
+						min={0}
+						max={100}
 					/>
 					<AdvancedUnitControl {...props} />
 				</PanelBody>

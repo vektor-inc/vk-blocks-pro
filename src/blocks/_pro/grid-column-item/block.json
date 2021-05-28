@@ -97,7 +97,7 @@
 			"selector": "a",
 			"attribute": "rel"
 		},
-		"margin_bottom": {
+		"marginBottom": {
 			"type": "number",
 			"default": 0
 		},

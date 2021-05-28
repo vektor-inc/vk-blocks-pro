@@ -3,7 +3,7 @@ import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 
 export default function save({ attributes }) {
 	// eslint-disable-next-line camelcase
-	const { col_xs, col_sm, col_md, col_lg, col_xl, col_xxl, margin_bottom, unit } = attributes;
+	const { col_xs, col_sm, col_md, col_lg, col_xl, col_xxl, marginBottom, unit } = attributes;
 	// eslint-disable-next-line camelcase
 	const columnClass = `col-${convertToGrid(col_xs)} col-sm-${convertToGrid(
 		col_sm
@@ -12,7 +12,7 @@ export default function save({ attributes }) {
 	)} col-xl-${convertToGrid(col_xl)} col-xxl-${convertToGrid(col_xxl)}`;
 	// margin bottom
 	const blockStyle = {
-		'margin-bottom': `${margin_bottom}${unit}`,
+		'margin-bottom': `${marginBottom}${unit}`,
 	};
 	
 	const blockProps = useBlockProps.save({

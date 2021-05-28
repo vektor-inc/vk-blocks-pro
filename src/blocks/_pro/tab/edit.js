@@ -42,7 +42,7 @@ export default function TabEdit(props) {
 				}
 			});
 		}
-	}, [childBlocks]);
+	}, []);
 
 	const liOnClick = (e) => {
 		const vkTab = e.target.closest('.vk_tab');
@@ -59,11 +59,12 @@ export default function TabEdit(props) {
 		Array.prototype.forEach.call(activeLabels, (activeLabel) => {
 			activeLabel.classList.remove('vk_tab_labels_label-state-active');
 		});
-		childBlocks.forEach((childBlock) => {
+		childBlocks.forEach((childBlock, index) => {
 			if (TabId === childBlock.clientId) {
 				updateBlockAttributes(childBlock.clientId, {
 					tabBodyActive: true,
 				});
+				setAttributes({ firstActive: index });
 			} else {
 				updateBlockAttributes(childBlock.clientId, {
 					tabBodyActive: false,

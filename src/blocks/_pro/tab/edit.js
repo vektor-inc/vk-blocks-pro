@@ -44,39 +44,6 @@ export default function TabEdit(props) {
 		}
 	}, [childBlocks]);
 
-	const liOnClick = (e) => {
-		const vkTab = e.target.closest('.vk_tab');
-		const vkTabLabels = vkTab.querySelector('.vk_tab_labels');
-
-		// ブロック ID を抽出
-		const TabLabelId = e.target.id;
-		const TabId = TabLabelId.replace('vk_tab_labels_label-', '');
-
-		// カレントを探して全て外す
-		const activeLabels = vkTabLabels.querySelectorAll(
-			'.vk_tab_labels_label-state-active'
-		);
-		Array.prototype.forEach.call(activeLabels, (activeLabel) => {
-			activeLabel.classList.remove('vk_tab_labels_label-state-active');
-		});
-		childBlocks.forEach((childBlock) => {
-			if (TabId === childBlock.clientId) {
-				updateBlockAttributes(childBlock.clientId, {
-					tabBodyActive: true,
-				});
-			} else {
-				updateBlockAttributes(childBlock.clientId, {
-					tabBodyActive: false,
-				});
-			}
-		});
-
-		// クリックされた要素にアクティブを追加
-		vkTabLabels
-			.querySelector(`#vk_tab_labels_label-${TabId}`)
-			.classList.add('vk_tab_labels_label-state-active');
-	};
-
 	let tabList = '';
 	let tablabelsEditList = '';
 	let tablabelsEdit = '';
@@ -104,9 +71,6 @@ export default function TabEdit(props) {
 						// translators: Tab label [i]
 						sprintf(__('Tab Label [ %s ]'), index + 1)
 					}
-					onClick={(e) => {
-						liOnClick(e);
-					}}
 				/>
 			);
 		});

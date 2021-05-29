@@ -53,9 +53,17 @@
 /*      編集画面
 /*-------------------------------------------*/
 .editor-styles-wrapper{
-	ul.vk_tab_labels{
-		margin:0;
-		padding: 0;
+	.vk_tab{
+		position: relative;
+	
+		ul.vk_tab_labels{
+			margin:0;
+			padding: 0;
+		}
+		.block-list-appender{
+			position: absolute;
+			top: calc(var(--vk-size-text) * -5.8 );
+			right: calc(var(--vk-size-text) * 0 );
+		}
 	}
-
 }

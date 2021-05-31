@@ -73,8 +73,6 @@ export default function TabEdit(props) {
 				});
 			}
 		});
-
-
 	};
 
 	let tabList = '';

@@ -51,6 +51,7 @@ export default function TabEdit(props) {
 		const TabLabelId = e.target.id;
 		const TabId = TabLabelId.replace('vk_tab_labels_label-', '');
 
+		/* ラベルの処理 */
 		// カレントを探して全て外す
 		const activeLabels = vkTabLabels.querySelectorAll(
 			'.vk_tab_labels_label-state-active'
@@ -58,6 +59,13 @@ export default function TabEdit(props) {
 		Array.prototype.forEach.call(activeLabels, (activeLabel) => {
 			activeLabel.classList.remove('vk_tab_labels_label-state-active');
 		});
+
+		// クリックされた要素にアクティブを追加
+		vkTabLabels
+			.querySelector(`#vk_tab_labels_label-${TabId}`)
+			.classList.add('vk_tab_labels_label-state-active');
+
+		/* 本体の処理 */
 		childBlocks.forEach((childBlock, index) => {
 			if (TabId === childBlock.clientId) {
 				updateBlockAttributes(clientId, {
@@ -66,10 +74,7 @@ export default function TabEdit(props) {
 			}
 		});
 
-		// クリックされた要素にアクティブを追加
-		vkTabLabels
-			.querySelector(`#vk_tab_labels_label-${TabId}`)
-			.classList.add('vk_tab_labels_label-state-active');
+
 	};
 
 	let tabList = '';

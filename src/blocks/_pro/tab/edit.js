@@ -60,7 +60,9 @@ export default function TabEdit(props) {
 		});
 		childBlocks.forEach((childBlock, index) => {
 			if (TabId === childBlock.clientId) {
-				updateBlockAttributes(clientId, { firstActive: index });
+				updateBlockAttributes(clientId, {
+					firstActive: parseInt(index, 10),
+				});
 			}
 		});
 
@@ -121,8 +123,11 @@ export default function TabEdit(props) {
 		});
 
 		tabList = <ul className="vk_tab_labels">{tablabels}</ul>;
-		setAttributes({ tabListHtml: renderToStaticMarkup(tabList) });
 	}
+
+	useEffect(() => {
+		setAttributes({ tabListHtml: renderToStaticMarkup(tabList) });
+	}, [tabList]);
 
 	const blockProps = useBlockProps({
 		className: `vk_tab`,

@@ -12,7 +12,7 @@
 			"default": ""
 		},
 		"firstActive": {
-			"type": "string",
+			"type": "number",
 			"default": 0
 		}
 	},

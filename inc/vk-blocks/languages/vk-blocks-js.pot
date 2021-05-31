@@ -868,7 +868,7 @@ msgstr ""
 msgid "Tab Item"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:106
+#: src/blocks/_pro/tab/edit.js:98
 #. Tab label [i]
 msgid "Tab Label [ %s ]"
 msgstr ""

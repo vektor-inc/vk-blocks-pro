@@ -10,13 +10,12 @@ export default function TabEdit(props) {
 	attributes.clientId = clientId;
 
 	const ALLOWED_BLOCKS = ['vk-blocks/tab-item'];
-	const TEMPLATE = [ALLOWED_BLOCKS];
+	const TEMPLATE = [
+		['vk-blocks/tab-item', { tabBodyActive: true }],
+		['vk-blocks/tab-item', { tabBodyActive: false }],
+	];
 
 	const { updateBlockAttributes } = dispatch('core/block-editor');
-
-	if (firstActive === undefined) {
-		setAttributes({ firstActive: 0 });
-	}
 
 	useEffect(() => {
 		if (clientId) {
@@ -42,7 +41,7 @@ export default function TabEdit(props) {
 				}
 			});
 		}
-	}, []);
+	}, [firstActive]);
 
 	const liOnClick = (e) => {
 		const vkTab = e.target.closest('.vk_tab');
@@ -61,14 +60,7 @@ export default function TabEdit(props) {
 		});
 		childBlocks.forEach((childBlock, index) => {
 			if (TabId === childBlock.clientId) {
-				updateBlockAttributes(childBlock.clientId, {
-					tabBodyActive: true,
-				});
-				setAttributes({ firstActive: index });
-			} else {
-				updateBlockAttributes(childBlock.clientId, {
-					tabBodyActive: false,
-				});
+				updateBlockAttributes(clientId, { firstActive: index });
 			}
 		});
 
@@ -128,16 +120,9 @@ export default function TabEdit(props) {
 			);
 		});
 
-		if (tablabels) {
-			tabList = <ul className="vk_tab_labels">{tablabels}</ul>;
-		}
+		tabList = <ul className="vk_tab_labels">{tablabels}</ul>;
+		setAttributes({ tabListHtml: renderToStaticMarkup(tabList) });
 	}
-
-	useEffect(() => {
-		if (tabList) {
-			setAttributes({ tabListHtml: renderToStaticMarkup(tabList) });
-		}
-	}, [tabList]);
 
 	const blockProps = useBlockProps({
 		className: `vk_tab`,

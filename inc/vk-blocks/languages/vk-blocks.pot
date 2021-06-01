@@ -2,16 +2,16 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.4.0\n"
+"Project-Id-Version: VK Blocks Pro 1.4.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-05-24T05:25:38+00:00\n"
+"POT-Creation-Date: 2021-05-31T04:15:43+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
+"X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: vk-blocks\n"
 
 #: src/blocks/_pro/accordion-target/index.js:16
@@ -168,7 +168,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/edit.js:182
 #: src/blocks/_pro/card/edit.js:121
 #: src/blocks/_pro/icon-card/edit.js:72
-#: src/blocks/_pro/post-list/edit.js:263
+#: src/blocks/_pro/post-list/edit.js:264
 msgid "Title"
 msgstr ""
 
@@ -193,7 +193,7 @@ msgstr ""
 #: src/blocks/pr-content/deprecated/0.58.9/component.js:171
 #: src/blocks/pr-content/mediaUpload.js:68
 #: src/blocks/staff/deprecated/0.58/component.js:96
-#: src/blocks/staff/edit.js:305
+#: src/blocks/staff/edit.js:306
 #: src/components/advanced-media-upload/index.js:47
 msgid "Select image"
 msgstr ""
@@ -280,7 +280,7 @@ msgid "Current page"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:63
-#: src/blocks/_pro/post-list/edit.js:196
+#: src/blocks/_pro/post-list/edit.js:197
 msgid "Display conditions"
 msgstr ""
 
@@ -289,7 +289,7 @@ msgid "Parent"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:82
-#: src/blocks/_pro/post-list/edit.js:287
+#: src/blocks/_pro/post-list/edit.js:288
 msgid "Ignore this post"
 msgstr ""
 
@@ -440,7 +440,6 @@ msgid "Repeat"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:263
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:22
 msgid "Cover"
 msgstr ""
 
@@ -523,7 +522,7 @@ msgid "Wave"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:409
-#: src/extensions/core/list/style.js:113
+#: src/extensions/core/list/style.js:111
 msgid "Triangle"
 msgstr ""
 
@@ -551,7 +550,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:114
 #: src/blocks/_pro/timeline-item/edit.js:95
 #: src/blocks/balloon/edit.js:338
-#: src/blocks/staff/edit.js:116
+#: src/blocks/staff/edit.js:117
 msgid "None"
 msgstr ""
 
@@ -559,22 +558,22 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:92
 #: src/blocks/_pro/timeline-item/edit.js:77
 #: src/blocks/pr-content/edit.js:137
-#: src/extensions/core/group/style.js:104
+#: src/extensions/core/group/style.js:102
 msgid "Solid"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:493
-#: src/extensions/core/group/style.js:112
+#: src/extensions/core/group/style.js:110
 msgid "Dotted"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:497
-#: src/extensions/core/group/style.js:116
+#: src/extensions/core/group/style.js:114
 msgid "Dashed"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:501
-#: src/extensions/core/group/style.js:120
+#: src/extensions/core/group/style.js:118
 msgid "Double"
 msgstr ""
 
@@ -651,47 +650,47 @@ msgid "Outer"
 msgstr ""
 
 #. Filter by %s
-#: src/blocks/_pro/post-list/edit.js:173
+#: src/blocks/_pro/post-list/edit.js:174
 msgid "Filter by %s"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:200
+#: src/blocks/_pro/post-list/edit.js:201
 msgid "Filter by PostTypes"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:214
+#: src/blocks/_pro/post-list/edit.js:215
 msgid "Number of Posts"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:227
+#: src/blocks/_pro/post-list/edit.js:228
 msgid "Order"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:236
+#: src/blocks/_pro/post-list/edit.js:237
 msgid "ASC"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:240
+#: src/blocks/_pro/post-list/edit.js:241
 msgid "DESC"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:246
+#: src/blocks/_pro/post-list/edit.js:247
 msgid "Order by"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:255
+#: src/blocks/_pro/post-list/edit.js:256
 msgid "Published Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:259
+#: src/blocks/_pro/post-list/edit.js:260
 msgid "Modefied Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:267
+#: src/blocks/_pro/post-list/edit.js:268
 msgid "Random"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:273
+#: src/blocks/_pro/post-list/edit.js:274
 msgid "offset"
 msgstr ""
 
@@ -817,12 +816,12 @@ msgid "Slider is do not move in edit screen."
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:110
-#: src/blocks/_pro/table-of-contents-new/edit.js:130
+#: src/blocks/_pro/table-of-contents-new/edit.js:129
 #: src/blocks/_pro/timeline-item/edit.js:91
-#: src/blocks/heading/edit.js:231
-#: src/blocks/staff/edit.js:112
+#: src/blocks/heading/edit.js:219
+#: src/blocks/staff/edit.js:113
 #: src/extensions/core/heading/style.js:30
-#: src/extensions/core/list/style.js:104
+#: src/extensions/core/list/style.js:102
 msgid "Default"
 msgstr ""
 
@@ -842,10 +841,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:76
 #: src/blocks/_pro/timeline-item/edit.js:53
 #: src/blocks/border-box/edit.js:63
-#: src/blocks/staff/edit.js:138
-#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:41
-#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:56
-#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:130
+#: src/blocks/staff/edit.js:139
 #: inc/term-color/package/class.term-color.php:41
 #: inc/term-color/package/class.term-color.php:56
 #: inc/term-color/package/class.term-color.php:130
@@ -853,7 +849,7 @@ msgid "Color"
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:82
-#: src/blocks/_pro/table-of-contents-new/edit.js:120
+#: src/blocks/_pro/table-of-contents-new/edit.js:119
 #: src/blocks/_pro/timeline-item/edit.js:63
 msgid "Style"
 msgstr ""
@@ -876,26 +872,25 @@ msgid "Step"
 msgstr ""
 
 #: src/blocks/_pro/table-of-contents-new/deprecated/0.59.1/save.js:19
-#: src/blocks/_pro/table-of-contents-new/edit.js:163
+#: src/blocks/_pro/table-of-contents-new/edit.js:162
 #: src/blocks/_pro/table-of-contents-new/index.js:17
 #: src/blocks/_pro/table-of-contents-new/save.js:16
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:240
 msgid "Table of Contents"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:134
+#: src/blocks/_pro/table-of-contents-new/edit.js:133
 msgid "No frame"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:141
+#: src/blocks/_pro/table-of-contents-new/edit.js:140
 msgid "Default Display Status"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:149
+#: src/blocks/_pro/table-of-contents-new/edit.js:148
 msgid "OPEN"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:153
+#: src/blocks/_pro/table-of-contents-new/edit.js:152
 msgid "CLOSE"
 msgstr ""
 
@@ -912,35 +907,35 @@ msgid "Timeline"
 msgstr ""
 
 #: src/blocks/alert/edit.js:19
-#: src/blocks/heading/edit.js:222
+#: src/blocks/heading/edit.js:210
 msgid "Style Settings"
 msgstr ""
 
 #: src/blocks/alert/edit.js:25
 #: src/blocks/button/edit.js:212
 #: src/blocks/pr-content/edit.js:158
-#: src/extensions/core/group/style.js:140
+#: src/extensions/core/group/style.js:138
 msgid "Success"
 msgstr ""
 
 #: src/blocks/alert/edit.js:28
 #: src/blocks/button/edit.js:216
 #: src/blocks/pr-content/edit.js:161
-#: src/extensions/core/group/style.js:136
+#: src/extensions/core/group/style.js:134
 msgid "Info"
 msgstr ""
 
 #: src/blocks/alert/edit.js:30
 #: src/blocks/button/edit.js:220
 #: src/blocks/pr-content/edit.js:163
-#: src/extensions/core/group/style.js:144
+#: src/extensions/core/group/style.js:142
 msgid "Warning"
 msgstr ""
 
 #: src/blocks/alert/edit.js:34
 #: src/blocks/button/edit.js:224
 #: src/blocks/pr-content/edit.js:167
-#: src/extensions/core/group/style.js:148
+#: src/extensions/core/group/style.js:146
 msgid "Danger"
 msgstr ""
 
@@ -979,7 +974,7 @@ msgid "Balloon setting"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:202
-#: src/blocks/heading/edit.js:333
+#: src/blocks/heading/edit.js:321
 msgid "Position"
 msgstr ""
 
@@ -1225,13 +1220,13 @@ msgid "This custom color overrides the default color. If you want to use the def
 msgstr ""
 
 #: src/blocks/button/edit.js:262
-#: src/blocks/heading/edit.js:300
+#: src/blocks/heading/edit.js:288
 #: src/blocks/pr-content/edit.js:194
 msgid "Before text"
 msgstr ""
 
 #: src/blocks/button/edit.js:271
-#: src/blocks/heading/edit.js:309
+#: src/blocks/heading/edit.js:297
 #: src/blocks/pr-content/edit.js:206
 msgid "After text"
 msgstr ""
@@ -1359,7 +1354,7 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:152
 #: src/blocks/heading/deprecated/0.40.1/component.js:152
 #: src/blocks/heading/deprecated/0.60.1/component.js:152
-#: src/blocks/heading/edit.js:196
+#: src/blocks/heading/edit.js:184
 msgid "Input sub text…"
 msgstr ""
 
@@ -1373,64 +1368,60 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:137
 #: src/blocks/heading/deprecated/0.40.1/component.js:137
 #: src/blocks/heading/deprecated/0.60.1/component.js:137
-#: src/blocks/heading/edit.js:181
+#: src/blocks/heading/edit.js:169
 msgid "Input title…"
 msgstr ""
 
-#: src/blocks/heading/edit.js:224
+#: src/blocks/heading/edit.js:212
 msgid "Heading style"
 msgstr ""
 
-#: src/blocks/heading/edit.js:235
+#: src/blocks/heading/edit.js:223
 #: src/extensions/core/heading/style.js:35
 msgid "Plain"
 msgstr ""
 
-#: src/blocks/heading/edit.js:241
+#: src/blocks/heading/edit.js:229
 msgid "Margin Setting"
 msgstr ""
 
-#: src/blocks/heading/edit.js:243
+#: src/blocks/heading/edit.js:231
 msgid "Margin bottom size of after hedding (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:258
+#: src/blocks/heading/edit.js:246
 msgid "Margin bottom size of after this block (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:273
+#: src/blocks/heading/edit.js:261
 msgid "Heading Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:285
+#: src/blocks/heading/edit.js:273
 msgid "Text Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:297
+#: src/blocks/heading/edit.js:285
 msgid "Font Awesome Icon Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:318
+#: src/blocks/heading/edit.js:306
 msgid "Icon Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:331
+#: src/blocks/heading/edit.js:319
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:337
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-block-patterns.php:11
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-block-patterns.php:12
+#: src/blocks/heading/edit.js:325
 msgid "Display"
 msgstr ""
 
-#: src/blocks/heading/edit.js:341
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-block-patterns.php:10
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-block-patterns.php:11
+#: src/blocks/heading/edit.js:329
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/heading/edit.js:349
+#: src/blocks/heading/edit.js:337
 msgid "Text size (rem)"
 msgstr ""
 
@@ -1448,7 +1439,7 @@ msgid "Heading"
 msgstr ""
 
 #: src/blocks/page-content/edit.js:10
-#: src/blocks/staff/edit.js:215
+#: src/blocks/staff/edit.js:216
 msgid "Unspecified"
 msgstr ""
 
@@ -1607,67 +1598,67 @@ msgid "Responsive Spacer"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:50
-#: src/blocks/staff/edit.js:240
+#: src/blocks/staff/edit.js:241
 msgid "Your Name"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:58
-#: src/blocks/staff/edit.js:250
+#: src/blocks/staff/edit.js:251
 msgid "Caption"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:66
-#: src/blocks/staff/edit.js:260
+#: src/blocks/staff/edit.js:261
 msgid "Role position"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:74
-#: src/blocks/staff/edit.js:270
+#: src/blocks/staff/edit.js:271
 msgid "Profile title"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:82
-#: src/blocks/staff/edit.js:283
+#: src/blocks/staff/edit.js:284
 msgid "Profile text"
 msgstr ""
 
-#: src/blocks/staff/edit.js:102
+#: src/blocks/staff/edit.js:103
 msgid "Image border"
 msgstr ""
 
-#: src/blocks/staff/edit.js:121
+#: src/blocks/staff/edit.js:122
 msgid "Alt text"
 msgstr ""
 
-#: src/blocks/staff/edit.js:123
+#: src/blocks/staff/edit.js:124
 msgid "Set the alt text for profile image"
 msgstr ""
 
-#: src/blocks/staff/edit.js:141
+#: src/blocks/staff/edit.js:142
 msgid "Staff name"
 msgstr ""
 
-#: src/blocks/staff/edit.js:154
+#: src/blocks/staff/edit.js:155
 msgid "Name caption"
 msgstr ""
 
-#: src/blocks/staff/edit.js:209
+#: src/blocks/staff/edit.js:210
 msgid "Heading Font"
 msgstr ""
 
-#: src/blocks/staff/edit.js:211
+#: src/blocks/staff/edit.js:212
 msgid "Font"
 msgstr ""
 
-#: src/blocks/staff/edit.js:219
+#: src/blocks/staff/edit.js:220
 msgid "minchoBody"
 msgstr ""
 
-#: src/blocks/staff/edit.js:84
+#: src/blocks/staff/edit.js:85
 msgid "Layout"
 msgstr ""
 
-#: src/blocks/staff/edit.js:97
+#: src/blocks/staff/edit.js:98
 msgid "Image left"
 msgstr ""
 
@@ -1868,19 +1859,19 @@ msgstr ""
 msgid "Responsive BR "
 msgstr ""
 
-#: src/extensions/core/group/style.js:108
+#: src/extensions/core/group/style.js:106
 msgid "Solid Roundcorner"
 msgstr ""
 
-#: src/extensions/core/group/style.js:124
+#: src/extensions/core/group/style.js:122
 msgid "Stitch"
 msgstr ""
 
-#: src/extensions/core/group/style.js:128
+#: src/extensions/core/group/style.js:126
 msgid "Border Top Bottom"
 msgstr ""
 
-#: src/extensions/core/group/style.js:132
+#: src/extensions/core/group/style.js:130
 #: src/extensions/core/image/style.js:31
 msgid "Shadow"
 msgstr ""
@@ -1949,43 +1940,43 @@ msgstr ""
 msgid "Wave04"
 msgstr ""
 
-#: src/extensions/core/list/style.js:109
+#: src/extensions/core/list/style.js:107
 msgid "Arrow"
 msgstr ""
 
-#: src/extensions/core/list/style.js:117
+#: src/extensions/core/list/style.js:115
 msgid "Check"
 msgstr ""
 
-#: src/extensions/core/list/style.js:121
+#: src/extensions/core/list/style.js:119
 msgid "Check Square"
 msgstr ""
 
-#: src/extensions/core/list/style.js:125
+#: src/extensions/core/list/style.js:123
 msgid "Check Circle"
 msgstr ""
 
-#: src/extensions/core/list/style.js:129
+#: src/extensions/core/list/style.js:127
 msgid "Handpoint"
 msgstr ""
 
-#: src/extensions/core/list/style.js:133
+#: src/extensions/core/list/style.js:131
 msgid "Pencil"
 msgstr ""
 
-#: src/extensions/core/list/style.js:137
+#: src/extensions/core/list/style.js:135
 msgid "Smile"
 msgstr ""
 
-#: src/extensions/core/list/style.js:141
+#: src/extensions/core/list/style.js:139
 msgid "Frown"
 msgstr ""
 
-#: src/extensions/core/list/style.js:145
+#: src/extensions/core/list/style.js:143
 msgid "Numbered Circle"
 msgstr ""
 
-#: src/extensions/core/list/style.js:149
+#: src/extensions/core/list/style.js:147
 msgid "Numbered Square"
 msgstr ""
 
@@ -2021,24 +2012,23 @@ msgstr ""
 msgid "Lorem ipsum"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:193
+#: src/utils/font-awesome-new.js:188
 msgid "If you want to use an icon other than the ones listed above, you can use any of the icons from Font Awesome's icon list Please select a tag and enter it."
 msgstr ""
 
-#: src/utils/font-awesome-new.js:198
+#: src/utils/font-awesome-new.js:193
 msgid "Ex) <i class=\"fas fa-arrow-circle-right\"></i>"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:207
+#: src/utils/font-awesome-new.js:202
 msgid "Font Awesome icon list"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:222
+#: src/utils/font-awesome-new.js:217
 msgid "Select Icon"
 msgstr ""
 
 #. Plugin Name of the plugin
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:15
 msgid "VK Blocks Pro"
 msgstr ""
 
@@ -2058,115 +2048,89 @@ msgstr ""
 msgid "https://vektor-inc.co.jp"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/admin-notices.php:24
 #: inc/admin-notices.php:24
 msgid "We've released VK Blocks Pro!"
 msgstr ""
 
 #. translators: 1: opening a tag, 2: closing a tag
-#: dist/vk-blocks-pro/inc/admin-notices.php:31
 #: inc/admin-notices.php:31
 msgid "Thank you for using VK Blocks. We've released VK Blocks Pro. It has more custom blocks to build web site more easily. If you are interested in VK Blocks Pro, Please read %1$s this post %2$s for more details."
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/admin-notices.php:35
-#: dist/vk-blocks-pro/inc/admin-notices.php:41
 #: inc/admin-notices.php:35
 #: inc/admin-notices.php:41
 msgid "https://www.vektor-inc.co.jp/service/wordpress-plugins/vk-blocks/"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/admin-notices.php:42
 #: inc/admin-notices.php:42
 msgid "See more"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/admin-notices.php:45
 #: inc/admin-notices.php:45
 msgid "Dismiss this notice"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:42
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:57
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:42
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:57
 msgid "Not recommended"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:89
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:91
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:89
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:91
 msgid "Ex ) "
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:200
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:200
 msgid "Font Awesome"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:223
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:223
 msgid "Font Awesome Version"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:226
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:226
 msgid "4.7 will be abolished in the near future."
 msgstr ""
 
 #. translators:
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:146
 #: inc/template-tags/package/template-tags.php:147
 msgid "Author: %s"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:148
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:230
 #: inc/template-tags/package/template-tags.php:149
 #: inc/template-tags/package/template-tags.php:232
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:150
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:234
 #: inc/template-tags/package/template-tags.php:151
 #: inc/template-tags/package/template-tags.php:237
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:152
 #: inc/template-tags/package/template-tags.php:153
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:187
 #: inc/template-tags/package/template-tags.php:188
 msgid "Archives"
 msgstr ""
 
 #. translators:
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:218
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:226
 #: inc/template-tags/package/template-tags.php:220
 #: inc/template-tags/package/template-tags.php:228
 msgid "About %s"
 msgstr ""
 
 #. translators:
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:231
 #: inc/template-tags/package/template-tags.php:234
 msgctxt "Yearly archive description"
 msgid "Article of %s."
 msgstr ""
 
 #. translators:
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:235
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:239
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:244
 #: inc/template-tags/package/template-tags.php:239
 #: inc/template-tags/package/template-tags.php:245
 #: inc/template-tags/package/template-tags.php:250
@@ -2175,256 +2139,8 @@ msgid "Article of %s."
 msgstr ""
 
 #. translators:
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:261
 #: inc/template-tags/package/template-tags.php:268
 msgid "Page of %s"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-block-patterns.php:7
-msgid "VK Blocks Template"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:7
-#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:7
-msgid "Disable accordion"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:11
-#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:11
-msgid "Enable accordion and default open "
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:15
-#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:15
-msgid "Enable accordion and default close "
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:23
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-pro.php:28
-#: inc/vk-blocks-pro/admin-pro/admin-pro.php:20
-msgid "FAQ Setting"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:32
-msgid "Full Wide Title Set"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:42
-msgid "Searvice"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:52
-msgid "About"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:62
-msgid "Icon Card Set"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:72
-msgid "Information ( Text )"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:82
-msgid "Information ( Card )"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:92
-msgid "Feature Posts"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:102
-msgid "Call To Action"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:112
-msgid "Contact"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:122
-msgid "Step set"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:132
-msgid "Border box"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:142
-msgid "Slider Template"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:4
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:56
-#: inc/vk-blocks/admin/admin-balloon.php:4
-msgid "Balloon Setting"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:5
-#: inc/vk-blocks/admin/admin-balloon.php:5
-msgid "Balloon Border Width Setting"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:15
-#: inc/vk-blocks/admin/admin-balloon.php:15
-msgid "Balloon Image Setting"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:82
-#: inc/vk-blocks/admin/admin-balloon.php:82
-msgid "You can register frequently used icon images for speech bubble blocks."
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:83
-#: inc/vk-blocks/admin/admin-balloon.php:83
-msgid "If you change image or name that please click Save Changes button."
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:109
-#: inc/vk-blocks/admin/admin-balloon.php:109
-msgid "Select"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:112
-#: inc/vk-blocks/admin/admin-balloon.php:112
-msgid "Delete"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:117
-#: inc/vk-blocks/admin/admin-balloon.php:117
-msgid "Balloon Image Name"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-block-patterns.php:5
-msgid "Display Block Template Setting"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-block-patterns.php:8
-msgid "WordPress Block Template"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-css-optimize.php:4
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:85
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:151
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:93
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:159
-msgid "Nothing to do"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-css-optimize.php:8
-msgid "Optimize VK Blocks CSS ( Tree Shaking )"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-css-optimize.php:22
-msgid "CSS Optimize Setting"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:32
-#: inc/vk-blocks/admin/admin.php:31
-msgid "Blocks setting"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:33
-#: inc/vk-blocks/admin/admin.php:32
-msgctxt "label in admin menu"
-msgid "Blocks"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:49
-#: inc/vk-blocks/admin/admin.php:48
-msgid "Blocks Setting"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:55
-msgid "Block Template Setting"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/blocks/page-content/class-vk-page-content-block.php:122
-#: src/blocks/page-content/index.php:118
-msgid "Edit this area"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/load-bootstrap.php:49
-#: inc/vk-blocks/load-bootstrap.php:49
-msgid "VK Blocks Bootstrap Setting"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/load-bootstrap.php:66
-#: inc/vk-blocks/load-bootstrap.php:66
-msgid "Loading Bootstrap4"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/load-bootstrap.php:67
-#: inc/vk-blocks/load-bootstrap.php:67
-msgid "Check here to load Bootstrap4. If your theme or plugins loading Bootstrap4, uncheck here."
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/view/post-list.php:180
-#: inc/vk-blocks/view/post-list.php:164
-msgid "No Post is selected"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:39
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:47
-msgid "CSS Optimize ( Speed up ) Settings"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:58
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:66
-msgid "Tree shaking"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:79
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:87
-msgid "Tree shaking activation settings"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:83
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:91
-msgid "Output only the main CSS of the page inline"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:86
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:94
-msgid "Active Tree shaking (Recomend)"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:103
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:111
-msgid "Exclude class of Tree shaking"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:107
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:115
-msgid "If you choose \"Active Tree shaking\" that delete the useless css.If you using active css class that please fill in class name. Ex) btn-active,slide-active,scrolled"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:124
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:132
-msgid "Preload CSS"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:145
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:153
-msgid "Preload CSS activation settings"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:148
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:156
-msgid "Preload css except for critical css"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:152
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:160
-msgid "Active Preload CSS (Recomend)"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:169
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:177
-msgid "Exclude class of Preload CSS"
-msgstr ""
-
-#: dist/vk-blocks-pro/vk-blocks.php:80
-msgid "Disabled Blocks module. Because VK-Blocks Plugin running."
 msgstr ""
 
 #: inc/tgm-plugin-activation/tgm-config.php:77
@@ -2567,12 +2283,89 @@ msgstr ""
 msgid "Vektor WordPress Information"
 msgstr ""
 
+#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:7
+msgid "Disable accordion"
+msgstr ""
+
+#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:11
+msgid "Enable accordion and default open "
+msgstr ""
+
+#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:15
+msgid "Enable accordion and default close "
+msgstr ""
+
 #: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:23
 msgid "FAQ Block Setting"
 msgstr ""
 
+#: inc/vk-blocks-pro/admin-pro/admin-pro.php:20
+msgid "FAQ Setting"
+msgstr ""
+
+#: inc/vk-blocks/admin/admin-balloon.php:4
+msgid "Balloon Setting"
+msgstr ""
+
+#: inc/vk-blocks/admin/admin-balloon.php:5
+msgid "Balloon Border Width Setting"
+msgstr ""
+
+#: inc/vk-blocks/admin/admin-balloon.php:15
+msgid "Balloon Image Setting"
+msgstr ""
+
+#: inc/vk-blocks/admin/admin-balloon.php:82
+msgid "You can register frequently used icon images for speech bubble blocks."
+msgstr ""
+
+#: inc/vk-blocks/admin/admin-balloon.php:83
+msgid "If you change image or name that please click Save Changes button."
+msgstr ""
+
+#: inc/vk-blocks/admin/admin-balloon.php:109
+msgid "Select"
+msgstr ""
+
+#: inc/vk-blocks/admin/admin-balloon.php:112
+msgid "Delete"
+msgstr ""
+
+#: inc/vk-blocks/admin/admin-balloon.php:117
+msgid "Balloon Image Name"
+msgstr ""
+
+#: inc/vk-blocks/admin/admin.php:31
+msgid "Blocks setting"
+msgstr ""
+
+#: inc/vk-blocks/admin/admin.php:32
+msgctxt "label in admin menu"
+msgid "Blocks"
+msgstr ""
+
+#: inc/vk-blocks/admin/admin.php:48
+msgid "Blocks Setting"
+msgstr ""
+
 #: inc/vk-blocks/admin/admin.php:54
 msgid "Balloon Block Setting"
+msgstr ""
+
+#: inc/vk-blocks/load-bootstrap.php:49
+msgid "VK Blocks Bootstrap Setting"
+msgstr ""
+
+#: inc/vk-blocks/load-bootstrap.php:66
+msgid "Loading Bootstrap4"
+msgstr ""
+
+#: inc/vk-blocks/load-bootstrap.php:67
+msgid "Check here to load Bootstrap4. If your theme or plugins loading Bootstrap4, uncheck here."
+msgstr ""
+
+#: inc/vk-blocks/view/post-list.php:164
+msgid "No Post is selected"
 msgstr ""
 
 #: inc/vk-blocks/vk-blocks-functions.php:239
@@ -2604,8 +2397,65 @@ msgctxt "post list type"
 msgid "Text 1 Column"
 msgstr ""
 
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:47
+msgid "CSS Optimize ( Speed up ) Settings"
+msgstr ""
+
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:66
+msgid "Tree shaking"
+msgstr ""
+
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:87
+msgid "Tree shaking activation settings"
+msgstr ""
+
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:91
+msgid "Output only the main CSS of the page inline"
+msgstr ""
+
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:93
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:159
+msgid "Nothing to do"
+msgstr ""
+
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:94
+msgid "Active Tree shaking (Recomend)"
+msgstr ""
+
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:111
+msgid "Exclude class of Tree shaking"
+msgstr ""
+
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:115
+msgid "If you choose \"Active Tree shaking\" that delete the useless css.If you using active css class that please fill in class name. Ex) btn-active,slide-active,scrolled"
+msgstr ""
+
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:132
+msgid "Preload CSS"
+msgstr ""
+
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:153
+msgid "Preload CSS activation settings"
+msgstr ""
+
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:156
+msgid "Preload css except for critical css"
+msgstr ""
+
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:160
+msgid "Active Preload CSS (Recomend)"
+msgstr ""
+
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:177
+msgid "Exclude class of Preload CSS"
+msgstr ""
+
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:181
 msgid "If you choose \"Active Preload CSS\" that css load timing was changed.If you have any do not want to preload css file that please fill in handle(id) name. Ex) pluginname_a-style,pluginname_b-css"
+msgstr ""
+
+#: src/blocks/page-content/index.php:118
+msgid "Edit this area"
 msgstr ""
 
 #: vk-blocks.php:81

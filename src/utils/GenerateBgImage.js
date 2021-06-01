@@ -1,8 +1,14 @@
 import hex2rgba from './hex-to-rgba';
 const GenerateBgImage = (props) => {
 	const { attributes, clientId, prefix } = props;
-	const { bgImageMobile, bgImageTablet, bgImage, bgColor, opacity, bgSize } =
-		attributes;
+	const {
+		bgImageMobile,
+		bgImageTablet,
+		bgImage,
+		bgColor,
+		opacity,
+		bgSize,
+	} = attributes;
 
 	const mobileViewport = 'max-width: 575.98px';
 	const tabletViewport = 'min-width: 576px';

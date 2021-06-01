@@ -30,8 +30,9 @@ export default function TOCEdit(props) {
 
 		blocks.forEach(function (block) {
 			const { updateBlockAttributes } = dispatch('core/block-editor');
-			const { getBlockOrder, getBlockRootClientId } =
-				select('core/block-editor');
+			const { getBlockOrder, getBlockRootClientId } = select(
+				'core/block-editor'
+			);
 
 			const headingBlocks = ['core/heading', 'vk-blocks/heading'];
 			const hasInnerBlocks = [

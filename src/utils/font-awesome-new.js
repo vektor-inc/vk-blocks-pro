@@ -47,25 +47,29 @@ export const FontAwesome = (props) => {
 							label: (
 								<i className="far fa-arrow-alt-circle-right"></i>
 							),
-							value: '<i class="far fa-arrow-alt-circle-right"></i>',
+							value:
+								'<i class="far fa-arrow-alt-circle-right"></i>',
 						},
 						{
 							label: (
 								<i className="far fa-arrow-alt-circle-down"></i>
 							),
-							value: '<i class="far fa-arrow-alt-circle-down"></i>',
+							value:
+								'<i class="far fa-arrow-alt-circle-down"></i>',
 						},
 						{
 							label: (
 								<i className="far fa-arrow-alt-circle-left"></i>
 							),
-							value: '<i class="far fa-arrow-alt-circle-left"></i>',
+							value:
+								'<i class="far fa-arrow-alt-circle-left"></i>',
 						},
 						{
 							label: (
 								<i className="fas fa-external-link-square-alt"></i>
 							),
-							value: '<i class="fas fa-external-link-square-alt"></i>',
+							value:
+								'<i class="fas fa-external-link-square-alt"></i>',
 						},
 						{
 							label: <i className="fas fa-external-link-alt"></i>,
@@ -80,7 +84,8 @@ export const FontAwesome = (props) => {
 							label: (
 								<i className="fas fa-exclamation-triangle"></i>
 							),
-							value: '<i class="fas fa-exclamation-triangle"></i>',
+							value:
+								'<i class="fas fa-exclamation-triangle"></i>',
 						},
 						{
 							label: (

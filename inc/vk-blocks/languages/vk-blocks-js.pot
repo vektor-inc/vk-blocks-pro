@@ -11,31 +11,31 @@ msgstr ""
 msgid "Accordion Trigger"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:17
+#: src/blocks/_pro/accordion/index.js:18
 msgid "Accordion"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:22
+#: src/blocks/_pro/accordion/index.js:23
 msgid "No background color"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:27
+#: src/blocks/_pro/accordion/index.js:28
 msgid "No background color / Border"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:31
+#: src/blocks/_pro/accordion/index.js:32
 msgid "Background color"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:35
+#: src/blocks/_pro/accordion/index.js:36
 msgid "Background color / Border"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:39
+#: src/blocks/_pro/accordion/index.js:40
 msgid "Background color / Rounded "
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:43
+#: src/blocks/_pro/accordion/index.js:44
 msgid "Background color / Rounded / Border"
 msgstr ""
 
@@ -62,6 +62,7 @@ msgstr ""
 #: src/blocks/button/edit.js:95
 #: src/blocks/faq/index.js:27
 #: src/blocks/faq2/index.js:22
+#: src/extensions/common/inline-font-size/index.js:52
 msgid "Normal"
 msgstr ""
 
@@ -333,7 +334,7 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:108
 #: src/blocks/_pro/step-item/edit.js:57
-#: src/blocks/border-box/edit.js:109
+#: src/blocks/border-box/edit.js:122
 #: src/blocks/button/edit.js:258
 #: src/blocks/pr-content/edit.js:190
 msgid "Icon ( Font Awesome )"
@@ -693,16 +694,20 @@ msgstr ""
 msgid "Post list"
 msgstr ""
 
-#: src/blocks/_pro/select-post-list-item/edit.js:24
-#: src/blocks/page-content/edit.js:35
+#: src/blocks/_pro/select-post-list-item/edit.js:102
+msgid "Submit"
+msgstr ""
+
+#: src/blocks/_pro/select-post-list-item/edit.js:34
+#: src/blocks/page-content/edit.js:38
 msgid "Because no post is selected, The block Will not render"
 msgstr ""
 
-#: src/blocks/_pro/select-post-list-item/edit.js:38
-msgid "Select Post List Item Setting"
+#: src/blocks/_pro/select-post-list-item/edit.js:66
+msgid "Unlink"
 msgstr ""
 
-#: src/blocks/_pro/select-post-list-item/edit.js:42
+#: src/blocks/_pro/select-post-list-item/edit.js:67
 msgid "Input Internal Post URL"
 msgstr ""
 
@@ -831,7 +836,7 @@ msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:76
 #: src/blocks/_pro/timeline-item/edit.js:53
-#: src/blocks/border-box/edit.js:50
+#: src/blocks/border-box/edit.js:63
 #: src/blocks/staff/edit.js:138
 msgid "Color"
 msgstr ""
@@ -1062,46 +1067,58 @@ msgstr ""
 msgid "Please enter a title."
 msgstr ""
 
-#: src/blocks/border-box/edit.js:100
+#: src/blocks/border-box/edit.js:109
+msgid "Transparent"
+msgstr ""
+
+#: src/blocks/border-box/edit.js:113
 msgid "White"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:106
+#: src/blocks/border-box/edit.js:119
 #: src/utils/font-awesome-new.js:14
 msgid "Icon"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:53
+#: src/blocks/border-box/edit.js:51
+msgid "Margin"
+msgstr ""
+
+#: src/blocks/border-box/edit.js:56
+msgid ""
+"The margin-top of the first element and the margin-bottom of the last "
+"element in the border block will be automatically set to 0.If you want to "
+"add margins at the beginning and end, use a spacer block to specify height "
+"instead of margin."
+msgstr ""
+
+#: src/blocks/border-box/edit.js:66
 #: src/extensions/core/group/style.js:47
 msgid "Border Color"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:63
+#: src/blocks/border-box/edit.js:76
 msgid "Red"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:67
+#: src/blocks/border-box/edit.js:80
 msgid "Orange"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:71
+#: src/blocks/border-box/edit.js:84
 msgid "Blue"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:75
+#: src/blocks/border-box/edit.js:88
 msgid "Green"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:79
+#: src/blocks/border-box/edit.js:92
 msgid "Black"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:86
+#: src/blocks/border-box/edit.js:99
 msgid "Background Color"
-msgstr ""
-
-#: src/blocks/border-box/edit.js:96
-msgid "Transparent"
 msgstr ""
 
 #: src/blocks/border-box/index.js:19
@@ -1133,6 +1150,7 @@ msgid "Solid Angle iconFeature"
 msgstr ""
 
 #: src/blocks/button/edit.js:103
+#: src/extensions/common/inline-font-size/index.js:47
 msgid "Small"
 msgstr ""
 
@@ -1417,7 +1435,7 @@ msgstr ""
 msgid "Heading %d"
 msgstr ""
 
-#: src/blocks/heading/index.js:19
+#: src/blocks/heading/index.js:20
 msgid "Heading"
 msgstr ""
 
@@ -1426,11 +1444,11 @@ msgstr ""
 msgid "Unspecified"
 msgstr ""
 
-#: src/blocks/page-content/edit.js:56
+#: src/blocks/page-content/edit.js:59
 msgid "Page Setting"
 msgstr ""
 
-#: src/blocks/page-content/edit.js:61
+#: src/blocks/page-content/edit.js:64
 msgid "Select Page"
 msgstr ""
 
@@ -1812,6 +1830,26 @@ msgstr ""
 
 #: src/extensions/common/highlighter/index.js:98
 msgid "Highlight Color"
+msgstr ""
+
+#: src/extensions/common/inline-font-size/index.js:101
+msgid "Inline Font Size"
+msgstr ""
+
+#: src/extensions/common/inline-font-size/index.js:25
+msgid "Inline font size"
+msgstr ""
+
+#: src/extensions/common/inline-font-size/index.js:57
+msgid "Big"
+msgstr ""
+
+#: src/extensions/common/inline-font-size/index.js:62
+msgid "Extra big"
+msgstr ""
+
+#: src/extensions/common/inline-font-size/index.js:74
+msgid "Inline Font Size Settings"
 msgstr ""
 
 #: src/extensions/common/nowrap/index.js:21

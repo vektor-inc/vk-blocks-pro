@@ -40,6 +40,7 @@ import '@vkblocks/extensions/core/image/style';
 import '@vkblocks/extensions/core/table/style';
 import '@vkblocks/extensions/common/hidden-extension';
 import '@vkblocks/extensions/common/highlighter';
+import '@vkblocks/extensions/common/inline-font-size';
 import '@vkblocks/extensions/common/nowrap';
 import '@vkblocks/extensions/common/responsive-br';
 

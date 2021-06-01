@@ -108,35 +108,23 @@ export default function HeaddingEdit(props) {
 	};
 
 	const containerClass = `vk_heading vk_heading-style-${titleStyle}`;
-	let cStyle;
-	let tStyle;
 
-	//containerのマージンを切り替え
-	if (outerMarginBottom !== null && outerMarginBottom !== undefined) {
-		cStyle = { marginBottom: outerMarginBottom + `rem` };
-	}
+	const cStyle = {
+		marginBottom: outerMarginBottom ? outerMarginBottom + `rem` : undefined,
+	};
 
-	//titleのマージンを切り替え
-	if (titleMarginBottom !== null && titleMarginBottom !== undefined) {
-		tStyle = {
-			color: titleColor,
-			fontSize: titleSize + 'rem',
-			marginBottom: titleMarginBottom + 'rem',
-			textAlign: align,
-		};
-	} else {
-		tStyle = {
-			color: titleColor,
-			fontSize: titleSize + 'rem',
-			textAlign: align,
-		};
-	}
+	const tStyle = {
+		color: titleColor ? titleColor : undefined,
+		fontSize: titleSize ? titleSize + 'rem' : undefined,
+		marginBottom: titleMarginBottom ? titleMarginBottom + 'rem' : undefined,
+		textAlign: align ? align : undefined,
+	};
 
 	const headingStyle = `vk_heading_title vk_heading_title-style-${titleStyle}`;
 	const subTextStyle = {
-		color: subTextColor,
-		fontSize: subTextSize + 'rem',
-		textAlign: align,
+		color: subTextColor ? subTextColor : undefined,
+		fontSize: subTextSize ? subTextSize + 'rem' : undefined,
+		textAlign: align ? align : undefined,
 	};
 	const subTextClass = `vk_heading_subtext vk_heading_subtext-style-${titleStyle}`;
 

@@ -52,32 +52,30 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 								value={activeColor}
 								disableCustomColors={true}
 								onChange={(newColor) => {
-									let newClassName = convertColorClass(
-										newColor
-									);
+									let newClassName =
+										convertColorClass(newColor);
 
 									if (props.attributes.className) {
 										let inputClassName =
 											props.attributes.className;
 
-										inputClassName = inputClassName.split(
-											' '
-										);
+										inputClassName =
+											inputClassName.split(' ');
 
-										const filterClassName = inputClassName.filter(
-											function (name) {
+										const filterClassName =
+											inputClassName.filter(function (
+												name
+											) {
 												return (
 													-1 ===
 													name.indexOf('vk-has-')
 												);
-											}
-										);
+											});
 
 										filterClassName.push(newClassName);
 
-										newClassName = filterClassName.join(
-											' '
-										);
+										newClassName =
+											filterClassName.join(' ');
 									}
 
 									activeColor = newColor;

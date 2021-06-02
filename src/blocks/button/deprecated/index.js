@@ -61,7 +61,7 @@ const blockAttributes2 = {
 		type: 'string',
 		default: '',
 	},
-}
+};
 
 export const deprecated = [
 	// Fix: https://github.com/vektor-inc/vk-blocks-pro/issues/356

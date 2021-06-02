@@ -1,5 +1,5 @@
-import CardHook1_0_4 from './1.0.4'
-import CardHook0_0_1 from './0.0.1'
+import CardHook1_0_4 from './1.0.4';
+import CardHook0_0_1 from './0.0.1';
 
 export default [
 	CardHook1_0_4,

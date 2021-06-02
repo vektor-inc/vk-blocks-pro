@@ -6,7 +6,7 @@
 import { VKBButton } from './component';
 import { RichText } from '@wordpress/block-editor';
 
-export default function save( { attributes, className } ) {
+export default function save({ attributes, className }) {
 	const {
 		content,
 		subCaption,
@@ -22,34 +22,34 @@ export default function save( { attributes, className } ) {
 	} = attributes;
 
 	let containerClass = '';
-	if ( buttonColorCustom && 'undefined' !== buttonColorCustom ) {
-		containerClass = `vk_button vk_button-color-custom vk_button-align-${ buttonAlign }`;
+	if (buttonColorCustom && 'undefined' !== buttonColorCustom) {
+		containerClass = `vk_button vk_button-color-custom vk_button-align-${buttonAlign}`;
 	} else {
-		containerClass = `vk_button vk_button-align-${ buttonAlign }`;
+		containerClass = `vk_button vk_button-align-${buttonAlign}`;
 	}
 
-	if ( className ) {
+	if (className) {
 		containerClass = className + ' ' + containerClass;
 	}
 
 	return (
-		<div className={ containerClass }>
+		<div className={containerClass}>
 			<VKBButton
-				lbColorCustom={ buttonColorCustom }
-				lbColor={ buttonColor }
-				lbType={ buttonType }
-				lbAlign={ buttonAlign }
-				lbSize={ buttonSize }
-				lbUrl={ buttonUrl }
-				lbTarget={ buttonTarget }
-				lbFontAwesomeIconBefore={ fontAwesomeIconBefore }
-				lbFontAwesomeIconAfter={ fontAwesomeIconAfter }
-				lbsubCaption={ subCaption }
+				lbColorCustom={buttonColorCustom}
+				lbColor={buttonColor}
+				lbType={buttonType}
+				lbAlign={buttonAlign}
+				lbSize={buttonSize}
+				lbUrl={buttonUrl}
+				lbTarget={buttonTarget}
+				lbFontAwesomeIconBefore={fontAwesomeIconBefore}
+				lbFontAwesomeIconAfter={fontAwesomeIconAfter}
+				lbsubCaption={subCaption}
 				lbRichtext={
 					<RichText.Content
-						tagName={ 'span' }
-						className={ 'vk_button_link_txt' }
-						value={ content }
+						tagName={'span'}
+						className={'vk_button_link_txt'}
+						value={content}
 					/>
 				}
 			/>

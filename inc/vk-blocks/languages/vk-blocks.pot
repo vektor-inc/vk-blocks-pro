@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.4.1\n"
+"Project-Id-Version: VK Blocks Pro 1.4.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-06-02T00:49:04+00:00\n"
+"POT-Creation-Date: 2021-06-02T00:37:16+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: vk-blocks\n"
@@ -841,7 +841,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:76
 #: src/blocks/_pro/timeline-item/edit.js:53
 #: src/blocks/border-box/edit.js:63
-#: src/blocks/staff/edit.js:138
+#: src/blocks/staff/edit.js:139
 #: inc/term-color/package/class.term-color.php:41
 #: inc/term-color/package/class.term-color.php:56
 #: inc/term-color/package/class.term-color.php:130
@@ -987,7 +987,7 @@ msgid "Balloon setting"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:202
-#: src/blocks/heading/edit.js:321
+#: src/blocks/heading/edit.js:325
 msgid "Position"
 msgstr ""
 
@@ -1233,13 +1233,13 @@ msgid "This custom color overrides the default color. If you want to use the def
 msgstr ""
 
 #: src/blocks/button/edit.js:262
-#: src/blocks/heading/edit.js:288
+#: src/blocks/heading/edit.js:292
 #: src/blocks/pr-content/edit.js:194
 msgid "Before text"
 msgstr ""
 
 #: src/blocks/button/edit.js:271
-#: src/blocks/heading/edit.js:297
+#: src/blocks/heading/edit.js:301
 #: src/blocks/pr-content/edit.js:206
 msgid "After text"
 msgstr ""
@@ -1399,42 +1399,42 @@ msgid "Margin Setting"
 msgstr ""
 
 #: src/blocks/heading/edit.js:231
-msgid "Margin bottom size of after hedding (rem)"
+msgid "Margin between Heading and sub text (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:246
+#: src/blocks/heading/edit.js:248
 msgid "Margin bottom size of after this block (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:261
+#: src/blocks/heading/edit.js:265
 msgid "Heading Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:273
+#: src/blocks/heading/edit.js:277
 msgid "Text Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:285
+#: src/blocks/heading/edit.js:289
 msgid "Font Awesome Icon Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:306
+#: src/blocks/heading/edit.js:310
 msgid "Icon Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:319
+#: src/blocks/heading/edit.js:323
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:325
+#: src/blocks/heading/edit.js:329
 msgid "Display"
 msgstr ""
 
-#: src/blocks/heading/edit.js:329
+#: src/blocks/heading/edit.js:333
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/heading/edit.js:337
+#: src/blocks/heading/edit.js:341
 msgid "Text size (rem)"
 msgstr ""
 
@@ -2172,15 +2172,15 @@ msgstr ""
 
 #. translators:
 #: inc/tgm-plugin-activation/tgm-config.php:83
-msgid "This theme requires the following plugin: %1$s."
-msgid_plural "This theme requires the following plugins: %1$s."
+msgid "This plugin requires the following plugin: %1$s."
+msgid_plural "This plugin requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s = plugin name.
 #: inc/tgm-plugin-activation/tgm-config.php:89
-msgid "This theme recommends the following plugin: %1$s.<br>Many additional functions are available for free."
-msgid_plural "This theme recommends the following plugins: %1$s.<br>Many additional functions are available for free."
+msgid "This plugin recommends the following plugin: %1$s.<br>Many additional functions are available for free."
+msgid_plural "This plugin recommends the following plugins: %1$s.<br>Many additional functions are available for free."
 msgstr[0] ""
 msgstr[1] ""
 
@@ -2193,8 +2193,8 @@ msgstr[1] ""
 
 #. translators: %s = plugin name.
 #: inc/tgm-plugin-activation/tgm-config.php:101
-msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
-msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this plugin: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this plugin: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
@@ -2284,11 +2284,11 @@ msgstr ""
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
-#: inc/vk-admin/package/class-vk-admin.php:340
+#: inc/vk-admin/package/class-vk-admin.php:313
 msgid "Sorry, there is no post"
 msgstr ""
 
-#: inc/vk-admin/package/class-vk-admin.php:394
+#: inc/vk-admin/package/class-vk-admin.php:367
 msgid "Vektor WordPress Information"
 msgstr ""
 

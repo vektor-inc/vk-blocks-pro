@@ -1,0 +1,13 @@
+.vk_borderBox_body {
+    // ボックス内要素の最初と最後の要素のmarginを削除
+    & > .block-editor-inner-blocks > .block-editor-block-list__layout {
+        & > * {
+            &:first-child {
+                margin-top: 0;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

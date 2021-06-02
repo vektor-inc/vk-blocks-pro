@@ -24,7 +24,10 @@ const getPagesSelect = (pages) => {
 export default function PageContentEdit({ attributes, setAttributes }) {
 	const { TargetPost } = attributes;
 
-	const pages = usePosts({ slug: 'page' }, { per_page: -1 });
+	const pages = usePosts(
+		{ slug: 'page' },
+		{ per_page: -1, status: 'private,publish' }
+	);
 
 	const pagesSelect = getPagesSelect(pages);
 

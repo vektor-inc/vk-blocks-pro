@@ -1,0 +1,192 @@
+:root{
+	--vk-color-border: rgba(0,0,0,.12);
+	--vk-size-text: 16px;
+}
+
+
+/* style
+--------------------------------------------*/
+.is-style-vk_accordion{
+	&-no-background-color{
+		
+	}
+	&-no-background-color-border{
+		border: 1px solid var(--vk-color-border);
+	}
+	&-background-color{
+		.vk_accordion-trigger{
+			border-bottom:none;
+			background-color: rgba(0,0,0,.05);
+			.vk_accordion-toggle-open{
+				border-bottom: none;
+			}
+		}
+	}
+	&-background-color-border{
+		border: 1px solid var(--vk-color-border);
+		.vk_accordion-trigger{
+			background-color: rgba(0,0,0,.05);
+		}
+	}
+	&-background-color-rounded{
+		border-radius: calc(var(--vk-size-text) * 0.5 );
+		.vk_accordion-trigger{
+			border-bottom:none;
+			background-color: rgba(0,0,0,.05);
+			.vk_accordion-toggle-open{
+				border-bottom: none;
+			}
+		}
+	}
+	&-background-color-rounded-border{
+		border: 1px solid var(--vk-color-border);
+		border-radius: calc(var(--vk-size-text) * 0.5 );
+		.vk_accordion-trigger{
+			background-color: rgba(0,0,0,.05);
+		}
+	}
+
+}
+
+
+/*      vk_accordion
+/*-------------------------------------------*/
+
+/*      開閉機能
+/*-------------------------------------------*/
+.vk_accordion{
+	&-container{
+		display:block;
+		overflow:hidden;
+		margin: 0 auto 1em auto;
+		width:100%; 
+		position: relative;
+	}
+	//ブロックを配置した時にisDefaultに設置したclassが付かない（スタイルをクリックしたときにclassが付く）ので、共通のclass名にcssを追加して、
+	//「背景なし」以外ののスタイルに付かないようにnot指定をする必要がある
+	&-container:not(.is-style-vk_accordion-no-background-color-border):not(.is-style-vk_accordion-background-color):not(.is-style-vk_accordion-background-color-border):not(.is-style-vk_accordion-background-color-rounded):not(.is-style-vk_accordion-background-color-rounded-border) {
+		border-bottom: 1px solid var(--vk-color-border);
+	}
+	&-trigger{
+		border: none;
+		padding-top:calc( var(--vk-size-text) * 1 );
+    	padding-right: calc( var(--vk-size-text) * 2 );
+		padding-bottom:calc( var(--vk-size-text) * 1 );
+		padding-left:calc( var(--vk-size-text) * 1 );
+		margin: 0;
+		margin-bottom: -1px;
+    	position: relative;
+    	font-size: 16px;
+		background: transparent;
+		cursor: pointer;
+		p:first-of-type{
+			margin-bottom:0;
+		}
+		.vk_accordion-toggle{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			&-open{
+				border-bottom: 1px dotted var(--vk-color-border);
+			}
+			&-close,
+			&-open{
+				padding-bottom: 0;
+				margin-bottom: 0;
+					//矢印共通デザイン
+					&::after{
+						position: absolute;
+						top: 50%;
+						right: unset;
+						right: 4rem;
+						content: "";
+						width: 8px;
+						height: 8px;
+						border-right: 1px solid #222;
+						border-top: 1px solid #222;
+						transition: border-color .3s ease,-webkit-transform .6s ease;
+						-webkit-transition: border-color .3s ease,-webkit-transform .6s ease;
+						transition: border-color .3s ease,transform .6s ease;
+						transition: border-color .3s ease,transform .6s ease,-webkit-transform .6s ease;
+					}			
+			}
+		}//.vk_accordion-toggle
+
+		//矢印開閉時の向き
+		.vk_accordion-toggle{
+			&-close{
+
+				&::after {
+					-webkit-transform: translate(32px, -5px) rotate(135deg);
+					transform: translate(32px, -5px) rotate(135deg);
+
+				}
+			}
+			&-open{
+
+				&::after {
+					-webkit-transform: translate(32px,-2px) rotate(-45deg);
+					transform: translate(32px,-2px) rotate(-45deg);
+				}
+
+			}
+		}//.vk_accordion-toggle
+
+	}//&-trigger
+	&-target{
+		padding:calc( var(--vk-size-text) * 1 );
+		p:last-of-type{
+			margin-bottom: 0;
+		}
+		//オープン時
+		&-open{
+			height: auto;
+			overflow: hidden;
+			opacity: 1;
+			transition: .25s;
+		}
+		//クローズ時
+		&-close{
+			padding-top:0;
+			padding-bottom: 0;
+			height: 0;
+			opacity: 0;
+			transition: .25s;
+		}
+	}
+
+
+}//.vk_accordion
+
+
+/*      編集画面
+/*-------------------------------------------*/
+
+.editor-styles-wrapper {
+	.wp-block-vk-blocks-accordion:not(.is-style-vk_accordion-background-color):not(.is-style-vk_accordion-background-color-rounded) {
+		.vk_accordion-trigger {
+			//フロント画面では.vk_accordion-toggle-openが付くクラスに対してborder-bottomが付いているので、編集画面では追加で記述
+			border-bottom: 1px dotted var(--vk-color-border);
+		}
+	}
+	//ブロックを配置した時にisDefaultに設置したclassが付かない（スタイルをクリックしたときにclassが付く）ので、共通のclass名にcssを追加して、
+	//「背景なし」以外ののスタイルに付かないようにnot指定をする必要がある
+	.wp-block-vk-blocks-accordion:not(.is-style-vk_accordion-no-background-color-border):not(.is-style-vk_accordion-background-color):not(.is-style-vk_accordion-background-color-border):not(.is-style-vk_accordion-background-color-rounded):not(.is-style-vk_accordion-background-color-rounded-border) {
+		border: 1px dashed #ccc;
+	}
+	.vk_accordion-trigger {
+
+		cursor:unset; //編集画面では展開しないのでカーソルをunset
+		.block-editor-block-list__block {
+			// 余白が大きく空くので追加
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		.vk_accordion-toggle {//absoluteだとテキスト編集できないので
+			position: unset;
+		}
+	}
+
+}

@@ -108,35 +108,23 @@ export default function HeaddingEdit(props) {
 	};
 
 	const containerClass = `vk_heading vk_heading-style-${titleStyle}`;
-	let cStyle;
-	let tStyle;
 
-	//containerのマージンを切り替え
-	if (outerMarginBottom) {
-		cStyle = { marginBottom: outerMarginBottom + `rem` };
-	}
+	const cStyle = {
+		marginBottom: outerMarginBottom ? outerMarginBottom + `rem` : undefined,
+	};
 
-	//titleのマージンを切り替え
-	if (titleMarginBottom !== null && titleMarginBottom !== undefined) {
-		tStyle = {
-			color: titleColor,
-			fontSize: titleSize + 'rem',
-			marginBottom: titleMarginBottom + 'rem',
-			textAlign: align,
-		};
-	} else {
-		tStyle = {
-			color: titleColor,
-			fontSize: titleSize + 'rem',
-			textAlign: align,
-		};
-	}
+	const tStyle = {
+		color: titleColor ? titleColor : undefined,
+		fontSize: titleSize ? titleSize + 'rem' : undefined,
+		marginBottom: titleMarginBottom ? titleMarginBottom + 'rem' : undefined,
+		textAlign: align ? align : undefined,
+	};
 
 	const headingStyle = `vk_heading_title vk_heading_title-style-${titleStyle}`;
 	const subTextStyle = {
-		color: subTextColor,
-		fontSize: subTextSize + 'rem',
-		textAlign: align,
+		color: subTextColor ? subTextColor : undefined,
+		fontSize: subTextSize ? subTextSize + 'rem' : undefined,
+		textAlign: align ? align : undefined,
 	};
 	const subTextClass = `vk_heading_subtext vk_heading_subtext-style-${titleStyle}`;
 
@@ -241,7 +229,7 @@ export default function HeaddingEdit(props) {
 				<PanelBody title={__('Margin Setting', 'vk-blocks')}>
 					<p>
 						{__(
-							'Margin bottom size of after hedding (rem)',
+							'Margin between Heading and sub text (rem)',
 							'vk-blocks'
 						)}
 					</p>
@@ -253,6 +241,8 @@ export default function HeaddingEdit(props) {
 						min={-1}
 						max={3}
 						step={0.1}
+						allowReset={true}
+						resetFallbackValue={null}
 					/>
 					<p>
 						{__(
@@ -268,6 +258,8 @@ export default function HeaddingEdit(props) {
 						min={-1}
 						max={8}
 						step={0.1}
+						allowReset={true}
+						resetFallbackValue={null}
 					/>
 				</PanelBody>
 				<PanelBody title={__('Heading Settings', 'vk-blocks')}>

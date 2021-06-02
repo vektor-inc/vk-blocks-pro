@@ -119,5 +119,6 @@ addFilter(
 			}
 		}
 		return el;
-	}
+	},
+	11
 );

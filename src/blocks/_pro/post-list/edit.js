@@ -1,3 +1,4 @@
+/*globals vk_block_post_type_params */
 // import WordPress Scripts
 import { __, sprintf } from '@wordpress/i18n';
 import {
@@ -7,17 +8,14 @@ import {
 	SelectControl,
 	CheckboxControl,
 	TextControl,
+	FormTokenField,
 } from '@wordpress/components';
 import { useState } from '@wordpress/element';
 import ServerSideRender from '@wordpress/server-side-render';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 
 // Load VK Blocks Utils
-import {
-	usePostTypes,
-	useTaxonomies,
-	useTermsGroupbyTaxnomy,
-} from '@vkblocks/utils/hooks';
+import { usePostTypes, useTaxonomies } from '@vkblocks/utils/hooks';
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
 
 // Load VK Blocks Compornents
@@ -69,41 +67,126 @@ export default function PostListEdit(props) {
 	);
 
 	const taxonomies = useTaxonomies();
-	const terms = useTermsGroupbyTaxnomy(taxonomies);
+	const termsByTaxonomyName = vk_block_post_type_params.term_by_taxonomy_name;
+
+	const replaceIsCheckedTermData = (taxonomyRestbase, termIds, newIds) => {
+		const removedTermIds = termIds.filter((termId) => {
+			let find = false;
+			termsByTaxonomyName[taxonomyRestbase].forEach((term) => {
+				if (term.term_id === termId) {
+					find = true;
+				}
+			});
+			return !find;
+		});
+		return removedTermIds.concat(newIds);
+	};
+
+	const termFormTokenFields = taxonomies
+		.filter((taxonomy) => {
+			return !taxonomy.hierarchical && termsByTaxonomyName[taxonomy.slug];
+		})
+		.map((taxonomy) => {
+			const termsMapByName = termsByTaxonomyName[taxonomy.slug].reduce(
+				(acc, term) => {
+					return {
+						...acc,
+						[term.name]: term,
+					};
+				},
+				{}
+			);
+
+			const termsMapById = termsByTaxonomyName[taxonomy.slug].reduce(
+				(acc, term) => {
+					return {
+						...acc,
+						[term.term_id]: term,
+					};
+				},
+				{}
+			);
+
+			const termNames = termsByTaxonomyName[taxonomy.slug].map(
+				(term) => term.name
+			);
+
+			return termsByTaxonomyName[taxonomy.slug] &&
+				termsByTaxonomyName[taxonomy.slug]?.length > 0 ? (
+				<FormTokenField
+					key={taxonomy.slug}
+					label={sprintf(
+						// translators: Filter by %s
+						__('Filter by %s', 'vk-blocks'),
+						taxonomy.labels.name
+					)}
+					value={isCheckedTermsData
+						.filter((termId) => {
+							return termId in termsMapById;
+						})
+						.map((termId) => {
+							return termsMapById[termId].name;
+						})}
+					suggestions={termNames}
+					onChange={(newTerms) => {
+						const termIds = newTerms.map((termName) => {
+							return termsMapByName[termName].term_id;
+						});
+						const replacedIsCheckedTermsData =
+							replaceIsCheckedTermData(
+								taxonomy.slug,
+								isCheckedTermsData,
+								termIds
+							);
+						setIsCheckedTermsData(replacedIsCheckedTermsData);
+						setAttributes({
+							isCheckedTerms: JSON.stringify(
+								replacedIsCheckedTermsData
+							),
+						});
+					}}
+				></FormTokenField>
+			) : null;
+		}, taxonomies);
 
 	// key を BaseControlのlabelに代入。valueの配列をmapでAdvancedCheckboxControlに渡す
-	const taxonomiesCheckBox = Object.keys(terms).map(function (
-		taxonomy,
-		index
-	) {
-		const taxonomiesProps = this[taxonomy].map((term) => {
-			return {
-				label: term.name,
-				slug: term.id,
-			};
-		});
+	const taxonomiesCheckBox = taxonomies
+		.filter((taxonomy) => {
+			return (
+				taxonomy.hierarchical === true &&
+				termsByTaxonomyName[taxonomy.slug]?.length
+			);
+		})
+		.map(function (taxonomy, index) {
+			const taxonomiesProps = (
+				termsByTaxonomyName[taxonomy.slug] || []
+			).map((term) => {
+				return {
+					label: term.name,
+					slug: term.term_id,
+				};
+			});
 
-		return (
-			<BaseControl
-				label={sprintf(
-					// translators: Filter by %s
-					__('Filter by %s', 'vk-blocks'),
-					taxonomy
-				)}
-				id={`vk_postList-terms`}
-				key={index}
-			>
-				<AdvancedCheckboxControl
-					schema={'isCheckedTerms'}
-					rawData={taxonomiesProps}
-					checkedData={isCheckedTermsData}
-					saveState={saveStateTerms}
-					{...props}
-				/>
-			</BaseControl>
-		);
-	},
-	terms);
+			return (
+				<BaseControl
+					label={sprintf(
+						// translators: Filter by %s
+						__('Filter by %s', 'vk-blocks'),
+						taxonomy.labels.name
+					)}
+					id={`vk_postList-terms`}
+					key={index}
+				>
+					<AdvancedCheckboxControl
+						schema={'isCheckedTerms'}
+						rawData={taxonomiesProps}
+						checkedData={isCheckedTermsData}
+						saveState={saveStateTerms}
+						{...props}
+					/>
+				</BaseControl>
+			);
+		}, termsByTaxonomyName);
 
 	const blockProps = useBlockProps();
 
@@ -127,6 +210,7 @@ export default function PostListEdit(props) {
 						/>
 					</BaseControl>
 					{taxonomiesCheckBox}
+					{termFormTokenFields}
 					<BaseControl
 						label={__('Number of Posts', 'vk-blocks')}
 						id={`vk_postList-numberPosts`}

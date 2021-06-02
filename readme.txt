@@ -2,9 +2,9 @@
 Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips
 Donate link:
 Tags: Gutenberg,FAQ,alert
-Requires at least: 5.6
-Tested up to: 5.6.1
-Stable tag: 1.0.14
+Requires at least: 5.7
+Tested up to: 5.7.2
+Stable tag: 1.4.6
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,6 +63,97 @@ e.g.
 
 == Changelog ==
 
+= 1.4.6 =
+[ Specification Change ] Update VK Admin Library.
+
+= 1.4.5 =
+[ Specification Change ] Update VK Admin Library.
+
+= 1.4.4 =
+[ Specification Change ] Change Version Only.
+
+= 1.4.3 =
+[ Specification Change ] Update VK Admin Library.
+
+= 1.4.2 =
+[ Bug fix ][ Title ] Fix color code reset
+
+= 1.4.1 =
+[ Specification Change ] Stop exclude CSS Var by Tree shaking
+
+= 1.4.0 =
+[ Improvement ][ title ] Convert to VK Blocks Title from core title block 
+[ Improvement ][ Select Post List Item ]setting from toolbar and enable search URL
+[ Bug fix ][ tlanslate ] in Select Post List Item
+[ Bug fix ][ New FAQ ] Fix multiple select
+[ Bug fix ][ Accordion ] Fix multiple select
+[ Specification Change ][ Border Box ] Delete margin-top from first element / delete margin-bottom from last element
+
+= 1.3.9 =
+[ Bug fix ][ page ] To be use private page
+
+= 1.3.8 =
+[ Bug fix ][ border-box ] Fix not being able to drag and drop other blocks.
+
+= 1.3.7 =
+[ Bug fix ][ image ] fix image/photo-frame
+
+= 1.3.6 =
+[ Bug fix ][ table ] fix border/stripe
+
+= 1.3.5 =
+[ Bug fix ] Fix translattion
+
+= 1.3.4 =
+[ Design bug fix ][ flow ] fix dd bug on Lightning G3 and so on
+[ Add style ][ table ] border table / border/stripe
+[ Bug fix ][ Slider ] fix css bug under active css optimize
+
+= 1.3.3 =
+*[ Design bug fix ][ Image ] fix style vk-image-rounded bug for core/image block.
+
+= 1.3.2 =
+[ Bug fix ][ Card ] Fix sentence of align control.
+[ Bug fix ][ Heading Extention ] Fix editor css is not reflected.
+[ Bug fix ][ Button ] Fix Button width of 'Wide' on editor.
+[ Bug fix / Specification Change ][ Staff ] Add font selector of heading, mintyo or not.
+
+= 1.3.1 =
+[ Bug fix ][ Accordion ] Supports Tree Shaking and add Pro Icon
+[ Bug fix ] Fix relative path to full path
+
+= 1.3.0 =
+[ Add New Block ][ Accordion ] Add New Accordion Block
+[ Translation ][ Post List ] Corrected the notation of the classification name
+[ Specification Change ][ Card ] Remove link tag from title
+
+= 1.2.4 =
+[ Bug fix / Specification Change ][ Post List ] Fix too many tags and change tag UI
+[ Bug fix ][ Slider ] Bug fix under css optimize
+
+= 1.2.3 =
+[ Bug fix ][ FAQ2 ] Fix PHP notices.
+
+= 1.2.2 =
+[ Specification Change ][ Slider ] Fix default slide speed and use cubic-bezier.
+[ Bug fix ] Fix FontAwsome Popup in case of WP5.7
+
+= 1.2.1 =
+[ Bug fix ] Fix translate of VK Blocks Setting
+
+= 1.2.0 =
+[ Specification Change ] Cope with swiper load tree shaking (improvement of load speed)
+[ Bug fix ] toolbar icon display
+
+= 1.1.0 =
+[ Specification Change ][ Slider Block ] Display multiple images on one slide.
+
+= 1.0.16 =
+[ Specification Change ] Update VK-Admin Library
+
+= 1.0.15 =
+[ Bug fix ][ Outer ] Fixed a bug where hiding doesn't work.
+
 = 1.0.14 =
 [ Specification Change ][ PostList ] Filter terms by taxonomy in sidebar.
 [ Translation ] Fix translation in balloon settings.
@@ -93,13 +184,13 @@ e.g.
 [ Design bug fix ][ Slider ] [ Staff ][ PR Blocks ][ PR Content ] fix style bug for katawara.
 
 = 1.0.5 =
-* [ Bug fix ][ Animation ] [ Balloon ][ Heading ][ PR Content ][ Icon Card ] Fix data by old versoin needs recovery.
-* [ Design bug fix ][ QA Block ] Fix style in editor.
-* [ Design bug fix ][ Button ] Fix style of sub caption.
+[ Bug fix ][ Animation ] [ Balloon ][ Heading ][ PR Content ][ Icon Card ] Fix data by old versoin needs recovery.
+[ Design bug fix ][ QA Block ] Fix style in editor.
+[ Design bug fix ][ Button ] Fix style of sub caption.
 
-* [ Add Block ] Add Page Content Block
-* [ Add Function ] Add nowrap
-* [ Add Function ][ Balloon ] Add border function
+[ Add Block ] Add Page Content Block
+[ Add Function ] Add nowrap
+[ Add Function ][ Balloon ] Add border function
 
 = 1.0.4 =
 [ Bug fix ][Table of Contents] fix bug for deprecated.
@@ -125,38 +216,38 @@ e.g.
 [ Other ] Cope with block sample preview
 
 = 0.57.1 =
-* [ Bug fix ][ Slider ] Fix block need recovery bug in case of filled in custom css class.
+[ Bug fix ][ Slider ] Fix block need recovery bug in case of filled in custom css class.
 
 = 0.57.0 =
-* [ Specification Change ] Change icons ( include vk icon )
+[ Specification Change ] Change icons ( include vk icon )
 
 = 0.56.3 =
-* [ Bug fix ][ Balloon ] fix border bug
+[ Bug fix ][ Balloon ] fix border bug
 
 = 0.56.2 =
-* [ Bug fix ][ Balloon ] fix border bug
+[ Bug fix ][ Balloon ] fix border bug
 
 = 0.56.1 =
 
 = 0.56.0 =
-* [ Add Block ] Add Page Content Block
-* [ Add Function ] Add nowrap
-* [ Add Function ][ Balloon ] Add border function
+[ Add Block ] Add Page Content Block
+[ Add Function ] Add nowrap
+[ Add Function ][ Balloon ] Add border function
 
 = 0.55.0 =
-* [ Add function ][ Outer ] Background image repeat
-* [ Bug fix ] fix can not save on some plugin using enviroment
-* [ Specification Change ][ Headding ] delete font weight specification from Plain style
+[ Add function ][ Outer ] Background image repeat
+[ Bug fix ] fix can not save on some plugin using enviroment
+[ Specification Change ][ Headding ] delete font weight specification from Plain style
 
 = 0.54.2 =
-* [ Bug fix ][ Slider ] Fix slider broken in page.
+[ Bug fix ][ Slider ] Fix slider broken in page.
 
 = 0.54.1 =
-* [ Design bug fix ] Fix do not effect text align on theming by horizontal border
+[ Design bug fix ] Fix do not effect text align on theming by horizontal border
 
 = 0.54.0 =
-* [ Add function ][ Post list ] Add Card (nonorder) layout and add display taxonomy
-* [ Bug fix ][ Animation ] fix deprecated
+[ Add function ][ Post list ] Add Card (nonorder) layout and add display taxonomy
+[ Bug fix ][ Animation ] fix deprecated
 
 = 0.53.2 =
  [ Bugfix ][ ToC ( Pro )] Fix id Adding System
@@ -183,25 +274,25 @@ e.g.
 [ Add function ][ CSS Optimize ] Add exclude handles
 
 = 0.50.3 =
-* [ Other ] version only
+[ Other ] version only
 
 = 0.50.2 =
-* [ Other ] version only
+[ Other ] version only
 
 = 0.50.1 =
-* [ Other ] version only
+[ Other ] version only
 
 = 0.50.0 =
-* [ Specification Change ][ CSS Optimize ] Common management of CSS optimization function
-* [ Bug fix ][ Icon Card ] Fix endless recovery
+[ Specification Change ][ CSS Optimize ] Common management of CSS optimization function
+[ Bug fix ][ Icon Card ] Fix endless recovery
 
 = 0.49.8 =
-* [ Bug fix ] fix edit screen white out
+[ Bug fix ] fix edit screen white out
 
 = 0.49.7 =
-* [ Bug fix ] fix edit screen white out
-* [ specification change ][ button ] allow some text style
-* [ design specification change ][ PR Content ] Change line height
+[ Bug fix ] fix edit screen white out
+[ specification change ][ button ] allow some text style
+[ design specification change ][ PR Content ] Change line height
 
 = 0.49.6 =
 [ digigin bug fix ][ balloon icon ] Fix the icon so that the rectangular image also fits in the square
@@ -213,71 +304,71 @@ e.g.
 Version change only
 
 = 0.49.3 =
-* [ Bug fix ][ core/image ] Fix again wave style do not reflected
+[ Bug fix ][ core/image ] Fix again wave style do not reflected
 
 = 0.49.2 =
-* [ Bug fix ] fix edit screen white out
+[ Bug fix ] fix edit screen white out
 
 = 0.49.1 =
-* [ Bug fix ][ PR Content ] fix can not click button at textarea
-* [ Bug fix ][ core/image ] fix wave style do not reflected
+[ Bug fix ][ PR Content ] fix can not click button at textarea
+[ Bug fix ][ core/image ] fix wave style do not reflected
 
 = 0.49.0 =
-* [ Add Function ][ Responsive Spacer ] add space-type (can be select margin-top)
-* [ Add Function ][ Old FAQ ] Can be accordion (Pro version only)
-* [ Bug fix ][ Child page list ] Can be select "this page" ( In case of only one page that has children, can't select that page on other page's put child page list )
+[ Add Function ][ Responsive Spacer ] add space-type (can be select margin-top)
+[ Add Function ][ Old FAQ ] Can be accordion (Pro version only)
+[ Bug fix ][ Child page list ] Can be select "this page" ( In case of only one page that has children, can't select that page on other page's put child page list )
 
 = 0.48.0 =
-* [ BugFix ][ Outer ] Fix bug of border-color clear button.
-* [ Add Style ][ Core/Image ] add extra style to core/image.
+[ BugFix ][ Outer ] Fix bug of border-color clear button.
+[ Add Style ][ Core/Image ] add extra style to core/image.
 
 = 0.47.0 =
-* [ Add Function ][ Post List(Pro) ] add order by title / add order desc/asc
+[ Add Function ][ Post List(Pro) ] add order by title / add order desc/asc
 
 = 0.46.1 =
-* [ BugFix ][ New FAQ ] Fix accordion system on enable Tree Shaking
+[ BugFix ][ New FAQ ] Fix accordion system on enable Tree Shaking
 
 = 0.46.0 =
-* [ Add Function ][ New FAQ ] Add accordion(Pro)
-* [ BugFix ][ Grid Column(Pro) ] fix unexpected class name "undefined"
+[ Add Function ][ New FAQ ] Add accordion(Pro)
+[ BugFix ][ Grid Column(Pro) ] fix unexpected class name "undefined"
 
 = 0.45.2 =
-* [ BugFix ] Fix bug in card block deparection.
+[ BugFix ] Fix bug in card block deparection.
 
 = 0.45.1 =
-* [ BugFix ] Delete useless file
+[ BugFix ] Delete useless file
 
 = 0.45.0 =
-* [ Add function ] Responsive BR
+[ Add function ] Responsive BR
 
 = 0.44.13 =
-* [ digigin bug fix ] vk_heading plain css adjustment 
+[ digigin bug fix ] vk_heading plain css adjustment 
 
 = 0.44.12 =
-* [ digigin bug fix ] Block heading css adjustment 
+[ digigin bug fix ] Block heading css adjustment 
 
 = 0.44.11 =
 version only
 
 = 0.44.10 =
-* [ bug fix ][ Grid column(Pro) ] fix could choice 5 columns
+[ bug fix ][ Grid column(Pro) ] fix could choice 5 columns
 
 = 0.44.9 =
 * rebuild
 
 = 0.44.8 =
-* [ bug fix ][ Grid column(Pro) ] Fix block wrap on xxl
+[ bug fix ][ Grid column(Pro) ] Fix block wrap on xxl
 
 = 0.44.7 =
-* [ bug fix ][ block pattern(Pro) ] Fix block pattern
+[ bug fix ][ block pattern(Pro) ] Fix block pattern
 
 = 0.44.6 =
-* [ bug fix ][ block pattern(Pro) ] Fix block pattern
-* [ bug fix ] Stop ExUnit VK Blocks 
-* [ bug fix ][ border box ] Cope with lightning pro headding design ( balloon )
+[ bug fix ][ block pattern(Pro) ] Fix block pattern
+[ bug fix ] Stop ExUnit VK Blocks 
+[ bug fix ][ border box ] Cope with lightning pro headding design ( balloon )
 
 = 0.44.5 =
-* [ digigin bug fix ] Block heading Digigin text align tuning 
+[ digigin bug fix ] Block heading Digigin text align tuning 
 
 = 0.44.4 =
 version only
@@ -287,10 +378,10 @@ version only
  [ digigin bug fix ] Block heading Digigin font color tuning 
 
 = 0.44.2 =
-* [ digigin bug fix ] Block heading Digigin tuning 
+[ digigin bug fix ] Block heading Digigin tuning 
 
 = 0.44.1 =
-* [ Desigin tuning ] Tag change
+[ Desigin tuning ] Tag change
 
 = 0.44.0
 [ Specification Change ] Re Cope with xxl size

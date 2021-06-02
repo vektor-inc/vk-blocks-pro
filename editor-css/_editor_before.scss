@@ -5,6 +5,8 @@
 .vk_block_icon_pro {
 	fill: #c00;
 }
+.editor-block-list-item-vk-blocks-select-post-list:after,
+.editor-block-list-item-vk-blocks-accordion:after,
 .editor-block-list-item-vk-blocks-slider:after,
 .editor-block-list-item-vk-blocks-animation:after,
 .editor-block-list-item-vk-blocks-card:after,
@@ -91,6 +93,12 @@ button.image-button:not(.button-delete) {
 @import "./editor_before_icon_list";
 // 吹き出し画像読み込み
 @import "./editor_before_balloon";
+// VKボタン
+@import "./editor_before_button";
+// テーブル
+@import "./editor_before_table";
+// 枠線ボックス
+@import "./editor_before_border-box";
 
 // VK Outer 編集パネル
 $color-danger: #dd3333;

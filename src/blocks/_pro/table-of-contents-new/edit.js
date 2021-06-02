@@ -121,7 +121,8 @@ export default function TOCEdit(props) {
 					<BaseControl>
 						<p>
 							{__(
-								'If you duplicate a heading, the table of contents block will not work properly, please reassign the ID.', 'vk-blocks'
+								'If you duplicate a heading, the table of contents block will not work properly, please reassign the ID.',
+								'vk-blocks'
 							)}
 						</p>
 					</BaseControl>

@@ -49,6 +49,99 @@ const hightliterOnApply = ({ color, value, onChange }) => {
 	);
 };
 
+const HighlighterEdit = (props) => {
+	const { value, isActive, onChange } = props;
+	const shortcutType = 'primary';
+	const shortcutChar = 'h';
+	const anchorRef = useAnchorRef({ ref: props.contentRef, value });
+	const iconStyle = {
+		'width': '24px'
+	};
+
+	let heightlightColor;
+	if (isActive) {
+		const activeFormat = getActiveFormat(value, name);
+		heightlightColor = activeFormat.attributes.data;
+	}
+	const heightlightColorStyle = {
+		'background': heightlightColor
+	};
+	const [isAddingColor, setIsAddingColor] = useState(false);
+
+	return (
+		<>
+			<RichTextShortcut
+				type={shortcutType}
+				character={shortcutChar}
+				onUse={() =>
+					setIsAddingColor(true)
+				}
+			/>
+			<RichTextToolbarButton
+				title={__('Highlighter', 'vk-blocks')}
+				onClick={() => {
+					if (heightlightColor === undefined) {
+						// set default color on initial
+						hightliterOnApply({
+							heightlightColor,
+							value,
+							onChange,
+						})
+					}
+					setIsAddingColor(true)
+				}}
+				shortcutType={shortcutType}
+				shortcutCharacter={shortcutChar}
+				key={isActive ? 'text-color' : 'text-color-not-active'}
+				className="format-library-text-color-button"
+				name={isActive ? 'text-color' : undefined}
+				icon={
+					<>
+						<Icon icon={Icon}
+							style={iconStyle}
+						/>
+						{ isActive && (
+							<span
+								className="format-library-text-color-button__indicator"
+								style={heightlightColorStyle}
+							/>
+						)}
+					</>
+				}
+			/>
+			{ isAddingColor && (
+				<URLPopover
+					value={value}
+					className="components-inline-color-popover"
+					anchorRef={anchorRef}
+					onClose={() =>
+						setIsAddingColor(false)
+					}
+				>
+					<ColorPalette
+						value={heightlightColor}
+						onChange={(color) => {
+							if (color) {
+								// select color on palette
+								hightliterOnApply({
+									color,
+									value,
+									onChange,
+								})
+							}
+							else {
+								// clear palette
+								onChange(removeFormat(value, name));
+							}
+							setIsAddingColor(false)
+						}}
+					/>
+				</URLPopover>
+			)}
+		</>
+	);
+};
+
 registerFormatType(name, {
 	title: __('Highlighter', 'vk-blocks'),
 	tagName: 'span',
@@ -56,98 +149,6 @@ registerFormatType(name, {
 	attributes: {
 		data: 'data-color',
 		style: 'style',
-		'data-rich-text-format-boundary': 'true',
 	},
-	edit(props) {
-		const { value, isActive, onChange } = props;
-		const shortcutType = 'primary';
-		const shortcutChar = 'h';
-		const anchorRef = useAnchorRef({ ref: props.contentRef, value });
-		const iconStyle = {
-			'width': '24px'
-		};
-
-		let heightlightColor;
-		if (isActive) {
-			const activeFormat = getActiveFormat(value, name);
-			heightlightColor = activeFormat.attributes.data;
-		}
-		const heightlightColorStyle = {
-			'background': heightlightColor
-		};
-		const [isAddingColor, setIsAddingColor] = useState(false);
-		
-		return (
-			<>
-				<RichTextShortcut
-					type={shortcutType}
-					character={shortcutChar}
-					onUse={() =>
-						setIsAddingColor(true)
-					}
-				/>
-				<RichTextToolbarButton
-					title={__('Highlighter', 'vk-blocks')}
-					onClick={() => {
-						if (heightlightColor === undefined) {
-							// set default color on initial
-							hightliterOnApply({
-								heightlightColor,
-								value,
-								onChange,
-							})
-						}
-						setIsAddingColor(true)
-					}}
-					shortcutType={shortcutType}
-					shortcutCharacter={shortcutChar}
-					key={isActive ? 'text-color' : 'text-color-not-active'}
-					className="format-library-text-color-button"
-					name={isActive ? 'text-color' : undefined}
-					icon={
-						<>
-							<Icon icon={Icon}
-								style={iconStyle}
-							/>
-							{ isActive && (
-								<span
-									className="format-library-text-color-button__indicator"
-									style={heightlightColorStyle}
-								/>
-							)}
-						</>
-					}
-				/>
-				{ isAddingColor && (
-					<URLPopover
-						value={value}
-						className="components-inline-color-popover"
-						anchorRef={anchorRef}
-						onClose={() =>
-							setIsAddingColor(false)
-						}
-					>
-						<ColorPalette
-							value={heightlightColor}
-							onChange={(color) => {
-								if (color) {
-									// select color on palette
-									hightliterOnApply({
-										color,
-										value,
-										onChange,
-									})
-								}
-								else {
-									// clear palette
-									onChange(removeFormat(value, name));
-								}
-								setIsAddingColor(false)
-							}}
-						/>
-					</URLPopover>
-				)}
-			</>
-		);
-	},
+	edit: HighlighterEdit,
 });

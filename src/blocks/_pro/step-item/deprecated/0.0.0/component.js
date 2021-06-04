@@ -3,14 +3,8 @@ import { Component } from '@wordpress/element';
 
 export class StepItem extends Component {
 	render() {
-		const {
-			color,
-			style,
-			styleLine,
-			dotCaption,
-			dotNum,
-			faIcon,
-		} = this.props.attributes;
+		const { color, style, styleLine, dotCaption, dotNum, faIcon } =
+			this.props.attributes;
 		const for_ = this.props.for_;
 		const className = this.props.className;
 		const containerClass = ' vk_step_item';

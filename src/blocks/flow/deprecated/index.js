@@ -1,6 +1,6 @@
 import save000 from './0.0.0/save';
 
-const blockAttributes =  {
+const blockAttributes = {
 	heading: {
 		type: 'string',
 		source: 'html',
@@ -19,7 +19,7 @@ const blockAttributes =  {
 		type: 'string',
 		default: null, // no image by default!
 	},
-}
+};
 
 const deprecated = [
 	{

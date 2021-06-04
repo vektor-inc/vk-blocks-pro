@@ -42,8 +42,8 @@ const blockAttributes = {
 		default: 2, // version < 0.17.7 は デフォルト値が 2.6
 	},
 	titleMarginBottom: {
-		type: "number",
-		default: 1
+		type: 'number',
+		default: 1,
 	},
 	subText: {
 		source: 'html',
@@ -77,7 +77,7 @@ const blockAttributes2 = {
 		source: 'html',
 		selector: 'span',
 		default: '',
-	},		
+	},
 	fontAwesomeIconBefore: {
 		type: 'string',
 		default: '',
@@ -90,15 +90,15 @@ const blockAttributes2 = {
 		type: 'string',
 		default: '#000000',
 	},
-}
+};
 
 const blockAttributes3 = {
 	...blockAttributes2,
 	outerMarginBottom: {
 		type: 'number',
-		default: 0
-	}
-}
+		default: 0,
+	},
+};
 
 const deprecated = [
 	{

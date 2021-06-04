@@ -4,6 +4,9 @@ export default function AccordionTriggerEdit() {
 	const blockProps = useBlockProps({
 		className: `vk_accordion-trigger`,
 	});
+	const OnClickToggle = (e) => {
+		
+	}
 	return (
 		<>
 			<div {...blockProps}>
@@ -11,9 +14,12 @@ export default function AccordionTriggerEdit() {
 					templateLock={false}
 					template={[['core/paragraph']]}
 				/>
-				<span
+				<button
 					className={`vk_accordion-toggle vk_accordion-toggle-close`}
-				></span>
+					onClick={(e) => {
+						OnClickToggle(e);
+					}}
+				></button>
 			</div>
 		</>
 	);

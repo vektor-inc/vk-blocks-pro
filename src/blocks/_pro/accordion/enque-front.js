@@ -5,26 +5,6 @@ let accordionTarget;
 let accordionToggle;
 
 const accordionToggleLoop = (i) => {
-	if (
-		accordionContainer[i]
-			.querySelector('.vk_accordion-toggle')
-			.classList.contains('vk_accordion-toggle-open')
-	) {
-		accordionContainer[i]
-			.querySelector('.vk_accordion-target')
-			.classList.add('vk_accordion-target-open');
-	}
-
-	if (
-		accordionContainer[i]
-			.querySelector('.vk_accordion-toggle')
-			.classList.contains('vk_accordion-toggle-close')
-	) {
-		accordionContainer[i]
-			.querySelector('.vk_accordion-target')
-			.classList.add('vk_accordion-target-close');
-	}
-
 	accordionContainer[i]
 		.querySelector('.vk_accordion-toggle')
 		.addEventListener(

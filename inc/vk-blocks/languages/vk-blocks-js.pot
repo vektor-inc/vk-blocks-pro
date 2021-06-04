@@ -3,7 +3,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/_pro/accordion-target/index.js:16
+#: src/blocks/_pro/accordion-target/index.js:17
 msgid "Accordion Target"
 msgstr ""
 

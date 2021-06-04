@@ -8,9 +8,9 @@ export default function save() {
 	return (
 		<div {...blockProps}>
 			<InnerBlocks.Content />
-			<button
+			<span
 				className={`vk_accordion-toggle vk_accordion-toggle-close`}
-			></button>
+			></span>
 		</div>
 	);
 }

@@ -53,10 +53,6 @@ const HighlighterEdit = (props) => {
 	const { value, isActive, onChange } = props;
 	const shortcutType = 'primary';
 	const shortcutChar = 'h';
-	const anchorRef = useAnchorRef({ ref: props.contentRef, value });
-	const iconStyle = {
-		'width': '24px'
-	};
 
 	let heightlightColor;
 	if (isActive) {
@@ -66,6 +62,10 @@ const HighlighterEdit = (props) => {
 	const heightlightColorStyle = {
 		'background': heightlightColor
 	};
+	const iconStyle = {
+		'width': '24px'
+	};
+	const anchorRef = useAnchorRef({ ref: props.contentRef, value });
 	const [isAddingColor, setIsAddingColor] = useState(false);
 
 	return (

@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Improvement ][ highlighter ] setting color in toolbar
+
 = 1.4.6 =
 [ Specification Change ] Update VK Admin Library.
 

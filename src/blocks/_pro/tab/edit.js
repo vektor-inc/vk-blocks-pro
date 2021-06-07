@@ -1,4 +1,10 @@
-import { InnerBlocks, useBlockProps, RichText } from '@wordpress/block-editor';
+import {
+	InnerBlocks,
+	useBlockProps,
+	RichText,
+	InspectorControls,
+} from '@wordpress/block-editor';
+import { PanelBody, RadioControl } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 import { select, dispatch } from '@wordpress/data';
 import { renderToStaticMarkup } from 'react-dom/server';
@@ -6,7 +12,15 @@ import { __, sprintf } from '@wordpress/i18n';
 
 export default function TabEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
-	const { firstActive } = attributes;
+	const {
+		firstActive,
+		tabSizeXs,
+		tabSizeSm,
+		tabSizeMd,
+		tabSizeLg,
+		tabSizeXl,
+		tabSizeXxl,
+	} = attributes;
 	attributes.clientId = clientId;
 
 	const ALLOWED_BLOCKS = ['vk-blocks/tab-item'];
@@ -24,8 +38,8 @@ export default function TabEdit(props) {
 	}, [clientId]);
 
 	const parentBlock =
-		select('core/block-editor').getBlocksByClientId(clientId)[0];
-	const childBlocks = parentBlock.innerBlocks;
+		select('core/block-editor').getBlocksByClientId(clientId);
+	const childBlocks = parentBlock[0].innerBlocks;
 
 	useEffect(() => {
 		if (childBlocks) {
@@ -75,6 +89,42 @@ export default function TabEdit(props) {
 		});
 	};
 
+	const tabSizePrefix = 'vk_tab_labels-tabSize-col-';
+
+	const tabSizes = [
+		{
+			name: 'xs',
+			attribute: tabSizeXs,
+		},
+		{
+			name: 'sm',
+			attribute: tabSizeSm,
+		},
+		{
+			name: 'md',
+			attribute: tabSizeMd,
+		},
+		{
+			name: 'lg',
+			attribute: tabSizeLg,
+		},
+		{
+			name: 'xl',
+			attribute: tabSizeXl,
+		},
+		{
+			name: 'xxl',
+			attribute: tabSizeXxl,
+		},
+	];
+
+	let tabListClassName = `vk_tab_labels`;
+	tabSizes.forEach((tabSize) => {
+		if (tabSize.attribute !== null && tabSize.attribute !== undefined) {
+			tabListClassName += ` ${tabSizePrefix}-${tabSize.name}-${tabSize.attribute}`;
+		}
+	});
+
 	let tabList = '';
 	let tablabelsEditList = '';
 	let tablabelsEdit = '';
@@ -108,7 +158,9 @@ export default function TabEdit(props) {
 				/>
 			);
 		});
-		tablabelsEdit = <ul className="vk_tab_labels">{tablabelsEditList}</ul>;
+		tablabelsEdit = (
+			<ul className={tabListClassName}>{tablabelsEditList}</ul>
+		);
 		tablabels = childBlocks.map((childBlock, index) => {
 			let activeLabelClass = '';
 			if (firstActive === index) {
@@ -125,7 +177,7 @@ export default function TabEdit(props) {
 			);
 		});
 
-		tabList = <ul className="vk_tab_labels">{tablabels}</ul>;
+		tabList = <ul className={tabListClassName}>{tablabels}</ul>;
 	}
 
 	useEffect(() => {
@@ -139,6 +191,208 @@ export default function TabEdit(props) {
 
 	return (
 		<>
+			<InspectorControls>
+				<PanelBody title={__('Tab size Setting', 'vk-blocks')}>
+					<RadioControl
+						label={__('Tab Size ( Extra small )', 'vk-blocks')}
+						selected={tabSizeXs}
+						options={[
+							{
+								label: __('Fit Text', 'vk-blocks'),
+								value: 'text',
+							},
+							{
+								label: __('Fit full Width', 'vk-blocks'),
+								value: 'width',
+							},
+							{
+								label: __('Equal 1 Column', 'vk-blocks'),
+								value: '12',
+							},
+							{
+								label: __('Equal 2 Column', 'vk-blocks'),
+								value: '6',
+							},
+							{
+								label: __('Equal 3 Column', 'vk-blocks'),
+								value: '4',
+							},
+							{
+								label: __('Equal 4 Column', 'vk-blocks'),
+								value: '3',
+							},
+						]}
+						onChange={(value) =>
+							setAttributes({ tabSizeXs: value })
+						}
+					/>
+					<RadioControl
+						label={__('Tab Size ( Small )', 'vk-blocks')}
+						selected={tabSizeSm}
+						options={[
+							{
+								label: __('Fit Text', 'vk-blocks'),
+								value: 'text',
+							},
+							{
+								label: __('Fit full Width', 'vk-blocks'),
+								value: 'width',
+							},
+							{
+								label: __('Equal 1 Column', 'vk-blocks'),
+								value: '12',
+							},
+							{
+								label: __('Equal 2 Column', 'vk-blocks'),
+								value: '6',
+							},
+							{
+								label: __('Equal 3 Column', 'vk-blocks'),
+								value: '4',
+							},
+							{
+								label: __('Equal 4 Column', 'vk-blocks'),
+								value: '3',
+							},
+						]}
+						onChange={(value) =>
+							setAttributes({ tabSizeSm: value })
+						}
+					/>
+					<RadioControl
+						label={__('Tab Size ( Mediium )', 'vk-blocks')}
+						selected={tabSizeMd}
+						options={[
+							{
+								label: __('Fit Text', 'vk-blocks'),
+								value: 'text',
+							},
+							{
+								label: __('Fit full Width', 'vk-blocks'),
+								value: 'width',
+							},
+							{
+								label: __('Equal 1 Column', 'vk-blocks'),
+								value: '12',
+							},
+							{
+								label: __('Equal 2 Column', 'vk-blocks'),
+								value: '6',
+							},
+							{
+								label: __('Equal 3 Column', 'vk-blocks'),
+								value: '4',
+							},
+							{
+								label: __('Equal 4 Column', 'vk-blocks'),
+								value: '3',
+							},
+						]}
+						onChange={(value) =>
+							setAttributes({ tabSizeMd: value })
+						}
+					/>
+					<RadioControl
+						label={__('Tab Size ( Large )', 'vk-blocks')}
+						selected={tabSizeLg}
+						options={[
+							{
+								label: __('Fit Text', 'vk-blocks'),
+								value: 'text',
+							},
+							{
+								label: __('Fit full Width', 'vk-blocks'),
+								value: 'width',
+							},
+							{
+								label: __('Equal 1 Column', 'vk-blocks'),
+								value: '12',
+							},
+							{
+								label: __('Equal 2 Column', 'vk-blocks'),
+								value: '6',
+							},
+							{
+								label: __('Equal 3 Column', 'vk-blocks'),
+								value: '4',
+							},
+							{
+								label: __('Equal 4 Column', 'vk-blocks'),
+								value: '3',
+							},
+						]}
+						onChange={(value) =>
+							setAttributes({ tabSizeLg: value })
+						}
+					/>
+					<RadioControl
+						label={__('Tab Size ( Extra large )', 'vk-blocks')}
+						selected={tabSizeXl}
+						options={[
+							{
+								label: __('Fit Text', 'vk-blocks'),
+								value: 'text',
+							},
+							{
+								label: __('Fit full Width', 'vk-blocks'),
+								value: 'width',
+							},
+							{
+								label: __('Equal 1 Column', 'vk-blocks'),
+								value: '12',
+							},
+							{
+								label: __('Equal 2 Column', 'vk-blocks'),
+								value: '6',
+							},
+							{
+								label: __('Equal 3 Column', 'vk-blocks'),
+								value: '4',
+							},
+							{
+								label: __('Equal 4 Column', 'vk-blocks'),
+								value: '3',
+							},
+						]}
+						onChange={(value) =>
+							setAttributes({ tabSizeXl: value })
+						}
+					/>
+					<RadioControl
+						label={__('Tab Size ( XX Large )', 'vk-blocks')}
+						selected={tabSizeXxl}
+						options={[
+							{
+								label: __('Fit Text', 'vk-blocks'),
+								value: 'text',
+							},
+							{
+								label: __('Fit full Width', 'vk-blocks'),
+								value: 'width',
+							},
+							{
+								label: __('Equal 1 Column', 'vk-blocks'),
+								value: '12',
+							},
+							{
+								label: __('Equal 2 Column', 'vk-blocks'),
+								value: '6',
+							},
+							{
+								label: __('Equal 3 Column', 'vk-blocks'),
+								value: '4',
+							},
+							{
+								label: __('Equal 4 Column', 'vk-blocks'),
+								value: '3',
+							},
+						]}
+						onChange={(value) =>
+							setAttributes({ tabSizeXxl: value })
+						}
+					/>
+				</PanelBody>
+			</InspectorControls>
 			<div {...blockProps}>
 				{tablabelsEdit}
 				<div className="vk_tab_bodys">

@@ -5,7 +5,6 @@ import save0_60_1 from './0.60.1/save';
 import save0_56_3 from './0.56.3/save';
 import save0_49_1 from './0.49.1/save';
 
-
 const blockAttributes = {
 	unit: {
 		type: 'string',

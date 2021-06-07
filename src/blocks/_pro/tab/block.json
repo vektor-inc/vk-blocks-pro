@@ -14,6 +14,34 @@
 		"firstActive": {
 			"type": "number",
 			"default": 0
+		},
+		"tabSizeXs": {
+			"type": "string",
+			"default": "text"
+		},
+		"tabSizeSm": {
+			"type": "string",
+			"default": "text"
+		},
+		"tabSizeMd": {
+			"type": "string",
+			"default": "text"
+		},
+		"tabSizeLg": {
+			"type": "string",
+			"default": "text"
+		},
+		"tabSizeXl": {
+			"type": "string",
+			"default": "text"
+		},
+		"tabSizeXxl": {
+			"type": "string",
+			"default": "text"
+		},
+		"activeColor": {
+			"type": "string",
+			"default": null
 		}
 	},
 	"supports": {

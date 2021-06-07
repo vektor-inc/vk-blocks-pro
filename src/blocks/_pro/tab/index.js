@@ -46,7 +46,6 @@ export const settings = {
 			name: 'vk_tab_labels-line-simple',
 			label: __('Line Simple', 'vk-blocks'),
 		},
-
 	],
 	edit,
 	save,

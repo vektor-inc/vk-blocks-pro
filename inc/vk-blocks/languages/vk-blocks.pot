@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.4.1\n"
+"Project-Id-Version: VK Blocks Pro 1.4.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-06-07T04:56:34+00:00\n"
+"POT-Creation-Date: 2021-06-02T03:11:38+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: vk-blocks\n"
@@ -204,7 +204,7 @@ msgstr ""
 #: src/blocks/pr-content/deprecated/0.58.7/component.js:171
 #: src/blocks/pr-content/deprecated/0.58.9/component.js:171
 #: src/blocks/pr-content/mediaUpload.js:68
-#: src/blocks/staff/deprecated/0.58/component.js:121
+#: src/blocks/staff/deprecated/0.58/component.js:96
 #: src/blocks/staff/edit.js:306
 #: src/components/advanced-media-upload/index.js:47
 msgid "Select image"
@@ -819,7 +819,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:110
 #: src/blocks/_pro/table-of-contents-new/edit.js:129
 #: src/blocks/_pro/timeline-item/edit.js:91
-#: src/blocks/heading/edit.js:231
+#: src/blocks/heading/edit.js:219
 #: src/blocks/staff/edit.js:113
 #: src/extensions/core/heading/style.js:30
 #: src/extensions/core/list/style.js:102
@@ -997,7 +997,7 @@ msgid "Timeline"
 msgstr ""
 
 #: src/blocks/alert/edit.js:19
-#: src/blocks/heading/edit.js:222
+#: src/blocks/heading/edit.js:210
 msgid "Style Settings"
 msgstr ""
 
@@ -1064,7 +1064,7 @@ msgid "Balloon setting"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:202
-#: src/blocks/heading/edit.js:333
+#: src/blocks/heading/edit.js:325
 msgid "Position"
 msgstr ""
 
@@ -1310,13 +1310,13 @@ msgid "This custom color overrides the default color. If you want to use the def
 msgstr ""
 
 #: src/blocks/button/edit.js:262
-#: src/blocks/heading/edit.js:300
+#: src/blocks/heading/edit.js:292
 #: src/blocks/pr-content/edit.js:194
 msgid "Before text"
 msgstr ""
 
 #: src/blocks/button/edit.js:271
-#: src/blocks/heading/edit.js:309
+#: src/blocks/heading/edit.js:301
 #: src/blocks/pr-content/edit.js:206
 msgid "After text"
 msgstr ""
@@ -1444,7 +1444,7 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:152
 #: src/blocks/heading/deprecated/0.40.1/component.js:152
 #: src/blocks/heading/deprecated/0.60.1/component.js:152
-#: src/blocks/heading/edit.js:196
+#: src/blocks/heading/edit.js:184
 msgid "Input sub text…"
 msgstr ""
 
@@ -1458,60 +1458,60 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:137
 #: src/blocks/heading/deprecated/0.40.1/component.js:137
 #: src/blocks/heading/deprecated/0.60.1/component.js:137
-#: src/blocks/heading/edit.js:181
+#: src/blocks/heading/edit.js:169
 msgid "Input title…"
 msgstr ""
 
-#: src/blocks/heading/edit.js:224
+#: src/blocks/heading/edit.js:212
 msgid "Heading style"
 msgstr ""
 
-#: src/blocks/heading/edit.js:235
+#: src/blocks/heading/edit.js:223
 #: src/extensions/core/heading/style.js:35
 msgid "Plain"
 msgstr ""
 
-#: src/blocks/heading/edit.js:241
+#: src/blocks/heading/edit.js:229
 msgid "Margin Setting"
 msgstr ""
 
-#: src/blocks/heading/edit.js:243
-msgid "Margin bottom size of after hedding (rem)"
+#: src/blocks/heading/edit.js:231
+msgid "Margin between Heading and sub text (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:258
+#: src/blocks/heading/edit.js:248
 msgid "Margin bottom size of after this block (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:273
+#: src/blocks/heading/edit.js:265
 msgid "Heading Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:285
+#: src/blocks/heading/edit.js:277
 msgid "Text Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:297
+#: src/blocks/heading/edit.js:289
 msgid "Font Awesome Icon Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:318
+#: src/blocks/heading/edit.js:310
 msgid "Icon Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:331
+#: src/blocks/heading/edit.js:323
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:337
+#: src/blocks/heading/edit.js:329
 msgid "Display"
 msgstr ""
 
-#: src/blocks/heading/edit.js:341
+#: src/blocks/heading/edit.js:333
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/heading/edit.js:349
+#: src/blocks/heading/edit.js:341
 msgid "Text size (rem)"
 msgstr ""
 
@@ -1687,27 +1687,27 @@ msgstr ""
 msgid "Responsive Spacer"
 msgstr ""
 
-#: src/blocks/staff/deprecated/0.58/component.js:52
+#: src/blocks/staff/deprecated/0.58/component.js:50
 #: src/blocks/staff/edit.js:241
 msgid "Your Name"
 msgstr ""
 
-#: src/blocks/staff/deprecated/0.58/component.js:62
+#: src/blocks/staff/deprecated/0.58/component.js:58
 #: src/blocks/staff/edit.js:251
 msgid "Caption"
 msgstr ""
 
-#: src/blocks/staff/deprecated/0.58/component.js:72
+#: src/blocks/staff/deprecated/0.58/component.js:66
 #: src/blocks/staff/edit.js:261
 msgid "Role position"
 msgstr ""
 
-#: src/blocks/staff/deprecated/0.58/component.js:84
+#: src/blocks/staff/deprecated/0.58/component.js:74
 #: src/blocks/staff/edit.js:271
 msgid "Profile title"
 msgstr ""
 
-#: src/blocks/staff/deprecated/0.58/component.js:96
+#: src/blocks/staff/deprecated/0.58/component.js:82
 #: src/blocks/staff/edit.js:284
 msgid "Profile text"
 msgstr ""
@@ -2253,15 +2253,15 @@ msgstr ""
 
 #. translators:
 #: inc/tgm-plugin-activation/tgm-config.php:83
-msgid "This theme requires the following plugin: %1$s."
-msgid_plural "This theme requires the following plugins: %1$s."
+msgid "This plugin requires the following plugin: %1$s."
+msgid_plural "This plugin requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s = plugin name.
 #: inc/tgm-plugin-activation/tgm-config.php:89
-msgid "This theme recommends the following plugin: %1$s.<br>Many additional functions are available for free."
-msgid_plural "This theme recommends the following plugins: %1$s.<br>Many additional functions are available for free."
+msgid "This plugin recommends the following plugin: %1$s.<br>Many additional functions are available for free."
+msgid_plural "This plugin recommends the following plugins: %1$s.<br>Many additional functions are available for free."
 msgstr[0] ""
 msgstr[1] ""
 
@@ -2274,8 +2274,8 @@ msgstr[1] ""
 
 #. translators: %s = plugin name.
 #: inc/tgm-plugin-activation/tgm-config.php:101
-msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
-msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this plugin: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this plugin: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
@@ -2365,11 +2365,11 @@ msgstr ""
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
-#: inc/vk-admin/package/class-vk-admin.php:340
+#: inc/vk-admin/package/class-vk-admin.php:316
 msgid "Sorry, there is no post"
 msgstr ""
 
-#: inc/vk-admin/package/class-vk-admin.php:394
+#: inc/vk-admin/package/class-vk-admin.php:370
 msgid "Vektor WordPress Information"
 msgstr ""
 
@@ -2458,7 +2458,7 @@ msgstr ""
 msgid "No Post is selected"
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:241
+#: inc/vk-blocks/vk-blocks-functions.php:239
 msgid "Blocks"
 msgstr ""
 

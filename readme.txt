@@ -3,8 +3,8 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,m
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
-Tested up to: 5.7
-Stable tag: 1.4.1
+Tested up to: 5.7.2
+Stable tag: 1.4.6
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -62,6 +62,21 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 1.4.6 =
+[ Specification Change ] Update VK Admin Library.
+
+= 1.4.5 =
+[ Specification Change ] Update VK Admin Library.
+
+= 1.4.4 =
+[ Specification Change ] Change Version Only.
+
+= 1.4.3 =
+[ Specification Change ] Update VK Admin Library.
+
+= 1.4.2 =
+[ Bug fix ][ Title ] Fix color code reset
 
 = 1.4.1 =
 [ Specification Change ] Stop exclude CSS Var by Tree shaking

@@ -16,16 +16,6 @@ export { metadata, name };
 
 /*
 const example = {
-	attributes: {
-		firstActive: 0,
-		tabSizeXs: 'text',
-		tabSizeSm: 'text',
-		tabSizeMd: 'text',
-		tabSizeLg: 'text',
-		tabSizeXl: 'text',
-		tabSizeXxl: 'text',
-		activeColor: null,
-	},
 	innerBlocks: [
 		{
 			name: 'vk-blocks/tab-item',

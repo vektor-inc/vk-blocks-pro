@@ -77,7 +77,7 @@ const blockAttributes2 = {
 		source: 'html',
 		selector: 'span',
 		default: '',
-	},		
+	},
 	fontAwesomeIconBefore: {
 		type: 'string',
 		default: '',
@@ -96,9 +96,9 @@ const blockAttributes3 = {
 	...blockAttributes2,
 	outerMarginBottom: {
 		type: 'number',
-		default: 0
-	}
-}
+		default: 0,
+	},
+};
 
 const deprecated = [
 	{

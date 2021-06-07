@@ -58,7 +58,7 @@ msgstr ""
 #: src/blocks/_pro/animation/edit.js:123
 #: src/blocks/_pro/outer/edit.js:303
 #: src/blocks/_pro/slider/edit.js:110
-#: src/blocks/_pro/tab/index.js:70
+#: src/blocks/_pro/tab/index.js:60
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95
 #: src/blocks/faq/index.js:27
@@ -195,7 +195,7 @@ msgstr ""
 #: src/blocks/pr-content/deprecated/0.58.7/component.js:171
 #: src/blocks/pr-content/deprecated/0.58.9/component.js:171
 #: src/blocks/pr-content/mediaUpload.js:68
-#: src/blocks/staff/deprecated/0.58/component.js:96
+#: src/blocks/staff/deprecated/0.58/component.js:121
 #: src/blocks/staff/edit.js:306
 #: src/components/advanced-media-upload/index.js:47
 msgid "Select image"
@@ -926,31 +926,31 @@ msgstr ""
 msgid "Equal 4 Column"
 msgstr ""
 
-#: src/blocks/_pro/tab/index.js:65
+#: src/blocks/_pro/tab/index.js:55
 msgid "Tab"
 msgstr ""
 
-#: src/blocks/_pro/tab/index.js:75
+#: src/blocks/_pro/tab/index.js:65
 msgid "Normal No Frame"
 msgstr ""
 
-#: src/blocks/_pro/tab/index.js:79
+#: src/blocks/_pro/tab/index.js:69
 msgid "Speech Balloon"
 msgstr ""
 
-#: src/blocks/_pro/tab/index.js:83
+#: src/blocks/_pro/tab/index.js:73
 msgid "Speech Balloon No Frame"
 msgstr ""
 
-#: src/blocks/_pro/tab/index.js:87
+#: src/blocks/_pro/tab/index.js:77
 msgid "Line"
 msgstr ""
 
-#: src/blocks/_pro/tab/index.js:91
+#: src/blocks/_pro/tab/index.js:81
 msgid "Line No Frame"
 msgstr ""
 
-#: src/blocks/_pro/tab/index.js:95
+#: src/blocks/_pro/tab/index.js:85
 msgid "Line Simple"
 msgstr ""
 
@@ -1688,27 +1688,27 @@ msgstr ""
 msgid "Responsive Spacer"
 msgstr ""
 
-#: src/blocks/staff/deprecated/0.58/component.js:50
+#: src/blocks/staff/deprecated/0.58/component.js:52
 #: src/blocks/staff/edit.js:241
 msgid "Your Name"
 msgstr ""
 
-#: src/blocks/staff/deprecated/0.58/component.js:58
+#: src/blocks/staff/deprecated/0.58/component.js:62
 #: src/blocks/staff/edit.js:251
 msgid "Caption"
 msgstr ""
 
-#: src/blocks/staff/deprecated/0.58/component.js:66
+#: src/blocks/staff/deprecated/0.58/component.js:72
 #: src/blocks/staff/edit.js:261
 msgid "Role position"
 msgstr ""
 
-#: src/blocks/staff/deprecated/0.58/component.js:74
+#: src/blocks/staff/deprecated/0.58/component.js:84
 #: src/blocks/staff/edit.js:271
 msgid "Profile title"
 msgstr ""
 
-#: src/blocks/staff/deprecated/0.58/component.js:82
+#: src/blocks/staff/deprecated/0.58/component.js:96
 #: src/blocks/staff/edit.js:284
 msgid "Profile text"
 msgstr ""

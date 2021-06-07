@@ -5,7 +5,7 @@
 import { ReactComponent as Icon } from './icon.svg';
 import { __ } from '@wordpress/i18n';
 
-import { content, title } from '@vkblocks/utils/example-data';
+// import { content, title } from '@vkblocks/utils/example-data';
 import edit from './edit';
 import metadata from './block.json';
 import save from './save';
@@ -14,6 +14,7 @@ const { name } = metadata;
 
 export { metadata, name };
 
+/*
 const example = {
 	attributes: {
 		firstActive: 0,
@@ -58,6 +59,7 @@ const example = {
 		},
 	],
 };
+*/
 
 export const settings = {
 	title: __('Tab', 'vk-blocks'), // Block title.

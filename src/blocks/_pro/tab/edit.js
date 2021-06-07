@@ -39,10 +39,10 @@ export default function TabEdit(props) {
 
 	const parentBlock =
 		select('core/block-editor').getBlocksByClientId(clientId);
-	const childBlocks = parentBlock[0].innerBlocks;
 
 	useEffect(() => {
-		if (childBlocks) {
+		if (parentBlock && parentBlock[0] && parentBlock[0].innerBlocks) {
+			const childBlocks = parentBlock[0].innerBlocks;
 			childBlocks.forEach((childBlock, index) => {
 				if (firstActive === index) {
 					updateBlockAttributes(childBlock.clientId, {
@@ -55,38 +55,43 @@ export default function TabEdit(props) {
 				}
 			});
 		}
-	}, [firstActive]);
+	}, [parentBlock, firstActive]);
 
 	const liOnClick = (e) => {
-		const vkTab = e.target.closest('.vk_tab');
-		const vkTabLabels = vkTab.querySelector('.vk_tab_labels');
+		if (parentBlock && parentBlock[0] && parentBlock[0].innerBlocks) {
+			const childBlocks = parentBlock[0].innerBlocks;
+			const vkTab = e.target.closest('.vk_tab');
+			const vkTabLabels = vkTab.querySelector('.vk_tab_labels');
 
-		// ブロック ID を抽出
-		const TabLabelId = e.target.id;
-		const TabId = TabLabelId.replace('vk_tab_labels_label-', '');
+			// ブロック ID を抽出
+			const TabLabelId = e.target.id;
+			const TabId = TabLabelId.replace('vk_tab_labels_label-', '');
 
-		/* ラベルの処理 */
-		// カレントを探して全て外す
-		const activeLabels = vkTabLabels.querySelectorAll(
-			'.vk_tab_labels_label-state-active'
-		);
-		Array.prototype.forEach.call(activeLabels, (activeLabel) => {
-			activeLabel.classList.remove('vk_tab_labels_label-state-active');
-		});
+			/* ラベルの処理 */
+			// カレントを探して全て外す
+			const activeLabels = vkTabLabels.querySelectorAll(
+				'.vk_tab_labels_label-state-active'
+			);
+			Array.prototype.forEach.call(activeLabels, (activeLabel) => {
+				activeLabel.classList.remove(
+					'vk_tab_labels_label-state-active'
+				);
+			});
 
-		// クリックされた要素にアクティブを追加
-		vkTabLabels
-			.querySelector(`#vk_tab_labels_label-${TabId}`)
-			.classList.add('vk_tab_labels_label-state-active');
+			// クリックされた要素にアクティブを追加
+			vkTabLabels
+				.querySelector(`#vk_tab_labels_label-${TabId}`)
+				.classList.add('vk_tab_labels_label-state-active');
 
-		/* 本体の処理 */
-		childBlocks.forEach((childBlock, index) => {
-			if (TabId === childBlock.clientId) {
-				updateBlockAttributes(clientId, {
-					firstActive: parseInt(index, 10),
-				});
-			}
-		});
+			/* 本体の処理 */
+			childBlocks.forEach((childBlock, index) => {
+				if (TabId === childBlock.clientId) {
+					updateBlockAttributes(clientId, {
+						firstActive: parseInt(index, 10),
+					});
+				}
+			});
+		}
 	};
 
 	const tabSizePrefix = 'vk_tab_labels-tabSize-col-';
@@ -129,7 +134,8 @@ export default function TabEdit(props) {
 	let tablabelsEditList = '';
 	let tablabelsEdit = '';
 	let tablabels = '';
-	if (childBlocks) {
+	if (parentBlock && parentBlock[0] && parentBlock[0].innerBlocks) {
+		const childBlocks = parentBlock[0].innerBlocks;
 		tablabelsEditList = childBlocks.map((childBlock, index) => {
 			let activeLabelClass = '';
 			if (firstActive === index) {
@@ -182,7 +188,7 @@ export default function TabEdit(props) {
 
 	useEffect(() => {
 		setAttributes({ tabListHtml: renderToStaticMarkup(tabList) });
-	}, [tabList]);
+	}, [parentBlock, tabList]);
 
 	const blockProps = useBlockProps({
 		className: `vk_tab`,

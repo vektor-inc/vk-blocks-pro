@@ -58,7 +58,7 @@ msgstr ""
 #: src/blocks/_pro/animation/edit.js:123
 #: src/blocks/_pro/outer/edit.js:303
 #: src/blocks/_pro/slider/edit.js:110
-#: src/blocks/_pro/tab/index.js:22
+#: src/blocks/_pro/tab/index.js:70
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95
 #: src/blocks/faq/index.js:27
@@ -869,88 +869,88 @@ msgstr ""
 msgid "Tab Item"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:153
+#: src/blocks/_pro/tab/edit.js:159
 #. Tab label [i]
 msgid "Tab Label [ %s ]"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:195
+#: src/blocks/_pro/tab/edit.js:201
 msgid "Tab size Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:197
+#: src/blocks/_pro/tab/edit.js:203
 msgid "Tab Size ( Extra small )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:230
+#: src/blocks/_pro/tab/edit.js:236
 msgid "Tab Size ( Small )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:263
+#: src/blocks/_pro/tab/edit.js:269
 msgid "Tab Size ( Mediium )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:296
+#: src/blocks/_pro/tab/edit.js:302
 msgid "Tab Size ( Large )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:329
+#: src/blocks/_pro/tab/edit.js:335
 msgid "Tab Size ( Extra large )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:362
+#: src/blocks/_pro/tab/edit.js:368
 msgid "Tab Size ( XX Large )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:366
+#: src/blocks/_pro/tab/edit.js:372
 msgid "Fit Text"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:370
+#: src/blocks/_pro/tab/edit.js:376
 msgid "Fit full Width"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:374
+#: src/blocks/_pro/tab/edit.js:380
 msgid "Equal 1 Column"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:378
+#: src/blocks/_pro/tab/edit.js:384
 msgid "Equal 2 Column"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:382
+#: src/blocks/_pro/tab/edit.js:388
 msgid "Equal 3 Column"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:386
+#: src/blocks/_pro/tab/edit.js:392
 msgid "Equal 4 Column"
 msgstr ""
 
-#: src/blocks/_pro/tab/index.js:17
+#: src/blocks/_pro/tab/index.js:65
 msgid "Tab"
 msgstr ""
 
-#: src/blocks/_pro/tab/index.js:27
+#: src/blocks/_pro/tab/index.js:75
 msgid "Normal No Frame"
 msgstr ""
 
-#: src/blocks/_pro/tab/index.js:31
+#: src/blocks/_pro/tab/index.js:79
 msgid "Speech Balloon"
 msgstr ""
 
-#: src/blocks/_pro/tab/index.js:35
+#: src/blocks/_pro/tab/index.js:83
 msgid "Speech Balloon No Frame"
 msgstr ""
 
-#: src/blocks/_pro/tab/index.js:39
+#: src/blocks/_pro/tab/index.js:87
 msgid "Line"
 msgstr ""
 
-#: src/blocks/_pro/tab/index.js:43
+#: src/blocks/_pro/tab/index.js:91
 msgid "Line No Frame"
 msgstr ""
 
-#: src/blocks/_pro/tab/index.js:47
+#: src/blocks/_pro/tab/index.js:95
 msgid "Line Simple"
 msgstr ""
 

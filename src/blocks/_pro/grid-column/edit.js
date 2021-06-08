@@ -8,7 +8,7 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 import { select, dispatch } from '@wordpress/data';
-import { PanelBody, RangeControl } from '@wordpress/components';
+import { PanelBody, RangeControl, Button } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 
 export default function GridColumnEdit(props) {
@@ -70,6 +70,20 @@ export default function GridColumnEdit(props) {
 						max={100}
 					/>
 					<AdvancedUnitControl {...props} />
+					<Button
+						className="components-color-palette__clear"
+						disabled={0 === marginBottom}
+						onClick={() => {
+							props.setAttributes({
+								marginBottom: 0,
+								unit: 'px',
+							})
+						}}
+						isSmall
+						isSecondary
+					>
+						{__('Reset')}
+					</Button>
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>

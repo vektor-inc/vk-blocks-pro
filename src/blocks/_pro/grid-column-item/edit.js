@@ -11,13 +11,14 @@ export default function GridColumnItemEdit({ attributes }) {
 		col_lg
 	)} col-xl-${convertToGrid(col_xl)} col-xxl-${convertToGrid(col_xxl)}`;
 	// margin bottom
-	const blockStyle = {
-		'margin-bottom': `${marginBottom}${unit}`
-	};
+	let style;
+	if (marginBottom) {
+		style = {marginBottom: marginBottom + unit};
+	}
 
 	const blockProps = useBlockProps({
 		className: columnClass,
-		style: blockStyle,
+		style,
 	});
 
 	return (

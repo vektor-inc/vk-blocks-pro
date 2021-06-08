@@ -99,7 +99,7 @@
 		},
 		"marginBottom": {
 			"type": "number",
-			"default": 0
+			"default": null
 		},
 		"unit": {
 			"type": "string",

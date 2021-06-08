@@ -61,29 +61,18 @@ export default function GridColumnEdit(props) {
 					<RangeControl
 						label={__('Margin Bottom', 'vk-blocks')}
 						value={marginBottom}
-						onChange={(value) =>
-							props.setAttributes({
-								marginBottom: toNumber(value, 0, 100),
-							})
-						}
+						onChange={(value) => {
+							props.setAttributes({ marginBottom: value });
+							if (undefined === value){
+								props.setAttributes({ unit: 'px' });
+							}
+						}}
 						min={0}
 						max={100}
+						allowReset={true}
+						resetFallbackValue={null}
 					/>
 					<AdvancedUnitControl {...props} />
-					<Button
-						className="components-color-palette__clear"
-						disabled={0 === marginBottom}
-						onClick={() => {
-							props.setAttributes({
-								marginBottom: 0,
-								unit: 'px',
-							})
-						}}
-						isSmall
-						isSecondary
-					>
-						{__('Reset')}
-					</Button>
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>

@@ -69,7 +69,7 @@
 		},
 		"fontAwesomeIconColor": {
 			"type": "string",
-			"default": "#000000"
+			"default": null
 		}
 	},
 	"supports": {

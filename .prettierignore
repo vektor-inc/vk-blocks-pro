@@ -1,4 +1,0 @@
-**/deprecated/*.js
-!**/deprecated/index.js
-**/deprecated/**/*.js
-src/translation_dummy.js

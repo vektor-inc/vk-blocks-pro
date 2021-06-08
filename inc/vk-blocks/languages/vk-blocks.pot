@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.4.2\n"
+"Project-Id-Version: VK Blocks Pro 1.4.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-06-02T00:37:16+00:00\n"
+"POT-Creation-Date: 2021-06-08T02:23:33+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: vk-blocks\n"
@@ -818,7 +818,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:110
 #: src/blocks/_pro/table-of-contents-new/edit.js:129
 #: src/blocks/_pro/timeline-item/edit.js:91
-#: src/blocks/heading/edit.js:219
+#: src/blocks/heading/edit.js:210
 #: src/blocks/staff/edit.js:113
 #: src/extensions/core/heading/style.js:30
 #: src/extensions/core/list/style.js:102
@@ -907,7 +907,7 @@ msgid "Timeline"
 msgstr ""
 
 #: src/blocks/alert/edit.js:19
-#: src/blocks/heading/edit.js:210
+#: src/blocks/heading/edit.js:201
 msgid "Style Settings"
 msgstr ""
 
@@ -974,7 +974,7 @@ msgid "Balloon setting"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:202
-#: src/blocks/heading/edit.js:325
+#: src/blocks/heading/edit.js:316
 msgid "Position"
 msgstr ""
 
@@ -1220,13 +1220,13 @@ msgid "This custom color overrides the default color. If you want to use the def
 msgstr ""
 
 #: src/blocks/button/edit.js:262
-#: src/blocks/heading/edit.js:292
+#: src/blocks/heading/edit.js:283
 #: src/blocks/pr-content/edit.js:194
 msgid "Before text"
 msgstr ""
 
 #: src/blocks/button/edit.js:271
-#: src/blocks/heading/edit.js:301
+#: src/blocks/heading/edit.js:292
 #: src/blocks/pr-content/edit.js:206
 msgid "After text"
 msgstr ""
@@ -1354,7 +1354,7 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:152
 #: src/blocks/heading/deprecated/0.40.1/component.js:152
 #: src/blocks/heading/deprecated/0.60.1/component.js:152
-#: src/blocks/heading/edit.js:184
+#: src/blocks/heading/edit.js:175
 msgid "Input sub text…"
 msgstr ""
 
@@ -1368,60 +1368,60 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:137
 #: src/blocks/heading/deprecated/0.40.1/component.js:137
 #: src/blocks/heading/deprecated/0.60.1/component.js:137
-#: src/blocks/heading/edit.js:169
+#: src/blocks/heading/edit.js:160
 msgid "Input title…"
 msgstr ""
 
-#: src/blocks/heading/edit.js:212
+#: src/blocks/heading/edit.js:203
 msgid "Heading style"
 msgstr ""
 
-#: src/blocks/heading/edit.js:223
+#: src/blocks/heading/edit.js:214
 #: src/extensions/core/heading/style.js:35
 msgid "Plain"
 msgstr ""
 
-#: src/blocks/heading/edit.js:229
+#: src/blocks/heading/edit.js:220
 msgid "Margin Setting"
 msgstr ""
 
-#: src/blocks/heading/edit.js:231
+#: src/blocks/heading/edit.js:222
 msgid "Margin between Heading and sub text (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:248
+#: src/blocks/heading/edit.js:239
 msgid "Margin bottom size of after this block (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:265
+#: src/blocks/heading/edit.js:256
 msgid "Heading Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:277
+#: src/blocks/heading/edit.js:268
 msgid "Text Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:289
+#: src/blocks/heading/edit.js:280
 msgid "Font Awesome Icon Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:310
+#: src/blocks/heading/edit.js:301
 msgid "Icon Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:323
+#: src/blocks/heading/edit.js:314
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:329
+#: src/blocks/heading/edit.js:320
 msgid "Display"
 msgstr ""
 
-#: src/blocks/heading/edit.js:333
+#: src/blocks/heading/edit.js:324
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/heading/edit.js:341
+#: src/blocks/heading/edit.js:332
 msgid "Text size (rem)"
 msgstr ""
 
@@ -2275,11 +2275,11 @@ msgstr ""
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
-#: inc/vk-admin/package/class-vk-admin.php:313
+#: inc/vk-admin/package/class-vk-admin.php:316
 msgid "Sorry, there is no post"
 msgstr ""
 
-#: inc/vk-admin/package/class-vk-admin.php:367
+#: inc/vk-admin/package/class-vk-admin.php:370
 msgid "Vektor WordPress Information"
 msgstr ""
 

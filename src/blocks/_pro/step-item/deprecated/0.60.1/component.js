@@ -2,14 +2,8 @@ import { InnerBlocks } from '@wordpress/block-editor';
 import ReactHtmlParser from 'react-html-parser';
 
 export const StepItem = (props) => {
-	let {
-		color,
-		style,
-		styleLine,
-		dotCaption,
-		dotNum,
-		faIcon,
-	} = props.attributes;
+	let { color, style, styleLine, dotCaption, dotNum, faIcon } =
+		props.attributes;
 	const for_ = props.for_;
 	const className = props.className;
 	const containerClass = ' vk_step_item';

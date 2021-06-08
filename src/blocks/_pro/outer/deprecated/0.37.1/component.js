@@ -159,13 +159,8 @@ export const OuterBlock0371 = (props) => {
 
 const GenerateMediaqueryCss = (props) => {
 	const { attributes, clientId } = props;
-	const {
-		bgImageMobile,
-		bgImageTablet,
-		bgImage,
-		bgColor,
-		opacity,
-	} = attributes;
+	const { bgImageMobile, bgImageTablet, bgImage, bgColor, opacity } =
+		attributes;
 
 	const mobileViewport = 'max-width: 575.98px';
 	const tabletViewport = 'min-width: 576px';

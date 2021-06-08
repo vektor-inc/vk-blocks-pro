@@ -127,21 +127,21 @@ const blockAttributes2 = {
 	clientId: {
 		type: 'string',
 		default: '',
-	}
-}
+	},
+};
 
 const blockAttributes3 = {
 	...blockAttributes2,
 	blockId: {
 		type: 'string',
-		default: ''
-	}
-}
+		default: '',
+	},
+};
 
 const deprecated = [
 	{
-		attributes:blockAttributes3,
-		save: save1_0_4
+		attributes: blockAttributes3,
+		save: save1_0_4,
 	},
 	{
 		attributes: blockAttributes2,

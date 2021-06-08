@@ -72,48 +72,48 @@ const blockAttributes2 = {
 	...blockAttributes,
 	titleColor: {
 		type: 'string',
-		default: ''
+		default: '',
 	},
 	contentColor: {
 		type: 'string',
-		default: ''
+		default: '',
 	},
 	url: {
 		type: 'string',
-		default: ''
+		default: '',
 	},
 	buttonColorCustom: {
 		type: 'string',
-		default: ''
+		default: '',
 	},
 	Image: {
 		type: 'string',
-		default: '{}'
+		default: '{}',
 	},
 	ImageBorderColor: {
 		type: 'string',
-		default: ''
+		default: '',
 	},
 	fontAwesomeIconBefore: {
 		type: 'string',
-		default: ''
+		default: '',
 	},
 	fontAwesomeIconAfter: {
 		type: 'string',
-		default: ''
-	}
+		default: '',
+	},
 };
 
 const blockAttributes3 = {
 	...blockAttributes2,
 	fontAwesomeIconBefore: {
 		type: 'string',
-		default: '<i class="fas fa-user"></i>'
+		default: '<i class="fas fa-user"></i>',
 	},
 	fontAwesomeIconAfter: {
 		type: 'string',
-		default: '<i class="fas fa-user"></i>'
-	}
+		default: '<i class="fas fa-user"></i>',
+	},
 };
 
 const deprecated = [

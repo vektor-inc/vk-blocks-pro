@@ -60,10 +60,10 @@ const HighlighterEdit = (props) => {
 		heightlightColor = activeFormat.attributes.data;
 	}
 	const heightlightColorStyle = {
-		'background': heightlightColor
+		background: heightlightColor,
 	};
 	const iconStyle = {
-		'width': '24px'
+		width: '24px',
 	};
 	const anchorRef = useAnchorRef({ ref: props.contentRef, value });
 	const [isAddingColor, setIsAddingColor] = useState(false);
@@ -73,9 +73,7 @@ const HighlighterEdit = (props) => {
 			<RichTextShortcut
 				type={shortcutType}
 				character={shortcutChar}
-				onUse={() =>
-					setIsAddingColor(true)
-				}
+				onUse={() => setIsAddingColor(true)}
 			/>
 			<RichTextToolbarButton
 				title={__('Highlighter', 'vk-blocks')}
@@ -86,9 +84,9 @@ const HighlighterEdit = (props) => {
 							heightlightColor,
 							value,
 							onChange,
-						})
+						});
 					}
-					setIsAddingColor(true)
+					setIsAddingColor(true);
 				}}
 				shortcutType={shortcutType}
 				shortcutCharacter={shortcutChar}
@@ -97,10 +95,8 @@ const HighlighterEdit = (props) => {
 				name={isActive ? 'text-color' : undefined}
 				icon={
 					<>
-						<Icon icon={Icon}
-							style={iconStyle}
-						/>
-						{ isActive && (
+						<Icon icon={Icon} style={iconStyle} />
+						{isActive && (
 							<span
 								className="format-library-text-color-button__indicator"
 								style={heightlightColorStyle}
@@ -109,14 +105,12 @@ const HighlighterEdit = (props) => {
 					</>
 				}
 			/>
-			{ isAddingColor && (
+			{isAddingColor && (
 				<URLPopover
 					value={value}
 					className="components-inline-color-popover"
 					anchorRef={anchorRef}
-					onClose={() =>
-						setIsAddingColor(false)
-					}
+					onClose={() => setIsAddingColor(false)}
 				>
 					<ColorPalette
 						value={heightlightColor}
@@ -127,13 +121,12 @@ const HighlighterEdit = (props) => {
 									color,
 									value,
 									onChange,
-								})
-							}
-							else {
+								});
+							} else {
 								// clear palette
 								onChange(removeFormat(value, name));
 							}
-							setIsAddingColor(false)
+							setIsAddingColor(false);
 						}}
 					/>
 				</URLPopover>

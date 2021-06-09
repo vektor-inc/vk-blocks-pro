@@ -113,7 +113,23 @@ export default function TOCEdit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody>
+				<PanelBody
+					title={__('Note on duplicating headings', 'vk-blocks')}
+					initialOpen={false}
+				>
+					<BaseControl>
+						<p>
+							{__(
+								'If you duplicate a heading, the table of contents block will not work properly, please reassign the ID.',
+								'vk-blocks'
+							)}
+						</p>
+					</BaseControl>
+				</PanelBody>
+				<PanelBody
+					title={__('Display type', 'vk-blocks')}
+					initialOpen={false}
+				>
 					<BaseControl
 						id={`vk-toc-style`}
 						label={__('Style', 'vk-blocks')}

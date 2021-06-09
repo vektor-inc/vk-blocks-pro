@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.4.2\n"
+"Project-Id-Version: VK Blocks Pro 1.4.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-06-02T00:54:23+00:00\n"
+"POT-Creation-Date: 2021-06-02T03:11:38+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: vk-blocks\n"
@@ -2284,11 +2284,11 @@ msgstr ""
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
-#: inc/vk-admin/package/class-vk-admin.php:313
+#: inc/vk-admin/package/class-vk-admin.php:316
 msgid "Sorry, there is no post"
 msgstr ""
 
-#: inc/vk-admin/package/class-vk-admin.php:367
+#: inc/vk-admin/package/class-vk-admin.php:370
 msgid "Vektor WordPress Information"
 msgstr ""
 

@@ -862,6 +862,14 @@ msgstr "ステップ"
 msgid "Table of Contents"
 msgstr "目次"
 
+#: src/blocks/_pro/table-of-contents-new/edit.js:118
+msgid "Note on duplicating headings"
+msgstr "見出し複製時の注意"
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:130
+msgid "If you duplicate a heading, the table of contents block will not work properly, please reassign the ID."
+msgstr "見出しを複製すると目次ブロックが適切に動作しません。IDを振り直してください。"
+
 #: src/blocks/_pro/table-of-contents-new/edit.js:134
 msgid "No frame"
 msgstr "枠無し"

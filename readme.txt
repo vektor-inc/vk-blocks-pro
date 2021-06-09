@@ -64,6 +64,7 @@ e.g.
 == Changelog ==
 
 [ Improvement ][ highlighter ] setting color in toolbar
+[ Specification Change ][ Table of Contents ] Add notice about copying heading.
 
 = 1.4.6 =
 [ Specification Change ] Update VK Admin Library.

@@ -45,7 +45,7 @@ const renderTitle = (level, contents, tStyle, headingStyle) => {
 
 export default function save(props) {
 	const { attributes } = props;
-	let {
+	const {
 		level,
 		align,
 		title,

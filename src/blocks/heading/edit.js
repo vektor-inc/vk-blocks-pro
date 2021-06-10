@@ -110,21 +110,39 @@ export default function HeaddingEdit(props) {
 	const containerClass = `vk_heading vk_heading-style-${titleStyle}`;
 
 	const cStyle = {
-		marginBottom: outerMarginBottom ? outerMarginBottom + `rem` : undefined,
+		marginBottom:
+			outerMarginBottom !== null && outerMarginBottom !== undefined
+				? outerMarginBottom + `rem`
+				: undefined,
 	};
 
 	const tStyle = {
-		color: titleColor ? titleColor : undefined,
-		fontSize: titleSize ? titleSize + 'rem' : undefined,
-		marginBottom: titleMarginBottom ? titleMarginBottom + 'rem' : undefined,
-		textAlign: align ? align : undefined,
+		color:
+			titleColor !== null && titleColor !== undefined
+				? titleColor
+				: undefined,
+		fontSize:
+			titleSize !== null && titleSize !== undefined
+				? titleSize + 'rem'
+				: undefined,
+		marginBottom:
+			titleMarginBottom !== null && titleMarginBottom !== undefined
+				? titleMarginBottom + 'rem'
+				: undefined,
+		textAlign: align !== null && align !== undefined ? align : undefined,
 	};
 
 	const headingStyle = `vk_heading_title vk_heading_title-style-${titleStyle}`;
 	const subTextStyle = {
-		color: subTextColor ? subTextColor : undefined,
-		fontSize: subTextSize ? subTextSize + 'rem' : undefined,
-		textAlign: align ? align : undefined,
+		color:
+			subTextColor !== null && subTextColor !== undefined
+				? subTextColor
+				: undefined,
+		fontSize:
+			subTextSize !== null && subTextSize !== undefined
+				? subTextSize + 'rem'
+				: undefined,
+		textAlign: align !== null && align !== undefined ? align : undefined,
 	};
 	const subTextClass = `vk_heading_subtext vk_heading_subtext-style-${titleStyle}`;
 

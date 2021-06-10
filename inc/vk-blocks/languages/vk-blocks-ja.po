@@ -35,6 +35,10 @@ msgstr "アコーディオンタイトル"
 msgid "Accordion"
 msgstr "アコーディオン"
 
+#: src/blocks/_pro/accordion/index.js:20
+msgid "Collapses and hides content when the content is long."
+msgstr "コンテンツが長い時にコンテンツを折りたたんで隠して表示します。"
+
 #: src/blocks/_pro/accordion/index.js:23
 msgid "No background color"
 msgstr "背景なし"
@@ -150,6 +154,10 @@ msgstr "遅い"
 #: src/blocks/_pro/animation/index.js:20
 msgid "Animation"
 msgstr "アニメーション"
+
+#: src/blocks/_pro/animation/index.js:22
+msgid "Add animation to elements when scrolling the page."
+msgstr "ページをスクロールした時に要素に動きを加えます。"
 
 #: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:149
 #: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:151
@@ -280,6 +288,10 @@ msgstr "デバイス毎の高さ"
 msgid "Card"
 msgstr "カード"
 
+#: src/blocks/_pro/card/index.js:27
+msgid "A card where you can place images, headings, text, and links."
+msgstr "画像、見出し、テキスト、リンクが配置できるカードです。"
+
 #: src/blocks/_pro/child-page/edit.js:27
 msgid "Current page"
 msgstr "現在のページ"
@@ -300,6 +312,12 @@ msgstr "この投稿を除く"
 msgid "Child page list"
 msgstr "子ページリスト"
 
+#: src/blocks/_pro/child-page/index.js:20
+msgid ""
+"When a parent page is specified, a list of its child pages will be "
+"displayed."
+msgstr "親となる固定ページを指定するとその子ページの一覧を表示します。"
+
 #: src/blocks/_pro/grid-column-item/index.js:18
 msgid "Grid Column Item"
 msgstr "グリッドカラムアイテム"
@@ -311,6 +329,10 @@ msgstr "カラムレイアウト"
 #: src/blocks/_pro/grid-column/index.js:17
 msgid "Grid Column"
 msgstr "グリッドカラム"
+
+#: src/blocks/_pro/grid-column/index.js:19
+msgid "Set the number of columns to be displayed for each screen size."
+msgstr "画面サイズ毎にカラム数を設定して表示させます。"
 
 #: src/blocks/_pro/icon-card-item/deprecated/0.0.0/component.js:55
 #: src/blocks/_pro/icon-card-item/deprecated/0.0.1/component.js:70
@@ -389,6 +411,10 @@ msgstr "テキスト"
 #: src/blocks/_pro/icon-card/index.js:20
 msgid "Icon Card"
 msgstr "アイコンカード"
+
+#: src/blocks/_pro/icon-card/index.js:22
+msgid "Display card with icons, headings, text, and links."
+msgstr "アイコン、見出し、テキスト、リンクを設定してカードを表示します。"
 
 #: src/blocks/_pro/outer/edit.js:182 src/blocks/_pro/slider-item/edit.js:122
 msgid "Background Setting"
@@ -633,6 +659,12 @@ msgstr "vw"
 msgid "Outer"
 msgstr "Outer"
 
+#: src/blocks/_pro/outer/index.js:22
+msgid ""
+"Set the background image, color, and border to show the layout and "
+"divisions."
+msgstr "背景の画像や色、枠線の設定しレイアウトや区切りを表示します。"
+
 #. Filter by %s
 #: src/blocks/_pro/post-list/edit.js:173
 msgid "Filter by %s"
@@ -682,6 +714,12 @@ msgstr "オフセット数"
 msgid "Post list"
 msgstr "投稿リスト"
 
+#: src/blocks/_pro/post-list/index.js:22
+msgid ""
+"Displays the list of posts by setting the post type, classification, and "
+"number of posts to display."
+msgstr "投稿タイプ、分類、表示件数が設定して投稿リストを表示します。"
+
 #: src/blocks/_pro/select-post-list-item/edit.js:102
 msgid "Submit"
 msgstr ""
@@ -706,6 +744,10 @@ msgstr "選択投稿リストアイテム"
 #: src/blocks/_pro/select-post-list/index.js:21
 msgid "Selected Post List"
 msgstr "選択投稿リスト"
+
+#: src/blocks/_pro/select-post-list/index.js:23
+msgid "Displays an arbitrarily specified page with the layout of the posting list."
+msgstr "任意に指定したページを投稿リストのレイアウトで表示します。"
 
 #: src/blocks/_pro/slider-item/edit.js:108
 msgid "Vertical align"
@@ -796,8 +838,10 @@ msgid "Slider"
 msgstr "スライダー"
 
 #: src/blocks/_pro/slider/index.js:23
-msgid "Slider is do not move in edit screen."
-msgstr "スライダーは編集画面では動きません。公開画面でプレビューしてください。"
+msgid ""
+"This slider allows you to place various items.Slider is do not move in edit "
+"screen."
+msgstr "様々なアイテムを配置できるスライダーです。編集画面では動かないので公開画面でプレビューしてください。"
 
 #: src/blocks/_pro/step-item/edit.js:110
 #: src/blocks/_pro/table-of-contents-new/edit.js:130
@@ -855,6 +899,10 @@ msgstr "ステップの開始番号"
 msgid "Step"
 msgstr "ステップ"
 
+#: src/blocks/_pro/step/index.js:21
+msgid "Set and display step marks, which are useful when explaining the order."
+msgstr "順番を説明する時に便利でステップマークを設定し表示します。"
+
 #: src/blocks/_pro/table-of-contents-new/deprecated/0.59.1/save.js:19
 #: src/blocks/_pro/table-of-contents-new/edit.js:163
 #: src/blocks/_pro/table-of-contents-new/index.js:17
@@ -886,6 +934,12 @@ msgstr "OPEN"
 msgid "CLOSE"
 msgstr "CLOSE"
 
+#: src/blocks/_pro/table-of-contents-new/index.js:19
+msgid ""
+"This is a table of contents that is automatically generated according to "
+"the headings when added."
+msgstr "追加すると見出しに合わせて自動で生成される目次です。"
+
 #: src/blocks/_pro/timeline-item/edit.js:46
 msgid "label"
 msgstr "ラベル"
@@ -897,6 +951,12 @@ msgstr "タイムライン要素"
 #: src/blocks/_pro/timeline/index.js:19
 msgid "Timeline"
 msgstr "タイムライン"
+
+#: src/blocks/_pro/timeline/index.js:21
+msgid ""
+"Displays a simple schedule and other information that is useful for "
+"explaining the order."
+msgstr "順番を説明する時に便利でシンプルなスケジュールなどを表示します。"
 
 #: src/blocks/alert/edit.js:19 src/blocks/heading/edit.js:210
 msgid "Style Settings"
@@ -925,6 +985,10 @@ msgstr "Danger"
 #: src/blocks/alert/index.js:19
 msgid "Alert"
 msgstr "アラート"
+
+#: src/blocks/alert/index.js:21
+msgid "A colored box with four statuses, including annotations and alerts."
+msgstr "注釈や注意など4つのステータスがある色付きのボックスです。"
 
 #: src/blocks/balloon/edit.js:125
 msgid " Image Border"
@@ -1047,6 +1111,10 @@ msgstr "アイコンの名前"
 msgid "Ballon"
 msgstr "吹き出し"
 
+#: src/blocks/balloon/index.js:26
+msgid "These speech balloons are perfect for recreating conversations."
+msgstr "会話の再現などに最適な吹き出しです。"
+
 #: src/blocks/border-box/deprecated/0.0.0/save.js:24
 #: src/blocks/border-box/deprecated/0.0.1/save.js:25
 #: src/blocks/border-box/edit.js:25
@@ -1111,6 +1179,10 @@ msgstr "背景色"
 #: src/blocks/border-box/index.js:19
 msgid "Border Box"
 msgstr "枠線ボックス"
+
+#: src/blocks/border-box/index.js:21
+msgid "This is a border box where you can place headings to attract attention."
+msgstr "見出しを配置でき注目されやすい枠線ボックスです。"
 
 #: src/blocks/border-box/index.js:40
 msgid "Solid Angle Tab"
@@ -1237,6 +1309,10 @@ msgstr "ボタンサイズ:"
 msgid "Large"
 msgstr "大"
 
+#: src/blocks/button/index.js:20
+msgid "A button link that can display icons before and after."
+msgstr "前後にアイコンを表示できるボタンリンクです。"
+
 #: src/blocks/faq/edit.js:14 src/blocks/faq2/edit.js:17
 msgid ""
 "If you want to be collapsing this block, you can set it at Setting > VK "
@@ -1258,6 +1334,10 @@ msgstr "質問を入力してください。"
 #: src/blocks/faq/index.js:22
 msgid "Classic FAQ"
 msgstr "旧 FAQ"
+
+#: src/blocks/faq/index.js:24
+msgid "Displays a combination of questions and answers."
+msgstr "質問と回答を組み合わせて表示します。"
 
 #: src/blocks/faq/index.js:32 src/blocks/faq2/index.js:27
 msgid "Bgfill Circle"
@@ -1295,6 +1375,12 @@ msgstr "FAQ 質問"
 msgid "New FAQ"
 msgstr "新 FAQ"
 
+#: src/blocks/faq2/index.js:19
+msgid ""
+"It displays a combination of questions and answers. You can freely add "
+"blocks to the question area as well."
+msgstr "質問と回答を組み合わせて表示します。質問エリアにも自由にブロックを追加できます。"
+
 #: src/blocks/flow/edit.js:20
 msgid "Display of arrow"
 msgstr "矢印の表示"
@@ -1318,6 +1404,10 @@ msgstr "説明を入力"
 #: src/blocks/flow/index.js:19
 msgid "Flow"
 msgstr "フロー"
+
+#: src/blocks/flow/index.js:21
+msgid "Displays a sequential description in time series."
+msgstr "時系列で順を追った説明を表示します。"
 
 #: src/blocks/heading/deprecated/0.24.1/component.js:117
 #: src/blocks/heading/deprecated/0.24.4/component.js:80
@@ -1417,6 +1507,12 @@ msgstr "見出し %d"
 msgid "Heading"
 msgstr "見出し"
 
+#: src/blocks/heading/index.js:22
+msgid ""
+"This is a heading that allows you to set text size, subtext, icon, and "
+"margin."
+msgstr "文字サイズ、サブテキスト、アイコン、余白が設定できる見出しです。"
+
 #: src/blocks/page-content/edit.js:10 src/blocks/staff/edit.js:215
 msgid "Unspecified"
 msgstr "指定しない"
@@ -1432,6 +1528,10 @@ msgstr "ページを選択"
 #: src/blocks/page-content/index.js:12
 msgid "Page Content"
 msgstr "固定ページ本文"
+
+#: src/blocks/page-content/index.js:14
+msgid "Displays the body content of the specified parent page."
+msgstr "指定した基準ページの本文内容を表示します。"
 
 #: src/blocks/pr-blocks/edit.js:101
 msgid "PR Block1 Setting"
@@ -1480,6 +1580,10 @@ msgstr "PR 画像 3"
 #: src/blocks/pr-blocks/index.js:24
 msgid "PR Blocks"
 msgstr "PR Blocks"
+
+#: src/blocks/pr-blocks/index.js:26
+msgid "This is a PR block where you can place images and icon."
+msgstr "画像、アイコンの配置ができるPRブロックです。"
 
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:152
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:134
@@ -1551,6 +1655,10 @@ msgstr "ボタン設定"
 msgid "PR Content"
 msgstr "PR Content"
 
+#: src/blocks/pr-content/index.js:28
+msgid "This is PR content where you can place images, headlines, text, and buttons."
+msgstr "画像、見出し、テキスト、ボタンが配置できるPRコンテンツです。"
+
 #: src/blocks/pr-content/mediaUpload.js:120
 msgid "Select Image"
 msgstr "画像を選択"
@@ -1574,6 +1682,10 @@ msgstr "デバイス毎の高さ"
 #: src/blocks/spacer/index.js:24
 msgid "Responsive Spacer"
 msgstr "レスポンシブスペーサー"
+
+#: src/blocks/spacer/index.js:26
+msgid "Use responsive spacers to get the margins right."
+msgstr "レスポンシブに対応したスペーサーで余白を適切に取ります。"
 
 #: src/blocks/staff/deprecated/0.58/component.js:50
 #: src/blocks/staff/edit.js:240
@@ -1643,6 +1755,12 @@ msgstr "画像 左"
 #: src/blocks/staff/index.js:33
 msgid "Staff"
 msgstr "スタッフ"
+
+#: src/blocks/staff/index.js:35
+msgid ""
+"Used for staff introduction, company introduction, school introduction, "
+"menu, etc."
+msgstr "スタッフ紹介、会社紹介、スクール紹介、メニューなどで利用します。"
 
 #: src/components/column-layout-control/index.js:20
 msgid "Card (Image Round)"

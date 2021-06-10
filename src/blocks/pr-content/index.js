@@ -25,6 +25,7 @@ export { metadata, name };
 export const settings = {
 	title: __('PR Content', 'vk-blocks'),
 	icon: <Icon />,
+	description: __('This is PR content where you can place images, headlines, text, and buttons.', 'vk-blocks'),
 	example: {
 		attributes: {
 			title,

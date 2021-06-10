@@ -19,6 +19,7 @@ export { metadata, name };
 export const settings = {
 	title: __('Heading', 'vk-blocks'),
 	icon: <Icon />,
+	description: __('This is a heading that allows you to set text size, subtext, icon, and margin.', 'vk-blocks'),
 	category: 'vk-blocks-cat',
 	example: {
 		attributes: {

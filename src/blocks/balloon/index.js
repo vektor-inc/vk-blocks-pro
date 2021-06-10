@@ -23,6 +23,7 @@ export { metadata, name };
 export const settings = {
 	title: __('Ballon', 'vk-blocks'),
 	icon: <Icon />,
+	description: __('These speech balloons are perfect for recreating conversations.', 'vk-blocks'),
 	example: {
 		attributes: {
 			balloonName: iconName,

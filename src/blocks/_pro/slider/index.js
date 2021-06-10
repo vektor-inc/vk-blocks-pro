@@ -20,7 +20,7 @@ export { metadata, name };
 export const settings = {
 	title: __('Slider', 'vk-blocks'),
 	icon: <Icon />,
-	description: __('Slider is do not move in edit screen.', 'vk-blocks'),
+	description: __('This slider allows you to place various items.Slider is do not move in edit screen.', 'vk-blocks'),
 	edit,
 	save,
 	deprecated,

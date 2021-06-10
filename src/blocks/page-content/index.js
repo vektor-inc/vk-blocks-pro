@@ -11,5 +11,6 @@ export { metadata, name };
 export const settings = {
 	title: __('Page Content', 'vk-blocks'),
 	icon: <Icon />,
+	description: __('Displays the body content of the specified parent page.', 'vk-blocks'),
 	edit,
 };

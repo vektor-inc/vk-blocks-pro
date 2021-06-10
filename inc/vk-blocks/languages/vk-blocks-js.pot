@@ -15,27 +15,31 @@ msgstr ""
 msgid "Accordion"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:23
+#: src/blocks/_pro/accordion/index.js:20
+msgid "Collapses and hides content when the content is long."
+msgstr ""
+
+#: src/blocks/_pro/accordion/index.js:24
 msgid "No background color"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:28
+#: src/blocks/_pro/accordion/index.js:29
 msgid "No background color / Border"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:32
+#: src/blocks/_pro/accordion/index.js:33
 msgid "Background color"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:36
+#: src/blocks/_pro/accordion/index.js:37
 msgid "Background color / Border"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:40
+#: src/blocks/_pro/accordion/index.js:41
 msgid "Background color / Rounded "
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:44
+#: src/blocks/_pro/accordion/index.js:45
 msgid "Background color / Rounded / Border"
 msgstr ""
 
@@ -60,8 +64,8 @@ msgstr ""
 #: src/blocks/_pro/slider/edit.js:110
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95
-#: src/blocks/faq/index.js:27
-#: src/blocks/faq2/index.js:22
+#: src/blocks/faq/index.js:28
+#: src/blocks/faq2/index.js:23
 #: src/extensions/common/inline-font-size/index.js:52
 msgid "Normal"
 msgstr ""
@@ -135,6 +139,10 @@ msgstr ""
 
 #: src/blocks/_pro/animation/index.js:20
 msgid "Animation"
+msgstr ""
+
+#: src/blocks/_pro/animation/index.js:22
+msgid "Add animation to elements when scrolling the page."
 msgstr ""
 
 #: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:149
@@ -267,6 +275,10 @@ msgstr ""
 msgid "Card"
 msgstr ""
 
+#: src/blocks/_pro/card/index.js:27
+msgid "A card where you can place images, headings, text, and links."
+msgstr ""
+
 #: src/blocks/_pro/child-page/edit.js:27
 msgid "Current page"
 msgstr ""
@@ -289,8 +301,19 @@ msgstr ""
 msgid "Child page list"
 msgstr ""
 
+#: src/blocks/_pro/child-page/index.js:20
+msgid ""
+"When a parent page is specified, a list of its child pages will be "
+"displayed."
+msgstr ""
+
 #: src/blocks/_pro/grid-column-item/index.js:18
 msgid "Grid Column Item"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/index.js:20
+#: src/blocks/_pro/grid-column/index.js:19
+msgid "Set the number of columns to be displayed for each screen size."
 msgstr ""
 
 #: src/blocks/_pro/grid-column/edit.js:47
@@ -385,6 +408,10 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card/index.js:20
 msgid "Icon Card"
+msgstr ""
+
+#: src/blocks/_pro/icon-card/index.js:22
+msgid "Display card with icons, headings, text, and links."
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:182
@@ -645,6 +672,12 @@ msgstr ""
 msgid "Outer"
 msgstr ""
 
+#: src/blocks/_pro/outer/index.js:22
+msgid ""
+"Set the background image, color, and border to show the layout and "
+"divisions."
+msgstr ""
+
 #: src/blocks/_pro/post-list/edit.js:174
 #. Filter by %s
 msgid "Filter by %s"
@@ -694,6 +727,12 @@ msgstr ""
 msgid "Post list"
 msgstr ""
 
+#: src/blocks/_pro/post-list/index.js:22
+msgid ""
+"Displays the list of posts by setting the post type, classification, and "
+"number of posts to display."
+msgstr ""
+
 #: src/blocks/_pro/select-post-list-item/edit.js:102
 msgid "Submit"
 msgstr ""
@@ -717,6 +756,10 @@ msgstr ""
 
 #: src/blocks/_pro/select-post-list/index.js:21
 msgid "Selected Post List"
+msgstr ""
+
+#: src/blocks/_pro/select-post-list/index.js:23
+msgid "Displays an arbitrarily specified page with the layout of the posting list."
 msgstr ""
 
 #: src/blocks/_pro/slider-item/edit.js:108
@@ -808,13 +851,15 @@ msgid "Slider"
 msgstr ""
 
 #: src/blocks/_pro/slider/index.js:23
-msgid "Slider is do not move in edit screen."
+msgid ""
+"This slider allows you to place various items.Slider is do not move in edit "
+"screen."
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:110
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
 #: src/blocks/_pro/timeline-item/edit.js:91
-#: src/blocks/heading/edit.js:219
+#: src/blocks/heading/edit.js:237
 #: src/blocks/staff/edit.js:113
 #: src/extensions/core/heading/style.js:30
 #: src/extensions/core/list/style.js:102
@@ -864,6 +909,10 @@ msgstr ""
 msgid "Step"
 msgstr ""
 
+#: src/blocks/_pro/step/index.js:21
+msgid "Set and display step marks, which are useful when explaining the order."
+msgstr ""
+
 #: src/blocks/_pro/table-of-contents-new/deprecated/0.59.1/save.js:19
 #: src/blocks/_pro/table-of-contents-new/edit.js:178
 #: src/blocks/_pro/table-of-contents-new/index.js:17
@@ -902,6 +951,12 @@ msgstr ""
 msgid "CLOSE"
 msgstr ""
 
+#: src/blocks/_pro/table-of-contents-new/index.js:19
+msgid ""
+"This is a table of contents that is automatically generated according to "
+"the headings when added."
+msgstr ""
+
 #: src/blocks/_pro/timeline-item/edit.js:46
 msgid "label"
 msgstr ""
@@ -914,8 +969,14 @@ msgstr ""
 msgid "Timeline"
 msgstr ""
 
+#: src/blocks/_pro/timeline/index.js:21
+msgid ""
+"Displays a simple schedule and other information that is useful for "
+"explaining the order."
+msgstr ""
+
 #: src/blocks/alert/edit.js:19
-#: src/blocks/heading/edit.js:210
+#: src/blocks/heading/edit.js:228
 msgid "Style Settings"
 msgstr ""
 
@@ -951,6 +1012,10 @@ msgstr ""
 msgid "Alert"
 msgstr ""
 
+#: src/blocks/alert/index.js:21
+msgid "A colored box with four statuses, including annotations and alerts."
+msgstr ""
+
 #: src/blocks/balloon/edit.js:125
 msgid " Image Border"
 msgstr ""
@@ -982,7 +1047,7 @@ msgid "Balloon setting"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:202
-#: src/blocks/heading/edit.js:325
+#: src/blocks/heading/edit.js:343
 msgid "Position"
 msgstr ""
 
@@ -1076,6 +1141,10 @@ msgstr ""
 msgid "Ballon"
 msgstr ""
 
+#: src/blocks/balloon/index.js:26
+msgid "These speech balloons are perfect for recreating conversations."
+msgstr ""
+
 #: src/blocks/border-box/deprecated/0.0.0/save.js:24
 #: src/blocks/border-box/deprecated/0.0.1/save.js:25
 #: src/blocks/border-box/edit.js:25
@@ -1140,27 +1209,31 @@ msgstr ""
 msgid "Border Box"
 msgstr ""
 
-#: src/blocks/border-box/index.js:40
+#: src/blocks/border-box/index.js:21
+msgid "This is a border box where you can place headings to attract attention."
+msgstr ""
+
+#: src/blocks/border-box/index.js:41
 msgid "Solid Angle Tab"
 msgstr ""
 
-#: src/blocks/border-box/index.js:45
+#: src/blocks/border-box/index.js:46
 msgid "Solid Round Tab"
 msgstr ""
 
-#: src/blocks/border-box/index.js:49
+#: src/blocks/border-box/index.js:50
 msgid "Solid Angle Banner"
 msgstr ""
 
-#: src/blocks/border-box/index.js:53
+#: src/blocks/border-box/index.js:54
 msgid "Solid Angle Onborder"
 msgstr ""
 
-#: src/blocks/border-box/index.js:57
+#: src/blocks/border-box/index.js:58
 msgid "Solid Angle Inner"
 msgstr ""
 
-#: src/blocks/border-box/index.js:61
+#: src/blocks/border-box/index.js:62
 msgid "Solid Angle iconFeature"
 msgstr ""
 
@@ -1234,13 +1307,13 @@ msgid ""
 msgstr ""
 
 #: src/blocks/button/edit.js:262
-#: src/blocks/heading/edit.js:292
+#: src/blocks/heading/edit.js:310
 #: src/blocks/pr-content/edit.js:194
 msgid "Before text"
 msgstr ""
 
 #: src/blocks/button/edit.js:271
-#: src/blocks/heading/edit.js:301
+#: src/blocks/heading/edit.js:319
 #: src/blocks/pr-content/edit.js:206
 msgid "After text"
 msgstr ""
@@ -1269,6 +1342,10 @@ msgstr ""
 msgid "Large"
 msgstr ""
 
+#: src/blocks/button/index.js:20
+msgid "A button link that can display icons before and after."
+msgstr ""
+
 #: src/blocks/faq/edit.js:14
 #: src/blocks/faq2/edit.js:17
 msgid ""
@@ -1294,33 +1371,37 @@ msgstr ""
 msgid "Classic FAQ"
 msgstr ""
 
-#: src/blocks/faq/index.js:32
-#: src/blocks/faq2/index.js:27
+#: src/blocks/faq/index.js:24
+msgid "Displays a combination of questions and answers."
+msgstr ""
+
+#: src/blocks/faq/index.js:33
+#: src/blocks/faq2/index.js:28
 msgid "Bgfill Circle"
 msgstr ""
 
-#: src/blocks/faq/index.js:36
-#: src/blocks/faq2/index.js:31
+#: src/blocks/faq/index.js:37
+#: src/blocks/faq2/index.js:32
 msgid "Bgfill Square"
 msgstr ""
 
-#: src/blocks/faq/index.js:40
-#: src/blocks/faq2/index.js:35
+#: src/blocks/faq/index.js:41
+#: src/blocks/faq2/index.js:36
 msgid "Bgfill Rounded"
 msgstr ""
 
-#: src/blocks/faq/index.js:44
-#: src/blocks/faq2/index.js:39
+#: src/blocks/faq/index.js:45
+#: src/blocks/faq2/index.js:40
 msgid "Border Circle"
 msgstr ""
 
-#: src/blocks/faq/index.js:48
-#: src/blocks/faq2/index.js:43
+#: src/blocks/faq/index.js:49
+#: src/blocks/faq2/index.js:44
 msgid "Border Square"
 msgstr ""
 
-#: src/blocks/faq/index.js:52
-#: src/blocks/faq2/index.js:47
+#: src/blocks/faq/index.js:53
+#: src/blocks/faq2/index.js:48
 msgid "Border Rounded"
 msgstr ""
 
@@ -1334,6 +1415,12 @@ msgstr ""
 
 #: src/blocks/faq2/index.js:17
 msgid "New FAQ"
+msgstr ""
+
+#: src/blocks/faq2/index.js:19
+msgid ""
+"It displays a combination of questions and answers. You can freely add "
+"blocks to the question area as well."
 msgstr ""
 
 #: src/blocks/flow/edit.js:20
@@ -1360,6 +1447,10 @@ msgstr ""
 msgid "Flow"
 msgstr ""
 
+#: src/blocks/flow/index.js:21
+msgid "Displays a sequential description in time series."
+msgstr ""
+
 #: src/blocks/heading/deprecated/0.24.1/component.js:117
 #: src/blocks/heading/deprecated/0.24.4/component.js:80
 #: src/blocks/heading/deprecated/0.24.5/component.js:117
@@ -1370,7 +1461,7 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:152
 #: src/blocks/heading/deprecated/0.40.1/component.js:152
 #: src/blocks/heading/deprecated/0.60.1/component.js:152
-#: src/blocks/heading/edit.js:184
+#: src/blocks/heading/edit.js:202
 msgid "Input sub text…"
 msgstr ""
 
@@ -1384,60 +1475,60 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:137
 #: src/blocks/heading/deprecated/0.40.1/component.js:137
 #: src/blocks/heading/deprecated/0.60.1/component.js:137
-#: src/blocks/heading/edit.js:169
+#: src/blocks/heading/edit.js:187
 msgid "Input title…"
 msgstr ""
 
-#: src/blocks/heading/edit.js:212
+#: src/blocks/heading/edit.js:230
 msgid "Heading style"
 msgstr ""
 
-#: src/blocks/heading/edit.js:223
+#: src/blocks/heading/edit.js:241
 #: src/extensions/core/heading/style.js:35
 msgid "Plain"
 msgstr ""
 
-#: src/blocks/heading/edit.js:229
+#: src/blocks/heading/edit.js:247
 msgid "Margin Setting"
 msgstr ""
 
-#: src/blocks/heading/edit.js:231
+#: src/blocks/heading/edit.js:249
 msgid "Margin between Heading and sub text (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:248
+#: src/blocks/heading/edit.js:266
 msgid "Margin bottom size of after this block (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:265
+#: src/blocks/heading/edit.js:283
 msgid "Heading Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:277
+#: src/blocks/heading/edit.js:295
 msgid "Text Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:289
+#: src/blocks/heading/edit.js:307
 msgid "Font Awesome Icon Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:310
+#: src/blocks/heading/edit.js:328
 msgid "Icon Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:323
+#: src/blocks/heading/edit.js:341
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:329
+#: src/blocks/heading/edit.js:347
 msgid "Display"
 msgstr ""
 
-#: src/blocks/heading/edit.js:333
+#: src/blocks/heading/edit.js:351
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/heading/edit.js:341
+#: src/blocks/heading/edit.js:359
 msgid "Text size (rem)"
 msgstr ""
 
@@ -1452,6 +1543,12 @@ msgstr ""
 
 #: src/blocks/heading/index.js:20
 msgid "Heading"
+msgstr ""
+
+#: src/blocks/heading/index.js:22
+msgid ""
+"This is a heading that allows you to set text size, subtext, icon, and "
+"margin."
 msgstr ""
 
 #: src/blocks/page-content/edit.js:10
@@ -1469,6 +1566,10 @@ msgstr ""
 
 #: src/blocks/page-content/index.js:12
 msgid "Page Content"
+msgstr ""
+
+#: src/blocks/page-content/index.js:14
+msgid "Displays the body content of the specified parent page."
 msgstr ""
 
 #: src/blocks/pr-blocks/edit.js:101
@@ -1517,6 +1618,10 @@ msgstr ""
 
 #: src/blocks/pr-blocks/index.js:24
 msgid "PR Blocks"
+msgstr ""
+
+#: src/blocks/pr-blocks/index.js:26
+msgid "This is a PR block where you can place images and icon."
 msgstr ""
 
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:152
@@ -1589,6 +1694,10 @@ msgstr ""
 msgid "PR Content"
 msgstr ""
 
+#: src/blocks/pr-content/index.js:28
+msgid "This is PR content where you can place images, headlines, text, and buttons."
+msgstr ""
+
 #: src/blocks/pr-content/mediaUpload.js:120
 msgid "Select Image"
 msgstr ""
@@ -1611,6 +1720,10 @@ msgstr ""
 
 #: src/blocks/spacer/index.js:24
 msgid "Responsive Spacer"
+msgstr ""
+
+#: src/blocks/spacer/index.js:26
+msgid "Use responsive spacers to get the margins right."
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:50
@@ -1680,6 +1793,12 @@ msgstr ""
 
 #: src/blocks/staff/index.js:33
 msgid "Staff"
+msgstr ""
+
+#: src/blocks/staff/index.js:35
+msgid ""
+"Used for staff introduction, company introduction, school introduction, "
+"menu, etc."
 msgstr ""
 
 #: src/components/column-layout-control/index.js:20
@@ -1835,12 +1954,8 @@ msgid ""
 "the next, hide for the that group block."
 msgstr ""
 
-#: src/extensions/common/highlighter/index.js:116
+#: src/extensions/common/highlighter/index.js:139
 msgid "Highlighter"
-msgstr ""
-
-#: src/extensions/common/highlighter/index.js:98
-msgid "Highlight Color"
 msgstr ""
 
 #: src/extensions/common/inline-font-size/index.js:101

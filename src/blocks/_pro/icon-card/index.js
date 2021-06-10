@@ -19,6 +19,7 @@ export { metadata, name };
 export const settings = {
 	title: __('Icon Card', 'vk-blocks'),
 	icon: <Icon />,
+	description: __('Display card with icons, headings, text, and links.', 'vk-blocks'),
 	example: {
 		attributes: {
 			col_xs: 1,

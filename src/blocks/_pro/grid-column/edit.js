@@ -1,4 +1,3 @@
-import toNumber from '@vkblocks/utils/to-number';
 import { ColumnLayout } from '@vkblocks/components/column-layout';
 import AdvancedUnitControl from '@vkblocks/components/advanced-unit-control';
 import { __ } from '@wordpress/i18n';
@@ -8,7 +7,7 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 import { select, dispatch } from '@wordpress/data';
-import { PanelBody, RangeControl, Button } from '@wordpress/components';
+import { PanelBody, RangeControl } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 
 export default function GridColumnEdit(props) {

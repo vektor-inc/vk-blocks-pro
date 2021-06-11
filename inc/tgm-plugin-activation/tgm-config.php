@@ -81,14 +81,14 @@ function vkb_register_required_plugins() {
 			'oops'                            => __( 'Something went wrong with the plugin API.', 'vk-blocks' ),
 			// translators:
 			'notice_can_install_required'     => _n_noop(
-				'This theme requires the following plugin: %1$s.',
-				'This theme requires the following plugins: %1$s.',
+				'This plugin requires the following plugin: %1$s.',
+				'This plugin requires the following plugins: %1$s.',
 				'vk-blocks'
 			),
 			// translators: %s = plugin name.
 			'notice_can_install_recommended'  => _n_noop(
-				'This theme recommends the following plugin: %1$s.<br>Many additional functions are available for free.',
-				'This theme recommends the following plugins: %1$s.<br>Many additional functions are available for free.',
+				'This plugin recommends the following plugin: %1$s.<br>Many additional functions are available for free.',
+				'This plugin recommends the following plugins: %1$s.<br>Many additional functions are available for free.',
 				'vk-blocks'
 			),
 			// translators: %s = plugin name.
@@ -99,8 +99,8 @@ function vkb_register_required_plugins() {
 			),
 			// translators: %s = plugin name.
 			'notice_ask_to_update'            => _n_noop(
-				'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.',
-				'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.',
+				'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this plugin: %1$s.',
+				'The following plugins need to be updated to their latest version to ensure maximum compatibility with this plugin: %1$s.',
 				'vk-blocks'
 			),
 			// translators: %s = plugin name.

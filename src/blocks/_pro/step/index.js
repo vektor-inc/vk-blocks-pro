@@ -18,7 +18,10 @@ export { metadata, name };
 export const settings = {
 	title: __('Step', 'vk-blocks'), // Block title.
 	icon: <Icon />, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
-	description: __('Set and display step marks, which are useful when explaining the order.', 'vk-blocks'),
+	description: __(
+		'Set and display step marks, which are useful when explaining the order.',
+		'vk-blocks'
+	),
 	example: {
 		attributes: {
 			firstDotNum: 1,

@@ -17,7 +17,10 @@ export { metadata, name };
 export const settings = {
 	title: __('Button', 'vk-blocks'),
 	icon: <Icon />,
-	description: __('A button link that can display icons before and after.', 'vk-blocks'),
+	description: __(
+		'A button link that can display icons before and after.',
+		'vk-blocks'
+	),
 	example: {
 		attributes: {
 			content: iconName,

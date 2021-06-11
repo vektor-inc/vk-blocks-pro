@@ -17,7 +17,10 @@ export { metadata, name };
 export const settings = {
 	title: __('Accordion', 'vk-blocks'),
 	icon: <Icon />,
-	description: __('Collapses and hides content when the content is long.', 'vk-blocks'),
+	description: __(
+		'Collapses and hides content when the content is long.',
+		'vk-blocks'
+	),
 	styles: [
 		{
 			name: 'vk_accordion-no-background-color',

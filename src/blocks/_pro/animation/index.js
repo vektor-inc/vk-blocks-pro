@@ -19,7 +19,10 @@ export { metadata, name };
 export const settings = {
 	title: __('Animation', 'vk-blocks'),
 	icon: <Icon />,
-	description: __('Add animation to elements when scrolling the page.', 'vk-blocks'),
+	description: __(
+		'Add animation to elements when scrolling the page.',
+		'vk-blocks'
+	),
 	edit,
 	save,
 	deprecated,

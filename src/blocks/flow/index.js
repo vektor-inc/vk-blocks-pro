@@ -18,7 +18,10 @@ export { metadata, name };
 export const settings = {
 	title: __('Flow', 'vk-blocks'), // Block title.
 	icon: <Icon />,
-	description: __('Displays a sequential description in time series.', 'vk-blocks'),
+	description: __(
+		'Displays a sequential description in time series.',
+		'vk-blocks'
+	),
 	example: {
 		attributes: {
 			heading: title,

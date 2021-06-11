@@ -16,7 +16,10 @@ export { metadata, name };
 export const settings = {
 	title: __('New FAQ', 'vk-blocks'),
 	icon: <Icon />,
-	description: __('It displays a combination of questions and answers. You can freely add blocks to the question area as well.', 'vk-blocks'),
+	description: __(
+		'It displays a combination of questions and answers. You can freely add blocks to the question area as well.',
+		'vk-blocks'
+	),
 	styles: [
 		{
 			name: 'vk_faq-normal',

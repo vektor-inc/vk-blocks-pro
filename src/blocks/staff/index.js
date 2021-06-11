@@ -32,7 +32,10 @@ export { metadata, name };
 export const settings = {
 	title: __('Staff', 'vk-blocks'),
 	icon: <Icon />,
-	description: __('Used for staff introduction, company introduction, school introduction, menu, etc.', 'vk-blocks'),
+	description: __(
+		'Used for staff introduction, company introduction, school introduction, menu, etc.',
+		'vk-blocks'
+	),
 	example: {
 		attributes: {
 			vk_staff_text_name: profileName,

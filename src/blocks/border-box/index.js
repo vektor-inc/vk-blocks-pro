@@ -18,7 +18,10 @@ export { metadata, name };
 export const settings = {
 	title: __('Border Box', 'vk-blocks'),
 	icon: <Icon />,
-	description: __('This is a border box where you can place headings to attract attention.', 'vk-blocks'),
+	description: __(
+		'This is a border box where you can place headings to attract attention.',
+		'vk-blocks'
+	),
 	category: 'vk-blocks-cat',
 	example: {
 		attributes: {

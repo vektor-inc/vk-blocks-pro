@@ -327,6 +327,7 @@ $color_key: #337ab7;
 				border-left: unset;
     			border-right: unset;
 				border-top: none;
+				background: unset;
 			}
 
 			&::before {
@@ -423,6 +424,7 @@ $color_key: #337ab7;
 
 				border-top: solid 1px #333;
 				border-bottom: solid 1px #333;
+				background: unset;
 			}
 
 			&::before {

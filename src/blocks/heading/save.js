@@ -63,35 +63,41 @@ export default function save(props) {
 		fontAwesomeIconColor,
 	} = attributes;
 	const containerClass = `vk_heading vk_heading-style-${titleStyle}`;
-	let cStyle;
-	let tStyle;
 
-	//containerのマージンを切り替え
-	if (outerMarginBottom) {
-		cStyle = { marginBottom: outerMarginBottom + `rem` };
-	}
+	const cStyle = {
+		marginBottom:
+			outerMarginBottom !== null && outerMarginBottom !== undefined
+				? outerMarginBottom + `rem`
+				: undefined,
+	};
 
-	//titleのマージンを切り替え
-	if (titleMarginBottom !== null && titleMarginBottom !== undefined) {
-		tStyle = {
-			color: titleColor,
-			fontSize: titleSize + 'rem',
-			marginBottom: titleMarginBottom + 'rem',
-			textAlign: align,
-		};
-	} else {
-		tStyle = {
-			color: titleColor,
-			fontSize: titleSize + 'rem',
-			textAlign: align,
-		};
-	}
+	const tStyle = {
+		color:
+			titleColor !== null && titleColor !== undefined
+				? titleColor
+				: undefined,
+		fontSize:
+			titleSize !== null && titleSize !== undefined
+				? titleSize + 'rem'
+				: undefined,
+		marginBottom:
+			titleMarginBottom !== null && titleMarginBottom !== undefined
+				? titleMarginBottom + 'rem'
+				: undefined,
+		textAlign: align !== null && align !== undefined ? align : undefined,
+	};
 
 	const headingStyle = `vk_heading_title vk_heading_title-style-${titleStyle}`;
 	const subTextStyle = {
-		color: subTextColor,
-		fontSize: subTextSize + 'rem',
-		textAlign: align,
+		color:
+			subTextColor !== null && subTextColor !== undefined
+				? subTextColor
+				: undefined,
+		fontSize:
+			subTextSize !== null && subTextSize !== undefined
+				? subTextSize + 'rem'
+				: undefined,
+		textAlign: align !== null && align !== undefined ? align : undefined,
 	};
 	const subTextClass = `vk_heading_subtext vk_heading_subtext-style-${titleStyle}`;
 

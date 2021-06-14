@@ -255,7 +255,7 @@ if ( ! function_exists( 'vkblocks_blocks_categories' ) ) {
 		return $categories;
 	}
 
-	add_filter( 'block_categories', 'vkblocks_blocks_categories', 10, 2 );
+	add_filter( 'block_categories_all', 'vkblocks_blocks_categories', 10, 2 );
 }
 
 if ( ! function_exists( 'vkblocks_set_wp_version' ) ) {

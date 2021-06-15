@@ -64,5 +64,8 @@
 			"type": "string",
 			"default": "<i class='fas fa-user'></i>"
 		}
+	},
+	"supports": {
+		"className": true
 	}
 }

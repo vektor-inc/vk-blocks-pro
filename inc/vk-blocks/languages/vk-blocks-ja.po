@@ -308,6 +308,14 @@ msgstr "グリッドカラムアイテム"
 msgid "Layout Columns"
 msgstr "カラムレイアウト"
 
+#: src/blocks/_pro/grid-column/edit.js:57
+msgid "Column Margin Bottom Setting"
+msgstr "下部の余白の設定"
+
+#: src/blocks/_pro/grid-column/edit.js:61
+msgid "Margin Bottom"
+msgstr "下部の余白"
+
 #: src/blocks/_pro/grid-column/index.js:17
 msgid "Grid Column"
 msgstr "グリッドカラム"
@@ -3036,7 +3044,7 @@ msgstr ""
 #~ msgid "Effect Range"
 #~ msgstr "エフェクトの距離"
 
-#~ msgid "Heading margin bottom size (rem)"
+#~ msgid "Heading margin Bottom size (rem)"
 #~ msgstr "見出し下部の余白 (rem)"
 
 #~ msgid "Please enter a answer."

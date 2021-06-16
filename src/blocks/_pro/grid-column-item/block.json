@@ -96,6 +96,14 @@
 			"source": "attribute",
 			"selector": "a",
 			"attribute": "rel"
+		},
+		"marginBottom": {
+			"type": "number",
+			"default": null
+		},
+		"unit": {
+			"type": "string",
+			"default": "px"
 		}
 	},
 	"parent": ["vk-blocks/grid-column"],

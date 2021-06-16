@@ -15,6 +15,10 @@ export { metadata, name };
 export const settings = {
 	title: __('Accordion Target', 'vk-blocks'),
 	icon: <Icon />,
+	description: __(
+		'This is the content area where you can add blocks freely.',
+		'vk-blocks'
+	),
 	category: 'vk-blocks-cat',
 	edit,
 	save,

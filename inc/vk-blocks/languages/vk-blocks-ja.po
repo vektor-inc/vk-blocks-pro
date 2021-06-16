@@ -27,9 +27,17 @@ msgstr ""
 msgid "Accordion Target"
 msgstr "アコーディオンコンテンツ"
 
+#: src/blocks/_pro/accordion-target/index.js:18
+msgid "This is the content area where you can add blocks freely."
+msgstr "自由にブロックを追加できるコンテンツエリアです。"
+
 #: src/blocks/_pro/accordion-trigger/index.js:16
 msgid "Accordion Trigger"
 msgstr "アコーディオンタイトル"
+
+#: src/blocks/_pro/accordion-trigger/index.js:18
+msgid "This is the title area where you can freely add blocks."
+msgstr "自由にブロックを追加できるタイトルエリアです"
 
 #: src/blocks/_pro/accordion/index.js:18
 msgid "Accordion"
@@ -231,6 +239,10 @@ msgstr "https://example.com"
 msgid "Card Item"
 msgstr "カードアイテム"
 
+#: src/blocks/_pro/card-item/index.js:20
+msgid "A single item in a card block."
+msgstr "カードブロック内の１つのアイテムです。"
+
 #: src/blocks/_pro/card/edit.js:119
 #: src/components/display-items-control/index.js:28
 msgid "Display item"
@@ -331,6 +343,10 @@ msgid "Grid Column"
 msgstr "グリッドカラム"
 
 #: src/blocks/_pro/grid-column/index.js:19
+msgid "One item in a grit column block."
+msgstr "グリットカラムブロック内の1つのアイテムです"
+
+#: src/blocks/_pro/grid-column/index.js:19
 msgid "Set the number of columns to be displayed for each screen size."
 msgstr "画面サイズ毎にカラム数を設定して表示させます。"
 
@@ -394,6 +410,10 @@ msgstr "リンク URL:"
 #: src/blocks/_pro/icon-card-item/index.js:19
 msgid "Icon Card Item"
 msgstr "アイコンカードアイテム"
+
+#: src/blocks/_pro/icon-card-item/index.js:21
+msgid "This is one item in an icon card."
+msgstr "アイコンカード内の１つのアイテムです。"
 
 #: src/blocks/_pro/icon-card/edit.js:65
 msgid "Columns"
@@ -741,6 +761,10 @@ msgstr "このサイトの投稿の URL を入力してください"
 msgid "Selected Post List Item"
 msgstr "選択投稿リストアイテム"
 
+#: src/blocks/_pro/select-post-list-item/index.js:22
+msgid "A single item in the select post list."
+msgstr "選択投稿リスト内の１つのアイテムです。"
+
 #: src/blocks/_pro/select-post-list/index.js:21
 msgid "Selected Post List"
 msgstr "選択投稿リスト"
@@ -780,6 +804,10 @@ msgstr "スライダーアイテムエリア内の余白を無くす"
 #: src/blocks/_pro/slider-item/index.js:18
 msgid "Slider Item"
 msgstr "スライダーアイテム"
+
+#: src/blocks/_pro/slider-item/index.js:20
+msgid "This is one item in the slider."
+msgstr "スライダー内の１つのアイテムです。"
 
 #: src/blocks/_pro/slider/edit.js:124
 msgid "Height"
@@ -891,6 +919,10 @@ msgstr "アウトライン"
 msgid "Step Item"
 msgstr "ステップ要素"
 
+#: src/blocks/_pro/step-item/index.js:20
+msgid "This element sets the icon, color, and style of the step mark."
+msgstr "ステップマークのアイコン、色、スタイルを設定する要素です。"
+
 #: src/blocks/_pro/step/edit.js:38
 msgid "First Dot Number"
 msgstr "ステップの開始番号"
@@ -947,6 +979,10 @@ msgstr "ラベル"
 #: src/blocks/_pro/timeline-item/index.js:18
 msgid "Timeline Item"
 msgstr "タイムライン要素"
+
+#: src/blocks/_pro/timeline-item/index.js:20
+msgid "This element sets the label, color, and style of the timeline."
+msgstr "タイムラインのラベル、色、スタイルを設定する要素です 。"
 
 #: src/blocks/_pro/timeline/index.js:19
 msgid "Timeline"
@@ -1367,9 +1403,17 @@ msgstr "枠線 角丸"
 msgid "FAQ Answer"
 msgstr "FAQ 回答"
 
+#: src/blocks/faq2-a/index.js:19
+msgid "Answer area where you can add blocks freely."
+msgstr "自由にブロックを追加できる回答エリアです 。"
+
 #: src/blocks/faq2-q/index.js:17
 msgid "FAQ Question"
 msgstr "FAQ 質問"
+
+#: src/blocks/faq2-q/index.js:19
+msgid "Question area where you can freely add blocks."
+msgstr "自由にブロックを追加できる質問エリアです。"
 
 #: src/blocks/faq2/index.js:17
 msgid "New FAQ"

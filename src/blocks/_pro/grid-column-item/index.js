@@ -17,10 +17,7 @@ export { metadata, name };
 export const settings = {
 	title: __('Grid Column Item', 'vk-blocks'),
 	icon: <Icon />,
-	description: __(
-		'Set the number of columns to be displayed for each screen size.',
-		'vk-blocks'
-	),
+	description: __('One item in a grit column block.', 'vk-blocks'),
 	edit,
 	save,
 	deprecated,

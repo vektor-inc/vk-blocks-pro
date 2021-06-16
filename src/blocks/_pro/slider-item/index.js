@@ -17,6 +17,7 @@ export { metadata, name };
 export const settings = {
 	title: __('Slider Item', 'vk-blocks'),
 	icon: <Icon />,
+	description: __('This is one item in the slider.', 'vk-blocks'),
 	edit,
 	save,
 	deprecated,

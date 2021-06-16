@@ -17,6 +17,10 @@ export { metadata, name };
 export const settings = {
 	title: __('Timeline Item', 'vk-blocks'),
 	icon: <Icon />,
+	description: __(
+		'This element sets the label, color, and style of the timeline.',
+		'vk-blocks'
+	),
 	parent: ['vk-blocks/timeline'],
 	edit,
 	save,

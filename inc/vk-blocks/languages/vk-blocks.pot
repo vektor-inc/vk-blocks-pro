@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-06-11T01:25:30+00:00\n"
+"POT-Creation-Date: 2021-06-16T01:18:52+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: vk-blocks\n"
@@ -18,8 +18,16 @@ msgstr ""
 msgid "Accordion Target"
 msgstr ""
 
+#: src/blocks/_pro/accordion-target/index.js:18
+msgid "This is the content area where you can add blocks freely."
+msgstr ""
+
 #: src/blocks/_pro/accordion-trigger/index.js:16
 msgid "Accordion Trigger"
+msgstr ""
+
+#: src/blocks/_pro/accordion-trigger/index.js:18
+msgid "This is the title area where you can freely add blocks."
 msgstr ""
 
 #: src/blocks/_pro/accordion/index.js:18
@@ -30,27 +38,27 @@ msgstr ""
 msgid "Collapses and hides content when the content is long."
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:24
+#: src/blocks/_pro/accordion/index.js:27
 msgid "No background color"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:29
+#: src/blocks/_pro/accordion/index.js:32
 msgid "No background color / Border"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:33
+#: src/blocks/_pro/accordion/index.js:36
 msgid "Background color"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:37
+#: src/blocks/_pro/accordion/index.js:40
 msgid "Background color / Border"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:41
+#: src/blocks/_pro/accordion/index.js:44
 msgid "Background color / Rounded "
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:45
+#: src/blocks/_pro/accordion/index.js:48
 msgid "Background color / Rounded / Border"
 msgstr ""
 
@@ -75,8 +83,8 @@ msgstr ""
 #: src/blocks/_pro/slider/edit.js:110
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95
-#: src/blocks/faq/index.js:28
-#: src/blocks/faq2/index.js:23
+#: src/blocks/faq/index.js:31
+#: src/blocks/faq2/index.js:26
 #: src/extensions/common/inline-font-size/index.js:52
 msgid "Normal"
 msgstr ""
@@ -229,6 +237,10 @@ msgstr ""
 msgid "Card Item"
 msgstr ""
 
+#: src/blocks/_pro/card-item/index.js:20
+msgid "A single item in a card block."
+msgstr ""
+
 #: src/blocks/_pro/card/edit.js:119
 #: src/components/display-items-control/index.js:28
 msgid "Display item"
@@ -318,8 +330,7 @@ msgid "Grid Column Item"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/index.js:20
-#: src/blocks/_pro/grid-column/index.js:19
-msgid "Set the number of columns to be displayed for each screen size."
+msgid "One item in a grit column block."
 msgstr ""
 
 #: src/blocks/_pro/grid-column/edit.js:47
@@ -328,6 +339,10 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column/index.js:17
 msgid "Grid Column"
+msgstr ""
+
+#: src/blocks/_pro/grid-column/index.js:19
+msgid "Set the number of columns to be displayed for each screen size."
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/deprecated/0.0.0/component.js:55
@@ -397,6 +412,10 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/index.js:19
 msgid "Icon Card Item"
+msgstr ""
+
+#: src/blocks/_pro/icon-card-item/index.js:21
+msgid "This is one item in an icon card."
 msgstr ""
 
 #: src/blocks/_pro/icon-card/edit.js:65
@@ -752,6 +771,10 @@ msgstr ""
 msgid "Selected Post List Item"
 msgstr ""
 
+#: src/blocks/_pro/select-post-list-item/index.js:22
+msgid "A single item in the select post list."
+msgstr ""
+
 #: src/blocks/_pro/select-post-list/index.js:21
 msgid "Selected Post List"
 msgstr ""
@@ -790,6 +813,10 @@ msgstr ""
 
 #: src/blocks/_pro/slider-item/index.js:18
 msgid "Slider Item"
+msgstr ""
+
+#: src/blocks/_pro/slider-item/index.js:20
+msgid "This is one item in the slider."
 msgstr ""
 
 #: src/blocks/_pro/slider/edit.js:124
@@ -900,6 +927,10 @@ msgstr ""
 msgid "Step Item"
 msgstr ""
 
+#: src/blocks/_pro/step-item/index.js:20
+msgid "This element sets the icon, color, and style of the step mark."
+msgstr ""
+
 #: src/blocks/_pro/step/edit.js:38
 msgid "First Dot Number"
 msgstr ""
@@ -958,6 +989,10 @@ msgstr ""
 
 #: src/blocks/_pro/timeline-item/index.js:18
 msgid "Timeline Item"
+msgstr ""
+
+#: src/blocks/_pro/timeline-item/index.js:20
+msgid "This element sets the label, color, and style of the timeline."
 msgstr ""
 
 #: src/blocks/_pro/timeline/index.js:19
@@ -1202,27 +1237,27 @@ msgstr ""
 msgid "This is a border box where you can place headings to attract attention."
 msgstr ""
 
-#: src/blocks/border-box/index.js:41
+#: src/blocks/border-box/index.js:44
 msgid "Solid Angle Tab"
 msgstr ""
 
-#: src/blocks/border-box/index.js:46
+#: src/blocks/border-box/index.js:49
 msgid "Solid Round Tab"
 msgstr ""
 
-#: src/blocks/border-box/index.js:50
+#: src/blocks/border-box/index.js:53
 msgid "Solid Angle Banner"
 msgstr ""
 
-#: src/blocks/border-box/index.js:54
+#: src/blocks/border-box/index.js:57
 msgid "Solid Angle Onborder"
 msgstr ""
 
-#: src/blocks/border-box/index.js:58
+#: src/blocks/border-box/index.js:61
 msgid "Solid Angle Inner"
 msgstr ""
 
-#: src/blocks/border-box/index.js:62
+#: src/blocks/border-box/index.js:65
 msgid "Solid Angle iconFeature"
 msgstr ""
 
@@ -1360,33 +1395,33 @@ msgstr ""
 msgid "Displays a combination of questions and answers."
 msgstr ""
 
-#: src/blocks/faq/index.js:33
-#: src/blocks/faq2/index.js:28
+#: src/blocks/faq/index.js:36
+#: src/blocks/faq2/index.js:31
 msgid "Bgfill Circle"
 msgstr ""
 
-#: src/blocks/faq/index.js:37
-#: src/blocks/faq2/index.js:32
+#: src/blocks/faq/index.js:40
+#: src/blocks/faq2/index.js:35
 msgid "Bgfill Square"
 msgstr ""
 
-#: src/blocks/faq/index.js:41
-#: src/blocks/faq2/index.js:36
+#: src/blocks/faq/index.js:44
+#: src/blocks/faq2/index.js:39
 msgid "Bgfill Rounded"
 msgstr ""
 
-#: src/blocks/faq/index.js:45
-#: src/blocks/faq2/index.js:40
+#: src/blocks/faq/index.js:48
+#: src/blocks/faq2/index.js:43
 msgid "Border Circle"
 msgstr ""
 
-#: src/blocks/faq/index.js:49
-#: src/blocks/faq2/index.js:44
+#: src/blocks/faq/index.js:52
+#: src/blocks/faq2/index.js:47
 msgid "Border Square"
 msgstr ""
 
-#: src/blocks/faq/index.js:53
-#: src/blocks/faq2/index.js:48
+#: src/blocks/faq/index.js:56
+#: src/blocks/faq2/index.js:51
 msgid "Border Rounded"
 msgstr ""
 
@@ -1394,8 +1429,16 @@ msgstr ""
 msgid "FAQ Answer"
 msgstr ""
 
+#: src/blocks/faq2-a/index.js:19
+msgid "Answer area where you can add blocks freely."
+msgstr ""
+
 #: src/blocks/faq2-q/index.js:17
 msgid "FAQ Question"
+msgstr ""
+
+#: src/blocks/faq2-q/index.js:19
+msgid "Question area where you can freely add blocks."
 msgstr ""
 
 #: src/blocks/faq2/index.js:17

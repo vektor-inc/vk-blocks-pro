@@ -17,6 +17,7 @@ export { metadata, name };
 export const settings = {
 	title: __('Card Item', 'vk-blocks'),
 	icon: <Icon />,
+	description: __('A single item in a card block.', 'vk-blocks'),
 	edit,
 	save,
 	deprecated,

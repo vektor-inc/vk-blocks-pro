@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Bugfix ][ Heading ] Fix Heading design when using Lightning Heading Setting
+
 = 1.5.0 =
 [ Improvement ][ highlighter ] setting color in toolbar
 [ Specification Change ][ Table of Contents ] Add notice about copying heading.

@@ -8,7 +8,6 @@ import {
 	registerBlockType,
 	unstable__bootstrapServerSideBlockDefinitions, // eslint-disable-line camelcase
 } from '@wordpress/blocks';
-import compareVersions from 'compare-versions';
 import vkblocksPro from './bundle-pro';
 
 /**
@@ -78,20 +77,9 @@ const registerBlock = (block) => {
 		return;
 	}
 
-	let { metadata, settings, name } = block;
+	const { metadata, settings, name } = block;
 
-	//WP5.5未満の場合
-	if (compareVersions(window.wpVersion, '5.5') < 0) {
-		//nameを削除
-		delete metadata.name;
-		//カテゴリ等を追加
-		settings = {
-			...settings,
-			...metadata,
-		};
-	} else if (metadata) {
-		unstable__bootstrapServerSideBlockDefinitions({ [name]: metadata }); // eslint-disable-line camelcase
-	}
+	unstable__bootstrapServerSideBlockDefinitions({ [name]: metadata }); // eslint-disable-line camelcase
 	registerBlockType(name, settings);
 };
 

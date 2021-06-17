@@ -62,7 +62,7 @@ export default function GridColumnEdit(props) {
 						value={marginBottom}
 						onChange={(value) => {
 							props.setAttributes({ marginBottom: value });
-							if (undefined === value){
+							if (undefined === value) {
 								props.setAttributes({ unit: 'px' });
 							}
 						}}

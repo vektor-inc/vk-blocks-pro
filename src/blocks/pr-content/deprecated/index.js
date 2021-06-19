@@ -70,22 +70,50 @@ const blockAttributes = {
 
 const blockAttributes2 = {
 	...blockAttributes,
-	...(blockAttributes.titleColor.default = ''),
-	...(blockAttributes.contentColor.default = ''),
-	...(blockAttributes.url.default = ''),
-	...(blockAttributes.buttonColorCustom.default = ''),
-	...(blockAttributes.Image.default = '{}'),
-	...(blockAttributes.ImageBorderColor.default = ''),
-	...(blockAttributes.fontAwesomeIconBefore.default = ''),
-	...(blockAttributes.fontAwesomeIconAfter.default = ''),
+	titleColor: {
+		type: 'string',
+		default: ''
+	},
+	contentColor: {
+		type: 'string',
+		default: ''
+	},
+	url: {
+		type: 'string',
+		default: ''
+	},
+	buttonColorCustom: {
+		type: 'string',
+		default: ''
+	},
+	Image: {
+		type: 'string',
+		default: '{}'
+	},
+	ImageBorderColor: {
+		type: 'string',
+		default: ''
+	},
+	fontAwesomeIconBefore: {
+		type: 'string',
+		default: ''
+	},
+	fontAwesomeIconAfter: {
+		type: 'string',
+		default: ''
+	}
 };
 
 const blockAttributes3 = {
 	...blockAttributes2,
-	...(blockAttributes2.fontAwesomeIconBefore.default =
-		'<i class="fas fa-user"></i>'),
-	...(blockAttributes2.fontAwesomeIconAfter.default =
-		'<i class="fas fa-user"></i>'),
+	fontAwesomeIconBefore: {
+		type: 'string',
+		default: '<i class="fas fa-user"></i>'
+	},
+	fontAwesomeIconAfter: {
+		type: 'string',
+		default: '<i class="fas fa-user"></i>'
+	}
 };
 
 const deprecated = [

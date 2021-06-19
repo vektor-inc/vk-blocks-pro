@@ -34,6 +34,14 @@
 		"col_xxl": {
 			"type": "number",
 			"default": 3
+		},
+		"marginBottom": {
+			"type": "number",
+			"default": null
+		},
+		"unit": {
+			"type": "string",
+			"default": "px"
 		}
 	},
 	"supports": {

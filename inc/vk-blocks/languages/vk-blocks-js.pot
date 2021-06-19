@@ -293,8 +293,16 @@ msgstr ""
 msgid "Grid Column Item"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:47
+#: src/blocks/_pro/grid-column/edit.js:51
 msgid "Layout Columns"
+msgstr ""
+
+#: src/blocks/_pro/grid-column/edit.js:57
+msgid "Column Margin Bottom Setting"
+msgstr ""
+
+#: src/blocks/_pro/grid-column/edit.js:61
+msgid "Margin Bottom"
 msgstr ""
 
 #: src/blocks/_pro/grid-column/index.js:17
@@ -812,9 +820,9 @@ msgid "Slider is do not move in edit screen."
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:110
-#: src/blocks/_pro/table-of-contents-new/edit.js:129
+#: src/blocks/_pro/table-of-contents-new/edit.js:145
 #: src/blocks/_pro/timeline-item/edit.js:91
-#: src/blocks/heading/edit.js:231
+#: src/blocks/heading/edit.js:237
 #: src/blocks/staff/edit.js:113
 #: src/extensions/core/heading/style.js:30
 #: src/extensions/core/list/style.js:102
@@ -842,7 +850,7 @@ msgid "Color"
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:82
-#: src/blocks/_pro/table-of-contents-new/edit.js:119
+#: src/blocks/_pro/table-of-contents-new/edit.js:135
 #: src/blocks/_pro/timeline-item/edit.js:63
 msgid "Style"
 msgstr ""
@@ -865,25 +873,40 @@ msgid "Step"
 msgstr ""
 
 #: src/blocks/_pro/table-of-contents-new/deprecated/0.59.1/save.js:19
-#: src/blocks/_pro/table-of-contents-new/edit.js:162
+#: src/blocks/_pro/table-of-contents-new/edit.js:178
 #: src/blocks/_pro/table-of-contents-new/index.js:17
 #: src/blocks/_pro/table-of-contents-new/save.js:16
 msgid "Table of Contents"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:133
+#: src/blocks/_pro/table-of-contents-new/edit.js:117
+msgid "Note on duplicating headings"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:122
+msgid ""
+"If you duplicate a heading, the table of contents block will not work "
+"properly, please reassign the ID."
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:130
+#: src/components/column-layout-control/index.js:69
+msgid "Display type"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:149
 msgid "No frame"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:140
+#: src/blocks/_pro/table-of-contents-new/edit.js:156
 msgid "Default Display Status"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:148
+#: src/blocks/_pro/table-of-contents-new/edit.js:164
 msgid "OPEN"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:152
+#: src/blocks/_pro/table-of-contents-new/edit.js:168
 msgid "CLOSE"
 msgstr ""
 
@@ -900,7 +923,7 @@ msgid "Timeline"
 msgstr ""
 
 #: src/blocks/alert/edit.js:19
-#: src/blocks/heading/edit.js:222
+#: src/blocks/heading/edit.js:228
 msgid "Style Settings"
 msgstr ""
 
@@ -967,7 +990,7 @@ msgid "Balloon setting"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:202
-#: src/blocks/heading/edit.js:333
+#: src/blocks/heading/edit.js:343
 msgid "Position"
 msgstr ""
 
@@ -1220,13 +1243,13 @@ msgid ""
 msgstr ""
 
 #: src/blocks/button/edit.js:262
-#: src/blocks/heading/edit.js:300
+#: src/blocks/heading/edit.js:310
 #: src/blocks/pr-content/edit.js:194
 msgid "Before text"
 msgstr ""
 
 #: src/blocks/button/edit.js:271
-#: src/blocks/heading/edit.js:309
+#: src/blocks/heading/edit.js:319
 #: src/blocks/pr-content/edit.js:206
 msgid "After text"
 msgstr ""
@@ -1357,7 +1380,7 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:152
 #: src/blocks/heading/deprecated/0.40.1/component.js:152
 #: src/blocks/heading/deprecated/0.60.1/component.js:152
-#: src/blocks/heading/edit.js:196
+#: src/blocks/heading/edit.js:202
 msgid "Input sub text…"
 msgstr ""
 
@@ -1371,60 +1394,60 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:137
 #: src/blocks/heading/deprecated/0.40.1/component.js:137
 #: src/blocks/heading/deprecated/0.60.1/component.js:137
-#: src/blocks/heading/edit.js:181
+#: src/blocks/heading/edit.js:187
 msgid "Input title…"
 msgstr ""
 
-#: src/blocks/heading/edit.js:224
+#: src/blocks/heading/edit.js:230
 msgid "Heading style"
 msgstr ""
 
-#: src/blocks/heading/edit.js:235
+#: src/blocks/heading/edit.js:241
 #: src/extensions/core/heading/style.js:35
 msgid "Plain"
 msgstr ""
 
-#: src/blocks/heading/edit.js:241
+#: src/blocks/heading/edit.js:247
 msgid "Margin Setting"
 msgstr ""
 
-#: src/blocks/heading/edit.js:243
-msgid "Margin bottom size of after hedding (rem)"
+#: src/blocks/heading/edit.js:249
+msgid "Margin between Heading and sub text (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:258
+#: src/blocks/heading/edit.js:266
 msgid "Margin bottom size of after this block (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:273
+#: src/blocks/heading/edit.js:283
 msgid "Heading Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:285
+#: src/blocks/heading/edit.js:295
 msgid "Text Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:297
+#: src/blocks/heading/edit.js:307
 msgid "Font Awesome Icon Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:318
+#: src/blocks/heading/edit.js:328
 msgid "Icon Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:331
+#: src/blocks/heading/edit.js:341
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:337
+#: src/blocks/heading/edit.js:347
 msgid "Display"
 msgstr ""
 
-#: src/blocks/heading/edit.js:341
+#: src/blocks/heading/edit.js:351
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/heading/edit.js:349
+#: src/blocks/heading/edit.js:359
 msgid "Text size (rem)"
 msgstr ""
 
@@ -1709,10 +1732,6 @@ msgstr ""
 msgid "Display type and columns"
 msgstr ""
 
-#: src/components/column-layout-control/index.js:69
-msgid "Display type"
-msgstr ""
-
 #: src/components/column-layout/index.js:100
 msgid "Column ( Screen size : Extra large )"
 msgstr ""
@@ -1838,12 +1857,8 @@ msgid ""
 "the next, hide for the that group block."
 msgstr ""
 
-#: src/extensions/common/highlighter/index.js:116
+#: src/extensions/common/highlighter/index.js:139
 msgid "Highlighter"
-msgstr ""
-
-#: src/extensions/common/highlighter/index.js:98
-msgid "Highlight Color"
 msgstr ""
 
 #: src/extensions/common/inline-font-size/index.js:101

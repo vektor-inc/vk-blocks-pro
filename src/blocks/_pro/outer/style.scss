@@ -20,10 +20,14 @@ $media-xxl-down: 1399.98px;
 	background-repeat: no-repeat;
 	position: relative;
 	transform: translateZ(0); // Safari 1px bug 対応
-
 	.vk_outer_container {
 		min-height: 40px;
 	}
+}
+// これがないとレスポンシブスペーサーの共通高さが検出しない。
+.vk_outer{
+	display:block; 
+	overflow:hidden;
 }
 //iOS Safari での1pxズレの予防のため　Only Safari 10.1+
 @supports (-webkit-touch-callout: none) {

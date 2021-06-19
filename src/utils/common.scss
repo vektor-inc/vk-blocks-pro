@@ -7,6 +7,26 @@
 }
 
 /*-------------------------------------------*/
+/* 余白（まだ レスポンシブスペーサーでのみ使用）
+/*-------------------------------------------*/
+:root {
+	--vk-margin-sm : 1.5rem;
+	--vk-margin-md : 2rem;
+	--vk-margin-lg : 4rem;
+}
+.vk_block{
+	&-margin-sm {
+		margin-top: var(--vk-margin-sm);
+	}
+	&-margin-md {
+		margin-top: var(--vk-margin-md);
+	}
+	&-margin-lg {
+		margin-top: var(--vk-margin-lg);
+	}
+}
+
+/*-------------------------------------------*/
 /* リストデザイン
 /*-------------------------------------------*/
 @mixin mark-before {

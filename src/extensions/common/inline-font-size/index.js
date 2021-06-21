@@ -121,6 +121,7 @@ const FontSizeEdit = (props) => {
 							fontSizes={fontSizes}
 							value={selectedFontSize}
 							fallbackFontSize={fallbackFontSize}
+							withSlider={true}
 							onChange={(newFontSize) => {
 								if (newFontSize) {
 									onChange(

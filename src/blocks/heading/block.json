@@ -32,7 +32,7 @@
 		},
 		"titleColor": {
 			"type": "string",
-			"default": null
+			"default": ""
 		},
 		"titleSize": {
 			"type": "number",
@@ -53,7 +53,7 @@
 		},
 		"subTextColor": {
 			"type": "string",
-			"default": null
+			"default": ""
 		},
 		"subTextSize": {
 			"type": "number",

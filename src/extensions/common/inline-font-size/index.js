@@ -98,7 +98,7 @@ const FontSizeEdit = (props) => {
 						}}
 					/>
 				</PanelBody>
-			</InspectorControls>rf
+			</InspectorControls>
 			<RichTextToolbarButton
 				icon={Icon}
 				title={__('Inline Font Size', 'vk-blocks')}

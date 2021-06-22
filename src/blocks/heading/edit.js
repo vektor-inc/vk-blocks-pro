@@ -18,6 +18,7 @@ import {
 	RichText,
 	useBlockProps,
 } from '@wordpress/block-editor';
+import { useEffect } from '@wordpress/element';
 
 import ReactHtmlParser from 'react-html-parser';
 
@@ -63,8 +64,8 @@ const renderTitle = (level, contents, tStyle, headingStyle) => {
 };
 
 export default function HeaddingEdit(props) {
-	const { attributes, setAttributes } = props;
-	let {
+	const { attributes, setAttributes, clientId } = props;
+	const {
 		level,
 		align,
 		title,
@@ -81,6 +82,18 @@ export default function HeaddingEdit(props) {
 		fontAwesomeIconAfter,
 		fontAwesomeIconColor,
 	} = attributes;
+
+	useEffect(() => {
+		if (titleColor === null) {
+			setAttributes({ titleColor: undefined });
+		}
+		if (subTextColor === null) {
+			setAttributes({ subTextColor: undefined });
+		}
+		if (fontAwesomeIconColor === null) {
+			setAttributes({ fontAwesomeIconColor: undefined });
+		}
+	}, [clientId]);
 
 	const setTitleFontSize = (newLevel) => {
 		setAttributes({ level: newLevel });

@@ -13,7 +13,6 @@ import {
 
 import {
 	RichTextToolbarButton,
-	InspectorControls,
 	URLPopover,
 } from '@wordpress/block-editor';
 
@@ -73,33 +72,6 @@ const FontSizeEdit = (props) => {
 
 	return (
 		<>
-			<InspectorControls>
-				<PanelBody
-					title={__('Inline Font Size Settings', 'vk-blocks')}
-					initialOpen={false}
-				>
-					<FontSizePicker
-						fontSizes={fontSizes}
-						value={selectedFontSize}
-						fallbackFontSize={fallbackFontSize}
-						onChange={(newFontSize) => {
-							if (newFontSize) {
-								onChange(
-									applyFormat(value, {
-										type: name,
-										attributes: {
-											data: `${newFontSize}`,
-											style: `font-size: ${newFontSize};`,
-										},
-									})
-								);
-								return;
-							}
-							onChange(removeFormat(value, name));
-						}}
-					/>
-				</PanelBody>
-			</InspectorControls>
 			<RichTextToolbarButton
 				title={__('Inline Font Size', 'vk-blocks')}
 				onClick={() => {
@@ -128,7 +100,7 @@ const FontSizeEdit = (props) => {
 							fontSizes={fontSizes}
 							value={selectedFontSize}
 							fallbackFontSize={fallbackFontSize}
-							// withSlider={true}
+							withSlider={true}
 							onChange={(newFontSize) => {
 								if (newFontSize) {
 									onChange(

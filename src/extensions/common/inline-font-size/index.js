@@ -17,7 +17,7 @@ import {
 } from '@wordpress/block-editor';
 
 import {
-	FontSizePicker, PanelBody, } from '@wordpress/components';
+	FontSizePicker, } from '@wordpress/components';
 
 import { ReactComponent as Icon } from './icon.svg';
 

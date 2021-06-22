@@ -18,7 +18,7 @@ import {
 } from '@wordpress/block-editor';
 
 import {
-	FontSizePicker, PanelBody, Button, } from '@wordpress/components';
+	FontSizePicker, PanelBody, } from '@wordpress/components';
 
 import { ReactComponent as Icon } from './icon.svg';
 
@@ -39,8 +39,9 @@ const FontSizeEdit = (props) => {
 	const pickerStyle = {
 		width: '200px',
 	};
-	const buttonStyle = {
-		height: '30px',
+	const iconStyle = {
+		width: '24px',
+		height: '24px',
 	};
 	const anchorRef = useAnchorRef({ ref: props.contentRef, value });
 	const [isSettingFontSize, setIsSettingFontSize] = useState(false);
@@ -100,14 +101,20 @@ const FontSizeEdit = (props) => {
 				</PanelBody>
 			</InspectorControls>
 			<RichTextToolbarButton
-				icon={Icon}
 				title={__('Inline Font Size', 'vk-blocks')}
 				onClick={() => {
 					setIsSettingFontSize(true);
 				}}
-				isActive={isActive}
 				shortcutType={shortcutType}
 				shortcutCharacter={shortcutChar}
+				key={isActive ? 'text-color' : 'text-color-not-active'}
+				className="format-library-text-color-button"
+				name={isActive ? 'text-color' : undefined}
+				icon={
+					<>
+						<Icon icon={Icon} style={iconStyle} />
+					</>
+				}
 			/>
 			{isSettingFontSize && (
 				<URLPopover
@@ -121,7 +128,7 @@ const FontSizeEdit = (props) => {
 							fontSizes={fontSizes}
 							value={selectedFontSize}
 							fallbackFontSize={fallbackFontSize}
-							withSlider={true}
+							// withSlider={true}
 							onChange={(newFontSize) => {
 								if (newFontSize) {
 									onChange(
@@ -137,21 +144,10 @@ const FontSizeEdit = (props) => {
 								else{
 									// reset font size
 									onChange(removeFormat(value, name));
-									setIsSettingFontSize(false);
 								}
+								setIsSettingFontSize(false);
 							}}
 						/>
-						<Button
-							disabled={selectedFontSize === undefined}
-							onClick={() => {
-								setIsSettingFontSize(false); 
-							}}
-							isSmall
-							isSecondary
-							style={buttonStyle}
-						>
-							{__('Apply', 'vk-blocks')}
-						</Button>
 					</div>
 				</URLPopover>
 			)}

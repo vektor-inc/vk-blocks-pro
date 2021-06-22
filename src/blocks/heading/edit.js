@@ -63,7 +63,7 @@ const renderTitle = (level, contents, tStyle, headingStyle) => {
 };
 
 export default function HeaddingEdit(props) {
-	const { attributes, setAttributes, clientId } = props;
+	const { attributes, setAttributes } = props;
 	const {
 		level,
 		align,

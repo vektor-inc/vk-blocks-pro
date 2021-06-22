@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
 Tested up to: 5.7.2
-Stable tag: 1.5.0
+Stable tag: 1.7.1
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,6 +63,16 @@ e.g.
 
 == Changelog ==
 
+[ Improvement ][ Inline Font Size ] setting font size in toolbar
+
+= 1.7.1 =
+[ Bugfix ][ Heading ] Fix Color Palette default setting.
+
+= 1.7.0 =
+[ Improvement ][ Spacer ] Add common space size style
+
+= 1.6.0 =
+[ Improvement ][ Grid Column(Pro) ] enable setting margin bottom
 [ Bugfix ][ Heading ] Fix Heading design when using Lightning Heading Setting
 
 = 1.5.0 =
@@ -90,7 +100,7 @@ e.g.
 = 1.4.0 =
 [ Improvement ][ title ] Convert to VK Blocks Title from core title block 
 [ Improvement ][ Select Post List Item ]setting from toolbar and enable search URL
-[ Bug fix ][ tlanslate ] in Select Post List Item
+[ Bug fix ][ translate ] in Select Post List Item
 [ Bug fix ][ New FAQ ] Fix multiple select
 [ Bug fix ][ Accordion ] Fix multiple select
 [ Specification Change ][ Border Box ] Delete margin-top from first element / delete margin-bottom from last element

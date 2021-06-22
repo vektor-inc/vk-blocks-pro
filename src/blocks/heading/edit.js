@@ -64,7 +64,7 @@ const renderTitle = (level, contents, tStyle, headingStyle) => {
 
 export default function HeaddingEdit(props) {
 	const { attributes, setAttributes } = props;
-	let {
+	const {
 		level,
 		align,
 		title,
@@ -148,30 +148,21 @@ export default function HeaddingEdit(props) {
 
 	let iconBefore = '';
 	let iconAfter = '';
+	const fontAwesomeIconStyle = fontAwesomeIconColor
+		? `style="color:${fontAwesomeIconColor};"`
+		: '';
 	if (fontAwesomeIconBefore) {
-		//for recovering block
-		fontAwesomeIconColor = fontAwesomeIconColor
-			? fontAwesomeIconColor
-			: '#000000';
-
 		//add inline css
 		const faIconFragmentBefore = fontAwesomeIconBefore.split('<i');
 		faIconFragmentBefore[0] =
-			faIconFragmentBefore[0] +
-			`<i style="color:${fontAwesomeIconColor};" `;
+			faIconFragmentBefore[0] + `<i ${fontAwesomeIconStyle} `;
 		iconBefore = faIconFragmentBefore.join('');
 	}
 	if (fontAwesomeIconAfter) {
-		//for recovering block
-		fontAwesomeIconColor = fontAwesomeIconColor
-			? fontAwesomeIconColor
-			: '#000000';
-
 		//add class and inline css
 		const faIconFragmentAfter = fontAwesomeIconAfter.split('<i');
 		faIconFragmentAfter[0] =
-			faIconFragmentAfter[0] +
-			`<i style="color:${fontAwesomeIconColor};" `;
+			faIconFragmentAfter[0] + `<i ${fontAwesomeIconStyle} `;
 		iconAfter = faIconFragmentAfter.join('');
 	}
 

@@ -2,6 +2,7 @@
 
 /*-------------------------------------------*/
 .vk_flow{ // 編集画面でcssの指定が軽くて負けるので、優先させるため記述
+	margin-bottom: 0;
 	.vk_flow_frame {
 		display: flex;
 		padding: 20px 25px;
@@ -33,6 +34,7 @@
 
 	.vk_flow_frame_text_content {
 		margin-bottom: 0;
+		margin-inline-start: 0;
 		margin-left:0;
 	}
 
@@ -53,12 +55,12 @@
 		width: 50px;
 		margin: 0 auto;
 	}
-	
+
 	&.vk_flow-arrow-off {
 		padding-bottom: 0;
 		margin-bottom: 30px;
 	}
-	
+
 	&.vk_flow-arrow-off::after {
 		content: "";
 		font-size: 0;

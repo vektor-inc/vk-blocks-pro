@@ -22,6 +22,17 @@ add_action(
 	}
 );
 
+/**
+ * VK Blocks 用の CSS クラスを追加
+ */
+add_filter(
+	'body_class',
+	function( $class ) {
+		$class[] = 'vk-blocks';
+		return $class;
+	}
+);
+
 /*
 -------------------------------------------*/
 /*

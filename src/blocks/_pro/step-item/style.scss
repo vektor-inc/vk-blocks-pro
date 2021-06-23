@@ -6,12 +6,12 @@
 
 	.vk_step_item {
 		position: relative;
-		padding: 0 0 2.4em 4.5em;
+		padding:0 0 calc(var(--vk-size-text) * 2.4 ) calc(var(--vk-size-text) * 4.5 );
 		margin: 0 auto;
 
 		h3:first-of-type,
 		h4:first-of-type {
-			padding-top: 0.5em;
+			padding-top: calc(var(--vk-size-text) * 0.5 );
 			margin-top: 0;
 		}
 		&_content > p:first-child {
@@ -40,11 +40,11 @@
 			padding: 9px 0;
 			text-align: center;
 			&_num {
-				line-height: 1.2;
+				line-height: calc(var(--vk-size-text) * 1.2 );
 			}
 		}
 		.vk_step_item_dot_caption {
-			font-size: 0.5rem;
+			font-size: calc(var(--vk-size-text) * 0.5 );
 		}
 	}
 }
@@ -52,7 +52,7 @@
 	&::before {
 		content: "";
 		width: 3px;
-		background: #ddd;
+		background: rgba(0, 0, 0, 0.15);
 		display: block;
 		position: absolute;
 		top: 54px;

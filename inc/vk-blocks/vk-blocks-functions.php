@@ -9,8 +9,8 @@ require_once dirname( __FILE__ ) . '/style/balloon.php';
 /**
  * スペーサーのサイズの配列
  */
-function vkblocks_spacer_size_array() {
-	$vk_spacer_size_array = array(
+function vkblocks_margin_size_array() {
+	$vk_margin_size_array = array(
 		array(
 			'label' => __( 'Small', 'vk-blocks' ),
 			'value' => 'sm',
@@ -24,7 +24,7 @@ function vkblocks_spacer_size_array() {
 			'value' => 'lg',
 		),
 	);
-	return $vk_spacer_size_array;
+	return $vk_margin_size_array;
 }
 
 // VK Blocks の管理画面
@@ -63,7 +63,7 @@ function vkblocks_get_options() {
 	$options  = get_option( 'vk_blocks_options' );
 	$defaults = array(
 		'balloon_border_width' => 1,
-		'spacer_unit'          => array(
+		'margin_unit'          => array(
 			'sm' => 'px',
 			'md' => 'px',
 			'lg' => 'px',
@@ -256,30 +256,30 @@ function vkblocks_blocks_assets() {
 		}
 	';
 
-	$vk_spacer_size_array = vkblocks_spacer_size_array();
+	$vk_margin_size_array = vkblocks_margin_size_array();
 
 	if (
 		(
-			! empty( $vk_blocks_options['spacer_size']['sm'] ) &&
-			! empty( $vk_blocks_options['spacer_unit']['sm'] )
+			! empty( $vk_blocks_options['margin_size']['sm'] ) &&
+			! empty( $vk_blocks_options['margin_unit']['sm'] )
 		) ||
 		(
-			! empty( $vk_blocks_options['spacer_size']['md'] ) &&
-			! empty( $vk_blocks_options['spacer_unit']['md'] )
+			! empty( $vk_blocks_options['margin_size']['md'] ) &&
+			! empty( $vk_blocks_options['margin_unit']['md'] )
 		) ||
 		(
-			! empty( $vk_blocks_options['spacer_size']['lg'] ) &&
-			! empty( $vk_blocks_options['spacer_unit']['lg'] )
+			! empty( $vk_blocks_options['margin_size']['lg'] ) &&
+			! empty( $vk_blocks_options['margin_unit']['lg'] )
 		)
 	) {
 		$dynamic_css .= ':root {';
-		foreach ( $vk_spacer_size_array as $spacer_size ) {
+		foreach ( $vk_margin_size_array as $margin_size ) {
 			if (
-				! empty( $vk_blocks_options['spacer_size'][ $spacer_size['value'] ] ) &&
-				! empty( $vk_blocks_options['spacer_unit'][ $spacer_size['value'] ] )
+				! empty( $vk_blocks_options['margin_size'][ $margin_size['value'] ] ) &&
+				! empty( $vk_blocks_options['margin_unit'][ $margin_size['value'] ] )
 			) {
 				$dynamic_css .= '
-				--vk-margin-' . $spacer_size['value'] . ': ' . $vk_blocks_options['spacer_size'][ $spacer_size['value'] ] . $vk_blocks_options['spacer_unit'][ $spacer_size['value'] ] . ';';
+				--vk-margin-' . $margin_size['value'] . ': ' . $vk_blocks_options['margin_size'][ $margin_size['value'] ] . $vk_blocks_options['margin_unit'][ $margin_size['value'] ] . ';';
 
 			}
 		}

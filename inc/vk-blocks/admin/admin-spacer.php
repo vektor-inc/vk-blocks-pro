@@ -23,7 +23,7 @@ $vk_spacer_size_array = vkblocks_spacer_size_array();
 $vk_blocks_options  = vkblocks_get_options();
 ?>
 <section>
-	<h3 id="faq-setting"><?php echo __( 'Common Space Setting', 'vk-blocks' ); ?></h3>
+	<h3 id="spacer-setting"><?php echo __( 'Common Space Setting', 'vk-blocks' ); ?></h3>
 	<p><?php _e( 'Please specify the size of the common margin used for responsive spacers, etc.', 'vk-blocks' );?></p>
 	<?php foreach ( $vk_spacer_size_array as $spacer_size ) : ?>
 		<div class="spacer-setting">

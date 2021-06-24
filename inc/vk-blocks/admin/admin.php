@@ -53,6 +53,7 @@ function vk_blocks_setting_page() {
 
 	$get_menu_html  = '';
 	$get_menu_html .= '<li><a href="#balloon-setting">' . __( 'Balloon Block Setting', 'vk-blocks' ) . '</a></li>';
+	$get_menu_html .= '<li><a href="#spacer-setting">' . __( 'Spacer Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= apply_filters( 'vk_blocks_pro_menu', '' );
 
 	Vk_Admin::admin_page_frame( $get_page_title, 'vk_blocks_setting', $get_logo_html, $get_menu_html );

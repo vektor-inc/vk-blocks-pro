@@ -7,6 +7,7 @@ import save0_43_0 from './0.43.0/save';
 import save0_56_3 from './0.56.3/save';
 import save0_58_7 from './0.58.7/save';
 import save0_58_9 from './0.58.9/save';
+import save1_7_1 from './1.7.1/save';
 
 const blockAttributes = {
 	title: {
@@ -117,6 +118,10 @@ const blockAttributes3 = {
 };
 
 const deprecated = [
+	{
+		attributes: blockAttributes3,
+		save: save1_7_1,
+	},
 	//Fix: https://github.com/vektor-inc/vk-blocks-pro/issues/355
 	// 独自後方互換で変化したデータ用の後方互換バージョン
 	{

@@ -55,19 +55,13 @@ add_filter(
 );
 
 /*
--------------------------------------------*/
-/*
   Get Option
 /*-------------------------------------------*/
 function vkblocks_get_options() {
 	$options  = get_option( 'vk_blocks_options' );
 	$defaults = array(
 		'balloon_border_width' => 1,
-		'margin_unit'          => array(
-			'sm' => 'px',
-			'md' => 'px',
-			'lg' => 'px',
-		),
+		'margin_unit'          => 'rem',
 	);
 	$defaults = array_merge( $defaults, apply_filters( 'vk_blocks_default_options', array() ) );
 	$options  = wp_parse_args( $options, $defaults );
@@ -257,30 +251,21 @@ function vkblocks_blocks_assets() {
 	';
 
 	$vk_margin_size_array = vkblocks_margin_size_array();
-
 	if (
-		(
-			! empty( $vk_blocks_options['margin_size']['sm'] ) &&
-			! empty( $vk_blocks_options['margin_unit']['sm'] )
-		) ||
-		(
-			! empty( $vk_blocks_options['margin_size']['md'] ) &&
-			! empty( $vk_blocks_options['margin_unit']['md'] )
-		) ||
-		(
-			! empty( $vk_blocks_options['margin_size']['lg'] ) &&
-			! empty( $vk_blocks_options['margin_unit']['lg'] )
-		)
+		! empty( $vk_blocks_options['margin_size']['sm'] ) ||
+		! empty( $vk_blocks_options['margin_size']['md'] ) ||
+		! empty( $vk_blocks_options['margin_size']['lg'] ) 
 	) {
+		if ( ! empty( $vk_blocks_options['margin_unit'] ) ){
+			$unit = $vk_blocks_options['margin_unit'];
+		} else {
+			$unit = 'rem';
+		}
 		$dynamic_css .= ':root {';
 		foreach ( $vk_margin_size_array as $margin_size ) {
-			if (
-				! empty( $vk_blocks_options['margin_size'][ $margin_size['value'] ] ) &&
-				! empty( $vk_blocks_options['margin_unit'][ $margin_size['value'] ] )
-			) {
+			if ( ! empty( $vk_blocks_options['margin_size'][ $margin_size['value'] ] ) ) {
 				$dynamic_css .= '
-				--vk-margin-' . $margin_size['value'] . ': ' . $vk_blocks_options['margin_size'][ $margin_size['value'] ] . $vk_blocks_options['margin_unit'][ $margin_size['value'] ] . ';';
-
+				--vk-margin-' . $margin_size['value'] . ': ' . $vk_blocks_options['margin_size'][ $margin_size['value'] ] . $unit  . ';';
 			}
 		}
 		$dynamic_css .= '}';

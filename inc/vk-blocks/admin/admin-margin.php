@@ -18,27 +18,20 @@ $margin_unit_array = array(
 );
 
 $vk_margin_size_array = vkblocks_margin_size_array();
+$vk_blocks_options    = vkblocks_get_options();
 
-
-$vk_blocks_options = vkblocks_get_options();
 ?>
 <section>
 	<h3 id="margin-setting"><?php echo __( 'Common Margin Setting', 'vk-blocks' ); ?></h3>
 	<p><?php _e( 'Please specify the size of the common margin used for responsive spacers, etc.', 'vk-blocks' ); ?></p>
-	<?php foreach ( $vk_margin_size_array as $margin_size ) : ?>
-		<div class="margin-setting">
-			<span><?php echo $margin_size['label']; ?></span>
-			<input
-				type="number"
-				name="vk_blocks_options[margin_size][<?php echo $margin_size['value']; ?>]"
-				value="<?php echo $vk_blocks_options['margin_size'][ $margin_size['value'] ]; ?>"
-			>
-			<span><?php _e( 'Unit' ); ?></span>
-			<select name="vk_blocks_options[margin_unit][<?php echo $margin_size['value']; ?>]">
+
+	<p>
+	<span><?php _e( 'Unit' ); ?></span>
+			<select name="vk_blocks_options[margin_unit]">
 			<?php
 			foreach ( $margin_unit_array as $margin_unit ) :
 					$selected = '';
-				if ( $vk_blocks_options['margin_unit'][ $margin_size['value'] ] === $margin_unit['value'] ) {
+				if ( $vk_blocks_options['margin_unit'] === $margin_unit['value'] ) {
 					$selected = ' selected';
 				}
 				?>
@@ -47,7 +40,19 @@ $vk_blocks_options = vkblocks_get_options();
 				</option>
 			<?php endforeach; ?>
 			</select>
-		</div>
-	<?php endforeach; ?>
+			</p>
+
+			<ul class="no-style">
+			<?php foreach ( $vk_margin_size_array as $margin_size ) : ?>
+				<li>
+					<span>
+					<?php _e( 'Margin', 'vk-blocks' ); ?> [ <?php echo $margin_size['label']; ?> ] </span>
+					<input
+						type="number"
+						name="vk_blocks_options[margin_size][<?php echo $margin_size['value']; ?>]"
+						value="<?php echo $vk_blocks_options['margin_size'][ $margin_size['value'] ]; ?>"
+					>
+				</li>
+			<?php endforeach; ?>
 	<?php submit_button(); ?>
 </section>

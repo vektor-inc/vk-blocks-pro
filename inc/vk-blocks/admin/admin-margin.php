@@ -26,7 +26,7 @@ $vk_blocks_options    = vkblocks_get_options();
 	<p><?php _e( 'Please specify the size of the common margin used for responsive spacers, etc.', 'vk-blocks' ); ?></p>
 
 	<p>
-	<span><?php _e( 'Unit' ); ?></span>
+	<span><?php _e( 'Unit', 'vk-blocks' ); ?></span>
 			<select name="vk_blocks_options[margin_unit]">
 			<?php
 			foreach ( $margin_unit_array as $margin_unit ) :

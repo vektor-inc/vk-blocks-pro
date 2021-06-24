@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-06-22T07:24:17+00:00\n"
+"POT-Creation-Date: 2021-06-24T00:58:26+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: vk-blocks\n"
@@ -191,6 +191,7 @@ msgstr ""
 #: src/blocks/pr-content/deprecated/0.56.3/component.js:156
 #: src/blocks/pr-content/deprecated/0.58.7/component.js:171
 #: src/blocks/pr-content/deprecated/0.58.9/component.js:171
+#: src/blocks/pr-content/deprecated/1.7.1/mediaUpload.js:68
 #: src/blocks/pr-content/mediaUpload.js:68
 #: src/blocks/staff/deprecated/0.58/component.js:96
 #: src/blocks/staff/edit.js:306
@@ -344,7 +345,7 @@ msgstr ""
 #: src/blocks/_pro/icon-card-item/edit.js:100
 #: src/blocks/button/edit.js:70
 #: src/blocks/pr-blocks/edit.js:271
-#: src/blocks/pr-content/edit.js:124
+#: src/blocks/pr-content/edit.js:130
 msgid "Open link new tab."
 msgstr ""
 
@@ -352,7 +353,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:57
 #: src/blocks/border-box/edit.js:122
 #: src/blocks/button/edit.js:258
-#: src/blocks/pr-content/edit.js:190
+#: src/blocks/pr-content/edit.js:196
 msgid "Icon ( Font Awesome )"
 msgstr ""
 
@@ -410,7 +411,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:187
 #: src/blocks/_pro/slider-item/edit.js:126
-#: src/blocks/pr-content/edit.js:60
+#: src/blocks/pr-content/edit.js:66
 msgid "Color Setting"
 msgstr ""
 
@@ -461,7 +462,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:289
 #: src/blocks/_pro/slider-item/edit.js:70
-#: src/blocks/pr-content/edit.js:219
+#: src/blocks/pr-content/edit.js:225
 msgid "Layout Setting"
 msgstr ""
 
@@ -565,7 +566,7 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:489
 #: src/blocks/_pro/step-item/edit.js:92
 #: src/blocks/_pro/timeline-item/edit.js:77
-#: src/blocks/pr-content/edit.js:137
+#: src/blocks/pr-content/edit.js:143
 #: src/extensions/core/group/style.js:102
 msgid "Solid"
 msgstr ""
@@ -934,28 +935,28 @@ msgstr ""
 
 #: src/blocks/alert/edit.js:25
 #: src/blocks/button/edit.js:212
-#: src/blocks/pr-content/edit.js:158
+#: src/blocks/pr-content/edit.js:164
 #: src/extensions/core/group/style.js:138
 msgid "Success"
 msgstr ""
 
 #: src/blocks/alert/edit.js:28
 #: src/blocks/button/edit.js:216
-#: src/blocks/pr-content/edit.js:161
+#: src/blocks/pr-content/edit.js:167
 #: src/extensions/core/group/style.js:134
 msgid "Info"
 msgstr ""
 
 #: src/blocks/alert/edit.js:30
 #: src/blocks/button/edit.js:220
-#: src/blocks/pr-content/edit.js:163
+#: src/blocks/pr-content/edit.js:169
 #: src/extensions/core/group/style.js:142
 msgid "Warning"
 msgstr ""
 
 #: src/blocks/alert/edit.js:34
 #: src/blocks/button/edit.js:224
-#: src/blocks/pr-content/edit.js:167
+#: src/blocks/pr-content/edit.js:173
 #: src/extensions/core/group/style.js:146
 msgid "Danger"
 msgstr ""
@@ -1005,14 +1006,14 @@ msgstr ""
 
 #: src/blocks/balloon/edit.js:219
 #: src/blocks/button/edit.js:119
-#: src/blocks/pr-content/edit.js:227
+#: src/blocks/pr-content/edit.js:233
 #: src/components/display-items-control/index.js:121
 msgid "Left"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:231
 #: src/blocks/button/edit.js:139
-#: src/blocks/pr-content/edit.js:226
+#: src/blocks/pr-content/edit.js:232
 #: src/components/display-items-control/index.js:129
 msgid "Right"
 msgstr ""
@@ -1077,6 +1078,7 @@ msgstr ""
 #: src/blocks/pr-content/deprecated/0.56.3/component.js:163
 #: src/blocks/pr-content/deprecated/0.58.7/component.js:178
 #: src/blocks/pr-content/deprecated/0.58.9/component.js:178
+#: src/blocks/pr-content/deprecated/1.7.1/mediaUpload.js:130
 #: src/blocks/pr-content/mediaUpload.js:130
 msgid "Upload image"
 msgstr ""
@@ -1209,27 +1211,27 @@ msgid "If you select \"No background\", that you need to select a Custom Color."
 msgstr ""
 
 #: src/blocks/button/edit.js:200
-#: src/blocks/pr-content/edit.js:146
+#: src/blocks/pr-content/edit.js:152
 msgid "Default Color:"
 msgstr ""
 
 #: src/blocks/button/edit.js:204
-#: src/blocks/pr-content/edit.js:150
+#: src/blocks/pr-content/edit.js:156
 msgid "Primary"
 msgstr ""
 
 #: src/blocks/button/edit.js:208
-#: src/blocks/pr-content/edit.js:154
+#: src/blocks/pr-content/edit.js:160
 msgid "Secondary"
 msgstr ""
 
 #: src/blocks/button/edit.js:228
-#: src/blocks/pr-content/edit.js:170
+#: src/blocks/pr-content/edit.js:176
 msgid "Light"
 msgstr ""
 
 #: src/blocks/button/edit.js:232
-#: src/blocks/pr-content/edit.js:171
+#: src/blocks/pr-content/edit.js:177
 msgid "Dark"
 msgstr ""
 
@@ -1243,13 +1245,13 @@ msgstr ""
 
 #: src/blocks/button/edit.js:262
 #: src/blocks/heading/edit.js:301
-#: src/blocks/pr-content/edit.js:194
+#: src/blocks/pr-content/edit.js:200
 msgid "Before text"
 msgstr ""
 
 #: src/blocks/button/edit.js:271
 #: src/blocks/heading/edit.js:310
-#: src/blocks/pr-content/edit.js:206
+#: src/blocks/pr-content/edit.js:212
 msgid "After text"
 msgstr ""
 
@@ -1535,7 +1537,7 @@ msgstr ""
 #: src/blocks/pr-content/deprecated/0.56.3/component.js:197
 #: src/blocks/pr-content/deprecated/0.58.7/component.js:215
 #: src/blocks/pr-content/deprecated/0.58.9/component.js:215
-#: src/blocks/pr-content/edit.js:247
+#: src/blocks/pr-content/edit.js:253
 msgid "Input title."
 msgstr ""
 
@@ -1548,56 +1550,57 @@ msgstr ""
 #: src/blocks/pr-content/deprecated/0.56.3/component.js:205
 #: src/blocks/pr-content/deprecated/0.58.7/component.js:228
 #: src/blocks/pr-content/deprecated/0.58.9/component.js:228
-#: src/blocks/pr-content/edit.js:255
+#: src/blocks/pr-content/edit.js:261
 msgid "Input content."
 msgstr ""
 
-#: src/blocks/pr-content/edit.js:103
+#: src/blocks/pr-content/deprecated/1.7.1/mediaUpload.js:120
+#: src/blocks/pr-content/mediaUpload.js:120
+msgid "Select Image"
+msgstr ""
+
+#: src/blocks/pr-content/edit.js:104
+msgid "Button Setting"
+msgstr ""
+
+#: src/blocks/pr-content/edit.js:109
 msgid "Button Text"
 msgstr ""
 
-#: src/blocks/pr-content/edit.js:115
+#: src/blocks/pr-content/edit.js:121
 msgid "Link URL"
 msgstr ""
 
-#: src/blocks/pr-content/edit.js:132
+#: src/blocks/pr-content/edit.js:138
 msgid "Button Type"
 msgstr ""
 
-#: src/blocks/pr-content/edit.js:138
+#: src/blocks/pr-content/edit.js:144
 msgid "Ghost"
 msgstr ""
 
-#: src/blocks/pr-content/edit.js:179
+#: src/blocks/pr-content/edit.js:185
 msgid "Button Color"
 msgstr ""
 
-#: src/blocks/pr-content/edit.js:223
+#: src/blocks/pr-content/edit.js:229
 msgid "Layout Type"
 msgstr ""
 
-#: src/blocks/pr-content/edit.js:65
+#: src/blocks/pr-content/edit.js:71
 msgid "Title Color"
 msgstr ""
 
-#: src/blocks/pr-content/edit.js:76
+#: src/blocks/pr-content/edit.js:82
 msgid "Content Color"
 msgstr ""
 
-#: src/blocks/pr-content/edit.js:87
+#: src/blocks/pr-content/edit.js:93
 msgid "Image Border Color"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:98
-msgid "Button Setting"
 msgstr ""
 
 #: src/blocks/pr-content/index.js:26
 msgid "PR Content"
-msgstr ""
-
-#: src/blocks/pr-content/mediaUpload.js:120
-msgid "Select Image"
 msgstr ""
 
 #: src/blocks/spacer/advanced-spacer-control.js:15
@@ -2395,11 +2398,11 @@ msgstr ""
 msgid "No Post is selected"
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:239
+#: inc/vk-blocks/vk-blocks-functions.php:250
 msgid "Blocks"
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:249
+#: inc/vk-blocks/vk-blocks-functions.php:260
 msgid "Blocks Layout"
 msgstr ""
 

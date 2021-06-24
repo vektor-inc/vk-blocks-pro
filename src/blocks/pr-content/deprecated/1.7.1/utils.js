@@ -56,7 +56,7 @@ export const getLinkStyle = (buttonColorCustom, buttonType) => {
 	return linkStyle;
 };
 
-export const getFontawesomeIcon = (fontAwesomeIconSelector, iconClassName) => {
+export const getFontawesomeIcon = (fontAwesomeIconSelector) => {
 	let icon = '';
 	let faIconDatas;
 
@@ -68,9 +68,10 @@ export const getFontawesomeIcon = (fontAwesomeIconSelector, iconClassName) => {
 	if (fontAwesomeIconSelector) {
 		//add class and inline css
 		faIconDatas = fontAwesomeIconSelector.split(' ');
-		faIconDatas[1] = ' ' + faIconDatas[1] + ' ' + iconClassName + ' ';
+		faIconDatas[1] = ' ' + faIconDatas[1] + ` vk_button_link_before `;
 		icon = faIconDatas.join('');
 	}
 
 	return icon;
 };
+

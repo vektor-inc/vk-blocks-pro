@@ -11,6 +11,7 @@ if ( ! function_exists('vk_blocks_setting') ) {
 			<?php wp_nonce_field( 'vkb-nonce-key', 'vkb-setting-page' ); ?>
 			<?php
 			require_once dirname( __FILE__ ) . '/admin-balloon.php';
+			require_once dirname( __FILE__ ) . '/admin-spacer.php';
 			do_action( 'vk_blocks_pro_admin' );
 			?>
 		</form>

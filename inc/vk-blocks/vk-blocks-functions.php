@@ -6,6 +6,27 @@ require_once dirname( __FILE__ ) . '/view/responsive-br.php';
 require_once dirname( __FILE__ ) . '/style/balloon.php';
 // require_once dirname( __FILE__ ) . '/customize/vk-blocks-customize-config.php';
 
+/**
+ * スペーサーのサイズの配列
+ */
+function vkblocks_spacer_size_array() {
+	$vk_spacer_size_array = array(
+		array(
+			'label' => __( 'Small', 'vk-blocks' ),
+			'value' => 'sm',
+		),
+		array(
+			'label' => __( 'Medium', 'vk-blocks' ),
+			'value' => 'md',
+		),
+		array(
+			'label' => __( 'Large', 'vk-blocks' ),
+			'value' => 'lg',
+		),
+	);
+	return $vk_spacer_size_array;
+}
+
 // VK Blocks の管理画面
 require_once dirname( __FILE__ ) . '/admin/admin.php';
 
@@ -42,6 +63,11 @@ function vkblocks_get_options() {
 	$options  = get_option( 'vk_blocks_options' );
 	$defaults = array(
 		'balloon_border_width'      => 1,
+		'spacer_unit' => array(
+			'sm' => 'px',
+			'md' => 'px',
+			'lg' => 'px',
+		)
 	);
 	$defaults = array_merge( $defaults, apply_filters( 'vk_blocks_default_options', array() ) );
 	$options  = wp_parse_args( $options, $defaults );
@@ -91,9 +117,12 @@ function is_lager_than_wp( $target_version, $syntax=">=" ) {
 	return defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, $target_version, $syntax );
 }
 
+
+
 function vkblocks_blocks_assets() {
 
 	$asset_file = include plugin_dir_path( __FILE__ ) . '/build/block-build.asset.php';
+	$vk_blocks_options  = vkblocks_get_options();
 
 	// CSSを登録
 	wp_register_style( 'vk-blocks-build-css', VK_BLOCKS_URL . 'build/block-build.css', array(), VK_BLOCKS_VERSION );
@@ -226,6 +255,37 @@ function vkblocks_blocks_assets() {
 			--vk_image-mask-wave04: url(' . VK_BLOCKS_URL . 'images/wave04.svg);
 		}
 	';
+
+	$vk_spacer_size_array = vkblocks_spacer_size_array();
+
+	if (
+		(
+			! empty( $vk_blocks_options['spacer_size']['sm'] ) &&
+			! empty( $vk_blocks_options['spacer_unit']['sm'] )
+		) ||
+		(
+			! empty( $vk_blocks_options['spacer_size']['md'] ) &&
+			! empty( $vk_blocks_options['spacer_unit']['md'] )
+		) ||
+		(
+			! empty( $vk_blocks_options['spacer_size']['lg'] ) &&
+			! empty( $vk_blocks_options['spacer_unit']['lg'] )
+		)
+	) {
+		$dynamic_css .= ':root {';
+		foreach( $vk_spacer_size_array as $spacer_size ) {
+			if (
+				! empty( $vk_blocks_options['spacer_size'][$spacer_size['value']] ) &&
+				! empty( $vk_blocks_options['spacer_unit'][$spacer_size['value']] )
+			) {
+				$dynamic_css .= '
+				--vk-margin-' . $spacer_size['value'] . ': ' . $vk_blocks_options['spacer_size'][$spacer_size['value']] . $vk_blocks_options['spacer_unit'][$spacer_size['value']] . ';';
+
+			}
+		}
+		$dynamic_css .= '}';
+	}
+
 	// delete before after space
 	$dynamic_css = trim( $dynamic_css );
 	// convert tab and br to space

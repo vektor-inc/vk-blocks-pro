@@ -42,8 +42,6 @@ function vk_blocks_setting_menu() {
 add_action( 'admin_menu', 'vk_blocks_setting_menu' );
 
 /*
--------------------------------------------*/
-/*
   Setting Page
 /*-------------------------------------------*/
 function vk_blocks_setting_page() {
@@ -61,8 +59,6 @@ function vk_blocks_setting_page() {
 	Vk_Admin::admin_page_frame( $get_page_title, 'vk_blocks_setting', $get_logo_html, $get_menu_html );
 }
 
-/*
--------------------------------------------*/
 /*
   save option
 /*-------------------------------------------*/

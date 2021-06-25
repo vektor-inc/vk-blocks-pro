@@ -17,7 +17,7 @@ import {
 } from '@wordpress/block-editor';
 
 import {
-	FontSizePicker, } from '@wordpress/components';
+	FontSizePicker, Button } from '@wordpress/components';
 
 import { ReactComponent as Icon } from './icon.svg';
 
@@ -41,6 +41,11 @@ const FontSizeEdit = (props) => {
 	const iconStyle = {
 		width: '24px',
 		height: '24px',
+	};
+	const buttonStyle = {
+		marginTop: '16px',
+		padding: '0 16px',
+		height: '30px',
 	};
 	const anchorRef = useAnchorRef({ ref: props.contentRef, value });
 	const [isSettingFontSize, setIsSettingFontSize] = useState(false);
@@ -117,9 +122,19 @@ const FontSizeEdit = (props) => {
 									// reset font size
 									onChange(removeFormat(value, name));
 								}
-								setIsSettingFontSize(false);
+								//setIsSettingFontSize(false);
 							}}
 						/>
+						<Button
+							onClick={() => {
+								setIsSettingFontSize(false);
+							}}
+							isSmall
+							isSecondary
+							style={buttonStyle}
+						>
+							{__('Apply', 'vk-blocks')}
+						</Button>
 					</div>
 				</URLPopover>
 			)}

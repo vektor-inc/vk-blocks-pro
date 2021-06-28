@@ -171,7 +171,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:86
 #: src/blocks/_pro/card-item/edit.js:88
 #: src/blocks/balloon/edit.js:379
-#: src/blocks/flow/edit.js:82
+#: src/blocks/flow/edit.js:84
 #: src/blocks/pr-blocks/edit.js:88
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:130
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:112
@@ -1062,7 +1062,6 @@ msgid "Trembling"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:387
-#: src/blocks/flow/edit.js:87
 #: src/blocks/pr-blocks/edit.js:82
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:135
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:117
@@ -1348,23 +1347,23 @@ msgstr ""
 msgid "New FAQ"
 msgstr ""
 
-#: src/blocks/flow/edit.js:20
+#: src/blocks/flow/edit.js:21
 msgid "Display of arrow"
 msgstr ""
 
-#: src/blocks/flow/edit.js:25
+#: src/blocks/flow/edit.js:26
 msgid "Arrow display"
 msgstr ""
 
-#: src/blocks/flow/edit.js:29
+#: src/blocks/flow/edit.js:30
 msgid "Arrow hidden"
 msgstr ""
 
-#: src/blocks/flow/edit.js:51
+#: src/blocks/flow/edit.js:52
 msgid "Input title"
 msgstr ""
 
-#: src/blocks/flow/edit.js:61
+#: src/blocks/flow/edit.js:62
 msgid "Input content"
 msgstr ""
 

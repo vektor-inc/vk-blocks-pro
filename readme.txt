@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
 Tested up to: 5.7.2
-Stable tag: 1.7.1
+Stable tag: 1.8.1
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,7 +63,14 @@ e.g.
 
 == Changelog ==
 
-[ Improvement ][ Inline Font Size ] setting font size in toolbar
+[ Bug fix ][ FAQ ] Fixed CSS of answer part when closing in the initial state
+
+= 1.8.1 =
+[ Bug fix ][ Flow ] Fixed to reflect alt of image
+
+= 1.8.0 =
+[ Improvement ][ Spacer ] Add common space size setting
+[ Bug fix ] PR Content button after icon position
 
 = 1.7.1 =
 [ Bugfix ][ Heading ] Fix Color Palette default setting.

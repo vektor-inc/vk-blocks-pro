@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ FAQ ] Fixed CSS of answer part when closing in the initial state
+
 = 1.8.1 =
 [ Bug fix ][ Flow ] Fixed to reflect alt of image
 

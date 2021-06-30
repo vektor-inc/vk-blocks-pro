@@ -19,7 +19,6 @@ export default function save({ attributes }) {
 	)} col-md-${convertToGrid(col_md)} col-lg-${convertToGrid(
 		col_lg
 	)} col-xl-${convertToGrid(col_xl)} col-xxl-${convertToGrid(col_xxl)}`;
-
 	// margin bottom
 	let style;
 	if (marginBottom) {

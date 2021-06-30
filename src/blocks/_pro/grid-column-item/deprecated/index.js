@@ -1,5 +1,6 @@
 import save0_45_2 from './0.45.2/save';
 import save0_60_1 from './0.60.1/save';
+import save1_4_1 from './1.4.1/save';
 
 const blockAttributes = {
 	layout: {
@@ -99,6 +100,10 @@ const blockAttributes = {
 };
 
 const deprecated = [
+	{
+		attributes: blockAttributes,
+		save: save1_4_1,
+	},
 	{
 		attributes: blockAttributes,
 		save: save0_60_1,

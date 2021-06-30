@@ -11,13 +11,9 @@ import {
 	useAnchorRef,
 } from '@wordpress/rich-text';
 
-import {
-	RichTextToolbarButton,
-	URLPopover,
-} from '@wordpress/block-editor';
+import { RichTextToolbarButton, URLPopover } from '@wordpress/block-editor';
 
-import {
-	FontSizePicker, Button } from '@wordpress/components';
+import { FontSizePicker, Button } from '@wordpress/components';
 
 import { ReactComponent as Icon } from './icon.svg';
 
@@ -49,7 +45,7 @@ const FontSizeEdit = (props) => {
 	};
 	const anchorRef = useAnchorRef({ ref: props.contentRef, value });
 	const [isSettingFontSize, setIsSettingFontSize] = useState(false);
-	
+
 	const fontSizes = [
 		{
 			name: __('Small', 'vk-blocks'),
@@ -117,8 +113,7 @@ const FontSizeEdit = (props) => {
 											},
 										})
 									);
-								}
-								else{
+								} else {
 									// reset font size
 									onChange(removeFormat(value, name));
 								}

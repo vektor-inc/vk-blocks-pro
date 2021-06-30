@@ -62,7 +62,7 @@ msgstr ""
 #: src/blocks/button/edit.js:95
 #: src/blocks/faq/index.js:27
 #: src/blocks/faq2/index.js:22
-#: src/extensions/common/inline-font-size/index.js:52
+#: src/extensions/common/inline-font-size/index.js:56
 msgid "Normal"
 msgstr ""
 
@@ -171,7 +171,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:86
 #: src/blocks/_pro/card-item/edit.js:88
 #: src/blocks/balloon/edit.js:379
-#: src/blocks/flow/edit.js:82
+#: src/blocks/flow/edit.js:84
 #: src/blocks/pr-blocks/edit.js:88
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:130
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:112
@@ -815,7 +815,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:110
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
 #: src/blocks/_pro/timeline-item/edit.js:91
-#: src/blocks/heading/edit.js:219
+#: src/blocks/heading/edit.js:237
 #: src/blocks/staff/edit.js:113
 #: src/extensions/core/heading/style.js:30
 #: src/extensions/core/list/style.js:102
@@ -916,7 +916,7 @@ msgid "Timeline"
 msgstr ""
 
 #: src/blocks/alert/edit.js:19
-#: src/blocks/heading/edit.js:210
+#: src/blocks/heading/edit.js:228
 msgid "Style Settings"
 msgstr ""
 
@@ -983,7 +983,7 @@ msgid "Balloon setting"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:202
-#: src/blocks/heading/edit.js:325
+#: src/blocks/heading/edit.js:343
 msgid "Position"
 msgstr ""
 
@@ -1054,7 +1054,6 @@ msgid "Trembling"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:387
-#: src/blocks/flow/edit.js:87
 #: src/blocks/pr-blocks/edit.js:82
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:135
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:117
@@ -1167,7 +1166,7 @@ msgid "Solid Angle iconFeature"
 msgstr ""
 
 #: src/blocks/button/edit.js:103
-#: src/extensions/common/inline-font-size/index.js:47
+#: src/extensions/common/inline-font-size/index.js:51
 msgid "Small"
 msgstr ""
 
@@ -1236,13 +1235,13 @@ msgid ""
 msgstr ""
 
 #: src/blocks/button/edit.js:262
-#: src/blocks/heading/edit.js:301
+#: src/blocks/heading/edit.js:310
 #: src/blocks/pr-content/edit.js:200
 msgid "Before text"
 msgstr ""
 
 #: src/blocks/button/edit.js:271
-#: src/blocks/heading/edit.js:310
+#: src/blocks/heading/edit.js:319
 #: src/blocks/pr-content/edit.js:212
 msgid "After text"
 msgstr ""
@@ -1338,23 +1337,23 @@ msgstr ""
 msgid "New FAQ"
 msgstr ""
 
-#: src/blocks/flow/edit.js:20
+#: src/blocks/flow/edit.js:21
 msgid "Display of arrow"
 msgstr ""
 
-#: src/blocks/flow/edit.js:25
+#: src/blocks/flow/edit.js:26
 msgid "Arrow display"
 msgstr ""
 
-#: src/blocks/flow/edit.js:29
+#: src/blocks/flow/edit.js:30
 msgid "Arrow hidden"
 msgstr ""
 
-#: src/blocks/flow/edit.js:51
+#: src/blocks/flow/edit.js:52
 msgid "Input title"
 msgstr ""
 
-#: src/blocks/flow/edit.js:61
+#: src/blocks/flow/edit.js:62
 msgid "Input content"
 msgstr ""
 
@@ -1372,7 +1371,7 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:152
 #: src/blocks/heading/deprecated/0.40.1/component.js:152
 #: src/blocks/heading/deprecated/0.60.1/component.js:152
-#: src/blocks/heading/edit.js:184
+#: src/blocks/heading/edit.js:202
 msgid "Input sub text…"
 msgstr ""
 
@@ -1386,60 +1385,60 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:137
 #: src/blocks/heading/deprecated/0.40.1/component.js:137
 #: src/blocks/heading/deprecated/0.60.1/component.js:137
-#: src/blocks/heading/edit.js:169
+#: src/blocks/heading/edit.js:187
 msgid "Input title…"
 msgstr ""
 
-#: src/blocks/heading/edit.js:212
+#: src/blocks/heading/edit.js:230
 msgid "Heading style"
 msgstr ""
 
-#: src/blocks/heading/edit.js:223
+#: src/blocks/heading/edit.js:241
 #: src/extensions/core/heading/style.js:35
 msgid "Plain"
 msgstr ""
 
-#: src/blocks/heading/edit.js:229
+#: src/blocks/heading/edit.js:247
 msgid "Margin Setting"
 msgstr ""
 
-#: src/blocks/heading/edit.js:231
+#: src/blocks/heading/edit.js:249
 msgid "Margin between Heading and sub text (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:248
+#: src/blocks/heading/edit.js:266
 msgid "Margin bottom size of after this block (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:265
+#: src/blocks/heading/edit.js:283
 msgid "Heading Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:277
+#: src/blocks/heading/edit.js:295
 msgid "Text Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:289
+#: src/blocks/heading/edit.js:307
 msgid "Font Awesome Icon Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:310
+#: src/blocks/heading/edit.js:328
 msgid "Icon Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:323
+#: src/blocks/heading/edit.js:341
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:329
+#: src/blocks/heading/edit.js:347
 msgid "Display"
 msgstr ""
 
-#: src/blocks/heading/edit.js:333
+#: src/blocks/heading/edit.js:351
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/heading/edit.js:341
+#: src/blocks/heading/edit.js:359
 msgid "Text size (rem)"
 msgstr ""
 
@@ -1838,43 +1837,39 @@ msgid ""
 "the next, hide for the that group block."
 msgstr ""
 
-#: src/extensions/common/highlighter/index.js:116
+#: src/extensions/common/highlighter/index.js:139
 msgid "Highlighter"
 msgstr ""
 
-#: src/extensions/common/highlighter/index.js:98
-msgid "Highlight Color"
+#: src/extensions/common/inline-font-size/index.js:131
+msgid "Apply"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:101
-msgid "Inline Font Size"
-msgstr ""
-
-#: src/extensions/common/inline-font-size/index.js:25
+#: src/extensions/common/inline-font-size/index.js:141
 msgid "Inline font size"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:57
+#: src/extensions/common/inline-font-size/index.js:61
 msgid "Big"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:62
+#: src/extensions/common/inline-font-size/index.js:66
 msgid "Extra big"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:74
-msgid "Inline Font Size Settings"
+#: src/extensions/common/inline-font-size/index.js:77
+msgid "Inline Font Size"
 msgstr ""
 
 #: src/extensions/common/nowrap/index.js:21
 msgid "No wrap"
 msgstr ""
 
-#: src/extensions/common/responsive-br/index.js:41
+#: src/extensions/common/responsive-br/index.js:44
 msgid "Responsive BR"
 msgstr ""
 
-#: src/extensions/common/responsive-br/index.js:45
+#: src/extensions/common/responsive-br/index.js:48
 msgid "Responsive BR "
 msgstr ""
 

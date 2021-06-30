@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
 Tested up to: 5.7.2
-Stable tag: 1.8.1
+Stable tag: 1.8.2
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,7 +63,9 @@ e.g.
 
 == Changelog ==
 
+= 1.8.2 =
 [ Bug fix ][ FAQ ] Fixed CSS of answer part when closing in the initial state
+[ Bug fix ][ Responsive BR ] Fixed Console Warning
 
 = 1.8.1 =
 [ Bug fix ][ Flow ] Fixed to reflect alt of image

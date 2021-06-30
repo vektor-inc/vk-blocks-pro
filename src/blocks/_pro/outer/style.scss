@@ -20,13 +20,12 @@ $media-xxl-down: 1399.98px;
 	background-repeat: no-repeat;
 	position: relative;
 	transform: translateZ(0); // Safari 1px bug 対応
-
 	.vk_outer_container {
 		min-height: 40px;
-		h1:first-child,
-		h2:first-child,
-		h3:first-child,
-		h4:first-child,
+		h1:first-child, 
+		h2:first-child, 
+		h3:first-child, 
+		h4:first-child, 
 		h5:first-child {//他テーマ用
 			margin-top: 0;
 		}
@@ -34,7 +33,7 @@ $media-xxl-down: 1399.98px;
 }
 // これがないとレスポンシブスペーサーの共通高さが検出しない。
 .vk_outer{
-	display:block;
+	display:block; 
 	overflow:hidden;
 }
 //iOS Safari での1pxズレの予防のため　Only Safari 10.1+

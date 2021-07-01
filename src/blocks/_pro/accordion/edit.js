@@ -10,8 +10,8 @@ export default function AccordionEdit() {
 			<div className="vk_accordion-body">
 				<InnerBlocks
 					allowedBlocks={[
-						['vk-blocks/accordion-trigger'],
-						['vk-blocks/accordion-target'],
+						'vk-blocks/accordion-trigger',
+						'vk-blocks/accordion-target',
 					]}
 					template={[
 						['vk-blocks/accordion-trigger'],

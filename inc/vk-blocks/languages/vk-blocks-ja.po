@@ -1847,6 +1847,10 @@ msgstr ""
 msgid "Extra big"
 msgstr ""
 
+#: src/extensions/common/inline-font-size/index.js:131
+msgid "Apply"
+msgstr "適用"
+
 #: src/extensions/common/inline-font-size/index.js:74
 #, fuzzy
 #| msgid "Container Inner Side Space Setting"

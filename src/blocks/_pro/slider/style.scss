@@ -70,6 +70,12 @@
 	bottom: 15px;
 }
 
+@media ( max-width: 991.98px ) {
+	.vk_slider.swiper-container .swiper-pagination-bullet {
+		margin: 0 44px;
+	}
+}
+
 
 /*-------------------------------------------*/
 /* 管理画面
@@ -90,10 +96,10 @@
 			margin: auto;
 			&.vk_slider_item-paddingLR-use,
 			&.vk_slider_item-paddingLR-zero{
-				.vk_slider_item_container{ 
+				.vk_slider_item_container{
 						max-width:100%;
 					.wp-block{
-						max-width:100%;						
+						max-width:100%;
 					}
 				}
 			}

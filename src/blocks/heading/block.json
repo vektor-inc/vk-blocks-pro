@@ -31,8 +31,7 @@
 			"default": ""
 		},
 		"titleColor": {
-			"type": "string",
-			"default": null
+			"type": "string"
 		},
 		"titleSize": {
 			"type": "number",
@@ -52,8 +51,7 @@
 			"default": "off"
 		},
 		"subTextColor": {
-			"type": "string",
-			"default": null
+			"type": "string"
 		},
 		"subTextSize": {
 			"type": "number",
@@ -68,8 +66,7 @@
 			"default": ""
 		},
 		"fontAwesomeIconColor": {
-			"type": "string",
-			"default": "#000000"
+			"type": "string"
 		}
 	},
 	"supports": {

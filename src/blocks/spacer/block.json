@@ -26,6 +26,10 @@
         "mobile": {
             "type": "number",
             "default": 20
+        },
+        "spaceSize": {
+            "type": "string",
+            "default": "medium"
         }
 	},
 	"supports": {

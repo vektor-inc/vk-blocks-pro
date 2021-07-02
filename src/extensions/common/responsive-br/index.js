@@ -49,7 +49,11 @@ registerFormatType(`vk-blocks/responsive-br`, {
 											`( ${breakPoint} )`,
 										icon: <Icon />,
 										onClick: () => {
-											insertBR(value, onChange, breakPoint);
+											insertBR(
+												value,
+												onChange,
+												breakPoint
+											);
 										},
 									};
 								})}

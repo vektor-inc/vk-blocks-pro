@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Improvement ][ Inline Font Size ] setting font size in toolbar
+
 = 1.8.2 =
 [ Bug fix ][ FAQ ] Fixed CSS of answer part when closing in the initial state
 [ Bug fix ][ Responsive BR ] Fixed Console Warning

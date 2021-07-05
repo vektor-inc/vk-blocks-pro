@@ -294,8 +294,16 @@ msgstr ""
 msgid "Grid Column Item"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:47
+#: src/blocks/_pro/grid-column/edit.js:51
 msgid "Layout Columns"
+msgstr ""
+
+#: src/blocks/_pro/grid-column/edit.js:57
+msgid "Column Margin Bottom Setting"
+msgstr ""
+
+#: src/blocks/_pro/grid-column/edit.js:61
+msgid "Margin Bottom"
 msgstr ""
 
 #: src/blocks/_pro/grid-column/index.js:17
@@ -815,7 +823,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:110
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
 #: src/blocks/_pro/timeline-item/edit.js:91
-#: src/blocks/heading/edit.js:237
+#: src/blocks/heading/edit.js:228
 #: src/blocks/staff/edit.js:113
 #: src/extensions/core/heading/style.js:30
 #: src/extensions/core/list/style.js:102
@@ -916,7 +924,7 @@ msgid "Timeline"
 msgstr ""
 
 #: src/blocks/alert/edit.js:19
-#: src/blocks/heading/edit.js:228
+#: src/blocks/heading/edit.js:219
 msgid "Style Settings"
 msgstr ""
 
@@ -983,7 +991,7 @@ msgid "Balloon setting"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:202
-#: src/blocks/heading/edit.js:343
+#: src/blocks/heading/edit.js:334
 msgid "Position"
 msgstr ""
 
@@ -1166,6 +1174,7 @@ msgid "Solid Angle iconFeature"
 msgstr ""
 
 #: src/blocks/button/edit.js:103
+#: src/blocks/spacer/edit.js:87
 #: src/extensions/common/inline-font-size/index.js:51
 msgid "Small"
 msgstr ""
@@ -1235,13 +1244,13 @@ msgid ""
 msgstr ""
 
 #: src/blocks/button/edit.js:262
-#: src/blocks/heading/edit.js:310
+#: src/blocks/heading/edit.js:301
 #: src/blocks/pr-content/edit.js:200
 msgid "Before text"
 msgstr ""
 
 #: src/blocks/button/edit.js:271
-#: src/blocks/heading/edit.js:319
+#: src/blocks/heading/edit.js:310
 #: src/blocks/pr-content/edit.js:212
 msgid "After text"
 msgstr ""
@@ -1267,6 +1276,7 @@ msgid "Button Size:"
 msgstr ""
 
 #: src/blocks/button/edit.js:87
+#: src/blocks/spacer/edit.js:107
 msgid "Large"
 msgstr ""
 
@@ -1371,7 +1381,7 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:152
 #: src/blocks/heading/deprecated/0.40.1/component.js:152
 #: src/blocks/heading/deprecated/0.60.1/component.js:152
-#: src/blocks/heading/edit.js:202
+#: src/blocks/heading/edit.js:193
 msgid "Input sub text…"
 msgstr ""
 
@@ -1385,60 +1395,60 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:137
 #: src/blocks/heading/deprecated/0.40.1/component.js:137
 #: src/blocks/heading/deprecated/0.60.1/component.js:137
-#: src/blocks/heading/edit.js:187
+#: src/blocks/heading/edit.js:178
 msgid "Input title…"
 msgstr ""
 
-#: src/blocks/heading/edit.js:230
+#: src/blocks/heading/edit.js:221
 msgid "Heading style"
 msgstr ""
 
-#: src/blocks/heading/edit.js:241
+#: src/blocks/heading/edit.js:232
 #: src/extensions/core/heading/style.js:35
 msgid "Plain"
 msgstr ""
 
-#: src/blocks/heading/edit.js:247
+#: src/blocks/heading/edit.js:238
 msgid "Margin Setting"
 msgstr ""
 
-#: src/blocks/heading/edit.js:249
+#: src/blocks/heading/edit.js:240
 msgid "Margin between Heading and sub text (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:266
+#: src/blocks/heading/edit.js:257
 msgid "Margin bottom size of after this block (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:283
+#: src/blocks/heading/edit.js:274
 msgid "Heading Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:295
+#: src/blocks/heading/edit.js:286
 msgid "Text Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:307
+#: src/blocks/heading/edit.js:298
 msgid "Font Awesome Icon Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:328
+#: src/blocks/heading/edit.js:319
 msgid "Icon Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:341
+#: src/blocks/heading/edit.js:332
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:347
+#: src/blocks/heading/edit.js:338
 msgid "Display"
 msgstr ""
 
-#: src/blocks/heading/edit.js:351
+#: src/blocks/heading/edit.js:342
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/heading/edit.js:359
+#: src/blocks/heading/edit.js:350
 msgid "Text size (rem)"
 msgstr ""
 
@@ -1607,8 +1617,20 @@ msgstr ""
 msgid "Space Type"
 msgstr ""
 
-#: src/blocks/spacer/edit.js:50
+#: src/blocks/spacer/edit.js:117
+msgid "Custom"
+msgstr ""
+
+#: src/blocks/spacer/edit.js:58
 msgid "Height for each device."
+msgstr ""
+
+#: src/blocks/spacer/edit.js:77
+msgid "Spacer Settings"
+msgstr ""
+
+#: src/blocks/spacer/edit.js:97
+msgid "Medium"
 msgstr ""
 
 #: src/blocks/spacer/index.js:24

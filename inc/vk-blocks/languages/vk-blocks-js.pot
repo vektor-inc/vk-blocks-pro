@@ -187,7 +187,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:86
 #: src/blocks/_pro/card-item/edit.js:88
 #: src/blocks/balloon/edit.js:379
-#: src/blocks/flow/edit.js:82
+#: src/blocks/flow/edit.js:84
 #: src/blocks/pr-blocks/edit.js:88
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:130
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:112
@@ -322,6 +322,10 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/index.js:18
 msgid "Grid Column Item"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/index.js:20
+msgid "One item in a grit column block."
 msgstr ""
 
 #: src/blocks/_pro/grid-column/edit.js:51
@@ -1052,10 +1056,6 @@ msgstr ""
 msgid "Alert"
 msgstr ""
 
-#: src/blocks/alert/index.js:21
-msgid "A colored box with four statuses, including annotations and alerts."
-msgstr ""
-
 #: src/blocks/balloon/edit.js:125
 msgid " Image Border"
 msgstr ""
@@ -1158,7 +1158,6 @@ msgid "Trembling"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:387
-#: src/blocks/flow/edit.js:87
 #: src/blocks/pr-blocks/edit.js:82
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:135
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:117
@@ -1474,23 +1473,23 @@ msgid ""
 "blocks to the question area as well."
 msgstr ""
 
-#: src/blocks/flow/edit.js:20
+#: src/blocks/flow/edit.js:21
 msgid "Display of arrow"
 msgstr ""
 
-#: src/blocks/flow/edit.js:25
+#: src/blocks/flow/edit.js:26
 msgid "Arrow display"
 msgstr ""
 
-#: src/blocks/flow/edit.js:29
+#: src/blocks/flow/edit.js:30
 msgid "Arrow hidden"
 msgstr ""
 
-#: src/blocks/flow/edit.js:51
+#: src/blocks/flow/edit.js:52
 msgid "Input title"
 msgstr ""
 
-#: src/blocks/flow/edit.js:61
+#: src/blocks/flow/edit.js:62
 msgid "Input content"
 msgstr ""
 
@@ -1748,6 +1747,10 @@ msgstr ""
 
 #: src/blocks/pr-content/index.js:26
 msgid "PR Content"
+msgstr ""
+
+#: src/blocks/pr-content/index.js:28
+msgid "This is PR content where you can place images, headlines, text, and buttons."
 msgstr ""
 
 #: src/blocks/spacer/advanced-spacer-control.js:15
@@ -2042,11 +2045,11 @@ msgstr ""
 msgid "No wrap"
 msgstr ""
 
-#: src/extensions/common/responsive-br/index.js:41
+#: src/extensions/common/responsive-br/index.js:44
 msgid "Responsive BR"
 msgstr ""
 
-#: src/extensions/common/responsive-br/index.js:45
+#: src/extensions/common/responsive-br/index.js:48
 msgid "Responsive BR "
 msgstr ""
 

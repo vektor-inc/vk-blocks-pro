@@ -89,10 +89,11 @@ const registerBlock = (block) => {
 			...settings,
 			...metadata,
 		};
+		registerBlockType(name, settings);
 	} else if (metadata) {
-		unstable__bootstrapServerSideBlockDefinitions({ [name]: metadata }); // eslint-disable-line camelcase
-	}
-	registerBlockType(name, settings);
+		//unstable__bootstrapServerSideBlockDefinitions({ [name]: metadata }); // eslint-disable-line camelcase
+		registerBlockType(metadata, settings);
+	}	
 };
 
 /**

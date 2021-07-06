@@ -2882,6 +2882,11 @@ msgstr ""
 msgid "Unit"
 msgstr "単位"
 
+#: src/blocks/alert/block.json
+msgctxt "block description"
+msgid "A colored box with four statuses, including annotations and alerts."
+msgstr "注釈や注意など4つのステータスがある色付きのボックスです。"
+
 #~ msgid "Highlight Color"
 #~ msgstr "ハイライトカラー"
 

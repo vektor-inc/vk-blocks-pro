@@ -6,7 +6,7 @@ import '@wordpress/notices';
 // import '@wordpress/block-editor';
 import {
 	registerBlockType,
-	unstable__bootstrapServerSideBlockDefinitions, // eslint-disable-line camelcase
+	// unstable__bootstrapServerSideBlockDefinitions, // eslint-disable-line camelcase
 } from '@wordpress/blocks';
 import compareVersions from 'compare-versions';
 import vkblocksPro from './bundle-pro';
@@ -93,7 +93,7 @@ const registerBlock = (block) => {
 	} else if (metadata) {
 		//unstable__bootstrapServerSideBlockDefinitions({ [name]: metadata }); // eslint-disable-line camelcase
 		registerBlockType(metadata, settings);
-	}	
+	}
 };
 
 /**

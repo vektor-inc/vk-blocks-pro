@@ -62,7 +62,7 @@ msgstr ""
 #: src/blocks/button/edit.js:95
 #: src/blocks/faq/index.js:27
 #: src/blocks/faq2/index.js:22
-#: src/extensions/common/inline-font-size/index.js:52
+#: src/extensions/common/inline-font-size/index.js:56
 msgid "Normal"
 msgstr ""
 
@@ -1175,7 +1175,7 @@ msgstr ""
 
 #: src/blocks/button/edit.js:103
 #: src/blocks/spacer/edit.js:87
-#: src/extensions/common/inline-font-size/index.js:47
+#: src/extensions/common/inline-font-size/index.js:51
 msgid "Small"
 msgstr ""
 
@@ -1863,35 +1863,35 @@ msgstr ""
 msgid "Highlighter"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:101
-msgid "Inline Font Size"
+#: src/extensions/common/inline-font-size/index.js:131
+msgid "Apply"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:25
+#: src/extensions/common/inline-font-size/index.js:141
 msgid "Inline font size"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:57
+#: src/extensions/common/inline-font-size/index.js:61
 msgid "Big"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:62
+#: src/extensions/common/inline-font-size/index.js:66
 msgid "Extra big"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:74
-msgid "Inline Font Size Settings"
+#: src/extensions/common/inline-font-size/index.js:77
+msgid "Inline Font Size"
 msgstr ""
 
 #: src/extensions/common/nowrap/index.js:21
 msgid "No wrap"
 msgstr ""
 
-#: src/extensions/common/responsive-br/index.js:41
+#: src/extensions/common/responsive-br/index.js:44
 msgid "Responsive BR"
 msgstr ""
 
-#: src/extensions/common/responsive-br/index.js:45
+#: src/extensions/common/responsive-br/index.js:48
 msgid "Responsive BR "
 msgstr ""
 

@@ -23,10 +23,6 @@ export { metadata, name };
 export const settings = {
 	title: __('PR Blocks', 'vk-blocks'),
 	icon: <Icon />,
-	description: __(
-		'This is a PR block where you can place images and icon.',
-		'vk-blocks'
-	),
 	example: {
 		heading1: iconName,
 		heading2: iconName,

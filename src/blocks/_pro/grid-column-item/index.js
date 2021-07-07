@@ -17,7 +17,6 @@ export { metadata, name };
 export const settings = {
 	title: __('Grid Column Item', 'vk-blocks'),
 	icon: <Icon />,
-	description: __('One item in a grit column block.', 'vk-blocks'),
 	edit,
 	save,
 	deprecated,

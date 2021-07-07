@@ -19,10 +19,6 @@ export { metadata, name };
 export const settings = {
 	title: __('Outer', 'vk-blocks'),
 	icon: <Icon />,
-	description: __(
-		'Set the background image, color, and border to show the layout and divisions.',
-		'vk-blocks'
-	),
 	edit,
 	save,
 	deprecated,

@@ -3,6 +3,8 @@
 	"name": "vk-blocks/accordion",
 	"category": "vk-blocks-cat",
 	"attributes": {},
+	"description": "Collapses and hides content when the content is long.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"anchor": true,
 		"className": true

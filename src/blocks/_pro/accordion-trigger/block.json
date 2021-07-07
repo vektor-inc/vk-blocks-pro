@@ -13,6 +13,8 @@
 			"default": "#000000"
 		}
 	},
+	"description": "This is the title area where you can freely add blocks.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"anchor": true,
 		"className": true

@@ -19,10 +19,6 @@ export { metadata, name };
 export const settings = {
 	title: __('Post list', 'vk-blocks'),
 	icon: <Icon />,
-	description: __(
-		'Displays the list of posts by setting the post type, classification, and number of posts to display.',
-		'vk-blocks'
-	),
 	example: {
 		attributes: {
 			layout: 'card',

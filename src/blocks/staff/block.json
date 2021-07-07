@@ -69,6 +69,8 @@
             "default": "0"
         }
     },
+    "description": "Used for staff introduction, company introduction, school introduction, menu, etc.",
+    "textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

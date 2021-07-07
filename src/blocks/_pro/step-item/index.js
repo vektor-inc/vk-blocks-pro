@@ -17,10 +17,6 @@ export { metadata, name };
 export const settings = {
 	title: __('Step Item', 'vk-blocks'),
 	icon: <Icon />,
-	description: __(
-		'This element sets the icon, color, and style of the step mark.',
-		'vk-blocks'
-	),
 	edit,
 	save,
 	deprecated,

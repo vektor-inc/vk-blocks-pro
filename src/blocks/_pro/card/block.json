@@ -127,6 +127,8 @@
 			"default": ""
 		}
 	},
+	"description": "A card where you can place images, headings, text, and links.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

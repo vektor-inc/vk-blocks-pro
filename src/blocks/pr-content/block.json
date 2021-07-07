@@ -65,6 +65,8 @@
 			"default": "<i class='fas fa-user'></i>"
 		}
 	},
+	"description": "This is PR content where you can place images, headlines, text, and buttons.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

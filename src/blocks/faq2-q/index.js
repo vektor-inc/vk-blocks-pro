@@ -16,10 +16,6 @@ export { metadata, name };
 export const settings = {
 	title: __('FAQ Question', 'vk-blocks'),
 	icon: <Icon />,
-	description: __(
-		'Question area where you can freely add blocks.',
-		'vk-blocks'
-	),
 	example: {
 		innerBlocks: [
 			{

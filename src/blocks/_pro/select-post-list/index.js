@@ -20,10 +20,6 @@ export { metadata, name };
 export const settings = {
 	title: __('Selected Post List', 'vk-blocks'),
 	icon: <Icon />,
-	description: __(
-		'Displays an arbitrarily specified page with the layout of the posting list.',
-		'vk-blocks'
-	),
 	edit,
 	save,
 };

@@ -23,10 +23,6 @@ export { metadata, name };
 export const settings = {
 	title: __('Responsive Spacer', 'vk-blocks'),
 	icon: <Icon />,
-	description: __(
-		'Use responsive spacers to get the margins right.',
-		'vk-blocks'
-	),
 	example: {
 		anchor: null,
 		spaceType: 'height',

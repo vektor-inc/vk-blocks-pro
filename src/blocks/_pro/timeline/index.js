@@ -18,10 +18,6 @@ export { metadata, name };
 export const settings = {
 	title: __('Timeline', 'vk-blocks'),
 	icon: <Icon />,
-	description: __(
-		'Displays a simple schedule and other information that is useful for explaining the order.',
-		'vk-blocks'
-	),
 	example: {
 		innerBlocks: [
 			{

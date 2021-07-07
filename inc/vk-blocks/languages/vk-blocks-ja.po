@@ -1781,6 +1781,10 @@ msgstr "複数のブロックを非表示にする場合は、最初にグルー
 msgid "Highlighter"
 msgstr "蛍光マーカー"
 
+#: src/extensions/common/highlighter/index.js:98
+msgid "Highlight Color"
+msgstr "ハイライトカラー"
+
 #: src/extensions/common/inline-font-size/index.js:101
 msgid "Inline Font Size"
 msgstr "インライン文字サイズ"

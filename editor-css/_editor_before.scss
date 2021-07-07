@@ -212,6 +212,9 @@ div[data-type="vk-blocks/page-content"].is-selected{
 // アニメーションブロックの識別用枠線
 @import "./editor_before_animation";
 
+// アイコンカードの見出しがテーマの見出し指定機能に負けるので上書き
+@import "./editor_before_icon-card";
+
 /* これがないとGutenberg標準のエディタCSSに負ける */
 h1:first-child.vk_prBlocks_item_title {
 	margin-top: 0.9em;

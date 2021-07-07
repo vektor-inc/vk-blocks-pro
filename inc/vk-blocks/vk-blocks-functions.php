@@ -254,7 +254,7 @@ function vkblocks_blocks_assets() {
 	if (
 		! empty( $vk_blocks_options['margin_size']['sm'] ) ||
 		! empty( $vk_blocks_options['margin_size']['md'] ) ||
-		! empty( $vk_blocks_options['margin_size']['lg'] ) 
+		! empty( $vk_blocks_options['margin_size']['lg'] )
 	) {
 		if ( ! empty( $vk_blocks_options['margin_unit'] ) ){
 			$unit = $vk_blocks_options['margin_unit'];
@@ -310,6 +310,7 @@ if ( ! function_exists( 'vkblocks_blocks_categories' ) ) {
 
 		return $categories;
 	}
+
 	// ver5.8.0 block_categories_all
 	if ( function_exists( 'get_default_block_categories' ) && function_exists( 'get_block_editor_settings' ) ) {
 		add_filter( 'block_categories_all', 'vkblocks_blocks_categories', 10, 2 );

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "POT-Creation-Date: 2021-06-24T11:58:55+00:00\n"
-"PO-Revision-Date: 2021-07-05 16:00+0900\n"
+"PO-Revision-Date: 2021-07-07 12:33+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -1780,10 +1780,6 @@ msgstr "複数のブロックを非表示にする場合は、最初にグルー
 #: src/extensions/common/highlighter/index.js:116
 msgid "Highlighter"
 msgstr "蛍光マーカー"
-
-#: src/extensions/common/highlighter/index.js:98
-msgid "Highlight Color"
-msgstr "ハイライトカラー"
 
 #: src/extensions/common/inline-font-size/index.js:101
 msgid "Inline Font Size"

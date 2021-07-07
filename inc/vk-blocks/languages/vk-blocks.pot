@@ -2,14 +2,22 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
+<<<<<<< HEAD
 "Project-Id-Version: VK Blocks Pro 1.8.2\n"
+=======
+"Project-Id-Version: VK Blocks Pro 1.9.0\n"
+>>>>>>> master
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2021-07-07T03:19:43+00:00\n"
+=======
+"POT-Creation-Date: 2021-07-05T07:01:02+00:00\n"
+>>>>>>> master
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -73,7 +81,7 @@ msgstr ""
 #: src/blocks/button/edit.js:95
 #: src/blocks/faq/index.js:27
 #: src/blocks/faq2/index.js:22
-#: src/extensions/common/inline-font-size/index.js:52
+#: src/extensions/common/inline-font-size/index.js:56
 msgid "Normal"
 msgstr ""
 
@@ -1176,7 +1184,7 @@ msgstr ""
 
 #: src/blocks/button/edit.js:103
 #: src/blocks/spacer/edit.js:87
-#: src/extensions/common/inline-font-size/index.js:47
+#: src/extensions/common/inline-font-size/index.js:51
 #: inc/vk-blocks/vk-blocks-functions.php:15
 msgid "Small"
 msgstr ""
@@ -1859,24 +1867,24 @@ msgstr ""
 msgid "Highlighter"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:101
-msgid "Inline Font Size"
+#: src/extensions/common/inline-font-size/index.js:131
+msgid "Apply"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:25
+#: src/extensions/common/inline-font-size/index.js:141
 msgid "Inline font size"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:57
+#: src/extensions/common/inline-font-size/index.js:61
 msgid "Big"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:62
+#: src/extensions/common/inline-font-size/index.js:66
 msgid "Extra big"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:74
-msgid "Inline Font Size Settings"
+#: src/extensions/common/inline-font-size/index.js:77
+msgid "Inline Font Size"
 msgstr ""
 
 #: src/extensions/common/nowrap/index.js:21

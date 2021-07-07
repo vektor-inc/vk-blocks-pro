@@ -68,9 +68,13 @@
             "type": "string",
             "default": "0"
         }
+<<<<<<< HEAD
     },
     "description": "Used for staff introduction, company introduction, school introduction, menu, etc.",
     "textdomain": "vk-blocks",
+=======
+	},
+>>>>>>> master
 	"supports": {
 		"className": true
 	}

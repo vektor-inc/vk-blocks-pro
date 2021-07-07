@@ -2732,11 +2732,6 @@ msgstr ""
 msgid "Unit"
 msgstr "単位"
 
-#: src/blocks/alert/block.json
-msgctxt "block description"
-msgid "A colored box with four statuses, including annotations and alerts."
-msgstr "注釈や注意など4つのステータスがある色付きのボックスです。"
-
 #~ msgid "Highlight Color"
 #~ msgstr "ハイライトカラー"
 
@@ -3308,6 +3303,11 @@ msgstr "注釈や注意など4つのステータスがある色付きのボッ�
 
 #~ msgid "Width Setting"
 #~ msgstr "幅設定"
+
+#: src/blocks/alert/block.json
+msgctxt "block description"
+msgid "A colored box with four statuses, including annotations and alerts."
+msgstr "注釈や注意など4つのステータスがある色付きのボックスです。"
 
 #: src/blocks/border-box/block.json
 msgctxt "block description"

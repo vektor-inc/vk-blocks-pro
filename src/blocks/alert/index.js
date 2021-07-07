@@ -18,10 +18,6 @@ export { metadata, name };
 export const settings = {
 	title: __('Alert', 'vk-blocks'),
 	icon: <Icon />,
-	// description: __(
-	// 	'A colored box with four statuses, including annotations and alerts.',
-	// 	'vk-blocks'
-	// ),
 	example: {
 		attributes: {
 			style: 'info',

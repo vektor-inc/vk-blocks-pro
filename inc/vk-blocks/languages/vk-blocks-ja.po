@@ -31,17 +31,9 @@ msgstr "アコーディオンコンテンツ"
 msgid "Accordion Trigger"
 msgstr "アコーディオンタイトル"
 
-#: src/blocks/_pro/accordion-trigger/index.js:18
-msgid "This is the title area where you can freely add blocks."
-msgstr "自由にブロックを追加できるタイトルエリアです"
-
 #: src/blocks/_pro/accordion/index.js:18
 msgid "Accordion"
 msgstr "アコーディオン"
-
-#: src/blocks/_pro/accordion/index.js:20
-msgid "Collapses and hides content when the content is long."
-msgstr "コンテンツが長い時にコンテンツを折りたたんで隠して表示します。"
 
 #: src/blocks/_pro/accordion/index.js:23
 msgid "No background color"
@@ -232,10 +224,6 @@ msgstr "https://example.com"
 msgid "Card Item"
 msgstr "カードアイテム"
 
-#: src/blocks/_pro/card-item/index.js:20
-msgid "A single item in a card block."
-msgstr "カードブロック内の１つのアイテムです。"
-
 #: src/blocks/_pro/card/edit.js:119
 #: src/components/display-items-control/index.js:28
 msgid "Display item"
@@ -333,10 +321,6 @@ msgstr "下部の余白"
 msgid "Grid Column"
 msgstr "グリッドカラム"
 
-#: src/blocks/_pro/grid-column/index.js:19
-msgid "One item in a grit column block."
-msgstr "グリットカラムブロック内の1つのアイテムです"
-
 #: src/blocks/_pro/icon-card-item/deprecated/0.0.0/component.js:55
 #: src/blocks/_pro/icon-card-item/deprecated/0.0.1/component.js:70
 #: src/blocks/_pro/icon-card-item/deprecated/0.49.8/component.js:71
@@ -397,10 +381,6 @@ msgstr "リンク URL:"
 #: src/blocks/_pro/icon-card-item/index.js:19
 msgid "Icon Card Item"
 msgstr "アイコンカードアイテム"
-
-#: src/blocks/_pro/icon-card-item/index.js:21
-msgid "This is one item in an icon card."
-msgstr "アイコンカード内の１つのアイテムです。"
 
 #: src/blocks/_pro/icon-card/edit.js:65
 msgid "Columns"
@@ -735,17 +715,9 @@ msgstr "このサイトの投稿の URL を入力してください"
 msgid "Selected Post List Item"
 msgstr "選択投稿リストアイテム"
 
-#: src/blocks/_pro/select-post-list-item/index.js:22
-msgid "A single item in the select post list."
-msgstr "選択投稿リスト内の１つのアイテムです。"
-
 #: src/blocks/_pro/select-post-list/index.js:21
 msgid "Selected Post List"
 msgstr "選択投稿リスト"
-
-#: src/blocks/_pro/select-post-list/index.js:23
-msgid "Displays an arbitrarily specified page with the layout of the posting list."
-msgstr "任意に指定したページを投稿リストのレイアウトで表示します。"
 
 #: src/blocks/_pro/slider-item/edit.js:108
 msgid "Vertical align"
@@ -883,10 +855,6 @@ msgstr "アウトライン"
 msgid "Step Item"
 msgstr "ステップ要素"
 
-#: src/blocks/_pro/step-item/index.js:20
-msgid "This element sets the icon, color, and style of the step mark."
-msgstr "ステップマークのアイコン、色、スタイルを設定する要素です。"
-
 #: src/blocks/_pro/step/edit.js:38
 msgid "First Dot Number"
 msgstr "ステップの開始番号"
@@ -941,10 +909,6 @@ msgstr "ラベル"
 #: src/blocks/_pro/timeline-item/index.js:18
 msgid "Timeline Item"
 msgstr "タイムライン要素"
-
-#: src/blocks/_pro/timeline-item/index.js:20
-msgid "This element sets the label, color, and style of the timeline."
-msgstr "タイムラインのラベル、色、スタイルを設定する要素です 。"
 
 #: src/blocks/_pro/timeline/index.js:19
 msgid "Timeline"
@@ -1342,10 +1306,6 @@ msgstr "枠線 角丸"
 msgid "FAQ Answer"
 msgstr "FAQ 回答"
 
-#: src/blocks/faq2-a/index.js:19
-msgid "Answer area where you can add blocks freely."
-msgstr "自由にブロックを追加できる回答エリアです 。"
-
 #: src/blocks/faq2-q/index.js:17
 msgid "FAQ Question"
 msgstr "FAQ 質問"
@@ -1353,12 +1313,6 @@ msgstr "FAQ 質問"
 #: src/blocks/faq2/index.js:17
 msgid "New FAQ"
 msgstr "新 FAQ"
-
-#: src/blocks/faq2/index.js:19
-msgid ""
-"It displays a combination of questions and answers. You can freely add "
-"blocks to the question area as well."
-msgstr "質問と回答を組み合わせて表示します。質問エリアにも自由にブロックを追加できます。"
 
 #: src/blocks/flow/edit.js:20
 msgid "Display of arrow"

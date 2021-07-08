@@ -34,11 +34,13 @@
 /*-------------------------------------------*/
 // 編集画面でcssの指定が軽くて負けるので.vk_prContent .vk_prContent_colTxt を先に記述
 .vk_prContent {
-	.vk_prContent_colTxt {
+	& &_colTxt {
 		vertical-align: top;
 		.vk_prContent_colTxt_title { 
+			font-size: calc(var(--vk-size-text) * 1.75 );
 			background-color: transparent;
 			font-weight: bold;
+			margin-top: 0;
 			margin-bottom: 0.8em;
 			outline: unset;
 			outline-offset: unset;

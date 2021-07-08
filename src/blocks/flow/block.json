@@ -20,6 +20,10 @@
 		"insertImage": {
 			"type": "string",
 			"default": null
+		},
+		"insertImageAlt": {
+			"type": "string",
+			"default": null
 		}
 	},
 	"supports": {

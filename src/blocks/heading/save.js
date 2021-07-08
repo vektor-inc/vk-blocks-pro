@@ -45,7 +45,7 @@ const renderTitle = (level, contents, tStyle, headingStyle) => {
 
 export default function save(props) {
 	const { attributes } = props;
-	let {
+	const {
 		level,
 		align,
 		title,
@@ -63,64 +63,61 @@ export default function save(props) {
 		fontAwesomeIconColor,
 	} = attributes;
 	const containerClass = `vk_heading vk_heading-style-${titleStyle}`;
-	let cStyle;
-	let tStyle;
 
-	//containerのマージンを切り替え
-	if (outerMarginBottom) {
-		cStyle = { marginBottom: outerMarginBottom + `rem` };
-	}
+	const cStyle = {
+		marginBottom:
+			outerMarginBottom !== null && outerMarginBottom !== undefined
+				? outerMarginBottom + `rem`
+				: undefined,
+	};
 
-	//titleのマージンを切り替え
-	if (titleMarginBottom !== null && titleMarginBottom !== undefined) {
-		tStyle = {
-			color: titleColor,
-			fontSize: titleSize + 'rem',
-			marginBottom: titleMarginBottom + 'rem',
-			textAlign: align,
-		};
-	} else {
-		tStyle = {
-			color: titleColor,
-			fontSize: titleSize + 'rem',
-			textAlign: align,
-		};
-	}
+	const tStyle = {
+		color:
+			titleColor !== null && titleColor !== undefined
+				? titleColor
+				: undefined,
+		fontSize:
+			titleSize !== null && titleSize !== undefined
+				? titleSize + 'rem'
+				: undefined,
+		marginBottom:
+			titleMarginBottom !== null && titleMarginBottom !== undefined
+				? titleMarginBottom + 'rem'
+				: undefined,
+		textAlign: align !== null && align !== undefined ? align : undefined,
+	};
 
 	const headingStyle = `vk_heading_title vk_heading_title-style-${titleStyle}`;
 	const subTextStyle = {
-		color: subTextColor,
-		fontSize: subTextSize + 'rem',
-		textAlign: align,
+		color:
+			subTextColor !== null && subTextColor !== undefined
+				? subTextColor
+				: undefined,
+		fontSize:
+			subTextSize !== null && subTextSize !== undefined
+				? subTextSize + 'rem'
+				: undefined,
+		textAlign: align !== null && align !== undefined ? align : undefined,
 	};
 	const subTextClass = `vk_heading_subtext vk_heading_subtext-style-${titleStyle}`;
 
 	let iconBefore = '';
 	let iconAfter = '';
+	const fontAwesomeIconStyle = fontAwesomeIconColor
+		? `style="color:${fontAwesomeIconColor};"`
+		: '';
 	if (fontAwesomeIconBefore) {
-		//for recovering block
-		fontAwesomeIconColor = fontAwesomeIconColor
-			? fontAwesomeIconColor
-			: '#000000';
-
 		//add inline css
 		const faIconFragmentBefore = fontAwesomeIconBefore.split('<i');
 		faIconFragmentBefore[0] =
-			faIconFragmentBefore[0] +
-			`<i style="color:${fontAwesomeIconColor};" `;
+			faIconFragmentBefore[0] + `<i ${fontAwesomeIconStyle} `;
 		iconBefore = faIconFragmentBefore.join('');
 	}
 	if (fontAwesomeIconAfter) {
-		//for recovering block
-		fontAwesomeIconColor = fontAwesomeIconColor
-			? fontAwesomeIconColor
-			: '#000000';
-
 		//add class and inline css
 		const faIconFragmentAfter = fontAwesomeIconAfter.split('<i');
 		faIconFragmentAfter[0] =
-			faIconFragmentAfter[0] +
-			`<i style="color:${fontAwesomeIconColor};" `;
+			faIconFragmentAfter[0] + `<i ${fontAwesomeIconStyle} `;
 		iconAfter = faIconFragmentAfter.join('');
 	}
 	const titleContent = (

@@ -14,7 +14,7 @@ import { useBlockProps } from '@wordpress/block-editor';
 import Spacers from './spacers';
 
 export default function save({ attributes, anchor }) {
-	const { spaceType, unit, pc, tablet, mobile } = attributes;
+	const { spaceType, unit, pc, tablet, mobile, spaceSize } = attributes;
 	return (
 		<div
 			{...useBlockProps.save({
@@ -23,6 +23,7 @@ export default function save({ attributes, anchor }) {
 			})}
 		>
 			<Spacers
+				spaceSize={spaceSize}
 				type={spaceType}
 				pcSize={pc}
 				tabletSize={tablet}

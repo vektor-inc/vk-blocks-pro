@@ -5,7 +5,7 @@ export default function TilelineEdit() {
 		className: `vk_timeline`,
 	});
 	const ALLOWED_BLOCKS = ['vk-blocks/timeline-item'];
-	const TEMPLATE = [ALLOWED_BLOCKS];
+	const TEMPLATE = [['vk-blocks/timeline-item']];
 	return (
 		<>
 			<div {...blockProps}>

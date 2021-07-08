@@ -132,11 +132,12 @@ export default function PostListEdit(props) {
 						const termIds = newTerms.map((termName) => {
 							return termsMapByName[termName].term_id;
 						});
-						const replacedIsCheckedTermsData = replaceIsCheckedTermData(
-							taxonomy.slug,
-							isCheckedTermsData,
-							termIds
-						);
+						const replacedIsCheckedTermsData =
+							replaceIsCheckedTermData(
+								taxonomy.slug,
+								isCheckedTermsData,
+								termIds
+							);
 						setIsCheckedTermsData(replacedIsCheckedTermsData);
 						setAttributes({
 							isCheckedTerms: JSON.stringify(

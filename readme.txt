@@ -1,10 +1,10 @@
 === VK Blocks ===
-Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips
+Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
-Tested up to: 5.7
-Stable tag: 1.4.1
+Tested up to: 5.7.2
+Stable tag: 1.9.1
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,13 +63,60 @@ e.g.
 
 == Changelog ==
 
+= 1.9.1 =
+[ Bug fix ] Fix AllowedBlocks of InnerBlocks.
+
+= 1.9.0 =
+[ Improvement ][ Inline Font Size ] setting font size in toolbar
+[ Bug fix ][ Icon card ] Fix css bug
+
+= 1.8.2 =
+[ Bug fix ][ FAQ ] Fixed CSS of answer part when closing in the initial state
+[ Bug fix ][ Responsive BR ] Fixed Console Warning
+
+= 1.8.1 =
+[ Bug fix ][ Flow ] Fixed to reflect alt of image
+
+= 1.8.0 =
+[ Improvement ][ Spacer ] Add common space size setting
+[ Bug fix ] PR Content button after icon position
+
+= 1.7.1 =
+[ Bugfix ][ Heading ] Fix Color Palette default setting.
+
+= 1.7.0 =
+[ Improvement ][ Spacer ] Add common space size style
+
+= 1.6.0 =
+[ Improvement ][ Grid Column(Pro) ] enable setting margin bottom
+[ Bugfix ][ Heading ] Fix Heading design when using Lightning Heading Setting
+
+= 1.5.0 =
+[ Improvement ][ highlighter ] setting color in toolbar
+[ Specification Change ][ Table of Contents ] Add notice about copying heading.
+
+= 1.4.6 =
+[ Specification Change ] Update VK Admin Library.
+
+= 1.4.5 =
+[ Specification Change ] Update VK Admin Library.
+
+= 1.4.4 =
+[ Specification Change ] Change Version Only.
+
+= 1.4.3 =
+[ Specification Change ] Update VK Admin Library.
+
+= 1.4.2 =
+[ Bug fix ][ Title ] Fix color code reset
+
 = 1.4.1 =
 [ Specification Change ] Stop exclude CSS Var by Tree shaking
 
 = 1.4.0 =
 [ Improvement ][ title ] Convert to VK Blocks Title from core title block 
 [ Improvement ][ Select Post List Item ]setting from toolbar and enable search URL
-[ Bug fix ][ tlanslate ] in Select Post List Item
+[ Bug fix ][ translate ] in Select Post List Item
 [ Bug fix ][ New FAQ ] Fix multiple select
 [ Bug fix ][ Accordion ] Fix multiple select
 [ Specification Change ][ Border Box ] Delete margin-top from first element / delete margin-bottom from last element

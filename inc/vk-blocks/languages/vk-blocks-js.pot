@@ -611,12 +611,12 @@ msgid "Container Inner Side Space Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:566
-#: src/components/advanced-viewport-control/index.js:44
+#: src/components/advanced-viewport-control/index.js:42
 msgid "Mobile"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:581
-#: src/components/advanced-viewport-control/index.js:36
+#: src/components/advanced-viewport-control/index.js:34
 msgid "Tablet"
 msgstr ""
 
@@ -1281,19 +1281,19 @@ msgid "Large"
 msgstr ""
 
 #: src/blocks/faq/edit.js:14
-#: src/blocks/faq2/edit.js:17
+#: src/blocks/faq2/edit.js:27
 msgid ""
 "If you want to be collapsing this block, you can set it at Setting > VK "
 "Blocks"
 msgstr ""
 
 #: src/blocks/faq/edit.js:19
-#: src/blocks/faq2/edit.js:22
+#: src/blocks/faq2/edit.js:32
 msgid "You can be collapsing this block at VK Blocks Pro"
 msgstr ""
 
 #: src/blocks/faq/edit.js:34
-#: src/blocks/faq2/edit.js:31
+#: src/blocks/faq2/edit.js:41
 msgid "Accordion Setting"
 msgstr ""
 

@@ -11,13 +11,13 @@ const AdvancedViewportControl = (props) => {
 	let { pc, tablet, mobile } = attributes;
 	const { iPc, iTablet, iMobile } = initial;
 
-	if (pc ?? true) {
+	if (!pc && pc !== 0) {
 		pc = iPc;
 	}
-	if (tablet ?? true) {
+	if (!tablet && tablet !== 0) {
 		tablet = iTablet;
 	}
-	if (mobile ?? true) {
+	if (!mobile && mobile !== 0) {
 		mobile = iMobile;
 	}
 

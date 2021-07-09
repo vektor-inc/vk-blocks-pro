@@ -1,0 +1,43 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/icon",
+	"category": "vk-blocks-cat",
+	"attributes": {
+		"color": {
+			"type": "string",
+			"default": "#0693e3"
+		},
+		"url": {
+			"type": "string",
+			"default": ""
+		},
+		"target": {
+			"type": "Boolean",
+			"default": false
+		},
+		"iconSize": {
+			"type": "string",
+			"default": "md"
+		},
+		"bgType": {
+			"type": "string",
+			"default": "0"
+		},
+		"iconAlign": {
+			"type": "string",
+			"default": "left"
+		},
+		"faIcon": {
+			"type": "string",
+			"default": "<i class=\"fas fa-user\"></i>"
+		},
+		"icon": {
+			"type": "string",
+			"default": "fas fa-file"
+		}
+	},
+	"supports": {
+		"className": true,
+		"anchor": true
+	}
+}

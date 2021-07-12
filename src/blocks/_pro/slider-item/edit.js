@@ -34,8 +34,9 @@ export default function SliderItemEdit(props) {
 			attributes.clientId === null ||
 			attributes.clientId === undefined ||
 			attributes.clientId === ''
-		)
+		) {
 			setAttributes({ clientId });
+		}
 	}, [clientId]);
 
 	//classPaddingLRのクラス切り替え

@@ -14,6 +14,7 @@ import {
 	PanelBody,
 	BaseControl,
 } from '@wordpress/components';
+import { useEffect } from '@wordpress/element';
 import { AdvancedMediaUpload } from '@vkblocks/components/advanced-media-upload';
 import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
 const prefix = 'vk_slider_item';
@@ -28,7 +29,14 @@ export default function SliderItemEdit(props) {
 		bgSize,
 	} = attributes;
 
-	attributes.clientId = clientId;
+	useEffect(() => {
+		if (
+			attributes.clientId === null ||
+			attributes.clientId === undefined ||
+			attributes.clientId === ''
+		)
+			setAttributes({ clientId });
+	}, [clientId]);
 
 	//classPaddingLRのクラス切り替え
 	let classPaddingLR = '';

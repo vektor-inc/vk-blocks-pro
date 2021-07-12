@@ -1,4 +1,3 @@
-import replaceClientId from '@vkblocks/utils/replaceClientId';
 import { AdvancedToggleControl } from '@vkblocks/components/advanced-toggle-control';
 import AdvancedViewportControl from '@vkblocks/components/advanced-viewport-control';
 import AdvancedUnitControl from '@vkblocks/components/advanced-unit-control';
@@ -11,7 +10,7 @@ import {
 	InnerBlocks,
 	useBlockProps,
 } from '@wordpress/block-editor';
-import { dispatch } from '@wordpress/data';
+
 import {
 	PanelBody,
 	BaseControl,
@@ -34,14 +33,16 @@ export default function SliderEdit(props) {
 		slidesPerView,
 		slidesPerGroup,
 	} = attributes;
-	const { updateBlockAttributes } = dispatch('core/block-editor');
-	const customClientId = replaceClientId(clientId);
 
 	useEffect(() => {
-		updateBlockAttributes(clientId, {
-			clientId: customClientId,
-		});
-	}, []);
+		if (
+			attributes.clientId === null ||
+			attributes.clientId === undefined ||
+			attributes.clientId === ''
+		) {
+			setAttributes({ clientId });
+		}
+	}, [clientId]);
 
 	// slidesPerView 互換設定
 	if (slidesPerView === undefined) {
@@ -83,7 +84,7 @@ export default function SliderEdit(props) {
 	};
 
 	const blockProps = useBlockProps({
-		className: `swiper-container vk_slider vk_slider_${customClientId} ${alignClass}`,
+		className: `swiper-container vk_slider vk_slider_${clientId} ${alignClass}`,
 	});
 
 	return (

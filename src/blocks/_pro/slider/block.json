@@ -49,7 +49,7 @@
 		},
 		"speed": {
 			"type": "number",
-			"default": 500
+			"default": 300
 		},
 		"slidesPerView": {
 			"type": "number",

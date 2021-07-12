@@ -1,4 +1,3 @@
-import replaceClientId from '@vkblocks/utils/replaceClientId';
 import { AdvancedToggleControl } from '@vkblocks/components/advanced-toggle-control';
 import AdvancedViewportControl from '@vkblocks/components/advanced-viewport-control';
 import AdvancedUnitControl from '@vkblocks/components/advanced-unit-control';
@@ -35,13 +34,12 @@ export default function SliderEdit(props) {
 		slidesPerGroup,
 	} = attributes;
 	const { updateBlockAttributes } = dispatch('core/block-editor');
-	const customClientId = replaceClientId(clientId);
 
 	useEffect(() => {
-		updateBlockAttributes(clientId, {
-			clientId: customClientId,
-		});
-	}, []);
+		if (attributes.clientId === null || attributes.clientId === undefined) {
+			updateBlockAttributes(clientId, { clientId });
+		}
+	}, [clientId]);
 
 	// slidesPerView 互換設定
 	if (slidesPerView === undefined) {
@@ -57,9 +55,9 @@ export default function SliderEdit(props) {
 	}
 
 	const containerClass = ' vk_grid-column';
-	let alignClass;
-	const ALLOWED_BLOCKS = [['vk-blocks/slider-item']];
-	const TEMPLATE = ALLOWED_BLOCKS;
+	let alignClass = '';
+	const ALLOWED_BLOCKS = ['vk-blocks/slider-item'];
+	const TEMPLATE = [['vk-blocks/slider-item']];
 
 	if ('full' === width) {
 		alignClass = 'vk_width-full';
@@ -83,7 +81,7 @@ export default function SliderEdit(props) {
 	};
 
 	const blockProps = useBlockProps({
-		className: `swiper-container vk_slider vk_slider_${customClientId} ${alignClass}`,
+		className: `swiper-container vk_slider vk_slider_${clientId} ${alignClass}`,
 	});
 
 	return (

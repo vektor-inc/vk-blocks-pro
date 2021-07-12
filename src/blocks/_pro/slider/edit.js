@@ -55,7 +55,7 @@ export default function SliderEdit(props) {
 	}
 
 	const containerClass = ' vk_grid-column';
-	let alignClass = '';
+	let alignClass;
 	const ALLOWED_BLOCKS = ['vk-blocks/slider-item'];
 	const TEMPLATE = [['vk-blocks/slider-item']];
 

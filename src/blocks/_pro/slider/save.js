@@ -50,7 +50,11 @@ export default function save({ attributes }) {
 	// ページネーションの HTML
 	let pagination_html = '';
 	if (pagination !== 'hide') {
-		pagination_html = <div className="swiper-pagination"></div>;
+		pagination_html = (
+			<div
+				className={`swiper-pagination swiper-pagination-${pagination}`}
+			></div>
+		);
 	}
 
 	const blockProps = useBlockProps.save({

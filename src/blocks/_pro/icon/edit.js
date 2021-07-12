@@ -3,7 +3,6 @@ import { FontAwesome } from '@vkblocks/utils/font-awesome-new';
 import {
 	PanelBody,
 	BaseControl,
-	CheckboxControl,
 	TextControl,
 	ButtonGroup,
 	Button,
@@ -17,16 +16,7 @@ import ReactHtmlParser from 'react-html-parser';
 
 export default function IconEdit(props) {
 	const { attributes, setAttributes } = props;
-	const {
-		color,
-		icon,
-		faIcon,
-		url,
-		target,
-		bgType,
-		iconSize,
-		iconAlign,
-	} = attributes;
+	let { color, icon, faIcon, url, bgType, iconSize, iconAlign } = attributes;
 
 	let containerClass;
 	if (iconColor) {
@@ -86,9 +76,7 @@ export default function IconEdit(props) {
 					<TextControl
 						label={__('Icon URL', 'vk-blocks')}
 						value={url}
-						onChange={(value) =>
-							setAttributes({ iconUrl: value })
-						}
+						onChange={(value) => setAttributes({ iconUrl: value })}
 					/>
 					<p className={'mt-0 mb-2'}>
 						{__('Icon Size:', 'vk-blocks')}
@@ -128,9 +116,7 @@ export default function IconEdit(props) {
 							isSmall
 							isPrimary={iconAlign === 'left'}
 							isSecondary={iconAlign !== 'left'}
-							onClick={() =>
-								setAttributes({ iconAlign: 'left' })
-							}
+							onClick={() => setAttributes({ iconAlign: 'left' })}
 						>
 							{__('Left', 'vk-blocks')}
 						</Button>
@@ -204,10 +190,7 @@ export default function IconEdit(props) {
 						label={__('Icon ( Font Awesome )', 'vk-blocks')}
 						id={`vk_icon-font`}
 					>
-						<FontAwesome
-							attributeName={'faIcon'}
-							{...props}
-						/>
+						<FontAwesome attributeName={'faIcon'} {...props} />
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>

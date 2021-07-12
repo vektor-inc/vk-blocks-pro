@@ -2,16 +2,7 @@ import { useBlockProps } from '@wordpress/block-editor';
 import ReactHtmlParser from 'react-html-parser';
 
 export default function save({ attributes }) {
-	const {
-		color,
-		icon,
-		faIcon,
-		url,
-		target,
-		bgType,
-		iconSize,
-		iconAlign,
-	} = attributes;
+	let { color, icon, faIcon, bgType, iconAlign } = attributes;
 
 	let style;
 	let iconColor;

@@ -4,7 +4,7 @@
  */
 import { __ } from '@wordpress/i18n';
 import { ReactComponent as Icon } from './icon.svg';
-import { title, iconName, url, iconUser } from '@vkblocks/utils/example-data';
+import { url, iconUser } from '@vkblocks/utils/example-data';
 import edit from './edit';
 import metadata from './block.json';
 import save from './save';

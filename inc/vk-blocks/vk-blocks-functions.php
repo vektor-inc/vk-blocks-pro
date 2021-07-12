@@ -178,6 +178,7 @@ function vkblocks_blocks_assets() {
 			'grid-column-item',
 			'icon-card',
 			'icon-card-item',
+			'icon',
 			'outer',
 			'post-list',
 			'select-post-list',

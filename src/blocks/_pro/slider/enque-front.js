@@ -71,7 +71,6 @@ document.defaultView.addEventListener('load', function () {
 				},
 			});`;
 			// eslint-disable-next-line no-eval
-			console.log(SwiperSetting );
 			eval(SwiperSetting);
 			// ページネーションがOFFの時非表示
 			if (attributes.pagination === 'hide') {

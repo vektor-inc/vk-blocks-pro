@@ -74,7 +74,6 @@ document.defaultView.addEventListener('load', function () {
 					prevEl: '.swiper-button-prev',
 				},
 			});`;
-			console.log(SwiperSetting);
 			// eslint-disable-next-line no-eval
 			eval(SwiperSetting);
 			// ページネーションがOFFの時非表示

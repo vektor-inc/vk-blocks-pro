@@ -19,8 +19,8 @@ document.defaultView.addEventListener('load', function () {
 				SwiperSetting += `
 				autoplay: {
 					delay: ${attributes.autoPlayDelay},
-					disableOnInteraction: false,
-					stopOnLastSlide: ${!attributes.loop}
+					disableOnInteraction: ${attributes.clickStop},
+					stopOnLastSlide: ${!attributes.loop},
 				},
 				`;
 			}
@@ -30,6 +30,10 @@ document.defaultView.addEventListener('load', function () {
 				pagination: {
 					el: '.swiper-pagination',
 					clickable : true,
+					type: '${attributes.pagination}',
+					renderFraction: function (currentClass, totalClass) {
+						return '<span class="' + currentClass + '"></span>' + ' / ' + '<span class="' + totalClass + '"></span>';
+					},
 				},
 				`;
 			}
@@ -70,6 +74,7 @@ document.defaultView.addEventListener('load', function () {
 					prevEl: '.swiper-button-prev',
 				},
 			});`;
+			console.log(SwiperSetting);
 			// eslint-disable-next-line no-eval
 			eval(SwiperSetting);
 			// ページネーションがOFFの時非表示

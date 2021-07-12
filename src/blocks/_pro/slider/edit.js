@@ -24,6 +24,7 @@ export default function SliderEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const {
 		autoPlay,
+		clickStop,
 		autoPlayDelay,
 		pagination,
 		width,
@@ -59,7 +60,7 @@ export default function SliderEdit(props) {
 
 	// pagination 互換設定
 	if (pagination === false) {
-		setAttributes({ pagination: 'none' });
+		setAttributes({ pagination: 'hide' });
 	}
 	if (pagination === true) {
 		setAttributes({ pagination: 'bullets' });
@@ -80,6 +81,7 @@ export default function SliderEdit(props) {
 
 	const sliderData = {
 		autoPlay,
+		clickStop,
 		autoPlayDelay,
 		pagination,
 		clientId,
@@ -90,6 +92,12 @@ export default function SliderEdit(props) {
 		slidesPerView,
 		slidesPerGroup,
 	};
+
+	// ページネーションの HTML
+	let pagination_html = '';
+	if (pagination !== 'hide') {
+		pagination_html = <div className="swiper-pagination"></div>;
+	}
 
 	const blockProps = useBlockProps({
 		className: `swiper-container vk_slider vk_slider_${clientId} ${alignClass}`,
@@ -192,8 +200,22 @@ export default function SliderEdit(props) {
 							schema={'autoPlay'}
 							{...props}
 						/>
+					</BaseControl>
+					<BaseControl
+						label={__('Stop when Tap', 'vk-blocks')}
+						id={`vk_slider-autoPlay`}
+					>
+						<AdvancedToggleControl
+							initialFixedTable={clickStop}
+							schema={'clickStop'}
+							{...props}
+						/>
+					</BaseControl>
+					<BaseControl
+						label={__('Display Time', 'vk-blocks')}
+						id={`vk_slider-autoPlay`}
+					>
 						<TextControl
-							label={__('Display Time', 'vk-blocks')}
 							value={autoPlayDelay}
 							onChange={(value) =>
 								setAttributes({
@@ -231,8 +253,12 @@ export default function SliderEdit(props) {
 							}
 							type={'number'}
 						/>
+					</BaseControl>
+					<BaseControl
+						label={__('Move Images per Slide', 'vk-blocks')}
+						id={`vk_slider-MultiImage`}
+					>
 						<TextControl
-							label={__('Move Images per Slide', 'vk-blocks')}
 							value={slidesPerGroup}
 							onChange={(value) =>
 								setAttributes({
@@ -250,16 +276,16 @@ export default function SliderEdit(props) {
 							value={pagination}
 							options={[
 								{
-									label: 'hide',
-									value: __('Hide', 'vk-blocks'),
+									label: __('Hide', 'vk-blocks'),
+									value: 'hide',
 								},
 								{
-									label: 'bullets',
-									value: __('Default', 'vk-blocks'),
+									label: __('Default', 'vk-blocks'),
+									value: 'bullets',
 								},
 								{
-									label: 'fraction',
-									value: __('Number of images', 'vk-blocks'),
+									label: __('Number of images', 'vk-blocks'),
+									value: 'fraction',
 								},
 							]}
 							onChange={(value) =>
@@ -282,7 +308,7 @@ export default function SliderEdit(props) {
 				</div>
 				<div className="swiper-button-next"></div>
 				<div className="swiper-button-prev"></div>
-				{pagination && <div className="swiper-pagination"></div>}
+				{pagination_html}
 			</div>
 		</>
 	);

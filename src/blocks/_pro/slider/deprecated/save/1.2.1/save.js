@@ -10,6 +10,8 @@ export default function save({ attributes }) {
 		loop,
 		effect,
 		speed,
+		slidesPerView,
+		slidesPerGroup,
 	} = attributes;
 	let alignClass;
 
@@ -22,6 +24,8 @@ export default function save({ attributes }) {
 		loop,
 		effect,
 		speed,
+		slidesPerView,
+		slidesPerGroup,
 	};
 
 	if ('full' === width) {

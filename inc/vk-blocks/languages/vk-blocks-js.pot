@@ -57,12 +57,12 @@ msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:123
 #: src/blocks/_pro/outer/edit.js:303
-#: src/blocks/_pro/slider/edit.js:110
+#: src/blocks/_pro/slider/edit.js:111
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95
 #: src/blocks/faq/index.js:27
 #: src/blocks/faq2/index.js:22
-#: src/extensions/common/inline-font-size/index.js:52
+#: src/extensions/common/inline-font-size/index.js:56
 msgid "Normal"
 msgstr ""
 
@@ -171,7 +171,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:86
 #: src/blocks/_pro/card-item/edit.js:88
 #: src/blocks/balloon/edit.js:379
-#: src/blocks/flow/edit.js:82
+#: src/blocks/flow/edit.js:84
 #: src/blocks/pr-blocks/edit.js:88
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:130
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:112
@@ -259,7 +259,7 @@ msgid "Image Height"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:82
-#: src/blocks/_pro/slider/edit.js:129
+#: src/blocks/_pro/slider/edit.js:130
 msgid "Slide Height for each device."
 msgstr ""
 
@@ -397,40 +397,40 @@ msgid "Icon Card"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:182
-#: src/blocks/_pro/slider-item/edit.js:122
+#: src/blocks/_pro/slider-item/edit.js:130
 msgid "Background Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:187
-#: src/blocks/_pro/slider-item/edit.js:126
+#: src/blocks/_pro/slider-item/edit.js:134
 #: src/blocks/pr-content/edit.js:66
 msgid "Color Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:188
-#: src/blocks/_pro/slider-item/edit.js:128
+#: src/blocks/_pro/slider-item/edit.js:136
 msgid ""
 "Color will overcome background image. If you want to display image, clear "
 "background color or set opacity 0."
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:201
-#: src/blocks/_pro/slider-item/edit.js:141
+#: src/blocks/_pro/slider-item/edit.js:149
 msgid "Opacity Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:215
-#: src/blocks/_pro/slider-item/edit.js:176
+#: src/blocks/_pro/slider-item/edit.js:184
 msgid "Background Image PC"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:231
-#: src/blocks/_pro/slider-item/edit.js:192
+#: src/blocks/_pro/slider-item/edit.js:200
 msgid "Background Image Tablet"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:241
-#: src/blocks/_pro/slider-item/edit.js:202
+#: src/blocks/_pro/slider-item/edit.js:210
 msgid "Background Image Mobile"
 msgstr ""
 
@@ -455,23 +455,23 @@ msgid "Parallax (Non-guaranteed)"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:289
-#: src/blocks/_pro/slider-item/edit.js:70
+#: src/blocks/_pro/slider-item/edit.js:78
 #: src/blocks/pr-content/edit.js:225
 msgid "Layout Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:292
-#: src/blocks/_pro/slider/edit.js:101
+#: src/blocks/_pro/slider/edit.js:102
 msgid "Width"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:313
-#: src/blocks/_pro/slider/edit.js:118
+#: src/blocks/_pro/slider/edit.js:119
 msgid "Full Wide"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:318
-#: src/blocks/_pro/slider-item/edit.js:75
+#: src/blocks/_pro/slider-item/edit.js:83
 msgid "Padding (Left and Right)"
 msgstr ""
 
@@ -728,87 +728,87 @@ msgstr ""
 msgid "Selected Post List"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:108
+#: src/blocks/_pro/slider-item/edit.js:101
+msgid "Remove padding from the Slider area"
+msgstr ""
+
+#: src/blocks/_pro/slider-item/edit.js:116
 msgid "Vertical align"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:155
+#: src/blocks/_pro/slider-item/edit.js:163
 msgid "Background Image Size"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:162
+#: src/blocks/_pro/slider-item/edit.js:170
 msgid "cover"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:166
+#: src/blocks/_pro/slider-item/edit.js:174
 msgid "repeat"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:79
+#: src/blocks/_pro/slider-item/edit.js:87
 msgid "Fit to the Container area"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:86
+#: src/blocks/_pro/slider-item/edit.js:94
 msgid "Add padding to the Slider area"
-msgstr ""
-
-#: src/blocks/_pro/slider-item/edit.js:93
-msgid "Remove padding from the Slider area"
 msgstr ""
 
 #: src/blocks/_pro/slider-item/index.js:18
 msgid "Slider Item"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:124
+#: src/blocks/_pro/slider/edit.js:125
 msgid "Height"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:143
+#: src/blocks/_pro/slider/edit.js:144
 msgid "Slider Settings"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:147
+#: src/blocks/_pro/slider/edit.js:148
 msgid "Effect "
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:157
+#: src/blocks/_pro/slider/edit.js:158
 msgid "Slide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:161
+#: src/blocks/_pro/slider/edit.js:162
 msgid "Fade"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:168
+#: src/blocks/_pro/slider/edit.js:169
 msgid "Loop "
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:178
+#: src/blocks/_pro/slider/edit.js:179
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:187
+#: src/blocks/_pro/slider/edit.js:188
 msgid "Display Time"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:198
+#: src/blocks/_pro/slider/edit.js:199
 msgid "Change Speed"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:212
+#: src/blocks/_pro/slider/edit.js:213
 msgid "Display Multi Images per View"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:216
+#: src/blocks/_pro/slider/edit.js:217
 msgid "Images per View"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:226
+#: src/blocks/_pro/slider/edit.js:227
 msgid "Move Images per Slide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:237
+#: src/blocks/_pro/slider/edit.js:238
 msgid "Display Pagination"
 msgstr ""
 
@@ -1062,7 +1062,6 @@ msgid "Trembling"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:387
-#: src/blocks/flow/edit.js:87
 #: src/blocks/pr-blocks/edit.js:82
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:135
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:117
@@ -1176,7 +1175,7 @@ msgstr ""
 
 #: src/blocks/button/edit.js:103
 #: src/blocks/spacer/edit.js:87
-#: src/extensions/common/inline-font-size/index.js:47
+#: src/extensions/common/inline-font-size/index.js:51
 msgid "Small"
 msgstr ""
 
@@ -1282,19 +1281,19 @@ msgid "Large"
 msgstr ""
 
 #: src/blocks/faq/edit.js:14
-#: src/blocks/faq2/edit.js:17
+#: src/blocks/faq2/edit.js:21
 msgid ""
 "If you want to be collapsing this block, you can set it at Setting > VK "
 "Blocks"
 msgstr ""
 
 #: src/blocks/faq/edit.js:19
-#: src/blocks/faq2/edit.js:22
+#: src/blocks/faq2/edit.js:26
 msgid "You can be collapsing this block at VK Blocks Pro"
 msgstr ""
 
 #: src/blocks/faq/edit.js:34
-#: src/blocks/faq2/edit.js:31
+#: src/blocks/faq2/edit.js:35
 msgid "Accordion Setting"
 msgstr ""
 
@@ -1348,23 +1347,23 @@ msgstr ""
 msgid "New FAQ"
 msgstr ""
 
-#: src/blocks/flow/edit.js:20
+#: src/blocks/flow/edit.js:21
 msgid "Display of arrow"
 msgstr ""
 
-#: src/blocks/flow/edit.js:25
+#: src/blocks/flow/edit.js:26
 msgid "Arrow display"
 msgstr ""
 
-#: src/blocks/flow/edit.js:29
+#: src/blocks/flow/edit.js:30
 msgid "Arrow hidden"
 msgstr ""
 
-#: src/blocks/flow/edit.js:51
+#: src/blocks/flow/edit.js:52
 msgid "Input title"
 msgstr ""
 
-#: src/blocks/flow/edit.js:61
+#: src/blocks/flow/edit.js:62
 msgid "Input content"
 msgstr ""
 
@@ -1864,35 +1863,35 @@ msgstr ""
 msgid "Highlighter"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:101
-msgid "Inline Font Size"
+#: src/extensions/common/inline-font-size/index.js:131
+msgid "Apply"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:25
+#: src/extensions/common/inline-font-size/index.js:141
 msgid "Inline font size"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:57
+#: src/extensions/common/inline-font-size/index.js:61
 msgid "Big"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:62
+#: src/extensions/common/inline-font-size/index.js:66
 msgid "Extra big"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:74
-msgid "Inline Font Size Settings"
+#: src/extensions/common/inline-font-size/index.js:77
+msgid "Inline Font Size"
 msgstr ""
 
 #: src/extensions/common/nowrap/index.js:21
 msgid "No wrap"
 msgstr ""
 
-#: src/extensions/common/responsive-br/index.js:41
+#: src/extensions/common/responsive-br/index.js:44
 msgid "Responsive BR"
 msgstr ""
 
-#: src/extensions/common/responsive-br/index.js:45
+#: src/extensions/common/responsive-br/index.js:48
 msgid "Responsive BR "
 msgstr ""
 

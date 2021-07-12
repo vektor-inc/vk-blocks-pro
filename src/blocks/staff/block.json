@@ -68,7 +68,7 @@
             "type": "string",
             "default": "0"
         }
-    },
+	},
 	"supports": {
 		"className": true
 	}

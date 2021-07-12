@@ -39,8 +39,8 @@ export default function GridColumnEdit(props) {
 		}
 	}, [thisBlock, attributes]);
 
-	const ALLOWED_BLOCKS = [['vk-blocks/grid-column-item']];
-	const TEMPLATE = ALLOWED_BLOCKS;
+	const ALLOWED_BLOCKS = ['vk-blocks/grid-column-item'];
+	const TEMPLATE = [['vk-blocks/grid-column-item']];
 	const blockProps = useBlockProps();
 	const marginBottom = attributes.marginBottom;
 

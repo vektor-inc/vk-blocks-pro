@@ -57,6 +57,14 @@ export default function SliderEdit(props) {
 		});
 	}
 
+	// pagination 互換設定
+	if (pagination === false) {
+		setAttributes({ pagination: 'none' });
+	}
+	if (pagination === true) {
+		setAttributes({ pagination: 'bullets' });
+	}
+
 	const containerClass = ' vk_grid-column';
 	let alignClass;
 	const ALLOWED_BLOCKS = ['vk-blocks/slider-item'];
@@ -235,13 +243,28 @@ export default function SliderEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Display Pagination', 'vk-blocks')}
+						label={__('Pagination Type', 'vk-blocks')}
 						id={`vk_slider-displayPagination`}
 					>
-						<AdvancedToggleControl
-							initialFixedTable={pagination}
-							schema={'pagination'}
-							{...props}
+						<SelectControl
+							value={pagination}
+							options={[
+								{
+									label: 'hide',
+									value: __('Hide', 'vk-blocks'),
+								},
+								{
+									label: 'bullets',
+									value: __('Default', 'vk-blocks'),
+								},
+								{
+									label: 'fraction',
+									value: __('Number of images', 'vk-blocks'),
+								},
+							]}
+							onChange={(value) =>
+								setAttributes({ pagination: value })
+							}
 						/>
 					</BaseControl>
 				</PanelBody>

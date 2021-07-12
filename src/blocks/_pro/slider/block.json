@@ -28,8 +28,8 @@
 			"default": 2500
 		},
 		"pagination": {
-			"type": "boolean",
-			"default": true
+			"type": "string",
+			"default": "bullets"
 		},
 		"clientId": {
 			"type": "string"

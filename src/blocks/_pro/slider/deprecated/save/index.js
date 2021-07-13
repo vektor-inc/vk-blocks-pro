@@ -57,7 +57,7 @@ const blockAttributes = {
 	},
 };
 
-const deprecated = [
+export default [
 	{
 		attributes: blockAttributes,
 		save: save1_2_1,
@@ -79,5 +79,3 @@ const deprecated = [
 		save: save0_49_1,
 	},
 ];
-
-export default deprecated;

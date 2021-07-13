@@ -2,6 +2,7 @@
 /* CSS
 /*-------------------------------------------*/
 .vk_slider {
+	//共通ではないためvk_sliderの中に格納
 	width: 100%;
 	height: 100%;
 	position: relative;
@@ -25,6 +26,7 @@
 	.swiper-wrapper {
 		transition-timing-function: cubic-bezier(0.77, 0.2, 0.05, 1);
 	}
+	//vk_slider用のnextとprevボタン	
 	.swiper-button-next,
 	.swiper-button-prev {
 		color: #333;
@@ -33,11 +35,35 @@
 		background-image: none;
 		width: 2.4rem;
 		height: 2.4rem;
+		z-index: 20;
 		&:after {
 			font-size: 1.2rem;
 		}
 	}
+	//ボタンの位置がタブレットサイズ以下で下位置
+	.swiper-button-next,
+	.swiper-button-prev{
+		@media (max-width: 991.98px) {
+			top:unset;
+			bottom:10px;
+		}
+	}
+
+	//paginationの位置
+	&.swiper-container-horizontal > .swiper-pagination-bullets,
+	.swiper-pagination-custom,
+	.swiper-pagination-fraction {
+		padding-left: 3rem;
+		padding-right: 3rem;
+		bottom: 1.4rem;
+		@media (min-width:992px){
+			bottom: 0.75rem;
+		}
+	}
+
 }
+
+
 .swiper-container {
 	&.vk_width-full {
 		//全幅の時
@@ -68,23 +94,11 @@
 
 //pagination
 .swiper-pagination-bullet{
-	border-radius: inherit;
-	width: 30px;
-	height: 5px;
 	&-active {
 		background: #000;
 		opacity: 0.6;
 	}
 }
-
-.swiper-container-horizontal > .swiper-pagination-bullets,
-.swiper-pagination-custom,
-.swiper-pagination-fraction {
-	bottom: 15px;
-	padding-left: 5px;
-	padding-right: 5px;
-}
-
 
 /*-------------------------------------------*/
 /* 管理画面

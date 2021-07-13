@@ -59,9 +59,21 @@ const blockAttributes = {
 	},
 };
 
-export default [
+const blockAttributes2 = {
+	...blockAttributes,
+	slidesPerView: {
+		type: 'number',
+		default: 1
+	},
+	slidesPerGroup: {
+		type: number,
+		default: 1
+	}
+}
+
+export const deprecated = [
 	{
-		attributes: blockAttributes,
+		attributes: blockAttributes2,
 		save: save1_9_1,
 	},
 	{

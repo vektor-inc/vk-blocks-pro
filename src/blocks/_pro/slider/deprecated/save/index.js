@@ -66,12 +66,12 @@ const blockAttributes2 = {
 		default: 1
 	},
 	slidesPerGroup: {
-		type: number,
+		type: 'number',
 		default: 1
 	}
 }
 
-export const deprecated = [
+const deprecated = [
 	{
 		attributes: blockAttributes2,
 		save: save1_9_1,
@@ -97,3 +97,5 @@ export const deprecated = [
 		save: save0_49_1,
 	},
 ];
+
+export default deprecated;

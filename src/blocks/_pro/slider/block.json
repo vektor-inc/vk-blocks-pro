@@ -23,10 +23,6 @@
 			"type": "boolean",
 			"default": true
 		},
-		"clickStop": {
-			"type": "boolean",
-			"default": false
-		},
 		"autoPlayDelay": {
 			"type": "number",
 			"default": 2500
@@ -61,6 +57,10 @@
 		"slidesPerGroup": {
 			"type": "number",
 			"default": 1
+		},
+		"clickStop": {
+			"type": "boolean",
+			"default": false
 		}
 	},
 	"supports": {

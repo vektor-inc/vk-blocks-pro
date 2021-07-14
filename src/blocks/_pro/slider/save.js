@@ -6,13 +6,13 @@ export default function save({ attributes }) {
 		clientId,
 		width,
 		autoPlay,
-		clickStop,
 		autoPlayDelay,
 		loop,
 		effect,
 		speed,
 		slidesPerView,
 		slidesPerGroup,
+		clickStop,
 	} = attributes;
 	let alignClass;
 
@@ -25,9 +25,16 @@ export default function save({ attributes }) {
 		slidesPerGroup = 1;
 	}
 
+	// pagination 互換設定
+	if (pagination === false) {
+		pagination = 'hide';
+	}
+	if (pagination === true) {
+		pagination = 'bullets';
+	}
+
 	const sliderData = {
 		autoPlay,
-		clickStop,
 		autoPlayDelay,
 		pagination,
 		clientId,
@@ -37,6 +44,7 @@ export default function save({ attributes }) {
 		speed,
 		slidesPerView,
 		slidesPerGroup,
+		clickStop,
 	};
 
 	if ('full' === width) {

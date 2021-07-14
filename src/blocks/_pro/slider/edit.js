@@ -24,7 +24,6 @@ export default function SliderEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const {
 		autoPlay,
-		clickStop,
 		autoPlayDelay,
 		pagination,
 		width,
@@ -33,6 +32,7 @@ export default function SliderEdit(props) {
 		speed,
 		slidesPerView,
 		slidesPerGroup,
+		clickStop,
 	} = attributes;
 
 	useEffect(() => {
@@ -66,6 +66,11 @@ export default function SliderEdit(props) {
 		setAttributes({ pagination: 'bullets' });
 	}
 
+	// clickStop 互換設定
+	if (clickStop === undefined) {
+		setAttributes({ clickStop: false });
+	}
+
 	const containerClass = ' vk_grid-column';
 	let alignClass;
 	const ALLOWED_BLOCKS = ['vk-blocks/slider-item'];
@@ -81,7 +86,6 @@ export default function SliderEdit(props) {
 
 	const sliderData = {
 		autoPlay,
-		clickStop,
 		autoPlayDelay,
 		pagination,
 		clientId,
@@ -91,6 +95,7 @@ export default function SliderEdit(props) {
 		speed,
 		slidesPerView,
 		slidesPerGroup,
+		clickStop,
 	};
 
 	// ページネーションの HTML

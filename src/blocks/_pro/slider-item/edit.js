@@ -1,5 +1,6 @@
 /* eslint camelcase: 0 */
 import { __ } from '@wordpress/i18n';
+import { useEffect } from '@wordpress/element';
 import {
 	InspectorControls,
 	BlockControls,
@@ -17,6 +18,7 @@ import {
 import { useEffect } from '@wordpress/element';
 import { AdvancedMediaUpload } from '@vkblocks/components/advanced-media-upload';
 import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
+import { dispatch } from '@wordpress/data';
 const prefix = 'vk_slider_item';
 
 export default function SliderItemEdit(props) {

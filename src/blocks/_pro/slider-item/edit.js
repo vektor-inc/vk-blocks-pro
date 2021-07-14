@@ -15,10 +15,8 @@ import {
 	PanelBody,
 	BaseControl,
 } from '@wordpress/components';
-import { useEffect } from '@wordpress/element';
 import { AdvancedMediaUpload } from '@vkblocks/components/advanced-media-upload';
 import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
-import { dispatch } from '@wordpress/data';
 const prefix = 'vk_slider_item';
 
 export default function SliderItemEdit(props) {

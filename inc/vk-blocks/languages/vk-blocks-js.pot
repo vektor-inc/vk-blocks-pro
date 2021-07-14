@@ -57,7 +57,7 @@ msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:123
 #: src/blocks/_pro/outer/edit.js:303
-#: src/blocks/_pro/slider/edit.js:108
+#: src/blocks/_pro/slider/edit.js:131
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95
 #: src/blocks/faq/index.js:27
@@ -259,7 +259,7 @@ msgid "Image Height"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:82
-#: src/blocks/_pro/slider/edit.js:127
+#: src/blocks/_pro/slider/edit.js:150
 msgid "Slide Height for each device."
 msgstr ""
 
@@ -397,40 +397,40 @@ msgid "Icon Card"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:182
-#: src/blocks/_pro/slider-item/edit.js:130
+#: src/blocks/_pro/slider-item/edit.js:131
 msgid "Background Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:187
-#: src/blocks/_pro/slider-item/edit.js:134
+#: src/blocks/_pro/slider-item/edit.js:135
 #: src/blocks/pr-content/edit.js:66
 msgid "Color Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:188
-#: src/blocks/_pro/slider-item/edit.js:136
+#: src/blocks/_pro/slider-item/edit.js:137
 msgid ""
 "Color will overcome background image. If you want to display image, clear "
 "background color or set opacity 0."
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:201
-#: src/blocks/_pro/slider-item/edit.js:149
+#: src/blocks/_pro/slider-item/edit.js:150
 msgid "Opacity Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:215
-#: src/blocks/_pro/slider-item/edit.js:184
+#: src/blocks/_pro/slider-item/edit.js:185
 msgid "Background Image PC"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:231
-#: src/blocks/_pro/slider-item/edit.js:200
+#: src/blocks/_pro/slider-item/edit.js:201
 msgid "Background Image Tablet"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:241
-#: src/blocks/_pro/slider-item/edit.js:210
+#: src/blocks/_pro/slider-item/edit.js:211
 msgid "Background Image Mobile"
 msgstr ""
 
@@ -455,23 +455,23 @@ msgid "Parallax (Non-guaranteed)"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:289
-#: src/blocks/_pro/slider-item/edit.js:78
+#: src/blocks/_pro/slider-item/edit.js:79
 #: src/blocks/pr-content/edit.js:225
 msgid "Layout Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:292
-#: src/blocks/_pro/slider/edit.js:99
+#: src/blocks/_pro/slider/edit.js:122
 msgid "Width"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:313
-#: src/blocks/_pro/slider/edit.js:116
+#: src/blocks/_pro/slider/edit.js:139
 msgid "Full Wide"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:318
-#: src/blocks/_pro/slider-item/edit.js:83
+#: src/blocks/_pro/slider-item/edit.js:84
 msgid "Padding (Left and Right)"
 msgstr ""
 
@@ -728,31 +728,31 @@ msgstr ""
 msgid "Selected Post List"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:101
+#: src/blocks/_pro/slider-item/edit.js:102
 msgid "Remove padding from the Slider area"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:116
+#: src/blocks/_pro/slider-item/edit.js:117
 msgid "Vertical align"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:163
+#: src/blocks/_pro/slider-item/edit.js:164
 msgid "Background Image Size"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:170
+#: src/blocks/_pro/slider-item/edit.js:171
 msgid "cover"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:174
+#: src/blocks/_pro/slider-item/edit.js:175
 msgid "repeat"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:87
+#: src/blocks/_pro/slider-item/edit.js:88
 msgid "Fit to the Container area"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:94
+#: src/blocks/_pro/slider-item/edit.js:95
 msgid "Add padding to the Slider area"
 msgstr ""
 
@@ -760,68 +760,68 @@ msgstr ""
 msgid "Slider Item"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:122
+#: src/blocks/_pro/slider/edit.js:145
 msgid "Height"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:141
+#: src/blocks/_pro/slider/edit.js:164
 msgid "Slider Settings"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:145
+#: src/blocks/_pro/slider/edit.js:168
 msgid "Effect "
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:155
+#: src/blocks/_pro/slider/edit.js:178
 msgid "Slide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:159
+#: src/blocks/_pro/slider/edit.js:182
 msgid "Fade"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:166
+#: src/blocks/_pro/slider/edit.js:189
 msgid "Loop "
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:176
+#: src/blocks/_pro/slider/edit.js:199
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:185
+#: src/blocks/_pro/slider/edit.js:209
+msgid "Stop when Tap"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:219
 msgid "Display Time"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:196
+#: src/blocks/_pro/slider/edit.js:233
 msgid "Change Speed"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:210
+#: src/blocks/_pro/slider/edit.js:247
 msgid "Display Multi Images per View"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:214
+#: src/blocks/_pro/slider/edit.js:251
 msgid "Images per View"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:224
+#: src/blocks/_pro/slider/edit.js:262
 msgid "Move Images per Slide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:235
-msgid "Display Pagination"
+#: src/blocks/_pro/slider/edit.js:276
+msgid "Pagination Type"
 msgstr ""
 
-#: src/blocks/_pro/slider/index.js:21
-msgid "Slider"
-msgstr ""
-
-#: src/blocks/_pro/slider/edit.js:279
+#: src/blocks/_pro/slider/edit.js:283
 #: src/blocks/heading/edit.js:342
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:283
+#: src/blocks/_pro/slider/edit.js:287
 #: src/blocks/_pro/step-item/edit.js:110
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
 #: src/blocks/_pro/timeline-item/edit.js:91
@@ -832,7 +832,7 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:287
+#: src/blocks/_pro/slider/edit.js:291
 msgid "Number of images"
 msgstr ""
 
@@ -1295,19 +1295,19 @@ msgid "Large"
 msgstr ""
 
 #: src/blocks/faq/edit.js:14
-#: src/blocks/faq2/edit.js:27
+#: src/blocks/faq2/edit.js:21
 msgid ""
 "If you want to be collapsing this block, you can set it at Setting > VK "
 "Blocks"
 msgstr ""
 
 #: src/blocks/faq/edit.js:19
-#: src/blocks/faq2/edit.js:32
+#: src/blocks/faq2/edit.js:26
 msgid "You can be collapsing this block at VK Blocks Pro"
 msgstr ""
 
 #: src/blocks/faq/edit.js:34
-#: src/blocks/faq2/edit.js:41
+#: src/blocks/faq2/edit.js:35
 msgid "Accordion Setting"
 msgstr ""
 

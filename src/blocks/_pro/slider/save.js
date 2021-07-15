@@ -13,6 +13,7 @@ export default function save({ attributes }) {
 		slidesPerView,
 		slidesPerGroup,
 		clickStop,
+		paginationType,
 	} = attributes;
 	let alignClass;
 
@@ -27,10 +28,15 @@ export default function save({ attributes }) {
 
 	// pagination 互換設定
 	if (pagination === false) {
-		pagination = 'hide';
+		paginationType = 'hide';
 	}
 	if (pagination === true) {
-		pagination = 'bullets';
+		paginationType = 'bullets';
+	}
+
+	// clickStop 互換設定
+	if (clickStop === undefined) {
+		clickStop = false;
 	}
 
 	const sliderData = {
@@ -45,6 +51,7 @@ export default function save({ attributes }) {
 		slidesPerView,
 		slidesPerGroup,
 		clickStop,
+		paginationType,
 	};
 
 	if ('full' === width) {
@@ -57,10 +64,10 @@ export default function save({ attributes }) {
 
 	// ページネーションの HTML
 	let pagination_html = '';
-	if (pagination !== 'hide') {
+	if (paginationType !== 'hide') {
 		pagination_html = (
 			<div
-				className={`swiper-pagination swiper-pagination-${pagination}`}
+				className={`swiper-pagination swiper-pagination-${paginationType}`}
 			></div>
 		);
 	}

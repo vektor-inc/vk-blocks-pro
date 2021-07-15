@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-07-14T08:10:31+00:00\n"
+"POT-Creation-Date: 2021-07-15T00:46:06+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: vk-blocks\n"
@@ -68,7 +68,7 @@ msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:123
 #: src/blocks/_pro/outer/edit.js:303
-#: src/blocks/_pro/slider/edit.js:138
+#: src/blocks/_pro/slider/edit.js:139
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95
 #: src/blocks/faq/index.js:27
@@ -266,7 +266,7 @@ msgid "Image Height"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:82
-#: src/blocks/_pro/slider/edit.js:157
+#: src/blocks/_pro/slider/edit.js:158
 msgid "Slide Height for each device."
 msgstr ""
 
@@ -467,12 +467,12 @@ msgid "Layout Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:292
-#: src/blocks/_pro/slider/edit.js:129
+#: src/blocks/_pro/slider/edit.js:130
 msgid "Width"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:313
-#: src/blocks/_pro/slider/edit.js:146
+#: src/blocks/_pro/slider/edit.js:147
 msgid "Full Wide"
 msgstr ""
 
@@ -767,68 +767,68 @@ msgstr ""
 msgid "Slider Item"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:152
+#: src/blocks/_pro/slider/edit.js:153
 msgid "Height"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:171
+#: src/blocks/_pro/slider/edit.js:172
 msgid "Slider Settings"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:175
+#: src/blocks/_pro/slider/edit.js:176
 msgid "Effect "
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:185
+#: src/blocks/_pro/slider/edit.js:186
 msgid "Slide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:189
+#: src/blocks/_pro/slider/edit.js:190
 msgid "Fade"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:196
+#: src/blocks/_pro/slider/edit.js:197
 msgid "Loop "
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:206
+#: src/blocks/_pro/slider/edit.js:207
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:216
+#: src/blocks/_pro/slider/edit.js:217
 msgid "Stop when Tap"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:226
+#: src/blocks/_pro/slider/edit.js:227
 msgid "Display Time"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:240
+#: src/blocks/_pro/slider/edit.js:241
 msgid "Change Speed"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:254
+#: src/blocks/_pro/slider/edit.js:255
 msgid "Display Multi Images per View"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:258
+#: src/blocks/_pro/slider/edit.js:259
 msgid "Images per View"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:269
+#: src/blocks/_pro/slider/edit.js:270
 msgid "Move Images per Slide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:283
+#: src/blocks/_pro/slider/edit.js:284
 msgid "Pagination Type"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:290
+#: src/blocks/_pro/slider/edit.js:291
 #: src/blocks/heading/edit.js:342
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:294
+#: src/blocks/_pro/slider/edit.js:295
 #: src/blocks/_pro/step-item/edit.js:110
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
 #: src/blocks/_pro/timeline-item/edit.js:91
@@ -839,7 +839,7 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:298
+#: src/blocks/_pro/slider/edit.js:299
 msgid "Number of images"
 msgstr ""
 

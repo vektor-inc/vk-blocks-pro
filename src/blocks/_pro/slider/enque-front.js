@@ -25,12 +25,12 @@ document.defaultView.addEventListener('load', function () {
 				`;
 			}
 
-			if (attributes.pagination !== 'hide') {
+			if (attributes.paginationType !== 'hide') {
 				SwiperSetting += `
 				pagination: {
 					el: '.swiper-pagination',
 					clickable : true,
-					type: '${attributes.pagination}',
+					type: '${attributes.paginationType}',
 					renderFraction: function (currentClass, totalClass) {
 						return '<span class="' + currentClass + '"></span>' + ' / ' + '<span class="' + totalClass + '"></span>';
 					},
@@ -77,7 +77,7 @@ document.defaultView.addEventListener('load', function () {
 			// eslint-disable-next-line no-eval
 			eval(SwiperSetting);
 			// ページネーションがOFFの時非表示
-			if (attributes.pagination === 'hide') {
+			if (attributes.paginationType === 'hide') {
 				// eslint-disable-next-line no-eval
 				eval(`swiper${index}.pagination.destroy();`);
 			}

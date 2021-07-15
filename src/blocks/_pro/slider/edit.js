@@ -33,6 +33,7 @@ export default function SliderEdit(props) {
 		slidesPerView,
 		slidesPerGroup,
 		clickStop,
+		paginationType,
 	} = attributes;
 
 	const { updateBlockAttributes } = dispatch('core/block-editor');
@@ -45,33 +46,32 @@ export default function SliderEdit(props) {
 		) {
 			updateBlockAttributes(clientId, { clientId });
 		}
+		// slidesPerView 互換設定
+		if (slidesPerView === undefined) {
+			setAttributes({
+				slidesPerView: 1,
+			});
+		}
+		// slidesPerGroup 互換設定
+		if (slidesPerGroup === undefined) {
+			setAttributes({
+				slidesPerGroup: 1,
+			});
+		}
+
+		// pagination 互換設定
+		if (pagination === false) {
+			updateBlockAttributes(clientId, { paginationType: 'hide' });
+		}
+		if (pagination === true) {
+			updateBlockAttributes(clientId, { paginationType: 'bullets' });
+		}
+
+		// clickStop 互換設定
+		if (clickStop === undefined) {
+			updateBlockAttributes(clientId, { clickStop: false });
+		}
 	}, [clientId]);
-
-	// slidesPerView 互換設定
-	if (slidesPerView === undefined) {
-		setAttributes({
-			slidesPerView: 1,
-		});
-	}
-	// slidesPerGroup 互換設定
-	if (slidesPerGroup === undefined) {
-		setAttributes({
-			slidesPerGroup: 1,
-		});
-	}
-
-	// pagination 互換設定
-	if (pagination === false) {
-		setAttributes({ pagination: 'hide' });
-	}
-	if (pagination === true) {
-		setAttributes({ pagination: 'bullets' });
-	}
-
-	// clickStop 互換設定
-	if (clickStop === undefined) {
-		setAttributes({ clickStop: false });
-	}
 
 	const containerClass = ' vk_grid-column';
 	let alignClass;
@@ -98,14 +98,15 @@ export default function SliderEdit(props) {
 		slidesPerView,
 		slidesPerGroup,
 		clickStop,
+		paginationType,
 	};
 
 	// ページネーションの HTML
 	let pagination_html = '';
-	if (pagination !== 'hide') {
+	if (paginationType !== 'hide') {
 		pagination_html = (
 			<div
-				className={`swiper-pagination swiper-pagination-${pagination}`}
+				className={`swiper-pagination swiper-pagination-${paginationType}`}
 			></div>
 		);
 	}
@@ -284,7 +285,7 @@ export default function SliderEdit(props) {
 						id={`vk_slider-displayPagination`}
 					>
 						<SelectControl
-							value={pagination}
+							value={paginationType}
 							options={[
 								{
 									label: __('Hide', 'vk-blocks'),
@@ -300,7 +301,7 @@ export default function SliderEdit(props) {
 								},
 							]}
 							onChange={(value) =>
-								setAttributes({ pagination: value })
+								setAttributes({ paginationType: value })
 							}
 						/>
 					</BaseControl>

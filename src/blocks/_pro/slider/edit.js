@@ -89,7 +89,6 @@ export default function SliderEdit(props) {
 	const sliderData = {
 		autoPlay,
 		autoPlayDelay,
-		pagination,
 		clientId,
 		width,
 		loop,

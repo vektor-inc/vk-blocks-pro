@@ -42,7 +42,6 @@ export default function save({ attributes }) {
 	const sliderData = {
 		autoPlay,
 		autoPlayDelay,
-		pagination,
 		clientId,
 		width,
 		loop,

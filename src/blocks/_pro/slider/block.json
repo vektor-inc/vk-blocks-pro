@@ -58,7 +58,7 @@
 			"type": "number",
 			"default": 1
 		},
-		"clickStop": {
+		"autoPlayStop": {
 			"type": "boolean",
 			"default": false
 		},

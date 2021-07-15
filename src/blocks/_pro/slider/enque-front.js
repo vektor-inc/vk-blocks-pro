@@ -19,7 +19,7 @@ document.defaultView.addEventListener('load', function () {
 				SwiperSetting += `
 				autoplay: {
 					delay: ${attributes.autoPlayDelay},
-					disableOnInteraction: ${attributes.clickStop},
+					disableOnInteraction: ${attributes.autoPlayStop},
 					stopOnLastSlide: ${!attributes.loop},
 				},
 				`;

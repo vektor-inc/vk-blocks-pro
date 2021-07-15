@@ -32,7 +32,7 @@ export default function SliderEdit(props) {
 		speed,
 		slidesPerView,
 		slidesPerGroup,
-		clickStop,
+		autoPlayStop,
 		paginationType,
 	} = attributes;
 
@@ -72,7 +72,7 @@ export default function SliderEdit(props) {
 		speed,
 		slidesPerView,
 		slidesPerGroup,
-		clickStop,
+		autoPlayStop,
 		paginationType,
 	};
 
@@ -189,12 +189,12 @@ export default function SliderEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Stop when Tap', 'vk-blocks')}
-						id={`vk_slider-autoPlay`}
+						label={__('Stop auto play when swipe', 'vk-blocks')}
+						id={`vk_slider-autoPlayStop`}
 					>
 						<AdvancedToggleControl
-							initialFixedTable={clickStop}
-							schema={'clickStop'}
+							initialFixedTable={autoPlayStop}
+							schema={'autoPlayStop'}
 							{...props}
 						/>
 					</BaseControl>

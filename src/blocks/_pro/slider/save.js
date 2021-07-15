@@ -12,7 +12,7 @@ export default function save({ attributes }) {
 		speed,
 		slidesPerView,
 		slidesPerGroup,
-		clickStop,
+		autoPlayStop,
 		paginationType,
 	} = attributes;
 	let alignClass;
@@ -28,7 +28,7 @@ export default function save({ attributes }) {
 		speed,
 		slidesPerView,
 		slidesPerGroup,
-		clickStop,
+		autoPlayStop,
 		paginationType,
 	};
 

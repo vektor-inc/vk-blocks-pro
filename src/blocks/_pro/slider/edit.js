@@ -46,31 +46,6 @@ export default function SliderEdit(props) {
 		) {
 			updateBlockAttributes(clientId, { clientId });
 		}
-		// slidesPerView 互換設定
-		if (slidesPerView === undefined) {
-			setAttributes({
-				slidesPerView: 1,
-			});
-		}
-		// slidesPerGroup 互換設定
-		if (slidesPerGroup === undefined) {
-			setAttributes({
-				slidesPerGroup: 1,
-			});
-		}
-
-		// pagination 互換設定
-		if (pagination === false) {
-			updateBlockAttributes(clientId, { paginationType: 'hide' });
-		}
-		if (pagination === true) {
-			updateBlockAttributes(clientId, { paginationType: 'bullets' });
-		}
-
-		// clickStop 互換設定
-		if (clickStop === undefined) {
-			updateBlockAttributes(clientId, { clickStop: false });
-		}
 	}, [clientId]);
 
 	const containerClass = ' vk_grid-column';

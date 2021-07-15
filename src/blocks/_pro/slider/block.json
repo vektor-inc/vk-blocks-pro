@@ -58,6 +58,14 @@
 		"slidesPerGroup": {
 			"type": "number",
 			"default": 1
+		},
+		"autoPlayStop": {
+			"type": "boolean",
+			"default": false
+		},
+		"paginationType": {
+			"type": "string",
+			"default": "bullets"
 		}
 	},
 	"supports": {

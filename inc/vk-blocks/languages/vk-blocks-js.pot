@@ -789,7 +789,7 @@ msgid "AutoPlay"
 msgstr ""
 
 #: src/blocks/_pro/slider/edit.js:209
-msgid "Stop when Tap"
+msgid "Stop AutoPlay when swipe"
 msgstr ""
 
 #: src/blocks/_pro/slider/edit.js:219

@@ -23,13 +23,17 @@
 			"type": "boolean",
 			"default": true
 		},
+		"autoPlayStop": {
+			"type": "boolean",
+			"default": false
+		},
 		"autoPlayDelay": {
 			"type": "number",
 			"default": 2500
 		},
 		"pagination": {
-			"type": "boolean",
-			"default": true
+			"type": "string",
+			"default": "bullets"
 		},
 		"clientId": {
 			"type": "string"
@@ -57,14 +61,6 @@
 		"slidesPerGroup": {
 			"type": "number",
 			"default": 1
-		},
-		"autoPlayStop": {
-			"type": "boolean",
-			"default": false
-		},
-		"paginationType": {
-			"type": "string",
-			"default": "bullets"
 		}
 	},
 	"supports": {

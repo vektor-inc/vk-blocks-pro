@@ -36,7 +36,11 @@ export default function SliderEdit(props) {
 	const { updateBlockAttributes } = dispatch('core/block-editor');
 
 	useEffect(() => {
-		if (attributes.clientId === null || attributes.clientId === undefined) {
+		if (
+			attributes.clientId === null ||
+			attributes.clientId === undefined ||
+			attributes.clientId === ''
+		) {
 			updateBlockAttributes(clientId, { clientId });
 		}
 	}, [clientId]);

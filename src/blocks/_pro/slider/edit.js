@@ -46,6 +46,31 @@ export default function SliderEdit(props) {
 		) {
 			updateBlockAttributes(clientId, { clientId });
 		}
+		// slidesPerView 互換設定
+		if (slidesPerView === undefined) {
+			setAttributes({
+				slidesPerView: 1,
+			});
+		}
+		// slidesPerGroup 互換設定
+		if (slidesPerGroup === undefined) {
+			setAttributes({
+				slidesPerGroup: 1,
+			});
+		}
+
+		// pagination 互換設定
+		if (pagination === false) {
+			updateBlockAttributes(clientId, { paginationType: 'hide' });
+		}
+		if (pagination === true) {
+			updateBlockAttributes(clientId, { paginationType: 'bullets' });
+		}
+
+		// autoPlayStop 互換設定
+		if (autoPlayStop === undefined) {
+			updateBlockAttributes(clientId, { autoPlayStop: false });
+		}
 	}, [clientId]);
 
 	const containerClass = ' vk_grid-column';
@@ -200,7 +225,7 @@ export default function SliderEdit(props) {
 					</BaseControl>
 					<BaseControl
 						label={__('Display Time', 'vk-blocks')}
-						id={`vk_slider-autoPlay`}
+						id={`vk_slider-autoPlayDelay`}
 					>
 						<TextControl
 							value={autoPlayDelay}
@@ -228,7 +253,7 @@ export default function SliderEdit(props) {
 					</BaseControl>
 					<BaseControl
 						label={__('Display Multi Images per View', 'vk-blocks')}
-						id={`vk_slider-MultiImage`}
+						id={`vk_slider-lidesPerView`}
 					>
 						<TextControl
 							label={__('Images per View', 'vk-blocks')}
@@ -243,7 +268,7 @@ export default function SliderEdit(props) {
 					</BaseControl>
 					<BaseControl
 						label={__('Move Images per Slide', 'vk-blocks')}
-						id={`vk_slider-MultiImage`}
+						id={`vk_slider-slidesPerGroup`}
 					>
 						<TextControl
 							value={slidesPerGroup}
@@ -257,7 +282,7 @@ export default function SliderEdit(props) {
 					</BaseControl>
 					<BaseControl
 						label={__('Pagination Type', 'vk-blocks')}
-						id={`vk_slider-displayPagination`}
+						id={`vk_slider-paginationType`}
 					>
 						<SelectControl
 							value={paginationType}

@@ -1281,19 +1281,19 @@ msgid "Large"
 msgstr ""
 
 #: src/blocks/faq/edit.js:14
-#: src/blocks/faq2/edit.js:27
+#: src/blocks/faq2/edit.js:21
 msgid ""
 "If you want to be collapsing this block, you can set it at Setting > VK "
 "Blocks"
 msgstr ""
 
 #: src/blocks/faq/edit.js:19
-#: src/blocks/faq2/edit.js:32
+#: src/blocks/faq2/edit.js:26
 msgid "You can be collapsing this block at VK Blocks Pro"
 msgstr ""
 
 #: src/blocks/faq/edit.js:34
-#: src/blocks/faq2/edit.js:41
+#: src/blocks/faq2/edit.js:35
 msgid "Accordion Setting"
 msgstr ""
 

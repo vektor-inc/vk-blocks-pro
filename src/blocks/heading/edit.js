@@ -281,6 +281,8 @@ export default function HeaddingEdit(props) {
 						min={0.5}
 						max={4}
 						step={0.1}
+						allowReset={true}
+						resetFallbackValue={null}
 					/>
 					<BaseControl
 						label={__('Text Color', 'vk-blocks')}
@@ -356,6 +358,8 @@ export default function HeaddingEdit(props) {
 						min={0.5}
 						max={3}
 						step={0.1}
+						allowReset={true}
+						resetFallbackValue={null}
 					/>
 					<ColorPalette
 						value={subTextColor}

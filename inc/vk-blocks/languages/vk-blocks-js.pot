@@ -833,7 +833,7 @@ msgid "Default"
 msgstr ""
 
 #: src/blocks/_pro/slider/edit.js:293
-msgid "Number of images"
+msgid "Number of slides"
 msgstr ""
 
 #: src/blocks/_pro/slider/index.js:21

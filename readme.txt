@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ][ Heading ] Font size of title & sub text can set null.
+
 = 1.9.1 =
 [ Bug fix ] Fix AllowedBlocks of InnerBlocks.
 

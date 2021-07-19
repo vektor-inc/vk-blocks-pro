@@ -10,7 +10,7 @@ import {
 	InnerBlocks,
 	useBlockProps,
 } from '@wordpress/block-editor';
-
+import { dispatch } from '@wordpress/data';
 import {
 	PanelBody,
 	BaseControl,
@@ -35,13 +35,15 @@ export default function SliderEdit(props) {
 		slidesPerGroup,
 	} = attributes;
 
+	const { updateBlockAttributes } = dispatch('core/block-editor');
+
 	useEffect(() => {
 		if (
 			attributes.clientId === null ||
 			attributes.clientId === undefined ||
 			attributes.clientId === ''
 		) {
-			setAttributes({ clientId });
+			updateBlockAttributes(clientId, { clientId });
 		}
 	}, [clientId]);
 

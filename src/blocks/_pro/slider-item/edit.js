@@ -9,6 +9,7 @@ import {
 	InnerBlocks,
 	useBlockProps,
 } from '@wordpress/block-editor';
+import { dispatch } from '@wordpress/data';
 import {
 	RangeControl,
 	RadioControl,
@@ -29,13 +30,15 @@ export default function SliderItemEdit(props) {
 		bgSize,
 	} = attributes;
 
+	const { updateBlockAttributes } = dispatch('core/block-editor');
+
 	useEffect(() => {
 		if (
 			attributes.clientId === null ||
 			attributes.clientId === undefined ||
 			attributes.clientId === ''
 		) {
-			setAttributes({ clientId });
+			updateBlockAttributes(clientId, { clientId });
 		}
 	}, [clientId]);
 

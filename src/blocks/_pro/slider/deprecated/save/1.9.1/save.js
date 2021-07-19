@@ -6,7 +6,6 @@ export default function save({ attributes }) {
 		clientId,
 		width,
 		autoPlay,
-		autoPlayStop,
 		autoPlayDelay,
 		loop,
 		effect,
@@ -27,7 +26,6 @@ export default function save({ attributes }) {
 
 	const sliderData = {
 		autoPlay,
-		autoPlayStop,
 		autoPlayDelay,
 		pagination,
 		clientId,
@@ -47,16 +45,6 @@ export default function save({ attributes }) {
 		alignClass = 'vk_width';
 	}
 
-	// ページネーションの HTML
-	let pagination_html = '';
-	if (pagination !== 'hide') {
-		pagination_html = (
-			<div
-				className={`swiper-pagination swiper-pagination-${pagination}`}
-			></div>
-		);
-	}
-
 	const blockProps = useBlockProps.save({
 		className: `swiper-container vk_slider vk_slider_${clientId} ${alignClass}`,
 	});
@@ -68,7 +56,7 @@ export default function save({ attributes }) {
 			</div>
 			<div className="swiper-button-next"></div>
 			<div className="swiper-button-prev"></div>
-			{pagination_html}
+			{pagination && <div className="swiper-pagination"></div>}
 		</div>
 	);
 }

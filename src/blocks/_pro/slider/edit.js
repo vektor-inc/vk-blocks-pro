@@ -1,4 +1,3 @@
-import replaceClientId from '@vkblocks/utils/replaceClientId';
 import { AdvancedToggleControl } from '@vkblocks/components/advanced-toggle-control';
 import AdvancedViewportControl from '@vkblocks/components/advanced-viewport-control';
 import AdvancedUnitControl from '@vkblocks/components/advanced-unit-control';
@@ -25,6 +24,7 @@ export default function SliderEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const {
 		autoPlay,
+		autoPlayStop,
 		autoPlayDelay,
 		pagination,
 		width,
@@ -34,14 +34,18 @@ export default function SliderEdit(props) {
 		slidesPerView,
 		slidesPerGroup,
 	} = attributes;
+
 	const { updateBlockAttributes } = dispatch('core/block-editor');
-	const customClientId = replaceClientId(clientId);
 
 	useEffect(() => {
-		updateBlockAttributes(clientId, {
-			clientId: customClientId,
-		});
-	}, []);
+		if (
+			attributes.clientId === null ||
+			attributes.clientId === undefined ||
+			attributes.clientId === ''
+		) {
+			updateBlockAttributes(clientId, { clientId });
+		}
+	}, [clientId]);
 
 	// slidesPerView 互換設定
 	if (slidesPerView === undefined) {
@@ -56,10 +60,18 @@ export default function SliderEdit(props) {
 		});
 	}
 
+	// pagination 互換設定
+	if (pagination === false) {
+		setAttributes({ pagination: 'hide' });
+	}
+	if (pagination === true) {
+		setAttributes({ pagination: 'bullets' });
+	}
+
 	const containerClass = ' vk_grid-column';
 	let alignClass;
-	const ALLOWED_BLOCKS = [['vk-blocks/slider-item']];
-	const TEMPLATE = ALLOWED_BLOCKS;
+	const ALLOWED_BLOCKS = ['vk-blocks/slider-item'];
+	const TEMPLATE = [['vk-blocks/slider-item']];
 
 	if ('full' === width) {
 		alignClass = 'vk_width-full';
@@ -71,6 +83,7 @@ export default function SliderEdit(props) {
 
 	const sliderData = {
 		autoPlay,
+		autoPlayStop,
 		autoPlayDelay,
 		pagination,
 		clientId,
@@ -82,8 +95,18 @@ export default function SliderEdit(props) {
 		slidesPerGroup,
 	};
 
+	// ページネーションの HTML
+	let pagination_html = '';
+	if (pagination !== 'hide') {
+		pagination_html = (
+			<div
+				className={`swiper-pagination swiper-pagination-${pagination}`}
+			></div>
+		);
+	}
+
 	const blockProps = useBlockProps({
-		className: `swiper-container vk_slider vk_slider_${customClientId} ${alignClass}`,
+		className: `swiper-container vk_slider vk_slider_${clientId} ${alignClass}`,
 	});
 
 	return (
@@ -183,8 +206,22 @@ export default function SliderEdit(props) {
 							schema={'autoPlay'}
 							{...props}
 						/>
+					</BaseControl>
+					<BaseControl
+						label={__('Stop AutoPlay when swipe', 'vk-blocks')}
+						id={`vk_slider-autoPlay`}
+					>
+						<AdvancedToggleControl
+							initialFixedTable={autoPlayStop}
+							schema={'autoPlayStop'}
+							{...props}
+						/>
+					</BaseControl>
+					<BaseControl
+						label={__('Display Time', 'vk-blocks')}
+						id={`vk_slider-autoPlay`}
+					>
 						<TextControl
-							label={__('Display Time', 'vk-blocks')}
 							value={autoPlayDelay}
 							onChange={(value) =>
 								setAttributes({
@@ -222,8 +259,12 @@ export default function SliderEdit(props) {
 							}
 							type={'number'}
 						/>
+					</BaseControl>
+					<BaseControl
+						label={__('Move Images per Slide', 'vk-blocks')}
+						id={`vk_slider-MultiImage`}
+					>
 						<TextControl
-							label={__('Move Images per Slide', 'vk-blocks')}
 							value={slidesPerGroup}
 							onChange={(value) =>
 								setAttributes({
@@ -234,13 +275,28 @@ export default function SliderEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Display Pagination', 'vk-blocks')}
+						label={__('Pagination Type', 'vk-blocks')}
 						id={`vk_slider-displayPagination`}
 					>
-						<AdvancedToggleControl
-							initialFixedTable={pagination}
-							schema={'pagination'}
-							{...props}
+						<SelectControl
+							value={pagination}
+							options={[
+								{
+									label: __('Hide', 'vk-blocks'),
+									value: 'hide',
+								},
+								{
+									label: __('Default', 'vk-blocks'),
+									value: 'bullets',
+								},
+								{
+									label: __('Number of slides', 'vk-blocks'),
+									value: 'fraction',
+								},
+							]}
+							onChange={(value) =>
+								setAttributes({ pagination: value })
+							}
 						/>
 					</BaseControl>
 				</PanelBody>
@@ -258,7 +314,7 @@ export default function SliderEdit(props) {
 				</div>
 				<div className="swiper-button-next"></div>
 				<div className="swiper-button-prev"></div>
-				{pagination && <div className="swiper-pagination"></div>}
+				{pagination_html}
 			</div>
 		</>
 	);

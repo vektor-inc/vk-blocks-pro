@@ -1,5 +1,6 @@
 /* eslint camelcase: 0 */
 import { __ } from '@wordpress/i18n';
+import { useEffect } from '@wordpress/element';
 import {
 	InspectorControls,
 	BlockControls,
@@ -8,6 +9,7 @@ import {
 	InnerBlocks,
 	useBlockProps,
 } from '@wordpress/block-editor';
+import { dispatch } from '@wordpress/data';
 import {
 	RangeControl,
 	RadioControl,
@@ -28,7 +30,17 @@ export default function SliderItemEdit(props) {
 		bgSize,
 	} = attributes;
 
-	attributes.clientId = clientId;
+	const { updateBlockAttributes } = dispatch('core/block-editor');
+
+	useEffect(() => {
+		if (
+			attributes.clientId === null ||
+			attributes.clientId === undefined ||
+			attributes.clientId === ''
+		) {
+			updateBlockAttributes(clientId, { clientId });
+		}
+	}, [clientId]);
 
 	//classPaddingLRのクラス切り替え
 	let classPaddingLR = '';

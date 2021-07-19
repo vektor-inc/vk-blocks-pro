@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.9.0\n"
+"Project-Id-Version: VK Blocks Pro 1.9.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-07-07T04:19:44+00:00\n"
+"POT-Creation-Date: 2021-07-19T06:28:49+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -68,7 +68,7 @@ msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:123
 #: src/blocks/_pro/outer/edit.js:303
-#: src/blocks/_pro/slider/edit.js:110
+#: src/blocks/_pro/slider/edit.js:133
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95
 #: src/blocks/faq/index.js:27
@@ -266,7 +266,7 @@ msgid "Image Height"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:82
-#: src/blocks/_pro/slider/edit.js:129
+#: src/blocks/_pro/slider/edit.js:152
 msgid "Slide Height for each device."
 msgstr ""
 
@@ -405,38 +405,38 @@ msgid "Icon Card"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:182
-#: src/blocks/_pro/slider-item/edit.js:122
+#: src/blocks/_pro/slider-item/edit.js:134
 msgid "Background Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:187
-#: src/blocks/_pro/slider-item/edit.js:126
+#: src/blocks/_pro/slider-item/edit.js:138
 #: src/blocks/pr-content/edit.js:66
 msgid "Color Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:188
-#: src/blocks/_pro/slider-item/edit.js:128
+#: src/blocks/_pro/slider-item/edit.js:140
 msgid "Color will overcome background image. If you want to display image, clear background color or set opacity 0."
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:201
-#: src/blocks/_pro/slider-item/edit.js:141
+#: src/blocks/_pro/slider-item/edit.js:153
 msgid "Opacity Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:215
-#: src/blocks/_pro/slider-item/edit.js:176
+#: src/blocks/_pro/slider-item/edit.js:188
 msgid "Background Image PC"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:231
-#: src/blocks/_pro/slider-item/edit.js:192
+#: src/blocks/_pro/slider-item/edit.js:204
 msgid "Background Image Tablet"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:241
-#: src/blocks/_pro/slider-item/edit.js:202
+#: src/blocks/_pro/slider-item/edit.js:214
 msgid "Background Image Mobile"
 msgstr ""
 
@@ -461,23 +461,23 @@ msgid "Parallax (Non-guaranteed)"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:289
-#: src/blocks/_pro/slider-item/edit.js:70
+#: src/blocks/_pro/slider-item/edit.js:82
 #: src/blocks/pr-content/edit.js:225
 msgid "Layout Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:292
-#: src/blocks/_pro/slider/edit.js:101
+#: src/blocks/_pro/slider/edit.js:124
 msgid "Width"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:313
-#: src/blocks/_pro/slider/edit.js:118
+#: src/blocks/_pro/slider/edit.js:141
 msgid "Full Wide"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:318
-#: src/blocks/_pro/slider-item/edit.js:75
+#: src/blocks/_pro/slider-item/edit.js:87
 msgid "Padding (Left and Right)"
 msgstr ""
 
@@ -735,94 +735,100 @@ msgstr ""
 msgid "Selected Post List"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:108
+#: src/blocks/_pro/slider-item/edit.js:105
+msgid "Remove padding from the Slider area"
+msgstr ""
+
+#: src/blocks/_pro/slider-item/edit.js:120
 msgid "Vertical align"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:155
+#: src/blocks/_pro/slider-item/edit.js:167
 msgid "Background Image Size"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:162
+#: src/blocks/_pro/slider-item/edit.js:174
 msgid "cover"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:166
+#: src/blocks/_pro/slider-item/edit.js:178
 msgid "repeat"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:79
+#: src/blocks/_pro/slider-item/edit.js:91
 msgid "Fit to the Container area"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:86
+#: src/blocks/_pro/slider-item/edit.js:98
 msgid "Add padding to the Slider area"
-msgstr ""
-
-#: src/blocks/_pro/slider-item/edit.js:93
-msgid "Remove padding from the Slider area"
 msgstr ""
 
 #: src/blocks/_pro/slider-item/index.js:18
 msgid "Slider Item"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:124
+#: src/blocks/_pro/slider/edit.js:147
 msgid "Height"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:143
+#: src/blocks/_pro/slider/edit.js:166
 msgid "Slider Settings"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:147
+#: src/blocks/_pro/slider/edit.js:170
 msgid "Effect "
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:157
+#: src/blocks/_pro/slider/edit.js:180
 msgid "Slide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:161
+#: src/blocks/_pro/slider/edit.js:184
 msgid "Fade"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:168
+#: src/blocks/_pro/slider/edit.js:191
 msgid "Loop "
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:178
+#: src/blocks/_pro/slider/edit.js:201
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:187
+#: src/blocks/_pro/slider/edit.js:211
+msgid "Stop AutoPlay when swipe"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:221
 msgid "Display Time"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:198
+#: src/blocks/_pro/slider/edit.js:235
 msgid "Change Speed"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:212
+#: src/blocks/_pro/slider/edit.js:249
 msgid "Display Multi Images per View"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:216
+#: src/blocks/_pro/slider/edit.js:253
 msgid "Images per View"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:226
+#: src/blocks/_pro/slider/edit.js:264
 msgid "Move Images per Slide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:237
-msgid "Display Pagination"
+#: src/blocks/_pro/slider/edit.js:278
+msgid "Pagination Type"
 msgstr ""
 
-#: src/blocks/_pro/slider/index.js:21
-msgid "Slider"
+#: src/blocks/_pro/slider/edit.js:285
+#: src/blocks/heading/edit.js:342
+msgid "Hide"
 msgstr ""
 
+#: src/blocks/_pro/slider/edit.js:289
 #: src/blocks/_pro/step-item/edit.js:110
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
 #: src/blocks/_pro/timeline-item/edit.js:91
@@ -831,6 +837,18 @@ msgstr ""
 #: src/extensions/core/heading/style.js:30
 #: src/extensions/core/list/style.js:102
 msgid "Default"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:293
+msgid "Number of slides"
+msgstr ""
+
+#: src/blocks/_pro/slider/index.js:21
+msgid "Slider"
+msgstr ""
+
+#: src/blocks/_pro/slider/index.js:23
+msgid "Slider is do not move in edit screen."
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:54
@@ -1282,17 +1300,17 @@ msgid "Large"
 msgstr ""
 
 #: src/blocks/faq/edit.js:14
-#: src/blocks/faq2/edit.js:17
+#: src/blocks/faq2/edit.js:21
 msgid "If you want to be collapsing this block, you can set it at Setting > VK Blocks"
 msgstr ""
 
 #: src/blocks/faq/edit.js:19
-#: src/blocks/faq2/edit.js:22
+#: src/blocks/faq2/edit.js:26
 msgid "You can be collapsing this block at VK Blocks Pro"
 msgstr ""
 
 #: src/blocks/faq/edit.js:34
-#: src/blocks/faq2/edit.js:31
+#: src/blocks/faq2/edit.js:35
 msgid "Accordion Setting"
 msgstr ""
 
@@ -1441,10 +1459,6 @@ msgstr ""
 
 #: src/blocks/heading/edit.js:338
 msgid "Display"
-msgstr ""
-
-#: src/blocks/heading/edit.js:342
-msgid "Hide"
 msgstr ""
 
 #: src/blocks/heading/edit.js:350
@@ -2501,6 +2515,7 @@ msgstr ""
 
 #: src/blocks/page-content/index.php:118
 msgid "Edit this area"
+<<<<<<< HEAD
 msgstr ""
 
 #: vk-blocks.php:81
@@ -2690,4 +2705,6 @@ msgstr ""
 #: src/blocks/_pro/timeline/block.json
 msgctxt "block description"
 msgid "Displays a simple schedule and other information that is useful for explaining the order."
-msgstr ""
+
+#: vk-blocks.php:81
+msgid "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks Plugin running."

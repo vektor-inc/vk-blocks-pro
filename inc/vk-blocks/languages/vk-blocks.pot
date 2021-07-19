@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-07-19T06:28:49+00:00\n"
+"POT-Creation-Date: 2021-07-19T08:04:40+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -845,10 +845,6 @@ msgstr ""
 
 #: src/blocks/_pro/slider/index.js:21
 msgid "Slider"
-msgstr ""
-
-#: src/blocks/_pro/slider/index.js:23
-msgid "Slider is do not move in edit screen."
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:54
@@ -2515,7 +2511,6 @@ msgstr ""
 
 #: src/blocks/page-content/index.php:118
 msgid "Edit this area"
-<<<<<<< HEAD
 msgstr ""
 
 #: vk-blocks.php:81
@@ -2705,6 +2700,4 @@ msgstr ""
 #: src/blocks/_pro/timeline/block.json
 msgctxt "block description"
 msgid "Displays a simple schedule and other information that is useful for explaining the order."
-
-#: vk-blocks.php:81
-msgid "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks Plugin running."
+msgstr ""

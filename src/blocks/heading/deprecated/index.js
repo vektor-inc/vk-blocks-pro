@@ -107,7 +107,7 @@ const blockAttributes4 = {
 	...blockAttributes3,
 	titleSize: {
 		type: 'number',
-		default: 2, // version < 0.17.7 は デフォルト値が 2.6
+		default: 2,
 	},
 	subTextSize: {
 		type: 'number',

@@ -290,7 +290,7 @@ export default function SliderEdit(props) {
 									value: 'bullets',
 								},
 								{
-									label: __('Number of images', 'vk-blocks'),
+									label: __('Number of slides', 'vk-blocks'),
 									value: 'fraction',
 								},
 							]}

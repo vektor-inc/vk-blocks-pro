@@ -9,6 +9,7 @@ import {
 	InnerBlocks,
 	useBlockProps,
 } from '@wordpress/block-editor';
+import { dispatch } from '@wordpress/data';
 import {
 	RangeControl,
 	RadioControl,
@@ -17,7 +18,6 @@ import {
 } from '@wordpress/components';
 import { AdvancedMediaUpload } from '@vkblocks/components/advanced-media-upload';
 import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
-import { dispatch } from '@wordpress/data';
 const prefix = 'vk_slider_item';
 
 export default function SliderItemEdit(props) {
@@ -33,7 +33,11 @@ export default function SliderItemEdit(props) {
 	const { updateBlockAttributes } = dispatch('core/block-editor');
 
 	useEffect(() => {
-		if (attributes.clientId === null || attributes.clientId === undefined) {
+		if (
+			attributes.clientId === null ||
+			attributes.clientId === undefined ||
+			attributes.clientId === ''
+		) {
 			updateBlockAttributes(clientId, { clientId });
 		}
 	}, [clientId]);

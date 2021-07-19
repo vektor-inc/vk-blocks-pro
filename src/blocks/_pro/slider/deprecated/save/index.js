@@ -1,10 +1,10 @@
 /* eslint camelcase: 0 */
+import save1_9_1 from './1.9.1/save';
 import save1_2_1 from './1.2.1/save';
 import save1_0_6 from './1.0.6/save';
 import save0_60_1 from './0.60.1/save';
 import save0_56_3 from './0.56.3/save';
 import save0_49_1 from './0.49.1/save';
-
 
 const blockAttributes = {
 	unit: {
@@ -57,7 +57,23 @@ const blockAttributes = {
 	},
 };
 
-export default [
+const blockAttributes2 = {
+	...blockAttributes,
+	slidesPerView: {
+		type: 'number',
+		default: 1
+	},
+	slidesPerGroup: {
+		type: 'number',
+		default: 1
+	}
+}
+
+const deprecated = [
+	{
+		attributes: blockAttributes2,
+		save: save1_9_1,
+	},
 	{
 		attributes: blockAttributes,
 		save: save1_2_1,
@@ -79,3 +95,5 @@ export default [
 		save: save0_49_1,
 	},
 ];
+
+export default deprecated;

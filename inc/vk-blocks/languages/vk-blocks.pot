@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-07-19T06:28:49+00:00\n"
+"POT-Creation-Date: 2021-07-20T01:54:44+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: vk-blocks\n"
@@ -68,7 +68,7 @@ msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:123
 #: src/blocks/_pro/outer/edit.js:303
-#: src/blocks/_pro/slider/edit.js:133
+#: src/blocks/_pro/slider/edit.js:150
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95
 #: src/blocks/faq/index.js:27
@@ -266,7 +266,7 @@ msgid "Image Height"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:82
-#: src/blocks/_pro/slider/edit.js:152
+#: src/blocks/_pro/slider/edit.js:169
 msgid "Slide Height for each device."
 msgstr ""
 
@@ -467,12 +467,12 @@ msgid "Layout Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:292
-#: src/blocks/_pro/slider/edit.js:124
+#: src/blocks/_pro/slider/edit.js:141
 msgid "Width"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:313
-#: src/blocks/_pro/slider/edit.js:141
+#: src/blocks/_pro/slider/edit.js:158
 msgid "Full Wide"
 msgstr ""
 
@@ -767,68 +767,63 @@ msgstr ""
 msgid "Slider Item"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:147
+#: src/blocks/_pro/slider/edit.js:164
 msgid "Height"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:166
+#: src/blocks/_pro/slider/edit.js:183
 msgid "Slider Settings"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:170
+#: src/blocks/_pro/slider/edit.js:187
 msgid "Effect "
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:180
+#: src/blocks/_pro/slider/edit.js:197
 msgid "Slide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:184
+#: src/blocks/_pro/slider/edit.js:201
 msgid "Fade"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:191
+#: src/blocks/_pro/slider/edit.js:208
 msgid "Loop "
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:201
+#: src/blocks/_pro/slider/edit.js:218
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:211
+#: src/blocks/_pro/slider/edit.js:228
 msgid "Stop AutoPlay when swipe"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:221
+#: src/blocks/_pro/slider/edit.js:238
 msgid "Display Time"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:235
+#: src/blocks/_pro/slider/edit.js:252
 msgid "Change Speed"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:249
+#: src/blocks/_pro/slider/edit.js:266
 msgid "Display Multi Images per View"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:253
+#: src/blocks/_pro/slider/edit.js:270
 msgid "Images per View"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:264
+#: src/blocks/_pro/slider/edit.js:281
 msgid "Move Images per Slide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:278
+#: src/blocks/_pro/slider/edit.js:295
 msgid "Pagination Type"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:285
-#: src/blocks/heading/edit.js:342
-msgid "Hide"
-msgstr ""
-
-#: src/blocks/_pro/slider/edit.js:289
+#: src/blocks/_pro/slider/edit.js:306
 #: src/blocks/_pro/step-item/edit.js:110
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
 #: src/blocks/_pro/timeline-item/edit.js:91
@@ -839,8 +834,27 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:293
+#: src/blocks/_pro/slider/edit.js:310
 msgid "Number of slides"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:320
+msgid "Navigation Position"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:327
+#: src/blocks/heading/edit.js:344
+msgid "Hide"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:331
+#: src/blocks/button/edit.js:129
+#: src/components/display-items-control/index.js:125
+msgid "Center"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:335
+msgid "Bottom on Mobile device"
 msgstr ""
 
 #: src/blocks/_pro/slider/index.js:21
@@ -1203,11 +1217,6 @@ msgstr ""
 msgid "Button Position:"
 msgstr ""
 
-#: src/blocks/button/edit.js:129
-#: src/components/display-items-control/index.js:125
-msgid "Center"
-msgstr ""
-
 #: src/blocks/button/edit.js:149
 msgid "Wide"
 msgstr ""
@@ -1461,7 +1470,7 @@ msgstr ""
 msgid "Display"
 msgstr ""
 
-#: src/blocks/heading/edit.js:350
+#: src/blocks/heading/edit.js:352
 msgid "Text size (rem)"
 msgstr ""
 

@@ -340,7 +340,7 @@ export default function SliderEdit(props) {
 								},
 							]}
 							onChange={(value) =>
-								setAttributes({ pagination: value })
+								setAttributes({ navigationPosition: value })
 							}
 						/>
 					</BaseControl>

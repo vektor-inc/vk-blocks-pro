@@ -81,8 +81,9 @@ const registerBlock = (block) => {
 	let { metadata, settings, name } = block;
 
 	/*
-	そもそも Require at Least が 5.7 なので 5.5 以下の後方互換は不要では？
-	あと、window.wpVersion は外観 > カスタマイズ > ウィジェットでは undefined を返すので比較不可能
+	そもそも Require at Least が 5.7 なので 5.5 以下の後方互換は不要ではあるが、現状影響が少ないので残しておく
+	window.wpVersion は外観 > カスタマイズ > ウィジェットでは undefined を返すので比較不可能
+	ともかく最初から undefined が条件に当てはまらないように変更
 	*/
 
 	//WP5.5未満の場合

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "POT-Creation-Date: 2021-07-19T07:02:47+00:00\n"
-"PO-Revision-Date: 2021-07-19 16:06+0900\n"
+"PO-Revision-Date: 2021-07-20 11:17+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -779,7 +779,7 @@ msgstr "自動再生"
 
 #: src/blocks/_pro/slider/edit.js:211
 msgid "Stop AutoPlay when swipe"
-msgstr "スワイプ時の自動再生停止"
+msgstr "スワイプ時に自動再生を停止"
 
 #: src/blocks/_pro/slider/edit.js:221
 msgid "Display Time"

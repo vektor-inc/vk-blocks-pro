@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
 Tested up to: 5.7.2
-Stable tag: 1.9.1
+Stable tag: 1.9.2
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,6 +63,9 @@ e.g.
 
 == Changelog ==
 
+= 1.9.2 =
+[ Bugfix ] Fix for 5.8
+[ Specification Change ][ Slider ] add Pagination Setting
 [ Specification Change ][ Heading ] Font size of title & sub text can set null.
 
 = 1.9.1 =

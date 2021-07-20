@@ -13,7 +13,6 @@ export default function save({ attributes }) {
 		speed,
 		slidesPerView,
 		slidesPerGroup,
-		navigationPosition,
 	} = attributes;
 	let alignClass;
 
@@ -58,22 +57,6 @@ export default function save({ attributes }) {
 		);
 	}
 
-	// ナビゲーションの HTML
-	let navigation_next_html = '';
-	let navigation_prev_html = '';
-	if (navigationPosition !== 'hide') {
-		navigation_next_html = (
-			<div
-				className={`swiper-button-next swiper-button-${navigationPosition}`}
-			></div>
-		);
-		navigation_prev_html = (
-			<div
-				className={`swiper-button-prev swiper-button-${navigationPosition}`}
-			></div>
-		);
-	}
-
 	const blockProps = useBlockProps.save({
 		className: `swiper-container vk_slider vk_slider_${clientId} ${alignClass}`,
 	});
@@ -83,8 +66,8 @@ export default function save({ attributes }) {
 			<div className={`swiper-wrapper`}>
 				<InnerBlocks.Content />
 			</div>
-			{navigation_next_html}
-			{navigation_prev_html}
+			<div className="swiper-button-next"></div>
+			<div className="swiper-button-prev"></div>
 			{pagination_html}
 		</div>
 	);

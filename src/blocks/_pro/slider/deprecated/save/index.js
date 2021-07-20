@@ -1,4 +1,5 @@
 /* eslint camelcase: 0 */
+import save1_9_2 from './1.9.2/save';
 import save1_9_1 from './1.9.1/save';
 import save1_2_1 from './1.2.1/save';
 import save1_0_6 from './1.0.6/save';
@@ -69,7 +70,39 @@ const blockAttributes2 = {
 	}
 }
 
+/**
+ * 1.9.1 でページネーションの仕様を変更 & スワイプストップを追加
+ */
+const blockAttributes3 = {
+	...blockAttributes2,
+	pagination: {
+		type: 'string',
+		default: 'bullets'
+	},
+	autoPlayStop: {
+		type: 'boolean',
+		default: false
+	},
+}
+
+/**
+ * 1.9.2 (仮)でナビゲーションを追加
+ */
+/*
+const blockAttributes4 = {
+	...blockAttributes3,
+	navigationPosition: {
+		type: 'string',
+		default: 'mobile-bottom'
+	}
+}
+*/
+
 const deprecated = [
+	{
+		attributes: blockAttributes3,
+		save: save1_9_2,
+	},
 	{
 		attributes: blockAttributes2,
 		save: save1_9_1,

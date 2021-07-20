@@ -61,6 +61,10 @@
 		"slidesPerGroup": {
 			"type": "number",
 			"default": 1
+		},
+		"navigationPosition": {
+			"type": "string",
+			"default": "mobile-bottom"
 		}
 	},
 	"supports": {

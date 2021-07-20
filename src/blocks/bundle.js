@@ -82,6 +82,8 @@ const registerBlock = (block) => {
 
 	/*
 	そもそも Require at Least が 5.7 なので 5.5 以下の後方互換は不要では？
+	あと、window.wpVersion は外観 > カスタマイズ > ウィジェットでは undefined を返すので比較不可能
+
 	//WP5.5未満の場合
 	if (compareVersions(window.wpVersion, '5.5') < 0) {
 		//nameを削除

@@ -8,7 +8,7 @@ import {
 	registerBlockType,
 	unstable__bootstrapServerSideBlockDefinitions, // eslint-disable-line camelcase
 } from '@wordpress/blocks';
-//import compareVersions from 'compare-versions';
+import compareVersions from 'compare-versions';
 import vkblocksPro from './bundle-pro';
 
 /**
@@ -78,14 +78,19 @@ const registerBlock = (block) => {
 		return;
 	}
 
-	const { metadata, settings, name } = block;
+	let { metadata, settings, name } = block;
 
 	/*
 	そもそも Require at Least が 5.7 なので 5.5 以下の後方互換は不要では？
 	あと、window.wpVersion は外観 > カスタマイズ > ウィジェットでは undefined を返すので比較不可能
+	*/
 
 	//WP5.5未満の場合
-	if (compareVersions(window.wpVersion, '5.5') < 0) {
+	if (
+		window.wpVersion !== undefined &&
+		window.wpVersion !== null &&
+		compareVersions(window.wpVersion, '5.5') < 0
+	) {
 		//nameを削除
 		delete metadata.name;
 		//カテゴリ等を追加
@@ -96,8 +101,6 @@ const registerBlock = (block) => {
 	} else if (metadata) {
 		unstable__bootstrapServerSideBlockDefinitions({ [name]: metadata }); // eslint-disable-line camelcase
 	}
-	*/
-	unstable__bootstrapServerSideBlockDefinitions({ [name]: metadata }); // eslint-disable-line camelcase
 	registerBlockType(name, settings);
 };
 

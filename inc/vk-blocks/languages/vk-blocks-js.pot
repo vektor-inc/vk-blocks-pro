@@ -816,7 +816,12 @@ msgstr ""
 msgid "Pagination Type"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:306
+#: src/blocks/_pro/slider/edit.js:285
+#: src/blocks/heading/edit.js:344
+msgid "Hide"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:289
 #: src/blocks/_pro/step-item/edit.js:110
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
 #: src/blocks/_pro/timeline-item/edit.js:91

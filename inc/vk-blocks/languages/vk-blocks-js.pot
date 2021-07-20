@@ -817,7 +817,7 @@ msgid "Pagination Type"
 msgstr ""
 
 #: src/blocks/_pro/slider/edit.js:285
-#: src/blocks/heading/edit.js:342
+#: src/blocks/heading/edit.js:344
 msgid "Hide"
 msgstr ""
 
@@ -1005,7 +1005,7 @@ msgid "Balloon setting"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:202
-#: src/blocks/heading/edit.js:334
+#: src/blocks/heading/edit.js:336
 msgid "Position"
 msgstr ""
 
@@ -1258,13 +1258,13 @@ msgid ""
 msgstr ""
 
 #: src/blocks/button/edit.js:262
-#: src/blocks/heading/edit.js:301
+#: src/blocks/heading/edit.js:303
 #: src/blocks/pr-content/edit.js:200
 msgid "Before text"
 msgstr ""
 
 #: src/blocks/button/edit.js:271
-#: src/blocks/heading/edit.js:310
+#: src/blocks/heading/edit.js:312
 #: src/blocks/pr-content/edit.js:212
 msgid "After text"
 msgstr ""
@@ -1438,27 +1438,27 @@ msgstr ""
 msgid "Heading Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:286
+#: src/blocks/heading/edit.js:288
 msgid "Text Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:298
+#: src/blocks/heading/edit.js:300
 msgid "Font Awesome Icon Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:319
+#: src/blocks/heading/edit.js:321
 msgid "Icon Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:332
+#: src/blocks/heading/edit.js:334
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:338
+#: src/blocks/heading/edit.js:340
 msgid "Display"
 msgstr ""
 
-#: src/blocks/heading/edit.js:350
+#: src/blocks/heading/edit.js:352
 msgid "Text size (rem)"
 msgstr ""
 

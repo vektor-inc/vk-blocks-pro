@@ -817,7 +817,7 @@ msgid "Pagination Type"
 msgstr ""
 
 #: src/blocks/_pro/slider/edit.js:285
-#: src/blocks/heading/edit.js:342
+#: src/blocks/heading/edit.js:344
 msgid "Hide"
 msgstr ""
 
@@ -1458,7 +1458,7 @@ msgstr ""
 msgid "Display"
 msgstr ""
 
-#: src/blocks/heading/edit.js:350
+#: src/blocks/heading/edit.js:352
 msgid "Text size (rem)"
 msgstr ""
 

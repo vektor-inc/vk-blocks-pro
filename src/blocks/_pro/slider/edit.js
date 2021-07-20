@@ -61,6 +61,11 @@ export default function SliderEdit(props) {
 		});
 	}
 
+	// navigationPosition 互換設定
+	if (navigationPosition === undefined) {
+		setAttributes({ navigationPosition: 'mobile-bottom' });
+	}
+
 	// pagination 互換設定
 	if (pagination === false) {
 		setAttributes({ pagination: 'hide' });

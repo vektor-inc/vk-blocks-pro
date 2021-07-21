@@ -70,7 +70,11 @@
 	align-items: center;
 	flex-direction: column;
 }
-
+//paginationの親枠
+.swiper-container-horizontal>.swiper-pagination-bullets{
+	padding-left:3.2rem;
+	padding-right:3.2rem;
+}
 //pagination
 .swiper-pagination-bullet{
 	border-radius: unset;

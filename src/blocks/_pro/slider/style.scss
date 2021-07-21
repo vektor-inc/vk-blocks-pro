@@ -31,7 +31,7 @@
 	.swiper-button-prev {
 		color: #333;
 		background-color: rgba(255, 255, 255, 0.5);
-		border-radius: 5px;
+		border-radius: var(--vk-size-radius);
 		background-image: none;
 		width: 2.4rem;
 		height: 2.4rem;
@@ -42,7 +42,6 @@
 	}
 
 }
-
 
 .swiper-container {
 	&.vk_width-full {
@@ -80,6 +79,16 @@
 	&-active {
 		background: #000;
 		opacity: 0.6;
+	}
+}
+//矢印ボタン モバイルは下部
+@media (max-width: 575.98px) {
+	.swiper-button-next, 
+	.swiper-button-prev{
+		&.swiper-button-mobile-bottom{
+		top:unset;
+		bottom: 0px;
+		}
 	}
 }
 

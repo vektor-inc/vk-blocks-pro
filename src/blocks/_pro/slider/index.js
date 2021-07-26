@@ -94,10 +94,10 @@ const addSwiperConfig = (el, type, attributes) => {
 		if (-1 === deprecatedFuncIndex) {
 			const cssTag = generateHeightCss(attributes, cssSelector);
 			return (
-				<>
+				<div>
 					{el}
 					<style type="text/css">{cssTag}</style>
-				</>
+				</div>
 			);
 
 			//後方互換

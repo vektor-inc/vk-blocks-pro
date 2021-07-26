@@ -80,10 +80,12 @@ const blockAttributes3 = {
 		default: 600
 	},
 	tablet: {
-		type: 'number'
+		type: 'number',
+		default: 600
 	},
 	mobile: {
-		type: 'number'
+		type: 'number',
+		default: 600
 	},
 	autoPlay: {
 		type: 'boolean',

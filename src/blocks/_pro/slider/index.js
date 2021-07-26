@@ -28,25 +28,36 @@ export const settings = {
 
 const generateHeightCss = (attributes, cssSelector = '') => {
 	const { clientId, mobile, tablet, pc, unit } = attributes;
+	let ganaratedCss = '';
 
-	return `@media (max-width: 576px) {
-		${cssSelector}
-		.vk_slider_${clientId} .vk_slider_item{
-			height:${mobile}${unit}!important;
+	if (unit !== null && unit !== undefined) {
+		if (mobile !== null && mobile !== undefined) {
+			ganaratedCss += `@media (max-width: 576px) {
+				${cssSelector}
+				.vk_slider_${clientId} .vk_slider_item{
+					height:${mobile}${unit}!important;
+				}
+			}`;
+		}
+		if (tablet !== null && tablet !== undefined) {
+			ganaratedCss += `@media (min-width: 577px) and (max-width: 767px) {
+				${cssSelector}
+				.vk_slider_${clientId} .vk_slider_item{
+					height:${tablet}${unit}!important;
+				}
+			}`;
+		}
+		if (pc !== null && pc !== undefined) {
+			ganaratedCss += `@media (min-width: 769px) {
+				${cssSelector}
+				.vk_slider_${clientId} .vk_slider_item{
+					height:${pc}${unit}!important;
+				}
+			}`;
 		}
 	}
-	@media (min-width: 577px) and (max-width: 768px) {
-		${cssSelector}
-		.vk_slider_${clientId} .vk_slider_item{
-			height:${tablet}${unit}!important;
-		}
-	}
-	@media (min-width: 769px) {
-		${cssSelector}
-		.vk_slider_${clientId} .vk_slider_item{
-			height:${pc}${unit}!important;
-		}
-	}`;
+
+	return ganaratedCss;
 };
 
 // Add column css for editor.

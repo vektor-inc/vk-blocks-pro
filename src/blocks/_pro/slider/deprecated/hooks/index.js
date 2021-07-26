@@ -1,8 +1,10 @@
-import SliderHook0_49_7 from './0.49.7'
-import SliderHook0_56_4 from './0.56.4'
-import SliderHook0_60_1 from './0.60.1'
+import SliderHook0_49_7 from './0.49.7';
+import SliderHook0_56_4 from './0.56.4';
+import SliderHook0_60_1 from './0.60.1';
+import SliderHook1_9_2 from './1.9.2';
 
 export default [
+	SliderHook1_9_2,
 	SliderHook0_60_1,
 	SliderHook0_56_4,
 	SliderHook0_49_7

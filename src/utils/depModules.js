@@ -1,4 +1,8 @@
 import { select, dispatch } from '@wordpress/data';
+/**
+ * 下記は vkbBlockEditor でしか使われていなかったのでコメントアウト
+ * vkbBlockEditor が復活したり他で必要になったときのために一応残す
+ */
 // import * as blockEditor from '@wordpress/block-editor';
 // import * as editor from '@wordpress/editor';
 import ServerSideRender from '@wordpress/server-side-render';

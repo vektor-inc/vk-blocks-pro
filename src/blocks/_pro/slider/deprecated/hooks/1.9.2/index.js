@@ -22,19 +22,19 @@ const generateHeightCss = (attributes, cssSelector = '') => {
 };
 
 
-export default function SliderHook1_9_2 (el, type, attributes)  {
-	const cssSelector = `.vk_slider_${attributes.clientId},`;
+export default function SliderHook1_9_2 (el, attributes)  {
+	const {
+		clientId,
+	} = attributes;
+	const cssSelector = `.vk_slider_${clientId},`;
 
-	if ('vk-blocks/slider' === type.name) {
-
-		const cssTag = generateHeightCss(attributes, cssSelector);
-		return (
-			<>
-				{el}
-				<style type="text/css">{cssTag}</style>
-			</>
-		);
-	}
+	const cssTag = generateHeightCss(attributes, cssSelector);
+	return (
+		<>
+			{el}
+			<style type="text/css">{cssTag}</style>
+		</>
+	);
 	// Slider以外のブロック
 	return el;
 };

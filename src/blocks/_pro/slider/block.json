@@ -9,15 +9,15 @@
 		},
 		"pc": {
 			"type": "number",
-			"default": 600
+			"default": null
 		},
 		"tablet": {
 			"type": "number",
-			"default": 600
+			"default": null
 		},
 		"mobile": {
 			"type": "number",
-			"default": 600
+			"default": null
 		},
 		"autoPlay": {
 			"type": "boolean",

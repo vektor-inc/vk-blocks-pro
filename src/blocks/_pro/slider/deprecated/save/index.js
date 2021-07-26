@@ -1,4 +1,5 @@
 /* eslint camelcase: 0 */
+import save1_9_2 from './1.9.2/save';
 import save1_9_1 from './1.9.1/save';
 import save1_2_1 from './1.2.1/save';
 import save1_0_6 from './1.0.6/save';
@@ -69,7 +70,71 @@ const blockAttributes2 = {
 	}
 }
 
+const blockAttributes3 = {
+	unit: {
+		type: 'string',
+		default: 'px'
+	},
+	pc: {
+		type: 'number',
+		default: 600
+	},
+	tablet: {
+		type: 'number'
+	},
+	mobile: {
+		type: 'number'
+	},
+	autoPlay: {
+		type: 'boolean',
+		default: true
+	},
+	autoPlayStop: {
+		type: 'boolean',
+		default: false
+	},
+	autoPlayDelay: {
+		type: 'number',
+		default: 2500
+	},
+	pagination: {
+		type: 'string',
+		default: 'bullets'
+	},
+	clientId: {
+		type: 'string'
+	},
+	width: {
+		type: 'string',
+		default: ''
+	},
+	loop: {
+		type: 'boolean',
+		default: true
+	},
+	effect: {
+		type: 'string',
+		default: 'slide'
+	},
+	speed: {
+		type: 'number',
+		default: 500
+	},
+	slidesPerView: {
+		type: 'number',
+		default: 1
+	},
+	slidesPerGroup: {
+		type: 'number',
+		default: 1
+	}
+}
+
 const deprecated = [
+	{
+		attributes: blockAttributes3,
+		save: save1_9_2,
+	},
 	{
 		attributes: blockAttributes2,
 		save: save1_9_1,

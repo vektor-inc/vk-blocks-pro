@@ -23,7 +23,7 @@ const getContainerClass = (el) =>{
 	return containerClass;
 }
 
-export default function SliderHook0_60_1( {el,attributes}) {
+export default function SliderHook( {el,attributes}) {
 	const {
 		clientId,
 	} = attributes;

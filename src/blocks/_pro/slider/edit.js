@@ -9,7 +9,6 @@ import {
 	InnerBlocks,
 	useBlockProps,
 } from '@wordpress/block-editor';
-import { dispatch } from '@wordpress/data';
 import {
 	PanelBody,
 	BaseControl,
@@ -38,15 +37,13 @@ export default function SliderEdit(props) {
 		slidesPerGroup,
 	} = attributes;
 
-	const { updateBlockAttributes } = dispatch('core/block-editor');
-
 	useEffect(() => {
 		if (
 			attributes.clientId === null ||
 			attributes.clientId === undefined ||
 			attributes.clientId === ''
 		) {
-			updateBlockAttributes(clientId, { clientId });
+			setAttributes({ clientId });
 		}
 	}, [clientId]);
 
@@ -109,7 +106,7 @@ export default function SliderEdit(props) {
 	}
 
 	const blockProps = useBlockProps({
-		className: `swiper-container vk_slider vk_slider_${clientId} ${alignClass}`,
+		className: `swiper-container vk_slider vk_slider_${attributes.clientId} ${alignClass}`,
 	});
 
 	return (

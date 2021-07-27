@@ -82,7 +82,6 @@ addFilter(
  * @param {*} attributes
  */
 const addSwiperConfig = (el, type, attributes) => {
-	const cssSelector = `.vk_slider_${attributes.clientId},`;
 
 	if ('vk-blocks/slider' === type.name) {
 		//現在実行されている deprecated内の save関数のindexを取得
@@ -92,6 +91,7 @@ const addSwiperConfig = (el, type, attributes) => {
 
 		// 最新版
 		if (-1 === deprecatedFuncIndex) {
+			const cssSelector = `.vk_slider_${attributes.clientId},`;
 			const cssTag = generateHeightCss(attributes, cssSelector);
 			return (
 				<div>

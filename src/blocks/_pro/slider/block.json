@@ -8,16 +8,13 @@
 			"default": "px"
 		},
 		"pc": {
-			"type": "number",
-			"default": null
+			"type": "number"
 		},
 		"tablet": {
-			"type": "number",
-			"default": null
+			"type": "number"
 		},
 		"mobile": {
-			"type": "number",
-			"default": null
+			"type": "number"
 		},
 		"autoPlay": {
 			"type": "boolean",

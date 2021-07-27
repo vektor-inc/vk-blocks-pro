@@ -56,10 +56,11 @@ const vkbwithClientIdClassName = createHigherOrderComponent(
 			if ('vk-blocks/slider' === props.name) {
 				const cssTag = generateHeightCss(props.attributes, '');
 				return (
-					<>
-						<style type="text/css">{cssTag}</style>
+					<div>
 						<BlockListBlock {...props} />
-					</>
+						<style type="text/css">{cssTag}</style>
+
+					</div>
 				);
 			}
 			return <BlockListBlock {...props} />;

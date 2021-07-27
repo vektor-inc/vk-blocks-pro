@@ -14,7 +14,6 @@ export default function save({ attributes }) {
 		slidesPerView,
 		slidesPerGroup,
 	} = attributes;
-	let alignClass;
 
 	// slidesPerView 互換設定
 	if (slidesPerView === undefined) {
@@ -39,6 +38,7 @@ export default function save({ attributes }) {
 		slidesPerGroup,
 	};
 
+	let alignClass;
 	if ('full' === width) {
 		alignClass = 'vk_width-full';
 	} else if ('wide' === width) {

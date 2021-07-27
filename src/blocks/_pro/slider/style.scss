@@ -1,3 +1,6 @@
+:root {
+	--vk-color-background-white-translucent:rgba(255, 255, 255, 0.5);
+}
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
@@ -29,8 +32,8 @@
 	//vk_slider用のnextとprevボタン	
 	.swiper-button-next,
 	.swiper-button-prev {
-		color: #333;
-		background-color: rgba(255, 255, 255, 0.5);
+		color: var(--vk-color-text-body);
+		background-color: var(--vk-color-background-white-translucent);
 		border-radius: var(--vk-size-radius);
 		background-image: none;
 		width: 2.4rem;
@@ -76,15 +79,30 @@
 	padding-right:3.2rem;
 }
 //pagination
-.swiper-pagination-bullet{
-	border-radius: unset;
-	width: 30px;
-	height: 5px;
-	&-active {
-		background: #000;
-		opacity: 0.6;
+.swiper-pagination{
+	//標準
+	&-bullet{ 
+		border-radius: unset;
+		width: 30px;
+		height: 5px;
+		background-color: #ccc;
+		opacity: unset;
+		outline: 1px solid var(--vk-color-background-white-translucent);
+		&-active {
+			background: #666;
+		}
+	}
+	//標準以外（スライドの枚数）
+	&.swiper-pagination-fraction:not(.swiper-pagination-bullets){
+		width: auto;
+		left: 50%;
+		transform: translateX(-50%);
+		background: var(--vk-color-background-white-translucent);
+		padding: 5px 20px;
+		border-radius: 30px;
 	}
 }
+
 //矢印ボタン モバイルは下部
 @media (max-width: 575.98px) {
 	.swiper-button-next, 
@@ -95,6 +113,7 @@
 		}
 	}
 }
+
 
 /*-------------------------------------------*/
 /* 管理画面

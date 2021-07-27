@@ -82,7 +82,6 @@ addFilter(
  * @param {*} attributes
  */
 const addSwiperConfig = (el, type, attributes) => {
-
 	if ('vk-blocks/slider' === type.name) {
 		//現在実行されている deprecated内の save関数のindexを取得
 		const deprecatedFuncIndex = deprecated.findIndex(

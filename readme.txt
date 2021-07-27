@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Bugfix ][ Slider ]Fix bug where pagination design would change when tree shake was enabled.
+
 = 1.9.2 =
 [ Bugfix ] Fix for 5.8
 [ Specification Change ][ Slider ] add Pagination Setting

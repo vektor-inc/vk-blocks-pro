@@ -45,28 +45,27 @@ export default function SliderEdit(props) {
 		) {
 			setAttributes({ clientId });
 		}
+		// slidesPerView 互換設定
+		if (slidesPerView === undefined) {
+			setAttributes({
+				slidesPerView: 1,
+			});
+		}
+		// slidesPerGroup 互換設定
+		if (slidesPerGroup === undefined) {
+			setAttributes({
+				slidesPerGroup: 1,
+			});
+		}
+
+		// pagination 互換設定
+		if (pagination === false) {
+			setAttributes({ pagination: 'hide' });
+		}
+		if (pagination === true) {
+			setAttributes({ pagination: 'bullets' });
+		}
 	}, [clientId]);
-
-	// slidesPerView 互換設定
-	if (slidesPerView === undefined) {
-		setAttributes({
-			slidesPerView: 1,
-		});
-	}
-	// slidesPerGroup 互換設定
-	if (slidesPerGroup === undefined) {
-		setAttributes({
-			slidesPerGroup: 1,
-		});
-	}
-
-	// pagination 互換設定
-	if (pagination === false) {
-		setAttributes({ pagination: 'hide' });
-	}
-	if (pagination === true) {
-		setAttributes({ pagination: 'bullets' });
-	}
 
 	const containerClass = ' vk_grid-column';
 	let alignClass;

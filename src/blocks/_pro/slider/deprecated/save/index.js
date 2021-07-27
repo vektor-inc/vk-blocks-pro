@@ -1,7 +1,8 @@
 /* eslint camelcase: 0 */
+import save1_9_2 from './1.9.2/save';
 import save1_9_1 from './1.9.1/save';
 import save1_2_1 from './1.2.1/save';
-import save1_0_6 from './1.0.6/save';
+import save1_0_16 from './1.0.16/save';
 import save0_60_1 from './0.60.1/save';
 import save0_56_3 from './0.56.3/save';
 import save0_49_1 from './0.49.1/save';
@@ -69,18 +70,42 @@ const blockAttributes2 = {
 	}
 }
 
+const blockAttributes3 = {
+	...blockAttributes2,
+	speed: {
+		type: 'number',
+		default: 500,
+	},
+}
+
+const blockAttributes4 = {
+	...blockAttributes3,
+	autoPlayStop: {
+		type: 'boolean',
+		default: false
+	},
+	pagination: {
+		type: 'string',
+		default: 'bullets'
+	},
+}
+
 const deprecated = [
 	{
-		attributes: blockAttributes2,
+		attributes: blockAttributes4,
+		save: save1_9_2,
+	},
+	{
+		attributes: blockAttributes3,
 		save: save1_9_1,
 	},
 	{
-		attributes: blockAttributes,
+		attributes: blockAttributes2,
 		save: save1_2_1,
 	},
 	{
 		attributes: blockAttributes,
-		save: save1_0_6,
+		save: save1_0_16,
 	},
 	{
 		attributes: blockAttributes,

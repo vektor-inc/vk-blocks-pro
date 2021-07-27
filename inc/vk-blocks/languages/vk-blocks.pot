@@ -2,16 +2,16 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.9.1\n"
+"Project-Id-Version: VK Blocks Pro 1.10.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-07-20T02:19:46+00:00\n"
+"POT-Creation-Date: 2021-07-27T08:55:23+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.4.0\n"
+"X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 "X-Domain: vk-blocks\n"
 
 #: src/blocks/_pro/accordion-target/index.js:16
@@ -68,7 +68,7 @@ msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:123
 #: src/blocks/_pro/outer/edit.js:303
-#: src/blocks/_pro/slider/edit.js:133
+#: src/blocks/_pro/slider/edit.js:132
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95
 #: src/blocks/faq/index.js:27
@@ -266,7 +266,7 @@ msgid "Image Height"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:82
-#: src/blocks/_pro/slider/edit.js:152
+#: src/blocks/_pro/slider/edit.js:151
 msgid "Slide Height for each device."
 msgstr ""
 
@@ -467,12 +467,12 @@ msgid "Layout Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:292
-#: src/blocks/_pro/slider/edit.js:124
+#: src/blocks/_pro/slider/edit.js:123
 msgid "Width"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:313
-#: src/blocks/_pro/slider/edit.js:141
+#: src/blocks/_pro/slider/edit.js:140
 msgid "Full Wide"
 msgstr ""
 
@@ -615,16 +615,19 @@ msgid "Container Inner Side Space Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:566
+#: src/blocks/_pro/slider/edit.js:177
 #: src/components/advanced-viewport-control/index.js:39
 msgid "Mobile"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:581
+#: src/blocks/_pro/slider/edit.js:166
 #: src/components/advanced-viewport-control/index.js:31
 msgid "Tablet"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:596
+#: src/blocks/_pro/slider/edit.js:155
 #: src/components/advanced-viewport-control/index.js:25
 msgid "PC"
 msgstr ""
@@ -767,68 +770,68 @@ msgstr ""
 msgid "Slider Item"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:147
+#: src/blocks/_pro/slider/edit.js:146
 msgid "Height"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:166
+#: src/blocks/_pro/slider/edit.js:190
 msgid "Slider Settings"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:170
+#: src/blocks/_pro/slider/edit.js:194
 msgid "Effect "
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:180
+#: src/blocks/_pro/slider/edit.js:204
 msgid "Slide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:184
+#: src/blocks/_pro/slider/edit.js:208
 msgid "Fade"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:191
+#: src/blocks/_pro/slider/edit.js:215
 msgid "Loop "
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:201
+#: src/blocks/_pro/slider/edit.js:225
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:211
+#: src/blocks/_pro/slider/edit.js:235
 msgid "Stop AutoPlay when swipe"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:221
+#: src/blocks/_pro/slider/edit.js:245
 msgid "Display Time"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:235
+#: src/blocks/_pro/slider/edit.js:259
 msgid "Change Speed"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:249
+#: src/blocks/_pro/slider/edit.js:273
 msgid "Display Multi Images per View"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:253
+#: src/blocks/_pro/slider/edit.js:277
 msgid "Images per View"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:264
+#: src/blocks/_pro/slider/edit.js:288
 msgid "Move Images per Slide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:278
+#: src/blocks/_pro/slider/edit.js:302
 msgid "Pagination Type"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:285
+#: src/blocks/_pro/slider/edit.js:309
 #: src/blocks/heading/edit.js:344
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:289
+#: src/blocks/_pro/slider/edit.js:313
 #: src/blocks/_pro/step-item/edit.js:110
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
 #: src/blocks/_pro/timeline-item/edit.js:91
@@ -839,7 +842,7 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:293
+#: src/blocks/_pro/slider/edit.js:317
 msgid "Number of slides"
 msgstr ""
 

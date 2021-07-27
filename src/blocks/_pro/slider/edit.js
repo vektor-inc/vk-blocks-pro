@@ -1,5 +1,4 @@
 import { AdvancedToggleControl } from '@vkblocks/components/advanced-toggle-control';
-import AdvancedViewportControl from '@vkblocks/components/advanced-viewport-control';
 import AdvancedUnitControl from '@vkblocks/components/advanced-unit-control';
 import { __ } from '@wordpress/i18n';
 import { useEffect } from '@wordpress/element';
@@ -18,11 +17,15 @@ import {
 	ButtonGroup,
 	Button,
 	SelectControl,
+	RangeControl,
 } from '@wordpress/components';
 
 export default function SliderEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const {
+		pc,
+		tablet,
+		mobile,
 		autoPlay,
 		autoPlayStop,
 		autoPlayDelay,
@@ -152,13 +155,38 @@ export default function SliderEdit(props) {
 						label={__('Slide Height for each device.', 'vk-blocks')}
 						id={`vk_slider-SlideHeight`}
 					>
-						<AdvancedViewportControl
-							{...props}
-							initial={{
-								iPc: 600,
-								iTablet: 600,
-								iMobile: 600,
-							}}
+						<RangeControl
+							label={__('PC', 'vk-blocks')}
+							value={pc}
+							onChange={(value) =>
+								setAttributes({ pc: parseFloat(value) })
+							}
+							min={0}
+							max={1000}
+							allowReset={true}
+							resetFallbackValue={null}
+						/>
+						<RangeControl
+							label={__('Tablet', 'vk-blocks')}
+							value={tablet}
+							onChange={(value) =>
+								setAttributes({ tablet: parseFloat(value) })
+							}
+							min={0}
+							max={1000}
+							allowReset={true}
+							resetFallbackValue={null}
+						/>
+						<RangeControl
+							label={__('Mobile', 'vk-blocks')}
+							value={mobile}
+							onChange={(value) =>
+								setAttributes({ mobile: parseFloat(value) })
+							}
+							min={0}
+							max={1000}
+							allowReset={true}
+							resetFallbackValue={null}
 						/>
 					</BaseControl>
 				</PanelBody>

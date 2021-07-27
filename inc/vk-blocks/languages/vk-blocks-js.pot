@@ -57,7 +57,7 @@ msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:123
 #: src/blocks/_pro/outer/edit.js:303
-#: src/blocks/_pro/slider/edit.js:133
+#: src/blocks/_pro/slider/edit.js:136
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95
 #: src/blocks/faq/index.js:27
@@ -259,7 +259,7 @@ msgid "Image Height"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:82
-#: src/blocks/_pro/slider/edit.js:152
+#: src/blocks/_pro/slider/edit.js:155
 msgid "Slide Height for each device."
 msgstr ""
 
@@ -461,12 +461,12 @@ msgid "Layout Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:292
-#: src/blocks/_pro/slider/edit.js:124
+#: src/blocks/_pro/slider/edit.js:127
 msgid "Width"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:313
-#: src/blocks/_pro/slider/edit.js:141
+#: src/blocks/_pro/slider/edit.js:144
 msgid "Full Wide"
 msgstr ""
 
@@ -611,16 +611,19 @@ msgid "Container Inner Side Space Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:566
+#: src/blocks/_pro/slider/edit.js:181
 #: src/components/advanced-viewport-control/index.js:39
 msgid "Mobile"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:581
+#: src/blocks/_pro/slider/edit.js:170
 #: src/components/advanced-viewport-control/index.js:31
 msgid "Tablet"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:596
+#: src/blocks/_pro/slider/edit.js:159
 #: src/components/advanced-viewport-control/index.js:25
 msgid "PC"
 msgstr ""
@@ -760,68 +763,68 @@ msgstr ""
 msgid "Slider Item"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:147
+#: src/blocks/_pro/slider/edit.js:150
 msgid "Height"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:166
+#: src/blocks/_pro/slider/edit.js:194
 msgid "Slider Settings"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:170
+#: src/blocks/_pro/slider/edit.js:198
 msgid "Effect "
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:180
+#: src/blocks/_pro/slider/edit.js:208
 msgid "Slide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:184
+#: src/blocks/_pro/slider/edit.js:212
 msgid "Fade"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:191
+#: src/blocks/_pro/slider/edit.js:219
 msgid "Loop "
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:201
+#: src/blocks/_pro/slider/edit.js:229
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:211
+#: src/blocks/_pro/slider/edit.js:239
 msgid "Stop AutoPlay when swipe"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:221
+#: src/blocks/_pro/slider/edit.js:249
 msgid "Display Time"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:235
+#: src/blocks/_pro/slider/edit.js:263
 msgid "Change Speed"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:249
+#: src/blocks/_pro/slider/edit.js:277
 msgid "Display Multi Images per View"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:253
+#: src/blocks/_pro/slider/edit.js:281
 msgid "Images per View"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:264
+#: src/blocks/_pro/slider/edit.js:292
 msgid "Move Images per Slide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:278
+#: src/blocks/_pro/slider/edit.js:306
 msgid "Pagination Type"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:285
+#: src/blocks/_pro/slider/edit.js:313
 #: src/blocks/heading/edit.js:344
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:289
+#: src/blocks/_pro/slider/edit.js:317
 #: src/blocks/_pro/step-item/edit.js:110
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
 #: src/blocks/_pro/timeline-item/edit.js:91
@@ -832,7 +835,7 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:293
+#: src/blocks/_pro/slider/edit.js:321
 msgid "Number of slides"
 msgstr ""
 

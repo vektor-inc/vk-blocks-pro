@@ -59,7 +59,54 @@ const blockAttributes = {
 };
 
 const blockAttributes2 = {
-	...blockAttributes,
+	unit: {
+		type: 'string',
+		default: 'px',
+	},
+	pc: {
+		type: 'number',
+		default: 600,
+	},
+	tablet: {
+		type: 'number',
+		default: 600,
+	},
+	mobile: {
+		type: 'number',
+		default: 600,
+	},
+	autoPlay: {
+		type: 'boolean',
+		default: true,
+	},
+	autoPlayDelay: {
+		type: 'number',
+		default: 2500,
+	},
+	pagination: {
+		type: 'boolean',
+		default: true,
+	},
+	clientId: {
+		type: 'string',
+		default: '',
+	},
+	width: {
+		type: 'string',
+		default: '',
+	},
+	loop: {
+		type: 'boolean',
+		default: true,
+	},
+	effect: {
+		type: 'string',
+		default: 'slide',
+	},
+	speed: {
+		type: 'number',
+		default: 300,
+	},
 	slidesPerView: {
 		type: 'number',
 		default: 1
@@ -71,6 +118,65 @@ const blockAttributes2 = {
 }
 
 const blockAttributes3 = {
+	unit: {
+		type: 'string',
+		default: 'px',
+	},
+	pc: {
+		type: 'number',
+		default: 600,
+	},
+	tablet: {
+		type: 'number',
+		default: 600,
+	},
+	mobile: {
+		type: 'number',
+		default: 600,
+	},
+	autoPlay: {
+		type: 'boolean',
+		default: true,
+	},
+	autoPlayDelay: {
+		type: 'number',
+		default: 2500,
+	},
+	pagination: {
+		type: 'boolean',
+		default: true,
+	},
+	clientId: {
+		type: 'string',
+		default: '',
+	},
+	width: {
+		type: 'string',
+		default: '',
+	},
+	loop: {
+		type: 'boolean',
+		default: true,
+	},
+	effect: {
+		type: 'string',
+		default: 'slide',
+	},
+	speed: {
+		type: 'number',
+		default: 500,
+	},
+	slidesPerView: {
+		type: 'number',
+		default: 1
+	},
+	slidesPerGroup: {
+		type: 'number',
+		default: 1
+	}
+}
+
+const blockAttributes4 = {
 	unit: {
 		type: 'string',
 		default: 'px'
@@ -134,15 +240,15 @@ const blockAttributes3 = {
 
 const deprecated = [
 	{
-		attributes: blockAttributes3,
+		attributes: blockAttributes4,
 		save: save1_9_2,
 	},
 	{
-		attributes: blockAttributes2,
+		attributes: blockAttributes3,
 		save: save1_9_1,
 	},
 	{
-		attributes: blockAttributes,
+		attributes: blockAttributes2,
 		save: save1_2_1,
 	},
 	{

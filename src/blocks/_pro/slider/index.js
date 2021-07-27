@@ -59,7 +59,6 @@ const vkbwithClientIdClassName = createHigherOrderComponent(
 					<div>
 						<BlockListBlock {...props} />
 						<style type="text/css">{cssTag}</style>
-
 					</div>
 				);
 			}

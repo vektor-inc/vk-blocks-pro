@@ -59,54 +59,7 @@ const blockAttributes = {
 };
 
 const blockAttributes2 = {
-	unit: {
-		type: 'string',
-		default: 'px',
-	},
-	pc: {
-		type: 'number',
-		default: 600,
-	},
-	tablet: {
-		type: 'number',
-		default: 600,
-	},
-	mobile: {
-		type: 'number',
-		default: 600,
-	},
-	autoPlay: {
-		type: 'boolean',
-		default: true,
-	},
-	autoPlayDelay: {
-		type: 'number',
-		default: 2500,
-	},
-	pagination: {
-		type: 'boolean',
-		default: true,
-	},
-	clientId: {
-		type: 'string',
-		default: '',
-	},
-	width: {
-		type: 'string',
-		default: '',
-	},
-	loop: {
-		type: 'boolean',
-		default: true,
-	},
-	effect: {
-		type: 'string',
-		default: 'slide',
-	},
-	speed: {
-		type: 'number',
-		default: 300,
-	},
+	...blockAttributes,
 	slidesPerView: {
 		type: 'number',
 		default: 1
@@ -118,124 +71,23 @@ const blockAttributes2 = {
 }
 
 const blockAttributes3 = {
-	unit: {
-		type: 'string',
-		default: 'px',
-	},
-	pc: {
-		type: 'number',
-		default: 600,
-	},
-	tablet: {
-		type: 'number',
-		default: 600,
-	},
-	mobile: {
-		type: 'number',
-		default: 600,
-	},
-	autoPlay: {
-		type: 'boolean',
-		default: true,
-	},
-	autoPlayDelay: {
-		type: 'number',
-		default: 2500,
-	},
-	pagination: {
-		type: 'boolean',
-		default: true,
-	},
-	clientId: {
-		type: 'string',
-		default: '',
-	},
-	width: {
-		type: 'string',
-		default: '',
-	},
-	loop: {
-		type: 'boolean',
-		default: true,
-	},
-	effect: {
-		type: 'string',
-		default: 'slide',
-	},
+	...blockAttributes2,
 	speed: {
 		type: 'number',
 		default: 500,
 	},
-	slidesPerView: {
-		type: 'number',
-		default: 1
-	},
-	slidesPerGroup: {
-		type: 'number',
-		default: 1
-	}
 }
 
 const blockAttributes4 = {
-	unit: {
-		type: 'string',
-		default: 'px'
-	},
-	pc: {
-		type: 'number',
-		default: 600
-	},
-	tablet: {
-		type: 'number',
-		default: 600
-	},
-	mobile: {
-		type: 'number',
-		default: 600
-	},
-	autoPlay: {
-		type: 'boolean',
-		default: true
-	},
+	...blockAttributes3,
 	autoPlayStop: {
 		type: 'boolean',
 		default: false
-	},
-	autoPlayDelay: {
-		type: 'number',
-		default: 2500
 	},
 	pagination: {
 		type: 'string',
 		default: 'bullets'
 	},
-	clientId: {
-		type: 'string'
-	},
-	width: {
-		type: 'string',
-		default: ''
-	},
-	loop: {
-		type: 'boolean',
-		default: true
-	},
-	effect: {
-		type: 'string',
-		default: 'slide'
-	},
-	speed: {
-		type: 'number',
-		default: 500
-	},
-	slidesPerView: {
-		type: 'number',
-		default: 1
-	},
-	slidesPerGroup: {
-		type: 'number',
-		default: 1
-	}
 }
 
 const deprecated = [

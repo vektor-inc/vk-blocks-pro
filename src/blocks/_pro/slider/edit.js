@@ -140,7 +140,7 @@ export default function SliderEdit(props) {
 	}
 
 	const blockProps = useBlockProps({
-		className: `swiper-container vk_slider vk_slider_${attributes.clientId} ${alignClass}`,
+		className: `swiper-container vk_slider vk_slider_${clientId} ${alignClass}`,
 	});
 
 	return (

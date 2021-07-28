@@ -1,8 +1,9 @@
 /* eslint camelcase: 0 */
+import save1_10_0 from './1.10.0/save';
 import save1_9_2 from './1.9.2/save';
 import save1_9_1 from './1.9.1/save';
 import save1_2_1 from './1.2.1/save';
-import save1_0_6 from './1.0.6/save';
+import save1_0_16 from './1.0.16/save';
 import save0_60_1 from './0.60.1/save';
 import save0_56_3 from './0.56.3/save';
 import save0_49_1 from './0.49.1/save';
@@ -70,27 +71,48 @@ const blockAttributes2 = {
 	}
 }
 
-/**
- * 1.9.1 でページネーションの仕様を変更 & スワイプストップを追加
- */
 const blockAttributes3 = {
 	...blockAttributes2,
-	pagination: {
-		type: 'string',
-		default: 'bullets'
+	speed: {
+		type: 'number',
+		default: 500,
 	},
+}
+
+const blockAttributes4 = {
+	...blockAttributes3,
 	autoPlayStop: {
 		type: 'boolean',
 		default: false
 	},
+	pagination: {
+		type: 'string',
+		default: 'bullets'
+	},
 }
 
 /**
- * 1.9.2 (仮)でナビゲーションを追加
+ * 1.10.0 で高さのデフォルト値を変更
+ */
+const blockAttributes5 = {
+	...blockAttributes4,
+	pc: {
+		type: 'number'
+	},
+	tablet: {
+		type: 'number'
+	},
+	mobile: {
+		type: 'number'
+	},
+}
+
+/**
+ * 1.10.1（仮） でナビゲーション設定を追加
  */
 /*
-const blockAttributes4 = {
-	...blockAttributes3,
+const blockAttributes6 = {
+	...blockAttributes5,
 	navigationPosition: {
 		type: 'string',
 		default: 'mobile-bottom'
@@ -100,20 +122,24 @@ const blockAttributes4 = {
 
 const deprecated = [
 	{
-		attributes: blockAttributes3,
+		attributes: blockAttributes5,
+		save: save1_10_0,
+	},
+	{
+		attributes: blockAttributes4,
 		save: save1_9_2,
 	},
 	{
-		attributes: blockAttributes2,
+		attributes: blockAttributes3,
 		save: save1_9_1,
 	},
 	{
-		attributes: blockAttributes,
+		attributes: blockAttributes2,
 		save: save1_2_1,
 	},
 	{
 		attributes: blockAttributes,
-		save: save1_0_6,
+		save: save1_0_16,
 	},
 	{
 		attributes: blockAttributes,

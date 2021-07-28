@@ -55,7 +55,7 @@ export default function SliderItemEdit(props) {
 	}
 
 	const blockProps = useBlockProps({
-		className: `vk_slider_item swiper-slide vk_valign-${verticalAlignment} ${prefix}-${attributes.clientId} ${classPaddingLR} ${prefix}-paddingVertical-none`,
+		className: `vk_slider_item swiper-slide vk_valign-${verticalAlignment} ${prefix}-${clientId} ${classPaddingLR} ${prefix}-paddingVertical-none`,
 	});
 
 	return (
@@ -216,7 +216,7 @@ export default function SliderItemEdit(props) {
 			<div {...blockProps}>
 				<GenerateBgImage
 					prefix={prefix}
-					clientId={attributes.clientId}
+					clientId={clientId}
 					{...props}
 				/>
 				<div className={containerClass}>

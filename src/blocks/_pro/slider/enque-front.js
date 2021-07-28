@@ -47,13 +47,13 @@ document.defaultView.addEventListener('load', function () {
 			if (attributes.effect !== 'fade') {
 				if (attributes.slidesPerView) {
 					SwiperSetting += `
-					slidesPerView: ${attributes.slidesPerView},
+				slidesPerView: ${attributes.slidesPerView},
 					`;
 				}
 
 				if (attributes.slidesPerGroup) {
 					SwiperSetting += `
-					slidesPerGroup: ${attributes.slidesPerGroup},
+				slidesPerGroup: ${attributes.slidesPerGroup},
 					`;
 				}
 			}

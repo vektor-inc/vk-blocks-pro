@@ -38,13 +38,7 @@ export default function SliderEdit(props) {
 	} = attributes;
 
 	useEffect(() => {
-		if (
-			attributes.clientId === null ||
-			attributes.clientId === undefined ||
-			attributes.clientId === ''
-		) {
-			setAttributes({ clientId });
-		}
+		setAttributes({ clientId });
 		// slidesPerView 互換設定
 		if (slidesPerView === undefined) {
 			setAttributes({

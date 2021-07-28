@@ -216,7 +216,7 @@ export default function SliderItemEdit(props) {
 			<div {...blockProps}>
 				<GenerateBgImage
 					prefix={prefix}
-					clientId={clientId}
+					clientId={attributes.clientId}
 					{...props}
 				/>
 				<div className={containerClass}>

@@ -59,6 +59,11 @@ export default function SliderEdit(props) {
 		if (pagination === true) {
 			setAttributes({ pagination: 'bullets' });
 		}
+
+		// autoPlayStop 互換設定
+		if (autoPlayStop === undefined) {
+			setAttributes({ autoPlayStop: false });
+		}
 	}, [clientId]);
 
 	const containerClass = ' vk_grid-column';

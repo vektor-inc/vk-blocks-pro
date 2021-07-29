@@ -59,6 +59,12 @@ export default function SliderEdit(props) {
 		if (pagination === true) {
 			setAttributes({ pagination: 'bullets' });
 		}
+
+		// autoPlayStop 互換設定
+		if (autoPlayStop === undefined) {
+			setAttributes({ autoPlayStop: false });
+		}
+
 		// navigationPosition 互換設定
 		if (navigationPosition === undefined) {
 			setAttributes({ navigationPosition: 'mobile-bottom' });

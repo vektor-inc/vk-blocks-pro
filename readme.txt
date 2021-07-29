@@ -63,8 +63,6 @@ e.g.
 
 == Changelog ==
 
-[ Bugfix ][ Slider(Pro) ] Change id when copy slider & slider-item.
-
 = 1.10.0 =
 [ Specification Change ][ Slider(Pro) ] Add no height setting.
 [ Bugfix ][ Slider(Pro) ]Fix bug where pagination design would change when tree shake was enabled.

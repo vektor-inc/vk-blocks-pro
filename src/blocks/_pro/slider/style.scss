@@ -2,6 +2,7 @@
 /* CSS
 /*-------------------------------------------*/
 .vk_slider {
+	//共通ではないためvk_sliderの中に格納
 	width: 100%;
 	height: 100%;
 	position: relative;
@@ -25,6 +26,7 @@
 	.swiper-wrapper {
 		transition-timing-function: cubic-bezier(0.77, 0.2, 0.05, 1);
 	}
+	//vk_slider用のnextとprevボタン	
 	.swiper-button-next,
 	.swiper-button-prev {
 		color: #333;
@@ -33,11 +35,15 @@
 		background-image: none;
 		width: 2.4rem;
 		height: 2.4rem;
+		z-index: 20;
 		&:after {
 			font-size: 1.2rem;
 		}
 	}
+
 }
+
+
 .swiper-container {
 	&.vk_width-full {
 		//全幅の時
@@ -50,6 +56,14 @@
 		max-width: 1140px;
 		margin: auto;
 	}
+	&-horizontal{
+		>.swiper-pagination-bullets {
+			.swiper-pagination-bullet{
+				margin: 0 5px;
+			}
+		}
+
+	}
 }
 .swiper-slide {
 	font-size: 18px;
@@ -59,17 +73,15 @@
 }
 
 //pagination
-.swiper-pagination-bullet-active {
-	background: #000;
-	opacity: 0.6;
+.swiper-pagination-bullet{
+	border-radius: unset;
+	width: 30px;
+	height: 5px;
+	&-active {
+		background: #000;
+		opacity: 0.6;
+	}
 }
-
-.swiper-container-horizontal > .swiper-pagination-bullets,
-.swiper-pagination-custom,
-.swiper-pagination-fraction {
-	bottom: 15px;
-}
-
 
 /*-------------------------------------------*/
 /* 管理画面
@@ -90,10 +102,10 @@
 			margin: auto;
 			&.vk_slider_item-paddingLR-use,
 			&.vk_slider_item-paddingLR-zero{
-				.vk_slider_item_container{ 
+				.vk_slider_item_container{
 						max-width:100%;
 					.wp-block{
-						max-width:100%;						
+						max-width:100%;
 					}
 				}
 			}

@@ -6,7 +6,6 @@ export default function save({ attributes }) {
 		clientId,
 		width,
 		autoPlay,
-		autoPlayStop,
 		autoPlayDelay,
 		loop,
 		effect,
@@ -14,6 +13,7 @@ export default function save({ attributes }) {
 		slidesPerView,
 		slidesPerGroup,
 	} = attributes;
+	let alignClass;
 
 	// slidesPerView 互換設定
 	if (slidesPerView === undefined) {
@@ -26,7 +26,6 @@ export default function save({ attributes }) {
 
 	const sliderData = {
 		autoPlay,
-		autoPlayStop,
 		autoPlayDelay,
 		pagination,
 		clientId,
@@ -38,23 +37,12 @@ export default function save({ attributes }) {
 		slidesPerGroup,
 	};
 
-	let alignClass;
 	if ('full' === width) {
 		alignClass = 'vk_width-full';
 	} else if ('wide' === width) {
 		alignClass = 'vk_width-wide';
 	} else {
 		alignClass = 'vk_width';
-	}
-
-	// ページネーションの HTML
-	let pagination_html = '';
-	if (pagination !== 'hide') {
-		pagination_html = (
-			<div
-				className={`swiper-pagination swiper-pagination-${pagination}`}
-			></div>
-		);
 	}
 
 	const blockProps = useBlockProps.save({
@@ -68,7 +56,7 @@ export default function save({ attributes }) {
 			</div>
 			<div className="swiper-button-next"></div>
 			<div className="swiper-button-prev"></div>
-			{pagination_html}
+			{pagination && <div className="swiper-pagination"></div>}
 		</div>
 	);
 }

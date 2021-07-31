@@ -1,6 +1,6 @@
 import { generateHeightCss } from '../0.49.7/utils'
 
-export default function SliderHook0_56_4( {el,attributes}) {
+export default function SliderHook( {el,attributes}) {
 	const {
 		clientId,
 	} = attributes;

@@ -31,6 +31,8 @@ add_filter( 'vk_css_tree_shaking_array', 'vkblocks_css_tree_shaking_array' );
  */
 function vkblocks_css_tree_shaking_exclude_class( $inidata ) {
 	$exclude_classes_array = array(
+		'swiper-pagination-bullet',
+		'swiper-pagination-bullet-active',
 		'vk_accordion-target-open',
 		'vk_accordion-target-close',
 		'vk_accordion-toggle-open',

@@ -995,7 +995,7 @@ msgstr ""
 
 #: src/blocks/balloon/edit.js:168
 #: src/extensions/core/image/style.js:15
-#: src/extensions/core/table/style.js:7
+#: src/extensions/core/table/style.js:12
 msgid "Border"
 msgstr ""
 
@@ -1917,6 +1917,7 @@ msgid "Stitch"
 msgstr ""
 
 #: src/extensions/core/group/style.js:126
+#: src/extensions/core/table/style.js:7
 msgid "Border Top Bottom"
 msgstr ""
 
@@ -2033,7 +2034,7 @@ msgstr ""
 msgid "List Icon Color"
 msgstr ""
 
-#: src/extensions/core/table/style.js:12
+#: src/extensions/core/table/style.js:17
 msgid "Border / Stripes"
 msgstr ""
 

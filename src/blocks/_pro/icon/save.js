@@ -2,12 +2,23 @@ import { useBlockProps } from '@wordpress/block-editor';
 import ReactHtmlParser from 'react-html-parser';
 
 export default function save({ attributes }) {
-	let { color, icon, faIcon, bgType, iconAlign } = attributes;
+	let {
+		iconUrl,
+		iconTarget,
+		iconType,
+		iconSize,
+		iconMargin,
+		iconRadius,
+		iconUnit,
+		iconAlign,
+		color,
+		faIcon,
+	} = attributes;
 
 	let style;
 	let iconColor;
 
-	if (bgType === '0') {
+	if (iconType === '0') {
 		style = {
 			backgroundColor: `${color}`,
 			border: `1px solid ${color}`,

@@ -4,8 +4,11 @@ import {
 	PanelBody,
 	BaseControl,
 	TextControl,
+	CheckboxControl,
+	RangeControl,
 	ButtonGroup,
 	Button,
+	SelectControl,
 } from '@wordpress/components';
 import {
 	InspectorControls,
@@ -16,7 +19,18 @@ import ReactHtmlParser from 'react-html-parser';
 
 export default function IconEdit(props) {
 	const { attributes, setAttributes } = props;
-	let { color, icon, faIcon, url, bgType, iconSize, iconAlign } = attributes;
+	let {
+		iconUrl,
+		iconTarget,
+		iconType,
+		iconSize,
+		iconMargin,
+		iconRadius,
+		iconUnit,
+		iconAlign,
+		color,
+		faIcon,
+	} = attributes;
 
 	let containerClass;
 	if (iconColor) {
@@ -36,7 +50,7 @@ export default function IconEdit(props) {
 	let style;
 	let iconColor;
 
-	if (bgType === '0') {
+	if (iconType === '0') {
 		style = {
 			backgroundColor: `${color}`,
 			border: `1px solid ${color}`,
@@ -74,40 +88,82 @@ export default function IconEdit(props) {
 			<InspectorControls>
 				<PanelBody title={__('icon setting', 'vk-blocks')}>
 					<TextControl
-						label={__('Icon URL', 'vk-blocks')}
-						value={url}
+						label={__('Link URL', 'vk-blocks')}
+						value={iconUrl}
 						onChange={(value) => setAttributes({ iconUrl: value })}
 					/>
-					<p className={'mt-0 mb-2'}>
-						{__('Icon Size:', 'vk-blocks')}
-					</p>
-					<ButtonGroup className={`mb-3`}>
-						<Button
-							isSmall
-							isPrimary={iconSize === 'lg'}
-							isSecondary={iconSize !== 'lg'}
-							onClick={() => setAttributes({ iconSize: 'lg' })}
-						>
-							{__('Large', 'vk-blocks')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={iconSize === 'md'}
-							isSecondary={iconSize !== 'md'}
-							onClick={() => setAttributes({ iconSize: 'md' })}
-						>
-							{__('Normal', 'vk-blocks')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={iconSize === 'sm'}
-							isSecondary={iconSize !== 'sm'}
-							onClick={() => setAttributes({ iconSize: 'sm' })}
-						>
-							{__('Small', 'vk-blocks')}
-						</Button>
-					</ButtonGroup>
+					<CheckboxControl
+						label={__('Open link new tab.', 'vk-blocks')}
+						checked={iconTarget}
+						onChange={(checked) =>
+							setAttributes({ iconTarget: checked })
+						}
+					/>
 
+					<BaseControl
+						label={__('Icon Size:', 'vk-blocks')}
+						id={`vk_icon-size`}
+					>
+						<RangeControl
+							value={iconSize}
+							onChange={(value) => {
+								setAttributes({ iconSize: value });
+							}}
+							min="10"
+							max="100"
+						/>
+					</BaseControl>
+					<BaseControl
+						label={__('Margin', 'vk-blocks')}
+						id={`vk_icon-margin`}
+					>
+						<RangeControl
+							value={iconMargin}
+							onChange={(value) => {
+								setAttributes({ iconMargin: value });
+							}}
+							min="0"
+							max="100"
+						/>
+					</BaseControl>
+					<BaseControl
+						label={__('Border radius', 'vk-blocks')}
+						id={`vk_icon-radius`}
+					>
+						<RangeControl
+							value={iconRadius}
+							onChange={(value) => {
+								setAttributes({ iconRadius: value });
+							}}
+							min="0"
+							max="100"
+						/>
+					</BaseControl>
+					<SelectControl
+						label={__('Unit Type', 'vk-blocks')}
+						value={iconUnit}
+						onChange={(value) => {
+							setAttributes({ iconUnit: value });
+						}}
+						options={[
+							{
+								value: 'px',
+								label: __('px', 'vk-blocks'),
+							},
+							{
+								value: 'em',
+								label: __('em', 'vk-blocks'),
+							},
+							{
+								value: 'rem',
+								label: __('rem', 'vk-blocks'),
+							},
+							{
+								value: 'vw',
+								label: __('vw', 'vk-blocks'),
+							},
+						]}
+					/>
 					<p className={`mt-0 mb-2`}>
 						{__('Icon Position:', 'vk-blocks')}
 					</p>
@@ -148,25 +204,25 @@ export default function IconEdit(props) {
 					<ButtonGroup className={`mb-2`}>
 						<Button
 							isSmall
-							isPrimary={bgType === '0'}
-							isSecondary={bgType !== '0'}
-							onClick={() => setAttributes({ bgType: '0' })}
+							isPrimary={iconType === '0'}
+							isSecondary={iconType !== '0'}
+							onClick={() => setAttributes({ iconType: '0' })}
 						>
 							{__('Solid color', 'vk-blocks')}
 						</Button>
 						<Button
 							isSmall
-							isPrimary={bgType === '1'}
-							isSecondary={bgType !== '1'}
-							onClick={() => setAttributes({ bgType: '1' })}
+							isPrimary={iconType === '1'}
+							isSecondary={iconType !== '1'}
+							onClick={() => setAttributes({ iconType: '1' })}
 						>
-							{__('Icon & Frame', 'vk-blocks')}
+							{__('No background', 'vk-blocks')}
 						</Button>
 						<Button
 							isSmall
-							isPrimary={bgType === '2'}
-							isSecondary={bgType !== '2'}
-							onClick={() => setAttributes({ bgType: '2' })}
+							isPrimary={iconType === '2'}
+							isSecondary={iconType !== '2'}
+							onClick={() => setAttributes({ iconType: '2' })}
 						>
 							{__('Icon only', 'vk-blocks')}
 						</Button>
@@ -180,7 +236,7 @@ export default function IconEdit(props) {
 									setAttributes({ color: value });
 								} else {
 									setAttributes({ color: '#0693e3' });
-									setAttributes({ bgType: '0' });
+									setAttributes({ iconType: '0' });
 								}
 							}}
 						/>

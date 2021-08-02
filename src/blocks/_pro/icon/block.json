@@ -3,37 +3,45 @@
 	"name": "vk-blocks/icon",
 	"category": "vk-blocks-cat",
 	"attributes": {
-		"color": {
-			"type": "string",
-			"default": "#0693e3"
-		},
-		"url": {
+		"iconUrl": {
 			"type": "string",
 			"default": ""
 		},
-		"target": {
+		"iconTarget": {
 			"type": "Boolean",
 			"default": false
 		},
 		"iconSize": {
-			"type": "string",
-			"default": "md"
+			"type": "number",
+			"default": 80
 		},
-		"bgType": {
+		"iconMargin": {
+			"type": "number",
+			"default": 0
+		},
+		"iconRadius": {
+			"type": "number",
+			"default": 0
+		},
+		"iconUnit": {
 			"type": "string",
-			"default": "0"
+			"default": "px"
 		},
 		"iconAlign": {
 			"type": "string",
 			"default": "left"
 		},
+		"iconType": {
+			"type": "string",
+			"default": "0"
+		},
+		"color": {
+			"type": "string",
+			"default": "#0693e3"
+		},
 		"faIcon": {
 			"type": "string",
 			"default": "<i class=\"fas fa-user\"></i>"
-		},
-		"icon": {
-			"type": "string",
-			"default": "fas fa-file"
 		}
 	},
 	"supports": {

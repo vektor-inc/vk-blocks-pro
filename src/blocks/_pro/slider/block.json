@@ -8,32 +8,32 @@
 			"default": "px"
 		},
 		"pc": {
-			"type": "number",
-			"default": 600
+			"type": "number"
 		},
 		"tablet": {
-			"type": "number",
-			"default": 600
+			"type": "number"
 		},
 		"mobile": {
-			"type": "number",
-			"default": 600
+			"type": "number"
 		},
 		"autoPlay": {
 			"type": "boolean",
 			"default": true
+		},
+		"autoPlayStop": {
+			"type": "boolean",
+			"default": false
 		},
 		"autoPlayDelay": {
 			"type": "number",
 			"default": 2500
 		},
 		"pagination": {
-			"type": "boolean",
-			"default": true
+			"type": "string",
+			"default": "bullets"
 		},
 		"clientId": {
-			"type": "string",
-			"default": ""
+			"type": "string"
 		},
 		"width": {
 			"type": "string",

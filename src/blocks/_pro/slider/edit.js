@@ -1,6 +1,4 @@
-import replaceClientId from '@vkblocks/utils/replaceClientId';
 import { AdvancedToggleControl } from '@vkblocks/components/advanced-toggle-control';
-import AdvancedViewportControl from '@vkblocks/components/advanced-viewport-control';
 import AdvancedUnitControl from '@vkblocks/components/advanced-unit-control';
 import { __ } from '@wordpress/i18n';
 import { useEffect } from '@wordpress/element';
@@ -11,7 +9,6 @@ import {
 	InnerBlocks,
 	useBlockProps,
 } from '@wordpress/block-editor';
-import { dispatch } from '@wordpress/data';
 import {
 	PanelBody,
 	BaseControl,
@@ -19,12 +16,17 @@ import {
 	ButtonGroup,
 	Button,
 	SelectControl,
+	RangeControl,
 } from '@wordpress/components';
 
 export default function SliderEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const {
+		pc,
+		tablet,
+		mobile,
 		autoPlay,
+		autoPlayStop,
 		autoPlayDelay,
 		pagination,
 		width,
@@ -34,27 +36,36 @@ export default function SliderEdit(props) {
 		slidesPerView,
 		slidesPerGroup,
 	} = attributes;
-	const { updateBlockAttributes } = dispatch('core/block-editor');
-	const customClientId = replaceClientId(clientId);
 
 	useEffect(() => {
-		updateBlockAttributes(clientId, {
-			clientId: customClientId,
-		});
-	}, []);
+		if (
+			attributes.clientId === null ||
+			attributes.clientId === undefined ||
+			attributes.clientId === ''
+		) {
+			setAttributes({ clientId });
+		}
+		// slidesPerView 互換設定
+		if (slidesPerView === undefined) {
+			setAttributes({
+				slidesPerView: 1,
+			});
+		}
+		// slidesPerGroup 互換設定
+		if (slidesPerGroup === undefined) {
+			setAttributes({
+				slidesPerGroup: 1,
+			});
+		}
 
-	// slidesPerView 互換設定
-	if (slidesPerView === undefined) {
-		setAttributes({
-			slidesPerView: 1,
-		});
-	}
-	// slidesPerGroup 互換設定
-	if (slidesPerGroup === undefined) {
-		setAttributes({
-			slidesPerGroup: 1,
-		});
-	}
+		// pagination 互換設定
+		if (pagination === false) {
+			setAttributes({ pagination: 'hide' });
+		}
+		if (pagination === true) {
+			setAttributes({ pagination: 'bullets' });
+		}
+	}, [clientId]);
 
 	const containerClass = ' vk_grid-column';
 	let alignClass;
@@ -71,6 +82,7 @@ export default function SliderEdit(props) {
 
 	const sliderData = {
 		autoPlay,
+		autoPlayStop,
 		autoPlayDelay,
 		pagination,
 		clientId,
@@ -82,8 +94,18 @@ export default function SliderEdit(props) {
 		slidesPerGroup,
 	};
 
+	// ページネーションの HTML
+	let pagination_html = '';
+	if (pagination !== 'hide') {
+		pagination_html = (
+			<div
+				className={`swiper-pagination swiper-pagination-${pagination}`}
+			></div>
+		);
+	}
+
 	const blockProps = useBlockProps({
-		className: `swiper-container vk_slider vk_slider_${customClientId} ${alignClass}`,
+		className: `swiper-container vk_slider vk_slider_${attributes.clientId} ${alignClass}`,
 	});
 
 	return (
@@ -129,13 +151,38 @@ export default function SliderEdit(props) {
 						label={__('Slide Height for each device.', 'vk-blocks')}
 						id={`vk_slider-SlideHeight`}
 					>
-						<AdvancedViewportControl
-							{...props}
-							initial={{
-								iPc: 600,
-								iTablet: 600,
-								iMobile: 600,
-							}}
+						<RangeControl
+							label={__('PC', 'vk-blocks')}
+							value={pc}
+							onChange={(value) =>
+								setAttributes({ pc: parseFloat(value) })
+							}
+							min={0}
+							max={1000}
+							allowReset={true}
+							resetFallbackValue={null}
+						/>
+						<RangeControl
+							label={__('Tablet', 'vk-blocks')}
+							value={tablet}
+							onChange={(value) =>
+								setAttributes({ tablet: parseFloat(value) })
+							}
+							min={0}
+							max={1000}
+							allowReset={true}
+							resetFallbackValue={null}
+						/>
+						<RangeControl
+							label={__('Mobile', 'vk-blocks')}
+							value={mobile}
+							onChange={(value) =>
+								setAttributes({ mobile: parseFloat(value) })
+							}
+							min={0}
+							max={1000}
+							allowReset={true}
+							resetFallbackValue={null}
 						/>
 					</BaseControl>
 				</PanelBody>
@@ -183,8 +230,22 @@ export default function SliderEdit(props) {
 							schema={'autoPlay'}
 							{...props}
 						/>
+					</BaseControl>
+					<BaseControl
+						label={__('Stop AutoPlay when swipe', 'vk-blocks')}
+						id={`vk_slider-autoPlay`}
+					>
+						<AdvancedToggleControl
+							initialFixedTable={autoPlayStop}
+							schema={'autoPlayStop'}
+							{...props}
+						/>
+					</BaseControl>
+					<BaseControl
+						label={__('Display Time', 'vk-blocks')}
+						id={`vk_slider-autoPlay`}
+					>
 						<TextControl
-							label={__('Display Time', 'vk-blocks')}
 							value={autoPlayDelay}
 							onChange={(value) =>
 								setAttributes({
@@ -222,8 +283,12 @@ export default function SliderEdit(props) {
 							}
 							type={'number'}
 						/>
+					</BaseControl>
+					<BaseControl
+						label={__('Move Images per Slide', 'vk-blocks')}
+						id={`vk_slider-MultiImage`}
+					>
 						<TextControl
-							label={__('Move Images per Slide', 'vk-blocks')}
 							value={slidesPerGroup}
 							onChange={(value) =>
 								setAttributes({
@@ -234,13 +299,28 @@ export default function SliderEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Display Pagination', 'vk-blocks')}
+						label={__('Pagination Type', 'vk-blocks')}
 						id={`vk_slider-displayPagination`}
 					>
-						<AdvancedToggleControl
-							initialFixedTable={pagination}
-							schema={'pagination'}
-							{...props}
+						<SelectControl
+							value={pagination}
+							options={[
+								{
+									label: __('Hide', 'vk-blocks'),
+									value: 'hide',
+								},
+								{
+									label: __('Default', 'vk-blocks'),
+									value: 'bullets',
+								},
+								{
+									label: __('Number of slides', 'vk-blocks'),
+									value: 'fraction',
+								},
+							]}
+							onChange={(value) =>
+								setAttributes({ pagination: value })
+							}
 						/>
 					</BaseControl>
 				</PanelBody>
@@ -258,7 +338,7 @@ export default function SliderEdit(props) {
 				</div>
 				<div className="swiper-button-next"></div>
 				<div className="swiper-button-prev"></div>
-				{pagination && <div className="swiper-pagination"></div>}
+				{pagination_html}
 			</div>
 		</>
 	);

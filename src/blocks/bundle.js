@@ -73,30 +73,6 @@ export const __getVKBlocks = () => vkBlocks.concat(vkblocksPro);
  * @param {Object} block The block to be registered.
  *
  */
-// const registerBlock = (block) => {
-// 	if (!block) {
-// 		return;
-// 	}
-
-// 	let { metadata, settings, name } = block;
-
-// 	//WP5.5未満の場合
-// 	if (compareVersions(window.wpVersion, '5.5') < 0) {
-// 		//nameを削除
-// 		delete metadata.name;
-// 		//カテゴリ等を追加
-// 		settings = {
-// 			...settings,
-// 			...metadata,
-// 		};
-// 		registerBlockType(name, settings);
-// 	} else if (compareVersions(window.wpVersion, '5.7.2') < 0) {
-// 		unstable__bootstrapServerSideBlockDefinitions({ [name]: metadata });
-// 	} else if (metadata) {
-// 		//unstable__bootstrapServerSideBlockDefinitions({ [name]: metadata }); // eslint-disable-line camelcase
-// 		registerBlockType(metadata, settings);
-// 	}
-// };
 const registerBlock = (block) => {
 	if (!block) {
 		return;
@@ -129,7 +105,7 @@ const registerBlock = (block) => {
 	}
 
 	// 5.8以前の場合はnameのみ渡す
-	if(typeof getBlockSettingsFromMetadata !== "function") {
+	if (typeof getBlockSettingsFromMetadata !== 'function') {
 		registerBlockType(name, settings);
 	} else {
 		registerBlockType(metadata, settings);
@@ -143,4 +119,3 @@ const registerBlock = (block) => {
 export const registerVKBlocks = (blocks = __getVKBlocks()) => {
 	blocks.forEach(registerBlock);
 };
-

@@ -6,7 +6,7 @@ import '@wordpress/notices';
 // import '@wordpress/block-editor';
 import {
 	registerBlockType,
-	// unstable__bootstrapServerSideBlockDefinitions, // eslint-disable-line camelcase
+	unstable__bootstrapServerSideBlockDefinitions, // eslint-disable-line camelcase
 } from '@wordpress/blocks';
 import compareVersions from 'compare-versions';
 import vkblocksPro from './bundle-pro';
@@ -73,6 +73,30 @@ export const __getVKBlocks = () => vkBlocks.concat(vkblocksPro);
  * @param {Object} block The block to be registered.
  *
  */
+// const registerBlock = (block) => {
+// 	if (!block) {
+// 		return;
+// 	}
+
+// 	let { metadata, settings, name } = block;
+
+// 	//WP5.5未満の場合
+// 	if (compareVersions(window.wpVersion, '5.5') < 0) {
+// 		//nameを削除
+// 		delete metadata.name;
+// 		//カテゴリ等を追加
+// 		settings = {
+// 			...settings,
+// 			...metadata,
+// 		};
+// 		registerBlockType(name, settings);
+// 	} else if (compareVersions(window.wpVersion, '5.7.2') < 0) {
+// 		unstable__bootstrapServerSideBlockDefinitions({ [name]: metadata });
+// 	} else if (metadata) {
+// 		//unstable__bootstrapServerSideBlockDefinitions({ [name]: metadata }); // eslint-disable-line camelcase
+// 		registerBlockType(metadata, settings);
+// 	}
+// };
 const registerBlock = (block) => {
 	if (!block) {
 		return;
@@ -80,8 +104,18 @@ const registerBlock = (block) => {
 
 	let { metadata, settings, name } = block;
 
+	/*
+	そもそも Require at Least が 5.7 なので 5.5 以下の後方互換は不要ではあるが、現状影響が少ないので残しておく
+	window.wpVersion は外観 > カスタマイズ > ウィジェットでは undefined を返すので比較不可能
+	ともかく最初から undefined が条件に当てはまらないように変更
+	*/
+
 	//WP5.5未満の場合
-	if (compareVersions(window.wpVersion, '5.5') < 0) {
+	if (
+		window.wpVersion !== undefined &&
+		window.wpVersion !== null &&
+		compareVersions(window.wpVersion, '5.5') < 0
+	) {
 		//nameを削除
 		delete metadata.name;
 		//カテゴリ等を追加
@@ -89,13 +123,18 @@ const registerBlock = (block) => {
 			...settings,
 			...metadata,
 		};
-		registerBlockType(name, settings);
 	} else if (metadata) {
-		//unstable__bootstrapServerSideBlockDefinitions({ [name]: metadata }); // eslint-disable-line camelcase
+		// ServerSideBlockの設定読み込み
+		unstable__bootstrapServerSideBlockDefinitions({ [name]: metadata }); // eslint-disable-line camelcase
+	}
+
+	// 5.8以前の場合はnameのみ渡す
+	if(typeof getBlockSettingsFromMetadata !== "function") {
+		registerBlockType(name, settings);
+	} else {
 		registerBlockType(metadata, settings);
 	}
 };
-
 /**
  * Function to register VK Blocks.
  *
@@ -104,3 +143,4 @@ const registerBlock = (block) => {
 export const registerVKBlocks = (blocks = __getVKBlocks()) => {
 	blocks.forEach(registerBlock);
 };
+

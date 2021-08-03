@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.9.1\n"
+"Project-Id-Version: VK Blocks Pro 1.11.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,7 +68,7 @@ msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:123
 #: src/blocks/_pro/outer/edit.js:303
-#: src/blocks/_pro/slider/edit.js:133
+#: src/blocks/_pro/slider/edit.js:132
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95
 #: src/blocks/faq/index.js:27
@@ -266,7 +266,7 @@ msgid "Image Height"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:82
-#: src/blocks/_pro/slider/edit.js:152
+#: src/blocks/_pro/slider/edit.js:151
 msgid "Slide Height for each device."
 msgstr ""
 
@@ -467,12 +467,12 @@ msgid "Layout Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:292
-#: src/blocks/_pro/slider/edit.js:124
+#: src/blocks/_pro/slider/edit.js:123
 msgid "Width"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:313
-#: src/blocks/_pro/slider/edit.js:141
+#: src/blocks/_pro/slider/edit.js:140
 msgid "Full Wide"
 msgstr ""
 
@@ -615,16 +615,19 @@ msgid "Container Inner Side Space Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:566
+#: src/blocks/_pro/slider/edit.js:177
 #: src/components/advanced-viewport-control/index.js:39
 msgid "Mobile"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:581
+#: src/blocks/_pro/slider/edit.js:166
 #: src/components/advanced-viewport-control/index.js:31
 msgid "Tablet"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:596
+#: src/blocks/_pro/slider/edit.js:155
 #: src/components/advanced-viewport-control/index.js:25
 msgid "PC"
 msgstr ""
@@ -767,68 +770,68 @@ msgstr ""
 msgid "Slider Item"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:147
+#: src/blocks/_pro/slider/edit.js:146
 msgid "Height"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:166
+#: src/blocks/_pro/slider/edit.js:190
 msgid "Slider Settings"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:170
+#: src/blocks/_pro/slider/edit.js:194
 msgid "Effect "
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:180
+#: src/blocks/_pro/slider/edit.js:204
 msgid "Slide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:184
+#: src/blocks/_pro/slider/edit.js:208
 msgid "Fade"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:191
+#: src/blocks/_pro/slider/edit.js:215
 msgid "Loop "
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:201
+#: src/blocks/_pro/slider/edit.js:225
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:211
+#: src/blocks/_pro/slider/edit.js:235
 msgid "Stop AutoPlay when swipe"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:221
+#: src/blocks/_pro/slider/edit.js:245
 msgid "Display Time"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:235
+#: src/blocks/_pro/slider/edit.js:259
 msgid "Change Speed"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:249
+#: src/blocks/_pro/slider/edit.js:273
 msgid "Display Multi Images per View"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:253
+#: src/blocks/_pro/slider/edit.js:277
 msgid "Images per View"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:264
+#: src/blocks/_pro/slider/edit.js:288
 msgid "Move Images per Slide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:278
+#: src/blocks/_pro/slider/edit.js:302
 msgid "Pagination Type"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:285
-#: src/blocks/heading/edit.js:342
+#: src/blocks/_pro/slider/edit.js:309
+#: src/blocks/heading/edit.js:344
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:289
+#: src/blocks/_pro/slider/edit.js:313
 #: src/blocks/_pro/step-item/edit.js:110
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
 #: src/blocks/_pro/timeline-item/edit.js:91
@@ -839,7 +842,7 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:293
+#: src/blocks/_pro/slider/edit.js:317
 msgid "Number of slides"
 msgstr ""
 
@@ -996,7 +999,7 @@ msgstr ""
 
 #: src/blocks/balloon/edit.js:168
 #: src/extensions/core/image/style.js:15
-#: src/extensions/core/table/style.js:7
+#: src/extensions/core/table/style.js:12
 msgid "Border"
 msgstr ""
 
@@ -1009,7 +1012,7 @@ msgid "Balloon setting"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:202
-#: src/blocks/heading/edit.js:334
+#: src/blocks/heading/edit.js:336
 msgid "Position"
 msgstr ""
 
@@ -1258,13 +1261,13 @@ msgid "This custom color overrides the default color. If you want to use the def
 msgstr ""
 
 #: src/blocks/button/edit.js:262
-#: src/blocks/heading/edit.js:301
+#: src/blocks/heading/edit.js:303
 #: src/blocks/pr-content/edit.js:200
 msgid "Before text"
 msgstr ""
 
 #: src/blocks/button/edit.js:271
-#: src/blocks/heading/edit.js:310
+#: src/blocks/heading/edit.js:312
 #: src/blocks/pr-content/edit.js:212
 msgid "After text"
 msgstr ""
@@ -1437,27 +1440,27 @@ msgstr ""
 msgid "Heading Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:286
+#: src/blocks/heading/edit.js:288
 msgid "Text Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:298
+#: src/blocks/heading/edit.js:300
 msgid "Font Awesome Icon Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:319
+#: src/blocks/heading/edit.js:321
 msgid "Icon Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:332
+#: src/blocks/heading/edit.js:334
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:338
+#: src/blocks/heading/edit.js:340
 msgid "Display"
 msgstr ""
 
-#: src/blocks/heading/edit.js:350
+#: src/blocks/heading/edit.js:352
 msgid "Text size (rem)"
 msgstr ""
 
@@ -1910,6 +1913,7 @@ msgid "Stitch"
 msgstr ""
 
 #: src/extensions/core/group/style.js:126
+#: src/extensions/core/table/style.js:7
 msgid "Border Top Bottom"
 msgstr ""
 
@@ -2026,7 +2030,7 @@ msgstr ""
 msgid "List Icon Color"
 msgstr ""
 
-#: src/extensions/core/table/style.js:12
+#: src/extensions/core/table/style.js:17
 msgid "Border / Stripes"
 msgstr ""
 

@@ -11,14 +11,12 @@
 }
 .wp-block-vk-blocks-icon { //編集画面で負けるので先頭に追加
 	.vk_icon {
-		&_outer {
-			&_align {
-				&_center {
-					text-align: center;
-				}
-				&_right {
-					text-align: right;
-				}
+		&_align {
+			&_center {
+				text-align: center;
+			}
+			&_right {
+				text-align: right;
 			}
 		}
 

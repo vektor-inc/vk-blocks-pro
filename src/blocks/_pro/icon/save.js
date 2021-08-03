@@ -3,8 +3,7 @@ import { useBlockProps } from '@wordpress/block-editor';
 
 export default function save({ attributes }) {
 	let {
-		iconUrl,
-		iconTarget,
+		faIcon,
 		iconSize,
 		iconMargin,
 		iconRadius,
@@ -12,7 +11,8 @@ export default function save({ attributes }) {
 		iconAlign,
 		iconType,
 		iconColor,
-		faIcon,
+		iconUrl,
+		iconTarget,
 	} = attributes;
 
 	if (faIcon && !faIcon.match(/<i/)) {

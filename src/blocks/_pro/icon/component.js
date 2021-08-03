@@ -3,8 +3,7 @@ import ReactHtmlParser from 'react-html-parser';
 
 export class VKBIcon extends Component {
 	render() {
-		const iconUrl = this.props.lbUrl;
-		const iconTarget = this.props.lbTarget;
+		let fontAwesomeIcon = this.props.lbFontAwesomeIcon;
 		const iconSize = this.props.lbSize;
 		const iconMargin = this.props.lbMargin;
 		const iconRadius = this.props.lbRadius;
@@ -12,19 +11,20 @@ export class VKBIcon extends Component {
 		const iconAlign = this.props.lbAlign;
 		const iconType = this.props.lbType;
 		const iconColor = this.props.lbColor;
-		let fontAwesomeIcon = this.props.lbFontAwesomeIcon;
+		const iconUrl = this.props.lbUrl;
+		const iconTarget = this.props.lbTarget;
 
 		// outer & align
 		let outerClass = 'vk_icon_outer';
 		if (iconAlign === 'center') {
-			outerClass += ' vk_icon_outer_align_center';
+			outerClass += ' vk_icon_align_center';
 		} else if (iconAlign === 'right') {
-			outerClass += ' vk_icon_outer_align_right';
+			outerClass += ' vk_icon_align_right';
 		}
 
 		// color style
 		const borderClass = 'vk_icon_border';
-		let borderStyle = null;
+		let borderStyle = {};
 		let color;
 
 		if (iconType === '0') {
@@ -45,11 +45,14 @@ export class VKBIcon extends Component {
 		}
 
 		// margin
-		if (iconMargin !== 0) {
+		if (!(iconSize === 36 && iconMargin === 40 && iconUnit === 'px')) {
+			borderStyle.width = iconMargin + iconSize + iconUnit;
+			borderStyle.height = iconMargin + iconSize + iconUnit;
 		}
 
 		// border radius
 		if (iconRadius !== 50) {
+			borderStyle.borderRadius = iconRadius + `%`;
 		}
 
 		// icon font
@@ -65,7 +68,7 @@ export class VKBIcon extends Component {
 
 			// font size
 			let size = null;
-			if (iconSize !== 36) {
+			if (!(iconSize === 36 && iconUnit === 'px')) {
 				size = ` font-size:${iconSize}${iconUnit}`;
 			}
 

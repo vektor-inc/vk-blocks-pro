@@ -20,8 +20,7 @@ import {
 export default function IconEdit(props) {
 	const { attributes, setAttributes } = props;
 	let {
-		iconUrl,
-		iconTarget,
+		faIcon,
 		iconSize,
 		iconMargin,
 		iconRadius,
@@ -29,7 +28,8 @@ export default function IconEdit(props) {
 		iconAlign,
 		iconType,
 		iconColor,
-		faIcon,
+		iconUrl,
+		iconTarget,
 	} = attributes;
 
 	if (faIcon && !faIcon.match(/<i/)) {
@@ -44,19 +44,12 @@ export default function IconEdit(props) {
 		<>
 			<InspectorControls>
 				<PanelBody title={__('icon setting', 'vk-blocks')}>
-					<TextControl
-						label={__('Link URL', 'vk-blocks')}
-						value={iconUrl}
-						onChange={(value) => setAttributes({ iconUrl: value })}
-					/>
-					<CheckboxControl
-						label={__('Open link new tab.', 'vk-blocks')}
-						checked={iconTarget}
-						onChange={(checked) =>
-							setAttributes({ iconTarget: checked })
-						}
-					/>
-
+					<BaseControl
+						label={__('Icon ( Font Awesome )', 'vk-blocks')}
+						id={`vk_icon-font`}
+					>
+						<FontAwesome attributeName={'faIcon'} {...props} />
+					</BaseControl>
 					<BaseControl
 						label={__('Icon Size:', 'vk-blocks')}
 						id={`vk_icon-size`}
@@ -65,9 +58,14 @@ export default function IconEdit(props) {
 							value={iconSize}
 							onChange={(value) => {
 								setAttributes({ iconSize: value });
+								if (undefined === value) {
+									setAttributes({ iconSize: 36 });
+									setAttributes({ iconUnit: 'px' });
+								}
 							}}
-							min="10"
-							max="100"
+							min={1}
+							max={100}
+							allowReset={true}
 						/>
 					</BaseControl>
 					<BaseControl
@@ -78,9 +76,14 @@ export default function IconEdit(props) {
 							value={iconMargin}
 							onChange={(value) => {
 								setAttributes({ iconMargin: value });
+								if (undefined === value) {
+									setAttributes({ iconMargin: 40 });
+									setAttributes({ iconUnit: 'px' });
+								}
 							}}
-							min="0"
-							max="100"
+							min={0}
+							max={100}
+							allowReset={true}
 						/>
 					</BaseControl>
 					<SelectControl
@@ -141,21 +144,23 @@ export default function IconEdit(props) {
 							{__('Right', 'vk-blocks')}
 						</Button>
 					</ButtonGroup>
-
 					<BaseControl
 						label={__('Border radius', 'vk-blocks')}
 						id={`vk_icon-radius`}
 					>
 						<RangeControl
 							value={iconRadius}
-							onChange={(value) => {
-								setAttributes({ iconRadius: value });
-							}}
-							min="0"
-							max="100"
+							onChange={(value) =>
+								setAttributes({
+									iconRadius:
+										value !== undefined ? value : 50,
+								})
+							}
+							min={0}
+							max={50}
+							allowReset={true}
 						/>
 					</BaseControl>
-
 					<p className={`mt-0 mb-2`}>
 						{__('Icon Style:', 'vk-blocks')}
 					</p>
@@ -185,7 +190,6 @@ export default function IconEdit(props) {
 							{__('Icon only', 'vk-blocks')}
 						</Button>
 					</ButtonGroup>
-
 					<BaseControl>
 						<ColorPalette
 							value={iconColor}
@@ -199,20 +203,25 @@ export default function IconEdit(props) {
 							}}
 						/>
 					</BaseControl>
-
-					<BaseControl
-						label={__('Icon ( Font Awesome )', 'vk-blocks')}
-						id={`vk_icon-font`}
-					>
-						<FontAwesome attributeName={'faIcon'} {...props} />
-					</BaseControl>
+					<TextControl
+						label={__('Link URL', 'vk-blocks')}
+						value={iconUrl}
+						onChange={(value) => setAttributes({ iconUrl: value })}
+					/>
+					<CheckboxControl
+						label={__('Open link new tab.', 'vk-blocks')}
+						checked={iconTarget}
+						onChange={(checked) =>
+							setAttributes({ iconTarget: checked })
+						}
+					/>
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
 				<VKBIcon
 					lbSize={iconSize}
 					lbMargin={iconMargin}
-					lbMRadiusn={iconRadius}
+					lbRadius={iconRadius}
 					lbUnit={iconUnit}
 					lbAlign={iconAlign}
 					lbType={iconType}

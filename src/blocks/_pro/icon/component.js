@@ -6,9 +6,9 @@ export class VKBIcon extends Component {
 		const iconUrl = this.props.lbUrl;
 		const iconTarget = this.props.lbTarget;
 		const iconSize = this.props.lbSize;
-		const iconMargin = this.props.lpMargin;
-		const iconRadius = this.props.lpRadius;
-		const iconUnit = this.props.lpUnit;
+		const iconMargin = this.props.lbMargin;
+		const iconRadius = this.props.lbRadius;
+		const iconUnit = this.props.lbUnit;
 		const iconAlign = this.props.lbAlign;
 		const iconType = this.props.lbType;
 		const iconColor = this.props.lbColor;
@@ -22,14 +22,9 @@ export class VKBIcon extends Component {
 			outerClass += ' vk_icon_outer_align_right';
 		}
 
-		// border
+		// color style
 		const borderClass = 'vk_icon_border';
-
-		// icon type & color
-		let borderStyle = {};
-		let faIconTag = '';
-
-		borderStyle = null;
+		let borderStyle = null;
 		let color;
 
 		if (iconType === '0') {
@@ -38,7 +33,6 @@ export class VKBIcon extends Component {
 				backgroundColor: `${iconColor}`,
 				border: `1px solid ${iconColor}`,
 			};
-			color = `#ffffff`;
 		} else if (iconType === '1') {
 			// No background
 			borderStyle = {
@@ -50,13 +44,35 @@ export class VKBIcon extends Component {
 			color = `${iconColor}`;
 		}
 
+		// margin
+		if (iconMargin !== 0) {
+		}
+
+		// border radius
+		if (iconRadius !== 50) {
+		}
+
 		// icon font
+		let faIconTag = '';
 		if (fontAwesomeIcon) {
 			fontAwesomeIcon = fontAwesomeIcon.replace(/ fas/g, 'fas');
 
+			// font color
+			color = null;
+			if (iconType !== '0') {
+				color = `color:${iconColor}`;
+			}
+
+			// font size
+			let size = null;
+			if (iconSize !== 36) {
+				size = ` font-size:${iconSize}${iconUnit}`;
+			}
+
 			//add class and inline css
 			const faIconFragment = fontAwesomeIcon.split(' ');
-			faIconFragment[0] = faIconFragment[0] + ` style="color:${color}" `;
+			faIconFragment[0] =
+				faIconFragment[0] + ` style="${color}; ${size};"`;
 			faIconFragment[1] = ' ' + faIconFragment[1] + ` vk_icon_font `;
 			faIconTag = faIconFragment.join('');
 		}

@@ -213,7 +213,7 @@ export default function IconEdit(props) {
 					lbSize={iconSize}
 					lbMargin={iconMargin}
 					lbMRadiusn={iconRadius}
-					lbUnitn={iconUnit}
+					lbUnit={iconUnit}
 					lbAlign={iconAlign}
 					lbType={iconType}
 					lbColor={iconColor}

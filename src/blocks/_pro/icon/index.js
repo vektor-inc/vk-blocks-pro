@@ -21,9 +21,9 @@ export const settings = {
 		attributes: {
 			iconUrl: url,
 			iconTarget: false,
-			iconSize: 80,
+			iconSize: 36,
 			iconMargin: 0,
-			iconRadius: 0,
+			iconRadius: 50,
 			iconUnit: 'px',
 			iconType: '0',
 			iconAlign: 'left',

@@ -13,6 +13,8 @@
 			"selector": "p"
 		}
 	},
+	"description": "A colored box with four statuses, including annotations and alerts.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

@@ -100,9 +100,16 @@ const registerBlock = (block) => {
 			...metadata,
 		};
 	} else if (metadata) {
+		// ServerSideBlockの設定読み込み
 		unstable__bootstrapServerSideBlockDefinitions({ [name]: metadata }); // eslint-disable-line camelcase
 	}
-	registerBlockType(name, settings);
+
+	// 5.8以前の場合はnameのみ渡す
+	if (typeof getBlockSettingsFromMetadata !== 'function') {
+		registerBlockType(name, settings);
+	} else if (metadata) {
+		registerBlockType(metadata, settings);
+	}
 };
 
 /**

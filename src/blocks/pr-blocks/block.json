@@ -140,6 +140,8 @@
 			"default": ""
 		}
 	},
+	"description": "This is a PR block where you can place images and icon.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

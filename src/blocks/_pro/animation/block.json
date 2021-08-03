@@ -20,6 +20,8 @@
 			"default": ""
 		}
 	},
+	"description": "Add animation to elements when scrolling the page.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

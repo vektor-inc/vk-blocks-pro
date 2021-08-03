@@ -32,6 +32,8 @@
 			"default": "{\"title\":\"center\",\"text\":\"center\"}"
 		}
 	},
+	"description": "Display card with icons, headings, text, and links.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

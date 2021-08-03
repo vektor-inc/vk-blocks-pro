@@ -1,68 +1,42 @@
+import { VKBIcon } from './component';
 import { useBlockProps } from '@wordpress/block-editor';
-import ReactHtmlParser from 'react-html-parser';
 
 export default function save({ attributes }) {
 	let {
 		iconUrl,
 		iconTarget,
-		iconType,
 		iconSize,
 		iconMargin,
 		iconRadius,
 		iconUnit,
 		iconAlign,
-		color,
+		iconType,
+		iconColor,
 		faIcon,
 	} = attributes;
 
-	let style;
-	let iconColor;
-
-	if (iconType === '0') {
-		style = {
-			backgroundColor: `${color}`,
-			border: `1px solid ${color}`,
-		};
-		iconColor = `#ffffff`;
-	} else {
-		style = {
-			backgroundColor: `transparent`,
-			border: `1px solid ${color}`,
-		};
-		iconColor = `${color}`;
-	}
-
-	let containerClass = '';
-	if (iconColor && 'undefined' !== iconColor) {
-		containerClass = `vk_icon vk_icon-color-custom vk_icon-align-${iconAlign}`;
-	} else {
-		containerClass = `vk_icon vk_icon-align-${iconAlign}`;
-	}
-
-	//過去バージョンをリカバリーした時にiconを正常に表示する
 	if (faIcon && !faIcon.match(/<i/)) {
 		faIcon = `<i class="${faIcon}"></i>`;
-
-		//過去のicon attribuet用 deprecated処理
-	} else if (!faIcon && icon && !icon.match(/<i/)) {
-		faIcon = `<i class="${icon}"></i>`;
 	}
 
-	//add class and inline css
-	const faIconFragment = faIcon.split(' ');
-	faIconFragment[0] = faIconFragment[0] + ` style="color:${iconColor}" `;
-	faIconFragment[1] = faIconFragment[1] + ` vk_icon_font `;
-	const faIconTag = faIconFragment.join('');
-
 	const blockProps = useBlockProps.save({
-		className: containerClass,
+		className: `vk_icon`,
 	});
 
 	return (
 		<div {...blockProps}>
-			<div className="vk_icon_outer" style={style}>
-				{ReactHtmlParser(faIconTag)}
-			</div>
+			<VKBIcon
+				lbUrl={iconUrl}
+				lbTarget={iconTarget}
+				lbSize={iconSize}
+				lbMargin={iconMargin}
+				lbRadius={iconRadius}
+				lbUnit={iconUnit}
+				lbAlign={iconAlign}
+				lbType={iconType}
+				lbColor={iconColor}
+				lbFontAwesomeIcon={faIcon}
+			/>
 		</div>
 	);
 }

@@ -27,7 +27,7 @@ export const settings = {
 			iconUnit: 'px',
 			iconType: '0',
 			iconAlign: 'left',
-			color: 'undefined',
+			iconColor: 'undefined',
 			faIcon: iconUser,
 		},
 	},

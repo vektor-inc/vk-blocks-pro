@@ -1,4 +1,5 @@
 import { __ } from '@wordpress/i18n';
+import { VKBIcon } from './component';
 import { FontAwesome } from '@vkblocks/utils/font-awesome-new';
 import {
 	PanelBody,
@@ -15,72 +16,28 @@ import {
 	ColorPalette,
 	useBlockProps,
 } from '@wordpress/block-editor';
-import ReactHtmlParser from 'react-html-parser';
 
 export default function IconEdit(props) {
 	const { attributes, setAttributes } = props;
 	let {
 		iconUrl,
 		iconTarget,
-		iconType,
 		iconSize,
 		iconMargin,
 		iconRadius,
 		iconUnit,
 		iconAlign,
-		color,
+		iconType,
+		iconColor,
 		faIcon,
 	} = attributes;
 
-	let containerClass;
-	if (iconColor) {
-		containerClass = `vk_icon vk_icon-align-${iconAlign} vk_icon-color-custom`;
-	} else {
-		containerClass = `vk_icon vk_icon-align-${iconAlign}`;
-	}
-
 	if (faIcon && !faIcon.match(/<i/)) {
 		faIcon = `<i class="${faIcon}"></i>`;
-
-		//過去のicon attribuet用 deprecated処理
-	} else if (!faIcon && icon && !icon.match(/<i/)) {
-		faIcon = `<i class="${icon}"></i>`;
 	}
-
-	let style;
-	let iconColor;
-
-	if (iconType === '0') {
-		style = {
-			backgroundColor: `${color}`,
-			border: `1px solid ${color}`,
-		};
-		iconColor = `#ffffff`;
-	} else {
-		style = {
-			backgroundColor: `transparent`,
-			border: `1px solid ${color}`,
-		};
-		iconColor = `${color}`;
-	}
-
-	//過去バージョンをリカバリーした時にiconを正常に表示する
-	if (faIcon && !faIcon.match(/<i/)) {
-		faIcon = `<i class="${faIcon}"></i>`;
-
-		//過去のicon attribuet用 deprecated処理
-	} else if (!faIcon && icon && !icon.match(/<i/)) {
-		faIcon = `<i class="${icon}"></i>`;
-	}
-
-	//add class and inline css
-	const faIconFragment = faIcon.split(' ');
-	faIconFragment[0] = faIconFragment[0] + ` style="color:${iconColor}" `;
-	faIconFragment[1] = faIconFragment[1] + ` vk_icon_font `;
-	const faIconTag = faIconFragment.join('');
 
 	const blockProps = useBlockProps({
-		className: containerClass,
+		className: `vk_icon`,
 	});
 
 	return (
@@ -121,19 +78,6 @@ export default function IconEdit(props) {
 							value={iconMargin}
 							onChange={(value) => {
 								setAttributes({ iconMargin: value });
-							}}
-							min="0"
-							max="100"
-						/>
-					</BaseControl>
-					<BaseControl
-						label={__('Border radius', 'vk-blocks')}
-						id={`vk_icon-radius`}
-					>
-						<RangeControl
-							value={iconRadius}
-							onChange={(value) => {
-								setAttributes({ iconRadius: value });
 							}}
 							min="0"
 							max="100"
@@ -198,6 +142,20 @@ export default function IconEdit(props) {
 						</Button>
 					</ButtonGroup>
 
+					<BaseControl
+						label={__('Border radius', 'vk-blocks')}
+						id={`vk_icon-radius`}
+					>
+						<RangeControl
+							value={iconRadius}
+							onChange={(value) => {
+								setAttributes({ iconRadius: value });
+							}}
+							min="0"
+							max="100"
+						/>
+					</BaseControl>
+
 					<p className={`mt-0 mb-2`}>
 						{__('Icon Style:', 'vk-blocks')}
 					</p>
@@ -216,7 +174,7 @@ export default function IconEdit(props) {
 							isSecondary={iconType !== '1'}
 							onClick={() => setAttributes({ iconType: '1' })}
 						>
-							{__('No background', 'vk-blocks')}
+							{__('Icon & Frame', 'vk-blocks')}
 						</Button>
 						<Button
 							isSmall
@@ -230,12 +188,12 @@ export default function IconEdit(props) {
 
 					<BaseControl>
 						<ColorPalette
-							value={color}
+							value={iconColor}
 							onChange={(value) => {
 								if (value) {
-									setAttributes({ color: value });
+									setAttributes({ iconColor: value });
 								} else {
-									setAttributes({ color: '#0693e3' });
+									setAttributes({ iconColor: '#0693e3' });
 									setAttributes({ iconType: '0' });
 								}
 							}}
@@ -251,9 +209,16 @@ export default function IconEdit(props) {
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
-				<div className="vk_icon_outer" style={style}>
-					{ReactHtmlParser(faIconTag)}
-				</div>
+				<VKBIcon
+					lbSize={iconSize}
+					lbMargin={iconMargin}
+					lbMRadiusn={iconRadius}
+					lbUnitn={iconUnit}
+					lbAlign={iconAlign}
+					lbType={iconType}
+					lbColor={iconColor}
+					lbFontAwesomeIcon={faIcon}
+				/>
 			</div>
 		</>
 	);

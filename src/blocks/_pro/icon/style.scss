@@ -9,22 +9,35 @@
 		margin-bottom: 1.5em;
 	}
 }
-.wp-block-vk-blocks-icon{ //編集画面で負けるので先頭に追加
+.wp-block-vk-blocks-icon { //編集画面で負けるので先頭に追加
 	.vk_icon {
-		&_link {
-			&:hover {
-				color: #333;
-				text-decoration: none;
+		&_outer {
+			&_align {
+				&_center {
+					text-align: center;
+				}
+				&_right {
+					text-align: right;
+				}
 			}
 		}
-		&_outer {
-			display: block;
+
+		&_border {
+			display: inline-block;
 			position: relative;
-			margin: 0 auto;
 			width: 80px;
 			height: 80px;
 			border-radius: 50%;
 		}
+
+		&_link {
+			display: inline-block;
+
+			&:hover {
+				opacity: .85;
+			}
+		}
+
 		&_font {
 			position: absolute;
 			top: 50%;

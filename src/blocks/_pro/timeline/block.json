@@ -3,6 +3,8 @@
 	"name": "vk-blocks/timeline",
 	"category": "vk-blocks-cat",
 	"attributes": {},
+	"description": "Displays a simple schedule and other information that is useful for explaining the order.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

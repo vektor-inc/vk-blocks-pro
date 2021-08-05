@@ -3,8 +3,8 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,m
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
-Tested up to: 5.7.2
-Stable tag: 1.10.0
+Tested up to: 5.8.0
+Stable tag: 1.11.1
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,7 +63,11 @@ e.g.
 
 == Changelog ==
 
-[ Bugfix ][ Slider(Pro) ] Change id when copy slider & slider-item.
+= 1.11.1 =
+[ Bugfix ][ Table style ] add botder top and bottom style
+
+= 1.11.0 =
+[ Specification Change ][ Button ] Change margin getready to core button block.
 
 = 1.10.0 =
 [ Specification Change ][ Slider(Pro) ] Add no height setting.

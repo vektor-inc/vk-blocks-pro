@@ -106,6 +106,8 @@
 			"default": "px"
 		}
 	},
+	"description": "One item in a grit column block.",
+	"textdomain": "vk-blocks",
 	"parent": ["vk-blocks/grid-column"],
 	"supports": {
 		"className": true

@@ -9,6 +9,8 @@
 			"selector": "dt"
 		}
 	},
+	"description": "Displays a combination of questions and answers.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"anchor": true
 	}

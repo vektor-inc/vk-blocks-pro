@@ -89,6 +89,8 @@
 			"default": "text-right"
 		}
 	},
+	"description": "A single item in the select post list.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

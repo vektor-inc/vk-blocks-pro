@@ -8,6 +8,8 @@
 			"default": -1
 		}
 	},
+	"description": "Displays the body content of the specified parent page.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

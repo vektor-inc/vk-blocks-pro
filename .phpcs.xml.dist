@@ -4,8 +4,14 @@
 
 	<!-- What to scan -->
 	<file>.</file>
-	<exclude-pattern>/vendor/</exclude-pattern>
-	<exclude-pattern>/node_modules/</exclude-pattern>
+	<exclude-pattern>/vendor/*</exclude-pattern>
+	<exclude-pattern>/node_modules/*</exclude-pattern>
+	<exclude-pattern type="relative">^inc/vk-helpers/package/*</exclude-pattern>
+	<exclude-pattern type="relative">^inc/tgm-plugin-activation/*</exclude-pattern>
+	<exclude-pattern type="relative">^inc/vk-blocks-pro/plugin-update-checker/*</exclude-pattern>
+	<exclude-pattern type="relative">^inc/font-awesome/package/*</exclude-pattern>
+	<exclude-pattern type="relative">^inc/vk-css-optimize/package/*</exclude-pattern>
+	<exclude-pattern type="relative">^inc/vk-swiper/package/*</exclude-pattern>
 
 	<!-- How to scan -->
 	<!-- Usage instructions: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Usage -->
@@ -26,9 +32,9 @@
 	<!-- https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards -->
 	<!-- https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/wiki/Customizable-sniff-properties -->
 	<config name="minimum_supported_wp_version" value="4.6"/>
-	<rule ref="WordPress">
+	<!-- rule ref="WordPress">
 		<exclude name="WordPress.VIP"/>
-	</rule>
+	</rule -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
 			<!-- Value: replace the function, class, and variable prefixes used. Separate multiple prefixes with a comma. -->

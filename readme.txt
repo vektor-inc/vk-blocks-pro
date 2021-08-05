@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
 Tested up to: 5.8.0
-Stable tag: 1.11.1
+Stable tag: 1.11.2
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -62,6 +62,11 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 1.11.2 =
+[ Improvement ] add block description
+[ Bugfix ] Fixed widget screen warning
+[ Bugfix ][ Slider(Pro) ] Change id when copy slider & slider-item.
 
 = 1.11.1 =
 [ Bugfix ][ Table style ] add botder top and bottom style

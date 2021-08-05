@@ -5,12 +5,12 @@
 // このファイルは基本 /vk-blocks/vk-blocks-functions.phpを読み込むファイルだけ
 // vk-blocks
 
-if ( ! function_exists( 'vkblocks_active' ) ) {
+if ( ! function_exists( 'vk_blocks_active' ) ) {
 
 	// Set asset URL.
-    define( 'VK_BLOCKS_URL', plugin_dir_url( __FILE__ ) . 'vk-blocks/' );
+	define( 'VK_BLOCKS_URL', plugin_dir_url( __FILE__ ) . 'vk-blocks/' );
 
-    // Set asset Path.
+	// Set asset Path.
 	define( 'VK_BLOCKS_PATH', plugin_dir_path( __FILE__ ) . 'vk-blocks/' );
 
 	// Set src path.
@@ -39,7 +39,7 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 	require_once plugin_dir_path( __FILE__ ) . 'tgm-plugin-activation/tgm-config.php';
 
 
-	if ( ! vkblocks_is_lightning() ) {
+	if ( ! vk_blocks_is_lightning() ) {
 		require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/load-bootstrap.php';
 	}
 
@@ -49,16 +49,15 @@ if ( ! function_exists( 'vkblocks_active' ) ) {
 
 	$path = plugin_dir_path( __FILE__ ) . 'vk-blocks/App/RestAPI/BlockMeta/EntryPoint.php';
 	require_once $path;
-	//BlockMeta用のAPIルートを設定
+	// BlockMeta用のAPIルートを設定
 	new EntryPoint();
 
-	//プロ版の設定ファイルを読み込み
-	if( file_exists( plugin_dir_path( __FILE__ ) . 'vk-blocks-pro-config.php' ) ){
+	// プロ版の設定ファイルを読み込み
+	if ( file_exists( plugin_dir_path( __FILE__ ) . 'vk-blocks-pro-config.php' ) ) {
 		require_once plugin_dir_path( __FILE__ ) . 'vk-blocks-pro-config.php';
 	}
 
 	/*
 	 出力するCSSが多すぎるので一旦コメントアウト */
 	// require_once( 'vk-blocks/functions-color.php' );
-
 }

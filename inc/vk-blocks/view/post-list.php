@@ -11,9 +11,8 @@ class VkBlocksPostList {
 	 * @return string
 	 */
 	public static function render_post_list( $attributes, $wp_query, $options_loop ) {
-
-		if ( ! empty($attributes['className'] ) ){
-			$options_loop['class_loop_outer'] .= ' '.$attributes['className'];
+		if ( ! empty( $attributes['className'] ) ) {
+			$options_loop['class_loop_outer'] .= ' ' . $attributes['className'];
 		}
 
 		if ( ! isset( $wp_query ) || $wp_query === false || $wp_query === 'false' || $wp_query->posts === array() ) {
@@ -42,13 +41,13 @@ class VkBlocksPostList {
 			'col_md'                     => esc_html( $attributes['col_md'] ),
 			'col_lg'                     => esc_html( $attributes['col_lg'] ),
 			'col_xl'                     => esc_html( $attributes['col_xl'] ),
-			'col_xxl'                     => esc_html( $attributes['col_xxl'] ),
+			'col_xxl'                    => esc_html( $attributes['col_xxl'] ),
 			'class_outer'                => '',
 			'class_title'                => '',
 			'body_prepend'               => '',
 			'body_append'                => '',
 			'vkb_hidden'                 => $attributes['vkb_hidden'],
-			'vkb_hidden_xxl'              => $attributes['vkb_hidden_xxl'],
+			'vkb_hidden_xxl'             => $attributes['vkb_hidden_xxl'],
 			'vkb_hidden_xl'              => $attributes['vkb_hidden_xl'],
 			'vkb_hidden_lg'              => $attributes['vkb_hidden_lg'],
 			'vkb_hidden_md'              => $attributes['vkb_hidden_md'],
@@ -72,12 +71,10 @@ class VkBlocksPostList {
 	}
 
 	private static function format_terms( $isCheckedTerms ) {
-
 		$return             = array();
 		$return['relation'] = 'OR';
 
 		foreach ( $isCheckedTerms as $key => $value ) {
-
 			$term      = get_term( $value );
 			$new_array = array(
 				'taxonomy' => isset( $term->taxonomy ) ? $term->taxonomy : $key,
@@ -85,13 +82,11 @@ class VkBlocksPostList {
 				'terms'    => $value,
 			);
 			array_push( $return, $new_array );
-
 		}
 		return $return;
 	}
 
 	public static function get_loop_query( $attributes ) {
-
 		$isCheckedPostType = json_decode( $attributes['isCheckedPostType'], true );
 
 		$isCheckedTerms = json_decode( $attributes['isCheckedTerms'], true );
@@ -125,12 +120,9 @@ class VkBlocksPostList {
 
 	public static function get_loop_query_child( $attributes ) {
 
-
-
 		// ParentIdを指定
 		if ( isset( $attributes['selectId'] ) && $attributes['selectId'] !== 'false' ) {
-
-			$selectId = ($attributes['selectId'] > 0)? $attributes['selectId']: get_the_ID();
+			$selectId = ( $attributes['selectId'] > 0 ) ? $attributes['selectId'] : get_the_ID();
 
 			$post__not_in = array();
 			if ( ! empty( $attributes['selfIgnore'] ) ) {
@@ -154,7 +146,6 @@ class VkBlocksPostList {
 				'post__not_in'   => $post__not_in,
 			);
 			return new WP_Query( $args );
-
 		} else {
 			return false;
 		}

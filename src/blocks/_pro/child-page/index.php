@@ -2,15 +2,13 @@
 /**
  * Registers the `vk-blocks/child-page` block.
  */
-if( function_exists('register_block_type_from_metadata')) {
+if ( function_exists( 'register_block_type_from_metadata' ) ) {
 
-	function vk_child_page_render_callback( $attributes ){
-
+	function vk_child_page_render_callback( $attributes ) {
 		$wp_query     = VkBlocksPostList::get_loop_query_child( $attributes );
 		$options_loop = array( 'class_loop_outer' => 'vk_childPage' );
 
 		return VkBlocksPostList::render_post_list( $attributes, $wp_query, $options_loop );
-
 	}
 
 	function register_block_vkb_child_page() {

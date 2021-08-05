@@ -92,7 +92,6 @@ require_once plugin_dir_path( __FILE__ ) . 'inc/vk-blocks-config.php';
 /*-------------------------------------------*/
 $plugin_base_dir = plugin_dir_path( __FILE__ );
 if ( strpos( $plugin_base_dir, 'vk-blocks-pro' ) !== false ) {
-
 	$updater_url = plugin_dir_path( __FILE__ ) . 'inc/vk-blocks-pro/plugin-update-checker/plugin-update-checker.php';
 	if ( file_exists( $updater_url ) ) {
 		require plugin_dir_path( __FILE__ ) . 'inc/vk-blocks-pro/plugin-update-checker/plugin-update-checker.php';

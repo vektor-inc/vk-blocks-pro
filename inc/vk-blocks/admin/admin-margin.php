@@ -17,8 +17,8 @@ $margin_unit_array = array(
 	),
 );
 
-$vk_margin_size_array = vkblocks_margin_size_array();
-$vk_blocks_options    = vkblocks_get_options();
+$vk_margin_size_array = vk_blocks_margin_size_array();
+$vk_blocks_options    = vk_blocks_get_options();
 
 ?>
 <section>

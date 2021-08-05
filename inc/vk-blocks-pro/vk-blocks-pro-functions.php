@@ -14,7 +14,7 @@ require_once dirname( __FILE__ ) . '/admin-pro/admin-pro.php';
 function vk_blocks_pro_get_options( $defaults ) {
 	$defaults = array(
 		'display_vk_block_template' => 'display',
-		'new_faq_accordion'         => 'disable'
+		'new_faq_accordion'         => 'disable',
 	);
 	return $defaults;
 }

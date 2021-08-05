@@ -1,6 +1,8 @@
 <?php
-/*-------------------------------------------*/
-/*  Load modules
+/*
+-------------------------------------------*/
+/*
+  Load modules
 /*-------------------------------------------*/
 if ( ! class_exists( 'VK_Component_Button' ) ) {
 	require_once dirname( __FILE__ ) . '/package/class-vk-component-button.php';

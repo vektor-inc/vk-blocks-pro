@@ -5,9 +5,10 @@ export class VKBIcon extends Component {
 	render() {
 		let fontAwesomeIcon = this.props.lbFontAwesomeIcon;
 		const iconSize = this.props.lbSize;
+		const iconSizeUnit = this.props.lbSizeUnit;
 		const iconMargin = this.props.lbMargin;
+		const iconMarginUnit = this.props.lbMarginUnit;
 		const iconRadius = this.props.lbRadius;
-		const iconUnit = this.props.lbUnit;
 		const iconAlign = this.props.lbAlign;
 		const iconType = this.props.lbType;
 		const iconColor = this.props.lbColor;
@@ -25,7 +26,6 @@ export class VKBIcon extends Component {
 		// color style
 		const borderClass = 'vk_icon_border';
 		let borderStyle = {};
-		let color;
 
 		if (iconType === '0') {
 			// Solid color
@@ -38,16 +38,22 @@ export class VKBIcon extends Component {
 			borderStyle = {
 				border: `1px solid ${iconColor}`,
 			};
-			color = `${iconColor}`;
-		} else {
-			// Icon only
-			color = `${iconColor}`;
 		}
 
 		// margin
-		if (!(iconSize === 36 && iconMargin === 40 && iconUnit === 'px')) {
-			borderStyle.width = iconMargin + iconSize + iconUnit;
-			borderStyle.height = iconMargin + iconSize + iconUnit;
+		if (
+			!(
+				iconSize === 36 &&
+				iconSizeUnit === 'px' &&
+				iconMargin === 22 &&
+				iconMarginUnit === 'px'
+			)
+		) {
+			borderStyle.width =
+				'calc(' +
+				(iconSize + iconSizeUnit) + ' + ' +
+				((iconMargin * 2) + iconMarginUnit) + ')';
+			borderStyle.height = borderStyle.width;
 		}
 
 		// border radius
@@ -61,18 +67,18 @@ export class VKBIcon extends Component {
 			fontAwesomeIcon = fontAwesomeIcon.replace(/ fas/g, 'fas');
 
 			// font color
-			color = null;
+			let color = null;
 			if (iconType !== '0') {
 				color = `color:${iconColor}`;
 			}
 
 			// font size
 			let size = null;
-			if (!(iconSize === 36 && iconUnit === 'px')) {
-				size = ` font-size:${iconSize}${iconUnit}`;
+			if (!(iconSize === 36 && iconSizeUnit === 'px')) {
+				size = ` font-size:${iconSize}${iconSizeUnit}`;
 			}
 
-			//add class and inline css
+			// add class and inline css
 			const faIconFragment = fontAwesomeIcon.split(' ');
 			faIconFragment[0] =
 				faIconFragment[0] + ` style="${color}; ${size};"`;

@@ -21,9 +21,10 @@ export const settings = {
 		attributes: {
 			faIcon: iconUser,
 			iconSize: 36,
-			iconMargin: 40,
+			iconSizeUnit: 'px',
+			iconMargin: 22,
+			iconMarginUnit: 'px',
 			iconRadius: 50,
-			iconUnit: 'px',
 			iconType: '0',
 			iconAlign: 'left',
 			iconColor: 'undefined',

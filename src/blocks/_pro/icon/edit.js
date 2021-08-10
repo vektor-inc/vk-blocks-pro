@@ -15,6 +15,8 @@ import {
 	InspectorControls,
 	ColorPalette,
 	useBlockProps,
+	BlockControls,
+	BlockAlignmentControl,
 } from '@wordpress/block-editor';
 
 export default function IconEdit(props) {
@@ -22,9 +24,10 @@ export default function IconEdit(props) {
 	let {
 		faIcon,
 		iconSize,
+		iconSizeUnit,
 		iconMargin,
+		iconMarginUnit,
 		iconRadius,
-		iconUnit,
 		iconAlign,
 		iconType,
 		iconColor,
@@ -42,108 +45,117 @@ export default function IconEdit(props) {
 
 	return (
 		<>
+			<BlockControls group="block">
+				<BlockAlignmentControl
+					value={iconAlign}
+					onChange={(value) => {
+						setAttributes({ iconAlign: value });
+					}}
+					controls={['left', 'center', 'right']}
+				/>
+			</BlockControls>
 			<InspectorControls>
-				<PanelBody title={__('icon setting', 'vk-blocks')}>
+				<PanelBody title={__('Icon Setting', 'vk-blocks')}>
 					<BaseControl
 						label={__('Icon ( Font Awesome )', 'vk-blocks')}
 						id={`vk_icon-font`}
 					>
 						<FontAwesome attributeName={'faIcon'} {...props} />
 					</BaseControl>
-					<BaseControl
-						label={__('Icon Size:', 'vk-blocks')}
-						id={`vk_icon-size`}
-					>
-						<RangeControl
+					<p className={`mt-0 mb-2`}>{__('Size', 'vk-blocks')}</p>
+					<div className="vk_icon_custombox">
+						<TextControl
+							className={`vk_icon_custombox_number`}
 							value={iconSize}
-							onChange={(value) => {
-								setAttributes({ iconSize: value });
-								if (undefined === value) {
-									setAttributes({ iconSize: 36 });
-									setAttributes({ iconUnit: 'px' });
-								}
-							}}
-							min={1}
-							max={100}
-							allowReset={true}
+							onChange={(value) =>
+								setAttributes({ iconSize: parseInt(value) })
+							}
+							type={'number'}
 						/>
-					</BaseControl>
-					<BaseControl
-						label={__('Margin', 'vk-blocks')}
-						id={`vk_icon-margin`}
-					>
-						<RangeControl
+						<SelectControl
+							className={`vk_icon_custombox_unit`}
+							value={iconSizeUnit}
+							onChange={(value) => {
+								setAttributes({ iconSizeUnit: value });
+							}}
+							options={[
+								{
+									value: 'px',
+									label: __('px', 'vk-blocks'),
+								},
+								{
+									value: 'em',
+									label: __('em', 'vk-blocks'),
+								},
+								{
+									value: 'rem',
+									label: __('rem', 'vk-blocks'),
+								},
+								{
+									value: 'vw',
+									label: __('vw', 'vk-blocks'),
+								},
+							]}
+						/>
+						<Button
+							className="vk_icon_custombox_reset"
+							isSmall
+							isSecondary
+							onClick={() => {
+								setAttributes({ iconSize: 36 });
+								setAttributes({ iconSizeUnit: 'px' });
+							}}
+						>
+							{__('Reset')}
+						</Button>
+					</div>
+					<p className={`mt-0 mb-2`}>{__('Margin', 'vk-blocks')}</p>
+					<div className="vk_icon_custombox">
+						<TextControl
+							className={`vk_icon_custombox_number`}
 							value={iconMargin}
-							onChange={(value) => {
-								setAttributes({ iconMargin: value });
-								if (undefined === value) {
-									setAttributes({ iconMargin: 40 });
-									setAttributes({ iconUnit: 'px' });
-								}
-							}}
-							min={0}
-							max={100}
-							allowReset={true}
+							onChange={(value) =>
+								setAttributes({ iconMargin: parseInt(value) })
+							}
+							type={'number'}
 						/>
-					</BaseControl>
-					<SelectControl
-						label={__('Unit Type', 'vk-blocks')}
-						value={iconUnit}
-						onChange={(value) => {
-							setAttributes({ iconUnit: value });
-						}}
-						options={[
-							{
-								value: 'px',
-								label: __('px', 'vk-blocks'),
-							},
-							{
-								value: 'em',
-								label: __('em', 'vk-blocks'),
-							},
-							{
-								value: 'rem',
-								label: __('rem', 'vk-blocks'),
-							},
-							{
-								value: 'vw',
-								label: __('vw', 'vk-blocks'),
-							},
-						]}
-					/>
-					<p className={`mt-0 mb-2`}>
-						{__('Icon Position:', 'vk-blocks')}
-					</p>
-					<ButtonGroup className={`mb-3`}>
+						<SelectControl
+							className={`vk_icon_custombox_unit`}
+							value={iconMarginUnit}
+							onChange={(value) => {
+								setAttributes({ iconMarginUnit: value });
+							}}
+							options={[
+								{
+									value: 'px',
+									label: __('px', 'vk-blocks'),
+								},
+								{
+									value: 'em',
+									label: __('em', 'vk-blocks'),
+								},
+								{
+									value: 'rem',
+									label: __('rem', 'vk-blocks'),
+								},
+								{
+									value: 'vw',
+									label: __('vw', 'vk-blocks'),
+								},
+							]}
+						/>
 						<Button
+							className="vk_icon_custombox_reset"
 							isSmall
-							isPrimary={iconAlign === 'left'}
-							isSecondary={iconAlign !== 'left'}
-							onClick={() => setAttributes({ iconAlign: 'left' })}
+							isSecondary
+							onClick={() => {
+								setAttributes({ iconMargin: 22 });
+								setAttributes({ iconMarginUnit: 'px' });
+							}}
 						>
-							{__('Left', 'vk-blocks')}
+							{__('Reset')}
 						</Button>
-						<Button
-							isSmall
-							isPrimary={iconAlign === 'center'}
-							isSecondary={iconAlign !== 'center'}
-							onClick={() =>
-								setAttributes({ iconAlign: 'center' })
-							}
-						>
-							{__('Center', 'vk-blocks')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={iconAlign === 'right'}
-							isSecondary={iconAlign !== 'right'}
-							onClick={() =>
-								setAttributes({ iconAlign: 'right' })
-							}
-						>
-							{__('Right', 'vk-blocks')}
-						</Button>
-					</ButtonGroup>
+					</div>
 					<BaseControl
 						label={__('Border radius', 'vk-blocks')}
 						id={`vk_icon-radius`}
@@ -161,9 +173,7 @@ export default function IconEdit(props) {
 							allowReset={true}
 						/>
 					</BaseControl>
-					<p className={`mt-0 mb-2`}>
-						{__('Icon Style:', 'vk-blocks')}
-					</p>
+					<p className={`mt-0 mb-2`}>{__('Style', 'vk-blocks')}</p>
 					<ButtonGroup className={`mb-2`}>
 						<Button
 							isSmall
@@ -219,14 +229,15 @@ export default function IconEdit(props) {
 			</InspectorControls>
 			<div {...blockProps}>
 				<VKBIcon
+					lbFontAwesomeIcon={faIcon}
 					lbSize={iconSize}
+					lbSizeUnit={iconSizeUnit}
 					lbMargin={iconMargin}
+					lbMarginUnit={iconMarginUnit}
 					lbRadius={iconRadius}
-					lbUnit={iconUnit}
 					lbAlign={iconAlign}
 					lbType={iconType}
 					lbColor={iconColor}
-					lbFontAwesomeIcon={faIcon}
 				/>
 			</div>
 		</>

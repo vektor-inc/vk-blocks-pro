@@ -5,9 +5,10 @@ export default function save({ attributes }) {
 	let {
 		faIcon,
 		iconSize,
+		iconSizeUnit,
 		iconMargin,
+		iconMarginUnit,
 		iconRadius,
-		iconUnit,
 		iconAlign,
 		iconType,
 		iconColor,
@@ -26,16 +27,17 @@ export default function save({ attributes }) {
 	return (
 		<div {...blockProps}>
 			<VKBIcon
-				lbUrl={iconUrl}
-				lbTarget={iconTarget}
+				lbFontAwesomeIcon={faIcon}
 				lbSize={iconSize}
+				lbSizeUnit={iconSizeUnit}
 				lbMargin={iconMargin}
+				lbMarginUnit={iconMarginUnit}
 				lbRadius={iconRadius}
-				lbUnit={iconUnit}
 				lbAlign={iconAlign}
 				lbType={iconType}
 				lbColor={iconColor}
-				lbFontAwesomeIcon={faIcon}
+				lbUrl={iconUrl}
+				lbTarget={iconTarget}
 			/>
 		</div>
 	);

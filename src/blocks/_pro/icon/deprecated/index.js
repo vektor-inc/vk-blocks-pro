@@ -1,8 +1,39 @@
 const blockAttributes = {
-	content: {
+	faIcon: {
 		type: 'string',
-		source: 'html',
-		selector: 'span',
+		default: null,
+	},
+	iconSize: {
+		type: 'number',
+		default: 36,
+	},
+	iconSizeUnit: {
+		type: 'string',
+		default: 'px',
+	},
+	iconMargin: {
+		type: 'number',
+		default: 22,
+	},
+	iconMarginUnit: {
+		type: 'string',
+		default: 'px',
+	},
+	iconRadius: {
+		type: 'number',
+		default: 50,
+	},
+	iconAlign: {
+		type: 'string',
+		default: 'left',
+	},
+	"iconType": {
+		"type": "string",
+		"default": "0"
+	},
+	iconColor: {
+		type: 'string',
+		default: null,
 	},
 	iconUrl: {
 		type: 'string',
@@ -11,30 +42,6 @@ const blockAttributes = {
 	iconTarget: {
 		type: 'Boolean',
 		default: false,
-	},
-	iconSize: {
-		type: 'string',
-		default: 'md',
-	},
-	iconType: {
-		type: 'string',
-		default: '0',
-	},
-	iconColor: {
-		type: 'string',
-		default: null,
-	},
-	iconAlign: {
-		type: 'string',
-		default: 'left',
-	},
-	fontAwesomeIconBefore: {
-		type: 'string',
-		default: null,
-	},
-	fontAwesomeIconAfter: {
-		type: 'string',
-		default: null,
 	},
 };
 

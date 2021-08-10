@@ -11,17 +11,21 @@
 			"type": "number",
 			"default": 36
 		},
+		"iconSizeUnit": {
+			"type": "string",
+			"default": "px"
+		},
 		"iconMargin": {
 			"type": "number",
-			"default": 40
+			"default": 22
+		},
+		"iconMarginUnit": {
+			"type": "string",
+			"default": "px"
 		},
 		"iconRadius": {
 			"type": "number",
 			"default": 50
-		},
-		"iconUnit": {
-			"type": "string",
-			"default": "px"
 		},
 		"iconAlign": {
 			"type": "string",

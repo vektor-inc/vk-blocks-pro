@@ -32,6 +32,8 @@
             "default": "medium"
         }
 	},
+    "description": "Use responsive spacers to get the margins right.",
+    "textdomain": "vk-blocks",
 	"supports": {
 		"anchor": true
 	}

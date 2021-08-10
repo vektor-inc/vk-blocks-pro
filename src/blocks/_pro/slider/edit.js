@@ -38,13 +38,7 @@ export default function SliderEdit(props) {
 	} = attributes;
 
 	useEffect(() => {
-		if (
-			attributes.clientId === null ||
-			attributes.clientId === undefined ||
-			attributes.clientId === ''
-		) {
-			setAttributes({ clientId });
-		}
+		setAttributes({ clientId });
 		// slidesPerView 互換設定
 		if (slidesPerView === undefined) {
 			setAttributes({
@@ -64,6 +58,11 @@ export default function SliderEdit(props) {
 		}
 		if (pagination === true) {
 			setAttributes({ pagination: 'bullets' });
+		}
+
+		// autoPlayStop 互換設定
+		if (autoPlayStop === undefined) {
+			setAttributes({ autoPlayStop: false });
 		}
 	}, [clientId]);
 
@@ -105,7 +104,7 @@ export default function SliderEdit(props) {
 	}
 
 	const blockProps = useBlockProps({
-		className: `swiper-container vk_slider vk_slider_${attributes.clientId} ${alignClass}`,
+		className: `swiper-container vk_slider vk_slider_${clientId} ${alignClass}`,
 	});
 
 	return (

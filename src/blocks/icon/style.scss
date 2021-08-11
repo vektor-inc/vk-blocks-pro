@@ -26,6 +26,26 @@
 			width: 80px;
 			height: 80px;
 			border-radius: 50%;
+			background-color: #0693e3;
+			border: 1px solid #0693e3;
+
+			&_frame {
+				background-color: transparent;
+
+				.vk_icon_font {
+					color: #0693e3;
+				}
+			}
+
+			&_none {
+				background-color: transparent;
+				color: #0693e3;
+				border: none;
+
+				.vk_icon_font {
+					color: #0693e3;
+				}
+			}
 		}
 
 		&_link {

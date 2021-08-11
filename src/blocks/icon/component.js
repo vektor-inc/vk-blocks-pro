@@ -24,20 +24,30 @@ export class VKBIcon extends Component {
 		}
 
 		// color style
-		const borderClass = 'vk_icon_border';
+		let borderClass = 'vk_icon_border';
 		let borderStyle = {};
 
 		if (iconType === '0') {
 			// Solid color
-			borderStyle = {
-				backgroundColor: `${iconColor}`,
-				border: `1px solid ${iconColor}`,
-			};
+			if (iconColor !== 'undefined') {
+				borderStyle = {
+					backgroundColor: `${iconColor}`,
+					borderColor: `${iconColor}`,
+				};
+			}
 		} else if (iconType === '1') {
-			// No background
-			borderStyle = {
-				border: `1px solid ${iconColor}`,
-			};
+			// Icon & Frame
+			borderClass += ' vk_icon_border_frame';
+			if (iconColor !== 'undefined') {
+				borderStyle = {
+					borderColor: `${iconColor}`,
+				};
+			}
+		} else {
+			// icon only
+			borderClass += ' vk_icon_border_none';
+			if (iconColor !== 'undefined') {
+			}
 		}
 
 		// margin
@@ -70,7 +80,7 @@ export class VKBIcon extends Component {
 
 			// font color
 			let color = null;
-			if (iconType !== '0') {
+			if (iconType !== '0' && iconColor !== 'undefined') {
 				color = `color:${iconColor}`;
 			}
 

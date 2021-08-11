@@ -37,7 +37,7 @@
 		},
 		"iconColor": {
 			"type": "string",
-			"default": "#0693e3"
+			"default": "undefined"
 		},
 		"iconUrl": {
 			"type": "string",

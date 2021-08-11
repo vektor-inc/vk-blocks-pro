@@ -207,7 +207,7 @@ export default function IconEdit(props) {
 								if (value) {
 									setAttributes({ iconColor: value });
 								} else {
-									setAttributes({ iconColor: '#0693e3' });
+									setAttributes({ iconColor: 'undefined' });
 									setAttributes({ iconType: '0' });
 								}
 							}}

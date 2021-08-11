@@ -35,6 +35,7 @@ export default function SliderEdit(props) {
 		speed,
 		slidesPerView,
 		slidesPerGroup,
+		navigationPosition,
 	} = attributes;
 
 	useEffect(() => {
@@ -51,7 +52,6 @@ export default function SliderEdit(props) {
 				slidesPerGroup: 1,
 			});
 		}
-
 		// pagination 互換設定
 		if (pagination === false) {
 			setAttributes({ pagination: 'hide' });
@@ -63,6 +63,11 @@ export default function SliderEdit(props) {
 		// autoPlayStop 互換設定
 		if (autoPlayStop === undefined) {
 			setAttributes({ autoPlayStop: false });
+		}
+
+		// navigationPosition 互換設定
+		if (navigationPosition === undefined) {
+			setAttributes({ navigationPosition: 'mobile-bottom' });
 		}
 	}, [clientId]);
 
@@ -99,6 +104,22 @@ export default function SliderEdit(props) {
 		pagination_html = (
 			<div
 				className={`swiper-pagination swiper-pagination-${pagination}`}
+			></div>
+		);
+	}
+
+	// ナビゲーションの HTML
+	let navigation_next_html = '';
+	let navigation_prev_html = '';
+	if (navigationPosition !== 'hide') {
+		navigation_next_html = (
+			<div
+				className={`swiper-button-next swiper-button-${navigationPosition}`}
+			></div>
+		);
+		navigation_prev_html = (
+			<div
+				className={`swiper-button-prev swiper-button-${navigationPosition}`}
 			></div>
 		);
 	}
@@ -322,6 +343,34 @@ export default function SliderEdit(props) {
 							}
 						/>
 					</BaseControl>
+					<BaseControl
+						label={__('Navigation Position', 'vk-blocks')}
+						id={`vk_slider-navigationPosition`}
+					>
+						<SelectControl
+							value={navigationPosition}
+							options={[
+								{
+									label: __('Hide', 'vk-blocks'),
+									value: 'hide',
+								},
+								{
+									label: __('Center', 'vk-blocks'),
+									value: 'center',
+								},
+								{
+									label: __(
+										'Bottom on Mobile device',
+										'vk-blocks'
+									),
+									value: 'mobile-bottom',
+								},
+							]}
+							onChange={(value) =>
+								setAttributes({ navigationPosition: value })
+							}
+						/>
+					</BaseControl>
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps} data-vkb-slider={JSON.stringify(sliderData)}>
@@ -335,8 +384,8 @@ export default function SliderEdit(props) {
 						/>
 					</div>
 				</div>
-				<div className="swiper-button-next"></div>
-				<div className="swiper-button-prev"></div>
+				{navigation_next_html}
+				{navigation_prev_html}
 				{pagination_html}
 			</div>
 		</>

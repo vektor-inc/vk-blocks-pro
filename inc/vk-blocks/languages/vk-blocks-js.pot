@@ -839,6 +839,25 @@ msgstr ""
 msgid "Number of slides"
 msgstr ""
 
+#: src/blocks/_pro/slider/edit.js:325
+msgid "Navigation Position"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:332
+#: src/blocks/heading/edit.js:344
+msgid "Hide"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:336
+#: src/blocks/button/edit.js:129
+#: src/components/display-items-control/index.js:125
+msgid "Center"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:340
+msgid "Bottom on Mobile device"
+msgstr ""
+
 #: src/blocks/_pro/slider/index.js:21
 msgid "Slider"
 msgstr ""
@@ -1194,11 +1213,6 @@ msgstr ""
 
 #: src/blocks/button/edit.js:108
 msgid "Button Position:"
-msgstr ""
-
-#: src/blocks/button/edit.js:129
-#: src/components/display-items-control/index.js:125
-msgid "Center"
 msgstr ""
 
 #: src/blocks/button/edit.js:149

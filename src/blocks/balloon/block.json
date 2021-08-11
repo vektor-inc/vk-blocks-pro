@@ -52,6 +52,8 @@
 			"default": "none"
 		}
 	},
+	"description": "These speech balloons are perfect for recreating conversations.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

@@ -3,8 +3,8 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,m
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
-Tested up to: 5.7.2
-Stable tag: 1.10.0
+Tested up to: 5.8.0
+Stable tag: 1.11.4
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -62,6 +62,28 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+[ Improvement ][ Slider(Pro) ] add navigation position
+[ Specification Change ] VK Components Update ( can be customize title by hook )
+[ Bug fix ][ Slider(Pro) ] Fix bug that to be same id under case of copy slide item 
+[ Bug fix ][ Social icon ] Fix css in grid block
+
+= 1.11.4 =
+[ Bugfix ][ Step(Pro) ] Fixed icon position
+
+= 1.11.3 =
+[ Bugfix ][ Step(Pro) ] Fixed icon position at G3
+
+= 1.11.2 =
+[ Improvement ] add block description
+[ Bugfix ] Fixed widget screen warning
+[ Bugfix ][ Slider(Pro) ] Change id when copy slider & slider-item.
+
+= 1.11.1 =
+[ Bugfix ][ Table style ] add botder top and bottom style
+
+= 1.11.0 =
+[ Specification Change ][ Button ] Change margin getready to core button block.
 
 = 1.10.0 =
 [ Specification Change ][ Slider(Pro) ] Add no height setting.

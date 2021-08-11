@@ -839,12 +839,27 @@ msgstr ""
 msgid "Number of slides"
 msgstr ""
 
-#: src/blocks/_pro/slider/index.js:21
-msgid "Slider"
+#: src/blocks/_pro/slider/edit.js:325
+msgid "Navigation Position"
 msgstr ""
 
-#: src/blocks/_pro/slider/index.js:23
-msgid "Slider is do not move in edit screen."
+#: src/blocks/_pro/slider/edit.js:332
+#: src/blocks/heading/edit.js:344
+msgid "Hide"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:336
+#: src/blocks/button/edit.js:129
+#: src/components/display-items-control/index.js:125
+msgid "Center"
+msgstr ""
+
+#: src/blocks/_pro/slider/edit.js:340
+msgid "Bottom on Mobile device"
+msgstr ""
+
+#: src/blocks/_pro/slider/index.js:21
+msgid "Slider"
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:54
@@ -995,7 +1010,7 @@ msgstr ""
 
 #: src/blocks/balloon/edit.js:168
 #: src/extensions/core/image/style.js:15
-#: src/extensions/core/table/style.js:7
+#: src/extensions/core/table/style.js:12
 msgid "Border"
 msgstr ""
 
@@ -1198,11 +1213,6 @@ msgstr ""
 
 #: src/blocks/button/edit.js:108
 msgid "Button Position:"
-msgstr ""
-
-#: src/blocks/button/edit.js:129
-#: src/components/display-items-control/index.js:125
-msgid "Center"
 msgstr ""
 
 #: src/blocks/button/edit.js:149
@@ -1917,6 +1927,7 @@ msgid "Stitch"
 msgstr ""
 
 #: src/extensions/core/group/style.js:126
+#: src/extensions/core/table/style.js:7
 msgid "Border Top Bottom"
 msgstr ""
 
@@ -2033,7 +2044,7 @@ msgstr ""
 msgid "List Icon Color"
 msgstr ""
 
-#: src/extensions/core/table/style.js:12
+#: src/extensions/core/table/style.js:17
 msgid "Border / Stripes"
 msgstr ""
 

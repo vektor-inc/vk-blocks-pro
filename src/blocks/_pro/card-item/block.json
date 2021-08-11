@@ -106,6 +106,8 @@
 			"attribute": "rel"
 		}
 	},
+	"description": "A single item in a card block.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	},

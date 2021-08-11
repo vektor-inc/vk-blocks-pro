@@ -3183,3 +3183,188 @@ msgstr ""
 
 #~ msgid "Width Setting"
 #~ msgstr "幅設定"
+
+#: src/blocks/alert/block.json
+msgctxt "block description"
+msgid "A colored box with four statuses, including annotations and alerts."
+msgstr "注釈や注意など4つのステータスがある色付きのボックスです。"
+
+#: src/blocks/border-box/block.json
+msgctxt "block description"
+msgid "This is a border box where you can place headings to attract attention."
+msgstr "見出しを配置でき注目されやすい枠線ボックスです。"
+
+#: src/blocks/balloon/block.json
+msgctxt "block description"
+msgid "These speech balloons are perfect for recreating conversations."
+msgstr "会話の再現などに最適な吹き出しです。"
+
+#: src/blocks/button/block.json
+msgctxt "block description"
+msgid "A button link that can display icons before and after."
+msgstr "前後にアイコンを表示できるボタンリンクです。"
+
+#: src/blocks/faq/block.json
+msgctxt "block description"
+msgid "Displays a combination of questions and answers."
+msgstr "質問と回答を組み合わせて表示します。"
+
+#: src/blocks/faq2-a/block.json
+msgctxt "block description"
+msgid "Answer area where you can add blocks freely."
+msgstr "自由にブロックを追加できる回答エリアです。"
+
+#: src/blocks/faq2-q/block.json
+msgctxt "block description"
+msgid "Question area where you can freely add blocks."
+msgstr "自由にブロックを追加できる質問エリアです。"
+
+#: src/blocks/faq2/block.json
+msgctxt "block description"
+msgid "It displays a combination of questions and answers. You can freely add blocks to the question area as well."
+msgstr "質問と回答を組み合わせて表示します。質問エリアにも自由にブロックを追加できます。"
+
+#: src/blocks/flow/block.json
+msgctxt "block description"
+msgid "Displays a sequential description in time series."
+msgstr "時系列で順を追った説明を表示します。"
+
+#: src/blocks/heading/block.json
+msgctxt "block description"
+msgid "This is a heading that allows you to set text size, subtext, icon, and margin."
+msgstr "文字サイズ,サブテキスト,アイコン,余白が設定できる見出しです。"
+
+#: src/blocks/page-content/block.json
+msgctxt "block description"
+msgid "Displays the body content of the specified parent page."
+msgstr "指定した基準ページの本文内容を表示します。"
+
+#: src/blocks/pr-blocks/block.json
+msgctxt "block description"
+msgid "This is a PR block where you can place images and icon."
+msgstr "画像,アイコンの配置ができるPRブロックです。"
+
+#: src/blocks/pr-content/block.json
+msgctxt "block description"
+msgid "This is PR content where you can place images, headlines, text, and buttons."
+msgstr "画像,見出し,テキスト,ボタンが配置できるPRコンテンツです。"
+
+#: src/blocks/spacer/block.json
+msgctxt "block description"
+msgid "Use responsive spacers to get the margins right."
+msgstr "レスポンシブに対応したスペーサーで余白を適切に取ります。"
+
+#: src/blocks/staff/block.json
+msgctxt "block description"
+msgid "Used for staff introduction, company introduction, school introduction, menu, etc."
+msgstr "スタッフ紹介,会社紹介,スクール紹介,メニューなどで利用します。"
+
+#: src/blocks/_pro/accordion-target/block.json
+msgctxt "block description"
+msgid "This is the content area where you can add blocks freely."
+msgstr "コンテンツが長い時にコンテンツを折りたたんで隠して表示します。"
+
+#: src/blocks/_pro/accordion-trigger/block.json
+msgctxt "block description"
+msgid "This is the title area where you can freely add blocks."
+msgstr "自由にブロックを追加できるタイトルエリアです。"
+
+#: src/blocks/_pro/accordion/block.json
+msgctxt "block description"
+msgid "Collapses and hides content when the content is long."
+msgstr "自由にブロックを追加できるコンテンツエリアです。"
+
+#: src/blocks/_pro/animation/block.json
+msgctxt "block description"
+msgid "Add animation to elements when scrolling the page."
+msgstr "ページをスクロールした時に要素に動きを加えます。"
+
+#: src/blocks/_pro/card-item/block.json
+msgctxt "block description"
+msgid "A single item in a card block."
+msgstr "アイコンカード内の１つのアイテムです。"
+
+#: src/blocks/_pro/card/block.json
+msgctxt "block description"
+msgid "A card where you can place images, headings, text, and links."
+msgstr "画像,見出し,テキスト,リンクが配置できるカードです。"
+
+#: src/blocks/_pro/child-page/block.json
+msgctxt "block description"
+msgid "When a parent page is specified, a list of its child pages will be displayed."
+msgstr "親となる固定ページを指定するとその子ページの一覧を表示します。"
+
+#: src/blocks/_pro/grid-column-item/block.json
+msgctxt "block description"
+msgid "One item in a grit column block."
+msgstr "グリットカラムブロック内の1つのアイテムです。"
+
+#: src/blocks/_pro/grid-column/block.json
+msgctxt "block description"
+msgid "Set the number of columns to be displayed for each screen size."
+msgstr "画面サイズ毎にカラム数を設定して表示させます。"
+
+#: src/blocks/_pro/icon-card-item/block.json
+msgctxt "block description"
+msgid "This is one item in an icon card."
+msgstr "アイコンカード内の１つのアイテムです。"
+
+#: src/blocks/_pro/icon-card/block.json
+msgctxt "block description"
+msgid "Display card with icons, headings, text, and links."
+msgstr "アイコン,見出し,テキスト,リンクを設定してカードを表示します。"
+
+#: src/blocks/_pro/outer/block.json
+msgctxt "block description"
+msgid "Set the background image, color, and border to show the layout and divisions."
+msgstr "背景の画像や色,枠線の設定しレイアウトや区切りを表示します。"
+
+#: src/blocks/_pro/post-list/block.json
+msgctxt "block description"
+msgid "Displays the list of posts by setting the post type, classification, and number of posts to display."
+msgstr "投稿タイプ,分類,表示件数が設定して投稿リストを表示します。"
+
+#: src/blocks/_pro/select-post-list-item/block.json
+msgctxt "block description"
+msgid "A single item in the select post list."
+msgstr "選択投稿リスト内の１つのアイテムです。"
+
+#: src/blocks/_pro/select-post-list/block.json
+msgctxt "block description"
+msgid "Displays an arbitrarily specified page with the layout of the posting list."
+msgstr "任意に指定したページを投稿リストのレイアウトで表示します。"
+
+#: src/blocks/_pro/slider-item/block.json
+msgctxt "block description"
+msgid "This is one item in the slider."
+msgstr "スライダー内の１つのアイテムです。"
+
+#: src/blocks/_pro/slider/block.json
+msgctxt "block description"
+msgid "This slider allows you to place various items.Slider is do not move in edit screen."
+msgstr "様々なアイテムを配置できるスライダーです。編集画面では動かないので公開画面でプレビューしてください。"
+
+#: src/blocks/_pro/step-item/block.json
+msgctxt "block description"
+msgid "This element sets the icon, color, and style of the step mark."
+msgstr "ステップマークのアイコン、色、スタイルを設定する要素です。"
+
+#: src/blocks/_pro/step/block.json
+msgctxt "block description"
+msgid "Set and display step marks, which are useful when explaining the order."
+msgstr "順番を説明する時に便利でステップマークを設定し表示します。"
+
+#: src/blocks/_pro/table-of-contents-new/block.json
+msgctxt "block description"
+msgid "This is a table of contents that is automatically generated according to the headings when added."
+msgstr "追加すると見出しに合わせて自動で生成される目次です。"
+
+#: src/blocks/_pro/timeline-item/block.json
+msgctxt "block description"
+msgid "This element sets the label, color, and style of the timeline."
+msgstr "タイムラインのラベル、色、スタイルを設定する要素です。"
+
+#: src/blocks/_pro/timeline/block.json
+msgctxt "block description"
+msgid "Displays a simple schedule and other information that is useful for explaining the order."
+msgstr "順番を説明する時に便利でシンプルなスケジュールなどを表示します。"

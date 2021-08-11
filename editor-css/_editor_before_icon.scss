@@ -1,3 +1,10 @@
+.vk_icon{
+	&.wp-block{
+		margin-top:0;
+		margin-bottom:0;
+	}
+}
+
 // iconブロックのサイドバー調整CSS (サイズと余白の設定)
 .components-panel__body .vk_icon_custombox {
 	display: inline-flex;

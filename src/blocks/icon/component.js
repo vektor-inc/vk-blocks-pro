@@ -51,8 +51,10 @@ export class VKBIcon extends Component {
 		) {
 			borderStyle.width =
 				'calc(' +
-				(iconSize + iconSizeUnit) + ' + ' +
-				((iconMargin * 2) + iconMarginUnit) + ')';
+				(iconSize + iconSizeUnit) +
+				' + ' +
+				(iconMargin * 2 + iconMarginUnit) +
+				')';
 			borderStyle.height = borderStyle.width;
 		}
 

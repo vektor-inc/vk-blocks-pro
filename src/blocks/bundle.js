@@ -24,6 +24,7 @@ import * as faq2a from './faq2-a';
 import * as faq2q from './faq2-q';
 import * as flow from './flow';
 import * as heading from './heading';
+import * as icon from './icon';
 import * as pageContent from './page-content';
 import * as prBlocks from './pr-blocks';
 import * as prContent from './pr-content';
@@ -55,6 +56,7 @@ const vkBlocks = [
 	faq2q,
 	flow,
 	heading,
+	icon,
 	pageContent,
 	prBlocks,
 	prContent,
@@ -71,7 +73,6 @@ export const __getVKBlocks = () => vkBlocks.concat(vkblocksPro);
  * Function to register an individual block.
  *
  * @param {Object} block The block to be registered.
- *
  */
 const registerBlock = (block) => {
 	if (!block) {

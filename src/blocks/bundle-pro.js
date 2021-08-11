@@ -12,7 +12,6 @@ import * as gridColumn from './_pro/grid-column';
 import * as gridColumnItem from './_pro/grid-column-item';
 import * as iconCard from './_pro/icon-card';
 import * as iconCardItem from './_pro/icon-card-item';
-import * as icon from './_pro/icon';
 import * as outer from './_pro/outer';
 import * as postList from './_pro/post-list';
 import * as selectPostList from './_pro/select-post-list';
@@ -37,7 +36,6 @@ const vkblocksPro = [
 	gridColumnItem,
 	iconCard,
 	iconCardItem,
-	icon,
 	outer,
 	postList,
 	selectPostList,

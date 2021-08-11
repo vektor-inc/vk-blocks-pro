@@ -65,6 +65,7 @@ e.g.
 
 [ Improvement ][ Slider(Pro) ] add navigation position
 [ Specification Change ] VK Components Update ( can be customize title by hook )
+[ Specification Change ][ Slider(Pro) ] If set slide type fade that disable slide step number
 [ Bug fix ][ Slider(Pro) ] Fix bug that to be same id under case of copy slide item 
 [ Bug fix ][ Social icon ] Fix css in grid block
 

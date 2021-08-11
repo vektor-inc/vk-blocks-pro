@@ -98,6 +98,47 @@ export default function SliderEdit(props) {
 		slidesPerGroup,
 	};
 
+	// 複数枚表示設定
+	let multiImageSetting = '';
+	if (effect !== 'fade') {
+		multiImageSetting = (
+			<PanelBody
+				title={__('Multi-image Display Setting', 'vk-blocks')}
+				initialOpen={false}
+			>
+				<BaseControl
+					label={__('Display Multi Images per View', 'vk-blocks')}
+					id={`vk_slider-MultiImage`}
+				>
+					<TextControl
+						label={__('Images per View', 'vk-blocks')}
+						value={slidesPerView}
+						onChange={(value) =>
+							setAttributes({
+								slidesPerView: parseInt(value, 10),
+							})
+						}
+						type={'number'}
+					/>
+				</BaseControl>
+				<BaseControl
+					label={__('Move Images per Slide', 'vk-blocks')}
+					id={`vk_slider-MultiImage`}
+				>
+					<TextControl
+						value={slidesPerGroup}
+						onChange={(value) =>
+							setAttributes({
+								slidesPerGroup: parseInt(value, 10),
+							})
+						}
+						type={'number'}
+					/>
+				</BaseControl>
+			</PanelBody>
+		);
+	}
+
 	// ページネーションの HTML
 	let pagination_html = '';
 	if (pagination !== 'hide') {
@@ -290,35 +331,6 @@ export default function SliderEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Display Multi Images per View', 'vk-blocks')}
-						id={`vk_slider-MultiImage`}
-					>
-						<TextControl
-							label={__('Images per View', 'vk-blocks')}
-							value={slidesPerView}
-							onChange={(value) =>
-								setAttributes({
-									slidesPerView: parseInt(value, 10),
-								})
-							}
-							type={'number'}
-						/>
-					</BaseControl>
-					<BaseControl
-						label={__('Move Images per Slide', 'vk-blocks')}
-						id={`vk_slider-MultiImage`}
-					>
-						<TextControl
-							value={slidesPerGroup}
-							onChange={(value) =>
-								setAttributes({
-									slidesPerGroup: parseInt(value, 10),
-								})
-							}
-							type={'number'}
-						/>
-					</BaseControl>
-					<BaseControl
 						label={__('Pagination Type', 'vk-blocks')}
 						id={`vk_slider-displayPagination`}
 					>
@@ -372,6 +384,7 @@ export default function SliderEdit(props) {
 						/>
 					</BaseControl>
 				</PanelBody>
+				{multiImageSetting}
 			</InspectorControls>
 			<div {...blockProps} data-vkb-slider={JSON.stringify(sliderData)}>
 				<div className={`swiper-wrapper`}>

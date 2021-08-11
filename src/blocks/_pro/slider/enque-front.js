@@ -44,16 +44,18 @@ document.defaultView.addEventListener('load', function () {
 				`;
 			}
 
-			if (attributes.slidesPerView) {
-				SwiperSetting += `
+			if (attributes.effect !== 'fade') {
+				if (attributes.slidesPerView) {
+					SwiperSetting += `
 				slidesPerView: ${attributes.slidesPerView},
-				`;
-			}
+					`;
+				}
 
-			if (attributes.slidesPerGroup) {
-				SwiperSetting += `
+				if (attributes.slidesPerGroup) {
+					SwiperSetting += `
 				slidesPerGroup: ${attributes.slidesPerGroup},
-				`;
+					`;
+				}
 			}
 
 			if (attributes.loop) {

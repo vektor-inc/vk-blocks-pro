@@ -17,8 +17,13 @@
 		display: unset;
 		flex-direction:unset;
 		flex-wrap: unset;
+		//inner-blocksの中のinner-blocksがソーシャルアイコンブロックだった場合
+		&.wp-block-social-links {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
 	}
-
 
 	// colの余分な余白の削除など
 	// col内に入れたブロックにまで反映されないように & > 指定

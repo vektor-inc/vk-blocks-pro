@@ -174,7 +174,7 @@ export default function IconEdit(props) {
 						/>
 					</BaseControl>
 					<p className={`mt-0 mb-2`}>{__('Style', 'vk-blocks')}</p>
-					<ButtonGroup className={`mb-2`}>
+					<ButtonGroup className={`mb-3`}>
 						<Button
 							isSmall
 							isPrimary={iconType === '0'}
@@ -200,6 +200,21 @@ export default function IconEdit(props) {
 							{__('Icon only', 'vk-blocks')}
 						</Button>
 					</ButtonGroup>
+
+					<TextControl
+						label={__('Link URL', 'vk-blocks')}
+						value={iconUrl}
+						onChange={(value) => setAttributes({ iconUrl: value })}
+					/>
+					<CheckboxControl
+						label={__('Open link new tab.', 'vk-blocks')}
+						checked={iconTarget}
+						onChange={(checked) =>
+							setAttributes({ iconTarget: checked })
+						}
+					/>
+				</PanelBody>
+				<PanelBody title={__('Color', 'vk-blocks')}>
 					<BaseControl>
 						<ColorPalette
 							value={iconColor}
@@ -213,18 +228,6 @@ export default function IconEdit(props) {
 							}}
 						/>
 					</BaseControl>
-					<TextControl
-						label={__('Link URL', 'vk-blocks')}
-						value={iconUrl}
-						onChange={(value) => setAttributes({ iconUrl: value })}
-					/>
-					<CheckboxControl
-						label={__('Open link new tab.', 'vk-blocks')}
-						checked={iconTarget}
-						onChange={(checked) =>
-							setAttributes({ iconTarget: checked })
-						}
-					/>
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>

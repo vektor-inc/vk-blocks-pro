@@ -160,6 +160,7 @@ function vkblocks_blocks_assets() {
 			'faq2-q',
 			'flow',
 			'heading',
+			'icon',
 			'page-content',
 			'pr-blocks',
 			'pr-content',

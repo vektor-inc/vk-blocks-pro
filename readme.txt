@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
 Tested up to: 5.8.0
-Stable tag: 1.11.4
+Stable tag: 1.12.0
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -62,6 +62,14 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 1.12.0 =
+[ Add New Block ] Icon Block
+[ Improvement ][ Slider(Pro) ] add navigation position
+[ Specification Change ] VK Components Update ( can be customize title by hook )
+[ Specification Change ][ Slider(Pro) ] If set slide type fade that disable slide step number
+[ Bug fix ][ Slider(Pro) ] Fix bug that to be same id under case of copy slide item 
+[ Bug fix ][ Social icon ] Fix css in grid block
 
 = 1.11.4 =
 [ Bugfix ][ Step(Pro) ] Fixed icon position

@@ -8,7 +8,7 @@
  */
 
 // サーバーサイドレンダリングスクリプトを読み込み.
-require_once dirname( __FILE__ ) . '/view/post-list.php';
+require_once dirname( __FILE__ ) . '/view/class-vk-blocks-postlist.php';
 require_once dirname( __FILE__ ) . '/view/responsive-br.php';
 require_once dirname( __FILE__ ) . '/style/balloon.php';
 
@@ -83,11 +83,11 @@ function vk_blocks_get_options() {
  * @param string $value value.
  */
 function vk_blocks_get_selected( $current, $value ) {
-	$selected = '';
+	$vk_blocks_selected = '';
 	if ( $current === $value ) {
-		$selected = ' selected';
+		$vk_blocks_selected = ' selected';
 	}
-	return $selected;
+	return $vk_blocks_selected;
 }
 /**
  * VK Blocks The Selected

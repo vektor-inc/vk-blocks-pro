@@ -30,12 +30,12 @@ $vk_blocks_options    = vk_blocks_get_options();
 			<select name="vk_blocks_options[margin_unit]">
 			<?php
 			foreach ( $margin_unit_array as $margin_unit ) :
-					$selected = '';
+					$vk_blocks_selected = '';
 				if ( $vk_blocks_options['margin_unit'] === $margin_unit['value'] ) {
-					$selected = ' selected';
+					$vk_blocks_selected = ' selected';
 				}
 				?>
-				<option value="<?php echo $margin_unit['value']; ?>"<?php echo $selected; ?>>
+				<option value="<?php echo $margin_unit['value']; ?>"<?php echo $vk_blocks_selected; ?>>
 					<?php echo $margin_unit['label']; ?>
 				</option>
 			<?php endforeach; ?>

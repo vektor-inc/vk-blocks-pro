@@ -1,4 +1,9 @@
 <?php
+/**
+ * VK Blocks - Balloon Blocks
+ *
+ * @package vk-blocks
+ */
 
 /**
  * Registers the `vk-blocks/balloon` block.
@@ -16,4 +21,3 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 	}
 	add_action( 'init', 'register_block_vk_balloon', 99 );
 }
-

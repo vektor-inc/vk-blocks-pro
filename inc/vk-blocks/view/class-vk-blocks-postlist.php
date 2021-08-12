@@ -1,12 +1,21 @@
 <?php
+/**
+ * Class VK Blocks PostList
+ *
+ * @package vk_blocks
+ */
 
-class VkBlocksPostList {
+/**
+ * VK Blocks PostList
+ */
+class Vk_Blocks_PostList {
 
 	/**
 	 * Return html to display latest post list.
 	 *
-	 * @param $name
-	 * @param $attributes
+	 * @param array  $attributes attributes.
+	 * @param object $wp_query wp_query.
+	 * @param array  $options_loop options loop.
 	 *
 	 * @return string
 	 */
@@ -15,10 +24,9 @@ class VkBlocksPostList {
 			$options_loop['class_loop_outer'] .= ' ' . $attributes['className'];
 		}
 
-		if ( ! isset( $wp_query ) || $wp_query === false || $wp_query === 'false' || $wp_query->posts === array() ) {
-			return self::renderNoPost();
+		if ( ! isset( $wp_query ) || false === $wp_query || 'false' === $wp_query || empty( $wp_query->posts ) ) {
+			return self::render_no_post();
 		}
-
 		$options = array(
 			'layout'                     => esc_html( $attributes['layout'] ),
 			'slug'                       => '',
@@ -63,18 +71,28 @@ class VkBlocksPostList {
 		return $elm;
 	}
 
-	private function isArrayExist( $array ) {
+	/**
+	 * Is Array Exist
+	 *
+	 * @param array $array array.
+	 */
+	private function is_array_exist( $array ) {
 		if ( ! $array ) {
 			return false;
 		}
 		return true;
 	}
 
-	private static function format_terms( $isCheckedTerms ) {
+	/**
+	 * Format Terms
+	 *
+	 * @param array $is_checked_terms checked terms.
+	 */
+	private static function format_terms( $is_checked_terms ) {
 		$return             = array();
 		$return['relation'] = 'OR';
 
-		foreach ( $isCheckedTerms as $key => $value ) {
+		foreach ( $is_checked_terms as $key => $value ) {
 			$term      = get_term( $value );
 			$new_array = array(
 				'taxonomy' => isset( $term->taxonomy ) ? $term->taxonomy : $key,
@@ -86,12 +104,17 @@ class VkBlocksPostList {
 		return $return;
 	}
 
+	/**
+	 * Get Loop Query
+	 *
+	 * @param array $attributes attributes.
+	 */
 	public static function get_loop_query( $attributes ) {
-		$isCheckedPostType = json_decode( $attributes['isCheckedPostType'], true );
+		$is_checked_post_type = json_decode( $attributes['isCheckedPostType'], true );
 
-		$isCheckedTerms = json_decode( $attributes['isCheckedTerms'], true );
+		$is_checked_terms = json_decode( $attributes['isCheckedTerms'], true );
 
-		if ( empty( $isCheckedPostType ) ) {
+		if ( empty( $is_checked_post_type ) ) {
 			return false;
 		}
 
@@ -105,8 +128,8 @@ class VkBlocksPostList {
 		}
 
 		$args = array(
-			'post_type'      => $isCheckedPostType,
-			'tax_query'      => self::format_terms( $isCheckedTerms ),
+			'post_type'      => $is_checked_post_type,
+			'tax_query'      => self::format_terms( $is_checked_terms ),
 			'paged'          => 1,
 			// 0で全件取得
 			'posts_per_page' => intval( $attributes['numberPosts'] ),
@@ -118,11 +141,16 @@ class VkBlocksPostList {
 		return new WP_Query( $args );
 	}
 
+	/**
+	 * Get Loop Query Child
+	 *
+	 * @param array $attributes attributes.
+	 */
 	public static function get_loop_query_child( $attributes ) {
 
 		// ParentIdを指定
-		if ( isset( $attributes['selectId'] ) && $attributes['selectId'] !== 'false' ) {
-			$selectId = ( $attributes['selectId'] > 0 ) ? $attributes['selectId'] : get_the_ID();
+		if ( isset( $attributes['selectId'] ) && 'false' !== $attributes['selectId'] ) {
+			$select_id = ( $attributes['selectId'] > 0 ) ? $attributes['selectId'] : get_the_ID();
 
 			$post__not_in = array();
 			if ( ! empty( $attributes['selfIgnore'] ) ) {
@@ -141,7 +169,7 @@ class VkBlocksPostList {
 				'posts_per_page' => -1,
 				'order'          => 'ASC',
 				'orderby'        => 'menu_order',
-				'post_parent'    => intval( $selectId ),
+				'post_parent'    => intval( $select_id ),
 				'offset'         => $offset,
 				'post__not_in'   => $post__not_in,
 			);
@@ -151,7 +179,10 @@ class VkBlocksPostList {
 		}
 	}
 
-	public static function renderNoPost() {
+	/**
+	 * Render No Posts
+	 */
+	public static function render_no_post() {
 		return '<div class="alert alert-warning text-center">' . __( 'No Post is selected', 'vk-blocks' ) . '</div>';
 	}
 

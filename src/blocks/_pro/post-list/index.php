@@ -6,10 +6,10 @@
 if ( function_exists( 'register_block_type_from_metadata' ) ) {
 
 	function vk_post_list_render_callback( $attributes ) {
-		$wp_query     = VkBlocksPostList::get_loop_query( $attributes );
+		$wp_query     = Vk_Blocks_PostList::get_loop_query( $attributes );
 		$options_loop = array( 'class_loop_outer' => 'vk_postList' );
 
-		return VkBlocksPostList::render_post_list( $attributes, $wp_query, $options_loop );
+		return Vk_Blocks_PostList::render_post_list( $attributes, $wp_query, $options_loop );
 	}
 
 	function register_block_vkb_post_list() {

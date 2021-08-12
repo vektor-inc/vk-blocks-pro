@@ -9,7 +9,11 @@
 require_once dirname( __FILE__ ) . '/admin-pro/admin-pro.php';
 
 /**
- * デフォルトオプション
+ * VK Blocks Pro Get Options
+ *
+ * デフォルトのオプション
+ *
+ * @param array $defaults defaults.
  */
 function vk_blocks_pro_get_options( $defaults ) {
 	$defaults = array(

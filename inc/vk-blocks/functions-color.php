@@ -1,25 +1,21 @@
 <?php
-/*
- 色の出力 */
-/*
-色の出力用CSS
-
-★ 色を出力するとCSSファイル側も含めて多くなって速度低下を引き起こすため結局これは読み込んでいない。
-
-★ もし使う場合
-
-各CSSを普通にcssファイルから読み込むようにっ変更してあるので、
-ここに記述のCSSはほとんど削除する事ができる。
-※ ただ、こっちは削除できてもCSSファイル側の記述が増え湯ので保留している。
-
+/**
+ * 色の出力
+ *
+ * 色を出力するとCSSファイル側も含めて多くなって速度低下を引き起こすため結局これは読み込んでいない。
+ * もし使う場合
+ * 各CSSを普通にcssファイルから読み込むようにっ変更してあるので、
+ * ここに記述のCSSはほとんど削除する事ができる。
+ * ※ ただ、こっちは削除できてもCSSファイル側の記述が増え湯ので保留している。
+ *
+ * @package vk-blocks
  */
-/*
--------------------------------------------*/
-/*
-/*-------------------------------------------*/
 
-function lightning_print_css_vk_heading_style() {
-	$dynamic_css = '';
+/**
+ * Lightning Print CSS VK Heading Style
+ */
+function vk_blocks_lightning_print_css_vk_heading_style() {
+	$dynamc_css = '';
 
 	$options = get_option( 'lightning_theme_options' );
 	if ( isset( $options['color_key'] ) && isset( $options['color_key_dark'] ) ) {
@@ -963,7 +959,7 @@ function lightning_print_css_vk_heading_style() {
 		// Change multiple spaces to single space
 		$dynamic_css = preg_replace( '/\s(?=\s)/', '', $dynamic_css );
 		wp_add_inline_style( 'lightning-design-style', $dynamic_css );
-	} // if ( isset($options['color_key'] && isset($options['color_key_dark'] ) {
+	}
 }
 
 add_action( 'wp_head', 'lightning_print_css_vk_heading_style', 5 );

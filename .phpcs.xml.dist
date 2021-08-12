@@ -62,7 +62,6 @@
 	<config name="minimum_supported_wp_version" value="4.6"/>
 
 	<rule ref="WordPress">
-		<exclude name="WordPress.VIP"/>
 		<!-- array()を[]で書いてもOKとする -->
 		<exclude name="Generic.Arrays.DisallowShortArraySyntax.Found"/>
 		<!-- 一行コメントの末尾.のチェックを外す -->

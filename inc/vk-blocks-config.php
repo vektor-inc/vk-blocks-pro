@@ -55,8 +55,4 @@ if ( ! function_exists( 'vk_blocks_active' ) ) {
 	if ( file_exists( plugin_dir_path( __FILE__ ) . 'vk-blocks-pro-config.php' ) ) {
 		require_once plugin_dir_path( __FILE__ ) . 'vk-blocks-pro-config.php';
 	}
-
-	/*
-	 出力するCSSが多すぎるので一旦コメントアウト */
-	// require_once( 'vk-blocks/functions-color.php' );
 }

@@ -1,9 +1,9 @@
 <?php
-/*
-  Load modules
--------------------------------------------*/
-// このファイルは基本 /vk-blocks/vk-blocks-functions.phpを読み込むファイルだけ
-// vk-blocks
+/**
+ * Load VK Blocks Files
+ *
+ * @package vk-blocks
+ */
 
 if ( ! function_exists( 'vk_blocks_active' ) ) {
 
@@ -45,13 +45,11 @@ if ( ! function_exists( 'vk_blocks_active' ) ) {
 	require_once plugin_dir_path( __FILE__ ) . 'admin-notices.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/vk-blocks-functions.php';
 
-
-	$path = plugin_dir_path( __FILE__ ) . 'vk-blocks/App/RestAPI/BlockMeta/EntryPoint.php';
-	require_once $path;
-	// BlockMeta用のAPIルートを設定
+	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/App/RestAPI/BlockMeta/EntryPoint.php';
+	// BlockMeta用のAPIルートを設定.
 	new EntryPoint();
 
-	// プロ版の設定ファイルを読み込み
+	// プロ版の設定ファイルを読み込み.
 	if ( file_exists( plugin_dir_path( __FILE__ ) . 'vk-blocks-pro-config.php' ) ) {
 		require_once plugin_dir_path( __FILE__ ) . 'vk-blocks-pro-config.php';
 	}

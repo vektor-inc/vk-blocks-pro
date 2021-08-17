@@ -13,6 +13,9 @@
 // Do not load directly.
 defined( 'ABSPATH' ) || die();
 
+// from WordPress 5.8
+add_filter( 'should_load_separate_core_block_assets', '__return_true' );
+
 if ( ! function_exists( 'vkblocks_get_version' ) ) {
 	function vkblocks_get_version() {
 		$data = get_file_data( __FILE__, array( 'version' => 'Version' ) );

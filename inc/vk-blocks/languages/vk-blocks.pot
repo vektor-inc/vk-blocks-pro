@@ -2,16 +2,16 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.11.4\n"
+"Project-Id-Version: VK Blocks Pro 1.13.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-08-11T17:28:47+00:00\n"
+"POT-Creation-Date: 2021-08-17T03:04:19+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
+"X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
 
 #: src/blocks/_pro/accordion-target/index.js:16
@@ -272,8 +272,7 @@ msgstr ""
 
 #: src/blocks/_pro/card/index.js:25
 #: src/components/column-layout-control/index.js:26
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:446
-#: inc/vk-components/package/class-vk-component-posts.php:490
+#: inc/vk-components/package/class-vk-component-posts.php:555
 msgid "Card"
 msgstr ""
 
@@ -453,7 +452,6 @@ msgid "Repeat"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:263
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:22
 msgid "Cover"
 msgstr ""
 
@@ -861,8 +859,6 @@ msgstr ""
 
 #: src/blocks/_pro/slider/edit.js:366
 #: src/blocks/heading/edit.js:344
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-block-patterns.php:10
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-block-patterns.php:11
 msgid "Hide"
 msgstr ""
 
@@ -898,9 +894,6 @@ msgstr ""
 #: src/blocks/border-box/edit.js:63
 #: src/blocks/icon/edit.js:217
 #: src/blocks/staff/edit.js:139
-#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:41
-#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:56
-#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:130
 #: inc/term-color/package/class.term-color.php:41
 #: inc/term-color/package/class.term-color.php:56
 #: inc/term-color/package/class.term-color.php:130
@@ -1489,8 +1482,6 @@ msgid "Sub Text Settings"
 msgstr ""
 
 #: src/blocks/heading/edit.js:340
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-block-patterns.php:11
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-block-patterns.php:12
 msgid "Display"
 msgstr ""
 
@@ -1791,8 +1782,7 @@ msgid "Card (Horizontal)"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:42
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:458
-#: inc/vk-components/package/class-vk-component-posts.php:502
+#: inc/vk-components/package/class-vk-component-posts.php:567
 msgid "Media"
 msgstr ""
 
@@ -2131,7 +2121,6 @@ msgid "Select Icon"
 msgstr ""
 
 #. Plugin Name of the plugin
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:15
 msgid "VK Blocks Pro"
 msgstr ""
 
@@ -2151,115 +2140,89 @@ msgstr ""
 msgid "https://vektor-inc.co.jp"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/admin-notices.php:24
 #: inc/admin-notices.php:24
 msgid "We've released VK Blocks Pro!"
 msgstr ""
 
 #. translators: 1: opening a tag, 2: closing a tag
-#: dist/vk-blocks-pro/inc/admin-notices.php:31
 #: inc/admin-notices.php:31
 msgid "Thank you for using VK Blocks. We've released VK Blocks Pro. It has more custom blocks to build web site more easily. If you are interested in VK Blocks Pro, Please read %1$s this post %2$s for more details."
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/admin-notices.php:35
-#: dist/vk-blocks-pro/inc/admin-notices.php:41
 #: inc/admin-notices.php:35
 #: inc/admin-notices.php:41
 msgid "https://www.vektor-inc.co.jp/service/wordpress-plugins/vk-blocks/"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/admin-notices.php:42
 #: inc/admin-notices.php:42
 msgid "See more"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/admin-notices.php:45
 #: inc/admin-notices.php:45
 msgid "Dismiss this notice"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:42
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:57
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:42
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:57
 msgid "Not recommended"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:89
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:91
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:89
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:91
 msgid "Ex ) "
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:200
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:200
 msgid "Font Awesome"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:223
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:223
 msgid "Font Awesome Version"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:226
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:226
 msgid "4.7 will be abolished in the near future."
 msgstr ""
 
 #. translators:
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:147
 #: inc/template-tags/package/template-tags.php:147
 msgid "Author: %s"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:149
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:232
 #: inc/template-tags/package/template-tags.php:149
 #: inc/template-tags/package/template-tags.php:232
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:151
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:237
 #: inc/template-tags/package/template-tags.php:151
 #: inc/template-tags/package/template-tags.php:237
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:153
 #: inc/template-tags/package/template-tags.php:153
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:188
 #: inc/template-tags/package/template-tags.php:188
 msgid "Archives"
 msgstr ""
 
 #. translators:
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:220
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:228
 #: inc/template-tags/package/template-tags.php:220
 #: inc/template-tags/package/template-tags.php:228
 msgid "About %s"
 msgstr ""
 
 #. translators:
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:234
 #: inc/template-tags/package/template-tags.php:234
 msgctxt "Yearly archive description"
 msgid "Article of %s."
 msgstr ""
 
 #. translators:
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:239
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:245
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:250
 #: inc/template-tags/package/template-tags.php:239
 #: inc/template-tags/package/template-tags.php:245
 #: inc/template-tags/package/template-tags.php:250
@@ -2268,465 +2231,25 @@ msgid "Article of %s."
 msgstr ""
 
 #. translators:
-#: dist/vk-blocks-pro/inc/template-tags/package/template-tags.php:268
 #: inc/template-tags/package/template-tags.php:268
 msgid "Page of %s"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:77
 #: inc/tgm-plugin-activation/tgm-config.php:77
 msgid "Install Required Plugins"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:78
 #: inc/tgm-plugin-activation/tgm-config.php:78
 msgid "Install Plugins"
 msgstr ""
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:80
 #: inc/tgm-plugin-activation/tgm-config.php:80
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:81
 #: inc/tgm-plugin-activation/tgm-config.php:81
 msgid "Something went wrong with the plugin API."
-msgstr ""
-
-#. translators:
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:83
-msgid "This theme requires the following plugin: %1$s."
-msgid_plural "This theme requires the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:89
-msgid "This theme recommends the following plugin: %1$s.<br>Many additional functions are available for free."
-msgid_plural "This theme recommends the following plugins: %1$s.<br>Many additional functions are available for free."
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:95
-#: inc/tgm-plugin-activation/tgm-config.php:95
-msgid "Sorry, but you do not have the correct permissions to install the %1$s plugin."
-msgid_plural "Sorry, but you do not have the correct permissions to install the %1$s plugins."
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:101
-msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
-msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:107
-#: inc/tgm-plugin-activation/tgm-config.php:107
-msgid "There is an update available for: %1$s."
-msgid_plural "There are updates available for the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:113
-#: inc/tgm-plugin-activation/tgm-config.php:113
-msgid "Sorry, but you do not have the correct permissions to update the %1$s plugin."
-msgid_plural "Sorry, but you do not have the correct permissions to update the %1$s plugins."
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:119
-#: inc/tgm-plugin-activation/tgm-config.php:119
-msgid "The following required plugin is currently inactive: %1$s."
-msgid_plural "The following required plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:125
-#: inc/tgm-plugin-activation/tgm-config.php:125
-msgid "The following recommended plugin is currently inactive: %1$s."
-msgid_plural "The following recommended plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:131
-#: inc/tgm-plugin-activation/tgm-config.php:131
-msgid "Sorry, but you do not have the correct permissions to activate the %1$s plugin."
-msgid_plural "Sorry, but you do not have the correct permissions to activate the %1$s plugins."
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:137
-#: inc/tgm-plugin-activation/tgm-config.php:137
-msgid "Begin installing plugin"
-msgid_plural "Begin installing plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:142
-#: inc/tgm-plugin-activation/tgm-config.php:142
-msgid "Begin updating plugin"
-msgid_plural "Begin updating plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:147
-#: inc/tgm-plugin-activation/tgm-config.php:147
-msgid "Begin activating plugin"
-msgid_plural "Begin activating plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:152
-#: inc/tgm-plugin-activation/tgm-config.php:152
-msgid "Return to Required Plugins Installer"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:153
-#: inc/tgm-plugin-activation/tgm-config.php:153
-msgid "Plugin activated successfully."
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:154
-#: inc/tgm-plugin-activation/tgm-config.php:154
-msgid "The following plugin was activated successfully:"
-msgstr ""
-
-#. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:156
-#: inc/tgm-plugin-activation/tgm-config.php:156
-msgid "No action taken. Plugin %1$s was already active."
-msgstr ""
-
-#. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:158
-#: inc/tgm-plugin-activation/tgm-config.php:158
-msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
-msgstr ""
-
-#. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:160
-#: inc/tgm-plugin-activation/tgm-config.php:160
-msgid "All plugins installed and activated successfully. %1$s"
-msgstr ""
-
-#. translators: %s = dashboard link.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:162
-#: inc/tgm-plugin-activation/tgm-config.php:162
-msgid "Please contact the administrator of this site for help."
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-admin/package/class-vk-admin.php:340
-#: inc/vk-admin/package/class-vk-admin.php:316
-msgid "Sorry, there is no post"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-admin/package/class-vk-admin.php:394
-#: inc/vk-admin/package/class-vk-admin.php:370
-msgid "Vektor WordPress Information"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-block-patterns.php:7
-msgid "VK Blocks Template"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:7
-#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:7
-msgid "Disable accordion"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:11
-#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:11
-msgid "Enable accordion and default open "
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:15
-#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:15
-msgid "Enable accordion and default close "
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:23
-#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:23
-msgid "FAQ Block Setting"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-pro.php:20
-#: inc/vk-blocks-pro/admin-pro/admin-pro.php:20
-msgid "FAQ Setting"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:32
-msgid "Full Wide Title Set"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:42
-msgid "Searvice"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:52
-msgid "About"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:62
-msgid "Icon Card Set"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:72
-msgid "Information ( Text )"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:82
-msgid "Information ( Card )"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:92
-msgid "Feature Posts"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:102
-msgid "Call To Action"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:112
-msgid "Contact"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:122
-msgid "Step set"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:132
-msgid "Border box"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/vk-blocks-pro-template.php:142
-msgid "Slider Template"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:4
-#: inc/vk-blocks/admin/admin-balloon.php:4
-msgid "Balloon Setting"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:5
-#: inc/vk-blocks/admin/admin-balloon.php:5
-msgid "Balloon Border Width Setting"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:15
-#: inc/vk-blocks/admin/admin-balloon.php:15
-msgid "Balloon Image Setting"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:82
-#: inc/vk-blocks/admin/admin-balloon.php:82
-msgid "You can register frequently used icon images for speech bubble blocks."
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:83
-#: inc/vk-blocks/admin/admin-balloon.php:83
-msgid "If you change image or name that please click Save Changes button."
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:109
-#: inc/vk-blocks/admin/admin-balloon.php:109
-msgid "Select"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:112
-#: inc/vk-blocks/admin/admin-balloon.php:112
-msgid "Delete"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:117
-#: inc/vk-blocks/admin/admin-balloon.php:117
-msgid "Balloon Image Name"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-block-patterns.php:5
-msgid "Display Block Template Setting"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-block-patterns.php:8
-msgid "WordPress Block Template"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-css-optimize.php:4
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:93
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:159
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:93
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:159
-msgid "Nothing to do"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-css-optimize.php:8
-msgid "Optimize VK Blocks CSS ( Tree Shaking )"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-css-optimize.php:22
-msgid "CSS Optimize Setting"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:31
-#: inc/vk-blocks/admin/admin.php:32
-msgid "Blocks setting"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:32
-#: inc/vk-blocks/admin/admin.php:33
-msgctxt "label in admin menu"
-msgid "Blocks"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:48
-#: inc/vk-blocks/admin/admin.php:49
-msgid "Blocks Setting"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:54
-#: inc/vk-blocks/admin/admin.php:55
-msgid "Balloon Block Setting"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/blocks/page-content/class-vk-page-content-block.php:122
-#: dist/vk-blocks-pro/src/blocks/page-content/index.php:118
-#: src/blocks/page-content/index.php:118
-msgid "Edit this area"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/load-bootstrap.php:49
-#: inc/vk-blocks/load-bootstrap.php:49
-msgid "VK Blocks Bootstrap Setting"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/load-bootstrap.php:66
-#: inc/vk-blocks/load-bootstrap.php:66
-msgid "Loading Bootstrap4"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/load-bootstrap.php:67
-#: inc/vk-blocks/load-bootstrap.php:67
-msgid "Check here to load Bootstrap4. If your theme or plugins loading Bootstrap4, uncheck here."
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/view/post-list.php:164
-#: inc/vk-blocks/view/post-list.php:164
-msgid "No Post is selected"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:239
-#: inc/vk-blocks/vk-blocks-functions.php:296
-msgid "Blocks"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:249
-#: inc/vk-blocks/vk-blocks-functions.php:306
-msgid "Blocks Layout"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:35
-#: inc/vk-components/package/class-vk-component-posts.php:50
-msgid "Read more"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:37
-#: inc/vk-components/package/class-vk-component-posts.php:52
-msgid "New!!"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:450
-#: inc/vk-components/package/class-vk-component-posts.php:494
-msgid "Card Noborder"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:454
-#: inc/vk-components/package/class-vk-component-posts.php:498
-msgid "Card Horizontal"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:462
-#: inc/vk-components/package/class-vk-component-posts.php:506
-msgctxt "post list type"
-msgid "Text 1 Column"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:47
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:47
-msgid "CSS Optimize ( Speed up ) Settings"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:66
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:66
-msgid "Tree shaking"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:87
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:87
-msgid "Tree shaking activation settings"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:91
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:91
-msgid "Output only the main CSS of the page inline"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:94
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:94
-msgid "Active Tree shaking (Recomend)"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:111
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:111
-msgid "Exclude class of Tree shaking"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:115
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:115
-msgid "If you choose \"Active Tree shaking\" that delete the useless css.If you using active css class that please fill in class name. Ex) btn-active,slide-active,scrolled"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:132
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:132
-msgid "Preload CSS"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:153
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:153
-msgid "Preload CSS activation settings"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:156
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:156
-msgid "Preload css except for critical css"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:160
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:160
-msgid "Active Preload CSS (Recomend)"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:177
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:177
-msgid "Exclude class of Preload CSS"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:181
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:181
-msgid "If you choose \"Active Preload CSS\" that css load timing was changed.If you have any do not want to preload css file that please fill in handle(id) name. Ex) pluginname_a-style,pluginname_b-css"
-msgstr ""
-
-#: dist/vk-blocks-pro/vk-blocks.php:81
-#: vk-blocks.php:81
-msgid "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks Plugin running."
 msgstr ""
 
 #. translators:
@@ -2744,11 +2267,164 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/tgm-config.php:95
+msgid "Sorry, but you do not have the correct permissions to install the %1$s plugin."
+msgid_plural "Sorry, but you do not have the correct permissions to install the %1$s plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s = plugin name.
 #: inc/tgm-plugin-activation/tgm-config.php:101
 msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this plugin: %1$s."
 msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this plugin: %1$s."
 msgstr[0] ""
 msgstr[1] ""
+
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/tgm-config.php:107
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/tgm-config.php:113
+msgid "Sorry, but you do not have the correct permissions to update the %1$s plugin."
+msgid_plural "Sorry, but you do not have the correct permissions to update the %1$s plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/tgm-config.php:119
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/tgm-config.php:125
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/tgm-config.php:131
+msgid "Sorry, but you do not have the correct permissions to activate the %1$s plugin."
+msgid_plural "Sorry, but you do not have the correct permissions to activate the %1$s plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/tgm-config.php:137
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgm-plugin-activation/tgm-config.php:142
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgm-plugin-activation/tgm-config.php:147
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgm-plugin-activation/tgm-config.php:152
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: inc/tgm-plugin-activation/tgm-config.php:153
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: inc/tgm-plugin-activation/tgm-config.php:154
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/tgm-config.php:156
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/tgm-config.php:158
+msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
+msgstr ""
+
+#. translators: %s = plugin name.
+#: inc/tgm-plugin-activation/tgm-config.php:160
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#. translators: %s = dashboard link.
+#: inc/tgm-plugin-activation/tgm-config.php:162
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: inc/vk-admin/package/class-vk-admin.php:316
+msgid "Sorry, there is no post"
+msgstr ""
+
+#: inc/vk-admin/package/class-vk-admin.php:370
+msgid "Vektor WordPress Information"
+msgstr ""
+
+#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:7
+msgid "Disable accordion"
+msgstr ""
+
+#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:11
+msgid "Enable accordion and default open "
+msgstr ""
+
+#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:15
+msgid "Enable accordion and default close "
+msgstr ""
+
+#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:23
+msgid "FAQ Block Setting"
+msgstr ""
+
+#: inc/vk-blocks-pro/admin-pro/admin-pro.php:20
+msgid "FAQ Setting"
+msgstr ""
+
+#: inc/vk-blocks/admin/admin-balloon.php:4
+msgid "Balloon Setting"
+msgstr ""
+
+#: inc/vk-blocks/admin/admin-balloon.php:5
+msgid "Balloon Border Width Setting"
+msgstr ""
+
+#: inc/vk-blocks/admin/admin-balloon.php:15
+msgid "Balloon Image Setting"
+msgstr ""
+
+#: inc/vk-blocks/admin/admin-balloon.php:82
+msgid "You can register frequently used icon images for speech bubble blocks."
+msgstr ""
+
+#: inc/vk-blocks/admin/admin-balloon.php:83
+msgid "If you change image or name that please click Save Changes button."
+msgstr ""
+
+#: inc/vk-blocks/admin/admin-balloon.php:109
+msgid "Select"
+msgstr ""
+
+#: inc/vk-blocks/admin/admin-balloon.php:112
+msgid "Delete"
+msgstr ""
+
+#: inc/vk-blocks/admin/admin-balloon.php:117
+msgid "Balloon Image Name"
+msgstr ""
 
 #: inc/vk-blocks/admin/admin-margin.php:25
 #: inc/vk-blocks/admin/admin.php:56
@@ -2761,6 +2437,133 @@ msgstr ""
 
 #: inc/vk-blocks/admin/admin-margin.php:29
 msgid "Unit"
+msgstr ""
+
+#: inc/vk-blocks/admin/admin.php:32
+msgid "Blocks setting"
+msgstr ""
+
+#: inc/vk-blocks/admin/admin.php:33
+msgctxt "label in admin menu"
+msgid "Blocks"
+msgstr ""
+
+#: inc/vk-blocks/admin/admin.php:49
+msgid "Blocks Setting"
+msgstr ""
+
+#: inc/vk-blocks/admin/admin.php:55
+msgid "Balloon Block Setting"
+msgstr ""
+
+#: inc/vk-blocks/load-bootstrap.php:49
+msgid "VK Blocks Bootstrap Setting"
+msgstr ""
+
+#: inc/vk-blocks/load-bootstrap.php:66
+msgid "Loading Bootstrap4"
+msgstr ""
+
+#: inc/vk-blocks/load-bootstrap.php:67
+msgid "Check here to load Bootstrap4. If your theme or plugins loading Bootstrap4, uncheck here."
+msgstr ""
+
+#: inc/vk-blocks/view/post-list.php:164
+msgid "No Post is selected"
+msgstr ""
+
+#: inc/vk-blocks/vk-blocks-functions.php:296
+msgid "Blocks"
+msgstr ""
+
+#: inc/vk-blocks/vk-blocks-functions.php:306
+msgid "Blocks Layout"
+msgstr ""
+
+#: inc/vk-components/package/class-vk-component-posts.php:50
+msgid "Read more"
+msgstr ""
+
+#: inc/vk-components/package/class-vk-component-posts.php:52
+msgid "New!!"
+msgstr ""
+
+#: inc/vk-components/package/class-vk-component-posts.php:559
+msgid "Card Noborder"
+msgstr ""
+
+#: inc/vk-components/package/class-vk-component-posts.php:563
+msgid "Card Horizontal"
+msgstr ""
+
+#: inc/vk-components/package/class-vk-component-posts.php:571
+msgctxt "post list type"
+msgid "Text 1 Column"
+msgstr ""
+
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:47
+msgid "CSS Optimize ( Speed up ) Settings"
+msgstr ""
+
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:66
+msgid "Tree shaking"
+msgstr ""
+
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:87
+msgid "Tree shaking activation settings"
+msgstr ""
+
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:91
+msgid "Output only the main CSS of the page inline"
+msgstr ""
+
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:93
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:159
+msgid "Nothing to do"
+msgstr ""
+
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:94
+msgid "Active Tree shaking (Recomend)"
+msgstr ""
+
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:111
+msgid "Exclude class of Tree shaking"
+msgstr ""
+
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:115
+msgid "If you choose \"Active Tree shaking\" that delete the useless css.If you using active css class that please fill in class name. Ex) btn-active,slide-active,scrolled"
+msgstr ""
+
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:132
+msgid "Preload CSS"
+msgstr ""
+
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:153
+msgid "Preload CSS activation settings"
+msgstr ""
+
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:156
+msgid "Preload css except for critical css"
+msgstr ""
+
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:160
+msgid "Active Preload CSS (Recomend)"
+msgstr ""
+
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:177
+msgid "Exclude class of Preload CSS"
+msgstr ""
+
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:181
+msgid "If you choose \"Active Preload CSS\" that css load timing was changed.If you have any do not want to preload css file that please fill in handle(id) name. Ex) pluginname_a-style,pluginname_b-css"
+msgstr ""
+
+#: src/blocks/page-content/index.php:118
+msgid "Edit this area"
+msgstr ""
+
+#: vk-blocks.php:84
+msgid "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks Plugin running."
 msgstr ""
 
 #: src/blocks/alert/block.json

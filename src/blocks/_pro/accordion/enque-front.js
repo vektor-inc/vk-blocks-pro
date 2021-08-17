@@ -1,5 +1,5 @@
 const accordion = document.querySelectorAll(
-	// 以前使用していたvk_accordion-containerは残しておく
+	//  vk_accordion-containerはvk_accordionになったが互換性のために残しておく
 	'.vk_accordion, .vk_accordion-container',
 );
 let accordionTarget;

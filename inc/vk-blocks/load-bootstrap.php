@@ -69,7 +69,7 @@ function vk_blocks_customize_register( $wp_customize ) {
 			'default'           => false,
 			'type'              => 'option',
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'vkblocks_sanitize_checkbox',
+			'sanitize_callback' => 'vk_blocks_sanitize_checkbox',
 		)
 	);
 

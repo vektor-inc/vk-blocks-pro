@@ -1,19 +1,29 @@
 <?php
+/**
+ * Helper
+ *
+ * @package vk-blocks
+ */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/**
+ * VK Blocks Is Lightning
+ *
+ * 使われているテーマがLightningかどうかを判別する
+ */
 function vk_blocks_is_lightning() {
 
 	// テーマがLightning系の場合読み込まない
 	$theme_textdomain = wp_get_theme()->get( 'TextDomain' );
-	if ( $theme_textdomain == 'lightning' || $theme_textdomain == 'lightning-pro' || $theme_textdomain == 'katawara' ) {
+	if ( 'lightning' === $theme_textdomain || 'lightning-pro' === $theme_textdomain || 'katawara' === $theme_textdomain ) {
 		return true;
 	}
 
 	$theme_template = wp_get_theme()->get( 'Template' );
-	if ( $theme_template == 'lightning' || $theme_template == 'lightning-pro' || $theme_textdomain == 'katawara' ) {
+	if ( 'lightning' === $theme_template || 'lightning-pro' === $theme_template || 'katawara' === $theme_textdomain ) {
 		return true;
 	}
 
@@ -23,11 +33,11 @@ function vk_blocks_is_lightning() {
 /**
  * カスタマイザー用のチェックボックス
  *
- * @param $checked
+ * @param bool|string $checked checked.
  *
  * @return bool
  */
-function vkblocks_sanitize_checkbox( $checked ) {
+function vk_blocks_sanitize_checkbox( $checked ) {
 	if ( isset( $checked ) && $checked ) {
 		return true;
 	} else {
@@ -35,7 +45,7 @@ function vkblocks_sanitize_checkbox( $checked ) {
 	}
 }
 
-if ( ! function_exists( 'vkblocks_allow_wp_kses_allowed_html' ) ) {
+if ( ! function_exists( 'vk_blocks_allow_wp_kses_allowed_html' ) ) {
 
 	/**
 	 * Fix block saving for Non-Super-Admins (no unfiltered_html capability).
@@ -51,7 +61,7 @@ if ( ! function_exists( 'vkblocks_allow_wp_kses_allowed_html' ) ) {
 	 *
 	 * @return array Modified HTML tags & attributes.
 	 */
-	function vkblocks_allow_wp_kses_allowed_html( $tags, $context ) {
+	function vk_blocks_allow_wp_kses_allowed_html( $tags, $context ) {
 		// Used by Card, Outer Blocks.
 		$tags['style'] = array(
 			'type' => true,
@@ -78,10 +88,10 @@ if ( ! function_exists( 'vkblocks_allow_wp_kses_allowed_html' ) ) {
 		return $tags;
 	}
 
-	add_filter( 'wp_kses_allowed_html', 'vkblocks_allow_wp_kses_allowed_html', 10, 2 );
+	add_filter( 'wp_kses_allowed_html', 'vk_blocks_allow_wp_kses_allowed_html', 10, 2 );
 }
 
-if ( ! function_exists( 'vkblocks_fix_gt_style_errors' ) ) {
+if ( ! function_exists( 'vk_blocks_fix_gt_style_errors' ) ) {
 
 	/**
 	 * Fix block saving for Non-Super-Admins (no unfiltered_html capability).
@@ -99,11 +109,11 @@ if ( ! function_exists( 'vkblocks_fix_gt_style_errors' ) ) {
 	 * @see Issue: https://core.trac.wordpress.org/ticket/48873#ticket
 	 * @see https://github.com/gambitph/vkblocks/issues/510
 	 *
-	 * @param array $data Post data
+	 * @param array $data Post data.
 	 *
-	 * @return array Post data to save
+	 * @return array Post data to save.
 	 */
-	function vkblocks_fix_gt_style_errors( $data ) {
+	function vk_blocks_fix_gt_style_errors( $data ) {
 		if ( empty( $data['post_content'] ) ) {
 			return $data;
 		}
@@ -146,5 +156,5 @@ if ( ! function_exists( 'vkblocks_fix_gt_style_errors' ) ) {
 		return $data;
 	}
 
-	add_filter( 'wp_insert_post_data', 'vkblocks_fix_gt_style_errors', 99, 1 );
+	add_filter( 'wp_insert_post_data', 'vk_blocks_fix_gt_style_errors', 99, 1 );
 }

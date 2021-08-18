@@ -1,8 +1,9 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
-export default function AccordionEdit() {
+export default function AccordionEdit(props) {
+	let { containerClass } = props.attributes;
 	const blockProps = useBlockProps({
-		className: `vk_accordion`,
+		className: `${containerClass}`,
 	});
 
 	const ALLOWED_BLOCKS = [

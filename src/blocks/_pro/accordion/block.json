@@ -5,7 +5,7 @@
 	"attributes": {
 		"containerClass": {
 			"type": "string",
-			"default": "vk_accordion-container"
+			"default": "vk_accordion"
 		}
 	},
 	"description": "Collapses and hides content when the content is long.",

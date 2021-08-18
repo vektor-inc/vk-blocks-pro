@@ -4,7 +4,7 @@ import save1_12_0 from './1.12.0/save';
 const blockAttributes = {
 	containerClass: {
 		type: "string",
-		default: "vk_accordion-container",
+		default: "vk_accordion",
 	},
 };
 

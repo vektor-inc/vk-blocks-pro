@@ -1,12 +1,7 @@
 import save1_3_9 from './1.3.9/save';
 import save1_12_0 from './1.12.0/save';
 
-const blockAttributes = {
-	containerClass: {
-		type: "string",
-		default: "vk_accordion-container",
-	},
-};
+const blockAttributes = {};
 
 /**
  * 1.12.x で値を追加

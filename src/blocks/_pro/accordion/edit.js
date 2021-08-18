@@ -1,7 +1,20 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import { useEffect } from '@wordpress/element';
 
 export default function AccordionEdit(props) {
-	const { containerClass } = props.attributes;
+	const { attributes, setAttributes, clientId } = props;
+	const { containerClass } = attributes;
+
+	// コンソールエラー回避のため useEffect を使用
+	useEffect(() => {
+
+		// containerClass 互換設定
+		if (containerClass === undefined) {
+			setAttributes({ containerClass: `vk_accordion-container` });
+		}
+		
+	}, [clientId]);
+
 	const blockProps = useBlockProps({
 		className: `${containerClass}`,
 	});

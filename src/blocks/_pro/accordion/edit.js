@@ -1,7 +1,7 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 export default function AccordionEdit(props) {
-	let { containerClass } = props.attributes;
+	const { containerClass } = props.attributes;
 	const blockProps = useBlockProps({
 		className: `${containerClass}`,
 	});

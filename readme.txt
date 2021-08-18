@@ -62,6 +62,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+[ Bug fix ][ Slider ]Fixed bug would break put a class in additional CSS class
 
 = 1.13.1 =
 [ Other ] version only

@@ -1,4 +1,5 @@
 /* eslint camelcase: 0 */
+import save1_13_1 from './1.13.1/save';
 import save1_10_0 from './1.10.0/save';
 import save1_9_2 from './1.9.2/save';
 import save1_9_1 from './1.9.1/save';
@@ -108,9 +109,8 @@ const blockAttributes5 = {
 }
 
 /**
- * 1.10.1（仮） でナビゲーション設定を追加
+ * 1.11.0 でナビゲーション設定を追加
  */
-/*
 const blockAttributes6 = {
 	...blockAttributes5,
 	navigationPosition: {
@@ -118,9 +118,12 @@ const blockAttributes6 = {
 		default: 'mobile-bottom'
 	}
 }
-*/
 
 const deprecated = [
+	{
+		attributes: blockAttributes6,
+		save: save1_13_1,
+	},
 	{
 		attributes: blockAttributes5,
 		save: save1_10_0,

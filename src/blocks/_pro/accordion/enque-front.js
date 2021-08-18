@@ -1,39 +1,40 @@
-const accordionContainer = document.getElementsByClassName(
-	'vk_accordion-container'
+const accordion = document.querySelectorAll(
+	//  vk_accordion-containerはvk_accordionになったが互換性のために残しておく
+	'.vk_accordion, .vk_accordion-container'
 );
 let accordionTarget;
 let accordionToggle;
 
 const accordionToggleLoop = (i) => {
 	if (
-		accordionContainer[i]
+		accordion[i]
 			.querySelector('.vk_accordion-toggle')
 			.classList.contains('vk_accordion-toggle-open')
 	) {
-		accordionContainer[i]
+		accordion[i]
 			.querySelector('.vk_accordion-target')
 			.classList.add('vk_accordion-target-open');
 	}
 
 	if (
-		accordionContainer[i]
+		accordion[i]
 			.querySelector('.vk_accordion-toggle')
 			.classList.contains('vk_accordion-toggle-close')
 	) {
-		accordionContainer[i]
+		accordion[i]
 			.querySelector('.vk_accordion-target')
 			.classList.add('vk_accordion-target-close');
 	}
 
-	accordionContainer[i]
+	accordion[i]
 		.querySelector('.vk_accordion-toggle')
 		.addEventListener(
 			'click',
 			() => {
-				accordionToggle = accordionContainer[i].querySelector(
+				accordionToggle = accordion[i].querySelector(
 					'.vk_accordion-toggle'
 				);
-				accordionTarget = accordionContainer[i].querySelector(
+				accordionTarget = accordion[i].querySelector(
 					'.vk_accordion-target'
 				);
 				if (
@@ -64,6 +65,6 @@ const accordionToggleLoop = (i) => {
 		);
 };
 
-for (let i = 0; i < accordionContainer.length; i++) {
+for (let i = 0; i < accordion.length; i++) {
 	accordionToggleLoop(i);
 }

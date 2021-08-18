@@ -17,15 +17,11 @@ export default function AccordionEdit() {
 
 	return (
 		<div {...blockProps}>
-			<div className="vk_accordion-header"></div>
-			<div className="vk_accordion-body">
-				<InnerBlocks
-					allowedBlocks={ALLOWED_BLOCKS}
-					template={TEMPLATE}
-					templateLock="all"
-				/>
-			</div>
-			<div className="vk_accordion-footer"></div>
+			<InnerBlocks
+				allowedBlocks={ALLOWED_BLOCKS}
+				template={TEMPLATE}
+				templateLock="all"
+			/>
 		</div>
 	);
 }

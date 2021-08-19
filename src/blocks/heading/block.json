@@ -34,8 +34,7 @@
 			"type": "string"
 		},
 		"titleSize": {
-			"type": "number",
-			"default": 2
+			"type": "number"
 		},
 		"titleMarginBottom": {
 			"type": "number",
@@ -54,8 +53,7 @@
 			"type": "string"
 		},
 		"subTextSize": {
-			"type": "number",
-			"default": 1.2
+			"type": "number"
 		},
 		"fontAwesomeIconBefore": {
 			"type": "string",
@@ -69,6 +67,8 @@
 			"type": "string"
 		}
 	},
+	"description": "This is a heading that allows you to set text size, subtext, icon, and margin.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true,
 		"customClassName": true,

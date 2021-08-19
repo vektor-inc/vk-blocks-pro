@@ -17,7 +17,6 @@ import {
 } from '@wordpress/components';
 import { AdvancedMediaUpload } from '@vkblocks/components/advanced-media-upload';
 import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
-import { dispatch } from '@wordpress/data';
 const prefix = 'vk_slider_item';
 
 export default function SliderItemEdit(props) {
@@ -30,12 +29,8 @@ export default function SliderItemEdit(props) {
 		bgSize,
 	} = attributes;
 
-	const { updateBlockAttributes } = dispatch('core/block-editor');
-
 	useEffect(() => {
-		if (attributes.clientId === null || attributes.clientId === undefined) {
-			updateBlockAttributes(clientId, { clientId });
-		}
+		setAttributes({ clientId });
 	}, [clientId]);
 
 	//classPaddingLRのクラス切り替え

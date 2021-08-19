@@ -3,8 +3,8 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,m
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
-Tested up to: 5.7.2
-Stable tag: 1.9.1
+Tested up to: 5.8.0
+Stable tag: 1.13.2
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -62,6 +62,48 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+= 1.13.2 =
+[ Bug fix ][ Slider ]Fixed bug would break put a class in additional CSS class
+
+= 1.13.1 =
+[ Other ] version only
+
+= 1.13.0 =
+[ Specification Change ][ Post list ( Pro ) ] Cope with ruby tag
+
+= 1.12.0 =
+[ Add New Block ] Icon Block
+[ Improvement ][ Slider(Pro) ] add navigation position
+[ Specification Change ] VK Components Update ( can be customize title by hook )
+[ Specification Change ][ Slider(Pro) ] If set slide type fade that disable slide step number
+[ Bug fix ][ Slider(Pro) ] Fix bug that to be same id under case of copy slide item 
+[ Bug fix ][ Social icon ] Fix css in grid block
+
+= 1.11.4 =
+[ Bugfix ][ Step(Pro) ] Fixed icon position
+
+= 1.11.3 =
+[ Bugfix ][ Step(Pro) ] Fixed icon position at G3
+
+= 1.11.2 =
+[ Improvement ] add block description
+[ Bugfix ] Fixed widget screen warning
+[ Bugfix ][ Slider(Pro) ] Change id when copy slider & slider-item.
+
+= 1.11.1 =
+[ Bugfix ][ Table style ] add botder top and bottom style
+
+= 1.11.0 =
+[ Specification Change ][ Button ] Change margin getready to core button block.
+
+= 1.10.0 =
+[ Specification Change ][ Slider(Pro) ] Add no height setting.
+[ Bugfix ][ Slider(Pro) ]Fix bug where pagination design would change when tree shake was enabled.
+
+= 1.9.2 =
+[ Bugfix ] Fix for 5.8
+[ Specification Change ][ Slider(Pro) ] add Pagination Setting
+[ Specification Change ][ Heading ] Font size of title & sub text can set null.
 
 = 1.9.1 =
 [ Bug fix ] Fix AllowedBlocks of InnerBlocks.

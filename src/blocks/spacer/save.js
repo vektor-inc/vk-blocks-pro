@@ -15,10 +15,16 @@ import Spacers from './spacers';
 
 export default function save({ attributes, anchor }) {
 	const { spaceType, unit, pc, tablet, mobile, spaceSize } = attributes;
+
+	let containerClass = classnames('vk_spacer');
+	if ('height' === spaceType) {
+		containerClass = classnames('vk_spacer vk_spacer-type-height');
+	}
+
 	return (
 		<div
 			{...useBlockProps.save({
-				className: classnames('vk_spacer'),
+				className: containerClass,
 				id: anchor,
 			})}
 		>

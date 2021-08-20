@@ -201,7 +201,7 @@ export default function HeaddingEdit(props) {
 
 	return (
 		<>
-			<BlockControls>
+			<BlockControls group="block">
 				<ToolbarGroup>
 					<HeadingLevelDropdown
 						selectedLevel={level}

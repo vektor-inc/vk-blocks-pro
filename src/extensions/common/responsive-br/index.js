@@ -19,7 +19,7 @@ registerFormatType(`vk-blocks/responsive-br`, {
 		const { onChange, value } = props;
 
 		return (
-			<BlockControls>
+			<BlockControls group="block">
 				<ToolbarGroup>
 					<ToolbarItem>
 						{(toggleProps) => (

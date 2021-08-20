@@ -50,6 +50,7 @@ $vk_blocks_options    = vkblocks_get_options();
 					<input
 						type="number"
 						name="vk_blocks_options[margin_size][<?php echo $margin_size['value']; ?>]"
+						step="0.05"
 						value="<?php echo $vk_blocks_options['margin_size'][ $margin_size['value'] ]; ?>"
 					>
 				</li>

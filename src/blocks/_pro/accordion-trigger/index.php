@@ -3,13 +3,13 @@
 /**
  * Registers the `vk-blocks/accordion-trigger` block.
  */
-if( function_exists('register_block_type_from_metadata')) {
+if ( function_exists( 'register_block_type_from_metadata' ) ) {
 
 	function register_block_vkb_accordion_trigger() {
 		register_block_type_from_metadata(
 			__DIR__,
 			array(
-				'editor_style' => 'vk-blocks-build-editor-css',
+				'editor_style'  => 'vk-blocks-build-editor-css',
 				'editor_script' => 'vk-blocks-build-js',
 			)
 		);

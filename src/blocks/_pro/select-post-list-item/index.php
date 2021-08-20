@@ -3,7 +3,7 @@
 /**
  * Registers the `vk-blocks/select-post-list-item` block.
  */
-if( function_exists('register_block_type_from_metadata')) {
+if ( function_exists( 'register_block_type_from_metadata' ) ) {
 
 	function register_block_vkb_select_post_list_item() {
 		register_block_type_from_metadata(
@@ -11,7 +11,7 @@ if( function_exists('register_block_type_from_metadata')) {
 			array(
 				'editor_style'    => 'vk-blocks-build-editor-css',
 				'editor_script'   => 'vk-blocks-build-js',
-				'attributes'    => array(
+				'attributes'      => array(
 					'url'                        => array(
 						'type'    => 'string',
 						'default' => '',
@@ -127,19 +127,19 @@ if( function_exists('register_block_type_from_metadata')) {
 				'new_text'                   => 'New!!',
 				'btn_text'                   => 'Read more',
 				'btn_align'                  => 'text-right',
-				'className' => '',
+				'className'                  => '',
 			)
 		);
 
 		$content = '';
 		$post    = '';
 		$columns = array(
-			'col_xs'                     => $attributes['col_xs'],
-			'col_sm'                     => $attributes['col_sm'],
-			'col_md'                     => $attributes['col_md'],
-			'col_lg'                     => $attributes['col_lg'],
-			'col_xl'                     => $attributes['col_xl'],
-			'col_xxl'                    => $attributes['col_xxl'],
+			'col_xs'  => $attributes['col_xs'],
+			'col_sm'  => $attributes['col_sm'],
+			'col_md'  => $attributes['col_md'],
+			'col_lg'  => $attributes['col_lg'],
+			'col_xl'  => $attributes['col_xl'],
+			'col_xxl' => $attributes['col_xxl'],
 		);
 
 		$options = array(
@@ -168,11 +168,6 @@ if( function_exists('register_block_type_from_metadata')) {
 				$options['class_outer'] .= ' ' . VK_Component_Posts::get_col_size_classes( $columns );
 			}
 		}
-
-
-
-
-
 
 		if ( ! empty( $attributes['url'] ) ) {
 			$post_id = url_to_postid( $attributes['url'] );

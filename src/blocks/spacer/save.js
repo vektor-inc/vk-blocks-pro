@@ -17,7 +17,7 @@ export default function save({ attributes, anchor }) {
 	const { spaceType, unit, pc, tablet, mobile, spaceSize } = attributes;
 
 	let containerClass = classnames('vk_spacer');
-	if ('height' === spaceType) {
+	if ('height' === spaceType && 'custom' !== spaceSize) {
 		containerClass = classnames('vk_spacer vk_spacer-type-height');
 	}
 

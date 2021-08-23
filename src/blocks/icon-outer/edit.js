@@ -68,6 +68,13 @@ export default function IconOuterEdit(props) {
 	return (
 		<>
 			<BlockControls group="block">
+				<BlockAlignmentControl
+					value={iconAlign}
+					onChange={(value) => {
+						setAttributes({ iconAlign: value });
+					}}
+					controls={['left', 'center', 'right']}
+				/>
 				<JustifyContentControl
 					allowedControls={[
 						'left',
@@ -81,13 +88,6 @@ export default function IconOuterEdit(props) {
 						position: 'bottom right',
 						isAlternate: true,
 					}}
-				/>
-				<BlockAlignmentControl
-					value={iconAlign}
-					onChange={(value) => {
-						setAttributes({ iconAlign: value });
-					}}
-					controls={['left', 'center', 'right']}
 				/>
 			</BlockControls>
 			<InspectorControls>

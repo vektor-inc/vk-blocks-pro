@@ -4,6 +4,7 @@ import {
 	useBlockProps,
 	InspectorControls,
 	BlockAlignmentControl,
+	BlockControls,
 } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -14,9 +15,11 @@ import {
 	Button,
 	SelectControl,
 } from '@wordpress/components';
+import { useEffect } from '@wordpress/element';
+import { select, dispatch } from '@wordpress/data';
 
 export default function IconOuterEdit(props) {
-	const { attributes, setAttributes } = props;
+	const { attributes, setAttributes, clientId } = props;
 	const {
 		iconSize,
 		iconSizeUnit,
@@ -26,6 +29,31 @@ export default function IconOuterEdit(props) {
 		iconAlign,
 		iconType,
 	} = attributes;
+
+	const { getBlocksByClientId } = select('core/block-editor');
+	const { updateBlockAttributes } = dispatch('core/block-editor');
+
+	const thisBlock = getBlocksByClientId(clientId);
+
+	useEffect(() => {
+		if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
+			const thisInnerBlocks = thisBlock[0].innerBlocks;
+			thisInnerBlocks.forEach(function (thisInnerBlock) {
+				updateBlockAttributes(thisInnerBlock.clientId, { iconSize });
+				updateBlockAttributes(thisInnerBlock.clientId, {
+					iconSizeUnit,
+				});
+				updateBlockAttributes(thisInnerBlock.clientId, { iconMargin });
+				updateBlockAttributes(thisInnerBlock.clientId, {
+					iconMarginUnit,
+				});
+				updateBlockAttributes(thisInnerBlock.clientId, { iconRadius });
+				updateBlockAttributes(thisInnerBlock.clientId, { iconAlign });
+				updateBlockAttributes(thisInnerBlock.clientId, { iconType });
+			});
+		}
+	}, [thisBlock, attributes, clientId]);
+
 	// blocksProps を予め定義
 	const blockProps = useBlockProps({
 		className: `vk_icons`,
@@ -37,20 +65,17 @@ export default function IconOuterEdit(props) {
 
 	return (
 		<>
+			<BlockControls group="block">
+				<BlockAlignmentControl
+					value={iconAlign}
+					onChange={(value) => {
+						setAttributes({ iconAlign: value });
+					}}
+					controls={['left', 'center', 'right']}
+				/>
+			</BlockControls>
 			<InspectorControls>
 				<PanelBody title={__('Icon Common Setting', 'vk-blocks')}>
-					<BaseControl
-						label={__('Icon Align', 'vk-blocks')}
-						id={`vk_icon-align`}
-					>
-						<BlockAlignmentControl
-							value={iconAlign}
-							onChange={(value) => {
-								setAttributes({ iconAlign: value });
-							}}
-							controls={['left', 'center', 'right']}
-						/>
-					</BaseControl>
 					<p className={`mt-0 mb-2`}>{__('Size', 'vk-blocks')}</p>
 					<div className="vk_icon_custombox">
 						<TextControl

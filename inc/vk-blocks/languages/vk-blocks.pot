@@ -9,9 +9,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-08-19T01:26:31+00:00\n"
+"POT-Creation-Date: 2021-08-23T07:31:43+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.5.0\n"
+"X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: vk-blocks\n"
 
 #: src/blocks/_pro/accordion-target/index.js:16
@@ -344,7 +344,7 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:100
 #: src/blocks/button/edit.js:70
-#: src/blocks/icon/edit.js:210
+#: src/blocks/icon/edit.js:239
 #: src/blocks/pr-blocks/edit.js:271
 #: src/blocks/pr-content/edit.js:130
 msgid "Open link new tab."
@@ -354,7 +354,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:57
 #: src/blocks/border-box/edit.js:122
 #: src/blocks/button/edit.js:258
-#: src/blocks/icon/edit.js:60
+#: src/blocks/icon/edit.js:227
 #: src/blocks/pr-content/edit.js:196
 msgid "Icon ( Font Awesome )"
 msgstr ""
@@ -366,7 +366,8 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:130
 #: src/blocks/button/edit.js:173
-#: src/blocks/icon/edit.js:184
+#: src/blocks/icon-outer/edit.js:198
+#: src/blocks/icon/edit.js:190
 #: src/blocks/pr-blocks/edit.js:299
 msgid "Solid color"
 msgstr ""
@@ -610,7 +611,8 @@ msgid "Border width"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:543
-#: src/blocks/icon/edit.js:160
+#: src/blocks/icon-outer/edit.js:174
+#: src/blocks/icon/edit.js:167
 msgid "Border radius"
 msgstr ""
 
@@ -642,28 +644,32 @@ msgid "Unit Type"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:617
-#: src/blocks/icon/edit.js:131
+#: src/blocks/icon-outer/edit.js:145
+#: src/blocks/icon/edit.js:138
 #: src/components/advanced-unit-control/index.js:18
 #: inc/vk-blocks/admin/admin-margin.php:7
 msgid "px"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:621
-#: src/blocks/icon/edit.js:135
+#: src/blocks/icon-outer/edit.js:149
+#: src/blocks/icon/edit.js:142
 #: src/components/advanced-unit-control/index.js:22
 #: inc/vk-blocks/admin/admin-margin.php:11
 msgid "em"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:625
-#: src/blocks/icon/edit.js:139
+#: src/blocks/icon-outer/edit.js:153
+#: src/blocks/icon/edit.js:146
 #: src/components/advanced-unit-control/index.js:26
 #: inc/vk-blocks/admin/admin-margin.php:15
 msgid "rem"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:629
-#: src/blocks/icon/edit.js:143
+#: src/blocks/icon-outer/edit.js:157
+#: src/blocks/icon/edit.js:150
 #: src/components/advanced-unit-control/index.js:30
 msgid "vw"
 msgstr ""
@@ -892,7 +898,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:76
 #: src/blocks/_pro/timeline-item/edit.js:53
 #: src/blocks/border-box/edit.js:63
-#: src/blocks/icon/edit.js:217
+#: src/blocks/icon/edit.js:246
 #: src/blocks/staff/edit.js:139
 #: inc/term-color/package/class.term-color.php:41
 #: inc/term-color/package/class.term-color.php:56
@@ -903,7 +909,8 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:82
 #: src/blocks/_pro/table-of-contents-new/edit.js:135
 #: src/blocks/_pro/timeline-item/edit.js:63
-#: src/blocks/icon/edit.js:176
+#: src/blocks/icon-outer/edit.js:190
+#: src/blocks/icon/edit.js:182
 msgid "Style"
 msgstr ""
 
@@ -1155,7 +1162,8 @@ msgid "Icon"
 msgstr ""
 
 #: src/blocks/border-box/edit.js:51
-#: src/blocks/icon/edit.js:112
+#: src/blocks/icon-outer/edit.js:126
+#: src/blocks/icon/edit.js:119
 #: inc/vk-blocks/admin/admin-margin.php:49
 msgid "Margin"
 msgstr ""
@@ -1224,7 +1232,7 @@ msgstr ""
 #: src/blocks/button/edit.js:103
 #: src/blocks/spacer/edit.js:87
 #: src/extensions/common/inline-font-size/index.js:51
-#: inc/vk-blocks/vk-blocks-functions.php:15
+#: inc/vk-blocks/vk-blocks-functions.php:21
 msgid "Small"
 msgstr ""
 
@@ -1319,7 +1327,7 @@ msgstr ""
 
 #: src/blocks/button/edit.js:87
 #: src/blocks/spacer/edit.js:107
-#: inc/vk-blocks/vk-blocks-functions.php:23
+#: inc/vk-blocks/vk-blocks-functions.php:29
 msgid "Large"
 msgstr ""
 
@@ -1502,29 +1510,41 @@ msgstr ""
 msgid "Heading"
 msgstr ""
 
-#: src/blocks/icon/edit.js:156
+#: src/blocks/icon-outer/edit.js:170
+#: src/blocks/icon/edit.js:163
 msgid "Reset"
 msgstr ""
 
-#: src/blocks/icon/edit.js:192
+#: src/blocks/icon-outer/edit.js:206
+#: src/blocks/icon/edit.js:198
 msgid "Icon & Frame"
 msgstr ""
 
-#: src/blocks/icon/edit.js:200
+#: src/blocks/icon-outer/edit.js:214
+#: src/blocks/icon/edit.js:206
 msgid "Icon only"
 msgstr ""
 
-#: src/blocks/icon/edit.js:205
-#: src/blocks/pr-content/edit.js:121
-msgid "Link URL"
+#: src/blocks/icon-outer/edit.js:78
+msgid "Icon Common Setting"
 msgstr ""
 
-#: src/blocks/icon/edit.js:58
+#: src/blocks/icon-outer/edit.js:79
+#: src/blocks/icon/edit.js:72
+msgid "Size"
+msgstr ""
+
+#: src/blocks/icon-outer/index.js:16
+msgid "Icon Outer"
+msgstr ""
+
+#: src/blocks/icon/edit.js:225
 msgid "Icon Setting"
 msgstr ""
 
-#: src/blocks/icon/edit.js:65
-msgid "Size"
+#: src/blocks/icon/edit.js:234
+#: src/blocks/pr-content/edit.js:121
+msgid "Link URL"
 msgstr ""
 
 #: src/blocks/page-content/edit.js:10
@@ -1688,7 +1708,7 @@ msgid "Spacer Settings"
 msgstr ""
 
 #: src/blocks/spacer/edit.js:97
-#: inc/vk-blocks/vk-blocks-functions.php:19
+#: inc/vk-blocks/vk-blocks-functions.php:25
 msgid "Medium"
 msgstr ""
 
@@ -2140,25 +2160,25 @@ msgstr ""
 msgid "https://vektor-inc.co.jp"
 msgstr ""
 
-#: inc/admin-notices.php:24
+#: inc/admin-notices.php:23
 msgid "We've released VK Blocks Pro!"
 msgstr ""
 
 #. translators: 1: opening a tag, 2: closing a tag
-#: inc/admin-notices.php:31
+#: inc/admin-notices.php:30
 msgid "Thank you for using VK Blocks. We've released VK Blocks Pro. It has more custom blocks to build web site more easily. If you are interested in VK Blocks Pro, Please read %1$s this post %2$s for more details."
 msgstr ""
 
-#: inc/admin-notices.php:35
-#: inc/admin-notices.php:41
+#: inc/admin-notices.php:34
+#: inc/admin-notices.php:40
 msgid "https://www.vektor-inc.co.jp/service/wordpress-plugins/vk-blocks/"
 msgstr ""
 
-#: inc/admin-notices.php:42
+#: inc/admin-notices.php:41
 msgid "See more"
 msgstr ""
 
-#: inc/admin-notices.php:45
+#: inc/admin-notices.php:44
 msgid "Dismiss this notice"
 msgstr ""
 
@@ -2182,57 +2202,6 @@ msgstr ""
 
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:226
 msgid "4.7 will be abolished in the near future."
-msgstr ""
-
-#. translators:
-#: inc/template-tags/package/template-tags.php:147
-msgid "Author: %s"
-msgstr ""
-
-#: inc/template-tags/package/template-tags.php:149
-#: inc/template-tags/package/template-tags.php:232
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr ""
-
-#: inc/template-tags/package/template-tags.php:151
-#: inc/template-tags/package/template-tags.php:237
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr ""
-
-#: inc/template-tags/package/template-tags.php:153
-msgctxt "daily archives date format"
-msgid "F j, Y"
-msgstr ""
-
-#: inc/template-tags/package/template-tags.php:188
-msgid "Archives"
-msgstr ""
-
-#. translators:
-#: inc/template-tags/package/template-tags.php:220
-#: inc/template-tags/package/template-tags.php:228
-msgid "About %s"
-msgstr ""
-
-#. translators:
-#: inc/template-tags/package/template-tags.php:234
-msgctxt "Yearly archive description"
-msgid "Article of %s."
-msgstr ""
-
-#. translators:
-#: inc/template-tags/package/template-tags.php:239
-#: inc/template-tags/package/template-tags.php:245
-#: inc/template-tags/package/template-tags.php:250
-msgctxt "Archive description"
-msgid "Article of %s."
-msgstr ""
-
-#. translators:
-#: inc/template-tags/package/template-tags.php:268
-msgid "Page of %s"
 msgstr ""
 
 #: inc/tgm-plugin-activation/tgm-config.php:77
@@ -2375,23 +2344,23 @@ msgstr ""
 msgid "Vektor WordPress Information"
 msgstr ""
 
-#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:7
+#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:13
 msgid "Disable accordion"
 msgstr ""
 
-#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:11
+#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:17
 msgid "Enable accordion and default open "
 msgstr ""
 
-#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:15
+#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:21
 msgid "Enable accordion and default close "
 msgstr ""
 
-#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:23
+#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:29
 msgid "FAQ Block Setting"
 msgstr ""
 
-#: inc/vk-blocks-pro/admin-pro/admin-pro.php:20
+#: inc/vk-blocks-pro/admin-pro/admin-pro.php:22
 msgid "FAQ Setting"
 msgstr ""
 
@@ -2457,27 +2426,31 @@ msgstr ""
 msgid "Balloon Block Setting"
 msgstr ""
 
-#: inc/vk-blocks/load-bootstrap.php:49
+#: inc/vk-blocks/load-bootstrap.php:61
 msgid "VK Blocks Bootstrap Setting"
 msgstr ""
 
-#: inc/vk-blocks/load-bootstrap.php:66
+#: inc/vk-blocks/load-bootstrap.php:81
 msgid "Loading Bootstrap4"
 msgstr ""
 
-#: inc/vk-blocks/load-bootstrap.php:67
+#: inc/vk-blocks/load-bootstrap.php:82
 msgid "Check here to load Bootstrap4. If your theme or plugins loading Bootstrap4, uncheck here."
 msgstr ""
 
-#: inc/vk-blocks/view/post-list.php:164
+#: inc/vk-blocks/load-bootstrap.php:102
+msgid "Setting"
+msgstr ""
+
+#: inc/vk-blocks/view/class-vk-blocks-postlist.php:186
 msgid "No Post is selected"
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:296
+#: inc/vk-blocks/vk-blocks-functions.php:332
 msgid "Blocks"
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:306
+#: inc/vk-blocks/vk-blocks-functions.php:342
 msgid "Blocks Layout"
 msgstr ""
 
@@ -2559,11 +2532,11 @@ msgstr ""
 msgid "If you choose \"Active Preload CSS\" that css load timing was changed.If you have any do not want to preload css file that please fill in handle(id) name. Ex) pluginname_a-style,pluginname_b-css"
 msgstr ""
 
-#: src/blocks/page-content/index.php:118
+#: src/blocks/page-content/index.php:117
 msgid "Edit this area"
 msgstr ""
 
-#: vk-blocks.php:81
+#: vk-blocks.php:88
 msgid "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks Plugin running."
 msgstr ""
 
@@ -2615,6 +2588,11 @@ msgstr ""
 #: src/blocks/heading/block.json
 msgctxt "block description"
 msgid "This is a heading that allows you to set text size, subtext, icon, and margin."
+msgstr ""
+
+#: src/blocks/icon-outer/block.json
+msgctxt "block description"
+msgid "Outer block of vk-blocks/icon."
 msgstr ""
 
 #: src/blocks/icon/block.json

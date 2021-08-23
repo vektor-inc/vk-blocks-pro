@@ -1,4 +1,10 @@
 <?php
+/**
+ * VK Blocks Admin Setting
+ *
+ * @package VK Blocks
+ */
+
 if ( ! function_exists( 'vk_blocks_setting' ) ) {
 	function vk_blocks_setting() {
 		$options           = get_option( 'vk_blocks_balloon_meta' );
@@ -18,7 +24,6 @@ if ( ! function_exists( 'vk_blocks_setting' ) ) {
 		<?php
 	}
 }
-// require_once dirname( __FILE__ ) . '/admin-css-optimize.php';
 
 $admin_pages = array( 'settings_page_vk_blocks_options' );
 Vk_Admin::admin_scripts( $admin_pages );

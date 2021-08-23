@@ -292,14 +292,28 @@ function vk_blocks_blocks_assets() {
 		} else {
 			$unit = 'rem';
 		}
-		$dynamic_css .= ':root {';
-		foreach ( $vk_margin_size_array as $margin_size ) {
-			if ( ! empty( $vk_blocks_options['margin_size'][ $margin_size['value'] ] ) ) {
-				$dynamic_css .= '
-				--vk-margin-' . $margin_size['value'] . ': ' . $vk_blocks_options['margin_size'][ $margin_size['value'] ] . $unit . ';';
+		$dynamic_css .= '
+		@media (max-width: 576px) {
+			:root{
+				--vk-margin-sm: ' . esc_attr( vk_blocks_get_spacer_size( $vk_blocks_options, 'sm', 'mobile' ) ) . $unit . ';
+				--vk-margin-md: ' . esc_attr( vk_blocks_get_spacer_size( $vk_blocks_options, 'md', 'mobile' ) ) . $unit . ';
+				--vk-margin-lg: ' . esc_attr( vk_blocks_get_spacer_size( $vk_blocks_options, 'lg', 'mobile' ) ) . $unit . ';
 			}
 		}
-		$dynamic_css .= '}';
+		@media (min-width: 577px) and (max-width: 768px) {
+			:root{
+				--vk-margin-sm: ' . esc_attr( vk_blocks_get_spacer_size( $vk_blocks_options, 'sm', 'tablet' ) ) . $unit . ';
+				--vk-margin-md: ' . esc_attr( vk_blocks_get_spacer_size( $vk_blocks_options, 'md', 'tablet' ) ) . $unit . ';
+				--vk-margin-lg: ' . esc_attr( vk_blocks_get_spacer_size( $vk_blocks_options, 'lg', 'tablet' ) ) . $unit . ';
+			}
+		}
+		@media (min-width: 769px) {
+			:root{
+				--vk-margin-sm: ' . esc_attr( vk_blocks_get_spacer_size( $vk_blocks_options, 'sm', 'pc' ) ) . $unit . ';
+				--vk-margin-md: ' . esc_attr( vk_blocks_get_spacer_size( $vk_blocks_options, 'md', 'pc' ) ) . $unit . ';
+				--vk-margin-lg: ' . esc_attr( vk_blocks_get_spacer_size( $vk_blocks_options, 'lg', 'pc' ) ) . $unit . ';
+			}
+		}';
 	}
 
 	// delete before after space.

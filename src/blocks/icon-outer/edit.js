@@ -58,7 +58,7 @@ export default function IconOuterEdit(props) {
 
 	// blocksProps を予め定義
 	const blockProps = useBlockProps({
-		className: `vk_icons vk_icons-justify-${iconsJustify}`,
+		className: `vk_icons`,
 	});
 
 	const ALLOWED_BLOCKS = ['vk-blocks/icon'];
@@ -233,7 +233,9 @@ export default function IconOuterEdit(props) {
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
-				<div className={'vk_icons_col'}>
+				<div
+					className={`vk_icons_col  vk_icons-justify-${iconsJustify}`}
+				>
 					<InnerBlocks
 						allowedBlocks={ALLOWED_BLOCKS}
 						template={TEMPLATE}

@@ -5,12 +5,12 @@ export default function save(props) {
 	const { iconsJustify } = attributes;
 	//blocksProps を予め定義
 	const blockProps = useBlockProps.save({
-		className: `vk_icons vk_icons-justify-${iconsJustify}`,
+		className: `vk_icons`,
 	});
 
 	return (
 		<div {...blockProps}>
-			<div className={'vk_icons_col'}>
+			<div className={`vk_icons_col  vk_icons-justify-${iconsJustify}`}>
 				<InnerBlocks.Content />
 			</div>
 		</div>

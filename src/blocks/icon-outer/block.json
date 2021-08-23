@@ -1,0 +1,11 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/icon-outer",
+	"category": "vk-blocks-cat",
+	"attributes": {},
+	"description": "Outer block of vk-blocks/icon.",
+	"textdomain": "vk-blocks",
+	"supports": {
+		"className": true
+	}
+}

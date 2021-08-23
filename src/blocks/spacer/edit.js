@@ -1,9 +1,4 @@
 /**
- * External dependencies
- */
-import classnames from 'classnames';
-
-/**
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
@@ -32,8 +27,13 @@ export default function SpacerEdit({
 }) {
 	const { spaceType, unit, pc, tablet, mobile, spaceSize } = attributes;
 
+	let containerClass = `vk_spacer`;
+	if ('custom' !== spaceSize) {
+		containerClass += ` vk_spacer-type-${spaceType}`;
+	}
+
 	const blockProps = useBlockProps({
-		className: classnames('vk_spacer'),
+		className: containerClass,
 		id: anchor,
 	});
 
@@ -44,11 +44,6 @@ export default function SpacerEdit({
 	const numberSetting =
 		spaceSize === 'custom' ? (
 			<>
-				<AdvancedSpacerControl
-					attributes={attributes}
-					setAttributes={setAttributes}
-					className={className}
-				/>
 				<AdvancedUnitControl
 					attributes={attributes}
 					setAttributes={setAttributes}
@@ -117,6 +112,11 @@ export default function SpacerEdit({
 							{__('Custom', 'vk-blocks')}
 						</Button>
 					</ButtonGroup>
+					<AdvancedSpacerControl
+						attributes={attributes}
+						setAttributes={setAttributes}
+						className={className}
+					/>
 					{numberSetting}
 				</PanelBody>
 			</InspectorControls>

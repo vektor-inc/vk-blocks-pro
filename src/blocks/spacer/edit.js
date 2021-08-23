@@ -1,4 +1,9 @@
 /**
+ * External dependencies
+ */
+import classnames from 'classnames';
+
+/**
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
@@ -27,9 +32,9 @@ export default function SpacerEdit({
 }) {
 	const { spaceType, unit, pc, tablet, mobile, spaceSize } = attributes;
 
-	let containerClass = `vk_spacer`;
-	if ('custom' !== spaceSize) {
-		containerClass += ` vk_spacer-type-${spaceType}`;
+	let containerClass = classnames('vk_spacer');
+	if ('height' === spaceType && 'custom' !== spaceSize) {
+		containerClass = classnames('vk_spacer vk_spacer-type-height');
 	}
 
 	const blockProps = useBlockProps({

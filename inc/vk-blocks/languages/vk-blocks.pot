@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-08-23T07:31:43+00:00\n"
+"POT-Creation-Date: 2021-08-23T08:27:53+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: vk-blocks\n"
@@ -366,7 +366,7 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:130
 #: src/blocks/button/edit.js:173
-#: src/blocks/icon-outer/edit.js:198
+#: src/blocks/icon-outer/edit.js:214
 #: src/blocks/icon/edit.js:190
 #: src/blocks/pr-blocks/edit.js:299
 msgid "Solid color"
@@ -611,7 +611,7 @@ msgid "Border width"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:543
-#: src/blocks/icon-outer/edit.js:174
+#: src/blocks/icon-outer/edit.js:190
 #: src/blocks/icon/edit.js:167
 msgid "Border radius"
 msgstr ""
@@ -644,7 +644,7 @@ msgid "Unit Type"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:617
-#: src/blocks/icon-outer/edit.js:145
+#: src/blocks/icon-outer/edit.js:161
 #: src/blocks/icon/edit.js:138
 #: src/components/advanced-unit-control/index.js:18
 #: inc/vk-blocks/admin/admin-margin.php:7
@@ -652,7 +652,7 @@ msgid "px"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:621
-#: src/blocks/icon-outer/edit.js:149
+#: src/blocks/icon-outer/edit.js:165
 #: src/blocks/icon/edit.js:142
 #: src/components/advanced-unit-control/index.js:22
 #: inc/vk-blocks/admin/admin-margin.php:11
@@ -660,7 +660,7 @@ msgid "em"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:625
-#: src/blocks/icon-outer/edit.js:153
+#: src/blocks/icon-outer/edit.js:169
 #: src/blocks/icon/edit.js:146
 #: src/components/advanced-unit-control/index.js:26
 #: inc/vk-blocks/admin/admin-margin.php:15
@@ -668,7 +668,7 @@ msgid "rem"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:629
-#: src/blocks/icon-outer/edit.js:157
+#: src/blocks/icon-outer/edit.js:173
 #: src/blocks/icon/edit.js:150
 #: src/components/advanced-unit-control/index.js:30
 msgid "vw"
@@ -909,7 +909,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:82
 #: src/blocks/_pro/table-of-contents-new/edit.js:135
 #: src/blocks/_pro/timeline-item/edit.js:63
-#: src/blocks/icon-outer/edit.js:190
+#: src/blocks/icon-outer/edit.js:206
 #: src/blocks/icon/edit.js:182
 msgid "Style"
 msgstr ""
@@ -1162,7 +1162,7 @@ msgid "Icon"
 msgstr ""
 
 #: src/blocks/border-box/edit.js:51
-#: src/blocks/icon-outer/edit.js:126
+#: src/blocks/icon-outer/edit.js:142
 #: src/blocks/icon/edit.js:119
 #: inc/vk-blocks/admin/admin-margin.php:49
 msgid "Margin"
@@ -1510,26 +1510,26 @@ msgstr ""
 msgid "Heading"
 msgstr ""
 
-#: src/blocks/icon-outer/edit.js:170
+#: src/blocks/icon-outer/edit.js:186
 #: src/blocks/icon/edit.js:163
 msgid "Reset"
 msgstr ""
 
-#: src/blocks/icon-outer/edit.js:206
+#: src/blocks/icon-outer/edit.js:222
 #: src/blocks/icon/edit.js:198
 msgid "Icon & Frame"
 msgstr ""
 
-#: src/blocks/icon-outer/edit.js:214
+#: src/blocks/icon-outer/edit.js:230
 #: src/blocks/icon/edit.js:206
 msgid "Icon only"
 msgstr ""
 
-#: src/blocks/icon-outer/edit.js:78
+#: src/blocks/icon-outer/edit.js:94
 msgid "Icon Common Setting"
 msgstr ""
 
-#: src/blocks/icon-outer/edit.js:79
+#: src/blocks/icon-outer/edit.js:95
 #: src/blocks/icon/edit.js:72
 msgid "Size"
 msgstr ""

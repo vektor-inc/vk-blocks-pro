@@ -4,6 +4,7 @@ import {
 	useBlockProps,
 	InspectorControls,
 	BlockAlignmentControl,
+	JustifyContentControl,
 	BlockControls,
 } from '@wordpress/block-editor';
 import {
@@ -27,6 +28,7 @@ export default function IconOuterEdit(props) {
 		iconMarginUnit,
 		iconRadius,
 		iconAlign,
+		iconsJustify,
 		iconType,
 	} = attributes;
 
@@ -56,7 +58,7 @@ export default function IconOuterEdit(props) {
 
 	// blocksProps を予め定義
 	const blockProps = useBlockProps({
-		className: `vk_icons`,
+		className: `vk_icons vk_icons-justify-${iconsJustify}`,
 	});
 
 	const ALLOWED_BLOCKS = ['vk-blocks/icon'];
@@ -66,6 +68,20 @@ export default function IconOuterEdit(props) {
 	return (
 		<>
 			<BlockControls group="block">
+				<JustifyContentControl
+					allowedControls={[
+						'left',
+						'center',
+						'right',
+						'space-between',
+					]}
+					value={iconsJustify}
+					onChange={(value) => setAttributes({ iconsJustify: value })}
+					popoverProps={{
+						position: 'bottom right',
+						isAlternate: true,
+					}}
+				/>
 				<BlockAlignmentControl
 					value={iconAlign}
 					onChange={(value) => {

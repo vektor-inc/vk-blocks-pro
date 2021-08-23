@@ -27,6 +27,10 @@
 			"type": "string",
 			"default": "left"
 		},
+		"iconsJustify": {
+			"type": "string",
+			"default": "left"
+		},
 		"iconType": {
 			"type": "string",
 			"default": "0"

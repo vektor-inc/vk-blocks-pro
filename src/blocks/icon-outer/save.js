@@ -1,9 +1,11 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
-export default function save() {
+export default function save(props) {
+	const { attributes } = props;
+	const { iconsJustify } = attributes;
 	//blocksProps を予め定義
 	const blockProps = useBlockProps.save({
-		className: `vk_icons`,
+		className: `vk_icons vk_icons-justify-${iconsJustify}`,
 	});
 
 	return (

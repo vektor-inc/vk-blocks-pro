@@ -1,29 +1,31 @@
 <?php
-
 /**
  * Registers the `vk-blocks/spacer` block.
+ *
+ * @package vk-blocks
  */
-// if( function_exists('register_block_type_from_metadata')) {
 
-// 	function register_block_vk_spacer() {
-// 		register_block_type_from_metadata(
-// 			__DIR__,
-// 			array(
-// 				'editor_style' => 'vk-blocks-build-editor-css',
-// 				'editor_script' => 'vk-blocks-build-js',
-// 			)
-// 		);
-// 	}
-// 	add_action( 'init', 'register_block_vk_spacer', 99 );
-// }
-
+// Register Style.
 wp_register_style(
 	'vk-blocks/spacer',
-	plugin_dir_url( __FILE__ ) . 'style.css',
+	VK_BLOCKS_URL . 'build/spacer/style-main.css',
 	array(),
 	VK_BLOCKS_VERSION
 );
 
+// Register Script.
+$asset = include( VK_BLOCKS_PATH . 'build/spacer/index.asset.php' );
+wp_register_script(
+	'vk-blocks/spacer',
+	VK_BLOCKS_URL . 'build/spacer/index.js',
+	$asset_file['dependencies'],
+	VK_BLOCKS_VERSION,
+	true
+);
+
+/**
+ * Register Block VK Spacer
+ */
 function register_block_vk_spacer()
 {
 	register_block_type(

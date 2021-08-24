@@ -164,7 +164,7 @@ function vkblocks_blocks_assets() {
 			'page-content',
 			'pr-blocks',
 			'pr-content',
-			'spacer',
+		//	'spacer',
 			'staff',
 		);
 		$arr_wp56_pro = array(

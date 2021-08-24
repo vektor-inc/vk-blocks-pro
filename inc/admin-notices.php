@@ -4,10 +4,9 @@
  * The admin notice for VK blocks Pro.
  */
 function vkblocks_admin_notice_pro() {
-
-	$plugin_base_dir = dirname(__FILE__);
-	$lang    = ( get_locale() == 'ja' ) ? 'ja' : 'en';
-	if(strpos($plugin_base_dir,'vk-blocks-pro') !== false) {
+	$plugin_base_dir = dirname( __FILE__ );
+	$lang            = ( get_locale() == 'ja' ) ? 'ja' : 'en';
+	if ( strpos( $plugin_base_dir, 'vk-blocks-pro' ) !== false ) {
 		return;
 	}
 
@@ -17,7 +16,7 @@ function vkblocks_admin_notice_pro() {
 	}
 
 	if ( 'ja' === $lang ) {
-		 ?>
+		?>
 		<div id="notice-vkblocks-pro" class="notice notice-success is-dismissible">
 			<p>
 				<strong>

@@ -3,13 +3,13 @@
 /**
  * Registers the `vk-blocks/table-of-contents-new` block.
  */
-if( function_exists('register_block_type_from_metadata')) {
+if ( function_exists( 'register_block_type_from_metadata' ) ) {
 
 	function register_block_vkb_table_of_contents_new() {
 		register_block_type_from_metadata(
 			__DIR__,
 			array(
-				'editor_style' => 'vk-blocks-build-editor-css',
+				'editor_style'  => 'vk-blocks-build-editor-css',
 				'editor_script' => 'vk-blocks-build-js',
 			)
 		);

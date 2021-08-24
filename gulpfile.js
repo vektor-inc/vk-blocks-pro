@@ -102,10 +102,6 @@ gulp.task("text-domain", function(done) {
 	gulp.src(["./inc/term-color/package/*.php"])
 		.pipe(replace("'vk_term_color_textdomain'","'vk-blocks'"))
 		.pipe(gulp.dest("./inc/term-color/package/"));
-	// template-tag.
-	gulp.src(["./inc/template-tags/package/*.php"])
-		.pipe(replace("'vk-all-in-one-expansion-unit'","'vk-blocks'"))
-		.pipe(gulp.dest("./inc/template-tags/package/"));
 	// vk-components.
 	gulp.src(["./inc/vk-components/package/*.php"])
 		.pipe(replace("'vk_components_textdomain'","'vk-blocks'"))

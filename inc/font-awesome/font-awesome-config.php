@@ -3,9 +3,7 @@
   Load modules
 /*-------------------------------------------*/
 if ( ! class_exists( 'Vk_Font_Awesome_Versions' ) ) {
-
-	if ( ! vkblocks_is_lightning() ) {
-
+	if ( ! vk_blocks_is_lightning() ) {
 		global $font_awesome_directory_uri;
 		$font_awesome_directory_uri = plugins_url( '', __FILE__ ) . '/package/';
 
@@ -14,5 +12,4 @@ if ( ! class_exists( 'Vk_Font_Awesome_Versions' ) ) {
 
 		require_once dirname( __FILE__ ) . '/package/class-vk-font-awesome-versions.php';
 	}
-
 }

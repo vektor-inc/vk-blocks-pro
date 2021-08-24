@@ -3,15 +3,13 @@
 /**
  * Registers the `vk-blocks/post-list` block.
  */
-if( function_exists('register_block_type_from_metadata')) {
+if ( function_exists( 'register_block_type_from_metadata' ) ) {
 
-	function vk_post_list_render_callback( $attributes ){
-
-		$wp_query = VkBlocksPostList::get_loop_query( $attributes );
+	function vk_post_list_render_callback( $attributes ) {
+		$wp_query     = Vk_Blocks_PostList::get_loop_query( $attributes );
 		$options_loop = array( 'class_loop_outer' => 'vk_postList' );
 
-		return VkBlocksPostList::render_post_list( $attributes, $wp_query, $options_loop );
-
+		return Vk_Blocks_PostList::render_post_list( $attributes, $wp_query, $options_loop );
 	}
 
 	function register_block_vkb_post_list() {
@@ -21,7 +19,7 @@ if( function_exists('register_block_type_from_metadata')) {
 			array(
 				'editor_style'    => 'vk-blocks-build-editor-css',
 				'editor_script'   => 'vk-blocks-build-js',
-				'attributes'    => array_merge(
+				'attributes'      => array_merge(
 					array(
 						'name'                       => array(
 							'type'    => 'string',
@@ -147,29 +145,30 @@ if( function_exists('register_block_type_from_metadata')) {
 		);
 
 		$the_taxonomies = get_taxonomies(
-			array(
-				
-			),
+			array(),
 			'objects',
 			'and'
 		);
 
-		$term_by_taxonomy_name = array();						
+		$term_by_taxonomy_name = array();
 		foreach ( $the_taxonomies as $the_taxonomy ) {
-			$terms = get_terms( $the_taxonomy->name, array('hide_empty' => false)  );
-			$term_by_taxonomy_name[$the_taxonomy->name] = array_map(function($term) {
-				return array( 
-					'term_id' => $term->term_id,
-					'name' => $term->name
-				);
-			},$terms);			
-		}	
+			$terms                                        = get_terms( $the_taxonomy->name, array( 'hide_empty' => false ) );
+			$term_by_taxonomy_name[ $the_taxonomy->name ] = array_map(
+				function( $term ) {
+					return array(
+						'term_id' => $term->term_id,
+						'name'    => $term->name,
+					);
+				},
+				$terms
+			);
+		}
 
 		wp_localize_script(
 			'vk-blocks-build-js',
 			'vk_block_post_type_params',
 			array(
-				'term_by_taxonomy_name' => $term_by_taxonomy_name
+				'term_by_taxonomy_name' => $term_by_taxonomy_name,
 			)
 		);
 	}

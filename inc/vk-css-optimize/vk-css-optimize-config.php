@@ -13,7 +13,7 @@ if ( ! class_exists( 'VK_CSS_Optimize' ) ) {
 	require_once dirname( __FILE__ ) . '/package/class-vk-css-optimize.php';
 }
 
-function vkblocks_css_tree_shaking_array( $vk_css_tree_shaking_array ){
+function vkblocks_css_tree_shaking_array( $vk_css_tree_shaking_array ) {
 	$vk_css_tree_shaking_array[] = array(
 		'id'      => 'vk-blocks-build-css',
 		'url'     => VK_BLOCKS_URL . 'build/block-build.css',

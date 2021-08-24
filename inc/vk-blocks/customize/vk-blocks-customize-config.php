@@ -4,7 +4,7 @@
  */
 
 function vkblocks_customize( $wp_customize ) {
-    $vk_blocks_prefix = 'VK Blocks Pro ';
+	$vk_blocks_prefix = 'VK Blocks Pro ';
 
 	$wp_customize->add_panel(
 		'vk_blocks_setting',

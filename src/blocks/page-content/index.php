@@ -8,7 +8,7 @@
 /**
  * Registers the `vk-blocks/page-content` block.
  */
-if( function_exists('register_block_type_from_metadata')) {
+if ( function_exists( 'register_block_type_from_metadata' ) ) {
 
 	function register_block_vk_page_content() {
 		global $vk_blocks_common_attributes;
@@ -19,18 +19,18 @@ if( function_exists('register_block_type_from_metadata')) {
 				'editor_script'   => 'vk-blocks-build-js',
 				'attributes'      => array_merge(
 					array(
-						'className'      => array(
+						'className'  => array(
 							'type'    => 'string',
 							'default' => '',
 						),
-						'TargetPost'         => array(
+						'TargetPost' => array(
 							'type'    => 'number',
-							'default' => -1
+							'default' => -1,
 						),
 					),
 					$vk_blocks_common_attributes
 				),
-				'render_callback' => 'vk_page_content_render_callback'
+				'render_callback' => 'vk_page_content_render_callback',
 			)
 		);
 	}
@@ -54,12 +54,11 @@ if( function_exists('register_block_type_from_metadata')) {
  * @param html  $content content.
  */
 function vk_page_content_render_callback( $attributes ) {
-
 	$page_content_id = ! empty( $attributes['TargetPost'] ) ? $attributes['TargetPost'] : -1;
 	$page_content    = -1 !== $page_content_id ? get_post( $page_content_id )->post_content : '';
 	vk_page_content_enqueue_scripts( $page_content );
 
-	$vk_blocks_options  = vkblocks_get_options();
+	$vk_blocks_options = vk_blocks_get_options();
 	if ( has_block( 'vk-blocks/faq2', $page_content ) || has_block( 'vk-blocks/faq', $page_content ) ) {
 		if ( 'open' === $vk_blocks_options['new_faq_accordion'] ) {
 			$page_content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-accordion-open', $page_content );
@@ -69,14 +68,14 @@ function vk_page_content_render_callback( $attributes ) {
 			$page_content = str_replace( '[accordion_trigger_switch]', '', $page_content );
 		}
 	}
-	$page_content = str_replace('[br-xs]','<br class="vk_responsive-br vk_responsive-br-xs"/>', $page_content);
-	$page_content = str_replace('[br-sm]','<br class="vk_responsive-br vk_responsive-br-sm"/>', $page_content);
-	$page_content = str_replace('[br-md]','<br class="vk_responsive-br vk_responsive-br-md"/>', $page_content);
-	$page_content = str_replace('[br-lg]','<br class="vk_responsive-br vk_responsive-br-lg"/>', $page_content);
-	$page_content = str_replace('[br-xl]','<br class="vk_responsive-br vk_responsive-br-xl"/>', $page_content);
-	$page_content = str_replace('[br-xxl]','<br class="vk_responsive-br vk_responsive-br-xxl"/>', $page_content);
+	$page_content = str_replace( '[br-xs]', '<br class="vk_responsive-br vk_responsive-br-xs"/>', $page_content );
+	$page_content = str_replace( '[br-sm]', '<br class="vk_responsive-br vk_responsive-br-sm"/>', $page_content );
+	$page_content = str_replace( '[br-md]', '<br class="vk_responsive-br vk_responsive-br-md"/>', $page_content );
+	$page_content = str_replace( '[br-lg]', '<br class="vk_responsive-br vk_responsive-br-lg"/>', $page_content );
+	$page_content = str_replace( '[br-xl]', '<br class="vk_responsive-br vk_responsive-br-xl"/>', $page_content );
+	$page_content = str_replace( '[br-xxl]', '<br class="vk_responsive-br vk_responsive-br-xxl"/>', $page_content );
 
-	$classes = '';
+	$classes   = '';
 	$page_html = '';
 
 	if ( -1 !== $page_content_id ) {
@@ -117,7 +116,6 @@ function vk_page_content_render_callback( $attributes ) {
 		if ( $url ) {
 			$page_html .= '<a href="' . esc_url( $url ) . '" class="vk_pageContent_editBtn btn btn-outline-primary btn-sm veu_adminEdit" target="_blank">' . __( 'Edit this area', 'vk-blocks' ) . '</a>';
 		}
-
 	}
 
 	return $page_html;

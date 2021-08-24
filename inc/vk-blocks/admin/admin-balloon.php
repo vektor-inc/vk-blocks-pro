@@ -4,11 +4,11 @@
 	<h3 id="balloon-setting"><?php echo __( 'Balloon Setting', 'vk-blocks' ); ?></h3>
 	<h4 id="balloon-border-width-setting"><?php echo __( 'Balloon Border Width Setting', 'vk-blocks' ); ?></h4>
 	<?php
-	$vk_blocks_options = vkblocks_get_options();
+	$vk_blocks_options = vk_blocks_get_options();
 	?>
 	<select class="balloon-border-width-selector" id="balloon-border-width-selector" name="vk_blocks_options[balloon_border_width]">
-		<?php for( $i = 1; $i <= 4; $i++ ) : ?>
-			<option value="<?php echo $i ?>" <?php selected( intval( $vk_blocks_options['balloon_border_width'] ), $i, true ) ?>><?php echo $i; ?>px</option>
+		<?php for ( $i = 1; $i <= 4; $i++ ) : ?>
+			<option value="<?php echo $i; ?>" <?php selected( intval( $vk_blocks_options['balloon_border_width'] ), $i, true ); ?>><?php echo $i; ?>px</option>
 		<?php endfor; ?>
 	</select>
 	<?php submit_button(); ?>
@@ -79,20 +79,20 @@
 		}
 	</style>
 	<p>
-		<?php _e( 'You can register frequently used icon images for speech bubble blocks.', 'vk-blocks' );?>
-		<?php _e( 'If you change image or name that please click Save Changes button.', 'vk-blocks' );?>
+		<?php _e( 'You can register frequently used icon images for speech bubble blocks.', 'vk-blocks' ); ?>
+		<?php _e( 'If you change image or name that please click Save Changes button.', 'vk-blocks' ); ?>
 	</p>
-	<?php $image_default = VK_BLOCKS_URL.'/admin/images/no-image.png'; ?>
+	<?php $image_default = VK_BLOCKS_URL . '/admin/images/no-image.png'; ?>
 	<ul class="balloonIconList">
-		<?php for( $i = 1; $i <= $image_number; $i++ ) : ?>
+		<?php for ( $i = 1; $i <= $image_number; $i++ ) : ?>
 			<li>
 				<?php
 				// 現在保存されている画像idを取得して表示
 				$image = '';
-				if ( ! empty( $options['default_icons'][$i]['src'] ) ) {
-					$image = $options['default_icons'][$i]['src'];
-				// } else {
-				// 	$image = $image_default;
+				if ( ! empty( $options['default_icons'][ $i ]['src'] ) ) {
+					$image = $options['default_icons'][ $i ]['src'];
+					// } else {
+					// $image = $image_default;
 				}
 				?>
 				<div class="balloonIconList_iconFrame">
@@ -114,14 +114,14 @@
 
 				<input type="hidden" class="__id" name="vk_blocks_balloon_meta[default_icons][<?php echo $i; ?>][src]" value="<?php echo esc_attr( $image ); ?>" />
 
-				<label for="icon_title['<?php echo $i ;?>]" class="balloonIconList_nameLabel"><?php echo __( 'Balloon Image Name', 'vk-blocks' ); ?></label>
+				<label for="icon_title['<?php echo $i; ?>]" class="balloonIconList_nameLabel"><?php echo __( 'Balloon Image Name', 'vk-blocks' ); ?></label>
 				<?php
 				$name = '';
-				if ( ! empty( $options['default_icons'][$i]['name'] ) ) {
-					$name = $options['default_icons'][$i]['name'];
+				if ( ! empty( $options['default_icons'][ $i ]['name'] ) ) {
+					$name = $options['default_icons'][ $i ]['name'];
 				}
 				?>
-				<input class="balloonIconList_name_input" type="text" name="vk_blocks_balloon_meta[default_icons][<?php echo $i; ?>][name]" id="icon_title['<?php echo $i ;?>]" value="<?php echo esc_attr( $name ); ?>" />
+				<input class="balloonIconList_name_input" type="text" name="vk_blocks_balloon_meta[default_icons][<?php echo $i; ?>][name]" id="icon_title['<?php echo $i; ?>]" value="<?php echo esc_attr( $name ); ?>" />
 			</li>
 		<?php endfor; ?>
 	</ul>
@@ -154,7 +154,7 @@
 				// もともと表示されてた img タグを削除
 				d.children().remove();
 				// 新しく画像タグを挿入
-				d.append(jQuery('<img class="balloonIconList_iconFrame_src">').attr('src','<?php echo esc_url($image_default)?>'));
+				d.append(jQuery('<img class="balloonIconList_iconFrame_src">').attr('src','<?php echo esc_url( $image_default ); ?>'));
 				jQuery(w).val('').change();
 			};
 		}

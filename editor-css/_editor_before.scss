@@ -300,6 +300,9 @@ $color-danger: #b52727;
 	.block-editor-block-list__block {
 		margin: 0 15px 30px;
 		padding: 0;
+		&.has-background{
+			padding: 1.25em 2.375em;
+		}
 		.block-editor-block-list__block-edit {
 			margin: 0;
 			height: 100%;

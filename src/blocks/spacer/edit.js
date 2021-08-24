@@ -1,9 +1,4 @@
 /**
- * External dependencies
- */
-import classnames from 'classnames';
-
-/**
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
@@ -22,6 +17,7 @@ import AdvancedViewportControl from '@vkblocks/components/advanced-viewport-cont
 import AdvancedUnitControl from '@vkblocks/components/advanced-unit-control';
 import AdvancedSpacerControl from './advanced-spacer-control';
 import Spacers from './spacers';
+import { useEffect } from '@wordpress/element';
 
 export default function SpacerEdit({
 	attributes,
@@ -32,23 +28,25 @@ export default function SpacerEdit({
 }) {
 	const { spaceType, unit, pc, tablet, mobile, spaceSize } = attributes;
 
+	let containerClass = `vk_spacer`;
+	if ('custom' !== spaceSize) {
+		containerClass += ` vk_spacer-type-${spaceType}`;
+	}
+
+	useEffect(() => {
+		if (spaceSize === undefined) {
+			setAttributes({ spaceSize: 'custom' });
+		}
+	}, [clientId]);
+
 	const blockProps = useBlockProps({
-		className: classnames('vk_spacer'),
+		className: containerClass,
 		id: anchor,
 	});
-
-	if (spaceSize === undefined) {
-		setAttributes({ spaceSize: 'custom' });
-	}
 
 	const numberSetting =
 		spaceSize === 'custom' ? (
 			<>
-				<AdvancedSpacerControl
-					attributes={attributes}
-					setAttributes={setAttributes}
-					className={className}
-				/>
 				<AdvancedUnitControl
 					attributes={attributes}
 					setAttributes={setAttributes}
@@ -117,6 +115,11 @@ export default function SpacerEdit({
 							{__('Custom', 'vk-blocks')}
 						</Button>
 					</ButtonGroup>
+					<AdvancedSpacerControl
+						attributes={attributes}
+						setAttributes={setAttributes}
+						className={className}
+					/>
 					{numberSetting}
 				</PanelBody>
 			</InspectorControls>

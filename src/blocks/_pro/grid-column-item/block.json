@@ -104,6 +104,19 @@
 		"unit": {
 			"type": "string",
 			"default": "px"
+		},
+		"textColor": {
+			"type": "string"
+		},
+		"backgroundColor": {
+			"type": "string"
+		},
+		"paddingUnit": {
+			"type": "string",
+			"default": "px"
+		},
+		"padding": {
+			"type": "number"
 		}
 	},
 	"description": "One item in a grit column block.",

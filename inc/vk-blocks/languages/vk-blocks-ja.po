@@ -620,7 +620,7 @@ msgstr "PC"
 msgid "Unit Type"
 msgstr "単位"
 
-#: src/blocks/_pro/outer/edit.js:617 src/blocks/icon/edit.js:131
+#: src/blocks/_pro/outer/edit.js:617 src/blocks/icon/edit.js:131 src/blocks/_pro/grid-column-item/edit.js:113
 #: src/components/advanced-unit-control/index.js:18
 #: inc/vk-blocks/admin/admin-margin.php:7
 msgid "px"

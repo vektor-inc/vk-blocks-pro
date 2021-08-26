@@ -17,6 +17,7 @@ import AdvancedViewportControl from '@vkblocks/components/advanced-viewport-cont
 import AdvancedUnitControl from '@vkblocks/components/advanced-unit-control';
 import AdvancedSpacerControl from './advanced-spacer-control';
 import Spacers from './spacers';
+import { useEffect } from '@wordpress/element';
 
 export default function SpacerEdit({
 	attributes,
@@ -32,14 +33,16 @@ export default function SpacerEdit({
 		containerClass += ` vk_spacer-type-${spaceType}`;
 	}
 
+	useEffect(() => {
+		if (spaceSize === undefined) {
+			setAttributes({ spaceSize: 'custom' });
+		}
+	}, [clientId]);
+
 	const blockProps = useBlockProps({
 		className: containerClass,
 		id: anchor,
 	});
-
-	if (spaceSize === undefined) {
-		setAttributes({ spaceSize: 'custom' });
-	}
 
 	const numberSetting =
 		spaceSize === 'custom' ? (

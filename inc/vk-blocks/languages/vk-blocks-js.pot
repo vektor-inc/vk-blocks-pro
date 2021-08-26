@@ -1245,7 +1245,7 @@ msgid "Solid Angle iconFeature"
 msgstr ""
 
 #: src/blocks/button/edit.js:103
-#: src/blocks/spacer/edit.js:82
+#: src/blocks/spacer/edit.js:85
 #: src/extensions/common/inline-font-size/index.js:51
 msgid "Small"
 msgstr ""
@@ -1342,7 +1342,7 @@ msgid "Button Size:"
 msgstr ""
 
 #: src/blocks/button/edit.js:87
-#: src/blocks/spacer/edit.js:102
+#: src/blocks/spacer/edit.js:105
 msgid "Large"
 msgstr ""
 
@@ -1700,19 +1700,19 @@ msgstr ""
 msgid "Space Type"
 msgstr ""
 
-#: src/blocks/spacer/edit.js:112
+#: src/blocks/spacer/edit.js:115
 msgid "Custom"
 msgstr ""
 
-#: src/blocks/spacer/edit.js:53
+#: src/blocks/spacer/edit.js:56
 msgid "Height for each device."
 msgstr ""
 
-#: src/blocks/spacer/edit.js:72
+#: src/blocks/spacer/edit.js:75
 msgid "Spacer Settings"
 msgstr ""
 
-#: src/blocks/spacer/edit.js:92
+#: src/blocks/spacer/edit.js:95
 msgid "Medium"
 msgstr ""
 

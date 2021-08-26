@@ -23,12 +23,12 @@ export const blockAttributes = {
         default: 10,
     },
     spaceType: {
-        type: "string",
-        default: "height"
+        type: 'string',
+        default: 'height',
     },
 };
 
-const blockAttributes003 = {
+const blockAttributes2 = {
 	...blockAttributes,
     pc: {
         type: 'number',
@@ -48,21 +48,29 @@ const blockAttributes003 = {
 	},
 }
 
+const blockAttributes3 = {
+	...blockAttributes2,
+    spaceSize: {
+		type: 'string',
+		default: 'medium',
+	}
+}
+
 const deprecated = [
 	{
-        attributes:blockAttributes003,
+        attributes:blockAttributes3,
         save: save1_13_2,
     },
     {
-        attributes:blockAttributes003,
+        attributes:blockAttributes2,
         save: save1_3_2,
     },
     {
-        attributes: blockAttributes003,
+        attributes: blockAttributes2,
         save: save0_57_4,
     },
     {
-        attributes: blockAttributes003,
+        attributes: blockAttributes2,
         save: save002,
     },
     {

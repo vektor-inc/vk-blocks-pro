@@ -47,8 +47,7 @@ $options              = vk_blocks_get_options();
 			<style type="text/css">
 			.spacer-input input[type="number"]{ 
 				width:5em;
-				text-align:right;
-				letter-spacing:10px;
+				text-align:center;
 			}
 			</style>
 			<ul class="no-style spacer-input">
@@ -67,7 +66,7 @@ $options              = vk_blocks_get_options();
 						<?php echo esc_html( $device_label ); ?>
 						<input
 						type="number"
-						name="vk_blocks_options[margin_size][<?php echo esc_attr( $margin_size['value'] ) ; ?>][<?php echo esc_attr( $device_key ); ?>]" 
+						name="vk_blocks_options[margin_size][<?php echo esc_attr( $margin_size['value'] ); ?>][<?php echo esc_attr( $device_key ); ?>]" 
 						step="0.05"
 						value="<?php echo esc_attr( vk_blocks_get_spacer_size( $options, $margin_size['value'], $device_key ) ); ?>"
 					>

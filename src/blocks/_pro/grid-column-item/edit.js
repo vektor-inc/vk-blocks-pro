@@ -113,7 +113,9 @@ export default function GridColumnItemEdit(props) {
 					<SelectControl
 						label={__('Unit', 'vk-blocks')}
 						value={paddingUnit}
-						onChange={(value) => setAttributes({ paddingUnit: value })}
+						onChange={(value) =>
+							setAttributes({ paddingUnit: value })
+						}
 						options={[
 							{
 								value: 'px',
@@ -136,7 +138,7 @@ export default function GridColumnItemEdit(props) {
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
-				<div className="vk_gridColumn_item_inner" style={columStyle} >
+				<div className="vk_gridColumn_item_inner" style={columStyle}>
 					<InnerBlocks />
 				</div>
 			</div>

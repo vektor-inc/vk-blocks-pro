@@ -70,7 +70,7 @@ export default function GridColumnItemEdit(props) {
 			<InspectorControls>
 				<PanelBody title={__('Color Settings', 'vk-blocks')}>
 					<BaseControl
-						label={__('Text Color Settings', 'vk-blocks')}
+						label={__('Text Color', 'vk-blocks')}
 						id={`vk_grid_column_text_color`}
 					>
 						<ColorPalette
@@ -81,7 +81,7 @@ export default function GridColumnItemEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Background Color Settings', 'vk-blocks')}
+						label={__('Background Color', 'vk-blocks')}
 						id={`vk_grid_column_bg_color`}
 					>
 						<ColorPalette
@@ -93,11 +93,11 @@ export default function GridColumnItemEdit(props) {
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
-					title={__('Column Padding Setting', 'vk-blocks')}
+					title={__('Margin setting inside the item', 'vk-blocks')}
 					initialOpen={false}
 				>
 					<RangeControl
-						label={__('Padding', 'vk-blocks')}
+						label={__('Padding (Left and Right)', 'vk-blocks')}
 						value={padding}
 						onChange={(value) => {
 							props.setAttributes({ padding: value });

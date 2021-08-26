@@ -291,7 +291,9 @@ msgid "Child page list"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:100
-msgid "Padding"
+#: src/blocks/_pro/outer/edit.js:318
+#: src/blocks/_pro/slider-item/edit.js:78
+msgid "Padding (Left and Right)"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:114
@@ -331,15 +333,17 @@ msgid "Color Settings"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:73
-msgid "Text Color Settings"
+#: src/blocks/heading/edit.js:288
+msgid "Text Color"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:84
-msgid "Background Color Settings"
+#: src/blocks/border-box/edit.js:99
+msgid "Background Color"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:96
-msgid "Column Padding Setting"
+msgid "Margin setting inside the item"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/index.js:18
@@ -523,11 +527,6 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:313
 #: src/blocks/_pro/slider/edit.js:201
 msgid "Full Wide"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:318
-#: src/blocks/_pro/slider-item/edit.js:78
-msgid "Padding (Left and Right)"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:322
@@ -1212,10 +1211,6 @@ msgstr ""
 msgid "Black"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:99
-msgid "Background Color"
-msgstr ""
-
 #: src/blocks/border-box/index.js:19
 msgid "Border Box"
 msgstr ""
@@ -1488,10 +1483,6 @@ msgstr ""
 
 #: src/blocks/heading/edit.js:274
 msgid "Heading Settings"
-msgstr ""
-
-#: src/blocks/heading/edit.js:288
-msgid "Text Color"
 msgstr ""
 
 #: src/blocks/heading/edit.js:300

@@ -66,25 +66,9 @@ export default function save({ attributes }) {
 	return (
 		<>
 			<div {...blockProps}>
-				{
-					(() => {
-						if (
-							columStyle.textColor !== undefined ||
-							columStyle.backgroundColor !== undefined ||
-							columStyle.paddingTop !== undefined ||
-							columStyle.paddingX !== undefined ||
-							columStyle.paddingBottom !== undefined
-						) {
-							return (
-								<div className="vk_gridColumn_item_inner" style={columStyle}>
-									<InnerBlocks.Content />
-								</div>
-							)
-						} else {
-							return <InnerBlocks.Content />
-						}
-					})()
-				}
+				<div className="vk_gridColumn_item_inner" style={columStyle}>
+					<InnerBlocks.Content />
+				</div>
 			</div>
 		</>
 	);

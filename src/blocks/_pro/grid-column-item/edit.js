@@ -179,25 +179,9 @@ export default function GridColumnItemEdit(props) {
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
-				{
-					(() => {
-						if (
-							columStyle.textColor !== undefined ||
-							columStyle.backgroundColor !== undefined ||
-							columStyle.paddingTop !== undefined ||
-							columStyle.paddingX !== undefined ||
-							columStyle.paddingBottom !== undefined
-						) {
-							return (
-								<div className="vk_gridColumn_item_inner" style={columStyle}>
-									<InnerBlocks />
-								</div>
-							)
-						} else {
-							return <InnerBlocks />
-						}
-					})()
-				}
+				<div className="vk_gridColumn_item_inner" style={columStyle}>
+					<InnerBlocks />
+				</div>
 			</div>
 		</>
 	);

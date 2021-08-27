@@ -109,6 +109,7 @@ export default function GridColumnItemEdit(props) {
 					<RangeControl
 						label={__('Padding (Top)', 'vk-blocks')}
 						value={paddingTop}
+						initialPosition={0}
 						onChange={(value) => {
 							props.setAttributes({ paddingTop: value });
 							if (undefined === value) {
@@ -123,6 +124,7 @@ export default function GridColumnItemEdit(props) {
 					<RangeControl
 						label={__('Padding (Left and Right)', 'vk-blocks')}
 						value={paddingX}
+						initialPosition={0}
 						onChange={(value) => {
 							props.setAttributes({ paddingX: value });
 							if (undefined === value) {
@@ -137,6 +139,7 @@ export default function GridColumnItemEdit(props) {
 					<RangeControl
 						label={__('Padding (Bottom)', 'vk-blocks')}
 						value={paddingBottom}
+						initialPosition={0}
 						onChange={(value) => {
 							props.setAttributes({ paddingBottom: value });
 							if (undefined === value) {

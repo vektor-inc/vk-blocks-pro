@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-08-26T06:12:36+00:00\n"
+"POT-Creation-Date: 2021-08-27T05:41:44+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -298,18 +298,30 @@ msgstr ""
 msgid "Child page list"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:100
+#: src/blocks/_pro/grid-column-item/edit.js:106
+msgid "Margin setting inside the item"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:110
+msgid "Padding (Top)"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:125
 #: src/blocks/_pro/outer/edit.js:318
 #: src/blocks/_pro/slider-item/edit.js:78
 msgid "Padding (Left and Right)"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:114
+#: src/blocks/_pro/grid-column-item/edit.js:140
+msgid "Padding (Bottom)"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:155
 #: inc/vk-blocks/admin/admin-margin.php:31
 msgid "Unit"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:122
+#: src/blocks/_pro/grid-column-item/edit.js:163
 #: src/blocks/_pro/outer/edit.js:617
 #: src/blocks/icon/edit.js:131
 #: src/components/advanced-unit-control/index.js:18
@@ -317,7 +329,7 @@ msgstr ""
 msgid "px"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:126
+#: src/blocks/_pro/grid-column-item/edit.js:167
 #: src/blocks/_pro/outer/edit.js:621
 #: src/blocks/icon/edit.js:135
 #: src/components/advanced-unit-control/index.js:22
@@ -325,7 +337,7 @@ msgstr ""
 msgid "em"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:130
+#: src/blocks/_pro/grid-column-item/edit.js:171
 #: src/blocks/_pro/outer/edit.js:625
 #: src/blocks/icon/edit.js:139
 #: src/components/advanced-unit-control/index.js:26
@@ -333,29 +345,25 @@ msgstr ""
 msgid "rem"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:134
+#: src/blocks/_pro/grid-column-item/edit.js:175
 #: src/blocks/_pro/outer/edit.js:629
 #: src/blocks/icon/edit.js:143
 #: src/components/advanced-unit-control/index.js:30
 msgid "vw"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:71
+#: src/blocks/_pro/grid-column-item/edit.js:81
 msgid "Color Settings"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:73
+#: src/blocks/_pro/grid-column-item/edit.js:83
 #: src/blocks/heading/edit.js:288
 msgid "Text Color"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:84
+#: src/blocks/_pro/grid-column-item/edit.js:94
 #: src/blocks/border-box/edit.js:99
 msgid "Background Color"
-msgstr ""
-
-#: src/blocks/_pro/grid-column-item/edit.js:96
-msgid "Margin setting inside the item"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/index.js:18

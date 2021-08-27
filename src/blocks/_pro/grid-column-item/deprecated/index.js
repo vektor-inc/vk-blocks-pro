@@ -112,7 +112,13 @@ const blockAttributes2 = {
 		type: 'string',
 		default: 'px',
 	},
-	padding: {
+	paddingTop: {
+		type: 'number'
+	},
+	paddingX: {
+		type: 'number'
+	},
+	paddingBottom: {
 		type: 'number'
 	}
 }

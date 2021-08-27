@@ -27,7 +27,9 @@ export default function GridColumnItemEdit(props) {
 		unit,
 		textColor,
 		backgroundColor,
-		padding,
+		paddingTop,
+		paddingX,
+		paddingBottom,
 		paddingUnit,
 	} = attributes;
 	// eslint-disable-next-line camelcase
@@ -50,13 +52,21 @@ export default function GridColumnItemEdit(props) {
 			backgroundColor !== null && backgroundColor !== undefined
 				? backgroundColor
 				: undefined,
-		paddingLeft:
-			padding !== null && padding !== undefined
-				? padding + paddingUnit
+		paddingTop:
+			paddingTop !== null && paddingTop !== undefined
+				? paddingTop + paddingUnit
 				: undefined,
 		paddingRight:
-			padding !== null && padding !== undefined
-				? padding + paddingUnit
+			paddingX !== null && paddingX !== undefined
+				? paddingX + paddingUnit
+				: undefined,
+		paddingBottom:
+			paddingBottom !== null && paddingBottom !== undefined
+				? paddingBottom + paddingUnit
+				: undefined,
+		paddingLeft:
+			paddingX !== null && paddingX !== undefined
+				? paddingX + paddingUnit
 				: undefined,
 	};
 
@@ -97,10 +107,38 @@ export default function GridColumnItemEdit(props) {
 					initialOpen={false}
 				>
 					<RangeControl
-						label={__('Padding (Left and Right)', 'vk-blocks')}
-						value={padding}
+						label={__('Padding (Top)', 'vk-blocks')}
+						value={paddingTop}
 						onChange={(value) => {
-							props.setAttributes({ padding: value });
+							props.setAttributes({ paddingTop: value });
+							if (undefined === value) {
+								props.setAttributes({ paddingUnit: 'px' });
+							}
+						}}
+						min={0}
+						max={300}
+						allowReset={true}
+						resetFallbackValue={null}
+					/>
+					<RangeControl
+						label={__('Padding (Left and Right)', 'vk-blocks')}
+						value={paddingX}
+						onChange={(value) => {
+							props.setAttributes({ paddingX: value });
+							if (undefined === value) {
+								props.setAttributes({ paddingUnit: 'px' });
+							}
+						}}
+						min={0}
+						max={300}
+						allowReset={true}
+						resetFallbackValue={null}
+					/>
+					<RangeControl
+						label={__('Padding (Bottom)', 'vk-blocks')}
+						value={paddingBottom}
+						onChange={(value) => {
+							props.setAttributes({ paddingBottom: value });
 							if (undefined === value) {
 								props.setAttributes({ paddingUnit: 'px' });
 							}
@@ -138,9 +176,25 @@ export default function GridColumnItemEdit(props) {
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
-				<div className="vk_gridColumn_item_inner" style={columStyle}>
-					<InnerBlocks />
-				</div>
+				{
+					(() => {
+						if (
+							columStyle.textColor !== undefined ||
+							columStyle.backgroundColor !== undefined ||
+							columStyle.paddingTop !== undefined ||
+							columStyle.paddingX !== undefined ||
+							columStyle.paddingBottom !== undefined
+						) {
+							return (
+								<div className="vk_gridColumn_item_inner" style={columStyle}>
+									<InnerBlocks />
+								</div>
+							)
+						} else {
+							return <InnerBlocks />
+						}
+					})()
+				}
 			</div>
 		</>
 	);

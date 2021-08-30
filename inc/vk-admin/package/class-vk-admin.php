@@ -36,9 +36,9 @@ if ( ! class_exists( 'Vk_Admin' ) ) {
 		}
 
 		// 管理画面用のjsを読み込むページを配列で指定する
-		// $admin_pages は vk-admin-config.php に記載
-		static function admin_scripts( $admin_pages ) {
-			foreach ( $admin_pages as $key => $value ) {
+		// $vk_blocks_admin_pages は vk-admin-config.php に記載
+		static function admin_scripts( $vk_blocks_admin_pages ) {
+			foreach ( $vk_blocks_admin_pages as $key => $value ) {
 				$hook = 'admin_print_styles-' . $value;
 				add_action( $hook, array( __CLASS__, 'admin_enqueue_scripts' ) );
 			}

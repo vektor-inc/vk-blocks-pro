@@ -78,20 +78,33 @@ function vk_blocks_setting_page() {
  * VK Blocks Save Option
  */
 function vk_blocks_setting_option_save() {
-	if ( isset( $_POST['vk_blocks_balloon_meta'] ) && wp_kses_allowed_html( wp_unslash( $_POST['vk_blocks_balloon_meta'] ) ) ) {
+	if (
+		isset( $_POST['vk_blocks_balloon_meta'], $_POST['vkb-setting-page'] )
+		&& wp_verify_nonce( sanitize_key( $_POST['vkb-setting-page'] ), 'vkb-nonce-key' )
+	) {
 		if ( check_admin_referer( 'vkb-nonce-key', 'vkb-setting-page' ) ) {
 			// 保存処理
-			if ( isset( $_POST['vk_blocks_balloon_meta'] ) && wp_kses_allowed_html( wp_unslash( $_POST['vk_blocks_balloon_meta'] ) ) ) {
-				update_option( 'vk_blocks_balloon_meta', wp_kses_allowed_html( wp_unslash( $_POST['vk_blocks_balloon_meta'] ) ) );
+			if (
+				isset( $_POST['vk_blocks_balloon_meta'], $_POST['vkb-setting-page'] )
+				&& wp_verify_nonce( sanitize_key( $_POST['vkb-setting-page'] ), 'vkb-nonce-key' )
+			) {
+				$vk_blocks_balloon_meta = sanitize_option( 'vk_blocks_balloon_meta', wp_unslash( $_POST['vk_blocks_balloon_meta'] ) );
+				update_option( 'vk_blocks_balloon_meta', $vk_blocks_balloon_meta );
 			} else {
 				update_option( 'vk_blocks_balloon_meta', '' );
 			}
 		}
 	}
-	if ( isset( $_POST['vk_blocks_options'] ) && wp_kses_allowed_html( wp_unslash( $_POST['vk_blocks_options'] ) ) ) {
+	if (
+		isset( $_POST['vk_blocks_options'], $_POST['vkb-setting-page'] )
+		&& wp_verify_nonce( sanitize_key( $_POST['vkb-setting-page'] ), 'vkb-nonce-key' )
+	) {
 		if ( check_admin_referer( 'vkb-nonce-key', 'vkb-setting-page' ) ) {
-			if ( isset( $_POST['vk_blocks_options'] ) && wp_kses_allowed_html( wp_unslash( $_POST['vk_blocks_options'] ) ) ) {
-				update_option( 'vk_blocks_options', wp_kses_allowed_html( wp_unslash( $_POST['vk_blocks_options'] ) ) );
+			if (
+				isset( $_POST['vk_blocks_options'], $_POST['vkb-setting-page'] )
+				&& wp_verify_nonce( sanitize_key( $_POST['vkb-setting-page'] ), 'vkb-nonce-key' )
+			) {
+				update_option( 'vk_blocks_options', sanitize_option( 'vk_blocks_options', wp_unslash( $_POST['vk_blocks_options'] ) ) );
 			} else {
 				update_option( 'vk_blocks_options', '' );
 			}

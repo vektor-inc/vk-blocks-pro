@@ -1,43 +1,51 @@
 <?php
+
 /**
  * Registers the `vk-blocks/spacer` block.
  *
  * @package vk-blocks
  */
 
-// Register Style.
-wp_register_style(
-	'vk-blocks/spacer',
-	VK_BLOCKS_URL . 'build/spacer/style-main.css',
-	array(),
-	VK_BLOCKS_VERSION
-);
+/**
+ * CSSの読み込み
+ */
 
-// Register Script.
-$asset = include( VK_BLOCKS_PATH . 'build/spacer/index.asset.php' );
-wp_register_script(
-	'vk-blocks/spacer',
-	VK_BLOCKS_URL . 'build/spacer/index.js',
-	$asset_file['dependencies'],
-	VK_BLOCKS_VERSION,
-	true
-);
+function vk_blocks_set_spacer_enqueue_files() {
+	 // Register Style.
+	wp_register_style(
+		'vk-blocks/spacer',
+		VK_BLOCKS_URL . 'build/spacer/style-main.css',
+		array(),
+		VK_BLOCKS_VERSION
+	);
+
+	// Register Script.
+	$asset = include VK_BLOCKS_PATH . 'build/spacer/index.asset.php';
+	wp_register_script(
+		'vk-blocks/spacer',
+		VK_BLOCKS_URL . 'build/spacer/index.js',
+		$asset['dependencies'],
+		VK_BLOCKS_VERSION,
+		true
+	);
+}
+add_action( 'wp_enqueue_scripts', 'vk_blocks_set_spacer_enqueue_files' );
 
 /**
  * Register Block VK Spacer
  */
-function register_block_vk_spacer()
+function vk_blocks_register_block_vk_spacer()
 {
 	register_block_type(
 		__DIR__,
 		array(
 			'style'        => 'vk-blocks/spacer',
 			'editor_style' => 'vk-blocks/spacer',
-			'editor_script' => 'vk-blocks-build-js',
+			'editor_script' => 'vk-blocks/spacer',
 		)
 	);
 }
-add_action('init', 'register_block_vk_spacer', 99);
+add_action('init', 'vk_blocks_register_block_vk_spacer', 99);
 
 /**
  * スペーサーのサイズを取得する関数

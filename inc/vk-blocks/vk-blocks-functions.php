@@ -195,8 +195,8 @@ function vk_blocks_blocks_assets() {
 			'page-content',
 			'pr-blocks',
 			'pr-content',
-		//	'spacer',
-			'staff',
+			// 'spacer',
+				'staff',
 		);
 		$arr_wp56_pro = array(
 			'accordion',

@@ -1,11 +1,16 @@
 <?php
+/**
+ * VK Blocks Admin Notices
+ *
+ * @package vk-blocks
+ */
 
 /**
  * The admin notice for VK blocks Pro.
  */
-function vkblocks_admin_notice_pro() {
+function vk_blocks_admin_notice_pro() {
 	$plugin_base_dir = dirname( __FILE__ );
-	$lang            = ( get_locale() == 'ja' ) ? 'ja' : 'en';
+	$lang            = ( get_locale() === 'ja' ) ? 'ja' : 'en';
 	if ( strpos( $plugin_base_dir, 'vk-blocks-pro' ) !== false ) {
 		return;
 	}
@@ -47,15 +52,15 @@ function vkblocks_admin_notice_pro() {
 		<?php
 	}
 }
-add_action( 'admin_notices', 'vkblocks_admin_notice_pro' );
+add_action( 'admin_notices', 'vk_blocks_admin_notice_pro' );
 
 
 /**
  * Dismiss admin notice for VK blocks Pro.
  */
-function vkblocks_admin_notice_dismiss() {
+function vk_blocks_admin_notice_dismiss() {
 	if ( isset( $_GET['vkblocks-dismiss-pro'] ) && check_admin_referer( 'vkblocks-dismiss-pro-' . get_current_user_id() ) ) {
 		update_user_meta( get_current_user_id(), 'vkblocks_dismissed_notice_pro', 1 );
 	}
 }
-add_action( 'admin_head', 'vkblocks_admin_notice_dismiss' );
+add_action( 'admin_head', 'vk_blocks_admin_notice_dismiss' );

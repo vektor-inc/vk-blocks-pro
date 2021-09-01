@@ -55,7 +55,7 @@ if ( ! class_exists( 'Vk_Admin' ) ) {
 
 		/**
 		 * Theme Exists
-		 *
+		 * 
 		 * @param string $theme '${theme_dir}/style.css'.
 		 */
 		public static function theme_exists( $theme ) {

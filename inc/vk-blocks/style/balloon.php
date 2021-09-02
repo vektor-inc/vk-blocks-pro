@@ -5,6 +5,9 @@
  * @package VK Blocks
  */
 
+/**
+ * Load Scripts
+ */
 function vk_blocks_balloon_style() {
 	$vk_blocks_options = vk_blocks_get_options();
 	// 線の太さ.

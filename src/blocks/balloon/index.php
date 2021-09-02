@@ -5,12 +5,11 @@
  * @package vk-blocks
  */
 
-/**
- * Registers the `vk-blocks/balloon` block.
- */
 if ( function_exists( 'register_block_type_from_metadata' ) ) {
-
-	function register_block_vk_balloon() {
+	/**
+	 * Registers the `vk-blocks/balloon` block.
+	 */
+	function vk_blocks_register_block_vk_balloon() {
 		register_block_type_from_metadata(
 			__DIR__,
 			array(
@@ -19,5 +18,5 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 			)
 		);
 	}
-	add_action( 'init', 'register_block_vk_balloon', 99 );
+	add_action( 'init', 'vk_blocks_register_block_vk_balloon', 99 );
 }

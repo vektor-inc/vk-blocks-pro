@@ -2,7 +2,7 @@
 /**
  * Responsive br view
  *
- * @package VK Blocks
+ * @package vk-blocks
  */
 
 /**

@@ -12,9 +12,9 @@
  */
 
 /**
- * VK_Print_CSS_Variables
+ * Vk_Blocks_Print_CSS_Variables
  */
-class VK_Print_CSS_Variables {
+class Vk_Blocks_Print_CSS_Variables {
 
 	/**
 	 * コンストラクタ
@@ -45,6 +45,7 @@ class VK_Print_CSS_Variables {
             :root {
                 --vk-size-text: 16px;
             }';
+
 		/*
 			本当は以下も対応したいが 影響範囲が広い & そもそもReact処理を検討する ので暫定で現状措置
 			--vk-size-text-xs: 0.75rem;
@@ -66,4 +67,4 @@ class VK_Print_CSS_Variables {
 
 }
 
-new VK_Print_CSS_Variables();
+new Vk_Blocks_Print_CSS_Variables();

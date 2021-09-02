@@ -6,14 +6,27 @@
  */
 
 /**
- * page-content block test case.
+ * Post List block test case.
  */
 class PostListBlockTest extends WP_UnitTestCase {
 
-	public $post_id; // PostListブロックを挿入する投稿
-	public $page_id; // PostListブロックで表示する固定ページ
+	/**
+	 * PostListブロックを挿入する投稿
+	 *
+	 * @var int|\WP_Error $page_id
+	 */
+	public $post_id;
 
-	// 各テストケースの実行直前に呼ばれる
+	/**
+	 * PostListブロックで表示する固定ページ
+	 *
+	 * @var int|\WP_Error $page_id
+	 */
+	public $page_id;
+
+	/**
+	 * 各テストケースの実行直前に呼ばれる
+	 */
 	public function setUp() {
 		parent::setUp();
 
@@ -33,6 +46,9 @@ class PostListBlockTest extends WP_UnitTestCase {
 		$this->post_id = wp_insert_post( $post );
 	}
 
+	/**
+	 * Tear down each test method.
+	 */
 	public function tearDown() {
 		wp_delete_post( $this->page_id, true );
 		$this->page_id = 0;
@@ -98,7 +114,7 @@ class PostListBlockTest extends WP_UnitTestCase {
 	 * Add user and set the user as current user.
 	 *
 	 * @param  string $role administrator, editor, author, contributor ...
-	 * @return none
+	 * @return void
 	 */
 	public function set_current_user( $role ) {
 		$user = $this->factory()->user->create_and_get(

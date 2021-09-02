@@ -12,7 +12,7 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 	 *
 	 * @return void
 	 */
-	function vk_blocks_register_block_vkb_alert() {
+	function vk_blocks_register_block_alert() {
 		register_block_type_from_metadata(
 			__DIR__,
 			array(

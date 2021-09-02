@@ -21,6 +21,6 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 			)
 		);
 	}
-	add_action( 'init', 'vk_blocks_register_block_vkb_alert', 99 );
+	add_action( 'init', 'vk_blocks_register_block_alert', 99 );
 }
 

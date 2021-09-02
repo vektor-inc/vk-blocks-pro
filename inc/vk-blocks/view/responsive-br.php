@@ -1,5 +1,18 @@
 <?php
-function vkblocks_responsive_br_filter( $block_content, $block ) {
+/**
+ * Responsive br view
+ *
+ * @package VK Blocks
+ */
+
+/**
+ * Render responsive br block
+ *
+ * @param string $block_content block_content.
+ * @param array  $block block.
+ * @return string
+ */
+function vk_blocks_responsive_br_filter( $block_content, $block ) {
 	$filterd_content = str_replace( '[br-xs]', '<br class="vk_responsive-br vk_responsive-br-xs"/>', $block_content );
 	$filterd_content = str_replace( '[br-sm]', '<br class="vk_responsive-br vk_responsive-br-sm"/>', $filterd_content );
 	$filterd_content = str_replace( '[br-md]', '<br class="vk_responsive-br vk_responsive-br-md"/>', $filterd_content );
@@ -9,4 +22,4 @@ function vkblocks_responsive_br_filter( $block_content, $block ) {
 
 	return $filterd_content;
 }
-add_filter( 'render_block', 'vkblocks_responsive_br_filter', 10, 2 );
+add_filter( 'render_block', 'vk_blocks_responsive_br_filter', 10, 2 );

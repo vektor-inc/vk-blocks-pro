@@ -1,11 +1,18 @@
 <?php
-
 /**
  * Registers the `vk-blocks/step-item` block.
+ *
+ * @package vk-blocks
  */
+
 if ( function_exists( 'register_block_type_from_metadata' ) ) {
 
-	function register_block_vkb_step_item() {
+	/**
+	 * Register step item block.
+	 *
+	 * @return void
+	 */
+	function vk_blocks_register_block_step_item() {
 		register_block_type_from_metadata(
 			__DIR__,
 			array(
@@ -14,5 +21,5 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 			)
 		);
 	}
-	add_action( 'init', 'register_block_vkb_step_item', 99 );
+	add_action( 'init', 'vk_blocks_register_block_step_item', 99 );
 }

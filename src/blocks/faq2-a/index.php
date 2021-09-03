@@ -1,11 +1,18 @@
 <?php
-
 /**
  * Registers the `vk-blocks/faq2-a` block.
+ *
+ * @package vk-blocks
  */
+
 if ( function_exists( 'register_block_type_from_metadata' ) ) {
 
-	function register_block_vk_faq2_a() {
+	/**
+	 * Register faq2 a block.
+	 *
+	 * @return void
+	 */
+	function vk_blocks_register_block_faq2_a() {
 		register_block_type_from_metadata(
 			__DIR__,
 			array(
@@ -14,6 +21,5 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 			)
 		);
 	}
-	add_action( 'init', 'register_block_vk_faq2_a', 99 );
+	add_action( 'init', 'vk_blocks_register_block_faq2_a', 99 );
 }
-

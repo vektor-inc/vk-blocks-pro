@@ -1,5 +1,10 @@
 <?php
 /**
+ * VK Blocks Customize FaceList
+ *
+ * @package vk_blocks
+ */
+/**
  * FaceList Customize.
  */
 function vkblocks_balloon_meta_customize( $wp_customize ) {

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Registers the `vk-blocks/timeline-item` block.
  */

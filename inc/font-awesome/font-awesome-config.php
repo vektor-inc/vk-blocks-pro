@@ -1,5 +1,11 @@
 <?php
-/*
+/**
+ * VK Blocks Font Awesome
+ *
+ * @package vk_blocks
+ */
+
+ /*
   Load modules
 /*-------------------------------------------*/
 if ( ! class_exists( 'Vk_Font_Awesome_Versions' ) ) {

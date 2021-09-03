@@ -12,7 +12,7 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 	 *
 	 * @return void
 	 */
-	function vk_blocks_register_block_vk_border_box() {
+	function vk_blocks_register_block_border_box() {
 		register_block_type_from_metadata(
 			__DIR__,
 			array(
@@ -21,5 +21,5 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 			)
 		);
 	}
-	add_action( 'init', 'vk_blocks_register_block_vk_border_box', 99 );
+	add_action( 'init', 'vk_blocks_register_block_border_box', 99 );
 }

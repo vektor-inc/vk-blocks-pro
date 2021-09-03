@@ -1,18 +1,31 @@
 <?php
-
 /**
  * Registers the `vk-blocks/post-list` block.
+ *
+ * @package vk-blocks
  */
+
 if ( function_exists( 'register_block_type_from_metadata' ) ) {
 
-	function vk_post_list_render_callback( $attributes ) {
+	/**
+	 * Post list render callback
+	 *
+	 * @param array $attributes Block attributes.
+	 * @return string
+	 */
+	function vk_blocks_post_list_render_callback( $attributes ) {
 		$wp_query     = Vk_Blocks_PostList::get_loop_query( $attributes );
 		$options_loop = array( 'class_loop_outer' => 'vk_postList' );
 
 		return Vk_Blocks_PostList::render_post_list( $attributes, $wp_query, $options_loop );
 	}
 
-	function register_block_vkb_post_list() {
+	/**
+	 * Register block post-list
+	 *
+	 * @return void
+	 */
+	function vk_blocks_register_block_post_list() {
 		global $vk_blocks_common_attributes;
 		register_block_type_from_metadata(
 			__DIR__,
@@ -140,7 +153,7 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 					),
 					$vk_blocks_common_attributes
 				),
-				'render_callback' => 'vk_post_list_render_callback',
+				'render_callback' => 'vk_blocks_post_list_render_callback',
 			)
 		);
 
@@ -172,5 +185,5 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 			)
 		);
 	}
-	add_action( 'init', 'register_block_vkb_post_list', 99 );
+	add_action( 'init', 'vk_blocks_register_block_post_list', 99 );
 }

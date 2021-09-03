@@ -5,14 +5,14 @@
  * @package vk-blocks
  */
 
-if ( function_exists( 'vk_blocks_register_block_type_from_metadata' ) ) {
+if ( function_exists( 'register_block_type_from_metadata' ) ) {
 
 	/**
 	 * Register select-post-list-item Block
 	 *
 	 * @return void
 	 */
-	function vk_blocks_register_block_vkb_select_post_list_item() {
+	function vk_blocks_register_block_select_post_list_item() {
 		register_block_type_from_metadata(
 			__DIR__,
 			array(
@@ -108,7 +108,7 @@ if ( function_exists( 'vk_blocks_register_block_type_from_metadata' ) ) {
 			)
 		);
 	}
-	add_action( 'init', 'vk_blocks_register_block_vkb_select_post_list_item', 99 );
+	add_action( 'init', 'vk_blocks_register_block_select_post_list_item', 99 );
 
 	/**
 	 * Render callback of select_post_list_item block

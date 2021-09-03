@@ -5,12 +5,14 @@
  * @package vk_blocks
  */
 
-/**
- * Registers the `vk-blocks/staff` block.
- */
 if ( function_exists( 'register_block_type_from_metadata' ) ) {
 
-	function register_block_vk_staff() {
+	/**
+	 * Register Staff block.
+	 *
+	 * @return void
+	 */
+	function vk_blocks_register_block_staff() {
 		register_block_type_from_metadata(
 			__DIR__,
 			array(
@@ -19,5 +21,5 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 			)
 		);
 	}
-	add_action( 'init', 'register_block_vk_staff', 99 );
+	add_action( 'init', 'vk_blocks_register_block_staff', 99 );
 }

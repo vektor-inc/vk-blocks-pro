@@ -1,11 +1,18 @@
 <?php
-
 /**
  * Registers the `vk-blocks/accordion-target` block.
+ *
+ * @package vk-blocks
  */
+
 if ( function_exists( 'register_block_type_from_metadata' ) ) {
 
-	function register_block_vkb_accordion_target() {
+	/**
+	 * Register accordion target block.
+	 *
+	 * @return void
+	 */
+	function vk_blocks_register_block_accordion_target() {
 		register_block_type_from_metadata(
 			__DIR__,
 			array(
@@ -14,5 +21,5 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 			)
 		);
 	}
-	add_action( 'init', 'register_block_vkb_accordion_target', 99 );
+	add_action( 'init', 'vk_blocks_register_block_accordion_target', 99 );
 }

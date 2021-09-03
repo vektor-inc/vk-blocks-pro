@@ -12,7 +12,7 @@
  * ★★★★★★ 関数のprefixは固有のものに変更する事 ★★★★★★
  *
  * @param  array $taxonomies List of taxonomies.
- * @return array $taxonomies List of taxonomies.
+ * @return array
  */
 function vk_blocks_term_color_taxonomies_custom( $taxonomies ) {
 	// 存在するtaxonomiesを取得

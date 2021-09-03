@@ -1,11 +1,18 @@
 <?php
-
 /**
  * Registers the `vk-blocks/spacer` block.
+ *
+ * @package vk-blocks
  */
+
 if ( function_exists( 'register_block_type_from_metadata' ) ) {
 
-	function register_block_vk_spacer() {
+	/**
+	 * Register Spacer block.
+	 *
+	 * @return void
+	 */
+	function vk_blocks_register_block_spacer() {
 		register_block_type_from_metadata(
 			__DIR__,
 			array(
@@ -14,7 +21,7 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 			)
 		);
 	}
-	add_action( 'init', 'register_block_vk_spacer', 99 );
+	add_action( 'init', 'vk_blocks_register_block_spacer', 99 );
 }
 
 /**

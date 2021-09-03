@@ -12,7 +12,7 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 	 *
 	 * @return void
 	 */
-	function vk_blocks_register_block_vkb_timeline_item() {
+	function vk_blocks_register_block_timeline_item() {
 		register_block_type_from_metadata(
 			__DIR__,
 			array(
@@ -21,5 +21,5 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 			)
 		);
 	}
-	add_action( 'init', 'vk_blocks_register_block_vkb_timeline_item', 99 );
+	add_action( 'init', 'vk_blocks_register_block_timeline_item', 99 );
 }

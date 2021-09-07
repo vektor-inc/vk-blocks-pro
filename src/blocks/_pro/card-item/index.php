@@ -1,6 +1,7 @@
 <?php
 
 /**
+ * 
  * Registers the `vk-blocks/card_item` block.
  */
 if ( function_exists( 'register_block_type_from_metadata' ) ) {

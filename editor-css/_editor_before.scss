@@ -208,7 +208,7 @@ div[data-type="vk-blocks/page-content"].is-selected{
 	}
 }
 
-// 選択投稿リストブロックの編集用CSS
+// 選択投稿リスト編集用CSS
 @import "./_editor_before_select-post";
 
 // アニメーションブロックの識別用枠線
@@ -216,6 +216,9 @@ div[data-type="vk-blocks/page-content"].is-selected{
 
 // アイコンカードの見出しがテーマの見出し指定機能に負けるので上書き
 @import "./editor_before_icon-card";
+
+// アイコン横並び編集用CSS
+@import "./editor_before_icons";
 
 /* これがないとGutenberg標準のエディタCSSに負ける */
 h1:first-child.vk_prBlocks_item_title {

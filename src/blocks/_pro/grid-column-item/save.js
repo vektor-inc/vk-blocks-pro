@@ -12,6 +12,12 @@ export default function save({ attributes }) {
 		col_xxl,
 		marginBottom,
 		unit,
+		textColor,
+		backgroundColor,
+		paddingTop,
+		paddingX,
+		paddingBottom,
+		paddingUnit,
 	} = attributes;
 	// eslint-disable-next-line camelcase
 	const columnClass = `col-${convertToGrid(col_xs)} col-sm-${convertToGrid(
@@ -25,15 +31,61 @@ export default function save({ attributes }) {
 		style = { marginBottom: marginBottom + unit };
 	}
 
+	const columStyle = {
+		color:
+			textColor !== null && textColor !== undefined
+				? textColor
+				: undefined,
+		background:
+			backgroundColor !== null && backgroundColor !== undefined
+				? backgroundColor
+				: undefined,
+		paddingTop:
+			paddingTop !== null && paddingTop !== undefined
+				? paddingTop + paddingUnit
+				: undefined,
+		paddingRight:
+			paddingX !== null && paddingX !== undefined
+				? paddingX + paddingUnit
+				: undefined,
+		paddingBottom:
+			paddingBottom !== null && paddingBottom !== undefined
+				? paddingBottom + paddingUnit
+				: undefined,
+		paddingLeft:
+			paddingX !== null && paddingX !== undefined
+				? paddingX + paddingUnit
+				: undefined,
+	};
+
 	const blockProps = useBlockProps.save({
-		className: columnClass,
+		className: `vk_gridColumn_item ${columnClass}`,
 		style,
 	});
 
 	return (
 		<>
 			<div {...blockProps}>
-				<InnerBlocks.Content />
+				{(() => {
+					if (
+						columStyle.color !== undefined ||
+						columStyle.background !== undefined ||
+						columStyle.paddingTop !== undefined ||
+						columStyle.paddingRight !== undefined ||
+						columStyle.paddingBottom !== undefined ||
+						columStyle.paddingLeft !== undefined
+					) {
+						return (
+							<div className="vk_gridColumn_item_inner" style={columStyle}>
+								<InnerBlocks.Content />
+							</div>
+						);
+					} else {
+						return (
+							<InnerBlocks.Content />
+						);
+					}
+				})()}
 			</div>
 		</>
 	);

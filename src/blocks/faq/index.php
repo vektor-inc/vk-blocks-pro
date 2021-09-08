@@ -1,11 +1,18 @@
 <?php
-
 /**
- * Registers the `vk-blocks/faq` block.
+ * VK Blocks - Faq Blocks
+ *
+ * @package vk-blocks
  */
+
 if ( function_exists( 'register_block_type_from_metadata' ) ) {
 
-	function register_block_vk_faq() {
+	/**
+	 * Registers the `vk-blocks/faq` block.
+	 *
+	 * @return void
+	 */
+	function vk_blocks_register_block_faq() {
 		register_block_type_from_metadata(
 			__DIR__,
 			array(
@@ -14,10 +21,17 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 			)
 		);
 	}
-	add_action( 'init', 'register_block_vk_faq', 99 );
+	add_action( 'init', 'vk_blocks_register_block_faq', 99 );
 }
 
-function vk_faq_render_callback( $block_content, $block ) {
+/**
+ * Render faq block
+ *
+ * @param string $block_content block_content.
+ * @param array  $block block.
+ * @return string
+ */
+function vk_blocks_faq_render_callback( $block_content, $block ) {
 	$vk_blocks_options = vk_blocks_get_options();
 	if ( 'vk-blocks/faq' === $block['blockName'] ) {
 		if ( 'open' === $vk_blocks_options['new_faq_accordion'] ) {
@@ -31,4 +45,4 @@ function vk_faq_render_callback( $block_content, $block ) {
 	return $block_content;
 }
 
-add_filter( 'render_block', 'vk_faq_render_callback', 10, 2 );
+add_filter( 'render_block', 'vk_blocks_faq_render_callback', 10, 2 );

@@ -1,11 +1,18 @@
 <?php
-
 /**
  * Registers the `vk-blocks/select-post-list-item` block.
+ *
+ * @package vk-blocks
  */
+
 if ( function_exists( 'register_block_type_from_metadata' ) ) {
 
-	function register_block_vkb_select_post_list_item() {
+	/**
+	 * Register select-post-list-item Block
+	 *
+	 * @return void
+	 */
+	function vk_blocks_register_block_select_post_list_item() {
 		register_block_type_from_metadata(
 			__DIR__,
 			array(
@@ -97,13 +104,20 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 						'default' => '',
 					),
 				),
-				'render_callback' => 'vk_select_post_list_item_render_callback',
+				'render_callback' => 'vk_blocks_select_post_list_item_render_callback',
 			)
 		);
 	}
-	add_action( 'init', 'register_block_vkb_select_post_list_item', 99 );
+	add_action( 'init', 'vk_blocks_register_block_select_post_list_item', 99 );
 
-	function vk_select_post_list_item_render_callback( $attributes, $content ) {
+	/**
+	 * Render callback of select_post_list_item block
+	 *
+	 * @param array  $attributes Block attributes.
+	 * @param string $content Block content.
+	 * @return string
+	 */
+	function vk_blocks_select_post_list_item_render_callback( $attributes, $content ) {
 		$attributes = wp_parse_args(
 			$attributes,
 			array(
@@ -160,7 +174,8 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 			'overlay'                    => false,
 			'slug'                       => '',
 		);
-		if ( $options['layout'] !== 'postListText' ) {
+
+		if ( 'postListText' !== $options['layout'] ) {
 			// If get info of column that deploy col to class annd add
 			if ( empty( $options['class_outer'] ) ) {
 				$options['class_outer'] = VK_Component_Posts::get_col_size_classes( $columns );

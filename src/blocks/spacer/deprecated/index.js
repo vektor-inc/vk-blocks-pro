@@ -3,6 +3,8 @@ import save001 from './0.0.1/save';
 import save002 from './0.0.2/save';
 import save0_57_4 from './0.57.4/save';
 import save1_3_2 from './1.3.2/save';
+import save1_13_2 from './1.13.2/save';
+
 export const blockAttributes = {
     unit: {
         type: 'string',
@@ -21,12 +23,12 @@ export const blockAttributes = {
         default: 10,
     },
     spaceType: {
-        type: "string",
-        default: "height"
+        type: 'string',
+        default: 'height',
     },
 };
 
-const blockAttributes003 = {
+const blockAttributes2 = {
 	...blockAttributes,
     pc: {
         type: 'number',
@@ -46,17 +48,29 @@ const blockAttributes003 = {
 	},
 }
 
+const blockAttributes3 = {
+	...blockAttributes2,
+    spaceSize: {
+		type: 'string',
+		default: 'medium',
+	}
+}
+
 const deprecated = [
+	{
+        attributes:blockAttributes3,
+        save: save1_13_2,
+    },
     {
-        attributes:blockAttributes003,
+        attributes:blockAttributes2,
         save: save1_3_2,
     },
     {
-        attributes: blockAttributes003,
+        attributes: blockAttributes2,
         save: save0_57_4,
     },
     {
-        attributes: blockAttributes003,
+        attributes: blockAttributes2,
         save: save002,
     },
     {

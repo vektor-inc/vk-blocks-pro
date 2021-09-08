@@ -17,7 +17,7 @@ if ( ! function_exists( 'vk_blocks_active' ) ) {
 	define( 'VK_BLOCKS_SRC_PATH', plugin_dir_path( dirname( __FILE__ ) ) . 'src/' );
 
 	// Set version number.
-	define( 'VK_BLOCKS_VERSION', vkblocks_get_version() );
+	define( 'VK_BLOCKS_VERSION', vk_blocks_get_version() );
 
 	global $vk_blocks_prefix;
 	$vk_blocks_prefix = apply_filters( 'vk_blocks_prefix', 'VK' );
@@ -45,9 +45,9 @@ if ( ! function_exists( 'vk_blocks_active' ) ) {
 	require_once plugin_dir_path( __FILE__ ) . 'admin-notices.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/vk-blocks-functions.php';
 
-	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/App/RestAPI/BlockMeta/EntryPoint.php';
+	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/App/RestAPI/BlockMeta/class-vk-blocks-entrypoint.php';
 	// BlockMeta用のAPIルートを設定.
-	new EntryPoint();
+	new Vk_Blocks_EntryPoint();
 
 	// プロ版の設定ファイルを読み込み.
 	if ( file_exists( plugin_dir_path( __FILE__ ) . 'vk-blocks-pro-config.php' ) ) {

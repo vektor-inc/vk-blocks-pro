@@ -3,7 +3,6 @@ import {
 	InnerBlocks,
 	useBlockProps,
 	InspectorControls,
-	BlockAlignmentControl,
 	JustifyContentControl,
 	BlockControls,
 } from '@wordpress/block-editor';
@@ -68,13 +67,6 @@ export default function IconOuterEdit(props) {
 	return (
 		<>
 			<BlockControls group="block">
-				<BlockAlignmentControl
-					value={iconAlign}
-					onChange={(value) => {
-						setAttributes({ iconAlign: value });
-					}}
-					controls={['left', 'center', 'right']}
-				/>
 				<JustifyContentControl
 					allowedControls={[
 						'left',

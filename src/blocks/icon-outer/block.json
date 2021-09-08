@@ -36,7 +36,7 @@
 			"default": "0"
 		}
 	},
-	"description": "Outer block of vk-blocks/icon.",
+	"description": "Display the Font Awesome icons horizontally.",
 	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true

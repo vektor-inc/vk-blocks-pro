@@ -301,6 +301,18 @@ msgstr "この投稿を除く"
 msgid "Child page list"
 msgstr "子ページリスト"
 
+#: src/blocks/_pro/grid-column-item/edit.js:106
+msgid "Margin setting inside the item"
+msgstr "アイテム内の余白設定"
+
+#: src/blocks/_pro/grid-column-item/edit.js:110
+msgid "Padding (Top)"
+msgstr "余白 (上)"
+
+#: src/blocks/_pro/grid-column-item/edit.js:140
+msgid "Padding (Bottom)"
+msgstr "余白 (下)"
+
 #: src/blocks/_pro/grid-column-item/index.js:18
 msgid "Grid Column Item"
 msgstr "グリッドカラムアイテム"
@@ -642,6 +654,10 @@ msgstr "rem"
 #: src/components/advanced-unit-control/index.js:30
 msgid "vw"
 msgstr "vw"
+
+#: src/blocks/_pro/grid-column-item/edit.js:81
+msgid "Color Settings"
+msgstr "色設定"
 
 #: src/blocks/_pro/outer/index.js:20
 msgid "Outer"

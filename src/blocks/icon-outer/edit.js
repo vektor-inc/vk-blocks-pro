@@ -26,7 +26,6 @@ export default function IconOuterEdit(props) {
 		iconMargin,
 		iconMarginUnit,
 		iconRadius,
-		iconAlign,
 		iconsJustify,
 		iconType,
 	} = attributes;
@@ -49,7 +48,6 @@ export default function IconOuterEdit(props) {
 					iconMarginUnit,
 				});
 				updateBlockAttributes(thisInnerBlock.clientId, { iconRadius });
-				updateBlockAttributes(thisInnerBlock.clientId, { iconAlign });
 				updateBlockAttributes(thisInnerBlock.clientId, { iconType });
 			});
 		}

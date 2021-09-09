@@ -76,15 +76,15 @@ export default function save({ attributes }) {
 						columStyle.paddingLeft !== undefined
 					) {
 						return (
-							<div className="vk_gridColumn_item_inner" style={columStyle}>
+							<div
+								className="vk_gridColumn_item_inner"
+								style={columStyle}
+							>
 								<InnerBlocks.Content />
 							</div>
 						);
-					} else {
-						return (
-							<InnerBlocks.Content />
-						);
 					}
+					return <InnerBlocks.Content />;
 				})()}
 			</div>
 		</>

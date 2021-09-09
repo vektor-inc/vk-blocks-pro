@@ -59,6 +59,7 @@
 	<rule ref="WordPress-Docs"/>
 
 	<config name="minimum_supported_wp_version" value="4.6"/>
+	<config name="ignore_warnings_on_exit" value="1" />
 
 	<rule ref="WordPress">
 		<!-- array()を[]で書いてもOKとする -->

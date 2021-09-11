@@ -45,6 +45,9 @@ export const settings = {
 		},
 	],
 	example: {
+		attributes: {
+			containerClass: 'vk_accordion',
+		},
 		innerBlocks: [
 			{
 				name: 'vk-blocks/accordion-trigger',

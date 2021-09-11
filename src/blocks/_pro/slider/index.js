@@ -65,10 +65,10 @@ const vkbwithClientIdClassName = createHigherOrderComponent(
 			if ('vk-blocks/slider' === props.name) {
 				const cssTag = generateHeightCss(props.attributes, '');
 				return (
-					<div>
+					<>
 						<BlockListBlock {...props} />
 						<style type="text/css">{cssTag}</style>
-					</div>
+					</>
 				);
 			}
 			return <BlockListBlock {...props} />;
@@ -102,10 +102,10 @@ const addSwiperConfig = (el, type, attributes) => {
 			const cssSelector = `.vk_slider_${attributes.clientId},`;
 			const cssTag = generateHeightCss(attributes, cssSelector);
 			return (
-				<div>
+				<>
 					{el}
 					<style type="text/css">{cssTag}</style>
-				</div>
+				</>
 			);
 
 			//後方互換

@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
 Tested up to: 5.8.0
-Stable tag: 1.12.0
+Stable tag: 1.15.0
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -62,6 +62,25 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 1.15.0 =
+[ Add Function ][ Grid Column Item ] Add color and padding setting
+
+= 1.14.1 =
+[ Bug fix ][ Spacer ] Fix common setting input
+
+= 1.14.0 =
+[ Add Function ][ Spacer ] Add common spacer type and common spacer responsive size
+[ Bug fix ] Fix Lightning G3 Pro text size not work
+
+= 1.13.2 =
+[ Bug fix ][ Slider ]Fixed bug would break put a class in additional CSS class
+
+= 1.13.1 =
+[ Other ] version only
+
+= 1.13.0 =
+[ Specification Change ][ Post list ( Pro ) ] Cope with ruby tag
 
 = 1.12.0 =
 [ Add New Block ] Icon Block

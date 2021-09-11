@@ -9,7 +9,7 @@
         },
         "spaceType": {
             "type": "string",
-            "default": "height"
+            "default": "margin-top"
         },
         "unit": {
             "type": "string",

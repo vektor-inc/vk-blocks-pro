@@ -1,25 +1,43 @@
 <?php
-/*
-The original of this file is located at:
-https://github.com/vektor-inc/vektor-wp-libraries
-If you want to change this file, please change the original file.
-*/
+/**
+ * VK Components Posts
+ *
+ * @package VK Component
+ * @version 1.1.0
+ *
+ * *********************** CAUTION ***********************
+ * The original of this file is located at:
+ * https://github.com/vektor-inc/vektor-wp-libraries
+ * If you want to change this file, please change the original file.
+ */
 
 if ( ! class_exists( 'VK_Component_Posts' ) ) {
 
+	/**
+	 * VK Component for Posts
+	 */
 	class VK_Component_Posts {
 
-		/*
-		 Basic method
-		 Common Parts
-		 Layout patterns
-		 UI Helper method
-		/*-------------------------------------------*/
+		/***********************************************
+		 * Basic method
+		 * Common Parts
+		 * Layout patterns
+		 * UI Helper method
+		 */
 
-		/*
-		 Basic method
-		/*-------------------------------------------*/
-		public static function get_loop_post_view_options( $options ) {
+		/***********************************************
+		 * Basic method
+		 */
+
+		/**
+		 * Get Loop Post View Options
+		 * 
+		 * @since 1.1.0 Added the `post` parameter.
+		 *
+		 * @param array $options options array.
+		 * @return array options
+		 */
+		public static function get_loop_post_view_options( $options, $post ) {
 			$default = array(
 				'layout'                     => 'card',
 				'display_image'              => true,
@@ -42,43 +60,58 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				'body_prepend'               => '',
 				'body_append'                => '',
 			);
-			$return  = apply_filters( 'vk_post_options', wp_parse_args( $options, $default ) );
+			$return  = apply_filters( 'vk_post_options', wp_parse_args( $options, $default ), $post );
 			return $return;
 		}
 
 		/**
-		 * [public description]
+		 * Post View
 		 *
-		 * @var [type]
+		 * @param object $post global post object.
+		 * @param array  $options component options.
+		 *
+		 * @return string $html
 		 */
 		public static function get_view( $post, $options ) {
 
-			$options = self::get_loop_post_view_options( $options );
+			$options = self::get_loop_post_view_options( $options, $post );
 
-			if ( $options['layout'] == 'card-horizontal' ) {
+			if ( 'card-horizontal' === $options['layout'] ) {
 				$html = self::get_view_type_card_horizontal( $post, $options );
-			} elseif ( $options['layout'] == 'media' ) {
+			} elseif ( 'media' === $options['layout'] ) {
 				$html = self::get_view_type_media( $post, $options );
-			} elseif ( $options['layout'] == 'postListText' ) {
+			} elseif ( 'postListText' === $options['layout'] ) {
 				$html = self::get_view_type_text( $post, $options );
 			} else {
 				$html = self::get_view_type_card( $post, $options );
 			}
-			return $html;
-		}
-
-		public static function the_view( $post, $options ) {
-			 echo wp_kses_post( self::get_view( $post, $options ) );
+			return apply_filters( 'vk_post_view', $html, $post, $options );
 		}
 
 		/**
-		 * [public description]
+		 * Display single view
+		 *
+		 * @param object $post post oject.
+		 * @param array  $options display options.
+		 * @return void
+		 */
+		public static function the_view( $post, $options ) {
+
+			echo wp_kses_post( self::get_view( $post, $options ) );
+		}
+
+		/**
+		 * Get post loop
+		 *
+		 * @param object $wp_query query object.
+		 * @param array  $options display options.
+		 * @param array  $options_loop loop options.
 		 *
 		 * @var [type]
 		 */
 		public static function get_loop( $wp_query, $options, $options_loop = array() ) {
 
-			// Outer Post Type classes
+			// Outer Post Type classes.
 			$patterns                    = self::get_patterns();
 			$loop_outer_class_post_types = array();
 			if ( ! isset( $wp_query->query['post_type'] ) ) {
@@ -95,16 +128,16 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 
 			$loop_outer_class_post_types[] = 'vk_posts-layout-' . $options['layout'];
 
-			// Additional loop option
+			// Additional loop option.
 			$loop_outer_class = implode( ' ', $loop_outer_class_post_types );
 
 			if ( ! empty( $options_loop['class_loop_outer'] ) ) {
 				$loop_outer_class .= ' ' . $options_loop['class_loop_outer'];
 			}
 
-			// Set post item outer col class
-			if ( $options['layout'] !== 'postListText' ) {
-				// If get info of column that deploy col to class annd add
+			// Set post item outer col class.
+			if ( 'postListText' !== $options['layout'] ) {
+				// If get info of column that deploy col to class annd add.
 				if ( empty( $options['class_outer'] ) ) {
 					$options['class_outer'] = self::get_col_size_classes( $options );
 				} else {
@@ -112,7 +145,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				}
 			}
 
-			// Set hidden class
+			// Set hidden class.
 			$hidden_class = array();
 			if ( ! empty( $options['vkb_hidden'] ) ) {
 				array_push( $hidden_class, 'vk_hidden' );
@@ -135,6 +168,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 
 				$loop .= '<div class="vk_posts ' . esc_attr( $loop_outer_class ) . ' ' . esc_attr( implode( ' ', $hidden_class ) ) . '">';
 
+				// for infeed Ads Customize.
 				global $vk_posts_loop_item_count;
 				$vk_posts_loop_item_count = 0;
 
@@ -148,59 +182,247 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 
 					$loop .= apply_filters( 'vk_posts_loop_item_after', '', $options );
 
-				} // while ( have_posts() ) {
+				}
 
 				$loop .= '</div>';
 
+				if ( ! empty( $options_loop['display_pagination'] ) ) {
+					$args = array();
+					if ( ! empty( $options_loop['pagination_mid_size'] ) ) {
+						$args['mid_size'] = $options_loop['pagination_mid_size'];
+					}
+					$loop .= self::get_pagenation( $wp_query, $args );
+				}
+
 			endif;
 
+			/*
+			Caution
+			wp_reset_query() がないとトップページでショートコードなどから呼び出した場合に
+			固定ページのトップ指定が解除されて投稿一覧が表示される
+			→ と言いたい所だが、そもそも global $wp_query を上書きするなという話で、
+			wp_reset_query()をするという事は余分に1回クエリが走る事になるので、
+			$wp_query を上書きしないルールにしてここでは wp_reset_query() を走らせない
+			*/
 			wp_reset_postdata();
 			return $loop;
 		}
 
 		/**
-		 * [public description]
+		 * Display loop
 		 *
-		 * @var [type]
+		 * @param object $wp_query query object.
+		 * @param array  $options display options.
+		 * @param array  $options_loop loop options.
 		 */
 		public static function the_loop( $wp_query, $options, $options_loop = array() ) {
-			echo self::get_loop( $wp_query, $options, $options_loop );
+			$allowed_html = self::vk_kses_post();
+			echo wp_kses( self::get_loop( $wp_query, $options, $options_loop ), $allowed_html );
+		}
+
+		/**
+		 * Pagenation
+		 *
+		 * @param object $wp_query : post query.
+		 * @param array  $args : setting parametors.
+		 * @return string $html
+		 */
+		public static function get_pagenation( $wp_query, $args = array() ) {
+
+			$args = wp_parse_args(
+				$args,
+				array(
+					'mid_size'           => 1,
+					'prev_text'          => '&laquo;',
+					'next_text'          => '&raquo;',
+					'screen_reader_text' => __( 'Posts navigation' ),
+					'aria_label'         => __( 'Posts' ),
+					'class'              => 'pagination',
+					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'vk-blocks' ) . ' </span>',
+					'type'               => 'list',
+				)
+			);
+
+			$showitems = ( $args['mid_size'] * 2 ) + 1;
+
+			$html = '';
+
+			global $paged;
+
+			// 最後のページ.
+			$max_num_pages = $wp_query->max_num_pages;
+			if ( ! $max_num_pages ) {
+				$max_num_pages = 1;
+			}
+
+			if ( 1 !== $max_num_pages ) {
+				$html .= '<nav class="navigation ' . $args['class'] . '" role="navigation" aria-label="' . $args['aria_label'] . '">';
+				$html .= '<h2 class="screen-reader-text">' . $args['screen_reader_text'] . '</h2>';
+				$html .= '<div class="nav-links"><ul class="page-numbers">';
+
+				// Prevリンク
+				// 現在のページが２ページ目以降の場合.
+				if ( $paged > 1 ) {
+					$html .= '<li><a class="prev page-numbers" href="' . get_pagenum_link( $paged - 1 ) . '">' . $args['prev_text'] . '</a></li>';
+				}
+
+				// 今のページから mid_size を引いて2以上ある場合 && 最大表示アイテム数より最第ページ数が大きい場合
+				// （ mid_size 数のすぐ次の場合は表示する）
+				// 1...３４５.
+				if ( $paged - $args['mid_size'] >= 2 && $max_num_pages > $showitems ) {
+					$html .= '<li><a class="page-numbers" href="' . get_pagenum_link( 1 ) . '">1</a></li>';
+				}
+				// 今のページから mid_size を引いて3以上ある場合 && 最大表示アイテム数より最第ページ数が大きい場合.
+				if ( $paged - $args['mid_size'] >= 3 && $max_num_pages > $showitems ) {
+					$html .= '<li><span class="page-numbers dots">&hellip;</span></li>';
+				}
+
+				// mid_size より前に追加する数.
+				$add_prev_count = $paged + $args['mid_size'] - $max_num_pages;
+				// mid_size より後に追加する数.
+				$add_next_count = -( $paged - 1 - $args['mid_size'] ); // 今のページ数を遡ってカウントするために-1.
+
+				for ( $i = 1; $i <= $max_num_pages; $i++ ) {
+					$html .= '<li>';
+					// 表示するアイテム.
+					if ( $paged === $i ) {
+						$page_item = '<span aria-current="page" class="page-numbers current">' . $i . '</span>';
+					} else {
+						$page_item = '<a href="' . get_pagenum_link( $i ) . '" class="page-numbers">' . $i . '</a>';
+					}
+
+					// 今のページから mid_size を引いた数～今のページから mid_size を足した数まで || 最大ページ数が最大表示アイテム数以下の場合.
+					if ( ( $paged - $args['mid_size'] <= $i && $i <= $paged + $args['mid_size'] ) || $max_num_pages <= $showitems ) {
+						$html .= $page_item;
+						// 今のページから mid_size を引くと負数になる場合 && 今のページ+ mid_size +負数を mid_size に加算した数まで.
+					} elseif ( $paged - 1 - $args['mid_size'] < 0 && $paged + $args['mid_size'] + $add_next_count >= $i ) {
+						$html .= $page_item;
+						// 今のページから mid_size を足すと　最後のページよりも大きくなる場合 && 今のページ+ mid_size +負数を mid_size に加算した数まで.
+					} elseif ( $paged + $args['mid_size'] > $max_num_pages && $paged - $args['mid_size'] - $add_prev_count <= $i ) {
+						$html .= $page_item;
+					}
+					$html .= '</li>';
+				}
+
+				// 現在のページに mid_size を足しても最後のページ数より２以上小さい時 && 最大表示アイテム数より最第ページ数が大きい場合.
+				if ( $paged + $args['mid_size'] <= $max_num_pages - 2 && $max_num_pages > $showitems ) {
+					$html .= '<li><span class="page-numbers dots">&hellip;</span></li>';
+				}
+				if ( $paged + $args['mid_size'] <= $max_num_pages - 1 && $max_num_pages > $showitems ) {
+					$html .= '<li><a href="' . get_pagenum_link( $max_num_pages ) . '">' . $max_num_pages . '</a></li>';
+				}
+				// Nextリンク.
+				if ( $paged < $max_num_pages ) {
+					$html .= '<li><a class="next page-numbers" href="' . get_pagenum_link( $paged + 1 ) . '">' . $args['next_text'] . '</a></li>';
+				}
+				$html .= '</ul>';
+				$html .= '</div>';
+				$html .= '</nav>';
+			}
+			return $html;
+		}
+
+		/**
+		 * Kses Escape
+		 *
+		 * It's need for wp_kses_post escape ruby and rt that cope with ruby and rt.
+		 *
+		 * @return array $allowed_html
+		 */
+		public static function vk_kses_post() {
+			$common_attr = array(
+				'id'    => array(),
+				'class' => array(),
+				'role'  => array(),
+				'style' => array(),
+			);
+			$tags        = array(
+				'div',
+				'section',
+				'article',
+				'header',
+				'footer',
+				'span',
+				'nav',
+				'h1',
+				'h2',
+				'h3',
+				'h4',
+				'h5',
+				'h6',
+				'button',
+				'p',
+				'i',
+				'a',
+				'b',
+				'strong',
+				'table',
+				'thead',
+				'tbody',
+				'tfoot',
+				'th',
+				'tr',
+				'td',
+				'tr',
+				'ol',
+				'ul',
+				'li',
+				'dl',
+				'dt',
+				'dd',
+				'img',
+				'ruby',
+				'rt',
+			);
+			foreach ( $tags as $tag ) {
+				$allowed_html[ $tag ] = $common_attr;
+			}
+			$allowed_html['a']['href']    = array();
+			$allowed_html['a']['target']  = array();
+			$allowed_html['img']['src']   = array();
+			$allowed_html['img']['sizes'] = array();
+			$allowed_html['ruby']         = array();
+			$allowed_html['rt']           = array();
+			return $allowed_html;
 		}
 
 
-		/*
-		 Common Parts
-		/*-------------------------------------------*/
+		/***********************************************
+		 * Common Parts
+		 */
 
 		/**
 		 * Common Part _ first DIV
 		 *
-		 * @var [type]
+		 * @param object $post post oject.
+		 * @param array  $options display options.
+		 *
+		 * @return string
 		 */
 		public static function get_view_first_div( $post, $options ) {
 
-			// Add layout Class
-			if ( $options['layout'] == 'card-horizontal' ) {
+			// Add layout Class.
+			if ( 'card-horizontal' === $options['layout'] ) {
 				$class_outer = 'card card-post card-horizontal';
-			} elseif ( $options['layout'] == 'card-noborder' ) {
+			} elseif ( 'card-noborder' === $options['layout'] ) {
 				$class_outer = 'card card-noborder';
-			} elseif ( $options['layout'] == 'card-intext' ) {
+			} elseif ( 'card-intext' === $options['layout'] ) {
 				$class_outer = 'card card-intext';
-			} elseif ( $options['layout'] == 'media' ) {
+			} elseif ( 'media' === $options['layout'] ) {
 				$class_outer = 'media';
-			} elseif ( $options['layout'] == 'postListText' ) {
+			} elseif ( 'postListText' === $options['layout'] ) {
 				$class_outer = 'postListText';
 			} else {
 				$class_outer = 'card card-post';
 			}
 
-			// Add Outer class
+			// Add Outer class.
 			if ( ! empty( $options['class_outer'] ) ) {
 				$class_outer .= ' ' . esc_attr( $options['class_outer'] );
 			}
 
-			// Add btn class
-			if ( $options['display_btn'] && $options['layout'] !== 'postListText' ) {
+			// Add btn class.
+			if ( $options['display_btn'] && 'postListText' !== $options['layout'] ) {
 				$class_outer .= ' vk_post-btn-display';
 			}
 			global $post;
@@ -208,13 +430,15 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 			return $html;
 		}
 
+
 		/**
 		 * Common Part _ post thumbnail
 		 *
-		 * @param  [type] $post    [description]
-		 * @param  [type] $options [description]
-		 * @param  string $class   [description]
-		 * @return [type]          [description]
+		 * @param object $post global post object.
+		 * @param array  $options component options.
+		 * @param array  $attr   get_the_post_thumbnail() image attr.
+		 *
+		 * @return string
 		 */
 		public static function get_thumbnail_image( $post, $options, $attr = array() ) {
 
@@ -238,7 +462,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 
 				$html .= '<div class="vk_post_imgOuter' . $classes['class_outer'] . '"' . $style . '>';
 
-				if ( $options['layout'] != 'card-intext' ) {
+				if ( 'card-intext' !== $options['layout'] ) {
 					$html .= '<a href="' . get_the_permalink( $post->ID ) . '">';
 				}
 
@@ -274,12 +498,12 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 					$html .= '<img src="' . esc_url( $options['image_default_url'] ) . '" alt="" class="' . $image_class . '" loading="lazy" />';
 				}
 
-				if ( $options['layout'] != 'card-intext' ) {
+				if ( 'card-intext' !== $options['layout'] ) {
 					$html .= '</a>';
 				}
 
 				$html .= '</div><!-- [ /.vk_post_imgOuter ] -->';
-			} // if ( $options['display_image'] ) {
+			}
 
 			return $html;
 		}
@@ -287,16 +511,16 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 		/**
 		 * Common Part _ post body
 		 *
-		 * @var [type]
+		 * @param object $post global post object.
+		 * @param array  $options component options.
 		 */
 		public static function get_view_body( $post, $options ) {
-			// $default = array(
-			// 'textlink' => false,
-			// );
-			// $attr = wp_parse_args( $attr, $default );
 
 			$layout_type = $options['layout'];
-			if ( $layout_type == 'card-horizontal' || $layout_type == 'card-noborder' || $layout_type == 'card-intext' ) {
+			if ( 'card-horizontal' === $layout_type ||
+				'card-noborder' === $layout_type ||
+				'card-intext' === $layout_type
+				) {
 				$layout_type = 'card';
 			}
 
@@ -314,7 +538,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 			カードインテキストの場合、リンクの中にリンクがあるとブラウザでDOMが書き換えられるので
 			中のリンクを解除する必要がある。
 			*/
-			if ( $options['layout'] == 'card-intext' ) {
+			if ( 'card-intext' === $options['layout'] ) {
 				$options['textlink'] = false;
 			}
 
@@ -322,12 +546,12 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				$html .= '<a href="' . get_the_permalink( $post->ID ) . '">';
 			}
 
-			$html .= get_the_title( $post->ID );
+			$html .= apply_filters( 'vk_post_title', get_the_title( $post->ID ), $post, $options );
 
 			if ( $options['display_new'] ) {
 				$today = date_i18n( 'U' );
 				$entry = get_the_time( 'U', $post );
-				$kiji  = date( 'U', ( $today - $entry ) ) / 86400;
+				$kiji  = gmdate( 'U', ( $today - $entry ) ) / 86400;
 				if ( $options['new_date'] > $kiji ) {
 					$html .= '<span class="vk_post_title_new">' . $options['new_text'] . '</span>';
 				}
@@ -356,12 +580,12 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				if ( $author ) {
 					$html .= '<p class="vcard vk_post_author" itemprop="author">';
 
-					// VK Post Author Display の画像を取得
+					// VK Post Author Display の画像を取得.
 					$profile_image_id = get_the_author_meta( 'user_profile_image' );
 					$html            .= '<span class="vk_post_author_image">';
 					if ( $profile_image_id ) {
 						$profile_image_src = wp_get_attachment_image_src( $profile_image_id, 'thumbnail' );
-						// Gravater の時はクラス名つけられないので、こちらにもつけないこと。
+						// Gravater の時はクラス名つけられないので、こちらにもつけないこと.
 						$html .= '<img src="' . $profile_image_src[0] . '" alt="' . esc_attr( $author ) . '" />';
 					} else {
 						$html .= get_avatar( get_the_author_meta( 'email' ), 100 );
@@ -381,7 +605,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				);
 				$taxonomies = get_the_taxonomies( $post->ID, $args );
 				$exclusion  = array( 'product_type' );
-				// このフィルター名は投稿詳細でも使っているので注意
+				// このフィルター名は投稿詳細でも使っているので注意.
 				$exclusion = apply_filters( 'vk_get_display_taxonomies_exclusion', $exclusion );
 
 				if ( is_array( $exclusion ) ) {
@@ -395,7 +619,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 						$html .= '<dl class="vk_post_taxonomy vk_post_taxonomy-' . $key . '">' . $value . '</dl>';
 					} // foreach
 					$html .= '</div>';
-				} // if ($taxonomies)
+				}
 			}
 
 			if ( $options['textlink'] ) {
@@ -415,10 +639,6 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 						'shadow_color'   => '',
 					);
 
-					// $text_align = '';
-					// if ( $options['btn_align'] == 'right' ) {
-					// $text_align = ' text-right';
-					// }
 					$html .= '<div class="vk_post_btnOuter ' . $options['btn_align'] . '">';
 					$html .= VK_Component_Button::get_view( $button_options );
 					$html .= '</div>';
@@ -434,11 +654,15 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 			return $html;
 		}
 
+		/***********************************************
+		 * Layout patterns
+		 */
 
-		/*
-		 Layout patterns
-		/*-------------------------------------------*/
-
+		/**
+		 * Get Pattern
+		 *
+		 * @return array $patterns Post Layout pattern array
+		 */
 		public static function get_patterns() {
 
 			$patterns = array(
@@ -469,7 +693,8 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 		/**
 		 * Card
 		 *
-		 * @var [type]
+		 * @param object $post global post object.
+		 * @param array  $options component options.
 		 */
 		public static function get_view_type_card( $post, $options ) {
 			$html  = '';
@@ -484,11 +709,11 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 			$html_body .= self::get_thumbnail_image( $post, $options, $attr );
 			$html_body .= self::get_view_body( $post, $options );
 
-			if ( $options['layout'] == 'card-intext' ) {
+			if ( 'card-intext' === $options['layout'] ) {
 
 				$html .= '<a href="' . esc_url( get_the_permalink( $post->ID ) ) . '" class="card-intext-inner">';
 
-				// aタグ内にaタグがあるとChromeなどはその時点で一旦aタグを閉じてしまって表示が崩れるので、aタグをspanに変換する
+				// aタグ内にaタグがあるとChromeなどはその時点で一旦aタグを閉じてしまって表示が崩れるので、aタグをspanに変換する.
 				$html_body = str_replace( '<a', '<span', $html_body );
 				$html_body = str_replace( 'href=', 'data-url=', $html_body );
 				$html_body = str_replace( 'a>', 'span>', $html_body );
@@ -508,15 +733,14 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 		/**
 		 * Card horizontal
 		 *
-		 * @var [type]
+		 * @param object $post global post object.
+		 * @param array  $options component options.
 		 */
 		public static function get_view_type_card_horizontal( $post, $options ) {
 			$html  = '';
 			$html .= self::get_view_first_div( $post, $options );
-			// $html .= '<a href="' . get_the_permalink( $post->ID ) . '" class="card-horizontal-inner">';
 			$html .= '<div class="row no-gutters card-horizontal-inner-row">';
 
-			// $image_src = '';
 			if ( $options['display_image'] ) {
 				$html .= '<div class="col-5 card-img-outer">';
 				$attr  = array(
@@ -535,7 +759,6 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 			}
 
 			$html .= '</div><!-- [ /.row ] -->';
-			// $html .= '</a>';
 			$html .= '</div><!-- [ /.card ] -->';
 			return $html;
 		}
@@ -543,24 +766,20 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 		/**
 		 * Media
 		 *
-		 * @var [type]
+		 * @param object $post global post object.
+		 * @param array  $options component options.
 		 */
 		public static function get_view_type_media( $post, $options ) {
 			$html  = '';
 			$html .= self::get_view_first_div( $post, $options );
 			if ( $options['display_image'] ) {
-				// $html .= '<a href="' . get_the_permalink() . '" class="media-img">';
 				$attr  = array(
 					'class_outer' => 'media-img',
 					'class_image' => '',
 				);
 				$html .= self::get_thumbnail_image( $post, $options, $attr );
-				// $html .= '</a>';
 			}
 
-			// $attr  = array(
-			// 'textlink' => true,
-			// );
 			$html .= self::get_view_body( $post, $options );
 
 			$html .= '</div><!-- [ /.media ] -->';
@@ -570,7 +789,8 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 		/**
 		 * Text
 		 *
-		 * @var [type]
+		 * @param object $post global post object.
+		 * @param array  $options component options.
 		 */
 		public static function get_view_type_text( $post, $options ) {
 
@@ -604,7 +824,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 			if ( $options['display_new'] ) {
 				$today = date_i18n( 'U' );
 				$entry = get_the_time( 'U' );
-				$kiji  = date( 'U', ( $today - $entry ) ) / 86400;
+				$kiji  = gmdate( 'U', ( $today - $entry ) ) / 86400;
 				if ( $options['new_date'] > $kiji ) {
 					$html .= '<span class="vk_post_title_new">' . $options['new_text'] . '</span>';
 				}
@@ -616,26 +836,27 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 			return $html;
 		}
 
-		/*
-		 UI Helper method
-		/*-------------------------------------------*/
+		/***********************************************
+		 * UI Helper method
+		 */
 
 		/**
 		 * Convert col-count from inputed column count.
 		 *
-		 * @param  integer $input_col [description]
-		 * @return [type]             [description]
+		 * @param  integer $input_col user inputed col number.
+		 * @return string             grid col number
 		 */
 		public static function get_col_converted_size( $input_col = 4 ) {
-			if ( $input_col == 1 ) {
+			$input_col = strval( $input_col );
+			if ( '1' === $input_col ) {
 				$col = 12;
-			} elseif ( $input_col == 2 ) {
+			} elseif ( '2' === $input_col ) {
 				$col = 6;
-			} elseif ( $input_col == 3 ) {
+			} elseif ( '3' === $input_col ) {
 				$col = 4;
-			} elseif ( $input_col == 4 ) {
+			} elseif ( '4' === $input_col ) {
 				$col = 3;
-			} elseif ( $input_col == 6 ) {
+			} elseif ( '6' === $input_col ) {
 				$col = 2;
 			} else {
 				$col = 4;
@@ -646,8 +867,8 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 		/**
 		 * Get all size col classes
 		 *
-		 * @param  [type] $attributes inputed col numbers array
-		 * @return [type]             [description]
+		 * @param array $attributes inputed col numbers array.
+		 * @return string $col_class  class names
 		 */
 		public static function get_col_size_classes( $attributes ) {
 			$col_class_array = array();

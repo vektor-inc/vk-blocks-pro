@@ -1,4 +1,6 @@
 import save000 from './0.0.0/save';
+import save1_8_0 from './1.8.0/save';
+
 
 const blockAttributes = {
 	heading: {
@@ -22,6 +24,10 @@ const blockAttributes = {
 };
 
 const deprecated = [
+	{
+		attributes: blockAttributes,
+		save: save1_8_0,
+	},
 	{
 		attributes: blockAttributes,
 		save: save000,

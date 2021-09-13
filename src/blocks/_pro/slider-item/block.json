@@ -41,10 +41,11 @@
 			"default": "1"
 		},
 		"clientId": {
-			"type": "string",
-			"default": null
+			"type": "string"
 		}
 	},
+	"description": "This is one item in the slider.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

@@ -1,7 +1,7 @@
 import replaceClientId from '@vkblocks/utils/replaceClientId';
 import { generateHeightCss } from './utils';
 
-export default function SliderHook0_49_7({ el, attributes }) {
+export default function SliderHook( {el, attributes}) {
 	const {
 		clientId,
 		pagination,

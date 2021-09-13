@@ -1,5 +1,6 @@
 /* eslint camelcase: 0 */
 import { __ } from '@wordpress/i18n';
+import { useEffect } from '@wordpress/element';
 import {
 	InspectorControls,
 	BlockControls,
@@ -28,7 +29,9 @@ export default function SliderItemEdit(props) {
 		bgSize,
 	} = attributes;
 
-	attributes.clientId = clientId;
+	useEffect(() => {
+		setAttributes({ clientId });
+	}, [clientId]);
 
 	//classPaddingLRのクラス切り替え
 	let classPaddingLR = '';

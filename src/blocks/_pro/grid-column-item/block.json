@@ -96,8 +96,37 @@
 			"source": "attribute",
 			"selector": "a",
 			"attribute": "rel"
+		},
+		"marginBottom": {
+			"type": "number",
+			"default": null
+		},
+		"unit": {
+			"type": "string",
+			"default": "px"
+		},
+		"textColor": {
+			"type": "string"
+		},
+		"backgroundColor": {
+			"type": "string"
+		},
+		"paddingUnit": {
+			"type": "string",
+			"default": "px"
+		},
+		"paddingTop": {
+			"type": "number"
+		},
+		"paddingX": {
+			"type": "number"
+		},
+		"paddingBottom": {
+			"type": "number"
 		}
 	},
+	"description": "One item in a grit column block.",
+	"textdomain": "vk-blocks",
 	"parent": ["vk-blocks/grid-column"],
 	"supports": {
 		"className": true

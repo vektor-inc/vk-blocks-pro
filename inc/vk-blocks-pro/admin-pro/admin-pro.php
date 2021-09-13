@@ -15,6 +15,8 @@ add_action( 'vk_blocks_pro_admin', 'vk_blocks_pro_admin' );
 
 /**
  * Vk Blocks Pro Menu
+ *
+ * @param string $pro_menu_html pro menu html.
  */
 function vk_blocks_pro_menu( $pro_menu_html ) {
 	$pro_menu_html = '<li><a href="#faq-setting">' . __( 'FAQ Setting', 'vk-blocks' ) . '</a></li>';

@@ -20,8 +20,14 @@
 		"insertImage": {
 			"type": "string",
 			"default": null
+		},
+		"insertImageAlt": {
+			"type": "string",
+			"default": null
 		}
 	},
+	"description": "Displays a sequential description in time series.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

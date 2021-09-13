@@ -9,7 +9,7 @@
         },
         "spaceType": {
             "type": "string",
-            "default": "height"
+            "default": "margin-top"
         },
         "unit": {
             "type": "string",
@@ -26,8 +26,14 @@
         "mobile": {
             "type": "number",
             "default": 20
+        },
+        "spaceSize": {
+            "type": "string",
+            "default": "medium"
         }
 	},
+    "description": "Use responsive spacers to get the margins right.",
+    "textdomain": "vk-blocks",
 	"supports": {
 		"anchor": true
 	}

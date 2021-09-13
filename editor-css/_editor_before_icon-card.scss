@@ -1,0 +1,18 @@
+.wp-block-vk-blocks-icon-card .vk_icon-card_item_title {
+    background-color: transparent;
+    margin-top: 0.9em;
+    margin-bottom: 0.6em;
+    font-size: 21px;
+    line-height: 1.4em;
+    border: none;
+    border-radius: unset;
+    padding: 0;
+    outline: unset;
+    outline-offset: unset;
+    -webkit-box-shadow: unset;
+    box-shadow: unset;
+    display: block;
+	a {
+		color: var(--vk-color-text-body);
+	}
+}

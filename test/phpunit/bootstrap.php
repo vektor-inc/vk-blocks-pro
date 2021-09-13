@@ -46,7 +46,7 @@ tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );
 /**
  *  utilsを読み込み
  */
-require_once dirname(__FILE__) . '/utils.php';
+require_once dirname( __FILE__ ) . '/utils.php';
 
 /**
  * Adds a wp_die handler for use during tests.

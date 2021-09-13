@@ -22,8 +22,10 @@ const getContainerClass = (el) => {
 	return containerClass;
 };
 
-export default function SliderHook0_60_1({ el, attributes }) {
-	const { clientId } = attributes;
+export default function SliderHook( {el,attributes}) {
+	const {
+		clientId,
+	} = attributes;
 	const cssSelector = `.vk_slider_${clientId},`;
 	const cssTag = generateHeightCss(attributes, cssSelector);
 	const containerClass = getContainerClass(el);

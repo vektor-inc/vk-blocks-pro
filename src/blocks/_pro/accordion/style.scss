@@ -1,6 +1,5 @@
 :root{
 	--vk-color-border: rgba(0,0,0,.12);
-	--vk-size-text: 16px;
 }
 
 
@@ -8,7 +7,7 @@
 --------------------------------------------*/
 .is-style-vk_accordion{
 	&-no-background-color{
-		
+
 	}
 	&-no-background-color-border{
 		border: 1px solid var(--vk-color-border);
@@ -55,15 +54,22 @@
 /*      開閉機能
 /*-------------------------------------------*/
 .vk_accordion{
+	display:block;
+	overflow:hidden;
+	margin: 0 auto 1em auto;
+	width:100%;
+	position: relative;
+	// vk_accordion-containerはvk_accordionになったが互換性のためにcssは残しておく
 	&-container{
 		display:block;
 		overflow:hidden;
 		margin: 0 auto 1em auto;
-		width:100%; 
+		width:100%;
 		position: relative;
 	}
 	//ブロックを配置した時にisDefaultに設置したclassが付かない（スタイルをクリックしたときにclassが付く）ので、共通のclass名にcssを追加して、
 	//「背景なし」以外ののスタイルに付かないようにnot指定をする必要がある
+	&:not(.is-style-vk_accordion-no-background-color-border):not(.is-style-vk_accordion-background-color):not(.is-style-vk_accordion-background-color-border):not(.is-style-vk_accordion-background-color-rounded):not(.is-style-vk_accordion-background-color-rounded-border),
 	&-container:not(.is-style-vk_accordion-no-background-color-border):not(.is-style-vk_accordion-background-color):not(.is-style-vk_accordion-background-color-border):not(.is-style-vk_accordion-background-color-rounded):not(.is-style-vk_accordion-background-color-rounded-border) {
 		border-bottom: 1px solid var(--vk-color-border);
 	}
@@ -110,7 +116,7 @@
 						-webkit-transition: border-color .3s ease,-webkit-transform .6s ease;
 						transition: border-color .3s ease,transform .6s ease;
 						transition: border-color .3s ease,transform .6s ease,-webkit-transform .6s ease;
-					}			
+					}
 			}
 		}//.vk_accordion-toggle
 

@@ -34,8 +34,18 @@
 		"col_xxl": {
 			"type": "number",
 			"default": 3
+		},
+		"marginBottom": {
+			"type": "number",
+			"default": null
+		},
+		"unit": {
+			"type": "string",
+			"default": "px"
 		}
 	},
+	"description": "Set the number of columns to be displayed for each screen size.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

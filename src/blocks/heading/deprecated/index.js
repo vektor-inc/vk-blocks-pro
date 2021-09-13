@@ -11,6 +11,7 @@ import save0_40_0 from './0.40.0/save';
 import save0_40_1 from './0.40.1/save';
 import save0_60_1 from './0.60.1/save';
 import save1_3_2 from './1.3.2/save';
+import save1_9_1 from './1.9.1/save';
 
 const blockAttributes = {
 	level: {
@@ -100,7 +101,26 @@ const blockAttributes3 = {
 	},
 };
 
+/* 1.9.1 で titleSize とsubTextSize を変更 */
+/*
+const blockAttributes4 = {
+	...blockAttributes3,
+	titleSize: {
+		type: 'number',
+		default: 2,
+	},
+	subTextSize: {
+		type: 'number',
+		default: 1.2,
+	},
+}
+*/
+
 const deprecated = [
+	{
+		attributes: blockAttributes3,
+		save: save1_9_1,
+	},
 	{
 		attributes: blockAttributes3,
 		save: save1_3_2,

@@ -8,6 +8,8 @@
 			"default": 1
 		}
 	},
+	"description": "Set and display step marks, which are useful when explaining the order.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

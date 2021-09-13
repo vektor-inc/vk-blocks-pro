@@ -7,6 +7,26 @@
 }
 
 /*-------------------------------------------*/
+/* 余白（まだ レスポンシブスペーサーでのみ使用）
+/*-------------------------------------------*/
+:root {
+	--vk-margin-sm : 1.5rem;
+	--vk-margin-md : 2rem;
+	--vk-margin-lg : 4rem;
+}
+.vk_block{
+	&-margin-sm {
+		margin-top: var(--vk-margin-sm);
+	}
+	&-margin-md {
+		margin-top: var(--vk-margin-md);
+	}
+	&-margin-lg {
+		margin-top: var(--vk-margin-lg);
+	}
+}
+
+/*-------------------------------------------*/
 /* リストデザイン
 /*-------------------------------------------*/
 @mixin mark-before {
@@ -63,8 +83,10 @@ ol {
 			li {
 				list-style: none;
 				position: relative;
-				margin-bottom: 0.8em;
-				line-height: 1.65em;
+				margin-top:0;
+				margin-left: 0;
+				margin-bottom:calc( var(--vk-size-text) * 0.8 );
+				line-height: calc( var(--vk-size-text) * 1.65 );
 			}
 		}
 	}
@@ -89,8 +111,8 @@ ol {
 				display: inline-block;
 				font-weight: bold;
 				border-radius: 50%;
-				font-size: 1em;
-				line-height: 1.8em;
+				font-size: calc( var(--vk-size-text) * 1 );
+				line-height: calc( var(--vk-size-text) * 1.8 );
 				width: 26px;
 				height: 26px;
 				text-align: center;
@@ -117,8 +139,8 @@ ol {
 				text-indent: 0;
 				display: inline-block;
 				font-weight: bold;
-				font-size: 1em;
-				line-height: 1.8em;
+				font-size: calc( var(--vk-size-text) * 1 );
+				line-height: calc( var(--vk-size-text) * 1.8 );
 				width: 26px;
 				height: 26px;
 				text-align: center;

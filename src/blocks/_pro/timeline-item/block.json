@@ -20,6 +20,8 @@
 			"default": "default"
 		}
 	},
+	"description": "This element sets the label, color, and style of the timeline.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

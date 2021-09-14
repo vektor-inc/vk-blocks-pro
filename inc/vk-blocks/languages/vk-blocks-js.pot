@@ -290,19 +290,83 @@ msgstr ""
 msgid "Child page list"
 msgstr ""
 
+#: src/blocks/_pro/grid-column-item/edit.js:106
+msgid "Margin setting inside the item"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:110
+msgid "Padding (Top)"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:125
+#: src/blocks/_pro/outer/edit.js:318
+#: src/blocks/_pro/slider-item/edit.js:78
+msgid "Padding (Left and Right)"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:140
+msgid "Padding (Bottom)"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:155
+msgid "Unit"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:163
+#: src/blocks/_pro/outer/edit.js:617
+#: src/blocks/icon/edit.js:131
+#: src/components/advanced-unit-control/index.js:18
+msgid "px"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:167
+#: src/blocks/_pro/outer/edit.js:621
+#: src/blocks/icon/edit.js:135
+#: src/components/advanced-unit-control/index.js:22
+msgid "em"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:171
+#: src/blocks/_pro/outer/edit.js:625
+#: src/blocks/icon/edit.js:139
+#: src/components/advanced-unit-control/index.js:26
+msgid "rem"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:175
+#: src/blocks/_pro/outer/edit.js:629
+#: src/blocks/icon/edit.js:143
+#: src/components/advanced-unit-control/index.js:30
+msgid "vw"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:81
+msgid "Color Settings"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:83
+#: src/blocks/heading/edit.js:288
+msgid "Text Color"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:94
+#: src/blocks/border-box/edit.js:99
+msgid "Background Color"
+msgstr ""
+
 #: src/blocks/_pro/grid-column-item/index.js:18
 msgid "Grid Column Item"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:51
+#: src/blocks/_pro/grid-column/edit.js:53
 msgid "Layout Columns"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:57
+#: src/blocks/_pro/grid-column/edit.js:59
 msgid "Column Margin Bottom Setting"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:61
+#: src/blocks/_pro/grid-column/edit.js:63
 msgid "Margin Bottom"
 msgstr ""
 
@@ -336,7 +400,7 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:100
 #: src/blocks/button/edit.js:70
-#: src/blocks/icon/edit.js:239
+#: src/blocks/icon/edit.js:210
 #: src/blocks/pr-blocks/edit.js:271
 #: src/blocks/pr-content/edit.js:130
 msgid "Open link new tab."
@@ -346,7 +410,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:57
 #: src/blocks/border-box/edit.js:122
 #: src/blocks/button/edit.js:258
-#: src/blocks/icon/edit.js:227
+#: src/blocks/icon/edit.js:60
 #: src/blocks/pr-content/edit.js:196
 msgid "Icon ( Font Awesome )"
 msgstr ""
@@ -358,8 +422,7 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:130
 #: src/blocks/button/edit.js:173
-#: src/blocks/icon-outer/edit.js:214
-#: src/blocks/icon/edit.js:190
+#: src/blocks/icon/edit.js:184
 #: src/blocks/pr-blocks/edit.js:299
 msgid "Solid color"
 msgstr ""
@@ -472,11 +535,6 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:313
 #: src/blocks/_pro/slider/edit.js:201
 msgid "Full Wide"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:318
-#: src/blocks/_pro/slider-item/edit.js:78
-msgid "Padding (Left and Right)"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:322
@@ -607,8 +665,7 @@ msgid "Border width"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:543
-#: src/blocks/icon-outer/edit.js:190
-#: src/blocks/icon/edit.js:167
+#: src/blocks/icon/edit.js:160
 msgid "Border radius"
 msgstr ""
 
@@ -637,34 +694,6 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:607
 #: src/components/advanced-unit-control/index.js:12
 msgid "Unit Type"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:617
-#: src/blocks/icon-outer/edit.js:161
-#: src/blocks/icon/edit.js:138
-#: src/components/advanced-unit-control/index.js:18
-msgid "px"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:621
-#: src/blocks/icon-outer/edit.js:165
-#: src/blocks/icon/edit.js:142
-#: src/components/advanced-unit-control/index.js:22
-msgid "em"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:625
-#: src/blocks/icon-outer/edit.js:169
-#: src/blocks/icon/edit.js:146
-#: src/components/advanced-unit-control/index.js:26
-msgid "rem"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:629
-#: src/blocks/icon-outer/edit.js:173
-#: src/blocks/icon/edit.js:150
-#: src/components/advanced-unit-control/index.js:30
-msgid "vw"
 msgstr ""
 
 #: src/blocks/_pro/outer/index.js:20
@@ -891,7 +920,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:76
 #: src/blocks/_pro/timeline-item/edit.js:53
 #: src/blocks/border-box/edit.js:63
-#: src/blocks/icon/edit.js:246
+#: src/blocks/icon/edit.js:217
 #: src/blocks/staff/edit.js:139
 msgid "Color"
 msgstr ""
@@ -899,8 +928,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:82
 #: src/blocks/_pro/table-of-contents-new/edit.js:135
 #: src/blocks/_pro/timeline-item/edit.js:63
-#: src/blocks/icon-outer/edit.js:206
-#: src/blocks/icon/edit.js:182
+#: src/blocks/icon/edit.js:176
 msgid "Style"
 msgstr ""
 
@@ -1154,8 +1182,7 @@ msgid "Icon"
 msgstr ""
 
 #: src/blocks/border-box/edit.js:51
-#: src/blocks/icon-outer/edit.js:142
-#: src/blocks/icon/edit.js:119
+#: src/blocks/icon/edit.js:112
 msgid "Margin"
 msgstr ""
 
@@ -1190,10 +1217,6 @@ msgstr ""
 
 #: src/blocks/border-box/edit.js:92
 msgid "Black"
-msgstr ""
-
-#: src/blocks/border-box/edit.js:99
-msgid "Background Color"
 msgstr ""
 
 #: src/blocks/border-box/index.js:19
@@ -1470,10 +1493,6 @@ msgstr ""
 msgid "Heading Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:288
-msgid "Text Color"
-msgstr ""
-
 #: src/blocks/heading/edit.js:300
 msgid "Font Awesome Icon Settings"
 msgstr ""
@@ -1507,41 +1526,29 @@ msgstr ""
 msgid "Heading"
 msgstr ""
 
-#: src/blocks/icon-outer/edit.js:186
-#: src/blocks/icon/edit.js:163
+#: src/blocks/icon/edit.js:156
 msgid "Reset"
 msgstr ""
 
-#: src/blocks/icon-outer/edit.js:222
-#: src/blocks/icon/edit.js:198
+#: src/blocks/icon/edit.js:192
 msgid "Icon & Frame"
 msgstr ""
 
-#: src/blocks/icon-outer/edit.js:230
-#: src/blocks/icon/edit.js:206
+#: src/blocks/icon/edit.js:200
 msgid "Icon only"
 msgstr ""
 
-#: src/blocks/icon-outer/edit.js:94
-msgid "Icon Common Setting"
+#: src/blocks/icon/edit.js:205
+#: src/blocks/pr-content/edit.js:121
+msgid "Link URL"
 msgstr ""
 
-#: src/blocks/icon-outer/edit.js:95
-#: src/blocks/icon/edit.js:72
-msgid "Size"
-msgstr ""
-
-#: src/blocks/icon-outer/index.js:16
-msgid "Icon Outer"
-msgstr ""
-
-#: src/blocks/icon/edit.js:225
+#: src/blocks/icon/edit.js:58
 msgid "Icon Setting"
 msgstr ""
 
-#: src/blocks/icon/edit.js:234
-#: src/blocks/pr-content/edit.js:121
-msgid "Link URL"
+#: src/blocks/icon/edit.js:65
+msgid "Size"
 msgstr ""
 
 #: src/blocks/page-content/edit.js:10

@@ -62,6 +62,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+[ Add New Block ] Icon Outer
 
 = 1.15.0 =
 [ Add Function ][ Grid Column Item ] Add color and padding setting

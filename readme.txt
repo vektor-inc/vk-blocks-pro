@@ -63,6 +63,9 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Ordered List ] Fixed a bug in standard style
+
+
 = 1.15.0 =
 [ Add Function ][ Grid Column Item ] Add color and padding setting
 

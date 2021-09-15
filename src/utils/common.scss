@@ -36,7 +36,6 @@
 }
 
 $stylePalette: (
-	is-style-vk-default: "•",
 	is-style-vk-arrow-mark: "\f138",
 	is-style-vk-triangle-mark: "\f0da",
 	is-style-vk-check-mark: "\f00c",
@@ -67,7 +66,6 @@ $colorPalette: (
 ul,
 ol {
 	&.is-style {
-		&-vk-default,
 		&-vk-arrow-mark,
 		&-vk-triangle-mark,
 		&-vk-check-mark,

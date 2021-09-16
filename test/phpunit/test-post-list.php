@@ -6,14 +6,27 @@
  */
 
 /**
- * page-content block test case.
+ * Post List block test case.
  */
 class PostListBlockTest extends WP_UnitTestCase {
 
-	public $post_id; // PostListブロックを挿入する投稿
-	public $page_id; // PostListブロックで表示する固定ページ
+	/**
+	 * PostListブロックを挿入する投稿
+	 *
+	 * @var int|\WP_Error $page_id
+	 */
+	public $post_id;
 
-	// 各テストケースの実行直前に呼ばれる
+	/**
+	 * PostListブロックで表示する固定ページ
+	 *
+	 * @var int|\WP_Error $page_id
+	 */
+	public $page_id;
+
+	/**
+	 * 各テストケースの実行直前に呼ばれる
+	 */
 	public function setUp() {
 		parent::setUp();
 
@@ -33,6 +46,9 @@ class PostListBlockTest extends WP_UnitTestCase {
 		$this->post_id = wp_insert_post( $post );
 	}
 
+	/**
+	 * Tear down each test method.
+	 */
 	public function tearDown() {
 		wp_delete_post( $this->page_id, true );
 		$this->page_id = 0;
@@ -87,9 +103,9 @@ class PostListBlockTest extends WP_UnitTestCase {
 
 		$this->set_current_user( 'administrator' );
 
-		$actual = vk_post_list_render_callback( $attributes );
+		$actual = vk_blocks_post_list_render_callback( $attributes );
 
-		$expected = unescapeHTML( '<div class=\"vk_posts vk_posts-postType-post vk_posts-postType-page vk_posts-layout-card vk_postList \"><div id=\"post-' . intval( $this->page_id ) . '\" class=\"vk_post vk_post-postType-page card card-post vk_post-col-xs-12 vk_post-col-sm-6 vk_post-col-md-4 vk_post-col-lg-4 vk_post-col-xl-4 vk_post-col-xxl-4 post-' . intval( $this->page_id ) . ' page type-page status-publish hentry\"><div class=\"vk_post_imgOuter\" style=\"background-image:url(http:\/\/localhost:8888\/wp-content\/plugins\/vk-blocks-pro\/inc\/vk-blocks\/images\/no-image.png)\"><a href=\"http:\/\/localhost:8888\/?page_id=' . intval( $this->page_id ) . '\"><div class=\"card-img-overlay\"><\/div><img src=\"http:\/\/localhost:8888\/wp-content\/plugins\/vk-blocks-pro\/inc\/vk-blocks\/images\/no-image.png\" alt=\"\" class=\"vk_post_imgOuter_img card-img-top\" loading=\"lazy\" \/><\/a><\/div><!-- [ \/.vk_post_imgOuter ] --><div class=\"vk_post_body card-body\"><h5 class=\"vk_post_title card-title\"><a href=\"http:\/\/localhost:8888\/?page_id=' . intval( $this->page_id ) . '\">Page Title<span class=\"vk_post_title_new\">New!!<\/span><\/a><\/h5><\/div><!-- [ \/.card-body ] --><\/div><!-- [ \/.card ] --><div id=\"post-' . intval( $this->post_id ) . '\" class=\"vk_post vk_post-postType-post card card-post vk_post-col-xs-12 vk_post-col-sm-6 vk_post-col-md-4 vk_post-col-lg-4 vk_post-col-xl-4 vk_post-col-xxl-4 post-' . intval( $this->post_id ) . ' post type-post status-publish format-standard hentry category-uncategorized\"><div class=\"vk_post_imgOuter\" style=\"background-image:url(http:\/\/localhost:8888\/wp-content\/plugins\/vk-blocks-pro\/inc\/vk-blocks\/images\/no-image.png)\"><a href=\"http:\/\/localhost:8888\/?p=' . intval( $this->post_id ) . '\"><div class=\"card-img-overlay\"><span class=\"vk_post_imgOuter_singleTermLabel\" style=\"color:#fff;background-color:#999999\">Uncategorized<\/span><\/div><img src=\"http:\/\/localhost:8888\/wp-content\/plugins\/vk-blocks-pro\/inc\/vk-blocks\/images\/no-image.png\" alt=\"\" class=\"vk_post_imgOuter_img card-img-top\" loading=\"lazy\" \/><\/a><\/div><!-- [ \/.vk_post_imgOuter ] --><div class=\"vk_post_body card-body\"><h5 class=\"vk_post_title card-title\"><a href=\"http:\/\/localhost:8888\/?p=' . intval( $this->post_id ) . '\">Post Title<span class=\"vk_post_title_new\">New!!<\/span><\/a><\/h5><\/div><!-- [ \/.card-body ] --><\/div><!-- [ \/.card ] --><\/div>' );
+		$expected = vk_blocks_unescape_html( '<div class=\"vk_posts vk_posts-postType-post vk_posts-postType-page vk_posts-layout-card vk_postList \"><div id=\"post-' . intval( $this->page_id ) . '\" class=\"vk_post vk_post-postType-page card card-post vk_post-col-xs-12 vk_post-col-sm-6 vk_post-col-md-4 vk_post-col-lg-4 vk_post-col-xl-4 vk_post-col-xxl-4 post-' . intval( $this->page_id ) . ' page type-page status-publish hentry\"><div class=\"vk_post_imgOuter\" style=\"background-image:url(http:\/\/localhost:8888\/wp-content\/plugins\/vk-blocks-pro\/inc\/vk-blocks\/images\/no-image.png)\"><a href=\"http:\/\/localhost:8888\/?page_id=' . intval( $this->page_id ) . '\"><div class=\"card-img-overlay\"><\/div><img src=\"http:\/\/localhost:8888\/wp-content\/plugins\/vk-blocks-pro\/inc\/vk-blocks\/images\/no-image.png\" alt=\"\" class=\"vk_post_imgOuter_img card-img-top\" loading=\"lazy\" \/><\/a><\/div><!-- [ \/.vk_post_imgOuter ] --><div class=\"vk_post_body card-body\"><h5 class=\"vk_post_title card-title\"><a href=\"http:\/\/localhost:8888\/?page_id=' . intval( $this->page_id ) . '\">Page Title<span class=\"vk_post_title_new\">New!!<\/span><\/a><\/h5><\/div><!-- [ \/.card-body ] --><\/div><!-- [ \/.card ] --><div id=\"post-' . intval( $this->post_id ) . '\" class=\"vk_post vk_post-postType-post card card-post vk_post-col-xs-12 vk_post-col-sm-6 vk_post-col-md-4 vk_post-col-lg-4 vk_post-col-xl-4 vk_post-col-xxl-4 post-' . intval( $this->post_id ) . ' post type-post status-publish format-standard hentry category-uncategorized\"><div class=\"vk_post_imgOuter\" style=\"background-image:url(http:\/\/localhost:8888\/wp-content\/plugins\/vk-blocks-pro\/inc\/vk-blocks\/images\/no-image.png)\"><a href=\"http:\/\/localhost:8888\/?p=' . intval( $this->post_id ) . '\"><div class=\"card-img-overlay\"><span class=\"vk_post_imgOuter_singleTermLabel\" style=\"color:#fff;background-color:#999999\">Uncategorized<\/span><\/div><img src=\"http:\/\/localhost:8888\/wp-content\/plugins\/vk-blocks-pro\/inc\/vk-blocks\/images\/no-image.png\" alt=\"\" class=\"vk_post_imgOuter_img card-img-top\" loading=\"lazy\" \/><\/a><\/div><!-- [ \/.vk_post_imgOuter ] --><div class=\"vk_post_body card-body\"><h5 class=\"vk_post_title card-title\"><a href=\"http:\/\/localhost:8888\/?p=' . intval( $this->post_id ) . '\">Post Title<span class=\"vk_post_title_new\">New!!<\/span><\/a><\/h5><\/div><!-- [ \/.card-body ] --><\/div><!-- [ \/.card ] --><\/div>' );
 
 		$this->assertEquals( $expected, $actual );
 	}
@@ -98,7 +114,7 @@ class PostListBlockTest extends WP_UnitTestCase {
 	 * Add user and set the user as current user.
 	 *
 	 * @param  string $role administrator, editor, author, contributor ...
-	 * @return none
+	 * @return void
 	 */
 	public function set_current_user( $role ) {
 		$user = $this->factory()->user->create_and_get(

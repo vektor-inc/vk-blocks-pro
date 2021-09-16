@@ -1,17 +1,31 @@
 <?php
 /**
  * Registers the `vk-blocks/child-page` block.
+ *
+ * @package vk-blocks
  */
+
 if ( function_exists( 'register_block_type_from_metadata' ) ) {
 
-	function vk_child_page_render_callback( $attributes ) {
+	/**
+	 * Child page render callback
+	 *
+	 * @param array $attributes Block attributes.
+	 * @return string
+	 */
+	function vk_blocks_child_page_render_callback( $attributes ) {
 		$wp_query     = Vk_Blocks_PostList::get_loop_query_child( $attributes );
 		$options_loop = array( 'class_loop_outer' => 'vk_childPage' );
 
 		return Vk_Blocks_PostList::render_post_list( $attributes, $wp_query, $options_loop );
 	}
 
-	function register_block_vkb_child_page() {
+	/**
+	 * Register block child_page
+	 *
+	 * @return void
+	 */
+	function vk_blocks_register_block_child_page() {
 		global $vk_blocks_common_attributes;
 		register_block_type_from_metadata(
 			__DIR__,
@@ -131,9 +145,9 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 					),
 					$vk_blocks_common_attributes
 				),
-				'render_callback' => 'vk_child_page_render_callback',
+				'render_callback' => 'vk_blocks_child_page_render_callback',
 			)
 		);
 	}
-	add_action( 'init', 'register_block_vkb_child_page', 99 );
+	add_action( 'init', 'vk_blocks_register_block_child_page', 99 );
 }

@@ -120,41 +120,23 @@ if ( ! function_exists( 'vk_blocks_fix_gt_style_errors' ) ) {
 
 		// Check whether there are any "&gt;" symbols inside <style> tags of
 		// vkblocks blocks.
-		if ( ! preg_match( '%wp:vk-blocks/\w+(.*)?<style>(.*)?&gt;%s', $data['post_content'] ) || ! preg_match( '%wp:vk-blocks/\w+(.*)?<style type="text/css">(.*)?&gt;%s', $data['post_content'] ) ) {
-			return $data;
-		}
-
 		// Go through each block's "&gt;" and replace them with ">", only do
 		// this for vkblocks blocks.
 		$data['post_content'] = preg_replace_callback(
 			'%wp:vk-blocks/\w+(.*)?/wp:vk-blocks/\w+%s',
 			function( $matches ) {
-
-				// Replace <style type="text/css">
 				return preg_replace_callback(
-					'%<style type="text/css">(.*)?</style>%s',
+					'%(<style[^<>]*>)(.*)</style>%s',
 					function( $matches ) {
-						return '<style type="text/css">' . preg_replace( '%&gt;%', '>', $matches[1] ) . '</style>';
+						return $matches[1] . preg_replace( '/&gt;/', '>', $matches[2] ) . '</style>';
 					},
 					$matches[0]
 				);
-
-				// // Replace <style>
-				return preg_replace_callback(
-					'%<style>(.*)?</style>%s',
-					function( $matches ) {
-						return '<style>' . preg_replace( '%&gt;%', '>', $matches[1] ) . '</style>';
-					},
-					$matches[0]
-				);
-
-				return $content;
 			},
 			$data['post_content']
 		);
 
 		return $data;
 	}
-
 	add_filter( 'wp_insert_post_data', 'vk_blocks_fix_gt_style_errors', 99, 1 );
 }

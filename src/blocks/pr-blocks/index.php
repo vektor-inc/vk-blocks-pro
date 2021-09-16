@@ -1,11 +1,18 @@
 <?php
-
 /**
  * Registers the `vk-blocks/pr-blocks` block.
+ *
+ * @package vk-blocks
  */
+
 if ( function_exists( 'register_block_type_from_metadata' ) ) {
 
-	function register_block_vkb_pr_blocks() {
+	/**
+	 * Register PR block.
+	 *
+	 * @return void
+	 */
+	function vk_blocks_register_block_pr_blocks() {
 		register_block_type_from_metadata(
 			__DIR__,
 			array(
@@ -14,5 +21,5 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 			)
 		);
 	}
-	add_action( 'init', 'register_block_vkb_pr_blocks', 99 );
+	add_action( 'init', 'vk_blocks_register_block_pr_blocks', 99 );
 }

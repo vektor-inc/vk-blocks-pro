@@ -3,7 +3,7 @@
  * Plugin Name: VK Blocks Pro
  * Plugin URI: https://github.com/vektor-inc/vk-blocks
  * Description: This is a plugin that extends Gutenberg's blocks.
- * Version: 1.13.2
+ * Version: 1.15.0
  * Requires at least: 5.7
  * Author: Vektor,Inc.
  * Author URI: https://vektor-inc.co.jp
@@ -19,27 +19,27 @@ defined( 'ABSPATH' ) || die();
 add_filter( 'should_load_separate_core_block_assets', '__return_true' );
 
 /* function_exists は VK Blocks 無料版の無効化が正常に動作しなかった場合のフォールバック */
-if ( ! function_exists( 'vkblocks_get_version' ) ) {
+if ( ! function_exists( 'vk_blocks_get_version' ) ) {
 	/**
 	 * Get Plugin Version
 	 *
 	 * @return string
 	 */
-	function vkblocks_get_version() {
+	function vk_blocks_get_version() {
 		$data = get_file_data( __FILE__, array( 'version' => 'Version' ) );
 		return $data['version'];
 	}
 }
 
 /* function_exists は VK Blocks 無料版の無効化が正常に動作しなかった場合のフォールバック */
-if ( ! function_exists( 'vkblocks_deactivate_plugin' ) ) {
+if ( ! function_exists( 'vk_blocks_deactivate_plugin' ) ) {
 	/**
 	 * Plugin deactive function
 	 *
 	 * @param  string $plugin_path Plugin path to disable.
 	 * @return void
 	 */
-	function vkblocks_deactivate_plugin( $plugin_path ) {
+	function vk_blocks_deactivate_plugin( $plugin_path ) {
 		include_once ABSPATH . 'wp-admin/includes/plugin.php';
 		if ( is_plugin_active( $plugin_path ) ) {
 			$active_plugins = get_option( 'active_plugins' );
@@ -64,8 +64,8 @@ add_action(
 		include_once ABSPATH . 'wp-admin/includes/plugin.php';
 		if ( is_plugin_active( 'vk-blocks-pro/vk-blocks.php' ) ) {
 			// Deactive Plugin VK Blocks ( free ).
-			if ( function_exists( 'vkblocks_deactivate_plugin' ) ) {
-				vkblocks_deactivate_plugin( 'vk-blocks/vk-blocks.php' );
+			if ( function_exists( 'vk_blocks_deactivate_plugin' ) ) {
+				vk_blocks_deactivate_plugin( 'vk-blocks/vk-blocks.php' );
 			}
 		}
 		// Deactive ExUnit included VK Blocks.
@@ -79,10 +79,10 @@ add_action(
 );
 
 if ( is_admin() && ! is_network_admin() ) {
-	$options = get_option( 'vkExUnit_common_options' );
-	if ( ! empty( $options['active_vk-blocks'] ) ) {
-		$options['active_vk-blocks'] = false;
-		update_option( 'vkExUnit_common_options', $options );
+	$vk_blocks_options = get_option( 'vkExUnit_common_options' );
+	if ( ! empty( $vk_blocks_options['active_vk-blocks'] ) ) {
+		$vk_blocks_options['active_vk-blocks'] = false;
+		update_option( 'vkExUnit_common_options', $vk_blocks_options );
 
 		add_action(
 			'admin_notices',
@@ -103,12 +103,12 @@ require_once plugin_dir_path( __FILE__ ) . 'inc/vk-blocks-config.php';
 /**
  * Load updater ( Pro version only )
  */
-$plugin_base_dir = plugin_dir_path( __FILE__ );
-if ( strpos( $plugin_base_dir, 'vk-blocks-pro' ) !== false ) {
-	$updater_url = plugin_dir_path( __FILE__ ) . 'inc/vk-blocks-pro/plugin-update-checker/plugin-update-checker.php';
-	if ( file_exists( $updater_url ) ) {
+$vk_blocks_plugin_base_dir = plugin_dir_path( __FILE__ );
+if ( strpos( $vk_blocks_plugin_base_dir, 'vk-blocks-pro' ) !== false ) {
+	$vk_blocks_updater_url = plugin_dir_path( __FILE__ ) . 'inc/vk-blocks-pro/plugin-update-checker/plugin-update-checker.php';
+	if ( file_exists( $vk_blocks_updater_url ) ) {
 		require plugin_dir_path( __FILE__ ) . 'inc/vk-blocks-pro/plugin-update-checker/plugin-update-checker.php';
-		$my_update_checker = Puc_v4_Factory::buildUpdateChecker(
+		$vk_blocks_update_checker = Puc_v4_Factory::buildUpdateChecker(
 			'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=vk-blocks-pro',
 			__FILE__,
 			'vk-blocks-pro'

@@ -290,19 +290,83 @@ msgstr ""
 msgid "Child page list"
 msgstr ""
 
+#: src/blocks/_pro/grid-column-item/edit.js:106
+msgid "Margin setting inside the item"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:110
+msgid "Padding (Top)"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:125
+#: src/blocks/_pro/outer/edit.js:318
+#: src/blocks/_pro/slider-item/edit.js:78
+msgid "Padding (Left and Right)"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:140
+msgid "Padding (Bottom)"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:155
+msgid "Unit"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:163
+#: src/blocks/_pro/outer/edit.js:617
+#: src/blocks/icon/edit.js:131
+#: src/components/advanced-unit-control/index.js:18
+msgid "px"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:167
+#: src/blocks/_pro/outer/edit.js:621
+#: src/blocks/icon/edit.js:135
+#: src/components/advanced-unit-control/index.js:22
+msgid "em"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:171
+#: src/blocks/_pro/outer/edit.js:625
+#: src/blocks/icon/edit.js:139
+#: src/components/advanced-unit-control/index.js:26
+msgid "rem"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:175
+#: src/blocks/_pro/outer/edit.js:629
+#: src/blocks/icon/edit.js:143
+#: src/components/advanced-unit-control/index.js:30
+msgid "vw"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:81
+msgid "Color Settings"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:83
+#: src/blocks/heading/edit.js:288
+msgid "Text Color"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:94
+#: src/blocks/border-box/edit.js:99
+msgid "Background Color"
+msgstr ""
+
 #: src/blocks/_pro/grid-column-item/index.js:18
 msgid "Grid Column Item"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:51
+#: src/blocks/_pro/grid-column/edit.js:53
 msgid "Layout Columns"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:57
+#: src/blocks/_pro/grid-column/edit.js:59
 msgid "Column Margin Bottom Setting"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:61
+#: src/blocks/_pro/grid-column/edit.js:63
 msgid "Margin Bottom"
 msgstr ""
 
@@ -473,11 +537,6 @@ msgstr ""
 msgid "Full Wide"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:318
-#: src/blocks/_pro/slider-item/edit.js:78
-msgid "Padding (Left and Right)"
-msgstr ""
-
 #: src/blocks/_pro/outer/edit.js:322
 msgid "Fit to the Content area"
 msgstr ""
@@ -635,30 +694,6 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:607
 #: src/components/advanced-unit-control/index.js:12
 msgid "Unit Type"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:617
-#: src/blocks/icon/edit.js:131
-#: src/components/advanced-unit-control/index.js:18
-msgid "px"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:621
-#: src/blocks/icon/edit.js:135
-#: src/components/advanced-unit-control/index.js:22
-msgid "em"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:625
-#: src/blocks/icon/edit.js:139
-#: src/components/advanced-unit-control/index.js:26
-msgid "rem"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:629
-#: src/blocks/icon/edit.js:143
-#: src/components/advanced-unit-control/index.js:30
-msgid "vw"
 msgstr ""
 
 #: src/blocks/_pro/outer/index.js:20
@@ -1184,10 +1219,6 @@ msgstr ""
 msgid "Black"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:99
-msgid "Background Color"
-msgstr ""
-
 #: src/blocks/border-box/index.js:19
 msgid "Border Box"
 msgstr ""
@@ -1460,10 +1491,6 @@ msgstr ""
 
 #: src/blocks/heading/edit.js:274
 msgid "Heading Settings"
-msgstr ""
-
-#: src/blocks/heading/edit.js:288
-msgid "Text Color"
 msgstr ""
 
 #: src/blocks/heading/edit.js:300

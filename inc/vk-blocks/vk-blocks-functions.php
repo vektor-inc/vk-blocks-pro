@@ -11,6 +11,7 @@
 require_once dirname( __FILE__ ) . '/view/class-vk-blocks-postlist.php';
 require_once dirname( __FILE__ ) . '/view/responsive-br.php';
 require_once dirname( __FILE__ ) . '/style/balloon.php';
+require_once dirname( __FILE__ ) . '/class-vk-blocks-print-css-variables.php';
 
 /**
  * スペーサーのサイズの配列
@@ -390,12 +391,12 @@ if ( ! function_exists( 'vk_blocks_set_wp_version' ) ) {
 	add_action( 'admin_head', 'vk_blocks_set_wp_version', 10, 0 );
 }
 
-if ( function_exists( 'vkblocks_get_version' ) ) {
+if ( function_exists( 'vk_blocks_get_version' ) ) {
 	/**
 	 * VK Blocks Set VKBPro Version
 	 */
 	function vk_blocks_set_vkbpro_version() {
-		$vkbpro_version = vkblocks_get_version();
+		$vkbpro_version = vk_blocks_get_version();
 		if ( $vkbpro_version ) {
 			echo '<script>',
 			'var vkbproVersion = "' . esc_attr( $vkbpro_version ) . '";',

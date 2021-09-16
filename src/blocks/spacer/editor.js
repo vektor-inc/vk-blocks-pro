@@ -1,5 +1,5 @@
-import { registerBlock } from '../bundle-temp';
+// import { registerBlock } from '../bundle-temp';
 
-import * as spacer from './';
+// import * as spacer from './';
 
-registerBlock(spacer);
+// registerBlock(spacer);

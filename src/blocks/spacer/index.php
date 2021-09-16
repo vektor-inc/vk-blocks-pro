@@ -10,12 +10,14 @@
  */
 function vk_blocks_set_spacer_enqueue_files() {
 	// Register Style.
-	wp_register_style(
-		'vk-blocks/spacer',
-		VK_BLOCKS_DIR_PATH . 'build/spacer/style.css',
-		array(),
-		VK_BLOCKS_VERSION
-	);
+	if ( ! is_admin() ) {
+		wp_register_style(
+			'vk-blocks/spacer',
+			VK_BLOCKS_DIR_PATH . 'build/spacer/style.css',
+			array(),
+			VK_BLOCKS_VERSION
+		);
+	}
 
 	// Register Script.
 	$asset = include VK_BLOCKS_PATH . 'build/spacer/index.asset.php';
@@ -31,8 +33,8 @@ function vk_blocks_set_spacer_enqueue_files() {
 		__DIR__,
 		array(
 			'style'         => 'vk-blocks/spacer',
-			'editor_style'  => 'vk-blocks/spacer',
-			'editor_script' => 'vk-blocks/spacer',
+			'editor_style'  => 'vk-blocks-build-editor-css',
+			'editor_script' => 'vk-blocks-build-js',
 		)
 	);
 }

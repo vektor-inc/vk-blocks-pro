@@ -26,6 +26,7 @@
 		"cli": "wp-env run cli",
 		"show:savedVersion": "bash -c 'npm run cli wp post meta get $0 _vkb_saved_block_version'",
 		"update:savedVersion": "bash -c 'npm run cli wp post meta update $0 _vkb_saved_block_version $1'",
+		"spacer_sass": "node-sass --output-style compressed src/blocks/spacer/style.scss build/spacer/style.css",
 		"reinstall": "rm -rf node_modules/ && npm install && npm run build",
 		"prepare": "husky install"
 	},
@@ -87,6 +88,7 @@
 		"compare-versions": "^3.6.0",
 		"lodash": "^4.17.21",
 		"memize": "^1.1.0",
+		"node-sass": "^6.0.1",
 		"react-dom": "16.14.0",
 		"react-html-parser": "^2.0.2"
 	}

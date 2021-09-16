@@ -1,12 +1,12 @@
 /**
  * spacer block type
  */
+import { registerBlockType } from '@wordpress/blocks';
 
 /**
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-
 /**
  * Internal dependencies
  */
@@ -17,7 +17,7 @@ import edit from './edit';
 import save from './save';
 
 // 関連SCSSを読み込んで書き出し
-import './style.scss';
+// import './style.scss';
 
 const { name } = metadata;
 
@@ -39,3 +39,4 @@ export const settings = {
 	save,
 	deprecated,
 };
+registerBlockType(metadata, settings);

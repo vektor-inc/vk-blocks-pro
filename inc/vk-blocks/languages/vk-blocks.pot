@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-08-19T01:26:31+00:00\n"
+"POT-Creation-Date: 2021-09-16T04:59:41+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -621,18 +621,21 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:566
 #: src/blocks/_pro/slider/edit.js:238
 #: src/components/advanced-viewport-control/index.js:39
+#: inc/vk-blocks/admin/admin-margin.php:63
 msgid "Mobile"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:581
 #: src/blocks/_pro/slider/edit.js:227
 #: src/components/advanced-viewport-control/index.js:31
+#: inc/vk-blocks/admin/admin-margin.php:62
 msgid "Tablet"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:596
 #: src/blocks/_pro/slider/edit.js:216
 #: src/components/advanced-viewport-control/index.js:25
+#: inc/vk-blocks/admin/admin-margin.php:61
 msgid "PC"
 msgstr ""
 
@@ -644,21 +647,21 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:617
 #: src/blocks/icon/edit.js:131
 #: src/components/advanced-unit-control/index.js:18
-#: inc/vk-blocks/admin/admin-margin.php:7
+#: inc/vk-blocks/admin/admin-margin.php:10
 msgid "px"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:621
 #: src/blocks/icon/edit.js:135
 #: src/components/advanced-unit-control/index.js:22
-#: inc/vk-blocks/admin/admin-margin.php:11
+#: inc/vk-blocks/admin/admin-margin.php:14
 msgid "em"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:625
 #: src/blocks/icon/edit.js:139
 #: src/components/advanced-unit-control/index.js:26
-#: inc/vk-blocks/admin/admin-margin.php:15
+#: inc/vk-blocks/admin/admin-margin.php:18
 msgid "rem"
 msgstr ""
 
@@ -1156,7 +1159,7 @@ msgstr ""
 
 #: src/blocks/border-box/edit.js:51
 #: src/blocks/icon/edit.js:112
-#: inc/vk-blocks/admin/admin-margin.php:49
+#: inc/vk-blocks/admin/admin-margin.php:58
 msgid "Margin"
 msgstr ""
 
@@ -1222,9 +1225,9 @@ msgid "Solid Angle iconFeature"
 msgstr ""
 
 #: src/blocks/button/edit.js:103
-#: src/blocks/spacer/edit.js:87
+#: src/blocks/spacer/edit.js:85
 #: src/extensions/common/inline-font-size/index.js:51
-#: inc/vk-blocks/vk-blocks-functions.php:15
+#: inc/vk-blocks/vk-blocks-functions.php:21
 msgid "Small"
 msgstr ""
 
@@ -1318,8 +1321,8 @@ msgid "Button Size:"
 msgstr ""
 
 #: src/blocks/button/edit.js:87
-#: src/blocks/spacer/edit.js:107
-#: inc/vk-blocks/vk-blocks-functions.php:23
+#: src/blocks/spacer/edit.js:105
+#: inc/vk-blocks/vk-blocks-functions.php:29
 msgid "Large"
 msgstr ""
 
@@ -1675,24 +1678,24 @@ msgstr ""
 msgid "Space Type"
 msgstr ""
 
-#: src/blocks/spacer/edit.js:117
+#: src/blocks/spacer/edit.js:115
 msgid "Custom"
 msgstr ""
 
-#: src/blocks/spacer/edit.js:58
+#: src/blocks/spacer/edit.js:56
 msgid "Height for each device."
 msgstr ""
 
-#: src/blocks/spacer/edit.js:77
+#: src/blocks/spacer/edit.js:75
 msgid "Spacer Settings"
 msgstr ""
 
-#: src/blocks/spacer/edit.js:97
-#: inc/vk-blocks/vk-blocks-functions.php:19
+#: src/blocks/spacer/edit.js:95
+#: inc/vk-blocks/vk-blocks-functions.php:25
 msgid "Medium"
 msgstr ""
 
-#: src/blocks/spacer/index.js:24
+#: src/blocks/spacer/index.js:27
 msgid "Responsive Spacer"
 msgstr ""
 
@@ -2140,25 +2143,25 @@ msgstr ""
 msgid "https://vektor-inc.co.jp"
 msgstr ""
 
-#: inc/admin-notices.php:24
+#: inc/admin-notices.php:23
 msgid "We've released VK Blocks Pro!"
 msgstr ""
 
 #. translators: 1: opening a tag, 2: closing a tag
-#: inc/admin-notices.php:31
+#: inc/admin-notices.php:30
 msgid "Thank you for using VK Blocks. We've released VK Blocks Pro. It has more custom blocks to build web site more easily. If you are interested in VK Blocks Pro, Please read %1$s this post %2$s for more details."
 msgstr ""
 
-#: inc/admin-notices.php:35
-#: inc/admin-notices.php:41
+#: inc/admin-notices.php:34
+#: inc/admin-notices.php:40
 msgid "https://www.vektor-inc.co.jp/service/wordpress-plugins/vk-blocks/"
 msgstr ""
 
-#: inc/admin-notices.php:42
+#: inc/admin-notices.php:41
 msgid "See more"
 msgstr ""
 
-#: inc/admin-notices.php:45
+#: inc/admin-notices.php:44
 msgid "Dismiss this notice"
 msgstr ""
 
@@ -2182,57 +2185,6 @@ msgstr ""
 
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:226
 msgid "4.7 will be abolished in the near future."
-msgstr ""
-
-#. translators:
-#: inc/template-tags/package/template-tags.php:147
-msgid "Author: %s"
-msgstr ""
-
-#: inc/template-tags/package/template-tags.php:149
-#: inc/template-tags/package/template-tags.php:232
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr ""
-
-#: inc/template-tags/package/template-tags.php:151
-#: inc/template-tags/package/template-tags.php:237
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr ""
-
-#: inc/template-tags/package/template-tags.php:153
-msgctxt "daily archives date format"
-msgid "F j, Y"
-msgstr ""
-
-#: inc/template-tags/package/template-tags.php:188
-msgid "Archives"
-msgstr ""
-
-#. translators:
-#: inc/template-tags/package/template-tags.php:220
-#: inc/template-tags/package/template-tags.php:228
-msgid "About %s"
-msgstr ""
-
-#. translators:
-#: inc/template-tags/package/template-tags.php:234
-msgctxt "Yearly archive description"
-msgid "Article of %s."
-msgstr ""
-
-#. translators:
-#: inc/template-tags/package/template-tags.php:239
-#: inc/template-tags/package/template-tags.php:245
-#: inc/template-tags/package/template-tags.php:250
-msgctxt "Archive description"
-msgid "Article of %s."
-msgstr ""
-
-#. translators:
-#: inc/template-tags/package/template-tags.php:268
-msgid "Page of %s"
 msgstr ""
 
 #: inc/tgm-plugin-activation/tgm-config.php:77
@@ -2375,23 +2327,23 @@ msgstr ""
 msgid "Vektor WordPress Information"
 msgstr ""
 
-#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:7
+#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:13
 msgid "Disable accordion"
 msgstr ""
 
-#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:11
+#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:17
 msgid "Enable accordion and default open "
 msgstr ""
 
-#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:15
+#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:21
 msgid "Enable accordion and default close "
 msgstr ""
 
-#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:23
+#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:29
 msgid "FAQ Block Setting"
 msgstr ""
 
-#: inc/vk-blocks-pro/admin-pro/admin-pro.php:20
+#: inc/vk-blocks-pro/admin-pro/admin-pro.php:22
 msgid "FAQ Setting"
 msgstr ""
 
@@ -2427,57 +2379,61 @@ msgstr ""
 msgid "Balloon Image Name"
 msgstr ""
 
-#: inc/vk-blocks/admin/admin-margin.php:25
-#: inc/vk-blocks/admin/admin.php:56
+#: inc/vk-blocks/admin/admin-margin.php:27
+#: inc/vk-blocks/admin/admin.php:61
 msgid "Common Margin Setting"
 msgstr ""
 
-#: inc/vk-blocks/admin/admin-margin.php:26
+#: inc/vk-blocks/admin/admin-margin.php:28
 msgid "Please specify the size of the common margin used for responsive spacers, etc."
 msgstr ""
 
-#: inc/vk-blocks/admin/admin-margin.php:29
+#: inc/vk-blocks/admin/admin-margin.php:31
 msgid "Unit"
 msgstr ""
 
-#: inc/vk-blocks/admin/admin.php:32
+#: inc/vk-blocks/admin/admin.php:37
 msgid "Blocks setting"
 msgstr ""
 
-#: inc/vk-blocks/admin/admin.php:33
+#: inc/vk-blocks/admin/admin.php:38
 msgctxt "label in admin menu"
 msgid "Blocks"
 msgstr ""
 
-#: inc/vk-blocks/admin/admin.php:49
+#: inc/vk-blocks/admin/admin.php:54
 msgid "Blocks Setting"
 msgstr ""
 
-#: inc/vk-blocks/admin/admin.php:55
+#: inc/vk-blocks/admin/admin.php:60
 msgid "Balloon Block Setting"
 msgstr ""
 
-#: inc/vk-blocks/load-bootstrap.php:49
+#: inc/vk-blocks/load-bootstrap.php:61
 msgid "VK Blocks Bootstrap Setting"
 msgstr ""
 
-#: inc/vk-blocks/load-bootstrap.php:66
+#: inc/vk-blocks/load-bootstrap.php:81
 msgid "Loading Bootstrap4"
 msgstr ""
 
-#: inc/vk-blocks/load-bootstrap.php:67
+#: inc/vk-blocks/load-bootstrap.php:82
 msgid "Check here to load Bootstrap4. If your theme or plugins loading Bootstrap4, uncheck here."
 msgstr ""
 
-#: inc/vk-blocks/view/post-list.php:164
+#: inc/vk-blocks/load-bootstrap.php:102
+msgid "Setting"
+msgstr ""
+
+#: inc/vk-blocks/view/class-vk-blocks-postlist.php:186
 msgid "No Post is selected"
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:296
+#: inc/vk-blocks/vk-blocks-functions.php:345
 msgid "Blocks"
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:306
+#: inc/vk-blocks/vk-blocks-functions.php:355
 msgid "Blocks Layout"
 msgstr ""
 
@@ -2559,11 +2515,11 @@ msgstr ""
 msgid "If you choose \"Active Preload CSS\" that css load timing was changed.If you have any do not want to preload css file that please fill in handle(id) name. Ex) pluginname_a-style,pluginname_b-css"
 msgstr ""
 
-#: src/blocks/page-content/index.php:118
+#: src/blocks/page-content/index.php:117
 msgid "Edit this area"
 msgstr ""
 
-#: vk-blocks.php:81
+#: vk-blocks.php:91
 msgid "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks Plugin running."
 msgstr ""
 

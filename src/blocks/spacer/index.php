@@ -36,7 +36,7 @@ function vk_blocks_set_spacer_enqueue_files() {
 		)
 	);
 }
-add_action('init','vk_blocks_set_spacer_enqueue_files', 99);
+add_action( 'init', 'vk_blocks_set_spacer_enqueue_files', 99 );
 
 /**
  * スペーサーのサイズを取得する関数

@@ -117,7 +117,7 @@ if ( strpos( $vk_blocks_plugin_base_dir, 'vk-blocks-pro' ) !== false ) {
 }
 
 // Set plugin dir path.
-define( 'VK_BLOCKS_DIR_PATH', plugin_dir_url(__FILE__) );
+define( 'VK_BLOCKS_DIR_PATH', plugin_dir_url( __FILE__ ) );
 
 // spacer block を読み込み
 require_once untrailingslashit( plugin_dir_path( __FILE__ ) ) . '/src/blocks/spacer/index.php';

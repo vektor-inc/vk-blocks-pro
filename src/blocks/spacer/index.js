@@ -1,7 +1,6 @@
 /**
  * spacer block type
  */
-import { registerBlockType } from '@wordpress/blocks';
 
 /**
  * WordPress dependencies
@@ -39,4 +38,3 @@ export const settings = {
 	save,
 	deprecated,
 };
-registerBlockType(metadata, settings);

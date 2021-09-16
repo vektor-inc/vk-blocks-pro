@@ -1715,7 +1715,7 @@ msgstr ""
 msgid "Medium"
 msgstr ""
 
-#: src/blocks/spacer/index.js:27
+#: src/blocks/spacer/index.js:26
 msgid "Responsive Spacer"
 msgstr ""
 

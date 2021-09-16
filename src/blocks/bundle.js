@@ -28,7 +28,7 @@ import * as icon from './icon';
 import * as pageContent from './page-content';
 import * as prBlocks from './pr-blocks';
 import * as prContent from './pr-content';
-// import * as spacer from './spacer';
+import * as spacer from './spacer';
 import * as staff from './staff';
 
 /**
@@ -60,7 +60,7 @@ const vkBlocks = [
 	pageContent,
 	prBlocks,
 	prContent,
-	//	spacer,
+	spacer,
 	staff,
 ];
 

@@ -3,10 +3,6 @@
  */
 
 /**
- * WordPress dependencies
- */
-import { __ } from '@wordpress/i18n';
-/**
  * Internal dependencies
  */
 import { ReactComponent as Icon } from './icon.svg';

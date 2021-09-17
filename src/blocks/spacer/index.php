@@ -6,9 +6,11 @@
  */
 
 /**
- * CSSの読み込み
+ * Register Spacer block.
+ *
+ * @return void
  */
-function vk_blocks_set_spacer_enqueue_files() {
+function vk_blocks_register_block_spacer() {
 	// Register Style.
 	if ( ! is_admin() ) {
 		wp_register_style(
@@ -38,7 +40,7 @@ function vk_blocks_set_spacer_enqueue_files() {
 		)
 	);
 }
-add_action( 'init', 'vk_blocks_set_spacer_enqueue_files', 99 );
+add_action( 'init', 'vk_blocks_register_block_spacer', 99 );
 
 /**
  * スペーサーのサイズを取得する関数

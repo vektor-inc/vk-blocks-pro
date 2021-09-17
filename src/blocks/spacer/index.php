@@ -25,7 +25,7 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 }
 
 /**
- * スペーサーのサイズを取得する関数
+ * スペーサーのサイズ（数値）を取得する関数
  *
  * @param array  $options VK Blocks 共通オプション.
  * @param string $spacer_size スペーサーのサイズ.
@@ -87,7 +87,7 @@ function vk_blocks_is_size_print( $options, $device ) {
 }
 
 /**
- * スペーサーのサイズのCSS変数を出力する関数
+ * スペーサーのサイズのCSS変数（１行）を出力する関数
  *
  * @param array  $options VK Blocks 共通オプション.
  * @param string $spacer_size スペーサーのサイズ.
@@ -106,7 +106,7 @@ function vk_blocks_get_spacer_size_style( $options, $spacer_size, $device = '', 
 }
 
 /**
- * 共通スペーサーのサイズ指定のCSSを出力します
+ * 共通スペーサーのサイズ指定の全CSSを出力する関数
  *
  * @param array $options VK Blocks 共通オプション.
  * @return string $dynamic_css : 出力するcss

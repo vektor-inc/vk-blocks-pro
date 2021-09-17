@@ -15,6 +15,9 @@
 // Do not load directly.
 defined( 'ABSPATH' ) || die();
 
+// Set plugin dir path.
+define( 'VK_BLOCKS_DIR_PATH', plugin_dir_url( __FILE__ ) );
+
 // from WordPress 5.8 ※ BlockのCSSとJS分離作業のために、一時的に記載。最終的にはVK Blocks ではフィルター入れない方が良い
 add_filter( 'should_load_separate_core_block_assets', '__return_true' );
 
@@ -115,9 +118,3 @@ if ( strpos( $vk_blocks_plugin_base_dir, 'vk-blocks-pro' ) !== false ) {
 		);
 	}
 }
-
-// Set plugin dir path.
-define( 'VK_BLOCKS_DIR_PATH', plugin_dir_url( __FILE__ ) );
-
-// spacer block を読み込み
-require_once untrailingslashit( plugin_dir_path( __FILE__ ) ) . '/src/blocks/spacer/index.php';

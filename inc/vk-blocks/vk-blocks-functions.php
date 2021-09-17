@@ -106,7 +106,7 @@ if ( ! function_exists( 'vk_blocks_add_styles' ) ) {
 	 * VK Blocks Add Styles
 	 */
 	function vk_blocks_add_styles() {
-		wp_enqueue_style( 'vk-blocks-build-css' );
+		// wp_enqueue_style( 'vk-blocks-build-css' );
 	};
 }
 // Load css at footer.

@@ -27,7 +27,7 @@
 		"cli": "wp-env run cli",
 		"show:savedVersion": "bash -c 'npm run cli wp post meta get $0 _vkb_saved_block_version'",
 		"update:savedVersion": "bash -c 'npm run cli wp post meta update $0 _vkb_saved_block_version $1'",
-		"spacer_sass": "node-sass --output-style compressed src/blocks/spacer/style.scss build/spacer/style.css",
+		"spacer-sass": "node-sass --output-style compressed src/blocks/spacer/style.scss build/spacer/style.css",
 		"reinstall": "rm -rf node_modules/ && npm install && npm run build",
 		"prepare": "husky install"
 	},

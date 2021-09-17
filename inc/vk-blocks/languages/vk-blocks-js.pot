@@ -1715,10 +1715,6 @@ msgstr ""
 msgid "Medium"
 msgstr ""
 
-#: src/blocks/spacer/index.js:26
-msgid "Responsive Spacer"
-msgstr ""
-
 #: src/blocks/staff/deprecated/0.58/component.js:50
 #: src/blocks/staff/edit.js:241
 msgid "Your Name"

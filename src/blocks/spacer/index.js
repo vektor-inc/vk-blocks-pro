@@ -15,15 +15,11 @@ import deprecated from './deprecated/index';
 import edit from './edit';
 import save from './save';
 
-// 関連SCSSを読み込んで書き出し
-// import './style.scss';
-
 const { name } = metadata;
 
 export { metadata, name };
 
 export const settings = {
-	title: __('Responsive Spacer', 'vk-blocks'),
 	icon: <Icon />,
 	example: {
 		anchor: null,

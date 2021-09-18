@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Ordered List ] Fixed a bug in standard style
+
 = 1.15.1 =
 [ Bug fix ][ Spacer ] Fix common margin setting in case of unspecified
 

@@ -3,8 +3,8 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,m
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
-Tested up to: 5.8.0
-Stable tag: 1.15.0
+Tested up to: 5.8.1
+Stable tag: 1.15.1
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -65,6 +65,8 @@ e.g.
 
 [ Bug fix ][ Ordered List ] Fixed a bug in standard style
 
+= 1.15.1 =
+[ Bug fix ][ Spacer ] Fix common margin setting in case of unspecified
 
 = 1.15.0 =
 [ Add Function ][ Grid Column Item ] Add color and padding setting

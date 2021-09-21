@@ -1,5 +1,5 @@
 #!/bin/bash
-rm -r dist
+rm -rf dist
 npx gulp text-domain
 npx gulp dist
 # zip圧縮

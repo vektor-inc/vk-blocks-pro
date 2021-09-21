@@ -62,6 +62,10 @@ composer install
 npm run phpunit
 ```
 
+## pre-commit
+コミット時にphpのformat、phpcsのチェックと、lintが実行されます。
+エラーがある場合コミットできません。
+
 ## デプロイ
 手順は[wiki](https://github.com/vektor-inc/vk-blocks-pro/wiki/%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4)を参考に
 

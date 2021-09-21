@@ -1551,6 +1551,26 @@ msgstr ""
 msgid "Size"
 msgstr ""
 
+#: src/blocks/layout-column-item/index.js:17
+msgid "Layout Column Item"
+msgstr ""
+
+#: src/blocks/layout-column/edit.js:51
+msgid "Layout Column Setting"
+msgstr ""
+
+#: src/blocks/layout-column/edit.js:56
+msgid "Block width"
+msgstr ""
+
+#: src/blocks/layout-column/edit.js:71
+msgid "Brakepoint(px)"
+msgstr ""
+
+#: src/blocks/layout-column/index.js:17
+msgid "Layout Column"
+msgstr ""
+
 #: src/blocks/page-content/edit.js:10
 #: src/blocks/staff/edit.js:216
 msgid "Unspecified"

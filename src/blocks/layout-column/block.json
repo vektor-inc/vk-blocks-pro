@@ -1,0 +1,21 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/layout-column",
+	"category": "vk-blocks-cat",
+	"attributes": {
+		"totalWidth": {
+			"type": "string",
+			"default": "100%"
+		},
+		"brakePoint": {
+			"type": "number",
+			"default": 900
+		}	
+	},
+	"description": "Column blocks for layout.",
+	"textdomain": "vk-blocks",
+	"supports": {
+		"className": true,
+		"anchor": true
+	}
+}

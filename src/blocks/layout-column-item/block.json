@@ -1,0 +1,13 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/layout-column-item",
+	"category": "vk-blocks-cat",
+	"attributes": {	
+	},
+	"description": "Column blocks for layout.",
+	"textdomain": "vk-blocks",
+	"supports": {
+		"className": true,
+		"anchor": true
+	}
+}

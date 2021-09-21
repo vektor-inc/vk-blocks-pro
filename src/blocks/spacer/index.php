@@ -22,10 +22,10 @@ function vk_blocks_register_block_spacer() {
 	}
 
 	// Register Script.
-	$asset = include VK_BLOCKS_PATH . 'build/spacer/index.asset.php';
+	$asset = include VK_BLOCKS_PATH . 'build/spacer/block-build.asset.php';
 	wp_register_script(
 		'vk-blocks/spacer',
-		VK_BLOCKS_DIR_PATH . 'build/spacer/index.js',
+		VK_BLOCKS_DIR_PATH . 'build/spacer/block-build.js',
 		$asset['dependencies'],
 		VK_BLOCKS_VERSION,
 		true

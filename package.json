@@ -29,8 +29,10 @@
 		"update:savedVersion": "bash -c 'npm run cli wp post meta update $0 _vkb_saved_block_version $1'",
 		"block:spacer:js": "wp-scripts build src/blocks/spacer/index.js --output-path=build/spacer",
 		"block:spacer:css": "node-sass --output-style compressed src/blocks/spacer/style.scss build/spacer/style.css",
+		"block:spacer": "npm run block:spacer:js && npm run block:spacer:css",
 		"block:pr-content:js": "wp-scripts build src/blocks/pr-content/index.js --output-path=build/pr-content",
 		"block:pr-content:css": "node-sass --output-style compressed src/blocks/pr-content/style.scss build/pr-content/style.css",
+		"block:pr-content": "npm run block:pr-content:js && npm run block:pr-content:css",
 		"reinstall": "rm -rf node_modules/ && npm install && npm run build",
 		"prepare": "husky install"
 	},

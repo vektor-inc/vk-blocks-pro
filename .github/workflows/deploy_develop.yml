@@ -1,0 +1,30 @@
+# WIP!!! Deploy develop branch to vs4 test 
+
+name: Deploy to VK Blocks Pro Test Site
+on:
+  push:
+    branches:
+      - develop
+jobs:
+  deployment:
+    name: Deployment
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: Setup Enviroment
+      run: npm install
+    - name: build
+      run: npm run build      
+    - name: dist
+      run: npm run dist
+    - name: rsync deployments
+      uses: burnett01/rsync-deployments@4.1
+      with:
+        switches: -avzr
+        path: /dist/vk-blocks-pro/
+        remote_path: /home/vs4/www/vk-block-test/wp-content/plugins/vk-blocks-pro/
+        remote_host: ${{ secrets.DEPLOY_HOST_VK_BLOCKS_DEV }}
+        remote_port: ${{ secrets.DEPLOY_PORT_VK_BLOCKS_DEV }}
+        remote_user: ${{ secrets.DEPLOY_USER_VK_BLOCKS_DEV }}
+        remote_key: ${{ secrets.DEPLOY_KEY_VK_BLOCKS_DEV }}

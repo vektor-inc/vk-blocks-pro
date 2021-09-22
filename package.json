@@ -96,6 +96,7 @@
 		"memize": "^1.1.0",
 		"node-sass": "^6.0.1",
 		"react-dom": "16.14.0",
-		"react-html-parser": "^2.0.2"
+		"react-html-parser": "^2.0.2",
+		"sass": "^1.42.0"
 	}
 }

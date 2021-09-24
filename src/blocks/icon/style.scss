@@ -26,25 +26,20 @@
 			width: 80px;
 			height: 80px;
 			border-radius: 50%;
-			background-color: #0693e3;
-			border: 1px solid #0693e3;
+			border-width: 1px;
+			border-style: solid;
+
+/*			&:not(.has-background):not(.has_key_color){ 
+				background-color: #0693e3;
+				border: 1px solid #0693e3;
+			} */
 
 			&_frame {
 				background-color: transparent;
-
-				.vk_icon_font {
-					color: #0693e3;
-				}
 			}
 
 			&_none {
-				background-color: transparent;
-				color: #0693e3;
 				border: none;
-
-				.vk_icon_font {
-					color: #0693e3;
-				}
 			}
 		}
 
@@ -63,6 +58,38 @@
 			transform: translateY(-50%) translateX(-50%);
 			font-size: 36px;
 			color: #fff;
+		}
+	}
+}
+
+// デフォルトカラー Lightning(下記の仮)がない場合に適用
+.vk_icon_border.has_key_color {
+	border-color: #0693e3;
+
+	&:not(.vk_icon_border_frame):not(.vk_icon_border_none ){
+		background-color: #0693e3;
+	}
+
+	&.vk_icon_border_frame,
+	&.vk_icon_border_none {
+		.vk_icon_font {
+			color: #0693e3;
+		}
+	}
+}
+
+// (仮)キーカラー Lightningに実装する(?)
+.vk_icon_border.has_key_color {
+	border-color: #C00;
+
+	&:not(.vk_icon_border_frame):not(.vk_icon_border_none ){
+		background-color: #C00;
+	}
+
+	&.vk_icon_border_frame,
+	&.vk_icon_border_none {
+		.vk_icon_font {
+			color: #C00;
 		}
 	}
 }

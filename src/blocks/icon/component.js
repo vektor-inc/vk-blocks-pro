@@ -25,8 +25,15 @@ export class VKBIcon extends Component {
 
 		// color style
 		let borderClass = 'vk_icon_border';
-		let borderStyle = {};
+		if (iconColor === 'undefined') {
+			borderClass += ` has_key_color`;
+		}
+		else{
+			borderClass += ` has-background`;
+		}
 
+		let borderStyle = {};
+			
 		if (iconType === '0') {
 			// Solid color
 			if (iconColor !== 'undefined') {
@@ -46,8 +53,6 @@ export class VKBIcon extends Component {
 		} else {
 			// icon only
 			borderClass += ' vk_icon_border_none';
-			if (iconColor !== 'undefined') {
-			}
 		}
 
 		// margin

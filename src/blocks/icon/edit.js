@@ -17,7 +17,9 @@ import {
 	useBlockProps,
 	BlockControls,
 	BlockAlignmentControl,
+	getColorObjectByColorValue,
 } from '@wordpress/block-editor';
+import { select } from '@wordpress/data';
 
 export default function IconEdit(props) {
 	const { attributes, setAttributes } = props;
@@ -38,6 +40,8 @@ export default function IconEdit(props) {
 	if (faIcon && !faIcon.match(/<i/)) {
 		faIcon = `<i class="${faIcon}"></i>`;
 	}
+
+	const colorSet = select('core/editor').getEditorSettings().colors;
 
 	const blockProps = useBlockProps({
 		className: `vk_icon`,
@@ -220,7 +224,16 @@ export default function IconEdit(props) {
 							value={iconColor}
 							onChange={(value) => {
 								if (value) {
-									setAttributes({ iconColor: value });
+									// check has palette color
+									const titleColorValue =
+										getColorObjectByColorValue(
+											colorSet,
+											value
+										);
+									const color = titleColorValue
+										? titleColorValue.slug
+										: value;
+									setAttributes({ iconColor, color });
 								} else {
 									setAttributes({ iconColor: 'undefined' });
 								}

@@ -16,43 +16,61 @@ export class VKBIcon extends Component {
 		const iconTarget = this.props.lbTarget;
 
 		// outer & align
-		let outerClass = 'vk_icon_outer';
+		let outerClass = 'vk_icon_frame';
 		if (iconAlign === 'center') {
 			outerClass += ' vk_icon_align_center';
 		} else if (iconAlign === 'right') {
 			outerClass += ' vk_icon_align_right';
 		}
 
-		// color style
-		let borderClass = 'vk_icon_border';
-		if (iconColor === 'undefined') {
-			borderClass += ` has_key_color`;
-		}
-		else{
-			borderClass += ` has-background`;
+		// frame
+		if (iconType === '1') {
+			outerClass += ' is-style-outline';
 		}
 
+		// color style
+		let borderClass = 'vk_icon_border';
+
 		let borderStyle = {};
-			
+
 		if (iconType === '0') {
 			// Solid color
-			if (iconColor !== 'undefined') {
+			if (-1 < iconColor.indexOf('#')) {
+				// custom color
+				borderClass += ` has-background`;
 				borderStyle = {
 					backgroundColor: `${iconColor}`,
-					borderColor: `${iconColor}`,
 				};
+			} else if (iconColor !== 'undefined') {
+				// palette color
+				borderClass += ` has-${iconColor}-background-color has-background`;
 			}
 		} else if (iconType === '1') {
 			// Icon & Frame
 			borderClass += ' vk_icon_border_frame';
-			if (iconColor !== 'undefined') {
+			if (-1 < iconColor.indexOf('#')) {
+				// custom color
+				borderClass += ` has-text-color`;
 				borderStyle = {
-					borderColor: `${iconColor}`,
+					color: `${iconColor}`,
 				};
+			} else if (iconColor !== 'undefined') {
+				// palette color
+				borderClass += ` has-${iconColor}-color has-text-color`;
 			}
 		} else {
 			// icon only
 			borderClass += ' vk_icon_border_none';
+			if (-1 < iconColor.indexOf('#')) {
+				// custom color
+				borderClass += ` has-text-color`;
+				borderStyle = {
+					color: `${iconColor}`,
+				};
+			} else if (iconColor !== 'undefined') {
+				// palette color
+				borderClass += ` has-${iconColor}-color has-text-color`;
+			}
 		}
 
 		// margin
@@ -83,12 +101,6 @@ export class VKBIcon extends Component {
 		if (fontAwesomeIcon) {
 			fontAwesomeIcon = fontAwesomeIcon.replace(/ fas/g, 'fas');
 
-			// font color
-			let color = null;
-			if (iconType !== '0' && iconColor !== 'undefined') {
-				color = `color:${iconColor}`;
-			}
-
 			// font size
 			let size = null;
 			if (!(iconSize === 36 && iconSizeUnit === 'px')) {
@@ -97,8 +109,7 @@ export class VKBIcon extends Component {
 
 			// add class and inline css
 			const faIconFragment = fontAwesomeIcon.split(' ');
-			faIconFragment[0] =
-				faIconFragment[0] + ` style="${color}; ${size};"`;
+			faIconFragment[0] = faIconFragment[0] + ` style="${size};"`;
 			faIconFragment[1] = ' ' + faIconFragment[1] + ` vk_icon_font `;
 			faIconTag = faIconFragment.join('');
 		}

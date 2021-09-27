@@ -26,20 +26,13 @@
 			width: 80px;
 			height: 80px;
 			border-radius: 50%;
-			border-width: 1px;
-			border-style: solid;
 
-/*			&:not(.has-background):not(.has_key_color){ 
-				background-color: #0693e3;
-				border: 1px solid #0693e3;
-			} */
-
-			&_frame {
-				background-color: transparent;
+			&:not(.vk_icon_border_frame):not(.vk_icon_border_none) {
+				color: #fff;
 			}
 
-			&_none {
-				border: none;
+			&_frame {
+				border: solid 1px;
 			}
 		}
 
@@ -57,39 +50,30 @@
 			left: 50%;
 			transform: translateY(-50%) translateX(-50%);
 			font-size: 36px;
-			color: #fff;
+		}
+
+		.is-style-outline {
+			.vk_icon_border {
+				background-color: transparent;
+				border: 1px solid currentColor;
+			}
 		}
 	}
 }
 
-// デフォルトカラー Lightning(下記の仮)がない場合に適用
-.vk_icon_border.has_key_color {
-	border-color: #0693e3;
-
-	&:not(.vk_icon_border_frame):not(.vk_icon_border_none ){
+// デフォルトのカラー
+.wp-block-vk-blocks-icon {
+	.vk_icon_border:not(.has-background):not(.vk_icon_border_frame):not(.vk_icon_border_none) {
 		background-color: #0693e3;
 	}
 
-	&.vk_icon_border_frame,
-	&.vk_icon_border_none {
-		.vk_icon_font {
+	.vk_icon_border_none:not(.has-text-color) {
+		color: #0693e3;
+	}
+
+	.is-style-outline {
+		.vk_icon_border:not(.has-text-color) {
 			color: #0693e3;
-		}
-	}
-}
-
-// (仮)キーカラー Lightningに実装する(?)
-.vk_icon_border.has_key_color {
-	border-color: #C00;
-
-	&:not(.vk_icon_border_frame):not(.vk_icon_border_none ){
-		background-color: #C00;
-	}
-
-	&.vk_icon_border_frame,
-	&.vk_icon_border_none {
-		.vk_icon_font {
-			color: #C00;
 		}
 	}
 }

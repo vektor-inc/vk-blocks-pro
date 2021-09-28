@@ -223,7 +223,6 @@ export default function IconEdit(props) {
 									setAttributes({ iconColor: value });
 								} else {
 									setAttributes({ iconColor: 'undefined' });
-									setAttributes({ iconType: '0' });
 								}
 							}}
 						/>

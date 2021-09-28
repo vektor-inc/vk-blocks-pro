@@ -14,6 +14,11 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Enviroment
         run: npm install
+      - name: Install WP-CLI
+        run: |
+          curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+          chmod +x wp-cli.phar
+          mv wp-cli.phar /usr/local/bin/wp        
       - name: build
         run: npm run build
       - name: dist

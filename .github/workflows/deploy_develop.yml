@@ -4,7 +4,7 @@ name: Deploy to VK Blocks Pro Test Site
 on:
   push:
     branches:
-      - develop-test
+      - develop
 jobs:
   deployment:
     name: Deployment

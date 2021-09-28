@@ -13,11 +13,12 @@ import {
 } from '@wordpress/components';
 import {
 	InspectorControls,
-	ColorPalette,
 	useBlockProps,
 	BlockControls,
 	BlockAlignmentControl,
 } from '@wordpress/block-editor';
+
+import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 
 export default function IconEdit(props) {
 	const { attributes, setAttributes } = props;
@@ -216,16 +217,7 @@ export default function IconEdit(props) {
 				</PanelBody>
 				<PanelBody title={__('Color', 'vk-blocks')}>
 					<BaseControl>
-						<ColorPalette
-							value={iconColor}
-							onChange={(value) => {
-								if (value) {
-									setAttributes({ iconColor: value });
-								} else {
-									setAttributes({ iconColor: 'undefined' });
-								}
-							}}
-						/>
+						<AdvancedColorPalette schema={'iconColor'} {...props} />
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>

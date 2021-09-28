@@ -1,5 +1,6 @@
 import { Component } from '@wordpress/element';
 import ReactHtmlParser from 'react-html-parser';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export class VKBIcon extends Component {
 	render() {
@@ -30,18 +31,26 @@ export class VKBIcon extends Component {
 		if (iconType === '0') {
 			// Solid color
 			if (iconColor !== 'undefined') {
-				borderStyle = {
-					backgroundColor: `${iconColor}`,
-					borderColor: `${iconColor}`,
-				};
+				if (isHexColor(iconColor)) {
+					borderStyle = {
+						backgroundColor: `${iconColor}`,
+						borderColor: `${iconColor}`,
+					};
+				} else {
+					borderClass += `has-border-color has-${iconColor}-border-color has-background-color has-${iconColor}-background-color`;
+				}
 			}
 		} else if (iconType === '1') {
 			// Icon & Frame
 			borderClass += ' vk_icon_border_frame';
 			if (iconColor !== 'undefined') {
-				borderStyle = {
-					borderColor: `${iconColor}`,
-				};
+				if (isHexColor(iconColor)) {
+					borderStyle = {
+						borderColor: `${iconColor}`,
+					};
+				} else {
+					borderClass += `has-border-color has-${iconColor}-border-color`;
+				}
 			}
 		} else {
 			// icon only
@@ -79,9 +88,14 @@ export class VKBIcon extends Component {
 			fontAwesomeIcon = fontAwesomeIcon.replace(/ fas/g, 'fas');
 
 			// font color
-			let color = null;
+			let iconStyle = '';
+			let iconClass = '';
 			if (iconType !== '0' && iconColor !== 'undefined') {
-				color = `color:${iconColor}`;
+				if (isHexColor(iconColor)) {
+					iconStyle = `color: ${iconColor}`;
+				} else {
+					iconClass = `has-text-color has-${iconColor}-text-color`;
+				}
 			}
 
 			// font size
@@ -93,8 +107,9 @@ export class VKBIcon extends Component {
 			// add class and inline css
 			const faIconFragment = fontAwesomeIcon.split(' ');
 			faIconFragment[0] =
-				faIconFragment[0] + ` style="${color}; ${size};"`;
-			faIconFragment[1] = ' ' + faIconFragment[1] + ` vk_icon_font `;
+				faIconFragment[0] + ` style="${iconStyle}; ${size};"`;
+			faIconFragment[1] =
+				' ' + faIconFragment[1] + ` vk_icon_font ${iconClass} `;
 			faIconTag = faIconFragment.join('');
 		}
 

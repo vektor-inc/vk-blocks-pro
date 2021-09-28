@@ -36,8 +36,7 @@
 			"default": "0"
 		},
 		"iconColor": {
-			"type": "string",
-			"default": "undefined"
+			"type": "string"
 		},
 		"iconUrl": {
 			"type": "string",

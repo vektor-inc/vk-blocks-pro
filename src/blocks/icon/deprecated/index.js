@@ -27,13 +27,13 @@ const blockAttributes = {
 		type: 'string',
 		default: 'left',
 	},
-	"iconType": {
-		"type": "string",
-		"default": "0"
+	iconType: {
+		type: "string",
+		default: "0"
 	},
 	iconColor: {
 		type: 'string',
-		default: null,
+		default: 'undefined'
 	},
 	iconUrl: {
 		type: 'string',

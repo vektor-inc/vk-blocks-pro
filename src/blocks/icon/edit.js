@@ -233,7 +233,7 @@ export default function IconEdit(props) {
 									const color = titleColorValue
 										? titleColorValue.slug
 										: value;
-									setAttributes({ iconColor, color });
+									setAttributes({ iconColor: color });
 								} else {
 									setAttributes({ iconColor: 'undefined' });
 								}

@@ -399,13 +399,13 @@ add_action( 'admin_head', 'vk_blocks_set_vkb_saved_block_version' );
 /**
  * VK Blocks register_block_type filter
  * cssを分割しない場合はregister_block_typeで登録したscriptやstyleを読み込ませない
- * add_filter('vk_blocks_register_block_type_null', '__return_true'); にするとブロックごとのcssを読み込む
+ * add_filter('vk_blocks_should_load_separate_assets', '__return_true'); にするとブロックごとのcssを読み込む
  *
  *  @param array $args Array of arguments for registering a block type.
  *  @return array Return filter style, script, editor_style and editor_script added.
  */
 function vk_blocks_register_block_type( $args ) {
-	if ( apply_filters( 'vk_blocks_register_block_type_null', false ) ) {
+	if ( apply_filters( 'vk_blocks_should_load_separate_assets', false ) ) {
 		return $args;
 	}
 

@@ -106,7 +106,7 @@ if ( ! function_exists( 'vk_blocks_add_styles' ) ) {
 	 * VK Blocks Add Styles
 	 */
 	function vk_blocks_add_styles() {
-		// wp_enqueue_style( 'vk-blocks-build-css' );
+		wp_enqueue_style( 'vk-blocks-build-css' );
 	};
 }
 // Load css at footer.
@@ -399,12 +399,13 @@ add_action( 'admin_head', 'vk_blocks_set_vkb_saved_block_version' );
 /**
  * VK Blocks register_block_type filter
  * cssを分割しない場合はregister_block_typeで登録したscriptやstyleを読み込ませない
+ * add_filter('vk_blocks_register_block_type_null', '__return_true'); にするとブロックごとのcssを読み込む
  *
  *  @param array $args Array of arguments for registering a block type.
  *  @return array Return filter style, script, editor_style and editor_script added.
  */
 function vk_blocks_register_block_type( $args ) {
-	if ( apply_filters( 'vk_blocks_register_block_type_null', true ) ) {
+	if ( apply_filters( 'vk_blocks_register_block_type_null', false ) ) {
 		return $args;
 	}
 
@@ -453,18 +454,14 @@ function vk_blocks_register_block_type( $args ) {
 
 	foreach ( $arr_wp56 as $array ) {
 		if ( ! empty( $args['style'] ) && 'vk-blocks/' . $array === $args['style'] ) {
-			$args['style']         = null;
-			$args['script']        = null;
-			$args['editor_style']  = null;
-			$args['editor_script'] = null;
+			$args['style']  = null;
+			$args['script'] = null;
 		}
 	}
 	foreach ( $arr_wp56_pro as $array ) {
 		if ( ! empty( $args['style'] ) && 'vk-blocks/' . $array === $args['style'] ) {
-			$args['style']         = null;
-			$args['script']        = null;
-			$args['editor_style']  = null;
-			$args['editor_script'] = null;
+			$args['style']  = null;
+			$args['script'] = null;
 		}
 	}
 	return $args;

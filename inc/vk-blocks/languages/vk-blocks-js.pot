@@ -1551,19 +1551,36 @@ msgstr ""
 msgid "Size"
 msgstr ""
 
+#: src/blocks/layout-column-item/edit.js:42
+msgid "Layout Column item Setting"
+msgstr ""
+
+#: src/blocks/layout-column-item/edit.js:47
+#: src/blocks/layout-column/edit.js:79
+msgid "Block width"
+msgstr ""
+
+#: src/blocks/layout-column-item/edit.js:53
+msgid "Margin(PC)"
+msgstr ""
+
+#: src/blocks/layout-column-item/edit.js:59
+msgid "Margin(Tablet)"
+msgstr ""
+
+#: src/blocks/layout-column-item/edit.js:65
+msgid "Margin(Mobile)"
+msgstr ""
+
 #: src/blocks/layout-column-item/index.js:17
 msgid "Layout Column Item"
 msgstr ""
 
-#: src/blocks/layout-column/edit.js:51
+#: src/blocks/layout-column/edit.js:74
 msgid "Layout Column Setting"
 msgstr ""
 
-#: src/blocks/layout-column/edit.js:56
-msgid "Block width"
-msgstr ""
-
-#: src/blocks/layout-column/edit.js:71
+#: src/blocks/layout-column/edit.js:94
 msgid "Brakepoint(px)"
 msgstr ""
 

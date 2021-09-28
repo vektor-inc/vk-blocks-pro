@@ -4,7 +4,33 @@
 /*-------------------------------------------*/
 /* .vk_layoutColumn
 /*-------------------------------------------*/
-.vk_layoutColumn_grid {
-	display: flex;
-	flex-wrap: wrap;
+.vk_layoutColumn_grid .block-editor-inner-blocks{
+
+	.block-editor-block-list__layout {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.components-unit-control-wrapper {
+		margin-top: 20px;
+	}
+
+	.wp-block {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+
+.vk_layoutColumn {
+	border: 1px solid #f00;
+}
+
+.vk_layoutColumnItem {
+	border: 1px solid blue;
+	min-width: 100px;
+	min-height: 100px;
+}
+
+.block-list-appender{
+	height: 100px;
 }

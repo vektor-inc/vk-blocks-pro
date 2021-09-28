@@ -64,16 +64,16 @@
 // デフォルトのカラー
 .wp-block-vk-blocks-icon {
 	.vk_icon_border:not(.has-background):not(.vk_icon_border_frame):not(.vk_icon_border_none) {
-		background-color: #0693e3;
+		background-color: #337ab7;
 	}
 
 	.vk_icon_border_none:not(.has-text-color) {
-		color: #0693e3;
+		color: #337ab7;
 	}
 
 	.is-style-outline {
 		.vk_icon_border:not(.has-text-color) {
-			color: #0693e3;
+			color: #337ab7;
 		}
 	}
 }

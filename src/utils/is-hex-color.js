@@ -3,7 +3,9 @@
  */
 
 export const isHexColor = (color) => {
-	return color
-		? color.match(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/) !== null
-		: false;
+	let isHex = false;
+	if (color && color.match(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/) !== null) {
+		isHex = true;
+	}
+	return isHex;
 };

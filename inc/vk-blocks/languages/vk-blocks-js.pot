@@ -314,28 +314,28 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:163
 #: src/blocks/_pro/outer/edit.js:617
-#: src/blocks/icon/edit.js:132
+#: src/blocks/icon/edit.js:141
 #: src/components/advanced-unit-control/index.js:18
 msgid "px"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:167
 #: src/blocks/_pro/outer/edit.js:621
-#: src/blocks/icon/edit.js:136
+#: src/blocks/icon/edit.js:145
 #: src/components/advanced-unit-control/index.js:22
 msgid "em"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:171
 #: src/blocks/_pro/outer/edit.js:625
-#: src/blocks/icon/edit.js:140
+#: src/blocks/icon/edit.js:149
 #: src/components/advanced-unit-control/index.js:26
 msgid "rem"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:175
 #: src/blocks/_pro/outer/edit.js:629
-#: src/blocks/icon/edit.js:144
+#: src/blocks/icon/edit.js:153
 #: src/components/advanced-unit-control/index.js:30
 msgid "vw"
 msgstr ""
@@ -400,7 +400,7 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:100
 #: src/blocks/button/edit.js:70
-#: src/blocks/icon/edit.js:211
+#: src/blocks/icon/edit.js:220
 #: src/blocks/pr-blocks/edit.js:271
 #: src/blocks/pr-content/edit.js:130
 msgid "Open link new tab."
@@ -410,7 +410,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:57
 #: src/blocks/border-box/edit.js:122
 #: src/blocks/button/edit.js:258
-#: src/blocks/icon/edit.js:61
+#: src/blocks/icon/edit.js:70
 #: src/blocks/pr-content/edit.js:196
 msgid "Icon ( Font Awesome )"
 msgstr ""
@@ -422,7 +422,7 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:130
 #: src/blocks/button/edit.js:173
-#: src/blocks/icon/edit.js:185
+#: src/blocks/icon/edit.js:194
 #: src/blocks/pr-blocks/edit.js:299
 msgid "Solid color"
 msgstr ""
@@ -665,7 +665,7 @@ msgid "Border width"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:543
-#: src/blocks/icon/edit.js:161
+#: src/blocks/icon/edit.js:170
 msgid "Border radius"
 msgstr ""
 
@@ -920,7 +920,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:76
 #: src/blocks/_pro/timeline-item/edit.js:53
 #: src/blocks/border-box/edit.js:63
-#: src/blocks/icon/edit.js:218
+#: src/blocks/icon/edit.js:227
 #: src/blocks/staff/edit.js:139
 msgid "Color"
 msgstr ""
@@ -928,7 +928,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:82
 #: src/blocks/_pro/table-of-contents-new/edit.js:135
 #: src/blocks/_pro/timeline-item/edit.js:63
-#: src/blocks/icon/edit.js:177
+#: src/blocks/icon/edit.js:186
 msgid "Style"
 msgstr ""
 
@@ -1182,7 +1182,7 @@ msgid "Icon"
 msgstr ""
 
 #: src/blocks/border-box/edit.js:51
-#: src/blocks/icon/edit.js:113
+#: src/blocks/icon/edit.js:122
 msgid "Margin"
 msgstr ""
 
@@ -1526,28 +1526,28 @@ msgstr ""
 msgid "Heading"
 msgstr ""
 
-#: src/blocks/icon/edit.js:157
+#: src/blocks/icon/edit.js:166
 msgid "Reset"
 msgstr ""
 
-#: src/blocks/icon/edit.js:193
+#: src/blocks/icon/edit.js:202
 msgid "Icon & Frame"
 msgstr ""
 
-#: src/blocks/icon/edit.js:201
+#: src/blocks/icon/edit.js:210
 msgid "Icon only"
 msgstr ""
 
-#: src/blocks/icon/edit.js:206
+#: src/blocks/icon/edit.js:215
 #: src/blocks/pr-content/edit.js:121
 msgid "Link URL"
 msgstr ""
 
-#: src/blocks/icon/edit.js:59
+#: src/blocks/icon/edit.js:68
 msgid "Icon Setting"
 msgstr ""
 
-#: src/blocks/icon/edit.js:66
+#: src/blocks/icon/edit.js:75
 msgid "Size"
 msgstr ""
 

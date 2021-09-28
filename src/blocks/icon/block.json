@@ -39,8 +39,7 @@
 			"type": "string"
 		},
 		"iconUrl": {
-			"type": "string",
-			"default": ""
+			"type": "string"
 		},
 		"iconTarget": {
 			"type": "Boolean",

@@ -1,7 +1,9 @@
+import save1_15_1 from './1.15.1/save';
+
 const blockAttributes = {
 	faIcon: {
 		type: 'string',
-		default: null,
+		default: "<i class=\"fas fa-user\"></i>"
 	},
 	iconSize: {
 		type: 'number',
@@ -37,7 +39,7 @@ const blockAttributes = {
 	},
 	iconUrl: {
 		type: 'string',
-		default: null,
+		default: ""
 	},
 	iconTarget: {
 		type: 'Boolean',
@@ -47,8 +49,14 @@ const blockAttributes = {
 
 const blockAttributes2 = {
 	...blockAttributes,
+	iconColor: {
+		type: 'string',
+	},
 }
 
 export const deprecated = [
-
+	{
+		attributes: blockAttributes,
+		save: save1_15_1,
+	},
 ];

@@ -189,15 +189,15 @@ export default function GridColumnItemEdit(props) {
 						columStyle.paddingLeft !== undefined
 					) {
 						return (
-							<div className="vk_gridColumn_item_inner" style={columStyle}>
+							<div
+								className="vk_gridColumn_item_inner"
+								style={columStyle}
+							>
 								<InnerBlocks />
 							</div>
 						);
-					} else {
-						return (
-							<InnerBlocks />
-						);
 					}
+					return <InnerBlocks />;
 				})()}
 			</div>
 		</>

@@ -16,7 +16,7 @@ export class VKBIcon extends Component {
 		const iconTarget = this.props.lbTarget;
 
 		// outer & align
-		let outerClass = 'vk_icon_frame';
+		let outerClass = 'vk_icon_outer';
 		if (iconAlign === 'center') {
 			outerClass += ' vk_icon_align_center';
 		} else if (iconAlign === 'right') {
@@ -29,11 +29,7 @@ export class VKBIcon extends Component {
 
 		if (iconType === '0') {
 			// Solid color
-			if (
-				iconColor !== 'undefined' &&
-				iconColor !== null &&
-				iconColor !== undefined
-			) {
+			if (iconColor !== 'undefined') {
 				borderStyle = {
 					backgroundColor: `${iconColor}`,
 					borderColor: `${iconColor}`,
@@ -42,11 +38,7 @@ export class VKBIcon extends Component {
 		} else if (iconType === '1') {
 			// Icon & Frame
 			borderClass += ' vk_icon_border_frame';
-			if (
-				iconColor !== 'undefined' &&
-				iconColor !== null &&
-				iconColor !== undefined
-			) {
+			if (iconColor !== 'undefined') {
 				borderStyle = {
 					borderColor: `${iconColor}`,
 				};
@@ -54,11 +46,7 @@ export class VKBIcon extends Component {
 		} else {
 			// icon only
 			borderClass += ' vk_icon_border_none';
-			if (
-				iconColor !== 'undefined' &&
-				iconColor !== null &&
-				iconColor !== undefined
-			) {
+			if (iconColor !== 'undefined') {
 			}
 		}
 
@@ -92,12 +80,7 @@ export class VKBIcon extends Component {
 
 			// font color
 			let color = null;
-			if (
-				iconType !== '0' &&
-				iconColor !== 'undefined' &&
-				iconColor !== null &&
-				iconColor !== undefined
-			) {
+			if (iconType !== '0' && iconColor !== 'undefined') {
 				color = `color:${iconColor}`;
 			}
 

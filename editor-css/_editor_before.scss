@@ -101,6 +101,8 @@ button.image-button:not(.button-delete) {
 @import "./editor_before_border-box";
 // アイコン
 @import "./editor_before_icon";
+// アイコン横並び編集用CSS
+@import "./editor_before_icons";
 
 // VK Outer 編集パネル
 $color-danger: #dd3333;
@@ -208,7 +210,7 @@ div[data-type="vk-blocks/page-content"].is-selected{
 	}
 }
 
-// 選択投稿リストブロックの編集用CSS
+// 選択投稿リスト編集用CSS
 @import "./_editor_before_select-post";
 
 // アニメーションブロックの識別用枠線

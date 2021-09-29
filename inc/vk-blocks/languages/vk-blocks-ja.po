@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "POT-Creation-Date: 2021-08-11T17:15:59+00:00\n"
-"PO-Revision-Date: 2021-08-12 02:27+0900\n"
+"PO-Revision-Date: 2021-09-14 12:49+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 1.8.1\n"
 "X-Poedit-Basepath: ../../..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -1499,6 +1499,14 @@ msgstr "アイコン設定"
 msgid "Size"
 msgstr "サイズ"
 
+#: src/blocks/icon-outer/index.js:16
+msgid "Icon Outer"
+msgstr "横並びアイコン"
+
+#: src/blocks/icon-outer/edit.js:84
+msgid "Icon Common Setting"
+msgstr "アイコン共通設定"
+
 #: src/blocks/page-content/edit.js:10 src/blocks/staff/edit.js:216
 msgid "Unspecified"
 msgstr "指定しない"
@@ -1942,7 +1950,8 @@ msgstr "スティッチ"
 msgid "Border Top Bottom"
 msgstr "直線 上下"
 
-#: src/extensions/core/group/style.js:130 src/extensions/core/image/style.js:31
+#: src/extensions/core/group/style.js:130
+#: src/extensions/core/image/style.js:31
 msgid "Shadow"
 msgstr "シャドウ"
 
@@ -2851,6 +2860,11 @@ msgstr "文字サイズ,サブテキスト,アイコン,余白が設定できる
 msgctxt "block description"
 msgid "Display icons with Font Awesome."
 msgstr "Font Awesome のアイコンフォントを表示します"
+
+#: src/blocks/icon-outer/block.json
+msgctxt "block description"
+msgid "Display the Font Awesome icons horizontally."
+msgstr "Font Awesome のアイコンフォントを横並びに表示します"
 
 #: src/blocks/page-content/block.json
 msgctxt "block description"

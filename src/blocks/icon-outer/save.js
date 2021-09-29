@@ -10,7 +10,9 @@ export default function save(props) {
 
 	return (
 		<div {...blockProps}>
-			<div className={`vk_icons_col vk_icons_col-justify-${iconsJustify}`}>
+			<div
+				className={`vk_icons_col vk_icons_col-justify-${iconsJustify}`}
+			>
 				<InnerBlocks.Content />
 			</div>
 		</div>

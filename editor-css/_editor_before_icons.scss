@@ -19,25 +19,25 @@
 			}
 		}
 			
-		&.vk_icons-justify-left {
+		&-justify-left {
 			.block-editor-block-list__layout {
 				justify-content: flex-start;
 			}
 		}
 
-		&.vk_icons-justify-center {
+		&-justify-center {
 			.block-editor-block-list__layout {
 				justify-content: center;
 			}
 		}
 
-		&.vk_icons-justify-right {
+		&-justify-right {
 			.block-editor-block-list__layout {
 				justify-content: flex-end;
 			}
 		}
 
-		&.vk_icons-justify-space-between {
+		&-justify-space-between {
 			.block-editor-block-list__layout {
 				justify-content: space-between;
 			}

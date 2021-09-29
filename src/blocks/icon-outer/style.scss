@@ -27,15 +27,15 @@
 			}
 		}
 
-		&.vk_icons-justify-center {
+		&-justify-center {
 			justify-content: center;
 		}
 
-		&.vk_icons-justify-right {
+		&-justify-right {
 			justify-content: flex-end;
 		}
 
-		&.vk_icons-justify-space-between {
+		&-justify-space-between {
 			justify-content: space-between;
 		}
 	}

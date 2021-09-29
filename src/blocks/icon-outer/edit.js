@@ -224,7 +224,7 @@ export default function IconOuterEdit(props) {
 			</InspectorControls>
 			<div {...blockProps}>
 				<div
-					className={`vk_icons_col vk_icons-justify-${iconsJustify}`}
+					className={`vk_icons_col vk_icons_col-justify-${iconsJustify}`}
 				>
 					<InnerBlocks
 						allowedBlocks={ALLOWED_BLOCKS}

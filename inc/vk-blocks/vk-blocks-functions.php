@@ -283,40 +283,7 @@ function vk_blocks_blocks_assets() {
 		}
 	';
 
-	$vk_margin_size_array = vk_blocks_margin_size_array();
-	if (
-		! empty( $vk_blocks_options['margin_size']['sm'] ) ||
-		! empty( $vk_blocks_options['margin_size']['md'] ) ||
-		! empty( $vk_blocks_options['margin_size']['lg'] )
-	) {
-		if ( ! empty( $vk_blocks_options['margin_unit'] ) ) {
-			$unit = $vk_blocks_options['margin_unit'];
-		} else {
-			$unit = 'rem';
-		}
-		$dynamic_css .= '
-		@media (max-width: 576px) {
-			:root{
-				--vk-margin-sm: ' . esc_attr( vk_blocks_get_spacer_size( $vk_blocks_options, 'sm', 'mobile' ) ) . $unit . ';
-				--vk-margin-md: ' . esc_attr( vk_blocks_get_spacer_size( $vk_blocks_options, 'md', 'mobile' ) ) . $unit . ';
-				--vk-margin-lg: ' . esc_attr( vk_blocks_get_spacer_size( $vk_blocks_options, 'lg', 'mobile' ) ) . $unit . ';
-			}
-		}
-		@media (min-width: 577px) and (max-width: 768px) {
-			:root{
-				--vk-margin-sm: ' . esc_attr( vk_blocks_get_spacer_size( $vk_blocks_options, 'sm', 'tablet' ) ) . $unit . ';
-				--vk-margin-md: ' . esc_attr( vk_blocks_get_spacer_size( $vk_blocks_options, 'md', 'tablet' ) ) . $unit . ';
-				--vk-margin-lg: ' . esc_attr( vk_blocks_get_spacer_size( $vk_blocks_options, 'lg', 'tablet' ) ) . $unit . ';
-			}
-		}
-		@media (min-width: 769px) {
-			:root{
-				--vk-margin-sm: ' . esc_attr( vk_blocks_get_spacer_size( $vk_blocks_options, 'sm', 'pc' ) ) . $unit . ';
-				--vk-margin-md: ' . esc_attr( vk_blocks_get_spacer_size( $vk_blocks_options, 'md', 'pc' ) ) . $unit . ';
-				--vk-margin-lg: ' . esc_attr( vk_blocks_get_spacer_size( $vk_blocks_options, 'lg', 'pc' ) ) . $unit . ';
-			}
-		}';
-	}
+	$dynamic_css .= vk_blocks_get_spacer_size_style_all( $vk_blocks_options );
 
 	// delete before after space.
 	$dynamic_css = trim( $dynamic_css );
@@ -339,26 +306,35 @@ if ( ! function_exists( 'vk_blocks_blocks_categories' ) ) {
 	function vk_blocks_blocks_categories( $categories, $post ) {
 		global $vk_blocks_prefix;
 
-		$categories = array_merge(
-			$categories,
-			array(
+		foreach ( $categories as $key => $value ) {
+			$keys[] = $value['slug'];
+		}
+
+		if ( ! in_array( 'vk-blocks-cat', $keys, true ) ) {
+			$categories = array_merge(
+				$categories,
 				array(
-					'slug'  => 'vk-blocks-cat',
-					'title' => $vk_blocks_prefix . __( 'Blocks', 'vk-blocks' ),
-					'icon'  => '',
-				),
-			)
-		);
-		$categories = array_merge(
-			$categories,
-			array(
+					array(
+						'slug'  => 'vk-blocks-cat',
+						'title' => $vk_blocks_prefix . __( 'Blocks', 'vk-blocks' ),
+						'icon'  => '',
+					),
+				)
+			);
+		}
+
+		if ( ! in_array( 'vk-blocks-cat-layout', $keys, true ) ) {
+			$categories = array_merge(
+				$categories,
 				array(
-					'slug'  => 'vk-blocks-cat-layout',
-					'title' => $vk_blocks_prefix . __( 'Blocks Layout', 'vk-blocks' ),
-					'icon'  => '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z" /><path d="M19 13H5v-2h14v2z" /></svg>',
-				),
-			)
-		);
+					array(
+						'slug'  => 'vk-blocks-cat-layout',
+						'title' => $vk_blocks_prefix . __( 'Blocks Layout', 'vk-blocks' ),
+						'icon'  => '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z" /><path d="M19 13H5v-2h14v2z" /></svg>',
+					),
+				)
+			);
+		}
 
 		return $categories;
 	}

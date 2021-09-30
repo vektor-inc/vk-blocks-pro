@@ -2,16 +2,16 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.14.1\n"
+"Project-Id-Version: VK Blocks Pro 1.16.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-09-09T00:51:04+00:00\n"
+"POT-Creation-Date: 2021-09-29T10:13:33+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.5.0\n"
+"X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 "X-Domain: vk-blocks\n"
 
 #: src/blocks/_pro/accordion-target/index.js:16
@@ -272,7 +272,7 @@ msgstr ""
 
 #: src/blocks/_pro/card/index.js:25
 #: src/components/column-layout-control/index.js:26
-#: inc/vk-components/package/class-vk-component-posts.php:555
+#: inc/vk-components/package/class-vk-component-posts.php:670
 msgid "Card"
 msgstr ""
 
@@ -323,7 +323,8 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:163
 #: src/blocks/_pro/outer/edit.js:617
-#: src/blocks/icon/edit.js:131
+#: src/blocks/icon-outer/edit.js:151
+#: src/blocks/icon/edit.js:138
 #: src/components/advanced-unit-control/index.js:18
 #: inc/vk-blocks/admin/admin-margin.php:10
 msgid "px"
@@ -331,7 +332,8 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:167
 #: src/blocks/_pro/outer/edit.js:621
-#: src/blocks/icon/edit.js:135
+#: src/blocks/icon-outer/edit.js:155
+#: src/blocks/icon/edit.js:142
 #: src/components/advanced-unit-control/index.js:22
 #: inc/vk-blocks/admin/admin-margin.php:14
 msgid "em"
@@ -339,7 +341,8 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:171
 #: src/blocks/_pro/outer/edit.js:625
-#: src/blocks/icon/edit.js:139
+#: src/blocks/icon-outer/edit.js:159
+#: src/blocks/icon/edit.js:146
 #: src/components/advanced-unit-control/index.js:26
 #: inc/vk-blocks/admin/admin-margin.php:18
 msgid "rem"
@@ -347,7 +350,8 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:175
 #: src/blocks/_pro/outer/edit.js:629
-#: src/blocks/icon/edit.js:143
+#: src/blocks/icon-outer/edit.js:163
+#: src/blocks/icon/edit.js:150
 #: src/components/advanced-unit-control/index.js:30
 msgid "vw"
 msgstr ""
@@ -412,7 +416,7 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:100
 #: src/blocks/button/edit.js:70
-#: src/blocks/icon/edit.js:210
+#: src/blocks/icon/edit.js:239
 #: src/blocks/pr-blocks/edit.js:271
 #: src/blocks/pr-content/edit.js:130
 msgid "Open link new tab."
@@ -422,7 +426,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:57
 #: src/blocks/border-box/edit.js:122
 #: src/blocks/button/edit.js:258
-#: src/blocks/icon/edit.js:60
+#: src/blocks/icon/edit.js:227
 #: src/blocks/pr-content/edit.js:196
 msgid "Icon ( Font Awesome )"
 msgstr ""
@@ -434,7 +438,8 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:130
 #: src/blocks/button/edit.js:173
-#: src/blocks/icon/edit.js:184
+#: src/blocks/icon-outer/edit.js:204
+#: src/blocks/icon/edit.js:190
 #: src/blocks/pr-blocks/edit.js:299
 msgid "Solid color"
 msgstr ""
@@ -673,7 +678,8 @@ msgid "Border width"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:543
-#: src/blocks/icon/edit.js:160
+#: src/blocks/icon-outer/edit.js:180
+#: src/blocks/icon/edit.js:167
 msgid "Border radius"
 msgstr ""
 
@@ -931,7 +937,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:76
 #: src/blocks/_pro/timeline-item/edit.js:53
 #: src/blocks/border-box/edit.js:63
-#: src/blocks/icon/edit.js:217
+#: src/blocks/icon/edit.js:246
 #: src/blocks/staff/edit.js:139
 #: inc/term-color/package/class.term-color.php:41
 #: inc/term-color/package/class.term-color.php:56
@@ -942,7 +948,8 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:82
 #: src/blocks/_pro/table-of-contents-new/edit.js:135
 #: src/blocks/_pro/timeline-item/edit.js:63
-#: src/blocks/icon/edit.js:176
+#: src/blocks/icon-outer/edit.js:196
+#: src/blocks/icon/edit.js:182
 msgid "Style"
 msgstr ""
 
@@ -1194,7 +1201,8 @@ msgid "Icon"
 msgstr ""
 
 #: src/blocks/border-box/edit.js:51
-#: src/blocks/icon/edit.js:112
+#: src/blocks/icon-outer/edit.js:132
+#: src/blocks/icon/edit.js:119
 #: inc/vk-blocks/admin/admin-margin.php:57
 msgid "Margin"
 msgstr ""
@@ -1533,29 +1541,41 @@ msgstr ""
 msgid "Heading"
 msgstr ""
 
-#: src/blocks/icon/edit.js:156
+#: src/blocks/icon-outer/edit.js:176
+#: src/blocks/icon/edit.js:163
 msgid "Reset"
 msgstr ""
 
-#: src/blocks/icon/edit.js:192
+#: src/blocks/icon-outer/edit.js:212
+#: src/blocks/icon/edit.js:198
 msgid "Icon & Frame"
 msgstr ""
 
-#: src/blocks/icon/edit.js:200
+#: src/blocks/icon-outer/edit.js:220
+#: src/blocks/icon/edit.js:206
 msgid "Icon only"
 msgstr ""
 
-#: src/blocks/icon/edit.js:205
-#: src/blocks/pr-content/edit.js:121
-msgid "Link URL"
+#: src/blocks/icon-outer/edit.js:84
+msgid "Icon Common Setting"
 msgstr ""
 
-#: src/blocks/icon/edit.js:58
+#: src/blocks/icon-outer/edit.js:85
+#: src/blocks/icon/edit.js:72
+msgid "Size"
+msgstr ""
+
+#: src/blocks/icon-outer/index.js:16
+msgid "Icon Outer"
+msgstr ""
+
+#: src/blocks/icon/edit.js:225
 msgid "Icon Setting"
 msgstr ""
 
-#: src/blocks/icon/edit.js:65
-msgid "Size"
+#: src/blocks/icon/edit.js:234
+#: src/blocks/pr-content/edit.js:121
+msgid "Link URL"
 msgstr ""
 
 #: src/blocks/page-content/edit.js:10
@@ -1813,7 +1833,7 @@ msgid "Card (Horizontal)"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:42
-#: inc/vk-components/package/class-vk-component-posts.php:567
+#: inc/vk-components/package/class-vk-component-posts.php:682
 msgid "Media"
 msgstr ""
 
@@ -2453,31 +2473,35 @@ msgstr ""
 msgid "No Post is selected"
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:346
+#: inc/vk-blocks/vk-blocks-functions.php:319
 msgid "Blocks"
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:356
+#: inc/vk-blocks/vk-blocks-functions.php:332
 msgid "Blocks Layout"
 msgstr ""
 
-#: inc/vk-components/package/class-vk-component-posts.php:50
+#: inc/vk-components/package/class-vk-component-posts.php:53
 msgid "Read more"
 msgstr ""
 
-#: inc/vk-components/package/class-vk-component-posts.php:52
+#: inc/vk-components/package/class-vk-component-posts.php:55
 msgid "New!!"
 msgstr ""
 
-#: inc/vk-components/package/class-vk-component-posts.php:559
+#: inc/vk-components/package/class-vk-component-posts.php:241
+msgid "Page"
+msgstr ""
+
+#: inc/vk-components/package/class-vk-component-posts.php:674
 msgid "Card Noborder"
 msgstr ""
 
-#: inc/vk-components/package/class-vk-component-posts.php:563
+#: inc/vk-components/package/class-vk-component-posts.php:678
 msgid "Card Horizontal"
 msgstr ""
 
-#: inc/vk-components/package/class-vk-component-posts.php:571
+#: inc/vk-components/package/class-vk-component-posts.php:686
 msgctxt "post list type"
 msgid "Text 1 Column"
 msgstr ""
@@ -2543,7 +2567,7 @@ msgstr ""
 msgid "Edit this area"
 msgstr ""
 
-#: vk-blocks.php:88
+#: vk-blocks.php:90
 msgid "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks Plugin running."
 msgstr ""
 
@@ -2595,6 +2619,11 @@ msgstr ""
 #: src/blocks/heading/block.json
 msgctxt "block description"
 msgid "This is a heading that allows you to set text size, subtext, icon, and margin."
+msgstr ""
+
+#: src/blocks/icon-outer/block.json
+msgctxt "block description"
+msgid "Display the Font Awesome icons horizontally."
 msgstr ""
 
 #: src/blocks/icon/block.json

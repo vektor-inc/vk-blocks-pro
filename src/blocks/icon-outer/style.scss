@@ -1,0 +1,42 @@
+
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+/*-------------------------------------------*/
+/* .vk_icon_icon_outer
+/*-------------------------------------------*/
+.vk_icons {
+	@media screen and (max-width: 992px) {
+		margin-bottom: 1.5em;
+	}
+}
+
+.vk_icons { //編集画面で負けるので先頭に追加
+
+	&_col {
+		display: flex;
+		flex-wrap: wrap;
+		clear: both; /* To be cope with inline image float and so on. */
+		margin-left: -8px;
+
+		.vk_icon {
+			margin: 4px 0 4px 8px;
+
+			&_frame {
+				line-height: 1;
+			}
+		}
+
+		&-justify-center {
+			justify-content: center;
+		}
+
+		&-justify-right {
+			justify-content: flex-end;
+		}
+
+		&-justify-space-between {
+			justify-content: space-between;
+		}
+	}
+}

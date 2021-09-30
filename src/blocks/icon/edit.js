@@ -13,12 +13,14 @@ import {
 } from '@wordpress/components';
 import {
 	InspectorControls,
-	ColorPalette,
 	useBlockProps,
 	BlockControls,
 	BlockAlignmentControl,
 } from '@wordpress/block-editor';
 import { select } from '@wordpress/data';
+import { useEffect } from '@wordpress/element';
+
+import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 
 export default function IconEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -214,6 +216,14 @@ export default function IconEdit(props) {
 		faIcon = `<i class="${faIcon}"></i>`;
 	}
 
+	// コンソールエラー回避のため useEffect を使用（実行タイミングの問題）
+	useEffect(() => {
+		// containerClass 互換設定
+		if (iconColor === 'undefined') {
+			setAttributes({ iconColor: undefined });
+		}
+	}, [clientId]);
+	
 	const blockProps = useBlockProps({
 		className: `vk_icon`,
 	});
@@ -238,23 +248,14 @@ export default function IconEdit(props) {
 					<CheckboxControl
 						label={__('Open link new tab.', 'vk-blocks')}
 						checked={iconTarget}
-						onChange={(checked) =>
-							setAttributes({ iconTarget: checked })
+						onChange={(checked) => {
+							setAttributes({ iconTarget: checked })}
 						}
 					/>
 				</PanelBody>
 				<PanelBody title={__('Color', 'vk-blocks')}>
 					<BaseControl>
-						<ColorPalette
-							value={iconColor}
-							onChange={(value) => {
-								if (value) {
-									setAttributes({ iconColor: value });
-								} else {
-									setAttributes({ iconColor: 'undefined' });
-								}
-							}}
-						/>
+						<AdvancedColorPalette schema={'iconColor'} {...props} />
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>

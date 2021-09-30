@@ -448,4 +448,3 @@ if ( ! class_exists( 'Vk_Admin' ) ) {
 } // if ( ! class_exists( 'Vk_Admin' ) )
 
 Vk_Admin::init();
-$Vk_Admin = new Vk_Admin();

@@ -10,12 +10,14 @@
  */
 function vk_blocks_register_block_vk_balloon() {
 	// Register Style.
-	wp_register_style(
-		'vk-blocks/balloon',
-		VK_BLOCKS_DIR_PATH . 'build/balloon/style.css',
-		array(),
-		VK_BLOCKS_VERSION
-	);
+	if ( ! is_admin() ) {
+		wp_register_style(
+			'vk-blocks/balloon',
+			VK_BLOCKS_DIR_PATH . 'build/balloon/style.css',
+			array(),
+			VK_BLOCKS_VERSION
+		);
+	}
 
 	// Register Script.
 	$asset = include VK_BLOCKS_PATH . 'build/balloon/block-build.asset.php';

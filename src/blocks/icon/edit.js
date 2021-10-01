@@ -223,7 +223,7 @@ export default function IconEdit(props) {
 			setAttributes({ iconColor: undefined });
 		}
 	}, [clientId]);
-	
+
 	const blockProps = useBlockProps({
 		className: `vk_icon`,
 	});
@@ -249,8 +249,8 @@ export default function IconEdit(props) {
 						label={__('Open link new tab.', 'vk-blocks')}
 						checked={iconTarget}
 						onChange={(checked) => {
-							setAttributes({ iconTarget: checked })}
-						}
+							setAttributes({ iconTarget: checked });
+						}}
 					/>
 				</PanelBody>
 				<PanelBody title={__('Color', 'vk-blocks')}>

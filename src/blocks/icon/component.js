@@ -24,11 +24,6 @@ export class VKBIcon extends Component {
 			outerClass += ' vk_icon_align_right';
 		}
 
-		// frame
-		if (iconType === '1') {
-			outerClass += ' is-style-outline';
-		}
-		
 		// color style
 		let borderClass = 'vk_icon_border';
 		let borderStyle = {};
@@ -41,54 +36,45 @@ export class VKBIcon extends Component {
 				iconColor !== undefined
 			) {
 				// Solid color
+				borderClass += ` has-background`;
+
 				if (isHexColor(iconColor)) {
 					// custom color
-					borderClass += ` has-background`;
 					borderStyle = {
 						backgroundColor: `${iconColor}`,
 					};
 				} else {
 					// palette color
-					borderClass += ` has-${iconColor}-background-color has-background`;
+					borderClass += ` has-${iconColor}-background-color`;
 				}
 			}
-		} else if (iconType === '1') {
-			// Icon & Frame
-			borderClass += ' vk_icon_border_frame';
+		}
+		else {
 			if (
 				iconColor !== 'undefined' &&
 				iconColor !== null &&
 				iconColor !== undefined
 			) {
+				borderClass += ` has-text-color`;
+
 				if (isHexColor(iconColor)) {
 					// custom color
-					borderClass += ` has-text-color`;
 					borderStyle = {
 						color: `${iconColor}`,
 					};
 				} else {
 					// palette color
-					borderClass += ` has-${iconColor}-color has-text-color`;
+					borderClass += ` has-${iconColor}-color`;
 				}
 			}
-		} else {
-			// icon only
-			borderClass += ' vk_icon_border_none';
-			if (
-				iconColor !== 'undefined' &&
-				iconColor !== null &&
-				iconColor !== undefined
-			) {
-				if (isHexColor(iconColor)) {
-					// custom color
-					borderClass += ` has-text-color`;
-					borderStyle = {
-						color: `${iconColor}`,
-					};
-				} else {
-					// palette color
-					borderClass += ` has-${iconColor}-color has-text-color`;
-				}
+			
+			if (iconType === '1') {
+				// Icon & Frame
+				outerClass += ' is-style-outline';
+
+			} else {
+				// icon only
+				outerClass += ' is-style-noline';
 			}
 		}
 

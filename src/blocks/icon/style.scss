@@ -27,9 +27,6 @@
 			height: 80px;
 			border-radius: 50%;
 
-			&:not(.vk_icon_border_frame):not(.vk_icon_border_none) {
-				color: #fff;
-			}
 		}
 
 		&_link {
@@ -55,16 +52,26 @@
 			border: 1px solid currentColor;
 		}
 	}
+
+	.vk_icon_frame:not(.is-style-outline):not(.is-style-noline) {
+		.vk_icon_font {
+			color: #fff;
+		}
+	}
 }
 
 // デフォルトのカラー
 .wp-block-vk-blocks-icon {
-	.vk_icon_border:not(.has-background):not(.vk_icon_border_frame):not(.vk_icon_border_none) {
-		background-color: #337ab7;
+	.vk_icon_frame:not(.is-style-outline):not(.is-style-noline) {
+		.vk_icon_border:not(.has-background) {
+			background-color: #337ab7;
+		}
 	}
 
-	.vk_icon_border_none:not(.has-text-color) {
-		color: #337ab7;
+	.is-style-noline {
+		.vk_icon_border:not(.has-text-color) {
+			color: #337ab7;
+		}
 	}
 
 	.is-style-outline {

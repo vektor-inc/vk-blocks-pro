@@ -35,6 +35,10 @@
 		"sass:pr-content": "sass src/blocks/pr-content/style.scss build/pr-content/style.css --style compressed",
 		"watch:pr-content": "sass --watch src/blocks/pr-content/style.scss:build/pr-content/style.css --style compressed",
 		"build:pr-content": "npm run js:pr-content && npm run sass:pr-content",
+		"js:balloon": "wp-scripts build src/blocks/balloon/index.js --output-path=build/balloon",
+		"sass:balloon": "sass src/blocks/balloon/style.scss build/balloon/style.css --style compressed",
+		"watch:balloon": "sass --watch src/blocks/balloon/style.scss:build/balloon/style.css --style compressed",
+		"build:balloon": "npm run js:balloon && npm run sass:balloon",
 		"sass-watch": "sass --watch src/blocks/spacer/style.scss:build/spacer/style.css src/blocks/pr-content/style.scss:build/pr-content/style.css --style compressed",
 		"reinstall": "rm -rf node_modules/ && npm install && npm run build",
 		"prepare": "husky install"

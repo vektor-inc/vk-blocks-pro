@@ -2801,6 +2801,11 @@ msgctxt "block description"
 msgid "These speech balloons are perfect for recreating conversations."
 msgstr "会話の再現などに最適な吹き出しです。"
 
+#: src/blocks/balloon/block.json
+msgctxt "block title"
+msgid "Ballon"
+msgstr "吹き出し"
+
 #: src/blocks/border-box/block.json
 msgctxt "block description"
 msgid "This is a border box where you can place headings to attract attention."

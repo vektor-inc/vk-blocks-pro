@@ -6,7 +6,9 @@
  */
 
 /**
- * Registers the `vk-blocks/balloon` block.
+ * Register balloon block.
+ *
+ * @return void
  */
 function vk_blocks_register_block_vk_balloon() {
 	// Register Style.

@@ -66,4 +66,5 @@ export const deprecated = [
 	{
 		attributes: blockAttributes,
 		save: save1_16_1,
-	},];
+	},
+];

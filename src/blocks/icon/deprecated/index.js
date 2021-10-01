@@ -61,10 +61,10 @@ const blockAttributes2 = {
 export const deprecated = [
 	{
 		attributes: blockAttributes,
-		save: save1_13_2,
+		save: save1_16_1,
 	},
 	{
 		attributes: blockAttributes,
-		save: save1_16_1,
+		save: save1_13_2,
 	},
 ];

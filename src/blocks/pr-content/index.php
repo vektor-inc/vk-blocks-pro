@@ -15,17 +15,17 @@ function vk_blocks_register_block_pr_content() {
 	if ( ! is_admin() ) {
 		wp_register_style(
 			'vk-blocks/pr-content',
-			VK_BLOCKS_DIR_PATH . 'build/pr-content/style.css',
+			VK_BLOCKS_DIR_URL . 'build/pr-content/style.css',
 			array(),
 			VK_BLOCKS_VERSION
 		);
 	}
 
 	// Register Script.
-	$asset = include VK_BLOCKS_PATH . 'build/pr-content/block-build.asset.php';
+	$asset = include VK_BLOCKS_DIR_PATH . 'build/pr-content/block-build.asset.php';
 	wp_register_script(
 		'vk-blocks/pr-content',
-		VK_BLOCKS_DIR_PATH . 'build/pr-content/block-build.js',
+		VK_BLOCKS_DIR_URL . 'build/pr-content/block-build.js',
 		$asset['dependencies'],
 		VK_BLOCKS_VERSION,
 		true

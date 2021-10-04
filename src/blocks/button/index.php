@@ -13,9 +13,10 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 	 * @return void
 	 */
 	function vk_blocks_register_block_button() {
-		register_block_type_from_metadata(
+		register_block_type(
 			__DIR__,
 			array(
+				'style'         => 'vk-blocks/button',
 				'editor_style'  => 'vk-blocks-build-editor-css',
 				'editor_script' => 'vk-blocks-build-js',
 			)

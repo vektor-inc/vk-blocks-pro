@@ -2883,6 +2883,11 @@ msgid ""
 msgstr "画像,見出し,テキスト,ボタンが配置できるPRコンテンツです。"
 
 #: src/blocks/spacer/block.json
+msgctxt "block title"
+msgid "Responsive Spacer"
+msgstr "レスポンシブスペーサー"
+
+#: src/blocks/spacer/block.json
 msgctxt "block description"
 msgid "Use responsive spacers to get the margins right."
 msgstr "レスポンシブに対応したスペーサーで余白を適切に取ります。"

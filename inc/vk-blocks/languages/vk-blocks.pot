@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.16.0\n"
+"Project-Id-Version: VK Blocks Pro 1.15.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-09-29T10:13:33+00:00\n"
+"POT-Creation-Date: 2021-09-28T08:36:28+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 "X-Domain: vk-blocks\n"
@@ -1710,10 +1710,6 @@ msgstr ""
 msgid "Image Border Color"
 msgstr ""
 
-#: src/blocks/pr-content/index.js:26
-msgid "PR Content"
-msgstr ""
-
 #: src/blocks/spacer/advanced-spacer-control.js:15
 msgid "height"
 msgstr ""
@@ -1741,10 +1737,6 @@ msgstr ""
 #: src/blocks/spacer/edit.js:95
 #: inc/vk-blocks/vk-blocks-functions.php:26
 msgid "Medium"
-msgstr ""
-
-#: src/blocks/spacer/index.js:24
-msgid "Responsive Spacer"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:50
@@ -2473,11 +2465,11 @@ msgstr ""
 msgid "No Post is selected"
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:319
+#: inc/vk-blocks/vk-blocks-functions.php:318
 msgid "Blocks"
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:332
+#: inc/vk-blocks/vk-blocks-functions.php:331
 msgid "Blocks Layout"
 msgstr ""
 
@@ -2567,7 +2559,7 @@ msgstr ""
 msgid "Edit this area"
 msgstr ""
 
-#: vk-blocks.php:90
+#: vk-blocks.php:96
 msgid "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks Plugin running."
 msgstr ""
 
@@ -2642,8 +2634,18 @@ msgid "This is a PR block where you can place images and icon."
 msgstr ""
 
 #: src/blocks/pr-content/block.json
+msgctxt "block title"
+msgid "PR Content"
+msgstr ""
+
+#: src/blocks/pr-content/block.json
 msgctxt "block description"
 msgid "This is PR content where you can place images, headlines, text, and buttons."
+msgstr ""
+
+#: src/blocks/spacer/block.json
+msgctxt "block title"
+msgid "Responsive Spacer"
 msgstr ""
 
 #: src/blocks/spacer/block.json

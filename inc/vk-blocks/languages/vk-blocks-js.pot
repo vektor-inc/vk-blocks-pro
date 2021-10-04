@@ -1703,10 +1703,6 @@ msgstr ""
 msgid "Image Border Color"
 msgstr ""
 
-#: src/blocks/pr-content/index.js:26
-msgid "PR Content"
-msgstr ""
-
 #: src/blocks/spacer/advanced-spacer-control.js:15
 msgid "height"
 msgstr ""
@@ -1733,10 +1729,6 @@ msgstr ""
 
 #: src/blocks/spacer/edit.js:95
 msgid "Medium"
-msgstr ""
-
-#: src/blocks/spacer/index.js:24
-msgid "Responsive Spacer"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:50

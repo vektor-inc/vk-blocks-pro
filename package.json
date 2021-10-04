@@ -7,9 +7,9 @@
 		"start": "wp-env start && open http://localhost:8888",
 		"stop": "wp-env stop",
 		"destroy": "wp-env destroy",
-		"watch": "gulp watch",
+		"watch": "gulp watch & npm run sass-watch",
 		"build:dev": "wp-scripts build --config webpack.config.js --mode=development && gulp build:dev:pro",
-		"build": "gulp text-domain && wp-scripts build --config webpack.config.js && gulp build:pro && npm run translate",
+		"build": "gulp text-domain && wp-scripts build --config webpack.config.js && gulp build:pro && npm run translate && run-p build:*",
 		"build:free": "wp-scripts build --config webpack.config.js && gulp build:free",
 		"build:pot": "wp i18n make-pot --merge=inc/vk-blocks/languages/vk-blocks-js.pot --skip-js . inc/vk-blocks/languages/vk-blocks.pot",
 		"translate": "npm run build:pot && po2json ./inc/vk-blocks/languages/vk-blocks-ja.po ./inc/vk-blocks/languages/vk-blocks-ja-vk-blocks-build-js.json -f jed",
@@ -27,6 +27,15 @@
 		"cli": "wp-env run cli",
 		"show:savedVersion": "bash -c 'npm run cli wp post meta get $0 _vkb_saved_block_version'",
 		"update:savedVersion": "bash -c 'npm run cli wp post meta update $0 _vkb_saved_block_version $1'",
+		"js:spacer": "wp-scripts build src/blocks/spacer/index.js --output-path=build/spacer",
+		"sass:spacer": "sass src/blocks/spacer/style.scss build/spacer/style.css --style compressed",
+		"watch:spacer": "sass --watch src/blocks/spacer/style.scss:build/spacer/style.css --style compressed",
+		"build:spacer": "npm run js:spacer && npm run sass:spacer",
+		"js:pr-content": "wp-scripts build src/blocks/pr-content/index.js --output-path=build/pr-content",
+		"sass:pr-content": "sass src/blocks/pr-content/style.scss build/pr-content/style.css --style compressed",
+		"watch:pr-content": "sass --watch src/blocks/pr-content/style.scss:build/pr-content/style.css --style compressed",
+		"build:pr-content": "npm run js:pr-content && npm run sass:pr-content",
+		"sass-watch": "sass --watch src/blocks/spacer/style.scss:build/spacer/style.css src/blocks/pr-content/style.scss:build/pr-content/style.css --style compressed",
 		"reinstall": "rm -rf node_modules/ && npm install && npm run build",
 		"prepare": "husky install"
 	},
@@ -88,7 +97,9 @@
 		"compare-versions": "^3.6.0",
 		"lodash": "^4.17.21",
 		"memize": "^1.1.0",
+		"npm-run-all": "^4.1.5",
 		"react-dom": "16.14.0",
-		"react-html-parser": "^2.0.2"
+		"react-html-parser": "^2.0.2",
+		"sass": "^1.42.0"
 	}
 }

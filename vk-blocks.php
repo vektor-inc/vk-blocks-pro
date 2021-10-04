@@ -17,6 +17,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+// Set plugin dir path.
+define( 'VK_BLOCKS_DIR_PATH', plugin_dir_url( __FILE__ ) );
+
+// from WordPress 5.8 ※ BlockのCSSとJS分離作業のために、一時的に記載。最終的にはVK Blocks ではフィルター入れない方が良い
+// add_filter( 'should_load_separate_core_block_assets', '__return_true' );
+
 /* function_exists は VK Blocks 無料版の無効化が正常に動作しなかった場合のフォールバック */
 if ( ! function_exists( 'vk_blocks_get_version' ) ) {
 	/**

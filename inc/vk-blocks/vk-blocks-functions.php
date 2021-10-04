@@ -397,3 +397,74 @@ function vk_blocks_set_vkb_saved_block_version() {
 }
 add_action( 'admin_head', 'vk_blocks_set_vkb_saved_block_version' );
 
+/**
+ * VK Blocks register_block_type filter
+ * cssを分割しない場合はregister_block_typeで登録したscriptやstyleを読み込ませない
+ * add_filter('vk_blocks_should_load_separate_assets', '__return_true'); にするとブロックごとのcssを読み込む
+ *
+ *  @param array $args Array of arguments for registering a block type.
+ *  @return array Return filter style, script, editor_style and editor_script added.
+ */
+function vk_blocks_register_block_type( $args ) {
+	if ( apply_filters( 'vk_blocks_should_load_separate_assets', false ) ) {
+		return $args;
+	}
+
+	$arr_wp56     = array(
+		'alert',
+		'balloon',
+		'border-box',
+		'button',
+		'faq',
+		'faq2',
+		'faq2-a',
+		'faq2-q',
+		'flow',
+		'heading',
+		'icon',
+		'page-content',
+		'pr-blocks',
+		'pr-content',
+		'spacer',
+		'staff',
+	);
+	$arr_wp56_pro = array(
+		'accordion',
+		'accordion-target',
+		'accordion-trigger',
+		'animation',
+		'card',
+		'card-item',
+		'child-page',
+		'grid-column',
+		'grid-column-item',
+		'icon-card',
+		'icon-card-item',
+		'outer',
+		'post-list',
+		'select-post-list',
+		'select-post-list-item',
+		'slider',
+		'slider-item',
+		'step',
+		'step-item',
+		'table-of-contents-new',
+		'timeline',
+		'timeline-item',
+	);
+
+	foreach ( $arr_wp56 as $array ) {
+		if ( ! empty( $args['style'] ) && 'vk-blocks/' . $array === $args['style'] ) {
+			$args['style']  = null;
+			$args['script'] = null;
+		}
+	}
+	foreach ( $arr_wp56_pro as $array ) {
+		if ( ! empty( $args['style'] ) && 'vk-blocks/' . $array === $args['style'] ) {
+			$args['style']  = null;
+			$args['script'] = null;
+		}
+	}
+	return $args;
+}
+add_filter( 'register_block_type_args', 'vk_blocks_register_block_type' );

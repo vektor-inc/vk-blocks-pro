@@ -1032,10 +1032,6 @@ msgstr ""
 msgid "Danger"
 msgstr ""
 
-#: src/blocks/alert/index.js:19
-msgid "Alert"
-msgstr ""
-
 #: src/blocks/balloon/edit.js:125
 msgid " Image Border"
 msgstr ""

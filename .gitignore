@@ -2,7 +2,7 @@
 node_modules/
 dist/
 inc/vk-blocks/build/*
-build/*
+build/
 editor-css/editor-block-build.scss
 editor-css/editor-block-build.css
 editor-css/editor-block-build.css.map

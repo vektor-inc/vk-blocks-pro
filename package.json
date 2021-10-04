@@ -39,6 +39,10 @@
 		"sass:pr-content": "sass src/blocks/pr-content/style.scss build/pr-content/style.css --style compressed",
 		"watch:pr-content": "sass --watch src/blocks/pr-content/style.scss:build/pr-content/style.css --style compressed",
 		"build:pr-content": "npm run js:pr-content && npm run sass:pr-content",
+		"js:accordion": "wp-scripts build src/blocks/_pro/accordion/index.js --output-path=build/_pro/accordion",
+		"sass:accordion": "sass src/blocks/_pro/accordion/style.scss build/_pro/accordion/style.css --style compressed",
+		"watch:accordion": "sass --watch src/blocks/_pro/accordion/style.scss:build/_pro/accordion/style.css --style compressed",
+		"build:accordion": "npm run js:accordion && npm run sass:accordion",
 		"sass-watch": "sass --watch src/blocks/spacer/style.scss:build/spacer/style.css src/blocks/pr-content/style.scss:build/pr-content/style.css --style compressed",
 		"reinstall": "rm -rf node_modules/ && npm install && npm run build",
 		"prepare": "husky install"

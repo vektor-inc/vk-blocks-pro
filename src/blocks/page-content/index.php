@@ -14,9 +14,10 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 	 */
 	function vk_blocks_register_block_page_content() {
 		global $vk_blocks_common_attributes;
-		register_block_type_from_metadata(
+		register_block_type(
 			__DIR__,
 			array(
+				'style'           => 'vk-blocks/page-content',
 				'editor_style'    => 'vk-blocks-build-editor-css',
 				'editor_script'   => 'vk-blocks-build-js',
 				'attributes'      => array_merge(

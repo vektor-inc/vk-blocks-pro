@@ -11,18 +11,8 @@
  * @return void
  */
 function vk_blocks_register_block_page_content() {
-	// Register Style.
-	if ( ! is_admin() ) {
-		wp_register_style(
-			'vk-blocks/spacer',
-			VK_BLOCKS_DIR_URL . 'build/page_content/style.css',
-			array(),
-			VK_BLOCKS_VERSION
-		);
-	}
-
 	// Register Script.
-	$asset = include VK_BLOCKS_DIR_PATH . 'build/page_content/block-build.asset.php';
+	$asset = include VK_BLOCKS_DIR_PATH . 'build/page-content/block-build.asset.php';
 	wp_register_script(
 		'vk-blocks/page_content',
 		VK_BLOCKS_DIR_URL . 'build/page_content/block-build.js',
@@ -35,7 +25,6 @@ function vk_blocks_register_block_page_content() {
 	register_block_type(
 		__DIR__,
 		array(
-			'style'           => 'vk-blocks/page-content',
 			'editor_style'    => 'vk-blocks-build-editor-css',
 			'editor_script'   => 'vk-blocks-build-js',
 			'attributes'      => array_merge(

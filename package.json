@@ -31,6 +31,8 @@
 		"sass:alert": "sass src/blocks/alert/style.scss build/alert/style.css --style compressed",
 		"watch:alert": "sass --watch src/blocks/alert/style.scss:build/alert/style.css --style compressed",
 		"build:alert": "npm run js:alert && npm run sass:alert",
+		"js:page-content": "wp-scripts build src/blocks/page-content/index.js --output-path=build/page-content",
+		"build:page-content": "npm run js:page-content",
 		"js:spacer": "wp-scripts build src/blocks/spacer/index.js --output-path=build/spacer",
 		"sass:spacer": "sass src/blocks/spacer/style.scss build/spacer/style.css --style compressed",
 		"watch:spacer": "sass --watch src/blocks/spacer/style.scss:build/spacer/style.css --style compressed",

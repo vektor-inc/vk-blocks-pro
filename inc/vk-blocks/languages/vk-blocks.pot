@@ -1581,10 +1581,6 @@ msgstr ""
 msgid "Select Page"
 msgstr ""
 
-#: src/blocks/page-content/index.js:12
-msgid "Page Content"
-msgstr ""
-
 #: src/blocks/pr-blocks/edit.js:101
 msgid "PR Block1 Setting"
 msgstr ""

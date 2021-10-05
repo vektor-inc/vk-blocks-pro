@@ -49,8 +49,8 @@ jobs:
         php-version: ${{ matrix.php }}
     - name: Install NPM Scripts
       run: npm install
-    - name: Install Composer Package ( no-dev )
-      run: composer install --no-dev
+    - name: Install Composer Package
+      run: composer install
     - name: Install @wordpress/env
       run: npm install -g @wordpress/env
     - name: Run @wordpress/env

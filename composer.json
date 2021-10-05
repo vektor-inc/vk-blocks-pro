@@ -13,7 +13,7 @@
 		}
 	],
 	"require": {
-		"php": ">=7.4",
+		"php": ">=7.2",
 		"tgmpa/tgm-plugin-activation": "dev-develop",
 		"yahnis-elsts/plugin-update-checker": "*"
 	},

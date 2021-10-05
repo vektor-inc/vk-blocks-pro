@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "POT-Creation-Date: 2021-10-04T04:45:26+00:00\n"
-"PO-Revision-Date: 2021-10-04 17:58+0900\n"
+"PO-Revision-Date: 2021-10-05 11:58+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -2878,15 +2878,15 @@ msgid ""
 "explaining the order."
 msgstr "順番を説明する時に便利でシンプルなスケジュールなどを表示します。"
 
-#: src/blocks/page-content/block.json
-msgctxt "block title"
-msgid "Page Content"
-msgstr "固定ページ本文"
-
 #: src/blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
 msgstr "アラート"
+
+#: src/blocks/page-content/block.json
+msgctxt "block title"
+msgid "Page Content"
+msgstr "固定ページ本文"
 
 #: src/blocks/pr-content/block.json
 msgctxt "block title"

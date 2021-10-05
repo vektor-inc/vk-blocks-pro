@@ -56,4 +56,4 @@ jobs:
     - name: Run @wordpress/env
       run: wp-env start
     - name: Run PHP Unit
-    - run: wp-env run phpunit 'phpunit -c /var/www/html/wp-content/plugins/vk-blocks-pro/phpunit.xml.dist --verbose'
+      run: wp-env run phpunit 'phpunit -c /var/www/html/wp-content/plugins/vk-blocks-pro/phpunit.xml.dist --verbose'

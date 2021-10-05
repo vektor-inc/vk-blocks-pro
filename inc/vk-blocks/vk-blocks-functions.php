@@ -193,6 +193,7 @@ function vk_blocks_blocks_assets() {
 			'flow',
 			'heading',
 			'icon',
+			'icon-outer',
 			'page-content',
 			'pr-blocks',
 			'pr-content',

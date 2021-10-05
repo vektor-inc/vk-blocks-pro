@@ -1514,6 +1514,14 @@ msgstr "アイコン設定"
 msgid "Size"
 msgstr "サイズ"
 
+#: src/blocks/icon-outer/index.js:16
+msgid "Icon Outer"
+msgstr "横並びアイコン"
+
+#: src/blocks/icon-outer/edit.js:84
+msgid "Icon Common Setting"
+msgstr "アイコン共通設定"
+
 #: src/blocks/page-content/edit.js:10 src/blocks/staff/edit.js:216
 msgid "Unspecified"
 msgstr "指定しない"
@@ -2706,6 +2714,11 @@ msgid "Display icons with Font Awesome."
 msgstr "Font Awesome のアイコンフォントを表示します"
 
 #: dist/vk-blocks-pro/src/blocks/page-content/block.json
+#: src/blocks/icon-outer/block.json
+msgctxt "block description"
+msgid "Display the Font Awesome icons horizontally."
+msgstr "Font Awesome のアイコンフォントを横並びに表示します"
+
 #: src/blocks/page-content/block.json
 msgctxt "block description"
 msgid "Displays the body content of the specified parent page."

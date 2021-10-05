@@ -39,6 +39,10 @@
 		"sass:pr-content": "sass src/blocks/pr-content/style.scss build/pr-content/style.css --style compressed",
 		"watch:pr-content": "sass --watch src/blocks/pr-content/style.scss:build/pr-content/style.css --style compressed",
 		"build:pr-content": "npm run js:pr-content && npm run sass:pr-content",
+		"js:post-list": "wp-scripts build src/blocks/_pro/post-list/index.js --output-path=build/post-list",
+		"sass:post-list": "sass src/blocks/post-list/style.scss build/post-list/style.css --style compressed",
+		"watch:post-list": "sass --watch src/blocks/post-list/style.scss:build/post-list/style.css --style compressed",
+		"build:post-list": "npm run js:post-list && npm run sass:post-list",
 		"sass-watch": "sass --watch src/blocks/spacer/style.scss:build/spacer/style.css src/blocks/pr-content/style.scss:build/pr-content/style.css --style compressed",
 		"reinstall": "rm -rf node_modules/ && npm install && npm run build",
 		"prepare": "husky install"

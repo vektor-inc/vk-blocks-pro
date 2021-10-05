@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "POT-Creation-Date: 2021-10-04T04:45:26+00:00\n"
-"PO-Revision-Date: 2021-10-04 13:50+0900\n"
+"PO-Revision-Date: 2021-10-05 14:52+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -1192,10 +1192,6 @@ msgstr "緑"
 #: src/blocks/border-box/edit.js:92
 msgid "Black"
 msgstr "黒"
-
-#: src/blocks/border-box/index.js:19
-msgid "Border Box"
-msgstr "枠線ボックス"
 
 #: src/blocks/border-box/index.js:40
 msgid "Solid Angle Tab"
@@ -2881,6 +2877,11 @@ msgctxt "block title"
 msgid "Alert"
 msgstr "アラート"
 
+#: src/blocks/border-box/block.json
+msgctxt "block title"
+msgid "Border Box"
+msgstr "枠線ボックス"
+
 #: src/blocks/pr-content/block.json
 msgctxt "block title"
 msgid "PR Content"
@@ -2979,9 +2980,6 @@ msgstr "レスポンシブスペーサー"
 
 #~ msgid "Step set"
 #~ msgstr "ステップセット"
-
-#~ msgid "Border box"
-#~ msgstr "枠線ボックス"
 
 #~ msgid "Slider Template"
 #~ msgstr "スライダーテンプレート"

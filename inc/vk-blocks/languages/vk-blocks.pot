@@ -1236,10 +1236,6 @@ msgstr ""
 msgid "Black"
 msgstr ""
 
-#: src/blocks/border-box/index.js:19
-msgid "Border Box"
-msgstr ""
-
 #: src/blocks/border-box/index.js:40
 msgid "Solid Angle Tab"
 msgstr ""
@@ -2874,6 +2870,11 @@ msgstr ""
 #: src/blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
+msgstr ""
+
+#: src/blocks/alert/block.json
+msgctxt "block title"
+msgid "Border Box"
 msgstr ""
 
 #: src/blocks/pr-content/block.json

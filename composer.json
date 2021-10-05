@@ -13,10 +13,12 @@
 		}
 	],
 	"require": {
-		"php": ">=7.2",
-		"squizlabs/php_codesniffer": "*"
+		"php": ">=7.4",
+		"tgmpa/tgm-plugin-activation": "dev-develop",
+		"yahnis-elsts/plugin-update-checker": "*"
 	},
 	"require-dev": {
+		"squizlabs/php_codesniffer": "*",
 		"sirbrillig/phpcs-variable-analysis": "^2.8",
 		"wp-phpunit/wp-phpunit": "^5.4",
 		"dealerdirect/phpcodesniffer-composer-installer": "*",

@@ -17,6 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
 /* function_exists は VK Blocks 無料版の無効化が正常に動作しなかった場合のフォールバック */
 if ( ! function_exists( 'vk_blocks_get_version' ) ) {
 	/**
@@ -104,13 +105,9 @@ require_once plugin_dir_path( __FILE__ ) . 'inc/vk-blocks-config.php';
  */
 $vk_blocks_plugin_base_dir = plugin_dir_path( __FILE__ );
 if ( strpos( $vk_blocks_plugin_base_dir, 'vk-blocks-pro' ) !== false ) {
-	$vk_blocks_updater_url = plugin_dir_path( __FILE__ ) . 'inc/vk-blocks-pro/plugin-update-checker/plugin-update-checker.php';
-	if ( file_exists( $vk_blocks_updater_url ) ) {
-		require plugin_dir_path( __FILE__ ) . 'inc/vk-blocks-pro/plugin-update-checker/plugin-update-checker.php';
-		$vk_blocks_update_checker = Puc_v4_Factory::buildUpdateChecker(
-			'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=vk-blocks-pro',
-			__FILE__,
-			'vk-blocks-pro'
-		);
-	}
+	$vk_blocks_update_checker = Puc_v4_Factory::buildUpdateChecker(
+		'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=vk-blocks-pro',
+		__FILE__,
+		'vk-blocks-pro'
+	);
 }

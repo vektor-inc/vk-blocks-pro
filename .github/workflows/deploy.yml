@@ -34,6 +34,8 @@ jobs:
         php-version: 7.4
     - name: Install NPM Scripts
       run: npm install
+    - name: Install Composer Package ( no-dev )
+      run: composer install --no-dev
     - name: Install @wordpress/env
       run: npm install -g @wordpress/env
     - name: Run @wordpress/env

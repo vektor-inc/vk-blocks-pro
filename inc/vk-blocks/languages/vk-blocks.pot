@@ -2876,6 +2876,11 @@ msgctxt "block title"
 msgid "Alert"
 msgstr ""
 
+#: src/blocks/button/block.json
+msgctxt "block title"
+msgid "Button"
+msgstr ""
+
 #: src/blocks/pr-content/block.json
 msgctxt "block title"
 msgid "PR Content"

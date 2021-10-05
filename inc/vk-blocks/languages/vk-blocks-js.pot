@@ -232,7 +232,6 @@ msgid "Image"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:156
-#: src/blocks/button/index.js:18
 #: src/components/display-items-control/index.js:78
 msgid "Button"
 msgstr ""

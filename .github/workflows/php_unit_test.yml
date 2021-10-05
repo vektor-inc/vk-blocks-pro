@@ -47,12 +47,13 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: ${{ matrix.php }}
-    - name: install npm scripts
-      run: |
-        npm install
-        npm install -g @wordpress/env
-    - name: install composer packages
-      run: wp-env destroy
-    - run: wp-env start
-    - run: wp-env run composer 'composer install'
+    - name: Install NPM Scripts
+      run: npm install
+    - name: Install Composer Package ( no-dev )
+      run: composer install --no-dev
+    - name: Install @wordpress/env
+      run: npm install -g @wordpress/env
+    - name: Run @wordpress/env
+      run: wp-env start
+    - name: Run PHP Unit
     - run: wp-env run phpunit 'phpunit -c /var/www/html/wp-content/plugins/vk-blocks-pro/phpunit.xml.dist --verbose'

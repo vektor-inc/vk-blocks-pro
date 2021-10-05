@@ -1,6 +1,7 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/button",
+	"title": "Button",
 	"category": "vk-blocks-cat",
 	"attributes": {
 		"content": {

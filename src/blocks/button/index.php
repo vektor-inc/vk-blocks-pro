@@ -30,7 +30,7 @@ function vk_blocks_register_block_button() {
 		VK_BLOCKS_VERSION,
 		true
 	);
-	
+
 	register_block_type(
 		__DIR__,
 		array(

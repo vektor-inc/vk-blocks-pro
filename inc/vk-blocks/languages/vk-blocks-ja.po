@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "POT-Creation-Date: 2021-10-04T04:45:26+00:00\n"
-"PO-Revision-Date: 2021-10-04 15:26+0900\n"
+"PO-Revision-Date: 2021-10-05 10:56+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -242,7 +242,7 @@ msgstr "注意！この項目を非表示にすると入力されていた内容
 msgid "Image"
 msgstr "画像"
 
-#: src/blocks/_pro/card/edit.js:156 src/blocks/button/index.js:18
+#: src/blocks/_pro/card/edit.js:156
 #: src/components/display-items-control/index.js:78
 msgid "Button"
 msgstr "ボタン"
@@ -2887,7 +2887,7 @@ msgctxt "block title"
 msgid "Alert"
 msgstr "アラート"
 
-#: src/blocks/alert/button.json
+#: src/blocks/button/block.json
 msgctxt "block title"
 msgid "Button"
 msgstr "ボタン"

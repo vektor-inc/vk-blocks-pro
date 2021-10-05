@@ -1581,6 +1581,10 @@ msgstr ""
 msgid "Select Page"
 msgstr ""
 
+#: src/blocks/page-content/index.js:12
+msgid "Page Content"
+msgstr ""
+
 #: src/blocks/pr-blocks/edit.js:101
 msgid "PR Block1 Setting"
 msgstr ""
@@ -2872,14 +2876,14 @@ msgctxt "block title"
 msgid "Alert"
 msgstr ""
 
-#: src/blocks/alert/block.json
-msgctxt "block title"
-msgid "Alert"
-msgstr ""
-
-#: src/blocks/pr-content/page-content.json
+#: src/blocks/page-content/block.json
 msgctxt "block title"
 msgid "Page Content"
+msgstr ""
+
+#: src/blocks/pr-content/block.json
+msgctxt "block title"
+msgid "PR Content"
 msgstr ""
 
 #: src/blocks/spacer/block.json

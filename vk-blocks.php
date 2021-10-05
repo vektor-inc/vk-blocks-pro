@@ -17,7 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+// Composer のファイルを読み込み ( composer install --no-dev )
 require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
+
 /* function_exists は VK Blocks 無料版の無効化が正常に動作しなかった場合のフォールバック */
 if ( ! function_exists( 'vk_blocks_get_version' ) ) {
 	/**

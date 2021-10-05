@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-10-05T03:59:06+00:00\n"
+"POT-Creation-Date: 2021-10-05T06:17:21+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -1231,31 +1231,27 @@ msgstr ""
 msgid "Black"
 msgstr ""
 
-#: src/blocks/border-box/index.js:19
-msgid "Border Box"
-msgstr ""
-
-#: src/blocks/border-box/index.js:40
+#: src/blocks/border-box/index.js:39
 msgid "Solid Angle Tab"
 msgstr ""
 
-#: src/blocks/border-box/index.js:45
+#: src/blocks/border-box/index.js:44
 msgid "Solid Round Tab"
 msgstr ""
 
-#: src/blocks/border-box/index.js:49
+#: src/blocks/border-box/index.js:48
 msgid "Solid Angle Banner"
 msgstr ""
 
-#: src/blocks/border-box/index.js:53
+#: src/blocks/border-box/index.js:52
 msgid "Solid Angle Onborder"
 msgstr ""
 
-#: src/blocks/border-box/index.js:57
+#: src/blocks/border-box/index.js:56
 msgid "Solid Angle Inner"
 msgstr ""
 
-#: src/blocks/border-box/index.js:61
+#: src/blocks/border-box/index.js:60
 msgid "Solid Angle iconFeature"
 msgstr ""
 
@@ -2571,6 +2567,11 @@ msgstr ""
 #: src/blocks/balloon/block.json
 msgctxt "block description"
 msgid "These speech balloons are perfect for recreating conversations."
+msgstr ""
+
+#: src/blocks/border-box/block.json
+msgctxt "block title"
+msgid "Border Box"
 msgstr ""
 
 #: src/blocks/border-box/block.json

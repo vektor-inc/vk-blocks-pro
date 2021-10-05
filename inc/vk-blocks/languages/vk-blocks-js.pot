@@ -1222,31 +1222,27 @@ msgstr ""
 msgid "Black"
 msgstr ""
 
-#: src/blocks/border-box/index.js:19
-msgid "Border Box"
-msgstr ""
-
-#: src/blocks/border-box/index.js:40
+#: src/blocks/border-box/index.js:39
 msgid "Solid Angle Tab"
 msgstr ""
 
-#: src/blocks/border-box/index.js:45
+#: src/blocks/border-box/index.js:44
 msgid "Solid Round Tab"
 msgstr ""
 
-#: src/blocks/border-box/index.js:49
+#: src/blocks/border-box/index.js:48
 msgid "Solid Angle Banner"
 msgstr ""
 
-#: src/blocks/border-box/index.js:53
+#: src/blocks/border-box/index.js:52
 msgid "Solid Angle Onborder"
 msgstr ""
 
-#: src/blocks/border-box/index.js:57
+#: src/blocks/border-box/index.js:56
 msgid "Solid Angle Inner"
 msgstr ""
 
-#: src/blocks/border-box/index.js:61
+#: src/blocks/border-box/index.js:60
 msgid "Solid Angle iconFeature"
 msgstr ""
 

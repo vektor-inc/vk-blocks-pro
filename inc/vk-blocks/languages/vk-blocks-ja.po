@@ -1194,10 +1194,6 @@ msgstr "緑"
 msgid "Black"
 msgstr "黒"
 
-#: src/blocks/border-box/index.js:19
-msgid "Border Box"
-msgstr "枠線ボックス"
-
 #: src/blocks/border-box/index.js:40
 msgid "Solid Angle Tab"
 msgstr "直線 ピン角 タブ"
@@ -2900,6 +2896,11 @@ msgctxt "block title"
 msgid "Alert"
 msgstr "アラート"
 
+#: src/blocks/border-box/block.json
+msgctxt "block title"
+msgid "Border Box"
+msgstr "枠線ボックス"
+
 #: src/blocks/button/block.json
 msgctxt "block title"
 msgid "Button"
@@ -3003,9 +3004,6 @@ msgstr "レスポンシブスペーサー"
 
 #~ msgid "Step set"
 #~ msgstr "ステップセット"
-
-#~ msgid "Border box"
-#~ msgstr "枠線ボックス"
 
 #~ msgid "Slider Template"
 #~ msgstr "スライダーテンプレート"

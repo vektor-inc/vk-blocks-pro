@@ -67,7 +67,7 @@ npm run phpunit
 エラーがある場合コミットできません。
 
 ## develop branch
-develop ブランチにpushすると自動でテストサーバー https://vk-block-test.vs4.nagoya/ にデプロイされます。
+develop ブランチに push すると自動でテストサーバー https://vk-block-test.vs4.nagoya/ にデプロイされます。
 
 ## デプロイ
 手順は[wiki](https://github.com/vektor-inc/vk-blocks-pro/wiki/%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4)を参考に

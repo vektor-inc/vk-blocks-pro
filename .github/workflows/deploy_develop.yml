@@ -31,5 +31,6 @@ jobs:
           remote_path: /home/vs4/www/vk-block-test/wp-content/plugins/vk-blocks-pro/
           remote_host: ${{ secrets.DEPLOY_HOST_VS4 }}
           remote_port: ${{ secrets.DEPLOY_PORT_VS4 }}
-          remote_user: ${{ secrets.DEPLOY_USER_VK_VS4 }}
-          remote_key: ${{ secrets.DEPLOY_KEY_VK_VS4 }}
+          remote_user: ${{ secrets.DEPLOY_USER_VS4 }}
+          remote_key: ${{ secrets.DEPLOY_KEY_VS4 }}
+          

@@ -162,38 +162,42 @@ gulp.task("default", gulp.series("watch"));
 
 // copy dist ////////////////////////////////////////////////
 
-gulp.task("dist", function() {
-  return gulp
-    .src(
-      [
-        "./**/*.php",
-        "./**/*.txt",
-        "./**/*.css",
-        "./**/*.scss",
-        "./**/*.bat",
-        "./**/*.rb",
-        "./**/*.eot",
-        "./**/*.svg",
-        "./**/*.ttf",
-        "./**/*.woff",
-        "./**/*.woff2",
-        "./**/*.otf",
-        "./**/*.less",
-        "./**/*.png",
-        "./inc/**",
-				"./src/**",
-        "!./compile.bat",
-        "!./config.rb",
-        "!./tests/**",
-        "!./dist/**",
-				"!./test/**",
-        "!./bin/**",
-        "!./editor-css/**",
-        "!./node_modules/**"
-      ],
-      { base: "./" }
-    )
-    .pipe(gulp.dest("dist/vk-blocks-pro")); // distディレクトリに出力
+gulp.task('dist', function (done) {
+	gulp.src(
+		[
+			'./inc/**',
+			'./lib/**',
+			'./src/**',
+			'./vendor/**',
+			'./**/*.php',
+			'./**/*.txt',
+			'./**/*.css',
+			'./**/*.scss',
+			'./**/*.bat',
+			'./**/*.rb',
+			'./**/*.eot',
+			'./**/*.svg',
+			'./**/*.ttf',
+			'./**/*.woff',
+			'./**/*.woff2',
+			'./**/*.otf',
+			'./**/*.less',
+			'./**/*.png',
+			'!./compile.bat',
+			'!./config.rb',
+			'!./tests/**',
+			'!./dist/**',
+			'!./test/**',
+			'!./bin/**',
+			'!./editor-css/**',
+			'!./node_modules/**',
+		],
+		{
+			base: './',
+		}
+	)
+    	.pipe(gulp.dest('dist/vk-blocks-pro')); // distディレクトリに出力
+	done();
 });
 
 gulp.task("dist_ex", function() {

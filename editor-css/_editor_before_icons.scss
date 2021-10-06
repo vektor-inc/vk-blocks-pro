@@ -1,0 +1,46 @@
+// icon横並びブロック
+.vk_icons {
+	.block-editor-inner-blocks {
+		width: 100%;
+	}
+
+	.vk_icons_col {
+		display: block;
+		margin-left: 0;
+
+		.block-editor-block-list__layout {
+			display: flex;
+			flex-wrap: wrap;
+			clear: both; // To be cope with inline image float and so on.
+			margin-left: -8px;
+
+			.vk_icon {
+				margin: 4px 0 4px 8px;
+			}
+		}
+			
+		&-justify-left {
+			.block-editor-block-list__layout {
+				justify-content: flex-start;
+			}
+		}
+
+		&-justify-center {
+			.block-editor-block-list__layout {
+				justify-content: center;
+			}
+		}
+
+		&-justify-right {
+			.block-editor-block-list__layout {
+				justify-content: flex-end;
+			}
+		}
+
+		&-justify-space-between {
+			.block-editor-block-list__layout {
+				justify-content: space-between;
+			}
+		}
+	}
+}

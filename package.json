@@ -15,7 +15,7 @@
 		"translate": "npm run build:pot && po2json ./inc/vk-blocks/languages/vk-blocks-ja.po ./inc/vk-blocks/languages/vk-blocks-ja-vk-blocks-build-js.json -f jed",
 		"gulp": "gulp",
 		"lint": "wp-scripts format src/ && wp-scripts lint-js src/ --fix",
-		"lint:php": "composer format && composer phpcs",
+		"lint:php": "composer install && composer format && composer phpcs",
 		"fixtures:clean": "rimraf \"test/e2e-tests/fixtures/blocks/*.+(json|serialized.html)\"",
 		"fixtures:generate": "cross-env GENERATE_MISSING_FIXTURES=y wp-scripts test-unit-js --config test/jest.config.js test/integration/full-content/full-content.test.js",
 		"fixtures:regenerate": "npm run build && npm run fixtures:clean && npm run fixtures:generate",

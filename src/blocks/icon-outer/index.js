@@ -1,12 +1,11 @@
 /**
- * Alert block type
- *
+ * Accordion Outer Block
  */
-import { content } from '@vkblocks/utils/example-data';
 import { ReactComponent as Icon } from './icon.svg';
-import deprecated from './deprecated/index';
-import edit from './edit';
+import { __ } from '@wordpress/i18n';
+
 import metadata from './block.json';
+import edit from './edit';
 import save from './save';
 
 const { name } = metadata;
@@ -14,14 +13,19 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
+	title: __('Icon Outer', 'vk-blocks'),
 	icon: <Icon />,
+	styles: [],
 	example: {
-		attributes: {
-			style: 'info',
-			content,
-		},
+		innerBlocks: [
+			{
+				name: 'vk-blocks/icon',
+			},
+			{
+				name: 'vk-blocks/icon',
+			},
+		],
 	},
-	save,
 	edit,
-	deprecated,
+	save,
 };

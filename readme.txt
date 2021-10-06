@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
 Tested up to: 5.8.1
-Stable tag: 1.15.1
+Stable tag: 1.16.1
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,6 +63,12 @@ e.g.
 
 == Changelog ==
 
+= 1.16.1 =
+[ Bug fix ][ Card ] Fix broke layout on edit screen
+
+= 1.16.0 =
+[ Add New Block ] Icon Outer
+[ Bug fix ][ icon ] Fixed a bug the style was reset when the icon color clear
 [ Bug fix ][ Ordered List ] Fixed a bug in standard style
 
 = 1.15.1 =

@@ -15,17 +15,17 @@ function vk_blocks_register_block_spacer() {
 	if ( ! is_admin() ) {
 		wp_register_style(
 			'vk-blocks/spacer',
-			VK_BLOCKS_DIR_PATH . 'build/spacer/style.css',
+			VK_BLOCKS_DIR_URL . 'build/spacer/style.css',
 			array(),
 			VK_BLOCKS_VERSION
 		);
 	}
 
 	// Register Script.
-	$asset = include VK_BLOCKS_PATH . 'build/spacer/block-build.asset.php';
+	$asset = include VK_BLOCKS_DIR_PATH . 'build/spacer/block-build.asset.php';
 	wp_register_script(
 		'vk-blocks/spacer',
-		VK_BLOCKS_DIR_PATH . 'build/spacer/block-build.js',
+		VK_BLOCKS_DIR_URL . 'build/spacer/block-build.js',
 		$asset['dependencies'],
 		VK_BLOCKS_VERSION,
 		true
@@ -145,7 +145,7 @@ function vk_blocks_get_spacer_size_style_all( $options ) {
 
 		if ( vk_blocks_is_size_print( $options, 'mobile' ) ) {
 			$dynamic_css         .= '
-			@media (max-width: 576px) { 
+			@media (max-width: 576px) {
 				:root{';
 					$dynamic_css .= esc_attr( vk_blocks_get_spacer_size_style( $options, 'sm', 'mobile', $unit ) );
 					$dynamic_css .= esc_attr( vk_blocks_get_spacer_size_style( $options, 'md', 'mobile', $unit ) );
@@ -156,7 +156,7 @@ function vk_blocks_get_spacer_size_style_all( $options ) {
 		}
 		if ( vk_blocks_is_size_print( $options, 'tablet' ) ) {
 			$dynamic_css         .= '
-			@media (min-width: 577px) and (max-width: 768px) { 
+			@media (min-width: 577px) and (max-width: 768px) {
 				:root{';
 					$dynamic_css .= esc_attr( vk_blocks_get_spacer_size_style( $options, 'sm', 'tablet', $unit ) );
 					$dynamic_css .= esc_attr( vk_blocks_get_spacer_size_style( $options, 'md', 'tablet', $unit ) );
@@ -167,7 +167,7 @@ function vk_blocks_get_spacer_size_style_all( $options ) {
 		}
 		if ( vk_blocks_is_size_print( $options, 'pc' ) ) {
 			$dynamic_css         .= '
-			@media (min-width: 769px) { 
+			@media (min-width: 769px) {
 				:root{';
 					$dynamic_css .= esc_attr( vk_blocks_get_spacer_size_style( $options, 'sm', 'pc', $unit ) );
 					$dynamic_css .= esc_attr( vk_blocks_get_spacer_size_style( $options, 'md', 'pc', $unit ) );

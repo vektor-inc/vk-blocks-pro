@@ -193,6 +193,7 @@ function vk_blocks_blocks_assets() {
 			'flow',
 			'heading',
 			'icon',
+			'icon-outer',
 			'page-content',
 			'pr-blocks',
 			'pr-content',
@@ -458,10 +459,12 @@ function vk_blocks_register_block_type( $args ) {
 			$args['script'] = null;
 		}
 	}
-	foreach ( $arr_wp56_pro as $array ) {
-		if ( ! empty( $args['style'] ) && 'vk-blocks/' . $array === $args['style'] ) {
-			$args['style']  = null;
-			$args['script'] = null;
+	if ( file_exists( VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $array . '/index.php' ) ) {
+		foreach ( $arr_wp56_pro as $array ) {
+			if ( ! empty( $args['style'] ) && 'vk-blocks/' . $array === $args['style'] ) {
+				$args['style']  = null;
+				$args['script'] = null;
+			}
 		}
 	}
 	return $args;

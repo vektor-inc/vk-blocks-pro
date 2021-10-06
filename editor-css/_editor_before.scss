@@ -101,6 +101,8 @@ button.image-button:not(.button-delete) {
 @import "./editor_before_border-box";
 // アイコン
 @import "./editor_before_icon";
+// アイコン横並び編集用CSS
+@import "./editor_before_icons";
 
 // VK Outer 編集パネル
 $color-danger: #dd3333;
@@ -208,7 +210,7 @@ div[data-type="vk-blocks/page-content"].is-selected{
 	}
 }
 
-// 選択投稿リストブロックの編集用CSS
+// 選択投稿リスト編集用CSS
 @import "./_editor_before_select-post";
 
 // アニメーションブロックの識別用枠線
@@ -352,172 +354,172 @@ $color-danger: #b52727;
 
 } //.vk_posts > .vk_posts-edit
 
-// ↓↓↓↓↓↓↓↓ 過去のバージョンのWordPressで必要だった処理だと思われる。
-// 2021.9.31 以降問題なければ完全に削除
+// ↓↓↓↓↓↓↓↓ これがないと wp-group に width:auto; 指定などがあって負けてしまうので、
+// カードブロックなどが編集画面で崩れる
  
-//.block-list-appender.wp-block はアイテム追加のインサーターのdiv
-// .vk_posts .vk_posts-edit {
-// 	&-col-xs-2 .editor-block-list__block,
-// 	&-col-xs-2 .block-editor-block-list__block,
-// 	&-col-xs-2 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 		width: calc(16.66% - 30px);
-// 	}
-// 	&-col-xs-3 .editor-block-list__block,
-// 	&-col-xs-3 .block-editor-block-list__block,
-// 	&-col-xs-3 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 		width: calc(25% - 30px);
-// 	}
-// 	&-col-xs-4 .editor-block-list__block,
-// 	&-col-xs-4 .block-editor-block-list__block,
-// 	&-col-xs-4 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 		width: calc(33.3% - 30px);
-// 	}
-// 	&-col-xs-6 .editor-block-list__block,
-// 	&-col-xs-6 .block-editor-block-list__block,
-// 	&-col-xs-6 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 		width: calc(50% - 30px);
-// 	}
-// 	&-col-xs-12 .editor-block-list__block,
-// 	&-col-xs-12 .block-editor-block-list__block,
-// 	&-col-xs-12 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 		width: calc(100% - 30px);
-// 	}
-// 	@media (min-width: $sm-min) {
-// 		&-col-sm-2 .editor-block-list__block,
-// 		&-col-sm-2 .block-editor-block-list__block,
-// 		&-col-sm-2 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 			width: calc(16.66% - 30px);
-// 		}
-// 		&-col-sm-3 .editor-block-list__block,
-// 		&-col-sm-3 .block-editor-block-list__block,
-// 		&-col-sm-3 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 			width: calc(25% - 30px);
-// 		}
-// 		&-col-sm-4 .editor-block-list__block,
-// 		&-col-sm-4 .block-editor-block-list__block,
-// 		&-col-sm-4 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 			width: calc(33.3% - 30px);
-// 		}
-// 		&-col-sm-6 .editor-block-list__block,
-// 		&-col-sm-6 .block-editor-block-list__block,
-// 		&-col-sm-6 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 			width: calc(50% - 30px);
-// 		}
-// 		&-col-sm-12 .editor-block-list__block,
-// 		&-col-sm-12 .block-editor-block-list__block,
-// 		&-col-sm-12 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 			width: calc(100% - 30px);
-// 		}
-// 	}
-// 	@media (min-width: $md-min) {
-// 		&-col-md-2 .editor-block-list__block,
-// 		&-col-md-2 .block-editor-block-list__block,
-// 		&-col-md-2 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 			width: calc(16.66% - 30px);
-// 		}
-// 		&-col-md-3 .editor-block-list__block,
-// 		&-col-md-3 .block-editor-block-list__block,
-// 		&-col-md-3 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 			width: calc(25% - 30px);
-// 		}
-// 		&-col-md-4 .editor-block-list__block,
-// 		&-col-md-4 .block-editor-block-list__block,
-// 		&-col-md-4 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 			width: calc(33.3% - 30px);
-// 		}
-// 		&-col-md-6 .editor-block-list__block,
-// 		&-col-md-6 .block-editor-block-list__block,
-// 		&-col-md-6 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 			width: calc(50% - 30px);
-// 		}
-// 		&-col-md-12 .editor-block-list__block,
-// 		&-col-md-12 .block-editor-block-list__block,
-// 		&-col-md-12 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 			width: calc(100% - 30px);
-// 		}
-// 	}
-// 	@media (min-width: $lg-min) {
-// 		&-col-lg-2 .editor-block-list__block,
-// 		&-col-lg-2 .block-editor-block-list__block,
-// 		&-col-lg-2 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 			width: calc(16.66% - 30px);
-// 		}
-// 		&-col-lg-3 .editor-block-list__block,
-// 		&-col-lg-3 .block-editor-block-list__block,
-// 		&-col-lg-3 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 			width: calc(25% - 30px);
-// 		}
-// 		&-col-lg-4 .editor-block-list__block,
-// 		&-col-lg-4 .block-editor-block-list__block,
-// 		&-col-lg-4 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 			width: calc(33.3% - 30px);
-// 		}
-// 		&-col-lg-6 .editor-block-list__block,
-// 		&-col-lg-6 .block-editor-block-list__block,
-// 		&-col-lg-6 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 			width: calc(50% - 30px);
-// 		}
-// 		&-col-lg-12 .editor-block-list__block,
-// 		&-col-lg-12 .block-editor-block-list__block,
-// 		&-col-lg-12 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 			width: calc(100% - 30px);
-// 		}
-// 	}
-// 	@media (min-width: $xl-min) {
-// 		&-col-xl-2 .editor-block-list__block,
-// 		&-col-xl-2 .block-editor-block-list__block,
-// 		&-col-xl-2 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 			width: calc(16.66% - 30px);
-// 		}
-// 		&-col-xl-3 .editor-block-list__block,
-// 		&-col-xl-3 .block-editor-block-list__block,
-// 		&-col-xl-3 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 			width: calc(25% - 30px);
-// 		}
-// 		&-col-xl-4 .editor-block-list__block,
-// 		&-col-xl-4 .block-editor-block-list__block,
-// 		&-col-xl-4 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 			width: calc(33.3% - 30px);
-// 		}
-// 		&-col-xl-6 .editor-block-list__block,
-// 		&-col-xl-6 .block-editor-block-list__block,
-// 		&-col-xl-6 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 			width: calc(50% - 30px);
-// 		}
-// 		&-col-xl-12 .editor-block-list__block,
-// 		&-col-xl-12 .block-editor-block-list__block,
-// 		&-col-xl-12 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 			width: calc(100% - 30px);
-// 		}
-// 	}
-// 	@media (min-width: $xxl-min) {
-// 		&-col-xxl-2 .editor-block-list__block,
-// 		&-col-xxl-2 .block-editor-block-list__block ,
-// 		&-col-xxl-2 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 			width: calc(16.66% - 30px);
-// 		}
-// 		&-col-xxl-3 .editor-block-list__block,
-// 		&-col-xxl-3 .block-editor-block-list__block,
-// 		&-col-xxl-3 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 			width: calc(25% - 30px);
-// 		}
-// 		&-col-xxl-4 .editor-block-list__block,
-// 		&-col-xxl-4 .block-editor-block-list__block,
-// 		&-col-xxl-4 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 			width: calc(33.3% - 30px);
-// 		}
-// 		&-col-xxl-6 .editor-block-list__block,
-// 		&-col-xxl-6 .block-editor-block-list__block,
-// 		&-col-xxl-6 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 			width: calc(50% - 30px);
-// 		}
-// 		&-col-xxl-12 .editor-block-list__block,
-// 		&-col-xxl-12 .block-editor-block-list__block,
-// 		&-col-xxl-12 .block-editor-block-list__block + .block-list-appender.wp-block {
-// 			width: calc(100% - 30px);
-// 		}
-// 	}
-// }
+// .block-list-appender.wp-block はアイテム追加のインサーターのdiv
+.vk_posts .vk_posts-edit {
+	&-col-xs-2 .editor-block-list__block,
+	&-col-xs-2 .block-editor-block-list__block,
+	&-col-xs-2 .block-editor-block-list__block + .block-list-appender.wp-block {
+		width: calc(16.66% - 30px);
+	}
+	&-col-xs-3 .editor-block-list__block,
+	&-col-xs-3 .block-editor-block-list__block,
+	&-col-xs-3 .block-editor-block-list__block + .block-list-appender.wp-block {
+		width: calc(25% - 30px);
+	}
+	&-col-xs-4 .editor-block-list__block,
+	&-col-xs-4 .block-editor-block-list__block,
+	&-col-xs-4 .block-editor-block-list__block + .block-list-appender.wp-block {
+		width: calc(33.3% - 30px);
+	}
+	&-col-xs-6 .editor-block-list__block,
+	&-col-xs-6 .block-editor-block-list__block,
+	&-col-xs-6 .block-editor-block-list__block + .block-list-appender.wp-block {
+		width: calc(50% - 30px);
+	}
+	&-col-xs-12 .editor-block-list__block,
+	&-col-xs-12 .block-editor-block-list__block,
+	&-col-xs-12 .block-editor-block-list__block + .block-list-appender.wp-block {
+		width: calc(100% - 30px);
+	}
+	@media (min-width: $sm-min) {
+		&-col-sm-2 .editor-block-list__block,
+		&-col-sm-2 .block-editor-block-list__block,
+		&-col-sm-2 .block-editor-block-list__block + .block-list-appender.wp-block {
+			width: calc(16.66% - 30px);
+		}
+		&-col-sm-3 .editor-block-list__block,
+		&-col-sm-3 .block-editor-block-list__block,
+		&-col-sm-3 .block-editor-block-list__block + .block-list-appender.wp-block {
+			width: calc(25% - 30px);
+		}
+		&-col-sm-4 .editor-block-list__block,
+		&-col-sm-4 .block-editor-block-list__block,
+		&-col-sm-4 .block-editor-block-list__block + .block-list-appender.wp-block {
+			width: calc(33.3% - 30px);
+		}
+		&-col-sm-6 .editor-block-list__block,
+		&-col-sm-6 .block-editor-block-list__block,
+		&-col-sm-6 .block-editor-block-list__block + .block-list-appender.wp-block {
+			width: calc(50% - 30px);
+		}
+		&-col-sm-12 .editor-block-list__block,
+		&-col-sm-12 .block-editor-block-list__block,
+		&-col-sm-12 .block-editor-block-list__block + .block-list-appender.wp-block {
+			width: calc(100% - 30px);
+		}
+	}
+	@media (min-width: $md-min) {
+		&-col-md-2 .editor-block-list__block,
+		&-col-md-2 .block-editor-block-list__block,
+		&-col-md-2 .block-editor-block-list__block + .block-list-appender.wp-block {
+			width: calc(16.66% - 30px);
+		}
+		&-col-md-3 .editor-block-list__block,
+		&-col-md-3 .block-editor-block-list__block,
+		&-col-md-3 .block-editor-block-list__block + .block-list-appender.wp-block {
+			width: calc(25% - 30px);
+		}
+		&-col-md-4 .editor-block-list__block,
+		&-col-md-4 .block-editor-block-list__block,
+		&-col-md-4 .block-editor-block-list__block + .block-list-appender.wp-block {
+			width: calc(33.3% - 30px);
+		}
+		&-col-md-6 .editor-block-list__block,
+		&-col-md-6 .block-editor-block-list__block,
+		&-col-md-6 .block-editor-block-list__block + .block-list-appender.wp-block {
+			width: calc(50% - 30px);
+		}
+		&-col-md-12 .editor-block-list__block,
+		&-col-md-12 .block-editor-block-list__block,
+		&-col-md-12 .block-editor-block-list__block + .block-list-appender.wp-block {
+			width: calc(100% - 30px);
+		}
+	}
+	@media (min-width: $lg-min) {
+		&-col-lg-2 .editor-block-list__block,
+		&-col-lg-2 .block-editor-block-list__block,
+		&-col-lg-2 .block-editor-block-list__block + .block-list-appender.wp-block {
+			width: calc(16.66% - 30px);
+		}
+		&-col-lg-3 .editor-block-list__block,
+		&-col-lg-3 .block-editor-block-list__block,
+		&-col-lg-3 .block-editor-block-list__block + .block-list-appender.wp-block {
+			width: calc(25% - 30px);
+		}
+		&-col-lg-4 .editor-block-list__block,
+		&-col-lg-4 .block-editor-block-list__block,
+		&-col-lg-4 .block-editor-block-list__block + .block-list-appender.wp-block {
+			width: calc(33.3% - 30px);
+		}
+		&-col-lg-6 .editor-block-list__block,
+		&-col-lg-6 .block-editor-block-list__block,
+		&-col-lg-6 .block-editor-block-list__block + .block-list-appender.wp-block {
+			width: calc(50% - 30px);
+		}
+		&-col-lg-12 .editor-block-list__block,
+		&-col-lg-12 .block-editor-block-list__block,
+		&-col-lg-12 .block-editor-block-list__block + .block-list-appender.wp-block {
+			width: calc(100% - 30px);
+		}
+	}
+	@media (min-width: $xl-min) {
+		&-col-xl-2 .editor-block-list__block,
+		&-col-xl-2 .block-editor-block-list__block,
+		&-col-xl-2 .block-editor-block-list__block + .block-list-appender.wp-block {
+			width: calc(16.66% - 30px);
+		}
+		&-col-xl-3 .editor-block-list__block,
+		&-col-xl-3 .block-editor-block-list__block,
+		&-col-xl-3 .block-editor-block-list__block + .block-list-appender.wp-block {
+			width: calc(25% - 30px);
+		}
+		&-col-xl-4 .editor-block-list__block,
+		&-col-xl-4 .block-editor-block-list__block,
+		&-col-xl-4 .block-editor-block-list__block + .block-list-appender.wp-block {
+			width: calc(33.3% - 30px);
+		}
+		&-col-xl-6 .editor-block-list__block,
+		&-col-xl-6 .block-editor-block-list__block,
+		&-col-xl-6 .block-editor-block-list__block + .block-list-appender.wp-block {
+			width: calc(50% - 30px);
+		}
+		&-col-xl-12 .editor-block-list__block,
+		&-col-xl-12 .block-editor-block-list__block,
+		&-col-xl-12 .block-editor-block-list__block + .block-list-appender.wp-block {
+			width: calc(100% - 30px);
+		}
+	}
+	@media (min-width: $xxl-min) {
+		&-col-xxl-2 .editor-block-list__block,
+		&-col-xxl-2 .block-editor-block-list__block ,
+		&-col-xxl-2 .block-editor-block-list__block + .block-list-appender.wp-block {
+			width: calc(16.66% - 30px);
+		}
+		&-col-xxl-3 .editor-block-list__block,
+		&-col-xxl-3 .block-editor-block-list__block,
+		&-col-xxl-3 .block-editor-block-list__block + .block-list-appender.wp-block {
+			width: calc(25% - 30px);
+		}
+		&-col-xxl-4 .editor-block-list__block,
+		&-col-xxl-4 .block-editor-block-list__block,
+		&-col-xxl-4 .block-editor-block-list__block + .block-list-appender.wp-block {
+			width: calc(33.3% - 30px);
+		}
+		&-col-xxl-6 .editor-block-list__block,
+		&-col-xxl-6 .block-editor-block-list__block,
+		&-col-xxl-6 .block-editor-block-list__block + .block-list-appender.wp-block {
+			width: calc(50% - 30px);
+		}
+		&-col-xxl-12 .editor-block-list__block,
+		&-col-xxl-12 .block-editor-block-list__block,
+		&-col-xxl-12 .block-editor-block-list__block + .block-list-appender.wp-block {
+			width: calc(100% - 30px);
+		}
+	}
+}
 
 /*-------------------------------------------*/
 /* .vk_grid-column Layout

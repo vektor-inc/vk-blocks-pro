@@ -22,7 +22,7 @@ function vk_blocks_register_block_vk_balloon() {
 	}
 
 	// Register Script.
-	$asset = include VK_BLOCKS_PATH . 'build/balloon/block-build.asset.php';
+	$asset = include VK_BLOCKS_DIR_PATH . 'build/balloon/block-build.asset.php';
 	wp_register_script(
 		'vk-blocks/balloon',
 		VK_BLOCKS_DIR_PATH . 'build/balloon/block-build.js',

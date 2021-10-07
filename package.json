@@ -41,6 +41,8 @@
 		"build:border-box": "npm run js:border-box && npm run sass:border-box",
 		"js:faq2": "wp-scripts build src/blocks/faq2/index.js --output-path=build/faq2",
 		"build:faq2": "npm run js:faq2",
+		"js:faq2-a": "wp-scripts build src/blocks/faq2-a/index.js --output-path=build/faq2-a",
+		"build:faq2-a": "npm run js:faq2-a",
 		"js:page-content": "wp-scripts build src/blocks/page-content/index.js --output-path=build/page-content",
 		"build:page-content": "npm run js:page-content",
 		"js:pr-content": "wp-scripts build src/blocks/pr-content/index.js --output-path=build/pr-content",

@@ -1403,10 +1403,6 @@ msgstr ""
 msgid "Border Rounded"
 msgstr ""
 
-#: src/blocks/faq2-q/index.js:17
-msgid "FAQ Question"
-msgstr ""
-
 #: src/blocks/flow/edit.js:21
 msgid "Display of arrow"
 msgstr ""

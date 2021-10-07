@@ -15,7 +15,7 @@ function vk_blocks_register_block_spacer() {
 	if ( ! is_admin() ) {
 		wp_register_style(
 			'vk-blocks/spacer',
-			VK_BLOCKS_DIR_URL . 'build/spacer/style.css',
+			VK_BLOCKS_DIR_URL . 'build/spacer/style-index.css',
 			array(),
 			VK_BLOCKS_VERSION
 		);

@@ -10,6 +10,8 @@ import metadata from './block.json';
 import deprecated from './deprecated/index';
 import edit from './edit';
 import save from './save';
+// 関連SCSSを読み込んで書き出し
+// import './style.scss';
 
 const { name } = metadata;
 

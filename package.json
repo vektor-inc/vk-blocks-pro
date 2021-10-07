@@ -45,10 +45,7 @@
 		"sass:pr-content": "sass src/blocks/pr-content/style.scss build/pr-content/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/pr-content/style.css -o build/pr-content/style.css",
 		"watch:pr-content": "sass --watch src/blocks/pr-content/style.scss:build/pr-content/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/pr-content/style.css -o build/pr-content/style.css",
 		"build:pr-content": "npm run js:pr-content && npm run sass:pr-content",
-		"js:spacer": "wp-scripts build src/blocks/spacer/index.js --output-path=build/spacer",
-		"sass:spacer": "sass src/blocks/spacer/style.scss build/spacer/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/spacer/style.css -o build/spacer/style.css",
-		"watch:spacer": "sass --watch src/blocks/spacer/style.scss:build/spacer/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/spacer/style.css -o build/spacer/style.css",
-		"build:spacer": "npm run js:spacer && npm run sass:spacer",
+		"build:spacer": "wp-scripts build src/blocks/spacer/index.js --output-path=build/spacer",
 		"reinstall": "rm -rf node_modules/ && npm install && npm run build",
 		"prepare": "husky install"
 	},

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-10-06T01:35:25+00:00\n"
+"POT-Creation-Date: 2021-10-07T09:54:34+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -1169,10 +1169,6 @@ msgstr ""
 
 #: src/blocks/balloon/edit.js:400
 msgid "Icon Name"
-msgstr ""
-
-#: src/blocks/balloon/index.js:24
-msgid "Ballon"
 msgstr ""
 
 #: src/blocks/border-box/deprecated/0.0.0/save.js:24
@@ -2558,6 +2554,11 @@ msgstr ""
 #: src/blocks/alert/block.json
 msgctxt "block description"
 msgid "A colored box with four statuses, including annotations and alerts."
+msgstr ""
+
+#: src/blocks/balloon/block.json
+msgctxt "block title"
+msgid "Ballon"
 msgstr ""
 
 #: src/blocks/balloon/block.json

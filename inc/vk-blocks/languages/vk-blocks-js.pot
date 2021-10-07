@@ -60,7 +60,7 @@ msgstr ""
 #: src/blocks/_pro/slider/edit.js:193
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95
-#: src/blocks/faq/index.js:27
+#: src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:22
 #: src/extensions/common/inline-font-size/index.js:56
 msgid "Normal"
@@ -1369,36 +1369,32 @@ msgstr ""
 msgid "Please enter a question."
 msgstr ""
 
-#: src/blocks/faq/index.js:22
-msgid "Classic FAQ"
-msgstr ""
-
-#: src/blocks/faq/index.js:32
+#: src/blocks/faq/index.js:31
 #: src/blocks/faq2/index.js:27
 msgid "Bgfill Circle"
 msgstr ""
 
-#: src/blocks/faq/index.js:36
+#: src/blocks/faq/index.js:35
 #: src/blocks/faq2/index.js:31
 msgid "Bgfill Square"
 msgstr ""
 
-#: src/blocks/faq/index.js:40
+#: src/blocks/faq/index.js:39
 #: src/blocks/faq2/index.js:35
 msgid "Bgfill Rounded"
 msgstr ""
 
-#: src/blocks/faq/index.js:44
+#: src/blocks/faq/index.js:43
 #: src/blocks/faq2/index.js:39
 msgid "Border Circle"
 msgstr ""
 
-#: src/blocks/faq/index.js:48
+#: src/blocks/faq/index.js:47
 #: src/blocks/faq2/index.js:43
 msgid "Border Square"
 msgstr ""
 
-#: src/blocks/faq/index.js:52
+#: src/blocks/faq/index.js:51
 #: src/blocks/faq2/index.js:47
 msgid "Border Rounded"
 msgstr ""

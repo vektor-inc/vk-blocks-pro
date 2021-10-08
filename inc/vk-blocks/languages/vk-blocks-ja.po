@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: 2021-10-07 18:53+0900\n"
+"POT-Creation-Date: 2021-10-08T01:16:17+00:00\n"
+"PO-Revision-Date: 2021-10-08 10:17+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -276,6 +276,7 @@ msgstr "デバイス毎の高さ"
 
 #: src/blocks/_pro/card/index.js:25
 #: src/components/column-layout-control/index.js:26
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:670
 #: inc/vk-components/package/class-vk-component-posts.php:670
 msgid "Card"
 msgstr "カード"
@@ -318,6 +319,7 @@ msgid "Padding (Bottom)"
 msgstr "余白 (下)"
 
 #: src/blocks/_pro/grid-column-item/edit.js:155
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:31
 #: inc/vk-blocks/admin/admin-margin.php:31
 msgid "Unit"
 msgstr "単位"
@@ -662,18 +664,21 @@ msgstr "コンテナ内側のスペース設定"
 
 #: src/blocks/_pro/outer/edit.js:566 src/blocks/_pro/slider/edit.js:238
 #: src/components/advanced-viewport-control/index.js:39
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:62
 #: inc/vk-blocks/admin/admin-margin.php:62
 msgid "Mobile"
 msgstr "モバイル"
 
 #: src/blocks/_pro/outer/edit.js:581 src/blocks/_pro/slider/edit.js:227
 #: src/components/advanced-viewport-control/index.js:31
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:61
 #: inc/vk-blocks/admin/admin-margin.php:61
 msgid "Tablet"
 msgstr "タブレット"
 
 #: src/blocks/_pro/outer/edit.js:596 src/blocks/_pro/slider/edit.js:216
 #: src/components/advanced-viewport-control/index.js:25
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:60
 #: inc/vk-blocks/admin/admin-margin.php:60
 msgid "PC"
 msgstr "PC"
@@ -1214,6 +1219,7 @@ msgstr "直線 ピン角 アイコン"
 
 #: src/blocks/button/edit.js:103 src/blocks/spacer/edit.js:85
 #: src/extensions/common/inline-font-size/index.js:51
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:22
 #: inc/vk-blocks/vk-blocks-functions.php:22
 msgid "Small"
 msgstr "小"
@@ -1306,6 +1312,7 @@ msgid "Button Size:"
 msgstr "ボタンサイズ:"
 
 #: src/blocks/button/edit.js:87 src/blocks/spacer/edit.js:105
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:30
 #: inc/vk-blocks/vk-blocks-functions.php:30
 msgid "Large"
 msgstr "大"
@@ -1469,10 +1476,6 @@ msgstr "見出しレベルの変更"
 #: src/blocks/heading/heading-level-dropdown.js:68
 msgid "Heading %d"
 msgstr "見出し %d"
-
-#: src/blocks/heading/index.js:20
-msgid "Heading"
-msgstr "見出し"
 
 #: src/blocks/icon-outer/edit.js:176 src/blocks/icon/edit.js:163
 msgid "Reset"
@@ -1657,7 +1660,9 @@ msgstr "デバイス毎の高さ"
 msgid "Spacer Settings"
 msgstr "余白の設定"
 
-#: src/blocks/spacer/edit.js:95 inc/vk-blocks/vk-blocks-functions.php:26
+#: src/blocks/spacer/edit.js:95
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:26
+#: inc/vk-blocks/vk-blocks-functions.php:26
 msgid "Medium"
 msgstr "中"
 
@@ -1747,6 +1752,7 @@ msgid "Card (Horizontal)"
 msgstr "カード（水平）"
 
 #: src/components/column-layout-control/index.js:42
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:682
 #: inc/vk-components/package/class-vk-component-posts.php:682
 msgid "Media"
 msgstr "メディア"
@@ -2116,12 +2122,12 @@ msgstr "Vektor,Inc."
 msgid "https://vektor-inc.co.jp"
 msgstr "https://vektor-inc.co.jp"
 
-#: inc/admin-notices.php:28
+#: dist/vk-blocks-pro/inc/admin-notices.php:28 inc/admin-notices.php:28
 msgid "We've released VK Blocks Pro!"
 msgstr "VK Blocks Pro を公開しました!"
 
 #. translators: 1: opening a tag, 2: closing a tag
-#: inc/admin-notices.php:35
+#: dist/vk-blocks-pro/inc/admin-notices.php:35 inc/admin-notices.php:35
 msgid ""
 "Thank you for using VK Blocks. We've released VK Blocks Pro. It has more "
 "custom blocks to build web site more easily. If you are interested in VK "
@@ -2132,36 +2138,45 @@ msgstr ""
 "れています。VK Blocks Proに興味がある方は、詳しくは%1$sこの記事%2$sを読んでみ"
 "てください。"
 
-#: inc/admin-notices.php:39 inc/admin-notices.php:45
+#: dist/vk-blocks-pro/inc/admin-notices.php:39
+#: dist/vk-blocks-pro/inc/admin-notices.php:45 inc/admin-notices.php:39
+#: inc/admin-notices.php:45
 msgid "https://www.vektor-inc.co.jp/service/wordpress-plugins/vk-blocks/"
 msgstr "https://www.vektor-inc.co.jp/service/wordpress-plugins/vk-blocks/"
 
-#: inc/admin-notices.php:46
+#: dist/vk-blocks-pro/inc/admin-notices.php:46 inc/admin-notices.php:46
 msgid "See more"
 msgstr "続きを見る"
 
-#: inc/admin-notices.php:49
+#: dist/vk-blocks-pro/inc/admin-notices.php:49 inc/admin-notices.php:49
 msgid "Dismiss this notice"
 msgstr "通知を無視"
 
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:42
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:57
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:42
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:57
 msgid "Not recommended"
 msgstr "非推奨"
 
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:89
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:91
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:89
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:91
 msgid "Ex ) "
 msgstr "例) "
 
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:200
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:200
 msgid "Font Awesome"
 msgstr "Font Awesome:"
 
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:223
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:223
 msgid "Font Awesome Version"
 msgstr "Font Awesome バージョン"
 
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:226
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:226
 msgid "4.7 will be abolished in the near future."
 msgstr "4.7は将来的に廃止されます。"
@@ -2336,70 +2351,88 @@ msgstr "すべてのプラグインを正常にインストールし、有効化
 msgid "Please contact the administrator of this site for help."
 msgstr "ヘルプが必要な場合はこのサイトの管理者にお問い合わせください。"
 
+#: dist/vk-blocks-pro/inc/vk-admin/package/class-vk-admin.php:316
 #: inc/vk-admin/package/class-vk-admin.php:316
 msgid "Sorry, there is no post"
 msgstr "申し訳ありませんが投稿がありません。"
 
+#: dist/vk-blocks-pro/inc/vk-admin/package/class-vk-admin.php:370
 #: inc/vk-admin/package/class-vk-admin.php:370
 msgid "Vektor WordPress Information"
 msgstr "Vektor WordPress Information"
 
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:13
 #: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:13
 msgid "Disable accordion"
 msgstr "アコーディオン無効"
 
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:17
 #: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:17
 msgid "Enable accordion and default open "
 msgstr "アコーディオン有効 / 初期状態で開く"
 
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:21
 #: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:21
 msgid "Enable accordion and default close "
 msgstr "アコーディオン有効 / 初期状態で閉じる"
 
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:29
 #: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:29
 msgid "FAQ Block Setting"
 msgstr "FAQ Blocks 設定"
 
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-pro.php:22
 #: inc/vk-blocks-pro/admin-pro/admin-pro.php:22
 msgid "FAQ Setting"
 msgstr "FAQ ブロックの設定"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:11
 #: inc/vk-blocks/admin/admin-balloon.php:11
 msgid "Balloon Setting"
 msgstr "吹き出しブロック設定"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:12
 #: inc/vk-blocks/admin/admin-balloon.php:12
 msgid "Balloon Border Width Setting"
 msgstr "吹き出しの線幅の設定"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:22
 #: inc/vk-blocks/admin/admin-balloon.php:22
 msgid "Balloon Image Setting"
 msgstr "吹き出し画像設定"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:89
 #: inc/vk-blocks/admin/admin-balloon.php:89
 msgid "You can register frequently used icon images for speech bubble blocks."
 msgstr "よく使う吹き出し用のアイコン画像を登録する事ができます。"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:90
 #: inc/vk-blocks/admin/admin-balloon.php:90
 msgid "If you change image or name that please click Save Changes button."
 msgstr "画像を変更したら「変更を保存」ボタンをクリックしてください。"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:116
 #: inc/vk-blocks/admin/admin-balloon.php:116
 msgid "Select"
 msgstr "選択"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:119
 #: inc/vk-blocks/admin/admin-balloon.php:119
 msgid "Delete"
 msgstr "削除"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:124
 #: inc/vk-blocks/admin/admin-balloon.php:124
 msgid "Balloon Image Name"
 msgstr "吹き出し画像の名前"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:27
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:71
 #: inc/vk-blocks/admin/admin-margin.php:27 inc/vk-blocks/admin/admin.php:71
 msgid "Common Margin Setting"
 msgstr "共通余白設定"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:28
 #: inc/vk-blocks/admin/admin-margin.php:28
 msgid ""
 "Please specify the size of the common margin used for responsive spacers, "
@@ -2407,31 +2440,38 @@ msgid ""
 msgstr ""
 "レスポンシブスペーサーなどで使用する共通余白のサイズを指定してください。"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:47
 #: inc/vk-blocks/admin/admin.php:47
 msgid "Blocks setting"
 msgstr "Blocks 設定"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:48
 #: inc/vk-blocks/admin/admin.php:48
 msgctxt "label in admin menu"
 msgid "Blocks"
 msgstr "Blocks"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:64
 #: inc/vk-blocks/admin/admin.php:64
 msgid "Blocks Setting"
 msgstr "Blocks 設定"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:70
 #: inc/vk-blocks/admin/admin.php:70
 msgid "Balloon Block Setting"
 msgstr "吹き出しブロック設定"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/load-bootstrap.php:61
 #: inc/vk-blocks/load-bootstrap.php:61
 msgid "VK Blocks Bootstrap Setting"
 msgstr "VK Blocks Bootstrapの設定"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/load-bootstrap.php:81
 #: inc/vk-blocks/load-bootstrap.php:81
 msgid "Loading Bootstrap4"
 msgstr "Bootstrap4の読み込み"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/load-bootstrap.php:82
 #: inc/vk-blocks/load-bootstrap.php:82
 msgid ""
 "Check here to load Bootstrap4. If your theme or plugins loading Bootstrap4, "
@@ -2440,10 +2480,12 @@ msgstr ""
 "Bootstrap4を読み込む場合はここにチェックを入れてください。テーマやプラグイン"
 "がBootstrap4を読み込む場合は、ここのチェックを外してください。"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/load-bootstrap.php:102
 #: inc/vk-blocks/load-bootstrap.php:102
 msgid "Setting"
 msgstr "設定"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:186
 #: inc/vk-blocks/view/class-vk-blocks-postlist.php:186
 msgid "No Post is selected"
 msgstr "投稿が選択されていません"
@@ -2458,60 +2500,75 @@ msgstr "Blocks"
 msgid "Blocks Layout"
 msgstr "ブロックレイアウト"
 
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:53
 #: inc/vk-components/package/class-vk-component-posts.php:53
 msgid "Read more"
 msgstr "続きを読む"
 
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:55
 #: inc/vk-components/package/class-vk-component-posts.php:55
 msgid "New!!"
 msgstr "New!!"
 
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:241
 #: inc/vk-components/package/class-vk-component-posts.php:241
 msgid "Page"
 msgstr "ページ"
 
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:674
 #: inc/vk-components/package/class-vk-component-posts.php:674
 msgid "Card Noborder"
 msgstr "カード（線なし）"
 
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:678
 #: inc/vk-components/package/class-vk-component-posts.php:678
 msgid "Card Horizontal"
 msgstr "カード（水平）"
 
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:686
 #: inc/vk-components/package/class-vk-component-posts.php:686
 msgctxt "post list type"
 msgid "Text 1 Column"
 msgstr "テキスト 1 カラム"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:47
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:47
 msgid "CSS Optimize ( Speed up ) Settings"
 msgstr "CSS最適化（高速化）設定"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:66
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:66
 msgid "Tree shaking"
 msgstr "Tree shaking"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:87
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:87
 msgid "Tree shaking activation settings"
 msgstr "Tree shaking 有効化設定"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:91
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:91
 msgid "Output only the main CSS of the page inline"
 msgstr "主要なCSSのみインラインで出力します"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:93
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:159
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:93
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:159
 msgid "Nothing to do"
 msgstr "何もしない"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:94
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:94
 msgid "Active Tree shaking (Recomend)"
 msgstr "Tree shakingを有効化（推奨）"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:111
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:111
 msgid "Exclude class of Tree shaking"
 msgstr "CSSの軽量化から除外するCSSのclass名"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:115
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:115
 msgid ""
 "If you choose \"Active Tree shaking\" that delete the useless css.If you "
@@ -2522,26 +2579,32 @@ msgstr ""
 "している動的クラスがある場合はクラス名を入力してください。 例）btn-active,"
 "slide-active,scrolled"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:132
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:132
 msgid "Preload CSS"
 msgstr "Preload CSS"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:153
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:153
 msgid "Preload CSS activation settings"
 msgstr "Preload CSS 有効化設定"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:156
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:156
 msgid "Preload css except for critical css"
 msgstr "クリティカルなCSSを除いてCSSをプリロードします"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:160
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:160
 msgid "Active Preload CSS (Recomend)"
 msgstr "Preload CSS を有効化（推奨）"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:177
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:177
 msgid "Exclude class of Preload CSS"
 msgstr "Preload CSSから除外するハンドル名"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:181
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:181
 msgid ""
 "If you choose \"Active Preload CSS\" that css load timing was changed.If you "
@@ -2558,7 +2621,6 @@ msgid "Edit this area"
 msgstr "このエリアを編集"
 
 #: dist/vk-blocks-pro/vk-blocks.php:93 vk-blocks.php:97
-#: vk-blocks.php:97
 msgid ""
 "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks "
 "Plugin running."
@@ -2566,70 +2628,44 @@ msgstr ""
 "VK-Blocksと競合するため、VK All in One Expansion Unitの Block機能を停止しまし"
 "た。"
 
-#: src/blocks/alert/block.json
-msgctxt "block title"
-msgid "Alert"
-msgstr "アラート"
-
-#: src/blocks/alert/block.json
+#: dist/vk-blocks-pro/src/blocks/alert/block.json src/blocks/alert/block.json
 msgctxt "block description"
 msgid "A colored box with four statuses, including annotations and alerts."
 msgstr "注釈や注意など4つのステータスがある色付きのボックスです。"
 
-#: src/blocks/balloon/block.json
-msgctxt "block title"
-msgid "Ballon"
-msgstr "吹き出し"
-
+#: dist/vk-blocks-pro/src/blocks/balloon/block.json
 #: src/blocks/balloon/block.json
 msgctxt "block description"
 msgid "These speech balloons are perfect for recreating conversations."
 msgstr "会話の再現などに最適な吹き出しです。"
 
-#: src/blocks/border-box/block.json
-msgctxt "block title"
-msgid "Border Box"
-msgstr "枠線ボックス"
-
+#: dist/vk-blocks-pro/src/blocks/border-box/block.json
 #: src/blocks/border-box/block.json
 msgctxt "block description"
 msgid "This is a border box where you can place headings to attract attention."
 msgstr "見出しを配置でき注目されやすい枠線ボックスです。"
 
 #: dist/vk-blocks-pro/src/blocks/button/block.json src/blocks/button/block.json
-#: src/blocks/button/block.json
-msgctxt "block title"
-msgid "Button"
-msgstr "ボタン"
-
-#: src/blocks/faq/block.json
-msgctxt "block title"
-msgid "Classic FAQ"
-msgstr "旧 FAQ"
-
-#: src/blocks/button/block.json
 msgctxt "block description"
 msgid "A button link that can display icons before and after."
 msgstr "前後にアイコンを表示できるボタンリンクです。"
 
-#: src/blocks/faq/block.json
+#: dist/vk-blocks-pro/src/blocks/faq/block.json src/blocks/faq/block.json
 msgctxt "block description"
 msgid "Displays a combination of questions and answers."
 msgstr "質問と回答を組み合わせて表示します。"
 
 #: dist/vk-blocks-pro/src/blocks/faq2-a/block.json src/blocks/faq2-a/block.json
-#: src/blocks/faq2-a/block.json
 msgctxt "block description"
 msgid "Answer area where you can add blocks freely."
 msgstr "自由にブロックを追加できる回答エリアです。"
 
 #: dist/vk-blocks-pro/src/blocks/faq2-q/block.json src/blocks/faq2-q/block.json
-#: src/blocks/faq2-q/block.json
 msgctxt "block description"
 msgid "Question area where you can freely add blocks."
 msgstr "自由にブロックを追加できる質問エリアです。"
 
-#: src/blocks/faq2/block.json
+#: dist/vk-blocks-pro/src/blocks/faq2/block.json src/blocks/faq2/block.json
 msgctxt "block description"
 msgid ""
 "It displays a combination of questions and answers. You can freely add "
@@ -2638,11 +2674,12 @@ msgstr ""
 "質問と回答を組み合わせて表示します。質問エリアにも自由にブロックを追加できま"
 "す。"
 
-#: src/blocks/flow/block.json
+#: dist/vk-blocks-pro/src/blocks/flow/block.json src/blocks/flow/block.json
 msgctxt "block description"
 msgid "Displays a sequential description in time series."
 msgstr "時系列で順を追った説明を表示します。"
 
+#: dist/vk-blocks-pro/src/blocks/heading/block.json
 #: src/blocks/heading/block.json
 msgctxt "block description"
 msgid ""
@@ -2657,32 +2694,23 @@ msgid "Display the Font Awesome icons horizontally."
 msgstr "Font Awesome のアイコンフォントを横並びに表示します"
 
 #: dist/vk-blocks-pro/src/blocks/icon/block.json src/blocks/icon/block.json
-#: src/blocks/icon/block.json
 msgctxt "block description"
 msgid "Display icons with Font Awesome."
 msgstr "Font Awesome のアイコンフォントを表示します"
 
 #: dist/vk-blocks-pro/src/blocks/page-content/block.json
 #: src/blocks/page-content/block.json
-msgctxt "block title"
-msgid "Page Content"
-msgstr "固定ページ本文"
-
-#: src/blocks/page-content/block.json
 msgctxt "block description"
 msgid "Displays the body content of the specified parent page."
 msgstr "指定した基準ページの本文内容を表示します。"
 
+#: dist/vk-blocks-pro/src/blocks/pr-blocks/block.json
 #: src/blocks/pr-blocks/block.json
 msgctxt "block description"
 msgid "This is a PR block where you can place images and icon."
 msgstr "画像,アイコンの配置ができるPRブロックです。"
 
-#: src/blocks/pr-content/block.json
-msgctxt "block title"
-msgid "PR Content"
-msgstr "PR Content"
-
+#: dist/vk-blocks-pro/src/blocks/pr-content/block.json
 #: src/blocks/pr-content/block.json
 msgctxt "block description"
 msgid ""
@@ -2690,85 +2718,92 @@ msgid ""
 msgstr "画像,見出し,テキスト,ボタンが配置できるPRコンテンツです。"
 
 #: dist/vk-blocks-pro/src/blocks/spacer/block.json src/blocks/spacer/block.json
-#: src/blocks/spacer/block.json
-msgctxt "block title"
-msgid "Responsive Spacer"
-msgstr "レスポンシブスペーサー"
-
-#: src/blocks/spacer/block.json
 msgctxt "block description"
 msgid "Use responsive spacers to get the margins right."
 msgstr "レスポンシブに対応したスペーサーで余白を適切に取ります。"
 
-#: src/blocks/staff/block.json
+#: dist/vk-blocks-pro/src/blocks/staff/block.json src/blocks/staff/block.json
 msgctxt "block description"
 msgid ""
 "Used for staff introduction, company introduction, school introduction, "
 "menu, etc."
 msgstr "スタッフ紹介,会社紹介,スクール紹介,メニューなどで利用します。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/accordion-target/block.json
 #: src/blocks/_pro/accordion-target/block.json
 msgctxt "block description"
 msgid "This is the content area where you can add blocks freely."
 msgstr "コンテンツが長い時にコンテンツを折りたたんで隠して表示します。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/accordion-trigger/block.json
 #: src/blocks/_pro/accordion-trigger/block.json
 msgctxt "block description"
 msgid "This is the title area where you can freely add blocks."
 msgstr "自由にブロックを追加できるタイトルエリアです。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/accordion/block.json
 #: src/blocks/_pro/accordion/block.json
 msgctxt "block description"
 msgid "Collapses and hides content when the content is long."
 msgstr "自由にブロックを追加できるコンテンツエリアです。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/animation/block.json
 #: src/blocks/_pro/animation/block.json
 msgctxt "block description"
 msgid "Add animation to elements when scrolling the page."
 msgstr "ページをスクロールした時に要素に動きを加えます。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/card-item/block.json
 #: src/blocks/_pro/card-item/block.json
 msgctxt "block description"
 msgid "A single item in a card block."
 msgstr "アイコンカード内の１つのアイテムです。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/card/block.json
 #: src/blocks/_pro/card/block.json
 msgctxt "block description"
 msgid "A card where you can place images, headings, text, and links."
 msgstr "画像,見出し,テキスト,リンクが配置できるカードです。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/child-page/block.json
 #: src/blocks/_pro/child-page/block.json
 msgctxt "block description"
 msgid ""
 "When a parent page is specified, a list of its child pages will be displayed."
 msgstr "親となる固定ページを指定するとその子ページの一覧を表示します。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/grid-column-item/block.json
 #: src/blocks/_pro/grid-column-item/block.json
 msgctxt "block description"
 msgid "One item in a grit column block."
 msgstr "グリットカラムブロック内の1つのアイテムです。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/grid-column/block.json
 #: src/blocks/_pro/grid-column/block.json
 msgctxt "block description"
 msgid "Set the number of columns to be displayed for each screen size."
 msgstr "画面サイズ毎にカラム数を設定して表示させます。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/icon-card-item/block.json
 #: src/blocks/_pro/icon-card-item/block.json
 msgctxt "block description"
 msgid "This is one item in an icon card."
 msgstr "アイコンカード内の１つのアイテムです。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/icon-card/block.json
 #: src/blocks/_pro/icon-card/block.json
 msgctxt "block description"
 msgid "Display card with icons, headings, text, and links."
 msgstr "アイコン,見出し,テキスト,リンクを設定してカードを表示します。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/outer/block.json
 #: src/blocks/_pro/outer/block.json
 msgctxt "block description"
 msgid ""
 "Set the background image, color, and border to show the layout and divisions."
 msgstr "背景の画像や色,枠線の設定しレイアウトや区切りを表示します。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/post-list/block.json
 #: src/blocks/_pro/post-list/block.json
 msgctxt "block description"
 msgid ""
@@ -2776,22 +2811,26 @@ msgid ""
 "number of posts to display."
 msgstr "投稿タイプ,分類,表示件数が設定して投稿リストを表示します。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/select-post-list-item/block.json
 #: src/blocks/_pro/select-post-list-item/block.json
 msgctxt "block description"
 msgid "A single item in the select post list."
 msgstr "選択投稿リスト内の１つのアイテムです。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/select-post-list/block.json
 #: src/blocks/_pro/select-post-list/block.json
 msgctxt "block description"
 msgid ""
 "Displays an arbitrarily specified page with the layout of the posting list."
 msgstr "任意に指定したページを投稿リストのレイアウトで表示します。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/slider-item/block.json
 #: src/blocks/_pro/slider-item/block.json
 msgctxt "block description"
 msgid "This is one item in the slider."
 msgstr "スライダー内の１つのアイテムです。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/slider/block.json
 #: src/blocks/_pro/slider/block.json
 msgctxt "block description"
 msgid ""
@@ -2801,16 +2840,19 @@ msgstr ""
 "様々なアイテムを配置できるスライダーです。編集画面では動かないので公開画面で"
 "プレビューしてください。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/step-item/block.json
 #: src/blocks/_pro/step-item/block.json
 msgctxt "block description"
 msgid "This element sets the icon, color, and style of the step mark."
 msgstr "ステップマークのアイコン、色、スタイルを設定する要素です。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/step/block.json
 #: src/blocks/_pro/step/block.json
 msgctxt "block description"
 msgid "Set and display step marks, which are useful when explaining the order."
 msgstr "順番を説明する時に便利でステップマークを設定し表示します。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/table-of-contents-new/block.json
 #: src/blocks/_pro/table-of-contents-new/block.json
 msgctxt "block description"
 msgid ""
@@ -2818,17 +2860,64 @@ msgid ""
 "headings when added."
 msgstr "追加すると見出しに合わせて自動で生成される目次です。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/timeline-item/block.json
 #: src/blocks/_pro/timeline-item/block.json
 msgctxt "block description"
 msgid "This element sets the label, color, and style of the timeline."
 msgstr "タイムラインのラベル、色、スタイルを設定する要素です。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/timeline/block.json
 #: src/blocks/_pro/timeline/block.json
 msgctxt "block description"
 msgid ""
 "Displays a simple schedule and other information that is useful for "
 "explaining the order."
 msgstr "順番を説明する時に便利でシンプルなスケジュールなどを表示します。"
+
+#: src/blocks/alert/block.json
+msgctxt "block title"
+msgid "Alert"
+msgstr "アラート"
+
+#: src/blocks/balloon/block.json
+msgctxt "block title"
+msgid "Ballon"
+msgstr "吹き出し"
+
+#: src/blocks/border-box/block.json
+msgctxt "block title"
+msgid "Border Box"
+msgstr "枠線ボックス"
+
+#: src/blocks/button/block.json
+msgctxt "block title"
+msgid "Button"
+msgstr "ボタン"
+
+#: src/blocks/faq/block.json
+msgctxt "block title"
+msgid "Classic FAQ"
+msgstr "旧 FAQ"
+
+#: src/blocks/heading/block.json
+msgctxt "block title"
+msgid "Heading"
+msgstr "見出し"
+
+#: src/blocks/page-content/block.json
+msgctxt "block title"
+msgid "Page Content"
+msgstr "固定ページ本文"
+
+#: src/blocks/pr-content/block.json
+msgctxt "block title"
+msgid "PR Content"
+msgstr "PR Content"
+
+#: src/blocks/spacer/block.json
+msgctxt "block title"
+msgid "Responsive Spacer"
+msgstr "レスポンシブスペーサー"
 
 #~ msgid "Responsive Spacer"
 #~ msgstr "レスポンシブスペーサー"

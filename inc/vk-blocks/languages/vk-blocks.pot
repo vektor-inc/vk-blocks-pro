@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-10-08T04:43:03+00:00\n"
+"POT-Creation-Date: 2021-10-08T08:14:22+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -1610,10 +1610,6 @@ msgstr ""
 msgid "PR Image 3"
 msgstr ""
 
-#: src/blocks/pr-blocks/index.js:24
-msgid "PR Blocks"
-msgstr ""
-
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:152
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:134
 #: src/blocks/pr-content/deprecated/0.0.2/save.js:251
@@ -2637,6 +2633,11 @@ msgstr ""
 #: src/blocks/page-content/block.json
 msgctxt "block description"
 msgid "Displays the body content of the specified parent page."
+msgstr ""
+
+#: src/blocks/pr-blocks/block.json
+msgctxt "block title"
+msgid "PR Blocks"
 msgstr ""
 
 #: src/blocks/pr-blocks/block.json

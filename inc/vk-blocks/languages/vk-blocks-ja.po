@@ -1561,10 +1561,6 @@ msgstr "画像を設定した場合は画像が優先して表示されます。
 msgid "PR Image 3"
 msgstr "PR 画像 3"
 
-#: src/blocks/pr-blocks/index.js:24
-msgid "PR Blocks"
-msgstr "PR Blocks"
-
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:152
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:134
 #: src/blocks/pr-content/deprecated/0.0.2/save.js:251
@@ -2909,6 +2905,11 @@ msgstr "フロー"
 msgctxt "block title"
 msgid "Page Content"
 msgstr "固定ページ本文"
+
+#: src/blocks/pr-blocks/block.json
+msgctxt "block title"
+msgid "PR Blocks"
+msgstr ""
 
 #: src/blocks/pr-content/block.json
 msgctxt "block title"

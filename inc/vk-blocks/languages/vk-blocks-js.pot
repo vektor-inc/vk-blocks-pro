@@ -1427,10 +1427,6 @@ msgstr ""
 msgid "Input content"
 msgstr ""
 
-#: src/blocks/flow/index.js:19
-msgid "Flow"
-msgstr ""
-
 #: src/blocks/heading/deprecated/0.24.1/component.js:117
 #: src/blocks/heading/deprecated/0.24.4/component.js:80
 #: src/blocks/heading/deprecated/0.24.5/component.js:117

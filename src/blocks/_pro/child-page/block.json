@@ -1,6 +1,7 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/child-page",
+	"title": "Child page list",
 	"category": "vk-blocks-cat",
 	"attributes": {
 		"selectId": {

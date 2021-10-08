@@ -24,7 +24,7 @@ function vk_blocks_register_block_accordion() {
 	// Register Style.
 	if ( ! is_admin() ) {
 		wp_register_script(
-			'vk-blocks/accordion',
+			'vk-blocks/accordion-script',
 			VK_BLOCKS_DIR_URL . 'inc/vk-blocks/build/vk-accordion.min.js',
 			array(),
 			VK_BLOCKS_VERSION
@@ -45,7 +45,7 @@ function vk_blocks_register_block_accordion() {
 		__DIR__,
 		array(
 			'style'         => 'vk-blocks/accordion',
-			'script'        => 'vk-blocks/accordion',
+			'script'        => 'vk-blocks/accordion-script',
 			'editor_style'  => 'vk-blocks-build-editor-css',
 			'editor_script' => 'vk-blocks-build-js',
 		)

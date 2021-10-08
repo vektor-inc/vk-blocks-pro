@@ -21,6 +21,16 @@ function vk_blocks_register_block_faq() {
 		);
 	}
 
+	// Register Style.
+	if ( ! is_admin() ) {
+		wp_register_script(
+			'vk-blocks/faq-script',
+			VK_BLOCKS_DIR_URL . 'inc/vk-blocks/build/vk-faq2.min.js',
+			array(),
+			VK_BLOCKS_VERSION
+		);
+	}
+
 	// Register Script.
 	$asset = include VK_BLOCKS_DIR_PATH . 'build/faq/block-build.asset.php';
 	wp_register_script(
@@ -35,6 +45,7 @@ function vk_blocks_register_block_faq() {
 		__DIR__,
 		array(
 			'style'         => 'vk-blocks/faq',
+			'script'        => 'vk-blocks/faq-script',
 			'editor_style'  => 'vk-blocks-build-editor-css',
 			'editor_script' => 'vk-blocks-build-js',
 		)

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2021-10-08T00:59:04+00:00\n"
-"PO-Revision-Date: 2021-10-08 10:00+0900\n"
+"POT-Creation-Date: 2021-10-08T01:09:42+00:00\n"
+"PO-Revision-Date: 2021-10-08 10:10+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -77,7 +77,7 @@ msgstr "短い"
 
 #: src/blocks/_pro/animation/edit.js:123 src/blocks/_pro/outer/edit.js:303
 #: src/blocks/_pro/slider/edit.js:193 src/blocks/balloon/edit.js:276
-#: src/blocks/button/edit.js:95 src/blocks/faq/index.js:27
+#: src/blocks/button/edit.js:95 src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:22
 #: src/extensions/common/inline-font-size/index.js:56
 msgid "Normal"
@@ -1335,31 +1335,27 @@ msgstr "アコーディオン設定"
 msgid "Please enter a question."
 msgstr "質問を入力してください。"
 
-#: src/blocks/faq/index.js:22
-msgid "Classic FAQ"
-msgstr "旧 FAQ"
-
-#: src/blocks/faq/index.js:32 src/blocks/faq2/index.js:27
+#: src/blocks/faq/index.js:31 src/blocks/faq2/index.js:27
 msgid "Bgfill Circle"
 msgstr "背景塗り 円形"
 
-#: src/blocks/faq/index.js:36 src/blocks/faq2/index.js:31
+#: src/blocks/faq/index.js:35 src/blocks/faq2/index.js:31
 msgid "Bgfill Square"
 msgstr "背景塗り ピン角"
 
-#: src/blocks/faq/index.js:40 src/blocks/faq2/index.js:35
+#: src/blocks/faq/index.js:39 src/blocks/faq2/index.js:35
 msgid "Bgfill Rounded"
 msgstr "背景塗り 角丸"
 
-#: src/blocks/faq/index.js:44 src/blocks/faq2/index.js:39
+#: src/blocks/faq/index.js:43 src/blocks/faq2/index.js:39
 msgid "Border Circle"
 msgstr "枠線 円形"
 
-#: src/blocks/faq/index.js:48 src/blocks/faq2/index.js:43
+#: src/blocks/faq/index.js:47 src/blocks/faq2/index.js:43
 msgid "Border Square"
 msgstr "枠線 ピン角"
 
-#: src/blocks/faq/index.js:52 src/blocks/faq2/index.js:47
+#: src/blocks/faq/index.js:51 src/blocks/faq2/index.js:47
 msgid "Border Rounded"
 msgstr "枠線 角丸"
 
@@ -2898,6 +2894,11 @@ msgctxt "block title"
 msgid "Button"
 msgstr "ボタン"
 
+#: src/blocks/faq/block.json
+msgctxt "block title"
+msgid "Classic FAQ"
+msgstr "旧 FAQ"
+
 #: src/blocks/flow/block.json
 msgctxt "block title"
 msgid "Flow"
@@ -2917,9 +2918,6 @@ msgstr "PR Content"
 msgctxt "block title"
 msgid "Responsive Spacer"
 msgstr "レスポンシブスペーサー"
-
-#~ msgid "Ballon"
-#~ msgstr "吹き出し"
 
 #~ msgid "Responsive Spacer"
 #~ msgstr "レスポンシブスペーサー"

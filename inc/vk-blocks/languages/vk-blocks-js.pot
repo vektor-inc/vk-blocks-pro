@@ -1509,10 +1509,6 @@ msgstr ""
 msgid "Heading %d"
 msgstr ""
 
-#: src/blocks/heading/index.js:20
-msgid "Heading"
-msgstr ""
-
 #: src/blocks/icon-outer/edit.js:176
 #: src/blocks/icon/edit.js:163
 msgid "Reset"

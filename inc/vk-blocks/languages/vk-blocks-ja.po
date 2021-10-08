@@ -1473,10 +1473,6 @@ msgstr "見出しレベルの変更"
 msgid "Heading %d"
 msgstr "見出し %d"
 
-#: src/blocks/heading/index.js:20
-msgid "Heading"
-msgstr "見出し"
-
 #: src/blocks/icon-outer/edit.js:176 src/blocks/icon/edit.js:163
 msgid "Reset"
 msgstr "リセット"
@@ -2678,6 +2674,11 @@ msgstr ""
 msgctxt "block description"
 msgid "Displays a sequential description in time series."
 msgstr "時系列で順を追った説明を表示します。"
+
+#: src/blocks/heading/block.json
+msgctxt "block title"
+msgid "Heading"
+msgstr "見出し"
 
 #: dist/vk-blocks-pro/src/blocks/heading/block.json
 #: src/blocks/heading/block.json

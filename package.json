@@ -39,6 +39,12 @@
 		"sass:border-box": "sass src/blocks/border-box/style.scss build/border-box/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/border-box/style.css -o build/border-box/style.css",
 		"watch:border-box": "sass --watch src/blocks/border-box/style.scss:build/border-box/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/border-box/style.css -o build/border-box/style.css",
 		"build:border-box": "npm run js:border-box && npm run sass:border-box",
+
+		"js:pr-blocks": "wp-scripts build src/blocks/pr-blocks/index.js --output-path=build/pr-blocks",
+		"sass:pr-blocks": "sass src/blocks/pr-blocks/style.scss build/pr-blocks/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/pr-blocks/style.css -o build/pr-blocks/style.css",
+		"watch:pr-blocks": "sass --watch src/blocks/pr-blocks/style.scss:build/pr-blocks/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/pr-blocks/style.css -o build/pr-blocks/style.css",
+		"build:pr-blocks": "npm run js:pr-blocks && npm run sass:pr-blocks",
+
 		"js:pr-content": "wp-scripts build src/blocks/pr-content/index.js --output-path=build/pr-content",
 		"sass:pr-content": "sass src/blocks/pr-content/style.scss build/pr-content/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/pr-content/style.css -o build/pr-content/style.css",
 		"watch:pr-content": "sass --watch src/blocks/pr-content/style.scss:build/pr-content/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/pr-content/style.css -o build/pr-content/style.css",

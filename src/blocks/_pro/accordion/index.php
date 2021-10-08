@@ -27,7 +27,8 @@ function vk_blocks_register_block_accordion() {
 			'vk-blocks/accordion-script',
 			VK_BLOCKS_DIR_URL . 'inc/vk-blocks/build/vk-accordion.min.js',
 			array(),
-			VK_BLOCKS_VERSION
+			VK_BLOCKS_VERSION,
+			true
 		);
 	}
 

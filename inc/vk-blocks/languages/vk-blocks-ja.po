@@ -2,8 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
+<<<<<<< HEAD
+"POT-Creation-Date: 2021-10-04T04:45:26+00:00\n"
+"PO-Revision-Date: 2021-10-08 17:25+0900\n"
+=======
 "POT-Creation-Date: 2021-10-08T01:09:42+00:00\n"
 "PO-Revision-Date: 2021-10-08 10:10+0900\n"
+>>>>>>> try/spacer/should_load_separate_core_block_assets
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -296,10 +301,6 @@ msgstr "親ページ"
 #: src/blocks/_pro/child-page/edit.js:82 src/blocks/_pro/post-list/edit.js:288
 msgid "Ignore this post"
 msgstr "この投稿を除く"
-
-#: src/blocks/_pro/child-page/index.js:18
-msgid "Child page list"
-msgstr "子ページリスト"
 
 #: src/blocks/_pro/grid-column-item/edit.js:106
 msgid "Margin setting inside the item"
@@ -2870,6 +2871,11 @@ msgid ""
 "Displays a simple schedule and other information that is useful for "
 "explaining the order."
 msgstr "順番を説明する時に便利でシンプルなスケジュールなどを表示します。"
+
+#: src/blocks/_pro/child-page/block.json
+msgctxt "block title"
+msgid "Child page list"
+msgstr "子ページリスト"
 
 #: src/blocks/alert/block.json
 msgctxt "block title"

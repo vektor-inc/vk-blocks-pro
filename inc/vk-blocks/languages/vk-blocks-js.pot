@@ -285,10 +285,6 @@ msgstr ""
 msgid "Ignore this post"
 msgstr ""
 
-#: src/blocks/_pro/child-page/index.js:18
-msgid "Child page list"
-msgstr ""
-
 #: src/blocks/_pro/grid-column-item/edit.js:106
 msgid "Margin setting inside the item"
 msgstr ""

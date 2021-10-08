@@ -11,7 +11,7 @@
  * @return void
  */
 function vk_blocks_register_block_pr_blocks() {
-// Register Style.
+	// Register Style.
 	if ( ! is_admin() ) {
 		wp_register_style(
 			'vk-blocks/pr-blocks',

@@ -1623,10 +1623,6 @@ msgstr ""
 msgid "PR Image 3"
 msgstr ""
 
-#: src/blocks/pr-blocks/index.js:24
-msgid "PR Blocks"
-msgstr ""
-
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:152
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:134
 #: src/blocks/pr-content/deprecated/0.0.2/save.js:251

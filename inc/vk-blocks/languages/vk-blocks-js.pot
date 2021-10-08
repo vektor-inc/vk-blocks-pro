@@ -1159,10 +1159,6 @@ msgstr ""
 msgid "Icon Name"
 msgstr ""
 
-#: src/blocks/balloon/index.js:24
-msgid "Ballon"
-msgstr ""
-
 #: src/blocks/border-box/deprecated/0.0.0/save.js:24
 #: src/blocks/border-box/deprecated/0.0.1/save.js:25
 #: src/blocks/border-box/edit.js:25

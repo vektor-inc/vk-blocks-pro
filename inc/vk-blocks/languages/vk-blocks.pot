@@ -293,10 +293,6 @@ msgstr ""
 msgid "Ignore this post"
 msgstr ""
 
-#: src/blocks/_pro/child-page/index.js:18
-msgid "Child page list"
-msgstr ""
-
 #: src/blocks/_pro/grid-column-item/edit.js:106
 msgid "Margin setting inside the item"
 msgstr ""
@@ -2552,6 +2548,11 @@ msgstr ""
 
 #: vk-blocks.php:97
 msgid "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks Plugin running."
+msgstr ""
+
+#: src/blocks/_pro/child-page/block.json
+msgctxt "block title"
+msgid "Child page list"
 msgstr ""
 
 #: src/blocks/alert/block.json

@@ -43,7 +43,7 @@ function vk_blocks_register_block_child_page() {
 		VK_BLOCKS_VERSION,
 		true
 	);
-	
+
 	global $vk_blocks_common_attributes;
 	register_block_type(
 		__DIR__,

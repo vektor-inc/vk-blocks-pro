@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.0\n"
 "X-Poedit-Basepath: ../../..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -77,7 +77,7 @@ msgstr "短い"
 
 #: src/blocks/_pro/animation/edit.js:123 src/blocks/_pro/outer/edit.js:303
 #: src/blocks/_pro/slider/edit.js:193 src/blocks/balloon/edit.js:276
-#: src/blocks/button/edit.js:95 src/blocks/faq/index.js:27
+#: src/blocks/button/edit.js:95 src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:22
 #: src/extensions/common/inline-font-size/index.js:56
 msgid "Normal"
@@ -325,6 +325,7 @@ msgstr "単位"
 #: src/blocks/_pro/grid-column-item/edit.js:163
 #: src/blocks/_pro/outer/edit.js:617 src/blocks/icon-outer/edit.js:151
 #: src/blocks/icon/edit.js:138 src/components/advanced-unit-control/index.js:18
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:10
 #: inc/vk-blocks/admin/admin-margin.php:10
 msgid "px"
 msgstr "px"
@@ -332,6 +333,7 @@ msgstr "px"
 #: src/blocks/_pro/grid-column-item/edit.js:167
 #: src/blocks/_pro/outer/edit.js:621 src/blocks/icon-outer/edit.js:155
 #: src/blocks/icon/edit.js:142 src/components/advanced-unit-control/index.js:22
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:14
 #: inc/vk-blocks/admin/admin-margin.php:14
 msgid "em"
 msgstr "em"
@@ -339,6 +341,7 @@ msgstr "em"
 #: src/blocks/_pro/grid-column-item/edit.js:171
 #: src/blocks/_pro/outer/edit.js:625 src/blocks/icon-outer/edit.js:159
 #: src/blocks/icon/edit.js:146 src/components/advanced-unit-control/index.js:26
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:18
 #: inc/vk-blocks/admin/admin-margin.php:18
 msgid "rem"
 msgstr "rem"
@@ -899,6 +902,9 @@ msgstr "例) 午前 6:00"
 #: src/blocks/_pro/step-item/edit.js:76
 #: src/blocks/_pro/timeline-item/edit.js:53 src/blocks/border-box/edit.js:63
 #: src/blocks/icon/edit.js:246 src/blocks/staff/edit.js:139
+#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:41
+#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:56
+#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:130
 #: inc/term-color/package/class.term-color.php:41
 #: inc/term-color/package/class.term-color.php:56
 #: inc/term-color/package/class.term-color.php:130
@@ -1141,7 +1147,9 @@ msgid "Icon"
 msgstr "アイコン"
 
 #: src/blocks/border-box/edit.js:51 src/blocks/icon-outer/edit.js:132
-#: src/blocks/icon/edit.js:119 inc/vk-blocks/admin/admin-margin.php:57
+#: src/blocks/icon/edit.js:119
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:57
+#: inc/vk-blocks/admin/admin-margin.php:57
 msgid "Margin"
 msgstr "余白"
 
@@ -1320,31 +1328,27 @@ msgstr "アコーディオン設定"
 msgid "Please enter a question."
 msgstr "質問を入力してください。"
 
-#: src/blocks/faq/index.js:22
-msgid "Classic FAQ"
-msgstr "旧 FAQ"
-
-#: src/blocks/faq/index.js:32 src/blocks/faq2/index.js:27
+#: src/blocks/faq/index.js:31 src/blocks/faq2/index.js:27
 msgid "Bgfill Circle"
 msgstr "背景塗り 円形"
 
-#: src/blocks/faq/index.js:36 src/blocks/faq2/index.js:31
+#: src/blocks/faq/index.js:35 src/blocks/faq2/index.js:31
 msgid "Bgfill Square"
 msgstr "背景塗り ピン角"
 
-#: src/blocks/faq/index.js:40 src/blocks/faq2/index.js:35
+#: src/blocks/faq/index.js:39 src/blocks/faq2/index.js:35
 msgid "Bgfill Rounded"
 msgstr "背景塗り 角丸"
 
-#: src/blocks/faq/index.js:44 src/blocks/faq2/index.js:39
+#: src/blocks/faq/index.js:43 src/blocks/faq2/index.js:39
 msgid "Border Circle"
 msgstr "枠線 円形"
 
-#: src/blocks/faq/index.js:48 src/blocks/faq2/index.js:43
+#: src/blocks/faq/index.js:47 src/blocks/faq2/index.js:43
 msgid "Border Square"
 msgstr "枠線 ピン角"
 
-#: src/blocks/faq/index.js:52 src/blocks/faq2/index.js:47
+#: src/blocks/faq/index.js:51 src/blocks/faq2/index.js:47
 msgid "Border Rounded"
 msgstr "枠線 角丸"
 
@@ -2162,31 +2166,37 @@ msgstr "Font Awesome バージョン"
 msgid "4.7 will be abolished in the near future."
 msgstr "4.7は将来的に廃止されます。"
 
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:72
 #: inc/tgm-plugin-activation/tgm-config.php:77
 msgid "Install Required Plugins"
 msgstr "必須プラグインのインストール"
 
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:73
 #: inc/tgm-plugin-activation/tgm-config.php:78
 msgid "Install Plugins"
 msgstr "プラグインのインストール"
 
 #. translators: %s = plugin name.
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:75
 #: inc/tgm-plugin-activation/tgm-config.php:80
 msgid "Installing Plugin: %s"
 msgstr "プラグイン %s をインストール中"
 
 #. translators: %s = plugin name.
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:76
 #: inc/tgm-plugin-activation/tgm-config.php:81
 msgid "Something went wrong with the plugin API."
 msgstr "プラグイン API で問題が発生しました。"
 
 #. translators:
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:78
 #: inc/tgm-plugin-activation/tgm-config.php:83
 msgid "This plugin requires the following plugin: %1$s."
 msgid_plural "This plugin requires the following plugins: %1$s."
 msgstr[0] "このプラグインは下記プラグインを必要としています：%1$s。"
 
 #. translators: %s = plugin name.
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:84
 #: inc/tgm-plugin-activation/tgm-config.php:89
 msgid ""
 "This plugin recommends the following plugin: %1$s.<br>Many additional "
@@ -2199,6 +2209,7 @@ msgstr[0] ""
 "れらのプラグインは無償で利用可能です。"
 
 #. translators: %s = plugin name.
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:90
 #: inc/tgm-plugin-activation/tgm-config.php:95
 msgid ""
 "Sorry, but you do not have the correct permissions to install the %1$s "
@@ -2209,6 +2220,7 @@ msgid_plural ""
 msgstr[0] "%1$sプラグインをインストールするための適切な権限がありません。"
 
 #. translators: %s = plugin name.
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:96
 #: inc/tgm-plugin-activation/tgm-config.php:101
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -2221,12 +2233,14 @@ msgstr[0] ""
 "に更新する必要があります： %1$s。"
 
 #. translators: %s = plugin name.
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:102
 #: inc/tgm-plugin-activation/tgm-config.php:107
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] "次のプラグインの更新が利用可能です：%1$s。"
 
 #. translators: %s = plugin name.
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:108
 #: inc/tgm-plugin-activation/tgm-config.php:113
 msgid ""
 "Sorry, but you do not have the correct permissions to update the %1$s plugin."
@@ -2236,18 +2250,21 @@ msgid_plural ""
 msgstr[0] "%1$sプラグインを更新するための適切な権限がありません。"
 
 #. translators: %s = plugin name.
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:114
 #: inc/tgm-plugin-activation/tgm-config.php:119
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] "必須プラグインが現在有効化されていません： %1$s。"
 
 #. translators: %s = plugin name.
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:120
 #: inc/tgm-plugin-activation/tgm-config.php:125
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] "推奨プラグインが現在有効化されていません： %1$s。"
 
 #. translators: %s = plugin name.
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:126
 #: inc/tgm-plugin-activation/tgm-config.php:131
 msgid ""
 "Sorry, but you do not have the correct permissions to activate the %1$s "
@@ -2258,39 +2275,47 @@ msgid_plural ""
 msgstr[0] "%1$sプラグインを有効化するための適切な権限がありません。"
 
 #. translators: %s = plugin name.
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:132
 #: inc/tgm-plugin-activation/tgm-config.php:137
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] "プラグインのインストールを開始"
 
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:137
 #: inc/tgm-plugin-activation/tgm-config.php:142
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] "プラグインの更新を開始する"
 
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:142
 #: inc/tgm-plugin-activation/tgm-config.php:147
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] "プラグインの有効化を開始"
 
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:147
 #: inc/tgm-plugin-activation/tgm-config.php:152
 msgid "Return to Required Plugins Installer"
 msgstr "必須プラグインのインストール画面に戻る"
 
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:148
 #: inc/tgm-plugin-activation/tgm-config.php:153
 msgid "Plugin activated successfully."
 msgstr "プラグインを有効化しました。"
 
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:149
 #: inc/tgm-plugin-activation/tgm-config.php:154
 msgid "The following plugin was activated successfully:"
 msgstr "次のプラグインを有効化しました:"
 
 #. translators: %s = plugin name.
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:151
 #: inc/tgm-plugin-activation/tgm-config.php:156
 msgid "No action taken. Plugin %1$s was already active."
 msgstr "操作を実行しませんでした。プラグイン %1$s はすでに有効化されています。"
 
 #. translators: %s = plugin name.
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:153
 #: inc/tgm-plugin-activation/tgm-config.php:158
 msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
@@ -2300,11 +2325,13 @@ msgstr ""
 "ジョンをサポートしていません。プラグインを更新してください。"
 
 #. translators: %s = plugin name.
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:155
 #: inc/tgm-plugin-activation/tgm-config.php:160
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr "すべてのプラグインを正常にインストールし、有効化しました。 %1$s"
 
 #. translators: %s = dashboard link.
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:157
 #: inc/tgm-plugin-activation/tgm-config.php:162
 msgid "Please contact the administrator of this site for help."
 msgstr "ヘルプが必要な場合はこのサイトの管理者にお問い合わせください。"
@@ -2421,10 +2448,12 @@ msgstr "設定"
 msgid "No Post is selected"
 msgstr "投稿が選択されていません"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:319
 #: inc/vk-blocks/vk-blocks-functions.php:319
 msgid "Blocks"
 msgstr "Blocks"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:332
 #: inc/vk-blocks/vk-blocks-functions.php:332
 msgid "Blocks Layout"
 msgstr "ブロックレイアウト"
@@ -2523,10 +2552,12 @@ msgstr ""
 "す。プリロードしたくないファイルがある場合は、ハンドル名（id）を入力してくだ"
 "さい。 例）pluginname_a-style,pluginname_b-css"
 
+#: dist/vk-blocks-pro/src/blocks/page-content/index.php:121
 #: src/blocks/page-content/index.php:128
 msgid "Edit this area"
 msgstr "このエリアを編集"
 
+#: dist/vk-blocks-pro/vk-blocks.php:93 vk-blocks.php:97
 #: vk-blocks.php:97
 msgid ""
 "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks "
@@ -2565,10 +2596,16 @@ msgctxt "block description"
 msgid "This is a border box where you can place headings to attract attention."
 msgstr "見出しを配置でき注目されやすい枠線ボックスです。"
 
+#: dist/vk-blocks-pro/src/blocks/button/block.json src/blocks/button/block.json
 #: src/blocks/button/block.json
 msgctxt "block title"
 msgid "Button"
 msgstr "ボタン"
+
+#: src/blocks/faq/block.json
+msgctxt "block title"
+msgid "Classic FAQ"
+msgstr "旧 FAQ"
 
 #: src/blocks/button/block.json
 msgctxt "block description"
@@ -2580,11 +2617,13 @@ msgctxt "block description"
 msgid "Displays a combination of questions and answers."
 msgstr "質問と回答を組み合わせて表示します。"
 
+#: dist/vk-blocks-pro/src/blocks/faq2-a/block.json src/blocks/faq2-a/block.json
 #: src/blocks/faq2-a/block.json
 msgctxt "block description"
 msgid "Answer area where you can add blocks freely."
 msgstr "自由にブロックを追加できる回答エリアです。"
 
+#: dist/vk-blocks-pro/src/blocks/faq2-q/block.json src/blocks/faq2-q/block.json
 #: src/blocks/faq2-q/block.json
 msgctxt "block description"
 msgid "Question area where you can freely add blocks."
@@ -2611,16 +2650,19 @@ msgid ""
 "margin."
 msgstr "文字サイズ,サブテキスト,アイコン,余白が設定できる見出しです。"
 
+#: dist/vk-blocks-pro/src/blocks/icon-outer/block.json
 #: src/blocks/icon-outer/block.json
 msgctxt "block description"
 msgid "Display the Font Awesome icons horizontally."
 msgstr "Font Awesome のアイコンフォントを横並びに表示します"
 
+#: dist/vk-blocks-pro/src/blocks/icon/block.json src/blocks/icon/block.json
 #: src/blocks/icon/block.json
 msgctxt "block description"
 msgid "Display icons with Font Awesome."
 msgstr "Font Awesome のアイコンフォントを表示します"
 
+#: dist/vk-blocks-pro/src/blocks/page-content/block.json
 #: src/blocks/page-content/block.json
 msgctxt "block title"
 msgid "Page Content"
@@ -2647,6 +2689,7 @@ msgid ""
 "This is PR content where you can place images, headlines, text, and buttons."
 msgstr "画像,見出し,テキスト,ボタンが配置できるPRコンテンツです。"
 
+#: dist/vk-blocks-pro/src/blocks/spacer/block.json src/blocks/spacer/block.json
 #: src/blocks/spacer/block.json
 msgctxt "block title"
 msgid "Responsive Spacer"
@@ -2786,9 +2829,6 @@ msgid ""
 "Displays a simple schedule and other information that is useful for "
 "explaining the order."
 msgstr "順番を説明する時に便利でシンプルなスケジュールなどを表示します。"
-
-#~ msgid "Ballon"
-#~ msgstr "吹き出し"
 
 #~ msgid "Responsive Spacer"
 #~ msgstr "レスポンシブスペーサー"

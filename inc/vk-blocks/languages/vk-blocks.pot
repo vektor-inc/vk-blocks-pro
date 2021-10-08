@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-10-05T06:17:21+00:00\n"
+"POT-Creation-Date: 2021-10-08T08:14:22+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -71,7 +71,7 @@ msgstr ""
 #: src/blocks/_pro/slider/edit.js:193
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95
-#: src/blocks/faq/index.js:27
+#: src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:22
 #: src/extensions/common/inline-font-size/index.js:56
 msgid "Normal"
@@ -1171,10 +1171,6 @@ msgstr ""
 msgid "Icon Name"
 msgstr ""
 
-#: src/blocks/balloon/index.js:24
-msgid "Ballon"
-msgstr ""
-
 #: src/blocks/border-box/deprecated/0.0.0/save.js:24
 #: src/blocks/border-box/deprecated/0.0.1/save.js:25
 #: src/blocks/border-box/edit.js:25
@@ -1376,36 +1372,32 @@ msgstr ""
 msgid "Please enter a question."
 msgstr ""
 
-#: src/blocks/faq/index.js:22
-msgid "Classic FAQ"
-msgstr ""
-
-#: src/blocks/faq/index.js:32
+#: src/blocks/faq/index.js:31
 #: src/blocks/faq2/index.js:27
 msgid "Bgfill Circle"
 msgstr ""
 
-#: src/blocks/faq/index.js:36
+#: src/blocks/faq/index.js:35
 #: src/blocks/faq2/index.js:31
 msgid "Bgfill Square"
 msgstr ""
 
-#: src/blocks/faq/index.js:40
+#: src/blocks/faq/index.js:39
 #: src/blocks/faq2/index.js:35
 msgid "Bgfill Rounded"
 msgstr ""
 
-#: src/blocks/faq/index.js:44
+#: src/blocks/faq/index.js:43
 #: src/blocks/faq2/index.js:39
 msgid "Border Circle"
 msgstr ""
 
-#: src/blocks/faq/index.js:48
+#: src/blocks/faq/index.js:47
 #: src/blocks/faq2/index.js:43
 msgid "Border Square"
 msgstr ""
 
-#: src/blocks/faq/index.js:52
+#: src/blocks/faq/index.js:51
 #: src/blocks/faq2/index.js:47
 msgid "Border Rounded"
 msgstr ""
@@ -1440,10 +1432,6 @@ msgstr ""
 
 #: src/blocks/flow/edit.js:62
 msgid "Input content"
-msgstr ""
-
-#: src/blocks/flow/index.js:19
-msgid "Flow"
 msgstr ""
 
 #: src/blocks/heading/deprecated/0.24.1/component.js:117
@@ -1528,10 +1516,6 @@ msgstr ""
 msgid "Heading %d"
 msgstr ""
 
-#: src/blocks/heading/index.js:20
-msgid "Heading"
-msgstr ""
-
 #: src/blocks/icon-outer/edit.js:176
 #: src/blocks/icon/edit.js:163
 msgid "Reset"
@@ -1580,10 +1564,6 @@ msgstr ""
 
 #: src/blocks/page-content/edit.js:64
 msgid "Select Page"
-msgstr ""
-
-#: src/blocks/page-content/index.js:12
-msgid "Page Content"
 msgstr ""
 
 #: src/blocks/pr-blocks/edit.js:101
@@ -2542,7 +2522,7 @@ msgstr ""
 msgid "If you choose \"Active Preload CSS\" that css load timing was changed.If you have any do not want to preload css file that please fill in handle(id) name. Ex) pluginname_a-style,pluginname_b-css"
 msgstr ""
 
-#: src/blocks/page-content/index.php:121
+#: src/blocks/page-content/index.php:128
 msgid "Edit this area"
 msgstr ""
 
@@ -2558,6 +2538,11 @@ msgstr ""
 #: src/blocks/alert/block.json
 msgctxt "block description"
 msgid "A colored box with four statuses, including annotations and alerts."
+msgstr ""
+
+#: src/blocks/balloon/block.json
+msgctxt "block title"
+msgid "Ballon"
 msgstr ""
 
 #: src/blocks/balloon/block.json
@@ -2586,6 +2571,11 @@ msgid "A button link that can display icons before and after."
 msgstr ""
 
 #: src/blocks/faq/block.json
+msgctxt "block title"
+msgid "Classic FAQ"
+msgstr ""
+
+#: src/blocks/faq/block.json
 msgctxt "block description"
 msgid "Displays a combination of questions and answers."
 msgstr ""
@@ -2606,8 +2596,18 @@ msgid "It displays a combination of questions and answers. You can freely add bl
 msgstr ""
 
 #: src/blocks/flow/block.json
+msgctxt "block title"
+msgid "Flow"
+msgstr ""
+
+#: src/blocks/flow/block.json
 msgctxt "block description"
 msgid "Displays a sequential description in time series."
+msgstr ""
+
+#: src/blocks/heading/block.json
+msgctxt "block title"
+msgid "Heading"
 msgstr ""
 
 #: src/blocks/heading/block.json
@@ -2626,18 +2626,23 @@ msgid "Display icons with Font Awesome."
 msgstr ""
 
 #: src/blocks/page-content/block.json
+msgctxt "block title"
+msgid "Page Content"
+msgstr ""
+
+#: src/blocks/page-content/block.json
 msgctxt "block description"
 msgid "Displays the body content of the specified parent page."
 msgstr ""
 
 #: src/blocks/pr-blocks/block.json
-msgctxt "block description"
-msgid "This is a PR block where you can place images and icon."
-msgstr ""
-
-#: src/blocks/pr-content/block.json
 msgctxt "block title"
 msgid "PR Blocks"
+msgstr ""
+
+#: src/blocks/pr-blocks/block.json
+msgctxt "block description"
+msgid "This is a PR block where you can place images and icon."
 msgstr ""
 
 #: src/blocks/pr-content/block.json

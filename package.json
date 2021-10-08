@@ -45,7 +45,7 @@
 		"sass:pr-content": "sass src/blocks/pr-content/style.scss build/pr-content/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/pr-content/style.css -o build/pr-content/style.css",
 		"watch:pr-content": "sass --watch src/blocks/pr-content/style.scss:build/pr-content/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/pr-content/style.css -o build/pr-content/style.css",
 		"build:pr-content": "npm run js:pr-content && npm run sass:pr-content",
-		"js:post-list": "wp-scripts build src/blocks/_pro/post-list/index.js --output-path=build/post-list",
+		"js:post-list": "wp-scripts build src/blocks/_pro/post-list/index.js --output-path=build/_pro/post-list",
 		"build:post-list": "npm run js:post-list",
 		"js:spacer": "wp-scripts build src/blocks/spacer/index.js --output-path=build/spacer",
 		"sass:spacer": "sass src/blocks/spacer/style.scss build/spacer/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/spacer/style.css -o build/spacer/style.css",

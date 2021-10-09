@@ -77,8 +77,10 @@ msgstr "短い"
 
 #: src/blocks/_pro/animation/edit.js:123 src/blocks/_pro/outer/edit.js:303
 #: src/blocks/_pro/slider/edit.js:193 src/blocks/balloon/edit.js:276
-#: src/blocks/button/edit.js:95 src/blocks/faq/index.js:27
-#: src/blocks/faq2/index.js:21
+
+#: src/blocks/button/edit.js:95 src/blocks/faq/index.js:26
+#: src/blocks/faq2/index.js:22
+
 #: src/extensions/common/inline-font-size/index.js:56
 msgid "Normal"
 msgstr "標準"
@@ -296,10 +298,6 @@ msgstr "親ページ"
 #: src/blocks/_pro/child-page/edit.js:82 src/blocks/_pro/post-list/edit.js:288
 msgid "Ignore this post"
 msgstr "この投稿を除く"
-
-#: src/blocks/_pro/child-page/index.js:18
-msgid "Child page list"
-msgstr "子ページリスト"
 
 #: src/blocks/_pro/grid-column-item/edit.js:106
 msgid "Margin setting inside the item"
@@ -1132,10 +1130,6 @@ msgstr "画像をアップロード"
 msgid "Icon Name"
 msgstr "アイコンの名前"
 
-#: src/blocks/balloon/index.js:24
-msgid "Ballon"
-msgstr "吹き出し"
-
 #: src/blocks/border-box/deprecated/0.0.0/save.js:24
 #: src/blocks/border-box/deprecated/0.0.1/save.js:25
 #: src/blocks/border-box/edit.js:25
@@ -1364,6 +1358,28 @@ msgid "Border Square"
 msgstr "枠線 ピン角"
 
 #: src/blocks/faq/index.js:52 src/blocks/faq2/index.js:46
+
+#: src/blocks/faq/index.js:31 src/blocks/faq2/index.js:27
+msgid "Bgfill Circle"
+msgstr "背景塗り 円形"
+
+#: src/blocks/faq/index.js:35 src/blocks/faq2/index.js:31
+msgid "Bgfill Square"
+msgstr "背景塗り ピン角"
+
+#: src/blocks/faq/index.js:39 src/blocks/faq2/index.js:35
+msgid "Bgfill Rounded"
+msgstr "背景塗り 角丸"
+
+#: src/blocks/faq/index.js:43 src/blocks/faq2/index.js:39
+msgid "Border Circle"
+msgstr "枠線 円形"
+
+#: src/blocks/faq/index.js:47 src/blocks/faq2/index.js:43
+msgid "Border Square"
+msgstr "枠線 ピン角"
+
+#: src/blocks/faq/index.js:51 src/blocks/faq2/index.js:47
 msgid "Border Rounded"
 msgstr "枠線 角丸"
 
@@ -1386,10 +1402,6 @@ msgstr "タイトルを入力"
 #: src/blocks/flow/edit.js:62
 msgid "Input content"
 msgstr "説明を入力"
-
-#: src/blocks/flow/index.js:19
-msgid "Flow"
-msgstr "フロー"
 
 #: src/blocks/heading/deprecated/0.24.1/component.js:117
 #: src/blocks/heading/deprecated/0.24.4/component.js:80
@@ -1564,10 +1576,6 @@ msgstr "画像を設定した場合は画像が優先して表示されます。
 #: src/blocks/pr-blocks/edit.js:320
 msgid "PR Image 3"
 msgstr "PR 画像 3"
-
-#: src/blocks/pr-blocks/index.js:24
-msgid "PR Blocks"
-msgstr "PR Blocks"
 
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:152
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:134
@@ -2679,6 +2687,11 @@ msgctxt "block description"
 msgid "Displays a sequential description in time series."
 msgstr "時系列で順を追った説明を表示します。"
 
+#: src/blocks/heading/block.json
+msgctxt "block title"
+msgid "Heading"
+msgstr "見出し"
+
 #: dist/vk-blocks-pro/src/blocks/heading/block.json
 #: src/blocks/heading/block.json
 msgctxt "block description"
@@ -2874,10 +2887,20 @@ msgid ""
 "explaining the order."
 msgstr "順番を説明する時に便利でシンプルなスケジュールなどを表示します。"
 
+#: src/blocks/_pro/child-page/block.json
+msgctxt "block title"
+msgid "Child page list"
+msgstr "子ページリスト"
+
 #: src/blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
 msgstr "アラート"
+
+#: src/blocks/balloon/block.json
+msgctxt "block title"
+msgid "Ballon"
+msgstr "吹き出し"
 
 #: src/blocks/border-box/block.json
 msgctxt "block title"
@@ -2904,10 +2927,25 @@ msgctxt "block title"
 msgid "New FAQ"
 msgstr "新 FAQ"
 
+#: src/blocks/faq/block.json
+msgctxt "block title"
+msgid "Classic FAQ"
+msgstr "旧 FAQ"
+
+#: src/blocks/flow/block.json
+msgctxt "block title"
+msgid "Flow"
+msgstr "フロー"
+
 #: src/blocks/page-content/block.json
 msgctxt "block title"
 msgid "Page Content"
 msgstr "固定ページ本文"
+
+#: src/blocks/pr-blocks/block.json
+msgctxt "block title"
+msgid "PR Blocks"
+msgstr ""
 
 #: src/blocks/pr-content/block.json
 msgctxt "block title"

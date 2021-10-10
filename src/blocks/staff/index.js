@@ -5,7 +5,7 @@
 /**
  * scss compile
  */
- import './style.scss';
+import './style.scss';
 
 /**
  * Internal dependencies

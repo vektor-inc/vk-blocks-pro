@@ -26,7 +26,7 @@ import {
 /**
  * scss compile
  */
- import './editor.scss';
+import './editor.scss';
 
 export default function StaffEdit({
 	attributes,

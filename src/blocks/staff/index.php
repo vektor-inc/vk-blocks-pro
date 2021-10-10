@@ -19,6 +19,13 @@ function vk_blocks_register_block_staff() {
 			array(),
 			VK_BLOCKS_VERSION
 		);
+	} else {
+		wp_register_style(
+			'vk-blocks/staff',
+			VK_BLOCKS_DIR_URL . '/build/staff/staff.css',
+			array(),
+			filemtime( VK_BLOCKS_DIR_PATH . 'build/staff/staff.css' )
+		);
 	}
 
 	// Register Script.
@@ -35,7 +42,7 @@ function vk_blocks_register_block_staff() {
 		__DIR__,
 		array(
 			'style'         => 'vk-blocks/staff',
-			'editor_style'  => 'vk-blocks-build-editor-css',
+			// 'editor_style'  => 'vk-blocks-build-editor-css',
 			'editor_script' => 'vk-blocks-build-js',
 		)
 	);

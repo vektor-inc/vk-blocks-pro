@@ -5,6 +5,8 @@
     "title": "Staff",
     "description": "Used for staff introduction, company introduction, school introduction, menu, etc.",
     "textdomain": "vk-blocks",
+    "editorStyle": "file:../../../build/staff/staff.css",
+    "style": "file:../../../build/staff/style-staff.css",
 	"attributes": {
 		"vk_staff_text_name": {
             "type": "string",

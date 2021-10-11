@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "POT-Creation-Date: 2021-10-07T05:07:57+00:00\n"
-"PO-Revision-Date: 2021-10-07 14:18+0900\n"
+"PO-Revision-Date: 2021-10-11 14:08+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -77,10 +77,8 @@ msgstr "短い"
 
 #: src/blocks/_pro/animation/edit.js:123 src/blocks/_pro/outer/edit.js:303
 #: src/blocks/_pro/slider/edit.js:193 src/blocks/balloon/edit.js:276
-
 #: src/blocks/button/edit.js:95 src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:22
-
 #: src/extensions/common/inline-font-size/index.js:56
 msgid "Normal"
 msgstr "標準"
@@ -685,10 +683,6 @@ msgstr "PC"
 #: src/components/advanced-unit-control/index.js:12
 msgid "Unit Type"
 msgstr "単位"
-
-#: src/blocks/_pro/outer/index.js:20
-msgid "Outer"
-msgstr "Outer"
 
 #. Filter by %s
 #: src/blocks/_pro/post-list/edit.js:174
@@ -1358,7 +1352,6 @@ msgid "Border Square"
 msgstr "枠線 ピン角"
 
 #: src/blocks/faq/index.js:52 src/blocks/faq2/index.js:46
-
 #: src/blocks/faq/index.js:51 src/blocks/faq2/index.js:47
 msgid "Border Rounded"
 msgstr "枠線 角丸"
@@ -2800,6 +2793,11 @@ msgctxt "block description"
 msgid ""
 "Set the background image, color, and border to show the layout and divisions."
 msgstr "背景の画像や色,枠線の設定しレイアウトや区切りを表示します。"
+
+#: src/blocks/_pro/accordion/block.json
+msgctxt "block title"
+msgid "Outer"
+msgstr "Outer"
 
 #: dist/vk-blocks-pro/src/blocks/_pro/post-list/block.json
 #: src/blocks/_pro/post-list/block.json

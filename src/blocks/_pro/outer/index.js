@@ -2,7 +2,6 @@
  * outer block type
  */
 import { ReactComponent as Icon } from './icon.svg';
-import { __ } from '@wordpress/i18n';
 import { useEffect } from '@wordpress/element';
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
@@ -17,7 +16,6 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-	title: __('Outer', 'vk-blocks'),
 	icon: <Icon />,
 	edit,
 	save,

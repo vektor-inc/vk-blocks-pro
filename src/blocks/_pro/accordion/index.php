@@ -52,4 +52,4 @@ function vk_blocks_register_block_accordion() {
 		)
 	);
 }
-add_action('init', 'vk_blocks_register_block_accordion', 99);
+add_action( 'init', 'vk_blocks_register_block_accordion', 99 );

@@ -68,7 +68,7 @@ msgstr ""
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95
 #: src/blocks/faq/index.js:26
-#: src/blocks/faq2/index.js:21
+#: src/blocks/faq2/index.js:22
 #: src/extensions/common/inline-font-size/index.js:56
 msgid "Normal"
 msgstr ""
@@ -287,6 +287,10 @@ msgstr ""
 #: src/blocks/_pro/child-page/edit.js:82
 #: src/blocks/_pro/post-list/edit.js:288
 msgid "Ignore this post"
+msgstr ""
+
+#: src/blocks/_pro/child-page/index.js:18
+msgid "Child page list"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:106
@@ -1365,33 +1369,45 @@ msgid "Please enter a question."
 msgstr ""
 
 #: src/blocks/faq/index.js:31
-#: src/blocks/faq2/index.js:26
+#: src/blocks/faq2/index.js:27
 msgid "Bgfill Circle"
 msgstr ""
 
 #: src/blocks/faq/index.js:35
-#: src/blocks/faq2/index.js:30
+#: src/blocks/faq2/index.js:31
 msgid "Bgfill Square"
 msgstr ""
 
 #: src/blocks/faq/index.js:39
-#: src/blocks/faq2/index.js:34
+#: src/blocks/faq2/index.js:35
 msgid "Bgfill Rounded"
 msgstr ""
 
 #: src/blocks/faq/index.js:43
-#: src/blocks/faq2/index.js:38
+#: src/blocks/faq2/index.js:39
 msgid "Border Circle"
 msgstr ""
 
 #: src/blocks/faq/index.js:47
-#: src/blocks/faq2/index.js:42
+#: src/blocks/faq2/index.js:43
 msgid "Border Square"
 msgstr ""
 
 #: src/blocks/faq/index.js:51
-#: src/blocks/faq2/index.js:46
+#: src/blocks/faq2/index.js:47
 msgid "Border Rounded"
+msgstr ""
+
+#: src/blocks/faq2-a/index.js:17
+msgid "FAQ Answer"
+msgstr ""
+
+#: src/blocks/faq2-q/index.js:17
+msgid "FAQ Question"
+msgstr ""
+
+#: src/blocks/faq2/index.js:17
+msgid "New FAQ"
 msgstr ""
 
 #: src/blocks/flow/edit.js:21
@@ -1412,6 +1428,10 @@ msgstr ""
 
 #: src/blocks/flow/edit.js:62
 msgid "Input content"
+msgstr ""
+
+#: src/blocks/flow/index.js:19
+msgid "Flow"
 msgstr ""
 
 #: src/blocks/heading/deprecated/0.24.1/component.js:117
@@ -1494,6 +1514,10 @@ msgstr ""
 #. %s: heading level e.g: "1", "2", "3"
 #: src/blocks/heading/heading-level-dropdown.js:68
 msgid "Heading %d"
+msgstr ""
+
+#: src/blocks/heading/index.js:20
+msgid "Heading"
 msgstr ""
 
 #: src/blocks/icon-outer/edit.js:176
@@ -1588,6 +1612,10 @@ msgstr ""
 
 #: src/blocks/pr-blocks/edit.js:320
 msgid "PR Image 3"
+msgstr ""
+
+#: src/blocks/pr-blocks/index.js:24
+msgid "PR Blocks"
 msgstr ""
 
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:152
@@ -2561,18 +2589,8 @@ msgid "Displays a combination of questions and answers."
 msgstr ""
 
 #: src/blocks/faq2-a/block.json
-msgctxt "block title"
-msgid "FAQ Answer"
-msgstr ""
-
-#: src/blocks/faq2-a/block.json
 msgctxt "block description"
 msgid "Answer area where you can add blocks freely."
-msgstr ""
-
-#: src/blocks/faq2-q/block.json
-msgctxt "block title"
-msgid "FAQ Question"
 msgstr ""
 
 #: src/blocks/faq2-q/block.json
@@ -2581,28 +2599,13 @@ msgid "Question area where you can freely add blocks."
 msgstr ""
 
 #: src/blocks/faq2/block.json
-msgctxt "block title"
-msgid "New FAQ"
-msgstr ""
-
-#: src/blocks/faq2/block.json
 msgctxt "block description"
 msgid "It displays a combination of questions and answers. You can freely add blocks to the question area as well."
 msgstr ""
 
 #: src/blocks/flow/block.json
-msgctxt "block title"
-msgid "Flow"
-msgstr ""
-
-#: src/blocks/flow/block.json
 msgctxt "block description"
 msgid "Displays a sequential description in time series."
-msgstr ""
-
-#: src/blocks/heading/block.json
-msgctxt "block title"
-msgid "Heading"
 msgstr ""
 
 #: src/blocks/heading/block.json
@@ -2628,11 +2631,6 @@ msgstr ""
 #: src/blocks/page-content/block.json
 msgctxt "block description"
 msgid "Displays the body content of the specified parent page."
-msgstr ""
-
-#: src/blocks/pr-blocks/block.json
-msgctxt "block title"
-msgid "PR Blocks"
 msgstr ""
 
 #: src/blocks/pr-blocks/block.json
@@ -2698,11 +2696,6 @@ msgstr ""
 #: src/blocks/_pro/card/block.json
 msgctxt "block description"
 msgid "A card where you can place images, headings, text, and links."
-msgstr ""
-
-#: src/blocks/_pro/child-page/block.json
-msgctxt "block title"
-msgid "Child page list"
 msgstr ""
 
 #: src/blocks/_pro/child-page/block.json

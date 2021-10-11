@@ -704,6 +704,10 @@ msgstr ""
 msgid "Unit Type"
 msgstr ""
 
+#: src/blocks/_pro/outer/index.js:20
+msgid "Outer"
+msgstr ""
+
 #. Filter by %s
 #: src/blocks/_pro/post-list/edit.js:174
 msgid "Filter by %s"
@@ -2729,11 +2733,6 @@ msgstr ""
 #: src/blocks/_pro/outer/block.json
 msgctxt "block description"
 msgid "Set the background image, color, and border to show the layout and divisions."
-msgstr ""
-
-#: src/blocks/_pro/outer/block.json
-msgctxt "block title"
-msgid "Outer"
 msgstr ""
 
 #: src/blocks/_pro/post-list/block.json

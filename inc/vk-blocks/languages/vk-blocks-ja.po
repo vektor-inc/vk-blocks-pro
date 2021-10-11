@@ -1359,26 +1359,6 @@ msgstr "枠線 ピン角"
 
 #: src/blocks/faq/index.js:52 src/blocks/faq2/index.js:46
 
-#: src/blocks/faq/index.js:31 src/blocks/faq2/index.js:27
-msgid "Bgfill Circle"
-msgstr "背景塗り 円形"
-
-#: src/blocks/faq/index.js:35 src/blocks/faq2/index.js:31
-msgid "Bgfill Square"
-msgstr "背景塗り ピン角"
-
-#: src/blocks/faq/index.js:39 src/blocks/faq2/index.js:35
-msgid "Bgfill Rounded"
-msgstr "背景塗り 角丸"
-
-#: src/blocks/faq/index.js:43 src/blocks/faq2/index.js:39
-msgid "Border Circle"
-msgstr "枠線 円形"
-
-#: src/blocks/faq/index.js:47 src/blocks/faq2/index.js:43
-msgid "Border Square"
-msgstr "枠線 ピン角"
-
 #: src/blocks/faq/index.js:51 src/blocks/faq2/index.js:47
 msgid "Border Rounded"
 msgstr "枠線 角丸"
@@ -2753,6 +2733,11 @@ msgstr "コンテンツが長い時にコンテンツを折りたたんで隠し
 msgctxt "block description"
 msgid "This is the title area where you can freely add blocks."
 msgstr "自由にブロックを追加できるタイトルエリアです。"
+
+#: src/blocks/_pro/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "アコーディオン"
 
 #: dist/vk-blocks-pro/src/blocks/_pro/accordion/block.json
 #: src/blocks/_pro/accordion/block.json

@@ -11,31 +11,27 @@ msgstr ""
 msgid "Accordion Trigger"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:18
-msgid "Accordion"
-msgstr ""
-
-#: src/blocks/_pro/accordion/index.js:23
+#: src/blocks/_pro/accordion/index.js:22
 msgid "No background color"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:28
+#: src/blocks/_pro/accordion/index.js:27
 msgid "No background color / Border"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:32
+#: src/blocks/_pro/accordion/index.js:31
 msgid "Background color"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:36
+#: src/blocks/_pro/accordion/index.js:35
 msgid "Background color / Border"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:40
+#: src/blocks/_pro/accordion/index.js:39
 msgid "Background color / Rounded "
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:44
+#: src/blocks/_pro/accordion/index.js:43
 msgid "Background color / Rounded / Border"
 msgstr ""
 

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-10-11T05:46:29+00:00\n"
+"POT-Creation-Date: 2021-10-11T06:01:11+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -2658,7 +2658,6 @@ msgid "Used for staff introduction, company introduction, school introduction, m
 msgstr ""
 
 #: src/blocks/_pro/accordion-target/block.json
-#: src/blocks/_pro/accordion-trigger/block.json
 msgctxt "block title"
 msgid "Accordion Target"
 msgstr ""
@@ -2666,6 +2665,11 @@ msgstr ""
 #: src/blocks/_pro/accordion-target/block.json
 msgctxt "block description"
 msgid "This is the content area where you can add blocks freely."
+msgstr ""
+
+#: src/blocks/_pro/accordion-trigger/block.json
+msgctxt "block title"
+msgid "Accordion Trigger"
 msgstr ""
 
 #: src/blocks/_pro/accordion-trigger/block.json

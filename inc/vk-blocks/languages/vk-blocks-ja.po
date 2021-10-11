@@ -2722,11 +2722,21 @@ msgid ""
 "menu, etc."
 msgstr "スタッフ紹介,会社紹介,スクール紹介,メニューなどで利用します。"
 
+#: src/blocks/_pro/accordion-target/block.json
+msgctxt "block title"
+msgid "Accordion Target"
+msgstr "アコーディオンタイトル"
+
 #: dist/vk-blocks-pro/src/blocks/_pro/accordion-target/block.json
 #: src/blocks/_pro/accordion-target/block.json
 msgctxt "block description"
 msgid "This is the content area where you can add blocks freely."
 msgstr "コンテンツが長い時にコンテンツを折りたたんで隠して表示します。"
+
+#: src/blocks/_pro/accordion-trigger/block.json
+msgctxt "block title"
+msgid "Accordion Trigger"
+msgstr "アコーディオンコンテンツ"
 
 #: dist/vk-blocks-pro/src/blocks/_pro/accordion-trigger/block.json
 #: src/blocks/_pro/accordion-trigger/block.json

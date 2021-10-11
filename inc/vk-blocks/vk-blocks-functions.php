@@ -459,8 +459,8 @@ function vk_blocks_register_block_type( $args ) {
 			$args['script'] = null;
 		}
 	}
-	if ( file_exists( VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $array . '/index.php' ) ) {
-		foreach ( $arr_wp56_pro as $array ) {
+	foreach ( $arr_wp56_pro as $array ) {
+		if ( file_exists( VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $array . '/index.php' ) ) {
 			if ( ! empty( $args['style'] ) && 'vk-blocks/' . $array === $args['style'] ) {
 				$args['style']  = null;
 				$args['script'] = null;

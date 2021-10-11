@@ -11,31 +11,27 @@ msgstr ""
 msgid "Accordion Trigger"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:18
-msgid "Accordion"
-msgstr ""
-
-#: src/blocks/_pro/accordion/index.js:23
+#: src/blocks/_pro/accordion/index.js:22
 msgid "No background color"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:28
+#: src/blocks/_pro/accordion/index.js:27
 msgid "No background color / Border"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:32
+#: src/blocks/_pro/accordion/index.js:31
 msgid "Background color"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:36
+#: src/blocks/_pro/accordion/index.js:35
 msgid "Background color / Border"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:40
+#: src/blocks/_pro/accordion/index.js:39
 msgid "Background color / Rounded "
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:44
+#: src/blocks/_pro/accordion/index.js:43
 msgid "Background color / Rounded / Border"
 msgstr ""
 
@@ -61,7 +57,7 @@ msgstr ""
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:95
 #: src/blocks/faq/index.js:26
-#: src/blocks/faq2/index.js:21
+#: src/blocks/faq2/index.js:22
 #: src/extensions/common/inline-font-size/index.js:56
 msgid "Normal"
 msgstr ""
@@ -283,6 +279,10 @@ msgstr ""
 #: src/blocks/_pro/child-page/edit.js:82
 #: src/blocks/_pro/post-list/edit.js:288
 msgid "Ignore this post"
+msgstr ""
+
+#: src/blocks/_pro/child-page/index.js:18
+msgid "Child page list"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:106
@@ -1362,33 +1362,45 @@ msgid "Please enter a question."
 msgstr ""
 
 #: src/blocks/faq/index.js:31
-#: src/blocks/faq2/index.js:26
+#: src/blocks/faq2/index.js:27
 msgid "Bgfill Circle"
 msgstr ""
 
 #: src/blocks/faq/index.js:35
-#: src/blocks/faq2/index.js:30
+#: src/blocks/faq2/index.js:31
 msgid "Bgfill Square"
 msgstr ""
 
 #: src/blocks/faq/index.js:39
-#: src/blocks/faq2/index.js:34
+#: src/blocks/faq2/index.js:35
 msgid "Bgfill Rounded"
 msgstr ""
 
 #: src/blocks/faq/index.js:43
-#: src/blocks/faq2/index.js:38
+#: src/blocks/faq2/index.js:39
 msgid "Border Circle"
 msgstr ""
 
 #: src/blocks/faq/index.js:47
-#: src/blocks/faq2/index.js:42
+#: src/blocks/faq2/index.js:43
 msgid "Border Square"
 msgstr ""
 
 #: src/blocks/faq/index.js:51
-#: src/blocks/faq2/index.js:46
+#: src/blocks/faq2/index.js:47
 msgid "Border Rounded"
+msgstr ""
+
+#: src/blocks/faq2-a/index.js:17
+msgid "FAQ Answer"
+msgstr ""
+
+#: src/blocks/faq2-q/index.js:17
+msgid "FAQ Question"
+msgstr ""
+
+#: src/blocks/faq2/index.js:17
+msgid "New FAQ"
 msgstr ""
 
 #: src/blocks/flow/edit.js:21
@@ -1409,6 +1421,10 @@ msgstr ""
 
 #: src/blocks/flow/edit.js:62
 msgid "Input content"
+msgstr ""
+
+#: src/blocks/flow/index.js:19
+msgid "Flow"
 msgstr ""
 
 #: src/blocks/heading/deprecated/0.24.1/component.js:117
@@ -1491,6 +1507,10 @@ msgstr ""
 #: src/blocks/heading/heading-level-dropdown.js:68
 #. %s: heading level e.g: "1", "2", "3"
 msgid "Heading %d"
+msgstr ""
+
+#: src/blocks/heading/index.js:20
+msgid "Heading"
 msgstr ""
 
 #: src/blocks/icon-outer/edit.js:176
@@ -1585,6 +1605,10 @@ msgstr ""
 
 #: src/blocks/pr-blocks/edit.js:320
 msgid "PR Image 3"
+msgstr ""
+
+#: src/blocks/pr-blocks/index.js:24
+msgid "PR Blocks"
 msgstr ""
 
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:152

@@ -3,7 +3,6 @@
  *
  */
 
-import { __ } from '@wordpress/i18n';
 import { ReactComponent as Icon } from './icon.svg';
 
 // import block files
@@ -15,7 +14,6 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-	title: __('Child page list', 'vk-blocks'),
 	icon: <Icon />,
 	edit,
 };

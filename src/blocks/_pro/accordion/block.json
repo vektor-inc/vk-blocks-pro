@@ -1,10 +1,10 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/accordion",
-	"category": "vk-blocks-cat",
 	"title": "Accordion",
 	"description": "Collapses and hides content when the content is long.",
 	"textdomain": "vk-blocks",
+	"category": "vk-blocks-cat",
 	"attributes": {
 		"containerClass": {
 			"type": "string",

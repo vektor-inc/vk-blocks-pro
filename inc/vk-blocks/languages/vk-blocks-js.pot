@@ -3,14 +3,6 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/_pro/accordion-target/index.js:16
-msgid "Accordion Target"
-msgstr ""
-
-#: src/blocks/_pro/accordion-trigger/index.js:16
-msgid "Accordion Trigger"
-msgstr ""
-
 #: src/blocks/_pro/accordion/index.js:22
 msgid "No background color"
 msgstr ""

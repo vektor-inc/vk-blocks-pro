@@ -86,6 +86,10 @@
 		"sass:accordion": "sass src/blocks/_pro/accordion/style.scss build/_pro/accordion/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/_pro/accordion/style.css -o build//_pro/accordion/style.css",
 		"watch:accordion": "sass --watch src/blocks/_pro/accordion/style.scss:build/_pro/accordion/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/_pro/accordion/style.css -o build/_pro/accordion/style.css",
 		"build:accordion": "npm run js:accordion && npm run sass:accordion",
+		"js:outer": "wp-scripts build src/blocks/_pro/outer/index.js --output-path=build/_pro/outer",
+		"sass:outer": "sass src/blocks/_pro/outer/style.scss build/_pro/outer/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/_pro/outer/style.css -o build//_pro/outer/style.css",
+		"watch:outer": "sass --watch src/blocks/_pro/outer/style.scss:build/_pro/outer/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/_pro/outer/style.css -o build/_pro/outer/style.css",
+		"build:outer": "npm run js:outer && npm run sass:outer",
 		"sass-watch": "sass --watch src/blocks/spacer/style.scss:build/spacer/style.css src/blocks/pr-content/style.scss:build/pr-content/style.css --style compressed",
 		"reinstall": "rm -rf node_modules/ && npm install && npm run build",
 		"prepare": "husky install"

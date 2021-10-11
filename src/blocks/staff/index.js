@@ -3,11 +3,6 @@
  */
 
 /**
- * scss compile
- */
-// import './style.scss';
-
-/**
  * Internal dependencies
  */
 import {

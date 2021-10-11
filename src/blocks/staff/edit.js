@@ -23,11 +23,6 @@ import {
 	MediaUpload,
 } from '@wordpress/block-editor';
 
-/**
- * scss compile
- */
-import './editor.scss';
-
 export default function StaffEdit({
 	attributes,
 	setAttributes,

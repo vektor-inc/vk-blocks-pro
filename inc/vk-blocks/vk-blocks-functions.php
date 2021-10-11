@@ -117,11 +117,6 @@ function vk_blocks_is_lager_than_wp( $target_version, $syntax = '>=' ) {
 function vk_blocks_blocks_assets() {
 	$vk_blocks_options = vk_blocks_get_options();
 
-	// 翻訳を追加.
-	if ( function_exists( 'wp_set_script_translations' ) ) {
-		wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks', plugin_dir_path( __FILE__ ) . 'languages' );
-	}
-
 	// プロ版の値をフロントエンドに出力.
 	include_once ABSPATH . 'wp-admin/includes/plugin.php';
 	if ( is_plugin_active( 'vk-blocks-pro/vk-blocks.php' ) ) {

@@ -55,6 +55,11 @@ function vk_blocks_register_blocks_assets() {
 		true
 	);
 
+	// 翻訳を追加.
+	if ( function_exists( 'wp_set_script_translations' ) ) {
+		wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks', plugin_dir_path( __FILE__ ) . 'languages' );
+	}
+
 	// register_block_type_from_metadataで読み込むブロック.
 	$arr_wp56     = array(
 		'alert',

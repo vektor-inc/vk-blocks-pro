@@ -6,6 +6,7 @@ $vk-color-danger: #dc3545;
 $vk-color-light:#f8f9fa;
 $vk-color-dark:#343a40;
 
+
 .vk_button {
 	margin: 0 auto 5px; /* 他テーマで0だと左寄せになる場合があるのでautoに変更 */
 	text-align: center; /* テキストのみの時のセンター揃え */
@@ -13,6 +14,16 @@ $vk-color-dark:#343a40;
 		a:hover {
 			opacity: 0.8;
 			box-shadow: 0 0 0 0.2rem rgba(171, 184, 195, 0.25);
+		}
+	}
+
+	& a.btn-outline-primary {
+		color: var(--vk-color-primary);
+		border-color: var(--vk-color-primary);
+		&:hover {
+			color: #fff;
+			background-color: var(--vk-color-primary);
+			border-color: var(--vk-color-primary);
 		}
 	}
 
@@ -98,7 +109,8 @@ $vk-color-dark:#343a40;
 		&.btn-outline-light{ color: #212529; }
 	}
 
-	.editor-styles-wrapper &{ 
+	*,
+	.editor-styles-wrapper &{
 		//.editor-styles-wrapper a:not([href])に負けるので追加
 		a,
 		a:hover{
@@ -117,7 +129,7 @@ $vk-color-dark:#343a40;
 				color: var(--vk-color-primary);
 			}
 			&.btn-outline-primary{
-				color: var(--vk-color-primary); 
+				color: var(--vk-color-primary);
 				border-color:var(--vk-color-primary);
 				&:hover:not(.vk_button_link-type-text){
 					background-color:var(--vk-color-primary);

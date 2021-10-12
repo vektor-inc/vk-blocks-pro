@@ -91,6 +91,15 @@
 		"sass:outer": "sass src/blocks/_pro/outer/style.scss build/_pro/outer/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/_pro/outer/style.css -o build//_pro/outer/style.css",
 		"watch:outer": "sass --watch src/blocks/_pro/outer/style.scss:build/_pro/outer/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/_pro/outer/style.css -o build/_pro/outer/style.css",
 		"build:outer": "npm run js:outer && npm run sass:outer",
+
+		"js:grid-column": "wp-scripts build src/blocks/_pro/grid-column/index.js --output-path=build/_pro/grid-column",
+		"sass:grid-column": "sass src/blocks/_pro/grid-column/style.scss build/_pro/grid-column/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/_pro/grid-column/style.css -o build//_pro/grid-column/style.css",
+		"watch:grid-column": "sass --watch src/blocks/_pro/grid-column/style.scss:build/_pro/grid-column/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/_pro/grid-column/style.css -o build/_pro/grid-column/style.css",
+		"build:grid-column": "npm run js:grid-column && npm run sass:grid-column",
+		"js:grid-column-item": "wp-scripts build src/blocks/_pro/grid-column-item/index.js --output-path=build/_pro/grid-column-item",
+		"sass:grid-column-item": "sass src/blocks/_pro/grid-column-item/style.scss build/_pro/grid-column-item/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/_pro/grid-column-item/style.css -o build//_pro/grid-column-item/style.css",
+		"watch:grid-column-item": "sass --watch src/blocks/_pro/grid-column-item/style.scss:build/_pro/grid-column-item/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/_pro/grid-column-item/style.css -o build/_pro/grid-column-item/style.css",
+		"build:grid-column-item": "npm run js:grid-column-item && npm run sass:grid-column-item",
 		"sass-watch": "sass --watch src/blocks/spacer/style.scss:build/spacer/style.css src/blocks/pr-content/style.scss:build/pr-content/style.css --style compressed",
 		"reinstall": "rm -rf node_modules/ && npm install && npm run build",
 		"prepare": "husky install"

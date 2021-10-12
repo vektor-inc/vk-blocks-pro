@@ -91,6 +91,10 @@
 		"sass:outer": "sass src/blocks/_pro/outer/style.scss build/_pro/outer/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/_pro/outer/style.css -o build//_pro/outer/style.css",
 		"watch:outer": "sass --watch src/blocks/_pro/outer/style.scss:build/_pro/outer/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/_pro/outer/style.css -o build/_pro/outer/style.css",
 		"build:outer": "npm run js:outer && npm run sass:outer",
+		"js:table-of-contents-new": "wp-scripts build src/blocks/_pro/table-of-contents-new/index.js --output-path=build/_pro/table-of-contents-new",
+		"sass:table-of-contents-new": "sass src/blocks/_pro/table-of-contents-new/style.scss build/_pro/table-of-contents-new/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/_pro/table-of-contents-new/style.css -o build//_pro/table-of-contents-new/style.css",
+		"watch:table-of-contents-new": "sass --watch src/blocks/_pro/table-of-contents-new/style.scss:build/_pro/table-of-contents-new/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/_pro/table-of-contents-new/style.css -o build/_pro/table-of-contents-new/style.css",
+		"build:table-of-contents-new": "npm run js:table-of-contents-new && npm run sass:table-of-contents-new",
 		"sass-watch": "sass --watch src/blocks/spacer/style.scss:build/spacer/style.css src/blocks/pr-content/style.scss:build/pr-content/style.css --style compressed",
 		"reinstall": "rm -rf node_modules/ && npm install && npm run build",
 		"prepare": "husky install"

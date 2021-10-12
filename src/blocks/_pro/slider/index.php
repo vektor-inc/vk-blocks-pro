@@ -25,7 +25,7 @@ function vk_blocks_register_block_slider() {
 	$asset = include VK_BLOCKS_DIR_PATH . 'build/_pro/slider/block-build.asset.php';
 	wp_register_script(
 		'vk-blocks/slider',
-		VK_BLOCKS_DIR_URL . 'build/_pro/cslider/block-build.js',
+		VK_BLOCKS_DIR_URL . 'build/_pro/slider/block-build.js',
 		$asset['dependencies'],
 		VK_BLOCKS_VERSION,
 		true

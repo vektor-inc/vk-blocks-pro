@@ -41,13 +41,13 @@ function buildBlocks(dirNames, isPro=false) {
             }
             exec(js_cmd);
             // style.scssがあるかチェック
-            const hasStyleFile = fs.existsSync(block_name + '/style.scss')
+            const hasStyleFile = fs.existsSync('./src/blocks/' + block_name + '/style.scss')
             if (hasStyleFile) {
                 let sass_cmd
                 if (isPro) {
-                    sass_cmd = 'npm run sass:block --block=' + block_name
+                    sass_cmd = 'npm run css:block --block=' + block_name
                 } else {
-                    sass_cmd = 'npm run sass:blockpro --block=' + block_name
+                    sass_cmd = 'npm run css:blockpro --block=' + block_name
                 }
                 exec(sass_cmd);
             }

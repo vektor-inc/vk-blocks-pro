@@ -62,4 +62,4 @@ function buildBlocks(dirNames, isPro=false) {
     })
 }
 export default buildBlocks(dirNames);
-//buildBlocks(dirNamesPro,true);
+buildBlocks(dirNamesPro,true);

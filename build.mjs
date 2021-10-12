@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { exec } from 'child_process';
+import { exec, execSync } from 'child_process';
 
 // ./src/blocks/以下のdir名をリスト化（全部リファクタリングが終わったらこっち）
 // const allDirents = fs.readdirSync('./src/blocks/', { withFileTypes: true })
@@ -35,24 +35,31 @@ function buildBlocks(dirNames, isPro=false) {
         if (block_name !== '_pro') {
             let js_cmd
             if (isPro) {
-                js_cmd = 'npm run js:blockpro --block=' + block_name
+                js_cmd = 'npm run build:jspro --block=' + block_name
             } else {
-                js_cmd = 'npm run js:block --block=' + block_name
+                js_cmd = 'npm run build:js --block=' + block_name
             }
-            exec(js_cmd);
+            console.log(js_cmd);
+            execSync(js_cmd);
             // style.scssがあるかチェック
-            const hasStyleFile = fs.existsSync('./src/blocks/' + block_name + '/style.scss')
+            let hasStyleFile
+            if(isPro) {
+                hasStyleFile = fs.existsSync('./src/blocks/_pro/' + block_name + '/style.scss')
+            } else {
+                hasStyleFile = fs.existsSync('./src/blocks/' + block_name + '/style.scss')
+            }
             if (hasStyleFile) {
                 let sass_cmd
                 if (isPro) {
-                    sass_cmd = 'npm run css:block --block=' + block_name
+                    sass_cmd = 'npm run build:csspro --block=' + block_name
                 } else {
-                    sass_cmd = 'npm run css:blockpro --block=' + block_name
+                    sass_cmd = 'npm run build:css --block=' + block_name
                 }
-                exec(sass_cmd);
+                console.log(sass_cmd);
+                execSync(sass_cmd);
             }
         }
     })
 }
-buildBlocks(dirNames);
-buildBlocks(dirNamesPro,true);
+export default buildBlocks(dirNames);
+//buildBlocks(dirNamesPro,true);

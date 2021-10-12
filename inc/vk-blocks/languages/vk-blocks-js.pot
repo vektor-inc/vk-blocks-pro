@@ -3,175 +3,90 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/pr-content/deprecated/0.0.0/save.js:130
-#: src/blocks/pr-content/deprecated/0.0.1/save.js:112
-#: src/blocks/pr-content/deprecated/0.0.2/save.js:207
-#: src/blocks/pr-content/deprecated/0.0.3/component.js:178
-#: src/blocks/pr-content/deprecated/0.43.0/save.js:178
-#: src/blocks/pr-content/deprecated/0.5.1/save.js:116
-#: src/blocks/pr-content/deprecated/0.56.3/component.js:156
-#: src/blocks/pr-content/deprecated/0.58.7/component.js:171
-#: src/blocks/pr-content/deprecated/0.58.9/component.js:171
-#: src/blocks/pr-content/deprecated/1.7.1/mediaUpload.js:68
-#: src/blocks/pr-content/mediaUpload.js:68
+#: src/blocks/staff/deprecated/0.58/component.js:50
+#: src/blocks/staff/edit.js:241
+msgid "Your Name"
+msgstr ""
+
+#: src/blocks/staff/deprecated/0.58/component.js:58
+#: src/blocks/staff/edit.js:251
+msgid "Caption"
+msgstr ""
+
+#: src/blocks/staff/deprecated/0.58/component.js:66
+#: src/blocks/staff/edit.js:261
+msgid "Role position"
+msgstr ""
+
+#: src/blocks/staff/deprecated/0.58/component.js:74
+#: src/blocks/staff/edit.js:271
+msgid "Profile title"
+msgstr ""
+
+#: src/blocks/staff/deprecated/0.58/component.js:82
+#: src/blocks/staff/edit.js:284
+msgid "Profile text"
+msgstr ""
+
+#: src/blocks/staff/deprecated/0.58/component.js:96
+#: src/blocks/staff/edit.js:306
 msgid "Select image"
 msgstr ""
 
-#: src/blocks/pr-content/deprecated/0.0.0/save.js:135
-#: src/blocks/pr-content/deprecated/0.0.1/save.js:117
-#: src/blocks/pr-content/deprecated/0.0.2/save.js:214
-#: src/blocks/pr-content/deprecated/0.0.3/component.js:185
-#: src/blocks/pr-content/deprecated/0.43.0/save.js:185
-#: src/blocks/pr-content/deprecated/0.5.1/save.js:121
-#: src/blocks/pr-content/deprecated/0.56.3/component.js:163
-#: src/blocks/pr-content/deprecated/0.58.7/component.js:178
-#: src/blocks/pr-content/deprecated/0.58.9/component.js:178
-#: src/blocks/pr-content/deprecated/1.7.1/mediaUpload.js:130
-#: src/blocks/pr-content/mediaUpload.js:130
-msgid "Upload image"
+#: src/blocks/staff/edit.js:103
+msgid "Image border"
 msgstr ""
 
-#: src/blocks/pr-content/deprecated/0.0.0/save.js:152
-#: src/blocks/pr-content/deprecated/0.0.1/save.js:134
-#: src/blocks/pr-content/deprecated/0.0.2/save.js:251
-#: src/blocks/pr-content/deprecated/0.0.3/component.js:222
-#: src/blocks/pr-content/deprecated/0.43.0/save.js:222
-#: src/blocks/pr-content/deprecated/0.5.1/save.js:138
-#: src/blocks/pr-content/deprecated/0.56.3/component.js:197
-#: src/blocks/pr-content/deprecated/0.58.7/component.js:215
-#: src/blocks/pr-content/deprecated/0.58.9/component.js:215
-#: src/blocks/pr-content/edit.js:253
-msgid "Input title."
+#: src/blocks/staff/edit.js:113
+msgid "Default"
 msgstr ""
 
-#: src/blocks/pr-content/deprecated/0.0.0/save.js:165
-#: src/blocks/pr-content/deprecated/0.0.1/save.js:147
-#: src/blocks/pr-content/deprecated/0.0.2/save.js:264
-#: src/blocks/pr-content/deprecated/0.0.3/component.js:235
-#: src/blocks/pr-content/deprecated/0.43.0/save.js:235
-#: src/blocks/pr-content/deprecated/0.5.1/save.js:151
-#: src/blocks/pr-content/deprecated/0.56.3/component.js:205
-#: src/blocks/pr-content/deprecated/0.58.7/component.js:228
-#: src/blocks/pr-content/deprecated/0.58.9/component.js:228
-#: src/blocks/pr-content/edit.js:261
-msgid "Input content."
+#: src/blocks/staff/edit.js:117
+msgid "None"
 msgstr ""
 
-#: src/blocks/pr-content/deprecated/1.7.1/mediaUpload.js:120
-#: src/blocks/pr-content/mediaUpload.js:120
-msgid "Select Image"
+#: src/blocks/staff/edit.js:122
+msgid "Alt text"
 msgstr ""
 
-#: src/blocks/pr-content/edit.js:104
-msgid "Button Setting"
+#: src/blocks/staff/edit.js:124
+msgid "Set the alt text for profile image"
 msgstr ""
 
-#: src/blocks/pr-content/edit.js:109
-msgid "Button Text"
+#: src/blocks/staff/edit.js:139
+msgid "Color"
 msgstr ""
 
-#: src/blocks/pr-content/edit.js:121
-msgid "Link URL"
+#: src/blocks/staff/edit.js:142
+msgid "Staff name"
 msgstr ""
 
-#: src/blocks/pr-content/edit.js:130
-msgid "Open link new tab."
+#: src/blocks/staff/edit.js:155
+msgid "Name caption"
 msgstr ""
 
-#: src/blocks/pr-content/edit.js:138
-msgid "Button Type"
+#: src/blocks/staff/edit.js:210
+msgid "Heading Font"
 msgstr ""
 
-#: src/blocks/pr-content/edit.js:143
-msgid "Solid"
+#: src/blocks/staff/edit.js:212
+msgid "Font"
 msgstr ""
 
-#: src/blocks/pr-content/edit.js:144
-msgid "Ghost"
+#: src/blocks/staff/edit.js:216
+msgid "Unspecified"
 msgstr ""
 
-#: src/blocks/pr-content/edit.js:152
-msgid "Default Color:"
+#: src/blocks/staff/edit.js:220
+msgid "minchoBody"
 msgstr ""
 
-#: src/blocks/pr-content/edit.js:156
-msgid "Primary"
+#: src/blocks/staff/edit.js:85
+msgid "Layout"
 msgstr ""
 
-#: src/blocks/pr-content/edit.js:160
-msgid "Secondary"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:164
-msgid "Success"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:167
-msgid "Info"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:169
-msgid "Warning"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:173
-msgid "Danger"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:176
-msgid "Light"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:177
-msgid "Dark"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:185
-msgid "Button Color"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:196
-msgid "Icon ( Font Awesome )"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:200
-msgid "Before text"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:212
-msgid "After text"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:225
-msgid "Layout Setting"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:229
-msgid "Layout Type"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:232
-msgid "Right"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:233
-msgid "Left"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:66
-msgid "Color Setting"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:71
-msgid "Title Color"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:82
-msgid "Content Color"
-msgstr ""
-
-#: src/blocks/pr-content/edit.js:93
-msgid "Image Border Color"
+#: src/blocks/staff/edit.js:98
+msgid "Image left"
 msgstr ""
 
 #: src/utils/example-data.js:14
@@ -202,27 +117,4 @@ msgstr ""
 
 #: src/utils/example-data.js:7
 msgid "Lorem ipsum"
-msgstr ""
-
-#: src/utils/font-awesome-new.js:14
-msgid "Icon"
-msgstr ""
-
-#: src/utils/font-awesome-new.js:188
-msgid ""
-"If you want to use an icon other than the ones listed above, you can use "
-"any of the icons from Font Awesome's icon list Please select a tag and "
-"enter it."
-msgstr ""
-
-#: src/utils/font-awesome-new.js:193
-msgid "Ex) <i class=\"fas fa-arrow-circle-right\"></i>"
-msgstr ""
-
-#: src/utils/font-awesome-new.js:202
-msgid "Font Awesome icon list"
-msgstr ""
-
-#: src/utils/font-awesome-new.js:217
-msgid "Select Icon"
 msgstr ""

@@ -146,11 +146,7 @@ addFilter(
 						</>
 					);
 				}
-				return (
-					<>
-						{el}
-					</>
-				);
+				return <>{el}</>;
 
 				//後方互換
 			}

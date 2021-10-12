@@ -78,6 +78,9 @@ const blockAttributes3 = {
 	fontAwesomeIconAfter: {
 		type: 'string',
 	},
+	subCaption: {
+		type: 'string',
+	},
 }
 
 export const deprecated = [

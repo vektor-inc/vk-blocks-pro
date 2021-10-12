@@ -9,8 +9,7 @@
 			"selector": "span"
 		},
 		"subCaption": {
-			"type": "string",
-			"default": ""
+			"type": "string"
 		},
 		"buttonUrl": {
 			"type": "string"

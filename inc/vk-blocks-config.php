@@ -43,6 +43,7 @@ if ( ! function_exists( 'vk_blocks_active' ) ) {
 	}
 
 	require_once plugin_dir_path( __FILE__ ) . 'admin-notices.php';
+	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/load-block-files.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/vk-blocks-functions.php';
 
 	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/App/RestAPI/BlockMeta/class-vk-blocks-entrypoint.php';

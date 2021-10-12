@@ -3,11 +3,6 @@
  */
 
 /**
- * WordPress dependencies
- */
-import { __ } from '@wordpress/i18n';
-
-/**
  * Internal dependencies
  */
 import {
@@ -30,7 +25,6 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-	title: __('Staff', 'vk-blocks'),
 	icon: <Icon />,
 	example: {
 		attributes: {

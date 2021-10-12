@@ -3,234 +3,226 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/_pro/outer/edit.js:182
-msgid "Background Setting"
+#: src/blocks/pr-content/deprecated/0.0.0/save.js:130
+#: src/blocks/pr-content/deprecated/0.0.1/save.js:112
+#: src/blocks/pr-content/deprecated/0.0.2/save.js:207
+#: src/blocks/pr-content/deprecated/0.0.3/component.js:178
+#: src/blocks/pr-content/deprecated/0.43.0/save.js:178
+#: src/blocks/pr-content/deprecated/0.5.1/save.js:116
+#: src/blocks/pr-content/deprecated/0.56.3/component.js:156
+#: src/blocks/pr-content/deprecated/0.58.7/component.js:171
+#: src/blocks/pr-content/deprecated/0.58.9/component.js:171
+#: src/blocks/pr-content/deprecated/1.7.1/mediaUpload.js:68
+#: src/blocks/pr-content/mediaUpload.js:68
+msgid "Select image"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:187
-msgid "Color Setting"
+#: src/blocks/pr-content/deprecated/0.0.0/save.js:135
+#: src/blocks/pr-content/deprecated/0.0.1/save.js:117
+#: src/blocks/pr-content/deprecated/0.0.2/save.js:214
+#: src/blocks/pr-content/deprecated/0.0.3/component.js:185
+#: src/blocks/pr-content/deprecated/0.43.0/save.js:185
+#: src/blocks/pr-content/deprecated/0.5.1/save.js:121
+#: src/blocks/pr-content/deprecated/0.56.3/component.js:163
+#: src/blocks/pr-content/deprecated/0.58.7/component.js:178
+#: src/blocks/pr-content/deprecated/0.58.9/component.js:178
+#: src/blocks/pr-content/deprecated/1.7.1/mediaUpload.js:130
+#: src/blocks/pr-content/mediaUpload.js:130
+msgid "Upload image"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:188
-msgid ""
-"Color will overcome background image. If you want to display image, clear "
-"background color or set opacity 0."
+#: src/blocks/pr-content/deprecated/0.0.0/save.js:152
+#: src/blocks/pr-content/deprecated/0.0.1/save.js:134
+#: src/blocks/pr-content/deprecated/0.0.2/save.js:251
+#: src/blocks/pr-content/deprecated/0.0.3/component.js:222
+#: src/blocks/pr-content/deprecated/0.43.0/save.js:222
+#: src/blocks/pr-content/deprecated/0.5.1/save.js:138
+#: src/blocks/pr-content/deprecated/0.56.3/component.js:197
+#: src/blocks/pr-content/deprecated/0.58.7/component.js:215
+#: src/blocks/pr-content/deprecated/0.58.9/component.js:215
+#: src/blocks/pr-content/edit.js:253
+msgid "Input title."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:201
-msgid "Opacity Setting"
+#: src/blocks/pr-content/deprecated/0.0.0/save.js:165
+#: src/blocks/pr-content/deprecated/0.0.1/save.js:147
+#: src/blocks/pr-content/deprecated/0.0.2/save.js:264
+#: src/blocks/pr-content/deprecated/0.0.3/component.js:235
+#: src/blocks/pr-content/deprecated/0.43.0/save.js:235
+#: src/blocks/pr-content/deprecated/0.5.1/save.js:151
+#: src/blocks/pr-content/deprecated/0.56.3/component.js:205
+#: src/blocks/pr-content/deprecated/0.58.7/component.js:228
+#: src/blocks/pr-content/deprecated/0.58.9/component.js:228
+#: src/blocks/pr-content/edit.js:261
+msgid "Input content."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:215
-msgid "Background Image PC"
+#: src/blocks/pr-content/deprecated/1.7.1/mediaUpload.js:120
+#: src/blocks/pr-content/mediaUpload.js:120
+msgid "Select Image"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:231
-msgid "Background Image Tablet"
+#: src/blocks/pr-content/edit.js:104
+msgid "Button Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:241
-msgid "Background Image Mobile"
+#: src/blocks/pr-content/edit.js:109
+msgid "Button Text"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:251
-msgid "Background image Position"
+#: src/blocks/pr-content/edit.js:121
+msgid "Link URL"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:259
-msgid "Repeat"
+#: src/blocks/pr-content/edit.js:130
+msgid "Open link new tab."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:263
-msgid "Cover"
+#: src/blocks/pr-content/edit.js:138
+msgid "Button Type"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:267
-msgid "Cover fixed (Not fixed on iPhone)"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:274
-msgid "Parallax (Non-guaranteed)"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:289
-msgid "Layout Setting"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:292
-msgid "Width"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:303
-msgid "Normal"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:313
-msgid "Full Wide"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:318
-msgid "Padding (Left and Right)"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:322
-msgid "Fit to the Content area"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:329
-msgid "Add padding to the Outer area"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:336
-msgid "Remove padding from the Outer area"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:350
-msgid "Padding (Top and Bottom)"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:355
-msgid "Use default padding"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:362
-msgid "Do not use default padding"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:376
-msgid ""
-"* If you select \"Do not use\" that, please set yourself it such as a "
-"spacer block."
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:384
-msgid "Divider Setting"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:389
-msgid "Type"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:397
-msgid "Tilt"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:401
-msgid "Curve"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:405
-msgid "Wave"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:409
-msgid "Triangle"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:415
-msgid "Upper Divider Level"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:440
-msgid "Lower Divider Level"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:466
-msgid "Border Setting"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:471
-msgid "Border will disappear when divider effect is applied."
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:477
-msgid "Border type"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:485
-msgid "None"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:489
+#: src/blocks/pr-content/edit.js:143
 msgid "Solid"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:493
-msgid "Dotted"
+#: src/blocks/pr-content/edit.js:144
+msgid "Ghost"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:497
-msgid "Dashed"
+#: src/blocks/pr-content/edit.js:152
+msgid "Default Color:"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:501
-msgid "Double"
+#: src/blocks/pr-content/edit.js:156
+msgid "Primary"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:505
-msgid "Groove"
+#: src/blocks/pr-content/edit.js:160
+msgid "Secondary"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:509
-msgid "Ridge"
+#: src/blocks/pr-content/edit.js:164
+msgid "Success"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:513
-msgid "Inset"
+#: src/blocks/pr-content/edit.js:167
+msgid "Info"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:517
-msgid "Outset"
+#: src/blocks/pr-content/edit.js:169
+msgid "Warning"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:531
-msgid "Border width"
+#: src/blocks/pr-content/edit.js:173
+msgid "Danger"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:543
-msgid "Border radius"
+#: src/blocks/pr-content/edit.js:176
+msgid "Light"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:559
-msgid "Container Inner Side Space Setting"
+#: src/blocks/pr-content/edit.js:177
+msgid "Dark"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:566
-msgid "Mobile"
+#: src/blocks/pr-content/edit.js:185
+msgid "Button Color"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:581
-msgid "Tablet"
+#: src/blocks/pr-content/edit.js:196
+msgid "Icon ( Font Awesome )"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:596
-msgid "PC"
+#: src/blocks/pr-content/edit.js:200
+msgid "Before text"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:607
-msgid "Unit Type"
+#: src/blocks/pr-content/edit.js:212
+msgid "After text"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:617
-msgid "px"
+#: src/blocks/pr-content/edit.js:225
+msgid "Layout Setting"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:621
-msgid "em"
+#: src/blocks/pr-content/edit.js:229
+msgid "Layout Type"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:625
-msgid "rem"
+#: src/blocks/pr-content/edit.js:232
+msgid "Right"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:629
-msgid "vw"
+#: src/blocks/pr-content/edit.js:233
+msgid "Left"
 msgstr ""
 
-#: src/components/advanced-media-upload/index.js:34
-msgid "Delete Image"
+#: src/blocks/pr-content/edit.js:66
+msgid "Color Setting"
 msgstr ""
 
-#: src/components/advanced-media-upload/index.js:47
-msgid "Select image"
+#: src/blocks/pr-content/edit.js:71
+msgid "Title Color"
+msgstr ""
+
+#: src/blocks/pr-content/edit.js:82
+msgid "Content Color"
+msgstr ""
+
+#: src/blocks/pr-content/edit.js:93
+msgid "Image Border Color"
+msgstr ""
+
+#: src/utils/example-data.js:14
+msgid "Theoretical Physicist"
+msgstr ""
+
+#: src/utils/example-data.js:15
+msgid "Profile"
+msgstr ""
+
+#: src/utils/example-data.js:16
+msgid "Albert Einstein"
+msgstr ""
+
+#: src/utils/example-data.js:17
+msgid "14 March 1879 – 18 April 1955"
+msgstr ""
+
+#: src/utils/example-data.js:2
+msgid "Lorem ipsum dolor"
+msgstr ""
+
+#: src/utils/example-data.js:3
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolore magna aliqua. "
+msgstr ""
+
+#: src/utils/example-data.js:7
+msgid "Lorem ipsum"
+msgstr ""
+
+#: src/utils/font-awesome-new.js:14
+msgid "Icon"
+msgstr ""
+
+#: src/utils/font-awesome-new.js:188
+msgid ""
+"If you want to use an icon other than the ones listed above, you can use "
+"any of the icons from Font Awesome's icon list Please select a tag and "
+"enter it."
+msgstr ""
+
+#: src/utils/font-awesome-new.js:193
+msgid "Ex) <i class=\"fas fa-arrow-circle-right\"></i>"
+msgstr ""
+
+#: src/utils/font-awesome-new.js:202
+msgid "Font Awesome icon list"
+msgstr ""
+
+#: src/utils/font-awesome-new.js:217
+msgid "Select Icon"
 msgstr ""

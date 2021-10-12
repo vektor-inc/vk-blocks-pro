@@ -30,6 +30,7 @@
 		"js:block": "wp-scripts build src/blocks/$npm_config_block/index.js --output-path=build/$npm_config_block",
 		"sass:block": "sass src/blocks/$npm_config_block/style.scss --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/$npm_config_block/style.css -o build/$npm_config_block/style.css",
 		"js:blockpro": "wp-scripts build src/blocks/_pro/$npm_config_block/index.js --output-path=build/_pro/$npm_config_block",
+		"build:all": "node build.mjs",
 		"sass:blockpro": "sass src/blocks/_pro/$npm_config_block/style.scss --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/_pro/$npm_config_block/style.css -o build/_pro/$npm_config_block/style.css",
 		"js:alert": "wp-scripts build src/blocks/alert/index.js --output-path=build/alert",
 		"sass:alert": "sass src/blocks/alert/style.scss build/alert/style.css --style compressed | postcss --use autoprefixer -b 'last 2 versions' build/alert/style.css -o build/alert/style.css",

@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { execSync } from 'child_process';
+import { exec } from 'child_process';
 
 // ./src/blocks/以下のdir名をリスト化（全部リファクタリングが終わったらこっち）
 // const allDirents = fs.readdirSync('./src/blocks/', { withFileTypes: true })
@@ -39,7 +39,7 @@ function buildBlocks(dirNames, isPro=false) {
             } else {
                 js_cmd = 'npm run js:block --block=' + block_name
             }
-            execSync(js_cmd);
+            exec(js_cmd);
             // style.scssがあるかチェック
             const hasStyleFile = fs.existsSync(block_name + '/style.scss')
             if (hasStyleFile) {
@@ -49,7 +49,7 @@ function buildBlocks(dirNames, isPro=false) {
                 } else {
                     sass_cmd = 'npm run sass:blockpro --block=' + block_name
                 }
-                execSync(sass_cmd);
+                exec(sass_cmd);
             }
         }
     })

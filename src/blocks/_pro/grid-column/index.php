@@ -28,7 +28,7 @@ function vk_blocks_register_block_vkb_grid_column() {
 		VK_BLOCKS_VERSION,
 		true
 	);
-	
+
 	register_block_type(
 		__DIR__,
 		array(

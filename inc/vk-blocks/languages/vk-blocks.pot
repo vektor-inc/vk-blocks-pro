@@ -9,9 +9,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-10-11T09:00:27+00:00\n"
+"POT-Creation-Date: 2021-10-12T05:06:37+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.5.0\n"
+"X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: vk-blocks\n"
 
 #: src/blocks/_pro/accordion-target/index.js:16
@@ -190,7 +190,7 @@ msgstr ""
 #: src/blocks/pr-content/deprecated/1.7.1/mediaUpload.js:68
 #: src/blocks/pr-content/mediaUpload.js:68
 #: src/blocks/staff/deprecated/0.58/component.js:96
-#: src/blocks/staff/edit.js:311
+#: src/blocks/staff/edit.js:306
 #: src/components/advanced-media-upload/index.js:47
 msgid "Select image"
 msgstr ""
@@ -361,10 +361,6 @@ msgstr ""
 msgid "Background Color"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/index.js:18
-msgid "Grid Column Item"
-msgstr ""
-
 #: src/blocks/_pro/grid-column/edit.js:53
 msgid "Layout Columns"
 msgstr ""
@@ -375,10 +371,6 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column/edit.js:63
 msgid "Margin Bottom"
-msgstr ""
-
-#: src/blocks/_pro/grid-column/index.js:17
-msgid "Grid Column"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/deprecated/0.0.0/component.js:55
@@ -621,7 +613,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:114
 #: src/blocks/_pro/timeline-item/edit.js:95
 #: src/blocks/balloon/edit.js:338
-#: src/blocks/staff/edit.js:122
+#: src/blocks/staff/edit.js:117
 msgid "None"
 msgstr ""
 
@@ -875,7 +867,7 @@ msgstr ""
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
 #: src/blocks/_pro/timeline-item/edit.js:91
 #: src/blocks/heading/edit.js:228
-#: src/blocks/staff/edit.js:118
+#: src/blocks/staff/edit.js:113
 #: src/extensions/core/heading/style.js:30
 #: src/extensions/core/list/style.js:102
 msgid "Default"
@@ -925,7 +917,7 @@ msgstr ""
 #: src/blocks/_pro/timeline-item/edit.js:53
 #: src/blocks/border-box/edit.js:63
 #: src/blocks/icon/edit.js:246
-#: src/blocks/staff/edit.js:144
+#: src/blocks/staff/edit.js:139
 #: inc/term-color/package/class.term-color.php:41
 #: inc/term-color/package/class.term-color.php:56
 #: inc/term-color/package/class.term-color.php:130
@@ -1530,7 +1522,7 @@ msgid "Link URL"
 msgstr ""
 
 #: src/blocks/page-content/edit.js:10
-#: src/blocks/staff/edit.js:221
+#: src/blocks/staff/edit.js:216
 msgid "Unspecified"
 msgstr ""
 
@@ -1683,68 +1675,68 @@ msgid "Medium"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:50
-#: src/blocks/staff/edit.js:246
+#: src/blocks/staff/edit.js:241
 msgid "Your Name"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:58
-#: src/blocks/staff/edit.js:256
+#: src/blocks/staff/edit.js:251
 msgid "Caption"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:66
-#: src/blocks/staff/edit.js:266
+#: src/blocks/staff/edit.js:261
 msgid "Role position"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:74
-#: src/blocks/staff/edit.js:276
+#: src/blocks/staff/edit.js:271
 msgid "Profile title"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:82
-#: src/blocks/staff/edit.js:289
+#: src/blocks/staff/edit.js:284
 msgid "Profile text"
 msgstr ""
 
 #: src/blocks/staff/edit.js:103
-msgid "Image left"
-msgstr ""
-
-#: src/blocks/staff/edit.js:108
 msgid "Image border"
 msgstr ""
 
-#: src/blocks/staff/edit.js:127
+#: src/blocks/staff/edit.js:122
 msgid "Alt text"
 msgstr ""
 
-#: src/blocks/staff/edit.js:129
+#: src/blocks/staff/edit.js:124
 msgid "Set the alt text for profile image"
 msgstr ""
 
-#: src/blocks/staff/edit.js:147
+#: src/blocks/staff/edit.js:142
 msgid "Staff name"
 msgstr ""
 
-#: src/blocks/staff/edit.js:160
+#: src/blocks/staff/edit.js:155
 msgid "Name caption"
 msgstr ""
 
-#: src/blocks/staff/edit.js:215
+#: src/blocks/staff/edit.js:210
 msgid "Heading Font"
 msgstr ""
 
-#: src/blocks/staff/edit.js:217
+#: src/blocks/staff/edit.js:212
 msgid "Font"
 msgstr ""
 
-#: src/blocks/staff/edit.js:225
+#: src/blocks/staff/edit.js:220
 msgid "minchoBody"
 msgstr ""
 
-#: src/blocks/staff/edit.js:90
+#: src/blocks/staff/edit.js:85
 msgid "Layout"
+msgstr ""
+
+#: src/blocks/staff/edit.js:98
+msgid "Image left"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:20
@@ -2500,289 +2492,4 @@ msgstr ""
 
 #: vk-blocks.php:97
 msgid "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks Plugin running."
-msgstr ""
-
-#: src/blocks/alert/block.json
-msgctxt "block title"
-msgid "Alert"
-msgstr ""
-
-#: src/blocks/alert/block.json
-msgctxt "block description"
-msgid "A colored box with four statuses, including annotations and alerts."
-msgstr ""
-
-#: src/blocks/balloon/block.json
-msgctxt "block title"
-msgid "Ballon"
-msgstr ""
-
-#: src/blocks/balloon/block.json
-msgctxt "block description"
-msgid "These speech balloons are perfect for recreating conversations."
-msgstr ""
-
-#: src/blocks/border-box/block.json
-msgctxt "block title"
-msgid "Border Box"
-msgstr ""
-
-#: src/blocks/border-box/block.json
-msgctxt "block description"
-msgid "This is a border box where you can place headings to attract attention."
-msgstr ""
-
-#: src/blocks/button/block.json
-msgctxt "block title"
-msgid "Button"
-msgstr ""
-
-#: src/blocks/button/block.json
-msgctxt "block description"
-msgid "A button link that can display icons before and after."
-msgstr ""
-
-#: src/blocks/faq/block.json
-msgctxt "block title"
-msgid "Classic FAQ"
-msgstr ""
-
-#: src/blocks/faq/block.json
-msgctxt "block description"
-msgid "Displays a combination of questions and answers."
-msgstr ""
-
-#: src/blocks/faq2-a/block.json
-msgctxt "block title"
-msgid "FAQ Answer"
-msgstr ""
-
-#: src/blocks/faq2-a/block.json
-msgctxt "block description"
-msgid "Answer area where you can add blocks freely."
-msgstr ""
-
-#: src/blocks/faq2-q/block.json
-msgctxt "block title"
-msgid "FAQ Question"
-msgstr ""
-
-#: src/blocks/faq2-q/block.json
-msgctxt "block description"
-msgid "Question area where you can freely add blocks."
-msgstr ""
-
-#: src/blocks/faq2/block.json
-msgctxt "block title"
-msgid "New FAQ"
-msgstr ""
-
-#: src/blocks/faq2/block.json
-msgctxt "block description"
-msgid "It displays a combination of questions and answers. You can freely add blocks to the question area as well."
-msgstr ""
-
-#: src/blocks/flow/block.json
-msgctxt "block title"
-msgid "Flow"
-msgstr ""
-
-#: src/blocks/flow/block.json
-msgctxt "block description"
-msgid "Displays a sequential description in time series."
-msgstr ""
-
-#: src/blocks/heading/block.json
-msgctxt "block title"
-msgid "Heading"
-msgstr ""
-
-#: src/blocks/heading/block.json
-msgctxt "block description"
-msgid "This is a heading that allows you to set text size, subtext, icon, and margin."
-msgstr ""
-
-#: src/blocks/icon-outer/block.json
-msgctxt "block description"
-msgid "Display the Font Awesome icons horizontally."
-msgstr ""
-
-#: src/blocks/icon/block.json
-msgctxt "block description"
-msgid "Display icons with Font Awesome."
-msgstr ""
-
-#: src/blocks/page-content/block.json
-msgctxt "block title"
-msgid "Page Content"
-msgstr ""
-
-#: src/blocks/page-content/block.json
-msgctxt "block description"
-msgid "Displays the body content of the specified parent page."
-msgstr ""
-
-#: src/blocks/pr-blocks/block.json
-msgctxt "block title"
-msgid "PR Blocks"
-msgstr ""
-
-#: src/blocks/pr-blocks/block.json
-msgctxt "block description"
-msgid "This is a PR block where you can place images and icon."
-msgstr ""
-
-#: src/blocks/pr-content/block.json
-msgctxt "block title"
-msgid "PR Content"
-msgstr ""
-
-#: src/blocks/pr-content/block.json
-msgctxt "block description"
-msgid "This is PR content where you can place images, headlines, text, and buttons."
-msgstr ""
-
-#: src/blocks/spacer/block.json
-msgctxt "block title"
-msgid "Responsive Spacer"
-msgstr ""
-
-#: src/blocks/spacer/block.json
-msgctxt "block description"
-msgid "Use responsive spacers to get the margins right."
-msgstr ""
-
-#: src/blocks/staff/block.json
-msgctxt "block title"
-msgid "Staff"
-msgstr ""
-
-#: src/blocks/staff/block.json
-msgctxt "block description"
-msgid "Used for staff introduction, company introduction, school introduction, menu, etc."
-msgstr ""
-
-#: src/blocks/_pro/accordion-target/block.json
-msgctxt "block description"
-msgid "This is the content area where you can add blocks freely."
-msgstr ""
-
-#: src/blocks/_pro/accordion-trigger/block.json
-msgctxt "block description"
-msgid "This is the title area where you can freely add blocks."
-msgstr ""
-
-#: src/blocks/_pro/accordion/block.json
-msgctxt "block title"
-msgid "Accordion"
-msgstr ""
-
-#: src/blocks/_pro/accordion/block.json
-msgctxt "block description"
-msgid "Collapses and hides content when the content is long."
-msgstr ""
-
-#: src/blocks/_pro/animation/block.json
-msgctxt "block description"
-msgid "Add animation to elements when scrolling the page."
-msgstr ""
-
-#: src/blocks/_pro/card-item/block.json
-msgctxt "block description"
-msgid "A single item in a card block."
-msgstr ""
-
-#: src/blocks/_pro/card/block.json
-msgctxt "block description"
-msgid "A card where you can place images, headings, text, and links."
-msgstr ""
-
-#: src/blocks/_pro/child-page/block.json
-msgctxt "block title"
-msgid "Child page list"
-msgstr ""
-
-#: src/blocks/_pro/child-page/block.json
-msgctxt "block description"
-msgid "When a parent page is specified, a list of its child pages will be displayed."
-msgstr ""
-
-#: src/blocks/_pro/grid-column-item/block.json
-msgctxt "block description"
-msgid "One item in a grit column block."
-msgstr ""
-
-#: src/blocks/_pro/grid-column/block.json
-msgctxt "block description"
-msgid "Set the number of columns to be displayed for each screen size."
-msgstr ""
-
-#: src/blocks/_pro/icon-card-item/block.json
-msgctxt "block description"
-msgid "This is one item in an icon card."
-msgstr ""
-
-#: src/blocks/_pro/icon-card/block.json
-msgctxt "block description"
-msgid "Display card with icons, headings, text, and links."
-msgstr ""
-
-#: src/blocks/_pro/outer/block.json
-msgctxt "block title"
-msgid "Outer"
-msgstr ""
-
-#: src/blocks/_pro/outer/block.json
-msgctxt "block description"
-msgid "Set the background image, color, and border to show the layout and divisions."
-msgstr ""
-
-#: src/blocks/_pro/post-list/block.json
-msgctxt "block description"
-msgid "Displays the list of posts by setting the post type, classification, and number of posts to display."
-msgstr ""
-
-#: src/blocks/_pro/select-post-list-item/block.json
-msgctxt "block description"
-msgid "A single item in the select post list."
-msgstr ""
-
-#: src/blocks/_pro/select-post-list/block.json
-msgctxt "block description"
-msgid "Displays an arbitrarily specified page with the layout of the posting list."
-msgstr ""
-
-#: src/blocks/_pro/slider-item/block.json
-msgctxt "block description"
-msgid "This is one item in the slider."
-msgstr ""
-
-#: src/blocks/_pro/slider/block.json
-msgctxt "block description"
-msgid "This slider allows you to place various items.Slider is do not move in edit screen."
-msgstr ""
-
-#: src/blocks/_pro/step-item/block.json
-msgctxt "block description"
-msgid "This element sets the icon, color, and style of the step mark."
-msgstr ""
-
-#: src/blocks/_pro/step/block.json
-msgctxt "block description"
-msgid "Set and display step marks, which are useful when explaining the order."
-msgstr ""
-
-#: src/blocks/_pro/table-of-contents-new/block.json
-msgctxt "block description"
-msgid "This is a table of contents that is automatically generated according to the headings when added."
-msgstr ""
-
-#: src/blocks/_pro/timeline-item/block.json
-msgctxt "block description"
-msgid "This element sets the label, color, and style of the timeline."
-msgstr ""
-
-#: src/blocks/_pro/timeline/block.json
-msgctxt "block description"
-msgid "Displays a simple schedule and other information that is useful for explaining the order."
 msgstr ""

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-10-11T02:39:03+00:00\n"
+"POT-Creation-Date: 2021-10-11T09:00:27+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -190,7 +190,7 @@ msgstr ""
 #: src/blocks/pr-content/deprecated/1.7.1/mediaUpload.js:68
 #: src/blocks/pr-content/mediaUpload.js:68
 #: src/blocks/staff/deprecated/0.58/component.js:96
-#: src/blocks/staff/edit.js:306
+#: src/blocks/staff/edit.js:311
 #: src/components/advanced-media-upload/index.js:47
 msgid "Select image"
 msgstr ""
@@ -621,7 +621,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:114
 #: src/blocks/_pro/timeline-item/edit.js:95
 #: src/blocks/balloon/edit.js:338
-#: src/blocks/staff/edit.js:117
+#: src/blocks/staff/edit.js:122
 msgid "None"
 msgstr ""
 
@@ -702,10 +702,6 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:607
 #: src/components/advanced-unit-control/index.js:12
 msgid "Unit Type"
-msgstr ""
-
-#: src/blocks/_pro/outer/index.js:20
-msgid "Outer"
 msgstr ""
 
 #. Filter by %s
@@ -810,9 +806,6 @@ msgstr ""
 msgid "Remove padding from the Slider area"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/index.js:18
-msgid "Slider Item"
-msgstr ""
 
 #: src/blocks/_pro/slider/edit.js:106
 msgid "Multi-image Display Setting"
@@ -879,7 +872,7 @@ msgstr ""
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
 #: src/blocks/_pro/timeline-item/edit.js:91
 #: src/blocks/heading/edit.js:228
-#: src/blocks/staff/edit.js:113
+#: src/blocks/staff/edit.js:118
 #: src/extensions/core/heading/style.js:30
 #: src/extensions/core/list/style.js:102
 msgid "Default"
@@ -908,10 +901,6 @@ msgstr ""
 msgid "Bottom on Mobile device"
 msgstr ""
 
-#: src/blocks/_pro/slider/index.js:21
-msgid "Slider"
-msgstr ""
-
 #: src/blocks/_pro/step-item/edit.js:54
 msgid "Step Mark"
 msgstr ""
@@ -929,7 +918,7 @@ msgstr ""
 #: src/blocks/_pro/timeline-item/edit.js:53
 #: src/blocks/border-box/edit.js:63
 #: src/blocks/icon/edit.js:246
-#: src/blocks/staff/edit.js:139
+#: src/blocks/staff/edit.js:144
 #: inc/term-color/package/class.term-color.php:41
 #: inc/term-color/package/class.term-color.php:56
 #: inc/term-color/package/class.term-color.php:130
@@ -1534,7 +1523,7 @@ msgid "Link URL"
 msgstr ""
 
 #: src/blocks/page-content/edit.js:10
-#: src/blocks/staff/edit.js:216
+#: src/blocks/staff/edit.js:221
 msgid "Unspecified"
 msgstr ""
 
@@ -1687,72 +1676,68 @@ msgid "Medium"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:50
-#: src/blocks/staff/edit.js:241
+#: src/blocks/staff/edit.js:246
 msgid "Your Name"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:58
-#: src/blocks/staff/edit.js:251
+#: src/blocks/staff/edit.js:256
 msgid "Caption"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:66
-#: src/blocks/staff/edit.js:261
+#: src/blocks/staff/edit.js:266
 msgid "Role position"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:74
-#: src/blocks/staff/edit.js:271
+#: src/blocks/staff/edit.js:276
 msgid "Profile title"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:82
-#: src/blocks/staff/edit.js:284
+#: src/blocks/staff/edit.js:289
 msgid "Profile text"
 msgstr ""
 
 #: src/blocks/staff/edit.js:103
-msgid "Image border"
-msgstr ""
-
-#: src/blocks/staff/edit.js:122
-msgid "Alt text"
-msgstr ""
-
-#: src/blocks/staff/edit.js:124
-msgid "Set the alt text for profile image"
-msgstr ""
-
-#: src/blocks/staff/edit.js:142
-msgid "Staff name"
-msgstr ""
-
-#: src/blocks/staff/edit.js:155
-msgid "Name caption"
-msgstr ""
-
-#: src/blocks/staff/edit.js:210
-msgid "Heading Font"
-msgstr ""
-
-#: src/blocks/staff/edit.js:212
-msgid "Font"
-msgstr ""
-
-#: src/blocks/staff/edit.js:220
-msgid "minchoBody"
-msgstr ""
-
-#: src/blocks/staff/edit.js:85
-msgid "Layout"
-msgstr ""
-
-#: src/blocks/staff/edit.js:98
 msgid "Image left"
 msgstr ""
 
-#: src/blocks/staff/index.js:33
-msgid "Staff"
+#: src/blocks/staff/edit.js:108
+msgid "Image border"
+msgstr ""
+
+#: src/blocks/staff/edit.js:127
+msgid "Alt text"
+msgstr ""
+
+#: src/blocks/staff/edit.js:129
+msgid "Set the alt text for profile image"
+msgstr ""
+
+#: src/blocks/staff/edit.js:147
+msgid "Staff name"
+msgstr ""
+
+#: src/blocks/staff/edit.js:160
+msgid "Name caption"
+msgstr ""
+
+#: src/blocks/staff/edit.js:215
+msgid "Heading Font"
+msgstr ""
+
+#: src/blocks/staff/edit.js:217
+msgid "Font"
+msgstr ""
+
+#: src/blocks/staff/edit.js:225
+msgid "minchoBody"
+msgstr ""
+
+#: src/blocks/staff/edit.js:90
+msgid "Layout"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:20
@@ -2661,6 +2646,11 @@ msgid "Use responsive spacers to get the margins right."
 msgstr ""
 
 #: src/blocks/staff/block.json
+msgctxt "block title"
+msgid "Staff"
+msgstr ""
+
+#: src/blocks/staff/block.json
 msgctxt "block description"
 msgid "Used for staff introduction, company introduction, school introduction, menu, etc."
 msgstr ""
@@ -2731,6 +2721,11 @@ msgid "Display card with icons, headings, text, and links."
 msgstr ""
 
 #: src/blocks/_pro/outer/block.json
+msgctxt "block title"
+msgid "Outer"
+msgstr ""
+
+#: src/blocks/_pro/outer/block.json
 msgctxt "block description"
 msgid "Set the background image, color, and border to show the layout and divisions."
 msgstr ""
@@ -2750,9 +2745,19 @@ msgctxt "block description"
 msgid "Displays an arbitrarily specified page with the layout of the posting list."
 msgstr ""
 
+#: src/blocks/_pro/slider/block.json
+msgctxt "block title"
+msgid "Slider Item"
+msgstr ""
+
 #: src/blocks/_pro/slider-item/block.json
 msgctxt "block description"
 msgid "This is one item in the slider."
+msgstr ""
+
+#: src/blocks/_pro/slider/block.json
+msgctxt "block title"
+msgid "Slider"
 msgstr ""
 
 #: src/blocks/_pro/slider/block.json

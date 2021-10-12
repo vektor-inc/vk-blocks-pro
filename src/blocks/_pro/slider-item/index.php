@@ -34,7 +34,7 @@ function vk_blocks_register_block_slider_item() {
 	register_block_type(
 		__DIR__,
 		array(
-			'style'           => 'vk-blocks/slider-item',
+			'style'         => 'vk-blocks/slider-item',
 			'editor_style'  => 'vk-blocks-build-editor-css',
 			'editor_script' => 'vk-blocks-build-js',
 		)

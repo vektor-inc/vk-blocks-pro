@@ -959,7 +959,6 @@ msgstr ""
 
 #: src/blocks/_pro/table-of-contents-new/deprecated/0.59.1/save.js:19
 #: src/blocks/_pro/table-of-contents-new/edit.js:178
-#: src/blocks/_pro/table-of-contents-new/index.js:17
 #: src/blocks/_pro/table-of-contents-new/save.js:16
 msgid "Table of Contents"
 msgstr ""
@@ -2770,6 +2769,11 @@ msgstr ""
 #: src/blocks/_pro/step/block.json
 msgctxt "block description"
 msgid "Set and display step marks, which are useful when explaining the order."
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/block.json
+msgctxt "block title"
+msgid "Table of Contents"
 msgstr ""
 
 #: src/blocks/_pro/table-of-contents-new/block.json

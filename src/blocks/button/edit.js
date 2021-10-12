@@ -16,9 +16,10 @@ import {
 	ColorPalette,
 	useBlockProps,
 } from '@wordpress/block-editor';
+import { useEffect } from '@wordpress/element';
 
 export default function ButtonEdit(props) {
-	const { attributes, setAttributes } = props;
+	const { attributes, setAttributes, clientId } = props;
 	const {
 		content,
 		subCaption,
@@ -33,11 +34,15 @@ export default function ButtonEdit(props) {
 		fontAwesomeIconAfter,
 	} = attributes;
 
+	useEffect(() => {
+		setAttributes({ clientId });
+	}, [clientId]);
+
 	let containerClass;
 	if (buttonColorCustom) {
-		containerClass = `vk_button vk_button-align-${buttonAlign} vk_button-color-custom`;
+		containerClass = `vk_button vk_button-${clientId} vk_button-align-${buttonAlign} vk_button-color-custom`;
 	} else {
-		containerClass = `vk_button vk_button-align-${buttonAlign}`;
+		containerClass = `vk_button vk_button-${clientId} vk_button-align-${buttonAlign}`;
 	}
 
 	const blockProps = useBlockProps({

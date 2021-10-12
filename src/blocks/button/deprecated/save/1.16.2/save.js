@@ -1,8 +1,7 @@
 import { VKBButton } from './component';
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
-export default function save(props) {
-	const { attributes } = props;
+export default function save({ attributes }) {
 	const {
 		content,
 		subCaption,
@@ -15,14 +14,13 @@ export default function save(props) {
 		buttonAlign,
 		fontAwesomeIconBefore,
 		fontAwesomeIconAfter,
-		clientId,
 	} = attributes;
 
 	let containerClass = '';
 	if (buttonColorCustom && 'undefined' !== buttonColorCustom) {
-		containerClass = `vk_button vk_button-${clientId} vk_button-color-custom vk_button-align-${buttonAlign}`;
+		containerClass = `vk_button vk_button-color-custom vk_button-align-${buttonAlign}`;
 	} else {
-		containerClass = `vk_button vk_button-${clientId} vk_button-align-${buttonAlign}`;
+		containerClass = `vk_button vk_button-align-${buttonAlign}`;
 	}
 
 	const blockProps = useBlockProps.save({

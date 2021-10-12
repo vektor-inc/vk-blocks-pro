@@ -106,12 +106,12 @@ function vk_blocks_register_blocks_assets() {
 	);
 
 	if ( function_exists( 'register_block_type_from_metadata' ) ) {
-		foreach ( $arr_wp56 as $array ) {
-			require_once VK_BLOCKS_SRC_PATH . '/blocks/' . $array . '/index.php';
+		foreach ( $arr_wp56 as $block_name ) {
+			require_once VK_BLOCKS_SRC_PATH . '/blocks/' . $block_name . '/index.php';
 		}
-		foreach ( $arr_wp56_pro as $array ) {
-			if ( file_exists( VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $array . '/index.php' ) ) {
-				require_once VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $array . '/index.php';
+		foreach ( $arr_wp56_pro as $block_name ) {
+			if ( file_exists( VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $block_name . '/index.php' ) ) {
+				require_once VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $block_name . '/index.php';
 			}
 		}
 	}
@@ -119,14 +119,14 @@ function vk_blocks_register_blocks_assets() {
 add_action( 'init', 'vk_blocks_register_blocks_assets', 10 );
 
 /**
- * VK Blocks register_block_type filter
+ * VK Blocks separate assets load filter
  * cssを分割しない場合はregister_block_typeで登録したscriptやstyleを読み込ませない
  * add_filter('vk_blocks_should_load_separate_assets', '__return_true'); にするとブロックごとのcssを読み込む
  *
  *  @param array $args Array of arguments for registering a block type.
  *  @return array Return filter style, script, editor_style and editor_script added.
  */
-function vk_blocks_register_block_type( $args ) {
+function vk_blocks_separate_assets_load_filter( $args ) {
 	if ( apply_filters( 'vk_blocks_should_load_separate_assets', false ) ) {
 		return $args;
 	}
@@ -174,15 +174,15 @@ function vk_blocks_register_block_type( $args ) {
 		'timeline-item',
 	);
 
-	foreach ( $arr_wp56 as $array ) {
-		if ( ! empty( $args['style'] ) && 'vk-blocks/' . $array === $args['style'] ) {
+	foreach ( $arr_wp56 as $block_name ) {
+		if ( ! empty( $args['style'] ) && 'vk-blocks/' . $block_name === $args['style'] ) {
 			$args['style']  = null;
 			$args['script'] = null;
 		}
 	}
-	if ( file_exists( VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $array . '/index.php' ) ) {
-		foreach ( $arr_wp56_pro as $array ) {
-			if ( ! empty( $args['style'] ) && 'vk-blocks/' . $array === $args['style'] ) {
+	foreach ( $arr_wp56_pro as $block_name ) {
+		if ( file_exists( VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $block_name . '/index.php' ) ) {
+			if ( ! empty( $args['style'] ) && 'vk-blocks/' . $block_name === $args['style'] ) {
 				$args['style']  = null;
 				$args['script'] = null;
 			}
@@ -190,4 +190,4 @@ function vk_blocks_register_block_type( $args ) {
 	}
 	return $args;
 }
-add_filter( 'register_block_type_args', 'vk_blocks_register_block_type' );
+add_filter( 'register_block_type_args', 'vk_blocks_separate_assets_load_filter' );

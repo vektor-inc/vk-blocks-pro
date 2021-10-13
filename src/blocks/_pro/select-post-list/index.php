@@ -11,7 +11,7 @@
  * @return void
  */
 function vk_blocks_register_block_select_post_list() {
-	
+
 	// Register Script.
 	$asset = include VK_BLOCKS_DIR_PATH . 'build/_pro/select-post-list/block-build.asset.php';
 	wp_register_script(

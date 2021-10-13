@@ -42,6 +42,7 @@ bin/dist_kuru.sh
 ### 分割リファクタリング後のブロック
 
 `[block-name]` のところは各ブロック名（dirname)を入力します
+ex. `npm run build:block --block=alert`
 
 ```
 //  Block毎にBuild

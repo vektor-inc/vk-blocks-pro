@@ -25,6 +25,17 @@ function vk_blocks_post_list_render_callback( $attributes ) {
  */
 function vk_blocks_register_block_post_list() {
 	global $vk_blocks_common_attributes;
+
+	// Register Script.
+	$asset = include VK_BLOCKS_DIR_PATH . 'build/_pro/post-list/block-build.asset.php';
+	wp_register_script(
+		'vk-blocks/post-list',
+		VK_BLOCKS_DIR_URL . 'build/_pro/post-list/block-build.js',
+		$asset['dependencies'],
+		VK_BLOCKS_VERSION,
+		true
+	);
+
 	register_block_type(
 		__DIR__,
 		array(

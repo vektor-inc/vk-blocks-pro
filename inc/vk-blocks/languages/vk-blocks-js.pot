@@ -3,90 +3,24 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/staff/deprecated/0.58/component.js:50
-#: src/blocks/staff/edit.js:241
-msgid "Your Name"
+#: src/blocks/alert/edit.js:19
+msgid "Style Settings"
 msgstr ""
 
-#: src/blocks/staff/deprecated/0.58/component.js:58
-#: src/blocks/staff/edit.js:251
-msgid "Caption"
+#: src/blocks/alert/edit.js:25
+msgid "Success"
 msgstr ""
 
-#: src/blocks/staff/deprecated/0.58/component.js:66
-#: src/blocks/staff/edit.js:261
-msgid "Role position"
+#: src/blocks/alert/edit.js:28
+msgid "Info"
 msgstr ""
 
-#: src/blocks/staff/deprecated/0.58/component.js:74
-#: src/blocks/staff/edit.js:271
-msgid "Profile title"
+#: src/blocks/alert/edit.js:30
+msgid "Warning"
 msgstr ""
 
-#: src/blocks/staff/deprecated/0.58/component.js:82
-#: src/blocks/staff/edit.js:284
-msgid "Profile text"
-msgstr ""
-
-#: src/blocks/staff/deprecated/0.58/component.js:96
-#: src/blocks/staff/edit.js:306
-msgid "Select image"
-msgstr ""
-
-#: src/blocks/staff/edit.js:103
-msgid "Image border"
-msgstr ""
-
-#: src/blocks/staff/edit.js:113
-msgid "Default"
-msgstr ""
-
-#: src/blocks/staff/edit.js:117
-msgid "None"
-msgstr ""
-
-#: src/blocks/staff/edit.js:122
-msgid "Alt text"
-msgstr ""
-
-#: src/blocks/staff/edit.js:124
-msgid "Set the alt text for profile image"
-msgstr ""
-
-#: src/blocks/staff/edit.js:139
-msgid "Color"
-msgstr ""
-
-#: src/blocks/staff/edit.js:142
-msgid "Staff name"
-msgstr ""
-
-#: src/blocks/staff/edit.js:155
-msgid "Name caption"
-msgstr ""
-
-#: src/blocks/staff/edit.js:210
-msgid "Heading Font"
-msgstr ""
-
-#: src/blocks/staff/edit.js:212
-msgid "Font"
-msgstr ""
-
-#: src/blocks/staff/edit.js:216
-msgid "Unspecified"
-msgstr ""
-
-#: src/blocks/staff/edit.js:220
-msgid "minchoBody"
-msgstr ""
-
-#: src/blocks/staff/edit.js:85
-msgid "Layout"
-msgstr ""
-
-#: src/blocks/staff/edit.js:98
-msgid "Image left"
+#: src/blocks/alert/edit.js:34
+msgid "Danger"
 msgstr ""
 
 #: src/utils/example-data.js:14

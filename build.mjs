@@ -5,61 +5,59 @@ import { exec, execSync } from 'child_process';
 // const allDirents = fs.readdirSync('./src/blocks/', { withFileTypes: true })
 // const dirNames = allDirents.filter(dirent => dirent.isDirectory()).map(({ name }) => name)
 
+// リファクタリングが終わるまでは手書きでリストにしていく proブロックは1を渡す
 const dirNames = [
-    'alert',
-    'balloon',
-    'button',
-    'border-box',
-    'faq',
-    'faq2',
-    'faq2-a',
-    'faq2-q',
-    'flow',
-    'heading',
-    'page-content',
-    'pr-blocks',
-    'pr-content',
-    'spacer',
-    'staff',
+    { name: 'alert', isPro: 0 },
+    { name: 'balloon', isPro: 0 },
+    { name: 'button', isPro: 0 },
+    { name: 'border-box', isPro: 0 },
+    { name: 'faq', isPro: 0 },
+    { name: 'faq2', isPro: 0 },
+    { name: 'faq2-a', isPro: 0 },
+    { name: 'faq2-q', isPro: 0 },
+    { name: 'flow', isPro: 0 },
+    { name: 'heading', isPro: 0 },
+    { name: 'page-content', isPro: 0 },
+    { name: 'pr-blocks', isPro: 0 },
+    { name: 'pr-content', isPro: 0 },
+    { name: 'spacer', isPro: 0 },
+    { name: 'staff', isPro: 0 },
+    { name: 'accordion', isPro: 1 },
+    { name: 'child-page', isPro: 1 },
+    { name: 'outer', isPro: 1 },
 ]
 
-const dirNamesPro = [
-    'accordion',
-    'child-page',
-    'outer'
-]
+// mode が dev かどうか受け取る
+const isDev = process.argv[2]
+let devText
+if (isDev) {
+    devText = ":dev"
+}
 
-function buildBlocks(dirNames, isPro=false) {
-    dirNames.map((block_name) => {
-        console.log(block_name);
-        if (block_name !== '_pro') {
-            let js_cmd
-            if (isPro) {
-                js_cmd = 'npm run build:jspro --block=' + block_name
-            } else {
-                js_cmd = 'npm run build:js --block=' + block_name
-            }
+function buildBlocks(dirNames, devText = "") {
+    dirNames.map(dirObj => {
+        console.log(dirObj.name)
+        let proText = ""
+        if(dirObj.isPro === 1) {
+            proText = 'pro'
+        }
+        if (dirObj.name !== '_pro') {
+            const js_cmd = 'npm run build:js' + proText + devText + ' --block=' + dirObj.name
             console.log(js_cmd);
             execSync(js_cmd);
             // style.scssがあるかチェック
             let hasStyleFile
-            if(isPro) {
-                hasStyleFile = fs.existsSync('./src/blocks/_pro/' + block_name + '/style.scss')
+            if (dirObj.isPro) {
+                hasStyleFile = fs.existsSync('./src/blocks/_pro/' + dirObj.name + '/style.scss')
             } else {
-                hasStyleFile = fs.existsSync('./src/blocks/' + block_name + '/style.scss')
+                hasStyleFile = fs.existsSync('./src/blocks/' + dirObj.name + '/style.scss')
             }
             if (hasStyleFile) {
-                let sass_cmd
-                if (isPro) {
-                    sass_cmd = 'npm run build:csspro --block=' + block_name
-                } else {
-                    sass_cmd = 'npm run build:css --block=' + block_name
-                }
+                const sass_cmd = 'npm run build:css' + proText + devText + ' --block=' + dirObj.name
                 console.log(sass_cmd);
                 execSync(sass_cmd);
             }
         }
     })
 }
-export default buildBlocks(dirNames);
-buildBlocks(dirNamesPro,true);
+export default buildBlocks(dirNames,devText);

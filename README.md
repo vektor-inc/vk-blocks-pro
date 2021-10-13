@@ -39,6 +39,26 @@ npm run build:dev
 bin/dist_kuru.sh
 ```
 
+### 分割リファクタリング後のブロック
+
+`[block-name]` のところは各ブロック名（dirname)を入力します
+
+```
+//  Block毎にBuild
+npm run build:block --block=[block-name]
+//  Block毎にBuild（Proブロック）
+npm run build:blockpro --block=[block-name]
+// 全BlockをBuild
+npm run build:blocks
+
+//  Block毎にBuild　開発用（開発者ツールのconsoleでログが追いやすくなる）
+npm run build:block:dev --block=[block-name]
+//  Block毎にBuild（Proブロック）　開発用（開発者ツールのconsoleでログが追いやすくなる）
+npm run build:blockpro:dev --block=[block-name]
+// 全BlockをBuild　開発用（開発者ツールのconsoleでログが追いやすくなる）
+npm run build:blocks:dev
+```
+
 ## Watch
 ```
 // CSSの変更のみ監視

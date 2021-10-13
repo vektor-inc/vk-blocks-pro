@@ -115,6 +115,12 @@ export default function SpacerEdit({
 							{__('Custom', 'vk-blocks')}
 						</Button>
 					</ButtonGroup>
+					<p>
+						{__(
+							'You can change each common margin size from Setting > VK Blocks',
+							'vk-blocks'
+						)}
+					</p>
 					<AdvancedSpacerControl
 						attributes={attributes}
 						setAttributes={setAttributes}

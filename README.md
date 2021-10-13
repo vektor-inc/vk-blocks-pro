@@ -103,3 +103,16 @@ npm run phpunit
 -border-solid としておき -border-dotted -border-wave とする事ができるようにしておく。
 何がなんでも あり/なし 以外以外発生しないというケースの場合は -border-true あるいは例外的に -border など属性名だけでも可
 
+## ブレイクポイント
+
+スマホ
+`@media (max-width: 575.98px)`
+
+タブレット
+`@media (min-width: 576px) and (max-width: 991.98px)`
+
+PC
+`@media (min-width: 992px)`
+
+イレギュラー : 管理画面側での指定はなく、CSSでブレイクポイントが一つの場合（モバイル/PC など）以下の設定がありえる
+`@media (min-width: 768px)`

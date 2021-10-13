@@ -19,9 +19,9 @@ export class VKBIcon extends Component {
 		// outer & align
 		let outerClass = 'vk_icon_frame';
 		if (iconAlign === 'center') {
-			outerClass += ' vk_icon_align_center';
+			outerClass += ' text-center';
 		} else if (iconAlign === 'right') {
-			outerClass += ' vk_icon_align_right';
+			outerClass += ' text-right';
 		}
 
 		// color style

@@ -3,234 +3,197 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/_pro/outer/edit.js:182
-msgid "Background Setting"
+#: src/blocks/_pro/post-list/edit.js:174
+#. Filter by %s
+msgid "Filter by %s"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:187
-msgid "Color Setting"
+#: src/blocks/_pro/post-list/edit.js:197
+msgid "Display conditions"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:188
+#: src/blocks/_pro/post-list/edit.js:201
+msgid "Filter by PostTypes"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:215
+msgid "Number of Posts"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:228
+msgid "Order"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:237
+msgid "ASC"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:241
+msgid "DESC"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:247
+msgid "Order by"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:256
+msgid "Published Date"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:260
+msgid "Modefied Date"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:264
+msgid "Title"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:268
+msgid "Random"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:274
+msgid "offset"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:288
+msgid "Ignore this post"
+msgstr ""
+
+#: src/components/column-layout-control/index.js:20
+msgid "Card (Image Round)"
+msgstr ""
+
+#: src/components/column-layout-control/index.js:26
+msgid "Card"
+msgstr ""
+
+#: src/components/column-layout-control/index.js:30
+msgid "Card (No border)"
+msgstr ""
+
+#: src/components/column-layout-control/index.js:34
+msgid "Card (Intext)"
+msgstr ""
+
+#: src/components/column-layout-control/index.js:38
+msgid "Card (Horizontal)"
+msgstr ""
+
+#: src/components/column-layout-control/index.js:42
+msgid "Media"
+msgstr ""
+
+#: src/components/column-layout-control/index.js:46
+msgid "Text 1 Column"
+msgstr ""
+
+#: src/components/column-layout-control/index.js:65
+msgid "Display type and columns"
+msgstr ""
+
+#: src/components/column-layout-control/index.js:69
+msgid "Display type"
+msgstr ""
+
+#: src/components/column-layout/index.js:100
+msgid "Column ( Screen size : Extra large )"
+msgstr ""
+
+#: src/components/column-layout/index.js:116
+msgid "Column ( Screen size : XX large )"
+msgstr ""
+
+#: src/components/column-layout/index.js:36
+msgid "Column ( Screen size : Extra small )"
+msgstr ""
+
+#: src/components/column-layout/index.js:52
+msgid "Column ( Screen size : Small )"
+msgstr ""
+
+#: src/components/column-layout/index.js:68
+msgid "Column ( Screen size : Medium )"
+msgstr ""
+
+#: src/components/column-layout/index.js:84
+msgid "Column ( Screen size : Large )"
+msgstr ""
+
+#: src/components/display-items-control/index.js:101
 msgid ""
-"Color will overcome background image. If you want to display image, clear "
-"background color or set opacity 0."
+"Click each card block to set the target url. You can find the url form at "
+"it's sidebar."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:201
-msgid "Opacity Setting"
+#: src/components/display-items-control/index.js:107
+msgid "Button text"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:215
-msgid "Background Image PC"
+#: src/components/display-items-control/index.js:112
+msgid "Button align"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:231
-msgid "Background Image Tablet"
+#: src/components/display-items-control/index.js:121
+msgid "Left"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:241
-msgid "Background Image Mobile"
+#: src/components/display-items-control/index.js:125
+msgid "Center"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:251
-msgid "Background image Position"
+#: src/components/display-items-control/index.js:129
+msgid "Right"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:259
-msgid "Repeat"
+#: src/components/display-items-control/index.js:28
+msgid "Display item"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:263
-msgid "Cover"
+#: src/components/display-items-control/index.js:30
+msgid "Image"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:267
-msgid "Cover fixed (Not fixed on iPhone)"
+#: src/components/display-items-control/index.js:37
+msgid "Term's name on Image"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:274
-msgid "Parallax (Non-guaranteed)"
+#: src/components/display-items-control/index.js:44
+msgid "Excerpt"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:289
-msgid "Layout Setting"
+#: src/components/display-items-control/index.js:51
+msgid "Author"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:292
-msgid "Width"
+#: src/components/display-items-control/index.js:58
+msgid "Date"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:303
-msgid "Normal"
+#: src/components/display-items-control/index.js:64
+msgid "New mark"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:313
-msgid "Full Wide"
+#: src/components/display-items-control/index.js:70
+msgid "Taxonomies (all)"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:318
-msgid "Padding (Left and Right)"
+#: src/components/display-items-control/index.js:78
+msgid "Button"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:322
-msgid "Fit to the Content area"
+#: src/components/display-items-control/index.js:82
+msgid "New mark option"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:329
-msgid "Add padding to the Outer area"
+#: src/components/display-items-control/index.js:84
+msgid "Number of days to display the new post mark"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:336
-msgid "Remove padding from the Outer area"
+#: src/components/display-items-control/index.js:93
+msgid "New post mark"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:350
-msgid "Padding (Top and Bottom)"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:355
-msgid "Use default padding"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:362
-msgid "Do not use default padding"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:376
-msgid ""
-"* If you select \"Do not use\" that, please set yourself it such as a "
-"spacer block."
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:384
-msgid "Divider Setting"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:389
-msgid "Type"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:397
-msgid "Tilt"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:401
-msgid "Curve"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:405
-msgid "Wave"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:409
-msgid "Triangle"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:415
-msgid "Upper Divider Level"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:440
-msgid "Lower Divider Level"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:466
-msgid "Border Setting"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:471
-msgid "Border will disappear when divider effect is applied."
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:477
-msgid "Border type"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:485
-msgid "None"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:489
-msgid "Solid"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:493
-msgid "Dotted"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:497
-msgid "Dashed"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:501
-msgid "Double"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:505
-msgid "Groove"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:509
-msgid "Ridge"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:513
-msgid "Inset"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:517
-msgid "Outset"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:531
-msgid "Border width"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:543
-msgid "Border radius"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:559
-msgid "Container Inner Side Space Setting"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:566
-msgid "Mobile"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:581
-msgid "Tablet"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:596
-msgid "PC"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:607
-msgid "Unit Type"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:617
-msgid "px"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:621
-msgid "em"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:625
-msgid "rem"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:629
-msgid "vw"
-msgstr ""
-
-#: src/components/advanced-media-upload/index.js:34
-msgid "Delete Image"
-msgstr ""
-
-#: src/components/advanced-media-upload/index.js:47
-msgid "Select image"
+#: src/components/display-items-control/index.js:98
+msgid "Button option"
 msgstr ""

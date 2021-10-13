@@ -25,6 +25,7 @@ if ( ! function_exists( 'vk_blocks_active' ) ) {
 		$vk_blocks_prefix .= ' ';
 	}
 
+	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/vk-blocks-load-separate.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-helpers/config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-admin/vk-admin-config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/helpers.php';

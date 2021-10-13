@@ -43,7 +43,11 @@ add_action( 'after_setup_theme', 'vk_blocks_enqueue_point' );
 function vk_blocks_register_blocks_assets() {
 	$asset_file = include plugin_dir_path( __FILE__ ) . '/build/block-build.asset.php';
 	// CSSを登録.
-	wp_register_style( 'vk-blocks-build-css', VK_BLOCKS_URL . 'build/block-build.css', array(), VK_BLOCKS_VERSION );
+	if ( vk_blocks_should_load_separate_assets() && ! is_admin() ) {
+		wp_register_style( 'vk-blocks-build-css', VK_BLOCKS_DIR_URL . 'build/extensions/common/style.css', array(), VK_BLOCKS_VERSION );
+	} else {
+		wp_register_style( 'vk-blocks-build-css', VK_BLOCKS_URL . 'build/block-build.css', array(), VK_BLOCKS_VERSION );
+	}
 	wp_register_style( 'vk-blocks-build-editor-css', VK_BLOCKS_URL . 'build/block-build-editor.css', array(), VK_BLOCKS_VERSION );
 
 	// ブロックのJavascriptを登録.
@@ -127,7 +131,7 @@ add_action( 'init', 'vk_blocks_register_blocks_assets', 10 );
  *  @return array Return filter style, script, editor_style and editor_script added.
  */
 function vk_blocks_separate_assets_load_filter( $args ) {
-	if ( apply_filters( 'vk_blocks_should_load_separate_assets', false ) ) {
+	if ( vk_blocks_should_load_separate_assets() ) {
 		return $args;
 	}
 

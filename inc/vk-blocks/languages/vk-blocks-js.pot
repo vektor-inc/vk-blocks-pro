@@ -3,52 +3,234 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/alert/edit.js:19
-msgid "Style Settings"
+#: src/blocks/_pro/outer/edit.js:182
+msgid "Background Setting"
 msgstr ""
 
-#: src/blocks/alert/edit.js:25
-msgid "Success"
+#: src/blocks/_pro/outer/edit.js:187
+msgid "Color Setting"
 msgstr ""
 
-#: src/blocks/alert/edit.js:28
-msgid "Info"
-msgstr ""
-
-#: src/blocks/alert/edit.js:30
-msgid "Warning"
-msgstr ""
-
-#: src/blocks/alert/edit.js:34
-msgid "Danger"
-msgstr ""
-
-#: src/utils/example-data.js:14
-msgid "Theoretical Physicist"
-msgstr ""
-
-#: src/utils/example-data.js:15
-msgid "Profile"
-msgstr ""
-
-#: src/utils/example-data.js:16
-msgid "Albert Einstein"
-msgstr ""
-
-#: src/utils/example-data.js:17
-msgid "14 March 1879 – 18 April 1955"
-msgstr ""
-
-#: src/utils/example-data.js:2
-msgid "Lorem ipsum dolor"
-msgstr ""
-
-#: src/utils/example-data.js:3
+#: src/blocks/_pro/outer/edit.js:188
 msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
-"tempor incididunt ut labore et dolore magna aliqua. "
+"Color will overcome background image. If you want to display image, clear "
+"background color or set opacity 0."
 msgstr ""
 
-#: src/utils/example-data.js:7
-msgid "Lorem ipsum"
+#: src/blocks/_pro/outer/edit.js:201
+msgid "Opacity Setting"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:215
+msgid "Background Image PC"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:231
+msgid "Background Image Tablet"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:241
+msgid "Background Image Mobile"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:251
+msgid "Background image Position"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:259
+msgid "Repeat"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:263
+msgid "Cover"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:267
+msgid "Cover fixed (Not fixed on iPhone)"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:274
+msgid "Parallax (Non-guaranteed)"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:289
+msgid "Layout Setting"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:292
+msgid "Width"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:303
+msgid "Normal"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:313
+msgid "Full Wide"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:318
+msgid "Padding (Left and Right)"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:322
+msgid "Fit to the Content area"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:329
+msgid "Add padding to the Outer area"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:336
+msgid "Remove padding from the Outer area"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:350
+msgid "Padding (Top and Bottom)"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:355
+msgid "Use default padding"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:362
+msgid "Do not use default padding"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:376
+msgid ""
+"* If you select \"Do not use\" that, please set yourself it such as a "
+"spacer block."
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:384
+msgid "Divider Setting"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:389
+msgid "Type"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:397
+msgid "Tilt"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:401
+msgid "Curve"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:405
+msgid "Wave"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:409
+msgid "Triangle"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:415
+msgid "Upper Divider Level"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:440
+msgid "Lower Divider Level"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:466
+msgid "Border Setting"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:471
+msgid "Border will disappear when divider effect is applied."
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:477
+msgid "Border type"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:485
+msgid "None"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:489
+msgid "Solid"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:493
+msgid "Dotted"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:497
+msgid "Dashed"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:501
+msgid "Double"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:505
+msgid "Groove"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:509
+msgid "Ridge"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:513
+msgid "Inset"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:517
+msgid "Outset"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:531
+msgid "Border width"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:543
+msgid "Border radius"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:559
+msgid "Container Inner Side Space Setting"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:566
+msgid "Mobile"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:581
+msgid "Tablet"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:596
+msgid "PC"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:607
+msgid "Unit Type"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:617
+msgid "px"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:621
+msgid "em"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:625
+msgid "rem"
+msgstr ""
+
+#: src/blocks/_pro/outer/edit.js:629
+msgid "vw"
+msgstr ""
+
+#: src/components/advanced-media-upload/index.js:34
+msgid "Delete Image"
+msgstr ""
+
+#: src/components/advanced-media-upload/index.js:47
+msgid "Select image"
 msgstr ""

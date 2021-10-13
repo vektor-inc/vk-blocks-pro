@@ -53,7 +53,7 @@ function buildBlocks(dirNames, devText = "") {
                 hasStyleFile = fs.existsSync('./src/blocks/' + dirObj.name + '/style.scss')
             }
             if (hasStyleFile) {
-                const sass_cmd = 'npm run build:css' + proText + devText + ' --block=' + dirObj.name
+                const sass_cmd = 'npm run build:css' + proText + ' --block=' + dirObj.name
                 console.log(sass_cmd);
                 execSync(sass_cmd);
             }

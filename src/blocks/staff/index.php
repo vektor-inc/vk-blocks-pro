@@ -22,9 +22,9 @@ function vk_blocks_register_block_staff() {
 	} else {
 		wp_register_style(
 			'vk-blocks/staff',
-			VK_BLOCKS_DIR_URL . '/build/staff/staff.css',
+			VK_BLOCKS_DIR_URL . '/build/staff/style.css',
 			array(),
-			filemtime( VK_BLOCKS_DIR_PATH . 'build/staff/staff.css' )
+			filemtime( VK_BLOCKS_DIR_PATH . 'build/staff/style.css' )
 		);
 	}
 
@@ -42,7 +42,7 @@ function vk_blocks_register_block_staff() {
 		__DIR__,
 		array(
 			'style'         => 'vk-blocks/staff',
-			// 'editor_style'  => 'vk-blocks-build-editor-css',
+			'editor_style'  => 'vk-blocks-build-editor-css',
 			'editor_script' => 'vk-blocks-build-js',
 		)
 	);

@@ -11,58 +11,59 @@
 }
 .wp-block-vk-blocks-icon { //編集画面で負けるので先頭に追加
 	.vk_icon {
-		&_align {
-			&_center {
-				text-align: center;
-			}
-			&_right {
-				text-align: right;
-			}
-		}
-
 		&_border {
 			display: inline-block;
 			position: relative;
 			width: 80px;
 			height: 80px;
 			border-radius: 50%;
-			background-color: #0693e3;
-			border: 1px solid #0693e3;
-
-			&_frame {
-				background-color: transparent;
-
-				.vk_icon_font {
-					color: #0693e3;
-				}
-			}
-
-			&_none {
-				background-color: transparent;
-				color: #0693e3;
-				border: none;
-
-				.vk_icon_font {
-					color: #0693e3;
-				}
-			}
 		}
-
 		&_link {
 			display: inline-block;
-
 			&:hover {
 				opacity: .85;
 			}
 		}
-
 		&_font {
 			position: absolute;
 			top: 50%;
 			left: 50%;
 			transform: translateY(-50%) translateX(-50%);
 			font-size: 36px;
+		}
+	}
+
+	.is-style-outline {
+		.vk_icon_border {
+			background-color: transparent;
+			border: 1px solid currentColor;
+		}
+	}
+
+	.vk_icon_frame:not(.is-style-outline):not(.is-style-noline) {
+		.vk_icon_font {
 			color: #fff;
+		}
+	}
+}
+
+// デフォルトのカラー
+.wp-block-vk-blocks-icon {
+	.vk_icon_frame:not(.is-style-outline):not(.is-style-noline) {
+		.vk_icon_border:not(.has-background) {
+			background-color: #337ab7;
+		}
+	}
+
+	.is-style-noline {
+		.vk_icon_border:not(.has-text-color) {
+			color: #337ab7;
+		}
+	}
+
+	.is-style-outline {
+		.vk_icon_border:not(.has-text-color) {
+			color: #337ab7;
 		}
 	}
 }

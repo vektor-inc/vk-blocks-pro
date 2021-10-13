@@ -25,6 +25,8 @@ const dirNames = [
     { name: 'accordion', isPro: 1 },
     { name: 'child-page', isPro: 1 },
     { name: 'outer', isPro: 1 },
+    { name: "select-post-list", isPro: 1 },
+    { name: "select-post-list-item", isPro: 1 },   
 ]
 
 // mode が dev かどうか受け取る

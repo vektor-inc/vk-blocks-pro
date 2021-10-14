@@ -361,10 +361,6 @@ msgstr ""
 msgid "Background Color"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/index.js:18
-msgid "Grid Column Item"
-msgstr ""
-
 #: src/blocks/_pro/grid-column/edit.js:53
 msgid "Layout Columns"
 msgstr ""
@@ -375,10 +371,6 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column/edit.js:63
 msgid "Margin Bottom"
-msgstr ""
-
-#: src/blocks/_pro/grid-column/index.js:17
-msgid "Grid Column"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/deprecated/0.0.0/component.js:55
@@ -2707,9 +2699,18 @@ msgctxt "block description"
 msgid "When a parent page is specified, a list of its child pages will be displayed."
 msgstr ""
 
+msgctxt "block title"
+msgid "Grid Column"
+msgstr ""
+
 #: src/blocks/_pro/grid-column-item/block.json
 msgctxt "block description"
 msgid "One item in a grit column block."
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/block.json
+msgctxt "block title"
+msgid "Grid Column Item"
 msgstr ""
 
 #: src/blocks/_pro/grid-column/block.json

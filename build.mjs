@@ -24,6 +24,8 @@ const dirNames = [
     { name: 'staff', isPro: 0 },
     { name: 'accordion', isPro: 1 },
     { name: 'child-page', isPro: 1 },
+    { name: 'grid-column', isPro: 1 },
+    { name: 'grid-column-item', isPro: 1 },
     { name: 'outer', isPro: 1 },
     { name: 'table-of-contents-new', isPro: 1 },
 ]

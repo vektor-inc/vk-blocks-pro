@@ -90,10 +90,6 @@ class VK_Blocks_Block_Loader {
 		$this->assets_build_path         = plugin_dir_path( __FILE__ ) . 'build/';
 		$this->assets_build_url          = VK_BLOCKS_URL . 'build/';
 		$this->separate_assets_build_url = VK_BLOCKS_DIR_URL . 'build/';
-
-		if ( self::should_load_separate_assets() ) {
-			add_filter( 'should_load_separate_core_block_assets', '__return_true' );
-		}
 	}
 
 	/**
@@ -124,6 +120,10 @@ class VK_Blocks_Block_Loader {
 
 		add_action( 'init', array( $this, 'register_blocks_assets' ), 10 );
 		add_filter( 'register_block_type_args', array( $this, 'separate_assets_load_reducer' ) );
+
+		if ( self::should_load_separate_assets() ) {
+			add_filter( 'should_load_separate_core_block_assets', '__return_true' );
+		}
 	}
 
 	/**

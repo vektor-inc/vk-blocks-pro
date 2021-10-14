@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-10-14T05:55:50+00:00\n"
+"POT-Creation-Date: 2021-10-14T06:10:36+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -756,14 +756,6 @@ msgstr ""
 
 #: src/blocks/_pro/select-post-list-item/edit.js:67
 msgid "Input Internal Post URL"
-msgstr ""
-
-#: src/blocks/_pro/select-post-list-item/index.js:20
-msgid "Selected Post List Item"
-msgstr ""
-
-#: src/blocks/_pro/select-post-list/index.js:21
-msgid "Selected Post List"
 msgstr ""
 
 #: src/blocks/_pro/slider-item/edit.js:111
@@ -2745,8 +2737,18 @@ msgid "Displays the list of posts by setting the post type, classification, and 
 msgstr ""
 
 #: src/blocks/_pro/select-post-list-item/block.json
+msgctxt "block title"
+msgid "Selected Post List Item"
+msgstr ""
+
+#: src/blocks/_pro/select-post-list-item/block.json
 msgctxt "block description"
 msgid "A single item in the select post list."
+msgstr ""
+
+#: src/blocks/_pro/select-post-list/block.json
+msgctxt "block title"
+msgid "Selected Post List"
 msgstr ""
 
 #: src/blocks/_pro/select-post-list/block.json

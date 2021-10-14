@@ -726,14 +726,6 @@ msgstr "リンクを解除する"
 msgid "Input Internal Post URL"
 msgstr "このサイトの投稿の URL を入力してください"
 
-#: src/blocks/_pro/select-post-list-item/index.js:20
-msgid "Selected Post List Item"
-msgstr "選択投稿リストアイテム"
-
-#: src/blocks/_pro/select-post-list/index.js:21
-msgid "Selected Post List"
-msgstr "選択投稿リスト"
-
 #: src/blocks/_pro/slider-item/edit.js:111
 msgid "Vertical align"
 msgstr "縦揃え"
@@ -2747,9 +2739,19 @@ msgid ""
 msgstr "投稿タイプ,分類,表示件数が設定して投稿リストを表示します。"
 
 #: src/blocks/_pro/select-post-list-item/block.json
+msgctxt "block title"
+msgid "Selected Post List Item"
+msgstr "選択投稿リストアイテム"
+
+#: src/blocks/_pro/select-post-list-item/block.json
 msgctxt "block description"
 msgid "A single item in the select post list."
 msgstr "選択投稿リスト内の１つのアイテムです。"
+
+#: src/blocks/_pro/select-post-list/block.json
+msgctxt "block title"
+msgid "Selected Post List"
+msgstr "選択投稿リスト"
 
 #: src/blocks/_pro/select-post-list/block.json
 msgctxt "block description"

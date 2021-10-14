@@ -19,7 +19,7 @@ class VK_Blocks_Block_Loader {
 	 */
 	// phpcs:disable
 	private $blocks = array(
-		array( 'name' => 'alert',                 'is_pro' =>  false ),
+		array( 'name' => 'alert'                 ,'is_pro' =>  false ),
 		array( 'name' => 'balloon',               'is_pro' =>  false ),
 		array( 'name' => 'border-box',            'is_pro' =>  false ),
 		array( 'name' => 'button',                'is_pro' =>  false ),
@@ -71,14 +71,14 @@ class VK_Blocks_Block_Loader {
 	/**
 	 * ビルドされた assets のURL
 	 *
-	 * @var [type]
+	 * @var string
 	 */
 	private $assets_build_url;
 
 	/**
 	 * ブロック毎に分割してビルドされた assets のURL
 	 *
-	 * @var [type]
+	 * @var string
 	 */
 	private $separate_assets_build_url;
 

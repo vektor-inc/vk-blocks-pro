@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-10-11T06:01:11+00:00\n"
+"POT-Creation-Date: 2021-10-14T07:18:16+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -353,10 +353,6 @@ msgstr ""
 msgid "Background Color"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/index.js:18
-msgid "Grid Column Item"
-msgstr ""
-
 #: src/blocks/_pro/grid-column/edit.js:53
 msgid "Layout Columns"
 msgstr ""
@@ -367,10 +363,6 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column/edit.js:63
 msgid "Margin Bottom"
-msgstr ""
-
-#: src/blocks/_pro/grid-column/index.js:17
-msgid "Grid Column"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/deprecated/0.0.0/component.js:55
@@ -696,10 +688,6 @@ msgstr ""
 msgid "Unit Type"
 msgstr ""
 
-#: src/blocks/_pro/outer/index.js:20
-msgid "Outer"
-msgstr ""
-
 #. Filter by %s
 #: src/blocks/_pro/post-list/edit.js:174
 msgid "Filter by %s"
@@ -745,10 +733,6 @@ msgstr ""
 msgid "offset"
 msgstr ""
 
-#: src/blocks/_pro/post-list/index.js:20
-msgid "Post list"
-msgstr ""
-
 #: src/blocks/_pro/select-post-list-item/edit.js:102
 msgid "Submit"
 msgstr ""
@@ -764,14 +748,6 @@ msgstr ""
 
 #: src/blocks/_pro/select-post-list-item/edit.js:67
 msgid "Input Internal Post URL"
-msgstr ""
-
-#: src/blocks/_pro/select-post-list-item/index.js:20
-msgid "Selected Post List Item"
-msgstr ""
-
-#: src/blocks/_pro/select-post-list/index.js:21
-msgid "Selected Post List"
 msgstr ""
 
 #: src/blocks/_pro/slider-item/edit.js:111
@@ -941,21 +917,12 @@ msgstr ""
 msgid "Outlined"
 msgstr ""
 
-#: src/blocks/_pro/step-item/index.js:18
-msgid "Step Item"
-msgstr ""
-
 #: src/blocks/_pro/step/edit.js:38
 msgid "First Dot Number"
 msgstr ""
 
-#: src/blocks/_pro/step/index.js:19
-msgid "Step"
-msgstr ""
-
 #: src/blocks/_pro/table-of-contents-new/deprecated/0.59.1/save.js:19
 #: src/blocks/_pro/table-of-contents-new/edit.js:178
-#: src/blocks/_pro/table-of-contents-new/index.js:17
 #: src/blocks/_pro/table-of-contents-new/save.js:16
 msgid "Table of Contents"
 msgstr ""
@@ -1743,10 +1710,6 @@ msgstr ""
 msgid "Image left"
 msgstr ""
 
-#: src/blocks/staff/index.js:33
-msgid "Staff"
-msgstr ""
-
 #: src/components/column-layout-control/index.js:20
 msgid "Card (Image Round)"
 msgstr ""
@@ -2404,11 +2367,11 @@ msgstr ""
 msgid "No Post is selected"
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:319
+#: inc/vk-blocks/vk-blocks-functions.php:211
 msgid "Blocks"
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:332
+#: inc/vk-blocks/vk-blocks-functions.php:224
 msgid "Blocks Layout"
 msgstr ""
 
@@ -2653,6 +2616,11 @@ msgid "Use responsive spacers to get the margins right."
 msgstr ""
 
 #: src/blocks/staff/block.json
+msgctxt "block title"
+msgid "Staff"
+msgstr ""
+
+#: src/blocks/staff/block.json
 msgctxt "block description"
 msgid "Used for staff introduction, company introduction, school introduction, menu, etc."
 msgstr ""
@@ -2713,8 +2681,18 @@ msgid "When a parent page is specified, a list of its child pages will be displa
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/block.json
+msgctxt "block title"
+msgid "Grid Column Item"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/block.json
 msgctxt "block description"
 msgid "One item in a grit column block."
+msgstr ""
+
+#: src/blocks/_pro/grid-column/block.json
+msgctxt "block title"
+msgid "Grid Column"
 msgstr ""
 
 #: src/blocks/_pro/grid-column/block.json
@@ -2738,13 +2716,28 @@ msgid "Set the background image, color, and border to show the layout and divisi
 msgstr ""
 
 #: src/blocks/_pro/post-list/block.json
+msgctxt "block title"
+msgid "Post list"
+msgstr ""
+
+#: src/blocks/_pro/post-list/block.json
 msgctxt "block description"
 msgid "Displays the list of posts by setting the post type, classification, and number of posts to display."
 msgstr ""
 
 #: src/blocks/_pro/select-post-list-item/block.json
+msgctxt "block title"
+msgid "Selected Post List Item"
+msgstr ""
+
+#: src/blocks/_pro/select-post-list-item/block.json
 msgctxt "block description"
 msgid "A single item in the select post list."
+msgstr ""
+
+#: src/blocks/_pro/select-post-list/block.json
+msgctxt "block title"
+msgid "Selected Post List"
 msgstr ""
 
 #: src/blocks/_pro/select-post-list/block.json
@@ -2763,13 +2756,28 @@ msgid "This slider allows you to place various items.Slider is do not move in ed
 msgstr ""
 
 #: src/blocks/_pro/step-item/block.json
+msgctxt "block title"
+msgid "Step Item"
+msgstr ""
+
+#: src/blocks/_pro/step-item/block.json
 msgctxt "block description"
 msgid "This element sets the icon, color, and style of the step mark."
 msgstr ""
 
 #: src/blocks/_pro/step/block.json
+msgctxt "block title"
+msgid "Step"
+msgstr ""
+
+#: src/blocks/_pro/step/block.json
 msgctxt "block description"
 msgid "Set and display step marks, which are useful when explaining the order."
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/block.json
+msgctxt "block title"
+msgid "Table of Contents"
 msgstr ""
 
 #: src/blocks/_pro/table-of-contents-new/block.json

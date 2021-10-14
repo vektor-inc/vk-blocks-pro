@@ -1,6 +1,7 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/select-post-list-item",
+	"title": "Selected Post List Item",
 	"category": "vk-blocks-cat",
 	"parent": ["vk-blocks/select-post-list"],
 	"attributes": {

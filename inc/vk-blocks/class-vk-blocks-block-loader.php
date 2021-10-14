@@ -159,7 +159,7 @@ class VK_Blocks_Block_Loader {
 
 		// 翻訳を追加.
 		if ( function_exists( 'wp_set_script_translations' ) ) {
-			wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks', $this->assets_build_path . 'languages' );
+			wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks', plugin_dir_path( __FILE__ ) . 'languages' );
 		}
 
 		if ( function_exists( 'register_block_type' ) ) {

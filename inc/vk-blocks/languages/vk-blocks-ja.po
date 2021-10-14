@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2021-10-13T14:09:34+00:00\n"
-"PO-Revision-Date: 2021-10-14 00:18+0900\n"
+"POT-Creation-Date: 2021-10-13T09:45:30+00:00\n"
+"PO-Revision-Date: 2021-10-13 22:11+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -353,10 +353,6 @@ msgstr "文字の色"
 msgid "Background Color"
 msgstr "背景色"
 
-#: src/blocks/_pro/grid-column-item/index.js:18
-msgid "Grid Column Item"
-msgstr "グリッドカラムアイテム"
-
 #: src/blocks/_pro/grid-column/edit.js:53
 msgid "Layout Columns"
 msgstr "カラムレイアウト"
@@ -368,10 +364,6 @@ msgstr "カラム下部余白設定"
 #: src/blocks/_pro/grid-column/edit.js:63
 msgid "Margin Bottom"
 msgstr "下部の余白"
-
-#: src/blocks/_pro/grid-column/index.js:17
-msgid "Grid Column"
-msgstr "グリッドカラム"
 
 #: src/blocks/_pro/icon-card-item/deprecated/0.0.0/component.js:55
 #: src/blocks/_pro/icon-card-item/deprecated/0.0.1/component.js:70
@@ -717,10 +709,6 @@ msgstr "ランダム"
 msgid "offset"
 msgstr "オフセット数"
 
-#: src/blocks/_pro/post-list/index.js:20
-msgid "Post list"
-msgstr "投稿リスト"
-
 #: src/blocks/_pro/select-post-list-item/edit.js:102
 msgid "Submit"
 msgstr "送信"
@@ -911,7 +899,6 @@ msgstr "ステップ"
 
 #: src/blocks/_pro/table-of-contents-new/deprecated/0.59.1/save.js:19
 #: src/blocks/_pro/table-of-contents-new/edit.js:178
-#: src/blocks/_pro/table-of-contents-new/index.js:17
 #: src/blocks/_pro/table-of-contents-new/save.js:16
 msgid "Table of Contents"
 msgstr "目次"
@@ -2699,9 +2686,19 @@ msgid ""
 msgstr "親となる固定ページを指定するとその子ページの一覧を表示します。"
 
 #: src/blocks/_pro/grid-column-item/block.json
+msgctxt "block title"
+msgid "Grid Column Item"
+msgstr "グリッドカラムアイテム"
+
+#: src/blocks/_pro/grid-column-item/block.json
 msgctxt "block description"
 msgid "One item in a grit column block."
 msgstr "グリットカラムブロック内の1つのアイテムです。"
+
+#: src/blocks/_pro/grid-column/block.json
+msgctxt "block title"
+msgid "Grid Column"
+msgstr "グリットカラム"
 
 #: src/blocks/_pro/grid-column/block.json
 msgctxt "block description"
@@ -2728,6 +2725,11 @@ msgctxt "block description"
 msgid ""
 "Set the background image, color, and border to show the layout and divisions."
 msgstr "背景の画像や色,枠線の設定しレイアウトや区切りを表示します。"
+
+#: src/blocks/_pro/post-list/block.json
+msgctxt "block title"
+msgid "Post list"
+msgstr "投稿リスト"
 
 #: src/blocks/_pro/post-list/block.json
 msgctxt "block description"
@@ -2780,6 +2782,11 @@ msgstr "ステップマークのアイコン、色、スタイルを設定する
 msgctxt "block description"
 msgid "Set and display step marks, which are useful when explaining the order."
 msgstr "順番を説明する時に便利でステップマークを設定し表示します。"
+
+#: src/blocks/_pro/table-of-contents-new/block.json
+msgctxt "block title"
+msgid "Table of Contents"
+msgstr "目次"
 
 #: src/blocks/_pro/table-of-contents-new/block.json
 msgctxt "block description"

@@ -3,18 +3,46 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/_pro/select-post-list-item/edit.js:102
-msgid "Submit"
+#: src/blocks/_pro/table-of-contents-new/deprecated/0.59.1/save.js:19
+#: src/blocks/_pro/table-of-contents-new/edit.js:178
+#: src/blocks/_pro/table-of-contents-new/save.js:16
+msgid "Table of Contents"
 msgstr ""
 
-#: src/blocks/_pro/select-post-list-item/edit.js:34
-msgid "Because no post is selected, The block Will not render"
+#: src/blocks/_pro/table-of-contents-new/edit.js:117
+msgid "Note on duplicating headings"
 msgstr ""
 
-#: src/blocks/_pro/select-post-list-item/edit.js:66
-msgid "Unlink"
+#: src/blocks/_pro/table-of-contents-new/edit.js:122
+msgid ""
+"If you duplicate a heading, the table of contents block will not work "
+"properly, please reassign the ID."
 msgstr ""
 
-#: src/blocks/_pro/select-post-list-item/edit.js:67
-msgid "Input Internal Post URL"
+#: src/blocks/_pro/table-of-contents-new/edit.js:130
+msgid "Display type"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:135
+msgid "Style"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:145
+msgid "Default"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:149
+msgid "No frame"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:156
+msgid "Default Display Status"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:164
+msgid "OPEN"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:168
+msgid "CLOSE"
 msgstr ""

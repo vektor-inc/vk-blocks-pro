@@ -3,234 +3,65 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/_pro/outer/edit.js:182
-msgid "Background Setting"
+#: src/blocks/_pro/step-item/edit.js:110
+msgid "Default"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:187
-msgid "Color Setting"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:188
-msgid ""
-"Color will overcome background image. If you want to display image, clear "
-"background color or set opacity 0."
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:201
-msgid "Opacity Setting"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:215
-msgid "Background Image PC"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:231
-msgid "Background Image Tablet"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:241
-msgid "Background Image Mobile"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:251
-msgid "Background image Position"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:259
-msgid "Repeat"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:263
-msgid "Cover"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:267
-msgid "Cover fixed (Not fixed on iPhone)"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:274
-msgid "Parallax (Non-guaranteed)"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:289
-msgid "Layout Setting"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:292
-msgid "Width"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:303
-msgid "Normal"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:313
-msgid "Full Wide"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:318
-msgid "Padding (Left and Right)"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:322
-msgid "Fit to the Content area"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:329
-msgid "Add padding to the Outer area"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:336
-msgid "Remove padding from the Outer area"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:350
-msgid "Padding (Top and Bottom)"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:355
-msgid "Use default padding"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:362
-msgid "Do not use default padding"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:376
-msgid ""
-"* If you select \"Do not use\" that, please set yourself it such as a "
-"spacer block."
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:384
-msgid "Divider Setting"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:389
-msgid "Type"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:397
-msgid "Tilt"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:401
-msgid "Curve"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:405
-msgid "Wave"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:409
-msgid "Triangle"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:415
-msgid "Upper Divider Level"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:440
-msgid "Lower Divider Level"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:466
-msgid "Border Setting"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:471
-msgid "Border will disappear when divider effect is applied."
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:477
-msgid "Border type"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:485
+#: src/blocks/_pro/step-item/edit.js:114
 msgid "None"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:489
+#: src/blocks/_pro/step-item/edit.js:54
+msgid "Step Mark"
+msgstr ""
+
+#: src/blocks/_pro/step-item/edit.js:57
+msgid "Icon ( Font Awesome )"
+msgstr ""
+
+#: src/blocks/_pro/step-item/edit.js:58
+msgid "If Font Awesome tags entered, it will overrides the number."
+msgstr ""
+
+#: src/blocks/_pro/step-item/edit.js:72
+msgid "Ex,6:00AM"
+msgstr ""
+
+#: src/blocks/_pro/step-item/edit.js:76
+msgid "Color"
+msgstr ""
+
+#: src/blocks/_pro/step-item/edit.js:82
+msgid "Style"
+msgstr ""
+
+#: src/blocks/_pro/step-item/edit.js:92
 msgid "Solid"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:493
-msgid "Dotted"
+#: src/blocks/_pro/step-item/edit.js:96
+msgid "Outlined"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:497
-msgid "Dashed"
+#: src/utils/font-awesome-new.js:14
+msgid "Icon"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:501
-msgid "Double"
+#: src/utils/font-awesome-new.js:188
+msgid ""
+"If you want to use an icon other than the ones listed above, you can use "
+"any of the icons from Font Awesome's icon list Please select a tag and "
+"enter it."
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:505
-msgid "Groove"
+#: src/utils/font-awesome-new.js:193
+msgid "Ex) <i class=\"fas fa-arrow-circle-right\"></i>"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:509
-msgid "Ridge"
+#: src/utils/font-awesome-new.js:202
+msgid "Font Awesome icon list"
 msgstr ""
 
-#: src/blocks/_pro/outer/edit.js:513
-msgid "Inset"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:517
-msgid "Outset"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:531
-msgid "Border width"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:543
-msgid "Border radius"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:559
-msgid "Container Inner Side Space Setting"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:566
-msgid "Mobile"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:581
-msgid "Tablet"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:596
-msgid "PC"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:607
-msgid "Unit Type"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:617
-msgid "px"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:621
-msgid "em"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:625
-msgid "rem"
-msgstr ""
-
-#: src/blocks/_pro/outer/edit.js:629
-msgid "vw"
-msgstr ""
-
-#: src/components/advanced-media-upload/index.js:34
-msgid "Delete Image"
-msgstr ""
-
-#: src/components/advanced-media-upload/index.js:47
-msgid "Select image"
+#: src/utils/font-awesome-new.js:217
+msgid "Select Icon"
 msgstr ""

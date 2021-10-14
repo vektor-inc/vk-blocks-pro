@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-10-11T09:00:27+00:00\n"
+"POT-Creation-Date: 2021-10-14T01:48:32+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -190,7 +190,7 @@ msgstr ""
 #: src/blocks/pr-content/deprecated/1.7.1/mediaUpload.js:68
 #: src/blocks/pr-content/mediaUpload.js:68
 #: src/blocks/staff/deprecated/0.58/component.js:96
-#: src/blocks/staff/edit.js:311
+#: src/blocks/staff/edit.js:306
 #: src/components/advanced-media-upload/index.js:47
 msgid "Select image"
 msgstr ""
@@ -621,7 +621,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:114
 #: src/blocks/_pro/timeline-item/edit.js:95
 #: src/blocks/balloon/edit.js:338
-#: src/blocks/staff/edit.js:122
+#: src/blocks/staff/edit.js:117
 msgid "None"
 msgstr ""
 
@@ -875,7 +875,7 @@ msgstr ""
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
 #: src/blocks/_pro/timeline-item/edit.js:91
 #: src/blocks/heading/edit.js:228
-#: src/blocks/staff/edit.js:118
+#: src/blocks/staff/edit.js:113
 #: src/extensions/core/heading/style.js:30
 #: src/extensions/core/list/style.js:102
 msgid "Default"
@@ -925,7 +925,7 @@ msgstr ""
 #: src/blocks/_pro/timeline-item/edit.js:53
 #: src/blocks/border-box/edit.js:63
 #: src/blocks/icon/edit.js:246
-#: src/blocks/staff/edit.js:144
+#: src/blocks/staff/edit.js:139
 #: inc/term-color/package/class.term-color.php:41
 #: inc/term-color/package/class.term-color.php:56
 #: inc/term-color/package/class.term-color.php:130
@@ -945,16 +945,8 @@ msgstr ""
 msgid "Outlined"
 msgstr ""
 
-#: src/blocks/_pro/step-item/index.js:18
-msgid "Step Item"
-msgstr ""
-
 #: src/blocks/_pro/step/edit.js:38
 msgid "First Dot Number"
-msgstr ""
-
-#: src/blocks/_pro/step/index.js:19
-msgid "Step"
 msgstr ""
 
 #: src/blocks/_pro/table-of-contents-new/deprecated/0.59.1/save.js:19
@@ -1530,7 +1522,7 @@ msgid "Link URL"
 msgstr ""
 
 #: src/blocks/page-content/edit.js:10
-#: src/blocks/staff/edit.js:221
+#: src/blocks/staff/edit.js:216
 msgid "Unspecified"
 msgstr ""
 
@@ -1683,68 +1675,68 @@ msgid "Medium"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:50
-#: src/blocks/staff/edit.js:246
+#: src/blocks/staff/edit.js:241
 msgid "Your Name"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:58
-#: src/blocks/staff/edit.js:256
+#: src/blocks/staff/edit.js:251
 msgid "Caption"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:66
-#: src/blocks/staff/edit.js:266
+#: src/blocks/staff/edit.js:261
 msgid "Role position"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:74
-#: src/blocks/staff/edit.js:276
+#: src/blocks/staff/edit.js:271
 msgid "Profile title"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:82
-#: src/blocks/staff/edit.js:289
+#: src/blocks/staff/edit.js:284
 msgid "Profile text"
 msgstr ""
 
 #: src/blocks/staff/edit.js:103
-msgid "Image left"
-msgstr ""
-
-#: src/blocks/staff/edit.js:108
 msgid "Image border"
 msgstr ""
 
-#: src/blocks/staff/edit.js:127
+#: src/blocks/staff/edit.js:122
 msgid "Alt text"
 msgstr ""
 
-#: src/blocks/staff/edit.js:129
+#: src/blocks/staff/edit.js:124
 msgid "Set the alt text for profile image"
 msgstr ""
 
-#: src/blocks/staff/edit.js:147
+#: src/blocks/staff/edit.js:142
 msgid "Staff name"
 msgstr ""
 
-#: src/blocks/staff/edit.js:160
+#: src/blocks/staff/edit.js:155
 msgid "Name caption"
 msgstr ""
 
-#: src/blocks/staff/edit.js:215
+#: src/blocks/staff/edit.js:210
 msgid "Heading Font"
 msgstr ""
 
-#: src/blocks/staff/edit.js:217
+#: src/blocks/staff/edit.js:212
 msgid "Font"
 msgstr ""
 
-#: src/blocks/staff/edit.js:225
+#: src/blocks/staff/edit.js:220
 msgid "minchoBody"
 msgstr ""
 
-#: src/blocks/staff/edit.js:90
+#: src/blocks/staff/edit.js:85
 msgid "Layout"
+msgstr ""
+
+#: src/blocks/staff/edit.js:98
+msgid "Image left"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:20
@@ -2404,11 +2396,11 @@ msgstr ""
 msgid "No Post is selected"
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:319
+#: inc/vk-blocks/vk-blocks-functions.php:211
 msgid "Blocks"
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:332
+#: inc/vk-blocks/vk-blocks-functions.php:224
 msgid "Blocks Layout"
 msgstr ""
 
@@ -2763,8 +2755,18 @@ msgid "This slider allows you to place various items.Slider is do not move in ed
 msgstr ""
 
 #: src/blocks/_pro/step-item/block.json
+msgctxt "block title"
+msgid "Step Item"
+msgstr ""
+
+#: src/blocks/_pro/step-item/block.json
 msgctxt "block description"
 msgid "This element sets the icon, color, and style of the step mark."
+msgstr ""
+
+#: src/blocks/_pro/step/block.json
+msgctxt "block title"
+msgid "Step"
 msgstr ""
 
 #: src/blocks/_pro/step/block.json

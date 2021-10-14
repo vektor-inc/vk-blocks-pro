@@ -44,7 +44,9 @@ function vk_blocks_register_blocks_assets() {
 	$asset_file = include plugin_dir_path( __FILE__ ) . '/build/block-build.asset.php';
 	// CSSを登録.
 	if ( vk_blocks_should_load_separate_assets() && ! is_admin() ) {
-		wp_register_style( 'vk-blocks-build-css', VK_BLOCKS_DIR_URL . 'build/extensions/common/style.css', array(), VK_BLOCKS_VERSION );
+		// 一時的に記載。vk-blocks-build-cssのハンドル名はwp_add_inline_styleで使用されているので分割した際でも登録する
+		// 最終的にはextensions内などの共通のcssを読み込む
+		wp_register_style( 'vk-blocks-build-css', false, array(), VK_BLOCKS_VERSION );
 	} else {
 		wp_register_style( 'vk-blocks-build-css', VK_BLOCKS_URL . 'build/block-build.css', array(), VK_BLOCKS_VERSION );
 	}

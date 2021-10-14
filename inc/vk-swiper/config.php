@@ -4,7 +4,7 @@
  *
  * @package Lightning G3
  */
-if ( vk_blocks_should_load_separate_assets() ) {
+if ( VK_Blocks_Block_Loader::should_load_separate_assets() ) {
 	return;
 }
 

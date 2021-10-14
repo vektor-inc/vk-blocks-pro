@@ -930,7 +930,6 @@ msgstr "ステップ"
 
 #: src/blocks/_pro/table-of-contents-new/deprecated/0.59.1/save.js:19
 #: src/blocks/_pro/table-of-contents-new/edit.js:178
-#: src/blocks/_pro/table-of-contents-new/index.js:17
 #: src/blocks/_pro/table-of-contents-new/save.js:16
 msgid "Table of Contents"
 msgstr "目次"
@@ -2704,6 +2703,11 @@ msgctxt "block description"
 msgid "Use responsive spacers to get the margins right."
 msgstr "レスポンシブに対応したスペーサーで余白を適切に取ります。"
 
+#: src/blocks/staff/block.json
+msgctxt "block title"
+msgid "Staff"
+msgstr "スタッフ"
+
 #: dist/vk-blocks-pro/src/blocks/staff/block.json src/blocks/staff/block.json
 msgctxt "block description"
 msgid ""
@@ -2853,6 +2857,11 @@ msgstr "ステップマークのアイコン、色、スタイルを設定する
 msgctxt "block description"
 msgid "Set and display step marks, which are useful when explaining the order."
 msgstr "順番を説明する時に便利でステップマークを設定し表示します。"
+
+#: src/blocks/_pro/table-of-contents-new/block.json
+msgctxt "block title"
+msgid "Table of Contents"
+msgstr "目次"
 
 #: dist/vk-blocks-pro/src/blocks/_pro/table-of-contents-new/block.json
 #: src/blocks/_pro/table-of-contents-new/block.json

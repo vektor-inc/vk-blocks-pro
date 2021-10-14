@@ -27,6 +27,7 @@ const dirNames = [
     { name: 'grid-column', isPro: 1 },
     { name: 'grid-column-item', isPro: 1 },
     { name: 'outer', isPro: 1 },
+    { name: 'table-of-contents-new', isPro: 1 },
 ]
 
 // mode が dev かどうか受け取る

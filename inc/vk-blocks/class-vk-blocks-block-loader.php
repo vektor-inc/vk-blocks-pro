@@ -1,117 +1,142 @@
 <?php
 /**
- * VK Blocks Loader
+ * VK Blocks Loader class.
+ *
+ * ブロックファイルの読み込み処理
  *
  * @package vk-blocks
  */
 
+/**
+ * VK_Blocks_Block_Loader
+ */
 class VK_Blocks_Block_Loader {
 
-	static $instance = null;
-
+	/**
+	 * ブロックの一覧
+	 *
+	 * @var array
+	 */
+	// phpcs:disable
 	private $blocks = array(
-		array( 'name' => 'alert', 'is_pro' =>  false ),
-		array( 'name' => 'balloon', 'is_pro' =>  false ),
-		array( 'name' => 'border-box', 'is_pro' =>  false ),
-		array( 'name' => 'button', 'is_pro' =>  false ),
-		array( 'name' => 'faq', 'is_pro' =>  false ),
-		array( 'name' => 'faq2', 'is_pro' =>  false ),
-		array( 'name' => 'faq2-a', 'is_pro' =>  false ),
-		array( 'name' => 'faq2-q', 'is_pro' =>  false ),
-		array( 'name' => 'flow', 'is_pro' =>  false ),
-		array( 'name' => 'heading', 'is_pro' =>  false ),
-		array( 'name' => 'icon', 'is_pro' =>  false ),
-		array( 'name' => 'icon-outer', 'is_pro' =>  false ),
-		array( 'name' => 'page-content', 'is_pro' =>  false ),
-		array( 'name' => 'pr-blocks', 'is_pro' =>  false ),
-		array( 'name' => 'pr-content', 'is_pro' =>  false ),
-		array( 'name' => 'spacer', 'is_pro' =>  false ),
-		array( 'name' => 'staff', 'is_pro' =>  false ),
-		array( 'name' => 'accordion', 'is_pro' =>  true ),
-		array( 'name' => 'accordion-target', 'is_pro' =>  true ),
-		array( 'name' => 'accordion-trigger', 'is_pro' =>  true ),
-		array( 'name' => 'animation', 'is_pro' =>  true ),
-		array( 'name' => 'card', 'is_pro' =>  true ),
-		array( 'name' => 'card-item', 'is_pro' =>  true ),
-		array( 'name' => 'child-page', 'is_pro' =>  true ),
-		array( 'name' => 'grid-column', 'is_pro' =>  true ),
-		array( 'name' => 'grid-column-item', 'is_pro' =>  true ),
-		array( 'name' => 'icon-card', 'is_pro' =>  true ),
-		array( 'name' => 'icon-card-item', 'is_pro' =>  true ),
-		array( 'name' => 'outer', 'is_pro' =>  true ),
-		array( 'name' => 'post-list', 'is_pro' =>  true ),
-		array( 'name' => 'select-post-list', 'is_pro' =>  true ),
-		array( 'name' => 'select-post-list-item', 'is_pro' =>  true ),
-		array( 'name' => 'slider', 'is_pro' =>  true ),
-		array( 'name' => 'slider-item', 'is_pro' =>  true ),
-		array( 'name' => 'step', 'is_pro' =>  true ),
-		array( 'name' => 'step-item', 'is_pro' =>  true ),
-		array( 'name' => 'table-of-contents-new', 'is_pro' =>  true ),
-		array( 'name' => 'timeline', 'is_pro' =>  true ),
-		array( 'name' => 'timeline-item', 'is_pro' =>  true )
+		array( 'name' => 'alert',                 'is_pro' =>  false ),
+		array( 'name' => 'balloon',               'is_pro' =>  false ),
+		array( 'name' => 'border-box',            'is_pro' =>  false ),
+		array( 'name' => 'button',                'is_pro' =>  false ),
+		array( 'name' => 'faq',                   'is_pro' =>  false ),
+		array( 'name' => 'faq2',                  'is_pro' =>  false ),
+		array( 'name' => 'faq2-a',                'is_pro' =>  false ),
+		array( 'name' => 'faq2-q',                'is_pro' =>  false ),
+		array( 'name' => 'flow',                  'is_pro' =>  false ),
+		array( 'name' => 'heading',               'is_pro' =>  false ),
+		array( 'name' => 'icon',                  'is_pro' =>  false ),
+		array( 'name' => 'icon-outer',            'is_pro' =>  false ),
+		array( 'name' => 'page-content',          'is_pro' =>  false ),
+		array( 'name' => 'pr-blocks',             'is_pro' =>  false ),
+		array( 'name' => 'pr-content',            'is_pro' =>  false ),
+		array( 'name' => 'spacer',                'is_pro' =>  false ),
+		array( 'name' => 'staff',                 'is_pro' =>  false ),
+		array( 'name' => 'accordion',             'is_pro' =>  true  ),
+		array( 'name' => 'accordion-target',      'is_pro' =>  true  ),
+		array( 'name' => 'accordion-trigger',     'is_pro' =>  true  ),
+		array( 'name' => 'animation',             'is_pro' =>  true  ),
+		array( 'name' => 'card',                  'is_pro' =>  true  ),
+		array( 'name' => 'card-item',             'is_pro' =>  true  ),
+		array( 'name' => 'child-page',            'is_pro' =>  true  ),
+		array( 'name' => 'grid-column',           'is_pro' =>  true  ),
+		array( 'name' => 'grid-column-item',      'is_pro' =>  true  ),
+		array( 'name' => 'icon-card',             'is_pro' =>  true  ),
+		array( 'name' => 'icon-card-item',        'is_pro' =>  true  ),
+		array( 'name' => 'outer',                 'is_pro' =>  true  ),
+		array( 'name' => 'post-list',             'is_pro' =>  true  ),
+		array( 'name' => 'select-post-list',      'is_pro' =>  true  ),
+		array( 'name' => 'select-post-list-item', 'is_pro' =>  true  ),
+		array( 'name' => 'slider',                'is_pro' =>  true  ),
+		array( 'name' => 'slider-item',           'is_pro' =>  true  ),
+		array( 'name' => 'step',                  'is_pro' =>  true  ),
+		array( 'name' => 'step-item',             'is_pro' =>  true  ),
+		array( 'name' => 'table-of-contents-new', 'is_pro' =>  true  ),
+		array( 'name' => 'timeline',              'is_pro' =>  true  ),
+		array( 'name' => 'timeline-item',         'is_pro' =>  true  )
 	);
+	// phpcs:enable
 
+	/**
+	 * ビルドされた assets のパス
+	 *
+	 * @var string
+	 */
 	private $assets_build_path;
+
+	/**
+	 * ビルドされた assets のURL
+	 *
+	 * @var [type]
+	 */
 	private $assets_build_url;
+
+	/**
+	 * ブロック毎に分割してビルドされた assets のURL
+	 *
+	 * @var [type]
+	 */
 	private $separate_assets_build_url;
 
+	/**
+	 * Constructor.
+	 */
 	private function __construct() {
 		$this->set_action_and_filter();
-		$this->assets_build_path = plugin_dir_path( __FILE__ ) . 'build/';
-		$this->assets_build_url = VK_BLOCKS_URL . 'build/';
+		$this->assets_build_path         = plugin_dir_path( __FILE__ ) . 'build/';
+		$this->assets_build_url          = VK_BLOCKS_URL . 'build/';
 		$this->separate_assets_build_url = VK_BLOCKS_DIR_URL . 'build/';
 
 		if ( self::should_load_separate_assets() ) {
 			add_filter( 'should_load_separate_core_block_assets', '__return_true' );
 		}
-
 	}
 
 	/**
-	 * initialize
+	 * Initialize
 	 *
-	 * @return void
+	 * @return VK_Blocks_Block_Loader
 	 */
-	static public function init() {
-        static $instance = null;
-        return $instance ?: $instance = new static;
-
+	public static function init() {
+		static $instance                         = null;
+		return $instance ? $instance : $instance = new static();
 	}
 
 	/**
-	 * set_action_and_filter
+	 * Set_action_and_filter
 	 *
 	 * @return void
 	 */
 	public function set_action_and_filter() {
-
 		$hook_point = apply_filters( 'vk_blocks_enqueue_point', 'wp_enqueue_scripts' );
-		
+
 		// Front css.
-		add_action( $hook_point, array( $this, 'add_styles') );
+		add_action( $hook_point, array( $this, 'add_styles' ) );
 
 		// Admin css.
 		if ( is_admin() ) {
-			add_action( 'enqueue_block_assets', array( $this, 'add_styles') );
+			add_action( 'enqueue_block_assets', array( $this, 'add_styles' ) );
 		}
 
-		add_action( 'init',  array( $this, 'register_blocks_assets' ), 10 );
+		add_action( 'init', array( $this, 'register_blocks_assets' ), 10 );
 		add_filter( 'register_block_type_args', array( $this, 'separate_assets_load_reducer' ) );
-
 	}
 
 	/**
 	 * VK Blocks Add Styles
 	 */
-	function add_styles() {
+	public function add_styles() {
 		wp_enqueue_style( 'vk-blocks-build-css' );
 	}
 
 	/**
 	 * VK Blocks Assets
-	 */	
+	 */
 	public function register_blocks_assets() {
-
 		$asset_file = include $this->assets_build_path . 'block-build.asset.php';
 
 		// CSSを登録.
@@ -135,17 +160,14 @@ class VK_Blocks_Block_Loader {
 		// 翻訳を追加.
 		if ( function_exists( 'wp_set_script_translations' ) ) {
 			wp_set_script_translations( 'vk-blocks-build-js', 'vk-blocks', $this->assets_build_path . 'languages' );
-		}		
-		
+		}
+
 		if ( function_exists( 'register_block_type' ) ) {
 			foreach ( $this->get_block_names() as $block_name ) {
 				$this->load_blocks( $block_name );
 			}
-		
 		}
-		
 	}
-
 
 	/**
 	 * VK Blocks separate_assets_load_reducer
@@ -154,12 +176,12 @@ class VK_Blocks_Block_Loader {
 	 *
 	 *  @param array $args Array of arguments for registering a block type.
 	 *  @return array Return filter style, script, editor_style and editor_script added.
-	 */	
-	function separate_assets_load_reducer( $args ) {
+	 */
+	public function separate_assets_load_reducer( $args ) {
 		if ( self::should_load_separate_assets() ) {
 			return $args;
 		}
-		
+
 		foreach ( $this->get_block_names( array( 'is_pro' => false ) ) as $block_name ) {
 			if ( ! empty( $args['style'] ) && 'vk-blocks/' . $block_name === $args['style'] ) {
 				$args['style']  = null;
@@ -167,7 +189,7 @@ class VK_Blocks_Block_Loader {
 			}
 		}
 
-		foreach ( $this->get_block_names( array( 'is_pro' =>  true ) ) as $block_name ) {
+		foreach ( $this->get_block_names( array( 'is_pro' => true ) ) as $block_name ) {
 			if ( file_exists( VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $block_name . '/index.php' ) ) {
 				if ( ! empty( $args['style'] ) && 'vk-blocks/' . $block_name === $args['style'] ) {
 					$args['style']  = null;
@@ -176,15 +198,15 @@ class VK_Blocks_Block_Loader {
 			}
 		}
 		return $args;
-	}	
+	}
 
 	/**
-	 * get block info
+	 * Get block information
 	 *
-	 * @param array $params 取得条件
+	 * @param string $block_name ブロック名.
 	 * @return array ブロック情報 ['name' => '' 'is_pro' => '']
 	 */
-	public function get_block_info ( $block_name ) {
+	public function get_block_info( $block_name ) {
 		$block_list = array();
 		foreach ( $this->blocks as $block ) {
 			if ( $block['name'] === $block_name ) {
@@ -194,13 +216,18 @@ class VK_Blocks_Block_Loader {
 		return false;
 	}
 
-
+	/**
+	 * Get block names.
+	 *
+	 * @param array $params 取得条件.
+	 * @return array
+	 */
 	public function get_block_names( $params = array() ) {
 		$block_list = array();
-		foreach ($this->blocks as $block) {
+		foreach ( $this->blocks as $block ) {
 			if ( count( $params ) ) {
-				foreach ($params as $key => $value) {
-					if ($block[$key] == $value) {
+				foreach ( $params as $key => $value ) {
+					if ( $block[ $key ] === $value ) {
 						$block_list[] = $block['name'];
 					}
 				}
@@ -212,35 +239,31 @@ class VK_Blocks_Block_Loader {
 	}
 
 	/**
-	 * should_load_separate_assets
+	 * Should_load_separate_assets
 	 * 分割読み込みを有効化するかどうか
 	 *
 	 * @return bool
-	 */		
-	static public function should_load_separate_assets() {
+	 */
+	public static function should_load_separate_assets() {
 		return apply_filters( 'vk_blocks_should_load_separate_assets', false );
 	}
 
 	/**
 	 * ブロックのロード
 	 *
-	 * @param [type] $block_name 読み込むブロック名
-	 * @param boolean $is_pro proかどうか
+	 * @param string $block_name 読み込むブロック名.
 	 * @return void
 	 */
-	private function load_blocks ( $block_name ) {
-
+	public function load_blocks( $block_name ) {
 		$block_info = $this->get_block_info( $block_name );
 
 		$require_file_path = VK_BLOCKS_SRC_PATH . '/blocks/' . $block_name . '/index.php';
 		if ( $block_info['is_pro'] ) {
 			$require_file_path = VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $block_name . '/index.php';
 		}
-		
+
 		if ( file_exists( $require_file_path ) ) {
 			require_once $require_file_path;
-		} 
-	}	
-	
+		}
+	}
 }
-

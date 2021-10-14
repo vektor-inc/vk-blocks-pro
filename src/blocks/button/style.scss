@@ -17,6 +17,14 @@ $vk-color-dark:#343a40;
 		}
 	}
 
+	& .is-style-outline {
+		border: 1px solid currentColor;
+	}
+
+	& .has-background {
+		color: #fff;
+	}
+
 	& a.btn-outline-primary {
 		color: var(--vk-color-primary);
 		border-color: var(--vk-color-primary);

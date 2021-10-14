@@ -13,6 +13,7 @@ import deprecatedHooks from './deprecated/hooks';
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { useEffect } from '@wordpress/element';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 const { name } = metadata;
 
@@ -53,10 +54,14 @@ const generateInlineCss = (attributes) => {
 	) {
 		return inlineCss;
 	}
+	// HexColor でない場合
+	if (!isHexColor(buttonColorCustom)) {
+		return inlineCss;
+	}
 
 	if (buttonType === '0' || buttonType === null) {
 		inlineCss = `
-		.vk_button-${clientId} .vk_button_link.btn {
+		.vk_button-${clientId} .has-background {
 			background-color: ${buttonColorCustom};
 			border: 1px solid ${buttonColorCustom};
 			color: #fff;
@@ -66,12 +71,12 @@ const generateInlineCss = (attributes) => {
 
 	if (buttonType === '1') {
 		inlineCss = `
-		.vk_button-${clientId} .vk_button_link.btn {
+		.vk_button-${clientId} .has-text-color {
 			background-color: transparent;
 			border: 1px solid ${buttonColorCustom};
 			color: ${buttonColorCustom};
 		}
-		.vk_button-${clientId} .vk_button_link.btn:hover {
+		.vk_button-${clientId} .has-text-color:hover {
 			background-color: ${buttonColorCustom};
 			border: 1px solid ${buttonColorCustom};
 			color: #fff;
@@ -95,15 +100,13 @@ addFilter(
 	createHigherOrderComponent((BlockEdit) => {
 		return (props) => {
 			const { attributes, setAttributes, clientId } = props;
-			const { buttonColorCustom } = attributes;
 
 			if ('vk-blocks/button' === props.name) {
 				useEffect(() => {
 					setAttributes({ clientId });
 				}, []);
-				if (buttonColorCustom) {
-					const cssTag = generateInlineCss(attributes);
-
+				const cssTag = generateInlineCss(attributes);
+				if (cssTag !== '') {
 					return (
 						<>
 							<BlockEdit {...props} />
@@ -136,9 +139,8 @@ addFilter(
 			if (-1 === deprecatedFuncIndex) {
 				// NOTE: useBlockProps + style要素を挿入する場合、useBlockPropsを使った要素が最初（上）にこないと、
 				// カスタムクラスを追加する処理が失敗する[
-				const { buttonColorCustom } = attributes;
-				if (buttonColorCustom) {
-					const cssTag = generateInlineCss(attributes);
+				const cssTag = generateInlineCss(attributes);
+				if (cssTag !== '') {
 					return (
 						<>
 							{el}

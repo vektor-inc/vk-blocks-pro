@@ -13,10 +13,10 @@ import {
 import {
 	RichText,
 	InspectorControls,
-	ColorPalette,
 	useBlockProps,
 } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
+import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 
 export default function ButtonEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -250,11 +250,9 @@ export default function ButtonEdit(props) {
 							'vk-blocks'
 						)}
 					>
-						<ColorPalette
-							value={buttonColorCustom}
-							onChange={(value) =>
-								setAttributes({ buttonColorCustom: value })
-							}
+						<AdvancedColorPalette
+							schema={'buttonColorCustom'}
+							{...props}
 						/>
 					</BaseControl>
 

@@ -6,7 +6,33 @@ $vk-color-danger: #dc3545;
 $vk-color-light:#f8f9fa;
 $vk-color-dark:#343a40;
 
-
+.vk_btn {
+	display: inline-block;
+	font-weight: 400;
+	color: #212529;
+	text-align: center;
+	vertical-align: middle;
+	background-color: transparent;
+	border: 1px solid transparent;
+	padding: .375rem 1.5rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	border-radius: .25rem;
+	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	white-space: inherit;
+	border-radius: var(--vk-size-radius);
+	padding-top: 0.6em;
+	padding-bottom: 0.6em;
+	-webkit-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	user-select: text;
+	text-decoration: none;
+	font-size: calc( var(--vk-size-text) * 1);
+}
+a.vk_btn {
+	text-decoration: none;
+}
 .vk_button {
 	margin: 0 auto 5px; /* 他テーマで0だと左寄せになる場合があるのでautoに変更 */
 	text-align: center; /* テキストのみの時のセンター揃え */
@@ -19,6 +45,13 @@ $vk-color-dark:#343a40;
 
 	& .is-style-outline {
 		border: 1px solid currentColor;
+		&:hover {
+			background-color: currentColor;
+		}
+		&:hover .vk_button_link_txt,
+		&:hover .vk_button_link_subCaption {
+			color: #fff;
+		}
 	}
 
 	& .has-background {

@@ -14,20 +14,12 @@ $vk-color-dark:#343a40;
 	vertical-align: middle;
 	background-color: transparent;
 	border: 1px solid transparent;
-	padding: .375rem 1.5rem;
+	padding: 0.6em 1.5rem;
 	font-size: 1rem;
 	line-height: 1.5;
-	border-radius: .25rem;
 	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 	white-space: inherit;
 	border-radius: var(--vk-size-radius);
-	padding-top: 0.6em;
-	padding-bottom: 0.6em;
-	-webkit-user-select: text;
-	-moz-user-select: text;
-	-ms-user-select: text;
-	user-select: text;
-	text-decoration: none;
 	font-size: calc( var(--vk-size-text) * 1);
 }
 a.vk_btn {

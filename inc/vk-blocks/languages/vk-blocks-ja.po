@@ -885,17 +885,9 @@ msgstr "スタイル"
 msgid "Outlined"
 msgstr "アウトライン"
 
-#: src/blocks/_pro/step-item/index.js:18
-msgid "Step Item"
-msgstr "ステップ要素"
-
 #: src/blocks/_pro/step/edit.js:38
 msgid "First Dot Number"
 msgstr "ステップの開始番号"
-
-#: src/blocks/_pro/step/index.js:19
-msgid "Step"
-msgstr "ステップ"
 
 #: src/blocks/_pro/table-of-contents-new/deprecated/0.59.1/save.js:19
 #: src/blocks/_pro/table-of-contents-new/edit.js:178
@@ -2774,9 +2766,19 @@ msgstr ""
 "プレビューしてください。"
 
 #: src/blocks/_pro/step-item/block.json
+msgctxt "block title"
+msgid "Step Item"
+msgstr "ステップ"
+
+#: src/blocks/_pro/step-item/block.json
 msgctxt "block description"
 msgid "This element sets the icon, color, and style of the step mark."
 msgstr "ステップマークのアイコン、色、スタイルを設定する要素です。"
+
+#: src/blocks/_pro/step/block.json
+msgctxt "block title"
+msgid "Step"
+msgstr "ステップ要素"
 
 #: src/blocks/_pro/step/block.json
 msgctxt "block description"

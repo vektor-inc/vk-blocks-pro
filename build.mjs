@@ -29,7 +29,9 @@ const dirNames = [
     { name: 'outer', isPro: 1 },
     { name: 'post-list', isPro: 1 },
     { name: "select-post-list", isPro: 1 },
-    { name: "select-post-list-item", isPro: 1 },   
+    { name: "select-post-list-item", isPro: 1 },
+    { name: 'step', isPro: 1 },
+    { name: 'step-item', isPro: 1 },
     { name: 'table-of-contents-new', isPro: 1 },
 ]
 

@@ -122,6 +122,7 @@ class VK_Blocks_Block_Loader {
 		// Register block css and js.
 		add_action( 'init', array( $this, 'register_blocks_assets' ), 10 );
 
+		// Switch load file type by filter.
 		add_filter( 'register_block_type_args', array( $this, 'separate_assets_load_reducer' ) );
 
 		if ( self::should_load_separate_assets() ) {
@@ -174,17 +175,24 @@ class VK_Blocks_Block_Loader {
 
 	/**
 	 * VK Blocks separate_assets_load_reducer
-	 * cssを分割しない（すべて結合したcssを読み込む）場合はregister_block_typeで登録したscriptやstyleを読み込ませない
+	 * すべて結合したcssを読み込む（cssを分割しない）場合は register_block_type で登録したscriptやstyleを読み込ませない
 	 * add_filter('vk_blocks_should_load_separate_assets', '__return_true'); にするとブロックごとのcssを読み込む
 	 *
 	 *  @param array $args Array of arguments for registering a block type.
 	 *  @return array Return filter style, script, editor_style and editor_script added.
 	 */
 	public function separate_assets_load_reducer( $args ) {
+
+		/************************************************
+		 * Load Separate file case
+		 */
 		if ( self::should_load_separate_assets() ) {
 			return $args;
 		}
 
+		/************************************************
+		 * Load Marged file case
+		 */
 		foreach ( $this->get_block_names( array( 'is_pro' => false ) ) as $block_name ) {
 			if ( ! empty( $args['style'] ) && 'vk-blocks/' . $block_name === $args['style'] ) {
 				$args['style']  = null;

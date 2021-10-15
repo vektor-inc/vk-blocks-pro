@@ -5,7 +5,6 @@
  * @package vk-blocks
  */
 
-
 /**
  * Register Timeline item.
  *

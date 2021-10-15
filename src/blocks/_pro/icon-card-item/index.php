@@ -21,17 +21,6 @@ function vk_blocks_register_block_icon_card_item() {
 		);
 	}
 
-	// Register Style.
-	if ( ! is_admin() ) {
-		wp_register_script(
-			'vk-blocks/icon-card-item-script',
-			VK_BLOCKS_DIR_URL . 'inc/vk-blocks/build/vk-icon-card-item.min.js',
-			array(),
-			VK_BLOCKS_VERSION,
-			true
-		);
-	}
-
 	// Register Script.
 	$asset = include VK_BLOCKS_DIR_PATH . 'build/_pro/icon-card-item/block-build.asset.php';
 	wp_register_script(
@@ -46,7 +35,6 @@ function vk_blocks_register_block_icon_card_item() {
 		__DIR__,
 		array(
 			'style'         => 'vk-blocks/icon-card-item',
-			'script'        => 'vk-blocks/icon-card-item-script',
 			'editor_style'  => 'vk-blocks-build-editor-css',
 			'editor_script' => 'vk-blocks-build-js',
 		)

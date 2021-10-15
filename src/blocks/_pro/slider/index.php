@@ -22,6 +22,17 @@ function vk_blocks_register_block_slider() {
 	}
 
 	// Register Script.
+	if ( ! is_admin() ) {
+		wp_register_script(
+			'vk-blocks/slider-script',
+			VK_BLOCKS_DIR_URL . 'inc/vk-blocks/build/vk-slider.min.js',
+			array( 'vk-swiper-script' ),
+			VK_BLOCKS_VERSION,
+			true
+		);
+	}
+	
+	// Register Script.
 	$asset = include VK_BLOCKS_DIR_PATH . 'build/_pro/slider/block-build.asset.php';
 	wp_register_script(
 		'vk-blocks/slider',

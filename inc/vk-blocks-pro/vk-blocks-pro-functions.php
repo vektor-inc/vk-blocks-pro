@@ -31,7 +31,7 @@ function vk_blocks_pro_load_scripts() {
 
 	// has_blockで、ウィジェッ内のブロックが判別できないので、常時読み込みに変更。
 	// TODO: 高速化のために、各ウィジェットの有効化を is_active_widget で判定し読み込み切り替える実装の余地あり。
-	if ( vk_blocks_should_load_separate_assets() ) {
+	if ( VK_Blocks_Block_Loader::should_load_separate_assets() ) {
 		return;
 	}
 

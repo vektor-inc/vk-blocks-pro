@@ -98,6 +98,7 @@ class VK_Blocks_Block_Loader {
 	 * @return VK_Blocks_Block_Loader
 	 */
 	public static function init() {
+		// static 宣言しているので既に定義されている場合は $instance に null は入らずに既存のインスタンスのまま.
 		static $instance                         = null;
 		return $instance ? $instance : $instance = new static();
 	}
@@ -110,15 +111,17 @@ class VK_Blocks_Block_Loader {
 	public function set_action_and_filter() {
 		$hook_point = apply_filters( 'vk_blocks_enqueue_point', 'wp_enqueue_scripts' );
 
-		// Front css.
+		// load registered css on front.
 		add_action( $hook_point, array( $this, 'add_styles' ) );
 
-		// Admin css.
+		// load registered css on admin.
 		if ( is_admin() ) {
 			add_action( 'enqueue_block_assets', array( $this, 'add_styles' ) );
 		}
 
+		// Register block css and js.
 		add_action( 'init', array( $this, 'register_blocks_assets' ), 10 );
+
 		add_filter( 'register_block_type_args', array( $this, 'separate_assets_load_reducer' ) );
 
 		if ( self::should_load_separate_assets() ) {
@@ -134,7 +137,7 @@ class VK_Blocks_Block_Loader {
 	}
 
 	/**
-	 * VK Blocks Assets
+	 * Register Blocks Assets
 	 */
 	public function register_blocks_assets() {
 		$asset_file = include $this->assets_build_path . 'block-build.asset.php';
@@ -171,7 +174,7 @@ class VK_Blocks_Block_Loader {
 
 	/**
 	 * VK Blocks separate_assets_load_reducer
-	 * cssを分割しない場合はregister_block_typeで登録したscriptやstyleを読み込ませない
+	 * cssを分割しない（すべて結合したcssを読み込む）場合はregister_block_typeで登録したscriptやstyleを読み込ませない
 	 * add_filter('vk_blocks_should_load_separate_assets', '__return_true'); にするとブロックごとのcssを読み込む
 	 *
 	 *  @param array $args Array of arguments for registering a block type.

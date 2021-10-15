@@ -4,6 +4,9 @@
  *
  * @package Lightning G3
  */
+if ( VK_Blocks_Block_Loader::should_load_separate_assets() ) {
+	return;
+}
 
 if ( ! class_exists( 'VK_Swiper' ) ) {
 	global $vk_swiper_url;

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "POT-Creation-Date: 2021-10-13T09:45:30+00:00\n"
-"PO-Revision-Date: 2021-10-13 22:11+0900\n"
+"PO-Revision-Date: 2021-10-15 16:20+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -754,10 +754,6 @@ msgstr "スライダーアイテムエリア内に余白を追加する"
 msgid "Remove padding from the Slider area"
 msgstr "スライダーアイテムエリア内の余白を無くす"
 
-#: src/blocks/_pro/slider-item/index.js:18
-msgid "Slider Item"
-msgstr "スライダーアイテム"
-
 #: src/blocks/_pro/slider/edit.js:106
 msgid "Multi-image Display Setting"
 msgstr "複数の表示設定"
@@ -846,10 +842,6 @@ msgstr "中央"
 #: src/blocks/_pro/slider/edit.js:374
 msgid "Bottom on Mobile device"
 msgstr "モバイルでは下部に表示"
-
-#: src/blocks/_pro/slider/index.js:21
-msgid "Slider"
-msgstr "スライダー"
 
 #: src/blocks/_pro/step-item/edit.js:54
 msgid "Step Mark"
@@ -2752,9 +2744,19 @@ msgid ""
 msgstr "任意に指定したページを投稿リストのレイアウトで表示します。"
 
 #: src/blocks/_pro/slider-item/block.json
+msgctxt "block title"
+msgid "Slider Item"
+msgstr "スライダーアイテム"
+
+#: src/blocks/_pro/slider-item/block.json
 msgctxt "block description"
 msgid "This is one item in the slider."
 msgstr "スライダー内の１つのアイテムです。"
+
+#: src/blocks/_pro/slider/block.json
+msgctxt "block title"
+msgid "Slider"
+msgstr "スライダー"
 
 #: src/blocks/_pro/slider/block.json
 msgctxt "block description"

@@ -244,6 +244,8 @@ class VK_Blocks_Block_Loader {
 	/**
 	 * Should_load_separate_assets
 	 * 分割読み込みを有効化するかどうか
+	 * true : load separate block
+	 * false: load marged block
 	 *
 	 * @return bool
 	 */

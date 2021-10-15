@@ -271,4 +271,14 @@ class VK_Blocks_Block_Loader {
 			require_once $require_file_path;
 		}
 	}
+
+	/**
+	 * Disable clone
+	 *
+	 * @return void
+	 * @throws \Exception Exception.
+	 */
+	final public function __clone() {
+		throw new \Exception( sprintf( 'Clone is not allowed: %s', get_class( $this ) ) );
+	}
 }

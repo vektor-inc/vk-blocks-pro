@@ -33,6 +33,8 @@ const dirNames = [
     { name: 'step', isPro: 1 },
     { name: 'step-item', isPro: 1 },
     { name: 'table-of-contents-new', isPro: 1 },
+    { name: 'timeline', isPro: 1 },
+    { name: 'timeline-item', isPro: 1 },    
 ]
 
 // mode が dev かどうか受け取る

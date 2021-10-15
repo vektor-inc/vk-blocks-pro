@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2021-10-13T09:45:30+00:00\n"
-"PO-Revision-Date: 2021-10-13 22:11+0900\n"
+"POT-Creation-Date: 2021-10-15T01:09:35+00:00\n"
+"PO-Revision-Date: 2021-10-15 10:20+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -930,14 +930,6 @@ msgstr "CLOSE"
 #: src/blocks/_pro/timeline-item/edit.js:46
 msgid "label"
 msgstr "ラベル"
-
-#: src/blocks/_pro/timeline-item/index.js:18
-msgid "Timeline Item"
-msgstr "タイムライン要素"
-
-#: src/blocks/_pro/timeline/index.js:19
-msgid "Timeline"
-msgstr "タイムライン"
 
 #: src/blocks/alert/edit.js:19 src/blocks/heading/edit.js:219
 msgid "Style Settings"
@@ -2798,9 +2790,19 @@ msgid ""
 msgstr "追加すると見出しに合わせて自動で生成される目次です。"
 
 #: src/blocks/_pro/timeline-item/block.json
+msgctxt "block title"
+msgid "Timeline Item"
+msgstr "タイムライン要素"
+
+#: src/blocks/_pro/timeline-item/block.json
 msgctxt "block description"
 msgid "This element sets the label, color, and style of the timeline."
 msgstr "タイムラインのラベル、色、スタイルを設定する要素です。"
+
+#: src/blocks/_pro/timeline/block.json
+msgctxt "block title"
+msgid "Timeline"
+msgstr "タイムライン"
 
 #: src/blocks/_pro/timeline/block.json
 msgctxt "block description"

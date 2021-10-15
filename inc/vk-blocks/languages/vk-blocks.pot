@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-10-14T06:43:49+00:00\n"
+"POT-Creation-Date: 2021-10-15T01:09:35+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -966,14 +966,6 @@ msgstr ""
 
 #: src/blocks/_pro/timeline-item/edit.js:46
 msgid "label"
-msgstr ""
-
-#: src/blocks/_pro/timeline-item/index.js:18
-msgid "Timeline Item"
-msgstr ""
-
-#: src/blocks/_pro/timeline/index.js:19
-msgid "Timeline"
 msgstr ""
 
 #: src/blocks/alert/edit.js:19
@@ -2789,8 +2781,18 @@ msgid "This is a table of contents that is automatically generated according to 
 msgstr ""
 
 #: src/blocks/_pro/timeline-item/block.json
+msgctxt "block title"
+msgid "Timeline Item"
+msgstr ""
+
+#: src/blocks/_pro/timeline-item/block.json
 msgctxt "block description"
 msgid "This element sets the label, color, and style of the timeline."
+msgstr ""
+
+#: src/blocks/_pro/timeline/block.json
+msgctxt "block title"
+msgid "Timeline"
 msgstr ""
 
 #: src/blocks/_pro/timeline/block.json

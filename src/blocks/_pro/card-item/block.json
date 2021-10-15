@@ -2,6 +2,7 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/card-item",
 	"category": "vk-blocks-cat",
+	"title": "Card Item",
 	"attributes": {
 		"layout": {
 			"type": "string",

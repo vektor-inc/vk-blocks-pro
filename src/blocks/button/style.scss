@@ -6,25 +6,7 @@ $vk-color-danger: #dc3545;
 $vk-color-light:#f8f9fa;
 $vk-color-dark:#343a40;
 
-.vk_btn {
-	display: inline-block;
-	font-weight: 400;
-	color: #212529;
-	text-align: center;
-	vertical-align: middle;
-	background-color: transparent;
-	border: 1px solid transparent;
-	padding: 0.6em 1.5rem;
-	font-size: 1rem;
-	line-height: 1.5;
-	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-	white-space: inherit;
-	border-radius: var(--vk-size-radius);
-	font-size: calc( var(--vk-size-text) * 1);
-}
-a.vk_btn {
-	text-decoration: none;
-}
+
 .vk_button {
 	margin: 0 auto 5px; /* 他テーマで0だと左寄せになる場合があるのでautoに変更 */
 	text-align: center; /* テキストのみの時のセンター揃え */
@@ -33,6 +15,24 @@ a.vk_btn {
 			opacity: 0.8;
 			box-shadow: 0 0 0 0.2rem rgba(171, 184, 195, 0.25);
 		}
+	}
+
+	&_btn {
+		display: inline-block;
+		font-weight: 400;
+		color: #212529;
+		text-align: center;
+		vertical-align: middle;
+		background-color: transparent;
+		border: 1px solid transparent;
+		padding: 0.6em 1.5rem;
+		font-size: 1rem;
+		line-height: 1.5;
+		transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+		white-space: inherit;
+		border-radius: var(--vk-size-radius);
+		font-size: calc( var(--vk-size-text) * 1);
+		text-decoration: none;
 	}
 
 	& .is-style-outline {

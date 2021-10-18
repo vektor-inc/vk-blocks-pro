@@ -2,26 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2021-10-15T04:10:17+00:00\n"
-"PO-Revision-Date: 2021-10-15 13:14+0900\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
 "X-Generator: Poedit 3.0\n"
-"X-Poedit-Basepath: ../../..\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
-"X-Poedit-WPHeader: vk-blocks.php\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.min.js\n"
-"X-Poedit-SearchPathExcluded-1: node_modules\n"
 
 #: src/blocks/_pro/accordion-target/index.js:16
 msgid "Accordion Target"
@@ -266,6 +256,13 @@ msgstr "画像高さ"
 msgid "Slide Height for each device."
 msgstr "デバイス毎の高さ"
 
+#: src/blocks/_pro/card/index.js:25
+#: src/components/column-layout-control/index.js:26
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:670
+#: inc/vk-components/package/class-vk-component-posts.php:670
+msgid "Card"
+msgstr "カード"
+
 #: src/blocks/_pro/child-page/edit.js:27
 msgid "Current page"
 msgstr "現在のページ"
@@ -419,10 +416,6 @@ msgstr "アイコンカード設定"
 msgid "Link URL:"
 msgstr "リンク URL:"
 
-#: src/blocks/_pro/icon-card-item/index.js:19
-msgid "Icon Card Item"
-msgstr "アイコンカードアイテム"
-
 #: src/blocks/_pro/icon-card/edit.js:65
 msgid "Columns"
 msgstr "カラム"
@@ -435,10 +428,6 @@ msgstr "表示位置"
 #: src/blocks/_pro/icon-card/edit.js:83
 msgid "Text"
 msgstr "テキスト"
-
-#: src/blocks/_pro/icon-card/index.js:20
-msgid "Icon Card"
-msgstr "アイコンカード"
 
 #: src/blocks/_pro/outer/edit.js:182 src/blocks/_pro/slider-item/edit.js:125
 msgid "Background Setting"
@@ -1662,12 +1651,6 @@ msgstr "画像 左"
 #: src/components/column-layout-control/index.js:20
 msgid "Card (Image Round)"
 msgstr "カード（画像丸抜き）"
-
-#: src/components/column-layout-control/index.js:26
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:670
-#: inc/vk-components/package/class-vk-component-posts.php:670
-msgid "Card"
-msgstr "カード"
 
 #: src/components/column-layout-control/index.js:30
 msgid "Card (No border)"
@@ -2908,6 +2891,16 @@ msgstr "グリッドカラムアイテム"
 msgctxt "block title"
 msgid "Grid Column"
 msgstr "グリットカラム"
+
+#: src/blocks/_pro/icon-card-item/block.json
+msgctxt "block title"
+msgid "Icon Card Item"
+msgstr "アイコンカードアイテム"
+
+#: src/blocks/_pro/icon-card/block.json
+msgctxt "block title"
+msgid "Icon Card"
+msgstr "アイコンカード"
 
 #: src/blocks/_pro/outer/block.json
 msgctxt "block title"

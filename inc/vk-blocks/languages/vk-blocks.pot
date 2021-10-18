@@ -214,10 +214,6 @@ msgstr ""
 msgid "https://example.com"
 msgstr ""
 
-#: src/blocks/_pro/card-item/index.js:18
-msgid "Card Item"
-msgstr ""
-
 #: src/blocks/_pro/card/edit.js:119
 #: src/components/display-items-control/index.js:28
 msgid "Display item"
@@ -1729,6 +1725,12 @@ msgstr ""
 msgid "Card (Image Round)"
 msgstr ""
 
+#: src/components/column-layout-control/index.js:26
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:670
+#: inc/vk-components/package/class-vk-component-posts.php:670
+msgid "Card"
+msgstr ""
+
 #: src/components/column-layout-control/index.js:30
 msgid "Card (No border)"
 msgstr ""
@@ -2906,6 +2908,31 @@ msgstr ""
 #: src/blocks/_pro/icon-card/block.json
 msgctxt "block title"
 msgid "Icon Card"
+
+#: src/blocks/_pro/card-item/block.json
+msgctxt "block title"
+msgid "Card Item"
+msgstr ""
+
+#: src/blocks/_pro/card/block.json
+msgctxt "block title"
+msgid "Card"
+msgstr ""
+
+#: src/blocks/_pro/child-page/block.json
+msgctxt "block title"
+msgid "Child page list"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/block.json
+msgctxt "block title"
+msgid "Grid Column Item"
+msgstr ""
+
+#: src/blocks/_pro/grid-column/block.json
+msgctxt "block title"
+msgid "Grid Column"
+>>>>>>> refactor/vk-blocks-v2
 msgstr ""
 
 #: src/blocks/_pro/outer/block.json

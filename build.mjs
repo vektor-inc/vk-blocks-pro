@@ -30,6 +30,8 @@ const dirNames = [
     { name: 'post-list', isPro: 1 },
     { name: "select-post-list", isPro: 1 },
     { name: "select-post-list-item", isPro: 1 },
+	{ name: 'card', isPro: 1 },
+    { name: 'card-item', isPro: 1 },
     { name: 'step', isPro: 1 },
     { name: 'step-item', isPro: 1 },
     { name: 'table-of-contents-new', isPro: 1 },

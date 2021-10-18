@@ -84,11 +84,11 @@ export class VKBButton extends Component {
 				aClass += ` has-text-color`;
 				// カスタムパレットカラーの場合
 				if (!isHexColor(buttonColorCustom)) {
-					aClass += ` vk_button_btn has-${buttonColorCustom}-text-color`;
+					aClass += ` has-${buttonColorCustom}-color`;
 				}
 				// カスタムカラーの場合
 				else {
-					aClass += ` vk_button_btn`;
+					aClass += ``;
 				}
 			}
 		}

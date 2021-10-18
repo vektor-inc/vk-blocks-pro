@@ -3,141 +3,46 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/pr-blocks/deprecated/0.0.1/component.js:148
-#: src/blocks/pr-blocks/deprecated/0.0.2/component.js:176
-#: src/blocks/pr-blocks/deprecated/0.59.0/component.js:191
-#: src/blocks/pr-blocks/edit.js:533
-msgid "Input Title"
+#: src/blocks/_pro/table-of-contents-new/deprecated/0.59.1/save.js:19
+#: src/blocks/_pro/table-of-contents-new/edit.js:178
+#: src/blocks/_pro/table-of-contents-new/save.js:16
+msgid "Table of Contents"
 msgstr ""
 
-#: src/blocks/pr-blocks/deprecated/0.0.1/component.js:157
-#: src/blocks/pr-blocks/deprecated/0.0.2/component.js:185
-#: src/blocks/pr-blocks/deprecated/0.59.0/component.js:200
-#: src/blocks/pr-blocks/edit.js:542
-msgid "Input Content"
+#: src/blocks/_pro/table-of-contents-new/edit.js:117
+msgid "Note on duplicating headings"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:101
-msgid "PR Block1 Setting"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:119
-msgid "Icon 1"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:154
-msgid "When you have an image. Image is displayed with priority"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:160
-msgid "PR Image 1"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:181
-msgid "PR Block2 Setting"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:199
-msgid "Icon 2"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:240
-msgid "PR Image 2"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:261
-msgid "PR Block3 Setting"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:263
-msgid "Link URL:"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:271
-msgid "Open link new tab."
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:279
-msgid "Icon 3"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:295
-msgid "Icon Background:"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:299
-msgid "Solid color"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:303
-msgid "No background"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:314
-msgid "When you have an image. Image is displayed with priority."
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:320
-msgid "PR Image 3"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:82
-msgid "Upload image"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:88
-msgid "Select image"
-msgstr ""
-
-#: src/utils/example-data.js:14
-msgid "Theoretical Physicist"
-msgstr ""
-
-#: src/utils/example-data.js:15
-msgid "Profile"
-msgstr ""
-
-#: src/utils/example-data.js:16
-msgid "Albert Einstein"
-msgstr ""
-
-#: src/utils/example-data.js:17
-msgid "14 March 1879 – 18 April 1955"
-msgstr ""
-
-#: src/utils/example-data.js:2
-msgid "Lorem ipsum dolor"
-msgstr ""
-
-#: src/utils/example-data.js:3
+#: src/blocks/_pro/table-of-contents-new/edit.js:122
 msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
-"tempor incididunt ut labore et dolore magna aliqua. "
+"If you duplicate a heading, the table of contents block will not work "
+"properly, please reassign the ID."
 msgstr ""
 
-#: src/utils/example-data.js:7
-msgid "Lorem ipsum"
+#: src/blocks/_pro/table-of-contents-new/edit.js:130
+msgid "Display type"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:14
-msgid "Icon"
+#: src/blocks/_pro/table-of-contents-new/edit.js:135
+msgid "Style"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:188
-msgid ""
-"If you want to use an icon other than the ones listed above, you can use "
-"any of the icons from Font Awesome's icon list Please select a tag and "
-"enter it."
+#: src/blocks/_pro/table-of-contents-new/edit.js:145
+msgid "Default"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:193
-msgid "Ex) <i class=\"fas fa-arrow-circle-right\"></i>"
+#: src/blocks/_pro/table-of-contents-new/edit.js:149
+msgid "No frame"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:202
-msgid "Font Awesome icon list"
+#: src/blocks/_pro/table-of-contents-new/edit.js:156
+msgid "Default Display Status"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:217
-msgid "Select Icon"
+#: src/blocks/_pro/table-of-contents-new/edit.js:164
+msgid "OPEN"
+msgstr ""
+
+#: src/blocks/_pro/table-of-contents-new/edit.js:168
+msgid "CLOSE"
 msgstr ""

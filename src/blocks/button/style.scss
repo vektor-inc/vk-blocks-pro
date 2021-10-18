@@ -50,6 +50,15 @@ $vk-color-dark:#343a40;
 		color: #fff;
 	}
 
+	& .has-text-color.vk_button_link-type-text:hover {
+		background-color: currentColor;
+		& .vk_button_link_txt,
+		& .vk_button_link_subCaption {
+			color: #fff;
+		}
+
+	}
+
 	& a.btn-outline-primary,
 	& a.btn-outline-primary.vk_button_link-type-text{
 		color: var(--vk-color-primary);

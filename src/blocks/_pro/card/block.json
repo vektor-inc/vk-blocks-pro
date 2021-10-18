@@ -1,8 +1,10 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/card",
-	"category": "vk-blocks-cat",
 	"title": "Card",
+	"description": "A card where you can place images, headings, text, and links.",
+	"textdomain": "vk-blocks",
+	"category": "vk-blocks-cat",
 	"attributes": {
 		"postId": {
 			"type": "number"
@@ -128,8 +130,6 @@
 			"default": ""
 		}
 	},
-	"description": "A card where you can place images, headings, text, and links.",
-	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

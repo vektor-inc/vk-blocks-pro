@@ -50,7 +50,8 @@ $vk-color-dark:#343a40;
 		color: #fff;
 	}
 
-	& a.btn-outline-primary {
+	& a.btn-outline-primary,
+	& a.btn-outline-primary.vk_button_link-type-text{
 		color: var(--vk-color-primary);
 		border-color: var(--vk-color-primary);
 		&:hover {
@@ -143,10 +144,11 @@ $vk-color-dark:#343a40;
 	}
 
 	*,
-	.editor-styles-wrapper &{
+	.editor-styles-wrapper {
 		//.editor-styles-wrapper a:not([href])に負けるので追加
-		a,
-		a:hover{
+		& a,
+		& a:hover,
+		& a.vk_button_link-type-text:hover{
 			&.btn-primary{ background-color: var(--vk-color-primary); border-color:var(--vk-color-primary); }
 			&.btn-primary,
 			&.btn-secondary,
@@ -157,7 +159,7 @@ $vk-color-dark:#343a40;
 				color: #fff;
 			}
 		}
-		a{
+		& a{
 			&.vk_button_link-type-text:hover.btn-outline-primary{
 				color: var(--vk-color-primary);
 			}
@@ -176,7 +178,7 @@ $vk-color-dark:#343a40;
 			&.btn-outline-light{color: $vk-color-light;}
 			&.btn-outline-dark{	color: $vk-color-dark;}
 		}
-		a:hover{
+		& a:hover{
 			&.btn-outline-primary,
 			&.btn-outline-secondary,
 			&.btn-outline-success,
@@ -187,7 +189,7 @@ $vk-color-dark:#343a40;
 			}
 		}
 	}
-	.editor-rich-text {
+	& .editor-rich-text {
 		// Font Awesomeアイコンが管理画面側で改行されないために inline-block を指定
 		display: inline-block;
 	}

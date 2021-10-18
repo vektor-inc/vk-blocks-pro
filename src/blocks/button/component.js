@@ -78,7 +78,7 @@ export class VKBButton extends Component {
 				buttonColorCustom === undefined ||
 				buttonColorCustom === null
 			) {
-				aClass = `${aClass} btn btn-outline-${buttonColor}`;
+				aClass = `${aClass} btn-outline-${buttonColor}`;
 				aStyle = null;
 			} else {
 				aClass += ` has-text-color`;

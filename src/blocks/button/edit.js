@@ -2,7 +2,7 @@ import { __ } from '@wordpress/i18n';
 import { VKBButton } from './component';
 import { FontAwesome } from '@vkblocks/utils/font-awesome-new';
 import {
-	RadioControl,
+	SelectControl,
 	PanelBody,
 	BaseControl,
 	CheckboxControl,
@@ -233,7 +233,7 @@ export default function ButtonEdit(props) {
 						)}
 					</p>
 
-					<RadioControl
+					<SelectControl
 						label={__('Default Color:', 'vk-blocks')}
 						selected={buttonColor}
 						options={[

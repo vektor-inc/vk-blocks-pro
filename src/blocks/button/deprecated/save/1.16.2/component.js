@@ -1,6 +1,5 @@
 import { Component } from '@wordpress/element';
 import ReactHtmlParser from 'react-html-parser';
-import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export class VKBButton extends Component {
 	render() {
@@ -23,57 +22,64 @@ export class VKBButton extends Component {
 		aStyle = null;
 		aClass = `vk_button_link`;
 
-		if (buttonType !== '0' && buttonType !== null && buttonType !== '1') {
-			aClass += ` vk_button_link-type-text`;
+		if (buttonType === '0' || buttonType === null || buttonType === '1') {
+			aClass = `${aClass} btn`;
+		} else {
+			aClass = `${aClass} vk_button_link-type-text`;
 		}
 
 		// 塗り
 		if (buttonType === '0' || buttonType === null) {
 			// 規定カラーの場合
-			if (buttonColor !== 'custom' && buttonColorCustom === undefined) {
-				aClass += ` vk_button_btn has-background has-vk-color-${buttonColor}-background-color`;
-			} else {
-				aClass += ` has-background`;
-				// カスタムパレットカラーの場合
-				if (!isHexColor(buttonColorCustom)) {
-					aClass += ` vk_button_btn has-${buttonColorCustom}-background-color`;
-				}
+			if (
+				buttonColorCustom === 'undefined' ||
+				buttonColorCustom === undefined ||
+				buttonColorCustom === null
+			) {
+				aClass = `${aClass} btn-${buttonColor}`;
+				aStyle = null;
+
 				// カスタムカラーの場合
-				else {
-					aClass += ` vk_button_btn`;
-				}
+			} else {
+				aStyle = {
+					backgroundColor: `${buttonColorCustom}`,
+					border: `1px solid ${buttonColorCustom}`,
+					color: `#fff`,
+				};
 			}
 			// 塗りなし
 		} else if (buttonType === '1') {
 			// 規定カラーの場合
-			if (buttonColor !== 'custom' && buttonColorCustom === undefined) {
-				aClass += ` vk_button_btn has-text-color has-vk-color-${buttonColor}-color is-style-outline`;
-			} else {
-				aClass += ` has-text-color`;
-				// カスタムパレットカラーの場合
-				if (!isHexColor(buttonColorCustom)) {
-					aClass += ` vk_button_btn has-${buttonColorCustom}-color is-style-outline`;
-				}
+			if (
+				buttonColorCustom === 'undefined' ||
+				buttonColorCustom === undefined ||
+				buttonColorCustom === null
+			) {
+				aClass = `${aClass} btn-outline-${buttonColor}`;
+				aStyle = null;
 				// カスタムカラーの場合
-				else {
-					aClass += ` vk_button_btn`;
-				}
+			} else {
+				aStyle = {
+					backgroundColor: 'transparent',
+					border: `1px solid ${buttonColorCustom}`,
+					color: `${buttonColorCustom}`,
+				};
 			}
 			// テキストのみ
 		} else if (buttonType === '2') {
 			// 規定カラーの場合
-			if (buttonColor !== 'custom' && buttonColorCustom === undefined) {
-				aClass += ` has-text-color has-vk-color-${buttonColor}-color`;
-			} else {
-				aClass += ` has-text-color`;
-				// カスタムパレットカラーの場合
-				if (!isHexColor(buttonColorCustom)) {
-					aClass += ` has-${buttonColorCustom}-color`;
-				}
+			if (
+				buttonColorCustom === 'undefined' ||
+				buttonColorCustom === undefined ||
+				buttonColorCustom === null
+			) {
+				aClass = `${aClass} btn-outline-${buttonColor}`;
+				aStyle = null;
 				// カスタムカラーの場合
-				else {
-					aClass += ``;
-				}
+			} else {
+				aStyle = {
+					color: `${buttonColorCustom}`,
+				};
 			}
 		}
 

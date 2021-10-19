@@ -23,6 +23,7 @@ const dirNames = [
     { name: 'spacer', isPro: 0 },
     { name: 'staff', isPro: 0 },
     { name: 'accordion', isPro: 1 },
+	{ name: 'animation', isPro: 1 },
     { name: 'child-page', isPro: 1 },
     { name: 'grid-column', isPro: 1 },
     { name: 'grid-column-item', isPro: 1 },

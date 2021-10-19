@@ -133,10 +133,6 @@ msgstr "非常に遅い"
 msgid "Slow"
 msgstr "遅い"
 
-#: src/blocks/_pro/animation/index.js:20
-msgid "Animation"
-msgstr "アニメーション"
-
 #: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:149
 #: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:151
 #: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:156
@@ -2866,6 +2862,11 @@ msgstr "スタッフ"
 msgctxt "block title"
 msgid "Accordion"
 msgstr "アコーディオン"
+
+#: src/blocks/_pro/animation/block.json
+msgctxt "block title"
+msgid "Animation"
+msgstr "アニメーション"
 
 #: src/blocks/_pro/card-item/block.json
 msgctxt "block title"

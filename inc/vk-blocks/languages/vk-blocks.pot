@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-10-15T04:28:15+00:00\n"
+"POT-Creation-Date: 2021-10-15T04:45:41+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -138,10 +138,6 @@ msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:96
 msgid "Slow"
-msgstr ""
-
-#: src/blocks/_pro/animation/index.js:20
-msgid "Animation"
 msgstr ""
 
 #: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:149
@@ -2885,10 +2881,26 @@ msgctxt "block title"
 msgid "Accordion"
 msgstr ""
 
+#: src/blocks/_pro/animation/block.json
+msgctxt "block title"
+msgid "Animation"
+msgstr ""
+
+#: src/blocks/_pro/card-item/block.json
+msgctxt "block title"
+msgid "Card Item"
+msgstr ""
+
+#: src/blocks/_pro/card/block.json
+msgctxt "block title"
+msgid "Card"
+msgstr ""
+
 #: src/blocks/_pro/child-page/block.json
 msgctxt "block title"
 msgid "Child page list"
 msgstr ""
+
 
 #: src/blocks/_pro/grid-column-item/block.json
 msgctxt "block title"
@@ -2908,32 +2920,6 @@ msgstr ""
 #: src/blocks/_pro/icon-card/block.json
 msgctxt "block title"
 msgid "Icon Card"
-
-#: src/blocks/_pro/card-item/block.json
-msgctxt "block title"
-msgid "Card Item"
-msgstr ""
-
-#: src/blocks/_pro/card/block.json
-msgctxt "block title"
-msgid "Card"
-msgstr ""
-
-#: src/blocks/_pro/child-page/block.json
-msgctxt "block title"
-msgid "Child page list"
-msgstr ""
-
-#: src/blocks/_pro/grid-column-item/block.json
-msgctxt "block title"
-msgid "Grid Column Item"
-msgstr ""
-
-#: src/blocks/_pro/grid-column/block.json
-msgctxt "block title"
-msgid "Grid Column"
->>>>>>> refactor/vk-blocks-v2
-msgstr ""
 
 #: src/blocks/_pro/outer/block.json
 msgctxt "block title"

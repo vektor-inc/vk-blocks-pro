@@ -12,10 +12,10 @@
  */
 function vk_blocks_register_block_accordion_target() {
 	// Register Script.
-	$asset = include VK_BLOCKS_DIR_PATH . 'build/_pro/accordion_target/block-build.asset.php';
+	$asset = include VK_BLOCKS_DIR_PATH . 'build/_pro/accordion-target/block-build.asset.php';
 	wp_register_script(
-		'vk-blocks/accordion_target',
-		VK_BLOCKS_DIR_URL . 'build/_pro/accordion_target/block-build.js',
+		'vk-blocks/accordion-target',
+		VK_BLOCKS_DIR_URL . 'build/_pro/accordion-target/block-build.js',
 		$asset['dependencies'],
 		VK_BLOCKS_VERSION,
 		true

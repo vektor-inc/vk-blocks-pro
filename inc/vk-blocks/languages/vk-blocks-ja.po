@@ -2648,11 +2648,21 @@ msgctxt "block description"
 msgid "This is the content area where you can add blocks freely."
 msgstr "コンテンツが長い時にコンテンツを折りたたんで隠して表示します。"
 
+#: src/blocks/_pro/accordion-target/block.json
+msgctxt "block title"
+msgid "Accordion Target"
+msgstr "アコーディオンタイトル"
+
 #: dist/vk-blocks-pro/src/blocks/_pro/accordion-trigger/block.json
 #: src/blocks/_pro/accordion-trigger/block.json
 msgctxt "block description"
 msgid "This is the title area where you can freely add blocks."
 msgstr "自由にブロックを追加できるタイトルエリアです。"
+
+#: src/blocks/_pro/accordion-trigger/block.json
+msgctxt "block title"
+msgid "Accordion Trigger"
+msgstr "アコーディオンコンテンツ"
 
 #: dist/vk-blocks-pro/src/blocks/_pro/accordion/block.json
 #: src/blocks/_pro/accordion/block.json

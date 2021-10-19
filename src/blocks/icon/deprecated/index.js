@@ -1,4 +1,5 @@
 import save1_13_2 from './1.13.2/save';
+import save1_16_1 from './1.16.1/save';
 
 const blockAttributes = {
 	faIcon: {
@@ -58,6 +59,10 @@ const blockAttributes2 = {
 }
 
 export const deprecated = [
+	{
+		attributes: blockAttributes2,
+		save: save1_16_1,
+	},
 	{
 		attributes: blockAttributes,
 		save: save1_13_2,

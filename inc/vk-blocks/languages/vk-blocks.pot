@@ -685,8 +685,18 @@ msgid "Used for staff introduction, company introduction, school introduction, m
 msgstr ""
 
 #: src/blocks/_pro/accordion-target/block.json
+msgctxt "block title"
+msgid "Accordion Target"
+msgstr ""
+
+#: src/blocks/_pro/accordion-target/block.json
 msgctxt "block description"
 msgid "This is the content area where you can add blocks freely."
+msgstr ""
+
+#: src/blocks/_pro/accordion-trigger/block.json
+msgctxt "block title"
+msgid "Accordion Trigger"
 msgstr ""
 
 #: src/blocks/_pro/accordion-trigger/block.json

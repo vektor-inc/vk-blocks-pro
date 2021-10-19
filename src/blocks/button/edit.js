@@ -16,7 +16,7 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
-import { select, dispatch } from '@wordpress/data';
+import { dispatch } from '@wordpress/data';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 
 export default function ButtonEdit(props) {

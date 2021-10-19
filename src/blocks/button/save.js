@@ -1,5 +1,6 @@
 import { VKBButton } from './component';
 import { RichText, useBlockProps } from '@wordpress/block-editor';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function save(props) {
 	const { attributes } = props;
@@ -19,10 +20,11 @@ export default function save(props) {
 	} = attributes;
 
 	let containerClass = '';
-	if (buttonColorCustom && 'undefined' !== buttonColorCustom) {
-		containerClass = `vk_button vk_button-${clientId} vk_button-color-custom vk_button-align-${buttonAlign}`;
+	// カスタムカラーの場合
+	if (buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) {
+		containerClass = `vk_button vk_button-color-custom vk_button-align-${buttonAlign} vk_button-${clientId}`;
 	} else {
-		containerClass = `vk_button vk_button-${clientId} vk_button-color-custom vk_button-align-${buttonAlign}`;
+		containerClass = `vk_button vk_button-color-custom vk_button-align-${buttonAlign}`;
 	}
 
 	const blockProps = useBlockProps.save({

@@ -46,7 +46,7 @@ const generateInlineCss = (attributes) => {
 	const { clientId, buttonType, buttonColorCustom } = attributes;
 	let inlineCss = '';
 
-	// 規定カラーの場合
+	// カスタムカラーの場合
 	if (buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) {
 		if (buttonType === '0' || buttonType === null) {
 			inlineCss = `

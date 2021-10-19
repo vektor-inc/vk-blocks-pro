@@ -762,10 +762,6 @@ msgstr "スライダーアイテムエリア内に余白を追加する"
 msgid "Remove padding from the Slider area"
 msgstr "スライダーアイテムエリア内の余白を無くす"
 
-#: src/blocks/_pro/slider-item/index.js:18
-msgid "Slider Item"
-msgstr "スライダーアイテム"
-
 #: src/blocks/_pro/slider/edit.js:106
 msgid "Multi-image Display Setting"
 msgstr "複数の表示設定"
@@ -854,10 +850,6 @@ msgstr "中央"
 #: src/blocks/_pro/slider/edit.js:374
 msgid "Bottom on Mobile device"
 msgstr "モバイルでは下部に表示"
-
-#: src/blocks/_pro/slider/index.js:21
-msgid "Slider"
-msgstr "スライダー"
 
 #: src/blocks/_pro/step-item/edit.js:54
 msgid "Step Mark"
@@ -2683,6 +2675,16 @@ msgctxt "block description"
 msgid "Add animation to elements when scrolling the page."
 msgstr "ページをスクロールした時に要素に動きを加えます。"
 
+#: src/blocks/_pro/card/block.json
+msgctxt "block title"
+msgid "Card"
+msgstr "カード"
+
+#: src/blocks/_pro/card-item/block.json
+msgctxt "block title"
+msgid "Card Item"
+msgstr "カードアイテム"
+
 #: dist/vk-blocks-pro/src/blocks/_pro/card-item/block.json
 #: src/blocks/_pro/card-item/block.json
 msgctxt "block description"
@@ -2720,6 +2722,11 @@ msgctxt "block description"
 msgid "This is one item in an icon card."
 msgstr "アイコンカード内の１つのアイテムです。"
 
+#: src/blocks/_pro/icon-card/block.json
+msgctxt "block title"
+msgid "Icon Card"
+msgstr "アイコンカード"
+
 #: dist/vk-blocks-pro/src/blocks/_pro/icon-card/block.json
 #: src/blocks/_pro/icon-card/block.json
 msgctxt "block description"
@@ -2756,11 +2763,21 @@ msgstr "任意に指定したページを投稿リストのレイアウトで表
 
 #: dist/vk-blocks-pro/src/blocks/_pro/slider-item/block.json
 #: src/blocks/_pro/slider-item/block.json
+msgctxt "block title"
+msgid "Slider Item"
+msgstr "スライダーアイテム"
+
+#: src/blocks/_pro/slider-item/block.json
 msgctxt "block description"
 msgid "This is one item in the slider."
 msgstr "スライダー内の１つのアイテムです。"
 
 #: dist/vk-blocks-pro/src/blocks/_pro/slider/block.json
+#: src/blocks/_pro/slider/block.json
+msgctxt "block title"
+msgid "Slider"
+msgstr "スライダー"
+
 #: src/blocks/_pro/slider/block.json
 msgctxt "block description"
 msgid ""
@@ -2888,6 +2905,11 @@ msgstr "レスポンシブスペーサー"
 msgctxt "block title"
 msgid "Staff"
 msgstr "スタッフ"
+
+#: src/blocks/_pro/animation/block.json
+msgctxt "block title"
+msgid "Animation"
+msgstr "アニメーション"
 
 #: src/blocks/_pro/accordion/block.json
 msgctxt "block title"

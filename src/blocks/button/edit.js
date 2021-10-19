@@ -70,6 +70,14 @@ export default function ButtonEdit(props) {
 		) {
 			setAttributes({ fontAwesomeIconAfter: undefined });
 		}
+		if (
+			subCaption === null ||
+			subCaption === 'null' ||
+			subCaption === 'undefined' ||
+			subCaption === ''
+		) {
+			setAttributes({ subCaption: undefined });
+		}
 	}, [clientId]);
 
 	const { updateBlockAttributes } = dispatch('core/block-editor');

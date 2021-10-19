@@ -3,46 +3,142 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/_pro/table-of-contents-new/deprecated/0.59.1/save.js:19
-#: src/blocks/_pro/table-of-contents-new/edit.js:178
-#: src/blocks/_pro/table-of-contents-new/save.js:16
-msgid "Table of Contents"
+#: src/blocks/border-box/deprecated/0.0.0/save.js:24
+#: src/blocks/border-box/deprecated/0.0.1/save.js:25
+#: src/blocks/border-box/edit.js:25
+msgid "Please enter a title."
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:117
-msgid "Note on duplicating headings"
+#: src/blocks/border-box/edit.js:109
+msgid "Transparent"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:122
+#: src/blocks/border-box/edit.js:113
+msgid "White"
+msgstr ""
+
+#: src/blocks/border-box/edit.js:119
+#: src/utils/font-awesome-new.js:14
+msgid "Icon"
+msgstr ""
+
+#: src/blocks/border-box/edit.js:122
+msgid "Icon ( Font Awesome )"
+msgstr ""
+
+#: src/blocks/border-box/edit.js:51
+msgid "Margin"
+msgstr ""
+
+#: src/blocks/border-box/edit.js:56
 msgid ""
-"If you duplicate a heading, the table of contents block will not work "
-"properly, please reassign the ID."
+"The margin-top of the first element and the margin-bottom of the last "
+"element in the border block will be automatically set to 0.If you want to "
+"add margins at the beginning and end, use a spacer block to specify height "
+"instead of margin."
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:130
-msgid "Display type"
+#: src/blocks/border-box/edit.js:63
+msgid "Color"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:135
-msgid "Style"
+#: src/blocks/border-box/edit.js:66
+msgid "Border Color"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:145
-msgid "Default"
+#: src/blocks/border-box/edit.js:76
+msgid "Red"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:149
-msgid "No frame"
+#: src/blocks/border-box/edit.js:80
+msgid "Orange"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:156
-msgid "Default Display Status"
+#: src/blocks/border-box/edit.js:84
+msgid "Blue"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:164
-msgid "OPEN"
+#: src/blocks/border-box/edit.js:88
+msgid "Green"
 msgstr ""
 
-#: src/blocks/_pro/table-of-contents-new/edit.js:168
-msgid "CLOSE"
+#: src/blocks/border-box/edit.js:92
+msgid "Black"
+msgstr ""
+
+#: src/blocks/border-box/edit.js:99
+msgid "Background Color"
+msgstr ""
+
+#: src/blocks/border-box/index.js:39
+msgid "Solid Angle Tab"
+msgstr ""
+
+#: src/blocks/border-box/index.js:44
+msgid "Solid Round Tab"
+msgstr ""
+
+#: src/blocks/border-box/index.js:48
+msgid "Solid Angle Banner"
+msgstr ""
+
+#: src/blocks/border-box/index.js:52
+msgid "Solid Angle Onborder"
+msgstr ""
+
+#: src/blocks/border-box/index.js:56
+msgid "Solid Angle Inner"
+msgstr ""
+
+#: src/blocks/border-box/index.js:60
+msgid "Solid Angle iconFeature"
+msgstr ""
+
+#: src/utils/example-data.js:14
+msgid "Theoretical Physicist"
+msgstr ""
+
+#: src/utils/example-data.js:15
+msgid "Profile"
+msgstr ""
+
+#: src/utils/example-data.js:16
+msgid "Albert Einstein"
+msgstr ""
+
+#: src/utils/example-data.js:17
+msgid "14 March 1879 – 18 April 1955"
+msgstr ""
+
+#: src/utils/example-data.js:2
+msgid "Lorem ipsum dolor"
+msgstr ""
+
+#: src/utils/example-data.js:3
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolore magna aliqua. "
+msgstr ""
+
+#: src/utils/example-data.js:7
+msgid "Lorem ipsum"
+msgstr ""
+
+#: src/utils/font-awesome-new.js:188
+msgid ""
+"If you want to use an icon other than the ones listed above, you can use "
+"any of the icons from Font Awesome's icon list Please select a tag and "
+"enter it."
+msgstr ""
+
+#: src/utils/font-awesome-new.js:193
+msgid "Ex) <i class=\"fas fa-arrow-circle-right\"></i>"
+msgstr ""
+
+#: src/utils/font-awesome-new.js:202
+msgid "Font Awesome icon list"
+msgstr ""
+
+#: src/utils/font-awesome-new.js:217
+msgid "Select Icon"
 msgstr ""

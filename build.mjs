@@ -25,6 +25,7 @@ const dirNames = [
     { name: 'spacer', isPro: 0 },
     { name: 'staff', isPro: 0 },
     { name: 'accordion', isPro: 1 },
+	{ name: 'animation', isPro: 1 },
     { name: 'child-page', isPro: 1 },
     { name: 'grid-column', isPro: 1 },
     { name: 'grid-column-item', isPro: 1 },
@@ -32,8 +33,12 @@ const dirNames = [
     { name: 'post-list', isPro: 1 },
     { name: "select-post-list", isPro: 1 },
     { name: "select-post-list-item", isPro: 1 },
+	{ name: 'card', isPro: 1 },
+    { name: 'card-item', isPro: 1 },
     { name: 'step', isPro: 1 },
     { name: 'step-item', isPro: 1 },
+	{ name: 'icon-card', isPro: 1 },
+    { name: 'icon-card-item', isPro: 1 },
     { name: 'table-of-contents-new', isPro: 1 },
 ]
 

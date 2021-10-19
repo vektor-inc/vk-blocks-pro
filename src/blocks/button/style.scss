@@ -6,6 +6,52 @@ $vk-color-danger: #dc3545;
 $vk-color-light:#f8f9fa;
 $vk-color-dark:#343a40;
 
+:root .vk_button,
+:root .editor-styles-wrapper .vk_button{
+	& .has-vk-color-secondary-background-color {
+		background-color: $vk-color-secondary;
+	}
+	& .has-vk-color-success-background-color {
+		background-color: $vk-color-success;
+	}
+	& .has-vk-color-info-background-color {
+		background-color: $vk-color-info;
+	}
+	& .has-vk-color-warning-background-color {
+		background-color: $vk-color-warning;
+	}
+	& .has-vk-color-danger-background-color {
+		background-color: $vk-color-danger;
+	}
+	& .has-vk-color-light-background-color {
+		background-color: $vk-color-light;
+	}
+	& .has-vk-color-dark-background-color {
+		background-color: $vk-color-dark;
+	}
+	& .has-vk-color-secondary-color {
+		color: $vk-color-secondary;
+	}
+	& .has-vk-color-success-color {
+		color: $vk-color-success;
+	}
+	& .has-vk-color-info-color {
+		color: $vk-color-info;
+	}
+	& .has-vk-color-warning-color {
+		color: $vk-color-warning;
+	}
+	& .has-vk-color-danger-color {
+		color: $vk-color-danger;
+	}
+	& .has-vk-color-light-color {
+		color: $vk-color-light;
+	}
+	& .has-vk-color-dark-color {
+		color: $vk-color-dark;
+	}
+}
+
 
 .vk_button {
 	margin: 0 auto 5px; /* 他テーマで0だと左寄せになる場合があるのでautoに変更 */

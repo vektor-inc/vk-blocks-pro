@@ -22,7 +22,7 @@ export default function save(props) {
 	if (buttonColorCustom && 'undefined' !== buttonColorCustom) {
 		containerClass = `vk_button vk_button-${clientId} vk_button-color-custom vk_button-align-${buttonAlign}`;
 	} else {
-		containerClass = `vk_button vk_button-${clientId} vk_button-align-${buttonAlign}`;
+		containerClass = `vk_button vk_button-${clientId} vk_button-color-custom vk_button-align-${buttonAlign}`;
 	}
 
 	const blockProps = useBlockProps.save({

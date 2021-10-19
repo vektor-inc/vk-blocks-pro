@@ -16,6 +16,7 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
+import { select, dispatch } from '@wordpress/data';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 
 export default function ButtonEdit(props) {
@@ -34,6 +35,7 @@ export default function ButtonEdit(props) {
 		fontAwesomeIconAfter,
 	} = attributes;
 
+	// 以前の値を切り替え
 	useEffect(() => {
 		setAttributes({ clientId });
 		if (
@@ -70,11 +72,30 @@ export default function ButtonEdit(props) {
 		}
 	}, [clientId]);
 
+	const { updateBlockAttributes } = dispatch('core/block-editor');
+
+	// buttonColor が有効なら buttonColorCustom を無効化
+	useEffect(() => {
+		if (buttonColor !== 'custom') {
+			updateBlockAttributes(clientId, { buttonColorCustom: undefined });
+		}
+	}, [buttonColor]);
+
+	// buttonColorCustom が有効なら buttonColor を custom に
+	// buttonColorCustom が空白なら buttonColor を primary に
+	useEffect(() => {
+		if (buttonColorCustom !== undefined) {
+			updateBlockAttributes(clientId, { buttonColor: 'custom' });
+		} else {
+			updateBlockAttributes(clientId, { buttonColor: 'primary' });
+		}
+	}, [buttonColorCustom]);
+
 	let containerClass;
 	if (buttonColorCustom) {
 		containerClass = `vk_button vk_button-${clientId} vk_button-align-${buttonAlign} vk_button-color-custom`;
 	} else {
-		containerClass = `vk_button vk_button-${clientId} vk_button-align-${buttonAlign}`;
+		containerClass = `vk_button vk_button-${clientId} vk_button-align-${buttonAlign} vk_button-color-custom`;
 	}
 
 	const blockProps = useBlockProps({
@@ -235,7 +256,7 @@ export default function ButtonEdit(props) {
 
 					<SelectControl
 						label={__('Default Color:', 'vk-blocks')}
-						selected={buttonColor}
+						value={buttonColor}
 						options={[
 							{
 								label: __('Primary', 'vk-blocks'),
@@ -269,6 +290,10 @@ export default function ButtonEdit(props) {
 								label: __('Dark', 'vk-blocks'),
 								value: 'dark',
 							},
+							{
+								label: __('Custom Color', 'vk-blocks'),
+								value: 'custom',
+							},
 						]}
 						onChange={(value) =>
 							setAttributes({ buttonColor: value })
@@ -284,6 +309,8 @@ export default function ButtonEdit(props) {
 					>
 						<AdvancedColorPalette
 							schema={'buttonColorCustom'}
+							disableSchema={'buttonColor'}
+							disableValue={'custom'}
 							{...props}
 						/>
 					</BaseControl>

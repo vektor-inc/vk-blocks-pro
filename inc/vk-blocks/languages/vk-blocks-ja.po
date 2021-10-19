@@ -2,16 +2,26 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
+"POT-Creation-Date: 2021-10-18T05:52:04+00:00\n"
+"PO-Revision-Date: 2021-10-18 14:57+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ja\n"
 "X-Generator: Poedit 3.0\n"
+"X-Poedit-Basepath: ../../..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: vk-blocks.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
 
 #: src/blocks/_pro/accordion-target/index.js:16
 msgid "Accordion Target"
@@ -133,6 +143,10 @@ msgstr "非常に遅い"
 msgid "Slow"
 msgstr "遅い"
 
+#: src/blocks/_pro/animation/index.js:20
+msgid "Animation"
+msgstr "アニメーション"
+
 #: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:149
 #: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:151
 #: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:156
@@ -201,6 +215,10 @@ msgstr "URL"
 #: src/blocks/_pro/card-item/edit.js:222
 msgid "https://example.com"
 msgstr "https://example.com"
+
+#: src/blocks/_pro/card-item/index.js:18
+msgid "Card Item"
+msgstr "カードアイテム"
 
 #: src/blocks/_pro/card/edit.js:119
 #: src/components/display-items-control/index.js:28
@@ -300,7 +318,7 @@ msgstr "単位"
 
 #: src/blocks/_pro/grid-column-item/edit.js:163
 #: src/blocks/_pro/outer/edit.js:617 src/blocks/icon-outer/edit.js:151
-#: src/blocks/icon/edit.js:138 src/components/advanced-unit-control/index.js:18
+#: src/blocks/icon/edit.js:140 src/components/advanced-unit-control/index.js:18
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:10
 #: inc/vk-blocks/admin/admin-margin.php:10
 msgid "px"
@@ -308,7 +326,7 @@ msgstr "px"
 
 #: src/blocks/_pro/grid-column-item/edit.js:167
 #: src/blocks/_pro/outer/edit.js:621 src/blocks/icon-outer/edit.js:155
-#: src/blocks/icon/edit.js:142 src/components/advanced-unit-control/index.js:22
+#: src/blocks/icon/edit.js:144 src/components/advanced-unit-control/index.js:22
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:14
 #: inc/vk-blocks/admin/admin-margin.php:14
 msgid "em"
@@ -316,7 +334,7 @@ msgstr "em"
 
 #: src/blocks/_pro/grid-column-item/edit.js:171
 #: src/blocks/_pro/outer/edit.js:625 src/blocks/icon-outer/edit.js:159
-#: src/blocks/icon/edit.js:146 src/components/advanced-unit-control/index.js:26
+#: src/blocks/icon/edit.js:148 src/components/advanced-unit-control/index.js:26
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:18
 #: inc/vk-blocks/admin/admin-margin.php:18
 msgid "rem"
@@ -324,7 +342,7 @@ msgstr "rem"
 
 #: src/blocks/_pro/grid-column-item/edit.js:175
 #: src/blocks/_pro/outer/edit.js:629 src/blocks/icon-outer/edit.js:163
-#: src/blocks/icon/edit.js:150 src/components/advanced-unit-control/index.js:30
+#: src/blocks/icon/edit.js:152 src/components/advanced-unit-control/index.js:30
 msgid "vw"
 msgstr "vw"
 
@@ -377,14 +395,14 @@ msgid "Input Content"
 msgstr "文章を入力してください"
 
 #: src/blocks/_pro/icon-card-item/edit.js:100 src/blocks/button/edit.js:70
-#: src/blocks/icon/edit.js:239 src/blocks/pr-blocks/edit.js:271
+#: src/blocks/icon/edit.js:249 src/blocks/pr-blocks/edit.js:271
 #: src/blocks/pr-content/edit.js:130
 msgid "Open link new tab."
 msgstr "リンクを別ウィンドウで開く"
 
 #: src/blocks/_pro/icon-card-item/edit.js:108
 #: src/blocks/_pro/step-item/edit.js:57 src/blocks/border-box/edit.js:122
-#: src/blocks/button/edit.js:258 src/blocks/icon/edit.js:227
+#: src/blocks/button/edit.js:258 src/blocks/icon/edit.js:237
 #: src/blocks/pr-content/edit.js:196
 msgid "Icon ( Font Awesome )"
 msgstr "アイコン ( Font Awesome )"
@@ -394,7 +412,7 @@ msgid "Icon Background:"
 msgstr "アイコン背景:"
 
 #: src/blocks/_pro/icon-card-item/edit.js:130 src/blocks/button/edit.js:173
-#: src/blocks/icon-outer/edit.js:204 src/blocks/icon/edit.js:190
+#: src/blocks/icon-outer/edit.js:204 src/blocks/icon/edit.js:192
 #: src/blocks/pr-blocks/edit.js:299
 msgid "Solid color"
 msgstr "ベタ塗り"
@@ -412,6 +430,10 @@ msgstr "アイコンカード設定"
 msgid "Link URL:"
 msgstr "リンク URL:"
 
+#: src/blocks/_pro/icon-card-item/index.js:19
+msgid "Icon Card Item"
+msgstr "アイコンカードアイテム"
+
 #: src/blocks/_pro/icon-card/edit.js:65
 msgid "Columns"
 msgstr "カラム"
@@ -424,6 +446,10 @@ msgstr "表示位置"
 #: src/blocks/_pro/icon-card/edit.js:83
 msgid "Text"
 msgstr "テキスト"
+
+#: src/blocks/_pro/icon-card/index.js:20
+msgid "Icon Card"
+msgstr "アイコンカード"
 
 #: src/blocks/_pro/outer/edit.js:182 src/blocks/_pro/slider-item/edit.js:125
 msgid "Background Setting"
@@ -612,7 +638,7 @@ msgid "Border width"
 msgstr "枠線の幅"
 
 #: src/blocks/_pro/outer/edit.js:543 src/blocks/icon-outer/edit.js:180
-#: src/blocks/icon/edit.js:167
+#: src/blocks/icon/edit.js:169
 msgid "Border radius"
 msgstr "枠線のRの大きさ"
 
@@ -848,7 +874,7 @@ msgstr "例) 午前 6:00"
 
 #: src/blocks/_pro/step-item/edit.js:76
 #: src/blocks/_pro/timeline-item/edit.js:53 src/blocks/border-box/edit.js:63
-#: src/blocks/icon/edit.js:246 src/blocks/staff/edit.js:139
+#: src/blocks/icon/edit.js:256 src/blocks/staff/edit.js:139
 #: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:41
 #: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:56
 #: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:130
@@ -861,7 +887,7 @@ msgstr "色"
 #: src/blocks/_pro/step-item/edit.js:82
 #: src/blocks/_pro/table-of-contents-new/edit.js:135
 #: src/blocks/_pro/timeline-item/edit.js:63 src/blocks/icon-outer/edit.js:196
-#: src/blocks/icon/edit.js:182
+#: src/blocks/icon/edit.js:184
 msgid "Style"
 msgstr "スタイル"
 
@@ -1079,13 +1105,12 @@ msgstr "透過"
 msgid "White"
 msgstr "白"
 
-#: src/blocks/border-box/edit.js:119 src/blocks/icon/index.js:18
-#: src/utils/font-awesome-new.js:14
+#: src/blocks/border-box/edit.js:119 src/utils/font-awesome-new.js:14
 msgid "Icon"
 msgstr "アイコン"
 
 #: src/blocks/border-box/edit.js:51 src/blocks/icon-outer/edit.js:132
-#: src/blocks/icon/edit.js:119
+#: src/blocks/icon/edit.js:121
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:57
 #: inc/vk-blocks/admin/admin-margin.php:57
 msgid "Margin"
@@ -1394,15 +1419,15 @@ msgstr "見出しレベルの変更"
 msgid "Heading %d"
 msgstr "見出し %d"
 
-#: src/blocks/icon-outer/edit.js:176 src/blocks/icon/edit.js:163
+#: src/blocks/icon-outer/edit.js:176 src/blocks/icon/edit.js:165
 msgid "Reset"
 msgstr "リセット"
 
-#: src/blocks/icon-outer/edit.js:212 src/blocks/icon/edit.js:198
+#: src/blocks/icon-outer/edit.js:212 src/blocks/icon/edit.js:200
 msgid "Icon & Frame"
 msgstr "アイコンと枠"
 
-#: src/blocks/icon-outer/edit.js:220 src/blocks/icon/edit.js:206
+#: src/blocks/icon-outer/edit.js:220 src/blocks/icon/edit.js:208
 msgid "Icon only"
 msgstr "アイコンのみ"
 
@@ -1410,19 +1435,15 @@ msgstr "アイコンのみ"
 msgid "Icon Common Setting"
 msgstr "アイコン共通設定"
 
-#: src/blocks/icon-outer/edit.js:85 src/blocks/icon/edit.js:72
+#: src/blocks/icon-outer/edit.js:85 src/blocks/icon/edit.js:74
 msgid "Size"
 msgstr "サイズ"
 
-#: src/blocks/icon-outer/index.js:16
-msgid "Icon Outer"
-msgstr "横並びアイコン"
-
-#: src/blocks/icon/edit.js:225
+#: src/blocks/icon/edit.js:235
 msgid "Icon Setting"
 msgstr "アイコン設定"
 
-#: src/blocks/icon/edit.js:234 src/blocks/pr-content/edit.js:121
+#: src/blocks/icon/edit.js:244 src/blocks/pr-content/edit.js:121
 msgid "Link URL"
 msgstr "リンクURL"
 
@@ -2529,7 +2550,7 @@ msgstr ""
 msgid "Edit this area"
 msgstr "このエリアを編集"
 
-#: dist/vk-blocks-pro/vk-blocks.php:93 vk-blocks.php:97
+#: dist/vk-blocks-pro/vk-blocks.php:93 vk-blocks.php:95
 msgid ""
 "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks "
 "Plugin running."
@@ -2833,6 +2854,16 @@ msgctxt "block title"
 msgid "Heading"
 msgstr "見出し"
 
+#: src/blocks/icon-outer/block.json
+msgctxt "block title"
+msgid "Icon Outer"
+msgstr "横並びアイコン"
+
+#: src/blocks/icon/block.json
+msgctxt "block title"
+msgid "Icon"
+msgstr "アイコン"
+
 #: src/blocks/page-content/block.json
 msgctxt "block title"
 msgid "Page Content"
@@ -2863,21 +2894,6 @@ msgctxt "block title"
 msgid "Accordion"
 msgstr "アコーディオン"
 
-#: src/blocks/_pro/animation/block.json
-msgctxt "block title"
-msgid "Animation"
-msgstr "アニメーション"
-
-#: src/blocks/_pro/card-item/block.json
-msgctxt "block title"
-msgid "Card Item"
-msgstr "カードアイテム"
-
-#: src/blocks/_pro/card/block.json
-msgctxt "block title"
-msgid "Card"
-msgstr "カード"
-
 #: src/blocks/_pro/child-page/block.json
 msgctxt "block title"
 msgid "Child page list"
@@ -2892,16 +2908,6 @@ msgstr "グリッドカラムアイテム"
 msgctxt "block title"
 msgid "Grid Column"
 msgstr "グリットカラム"
-
-#: src/blocks/_pro/icon-card-item/block.json
-msgctxt "block title"
-msgid "Icon Card Item"
-msgstr "アイコンカードアイテム"
-
-#: src/blocks/_pro/icon-card/block.json
-msgctxt "block title"
-msgid "Icon Card"
-msgstr "アイコンカード"
 
 #: src/blocks/_pro/outer/block.json
 msgctxt "block title"

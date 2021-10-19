@@ -36,6 +36,38 @@ export default function ButtonEdit(props) {
 
 	useEffect(() => {
 		setAttributes({ clientId });
+		if (
+			buttonUrl === null ||
+			buttonUrl === 'null' ||
+			buttonUrl === 'undefined' ||
+			buttonUrl === ''
+		) {
+			setAttributes({ buttonUrl: undefined });
+		}
+		if (
+			buttonColorCustom === null ||
+			buttonColorCustom === 'null' ||
+			buttonColorCustom === 'undefined' ||
+			buttonColorCustom === ''
+		) {
+			setAttributes({ buttonColorCustom: undefined });
+		}
+		if (
+			fontAwesomeIconBefore === null ||
+			fontAwesomeIconBefore === 'null' ||
+			fontAwesomeIconBefore === 'undefined' ||
+			fontAwesomeIconBefore === ''
+		) {
+			setAttributes({ fontAwesomeIconBefore: undefined });
+		}
+		if (
+			fontAwesomeIconAfter === null ||
+			fontAwesomeIconAfter === 'null' ||
+			fontAwesomeIconAfter === 'undefined' ||
+			fontAwesomeIconAfter === ''
+		) {
+			setAttributes({ fontAwesomeIconAfter: undefined });
+		}
 	}, [clientId]);
 
 	let containerClass;

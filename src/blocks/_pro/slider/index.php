@@ -31,7 +31,7 @@ function vk_blocks_register_block_slider() {
 			true
 		);
 	}
-	
+
 	// Register Script.
 	$asset = include VK_BLOCKS_DIR_PATH . 'build/_pro/slider/block-build.asset.php';
 	wp_register_script(

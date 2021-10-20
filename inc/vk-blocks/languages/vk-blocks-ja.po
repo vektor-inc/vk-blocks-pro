@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2021-10-18T05:52:04+00:00\n"
-"PO-Revision-Date: 2021-10-18 14:57+0900\n"
+"POT-Creation-Date: 2021-10-20T00:27:49+00:00\n"
+"PO-Revision-Date: 2021-10-20 09:31+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -65,7 +65,7 @@ msgstr "短い"
 
 #: src/blocks/_pro/animation/edit.js:123 src/blocks/_pro/outer/edit.js:303
 #: src/blocks/_pro/slider/edit.js:193 src/blocks/balloon/edit.js:276
-#: src/blocks/button/edit.js:95 src/blocks/faq/index.js:26
+#: src/blocks/button/edit.js:163 src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:21
 #: src/extensions/common/inline-font-size/index.js:56
 msgid "Normal"
@@ -134,10 +134,6 @@ msgstr "非常に遅い"
 #: src/blocks/_pro/animation/edit.js:96
 msgid "Slow"
 msgstr "遅い"
-
-#: src/blocks/_pro/animation/index.js:20
-msgid "Animation"
-msgstr "アニメーション"
 
 #: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:149
 #: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:151
@@ -208,10 +204,6 @@ msgstr "URL"
 msgid "https://example.com"
 msgstr "https://example.com"
 
-#: src/blocks/_pro/card-item/index.js:18
-msgid "Card Item"
-msgstr "カードアイテム"
-
 #: src/blocks/_pro/card/edit.js:119
 #: src/components/display-items-control/index.js:28
 msgid "Display item"
@@ -261,13 +253,6 @@ msgstr "画像高さ"
 #: src/blocks/_pro/card/edit.js:82 src/blocks/_pro/slider/edit.js:212
 msgid "Slide Height for each device."
 msgstr "デバイス毎の高さ"
-
-#: src/blocks/_pro/card/index.js:25
-#: src/components/column-layout-control/index.js:26
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:670
-#: inc/vk-components/package/class-vk-component-posts.php:670
-msgid "Card"
-msgstr "カード"
 
 #: src/blocks/_pro/child-page/edit.js:27
 msgid "Current page"
@@ -386,7 +371,7 @@ msgstr "タイトルを入力"
 msgid "Input Content"
 msgstr "文章を入力してください"
 
-#: src/blocks/_pro/icon-card-item/edit.js:100 src/blocks/button/edit.js:70
+#: src/blocks/_pro/icon-card-item/edit.js:100 src/blocks/button/edit.js:138
 #: src/blocks/icon/edit.js:249 src/blocks/pr-blocks/edit.js:271
 #: src/blocks/pr-content/edit.js:130
 msgid "Open link new tab."
@@ -394,7 +379,7 @@ msgstr "リンクを別ウィンドウで開く"
 
 #: src/blocks/_pro/icon-card-item/edit.js:108
 #: src/blocks/_pro/step-item/edit.js:57 src/blocks/border-box/edit.js:122
-#: src/blocks/button/edit.js:258 src/blocks/icon/edit.js:237
+#: src/blocks/button/edit.js:330 src/blocks/icon/edit.js:237
 #: src/blocks/pr-content/edit.js:196
 msgid "Icon ( Font Awesome )"
 msgstr "アイコン ( Font Awesome )"
@@ -403,13 +388,13 @@ msgstr "アイコン ( Font Awesome )"
 msgid "Icon Background:"
 msgstr "アイコン背景:"
 
-#: src/blocks/_pro/icon-card-item/edit.js:130 src/blocks/button/edit.js:173
+#: src/blocks/_pro/icon-card-item/edit.js:130 src/blocks/button/edit.js:241
 #: src/blocks/icon-outer/edit.js:204 src/blocks/icon/edit.js:192
 #: src/blocks/pr-blocks/edit.js:299
 msgid "Solid color"
 msgstr "ベタ塗り"
 
-#: src/blocks/_pro/icon-card-item/edit.js:134 src/blocks/button/edit.js:181
+#: src/blocks/_pro/icon-card-item/edit.js:134 src/blocks/button/edit.js:249
 #: src/blocks/pr-blocks/edit.js:303
 msgid "No background"
 msgstr "背景なし"
@@ -421,10 +406,6 @@ msgstr "アイコンカード設定"
 #: src/blocks/_pro/icon-card-item/edit.js:92 src/blocks/pr-blocks/edit.js:263
 msgid "Link URL:"
 msgstr "リンク URL:"
-
-#: src/blocks/_pro/icon-card-item/index.js:19
-msgid "Icon Card Item"
-msgstr "アイコンカードアイテム"
 
 #: src/blocks/_pro/icon-card/edit.js:65
 msgid "Columns"
@@ -438,10 +419,6 @@ msgstr "表示位置"
 #: src/blocks/_pro/icon-card/edit.js:83
 msgid "Text"
 msgstr "テキスト"
-
-#: src/blocks/_pro/icon-card/index.js:20
-msgid "Icon Card"
-msgstr "アイコンカード"
 
 #: src/blocks/_pro/outer/edit.js:182 src/blocks/_pro/slider-item/edit.js:125
 msgid "Background Setting"
@@ -834,7 +811,7 @@ msgstr "ナビゲーションの位置"
 msgid "Hide"
 msgstr "非表示"
 
-#: src/blocks/_pro/slider/edit.js:370 src/blocks/button/edit.js:129
+#: src/blocks/_pro/slider/edit.js:370 src/blocks/button/edit.js:197
 #: src/components/display-items-control/index.js:125
 msgid "Center"
 msgstr "中央"
@@ -938,22 +915,22 @@ msgstr "タイムライン"
 msgid "Style Settings"
 msgstr "スタイル設定"
 
-#: src/blocks/alert/edit.js:25 src/blocks/button/edit.js:212
+#: src/blocks/alert/edit.js:25 src/blocks/button/edit.js:280
 #: src/blocks/pr-content/edit.js:164 src/extensions/core/group/style.js:138
 msgid "Success"
 msgstr "Success"
 
-#: src/blocks/alert/edit.js:28 src/blocks/button/edit.js:216
+#: src/blocks/alert/edit.js:28 src/blocks/button/edit.js:284
 #: src/blocks/pr-content/edit.js:167 src/extensions/core/group/style.js:134
 msgid "Info"
 msgstr "Info"
 
-#: src/blocks/alert/edit.js:30 src/blocks/button/edit.js:220
+#: src/blocks/alert/edit.js:30 src/blocks/button/edit.js:288
 #: src/blocks/pr-content/edit.js:169 src/extensions/core/group/style.js:142
 msgid "Warning"
 msgstr "Warning"
 
-#: src/blocks/alert/edit.js:34 src/blocks/button/edit.js:224
+#: src/blocks/alert/edit.js:34 src/blocks/button/edit.js:292
 #: src/blocks/pr-content/edit.js:173 src/extensions/core/group/style.js:146
 msgid "Danger"
 msgstr "Danger"
@@ -995,13 +972,13 @@ msgstr "位置"
 msgid "Please specify the layout of the balloon."
 msgstr "吹き出しの配置を指定してください。"
 
-#: src/blocks/balloon/edit.js:219 src/blocks/button/edit.js:119
+#: src/blocks/balloon/edit.js:219 src/blocks/button/edit.js:187
 #: src/blocks/pr-content/edit.js:233
 #: src/components/display-items-control/index.js:121
 msgid "Left"
 msgstr "左"
 
-#: src/blocks/balloon/edit.js:231 src/blocks/button/edit.js:139
+#: src/blocks/balloon/edit.js:231 src/blocks/button/edit.js:207
 #: src/blocks/pr-content/edit.js:232
 #: src/components/display-items-control/index.js:129
 msgid "Right"
@@ -1159,63 +1136,85 @@ msgstr "直線 ピン角 内側"
 msgid "Solid Angle iconFeature"
 msgstr "直線 ピン角 アイコン"
 
-#: src/blocks/button/edit.js:103 src/blocks/spacer/edit.js:85
+#: src/blocks/button/edit.js:118
+msgid "Button setting"
+msgstr "ボタン設定"
+
+#: src/blocks/button/edit.js:120
+msgid "Sub Caption"
+msgstr "サブテキスト"
+
+#: src/blocks/button/edit.js:129
+msgid "Button URL"
+msgstr "ボタン URL"
+
+#: src/blocks/button/edit.js:146
+msgid "Button Size:"
+msgstr "ボタンサイズ:"
+
+#: src/blocks/button/edit.js:155 src/blocks/spacer/edit.js:105
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:30
+#: inc/vk-blocks/vk-blocks-functions.php:30
+msgid "Large"
+msgstr "大"
+
+#: src/blocks/button/edit.js:171 src/blocks/spacer/edit.js:85
 #: src/extensions/common/inline-font-size/index.js:51
 #: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:22
 #: inc/vk-blocks/vk-blocks-functions.php:22
 msgid "Small"
 msgstr "小"
 
-#: src/blocks/button/edit.js:108
+#: src/blocks/button/edit.js:176
 msgid "Button Position:"
 msgstr "ボタンの位置:"
 
-#: src/blocks/button/edit.js:149
+#: src/blocks/button/edit.js:217
 msgid "Wide"
 msgstr "幅広"
 
-#: src/blocks/button/edit.js:159
+#: src/blocks/button/edit.js:227
 msgid "Block"
 msgstr "Block"
 
-#: src/blocks/button/edit.js:164
+#: src/blocks/button/edit.js:232
 msgid "Button Style:"
 msgstr "ボタンスタイル:"
 
-#: src/blocks/button/edit.js:189
+#: src/blocks/button/edit.js:257
 msgid "Text only"
 msgstr "テキストのみ"
 
-#: src/blocks/button/edit.js:193
+#: src/blocks/button/edit.js:261
 msgid ""
 "If you select \"No background\", that you need to select a Custom Color."
 msgstr "もし「背景なし」を選択した場合はカスタムカラーで色を指定してください。"
 
-#: src/blocks/button/edit.js:200 src/blocks/pr-content/edit.js:152
+#: src/blocks/button/edit.js:268 src/blocks/pr-content/edit.js:152
 msgid "Default Color:"
 msgstr "標準色:"
 
-#: src/blocks/button/edit.js:204 src/blocks/pr-content/edit.js:156
+#: src/blocks/button/edit.js:272 src/blocks/pr-content/edit.js:156
 msgid "Primary"
 msgstr "Primary"
 
-#: src/blocks/button/edit.js:208 src/blocks/pr-content/edit.js:160
+#: src/blocks/button/edit.js:276 src/blocks/pr-content/edit.js:160
 msgid "Secondary"
 msgstr "Secondary"
 
-#: src/blocks/button/edit.js:228 src/blocks/pr-content/edit.js:176
+#: src/blocks/button/edit.js:296 src/blocks/pr-content/edit.js:176
 msgid "Light"
 msgstr "Light"
 
-#: src/blocks/button/edit.js:232 src/blocks/pr-content/edit.js:177
+#: src/blocks/button/edit.js:300 src/blocks/pr-content/edit.js:177
 msgid "Dark"
 msgstr "Dark"
 
-#: src/blocks/button/edit.js:242
+#: src/blocks/button/edit.js:314
 msgid "Custom Color"
 msgstr "カスタムカラー"
 
-#: src/blocks/button/edit.js:243
+#: src/blocks/button/edit.js:315
 msgid ""
 "This custom color overrides the default color. If you want to use the "
 "default color, click the clear button."
@@ -1223,41 +1222,19 @@ msgstr ""
 "このカスタムカラーはデフォルトのカラーを上書きします。 デフォルトの色を使用し"
 "たい場合は、クリアボタンをクリックしてください。"
 
-#: src/blocks/button/edit.js:262 src/blocks/heading/edit.js:303
+#: src/blocks/button/edit.js:334 src/blocks/heading/edit.js:303
 #: src/blocks/pr-content/edit.js:200
 msgid "Before text"
 msgstr "文字の前"
 
-#: src/blocks/button/edit.js:271 src/blocks/heading/edit.js:312
+#: src/blocks/button/edit.js:343 src/blocks/heading/edit.js:312
 #: src/blocks/pr-content/edit.js:212
 msgid "After text"
 msgstr "文字の後"
 
-#: src/blocks/button/edit.js:299
+#: src/blocks/button/edit.js:371
 msgid "Input text"
 msgstr "文字を入力"
-
-#: src/blocks/button/edit.js:50
-msgid "Button setting"
-msgstr "ボタン設定"
-
-#: src/blocks/button/edit.js:52
-msgid "Sub Caption"
-msgstr "サブテキスト"
-
-#: src/blocks/button/edit.js:61
-msgid "Button URL"
-msgstr "ボタン URL"
-
-#: src/blocks/button/edit.js:78
-msgid "Button Size:"
-msgstr "ボタンサイズ:"
-
-#: src/blocks/button/edit.js:87 src/blocks/spacer/edit.js:105
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:30
-#: inc/vk-blocks/vk-blocks-functions.php:30
-msgid "Large"
-msgstr "大"
 
 #: src/blocks/faq/edit.js:14 src/blocks/faq2/edit.js:21
 msgid ""
@@ -1652,6 +1629,12 @@ msgstr "画像 左"
 #: src/components/column-layout-control/index.js:20
 msgid "Card (Image Round)"
 msgstr "カード（画像丸抜き）"
+
+#: src/components/column-layout-control/index.js:26
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:670
+#: inc/vk-components/package/class-vk-component-posts.php:670
+msgid "Card"
+msgstr "カード"
 
 #: src/components/column-layout-control/index.js:30
 msgid "Card (No border)"
@@ -2649,21 +2632,11 @@ msgctxt "block description"
 msgid "This is the content area where you can add blocks freely."
 msgstr "コンテンツが長い時にコンテンツを折りたたんで隠して表示します。"
 
-#: src/blocks/_pro/accordion-target/block.json
-msgctxt "block title"
-msgid "Accordion Target"
-msgstr "アコーディオンタイトル"
-
 #: dist/vk-blocks-pro/src/blocks/_pro/accordion-trigger/block.json
 #: src/blocks/_pro/accordion-trigger/block.json
 msgctxt "block description"
 msgid "This is the title area where you can freely add blocks."
 msgstr "自由にブロックを追加できるタイトルエリアです。"
-
-#: src/blocks/_pro/accordion-trigger/block.json
-msgctxt "block title"
-msgid "Accordion Trigger"
-msgstr "アコーディオンコンテンツ"
 
 #: dist/vk-blocks-pro/src/blocks/_pro/accordion/block.json
 #: src/blocks/_pro/accordion/block.json
@@ -2676,16 +2649,6 @@ msgstr "自由にブロックを追加できるコンテンツエリアです。
 msgctxt "block description"
 msgid "Add animation to elements when scrolling the page."
 msgstr "ページをスクロールした時に要素に動きを加えます。"
-
-#: src/blocks/_pro/card/block.json
-msgctxt "block title"
-msgid "Card"
-msgstr "カード"
-
-#: src/blocks/_pro/card-item/block.json
-msgctxt "block title"
-msgid "Card Item"
-msgstr "カードアイテム"
 
 #: dist/vk-blocks-pro/src/blocks/_pro/card-item/block.json
 #: src/blocks/_pro/card-item/block.json
@@ -2724,11 +2687,6 @@ msgctxt "block description"
 msgid "This is one item in an icon card."
 msgstr "アイコンカード内の１つのアイテムです。"
 
-#: src/blocks/_pro/icon-card/block.json
-msgctxt "block title"
-msgid "Icon Card"
-msgstr "アイコンカード"
-
 #: dist/vk-blocks-pro/src/blocks/_pro/icon-card/block.json
 #: src/blocks/_pro/icon-card/block.json
 msgctxt "block description"
@@ -2765,21 +2723,11 @@ msgstr "任意に指定したページを投稿リストのレイアウトで表
 
 #: dist/vk-blocks-pro/src/blocks/_pro/slider-item/block.json
 #: src/blocks/_pro/slider-item/block.json
-msgctxt "block title"
-msgid "Slider Item"
-msgstr "スライダーアイテム"
-
-#: src/blocks/_pro/slider-item/block.json
 msgctxt "block description"
 msgid "This is one item in the slider."
 msgstr "スライダー内の１つのアイテムです。"
 
 #: dist/vk-blocks-pro/src/blocks/_pro/slider/block.json
-#: src/blocks/_pro/slider/block.json
-msgctxt "block title"
-msgid "Slider"
-msgstr "スライダー"
-
 #: src/blocks/_pro/slider/block.json
 msgctxt "block description"
 msgid ""
@@ -2908,15 +2856,35 @@ msgctxt "block title"
 msgid "Staff"
 msgstr "スタッフ"
 
-#: src/blocks/_pro/animation/block.json
+#: src/blocks/_pro/accordion-target/block.json
 msgctxt "block title"
-msgid "Animation"
-msgstr "アニメーション"
+msgid "Accordion Target"
+msgstr "アコーディオンタイトル"
+
+#: src/blocks/_pro/accordion-trigger/block.json
+msgctxt "block title"
+msgid "Accordion Trigger"
+msgstr "アコーディオンコンテンツ"
 
 #: src/blocks/_pro/accordion/block.json
 msgctxt "block title"
 msgid "Accordion"
 msgstr "アコーディオン"
+
+#: src/blocks/_pro/animation/block.json
+msgctxt "block title"
+msgid "Animation"
+msgstr "アニメーション"
+
+#: src/blocks/_pro/card-item/block.json
+msgctxt "block title"
+msgid "Card Item"
+msgstr "カードアイテム"
+
+#: src/blocks/_pro/card/block.json
+msgctxt "block title"
+msgid "Card"
+msgstr "カード"
 
 #: src/blocks/_pro/child-page/block.json
 msgctxt "block title"
@@ -2932,6 +2900,18 @@ msgstr "グリッドカラムアイテム"
 msgctxt "block title"
 msgid "Grid Column"
 msgstr "グリットカラム"
+
+#: src/blocks/_pro/icon-card-item/block.json
+#, fuzzy
+#| msgid "Icon Card Item"
+msgctxt "block title"
+msgid "Icon Card Item"
+msgstr "アイコンカードアイテム"
+
+#: src/blocks/_pro/icon-card/block.json
+msgctxt "block title"
+msgid "Icon Card"
+msgstr "アイコンカード"
 
 #: src/blocks/_pro/outer/block.json
 msgctxt "block title"
@@ -2953,6 +2933,16 @@ msgctxt "block title"
 msgid "Selected Post List"
 msgstr "選択投稿リスト"
 
+#: src/blocks/_pro/slider-item/block.json
+msgctxt "block title"
+msgid "Slider Item"
+msgstr "スライダーアイテム"
+
+#: src/blocks/_pro/slider/block.json
+msgctxt "block title"
+msgid "Slider"
+msgstr "スライダー"
+
 #: src/blocks/_pro/step-item/block.json
 msgctxt "block title"
 msgid "Step Item"
@@ -2967,6 +2957,15 @@ msgstr "ステップ要素"
 msgctxt "block title"
 msgid "Table of Contents"
 msgstr "目次"
+
+#~ msgid "Animation"
+#~ msgstr "アニメーション"
+
+#~ msgid "Card Item"
+#~ msgstr "カードアイテム"
+
+#~ msgid "Icon Card"
+#~ msgstr "アイコンカード"
 
 #~ msgid "Accordion"
 #~ msgstr "アコーディオン"

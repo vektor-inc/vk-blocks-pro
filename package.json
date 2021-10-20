@@ -43,7 +43,6 @@
 		"build:blockpro:dev": "run-s build:{jspro:dev,csspro} --block=$npm_config_block",
 		"build:blocks": "node build.mjs",
 		"build:blocks:dev": "node build.mjs dev",
-		"sass-watch": "sass --watch src/blocks/spacer/style.scss:build/spacer/style.css src/blocks/pr-content/style.scss:build/pr-content/style.css --style compressed",
 		"reinstall": "rm -rf node_modules/ && npm install && npm run build",
 		"prepare": "husky install"
 	},

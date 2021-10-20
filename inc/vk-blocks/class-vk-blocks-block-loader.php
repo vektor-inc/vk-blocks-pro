@@ -145,7 +145,7 @@ class VK_Blocks_Block_Loader {
 
 		// CSSを登録.
 		if ( self::should_load_separate_assets() && ! is_admin() ) {
-			wp_register_style( 'vk-blocks-build-css', $this->separate_assets_build_url . 'extensions/common/style.css', array(), VK_BLOCKS_VERSION );
+			wp_register_style( 'vk-blocks-build-css', false, array(), VK_BLOCKS_VERSION );
 		} else {
 			wp_register_style( 'vk-blocks-build-css', $this->assets_build_url . 'block-build.css', array(), VK_BLOCKS_VERSION );
 		}

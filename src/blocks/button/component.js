@@ -31,32 +31,32 @@ export class VKBButton extends Component {
 		if (buttonType === '0' || buttonType === null) {
 			// 規定カラーの場合
 			if (buttonColor !== 'custom' && buttonColorCustom === undefined) {
-				aClass += ` vk_button_btn has-background has-vk-color-${buttonColor}-background-color`;
+				aClass += ` btn has-background has-vk-color-${buttonColor}-background-color`;
 			} else {
 				aClass += ` has-background`;
 				// カスタムパレットカラーの場合
 				if (!isHexColor(buttonColorCustom)) {
-					aClass += ` vk_button_btn has-${buttonColorCustom}-background-color`;
+					aClass += ` btn has-${buttonColorCustom}-background-color`;
 				}
 				// カスタムカラーの場合
 				else {
-					aClass += ` vk_button_btn`;
+					aClass += ` btn`;
 				}
 			}
 			// 塗りなし
 		} else if (buttonType === '1') {
 			// 規定カラーの場合
 			if (buttonColor !== 'custom' && buttonColorCustom === undefined) {
-				aClass += ` vk_button_btn has-text-color has-vk-color-${buttonColor}-color is-style-outline`;
+				aClass += ` btn has-text-color has-vk-color-${buttonColor}-color is-style-outline`;
 			} else {
 				aClass += ` has-text-color`;
 				// カスタムパレットカラーの場合
 				if (!isHexColor(buttonColorCustom)) {
-					aClass += ` vk_button_btn has-${buttonColorCustom}-color is-style-outline`;
+					aClass += ` btn has-${buttonColorCustom}-color is-style-outline`;
 				}
 				// カスタムカラーの場合
 				else {
-					aClass += ` vk_button_btn`;
+					aClass += ` btn`;
 				}
 			}
 			// テキストのみ

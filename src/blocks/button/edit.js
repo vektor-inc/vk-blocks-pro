@@ -95,7 +95,10 @@ export default function ButtonEdit(props) {
 	useEffect(() => {
 		if (buttonColorCustom !== undefined) {
 			updateBlockAttributes(clientId, { buttonColor: 'custom' });
-		} else {
+		} else if (
+			buttonColorCustom === undefined &&
+			buttonColor === 'custom'
+		) {
 			updateBlockAttributes(clientId, { buttonColor: 'primary' });
 		}
 	}, [buttonColorCustom]);

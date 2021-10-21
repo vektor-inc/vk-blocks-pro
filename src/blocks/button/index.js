@@ -44,7 +44,7 @@ export const settings = {
 };
 
 const generateInlineCss = (attributes) => {
-	const { clientId, buttonType, buttonColorCustom } = attributes;
+	const { buttonColorCustom } = attributes;
 	let inlineCss = '';
 
 	// カスタムカラーの場合
@@ -56,42 +56,11 @@ const generateInlineCss = (attributes) => {
 			}
 			`;
 		} else {
-			if (buttonType === '0' || buttonType === null) {
-				inlineCss = `
-				.vk_button-${clientId} .has-background {
-					background-color: ${buttonColorCustom};
-					border: 1px solid ${buttonColorCustom};
-					color: #fff;
-				}
-				`;
+			inlineCss = `
+			:root {
+				--vk-current-color: ${buttonColorCustom};
 			}
-
-			if (buttonType === '1') {
-				inlineCss = `
-				.vk_button-${clientId} .has-text-color {
-					background-color: transparent;
-					border: 1px solid ${buttonColorCustom};
-					color: ${buttonColorCustom};
-				}
-				.vk_button-${clientId} .has-text-color:hover {
-					background-color: ${buttonColorCustom};
-					border: 1px solid ${buttonColorCustom};
-					color: #fff;
-				}
-				`;
-			}
-
-			if (buttonType === '2') {
-				inlineCss = `
-				.vk_button-${clientId} .has-text-color.vk_button_link-type-text {
-					color: ${buttonColorCustom};
-				}
-				.vk_button-${clientId} .has-text-color.vk_button_link-type-text:hover {
-					background-color: ${buttonColorCustom};
-					color: #fff;
-				}
-				`;
-			}
+			`;
 		}
 	}
 

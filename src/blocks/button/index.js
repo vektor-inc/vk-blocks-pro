@@ -54,10 +54,13 @@ const generateInlineCss = (attributes) => {
 			:root .has-${buttonColorCustom}-color {
 				--vk-current-color: ${colorSlugToColorCode(buttonColorCustom)};
 			}
+			:root .has-${buttonColorCustom}-background-color {
+				--vk-current-color: ${colorSlugToColorCode(buttonColorCustom)};
+			}
 			`;
 		} else {
 			inlineCss = `
-			:root .vk_button-${clientId}{
+			:root .vk_button-${clientId} {
 				--vk-current-color: ${buttonColorCustom};
 			}
 			`;

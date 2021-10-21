@@ -83,8 +83,12 @@ const generateInlineCss = (attributes) => {
 
 			if (buttonType === '2') {
 				inlineCss = `
-				.vk_button-${clientId} .vk_button_link-type-text {
+				.vk_button-${clientId} .has-text-color.vk_button_link-type-text {
 					color: ${buttonColorCustom};
+				}
+				.vk_button-${clientId} .has-text-color.vk_button_link-type-text:hover {
+					background-color: ${buttonColorCustom};
+					color: #fff;
 				}
 				`;
 			}

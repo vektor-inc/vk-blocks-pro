@@ -84,14 +84,20 @@ export default function ButtonEdit(props) {
 	const { updateBlockAttributes } = dispatch('core/block-editor');
 
 	// buttonColor が有効なら buttonColorCustom を無効化
+	// プルダウンから直接カスタムを選ぶとその瞬間色が適用されなくなるので primary に戻す
 	useEffect(() => {
 		if (buttonColor !== 'custom') {
 			updateBlockAttributes(clientId, { buttonColorCustom: undefined });
+		} else if (
+			buttonColorCustom === undefined &&
+			buttonColor === 'custom'
+		) {
+			updateBlockAttributes(clientId, { buttonColor: 'primary' });
 		}
 	}, [buttonColor]);
 
 	// buttonColorCustom が有効なら buttonColor を custom に
-	// buttonColorCustom が空白なら buttonColor を primary に
+	// buttonColorCustom が空白かつ buttonColor が custom なら buttonColor を primary に
 	useEffect(() => {
 		if (buttonColorCustom !== undefined) {
 			updateBlockAttributes(clientId, { buttonColor: 'custom' });

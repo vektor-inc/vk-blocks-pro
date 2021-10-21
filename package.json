@@ -41,8 +41,10 @@
 		"build:block:dev": "run-s build:{js:dev,css} --block=$npm_config_block",
 		"build:blockpro": "run-s build:{jspro,csspro} --block=$npm_config_block",
 		"build:blockpro:dev": "run-s build:{jspro:dev,csspro} --block=$npm_config_block",
-		"build:blocks": "node build.mjs",
+		"build:blocks": "node build.mjs && npm run build:extensions-sass && npm run build:utils-sass",
 		"build:blocks:dev": "node build.mjs dev",
+		"build:extensions-sass": "sass src/extensions/common.scss build/extensions/common.css --style=compressed --no-source-map",
+		"build:utils-sass": "sass src/utils/common.scss build/utils/common.css --style=compressed --no-source-map",
 		"reinstall": "rm -rf node_modules/ && npm install && npm run build",
 		"prepare": "husky install"
 	},

@@ -50,7 +50,7 @@ gulp.task( 'helper-js-pro', function (done)  {
 gulp.task("sass", function() {
   return (
     gulp
-      .src(["./src/**/*.scss"])
+			.src(["./src/**/*.scss", '!./src/extensions/common.scss'])
       .pipe(
         $.plumber({
           errorHandler: $.notify.onError("<%= error.message %>")

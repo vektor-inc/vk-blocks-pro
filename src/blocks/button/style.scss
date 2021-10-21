@@ -6,6 +6,11 @@ $vk-color-danger: #dc3545;
 $vk-color-light:#f8f9fa;
 $vk-color-dark:#343a40;
 
+// プライマリーカラーのボタンの背景色が抜けるので応急措置アップデート
+.has-vk-color-primary-background-color {
+	background-color:var(--vk-color-primary);
+}
+
 :root .vk_button,
 :root .editor-styles-wrapper .vk_button{
 	& .has-vk-color-secondary-background-color {

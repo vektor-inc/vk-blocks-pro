@@ -18,6 +18,7 @@ import {
 import { useEffect } from '@wordpress/element';
 import { dispatch } from '@wordpress/data';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function ButtonEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -108,7 +109,13 @@ export default function ButtonEdit(props) {
 		}
 	}, [buttonColorCustom]);
 
-	const containerClass = `vk_button vk_button-align-${buttonAlign} vk_button-color-custom`;
+	let containerClass;
+	// カスタムカラーの場合
+	if (buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) {
+		containerClass = `vk_button vk_button-align-${buttonAlign} vk_button-color-custom vk_button-${clientId}`;
+	} else {
+		containerClass = `vk_button vk_button-align-${buttonAlign} vk_button-color-custom`;
+	}
 
 	const blockProps = useBlockProps({
 		className: containerClass,

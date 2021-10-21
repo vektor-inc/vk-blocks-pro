@@ -44,7 +44,7 @@ export const settings = {
 };
 
 const generateInlineCss = (attributes) => {
-	const { buttonColorCustom } = attributes;
+	const { buttonColorCustom, clientId } = attributes;
 	let inlineCss = '';
 
 	// カスタムカラーの場合
@@ -57,7 +57,7 @@ const generateInlineCss = (attributes) => {
 			`;
 		} else {
 			inlineCss = `
-			:root {
+			:root .vk_button-${clientId}{
 				--vk-current-color: ${buttonColorCustom};
 			}
 			`;

@@ -12,7 +12,6 @@ import { deprecated } from './deprecated/save/';
 import deprecatedHooks from './deprecated/hooks';
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
-import { useEffect } from '@wordpress/element';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { colorSlugToColorCode } from '@vkblocks/utils/color-slug-to-color-code';
 
@@ -50,20 +49,16 @@ const generateInlineCss = (attributes) => {
 	// カスタムカラーの場合
 	if (buttonColorCustom !== undefined) {
 		if (!isHexColor(buttonColorCustom)) {
-			inlineCss = `
-			:root .has-${buttonColorCustom}-color {
+			inlineCss += `:root .has-${buttonColorCustom}-color {
 				--vk-current-color: ${colorSlugToColorCode(buttonColorCustom)};
 			}
 			:root .has-${buttonColorCustom}-background-color {
 				--vk-current-color: ${colorSlugToColorCode(buttonColorCustom)};
-			}
-			`;
+			}`;
 		} else {
-			inlineCss = `
-			:root .vk_button-${clientId} {
+			inlineCss += `:root .vk_button-${clientId} {
 				--vk-current-color: ${buttonColorCustom};
-			}
-			`;
+			}`;
 		}
 	}
 
@@ -72,15 +67,12 @@ const generateInlineCss = (attributes) => {
 
 addFilter(
 	'editor.BlockEdit',
-	'vk-blocks/button-addInlineEditorsCss',
+	'vk-blocks/button',
 	createHigherOrderComponent((BlockEdit) => {
 		return (props) => {
-			const { attributes, setAttributes, clientId } = props;
+			const { attributes } = props;
 
 			if ('vk-blocks/button' === props.name) {
-				useEffect(() => {
-					setAttributes({ clientId });
-				}, []);
 				const cssTag = generateInlineCss(attributes);
 				if (cssTag !== '') {
 					return (
@@ -90,11 +82,7 @@ addFilter(
 						</>
 					);
 				}
-				return (
-					<>
-						<BlockEdit {...props} />
-					</>
-				);
+				return <BlockEdit {...props} />;
 			}
 			return <BlockEdit {...props} />;
 		};
@@ -103,7 +91,7 @@ addFilter(
 
 addFilter(
 	'blocks.getSaveElement',
-	'vk-blocks/button-addInlineFrontCss',
+	'vk-blocks/button',
 	(el, type, attributes) => {
 		if ('vk-blocks/button' === type.name) {
 			//現在実行されている deprecated内の save関数のindexを取得
@@ -124,17 +112,11 @@ addFilter(
 						</>
 					);
 				}
-				return <>{el}</>;
+				return el;
 
 				//後方互換
 			}
-			let DeprecatedHook;
-			// Deprecated Hooks が Deprecated Save関数より少ない場合にエラーが出ないように。
-			if (deprecatedHooks.length > deprecatedFuncIndex) {
-				DeprecatedHook = deprecatedHooks[deprecatedFuncIndex];
-			} else {
-				DeprecatedHook = deprecatedHooks[deprecatedHooks.length - 1];
-			}
+			const DeprecatedHook = deprecatedHooks[deprecatedFuncIndex];
 			return <DeprecatedHook el={el} attributes={attributes} />;
 		}
 		return el;

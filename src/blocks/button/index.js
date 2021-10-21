@@ -12,7 +12,6 @@ import { deprecated } from './deprecated/save/';
 import deprecatedHooks from './deprecated/hooks';
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
-import { useEffect } from '@wordpress/element';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { colorSlugToColorCode } from '@vkblocks/utils/color-slug-to-color-code';
 
@@ -71,12 +70,9 @@ addFilter(
 	'vk-blocks/button',
 	createHigherOrderComponent((BlockEdit) => {
 		return (props) => {
-			const { attributes, setAttributes, clientId } = props;
+			const { attributes } = props;
 
 			if ('vk-blocks/button' === props.name) {
-				useEffect(() => {
-					setAttributes({ clientId });
-				}, [clientId]);
 				const cssTag = generateInlineCss(attributes);
 				if (cssTag !== '') {
 					return (

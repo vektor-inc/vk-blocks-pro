@@ -135,6 +135,8 @@ class VK_Blocks_Block_Loader {
 	 */
 	public function add_styles() {
 		wp_enqueue_style( 'vk-blocks-build-css' );
+		wp_enqueue_style( 'vk-blocks-extensions-common-css' );
+		wp_enqueue_style( 'vk-blocks-utils-common-css' );
 	}
 
 	/**
@@ -145,7 +147,12 @@ class VK_Blocks_Block_Loader {
 
 		// CSSを登録.
 		if ( self::should_load_separate_assets() && ! is_admin() ) {
+			// ハンドル名vk-blocks-build-cssはwp_add_inline_styleで指定している箇所があるので登録する
 			wp_register_style( 'vk-blocks-build-css', false, array(), VK_BLOCKS_VERSION );
+			// src/extensions内の内の共通cssの読み込み
+			wp_register_style( 'vk-blocks-extensions-common-css', VK_BLOCKS_DIR_URL . 'build/extensions/common.css', array(), VK_BLOCKS_VERSION );
+			// src/utils内の内の共通cssの読み込み
+			wp_register_style( 'vk-blocks-utils-common-css', VK_BLOCKS_DIR_URL . 'build/utils/common.css', array(), VK_BLOCKS_VERSION );
 		} else {
 			wp_register_style( 'vk-blocks-build-css', $this->assets_build_url . 'block-build.css', array(), VK_BLOCKS_VERSION );
 		}

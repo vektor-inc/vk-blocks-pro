@@ -6,8 +6,10 @@ $vk-color-danger: #dc3545;
 $vk-color-light:#f8f9fa;
 $vk-color-dark:#343a40;
 
-:root .vk_button,
-:root .editor-styles-wrapper .vk_button{
+:root {
+	& .has-vk-color-primary-background-color {
+		background-color: var(--vk-color-primary);
+	}
 	& .has-vk-color-secondary-background-color {
 		background-color: $vk-color-secondary;
 	}
@@ -29,26 +31,37 @@ $vk-color-dark:#343a40;
 	& .has-vk-color-dark-background-color {
 		background-color: $vk-color-dark;
 	}
+	& .has-vk-color-primary-color {
+		color: var(--vk-color-primary);
+		--vk-current-color: var(--vk-color-primary);
+	}
 	& .has-vk-color-secondary-color {
 		color: $vk-color-secondary;
+		--vk-current-color: #{$vk-color-secondary};
 	}
 	& .has-vk-color-success-color {
 		color: $vk-color-success;
+		--vk-current-color: #{$vk-color-success};
 	}
 	& .has-vk-color-info-color {
 		color: $vk-color-info;
+		--vk-current-color: #{$vk-color-info};
 	}
 	& .has-vk-color-warning-color {
 		color: $vk-color-warning;
+		--vk-current-color: #{$vk-color-warning};
 	}
 	& .has-vk-color-danger-color {
 		color: $vk-color-danger;
+		--vk-current-color: #{$vk-color-danger};
 	}
 	& .has-vk-color-light-color {
 		color: $vk-color-light;
+		--vk-current-color: #{$vk-color-light};
 	}
 	& .has-vk-color-dark-color {
 		color: $vk-color-dark;
+		--vk-current-color: #{$vk-color-dark};
 	}
 }
 
@@ -64,9 +77,9 @@ $vk-color-dark:#343a40;
 	}
 
 	& .is-style-outline {
-		border: 1px solid currentColor;
+		border: 1px solid var(--vk-current-color);
 		&:hover {
-			background-color: currentColor;
+			background-color: var(--vk-current-color);
 		}
 		&:hover .vk_button_link_txt,
 		&:hover .vk_button_link_subCaption {
@@ -79,7 +92,7 @@ $vk-color-dark:#343a40;
 	}
 
 	& .has-text-color.vk_button_link-type-text:hover {
-		background-color: currentColor;
+		background-color: var(--vk-current-color);
 		& .vk_button_link_txt,
 		& .vk_button_link_subCaption {
 			color: #fff;

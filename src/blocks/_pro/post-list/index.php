@@ -193,6 +193,15 @@ function vk_blocks_register_block_post_list() {
 			'term_by_taxonomy_name' => $term_by_taxonomy_name,
 		)
 	);
+
+	wp_localize_script(
+		'vk-blocks/post-list',
+		'vk_block_post_type_params',
+		array(
+			'term_by_taxonomy_name' => $term_by_taxonomy_name,
+		)
+	);	
+
 }
 add_action( 'init', 'vk_blocks_register_block_post_list', 99 );
 

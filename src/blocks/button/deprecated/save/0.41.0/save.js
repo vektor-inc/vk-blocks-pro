@@ -1,7 +1,7 @@
 import { VKBButton } from './component';
 import { RichText } from '@wordpress/block-editor';
 
-export default ({ attributes, className }) => {
+export default function save({ attributes, className })  {
 	const {
 		content,
 		subCaption,

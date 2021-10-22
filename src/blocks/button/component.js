@@ -44,7 +44,7 @@ export class VKBButton extends Component {
 				aClass += ` btn has-text-color is-style-outline`;
 				// カスタムパレットカラーの場合
 				if (!isHexColor(buttonColorCustom)) {
-					aClass += `  has-${buttonColorCustom}-color`;
+					aClass += ` has-${buttonColorCustom}-color`;
 				}
 			}
 			// テキストのみ

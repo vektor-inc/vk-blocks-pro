@@ -2,8 +2,6 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/outer",
 	"title": "Outer",
-	"description": "Set the background image, color, and border to show the layout and divisions.",
-	"textdomain": "vk-blocks",
 	"category": "vk-blocks-cat-layout",
 	"attributes": {
 		"bgColor": {
@@ -103,6 +101,8 @@
 			"default": "px"
 		}
 	},
+	"description": "Set the background image, color, and border to show the layout and divisions.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true,
 		"anchor": true

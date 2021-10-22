@@ -3,7 +3,7 @@
  * Plugin Name: VK Blocks Pro
  * Plugin URI: https://github.com/vektor-inc/vk-blocks
  * Description: This is a plugin that extends Gutenberg's blocks.
- * Version: 1.16.1
+ * Version: 1.16.4
  * Requires at least: 5.7
  * Author: Vektor,Inc.
  * Author URI: https://vektor-inc.co.jp
@@ -21,8 +21,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'VK_BLOCKS_DIR_PATH', plugin_dir_path( __FILE__ ) );
 // Set Plugin Dir URL
 define( 'VK_BLOCKS_DIR_URL', plugin_dir_url( __FILE__ ) );
-// from WordPress 5.8 ※ BlockのCSSとJS分離作業のために、一時的に記載。最終的にはVK Blocks ではフィルター入れない方が良い
-// add_filter( 'should_load_separate_core_block_assets', '__return_true' );
 
 /* function_exists は VK Blocks 無料版の無効化が正常に動作しなかった場合のフォールバック */
 if ( ! function_exists( 'vk_blocks_get_version' ) ) {
@@ -111,6 +109,10 @@ require_once plugin_dir_path( __FILE__ ) . 'inc/vk-blocks-config.php';
  */
 $vk_blocks_plugin_base_dir = plugin_dir_path( __FILE__ );
 if ( strpos( $vk_blocks_plugin_base_dir, 'vk-blocks-pro' ) !== false ) {
+
+	// Cope with : WP HTTP Error: cURL error 60: SSL certificate problem: certificate has expired.
+	add_filter( 'https_ssl_verify', '__return_false' );
+
 	$vk_blocks_updater_url = plugin_dir_path( __FILE__ ) . 'inc/vk-blocks-pro/plugin-update-checker/plugin-update-checker.php';
 	if ( file_exists( $vk_blocks_updater_url ) ) {
 		require plugin_dir_path( __FILE__ ) . 'inc/vk-blocks-pro/plugin-update-checker/plugin-update-checker.php';

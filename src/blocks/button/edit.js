@@ -2,7 +2,7 @@ import { __ } from '@wordpress/i18n';
 import { VKBButton } from './component';
 import { FontAwesome } from '@vkblocks/utils/font-awesome-new';
 import {
-	RadioControl,
+	SelectControl,
 	PanelBody,
 	BaseControl,
 	CheckboxControl,
@@ -13,12 +13,15 @@ import {
 import {
 	RichText,
 	InspectorControls,
-	ColorPalette,
 	useBlockProps,
 } from '@wordpress/block-editor';
+import { useEffect } from '@wordpress/element';
+import { dispatch } from '@wordpress/data';
+import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function ButtonEdit(props) {
-	const { attributes, setAttributes } = props;
+	const { attributes, setAttributes, clientId } = props;
 	const {
 		content,
 		subCaption,
@@ -33,11 +36,76 @@ export default function ButtonEdit(props) {
 		fontAwesomeIconAfter,
 	} = attributes;
 
+	// 以前の値を切り替え
+	useEffect(() => {
+		setAttributes({ clientId });
+		if (
+			buttonUrl === null ||
+			buttonUrl === 'null' ||
+			buttonUrl === 'undefined' ||
+			buttonUrl === ''
+		) {
+			setAttributes({ buttonUrl: undefined });
+		}
+		if (
+			buttonColorCustom === null ||
+			buttonColorCustom === 'null' ||
+			buttonColorCustom === 'undefined' ||
+			buttonColorCustom === ''
+		) {
+			setAttributes({ buttonColorCustom: undefined });
+		}
+		if (
+			fontAwesomeIconBefore === null ||
+			fontAwesomeIconBefore === 'null' ||
+			fontAwesomeIconBefore === 'undefined' ||
+			fontAwesomeIconBefore === ''
+		) {
+			setAttributes({ fontAwesomeIconBefore: undefined });
+		}
+		if (
+			fontAwesomeIconAfter === null ||
+			fontAwesomeIconAfter === 'null' ||
+			fontAwesomeIconAfter === 'undefined' ||
+			fontAwesomeIconAfter === ''
+		) {
+			setAttributes({ fontAwesomeIconAfter: undefined });
+		}
+		if (
+			subCaption === null ||
+			subCaption === 'null' ||
+			subCaption === 'undefined' ||
+			subCaption === ''
+		) {
+			setAttributes({ subCaption: undefined });
+		}
+	}, [clientId]);
+
+	const { updateBlockAttributes } = dispatch('core/block-editor');
+
+	// buttonColor が有効なら buttonColorCustom を無効化
+	useEffect(() => {
+		if (buttonColor !== 'custom') {
+			updateBlockAttributes(clientId, { buttonColorCustom: undefined });
+		}
+	}, [buttonColor]);
+
+	// buttonColorCustom が有効なら buttonColor を custom に
+	// buttonColorCustom が空白なら buttonColor を primary に
+	useEffect(() => {
+		if (buttonColorCustom !== undefined) {
+			updateBlockAttributes(clientId, { buttonColor: 'custom' });
+		} else {
+			updateBlockAttributes(clientId, { buttonColor: 'primary' });
+		}
+	}, [buttonColorCustom]);
+
 	let containerClass;
-	if (buttonColorCustom) {
-		containerClass = `vk_button vk_button-align-${buttonAlign} vk_button-color-custom`;
+	// カスタムカラーの場合
+	if (buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) {
+		containerClass = `vk_button vk_button-align-${buttonAlign} vk_button-color-custom vk_button-${clientId}`;
 	} else {
-		containerClass = `vk_button vk_button-align-${buttonAlign}`;
+		containerClass = `vk_button vk_button-align-${buttonAlign} vk_button-color-custom`;
 	}
 
 	const blockProps = useBlockProps({
@@ -196,9 +264,9 @@ export default function ButtonEdit(props) {
 						)}
 					</p>
 
-					<RadioControl
+					<SelectControl
 						label={__('Default Color:', 'vk-blocks')}
-						selected={buttonColor}
+						value={buttonColor}
 						options={[
 							{
 								label: __('Primary', 'vk-blocks'),
@@ -232,6 +300,10 @@ export default function ButtonEdit(props) {
 								label: __('Dark', 'vk-blocks'),
 								value: 'dark',
 							},
+							{
+								label: __('Custom Color', 'vk-blocks'),
+								value: 'custom',
+							},
 						]}
 						onChange={(value) =>
 							setAttributes({ buttonColor: value })
@@ -245,11 +317,11 @@ export default function ButtonEdit(props) {
 							'vk-blocks'
 						)}
 					>
-						<ColorPalette
-							value={buttonColorCustom}
-							onChange={(value) =>
-								setAttributes({ buttonColorCustom: value })
-							}
+						<AdvancedColorPalette
+							schema={'buttonColorCustom'}
+							disableSchema={'buttonColor'}
+							disableValue={'custom'}
+							{...props}
 						/>
 					</BaseControl>
 

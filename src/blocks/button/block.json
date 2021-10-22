@@ -10,12 +10,10 @@
 			"selector": "span"
 		},
 		"subCaption": {
-			"type": "string",
-			"default": ""
+			"type": "string"
 		},
 		"buttonUrl": {
-			"type": "string",
-			"default": ""
+			"type": "string"
 		},
 		"buttonTarget": {
 			"type": "Boolean",
@@ -34,20 +32,20 @@
 			"default": "primary"
 		},
 		"buttonColorCustom": {
-			"type": "string",
-			"default": "undefined"
+			"type": "string"
 		},
 		"buttonAlign": {
 			"type": "string",
 			"default": "left"
 		},
 		"fontAwesomeIconBefore": {
-			"type": "string",
-			"default": ""
+			"type": "string"
 		},
 		"fontAwesomeIconAfter": {
-			"type": "string",
-			"default": ""
+			"type": "string"
+		},
+		"clientId": {
+			"type": "string"
 		}
 	},
 	"description": "A button link that can display icons before and after.",

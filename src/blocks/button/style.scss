@@ -70,7 +70,7 @@ $vk-color-dark:#343a40;
 	}
 
 	// 塗り
-	.has-background {
+	.btn.has-background {
 		color: #fff;
 		/* 白っぽい色に対する対策 */
 		&.has-vk-color-light-background-color,
@@ -80,7 +80,7 @@ $vk-color-dark:#343a40;
 	}
 
 	// 背景なし
-	.has-text-color.is-style-outline {
+	.btn.has-text-color.is-style-outline {
 		background-color: transparent;
 		border: 1px solid currentColor;
 		&:hover {

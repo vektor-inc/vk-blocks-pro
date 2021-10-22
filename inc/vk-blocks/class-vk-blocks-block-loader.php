@@ -168,7 +168,7 @@ class VK_Blocks_Block_Loader {
 
 		if ( function_exists( 'register_block_type' ) ) {
 			foreach ( $this->get_block_names() as $block_name ) {
-				$this->load_blocks( $block_name );
+				$this->load_block( $block_name );
 			}
 		}
 	}
@@ -267,7 +267,7 @@ class VK_Blocks_Block_Loader {
 	 * @param string $block_name 読み込むブロック名.
 	 * @return void
 	 */
-	public function load_blocks( $block_name ) {
+	public function load_block( $block_name ) {
 		$block_info = $this->get_block_info( $block_name );
 
 		$require_file_path = VK_BLOCKS_SRC_PATH . '/blocks/' . $block_name . '/index.php';

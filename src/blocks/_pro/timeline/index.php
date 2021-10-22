@@ -5,22 +5,31 @@
  * @package vk-blocks
  */
 
-if ( function_exists( 'register_block_type_from_metadata' ) ) {
+/**
+ * Register Timeline block.
+ *
+ * @return void
+ */
+function vk_blocks_register_block_timeline() {
 
-	/**
-	 * Register Timeline block.
-	 *
-	 * @return void
-	 */
-	function vk_blocks_register_block_vkb_timeline() {
-		register_block_type_from_metadata(
-			__DIR__,
-			array(
-				'editor_style'  => 'vk-blocks-build-editor-css',
-				'editor_script' => 'vk-blocks-build-js',
-			)
-		);
-	}
-	add_action( 'init', 'vk_blocks_register_block_vkb_timeline', 99 );
+	// Register Script.
+	$asset = include VK_BLOCKS_DIR_PATH . 'build/_pro/timeline/block-build.asset.php';
+	wp_register_script(
+		'vk-blocks/timeline',
+		VK_BLOCKS_DIR_URL . 'build/_pro/timeline/block-build.js',
+		$asset['dependencies'],
+		VK_BLOCKS_VERSION,
+		true
+	);
+
+	register_block_type(
+		__DIR__,
+		array(
+			'style'         => 'vk-blocks/timeline',
+			'editor_style'  => 'vk-blocks-build-editor-css',
+			'editor_script' => 'vk-blocks-build-js',
+		)
+	);
 }
+add_action( 'init', 'vk_blocks_register_block_timeline', 99 );
 

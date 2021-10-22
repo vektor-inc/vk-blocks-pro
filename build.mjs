@@ -44,6 +44,8 @@ const dirNames = [
 	{ name: 'icon-card', isPro: 1 },
     { name: 'icon-card-item', isPro: 1 },
     { name: 'table-of-contents-new', isPro: 1 },
+    { name: 'timeline', isPro: 1 },
+    { name: 'timeline-item', isPro: 1 },    
 ]
 
 // mode が dev かどうか受け取る

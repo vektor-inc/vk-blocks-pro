@@ -7,52 +7,52 @@ $vk-color-light:#f8f9fa;
 $vk-color-dark:#343a40;
 
 :root {
-	& .has-vk-color-primary-background-color {
+	.has-vk-color-primary-background-color {
 		background-color: var(--vk-color-primary);
 	}
-	& .has-vk-color-secondary-background-color {
+	.has-vk-color-secondary-background-color {
 		background-color: $vk-color-secondary;
 	}
-	& .has-vk-color-success-background-color {
+	.has-vk-color-success-background-color {
 		background-color: $vk-color-success;
 	}
-	& .has-vk-color-info-background-color {
+	.has-vk-color-info-background-color {
 		background-color: $vk-color-info;
 	}
-	& .has-vk-color-warning-background-color {
+	.has-vk-color-warning-background-color {
 		background-color: $vk-color-warning;
 	}
-	& .has-vk-color-danger-background-color {
+	.has-vk-color-danger-background-color {
 		background-color: $vk-color-danger;
 	}
-	& .has-vk-color-light-background-color {
+	.has-vk-color-light-background-color {
 		background-color: $vk-color-light;
 	}
-	& .has-vk-color-dark-background-color {
+	.has-vk-color-dark-background-color {
 		background-color: $vk-color-dark;
 	}
-	& .has-vk-color-primary-color {
+	.has-vk-color-primary-color {
 		color: var(--vk-color-primary);
 	}
-	& .has-vk-color-secondary-color {
+	.has-vk-color-secondary-color {
 		color: $vk-color-secondary;
 	}
-	& .has-vk-color-success-color {
+	.has-vk-color-success-color {
 		color: $vk-color-success;
 	}
-	& .has-vk-color-info-color {
+	.has-vk-color-info-color {
 		color: $vk-color-info;
 	}
-	& .has-vk-color-warning-color {
+	.has-vk-color-warning-color {
 		color: $vk-color-warning;
 	}
-	& .has-vk-color-danger-color {
+	.has-vk-color-danger-color {
 		color: $vk-color-danger;
 	}
-	& .has-vk-color-light-color {
+	.has-vk-color-light-color {
 		color: $vk-color-light;
 	}
-	& .has-vk-color-dark-color {
+	.has-vk-color-dark-color {
 		color: $vk-color-dark;
 	}
 }
@@ -69,7 +69,7 @@ $vk-color-dark:#343a40;
 	}
 
 	// 塗り
-	& .has-background {
+	.has-background {
 		color: #fff;
 		/* 白っぽい色に対する対策 */
 		&.has-vk-color-light-background-color,
@@ -79,7 +79,7 @@ $vk-color-dark:#343a40;
 	}
 
 	// 背景なし
-	& .has-text-color.is-style-outline {
+	.has-text-color.is-style-outline {
 		background-color: transparent;
 		border: 1px solid currentColor;
 		&:hover {
@@ -173,10 +173,10 @@ $vk-color-dark:#343a40;
 			// ここから標準装備
 			background-color: currentColor;
 			border: 1px solid currentColor;
-			& .vk_button_link_before,
-			& .vk_button_link_txt,
-			& .vk_button_link_after,
-			& .vk_button_link_subCaption {
+			.vk_button_link_before,
+			.vk_button_link_txt,
+			.vk_button_link_after,
+			.vk_button_link_subCaption {
 				color: #fff;
 			}
 			/* 白っぽい色に対する対策 */
@@ -194,13 +194,13 @@ $vk-color-dark:#343a40;
 	}
 
 	// テキストのみ
-	& .has-text-color.vk_button_link-type-text {
+	.has-text-color.vk_button_link-type-text {
 		&:hover {
 			background-color: currentColor;
-			& .vk_button_link_before,
-			& .vk_button_link_txt,
-			& .vk_button_link_after,
-			& .vk_button_link_subCaption {
+			.vk_button_link_before,
+			.vk_button_link_txt,
+			.vk_button_link_after,
+			.vk_button_link_subCaption {
 				color: #fff;
 			}
 			/* 白っぽい色に対する対策 */
@@ -288,7 +288,7 @@ $vk-color-dark:#343a40;
 		}
 	}
 
-	& .editor-rich-text {
+	.editor-rich-text {
 		// Font Awesomeアイコンが管理画面側で改行されないために inline-block を指定
 		display: inline-block;
 	}

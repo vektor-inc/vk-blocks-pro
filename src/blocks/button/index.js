@@ -13,7 +13,6 @@ import deprecatedHooks from './deprecated/hooks';
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
-import { colorSlugToColorCode } from '@vkblocks/utils/color-slug-to-color-code';
 
 const { name } = metadata;
 
@@ -47,19 +46,10 @@ const generateInlineCss = (attributes) => {
 	let inlineCss = '';
 
 	// カスタムカラーの場合
-	if (buttonColorCustom !== undefined) {
-		if (!isHexColor(buttonColorCustom)) {
-			inlineCss += `:root .has-${buttonColorCustom}-color {
-				--vk-current-color: ${colorSlugToColorCode(buttonColorCustom)};
-			}
-			:root .has-${buttonColorCustom}-background-color {
-				--vk-current-color: ${colorSlugToColorCode(buttonColorCustom)};
-			}`;
-		} else {
-			inlineCss += `:root .vk_button-${clientId} {
-				--vk-current-color: ${buttonColorCustom};
-			}`;
-		}
+	if (buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) {
+		inlineCss += `:root .vk_button-${clientId} {
+			--vk-current-color: ${buttonColorCustom};
+		}`;
 	}
 
 	return inlineCss;

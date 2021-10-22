@@ -86,8 +86,8 @@ $vk-color-dark:#343a40;
 
 	// 塗り
 	& .has-background {
-		background-color: var(--vk-current-color);
-		border: 1px solid var(--vk-current-color);
+		background-color: currentColor;
+		border: 1px solid currentColor;
 		color: #fff;
 		&.has-vk-color-light-background-color {
 			color:#212529;
@@ -97,11 +97,11 @@ $vk-color-dark:#343a40;
 	// 背景なし
 	& .has-text-color.is-style-outline {
 		background-color: transparent;
-		border: 1px solid var(--vk-current-color);
-		color: var(--vk-current-color);
+		border: 1px solid currentColor;
+		color: currentColor;
 		&:hover {
-			background-color: var(--vk-current-color);
-			border: 1px solid var(--vk-current-color);
+			background-color: currentColor;
+			border: 1px solid currentColor;
 			color: #fff;
 			&.has-vk-color-light-color {
 				color:#212529;
@@ -111,9 +111,9 @@ $vk-color-dark:#343a40;
 
 	// テキストのみ
 	& .has-text-color.vk_button_link-type-text {
-		color: var(--vk-current-color);
+		color: currentColor;
 		&:hover {
-			background-color: var(--vk-current-color);
+			background-color: currentColor;
 			color: #fff;
 			&.has-vk-color-light-color {
 				color:#212529;

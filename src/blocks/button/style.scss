@@ -70,16 +70,10 @@ $vk-color-dark:#343a40;
 
 	// 塗り
 	& .has-background {
-		& .vk_button_link_before,
-		& .vk_button_link_txt,
-		& .vk_button_link_after,
-		& .vk_button_link_subCaption {
-			color: #fff;
-		}
-		&.has-vk-color-light-background-color .vk_button_link_before,
-		&.has-vk-color-light-background-color  .vk_button_link_txt,
-		&.has-vk-color-light-background-color  .vk_button_link_after,
-		&.has-vk-color-light-background-color  .vk_button_link_subCaption{
+		color: #fff;
+		/* 白っぽい色に対する対策 */
+		&.has-vk-color-light-background-color,
+		&.has-white-background-color {
 			color:#212529;
 		}
 	}
@@ -89,6 +83,94 @@ $vk-color-dark:#343a40;
 		background-color: transparent;
 		border: 1px solid currentColor;
 		&:hover {
+			/* 応急処置：規定カラー */
+			&.has-vk-color-primary-color {
+				color: var(--vk-color-primary);
+			}
+			&.has-vk-color-secondary-color {
+				color: $vk-color-secondary;
+			}
+			&.has-vk-color-success-color {
+				color: $vk-color-success;
+			}
+			&.has-vk-color-info-color {
+				color: $vk-color-info;
+			}
+			&.has-vk-color-warning-color {
+				color: $vk-color-warning;
+			}
+			&.has-vk-color-danger-color {
+				color: $vk-color-danger;
+			}
+			&.has-vk-color-light-color {
+				color: $vk-color-light;
+			}
+			&.has-vk-color-dark-color {
+				color: $vk-color-dark;
+			}
+			/* 応急処置：カラーパレットコア */
+			&.has-black-color {
+				color: #000000;
+			}
+			&.has-cyan-bluish-gray-color {
+				color: #abb8c3;
+			}
+			&.has-white-color {
+				color: #ffffff;
+			}
+			&.has-pale-pink-color {
+				color: #f78da7;
+			}
+			&.has-vivid-red-color {
+				color: #cf2e2e;
+			}
+			&.has-luminous-vivid-orange-color {
+				color: #ff6900;
+			}
+			&.has-luminous-vivid-amber-color {
+				color: #fcb900;
+			}
+			&.has-light-green-cyan-color {
+				color: #7bdcb5;
+			}
+			&.has-vivid-green-cyan-color {
+				color: #00d084;
+			}
+			&.has-pale-cyan-blue-color {
+				color: #8ed1fc;
+			}
+			&.has-vivid-cyan-blue-color {
+				color: #0693e3;
+			}
+			&.has-vivid-purple-color {
+				color: #9b51e0;
+			}
+			/* 応急処置：カラーパレットVK */
+			&.has-vk-color-primary-color {
+				color: var(--vk-color-primary);
+			}
+			&.has-vk-color-primary-dark-color {
+				color: var(--vk-color-primary-dark);
+			}
+			&.has-vk-color-primary-vivid-color {
+				color: var(--vk-color-primary-vivid);
+			}
+			&.has-vk-color-custom-1-color {
+				color: var(--vk-color-custom-1);
+			}
+			&.has-vk-color-custom-2-color {
+				color: var(--vk-color-custom-2);
+			}
+			&.has-vk-color-custom-3-color {
+				color: var(--vk-color-custom-3);
+			}
+			&.has-vk-color-custom-4-color {
+				color: var(--vk-color-custom-4);
+			}
+			&.has-vk-color-custom-5-color {
+				color: var(--vk-color-custom-5);
+			}
+			// ここから標準装備
 			background-color: currentColor;
 			border: 1px solid currentColor;
 			& .vk_button_link_before,
@@ -97,10 +179,15 @@ $vk-color-dark:#343a40;
 			& .vk_button_link_subCaption {
 				color: #fff;
 			}
-			&.has-vk-color-light-background-color .vk_button_link_before,
-			&.has-vk-color-light-background-color .vk_button_link_txt,
-			&.has-vk-color-light-background-color .vk_button_link_after,
-			&.has-vk-color-light-background-color .vk_button_link_subCaption {
+			/* 白っぽい色に対する対策 */
+			&.has-vk-color-light-color .vk_button_link_before,
+			&.has-vk-color-light-color .vk_button_link_txt,
+			&.has-vk-color-light-color .vk_button_link_after,
+			&.has-vk-color-light-color .vk_button_link_subCaption,
+			&.has-white-color .vk_button_link_before,
+			&.has-white-color .vk_button_link_txt,
+			&.has-white-color .vk_button_link_after,
+			&.has-white-color .vk_button_link_subCaption {
 				color:#212529;
 			}
 		}
@@ -116,10 +203,15 @@ $vk-color-dark:#343a40;
 			& .vk_button_link_subCaption {
 				color: #fff;
 			}
+			/* 白っぽい色に対する対策 */
 			&.has-vk-color-light-background-color .vk_button_link_before,
 			&.has-vk-color-light-background-color .vk_button_link_txt,
 			&.has-vk-color-light-background-color .vk_button_link_after,
-			&.has-vk-color-light-background-color .vk_button_link_subCaption {
+			&.has-vk-color-light-background-color .vk_button_link_subCaption,
+			&.has-white-color .vk_button_link_before,
+			&.has-white-color .vk_button_link_txt,
+			&.has-white-color .vk_button_link_after,
+			&.has-white-color .vk_button_link_subCaption {
 				color:#212529;
 			}
 		}

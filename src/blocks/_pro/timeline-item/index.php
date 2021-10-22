@@ -12,6 +12,16 @@
  */
 function vk_blocks_register_block_timeline_item() {
 
+	// Register Style.
+	if ( ! is_admin() ) {
+		wp_register_style(
+			'vk-blocks/timeline-item',
+			VK_BLOCKS_DIR_URL . 'build/_pro/timeline-item/style.css',
+			array(),
+			VK_BLOCKS_VERSION
+		);
+	}
+
 	// Register Script.
 	$asset = include VK_BLOCKS_DIR_PATH . 'build/_pro/timeline-item/block-build.asset.php';
 	wp_register_script(

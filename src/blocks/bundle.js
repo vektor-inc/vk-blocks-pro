@@ -18,6 +18,7 @@ import * as alert from './alert';
 import * as balloon from './balloon';
 import * as borderBox from './border-box';
 import * as button from './button';
+import * as buttonOuter from './button-outer';
 import * as faq from './faq';
 import * as faq2 from './faq2';
 import * as faq2a from './faq2-a';
@@ -51,6 +52,7 @@ const vkBlocks = [
 	balloon,
 	borderBox,
 	button,
+	buttonOuter,
 	faq,
 	faq2,
 	faq2a,

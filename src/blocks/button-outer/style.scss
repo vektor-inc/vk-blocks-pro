@@ -3,15 +3,15 @@
 /* CSS
 /*-------------------------------------------*/
 /*-------------------------------------------*/
-/* .vk_icon_icon_outer
+/* .vk_button_button_outer
 /*-------------------------------------------*/
-.vk_icons {
+.vk_buttons {
 	@media screen and (max-width: 992px) {
 		margin-bottom: 1.5em;
 	}
 }
 
-.vk_icons { //編集画面で負けるので先頭に追加
+.vk_buttons { //編集画面で負けるので先頭に追加
 
 	&_col {
 		display: flex;
@@ -19,7 +19,7 @@
 		clear: both; /* To be cope with inline image float and so on. */
 		margin-left: -8px;
 
-		.vk_icon {
+		.vk_button {
 			margin: 4px 0 4px 8px;
 
 			&_frame {

@@ -186,6 +186,7 @@ function vk_blocks_blocks_assets() {
 			'balloon',
 			'border-box',
 			'button',
+			'button-outer',
 			'faq',
 			'faq2',
 			'faq2-a',

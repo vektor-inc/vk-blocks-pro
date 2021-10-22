@@ -2,20 +2,58 @@
  * Buton Outer Block
  */
 
-// コアのコンポーネントを読み込み
-import { registerBlockType } from '@wordpress/blocks';
-
-// 各種ファイルを読み込み
-import metadata from './block.json';
 import { ReactComponent as Icon } from './icon.svg';
+import { __ } from '@wordpress/i18n';
+
+import { title, iconName, url, iconUser } from '@vkblocks/utils/example-data';
+import metadata from './block.json';
 import edit from './edit';
 import save from './save';
-import deprecated from './deprecated/';
 
-registerBlockType(metadata.name, {
-	...metadata,
+const { name } = metadata;
+
+export { metadata, name };
+
+export const settings = {
+	title: __('Button Outer', 'vk-blocks'),
 	icon: <Icon />,
+	styles: [],
+	example: {
+		innerBlocks: [
+			{
+				name: 'vk-blocks/button',
+				attributes: {
+					content: iconName,
+					subCaption: title,
+					buttonUrl: url,
+					buttonTarget: false,
+					buttonSize: 'md',
+					buttonType: '0',
+					buttonColor: 'primary',
+					buttonColorCustom: 'undefined',
+					buttonAlign: 'left',
+					fontAwesomeIconBefore: iconUser,
+					fontAwesomeIconAfter: iconUser,
+				},
+			},
+			{
+				name: 'vk-blocks/button',
+				attributes: {
+					content: iconName,
+					subCaption: title,
+					buttonUrl: url,
+					buttonTarget: false,
+					buttonSize: 'md',
+					buttonType: '0',
+					buttonColor: 'primary',
+					buttonColorCustom: 'undefined',
+					buttonAlign: 'left',
+					fontAwesomeIconBefore: iconUser,
+					fontAwesomeIconAfter: iconUser,
+				},
+			},
+		],
+	},
 	edit,
 	save,
-	deprecated,
-});
+};

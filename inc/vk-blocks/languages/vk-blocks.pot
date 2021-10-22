@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.16.7\n"
+"Project-Id-Version: VK Blocks Pro 1.16.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-10-22T04:10:07+00:00\n"
+"POT-Creation-Date: 2021-10-22T06:30:13+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -1274,6 +1274,10 @@ msgstr ""
 
 #: src/blocks/border-box/index.js:61
 msgid "Solid Angle iconFeature"
+msgstr ""
+
+#: src/blocks/button-outer/index.js:18
+msgid "Button Outer"
 msgstr ""
 
 #: src/blocks/button/edit.js:127
@@ -2557,12 +2561,12 @@ msgid "No Post is selected"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:319
-#: inc/vk-blocks/vk-blocks-functions.php:319
+#: inc/vk-blocks/vk-blocks-functions.php:320
 msgid "Blocks"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:332
-#: inc/vk-blocks/vk-blocks-functions.php:332
+#: inc/vk-blocks/vk-blocks-functions.php:333
 msgid "Blocks Layout"
 msgstr ""
 
@@ -2923,4 +2927,14 @@ msgstr ""
 #: src/blocks/_pro/timeline/block.json
 msgctxt "block description"
 msgid "Displays a simple schedule and other information that is useful for explaining the order."
+msgstr ""
+
+#: src/blocks/button-outer/block.json
+msgctxt "block title"
+msgid "Button Outer"
+msgstr ""
+
+#: src/blocks/button-outer/block.json
+msgctxt "block description"
+msgid "Display the Font Awesome buttons horizontally."
 msgstr ""

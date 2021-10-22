@@ -1,6 +1,6 @@
 <?php
 /**
- * Registers the `vk-blocks/icon_outer` block.
+ * Registers the `vk-blocks/button-outer` block.
  *
  * @package vk-blocks
  */
@@ -8,11 +8,11 @@
 if ( function_exists( 'register_block_type_from_metadata' ) ) {
 
 	/**
-	 * Register Icon outer block.
+	 * Register Button Outer block.
 	 *
 	 * @return void
 	 */
-	function vk_blocks_register_block_icon_outer() {
+	function vk_blocks_register_block_button_outer() {
 		register_block_type_from_metadata(
 			__DIR__,
 			array(
@@ -21,5 +21,5 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 			)
 		);
 	}
-	add_action( 'init', 'vk_blocks_register_block_icon_outer', 99 );
+	add_action( 'init', 'vk_blocks_register_block_button_outer', 99 );
 }

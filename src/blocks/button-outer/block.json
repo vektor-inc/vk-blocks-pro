@@ -1,38 +1,14 @@
 {
 	"apiVersion": 2,
-	"name": "vk-blocks/icon-outer",
+	"name": "vk-blocks/button-outer",
 	"title": "Button Outer",
 	"category": "vk-blocks-cat",
-	"description": "Display the Font Awesome icons horizontally.",
+	"description": "Display the Font Awesome buttons horizontally.",
 	"textdomain": "vk-blocks",
 	"attributes": {
-		"iconSize": {
-			"type": "number",
-			"default": 36
-		},
-		"iconSizeUnit": {
-			"type": "string",
-			"default": "px"
-		},
-		"iconMargin": {
-			"type": "number",
-			"default": 22
-		},
-		"iconMarginUnit": {
-			"type": "string",
-			"default": "px"
-		},
-		"iconRadius": {
-			"type": "number",
-			"default": 50
-		},
-		"iconsJustify": {
+		"buttonsJustify": {
 			"type": "string",
 			"default": "left"
-		},
-		"iconType": {
-			"type": "string",
-			"default": "0"
 		}
 	},
 	"supports": {

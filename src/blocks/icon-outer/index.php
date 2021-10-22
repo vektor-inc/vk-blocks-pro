@@ -1,6 +1,6 @@
 <?php
 /**
- * Registers the `vk-blocks/icon_outer` block.
+ * Registers the `vk-blocks/icon-outer` block.
  *
  * @package vk-blocks
  */
@@ -10,7 +10,7 @@
  *
  * @return void
  */
-function vk_blocks_register_block_button_outer() {
+function vk_blocks_register_block_icon_outer() {
 	register_block_type_from_metadata(
 		__DIR__,
 		array(
@@ -19,4 +19,4 @@ function vk_blocks_register_block_button_outer() {
 		)
 	);
 }
-add_action( 'init', 'vk_blocks_register_block_button_outer', 99 );
+add_action( 'init', 'vk_blocks_register_block_icon_outer', 99 );

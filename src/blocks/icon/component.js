@@ -1,5 +1,6 @@
 import { Component } from '@wordpress/element';
 import ReactHtmlParser from 'react-html-parser';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export class VKBIcon extends Component {
 	render() {
@@ -16,11 +17,11 @@ export class VKBIcon extends Component {
 		const iconTarget = this.props.lbTarget;
 
 		// outer & align
-		let outerClass = 'vk_icon_outer';
+		let outerClass = 'vk_icon_frame';
 		if (iconAlign === 'center') {
-			outerClass += ' vk_icon_align_center';
+			outerClass += ' text-center';
 		} else if (iconAlign === 'right') {
-			outerClass += ' vk_icon_align_right';
+			outerClass += ' text-right';
 		}
 
 		// color style
@@ -29,24 +30,49 @@ export class VKBIcon extends Component {
 
 		if (iconType === '0') {
 			// Solid color
-			if (iconColor !== 'undefined') {
-				borderStyle = {
-					backgroundColor: `${iconColor}`,
-					borderColor: `${iconColor}`,
-				};
-			}
-		} else if (iconType === '1') {
-			// Icon & Frame
-			borderClass += ' vk_icon_border_frame';
-			if (iconColor !== 'undefined') {
-				borderStyle = {
-					borderColor: `${iconColor}`,
-				};
+			if (
+				iconColor !== 'undefined' &&
+				iconColor !== null &&
+				iconColor !== undefined
+			) {
+				// Solid color
+				borderClass += ` has-background`;
+
+				if (isHexColor(iconColor)) {
+					// custom color
+					borderStyle = {
+						backgroundColor: `${iconColor}`,
+					};
+				} else {
+					// palette color
+					borderClass += ` has-${iconColor}-background-color`;
+				}
 			}
 		} else {
-			// icon only
-			borderClass += ' vk_icon_border_none';
-			if (iconColor !== 'undefined') {
+			if (
+				iconColor !== 'undefined' &&
+				iconColor !== null &&
+				iconColor !== undefined
+			) {
+				borderClass += ` has-text-color`;
+
+				if (isHexColor(iconColor)) {
+					// custom color
+					borderStyle = {
+						color: `${iconColor}`,
+					};
+				} else {
+					// palette color
+					borderClass += ` has-${iconColor}-color`;
+				}
+			}
+
+			if (iconType === '1') {
+				// Icon & Frame
+				outerClass += ' is-style-outline';
+			} else {
+				// icon only
+				outerClass += ' is-style-noline';
 			}
 		}
 
@@ -78,12 +104,6 @@ export class VKBIcon extends Component {
 		if (fontAwesomeIcon) {
 			fontAwesomeIcon = fontAwesomeIcon.replace(/ fas/g, 'fas');
 
-			// font color
-			let color = null;
-			if (iconType !== '0' && iconColor !== 'undefined') {
-				color = `color:${iconColor}`;
-			}
-
 			// font size
 			let size = null;
 			if (!(iconSize === 36 && iconSizeUnit === 'px')) {
@@ -92,8 +112,7 @@ export class VKBIcon extends Component {
 
 			// add class and inline css
 			const faIconFragment = fontAwesomeIcon.split(' ');
-			faIconFragment[0] =
-				faIconFragment[0] + ` style="${color}; ${size};"`;
+			faIconFragment[0] = faIconFragment[0] + ` style="${size};"`;
 			faIconFragment[1] = ' ' + faIconFragment[1] + ` vk_icon_font `;
 			faIconTag = faIconFragment.join('');
 		}

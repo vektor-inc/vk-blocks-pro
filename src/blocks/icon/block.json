@@ -2,6 +2,7 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/icon",
 	"category": "vk-blocks-cat",
+	"title": "Icon",
 	"attributes": {
 		"faIcon": {
 			"type": "string",
@@ -36,12 +37,10 @@
 			"default": "0"
 		},
 		"iconColor": {
-			"type": "string",
-			"default": "undefined"
+			"type": "string"
 		},
 		"iconUrl": {
-			"type": "string",
-			"default": ""
+			"type": "string"
 		},
 		"iconTarget": {
 			"type": "Boolean",

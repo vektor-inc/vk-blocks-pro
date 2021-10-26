@@ -38,7 +38,7 @@ jobs:
         node-version: "${{ steps.nodenv.outputs.NODEVERSION }}"
 
     - run: npm install -g npm
-    # 通常版をクローン
+    # 通常版を（Pro版の中に）クローン
     - run: git clone https://${GIT_USER}:${GIT_TOKEN}@github.com/${GIT_REPOSITORY}
     # VK BlocksのGithubにアクセスできるユーザーの設定
     - run: git config --global user.email "info@vektor-inc.co.jp"

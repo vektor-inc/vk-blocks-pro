@@ -36,7 +36,6 @@
 }
 
 $stylePalette: (
-	is-style-vk-default: "•",
 	is-style-vk-arrow-mark: "\f138",
 	is-style-vk-triangle-mark: "\f0da",
 	is-style-vk-check-mark: "\f00c",
@@ -67,7 +66,6 @@ $colorPalette: (
 ul,
 ol {
 	&.is-style {
-		&-vk-default,
 		&-vk-arrow-mark,
 		&-vk-triangle-mark,
 		&-vk-check-mark,
@@ -85,7 +83,7 @@ ol {
 				position: relative;
 				margin-top:0;
 				margin-left: 0;
-				margin-bottom:calc( var(--vk-size-text) * 0.8 );
+				margin:calc( var(--vk-size-text) * 0.8 ) 0;
 				line-height: calc( var(--vk-size-text) * 1.65 );
 			}
 		}
@@ -117,6 +115,19 @@ ol {
 				height: 26px;
 				text-align: center;
 			}
+
+			ul,
+			ol {
+				counter-reset: num_inner;
+				content: counter(num_inner);
+
+				li {
+					&:before {
+						counter-increment: num_inner;
+						content: counter(num_inner);
+					}
+				}
+			}
 		}
 	}
 
@@ -145,6 +156,19 @@ ol {
 				height: 26px;
 				text-align: center;
 				border-radius: 2px;
+			}
+
+			ul,
+			ol {
+				counter-reset: num_inner;
+				content: counter(num_inner);
+
+				li {
+					&:before {
+						counter-increment: num_inner;
+						content: counter(num_inner);
+					}
+				}
 			}
 		}
 	}

@@ -1,7 +1,10 @@
+import save1_13_2 from './1.13.2/save';
+import save1_16_1 from './1.16.1/save';
+
 const blockAttributes = {
 	faIcon: {
 		type: 'string',
-		default: null,
+		default: '<i class="fas fa-user"></i>',
 	},
 	iconSize: {
 		type: 'number',
@@ -27,17 +30,17 @@ const blockAttributes = {
 		type: 'string',
 		default: 'left',
 	},
-	"iconType": {
-		"type": "string",
-		"default": "0"
+	iconType: {
+		type: 'string',
+		default: '0'
 	},
 	iconColor: {
 		type: 'string',
-		default: null,
+		default: 'undefined',
 	},
 	iconUrl: {
 		type: 'string',
-		default: null,
+		default: "",
 	},
 	iconTarget: {
 		type: 'Boolean',
@@ -47,8 +50,21 @@ const blockAttributes = {
 
 const blockAttributes2 = {
 	...blockAttributes,
+	iconColor: {
+		type: 'string',
+	},
+	iconUrl: {
+		type: 'string',
+	},
 }
 
 export const deprecated = [
-
+	{
+		attributes: blockAttributes2,
+		save: save1_16_1,
+	},
+	{
+		attributes: blockAttributes,
+		save: save1_13_2,
+	},
 ];

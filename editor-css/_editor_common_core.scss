@@ -16,8 +16,9 @@
 		display: block;
 	}
 	//他テーマ（Twenty Twenty）上書き用
-	.editor-styles-wrapper ul li{ 
-		margin-bottom:calc( var(--vk-size-text) * 0.8 );
+	.editor-styles-wrapper ul li,
+	.editor-styles-wrapper ol li{ 
+		margin:calc( var(--vk-size-text) * 0.8 ) 0;
 	}
 }
 

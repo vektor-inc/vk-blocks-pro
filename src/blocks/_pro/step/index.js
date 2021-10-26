@@ -3,7 +3,6 @@
  *
  */
 import { ReactComponent as Icon } from './icon.svg';
-import { __ } from '@wordpress/i18n';
 import { title, content } from '@vkblocks/utils/example-data';
 
 import deprecated from './deprecated/index';
@@ -16,7 +15,6 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-	title: __('Step', 'vk-blocks'), // Block title.
 	icon: <Icon />, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	example: {
 		attributes: {

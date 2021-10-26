@@ -6,6 +6,7 @@
 	<file>.</file>
 	<exclude-pattern>/vendor/*</exclude-pattern>
 	<exclude-pattern>/node_modules/*</exclude-pattern>
+	<exclude-pattern>/dist/*</exclude-pattern>
 	<exclude-pattern type="relative">^inc/vk-helpers/package/*</exclude-pattern>
 	<exclude-pattern type="relative">^inc/tgm-plugin-activation/*</exclude-pattern>
 	<exclude-pattern type="relative">^inc/vk-blocks-pro/plugin-update-checker/*</exclude-pattern>
@@ -19,6 +20,7 @@
 	<exclude-pattern type="relative">^inc/vk-blocks/build/block-build.asset.php</exclude-pattern>
 	<exclude-pattern type="relative">^test/phpunit/*</exclude-pattern>
 	<exclude-pattern type="relative">^.git/*</exclude-pattern>
+	<exclude-pattern type="relative">^build/*</exclude-pattern>
 
 	<!-- How to scan -->
 	<!-- Usage instructions: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Usage -->

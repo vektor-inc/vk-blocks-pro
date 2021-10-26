@@ -3,8 +3,8 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,m
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
-Tested up to: 5.8.0
-Stable tag: 1.15.0
+Tested up to: 5.8.1
+Stable tag: 1.16.4
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -62,6 +62,26 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 1.16.4 =
+[ Bug fix ][ Button ] Fix outline color
+
+= 1.16.3 =
+[ Bug fix ] Cope with excerpt br
+
+= 1.16.2 =
+[ Other ] Cope with old ssl error
+
+= 1.16.1 =
+[ Bug fix ][ Card ] Fix broke layout on edit screen
+
+= 1.16.0 =
+[ Add New Block ] Icon Outer
+[ Bug fix ][ icon ] Fixed a bug the style was reset when the icon color clear
+[ Bug fix ][ Ordered List ] Fixed a bug in standard style
+
+= 1.15.1 =
+[ Bug fix ][ Spacer ] Fix common margin setting in case of unspecified
 
 = 1.15.0 =
 [ Add Function ][ Grid Column Item ] Add color and padding setting

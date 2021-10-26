@@ -27,6 +27,7 @@ import * as heading from './heading';
 import * as icon from './icon';
 import * as layoutColumn from './layout-column';
 import * as layoutColumnItem from './layout-column-item';
+import * as iconOuter from './icon-outer';
 import * as pageContent from './page-content';
 import * as prBlocks from './pr-blocks';
 import * as prContent from './pr-content';
@@ -61,6 +62,7 @@ const vkBlocks = [
 	icon,
 	layoutColumn,
 	layoutColumnItem,
+	iconOuter,
 	pageContent,
 	prBlocks,
 	prContent,

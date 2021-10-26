@@ -1,6 +1,7 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/faq2-q",
+	"title": "FAQ Question",
 	"category": "vk-blocks-cat",
 	"parent": [
 		"vk-blocks/faq2"

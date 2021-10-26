@@ -258,7 +258,13 @@ class VK_Blocks_Block_Loader {
 	 * @return bool
 	 */
 	public static function should_load_separate_assets() {
-		return apply_filters( 'vk_blocks_should_load_separate_assets', false );
+		$vk_blocks_options = get_option( 'vk_blocks_options' );
+		if ( isset( $vk_blocks_options['load_separate_option'] ) ) {
+			$bool = true;
+		} else {
+			$bool = false;
+		}
+		return apply_filters( 'vk_blocks_should_load_separate_assets', $bool );
 	}
 
 	/**

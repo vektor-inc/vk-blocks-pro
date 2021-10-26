@@ -18,6 +18,8 @@ const dirNames = [
     { name: 'flow', isPro: 0 },
 	{ name: 'icon', isPro: 0 },
 	{ name: 'icon-outer', isPro: 0 },
+	{ name: 'layout-column', isPro: 0 },
+	{ name: 'layout-column-item', isPro: 0 },    
     { name: 'heading', isPro: 0 },
     { name: 'page-content', isPro: 0 },
     { name: 'pr-blocks', isPro: 0 },

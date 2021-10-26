@@ -31,6 +31,8 @@ class VK_Blocks_Block_Loader {
 		array( 'name' => 'heading',               'is_pro' =>  false ),
 		array( 'name' => 'icon',                  'is_pro' =>  false ),
 		array( 'name' => 'icon-outer',            'is_pro' =>  false ),
+		array( 'name' => 'layout-column',         'is_pro' =>  false ),
+		array( 'name' => 'layout-column-item',    'is_pro' =>  false ),		
 		array( 'name' => 'page-content',          'is_pro' =>  false ),
 		array( 'name' => 'pr-blocks',             'is_pro' =>  false ),
 		array( 'name' => 'pr-content',            'is_pro' =>  false ),

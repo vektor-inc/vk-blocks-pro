@@ -43,6 +43,7 @@
 		"build:blockpro:dev": "run-s build:{jspro:dev,csspro} --block=$npm_config_block",
 		"build:blocks": "node build.mjs",
 		"build:blocks:dev": "node build.mjs dev",
+		"build:extensions-core-sass": "sass src/extensions/core/heading/style.scss build/extensions/core/heading/style.css --style=compressed --no-source-map",
 		"reinstall": "rm -rf node_modules/ && npm install && npm run build",
 		"prepare": "husky install"
 	},
@@ -107,6 +108,7 @@
 		"lodash": "^4.17.21",
 		"memize": "^1.1.0",
 		"npm-run-all": "^4.1.5",
+		"postcss": "^8.3.11",
 		"react-dom": "16.14.0",
 		"react-html-parser": "^2.0.2",
 		"sass": "^1.42.0"

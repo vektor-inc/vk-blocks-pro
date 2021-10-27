@@ -1,8 +1,0 @@
-// 分割読み込みした時に読み込む共通のcssになります。
-// 統合版cssでは読み込まれません。
-// registerBlockStyleで使用しているブロックが判別できないので常時読み込みに変更。
-@import "common/hidden-extension/style.scss";
-@import "common/responsive-br/style.scss";
-@import "core/heading/style.scss";
-@import "core/image/style.scss";
-@import "core/table/style.scss";

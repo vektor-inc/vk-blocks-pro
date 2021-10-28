@@ -137,6 +137,10 @@ msgstr ""
 msgid "Animation"
 msgstr ""
 
+#: src/blocks/_pro/button-outer/index.js:18
+msgid "Button Outer"
+msgstr ""
+
 #: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:149
 #: src/blocks/_pro/card-item/deprecated/0.20.3/component.js:151
 #: src/blocks/_pro/card-item/deprecated/0.20.4/component.js:156
@@ -1253,10 +1257,6 @@ msgstr ""
 
 #: src/blocks/border-box/index.js:61
 msgid "Solid Angle iconFeature"
-msgstr ""
-
-#: src/blocks/button-outer/index.js:18
-msgid "Button Outer"
 msgstr ""
 
 #: src/blocks/button/edit.js:127

@@ -6,7 +6,8 @@ $vk-color-danger: #dc3545;
 $vk-color-light:#f8f9fa;
 $vk-color-dark:#343a40;
 
-:root {
+:root,
+:root .editor-styles-wrapper {
 	.has-vk-color-primary-background-color {
 		background-color: var(--vk-color-primary);
 	}
@@ -58,7 +59,8 @@ $vk-color-dark:#343a40;
 }
 
 
-.vk_button {
+.vk_button,
+.editor-styles-wrapper .vk_button {
 	margin: 0 auto 5px; /* 他テーマで0だと左寄せになる場合があるのでautoに変更 */
 	text-align: center; /* テキストのみの時のセンター揃え */
 	&-color-custom {
@@ -66,10 +68,13 @@ $vk-color-dark:#343a40;
 			opacity: 0.8;
 			box-shadow: 0 0 0 0.2rem rgba(171, 184, 195, 0.25);
 		}
+		.vk_button_link-type-text:hover {
+			box-shadow: none;
+		}
 	}
 
 	// 塗り
-	.has-background {
+	.btn.has-background {
 		color: #fff;
 		/* 白っぽい色に対する対策 */
 		&.has-vk-color-light-background-color,
@@ -79,7 +84,7 @@ $vk-color-dark:#343a40;
 	}
 
 	// 背景なし
-	.has-text-color.is-style-outline {
+	.btn.has-text-color.is-style-outline {
 		background-color: transparent;
 		border: 1px solid currentColor;
 		&:hover {
@@ -291,12 +296,6 @@ $vk-color-dark:#343a40;
 	.editor-rich-text {
 		// Font Awesomeアイコンが管理画面側で改行されないために inline-block を指定
 		display: inline-block;
-	}
-}
-
-.vk_button-color-custom {
-	.vk_button_link-type-text:hover {
-		box-shadow: none;
 	}
 }
 

@@ -205,6 +205,7 @@ function vk_blocks_blocks_assets() {
 			'accordion-target',
 			'accordion-trigger',
 			'animation',
+			'button-outer',
 			'card',
 			'card-item',
 			'child-page',

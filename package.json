@@ -43,6 +43,7 @@
 		"build:blockpro:dev": "run-s build:{jspro:dev,csspro} --block=$npm_config_block",
 		"build:blocks": "node build.mjs",
 		"build:blocks:dev": "node build.mjs dev",
+		"build:sass:extensions/responsive-br": "sass src/extensions/common/responsive-br/style.scss build/extensions/common/responsive-br/style.css --style=compressed --no-source-map",
 		"reinstall": "rm -rf node_modules/ && npm install && npm run build",
 		"prepare": "husky install"
 	},

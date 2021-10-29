@@ -14,7 +14,8 @@
 	],
 	"require": {
 		"php": ">=7.2",
-		"squizlabs/php_codesniffer": "*"
+		"squizlabs/php_codesniffer": "*",
+		"vektor-inc/vk-color-palette-manager": "^0.0.11"
 	},
 	"require-dev": {
 		"sirbrillig/phpcs-variable-analysis": "^2.8",

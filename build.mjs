@@ -48,14 +48,17 @@ const dirNames = [
     { name: 'timeline-item', isPro: 1 },    
 ]
 
-// mode が dev かどうか受け取る
-const isDev = process.argv[2]
+// コマンドライン引数を受け取る
+const args = process.argv[2]
 let devText
-if (isDev) {
+let freeText
+if (args === 'dev') {
     devText = ":dev"
+} else if (args === 'free') {
+    freeText = ":free"
 }
 
-function buildBlocks(dirNames, devText = "") {
+function buildBlocks(dirNames, devText = "", freeText = "") {
     dirNames.map(dirObj => {
         console.log(dirObj.name)
         let proText = ""
@@ -63,22 +66,38 @@ function buildBlocks(dirNames, devText = "") {
             proText = 'pro'
         }
         if (dirObj.name !== '_pro') {
-            const js_cmd = 'npm run build:js' + proText + devText + ' --block=' + dirObj.name
-            console.log(js_cmd);
-            execSync(js_cmd);
-            // style.scssがあるかチェック
-            let hasStyleFile
-            if (dirObj.isPro) {
-                hasStyleFile = fs.existsSync('./src/blocks/_pro/' + dirObj.name + '/style.scss')
-            } else {
+            // 無料版ブロックを全てビルド
+            if (proText !== 'pro' && freeText === ':free') {
+                const js_cmd = 'npm run build:js --block=' + dirObj.name
+                console.log(js_cmd);
+                execSync(js_cmd);
+                // style.scssがあるかチェック
+                let hasStyleFile
                 hasStyleFile = fs.existsSync('./src/blocks/' + dirObj.name + '/style.scss')
-            }
-            if (hasStyleFile) {
-                const sass_cmd = 'npm run build:css' + proText + ' --block=' + dirObj.name
-                console.log(sass_cmd);
-                execSync(sass_cmd);
+                if (hasStyleFile) {
+                    const sass_cmd = 'npm run build:css' + proText + ' --block=' + dirObj.name
+                    console.log(sass_cmd);
+                    execSync(sass_cmd);
+                }
+            // 全てのブロックビルド
+            } else if (freeText !== ':free') {
+                const js_cmd = 'npm run build:js' + proText + devText + ' --block=' + dirObj.name
+                console.log(js_cmd);
+                execSync(js_cmd);
+                // style.scssがあるかチェック
+                let hasStyleFile
+                if (dirObj.isPro) {
+                    hasStyleFile = fs.existsSync('./src/blocks/_pro/' + dirObj.name + '/style.scss')
+                } else {
+                    hasStyleFile = fs.existsSync('./src/blocks/' + dirObj.name + '/style.scss')
+                }
+                if (hasStyleFile) {
+                    const sass_cmd = 'npm run build:css' + proText + ' --block=' + dirObj.name
+                    console.log(sass_cmd);
+                    execSync(sass_cmd);
+                }
             }
         }
     })
 }
-export default buildBlocks(dirNames,devText);
+export default buildBlocks(dirNames,devText,freeText);

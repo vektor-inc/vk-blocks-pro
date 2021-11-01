@@ -5,33 +5,33 @@
 	"attributes": {
 		"width": {
 			"type": "string",
-			"default": "49%"
+			"default": "50%"
 		},
-		"padding_pc": {
+		"margin_pc": {
 			"type": "object",
 			"default": {
-				"top": "50px",
-				"left": "10%",
-				"right": "10%",
-				"bottom": "50px"	
+				"top": "0px",
+				"left": "0px",
+				"right": "0px",
+				"bottom": "0px"	
 			}
 		},
-		"padding_tb": {
+		"margin_tb": {
 			"type": "object",
 			"default": {
-				"top": "50px",
-				"left": "10%",
-				"right": "10%",
-				"bottom": "50px"	
+				"top": "0px",
+				"left": "0px",
+				"right": "0px",
+				"bottom": "0px"	
 			}
 		},
-		"padding_sp": {
+		"margin_sp": {
 			"type": "object",
 			"default": {
-				"top": "50px",
-				"left": "10%",
-				"right": "10%",
-				"bottom": "50px"	
+				"top": "0px",
+				"left": "0px",
+				"right": "0px",
+				"bottom": "0px"	
 			}
 		}
 	},

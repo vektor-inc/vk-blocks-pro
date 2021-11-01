@@ -9,7 +9,7 @@
 		"destroy": "wp-env destroy",
 		"watch": "gulp watch & npm run sass-watch",
 		"build:dev": "wp-scripts build --config webpack.config.js --mode=development && gulp build:dev:pro",
-		"build": "gulp text-domain && wp-scripts build --config webpack.config.js && gulp build:pro && npm run translate && npm run build:blocks",
+		"build": "gulp text-domain && wp-scripts build --config webpack.config.js && gulp build:pro && npm run translate",
 		"build:free": "wp-scripts build --config webpack.config.js && gulp build:free",
 		"build:pot": "wp i18n make-pot --merge=inc/vk-blocks/languages/vk-blocks-js.pot --skip-js . inc/vk-blocks/languages/vk-blocks.pot",
 		"translate": "npm run build:pot && po2json ./inc/vk-blocks/languages/vk-blocks-ja.po ./inc/vk-blocks/languages/vk-blocks-ja-vk-blocks-build-js.json -f jed",

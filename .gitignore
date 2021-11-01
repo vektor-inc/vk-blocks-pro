@@ -11,6 +11,9 @@ editor-css/editor-block-build-marge.scss
 /vendor/*
 !/vendor/autoload.php
 !/vendor/composer/
+!/vendor/wp-phpunit/
+/vendor/wp-phpunit/*
+!/vendor/wp-phpunit/wp-phpunit/__loaded.php
 !/vendor/vektor-inc/
 /vendor/vektor-inc/*
 !/vendor/vektor-inc/vk-color-palette-manager/

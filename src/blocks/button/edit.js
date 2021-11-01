@@ -30,6 +30,7 @@ export default function ButtonEdit(props) {
 		buttonSize,
 		buttonType,
 		buttonColor,
+		buttonTextColorCustom,
 		buttonColorCustom,
 		buttonAlign,
 		fontAwesomeIconBefore,
@@ -46,6 +47,14 @@ export default function ButtonEdit(props) {
 			buttonUrl === ''
 		) {
 			setAttributes({ buttonUrl: undefined });
+		}
+		if (
+			buttonTextColorCustom === null ||
+			buttonTextColorCustom === 'null' ||
+			buttonTextColorCustom === 'undefined' ||
+			buttonTextColorCustom === ''
+		) {
+			setAttributes({ buttonTextColorCustom: undefined });
 		}
 		if (
 			buttonColorCustom === null ||
@@ -87,15 +96,29 @@ export default function ButtonEdit(props) {
 	// プルダウンから直接カスタムを選ぶとその瞬間色が適用されなくなるので primary に戻す
 	useEffect(() => {
 		if (buttonColor !== 'custom') {
+			updateBlockAttributes(clientId, { buttonTextColorCustom: undefined });
 			updateBlockAttributes(clientId, { buttonColorCustom: undefined });
 		} else if (
-			buttonColorCustom === undefined &&
+			(buttonTextColorCustom === undefined && buttonColorCustom === undefined) &&
 			buttonColor === 'custom'
 		) {
 			updateBlockAttributes(clientId, { buttonColor: 'primary' });
 		}
 	}, [buttonColor]);
 
+	// buttonTextColorCustom が有効なら buttonColor を custom に
+	// buttonTextColorCustom が空白かつ buttonColor が custom なら buttonColor を primary に
+	useEffect(() => {
+		if (buttonTextColorCustom !== undefined) {
+			updateBlockAttributes(clientId, { buttonColor: 'custom' });
+		} else if (
+			buttonTextColorCustom === undefined &&
+			buttonColor === 'custom'
+		) {
+			updateBlockAttributes(clientId, { buttonColor: 'primary' });
+		}
+	}, [buttonTextColorCustom]);
+	
 	// buttonColorCustom が有効なら buttonColor を custom に
 	// buttonColorCustom が空白かつ buttonColor が custom なら buttonColor を primary に
 	useEffect(() => {
@@ -108,7 +131,7 @@ export default function ButtonEdit(props) {
 			updateBlockAttributes(clientId, { buttonColor: 'primary' });
 		}
 	}, [buttonColorCustom]);
-
+	
 	let containerClass;
 	// カスタムカラーの場合
 	if (buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) {
@@ -318,9 +341,24 @@ export default function ButtonEdit(props) {
 							setAttributes({ buttonColor: value })
 						}
 					/>
+					<h4 className={`mt-0 mb-2`}>
+						{__('Custom Color', 'vk-blocks')}:
+					</h4>
+					<BaseControl
+						id={`vk_block_baloon_custom_text_color`}
+						label={__('Text Color', 'vk-blocks')}
+					>
+						<AdvancedColorPalette
+							schema={'buttonTextColorCustom'}
+							disableSchema={'buttonColor'}
+							disableValue={'custom'}
+							{...props}
+						/>
+					</BaseControl>
+					
 					<BaseControl
 						id={`vk_block_baloon_custom_color`}
-						label={__('Custom Color', 'vk-blocks')}
+						label={__('Background Color', 'vk-blocks')}
 						help={__(
 							'This custom color overrides the default color. If you want to use the default color, click the clear button.',
 							'vk-blocks'
@@ -361,6 +399,7 @@ export default function ButtonEdit(props) {
 			</InspectorControls>
 			<div {...blockProps}>
 				<VKBButton
+					lbTextColorCustom={buttonTextColorCustom}
 					lbColorCustom={buttonColorCustom}
 					lbColor={buttonColor}
 					lbType={buttonType}

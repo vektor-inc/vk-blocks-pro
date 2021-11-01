@@ -30,6 +30,9 @@
 			"type": "string",
 			"default": "primary"
 		},
+		"buttonTextColorCustom": {
+			"type": "string"
+		},
 		"buttonColorCustom": {
 			"type": "string"
 		},

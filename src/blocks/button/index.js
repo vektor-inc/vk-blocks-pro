@@ -29,6 +29,7 @@ export const settings = {
 			buttonTarget: false,
 			buttonSize: 'md',
 			buttonType: '0',
+			buttonTextColor: 'undefined',
 			buttonColor: 'primary',
 			buttonColorCustom: 'undefined',
 			buttonAlign: 'left',

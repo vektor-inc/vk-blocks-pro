@@ -12,6 +12,7 @@ export default function save(props) {
 		buttonSize,
 		buttonType,
 		buttonColor,
+		buttonTextColorCustom,
 		buttonColorCustom,
 		buttonAlign,
 		fontAwesomeIconBefore,
@@ -34,6 +35,7 @@ export default function save(props) {
 	return (
 		<div {...blockProps}>
 			<VKBButton
+				lbTextColorCustom={buttonTextColorCustom}
 				lbColorCustom={buttonColorCustom}
 				lbColor={buttonColor}
 				lbType={buttonType}

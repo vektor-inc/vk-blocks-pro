@@ -1,4 +1,0 @@
-// 分割読み込みした時に読み込む共通のcssになります。
-// 統合版cssでは読み込まれません。
-// registerFormatTypeで使用しているブロックが判別できないので常時読み込みに変更。
-@import "hidden-extension/style.scss";

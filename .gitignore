@@ -10,6 +10,7 @@ editor-css/editor-block-build-marge.scss
 .DS_Store
 /vendor/*
 !/vendor/autoload.php
+!/vendor/composer/
 !/vendor/vektor-inc/
 /vendor/vektor-inc/*
 !/vendor/vektor-inc/vk-color-palette-manager/

@@ -9,17 +9,6 @@ editor-css/editor-block-build-marge.scss
 ._.DS_Store
 .DS_Store
 /vendor/*
-!/vendor/autoload.php
-!/vendor/composer/
-!/vendor/wp-phpunit/
-/vendor/wp-phpunit/*
-!/vendor/wp-phpunit/wp-phpunit/__loaded.php
-!/vendor/vektor-inc/
-/vendor/vektor-inc/*
-!/vendor/vektor-inc/vk-color-palette-manager/
-/vendor/vektor-inc/vk-color-palette-manager/*
-!/vendor/vektor-inc/vk-color-palette-manager/src/
-!/vendor/vektor-inc/vk-color-palette-manager/src/VkColorPaletteManager.php
 *.override.json
 src/blocks/**/style.css
 src/blocks/**/style.css.map
@@ -28,3 +17,18 @@ src/blocks/_pro/**/style.css.map
 test/e2e-tests/fixtures/blocks/*.json
 test/e2e-tests/fixtures/blocks/*.serialized.html
 .vscode/
+# Composer autoload
+!/vendor/autoload.php
+!/vendor/composer/
+!/vendor/wp-phpunit/
+/vendor/wp-phpunit/*
+!/vendor/wp-phpunit/wp-phpunit/
+/vendor/wp-phpunit/wp-phpunit/*
+!/vendor/wp-phpunit/wp-phpunit/__loaded.php
+# Color Palatte Manager
+!/vendor/vektor-inc/
+/vendor/vektor-inc/*
+!/vendor/vektor-inc/vk-color-palette-manager/
+/vendor/vektor-inc/vk-color-palette-manager/*
+!/vendor/vektor-inc/vk-color-palette-manager/src/
+!/vendor/vektor-inc/vk-color-palette-manager/src/VkColorPaletteManager.php

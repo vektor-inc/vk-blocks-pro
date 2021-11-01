@@ -8,9 +8,14 @@ editor-css/editor-block-build.css.map
 editor-css/editor-block-build-marge.scss
 ._.DS_Store
 .DS_Store
-/vendor/
+/vendor/*
 !/vendor/autoload.php
+!/vendor/vektor-inc/
+/vendor/vektor-inc/*
+!/vendor/vektor-inc/vk-color-palette-manager/
+/vendor/vektor-inc/vk-color-palette-manager/*
 !/vendor/vektor-inc/vk-color-palette-manager/src/
+!/vendor/vektor-inc/vk-color-palette-manager/src/VkColorPaletteManager.php
 *.override.json
 src/blocks/**/style.css
 src/blocks/**/style.css.map

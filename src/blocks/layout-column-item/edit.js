@@ -14,7 +14,6 @@ import {
 
 import { useMediaQuery } from '@wordpress/compose';
 
-
 export default function LayoutColumnItemEdit(props) {
 	const { attributes, setAttributes } = props;
 	const { width, margin_pc, margin_tb, margin_sp } = attributes;
@@ -23,14 +22,16 @@ export default function LayoutColumnItemEdit(props) {
 	});
 
 	const isMobile = useMediaQuery('(max-width: 689px)');
-	const isTablet = useMediaQuery('(min-width: 690px) and (max-width: 1079px)');
+	const isTablet = useMediaQuery(
+		'(min-width: 690px) and (max-width: 1079px)'
+	);
 	const isPC = useMediaQuery('(min-width: 1080px)');
-	console.log(isMobile + ":" + isTablet + ":" + isPC);
+	console.log(isMobile + ':' + isTablet + ':' + isPC);
 
 	let paddingObject = margin_pc;
-	if ( isMobile ) {
+	if (isMobile) {
 		paddingObject = margin_sp;
-	} else if ( isTablet ) {
+	} else if (isTablet) {
 		paddingObject = margin_tb;
 	}
 
@@ -39,13 +40,13 @@ export default function LayoutColumnItemEdit(props) {
 		marginTop: paddingObject.top,
 		marginRight: paddingObject.right,
 		marginBottom: paddingObject.bottom,
-		marginLeft: paddingObject.left
-	}
+		marginLeft: paddingObject.left,
+	};
 	console.log(cStyle);
 
 	return (
 		<>
-			<div {...blockProps} style={ cStyle }>
+			<div {...blockProps} style={cStyle}>
 				<InnerBlocks />
 			</div>
 			<InspectorControls>

@@ -201,7 +201,7 @@ gulp.task('dist', (done) => {
 	gulp.src(
 		[
 			'./inc/**',
-			'./src/**/',
+			'./src/**',
 			'./vendor/**',
 			'./*.txt',
 			'./*.png',

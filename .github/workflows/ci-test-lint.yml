@@ -39,12 +39,8 @@ jobs:
 
     - name: Install NPM Scripts
       run: npm install
-    - name: Install @wordpress/env
-      run: npm install -g @wordpress/env
     - name: Run @wordpress/env
-      run: wp-env start
-    - name: Install composer
-      - run: wp-env run composer 'composer install'
+      run: npx wp-env start
     - name: Install WP-CLI
       run: |
         curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar

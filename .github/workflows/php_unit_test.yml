@@ -49,6 +49,8 @@ jobs:
         php-version: ${{ matrix.php }}
     - name: install npm scripts
       run: npm install
+    - name: install Composer Package
+      run: composer install
     - name: Run @wordpress/env
       run: npx wp-env start
     - name: PHP Unit Test

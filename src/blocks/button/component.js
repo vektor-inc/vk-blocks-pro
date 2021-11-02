@@ -38,7 +38,10 @@ export class VKBButton extends Component {
 			}
 
 			// 文字色
-			if (buttonColor === 'custom' && buttonTextColorCustom !== undefined) {
+			if (
+				buttonColor === 'custom' &&
+				buttonTextColorCustom !== undefined
+			) {
 				aClass += ` btn has-text-color`;
 				// カスタムパレットカラーの場合
 				if (!isHexColor(buttonTextColorCustom)) {

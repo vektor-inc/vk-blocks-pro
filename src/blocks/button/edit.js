@@ -96,10 +96,13 @@ export default function ButtonEdit(props) {
 	// プルダウンから直接カスタムを選ぶとその瞬間色が適用されなくなるので primary に戻す
 	useEffect(() => {
 		if (buttonColor !== 'custom') {
-			updateBlockAttributes(clientId, { buttonTextColorCustom: undefined });
+			updateBlockAttributes(clientId, {
+				buttonTextColorCustom: undefined,
+			});
 			updateBlockAttributes(clientId, { buttonColorCustom: undefined });
 		} else if (
-			(buttonTextColorCustom === undefined && buttonColorCustom === undefined) &&
+			buttonTextColorCustom === undefined &&
+			buttonColorCustom === undefined &&
 			buttonColor === 'custom'
 		) {
 			updateBlockAttributes(clientId, { buttonColor: 'primary' });
@@ -110,6 +113,10 @@ export default function ButtonEdit(props) {
 	// buttonTextColorCustom が空白かつ buttonColor が custom なら buttonColor を primary に
 	useEffect(() => {
 		if (buttonTextColorCustom !== undefined) {
+			if (buttonColor !== 'custom'){
+				// 背景色のみ標準色に保つように
+				updateBlockAttributes(clientId, { buttonColorCustom: `vk-color-${buttonColor}` });
+			}
 			updateBlockAttributes(clientId, { buttonColor: 'custom' });
 		} else if (
 			buttonTextColorCustom === undefined &&
@@ -118,7 +125,7 @@ export default function ButtonEdit(props) {
 			updateBlockAttributes(clientId, { buttonColor: 'primary' });
 		}
 	}, [buttonTextColorCustom]);
-	
+
 	// buttonColorCustom が有効なら buttonColor を custom に
 	// buttonColorCustom が空白かつ buttonColor が custom なら buttonColor を primary に
 	useEffect(() => {
@@ -131,7 +138,7 @@ export default function ButtonEdit(props) {
 			updateBlockAttributes(clientId, { buttonColor: 'primary' });
 		}
 	}, [buttonColorCustom]);
-	
+
 	let containerClass;
 	// カスタムカラーの場合
 	if (buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) {
@@ -355,7 +362,7 @@ export default function ButtonEdit(props) {
 							{...props}
 						/>
 					</BaseControl>
-					
+
 					<BaseControl
 						id={`vk_block_baloon_custom_color`}
 						label={__('Background Color', 'vk-blocks')}

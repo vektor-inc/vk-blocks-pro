@@ -12,7 +12,7 @@
  * @return string
  */
 function vk_blocks_replace_url( $url ) {
-	return str_replace( 'http://localhost:8888', 'http://localhost:8889', $url );
+	return str_replace( 'http://localhost:8888', 'http://localhost:8888', $url );
 }
 
 /**

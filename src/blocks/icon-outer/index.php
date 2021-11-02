@@ -1,6 +1,6 @@
 <?php
 /**
- * Registers the `vk-blocks/icon_outer` block.
+ * Registers the `vk-blocks/icon-outer` block.
  *
  * @package vk-blocks
  */

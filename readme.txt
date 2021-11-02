@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
 Tested up to: 5.8.1
-Stable tag: 1.16.4
+Stable tag: 1.17.0
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -62,6 +62,33 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 1.18.0 =
+[ Add Function ] Add color palette manager in plugin
+
+= 1.17.0 =
+[ Add Block ][ Button Outer(Pro) ]
+
+= 1.16.11 =
+[ Bug fix ][ Button ] Fix color on katawara
+
+= 1.16.10 =
+[ Bug fix ][ border box ] Fix border box title confrict by title design function
+
+= 1.16.9 =
+[ Bug fix ][ icon ] Fix css bug from 1.16.0
+
+= 1.16.8 =
+[ Bug fix ][ Button ] cope with custom color palette
+
+= 1.16.7 =
+[ Bug fix ][ Button ] Fix primary bg color first aid
+
+= 1.16.6 =
+[ Bug fix ][ Button ] Fix primary bg color first aid
+
+= 1.16.5 =
+[ Bug fix ][ Button ] Fix wide size
 
 = 1.16.4 =
 [ Bug fix ][ Button ] Fix outline color

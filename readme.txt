@@ -63,6 +63,15 @@ e.g.
 
 == Changelog ==
 
+= 1.18.3 =
+[ Bug fix ] Revert 1.17.0
+
+= 1.18.2 =
+[ Bug fix ] Revert 1.17.0
+
+= 1.18.1 =
+[ Bug fix ] Revert 1.17.0
+
 = 1.17.0 =
 [ Add Block ][ Button Outer(Pro) ]
 

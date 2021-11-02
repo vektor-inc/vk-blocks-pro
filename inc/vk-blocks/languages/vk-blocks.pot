@@ -2,16 +2,16 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.16.11\n"
+"Project-Id-Version: VK Blocks Pro 1.18.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-10-28T00:05:40+00:00\n"
+"POT-Creation-Date: 2021-11-02T05:46:16+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.5.0\n"
+"X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 "X-Domain: vk-blocks\n"
 
 #: src/blocks/_pro/accordion-target/index.js:16
@@ -276,7 +276,7 @@ msgstr ""
 
 #: src/blocks/_pro/card/index.js:25
 #: src/components/column-layout-control/index.js:26
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:670
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:671
 #: inc/vk-components/package/class-vk-component-posts.php:671
 msgid "Card"
 msgstr ""
@@ -1856,7 +1856,7 @@ msgid "Card (Horizontal)"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:42
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:682
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:687
 #: inc/vk-components/package/class-vk-component-posts.php:687
 msgid "Media"
 msgstr ""
@@ -2272,30 +2272,30 @@ msgstr ""
 msgid "4.7 will be abolished in the near future."
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:72
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:77
 #: inc/tgm-plugin-activation/tgm-config.php:77
 msgid "Install Required Plugins"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:73
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:78
 #: inc/tgm-plugin-activation/tgm-config.php:78
 msgid "Install Plugins"
 msgstr ""
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:75
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:80
 #: inc/tgm-plugin-activation/tgm-config.php:80
 msgid "Installing Plugin: %s"
 msgstr ""
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:76
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:81
 #: inc/tgm-plugin-activation/tgm-config.php:81
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
 #. translators:
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:78
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:83
 #: inc/tgm-plugin-activation/tgm-config.php:83
 msgid "This plugin requires the following plugin: %1$s."
 msgid_plural "This plugin requires the following plugins: %1$s."
@@ -2303,7 +2303,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:84
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:89
 #: inc/tgm-plugin-activation/tgm-config.php:89
 msgid "This plugin recommends the following plugin: %1$s.<br>Many additional functions are available for free."
 msgid_plural "This plugin recommends the following plugins: %1$s.<br>Many additional functions are available for free."
@@ -2311,7 +2311,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:90
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:95
 #: inc/tgm-plugin-activation/tgm-config.php:95
 msgid "Sorry, but you do not have the correct permissions to install the %1$s plugin."
 msgid_plural "Sorry, but you do not have the correct permissions to install the %1$s plugins."
@@ -2319,7 +2319,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:96
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:101
 #: inc/tgm-plugin-activation/tgm-config.php:101
 msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this plugin: %1$s."
 msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this plugin: %1$s."
@@ -2327,7 +2327,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:102
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:107
 #: inc/tgm-plugin-activation/tgm-config.php:107
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
@@ -2335,7 +2335,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:108
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:113
 #: inc/tgm-plugin-activation/tgm-config.php:113
 msgid "Sorry, but you do not have the correct permissions to update the %1$s plugin."
 msgid_plural "Sorry, but you do not have the correct permissions to update the %1$s plugins."
@@ -2343,7 +2343,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:114
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:119
 #: inc/tgm-plugin-activation/tgm-config.php:119
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
@@ -2351,7 +2351,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:120
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:125
 #: inc/tgm-plugin-activation/tgm-config.php:125
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
@@ -2359,7 +2359,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:126
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:131
 #: inc/tgm-plugin-activation/tgm-config.php:131
 msgid "Sorry, but you do not have the correct permissions to activate the %1$s plugin."
 msgid_plural "Sorry, but you do not have the correct permissions to activate the %1$s plugins."
@@ -2367,62 +2367,62 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:132
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:137
 #: inc/tgm-plugin-activation/tgm-config.php:137
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:137
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:142
 #: inc/tgm-plugin-activation/tgm-config.php:142
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:142
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:147
 #: inc/tgm-plugin-activation/tgm-config.php:147
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:147
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:152
 #: inc/tgm-plugin-activation/tgm-config.php:152
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:148
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:153
 #: inc/tgm-plugin-activation/tgm-config.php:153
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:149
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:154
 #: inc/tgm-plugin-activation/tgm-config.php:154
 msgid "The following plugin was activated successfully:"
 msgstr ""
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:151
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:156
 #: inc/tgm-plugin-activation/tgm-config.php:156
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:153
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:158
 #: inc/tgm-plugin-activation/tgm-config.php:158
 msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
 msgstr ""
 
 #. translators: %s = plugin name.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:155
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:160
 #: inc/tgm-plugin-activation/tgm-config.php:160
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
 #. translators: %s = dashboard link.
-#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:157
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:162
 #: inc/tgm-plugin-activation/tgm-config.php:162
 msgid "Please contact the administrator of this site for help."
 msgstr ""
@@ -2580,22 +2580,37 @@ msgstr ""
 msgid "New!!"
 msgstr ""
 
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:238
+#: inc/vk-components/package/class-vk-component-posts.php:238
+msgid "Posts navigation"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:239
+#: inc/vk-components/package/class-vk-component-posts.php:239
+msgid "Posts"
+msgstr ""
+
 #: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:241
 #: inc/vk-components/package/class-vk-component-posts.php:241
 msgid "Page"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:674
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:675
 #: inc/vk-components/package/class-vk-component-posts.php:675
 msgid "Card Noborder"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:678
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:679
+#: inc/vk-components/package/class-vk-component-posts.php:679
+msgid "Card Intext"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:683
 #: inc/vk-components/package/class-vk-component-posts.php:683
 msgid "Card Horizontal"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:686
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:691
 #: inc/vk-components/package/class-vk-component-posts.php:691
 msgctxt "post list type"
 msgid "Text 1 Column"
@@ -2678,21 +2693,9 @@ msgstr ""
 msgid "Edit this area"
 msgstr ""
 
-#: dist/vk-blocks-pro/vk-blocks.php:93
+#: dist/vk-blocks-pro/vk-blocks.php:90
 #: vk-blocks.php:90
 msgid "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks Plugin running."
-msgstr ""
-
-#: inc/vk-components/package/class-vk-component-posts.php:238
-msgid "Posts navigation"
-msgstr ""
-
-#: inc/vk-components/package/class-vk-component-posts.php:239
-msgid "Posts"
-msgstr ""
-
-#: inc/vk-components/package/class-vk-component-posts.php:679
-msgid "Card Intext"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/alert/block.json

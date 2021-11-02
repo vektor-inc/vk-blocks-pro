@@ -8,7 +8,7 @@ editor-css/editor-block-build.css.map
 editor-css/editor-block-build-marge.scss
 ._.DS_Store
 .DS_Store
-/vendor/*
+vendor/
 *.override.json
 src/blocks/**/style.css
 src/blocks/**/style.css.map

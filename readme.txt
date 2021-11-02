@@ -63,6 +63,9 @@ e.g.
 
 == Changelog ==
 
+= 1.18.0 =
+[ Add Function ] Add color palette manager in plugin
+
 = 1.17.0 =
 [ Add Block ][ Button Outer(Pro) ]
 

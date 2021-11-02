@@ -29,8 +29,8 @@ export const settings = {
 			buttonTarget: false,
 			buttonSize: 'md',
 			buttonType: '0',
-			buttonTextColor: 'undefined',
 			buttonColor: 'primary',
+			buttonTextColorCustom: 'undefined',
 			buttonColorCustom: 'undefined',
 			buttonAlign: 'left',
 			fontAwesomeIconBefore: iconUser,
@@ -43,7 +43,8 @@ export const settings = {
 };
 
 const generateInlineCss = (attributes) => {
-	const { buttonColorCustom, buttonType, clientId } = attributes;
+	const { buttonTextColorCustom, buttonColorCustom, buttonType, clientId } =
+		attributes;
 	let inlineCss = '';
 
 	// カスタムカラーの場合
@@ -76,6 +77,19 @@ const generateInlineCss = (attributes) => {
 			.vk_button-${clientId} .has-text-color.vk_button_link-type-text:hover {
 				background-color: ${buttonColorCustom};
 				color: #fff;
+			}`;
+		}
+	}
+
+	// 文字色がカスタムカラーの場合
+	if (
+		buttonTextColorCustom !== undefined &&
+		isHexColor(buttonTextColorCustom)
+	) {
+		console.log('buttonTextColorCustom-> ' + buttonTextColorCustom);
+		if (buttonType === '0' || buttonType === null) {
+			inlineCss += ` .vk_button-${clientId} .has-text-color {
+				color: ${buttonTextColorCustom};
 			}`;
 		}
 	}

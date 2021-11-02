@@ -113,9 +113,11 @@ export default function ButtonEdit(props) {
 	// buttonTextColorCustom が空白かつ buttonColor が custom なら buttonColor を primary に
 	useEffect(() => {
 		if (buttonTextColorCustom !== undefined) {
-			if (buttonColor !== 'custom'){
+			if (buttonColor !== 'custom') {
 				// 背景色のみ標準色に保つように
-				updateBlockAttributes(clientId, { buttonColorCustom: `vk-color-${buttonColor}` });
+				updateBlockAttributes(clientId, {
+					buttonColorCustom: `vk-color-${buttonColor}`,
+				});
 			}
 			updateBlockAttributes(clientId, { buttonColor: 'custom' });
 		} else if (
@@ -141,7 +143,11 @@ export default function ButtonEdit(props) {
 
 	let containerClass;
 	// カスタムカラーの場合
-	if (buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) {
+	if (
+		(buttonTextColorCustom !== undefined &&
+			isHexColor(buttonTextColorCustom)) ||
+		(buttonColorCustom !== undefined && isHexColor(buttonColorCustom))
+	) {
 		containerClass = `vk_button vk_button-align-${buttonAlign} vk_button-color-custom vk_button-${clientId}`;
 	} else {
 		containerClass = `vk_button vk_button-align-${buttonAlign} vk_button-color-custom`;

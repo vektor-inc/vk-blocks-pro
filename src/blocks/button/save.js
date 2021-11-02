@@ -22,7 +22,11 @@ export default function save(props) {
 
 	let containerClass = '';
 	// カスタムカラーの場合
-	if (buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) {
+	if (
+		(buttonTextColorCustom !== undefined &&
+			isHexColor(buttonTextColorCustom)) ||
+		(buttonColorCustom !== undefined && isHexColor(buttonColorCustom))
+	) {
 		containerClass = `vk_button vk_button-color-custom vk_button-align-${buttonAlign} vk_button-${clientId}`;
 	} else {
 		containerClass = `vk_button vk_button-color-custom vk_button-align-${buttonAlign}`;

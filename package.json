@@ -67,7 +67,6 @@
 		"gulp": "^4.0.2",
 		"gulp-autoprefixer": "^8.0.0",
 		"gulp-concat": "^2.6.1",
-		"gulp-jsmin": "^0.1.5",
 		"gulp-notify": "^4.0.0",
 		"gulp-plumber": "^1.2.1",
 		"gulp-rename": "^2.0.0",
@@ -87,7 +86,7 @@
 		"react-html-parser": "^2.0.2",
 		"react-with-direction": "^1.4.0",
 		"rimraf": "^3.0.2",
-		"sass": "1.32.12",
+		"sass": "1.32.13",
 		"url-loader": "^4.1.1"
 	}
 }

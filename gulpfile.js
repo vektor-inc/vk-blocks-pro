@@ -200,6 +200,7 @@ gulp.task('default', gulp.series('watch'));
 gulp.task('dist', (done) => {
 	gulp.src(
 		[
+			'./build/**',
 			'./inc/**',
 			'./src/**',
 			'./vendor/**',

@@ -1,7 +1,6 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/step-item",
-	"title": "Step Item",
 	"category": "vk-blocks-cat",
 	"parent": ["vk-blocks/step"],
 	"attributes": {

@@ -1,9 +1,6 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/accordion-trigger",
-	"title": "Accordion Trigger",
-	"description": "This is the title area where you can freely add blocks.",
-	"textdomain": "vk-blocks",
 	"category": "vk-blocks-cat",
 	"parent": ["vk-blocks/accordion"],
 	"attributes": {
@@ -16,6 +13,8 @@
 			"default": "#000000"
 		}
 	},
+	"description": "This is the title area where you can freely add blocks.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"anchor": true,
 		"className": true

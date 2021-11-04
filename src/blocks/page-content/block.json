@@ -1,7 +1,6 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/page-content",
-	"title": "Page Content",
 	"category": "vk-blocks-cat",
 	"attributes": {
 		"TargetPost": {

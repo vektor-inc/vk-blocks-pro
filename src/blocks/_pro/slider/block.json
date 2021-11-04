@@ -1,9 +1,6 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/slider",
-	"title": "Slider",
-	"description": "This slider allows you to place various items.Slider is do not move in edit screen.",
-	"textdomain": "vk-blocks",
 	"category": "vk-blocks-cat-layout",
 	"attributes": {
 		"unit": {
@@ -67,6 +64,8 @@
 			"default": "mobile-bottom"
 		}
 	},
+	"description": "This slider allows you to place various items.Slider is do not move in edit screen.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

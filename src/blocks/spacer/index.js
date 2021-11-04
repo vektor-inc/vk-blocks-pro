@@ -3,6 +3,11 @@
  */
 
 /**
+ * WordPress dependencies
+ */
+import { __ } from '@wordpress/i18n';
+
+/**
  * Internal dependencies
  */
 import { ReactComponent as Icon } from './icon.svg';
@@ -16,6 +21,7 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
+	title: __('Responsive Spacer', 'vk-blocks'),
 	icon: <Icon />,
 	example: {
 		anchor: null,

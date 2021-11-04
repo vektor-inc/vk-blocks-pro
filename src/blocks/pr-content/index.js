@@ -2,6 +2,7 @@
  * Pr-Content block type
  *
  */
+import { __ } from '@wordpress/i18n';
 import { ReactComponent as Icon } from './icon.svg';
 import deprecated from './deprecated';
 import edit from './edit';
@@ -22,6 +23,7 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
+	title: __('PR Content', 'vk-blocks'),
 	icon: <Icon />,
 	example: {
 		attributes: {

@@ -1,9 +1,6 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/child-page",
-	"title": "Child page list",
-	"description": "When a parent page is specified, a list of its child pages will be displayed.",
-	"textdomain": "vk-blocks",
 	"category": "vk-blocks-cat",
 	"attributes": {
 		"selectId": {
@@ -115,6 +112,8 @@
 			"default": false
 		}
 	},
+	"description": "When a parent page is specified, a list of its child pages will be displayed.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

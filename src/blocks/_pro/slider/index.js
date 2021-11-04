@@ -3,6 +3,7 @@
  *
  */
 import { ReactComponent as Icon } from './icon.svg';
+import { __ } from '@wordpress/i18n';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { addFilter } from '@wordpress/hooks';
 
@@ -17,6 +18,7 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
+	title: __('Slider', 'vk-blocks'),
 	icon: <Icon />,
 	edit,
 	save,

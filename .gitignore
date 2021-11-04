@@ -1,6 +1,5 @@
 /*.html
 node_modules/
-build/
 dist/
 inc/vk-blocks/build/*
 editor-css/editor-block-build.scss

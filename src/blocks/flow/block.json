@@ -2,7 +2,6 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/flow",
 	"category": "vk-blocks-cat",
-	"title": "Flow",
 	"attributes": {
 		"heading": {
 			"type": "string",

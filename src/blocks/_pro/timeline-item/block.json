@@ -1,7 +1,6 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/timeline-item",
-	"title": "Timeline Item",
 	"category": "vk-blocks-cat",
 	"attributes": {
 		"label": {

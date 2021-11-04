@@ -2,7 +2,6 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/post-list",
 	"category": "vk-blocks-cat",
-	"title": "Post list",
 	"attributes": {
 		"name": {
 			"type": "string",

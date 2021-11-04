@@ -1,8 +1,6 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/spacer",
-	"title": "Responsive Spacer",
-    "description": "Use responsive spacers to get the margins right.",
 	"category": "vk-blocks-cat",
 	"attributes": {
 		"anchor": {
@@ -34,6 +32,7 @@
             "default": "medium"
         }
 	},
+    "description": "Use responsive spacers to get the margins right.",
     "textdomain": "vk-blocks",
 	"supports": {
 		"anchor": true

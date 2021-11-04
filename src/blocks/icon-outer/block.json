@@ -2,7 +2,6 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/icon-outer",
 	"category": "vk-blocks-cat",
-	"title": "Icon Outer",
 	"attributes": {
 		"iconSize": {
 			"type": "number",

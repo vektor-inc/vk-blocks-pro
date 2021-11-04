@@ -3,6 +3,7 @@
  */
 
 import { ReactComponent as Icon } from './icon.svg';
+import { __ } from '@wordpress/i18n';
 
 import { title, iconName, url, iconUser } from '@vkblocks/utils/example-data';
 import metadata from './block.json';
@@ -14,6 +15,7 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
+	title: __('Button Outer', 'vk-blocks'),
 	icon: <Icon />,
 	styles: [],
 	example: {

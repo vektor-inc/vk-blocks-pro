@@ -2,7 +2,6 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/animation",
 	"category": "vk-blocks-cat",
-	"title": "Animation",
 	"attributes": {
 		"effect": {
 			"type": "string",

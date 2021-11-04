@@ -1,10 +1,7 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/faq",
-	"title": "Classic FAQ",
 	"category": "vk-blocks-cat",
-	"description": "Displays a combination of questions and answers.",
-	"textdomain": "vk-blocks",
 	"attributes": {
 		"heading": {
 			"type": "string",
@@ -12,6 +9,8 @@
 			"selector": "dt"
 		}
 	},
+	"description": "Displays a combination of questions and answers.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"anchor": true
 	}

@@ -17,6 +17,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+// Set plugin dir path.
+define( 'VK_BLOCKS_DIR_PATH', plugin_dir_path( __FILE__ ) );
+// Set Plugin Dir URL
+define( 'VK_BLOCKS_DIR_URL', plugin_dir_url( __FILE__ ) );
+
 /* function_exists は VK Blocks 無料版の無効化が正常に動作しなかった場合のフォールバック */
 if ( ! function_exists( 'vk_blocks_get_version' ) ) {
 	/**

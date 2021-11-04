@@ -1,6 +1,7 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/outer",
+	"title": "Outer",
 	"category": "vk-blocks-cat-layout",
 	"attributes": {
 		"bgColor": {

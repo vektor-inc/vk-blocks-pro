@@ -1,6 +1,7 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/pr-blocks",
+	"title": "PR Blocks",
 	"category": "vk-blocks-cat",
 	"attributes": {
 		"heading1" :{

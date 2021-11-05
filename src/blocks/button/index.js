@@ -86,7 +86,6 @@ const generateInlineCss = (attributes) => {
 		buttonTextColorCustom !== undefined &&
 		isHexColor(buttonTextColorCustom)
 	) {
-		console.log('buttonTextColorCustom-> ' + buttonTextColorCustom);
 		if (buttonType === '0' || buttonType === null) {
 			inlineCss += ` .vk_button-${clientId} .has-text-color {
 				color: ${buttonTextColorCustom};

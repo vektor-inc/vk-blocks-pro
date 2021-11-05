@@ -34,11 +34,17 @@ export default function ButtonEdit(props) {
 		buttonAlign,
 		fontAwesomeIconBefore,
 		fontAwesomeIconAfter,
+		blockId,
 	} = attributes;
 
 	// 以前の値を切り替え
 	useEffect(() => {
-		setAttributes({ clientId });
+		if (attributes.clientId !== undefined) {
+			setAttributes({ clientId: undefined });
+		}
+		if (blockId === undefined) {
+			setAttributes({ blockId: clientId });
+		}
 		if (
 			buttonUrl === null ||
 			buttonUrl === 'null' ||
@@ -112,7 +118,7 @@ export default function ButtonEdit(props) {
 	let containerClass;
 	// カスタムカラーの場合
 	if (buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) {
-		containerClass = `vk_button vk_button-align-${buttonAlign} vk_button-color-custom vk_button-${clientId}`;
+		containerClass = `vk_button vk_button-align-${buttonAlign} vk_button-color-custom vk_button-${blockId}`;
 	} else {
 		containerClass = `vk_button vk_button-align-${buttonAlign} vk_button-color-custom`;
 	}
@@ -125,6 +131,15 @@ export default function ButtonEdit(props) {
 		<>
 			<InspectorControls>
 				<PanelBody title={__('Button setting', 'vk-blocks')}>
+					<TextControl
+						label={__('Block ID', 'vk-blocks')}
+						value={blockId}
+						onChange={(value) => setAttributes({ blockId: value })}
+						help={__(
+							'This is the identification ID for this block. Please change this setting when you duplicate this block.',
+							'vk-blocks'
+						)}
+					/>
 					<TextControl
 						label={__('Sub Caption', 'vk-blocks')}
 						value={subCaption}

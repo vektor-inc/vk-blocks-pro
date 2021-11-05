@@ -16,13 +16,13 @@ export default function save(props) {
 		buttonAlign,
 		fontAwesomeIconBefore,
 		fontAwesomeIconAfter,
-		blockId,
+		clientId,
 	} = attributes;
 
 	let containerClass = '';
 	// カスタムカラーの場合
 	if (buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) {
-		containerClass = `vk_button vk_button-color-custom vk_button-align-${buttonAlign} vk_button-${blockId}`;
+		containerClass = `vk_button vk_button-color-custom vk_button-align-${buttonAlign} vk_button-${clientId}`;
 	} else {
 		containerClass = `vk_button vk_button-color-custom vk_button-align-${buttonAlign}`;
 	}

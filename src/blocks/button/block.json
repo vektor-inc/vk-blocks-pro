@@ -45,6 +45,9 @@
 		},
 		"clientId": {
 			"type": "string"
+		},
+		"blockId": {
+			"type": "string"
 		}
 	},
 	"description": "A button link that can display icons before and after.",

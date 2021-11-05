@@ -132,17 +132,21 @@ export default function ButtonEdit(props) {
 			<InspectorControls>
 				<PanelBody title={__('Button setting', 'vk-blocks')}>
 					<TextControl
+						className={`mb-0`}
 						label={__('Block ID', 'vk-blocks')}
 						value={blockId}
 						onChange={(value) => setAttributes({ blockId: value })}
-						help={__(
-							'This is the identification ID for this block. Please change this setting when you duplicate this block.',
-							'vk-blocks'
-						)}
 					/>
+					<ul className={`mt-0 mb-3`}>
+						<li>{__('This is the identification ID for this block style.','vk-blocks')}</li>
+						<li>{__('If you don\'t use custom colors, you don\'t have to worry about it.','vk-blocks')}</li>
+						<li>{__('If you duplicate this block, please change the ID.','vk-blocks')}</li>
+						<li>{__('This ID is\'not id of HTML attribute.','vk-blocks')}</li>
+					</ul>
 					<TextControl
 						label={__('Sub Caption', 'vk-blocks')}
 						value={subCaption}
+						className={`mt-0 mb-3`}
 						onChange={(value) =>
 							setAttributes({ subCaption: value })
 						}
@@ -152,6 +156,7 @@ export default function ButtonEdit(props) {
 					<TextControl
 						label={__('Button URL', 'vk-blocks')}
 						value={buttonUrl}
+						className={`mt-0 mb-3`}
 						onChange={(value) =>
 							setAttributes({ buttonUrl: value })
 						}

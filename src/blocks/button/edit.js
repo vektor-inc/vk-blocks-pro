@@ -120,11 +120,6 @@ export default function ButtonEdit(props) {
 				});
 			}
 			updateBlockAttributes(clientId, { buttonColor: 'custom' });
-		} else if (
-			buttonTextColorCustom === undefined &&
-			buttonColor === 'custom'
-		) {
-			updateBlockAttributes(clientId, { buttonColor: 'primary' });
 		}
 	}, [buttonTextColorCustom]);
 
@@ -137,7 +132,10 @@ export default function ButtonEdit(props) {
 			buttonColorCustom === undefined &&
 			buttonColor === 'custom'
 		) {
-			updateBlockAttributes(clientId, { buttonColor: 'primary' });
+			// 背景色のみクリアする
+			updateBlockAttributes(clientId, {
+				buttonColorCustom: `vk-color-primary`,
+			});
 		}
 	}, [buttonColorCustom]);
 

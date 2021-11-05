@@ -71,10 +71,6 @@ const generateInlineCss = (attributes) => {
 		if (buttonType === '2') {
 			inlineCss = `.vk_button-${blockId} .has-text-color.vk_button_link-type-text {
 				color: ${buttonColorCustom};
-			}
-			.vk_button-${blockId} .has-text-color.vk_button_link-type-text:hover {
-				background-color: ${buttonColorCustom};
-				color: #fff;
 			}`;
 		}
 	}

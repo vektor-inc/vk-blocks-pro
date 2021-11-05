@@ -138,10 +138,30 @@ export default function ButtonEdit(props) {
 						onChange={(value) => setAttributes({ blockId: value })}
 					/>
 					<ul className={`mt-0 mb-3`}>
-						<li>{__('This is the identification ID for this block style.','vk-blocks')}</li>
-						<li>{__('If you don\'t use custom colors, you don\'t have to worry about it.','vk-blocks')}</li>
-						<li>{__('If you duplicate this block, please change the ID.','vk-blocks')}</li>
-						<li>{__('This ID is\'not id of HTML attribute.','vk-blocks')}</li>
+						<li>
+							{__(
+								'This is the identification ID for this block style.',
+								'vk-blocks'
+							)}
+						</li>
+						<li>
+							{__(
+								"If you don't use custom colors, you don't have to worry about it.",
+								'vk-blocks'
+							)}
+						</li>
+						<li>
+							{__(
+								'If you duplicate this block, please change the ID.',
+								'vk-blocks'
+							)}
+						</li>
+						<li>
+							{__(
+								"This ID is'not id of HTML attribute.",
+								'vk-blocks'
+							)}
+						</li>
 					</ul>
 					<TextControl
 						label={__('Sub Caption', 'vk-blocks')}

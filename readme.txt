@@ -63,6 +63,19 @@ e.g.
 
 == Changelog ==
 
+= 1.18.4 =
+[ Bug fix ] 1.18.0 update ( Add color palette manager in plugin )
+[ Bug fix ][ Button ] Fix bug in case of used button block for reusable block.
+
+= 1.18.3 =
+[ Bug fix ] Revert 1.17.0
+
+= 1.18.2 =
+[ Bug fix ] Revert 1.17.0
+
+= 1.18.1 =
+[ Bug fix ] Revert 1.17.0
+
 = 1.18.0 =
 [ Add Function ] Add color palette manager in plugin
 

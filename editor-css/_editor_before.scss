@@ -38,6 +38,14 @@
 .block-prop-title {
 	font-weight: bold;
 }
+
+// パネルの文字サイズがテーマなどの影響を受けるので上書き
+.components-panel {
+	h4 {
+		font-size:16px;
+	}
+}
+
 // カードなどで文字位置のalignのツールバーが文字の右に回り込んでしまうため指定
 .components-panel__body .components-base-control__label {
 	display:block;

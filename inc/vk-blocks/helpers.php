@@ -15,15 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  * 使われているテーマがLightningかどうかを判別する
  */
 function vk_blocks_is_lightning() {
-
 	// テーマがLightning系の場合読み込まない
-	$theme_textdomain = wp_get_theme()->get( 'TextDomain' );
-	if ( 'lightning' === $theme_textdomain || 'lightning-pro' === $theme_textdomain || 'katawara' === $theme_textdomain ) {
-		return true;
-	}
-
-	$theme_template = wp_get_theme()->get( 'Template' );
-	if ( 'lightning' === $theme_template || 'lightning-pro' === $theme_template || 'katawara' === $theme_textdomain ) {
+	$current_template = get_template();
+	if ( 'lightning' === $current_template || 'lightning-pro' === $current_template || 'katawara' === $current_template ) {
 		return true;
 	}
 

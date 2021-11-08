@@ -130,11 +130,11 @@ export default function ButtonEdit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody 
-				title={__('Button Block ID', 'vk-blocks')}
-				initialOpen={false}
+				<PanelBody
+					title={__('Button Block ID', 'vk-blocks')}
+					initialOpen={false}
 				>
-				<TextControl
+					<TextControl
 						className={`mb-0`}
 						label={__('Block ID', 'vk-blocks')}
 						value={blockId}

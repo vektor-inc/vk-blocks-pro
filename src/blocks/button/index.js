@@ -49,6 +49,7 @@ const generateInlineCss = (attributes) => {
 
 	// カスタムカラーの場合
 	if (buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) {
+		// 塗り
 		if (buttonType === '0' || buttonType === null) {
 			inlineCss += `.vk_button-${blockId} .has-background {
 				background-color: ${buttonColorCustom};
@@ -56,7 +57,7 @@ const generateInlineCss = (attributes) => {
 				color: #fff;
 			}`;
 		}
-
+		// アウトライン
 		if (buttonType === '1') {
 			inlineCss += `.vk_button-${blockId} .has-text-color.is-style-outline {
 				background-color: transparent;
@@ -69,7 +70,7 @@ const generateInlineCss = (attributes) => {
 				color: #fff;
 			}`;
 		}
-
+		// テキストのみ
 		if (buttonType === '2') {
 			inlineCss = `.vk_button-${blockId} .has-text-color.vk_button_link-type-text {
 				color: ${buttonColorCustom};

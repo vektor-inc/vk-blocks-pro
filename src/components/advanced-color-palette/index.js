@@ -23,7 +23,7 @@ export const AdvancedColorPalette = (props) => {
 				// titleColor の色コードを colorSet から探して色データを取得
 				const ColorValue = getColorObjectByColorValue(colorSet, value);
 
-				if (ColorValue) {
+				if (ColorValue !== undefined) {
 					setAttributes({ [schema]: ColorValue.slug });
 				} else {
 					setAttributes({ [schema]: value });

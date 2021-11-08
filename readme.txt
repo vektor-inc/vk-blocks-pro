@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Button ] Add primary color css variable in case of other theme 
+
 = 1.18.6 =
 [ Bug fix ][ Button ] Custom color value don't refrect reopen
 

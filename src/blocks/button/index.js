@@ -54,7 +54,6 @@ const generateInlineCss = (attributes) => {
 			inlineCss += `.vk_button-${blockId} .has-background {
 				background-color: ${buttonColorCustom};
 				border: 1px solid ${buttonColorCustom};
-				color: #fff;
 			}`;
 		}
 		// アウトライン

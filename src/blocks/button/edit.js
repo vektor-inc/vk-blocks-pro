@@ -151,10 +151,12 @@ export default function ButtonEdit(props) {
 							)}
 						</li>
 						<li>
-							{__(
-								'If you duplicate this block, please change the ID.',
-								'vk-blocks'
-							)}
+							<strong>
+								{__(
+									'If you duplicate this block, please change the ID.',
+									'vk-blocks'
+								)}
+							</strong>
 						</li>
 						<li>
 							{__(

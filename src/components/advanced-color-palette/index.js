@@ -20,7 +20,9 @@ export const AdvancedColorPalette = (props) => {
 				const colorSet =
 					select('core/editor').getEditorSettings().colors;
 
-				// titleColor の色コードを colorSet から探して色データを取得
+				// 色コードを colorSet から探して色データを取得
+				// カスタムカラーの場合 undefined が返る
+				// パレットのあるカラーの場合 オブジェクトで color / name / slug が返る（ console.dir(ColorValue) ）
 				const ColorValue = getColorObjectByColorValue(colorSet, value);
 
 				if (ColorValue !== undefined) {

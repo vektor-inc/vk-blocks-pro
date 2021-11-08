@@ -35,11 +35,17 @@ export default function ButtonEdit(props) {
 		buttonAlign,
 		fontAwesomeIconBefore,
 		fontAwesomeIconAfter,
+		blockId,
 	} = attributes;
 
 	// 以前の値を切り替え
 	useEffect(() => {
-		setAttributes({ clientId });
+		if (attributes.clientId !== undefined) {
+			setAttributes({ clientId: undefined });
+		}
+		if (blockId === undefined) {
+			setAttributes({ blockId: clientId });
+		}
 		if (
 			buttonUrl === null ||
 			buttonUrl === 'null' ||
@@ -146,7 +152,7 @@ export default function ButtonEdit(props) {
 			isHexColor(buttonTextColorCustom)) ||
 		(buttonColorCustom !== undefined && isHexColor(buttonColorCustom))
 	) {
-		containerClass = `vk_button vk_button-align-${buttonAlign} vk_button-color-custom vk_button-${clientId}`;
+		containerClass = `vk_button vk_button-align-${buttonAlign} vk_button-color-custom vk_button-${blockId}`;
 	} else {
 		containerClass = `vk_button vk_button-align-${buttonAlign} vk_button-color-custom`;
 	}
@@ -160,8 +166,41 @@ export default function ButtonEdit(props) {
 			<InspectorControls>
 				<PanelBody title={__('Button setting', 'vk-blocks')}>
 					<TextControl
+						className={`mb-0`}
+						label={__('Block ID', 'vk-blocks')}
+						value={blockId}
+						onChange={(value) => setAttributes({ blockId: value })}
+					/>
+					<ul className={`mt-0 mb-3`}>
+						<li>
+							{__(
+								'This is the identification ID for this block style.',
+								'vk-blocks'
+							)}
+						</li>
+						<li>
+							{__(
+								"If you don't use custom colors, you don't have to worry about it.",
+								'vk-blocks'
+							)}
+						</li>
+						<li>
+							{__(
+								'If you duplicate this block, please change the ID.',
+								'vk-blocks'
+							)}
+						</li>
+						<li>
+							{__(
+								"This ID is'not id of HTML attribute.",
+								'vk-blocks'
+							)}
+						</li>
+					</ul>
+					<TextControl
 						label={__('Sub Caption', 'vk-blocks')}
 						value={subCaption}
+						className={`mt-0 mb-3`}
 						onChange={(value) =>
 							setAttributes({ subCaption: value })
 						}
@@ -171,6 +210,7 @@ export default function ButtonEdit(props) {
 					<TextControl
 						label={__('Button URL', 'vk-blocks')}
 						value={buttonUrl}
+						className={`mt-0 mb-3`}
 						onChange={(value) =>
 							setAttributes({ buttonUrl: value })
 						}

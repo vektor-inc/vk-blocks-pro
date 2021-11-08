@@ -43,14 +43,14 @@ export const settings = {
 };
 
 const generateInlineCss = (attributes) => {
-	const { buttonTextColorCustom, buttonColorCustom, buttonType, clientId } =
+	const { buttonTextColorCustom, buttonColorCustom, buttonType, blockId } =
 		attributes;
 	let inlineCss = '';
 
 	// カスタムカラーの場合
 	if (buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) {
 		if (buttonType === '0' || buttonType === null) {
-			inlineCss += `.vk_button-${clientId} .has-background {
+			inlineCss += `.vk_button-${blockId} .has-background {
 				background-color: ${buttonColorCustom};
 				border: 1px solid ${buttonColorCustom};
 				color: #fff;
@@ -58,12 +58,12 @@ const generateInlineCss = (attributes) => {
 		}
 
 		if (buttonType === '1') {
-			inlineCss += `.vk_button-${clientId} .has-text-color.is-style-outline {
+			inlineCss += `.vk_button-${blockId} .has-text-color.is-style-outline {
 				background-color: transparent;
 				border: 1px solid ${buttonColorCustom};
 				color: ${buttonColorCustom};
 			}
-			.vk_button-${clientId} .has-text-color.is-style-outline:hover {
+			.vk_button-${blockId} .has-text-color.is-style-outline:hover {
 				background-color: ${buttonColorCustom};
 				border: 1px solid ${buttonColorCustom};
 				color: #fff;
@@ -71,12 +71,8 @@ const generateInlineCss = (attributes) => {
 		}
 
 		if (buttonType === '2') {
-			inlineCss = `.vk_button-${clientId} .has-text-color.vk_button_link-type-text {
+			inlineCss = `.vk_button-${blockId} .has-text-color.vk_button_link-type-text {
 				color: ${buttonColorCustom};
-			}
-			.vk_button-${clientId} .has-text-color.vk_button_link-type-text:hover {
-				background-color: ${buttonColorCustom};
-				color: #fff;
 			}`;
 		}
 	}
@@ -87,7 +83,7 @@ const generateInlineCss = (attributes) => {
 		isHexColor(buttonTextColorCustom)
 	) {
 		if (buttonType === '0' || buttonType === null) {
-			inlineCss += ` .vk_button-${clientId} .has-text-color {
+			inlineCss += ` .vk_button-${blockId} .has-text-color {
 				color: ${buttonTextColorCustom};
 			}`;
 		}

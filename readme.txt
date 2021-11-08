@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Button ] Set the text color with palette
+
 = 1.18.5 =
 [ Other ] Change stable version only.
 

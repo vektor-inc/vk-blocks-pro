@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
 Tested up to: 5.8.1
-Stable tag: 1.18.5
+Stable tag: 1.18.6
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -64,6 +64,10 @@ e.g.
 == Changelog ==
 
 [ Add Function ][ Button ] Set the text color with palette
+[ Bug fix ][ Button ] Add primary color css variable in case of other theme 
+
+= 1.18.6 =
+[ Bug fix ][ Button ] Custom color value don't refrect reopen
 
 = 1.18.5 =
 [ Other ] Change stable version only.

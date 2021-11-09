@@ -164,10 +164,7 @@ export default function ButtonEdit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody
-					title={__('Button Block ID', 'vk-blocks')}
-					initialOpen={false}
-				>
+				<PanelBody title={__('Button setting', 'vk-blocks')}>
 					<TextControl
 						className={`mb-0`}
 						label={__('Block ID', 'vk-blocks')}
@@ -188,10 +185,12 @@ export default function ButtonEdit(props) {
 							)}
 						</li>
 						<li>
-							{__(
-								'If you duplicate this block, please change the ID.',
-								'vk-blocks'
-							)}
+							<strong>
+								{__(
+									'If you duplicate this block, please change the ID.',
+									'vk-blocks'
+								)}
+							</strong>
 						</li>
 						<li>
 							{__(
@@ -200,8 +199,6 @@ export default function ButtonEdit(props) {
 							)}
 						</li>
 					</ul>
-				</PanelBody>
-				<PanelBody title={__('Button setting', 'vk-blocks')}>
 					<TextControl
 						label={__('Sub Caption', 'vk-blocks')}
 						value={subCaption}

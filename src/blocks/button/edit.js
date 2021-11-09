@@ -394,9 +394,11 @@ export default function ButtonEdit(props) {
 							setAttributes({ buttonColor: value })
 						}
 					/>
-					<h4 className={`mt-0 mb-2`}>
-						{__('Custom Color', 'vk-blocks')}:
-					</h4>
+					{(buttonType === '0' || buttonType === null) && (
+						<h4 className={`mt-0 mb-2`}>
+							{__('Custom Color', 'vk-blocks')}:
+						</h4>
+					)}
 					{(buttonType === '0' || buttonType === null) && (
 						<BaseControl
 							id={`vk_block_baloon_custom_text_color`}

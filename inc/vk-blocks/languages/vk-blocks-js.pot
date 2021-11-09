@@ -328,15 +328,15 @@ msgstr ""
 msgid "Background Color"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:53
+#: src/blocks/_pro/grid-column/edit.js:52
 msgid "Layout Columns"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:59
+#: src/blocks/_pro/grid-column/edit.js:58
 msgid "Column Margin Bottom Setting"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:63
+#: src/blocks/_pro/grid-column/edit.js:62
 msgid "Margin Bottom"
 msgstr ""
 
@@ -1443,24 +1443,24 @@ msgstr ""
 msgid "Link URL"
 msgstr ""
 
-#: src/blocks/layout-column-item/edit.js:53
+#: src/blocks/layout-column-item/edit.js:59
 msgid "Layout Column item Setting"
 msgstr ""
 
-#: src/blocks/layout-column-item/edit.js:57
-#: src/blocks/layout-column/edit.js:61
+#: src/blocks/layout-column-item/edit.js:63
+#: src/blocks/layout-column/edit.js:84
 msgid "Block width"
 msgstr ""
 
-#: src/blocks/layout-column-item/edit.js:63
+#: src/blocks/layout-column-item/edit.js:69
 msgid "Margin(PC)"
 msgstr ""
 
-#: src/blocks/layout-column-item/edit.js:71
+#: src/blocks/layout-column-item/edit.js:77
 msgid "Margin(Tablet)"
 msgstr ""
 
-#: src/blocks/layout-column-item/edit.js:79
+#: src/blocks/layout-column-item/edit.js:85
 msgid "Margin(Mobile)"
 msgstr ""
 
@@ -1468,12 +1468,12 @@ msgstr ""
 msgid "Layout Column Item"
 msgstr ""
 
-#: src/blocks/layout-column/edit.js:56
+#: src/blocks/layout-column/edit.js:79
 msgid "Layout Column Setting"
 msgstr ""
 
-#: src/blocks/layout-column/edit.js:76
-msgid "Brakepoint(px)"
+#: src/blocks/layout-column/edit.js:99
+msgid "breakPoint(px)"
 msgstr ""
 
 #: src/blocks/layout-column/index.js:17

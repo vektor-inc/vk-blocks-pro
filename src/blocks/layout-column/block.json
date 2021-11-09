@@ -7,7 +7,7 @@
 			"type": "string",
 			"default": "100%"
 		},
-		"brakePoint": {
+		"breakPoint": {
 			"type": "number",
 			"default": 900
 		}	

@@ -4,33 +4,48 @@
 /*-------------------------------------------*/
 /* .vk_layoutColumn
 /*-------------------------------------------*/
-.vk_layoutColumn_grid .block-editor-inner-blocks{
 
-	.block-editor-block-list__layout {
-		display: flex;
-		flex-wrap: wrap;
-	}
 
-	.components-unit-control-wrapper {
-		margin-top: 20px;
-	}
+.vk_layoutColumn_grid {
+	>.block-editor-inner-blocks {
 
-	.wp-block {
-		margin-left: 10px;
-		margin-right: 10px;
+		>.block-editor-block-list__layout {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.components-unit-control-wrapper {
+			margin-top: 20px;
+		}
+
+		.wp-block {
+			margin-left: 10px;
+			margin-right: 10px;
+		}
 	}
 }
 
-.vk_layoutColumn {
-	border: 1px solid #f00;
+.vk_layoutColumn_block {
+	//border: 1px solid #f00;
+
+	.block-editor-inner-blocks{
+		display: block;
+
+		.block-editor-block-list__layout {
+			display: block;
+			width: 100%;
+		}
+		.wp-block {
+			width:100%;
+		}		
+	}
 }
 
-.vk_layoutColumnItem {
-	border: 1px solid blue;
-	min-width: 100px;
-	min-height: 100px;
-}
+.edit-post-visual-editor {
+	.vk_layoutColumnItem {
+		border: 1px dotted #aaa;
+		min-width: 100px;
+		min-height: 100px;
+	}
 
-.block-list-appender{
-	height: 100px;
 }

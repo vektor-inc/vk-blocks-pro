@@ -15,7 +15,6 @@ export default function GridColumnEdit(props) {
 
 	const { getBlocksByClientId } = select('core/block-editor');
 	const { updateBlockAttributes } = dispatch('core/block-editor');
-
 	const thisBlock = getBlocksByClientId(clientId);
 
 	useEffect(() => {

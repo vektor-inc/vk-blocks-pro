@@ -16,7 +16,7 @@ import { useMediaQuery } from '@wordpress/compose';
 
 export default function LayoutColumnItemEdit(props) {
 	const { attributes, setAttributes } = props;
-	const { width, margin_pc, margin_tb, margin_sp } = attributes;
+	const { width, margin_pc, margin_tb, margin_sp, is_grid } = attributes;
 	const blockProps = useBlockProps({
 		className: `vk_layoutColumnItem`,
 	});
@@ -26,7 +26,7 @@ export default function LayoutColumnItemEdit(props) {
 		'(min-width: 690px) and (max-width: 1079px)'
 	);
 	const isPC = useMediaQuery('(min-width: 1080px)');
-	console.log(isMobile + ':' + isTablet + ':' + isPC);
+	//console.log(isMobile + ':' + isTablet + ':' + isPC);
 
 	let paddingObject = margin_pc;
 	if (isMobile) {
@@ -35,8 +35,13 @@ export default function LayoutColumnItemEdit(props) {
 		paddingObject = margin_tb;
 	}
 
+	let displayWidth = width;
+	if (!is_grid) {
+		displayWidth = '100%';
+	}
+
 	const cStyle = {
-		width,
+		width: displayWidth,
 		marginTop: paddingObject.top,
 		marginRight: paddingObject.right,
 		marginBottom: paddingObject.bottom,

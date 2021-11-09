@@ -1,5 +1,4 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
-import { useMediaQuery } from '@wordpress/compose';
 
 export default function LayoutColumnItemSave(props) {
 	const { attributes } = props;
@@ -9,28 +8,43 @@ export default function LayoutColumnItemSave(props) {
 		className: `vk_layoutColumnItem`,
 	});
 
-	const isMobile = useMediaQuery('(max-width: 689px)');
-	const isTablet = useMediaQuery(
-		'(min-width: 690px) and (max-width: 1079px)'
-	);
-
-	let paddingObject = margin_pc;
-	if (isMobile) {
-		paddingObject = margin_sp;
-	} else if (isTablet) {
-		paddingObject = margin_tb;
-	}
-
 	const cStyle = {
 		width,
-		marginTop: paddingObject.top,
-		marginRight: paddingObject.right,
-		marginBottom: paddingObject.bottom,
-		marginLeft: paddingObject.left,
 	};
 
+	const dataMarginPc =
+		margin_pc.top +
+		' ' +
+		margin_pc.right +
+		' ' +
+		margin_pc.bottom +
+		' ' +
+		margin_pc.left;
+	const dataMarginTb =
+		margin_tb.top +
+		' ' +
+		margin_tb.right +
+		' ' +
+		margin_tb.bottom +
+		' ' +
+		margin_tb.left;
+	const dataMarginSp =
+		margin_sp.top +
+		' ' +
+		margin_sp.right +
+		' ' +
+		margin_sp.bottom +
+		' ' +
+		margin_sp.left;
+
 	return (
-		<div {...blockProps} style={cStyle}>
+		<div
+			{...blockProps}
+			style={cStyle}
+			data-vkbMarginPc={dataMarginPc}
+			data-vkbMarginTb={dataMarginTb}
+			data-vkbMarginSp={dataMarginSp}
+		>
 			<InnerBlocks.Content />
 		</div>
 	);

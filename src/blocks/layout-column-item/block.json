@@ -33,7 +33,11 @@
 				"right": "0px",
 				"bottom": "0px"	
 			}
-		}
+		},
+		"is_grid": {
+			"type": "boolean",
+			"default": true
+		}		
 	},
 	"description": "Column blocks for layout.",
 	"textdomain": "vk-blocks",

@@ -98,6 +98,11 @@ const blockAttributes3 = {
 	outerMarginBottom: {
 		type: 'number',
 		default: 0
+	},
+	titleMarginBottom: {
+		type: "number",
+		default: null
+	},
 	titleColor: {
 		type: "string",
 		default: null
@@ -105,6 +110,10 @@ const blockAttributes3 = {
 	subTextColor: {
 		type: "string",
 		default: null
+	},
+	subTextFlag: {
+		type: 'string',
+		default: ""
 	},
 	fontAwesomeIconColor: {
 		type: 'string',

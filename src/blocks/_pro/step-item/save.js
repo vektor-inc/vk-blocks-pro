@@ -6,16 +6,18 @@ export default function save(props) {
 	let { color, style, styleLine, dotCaption, dotNum, faIcon } = attributes;
 
 	const containerClass = ' vk_step_item';
-	let styleClass;
-	let inlineStyle;
-	let styleLineClass;
+	let styleClass = '';
+	let inlineStyle = '';
+	let styleLineClass = '';
 
-	if (style === 'solid') {
-		styleClass = ' vk_step_item_style-default';
-		inlineStyle = { backgroundColor: `${color}`, color: '#ffffff' };
-	} else if (style === 'outlined') {
-		styleClass = ' vk_step_item_style-outlined';
-		inlineStyle = { border: `2px solid ${color}`, color: `${color}` };
+	if (color !== undefined) {
+		if (style === 'solid') {
+			styleClass = ' vk_step_item_style-default';
+			inlineStyle = { backgroundColor: `${color}` };
+		} else if (style === 'outlined') {
+			styleClass = ' vk_step_item_style-outlined';
+			inlineStyle = { border: `2px solid ${color}`, color: `${color}` };
+		}
 	}
 
 	if (styleLine === 'default') {

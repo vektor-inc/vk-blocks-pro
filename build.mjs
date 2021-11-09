@@ -43,9 +43,7 @@ function buildBlocks(dirNames, devText = "") {
         if(dirObj.isPro === 1) {
             proText = 'pro'
         }
-        const js_cmd = 'npm run build:js' + proText + devText + ' --block=' + dirObj.name
-        console.log(js_cmd);
-        execSync(js_cmd);
+        
         // style.scssがあるかチェック
         let hasStyleFile
         if (dirObj.isPro) {
@@ -54,9 +52,13 @@ function buildBlocks(dirNames, devText = "") {
             hasStyleFile = fs.existsSync('./src/blocks/' + dirObj.name + '/style.scss')
         }
         if (hasStyleFile) {
-            const sass_cmd = 'npm run build:css' + proText + ' --block=' + dirObj.name
-            console.log(sass_cmd);
-            execSync(sass_cmd);
+            const block_cmd = 'npm run build:block' + proText + ' --block=' + dirObj.name
+            console.log(block_cmd);
+            exec(block_cmd);
+        } else {
+            const js_cmd = 'npm run build:js' + proText + devText + ' --block=' + dirObj.name
+            console.log(js_cmd);
+            exec(js_cmd);
         }
     })
 }

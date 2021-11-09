@@ -329,7 +329,10 @@ export default function ButtonEdit(props) {
 							isSmall
 							isPrimary={buttonType === '1'}
 							isSecondary={buttonType !== '1'}
-							onClick={() => setAttributes({ buttonType: '1' })}
+							onClick={() => {
+								setAttributes({ buttonType: '1' });
+								setAttributes({ buttonTextColorCustom: undefined });
+							}}
 						>
 							{__('No background', 'vk-blocks')}
 						</Button>
@@ -337,7 +340,10 @@ export default function ButtonEdit(props) {
 							isSmall
 							isPrimary={buttonType === '2'}
 							isSecondary={buttonType !== '2'}
-							onClick={() => setAttributes({ buttonType: '2' })}
+							onClick={() => {
+								setAttributes({ buttonType: '2' })
+								setAttributes({ buttonTextColorCustom: undefined });
+							}}
 						>
 							{__('Text only', 'vk-blocks')}
 						</Button>
@@ -415,7 +421,9 @@ export default function ButtonEdit(props) {
 					<BaseControl
 						id={`vk_block_baloon_custom_color`}
 						label={
-							(buttonType === '0' || buttonType === null) ? __('Background Color', 'vk-blocks') : __('Custom Color', 'vk-blocks')
+							buttonType === '0' || buttonType === null
+								? __('Background Color', 'vk-blocks')
+								: __('Custom Color', 'vk-blocks')
 						}
 						help={__(
 							'This custom color overrides the default color. If you want to use the default color, click the clear button.',

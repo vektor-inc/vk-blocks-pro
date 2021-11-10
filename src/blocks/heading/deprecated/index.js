@@ -113,7 +113,7 @@ const blockAttributes3 = {
 	},
 	subTextFlag: {
 		type: 'string',
-		default: ""
+		default: "off"
 	},
 	fontAwesomeIconColor: {
 		type: 'string',

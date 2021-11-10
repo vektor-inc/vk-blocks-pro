@@ -74,7 +74,7 @@ $vk-color-dark:#343a40;
 	}
 
 	// 塗り
-	.btn.has-background {
+	.btn.has-background:not(.has-text-color) {
 		color: #fff;
 		/* 白っぽい色に対する対策 */
 		&.has-vk-color-light-background-color,

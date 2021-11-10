@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2021-11-05T06:37:49+00:00\n"
-"PO-Revision-Date: 2021-11-05 15:42+0900\n"
+"POT-Creation-Date: 2021-11-10T03:43:34+00:00\n"
+"PO-Revision-Date: 2021-11-10 12:45+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -77,7 +77,7 @@ msgstr "短い"
 
 #: src/blocks/_pro/animation/edit.js:123 src/blocks/_pro/outer/edit.js:303
 #: src/blocks/_pro/slider/edit.js:193 src/blocks/balloon/edit.js:276
-#: src/blocks/button/edit.js:191 src/blocks/faq/index.js:27
+#: src/blocks/button/edit.js:248 src/blocks/faq/index.js:27
 #: src/blocks/faq2/index.js:22
 #: src/extensions/common/inline-font-size/index.js:56
 msgid "Normal"
@@ -362,11 +362,13 @@ msgstr "vw"
 msgid "Color Settings"
 msgstr "色設定"
 
-#: src/blocks/_pro/grid-column-item/edit.js:83 src/blocks/heading/edit.js:288
+#: src/blocks/_pro/grid-column-item/edit.js:83 src/blocks/button/edit.js:408
+#: src/blocks/heading/edit.js:288
 msgid "Text Color"
 msgstr "文字の色"
 
 #: src/blocks/_pro/grid-column-item/edit.js:94 src/blocks/border-box/edit.js:99
+#: src/blocks/button/edit.js:422
 msgid "Background Color"
 msgstr "背景色"
 
@@ -414,7 +416,7 @@ msgstr "タイトルを入力"
 msgid "Input Content"
 msgstr "文章を入力してください"
 
-#: src/blocks/_pro/icon-card-item/edit.js:100 src/blocks/button/edit.js:166
+#: src/blocks/_pro/icon-card-item/edit.js:100 src/blocks/button/edit.js:223
 #: src/blocks/icon/edit.js:249 src/blocks/pr-blocks/edit.js:271
 #: src/blocks/pr-content/edit.js:130
 msgid "Open link new tab."
@@ -422,7 +424,7 @@ msgstr "リンクを別ウィンドウで開く"
 
 #: src/blocks/_pro/icon-card-item/edit.js:108
 #: src/blocks/_pro/step-item/edit.js:57 src/blocks/border-box/edit.js:122
-#: src/blocks/button/edit.js:358 src/blocks/icon/edit.js:237
+#: src/blocks/button/edit.js:440 src/blocks/icon/edit.js:237
 #: src/blocks/pr-content/edit.js:196
 msgid "Icon ( Font Awesome )"
 msgstr "アイコン ( Font Awesome )"
@@ -431,13 +433,13 @@ msgstr "アイコン ( Font Awesome )"
 msgid "Icon Background:"
 msgstr "アイコン背景:"
 
-#: src/blocks/_pro/icon-card-item/edit.js:130 src/blocks/button/edit.js:269
+#: src/blocks/_pro/icon-card-item/edit.js:130 src/blocks/button/edit.js:326
 #: src/blocks/icon-outer/edit.js:204 src/blocks/icon/edit.js:192
 #: src/blocks/pr-blocks/edit.js:299
 msgid "Solid color"
 msgstr "ベタ塗り"
 
-#: src/blocks/_pro/icon-card-item/edit.js:134 src/blocks/button/edit.js:277
+#: src/blocks/_pro/icon-card-item/edit.js:134 src/blocks/button/edit.js:337
 #: src/blocks/pr-blocks/edit.js:303
 msgid "No background"
 msgstr "背景なし"
@@ -882,7 +884,7 @@ msgstr "ナビゲーションの位置"
 msgid "Hide"
 msgstr "非表示"
 
-#: src/blocks/_pro/slider/edit.js:370 src/blocks/button/edit.js:225
+#: src/blocks/_pro/slider/edit.js:370 src/blocks/button/edit.js:282
 #: src/components/display-items-control/index.js:125
 msgid "Center"
 msgstr "中央"
@@ -910,7 +912,8 @@ msgstr "例) 午前 6:00"
 
 #: src/blocks/_pro/step-item/edit.js:76
 #: src/blocks/_pro/timeline-item/edit.js:53 src/blocks/border-box/edit.js:63
-#: src/blocks/icon/edit.js:256 src/blocks/staff/edit.js:139
+#: src/blocks/button/edit.js:358 src/blocks/icon/edit.js:256
+#: src/blocks/staff/edit.js:139
 #: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:41
 #: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:56
 #: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:130
@@ -999,22 +1002,22 @@ msgstr "タイムライン"
 msgid "Style Settings"
 msgstr "スタイル設定"
 
-#: src/blocks/alert/edit.js:25 src/blocks/button/edit.js:308
+#: src/blocks/alert/edit.js:25 src/blocks/button/edit.js:373
 #: src/blocks/pr-content/edit.js:164 src/extensions/core/group/style.js:138
 msgid "Success"
 msgstr "Success"
 
-#: src/blocks/alert/edit.js:28 src/blocks/button/edit.js:312
+#: src/blocks/alert/edit.js:28 src/blocks/button/edit.js:377
 #: src/blocks/pr-content/edit.js:167 src/extensions/core/group/style.js:134
 msgid "Info"
 msgstr "Info"
 
-#: src/blocks/alert/edit.js:30 src/blocks/button/edit.js:316
+#: src/blocks/alert/edit.js:30 src/blocks/button/edit.js:381
 #: src/blocks/pr-content/edit.js:169 src/extensions/core/group/style.js:142
 msgid "Warning"
 msgstr "Warning"
 
-#: src/blocks/alert/edit.js:34 src/blocks/button/edit.js:320
+#: src/blocks/alert/edit.js:34 src/blocks/button/edit.js:385
 #: src/blocks/pr-content/edit.js:173 src/extensions/core/group/style.js:146
 msgid "Danger"
 msgstr "Danger"
@@ -1060,13 +1063,13 @@ msgstr "位置"
 msgid "Please specify the layout of the balloon."
 msgstr "吹き出しの配置を指定してください。"
 
-#: src/blocks/balloon/edit.js:219 src/blocks/button/edit.js:215
+#: src/blocks/balloon/edit.js:219 src/blocks/button/edit.js:272
 #: src/blocks/pr-content/edit.js:233
 #: src/components/display-items-control/index.js:121
 msgid "Left"
 msgstr "左"
 
-#: src/blocks/balloon/edit.js:231 src/blocks/button/edit.js:235
+#: src/blocks/balloon/edit.js:231 src/blocks/button/edit.js:292
 #: src/blocks/pr-content/edit.js:232
 #: src/components/display-items-control/index.js:129
 msgid "Right"
@@ -1233,123 +1236,127 @@ msgstr "直線 ピン角 内側"
 msgid "Solid Angle iconFeature"
 msgstr "直線 ピン角 アイコン"
 
-#: src/blocks/button/edit.js:133
+#: src/blocks/button/edit.js:167
 msgid "Button setting"
 msgstr "ボタン設定"
 
-#: src/blocks/button/edit.js:136
+#: src/blocks/button/edit.js:170
 msgid "Block ID"
 msgstr "ブロックID"
 
-#: src/blocks/button/edit.js:141
+#: src/blocks/button/edit.js:176
 msgid "This is the identification ID for this block style."
 msgstr "ブロックのスタイル識別用IDです。"
 
-#: src/blocks/button/edit.js:142
+#: src/blocks/button/edit.js:182
 msgid "If you don't use custom colors, you don't have to worry about it."
 msgstr "カスタムカラーを使用しない場合は特に気にする必要はありません。"
 
-#: src/blocks/button/edit.js:143
+#: src/blocks/button/edit.js:189
 msgid "If you duplicate this block, please change the ID."
 msgstr "このブロックを複製した際には、IDを変更してください。"
 
-#: src/blocks/button/edit.js:144
+#: src/blocks/button/edit.js:196
 msgid "This ID is'not id of HTML attribute."
 msgstr "このIDはHTML属性のIDではありません。"
 
-#: src/blocks/button/edit.js:147
+#: src/blocks/button/edit.js:203
 msgid "Sub Caption"
 msgstr "サブテキスト"
 
-#: src/blocks/button/edit.js:157
+#: src/blocks/button/edit.js:213
 msgid "Button URL"
 msgstr "ボタン URL"
 
-#: src/blocks/button/edit.js:174
+#: src/blocks/button/edit.js:231
 msgid "Button Size:"
 msgstr "ボタンサイズ:"
 
-#: src/blocks/button/edit.js:183 src/blocks/spacer/edit.js:105
+#: src/blocks/button/edit.js:240 src/blocks/spacer/edit.js:105
 #: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:30
 #: inc/vk-blocks/vk-blocks-functions.php:30
 msgid "Large"
 msgstr "大"
 
-#: src/blocks/button/edit.js:199 src/blocks/spacer/edit.js:85
+#: src/blocks/button/edit.js:256 src/blocks/spacer/edit.js:85
 #: src/extensions/common/inline-font-size/index.js:51
 #: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:22
 #: inc/vk-blocks/vk-blocks-functions.php:22
 msgid "Small"
 msgstr "小"
 
-#: src/blocks/button/edit.js:204
+#: src/blocks/button/edit.js:261
 msgid "Button Position:"
 msgstr "ボタンの位置:"
 
-#: src/blocks/button/edit.js:245
+#: src/blocks/button/edit.js:302
 msgid "Wide"
 msgstr "幅広"
 
-#: src/blocks/button/edit.js:255
+#: src/blocks/button/edit.js:312
 msgid "Block"
 msgstr "Block"
 
-#: src/blocks/button/edit.js:260
+#: src/blocks/button/edit.js:317
 msgid "Button Style:"
 msgstr "ボタンスタイル:"
 
-#: src/blocks/button/edit.js:285
+#: src/blocks/button/edit.js:348
 msgid "Text only"
 msgstr "テキストのみ"
 
-#: src/blocks/button/edit.js:289
+#: src/blocks/button/edit.js:352
 msgid ""
 "If you select \"No background\", that you need to select a Custom Color."
 msgstr "もし「背景なし」を選択した場合はカスタムカラーで色を指定してください。"
 
-#: src/blocks/button/edit.js:296 src/blocks/pr-content/edit.js:152
-msgid "Default Color:"
-msgstr "標準色:"
+#: src/blocks/button/edit.js:361
+msgid "Default Color (Bootstrap)"
+msgstr "標準色 ( Bootstrap )"
 
-#: src/blocks/button/edit.js:300 src/blocks/pr-content/edit.js:156
+#: src/blocks/button/edit.js:365 src/blocks/pr-content/edit.js:156
 msgid "Primary"
 msgstr "Primary"
 
-#: src/blocks/button/edit.js:304 src/blocks/pr-content/edit.js:160
+#: src/blocks/button/edit.js:369 src/blocks/pr-content/edit.js:160
 msgid "Secondary"
 msgstr "Secondary"
 
-#: src/blocks/button/edit.js:324 src/blocks/pr-content/edit.js:176
+#: src/blocks/button/edit.js:389 src/blocks/pr-content/edit.js:176
 msgid "Light"
 msgstr "Light"
 
-#: src/blocks/button/edit.js:328 src/blocks/pr-content/edit.js:177
+#: src/blocks/button/edit.js:393 src/blocks/pr-content/edit.js:177
 msgid "Dark"
 msgstr "Dark"
 
-#: src/blocks/button/edit.js:342
+#: src/blocks/button/edit.js:397
 msgid "Custom Color"
 msgstr "カスタムカラー"
 
-#: src/blocks/button/edit.js:343
+#: src/blocks/button/edit.js:423 src/blocks/pr-content/edit.js:185
+msgid "Button Color"
+msgstr "ボタンの色"
+
+#: src/blocks/button/edit.js:425
 msgid ""
-"This custom color overrides the default color. If you want to use the "
+"This color palette overrides the default color. If you want to use the "
 "default color, click the clear button."
 msgstr ""
-"このカスタムカラーはデフォルトのカラーを上書きします。 デフォルトの色を使用し"
-"たい場合は、クリアボタンをクリックしてください。"
+"このカラーパレットの色は標準色を上書きします。 デフォルトの色を使用したい場合"
+"は、クリアボタンをクリックしてください。"
 
-#: src/blocks/button/edit.js:362 src/blocks/heading/edit.js:303
+#: src/blocks/button/edit.js:444 src/blocks/heading/edit.js:303
 #: src/blocks/pr-content/edit.js:200
 msgid "Before text"
 msgstr "文字の前"
 
-#: src/blocks/button/edit.js:371 src/blocks/heading/edit.js:312
+#: src/blocks/button/edit.js:453 src/blocks/heading/edit.js:312
 #: src/blocks/pr-content/edit.js:212
 msgid "After text"
 msgstr "文字の後"
 
-#: src/blocks/button/edit.js:399
+#: src/blocks/button/edit.js:482
 msgid "Input text"
 msgstr "文字を入力"
 
@@ -1664,9 +1671,9 @@ msgstr "ボタンタイプ"
 msgid "Ghost"
 msgstr "ゴーストボタン"
 
-#: src/blocks/pr-content/edit.js:185
-msgid "Button Color"
-msgstr "ボタンの色"
+#: src/blocks/pr-content/edit.js:152
+msgid "Default Color:"
+msgstr "標準色:"
 
 #: src/blocks/pr-content/edit.js:229
 msgid "Layout Type"

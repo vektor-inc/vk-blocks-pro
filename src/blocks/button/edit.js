@@ -354,9 +354,11 @@ export default function ButtonEdit(props) {
 							'vk-blocks'
 						)}
 					</p>
-
+					<h4 className={`mt-0 mb-2`}>
+							{__('Color', 'vk-blocks')}
+					</h4>
 					<SelectControl
-						label={__('Default Color:', 'vk-blocks')}
+						label={__('Default Color (Bootstrap)', 'vk-blocks')}
 						value={buttonColor}
 						options={[
 							{
@@ -401,11 +403,6 @@ export default function ButtonEdit(props) {
 						}
 					/>
 					{(buttonType === '0' || buttonType === null) && (
-						<h4 className={`mt-0 mb-2`}>
-							{__('Custom Color', 'vk-blocks')}:
-						</h4>
-					)}
-					{(buttonType === '0' || buttonType === null) && (
 						<BaseControl
 							id={`vk_block_baloon_custom_text_color`}
 							label={__('Text Color', 'vk-blocks')}
@@ -423,10 +420,10 @@ export default function ButtonEdit(props) {
 						label={
 							buttonType === '0' || buttonType === null
 								? __('Background Color', 'vk-blocks')
-								: __('Custom Color', 'vk-blocks')
+								: __('Button Color', 'vk-blocks')
 						}
 						help={__(
-							'This custom color overrides the default color. If you want to use the default color, click the clear button.',
+							'This color palette overrides the default color. If you want to use the default color, click the clear button.',
 							'vk-blocks'
 						)}
 					>

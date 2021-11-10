@@ -331,7 +331,9 @@ export default function ButtonEdit(props) {
 							isSecondary={buttonType !== '1'}
 							onClick={() => {
 								setAttributes({ buttonType: '1' });
-								setAttributes({ buttonTextColorCustom: undefined });
+								setAttributes({
+									buttonTextColorCustom: undefined,
+								});
 							}}
 						>
 							{__('No background', 'vk-blocks')}
@@ -341,8 +343,10 @@ export default function ButtonEdit(props) {
 							isPrimary={buttonType === '2'}
 							isSecondary={buttonType !== '2'}
 							onClick={() => {
-								setAttributes({ buttonType: '2' })
-								setAttributes({ buttonTextColorCustom: undefined });
+								setAttributes({ buttonType: '2' });
+								setAttributes({
+									buttonTextColorCustom: undefined,
+								});
 							}}
 						>
 							{__('Text only', 'vk-blocks')}
@@ -354,9 +358,7 @@ export default function ButtonEdit(props) {
 							'vk-blocks'
 						)}
 					</p>
-					<h4 className={`mt-0 mb-2`}>
-							{__('Color', 'vk-blocks')}
-					</h4>
+					<h4 className={`mt-0 mb-2`}>{__('Color', 'vk-blocks')}</h4>
 					<SelectControl
 						label={__('Default Color (Bootstrap)', 'vk-blocks')}
 						value={buttonColor}

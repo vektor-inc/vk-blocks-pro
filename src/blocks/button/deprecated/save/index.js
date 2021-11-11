@@ -96,16 +96,17 @@ const blockAttributes4 = {
 	},
 }
 
+
 const blockAttributes5 = {
 	...blockAttributes4,
-	blockId: {
-		buttonTextColorCustom: 'string',
+	buttonTextColorCustom: {
+		type: 'string',
 	},
 }
 
 export const deprecated = [
 	{
-		attributes: blockAttributes5,
+		attributes: blockAttributes4,
 		save: save1_18_6,
 	},
 	{

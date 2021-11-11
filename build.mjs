@@ -1,6 +1,9 @@
 import fs from 'fs';
 import { exec, execSync } from 'child_process';
 
+// buildディレクトリをクリーンアップ
+execSync('npx rimraf ./build/*');
+
 // ./src/blocks/以下のdir名をリスト化
 const allDirents = fs.readdirSync('./src/blocks/', { withFileTypes: true })
 const dirFreeNames = allDirents.filter(dirent => dirent.isDirectory()).map(({ name }) => name)

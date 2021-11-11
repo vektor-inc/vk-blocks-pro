@@ -40,10 +40,9 @@ function buildBlocks(dirNames, devText = "") {
     dirNames.map(dirObj => {
         console.log(dirObj.name)
         let proText = ""
-        if(dirObj.isPro === 1) {
+        if (dirObj.isPro === 1) {
             proText = 'pro'
         }
-        
         // style.scssがあるかチェック
         let hasStyleFile
         if (dirObj.isPro) {
@@ -55,6 +54,9 @@ function buildBlocks(dirNames, devText = "") {
             const block_cmd = 'npm run build:block' + proText + ' --block=' + dirObj.name
             console.log(block_cmd);
             exec(block_cmd);
+            // const css_cmd = 'npm run build:css' + proText + devText + ' --block=' + dirObj.name
+            // console.log(css_cmd);
+            // exec(css_cmd);
         } else {
             const js_cmd = 'npm run build:js' + proText + devText + ' --block=' + dirObj.name
             console.log(js_cmd);
@@ -62,4 +64,4 @@ function buildBlocks(dirNames, devText = "") {
         }
     })
 }
-export default buildBlocks(dirNames,devText);
+export default buildBlocks(dirNames, devText);

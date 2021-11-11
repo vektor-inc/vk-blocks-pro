@@ -323,11 +323,13 @@ msgstr "vw"
 msgid "Color Settings"
 msgstr "色設定"
 
-#: src/blocks/_pro/grid-column-item/edit.js:83 src/blocks/heading/edit.js:288
+#: src/blocks/_pro/grid-column-item/edit.js:83 src/blocks/button/edit.js:408
+#: src/blocks/heading/edit.js:288
 msgid "Text Color"
 msgstr "文字の色"
 
 #: src/blocks/_pro/grid-column-item/edit.js:94 src/blocks/border-box/edit.js:99
+#: src/blocks/button/edit.js:422
 msgid "Background Color"
 msgstr "背景色"
 
@@ -1169,6 +1171,7 @@ msgid ""
 msgstr "もし「背景なし」を選択した場合はカスタムカラーで色を指定してください。"
 
 #: src/blocks/button/edit.js:268 src/blocks/pr-content/edit.js:152
+#: src/blocks/pr-content/edit.js:152
 msgid "Default Color:"
 msgstr "標準色:"
 
@@ -1194,11 +1197,11 @@ msgstr "カスタムカラー"
 
 #: src/blocks/button/edit.js:315
 msgid ""
-"This custom color overrides the default color. If you want to use the "
+"This color palette overrides the default color. If you want to use the "
 "default color, click the clear button."
 msgstr ""
-"このカスタムカラーはデフォルトのカラーを上書きします。 デフォルトの色を使用し"
-"たい場合は、クリアボタンをクリックしてください。"
+"このカラーパレットの色は標準色を上書きします。 デフォルトの色を使用したい場合"
+"は、クリアボタンをクリックしてください。"
 
 #: src/blocks/button/edit.js:334 src/blocks/heading/edit.js:303
 #: src/blocks/pr-content/edit.js:200
@@ -1488,10 +1491,6 @@ msgstr "ボタンタイプ"
 #: src/blocks/pr-content/edit.js:144
 msgid "Ghost"
 msgstr "ゴーストボタン"
-
-#: src/blocks/pr-content/edit.js:185
-msgid "Button Color"
-msgstr "ボタンの色"
 
 #: src/blocks/pr-content/edit.js:229
 msgid "Layout Type"

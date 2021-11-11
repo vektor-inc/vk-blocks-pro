@@ -74,7 +74,7 @@ $vk-color-dark:#343a40;
 	}
 
 	// 塗り
-	.btn.has-background {
+	.btn.has-background:not(.has-text-color) {
 		color: #fff;
 		/* 白っぽい色に対する対策 */
 		&.has-vk-color-light-background-color,
@@ -83,101 +83,101 @@ $vk-color-dark:#343a40;
 		}
 	}
 
-	// 背景なし
-	.btn.has-text-color.is-style-outline {
+	// アウトラインボタン（背景なし）の場合(.btnを含めるとカスタムカラーの 背景塗りなし:hover で背景が文字色と同じになる)
+	.has-text-color.is-style-outline {
 		background-color: transparent;
 		border: 1px solid currentColor;
 		&:hover {
 			/* 応急処置：規定カラー */
 			&.has-vk-color-primary-color {
-				color: var(--vk-color-primary);
+				background-color: var(--vk-color-primary);
 			}
 			&.has-vk-color-secondary-color {
-				color: $vk-color-secondary;
+				background-color: $vk-color-secondary;
 			}
 			&.has-vk-color-success-color {
-				color: $vk-color-success;
+				background-color: $vk-color-success;
 			}
 			&.has-vk-color-info-color {
-				color: $vk-color-info;
+				background-color: $vk-color-info;
 			}
 			&.has-vk-color-warning-color {
-				color: $vk-color-warning;
+				background-color: $vk-color-warning;
 			}
 			&.has-vk-color-danger-color {
-				color: $vk-color-danger;
+				background-color: $vk-color-danger;
 			}
 			&.has-vk-color-light-color {
-				color: $vk-color-light;
+				background-color: $vk-color-light;
 			}
 			&.has-vk-color-dark-color {
-				color: $vk-color-dark;
+				background-color: $vk-color-dark;
 			}
 			/* 応急処置：カラーパレットコア */
 			&.has-black-color {
-				color: #000000;
+				background-color: #000000;
 			}
 			&.has-cyan-bluish-gray-color {
-				color: #abb8c3;
+				background-color: #abb8c3;
 			}
 			&.has-white-color {
-				color: #ffffff;
+				background-color: #ffffff;
 			}
 			&.has-pale-pink-color {
-				color: #f78da7;
+				background-color: #f78da7;
 			}
 			&.has-vivid-red-color {
-				color: #cf2e2e;
+				background-color: #cf2e2e;
 			}
 			&.has-luminous-vivid-orange-color {
-				color: #ff6900;
+				background-color: #ff6900;
 			}
 			&.has-luminous-vivid-amber-color {
-				color: #fcb900;
+				background-color: #fcb900;
 			}
 			&.has-light-green-cyan-color {
-				color: #7bdcb5;
+				background-color: #7bdcb5;
 			}
 			&.has-vivid-green-cyan-color {
-				color: #00d084;
+				background-color: #00d084;
 			}
 			&.has-pale-cyan-blue-color {
-				color: #8ed1fc;
+				background-color: #8ed1fc;
 			}
 			&.has-vivid-cyan-blue-color {
-				color: #0693e3;
+				background-color: #0693e3;
 			}
 			&.has-vivid-purple-color {
-				color: #9b51e0;
+				background-color: #9b51e0;
 			}
 			/* 応急処置：カラーパレットVK */
 			&.has-vk-color-primary-color {
-				color: var(--vk-color-primary);
+				background-color: var(--vk-color-primary);
 			}
 			&.has-vk-color-primary-dark-color {
-				color: var(--vk-color-primary-dark);
+				background-color: var(--vk-color-primary-dark);
 			}
 			&.has-vk-color-primary-vivid-color {
-				color: var(--vk-color-primary-vivid);
+				background-color: var(--vk-color-primary-vivid);
 			}
 			&.has-vk-color-custom-1-color {
-				color: var(--vk-color-custom-1);
+				background-color: var(--vk-color-custom-1);
 			}
 			&.has-vk-color-custom-2-color {
-				color: var(--vk-color-custom-2);
+				background-color: var(--vk-color-custom-2);
 			}
 			&.has-vk-color-custom-3-color {
-				color: var(--vk-color-custom-3);
+				background-color: var(--vk-color-custom-3);
 			}
 			&.has-vk-color-custom-4-color {
-				color: var(--vk-color-custom-4);
+				background-color: var(--vk-color-custom-4);
 			}
 			&.has-vk-color-custom-5-color {
-				color: var(--vk-color-custom-5);
+				background-color: var(--vk-color-custom-5);
 			}
 			// ここから標準装備
-			background-color: currentColor;
-			border: 1px solid currentColor;
+			// background-color: currentColor;
+			border: 1px solid #fff;
 			.vk_button_link_before,
 			.vk_button_link_txt,
 			.vk_button_link_after,
@@ -201,13 +201,6 @@ $vk-color-dark:#343a40;
 	// テキストのみ
 	.has-text-color.vk_button_link-type-text {
 		&:hover {
-			background-color: currentColor;
-			.vk_button_link_before,
-			.vk_button_link_txt,
-			.vk_button_link_after,
-			.vk_button_link_subCaption {
-				color: #fff;
-			}
 			/* 白っぽい色に対する対策 */
 			&.has-vk-color-light-background-color .vk_button_link_before,
 			&.has-vk-color-light-background-color .vk_button_link_txt,
@@ -219,6 +212,11 @@ $vk-color-dark:#343a40;
 			&.has-white-color .vk_button_link_subCaption {
 				color:#212529;
 			}
+			text-decoration: underline;
+			text-decoration-style: dotted;
+			text-underline-offset:2px;
+			text-decoration-color:currentColor;
+			text-decoration-thickness: 1px;
 		}
 	}
 

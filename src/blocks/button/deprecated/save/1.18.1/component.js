@@ -4,7 +4,6 @@ import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export class VKBButton extends Component {
 	render() {
-		const buttonTextColorCustom = this.props.lbTextColorCustom;
 		const buttonColorCustom = this.props.lbColorCustom;
 		const buttonColor = this.props.lbColor;
 		const buttonType = this.props.lbType;
@@ -34,18 +33,6 @@ export class VKBButton extends Component {
 				// カスタムパレットカラーの場合
 				if (!isHexColor(buttonColorCustom)) {
 					aClass += ` has-${buttonColorCustom}-background-color`;
-				}
-			}
-
-			// 文字色
-			if (
-				buttonColor === 'custom' &&
-				buttonTextColorCustom !== undefined
-			) {
-				aClass += ` btn has-text-color`;
-				// カスタムパレットカラーの場合
-				if (!isHexColor(buttonTextColorCustom)) {
-					aClass += ` has-${buttonTextColorCustom}-color`;
 				}
 			}
 			// 塗りなし

@@ -30,6 +30,7 @@ export default function ButtonEdit(props) {
 		buttonSize,
 		buttonType,
 		buttonColor,
+		buttonTextColorCustom,
 		buttonColorCustom,
 		buttonAlign,
 		fontAwesomeIconBefore,
@@ -52,6 +53,9 @@ export default function ButtonEdit(props) {
 			buttonUrl === ''
 		) {
 			setAttributes({ buttonUrl: undefined });
+		}
+		if (buttonColorCustom === undefined) {
+			setAttributes({ buttonTextColorCustom: undefined });
 		}
 		if (
 			buttonColorCustom === null ||
@@ -89,16 +93,23 @@ export default function ButtonEdit(props) {
 
 	const { updateBlockAttributes } = dispatch('core/block-editor');
 
-	// buttonColor が有効なら buttonColorCustom を無効化
+	// buttonColor が有効なら buttonColorCustom と buttonTextColorCustom を無効化
 	// プルダウンから直接カスタムを選ぶとその瞬間色が適用されなくなるので primary に戻す
+	// buttonColorCustom が有効でないと buttonTextColorCustom は意味を成さないので無効化
 	useEffect(() => {
 		if (buttonColor !== 'custom') {
+			updateBlockAttributes(clientId, {
+				buttonTextColorCustom: undefined,
+			});
 			updateBlockAttributes(clientId, { buttonColorCustom: undefined });
 		} else if (
 			buttonColorCustom === undefined &&
 			buttonColor === 'custom'
 		) {
 			updateBlockAttributes(clientId, { buttonColor: 'primary' });
+			updateBlockAttributes(clientId, {
+				buttonTextColorCustom: undefined,
+			});
 		}
 	}, [buttonColor]);
 
@@ -107,11 +118,6 @@ export default function ButtonEdit(props) {
 	useEffect(() => {
 		if (buttonColorCustom !== undefined) {
 			updateBlockAttributes(clientId, { buttonColor: 'custom' });
-		} else if (
-			buttonColorCustom === undefined &&
-			buttonColor === 'custom'
-		) {
-			updateBlockAttributes(clientId, { buttonColor: 'primary' });
 		}
 	}, [buttonColorCustom]);
 
@@ -295,7 +301,12 @@ export default function ButtonEdit(props) {
 							isSmall
 							isPrimary={buttonType === '1'}
 							isSecondary={buttonType !== '1'}
-							onClick={() => setAttributes({ buttonType: '1' })}
+							onClick={() => {
+								setAttributes({ buttonType: '1' });
+								setAttributes({
+									buttonTextColorCustom: undefined,
+								});
+							}}
 						>
 							{__('No background', 'vk-blocks')}
 						</Button>
@@ -303,7 +314,12 @@ export default function ButtonEdit(props) {
 							isSmall
 							isPrimary={buttonType === '2'}
 							isSecondary={buttonType !== '2'}
-							onClick={() => setAttributes({ buttonType: '2' })}
+							onClick={() => {
+								setAttributes({ buttonType: '2' });
+								setAttributes({
+									buttonTextColorCustom: undefined,
+								});
+							}}
 						>
 							{__('Text only', 'vk-blocks')}
 						</Button>
@@ -314,9 +330,9 @@ export default function ButtonEdit(props) {
 							'vk-blocks'
 						)}
 					</p>
-
+					<h4 className={`mt-0 mb-2`}>{__('Color', 'vk-blocks')}</h4>
 					<SelectControl
-						label={__('Default Color:', 'vk-blocks')}
+						label={__('Default Color (Bootstrap)', 'vk-blocks')}
 						value={buttonColor}
 						options={[
 							{
@@ -361,27 +377,45 @@ export default function ButtonEdit(props) {
 						}
 					/>
 					<BaseControl
-						id={`vk_block_baloon_custom_color`}
 						label={__('Custom Color', 'vk-blocks')}
-						help={__(
-							'This custom color overrides the default color. If you want to use the default color, click the clear button.',
-							'vk-blocks'
-						)}
+						id={`vk_block_button_custom_color`}
 					>
-						<AdvancedColorPalette
-							schema={'buttonColorCustom'}
-							disableSchema={'buttonColor'}
-							disableValue={'custom'}
-							{...props}
-						/>
+						<BaseControl
+							id={`vk_block_button_custom_background_color`}
+							label={
+								buttonType === '0' || buttonType === null
+									? __('Background Color', 'vk-blocks')
+									: __('Button Color', 'vk-blocks')
+							}
+							help={__(
+								'This color palette overrides the default color. If you want to use the default color, click the clear button.',
+								'vk-blocks'
+							)}
+						>
+							<AdvancedColorPalette
+								schema={'buttonColorCustom'}
+								{...props}
+							/>
+						</BaseControl>
+						{(buttonType === '0' || buttonType === null) &&
+							buttonColorCustom !== undefined && (
+								<BaseControl
+									id={`vk_block_button_custom_text_color`}
+									label={__('Text Color', 'vk-blocks')}
+								>
+									<AdvancedColorPalette
+										schema={'buttonTextColorCustom'}
+										{...props}
+									/>
+								</BaseControl>
+							)}
 					</BaseControl>
-
 					<BaseControl>
 						<h4 className={`mt-0 mb-2`}>
 							{__('Icon ( Font Awesome )', 'vk-blocks')}
 						</h4>
 						<BaseControl
-							id={`vk_block_baloon_fa_before_text`}
+							id={`vk_block_button_fa_before_text`}
 							label={__('Before text', 'vk-blocks')}
 						>
 							<FontAwesome
@@ -390,7 +424,7 @@ export default function ButtonEdit(props) {
 							/>
 						</BaseControl>
 						<BaseControl
-							id={`vk_block_baloon_fa_after_text`}
+							id={`vk_block_button_fa_after_text`}
 							label={__('After text', 'vk-blocks')}
 						>
 							<FontAwesome
@@ -403,6 +437,7 @@ export default function ButtonEdit(props) {
 			</InspectorControls>
 			<div {...blockProps}>
 				<VKBButton
+					lbTextColorCustom={buttonTextColorCustom}
 					lbColorCustom={buttonColorCustom}
 					lbColor={buttonColor}
 					lbType={buttonType}

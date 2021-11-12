@@ -98,7 +98,27 @@ const blockAttributes3 = {
 	outerMarginBottom: {
 		type: 'number',
 		default: 0
-	}
+	},
+	titleMarginBottom: {
+		type: "number",
+		default: null
+	},
+	titleColor: {
+		type: "string",
+		default: null
+	},
+	subTextColor: {
+		type: "string",
+		default: null
+	},
+	subTextFlag: {
+		type: 'string',
+		default: "off"
+	},
+	fontAwesomeIconColor: {
+		type: 'string',
+		default: "#000000",
+	},
 }
 
 /* 1.9.1 で titleSize とsubTextSize を変更 */

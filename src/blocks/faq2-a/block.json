@@ -2,6 +2,7 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/faq2-a",
 	"category": "vk-blocks-cat",
+	"title": "FAQ Answer",
 	"parent": [
 		"vk-blocks/faq2"
 	],

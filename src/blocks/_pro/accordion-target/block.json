@@ -1,11 +1,12 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/accordion-target",
+	"title": "Accordion Target",
+	"description": "This is the content area where you can add blocks freely.",
+	"textdomain": "vk-blocks",
 	"category": "vk-blocks-cat",
 	"parent": ["vk-blocks/accordion"],
 	"attributes": {},
-	"description": "This is the content area where you can add blocks freely.",
-	"textdomain": "vk-blocks",
 	"supports": {
 		"anchor": true,
 		"className": true

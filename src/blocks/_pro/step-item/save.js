@@ -1,5 +1,6 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import ReactHtmlParser from 'react-html-parser';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function save(props) {
 	const { attributes } = props;
@@ -7,15 +8,23 @@ export default function save(props) {
 
 	const containerClass = ' vk_step_item';
 	let styleClass = '';
-	let inlineStyle = '';
+	let inlineStyle = {};
 	let styleLineClass = '';
 
-	if (color !== undefined) {
-		if (style === 'solid') {
-			styleClass = ' vk_step_item_style-default';
-			inlineStyle = { backgroundColor: `${color}` };
-		} else if (style === 'outlined') {
-			styleClass = ' vk_step_item_style-outlined';
+	if (style === 'solid') {
+		styleClass = ' vk_step_item_style-default';
+		if (color !== undefined) {
+			styleClass += ` has-background`;
+			if (isHexColor(color)) {
+				inlineStyle = { backgroundColor: `${color}` };
+			}
+			else{
+				styleClass += ` has-${color}-background-color`;
+			}
+		}
+	} else if (style === 'outlined') {
+		styleClass = ' vk_step_item_style-outlined';
+		if (color !== undefined) {
 			inlineStyle = { border: `2px solid ${color}`, color: `${color}` };
 		}
 	}

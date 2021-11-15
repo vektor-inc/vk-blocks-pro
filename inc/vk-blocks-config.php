@@ -28,6 +28,7 @@ if ( ! function_exists( 'vk_blocks_active' ) ) {
 	VK_Blocks_Block_Loader::init();
 
 
+	require_once plugin_dir_path( __FILE__ ) . 'vk-color-palette-manager/config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-helpers/config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-admin/vk-admin-config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/helpers.php';

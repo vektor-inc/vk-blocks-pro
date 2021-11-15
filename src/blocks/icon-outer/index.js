@@ -1,5 +1,5 @@
 /**
- * Accordion Outer Block
+ * Icon Outer Block
  */
 import { ReactComponent as Icon } from './icon.svg';
 

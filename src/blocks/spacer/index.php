@@ -5,24 +5,42 @@
  * @package vk-blocks
  */
 
-if ( function_exists( 'register_block_type_from_metadata' ) ) {
-
-	/**
-	 * Register Spacer block.
-	 *
-	 * @return void
-	 */
-	function vk_blocks_register_block_spacer() {
-		register_block_type_from_metadata(
-			__DIR__,
-			array(
-				'editor_style'  => 'vk-blocks-build-editor-css',
-				'editor_script' => 'vk-blocks-build-js',
-			)
+/**
+ * Register Spacer block.
+ *
+ * @return void
+ */
+function vk_blocks_register_block_spacer() {
+	// Register Style.
+	if ( ! is_admin() ) {
+		wp_register_style(
+			'vk-blocks/spacer',
+			VK_BLOCKS_DIR_URL . 'build/spacer/style.css',
+			array(),
+			VK_BLOCKS_VERSION
 		);
 	}
-	add_action( 'init', 'vk_blocks_register_block_spacer', 99 );
+
+	// Register Script.
+	$asset = include VK_BLOCKS_DIR_PATH . 'build/spacer/block-build.asset.php';
+	wp_register_script(
+		'vk-blocks/spacer',
+		VK_BLOCKS_DIR_URL . 'build/spacer/block-build.js',
+		$asset['dependencies'],
+		VK_BLOCKS_VERSION,
+		true
+	);
+
+	register_block_type(
+		__DIR__,
+		array(
+			'style'         => 'vk-blocks/spacer',
+			'editor_style'  => 'vk-blocks-build-editor-css',
+			'editor_script' => 'vk-blocks-build-js',
+		)
+	);
 }
+add_action( 'init', 'vk_blocks_register_block_spacer', 99 );
 
 /**
  * スペーサーのサイズ（数値）を取得する関数
@@ -127,7 +145,7 @@ function vk_blocks_get_spacer_size_style_all( $options ) {
 
 		if ( vk_blocks_is_size_print( $options, 'mobile' ) ) {
 			$dynamic_css         .= '
-			@media (max-width: 576px) { 
+			@media (max-width: 576px) {
 				:root{';
 					$dynamic_css .= esc_attr( vk_blocks_get_spacer_size_style( $options, 'sm', 'mobile', $unit ) );
 					$dynamic_css .= esc_attr( vk_blocks_get_spacer_size_style( $options, 'md', 'mobile', $unit ) );
@@ -138,7 +156,7 @@ function vk_blocks_get_spacer_size_style_all( $options ) {
 		}
 		if ( vk_blocks_is_size_print( $options, 'tablet' ) ) {
 			$dynamic_css         .= '
-			@media (min-width: 577px) and (max-width: 768px) { 
+			@media (min-width: 577px) and (max-width: 768px) {
 				:root{';
 					$dynamic_css .= esc_attr( vk_blocks_get_spacer_size_style( $options, 'sm', 'tablet', $unit ) );
 					$dynamic_css .= esc_attr( vk_blocks_get_spacer_size_style( $options, 'md', 'tablet', $unit ) );
@@ -149,7 +167,7 @@ function vk_blocks_get_spacer_size_style_all( $options ) {
 		}
 		if ( vk_blocks_is_size_print( $options, 'pc' ) ) {
 			$dynamic_css         .= '
-			@media (min-width: 769px) { 
+			@media (min-width: 769px) {
 				:root{';
 					$dynamic_css .= esc_attr( vk_blocks_get_spacer_size_style( $options, 'sm', 'pc', $unit ) );
 					$dynamic_css .= esc_attr( vk_blocks_get_spacer_size_style( $options, 'md', 'pc', $unit ) );

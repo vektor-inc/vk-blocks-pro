@@ -3,7 +3,6 @@
  *
  */
 import { ReactComponent as Icon } from './icon.svg';
-import { __ } from '@wordpress/i18n';
 import { iconUser, title, baseColor } from '@vkblocks/utils/example-data';
 
 import deprecated from './deprecated/';
@@ -17,7 +16,6 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-	title: __('Heading', 'vk-blocks'),
 	icon: <Icon />,
 	category: 'vk-blocks-cat',
 	example: {

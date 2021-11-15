@@ -3,7 +3,6 @@
  *
  */
 import { ReactComponent as Icon } from './icon.svg';
-import { __ } from '@wordpress/i18n';
 
 import deprecated from './deprecated/';
 import edit from './edit';
@@ -15,7 +14,6 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-	title: __('Slider Item', 'vk-blocks'),
 	icon: <Icon />,
 	edit,
 	save,

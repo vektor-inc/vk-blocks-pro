@@ -3,7 +3,7 @@
  * Plugin Name: VK Blocks Pro
  * Plugin URI: https://github.com/vektor-inc/vk-blocks
  * Description: This is a plugin that extends Gutenberg's blocks.
- * Version: 1.19.1
+ * Version: 1.20.0
  * Requires at least: 5.7
  * Author: Vektor,Inc.
  * Author URI: https://vektor-inc.co.jp
@@ -16,6 +16,11 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+// Set plugin dir path.
+define( 'VK_BLOCKS_DIR_PATH', plugin_dir_path( __FILE__ ) );
+// Set Plugin Dir URL
+define( 'VK_BLOCKS_DIR_URL', plugin_dir_url( __FILE__ ) );
 
 /* function_exists は VK Blocks 無料版の無効化が正常に動作しなかった場合のフォールバック */
 if ( ! function_exists( 'vk_blocks_get_version' ) ) {

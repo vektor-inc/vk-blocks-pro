@@ -110,6 +110,9 @@ class Vk_Blocks_PostList {
 	 * @param array $attributes attributes.
 	 */
 	public static function get_loop_query( $attributes ) {
+
+		$attributes = apply_filters( 'vk_blocks_post_list_loop_attributes', $attributes );
+
 		$is_checked_post_type = json_decode( $attributes['isCheckedPostType'], true );
 
 		$is_checked_terms = json_decode( $attributes['isCheckedTerms'], true );
@@ -127,10 +130,17 @@ class Vk_Blocks_PostList {
 			$offset = intval( $attributes['offset'] );
 		}
 
+		if ( ! empty( $attributes['paginationDisplay'] ) ) {
+			global $paged;
+			$loop_paged = $paged;
+		} else {
+			$loop_paged = 1;
+		}
+
 		$args = array(
 			'post_type'      => $is_checked_post_type,
 			'tax_query'      => self::format_terms( $is_checked_terms ),
-			'paged'          => 1,
+			'paged'          => $loop_paged,
 			// 0で全件取得
 			'posts_per_page' => intval( $attributes['numberPosts'] ),
 			'order'          => $attributes['order'],

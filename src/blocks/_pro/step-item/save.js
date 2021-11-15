@@ -27,8 +27,7 @@ export default function save(props) {
 			styleClass += ` has-text-color`;
 			if (isHexColor(color)) {
 				inlineStyle = { color: `${color}` };
-			}
-			else {
+			} else {
 				styleClass += ` has-${color}-color`;
 			}
 		}

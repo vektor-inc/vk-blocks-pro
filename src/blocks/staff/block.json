@@ -2,6 +2,9 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/staff",
 	"category": "vk-blocks-cat",
+    "title": "Staff",
+    "description": "Used for staff introduction, company introduction, school introduction, menu, etc.",
+    "textdomain": "vk-blocks",
 	"attributes": {
 		"vk_staff_text_name": {
             "type": "string",
@@ -69,8 +72,6 @@
             "default": "0"
         }
     },
-    "description": "Used for staff introduction, company introduction, school introduction, menu, etc.",
-    "textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

@@ -3,39 +3,27 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/_pro/accordion-target/index.js:16
-msgid "Accordion Target"
-msgstr ""
-
-#: src/blocks/_pro/accordion-trigger/index.js:16
-msgid "Accordion Trigger"
-msgstr ""
-
-#: src/blocks/_pro/accordion/index.js:18
-msgid "Accordion"
-msgstr ""
-
-#: src/blocks/_pro/accordion/index.js:23
+#: src/blocks/_pro/accordion/index.js:22
 msgid "No background color"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:28
+#: src/blocks/_pro/accordion/index.js:27
 msgid "No background color / Border"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:32
+#: src/blocks/_pro/accordion/index.js:31
 msgid "Background color"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:36
+#: src/blocks/_pro/accordion/index.js:35
 msgid "Background color / Border"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:40
+#: src/blocks/_pro/accordion/index.js:39
 msgid "Background color / Rounded "
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:44
+#: src/blocks/_pro/accordion/index.js:43
 msgid "Background color / Rounded / Border"
 msgstr ""
 
@@ -60,8 +48,8 @@ msgstr ""
 #: src/blocks/_pro/slider/edit.js:193
 #: src/blocks/balloon/edit.js:276
 #: src/blocks/button/edit.js:220
-#: src/blocks/faq/index.js:27
-#: src/blocks/faq2/index.js:22
+#: src/blocks/faq/index.js:26
+#: src/blocks/faq2/index.js:21
 #: src/extensions/common/inline-font-size/index.js:56
 msgid "Normal"
 msgstr ""
@@ -131,14 +119,6 @@ msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:96
 msgid "Slow"
-msgstr ""
-
-#: src/blocks/_pro/animation/index.js:20
-msgid "Animation"
-msgstr ""
-
-#: src/blocks/_pro/button-outer/index.js:18
-msgid "Button Outer"
 msgstr ""
 
 #: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:149
@@ -213,10 +193,6 @@ msgstr ""
 msgid "https://example.com"
 msgstr ""
 
-#: src/blocks/_pro/card-item/index.js:18
-msgid "Card Item"
-msgstr ""
-
 #: src/blocks/_pro/card/edit.js:119
 #: src/components/display-items-control/index.js:28
 msgid "Display item"
@@ -236,7 +212,6 @@ msgid "Image"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:156
-#: src/blocks/button/index.js:22
 #: src/components/display-items-control/index.js:78
 msgid "Button"
 msgstr ""
@@ -267,11 +242,6 @@ msgstr ""
 msgid "Slide Height for each device."
 msgstr ""
 
-#: src/blocks/_pro/card/index.js:25
-#: src/components/column-layout-control/index.js:26
-msgid "Card"
-msgstr ""
-
 #: src/blocks/_pro/child-page/edit.js:27
 msgid "Current page"
 msgstr ""
@@ -288,10 +258,6 @@ msgstr ""
 #: src/blocks/_pro/child-page/edit.js:82
 #: src/blocks/_pro/post-list/edit.js:288
 msgid "Ignore this post"
-msgstr ""
-
-#: src/blocks/_pro/child-page/index.js:18
-msgid "Child page list"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:106
@@ -364,10 +330,6 @@ msgstr ""
 msgid "Background Color"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/index.js:18
-msgid "Grid Column Item"
-msgstr ""
-
 #: src/blocks/_pro/grid-column/edit.js:53
 msgid "Layout Columns"
 msgstr ""
@@ -378,10 +340,6 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column/edit.js:63
 msgid "Margin Bottom"
-msgstr ""
-
-#: src/blocks/_pro/grid-column/index.js:17
-msgid "Grid Column"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/deprecated/0.0.0/component.js:55
@@ -453,10 +411,6 @@ msgstr ""
 msgid "Link URL:"
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/index.js:19
-msgid "Icon Card Item"
-msgstr ""
-
 #: src/blocks/_pro/icon-card/edit.js:65
 msgid "Columns"
 msgstr ""
@@ -468,10 +422,6 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card/edit.js:83
 msgid "Text"
-msgstr ""
-
-#: src/blocks/_pro/icon-card/index.js:20
-msgid "Icon Card"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:182
@@ -708,10 +658,6 @@ msgstr ""
 msgid "Unit Type"
 msgstr ""
 
-#: src/blocks/_pro/outer/index.js:20
-msgid "Outer"
-msgstr ""
-
 #: src/blocks/_pro/post-list/edit.js:174
 #. Filter by %s
 msgid "Filter by %s"
@@ -757,10 +703,6 @@ msgstr ""
 msgid "offset"
 msgstr ""
 
-#: src/blocks/_pro/post-list/index.js:20
-msgid "Post list"
-msgstr ""
-
 #: src/blocks/_pro/select-post-list-item/edit.js:102
 msgid "Submit"
 msgstr ""
@@ -776,14 +718,6 @@ msgstr ""
 
 #: src/blocks/_pro/select-post-list-item/edit.js:67
 msgid "Input Internal Post URL"
-msgstr ""
-
-#: src/blocks/_pro/select-post-list-item/index.js:20
-msgid "Selected Post List Item"
-msgstr ""
-
-#: src/blocks/_pro/select-post-list/index.js:21
-msgid "Selected Post List"
 msgstr ""
 
 #: src/blocks/_pro/slider-item/edit.js:111
@@ -812,10 +746,6 @@ msgstr ""
 
 #: src/blocks/_pro/slider-item/edit.js:96
 msgid "Remove padding from the Slider area"
-msgstr ""
-
-#: src/blocks/_pro/slider-item/index.js:18
-msgid "Slider Item"
 msgstr ""
 
 #: src/blocks/_pro/slider/edit.js:106
@@ -912,10 +842,6 @@ msgstr ""
 msgid "Bottom on Mobile device"
 msgstr ""
 
-#: src/blocks/_pro/slider/index.js:21
-msgid "Slider"
-msgstr ""
-
 #: src/blocks/_pro/step-item/edit.js:54
 msgid "Step Mark"
 msgstr ""
@@ -951,21 +877,12 @@ msgstr ""
 msgid "Outlined"
 msgstr ""
 
-#: src/blocks/_pro/step-item/index.js:18
-msgid "Step Item"
-msgstr ""
-
 #: src/blocks/_pro/step/edit.js:38
 msgid "First Dot Number"
 msgstr ""
 
-#: src/blocks/_pro/step/index.js:19
-msgid "Step"
-msgstr ""
-
 #: src/blocks/_pro/table-of-contents-new/deprecated/0.59.1/save.js:19
 #: src/blocks/_pro/table-of-contents-new/edit.js:178
-#: src/blocks/_pro/table-of-contents-new/index.js:17
 #: src/blocks/_pro/table-of-contents-new/save.js:16
 msgid "Table of Contents"
 msgstr ""
@@ -1005,14 +922,6 @@ msgstr ""
 msgid "label"
 msgstr ""
 
-#: src/blocks/_pro/timeline-item/index.js:18
-msgid "Timeline Item"
-msgstr ""
-
-#: src/blocks/_pro/timeline/index.js:19
-msgid "Timeline"
-msgstr ""
-
 #: src/blocks/alert/edit.js:19
 #: src/blocks/heading/edit.js:219
 msgid "Style Settings"
@@ -1044,10 +953,6 @@ msgstr ""
 #: src/blocks/pr-content/edit.js:173
 #: src/extensions/core/group/style.js:146
 msgid "Danger"
-msgstr ""
-
-#: src/blocks/alert/index.js:19
-msgid "Alert"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:125
@@ -1171,10 +1076,6 @@ msgstr ""
 msgid "Icon Name"
 msgstr ""
 
-#: src/blocks/balloon/index.js:24
-msgid "Ballon"
-msgstr ""
-
 #: src/blocks/border-box/deprecated/0.0.0/save.js:24
 #: src/blocks/border-box/deprecated/0.0.1/save.js:25
 #: src/blocks/border-box/edit.js:25
@@ -1190,7 +1091,6 @@ msgid "White"
 msgstr ""
 
 #: src/blocks/border-box/edit.js:119
-#: src/blocks/icon/index.js:18
 #: src/utils/font-awesome-new.js:14
 msgid "Icon"
 msgstr ""
@@ -1234,31 +1134,27 @@ msgstr ""
 msgid "Black"
 msgstr ""
 
-#: src/blocks/border-box/index.js:19
-msgid "Border Box"
-msgstr ""
-
-#: src/blocks/border-box/index.js:40
+#: src/blocks/border-box/index.js:39
 msgid "Solid Angle Tab"
 msgstr ""
 
-#: src/blocks/border-box/index.js:45
+#: src/blocks/border-box/index.js:44
 msgid "Solid Round Tab"
 msgstr ""
 
-#: src/blocks/border-box/index.js:49
+#: src/blocks/border-box/index.js:48
 msgid "Solid Angle Banner"
 msgstr ""
 
-#: src/blocks/border-box/index.js:53
+#: src/blocks/border-box/index.js:52
 msgid "Solid Angle Onborder"
 msgstr ""
 
-#: src/blocks/border-box/index.js:57
+#: src/blocks/border-box/index.js:56
 msgid "Solid Angle Inner"
 msgstr ""
 
-#: src/blocks/border-box/index.js:61
+#: src/blocks/border-box/index.js:60
 msgid "Solid Angle iconFeature"
 msgstr ""
 
@@ -1409,50 +1305,34 @@ msgstr ""
 msgid "Please enter a question."
 msgstr ""
 
-#: src/blocks/faq/index.js:22
-msgid "Classic FAQ"
-msgstr ""
-
-#: src/blocks/faq/index.js:32
-#: src/blocks/faq2/index.js:27
+#: src/blocks/faq/index.js:31
+#: src/blocks/faq2/index.js:26
 msgid "Bgfill Circle"
 msgstr ""
 
-#: src/blocks/faq/index.js:36
-#: src/blocks/faq2/index.js:31
+#: src/blocks/faq/index.js:35
+#: src/blocks/faq2/index.js:30
 msgid "Bgfill Square"
 msgstr ""
 
-#: src/blocks/faq/index.js:40
-#: src/blocks/faq2/index.js:35
+#: src/blocks/faq/index.js:39
+#: src/blocks/faq2/index.js:34
 msgid "Bgfill Rounded"
 msgstr ""
 
-#: src/blocks/faq/index.js:44
-#: src/blocks/faq2/index.js:39
+#: src/blocks/faq/index.js:43
+#: src/blocks/faq2/index.js:38
 msgid "Border Circle"
 msgstr ""
 
-#: src/blocks/faq/index.js:48
-#: src/blocks/faq2/index.js:43
+#: src/blocks/faq/index.js:47
+#: src/blocks/faq2/index.js:42
 msgid "Border Square"
 msgstr ""
 
-#: src/blocks/faq/index.js:52
-#: src/blocks/faq2/index.js:47
+#: src/blocks/faq/index.js:51
+#: src/blocks/faq2/index.js:46
 msgid "Border Rounded"
-msgstr ""
-
-#: src/blocks/faq2-a/index.js:17
-msgid "FAQ Answer"
-msgstr ""
-
-#: src/blocks/faq2-q/index.js:17
-msgid "FAQ Question"
-msgstr ""
-
-#: src/blocks/faq2/index.js:17
-msgid "New FAQ"
 msgstr ""
 
 #: src/blocks/flow/edit.js:21
@@ -1473,10 +1353,6 @@ msgstr ""
 
 #: src/blocks/flow/edit.js:62
 msgid "Input content"
-msgstr ""
-
-#: src/blocks/flow/index.js:19
-msgid "Flow"
 msgstr ""
 
 #: src/blocks/heading/deprecated/0.24.1/component.js:117
@@ -1561,10 +1437,6 @@ msgstr ""
 msgid "Heading %d"
 msgstr ""
 
-#: src/blocks/heading/index.js:20
-msgid "Heading"
-msgstr ""
-
 #: src/blocks/icon-outer/edit.js:176
 #: src/blocks/icon/edit.js:165
 msgid "Reset"
@@ -1589,10 +1461,6 @@ msgstr ""
 msgid "Size"
 msgstr ""
 
-#: src/blocks/icon-outer/index.js:16
-msgid "Icon Outer"
-msgstr ""
-
 #: src/blocks/icon/edit.js:235
 msgid "Icon Setting"
 msgstr ""
@@ -1613,10 +1481,6 @@ msgstr ""
 
 #: src/blocks/page-content/edit.js:64
 msgid "Select Page"
-msgstr ""
-
-#: src/blocks/page-content/index.js:12
-msgid "Page Content"
 msgstr ""
 
 #: src/blocks/pr-blocks/edit.js:101
@@ -1661,10 +1525,6 @@ msgstr ""
 
 #: src/blocks/pr-blocks/edit.js:320
 msgid "PR Image 3"
-msgstr ""
-
-#: src/blocks/pr-blocks/index.js:24
-msgid "PR Blocks"
 msgstr ""
 
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:152
@@ -1734,10 +1594,6 @@ msgstr ""
 msgid "Image Border Color"
 msgstr ""
 
-#: src/blocks/pr-content/index.js:26
-msgid "PR Content"
-msgstr ""
-
 #: src/blocks/spacer/advanced-spacer-control.js:15
 msgid "height"
 msgstr ""
@@ -1768,10 +1624,6 @@ msgstr ""
 
 #: src/blocks/spacer/edit.js:95
 msgid "Medium"
-msgstr ""
-
-#: src/blocks/spacer/index.js:24
-msgid "Responsive Spacer"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:50
@@ -1839,12 +1691,12 @@ msgstr ""
 msgid "Image left"
 msgstr ""
 
-#: src/blocks/staff/index.js:33
-msgid "Staff"
-msgstr ""
-
 #: src/components/column-layout-control/index.js:20
 msgid "Card (Image Round)"
+msgstr ""
+
+#: src/components/column-layout-control/index.js:26
+msgid "Card"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:30

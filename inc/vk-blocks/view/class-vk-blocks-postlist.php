@@ -110,7 +110,6 @@ class Vk_Blocks_PostList {
 	 * @param array $attributes attributes.
 	 */
 	public static function get_loop_query( $attributes ) {
-
 		$attributes = apply_filters( 'vk_blocks_post_list_loop_attributes', $attributes );
 
 		$is_checked_post_type = json_decode( $attributes['isCheckedPostType'], true );
@@ -158,7 +157,7 @@ class Vk_Blocks_PostList {
 	 */
 	public static function get_loop_query_child( $attributes ) {
 
-		// ParentIdを指定
+		// ParentIdを指定.
 		if ( isset( $attributes['selectId'] ) && 'false' !== $attributes['selectId'] ) {
 			$select_id = ( $attributes['selectId'] > 0 ) ? $attributes['selectId'] : get_the_ID();
 

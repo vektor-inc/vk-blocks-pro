@@ -27,7 +27,8 @@ function vk_blocks_register_block_faq() {
 			'vk-blocks/faq-script',
 			VK_BLOCKS_DIR_URL . 'inc/vk-blocks/build/vk-faq2.min.js',
 			array(),
-			VK_BLOCKS_VERSION
+			VK_BLOCKS_VERSION,
+			true
 		);
 	}
 

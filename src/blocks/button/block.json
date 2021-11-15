@@ -31,6 +31,9 @@
 			"type": "string",
 			"default": "primary"
 		},
+		"buttonTextColorCustom": {
+			"type": "string"
+		},
 		"buttonColorCustom": {
 			"type": "string"
 		},
@@ -45,6 +48,9 @@
 			"type": "string"
 		},
 		"clientId": {
+			"type": "string"
+		},
+		"blockId": {
 			"type": "string"
 		}
 	},

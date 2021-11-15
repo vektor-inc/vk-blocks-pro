@@ -13,11 +13,11 @@
  * VK Blocks load bootstrap
  */
 function vk_blocks_is_load_bootstrap() {
+	$option = get_option( 'vk_blocks_load_bootstrap' );
 	if ( vk_blocks_is_lightning() ) {
 		return false;
 	}
-
-	if ( get_option( 'vk_blocks_load_bootstrap', true ) ) {
+	if ( ! empty( $option ) ) {
 		return true;
 	} else {
 		return false;

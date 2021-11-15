@@ -40,6 +40,7 @@ class VK_Blocks_Block_Loader {
 		array( 'name' => 'accordion-target',      'is_pro' =>  true  ),
 		array( 'name' => 'accordion-trigger',     'is_pro' =>  true  ),
 		array( 'name' => 'animation',             'is_pro' =>  true  ),
+		array( 'name' => 'button-outer',          'is_pro' =>  true  ),
 		array( 'name' => 'card',                  'is_pro' =>  true  ),
 		array( 'name' => 'card-item',             'is_pro' =>  true  ),
 		array( 'name' => 'child-page',            'is_pro' =>  true  ),
@@ -175,7 +176,7 @@ class VK_Blocks_Block_Loader {
 
 		if ( function_exists( 'register_block_type' ) ) {
 			foreach ( $this->get_block_names() as $block_name ) {
-				$this->load_blocks( $block_name );
+				$this->load_block( $block_name );
 			}
 		}
 	}
@@ -274,7 +275,7 @@ class VK_Blocks_Block_Loader {
 	 * @param string $block_name 読み込むブロック名.
 	 * @return void
 	 */
-	public function load_blocks( $block_name ) {
+	public function load_block( $block_name ) {
 		$block_info = $this->get_block_info( $block_name );
 
 		$require_file_path = VK_BLOCKS_SRC_PATH . '/blocks/' . $block_name . '/index.php';

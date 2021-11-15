@@ -26,14 +26,13 @@ export default function StepItemEdit(props) {
 
 	const TEMPLATE = [['core/heading', { level: 4 }], ['core/paragraph']];
 
-
 	if (style === 'solid') {
 		styleClass = ' vk_step_item_style-default';
 		if (color !== undefined) {
 			styleClass += ` has-background`;
 			if (isHexColor(color)) {
 				inlineStyle = { backgroundColor: `${color}` };
-			}else{
+			} else {
 				styleClass += ` has-${color}-background-color`;
 			}
 		}
@@ -41,7 +40,12 @@ export default function StepItemEdit(props) {
 		styleClass = ' vk_step_item_style-outlined';
 		if (color !== undefined) {
 			styleClass += ` has-text-color`;
-			inlineStyle = { color: `#C00` };
+			if (isHexColor(color)) {
+				inlineStyle = { color: `${color}` };
+			}
+			else{
+				styleClass += ` has-${color}-color`;
+			}
 		}
 	}
 

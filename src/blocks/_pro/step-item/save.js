@@ -17,15 +17,20 @@ export default function save(props) {
 			styleClass += ` has-background`;
 			if (isHexColor(color)) {
 				inlineStyle = { backgroundColor: `${color}` };
-			}
-			else{
+			} else {
 				styleClass += ` has-${color}-background-color`;
 			}
 		}
 	} else if (style === 'outlined') {
 		styleClass = ' vk_step_item_style-outlined';
 		if (color !== undefined) {
-			inlineStyle = { border: `2px solid ${color}`, color: `${color}` };
+			styleClass += ` has-text-color`;
+			if (isHexColor(color)) {
+				inlineStyle = { color: `${color}` };
+			}
+			else {
+				styleClass += ` has-${color}-color`;
+			}
 		}
 	}
 

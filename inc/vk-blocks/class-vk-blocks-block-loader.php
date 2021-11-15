@@ -68,11 +68,9 @@ class VK_Blocks_Block_Loader {
 	 * @var array
 	 */
 	private $block_style_names = array(
-		// array( 'name' => 'group'   ),
 		array( 'name' => 'heading' ),
-		// array( 'name' => 'image'   ),
-		// array( 'name' => 'list'    ),
-		// array( 'name' => 'table'   ),
+		array( 'name' => 'image' ),
+		array( 'name' => 'table' ),
 	);
 
 	/**
@@ -278,7 +276,7 @@ class VK_Blocks_Block_Loader {
 	 * @return bool
 	 */
 	public static function should_load_separate_assets() {
-		return apply_filters( 'vk_blocks_should_load_separate_assets', false );
+		return apply_filters( 'vk_blocks_should_load_separate_assets', true );
 	}
 
 	/**

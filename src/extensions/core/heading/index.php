@@ -32,9 +32,11 @@ function vk_blocks_register_block_style_core_heading() {
 			'core/heading',
 			array(
 				'name'         => 'vk-heading-default',
+				'label'        => 'Default',
 				'style_handle' => 'vk-blocks/core-heading',
 			)
 		);
 	}
 }
 add_action( 'init', 'vk_blocks_register_block_style_core_heading', 99 );
+

@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Timeline(Pro) ] cope with custom color palette
+
 = 1.20.0 =
 [ Other ][ All ] Refactoring all blocks.
 

@@ -50,6 +50,7 @@ done
 sed -i "s/import vkblocksPro from '\.\/bundle-pro'/const vkblocksPro = \[\]/g" src/blocks/bundle.js
 # ブロックをビルド
 npm install
+composer install --no-dev
 npm run build:free
 # 無料版のmasterブランチにpush
 git add .

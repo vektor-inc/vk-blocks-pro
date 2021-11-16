@@ -4,3 +4,70 @@
 	margin-right: auto;
 	max-width: 70%;
 }
+
+$vk-color-secondary: #6c757d;
+$vk-color-success: #28a745;
+$vk-color-info:#17a2b8;
+$vk-color-warning:#ffc107;
+$vk-color-danger: #dc3545;
+$vk-color-light:#f8f9fa;
+$vk-color-dark:#343a40;
+
+.vk_button{ // ← V2以降に編集画面用CSSファイルに移植すること
+	.btn.has-vk-color-primary-background-color {
+		background-color: var(--vk-color-primary);
+	}
+	.btn.has-vk-color-secondary-background-color {
+		background-color: $vk-color-secondary;
+	}
+	.btn.has-vk-color-success-background-color {
+		background-color: $vk-color-success;
+	}
+	.btn.has-vk-color-info-background-color {
+		background-color: $vk-color-info;
+	}
+	.btn.has-vk-color-warning-background-color {
+		background-color: $vk-color-warning;
+	}
+	.btn.has-vk-color-danger-background-color {
+		background-color: $vk-color-danger;
+	}
+	.btn.has-vk-color-light-background-color {
+		background-color: $vk-color-light;
+	}
+	.btn.has-vk-color-dark-background-color {
+		background-color: $vk-color-dark;
+	}
+	.btn.has-vk-color-primary-color {
+		color: var(--vk-color-primary);
+	}
+	.btn.has-vk-color-secondary-color {
+		color: $vk-color-secondary;
+	}
+	.btn.has-vk-color-success-color {
+		color: $vk-color-success;
+	}
+	.btn.has-vk-color-info-color {
+		color: $vk-color-info;
+	}
+	.btn.has-vk-color-warning-color {
+		color: $vk-color-warning;
+	}
+	.btn.has-vk-color-danger-color {
+		color: $vk-color-danger;
+	}
+	.btn.has-vk-color-light-color {
+		color: $vk-color-light;
+	}
+	.btn.has-vk-color-dark-color {
+		color: $vk-color-dark;
+	}
+	.btn.has-background:not(.has-text-color) {
+		color: #fff;
+		/* 白っぽい色に対する対策 */
+		&.has-vk-color-light-background-color,
+		&.has-white-background-color {
+			color:#212529;
+		}
+	}
+}

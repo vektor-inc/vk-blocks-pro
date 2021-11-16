@@ -63,10 +63,12 @@ export default function LayoutColumnItemEdit(props) {
 						label={__('Block width', 'vk-blocks')}
 						value={width}
 					/>
+				</PanelBody>
+				<PanelBody title={__('Margin Setting', 'vk-blocks')}>
 					<BoxControl
 						className={blockProps.className + '-boxcontrol'}
 						values={margin_pc}
-						label={__('Margin(PC)')}
+						label={__('PC')}
 						onChange={(nextValues) =>
 							setAttributes({ margin_pc: nextValues })
 						}
@@ -74,7 +76,7 @@ export default function LayoutColumnItemEdit(props) {
 					<BoxControl
 						className={blockProps.className + '-boxcontrol'}
 						values={margin_tb}
-						label={__('Margin(Tablet)')}
+						label={__('Tablet')}
 						onChange={(nextValues) =>
 							setAttributes({ margin_tb: nextValues })
 						}
@@ -82,7 +84,7 @@ export default function LayoutColumnItemEdit(props) {
 					<BoxControl
 						className={blockProps.className + '-boxcontrol'}
 						values={margin_sp}
-						label={__('Margin(Mobile)')}
+						label={__('Mobile')}
 						onChange={(nextValues) =>
 							setAttributes({ margin_sp: nextValues })
 						}

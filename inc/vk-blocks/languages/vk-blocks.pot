@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-11-09T04:59:05+00:00\n"
+"POT-Creation-Date: 2021-11-12T07:22:16+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -642,6 +642,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:566
 #: src/blocks/_pro/slider/edit.js:238
+#: src/blocks/layout-column-item/edit.js:89
 #: src/components/advanced-viewport-control/index.js:39
 #: inc/vk-blocks/admin/admin-margin.php:62
 msgid "Mobile"
@@ -649,6 +650,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:581
 #: src/blocks/_pro/slider/edit.js:227
+#: src/blocks/layout-column-item/edit.js:81
 #: src/components/advanced-viewport-control/index.js:31
 #: inc/vk-blocks/admin/admin-margin.php:61
 msgid "Tablet"
@@ -656,6 +658,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:596
 #: src/blocks/_pro/slider/edit.js:216
+#: src/blocks/layout-column-item/edit.js:73
 #: src/components/advanced-viewport-control/index.js:25
 #: inc/vk-blocks/admin/admin-margin.php:60
 msgid "PC"
@@ -1372,6 +1375,7 @@ msgid "Plain"
 msgstr ""
 
 #: src/blocks/heading/edit.js:238
+#: src/blocks/layout-column-item/edit.js:68
 msgid "Margin Setting"
 msgstr ""
 
@@ -1454,32 +1458,20 @@ msgid "Layout Column item Setting"
 msgstr ""
 
 #: src/blocks/layout-column-item/edit.js:63
-#: src/blocks/layout-column/edit.js:90
+#: src/blocks/layout-column/edit.js:84
 msgid "Block width"
-msgstr ""
-
-#: src/blocks/layout-column-item/edit.js:69
-msgid "Margin(PC)"
-msgstr ""
-
-#: src/blocks/layout-column-item/edit.js:77
-msgid "Margin(Tablet)"
-msgstr ""
-
-#: src/blocks/layout-column-item/edit.js:85
-msgid "Margin(Mobile)"
 msgstr ""
 
 #: src/blocks/layout-column-item/index.js:17
 msgid "Layout Column Item"
 msgstr ""
 
-#: src/blocks/layout-column/edit.js:105
-msgid "breakPoint(px)"
+#: src/blocks/layout-column/edit.js:79
+msgid "Layout Column Setting"
 msgstr ""
 
-#: src/blocks/layout-column/edit.js:85
-msgid "Layout Column Setting"
+#: src/blocks/layout-column/edit.js:99
+msgid "breakPoint(px)"
 msgstr ""
 
 #: src/blocks/layout-column/index.js:17

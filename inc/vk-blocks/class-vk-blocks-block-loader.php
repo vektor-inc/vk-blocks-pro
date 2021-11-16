@@ -147,7 +147,7 @@ class VK_Blocks_Block_Loader {
 
 		// CSSを登録.
 		if ( self::should_load_separate_assets() && ! is_admin() ) {
-			// ハンドル名vk-blocks-build-cssはwp_add_inline_styleで指定している箇所があるので登録する
+			// ハンドル名vk-blocks-build-cssはwp_add_inline_styleで使用している箇所があるので登録する
 			wp_register_style( 'vk-blocks-build-css', false, array(), VK_BLOCKS_VERSION );
 			// src/utils内の内の共通cssの読み込み
 			wp_register_style( 'vk-blocks-utils-common-css', VK_BLOCKS_DIR_URL . 'build/utils/common.css', array(), VK_BLOCKS_VERSION );
@@ -263,7 +263,7 @@ class VK_Blocks_Block_Loader {
 	 * @return bool
 	 */
 	public static function should_load_separate_assets() {
-		return apply_filters( 'vk_blocks_should_load_separate_assets', true );
+		return apply_filters( 'vk_blocks_should_load_separate_assets', false );
 	}
 
 	/**

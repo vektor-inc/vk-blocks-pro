@@ -19,7 +19,7 @@ export default function save({ attributes }) {
 			}
 		}
 	} else if (style === 'outlined') {
-		styleClass = ' vk_timeline_item_style-outlined';
+		styleClass = ' vk_timeline_item_style-outlined';		
 		if (color !== undefined) {
 			styleClass += ` has-text-color`;
 			if (isHexColor(color)) {

@@ -276,7 +276,7 @@ class VK_Blocks_Block_Loader {
 	 * @return bool
 	 */
 	public static function should_load_separate_assets() {
-		return apply_filters( 'vk_blocks_should_load_separate_assets', true );
+		return apply_filters( 'vk_blocks_should_load_separate_assets', false );
 	}
 
 	/**

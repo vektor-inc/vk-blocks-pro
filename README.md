@@ -39,6 +39,27 @@ npm run build:dev
 bin/dist_kuru.sh
 ```
 
+### 分割リファクタリング後のブロック
+
+`[block-name]` のところは各ブロック名（dirname)を入力します
+ex. `npm run build:block --block=alert`
+
+```
+//  Block毎にBuild
+npm run build:block --block=[block-name]
+//  Block毎にBuild（Proブロック）
+npm run build:blockpro --block=[block-name]
+// 全BlockをBuild
+npm run build:blocks
+
+//  Block毎にBuild　開発用（開発者ツールのconsoleでログが追いやすくなる）
+npm run build:block:dev --block=[block-name]
+//  Block毎にBuild（Proブロック）　開発用（開発者ツールのconsoleでログが追いやすくなる）
+npm run build:blockpro:dev --block=[block-name]
+// 全BlockをBuild　開発用（開発者ツールのconsoleでログが追いやすくなる）
+npm run build:blocks:dev
+```
+
 ## Watch
 ```
 // CSSの変更のみ監視
@@ -65,6 +86,9 @@ npm run phpunit
 ## pre-commit
 コミット時にphpのformat、phpcsのチェックと、lintが実行されます。
 エラーがある場合コミットできません。
+
+## develop branch
+develop ブランチに push すると自動でテストサーバー https://vk-block-test.vs4.nagoya/ にデプロイされます。
 
 ## デプロイ
 手順は[wiki](https://github.com/vektor-inc/vk-blocks-pro/wiki/%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4)を参考に

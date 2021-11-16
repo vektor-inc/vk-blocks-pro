@@ -1,6 +1,7 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/step",
+	"title": "Step",
 	"category": "vk-blocks-cat",
 	"attributes": {
 		"firstDotNum": {

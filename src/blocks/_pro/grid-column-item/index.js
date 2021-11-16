@@ -2,7 +2,6 @@
  * card-item block type
  *
  */
-import { __ } from '@wordpress/i18n';
 import { ReactComponent as Icon } from './icon.svg';
 
 import deprecated from './deprecated/';
@@ -15,7 +14,6 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-	title: __('Grid Column Item', 'vk-blocks'),
 	icon: <Icon />,
 	edit,
 	save,

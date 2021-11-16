@@ -1,6 +1,7 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/border-box",
+	"title": "Border Box",
 	"category": "vk-blocks-cat",
 	"attributes": {
 		"heading": {

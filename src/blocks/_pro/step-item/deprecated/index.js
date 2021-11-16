@@ -1,5 +1,5 @@
 /* eslint camelcase: 0 */
-import save1_19_1 from './1.19.1/save';
+import save1_20_0 from './1.20.0/save';
 import save0_60_1 from './0.60.1/save';
 import save0_0_2 from './0.0.2/save';
 import save0_0_1 from './0.0.1/save';
@@ -37,7 +37,7 @@ const deprecated = [
 				default: '',
 			},
 		},
-		save: save1_19_1,
+		save: save1_20_0,
 	},
 	{
 		attributes: {

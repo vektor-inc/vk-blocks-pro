@@ -95,7 +95,7 @@ class vkbLayoutColumnManager {
 	/**
 	 * メディアクエリを作成
 	 *
-	 * @param {string}   handle
+	 * @param {string} handle
 	 */
 	makeMediaQueries(handle) {
 		const mediaQuery = window.matchMedia(

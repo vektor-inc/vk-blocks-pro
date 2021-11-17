@@ -50,9 +50,9 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				'display_btn'                => false,
 				'image_default_url'          => false,
 				'overlay'                    => false,
-				'btn_text'                   => __( 'Read more', 'vk-blocks' ),
+				'btn_text'                   => __( 'Read more', 'vk_components_textdomain' ),
 				'btn_align'                  => 'text-right',
-				'new_text'                   => __( 'New!!', 'vk-blocks' ),
+				'new_text'                   => __( 'New!!', 'vk_components_textdomain' ),
 				'new_date'                   => 7,
 				'textlink'                   => true,
 				'class_outer'                => '',
@@ -149,17 +149,23 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 			$hidden_class = array();
 			if ( ! empty( $options['vkb_hidden'] ) ) {
 				array_push( $hidden_class, 'vk_hidden' );
-			} elseif ( ! empty( $options['vkb_hidden_xxl'] ) ) {
+			}
+			if ( ! empty( $options['vkb_hidden_xxl'] ) ) {
 				array_push( $hidden_class, 'vk_hidden-xxl' );
-			} elseif ( ! empty( $options['vkb_hidden_xl'] ) ) {
+			}
+			if ( ! empty( $options['vkb_hidden_xl'] ) || ! empty( $options['vkb_hidden_xl_v2'] ) ) {
 				array_push( $hidden_class, 'vk_hidden-xl' );
-			} elseif ( ! empty( $options['vkb_hidden_lg'] ) ) {
+			}
+			if ( ! empty( $options['vkb_hidden_lg'] ) ) {
 				array_push( $hidden_class, 'vk_hidden-lg' );
-			} elseif ( ! empty( $options['vkb_hidden_md'] ) ) {
+			}
+			if ( ! empty( $options['vkb_hidden_md'] ) ) {
 				array_push( $hidden_class, 'vk_hidden-md' );
-			} elseif ( ! empty( $options['vkb_hidden_sm'] ) ) {
+			}
+			if ( ! empty( $options['vkb_hidden_sm'] ) ) {
 				array_push( $hidden_class, 'vk_hidden-sm' );
-			} elseif ( ! empty( $options['vkb_hidden_xs'] ) ) {
+			}
+			if ( ! empty( $options['vkb_hidden_xs'] ) ) {
 				array_push( $hidden_class, 'vk_hidden-xs' );
 			}
 
@@ -235,10 +241,10 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 					'mid_size'           => 1,
 					'prev_text'          => '&laquo;',
 					'next_text'          => '&raquo;',
-					'screen_reader_text' => __( 'Posts navigation', 'vk-blocks' ),
-					'aria_label'         => __( 'Posts', 'vk-blocks' ),
+					'screen_reader_text' => __( 'Posts navigation', 'vk_components_textdomain' ),
+					'aria_label'         => __( 'Posts', 'vk_components_textdomain' ),
 					'class'              => 'pagination',
-					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'vk-blocks' ) . ' </span>',
+					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'vk_components_textdomain' ) . ' </span>',
 					'type'               => 'list',
 				)
 			);
@@ -668,27 +674,27 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 
 			$patterns = array(
 				'card'            => array(
-					'label'             => __( 'Card', 'vk-blocks' ),
+					'label'             => __( 'Card', 'vk_components_textdomain' ),
 					'class_posts_outer' => '',
 				),
 				'card-noborder'   => array(
-					'label'             => __( 'Card Noborder', 'vk-blocks' ),
+					'label'             => __( 'Card Noborder', 'vk_components_textdomain' ),
 					'class_posts_outer' => '',
 				),
 				'card-intext'     => array(
-					'label'             => __( 'Card Intext', 'vk-blocks' ),
+					'label'             => __( 'Card Intext', 'vk_components_textdomain' ),
 					'class_posts_outer' => '',
 				),
 				'card-horizontal' => array(
-					'label'             => __( 'Card Horizontal', 'vk-blocks' ),
+					'label'             => __( 'Card Horizontal', 'vk_components_textdomain' ),
 					'class_posts_outer' => '',
 				),
 				'media'           => array(
-					'label'             => __( 'Media', 'vk-blocks' ),
+					'label'             => __( 'Media', 'vk_components_textdomain' ),
 					'class_posts_outer' => 'media-outer',
 				),
 				'postListText'    => array(
-					'label'             => _x( 'Text 1 Column', 'post list type', 'vk-blocks' ),
+					'label'             => _x( 'Text 1 Column', 'post list type', 'vk_components_textdomain' ),
 					'class_posts_outer' => 'postListText-outer',
 				),
 			);

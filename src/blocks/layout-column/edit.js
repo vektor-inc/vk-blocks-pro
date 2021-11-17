@@ -28,8 +28,11 @@ export default function LayoutColumnEdit(props) {
 	let displayWidth = totalWidth;
 	let isGrid = true;
 
+	const isSidebarOpened = select('core/edit-post').isEditorSidebarOpened();
+	const editorBreakPoint = isSidebarOpened ? breakPoint + 280 : breakPoint;
+
 	let className = 'vk_layoutColumn';
-	const matches = useMediaQuery('(min-width:' + breakPoint + 'px)');
+	const matches = useMediaQuery('(min-width:' + editorBreakPoint + 'px)');
 	if (matches) {
 		className += ' vk_layoutColumn_grid';
 	} else {

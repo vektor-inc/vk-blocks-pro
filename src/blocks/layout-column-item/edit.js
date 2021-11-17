@@ -47,7 +47,6 @@ export default function LayoutColumnItemEdit(props) {
 		paddingBottom: paddingObject.bottom,
 		paddingLeft: paddingObject.left,
 	};
-	console.log(cStyle);
 
 	return (
 		<>

@@ -42,10 +42,10 @@ export default function LayoutColumnItemEdit(props) {
 
 	const cStyle = {
 		width: displayWidth,
-		marginTop: paddingObject.top,
-		marginRight: paddingObject.right,
-		marginBottom: paddingObject.bottom,
-		marginLeft: paddingObject.left,
+		paddingTop: paddingObject.top,
+		paddingRight: paddingObject.right,
+		paddingBottom: paddingObject.bottom,
+		paddingLeft: paddingObject.left,
 	};
 	console.log(cStyle);
 

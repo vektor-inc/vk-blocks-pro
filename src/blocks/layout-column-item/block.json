@@ -2,6 +2,9 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/layout-column-item",
 	"category": "vk-blocks-cat",
+	"parent": [
+		"vk-blocks/layout-column"
+	],
 	"attributes": {
 		"width": {
 			"type": "string",

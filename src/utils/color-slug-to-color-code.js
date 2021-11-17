@@ -16,8 +16,10 @@ export const colorSlugToColorCode = (color) => {
 		// titleColor の色コードを colorSet から探して色データを取得
 		const ColorValue = getColorObjectByAttributeValues(colorSet, color);
 
-		if (ColorValue) {
+		if (ColorValue.color !== undefined) {
 			colorCode = ColorValue.color;
+		} else {
+			colorCode = color;
 		}
 	}
 	return colorCode;

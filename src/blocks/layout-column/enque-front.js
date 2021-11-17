@@ -5,7 +5,7 @@ class vkbLayoutColumnManager {
 			func: (e) => {
 				if (e.matches) {
 					this.layoutColumnsItemIterator((layoutColumnItem) => {
-						layoutColumnItem.style.margin =
+						layoutColumnItem.style.padding =
 							layoutColumnItem.dataset.vkbmarginpc;
 					});
 				}
@@ -16,7 +16,7 @@ class vkbLayoutColumnManager {
 			func: (e) => {
 				if (e.matches) {
 					this.layoutColumnsItemIterator((layoutColumnItem) => {
-						layoutColumnItem.style.margin =
+						layoutColumnItem.style.padding =
 							layoutColumnItem.dataset.vkbmargintb;
 					});
 				}
@@ -27,7 +27,7 @@ class vkbLayoutColumnManager {
 			func: (e) => {
 				if (e.matches) {
 					this.layoutColumnsItemIterator((layoutColumnItem) => {
-						layoutColumnItem.style.margin =
+						layoutColumnItem.style.padding =
 							layoutColumnItem.dataset.vkbmarginsp;
 					});
 				}

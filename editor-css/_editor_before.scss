@@ -9,6 +9,7 @@
 .editor-block-list-item-vk-blocks-accordion:after,
 .editor-block-list-item-vk-blocks-slider:after,
 .editor-block-list-item-vk-blocks-animation:after,
+.editor-block-list-item-vk-blocks-button-outer:after,
 .editor-block-list-item-vk-blocks-card:after,
 .editor-block-list-item-vk-blocks-child-page:after,
 .editor-block-list-item-vk-blocks-timeline:after,
@@ -37,6 +38,14 @@
 .block-prop-title {
 	font-weight: bold;
 }
+
+// パネルの文字サイズがテーマなどの影響を受けるので上書き
+.components-panel {
+	h4 {
+		font-size:16px;
+	}
+}
+
 // カードなどで文字位置のalignのツールバーが文字の右に回り込んでしまうため指定
 .components-panel__body .components-base-control__label {
 	display:block;
@@ -103,6 +112,8 @@ button.image-button:not(.button-delete) {
 @import "./editor_before_icon";
 // アイコン横並び編集用CSS
 @import "./editor_before_icons";
+// ボタン横並び編集用CSS
+@import "./editor_before_button-outer";
 
 // VK Outer 編集パネル
 $color-danger: #dd3333;
@@ -348,7 +359,7 @@ $color-danger: #b52727;
 				margin:unset;
 				padding:unset;
 			}
-		
+
 		}
 	}
 
@@ -356,7 +367,7 @@ $color-danger: #b52727;
 
 // ↓↓↓↓↓↓↓↓ これがないと wp-group に width:auto; 指定などがあって負けてしまうので、
 // カードブロックなどが編集画面で崩れる
- 
+
 // .block-list-appender.wp-block はアイテム追加のインサーターのdiv
 .vk_posts .vk_posts-edit {
 	&-col-xs-2 .editor-block-list__block,

@@ -96,7 +96,7 @@ export default function LayoutColumnEdit(props) {
 							max={2000}
 							allowReset={true}
 							resetFallbackValue={900}
-							label={__('breakPoint(px)', 'vk-blocks')}
+							label={__('BreakPoint(px)', 'vk-blocks')}
 						/>
 					</div>
 				</PanelBody>

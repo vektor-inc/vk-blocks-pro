@@ -42,6 +42,7 @@ class VK_Blocks_Block_Loader {
 		array( 'name' => 'accordion-target',      'is_pro' =>  true  ),
 		array( 'name' => 'accordion-trigger',     'is_pro' =>  true  ),
 		array( 'name' => 'animation',             'is_pro' =>  true  ),
+		array( 'name' => 'button-outer',          'is_pro' =>  true  ),
 		array( 'name' => 'card',                  'is_pro' =>  true  ),
 		array( 'name' => 'card-item',             'is_pro' =>  true  ),
 		array( 'name' => 'child-page',            'is_pro' =>  true  ),

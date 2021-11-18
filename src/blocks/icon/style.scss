@@ -4,6 +4,11 @@
 /*-------------------------------------------*/
 /* .vk_icon
 /*-------------------------------------------*/
+.vk_icon {
+	@media screen and (max-width: 991.98px) {
+		margin-bottom: 1.5em;
+	}
+}
 .wp-block-vk-blocks-icon { //編集画面で負けるので先頭に追加
 	.vk_icon {
 		&_border {
@@ -40,6 +45,40 @@
 			color: #fff;
 		}
 	}
+
+	// old class before key-color START >>>
+	.vk_icon {
+		&_align {
+			&_center {
+				text-align: center;
+			}
+			&_right {
+				text-align: right;
+			}
+		}
+
+		&_border {
+			&_frame {
+				background-color: transparent;
+				border-width: 1px;
+				border-style: solid;
+			}
+		}
+	}
+
+	div:not(.is-style-outline):not(.is-style-noline) {
+		.vk_icon_border:not(.vk_icon_border_frame):not(.vk_icon_border_none) {
+			.vk_icon_font {
+				color: #fff;
+			}
+		}
+	}
+	// <<< END
+}
+
+
+.wp-block-vk-blocks-icon {
+
 }
 
 // デフォルトのカラー

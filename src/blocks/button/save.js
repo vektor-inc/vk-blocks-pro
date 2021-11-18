@@ -12,17 +12,22 @@ export default function save(props) {
 		buttonSize,
 		buttonType,
 		buttonColor,
+		buttonTextColorCustom,
 		buttonColorCustom,
 		buttonAlign,
 		fontAwesomeIconBefore,
 		fontAwesomeIconAfter,
-		clientId,
+		blockId,
 	} = attributes;
 
 	let containerClass = '';
 	// カスタムカラーの場合
-	if (buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) {
-		containerClass = `vk_button vk_button-color-custom vk_button-align-${buttonAlign} vk_button-${clientId}`;
+	if (
+		(buttonTextColorCustom !== undefined &&
+			isHexColor(buttonTextColorCustom)) ||
+		(buttonColorCustom !== undefined && isHexColor(buttonColorCustom))
+	) {
+		containerClass = `vk_button vk_button-color-custom vk_button-align-${buttonAlign} vk_button-${blockId}`;
 	} else {
 		containerClass = `vk_button vk_button-color-custom vk_button-align-${buttonAlign}`;
 	}
@@ -34,6 +39,7 @@ export default function save(props) {
 	return (
 		<div {...blockProps}>
 			<VKBButton
+				lbTextColorCustom={buttonTextColorCustom}
 				lbColorCustom={buttonColorCustom}
 				lbColor={buttonColor}
 				lbType={buttonType}

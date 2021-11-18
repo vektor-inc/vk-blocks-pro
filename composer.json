@@ -22,7 +22,8 @@
 		"wp-phpunit/wp-phpunit": "^5.4",
 		"dealerdirect/phpcodesniffer-composer-installer": "*",
 		"phpcompatibility/phpcompatibility-wp": "*",
-		"wp-coding-standards/wpcs": "*"
+		"wp-coding-standards/wpcs": "*",
+		"yoast/phpunit-polyfills": "^1.0"
 	},
 	"scripts": {
 		"format": "phpcbf --standard=./.phpcs.xml.dist --report-summary --report-source",

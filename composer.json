@@ -13,7 +13,7 @@
 		}
 	],
 	"require": {
-		"vektor-inc/vk-color-palette-manager": "^0.0.11"
+		"vektor-inc/vk-color-palette-manager": "^0.0.14"
 	},
 	"require-dev": {
 		"php": ">=7.2",

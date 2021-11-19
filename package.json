@@ -107,6 +107,6 @@
 		"react-html-parser": "^2.0.2",
 		"react-with-direction": "^1.4.0",
 		"rimraf": "^3.0.2",
-		"sass": "^1.43.4"
+		"sass": "1.32.12"
 	}
 }

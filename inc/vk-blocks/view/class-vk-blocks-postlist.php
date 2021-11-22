@@ -57,6 +57,7 @@ class Vk_Blocks_PostList {
 			'vkb_hidden'                 => $attributes['vkb_hidden'],
 			'vkb_hidden_xxl'             => $attributes['vkb_hidden_xxl'],
 			'vkb_hidden_xl'              => $attributes['vkb_hidden_xl'],
+			'vkb_hidden_xl_v2'           => $attributes['vkb_hidden_xl_v2'],
 			'vkb_hidden_lg'              => $attributes['vkb_hidden_lg'],
 			'vkb_hidden_md'              => $attributes['vkb_hidden_md'],
 			'vkb_hidden_sm'              => $attributes['vkb_hidden_sm'],

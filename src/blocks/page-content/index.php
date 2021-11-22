@@ -22,27 +22,51 @@ function vk_blocks_register_block_page_content() {
 	);
 
 	global $vk_blocks_common_attributes;
-	register_block_type(
-		__DIR__,
-		array(
-			'editor_style'    => 'vk-blocks-build-editor-css',
-			'editor_script'   => 'vk-blocks-build-js',
-			'attributes'      => array_merge(
-				array(
-					'className'  => array(
-						'type'    => 'string',
-						'default' => '',
+	if ( vk_blocks_is_lager_than_wp( '5.8' ) ) {
+		register_block_type(
+			__DIR__,
+			array(
+				'editor_style'    => 'vk-blocks-build-editor-css',
+				'editor_script'   => 'vk-blocks-build-js',
+				'attributes'      => array_merge(
+					array(
+						'className'  => array(
+							'type'    => 'string',
+							'default' => '',
+						),
+						'TargetPost' => array(
+							'type'    => 'number',
+							'default' => -1,
+						),
 					),
-					'TargetPost' => array(
-						'type'    => 'number',
-						'default' => -1,
-					),
+					$vk_blocks_common_attributes
 				),
-				$vk_blocks_common_attributes
-			),
-			'render_callback' => 'vk_blocks_page_content_render_callback',
-		)
-	);
+				'render_callback' => 'vk_blocks_page_content_render_callback',
+			)
+		);
+	} else {
+		register_block_type_from_metadata(
+			__DIR__,
+			array(
+				'editor_style'    => 'vk-blocks-build-editor-css',
+				'editor_script'   => 'vk-blocks-build-js',
+				'attributes'      => array_merge(
+					array(
+						'className'  => array(
+							'type'    => 'string',
+							'default' => '',
+						),
+						'TargetPost' => array(
+							'type'    => 'number',
+							'default' => -1,
+						),
+					),
+					$vk_blocks_common_attributes
+				),
+				'render_callback' => 'vk_blocks_page_content_render_callback',
+			)
+		);
+	}
 }
 add_action( 'init', 'vk_blocks_register_block_page_content', 99 );
 

@@ -63,6 +63,9 @@ e.g.
 
 == Changelog ==
 
+= 1.20.1 =
+[ Bug fix ] Fix -5.7 error
+
 = 1.20.0 =
 [ Other ][ All ] Refactoring all blocks.
 [ Bug fix ] Color palette manager in case of other theme

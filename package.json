@@ -46,6 +46,7 @@
 		"build:blocks": "node build.mjs",
 		"build:blocks:dev": "node build.mjs dev",
 		"build:extensions:sass": "run-s build:extensions/*",
+		"build:extensions/hidden-extension": "sass src/extensions/common/hidden-extension/style.scss build/extensions/common/hidden-extension/style.css --style=compressed --no-source-map",
 		"build:extensions/responsive-br": "sass src/extensions/common/responsive-br/style.scss build/extensions/common/responsive-br/style.css --style=compressed --no-source-map",
 		"build:blocks:free": "node build.mjs free",
 		"reinstall": "rm -rf node_modules/ && npm install && npm run build",

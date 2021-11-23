@@ -63,8 +63,11 @@ e.g.
 
 == Changelog ==
 
+= 1.20.2 =
+[ Bug fix ] Color palette manager in case of other theme
+
 = 1.20.1 =
-[ Bug fix ] Fix -5.7 error
+[ Bug fix ] Fix -wp5.7 error
 
 = 1.20.0 =
 [ Other ][ All ] Refactoring all blocks.

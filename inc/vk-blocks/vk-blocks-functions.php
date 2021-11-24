@@ -11,6 +11,7 @@
 require_once dirname( __FILE__ ) . '/view/class-vk-blocks-postlist.php';
 require_once dirname( __FILE__ ) . '/view/responsive-br.php';
 require_once dirname( __FILE__ ) . '/style/balloon.php';
+require_once dirname( __FILE__ ) . '/style/hidden-extension.php';
 require_once dirname( __FILE__ ) . '/class-vk-blocks-print-css-variables.php';
 
 /**

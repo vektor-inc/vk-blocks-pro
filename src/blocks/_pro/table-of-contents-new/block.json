@@ -1,6 +1,9 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/table-of-contents-new",
+	"title": "Table of Contents",
+	"description": "This is a table of contents that is automatically generated according to the headings when added.",
+	"textdomain": "vk-blocks",
 	"category": "vk-blocks-cat",
 	"attributes": {
 		"style": {
@@ -20,8 +23,6 @@
 			"default": ""
 		}
 	},
-	"description": "This is a table of contents that is automatically generated according to the headings when added.",
-	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

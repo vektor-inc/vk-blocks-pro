@@ -49,7 +49,7 @@ jobs:
       run: npm run build
     - name: Make Distribution
       run: |
-        npx gulp dist
+        npm run dist
         cd dist/ && zip -r ${{ env.plugin_name }}.zip ${{ env.plugin_name }}/ && mv ${{ env.plugin_name }}.zip ${GITHUB_WORKSPACE}
     - name: rsync deployments
       uses: burnett01/rsync-deployments@4.1

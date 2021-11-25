@@ -1,7 +1,13 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/grid-column-item",
+	"title": "Grid Column Item",
+	"description": "One item in a grit column block.",
+	"textdomain": "vk-blocks",
 	"category": "vk-blocks-cat-layout",
+	"parent": [
+		"vk-blocks/grid-column"
+	],
 	"attributes": {
 		"layout": {
 			"type": "string",
@@ -125,9 +131,6 @@
 			"type": "number"
 		}
 	},
-	"description": "One item in a grit column block.",
-	"textdomain": "vk-blocks",
-	"parent": ["vk-blocks/grid-column"],
 	"supports": {
 		"className": true
 	}

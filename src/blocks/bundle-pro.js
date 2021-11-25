@@ -5,6 +5,7 @@ import * as accordion from './_pro/accordion';
 import * as accordionTarget from './_pro/accordion-target';
 import * as accordionTrigger from './_pro/accordion-trigger';
 import * as animation from './_pro/animation';
+import * as buttonOuter from './_pro/button-outer';
 import * as card from './_pro/card';
 import * as cardItem from './_pro/card-item';
 import * as childPage from './_pro/child-page';
@@ -29,6 +30,7 @@ const vkblocksPro = [
 	accordionTarget,
 	accordionTrigger,
 	animation,
+	buttonOuter,
 	card,
 	cardItem,
 	childPage,

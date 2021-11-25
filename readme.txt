@@ -3,9 +3,9 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,m
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
-Tested up to: 5.8.1
-Stable tag: 1.16.1
-Requires PHP: 5.6.0
+Tested up to: 5.8.2
+Stable tag: 1.19.1
+Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,6 +62,80 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+[ Bug fix ][ Step(Pro) ] cope with custom color palette
+
+= 1.20.2 =
+[ Bug fix ] Color palette manager in case of other theme
+
+= 1.20.1 =
+[ Bug fix ] Fix -wp5.7 error
+
+= 1.20.0 =
+[ Other ][ All ] Refactoring all blocks.
+[ Bug fix ] Color palette manager in case of other theme
+
+= 1.19.1 =
+[ Bug fix ][ Button ] Fix bootstrap color crash
+
+= 1.19.0 =
+[ Add Function ][ Button ] Set the text color with palette
+[ Bug fix ][ Button ] Add primary color css variable in case of other theme 
+
+= 1.18.6 =
+[ Bug fix ][ Button ] Custom color value don't refrect reopen
+
+= 1.18.5 =
+[ Other ] Change stable version only.
+
+= 1.18.4 =
+[ Bug fix ] 1.18.0 update ( Add color palette manager in plugin )
+[ Bug fix ][ Button ] Fix bug in case of used button block for reusable block.
+
+= 1.18.3 =
+[ Bug fix ] Revert 1.17.0
+
+= 1.18.2 =
+[ Bug fix ] Revert 1.17.0
+
+= 1.18.1 =
+[ Bug fix ] Revert 1.17.0
+
+= 1.18.0 =
+[ Add Function ] Add color palette manager in plugin
+
+= 1.17.0 =
+[ Add Block ][ Button Outer(Pro) ]
+
+= 1.16.11 =
+[ Bug fix ][ Button ] Fix color on katawara
+
+= 1.16.10 =
+[ Bug fix ][ border box ] Fix border box title confrict by title design function
+
+= 1.16.9 =
+[ Bug fix ][ icon ] Fix css bug from 1.16.0
+
+= 1.16.8 =
+[ Bug fix ][ Button ] cope with custom color palette
+
+= 1.16.7 =
+[ Bug fix ][ Button ] Fix primary bg color first aid
+
+= 1.16.6 =
+[ Bug fix ][ Button ] Fix primary bg color first aid
+
+= 1.16.5 =
+[ Bug fix ][ Button ] Fix wide size
+
+= 1.16.4 =
+[ Bug fix ][ Button ] Fix outline color
+
+= 1.16.3 =
+[ Bug fix ] Cope with excerpt br
+
+= 1.16.2 =
+[ Other ] Cope with old ssl error
 
 = 1.16.1 =
 [ Bug fix ][ Card ] Fix broke layout on edit screen

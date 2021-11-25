@@ -3,39 +3,27 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/_pro/accordion-target/index.js:16
-msgid "Accordion Target"
-msgstr ""
-
-#: src/blocks/_pro/accordion-trigger/index.js:16
-msgid "Accordion Trigger"
-msgstr ""
-
-#: src/blocks/_pro/accordion/index.js:18
-msgid "Accordion"
-msgstr ""
-
-#: src/blocks/_pro/accordion/index.js:23
+#: src/blocks/_pro/accordion/index.js:22
 msgid "No background color"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:28
+#: src/blocks/_pro/accordion/index.js:27
 msgid "No background color / Border"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:32
+#: src/blocks/_pro/accordion/index.js:31
 msgid "Background color"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:36
+#: src/blocks/_pro/accordion/index.js:35
 msgid "Background color / Border"
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:40
+#: src/blocks/_pro/accordion/index.js:39
 msgid "Background color / Rounded "
 msgstr ""
 
-#: src/blocks/_pro/accordion/index.js:44
+#: src/blocks/_pro/accordion/index.js:43
 msgid "Background color / Rounded / Border"
 msgstr ""
 
@@ -59,9 +47,9 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:303
 #: src/blocks/_pro/slider/edit.js:193
 #: src/blocks/balloon/edit.js:276
-#: src/blocks/button/edit.js:95
-#: src/blocks/faq/index.js:27
-#: src/blocks/faq2/index.js:22
+#: src/blocks/button/edit.js:220
+#: src/blocks/faq/index.js:26
+#: src/blocks/faq2/index.js:21
 #: src/extensions/common/inline-font-size/index.js:56
 msgid "Normal"
 msgstr ""
@@ -131,10 +119,6 @@ msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:96
 msgid "Slow"
-msgstr ""
-
-#: src/blocks/_pro/animation/index.js:20
-msgid "Animation"
 msgstr ""
 
 #: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:149
@@ -209,10 +193,6 @@ msgstr ""
 msgid "https://example.com"
 msgstr ""
 
-#: src/blocks/_pro/card-item/index.js:18
-msgid "Card Item"
-msgstr ""
-
 #: src/blocks/_pro/card/edit.js:119
 #: src/components/display-items-control/index.js:28
 msgid "Display item"
@@ -232,7 +212,6 @@ msgid "Image"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:156
-#: src/blocks/button/index.js:18
 #: src/components/display-items-control/index.js:78
 msgid "Button"
 msgstr ""
@@ -263,11 +242,6 @@ msgstr ""
 msgid "Slide Height for each device."
 msgstr ""
 
-#: src/blocks/_pro/card/index.js:25
-#: src/components/column-layout-control/index.js:26
-msgid "Card"
-msgstr ""
-
 #: src/blocks/_pro/child-page/edit.js:27
 msgid "Current page"
 msgstr ""
@@ -284,10 +258,6 @@ msgstr ""
 #: src/blocks/_pro/child-page/edit.js:82
 #: src/blocks/_pro/post-list/edit.js:288
 msgid "Ignore this post"
-msgstr ""
-
-#: src/blocks/_pro/child-page/index.js:18
-msgid "Child page list"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:106
@@ -315,7 +285,7 @@ msgstr ""
 #: src/blocks/_pro/grid-column-item/edit.js:163
 #: src/blocks/_pro/outer/edit.js:617
 #: src/blocks/icon-outer/edit.js:151
-#: src/blocks/icon/edit.js:138
+#: src/blocks/icon/edit.js:140
 #: src/components/advanced-unit-control/index.js:18
 msgid "px"
 msgstr ""
@@ -323,7 +293,7 @@ msgstr ""
 #: src/blocks/_pro/grid-column-item/edit.js:167
 #: src/blocks/_pro/outer/edit.js:621
 #: src/blocks/icon-outer/edit.js:155
-#: src/blocks/icon/edit.js:142
+#: src/blocks/icon/edit.js:144
 #: src/components/advanced-unit-control/index.js:22
 msgid "em"
 msgstr ""
@@ -331,7 +301,7 @@ msgstr ""
 #: src/blocks/_pro/grid-column-item/edit.js:171
 #: src/blocks/_pro/outer/edit.js:625
 #: src/blocks/icon-outer/edit.js:159
-#: src/blocks/icon/edit.js:146
+#: src/blocks/icon/edit.js:148
 #: src/components/advanced-unit-control/index.js:26
 msgid "rem"
 msgstr ""
@@ -339,7 +309,7 @@ msgstr ""
 #: src/blocks/_pro/grid-column-item/edit.js:175
 #: src/blocks/_pro/outer/edit.js:629
 #: src/blocks/icon-outer/edit.js:163
-#: src/blocks/icon/edit.js:150
+#: src/blocks/icon/edit.js:152
 #: src/components/advanced-unit-control/index.js:30
 msgid "vw"
 msgstr ""
@@ -349,17 +319,15 @@ msgid "Color Settings"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:83
+#: src/blocks/button/edit.js:404
 #: src/blocks/heading/edit.js:288
 msgid "Text Color"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:94
 #: src/blocks/border-box/edit.js:99
+#: src/blocks/button/edit.js:387
 msgid "Background Color"
-msgstr ""
-
-#: src/blocks/_pro/grid-column-item/index.js:18
-msgid "Grid Column Item"
 msgstr ""
 
 #: src/blocks/_pro/grid-column/edit.js:53
@@ -372,10 +340,6 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column/edit.js:63
 msgid "Margin Bottom"
-msgstr ""
-
-#: src/blocks/_pro/grid-column/index.js:17
-msgid "Grid Column"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/deprecated/0.0.0/component.js:55
@@ -403,8 +367,8 @@ msgid "Input Content"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:100
-#: src/blocks/button/edit.js:70
-#: src/blocks/icon/edit.js:239
+#: src/blocks/button/edit.js:195
+#: src/blocks/icon/edit.js:249
 #: src/blocks/pr-blocks/edit.js:271
 #: src/blocks/pr-content/edit.js:130
 msgid "Open link new tab."
@@ -413,8 +377,8 @@ msgstr ""
 #: src/blocks/_pro/icon-card-item/edit.js:108
 #: src/blocks/_pro/step-item/edit.js:57
 #: src/blocks/border-box/edit.js:122
-#: src/blocks/button/edit.js:258
-#: src/blocks/icon/edit.js:227
+#: src/blocks/button/edit.js:415
+#: src/blocks/icon/edit.js:237
 #: src/blocks/pr-content/edit.js:196
 msgid "Icon ( Font Awesome )"
 msgstr ""
@@ -425,15 +389,15 @@ msgid "Icon Background:"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:130
-#: src/blocks/button/edit.js:173
+#: src/blocks/button/edit.js:298
 #: src/blocks/icon-outer/edit.js:204
-#: src/blocks/icon/edit.js:190
+#: src/blocks/icon/edit.js:192
 #: src/blocks/pr-blocks/edit.js:299
 msgid "Solid color"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:134
-#: src/blocks/button/edit.js:181
+#: src/blocks/button/edit.js:311
 #: src/blocks/pr-blocks/edit.js:303
 msgid "No background"
 msgstr ""
@@ -447,10 +411,6 @@ msgstr ""
 msgid "Link URL:"
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/index.js:19
-msgid "Icon Card Item"
-msgstr ""
-
 #: src/blocks/_pro/icon-card/edit.js:65
 msgid "Columns"
 msgstr ""
@@ -462,10 +422,6 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card/edit.js:83
 msgid "Text"
-msgstr ""
-
-#: src/blocks/_pro/icon-card/index.js:20
-msgid "Icon Card"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:182
@@ -671,7 +627,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:543
 #: src/blocks/icon-outer/edit.js:180
-#: src/blocks/icon/edit.js:167
+#: src/blocks/icon/edit.js:169
 msgid "Border radius"
 msgstr ""
 
@@ -700,10 +656,6 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:607
 #: src/components/advanced-unit-control/index.js:12
 msgid "Unit Type"
-msgstr ""
-
-#: src/blocks/_pro/outer/index.js:20
-msgid "Outer"
 msgstr ""
 
 #: src/blocks/_pro/post-list/edit.js:174
@@ -751,10 +703,6 @@ msgstr ""
 msgid "offset"
 msgstr ""
 
-#: src/blocks/_pro/post-list/index.js:20
-msgid "Post list"
-msgstr ""
-
 #: src/blocks/_pro/select-post-list-item/edit.js:102
 msgid "Submit"
 msgstr ""
@@ -770,14 +718,6 @@ msgstr ""
 
 #: src/blocks/_pro/select-post-list-item/edit.js:67
 msgid "Input Internal Post URL"
-msgstr ""
-
-#: src/blocks/_pro/select-post-list-item/index.js:20
-msgid "Selected Post List Item"
-msgstr ""
-
-#: src/blocks/_pro/select-post-list/index.js:21
-msgid "Selected Post List"
 msgstr ""
 
 #: src/blocks/_pro/slider-item/edit.js:111
@@ -806,10 +746,6 @@ msgstr ""
 
 #: src/blocks/_pro/slider-item/edit.js:96
 msgid "Remove padding from the Slider area"
-msgstr ""
-
-#: src/blocks/_pro/slider-item/index.js:18
-msgid "Slider Item"
 msgstr ""
 
 #: src/blocks/_pro/slider/edit.js:106
@@ -897,17 +833,13 @@ msgid "Hide"
 msgstr ""
 
 #: src/blocks/_pro/slider/edit.js:370
-#: src/blocks/button/edit.js:129
+#: src/blocks/button/edit.js:254
 #: src/components/display-items-control/index.js:125
 msgid "Center"
 msgstr ""
 
 #: src/blocks/_pro/slider/edit.js:374
 msgid "Bottom on Mobile device"
-msgstr ""
-
-#: src/blocks/_pro/slider/index.js:21
-msgid "Slider"
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:54
@@ -926,7 +858,8 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:76
 #: src/blocks/_pro/timeline-item/edit.js:53
 #: src/blocks/border-box/edit.js:63
-#: src/blocks/icon/edit.js:246
+#: src/blocks/button/edit.js:333
+#: src/blocks/icon/edit.js:256
 #: src/blocks/staff/edit.js:139
 msgid "Color"
 msgstr ""
@@ -935,7 +868,7 @@ msgstr ""
 #: src/blocks/_pro/table-of-contents-new/edit.js:135
 #: src/blocks/_pro/timeline-item/edit.js:63
 #: src/blocks/icon-outer/edit.js:196
-#: src/blocks/icon/edit.js:182
+#: src/blocks/icon/edit.js:184
 msgid "Style"
 msgstr ""
 
@@ -944,21 +877,12 @@ msgstr ""
 msgid "Outlined"
 msgstr ""
 
-#: src/blocks/_pro/step-item/index.js:18
-msgid "Step Item"
-msgstr ""
-
 #: src/blocks/_pro/step/edit.js:38
 msgid "First Dot Number"
 msgstr ""
 
-#: src/blocks/_pro/step/index.js:19
-msgid "Step"
-msgstr ""
-
 #: src/blocks/_pro/table-of-contents-new/deprecated/0.59.1/save.js:19
 #: src/blocks/_pro/table-of-contents-new/edit.js:178
-#: src/blocks/_pro/table-of-contents-new/index.js:17
 #: src/blocks/_pro/table-of-contents-new/save.js:16
 msgid "Table of Contents"
 msgstr ""
@@ -998,49 +922,37 @@ msgstr ""
 msgid "label"
 msgstr ""
 
-#: src/blocks/_pro/timeline-item/index.js:18
-msgid "Timeline Item"
-msgstr ""
-
-#: src/blocks/_pro/timeline/index.js:19
-msgid "Timeline"
-msgstr ""
-
 #: src/blocks/alert/edit.js:19
 #: src/blocks/heading/edit.js:219
 msgid "Style Settings"
 msgstr ""
 
 #: src/blocks/alert/edit.js:25
-#: src/blocks/button/edit.js:212
+#: src/blocks/button/edit.js:347
 #: src/blocks/pr-content/edit.js:164
 #: src/extensions/core/group/style.js:138
 msgid "Success"
 msgstr ""
 
 #: src/blocks/alert/edit.js:28
-#: src/blocks/button/edit.js:216
+#: src/blocks/button/edit.js:351
 #: src/blocks/pr-content/edit.js:167
 #: src/extensions/core/group/style.js:134
 msgid "Info"
 msgstr ""
 
 #: src/blocks/alert/edit.js:30
-#: src/blocks/button/edit.js:220
+#: src/blocks/button/edit.js:355
 #: src/blocks/pr-content/edit.js:169
 #: src/extensions/core/group/style.js:142
 msgid "Warning"
 msgstr ""
 
 #: src/blocks/alert/edit.js:34
-#: src/blocks/button/edit.js:224
+#: src/blocks/button/edit.js:359
 #: src/blocks/pr-content/edit.js:173
 #: src/extensions/core/group/style.js:146
 msgid "Danger"
-msgstr ""
-
-#: src/blocks/alert/index.js:19
-msgid "Alert"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:125
@@ -1083,14 +995,14 @@ msgid "Please specify the layout of the balloon."
 msgstr ""
 
 #: src/blocks/balloon/edit.js:219
-#: src/blocks/button/edit.js:119
+#: src/blocks/button/edit.js:244
 #: src/blocks/pr-content/edit.js:233
 #: src/components/display-items-control/index.js:121
 msgid "Left"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:231
-#: src/blocks/button/edit.js:139
+#: src/blocks/button/edit.js:264
 #: src/blocks/pr-content/edit.js:232
 #: src/components/display-items-control/index.js:129
 msgid "Right"
@@ -1164,10 +1076,6 @@ msgstr ""
 msgid "Icon Name"
 msgstr ""
 
-#: src/blocks/balloon/index.js:24
-msgid "Ballon"
-msgstr ""
-
 #: src/blocks/border-box/deprecated/0.0.0/save.js:24
 #: src/blocks/border-box/deprecated/0.0.1/save.js:25
 #: src/blocks/border-box/edit.js:25
@@ -1183,14 +1091,13 @@ msgid "White"
 msgstr ""
 
 #: src/blocks/border-box/edit.js:119
-#: src/blocks/icon/index.js:18
 #: src/utils/font-awesome-new.js:14
 msgid "Icon"
 msgstr ""
 
 #: src/blocks/border-box/edit.js:51
 #: src/blocks/icon-outer/edit.js:132
-#: src/blocks/icon/edit.js:119
+#: src/blocks/icon/edit.js:121
 msgid "Margin"
 msgstr ""
 
@@ -1227,134 +1134,154 @@ msgstr ""
 msgid "Black"
 msgstr ""
 
-#: src/blocks/border-box/index.js:19
-msgid "Border Box"
-msgstr ""
-
-#: src/blocks/border-box/index.js:40
+#: src/blocks/border-box/index.js:39
 msgid "Solid Angle Tab"
 msgstr ""
 
-#: src/blocks/border-box/index.js:45
+#: src/blocks/border-box/index.js:44
 msgid "Solid Round Tab"
 msgstr ""
 
-#: src/blocks/border-box/index.js:49
+#: src/blocks/border-box/index.js:48
 msgid "Solid Angle Banner"
 msgstr ""
 
-#: src/blocks/border-box/index.js:53
+#: src/blocks/border-box/index.js:52
 msgid "Solid Angle Onborder"
 msgstr ""
 
-#: src/blocks/border-box/index.js:57
+#: src/blocks/border-box/index.js:56
 msgid "Solid Angle Inner"
 msgstr ""
 
-#: src/blocks/border-box/index.js:61
+#: src/blocks/border-box/index.js:60
 msgid "Solid Angle iconFeature"
 msgstr ""
 
-#: src/blocks/button/edit.js:103
+#: src/blocks/button/edit.js:139
+msgid "Button setting"
+msgstr ""
+
+#: src/blocks/button/edit.js:142
+msgid "Block ID"
+msgstr ""
+
+#: src/blocks/button/edit.js:148
+msgid "This is the identification ID for this block style."
+msgstr ""
+
+#: src/blocks/button/edit.js:154
+msgid "If you don't use custom colors, you don't have to worry about it."
+msgstr ""
+
+#: src/blocks/button/edit.js:161
+msgid "If you duplicate this block, please change the ID."
+msgstr ""
+
+#: src/blocks/button/edit.js:168
+msgid "This ID is'not id of HTML attribute."
+msgstr ""
+
+#: src/blocks/button/edit.js:175
+msgid "Sub Caption"
+msgstr ""
+
+#: src/blocks/button/edit.js:185
+msgid "Button URL"
+msgstr ""
+
+#: src/blocks/button/edit.js:203
+msgid "Button Size:"
+msgstr ""
+
+#: src/blocks/button/edit.js:212
+#: src/blocks/spacer/edit.js:105
+msgid "Large"
+msgstr ""
+
+#: src/blocks/button/edit.js:228
 #: src/blocks/spacer/edit.js:85
 #: src/extensions/common/inline-font-size/index.js:51
 msgid "Small"
 msgstr ""
 
-#: src/blocks/button/edit.js:108
+#: src/blocks/button/edit.js:233
 msgid "Button Position:"
 msgstr ""
 
-#: src/blocks/button/edit.js:149
+#: src/blocks/button/edit.js:274
 msgid "Wide"
 msgstr ""
 
-#: src/blocks/button/edit.js:159
+#: src/blocks/button/edit.js:284
 msgid "Block"
 msgstr ""
 
-#: src/blocks/button/edit.js:164
+#: src/blocks/button/edit.js:289
 msgid "Button Style:"
 msgstr ""
 
-#: src/blocks/button/edit.js:189
+#: src/blocks/button/edit.js:324
 msgid "Text only"
 msgstr ""
 
-#: src/blocks/button/edit.js:193
+#: src/blocks/button/edit.js:328
 msgid "If you select \"No background\", that you need to select a Custom Color."
 msgstr ""
 
-#: src/blocks/button/edit.js:200
-#: src/blocks/pr-content/edit.js:152
-msgid "Default Color:"
+#: src/blocks/button/edit.js:335
+msgid "Default Color (Bootstrap)"
 msgstr ""
 
-#: src/blocks/button/edit.js:204
+#: src/blocks/button/edit.js:339
 #: src/blocks/pr-content/edit.js:156
 msgid "Primary"
 msgstr ""
 
-#: src/blocks/button/edit.js:208
+#: src/blocks/button/edit.js:343
 #: src/blocks/pr-content/edit.js:160
 msgid "Secondary"
 msgstr ""
 
-#: src/blocks/button/edit.js:228
+#: src/blocks/button/edit.js:363
 #: src/blocks/pr-content/edit.js:176
 msgid "Light"
 msgstr ""
 
-#: src/blocks/button/edit.js:232
+#: src/blocks/button/edit.js:367
 #: src/blocks/pr-content/edit.js:177
 msgid "Dark"
 msgstr ""
 
-#: src/blocks/button/edit.js:242
+#: src/blocks/button/edit.js:380
 msgid "Custom Color"
 msgstr ""
 
-#: src/blocks/button/edit.js:243
+#: src/blocks/button/edit.js:388
+#: src/blocks/pr-content/edit.js:185
+msgid "Button Color"
+msgstr ""
+
+#: src/blocks/button/edit.js:390
 msgid ""
-"This custom color overrides the default color. If you want to use the "
+"This color palette overrides the default color. If you want to use the "
 "default color, click the clear button."
 msgstr ""
 
-#: src/blocks/button/edit.js:262
+#: src/blocks/button/edit.js:419
 #: src/blocks/heading/edit.js:303
 #: src/blocks/pr-content/edit.js:200
 msgid "Before text"
 msgstr ""
 
-#: src/blocks/button/edit.js:271
+#: src/blocks/button/edit.js:428
 #: src/blocks/heading/edit.js:312
 #: src/blocks/pr-content/edit.js:212
 msgid "After text"
 msgstr ""
 
-#: src/blocks/button/edit.js:299
+#: src/blocks/button/edit.js:457
 msgid "Input text"
-msgstr ""
-
-#: src/blocks/button/edit.js:50
-msgid "Button setting"
-msgstr ""
-
-#: src/blocks/button/edit.js:52
-msgid "Sub Caption"
-msgstr ""
-
-#: src/blocks/button/edit.js:61
-msgid "Button URL"
-msgstr ""
-
-#: src/blocks/button/edit.js:78
-msgid "Button Size:"
-msgstr ""
-
-#: src/blocks/button/edit.js:87
-#: src/blocks/spacer/edit.js:105
-msgid "Large"
 msgstr ""
 
 #: src/blocks/faq/edit.js:14
@@ -1378,50 +1305,34 @@ msgstr ""
 msgid "Please enter a question."
 msgstr ""
 
-#: src/blocks/faq/index.js:22
-msgid "Classic FAQ"
-msgstr ""
-
-#: src/blocks/faq/index.js:32
-#: src/blocks/faq2/index.js:27
+#: src/blocks/faq/index.js:31
+#: src/blocks/faq2/index.js:26
 msgid "Bgfill Circle"
 msgstr ""
 
-#: src/blocks/faq/index.js:36
-#: src/blocks/faq2/index.js:31
+#: src/blocks/faq/index.js:35
+#: src/blocks/faq2/index.js:30
 msgid "Bgfill Square"
 msgstr ""
 
-#: src/blocks/faq/index.js:40
-#: src/blocks/faq2/index.js:35
+#: src/blocks/faq/index.js:39
+#: src/blocks/faq2/index.js:34
 msgid "Bgfill Rounded"
 msgstr ""
 
-#: src/blocks/faq/index.js:44
-#: src/blocks/faq2/index.js:39
+#: src/blocks/faq/index.js:43
+#: src/blocks/faq2/index.js:38
 msgid "Border Circle"
 msgstr ""
 
-#: src/blocks/faq/index.js:48
-#: src/blocks/faq2/index.js:43
+#: src/blocks/faq/index.js:47
+#: src/blocks/faq2/index.js:42
 msgid "Border Square"
 msgstr ""
 
-#: src/blocks/faq/index.js:52
-#: src/blocks/faq2/index.js:47
+#: src/blocks/faq/index.js:51
+#: src/blocks/faq2/index.js:46
 msgid "Border Rounded"
-msgstr ""
-
-#: src/blocks/faq2-a/index.js:17
-msgid "FAQ Answer"
-msgstr ""
-
-#: src/blocks/faq2-q/index.js:17
-msgid "FAQ Question"
-msgstr ""
-
-#: src/blocks/faq2/index.js:17
-msgid "New FAQ"
 msgstr ""
 
 #: src/blocks/flow/edit.js:21
@@ -1442,10 +1353,6 @@ msgstr ""
 
 #: src/blocks/flow/edit.js:62
 msgid "Input content"
-msgstr ""
-
-#: src/blocks/flow/index.js:19
-msgid "Flow"
 msgstr ""
 
 #: src/blocks/heading/deprecated/0.24.1/component.js:117
@@ -1530,22 +1437,18 @@ msgstr ""
 msgid "Heading %d"
 msgstr ""
 
-#: src/blocks/heading/index.js:20
-msgid "Heading"
-msgstr ""
-
 #: src/blocks/icon-outer/edit.js:176
-#: src/blocks/icon/edit.js:163
+#: src/blocks/icon/edit.js:165
 msgid "Reset"
 msgstr ""
 
 #: src/blocks/icon-outer/edit.js:212
-#: src/blocks/icon/edit.js:198
+#: src/blocks/icon/edit.js:200
 msgid "Icon & Frame"
 msgstr ""
 
 #: src/blocks/icon-outer/edit.js:220
-#: src/blocks/icon/edit.js:206
+#: src/blocks/icon/edit.js:208
 msgid "Icon only"
 msgstr ""
 
@@ -1554,19 +1457,15 @@ msgid "Icon Common Setting"
 msgstr ""
 
 #: src/blocks/icon-outer/edit.js:85
-#: src/blocks/icon/edit.js:72
+#: src/blocks/icon/edit.js:74
 msgid "Size"
 msgstr ""
 
-#: src/blocks/icon-outer/index.js:16
-msgid "Icon Outer"
-msgstr ""
-
-#: src/blocks/icon/edit.js:225
+#: src/blocks/icon/edit.js:235
 msgid "Icon Setting"
 msgstr ""
 
-#: src/blocks/icon/edit.js:234
+#: src/blocks/icon/edit.js:244
 #: src/blocks/pr-content/edit.js:121
 msgid "Link URL"
 msgstr ""
@@ -1582,10 +1481,6 @@ msgstr ""
 
 #: src/blocks/page-content/edit.js:64
 msgid "Select Page"
-msgstr ""
-
-#: src/blocks/page-content/index.js:12
-msgid "Page Content"
 msgstr ""
 
 #: src/blocks/pr-blocks/edit.js:101
@@ -1630,10 +1525,6 @@ msgstr ""
 
 #: src/blocks/pr-blocks/edit.js:320
 msgid "PR Image 3"
-msgstr ""
-
-#: src/blocks/pr-blocks/index.js:24
-msgid "PR Blocks"
 msgstr ""
 
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:152
@@ -1683,8 +1574,8 @@ msgstr ""
 msgid "Ghost"
 msgstr ""
 
-#: src/blocks/pr-content/edit.js:185
-msgid "Button Color"
+#: src/blocks/pr-content/edit.js:152
+msgid "Default Color:"
 msgstr ""
 
 #: src/blocks/pr-content/edit.js:229
@@ -1703,10 +1594,6 @@ msgstr ""
 msgid "Image Border Color"
 msgstr ""
 
-#: src/blocks/pr-content/index.js:26
-msgid "PR Content"
-msgstr ""
-
 #: src/blocks/spacer/advanced-spacer-control.js:15
 msgid "height"
 msgstr ""
@@ -1723,6 +1610,10 @@ msgstr ""
 msgid "Custom"
 msgstr ""
 
+#: src/blocks/spacer/edit.js:119
+msgid "You can change each common margin size from Setting > VK Blocks"
+msgstr ""
+
 #: src/blocks/spacer/edit.js:56
 msgid "Height for each device."
 msgstr ""
@@ -1733,10 +1624,6 @@ msgstr ""
 
 #: src/blocks/spacer/edit.js:95
 msgid "Medium"
-msgstr ""
-
-#: src/blocks/spacer/index.js:24
-msgid "Responsive Spacer"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:50
@@ -1804,12 +1691,12 @@ msgstr ""
 msgid "Image left"
 msgstr ""
 
-#: src/blocks/staff/index.js:33
-msgid "Staff"
-msgstr ""
-
 #: src/components/column-layout-control/index.js:20
 msgid "Card (Image Round)"
+msgstr ""
+
+#: src/components/column-layout-control/index.js:26
+msgid "Card"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:30

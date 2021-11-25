@@ -4,7 +4,6 @@
  *
  * @package Lightning G3
  */
-
 if ( ! class_exists( 'VK_Swiper' ) ) {
 	global $vk_swiper_url;
 	global $vk_swiper_path;

@@ -47,13 +47,18 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: ${{ matrix.php }}
-    - name: Install NPM Scripts
+    - name: install npm scripts
       run: npm install
-    - name: Install Composer Package
+    - name: install Composer Package
       run: composer install
-    - name: Install @wordpress/env
-      run: npm install -g @wordpress/env
+    - name: Install WP-CLI
+      run: |
+        curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+        chmod +x wp-cli.phar
+        mv wp-cli.phar /usr/local/bin/wp
+    - name: Build
+      run: npm run build
     - name: Run @wordpress/env
-      run: wp-env start
-    - name: Run PHP Unit
-      run: wp-env run phpunit 'phpunit -c /var/www/html/wp-content/plugins/vk-blocks-pro/phpunit.xml.dist --verbose'
+      run: npx wp-env start
+    - name: PHP Unit Test
+      run: npm run phpunit

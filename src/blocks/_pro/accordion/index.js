@@ -15,7 +15,6 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-	title: __('Accordion', 'vk-blocks'),
 	icon: <Icon />,
 	styles: [
 		{

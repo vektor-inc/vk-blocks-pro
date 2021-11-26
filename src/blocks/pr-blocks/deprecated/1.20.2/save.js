@@ -3,7 +3,6 @@ import { isNotJSON } from '@vkblocks/utils/is-not-json';
 import { Component } from '@wordpress/element';
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
 import ReactHtmlParser from 'react-html-parser';
-import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function save(props) {
 	const { attributes } = props;
@@ -111,43 +110,11 @@ export class ComponentBlockSave extends Component {
 				color[blockNumArrIndex] = '#0693e3';
 			}
 
-			let inlineStyle = {};
-			let styleClass = '';
-			let iconClass = '';
-			let iconColor = '';
-			// アイコン背景:ベタ塗り
+			let iconColor;
 			if (bgType[blockNumArrIndex] === '0') {
 				iconColor = '#fff';
-				styleClass += `has-background `;
-				//カスタムカラーを選択
-				if (isHexColor(color[blockNumArrIndex])) {
-					inlineStyle = {
-						backgroundColor: `${color[blockNumArrIndex]}`,
-						border: `1px solid ${color[blockNumArrIndex]}`,
-					};
-					//カラーパレットを選択
-				} else {
-					styleClass += `has-${color[blockNumArrIndex]}-background-color`;
-				}
-				// アイコン背景:背景なし
 			} else {
-				styleClass += `has-background `;
-				//カスタムカラーを選択
-				if (isHexColor(color[blockNumArrIndex])) {
-					inlineStyle = {
-						backgroundColor: `transparent`,
-						border: `1px solid ${color[blockNumArrIndex]}`,
-					};
-					iconColor = color[blockNumArrIndex];
-					//カラーパレットを選択
-				} else {
-					inlineStyle = {
-						backgroundColor: `transparent`,
-						border: `1px solid ${color[blockNumArrIndex]}`,
-					};
-					styleClass += `has-${color[blockNumArrIndex]}-background-color`;
-					iconClass = `has-${color[blockNumArrIndex]}-color`;
-				}
+				iconColor = color[blockNumArrIndex];
 			}
 
 			let faIcon = icon[blockNumArrIndex];
@@ -157,20 +124,31 @@ export class ComponentBlockSave extends Component {
 			}
 			//add class and inline css
 			const faIconFragment = faIcon.split(' ');
-			if (iconColor !== '') {
-				faIconFragment[0] =
-					faIconFragment[0] + ` style="color:${iconColor}" `;
-			} else {
-				faIconFragment[0] = faIconFragment[0] + ` `;
-			}
-			faIconFragment[1] =
-				faIconFragment[1] + ` vk_prBlocks_item_icon ${iconClass} `;
+			faIconFragment[0] =
+				faIconFragment[0] + ` style="color:${iconColor}" `;
+			faIconFragment[1] = faIconFragment[1] + ` vk_prBlocks_item_icon `;
 			const faIconTag = faIconFragment.join('');
 
+			if (bgType[blockNumArrIndex] === '0') {
+				return (
+					<div
+						className="vk_prBlocks_item_icon_outer"
+						style={{
+							backgroundColor: color[blockNumArrIndex],
+							border: `1px solid ${color[blockNumArrIndex]}`,
+						}}
+					>
+						{ReactHtmlParser(faIconTag)}
+					</div>
+				);
+			}
 			return (
 				<div
-					className={`vk_prBlocks_item_icon_outer ${styleClass}`}
-					style={inlineStyle}
+					className="vk_prBlocks_item_icon_outer"
+					style={{
+						backgroundColor: 'transparent',
+						border: '1px solid ' + color[blockNumArrIndex],
+					}}
 				>
 					{ReactHtmlParser(faIconTag)}
 				</div>

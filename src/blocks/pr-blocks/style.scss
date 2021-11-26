@@ -2,7 +2,7 @@
 /* .vk_prBlocks
 /*-------------------------------------------*/
 // 編集画面でcssの指定が軽くて負けるので.vk_prBlocks .vk_prBlocks_item  を先に記述
-.vk_prBlocks{ 
+.vk_prBlocks{
 	.vk_prBlocks_item {
 		a{text-decoration: none;}
 		@media screen and (max-width: 991.98px) {
@@ -30,7 +30,7 @@
 				left: 50%;
 				transform: translateY(-50%) translateX(-50%);
 				font-size: 36px;
-				color: #fff;
+				// color: #fff;
 			}
 			&_title {
 				background-color: transparent;

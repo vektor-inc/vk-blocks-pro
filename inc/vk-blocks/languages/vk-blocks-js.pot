@@ -156,7 +156,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/edit.js:88
 #: src/blocks/balloon/edit.js:379
 #: src/blocks/flow/edit.js:84
-#: src/blocks/pr-blocks/edit.js:88
+#: src/blocks/pr-blocks/edit.js:86
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:130
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:112
 #: src/blocks/pr-content/deprecated/0.0.2/save.js:207
@@ -350,7 +350,7 @@ msgstr ""
 #: src/blocks/pr-blocks/deprecated/0.0.1/component.js:148
 #: src/blocks/pr-blocks/deprecated/0.0.2/component.js:176
 #: src/blocks/pr-blocks/deprecated/0.59.0/component.js:191
-#: src/blocks/pr-blocks/edit.js:533
+#: src/blocks/pr-blocks/edit.js:523
 msgid "Input Title"
 msgstr ""
 
@@ -362,20 +362,20 @@ msgstr ""
 #: src/blocks/pr-blocks/deprecated/0.0.1/component.js:157
 #: src/blocks/pr-blocks/deprecated/0.0.2/component.js:185
 #: src/blocks/pr-blocks/deprecated/0.59.0/component.js:200
-#: src/blocks/pr-blocks/edit.js:542
+#: src/blocks/pr-blocks/edit.js:532
 msgid "Input Content"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:100
 #: src/blocks/button/edit.js:195
 #: src/blocks/icon/edit.js:249
-#: src/blocks/pr-blocks/edit.js:271
+#: src/blocks/pr-blocks/edit.js:249
 #: src/blocks/pr-content/edit.js:130
 msgid "Open link new tab."
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:108
-#: src/blocks/_pro/step-item/edit.js:57
+#: src/blocks/_pro/step-item/edit.js:72
 #: src/blocks/border-box/edit.js:122
 #: src/blocks/button/edit.js:415
 #: src/blocks/icon/edit.js:237
@@ -384,7 +384,7 @@ msgid "Icon ( Font Awesome )"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:126
-#: src/blocks/pr-blocks/edit.js:295
+#: src/blocks/pr-blocks/edit.js:263
 msgid "Icon Background:"
 msgstr ""
 
@@ -392,13 +392,13 @@ msgstr ""
 #: src/blocks/button/edit.js:298
 #: src/blocks/icon-outer/edit.js:204
 #: src/blocks/icon/edit.js:192
-#: src/blocks/pr-blocks/edit.js:299
+#: src/blocks/pr-blocks/edit.js:267
 msgid "Solid color"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:134
 #: src/blocks/button/edit.js:311
-#: src/blocks/pr-blocks/edit.js:303
+#: src/blocks/pr-blocks/edit.js:271
 msgid "No background"
 msgstr ""
 
@@ -407,7 +407,7 @@ msgid "Icon Card Setting"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:92
-#: src/blocks/pr-blocks/edit.js:263
+#: src/blocks/pr-blocks/edit.js:241
 msgid "Link URL:"
 msgstr ""
 
@@ -575,7 +575,7 @@ msgid "Border type"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:485
-#: src/blocks/_pro/step-item/edit.js:114
+#: src/blocks/_pro/step-item/edit.js:126
 #: src/blocks/_pro/timeline-item/edit.js:95
 #: src/blocks/balloon/edit.js:338
 #: src/blocks/staff/edit.js:117
@@ -583,7 +583,7 @@ msgid "None"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:489
-#: src/blocks/_pro/step-item/edit.js:92
+#: src/blocks/_pro/step-item/edit.js:104
 #: src/blocks/_pro/timeline-item/edit.js:77
 #: src/blocks/pr-content/edit.js:143
 #: src/extensions/core/group/style.js:102
@@ -809,7 +809,7 @@ msgid "Pagination Type"
 msgstr ""
 
 #: src/blocks/_pro/slider/edit.js:345
-#: src/blocks/_pro/step-item/edit.js:110
+#: src/blocks/_pro/step-item/edit.js:122
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
 #: src/blocks/_pro/timeline-item/edit.js:91
 #: src/blocks/heading/edit.js:228
@@ -842,20 +842,25 @@ msgstr ""
 msgid "Bottom on Mobile device"
 msgstr ""
 
-#: src/blocks/_pro/step-item/edit.js:54
+#: src/blocks/_pro/step-item/edit.js:108
+#: src/blocks/_pro/timeline-item/edit.js:73
+msgid "Outlined"
+msgstr ""
+
+#: src/blocks/_pro/step-item/edit.js:69
 msgid "Step Mark"
 msgstr ""
 
-#: src/blocks/_pro/step-item/edit.js:58
+#: src/blocks/_pro/step-item/edit.js:73
 msgid "If Font Awesome tags entered, it will overrides the number."
 msgstr ""
 
-#: src/blocks/_pro/step-item/edit.js:72
+#: src/blocks/_pro/step-item/edit.js:87
 #: src/blocks/_pro/timeline-item/edit.js:50
 msgid "Ex,6:00AM"
 msgstr ""
 
-#: src/blocks/_pro/step-item/edit.js:76
+#: src/blocks/_pro/step-item/edit.js:91
 #: src/blocks/_pro/timeline-item/edit.js:53
 #: src/blocks/border-box/edit.js:63
 #: src/blocks/button/edit.js:333
@@ -864,17 +869,12 @@ msgstr ""
 msgid "Color"
 msgstr ""
 
-#: src/blocks/_pro/step-item/edit.js:82
+#: src/blocks/_pro/step-item/edit.js:94
 #: src/blocks/_pro/table-of-contents-new/edit.js:135
 #: src/blocks/_pro/timeline-item/edit.js:63
 #: src/blocks/icon-outer/edit.js:196
 #: src/blocks/icon/edit.js:184
 msgid "Style"
-msgstr ""
-
-#: src/blocks/_pro/step-item/edit.js:96
-#: src/blocks/_pro/timeline-item/edit.js:73
-msgid "Outlined"
 msgstr ""
 
 #: src/blocks/_pro/step/edit.js:38
@@ -1057,7 +1057,7 @@ msgid "Trembling"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:387
-#: src/blocks/pr-blocks/edit.js:82
+#: src/blocks/pr-blocks/edit.js:80
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:135
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:117
 #: src/blocks/pr-content/deprecated/0.0.2/save.js:214
@@ -1483,48 +1483,48 @@ msgstr ""
 msgid "Select Page"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:101
-msgid "PR Block1 Setting"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:119
+#: src/blocks/pr-blocks/edit.js:117
 msgid "Icon 1"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:154
+#: src/blocks/pr-blocks/edit.js:142
 msgid "When you have an image. Image is displayed with priority"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:160
+#: src/blocks/pr-blocks/edit.js:148
 msgid "PR Image 1"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:181
+#: src/blocks/pr-blocks/edit.js:169
 msgid "PR Block2 Setting"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:199
+#: src/blocks/pr-blocks/edit.js:187
 msgid "Icon 2"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:240
+#: src/blocks/pr-blocks/edit.js:218
 msgid "PR Image 2"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:261
+#: src/blocks/pr-blocks/edit.js:239
 msgid "PR Block3 Setting"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:279
+#: src/blocks/pr-blocks/edit.js:257
 msgid "Icon 3"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:314
+#: src/blocks/pr-blocks/edit.js:282
 msgid "When you have an image. Image is displayed with priority."
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:320
+#: src/blocks/pr-blocks/edit.js:288
 msgid "PR Image 3"
+msgstr ""
+
+#: src/blocks/pr-blocks/edit.js:99
+msgid "PR Block1 Setting"
 msgstr ""
 
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:152

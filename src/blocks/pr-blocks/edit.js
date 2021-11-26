@@ -14,12 +14,13 @@ import { Component } from '@wordpress/element';
 import {
 	InspectorControls,
 	MediaUpload,
-	ColorPalette,
 	RichText,
 	useBlockProps,
 } from '@wordpress/block-editor';
 
 import ReactHtmlParser from 'react-html-parser';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 
 export default function PrBlocksEdit(props) {
 	const { attributes, setAttributes } = props;
@@ -30,9 +31,6 @@ export default function PrBlocksEdit(props) {
 		urlOpenType1,
 		urlOpenType2,
 		urlOpenType3,
-		color1,
-		color2,
-		color3,
 		bgType1,
 		bgType2,
 		bgType3,
@@ -120,17 +118,7 @@ export default function PrBlocksEdit(props) {
 						id={`vk_prBlocks_Icon1`}
 					>
 						<FontAwesome attributeName={'icon1'} {...props} />
-						<ColorPalette
-							value={color1}
-							onChange={(value) => {
-								if (value) {
-									setAttributes({ color1: value });
-								} else {
-									setAttributes({ color1: '#0693e3' });
-									setAttributes({ bgType1: '0' });
-								}
-							}}
-						/>
+						<AdvancedColorPalette schema={'color1'} {...props} />
 						<RadioControl
 							label={__('Icon Background:', 'vk-blocks')}
 							selected={bgType1}
@@ -200,17 +188,7 @@ export default function PrBlocksEdit(props) {
 						id={`vk_prBlocks_Icon2`}
 					>
 						<FontAwesome attributeName={'icon2'} {...props} />
-						<ColorPalette
-							value={color2}
-							onChange={(value) => {
-								if (value) {
-									setAttributes({ color2: value });
-								} else {
-									setAttributes({ color2: '#0693e3' });
-									setAttributes({ bgType2: '0' });
-								}
-							}}
-						/>
+						<AdvancedColorPalette schema={'color2'} {...props} />
 						<RadioControl
 							label={__('Icon Background:', 'vk-blocks')}
 							selected={bgType2}
@@ -280,17 +258,7 @@ export default function PrBlocksEdit(props) {
 						id={`vk_prBlocks_Icon3`}
 					>
 						<FontAwesome attributeName={'icon3'} {...props} />
-						<ColorPalette
-							value={color3}
-							onChange={(value) => {
-								if (value) {
-									setAttributes({ color3: value });
-								} else {
-									setAttributes({ color3: '#0693e3' });
-									setAttributes({ bgType3: '0' });
-								}
-							}}
-						/>
+						<AdvancedColorPalette schema={'color3'} {...props} />
 						<RadioControl
 							label={__('Icon Background:', 'vk-blocks')}
 							selected={bgType3}
@@ -440,11 +408,44 @@ export class ComponentBlockEdit extends Component {
 				color[blockNumArrIndex] = '#0693e3';
 			}
 
-			let iconColor;
+			let inlineStyle = {};
+			let styleClass = '';
+			let iconClass = '';
+			let iconColor = '';
+			// アイコン背景:ベタ塗り
 			if (bgType[blockNumArrIndex] === '0') {
 				iconColor = '#fff';
+				styleClass += `has-background `;
+				//カスタムカラーの時
+				if (isHexColor(color[blockNumArrIndex])) {
+					inlineStyle = {
+						backgroundColor: `${color[blockNumArrIndex]}`,
+						border: `1px solid ${color[blockNumArrIndex]}`,
+					};
+					//カラーパレットの時
+				} else {
+					styleClass += `has-${color[blockNumArrIndex]}-background-color`;
+				}
+				// アイコン背景:背景なし
 			} else {
-				iconColor = color[blockNumArrIndex];
+				styleClass += `has-background `;
+				//カスタムカラーの時
+				if (isHexColor(color[blockNumArrIndex])) {
+					inlineStyle = {
+						backgroundColor: `transparent`,
+						border: `1px solid ${color[blockNumArrIndex]}`,
+					};
+					iconColor = color[blockNumArrIndex];
+					//カラーパレットの時
+				} else {
+					inlineStyle = {
+						backgroundColor: `transparent`,
+						border: `1px solid ${color[blockNumArrIndex]}`,
+					};
+					styleClass += `has-${color[blockNumArrIndex]}-background-color`;
+					iconClass = `has-${color[blockNumArrIndex]}-color`;
+					iconColor = '';
+				}
 			}
 
 			let faIcon = icon[blockNumArrIndex];
@@ -454,31 +455,20 @@ export class ComponentBlockEdit extends Component {
 			}
 			//add class and inline css
 			const faIconFragment = faIcon.split(' ');
-			faIconFragment[0] =
-				faIconFragment[0] + ` style="color:${iconColor}" `;
-			faIconFragment[1] = faIconFragment[1] + ` vk_prBlocks_item_icon `;
+			if (iconColor !== '') {
+				faIconFragment[0] =
+					faIconFragment[0] + ` style="color:${iconColor}" `;
+			} else {
+				faIconFragment[0] = faIconFragment[0] + ` `;
+			}
+			faIconFragment[1] =
+				faIconFragment[1] + ` vk_prBlocks_item_icon ${iconClass} `;
 			const faIconTag = faIconFragment.join('');
 
-			if (bgType[blockNumArrIndex] === '0') {
-				return (
-					<div
-						className="vk_prBlocks_item_icon_outer"
-						style={{
-							backgroundColor: color[blockNumArrIndex],
-							border: `1px solid ${color[blockNumArrIndex]}`,
-						}}
-					>
-						{ReactHtmlParser(faIconTag)}
-					</div>
-				);
-			}
 			return (
 				<div
-					className="vk_prBlocks_item_icon_outer"
-					style={{
-						backgroundColor: 'transparent',
-						border: '1px solid ' + color[blockNumArrIndex],
-					}}
+					className={`vk_prBlocks_item_icon_outer ${styleClass}`}
+					style={inlineStyle}
 				>
 					{ReactHtmlParser(faIconTag)}
 				</div>

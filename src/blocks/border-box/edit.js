@@ -37,20 +37,16 @@ export default function BorderBoxEdit(props) {
 	let titleStyle = {};
 	if (isHexColor(color)) {
 		// custom color
-		titleClass += `¥`
+		titleClass += ` has-background`;
 		titleStyle = {
 			color: `${color}`,
 		};
+	} else if (colors.includes(color)) {
+		// legacy  style
+		legacyClass += ` vk_borderBox-color-${color} vk_borderBox-background-${bgColor}`;
 	} else {
-		// palette color
-		if (colors.includes(color)) {
-			// legacy  style
-			legacyClass += ` vk_borderBox-color-${color} vk_borderBox-background-${bgColor}`
-		}
-		else {
-			// has style
-			titleClass += ` has-background has-${color}-background-color`
-		}
+		// has style
+		titleClass += ` has-background has-${color}-background-color`;
 	}
 
 	// body border
@@ -58,20 +54,16 @@ export default function BorderBoxEdit(props) {
 	let bodyStyle = {};
 	if (isHexColor(color)) {
 		// custom color
-		bodyClass += ` has-text-color`
+		bodyClass += ` has-text-color`;
 		bodyStyle = {
 			color: `${color}`,
 		};
+	} else if (colors.includes(color)) {
+		// legacy  style
+		legacyClass += ` vk_borderBox-color-${color} vk_borderBox-background-${bgColor}`;
 	} else {
-		// palette color
-		if (colors.includes( color )){
-			// legacy  style
-			legacyClass += ` vk_borderBox-color-${color} vk_borderBox-background-${bgColor}`
-		}
-		else {
-			// has style
-			bodyClass += ` has-text-color has-${color}-color`
-		}
+		// has style
+		bodyClass += ` has-text-color has-${color}-color`;
 	}
 
 	const blockProps = useBlockProps({
@@ -143,7 +135,6 @@ export default function BorderBoxEdit(props) {
 						/>
 
 						<AdvancedColorPalette schema={'color'} {...props} />
-						
 					</BaseControl>
 					<BaseControl
 						id="background-color"
@@ -187,7 +178,9 @@ export default function BorderBoxEdit(props) {
 					{ReactHtmlParser(icon)}
 					{title}
 				</div>
-				<div className={bodyClass} style={bodyStyle}>{inner}</div>
+				<div className={bodyClass} style={bodyStyle}>
+					{inner}
+				</div>
 			</div>
 		</>
 	);

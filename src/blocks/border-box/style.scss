@@ -109,6 +109,12 @@
 		@media (min-width: 992px) {
 			padding: 2.1875em 2em 2em;
 		}
+
+		& > *:not(.has-text-color) {
+			// 枠線の色が影響しないようにする
+			color: initial;
+		}
+
 		// ボックス内要素の最初と最後の要素のmarginを削除
 		& > * {
 			&:first-child {

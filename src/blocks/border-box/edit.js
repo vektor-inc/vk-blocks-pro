@@ -8,6 +8,8 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 import ReactHtmlParser from 'react-html-parser';
+import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function BorderBoxEdit(props) {
 	const { attributes, setAttributes } = props;
@@ -26,8 +28,54 @@ export default function BorderBoxEdit(props) {
 		/>
 	);
 
+	// legacy class
+	let legacyClass = `vk_borderBox`;
+	const colors = ['red', 'orange', 'blue', 'green', 'black'];
+
+	// title background
+	let titleClass = `vk_borderBox_title_container`;
+	let titleStyle = {};
+	if (isHexColor(color)) {
+		// custom color
+		titleClass += `¥`
+		titleStyle = {
+			color: `${color}`,
+		};
+	} else {
+		// palette color
+		if (colors.includes(color)) {
+			// legacy  style
+			legacyClass += ` vk_borderBox-color-${color} vk_borderBox-background-${bgColor}`
+		}
+		else {
+			// has style
+			titleClass += ` has-background has-${color}-background-color`
+		}
+	}
+
+	// body border
+	let bodyClass = `vk_borderBox_body`;
+	let bodyStyle = {};
+	if (isHexColor(color)) {
+		// custom color
+		bodyClass += ` has-text-color`
+		bodyStyle = {
+			color: `${color}`,
+		};
+	} else {
+		// palette color
+		if (colors.includes( color )){
+			// legacy  style
+			legacyClass += ` vk_borderBox-color-${color} vk_borderBox-background-${bgColor}`
+		}
+		else {
+			// has style
+			bodyClass += ` has-text-color has-${color}-color`
+		}
+	}
+
 	const blockProps = useBlockProps({
-		className: `vk_borderBox vk_borderBox-color-${color} vk_borderBox-background-${bgColor}`,
+		className: legacyClass,
 	});
 
 	//Defaultクラスを設定
@@ -93,6 +141,9 @@ export default function BorderBoxEdit(props) {
 								},
 							]}
 						/>
+
+						<AdvancedColorPalette schema={'color'} {...props} />
+						
 					</BaseControl>
 					<BaseControl
 						id="background-color"
@@ -132,11 +183,11 @@ export default function BorderBoxEdit(props) {
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
-				<div className="vk_borderBox_title_container">
+				<div className={titleClass} style={titleStyle}>
 					{ReactHtmlParser(icon)}
 					{title}
 				</div>
-				<div className={`vk_borderBox_body`}>{inner}</div>
+				<div className={bodyClass} style={bodyStyle}>{inner}</div>
 			</div>
 		</>
 	);

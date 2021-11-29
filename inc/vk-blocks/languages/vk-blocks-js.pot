@@ -350,7 +350,7 @@ msgstr ""
 #: src/blocks/pr-blocks/deprecated/0.0.1/component.js:148
 #: src/blocks/pr-blocks/deprecated/0.0.2/component.js:176
 #: src/blocks/pr-blocks/deprecated/0.59.0/component.js:191
-#: src/blocks/pr-blocks/edit.js:523
+#: src/blocks/pr-blocks/edit.js:516
 msgid "Input Title"
 msgstr ""
 
@@ -362,7 +362,7 @@ msgstr ""
 #: src/blocks/pr-blocks/deprecated/0.0.1/component.js:157
 #: src/blocks/pr-blocks/deprecated/0.0.2/component.js:185
 #: src/blocks/pr-blocks/deprecated/0.59.0/component.js:200
-#: src/blocks/pr-blocks/edit.js:532
+#: src/blocks/pr-blocks/edit.js:525
 msgid "Input Content"
 msgstr ""
 

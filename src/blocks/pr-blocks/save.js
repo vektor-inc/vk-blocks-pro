@@ -107,46 +107,35 @@ export class ComponentBlockSave extends Component {
 				);
 			}
 
-			if (!color[blockNumArrIndex]) {
-				color[blockNumArrIndex] = '#0693e3';
-			}
-
-			let inlineStyle = {};
-			let styleClass = '';
-			let iconClass = '';
+			let iconOuterClass = '';
+			let iconOuterInlineStyle = {};
 			let iconColor = '';
-			// アイコン背景:ベタ塗り
-			if (bgType[blockNumArrIndex] === '0') {
-				iconColor = '#fff';
-				styleClass += `has-background `;
-				//カスタムカラーを選択
-				if (isHexColor(color[blockNumArrIndex])) {
-					inlineStyle = {
-						backgroundColor: `${color[blockNumArrIndex]}`,
-						border: `1px solid ${color[blockNumArrIndex]}`,
-					};
-					//カラーパレットを選択
-				} else {
-					styleClass += `has-${color[blockNumArrIndex]}-background-color`;
-				}
-				// アイコン背景:背景なし
-			} else {
-				styleClass += `has-background `;
-				//カスタムカラーを選択
-				if (isHexColor(color[blockNumArrIndex])) {
-					inlineStyle = {
-						backgroundColor: `transparent`,
-						border: `1px solid ${color[blockNumArrIndex]}`,
-					};
-					iconColor = color[blockNumArrIndex];
-					//カラーパレットを選択
-				} else {
-					inlineStyle = {
-						backgroundColor: `transparent`,
-						border: `1px solid ${color[blockNumArrIndex]}`,
-					};
-					styleClass += `has-${color[blockNumArrIndex]}-background-color`;
-					iconClass = `has-${color[blockNumArrIndex]}-color`;
+			if (color[blockNumArrIndex] !== undefined) {
+				// アイコン背景:ベタ塗り
+				if (bgType[blockNumArrIndex] === '0') {
+					//カスタムカラーの時
+					if (isHexColor(color[blockNumArrIndex])) {
+						iconOuterClass = `has-background `;
+						iconOuterInlineStyle = {
+							backgroundColor: `${color[blockNumArrIndex]}`,
+						};
+						//カラーパレットの時
+					} else {
+						iconOuterClass = `has-background has-${color[blockNumArrIndex]}-background-color`;
+					}
+					// アイコン背景:背景なし
+				} else if (bgType[blockNumArrIndex] === '1') {
+					//カスタムカラーの時
+					if (isHexColor(color[blockNumArrIndex])) {
+						iconOuterClass = `has-text-color`;
+						iconOuterInlineStyle = {
+							border: `1px solid ${color[blockNumArrIndex]}`,
+						};
+						iconColor = color[blockNumArrIndex];
+						//カラーパレットの時
+					} else {
+						iconOuterClass = `has-text-color has-${color[blockNumArrIndex]}-color`;
+					}
 				}
 			}
 
@@ -163,19 +152,24 @@ export class ComponentBlockSave extends Component {
 			} else {
 				faIconFragment[0] = faIconFragment[0] + ` `;
 			}
-			faIconFragment[1] =
-				faIconFragment[1] + ` vk_prBlocks_item_icon ${iconClass} `;
+			faIconFragment[1] = faIconFragment[1] + ` vk_prBlocks_item_icon `;
 			const faIconTag = faIconFragment.join('');
 
 			return (
 				<div
-					className={`vk_prBlocks_item_icon_outer ${styleClass}`}
-					style={inlineStyle}
+					className={`vk_prBlocks_item_icon_outer ${iconOuterClass}`}
+					style={iconOuterInlineStyle}
 				>
 					{ReactHtmlParser(faIconTag)}
 				</div>
 			);
 		})();
+
+		// アイコン背景:背景なし
+		let iconOutlineClass = '';
+		if (bgType[blockNumArrIndex] === '1') {
+			iconOutlineClass = 'is-style-outline';
+		}
 
 		richTextH1Save = (
 			<RichText.Content
@@ -193,7 +187,9 @@ export class ComponentBlockSave extends Component {
 		);
 		if (url[blockNumArrIndex]) {
 			return (
-				<div className="vk_prBlocks_item col-sm-4">
+				<div
+					className={`vk_prBlocks_item col-sm-4 ${iconOutlineClass}`}
+				>
 					<a
 						href={url[blockNumArrIndex]}
 						className="vk_prBlocks_item_link"
@@ -210,7 +206,7 @@ export class ComponentBlockSave extends Component {
 			);
 		}
 		return (
-			<div className="vk_prBlocks_item col-sm-4">
+			<div className={`vk_prBlocks_item col-sm-4 ${iconOutlineClass}`}>
 				{drawElement}
 				{richTextH1Save}
 				{richTextPSave}

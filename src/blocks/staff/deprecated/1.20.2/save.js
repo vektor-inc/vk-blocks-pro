@@ -6,7 +6,6 @@ import classnames from 'classnames';
  * WordPress dependencies
  */
 import { useBlockProps, RichText } from '@wordpress/block-editor';
-import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 // import StaffMediaUpload from './staffMediaUpload';
 
@@ -51,43 +50,19 @@ export default function save({ attributes, className }) {
 		staffTextClassName = classnames('vk_staff_text', staffTextClassName);
 	}
 
-	let staffNameColorInlineStyle = {};
-	let staffTextNameClassName = '';
-	if (vk_staff_nameColor !== undefined) {
-		staffTextNameClassName += ` has-text-color`;
-		if (isHexColor(vk_staff_nameColor)) {
-			staffNameColorInlineStyle = { color: `${vk_staff_nameColor}` };
-		} else {
-			staffTextNameClassName += ` has-${vk_staff_nameColor}-color`;
-		}
-	}
-
-	let staffCaptionColorInlineStyle = {};
-	let staffCaptionClassName = '';
-	if (vk_staff_captionColor !== undefined) {
-		staffCaptionClassName += ` has-text-color`;
-		if (isHexColor(vk_staff_captionColor)) {
-			staffCaptionColorInlineStyle = {
-				color: `${vk_staff_captionColor}`,
-			};
-		} else {
-			staffCaptionClassName += ` has-${vk_staff_captionColor}-color`;
-		}
-	}
-
 	return (
 		<div {...useBlockProps.save({ className: classes })}>
 			<div className={staffTextClassName}>
 				<RichText.Content
 					tagName="h3"
-					className={`vk_staff_text_name` + staffTextNameClassName}
-					style={staffNameColorInlineStyle}
+					className={'vk_staff_text_name'}
+					style={{ color: vk_staff_nameColor }}
 					value={vk_staff_text_name} // eslint-disable-line camelcase
 				/>
 				<RichText.Content
 					tagName="p"
-					className={`vk_staff_text_caption` + staffCaptionClassName}
-					style={staffCaptionColorInlineStyle}
+					className={'vk_staff_text_caption'}
+					style={{ color: vk_staff_captionColor }}
 					value={vk_staff_text_caption} // eslint-disable-line camelcase
 				/>
 				<RichText.Content

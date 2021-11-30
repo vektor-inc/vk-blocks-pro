@@ -75,6 +75,45 @@ export default function save({ attributes, className }) {
 		}
 	}
 
+	let staffPositionColorInlineStyle = {};
+	let staffPositionClassName = '';
+	if (vk_staff_positionColor !== undefined) {
+		staffPositionClassName += ` has-text-color`;
+		if (isHexColor(vk_staff_positionColor)) {
+			staffPositionColorInlineStyle = {
+				color: `${vk_staff_positionColor}`,
+			};
+		} else {
+			staffPositionClassName += ` has-${vk_staff_positionColor}-color`;
+		}
+	}
+
+	let staffProfileTitleColorInlineStyle = {};
+	let staffProfileTitleClassName = '';
+	if (vk_staff_profileTitleColor !== undefined) {
+		staffProfileTitleClassName += ` has-text-color`;
+		if (isHexColor(vk_staff_profileTitleColor)) {
+			staffProfileTitleColorInlineStyle = {
+				color: `${vk_staff_profileTitleColor}`,
+			};
+		} else {
+			staffProfileTitleClassName += ` has-${vk_staff_profileTitleColor}-color`;
+		}
+	}
+
+	let staffProfileTextColorInlineStyle = {};
+	let staffProfileTextClassName = '';
+	if (vk_staff_profileTextColor !== undefined) {
+		staffProfileTextClassName += ` has-text-color`;
+		if (isHexColor(vk_staff_profileTextColor)) {
+			staffProfileTextColorInlineStyle = {
+				color: `${vk_staff_profileTextColor}`,
+			};
+		} else {
+			staffProfileTextClassName += ` has-${vk_staff_profileTextColor}-color`;
+		}
+	}
+
 	return (
 		<div {...useBlockProps.save({ className: classes })}>
 			<div className={staffTextClassName}>
@@ -92,20 +131,20 @@ export default function save({ attributes, className }) {
 				/>
 				<RichText.Content
 					tagName="p"
-					className={'vk_staff_text_role'}
-					style={{ color: vk_staff_positionColor }}
+					className={`vk_staff_text_role` + staffPositionClassName }
+					style={staffPositionColorInlineStyle}
 					value={vk_staff_text_role} // eslint-disable-line camelcase
 				/>
 				<RichText.Content
 					tagName="h4"
-					className={'vk_staff_text_profileTitle'}
-					style={{ color: vk_staff_profileTitleColor }}
+					className={`vk_staff_text_profileTitle` + staffProfileTitleClassName}
+					style={staffProfileTitleColorInlineStyle}
 					value={vk_staff_text_profileTitle} // eslint-disable-line camelcase
 				/>
 				<RichText.Content
 					tagName="p"
-					className={'vk_staff_text_profileText'}
-					style={{ color: vk_staff_profileTextColor }}
+					className={'vk_staff_text_profileText' + staffProfileTextClassName}
+					style={staffProfileTextColorInlineStyle}
 					value={vk_staff_text_profileText} // eslint-disable-line camelcase
 				/>
 			</div>

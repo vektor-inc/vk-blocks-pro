@@ -131,19 +131,24 @@ export default function save({ attributes, className }) {
 				/>
 				<RichText.Content
 					tagName="p"
-					className={`vk_staff_text_role` + staffPositionClassName }
+					className={`vk_staff_text_role` + staffPositionClassName}
 					style={staffPositionColorInlineStyle}
 					value={vk_staff_text_role} // eslint-disable-line camelcase
 				/>
 				<RichText.Content
 					tagName="h4"
-					className={`vk_staff_text_profileTitle` + staffProfileTitleClassName}
+					className={
+						`vk_staff_text_profileTitle` +
+						staffProfileTitleClassName
+					}
 					style={staffProfileTitleColorInlineStyle}
 					value={vk_staff_text_profileTitle} // eslint-disable-line camelcase
 				/>
 				<RichText.Content
 					tagName="p"
-					className={'vk_staff_text_profileText' + staffProfileTextClassName}
+					className={
+						'vk_staff_text_profileText' + staffProfileTextClassName
+					}
 					style={staffProfileTextColorInlineStyle}
 					value={vk_staff_text_profileText} // eslint-disable-line camelcase
 				/>

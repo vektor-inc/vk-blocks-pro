@@ -4,13 +4,6 @@ import { exec, execSync } from 'child_process';
 // buildディレクトリをクリーンアップ
 execSync('npx rimraf ./build/*');
 
-// ./src/blocks/以下のdir名をリスト化
-const allDirents = fs.readdirSync('./src/blocks/', { withFileTypes: true })
-const dirFreeNames = allDirents.filter(dirent => dirent.isDirectory()).map(({ name }) => name)
-// _pro以下のdir名をリスト化
-const allProDirents = fs.readdirSync('./src/blocks/_pro', { withFileTypes: true })
-const dirProNames = allProDirents.filter(dirent => dirent.isDirectory()).map(({ name }) => name)
-
 // コマンドライン引数を受け取る
 const args = process.argv[2]
 let devText
@@ -21,7 +14,19 @@ if (args === 'dev') {
     freeText = ":free"
 }
 
-// dirNamesにリスト化する。proブロックは1を渡す
+// ./src/blocks/以下のdir名をリスト化
+const allDirents = fs.readdirSync('./src/blocks/', { withFileTypes: true })
+const dirFreeNames = allDirents.filter(dirent => dirent.isDirectory()).map(({ name }) => name)
+// _pro以下のdir名をリスト化 無料版ビルドの場合は空を返す
+let dirProNames;
+if ( freeText == ':free' ) {
+    dirProNames = [];
+} else {
+    const allProDirents = fs.readdirSync('./src/blocks/_pro', { withFileTypes: true })
+    dirProNames = allProDirents.filter(dirent => dirent.isDirectory()).map(({ name }) => name)
+}
+
+// dirNamesに整形する。proブロックは1を渡す
 // const dirNames = [
 //     { name: 'alert', isPro: 0 },
 //     { name: 'accordion', isPro: 1 },

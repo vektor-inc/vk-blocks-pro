@@ -6,7 +6,7 @@
  */
 
 // Load composer autoload.
-require_once dirname( dirname( dirname( __FILE__ ) ) ) . '/vendor/autoload.php';
+require_once dirname( dirname( __FILE__ ) ) . '/vendor/autoload.php';
 
 use VektorInc\VK_Color_Palette_Manager\VkColorPaletteManager;
 

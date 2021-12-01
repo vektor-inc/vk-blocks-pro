@@ -6,8 +6,7 @@
 	"parent": ["vk-blocks/step"],
 	"attributes": {
 		"color": {
-			"type": "string",
-			"default": "#337ab7"
+			"type": "string"
 		},
 		"style": {
 			"type": "string",

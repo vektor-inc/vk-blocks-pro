@@ -63,6 +63,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Icon Card(Pro) ] cope with custom color palette
 [ Bug fix ][ Step(Pro) ] cope with custom color palette
 
 = 1.20.2 =

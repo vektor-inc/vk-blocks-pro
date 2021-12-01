@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Step(Pro) ] cope with custom color palette
+
 = 1.20.2 =
 [ Bug fix ] Color palette manager in case of other theme
 

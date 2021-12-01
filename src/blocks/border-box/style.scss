@@ -125,6 +125,14 @@
 			}
 		}
 	}
+
+	.vk_borderBox_title_container:not(.has-background) {
+		background-color: #337AB7;
+	}
+
+	.vk_borderBox_body:not(.has-text-color) {
+		color: #337AB7;
+	}
 }
 
 /*

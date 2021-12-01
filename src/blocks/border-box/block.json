@@ -10,8 +10,7 @@
 			"selector": "h4"
 		},
 		"color": {
-			"type": "string",
-			"default": "red"
+			"type": "string"			
 		},
 		"bgColor": {
 			"type": "string",

@@ -21,7 +21,7 @@ export const settings = {
 	example: {
 		attributes: {
 			heading: title,
-			color: 'red',
+			color: 'undefined',
 			faIcon: iconUser,
 		},
 		innerBlocks: [

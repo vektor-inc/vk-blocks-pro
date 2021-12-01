@@ -35,35 +35,41 @@ export default function BorderBoxEdit(props) {
 	// title background
 	let titleClass = `vk_borderBox_title_container`;
 	let titleStyle = {};
-	if (isHexColor(color)) {
-		// custom color
-		titleClass += ` has-background`;
-		titleStyle = {
-			color: `${color}`,
-		};
-	} else if (colors.includes(color)) {
-		// legacy  style
-		legacyClass += ` vk_borderBox-color-${color} vk_borderBox-background-${bgColor}`;
-	} else {
-		// has style
-		titleClass += ` has-background has-${color}-background-color`;
+
+	if (color !== undefined) {
+		if (isHexColor(color)) {
+			// custom color
+			titleClass += ` has-background`;
+			titleStyle = {
+				color: `${color}`,
+			};
+		} else if (colors.includes(color)) {
+			// legacy  style
+			legacyClass += ` vk_borderBox-color-${color} vk_borderBox-background-${bgColor}`;
+		} else {
+			// has style
+			titleClass += ` has-background has-${color}-background-color`;
+		}
 	}
 
 	// body border
 	let bodyClass = `vk_borderBox_body`;
 	let bodyStyle = {};
-	if (isHexColor(color)) {
-		// custom color
-		bodyClass += ` has-text-color`;
-		bodyStyle = {
-			color: `${color}`,
-		};
-	} else if (colors.includes(color)) {
-		// legacy  style
-		legacyClass += ` vk_borderBox-color-${color} vk_borderBox-background-${bgColor}`;
-	} else {
-		// has style
-		bodyClass += ` has-text-color has-${color}-color`;
+
+	if (color !== undefined) {
+		if (isHexColor(color)) {
+			// custom color
+			bodyClass += ` has-text-color`;
+			bodyStyle = {
+				color: `${color}`,
+			};
+		} else if (colors.includes(color)) {
+			// legacy  style
+			legacyClass += ` vk_borderBox-color-${color} vk_borderBox-background-${bgColor}`;
+		} else {
+			// has style
+			bodyClass += ` has-text-color has-${color}-color`;
+		}
 	}
 
 	const blockProps = useBlockProps({
@@ -105,35 +111,6 @@ export default function BorderBoxEdit(props) {
 						id="border-color"
 						label={__('Border Color', 'vk-blocks')}
 					>
-						<SelectControl
-							value={color}
-							onChange={(value) =>
-								setAttributes({ color: value })
-							}
-							options={[
-								{
-									value: 'red',
-									label: __('Red', 'vk-blocks'),
-								},
-								{
-									value: 'orange',
-									label: __('Orange', 'vk-blocks'),
-								},
-								{
-									value: 'blue',
-									label: __('Blue', 'vk-blocks'),
-								},
-								{
-									value: 'green',
-									label: __('Green', 'vk-blocks'),
-								},
-								{
-									value: 'black',
-									label: __('Black', 'vk-blocks'),
-								},
-							]}
-						/>
-
 						<AdvancedColorPalette schema={'color'} {...props} />
 					</BaseControl>
 					<BaseControl

@@ -4,11 +4,12 @@ import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
 import {
 	RichText,
 	InspectorControls,
-	ColorPalette,
 	useBlockProps,
 } from '@wordpress/block-editor';
 import ReactHtmlParser from 'react-html-parser';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import {
 	PanelBody,
 	BaseControl,
@@ -38,21 +39,37 @@ export default function IconCardItemedit(props) {
 	} = attributes;
 	const align = JSON.parse(fixBrokenUnicode(activeControl));
 
-	let style;
-	let iconColor;
+	let style = {};
+	let iconOuterClass = '';
+	let iconColor = '';
 
-	if (bgType === '0') {
-		style = {
-			backgroundColor: `${color}`,
-			border: `1px solid ${color}`,
-		};
-		iconColor = `#ffffff`;
-	} else {
-		style = {
-			backgroundColor: `transparent`,
-			border: `1px solid ${color}`,
-		};
-		iconColor = `${color}`;
+	if (color !== undefined) {
+		//アイコン背景:ベタ塗り
+		if (bgType === '0') {
+			//カスタムカラーの時
+			if (isHexColor(color)) {
+				iconOuterClass = `has-background `;
+				style = {
+					backgroundColor: `${color}`,
+				};
+				//カラーパレットの時
+			} else {
+				iconOuterClass = `has-background has-${color}-background-color`;
+			}
+			//アイコン背景:背景なし
+		} else if (bgType === '1') {
+			//カスタムカラーの時
+			if (isHexColor(color)) {
+				iconOuterClass = `has-text-color `;
+				style = {
+					border: `1px solid ${color}`,
+				};
+				iconColor = `${color}`;
+				//カラーパレットの時
+			} else {
+				iconOuterClass = `has-text-color has-${color}-color`;
+			}
+		}
 	}
 
 	//過去バージョンをリカバリーした時にiconを正常に表示する
@@ -66,9 +83,19 @@ export default function IconCardItemedit(props) {
 
 	//add class and inline css
 	const faIconFragment = faIcon.split(' ');
-	faIconFragment[0] = faIconFragment[0] + ` style="color:${iconColor}" `;
+	if (iconColor !== '') {
+		faIconFragment[0] = faIconFragment[0] + ` style="color:${iconColor}" `;
+	} else {
+		faIconFragment[0] = faIconFragment[0] + ` `;
+	}
 	faIconFragment[1] = faIconFragment[1] + ` vk_icon-card_item_icon `;
 	const faIconTag = faIconFragment.join('');
+
+	// アイコン背景:背景なし
+	let iconOutlineClass = '';
+	if (bgType === '1') {
+		iconOutlineClass = 'is-style-outline';
+	}
 
 	const blockProps = useBlockProps({
 		className: `vk_post vk_icon-card_item vk_post-col-xs-${convertToGrid(
@@ -111,17 +138,7 @@ export default function IconCardItemedit(props) {
 						<FontAwesome attributeName={'faIcon'} {...props} />
 					</BaseControl>
 					<BaseControl>
-						<ColorPalette
-							value={color}
-							onChange={(value) => {
-								if (value) {
-									setAttributes({ color: value });
-								} else {
-									setAttributes({ color: '#0693e3' });
-									setAttributes({ bgType: '0' });
-								}
-							}}
-						/>
+						<AdvancedColorPalette schema={'color'} {...props} />
 						<RadioControl
 							label={__('Icon Background:', 'vk-blocks')}
 							selected={bgType}
@@ -144,7 +161,10 @@ export default function IconCardItemedit(props) {
 			</InspectorControls>
 
 			<div {...blockProps}>
-				<div className="vk_icon-card_item_icon_outer" style={style}>
+				<div
+					className={`vk_icon-card_item_icon_outer ${iconOutlineClass} ${iconOuterClass}`}
+					style={style}
+				>
 					{ReactHtmlParser(faIconTag)}
 				</div>
 				<RichText

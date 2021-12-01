@@ -346,7 +346,7 @@ msgstr ""
 #: src/blocks/_pro/icon-card-item/deprecated/0.0.1/component.js:70
 #: src/blocks/_pro/icon-card-item/deprecated/0.49.8/component.js:71
 #: src/blocks/_pro/icon-card-item/deprecated/0.60.1/component.js:85
-#: src/blocks/_pro/icon-card-item/edit.js:190
+#: src/blocks/_pro/icon-card-item/edit.js:191
 #: src/blocks/pr-blocks/deprecated/0.0.1/component.js:148
 #: src/blocks/pr-blocks/deprecated/0.0.2/component.js:176
 #: src/blocks/pr-blocks/deprecated/0.59.0/component.js:191
@@ -358,7 +358,7 @@ msgstr ""
 #: src/blocks/_pro/icon-card-item/deprecated/0.0.1/component.js:77
 #: src/blocks/_pro/icon-card-item/deprecated/0.49.8/component.js:78
 #: src/blocks/_pro/icon-card-item/deprecated/0.60.1/component.js:106
-#: src/blocks/_pro/icon-card-item/edit.js:212
+#: src/blocks/_pro/icon-card-item/edit.js:213
 #: src/blocks/pr-blocks/deprecated/0.0.1/component.js:157
 #: src/blocks/pr-blocks/deprecated/0.0.2/component.js:185
 #: src/blocks/pr-blocks/deprecated/0.59.0/component.js:200
@@ -366,16 +366,16 @@ msgstr ""
 msgid "Input Content"
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/edit.js:119
+#: src/blocks/_pro/icon-card-item/edit.js:117
 msgid "Icon Card Setting"
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/edit.js:121
+#: src/blocks/_pro/icon-card-item/edit.js:119
 #: src/blocks/pr-blocks/edit.js:263
 msgid "Link URL:"
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/edit.js:129
+#: src/blocks/_pro/icon-card-item/edit.js:127
 #: src/blocks/button/edit.js:195
 #: src/blocks/icon/edit.js:249
 #: src/blocks/pr-blocks/edit.js:271
@@ -383,7 +383,7 @@ msgstr ""
 msgid "Open link new tab."
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/edit.js:137
+#: src/blocks/_pro/icon-card-item/edit.js:135
 #: src/blocks/_pro/step-item/edit.js:72
 #: src/blocks/border-box/edit.js:122
 #: src/blocks/button/edit.js:415
@@ -392,12 +392,12 @@ msgstr ""
 msgid "Icon ( Font Awesome )"
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/edit.js:145
+#: src/blocks/_pro/icon-card-item/edit.js:143
 #: src/blocks/pr-blocks/edit.js:295
 msgid "Icon Background:"
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/edit.js:149
+#: src/blocks/_pro/icon-card-item/edit.js:147
 #: src/blocks/button/edit.js:298
 #: src/blocks/icon-outer/edit.js:204
 #: src/blocks/icon/edit.js:192
@@ -405,7 +405,7 @@ msgstr ""
 msgid "Solid color"
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/edit.js:153
+#: src/blocks/_pro/icon-card-item/edit.js:151
 #: src/blocks/button/edit.js:311
 #: src/blocks/pr-blocks/edit.js:303
 msgid "No background"

@@ -13,7 +13,8 @@
 		}
 	],
 	"require": {
-		"vektor-inc/vk-color-palette-manager": "^0.0.14"
+		"vektor-inc/vk-color-palette-manager": "^0.0.14",
+		"vektor-inc/font-awesome-versions": "^0.0.2"
 	},
 	"require-dev": {
 		"php": ">=7.2",

@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "gulpfile.js",
 	"scripts": {
-		"start": "wp-env start && open http://localhost:8888",
+		"start": "npm run build && npx wp-env start && open http://localhost:8888",
 		"stop": "wp-env stop",
 		"destroy": "wp-env destroy",
 		"watch": "gulp watch",

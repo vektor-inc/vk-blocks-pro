@@ -1,0 +1,35 @@
+.vk_icon{
+	&.wp-block{
+		margin-top:0;
+		margin-bottom:0;
+	}
+}
+
+// iconブロックのサイドバー調整CSS (サイズと余白の設定)
+.components-panel__body .vk_icon_custombox {
+	display: inline-flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+
+	&_number {
+		flex: 1 1 0%;
+		margin-left: 8px;
+		height: 30px;
+
+		input {
+			height: 30px;
+			min-height: 30px;
+		}
+	}
+
+	&_unit {
+		width: 64px !important;
+		margin-left: 8px;
+	}
+
+	&_reset.is-secondary {
+		height: 30px;
+		margin-left: 8px;
+	}
+}

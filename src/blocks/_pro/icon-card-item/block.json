@@ -2,6 +2,7 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/icon-card-item",
 	"category": "vk-blocks-cat",
+	"title":"Icon Card Item",
 	"attributes": {
 		"col_xs": {
 			"type": "number",
@@ -40,8 +41,7 @@
 			"default": false
 		},
 		"color": {
-			"type": "string",
-			"default": "#0693e3"
+			"type": "string"
 		},
 		"bgType": {
 			"type": "string",
@@ -66,6 +66,8 @@
 			"default": "fas fa-file"
 		}
 	},
+	"description": "This is one item in an icon card.",
+	"textdomain": "vk-blocks",
 	"parent": ["vk-blocks/icon-card"],
 	"supports": {
 		"className": true

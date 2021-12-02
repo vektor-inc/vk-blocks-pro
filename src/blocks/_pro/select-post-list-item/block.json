@@ -1,6 +1,7 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/select-post-list-item",
+	"title": "Selected Post List Item",
 	"category": "vk-blocks-cat",
 	"parent": ["vk-blocks/select-post-list"],
 	"attributes": {
@@ -89,6 +90,8 @@
 			"default": "text-right"
 		}
 	},
+	"description": "A single item in the select post list.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

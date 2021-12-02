@@ -1,34 +1,37 @@
 <?php
+/**
+ * Helper
+ *
+ * @package vk-blocks
+ */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-function vkblocks_is_lightning() {
-
+/**
+ * VK Blocks Is Lightning
+ *
+ * 使われているテーマがLightningかどうかを判別する
+ */
+function vk_blocks_is_lightning() {
 	// テーマがLightning系の場合読み込まない
-	$theme_textdomain = wp_get_theme()->get( 'TextDomain' );
-	if ( $theme_textdomain == 'lightning' || $theme_textdomain == 'lightning-pro' || $theme_textdomain == 'katawara'  ) {
-		return true;
-	}
-
-	$theme_template = wp_get_theme()->get( 'Template' );
-	if ( $theme_template == 'lightning' || $theme_template == 'lightning-pro' || $theme_textdomain == 'katawara' ) {
+	$current_template = get_template();
+	if ( 'lightning' === $current_template || 'lightning-pro' === $current_template || 'katawara' === $current_template ) {
 		return true;
 	}
 
 	return false;
-
 }
 
 /**
  * カスタマイザー用のチェックボックス
  *
- * @param $checked
+ * @param bool|string $checked checked.
  *
  * @return bool
  */
-function vkblocks_sanitize_checkbox( $checked ) {
+function vk_blocks_sanitize_checkbox( $checked ) {
 	if ( isset( $checked ) && $checked ) {
 		return true;
 	} else {
@@ -36,7 +39,7 @@ function vkblocks_sanitize_checkbox( $checked ) {
 	}
 }
 
-if ( ! function_exists( 'vkblocks_allow_wp_kses_allowed_html' ) ) {
+if ( ! function_exists( 'vk_blocks_allow_wp_kses_allowed_html' ) ) {
 
 	/**
 	 * Fix block saving for Non-Super-Admins (no unfiltered_html capability).
@@ -47,12 +50,12 @@ if ( ! function_exists( 'vkblocks_allow_wp_kses_allowed_html' ) ) {
 	 *
 	 * @see The list of tags & attributes currently allowed: https://core.trac.wordpress.org/browser/tags/5.2/src/wp-includes/kses.php#L61
 	 *
-	 * @param array $tags Allowed HTML tags & attributes.
+	 * @param array  $tags Allowed HTML tags & attributes.
 	 * @param string $context The context wherein the HTML is being filtered.
 	 *
 	 * @return array Modified HTML tags & attributes.
 	 */
-	function vkblocks_allow_wp_kses_allowed_html( $tags, $context ) {
+	function vk_blocks_allow_wp_kses_allowed_html( $tags, $context ) {
 		// Used by Card, Outer Blocks.
 		$tags['style'] = array(
 			'type' => true,
@@ -61,28 +64,28 @@ if ( ! function_exists( 'vkblocks_allow_wp_kses_allowed_html' ) ) {
 		// Used by Table of Contents Blocks.
 		$tags['input'] = array(
 			'type' => true,
-			'id' => true,
+			'id'   => true,
 		);
 
 		// Used by OuterBlock
-		$tags['svg'] = array(
-			'viewbox' => true,
-			'xmlns' => true,
+		$tags['svg']  = array(
+			'viewbox'             => true,
+			'xmlns'               => true,
 			'preserveaspectratio' => true,
 		);
 		$tags['path'] = array(
-			'fill' => true,
-			'd' => true,
+			'fill'        => true,
+			'd'           => true,
 			'strokewidth' => true,
 		);
 
 		return $tags;
 	}
 
-	add_filter( 'wp_kses_allowed_html', 'vkblocks_allow_wp_kses_allowed_html', 10, 2 );
+	add_filter( 'wp_kses_allowed_html', 'vk_blocks_allow_wp_kses_allowed_html', 10, 2 );
 }
 
-if ( ! function_exists( 'vkblocks_fix_gt_style_errors' ) ) {
+if ( ! function_exists( 'vk_blocks_fix_gt_style_errors' ) ) {
 
 	/**
 	 * Fix block saving for Non-Super-Admins (no unfiltered_html capability).
@@ -100,40 +103,34 @@ if ( ! function_exists( 'vkblocks_fix_gt_style_errors' ) ) {
 	 * @see Issue: https://core.trac.wordpress.org/ticket/48873#ticket
 	 * @see https://github.com/gambitph/vkblocks/issues/510
 	 *
-	 * @param array $data Post data
+	 * @param array $data Post data.
 	 *
-	 * @return array Post data to save
+	 * @return array Post data to save.
 	 */
-	function vkblocks_fix_gt_style_errors( $data ) {
+	function vk_blocks_fix_gt_style_errors( $data ) {
 		if ( empty( $data['post_content'] ) ) {
 			return $data;
 		}
 
 		// Check whether there are any "&gt;" symbols inside <style> tags of
 		// vkblocks blocks.
-		if ( ! preg_match( '%wp:vk-blocks/\w+(.*)?<style>(.*)?&gt;%s', $data['post_content'] ) || ! preg_match( '%wp:vk-blocks/\w+(.*)?<style type="text/css">(.*)?&gt;%s', $data['post_content'] ) ) {
-			return $data;
-		}
-
 		// Go through each block's "&gt;" and replace them with ">", only do
 		// this for vkblocks blocks.
-		$data['post_content'] = preg_replace_callback( '%wp:vk-blocks/\w+(.*)?/wp:vk-blocks/\w+%s', function( $matches ) {
-
-			// Replace <style type="text/css">
-			return preg_replace_callback( '%<style type="text/css">(.*)?</style>%s', function( $matches ) {
-				return '<style type="text/css">' . preg_replace( '%&gt;%', '>', $matches[1] ) . '</style>';
-			}, $matches[0] );
-
-			// // Replace <style>
-			return preg_replace_callback( '%<style>(.*)?</style>%s', function( $matches ) {
-				return '<style>' . preg_replace( '%&gt;%', '>', $matches[1] ) . '</style>';
-			}, $matches[0] );
-
-			return $content;
-		}, $data['post_content'] );
+		$data['post_content'] = preg_replace_callback(
+			'%wp:vk-blocks/\w+(.*)?/wp:vk-blocks/\w+%s',
+			function( $matches ) {
+				return preg_replace_callback(
+					'%(<style[^<>]*>)(.*)</style>%s',
+					function( $matches ) {
+						return $matches[1] . preg_replace( '/&gt;/', '>', $matches[2] ) . '</style>';
+					},
+					$matches[0]
+				);
+			},
+			$data['post_content']
+		);
 
 		return $data;
 	}
-
-	add_filter( 'wp_insert_post_data' , 'vkblocks_fix_gt_style_errors' , 99, 1 );
+	add_filter( 'wp_insert_post_data', 'vk_blocks_fix_gt_style_errors', 99, 1 );
 }

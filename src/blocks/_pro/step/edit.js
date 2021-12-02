@@ -16,7 +16,7 @@ export default function StepEdit({ attributes, setAttributes, clientId }) {
 	const { firstDotNum } = attributes;
 	const containerClass = ' vk_step';
 	const ALLOWED_BLOCKS = ['vk-blocks/step-item'];
-	const TEMPLATE = [ALLOWED_BLOCKS];
+	const TEMPLATE = [['vk-blocks/step-item']];
 
 	const currentInnerBlocks = asyncGetInnerBlocks(clientId);
 

@@ -1,7 +1,11 @@
+:root {
+	--vk-color-background-white-translucent:rgba(255, 255, 255, 0.5);
+}
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
 .vk_slider {
+	//共通ではないためvk_sliderの中に格納
 	width: 100%;
 	height: 100%;
 	position: relative;
@@ -25,19 +29,23 @@
 	.swiper-wrapper {
 		transition-timing-function: cubic-bezier(0.77, 0.2, 0.05, 1);
 	}
+	//vk_slider用のnextとprevボタン	
 	.swiper-button-next,
 	.swiper-button-prev {
-		color: #333;
-		background-color: rgba(255, 255, 255, 0.5);
-		border-radius: 5px;
+		color: var(--vk-color-text-body);
+		background-color: var(--vk-color-background-white-translucent);
+		border-radius: var(--vk-size-radius);
 		background-image: none;
 		width: 2.4rem;
 		height: 2.4rem;
+		z-index: 20;
 		&:after {
 			font-size: 1.2rem;
 		}
 	}
+
 }
+
 .swiper-container {
 	&.vk_width-full {
 		//全幅の時
@@ -50,6 +58,14 @@
 		max-width: 1140px;
 		margin: auto;
 	}
+	&-horizontal{
+		>.swiper-pagination-bullets {
+			.swiper-pagination-bullet{
+				margin: 0 5px;
+			}
+		}
+
+	}
 }
 .swiper-slide {
 	font-size: 18px;
@@ -57,21 +73,52 @@
 	align-items: center;
 	flex-direction: column;
 }
-
+//paginationの親枠
+.swiper-container-horizontal>.swiper-pagination-bullets{
+	padding-left:3.2rem;
+	padding-right:3.2rem;
+}
 //pagination
-.swiper-pagination-bullet-active {
-	background: #000;
-	opacity: 0.6;
+.swiper-pagination{
+	//標準
+	&-bullet{ 
+		border-radius: unset;
+		width: 30px;
+		height: 5px;
+		background-color: #ccc;
+		opacity: unset;
+		outline: 1px solid var(--vk-color-background-white-translucent);
+		&-active {
+			background: #666;
+		}
+	}
+	//標準以外（スライドの枚数）
+	&.swiper-pagination-fraction:not(.swiper-pagination-bullets){
+		width: auto;
+		left: 50%;
+		transform: translateX(-50%);
+		background: var(--vk-color-background-white-translucent);
+		padding: 0.4rem 1.5rem;
+		border-radius: 30px;
+		bottom: 5px;
+	}
 }
 
-.swiper-container-horizontal > .swiper-pagination-bullets,
-.swiper-pagination-custom,
-.swiper-pagination-fraction {
-	bottom: 15px;
+//矢印ボタン モバイルは下部
+@media (max-width: 575.98px) {
+	.swiper-button-next, 
+	.swiper-button-prev{
+		&.swiper-button-mobile-bottom{
+		top:unset;
+		bottom: 10px;
+		}
+	}
 }
 
-//管理画面
-// 
+
+/*-------------------------------------------*/
+/* 管理画面
+/*-------------------------------------------*/
 .edit-post-visual-editor {
 	.swiper-button-prev,
 	.swiper-button-next {
@@ -88,10 +135,10 @@
 			margin: auto;
 			&.vk_slider_item-paddingLR-use,
 			&.vk_slider_item-paddingLR-zero{
-				.vk_slider_item_container{ 
+				.vk_slider_item_container{
 						max-width:100%;
 					.wp-block{
-						max-width:100%;						
+						max-width:100%;
 					}
 				}
 			}

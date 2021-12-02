@@ -1,6 +1,7 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/pr-blocks",
+	"title": "PR Blocks",
 	"category": "vk-blocks-cat",
 	"attributes": {
 		"heading1" :{
@@ -92,20 +93,16 @@
 			"default": "<i class=\"fas fa-file\"></i>"
 		},
 		"color1":{
-			"type": "string",
-			"default": "#0693e3"
+			"type": "string"
 		},
 		"color2":{
-			"type": "string",
-			"default": "#0693e3"
+			"type": "string"
 		},
 		"color3":{
-			"type": "string",
-			"default": "#0693e3"
+			"type": "string"
 		},
 		"color4":{
-			"type": "string",
-			"default": "#0693e3"
+			"type": "string"
 		},
 		"bgType1": {
 			"type": "string",
@@ -140,6 +137,8 @@
 			"default": ""
 		}
 	},
+	"description": "This is a PR block where you can place images and icon.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

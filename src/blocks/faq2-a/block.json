@@ -2,9 +2,12 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/faq2-a",
 	"category": "vk-blocks-cat",
+	"title": "FAQ Answer",
 	"parent": [
 		"vk-blocks/faq2"
 	],
+	"description": "Answer area where you can add blocks freely.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"anchor": true,
 		"reusable": false

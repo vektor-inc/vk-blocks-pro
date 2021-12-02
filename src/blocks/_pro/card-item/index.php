@@ -1,18 +1,53 @@
 <?php
+/**
+ * Registers the `vk-blocks/card-item_item` block.
+ *
+ * @package vk-blocks
+ */
 
 /**
- * Registers the `vk-blocks/card_item` block.
+ * Register Card Item block.
+ *
+ * @return void
  */
-if( function_exists('register_block_type_from_metadata')) {
+function vk_blocks_register_block_card_item() {
+	// Register Style.
+	if ( ! is_admin() ) {
+		wp_register_style(
+			'vk-blocks/card-item',
+			VK_BLOCKS_DIR_URL . 'build/_pro/card-item/style.css',
+			array(),
+			VK_BLOCKS_VERSION
+		);
+	}
 
-	function register_block_vkb_card_item() {
+	// Register Script.
+	$asset = include VK_BLOCKS_DIR_PATH . 'build/_pro/card-item/block-build.asset.php';
+	wp_register_script(
+		'vk-blocks/card-item',
+		VK_BLOCKS_DIR_URL . 'build/_pro/card-item/block-build.js',
+		$asset['dependencies'],
+		VK_BLOCKS_VERSION,
+		true
+	);
+
+	if ( vk_blocks_is_lager_than_wp( '5.8' ) ) {
+		register_block_type(
+			__DIR__,
+			array(
+				'style'         => 'vk-blocks/card-item',
+				'editor_style'  => 'vk-blocks-build-editor-css',
+				'editor_script' => 'vk-blocks-build-js',
+			)
+		);
+	} else {
 		register_block_type_from_metadata(
 			__DIR__,
 			array(
-				'editor_style' => 'vk-blocks-build-editor-css',
+				'editor_style'  => 'vk-blocks-build-editor-css',
 				'editor_script' => 'vk-blocks-build-js',
 			)
 		);
 	}
-	add_action( 'init', 'register_block_vkb_card_item', 99 );
 }
+add_action( 'init', 'vk_blocks_register_block_card_item', 99 );

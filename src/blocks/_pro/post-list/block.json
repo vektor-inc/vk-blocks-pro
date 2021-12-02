@@ -2,6 +2,7 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/post-list",
 	"category": "vk-blocks-cat",
+	"title": "Post list",
 	"attributes": {
 		"name": {
 			"type": "string",
@@ -120,6 +121,8 @@
 			"default":""
 		}
 	},
+	"description": "Displays the list of posts by setting the post type, classification, and number of posts to display.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

@@ -32,8 +32,14 @@ export default function save({ attributes }) {
 	const btnClass = getButtonClass(buttonColorCustom);
 	const linkClass = getLinkClass(buttonColor, buttonColorCustom, buttonType);
 	const linkStyle = getLinkStyle(buttonColorCustom, buttonType);
-	const iconBefore = getFontawesomeIcon(fontAwesomeIconBefore);
-	const iconAfter = getFontawesomeIcon(fontAwesomeIconAfter);
+	const iconBefore = getFontawesomeIcon(
+		fontAwesomeIconBefore,
+		'vk_button_link_before'
+	);
+	const iconAfter = getFontawesomeIcon(
+		fontAwesomeIconAfter,
+		'vk_button_link_after'
+	);
 
 	return (
 		<div {...useBlockProps.save({ className: containerClass })}>

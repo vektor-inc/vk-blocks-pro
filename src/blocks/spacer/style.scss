@@ -1,7 +1,10 @@
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
-
+.vk_spacer-type-height {
+	display:block;
+	overflow:hidden;
+}
 @mixin switchVisibility($pc, $tablet, $mobile) {
 	.vk_spacer {
 		.vk_spacer-display-pc {

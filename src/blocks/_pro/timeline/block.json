@@ -1,8 +1,11 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/timeline",
+	"title": "Timeline",
 	"category": "vk-blocks-cat",
 	"attributes": {},
+	"description": "Displays a simple schedule and other information that is useful for explaining the order.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

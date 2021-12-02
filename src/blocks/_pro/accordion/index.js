@@ -15,7 +15,6 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-	title: __('Accordion', 'vk-blocks'),
 	icon: <Icon />,
 	styles: [
 		{
@@ -45,6 +44,9 @@ export const settings = {
 		},
 	],
 	example: {
+		attributes: {
+			containerClass: 'vk_accordion',
+		},
 		innerBlocks: [
 			{
 				name: 'vk-blocks/accordion-trigger',

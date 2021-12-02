@@ -2,6 +2,7 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/flow",
 	"category": "vk-blocks-cat",
+	"title": "Flow",
 	"attributes": {
 		"heading": {
 			"type": "string",
@@ -20,8 +21,14 @@
 		"insertImage": {
 			"type": "string",
 			"default": null
+		},
+		"insertImageAlt": {
+			"type": "string",
+			"default": null
 		}
 	},
+	"description": "Displays a sequential description in time series.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

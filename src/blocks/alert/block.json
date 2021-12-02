@@ -2,6 +2,9 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/alert",
 	"category": "vk-blocks-cat",
+	"title": "Alert",
+	"description": "A colored box with four statuses, including annotations and alerts.",
+	"textdomain": "vk-blocks",
 	"attributes": {
 		"style": {
 			"type": "string",

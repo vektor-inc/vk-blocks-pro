@@ -20,10 +20,21 @@ $media-xxl-down: 1399.98px;
 	background-repeat: no-repeat;
 	position: relative;
 	transform: translateZ(0); // Safari 1px bug 対応
-
 	.vk_outer_container {
 		min-height: 40px;
+		h1:first-child, 
+		h2:first-child, 
+		h3:first-child, 
+		h4:first-child, 
+		h5:first-child {//他テーマ用
+			margin-top: 0;
+		}
 	}
+}
+// これがないとレスポンシブスペーサーの共通高さが検出しない。
+.vk_outer{
+	display:block; 
+	overflow:hidden;
 }
 //iOS Safari での1pxズレの予防のため　Only Safari 10.1+
 @supports (-webkit-touch-callout: none) {
@@ -32,11 +43,11 @@ $media-xxl-down: 1399.98px;
 	}
 }
 
-
 .vk_outer-width-full {
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
 }
+
 // Fit to content area width
 .vk_outer-width-full.vk_outer-paddingLR-none {
 	padding-left: calc(50vw - 50%);
@@ -166,6 +177,7 @@ $padding-xxl: 4em;
 }
 
 $color-danger: #b52727;
+
 
 /*-------------------------------------------*/
 /* 管理画面

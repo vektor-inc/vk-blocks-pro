@@ -11,72 +11,75 @@ document.defaultView.addEventListener('load', function () {
 				sliderNode.getAttribute('data-vkb-slider')
 			);
 
-			//自動再生がONかOFFによって条件分岐
-			if (attributes.autoPlay) {
-				// 変数名にindexを使う
-				// eslint-disable-next-line no-eval
-				eval(`var swiper${index} = new Swiper ('.vk_slider_${
-					attributes.clientId
-				}', {
-				// Optional parameters
-				pagination: {
-					el: '.swiper-pagination',
-					clickable : true,
-				},
+			let SwiperSetting = `
+			var swiper${index} = new Swiper ('.vk_slider_${attributes.clientId}', {
+			`;
 
+			if (attributes.autoPlay) {
+				SwiperSetting += `
 				autoplay: {
 					delay: ${attributes.autoPlayDelay},
-					disableOnInteraction: false,
-					stopOnLastSlide: ${!attributes.loop}
+					disableOnInteraction: ${attributes.autoPlayStop},
+					stopOnLastSlide: ${!attributes.loop},
 				},
+				`;
+			}
 
-				speed: ${attributes.speed},
-
-				slidesPerView: ${attributes.slidesPerView},
-
-				slidesPerGroup: ${attributes.slidesPerGroup},
-
-				loop: ${attributes.loop},
-
-				effect: '${attributes.effect}',
-
-				// navigation arrows
-				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
-				},
-
-			});`);
-			} else {
-				// eslint-disable-next-line no-eval
-				eval(`var swiper${index} = new Swiper ('.vk_slider_${attributes.clientId}', {
-				// Optional parameters
+			if (attributes.pagination !== 'hide') {
+				SwiperSetting += `
 				pagination: {
 					el: '.swiper-pagination',
 					clickable : true,
+					type: '${attributes.pagination}',
+					renderFraction: function (currentClass, totalClass) {
+						return '<span class="' + currentClass + '"></span>' + ' / ' + '<span class="' + totalClass + '"></span>';
+					},
 				},
+				`;
+			}
 
+			if (attributes.speed) {
+				SwiperSetting += `
 				speed: ${attributes.speed},
+				`;
+			}
 
+			if (attributes.effect !== 'fade') {
+				if (attributes.slidesPerView) {
+					SwiperSetting += `
 				slidesPerView: ${attributes.slidesPerView},
+					`;
+				}
 
+				if (attributes.slidesPerGroup) {
+					SwiperSetting += `
 				slidesPerGroup: ${attributes.slidesPerGroup},
+					`;
+				}
+			}
 
+			if (attributes.loop) {
+				SwiperSetting += `
 				loop: ${attributes.loop},
+				`;
+			}
 
+			if (attributes.effect) {
+				SwiperSetting += `
 				effect: '${attributes.effect}',
+				`;
+			}
 
-				// navigation arrows
+			SwiperSetting += `
 				navigation: {
 					nextEl: '.swiper-button-next',
 					prevEl: '.swiper-button-prev',
-				}
-
-			});`);
-			}
-
+				},
+			});`;
+			// eslint-disable-next-line no-eval
+			eval(SwiperSetting);
 			// ページネーションがOFFの時非表示
-			if (!attributes.pagination) {
+			if (attributes.pagination === 'hide') {
 				// eslint-disable-next-line no-eval
 				eval(`swiper${index}.pagination.destroy();`);
 			}

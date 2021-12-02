@@ -1,6 +1,7 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/border-box",
+	"title": "Border Box",
 	"category": "vk-blocks-cat",
 	"attributes": {
 		"heading": {
@@ -21,6 +22,8 @@
 			"default": ""
 		}
 	},
+	"description": "This is a border box where you can place headings to attract attention.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

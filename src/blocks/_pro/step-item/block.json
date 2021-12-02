@@ -1,12 +1,12 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/step-item",
+	"title": "Step Item",
 	"category": "vk-blocks-cat",
 	"parent": ["vk-blocks/step"],
 	"attributes": {
 		"color": {
-			"type": "string",
-			"default": "#337ab7"
+			"type": "string"
 		},
 		"style": {
 			"type": "string",
@@ -29,6 +29,8 @@
 			"default": ""
 		}
 	},
+	"description": "This element sets the icon, color, and style of the step mark.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

@@ -1,17 +1,14 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
-export default function save() {
+export default function save(props) {
+	const { containerClass } = props.attributes;
 	const blockProps = useBlockProps.save({
-		className: `vk_accordion-container`,
+		className: `${containerClass}`,
 	});
 
 	return (
 		<div {...blockProps}>
-			<div className="vk_accordion-header"></div>
-			<div className="vk_accordion-body">
-				<InnerBlocks.Content />
-			</div>
-			<div className="vk_accordion-footer"></div>
+			<InnerBlocks.Content />
 		</div>
 	);
 }

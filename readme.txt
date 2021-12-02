@@ -1,11 +1,11 @@
 === VK Blocks ===
-Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips
+Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
-Tested up to: 5.7.2
-Stable tag: 1.4.6
-Requires PHP: 5.6.0
+Tested up to: 5.8.2
+Stable tag: 1.19.1
+Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -63,6 +63,177 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ PR Blocks ] cope with custom color palette
+[ Bug fix ][ Step(Pro) ] cope with custom color palette
+
+= 1.20.2 =
+[ Bug fix ] Color palette manager in case of other theme
+
+= 1.20.1 =
+[ Bug fix ] Fix -wp5.7 error
+
+= 1.20.0 =
+[ Other ][ All ] Refactoring all blocks.
+[ Bug fix ] Color palette manager in case of other theme
+
+= 1.19.1 =
+[ Bug fix ][ Button ] Fix bootstrap color crash
+
+= 1.19.0 =
+[ Add Function ][ Button ] Set the text color with palette
+[ Bug fix ][ Button ] Add primary color css variable in case of other theme 
+
+= 1.18.6 =
+[ Bug fix ][ Button ] Custom color value don't refrect reopen
+
+= 1.18.5 =
+[ Other ] Change stable version only.
+
+= 1.18.4 =
+[ Bug fix ] 1.18.0 update ( Add color palette manager in plugin )
+[ Bug fix ][ Button ] Fix bug in case of used button block for reusable block.
+
+= 1.18.3 =
+[ Bug fix ] Revert 1.17.0
+
+= 1.18.2 =
+[ Bug fix ] Revert 1.17.0
+
+= 1.18.1 =
+[ Bug fix ] Revert 1.17.0
+
+= 1.18.0 =
+[ Add Function ] Add color palette manager in plugin
+
+= 1.17.0 =
+[ Add Block ][ Button Outer(Pro) ]
+
+= 1.16.11 =
+[ Bug fix ][ Button ] Fix color on katawara
+
+= 1.16.10 =
+[ Bug fix ][ border box ] Fix border box title confrict by title design function
+
+= 1.16.9 =
+[ Bug fix ][ icon ] Fix css bug from 1.16.0
+
+= 1.16.8 =
+[ Bug fix ][ Button ] cope with custom color palette
+
+= 1.16.7 =
+[ Bug fix ][ Button ] Fix primary bg color first aid
+
+= 1.16.6 =
+[ Bug fix ][ Button ] Fix primary bg color first aid
+
+= 1.16.5 =
+[ Bug fix ][ Button ] Fix wide size
+
+= 1.16.4 =
+[ Bug fix ][ Button ] Fix outline color
+
+= 1.16.3 =
+[ Bug fix ] Cope with excerpt br
+
+= 1.16.2 =
+[ Other ] Cope with old ssl error
+
+= 1.16.1 =
+[ Bug fix ][ Card ] Fix broke layout on edit screen
+
+= 1.16.0 =
+[ Add New Block ] Icon Outer
+[ Bug fix ][ icon ] Fixed a bug the style was reset when the icon color clear
+[ Bug fix ][ Ordered List ] Fixed a bug in standard style
+
+= 1.15.1 =
+[ Bug fix ][ Spacer ] Fix common margin setting in case of unspecified
+
+= 1.15.0 =
+[ Add Function ][ Grid Column Item ] Add color and padding setting
+
+= 1.14.1 =
+[ Bug fix ][ Spacer ] Fix common setting input
+
+= 1.14.0 =
+[ Add Function ][ Spacer ] Add common spacer type and common spacer responsive size
+[ Bug fix ] Fix Lightning G3 Pro text size not work
+
+= 1.13.2 =
+[ Bug fix ][ Slider ]Fixed bug would break put a class in additional CSS class
+
+= 1.13.1 =
+[ Other ] version only
+
+= 1.13.0 =
+[ Specification Change ][ Post list ( Pro ) ] Cope with ruby tag
+
+= 1.12.0 =
+[ Add New Block ] Icon Block
+[ Improvement ][ Slider(Pro) ] add navigation position
+[ Specification Change ] VK Components Update ( can be customize title by hook )
+[ Specification Change ][ Slider(Pro) ] If set slide type fade that disable slide step number
+[ Bug fix ][ Slider(Pro) ] Fix bug that to be same id under case of copy slide item 
+[ Bug fix ][ Social icon ] Fix css in grid block
+
+= 1.11.4 =
+[ Bugfix ][ Step(Pro) ] Fixed icon position
+
+= 1.11.3 =
+[ Bugfix ][ Step(Pro) ] Fixed icon position at G3
+
+= 1.11.2 =
+[ Improvement ] add block description
+[ Bugfix ] Fixed widget screen warning
+[ Bugfix ][ Slider(Pro) ] Change id when copy slider & slider-item.
+
+= 1.11.1 =
+[ Bugfix ][ Table style ] add botder top and bottom style
+
+= 1.11.0 =
+[ Specification Change ][ Button ] Change margin getready to core button block.
+
+= 1.10.0 =
+[ Specification Change ][ Slider(Pro) ] Add no height setting.
+[ Bugfix ][ Slider(Pro) ]Fix bug where pagination design would change when tree shake was enabled.
+
+= 1.9.2 =
+[ Bugfix ] Fix for 5.8
+[ Specification Change ][ Slider(Pro) ] add Pagination Setting
+[ Specification Change ][ Heading ] Font size of title & sub text can set null.
+
+= 1.9.1 =
+[ Bug fix ] Fix AllowedBlocks of InnerBlocks.
+
+= 1.9.0 =
+[ Improvement ][ Inline Font Size ] setting font size in toolbar
+[ Bug fix ][ Icon card ] Fix css bug
+
+= 1.8.2 =
+[ Bug fix ][ FAQ ] Fixed CSS of answer part when closing in the initial state
+[ Bug fix ][ Responsive BR ] Fixed Console Warning
+
+= 1.8.1 =
+[ Bug fix ][ Flow ] Fixed to reflect alt of image
+
+= 1.8.0 =
+[ Improvement ][ Spacer ] Add common space size setting
+[ Bug fix ] PR Content button after icon position
+
+= 1.7.1 =
+[ Bugfix ][ Heading ] Fix Color Palette default setting.
+
+= 1.7.0 =
+[ Improvement ][ Spacer ] Add common space size style
+
+= 1.6.0 =
+[ Improvement ][ Grid Column(Pro) ] enable setting margin bottom
+[ Bugfix ][ Heading ] Fix Heading design when using Lightning Heading Setting
+
+= 1.5.0 =
+[ Improvement ][ highlighter ] setting color in toolbar
+[ Specification Change ][ Table of Contents ] Add notice about copying heading.
+
 = 1.4.6 =
 [ Specification Change ] Update VK Admin Library.
 
@@ -84,7 +255,7 @@ e.g.
 = 1.4.0 =
 [ Improvement ][ title ] Convert to VK Blocks Title from core title block 
 [ Improvement ][ Select Post List Item ]setting from toolbar and enable search URL
-[ Bug fix ][ tlanslate ] in Select Post List Item
+[ Bug fix ][ translate ] in Select Post List Item
 [ Bug fix ][ New FAQ ] Fix multiple select
 [ Bug fix ][ Accordion ] Fix multiple select
 [ Specification Change ][ Border Box ] Delete margin-top from first element / delete margin-bottom from last element

@@ -1,6 +1,8 @@
 <?php
 /**
  * VK Helpers Config
+ *
+ * @package vk-blocks
  */
 
 if ( ! class_exists( 'VK_Helpers' ) ) {

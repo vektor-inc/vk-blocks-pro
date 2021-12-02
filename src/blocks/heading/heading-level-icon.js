@@ -7,7 +7,6 @@ import { Path, SVG } from '@wordpress/components';
  * HeadingLevelIcon props.
  *
  * @typedef WPHeadingLevelIconProps
- *
  * @property {number}   level     The heading level to show an icon for.
  * @property {?boolean} isPressed Whether or not the icon should appear pressed; default: false.
  */
@@ -16,7 +15,6 @@ import { Path, SVG } from '@wordpress/components';
  * Heading level icon.
  *
  * @param {WPHeadingLevelIconProps} props Component props.
- *
  * @return {?WPComponent} The icon.
  */
 export default function HeadingLevelIcon({ level, isPressed = false }) {

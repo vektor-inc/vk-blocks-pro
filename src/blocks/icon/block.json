@@ -1,0 +1,56 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/icon",
+	"category": "vk-blocks-cat",
+	"title": "Icon",
+	"attributes": {
+		"faIcon": {
+			"type": "string",
+			"default": "<i class=\"fas fa-user\"></i>"
+		},
+		"iconSize": {
+			"type": "number",
+			"default": 36
+		},
+		"iconSizeUnit": {
+			"type": "string",
+			"default": "px"
+		},
+		"iconMargin": {
+			"type": "number",
+			"default": 22
+		},
+		"iconMarginUnit": {
+			"type": "string",
+			"default": "px"
+		},
+		"iconRadius": {
+			"type": "number",
+			"default": 50
+		},
+		"iconAlign": {
+			"type": "string",
+			"default": "left"
+		},
+		"iconType": {
+			"type": "string",
+			"default": "0"
+		},
+		"iconColor": {
+			"type": "string"
+		},
+		"iconUrl": {
+			"type": "string"
+		},
+		"iconTarget": {
+			"type": "Boolean",
+			"default": false
+		}
+	},
+	"description": "Display icons with Font Awesome.",
+	"textdomain": "vk-blocks",
+	"supports": {
+		"className": true,
+		"anchor": true
+	}
+}

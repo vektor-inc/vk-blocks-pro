@@ -1,6 +1,9 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/slider",
+	"title": "Slider",
+	"description": "This slider allows you to place various items.Slider is do not move in edit screen.",
+	"textdomain": "vk-blocks",
 	"category": "vk-blocks-cat-layout",
 	"attributes": {
 		"unit": {
@@ -8,32 +11,32 @@
 			"default": "px"
 		},
 		"pc": {
-			"type": "number",
-			"default": 600
+			"type": "number"
 		},
 		"tablet": {
-			"type": "number",
-			"default": 600
+			"type": "number"
 		},
 		"mobile": {
-			"type": "number",
-			"default": 600
+			"type": "number"
 		},
 		"autoPlay": {
 			"type": "boolean",
 			"default": true
+		},
+		"autoPlayStop": {
+			"type": "boolean",
+			"default": false
 		},
 		"autoPlayDelay": {
 			"type": "number",
 			"default": 2500
 		},
 		"pagination": {
-			"type": "boolean",
-			"default": true
+			"type": "string",
+			"default": "bullets"
 		},
 		"clientId": {
-			"type": "string",
-			"default": ""
+			"type": "string"
 		},
 		"width": {
 			"type": "string",
@@ -58,6 +61,10 @@
 		"slidesPerGroup": {
 			"type": "number",
 			"default": 1
+		},
+		"navigationPosition": {
+			"type": "string",
+			"default": "mobile-bottom"
 		}
 	},
 	"supports": {

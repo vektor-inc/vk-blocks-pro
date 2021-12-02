@@ -1,6 +1,7 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/select-post-list",
+	"title": "Selected Post List",
 	"category": "vk-blocks-cat",
 	"attributes": {
 		"layout": {
@@ -80,6 +81,8 @@
 			"default": "text-right"
 		}
 	},
+	"description": "Displays an arbitrarily specified page with the layout of the posting list.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

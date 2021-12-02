@@ -7,11 +7,44 @@
 
 /**
  * Registers the `vk-blocks/page-content` block.
+ *
+ * @return void
  */
-if( function_exists('register_block_type_from_metadata')) {
+function vk_blocks_register_block_page_content() {
+	// Register Script.
+	$asset = include VK_BLOCKS_DIR_PATH . 'build/page-content/block-build.asset.php';
+	wp_register_script(
+		'vk-blocks/page_content',
+		VK_BLOCKS_DIR_URL . 'build/page_content/block-build.js',
+		$asset['dependencies'],
+		VK_BLOCKS_VERSION,
+		true
+	);
 
-	function register_block_vk_page_content() {
-		global $vk_blocks_common_attributes;
+	global $vk_blocks_common_attributes;
+	if ( vk_blocks_is_lager_than_wp( '5.8' ) ) {
+		register_block_type(
+			__DIR__,
+			array(
+				'editor_style'    => 'vk-blocks-build-editor-css',
+				'editor_script'   => 'vk-blocks-build-js',
+				'attributes'      => array_merge(
+					array(
+						'className'  => array(
+							'type'    => 'string',
+							'default' => '',
+						),
+						'TargetPost' => array(
+							'type'    => 'number',
+							'default' => -1,
+						),
+					),
+					$vk_blocks_common_attributes
+				),
+				'render_callback' => 'vk_blocks_page_content_render_callback',
+			)
+		);
+	} else {
 		register_block_type_from_metadata(
 			__DIR__,
 			array(
@@ -19,47 +52,46 @@ if( function_exists('register_block_type_from_metadata')) {
 				'editor_script'   => 'vk-blocks-build-js',
 				'attributes'      => array_merge(
 					array(
-						'className'      => array(
+						'className'  => array(
 							'type'    => 'string',
 							'default' => '',
 						),
-						'TargetPost'         => array(
+						'TargetPost' => array(
 							'type'    => 'number',
-							'default' => -1
+							'default' => -1,
 						),
 					),
 					$vk_blocks_common_attributes
 				),
-				'render_callback' => 'vk_page_content_render_callback'
+				'render_callback' => 'vk_blocks_page_content_render_callback',
 			)
 		);
 	}
-	add_action( 'init', 'register_block_vk_page_content', 99 );
-
-	// Add fiter for render post content
-	add_filter( 'vk_page_content', 'do_blocks', 9 );
-	add_filter( 'vk_page_content', 'wptexturize' );
-	add_filter( 'vk_page_content', 'convert_smilies', 20 );
-	add_filter( 'vk_page_content', 'shortcode_unautop' );
-	add_filter( 'vk_page_content', 'prepend_attachment' );
-	add_filter( 'vk_page_content', 'wp_filter_content_tags' );
-	add_filter( 'vk_page_content', 'do_shortcode', 11 );
-	add_filter( 'vk_page_content', 'capital_P_dangit', 11 );
 }
+add_action( 'init', 'vk_blocks_register_block_page_content', 99 );
+
+// Add fiter for render post content
+add_filter( 'vk_page_content', 'do_blocks', 9 );
+add_filter( 'vk_page_content', 'wptexturize' );
+add_filter( 'vk_page_content', 'convert_smilies', 20 );
+add_filter( 'vk_page_content', 'shortcode_unautop' );
+add_filter( 'vk_page_content', 'prepend_attachment' );
+add_filter( 'vk_page_content', 'wp_filter_content_tags' );
+add_filter( 'vk_page_content', 'do_shortcode', 11 );
+add_filter( 'vk_page_content', 'capital_P_dangit', 11 );
 
 /**
  * Render Callback of Page Content Block
  *
  * @param array $attributes attributes.
- * @param html  $content content.
+ * @return string
  */
-function vk_page_content_render_callback( $attributes ) {
-
+function vk_blocks_page_content_render_callback( $attributes ) {
 	$page_content_id = ! empty( $attributes['TargetPost'] ) ? $attributes['TargetPost'] : -1;
 	$page_content    = -1 !== $page_content_id ? get_post( $page_content_id )->post_content : '';
-	vk_page_content_enqueue_scripts( $page_content );
+	vk_blocks_content_enqueue_scripts( $page_content );
 
-	$vk_blocks_options  = vkblocks_get_options();
+	$vk_blocks_options = vk_blocks_get_options();
 	if ( has_block( 'vk-blocks/faq2', $page_content ) || has_block( 'vk-blocks/faq', $page_content ) ) {
 		if ( 'open' === $vk_blocks_options['new_faq_accordion'] ) {
 			$page_content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-accordion-open', $page_content );
@@ -69,14 +101,14 @@ function vk_page_content_render_callback( $attributes ) {
 			$page_content = str_replace( '[accordion_trigger_switch]', '', $page_content );
 		}
 	}
-	$page_content = str_replace('[br-xs]','<br class="vk_responsive-br vk_responsive-br-xs"/>', $page_content);
-	$page_content = str_replace('[br-sm]','<br class="vk_responsive-br vk_responsive-br-sm"/>', $page_content);
-	$page_content = str_replace('[br-md]','<br class="vk_responsive-br vk_responsive-br-md"/>', $page_content);
-	$page_content = str_replace('[br-lg]','<br class="vk_responsive-br vk_responsive-br-lg"/>', $page_content);
-	$page_content = str_replace('[br-xl]','<br class="vk_responsive-br vk_responsive-br-xl"/>', $page_content);
-	$page_content = str_replace('[br-xxl]','<br class="vk_responsive-br vk_responsive-br-xxl"/>', $page_content);
+	$page_content = str_replace( '[br-xs]', '<br class="vk_responsive-br vk_responsive-br-xs"/>', $page_content );
+	$page_content = str_replace( '[br-sm]', '<br class="vk_responsive-br vk_responsive-br-sm"/>', $page_content );
+	$page_content = str_replace( '[br-md]', '<br class="vk_responsive-br vk_responsive-br-md"/>', $page_content );
+	$page_content = str_replace( '[br-lg]', '<br class="vk_responsive-br vk_responsive-br-lg"/>', $page_content );
+	$page_content = str_replace( '[br-xl]', '<br class="vk_responsive-br vk_responsive-br-xl"/>', $page_content );
+	$page_content = str_replace( '[br-xxl]', '<br class="vk_responsive-br vk_responsive-br-xxl"/>', $page_content );
 
-	$classes = '';
+	$classes   = '';
 	$page_html = '';
 
 	if ( -1 !== $page_content_id ) {
@@ -110,14 +142,15 @@ function vk_page_content_render_callback( $attributes ) {
 		}
 
 		$page_html .= '<div class="' . $classes . '">';
-		$page_html .= apply_filters( 'vk_page_content', $page_content );
-		$page_html .= '</div>';
+		// Warning : 'vk_page_content' is old hook name that this line is old filter name fall back.
+		$page_content = apply_filters( 'vk_page_content', $page_content ); //phpcs:ignore
+		$page_html   .= apply_filters( 'vk_blocks_page_content', $page_content );
+		$page_html   .= '</div>';
 
 		$url = get_edit_post_link( $page_content_id );
 		if ( $url ) {
 			$page_html .= '<a href="' . esc_url( $url ) . '" class="vk_pageContent_editBtn btn btn-outline-primary btn-sm veu_adminEdit" target="_blank">' . __( 'Edit this area', 'vk-blocks' ) . '</a>';
 		}
-
 	}
 
 	return $page_html;
@@ -127,9 +160,9 @@ function vk_page_content_render_callback( $attributes ) {
 /**
  * Load Scripts
  *
- * @param html $page_content Contents
+ * @param string $page_content Contents.
  */
-function vk_page_content_enqueue_scripts( $page_content ) {
+function vk_blocks_content_enqueue_scripts( $page_content ) {
 	if ( has_block( 'vk-blocks/faq2', $page_content ) || has_block( 'vk-blocks/faq', $page_content ) ) {
 		wp_enqueue_script( 'vk-blocks-faq2', VK_BLOCKS_URL . 'build/faq2.min.js', array(), VK_BLOCKS_VERSION, true );
 	}
@@ -142,4 +175,4 @@ function vk_page_content_enqueue_scripts( $page_content ) {
 		wp_enqueue_script( 'vk-blocks-slider', VK_BLOCKS_URL . 'build/vk-slider.min.js', array( 'vk-blocks-swiper' ), VK_BLOCKS_VERSION, true );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'vk_page_content_enqueue_scripts' );
+add_action( 'wp_enqueue_scripts', 'vk_blocks_content_enqueue_scripts' );

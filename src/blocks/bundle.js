@@ -24,6 +24,8 @@ import * as faq2a from './faq2-a';
 import * as faq2q from './faq2-q';
 import * as flow from './flow';
 import * as heading from './heading';
+import * as icon from './icon';
+import * as iconOuter from './icon-outer';
 import * as pageContent from './page-content';
 import * as prBlocks from './pr-blocks';
 import * as prContent from './pr-content';
@@ -55,6 +57,8 @@ const vkBlocks = [
 	faq2q,
 	flow,
 	heading,
+	icon,
+	iconOuter,
 	pageContent,
 	prBlocks,
 	prContent,
@@ -71,7 +75,6 @@ export const __getVKBlocks = () => vkBlocks.concat(vkblocksPro);
  * Function to register an individual block.
  *
  * @param {Object} block The block to be registered.
- *
  */
 const registerBlock = (block) => {
 	if (!block) {
@@ -80,8 +83,18 @@ const registerBlock = (block) => {
 
 	let { metadata, settings, name } = block;
 
+	/*
+	そもそも Require at Least が 5.7 なので 5.5 以下の後方互換は不要ではあるが、現状影響が少ないので残しておく
+	window.wpVersion は外観 > カスタマイズ > ウィジェットでは undefined を返すので比較不可能
+	ともかく最初から undefined が条件に当てはまらないように変更
+	*/
+
 	//WP5.5未満の場合
-	if (compareVersions(window.wpVersion, '5.5') < 0) {
+	if (
+		window.wpVersion !== undefined &&
+		window.wpVersion !== null &&
+		compareVersions(window.wpVersion, '5.5') < 0
+	) {
 		//nameを削除
 		delete metadata.name;
 		//カテゴリ等を追加
@@ -90,9 +103,16 @@ const registerBlock = (block) => {
 			...metadata,
 		};
 	} else if (metadata) {
+		// ServerSideBlockの設定読み込み
 		unstable__bootstrapServerSideBlockDefinitions({ [name]: metadata }); // eslint-disable-line camelcase
 	}
-	registerBlockType(name, settings);
+
+	// 5.8以前の場合はnameのみ渡す
+	if (typeof getBlockSettingsFromMetadata !== 'function') {
+		registerBlockType(name, settings);
+	} else if (metadata) {
+		registerBlockType(metadata, settings);
+	}
 };
 
 /**

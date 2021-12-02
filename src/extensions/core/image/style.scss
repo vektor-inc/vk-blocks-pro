@@ -22,12 +22,12 @@ $border_primary: 1px solid #e5e5e5;
        margin: 8px 0 0;
     }
 }
-@mixin photoFrame-tilt-right { 
+@mixin photoFrame-tilt-right {
     transform: rotate(-2deg);
     -moz-transform: rotate(-2deg);
     -webkit-transform: rotate(-2deg);
 }
-@mixin photoFrame-tilt-left {   
+@mixin photoFrame-tilt-left {
     transform: rotate(2deg);
     -moz-transform: rotate(2deg);
     -webkit-transform: rotate(2deg);
@@ -50,6 +50,11 @@ $border_primary: 1px solid #e5e5e5;
     }
 }
 
+//他テーマ用に追加
+.wp-block-image figcaption {
+    text-align: center;
+    font-size: calc(var(--vk-size-text)* 0.75 );
+}
 
 //左寄せ、右寄せが未指定の場合はfigureに.is-style-vk-image のクラス名が付く
 //figure.wp-block-imageの「.wp-block-image」をつけないと、角丸2のスタイルがつかないので追加
@@ -197,32 +202,5 @@ figure.wp-block-image{
                 }
             }
         }
-    }
-}
-
-//編集画面ではfigreに編集画面の幅を指定している.wp-blockがつくので、幅が小さい画像の場合に幅のみ広がり、figcaptionが画像の中央にこないため、幅をfit-contentにしている。
-//fit-contentにしているので、中央に配置されるのでmargin を０にすると端によりすぎるためleftに6vwをつけている。
-.editor-styles-wrapper {
-    .is-root-container {
-
-        figure.wp-block-image.wp-block{
-            width: fit-content;
-            margin-left: 9%;
-        }
-        .wp-block-image>figcaption{//コアのcssに上書きされるので追加
-            display: block;
-        }
-
-        //幅広と全幅の場合はfit-contentを打ち消すため追加
-        &>.wp-block[data-align=wide], 
-        &>div[data-align=wide],
-        &>.wp-block[data-align=full], 
-        &>div[data-align=full] {
-            figure.wp-block-image{
-                width: auto;
-                margin-left: unset;
-            }
-        }
-        
     }
 }

@@ -1,16 +1,36 @@
 {
 	"name": "vektor/vk-blocks-pro",
 	"authors": [
-        {
-            "name": "vektor,inc.",
-            "email": "info@vektor-inc.co.jp"
-        }
-    ],
+		{
+			"name": "vektor,inc.",
+			"email": "info@vektor-inc.co.jp"
+		}
+	],
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		}
+	],
 	"require": {
-		"squizlabs/php_codesniffer": "*"
+		"php": ">=7.2",
+		"tgmpa/tgm-plugin-activation": "dev-develop",
+		"yahnis-elsts/plugin-update-checker": "*",
+		"vektor-inc/vk-color-palette-manager": "^0.0.14"
 	},
 	"require-dev": {
+		"php": ">=7.2",
+		"squizlabs/php_codesniffer": "*",
 		"sirbrillig/phpcs-variable-analysis": "^2.8",
-		"wp-phpunit/wp-phpunit": "^5.4"
+		"wp-phpunit/wp-phpunit": "^5.4",
+		"dealerdirect/phpcodesniffer-composer-installer": "*",
+		"phpcompatibility/phpcompatibility-wp": "*",
+		"wp-coding-standards/wpcs": "*",
+		"yoast/phpunit-polyfills": "^1.0"
+	},
+	"scripts": {
+		"format": "phpcbf --standard=./.phpcs.xml.dist --report-summary --report-source",
+		"lint": "phpcs --standard=./.phpcs.xml.dist",
+		"phpcs": "phpcs --standard=./.phpcs.xml.dist"
 	}
 }

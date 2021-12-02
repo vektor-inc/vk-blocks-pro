@@ -64,7 +64,7 @@ const renderTitle = (level, contents, tStyle, headingStyle) => {
 
 export default function HeaddingEdit(props) {
 	const { attributes, setAttributes } = props;
-	let {
+	const {
 		level,
 		align,
 		title,
@@ -110,50 +110,59 @@ export default function HeaddingEdit(props) {
 	const containerClass = `vk_heading vk_heading-style-${titleStyle}`;
 
 	const cStyle = {
-		marginBottom: outerMarginBottom ? outerMarginBottom + `rem` : undefined,
+		marginBottom:
+			outerMarginBottom !== null && outerMarginBottom !== undefined
+				? outerMarginBottom + `rem`
+				: undefined,
 	};
 
 	const tStyle = {
-		color: titleColor ? titleColor : undefined,
-		fontSize: titleSize ? titleSize + 'rem' : undefined,
-		marginBottom: titleMarginBottom ? titleMarginBottom + 'rem' : undefined,
-		textAlign: align ? align : undefined,
+		color:
+			titleColor !== null && titleColor !== undefined
+				? titleColor
+				: undefined,
+		fontSize:
+			titleSize !== null && titleSize !== undefined
+				? titleSize + 'rem'
+				: undefined,
+		marginBottom:
+			titleMarginBottom !== null && titleMarginBottom !== undefined
+				? titleMarginBottom + 'rem'
+				: undefined,
+		textAlign: align !== null && align !== undefined ? align : undefined,
 	};
 
 	const headingStyle = `vk_heading_title vk_heading_title-style-${titleStyle}`;
 	const subTextStyle = {
-		color: subTextColor ? subTextColor : undefined,
-		fontSize: subTextSize ? subTextSize + 'rem' : undefined,
-		textAlign: align ? align : undefined,
+		color:
+			subTextColor !== null && subTextColor !== undefined
+				? subTextColor
+				: undefined,
+		fontSize:
+			subTextSize !== null && subTextSize !== undefined
+				? subTextSize + 'rem'
+				: undefined,
+		textAlign: align !== null && align !== undefined ? align : undefined,
 	};
 	const subTextClass = `vk_heading_subtext vk_heading_subtext-style-${titleStyle}`;
 
 	let iconBefore = '';
 	let iconAfter = '';
+	const fontAwesomeIconStyle = fontAwesomeIconColor
+		? `style="color:${fontAwesomeIconColor};"`
+		: '';
 	if (fontAwesomeIconBefore) {
-		//for recovering block
-		fontAwesomeIconColor = fontAwesomeIconColor
-			? fontAwesomeIconColor
-			: '#000000';
-
 		//add inline css
 		const faIconFragmentBefore = fontAwesomeIconBefore.split('<i');
 		faIconFragmentBefore[0] =
-			faIconFragmentBefore[0] +
-			`<i style="color:${fontAwesomeIconColor};" `;
+			faIconFragmentBefore[0] + `<i ${fontAwesomeIconStyle} `;
 		iconBefore = faIconFragmentBefore.join('');
 	}
 	if (fontAwesomeIconAfter) {
-		//for recovering block
-		fontAwesomeIconColor = fontAwesomeIconColor
-			? fontAwesomeIconColor
-			: '#000000';
-
 		//add class and inline css
 		const faIconFragmentAfter = fontAwesomeIconAfter.split('<i');
 		faIconFragmentAfter[0] =
-			faIconFragmentAfter[0] +
-			`<i style="color:${fontAwesomeIconColor};" `;
+			faIconFragmentAfter[0] + `<i ${fontAwesomeIconStyle} `;
 		iconAfter = faIconFragmentAfter.join('');
 	}
 
@@ -192,7 +201,7 @@ export default function HeaddingEdit(props) {
 
 	return (
 		<>
-			<BlockControls>
+			<BlockControls group="block">
 				<ToolbarGroup>
 					<HeadingLevelDropdown
 						selectedLevel={level}
@@ -272,6 +281,8 @@ export default function HeaddingEdit(props) {
 						min={0.5}
 						max={4}
 						step={0.1}
+						allowReset={true}
+						resetFallbackValue={null}
 					/>
 					<BaseControl
 						label={__('Text Color', 'vk-blocks')}
@@ -347,6 +358,8 @@ export default function HeaddingEdit(props) {
 						min={0.5}
 						max={3}
 						step={0.1}
+						allowReset={true}
+						resetFallbackValue={null}
 					/>
 					<ColorPalette
 						value={subTextColor}

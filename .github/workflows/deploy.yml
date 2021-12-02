@@ -32,15 +32,25 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: 7.4
-    - run: |
-        npm install
-        npm install -g @wordpress/env
-        wp-env start
-        composer global require wp-cli/wp-cli-bundle
-    - run: npm run build
-    - run: npx gulp dist
-    - run: cd dist/ && zip -r ${{ env.plugin_name }}.zip ${{ env.plugin_name }}/ && mv ${{ env.plugin_name }}.zip ${GITHUB_WORKSPACE}
-
+    - name: Install NPM Scripts
+      run: npm install
+    - name: Install Composer Package ( no-dev )
+      run: composer install --no-dev
+    - name: Install @wordpress/env
+      run: npm install -g @wordpress/env
+    - name: Run @wordpress/env
+      run: wp-env start
+    - name: Install WP-CLI
+      run: |
+        curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+        chmod +x wp-cli.phar
+        mv wp-cli.phar /usr/local/bin/wp
+    - name: Build
+      run: npm run build
+    - name: Make Distribution
+      run: |
+        npm run dist
+        cd dist/ && zip -r ${{ env.plugin_name }}.zip ${{ env.plugin_name }}/ && mv ${{ env.plugin_name }}.zip ${GITHUB_WORKSPACE}
     - name: rsync deployments
       uses: burnett01/rsync-deployments@4.1
       with:

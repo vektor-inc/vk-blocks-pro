@@ -2,7 +2,6 @@
  * PR Block block type
  *
  */
-import { __ } from '@wordpress/i18n';
 import { ReactComponent as Icon } from './icon.svg';
 import {
 	iconName,
@@ -21,7 +20,6 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-	title: __('PR Blocks', 'vk-blocks'),
 	icon: <Icon />,
 	example: {
 		heading1: iconName,

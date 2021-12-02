@@ -53,7 +53,7 @@ export default function CardEdit(props) {
 
 	let innerClass = '';
 	const ALLOWED_BLOCKS = ['vk-blocks/card-item'];
-	const TEMPLATE = [ALLOWED_BLOCKS];
+	const TEMPLATE = [['vk-blocks/card-item']];
 
 	innerClass = 'editting';
 	innerClass += innerClass + ' vk_posts-edit';

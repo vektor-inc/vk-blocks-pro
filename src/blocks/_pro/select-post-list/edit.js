@@ -85,7 +85,7 @@ export default function SelectPostListEdit(props) {
 	}, [thisBlock, attributes]);
 
 	const ALLOWED_BLOCKS = ['vk-blocks/select-post-list-item'];
-	const TEMPLATE = [ALLOWED_BLOCKS];
+	const TEMPLATE = [['vk-blocks/select-post-list-item']];
 
 	let addColumnClass;
 	if (layout !== 'postListText') {

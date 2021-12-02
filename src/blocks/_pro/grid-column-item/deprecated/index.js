@@ -1,5 +1,7 @@
 import save0_45_2 from './0.45.2/save';
 import save0_60_1 from './0.60.1/save';
+import save1_4_1 from './1.4.1/save';
+import save1_13_2 from './1.13.2/save';
 
 const blockAttributes = {
 	layout: {
@@ -98,7 +100,38 @@ const blockAttributes = {
 	},
 };
 
+const blockAttributes2 = {
+	...blockAttributes,
+	textColor: {
+		type: 'string'
+	},
+	backgroundColor: {
+		type: 'string'
+	},
+	paddingUnit: {
+		type: 'string',
+		default: 'px',
+	},
+	paddingTop: {
+		type: 'number'
+	},
+	paddingX: {
+		type: 'number'
+	},
+	paddingBottom: {
+		type: 'number'
+	}
+}
+
 const deprecated = [
+	{
+		attributes: blockAttributes2,
+		save: save1_13_2,
+	},
+	{
+		attributes: blockAttributes,
+		save: save1_4_1,
+	},
 	{
 		attributes: blockAttributes,
 		save: save0_60_1,

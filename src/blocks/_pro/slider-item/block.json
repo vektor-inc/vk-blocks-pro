@@ -1,6 +1,9 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/slider-item",
+	"title": "Slider Item",
+	"description": "This is one item in the slider.",
+	"textdomain": "vk-blocks",
 	"category": "vk-blocks-cat-layout",
 	"parent": [ "vk-blocks/slider"] ,
 	"attributes": {
@@ -41,8 +44,7 @@
 			"default": "1"
 		},
 		"clientId": {
-			"type": "string",
-			"default": null
+			"type": "string"
 		}
 	},
 	"supports": {

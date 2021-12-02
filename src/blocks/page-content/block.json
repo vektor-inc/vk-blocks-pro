@@ -1,6 +1,7 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/page-content",
+	"title": "Page Content",
 	"category": "vk-blocks-cat",
 	"attributes": {
 		"TargetPost": {
@@ -8,6 +9,8 @@
 			"default": -1
 		}
 	},
+	"description": "Displays the body content of the specified parent page.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

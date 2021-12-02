@@ -19,7 +19,7 @@ export default function IconCardEdit(props) {
 	attributes.name = name;
 	let innerClass = '';
 	const ALLOWED_BLOCKS = ['vk-blocks/icon-card-item'];
-	const TEMPLATE = [ALLOWED_BLOCKS];
+	const TEMPLATE = [['vk-blocks/icon-card-item']];
 
 	const { getBlocksByClientId } = select('core/block-editor');
 	const { updateBlockAttributes } = dispatch('core/block-editor');

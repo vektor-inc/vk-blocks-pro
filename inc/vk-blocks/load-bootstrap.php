@@ -1,87 +1,106 @@
 <?php
-function vkblocks_is_load_bootstrap() {
+/**
+ * VK Blocks Load Bootstrap
+ *
+ * Functions loading Bootstrap lib.
+ *
+ * https://getbootstrap.jp/
+ *
+ * @package vk_blocks
+ */
 
-	if ( vkblocks_is_lightning() ) {
+/**
+ * VK Blocks load bootstrap
+ */
+function vk_blocks_is_load_bootstrap() {
+	$option = get_option( 'vk_blocks_load_bootstrap' );
+	if ( vk_blocks_is_lightning() ) {
 		return false;
 	}
-
-	if ( get_option( 'vkblocks_load_bootstrap', true ) ) {
+	if ( ! empty( $option ) ) {
 		return true;
 	} else {
 		return false;
 	}
-
 }
 
-	// Boostrapの読み込み
-function vkblocks_load_bootstrap( $hook_suffix ) {
-
-	if ( ! vkblocks_is_load_bootstrap() ) {
+/**
+ * Boostrapの読み込み
+ *
+ * @param string $hook_suffix hook suffix.
+ */
+function vk_blocks_load_bootstrap( $hook_suffix ) {
+	if ( ! vk_blocks_is_load_bootstrap() ) {
 		return;
 	}
 
 	wp_register_style( 'vkblocks-bootstrap', VK_BLOCKS_URL . '/build/bootstrap_vk_using.css', false, '4.3.1' );
 
-	// 管理画面
+	// 管理画面.
 	if ( is_admin() ) {
-
 		if ( 'post.php' === $hook_suffix || 'post-new.php' === $hook_suffix ) {
 			wp_enqueue_style( 'vkblocks-bootstrap' );
 		}
 	} else {
 		wp_enqueue_style( 'vkblocks-bootstrap' );
 	}
-
 }
-add_action( 'admin_enqueue_scripts', 'vkblocks_load_bootstrap' );
-add_action( 'wp_enqueue_scripts', 'vkblocks_load_bootstrap' );
+add_action( 'admin_enqueue_scripts', 'vk_blocks_load_bootstrap' );
+add_action( 'wp_enqueue_scripts', 'vk_blocks_load_bootstrap' );
 
 
 /**
  * Boostrapの読み込み設定をするカスタマイザー
  *
- * @param $wp_customize
+ * @param object $wp_customize Customizer Objects.
  */
-function vkblocks_customize_register( $wp_customize ) {
-
+function vk_blocks_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
-		'vkblocks_load_bootstrap_section', array(
+		'vk_blocks_load_bootstrap_section',
+		array(
 			'title'    => __( 'VK Blocks Bootstrap Setting', 'vk-blocks' ),
 			'priority' => 30,
 		)
 	);
 
 	$wp_customize->add_setting(
-		'vkblocks_load_bootstrap', array(
+		'vk_blocks_load_bootstrap',
+		array(
 			'default'           => false,
 			'type'              => 'option',
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'vkblocks_sanitize_checkbox',
+			'sanitize_callback' => 'vk_blocks_sanitize_checkbox',
 		)
 	);
 
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
-			$wp_customize, 'vkblocks_load_bootstrap', array(
+			$wp_customize,
+			'vk_blocks_load_bootstrap',
+			array(
 				'label'       => __( 'Loading Bootstrap4', 'vk-blocks' ),
 				'description' => __( 'Check here to load Bootstrap4. If your theme or plugins loading Bootstrap4, uncheck here.', 'vk-blocks' ),
 				'type'        => 'checkbox',
-				'section'     => 'vkblocks_load_bootstrap_section',
-				'settings'    => 'vkblocks_load_bootstrap',
+				'section'     => 'vk_blocks_load_bootstrap_section',
+				'settings'    => 'vk_blocks_load_bootstrap',
 			)
 		)
 	);
 }
 
-// Lightning 系じゃない時にカスタマイズパネルを表示
-if ( ! vkblocks_is_lightning() ) {
-	add_action( 'customize_register', 'vkblocks_customize_register' );
+// Lightning 系じゃない時にカスタマイズパネルを表示.
+if ( ! vk_blocks_is_lightning() ) {
+	add_action( 'customize_register', 'vk_blocks_customize_register' );
 }
 
-
-function vkblocks_add_setting_link( $links ) {
-	$settings_link = '<a href="' . esc_url( admin_url( '/customize.php' ) ) . '">' . __( 'Setting', 'vk-video-unit' ) . '</a>';
+/**
+ * VK Blocks add setting link
+ *
+ * @param array $links VK Blocks action links.
+ */
+function vk_blocks_add_setting_link( $links ) {
+	$settings_link = '<a href="' . esc_url( admin_url( '/customize.php' ) ) . '">' . __( 'Setting', 'vk-blocks' ) . '</a>';
 	array_unshift( $links, $settings_link );
 	return $links;
 }
-add_filter( 'plugin_action_links_vk-blocks/vk-blocks.php', 'vkblocks_add_setting_link', 10, 1 );
+add_filter( 'plugin_action_links_vk-blocks/vk-blocks.php', 'vk_blocks_add_setting_link', 10, 1 );

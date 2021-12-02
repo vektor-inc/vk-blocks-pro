@@ -5,15 +5,20 @@
  * @package VK Blocks
  */
 
- /*
- VK CSS Optimize 本体はExUnitなどで読み込むのでここでは読み込まず
- 追加したいファイルのみフックで投げるはずだったが単体売りするかもしれないので一応本体を同梱
+/**
+ * VK CSS Optimize 本体はExUnitなどで読み込むのでここでは読み込まず
+ * 追加したいファイルのみフックで投げるはずだったが単体売りするかもしれないので一応本体を同梱
  */
 if ( ! class_exists( 'VK_CSS_Optimize' ) ) {
 	require_once dirname( __FILE__ ) . '/package/class-vk-css-optimize.php';
 }
 
-function vkblocks_css_tree_shaking_array( $vk_css_tree_shaking_array ){
+/**
+ * CSS Tree Shaking Array
+ *
+ * @param array $vk_css_tree_shaking_array CSS Tree Shaking Array Paramator.
+ */
+function vk_blocks_css_tree_shaking_array( $vk_css_tree_shaking_array ) {
 	$vk_css_tree_shaking_array[] = array(
 		'id'      => 'vk-blocks-build-css',
 		'url'     => VK_BLOCKS_URL . 'build/block-build.css',
@@ -22,15 +27,17 @@ function vkblocks_css_tree_shaking_array( $vk_css_tree_shaking_array ){
 	);
 	return $vk_css_tree_shaking_array;
 }
-add_filter( 'vk_css_tree_shaking_array', 'vkblocks_css_tree_shaking_array' );
+add_filter( 'vk_css_tree_shaking_array', 'vk_blocks_css_tree_shaking_array' );
 
 /**
  * CSS Tree Shaking Exclude
  *
  * @param array $inidata CSS Tree Shaking Exclude Paramator.
  */
-function vkblocks_css_tree_shaking_exclude_class( $inidata ) {
+function vk_blocks_css_tree_shaking_exclude_class( $inidata ) {
 	$exclude_classes_array = array(
+		'swiper-pagination-bullet',
+		'swiper-pagination-bullet-active',
 		'vk_accordion-target-open',
 		'vk_accordion-target-close',
 		'vk_accordion-toggle-open',
@@ -77,4 +84,4 @@ function vkblocks_css_tree_shaking_exclude_class( $inidata ) {
 
 	return $inidata;
 }
-add_filter( 'css_tree_shaking_exclude', 'vkblocks_css_tree_shaking_exclude_class' );
+add_filter( 'css_tree_shaking_exclude', 'vk_blocks_css_tree_shaking_exclude_class' );

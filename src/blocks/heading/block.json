@@ -2,6 +2,7 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/heading",
 	"category": "vk-blocks-cat",
+	"title": "Heading",
 	"attributes": {
 		"anchor": {
 			"type": "string",
@@ -31,12 +32,10 @@
 			"default": ""
 		},
 		"titleColor": {
-			"type": "string",
-			"default": null
+			"type": "string"
 		},
 		"titleSize": {
-			"type": "number",
-			"default": 2
+			"type": "number"
 		},
 		"titleMarginBottom": {
 			"type": "number",
@@ -52,12 +51,10 @@
 			"default": "off"
 		},
 		"subTextColor": {
-			"type": "string",
-			"default": null
+			"type": "string"
 		},
 		"subTextSize": {
-			"type": "number",
-			"default": 1.2
+			"type": "number"
 		},
 		"fontAwesomeIconBefore": {
 			"type": "string",
@@ -68,10 +65,11 @@
 			"default": ""
 		},
 		"fontAwesomeIconColor": {
-			"type": "string",
-			"default": "#000000"
+			"type": "string"
 		}
 	},
+	"description": "This is a heading that allows you to set text size, subtext, icon, and margin.",
+	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true,
 		"customClassName": true,

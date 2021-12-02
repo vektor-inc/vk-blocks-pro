@@ -11,6 +11,10 @@ export default function FAQ2Edit() {
 		className: 'vk_faq',
 	});
 
+	const ALLOWED_BLOCKS = ['vk-blocks/faq2-q', 'vk-blocks/faq2-a'];
+
+	const TEMPLATE = [['vk-blocks/faq2-q'], ['vk-blocks/faq2-a']];
+
 	let massage;
 	// eslint-disable-next-line no-undef
 	if (vk_blocks_check.is_pro) {
@@ -36,11 +40,8 @@ export default function FAQ2Edit() {
 				<div className="vk_faq-header"></div>
 				<dl className="vk_faq-body">
 					<InnerBlocks
-						allowedBlocks={[
-							['vk-blocks/faq2-q'],
-							['vk-blocks/faq2-a'],
-						]}
-						template={[['vk-blocks/faq2-q'], ['vk-blocks/faq2-a']]}
+						allowedBlocks={ALLOWED_BLOCKS}
+						template={TEMPLATE}
 						templateLock="all"
 					/>
 				</dl>

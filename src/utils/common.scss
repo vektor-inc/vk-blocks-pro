@@ -7,6 +7,26 @@
 }
 
 /*-------------------------------------------*/
+/* 余白（まだ レスポンシブスペーサーでのみ使用）
+/*-------------------------------------------*/
+:root {
+	--vk-margin-sm : 1.5rem;
+	--vk-margin-md : 2rem;
+	--vk-margin-lg : 4rem;
+}
+.vk_block{
+	&-margin-sm {
+		margin-top: var(--vk-margin-sm);
+	}
+	&-margin-md {
+		margin-top: var(--vk-margin-md);
+	}
+	&-margin-lg {
+		margin-top: var(--vk-margin-lg);
+	}
+}
+
+/*-------------------------------------------*/
 /* リストデザイン
 /*-------------------------------------------*/
 @mixin mark-before {
@@ -16,7 +36,6 @@
 }
 
 $stylePalette: (
-	is-style-vk-default: "•",
 	is-style-vk-arrow-mark: "\f138",
 	is-style-vk-triangle-mark: "\f0da",
 	is-style-vk-check-mark: "\f00c",
@@ -47,7 +66,6 @@ $colorPalette: (
 ul,
 ol {
 	&.is-style {
-		&-vk-default,
 		&-vk-arrow-mark,
 		&-vk-triangle-mark,
 		&-vk-check-mark,
@@ -63,8 +81,10 @@ ol {
 			li {
 				list-style: none;
 				position: relative;
-				margin-bottom: 0.8em;
-				line-height: 1.65em;
+				margin-top:0;
+				margin-left: 0;
+				margin:calc( var(--vk-size-text) * 0.8 ) 0;
+				line-height: calc( var(--vk-size-text) * 1.65 );
 			}
 		}
 	}
@@ -89,11 +109,24 @@ ol {
 				display: inline-block;
 				font-weight: bold;
 				border-radius: 50%;
-				font-size: 1em;
-				line-height: 1.8em;
+				font-size: calc( var(--vk-size-text) * 1 );
+				line-height: calc( var(--vk-size-text) * 1.8 );
 				width: 26px;
 				height: 26px;
 				text-align: center;
+			}
+
+			ul,
+			ol {
+				counter-reset: num_inner;
+				content: counter(num_inner);
+
+				li {
+					&:before {
+						counter-increment: num_inner;
+						content: counter(num_inner);
+					}
+				}
 			}
 		}
 	}
@@ -117,12 +150,25 @@ ol {
 				text-indent: 0;
 				display: inline-block;
 				font-weight: bold;
-				font-size: 1em;
-				line-height: 1.8em;
+				font-size: calc( var(--vk-size-text) * 1 );
+				line-height: calc( var(--vk-size-text) * 1.8 );
 				width: 26px;
 				height: 26px;
 				text-align: center;
 				border-radius: 2px;
+			}
+
+			ul,
+			ol {
+				counter-reset: num_inner;
+				content: counter(num_inner);
+
+				li {
+					&:before {
+						counter-increment: num_inner;
+						content: counter(num_inner);
+					}
+				}
 			}
 		}
 	}
@@ -220,8 +266,6 @@ ol {
 
 @mixin pad-mag {
 	padding: 1.8em;
-	margin-top:1.2em; // IE fall back
-	margin-bottom:1.2em; // IE fall back
 	margin-top: var( --vk-margin-elem );
 	margin-bottom: var( --vk-margin-elem );
 }

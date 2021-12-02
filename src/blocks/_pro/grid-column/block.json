@@ -1,6 +1,9 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/grid-column",
+	"title": "Grid Column",
+	"description": "Set the number of columns to be displayed for each screen size.",
+	"textdomain": "vk-blocks",
 	"category": "vk-blocks-cat-layout",
 	"attributes": {
 		"name": {
@@ -34,6 +37,14 @@
 		"col_xxl": {
 			"type": "number",
 			"default": 3
+		},
+		"marginBottom": {
+			"type": "number",
+			"default": null
+		},
+		"unit": {
+			"type": "string",
+			"default": "px"
 		}
 	},
 	"supports": {

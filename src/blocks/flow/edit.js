@@ -9,7 +9,8 @@ import { __ } from '@wordpress/i18n';
 import { RadioControl, PanelBody, Button } from '@wordpress/components';
 
 export default function FlowEdit({ attributes, setAttributes, clientId }) {
-	const { heading, content, insertImage, arrowFlag } = attributes;
+	const { heading, content, insertImage, arrowFlag, insertImageAlt } =
+		attributes;
 	const blockProps = useBlockProps({
 		className: `${arrowFlag} vk_flow`,
 	});
@@ -63,9 +64,10 @@ export default function FlowEdit({ attributes, setAttributes, clientId }) {
 					</dl>
 					<div className={'vk_flow_frame_image'}>
 						<MediaUpload
-							onSelect={(value) =>
-								setAttributes({ insertImage: value.url })
-							}
+							onSelect={(value) => {
+								setAttributes({ insertImage: value.url });
+								setAttributes({ insertImageAlt: value.alt });
+							}}
 							type="image"
 							className={'vk_flow_frame_image'}
 							value={insertImage}
@@ -84,10 +86,7 @@ export default function FlowEdit({ attributes, setAttributes, clientId }) {
 										<img
 											className={'icon-image'}
 											src={insertImage}
-											alt={__(
-												'Upload image',
-												'vk-blocks'
-											)}
+											alt={insertImageAlt}
 										/>
 									)}
 								</Button>

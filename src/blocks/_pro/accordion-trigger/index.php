@@ -1,18 +1,42 @@
 <?php
-
 /**
  * Registers the `vk-blocks/accordion-trigger` block.
+ *
+ * @package vk-blocks
  */
-if( function_exists('register_block_type_from_metadata')) {
 
-	function register_block_vkb_accordion_trigger() {
+/**
+ * Register accordion trigger block.
+ *
+ * @return void
+ */
+function vk_blocks_register_block_accordion_trigger() {
+	 // Register Script.
+	$asset = include VK_BLOCKS_DIR_PATH . 'build/_pro/accordion-trigger/block-build.asset.php';
+	wp_register_script(
+		'vk-blocks/accordion-trigger',
+		VK_BLOCKS_DIR_URL . 'build/_pro/accordion-trigger/block-build.js',
+		$asset['dependencies'],
+		VK_BLOCKS_VERSION,
+		true
+	);
+
+	if ( vk_blocks_is_lager_than_wp( '5.8' ) ) {
+		register_block_type(
+			__DIR__,
+			array(
+				'editor_style'  => 'vk-blocks-build-editor-css',
+				'editor_script' => 'vk-blocks-build-js',
+			)
+		);
+	} else {
 		register_block_type_from_metadata(
 			__DIR__,
 			array(
-				'editor_style' => 'vk-blocks-build-editor-css',
+				'editor_style'  => 'vk-blocks-build-editor-css',
 				'editor_script' => 'vk-blocks-build-js',
 			)
 		);
 	}
-	add_action( 'init', 'register_block_vkb_accordion_trigger', 99 );
 }
+add_action( 'init', 'vk_blocks_register_block_accordion_trigger', 99 );

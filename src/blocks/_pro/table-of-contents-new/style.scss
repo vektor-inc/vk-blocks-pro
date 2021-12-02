@@ -53,6 +53,7 @@ $toc-left-margin: 1rem;
 			&_link {
 				color: #333;
 				border-bottom: none;
+				text-decoration: none;
 				&:hover {
 					text-decoration: none;
 					border-bottom: 1px solid #ccc;
@@ -65,7 +66,7 @@ $toc-left-margin: 1rem;
 		opacity: 0;
 		z-index: -1;
 	}
-	&_openCloseBtn {
+	& &_openCloseBtn {
 		cursor: pointer;
 		font-size: 0.8em;
 		letter-spacing: 2px;

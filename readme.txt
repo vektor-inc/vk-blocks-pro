@@ -63,7 +63,12 @@ e.g.
 
 == Changelog ==
 
+= 1.20.3 =
+[ Bug fix ][ Post Media Layout ] Cope with not vektor theme 
+[ Bug fix ][ PR Blocks ] cope with custom color palette
 [ Bug fix ][ Step(Pro) ] cope with custom color palette
+[ Bug fix ][ Icon Card(Pro) ] cope with custom color palette
+[ Other ] Change TGM & Plugin Update Checker load from composer
 
 = 1.20.2 =
 [ Bug fix ] Color palette manager in case of other theme

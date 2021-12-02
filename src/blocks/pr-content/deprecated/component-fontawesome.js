@@ -3,11 +3,8 @@ import { Component } from '@wordpress/element';
 
 export class Fontawesome extends Component {
 	render() {
-		let {
-			buttonText,
-			fontAwesomeIconBefore,
-			fontAwesomeIconAfter,
-		} = this.props.attributes;
+		let { buttonText, fontAwesomeIconBefore, fontAwesomeIconAfter } =
+			this.props.attributes;
 
 		let iconBefore = '';
 		let faIconFragmentBefore;

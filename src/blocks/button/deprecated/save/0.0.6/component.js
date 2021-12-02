@@ -110,7 +110,10 @@ export class VKBButton extends Component {
 			iconBefore = faIconFragmentBefore.join('');
 		}
 		if (fontAwesomeIconAfter) {
-			iconAfter = fontAwesomeIconAfter.replace(/ fas /g, ' vk_button_link_after fas');
+			iconAfter = fontAwesomeIconAfter.replace(
+				/ fas /g,
+				' vk_button_link_after fas'
+			);
 		}
 
 		return (

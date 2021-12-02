@@ -66,19 +66,19 @@ const blockAttributes2 = {
 		type: 'number',
 		default: 1,
 	},
-}
+};
 
 export default [
 	{
 		attributes: {
-			... blockAttributes
+			...blockAttributes,
 		},
 		save: save0_60_1,
 	},
 	{
 		attributes: {
-			... blockAttributes2,
-			... blockAttributes
+			...blockAttributes2,
+			...blockAttributes,
 		},
 		save: save0_0_0,
 	},

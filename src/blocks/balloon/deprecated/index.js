@@ -39,7 +39,7 @@ const blockAttributes2 = {
 		type: 'string',
 		default: 'normal',
 	},
-}
+};
 
 const blockAttributes3 = {
 	...blockAttributes2,
@@ -51,7 +51,7 @@ const blockAttributes3 = {
 		type: 'string',
 		default: 'none', // no image by default!
 	},
-}
+};
 
 const blockAttributes4 = {
 	...blockAttributes3,
@@ -79,7 +79,7 @@ const blockAttributes4 = {
 		type: 'string',
 		default: null,
 	},
-}
+};
 
 const deprecated = [
 	{
@@ -104,7 +104,7 @@ const deprecated = [
 	},
 	{
 		attributes: blockAttributes2,
-		save:save0_37_1,
+		save: save0_37_1,
 	},
 	{
 		attributes: blockAttributes2,

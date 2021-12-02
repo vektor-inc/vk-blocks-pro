@@ -371,7 +371,7 @@ msgid "Icon Card Setting"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:119
-#: src/blocks/pr-blocks/edit.js:263
+#: src/blocks/pr-blocks/edit.js:241
 msgid "Link URL:"
 msgstr ""
 
@@ -383,7 +383,7 @@ msgstr ""
 msgid "Open link new tab."
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/edit.js:108
+#: src/blocks/_pro/icon-card-item/edit.js:135
 #: src/blocks/_pro/step-item/edit.js:72
 #: src/blocks/border-box/edit.js:122
 #: src/blocks/button/edit.js:415
@@ -392,7 +392,7 @@ msgstr ""
 msgid "Icon ( Font Awesome )"
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/edit.js:126
+#: src/blocks/_pro/icon-card-item/edit.js:143
 #: src/blocks/pr-blocks/edit.js:263
 msgid "Icon Background:"
 msgstr ""
@@ -409,15 +409,6 @@ msgstr ""
 #: src/blocks/button/edit.js:311
 #: src/blocks/pr-blocks/edit.js:271
 msgid "No background"
-msgstr ""
-
-#: src/blocks/_pro/icon-card-item/edit.js:90
-msgid "Icon Card Setting"
-msgstr ""
-
-#: src/blocks/_pro/icon-card-item/edit.js:92
-#: src/blocks/pr-blocks/edit.js:241
-msgid "Link URL:"
 msgstr ""
 
 #: src/blocks/_pro/icon-card/edit.js:65

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-12-02T04:01:53+00:00\n"
+"POT-Creation-Date: 2021-12-02T05:06:06+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -875,7 +875,7 @@ msgstr ""
 #: src/blocks/border-box/edit.js:63
 #: src/blocks/button/edit.js:333
 #: src/blocks/icon/edit.js:256
-#: src/blocks/staff/edit.js:139
+#: src/blocks/staff/edit.js:199
 #: inc/term-color/package/class.term-color.php:41
 #: inc/term-color/package/class.term-color.php:56
 #: inc/term-color/package/class.term-color.php:130

@@ -41,8 +41,10 @@ jobs:
 
     - name: Install NPM Scripts
       run: npm install
-    - name: install Composer Package
-      run: composer install
+    - name: Install Composer Package ( no-dev )
+      run: composer install --no-dev
+    - name: Install @wordpress/env
+      run: npm install -g @wordpress/env
     - name: Run @wordpress/env
       run: npx wp-env start
     - name: Install WP-CLI

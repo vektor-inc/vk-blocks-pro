@@ -44,6 +44,28 @@
 			width: 80px;
 			height: 80px;
 			border-radius: 50%;
+			//背景なしの時
+			&.is-style-outline {
+				//カラー選択
+				background-color: transparent;
+				border: 1px solid currentColor;
+				//デフォルト状態
+				&:not(.has-text-color) {
+					color: #0693e3;
+				}
+			}
+			//デフォルト状態
+			//ベタ塗りの時
+			&:not(.is-style-outline) {
+				&:not(.has-background) {
+					background-color: #0693e3;
+				}
+				.vk_icon-card_item {
+					&_icon {
+						color: #fff;
+					}
+				}
+			}
 		}
 		&_icon {
 			position: absolute;
@@ -51,7 +73,6 @@
 			left: 50%;
 			transform: translateY(-50%) translateX(-50%);
 			font-size: 36px;
-			color: #fff;
 		}
 		&_title {
 			background-color: transparent;

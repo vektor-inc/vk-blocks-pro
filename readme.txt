@@ -63,7 +63,7 @@ e.g.
 
 == Changelog ==
 
-[ Bug fix ][ Staff ] cope with custom color palette
+[ Bug fix ][ PR Blocks ] cope with custom color palette
 [ Bug fix ][ Step(Pro) ] cope with custom color palette
 
 = 1.20.2 =

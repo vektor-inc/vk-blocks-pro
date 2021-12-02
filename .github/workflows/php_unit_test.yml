@@ -1,11 +1,14 @@
 name: PHP Unit Test
 
 on:
+  push:
+    branches:
+      - master
+      - develop
   pull_request:
     branches:
       - master
       - develop
-      - ^feature/.+
 
 jobs:
   php_unit:
@@ -13,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php: [7.2, 7.3, 7.4]
+        php: [7.3, 7.4]
     services:
       mysql:
         image: mysql:5.7

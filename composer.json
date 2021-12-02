@@ -13,6 +13,9 @@
 		}
 	],
 	"require": {
+		"php": ">=7.2",
+		"tgmpa/tgm-plugin-activation": "dev-develop",
+		"yahnis-elsts/plugin-update-checker": "*",
 		"vektor-inc/vk-color-palette-manager": "^0.0.14"
 	},
 	"require-dev": {

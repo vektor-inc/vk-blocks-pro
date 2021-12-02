@@ -18,6 +18,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+// Composer のファイルを読み込み ( composer install --no-dev )
+require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
 // Set plugin dir path.
 define( 'VK_BLOCKS_DIR_PATH', plugin_dir_path( __FILE__ ) );
 // Set Plugin Dir URL
@@ -114,13 +116,9 @@ if ( strpos( $vk_blocks_plugin_base_dir, 'vk-blocks-pro' ) !== false ) {
 	// Cope with : WP HTTP Error: cURL error 60: SSL certificate problem: certificate has expired.
 	add_filter( 'https_ssl_verify', '__return_false' );
 
-	$vk_blocks_updater_url = plugin_dir_path( __FILE__ ) . 'inc/vk-blocks-pro/plugin-update-checker/plugin-update-checker.php';
-	if ( file_exists( $vk_blocks_updater_url ) ) {
-		require plugin_dir_path( __FILE__ ) . 'inc/vk-blocks-pro/plugin-update-checker/plugin-update-checker.php';
-		$vk_blocks_update_checker = Puc_v4_Factory::buildUpdateChecker(
-			'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=vk-blocks-pro',
-			__FILE__,
-			'vk-blocks-pro'
-		);
-	}
+	$vk_blocks_update_checker = Puc_v4_Factory::buildUpdateChecker(
+		'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=vk-blocks-pro',
+		__FILE__,
+		'vk-blocks-pro'
+	);
 }

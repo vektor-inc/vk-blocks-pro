@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-12-01T05:09:40+00:00\n"
+"POT-Creation-Date: 2021-12-02T03:46:31+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -165,7 +165,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/edit.js:88
 #: src/blocks/balloon/edit.js:379
 #: src/blocks/flow/edit.js:84
-#: src/blocks/pr-blocks/edit.js:88
+#: src/blocks/pr-blocks/edit.js:86
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:130
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:112
 #: src/blocks/pr-content/deprecated/0.0.2/save.js:207
@@ -361,7 +361,7 @@ msgstr ""
 #: src/blocks/pr-blocks/deprecated/0.0.1/component.js:148
 #: src/blocks/pr-blocks/deprecated/0.0.2/component.js:176
 #: src/blocks/pr-blocks/deprecated/0.59.0/component.js:191
-#: src/blocks/pr-blocks/edit.js:533
+#: src/blocks/pr-blocks/edit.js:516
 msgid "Input Title"
 msgstr ""
 
@@ -373,7 +373,7 @@ msgstr ""
 #: src/blocks/pr-blocks/deprecated/0.0.1/component.js:157
 #: src/blocks/pr-blocks/deprecated/0.0.2/component.js:185
 #: src/blocks/pr-blocks/deprecated/0.59.0/component.js:200
-#: src/blocks/pr-blocks/edit.js:542
+#: src/blocks/pr-blocks/edit.js:525
 msgid "Input Content"
 msgstr ""
 
@@ -389,12 +389,12 @@ msgstr ""
 #: src/blocks/_pro/icon-card-item/edit.js:127
 #: src/blocks/button/edit.js:195
 #: src/blocks/icon/edit.js:249
-#: src/blocks/pr-blocks/edit.js:271
+#: src/blocks/pr-blocks/edit.js:249
 #: src/blocks/pr-content/edit.js:130
 msgid "Open link new tab."
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/edit.js:135
+#: src/blocks/_pro/icon-card-item/edit.js:108
 #: src/blocks/_pro/step-item/edit.js:72
 #: src/blocks/border-box/edit.js:122
 #: src/blocks/button/edit.js:415
@@ -403,8 +403,8 @@ msgstr ""
 msgid "Icon ( Font Awesome )"
 msgstr ""
 
-#: src/blocks/_pro/icon-card-item/edit.js:143
-#: src/blocks/pr-blocks/edit.js:295
+#: src/blocks/_pro/icon-card-item/edit.js:126
+#: src/blocks/pr-blocks/edit.js:263
 msgid "Icon Background:"
 msgstr ""
 
@@ -412,14 +412,23 @@ msgstr ""
 #: src/blocks/button/edit.js:298
 #: src/blocks/icon-outer/edit.js:204
 #: src/blocks/icon/edit.js:192
-#: src/blocks/pr-blocks/edit.js:299
+#: src/blocks/pr-blocks/edit.js:267
 msgid "Solid color"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:151
 #: src/blocks/button/edit.js:311
-#: src/blocks/pr-blocks/edit.js:303
+#: src/blocks/pr-blocks/edit.js:271
 msgid "No background"
+msgstr ""
+
+#: src/blocks/_pro/icon-card-item/edit.js:90
+msgid "Icon Card Setting"
+msgstr ""
+
+#: src/blocks/_pro/icon-card-item/edit.js:92
+#: src/blocks/pr-blocks/edit.js:241
+msgid "Link URL:"
 msgstr ""
 
 #: src/blocks/_pro/icon-card/edit.js:65
@@ -1068,7 +1077,7 @@ msgid "Trembling"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:387
-#: src/blocks/pr-blocks/edit.js:82
+#: src/blocks/pr-blocks/edit.js:80
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:135
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:117
 #: src/blocks/pr-content/deprecated/0.0.2/save.js:214
@@ -1489,48 +1498,48 @@ msgstr ""
 msgid "Select Page"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:101
-msgid "PR Block1 Setting"
-msgstr ""
-
-#: src/blocks/pr-blocks/edit.js:119
+#: src/blocks/pr-blocks/edit.js:117
 msgid "Icon 1"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:154
+#: src/blocks/pr-blocks/edit.js:142
 msgid "When you have an image. Image is displayed with priority"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:160
+#: src/blocks/pr-blocks/edit.js:148
 msgid "PR Image 1"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:181
+#: src/blocks/pr-blocks/edit.js:169
 msgid "PR Block2 Setting"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:199
+#: src/blocks/pr-blocks/edit.js:187
 msgid "Icon 2"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:240
+#: src/blocks/pr-blocks/edit.js:218
 msgid "PR Image 2"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:261
+#: src/blocks/pr-blocks/edit.js:239
 msgid "PR Block3 Setting"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:279
+#: src/blocks/pr-blocks/edit.js:257
 msgid "Icon 3"
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:314
+#: src/blocks/pr-blocks/edit.js:282
 msgid "When you have an image. Image is displayed with priority."
 msgstr ""
 
-#: src/blocks/pr-blocks/edit.js:320
+#: src/blocks/pr-blocks/edit.js:288
 msgid "PR Image 3"
+msgstr ""
+
+#: src/blocks/pr-blocks/edit.js:99
+msgid "PR Block1 Setting"
 msgstr ""
 
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:152
@@ -2122,135 +2131,135 @@ msgstr ""
 msgid "4.7 will be abolished in the near future."
 msgstr ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:77
+#: inc/tgm-plugin-activation/tgm-config.php:72
 msgid "Install Required Plugins"
 msgstr ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:78
+#: inc/tgm-plugin-activation/tgm-config.php:73
 msgid "Install Plugins"
 msgstr ""
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:80
+#: inc/tgm-plugin-activation/tgm-config.php:75
 msgid "Installing Plugin: %s"
 msgstr ""
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:81
+#: inc/tgm-plugin-activation/tgm-config.php:76
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
 #. translators:
-#: inc/tgm-plugin-activation/tgm-config.php:83
+#: inc/tgm-plugin-activation/tgm-config.php:78
 msgid "This plugin requires the following plugin: %1$s."
 msgid_plural "This plugin requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:89
+#: inc/tgm-plugin-activation/tgm-config.php:84
 msgid "This plugin recommends the following plugin: %1$s.<br>Many additional functions are available for free."
 msgid_plural "This plugin recommends the following plugins: %1$s.<br>Many additional functions are available for free."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:95
+#: inc/tgm-plugin-activation/tgm-config.php:90
 msgid "Sorry, but you do not have the correct permissions to install the %1$s plugin."
 msgid_plural "Sorry, but you do not have the correct permissions to install the %1$s plugins."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:101
+#: inc/tgm-plugin-activation/tgm-config.php:96
 msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this plugin: %1$s."
 msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this plugin: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:107
+#: inc/tgm-plugin-activation/tgm-config.php:102
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:113
+#: inc/tgm-plugin-activation/tgm-config.php:108
 msgid "Sorry, but you do not have the correct permissions to update the %1$s plugin."
 msgid_plural "Sorry, but you do not have the correct permissions to update the %1$s plugins."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:119
+#: inc/tgm-plugin-activation/tgm-config.php:114
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:125
+#: inc/tgm-plugin-activation/tgm-config.php:120
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:131
+#: inc/tgm-plugin-activation/tgm-config.php:126
 msgid "Sorry, but you do not have the correct permissions to activate the %1$s plugin."
 msgid_plural "Sorry, but you do not have the correct permissions to activate the %1$s plugins."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:137
+#: inc/tgm-plugin-activation/tgm-config.php:132
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:142
+#: inc/tgm-plugin-activation/tgm-config.php:137
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:147
+#: inc/tgm-plugin-activation/tgm-config.php:142
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:152
+#: inc/tgm-plugin-activation/tgm-config.php:147
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:153
+#: inc/tgm-plugin-activation/tgm-config.php:148
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: inc/tgm-plugin-activation/tgm-config.php:154
+#: inc/tgm-plugin-activation/tgm-config.php:149
 msgid "The following plugin was activated successfully:"
 msgstr ""
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:156
+#: inc/tgm-plugin-activation/tgm-config.php:151
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:158
+#: inc/tgm-plugin-activation/tgm-config.php:153
 msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
 msgstr ""
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:160
+#: inc/tgm-plugin-activation/tgm-config.php:155
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
 #. translators: %s = dashboard link.
-#: inc/tgm-plugin-activation/tgm-config.php:162
+#: inc/tgm-plugin-activation/tgm-config.php:157
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
@@ -2470,7 +2479,7 @@ msgstr ""
 msgid "Edit this area"
 msgstr ""
 
-#: vk-blocks.php:96
+#: vk-blocks.php:98
 msgid "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks Plugin running."
 msgstr ""
 

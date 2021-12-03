@@ -17,11 +17,6 @@
  * @link       https://github.com/TGMPA/TGM-Plugin-Activation
  */
 
-/**
- * Include the TGM_Plugin_Activation class.
- */
-require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
-
 add_action( 'tgmpa_register', 'vkb_register_required_plugins' );
 /**
  * Register the required plugins for this theme.

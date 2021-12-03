@@ -266,8 +266,6 @@ ol {
 
 @mixin pad-mag {
 	padding: 1.8em;
-	margin-top:1.2em; // IE fall back
-	margin-bottom:1.2em; // IE fall back
 	margin-top: var( --vk-margin-elem );
 	margin-bottom: var( --vk-margin-elem );
 }

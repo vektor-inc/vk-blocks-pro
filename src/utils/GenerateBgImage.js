@@ -34,99 +34,61 @@ const GenerateBgImage = (props) => {
 		bgColorWOpacity = hex2rgba('#fff', opacity);
 	}
 
-	let bgColorCss = '';
-	let bgColorCssNoBackGround = '';
-	if (!bgColorOutputDisable) {
-		bgColorCss = `background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}),`;
-		bgColorCssNoBackGround = `background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity})`;
+	////////////////////////
+	let backgroundInfo = [];
+	if        (bgImageMobile && !bgImageTablet && !bgImage) {
+		backgroundInfo.push({url: bgImageMobile});
+	} else if (!bgImageMobile && bgImageTablet && !bgImage) {
+		backgroundInfo.push({url: bgImageTablet});
+	} else if (!bgImageMobile && !bgImageTablet && bgImage) {
+		backgroundInfo.push({url: bgImage});
+	} else if (bgImageMobile && !bgImageTablet && bgImage) {
+		backgroundInfo.push({mediaQuery: underPcViewport, url: bgImageMobile});
+		backgroundInfo.push({mediaQuery: pcViewport, url: bgImage});
+	} else if (!bgImageMobile && bgImageTablet && bgImage) {
+		backgroundInfo.push({mediaQuery: underPcViewport, url: bgImageTablet});
+		backgroundInfo.push({mediaQuery: pcViewport, url: bgImage});
+	} else if (bgImageMobile && bgImageTablet && !bgImage) {
+		backgroundInfo.push({mediaQuery: mobileViewport, url: bgImageMobile});
+		backgroundInfo.push({mediaQuery: tabletViewport, url: bgImageTablet});
+	} else if (bgImageMobile && bgImageTablet && bgImage) {
+		backgroundInfo.push({mediaQuery: mobileViewport, url: bgImageMobile});
+		backgroundInfo.push({mediaQuery: tabletViewport, url: bgImageTablet});
+		backgroundInfo.push({mediaQuery: pcViewport, url: bgImage});
+	} else if (!bgImageMobile && !bgImageTablet && !bgImage) {
+		backgroundInfo.push({mediaQuery: null, url: null});
 	}
 
-	//moible only
-	if (bgImageMobile && !bgImageTablet && !bgImage) {
-		return (
-			<style>{`.${prefix}-${clientId}{${bgColorCss}url(${bgImageMobile}); ${backgroundStyle}}`}</style>
-		);
-	}
-	//tablet only
-	if (!bgImageMobile && bgImageTablet && !bgImage) {
-		return (
-			<style>{`.${prefix}-${clientId}{${bgColorCss}url(${bgImageTablet}); ${backgroundStyle}}`}</style>
-		);
-	}
-	//pc only
-	if (!bgImageMobile && !bgImageTablet && bgImage) {
-		return (
-			<style>{`.${prefix}-${clientId}{${bgColorCss}url(${bgImage}); ${backgroundStyle}}`}</style>
-		);
-	}
-	//pc -mobile
-	if (bgImageMobile && !bgImageTablet && bgImage) {
-		return (
-			<style>
-				{`
-          @media screen and (${underPcViewport}) {
-            .${prefix}-${clientId}{${bgColorCss}url(${bgImageMobile}); ${backgroundStyle}}
-         }
-          @media screen and (${pcViewport}) {
-            .${prefix}-${clientId}{${bgColorCss}url(${bgImage}); ${backgroundStyle}}
-         }
-          `}
-			</style>
-		);
-	}
-	//pc -tablet
-	if (!bgImageMobile && bgImageTablet && bgImage) {
-		return (
-			<style>
-				{`
-          @media screen and (${underPcViewport}) {
-            .${prefix}-${clientId}{${bgColorCss}url(${bgImageTablet}); ${backgroundStyle}}
-         }
-          @media screen and (${pcViewport}) {
-            .${prefix}-${clientId}{${bgColorCss}url(${bgImage}); ${backgroundStyle}}
-         }
-          `}
-			</style>
-		);
-	}
-	//tablet - mobile
-	if (bgImageMobile && bgImageTablet && !bgImage) {
-		return (
-			<style>
-				{`
-          @media screen and (${mobileViewport}) {
-            .${prefix}-${clientId}{${bgColorCss}url(${bgImageMobile}); ${backgroundStyle}}
-         }
-          @media screen and (${tabletViewport}) {
-            .${prefix}-${clientId}{${bgColorCss}url(${bgImageTablet}); ${backgroundStyle}}
-         }
-        `}
-			</style>
-		);
-	}
-	//pc -tablet - mobile
-	if (bgImageMobile && bgImageTablet && bgImage) {
-		return (
-			<style>
-				{`
-        @media screen and (${mobileViewport}) {
-          .${prefix}-${clientId}{${bgColorCss}url(${bgImageMobile}); ${backgroundStyle}}
-       }
-        @media screen and (${tabletViewport}) {
-          .${prefix}-${clientId}{${bgColorCss}url(${bgImageTablet}); ${backgroundStyle}}
-       }
-        @media screen and (${pcViewport}) {
-          .${prefix}-${clientId}{${bgColorCss}url(${bgImage}); ${backgroundStyle}}
-       }
-        `}
-			</style>
-		);
-	}
-	//no background image
-	if (!bgImageMobile && !bgImageTablet && !bgImage) {
-		return (
-			<style>{`.${prefix}-${clientId}{${bgColorCssNoBackGround}; ${backgroundStyle}}`}</style>
-		);
-	}
+	const selectorCss = `.${prefix}-${clientId}`;
+	const bgColorCss = bgColorOutputDisable ? '' : `background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity})`;
+	const outputCss = [];
+	backgroundInfo.forEach( bg => {
+		let mediaQueryBefore = '';
+		let mediaQueryAfter = '';
+		if (backgroundInfo.length > 1) {
+			mediaQueryBefore = `@media screen and (${bg.mediaQuery}) {`;
+			mediaQueryAfter =  '}';
+		}
+
+		let bgUrlCss = '';
+		if (bg.url) {
+			bgUrlCss = `url(${bg.url});`;
+		}
+
+		const comma = bgUrlCss ? ',' : ';';
+
+		outputCss.push(mediaQueryBefore ?? '');
+		outputCss.push(`${selectorCss}{${bgColorCss}${comma}${bgUrlCss} ${backgroundStyle}}`);
+		outputCss.push(mediaQueryAfter ?? '');
+
+	});
+
+
+	return (
+		<style>
+			{outputCss.join('')}
+		</style>
+	)
+
 };
 export default GenerateBgImage;

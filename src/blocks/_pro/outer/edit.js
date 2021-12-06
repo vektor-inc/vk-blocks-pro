@@ -1,5 +1,6 @@
 import toNumber from '@vkblocks/utils/to-number';
 import { AdvancedMediaUpload } from '@vkblocks/components/advanced-media-upload';
+import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import { __ } from '@wordpress/i18n';
 import {
 	RangeControl,
@@ -190,6 +191,7 @@ export default function OuterEdit(props) {
 							'vk-blocks'
 						)}
 					>
+						<AdvancedColorPalette schema={'bgColor'} {...props} />
 						<ColorPalette
 							value={bgColor}
 							onChange={(value) =>

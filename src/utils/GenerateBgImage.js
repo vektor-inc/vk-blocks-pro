@@ -1,6 +1,8 @@
 import hex2rgba from './hex-to-rgba';
+import { colorSlugToColorCode } from './color-slug-to-color-code';
+import { isHexColor } from './is-hex-color';
 const GenerateBgImage = (props) => {
-	const { attributes, clientId, prefix } = props;
+	const { attributes, clientId, prefix, bgColorOutputDisable } = props;
 	const { bgImageMobile, bgImageTablet, bgImage, bgColor, opacity, bgSize } =
 		attributes;
 
@@ -20,31 +22,41 @@ const GenerateBgImage = (props) => {
 	}
 
 	let bgColorWOpacity;
-
+	let bgHexColor = bgColor;
 	//hexからrgbaに変換
 	if (bgColor) {
-		bgColorWOpacity = hex2rgba(bgColor, opacity);
+		if (!isHexColor(bgColor)) {
+			bgHexColor = colorSlugToColorCode(bgColor);
+		}
+		bgColorWOpacity = hex2rgba(bgHexColor, opacity);
 	} else {
 		//背景色をクリアした時は、白に変更
 		bgColorWOpacity = hex2rgba('#fff', opacity);
 	}
 
+	let bgColorCss = '';
+	let bgColorCssNoBackGround = '';
+	if (!bgColorOutputDisable) {
+		bgColorCss = `background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}),`;
+		bgColorCssNoBackGround = `background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity})`;
+	}
+
 	//moible only
 	if (bgImageMobile && !bgImageTablet && !bgImage) {
 		return (
-			<style>{`.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile}); ${backgroundStyle}}`}</style>
+			<style>{`.${prefix}-${clientId}{${bgColorCss}url(${bgImageMobile}); ${backgroundStyle}}`}</style>
 		);
 	}
 	//tablet only
 	if (!bgImageMobile && bgImageTablet && !bgImage) {
 		return (
-			<style>{`.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet}); ${backgroundStyle}}`}</style>
+			<style>{`.${prefix}-${clientId}{${bgColorCss}url(${bgImageTablet}); ${backgroundStyle}}`}</style>
 		);
 	}
 	//pc only
 	if (!bgImageMobile && !bgImageTablet && bgImage) {
 		return (
-			<style>{`.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage}); ${backgroundStyle}}`}</style>
+			<style>{`.${prefix}-${clientId}{${bgColorCss}url(${bgImage}); ${backgroundStyle}}`}</style>
 		);
 	}
 	//pc -mobile
@@ -53,10 +65,10 @@ const GenerateBgImage = (props) => {
 			<style>
 				{`
           @media screen and (${underPcViewport}) {
-            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile}); ${backgroundStyle}}
+            .${prefix}-${clientId}{${bgColorCss}url(${bgImageMobile}); ${backgroundStyle}}
          }
           @media screen and (${pcViewport}) {
-            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage}); ${backgroundStyle}}
+            .${prefix}-${clientId}{${bgColorCss}url(${bgImage}); ${backgroundStyle}}
          }
           `}
 			</style>
@@ -68,10 +80,10 @@ const GenerateBgImage = (props) => {
 			<style>
 				{`
           @media screen and (${underPcViewport}) {
-            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet}); ${backgroundStyle}}
+            .${prefix}-${clientId}{${bgColorCss}url(${bgImageTablet}); ${backgroundStyle}}
          }
           @media screen and (${pcViewport}) {
-            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage}); ${backgroundStyle}}
+            .${prefix}-${clientId}{${bgColorCss}url(${bgImage}); ${backgroundStyle}}
          }
           `}
 			</style>
@@ -83,10 +95,10 @@ const GenerateBgImage = (props) => {
 			<style>
 				{`
           @media screen and (${mobileViewport}) {
-            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile}); ${backgroundStyle}}
+            .${prefix}-${clientId}{${bgColorCss}url(${bgImageMobile}); ${backgroundStyle}}
          }
           @media screen and (${tabletViewport}) {
-            .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet}); ${backgroundStyle}}
+            .${prefix}-${clientId}{${bgColorCss}url(${bgImageTablet}); ${backgroundStyle}}
          }
         `}
 			</style>
@@ -98,13 +110,13 @@ const GenerateBgImage = (props) => {
 			<style>
 				{`
         @media screen and (${mobileViewport}) {
-          .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageMobile}); ${backgroundStyle}}
+          .${prefix}-${clientId}{${bgColorCss}url(${bgImageMobile}); ${backgroundStyle}}
        }
         @media screen and (${tabletViewport}) {
-          .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImageTablet}); ${backgroundStyle}}
+          .${prefix}-${clientId}{${bgColorCss}url(${bgImageTablet}); ${backgroundStyle}}
        }
         @media screen and (${pcViewport}) {
-          .${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}), url(${bgImage}); ${backgroundStyle}}
+          .${prefix}-${clientId}{${bgColorCss}url(${bgImage}); ${backgroundStyle}}
        }
         `}
 			</style>
@@ -113,7 +125,7 @@ const GenerateBgImage = (props) => {
 	//no background image
 	if (!bgImageMobile && !bgImageTablet && !bgImage) {
 		return (
-			<style>{`.${prefix}-${clientId}{background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity}); ${backgroundStyle}}`}</style>
+			<style>{`.${prefix}-${clientId}{${bgColorCssNoBackGround}; ${backgroundStyle}}`}</style>
 		);
 	}
 };

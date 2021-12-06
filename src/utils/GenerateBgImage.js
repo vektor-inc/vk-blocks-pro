@@ -35,39 +35,47 @@ const GenerateBgImage = (props) => {
 	}
 
 	////////////////////////
-	let backgroundInfo = [];
-	if        (bgImageMobile && !bgImageTablet && !bgImage) {
-		backgroundInfo.push({url: bgImageMobile});
+	const backgroundInfo = [];
+	if (bgImageMobile && !bgImageTablet && !bgImage) {
+		backgroundInfo.push({ url: bgImageMobile });
 	} else if (!bgImageMobile && bgImageTablet && !bgImage) {
-		backgroundInfo.push({url: bgImageTablet});
+		backgroundInfo.push({ url: bgImageTablet });
 	} else if (!bgImageMobile && !bgImageTablet && bgImage) {
-		backgroundInfo.push({url: bgImage});
+		backgroundInfo.push({ url: bgImage });
 	} else if (bgImageMobile && !bgImageTablet && bgImage) {
-		backgroundInfo.push({mediaQuery: underPcViewport, url: bgImageMobile});
-		backgroundInfo.push({mediaQuery: pcViewport, url: bgImage});
+		backgroundInfo.push({
+			mediaQuery: underPcViewport,
+			url: bgImageMobile,
+		});
+		backgroundInfo.push({ mediaQuery: pcViewport, url: bgImage });
 	} else if (!bgImageMobile && bgImageTablet && bgImage) {
-		backgroundInfo.push({mediaQuery: underPcViewport, url: bgImageTablet});
-		backgroundInfo.push({mediaQuery: pcViewport, url: bgImage});
+		backgroundInfo.push({
+			mediaQuery: underPcViewport,
+			url: bgImageTablet,
+		});
+		backgroundInfo.push({ mediaQuery: pcViewport, url: bgImage });
 	} else if (bgImageMobile && bgImageTablet && !bgImage) {
-		backgroundInfo.push({mediaQuery: mobileViewport, url: bgImageMobile});
-		backgroundInfo.push({mediaQuery: tabletViewport, url: bgImageTablet});
+		backgroundInfo.push({ mediaQuery: mobileViewport, url: bgImageMobile });
+		backgroundInfo.push({ mediaQuery: tabletViewport, url: bgImageTablet });
 	} else if (bgImageMobile && bgImageTablet && bgImage) {
-		backgroundInfo.push({mediaQuery: mobileViewport, url: bgImageMobile});
-		backgroundInfo.push({mediaQuery: tabletViewport, url: bgImageTablet});
-		backgroundInfo.push({mediaQuery: pcViewport, url: bgImage});
+		backgroundInfo.push({ mediaQuery: mobileViewport, url: bgImageMobile });
+		backgroundInfo.push({ mediaQuery: tabletViewport, url: bgImageTablet });
+		backgroundInfo.push({ mediaQuery: pcViewport, url: bgImage });
 	} else if (!bgImageMobile && !bgImageTablet && !bgImage) {
-		backgroundInfo.push({mediaQuery: null, url: null});
+		backgroundInfo.push({ mediaQuery: null, url: null });
 	}
 
 	const selectorCss = `.${prefix}-${clientId}`;
-	const bgColorCss = bgColorOutputDisable ? '' : `background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity})`;
+	const bgColorCss = bgColorOutputDisable
+		? ''
+		: `background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity})`;
 	const outputCss = [];
-	backgroundInfo.forEach( bg => {
+	backgroundInfo.forEach((bg) => {
 		let mediaQueryBefore = '';
 		let mediaQueryAfter = '';
 		if (backgroundInfo.length > 1) {
 			mediaQueryBefore = `@media screen and (${bg.mediaQuery}) {`;
-			mediaQueryAfter =  '}';
+			mediaQueryAfter = '}';
 		}
 
 		let bgUrlCss = '';
@@ -78,17 +86,12 @@ const GenerateBgImage = (props) => {
 		const comma = bgUrlCss ? ',' : ';';
 
 		outputCss.push(mediaQueryBefore ?? '');
-		outputCss.push(`${selectorCss}{${bgColorCss}${comma}${bgUrlCss} ${backgroundStyle}}`);
+		outputCss.push(
+			`${selectorCss}{${bgColorCss}${comma}${bgUrlCss} ${backgroundStyle}}`
+		);
 		outputCss.push(mediaQueryAfter ?? '');
-
 	});
 
-
-	return (
-		<style>
-			{outputCss.join('')}
-		</style>
-	)
-
+	return <style>{outputCss.join('')}</style>;
 };
 export default GenerateBgImage;

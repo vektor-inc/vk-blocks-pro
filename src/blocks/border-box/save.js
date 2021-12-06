@@ -15,13 +15,92 @@ export default function save(props) {
 		/>
 	);
 
-	// legacy class
-	let legacyClass = `vk_borderBox`;
-	const colors = ['red', 'orange', 'blue', 'green', 'black'];
+	const blockProps = useBlockProps.save({
+		className: `vk_borderBox`,
+	});
 
-	// title background
+	//Defaultクラスを設定
+	if (-1 === blockProps.className.indexOf('is-style-')) {
+		blockProps.className +=
+			' is-style-vk_borderBox-style-solid-kado-tit-tab';
+	}
+
+	//枠パターン
+	let isBoxBorder = false;
+	if (
+		-1 <
+			blockProps.className.indexOf(
+				'vk_borderBox-style-solid-kado-tit-onborder'
+			) ||
+		-1 <
+			blockProps.className.indexOf(
+				'vk_borderBox-style-solid-kado-tit-inner'
+			) ||
+		-1 <
+			blockProps.className.indexOf(
+				'vk_borderBox-style-solid-kado-iconFeature'
+			)
+	) {
+		// 全体に枠線
+		isBoxBorder = true;
+	}
+
+	// box
+	let boxClass = '';
+	let boxStyle = {};
+
+	// title
 	let titleClass = `vk_borderBox_title_container`;
 	let titleStyle = {};
+
+	// content
+	let bodyClass = `vk_borderBox_body`;
+	let bodyStyle = {};
+
+	const colors = ['red', 'orange', 'blue', 'green', 'black'];
+	if (colors.includes(color)) {
+		// 旧仕様
+		blockProps.className += ` vk_borderBox-color-${color} vk_borderBox-background-${bgColor}`;
+	} else if (color !== undefined) {
+		// カスタムカラーパレットに対応
+		if (isBoxBorder) {
+			// 全体に枠線
+			boxClass += ` has-text-color`;
+
+			if (isHexColor(color)) {
+				// custom color
+				boxClass += ` has-text-color`;
+				boxStyle = {
+					color: `${color}`,
+				};
+			} else {
+				// has style
+				boxClass += ` has-${color}-color`;
+			}
+		} else {
+			// 本文に枠線
+			titleClass += ` has-background`;
+			bodyClass += ` has-text-color`;
+
+			if (isHexColor(color)) {
+				// custom color
+				titleStyle = {
+					background: `${color}`,
+				};
+
+				bodyStyle = {
+					color: `${color}`,
+				};
+			} else {
+				// has style
+				titleClass += ` has-${color}-background-color`;
+				bodyClass += ` has-${color}-color`;
+			}
+		}
+	}
+
+	blockProps.className += boxClass;
+	blockProps.style = boxStyle;
 
 	if (color !== undefined) {
 		if (isHexColor(color)) {
@@ -30,18 +109,11 @@ export default function save(props) {
 			titleStyle = {
 				color: `${color}`,
 			};
-		} else if (colors.includes(color)) {
-			// legacy  style
-			legacyClass += ` vk_borderBox-color-${color} vk_borderBox-background-${bgColor}`;
 		} else {
 			// has style
 			titleClass += ` has-background has-${color}-background-color`;
 		}
 	}
-
-	// body border
-	let bodyClass = `vk_borderBox_body`;
-	let bodyStyle = {};
 
 	if (color !== undefined) {
 		if (isHexColor(color)) {
@@ -50,23 +122,10 @@ export default function save(props) {
 			bodyStyle = {
 				color: `${color}`,
 			};
-		} else if (colors.includes(color)) {
-			// legacy  style
-			legacyClass += ` vk_borderBox-color-${color} vk_borderBox-background-${bgColor}`;
 		} else {
 			// has style
 			bodyClass += ` has-text-color has-${color}-color`;
 		}
-	}
-
-	const blockProps = useBlockProps.save({
-		className: legacyClass,
-	});
-
-	//Defaultクラスを設定
-	if (-1 === blockProps.className.indexOf('is-style-')) {
-		blockProps.className +=
-			' is-style-vk_borderBox-style-solid-kado-tit-tab';
 	}
 
 	//iタグでdeprecatedが効かなかったので追加。

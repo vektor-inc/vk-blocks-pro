@@ -126,12 +126,27 @@
 		}
 	}
 
-	.vk_borderBox_title_container:not(.has-background) {
-		background-color: #337AB7;
-	}
+	// デフォルト色
+	&:not([class*="vk_borderBox-color"]){
+		&.is-style-vk_borderBox-style-solid-kado-tit-tab,
+		&.is-style-vk_borderBox-style-solid-round-tit-tab,
+		&.is-style-vk_borderBox-style-solid-kado-tit-banner {
+			.vk_borderBox_title_container:not(.has-background) {
+				background-color: #337AB7;
+			}
 
-	.vk_borderBox_body:not(.has-text-color) {
-		color: #337AB7;
+			.vk_borderBox_body:not(.has-text-color) {
+				color: #337AB7;
+			}
+		}
+
+		&.is-style-vk_borderBox-style-solid-kado-tit-onborder,
+		&.is-style-vk_borderBox-style-solid-kado-tit-inner,
+		&.is-style-vk_borderBox-style-solid-kado-iconFeature {
+			&:not(.has-text-color) {
+				color: #337AB7;
+			}
+		}
 	}
 }
 
@@ -159,6 +174,7 @@
 		background-color: transparent;
 		border-width: 2px;
 		border-style: solid;
+
 		.vk_borderBox_title_container {
 			padding: 1.5em 1.5em 1em;
 		}

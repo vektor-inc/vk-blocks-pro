@@ -1,10 +1,12 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { componentDivider } from './component-divider';
 import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function save(props) {
 	const { attributes } = props;
 	const {
+		bgColor,
 		bgPosition,
 		outerWidth,
 		padding_left_and_right, //eslint-disable-line camelcase
@@ -100,8 +102,19 @@ export default function save(props) {
 		};
 	}
 
+	const bgColorClasses = [];
+	bgColorClasses.push('has-background');
+
+	let bgColorOutputDisable = false;
+	if (!isHexColor(bgColor)) {
+		bgColorOutputDisable = true;
+		bgColorClasses.push(`has-${bgColor}-background-color`);
+	}
+
 	const blockProps = useBlockProps.save({
-		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
+		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${bgColorClasses.join(
+			' '
+		)} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 		style: borderStyleProperty,
 	});
 	return (
@@ -109,6 +122,7 @@ export default function save(props) {
 			<GenerateBgImage
 				prefix={'vkb-outer'}
 				clientId={clientId}
+				bgColorOutputDisable={bgColorOutputDisable}
 				{...props}
 			/>
 			<div>

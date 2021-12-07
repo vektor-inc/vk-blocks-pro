@@ -21,6 +21,7 @@ import { useEffect } from '@wordpress/element';
 import { dispatch } from '@wordpress/data';
 import { componentDivider } from './component-divider';
 import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function OuterEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -171,8 +172,18 @@ export default function OuterEdit(props) {
 		};
 	}
 
+	const bgColorClasses = [];
+	bgColorClasses.push('has-background');
+
+	const bgColorOutputDisable = false;
+	if (!isHexColor(bgColor)) {
+		bgColorClasses.push(`has-${bgColor}-background-color`);
+	}
+
 	const blockProps = useBlockProps({
-		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
+		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${bgColorClasses.join(
+			' '
+		)} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 		style: borderStyleProperty,
 	});
 
@@ -638,6 +649,7 @@ export default function OuterEdit(props) {
 				<GenerateBgImage
 					prefix={'vkb-outer'}
 					clientId={clientId}
+					bgColorOutputDisable={bgColorOutputDisable}
 					{...props}
 				/>
 				<div>

@@ -8,6 +8,7 @@
 	}
 
 	p {
+		color: initial; // カラーパレットのcolorがあたってしまうので初期化する
 		word-break: break-all;
 		&:first-of-type{
 			margin-top: 0;
@@ -16,12 +17,15 @@
 			margin-bottom: 0;
 		}
 	}
-} 
+}
 
 .vk_balloon_icon {
 	flex-basis: 80px;
 	flex-shrink: 0;
 	text-align: center;
+	&_image:not(.has-text-color) {
+		color: #ccc;
+	}
 	&_image {
 		vertical-align: bottom;
 		width: 64px;
@@ -32,7 +36,7 @@
 			&-rounded {
 				border-radius: 4px;
 			}
-			
+
 			&-circle {
 				border-radius: 50%;
 			}
@@ -128,20 +132,32 @@
 
 /*	position
 /*-------------------------------------------*/
-.vk_balloon{ //初期のボーダーカラー
+.vk_balloon{
 	&-position-left{
 		.vk_balloon_content{
-			.vk_balloon_content_before,
-			.vk_balloon_content_after{
+			//初期のボーダーカラー
+			.vk_balloon_content_before:not(.has-text-color),
+			.vk_balloon_content_after:not(.has-text-color){
 				border-color: transparent #f5f5f5 transparent transparent;
+			}
+			//カラー選択
+			.vk_balloon_content_before,
+			.vk_balloon_content_after {
+				border-color:transparent currentColor transparent transparent;
 			}
 		}
 	}
 	&-position-right{
+		//初期のボーダーカラー
 		.vk_balloon_content{
-			.vk_balloon_content_before,
-			.vk_balloon_content_after{
+			.vk_balloon_content_before:not(.has-text-color),
+			.vk_balloon_content_after:not(.has-text-color){
 				border-color: transparent transparent transparent #f5f5f5;
+			}
+			//カラー選択
+			.vk_balloon_content_before,
+			.vk_balloon_content_after {
+				border-color:transparent transparent transparent currentColor;
 			}
 		}
 	}
@@ -223,6 +239,10 @@
 			border-style: solid;
 		}
 	}
+	// デフォルトボーダー
+	&_content-border-true:not(.has-text-color) {
+		color: #cccccc;
+	}
 	&-position {
 		&-left{ //位置が左
 			&.vk_balloon-type-speech {
@@ -240,6 +260,7 @@
 		&-right{ //位置が右
 			&.vk_balloon-type-speech {
 				.vk_balloon_content-border-true{
+					border-color: currentColor;
 					.vk_balloon_content_before {
 						right:-10px;
 					}

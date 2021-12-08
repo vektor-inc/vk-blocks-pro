@@ -2,7 +2,6 @@ import {
 	RichText,
 	InspectorControls,
 	MediaUpload,
-	ColorPalette,
 	InnerBlocks,
 	useBlockProps,
 } from '@wordpress/block-editor';
@@ -17,8 +16,11 @@ import {
 } from '@wordpress/components';
 import { useState, useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 
-export default function BalloonEdit({ attributes, setAttributes }) {
+export default function BalloonEdit(props) {
+	const { attributes, setAttributes } = props;
 	const {
 		content,
 		balloonName,
@@ -103,10 +105,11 @@ export default function BalloonEdit({ attributes, setAttributes }) {
 	}
 
 	let BorderSetting;
-	let contentBorderClass;
-	let iconImageBorderClass;
-	let borderColorStyle;
-	let backgroundColorStyle;
+	let contentBorderClass = '';
+	let iconImageBorderClass = '';
+	let contentBackgroundClass = '';
+	let colorStyle = {};
+	//吹き出しに枠線を追加する
 	if (balloonBorder === true) {
 		BorderSetting = (
 			<BaseControl>
@@ -142,11 +145,9 @@ export default function BalloonEdit({ attributes, setAttributes }) {
 				<p className={'mb-1 block-prop-title'}>
 					{__('Border color of speech balloon', 'vk-blocks')}
 				</p>
-				<ColorPalette
-					value={balloonBorderColor}
-					onChange={(value) =>
-						setAttributes({ balloonBorderColor: value })
-					}
+				<AdvancedColorPalette
+					schema={'balloonBorderColor'}
+					{...props}
 				/>
 			</BaseControl>
 		);
@@ -159,8 +160,51 @@ export default function BalloonEdit({ attributes, setAttributes }) {
 			iconImageBorderClass = '';
 		}
 
-		borderColorStyle = balloonBorderColor;
-		backgroundColorStyle = balloonBgColor;
+		//balloonBorderColor
+		if (balloonBorderColor !== undefined) {
+			iconImageBorderClass += ` has-text-color`;
+			contentBorderClass += ` has-text-color`;
+			//カラーパレットの時
+			if (!isHexColor(balloonBorderColor)) {
+				iconImageBorderClass += ` has-${balloonBorderColor}-color`;
+				contentBorderClass += ` has-${balloonBorderColor}-color`;
+			}
+		}
+		//balloonBgColor
+		if (balloonBgColor !== undefined) {
+			contentBackgroundClass += ` has-background-color`;
+			//カラーパレットの時
+			if (!isHexColor(balloonBgColor)) {
+				contentBackgroundClass += ` has-${balloonBgColor}-background-color`;
+			}
+		}
+
+		/**
+		 * balloonBorderColor パレット カスタム
+		 * balloonBgColor     パレット カスタム
+		 */
+		if (isHexColor(balloonBorderColor) && !isHexColor(balloonBgColor)) {
+			colorStyle = {
+				borderColor: `${balloonBorderColor}`,
+			};
+			//パレット*カスタム
+		} else if (
+			!isHexColor(balloonBorderColor) &&
+			isHexColor(balloonBgColor)
+		) {
+			colorStyle = {
+				background: `${balloonBgColor}`,
+			};
+			//カスタム*カスタム
+		} else if (
+			isHexColor(balloonBorderColor) &&
+			isHexColor(balloonBgColor)
+		) {
+			colorStyle = {
+				borderColor: `${balloonBorderColor}`,
+				background: `${balloonBgColor}`,
+			};
+		}
 	} else {
 		BorderSetting = (
 			<BaseControl>
@@ -177,17 +221,114 @@ export default function BalloonEdit({ attributes, setAttributes }) {
 			</BaseControl>
 		);
 
-		contentBorderClass = '';
-		iconImageBorderClass = '';
-		borderColorStyle = balloonBgColor;
-		backgroundColorStyle = balloonBgColor;
+		if (balloonBgColor !== undefined) {
+			contentBackgroundClass += `has-background-color`;
+			contentBorderClass += ` has-text-color`;
+			//カスタムカラーの時
+			if (isHexColor(balloonBgColor)) {
+				colorStyle = {
+					background: `${balloonBgColor}`,
+				};
+				//カラーパレットの時
+			} else {
+				contentBackgroundClass += ` has-${balloonBgColor}-background-color`;
+				contentBorderClass += ` has-${balloonBgColor}-color`;
+			}
+		}
 	}
 
-	let triangleBorderColorStyle;
-	if (balloonAlign === 'position-right') {
-		triangleBorderColorStyle = `transparent transparent transparent ${backgroundColorStyle}`;
-	} else {
-		triangleBorderColorStyle = `transparent ${backgroundColorStyle} transparent transparent`;
+	// 吹き出しの矢印
+	// カラーパレットの時
+	let triangleBorderColorBeforeClass = '';
+	let triangleBorderColorAfterClass = '';
+	if (balloonAlign === 'position-left') {
+		//吹き出しの時
+		if ('type-speech' === balloonType) {
+			if (balloonBgColor !== undefined) {
+				triangleBorderColorBeforeClass += ` has-text-color`;
+				if (!isHexColor(balloonBgColor)) {
+					triangleBorderColorBeforeClass += ` has-${balloonBgColor}-color`;
+				}
+			}
+			if (balloonBorderColor !== undefined) {
+				triangleBorderColorAfterClass += ` has-text-color`;
+				if (!isHexColor(balloonBorderColor)) {
+					triangleBorderColorAfterClass += ` has-${balloonBorderColor}-color`;
+				}
+			}
+			//もくもくの時
+		} else if ('type-think' === balloonType) {
+			if (balloonBorderColor !== undefined) {
+				triangleBorderColorBeforeClass += ` has-text-color`;
+				if (!isHexColor(balloonBorderColor)) {
+					triangleBorderColorBeforeClass += ` has-${balloonBorderColor}-color`;
+				}
+			}
+			if (balloonBorderColor !== undefined) {
+				triangleBorderColorAfterClass += ` has-text-color`;
+				if (!isHexColor(balloonBorderColor)) {
+					triangleBorderColorAfterClass += ` has-${balloonBorderColor}-color`;
+				}
+			}
+		}
+	} else if (balloonAlign === 'position-right') {
+		//吹き出しの時
+		if ('type-speech' === balloonType) {
+			if (balloonBgColor !== undefined) {
+				triangleBorderColorBeforeClass += ` has-text-color`;
+				if (!isHexColor(balloonBgColor)) {
+					triangleBorderColorBeforeClass += `has-text-color has-${balloonBgColor}-color`;
+				}
+			}
+			if (balloonBorderColor !== undefined) {
+				triangleBorderColorBeforeClass += ` has-text-color`;
+				if (!isHexColor(balloonBorderColor)) {
+					triangleBorderColorBeforeClass += ` has-${balloonBorderColor}-color`;
+				}
+			}
+			//もくもくの時
+		} else if ('type-think' === balloonType) {
+			if (balloonBorderColor !== undefined) {
+				triangleBorderColorBeforeClass += ` has-text-color`;
+				if (!isHexColor(balloonBorderColor)) {
+					triangleBorderColorBeforeClass += ` has-${balloonBorderColor}-color`;
+				}
+			}
+			if (balloonBorderColor !== undefined) {
+				triangleBorderColorAfterClass += ` has-text-color`;
+				if (!isHexColor(balloonBorderColor)) {
+					triangleBorderColorAfterClass += ` has-${balloonBorderColor}-color`;
+				}
+			}
+		}
+	}
+
+	//吹き出しの矢印
+	//カスタムカラーの時
+	let triangleBorderColorBeforeStyle = {};
+	let triangleBorderColorAfterStyle = {};
+	if (balloonAlign === 'position-left') {
+		if (isHexColor(balloonBorderColor)) {
+			triangleBorderColorAfterStyle = {
+				borderColor: `transparent transparent transparent ${balloonBgColor}`,
+			};
+		}
+		if (isHexColor(balloonBgColor)) {
+			triangleBorderColorBeforeStyle = {
+				borderColor: `transparent ${balloonBgColor} transparent transparent`,
+			};
+		}
+	} else if (balloonAlign === 'position-right') {
+		if (isHexColor(balloonBorderColor)) {
+			triangleBorderColorAfterStyle = {
+				borderColor: `transparent ${balloonBorderColor} transparent transparent`,
+			};
+		}
+		if (isHexColor(balloonBgColor)) {
+			triangleBorderColorBeforeStyle = {
+				borderColor: `transparent transparent transparent ${balloonBgColor}`,
+			};
+		}
 	}
 
 	const blockProps = useBlockProps({
@@ -302,11 +443,9 @@ export default function BalloonEdit({ attributes, setAttributes }) {
 					<p className={'mb-1 block-prop-title'}>
 						{__('Background color of speech balloon', 'vk-blocks')}
 					</p>
-					<ColorPalette
-						value={balloonBgColor}
-						onChange={(value) =>
-							setAttributes({ balloonBgColor: value })
-						}
+					<AdvancedColorPalette
+						schema={'balloonBgColor'}
+						{...props}
 					/>
 				</PanelBody>
 				<PanelBody title={__('Default Icon Setting', 'vk-blocks')}>
@@ -380,9 +519,7 @@ export default function BalloonEdit({ attributes, setAttributes }) {
 								) : (
 									<img
 										className={`vk_balloon_icon_image vk_balloon_icon_image-type-${balloonImageType} ${iconImageBorderClass}`}
-										style={{
-											borderColor: borderColorStyle,
-										}}
+										style={colorStyle}
 										src={IconImage}
 										alt={__('Upload image', 'vk-blocks')}
 									/>
@@ -402,19 +539,16 @@ export default function BalloonEdit({ attributes, setAttributes }) {
 				</div>
 				<div className={`vk_balloon_content_outer`}>
 					<div
-						className={`vk_balloon_content ${contentBorderClass}`}
-						style={{
-							backgroundColor: backgroundColorStyle,
-							borderColor: borderColorStyle,
-						}}
+						className={`vk_balloon_content ${contentBackgroundClass} ${contentBorderClass}`}
+						style={colorStyle}
 					>
 						<span
-							className={`vk_balloon_content_before`}
-							style={{ borderColor: triangleBorderColorStyle }}
+							className={`vk_balloon_content_before ${triangleBorderColorBeforeClass}`}
+							style={triangleBorderColorBeforeStyle}
 						></span>
 						<span
-							className={`vk_balloon_content_after`}
-							style={{ borderColor: triangleBorderColorStyle }}
+							className={`vk_balloon_content_after ${triangleBorderColorAfterClass}`}
+							style={triangleBorderColorAfterStyle}
 						></span>
 						<InnerBlocks
 							templateLock={false}

@@ -6,6 +6,7 @@ import save004 from './0.0.4/save';
 import save0_37_1 from './0.37.1/save';
 import save0_58_6 from './0.58.6/save';
 import save0_58_7 from './0.58.7/save';
+import save1_20_4 from './1.20.4/save';
 
 const blockAttributes = {
 	content: {
@@ -81,7 +82,21 @@ const blockAttributes4 = {
 	},
 }
 
+const blockAttributes5 = {
+	...blockAttributes4,
+	balloonBorderColor: {
+		type: 'string'
+	},
+	balloonBgColor: {
+		type: 'string'
+	},
+}
+
 const deprecated = [
+	{
+		attributes: blockAttributes5,
+		save: save1_20_4,
+	},
 	{
 		attributes: blockAttributes4,
 		save: save0_58_7,

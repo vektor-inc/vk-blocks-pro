@@ -3,11 +3,7 @@
  *
  */
 
-import {
-	iconPicture,
-	content,
-	iconName,
-} from '../../utils/example-data';
+import { iconPicture, content, iconName } from '../../utils/example-data';
 import deprecated from './deprecated/';
 import { ReactComponent as Icon } from './icon.svg';
 import edit from './edit';

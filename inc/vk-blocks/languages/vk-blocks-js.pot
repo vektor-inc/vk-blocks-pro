@@ -576,15 +576,15 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:485
 #: src/blocks/_pro/step-item/edit.js:126
-#: src/blocks/_pro/timeline-item/edit.js:95
-#: src/blocks/balloon/edit.js:338
+#: src/blocks/_pro/timeline-item/edit.js:104
+#: src/blocks/balloon/edit.js:477
 #: src/blocks/staff/edit.js:177
 msgid "None"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:489
 #: src/blocks/_pro/step-item/edit.js:104
-#: src/blocks/_pro/timeline-item/edit.js:77
+#: src/blocks/_pro/timeline-item/edit.js:86
 #: src/blocks/pr-content/edit.js:143
 #: src/extensions/core/group/style.js:102
 msgid "Solid"
@@ -811,7 +811,7 @@ msgstr ""
 #: src/blocks/_pro/slider/edit.js:345
 #: src/blocks/_pro/step-item/edit.js:122
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
-#: src/blocks/_pro/timeline-item/edit.js:91
+#: src/blocks/_pro/timeline-item/edit.js:100
 #: src/blocks/heading/edit.js:228
 #: src/blocks/staff/edit.js:173
 #: src/extensions/core/heading/style.js:30
@@ -843,7 +843,7 @@ msgid "Bottom on Mobile device"
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:108
-#: src/blocks/_pro/timeline-item/edit.js:73
+#: src/blocks/_pro/timeline-item/edit.js:82
 msgid "Outlined"
 msgstr ""
 
@@ -856,12 +856,12 @@ msgid "If Font Awesome tags entered, it will overrides the number."
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:87
-#: src/blocks/_pro/timeline-item/edit.js:50
+#: src/blocks/_pro/timeline-item/edit.js:66
 msgid "Ex,6:00AM"
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:91
-#: src/blocks/_pro/timeline-item/edit.js:53
+#: src/blocks/_pro/timeline-item/edit.js:69
 #: src/blocks/border-box/edit.js:63
 #: src/blocks/button/edit.js:333
 #: src/blocks/icon/edit.js:256
@@ -871,7 +871,7 @@ msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:94
 #: src/blocks/_pro/table-of-contents-new/edit.js:135
-#: src/blocks/_pro/timeline-item/edit.js:63
+#: src/blocks/_pro/timeline-item/edit.js:72
 #: src/blocks/icon-outer/edit.js:196
 #: src/blocks/icon/edit.js:184
 msgid "Style"
@@ -918,7 +918,7 @@ msgstr ""
 msgid "CLOSE"
 msgstr ""
 
-#: src/blocks/_pro/timeline-item/edit.js:46
+#: src/blocks/_pro/timeline-item/edit.js:62
 msgid "label"
 msgstr ""
 
@@ -1056,7 +1056,7 @@ msgstr ""
 msgid "Trembling"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:387
+#: src/blocks/balloon/edit.js:524
 #: src/blocks/pr-blocks/edit.js:80
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:135
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:117

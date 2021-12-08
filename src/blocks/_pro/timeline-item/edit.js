@@ -8,26 +8,42 @@ import {
 import {
 	InnerBlocks,
 	InspectorControls,
-	ColorPalette,
 	useBlockProps,
 } from '@wordpress/block-editor';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 
-export default function TimelineItemEdit({ attributes, setAttributes }) {
+export default function TimelineItemEdit(props) {
+	const { attributes, setAttributes } = props;
 	const { label, color, style, styleLine } = attributes;
 
 	const containerClass = ' vk_timeline_item';
 
-	let styleClass;
-	let styleLineClass;
-	let inlineStyle;
+	let styleClass = '';
+	let inlineStyle = {};
+	let styleLineClass = '';
 	const TEMPLATE = [['core/heading', { level: 4 }]];
 
 	if (style === 'solid') {
 		styleClass = ' vk_timeline_item_style-default';
-		inlineStyle = { backgroundColor: `${color}` };
+		if (color !== undefined) {
+			styleClass += ` has-background`;
+			if (isHexColor(color)) {
+				inlineStyle = { backgroundColor: `${color}` };
+			} else {
+				styleClass += ` has-${color}-background-color`;
+			}
+		}
 	} else if (style === 'outlined') {
 		styleClass = ' vk_timeline_item_style-outlined';
-		inlineStyle = { border: `3px solid ${color}` };
+		if (color !== undefined) {
+			styleClass += ` has-text-color`;
+			if (isHexColor(color)) {
+				inlineStyle = { color: `${color}` };
+			} else {
+				styleClass += ` has-${color}-color`;
+			}
+		}
 	}
 
 	if (styleLine === 'default') {
@@ -51,14 +67,7 @@ export default function TimelineItemEdit({ attributes, setAttributes }) {
 					/>
 				</PanelBody>
 				<PanelBody title={__('Color', 'vk-blocks')}>
-					<ColorPalette
-						value={color}
-						onChange={(value) => {
-							setAttributes({
-								color: value ? value : '#337ab7',
-							});
-						}}
-					/>
+					<AdvancedColorPalette schema={'color'} {...props} />
 				</PanelBody>
 				<PanelBody title={__('Style', 'vk-blocks')}>
 					<BaseControl id="style-dot" label="Dot Style">

@@ -44,24 +44,19 @@
             "default": "default"
         },
         "vk_staff_nameColor": {
-            "type": "string",
-            "default": "inherit"
+            "type": "string"
         },
         "vk_staff_captionColor": {
-            "type": "string",
-            "default": "inherit"
+            "type": "string"
         },
         "vk_staff_positionColor": {
-            "type": "string",
-            "default": "inherit"
+            "type": "string"
         },
         "vk_staff_profileTitleColor": {
-            "type": "string",
-            "default": "inherit"
+            "type": "string"
         },
         "vk_staff_profileTextColor": {
-            "type": "string",
-            "default": "inherit"
+            "type": "string"
         },
         "vk_staff_photoBorder": {
             "type": "string",

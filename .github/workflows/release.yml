@@ -25,13 +25,6 @@ jobs:
         node-version: "${{ steps.nodenv.outputs.NODEVERSION }}"
     - name: Install Node Scripts
       run: npm install
-    - name: Install WP-CLI
-      run: |
-        curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-        chmod +x wp-cli.phar
-        mv wp-cli.phar /usr/local/bin/wp
-    - name: Build
-      run: npm run build
     - name: Make Distribution
       run: |
         npm run dist

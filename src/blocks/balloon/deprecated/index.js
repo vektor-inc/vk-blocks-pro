@@ -85,10 +85,12 @@ const blockAttributes4 = {
 const blockAttributes5 = {
 	...blockAttributes4,
 	balloonBorderColor: {
-		type: 'string'
+		type: 'string',
+		default: "#cccccc",
 	},
 	balloonBgColor: {
-		type: 'string'
+		type: 'string',
+		default: "#f5f5f5",
 	},
 }
 

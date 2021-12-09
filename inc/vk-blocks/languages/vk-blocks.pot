@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-12-08T07:29:43+00:00\n"
+"POT-Creation-Date: 2021-12-09T05:30:21+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -57,7 +57,7 @@ msgstr ""
 #: src/blocks/_pro/animation/edit.js:123
 #: src/blocks/_pro/outer/edit.js:303
 #: src/blocks/_pro/slider/edit.js:193
-#: src/blocks/balloon/edit.js:417
+#: src/blocks/balloon/edit.js:413
 #: src/blocks/button/edit.js:220
 #: src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:21
@@ -106,17 +106,17 @@ msgid "Trembling Y"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:73
-#: src/blocks/balloon/edit.js:485
+#: src/blocks/balloon/edit.js:481
 msgid "Trembling X"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:77
-#: src/blocks/balloon/edit.js:489
+#: src/blocks/balloon/edit.js:485
 msgid "Pounding"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:81
-#: src/blocks/balloon/edit.js:493
+#: src/blocks/balloon/edit.js:489
 msgid "Shaking"
 msgstr ""
 
@@ -163,7 +163,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:82
 #: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:86
 #: src/blocks/_pro/card-item/edit.js:88
-#: src/blocks/balloon/edit.js:518
+#: src/blocks/balloon/edit.js:514
 #: src/blocks/flow/edit.js:84
 #: src/blocks/pr-blocks/edit.js:86
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:130
@@ -540,7 +540,7 @@ msgid "Divider Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:389
-#: src/blocks/balloon/edit.js:377
+#: src/blocks/balloon/edit.js:373
 msgid "Type"
 msgstr ""
 
@@ -584,7 +584,7 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:485
 #: src/blocks/_pro/step-item/edit.js:126
 #: src/blocks/_pro/timeline-item/edit.js:104
-#: src/blocks/balloon/edit.js:477
+#: src/blocks/balloon/edit.js:473
 #: src/blocks/staff/edit.js:177
 msgid "None"
 msgstr ""
@@ -992,82 +992,82 @@ msgstr ""
 msgid "Add border to balloon"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:341
+#: src/blocks/balloon/edit.js:337
 msgid "Balloon setting"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:343
+#: src/blocks/balloon/edit.js:339
 #: src/blocks/heading/edit.js:336
 msgid "Position"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:346
+#: src/blocks/balloon/edit.js:342
 msgid "Please specify the layout of the balloon."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:360
+#: src/blocks/balloon/edit.js:356
 #: src/blocks/button/edit.js:244
 #: src/blocks/pr-content/edit.js:233
 #: src/components/display-items-control/index.js:121
 msgid "Left"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:372
+#: src/blocks/balloon/edit.js:368
 #: src/blocks/button/edit.js:264
 #: src/blocks/pr-content/edit.js:232
 #: src/components/display-items-control/index.js:129
 msgid "Right"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:380
+#: src/blocks/balloon/edit.js:376
 msgid "Please select the type of balloon."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:391
+#: src/blocks/balloon/edit.js:387
 msgid "Speech"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:401
+#: src/blocks/balloon/edit.js:397
 msgid "Thinking"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:406
+#: src/blocks/balloon/edit.js:402
 msgid "Image Style"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:427
+#: src/blocks/balloon/edit.js:423
 msgid "Rounded"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:437
+#: src/blocks/balloon/edit.js:433
 msgid "Circle"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:444
+#: src/blocks/balloon/edit.js:440
 msgid "Background color of speech balloon"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:451
+#: src/blocks/balloon/edit.js:447
 msgid "Default Icon Setting"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:456
+#: src/blocks/balloon/edit.js:452
 msgid "You can register default icons from Settings > VK Blocks in Admin."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:462
+#: src/blocks/balloon/edit.js:458
 msgid "Animation setting"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:464
+#: src/blocks/balloon/edit.js:460
 msgid "Please select the type of animation."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:481
+#: src/blocks/balloon/edit.js:477
 msgid "Trembling"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:524
+#: src/blocks/balloon/edit.js:520
 #: src/blocks/pr-blocks/edit.js:80
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:135
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:117
@@ -1083,7 +1083,7 @@ msgstr ""
 msgid "Upload image"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:537
+#: src/blocks/balloon/edit.js:533
 msgid "Icon Name"
 msgstr ""
 

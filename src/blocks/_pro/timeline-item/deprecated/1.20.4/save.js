@@ -1,33 +1,18 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
-import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function save({ attributes }) {
 	const { label, color, style, styleLine } = attributes;
 	const containerClass = ' vk_timeline_item';
-	let styleClass = '';
-	let inlineStyle = {};
-	let styleLineClass = '';
+	let styleClass;
+	let styleLineClass;
+	let inlineStyle;
 
 	if (style === 'solid') {
 		styleClass = ' vk_timeline_item_style-default';
-		if (color !== undefined) {
-			styleClass += ` has-background`;
-			if (isHexColor(color)) {
-				inlineStyle = { backgroundColor: `${color}` };
-			} else {
-				styleClass += ` has-${color}-background-color`;
-			}
-		}
+		inlineStyle = { backgroundColor: `${color}` };
 	} else if (style === 'outlined') {
 		styleClass = ' vk_timeline_item_style-outlined';
-		if (color !== undefined) {
-			styleClass += ` has-text-color`;
-			if (isHexColor(color)) {
-				inlineStyle = { color: `${color}` };
-			} else {
-				styleClass += ` has-${color}-color`;
-			}
-		}
+		inlineStyle = { border: `3px solid ${color}` };
 	}
 
 	if (styleLine === 'default') {

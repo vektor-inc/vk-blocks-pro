@@ -13,13 +13,11 @@
 		}
 	],
 	"require": {
-		"php": ">=7.2",
 		"tgmpa/tgm-plugin-activation": "dev-develop",
 		"yahnis-elsts/plugin-update-checker": "*",
 		"vektor-inc/vk-color-palette-manager": "^0.0.15"
 	},
 	"require-dev": {
-		"php": ">=7.2",
 		"squizlabs/php_codesniffer": "*",
 		"sirbrillig/phpcs-variable-analysis": "^2.8",
 		"wp-phpunit/wp-phpunit": "^5.4",

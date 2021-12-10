@@ -70,6 +70,10 @@ export default function BorderBoxEdit(props) {
 	let bodyClass = `vk_borderBox_body`;
 	let bodyStyle = {};
 
+	// icon
+	let iconClass = ``;
+	let iconStyle = ``;
+
 	const colors = ['red', 'orange', 'blue', 'green', 'black'];
 	if (colors.includes(color)) {
 		// 旧仕様
@@ -90,6 +94,9 @@ export default function BorderBoxEdit(props) {
 				// has style
 				boxClass += ` has-${color}-color`;
 			}
+
+			blockProps.className += boxClass;
+			blockProps.style = boxStyle;
 		} else {
 			// 本文に枠線
 			titleClass += ` has-background`;
@@ -110,15 +117,35 @@ export default function BorderBoxEdit(props) {
 				bodyClass += ` has-${color}-color`;
 			}
 		}
-	}
 
-	blockProps.className += boxClass;
-	blockProps.style = boxStyle;
+		// 直線 ピン角 アイコン
+		if (
+			-1 <
+			blockProps.className.indexOf(
+				'vk_borderBox-style-solid-kado-iconFeature'
+			)
+		) {
+			iconClass = `has-background`;
+			if (isHexColor(color)) {
+				// custom color
+				iconStyle = `background: ${color}`;
+			} else {
+				// has style
+				iconClass += ` has-${color}-background-color`;
+			}
+		}
+	}
 
 	//iタグでdeprecatedが効かなかったので追加。
 	let icon;
 	if (faIcon.indexOf('<i class="') === -1) {
 		icon = `<i class="${faIcon}"></i>`;
+	} else if (iconClass) {
+		// カスタムカラーパレット
+		icon =
+			`<div class="vk_borderBox_icon_border ${iconClass}" style="${iconStyle}">` +
+			faIcon +
+			`</div>`;
 	} else {
 		icon = faIcon;
 	}
@@ -144,35 +171,6 @@ export default function BorderBoxEdit(props) {
 						id="border-color"
 						label={__('Border Color', 'vk-blocks')}
 					>
-						<SelectControl
-							value={color}
-							onChange={(value) =>
-								setAttributes({ color: value })
-							}
-							options={[
-								{
-									value: 'red',
-									label: __('Red', 'vk-blocks'),
-								},
-								{
-									value: 'orange',
-									label: __('Orange', 'vk-blocks'),
-								},
-								{
-									value: 'blue',
-									label: __('Blue', 'vk-blocks'),
-								},
-								{
-									value: 'green',
-									label: __('Green', 'vk-blocks'),
-								},
-								{
-									value: 'black',
-									label: __('Black', 'vk-blocks'),
-								},
-							]}
-						/>
-
 						<AdvancedColorPalette schema={'color'} {...props} />
 					</BaseControl>
 					<BaseControl

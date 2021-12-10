@@ -57,6 +57,10 @@ export default function save(props) {
 	let bodyClass = `vk_borderBox_body`;
 	let bodyStyle = {};
 
+	// icon
+	let iconClass = ``;
+	let iconStyle = {};
+
 	const colors = ['red', 'orange', 'blue', 'green', 'black'];
 	if (colors.includes(color)) {
 		// 旧仕様
@@ -77,6 +81,9 @@ export default function save(props) {
 				// has style
 				boxClass += ` has-${color}-color`;
 			}
+
+			blockProps.className += boxClass;
+			blockProps.style = boxStyle;
 		} else {
 			// 本文に枠線
 			titleClass += ` has-background`;
@@ -97,34 +104,22 @@ export default function save(props) {
 				bodyClass += ` has-${color}-color`;
 			}
 		}
-	}
 
-	blockProps.className += boxClass;
-	blockProps.style = boxStyle;
-
-	if (color !== undefined) {
-		if (isHexColor(color)) {
-			// custom color
-			titleClass += ` has-background`;
-			titleStyle = {
-				color: `${color}`,
-			};
-		} else {
-			// has style
-			titleClass += ` has-background has-${color}-background-color`;
-		}
-	}
-
-	if (color !== undefined) {
-		if (isHexColor(color)) {
-			// custom color
-			bodyClass += ` has-text-color`;
-			bodyStyle = {
-				color: `${color}`,
-			};
-		} else {
-			// has style
-			bodyClass += ` has-text-color has-${color}-color`;
+		// 直線 ピン角 アイコン
+		if (
+			-1 <
+			blockProps.className.indexOf(
+				'vk_borderBox-style-solid-kado-iconFeature'
+			)
+		) {
+			iconClass = `has-background`;
+			if (isHexColor(color)) {
+				// custom color
+				iconStyle = `background: ${color}`;
+			} else {
+				// has style
+				iconClass += ` has-${color}-background-color`;
+			}
 		}
 	}
 
@@ -132,6 +127,12 @@ export default function save(props) {
 	let icon;
 	if (faIcon.indexOf('<i class="') === -1) {
 		icon = `<i class="${faIcon}"></i>`;
+	} else if (iconClass) {
+		// カスタムカラーパレット
+		icon =
+			`<div class="vk_borderBox_icon_border ${iconClass}" style="${iconStyle}">` +
+			faIcon +
+			`</div>`;
 	} else {
 		icon = faIcon;
 	}

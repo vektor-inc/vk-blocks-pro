@@ -80,6 +80,11 @@ const blockAttributes4 = {
 		type: 'string',
 		default: null,
 	},
+	// balloonTypeのdefaultがtype-serifからtype-speechにver 0.56.0で変更された調整
+	balloonType: {
+		type: 'string',
+		default: 'type-speech',
+	},
 }
 
 const blockAttributes5 = {

@@ -6,7 +6,7 @@ import save004 from './0.0.4/save';
 import save0_37_1 from './0.37.1/save';
 import save0_58_6 from './0.58.6/save';
 import save0_58_7 from './0.58.7/save';
-import save1_20_4 from './1.20.4/save';
+import save1_20_5 from './1.20.5/save';
 
 const blockAttributes = {
 	content: {
@@ -97,7 +97,7 @@ const blockAttributes5 = {
 const deprecated = [
 	{
 		attributes: blockAttributes5,
-		save: save1_20_4,
+		save: save1_20_5,
 	},
 	{
 		attributes: blockAttributes4,

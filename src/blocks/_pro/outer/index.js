@@ -105,7 +105,12 @@ addFilter(
 			const cssTag = generateInlineCss(attributes);
 
 			// 最新版
-			if (-1 === deprecatedFuncIndex || deprecated[deprecatedFuncIndex].filters?.includes('addInlineFrontCss')) {
+			if (
+				-1 === deprecatedFuncIndex ||
+				deprecated[deprecatedFuncIndex].filters?.includes(
+					'addInlineFrontCss'
+				)
+			) {
 				// NOTE: useBlockProps + style要素を挿入する場合、useBlockPropsを使った要素が最初（上）にこないと、
 				// カスタムクラスを追加する処理が失敗する
 				return (

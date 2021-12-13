@@ -260,29 +260,41 @@ msgstr ""
 msgid "Ignore this post"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:106
+#: src/blocks/_pro/grid-column-item/edit.js:100
+#: src/blocks/button/edit.js:404
+#: src/blocks/heading/edit.js:288
+msgid "Text Color"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:109
+#: src/blocks/border-box/edit.js:99
+#: src/blocks/button/edit.js:387
+msgid "Background Color"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:119
 msgid "Margin setting inside the item"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:110
+#: src/blocks/_pro/grid-column-item/edit.js:123
 msgid "Padding (Top)"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:125
+#: src/blocks/_pro/grid-column-item/edit.js:138
 #: src/blocks/_pro/outer/edit.js:318
 #: src/blocks/_pro/slider-item/edit.js:78
 msgid "Padding (Left and Right)"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:140
+#: src/blocks/_pro/grid-column-item/edit.js:153
 msgid "Padding (Bottom)"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:155
+#: src/blocks/_pro/grid-column-item/edit.js:168
 msgid "Unit"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:163
+#: src/blocks/_pro/grid-column-item/edit.js:176
 #: src/blocks/_pro/outer/edit.js:617
 #: src/blocks/icon-outer/edit.js:151
 #: src/blocks/icon/edit.js:140
@@ -290,7 +302,7 @@ msgstr ""
 msgid "px"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:167
+#: src/blocks/_pro/grid-column-item/edit.js:180
 #: src/blocks/_pro/outer/edit.js:621
 #: src/blocks/icon-outer/edit.js:155
 #: src/blocks/icon/edit.js:144
@@ -298,7 +310,7 @@ msgstr ""
 msgid "em"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:171
+#: src/blocks/_pro/grid-column-item/edit.js:184
 #: src/blocks/_pro/outer/edit.js:625
 #: src/blocks/icon-outer/edit.js:159
 #: src/blocks/icon/edit.js:148
@@ -306,7 +318,7 @@ msgstr ""
 msgid "rem"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:175
+#: src/blocks/_pro/grid-column-item/edit.js:188
 #: src/blocks/_pro/outer/edit.js:629
 #: src/blocks/icon-outer/edit.js:163
 #: src/blocks/icon/edit.js:152
@@ -314,20 +326,8 @@ msgstr ""
 msgid "vw"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:81
+#: src/blocks/_pro/grid-column-item/edit.js:98
 msgid "Color Settings"
-msgstr ""
-
-#: src/blocks/_pro/grid-column-item/edit.js:83
-#: src/blocks/button/edit.js:404
-#: src/blocks/heading/edit.js:288
-msgid "Text Color"
-msgstr ""
-
-#: src/blocks/_pro/grid-column-item/edit.js:94
-#: src/blocks/border-box/edit.js:99
-#: src/blocks/button/edit.js:387
-msgid "Background Color"
 msgstr ""
 
 #: src/blocks/_pro/grid-column/edit.js:53
@@ -576,7 +576,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:485
 #: src/blocks/_pro/step-item/edit.js:126
-#: src/blocks/_pro/timeline-item/edit.js:95
+#: src/blocks/_pro/timeline-item/edit.js:104
 #: src/blocks/balloon/edit.js:338
 #: src/blocks/staff/edit.js:177
 msgid "None"
@@ -584,7 +584,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:489
 #: src/blocks/_pro/step-item/edit.js:104
-#: src/blocks/_pro/timeline-item/edit.js:77
+#: src/blocks/_pro/timeline-item/edit.js:86
 #: src/blocks/pr-content/edit.js:143
 #: src/extensions/core/group/style.js:102
 msgid "Solid"
@@ -811,7 +811,7 @@ msgstr ""
 #: src/blocks/_pro/slider/edit.js:345
 #: src/blocks/_pro/step-item/edit.js:122
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
-#: src/blocks/_pro/timeline-item/edit.js:91
+#: src/blocks/_pro/timeline-item/edit.js:100
 #: src/blocks/heading/edit.js:228
 #: src/blocks/staff/edit.js:173
 #: src/extensions/core/heading/style.js:30
@@ -843,7 +843,7 @@ msgid "Bottom on Mobile device"
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:108
-#: src/blocks/_pro/timeline-item/edit.js:73
+#: src/blocks/_pro/timeline-item/edit.js:82
 msgid "Outlined"
 msgstr ""
 
@@ -856,12 +856,12 @@ msgid "If Font Awesome tags entered, it will overrides the number."
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:87
-#: src/blocks/_pro/timeline-item/edit.js:50
+#: src/blocks/_pro/timeline-item/edit.js:66
 msgid "Ex,6:00AM"
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:91
-#: src/blocks/_pro/timeline-item/edit.js:53
+#: src/blocks/_pro/timeline-item/edit.js:69
 #: src/blocks/border-box/edit.js:63
 #: src/blocks/button/edit.js:333
 #: src/blocks/icon/edit.js:256
@@ -871,7 +871,7 @@ msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:94
 #: src/blocks/_pro/table-of-contents-new/edit.js:135
-#: src/blocks/_pro/timeline-item/edit.js:63
+#: src/blocks/_pro/timeline-item/edit.js:72
 #: src/blocks/icon-outer/edit.js:196
 #: src/blocks/icon/edit.js:184
 msgid "Style"
@@ -918,7 +918,7 @@ msgstr ""
 msgid "CLOSE"
 msgstr ""
 
-#: src/blocks/_pro/timeline-item/edit.js:46
+#: src/blocks/_pro/timeline-item/edit.js:62
 msgid "label"
 msgstr ""
 

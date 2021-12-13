@@ -104,10 +104,10 @@ addFilter(
 
 			const cssTag = generateInlineCss(attributes);
 
-			// 最新版
+			// 最新版 || deprecated で vkBlockOuterfiltersにaddInlineFrontCssが含まれているもの
 			if (
 				-1 === deprecatedFuncIndex ||
-				deprecated[deprecatedFuncIndex].filters?.includes(
+				deprecated[deprecatedFuncIndex].vkBlockOuterfilters?.includes(
 					'addInlineFrontCss'
 				)
 			) {

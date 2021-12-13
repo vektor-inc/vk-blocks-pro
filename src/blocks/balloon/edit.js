@@ -346,7 +346,6 @@ export default function BalloonEdit(props) {
 					borderColor: `transparent ${balloonBgColor} transparent transparent`,
 				};
 			}
-
 		} else if (balloonAlign === 'position-right') {
 			// 吹き出しの矢印 Class
 			// カラーパレットの時
@@ -368,7 +367,6 @@ export default function BalloonEdit(props) {
 				};
 			}
 		}
-
 	}
 
 	// 吹き出しの背景色 Class

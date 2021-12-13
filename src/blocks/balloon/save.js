@@ -201,7 +201,6 @@ export default function save({ attributes }) {
 					borderColor: `transparent ${balloonBgColor} transparent transparent`,
 				};
 			}
-
 		} else if (balloonAlign === 'position-right') {
 			// 吹き出しの矢印 Class
 			// カラーパレットの時

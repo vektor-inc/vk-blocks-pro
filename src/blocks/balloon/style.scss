@@ -132,37 +132,6 @@
 
 /*	position
 /*-------------------------------------------*/
-.vk_balloon{
-	&-position-left{
-		.vk_balloon_content{
-			//初期のボーダーカラー
-			.vk_balloon_content_before:not(.has-text-color),
-			.vk_balloon_content_after:not(.has-text-color){
-				border-color: transparent #f5f5f5 transparent transparent;
-			}
-			//カラー選択
-			.vk_balloon_content_before,
-			.vk_balloon_content_after {
-				border-color:transparent currentColor transparent transparent;
-			}
-		}
-	}
-	&-position-right{
-		//初期のボーダーカラー
-		.vk_balloon_content{
-			.vk_balloon_content_before:not(.has-text-color),
-			.vk_balloon_content_after:not(.has-text-color){
-				border-color: transparent transparent transparent #f5f5f5;
-			}
-			//カラー選択
-			.vk_balloon_content_before,
-			.vk_balloon_content_after {
-				border-color:transparent transparent transparent currentColor;
-			}
-		}
-	}
-}
-
 .vk_balloon-position-left{
 	&.vk_balloon-type-speech{
 		.vk_balloon_icon{
@@ -231,6 +200,77 @@
 
 /*	Border
 /*-------------------------------------------*/
+
+//Border color
+.vk_balloon{
+	//位置 左
+	&-position-left{
+		//タイプ 吹き出し
+		&.vk_balloon-type-speech {
+			.vk_balloon_content{
+				//初期
+				.vk_balloon_content_before:not(.has-text-color),
+				.vk_balloon_content_after:not(.has-text-color){
+					border-color: transparent #f5f5f5 transparent transparent;
+				}
+				//カラーパレット,カスタムカラー
+				.vk_balloon_content_before,
+				.vk_balloon_content_after {
+					border-color:transparent currentColor transparent transparent;
+				}
+			}
+		}
+		//タイプ もくもく
+		&.vk_balloon-type-think {
+			.vk_balloon_content{
+				//初期
+				.vk_balloon_content_before:not(.has-text-color),
+				.vk_balloon_content_after:not(.has-text-color){
+					border-color: transparent;
+				}
+				//カラーパレット,カスタムカラー
+				.vk_balloon_content_before,
+				.vk_balloon_content_after {
+					border-color:transparent currentColor transparent transparent;
+				}
+			}
+		}
+	}
+	//位置 右
+	&-position-right{
+		//タイプ 吹き出し
+		&.vk_balloon-type-speech {
+			.vk_balloon_content{
+				//初期
+				.vk_balloon_content_before:not(.has-text-color),
+				.vk_balloon_content_after:not(.has-text-color){
+					border-color: transparent transparent transparent #f5f5f5;
+				}
+				//カラーパレット,カスタムカラー
+				.vk_balloon_content_before,
+				.vk_balloon_content_after {
+					border-color:transparent transparent transparent currentColor;
+				}
+			}
+		}
+		//タイプ もくもく
+		&.vk_balloon-type-think {
+			.vk_balloon_content{
+				//初期
+				.vk_balloon_content_before:not(.has-text-color),
+				.vk_balloon_content_after:not(.has-text-color){
+					border-color: transparent;
+				}
+				//カラーパレット,カスタムカラー
+				.vk_balloon_content_before,
+				.vk_balloon_content_after {
+					border-color:transparent currentColor transparent transparent;
+				}
+			}
+		}
+	}
+}
+
 .vk_balloon{
 	&_content,
 	&_icon_image {

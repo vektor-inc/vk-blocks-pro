@@ -109,6 +109,10 @@ export default function BalloonEdit(props) {
 	let iconImageBorderClass = '';
 	let contentBackgroundClass = '';
 	let colorStyle = {};
+	let triangleBorderColorBeforeClass = '';
+	let triangleBorderColorAfterClass = '';
+	let triangleBorderColorBeforeStyle = {};
+	let triangleBorderColorAfterStyle = {};
 	//吹き出しに枠線を追加オン
 	if (balloonBorder === true) {
 		BorderSetting = (
@@ -171,14 +175,6 @@ export default function BalloonEdit(props) {
 				contentBorderClass += ` has-${balloonBorderColor}-color`;
 			}
 		}
-		//contentBackgroundClass
-		if (balloonBgColor !== undefined) {
-			contentBackgroundClass += ` has-background-color`;
-			//カラーパレットの時
-			if (!isHexColor(balloonBgColor)) {
-				contentBackgroundClass += ` has-${balloonBgColor}-background-color`;
-			}
-		}
 
 		//colorStyle
 		//カスタム*パレット
@@ -204,6 +200,98 @@ export default function BalloonEdit(props) {
 				background: `${balloonBgColor}`,
 			};
 		}
+
+		// 吹き出しの配置 左
+		if (balloonAlign === 'position-left') {
+			// 吹き出しの矢印 Class
+			// カラーパレットの時
+			// 吹き出しの時
+			if ('type-speech' === balloonType) {
+				if (balloonBgColor !== undefined) {
+					triangleBorderColorBeforeClass += ` has-text-color`;
+					if (!isHexColor(balloonBgColor)) {
+						triangleBorderColorBeforeClass += ` has-${balloonBgColor}-color`;
+					}
+				}
+				if (balloonBorderColor !== undefined) {
+					triangleBorderColorAfterClass += ` has-text-color`;
+					if (!isHexColor(balloonBorderColor)) {
+						triangleBorderColorAfterClass += ` has-${balloonBorderColor}-color`;
+					}
+				}
+				//もくもくの時
+			} else if ('type-think' === balloonType) {
+				if (balloonBorderColor !== undefined) {
+					triangleBorderColorBeforeClass += ` has-text-color`;
+					if (!isHexColor(balloonBorderColor)) {
+						triangleBorderColorBeforeClass += ` has-${balloonBorderColor}-color`;
+					}
+				}
+				if (balloonBorderColor !== undefined) {
+					triangleBorderColorAfterClass += ` has-text-color`;
+					if (!isHexColor(balloonBorderColor)) {
+						triangleBorderColorAfterClass += ` has-${balloonBorderColor}-color`;
+					}
+				}
+			}
+
+			//吹き出しの矢印 Style
+			//カスタムカラーの時
+			if (isHexColor(balloonBorderColor)) {
+				triangleBorderColorAfterStyle = {
+					borderColor: `transparent transparent transparent ${balloonBgColor}`,
+				};
+			}
+			if (isHexColor(balloonBgColor)) {
+				triangleBorderColorBeforeStyle = {
+					borderColor: `transparent ${balloonBgColor} transparent transparent`,
+				};
+			}
+
+			// 吹き出しの配置 右
+		} else if (balloonAlign === 'position-right') {
+			// 吹き出しの時
+			// カラーパレットの時
+			if ('type-speech' === balloonType) {
+				if (balloonBgColor !== undefined) {
+					triangleBorderColorBeforeClass += ` has-text-color`;
+					if (!isHexColor(balloonBgColor)) {
+						triangleBorderColorBeforeClass += ` has-${balloonBgColor}-color`;
+					}
+				}
+				if (balloonBorderColor !== undefined) {
+					triangleBorderColorAfterClass += ` has-text-color`;
+					if (!isHexColor(balloonBorderColor)) {
+						triangleBorderColorAfterClass += ` has-${balloonBorderColor}-color`;
+					}
+				}
+				// もくもくの時
+				// カラーパレットの時
+			} else if ('type-think' === balloonType) {
+				if (balloonBorderColor !== undefined) {
+					triangleBorderColorBeforeClass += ` has-text-color`;
+					triangleBorderColorAfterClass += ` has-text-color`;
+					if (!isHexColor(balloonBorderColor)) {
+						triangleBorderColorBeforeClass += ` has-${balloonBorderColor}-color`;
+						triangleBorderColorAfterClass += ` has-${balloonBorderColor}-color`;
+					}
+				}
+			}
+
+			//吹き出しの矢印 Style
+			//カスタムカラーの時
+			if (isHexColor(balloonBorderColor)) {
+				triangleBorderColorAfterStyle = {
+					borderColor: `transparent ${balloonBorderColor} transparent transparent`,
+				};
+			}
+			if (isHexColor(balloonBgColor)) {
+				triangleBorderColorBeforeStyle = {
+					borderColor: `transparent transparent transparent ${balloonBgColor}`,
+				};
+			}
+		}
+
 		//吹き出しに枠線を追加オフ
 	} else {
 		BorderSetting = (
@@ -221,109 +309,74 @@ export default function BalloonEdit(props) {
 			</BaseControl>
 		);
 
+		iconImageBorderClass = '';
+
+		// 吹き出しの背景色 Style
 		if (balloonBgColor !== undefined) {
-			contentBackgroundClass += `has-background-color`;
-			contentBorderClass += ` has-text-color`;
 			//カスタムカラーの時
 			if (isHexColor(balloonBgColor)) {
 				colorStyle = {
 					background: `${balloonBgColor}`,
 				};
-				//カラーパレットの時
-			} else {
-				contentBackgroundClass += ` has-${balloonBgColor}-background-color`;
-				contentBorderClass += ` has-${balloonBgColor}-color`;
 			}
 		}
+
+		if (balloonAlign === 'position-left') {
+			// 吹き出しの矢印 Class
+			// カラーパレットの時
+			// 吹き出しの時
+			if ('type-speech' === balloonType) {
+				if (balloonBgColor !== undefined) {
+					triangleBorderColorBeforeClass += ` has-text-color`;
+					if (!isHexColor(balloonBgColor)) {
+						triangleBorderColorBeforeClass += ` has-${balloonBgColor}-color`;
+					}
+				}
+			}
+
+			//吹き出しの矢印 Style
+			//カスタムカラーの時
+			if (isHexColor(balloonBorderColor)) {
+				triangleBorderColorAfterStyle = {
+					borderColor: `transparent transparent transparent ${balloonBgColor}`,
+				};
+			}
+			if (isHexColor(balloonBgColor)) {
+				triangleBorderColorBeforeStyle = {
+					borderColor: `transparent ${balloonBgColor} transparent transparent`,
+				};
+			}
+
+		} else if (balloonAlign === 'position-right') {
+			// 吹き出しの矢印 Class
+			// カラーパレットの時
+			// 吹き出しの時
+			if ('type-speech' === balloonType) {
+				if (balloonBgColor !== undefined) {
+					triangleBorderColorBeforeClass += ` has-text-color`;
+					if (!isHexColor(balloonBgColor)) {
+						triangleBorderColorBeforeClass += ` has-${balloonBgColor}-color`;
+					}
+				}
+			}
+
+			//吹き出しの矢印 Style
+			//カスタムカラーの時
+			if (isHexColor(balloonBgColor)) {
+				triangleBorderColorBeforeStyle = {
+					borderColor: `transparent transparent transparent ${balloonBgColor}`,
+				};
+			}
+		}
+
 	}
 
-	// 吹き出しの矢印 Class
-	// カラーパレットの時
-	let triangleBorderColorBeforeClass = '';
-	let triangleBorderColorAfterClass = '';
-	if (balloonAlign === 'position-left') {
-		//吹き出しの時
-		if ('type-speech' === balloonType) {
-			if (balloonBgColor !== undefined) {
-				triangleBorderColorBeforeClass += ` has-text-color`;
-				if (!isHexColor(balloonBgColor)) {
-					triangleBorderColorBeforeClass += ` has-${balloonBgColor}-color`;
-				}
-			}
-			if (balloonBorderColor !== undefined) {
-				triangleBorderColorAfterClass += ` has-text-color`;
-				if (!isHexColor(balloonBorderColor)) {
-					triangleBorderColorAfterClass += ` has-${balloonBorderColor}-color`;
-				}
-			}
-			//もくもくの時
-		} else if ('type-think' === balloonType) {
-			if (balloonBorderColor !== undefined) {
-				triangleBorderColorBeforeClass += ` has-text-color`;
-				if (!isHexColor(balloonBorderColor)) {
-					triangleBorderColorBeforeClass += ` has-${balloonBorderColor}-color`;
-				}
-			}
-			if (balloonBorderColor !== undefined) {
-				triangleBorderColorAfterClass += ` has-text-color`;
-				if (!isHexColor(balloonBorderColor)) {
-					triangleBorderColorAfterClass += ` has-${balloonBorderColor}-color`;
-				}
-			}
-		}
-	} else if (balloonAlign === 'position-right') {
-		//吹き出しの時
-		if ('type-speech' === balloonType) {
-			if (balloonBgColor !== undefined) {
-				triangleBorderColorBeforeClass += ` has-text-color`;
-				if (!isHexColor(balloonBgColor)) {
-					triangleBorderColorBeforeClass += ` has-${balloonBgColor}-color`;
-				}
-			}
-			if (balloonBorderColor !== undefined) {
-				triangleBorderColorBeforeClass += ` has-text-color`;
-				if (!isHexColor(balloonBorderColor)) {
-					triangleBorderColorBeforeClass += ` has-${balloonBorderColor}-color`;
-				}
-			}
-			//もくもくの時
-		} else if ('type-think' === balloonType) {
-			if (balloonBorderColor !== undefined) {
-				triangleBorderColorBeforeClass += ` has-text-color`;
-				triangleBorderColorAfterClass += ` has-text-color`;
-				if (!isHexColor(balloonBorderColor)) {
-					triangleBorderColorBeforeClass += ` has-${balloonBorderColor}-color`;
-					triangleBorderColorAfterClass += ` has-${balloonBorderColor}-color`;
-				}
-			}
-		}
-	}
-
-	//吹き出しの矢印 Style
-	//カスタムカラーの時
-	let triangleBorderColorBeforeStyle = {};
-	let triangleBorderColorAfterStyle = {};
-	if (balloonAlign === 'position-left') {
-		if (isHexColor(balloonBorderColor)) {
-			triangleBorderColorAfterStyle = {
-				borderColor: `transparent transparent transparent ${balloonBgColor}`,
-			};
-		}
-		if (isHexColor(balloonBgColor)) {
-			triangleBorderColorBeforeStyle = {
-				borderColor: `transparent ${balloonBgColor} transparent transparent`,
-			};
-		}
-	} else if (balloonAlign === 'position-right') {
-		if (isHexColor(balloonBorderColor)) {
-			triangleBorderColorAfterStyle = {
-				borderColor: `transparent ${balloonBorderColor} transparent transparent`,
-			};
-		}
-		if (isHexColor(balloonBgColor)) {
-			triangleBorderColorBeforeStyle = {
-				borderColor: `transparent transparent transparent ${balloonBgColor}`,
-			};
+	// 吹き出しの背景色 Class
+	if (balloonBgColor !== undefined) {
+		contentBackgroundClass += ` has-background-color`;
+		//カラーパレットの時
+		if (!isHexColor(balloonBgColor)) {
+			contentBackgroundClass += ` has-${balloonBgColor}-background-color`;
 		}
 	}
 

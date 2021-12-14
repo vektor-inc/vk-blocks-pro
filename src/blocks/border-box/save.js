@@ -4,7 +4,7 @@ import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function save(props) {
 	const { attributes } = props;
-	const { heading, color, faIcon, bgColor } = attributes;
+	const { heading, color, faIcon, bgColor, borderColor } = attributes;
 
 	const inner = <InnerBlocks.Content />;
 	const title = (
@@ -61,12 +61,13 @@ export default function save(props) {
 	let iconClass = ``;
 	let iconStyle = ``;
 
-	// 旧仕様を判別
+	// color: 旧仕様(5色) / borderColor: 新仕様(カラーパレット対応)を判別
 	const pre_color_class = blockProps.className.match(
 		/vk_borderBox-color-\w*/
 	);
+
 	if (pre_color_class) {
-		if (color !== undefined) {
+		if (borderColor !== undefined) {
 			// className から vk_borderBox-color- を削除
 			blockProps.className = blockProps.className.replace(
 				pre_color_class,
@@ -75,21 +76,21 @@ export default function save(props) {
 		}
 	}
 
-	if (color !== undefined) {
+	if (borderColor !== undefined) {
 		// カスタムカラーパレットに対応
 		if (isBoxBorder) {
 			// 全体に枠線
 			boxClass += ` has-text-color`;
 
-			if (isHexColor(color)) {
+			if (isHexColor(borderColor)) {
 				// custom color
 				boxClass += ` has-text-color`;
 				boxStyle = {
-					color: `${color}`,
+					color: `${borderColor}`,
 				};
 			} else {
 				// has style
-				boxClass += ` has-${color}-color`;
+				boxClass += ` has-${borderColor}-color`;
 			}
 
 			blockProps.className += boxClass;
@@ -99,19 +100,19 @@ export default function save(props) {
 			titleClass += ` has-background`;
 			bodyClass += ` has-text-color`;
 
-			if (isHexColor(color)) {
+			if (isHexColor(borderColor)) {
 				// custom color
 				titleStyle = {
-					background: `${color}`,
+					background: `${borderColor}`,
 				};
 
 				bodyStyle = {
-					color: `${color}`,
+					color: `${borderColor}`,
 				};
 			} else {
 				// has style
-				titleClass += ` has-${color}-background-color`;
-				bodyClass += ` has-${color}-color`;
+				titleClass += ` has-${borderColor}-background-color`;
+				bodyClass += ` has-${borderColor}-color`;
 			}
 		}
 
@@ -125,12 +126,12 @@ export default function save(props) {
 
 			if (color !== undefined) {
 				iconClass += ` has-background`;
-				if (isHexColor(color)) {
+				if (isHexColor(borderColor)) {
 					// custom color
-					iconStyle = `background-color: ${color}`;
+					iconStyle = `background-color: ${borderColor}`;
 				} else {
 					// has style
-					iconClass += ` has-${color}-background-color`;
+					iconClass += ` has-${borderColor}-background-color`;
 				}
 			}
 		}

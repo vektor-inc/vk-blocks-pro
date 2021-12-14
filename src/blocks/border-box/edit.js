@@ -13,7 +13,7 @@ import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function BorderBoxEdit(props) {
 	const { attributes, setAttributes } = props;
-	const { heading, color, faIcon, bgColor } = attributes;
+	const { heading, color, faIcon, bgColor, borderColor  } = attributes;
 
 	const inner = (
 		<InnerBlocks templateLock={false} template={[['core/paragraph']]} />
@@ -74,7 +74,7 @@ export default function BorderBoxEdit(props) {
 	let iconClass = ``;
 	let iconStyle = ``;
 
-	// 旧仕様を判別
+	// color: 旧仕様(5色) / borderColor: 新仕様(カラーパレット対応)を判別
 	const pre_colors = {
 		'vk_borderBox-color-red': '#dc3545',
 		'vk_borderBox-color-orange': '#ffa536',
@@ -85,6 +85,7 @@ export default function BorderBoxEdit(props) {
 	const pre_color_class = blockProps.className.match(
 		/vk_borderBox-color-\w*/
 	);
+
 	if (pre_color_class) {
 		// className から vk_borderBox-color- を削除
 		blockProps.className = blockProps.className.replace(
@@ -92,48 +93,48 @@ export default function BorderBoxEdit(props) {
 			''
 		);
 
-		if (color === undefined) {
-			// 旧仕様は color が undefined のはずだから色をセット
-			setAttributes({ color: pre_colors[pre_color_class] });
+		if (borderColor === undefined) {
+			// hexカラーに置き換え
+			setAttributes({ borderColor: pre_colors[pre_color_class] });
 		}
 	}
 
 	// カスタムカラーパレットに対応
-	if (isBoxBorder && color !== undefined) {
+	if (isBoxBorder && borderColor !== undefined) {
 		// 全体に枠線があるパターン
 		boxClass += ` has-text-color`;
 
-		if (isHexColor(color)) {
+		if (isHexColor(borderColor)) {
 			// custom color
-			boxClass += ` has-text-color`;
 			boxStyle = {
-				color: `${color}`,
+				color: `${borderColor}`,
 			};
+			blockProps.style = boxStyle;
 		} else {
 			// has style
-			boxClass += ` has-${color}-color`;
+			boxClass += ` has-${borderColor}-color`;
 		}
 
 		blockProps.className += boxClass;
-		blockProps.style = boxStyle;
-	} else if (color !== undefined) {
+
+	} else if (borderColor !== undefined) {
 		// 本文に枠線があるパターン
 		titleClass += ` has-background`;
 		bodyClass += ` has-text-color`;
 
-		if (isHexColor(color)) {
+		if (isHexColor(borderColor)) {
 			// custom color
 			titleStyle = {
-				background: `${color}`,
+				backgroundColor: `${borderColor}`,
 			};
 
 			bodyStyle = {
-				color: `${color}`,
+				color: `${borderColor}`,
 			};
 		} else {
 			// has style
-			titleClass += ` has-${color}-background-color`;
-			bodyClass += ` has-${color}-color`;
+			titleClass += ` has-${borderColor}-background-color`;
+			bodyClass += ` has-${borderColor}-color`;
 		}
 	}
 
@@ -146,14 +147,14 @@ export default function BorderBoxEdit(props) {
 	) {
 		iconClass = `vk_borderBox_icon_border`;
 
-		if (color !== undefined) {
+		if (borderColor !== undefined) {
 			iconClass += ` has-background`;
-			if (isHexColor(color)) {
+			if (isHexColor(borderColor)) {
 				// custom color
-				iconStyle = `background-color: ${color};`;
+				iconStyle = `background-color: ${borderColor};`;
 			} else {
 				// has style
-				iconClass += ` has-${color}-background-color`;
+				iconClass += ` has-${borderColor}-background-color`;
 			}
 		}
 	}
@@ -193,7 +194,7 @@ export default function BorderBoxEdit(props) {
 						id="border-color"
 						label={__('Border Color', 'vk-blocks')}
 					>
-						<AdvancedColorPalette schema={'color'} {...props} />
+						<AdvancedColorPalette schema={'borderColor'} {...props} />
 					</BaseControl>
 					<BaseControl
 						id="background-color"

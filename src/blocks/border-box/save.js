@@ -16,7 +16,7 @@ export default function save(props) {
 	);
 
 	const blockProps = useBlockProps.save({
-		className: `vk_borderBox`,
+		className: `vk_borderBox vk_borderBox-background-${bgColor}`,
 	});
 
 	//Defaultクラスを設定
@@ -57,15 +57,25 @@ export default function save(props) {
 	let bodyClass = `vk_borderBox_body`;
 	let bodyStyle = {};
 
-	// icon
+	// 直線 ピン角 アイコン
 	let iconClass = ``;
-	let iconStyle = {};
+	let iconStyle = ``;
 
-	const colors = ['red', 'orange', 'blue', 'green', 'black'];
-	if (colors.includes(color)) {
-		// 旧仕様
-		blockProps.className += ` vk_borderBox-color-${color} vk_borderBox-background-${bgColor}`;
-	} else if (color !== undefined) {
+	// 旧仕様を判別
+	const pre_color_class = blockProps.className.match(
+		/vk_borderBox-color-\w*/
+	);
+	if (pre_color_class) {
+		if (color !== undefined) {
+			// className から vk_borderBox-color- を削除
+			blockProps.className = blockProps.className.replace(
+				pre_color_class,
+				''
+			);
+		}
+	}
+
+	if (color !== undefined) {
 		// カスタムカラーパレットに対応
 		if (isBoxBorder) {
 			// 全体に枠線
@@ -105,20 +115,23 @@ export default function save(props) {
 			}
 		}
 
-		// 直線 ピン角 アイコン
 		if (
 			-1 <
 			blockProps.className.indexOf(
 				'vk_borderBox-style-solid-kado-iconFeature'
 			)
 		) {
-			iconClass = `has-background`;
-			if (isHexColor(color)) {
-				// custom color
-				iconStyle = `background: ${color}`;
-			} else {
-				// has style
-				iconClass += ` has-${color}-background-color`;
+			iconClass = `vk_borderBox_icon_border`;
+
+			if (color !== undefined) {
+				iconClass += ` has-background`;
+				if (isHexColor(color)) {
+					// custom color
+					iconStyle = `background-color: ${color}`;
+				} else {
+					// has style
+					iconClass += ` has-${color}-background-color`;
+				}
 			}
 		}
 	}
@@ -130,7 +143,7 @@ export default function save(props) {
 	} else if (iconClass) {
 		// カスタムカラーパレット
 		icon =
-			`<div class="vk_borderBox_icon_border ${iconClass}" style="${iconStyle}">` +
+			`<div class="${iconClass}" style="${iconStyle}">` +
 			faIcon +
 			`</div>`;
 	} else {

@@ -254,6 +254,10 @@
 				transform: translateY(-50%) translateX(-50%);
 				color: #FFF;
 			}
+
+			&:not(.has-background){
+				background-color: #337AB7;
+			}
 		}
 	}
 	&.is-style-vk_borderBox-style-solid-kado-tit-onborder {

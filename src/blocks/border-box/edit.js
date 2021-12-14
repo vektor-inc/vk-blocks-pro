@@ -70,65 +70,87 @@ export default function BorderBoxEdit(props) {
 	let bodyClass = `vk_borderBox_body`;
 	let bodyStyle = {};
 
-	// icon
+	// 直線 ピン角 アイコン
 	let iconClass = ``;
 	let iconStyle = ``;
 
-	const colors = ['red', 'orange', 'blue', 'green', 'black'];
-	if (colors.includes(color)) {
-		// 旧仕様
-		blockProps.className += ` vk_borderBox-color-${color} vk_borderBox-background-${bgColor}`;
-	} else if (color !== undefined) {
-		// カスタムカラーパレットに対応
-		if (isBoxBorder) {
-			// 全体に枠線
+	// 旧仕様を判別
+	const pre_colors = {
+		'vk_borderBox-color-red': '#dc3545',
+		'vk_borderBox-color-orange': '#ffa536',
+		'vk_borderBox-color-blue': '#4267b2',
+		'vk_borderBox-color-green': '#28a745',
+		'vk_borderBox-color-black': '#222222',
+	};
+	const pre_color_class = blockProps.className.match(
+		/vk_borderBox-color-\w*/
+	);
+	if (pre_color_class) {
+		// className から vk_borderBox-color- を削除
+		blockProps.className = blockProps.className.replace(
+			pre_color_class,
+			''
+		);
+
+		if (color === undefined) {
+			// 旧仕様は color が undefined のはずだから色をセット
+			setAttributes({ color: pre_colors[pre_color_class] });
+		}
+	}
+
+	// カスタムカラーパレットに対応
+	if (isBoxBorder && color !== undefined) {
+		// 全体に枠線があるパターン
+		boxClass += ` has-text-color`;
+
+		if (isHexColor(color)) {
+			// custom color
 			boxClass += ` has-text-color`;
-
-			if (isHexColor(color)) {
-				// custom color
-				boxClass += ` has-text-color`;
-				boxStyle = {
-					color: `${color}`,
-				};
-			} else {
-				// has style
-				boxClass += ` has-${color}-color`;
-			}
-
-			blockProps.className += boxClass;
-			blockProps.style = boxStyle;
+			boxStyle = {
+				color: `${color}`,
+			};
 		} else {
-			// 本文に枠線
-			titleClass += ` has-background`;
-			bodyClass += ` has-text-color`;
-
-			if (isHexColor(color)) {
-				// custom color
-				titleStyle = {
-					background: `${color}`,
-				};
-
-				bodyStyle = {
-					color: `${color}`,
-				};
-			} else {
-				// has style
-				titleClass += ` has-${color}-background-color`;
-				bodyClass += ` has-${color}-color`;
-			}
+			// has style
+			boxClass += ` has-${color}-color`;
 		}
 
-		// 直線 ピン角 アイコン
-		if (
-			-1 <
-			blockProps.className.indexOf(
-				'vk_borderBox-style-solid-kado-iconFeature'
-			)
-		) {
-			iconClass = `has-background`;
+		blockProps.className += boxClass;
+		blockProps.style = boxStyle;
+	} else if (color !== undefined) {
+		// 本文に枠線があるパターン
+		titleClass += ` has-background`;
+		bodyClass += ` has-text-color`;
+
+		if (isHexColor(color)) {
+			// custom color
+			titleStyle = {
+				background: `${color}`,
+			};
+
+			bodyStyle = {
+				color: `${color}`,
+			};
+		} else {
+			// has style
+			titleClass += ` has-${color}-background-color`;
+			bodyClass += ` has-${color}-color`;
+		}
+	}
+
+	// 直線 ピン角 アイコン
+	if (
+		-1 <
+		blockProps.className.indexOf(
+			'vk_borderBox-style-solid-kado-iconFeature'
+		)
+	) {
+		iconClass = `vk_borderBox_icon_border`;
+
+		if (color !== undefined) {
+			iconClass += ` has-background`;
 			if (isHexColor(color)) {
 				// custom color
-				iconStyle = `background: ${color}`;
+				iconStyle = `background-color: ${color};`;
 			} else {
 				// has style
 				iconClass += ` has-${color}-background-color`;
@@ -143,7 +165,7 @@ export default function BorderBoxEdit(props) {
 	} else if (iconClass) {
 		// カスタムカラーパレット
 		icon =
-			`<div class="vk_borderBox_icon_border ${iconClass}" style="${iconStyle}">` +
+			`<div class="${iconClass}" style="${iconStyle}">` +
 			faIcon +
 			`</div>`;
 	} else {

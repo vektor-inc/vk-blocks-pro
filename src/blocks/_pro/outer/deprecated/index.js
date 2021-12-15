@@ -103,7 +103,7 @@ const deprecated = [
 			},
 		},
 		save: save1_20_2,
-		filters: [
+		vkBlockOuterfilters: [
 			'addInlineFrontCss'
 		]
 	},	

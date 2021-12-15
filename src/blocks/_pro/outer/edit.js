@@ -175,9 +175,10 @@ export default function OuterEdit(props) {
 	const bgColorClasses = [];
 	bgColorClasses.push('has-background');
 
-	const bgColorOutputDisable = false;
+	let bgColorOutputDisable = false;
 	if (!isHexColor(bgColor)) {
 		bgColorClasses.push(`has-${bgColor}-background-color`);
+		bgColorOutputDisable = true;
 	}
 
 	const blockProps = useBlockProps({
@@ -440,6 +441,10 @@ export default function OuterEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl>
+						<AdvancedColorPalette
+							schema={'upperDividerBgColor'}
+							{...props}
+						/>
 						<ColorPalette
 							value={upperDividerBgColor}
 							onChange={(value) =>

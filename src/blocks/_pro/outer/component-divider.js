@@ -1,3 +1,5 @@
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
+
 const componentDivider = (level, color, whichSide, dividerType) => {
 	let sectionPadding;
 	let sectionClass;
@@ -5,12 +7,19 @@ const componentDivider = (level, color, whichSide, dividerType) => {
 
 	// eslint-disable-next-line no-shadow
 	const tiltSectionStyle = (level, color) => {
+		let svgClassName = '';
+		if (!isHexColor(color)) {
+			svgClassName = `has-${color}-background-color`;
+			color = null;
+		}
+
 		if (level > 0) {
 			return (
 				<path
 					d={`m0,${100 - level} L100,100 L0,100 z`}
 					strokeWidth="0"
-					fill={color}
+					{...(color ? { fill: color } : {})}
+					className={svgClassName}
 				/>
 			);
 		} else if (level < 0) {
@@ -21,7 +30,8 @@ const componentDivider = (level, color, whichSide, dividerType) => {
 				<path
 					d={`m100,${100 - absLevel} L0,100 L100,100 z`}
 					strokeWidth="0"
-					fill={color}
+					{...(color ? { fill: color } : {})}
+					className={svgClassName}
 				/>
 			);
 		}
@@ -57,7 +67,7 @@ const componentDivider = (level, color, whichSide, dividerType) => {
 						100 - level / 2
 					} q20,${level},40,0 t40,0 t40,0 V100 L0,100 z`}
 					strokeWidth="0"
-					fill={color}
+					{...(color ? { fill: color } : {})}
 				/>
 			);
 		} else if (level < 0) {

@@ -238,3 +238,16 @@ $color-danger: #b52727;
 		}
 	}
 }
+
+
+:root,
+:root .editor-styles-wrapper {
+	path {
+		&.has-vk-color-primary-background-color {
+			fill: var(--vk-color-primary);
+		}
+		&.has-vk-color-primary-dark-background-color {
+			fill: var(--vk-color-primary-dark);
+		}		
+	}
+}

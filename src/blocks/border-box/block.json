@@ -12,6 +12,9 @@
 		"color": {
 			"type": "string"			
 		},
+		"borderColor": {
+			"type": "string"			
+		},
 		"bgColor": {
 			"type": "string",
 			"default": "transparent"

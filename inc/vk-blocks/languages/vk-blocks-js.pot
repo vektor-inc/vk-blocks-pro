@@ -325,7 +325,7 @@ msgid "Text Color"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:94
-#: src/blocks/border-box/edit.js:99
+#: src/blocks/border-box/edit.js:206
 #: src/blocks/button/edit.js:387
 msgid "Background Color"
 msgstr ""
@@ -385,7 +385,7 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:135
 #: src/blocks/_pro/step-item/edit.js:72
-#: src/blocks/border-box/edit.js:122
+#: src/blocks/border-box/edit.js:229
 #: src/blocks/button/edit.js:415
 #: src/blocks/icon/edit.js:237
 #: src/blocks/pr-content/edit.js:196
@@ -576,7 +576,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:485
 #: src/blocks/_pro/step-item/edit.js:126
-#: src/blocks/_pro/timeline-item/edit.js:95
+#: src/blocks/_pro/timeline-item/edit.js:104
 #: src/blocks/balloon/edit.js:338
 #: src/blocks/staff/edit.js:177
 msgid "None"
@@ -584,7 +584,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:489
 #: src/blocks/_pro/step-item/edit.js:104
-#: src/blocks/_pro/timeline-item/edit.js:77
+#: src/blocks/_pro/timeline-item/edit.js:86
 #: src/blocks/pr-content/edit.js:143
 #: src/extensions/core/group/style.js:102
 msgid "Solid"
@@ -811,7 +811,7 @@ msgstr ""
 #: src/blocks/_pro/slider/edit.js:345
 #: src/blocks/_pro/step-item/edit.js:122
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
-#: src/blocks/_pro/timeline-item/edit.js:91
+#: src/blocks/_pro/timeline-item/edit.js:100
 #: src/blocks/heading/edit.js:228
 #: src/blocks/staff/edit.js:173
 #: src/extensions/core/heading/style.js:30
@@ -843,7 +843,7 @@ msgid "Bottom on Mobile device"
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:108
-#: src/blocks/_pro/timeline-item/edit.js:73
+#: src/blocks/_pro/timeline-item/edit.js:82
 msgid "Outlined"
 msgstr ""
 
@@ -856,13 +856,13 @@ msgid "If Font Awesome tags entered, it will overrides the number."
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:87
-#: src/blocks/_pro/timeline-item/edit.js:50
+#: src/blocks/_pro/timeline-item/edit.js:66
 msgid "Ex,6:00AM"
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:91
-#: src/blocks/_pro/timeline-item/edit.js:53
-#: src/blocks/border-box/edit.js:63
+#: src/blocks/_pro/timeline-item/edit.js:69
+#: src/blocks/border-box/edit.js:197
 #: src/blocks/button/edit.js:333
 #: src/blocks/icon/edit.js:256
 #: src/blocks/staff/edit.js:199
@@ -871,7 +871,7 @@ msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:94
 #: src/blocks/_pro/table-of-contents-new/edit.js:135
-#: src/blocks/_pro/timeline-item/edit.js:63
+#: src/blocks/_pro/timeline-item/edit.js:72
 #: src/blocks/icon-outer/edit.js:196
 #: src/blocks/icon/edit.js:184
 msgid "Style"
@@ -918,7 +918,7 @@ msgstr ""
 msgid "CLOSE"
 msgstr ""
 
-#: src/blocks/_pro/timeline-item/edit.js:46
+#: src/blocks/_pro/timeline-item/edit.js:62
 msgid "label"
 msgstr ""
 
@@ -1078,30 +1078,17 @@ msgstr ""
 
 #: src/blocks/border-box/deprecated/0.0.0/save.js:24
 #: src/blocks/border-box/deprecated/0.0.1/save.js:25
-#: src/blocks/border-box/edit.js:25
+#: src/blocks/border-box/edit.js:27
 msgid "Please enter a title."
 msgstr ""
 
-#: src/blocks/border-box/edit.js:109
-msgid "Transparent"
-msgstr ""
-
-#: src/blocks/border-box/edit.js:113
-msgid "White"
-msgstr ""
-
-#: src/blocks/border-box/edit.js:119
-#: src/utils/font-awesome-new.js:14
-msgid "Icon"
-msgstr ""
-
-#: src/blocks/border-box/edit.js:51
+#: src/blocks/border-box/edit.js:185
 #: src/blocks/icon-outer/edit.js:132
 #: src/blocks/icon/edit.js:121
 msgid "Margin"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:56
+#: src/blocks/border-box/edit.js:190
 msgid ""
 "The margin-top of the first element and the margin-bottom of the last "
 "element in the border block will be automatically set to 0.If you want to "
@@ -1109,52 +1096,45 @@ msgid ""
 "instead of margin."
 msgstr ""
 
-#: src/blocks/border-box/edit.js:66
+#: src/blocks/border-box/edit.js:200
 #: src/extensions/core/group/style.js:47
 msgid "Border Color"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:76
-msgid "Red"
+#: src/blocks/border-box/edit.js:216
+msgid "Transparent"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:80
-msgid "Orange"
+#: src/blocks/border-box/edit.js:220
+msgid "White"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:84
-msgid "Blue"
+#: src/blocks/border-box/edit.js:226
+#: src/utils/font-awesome-new.js:14
+msgid "Icon"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:88
-msgid "Green"
-msgstr ""
-
-#: src/blocks/border-box/edit.js:92
-msgid "Black"
-msgstr ""
-
-#: src/blocks/border-box/index.js:39
+#: src/blocks/border-box/index.js:40
 msgid "Solid Angle Tab"
 msgstr ""
 
-#: src/blocks/border-box/index.js:44
+#: src/blocks/border-box/index.js:45
 msgid "Solid Round Tab"
 msgstr ""
 
-#: src/blocks/border-box/index.js:48
+#: src/blocks/border-box/index.js:49
 msgid "Solid Angle Banner"
 msgstr ""
 
-#: src/blocks/border-box/index.js:52
+#: src/blocks/border-box/index.js:53
 msgid "Solid Angle Onborder"
 msgstr ""
 
-#: src/blocks/border-box/index.js:56
+#: src/blocks/border-box/index.js:57
 msgid "Solid Angle Inner"
 msgstr ""
 
-#: src/blocks/border-box/index.js:60
+#: src/blocks/border-box/index.js:61
 msgid "Solid Angle iconFeature"
 msgstr ""
 

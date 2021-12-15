@@ -13,7 +13,7 @@ import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function BorderBoxEdit(props) {
 	const { attributes, setAttributes } = props;
-	const { heading, color, faIcon, bgColor, borderColor  } = attributes;
+	const { heading, faIcon, bgColor, borderColor } = attributes;
 
 	const inner = (
 		<InnerBlocks templateLock={false} template={[['core/paragraph']]} />
@@ -82,20 +82,22 @@ export default function BorderBoxEdit(props) {
 		'vk_borderBox-color-green': '#28a745',
 		'vk_borderBox-color-black': '#222222',
 	};
-	const pre_color_class = blockProps.className.match(
-		/vk_borderBox-color-\w*/
-	);
 
-	if (pre_color_class) {
-		// className から vk_borderBox-color- を削除
-		blockProps.className = blockProps.className.replace(
-			pre_color_class,
-			''
+	if (attributes.className) {
+		const pre_color_class = attributes.className.match(
+			/vk_borderBox-color-\w*/
 		);
 
-		if (borderColor === undefined) {
-			// hexカラーに置き換え
-			setAttributes({ borderColor: pre_colors[pre_color_class] });
+		if (pre_color_class) {
+			// className から vk_borderBox-color- を削除
+			setAttributes({
+				className: attributes.className.replace(pre_color_class, ''),
+			});
+
+			if (borderColor === undefined) {
+				// hexカラーに置き換え
+				setAttributes({ borderColor: pre_colors[pre_color_class] });
+			}
 		}
 	}
 
@@ -116,7 +118,6 @@ export default function BorderBoxEdit(props) {
 		}
 
 		blockProps.className += boxClass;
-
 	} else if (borderColor !== undefined) {
 		// 本文に枠線があるパターン
 		titleClass += ` has-background`;
@@ -194,7 +195,10 @@ export default function BorderBoxEdit(props) {
 						id="border-color"
 						label={__('Border Color', 'vk-blocks')}
 					>
-						<AdvancedColorPalette schema={'borderColor'} {...props} />
+						<AdvancedColorPalette
+							schema={'borderColor'}
+							{...props}
+						/>
 					</BaseControl>
 					<BaseControl
 						id="background-color"

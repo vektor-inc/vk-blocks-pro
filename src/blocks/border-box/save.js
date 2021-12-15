@@ -4,7 +4,7 @@ import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function save(props) {
 	const { attributes } = props;
-	const { heading, color, faIcon, bgColor, borderColor } = attributes;
+	const { heading, faIcon, bgColor, borderColor } = attributes;
 
 	const inner = <InnerBlocks.Content />;
 	const title = (
@@ -77,7 +77,7 @@ export default function save(props) {
 	}
 
 	if (borderColor !== undefined) {
-		// カスタムカラーパレットに対応
+		// カラーパレットに対応
 		if (isBoxBorder) {
 			// 全体に枠線
 			boxClass += ` has-text-color`;
@@ -115,34 +115,35 @@ export default function save(props) {
 				bodyClass += ` has-${borderColor}-color`;
 			}
 		}
+	}
 
-		if (
-			-1 <
-			blockProps.className.indexOf(
-				'vk_borderBox-style-solid-kado-iconFeature'
-			)
-		) {
-			iconClass = `vk_borderBox_icon_border`;
+	// 直線 ピン角 アイコン
+	if (
+		-1 <
+		blockProps.className.indexOf(
+			'vk_borderBox-style-solid-kado-iconFeature'
+		)
+	) {
+		iconClass = `vk_borderBox_icon_border`;
 
-			if (color !== undefined) {
-				iconClass += ` has-background`;
-				if (isHexColor(borderColor)) {
-					// custom color
-					iconStyle = `background-color: ${borderColor}`;
-				} else {
-					// has style
-					iconClass += ` has-${borderColor}-background-color`;
-				}
+		if (borderColor !== undefined) {
+			iconClass += ` has-background`;
+			if (isHexColor(borderColor)) {
+				// custom color
+				iconStyle = `background-color: ${borderColor};`;
+			} else {
+				// has style
+				iconClass += ` has-${borderColor}-background-color`;
 			}
 		}
 	}
-
+	
 	//iタグでdeprecatedが効かなかったので追加。
 	let icon;
 	if (faIcon.indexOf('<i class="') === -1) {
 		icon = `<i class="${faIcon}"></i>`;
 	} else if (iconClass) {
-		// カスタムカラーパレット
+		// カラーパレット
 		icon =
 			`<div class="${iconClass}" style="${iconStyle}">` +
 			faIcon +

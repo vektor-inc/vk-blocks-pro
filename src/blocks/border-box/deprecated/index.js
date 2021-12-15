@@ -28,7 +28,7 @@ const deprecated = [
 				default: 'transparent',
 			},
 			borderColor: {
-				type: 'string',
+				type: 'string'
 			}
 		},
 		save: save1205,

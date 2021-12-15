@@ -75,7 +75,7 @@ export default function BorderBoxEdit(props) {
 	let iconStyle = ``;
 
 	// color: 旧仕様(5色) / borderColor: 新仕様(カラーパレット対応)を判別
-	const pre_colors = {
+	const preColores = {
 		'vk_borderBox-color-red': '#dc3545',
 		'vk_borderBox-color-orange': '#ffa536',
 		'vk_borderBox-color-blue': '#4267b2',
@@ -84,19 +84,19 @@ export default function BorderBoxEdit(props) {
 	};
 
 	if (attributes.className) {
-		const pre_color_class = attributes.className.match(
+		const preColorClass = attributes.className.match(
 			/vk_borderBox-color-\w*/
 		);
 
-		if (pre_color_class) {
+		if (preColorClass) {
 			// className から vk_borderBox-color- を削除
 			setAttributes({
-				className: attributes.className.replace(pre_color_class, ''),
+				className: attributes.className.replace(preColorClass, ''),
 			});
 
 			if (borderColor === undefined) {
 				// hexカラーに置き換え
-				setAttributes({ borderColor: pre_colors[pre_color_class] });
+				setAttributes({ borderColor: preColores[preColorClass] });
 			}
 		}
 	}

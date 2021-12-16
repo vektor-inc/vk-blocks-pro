@@ -145,29 +145,31 @@ export default function save(props) {
 			: '';
 
 	let iconBefore = fontAwesomeIconBefore;
-	if (iconBefore && iconColorClassName !== '' && fontAwesomeIconColor) {
+	let iconAfter = fontAwesomeIconAfter;
+	//add class
+	if (iconBefore && iconColorClassName) {
 		const faIconFragmentBefore = iconBefore.split('<i class="');
 		faIconFragmentBefore[0] =
 			faIconFragmentBefore[0] + `<i class="${iconColorClassName} `;
 		iconBefore = faIconFragmentBefore.join('');
 	}
 
-	let iconAfter = fontAwesomeIconAfter;
-	if (iconAfter && iconColorClassName !== '' && fontAwesomeIconColor) {
+	if (iconAfter && iconColorClassName) {
 		const faIconFragmentAfter = iconAfter.split('<i class="');
 		faIconFragmentAfter[0] =
 			faIconFragmentAfter[0] + `<i class="${iconColorClassName} `;
 		iconAfter = faIconFragmentAfter.join('');
 	}
 
-	if (iconBefore && fontAwesomeIconColor) {
+	//add inline css
+	if (iconBefore && fontAwesomeIconStyle) {
 		const faIconFragmentBefore = iconBefore.split('<i');
 		faIconFragmentBefore[0] =
 			faIconFragmentBefore[0] + `<i ${fontAwesomeIconStyle} `;
 		iconBefore = faIconFragmentBefore.join('');
 	}
 
-	if (iconAfter && fontAwesomeIconColor) {
+	if (iconAfter && fontAwesomeIconStyle) {
 		const faIconFragmentAfter = iconAfter.split('<i');
 		faIconFragmentAfter[0] =
 			faIconFragmentAfter[0] + `<i ${fontAwesomeIconStyle} `;

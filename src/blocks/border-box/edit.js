@@ -74,28 +74,32 @@ export default function BorderBoxEdit(props) {
 	let iconClass = ``;
 	let iconStyle = ``;
 
-	// color: 旧仕様(5色) / borderColor: 新仕様(カラーパレット対応)を判別
-	const pre_colors = {
-		'vk_borderBox-color-red': '#dc3545',
-		'vk_borderBox-color-orange': '#ffa536',
-		'vk_borderBox-color-blue': '#4267b2',
-		'vk_borderBox-color-green': '#28a745',
-		'vk_borderBox-color-black': '#222222',
-	};
-	const pre_color_class = blockProps.className.match(
-		/vk_borderBox-color-\w*/
-	);
-
-	if (pre_color_class) {
-		// className から vk_borderBox-color- を削除
-		blockProps.className = blockProps.className.replace(
-			pre_color_class,
-			''
+	if (attributes.className) {
+		// color: 旧仕様(5色) / borderColor: 新仕様(カラーパレット対応)を判別
+		const preColorClass = attributes.className.match(
+			/vk_borderBox-color-\w*/
 		);
 
-		if (borderColor === undefined) {
-			// hexカラーに置き換え
-			setAttributes({ borderColor: pre_colors[pre_color_class] });
+		if (preColorClass) {
+			const preColores = {
+				'vk_borderBox-color-red': '#dc3545',
+				'vk_borderBox-color-orange': '#ffa536',
+				'vk_borderBox-color-blue': '#4267b2',
+				'vk_borderBox-color-green': '#28a745',
+				'vk_borderBox-color-black': '#222222',
+			};
+			
+			// className から vk_borderBox-color- を削除
+			let palletClass = attributes.className.replace(preColorClass, '');
+			palletClass = palletClass.split(' ').join(' ');			
+			setAttributes({
+				className: palletClass,
+			});
+
+			if (borderColor === undefined) {
+				// hexカラーに置き換え
+				setAttributes({ borderColor: preColores[preColorClass] });
+			}
 		}
 	}
 

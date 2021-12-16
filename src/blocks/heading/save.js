@@ -88,7 +88,9 @@ export default function save(props) {
 
 	const tStyle = {
 		color:
-			titleColor !== null && titleColor !== undefined && isHexColor(titleColor)
+			titleColor !== null &&
+			titleColor !== undefined &&
+			isHexColor(titleColor)
 				? titleColor
 				: undefined,
 		fontSize:
@@ -117,7 +119,9 @@ export default function save(props) {
 
 	const subTextStyle = {
 		color:
-			subTextColor !== null && subTextColor !== undefined && isHexColor(subTextColor)
+			subTextColor !== null &&
+			subTextColor !== undefined &&
+			isHexColor(subTextColor)
 				? subTextColor
 				: undefined,
 		fontSize:
@@ -135,33 +139,38 @@ export default function save(props) {
 		}
 	}
 
-	const fontAwesomeIconStyle = fontAwesomeIconColor && isHexColor(fontAwesomeIconColor)
-		? `style="color:${fontAwesomeIconColor};"`
-		: '';
+	const fontAwesomeIconStyle =
+		fontAwesomeIconColor && isHexColor(fontAwesomeIconColor)
+			? `style="color:${fontAwesomeIconColor};"`
+			: '';
 
 	let iconBefore = fontAwesomeIconBefore;
 	if (iconBefore && iconColorClassName !== '' && fontAwesomeIconColor) {
 		const faIconFragmentBefore = iconBefore.split('<i class="');
-		faIconFragmentBefore[0] = faIconFragmentBefore[0] + `<i class="${iconColorClassName} `;
+		faIconFragmentBefore[0] =
+			faIconFragmentBefore[0] + `<i class="${iconColorClassName} `;
 		iconBefore = faIconFragmentBefore.join('');
 	}
 
 	let iconAfter = fontAwesomeIconAfter;
 	if (iconAfter && iconColorClassName !== '' && fontAwesomeIconColor) {
 		const faIconFragmentAfter = iconAfter.split('<i class="');
-		faIconFragmentAfter[0] = faIconFragmentAfter[0] + `<i class="${iconColorClassName} `;
+		faIconFragmentAfter[0] =
+			faIconFragmentAfter[0] + `<i class="${iconColorClassName} `;
 		iconAfter = faIconFragmentAfter.join('');
 	}
 
 	if (iconBefore && fontAwesomeIconColor) {
 		const faIconFragmentBefore = iconBefore.split('<i');
-		faIconFragmentBefore[0] = faIconFragmentBefore[0] + `<i ${fontAwesomeIconStyle} `;
+		faIconFragmentBefore[0] =
+			faIconFragmentBefore[0] + `<i ${fontAwesomeIconStyle} `;
 		iconBefore = faIconFragmentBefore.join('');
 	}
 
 	if (iconAfter && fontAwesomeIconColor) {
 		const faIconFragmentAfter = iconAfter.split('<i');
-		faIconFragmentAfter[0] = faIconFragmentAfter[0] + `<i ${fontAwesomeIconStyle} `;
+		faIconFragmentAfter[0] =
+			faIconFragmentAfter[0] + `<i ${fontAwesomeIconStyle} `;
 		iconAfter = faIconFragmentAfter.join('');
 	}
 

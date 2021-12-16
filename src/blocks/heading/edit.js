@@ -12,14 +12,15 @@ import {
 } from '@wordpress/components';
 import {
 	InspectorControls,
-	ColorPalette,
 	BlockControls,
 	AlignmentToolbar,
 	RichText,
 	useBlockProps,
 } from '@wordpress/block-editor';
-
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import ReactHtmlParser from 'react-html-parser';
+import classnames from 'classnames';
 
 const renderTitle = (level, contents, tStyle, headingStyle) => {
 	switch (level) {
@@ -116,9 +117,22 @@ export default function HeaddingEdit(props) {
 				: undefined,
 	};
 
+	let headingColorClassName = '';
+	if (titleColor !== undefined) {
+		headingColorClassName += `has-text-color`;
+		if (!isHexColor(titleColor)) {
+			headingColorClassName += ` has-${titleColor}-color`;
+		}
+	}
+
+	const headingStyle = classnames('vk_heading_title', {
+		[`vk_heading_title-style-${titleStyle}`]: !!titleStyle,
+		[`${headingColorClassName}`]: !!headingColorClassName,
+	});
+
 	const tStyle = {
 		color:
-			titleColor !== null && titleColor !== undefined
+			titleColor !== null && titleColor !== undefined && isHexColor(titleColor)
 				? titleColor
 				: undefined,
 		fontSize:
@@ -132,10 +146,22 @@ export default function HeaddingEdit(props) {
 		textAlign: align !== null && align !== undefined ? align : undefined,
 	};
 
-	const headingStyle = `vk_heading_title vk_heading_title-style-${titleStyle}`;
+	let subTextColorClassName = '';
+	if (subTextColor !== undefined) {
+		subTextColorClassName += `has-text-color`;
+		if (!isHexColor(subTextColor)) {
+			subTextColorClassName += ` has-${subTextColor}-color`;
+		}
+	}
+
+	const subTextClass = classnames('vk_heading_subtext', {
+		[`vk_heading_subtext-style-${titleStyle}`]: !!titleStyle,
+		[`${subTextColorClassName}`]: !!subTextColorClassName,
+	});
+
 	const subTextStyle = {
 		color:
-			subTextColor !== null && subTextColor !== undefined
+			subTextColor !== null && subTextColor !== undefined && isHexColor(subTextColor)
 				? subTextColor
 				: undefined,
 		fontSize:
@@ -144,25 +170,42 @@ export default function HeaddingEdit(props) {
 				: undefined,
 		textAlign: align !== null && align !== undefined ? align : undefined,
 	};
-	const subTextClass = `vk_heading_subtext vk_heading_subtext-style-${titleStyle}`;
 
-	let iconBefore = '';
-	let iconAfter = '';
-	const fontAwesomeIconStyle = fontAwesomeIconColor
-		? `style="color:${fontAwesomeIconColor};"`
-		: '';
-	if (fontAwesomeIconBefore) {
-		//add inline css
-		const faIconFragmentBefore = fontAwesomeIconBefore.split('<i');
-		faIconFragmentBefore[0] =
-			faIconFragmentBefore[0] + `<i ${fontAwesomeIconStyle} `;
+	let iconColorClassName = '';
+	if (fontAwesomeIconColor !== undefined) {
+		iconColorClassName += `has-text-color`;
+		if (!isHexColor(fontAwesomeIconColor)) {
+			iconColorClassName += ` has-${fontAwesomeIconColor}-color`;
+		}
+	}
+
+	const fontAwesomeIconStyle = fontAwesomeIconColor && isHexColor(fontAwesomeIconColor)
+	? `style="color:${fontAwesomeIconColor};"`
+	: '';
+
+	let iconBefore = fontAwesomeIconBefore;
+	if (iconBefore && iconColorClassName !== '' && fontAwesomeIconColor) {
+		const faIconFragmentBefore = iconBefore.split('<i class="');
+		faIconFragmentBefore[0] = faIconFragmentBefore[0] + `<i class="${iconColorClassName} `;
 		iconBefore = faIconFragmentBefore.join('');
 	}
-	if (fontAwesomeIconAfter) {
-		//add class and inline css
-		const faIconFragmentAfter = fontAwesomeIconAfter.split('<i');
-		faIconFragmentAfter[0] =
-			faIconFragmentAfter[0] + `<i ${fontAwesomeIconStyle} `;
+
+	let iconAfter = fontAwesomeIconAfter;
+	if (iconAfter && iconColorClassName !== '' && fontAwesomeIconColor) {
+		const faIconFragmentAfter = iconAfter.split('<i class="');
+		faIconFragmentAfter[0] = faIconFragmentAfter[0] + `<i class="${iconColorClassName} `;
+		iconAfter = faIconFragmentAfter.join('');
+	}
+
+	if (iconBefore && fontAwesomeIconColor) {
+		const faIconFragmentBefore = iconBefore.split('<i');
+		faIconFragmentBefore[0] = faIconFragmentBefore[0] + `<i ${fontAwesomeIconStyle} `;
+		iconBefore = faIconFragmentBefore.join('');
+	}
+
+	if (iconAfter && fontAwesomeIconColor) {
+		const faIconFragmentAfter = iconAfter.split('<i');
+		faIconFragmentAfter[0] = faIconFragmentAfter[0] + `<i ${fontAwesomeIconStyle} `;
 		iconAfter = faIconFragmentAfter.join('');
 	}
 
@@ -288,12 +331,7 @@ export default function HeaddingEdit(props) {
 						label={__('Text Color', 'vk-blocks')}
 						id={`vk_heading_textColor`}
 					>
-						<ColorPalette
-							value={titleColor}
-							onChange={(value) =>
-								setAttributes({ titleColor: value })
-							}
-						/>
+						<AdvancedColorPalette schema={'titleColor'} {...props} />
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
@@ -321,14 +359,7 @@ export default function HeaddingEdit(props) {
 						label={__('Icon Color', 'vk-blocks')}
 						id={`vk_heading_iconColor`}
 					>
-						<ColorPalette
-							value={fontAwesomeIconColor}
-							onChange={(value) =>
-								setAttributes({
-									fontAwesomeIconColor: value,
-								})
-							}
-						/>
+						<AdvancedColorPalette schema={'fontAwesomeIconColor'} {...props} />
 					</BaseControl>
 				</PanelBody>
 				<PanelBody title={__('Sub Text Settings', 'vk-blocks')}>
@@ -361,12 +392,7 @@ export default function HeaddingEdit(props) {
 						allowReset={true}
 						resetFallbackValue={null}
 					/>
-					<ColorPalette
-						value={subTextColor}
-						onChange={(value) =>
-							setAttributes({ subTextColor: value })
-						}
-					/>
+					<AdvancedColorPalette schema={'subTextColor'} {...props} />
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>

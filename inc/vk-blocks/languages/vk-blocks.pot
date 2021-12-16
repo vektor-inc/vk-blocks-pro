@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.20.2\n"
+"Project-Id-Version: VK Blocks Pro 1.20.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-12-02T05:06:06+00:00\n"
+"POT-Creation-Date: 2021-12-16T01:39:42+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -331,7 +331,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:83
 #: src/blocks/button/edit.js:404
-#: src/blocks/heading/edit.js:288
+#: src/blocks/heading/edit.js:331
 msgid "Text Color"
 msgstr ""
 
@@ -583,7 +583,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:485
 #: src/blocks/_pro/step-item/edit.js:126
-#: src/blocks/_pro/timeline-item/edit.js:95
+#: src/blocks/_pro/timeline-item/edit.js:104
 #: src/blocks/balloon/edit.js:338
 #: src/blocks/staff/edit.js:177
 msgid "None"
@@ -591,7 +591,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:489
 #: src/blocks/_pro/step-item/edit.js:104
-#: src/blocks/_pro/timeline-item/edit.js:77
+#: src/blocks/_pro/timeline-item/edit.js:86
 #: src/blocks/pr-content/edit.js:143
 #: src/extensions/core/group/style.js:102
 msgid "Solid"
@@ -821,8 +821,8 @@ msgstr ""
 #: src/blocks/_pro/slider/edit.js:345
 #: src/blocks/_pro/step-item/edit.js:122
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
-#: src/blocks/_pro/timeline-item/edit.js:91
-#: src/blocks/heading/edit.js:228
+#: src/blocks/_pro/timeline-item/edit.js:100
+#: src/blocks/heading/edit.js:271
 #: src/blocks/staff/edit.js:173
 #: src/extensions/core/heading/style.js:30
 #: src/extensions/core/list/style.js:102
@@ -838,7 +838,7 @@ msgid "Navigation Position"
 msgstr ""
 
 #: src/blocks/_pro/slider/edit.js:366
-#: src/blocks/heading/edit.js:344
+#: src/blocks/heading/edit.js:375
 msgid "Hide"
 msgstr ""
 
@@ -853,7 +853,7 @@ msgid "Bottom on Mobile device"
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:108
-#: src/blocks/_pro/timeline-item/edit.js:73
+#: src/blocks/_pro/timeline-item/edit.js:82
 msgid "Outlined"
 msgstr ""
 
@@ -866,12 +866,12 @@ msgid "If Font Awesome tags entered, it will overrides the number."
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:87
-#: src/blocks/_pro/timeline-item/edit.js:50
+#: src/blocks/_pro/timeline-item/edit.js:66
 msgid "Ex,6:00AM"
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:91
-#: src/blocks/_pro/timeline-item/edit.js:53
+#: src/blocks/_pro/timeline-item/edit.js:69
 #: src/blocks/border-box/edit.js:63
 #: src/blocks/button/edit.js:333
 #: src/blocks/icon/edit.js:256
@@ -884,7 +884,7 @@ msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:94
 #: src/blocks/_pro/table-of-contents-new/edit.js:135
-#: src/blocks/_pro/timeline-item/edit.js:63
+#: src/blocks/_pro/timeline-item/edit.js:72
 #: src/blocks/icon-outer/edit.js:196
 #: src/blocks/icon/edit.js:184
 msgid "Style"
@@ -929,12 +929,12 @@ msgstr ""
 msgid "CLOSE"
 msgstr ""
 
-#: src/blocks/_pro/timeline-item/edit.js:46
+#: src/blocks/_pro/timeline-item/edit.js:62
 msgid "label"
 msgstr ""
 
 #: src/blocks/alert/edit.js:19
-#: src/blocks/heading/edit.js:219
+#: src/blocks/heading/edit.js:262
 msgid "Style Settings"
 msgstr ""
 
@@ -997,7 +997,7 @@ msgid "Balloon setting"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:202
-#: src/blocks/heading/edit.js:336
+#: src/blocks/heading/edit.js:367
 msgid "Position"
 msgstr ""
 
@@ -1277,13 +1277,13 @@ msgid "This color palette overrides the default color. If you want to use the de
 msgstr ""
 
 #: src/blocks/button/edit.js:419
-#: src/blocks/heading/edit.js:303
+#: src/blocks/heading/edit.js:341
 #: src/blocks/pr-content/edit.js:200
 msgid "Before text"
 msgstr ""
 
 #: src/blocks/button/edit.js:428
-#: src/blocks/heading/edit.js:312
+#: src/blocks/heading/edit.js:350
 #: src/blocks/pr-content/edit.js:212
 msgid "After text"
 msgstr ""
@@ -1371,7 +1371,7 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:152
 #: src/blocks/heading/deprecated/0.40.1/component.js:152
 #: src/blocks/heading/deprecated/0.60.1/component.js:152
-#: src/blocks/heading/edit.js:193
+#: src/blocks/heading/edit.js:236
 msgid "Input sub text…"
 msgstr ""
 
@@ -1385,52 +1385,52 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:137
 #: src/blocks/heading/deprecated/0.40.1/component.js:137
 #: src/blocks/heading/deprecated/0.60.1/component.js:137
-#: src/blocks/heading/edit.js:178
+#: src/blocks/heading/edit.js:221
 msgid "Input title…"
 msgstr ""
 
-#: src/blocks/heading/edit.js:221
+#: src/blocks/heading/edit.js:264
 msgid "Heading style"
 msgstr ""
 
-#: src/blocks/heading/edit.js:232
+#: src/blocks/heading/edit.js:275
 #: src/extensions/core/heading/style.js:35
 msgid "Plain"
 msgstr ""
 
-#: src/blocks/heading/edit.js:238
+#: src/blocks/heading/edit.js:281
 msgid "Margin Setting"
 msgstr ""
 
-#: src/blocks/heading/edit.js:240
+#: src/blocks/heading/edit.js:283
 msgid "Margin between Heading and sub text (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:257
+#: src/blocks/heading/edit.js:300
 msgid "Margin bottom size of after this block (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:274
+#: src/blocks/heading/edit.js:317
 msgid "Heading Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:300
+#: src/blocks/heading/edit.js:338
 msgid "Font Awesome Icon Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:321
+#: src/blocks/heading/edit.js:359
 msgid "Icon Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:334
+#: src/blocks/heading/edit.js:365
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:340
+#: src/blocks/heading/edit.js:371
 msgid "Display"
 msgstr ""
 
-#: src/blocks/heading/edit.js:352
+#: src/blocks/heading/edit.js:383
 msgid "Text size (rem)"
 msgstr ""
 

@@ -10,11 +10,15 @@
 			"selector": "h4"
 		},
 		"color": {
-			"type": "string"			
+			"type": "string",
+			"default": "red"
 		},
 		"bgColor": {
 			"type": "string",
 			"default": "transparent"
+		},
+		"borderColor": {
+			"type": "string"
 		},
 		"faIcon": {
 			"type": "string",

@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Heading ] cope with custom color palette
+
 = 1.20.5 =
 [ Bug fix ] cope with Old PHP.
 [ Bug fix ][ Timeline(Pro) ] cope with custom color palette

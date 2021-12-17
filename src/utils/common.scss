@@ -406,8 +406,9 @@ ol {
 /*-------------------------------------------*/
 .editor-styles-wrapper .wp-block-group {
 	// これがないとコアに勝手にwidthが左右1em余白をあけられる
+	// → だがしかし Grid Column 2 で中の要素が勝手に小さくされるので一旦コメントアウト
 	.wp-block{
-		width:auto;
+		// width:auto; 
 	}
 }
 

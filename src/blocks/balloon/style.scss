@@ -8,6 +8,7 @@
 	}
 
 	p {
+		color: initial; // カラーパレットのcolorがあたってしまうので初期化する
 		word-break: break-all;
 		&:first-of-type{
 			margin-top: 0;
@@ -16,12 +17,15 @@
 			margin-bottom: 0;
 		}
 	}
-} 
+}
 
 .vk_balloon_icon {
 	flex-basis: 80px;
 	flex-shrink: 0;
 	text-align: center;
+	&_image:not(.has-text-color) {
+		color: #ccc;
+	}
 	&_image {
 		vertical-align: bottom;
 		width: 64px;
@@ -32,7 +36,7 @@
 			&-rounded {
 				border-radius: 4px;
 			}
-			
+
 			&-circle {
 				border-radius: 50%;
 			}
@@ -128,25 +132,6 @@
 
 /*	position
 /*-------------------------------------------*/
-.vk_balloon{ //初期のボーダーカラー
-	&-position-left{
-		.vk_balloon_content{
-			.vk_balloon_content_before,
-			.vk_balloon_content_after{
-				border-color: transparent #f5f5f5 transparent transparent;
-			}
-		}
-	}
-	&-position-right{
-		.vk_balloon_content{
-			.vk_balloon_content_before,
-			.vk_balloon_content_after{
-				border-color: transparent transparent transparent #f5f5f5;
-			}
-		}
-	}
-}
-
 .vk_balloon-position-left{
 	&.vk_balloon-type-speech{
 		.vk_balloon_icon{
@@ -215,6 +200,77 @@
 
 /*	Border
 /*-------------------------------------------*/
+
+//Border color
+.vk_balloon{
+	//位置 左
+	&-position-left{
+		//タイプ 吹き出し
+		&.vk_balloon-type-speech {
+			.vk_balloon_content{
+				//初期
+				.vk_balloon_content_before:not(.has-text-color),
+				.vk_balloon_content_after:not(.has-text-color){
+					border-color: transparent #f5f5f5 transparent transparent;
+				}
+				//カラーパレット,カスタムカラー
+				.vk_balloon_content_before,
+				.vk_balloon_content_after {
+					border-color:transparent currentColor transparent transparent;
+				}
+			}
+		}
+		//タイプ もくもく
+		&.vk_balloon-type-think {
+			.vk_balloon_content{
+				//初期
+				.vk_balloon_content_before:not(.has-text-color),
+				.vk_balloon_content_after:not(.has-text-color){
+					border-color: transparent;
+				}
+				//カラーパレット,カスタムカラー
+				.vk_balloon_content_before,
+				.vk_balloon_content_after {
+					border-color:transparent currentColor transparent transparent;
+				}
+			}
+		}
+	}
+	//位置 右
+	&-position-right{
+		//タイプ 吹き出し
+		&.vk_balloon-type-speech {
+			.vk_balloon_content{
+				//初期
+				.vk_balloon_content_before:not(.has-text-color),
+				.vk_balloon_content_after:not(.has-text-color){
+					border-color: transparent transparent transparent #f5f5f5;
+				}
+				//カラーパレット,カスタムカラー
+				.vk_balloon_content_before,
+				.vk_balloon_content_after {
+					border-color:transparent transparent transparent currentColor;
+				}
+			}
+		}
+		//タイプ もくもく
+		&.vk_balloon-type-think {
+			.vk_balloon_content{
+				//初期
+				.vk_balloon_content_before:not(.has-text-color),
+				.vk_balloon_content_after:not(.has-text-color){
+					border-color: transparent;
+				}
+				//カラーパレット,カスタムカラー
+				.vk_balloon_content_before,
+				.vk_balloon_content_after {
+					border-color:transparent currentColor transparent transparent;
+				}
+			}
+		}
+	}
+}
+
 .vk_balloon{
 	&_content,
 	&_icon_image {
@@ -222,6 +278,10 @@
 			border-width: var( --vk-balloon-border-width, 1px );
 			border-style: solid;
 		}
+	}
+	// デフォルトボーダー
+	&_content-border-true:not(.has-text-color) {
+		color: #cccccc;
 	}
 	&-position {
 		&-left{ //位置が左
@@ -240,6 +300,7 @@
 		&-right{ //位置が右
 			&.vk_balloon-type-speech {
 				.vk_balloon_content-border-true{
+					border-color: currentColor;
 					.vk_balloon_content_before {
 						right:-10px;
 					}

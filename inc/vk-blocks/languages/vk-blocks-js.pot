@@ -46,7 +46,7 @@ msgstr ""
 #: src/blocks/_pro/animation/edit.js:123
 #: src/blocks/_pro/outer/edit.js:303
 #: src/blocks/_pro/slider/edit.js:193
-#: src/blocks/balloon/edit.js:466
+#: src/blocks/balloon/edit.js:464
 #: src/blocks/button/edit.js:220
 #: src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:21
@@ -95,17 +95,17 @@ msgid "Trembling Y"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:73
-#: src/blocks/balloon/edit.js:534
+#: src/blocks/balloon/edit.js:532
 msgid "Trembling X"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:77
-#: src/blocks/balloon/edit.js:538
+#: src/blocks/balloon/edit.js:536
 msgid "Pounding"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:81
-#: src/blocks/balloon/edit.js:542
+#: src/blocks/balloon/edit.js:540
 msgid "Shaking"
 msgstr ""
 
@@ -154,7 +154,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:82
 #: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:86
 #: src/blocks/_pro/card-item/edit.js:88
-#: src/blocks/balloon/edit.js:567
+#: src/blocks/balloon/edit.js:565
 #: src/blocks/flow/edit.js:84
 #: src/blocks/pr-blocks/edit.js:86
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:130
@@ -260,29 +260,45 @@ msgstr ""
 msgid "Ignore this post"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:106
-msgid "Margin setting inside the item"
+#: src/blocks/_pro/grid-column-item/edit.js:102
+msgid "Color Settings"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:104
+#: src/blocks/button/edit.js:404
+#: src/blocks/heading/edit.js:342
+msgid "Text Color"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:110
+#: src/blocks/border-box/edit.js:99
+#: src/blocks/button/edit.js:387
+msgid "Background Color"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:120
+msgid "Margin setting inside the item"
+msgstr ""
+
+#: src/blocks/_pro/grid-column-item/edit.js:124
 msgid "Padding (Top)"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:125
+#: src/blocks/_pro/grid-column-item/edit.js:139
 #: src/blocks/_pro/outer/edit.js:318
 #: src/blocks/_pro/slider-item/edit.js:78
 msgid "Padding (Left and Right)"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:140
+#: src/blocks/_pro/grid-column-item/edit.js:154
 msgid "Padding (Bottom)"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:155
+#: src/blocks/_pro/grid-column-item/edit.js:169
 msgid "Unit"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:163
+#: src/blocks/_pro/grid-column-item/edit.js:177
 #: src/blocks/_pro/outer/edit.js:617
 #: src/blocks/icon-outer/edit.js:151
 #: src/blocks/icon/edit.js:140
@@ -290,7 +306,7 @@ msgstr ""
 msgid "px"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:167
+#: src/blocks/_pro/grid-column-item/edit.js:181
 #: src/blocks/_pro/outer/edit.js:621
 #: src/blocks/icon-outer/edit.js:155
 #: src/blocks/icon/edit.js:144
@@ -298,7 +314,7 @@ msgstr ""
 msgid "em"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:171
+#: src/blocks/_pro/grid-column-item/edit.js:185
 #: src/blocks/_pro/outer/edit.js:625
 #: src/blocks/icon-outer/edit.js:159
 #: src/blocks/icon/edit.js:148
@@ -306,28 +322,12 @@ msgstr ""
 msgid "rem"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:175
+#: src/blocks/_pro/grid-column-item/edit.js:189
 #: src/blocks/_pro/outer/edit.js:629
 #: src/blocks/icon-outer/edit.js:163
 #: src/blocks/icon/edit.js:152
 #: src/components/advanced-unit-control/index.js:30
 msgid "vw"
-msgstr ""
-
-#: src/blocks/_pro/grid-column-item/edit.js:81
-msgid "Color Settings"
-msgstr ""
-
-#: src/blocks/_pro/grid-column-item/edit.js:83
-#: src/blocks/button/edit.js:404
-#: src/blocks/heading/edit.js:342
-msgid "Text Color"
-msgstr ""
-
-#: src/blocks/_pro/grid-column-item/edit.js:94
-#: src/blocks/border-box/edit.js:99
-#: src/blocks/button/edit.js:387
-msgid "Background Color"
 msgstr ""
 
 #: src/blocks/_pro/grid-column/edit.js:53
@@ -533,7 +533,7 @@ msgid "Divider Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:389
-#: src/blocks/balloon/edit.js:426
+#: src/blocks/balloon/edit.js:424
 msgid "Type"
 msgstr ""
 
@@ -577,7 +577,7 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:485
 #: src/blocks/_pro/step-item/edit.js:126
 #: src/blocks/_pro/timeline-item/edit.js:104
-#: src/blocks/balloon/edit.js:526
+#: src/blocks/balloon/edit.js:524
 #: src/blocks/staff/edit.js:177
 msgid "None"
 msgstr ""
@@ -812,7 +812,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:122
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
 #: src/blocks/_pro/timeline-item/edit.js:100
-#: src/blocks/heading/edit.js:228
+#: src/blocks/heading/edit.js:282
 #: src/blocks/staff/edit.js:173
 #: src/extensions/core/heading/style.js:30
 #: src/extensions/core/list/style.js:102
@@ -981,82 +981,82 @@ msgstr ""
 msgid "Add border to balloon"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:390
+#: src/blocks/balloon/edit.js:388
 msgid "Balloon setting"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:392
-#: src/blocks/heading/edit.js:336
+#: src/blocks/balloon/edit.js:390
+#: src/blocks/heading/edit.js:384
 msgid "Position"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:395
+#: src/blocks/balloon/edit.js:393
 msgid "Please specify the layout of the balloon."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:409
+#: src/blocks/balloon/edit.js:407
 #: src/blocks/button/edit.js:244
 #: src/blocks/pr-content/edit.js:233
 #: src/components/display-items-control/index.js:121
 msgid "Left"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:421
+#: src/blocks/balloon/edit.js:419
 #: src/blocks/button/edit.js:264
 #: src/blocks/pr-content/edit.js:232
 #: src/components/display-items-control/index.js:129
 msgid "Right"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:429
+#: src/blocks/balloon/edit.js:427
 msgid "Please select the type of balloon."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:440
+#: src/blocks/balloon/edit.js:438
 msgid "Speech"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:450
+#: src/blocks/balloon/edit.js:448
 msgid "Thinking"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:455
+#: src/blocks/balloon/edit.js:453
 msgid "Image Style"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:476
+#: src/blocks/balloon/edit.js:474
 msgid "Rounded"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:486
+#: src/blocks/balloon/edit.js:484
 msgid "Circle"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:493
+#: src/blocks/balloon/edit.js:491
 msgid "Background color of speech balloon"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:500
+#: src/blocks/balloon/edit.js:498
 msgid "Default Icon Setting"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:505
+#: src/blocks/balloon/edit.js:503
 msgid "You can register default icons from Settings > VK Blocks in Admin."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:511
+#: src/blocks/balloon/edit.js:509
 msgid "Animation setting"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:513
+#: src/blocks/balloon/edit.js:511
 msgid "Please select the type of animation."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:530
+#: src/blocks/balloon/edit.js:528
 msgid "Trembling"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:573
+#: src/blocks/balloon/edit.js:571
 #: src/blocks/pr-blocks/edit.js:80
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:135
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:117
@@ -1072,7 +1072,7 @@ msgstr ""
 msgid "Upload image"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:586
+#: src/blocks/balloon/edit.js:584
 msgid "Icon Name"
 msgstr ""
 

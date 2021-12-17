@@ -63,6 +63,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Heading ] cope with custom color palette
 [ Bug fix ][ Balloon ] cope with custom color palette
 
 = 1.20.5 =

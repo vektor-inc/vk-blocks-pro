@@ -331,7 +331,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:83
 #: src/blocks/button/edit.js:404
-#: src/blocks/heading/edit.js:288
+#: src/blocks/heading/edit.js:342
 msgid "Text Color"
 msgstr ""
 
@@ -838,7 +838,7 @@ msgid "Navigation Position"
 msgstr ""
 
 #: src/blocks/_pro/slider/edit.js:366
-#: src/blocks/heading/edit.js:344
+#: src/blocks/heading/edit.js:392
 msgid "Hide"
 msgstr ""
 
@@ -934,7 +934,7 @@ msgid "label"
 msgstr ""
 
 #: src/blocks/alert/edit.js:19
-#: src/blocks/heading/edit.js:219
+#: src/blocks/heading/edit.js:273
 msgid "Style Settings"
 msgstr ""
 
@@ -1277,13 +1277,13 @@ msgid "This color palette overrides the default color. If you want to use the de
 msgstr ""
 
 #: src/blocks/button/edit.js:419
-#: src/blocks/heading/edit.js:303
+#: src/blocks/heading/edit.js:355
 #: src/blocks/pr-content/edit.js:200
 msgid "Before text"
 msgstr ""
 
 #: src/blocks/button/edit.js:428
-#: src/blocks/heading/edit.js:312
+#: src/blocks/heading/edit.js:364
 #: src/blocks/pr-content/edit.js:212
 msgid "After text"
 msgstr ""
@@ -1371,7 +1371,7 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:152
 #: src/blocks/heading/deprecated/0.40.1/component.js:152
 #: src/blocks/heading/deprecated/0.60.1/component.js:152
-#: src/blocks/heading/edit.js:193
+#: src/blocks/heading/edit.js:247
 msgid "Input sub text…"
 msgstr ""
 
@@ -1385,52 +1385,52 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:137
 #: src/blocks/heading/deprecated/0.40.1/component.js:137
 #: src/blocks/heading/deprecated/0.60.1/component.js:137
-#: src/blocks/heading/edit.js:178
+#: src/blocks/heading/edit.js:232
 msgid "Input title…"
 msgstr ""
 
-#: src/blocks/heading/edit.js:221
+#: src/blocks/heading/edit.js:275
 msgid "Heading style"
 msgstr ""
 
-#: src/blocks/heading/edit.js:232
+#: src/blocks/heading/edit.js:286
 #: src/extensions/core/heading/style.js:35
 msgid "Plain"
 msgstr ""
 
-#: src/blocks/heading/edit.js:238
+#: src/blocks/heading/edit.js:292
 msgid "Margin Setting"
 msgstr ""
 
-#: src/blocks/heading/edit.js:240
+#: src/blocks/heading/edit.js:294
 msgid "Margin between Heading and sub text (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:257
+#: src/blocks/heading/edit.js:311
 msgid "Margin bottom size of after this block (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:274
+#: src/blocks/heading/edit.js:328
 msgid "Heading Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:300
+#: src/blocks/heading/edit.js:352
 msgid "Font Awesome Icon Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:321
+#: src/blocks/heading/edit.js:373
 msgid "Icon Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:334
+#: src/blocks/heading/edit.js:382
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:340
+#: src/blocks/heading/edit.js:388
 msgid "Display"
 msgstr ""
 
-#: src/blocks/heading/edit.js:352
+#: src/blocks/heading/edit.js:400
 msgid "Text size (rem)"
 msgstr ""
 

@@ -89,13 +89,12 @@ export default function BorderBoxEdit(props) {
 				'vk_borderBox-color-black': '#222222',
 			};
 			
-			// className から vk_borderBox-color- を削除
-
 			// 文字列を空白文字を区切りとして配列化
 			const palletClasses = attributes.className.split(' ');
 
 			// preColorClass の値の要素を取り除き、空白文字を区切りとして join（結合）
 			const palletClass = palletClasses.filter((className) => {
+				// className から vk_borderBox-color- を削除
 				return (!className.match(/vk_borderBox-color-\w*/));
 			}).join(' ');
 

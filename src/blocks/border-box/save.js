@@ -69,7 +69,6 @@ export default function save(props) {
 
 			if (isHexColor(borderColor)) {
 				// custom color
-				boxClass += ` has-text-color`;
 				boxStyle = {
 					color: `${borderColor}`,
 				};

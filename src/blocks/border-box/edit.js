@@ -29,7 +29,7 @@ export default function BorderBoxEdit(props) {
 	);
 
 	const blockProps = useBlockProps({
-		className: `vk_borderBox`,
+		className: `vk_borderBox vk_borderBox-background-${bgColor}`,
 	});
 
 	//Defaultクラスを設定

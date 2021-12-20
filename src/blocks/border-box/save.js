@@ -119,7 +119,7 @@ export default function save(props) {
 			}
 		}
 	}
-	
+
 	//iタグでdeprecatedが効かなかったので追加。
 	let icon;
 	if (faIcon.indexOf('<i class="') === -1) {

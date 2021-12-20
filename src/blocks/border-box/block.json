@@ -20,9 +20,6 @@
 			"type": "string",
 			"default": "transparent"
 		},
-		"borderColor": {
-			"type": "string"
-		},
 		"faIcon": {
 			"type": "string",
 			"default": ""

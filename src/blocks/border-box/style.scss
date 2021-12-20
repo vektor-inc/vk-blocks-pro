@@ -132,11 +132,11 @@
 		&.is-style-vk_borderBox-style-solid-round-tit-tab,
 		&.is-style-vk_borderBox-style-solid-kado-tit-banner {
 			.vk_borderBox_title_container:not(.has-background) {
-				background-color: #337AB7;
+				background-color: #337ab7;
 			}
 
 			.vk_borderBox_body:not(.has-text-color) {
-				color: #337AB7;
+				color: #337ab7;
 			}
 		}
 
@@ -144,7 +144,7 @@
 		&.is-style-vk_borderBox-style-solid-kado-tit-inner,
 		&.is-style-vk_borderBox-style-solid-kado-iconFeature {
 			&:not(.has-text-color) {
-				color: #337AB7;
+				color: #337ab7;
 			}
 		}
 	}
@@ -229,8 +229,7 @@
 		.vk_borderBox_icon_border {
 			position: absolute;
 			margin-right: 0;
-			z-index: 100;
-			top: 0%;
+			top: 0;
 			left: 3em;
 			padding: 1.4em;
 			transform: translate(-50%, -50%);
@@ -256,7 +255,7 @@
 			}
 
 			&:not(.has-background){
-				background-color: #337AB7;
+				background-color: #337ab7;
 			}
 		}
 	}

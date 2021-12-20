@@ -61,43 +61,41 @@ export default function save(props) {
 	let iconClass = ``;
 	let iconStyle = ``;
 
-	if (borderColor !== undefined) {
-		// カラーパレットに対応
-		if (isBoxBorder) {
-			// 全体に枠線
-			boxClass += ` has-text-color`;
+	// カラーパレットに対応
+	if (isBoxBorder && borderColor !== undefined) {
+		// 全体に枠線があるパターン
+		boxClass += ` has-text-color`;
 
-			if (isHexColor(borderColor)) {
-				// custom color
-				boxStyle = {
-					color: `${borderColor}`,
-				};
-			} else {
-				// has style
-				boxClass += ` has-${borderColor}-color`;
-			}
-
-			blockProps.className += boxClass;
+		if (isHexColor(borderColor)) {
+			// custom color
+			boxStyle = {
+				color: `${borderColor}`,
+			};
 			blockProps.style = boxStyle;
 		} else {
-			// 本文に枠線
-			titleClass += ` has-background`;
-			bodyClass += ` has-text-color`;
+			// has style
+			boxClass += ` has-${borderColor}-color`;
+		}
 
-			if (isHexColor(borderColor)) {
-				// custom color
-				titleStyle = {
-					background: `${borderColor}`,
-				};
+		blockProps.className += boxClass;
+	} else if (borderColor !== undefined) {
+		// 本文に枠線があるパターン
+		titleClass += ` has-background`;
+		bodyClass += ` has-text-color`;
 
-				bodyStyle = {
-					color: `${borderColor}`,
-				};
-			} else {
-				// has style
-				titleClass += ` has-${borderColor}-background-color`;
-				bodyClass += ` has-${borderColor}-color`;
-			}
+		if (isHexColor(borderColor)) {
+			// custom color
+			titleStyle = {
+				backgroundColor: `${borderColor}`,
+			};
+
+			bodyStyle = {
+				color: `${borderColor}`,
+			};
+		} else {
+			// has style
+			titleClass += ` has-${borderColor}-background-color`;
+			bodyClass += ` has-${borderColor}-color`;
 		}
 	}
 

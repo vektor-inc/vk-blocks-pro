@@ -1,6 +1,7 @@
 /* eslint camelcase: 0 */
 import save0_0_0 from './0.0.0/save';
 import save0_60_1 from './0.60.1/save';
+import save1_20_5 from './1.20.5/save';
 
 const blockAttributes = {
 	verticalAlignment: {
@@ -68,7 +69,23 @@ const blockAttributes2 = {
 	},
 }
 
+/*
+1.20.5でcolorをundefinedに変更
+*/
+const blockAttributes3 = {
+	...blockAttributes,
+	bgColor: {
+		type: 'string',
+	},
+}
+
 export default [
+	{
+		attributes: {
+			...blockAttributes3
+		},
+		save: save1_20_5,
+	},
 	{
 		attributes: {
 			... blockAttributes

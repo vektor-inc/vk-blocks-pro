@@ -12,8 +12,7 @@
 			"default": "center"
 		},
 		"bgColor": {
-			"type": "string",
-			"default": "#ffffff"
+			"type": "string"
 		},
 		"bgImage": {
 			"type": "string",

@@ -4,7 +4,35 @@
 /*-------------------------------------------*/
 
 .vk_slider_item {
+	background-color: #ffffff;
 	display: flex;
+	position: relative;
+	width: 100%;
+	@for $i from 0 through 10 {
+		&.has-background-dim-#{ $i }::before {
+			opacity: $i * 0.1;
+		}
+	}
+
+	&.has-background-dim::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		z-index: 1;
+		content: "";
+		background-color: inherit;
+	}
+
+	.vk_slider_item-image-area {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #fff;
+	}
 }
 
 .vk_slider_item-align-vertical- {
@@ -47,6 +75,7 @@ $media-xxl-down: 1399.98px;
 	.vk_slider_item_container {
 		min-height: 40px;
 		width: 100%;
+		z-index: 1;
 	}
 }
 

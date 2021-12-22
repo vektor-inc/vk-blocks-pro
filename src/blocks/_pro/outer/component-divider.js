@@ -1,4 +1,5 @@
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { colorSlugToColorCode } from '@vkblocks/utils/color-slug-to-color-code';
 
 const componentDivider = (level, color, whichSide, dividerType) => {
 	let sectionPadding;
@@ -6,12 +7,21 @@ const componentDivider = (level, color, whichSide, dividerType) => {
 	let lenderDivider;
 
 	// eslint-disable-next-line no-shadow
-	const tiltSectionStyle = (level, color) => {
+	const getFillColorOrCssClass = (color) => {
 		let svgClassName = '';
-		if (!isHexColor(color)) {
+		if (!isHexColor(color) && color.match(/^vk-/)) {
 			svgClassName = `has-${color}-background-color`;
 			color = null;
+		} else if (!isHexColor(color)) {
+			color = colorSlugToColorCode(color);
 		}
+		return [svgClassName, color];
+	};
+
+	// eslint-disable-next-line no-shadow
+	const tiltSectionStyle = (level, color) => {
+		let svgClassName;
+		[svgClassName, color] = getFillColorOrCssClass(color);
 
 		if (level > 0) {
 			return (
@@ -39,12 +49,16 @@ const componentDivider = (level, color, whichSide, dividerType) => {
 
 	// eslint-disable-next-line no-shadow
 	const curveSectionStyle = (level, color) => {
+		let svgClassName;
+		[svgClassName, color] = getFillColorOrCssClass(color);
+
 		if (level > 0) {
 			return (
 				<path
 					d={`m0,${100 - level} q50,${level * 2},100,0 V100 L0,100 z`}
 					strokeWidth="0"
-					fill={color}
+					{...(color ? { fill: color } : {})}
+					className={svgClassName}
 				/>
 			);
 		} else if (level < 0) {
@@ -52,7 +66,8 @@ const componentDivider = (level, color, whichSide, dividerType) => {
 				<path
 					d={`m0,100 q50,${level * 2},100,0 V100 L0,100 z`}
 					strokeWidth="0"
-					fill={color}
+					{...(color ? { fill: color } : {})}
+					className={svgClassName}
 				/>
 			);
 		}
@@ -60,6 +75,9 @@ const componentDivider = (level, color, whichSide, dividerType) => {
 
 	// eslint-disable-next-line no-shadow
 	const waveSectionStyle = (level, color) => {
+		let svgClassName;
+		[svgClassName, color] = getFillColorOrCssClass(color);
+
 		if (level > 0) {
 			return (
 				<path
@@ -68,6 +86,7 @@ const componentDivider = (level, color, whichSide, dividerType) => {
 					} q20,${level},40,0 t40,0 t40,0 V100 L0,100 z`}
 					strokeWidth="0"
 					{...(color ? { fill: color } : {})}
+					className={svgClassName}
 				/>
 			);
 		} else if (level < 0) {
@@ -77,7 +96,8 @@ const componentDivider = (level, color, whichSide, dividerType) => {
 						level / 2 + 100
 					} q20,${level},40,0 t40,0 t40,0 V100 L0,100 z`}
 					strokeWidth="0"
-					fill={color}
+					{...(color ? { fill: color } : {})}
+					className={svgClassName}
 				/>
 			);
 		}
@@ -85,6 +105,9 @@ const componentDivider = (level, color, whichSide, dividerType) => {
 
 	// eslint-disable-next-line no-shadow
 	const triangleSectionStyle = (level, color) => {
+		let svgClassName;
+		[svgClassName, color] = getFillColorOrCssClass(color);
+
 		const absLevel = Math.abs(level);
 		const DivideAbs4 = absLevel / 4;
 
@@ -95,7 +118,8 @@ const componentDivider = (level, color, whichSide, dividerType) => {
 						50 - DivideAbs4
 					} l${DivideAbs4},-${absLevel} l${DivideAbs4},${absLevel} h${DivideAbs4} v100 h-100 z`}
 					strokeWidth="0"
-					fill={color}
+					{...(color ? { fill: color } : {})}
+					className={svgClassName}
 				/>
 			);
 		} else if (level < 0) {
@@ -107,7 +131,8 @@ const componentDivider = (level, color, whichSide, dividerType) => {
 						50 - DivideAbs4
 					} v${absLevel + 1} h-100 z`}
 					strokeWidth="0"
-					fill={color}
+					{...(color ? { fill: color } : {})}
+					className={svgClassName}
 				/>
 			);
 		}

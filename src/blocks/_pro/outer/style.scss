@@ -248,6 +248,25 @@ $color-danger: #b52727;
 		}
 		&.has-vk-color-primary-dark-background-color {
 			fill: var(--vk-color-primary-dark);
-		}		
+		}	
+		&.has-vk-color-primary-vivid-background-color {
+			fill: var(--vk-color-primary-vivid);
+		}
+		&.has-vk-color-custom-1-background-color {
+			fill: var(--vk-color-custom-1);
+		}
+		&.has-vk-color-custom-2-background-color {
+			fill: var(--vk-color-custom-2);
+		}
+		&.has-vk-color-custom-3-background-color {
+			fill: var(--vk-color-custom-3);
+		}
+		&.has-vk-color-custom-4-background-color {
+			fill: var(--vk-color-custom-4);
+		}
+		&.has-vk-color-custom-5-background-color {
+			fill: var(--vk-color-custom-5);
+		}
+
 	}
 }

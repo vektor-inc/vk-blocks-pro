@@ -49,5 +49,6 @@ function vk_blocks_register_block_outer() {
 			)
 		);
 	}
+	$palette = get_theme_support( 'editor-color-palette' );
 }
 add_action( 'init', 'vk_blocks_register_block_outer', 99 );

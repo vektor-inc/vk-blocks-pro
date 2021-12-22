@@ -204,12 +204,6 @@ export default function OuterEdit(props) {
 						)}
 					>
 						<AdvancedColorPalette schema={'bgColor'} {...props} />
-						<ColorPalette
-							value={bgColor}
-							onChange={(value) =>
-								setAttributes({ bgColor: value })
-							}
-						/>
 					</BaseControl>
 					<BaseControl
 						label={__('Opacity Setting', 'vk-blocks')}
@@ -445,14 +439,6 @@ export default function OuterEdit(props) {
 							schema={'upperDividerBgColor'}
 							{...props}
 						/>
-						<ColorPalette
-							value={upperDividerBgColor}
-							onChange={(value) =>
-								setAttributes({
-									upperDividerBgColor: value,
-								})
-							}
-						/>
 					</BaseControl>
 					<BaseControl
 						label={__('Lower Divider Level', 'vk-blocks')}
@@ -470,13 +456,9 @@ export default function OuterEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl>
-						<ColorPalette
-							value={lowerDividerBgColor}
-							onChange={(value) =>
-								setAttributes({
-									lowerDividerBgColor: value,
-								})
-							}
+						<AdvancedColorPalette
+							schema={'lowerDividerBgColor'}
+							{...props}
 						/>
 					</BaseControl>
 				</PanelBody>

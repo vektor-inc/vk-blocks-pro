@@ -152,7 +152,7 @@ export default function OuterEdit(props) {
 
 	const bgColorClasses = [];
 	let borderColorCss = borderColor;
-	
+
 	let bgColorOutputDisable = false;
 	if (!isHexColor(bgColor)) {
 		bgColorClasses.push('has-background');
@@ -164,7 +164,7 @@ export default function OuterEdit(props) {
 		bgColorClasses.push('has-text-color');
 		bgColorClasses.push(`has-${borderColor}-color`);
 		borderColorCss = 'currentColor';
-	}	
+	}
 
 	//Dividerエフェクトがない時のみ枠線を追
 	let borderStyleProperty = {};
@@ -177,7 +177,7 @@ export default function OuterEdit(props) {
 	) {
 		borderStyleProperty = {
 			border: `${borderWidth}px ${borderStyle} ${borderColorCss}`,
-			borderRadius: `${borderRadius}px`
+			borderRadius: `${borderRadius}px`,
 		};
 		//eslint-disable-next-line camelcase
 	} else if (upper_level !== 0 || lower_level !== 0) {
@@ -187,8 +187,6 @@ export default function OuterEdit(props) {
 			borderRadius: `0px`,
 		};
 	}
-
-
 
 	const blockProps = useBlockProps({
 		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${bgColorClasses.join(
@@ -212,7 +210,7 @@ export default function OuterEdit(props) {
 							'vk-blocks'
 						)}
 					>
-					<AdvancedColorPalette schema={'bgColor'} {...props} />
+						<AdvancedColorPalette schema={'bgColor'} {...props} />
 					</BaseControl>
 					<BaseControl
 						label={__('Opacity Setting', 'vk-blocks')}
@@ -448,7 +446,6 @@ export default function OuterEdit(props) {
 							schema={'upperDividerBgColor'}
 							{...props}
 						/>
-
 					</BaseControl>
 					<BaseControl
 						label={__('Lower Divider Level', 'vk-blocks')}
@@ -466,10 +463,10 @@ export default function OuterEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl>
-					<AdvancedColorPalette
+						<AdvancedColorPalette
 							schema={'lowerDividerBgColor'}
 							{...props}
-						/>					
+						/>
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
@@ -530,10 +527,10 @@ export default function OuterEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl>
-					<AdvancedColorPalette
+						<AdvancedColorPalette
 							schema={'borderColor'}
 							{...props}
-						/>						
+						/>
 						<ColorPalette
 							value={borderColor}
 							onChange={(value) =>

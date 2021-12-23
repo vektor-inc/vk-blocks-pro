@@ -133,13 +133,23 @@ class Vk_Blocks_PostList {
 			if ( 'from-today' === $attributes['targetPeriod'] ) {
 				$date_query = array(
 					array(
+						'column'    => 'post_date_gmt',
 						'after'     => gmdate( 'Y-m-d' ),
+						'inclusive' => true,
+					),
+				);
+			} elseif ( 'from-now' === $attributes['targetPeriod'] ) {
+				$date_query = array(
+					array(
+						'column'  => 'post_date_gmt',
+						'after'   => gmdate( 'Y-m-d H:i:s' ),
 						'inclusive' => true,
 					),
 				);
 			} elseif ( 'from-tomorrow' === $attributes['targetPeriod'] ) {
 				$date_query = array(
 					array(
+						'column'    => 'post_date_gmt',
 						'after'     => gmdate( 'Y-m-d', strtotime( '+1 day' ) ),
 						'inclusive' => true,
 					),

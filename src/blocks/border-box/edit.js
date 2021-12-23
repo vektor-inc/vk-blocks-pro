@@ -1,3 +1,11 @@
+/**
+ * External dependencies
+ */
+import classnames from 'classnames';
+
+/**
+ * WordPress dependencies
+ */
 import { __ } from '@wordpress/i18n';
 import { FontAwesome } from '@vkblocks/utils/font-awesome-new';
 import { PanelBody, BaseControl, SelectControl } from '@wordpress/components';
@@ -8,6 +16,10 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 import ReactHtmlParser from 'react-html-parser';
+
+/**
+ * Internal dependencies
+ */
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
@@ -28,8 +40,14 @@ export default function BorderBoxEdit(props) {
 		/>
 	);
 
+	const wrapperClasses = classnames('vk_borderBox', {
+		[`vk_borderBox-background-${bgColor}`]: !!bgColor,
+		[`has-text-color`]: !!borderColor,
+		[`has-${borderColor}-color`]: !!borderColor && !isHexColor(borderColor),
+	});
+
 	const blockProps = useBlockProps({
-		className: `vk_borderBox vk_borderBox-background-${bgColor}`,
+		className: classnames(wrapperClasses),
 	});
 
 	//Defaultクラスを設定
@@ -39,7 +57,7 @@ export default function BorderBoxEdit(props) {
 	}
 
 	//枠パターン
-	let isBoxBorder = false;
+	let isWrapperBorder = false;
 	if (
 		-1 <
 			blockProps.className.indexOf(
@@ -55,12 +73,8 @@ export default function BorderBoxEdit(props) {
 			)
 	) {
 		// 全体に枠線
-		isBoxBorder = true;
+		isWrapperBorder = true;
 	}
-
-	// box
-	let boxClass = '';
-	let boxStyle = {};
 
 	// title
 	let titleClass = `vk_borderBox_title_container`;
@@ -74,9 +88,9 @@ export default function BorderBoxEdit(props) {
 	let iconClass = ``;
 	let iconStyle = ``;
 
-	if (attributes.className) {
+	if (blockProps.className) {
 		// color: 旧仕様(5色) / borderColor: 新仕様(カラーパレット対応)を判別
-		const preColorClass = attributes.className.match(
+		const preColorClass = blockProps.className.match(
 			/vk_borderBox-color-\w*/
 		);
 
@@ -90,7 +104,7 @@ export default function BorderBoxEdit(props) {
 			};
 
 			// 文字列を空白文字を区切りとして配列化
-			const palletClasses = attributes.className.split(' ');
+			const palletClasses = blockProps.className.split(' ');
 
 			// preColorClass の値の要素を取り除き、空白文字を区切りとして join（結合）
 			const palletClass = palletClasses
@@ -112,22 +126,14 @@ export default function BorderBoxEdit(props) {
 	}
 
 	// カラーパレットに対応
-	if (isBoxBorder && borderColor !== undefined) {
+	if (isWrapperBorder && borderColor !== undefined) {
 		// 全体に枠線があるパターン
-		boxClass += ` has-text-color`;
-
 		if (isHexColor(borderColor)) {
 			// custom color
-			boxStyle = {
+			blockProps.style = {
 				color: `${borderColor}`,
 			};
-			blockProps.style = boxStyle;
-		} else {
-			// has style
-			boxClass += ` has-${borderColor}-color`;
 		}
-
-		blockProps.className += boxClass;
 	} else if (borderColor !== undefined) {
 		// 本文に枠線があるパターン
 		titleClass += ` has-background`;

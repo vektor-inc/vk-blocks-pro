@@ -1,9 +1,16 @@
+/**
+ * External dependencies
+ */
+import classnames from 'classnames';
+
+/**
+ * WordPress dependencies
+ */
 import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
 import ReactHtmlParser from 'react-html-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
-export default function save(props) {
-	const { attributes } = props;
+export default function save({ attributes, className }) {
 	const { heading, faIcon, bgColor, borderColor } = attributes;
 
 	const inner = <InnerBlocks.Content />;
@@ -15,18 +22,19 @@ export default function save(props) {
 		/>
 	);
 
-	const blockProps = useBlockProps.save({
-		className: `vk_borderBox vk_borderBox-background-${bgColor}`,
+	const wrapperClasses = classnames('vk_borderBox', {
+		[className]: !!className,
+		[`vk_borderBox-background-${bgColor}`]: !!bgColor,
+		[`has-text-color`]: !!borderColor,
+		[`has-${borderColor}-color`]: !!borderColor && !isHexColor(borderColor),
 	});
 
-	//Defaultクラスを設定
-	if (-1 === blockProps.className.indexOf('is-style-')) {
-		blockProps.className +=
-			' is-style-vk_borderBox-style-solid-kado-tit-tab';
-	}
+	const blockProps = useBlockProps.save({
+		className: wrapperClasses,
+	});
 
 	//枠パターン
-	let isBoxBorder = false;
+	let isWrapperBorder = false;
 	if (
 		-1 <
 			blockProps.className.indexOf(
@@ -42,12 +50,8 @@ export default function save(props) {
 			)
 	) {
 		// 全体に枠線
-		isBoxBorder = true;
+		isWrapperBorder = true;
 	}
-
-	// box
-	let boxClass = '';
-	let boxStyle = {};
 
 	// title
 	let titleClass = `vk_borderBox_title_container`;
@@ -62,22 +66,14 @@ export default function save(props) {
 	let iconStyle = ``;
 
 	// カラーパレットに対応
-	if (isBoxBorder && borderColor !== undefined) {
+	if (isWrapperBorder && borderColor !== undefined) {
 		// 全体に枠線があるパターン
-		boxClass += ` has-text-color`;
-
 		if (isHexColor(borderColor)) {
 			// custom color
-			boxStyle = {
+			blockProps.style = {
 				color: `${borderColor}`,
 			};
-			blockProps.style = boxStyle;
-		} else {
-			// has style
-			boxClass += ` has-${borderColor}-color`;
 		}
-
-		blockProps.className += boxClass;
 	} else if (borderColor !== undefined) {
 		// 本文に枠線があるパターン
 		titleClass += ` has-background`;

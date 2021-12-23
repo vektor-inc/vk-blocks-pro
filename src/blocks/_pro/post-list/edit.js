@@ -251,10 +251,6 @@ export default function PostListEdit(props) {
 									label: __('From Today', 'vk-blocks'),
 								},
 								{
-									value: 'from-now',
-									label: __('From Now', 'vk-blocks'),
-								},
-								{
 									value: 'from-tomorrow',
 									label: __('From Tomorrow', 'vk-blocks'),
 								},

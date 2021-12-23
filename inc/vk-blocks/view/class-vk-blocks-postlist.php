@@ -137,13 +137,6 @@ class Vk_Blocks_PostList {
 						'inclusive' => true,
 					),
 				);
-			} elseif ( 'from-now' === $attributes['targetPeriod'] ) {
-				$date_query = array(
-					array(
-						'after'     => gmdate( 'Y-m-d H:i:s' ),
-						'inclusive' => true,
-					),
-				);
 			} elseif ( 'from-tomorrow' === $attributes['targetPeriod'] ) {
 				$date_query = array(
 					array(

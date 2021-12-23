@@ -140,6 +140,10 @@ function vk_blocks_register_block_post_list() {
 							'type'    => 'string',
 							'default' => '[]',
 						),
+						'targetPeriod'               => array(
+							'type'    => 'string',
+							'default' => 'all',
+						),
 						'order'                      => array(
 							'type'    => 'string',
 							'default' => 'DESC',
@@ -269,6 +273,10 @@ function vk_blocks_register_block_post_list() {
 						'isCheckedTerms'             => array(
 							'type'    => 'string',
 							'default' => '[]',
+						),
+						'targetPeriod'               => array(
+							'type'    => 'string',
+							'default' => 'all',
 						),
 						'order'                      => array(
 							'type'    => 'string',

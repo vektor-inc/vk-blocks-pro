@@ -128,6 +128,32 @@ class Vk_Blocks_PostList {
 			$offset = intval( $attributes['offset'] );
 		}
 
+		$date_query = array();
+		if ( ! empty( $attributes['targetPeriod'] ) ) {
+			if ( 'from-today' === $attributes['targetPeriod'] ) {
+				$date_query = array(
+					array(
+						'after'     => gmdate( 'Y-m-d' ),
+						'inclusive' => true,
+					),
+				);
+			} elseif ( 'from-now' === $attributes['targetPeriod'] ) {
+				$date_query = array(
+					array(
+						'after'     => gmdate( 'Y-m-d H:i:s' ),
+						'inclusive' => true,
+					),
+				);
+			} elseif ( 'from-tomorrow' === $attributes['targetPeriod'] ) {
+				$date_query = array(
+					array(
+						'after'     => gmdate( 'Y-m-d', strtotime( '+1 day' ) ),
+						'inclusive' => true,
+					),
+				);
+			}
+		}
+
 		$args = array(
 			'post_type'      => $is_checked_post_type,
 			'tax_query'      => self::format_terms( $is_checked_terms ),
@@ -139,6 +165,9 @@ class Vk_Blocks_PostList {
 			'offset'         => $offset,
 			'post__not_in'   => $post__not_in,
 		);
+		if ( ! empty( $date_query ) ) {
+			$args['date_query'] = $date_query;
+		}
 		return new WP_Query( $args );
 	}
 

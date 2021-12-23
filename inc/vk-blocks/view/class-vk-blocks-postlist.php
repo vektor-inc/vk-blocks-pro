@@ -141,8 +141,8 @@ class Vk_Blocks_PostList {
 			} elseif ( 'from-now' === $attributes['targetPeriod'] ) {
 				$date_query = array(
 					array(
-						'column'  => 'post_date_gmt',
-						'after'   => gmdate( 'Y-m-d H:i:s' ),
+						'column'    => 'post_date_gmt',
+						'after'     => gmdate( 'Y-m-d H:i:s' ),
 						'inclusive' => true,
 					),
 				);

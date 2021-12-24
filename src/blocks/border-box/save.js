@@ -70,7 +70,7 @@ export default function save({ attributes, className }) {
 			};
 		}
 	}
-	
+
 	if (!isWrapperBorder && borderColor !== undefined) {
 		// 本文に枠線があるパターン
 		titleClass += ` has-background`;
@@ -127,9 +127,7 @@ export default function save({ attributes, className }) {
 				{ReactHtmlParser(icon)}
 				{title}
 			</div>
-			<div className={`vk_borderBox_body`}>
-				{inner}
-			</div>
+			<div className={`vk_borderBox_body`}>{inner}</div>
 		</div>
 	);
 }

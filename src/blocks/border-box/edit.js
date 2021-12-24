@@ -40,8 +40,6 @@ export default function BorderBoxEdit(props) {
 		/>
 	);
 
-	console.log("borderColor--->" + borderColor);
-
 	const wrapperClasses = classnames('vk_borderBox', {
 		[`vk_borderBox-background-${bgColor}`]: !!bgColor,
 		[`has-text-color`]: !!borderColor,
@@ -81,10 +79,6 @@ export default function BorderBoxEdit(props) {
 	// title
 	let titleClass = `vk_borderBox_title_container`;
 	let titleStyle = {};
-
-	// content
-	let bodyClass = `vk_borderBox_body`;
-	let bodyStyle = {};
 
 	// 直線 ピン角 アイコン
 	let iconClass = ``;
@@ -218,9 +212,7 @@ export default function BorderBoxEdit(props) {
 					{ReactHtmlParser(icon)}
 					{title}
 				</div>
-				<div className={`vk_borderBox_body`}>
-					{inner}
-				</div>
+				<div className={`vk_borderBox_body`}>{inner}</div>
 			</div>
 		</>
 	);

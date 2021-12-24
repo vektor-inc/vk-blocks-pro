@@ -57,41 +57,32 @@ export default function save({ attributes, className }) {
 	let titleClass = `vk_borderBox_title_container`;
 	let titleStyle = {};
 
-	// content
-	let bodyClass = `vk_borderBox_body`;
-	let bodyStyle = {};
-
 	// 直線 ピン角 アイコン
 	let iconClass = ``;
 	let iconStyle = ``;
 
 	// カラーパレットに対応
-	if (isWrapperBorder && borderColor !== undefined) {
-		// 全体に枠線があるパターン
+	if (borderColor !== undefined) {
 		if (isHexColor(borderColor)) {
 			// custom color
 			blockProps.style = {
 				color: `${borderColor}`,
 			};
 		}
-	} else if (borderColor !== undefined) {
+	}
+	
+	if (!isWrapperBorder && borderColor !== undefined) {
 		// 本文に枠線があるパターン
 		titleClass += ` has-background`;
-		bodyClass += ` has-text-color`;
 
 		if (isHexColor(borderColor)) {
 			// custom color
 			titleStyle = {
 				backgroundColor: `${borderColor}`,
 			};
-
-			bodyStyle = {
-				color: `${borderColor}`,
-			};
 		} else {
 			// has style
 			titleClass += ` has-${borderColor}-background-color`;
-			bodyClass += ` has-${borderColor}-color`;
 		}
 	}
 
@@ -136,7 +127,7 @@ export default function save({ attributes, className }) {
 				{ReactHtmlParser(icon)}
 				{title}
 			</div>
-			<div className={bodyClass} style={bodyStyle}>
+			<div className={`vk_borderBox_body`}>
 				{inner}
 			</div>
 		</div>

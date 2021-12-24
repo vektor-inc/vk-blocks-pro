@@ -40,6 +40,8 @@ export default function BorderBoxEdit(props) {
 		/>
 	);
 
+	console.log("borderColor--->" + borderColor);
+
 	const wrapperClasses = classnames('vk_borderBox', {
 		[`vk_borderBox-background-${bgColor}`]: !!bgColor,
 		[`has-text-color`]: !!borderColor,
@@ -88,70 +90,28 @@ export default function BorderBoxEdit(props) {
 	let iconClass = ``;
 	let iconStyle = ``;
 
-	if (blockProps.className) {
-		// color: 旧仕様(5色) / borderColor: 新仕様(カラーパレット対応)を判別
-		const preColorClass = blockProps.className.match(
-			/vk_borderBox-color-\w*/
-		);
-
-		if (preColorClass) {
-			const preColores = {
-				'vk_borderBox-color-red': '#dc3545',
-				'vk_borderBox-color-orange': '#ffa536',
-				'vk_borderBox-color-blue': '#4267b2',
-				'vk_borderBox-color-green': '#28a745',
-				'vk_borderBox-color-black': '#222222',
-			};
-
-			// 文字列を空白文字を区切りとして配列化
-			const palletClasses = blockProps.className.split(' ');
-
-			// preColorClass の値の要素を取り除き、空白文字を区切りとして join（結合）
-			const palletClass = palletClasses
-				.filter((className) => {
-					// className から vk_borderBox-color- を削除
-					return !className.match(/vk_borderBox-color-\w*/);
-				})
-				.join(' ');
-
-			setAttributes({
-				className: palletClass,
-			});
-
-			if (borderColor === undefined) {
-				// hexカラーに置き換え
-				setAttributes({ borderColor: preColores[preColorClass] });
-			}
-		}
-	}
-
 	// カラーパレットに対応
-	if (isWrapperBorder && borderColor !== undefined) {
-		// 全体に枠線があるパターン
+	if (borderColor !== undefined) {
 		if (isHexColor(borderColor)) {
 			// custom color
 			blockProps.style = {
 				color: `${borderColor}`,
 			};
 		}
-	} else if (borderColor !== undefined) {
+	}
+
+	if (!isWrapperBorder && borderColor !== undefined) {
 		// 本文に枠線があるパターン
 		titleClass += ` has-background`;
-		bodyClass += ` has-text-color`;
 
 		if (isHexColor(borderColor)) {
 			// custom color
 			titleStyle = {
 				backgroundColor: `${borderColor}`,
 			};
-
-			bodyStyle = {
-				color: `${borderColor}`,
-			};
 		} else {
 			// has style
 			titleClass += ` has-${borderColor}-background-color`;
-			bodyClass += ` has-${borderColor}-color`;
 		}
 	}
 
@@ -258,7 +218,7 @@ export default function BorderBoxEdit(props) {
 					{ReactHtmlParser(icon)}
 					{title}
 				</div>
-				<div className={bodyClass} style={bodyStyle}>
+				<div className={`vk_borderBox_body`}>
 					{inner}
 				</div>
 			</div>

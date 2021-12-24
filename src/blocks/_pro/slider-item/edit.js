@@ -15,7 +15,7 @@ import {
 	BaseControl,
 } from '@wordpress/components';
 import { AdvancedMediaUpload } from '@vkblocks/components/advanced-media-upload';
-import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
+import GenerateBgImage from '@vkblocks/utils/GenerateBgImageSliderItem';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 

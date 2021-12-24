@@ -1,6 +1,6 @@
 /* eslint camelcase: 0 */
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
-import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
+import GenerateBgImage from '@vkblocks/utils/GenerateBgImageSliderItem';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 const prefix = 'vk_slider_item';
 

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-12-23T04:16:01+00:00\n"
+"POT-Creation-Date: 2021-12-24T00:56:34+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -900,7 +900,7 @@ msgstr ""
 msgid "Style"
 msgstr ""
 
-#: src/blocks/_pro/step/edit.js:37
+#: src/blocks/_pro/step/edit.js:36
 msgid "First Dot Number"
 msgstr ""
 

@@ -6,7 +6,6 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
-
 import { dispatch } from '@wordpress/data';
 import { asyncGetInnerBlocks } from '@vkblocks/utils/asyncHooks';
 

@@ -191,7 +191,7 @@ export default function ButtonEdit(props) {
 							setAttributes({ buttonTarget: checked })
 						}
 					/>
-					
+
 					<TextControl
 						label={__('Sub Caption', 'vk-blocks')}
 						value={subCaption}

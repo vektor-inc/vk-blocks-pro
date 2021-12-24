@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-12-17T06:48:10+00:00\n"
+"POT-Creation-Date: 2021-12-24T00:06:19+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -58,7 +58,7 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:303
 #: src/blocks/_pro/slider/edit.js:193
 #: src/blocks/balloon/edit.js:464
-#: src/blocks/button/edit.js:220
+#: src/blocks/button/edit.js:223
 #: src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:21
 #: src/extensions/common/inline-font-size/index.js:56
@@ -272,14 +272,14 @@ msgid "Color Settings"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:104
-#: src/blocks/button/edit.js:404
+#: src/blocks/button/edit.js:407
 #: src/blocks/heading/edit.js:342
 msgid "Text Color"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:110
 #: src/blocks/border-box/edit.js:99
-#: src/blocks/button/edit.js:387
+#: src/blocks/button/edit.js:390
 msgid "Background Color"
 msgstr ""
 
@@ -391,7 +391,7 @@ msgid "Link URL:"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:127
-#: src/blocks/button/edit.js:195
+#: src/blocks/button/edit.js:188
 #: src/blocks/icon/edit.js:249
 #: src/blocks/pr-blocks/edit.js:249
 #: src/blocks/pr-content/edit.js:130
@@ -401,7 +401,7 @@ msgstr ""
 #: src/blocks/_pro/icon-card-item/edit.js:135
 #: src/blocks/_pro/step-item/edit.js:72
 #: src/blocks/border-box/edit.js:122
-#: src/blocks/button/edit.js:415
+#: src/blocks/button/edit.js:418
 #: src/blocks/icon/edit.js:237
 #: src/blocks/pr-content/edit.js:196
 msgid "Icon ( Font Awesome )"
@@ -413,7 +413,7 @@ msgid "Icon Background:"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:147
-#: src/blocks/button/edit.js:298
+#: src/blocks/button/edit.js:301
 #: src/blocks/icon-outer/edit.js:204
 #: src/blocks/icon/edit.js:192
 #: src/blocks/pr-blocks/edit.js:267
@@ -421,7 +421,7 @@ msgid "Solid color"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:151
-#: src/blocks/button/edit.js:311
+#: src/blocks/button/edit.js:314
 #: src/blocks/pr-blocks/edit.js:271
 msgid "No background"
 msgstr ""
@@ -850,7 +850,7 @@ msgid "Hide"
 msgstr ""
 
 #: src/blocks/_pro/slider/edit.js:370
-#: src/blocks/button/edit.js:254
+#: src/blocks/button/edit.js:257
 #: src/components/display-items-control/index.js:125
 msgid "Center"
 msgstr ""
@@ -880,7 +880,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:91
 #: src/blocks/_pro/timeline-item/edit.js:69
 #: src/blocks/border-box/edit.js:63
-#: src/blocks/button/edit.js:333
+#: src/blocks/button/edit.js:336
 #: src/blocks/icon/edit.js:256
 #: src/blocks/staff/edit.js:199
 #: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:41
@@ -900,7 +900,7 @@ msgstr ""
 msgid "Style"
 msgstr ""
 
-#: src/blocks/_pro/step/edit.js:38
+#: src/blocks/_pro/step/edit.js:37
 msgid "First Dot Number"
 msgstr ""
 
@@ -949,28 +949,28 @@ msgid "Style Settings"
 msgstr ""
 
 #: src/blocks/alert/edit.js:25
-#: src/blocks/button/edit.js:347
+#: src/blocks/button/edit.js:350
 #: src/blocks/pr-content/edit.js:164
 #: src/extensions/core/group/style.js:138
 msgid "Success"
 msgstr ""
 
 #: src/blocks/alert/edit.js:28
-#: src/blocks/button/edit.js:351
+#: src/blocks/button/edit.js:354
 #: src/blocks/pr-content/edit.js:167
 #: src/extensions/core/group/style.js:134
 msgid "Info"
 msgstr ""
 
 #: src/blocks/alert/edit.js:30
-#: src/blocks/button/edit.js:355
+#: src/blocks/button/edit.js:358
 #: src/blocks/pr-content/edit.js:169
 #: src/extensions/core/group/style.js:142
 msgid "Warning"
 msgstr ""
 
 #: src/blocks/alert/edit.js:34
-#: src/blocks/button/edit.js:359
+#: src/blocks/button/edit.js:362
 #: src/blocks/pr-content/edit.js:173
 #: src/extensions/core/group/style.js:146
 msgid "Danger"
@@ -1016,14 +1016,14 @@ msgid "Please specify the layout of the balloon."
 msgstr ""
 
 #: src/blocks/balloon/edit.js:407
-#: src/blocks/button/edit.js:244
+#: src/blocks/button/edit.js:247
 #: src/blocks/pr-content/edit.js:233
 #: src/components/display-items-control/index.js:121
 msgid "Left"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:419
-#: src/blocks/button/edit.js:264
+#: src/blocks/button/edit.js:267
 #: src/blocks/pr-content/edit.js:232
 #: src/components/display-items-control/index.js:129
 msgid "Right"
@@ -1201,26 +1201,26 @@ msgstr ""
 msgid "This ID is'not id of HTML attribute."
 msgstr ""
 
-#: src/blocks/button/edit.js:175
-msgid "Sub Caption"
-msgstr ""
-
-#: src/blocks/button/edit.js:185
+#: src/blocks/button/edit.js:178
 msgid "Button URL"
 msgstr ""
 
-#: src/blocks/button/edit.js:203
+#: src/blocks/button/edit.js:196
+msgid "Sub Caption"
+msgstr ""
+
+#: src/blocks/button/edit.js:206
 msgid "Button Size:"
 msgstr ""
 
-#: src/blocks/button/edit.js:212
+#: src/blocks/button/edit.js:215
 #: src/blocks/spacer/edit.js:105
 #: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:31
 #: inc/vk-blocks/vk-blocks-functions.php:31
 msgid "Large"
 msgstr ""
 
-#: src/blocks/button/edit.js:228
+#: src/blocks/button/edit.js:231
 #: src/blocks/spacer/edit.js:85
 #: src/extensions/common/inline-font-size/index.js:51
 #: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:23
@@ -1228,80 +1228,80 @@ msgstr ""
 msgid "Small"
 msgstr ""
 
-#: src/blocks/button/edit.js:233
+#: src/blocks/button/edit.js:236
 msgid "Button Position:"
 msgstr ""
 
-#: src/blocks/button/edit.js:274
+#: src/blocks/button/edit.js:277
 msgid "Wide"
 msgstr ""
 
-#: src/blocks/button/edit.js:284
+#: src/blocks/button/edit.js:287
 msgid "Block"
 msgstr ""
 
-#: src/blocks/button/edit.js:289
+#: src/blocks/button/edit.js:292
 msgid "Button Style:"
 msgstr ""
 
-#: src/blocks/button/edit.js:324
+#: src/blocks/button/edit.js:327
 msgid "Text only"
 msgstr ""
 
-#: src/blocks/button/edit.js:328
+#: src/blocks/button/edit.js:331
 msgid "If you select \"No background\", that you need to select a Custom Color."
 msgstr ""
 
-#: src/blocks/button/edit.js:335
+#: src/blocks/button/edit.js:338
 msgid "Default Color (Bootstrap)"
 msgstr ""
 
-#: src/blocks/button/edit.js:339
+#: src/blocks/button/edit.js:342
 #: src/blocks/pr-content/edit.js:156
 msgid "Primary"
 msgstr ""
 
-#: src/blocks/button/edit.js:343
+#: src/blocks/button/edit.js:346
 #: src/blocks/pr-content/edit.js:160
 msgid "Secondary"
 msgstr ""
 
-#: src/blocks/button/edit.js:363
+#: src/blocks/button/edit.js:366
 #: src/blocks/pr-content/edit.js:176
 msgid "Light"
 msgstr ""
 
-#: src/blocks/button/edit.js:367
+#: src/blocks/button/edit.js:370
 #: src/blocks/pr-content/edit.js:177
 msgid "Dark"
 msgstr ""
 
-#: src/blocks/button/edit.js:380
+#: src/blocks/button/edit.js:383
 msgid "Custom Color"
 msgstr ""
 
-#: src/blocks/button/edit.js:388
+#: src/blocks/button/edit.js:391
 #: src/blocks/pr-content/edit.js:185
 msgid "Button Color"
 msgstr ""
 
-#: src/blocks/button/edit.js:390
+#: src/blocks/button/edit.js:393
 msgid "This color palette overrides the default color. If you want to use the default color, click the clear button."
 msgstr ""
 
-#: src/blocks/button/edit.js:419
+#: src/blocks/button/edit.js:422
 #: src/blocks/heading/edit.js:355
 #: src/blocks/pr-content/edit.js:200
 msgid "Before text"
 msgstr ""
 
-#: src/blocks/button/edit.js:428
+#: src/blocks/button/edit.js:431
 #: src/blocks/heading/edit.js:364
 #: src/blocks/pr-content/edit.js:212
 msgid "After text"
 msgstr ""
 
-#: src/blocks/button/edit.js:457
+#: src/blocks/button/edit.js:460
 msgid "Input text"
 msgstr ""
 

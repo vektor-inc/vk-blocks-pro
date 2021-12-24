@@ -1,5 +1,6 @@
 /* eslint camelcase: 0 */
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+// GenerateBgImageSliderItemに変更
 import GenerateBgImage from '@vkblocks/utils/GenerateBgImageSliderItem';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 const prefix = 'vk_slider_item';
@@ -61,7 +62,7 @@ export default function save(props) {
 			<GenerateBgImage prefix={prefix} clientId={clientId} {...props} />
 		);
 	} else {
-		GetBgImage = <div className="vk_slider_item-image-area"></div>;
+		GetBgImage = <div className="vk_slider_item-background-area"></div>;
 	}
 
 	const blockProps = useBlockProps.save({

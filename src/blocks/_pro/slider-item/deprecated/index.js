@@ -69,9 +69,6 @@ const blockAttributes2 = {
 	},
 }
 
-/*
-1.20.5でcolorをundefinedに変更
-*/
 const blockAttributes3 = {
 	...blockAttributes,
 	bgColor: {

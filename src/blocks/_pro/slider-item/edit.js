@@ -15,6 +15,7 @@ import {
 	BaseControl,
 } from '@wordpress/components';
 import { AdvancedMediaUpload } from '@vkblocks/components/advanced-media-upload';
+// GenerateBgImageSliderItemに変更
 import GenerateBgImage from '@vkblocks/utils/GenerateBgImageSliderItem';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
@@ -81,7 +82,7 @@ export default function SliderItemEdit(props) {
 			<GenerateBgImage prefix={prefix} clientId={clientId} {...props} />
 		);
 	} else {
-		GetBgImage = <div className="vk_slider_item-image-area"></div>;
+		GetBgImage = <div className="vk_slider_item-background-area"></div>;
 	}
 
 	const blockProps = useBlockProps({

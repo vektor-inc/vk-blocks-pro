@@ -1,6 +1,6 @@
 import save000 from './0.0.0/save';
 import save001 from './0.0.1/save';
-import save1205 from './1.20.5/save';
+import save1206 from './1.20.6/save';
 
 
 const blockAttributes = {
@@ -31,7 +31,7 @@ const deprecated = [
 				type: 'string'
 			}
 		},
-		save: save1205,
+		save: save1206,
 	},
 	{
 		attributes: {

@@ -74,12 +74,12 @@ export default function save(props) {
 	};
 
 	let headingColorClassName = '';
-	if (titleColor !== undefined) {
-		headingColorClassName += `has-text-color`;
-		if (!isHexColor(titleColor)) {
-			headingColorClassName += ` has-${titleColor}-color`;
-		}
-	}
+	// if (titleColor !== undefined) {
+	// 	headingColorClassName += `has-text-color`;
+	// 	if (!isHexColor(titleColor)) {
+	// 		headingColorClassName += ` has-${titleColor}-color`;
+	// 	}
+	// }
 
 	const headingStyle = classnames('vk_heading_title', {
 		[`vk_heading_title-style-${titleStyle}`]: !!titleStyle,
@@ -105,12 +105,12 @@ export default function save(props) {
 	};
 
 	let subTextColorClassName = '';
-	if (subTextColor !== undefined) {
-		subTextColorClassName += `has-text-color`;
-		if (!isHexColor(subTextColor)) {
-			subTextColorClassName += ` has-${subTextColor}-color`;
-		}
-	}
+	// if (subTextColor !== undefined) {
+	// 	subTextColorClassName += `has-text-color`;
+	// 	if (!isHexColor(subTextColor)) {
+	// 		subTextColorClassName += ` has-${subTextColor}-color`;
+	// 	}
+	// }
 
 	const subTextClass = classnames('vk_heading_subtext', {
 		[`vk_heading_subtext-style-${titleStyle}`]: !!titleStyle,
@@ -132,12 +132,12 @@ export default function save(props) {
 	};
 
 	let iconColorClassName = '';
-	if (fontAwesomeIconColor !== undefined) {
-		iconColorClassName += `has-text-color`;
-		if (!isHexColor(fontAwesomeIconColor)) {
-			iconColorClassName += ` has-${fontAwesomeIconColor}-color`;
-		}
-	}
+	// if (fontAwesomeIconColor !== undefined) {
+	// 	iconColorClassName += `has-text-color`;
+	// 	if (!isHexColor(fontAwesomeIconColor)) {
+	// 		iconColorClassName += ` has-${fontAwesomeIconColor}-color`;
+	// 	}
+	// }
 
 	const fontAwesomeIconStyle =
 		fontAwesomeIconColor && isHexColor(fontAwesomeIconColor)

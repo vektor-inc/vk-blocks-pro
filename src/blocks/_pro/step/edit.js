@@ -6,11 +6,8 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
-
-import { dispatchEditor } from '@vkblocks/utils/depModules';
+import { dispatch } from '@wordpress/data';
 import { asyncGetInnerBlocks } from '@vkblocks/utils/asyncHooks';
-
-const { updateBlockAttributes } = dispatchEditor;
 
 export default function StepEdit({ attributes, setAttributes, clientId }) {
 	const { firstDotNum } = attributes;
@@ -19,6 +16,7 @@ export default function StepEdit({ attributes, setAttributes, clientId }) {
 	const TEMPLATE = [['vk-blocks/step-item']];
 
 	const currentInnerBlocks = asyncGetInnerBlocks(clientId);
+	const { updateBlockAttributes } = dispatch('core/block-editor');
 
 	useEffect(() => {
 		currentInnerBlocks.forEach(function (block, index) {

@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
 Tested up to: 5.8.2
-Stable tag: 1.20.5
+Stable tag: 1.20.7
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,10 +63,19 @@ e.g.
 
 == Changelog ==
 
+
 [ Add Function ][ Post-List (Pro) ] add date filtering
-[ fix ][ Button ] change option order in panel
-[ Bug fix ][ Grid Column(Pro) ] cope with custom color palette
+
+
+= 1.20.7 =
 [ Bug fix ][ Heading ] cope with custom color palette
+[ Bug fix ][ Heading ] Fix recovery
+
+= 1.20.6 =
+[ Bug fix ][ Heading ] Fix recovery
+[ Bug fix ][ Heading ] cope with custom color palette
+[ Bug fix ][ Button ] change option order in panel
+[ Bug fix ][ Grid Column(Pro) ] cope with custom color palette
 [ Bug fix ][ Balloon ] cope with custom color palette
 
 = 1.20.5 =

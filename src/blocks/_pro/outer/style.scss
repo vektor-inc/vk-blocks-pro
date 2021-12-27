@@ -133,7 +133,7 @@ $padding-xxl: 4em;
 	// iPhone の時に fixed のままだとバグで反応せずに画像のcoverまで効かなくなって巨大な画像が表示されるので
 	// scroll で上書きする
 	@supports (-webkit-overflow-scrolling: touch) {
-		background-attachment: scroll;
+		background-attachment: scroll !important;
 	}
 }
 

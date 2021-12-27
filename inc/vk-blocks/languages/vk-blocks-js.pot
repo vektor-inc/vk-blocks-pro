@@ -901,7 +901,7 @@ msgstr ""
 msgid "Style"
 msgstr ""
 
-#: src/blocks/_pro/step/edit.js:35
+#: src/blocks/_pro/step/edit.js:36
 msgid "First Dot Number"
 msgstr ""
 

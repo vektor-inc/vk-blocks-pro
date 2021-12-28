@@ -1,5 +1,6 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function save({ attributes }) {
 	// eslint-disable-next-line camelcase
@@ -33,11 +34,15 @@ export default function save({ attributes }) {
 
 	const columStyle = {
 		color:
-			textColor !== null && textColor !== undefined
+			textColor !== null &&
+			textColor !== undefined &&
+			isHexColor(textColor)
 				? textColor
 				: undefined,
 		background:
-			backgroundColor !== null && backgroundColor !== undefined
+			backgroundColor !== null &&
+			backgroundColor !== undefined &&
+			isHexColor(backgroundColor)
 				? backgroundColor
 				: undefined,
 		paddingTop:
@@ -58,6 +63,22 @@ export default function save({ attributes }) {
 				: undefined,
 	};
 
+	let vkGridColumnTextColorClassName = '';
+	if (textColor !== undefined) {
+		vkGridColumnTextColorClassName += ` has-text-color`;
+		if (!isHexColor(textColor)) {
+			vkGridColumnTextColorClassName += ` has-${textColor}-color`;
+		}
+	}
+
+	let vkGridColumnbackgroundColorColorClassName = '';
+	if (backgroundColor !== undefined) {
+		vkGridColumnbackgroundColorColorClassName += ` has-background-color`;
+		if (!isHexColor(backgroundColor)) {
+			vkGridColumnbackgroundColorColorClassName += ` has-${backgroundColor}-background-color`;
+		}
+	}
+
 	const blockProps = useBlockProps.save({
 		className: `vk_gridColumn_item ${columnClass}`,
 		style,
@@ -68,8 +89,8 @@ export default function save({ attributes }) {
 			<div {...blockProps}>
 				{(() => {
 					if (
-						columStyle.color !== undefined ||
-						columStyle.background !== undefined ||
+						textColor !== undefined ||
+						backgroundColor !== undefined ||
 						columStyle.paddingTop !== undefined ||
 						columStyle.paddingRight !== undefined ||
 						columStyle.paddingBottom !== undefined ||
@@ -77,7 +98,7 @@ export default function save({ attributes }) {
 					) {
 						return (
 							<div
-								className="vk_gridColumn_item_inner"
+								className={`vk_gridColumn_item_inner ${vkGridColumnTextColorClassName} ${vkGridColumnbackgroundColorColorClassName}`}
 								style={columStyle}
 							>
 								<InnerBlocks.Content />

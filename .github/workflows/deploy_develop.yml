@@ -12,6 +12,17 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
+
+      # get the node version from the .node-version file
+      - name: Read .node-version
+        run: echo "##[set-output name=NODEVERSION;]$(cat .node-version)"
+        id: nodenv
+      # setup node based on the version from the .node-version file, fetched in the previous step
+      - name: Setup Node.js (.node-version)
+        uses: actions/setup-node@v1
+        with:
+          node-version: "${{ steps.nodenv.outputs.NODEVERSION }}"
+
       - name: Setup Enviroment
         run: npm install
       - name: Install WP-CLI

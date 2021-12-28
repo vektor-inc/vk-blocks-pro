@@ -17,18 +17,15 @@ import {
 } from '@wordpress/components';
 import {
 	InspectorControls,
-	ColorPalette,
 	useBlockProps,
 	RichText,
 	MediaUpload,
 } from '@wordpress/block-editor';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 
-export default function StaffEdit({
-	attributes,
-	setAttributes,
-	className,
-	clientId,
-}) {
+export default function StaffEdit(props) {
+	const { attributes, setAttributes, className, clientId } = props;
 	// id生成
 	const vkStaffNameColorId = `vk_staff_name-color-${clientId}`;
 	const vkStaffCaptionColorId = `vk_staff_caption-color-${clientId}`;
@@ -77,6 +74,69 @@ export default function StaffEdit({
 		);
 	} else {
 		staffTextClassName = classnames('vk_staff_text', staffTextClassName);
+	}
+
+	let staffNameColorInlineStyle = {};
+	let staffTextNameClassName = '';
+	if (vk_staff_nameColor !== undefined) {
+		staffTextNameClassName += ` has-text-color`;
+		if (isHexColor(vk_staff_nameColor)) {
+			staffNameColorInlineStyle = { color: `${vk_staff_nameColor}` };
+		} else {
+			staffTextNameClassName += ` has-${vk_staff_nameColor}-color`;
+		}
+	}
+
+	let staffCaptionColorInlineStyle = {};
+	let staffCaptionClassName = '';
+	if (vk_staff_captionColor !== undefined) {
+		staffCaptionClassName += ` has-text-color`;
+		if (isHexColor(vk_staff_captionColor)) {
+			staffCaptionColorInlineStyle = {
+				color: `${vk_staff_captionColor}`,
+			};
+		} else {
+			staffCaptionClassName += ` has-${vk_staff_captionColor}-color`;
+		}
+	}
+
+	let staffPositionColorInlineStyle = {};
+	let staffPositionClassName = '';
+	if (vk_staff_positionColor !== undefined) {
+		staffPositionClassName += ` has-text-color`;
+		if (isHexColor(vk_staff_positionColor)) {
+			staffPositionColorInlineStyle = {
+				color: `${vk_staff_positionColor}`,
+			};
+		} else {
+			staffPositionClassName += ` has-${vk_staff_positionColor}-color`;
+		}
+	}
+
+	let staffProfileTitleColorInlineStyle = {};
+	let staffProfileTitleClassName = '';
+	if (vk_staff_profileTitleColor !== undefined) {
+		staffProfileTitleClassName += ` has-text-color`;
+		if (isHexColor(vk_staff_profileTitleColor)) {
+			staffProfileTitleColorInlineStyle = {
+				color: `${vk_staff_profileTitleColor}`,
+			};
+		} else {
+			staffProfileTitleClassName += ` has-${vk_staff_profileTitleColor}-color`;
+		}
+	}
+
+	let staffProfileTextColorInlineStyle = {};
+	let staffProfileTextClassName = '';
+	if (vk_staff_profileTextColor !== undefined) {
+		staffProfileTextClassName += ` has-text-color`;
+		if (isHexColor(vk_staff_profileTextColor)) {
+			staffProfileTextColorInlineStyle = {
+				color: `${vk_staff_profileTextColor}`,
+			};
+		} else {
+			staffProfileTextClassName += ` has-${vk_staff_profileTextColor}-color`;
+		}
 	}
 
 	return (
@@ -141,69 +201,50 @@ export default function StaffEdit({
 						id={vkStaffNameColorId}
 						label={__('Staff name', 'vk-blocks')}
 					>
-						<ColorPalette
+						<AdvancedColorPalette
 							id={vkStaffNameColorId}
-							value={vk_staff_nameColor} // eslint-disable-line camelcase
-							onChange={
-								(value) =>
-									setAttributes({ vk_staff_nameColor: value }) // eslint-disable-line camelcase
-							}
+							schema={'vk_staff_nameColor'}
+							{...props}
 						/>
 					</BaseControl>
 					<BaseControl
 						id={vkStaffCaptionColorId}
 						label={__('Name caption', 'vk-blocks')}
 					>
-						<ColorPalette
+						<AdvancedColorPalette
 							id={vkStaffCaptionColorId}
-							value={vk_staff_captionColor} // eslint-disable-line camelcase
-							onChange={(value) =>
-								setAttributes({
-									vk_staff_captionColor: value, // eslint-disable-line camelcase
-								})
-							}
+							schema={'vk_staff_captionColor'}
+							{...props}
 						/>
 					</BaseControl>
 					<BaseControl
 						id={vkStaffPositionColorId}
 						label={__('Role position', 'vk-blocks')}
 					>
-						<ColorPalette
+						<AdvancedColorPalette
 							id={vkStaffPositionColorId}
-							value={vk_staff_positionColor} // eslint-disable-line camelcase
-							onChange={(value) =>
-								setAttributes({
-									vk_staff_positionColor: value, // eslint-disable-line camelcase
-								})
-							}
+							schema={'vk_staff_positionColor'}
+							{...props}
 						/>
 					</BaseControl>
 					<BaseControl
 						id={vkStaffProfileTitleColorId}
 						label={__('Profile title', 'vk-blocks')}
 					>
-						<ColorPalette
+						<AdvancedColorPalette
 							id={vkStaffProfileTitleColorId}
-							value={vk_staff_profileTitleColor} // eslint-disable-line camelcase
-							onChange={(value) =>
-								setAttributes({
-									vk_staff_profileTitleColor: value, // eslint-disable-line camelcase
-								})
-							}
+							schema={'vk_staff_profileTitleColor'}
+							{...props}
 						/>
 					</BaseControl>
 					<BaseControl
 						id={vkStaffProfileTextColorId}
 						label={__('Profile text', 'vk-blocks')}
 					>
-						<ColorPalette
+						<AdvancedColorPalette
 							id={vkStaffProfileTextColorId}
-							value={vk_staff_profileTextColor} // eslint-disable-line camelcase
-							onChange={(value) =>
-								setAttributes({
-									vk_staff_profileTextColor: value, // eslint-disable-line camelcase
-								})
-							}
+							schema={'vk_staff_profileTextColor'}
+							{...props}
 						/>
 					</BaseControl>
 				</PanelBody>
@@ -232,8 +273,10 @@ export default function StaffEdit({
 				<div className={staffTextClassName}>
 					<RichText
 						tagName="h3"
-						className={'vk_staff_text_name'}
-						style={{ color: vk_staff_nameColor }} // eslint-disable-line camelcase
+						className={
+							`vk_staff_text_name` + staffTextNameClassName
+						}
+						style={staffNameColorInlineStyle}
 						onChange={(value) =>
 							setAttributes({ vk_staff_text_name: value })
 						}
@@ -242,8 +285,10 @@ export default function StaffEdit({
 					/>
 					<RichText
 						tagName="p"
-						className={'vk_staff_text_caption'}
-						style={{ color: vk_staff_captionColor }} // eslint-disable-line camelcase
+						className={
+							`vk_staff_text_caption` + staffCaptionClassName
+						}
+						style={staffCaptionColorInlineStyle}
 						onChange={(value) =>
 							setAttributes({ vk_staff_text_caption: value })
 						}
@@ -252,8 +297,10 @@ export default function StaffEdit({
 					/>
 					<RichText
 						tagName="p"
-						className={'vk_staff_text_role'}
-						style={{ color: vk_staff_positionColor }} // eslint-disable-line camelcase
+						className={
+							`vk_staff_text_role` + staffPositionClassName
+						}
+						style={staffPositionColorInlineStyle}
 						onChange={(value) =>
 							setAttributes({ vk_staff_text_role: value })
 						}
@@ -262,8 +309,11 @@ export default function StaffEdit({
 					/>
 					<RichText
 						tagName="h4"
-						className={'vk_staff_text_profileTitle'}
-						style={{ color: vk_staff_profileTitleColor }} // eslint-disable-line camelcase
+						className={
+							`vk_staff_text_profileTitle` +
+							staffProfileTitleClassName
+						}
+						style={staffProfileTitleColorInlineStyle}
 						onChange={(value) =>
 							setAttributes({ vk_staff_text_profileTitle: value })
 						}
@@ -272,8 +322,11 @@ export default function StaffEdit({
 					/>
 					<RichText
 						tagName="p"
-						className={'vk_staff_text_profileText'}
-						style={{ color: vk_staff_profileTextColor }} // eslint-disable-line camelcase
+						className={
+							`vk_staff_text_profileText` +
+							staffProfileTextClassName
+						}
+						style={staffProfileTextColorInlineStyle}
 						onChange={
 							(value) =>
 								setAttributes({

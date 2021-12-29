@@ -25,7 +25,7 @@ import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function BorderBoxEdit(props) {
 	const { attributes, setAttributes } = props;
-	const { heading, faIcon, bgColor, borderColor } = attributes;
+	const { heading, faIcon, color, bgColor, borderColor } = attributes;
 
 	const inner = (
 		<InnerBlocks templateLock={false} template={[['core/paragraph']]} />
@@ -41,11 +41,11 @@ export default function BorderBoxEdit(props) {
 	);
 
 	const wrapperClasses = classnames('vk_borderBox', {
+		[`vk_borderBox-color-${color}`]: !!color,
 		[`vk_borderBox-background-${bgColor}`]: !!bgColor,
 		[`has-text-color`]: !!borderColor,
 		[`has-${borderColor}-color`]: !!borderColor && !isHexColor(borderColor),
 	});
-
 	const blockProps = useBlockProps({
 		className: classnames(wrapperClasses),
 	});
@@ -76,14 +76,6 @@ export default function BorderBoxEdit(props) {
 		isWrapperBorder = true;
 	}
 
-	// title
-	let titleClass = `vk_borderBox_title_container`;
-	let titleStyle = {};
-
-	// 直線 ピン角 アイコン
-	let iconClass = ``;
-	let iconStyle = ``;
-
 	// カラーパレットに対応
 	if (borderColor !== undefined) {
 		if (isHexColor(borderColor)) {
@@ -94,6 +86,9 @@ export default function BorderBoxEdit(props) {
 		}
 	}
 
+	// title背景
+	let titleClass = `vk_borderBox_title_container`;
+	let titleStyle = {};
 	if (!isWrapperBorder && borderColor !== undefined) {
 		// 本文に枠線があるパターン
 		titleClass += ` has-background`;
@@ -110,11 +105,14 @@ export default function BorderBoxEdit(props) {
 	}
 
 	// 直線 ピン角 アイコン
+	let iconClass = ``;
+	let iconStyle = ``;
 	if (
 		-1 <
-		blockProps.className.indexOf(
-			'vk_borderBox-style-solid-kado-iconFeature'
-		)
+			blockProps.className.indexOf(
+				'vk_borderBox-style-solid-kado-iconFeature'
+			) &&
+		!color
 	) {
 		iconClass = `vk_borderBox_icon_border`;
 

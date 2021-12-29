@@ -10,8 +10,9 @@ import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
 import ReactHtmlParser from 'react-html-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
-export default function save({ attributes, className }) {
-	const { heading, faIcon, bgColor, borderColor } = attributes;
+export default function save(props) {
+	const { attributes } = props;
+	const { heading, faIcon, color, bgColor, borderColor } = attributes;
 
 	const inner = <InnerBlocks.Content />;
 	const title = (
@@ -19,11 +20,12 @@ export default function save({ attributes, className }) {
 			tagName="h4"
 			className={'vk_borderBox_title'}
 			value={heading}
+			ß
 		/>
 	);
 
 	const wrapperClasses = classnames('vk_borderBox', {
-		[className]: !!className,
+		[`vk_borderBox-color-${color}`]: !!color,
 		[`vk_borderBox-background-${bgColor}`]: !!bgColor,
 		[`has-text-color`]: !!borderColor,
 		[`has-${borderColor}-color`]: !!borderColor && !isHexColor(borderColor),
@@ -53,14 +55,6 @@ export default function save({ attributes, className }) {
 		isWrapperBorder = true;
 	}
 
-	// title
-	let titleClass = `vk_borderBox_title_container`;
-	let titleStyle = {};
-
-	// 直線 ピン角 アイコン
-	let iconClass = ``;
-	let iconStyle = ``;
-
 	// カラーパレットに対応
 	if (borderColor !== undefined) {
 		if (isHexColor(borderColor)) {
@@ -71,6 +65,9 @@ export default function save({ attributes, className }) {
 		}
 	}
 
+	// title背景
+	let titleClass = `vk_borderBox_title_container`;
+	let titleStyle = {};
 	if (!isWrapperBorder && borderColor !== undefined) {
 		// 本文に枠線があるパターン
 		titleClass += ` has-background`;
@@ -87,11 +84,14 @@ export default function save({ attributes, className }) {
 	}
 
 	// 直線 ピン角 アイコン
+	let iconClass = ``;
+	let iconStyle = ``;
 	if (
 		-1 <
-		blockProps.className.indexOf(
-			'vk_borderBox-style-solid-kado-iconFeature'
-		)
+			blockProps.className.indexOf(
+				'vk_borderBox-style-solid-kado-iconFeature'
+			) &&
+		!color
 	) {
 		iconClass = `vk_borderBox_icon_border`;
 

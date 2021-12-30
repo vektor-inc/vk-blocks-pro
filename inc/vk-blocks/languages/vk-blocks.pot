@@ -152,7 +152,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/edit.js:182
 #: src/blocks/_pro/card/edit.js:121
 #: src/blocks/_pro/icon-card/edit.js:72
-#: src/blocks/_pro/post-list/edit.js:264
+#: src/blocks/_pro/post-list/edit.js:301
 msgid "Title"
 msgstr ""
 
@@ -254,7 +254,7 @@ msgid "Current page"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:63
-#: src/blocks/_pro/post-list/edit.js:197
+#: src/blocks/_pro/post-list/edit.js:204
 msgid "Display conditions"
 msgstr ""
 
@@ -263,7 +263,7 @@ msgid "Parent"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:82
-#: src/blocks/_pro/post-list/edit.js:288
+#: src/blocks/_pro/post-list/edit.js:325
 msgid "Ignore this post"
 msgstr ""
 
@@ -676,47 +676,71 @@ msgid "Unit Type"
 msgstr ""
 
 #. Filter by %s
-#: src/blocks/_pro/post-list/edit.js:174
+#: src/blocks/_pro/post-list/edit.js:181
 msgid "Filter by %s"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:201
+#: src/blocks/_pro/post-list/edit.js:208
 msgid "Filter by PostTypes"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:215
+#: src/blocks/_pro/post-list/edit.js:222
 msgid "Number of Posts"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:228
-msgid "Order"
+#: src/blocks/_pro/post-list/edit.js:235
+msgid "Filter by Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:237
-msgid "ASC"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:241
-msgid "DESC"
+#: src/blocks/_pro/post-list/edit.js:239
+msgid "Period of Time"
 msgstr ""
 
 #: src/blocks/_pro/post-list/edit.js:247
-msgid "Order by"
+msgid "Whole Period"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:256
-msgid "Published Date"
+#: src/blocks/_pro/post-list/edit.js:251
+msgid "From Today"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:260
-msgid "Modefied Date"
+#: src/blocks/_pro/post-list/edit.js:255
+msgid "From Now"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:268
-msgid "Random"
+#: src/blocks/_pro/post-list/edit.js:259
+msgid "From Tomorrow"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:265
+msgid "Order"
 msgstr ""
 
 #: src/blocks/_pro/post-list/edit.js:274
+msgid "ASC"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:278
+msgid "DESC"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:284
+msgid "Order by"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:293
+msgid "Published Date"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:297
+msgid "Modefied Date"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:305
+msgid "Random"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:311
 msgid "offset"
 msgstr ""
 

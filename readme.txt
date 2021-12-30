@@ -63,15 +63,19 @@ e.g.
 
 == Changelog ==
 
+
+[ Add Function ][ Post-List (Pro) ] add date filtering
+
+
 = 1.20.7 =
 [ Bug fix ][ Heading ] cope with custom color palette
 [ Bug fix ][ Heading ] Fix recovery
 
 = 1.20.6 =
 [ Bug fix ][ Heading ] Fix recovery
+[ Bug fix ][ Heading ] cope with custom color palette
 [ Bug fix ][ Button ] change option order in panel
 [ Bug fix ][ Grid Column(Pro) ] cope with custom color palette
-[ Bug fix ][ Heading ] cope with custom color palette
 [ Bug fix ][ Balloon ] cope with custom color palette
 
 = 1.20.5 =
@@ -82,7 +86,7 @@ e.g.
 [ Other ] Only change stable version ( Deploy free version )
 
 = 1.20.3 =
-[ Bug fix ][ Post Media Layout ] Cope with not vektor theme 
+[ Bug fix ][ Post Media Layout ] Cope with not vektor theme
 [ Bug fix ][ PR Blocks ] cope with custom color palette
 [ Bug fix ][ Step(Pro) ] cope with custom color palette
 [ Bug fix ][ Icon Card(Pro) ] cope with custom color palette

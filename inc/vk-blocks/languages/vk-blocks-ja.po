@@ -2,17 +2,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2021-11-12T00:59:16+00:00\n"
-"PO-Revision-Date: 2021-11-18 19:01+0900\n"
+"POT-Creation-Date: 2021-12-30T11:23:09+00:00\n"
+"PO-Revision-Date: 2021-12-30 20:28+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
-"X-Poedit-Basepath: ../../..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ../../..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: vk-blocks.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -64,8 +64,8 @@ msgid "Short"
 msgstr "短い"
 
 #: src/blocks/_pro/animation/edit.js:123 src/blocks/_pro/outer/edit.js:303
-#: src/blocks/_pro/slider/edit.js:193 src/blocks/balloon/edit.js:276
-#: src/blocks/button/edit.js:220 src/blocks/faq/index.js:26
+#: src/blocks/_pro/slider/edit.js:193 src/blocks/balloon/edit.js:464
+#: src/blocks/button/edit.js:223 src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:21
 #: src/extensions/common/inline-font-size/index.js:56
 msgid "Normal"
@@ -111,15 +111,15 @@ msgstr "上下"
 msgid "Trembling Y"
 msgstr "ぶるぶる（Y方向）"
 
-#: src/blocks/_pro/animation/edit.js:73 src/blocks/balloon/edit.js:346
+#: src/blocks/_pro/animation/edit.js:73 src/blocks/balloon/edit.js:532
 msgid "Trembling X"
 msgstr "ぶるぶる（X方向）"
 
-#: src/blocks/_pro/animation/edit.js:77 src/blocks/balloon/edit.js:350
+#: src/blocks/_pro/animation/edit.js:77 src/blocks/balloon/edit.js:536
 msgid "Pounding"
 msgstr "どきどき"
 
-#: src/blocks/_pro/animation/edit.js:81 src/blocks/balloon/edit.js:354
+#: src/blocks/_pro/animation/edit.js:81 src/blocks/balloon/edit.js:540
 msgid "Shaking"
 msgstr "ゆらゆら"
 
@@ -156,7 +156,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:206
 #: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:210
 #: src/blocks/_pro/card-item/edit.js:182 src/blocks/_pro/card/edit.js:121
-#: src/blocks/_pro/icon-card/edit.js:72 src/blocks/_pro/post-list/edit.js:264
+#: src/blocks/_pro/icon-card/edit.js:72 src/blocks/_pro/post-list/edit.js:301
 msgid "Title"
 msgstr "タイトル"
 
@@ -166,8 +166,8 @@ msgstr "タイトル"
 #: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:80
 #: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:82
 #: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:86
-#: src/blocks/_pro/card-item/edit.js:88 src/blocks/balloon/edit.js:379
-#: src/blocks/flow/edit.js:84 src/blocks/pr-blocks/edit.js:88
+#: src/blocks/_pro/card-item/edit.js:88 src/blocks/balloon/edit.js:565
+#: src/blocks/flow/edit.js:84 src/blocks/pr-blocks/edit.js:86
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:130
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:112
 #: src/blocks/pr-content/deprecated/0.0.2/save.js:207
@@ -180,7 +180,7 @@ msgstr "タイトル"
 #: src/blocks/pr-content/deprecated/1.7.1/mediaUpload.js:68
 #: src/blocks/pr-content/mediaUpload.js:68
 #: src/blocks/staff/deprecated/0.58/component.js:96
-#: src/blocks/staff/edit.js:306
+#: src/blocks/staff/edit.js:359
 #: src/components/advanced-media-upload/index.js:47
 msgid "Select image"
 msgstr "画像を選択"
@@ -258,7 +258,7 @@ msgstr "デバイス毎の高さ"
 msgid "Current page"
 msgstr "現在のページ"
 
-#: src/blocks/_pro/child-page/edit.js:63 src/blocks/_pro/post-list/edit.js:197
+#: src/blocks/_pro/child-page/edit.js:63 src/blocks/_pro/post-list/edit.js:204
 msgid "Display conditions"
 msgstr "表示条件"
 
@@ -266,72 +266,76 @@ msgstr "表示条件"
 msgid "Parent"
 msgstr "親ページ"
 
-#: src/blocks/_pro/child-page/edit.js:82 src/blocks/_pro/post-list/edit.js:288
+#: src/blocks/_pro/child-page/edit.js:82 src/blocks/_pro/post-list/edit.js:325
 msgid "Ignore this post"
 msgstr "この投稿を除く"
 
-#: src/blocks/_pro/grid-column-item/edit.js:106
+#: src/blocks/_pro/grid-column-item/edit.js:102
+msgid "Color Settings"
+msgstr "色設定"
+
+#: src/blocks/_pro/grid-column-item/edit.js:104 src/blocks/button/edit.js:407
+#: src/blocks/heading/edit.js:342
+msgid "Text Color"
+msgstr "文字の色"
+
+#: src/blocks/_pro/grid-column-item/edit.js:110
+#: src/blocks/border-box/edit.js:99 src/blocks/button/edit.js:390
+msgid "Background Color"
+msgstr "背景色"
+
+#: src/blocks/_pro/grid-column-item/edit.js:120
 msgid "Margin setting inside the item"
 msgstr "アイテム内の余白設定"
 
-#: src/blocks/_pro/grid-column-item/edit.js:110
+#: src/blocks/_pro/grid-column-item/edit.js:124
 msgid "Padding (Top)"
 msgstr "余白 (上)"
 
-#: src/blocks/_pro/grid-column-item/edit.js:125
+#: src/blocks/_pro/grid-column-item/edit.js:139
 #: src/blocks/_pro/outer/edit.js:318 src/blocks/_pro/slider-item/edit.js:78
 msgid "Padding (Left and Right)"
 msgstr "余白 (左右)"
 
-#: src/blocks/_pro/grid-column-item/edit.js:140
+#: src/blocks/_pro/grid-column-item/edit.js:154
 msgid "Padding (Bottom)"
 msgstr "余白 (下)"
 
-#: src/blocks/_pro/grid-column-item/edit.js:155
+#: src/blocks/_pro/grid-column-item/edit.js:169
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:31
 #: inc/vk-blocks/admin/admin-margin.php:31
 msgid "Unit"
 msgstr "単位"
 
-#: src/blocks/_pro/grid-column-item/edit.js:163
+#: src/blocks/_pro/grid-column-item/edit.js:177
 #: src/blocks/_pro/outer/edit.js:617 src/blocks/icon-outer/edit.js:151
 #: src/blocks/icon/edit.js:140 src/components/advanced-unit-control/index.js:18
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:10
 #: inc/vk-blocks/admin/admin-margin.php:10
 msgid "px"
 msgstr "px"
 
-#: src/blocks/_pro/grid-column-item/edit.js:167
+#: src/blocks/_pro/grid-column-item/edit.js:181
 #: src/blocks/_pro/outer/edit.js:621 src/blocks/icon-outer/edit.js:155
 #: src/blocks/icon/edit.js:144 src/components/advanced-unit-control/index.js:22
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:14
 #: inc/vk-blocks/admin/admin-margin.php:14
 msgid "em"
 msgstr "em"
 
-#: src/blocks/_pro/grid-column-item/edit.js:171
+#: src/blocks/_pro/grid-column-item/edit.js:185
 #: src/blocks/_pro/outer/edit.js:625 src/blocks/icon-outer/edit.js:159
 #: src/blocks/icon/edit.js:148 src/components/advanced-unit-control/index.js:26
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:18
 #: inc/vk-blocks/admin/admin-margin.php:18
 msgid "rem"
 msgstr "rem"
 
-#: src/blocks/_pro/grid-column-item/edit.js:175
+#: src/blocks/_pro/grid-column-item/edit.js:189
 #: src/blocks/_pro/outer/edit.js:629 src/blocks/icon-outer/edit.js:163
 #: src/blocks/icon/edit.js:152 src/components/advanced-unit-control/index.js:30
 msgid "vw"
 msgstr "vw"
-
-#: src/blocks/_pro/grid-column-item/edit.js:81
-msgid "Color Settings"
-msgstr "色設定"
-
-#: src/blocks/_pro/grid-column-item/edit.js:83 src/blocks/button/edit.js:404
-#: src/blocks/heading/edit.js:288
-msgid "Text Color"
-msgstr "文字の色"
-
-#: src/blocks/_pro/grid-column-item/edit.js:94 src/blocks/border-box/edit.js:99
-#: src/blocks/button/edit.js:387
-msgid "Background Color"
-msgstr "背景色"
 
 #: src/blocks/_pro/grid-column/edit.js:53
 msgid "Layout Columns"
@@ -349,11 +353,11 @@ msgstr "下部の余白"
 #: src/blocks/_pro/icon-card-item/deprecated/0.0.1/component.js:70
 #: src/blocks/_pro/icon-card-item/deprecated/0.49.8/component.js:71
 #: src/blocks/_pro/icon-card-item/deprecated/0.60.1/component.js:85
-#: src/blocks/_pro/icon-card-item/edit.js:171
+#: src/blocks/_pro/icon-card-item/edit.js:191
 #: src/blocks/pr-blocks/deprecated/0.0.1/component.js:148
 #: src/blocks/pr-blocks/deprecated/0.0.2/component.js:176
 #: src/blocks/pr-blocks/deprecated/0.59.0/component.js:191
-#: src/blocks/pr-blocks/edit.js:533
+#: src/blocks/pr-blocks/edit.js:516
 msgid "Input Title"
 msgstr "タイトルを入力"
 
@@ -361,49 +365,49 @@ msgstr "タイトルを入力"
 #: src/blocks/_pro/icon-card-item/deprecated/0.0.1/component.js:77
 #: src/blocks/_pro/icon-card-item/deprecated/0.49.8/component.js:78
 #: src/blocks/_pro/icon-card-item/deprecated/0.60.1/component.js:106
-#: src/blocks/_pro/icon-card-item/edit.js:193
+#: src/blocks/_pro/icon-card-item/edit.js:213
 #: src/blocks/pr-blocks/deprecated/0.0.1/component.js:157
 #: src/blocks/pr-blocks/deprecated/0.0.2/component.js:185
 #: src/blocks/pr-blocks/deprecated/0.59.0/component.js:200
-#: src/blocks/pr-blocks/edit.js:542
+#: src/blocks/pr-blocks/edit.js:525
 msgid "Input Content"
 msgstr "文章を入力してください"
 
-#: src/blocks/_pro/icon-card-item/edit.js:100 src/blocks/button/edit.js:195
-#: src/blocks/icon/edit.js:249 src/blocks/pr-blocks/edit.js:271
+#: src/blocks/_pro/icon-card-item/edit.js:117
+msgid "Icon Card Setting"
+msgstr "アイコンカード設定"
+
+#: src/blocks/_pro/icon-card-item/edit.js:119 src/blocks/pr-blocks/edit.js:241
+msgid "Link URL:"
+msgstr "リンク URL:"
+
+#: src/blocks/_pro/icon-card-item/edit.js:127 src/blocks/button/edit.js:188
+#: src/blocks/icon/edit.js:249 src/blocks/pr-blocks/edit.js:249
 #: src/blocks/pr-content/edit.js:130
 msgid "Open link new tab."
 msgstr "リンクを別ウィンドウで開く"
 
-#: src/blocks/_pro/icon-card-item/edit.js:108
-#: src/blocks/_pro/step-item/edit.js:57 src/blocks/border-box/edit.js:122
-#: src/blocks/button/edit.js:415 src/blocks/icon/edit.js:237
+#: src/blocks/_pro/icon-card-item/edit.js:135
+#: src/blocks/_pro/step-item/edit.js:72 src/blocks/border-box/edit.js:122
+#: src/blocks/button/edit.js:418 src/blocks/icon/edit.js:237
 #: src/blocks/pr-content/edit.js:196
 msgid "Icon ( Font Awesome )"
 msgstr "アイコン ( Font Awesome )"
 
-#: src/blocks/_pro/icon-card-item/edit.js:126 src/blocks/pr-blocks/edit.js:295
+#: src/blocks/_pro/icon-card-item/edit.js:143 src/blocks/pr-blocks/edit.js:263
 msgid "Icon Background:"
 msgstr "アイコン背景:"
 
-#: src/blocks/_pro/icon-card-item/edit.js:130 src/blocks/button/edit.js:298
+#: src/blocks/_pro/icon-card-item/edit.js:147 src/blocks/button/edit.js:301
 #: src/blocks/icon-outer/edit.js:204 src/blocks/icon/edit.js:192
-#: src/blocks/pr-blocks/edit.js:299
+#: src/blocks/pr-blocks/edit.js:267
 msgid "Solid color"
 msgstr "ベタ塗り"
 
-#: src/blocks/_pro/icon-card-item/edit.js:134 src/blocks/button/edit.js:311
-#: src/blocks/pr-blocks/edit.js:303
+#: src/blocks/_pro/icon-card-item/edit.js:151 src/blocks/button/edit.js:314
+#: src/blocks/pr-blocks/edit.js:271
 msgid "No background"
 msgstr "背景なし"
-
-#: src/blocks/_pro/icon-card-item/edit.js:90
-msgid "Icon Card Setting"
-msgstr "アイコンカード設定"
-
-#: src/blocks/_pro/icon-card-item/edit.js:92 src/blocks/pr-blocks/edit.js:263
-msgid "Link URL:"
-msgstr "リンク URL:"
 
 #: src/blocks/_pro/icon-card/edit.js:65
 msgid "Columns"
@@ -520,7 +524,7 @@ msgstr ""
 msgid "Divider Setting"
 msgstr "区切りの設定"
 
-#: src/blocks/_pro/outer/edit.js:389 src/blocks/balloon/edit.js:236
+#: src/blocks/_pro/outer/edit.js:389 src/blocks/balloon/edit.js:424
 msgid "Type"
 msgstr "タイプ"
 
@@ -560,14 +564,14 @@ msgstr "枠線は区切りレベルを適用すると表示されなくなりま
 msgid "Border type"
 msgstr "枠線の種類"
 
-#: src/blocks/_pro/outer/edit.js:485 src/blocks/_pro/step-item/edit.js:114
-#: src/blocks/_pro/timeline-item/edit.js:95 src/blocks/balloon/edit.js:338
-#: src/blocks/staff/edit.js:117
+#: src/blocks/_pro/outer/edit.js:485 src/blocks/_pro/step-item/edit.js:126
+#: src/blocks/_pro/timeline-item/edit.js:104 src/blocks/balloon/edit.js:524
+#: src/blocks/staff/edit.js:177
 msgid "None"
 msgstr "なし"
 
-#: src/blocks/_pro/outer/edit.js:489 src/blocks/_pro/step-item/edit.js:92
-#: src/blocks/_pro/timeline-item/edit.js:77 src/blocks/pr-content/edit.js:143
+#: src/blocks/_pro/outer/edit.js:489 src/blocks/_pro/step-item/edit.js:104
+#: src/blocks/_pro/timeline-item/edit.js:86 src/blocks/pr-content/edit.js:143
 #: src/extensions/core/group/style.js:102
 msgid "Solid"
 msgstr "直線"
@@ -615,18 +619,21 @@ msgstr "コンテナ内側のスペース設定"
 
 #: src/blocks/_pro/outer/edit.js:566 src/blocks/_pro/slider/edit.js:238
 #: src/components/advanced-viewport-control/index.js:39
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:62
 #: inc/vk-blocks/admin/admin-margin.php:62
 msgid "Mobile"
 msgstr "モバイル"
 
 #: src/blocks/_pro/outer/edit.js:581 src/blocks/_pro/slider/edit.js:227
 #: src/components/advanced-viewport-control/index.js:31
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:61
 #: inc/vk-blocks/admin/admin-margin.php:61
 msgid "Tablet"
 msgstr "タブレット"
 
 #: src/blocks/_pro/outer/edit.js:596 src/blocks/_pro/slider/edit.js:216
 #: src/components/advanced-viewport-control/index.js:25
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:60
 #: inc/vk-blocks/admin/admin-margin.php:60
 msgid "PC"
 msgstr "PC"
@@ -637,47 +644,71 @@ msgid "Unit Type"
 msgstr "単位"
 
 #. Filter by %s
-#: src/blocks/_pro/post-list/edit.js:174
+#: src/blocks/_pro/post-list/edit.js:181
 msgid "Filter by %s"
 msgstr "%sで絞り込み"
 
-#: src/blocks/_pro/post-list/edit.js:201
+#: src/blocks/_pro/post-list/edit.js:208
 msgid "Filter by PostTypes"
 msgstr "投稿タイプ"
 
-#: src/blocks/_pro/post-list/edit.js:215
+#: src/blocks/_pro/post-list/edit.js:222
 msgid "Number of Posts"
 msgstr "表示件数"
 
-#: src/blocks/_pro/post-list/edit.js:228
+#: src/blocks/_pro/post-list/edit.js:235
+msgid "Filter by Date"
+msgstr "日付で絞り込み"
+
+#: src/blocks/_pro/post-list/edit.js:239
+msgid "Period of Time"
+msgstr "期間"
+
+#: src/blocks/_pro/post-list/edit.js:247
+msgid "Whole Period"
+msgstr "全期間"
+
+#: src/blocks/_pro/post-list/edit.js:251
+msgid "From Today"
+msgstr "今日以降"
+
+#: src/blocks/_pro/post-list/edit.js:255
+msgid "From Now"
+msgstr "現在以降"
+
+#: src/blocks/_pro/post-list/edit.js:259
+msgid "From Tomorrow"
+msgstr "明日以降"
+
+#: src/blocks/_pro/post-list/edit.js:265
 msgid "Order"
 msgstr "表示順"
 
-#: src/blocks/_pro/post-list/edit.js:237
+#: src/blocks/_pro/post-list/edit.js:274
 msgid "ASC"
 msgstr "昇順"
 
-#: src/blocks/_pro/post-list/edit.js:241
+#: src/blocks/_pro/post-list/edit.js:278
 msgid "DESC"
 msgstr "降順"
 
-#: src/blocks/_pro/post-list/edit.js:247
+#: src/blocks/_pro/post-list/edit.js:284
 msgid "Order by"
 msgstr "表示順"
 
-#: src/blocks/_pro/post-list/edit.js:256
+#: src/blocks/_pro/post-list/edit.js:293
 msgid "Published Date"
 msgstr "公開日"
 
-#: src/blocks/_pro/post-list/edit.js:260
+#: src/blocks/_pro/post-list/edit.js:297
 msgid "Modefied Date"
 msgstr "更新日"
 
-#: src/blocks/_pro/post-list/edit.js:268
+#: src/blocks/_pro/post-list/edit.js:305
 msgid "Random"
 msgstr "ランダム"
 
-#: src/blocks/_pro/post-list/edit.js:274
+#: src/blocks/_pro/post-list/edit.js:311
 msgid "offset"
 msgstr "オフセット数"
 
@@ -786,10 +817,10 @@ msgstr "切り替え時間"
 msgid "Pagination Type"
 msgstr "ページネーションの種類"
 
-#: src/blocks/_pro/slider/edit.js:345 src/blocks/_pro/step-item/edit.js:110
+#: src/blocks/_pro/slider/edit.js:345 src/blocks/_pro/step-item/edit.js:122
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
-#: src/blocks/_pro/timeline-item/edit.js:91 src/blocks/heading/edit.js:228
-#: src/blocks/staff/edit.js:113 src/extensions/core/heading/style.js:30
+#: src/blocks/_pro/timeline-item/edit.js:100 src/blocks/heading/edit.js:282
+#: src/blocks/staff/edit.js:173 src/extensions/core/heading/style.js:30
 #: src/extensions/core/list/style.js:102
 msgid "Default"
 msgstr "標準"
@@ -802,11 +833,11 @@ msgstr "スライドの枚数"
 msgid "Navigation Position"
 msgstr "ナビゲーションの位置"
 
-#: src/blocks/_pro/slider/edit.js:366 src/blocks/heading/edit.js:344
+#: src/blocks/_pro/slider/edit.js:366 src/blocks/heading/edit.js:392
 msgid "Hide"
 msgstr "非表示"
 
-#: src/blocks/_pro/slider/edit.js:370 src/blocks/button/edit.js:254
+#: src/blocks/_pro/slider/edit.js:370 src/blocks/button/edit.js:257
 #: src/components/display-items-control/index.js:125
 msgid "Center"
 msgstr "中央"
@@ -815,41 +846,45 @@ msgstr "中央"
 msgid "Bottom on Mobile device"
 msgstr "モバイルでは下部に表示"
 
-#: src/blocks/_pro/step-item/edit.js:54
+#: src/blocks/_pro/step-item/edit.js:108
+#: src/blocks/_pro/timeline-item/edit.js:82
+msgid "Outlined"
+msgstr "アウトライン"
+
+#: src/blocks/_pro/step-item/edit.js:69
 msgid "Step Mark"
 msgstr "ステップマーク"
 
-#: src/blocks/_pro/step-item/edit.js:58
+#: src/blocks/_pro/step-item/edit.js:73
 msgid "If Font Awesome tags entered, it will overrides the number."
 msgstr "Font Awesome の class 名が入力されている場合は数字は上書きされます。"
 
-#: src/blocks/_pro/step-item/edit.js:72
-#: src/blocks/_pro/timeline-item/edit.js:50
+#: src/blocks/_pro/step-item/edit.js:87
+#: src/blocks/_pro/timeline-item/edit.js:66
 msgid "Ex,6:00AM"
 msgstr "例) 午前 6:00"
 
-#: src/blocks/_pro/step-item/edit.js:76
-#: src/blocks/_pro/timeline-item/edit.js:53 src/blocks/border-box/edit.js:63
-#: src/blocks/button/edit.js:333 src/blocks/icon/edit.js:256
-#: src/blocks/staff/edit.js:139 inc/term-color/package/class.term-color.php:41
+#: src/blocks/_pro/step-item/edit.js:91
+#: src/blocks/_pro/timeline-item/edit.js:69 src/blocks/border-box/edit.js:63
+#: src/blocks/button/edit.js:336 src/blocks/icon/edit.js:256
+#: src/blocks/staff/edit.js:199
+#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:41
+#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:56
+#: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:130
+#: inc/term-color/package/class.term-color.php:41
 #: inc/term-color/package/class.term-color.php:56
 #: inc/term-color/package/class.term-color.php:130
 msgid "Color"
 msgstr "色"
 
-#: src/blocks/_pro/step-item/edit.js:82
+#: src/blocks/_pro/step-item/edit.js:94
 #: src/blocks/_pro/table-of-contents-new/edit.js:135
-#: src/blocks/_pro/timeline-item/edit.js:63 src/blocks/icon-outer/edit.js:196
+#: src/blocks/_pro/timeline-item/edit.js:72 src/blocks/icon-outer/edit.js:196
 #: src/blocks/icon/edit.js:184
 msgid "Style"
 msgstr "スタイル"
 
-#: src/blocks/_pro/step-item/edit.js:96
-#: src/blocks/_pro/timeline-item/edit.js:73
-msgid "Outlined"
-msgstr "アウトライン"
-
-#: src/blocks/_pro/step/edit.js:38
+#: src/blocks/_pro/step/edit.js:35
 msgid "First Dot Number"
 msgstr "ステップの開始番号"
 
@@ -891,133 +926,133 @@ msgstr "OPEN"
 msgid "CLOSE"
 msgstr "CLOSE"
 
-#: src/blocks/_pro/timeline-item/edit.js:46
+#: src/blocks/_pro/timeline-item/edit.js:62
 msgid "label"
 msgstr "ラベル"
 
-#: src/blocks/alert/edit.js:19 src/blocks/heading/edit.js:219
+#: src/blocks/alert/edit.js:19 src/blocks/heading/edit.js:273
 msgid "Style Settings"
 msgstr "スタイル設定"
 
-#: src/blocks/alert/edit.js:25 src/blocks/button/edit.js:347
+#: src/blocks/alert/edit.js:25 src/blocks/button/edit.js:350
 #: src/blocks/pr-content/edit.js:164 src/extensions/core/group/style.js:138
 msgid "Success"
 msgstr "Success"
 
-#: src/blocks/alert/edit.js:28 src/blocks/button/edit.js:351
+#: src/blocks/alert/edit.js:28 src/blocks/button/edit.js:354
 #: src/blocks/pr-content/edit.js:167 src/extensions/core/group/style.js:134
 msgid "Info"
 msgstr "Info"
 
-#: src/blocks/alert/edit.js:30 src/blocks/button/edit.js:355
+#: src/blocks/alert/edit.js:30 src/blocks/button/edit.js:358
 #: src/blocks/pr-content/edit.js:169 src/extensions/core/group/style.js:142
 msgid "Warning"
 msgstr "Warning"
 
-#: src/blocks/alert/edit.js:34 src/blocks/button/edit.js:359
+#: src/blocks/alert/edit.js:34 src/blocks/button/edit.js:362
 #: src/blocks/pr-content/edit.js:173 src/extensions/core/group/style.js:146
 msgid "Danger"
 msgstr "Danger"
 
-#: src/blocks/balloon/edit.js:125
+#: src/blocks/balloon/edit.js:132
 msgid " Image Border"
 msgstr "画像の線"
 
-#: src/blocks/balloon/edit.js:128
+#: src/blocks/balloon/edit.js:135
 msgid "Add border to image"
 msgstr "画像に枠線を追加する"
 
-#: src/blocks/balloon/edit.js:136
+#: src/blocks/balloon/edit.js:143
 msgid "* You can change border width on Setting > VK Blocks"
 msgstr "* 線の太さは 管理画面の 設定 > VK Blocks から選択する事ができます。"
 
-#: src/blocks/balloon/edit.js:143
+#: src/blocks/balloon/edit.js:150
 msgid "Border color of speech balloon"
 msgstr "吹き出しの線の色"
 
-#: src/blocks/balloon/edit.js:168 src/extensions/core/image/style.js:15
+#: src/blocks/balloon/edit.js:300 src/extensions/core/image/style.js:15
 #: src/extensions/core/table/style.js:12
 msgid "Border"
 msgstr "枠線"
 
-#: src/blocks/balloon/edit.js:171
+#: src/blocks/balloon/edit.js:303
 msgid "Add border to balloon"
 msgstr "吹き出しに枠線を追加する"
 
-#: src/blocks/balloon/edit.js:200
+#: src/blocks/balloon/edit.js:388
 msgid "Balloon setting"
 msgstr "吹き出しブロック設定"
 
-#: src/blocks/balloon/edit.js:202 src/blocks/heading/edit.js:336
+#: src/blocks/balloon/edit.js:390 src/blocks/heading/edit.js:384
 msgid "Position"
 msgstr "位置"
 
-#: src/blocks/balloon/edit.js:205
+#: src/blocks/balloon/edit.js:393
 msgid "Please specify the layout of the balloon."
 msgstr "吹き出しの配置を指定してください。"
 
-#: src/blocks/balloon/edit.js:219 src/blocks/button/edit.js:244
+#: src/blocks/balloon/edit.js:407 src/blocks/button/edit.js:247
 #: src/blocks/pr-content/edit.js:233
 #: src/components/display-items-control/index.js:121
 msgid "Left"
 msgstr "左"
 
-#: src/blocks/balloon/edit.js:231 src/blocks/button/edit.js:264
+#: src/blocks/balloon/edit.js:419 src/blocks/button/edit.js:267
 #: src/blocks/pr-content/edit.js:232
 #: src/components/display-items-control/index.js:129
 msgid "Right"
 msgstr "右"
 
-#: src/blocks/balloon/edit.js:239
+#: src/blocks/balloon/edit.js:427
 msgid "Please select the type of balloon."
 msgstr "吹き出しのタイプを指定してください。"
 
-#: src/blocks/balloon/edit.js:250
+#: src/blocks/balloon/edit.js:438
 msgid "Speech"
 msgstr "吹き出し"
 
-#: src/blocks/balloon/edit.js:260
+#: src/blocks/balloon/edit.js:448
 msgid "Thinking"
 msgstr "もくもく"
 
-#: src/blocks/balloon/edit.js:265
+#: src/blocks/balloon/edit.js:453
 msgid "Image Style"
 msgstr "画像スタイル"
 
-#: src/blocks/balloon/edit.js:286
+#: src/blocks/balloon/edit.js:474
 msgid "Rounded"
 msgstr "角丸２"
 
-#: src/blocks/balloon/edit.js:296
+#: src/blocks/balloon/edit.js:484
 msgid "Circle"
 msgstr "丸抜き"
 
-#: src/blocks/balloon/edit.js:303
+#: src/blocks/balloon/edit.js:491
 msgid "Background color of speech balloon"
 msgstr "吹き出しの背景色"
 
-#: src/blocks/balloon/edit.js:312
+#: src/blocks/balloon/edit.js:498
 msgid "Default Icon Setting"
 msgstr "デフォルトアイコン設定"
 
-#: src/blocks/balloon/edit.js:317
+#: src/blocks/balloon/edit.js:503
 msgid "You can register default icons from Settings > VK Blocks in Admin."
 msgstr ""
 "管理画面の 設定 > VK Blocks から よく使うアイコンを登録する事ができます。"
 
-#: src/blocks/balloon/edit.js:323
+#: src/blocks/balloon/edit.js:509
 msgid "Animation setting"
 msgstr "アニメーション設定"
 
-#: src/blocks/balloon/edit.js:325
+#: src/blocks/balloon/edit.js:511
 msgid "Please select the type of animation."
 msgstr "アニメーションのタイプを指定してください。"
 
-#: src/blocks/balloon/edit.js:342
+#: src/blocks/balloon/edit.js:528
 msgid "Trembling"
 msgstr "ぶるぶる"
 
-#: src/blocks/balloon/edit.js:387 src/blocks/pr-blocks/edit.js:82
+#: src/blocks/balloon/edit.js:571 src/blocks/pr-blocks/edit.js:80
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:135
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:117
 #: src/blocks/pr-content/deprecated/0.0.2/save.js:214
@@ -1032,7 +1067,7 @@ msgstr "ぶるぶる"
 msgid "Upload image"
 msgstr "画像をアップロード"
 
-#: src/blocks/balloon/edit.js:400
+#: src/blocks/balloon/edit.js:584
 msgid "Icon Name"
 msgstr "アイコンの名前"
 
@@ -1055,7 +1090,9 @@ msgid "Icon"
 msgstr "アイコン"
 
 #: src/blocks/border-box/edit.js:51 src/blocks/icon-outer/edit.js:132
-#: src/blocks/icon/edit.js:121 inc/vk-blocks/admin/admin-margin.php:57
+#: src/blocks/icon/edit.js:121
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:57
+#: inc/vk-blocks/admin/admin-margin.php:57
 msgid "Margin"
 msgstr "余白"
 
@@ -1142,83 +1179,85 @@ msgstr "このブロックを複製した際には、IDを変更してくださ�
 msgid "This ID is'not id of HTML attribute."
 msgstr "このIDはHTML属性のIDではありません。"
 
-#: src/blocks/button/edit.js:175
-msgid "Sub Caption"
-msgstr "サブテキスト"
-
-#: src/blocks/button/edit.js:185
+#: src/blocks/button/edit.js:178
 msgid "Button URL"
 msgstr "ボタン URL"
 
-#: src/blocks/button/edit.js:203
+#: src/blocks/button/edit.js:196
+msgid "Sub Caption"
+msgstr "サブテキスト"
+
+#: src/blocks/button/edit.js:206
 msgid "Button Size:"
 msgstr "ボタンサイズ:"
 
-#: src/blocks/button/edit.js:212 src/blocks/spacer/edit.js:105
-#: inc/vk-blocks/vk-blocks-functions.php:30
+#: src/blocks/button/edit.js:215 src/blocks/spacer/edit.js:105
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:31
+#: inc/vk-blocks/vk-blocks-functions.php:31
 msgid "Large"
 msgstr "大"
 
-#: src/blocks/button/edit.js:228 src/blocks/spacer/edit.js:85
+#: src/blocks/button/edit.js:231 src/blocks/spacer/edit.js:85
 #: src/extensions/common/inline-font-size/index.js:51
-#: inc/vk-blocks/vk-blocks-functions.php:22
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:23
+#: inc/vk-blocks/vk-blocks-functions.php:23
 msgid "Small"
 msgstr "小"
 
-#: src/blocks/button/edit.js:233
+#: src/blocks/button/edit.js:236
 msgid "Button Position:"
 msgstr "ボタンの位置:"
 
-#: src/blocks/button/edit.js:274
+#: src/blocks/button/edit.js:277
 msgid "Wide"
 msgstr "幅広"
 
-#: src/blocks/button/edit.js:284
+#: src/blocks/button/edit.js:287
 msgid "Block"
 msgstr "Block"
 
-#: src/blocks/button/edit.js:289
+#: src/blocks/button/edit.js:292
 msgid "Button Style:"
 msgstr "ボタンスタイル:"
 
-#: src/blocks/button/edit.js:324
+#: src/blocks/button/edit.js:327
 msgid "Text only"
 msgstr "テキストのみ"
 
-#: src/blocks/button/edit.js:328
+#: src/blocks/button/edit.js:331
 msgid ""
 "If you select \"No background\", that you need to select a Custom Color."
 msgstr "もし「背景なし」を選択した場合はカスタムカラーで色を指定してください。"
 
-#: src/blocks/button/edit.js:335
+#: src/blocks/button/edit.js:338
 msgid "Default Color (Bootstrap)"
 msgstr "標準色 (Bootstrap)"
 
-#: src/blocks/button/edit.js:339 src/blocks/pr-content/edit.js:156
+#: src/blocks/button/edit.js:342 src/blocks/pr-content/edit.js:156
 msgid "Primary"
 msgstr "Primary"
 
-#: src/blocks/button/edit.js:343 src/blocks/pr-content/edit.js:160
+#: src/blocks/button/edit.js:346 src/blocks/pr-content/edit.js:160
 msgid "Secondary"
 msgstr "Secondary"
 
-#: src/blocks/button/edit.js:363 src/blocks/pr-content/edit.js:176
+#: src/blocks/button/edit.js:366 src/blocks/pr-content/edit.js:176
 msgid "Light"
 msgstr "Light"
 
-#: src/blocks/button/edit.js:367 src/blocks/pr-content/edit.js:177
+#: src/blocks/button/edit.js:370 src/blocks/pr-content/edit.js:177
 msgid "Dark"
 msgstr "Dark"
 
-#: src/blocks/button/edit.js:380
+#: src/blocks/button/edit.js:383
 msgid "Custom Color"
 msgstr "カスタムカラー"
 
-#: src/blocks/button/edit.js:388 src/blocks/pr-content/edit.js:185
+#: src/blocks/button/edit.js:391 src/blocks/pr-content/edit.js:185
 msgid "Button Color"
 msgstr "ボタンカラー"
 
-#: src/blocks/button/edit.js:390
+#: src/blocks/button/edit.js:393
 msgid ""
 "This color palette overrides the default color. If you want to use the "
 "default color, click the clear button."
@@ -1226,17 +1265,17 @@ msgstr ""
 "このカラーパレットの色は標準色を上書きします。 デフォルトの色を使用したい場合"
 "は、クリアボタンをクリックしてください。"
 
-#: src/blocks/button/edit.js:419 src/blocks/heading/edit.js:303
+#: src/blocks/button/edit.js:422 src/blocks/heading/edit.js:355
 #: src/blocks/pr-content/edit.js:200
 msgid "Before text"
 msgstr "文字の前"
 
-#: src/blocks/button/edit.js:428 src/blocks/heading/edit.js:312
+#: src/blocks/button/edit.js:431 src/blocks/heading/edit.js:364
 #: src/blocks/pr-content/edit.js:212
 msgid "After text"
 msgstr "文字の後"
 
-#: src/blocks/button/edit.js:457
+#: src/blocks/button/edit.js:460
 msgid "Input text"
 msgstr "文字を入力"
 
@@ -1312,7 +1351,7 @@ msgstr "説明を入力"
 #: src/blocks/heading/deprecated/0.40.0/component.js:152
 #: src/blocks/heading/deprecated/0.40.1/component.js:152
 #: src/blocks/heading/deprecated/0.60.1/component.js:152
-#: src/blocks/heading/edit.js:193
+#: src/blocks/heading/edit.js:247
 msgid "Input sub text…"
 msgstr "サブテキストを入力"
 
@@ -1326,51 +1365,51 @@ msgstr "サブテキストを入力"
 #: src/blocks/heading/deprecated/0.40.0/component.js:137
 #: src/blocks/heading/deprecated/0.40.1/component.js:137
 #: src/blocks/heading/deprecated/0.60.1/component.js:137
-#: src/blocks/heading/edit.js:178
+#: src/blocks/heading/edit.js:232
 msgid "Input title…"
 msgstr "タイトルを入力"
 
-#: src/blocks/heading/edit.js:221
+#: src/blocks/heading/edit.js:275
 msgid "Heading style"
 msgstr "見出しスタイル"
 
-#: src/blocks/heading/edit.js:232 src/extensions/core/heading/style.js:35
+#: src/blocks/heading/edit.js:286 src/extensions/core/heading/style.js:35
 msgid "Plain"
 msgstr "装飾無し"
 
-#: src/blocks/heading/edit.js:238
+#: src/blocks/heading/edit.js:292
 msgid "Margin Setting"
 msgstr "余白設定"
 
-#: src/blocks/heading/edit.js:240
+#: src/blocks/heading/edit.js:294
 msgid "Margin between Heading and sub text (rem)"
 msgstr "見出しとサブテキストの余白サイズ（rem）"
 
-#: src/blocks/heading/edit.js:257
+#: src/blocks/heading/edit.js:311
 msgid "Margin bottom size of after this block (rem)"
 msgstr "このブロック全体の下部の余白 (rem)"
 
-#: src/blocks/heading/edit.js:274
+#: src/blocks/heading/edit.js:328
 msgid "Heading Settings"
 msgstr "見出し設定"
 
-#: src/blocks/heading/edit.js:300
+#: src/blocks/heading/edit.js:352
 msgid "Font Awesome Icon Settings"
 msgstr "Font Awesome アイコン設定"
 
-#: src/blocks/heading/edit.js:321
+#: src/blocks/heading/edit.js:373
 msgid "Icon Color"
 msgstr "アイコンの色"
 
-#: src/blocks/heading/edit.js:334
+#: src/blocks/heading/edit.js:382
 msgid "Sub Text Settings"
 msgstr "サブテキスト設定"
 
-#: src/blocks/heading/edit.js:340
+#: src/blocks/heading/edit.js:388
 msgid "Display"
 msgstr "表示"
 
-#: src/blocks/heading/edit.js:352
+#: src/blocks/heading/edit.js:400
 msgid "Text size (rem)"
 msgstr "文字サイズ (rem)"
 
@@ -1412,7 +1451,7 @@ msgstr "アイコン設定"
 msgid "Link URL"
 msgstr "リンクURL"
 
-#: src/blocks/page-content/edit.js:10 src/blocks/staff/edit.js:216
+#: src/blocks/page-content/edit.js:10 src/blocks/staff/edit.js:257
 msgid "Unspecified"
 msgstr "指定しない"
 
@@ -1424,49 +1463,49 @@ msgstr "ページ設定"
 msgid "Select Page"
 msgstr "ページを選択"
 
-#: src/blocks/pr-blocks/edit.js:101
-msgid "PR Block1 Setting"
-msgstr "PR Block1 設定"
-
-#: src/blocks/pr-blocks/edit.js:119
+#: src/blocks/pr-blocks/edit.js:117
 msgid "Icon 1"
 msgstr "アイコン 1"
 
-#: src/blocks/pr-blocks/edit.js:154
+#: src/blocks/pr-blocks/edit.js:142
 msgid "When you have an image. Image is displayed with priority"
 msgstr "画像を設定した場合は画像が優先して表示されます。"
 
-#: src/blocks/pr-blocks/edit.js:160
+#: src/blocks/pr-blocks/edit.js:148
 msgid "PR Image 1"
 msgstr "PR 画像 1"
 
-#: src/blocks/pr-blocks/edit.js:181
+#: src/blocks/pr-blocks/edit.js:169
 msgid "PR Block2 Setting"
 msgstr "PR Block2 設定"
 
-#: src/blocks/pr-blocks/edit.js:199
+#: src/blocks/pr-blocks/edit.js:187
 msgid "Icon 2"
 msgstr "アイコン 2"
 
-#: src/blocks/pr-blocks/edit.js:240
+#: src/blocks/pr-blocks/edit.js:218
 msgid "PR Image 2"
 msgstr "PR 画像 2"
 
-#: src/blocks/pr-blocks/edit.js:261
+#: src/blocks/pr-blocks/edit.js:239
 msgid "PR Block3 Setting"
 msgstr "PR Block3 設定"
 
-#: src/blocks/pr-blocks/edit.js:279
+#: src/blocks/pr-blocks/edit.js:257
 msgid "Icon 3"
 msgstr "アイコン 3"
 
-#: src/blocks/pr-blocks/edit.js:314
+#: src/blocks/pr-blocks/edit.js:282
 msgid "When you have an image. Image is displayed with priority."
 msgstr "画像を設定した場合は画像が優先して表示されます。"
 
-#: src/blocks/pr-blocks/edit.js:320
+#: src/blocks/pr-blocks/edit.js:288
 msgid "PR Image 3"
 msgstr "PR 画像 3"
+
+#: src/blocks/pr-blocks/edit.js:99
+msgid "PR Block1 Setting"
+msgstr "PR Block1 設定"
 
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:152
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:134
@@ -1564,81 +1603,84 @@ msgstr "デバイス毎の高さ"
 msgid "Spacer Settings"
 msgstr "余白の設定"
 
-#: src/blocks/spacer/edit.js:95 inc/vk-blocks/vk-blocks-functions.php:26
+#: src/blocks/spacer/edit.js:95
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:27
+#: inc/vk-blocks/vk-blocks-functions.php:27
 msgid "Medium"
 msgstr "中"
 
 #: src/blocks/staff/deprecated/0.58/component.js:50
-#: src/blocks/staff/edit.js:241
+#: src/blocks/staff/edit.js:284
 msgid "Your Name"
 msgstr "名前"
 
 #: src/blocks/staff/deprecated/0.58/component.js:58
-#: src/blocks/staff/edit.js:251
+#: src/blocks/staff/edit.js:296
 msgid "Caption"
 msgstr "キャプション"
 
 #: src/blocks/staff/deprecated/0.58/component.js:66
-#: src/blocks/staff/edit.js:261
+#: src/blocks/staff/edit.js:308
 msgid "Role position"
 msgstr "役職"
 
 #: src/blocks/staff/deprecated/0.58/component.js:74
-#: src/blocks/staff/edit.js:271
+#: src/blocks/staff/edit.js:321
 msgid "Profile title"
 msgstr "プロフィールタイトル"
 
 #: src/blocks/staff/deprecated/0.58/component.js:82
-#: src/blocks/staff/edit.js:284
+#: src/blocks/staff/edit.js:337
 msgid "Profile text"
 msgstr "プロフィールテキスト"
 
-#: src/blocks/staff/edit.js:103
-msgid "Image border"
-msgstr "画像の線"
-
-#: src/blocks/staff/edit.js:122
-msgid "Alt text"
-msgstr "画像の代替テキスト"
-
-#: src/blocks/staff/edit.js:124
-msgid "Set the alt text for profile image"
-msgstr "プロフィール画像の代替テキストを設定します"
-
-#: src/blocks/staff/edit.js:142
-msgid "Staff name"
-msgstr "名前"
-
-#: src/blocks/staff/edit.js:155
-msgid "Name caption"
-msgstr "名前のキャプション"
-
-#: src/blocks/staff/edit.js:210
-msgid "Heading Font"
-msgstr "見出しのフォント"
-
-#: src/blocks/staff/edit.js:212
-msgid "Font"
-msgstr "フォント"
-
-#: src/blocks/staff/edit.js:220
-msgid "minchoBody"
-msgstr "明朝体にする"
-
-#: src/blocks/staff/edit.js:85
+#: src/blocks/staff/edit.js:145
 msgid "Layout"
 msgstr "レイアウト"
 
-#: src/blocks/staff/edit.js:98
+#: src/blocks/staff/edit.js:158
 msgid "Image left"
 msgstr "画像 左"
+
+#: src/blocks/staff/edit.js:163
+msgid "Image border"
+msgstr "画像の線"
+
+#: src/blocks/staff/edit.js:182
+msgid "Alt text"
+msgstr "画像の代替テキスト"
+
+#: src/blocks/staff/edit.js:184
+msgid "Set the alt text for profile image"
+msgstr "プロフィール画像の代替テキストを設定します"
+
+#: src/blocks/staff/edit.js:202
+msgid "Staff name"
+msgstr "名前"
+
+#: src/blocks/staff/edit.js:212
+msgid "Name caption"
+msgstr "名前のキャプション"
+
+#: src/blocks/staff/edit.js:251
+msgid "Heading Font"
+msgstr "見出しのフォント"
+
+#: src/blocks/staff/edit.js:253
+msgid "Font"
+msgstr "フォント"
+
+#: src/blocks/staff/edit.js:261
+msgid "minchoBody"
+msgstr "明朝体にする"
 
 #: src/components/column-layout-control/index.js:20
 msgid "Card (Image Round)"
 msgstr "カード（画像丸抜き）"
 
 #: src/components/column-layout-control/index.js:26
-#: inc/vk-components/package/class-vk-component-posts.php:671
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:733
+#: inc/vk-components/package/class-vk-component-posts.php:733
 msgid "Card"
 msgstr "カード"
 
@@ -1655,7 +1697,8 @@ msgid "Card (Horizontal)"
 msgstr "カード（水平）"
 
 #: src/components/column-layout-control/index.js:42
-#: inc/vk-components/package/class-vk-component-posts.php:687
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:749
+#: inc/vk-components/package/class-vk-component-posts.php:749
 msgid "Media"
 msgstr "メディア"
 
@@ -2024,12 +2067,12 @@ msgstr "Vektor,Inc."
 msgid "https://vektor-inc.co.jp"
 msgstr "https://vektor-inc.co.jp"
 
-#: inc/admin-notices.php:28
+#: dist/vk-blocks-pro/inc/admin-notices.php:28 inc/admin-notices.php:28
 msgid "We've released VK Blocks Pro!"
 msgstr "VK Blocks Pro を公開しました!"
 
 #. translators: 1: opening a tag, 2: closing a tag
-#: inc/admin-notices.php:35
+#: dist/vk-blocks-pro/inc/admin-notices.php:35 inc/admin-notices.php:35
 msgid ""
 "Thank you for using VK Blocks. We've released VK Blocks Pro. It has more "
 "custom blocks to build web site more easily. If you are interested in VK "
@@ -2040,66 +2083,81 @@ msgstr ""
 "れています。VK Blocks Proに興味がある方は、詳しくは%1$sこの記事%2$sを読んでみ"
 "てください。"
 
-#: inc/admin-notices.php:39 inc/admin-notices.php:45
+#: dist/vk-blocks-pro/inc/admin-notices.php:39
+#: dist/vk-blocks-pro/inc/admin-notices.php:45 inc/admin-notices.php:39
+#: inc/admin-notices.php:45
 msgid "https://www.vektor-inc.co.jp/service/wordpress-plugins/vk-blocks/"
 msgstr "https://www.vektor-inc.co.jp/service/wordpress-plugins/vk-blocks/"
 
-#: inc/admin-notices.php:46
+#: dist/vk-blocks-pro/inc/admin-notices.php:46 inc/admin-notices.php:46
 msgid "See more"
 msgstr "続きを見る"
 
-#: inc/admin-notices.php:49
+#: dist/vk-blocks-pro/inc/admin-notices.php:49 inc/admin-notices.php:49
 msgid "Dismiss this notice"
 msgstr "通知を無視"
 
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:42
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:57
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:42
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:57
 msgid "Not recommended"
 msgstr "非推奨"
 
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:89
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:91
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:89
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:91
 msgid "Ex ) "
 msgstr "例) "
 
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:200
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:200
 msgid "Font Awesome"
 msgstr "Font Awesome:"
 
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:223
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:223
 msgid "Font Awesome Version"
 msgstr "Font Awesome バージョン"
 
+#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:226
 #: inc/font-awesome/package/class-vk-font-awesome-versions.php:226
 msgid "4.7 will be abolished in the near future."
 msgstr "4.7は将来的に廃止されます。"
 
-#: inc/tgm-plugin-activation/tgm-config.php:77
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:72
+#: inc/tgm-plugin-activation/tgm-config.php:72
 msgid "Install Required Plugins"
 msgstr "必須プラグインのインストール"
 
-#: inc/tgm-plugin-activation/tgm-config.php:78
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:73
+#: inc/tgm-plugin-activation/tgm-config.php:73
 msgid "Install Plugins"
 msgstr "プラグインのインストール"
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:80
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:75
+#: inc/tgm-plugin-activation/tgm-config.php:75
 msgid "Installing Plugin: %s"
 msgstr "プラグイン %s をインストール中"
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:81
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:76
+#: inc/tgm-plugin-activation/tgm-config.php:76
 msgid "Something went wrong with the plugin API."
 msgstr "プラグイン API で問題が発生しました。"
 
 #. translators:
-#: inc/tgm-plugin-activation/tgm-config.php:83
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:78
+#: inc/tgm-plugin-activation/tgm-config.php:78
 msgid "This plugin requires the following plugin: %1$s."
 msgid_plural "This plugin requires the following plugins: %1$s."
 msgstr[0] "このプラグインは下記プラグインを必要としています：%1$s。"
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:89
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:84
+#: inc/tgm-plugin-activation/tgm-config.php:84
 msgid ""
 "This plugin recommends the following plugin: %1$s.<br>Many additional "
 "functions are available for free."
@@ -2111,7 +2169,8 @@ msgstr[0] ""
 "れらのプラグインは無償で利用可能です。"
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:95
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:90
+#: inc/tgm-plugin-activation/tgm-config.php:90
 msgid ""
 "Sorry, but you do not have the correct permissions to install the %1$s "
 "plugin."
@@ -2121,7 +2180,8 @@ msgid_plural ""
 msgstr[0] "%1$sプラグインをインストールするための適切な権限がありません。"
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:101
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:96
+#: inc/tgm-plugin-activation/tgm-config.php:96
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
 "maximum compatibility with this plugin: %1$s."
@@ -2133,13 +2193,15 @@ msgstr[0] ""
 "に更新する必要があります： %1$s。"
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:107
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:102
+#: inc/tgm-plugin-activation/tgm-config.php:102
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] "次のプラグインの更新が利用可能です：%1$s。"
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:113
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:108
+#: inc/tgm-plugin-activation/tgm-config.php:108
 msgid ""
 "Sorry, but you do not have the correct permissions to update the %1$s plugin."
 msgid_plural ""
@@ -2148,19 +2210,22 @@ msgid_plural ""
 msgstr[0] "%1$sプラグインを更新するための適切な権限がありません。"
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:119
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:114
+#: inc/tgm-plugin-activation/tgm-config.php:114
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] "必須プラグインが現在有効化されていません： %1$s。"
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:125
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:120
+#: inc/tgm-plugin-activation/tgm-config.php:120
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] "推奨プラグインが現在有効化されていません： %1$s。"
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:131
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:126
+#: inc/tgm-plugin-activation/tgm-config.php:126
 msgid ""
 "Sorry, but you do not have the correct permissions to activate the %1$s "
 "plugin."
@@ -2170,40 +2235,48 @@ msgid_plural ""
 msgstr[0] "%1$sプラグインを有効化するための適切な権限がありません。"
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:137
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:132
+#: inc/tgm-plugin-activation/tgm-config.php:132
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] "プラグインのインストールを開始"
 
-#: inc/tgm-plugin-activation/tgm-config.php:142
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:137
+#: inc/tgm-plugin-activation/tgm-config.php:137
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] "プラグインの更新を開始する"
 
-#: inc/tgm-plugin-activation/tgm-config.php:147
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:142
+#: inc/tgm-plugin-activation/tgm-config.php:142
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] "プラグインの有効化を開始"
 
-#: inc/tgm-plugin-activation/tgm-config.php:152
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:147
+#: inc/tgm-plugin-activation/tgm-config.php:147
 msgid "Return to Required Plugins Installer"
 msgstr "必須プラグインのインストール画面に戻る"
 
-#: inc/tgm-plugin-activation/tgm-config.php:153
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:148
+#: inc/tgm-plugin-activation/tgm-config.php:148
 msgid "Plugin activated successfully."
 msgstr "プラグインを有効化しました。"
 
-#: inc/tgm-plugin-activation/tgm-config.php:154
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:149
+#: inc/tgm-plugin-activation/tgm-config.php:149
 msgid "The following plugin was activated successfully:"
 msgstr "次のプラグインを有効化しました:"
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:156
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:151
+#: inc/tgm-plugin-activation/tgm-config.php:151
 msgid "No action taken. Plugin %1$s was already active."
 msgstr "操作を実行しませんでした。プラグイン %1$s はすでに有効化されています。"
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:158
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:153
+#: inc/tgm-plugin-activation/tgm-config.php:153
 msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
 "Please update the plugin."
@@ -2212,79 +2285,99 @@ msgstr ""
 "ジョンをサポートしていません。プラグインを更新してください。"
 
 #. translators: %s = plugin name.
-#: inc/tgm-plugin-activation/tgm-config.php:160
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:155
+#: inc/tgm-plugin-activation/tgm-config.php:155
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr "すべてのプラグインを正常にインストールし、有効化しました。 %1$s"
 
 #. translators: %s = dashboard link.
-#: inc/tgm-plugin-activation/tgm-config.php:162
+#: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:157
+#: inc/tgm-plugin-activation/tgm-config.php:157
 msgid "Please contact the administrator of this site for help."
 msgstr "ヘルプが必要な場合はこのサイトの管理者にお問い合わせください。"
 
+#: dist/vk-blocks-pro/inc/vk-admin/package/class-vk-admin.php:316
 #: inc/vk-admin/package/class-vk-admin.php:316
 msgid "Sorry, there is no post"
 msgstr "申し訳ありませんが投稿がありません。"
 
+#: dist/vk-blocks-pro/inc/vk-admin/package/class-vk-admin.php:370
 #: inc/vk-admin/package/class-vk-admin.php:370
 msgid "Vektor WordPress Information"
 msgstr "Vektor WordPress Information"
 
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:13
 #: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:13
 msgid "Disable accordion"
 msgstr "アコーディオン無効"
 
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:17
 #: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:17
 msgid "Enable accordion and default open "
 msgstr "アコーディオン有効 / 初期状態で開く"
 
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:21
 #: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:21
 msgid "Enable accordion and default close "
 msgstr "アコーディオン有効 / 初期状態で閉じる"
 
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:29
 #: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:29
 msgid "FAQ Block Setting"
 msgstr "FAQ Blocks 設定"
 
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-pro.php:22
 #: inc/vk-blocks-pro/admin-pro/admin-pro.php:22
 msgid "FAQ Setting"
 msgstr "FAQ ブロックの設定"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:11
 #: inc/vk-blocks/admin/admin-balloon.php:11
 msgid "Balloon Setting"
 msgstr "吹き出しブロック設定"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:12
 #: inc/vk-blocks/admin/admin-balloon.php:12
 msgid "Balloon Border Width Setting"
 msgstr "吹き出しの線幅の設定"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:22
 #: inc/vk-blocks/admin/admin-balloon.php:22
 msgid "Balloon Image Setting"
 msgstr "吹き出し画像設定"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:89
 #: inc/vk-blocks/admin/admin-balloon.php:89
 msgid "You can register frequently used icon images for speech bubble blocks."
 msgstr "よく使う吹き出し用のアイコン画像を登録する事ができます。"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:90
 #: inc/vk-blocks/admin/admin-balloon.php:90
 msgid "If you change image or name that please click Save Changes button."
 msgstr "画像を変更したら「変更を保存」ボタンをクリックしてください。"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:116
 #: inc/vk-blocks/admin/admin-balloon.php:116
 msgid "Select"
 msgstr "選択"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:119
 #: inc/vk-blocks/admin/admin-balloon.php:119
 msgid "Delete"
 msgstr "削除"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:124
 #: inc/vk-blocks/admin/admin-balloon.php:124
 msgid "Balloon Image Name"
 msgstr "吹き出し画像の名前"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:27
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:71
 #: inc/vk-blocks/admin/admin-margin.php:27 inc/vk-blocks/admin/admin.php:71
 msgid "Common Margin Setting"
 msgstr "共通余白設定"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:28
 #: inc/vk-blocks/admin/admin-margin.php:28
 msgid ""
 "Please specify the size of the common margin used for responsive spacers, "
@@ -2292,31 +2385,38 @@ msgid ""
 msgstr ""
 "レスポンシブスペーサーなどで使用する共通余白のサイズを指定してください。"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:47
 #: inc/vk-blocks/admin/admin.php:47
 msgid "Blocks setting"
 msgstr "Blocks 設定"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:48
 #: inc/vk-blocks/admin/admin.php:48
 msgctxt "label in admin menu"
 msgid "Blocks"
 msgstr "Blocks"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:64
 #: inc/vk-blocks/admin/admin.php:64
 msgid "Blocks Setting"
 msgstr "Blocks 設定"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:70
 #: inc/vk-blocks/admin/admin.php:70
 msgid "Balloon Block Setting"
 msgstr "吹き出しブロック設定"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/load-bootstrap.php:61
 #: inc/vk-blocks/load-bootstrap.php:61
 msgid "VK Blocks Bootstrap Setting"
 msgstr "VK Blocks Bootstrapの設定"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/load-bootstrap.php:81
 #: inc/vk-blocks/load-bootstrap.php:81
 msgid "Loading Bootstrap4"
 msgstr "Bootstrap4の読み込み"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/load-bootstrap.php:82
 #: inc/vk-blocks/load-bootstrap.php:82
 msgid ""
 "Check here to load Bootstrap4. If your theme or plugins loading Bootstrap4, "
@@ -2325,88 +2425,115 @@ msgstr ""
 "Bootstrap4を読み込む場合はここにチェックを入れてください。テーマやプラグイン"
 "がBootstrap4を読み込む場合は、ここのチェックを外してください。"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/load-bootstrap.php:102
 #: inc/vk-blocks/load-bootstrap.php:102
 msgid "Setting"
 msgstr "設定"
 
-#: inc/vk-blocks/view/class-vk-blocks-postlist.php:186
+#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:187
+#: inc/vk-blocks/view/class-vk-blocks-postlist.php:219
 msgid "No Post is selected"
 msgstr "投稿が選択されていません"
 
-#: inc/vk-blocks/vk-blocks-functions.php:211
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:212
+#: inc/vk-blocks/vk-blocks-functions.php:212
 msgid "Blocks"
 msgstr "Blocks"
 
-#: inc/vk-blocks/vk-blocks-functions.php:224
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:225
+#: inc/vk-blocks/vk-blocks-functions.php:225
 msgid "Blocks Layout"
 msgstr "ブロックレイアウト"
 
-#: inc/vk-components/package/class-vk-component-posts.php:53
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:55
+#: inc/vk-components/package/class-vk-component-posts.php:55
 msgid "Read more"
 msgstr "続きを読む"
 
-#: inc/vk-components/package/class-vk-component-posts.php:55
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:57
+#: inc/vk-components/package/class-vk-component-posts.php:57
 msgid "New!!"
 msgstr "New!!"
 
-#: inc/vk-components/package/class-vk-component-posts.php:238
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:255
+#: inc/vk-components/package/class-vk-component-posts.php:255
+msgid "More"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:291
+#: inc/vk-components/package/class-vk-component-posts.php:291
 msgid "Posts navigation"
 msgstr "投稿ナビゲーション"
 
-#: inc/vk-components/package/class-vk-component-posts.php:239
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:292
+#: inc/vk-components/package/class-vk-component-posts.php:292
 msgid "Posts"
 msgstr "投稿リスト"
 
-#: inc/vk-components/package/class-vk-component-posts.php:241
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:294
+#: inc/vk-components/package/class-vk-component-posts.php:294
 msgid "Page"
 msgstr "ページ"
 
-#: inc/vk-components/package/class-vk-component-posts.php:675
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:737
+#: inc/vk-components/package/class-vk-component-posts.php:737
 msgid "Card Noborder"
 msgstr "カード（線なし）"
 
-#: inc/vk-components/package/class-vk-component-posts.php:679
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:741
+#: inc/vk-components/package/class-vk-component-posts.php:741
 msgid "Card Intext"
 msgstr "カード（インテキスト）"
 
-#: inc/vk-components/package/class-vk-component-posts.php:683
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:745
+#: inc/vk-components/package/class-vk-component-posts.php:745
 msgid "Card Horizontal"
 msgstr "カード（水平）"
 
-#: inc/vk-components/package/class-vk-component-posts.php:691
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:753
+#: inc/vk-components/package/class-vk-component-posts.php:753
 msgctxt "post list type"
 msgid "Text 1 Column"
 msgstr "テキスト 1 カラム"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:47
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:47
 msgid "CSS Optimize ( Speed up ) Settings"
 msgstr "CSS最適化（高速化）設定"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:66
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:66
 msgid "Tree shaking"
 msgstr "Tree shaking"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:87
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:87
 msgid "Tree shaking activation settings"
 msgstr "Tree shaking 有効化設定"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:91
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:91
 msgid "Output only the main CSS of the page inline"
 msgstr "主要なCSSのみインラインで出力します"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:93
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:159
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:93
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:159
 msgid "Nothing to do"
 msgstr "何もしない"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:94
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:94
 msgid "Active Tree shaking (Recomend)"
 msgstr "Tree shakingを有効化（推奨）"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:111
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:111
 msgid "Exclude class of Tree shaking"
 msgstr "CSSの軽量化から除外するCSSのclass名"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:115
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:115
 msgid ""
 "If you choose \"Active Tree shaking\" that delete the useless css.If you "
@@ -2417,26 +2544,32 @@ msgstr ""
 "している動的クラスがある場合はクラス名を入力してください。 例）btn-active,"
 "slide-active,scrolled"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:132
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:132
 msgid "Preload CSS"
 msgstr "Preload CSS"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:153
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:153
 msgid "Preload CSS activation settings"
 msgstr "Preload CSS 有効化設定"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:156
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:156
 msgid "Preload css except for critical css"
 msgstr "クリティカルなCSSを除いてCSSをプリロードします"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:160
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:160
 msgid "Active Preload CSS (Recomend)"
 msgstr "Preload CSS を有効化（推奨）"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:177
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:177
 msgid "Exclude class of Preload CSS"
 msgstr "Preload CSSから除外するハンドル名"
 
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:181
 #: inc/vk-css-optimize/package/class-vk-css-optimize.php:181
 msgid ""
 "If you choose \"Active Preload CSS\" that css load timing was changed.If you "
@@ -2447,11 +2580,12 @@ msgstr ""
 "す。プリロードしたくないファイルがある場合は、ハンドル名（id）を入力してくだ"
 "さい。 例）pluginname_a-style,pluginname_b-css"
 
-#: src/blocks/page-content/index.php:128
+#: dist/vk-blocks-pro/src/blocks/page-content/index.php:152
+#: src/blocks/page-content/index.php:152
 msgid "Edit this area"
 msgstr "このエリアを編集"
 
-#: vk-blocks.php:95
+#: dist/vk-blocks-pro/vk-blocks.php:98 vk-blocks.php:98
 msgid ""
 "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks "
 "Plugin running."
@@ -2459,82 +2593,86 @@ msgstr ""
 "VK-Blocksと競合するため、VK All in One Expansion Unitの Block機能を停止しまし"
 "た。"
 
-#: src/blocks/alert/block.json
+#: dist/vk-blocks-pro/src/blocks/alert/block.json src/blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
 msgstr "アラート"
 
-#: src/blocks/alert/block.json
+#: dist/vk-blocks-pro/src/blocks/alert/block.json src/blocks/alert/block.json
 msgctxt "block description"
 msgid "A colored box with four statuses, including annotations and alerts."
 msgstr "注釈や注意など4つのステータスがある色付きのボックスです。"
 
+#: dist/vk-blocks-pro/src/blocks/balloon/block.json
 #: src/blocks/balloon/block.json
 msgctxt "block title"
 msgid "Ballon"
 msgstr "吹き出し"
 
+#: dist/vk-blocks-pro/src/blocks/balloon/block.json
 #: src/blocks/balloon/block.json
 msgctxt "block description"
 msgid "These speech balloons are perfect for recreating conversations."
 msgstr "会話の再現などに最適な吹き出しです。"
 
+#: dist/vk-blocks-pro/src/blocks/border-box/block.json
 #: src/blocks/border-box/block.json
 msgctxt "block title"
 msgid "Border Box"
 msgstr "枠線ボックス"
 
+#: dist/vk-blocks-pro/src/blocks/border-box/block.json
 #: src/blocks/border-box/block.json
 msgctxt "block description"
 msgid "This is a border box where you can place headings to attract attention."
 msgstr "見出しを配置でき注目されやすい枠線ボックスです。"
 
-#: src/blocks/button/block.json
+#: dist/vk-blocks-pro/src/blocks/button/block.json src/blocks/button/block.json
 msgctxt "block title"
 msgid "Button"
 msgstr "ボタン"
 
-#: src/blocks/button/block.json
+#: dist/vk-blocks-pro/src/blocks/button/block.json src/blocks/button/block.json
 msgctxt "block description"
 msgid "A button link that can display icons before and after."
 msgstr "前後にアイコンを表示できるボタンリンクです。"
 
-#: src/blocks/faq/block.json
+#: dist/vk-blocks-pro/src/blocks/faq/block.json src/blocks/faq/block.json
 msgctxt "block title"
 msgid "Classic FAQ"
 msgstr "旧 FAQ"
 
-#: src/blocks/faq/block.json
+#: dist/vk-blocks-pro/src/blocks/faq/block.json src/blocks/faq/block.json
 msgctxt "block description"
 msgid "Displays a combination of questions and answers."
 msgstr "質問と回答を組み合わせて表示します。"
 
-#: src/blocks/faq2-a/block.json
+#: dist/vk-blocks-pro/src/blocks/faq2-a/block.json src/blocks/faq2-a/block.json
 msgctxt "block title"
 msgid "FAQ Answer"
 msgstr "FAQ 回答"
 
-#: src/blocks/faq2-a/block.json
+#: dist/vk-blocks-pro/src/blocks/faq2-a/block.json src/blocks/faq2-a/block.json
 msgctxt "block description"
 msgid "Answer area where you can add blocks freely."
 msgstr "自由にブロックを追加できる回答エリアです。"
 
-#: src/blocks/faq2-q/block.json
+#: dist/vk-blocks-pro/src/blocks/faq2-q/block.json src/blocks/faq2-q/block.json
 msgctxt "block title"
 msgid "FAQ Question"
 msgstr "FAQ 質問"
 
-#: src/blocks/faq2-q/block.json
+#: dist/vk-blocks-pro/src/blocks/faq2-q/block.json src/blocks/faq2-q/block.json
 msgctxt "block description"
 msgid "Question area where you can freely add blocks."
 msgstr "自由にブロックを追加できる質問エリアです。"
 
-#: src/blocks/faq2/block.json
+#: dist/vk-blocks-pro/src/blocks/faq2/block.json src/blocks/faq2/block.json
 msgctxt "block title"
 msgid "New FAQ"
 msgstr "新 FAQ"
 
-#: src/blocks/faq2/block.json
+#: dist/vk-blocks-pro/src/blocks/faq2/block.json src/blocks/faq2/block.json
 msgctxt "block description"
 msgid ""
 "It displays a combination of questions and answers. You can freely add "
@@ -2543,21 +2681,23 @@ msgstr ""
 "質問と回答を組み合わせて表示します。質問エリアにも自由にブロックを追加できま"
 "す。"
 
-#: src/blocks/flow/block.json
+#: dist/vk-blocks-pro/src/blocks/flow/block.json src/blocks/flow/block.json
 msgctxt "block title"
 msgid "Flow"
 msgstr "フロー"
 
-#: src/blocks/flow/block.json
+#: dist/vk-blocks-pro/src/blocks/flow/block.json src/blocks/flow/block.json
 msgctxt "block description"
 msgid "Displays a sequential description in time series."
 msgstr "時系列で順を追った説明を表示します。"
 
+#: dist/vk-blocks-pro/src/blocks/heading/block.json
 #: src/blocks/heading/block.json
 msgctxt "block title"
 msgid "Heading"
 msgstr "見出し"
 
+#: dist/vk-blocks-pro/src/blocks/heading/block.json
 #: src/blocks/heading/block.json
 msgctxt "block description"
 msgid ""
@@ -2565,216 +2705,252 @@ msgid ""
 "margin."
 msgstr "文字サイズ,サブテキスト,アイコン,余白が設定できる見出しです。"
 
+#: dist/vk-blocks-pro/src/blocks/icon-outer/block.json
 #: src/blocks/icon-outer/block.json
 msgctxt "block title"
 msgid "Icon Outer"
 msgstr "横並びアイコン"
 
+#: dist/vk-blocks-pro/src/blocks/icon-outer/block.json
 #: src/blocks/icon-outer/block.json
 msgctxt "block description"
 msgid "Display the Font Awesome icons horizontally."
 msgstr "Font Awesome のアイコンフォントを横並びに表示します"
 
-#: src/blocks/icon/block.json
+#: dist/vk-blocks-pro/src/blocks/icon/block.json src/blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
 msgstr "アイコン"
 
-#: src/blocks/icon/block.json
+#: dist/vk-blocks-pro/src/blocks/icon/block.json src/blocks/icon/block.json
 msgctxt "block description"
 msgid "Display icons with Font Awesome."
 msgstr "Font Awesome のアイコンフォントを表示します"
 
+#: dist/vk-blocks-pro/src/blocks/page-content/block.json
 #: src/blocks/page-content/block.json
 msgctxt "block title"
 msgid "Page Content"
 msgstr "固定ページ本文"
 
+#: dist/vk-blocks-pro/src/blocks/page-content/block.json
 #: src/blocks/page-content/block.json
 msgctxt "block description"
 msgid "Displays the body content of the specified parent page."
 msgstr "指定した基準ページの本文内容を表示します。"
 
+#: dist/vk-blocks-pro/src/blocks/pr-blocks/block.json
 #: src/blocks/pr-blocks/block.json
 msgctxt "block title"
 msgid "PR Blocks"
 msgstr "PR ブロック"
 
+#: dist/vk-blocks-pro/src/blocks/pr-blocks/block.json
 #: src/blocks/pr-blocks/block.json
 msgctxt "block description"
 msgid "This is a PR block where you can place images and icon."
 msgstr "画像,アイコンの配置ができるPRブロックです。"
 
+#: dist/vk-blocks-pro/src/blocks/pr-content/block.json
 #: src/blocks/pr-content/block.json
 msgctxt "block title"
 msgid "PR Content"
 msgstr "PR Content"
 
+#: dist/vk-blocks-pro/src/blocks/pr-content/block.json
 #: src/blocks/pr-content/block.json
 msgctxt "block description"
 msgid ""
 "This is PR content where you can place images, headlines, text, and buttons."
 msgstr "画像,見出し,テキスト,ボタンが配置できるPRコンテンツです。"
 
-#: src/blocks/spacer/block.json
+#: dist/vk-blocks-pro/src/blocks/spacer/block.json src/blocks/spacer/block.json
 msgctxt "block title"
 msgid "Responsive Spacer"
 msgstr "レスポンシブスペーサー"
 
-#: src/blocks/spacer/block.json
+#: dist/vk-blocks-pro/src/blocks/spacer/block.json src/blocks/spacer/block.json
 msgctxt "block description"
 msgid "Use responsive spacers to get the margins right."
 msgstr "レスポンシブに対応したスペーサーで余白を適切に取ります。"
 
-#: src/blocks/staff/block.json
+#: dist/vk-blocks-pro/src/blocks/staff/block.json src/blocks/staff/block.json
 msgctxt "block title"
 msgid "Staff"
 msgstr "スタッフ"
 
-#: src/blocks/staff/block.json
+#: dist/vk-blocks-pro/src/blocks/staff/block.json src/blocks/staff/block.json
 msgctxt "block description"
 msgid ""
 "Used for staff introduction, company introduction, school introduction, "
 "menu, etc."
 msgstr "スタッフ紹介,会社紹介,スクール紹介,メニューなどで利用します。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/accordion-target/block.json
 #: src/blocks/_pro/accordion-target/block.json
 msgctxt "block title"
 msgid "Accordion Target"
 msgstr "アコーディオンタイトル"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/accordion-target/block.json
 #: src/blocks/_pro/accordion-target/block.json
 msgctxt "block description"
 msgid "This is the content area where you can add blocks freely."
 msgstr "コンテンツが長い時にコンテンツを折りたたんで隠して表示します。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/accordion-trigger/block.json
 #: src/blocks/_pro/accordion-trigger/block.json
 msgctxt "block title"
 msgid "Accordion Trigger"
 msgstr "アコーディオンコンテンツ"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/accordion-trigger/block.json
 #: src/blocks/_pro/accordion-trigger/block.json
 msgctxt "block description"
 msgid "This is the title area where you can freely add blocks."
 msgstr "自由にブロックを追加できるタイトルエリアです。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/accordion/block.json
 #: src/blocks/_pro/accordion/block.json
 msgctxt "block title"
 msgid "Accordion"
 msgstr "アコーディオン"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/accordion/block.json
 #: src/blocks/_pro/accordion/block.json
 msgctxt "block description"
 msgid "Collapses and hides content when the content is long."
 msgstr "自由にブロックを追加できるコンテンツエリアです。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/animation/block.json
 #: src/blocks/_pro/animation/block.json
 msgctxt "block title"
 msgid "Animation"
 msgstr "アニメーション"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/animation/block.json
 #: src/blocks/_pro/animation/block.json
 msgctxt "block description"
 msgid "Add animation to elements when scrolling the page."
 msgstr "ページをスクロールした時に要素に動きを加えます。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/button-outer/block.json
 #: src/blocks/_pro/button-outer/block.json
 msgctxt "block title"
 msgid "Button Outer"
 msgstr "横並びボタン"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/button-outer/block.json
 #: src/blocks/_pro/button-outer/block.json
 msgctxt "block description"
 msgid "Display the VK Button block horizontally."
 msgstr "VK ボタンブロックを横並びに表示します"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/card-item/block.json
 #: src/blocks/_pro/card-item/block.json
 msgctxt "block title"
 msgid "Card Item"
 msgstr "カードアイテム"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/card-item/block.json
 #: src/blocks/_pro/card-item/block.json
 msgctxt "block description"
 msgid "A single item in a card block."
 msgstr "アイコンカード内の１つのアイテムです。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/card/block.json
 #: src/blocks/_pro/card/block.json
 msgctxt "block title"
 msgid "Card"
 msgstr "カード"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/card/block.json
 #: src/blocks/_pro/card/block.json
 msgctxt "block description"
 msgid "A card where you can place images, headings, text, and links."
 msgstr "画像,見出し,テキスト,リンクが配置できるカードです。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/child-page/block.json
 #: src/blocks/_pro/child-page/block.json
 msgctxt "block title"
 msgid "Child page list"
 msgstr "子ページリスト"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/child-page/block.json
 #: src/blocks/_pro/child-page/block.json
 msgctxt "block description"
 msgid ""
 "When a parent page is specified, a list of its child pages will be displayed."
 msgstr "親となる固定ページを指定するとその子ページの一覧を表示します。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/grid-column-item/block.json
 #: src/blocks/_pro/grid-column-item/block.json
 msgctxt "block title"
 msgid "Grid Column Item"
 msgstr "グリッドカラムアイテム"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/grid-column-item/block.json
 #: src/blocks/_pro/grid-column-item/block.json
 msgctxt "block description"
 msgid "One item in a grit column block."
 msgstr "グリットカラムブロック内の1つのアイテムです。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/grid-column/block.json
 #: src/blocks/_pro/grid-column/block.json
 msgctxt "block title"
 msgid "Grid Column"
 msgstr "グリットカラム"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/grid-column/block.json
 #: src/blocks/_pro/grid-column/block.json
 msgctxt "block description"
 msgid "Set the number of columns to be displayed for each screen size."
 msgstr "画面サイズ毎にカラム数を設定して表示させます。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/icon-card-item/block.json
 #: src/blocks/_pro/icon-card-item/block.json
 msgctxt "block title"
 msgid "Icon Card Item"
 msgstr "アイコンカードアイテム"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/icon-card-item/block.json
 #: src/blocks/_pro/icon-card-item/block.json
 msgctxt "block description"
 msgid "This is one item in an icon card."
 msgstr "アイコンカード内の１つのアイテムです。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/icon-card/block.json
 #: src/blocks/_pro/icon-card/block.json
 msgctxt "block title"
 msgid "Icon Card"
 msgstr "アイコンカード"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/icon-card/block.json
 #: src/blocks/_pro/icon-card/block.json
 msgctxt "block description"
 msgid "Display card with icons, headings, text, and links."
 msgstr "アイコン,見出し,テキスト,リンクを設定してカードを表示します。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/outer/block.json
 #: src/blocks/_pro/outer/block.json
 msgctxt "block title"
 msgid "Outer"
 msgstr "Outer"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/outer/block.json
 #: src/blocks/_pro/outer/block.json
 msgctxt "block description"
 msgid ""
 "Set the background image, color, and border to show the layout and divisions."
 msgstr "背景の画像や色,枠線の設定しレイアウトや区切りを表示します。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/post-list/block.json
 #: src/blocks/_pro/post-list/block.json
 msgctxt "block title"
 msgid "Post list"
 msgstr "投稿リスト"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/post-list/block.json
 #: src/blocks/_pro/post-list/block.json
 msgctxt "block description"
 msgid ""
@@ -2782,42 +2958,50 @@ msgid ""
 "number of posts to display."
 msgstr "投稿タイプ,分類,表示件数が設定して投稿リストを表示します。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/select-post-list-item/block.json
 #: src/blocks/_pro/select-post-list-item/block.json
 msgctxt "block title"
 msgid "Selected Post List Item"
 msgstr "選択投稿リストアイテム"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/select-post-list-item/block.json
 #: src/blocks/_pro/select-post-list-item/block.json
 msgctxt "block description"
 msgid "A single item in the select post list."
 msgstr "選択投稿リスト内の１つのアイテムです。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/select-post-list/block.json
 #: src/blocks/_pro/select-post-list/block.json
 msgctxt "block title"
 msgid "Selected Post List"
 msgstr "選択投稿リスト"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/select-post-list/block.json
 #: src/blocks/_pro/select-post-list/block.json
 msgctxt "block description"
 msgid ""
 "Displays an arbitrarily specified page with the layout of the posting list."
 msgstr "任意に指定したページを投稿リストのレイアウトで表示します。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/slider-item/block.json
 #: src/blocks/_pro/slider-item/block.json
 msgctxt "block title"
 msgid "Slider Item"
 msgstr "スライダーアイテム"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/slider-item/block.json
 #: src/blocks/_pro/slider-item/block.json
 msgctxt "block description"
 msgid "This is one item in the slider."
 msgstr "スライダー内の１つのアイテムです。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/slider/block.json
 #: src/blocks/_pro/slider/block.json
 msgctxt "block title"
 msgid "Slider"
 msgstr "スライダー"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/slider/block.json
 #: src/blocks/_pro/slider/block.json
 msgctxt "block description"
 msgid ""
@@ -2827,31 +3011,37 @@ msgstr ""
 "様々なアイテムを配置できるスライダーです。編集画面では動かないので公開画面で"
 "プレビューしてください。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/step-item/block.json
 #: src/blocks/_pro/step-item/block.json
 msgctxt "block title"
 msgid "Step Item"
 msgstr "ステップ"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/step-item/block.json
 #: src/blocks/_pro/step-item/block.json
 msgctxt "block description"
 msgid "This element sets the icon, color, and style of the step mark."
 msgstr "ステップマークのアイコン、色、スタイルを設定する要素です。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/step/block.json
 #: src/blocks/_pro/step/block.json
 msgctxt "block title"
 msgid "Step"
 msgstr "ステップ要素"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/step/block.json
 #: src/blocks/_pro/step/block.json
 msgctxt "block description"
 msgid "Set and display step marks, which are useful when explaining the order."
 msgstr "順番を説明する時に便利でステップマークを設定し表示します。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/table-of-contents-new/block.json
 #: src/blocks/_pro/table-of-contents-new/block.json
 msgctxt "block title"
 msgid "Table of Contents"
 msgstr "目次"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/table-of-contents-new/block.json
 #: src/blocks/_pro/table-of-contents-new/block.json
 msgctxt "block description"
 msgid ""
@@ -2859,21 +3049,25 @@ msgid ""
 "headings when added."
 msgstr "追加すると見出しに合わせて自動で生成される目次です。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/timeline-item/block.json
 #: src/blocks/_pro/timeline-item/block.json
 msgctxt "block title"
 msgid "Timeline Item"
 msgstr "タイムライン要素"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/timeline-item/block.json
 #: src/blocks/_pro/timeline-item/block.json
 msgctxt "block description"
 msgid "This element sets the label, color, and style of the timeline."
 msgstr "タイムラインのラベル、色、スタイルを設定する要素です。"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/timeline/block.json
 #: src/blocks/_pro/timeline/block.json
 msgctxt "block title"
 msgid "Timeline"
 msgstr "タイムライン"
 
+#: dist/vk-blocks-pro/src/blocks/_pro/timeline/block.json
 #: src/blocks/_pro/timeline/block.json
 msgctxt "block description"
 msgid ""

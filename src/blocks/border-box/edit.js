@@ -40,14 +40,23 @@ export default function BorderBoxEdit(props) {
 		/>
 	);
 
+	// カラーパレットに対応
 	const wrapperClasses = classnames('vk_borderBox', {
 		[`vk_borderBox-color-${color}`]: !!color,
 		[`vk_borderBox-background-${bgColor}`]: !!bgColor,
 		[`has-text-color`]: !!borderColor,
 		[`has-${borderColor}-color`]: !!borderColor && !isHexColor(borderColor),
 	});
+	let wrapperStyle = {};
+	if (borderColor !== undefined && isHexColor(borderColor)) {
+		// custom color
+		wrapperStyle = {
+			color: `${borderColor}`,
+		};
+	}
 	const blockProps = useBlockProps({
 		className: classnames(wrapperClasses),
+		style: wrapperStyle,
 	});
 
 	//Defaultクラスを設定
@@ -56,56 +65,78 @@ export default function BorderBoxEdit(props) {
 			' is-style-vk_borderBox-style-solid-kado-tit-tab';
 	}
 
+	// 旧カラーを差し替え
+	const pre_colors = {
+		red: '#dc3545',
+		orange: '#ffa536',
+		blue: '#4267b2',
+		green: '#28a745',
+		black: '#222222',
+	};
+
+	if (color) {
+		// 旧カラーで color が指定されている場合
+		// hexカラーに置き換え
+		setAttributes({ borderColor: pre_colors[color] });
+		setAttributes({ color: '' });
+	} else if (
+		attributes.className &&
+		attributes.className.match(/vk_borderBox-color-\w*/)
+	) {
+		// 旧カラーで color がない場合(旧Default対応)
+		// className から vk_borderBox-color- を削除
+		// 文字列を空白文字を区切りとして配列化
+		const palletClasses = attributes.className.split(' ');
+
+		// preColorClass の値の要素を取り除き、空白文字を区切りとして join（結合）
+		const palletClass = palletClasses.filter((className) => {
+			return !className.match(/vk_borderBox-color-\w*/);
+		});
+
+		setAttributes({
+			className: classnames(palletClass),
+		});
+
+		// hexカラー(赤)に置き換え
+		setAttributes({ borderColor: pre_colors.red });
+	}
+
 	//枠パターン
-	let isWrapperBorder = false;
+	let isFill_title = false;
 	if (
 		-1 <
 			blockProps.className.indexOf(
-				'vk_borderBox-style-solid-kado-tit-onborder'
+				'is-style-vk_borderBox-style-solid-kado-tit-tab'
 			) ||
 		-1 <
 			blockProps.className.indexOf(
-				'vk_borderBox-style-solid-kado-tit-inner'
+				'is-style-vk_borderBox-style-solid-kado-tit-banner'
 			) ||
 		-1 <
 			blockProps.className.indexOf(
-				'vk_borderBox-style-solid-kado-iconFeature'
+				'is-style-vk_borderBox-style-solid-round-tit-tab'
 			)
 	) {
-		// 全体に枠線
-		isWrapperBorder = true;
-	}
-
-	// カラーパレットに対応
-	if (borderColor !== undefined) {
-		if (isHexColor(borderColor)) {
-			// custom color
-			blockProps.style = {
-				color: `${borderColor}`,
-			};
-		}
+		// タイトル背景塗り 白文字パターン
+		isFill_title = true;
 	}
 
 	// title背景
-	let titleClass = `vk_borderBox_title_container`;
+	const titleClasses = classnames('vk_borderBox_title_container', {
+		[`has-background`]: isFill_title && !!borderColor,
+		[`has-${borderColor}-background-color`]:
+			isFill_title && !!borderColor && !isHexColor(borderColor),
+	});
 	let titleStyle = {};
-	if (!isWrapperBorder && borderColor !== undefined) {
-		// 本文に枠線があるパターン
-		titleClass += ` has-background`;
-
-		if (isHexColor(borderColor)) {
-			// custom color
-			titleStyle = {
-				backgroundColor: `${borderColor}`,
-			};
-		} else {
-			// has style
-			titleClass += ` has-${borderColor}-background-color`;
-		}
+	if (isFill_title && borderColor !== undefined && isHexColor(borderColor)) {
+		// custom color
+		titleStyle = {
+			backgroundColor: `${borderColor}`,
+		};
 	}
 
 	// 直線 ピン角 アイコン
-	let iconClass = ``;
+	let iconClasses = ``;
 	let iconStyle = ``;
 	if (
 		-1 <
@@ -114,17 +145,15 @@ export default function BorderBoxEdit(props) {
 			) &&
 		!color
 	) {
-		iconClass = `vk_borderBox_icon_border`;
+		iconClasses = classnames('vk_borderBox_icon_border', {
+			[`has-background`]: !!borderColor,
+			[`has-${borderColor}-background-color`]:
+				!!borderColor && !isHexColor(borderColor),
+		});
 
-		if (borderColor !== undefined) {
-			iconClass += ` has-background`;
-			if (isHexColor(borderColor)) {
-				// custom color
-				iconStyle = `background-color: ${borderColor};`;
-			} else {
-				// has style
-				iconClass += ` has-${borderColor}-background-color`;
-			}
+		if (borderColor !== undefined && isHexColor(borderColor)) {
+			// custom color
+			iconStyle = `background-color: ${borderColor};`;
 		}
 	}
 
@@ -132,10 +161,10 @@ export default function BorderBoxEdit(props) {
 	let icon;
 	if (faIcon.indexOf('<i class="') === -1) {
 		icon = `<i class="${faIcon}"></i>`;
-	} else if (iconClass) {
-		// カラーパレット
+	} else if (iconClasses) {
+		// カラーパレットに対応
 		icon =
-			`<div class="${iconClass}" style="${iconStyle}">` +
+			`<div class="${classnames(iconClasses)}" style="${iconStyle}">` +
 			faIcon +
 			`</div>`;
 	} else {
@@ -206,7 +235,7 @@ export default function BorderBoxEdit(props) {
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
-				<div className={titleClass} style={titleStyle}>
+				<div className={classnames(titleClasses)} style={titleStyle}>
 					{ReactHtmlParser(icon)}
 					{title}
 				</div>

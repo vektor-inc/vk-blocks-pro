@@ -24,67 +24,67 @@ export default function save(props) {
 		/>
 	);
 
+	// カラーパレットに対応
 	const wrapperClasses = classnames('vk_borderBox', {
 		[`vk_borderBox-color-${color}`]: !!color,
 		[`vk_borderBox-background-${bgColor}`]: !!bgColor,
 		[`has-text-color`]: !!borderColor,
 		[`has-${borderColor}-color`]: !!borderColor && !isHexColor(borderColor),
 	});
-
+	let wrapperStyle = {};
+	if (borderColor !== undefined && isHexColor(borderColor)) {
+		// custom color
+		wrapperStyle = {
+			color: `${borderColor}`,
+		};
+	}
 	const blockProps = useBlockProps.save({
 		className: wrapperClasses,
+		style: wrapperStyle,
 	});
 
+	//Defaultクラスを設定
+	if (-1 === blockProps.className.indexOf('is-style-')) {
+		blockProps.className +=
+			' is-style-vk_borderBox-style-solid-kado-tit-tab';
+	}
+
 	//枠パターン
-	let isWrapperBorder = false;
+	let isFill_title = false;
 	if (
 		-1 <
 			blockProps.className.indexOf(
-				'vk_borderBox-style-solid-kado-tit-onborder'
+				'is-style-vk_borderBox-style-solid-kado-tit-tab'
 			) ||
 		-1 <
 			blockProps.className.indexOf(
-				'vk_borderBox-style-solid-kado-tit-inner'
+				'is-style-vk_borderBox-style-solid-kado-tit-banner'
 			) ||
 		-1 <
 			blockProps.className.indexOf(
-				'vk_borderBox-style-solid-kado-iconFeature'
+				'is-style-vk_borderBox-style-solid-round-tit-tab'
 			)
 	) {
-		// 全体に枠線
-		isWrapperBorder = true;
-	}
-
-	// カラーパレットに対応
-	if (borderColor !== undefined) {
-		if (isHexColor(borderColor)) {
-			// custom color
-			blockProps.style = {
-				color: `${borderColor}`,
-			};
-		}
+		// タイトル背景塗り 白文字パターン
+		isFill_title = true;
 	}
 
 	// title背景
-	let titleClass = `vk_borderBox_title_container`;
+	const titleClasses = classnames('vk_borderBox_title_container', {
+		[`has-background`]: isFill_title && !!borderColor,
+		[`has-${borderColor}-background-color`]:
+			isFill_title && !!borderColor && !isHexColor(borderColor),
+	});
 	let titleStyle = {};
-	if (!isWrapperBorder && borderColor !== undefined) {
-		// 本文に枠線があるパターン
-		titleClass += ` has-background`;
-
-		if (isHexColor(borderColor)) {
-			// custom color
-			titleStyle = {
-				backgroundColor: `${borderColor}`,
-			};
-		} else {
-			// has style
-			titleClass += ` has-${borderColor}-background-color`;
-		}
+	if (isFill_title && borderColor !== undefined && isHexColor(borderColor)) {
+		// custom color
+		titleStyle = {
+			backgroundColor: `${borderColor}`,
+		};
 	}
 
 	// 直線 ピン角 アイコン
-	let iconClass = ``;
+	let iconClasses = ``;
 	let iconStyle = ``;
 	if (
 		-1 <
@@ -93,17 +93,15 @@ export default function save(props) {
 			) &&
 		!color
 	) {
-		iconClass = `vk_borderBox_icon_border`;
+		iconClasses = classnames('vk_borderBox_icon_border', {
+			[`has-background`]: !!borderColor,
+			[`has-${borderColor}-background-color`]:
+				!!borderColor && !isHexColor(borderColor),
+		});
 
-		if (borderColor !== undefined) {
-			iconClass += ` has-background`;
-			if (isHexColor(borderColor)) {
-				// custom color
-				iconStyle = `background-color: ${borderColor};`;
-			} else {
-				// has style
-				iconClass += ` has-${borderColor}-background-color`;
-			}
+		if (borderColor !== undefined && isHexColor(borderColor)) {
+			// custom color
+			iconStyle = `background-color: ${borderColor};`;
 		}
 	}
 
@@ -111,10 +109,10 @@ export default function save(props) {
 	let icon;
 	if (faIcon.indexOf('<i class="') === -1) {
 		icon = `<i class="${faIcon}"></i>`;
-	} else if (iconClass) {
-		// カラーパレット
+	} else if (iconClasses) {
+		// カラーパレットに対応
 		icon =
-			`<div class="${iconClass}" style="${iconStyle}">` +
+			`<div class="${classnames(iconClasses)}" style="${iconStyle}">` +
 			faIcon +
 			`</div>`;
 	} else {
@@ -123,7 +121,7 @@ export default function save(props) {
 
 	return (
 		<div {...blockProps}>
-			<div className={titleClass} style={titleStyle}>
+			<div className={titleClasses} style={titleStyle}>
 				{ReactHtmlParser(icon)}
 				{title}
 			</div>

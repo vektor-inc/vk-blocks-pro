@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ fix ][ Border Box ] cope with custom color palette
+
 = 1.20.7 =
 [ Bug fix ][ Heading ] cope with custom color palette
 [ Bug fix ][ Heading ] Fix recovery

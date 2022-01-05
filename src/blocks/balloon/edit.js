@@ -116,12 +116,12 @@ export default function BalloonEdit(props) {
 	let triangleBorderColorAfterStyle = {};
 
 	// 後方互換 (カスタムカラー選択時 インラインcssをcontentとiconに分ける)
-	let colorStyle = {};
+	const colorStyle = {};
 	if (colorStyle) {
 		contentColorStyle = colorStyle;
 		iconImageColorStyle = colorStyle;
 	}
-	if ("background" in iconImageColorStyle) {
+	if ('background' in iconImageColorStyle) {
 		delete iconImageColorStyle.background;
 	}
 

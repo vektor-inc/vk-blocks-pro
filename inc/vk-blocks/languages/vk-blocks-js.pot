@@ -271,7 +271,7 @@ msgid "Text Color"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:110
-#: src/blocks/border-box/edit.js:221
+#: src/blocks/border-box/edit.js:201
 #: src/blocks/button/edit.js:390
 msgid "Background Color"
 msgstr ""
@@ -385,7 +385,7 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:135
 #: src/blocks/_pro/step-item/edit.js:72
-#: src/blocks/border-box/edit.js:244
+#: src/blocks/border-box/edit.js:224
 #: src/blocks/button/edit.js:418
 #: src/blocks/icon/edit.js:237
 #: src/blocks/pr-content/edit.js:196
@@ -886,7 +886,7 @@ msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:91
 #: src/blocks/_pro/timeline-item/edit.js:69
-#: src/blocks/border-box/edit.js:209
+#: src/blocks/border-box/edit.js:189
 #: src/blocks/button/edit.js:336
 #: src/blocks/icon/edit.js:256
 #: src/blocks/staff/edit.js:199
@@ -1106,13 +1106,13 @@ msgstr ""
 msgid "Please enter a title."
 msgstr ""
 
-#: src/blocks/border-box/edit.js:197
+#: src/blocks/border-box/edit.js:177
 #: src/blocks/icon-outer/edit.js:132
 #: src/blocks/icon/edit.js:121
 msgid "Margin"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:202
+#: src/blocks/border-box/edit.js:182
 msgid ""
 "The margin-top of the first element and the margin-bottom of the last "
 "element in the border block will be automatically set to 0.If you want to "
@@ -1120,20 +1120,20 @@ msgid ""
 "instead of margin."
 msgstr ""
 
-#: src/blocks/border-box/edit.js:212
+#: src/blocks/border-box/edit.js:192
 #: src/extensions/core/group/style.js:47
 msgid "Border Color"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:231
+#: src/blocks/border-box/edit.js:211
 msgid "Transparent"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:235
+#: src/blocks/border-box/edit.js:215
 msgid "White"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:241
+#: src/blocks/border-box/edit.js:221
 #: src/utils/font-awesome-new.js:14
 msgid "Icon"
 msgstr ""

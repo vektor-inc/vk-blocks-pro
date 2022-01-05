@@ -135,9 +135,8 @@ export default function BorderBoxEdit(props) {
 		};
 	}
 
-	// 直線 ピン角 アイコン
-	let iconClasses = ``;
-	let iconStyle = ``;
+	// アイコン
+	let icon;
 	if (
 		-1 <
 			blockProps.className.indexOf(
@@ -145,7 +144,9 @@ export default function BorderBoxEdit(props) {
 			) &&
 		!color
 	) {
-		iconClasses = classnames('vk_borderBox_icon_border', {
+		// 直線 ピン角 アイコン
+		let iconStyle = ``;
+		const iconClasses = classnames('vk_borderBox_icon_border', {
 			[`has-background`]: !!borderColor,
 			[`has-${borderColor}-background-color`]:
 				!!borderColor && !isHexColor(borderColor),
@@ -155,19 +156,17 @@ export default function BorderBoxEdit(props) {
 			// custom color
 			iconStyle = `background-color: ${borderColor};`;
 		}
-	}
 
-	//iタグでdeprecatedが効かなかったので追加。
-	let icon;
-	if (faIcon.indexOf('<i class="') === -1) {
+		// iタグ必須
+		icon = `<div class="${classnames(
+			iconClasses
+		)}" style="${iconStyle}">${faIcon}</div>`;
+	} else if (faIcon.indexOf('<i class="') === -1) {
+		//iタグでdeprecatedが効かなかったので追加。
+		// アイコンなし
 		icon = `<i class="${faIcon}"></i>`;
-	} else if (iconClasses) {
-		// カラーパレットに対応
-		icon =
-			`<div class="${classnames(iconClasses)}" style="${iconStyle}">` +
-			faIcon +
-			`</div>`;
 	} else {
+		// アイコンあり
 		icon = faIcon;
 	}
 

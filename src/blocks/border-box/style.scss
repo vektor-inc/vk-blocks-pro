@@ -230,13 +230,7 @@
 			border-radius: 50%;
 			border: solid 2px #fff;
 
-			& > .svg-inline--fa,
-			& > .fa,
-			& > .fab,
-			& > .fas,
-			& > .far,
-			& > .fal,
-			& > .fad {
+			& > i {	
 				position: absolute;
 				font-size: 1.3em;
 				top: 50%;

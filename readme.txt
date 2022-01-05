@@ -65,7 +65,7 @@ e.g.
 
 
 [ Add Function ][ Post-List (Pro) ] add date filtering
-
+[ Bug fix ][ Balloon ] Balloon icon background color when custom color is selected
 
 = 1.20.7 =
 [ Bug fix ][ Heading ] cope with custom color palette

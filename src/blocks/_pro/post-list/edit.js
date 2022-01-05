@@ -10,10 +10,9 @@ import {
 	TextControl,
 	FormTokenField,
 } from '@wordpress/components';
-import { useState } from '@wordpress/element';
+import { useState, useEffect } from '@wordpress/element';
 import ServerSideRender from '@wordpress/server-side-render';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
-
 // Load VK Blocks Utils
 import { usePostTypes, useTaxonomies } from '@vkblocks/utils/hooks';
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
@@ -24,17 +23,25 @@ import { ColumnLayoutControl } from '@vkblocks/components/column-layout-control'
 import { AdvancedCheckboxControl } from '@vkblocks/components/advanced-checkbox-control';
 
 export default function PostListEdit(props) {
-	const { attributes, setAttributes, name } = props;
+	const { attributes, setAttributes, name, clientId } = props;
 	const {
 		numberPosts,
 		isCheckedPostType,
 		isCheckedTerms,
 		offset,
+		targetPeriod,
 		order,
 		orderby,
 		selfIgnore,
 	} = attributes;
 	attributes.name = name;
+
+	// 以前の値を切り替え
+	useEffect(() => {
+		if (targetPeriod === undefined) {
+			setAttributes({ targetPeriod: 'all' });
+		}
+	}, [clientId]);
 
 	const [isCheckedTermsData, setIsCheckedTermsData] = useState(
 		JSON.parse(fixBrokenUnicode(isCheckedTerms))
@@ -222,6 +229,36 @@ export default function PostListEdit(props) {
 							}
 							min="1"
 							max="100"
+						/>
+					</BaseControl>
+					<BaseControl
+						label={__('Filter by Date', 'vk-blocks')}
+						id={`vk_postList-dateFilter`}
+					>
+						<SelectControl
+							label={__('Period of Time', 'vk-blocks')}
+							value={targetPeriod}
+							onChange={(value) =>
+								setAttributes({ targetPeriod: value })
+							}
+							options={[
+								{
+									value: 'all',
+									label: __('Whole Period', 'vk-blocks'),
+								},
+								{
+									value: 'from-today',
+									label: __('From Today', 'vk-blocks'),
+								},
+								{
+									value: 'from-now',
+									label: __('From Now', 'vk-blocks'),
+								},
+								{
+									value: 'from-tomorrow',
+									label: __('From Tomorrow', 'vk-blocks'),
+								},
+							]}
 						/>
 					</BaseControl>
 					<BaseControl

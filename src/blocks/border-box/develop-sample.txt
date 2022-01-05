@@ -1,0 +1,40 @@
+<!-- wp:vk-blocks/border-box {"faIcon":"\u003ci class=\u0022fas fa-check\u0022\u003e\u003c/i\u003e"} -->
+<div class="wp-block-vk-blocks-border-box vk_borderBox vk_borderBox-color-red vk_borderBox-background-transparent is-style-vk_borderBox-style-solid-kado-tit-tab"><div class="vk_borderBox_title_container"><i class="fas fa-check"></i><h4 class="vk_borderBox_title">見出し-1</h4></div><div class="vk_borderBox_body"><!-- wp:paragraph -->
+<p>直線 ピン角 タブ</p>
+<!-- /wp:paragraph --></div></div>
+<!-- /wp:vk-blocks/border-box -->
+
+<!-- wp:vk-blocks/border-box {"color":"orange","faIcon":"\u003ci class=\u0022fab fa-twitter\u0022\u003e\u003c/i\u003e","className":"is-style-vk_borderBox-style-solid-round-tit-tab"} -->
+<div class="wp-block-vk-blocks-border-box vk_borderBox vk_borderBox-color-orange vk_borderBox-background-transparent is-style-vk_borderBox-style-solid-round-tit-tab"><div class="vk_borderBox_title_container"><i class="fab fa-twitter"></i><h4 class="vk_borderBox_title">見出し-2</h4></div><div class="vk_borderBox_body"><!-- wp:paragraph -->
+<p>直線 角丸 タブ</p>
+<!-- /wp:paragraph --></div></div>
+<!-- /wp:vk-blocks/border-box -->
+
+<!-- wp:vk-blocks/border-box {"color":"blue","faIcon":"\u003ci class=\u0022fas fa-user\u0022\u003e\u003c/i\u003e","className":"is-style-vk_borderBox-style-solid-kado-tit-banner"} -->
+<div class="wp-block-vk-blocks-border-box vk_borderBox vk_borderBox-color-blue vk_borderBox-background-transparent is-style-vk_borderBox-style-solid-kado-tit-banner"><div class="vk_borderBox_title_container"><i class="fas fa-user"></i><h4 class="vk_borderBox_title">見出し-3</h4></div><div class="vk_borderBox_body"><!-- wp:paragraph -->
+<p>直線 ピン角 バナー</p>
+<!-- /wp:paragraph --></div></div>
+<!-- /wp:vk-blocks/border-box -->
+
+<!-- wp:vk-blocks/border-box {"color":"green","faIcon":"\u003ci class=\u0022fas fa-arrow-right\u0022\u003e\u003c/i\u003e","className":"is-style-vk_borderBox-style-solid-kado-tit-onborder"} -->
+<div class="wp-block-vk-blocks-border-box vk_borderBox vk_borderBox-color-green vk_borderBox-background-transparent is-style-vk_borderBox-style-solid-kado-tit-onborder"><div class="vk_borderBox_title_container"><i class="fas fa-arrow-right"></i><h4 class="vk_borderBox_title">見出し-4</h4></div><div class="vk_borderBox_body"><!-- wp:paragraph -->
+<p>直線 ピンカド 線上</p>
+<!-- /wp:paragraph --></div></div>
+<!-- /wp:vk-blocks/border-box -->
+
+<!-- wp:vk-blocks/border-box {"color":"black","faIcon":"\u003ci class=\u0022fas fa-info\u0022\u003e\u003c/i\u003e","className":"is-style-vk_borderBox-style-solid-kado-tit-inner"} -->
+<div class="wp-block-vk-blocks-border-box vk_borderBox vk_borderBox-color-black vk_borderBox-background-transparent is-style-vk_borderBox-style-solid-kado-tit-inner"><div class="vk_borderBox_title_container"><i class="fas fa-info"></i><h4 class="vk_borderBox_title">見出し-5</h4></div><div class="vk_borderBox_body"><!-- wp:paragraph -->
+<p>直線 ピン角 内側</p>
+<!-- /wp:paragraph --></div></div>
+<!-- /wp:vk-blocks/border-box -->
+
+<!-- wp:vk-blocks/border-box {"faIcon":"\u003ci class=\u0022fas fa-question\u0022\u003e\u003c/i\u003e","className":"is-style-vk_borderBox-style-solid-kado-iconFeature"} -->
+<div class="wp-block-vk-blocks-border-box vk_borderBox vk_borderBox-color-red vk_borderBox-background-transparent is-style-vk_borderBox-style-solid-kado-iconFeature"><div class="vk_borderBox_title_container"><i class="fas fa-question"></i><h4 class="vk_borderBox_title">見出し-6</h4></div><div class="vk_borderBox_body"><!-- wp:paragraph -->
+<p>直線 ピン角 アイコン</p>
+<!-- /wp:paragraph --></div></div>
+<!-- /wp:vk-blocks/border-box -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+

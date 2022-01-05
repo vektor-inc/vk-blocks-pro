@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button VK Button Block ( single ) 1`] = `
+"<!-- wp:vk-blocks/button {\\"blockId\\":\\"test-button\\"} -->
+<div class=\\"wp-block-vk-blocks-button vk_button vk_button-color-custom vk_button-align-left\\"><a class=\\"vk_button_link btn has-background has-vk-color-primary-background-color btn-md\\" role=\\"button\\" aria-pressed=\\"true\\" rel=\\"noopener\\"><span class=\\"vk_button_link_txt\\">VK ボタン</span></a></div>
+<!-- /wp:vk-blocks/button -->"
+`;

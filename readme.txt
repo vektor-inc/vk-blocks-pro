@@ -63,9 +63,9 @@ e.g.
 
 == Changelog ==
 
-
 [ Add Function ][ Post-List (Pro) ] add date filtering
-
+[ Bug fix ][ Group ] fix alert style custom color
+[ Bug fix ][ balloon ] fix icon image bgcolor
 
 = 1.20.7 =
 [ Bug fix ][ Heading ] cope with custom color palette

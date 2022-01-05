@@ -114,6 +114,17 @@ export default function BalloonEdit(props) {
 	let triangleBorderColorAfterClass = '';
 	let triangleBorderColorBeforeStyle = {};
 	let triangleBorderColorAfterStyle = {};
+
+	// 後方互換 (カスタムカラー選択時 インラインcssをcontentとiconに分ける)
+	let colorStyle = {};
+	if (colorStyle) {
+		contentColorStyle = colorStyle;
+		iconImageColorStyle = colorStyle;
+	}
+	if ("background" in iconImageColorStyle) {
+		delete iconImageColorStyle.background;
+	}
+
 	//吹き出しに枠線を追加オン
 	if (balloonBorder === true) {
 		BorderSetting = (

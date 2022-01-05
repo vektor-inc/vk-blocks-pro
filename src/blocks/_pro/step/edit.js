@@ -14,9 +14,8 @@ export default function StepEdit({ attributes, setAttributes, clientId }) {
 	const containerClass = ' vk_step';
 	const ALLOWED_BLOCKS = ['vk-blocks/step-item'];
 	const TEMPLATE = [['vk-blocks/step-item']];
-
-	const currentInnerBlocks = asyncGetInnerBlocks(clientId);
 	const { updateBlockAttributes } = dispatch('core/block-editor');
+	const currentInnerBlocks = asyncGetInnerBlocks(clientId);
 
 	useEffect(() => {
 		currentInnerBlocks.forEach(function (block, index) {

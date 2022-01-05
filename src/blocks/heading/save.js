@@ -1,6 +1,8 @@
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
 import ReactHtmlParser from 'react-html-parser';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import classnames from 'classnames';
 
 const renderTitle = (level, contents, tStyle, headingStyle) => {
 	switch (level) {
@@ -71,9 +73,24 @@ export default function save(props) {
 				: undefined,
 	};
 
+	let headingColorClassName = '';
+	if (titleColor !== undefined) {
+		headingColorClassName += `has-text-color`;
+		if (!isHexColor(titleColor)) {
+			headingColorClassName += ` has-${titleColor}-color`;
+		}
+	}
+
+	const headingStyle = classnames('vk_heading_title', {
+		[`vk_heading_title-style-${titleStyle}`]: !!titleStyle,
+		[`${headingColorClassName}`]: !!headingColorClassName,
+	});
+
 	const tStyle = {
 		color:
-			titleColor !== null && titleColor !== undefined
+			titleColor !== null &&
+			titleColor !== undefined &&
+			isHexColor(titleColor)
 				? titleColor
 				: undefined,
 		fontSize:
@@ -87,10 +104,24 @@ export default function save(props) {
 		textAlign: align !== null && align !== undefined ? align : undefined,
 	};
 
-	const headingStyle = `vk_heading_title vk_heading_title-style-${titleStyle}`;
+	let subTextColorClassName = '';
+	if (subTextColor !== undefined) {
+		subTextColorClassName += `has-text-color`;
+		if (!isHexColor(subTextColor)) {
+			subTextColorClassName += ` has-${subTextColor}-color`;
+		}
+	}
+
+	const subTextClass = classnames('vk_heading_subtext', {
+		[`vk_heading_subtext-style-${titleStyle}`]: !!titleStyle,
+		[`${subTextColorClassName}`]: !!subTextColorClassName,
+	});
+
 	const subTextStyle = {
 		color:
-			subTextColor !== null && subTextColor !== undefined
+			subTextColor !== null &&
+			subTextColor !== undefined &&
+			isHexColor(subTextColor)
 				? subTextColor
 				: undefined,
 		fontSize:
@@ -99,27 +130,52 @@ export default function save(props) {
 				: undefined,
 		textAlign: align !== null && align !== undefined ? align : undefined,
 	};
-	const subTextClass = `vk_heading_subtext vk_heading_subtext-style-${titleStyle}`;
 
-	let iconBefore = '';
-	let iconAfter = '';
-	const fontAwesomeIconStyle = fontAwesomeIconColor
-		? `style="color:${fontAwesomeIconColor};"`
-		: '';
-	if (fontAwesomeIconBefore) {
-		//add inline css
-		const faIconFragmentBefore = fontAwesomeIconBefore.split('<i');
+	let iconColorClassName = '';
+	if (fontAwesomeIconColor !== undefined) {
+		iconColorClassName += `has-text-color`;
+		if (!isHexColor(fontAwesomeIconColor)) {
+			iconColorClassName += ` has-${fontAwesomeIconColor}-color`;
+		}
+	}
+
+	const fontAwesomeIconStyle =
+		fontAwesomeIconColor && isHexColor(fontAwesomeIconColor)
+			? `style="color:${fontAwesomeIconColor};"`
+			: '';
+
+	let iconBefore = fontAwesomeIconBefore;
+	let iconAfter = fontAwesomeIconAfter;
+	//add class
+	if (iconBefore && iconColorClassName) {
+		const faIconFragmentBefore = iconBefore.split('<i class="');
+		faIconFragmentBefore[0] =
+			faIconFragmentBefore[0] + `<i class="${iconColorClassName} `;
+		iconBefore = faIconFragmentBefore.join('');
+	}
+
+	if (iconAfter && iconColorClassName) {
+		const faIconFragmentAfter = iconAfter.split('<i class="');
+		faIconFragmentAfter[0] =
+			faIconFragmentAfter[0] + `<i class="${iconColorClassName} `;
+		iconAfter = faIconFragmentAfter.join('');
+	}
+
+	//add inline css
+	if (iconBefore && fontAwesomeIconStyle) {
+		const faIconFragmentBefore = iconBefore.split('<i');
 		faIconFragmentBefore[0] =
 			faIconFragmentBefore[0] + `<i ${fontAwesomeIconStyle} `;
 		iconBefore = faIconFragmentBefore.join('');
 	}
-	if (fontAwesomeIconAfter) {
-		//add class and inline css
-		const faIconFragmentAfter = fontAwesomeIconAfter.split('<i');
+
+	if (iconAfter && fontAwesomeIconStyle) {
+		const faIconFragmentAfter = iconAfter.split('<i');
 		faIconFragmentAfter[0] =
 			faIconFragmentAfter[0] + `<i ${fontAwesomeIconStyle} `;
 		iconAfter = faIconFragmentAfter.join('');
 	}
+
 	const titleContent = (
 		<>
 			{ReactHtmlParser(iconBefore)}

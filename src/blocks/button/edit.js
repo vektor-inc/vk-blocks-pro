@@ -171,15 +171,8 @@ export default function ButtonEdit(props) {
 							)}
 						</li>
 					</ul>
-					<TextControl
-						label={__('Sub Caption', 'vk-blocks')}
-						value={subCaption}
-						className={`mt-0 mb-3`}
-						onChange={(value) =>
-							setAttributes({ subCaption: value })
-						}
-						placeholder={'Sub Caption'}
-					/>
+
+					<hr />
 
 					<TextControl
 						label={__('Button URL', 'vk-blocks')}
@@ -197,6 +190,16 @@ export default function ButtonEdit(props) {
 						onChange={(checked) =>
 							setAttributes({ buttonTarget: checked })
 						}
+					/>
+
+					<TextControl
+						label={__('Sub Caption', 'vk-blocks')}
+						value={subCaption}
+						className={`mt-0 mb-3`}
+						onChange={(value) =>
+							setAttributes({ subCaption: value })
+						}
+						placeholder={'Sub Caption'}
 					/>
 
 					<h4 className={`mt-0 mb-2`}>

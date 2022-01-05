@@ -207,6 +207,9 @@ gulp.task('dist', (done) => {
 			'./*.txt',
 			'./*.png',
 			'./*.php',
+			'!./tests/**',
+			'!./dist/**',
+			'!./node_modules/**',
 		],
 		{ base: './' }
 	).pipe(gulp.dest('dist/vk-blocks-pro')); // distディレクトリに出力

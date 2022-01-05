@@ -9,9 +9,10 @@ import {
 	InnerBlocks,
 	useBlockProps,
 	InspectorControls,
-	ColorPalette,
 } from '@wordpress/block-editor';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 
 export default function GridColumnItemEdit(props) {
 	const { attributes, setAttributes } = props;
@@ -45,11 +46,15 @@ export default function GridColumnItemEdit(props) {
 	}
 	const columStyle = {
 		color:
-			textColor !== null && textColor !== undefined
+			textColor !== null &&
+			textColor !== undefined &&
+			isHexColor(textColor)
 				? textColor
 				: undefined,
 		background:
-			backgroundColor !== null && backgroundColor !== undefined
+			backgroundColor !== null &&
+			backgroundColor !== undefined &&
+			isHexColor(backgroundColor)
 				? backgroundColor
 				: undefined,
 		paddingTop:
@@ -70,6 +75,22 @@ export default function GridColumnItemEdit(props) {
 				: undefined,
 	};
 
+	let vkGridColumnTextColorClassName = '';
+	if (textColor !== undefined) {
+		vkGridColumnTextColorClassName += ` has-text-color`;
+		if (!isHexColor(textColor)) {
+			vkGridColumnTextColorClassName += ` has-${textColor}-color`;
+		}
+	}
+
+	let vkGridColumnbackgroundColorColorClassName = '';
+	if (backgroundColor !== undefined) {
+		vkGridColumnbackgroundColorColorClassName += ` has-background-color`;
+		if (!isHexColor(backgroundColor)) {
+			vkGridColumnbackgroundColorColorClassName += ` has-${backgroundColor}-background-color`;
+		}
+	}
+
 	const blockProps = useBlockProps({
 		className: `vk_gridColumn_item ${columnClass}`,
 		style,
@@ -83,22 +104,15 @@ export default function GridColumnItemEdit(props) {
 						label={__('Text Color', 'vk-blocks')}
 						id={`vk_grid_column_text_color`}
 					>
-						<ColorPalette
-							value={textColor}
-							onChange={(value) =>
-								setAttributes({ textColor: value })
-							}
-						/>
+						<AdvancedColorPalette schema={'textColor'} {...props} />
 					</BaseControl>
 					<BaseControl
 						label={__('Background Color', 'vk-blocks')}
 						id={`vk_grid_column_bg_color`}
 					>
-						<ColorPalette
-							value={backgroundColor}
-							onChange={(value) =>
-								setAttributes({ backgroundColor: value })
-							}
+						<AdvancedColorPalette
+							schema={'backgroundColor'}
+							{...props}
 						/>
 					</BaseControl>
 				</PanelBody>
@@ -181,8 +195,8 @@ export default function GridColumnItemEdit(props) {
 			<div {...blockProps}>
 				{(() => {
 					if (
-						columStyle.color !== undefined ||
-						columStyle.background !== undefined ||
+						textColor !== undefined ||
+						backgroundColor !== undefined ||
 						columStyle.paddingTop !== undefined ||
 						columStyle.paddingRight !== undefined ||
 						columStyle.paddingBottom !== undefined ||
@@ -190,7 +204,7 @@ export default function GridColumnItemEdit(props) {
 					) {
 						return (
 							<div
-								className="vk_gridColumn_item_inner"
+								className={`vk_gridColumn_item_inner ${vkGridColumnTextColorClassName} ${vkGridColumnbackgroundColorColorClassName}`}
 								style={columStyle}
 							>
 								<InnerBlocks />

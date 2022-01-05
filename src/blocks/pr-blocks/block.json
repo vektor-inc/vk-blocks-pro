@@ -93,20 +93,16 @@
 			"default": "<i class=\"fas fa-file\"></i>"
 		},
 		"color1":{
-			"type": "string",
-			"default": "#0693e3"
+			"type": "string"
 		},
 		"color2":{
-			"type": "string",
-			"default": "#0693e3"
+			"type": "string"
 		},
 		"color3":{
-			"type": "string",
-			"default": "#0693e3"
+			"type": "string"
 		},
 		"color4":{
-			"type": "string",
-			"default": "#0693e3"
+			"type": "string"
 		},
 		"bgType1": {
 			"type": "string",

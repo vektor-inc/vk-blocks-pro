@@ -30,12 +30,10 @@
 			"default": "thin"
 		},
 		"balloonBorderColor": {
-			"type": "string",
-			"default": "#cccccc"
+			"type": "string"
 		},
 		"balloonBgColor": {
-			"type": "string",
-			"default": "#f5f5f5"
+			"type": "string"
 		},
 		"balloonAlign": {
 			"type": "string",

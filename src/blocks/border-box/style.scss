@@ -46,9 +46,9 @@
 		&.is-style-vk_borderBox-style-solid-kado-tit-onborder.vk_borderBox {
 			background-color: transparent;
 		}
-		&.is-style-vk_borderBox-style-solid-kado-tit-onborder .vk_borderBox_title_container,
-		&.is-style-vk_borderBox-style-solid-kado-tit-inner .vk_borderBox_title_container,
-		&.is-style-vk_borderBox-style-solid-kado-iconFeature .vk_borderBox_title_container {
+		&.is-style-vk_borderBox-style-solid-kado-tit-onborder > .vk_borderBox_title_container,
+		&.is-style-vk_borderBox-style-solid-kado-tit-inner > .vk_borderBox_title_container,
+		&.is-style-vk_borderBox-style-solid-kado-iconFeature >.vk_borderBox_title_container {
 			background-color: transparent;
 		}
 	}
@@ -59,9 +59,9 @@
 		&.is-style-vk_borderBox-style-solid-kado-tit-onborder.vk_borderBox {
 			background-color:  #fff;
 		}
-		&.is-style-vk_borderBox-style-solid-kado-tit-onborder .vk_borderBox_title_container,
-		&.is-style-vk_borderBox-style-solid-kado-tit-inner .vk_borderBox_title_container,
-		&.is-style-vk_borderBox-style-solid-kado-iconFeature .vk_borderBox_title_container {
+		&.is-style-vk_borderBox-style-solid-kado-tit-onborder > .vk_borderBox_title_container,
+		&.is-style-vk_borderBox-style-solid-kado-tit-inner > .vk_borderBox_title_container,
+		&.is-style-vk_borderBox-style-solid-kado-iconFeature > .vk_borderBox_title_container {
 			background-color: #fff;
 		}
 	}
@@ -131,7 +131,7 @@
 		&.is-style-vk_borderBox-style-solid-kado-tit-tab,
 		&.is-style-vk_borderBox-style-solid-round-tit-tab,
 		&.is-style-vk_borderBox-style-solid-kado-tit-banner {
-			.vk_borderBox_title_container:not(.has-background) {
+			> .vk_borderBox_title_container:not(.has-background) {
 				background-color: #337ab7;
 			}
 		}
@@ -148,15 +148,15 @@
 .vk_borderBox {
 	&.is-style-vk_borderBox-style-solid-kado-tit-tab,
 	&.is-style-vk_borderBox-style-solid-round-tit-tab {
-		.vk_borderBox_title_container {
+		> .vk_borderBox_title_container {
 			display: inline-block;
 		}
 	}
 	&.is-style-vk_borderBox-style-solid-round-tit-tab {
-		.vk_borderBox_title_container {
+		>.vk_borderBox_title_container {
 			border-radius: 8px 8px 0 0;
 		}
-		.vk_borderBox_body {
+		> .vk_borderBox_body {
 			border-radius: 0 8px 8px 8px;
 		}
 	}
@@ -167,10 +167,10 @@
 		border-width: 2px;
 		border-style: solid;
 
-		.vk_borderBox_title_container {
+		> .vk_borderBox_title_container {
 			padding: 1.5em 1.5em 1em;
 		}
-		.vk_borderBox_body {
+		> .vk_borderBox_body {
 			// background-color: transparent;
 			border: none;
 			padding-top: 0;
@@ -213,40 +213,40 @@
 			}
 		}
 
-		.vk_borderBox_title_container {
+		> .vk_borderBox_title_container {
 			position: relative;
 			padding-top: 2.2em;
-		}
 
-		.vk_borderBox_icon_border {
-			position: absolute;
-			margin-right: 0;
-			top: 0;
-			left: 3em;
-			padding: 1.4em;
-			transform: translate(-50%, -50%);
-			-webkit-transform: translate(-50%, -50%);
-			-ms-transform: translate(-50%, -50%);
-			border-radius: 50%;
-			border: solid 2px #fff;
-
-			& > i {	
+			> .vk_borderBox_icon_border {
 				position: absolute;
-				font-size: 1.3em;
-				top: 50%;
-				left: 50%;
-				-webkit-transform: translateY(-50%) translateX(-50%);
-				transform: translateY(-50%) translateX(-50%);
-				color: #FFF;
-			}
+				margin-right: 0;
+				top: 0;
+				left: 3em;
+				padding: 1.4em;
+				transform: translate(-50%, -50%);
+				-webkit-transform: translate(-50%, -50%);
+				-ms-transform: translate(-50%, -50%);
+				border-radius: 50%;
+				border: solid 2px #fff;
 
-			&:not(.has-background){
-				background-color: #337ab7;
+				& > i {	
+					position: absolute;
+					font-size: 1.3em;
+					top: 50%;
+					left: 50%;
+					-webkit-transform: translateY(-50%) translateX(-50%);
+					transform: translateY(-50%) translateX(-50%);
+					color: #FFF;
+				}
+
+				&:not(.has-background){
+					background-color: #337ab7;
+				}
 			}
 		}
 	}
 	&.is-style-vk_borderBox-style-solid-kado-tit-onborder {
-		.vk_borderBox_title_container {
+		> .vk_borderBox_title_container {
 			position: relative;
 			top: -1.2em;
 			left: 1em;
@@ -275,7 +275,7 @@
 .is-style-vk_borderBox-style-solid-kado-tit-tab,
 .is-style-vk_borderBox-style-solid-kado-tit-banner,
 .is-style-vk_borderBox-style-solid-round-tit-tab {
-	.vk_borderBox_title_container {
+	> .vk_borderBox_title_container {
 		color: #fff;
 	}
 	&.vk_borderBox-color-red {

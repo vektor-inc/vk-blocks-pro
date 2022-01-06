@@ -260,6 +260,7 @@ export default function PostListEdit(props) {
 								},
 							]}
 						/>
+						<p>* {__('If you choose a future period, you will need to customize it so that future posts will be published immediately.', 'vk-blocks')}</p>
 					</BaseControl>
 					<BaseControl
 						label={__('Order', 'vk-blocks')}

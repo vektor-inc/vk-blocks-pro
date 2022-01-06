@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2021-12-30T11:23:09+00:00\n"
-"PO-Revision-Date: 2021-12-30 20:28+0900\n"
+"POT-Creation-Date: 2022-01-06T01:47:28+00:00\n"
+"PO-Revision-Date: 2022-01-06 10:53+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -64,7 +64,7 @@ msgid "Short"
 msgstr "短い"
 
 #: src/blocks/_pro/animation/edit.js:123 src/blocks/_pro/outer/edit.js:303
-#: src/blocks/_pro/slider/edit.js:193 src/blocks/balloon/edit.js:464
+#: src/blocks/_pro/slider/edit.js:193 src/blocks/balloon/edit.js:483
 #: src/blocks/button/edit.js:223 src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:21
 #: src/extensions/common/inline-font-size/index.js:56
@@ -111,15 +111,15 @@ msgstr "上下"
 msgid "Trembling Y"
 msgstr "ぶるぶる（Y方向）"
 
-#: src/blocks/_pro/animation/edit.js:73 src/blocks/balloon/edit.js:532
+#: src/blocks/_pro/animation/edit.js:73 src/blocks/balloon/edit.js:551
 msgid "Trembling X"
 msgstr "ぶるぶる（X方向）"
 
-#: src/blocks/_pro/animation/edit.js:77 src/blocks/balloon/edit.js:536
+#: src/blocks/_pro/animation/edit.js:77 src/blocks/balloon/edit.js:555
 msgid "Pounding"
 msgstr "どきどき"
 
-#: src/blocks/_pro/animation/edit.js:81 src/blocks/balloon/edit.js:540
+#: src/blocks/_pro/animation/edit.js:81 src/blocks/balloon/edit.js:559
 msgid "Shaking"
 msgstr "ゆらゆら"
 
@@ -156,7 +156,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:206
 #: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:210
 #: src/blocks/_pro/card-item/edit.js:182 src/blocks/_pro/card/edit.js:121
-#: src/blocks/_pro/icon-card/edit.js:72 src/blocks/_pro/post-list/edit.js:301
+#: src/blocks/_pro/icon-card/edit.js:72 src/blocks/_pro/post-list/edit.js:302
 msgid "Title"
 msgstr "タイトル"
 
@@ -166,7 +166,7 @@ msgstr "タイトル"
 #: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:80
 #: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:82
 #: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:86
-#: src/blocks/_pro/card-item/edit.js:88 src/blocks/balloon/edit.js:565
+#: src/blocks/_pro/card-item/edit.js:88 src/blocks/balloon/edit.js:584
 #: src/blocks/flow/edit.js:84 src/blocks/pr-blocks/edit.js:86
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:130
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:112
@@ -266,7 +266,7 @@ msgstr "表示条件"
 msgid "Parent"
 msgstr "親ページ"
 
-#: src/blocks/_pro/child-page/edit.js:82 src/blocks/_pro/post-list/edit.js:325
+#: src/blocks/_pro/child-page/edit.js:82 src/blocks/_pro/post-list/edit.js:326
 msgid "Ignore this post"
 msgstr "この投稿を除く"
 
@@ -524,7 +524,7 @@ msgstr ""
 msgid "Divider Setting"
 msgstr "区切りの設定"
 
-#: src/blocks/_pro/outer/edit.js:389 src/blocks/balloon/edit.js:424
+#: src/blocks/_pro/outer/edit.js:389 src/blocks/balloon/edit.js:443
 msgid "Type"
 msgstr "タイプ"
 
@@ -565,7 +565,7 @@ msgid "Border type"
 msgstr "枠線の種類"
 
 #: src/blocks/_pro/outer/edit.js:485 src/blocks/_pro/step-item/edit.js:126
-#: src/blocks/_pro/timeline-item/edit.js:104 src/blocks/balloon/edit.js:524
+#: src/blocks/_pro/timeline-item/edit.js:104 src/blocks/balloon/edit.js:543
 #: src/blocks/staff/edit.js:177
 msgid "None"
 msgstr "なし"
@@ -664,51 +664,59 @@ msgstr "日付で絞り込み"
 msgid "Period of Time"
 msgstr "期間"
 
-#: src/blocks/_pro/post-list/edit.js:247
+#: src/blocks/_pro/post-list/edit.js:244
+msgid ""
+"If you choose a future period, you will need to customize it so that future "
+"posts will be published immediately."
+msgstr ""
+"未来の期間を選択する場合は、未来の投稿が即時公開になるように別途カスタマイズ"
+"が必要です。"
+
+#: src/blocks/_pro/post-list/edit.js:248
 msgid "Whole Period"
 msgstr "全期間"
 
-#: src/blocks/_pro/post-list/edit.js:251
+#: src/blocks/_pro/post-list/edit.js:252
 msgid "From Today"
 msgstr "今日以降"
 
-#: src/blocks/_pro/post-list/edit.js:255
+#: src/blocks/_pro/post-list/edit.js:256
 msgid "From Now"
 msgstr "現在以降"
 
-#: src/blocks/_pro/post-list/edit.js:259
+#: src/blocks/_pro/post-list/edit.js:260
 msgid "From Tomorrow"
 msgstr "明日以降"
 
-#: src/blocks/_pro/post-list/edit.js:265
+#: src/blocks/_pro/post-list/edit.js:266
 msgid "Order"
 msgstr "表示順"
 
-#: src/blocks/_pro/post-list/edit.js:274
+#: src/blocks/_pro/post-list/edit.js:275
 msgid "ASC"
 msgstr "昇順"
 
-#: src/blocks/_pro/post-list/edit.js:278
+#: src/blocks/_pro/post-list/edit.js:279
 msgid "DESC"
 msgstr "降順"
 
-#: src/blocks/_pro/post-list/edit.js:284
+#: src/blocks/_pro/post-list/edit.js:285
 msgid "Order by"
 msgstr "表示順"
 
-#: src/blocks/_pro/post-list/edit.js:293
+#: src/blocks/_pro/post-list/edit.js:294
 msgid "Published Date"
 msgstr "公開日"
 
-#: src/blocks/_pro/post-list/edit.js:297
+#: src/blocks/_pro/post-list/edit.js:298
 msgid "Modefied Date"
 msgstr "更新日"
 
-#: src/blocks/_pro/post-list/edit.js:305
+#: src/blocks/_pro/post-list/edit.js:306
 msgid "Random"
 msgstr "ランダム"
 
-#: src/blocks/_pro/post-list/edit.js:311
+#: src/blocks/_pro/post-list/edit.js:312
 msgid "offset"
 msgstr "オフセット数"
 
@@ -954,105 +962,105 @@ msgstr "Warning"
 msgid "Danger"
 msgstr "Danger"
 
-#: src/blocks/balloon/edit.js:132
+#: src/blocks/balloon/edit.js:144
 msgid " Image Border"
 msgstr "画像の線"
 
-#: src/blocks/balloon/edit.js:135
+#: src/blocks/balloon/edit.js:147
 msgid "Add border to image"
 msgstr "画像に枠線を追加する"
 
-#: src/blocks/balloon/edit.js:143
+#: src/blocks/balloon/edit.js:155
 msgid "* You can change border width on Setting > VK Blocks"
 msgstr "* 線の太さは 管理画面の 設定 > VK Blocks から選択する事ができます。"
 
-#: src/blocks/balloon/edit.js:150
+#: src/blocks/balloon/edit.js:162
 msgid "Border color of speech balloon"
 msgstr "吹き出しの線の色"
 
-#: src/blocks/balloon/edit.js:300 src/extensions/core/image/style.js:15
+#: src/blocks/balloon/edit.js:319 src/extensions/core/image/style.js:15
 #: src/extensions/core/table/style.js:12
 msgid "Border"
 msgstr "枠線"
 
-#: src/blocks/balloon/edit.js:303
+#: src/blocks/balloon/edit.js:322
 msgid "Add border to balloon"
 msgstr "吹き出しに枠線を追加する"
 
-#: src/blocks/balloon/edit.js:388
+#: src/blocks/balloon/edit.js:407
 msgid "Balloon setting"
 msgstr "吹き出しブロック設定"
 
-#: src/blocks/balloon/edit.js:390 src/blocks/heading/edit.js:384
+#: src/blocks/balloon/edit.js:409 src/blocks/heading/edit.js:384
 msgid "Position"
 msgstr "位置"
 
-#: src/blocks/balloon/edit.js:393
+#: src/blocks/balloon/edit.js:412
 msgid "Please specify the layout of the balloon."
 msgstr "吹き出しの配置を指定してください。"
 
-#: src/blocks/balloon/edit.js:407 src/blocks/button/edit.js:247
+#: src/blocks/balloon/edit.js:426 src/blocks/button/edit.js:247
 #: src/blocks/pr-content/edit.js:233
 #: src/components/display-items-control/index.js:121
 msgid "Left"
 msgstr "左"
 
-#: src/blocks/balloon/edit.js:419 src/blocks/button/edit.js:267
+#: src/blocks/balloon/edit.js:438 src/blocks/button/edit.js:267
 #: src/blocks/pr-content/edit.js:232
 #: src/components/display-items-control/index.js:129
 msgid "Right"
 msgstr "右"
 
-#: src/blocks/balloon/edit.js:427
+#: src/blocks/balloon/edit.js:446
 msgid "Please select the type of balloon."
 msgstr "吹き出しのタイプを指定してください。"
 
-#: src/blocks/balloon/edit.js:438
+#: src/blocks/balloon/edit.js:457
 msgid "Speech"
 msgstr "吹き出し"
 
-#: src/blocks/balloon/edit.js:448
+#: src/blocks/balloon/edit.js:467
 msgid "Thinking"
 msgstr "もくもく"
 
-#: src/blocks/balloon/edit.js:453
+#: src/blocks/balloon/edit.js:472
 msgid "Image Style"
 msgstr "画像スタイル"
 
-#: src/blocks/balloon/edit.js:474
+#: src/blocks/balloon/edit.js:493
 msgid "Rounded"
 msgstr "角丸２"
 
-#: src/blocks/balloon/edit.js:484
+#: src/blocks/balloon/edit.js:503
 msgid "Circle"
 msgstr "丸抜き"
 
-#: src/blocks/balloon/edit.js:491
+#: src/blocks/balloon/edit.js:510
 msgid "Background color of speech balloon"
 msgstr "吹き出しの背景色"
 
-#: src/blocks/balloon/edit.js:498
+#: src/blocks/balloon/edit.js:517
 msgid "Default Icon Setting"
 msgstr "デフォルトアイコン設定"
 
-#: src/blocks/balloon/edit.js:503
+#: src/blocks/balloon/edit.js:522
 msgid "You can register default icons from Settings > VK Blocks in Admin."
 msgstr ""
 "管理画面の 設定 > VK Blocks から よく使うアイコンを登録する事ができます。"
 
-#: src/blocks/balloon/edit.js:509
+#: src/blocks/balloon/edit.js:528
 msgid "Animation setting"
 msgstr "アニメーション設定"
 
-#: src/blocks/balloon/edit.js:511
+#: src/blocks/balloon/edit.js:530
 msgid "Please select the type of animation."
 msgstr "アニメーションのタイプを指定してください。"
 
-#: src/blocks/balloon/edit.js:528
+#: src/blocks/balloon/edit.js:547
 msgid "Trembling"
 msgstr "ぶるぶる"
 
-#: src/blocks/balloon/edit.js:571 src/blocks/pr-blocks/edit.js:80
+#: src/blocks/balloon/edit.js:590 src/blocks/pr-blocks/edit.js:80
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:135
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:117
 #: src/blocks/pr-content/deprecated/0.0.2/save.js:214
@@ -1067,7 +1075,7 @@ msgstr "ぶるぶる"
 msgid "Upload image"
 msgstr "画像をアップロード"
 
-#: src/blocks/balloon/edit.js:584
+#: src/blocks/balloon/edit.js:603
 msgid "Icon Name"
 msgstr "アイコンの名前"
 

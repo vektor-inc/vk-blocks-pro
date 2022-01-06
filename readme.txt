@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
 Tested up to: 5.8.2
-Stable tag: 1.20.7
+Stable tag: 1.21.0
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,15 +63,20 @@ e.g.
 
 == Changelog ==
 
+= 1.21.0 =
+[ Add Function ][ Post-List (Pro) ] add date filtering
+[ Bug fix ][ Balloon ] Balloon icon background color when custom color is selected
+[ Bug fix ][ Group ] fix alert style custom color
+
 = 1.20.7 =
 [ Bug fix ][ Heading ] cope with custom color palette
 [ Bug fix ][ Heading ] Fix recovery
 
 = 1.20.6 =
 [ Bug fix ][ Heading ] Fix recovery
+[ Bug fix ][ Heading ] cope with custom color palette
 [ Bug fix ][ Button ] change option order in panel
 [ Bug fix ][ Grid Column(Pro) ] cope with custom color palette
-[ Bug fix ][ Heading ] cope with custom color palette
 [ Bug fix ][ Balloon ] cope with custom color palette
 
 = 1.20.5 =
@@ -82,7 +87,7 @@ e.g.
 [ Other ] Only change stable version ( Deploy free version )
 
 = 1.20.3 =
-[ Bug fix ][ Post Media Layout ] Cope with not vektor theme 
+[ Bug fix ][ Post Media Layout ] Cope with not vektor theme
 [ Bug fix ][ PR Blocks ] cope with custom color palette
 [ Bug fix ][ Step(Pro) ] cope with custom color palette
 [ Bug fix ][ Icon Card(Pro) ] cope with custom color palette

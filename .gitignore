@@ -18,3 +18,4 @@ src/blocks/_pro/**/style.css.map
 test/e2e-tests/fixtures/blocks/*.json
 test/e2e-tests/fixtures/blocks/*.serialized.html
 .vscode/
+artifacts/

@@ -1,5 +1,6 @@
 import save000 from './0.0.0/save';
 import save001 from './0.0.1/save';
+import save1210 from './1.21.0/save';
 
 
 const blockAttributes = {
@@ -19,6 +20,19 @@ const blockAttributes = {
 };
 
 const deprecated = [
+	{
+		attributes: {
+			...blockAttributes,
+			bgColor: {
+				type: 'string',
+				default: 'transparent',
+			},
+			borderColor: {
+				type: 'string'
+			}
+		},
+		save: save1210,
+	},
 	{
 		attributes: {
 			...blockAttributes,

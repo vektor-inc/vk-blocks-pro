@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ fix ][ Border Box ] cope with custom color palette
+
 = 1.21.0 =
 [ Add Function ][ Post-List (Pro) ] add date filtering
 [ Bug fix ][ Balloon ] Balloon icon background color when custom color is selected

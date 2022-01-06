@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-01-06T02:02:29+00:00\n"
+"POT-Creation-Date: 2022-01-06T02:21:49+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 "X-Domain: vk-blocks\n"
@@ -152,7 +152,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/edit.js:182
 #: src/blocks/_pro/card/edit.js:121
 #: src/blocks/_pro/icon-card/edit.js:72
-#: src/blocks/_pro/post-list/edit.js:302
+#: src/blocks/_pro/post-list/edit.js:307
 msgid "Title"
 msgstr ""
 
@@ -263,7 +263,7 @@ msgid "Parent"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:82
-#: src/blocks/_pro/post-list/edit.js:326
+#: src/blocks/_pro/post-list/edit.js:331
 msgid "Ignore this post"
 msgstr ""
 
@@ -712,39 +712,39 @@ msgstr ""
 msgid "From Tomorrow"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:263
-msgid "If you choose a future period, you will need to customize it so that future posts will be published immediately."
+#: src/blocks/_pro/post-list/edit.js:264
+msgid "* If you choose a future period, you will need to customize it so that future posts will be published immediately."
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:266
+#: src/blocks/_pro/post-list/edit.js:271
 msgid "Order"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:275
+#: src/blocks/_pro/post-list/edit.js:280
 msgid "ASC"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:279
+#: src/blocks/_pro/post-list/edit.js:284
 msgid "DESC"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:285
+#: src/blocks/_pro/post-list/edit.js:290
 msgid "Order by"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:294
+#: src/blocks/_pro/post-list/edit.js:299
 msgid "Published Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:298
+#: src/blocks/_pro/post-list/edit.js:303
 msgid "Modefied Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:306
+#: src/blocks/_pro/post-list/edit.js:311
 msgid "Random"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:312
+#: src/blocks/_pro/post-list/edit.js:317
 msgid "offset"
 msgstr ""
 

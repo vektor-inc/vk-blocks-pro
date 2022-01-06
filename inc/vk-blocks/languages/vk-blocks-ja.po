@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2022-01-06T01:47:28+00:00\n"
-"PO-Revision-Date: 2022-01-06 10:53+0900\n"
+"POT-Creation-Date: 2022-01-06T02:19:16+00:00\n"
+"PO-Revision-Date: 2022-01-06 11:21+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -156,7 +156,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:206
 #: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:210
 #: src/blocks/_pro/card-item/edit.js:182 src/blocks/_pro/card/edit.js:121
-#: src/blocks/_pro/icon-card/edit.js:72 src/blocks/_pro/post-list/edit.js:302
+#: src/blocks/_pro/icon-card/edit.js:72 src/blocks/_pro/post-list/edit.js:307
 msgid "Title"
 msgstr "タイトル"
 
@@ -266,7 +266,7 @@ msgstr "表示条件"
 msgid "Parent"
 msgstr "親ページ"
 
-#: src/blocks/_pro/child-page/edit.js:82 src/blocks/_pro/post-list/edit.js:326
+#: src/blocks/_pro/child-page/edit.js:82 src/blocks/_pro/post-list/edit.js:331
 msgid "Ignore this post"
 msgstr "この投稿を除く"
 
@@ -664,59 +664,59 @@ msgstr "日付で絞り込み"
 msgid "Period of Time"
 msgstr "期間"
 
-#: src/blocks/_pro/post-list/edit.js:244
-msgid ""
-"If you choose a future period, you will need to customize it so that future "
-"posts will be published immediately."
-msgstr ""
-"未来の期間を選択する場合は、未来の投稿が即時公開になるように別途カスタマイズ"
-"が必要です。"
-
-#: src/blocks/_pro/post-list/edit.js:248
+#: src/blocks/_pro/post-list/edit.js:247
 msgid "Whole Period"
 msgstr "全期間"
 
-#: src/blocks/_pro/post-list/edit.js:252
+#: src/blocks/_pro/post-list/edit.js:251
 msgid "From Today"
 msgstr "今日以降"
 
-#: src/blocks/_pro/post-list/edit.js:256
+#: src/blocks/_pro/post-list/edit.js:255
 msgid "From Now"
 msgstr "現在以降"
 
-#: src/blocks/_pro/post-list/edit.js:260
+#: src/blocks/_pro/post-list/edit.js:259
 msgid "From Tomorrow"
 msgstr "明日以降"
 
-#: src/blocks/_pro/post-list/edit.js:266
+#: src/blocks/_pro/post-list/edit.js:264
+msgid ""
+"* If you choose a future period, you will need to customize it so that "
+"future posts will be published immediately."
+msgstr ""
+"※ 未来の期間を選択する場合は、未来の投稿が即時公開になるように別途カスタマイ"
+"ズが必要です。"
+
+#: src/blocks/_pro/post-list/edit.js:271
 msgid "Order"
 msgstr "表示順"
 
-#: src/blocks/_pro/post-list/edit.js:275
+#: src/blocks/_pro/post-list/edit.js:280
 msgid "ASC"
 msgstr "昇順"
 
-#: src/blocks/_pro/post-list/edit.js:279
+#: src/blocks/_pro/post-list/edit.js:284
 msgid "DESC"
 msgstr "降順"
 
-#: src/blocks/_pro/post-list/edit.js:285
+#: src/blocks/_pro/post-list/edit.js:290
 msgid "Order by"
 msgstr "表示順"
 
-#: src/blocks/_pro/post-list/edit.js:294
+#: src/blocks/_pro/post-list/edit.js:299
 msgid "Published Date"
 msgstr "公開日"
 
-#: src/blocks/_pro/post-list/edit.js:298
+#: src/blocks/_pro/post-list/edit.js:303
 msgid "Modefied Date"
 msgstr "更新日"
 
-#: src/blocks/_pro/post-list/edit.js:306
+#: src/blocks/_pro/post-list/edit.js:311
 msgid "Random"
 msgstr "ランダム"
 
-#: src/blocks/_pro/post-list/edit.js:312
+#: src/blocks/_pro/post-list/edit.js:317
 msgid "offset"
 msgstr "オフセット数"
 

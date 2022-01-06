@@ -63,6 +63,7 @@ e.g.
 
 == Changelog ==
 
+[ fix ][ Border Box ] cope with custom color palette
 [ Bug fix ] fix block style enqueue point
 
 = 1.21.0 =

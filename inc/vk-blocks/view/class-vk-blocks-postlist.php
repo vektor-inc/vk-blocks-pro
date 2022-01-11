@@ -57,6 +57,7 @@ class Vk_Blocks_PostList {
 			'vkb_hidden'                 => $attributes['vkb_hidden'],
 			'vkb_hidden_xxl'             => $attributes['vkb_hidden_xxl'],
 			'vkb_hidden_xl'              => $attributes['vkb_hidden_xl'],
+			'vkb_hidden_xl_v2'           => $attributes['vkb_hidden_xl_v2'],
 			'vkb_hidden_lg'              => $attributes['vkb_hidden_lg'],
 			'vkb_hidden_md'              => $attributes['vkb_hidden_md'],
 			'vkb_hidden_sm'              => $attributes['vkb_hidden_sm'],
@@ -127,6 +128,35 @@ class Vk_Blocks_PostList {
 			$offset = intval( $attributes['offset'] );
 		}
 
+		$date_query = array();
+		if ( ! empty( $attributes['targetPeriod'] ) ) {
+			if ( 'from-today' === $attributes['targetPeriod'] ) {
+				$date_query = array(
+					array(
+						'column'    => 'post_date_gmt',
+						'after'     => gmdate( 'Y-m-d' ),
+						'inclusive' => true,
+					),
+				);
+			} elseif ( 'from-now' === $attributes['targetPeriod'] ) {
+				$date_query = array(
+					array(
+						'column'    => 'post_date_gmt',
+						'after'     => gmdate( 'Y-m-d H:i:s' ),
+						'inclusive' => true,
+					),
+				);
+			} elseif ( 'from-tomorrow' === $attributes['targetPeriod'] ) {
+				$date_query = array(
+					array(
+						'column'    => 'post_date_gmt',
+						'after'     => gmdate( 'Y-m-d', strtotime( '+1 day' ) ),
+						'inclusive' => true,
+					),
+				);
+			}
+		}
+
 		$args = array(
 			'post_type'      => $is_checked_post_type,
 			'tax_query'      => self::format_terms( $is_checked_terms ),
@@ -138,6 +168,9 @@ class Vk_Blocks_PostList {
 			'offset'         => $offset,
 			'post__not_in'   => $post__not_in,
 		);
+		if ( ! empty( $date_query ) ) {
+			$args['date_query'] = $date_query;
+		}
 		return new WP_Query( $args );
 	}
 

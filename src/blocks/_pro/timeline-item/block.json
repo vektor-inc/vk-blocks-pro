@@ -9,8 +9,7 @@
 			"default": "6:00AM"
 		},
 		"color": {
-			"type": "string",
-			"default": "#337ab7"
+			"type": "string"
 		},
 		"style": {
 			"type": "string",

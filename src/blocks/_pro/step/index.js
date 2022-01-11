@@ -24,7 +24,7 @@ export const settings = {
 			{
 				name: 'vk-blocks/step-item',
 				attributes: {
-					color: '#337ab7',
+					color: 'undefined',
 					style: 'solid',
 					styleLine: 'default',
 					dotCaption: 'STEP',

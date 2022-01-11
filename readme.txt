@@ -3,8 +3,8 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,m
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
-Tested up to: 5.8.1
-Stable tag: 1.20.0
+Tested up to: 5.8.2
+Stable tag: 1.21.0
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,8 +63,47 @@ e.g.
 
 == Changelog ==
 
+[ fix ][ Border Box ] cope with custom color palette
+
+= 1.21.0 =
+[ Add Function ][ Post-List (Pro) ] add date filtering
+[ Bug fix ][ Balloon ] Balloon icon background color when custom color is selected
+[ Bug fix ][ Group ] fix alert style custom color
+
+= 1.20.7 =
+[ Bug fix ][ Heading ] cope with custom color palette
+[ Bug fix ][ Heading ] Fix recovery
+
+= 1.20.6 =
+[ Bug fix ][ Heading ] Fix recovery
+[ Bug fix ][ Heading ] cope with custom color palette
+[ Bug fix ][ Button ] change option order in panel
+[ Bug fix ][ Grid Column(Pro) ] cope with custom color palette
+[ Bug fix ][ Balloon ] cope with custom color palette
+
+= 1.20.5 =
+[ Bug fix ] cope with Old PHP.
+[ Bug fix ][ Timeline(Pro) ] cope with custom color palette
+
+= 1.20.4 =
+[ Other ] Only change stable version ( Deploy free version )
+
+= 1.20.3 =
+[ Bug fix ][ Post Media Layout ] Cope with not vektor theme
+[ Bug fix ][ PR Blocks ] cope with custom color palette
+[ Bug fix ][ Step(Pro) ] cope with custom color palette
+[ Bug fix ][ Icon Card(Pro) ] cope with custom color palette
+[ Other ] Change TGM & Plugin Update Checker load from composer
+
+= 1.20.2 =
+[ Bug fix ] Color palette manager in case of other theme
+
+= 1.20.1 =
+[ Bug fix ] Fix -wp5.7 error
+
 = 1.20.0 =
 [ Other ][ All ] Refactoring all blocks.
+[ Bug fix ] Color palette manager in case of other theme
 
 = 1.19.1 =
 [ Bug fix ][ Button ] Fix bootstrap color crash

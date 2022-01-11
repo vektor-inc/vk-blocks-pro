@@ -36,7 +36,6 @@
 			width: 50px;
 			height: 50px;
 			border-radius: 50%;
-			color: #ffffff;
 			padding: 9px 0;
 			text-align: center;
 			&_num {
@@ -45,6 +44,18 @@
 			i {
 				margin-right:auto;
 				margin-left:auto;
+			}
+			&.vk_step_item_style-default {
+				color: #ffffff;			
+				&:not(.has-background) {
+					background-color: #337ab7;
+				}
+			}
+			&.vk_step_item_style-outlined {
+				border: 2px solid currentColor;
+				&:not(.has-text-color) {
+					color: #337ab7;
+				}
 			}
 		}
 		.vk_step_item_dot_caption {

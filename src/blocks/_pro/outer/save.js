@@ -83,20 +83,19 @@ export default function save(props) {
 	const bgColorClasses = [];
 	let borderColorCss = borderColor;
 
-
 	let bgColorOutputDisable = false;
 	if (!isHexColor(bgColor)) {
 		bgColorOutputDisable = true;
 		bgColorClasses.push('has-background');
 		bgColorClasses.push(`has-${bgColor}-background-color`);
 	}
-	
+
 	if (!isHexColor(borderColor)) {
 		bgColorClasses.push('has-text-color');
 		bgColorClasses.push(`has-${borderColor}-color`);
 		borderColorCss = 'currentColor';
-	}	
-	
+	}
+
 	//Dividerエフェクトがない時のみ枠線を追
 	let borderStyleProperty = {};
 	//eslint-disable-next-line camelcase
@@ -117,7 +116,7 @@ export default function save(props) {
 			border: `none`,
 			borderRadius: `0px`,
 		};
-	}	
+	}
 
 	const blockProps = useBlockProps.save({
 		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${bgColorClasses.join(

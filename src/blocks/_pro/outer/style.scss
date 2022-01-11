@@ -29,6 +29,12 @@ $media-xxl-down: 1399.98px;
 		h5:first-child {//他テーマ用
 			margin-top: 0;
 		}
+
+		& > *:not(.has-text-color) {
+			// 枠線の色が影響しないようにする
+			color: initial;
+		}
+		
 	}
 }
 // これがないとレスポンシブスペーサーの共通高さが検出しない。
@@ -242,6 +248,15 @@ $color-danger: #b52727;
 
 :root,
 :root .editor-styles-wrapper {
+
+	.vk_outer_container{
+
+		& > *:not(.has-text-color) {
+			// 枠線の色が影響しないようにする
+			color: initial;
+		}
+	}
+
 	path {
 		&.has-vk-color-primary-background-color {
 			fill: var(--vk-color-primary);

@@ -80,6 +80,23 @@ export default function save(props) {
 	//編集画面とサイト上の切り替え
 	const containerClass = 'vk_outer_container';
 
+	const bgColorClasses = [];
+	let borderColorCss = borderColor;
+
+
+	let bgColorOutputDisable = false;
+	if (!isHexColor(bgColor)) {
+		bgColorOutputDisable = true;
+		bgColorClasses.push('has-background');
+		bgColorClasses.push(`has-${bgColor}-background-color`);
+	}
+	
+	if (!isHexColor(borderColor)) {
+		bgColorClasses.push('has-text-color');
+		bgColorClasses.push(`has-${borderColor}-color`);
+		borderColorCss = 'currentColor';
+	}	
+	
 	//Dividerエフェクトがない時のみ枠線を追
 	let borderStyleProperty = {};
 	//eslint-disable-next-line camelcase
@@ -90,7 +107,7 @@ export default function save(props) {
 		borderStyle !== 'none'
 	) {
 		borderStyleProperty = {
-			border: `${borderWidth}px ${borderStyle} ${borderColor}`,
+			border: `${borderWidth}px ${borderStyle} ${borderColorCss}`,
 			borderRadius: `${borderRadius}px`,
 		};
 		//eslint-disable-next-line camelcase
@@ -100,16 +117,7 @@ export default function save(props) {
 			border: `none`,
 			borderRadius: `0px`,
 		};
-	}
-
-	const bgColorClasses = [];
-	bgColorClasses.push('has-background');
-
-	let bgColorOutputDisable = false;
-	if (!isHexColor(bgColor)) {
-		bgColorOutputDisable = true;
-		bgColorClasses.push(`has-${bgColor}-background-color`);
-	}
+	}	
 
 	const blockProps = useBlockProps.save({
 		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${bgColorClasses.join(

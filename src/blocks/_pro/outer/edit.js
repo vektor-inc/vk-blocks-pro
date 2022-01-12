@@ -20,7 +20,7 @@ import {
 import { useEffect } from '@wordpress/element';
 import { dispatch } from '@wordpress/data';
 import { componentDivider } from './component-divider';
-import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
+import GenerateBgImage from './GenerateBgImage';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function OuterEdit(props) {

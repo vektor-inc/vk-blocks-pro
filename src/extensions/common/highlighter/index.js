@@ -16,8 +16,9 @@ import {
 	ColorPalette,
 	URLPopover,
 } from '@wordpress/block-editor';
+import { Icon } from '@wordpress/components';
+import { ReactComponent as IconSVG } from './icon.svg';
 import hex2rgba from '@vkblocks/utils/hex-to-rgba';
-import { ReactComponent as Icon } from './icon.svg';
 
 const name = 'vk-blocks/highlighter';
 const alpha = 0.7;
@@ -94,7 +95,7 @@ const HighlighterEdit = (props) => {
 				isActive={isActive}
 				icon={
 					<>
-						<Icon icon={Icon} style={iconStyle} />
+						<Icon icon={IconSVG} style={iconStyle} />
 						{isActive && (
 							<span
 								className="format-library-text-color-button__indicator"

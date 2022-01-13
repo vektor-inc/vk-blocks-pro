@@ -13,7 +13,6 @@ import {
 } from '@wordpress/components';
 import {
 	InspectorControls,
-	ColorPalette,
 	InnerBlocks,
 	useBlockProps,
 } from '@wordpress/block-editor';
@@ -530,12 +529,6 @@ export default function OuterEdit(props) {
 						<AdvancedColorPalette
 							schema={'borderColor'}
 							{...props}
-						/>
-						<ColorPalette
-							value={borderColor}
-							onChange={(value) =>
-								setAttributes({ borderColor: value })
-							}
 						/>
 					</BaseControl>
 					<BaseControl

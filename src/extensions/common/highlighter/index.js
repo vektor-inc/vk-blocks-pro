@@ -60,12 +60,17 @@ const HighlighterEdit = (props) => {
 		const activeFormat = getActiveFormat(value, name);
 		heightlightColor = activeFormat.attributes.data;
 	}
-	const heightlightColorStyle = {
-		background: heightlightColor,
-	};
-	const iconStyle = {
-		width: '24px',
-	};
+	let iconStyle = {};
+	if (heightlightColor) {
+		const rgbaHeightlightColor = hex2rgba(
+			heightlightColor,
+			alpha
+		);
+		iconStyle = {
+			color: 'initial',
+			background: `linear-gradient(transparent 60%, ${rgbaHeightlightColor} 0)`,
+		};
+	}
 	const anchorRef = useAnchorRef({ ref: props.contentRef, value });
 	const [isAddingColor, setIsAddingColor] = useState(false);
 
@@ -96,12 +101,6 @@ const HighlighterEdit = (props) => {
 				icon={
 					<>
 						<Icon icon={IconSVG} style={iconStyle} />
-						{isActive && (
-							<span
-								className="format-library-text-color-button__indicator"
-								style={heightlightColorStyle}
-							/>
-						)}
 					</>
 				}
 			/>

@@ -114,7 +114,7 @@ class VK_Blocks_Block_Loader {
 		 * Reason of Using through the after_setup_theme is
 		 * to be able to change the action hook point of css load from theme..
 		 */
-		add_action( 'after_setup_theme', array( $this, 'vk_blocks_enqueue_point' ) );
+		add_action( 'after_setup_theme', array( $this, 'load_css_action' ) );
 
 		// Register block css and js.
 		add_action( 'init', array( $this, 'register_blocks_assets' ), 10 );
@@ -130,7 +130,7 @@ class VK_Blocks_Block_Loader {
 	/**
 	 * VK Blocks Enqueue Point
 	 */
-	public function vk_blocks_enqueue_point() {
+	public function load_css_action() {
 		$hook_point = apply_filters( 'vk_blocks_enqueue_point', 'wp_enqueue_scripts' );
 
 		// load registered css on front.

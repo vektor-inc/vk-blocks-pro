@@ -11,8 +11,10 @@ import HeadingLevelIcon from './heading-level-icon';
 
 const HEADING_LEVELS = [1, 2, 3, 4, 5, 6];
 
+// WordPress5.8でcssが崩れるので独自のクラスを追加
 const POPOVER_PROPS = {
-	className: 'block-library-heading-level-dropdown',
+	className:
+		'block-library-heading-level-dropdown vk-blocks-heading-level-dropdown',
 };
 
 export default function HeadingLevelDropdown({ selectedLevel, onChange }) {

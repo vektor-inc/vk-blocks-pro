@@ -1438,11 +1438,11 @@ msgstr ""
 msgid "Text size (rem)"
 msgstr ""
 
-#: src/blocks/heading/heading-level-dropdown.js:53
+#: src/blocks/heading/heading-level-dropdown.js:25
 msgid "Change heading level"
 msgstr ""
 
-#: src/blocks/heading/heading-level-dropdown.js:68
+#: src/blocks/heading/heading-level-dropdown.js:39
 #. %s: heading level e.g: "1", "2", "3"
 msgid "Heading %d"
 msgstr ""
@@ -1858,7 +1858,7 @@ msgid ""
 "the next, hide for the that group block."
 msgstr ""
 
-#: src/extensions/common/highlighter/index.js:139
+#: src/extensions/common/highlighter/index.js:135
 msgid "Highlighter"
 msgstr ""
 

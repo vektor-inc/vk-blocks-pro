@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-01-17T08:52:35+00:00\n"
+"POT-Creation-Date: 2022-01-17T08:54:38+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -1442,12 +1442,12 @@ msgstr ""
 msgid "Text size (rem)"
 msgstr ""
 
-#: src/blocks/heading/heading-level-dropdown.js:53
+#: src/blocks/heading/heading-level-dropdown.js:25
 msgid "Change heading level"
 msgstr ""
 
 #. %s: heading level e.g: "1", "2", "3"
-#: src/blocks/heading/heading-level-dropdown.js:68
+#: src/blocks/heading/heading-level-dropdown.js:39
 msgid "Heading %d"
 msgstr ""
 
@@ -1860,7 +1860,7 @@ msgstr ""
 msgid "If you want to hide multiple blocks, that first you set to group block and the next, hide for the that group block."
 msgstr ""
 
-#: src/extensions/common/highlighter/index.js:139
+#: src/extensions/common/highlighter/index.js:135
 msgid "Highlighter"
 msgstr ""
 

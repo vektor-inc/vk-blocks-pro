@@ -20,5 +20,10 @@
 	.editor-styles-wrapper ol li{ 
 		margin:calc( var(--vk-size-text) * 0.8 ) 0;
 	}
+
+	// WP5.9でURLPopoverコンポーネントにpaddingがなくなったため
+	.vk-blocks-url-popover .components-popover__content > div {
+			padding: 20px 18px;
+	}
 }
 

@@ -92,7 +92,7 @@ const FontSizeEdit = (props) => {
 			{isSettingFontSize && (
 				<URLPopover
 					value={value}
-					className="components-inline-color-popover"
+					className="vk-blocks-url-popover"
 					anchorRef={anchorRef}
 					onClose={() => setIsSettingFontSize(false)}
 				>

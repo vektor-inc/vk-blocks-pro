@@ -2901,13 +2901,13 @@ msgstr "グリッドカラムアイテム"
 #: src/blocks/_pro/grid-column-item/block.json
 msgctxt "block description"
 msgid "One item in a grit column block."
-msgstr "グリットカラムブロック内の1つのアイテムです。"
+msgstr "グリッドカラムブロック内の1つのアイテムです。"
 
 #: dist/vk-blocks-pro/src/blocks/_pro/grid-column/block.json
 #: src/blocks/_pro/grid-column/block.json
 msgctxt "block title"
 msgid "Grid Column"
-msgstr "グリットカラム"
+msgstr "グリッドカラム"
 
 #: dist/vk-blocks-pro/src/blocks/_pro/grid-column/block.json
 #: src/blocks/_pro/grid-column/block.json

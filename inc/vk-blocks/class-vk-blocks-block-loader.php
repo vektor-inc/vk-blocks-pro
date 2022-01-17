@@ -63,6 +63,17 @@ class VK_Blocks_Block_Loader {
 	// phpcs:enable
 
 	/**
+	 * ブロックの一覧
+	 *
+	 * @var array
+	 */
+	private $block_style_names = array(
+		array( 'name' => 'heading' ),
+		array( 'name' => 'image' ),
+		array( 'name' => 'table' ),
+	);
+
+	/**
 	 * ビルドされた assets のパス
 	 *
 	 * @var string
@@ -187,6 +198,12 @@ class VK_Blocks_Block_Loader {
 				$this->load_block( $block_name );
 			}
 		}
+
+		if ( function_exists( 'register_block_style' ) ) {
+			foreach ( $this->block_style_names as $block_style_name ) {
+				$this->load_block_style( $block_style_name );
+			}
+		}
 	}
 
 	/**
@@ -297,6 +314,19 @@ class VK_Blocks_Block_Loader {
 			$require_file_path = VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $block_name . '/index.php';
 		}
 
+		if ( file_exists( $require_file_path ) ) {
+			require_once $require_file_path;
+		}
+	}
+
+	/**
+	 * ブロックスタイルのロード
+	 *
+	 * @param string $block_style_name 読み込むブロック名.
+	 * @return void
+	 */
+	public function load_block_style( $block_style_name ) {
+		$require_file_path = VK_BLOCKS_SRC_PATH . 'extensions/core/' . $block_style_name['name'] . '/index.php';
 		if ( file_exists( $require_file_path ) ) {
 			require_once $require_file_path;
 		}

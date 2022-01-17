@@ -16,8 +16,9 @@ import {
 	ColorPalette,
 	URLPopover,
 } from '@wordpress/block-editor';
+import { Icon } from '@wordpress/components';
+import { ReactComponent as IconSVG } from './icon.svg';
 import hex2rgba from '@vkblocks/utils/hex-to-rgba';
-import { ReactComponent as Icon } from './icon.svg';
 
 const name = 'vk-blocks/highlighter';
 const alpha = 0.7;
@@ -59,12 +60,14 @@ const HighlighterEdit = (props) => {
 		const activeFormat = getActiveFormat(value, name);
 		heightlightColor = activeFormat.attributes.data;
 	}
-	const heightlightColorStyle = {
-		background: heightlightColor,
-	};
-	const iconStyle = {
-		width: '24px',
-	};
+	let iconStyle = {};
+	if (heightlightColor) {
+		const rgbaHeightlightColor = hex2rgba(heightlightColor, alpha);
+		iconStyle = {
+			color: 'initial',
+			background: `linear-gradient(transparent 60%, ${rgbaHeightlightColor} 0)`,
+		};
+	}
 	const anchorRef = useAnchorRef({ ref: props.contentRef, value });
 	const [isAddingColor, setIsAddingColor] = useState(false);
 
@@ -90,18 +93,11 @@ const HighlighterEdit = (props) => {
 				}}
 				shortcutType={shortcutType}
 				shortcutCharacter={shortcutChar}
-				key={isActive ? 'text-color' : 'text-color-not-active'}
 				className="format-library-text-color-button"
-				name={isActive ? 'text-color' : undefined}
+				isActive={isActive}
 				icon={
 					<>
-						<Icon icon={Icon} style={iconStyle} />
-						{isActive && (
-							<span
-								className="format-library-text-color-button__indicator"
-								style={heightlightColorStyle}
-							/>
-						)}
+						<Icon icon={IconSVG} style={iconStyle} />
 					</>
 				}
 			/>

@@ -63,7 +63,10 @@ e.g.
 
 == Changelog ==
 
+[ fix ][ Grid Column ] fix translate
+[ fix ][ Heading ] vertical heading levels for wp-5.9
 [ fix ][ Border Box ] cope with custom color palette
+[ Bug fix ] fix block style enqueue point
 
 = 1.21.0 =
 [ Add Function ][ Post-List (Pro) ] add date filtering

@@ -110,15 +110,11 @@ class VK_Blocks_Block_Loader {
 	 * @return void
 	 */
 	public function set_action_and_filter() {
-		$hook_point = apply_filters( 'vk_blocks_enqueue_point', 'wp_enqueue_scripts' );
-
-		// load registered css on front.
-		add_action( $hook_point, array( $this, 'add_styles' ) );
-
-		// load registered css on admin.
-		if ( is_admin() ) {
-			add_action( 'enqueue_block_assets', array( $this, 'add_styles' ) );
-		}
+		/**
+		 * Reason of Using through the after_setup_theme is
+		 * to be able to change the action hook point of css load from theme..
+		 */
+		add_action( 'after_setup_theme', array( $this, 'load_css_action' ) );
 
 		// Register block css and js.
 		add_action( 'init', array( $this, 'register_blocks_assets' ), 10 );
@@ -128,6 +124,21 @@ class VK_Blocks_Block_Loader {
 
 		if ( self::should_load_separate_assets() ) {
 			add_filter( 'should_load_separate_core_block_assets', '__return_true' );
+		}
+	}
+
+	/**
+	 * VK Blocks Enqueue Point
+	 */
+	public function load_css_action() {
+		$hook_point = apply_filters( 'vk_blocks_enqueue_point', 'wp_enqueue_scripts' );
+
+		// load registered css on front.
+		add_action( $hook_point, array( $this, 'add_styles' ) );
+
+		// load registered css on admin.
+		if ( is_admin() ) {
+			add_action( 'enqueue_block_assets', array( $this, 'add_styles' ) );
 		}
 	}
 

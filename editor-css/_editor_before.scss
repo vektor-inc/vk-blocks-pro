@@ -114,6 +114,8 @@ button.image-button:not(.button-delete) {
 @import "./editor_before_icons";
 // ボタン横並び編集用CSS
 @import "./editor_before_button-outer";
+// VK見出しCSS読み込み
+@import "./editor_before_vk-heading";
 
 // VK Outer 編集パネル
 $color-danger: #dd3333;

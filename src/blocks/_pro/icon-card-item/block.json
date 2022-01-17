@@ -41,8 +41,7 @@
 			"default": false
 		},
 		"color": {
-			"type": "string",
-			"default": "#0693e3"
+			"type": "string"
 		},
 		"bgType": {
 			"type": "string",

@@ -2,11 +2,38 @@
 /* .vk_prBlocks
 /*-------------------------------------------*/
 // 編集画面でcssの指定が軽くて負けるので.vk_prBlocks .vk_prBlocks_item  を先に記述
-.vk_prBlocks{ 
+.vk_prBlocks{
 	.vk_prBlocks_item {
 		a{text-decoration: none;}
 		@media screen and (max-width: 991.98px) {
 			margin-bottom: 1.5em;
+		}
+		//ベタ塗りの時
+		&:not(.is-style-outline) {
+			.vk_prBlocks_item {
+				&_icon {
+					color: #fff;
+				}
+				//デフォルト状態
+				&_icon_outer:not(.has-background) {
+					background-color: #0693e3;
+				}
+			}
+		}
+		//背景なしの時
+		&.is-style-outline {
+			//カラー選択
+			.vk_prBlocks_item_icon_outer {
+				background-color: transparent;
+				border: 1px solid currentColor;
+				//デフォルト状態
+				&:not(.has-text-color) {
+					border: 1px solid #0693e3;
+					.vk_prBlocks_item_icon {
+						color: #0693e3;
+					}
+				}
+			}
 		}
 		.vk_prBlocks_item {
 			&_link {
@@ -30,7 +57,6 @@
 				left: 50%;
 				transform: translateY(-50%) translateX(-50%);
 				font-size: 36px;
-				color: #fff;
 			}
 			&_title {
 				background-color: transparent;

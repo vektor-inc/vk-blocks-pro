@@ -14,7 +14,7 @@ $vk_blocks_options = vk_blocks_get_options();
 	<label>
 		<input type="checkbox" name="vk_blocks_options[load_separate_option]" id="checkbox_active" value="true"
 		<?php
-		if ( $vk_blocks_options['load_separate_option'] ) {
+		if ( ! empty( $vk_blocks_options['load_separate_option'] ) ) {
 			echo 'checked'; }
 		?>
 		/>

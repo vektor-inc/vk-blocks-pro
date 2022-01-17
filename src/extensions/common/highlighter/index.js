@@ -62,10 +62,7 @@ const HighlighterEdit = (props) => {
 	}
 	let iconStyle = {};
 	if (heightlightColor) {
-		const rgbaHeightlightColor = hex2rgba(
-			heightlightColor,
-			alpha
-		);
+		const rgbaHeightlightColor = hex2rgba(heightlightColor, alpha);
 		iconStyle = {
 			color: 'initial',
 			background: `linear-gradient(transparent 60%, ${rgbaHeightlightColor} 0)`,
@@ -107,7 +104,7 @@ const HighlighterEdit = (props) => {
 			{isAddingColor && (
 				<URLPopover
 					value={value}
-					className="vk-blocks-url-popover"
+					className="components-inline-color-popover vk-blocks-url-popover"
 					anchorRef={anchorRef}
 					onClose={() => setIsAddingColor(false)}
 				>

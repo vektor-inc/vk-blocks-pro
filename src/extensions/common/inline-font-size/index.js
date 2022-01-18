@@ -15,9 +15,7 @@ import { RichTextToolbarButton, URLPopover } from '@wordpress/block-editor';
 import { FontSizePicker, Button, Icon } from '@wordpress/components';
 import { ReactComponent as IconSVG } from './icon.svg';
 
-import { FontSizePicker, Button } from '@wordpress/components';
-
-import { ReactComponent as Icon } from './icon.svg';
+import compareVersions from 'compare-versions';
 
 const name = 'vk-blocks/inline-font-size';
 
@@ -102,7 +100,13 @@ const FontSizeEdit = (props) => {
 							fontSizes={fontSizes}
 							value={selectedFontSize}
 							fallbackFontSize={fallbackFontSize}
-							withSlider={true}
+							withSlider={
+								window.wpVersion !== undefined &&
+								window.wpVersion !== null &&
+								compareVersions(window.wpVersion, '5.9') < 0
+									? true
+									: false
+							}
 							onChange={(newFontSize) => {
 								if (newFontSize) {
 									onChange(

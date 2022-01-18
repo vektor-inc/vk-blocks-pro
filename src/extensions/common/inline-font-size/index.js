@@ -12,6 +12,8 @@ import {
 } from '@wordpress/rich-text';
 
 import { RichTextToolbarButton, URLPopover } from '@wordpress/block-editor';
+import { FontSizePicker, Button, Icon } from '@wordpress/components';
+import { ReactComponent as IconSVG } from './icon.svg';
 
 import { FontSizePicker, Button } from '@wordpress/components';
 
@@ -84,7 +86,7 @@ const FontSizeEdit = (props) => {
 				isActive={isActive}
 				icon={
 					<>
-						<Icon icon={Icon} style={iconStyle} />
+						<Icon icon={IconSVG} style={iconStyle} />
 					</>
 				}
 			/>

@@ -1,8 +1,8 @@
 /**
- * highlighter block type
+ * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { useState } from '@wordpress/element';
+import { useCallback, useState } from '@wordpress/element';
 import {
 	registerFormatType,
 	applyFormat,
@@ -14,9 +14,12 @@ import {
 	RichTextToolbarButton,
 	RichTextShortcut,
 	ColorPalette,
-	URLPopover,
 } from '@wordpress/block-editor';
-import { Icon } from '@wordpress/components';
+import { Popover, Icon } from '@wordpress/components';
+
+/**
+ * Internal dependencies
+ */
 import { ReactComponent as IconSVG } from './icon.svg';
 import hex2rgba from '@vkblocks/utils/hex-to-rgba';
 
@@ -51,7 +54,7 @@ const hightliterOnApply = ({ color, value, onChange }) => {
 };
 
 const HighlighterEdit = (props) => {
-	const { value, isActive, onChange } = props;
+	const { value, isActive, onChange, contentRef } = props;
 	const shortcutType = 'primary';
 	const shortcutChar = 'h';
 
@@ -68,8 +71,17 @@ const HighlighterEdit = (props) => {
 			background: `linear-gradient(transparent 60%, ${rgbaHeightlightColor} 0)`,
 		};
 	}
-	const anchorRef = useAnchorRef({ ref: props.contentRef, value });
+	const anchorRef = useAnchorRef({ ref: contentRef, value });
 	const [isAddingColor, setIsAddingColor] = useState(false);
+
+	const enableIsAddingColor = useCallback(
+		() => setIsAddingColor(true),
+		[setIsAddingColor]
+	);
+	const disableIsAddingColor = useCallback(
+		() => setIsAddingColor(false),
+		[setIsAddingColor]
+	);
 
 	return (
 		<>
@@ -90,6 +102,7 @@ const HighlighterEdit = (props) => {
 						});
 					}
 					setIsAddingColor(true);
+					enableIsAddingColor(true);
 				}}
 				shortcutType={shortcutType}
 				shortcutCharacter={shortcutChar}
@@ -102,11 +115,11 @@ const HighlighterEdit = (props) => {
 				}
 			/>
 			{isAddingColor && (
-				<URLPopover
+				<Popover
 					value={value}
-					className="components-inline-color-popover"
+					className="components-inline-color-popover components-inline-color-popover"
 					anchorRef={anchorRef}
-					onClose={() => setIsAddingColor(false)}
+					onClose={disableIsAddingColor}
 				>
 					<ColorPalette
 						value={heightlightColor}
@@ -125,7 +138,7 @@ const HighlighterEdit = (props) => {
 							setIsAddingColor(false);
 						}}
 					/>
-				</URLPopover>
+				</Popover>
 			)}
 		</>
 	);

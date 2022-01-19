@@ -1,5 +1,5 @@
-/* 
-コア側のブロックcssを上書き用のファイルです 
+/*
+コア側のブロックcssを上書き用のファイルです
 --------------------------------------------*/
 
 .edit-post-visual-editor {
@@ -17,8 +17,13 @@
 	}
 	//他テーマ（Twenty Twenty）上書き用
 	.editor-styles-wrapper ul li,
-	.editor-styles-wrapper ol li{ 
+	.editor-styles-wrapper ol li{
 		margin:calc( var(--vk-size-text) * 0.8 ) 0;
+	}
+
+	// WP5.9でPopoverコンポーネントにpaddingがなくなったため
+	.vk-blocks-url-popover .components-popover__content > div {
+			padding: 20px 18px;
 	}
 }
 

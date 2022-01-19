@@ -63,6 +63,7 @@ e.g.
 
 == Changelog ==
 
+[ fix ][ Heading ] Make text size not auto-include when changing heading level
 [ fix ][ Grid Column ] fix translate
 [ fix ][ Heading ] vertical heading levels for wp-5.9
 [ fix ][ Border Box ] cope with custom color palette

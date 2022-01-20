@@ -33,10 +33,22 @@ const FontSizeEdit = (props) => {
 	// 選択した font-size を格納
 	let selectedFontSize;
 
+	// 保存された font-sizeを取得 font-size:数字+単位
+	let getFontSizeStyle;
+	let getFontSize;
 	if (isActive) {
 		const activeFormat = getActiveFormat(value, name);
 		selectedFontSize = activeFormat.attributes.data;
+
+		getFontSizeStyle = activeFormat.attributes.style;
+		getFontSize = getFontSizeStyle.replace('font-size:', '');
+
+		// フォントサイズを変更した後にリロードするとselectedFontSizeはundefinedになるため
+		if (selectedFontSize === undefined && getFontSize) {
+			selectedFontSize = getFontSize;
+		}
 	}
+
 	const pickerStyle = {
 		width: '200px',
 	};

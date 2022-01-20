@@ -22,6 +22,7 @@ import { FontSizePicker, Button, Popover, Icon } from '@wordpress/components';
  * Internal dependencies
  */
 import { ReactComponent as IconSVG } from './icon.svg';
+import compareVersions from 'compare-versions';
 
 const name = 'vk-blocks/inline-font-size';
 
@@ -101,7 +102,9 @@ const FontSizeEdit = (props) => {
 		},
 	];
 
-	const fallbackFontSize = 16;
+	// Sliderを使用するときに必要になるfallbackFontSizeを用意 wp5.8以下
+	const getFontSizeNoUnit = parseInt(getFontSize);
+	const fallbackFontSize = !getFontSizeNoUnit ? 16 : getFontSizeNoUnit;
 
 	return (
 		<>
@@ -132,8 +135,20 @@ const FontSizeEdit = (props) => {
 						<FontSizePicker
 							fontSizes={fontSizes}
 							value={selectedFontSize}
-							fallbackFontSize={fallbackFontSize}
-							withSlider={true}
+							fallbackFontSize={
+								window.wpVersion !== undefined &&
+								window.wpVersion !== null &&
+								compareVersions(window.wpVersion, '5.9') < 0
+									? fallbackFontSize
+									: false
+							}
+							withSlider={
+								window.wpVersion !== undefined &&
+								window.wpVersion !== null &&
+								compareVersions(window.wpVersion, '5.9') < 0
+									? true
+									: false
+							}
 							onChange={(newFontSize) => {
 								if (newFontSize) {
 									onChange(

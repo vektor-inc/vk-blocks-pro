@@ -117,7 +117,7 @@ const HighlighterEdit = (props) => {
 			{isAddingColor && (
 				<Popover
 					value={value}
-					className="components-inline-color-popover components-inline-color-popover"
+					className="vk-blocks-format-popover components-inline-color-popover"
 					anchorRef={anchorRef}
 					onClose={disableIsAddingColor}
 				>

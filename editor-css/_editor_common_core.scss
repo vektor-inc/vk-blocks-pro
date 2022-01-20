@@ -21,9 +21,17 @@
 		margin:calc( var(--vk-size-text) * 0.8 ) 0;
 	}
 
-	// WP5.9でPopoverコンポーネントにpaddingがなくなったため
-	.vk-blocks-format-popover .components-popover__content > div {
-			padding: 20px 18px;
+	.vk-blocks-format-popover {
+		// WP5.9でPopoverコンポーネントにpaddingがなくなったため
+		.components-popover__content > div {
+				padding: 20px 18px;
+		}
+
+		// インライン文字サイズを再編集時に選択されたフォントサイズが黒バックの白抜きになるため
+		.css-1abtnze[data-active=true] {
+			background: rgb(30, 30, 30);
+			border-radius: 2px;
+		}
 	}
 }
 

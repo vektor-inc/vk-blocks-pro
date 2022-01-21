@@ -18,11 +18,22 @@ export default function save({ attributes }) {
 	let contentBorderClass = '';
 	let iconImageBorderClass = '';
 	let contentBackgroundClass = '';
-	let colorStyle = {};
+	let iconImageColorStyle = {};
+	let contentColorStyle = {};
 	let triangleBorderColorBeforeClass = '';
 	let triangleBorderColorAfterClass = '';
 	let triangleBorderColorBeforeStyle = {};
 	let triangleBorderColorAfterStyle = {};
+
+	// 後方互換 (カスタムカラー選択時 インラインcssをcontentとiconに分ける)
+	const colorStyle = {};
+	if (colorStyle) {
+		contentColorStyle = colorStyle;
+		iconImageColorStyle = colorStyle;
+	}
+	if ('background' in iconImageColorStyle) {
+		delete iconImageColorStyle.background;
+	}
 
 	//吹き出しに枠線を追加オン
 	if (balloonBorder === true) {
@@ -49,7 +60,10 @@ export default function save({ attributes }) {
 		//colorStyle
 		//カスタム*パレット
 		if (isHexColor(balloonBorderColor) && !isHexColor(balloonBgColor)) {
-			colorStyle = {
+			contentColorStyle = {
+				borderColor: `${balloonBorderColor}`,
+			};
+			iconImageColorStyle = {
 				borderColor: `${balloonBorderColor}`,
 			};
 			//パレット*カスタム
@@ -57,7 +71,7 @@ export default function save({ attributes }) {
 			!isHexColor(balloonBorderColor) &&
 			isHexColor(balloonBgColor)
 		) {
-			colorStyle = {
+			contentColorStyle = {
 				background: `${balloonBgColor}`,
 			};
 			//カスタム*カスタム
@@ -65,9 +79,12 @@ export default function save({ attributes }) {
 			isHexColor(balloonBorderColor) &&
 			isHexColor(balloonBgColor)
 		) {
-			colorStyle = {
+			contentColorStyle = {
 				borderColor: `${balloonBorderColor}`,
 				background: `${balloonBgColor}`,
+			};
+			iconImageColorStyle = {
+				borderColor: `${balloonBorderColor}`,
 			};
 		}
 
@@ -170,7 +187,7 @@ export default function save({ attributes }) {
 		if (balloonBgColor !== undefined) {
 			//カスタムカラーの時
 			if (isHexColor(balloonBgColor)) {
-				colorStyle = {
+				contentColorStyle = {
 					background: `${balloonBgColor}`,
 				};
 			}
@@ -244,7 +261,7 @@ export default function save({ attributes }) {
 					<figure>
 						<img
 							className={`vk_balloon_icon_image vk_balloon_icon_image-type-${balloonImageType} ${iconImageBorderClass}`}
-							style={colorStyle}
+							style={iconImageColorStyle}
 							src={IconImage}
 							alt=""
 						/>
@@ -261,7 +278,7 @@ export default function save({ attributes }) {
 			<div className={`vk_balloon_content_outer`}>
 				<div
 					className={`vk_balloon_content ${contentBackgroundClass} ${contentBorderClass}`}
-					style={colorStyle}
+					style={contentColorStyle}
 				>
 					<span
 						className={`vk_balloon_content_before ${triangleBorderColorBeforeClass}`}

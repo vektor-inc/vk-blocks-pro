@@ -83,6 +83,19 @@ composer install
 npm run phpunit
 ```
 
+## e2eテスト
+
+```
+npm run test:e2e
+```
+
+wp-env の port を変更している場合
+
+```
+WP_BASE_URL='http://localhost:xxxx/' npm run test:e2e
+```
+
+
 ## pre-commit
 コミット時にphpのformat、phpcsのチェックと、lintが実行されます。
 エラーがある場合コミットできません。

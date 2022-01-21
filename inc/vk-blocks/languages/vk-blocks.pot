@@ -1,15 +1,15 @@
-# Copyright (C) 2021 Vektor,Inc.
+# Copyright (C) 2022 Vektor,Inc.
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.20.5\n"
+"Project-Id-Version: VK Blocks Pro 1.21.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-12-24T06:34:15+00:00\n"
+"POT-Creation-Date: 2022-01-17T08:54:38+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -57,7 +57,7 @@ msgstr ""
 #: src/blocks/_pro/animation/edit.js:123
 #: src/blocks/_pro/outer/edit.js:303
 #: src/blocks/_pro/slider/edit.js:193
-#: src/blocks/balloon/edit.js:464
+#: src/blocks/balloon/edit.js:483
 #: src/blocks/button/edit.js:223
 #: src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:21
@@ -106,17 +106,17 @@ msgid "Trembling Y"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:73
-#: src/blocks/balloon/edit.js:532
+#: src/blocks/balloon/edit.js:551
 msgid "Trembling X"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:77
-#: src/blocks/balloon/edit.js:536
+#: src/blocks/balloon/edit.js:555
 msgid "Pounding"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:81
-#: src/blocks/balloon/edit.js:540
+#: src/blocks/balloon/edit.js:559
 msgid "Shaking"
 msgstr ""
 
@@ -152,7 +152,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/edit.js:182
 #: src/blocks/_pro/card/edit.js:121
 #: src/blocks/_pro/icon-card/edit.js:72
-#: src/blocks/_pro/post-list/edit.js:264
+#: src/blocks/_pro/post-list/edit.js:307
 msgid "Title"
 msgstr ""
 
@@ -163,7 +163,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:82
 #: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:86
 #: src/blocks/_pro/card-item/edit.js:88
-#: src/blocks/balloon/edit.js:565
+#: src/blocks/balloon/edit.js:584
 #: src/blocks/flow/edit.js:84
 #: src/blocks/pr-blocks/edit.js:86
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:130
@@ -254,7 +254,7 @@ msgid "Current page"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:63
-#: src/blocks/_pro/post-list/edit.js:197
+#: src/blocks/_pro/post-list/edit.js:204
 msgid "Display conditions"
 msgstr ""
 
@@ -263,7 +263,7 @@ msgid "Parent"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:82
-#: src/blocks/_pro/post-list/edit.js:288
+#: src/blocks/_pro/post-list/edit.js:331
 msgid "Ignore this post"
 msgstr ""
 
@@ -278,7 +278,7 @@ msgid "Text Color"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:110
-#: src/blocks/border-box/edit.js:99
+#: src/blocks/border-box/edit.js:201
 #: src/blocks/button/edit.js:390
 msgid "Background Color"
 msgstr ""
@@ -396,7 +396,7 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:135
 #: src/blocks/_pro/step-item/edit.js:72
-#: src/blocks/border-box/edit.js:122
+#: src/blocks/border-box/edit.js:224
 #: src/blocks/button/edit.js:418
 #: src/blocks/icon/edit.js:237
 #: src/blocks/pr-content/edit.js:196
@@ -540,7 +540,7 @@ msgid "Divider Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:389
-#: src/blocks/balloon/edit.js:424
+#: src/blocks/balloon/edit.js:443
 msgid "Type"
 msgstr ""
 
@@ -584,7 +584,7 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:485
 #: src/blocks/_pro/step-item/edit.js:126
 #: src/blocks/_pro/timeline-item/edit.js:104
-#: src/blocks/balloon/edit.js:524
+#: src/blocks/balloon/edit.js:543
 #: src/blocks/staff/edit.js:177
 msgid "None"
 msgstr ""
@@ -669,47 +669,75 @@ msgid "Unit Type"
 msgstr ""
 
 #. Filter by %s
-#: src/blocks/_pro/post-list/edit.js:174
+#: src/blocks/_pro/post-list/edit.js:181
 msgid "Filter by %s"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:201
+#: src/blocks/_pro/post-list/edit.js:208
 msgid "Filter by PostTypes"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:215
+#: src/blocks/_pro/post-list/edit.js:222
 msgid "Number of Posts"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:228
-msgid "Order"
+#: src/blocks/_pro/post-list/edit.js:235
+msgid "Filter by Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:237
-msgid "ASC"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:241
-msgid "DESC"
+#: src/blocks/_pro/post-list/edit.js:239
+msgid "Period of Time"
 msgstr ""
 
 #: src/blocks/_pro/post-list/edit.js:247
+msgid "Whole Period"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:251
+msgid "From Today"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:255
+msgid "From Now"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:259
+msgid "From Tomorrow"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:264
+msgid "* If you choose a future period, you will need to customize it so that future posts will be published immediately."
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:271
+msgid "Order"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:280
+msgid "ASC"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:284
+msgid "DESC"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:290
 msgid "Order by"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:256
+#: src/blocks/_pro/post-list/edit.js:299
 msgid "Published Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:260
+#: src/blocks/_pro/post-list/edit.js:303
 msgid "Modefied Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:268
+#: src/blocks/_pro/post-list/edit.js:311
 msgid "Random"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:274
+#: src/blocks/_pro/post-list/edit.js:317
 msgid "offset"
 msgstr ""
 
@@ -872,7 +900,7 @@ msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:91
 #: src/blocks/_pro/timeline-item/edit.js:69
-#: src/blocks/border-box/edit.js:63
+#: src/blocks/border-box/edit.js:189
 #: src/blocks/button/edit.js:336
 #: src/blocks/icon/edit.js:256
 #: src/blocks/staff/edit.js:199
@@ -890,7 +918,7 @@ msgstr ""
 msgid "Style"
 msgstr ""
 
-#: src/blocks/_pro/step/edit.js:36
+#: src/blocks/_pro/step/edit.js:35
 msgid "First Dot Number"
 msgstr ""
 
@@ -966,108 +994,108 @@ msgstr ""
 msgid "Danger"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:132
+#: src/blocks/balloon/edit.js:144
 msgid " Image Border"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:135
+#: src/blocks/balloon/edit.js:147
 msgid "Add border to image"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:143
+#: src/blocks/balloon/edit.js:155
 msgid "* You can change border width on Setting > VK Blocks"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:150
+#: src/blocks/balloon/edit.js:162
 msgid "Border color of speech balloon"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:300
+#: src/blocks/balloon/edit.js:319
 #: src/extensions/core/image/style.js:15
 #: src/extensions/core/table/style.js:12
 msgid "Border"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:303
+#: src/blocks/balloon/edit.js:322
 msgid "Add border to balloon"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:388
+#: src/blocks/balloon/edit.js:407
 msgid "Balloon setting"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:390
+#: src/blocks/balloon/edit.js:409
 #: src/blocks/heading/edit.js:384
 msgid "Position"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:393
+#: src/blocks/balloon/edit.js:412
 msgid "Please specify the layout of the balloon."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:407
+#: src/blocks/balloon/edit.js:426
 #: src/blocks/button/edit.js:247
 #: src/blocks/pr-content/edit.js:233
 #: src/components/display-items-control/index.js:121
 msgid "Left"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:419
+#: src/blocks/balloon/edit.js:438
 #: src/blocks/button/edit.js:267
 #: src/blocks/pr-content/edit.js:232
 #: src/components/display-items-control/index.js:129
 msgid "Right"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:427
+#: src/blocks/balloon/edit.js:446
 msgid "Please select the type of balloon."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:438
+#: src/blocks/balloon/edit.js:457
 msgid "Speech"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:448
+#: src/blocks/balloon/edit.js:467
 msgid "Thinking"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:453
+#: src/blocks/balloon/edit.js:472
 msgid "Image Style"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:474
+#: src/blocks/balloon/edit.js:493
 msgid "Rounded"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:484
+#: src/blocks/balloon/edit.js:503
 msgid "Circle"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:491
+#: src/blocks/balloon/edit.js:510
 msgid "Background color of speech balloon"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:498
+#: src/blocks/balloon/edit.js:517
 msgid "Default Icon Setting"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:503
+#: src/blocks/balloon/edit.js:522
 msgid "You can register default icons from Settings > VK Blocks in Admin."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:509
+#: src/blocks/balloon/edit.js:528
 msgid "Animation setting"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:511
+#: src/blocks/balloon/edit.js:530
 msgid "Please select the type of animation."
 msgstr ""
 
-#: src/blocks/balloon/edit.js:528
+#: src/blocks/balloon/edit.js:547
 msgid "Trembling"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:571
+#: src/blocks/balloon/edit.js:590
 #: src/blocks/pr-blocks/edit.js:80
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:135
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:117
@@ -1083,86 +1111,66 @@ msgstr ""
 msgid "Upload image"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:584
+#: src/blocks/balloon/edit.js:603
 msgid "Icon Name"
 msgstr ""
 
 #: src/blocks/border-box/deprecated/0.0.0/save.js:24
 #: src/blocks/border-box/deprecated/0.0.1/save.js:25
-#: src/blocks/border-box/edit.js:25
+#: src/blocks/border-box/edit.js:39
 msgid "Please enter a title."
 msgstr ""
 
-#: src/blocks/border-box/edit.js:109
-msgid "Transparent"
-msgstr ""
-
-#: src/blocks/border-box/edit.js:113
-msgid "White"
-msgstr ""
-
-#: src/blocks/border-box/edit.js:119
-#: src/utils/font-awesome-new.js:14
-msgid "Icon"
-msgstr ""
-
-#: src/blocks/border-box/edit.js:51
+#: src/blocks/border-box/edit.js:177
 #: src/blocks/icon-outer/edit.js:132
 #: src/blocks/icon/edit.js:121
 #: inc/vk-blocks/admin/admin-margin.php:57
 msgid "Margin"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:56
+#: src/blocks/border-box/edit.js:182
 msgid "The margin-top of the first element and the margin-bottom of the last element in the border block will be automatically set to 0.If you want to add margins at the beginning and end, use a spacer block to specify height instead of margin."
 msgstr ""
 
-#: src/blocks/border-box/edit.js:66
+#: src/blocks/border-box/edit.js:192
 #: src/extensions/core/group/style.js:47
 msgid "Border Color"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:76
-msgid "Red"
+#: src/blocks/border-box/edit.js:211
+msgid "Transparent"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:80
-msgid "Orange"
+#: src/blocks/border-box/edit.js:215
+msgid "White"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:84
-msgid "Blue"
+#: src/blocks/border-box/edit.js:221
+#: src/utils/font-awesome-new.js:14
+msgid "Icon"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:88
-msgid "Green"
-msgstr ""
-
-#: src/blocks/border-box/edit.js:92
-msgid "Black"
-msgstr ""
-
-#: src/blocks/border-box/index.js:39
+#: src/blocks/border-box/index.js:38
 msgid "Solid Angle Tab"
 msgstr ""
 
-#: src/blocks/border-box/index.js:44
+#: src/blocks/border-box/index.js:43
 msgid "Solid Round Tab"
 msgstr ""
 
-#: src/blocks/border-box/index.js:48
+#: src/blocks/border-box/index.js:47
 msgid "Solid Angle Banner"
 msgstr ""
 
-#: src/blocks/border-box/index.js:52
+#: src/blocks/border-box/index.js:51
 msgid "Solid Angle Onborder"
 msgstr ""
 
-#: src/blocks/border-box/index.js:56
+#: src/blocks/border-box/index.js:55
 msgid "Solid Angle Inner"
 msgstr ""
 
-#: src/blocks/border-box/index.js:60
+#: src/blocks/border-box/index.js:59
 msgid "Solid Angle iconFeature"
 msgstr ""
 
@@ -1434,12 +1442,12 @@ msgstr ""
 msgid "Text size (rem)"
 msgstr ""
 
-#: src/blocks/heading/heading-level-dropdown.js:53
+#: src/blocks/heading/heading-level-dropdown.js:25
 msgid "Change heading level"
 msgstr ""
 
 #. %s: heading level e.g: "1", "2", "3"
-#: src/blocks/heading/heading-level-dropdown.js:68
+#: src/blocks/heading/heading-level-dropdown.js:39
 msgid "Heading %d"
 msgstr ""
 
@@ -1852,7 +1860,7 @@ msgstr ""
 msgid "If you want to hide multiple blocks, that first you set to group block and the next, hide for the that group block."
 msgstr ""
 
-#: src/extensions/common/highlighter/index.js:139
+#: src/extensions/common/highlighter/index.js:135
 msgid "Highlighter"
 msgstr ""
 
@@ -2356,7 +2364,7 @@ msgstr ""
 msgid "Setting"
 msgstr ""
 
-#: inc/vk-blocks/view/class-vk-blocks-postlist.php:187
+#: inc/vk-blocks/view/class-vk-blocks-postlist.php:219
 msgid "No Post is selected"
 msgstr ""
 
@@ -2470,7 +2478,7 @@ msgstr ""
 msgid "Edit this area"
 msgstr ""
 
-#: vk-blocks.php:98
+#: vk-blocks.php:99
 msgid "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks Plugin running."
 msgstr ""
 

@@ -15,7 +15,7 @@ function vk_blocks_register_block_vk_balloon() {
 	if ( ! is_admin() ) {
 		wp_register_style(
 			'vk-blocks/balloon',
-			VK_BLOCKS_DIR_PATH . 'build/balloon/style.css',
+			VK_BLOCKS_DIR_URL . 'build/balloon/style.css',
 			array(),
 			VK_BLOCKS_VERSION
 		);
@@ -25,7 +25,7 @@ function vk_blocks_register_block_vk_balloon() {
 	$asset = include VK_BLOCKS_DIR_PATH . 'build/balloon/block-build.asset.php';
 	wp_register_script(
 		'vk-blocks/balloon',
-		VK_BLOCKS_DIR_PATH . 'build/balloon/block-build.js',
+		VK_BLOCKS_DIR_URL . 'build/balloon/block-build.js',
 		$asset['dependencies'],
 		VK_BLOCKS_VERSION,
 		true

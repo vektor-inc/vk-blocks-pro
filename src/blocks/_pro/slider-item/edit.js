@@ -16,7 +16,7 @@ import {
 } from '@wordpress/components';
 import { AdvancedMediaUpload } from '@vkblocks/components/advanced-media-upload';
 // GenerateBgImageSliderItemに変更
-import GenerateBgImage from '@vkblocks/utils/GenerateBgImageSliderItem';
+import GenerateBgImage from './GenerateBgImageSliderItem';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 

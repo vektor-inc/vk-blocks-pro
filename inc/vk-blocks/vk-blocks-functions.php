@@ -185,6 +185,8 @@ function vk_blocks_blocks_assets() {
 	// Change multiple spaces to single space.
 	$dynamic_css = preg_replace( '/\s(?=\s)/', '', $dynamic_css );
 	wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );
+	// --vk_image-mask-waveはコアの画像ブロックに依存するのでwp-edit-blocksを追加
+	wp_add_inline_style('wp-edit-blocks', $dynamic_css);
 }
 add_action( 'init', 'vk_blocks_blocks_assets', 10 );
 

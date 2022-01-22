@@ -18,11 +18,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Composer のファイルを読み込み ( composer install --no-dev )
+// Composer のファイルを読み込み ( composer install --no-dev ).
 require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
 // Set plugin dir path.
 define( 'VK_BLOCKS_DIR_PATH', plugin_dir_path( __FILE__ ) );
-// Set Plugin Dir URL
+// Set Plugin Dir URL.
 define( 'VK_BLOCKS_DIR_URL', plugin_dir_url( __FILE__ ) );
 
 /*

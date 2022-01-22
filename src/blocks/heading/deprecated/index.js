@@ -15,6 +15,7 @@ import save1_7_0 from './1.7.0/save';
 import save1_9_1 from './1.9.1/save';
 import save1_20_5 from './1.20.5/save';
 import save1_20_5a from './1.20.5a/save';
+import save1_21_0 from './1.21.0/save';
 
 const blockAttributes = {
 	level: {
@@ -186,6 +187,10 @@ const blockAttributes8 = {
 }
 
 const deprecated = [
+	{
+		attributes: blockAttributes8,
+		save: save1_21_0,
+	},
 	{
 		attributes: blockAttributes8,
 		save: save1_20_5,

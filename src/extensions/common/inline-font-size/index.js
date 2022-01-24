@@ -1,8 +1,13 @@
 /**
- * highlighter block type
+ * External dependencies
+ */
+import { isEmpty } from 'lodash';
+
+/**
+ * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { useState } from '@wordpress/element';
+import { useCallback, useState } from '@wordpress/element';
 import {
 	registerFormatType,
 	applyFormat,
@@ -10,27 +15,41 @@ import {
 	getActiveFormat,
 	useAnchorRef,
 } from '@wordpress/rich-text';
+import { RichTextToolbarButton } from '@wordpress/block-editor';
+import { FontSizePicker, Button, Popover, Icon } from '@wordpress/components';
 
-import { RichTextToolbarButton, URLPopover } from '@wordpress/block-editor';
-
-import { FontSizePicker, Button } from '@wordpress/components';
-
-import { ReactComponent as Icon } from './icon.svg';
+/**
+ * Internal dependencies
+ */
+import { ReactComponent as IconSVG } from './icon.svg';
+import compareVersions from 'compare-versions';
 
 const name = 'vk-blocks/inline-font-size';
 
 const FontSizeEdit = (props) => {
-	const { value, isActive, onChange } = props;
+	const { value, isActive, onChange, contentRef } = props;
 	const shortcutType = 'primary';
 	const shortcutChar = 'h';
 
 	// 選択した font-size を格納
 	let selectedFontSize;
 
+	// 保存された font-sizeを取得 font-size:数字+単位
+	let getFontSizeStyle;
+	let getFontSize;
 	if (isActive) {
 		const activeFormat = getActiveFormat(value, name);
 		selectedFontSize = activeFormat.attributes.data;
+
+		getFontSizeStyle = activeFormat.attributes.style;
+		getFontSize = getFontSizeStyle.replace('font-size:', '');
+
+		// フォントサイズを変更した後にリロードするとselectedFontSizeはundefinedになるため
+		if (selectedFontSize === undefined && getFontSize) {
+			selectedFontSize = getFontSize;
+		}
 	}
+
 	const pickerStyle = {
 		width: '200px',
 	};
@@ -43,8 +62,22 @@ const FontSizeEdit = (props) => {
 		padding: '0 16px',
 		height: '30px',
 	};
-	const anchorRef = useAnchorRef({ ref: props.contentRef, value });
+	const anchorRef = useAnchorRef({ ref: contentRef, value });
 	const [isSettingFontSize, setIsSettingFontSize] = useState(false);
+
+	const enableIsAddingFontSize = useCallback(
+		() => setIsSettingFontSize(true),
+		[setIsSettingFontSize]
+	);
+	const disableIsAddingFontSize = useCallback(
+		() => setIsSettingFontSize(false),
+		[setIsSettingFontSize]
+	);
+
+	const hasFontSizeToChoose = !isEmpty(value) || !selectedFontSize;
+	if (!hasFontSizeToChoose && !isActive) {
+		return null;
+	}
 
 	const fontSizes = [
 		{
@@ -69,39 +102,53 @@ const FontSizeEdit = (props) => {
 		},
 	];
 
-	const fallbackFontSize = 16;
+	// Sliderを使用するときに必要になるfallbackFontSizeを用意 wp5.8以下
+	const getFontSizeNoUnit = parseInt(getFontSize);
+	const fallbackFontSize = !getFontSizeNoUnit ? 16 : getFontSizeNoUnit;
 
 	return (
 		<>
 			<RichTextToolbarButton
 				title={__('Inline Font Size', 'vk-blocks')}
-				onClick={() => {
-					setIsSettingFontSize(true);
-				}}
+				onClick={
+					hasFontSizeToChoose
+						? enableIsAddingFontSize
+						: () => onChange(removeFormat(value, name))
+				}
 				shortcutType={shortcutType}
 				shortcutCharacter={shortcutChar}
-				key={isActive ? 'text-color' : 'text-color-not-active'}
 				className="format-library-text-color-button"
-				name={isActive ? 'text-color' : undefined}
+				isActive={isActive}
 				icon={
 					<>
-						<Icon icon={Icon} style={iconStyle} />
+						<Icon icon={IconSVG} style={iconStyle} />
 					</>
 				}
 			/>
 			{isSettingFontSize && (
-				<URLPopover
-					value={value}
-					className="components-inline-color-popover"
+				<Popover
+					className="vk-blocks-format-popover components-inline-color-popover"
 					anchorRef={anchorRef}
-					onClose={() => setIsSettingFontSize(false)}
+					onClose={disableIsAddingFontSize}
 				>
 					<div style={pickerStyle}>
 						<FontSizePicker
 							fontSizes={fontSizes}
 							value={selectedFontSize}
-							fallbackFontSize={fallbackFontSize}
-							withSlider={true}
+							fallbackFontSize={
+								window.wpVersion !== undefined &&
+								window.wpVersion !== null &&
+								compareVersions(window.wpVersion, '5.9') < 0
+									? fallbackFontSize
+									: false
+							}
+							withSlider={
+								window.wpVersion !== undefined &&
+								window.wpVersion !== null &&
+								compareVersions(window.wpVersion, '5.9') < 0
+									? true
+									: false
+							}
 							onChange={(newFontSize) => {
 								if (newFontSize) {
 									onChange(
@@ -131,7 +178,7 @@ const FontSizeEdit = (props) => {
 							{__('Apply', 'vk-blocks')}
 						</Button>
 					</div>
-				</URLPopover>
+				</Popover>
 			)}
 		</>
 	);

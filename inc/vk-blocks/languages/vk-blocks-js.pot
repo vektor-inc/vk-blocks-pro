@@ -50,7 +50,7 @@ msgstr ""
 #: src/blocks/button/edit.js:223
 #: src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:21
-#: src/extensions/common/inline-font-size/index.js:56
+#: src/extensions/common/inline-font-size/index.js:89
 msgid "Normal"
 msgstr ""
 
@@ -266,12 +266,12 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:104
 #: src/blocks/button/edit.js:407
-#: src/blocks/heading/edit.js:342
+#: src/blocks/heading/edit.js:321
 msgid "Text Color"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:110
-#: src/blocks/border-box/edit.js:99
+#: src/blocks/border-box/edit.js:201
 #: src/blocks/button/edit.js:390
 msgid "Background Color"
 msgstr ""
@@ -385,7 +385,7 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:135
 #: src/blocks/_pro/step-item/edit.js:72
-#: src/blocks/border-box/edit.js:122
+#: src/blocks/border-box/edit.js:224
 #: src/blocks/button/edit.js:418
 #: src/blocks/icon/edit.js:237
 #: src/blocks/pr-content/edit.js:196
@@ -842,7 +842,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:122
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
 #: src/blocks/_pro/timeline-item/edit.js:100
-#: src/blocks/heading/edit.js:282
+#: src/blocks/heading/edit.js:261
 #: src/blocks/staff/edit.js:173
 #: src/extensions/core/heading/style.js:30
 #: src/extensions/core/list/style.js:102
@@ -858,7 +858,7 @@ msgid "Navigation Position"
 msgstr ""
 
 #: src/blocks/_pro/slider/edit.js:366
-#: src/blocks/heading/edit.js:392
+#: src/blocks/heading/edit.js:371
 msgid "Hide"
 msgstr ""
 
@@ -892,7 +892,7 @@ msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:91
 #: src/blocks/_pro/timeline-item/edit.js:69
-#: src/blocks/border-box/edit.js:63
+#: src/blocks/border-box/edit.js:189
 #: src/blocks/button/edit.js:336
 #: src/blocks/icon/edit.js:256
 #: src/blocks/staff/edit.js:199
@@ -953,7 +953,7 @@ msgid "label"
 msgstr ""
 
 #: src/blocks/alert/edit.js:19
-#: src/blocks/heading/edit.js:273
+#: src/blocks/heading/edit.js:252
 msgid "Style Settings"
 msgstr ""
 
@@ -1016,7 +1016,7 @@ msgid "Balloon setting"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:409
-#: src/blocks/heading/edit.js:384
+#: src/blocks/heading/edit.js:363
 msgid "Position"
 msgstr ""
 
@@ -1108,30 +1108,17 @@ msgstr ""
 
 #: src/blocks/border-box/deprecated/0.0.0/save.js:24
 #: src/blocks/border-box/deprecated/0.0.1/save.js:25
-#: src/blocks/border-box/edit.js:25
+#: src/blocks/border-box/edit.js:39
 msgid "Please enter a title."
 msgstr ""
 
-#: src/blocks/border-box/edit.js:109
-msgid "Transparent"
-msgstr ""
-
-#: src/blocks/border-box/edit.js:113
-msgid "White"
-msgstr ""
-
-#: src/blocks/border-box/edit.js:119
-#: src/utils/font-awesome-new.js:14
-msgid "Icon"
-msgstr ""
-
-#: src/blocks/border-box/edit.js:51
+#: src/blocks/border-box/edit.js:177
 #: src/blocks/icon-outer/edit.js:132
 #: src/blocks/icon/edit.js:121
 msgid "Margin"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:56
+#: src/blocks/border-box/edit.js:182
 msgid ""
 "The margin-top of the first element and the margin-bottom of the last "
 "element in the border block will be automatically set to 0.If you want to "
@@ -1139,52 +1126,45 @@ msgid ""
 "instead of margin."
 msgstr ""
 
-#: src/blocks/border-box/edit.js:66
+#: src/blocks/border-box/edit.js:192
 #: src/extensions/core/group/style.js:47
 msgid "Border Color"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:76
-msgid "Red"
+#: src/blocks/border-box/edit.js:211
+msgid "Transparent"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:80
-msgid "Orange"
+#: src/blocks/border-box/edit.js:215
+msgid "White"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:84
-msgid "Blue"
+#: src/blocks/border-box/edit.js:221
+#: src/utils/font-awesome-new.js:14
+msgid "Icon"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:88
-msgid "Green"
-msgstr ""
-
-#: src/blocks/border-box/edit.js:92
-msgid "Black"
-msgstr ""
-
-#: src/blocks/border-box/index.js:39
+#: src/blocks/border-box/index.js:38
 msgid "Solid Angle Tab"
 msgstr ""
 
-#: src/blocks/border-box/index.js:44
+#: src/blocks/border-box/index.js:43
 msgid "Solid Round Tab"
 msgstr ""
 
-#: src/blocks/border-box/index.js:48
+#: src/blocks/border-box/index.js:47
 msgid "Solid Angle Banner"
 msgstr ""
 
-#: src/blocks/border-box/index.js:52
+#: src/blocks/border-box/index.js:51
 msgid "Solid Angle Onborder"
 msgstr ""
 
-#: src/blocks/border-box/index.js:56
+#: src/blocks/border-box/index.js:55
 msgid "Solid Angle Inner"
 msgstr ""
 
-#: src/blocks/border-box/index.js:60
+#: src/blocks/border-box/index.js:59
 msgid "Solid Angle iconFeature"
 msgstr ""
 
@@ -1231,7 +1211,7 @@ msgstr ""
 
 #: src/blocks/button/edit.js:231
 #: src/blocks/spacer/edit.js:85
-#: src/extensions/common/inline-font-size/index.js:51
+#: src/extensions/common/inline-font-size/index.js:84
 msgid "Small"
 msgstr ""
 
@@ -1299,13 +1279,13 @@ msgid ""
 msgstr ""
 
 #: src/blocks/button/edit.js:422
-#: src/blocks/heading/edit.js:355
+#: src/blocks/heading/edit.js:334
 #: src/blocks/pr-content/edit.js:200
 msgid "Before text"
 msgstr ""
 
 #: src/blocks/button/edit.js:431
-#: src/blocks/heading/edit.js:364
+#: src/blocks/heading/edit.js:343
 #: src/blocks/pr-content/edit.js:212
 msgid "After text"
 msgstr ""
@@ -1395,7 +1375,7 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:152
 #: src/blocks/heading/deprecated/0.40.1/component.js:152
 #: src/blocks/heading/deprecated/0.60.1/component.js:152
-#: src/blocks/heading/edit.js:247
+#: src/blocks/heading/edit.js:226
 msgid "Input sub text…"
 msgstr ""
 
@@ -1409,60 +1389,60 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:137
 #: src/blocks/heading/deprecated/0.40.1/component.js:137
 #: src/blocks/heading/deprecated/0.60.1/component.js:137
-#: src/blocks/heading/edit.js:232
+#: src/blocks/heading/edit.js:211
 msgid "Input title…"
 msgstr ""
 
-#: src/blocks/heading/edit.js:275
+#: src/blocks/heading/edit.js:254
 msgid "Heading style"
 msgstr ""
 
-#: src/blocks/heading/edit.js:286
+#: src/blocks/heading/edit.js:265
 #: src/extensions/core/heading/style.js:35
 msgid "Plain"
 msgstr ""
 
-#: src/blocks/heading/edit.js:292
+#: src/blocks/heading/edit.js:271
 msgid "Margin Setting"
 msgstr ""
 
-#: src/blocks/heading/edit.js:294
+#: src/blocks/heading/edit.js:273
 msgid "Margin between Heading and sub text (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:311
+#: src/blocks/heading/edit.js:290
 msgid "Margin bottom size of after this block (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:328
+#: src/blocks/heading/edit.js:307
 msgid "Heading Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:352
+#: src/blocks/heading/edit.js:331
 msgid "Font Awesome Icon Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:373
+#: src/blocks/heading/edit.js:352
 msgid "Icon Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:382
+#: src/blocks/heading/edit.js:361
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:388
+#: src/blocks/heading/edit.js:367
 msgid "Display"
 msgstr ""
 
-#: src/blocks/heading/edit.js:400
+#: src/blocks/heading/edit.js:379
 msgid "Text size (rem)"
 msgstr ""
 
-#: src/blocks/heading/heading-level-dropdown.js:53
+#: src/blocks/heading/heading-level-dropdown.js:25
 msgid "Change heading level"
 msgstr ""
 
-#: src/blocks/heading/heading-level-dropdown.js:68
+#: src/blocks/heading/heading-level-dropdown.js:39
 #. %s: heading level e.g: "1", "2", "3"
 msgid "Heading %d"
 msgstr ""
@@ -1878,28 +1858,28 @@ msgid ""
 "the next, hide for the that group block."
 msgstr ""
 
-#: src/extensions/common/highlighter/index.js:139
+#: src/extensions/common/highlighter/index.js:148
 msgid "Highlighter"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:131
+#: src/extensions/common/inline-font-size/index.js:112
+msgid "Inline Font Size"
+msgstr ""
+
+#: src/extensions/common/inline-font-size/index.js:178
 msgid "Apply"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:141
+#: src/extensions/common/inline-font-size/index.js:188
 msgid "Inline font size"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:61
+#: src/extensions/common/inline-font-size/index.js:94
 msgid "Big"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:66
+#: src/extensions/common/inline-font-size/index.js:99
 msgid "Extra big"
-msgstr ""
-
-#: src/extensions/common/inline-font-size/index.js:77
-msgid "Inline Font Size"
 msgstr ""
 
 #: src/extensions/common/nowrap/index.js:21

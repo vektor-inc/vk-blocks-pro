@@ -85,27 +85,6 @@ export default function HeaddingEdit(props) {
 
 	const setTitleFontSize = (newLevel) => {
 		setAttributes({ level: newLevel });
-
-		switch (newLevel) {
-			case 1:
-				setAttributes({ titleSize: 3.6 });
-				break;
-			case 2:
-				setAttributes({ titleSize: 2.8 });
-				break;
-			case 3:
-				setAttributes({ titleSize: 2.2 });
-				break;
-			case 4:
-				setAttributes({ titleSize: 2.0 });
-				break;
-			case 5:
-				setAttributes({ titleSize: 1.8 });
-				break;
-			case 6:
-				setAttributes({ titleSize: 1.6 });
-				break;
-		}
 	};
 
 	const containerClass = `vk_heading vk_heading-style-${titleStyle}`;

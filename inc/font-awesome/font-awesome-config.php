@@ -5,6 +5,11 @@
  * @package vk_blocks
  */
 
+// Load composer autoload.
+require_once dirname( dirname( dirname( __FILE__ ) ) ) . '/vendor/autoload.php';
+
+use VektorInc\VK_Font_Awesome_Versions\VkFontAwesomeVersions;
+
 /*
  * Font Awesome Load modules
  */
@@ -15,7 +20,7 @@ if ( ! class_exists( 'Vk_Font_Awesome_Versions' ) ) {
 
 		global $set_enqueue_handle_style;
 		$set_enqueue_handle_style = 'vkExUnit_common_style'; //phpcs:ignore
-
-		require_once dirname( __FILE__ ) . '/package/class-vk-font-awesome-versions.php';
 	}
 }
+
+$vk_blocks_font_awesome_versions = new VkFontAwesomeVersions();

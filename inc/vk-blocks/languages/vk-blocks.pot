@@ -2,16 +2,16 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.21.0\n"
+"Project-Id-Version: VK Blocks Pro 1.22.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-01-11T07:14:33+00:00\n"
+"POT-Creation-Date: 2022-01-24T14:09:53+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.5.0\n"
+"X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 "X-Domain: vk-blocks\n"
 
 #: src/blocks/_pro/accordion/index.js:22
@@ -61,7 +61,7 @@ msgstr ""
 #: src/blocks/button/edit.js:223
 #: src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:21
-#: src/extensions/common/inline-font-size/index.js:56
+#: src/extensions/common/inline-font-size/index.js:89
 msgid "Normal"
 msgstr ""
 
@@ -273,7 +273,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:104
 #: src/blocks/button/edit.js:407
-#: src/blocks/heading/edit.js:342
+#: src/blocks/heading/edit.js:321
 msgid "Text Color"
 msgstr ""
 
@@ -850,7 +850,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:122
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
 #: src/blocks/_pro/timeline-item/edit.js:100
-#: src/blocks/heading/edit.js:282
+#: src/blocks/heading/edit.js:261
 #: src/blocks/staff/edit.js:173
 #: src/extensions/core/heading/style.js:30
 #: src/extensions/core/list/style.js:102
@@ -866,7 +866,7 @@ msgid "Navigation Position"
 msgstr ""
 
 #: src/blocks/_pro/slider/edit.js:366
-#: src/blocks/heading/edit.js:392
+#: src/blocks/heading/edit.js:371
 msgid "Hide"
 msgstr ""
 
@@ -962,7 +962,7 @@ msgid "label"
 msgstr ""
 
 #: src/blocks/alert/edit.js:19
-#: src/blocks/heading/edit.js:273
+#: src/blocks/heading/edit.js:252
 msgid "Style Settings"
 msgstr ""
 
@@ -1025,7 +1025,7 @@ msgid "Balloon setting"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:409
-#: src/blocks/heading/edit.js:384
+#: src/blocks/heading/edit.js:363
 msgid "Position"
 msgstr ""
 
@@ -1218,7 +1218,7 @@ msgstr ""
 
 #: src/blocks/button/edit.js:231
 #: src/blocks/spacer/edit.js:85
-#: src/extensions/common/inline-font-size/index.js:51
+#: src/extensions/common/inline-font-size/index.js:84
 #: inc/vk-blocks/vk-blocks-functions.php:23
 msgid "Small"
 msgstr ""
@@ -1285,13 +1285,13 @@ msgid "This color palette overrides the default color. If you want to use the de
 msgstr ""
 
 #: src/blocks/button/edit.js:422
-#: src/blocks/heading/edit.js:355
+#: src/blocks/heading/edit.js:334
 #: src/blocks/pr-content/edit.js:200
 msgid "Before text"
 msgstr ""
 
 #: src/blocks/button/edit.js:431
-#: src/blocks/heading/edit.js:364
+#: src/blocks/heading/edit.js:343
 #: src/blocks/pr-content/edit.js:212
 msgid "After text"
 msgstr ""
@@ -1379,7 +1379,7 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:152
 #: src/blocks/heading/deprecated/0.40.1/component.js:152
 #: src/blocks/heading/deprecated/0.60.1/component.js:152
-#: src/blocks/heading/edit.js:247
+#: src/blocks/heading/edit.js:226
 msgid "Input sub text…"
 msgstr ""
 
@@ -1393,61 +1393,61 @@ msgstr ""
 #: src/blocks/heading/deprecated/0.40.0/component.js:137
 #: src/blocks/heading/deprecated/0.40.1/component.js:137
 #: src/blocks/heading/deprecated/0.60.1/component.js:137
-#: src/blocks/heading/edit.js:232
+#: src/blocks/heading/edit.js:211
 msgid "Input title…"
 msgstr ""
 
-#: src/blocks/heading/edit.js:275
+#: src/blocks/heading/edit.js:254
 msgid "Heading style"
 msgstr ""
 
-#: src/blocks/heading/edit.js:286
+#: src/blocks/heading/edit.js:265
 #: src/extensions/core/heading/style.js:35
 msgid "Plain"
 msgstr ""
 
-#: src/blocks/heading/edit.js:292
+#: src/blocks/heading/edit.js:271
 msgid "Margin Setting"
 msgstr ""
 
-#: src/blocks/heading/edit.js:294
+#: src/blocks/heading/edit.js:273
 msgid "Margin between Heading and sub text (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:311
+#: src/blocks/heading/edit.js:290
 msgid "Margin bottom size of after this block (rem)"
 msgstr ""
 
-#: src/blocks/heading/edit.js:328
+#: src/blocks/heading/edit.js:307
 msgid "Heading Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:352
+#: src/blocks/heading/edit.js:331
 msgid "Font Awesome Icon Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:373
+#: src/blocks/heading/edit.js:352
 msgid "Icon Color"
 msgstr ""
 
-#: src/blocks/heading/edit.js:382
+#: src/blocks/heading/edit.js:361
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:388
+#: src/blocks/heading/edit.js:367
 msgid "Display"
 msgstr ""
 
-#: src/blocks/heading/edit.js:400
+#: src/blocks/heading/edit.js:379
 msgid "Text size (rem)"
 msgstr ""
 
-#: src/blocks/heading/heading-level-dropdown.js:53
+#: src/blocks/heading/heading-level-dropdown.js:25
 msgid "Change heading level"
 msgstr ""
 
 #. %s: heading level e.g: "1", "2", "3"
-#: src/blocks/heading/heading-level-dropdown.js:68
+#: src/blocks/heading/heading-level-dropdown.js:39
 msgid "Heading %d"
 msgstr ""
 
@@ -1860,28 +1860,28 @@ msgstr ""
 msgid "If you want to hide multiple blocks, that first you set to group block and the next, hide for the that group block."
 msgstr ""
 
-#: src/extensions/common/highlighter/index.js:139
+#: src/extensions/common/highlighter/index.js:148
 msgid "Highlighter"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:131
+#: src/extensions/common/inline-font-size/index.js:112
+msgid "Inline Font Size"
+msgstr ""
+
+#: src/extensions/common/inline-font-size/index.js:178
 msgid "Apply"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:141
+#: src/extensions/common/inline-font-size/index.js:188
 msgid "Inline font size"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:61
+#: src/extensions/common/inline-font-size/index.js:94
 msgid "Big"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:66
+#: src/extensions/common/inline-font-size/index.js:99
 msgid "Extra big"
-msgstr ""
-
-#: src/extensions/common/inline-font-size/index.js:77
-msgid "Inline Font Size"
 msgstr ""
 
 #: src/extensions/common/nowrap/index.js:21
@@ -2108,28 +2108,6 @@ msgstr ""
 msgid "Dismiss this notice"
 msgstr ""
 
-#: inc/font-awesome/package/class-vk-font-awesome-versions.php:42
-#: inc/font-awesome/package/class-vk-font-awesome-versions.php:57
-msgid "Not recommended"
-msgstr ""
-
-#: inc/font-awesome/package/class-vk-font-awesome-versions.php:89
-#: inc/font-awesome/package/class-vk-font-awesome-versions.php:91
-msgid "Ex ) "
-msgstr ""
-
-#: inc/font-awesome/package/class-vk-font-awesome-versions.php:200
-msgid "Font Awesome"
-msgstr ""
-
-#: inc/font-awesome/package/class-vk-font-awesome-versions.php:223
-msgid "Font Awesome Version"
-msgstr ""
-
-#: inc/font-awesome/package/class-vk-font-awesome-versions.php:226
-msgid "4.7 will be abolished in the near future."
-msgstr ""
-
 #: inc/tgm-plugin-activation/tgm-config.php:72
 msgid "Install Required Plugins"
 msgstr ""
@@ -2322,8 +2300,21 @@ msgstr ""
 msgid "Balloon Image Name"
 msgstr ""
 
+#: inc/vk-blocks/admin/admin-load-separate.php:11
+#: inc/vk-blocks/admin/admin.php:73
+msgid "Load Separete Setting"
+msgstr ""
+
+#: inc/vk-blocks/admin/admin-load-separate.php:12
+msgid "Note that the order in which CSS/JS are loaded will change."
+msgstr ""
+
+#: inc/vk-blocks/admin/admin-load-separate.php:21
+msgid "Load Separete Option on"
+msgstr ""
+
 #: inc/vk-blocks/admin/admin-margin.php:27
-#: inc/vk-blocks/admin/admin.php:71
+#: inc/vk-blocks/admin/admin.php:72
 msgid "Common Margin Setting"
 msgstr ""
 
@@ -2331,20 +2322,20 @@ msgstr ""
 msgid "Please specify the size of the common margin used for responsive spacers, etc."
 msgstr ""
 
-#: inc/vk-blocks/admin/admin.php:47
+#: inc/vk-blocks/admin/admin.php:48
 msgid "Blocks setting"
 msgstr ""
 
-#: inc/vk-blocks/admin/admin.php:48
+#: inc/vk-blocks/admin/admin.php:49
 msgctxt "label in admin menu"
 msgid "Blocks"
 msgstr ""
 
-#: inc/vk-blocks/admin/admin.php:64
+#: inc/vk-blocks/admin/admin.php:65
 msgid "Blocks Setting"
 msgstr ""
 
-#: inc/vk-blocks/admin/admin.php:70
+#: inc/vk-blocks/admin/admin.php:71
 msgid "Balloon Block Setting"
 msgstr ""
 
@@ -2368,11 +2359,11 @@ msgstr ""
 msgid "No Post is selected"
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:212
+#: inc/vk-blocks/vk-blocks-functions.php:214
 msgid "Blocks"
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:225
+#: inc/vk-blocks/vk-blocks-functions.php:227
 msgid "Blocks Layout"
 msgstr ""
 
@@ -2478,7 +2469,7 @@ msgstr ""
 msgid "Edit this area"
 msgstr ""
 
-#: vk-blocks.php:98
+#: vk-blocks.php:99
 msgid "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks Plugin running."
 msgstr ""
 

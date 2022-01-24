@@ -163,6 +163,7 @@ class VK_Blocks_Block_Loader {
 	public function add_styles() {
 		// 分割読み込みの場合は register されるファイルが false 指定で何も読み込まれなくなっている
 		wp_enqueue_style( 'vk-blocks-build-css' );
+		wp_enqueue_style( 'vk-blocks-utils-common-css' );
 	}
 
 	/**
@@ -173,8 +174,12 @@ class VK_Blocks_Block_Loader {
 
 		// 結合CSSを登録.
 		if ( self::should_load_separate_assets() && ! is_admin() ) {
+
+			// ハンドル名vk-blocks-build-cssはwp_add_inline_styleで使用している箇所があるので登録する
 			// 分割読み込みの場合 : false = 結合CSSを読み込まない.
 			wp_register_style( 'vk-blocks-build-css', false, array(), VK_BLOCKS_VERSION );
+			// src/utils内の内の共通cssの読み込み
+			wp_register_style( 'vk-blocks-utils-common-css', VK_BLOCKS_DIR_URL . 'build/utils/common.css', array(), VK_BLOCKS_VERSION );
 		} else {
 			// 一括読み込みの場合 : 結合CSSを登録.
 			wp_register_style( 'vk-blocks-build-css', $this->assets_build_url . 'block-build.css', array(), VK_BLOCKS_VERSION );
@@ -301,7 +306,13 @@ class VK_Blocks_Block_Loader {
 	 * @return bool
 	 */
 	public static function should_load_separate_assets() {
-		return apply_filters( 'vk_blocks_should_load_separate_assets', false );
+		$vk_blocks_options = get_option( 'vk_blocks_options' );
+		if ( function_exists( 'wp_should_load_separate_core_block_assets' ) && isset( $vk_blocks_options['load_separate_option'] ) ) {
+			$bool = true;
+		} else {
+			$bool = false;
+		}
+		return apply_filters( 'vk_blocks_should_load_separate_assets', $bool );
 	}
 
 	/**

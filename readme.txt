@@ -3,8 +3,8 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,m
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
-Tested up to: 5.8.2
-Stable tag: 1.21.0
+Tested up to: 5.9.0
+Stable tag: 1.22.1
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,11 +63,14 @@ e.g.
 
 == Changelog ==
 
+= 1.22.1 =
+Cope with WordPress 5.9
 [ fix ][ Heading ] Make text size not auto-include when changing heading level
 [ fix ][ Grid Column ] fix translate
 [ fix ][ Heading ] vertical heading levels for wp-5.9
 [ fix ][ Border Box ] cope with custom color palette
 [ Bug fix ] fix block style enqueue point
+[ Bug fix ][ button ] fix block-block size
 
 = 1.21.0 =
 [ Add Function ][ Post-List (Pro) ] add date filtering

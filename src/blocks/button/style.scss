@@ -58,9 +58,9 @@ $vk-color-dark:#343a40;
 	}
 }
 
-
 .vk_button,
 .editor-styles-wrapper .vk_button {
+	box-sizing: border-box;
 	margin: 0 auto 5px; /* 他テーマで0だと左寄せになる場合があるのでautoに変更 */
 	text-align: center; /* テキストのみの時のセンター揃え */
 	&-color-custom {
@@ -235,6 +235,9 @@ $vk-color-dark:#343a40;
 
 		&-block {
 			display: block;
+			.vk_button_link {
+				width:100%;
+			}
 		}
 		&-wide {
 			display: block;
@@ -250,8 +253,8 @@ $vk-color-dark:#343a40;
 
 	.vk_button_link {
 		min-width: 100px;
-		min-height: 30px;
-
+		min-height: 25px;
+		box-sizing: border-box;
 		&-type-text {
 			box-shadow: none;
 			padding: 0;
@@ -296,4 +299,3 @@ $vk-color-dark:#343a40;
 		display: inline-block;
 	}
 }
-

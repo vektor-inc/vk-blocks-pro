@@ -50,7 +50,7 @@ msgstr ""
 #: src/blocks/button/edit.js:223
 #: src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:21
-#: src/extensions/common/inline-font-size/index.js:56
+#: src/extensions/common/inline-font-size/index.js:89
 msgid "Normal"
 msgstr ""
 
@@ -1211,7 +1211,7 @@ msgstr ""
 
 #: src/blocks/button/edit.js:231
 #: src/blocks/spacer/edit.js:85
-#: src/extensions/common/inline-font-size/index.js:51
+#: src/extensions/common/inline-font-size/index.js:84
 msgid "Small"
 msgstr ""
 
@@ -1862,24 +1862,24 @@ msgstr ""
 msgid "Highlighter"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:131
+#: src/extensions/common/inline-font-size/index.js:112
+msgid "Inline Font Size"
+msgstr ""
+
+#: src/extensions/common/inline-font-size/index.js:178
 msgid "Apply"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:141
+#: src/extensions/common/inline-font-size/index.js:188
 msgid "Inline font size"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:61
+#: src/extensions/common/inline-font-size/index.js:94
 msgid "Big"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:66
+#: src/extensions/common/inline-font-size/index.js:99
 msgid "Extra big"
-msgstr ""
-
-#: src/extensions/common/inline-font-size/index.js:77
-msgid "Inline Font Size"
 msgstr ""
 
 #: src/extensions/common/nowrap/index.js:21

@@ -2,16 +2,16 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.21.0\n"
+"Project-Id-Version: VK Blocks Pro 1.22.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-01-21T07:48:46+00:00\n"
+"POT-Creation-Date: 2022-01-24T14:09:53+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.5.0\n"
+"X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 "X-Domain: vk-blocks\n"
 
 #: src/blocks/_pro/accordion/index.js:22
@@ -61,7 +61,7 @@ msgstr ""
 #: src/blocks/button/edit.js:223
 #: src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:21
-#: src/extensions/common/inline-font-size/index.js:56
+#: src/extensions/common/inline-font-size/index.js:89
 msgid "Normal"
 msgstr ""
 
@@ -1218,7 +1218,7 @@ msgstr ""
 
 #: src/blocks/button/edit.js:231
 #: src/blocks/spacer/edit.js:85
-#: src/extensions/common/inline-font-size/index.js:51
+#: src/extensions/common/inline-font-size/index.js:84
 #: inc/vk-blocks/vk-blocks-functions.php:23
 msgid "Small"
 msgstr ""
@@ -1864,24 +1864,24 @@ msgstr ""
 msgid "Highlighter"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:131
+#: src/extensions/common/inline-font-size/index.js:112
+msgid "Inline Font Size"
+msgstr ""
+
+#: src/extensions/common/inline-font-size/index.js:178
 msgid "Apply"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:141
+#: src/extensions/common/inline-font-size/index.js:188
 msgid "Inline font size"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:61
+#: src/extensions/common/inline-font-size/index.js:94
 msgid "Big"
 msgstr ""
 
-#: src/extensions/common/inline-font-size/index.js:66
+#: src/extensions/common/inline-font-size/index.js:99
 msgid "Extra big"
-msgstr ""
-
-#: src/extensions/common/inline-font-size/index.js:77
-msgid "Inline Font Size"
 msgstr ""
 
 #: src/extensions/common/nowrap/index.js:21
@@ -2108,28 +2108,6 @@ msgstr ""
 msgid "Dismiss this notice"
 msgstr ""
 
-#: inc/font-awesome/package/class-vk-font-awesome-versions.php:42
-#: inc/font-awesome/package/class-vk-font-awesome-versions.php:57
-msgid "Not recommended"
-msgstr ""
-
-#: inc/font-awesome/package/class-vk-font-awesome-versions.php:89
-#: inc/font-awesome/package/class-vk-font-awesome-versions.php:91
-msgid "Ex ) "
-msgstr ""
-
-#: inc/font-awesome/package/class-vk-font-awesome-versions.php:200
-msgid "Font Awesome"
-msgstr ""
-
-#: inc/font-awesome/package/class-vk-font-awesome-versions.php:223
-msgid "Font Awesome Version"
-msgstr ""
-
-#: inc/font-awesome/package/class-vk-font-awesome-versions.php:226
-msgid "4.7 will be abolished in the near future."
-msgstr ""
-
 #: inc/tgm-plugin-activation/tgm-config.php:72
 msgid "Install Required Plugins"
 msgstr ""
@@ -2322,8 +2300,21 @@ msgstr ""
 msgid "Balloon Image Name"
 msgstr ""
 
+#: inc/vk-blocks/admin/admin-load-separate.php:11
+#: inc/vk-blocks/admin/admin.php:73
+msgid "Load Separete Setting"
+msgstr ""
+
+#: inc/vk-blocks/admin/admin-load-separate.php:12
+msgid "Note that the order in which CSS/JS are loaded will change."
+msgstr ""
+
+#: inc/vk-blocks/admin/admin-load-separate.php:21
+msgid "Load Separete Option on"
+msgstr ""
+
 #: inc/vk-blocks/admin/admin-margin.php:27
-#: inc/vk-blocks/admin/admin.php:71
+#: inc/vk-blocks/admin/admin.php:72
 msgid "Common Margin Setting"
 msgstr ""
 
@@ -2331,20 +2322,20 @@ msgstr ""
 msgid "Please specify the size of the common margin used for responsive spacers, etc."
 msgstr ""
 
-#: inc/vk-blocks/admin/admin.php:47
+#: inc/vk-blocks/admin/admin.php:48
 msgid "Blocks setting"
 msgstr ""
 
-#: inc/vk-blocks/admin/admin.php:48
+#: inc/vk-blocks/admin/admin.php:49
 msgctxt "label in admin menu"
 msgid "Blocks"
 msgstr ""
 
-#: inc/vk-blocks/admin/admin.php:64
+#: inc/vk-blocks/admin/admin.php:65
 msgid "Blocks Setting"
 msgstr ""
 
-#: inc/vk-blocks/admin/admin.php:70
+#: inc/vk-blocks/admin/admin.php:71
 msgid "Balloon Block Setting"
 msgstr ""
 
@@ -2368,11 +2359,11 @@ msgstr ""
 msgid "No Post is selected"
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:212
+#: inc/vk-blocks/vk-blocks-functions.php:214
 msgid "Blocks"
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:225
+#: inc/vk-blocks/vk-blocks-functions.php:227
 msgid "Blocks Layout"
 msgstr ""
 

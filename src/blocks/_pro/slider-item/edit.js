@@ -59,12 +59,12 @@ export default function SliderItemEdit(props) {
 		containerClass = `${prefix}_container`;
 	}
 
-	let bgColorClassName = '';
+	const bgColorClasses = [];
 	let style;
 	if (bgColor !== undefined) {
-		bgColorClassName += ` has-background-color`;
+		bgColorClasses.push('has-background');
 		if (!isHexColor(bgColor)) {
-			bgColorClassName += ` has-${bgColor}-background-color`;
+			bgColorClasses.push(`has-${bgColor}-background-color`);
 		} else {
 			style = { backgroundColor: bgColor };
 		}
@@ -72,7 +72,8 @@ export default function SliderItemEdit(props) {
 
 	if (opacity !== undefined) {
 		const opacityClass = opacity * 10;
-		bgColorClassName += ` has-background-dim has-background-dim-${opacityClass}`;
+		bgColorClasses.push('has-background-dim');
+		bgColorClasses.push(`has-background-dim-${opacityClass}`);
 	}
 
 	let GetBgImage;
@@ -85,7 +86,9 @@ export default function SliderItemEdit(props) {
 	}
 
 	const blockProps = useBlockProps({
-		className: `vk_slider_item swiper-slide vk_valign-${verticalAlignment} ${prefix}-${clientId} ${classPaddingLR} ${prefix}-paddingVertical-none ${bgColorClassName}`,
+		className: `vk_slider_item swiper-slide vk_valign-${verticalAlignment} ${prefix}-${clientId} ${classPaddingLR} ${prefix}-paddingVertical-none ${bgColorClasses.join(
+			' '
+		)}`,
 		style,
 	});
 

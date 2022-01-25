@@ -1,7 +1,7 @@
 /* eslint camelcase: 0 */
 import save0_0_0 from './0.0.0/save';
 import save0_60_1 from './0.60.1/save';
-import save1_20_5 from './1.20.5/save';
+import save1_22_1 from './1.22.1/save';
 
 const blockAttributes = {
 	verticalAlignment: {
@@ -81,7 +81,7 @@ export default [
 		attributes: {
 			...blockAttributes3
 		},
-		save: save1_20_5,
+		save: save1_22_1,
 	},
 	{
 		attributes: {

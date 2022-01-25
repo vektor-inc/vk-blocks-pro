@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ fix ][ Slider(Pro) ] cope with custom color palette
+
 = 1.22.1 =
 Cope with WordPress 5.9
 [ fix ][ Heading ] Make text size not auto-include when changing heading level

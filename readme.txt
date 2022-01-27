@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.7
 Tested up to: 5.9.0
-Stable tag: 1.22.1
+Stable tag: 1.22.3
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -65,8 +65,15 @@ e.g.
 
 [ fix ][ Slider(Pro) ] cope with custom color palette
 
+= 1.22.3 =
+[ Bug fix ][ core/heading ] fix width
+
+= 1.22.2 =
+[ Bug fix ][ selected post list(Pro) ] fix post id
+
 = 1.22.1 =
 Cope with WordPress 5.9
+[ Add function ] load separate block setting from setting > vk blocks 
 [ fix ][ Heading ] Make text size not auto-include when changing heading level
 [ fix ][ Grid Column ] fix translate
 [ fix ][ Heading ] vertical heading levels for wp-5.9

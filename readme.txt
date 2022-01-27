@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ fix ][ Slider(Pro) ] cope with custom color palette
+
 = 1.22.3 =
 [ Bug fix ][ core/heading ] fix width
 

@@ -2,7 +2,7 @@
 Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird
 Donate link:
 Tags: Gutenberg,FAQ,alert
-Requires at least: 5.7
+Requires at least: 5.8
 Tested up to: 5.9.0
 Stable tag: 1.22.3
 Requires PHP: 7.0
@@ -63,6 +63,7 @@ e.g.
 
 == Changelog ==
 
+[ Other ] Update the required WordPress version
 [ Bug fix ][ Heading ] Fix bug the color does not change when the style setting is no decoration.
 [ fix ][ Slider(Pro) ] cope with custom color palette
 [ Bug fix ][ Icon Card(Pro) ] fix text align

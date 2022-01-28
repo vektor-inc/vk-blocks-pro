@@ -11,15 +11,6 @@
  * @return void
  */
 function vk_blocks_register_block_page_content() {
-	// Register Script.
-	$asset = include VK_BLOCKS_DIR_PATH . 'build/page-content/block-build.asset.php';
-	wp_register_script(
-		'vk-blocks/page_content',
-		VK_BLOCKS_DIR_URL . 'build/page_content/block-build.js',
-		$asset['dependencies'],
-		VK_BLOCKS_VERSION,
-		true
-	);
 
 	global $vk_blocks_common_attributes;
 	if ( vk_blocks_is_lager_than_wp( '5.8' ) ) {

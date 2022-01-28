@@ -34,16 +34,6 @@ function vk_blocks_register_block_child_page() {
 		);
 	}
 
-	// Register Script.
-	$asset = include VK_BLOCKS_DIR_PATH . 'build/_pro/child-page/block-build.asset.php';
-	wp_register_script(
-		'vk-blocks/child-page',
-		VK_BLOCKS_DIR_URL . 'build/_pro/child-page/block-build.js',
-		$asset['dependencies'],
-		VK_BLOCKS_VERSION,
-		true
-	);
-
 	global $vk_blocks_common_attributes;
 	if ( vk_blocks_is_lager_than_wp( '5.8' ) ) {
 		register_block_type(

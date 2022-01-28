@@ -4,6 +4,7 @@ import save002 from "./0.0.2/save"
 import save003 from "./0.0.3/save"
 import save0_49_1 from "./0.49.1/save"
 import save0_58_7 from "./0.58.7/save"
+import save1_22_3 from "./1.22.3/save"
 
 const blockAttributes = {
 	effect: {
@@ -16,7 +17,19 @@ const blockAttributes = {
 	},
 };
 
+const blockAttributes2 = {
+	...blockAttributes,
+	blockId: {
+		type: "string",
+		default: "1"
+	},
+};
+
 const deprecated = [
+	{
+		attributes: blockAttributes2,
+		save: save1_22_3
+	},
 	{
 		attributes:	{
 			...blockAttributes,

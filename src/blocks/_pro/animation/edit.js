@@ -6,12 +6,15 @@ import {
 } from '@wordpress/block-editor';
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
+import { useInstanceId } from '@wordpress/compose';
 
 export default function AnimationEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
-	const { effect, speed, range } = attributes;
+	const { effect, speed, range, blockId } = attributes;
+	const instanceId = useInstanceId(AnimationEdit);
 
 	useEffect(() => {
+		setAttributes({ blockId: instanceId });
 		if (clientId === undefined || clientId === null || clientId === '') {
 			setAttributes({ clientId });
 		}
@@ -29,7 +32,7 @@ export default function AnimationEdit(props) {
 	}, [clientId]);
 
 	const blockProps = useBlockProps({
-		className: `vk_animation vk_animation-${effect} vk_animation-speed-${speed} vk_animation-range-${range} vk_animation-${clientId}`,
+		className: `vk_animation vk_animation-${effect} vk_animation-speed-${speed} vk_animation-range-${range} vk_animation-${blockId}`,
 	});
 
 	return (

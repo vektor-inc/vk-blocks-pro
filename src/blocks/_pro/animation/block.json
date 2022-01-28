@@ -19,6 +19,10 @@
 		"clientId": {
 			"type": "string",
 			"default": ""
+		},
+		"blockId": {
+			"type": "string",
+			"default": "1"
 		}
 	},
 	"description": "Add animation to elements when scrolling the page.",

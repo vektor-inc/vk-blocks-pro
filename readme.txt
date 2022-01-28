@@ -66,8 +66,9 @@ e.g.
 = 1.22.4 =
 [ Other ] Update the required WordPress version
 [ Bug fix ][ Heading ] Fix bug the color does not change when the style setting is no decoration.
-[ fix ][ Slider(Pro) ] cope with custom color palette
+[ Bug fix ][ Slider(Pro) ] cope with custom color palette
 [ Bug fix ][ Icon Card(Pro) ] fix text align
+[ Bug fix ][ TOC(Pro) ] fix css corruption of block load separation mode
 
 = 1.22.3 =
 [ Bug fix ][ core/heading ] fix width

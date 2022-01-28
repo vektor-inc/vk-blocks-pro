@@ -100,6 +100,20 @@ WP_BASE_URL='http://localhost:xxxx/' npm run test:e2e
 コミット時にphpのformat、phpcsのチェックと、lintが実行されます。
 エラーがある場合コミットできません。
 
+---
+## コミットプリフィックス
+
+fix：バグ修正
+hotfix：クリティカルなバグ修正
+add：新規（ファイル）機能追加
+update：機能修正（バグではない）
+change：仕様変更
+clean：整理（リファクタリング等）
+disable：無効化（コメントアウト等）
+remove：削除（ファイル）
+upgrade：バージョンアップ
+revert：変更取り消し
+
 ## develop branch
 develop ブランチに push すると自動でテストサーバー https://vk-block-test.vs4.nagoya/ にデプロイされます。
 
@@ -140,6 +154,8 @@ develop ブランチに push すると自動でテストサーバー https://vk-
 線でも あり/なし だけではなく 直線/点線/二重線 など拡張が想定される可能性がありそうな場合は
 -border-solid としておき -border-dotted -border-wave とする事ができるようにしておく。
 何がなんでも あり/なし 以外以外発生しないというケースの場合は -border-true あるいは例外的に -border など属性名だけでも可
+
+---
 
 ## ブレイクポイント
 

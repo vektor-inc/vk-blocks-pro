@@ -63,6 +63,9 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Heading ] Fix bug the color does not change when the style setting is no decoration.
+[ fix ][ Slider(Pro) ] cope with custom color palette
+
 = 1.22.3 =
 [ Bug fix ][ core/heading ] fix width
 

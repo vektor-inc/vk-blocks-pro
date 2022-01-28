@@ -286,7 +286,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:139
 #: src/blocks/_pro/outer/edit.js:318
-#: src/blocks/_pro/slider-item/edit.js:110
+#: src/blocks/_pro/slider-item/edit.js:112
 msgid "Padding (Left and Right)"
 msgstr ""
 
@@ -425,40 +425,40 @@ msgid "Text"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:182
-#: src/blocks/_pro/slider-item/edit.js:157
+#: src/blocks/_pro/slider-item/edit.js:159
 msgid "Background Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:187
-#: src/blocks/_pro/slider-item/edit.js:161
+#: src/blocks/_pro/slider-item/edit.js:163
 #: src/blocks/pr-content/edit.js:66
 msgid "Color Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:188
-#: src/blocks/_pro/slider-item/edit.js:163
+#: src/blocks/_pro/slider-item/edit.js:165
 msgid ""
 "Color will overcome background image. If you want to display image, clear "
 "background color or set opacity 0."
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:201
-#: src/blocks/_pro/slider-item/edit.js:171
+#: src/blocks/_pro/slider-item/edit.js:173
 msgid "Opacity Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:215
-#: src/blocks/_pro/slider-item/edit.js:206
+#: src/blocks/_pro/slider-item/edit.js:208
 msgid "Background Image PC"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:231
-#: src/blocks/_pro/slider-item/edit.js:222
+#: src/blocks/_pro/slider-item/edit.js:224
 msgid "Background Image Tablet"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:241
-#: src/blocks/_pro/slider-item/edit.js:232
+#: src/blocks/_pro/slider-item/edit.js:234
 msgid "Background Image Mobile"
 msgstr ""
 
@@ -483,7 +483,7 @@ msgid "Parallax (Non-guaranteed)"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:289
-#: src/blocks/_pro/slider-item/edit.js:105
+#: src/blocks/_pro/slider-item/edit.js:107
 #: src/blocks/pr-content/edit.js:225
 msgid "Layout Setting"
 msgstr ""
@@ -750,31 +750,31 @@ msgstr ""
 msgid "Input Internal Post URL"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:114
+#: src/blocks/_pro/slider-item/edit.js:116
 msgid "Fit to the Container area"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:121
+#: src/blocks/_pro/slider-item/edit.js:123
 msgid "Add padding to the Slider area"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:128
+#: src/blocks/_pro/slider-item/edit.js:130
 msgid "Remove padding from the Slider area"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:143
+#: src/blocks/_pro/slider-item/edit.js:145
 msgid "Vertical align"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:185
+#: src/blocks/_pro/slider-item/edit.js:187
 msgid "Background Image Size"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:192
+#: src/blocks/_pro/slider-item/edit.js:194
 msgid "cover"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:196
+#: src/blocks/_pro/slider-item/edit.js:198
 msgid "repeat"
 msgstr ""
 

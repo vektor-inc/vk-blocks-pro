@@ -21,16 +21,6 @@ function vk_blocks_register_block_icon_card() {
 		);
 	}
 
-	// Register Script.
-	$asset = include VK_BLOCKS_DIR_PATH . 'build/_pro/icon-card/block-build.asset.php';
-	wp_register_script(
-		'vk-blocks/icon-card',
-		VK_BLOCKS_DIR_URL . 'build/icon-card/block-build.js',
-		$asset['dependencies'],
-		VK_BLOCKS_VERSION,
-		true
-	);
-
 	if ( vk_blocks_is_lager_than_wp( '5.8' ) ) {
 		register_block_type(
 			__DIR__,

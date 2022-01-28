@@ -21,16 +21,6 @@ function vk_blocks_register_block_card() {
 		);
 	}
 
-	// Register Script.
-	$asset = include VK_BLOCKS_DIR_PATH . 'build/_pro/card/block-build.asset.php';
-	wp_register_script(
-		'vk-blocks/card',
-		VK_BLOCKS_DIR_URL . 'build/_pro/card/block-build.js',
-		$asset['dependencies'],
-		VK_BLOCKS_VERSION,
-		true
-	);
-
 	if ( vk_blocks_is_lager_than_wp( '5.8' ) ) {
 		register_block_type(
 			__DIR__,

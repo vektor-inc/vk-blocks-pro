@@ -65,10 +65,6 @@ function buildBlocks(dirNames, devText = "") {
             // const css_cmd = 'npm run build:css' + proText + devText + ' --block=' + dirObj.name
             // console.log(css_cmd);
             // exec(css_cmd);
-        } else {
-            const js_cmd = 'npm run build:js' + proText + devText + ' --block=' + dirObj.name
-            console.log(js_cmd);
-            exec(js_cmd);
         }
     })
 }

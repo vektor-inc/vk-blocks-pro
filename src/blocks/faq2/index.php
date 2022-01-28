@@ -32,16 +32,6 @@ function vk_blocks_register_block_faq2() {
 		);
 	}
 
-	// Register Script.
-	$asset = include VK_BLOCKS_DIR_PATH . 'build/faq2/block-build.asset.php';
-	wp_register_script(
-		'vk-blocks/faq2',
-		VK_BLOCKS_DIR_URL . 'build/faq2/block-build.js',
-		$asset['dependencies'],
-		VK_BLOCKS_VERSION,
-		true
-	);
-
 	if ( vk_blocks_is_lager_than_wp( '5.8' ) ) {
 		register_block_type(
 			__DIR__,

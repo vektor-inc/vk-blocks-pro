@@ -11,7 +11,6 @@
  * @return void
  */
 function vk_blocks_register_block_select_post_list() {
-
 	if ( vk_blocks_is_lager_than_wp( '5.8' ) ) {
 		register_block_type(
 			__DIR__,

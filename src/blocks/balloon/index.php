@@ -21,16 +21,6 @@ function vk_blocks_register_block_vk_balloon() {
 		);
 	}
 
-	// Register Script.
-	$asset = include VK_BLOCKS_DIR_PATH . 'build/balloon/block-build.asset.php';
-	wp_register_script(
-		'vk-blocks/balloon',
-		VK_BLOCKS_DIR_URL . 'build/balloon/block-build.js',
-		$asset['dependencies'],
-		VK_BLOCKS_VERSION,
-		true
-	);
-
 	if ( vk_blocks_is_lager_than_wp( '5.8' ) ) {
 		register_block_type(
 			__DIR__,

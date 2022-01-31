@@ -32,16 +32,6 @@ function vk_blocks_register_block_accordion() {
 		);
 	}
 
-	// Register Script.
-	$asset = include VK_BLOCKS_DIR_PATH . 'build/_pro/accordion/block-build.asset.php';
-	wp_register_script(
-		'vk-blocks/accordion',
-		VK_BLOCKS_DIR_URL . 'build/accordion/block-build.js',
-		$asset['dependencies'],
-		VK_BLOCKS_VERSION,
-		true
-	);
-
 	if ( vk_blocks_is_lager_than_wp( '5.8' ) ) {
 		register_block_type(
 			__DIR__,

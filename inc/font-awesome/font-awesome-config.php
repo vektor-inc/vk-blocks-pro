@@ -21,6 +21,6 @@ if ( ! class_exists( 'Vk_Font_Awesome_Versions' ) ) {
 		global $set_enqueue_handle_style;
 		$set_enqueue_handle_style = 'vkExUnit_common_style'; //phpcs:ignore
 	}
+} elseif ( class_exists( 'VkFontAwesomeVersions' ) ) {
+	$vk_blocks_font_awesome_versions = new VkFontAwesomeVersions();
 }
-
-$vk_blocks_font_awesome_versions = new VkFontAwesomeVersions();

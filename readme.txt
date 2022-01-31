@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ][ Flow ] Release Image float on xs screen
+
 = 1.22.4 =
 [ Other ] Update the required WordPress version
 [ Bug fix ][ Heading ] Fix bug the color does not change when the style setting is no decoration.

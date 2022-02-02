@@ -90,6 +90,12 @@ export default function OuterEdit(props) {
 		});
 	}
 
+	if (borderRadius < 0) {
+		setAttributes({
+			borderRadius: 0,
+		});		
+	}
+
 	//幅のクラス切り替え
 	// eslint-disable-next-line prefer-const
 	const classWidth = `vk_outer-width-${outerWidth}`;
@@ -551,10 +557,10 @@ export default function OuterEdit(props) {
 							value={borderRadius}
 							onChange={(value) =>
 								setAttributes({
-									borderRadius: toNumber(value, -100, 100),
+									borderRadius: toNumber(value, 0, 100),
 								})
 							}
-							min="-100"
+							min="0"
 							max="100"
 						/>
 					</BaseControl>

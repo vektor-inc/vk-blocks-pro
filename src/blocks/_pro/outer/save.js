@@ -107,7 +107,7 @@ export default function save(props) {
 	) {
 		borderStyleProperty = {
 			border: `${borderWidth}px ${borderStyle} ${borderColorCss}`,
-			borderRadius: `${borderRadius}px`,
+			borderRadius: `${borderRadius < 0 ? 0 : borderRadius}px`,
 		};
 		//eslint-disable-next-line camelcase
 	} else if (upper_level !== 0 || lower_level !== 0) {

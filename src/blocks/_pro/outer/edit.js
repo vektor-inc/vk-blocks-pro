@@ -21,6 +21,7 @@ import { dispatch } from '@wordpress/data';
 import { componentDivider } from './component-divider';
 import GenerateBgImage from './GenerateBgImage';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { colorSlugToColorCode } from '@vkblocks/utils/color-slug-to-color-code';
 
 export default function OuterEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -168,7 +169,7 @@ export default function OuterEdit(props) {
 	if (!isHexColor(borderColor)) {
 		bgColorClasses.push('has-text-color');
 		bgColorClasses.push(`has-${borderColor}-color`);
-		borderColorCss = 'currentColor';
+		borderColorCss = colorSlugToColorCode(borderColor);
 	}
 
 	//Dividerエフェクトがない時のみ枠線を追

@@ -53,6 +53,10 @@ gulp.task('helper-js-pro', (done) => {
 		.pipe(uglify())
 		.pipe(rename('vk-slider.min.js'))
 		.pipe(gulp.dest('./inc/vk-blocks/build/'));
+	gulp.src('src/blocks/_pro/outer/enque-front.js')
+		.pipe(uglify())
+		.pipe(rename('vk-outer.min.js'))
+		.pipe(gulp.dest('./inc/vk-blocks/build/'));		
 	done();
 });
 

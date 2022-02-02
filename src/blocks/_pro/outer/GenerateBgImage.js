@@ -85,7 +85,7 @@ const GenerateBgImage = (props) => {
 	// ここからCSSの組み立て処理
 	const selectorCss = `.${prefix}-${clientId}`;
 	const bgColorCss = bgColorOutputDisable
-		? ''
+		? `opacity: ${opacity}`
 		: `background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity})`;
 	const outputCss = [];
 

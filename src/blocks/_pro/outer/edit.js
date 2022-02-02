@@ -93,7 +93,7 @@ export default function OuterEdit(props) {
 	if (borderRadius < 0) {
 		setAttributes({
 			borderRadius: 0,
-		});		
+		});
 	}
 
 	//幅のクラス切り替え

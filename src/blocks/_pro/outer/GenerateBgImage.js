@@ -9,7 +9,7 @@ const GenerateBgImage = (props) => {
 	const mobileViewport = 'max-width: 575.98px';
 	const tabletViewport = 'min-width: 576px';
 	const pcViewport = 'min-width: 992px';
-	const underPcViewport = 'max-width: 992.98px';
+	const underPcViewport = 'max-width: 991.98px';
 
 	let backgroundStyle;
 	const backgroundPosition = 'background-position:center!important;';

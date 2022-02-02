@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
 Tested up to: 5.9.0
-Stable tag: 1.22.4
+Stable tag: 1.23.0
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,7 +63,9 @@ e.g.
 
 == Changelog ==
 
+= 1.23.0 =
 [ Specification Change ][ Flow ] Release Image float on xs screen
+[ Specification Change ] Change required WordPress version to 5.8
 
 = 1.22.4 =
 [ Other ] Update the required WordPress version

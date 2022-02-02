@@ -2,9 +2,9 @@
 Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird
 Donate link:
 Tags: Gutenberg,FAQ,alert
-Requires at least: 5.7
-Tested up to: 5.8.2
-Stable tag: 1.21.0
+Requires at least: 5.8
+Tested up to: 5.9.0
+Stable tag: 1.23.0
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,7 +63,32 @@ e.g.
 
 == Changelog ==
 
+= 1.23.0 =
+[ Specification Change ][ Flow ] Release Image float on xs screen
+[ Specification Change ] Change required WordPress version to 5.8
+
+= 1.22.4 =
+[ Other ] Update the required WordPress version
+[ Bug fix ][ Heading ] Fix bug the color does not change when the style setting is no decoration.
+[ Bug fix ][ Slider(Pro) ] cope with custom color palette
+[ Bug fix ][ Icon Card(Pro) ] fix text align
+[ Bug fix ][ TOC(Pro) ] fix css corruption of block load separation mode
+
+= 1.22.3 =
+[ Bug fix ][ core/heading ] fix width
+
+= 1.22.2 =
+[ Bug fix ][ selected post list(Pro) ] fix post id
+
+= 1.22.1 =
+Cope with WordPress 5.9
+[ Add function ] load separate block setting from setting > vk blocks 
+[ fix ][ Heading ] Make text size not auto-include when changing heading level
+[ fix ][ Grid Column ] fix translate
+[ fix ][ Heading ] vertical heading levels for wp-5.9
 [ fix ][ Border Box ] cope with custom color palette
+[ Bug fix ] fix block style enqueue point
+[ Bug fix ][ button ] fix block-block size
 
 = 1.21.0 =
 [ Add Function ][ Post-List (Pro) ] add date filtering

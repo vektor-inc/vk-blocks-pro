@@ -3,9 +3,9 @@
  * Plugin Name: VK Blocks Pro
  * Plugin URI: https://github.com/vektor-inc/vk-blocks
  * Description: This is a plugin that extends Gutenberg's blocks.
- * Version: 1.21.0
- * Stable tag: 1.21.0
- * Requires at least: 5.7
+ * Version: 1.23.0
+ * Stable tag: 1.23.0
+ * Requires at least: 5.8
  * Author: Vektor,Inc.
  * Author URI: https://vektor-inc.co.jp
  * Text Domain: vk-blocks
@@ -18,14 +18,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Composer のファイルを読み込み ( composer install --no-dev )
+// Composer のファイルを読み込み ( composer install --no-dev ).
 require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
 // Set plugin dir path.
 define( 'VK_BLOCKS_DIR_PATH', plugin_dir_path( __FILE__ ) );
-// Set Plugin Dir URL
+// Set Plugin Dir URL.
 define( 'VK_BLOCKS_DIR_URL', plugin_dir_url( __FILE__ ) );
 
-/* function_exists は VK Blocks 無料版の無効化が正常に動作しなかった場合のフォールバック */
+/*
+無料版の VK Blocks の無効化が正常に動作しなかった場合に無料版の関数が先に定義され
+重複 -> Fatal error になるため function_exists は フォールバックとして付与している
+*/
 if ( ! function_exists( 'vk_blocks_get_version' ) ) {
 	/**
 	 * Get Plugin Version
@@ -37,8 +40,6 @@ if ( ! function_exists( 'vk_blocks_get_version' ) ) {
 		return $data['version'];
 	}
 }
-
-/* function_exists は VK Blocks 無料版の無効化が正常に動作しなかった場合のフォールバック */
 if ( ! function_exists( 'vk_blocks_deactivate_plugin' ) ) {
 	/**
 	 * Plugin deactive function

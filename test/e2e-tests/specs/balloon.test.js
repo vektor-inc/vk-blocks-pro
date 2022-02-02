@@ -49,7 +49,6 @@ describe( 'Balloon', () => {
 		const testImagePath = path.join(
 			__dirname,
 			'..',
-			'..',
 			'assets',
 			'10x10_e2e_test_image_z9T8jK.png'
 		);

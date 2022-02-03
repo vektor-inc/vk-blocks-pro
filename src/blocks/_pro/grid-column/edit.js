@@ -81,6 +81,7 @@ export default function GridColumnEdit(props) {
 					//編集画面の追加タグ用に2回目のClassを挿入
 					template={TEMPLATE}
 					allowedBlocks={ALLOWED_BLOCKS}
+					orientation="horizontal"
 				/>
 			</div>
 		</>

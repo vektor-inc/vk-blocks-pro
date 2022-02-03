@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "gulpfile.js",
 	"scripts": {
-		"start": "npm run build && npx wp-env start && open http://localhost:8888",
+		"start": "npm install && composer install && npm run build && npx wp-env start",
 		"stop": "wp-env stop",
 		"destroy": "wp-env destroy",
 		"watch": "npx gulp watch",
@@ -12,7 +12,7 @@
 		"dist": "composer install --no-dev && npx gulp dist",
 		"prebuild": "npx rimraf ./inc/vk-blocks/build/*",
 		"build:dev": "composer install && npx gulp text-domain && wp-scripts build --config webpack.config.js --mode=development && npx gulp build:dev:pro",
-		"build": "composer install && npx gulp text-domain && wp-scripts build --config webpack.config.js && npx gulp build:pro && npm run translate && npm run build:blocks && npm run build:extensions:sass && npm run build:extensions/core:sass",
+		"build": "npx gulp text-domain && wp-scripts build --config webpack.config.js && npx gulp build:pro && npm run translate && npm run build:blocks && npm run build:extensions:sass && npm run build:extensions/core:sass",
 		"build:free": "composer install && npx gulp text-domain && wp-scripts build --config webpack.config.js && npx gulp build:free && npm run build:blocks:free",
 		"build:pot": "wp i18n make-pot --merge=inc/vk-blocks/languages/vk-blocks-js.pot --skip-js . inc/vk-blocks/languages/vk-blocks.pot",
 		"translate": "npm run build:pot && po2json ./inc/vk-blocks/languages/vk-blocks-ja.po ./inc/vk-blocks/languages/vk-blocks-ja-vk-blocks-build-js.json -f jed",

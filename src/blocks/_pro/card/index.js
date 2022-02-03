@@ -86,17 +86,17 @@ const generateInlineCss = (attributes) => {
 	}
 
 	const cardImgSelector = `.${prefix}${clientId} .vk_card_item .vk_post_imgOuter::before`;
-	return `@media (max-width: 576px) {
+	return `@media (max-width: 575.98px) {
 		${cardImgSelector}{
 			padding-top:${mobile}${unit}!important;
 		}
 	}
-	@media (min-width: 577px) and (max-width: 768px) {
+	@media (min-width: 576px) and (max-width: 991.98px) {
 		${cardImgSelector}{
 			padding-top:${tablet}${unit}!important;
 		}
 	}
-	@media (min-width: 769px) {
+	@media (min-width: 992px) {
 		${cardImgSelector}{
 			padding-top:${pc}${unit}!important;
 		}

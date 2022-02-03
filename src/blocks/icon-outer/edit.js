@@ -230,6 +230,7 @@ export default function IconOuterEdit(props) {
 						allowedBlocks={ALLOWED_BLOCKS}
 						template={TEMPLATE}
 						templateLock={false}
+						orientation="horizontal"
 					/>
 				</div>
 			</div>

@@ -63,6 +63,13 @@ e.g.
 
 == Changelog ==
 
+[ fix ][ Icon outer ] add orientation horizontal
+[ fix ][ Card(Pro) ] add orientation horizontal
+[ fix ][ selected post list(Pro) ] add orientation horizontal
+[ fix ][ Button outer(Pro) ] add orientation horizontal
+[ fix ][ Icon Card(Pro) ] add orientation horizontal
+[ fix ][ Grid column(Pro) ] add orientation horizontal
+
 = 1.23.0 =
 [ Specification Change ][ Flow ] Release Image float on xs screen
 [ Specification Change ] Change required WordPress version to 5.8

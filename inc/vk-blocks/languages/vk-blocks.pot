@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.22.4\n"
+"Project-Id-Version: VK Blocks Pro 1.23.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-01-28T08:59:41+00:00\n"
+"POT-Creation-Date: 2022-02-03T15:39:52+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 "X-Domain: vk-blocks\n"
@@ -150,7 +150,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:206
 #: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:210
 #: src/blocks/_pro/card-item/edit.js:182
-#: src/blocks/_pro/card/edit.js:121
+#: src/blocks/_pro/card/edit.js:122
 #: src/blocks/_pro/icon-card/edit.js:72
 #: src/blocks/_pro/post-list/edit.js:307
 msgid "Title"
@@ -202,40 +202,40 @@ msgstr ""
 msgid "https://example.com"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:119
+#: src/blocks/_pro/card/edit.js:120
 #: src/components/display-items-control/index.js:28
 msgid "Display item"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:135
+#: src/blocks/_pro/card/edit.js:136
 msgid "Excerpt Text"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:143
+#: src/blocks/_pro/card/edit.js:144
 msgid "Warning! When you hidden this item, you will lose the content."
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:149
+#: src/blocks/_pro/card/edit.js:150
 #: src/components/display-items-control/index.js:30
 msgid "Image"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:156
+#: src/blocks/_pro/card/edit.js:157
 #: src/components/display-items-control/index.js:78
 msgid "Button"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:161
+#: src/blocks/_pro/card/edit.js:162
 #: src/components/display-items-control/index.js:98
 msgid "Button option"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:164
+#: src/blocks/_pro/card/edit.js:165
 #: src/components/display-items-control/index.js:101
 msgid "Click each card block to set the target url. You can find the url form at it's sidebar."
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:170
+#: src/blocks/_pro/card/edit.js:171
 #: src/components/display-items-control/index.js:107
 msgid "Button text"
 msgstr ""
@@ -2130,28 +2130,6 @@ msgstr ""
 msgid "Dismiss this notice"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:42
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:57
-msgid "Not recommended"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:89
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:91
-msgid "Ex ) "
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:200
-msgid "Font Awesome"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:223
-msgid "Font Awesome Version"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:226
-msgid "4.7 will be abolished in the near future."
-msgstr ""
-
 #: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:72
 #: inc/tgm-plugin-activation/tgm-config.php:72
 msgid "Install Required Plugins"
@@ -2382,8 +2360,25 @@ msgstr ""
 msgid "Balloon Image Name"
 msgstr ""
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-load-separate.php:11
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:73
+#: inc/vk-blocks/admin/admin-load-separate.php:11
+#: inc/vk-blocks/admin/admin.php:73
+msgid "Load Separete Setting"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-load-separate.php:12
+#: inc/vk-blocks/admin/admin-load-separate.php:12
+msgid "Note that the order in which CSS/JS are loaded will change."
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-load-separate.php:21
+#: inc/vk-blocks/admin/admin-load-separate.php:21
+msgid "Load Separete Option on"
+msgstr ""
+
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:27
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:71
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:72
 #: inc/vk-blocks/admin/admin-margin.php:27
 #: inc/vk-blocks/admin/admin.php:72
 msgid "Common Margin Setting"
@@ -2394,23 +2389,23 @@ msgstr ""
 msgid "Please specify the size of the common margin used for responsive spacers, etc."
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:47
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:48
 #: inc/vk-blocks/admin/admin.php:48
 msgid "Blocks setting"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:48
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:49
 #: inc/vk-blocks/admin/admin.php:49
 msgctxt "label in admin menu"
 msgid "Blocks"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:64
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:65
 #: inc/vk-blocks/admin/admin.php:65
 msgid "Blocks Setting"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:70
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:71
 #: inc/vk-blocks/admin/admin.php:71
 msgid "Balloon Block Setting"
 msgstr ""
@@ -2435,17 +2430,17 @@ msgstr ""
 msgid "Setting"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:187
+#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:219
 #: inc/vk-blocks/view/class-vk-blocks-postlist.php:219
 msgid "No Post is selected"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:212
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:214
 #: inc/vk-blocks/vk-blocks-functions.php:214
 msgid "Blocks"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:225
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:227
 #: inc/vk-blocks/vk-blocks-functions.php:227
 msgid "Blocks Layout"
 msgstr ""
@@ -2573,27 +2568,14 @@ msgstr ""
 msgid "If you choose \"Active Preload CSS\" that css load timing was changed.If you have any do not want to preload css file that please fill in handle(id) name. Ex) pluginname_a-style,pluginname_b-css"
 msgstr ""
 
-#: dist/vk-blocks-pro/src/blocks/page-content/index.php:152
-#: src/blocks/page-content/index.php:152
+#: dist/vk-blocks-pro/src/blocks/page-content/index.php:118
+#: src/blocks/page-content/index.php:118
 msgid "Edit this area"
 msgstr ""
 
-#: dist/vk-blocks-pro/vk-blocks.php:98
+#: dist/vk-blocks-pro/vk-blocks.php:99
 #: vk-blocks.php:99
 msgid "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks Plugin running."
-msgstr ""
-
-#: inc/vk-blocks/admin/admin-load-separate.php:11
-#: inc/vk-blocks/admin/admin.php:73
-msgid "Load Separete Setting"
-msgstr ""
-
-#: inc/vk-blocks/admin/admin-load-separate.php:12
-msgid "Note that the order in which CSS/JS are loaded will change."
-msgstr ""
-
-#: inc/vk-blocks/admin/admin-load-separate.php:21
-msgid "Load Separete Option on"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/alert/block.json

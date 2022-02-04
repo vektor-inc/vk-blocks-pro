@@ -63,6 +63,9 @@ e.g.
 
 == Changelog ==
 
+= 1.24.1 =
+[ Specification Change ][ Dev ] fix deploy free script
+
 = 1.24.0 =
 [ fix ][ Icon outer ] add orientation horizontal & fix appender
 [ fix ][ Card(Pro) ] add orientation horizontal & fix appender

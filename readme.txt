@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ] Bug fix Color palette not working in widget
+
 = 1.24.2 =
 [ Deploy ] Deploy Free Version 1.24.0
 

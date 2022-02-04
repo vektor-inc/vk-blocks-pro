@@ -103,10 +103,7 @@ const generateInlineCss = (attributes) => {
 	}`;
 };
 
-addFilter(
-	'editor.BlockEdit',
-	'vk-blocks/card-addInlineEditorsCss',
-	createHigherOrderComponent((BlockEdit) => {
+const VKCardInlineEditorCss = createHigherOrderComponent((BlockEdit) => {
 		return (props) => {
 			const { attributes, setAttributes, clientId } = props;
 
@@ -126,43 +123,40 @@ addFilter(
 			}
 			return <BlockEdit {...props} />;
 		};
-	}, 'addInlineEditorsCss')
-);
+}, 'VKCardInlineEditorCss');
+addFilter('editor.BlockEdit', 'vk-blocks/card', VKCardInlineEditorCss);
 
-addFilter(
-	'blocks.getSaveElement',
-	'vk-blocks/card-addInlineFrontCss',
-	(el, type, attributes) => {
-		if ('vk-blocks/card' === type.name) {
-			//現在実行されている deprecated内の save関数のindexを取得
-			const deprecatedFuncIndex = deprecated.findIndex(
-				(item) => item.save === type.save
+
+const VKCardInlineCss =	(el, type, attributes) => {
+	if ('vk-blocks/card' === type.name) {
+		//現在実行されている deprecated内の save関数のindexを取得
+		const deprecatedFuncIndex = deprecated.findIndex(
+			(item) => item.save === type.save
+		);
+
+		// 最新版
+		if (-1 === deprecatedFuncIndex) {
+			// NOTE: useBlockProps + style要素を挿入する場合、useBlockPropsを使った要素が最初（上）にこないと、
+			// カスタムクラスを追加する処理が失敗する
+			const cssTag = generateInlineCss(attributes);
+			return (
+				<>
+					{el}
+					<style type="text/css">{cssTag}</style>
+				</>
 			);
 
-			// 最新版
-			if (-1 === deprecatedFuncIndex) {
-				// NOTE: useBlockProps + style要素を挿入する場合、useBlockPropsを使った要素が最初（上）にこないと、
-				// カスタムクラスを追加する処理が失敗する
-				const cssTag = generateInlineCss(attributes);
-				return (
-					<>
-						{el}
-						<style type="text/css">{cssTag}</style>
-					</>
-				);
-
-				//後方互換
-			}
-			let DeprecatedHook;
-			// Deprecated Hooks が Deprecated Save関数より少ない場合にエラーが出ないように。
-			if (deprecatedHooks.length > deprecatedFuncIndex) {
-				DeprecatedHook = deprecatedHooks[deprecatedFuncIndex];
-			} else {
-				DeprecatedHook = deprecatedHooks[deprecatedHooks.length - 1];
-			}
-			return <DeprecatedHook el={el} attributes={attributes} />;
+			//後方互換
 		}
-		return el;
-	},
-	11
-);
+		let DeprecatedHook;
+		// Deprecated Hooks が Deprecated Save関数より少ない場合にエラーが出ないように。
+		if (deprecatedHooks.length > deprecatedFuncIndex) {
+			DeprecatedHook = deprecatedHooks[deprecatedFuncIndex];
+		} else {
+			DeprecatedHook = deprecatedHooks[deprecatedHooks.length - 1];
+		}
+		return <DeprecatedHook el={el} attributes={attributes} />;
+	}
+	return el;
+};
+addFilter('blocks.getSaveElement', 'vk-blocks/card', VKCardInlineCss, 11);

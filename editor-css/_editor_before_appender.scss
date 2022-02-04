@@ -4,6 +4,7 @@
 .vk_buttons > .vk_buttons_col,
 .vk_icons > .vk_icons_col,
 .vk_posts.is-selected,
+.swiper-container > .swiper-wrapper > div,
 :is(.vk_gridColumn).is-selected {
 	& > .block-editor-inner-blocks > .block-editor-block-list__layout > .block-list-appender{
 		position: relative;
@@ -35,5 +36,10 @@
 	& > .block-editor-inner-blocks > .block-editor-block-list__layout > .block-list-appender{
 		margin-top:4px;
 		width:100px;
+	}
+}
+.swiper-container > .swiper-wrapper > div {
+	& > .block-editor-inner-blocks > .block-editor-block-list__layout > .block-list-appender {
+		margin: 0 0 15px;
 	}
 }

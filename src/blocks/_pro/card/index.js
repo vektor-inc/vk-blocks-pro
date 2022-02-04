@@ -104,30 +104,29 @@ const generateInlineCss = (attributes) => {
 };
 
 const VKCardInlineEditorCss = createHigherOrderComponent((BlockEdit) => {
-		return (props) => {
-			const { attributes, setAttributes, clientId } = props;
+	return (props) => {
+		const { attributes, setAttributes, clientId } = props;
 
-			if ('vk-blocks/card' === props.name) {
-				useEffect(() => {
-					setAttributes({ clientId });
-				}, []);
+		if ('vk-blocks/card' === props.name) {
+			useEffect(() => {
+				setAttributes({ clientId });
+			}, []);
 
-				const cssTag = generateInlineCss(attributes);
+			const cssTag = generateInlineCss(attributes);
 
-				return (
-					<>
-						<BlockEdit {...props} />
-						<style type="text/css">{cssTag}</style>
-					</>
-				);
-			}
-			return <BlockEdit {...props} />;
-		};
+			return (
+				<>
+					<BlockEdit {...props} />
+					<style type="text/css">{cssTag}</style>
+				</>
+			);
+		}
+		return <BlockEdit {...props} />;
+	};
 }, 'VKCardInlineEditorCss');
 addFilter('editor.BlockEdit', 'vk-blocks/card', VKCardInlineEditorCss);
 
-
-const VKCardInlineCss =	(el, type, attributes) => {
+const VKCardInlineCss = (el, type, attributes) => {
 	if ('vk-blocks/card' === type.name) {
 		//現在実行されている deprecated内の save関数のindexを取得
 		const deprecatedFuncIndex = deprecated.findIndex(

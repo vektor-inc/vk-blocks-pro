@@ -7,7 +7,7 @@
 		"start": "npm run build && npx wp-env start && open http://localhost:8888",
 		"stop": "wp-env stop",
 		"destroy": "wp-env destroy",
-		"watch": "npx gulp watch",
+		"watch": "npm run build && concurrently \"wp-scripts start\" \"npx gulp watch\"",
 		"update": "npx ncu -u -x 'sass react react-dom'",
 		"dist": "composer install --no-dev && npx gulp dist",
 		"prebuild": "npx rimraf ./inc/vk-blocks/build/*",

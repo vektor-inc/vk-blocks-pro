@@ -127,6 +127,54 @@ gulp.task('sass_vk_components', (done) => {
 	done();
 });
 
+// ブロックごとのscssそれぞれビルド free
+gulp.task('sass-separate-free', (done) => {
+	gulp.src('./src/blocks/**/*.scss')
+		.pipe(
+			sass({
+				errLogToConsole: true,
+				outputStyle: 'compressed',
+			})
+		)
+		.pipe(autoprefixer())
+		.pipe(gulp.dest('./build'));
+	// extensions内をビルド
+	gulp.src('./src/extensions/**/**/*.scss')
+		.pipe(
+			sass({
+				errLogToConsole: true,
+				outputStyle: 'compressed',
+			})
+		)
+		.pipe(autoprefixer())
+		.pipe(gulp.dest('./build/extensions'));
+	// utils内をビルド
+	gulp.src('./src/utils/*.scss')
+		.pipe(
+			sass({
+				errLogToConsole: true,
+				outputStyle: 'compressed',
+			})
+		)
+		.pipe(autoprefixer())
+		.pipe(gulp.dest('./build/utils'));
+	done();
+});
+
+// ブロックごとのscssそれぞれビルド pro
+gulp.task('sass-separate-pro', (done) => {
+	gulp.src('./src/blocks/pro/**/*.scss')
+		.pipe(
+			sass({
+				errLogToConsole: true,
+				outputStyle: 'compressed',
+			})
+		)
+		.pipe(autoprefixer())
+		.pipe(gulp.dest('./build/pro'));
+	done();
+});
+
 // watch
 gulp.task('watch', () => {
 	gulp.watch('editor-css/_editor_before.scss', gulp.parallel('sass_editor'));
@@ -176,7 +224,8 @@ gulp.task(
 		'helper-js',
 		'sass_editor',
 		'sass_bootstrap',
-		'sass_vk_components'
+		'sass_vk_components',
+		'sass-separate-free'
 	)
 );
 gulp.task(
@@ -188,7 +237,9 @@ gulp.task(
 		'helper-js-pro',
 		'sass_editor',
 		'sass_bootstrap',
-		'sass_vk_components'
+		'sass_vk_components',
+		'sass-separate-free',
+		'sass-separate-pro'
 	)
 );
 

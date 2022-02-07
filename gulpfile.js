@@ -180,6 +180,8 @@ gulp.task('watch', () => {
 	gulp.watch('editor-css/_editor_before.scss', gulp.parallel('sass_editor'));
 	// gulp.watch('editor-css/*.scss', gulp.parallel('sass_editor'));
 	gulp.watch('src/**/*.scss', gulp.series('sass', 'sass_editor', 'sass-separate-free', 'sass-separate-pro'));
+	//watch enque-front.js
+	gulp.watch('src/**/*.js', gulp.series('helper-js', 'helper-js-pro'));
 	gulp.watch(
 		'lib/bootstrap/scss/*.scss',
 		gulp.parallel('sass_bootstrap', 'sass_editor')

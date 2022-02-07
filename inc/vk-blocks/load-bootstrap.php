@@ -34,7 +34,7 @@ function vk_blocks_load_bootstrap( $hook_suffix ) {
 		return;
 	}
 
-	wp_register_style( 'vkblocks-bootstrap', VK_BLOCKS_URL . '/build/bootstrap_vk_using.css', false, '4.3.1' );
+	wp_register_style( 'vkblocks-bootstrap', VK_BLOCKS_DIR_URL . 'build/bootstrap_vk_using.css', false, '4.3.1' );
 
 	// 管理画面.
 	if ( is_admin() ) {

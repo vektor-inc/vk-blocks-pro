@@ -21,8 +21,8 @@ if ( ! class_exists( 'VK_CSS_Optimize' ) ) {
 function vk_blocks_css_tree_shaking_array( $vk_css_tree_shaking_array ) {
 	$vk_css_tree_shaking_array[] = array(
 		'id'      => 'vk-blocks-build-css',
-		'url'     => VK_BLOCKS_URL . 'build/block-build.css',
-		'path'    => VK_BLOCKS_PATH . 'build/block-build.css',
+		'url'     => VK_BLOCKS_DIR_URL . 'build/block-build.css',
+		'path'    => VK_BLOCKS_DIR_PATH . 'build/block-build.css',
 		'version' => VK_BLOCKS_VERSION,
 	);
 	return $vk_css_tree_shaking_array;

@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ][ Heading Design ] Strengthen selector on editor screen 
+
 = 1.24.3 =
 [ Bug fix ][ FAQ ] Fix list block last item can't edit.
 [ Bug fix ][ Slider(Pro) ] Fix Slider in Image block caption can't edit.

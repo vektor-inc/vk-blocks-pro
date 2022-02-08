@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.22.4\n"
+"Project-Id-Version: VK Blocks Pro 1.24.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-01-28T08:59:41+00:00\n"
+"POT-Creation-Date: 2022-02-07T16:11:44+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 "X-Domain: vk-blocks\n"
@@ -150,7 +150,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:206
 #: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:210
 #: src/blocks/_pro/card-item/edit.js:182
-#: src/blocks/_pro/card/edit.js:121
+#: src/blocks/_pro/card/edit.js:122
 #: src/blocks/_pro/icon-card/edit.js:72
 #: src/blocks/_pro/post-list/edit.js:307
 msgid "Title"
@@ -202,40 +202,40 @@ msgstr ""
 msgid "https://example.com"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:119
+#: src/blocks/_pro/card/edit.js:120
 #: src/components/display-items-control/index.js:28
 msgid "Display item"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:135
+#: src/blocks/_pro/card/edit.js:136
 msgid "Excerpt Text"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:143
+#: src/blocks/_pro/card/edit.js:144
 msgid "Warning! When you hidden this item, you will lose the content."
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:149
+#: src/blocks/_pro/card/edit.js:150
 #: src/components/display-items-control/index.js:30
 msgid "Image"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:156
+#: src/blocks/_pro/card/edit.js:157
 #: src/components/display-items-control/index.js:78
 msgid "Button"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:161
+#: src/blocks/_pro/card/edit.js:162
 #: src/components/display-items-control/index.js:98
 msgid "Button option"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:164
+#: src/blocks/_pro/card/edit.js:165
 #: src/components/display-items-control/index.js:101
 msgid "Click each card block to set the target url. You can find the url form at it's sidebar."
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:170
+#: src/blocks/_pro/card/edit.js:171
 #: src/components/display-items-control/index.js:107
 msgid "Button text"
 msgstr ""
@@ -2130,28 +2130,6 @@ msgstr ""
 msgid "Dismiss this notice"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:42
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:57
-msgid "Not recommended"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:89
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:91
-msgid "Ex ) "
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:200
-msgid "Font Awesome"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:223
-msgid "Font Awesome Version"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/font-awesome/package/class-vk-font-awesome-versions.php:226
-msgid "4.7 will be abolished in the near future."
-msgstr ""
-
 #: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:72
 #: inc/tgm-plugin-activation/tgm-config.php:72
 msgid "Install Required Plugins"
@@ -2382,8 +2360,25 @@ msgstr ""
 msgid "Balloon Image Name"
 msgstr ""
 
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-load-separate.php:11
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:73
+#: inc/vk-blocks/admin/admin-load-separate.php:11
+#: inc/vk-blocks/admin/admin.php:73
+msgid "Load Separete Setting"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-load-separate.php:12
+#: inc/vk-blocks/admin/admin-load-separate.php:12
+msgid "Note that the order in which CSS/JS are loaded will change."
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-load-separate.php:21
+#: inc/vk-blocks/admin/admin-load-separate.php:21
+msgid "Load Separete Option on"
+msgstr ""
+
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:27
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:71
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:72
 #: inc/vk-blocks/admin/admin-margin.php:27
 #: inc/vk-blocks/admin/admin.php:72
 msgid "Common Margin Setting"
@@ -2394,23 +2389,23 @@ msgstr ""
 msgid "Please specify the size of the common margin used for responsive spacers, etc."
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:47
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:48
 #: inc/vk-blocks/admin/admin.php:48
 msgid "Blocks setting"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:48
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:49
 #: inc/vk-blocks/admin/admin.php:49
 msgctxt "label in admin menu"
 msgid "Blocks"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:64
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:65
 #: inc/vk-blocks/admin/admin.php:65
 msgid "Blocks Setting"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:70
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:71
 #: inc/vk-blocks/admin/admin.php:71
 msgid "Balloon Block Setting"
 msgstr ""
@@ -2435,17 +2430,17 @@ msgstr ""
 msgid "Setting"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:187
+#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:219
 #: inc/vk-blocks/view/class-vk-blocks-postlist.php:219
 msgid "No Post is selected"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:212
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:214
 #: inc/vk-blocks/vk-blocks-functions.php:214
 msgid "Blocks"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:225
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:227
 #: inc/vk-blocks/vk-blocks-functions.php:227
 msgid "Blocks Layout"
 msgstr ""
@@ -2573,504 +2568,571 @@ msgstr ""
 msgid "If you choose \"Active Preload CSS\" that css load timing was changed.If you have any do not want to preload css file that please fill in handle(id) name. Ex) pluginname_a-style,pluginname_b-css"
 msgstr ""
 
-#: dist/vk-blocks-pro/src/blocks/page-content/index.php:152
-#: src/blocks/page-content/index.php:152
+#: dist/vk-blocks-pro/src/blocks/page-content/index.php:118
+#: src/blocks/page-content/index.php:118
 msgid "Edit this area"
 msgstr ""
 
-#: dist/vk-blocks-pro/vk-blocks.php:98
+#: dist/vk-blocks-pro/vk-blocks.php:99
 #: vk-blocks.php:99
 msgid "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks Plugin running."
 msgstr ""
 
-#: inc/vk-blocks/admin/admin-load-separate.php:11
-#: inc/vk-blocks/admin/admin.php:73
-msgid "Load Separete Setting"
-msgstr ""
-
-#: inc/vk-blocks/admin/admin-load-separate.php:12
-msgid "Note that the order in which CSS/JS are loaded will change."
-msgstr ""
-
-#: inc/vk-blocks/admin/admin-load-separate.php:21
-msgid "Load Separete Option on"
-msgstr ""
-
 #: dist/vk-blocks-pro/src/blocks/alert/block.json
+#: inc/vk-blocks/build/blocks/alert/block.json
 #: src/blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/alert/block.json
+#: inc/vk-blocks/build/blocks/alert/block.json
 #: src/blocks/alert/block.json
 msgctxt "block description"
 msgid "A colored box with four statuses, including annotations and alerts."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/balloon/block.json
+#: inc/vk-blocks/build/blocks/balloon/block.json
 #: src/blocks/balloon/block.json
 msgctxt "block title"
 msgid "Ballon"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/balloon/block.json
+#: inc/vk-blocks/build/blocks/balloon/block.json
 #: src/blocks/balloon/block.json
 msgctxt "block description"
 msgid "These speech balloons are perfect for recreating conversations."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/border-box/block.json
+#: inc/vk-blocks/build/blocks/border-box/block.json
 #: src/blocks/border-box/block.json
 msgctxt "block title"
 msgid "Border Box"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/border-box/block.json
+#: inc/vk-blocks/build/blocks/border-box/block.json
 #: src/blocks/border-box/block.json
 msgctxt "block description"
 msgid "This is a border box where you can place headings to attract attention."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/button/block.json
+#: inc/vk-blocks/build/blocks/button/block.json
 #: src/blocks/button/block.json
 msgctxt "block title"
 msgid "Button"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/button/block.json
+#: inc/vk-blocks/build/blocks/button/block.json
 #: src/blocks/button/block.json
 msgctxt "block description"
 msgid "A button link that can display icons before and after."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/faq/block.json
+#: inc/vk-blocks/build/blocks/faq/block.json
 #: src/blocks/faq/block.json
 msgctxt "block title"
 msgid "Classic FAQ"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/faq/block.json
+#: inc/vk-blocks/build/blocks/faq/block.json
 #: src/blocks/faq/block.json
 msgctxt "block description"
 msgid "Displays a combination of questions and answers."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/faq2-a/block.json
+#: inc/vk-blocks/build/blocks/faq2-a/block.json
 #: src/blocks/faq2-a/block.json
 msgctxt "block title"
 msgid "FAQ Answer"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/faq2-a/block.json
+#: inc/vk-blocks/build/blocks/faq2-a/block.json
 #: src/blocks/faq2-a/block.json
 msgctxt "block description"
 msgid "Answer area where you can add blocks freely."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/faq2-q/block.json
+#: inc/vk-blocks/build/blocks/faq2-q/block.json
 #: src/blocks/faq2-q/block.json
 msgctxt "block title"
 msgid "FAQ Question"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/faq2-q/block.json
+#: inc/vk-blocks/build/blocks/faq2-q/block.json
 #: src/blocks/faq2-q/block.json
 msgctxt "block description"
 msgid "Question area where you can freely add blocks."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/faq2/block.json
+#: inc/vk-blocks/build/blocks/faq2/block.json
 #: src/blocks/faq2/block.json
 msgctxt "block title"
 msgid "New FAQ"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/faq2/block.json
+#: inc/vk-blocks/build/blocks/faq2/block.json
 #: src/blocks/faq2/block.json
 msgctxt "block description"
 msgid "It displays a combination of questions and answers. You can freely add blocks to the question area as well."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/flow/block.json
+#: inc/vk-blocks/build/blocks/flow/block.json
 #: src/blocks/flow/block.json
 msgctxt "block title"
 msgid "Flow"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/flow/block.json
+#: inc/vk-blocks/build/blocks/flow/block.json
 #: src/blocks/flow/block.json
 msgctxt "block description"
 msgid "Displays a sequential description in time series."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/heading/block.json
+#: inc/vk-blocks/build/blocks/heading/block.json
 #: src/blocks/heading/block.json
 msgctxt "block title"
 msgid "Heading"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/heading/block.json
+#: inc/vk-blocks/build/blocks/heading/block.json
 #: src/blocks/heading/block.json
 msgctxt "block description"
 msgid "This is a heading that allows you to set text size, subtext, icon, and margin."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/icon-outer/block.json
+#: inc/vk-blocks/build/blocks/icon-outer/block.json
 #: src/blocks/icon-outer/block.json
 msgctxt "block title"
 msgid "Icon Outer"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/icon-outer/block.json
+#: inc/vk-blocks/build/blocks/icon-outer/block.json
 #: src/blocks/icon-outer/block.json
 msgctxt "block description"
 msgid "Display the Font Awesome icons horizontally."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/icon/block.json
+#: inc/vk-blocks/build/blocks/icon/block.json
 #: src/blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/icon/block.json
+#: inc/vk-blocks/build/blocks/icon/block.json
 #: src/blocks/icon/block.json
 msgctxt "block description"
 msgid "Display icons with Font Awesome."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/page-content/block.json
+#: inc/vk-blocks/build/blocks/page-content/block.json
 #: src/blocks/page-content/block.json
 msgctxt "block title"
 msgid "Page Content"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/page-content/block.json
+#: inc/vk-blocks/build/blocks/page-content/block.json
 #: src/blocks/page-content/block.json
 msgctxt "block description"
 msgid "Displays the body content of the specified parent page."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/pr-blocks/block.json
+#: inc/vk-blocks/build/blocks/pr-blocks/block.json
 #: src/blocks/pr-blocks/block.json
 msgctxt "block title"
 msgid "PR Blocks"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/pr-blocks/block.json
+#: inc/vk-blocks/build/blocks/pr-blocks/block.json
 #: src/blocks/pr-blocks/block.json
 msgctxt "block description"
 msgid "This is a PR block where you can place images and icon."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/pr-content/block.json
+#: inc/vk-blocks/build/blocks/pr-content/block.json
 #: src/blocks/pr-content/block.json
 msgctxt "block title"
 msgid "PR Content"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/pr-content/block.json
+#: inc/vk-blocks/build/blocks/pr-content/block.json
 #: src/blocks/pr-content/block.json
 msgctxt "block description"
 msgid "This is PR content where you can place images, headlines, text, and buttons."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/spacer/block.json
+#: inc/vk-blocks/build/blocks/spacer/block.json
 #: src/blocks/spacer/block.json
 msgctxt "block title"
 msgid "Responsive Spacer"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/spacer/block.json
+#: inc/vk-blocks/build/blocks/spacer/block.json
 #: src/blocks/spacer/block.json
 msgctxt "block description"
 msgid "Use responsive spacers to get the margins right."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/staff/block.json
+#: inc/vk-blocks/build/blocks/staff/block.json
 #: src/blocks/staff/block.json
 msgctxt "block title"
 msgid "Staff"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/staff/block.json
+#: inc/vk-blocks/build/blocks/staff/block.json
 #: src/blocks/staff/block.json
 msgctxt "block description"
 msgid "Used for staff introduction, company introduction, school introduction, menu, etc."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/accordion-target/block.json
+#: inc/vk-blocks/build/blocks/_pro/accordion-target/block.json
 #: src/blocks/_pro/accordion-target/block.json
 msgctxt "block title"
 msgid "Accordion Target"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/accordion-target/block.json
+#: inc/vk-blocks/build/blocks/_pro/accordion-target/block.json
 #: src/blocks/_pro/accordion-target/block.json
 msgctxt "block description"
 msgid "This is the content area where you can add blocks freely."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/accordion-trigger/block.json
+#: inc/vk-blocks/build/blocks/_pro/accordion-trigger/block.json
 #: src/blocks/_pro/accordion-trigger/block.json
 msgctxt "block title"
 msgid "Accordion Trigger"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/accordion-trigger/block.json
+#: inc/vk-blocks/build/blocks/_pro/accordion-trigger/block.json
 #: src/blocks/_pro/accordion-trigger/block.json
 msgctxt "block description"
 msgid "This is the title area where you can freely add blocks."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/accordion/block.json
+#: inc/vk-blocks/build/blocks/_pro/accordion/block.json
 #: src/blocks/_pro/accordion/block.json
 msgctxt "block title"
 msgid "Accordion"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/accordion/block.json
+#: inc/vk-blocks/build/blocks/_pro/accordion/block.json
 #: src/blocks/_pro/accordion/block.json
 msgctxt "block description"
 msgid "Collapses and hides content when the content is long."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/animation/block.json
+#: inc/vk-blocks/build/blocks/_pro/animation/block.json
 #: src/blocks/_pro/animation/block.json
 msgctxt "block title"
 msgid "Animation"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/animation/block.json
+#: inc/vk-blocks/build/blocks/_pro/animation/block.json
 #: src/blocks/_pro/animation/block.json
 msgctxt "block description"
 msgid "Add animation to elements when scrolling the page."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/button-outer/block.json
+#: inc/vk-blocks/build/blocks/_pro/button-outer/block.json
 #: src/blocks/_pro/button-outer/block.json
 msgctxt "block title"
 msgid "Button Outer"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/button-outer/block.json
+#: inc/vk-blocks/build/blocks/_pro/button-outer/block.json
 #: src/blocks/_pro/button-outer/block.json
 msgctxt "block description"
 msgid "Display the VK Button block horizontally."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/card-item/block.json
+#: inc/vk-blocks/build/blocks/_pro/card-item/block.json
 #: src/blocks/_pro/card-item/block.json
 msgctxt "block title"
 msgid "Card Item"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/card-item/block.json
+#: inc/vk-blocks/build/blocks/_pro/card-item/block.json
 #: src/blocks/_pro/card-item/block.json
 msgctxt "block description"
 msgid "A single item in a card block."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/card/block.json
+#: inc/vk-blocks/build/blocks/_pro/card/block.json
 #: src/blocks/_pro/card/block.json
 msgctxt "block title"
 msgid "Card"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/card/block.json
+#: inc/vk-blocks/build/blocks/_pro/card/block.json
 #: src/blocks/_pro/card/block.json
 msgctxt "block description"
 msgid "A card where you can place images, headings, text, and links."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/child-page/block.json
+#: inc/vk-blocks/build/blocks/_pro/child-page/block.json
 #: src/blocks/_pro/child-page/block.json
 msgctxt "block title"
 msgid "Child page list"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/child-page/block.json
+#: inc/vk-blocks/build/blocks/_pro/child-page/block.json
 #: src/blocks/_pro/child-page/block.json
 msgctxt "block description"
 msgid "When a parent page is specified, a list of its child pages will be displayed."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/grid-column-item/block.json
+#: inc/vk-blocks/build/blocks/_pro/grid-column-item/block.json
 #: src/blocks/_pro/grid-column-item/block.json
 msgctxt "block title"
 msgid "Grid Column Item"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/grid-column-item/block.json
+#: inc/vk-blocks/build/blocks/_pro/grid-column-item/block.json
 #: src/blocks/_pro/grid-column-item/block.json
 msgctxt "block description"
 msgid "One item in a grit column block."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/grid-column/block.json
+#: inc/vk-blocks/build/blocks/_pro/grid-column/block.json
 #: src/blocks/_pro/grid-column/block.json
 msgctxt "block title"
 msgid "Grid Column"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/grid-column/block.json
+#: inc/vk-blocks/build/blocks/_pro/grid-column/block.json
 #: src/blocks/_pro/grid-column/block.json
 msgctxt "block description"
 msgid "Set the number of columns to be displayed for each screen size."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/icon-card-item/block.json
+#: inc/vk-blocks/build/blocks/_pro/icon-card-item/block.json
 #: src/blocks/_pro/icon-card-item/block.json
 msgctxt "block title"
 msgid "Icon Card Item"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/icon-card-item/block.json
+#: inc/vk-blocks/build/blocks/_pro/icon-card-item/block.json
 #: src/blocks/_pro/icon-card-item/block.json
 msgctxt "block description"
 msgid "This is one item in an icon card."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/icon-card/block.json
+#: inc/vk-blocks/build/blocks/_pro/icon-card/block.json
 #: src/blocks/_pro/icon-card/block.json
 msgctxt "block title"
 msgid "Icon Card"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/icon-card/block.json
+#: inc/vk-blocks/build/blocks/_pro/icon-card/block.json
 #: src/blocks/_pro/icon-card/block.json
 msgctxt "block description"
 msgid "Display card with icons, headings, text, and links."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/outer/block.json
+#: inc/vk-blocks/build/blocks/_pro/outer/block.json
 #: src/blocks/_pro/outer/block.json
 msgctxt "block title"
 msgid "Outer"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/outer/block.json
+#: inc/vk-blocks/build/blocks/_pro/outer/block.json
 #: src/blocks/_pro/outer/block.json
 msgctxt "block description"
 msgid "Set the background image, color, and border to show the layout and divisions."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/post-list/block.json
+#: inc/vk-blocks/build/blocks/_pro/post-list/block.json
 #: src/blocks/_pro/post-list/block.json
 msgctxt "block title"
 msgid "Post list"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/post-list/block.json
+#: inc/vk-blocks/build/blocks/_pro/post-list/block.json
 #: src/blocks/_pro/post-list/block.json
 msgctxt "block description"
 msgid "Displays the list of posts by setting the post type, classification, and number of posts to display."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/select-post-list-item/block.json
+#: inc/vk-blocks/build/blocks/_pro/select-post-list-item/block.json
 #: src/blocks/_pro/select-post-list-item/block.json
 msgctxt "block title"
 msgid "Selected Post List Item"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/select-post-list-item/block.json
+#: inc/vk-blocks/build/blocks/_pro/select-post-list-item/block.json
 #: src/blocks/_pro/select-post-list-item/block.json
 msgctxt "block description"
 msgid "A single item in the select post list."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/select-post-list/block.json
+#: inc/vk-blocks/build/blocks/_pro/select-post-list/block.json
 #: src/blocks/_pro/select-post-list/block.json
 msgctxt "block title"
 msgid "Selected Post List"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/select-post-list/block.json
+#: inc/vk-blocks/build/blocks/_pro/select-post-list/block.json
 #: src/blocks/_pro/select-post-list/block.json
 msgctxt "block description"
 msgid "Displays an arbitrarily specified page with the layout of the posting list."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/slider-item/block.json
+#: inc/vk-blocks/build/blocks/_pro/slider-item/block.json
 #: src/blocks/_pro/slider-item/block.json
 msgctxt "block title"
 msgid "Slider Item"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/slider-item/block.json
+#: inc/vk-blocks/build/blocks/_pro/slider-item/block.json
 #: src/blocks/_pro/slider-item/block.json
 msgctxt "block description"
 msgid "This is one item in the slider."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/slider/block.json
+#: inc/vk-blocks/build/blocks/_pro/slider/block.json
 #: src/blocks/_pro/slider/block.json
 msgctxt "block title"
 msgid "Slider"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/slider/block.json
+#: inc/vk-blocks/build/blocks/_pro/slider/block.json
 #: src/blocks/_pro/slider/block.json
 msgctxt "block description"
 msgid "This slider allows you to place various items.Slider is do not move in edit screen."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/step-item/block.json
+#: inc/vk-blocks/build/blocks/_pro/step-item/block.json
 #: src/blocks/_pro/step-item/block.json
 msgctxt "block title"
 msgid "Step Item"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/step-item/block.json
+#: inc/vk-blocks/build/blocks/_pro/step-item/block.json
 #: src/blocks/_pro/step-item/block.json
 msgctxt "block description"
 msgid "This element sets the icon, color, and style of the step mark."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/step/block.json
+#: inc/vk-blocks/build/blocks/_pro/step/block.json
 #: src/blocks/_pro/step/block.json
 msgctxt "block title"
 msgid "Step"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/step/block.json
+#: inc/vk-blocks/build/blocks/_pro/step/block.json
 #: src/blocks/_pro/step/block.json
 msgctxt "block description"
 msgid "Set and display step marks, which are useful when explaining the order."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/table-of-contents-new/block.json
+#: inc/vk-blocks/build/blocks/_pro/table-of-contents-new/block.json
 #: src/blocks/_pro/table-of-contents-new/block.json
 msgctxt "block title"
 msgid "Table of Contents"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/table-of-contents-new/block.json
+#: inc/vk-blocks/build/blocks/_pro/table-of-contents-new/block.json
 #: src/blocks/_pro/table-of-contents-new/block.json
 msgctxt "block description"
 msgid "This is a table of contents that is automatically generated according to the headings when added."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/timeline-item/block.json
+#: inc/vk-blocks/build/blocks/_pro/timeline-item/block.json
 #: src/blocks/_pro/timeline-item/block.json
 msgctxt "block title"
 msgid "Timeline Item"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/timeline-item/block.json
+#: inc/vk-blocks/build/blocks/_pro/timeline-item/block.json
 #: src/blocks/_pro/timeline-item/block.json
 msgctxt "block description"
 msgid "This element sets the label, color, and style of the timeline."
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/timeline/block.json
+#: inc/vk-blocks/build/blocks/_pro/timeline/block.json
 #: src/blocks/_pro/timeline/block.json
 msgctxt "block title"
 msgid "Timeline"
 msgstr ""
 
 #: dist/vk-blocks-pro/src/blocks/_pro/timeline/block.json
+#: inc/vk-blocks/build/blocks/_pro/timeline/block.json
 #: src/blocks/_pro/timeline/block.json
 msgctxt "block description"
 msgid "Displays a simple schedule and other information that is useful for explaining the order."

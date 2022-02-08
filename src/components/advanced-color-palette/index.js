@@ -18,7 +18,7 @@ export const AdvancedColorPalette = (props) => {
 			onChange={(value) => {
 				// カラーパレットの色名・スラッグ・カラーコードを取得
 				const colorSet =
-					select('core/editor').getEditorSettings().colors;
+					select('core/block-editor').getSettings().colors;
 
 				// 色コードを colorSet から探して色データを取得
 				// カスタムカラーの場合 undefined が返る

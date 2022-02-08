@@ -37,9 +37,9 @@ const generateInlineCss = (attributes) => {
 export default function CardHook( {el,attributes}) {
 	const cssTag = generateInlineCss(attributes);
 	return (
-		<div>
-			{cssTag}
+		<>
 			{el}
-		</div>
+			<style type="text/css">{cssTag}</style>
+		</>
 	);
 }

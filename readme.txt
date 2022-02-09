@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ fix ][ Card(Pro) ] fix unify breakpoints.
+
 = 1.24.4 =
 [ Specification Change ][ Heading Design ] Strengthen selector on editor screen 
 

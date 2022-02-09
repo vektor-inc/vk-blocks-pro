@@ -61,7 +61,10 @@ $vk-color-dark:#343a40;
 .vk_button,
 .editor-styles-wrapper .vk_button {
 	box-sizing: border-box;
-	margin: 0 auto 5px; /* 他テーマで0だと左寄せになる場合があるのでautoに変更 */
+	 /* 他テーマで0だと左寄せになる場合があるのでautoに変更 */
+	 /* → いやいや、vk_button が100% div じゃない時にそれでは右寄せなど効かなくなるので margin 左右は指定ナシに戻し */
+	margin-top:0;
+	margin-bottom:5px;
 	text-align: center; /* テキストのみの時のセンター揃え */
 	&-color-custom {
 		a:hover {

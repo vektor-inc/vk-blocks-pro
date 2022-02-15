@@ -159,11 +159,9 @@ export default function OuterEdit(props) {
 	const bgColorClasses = [];
 	let borderColorCss = borderColor;
 
-	let bgColorOutputDisable = false;
 	if (!isHexColor(bgColor)) {
-		bgColorClasses.push('has-background');
+		bgColorClasses.push('has-background-color');
 		bgColorClasses.push(`has-${bgColor}-background-color`);
-		bgColorOutputDisable = true;
 	}
 
 	if (!isHexColor(borderColor)) {
@@ -647,7 +645,6 @@ export default function OuterEdit(props) {
 				<GenerateBgImage
 					prefix={'vkb-outer'}
 					clientId={clientId}
-					bgColorOutputDisable={bgColorOutputDisable}
 					{...props}
 				/>
 				<div>

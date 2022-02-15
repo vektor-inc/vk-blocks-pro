@@ -102,10 +102,13 @@ const GenerateBgImage = (props) => {
 		// 背景が指定されているときのみ url出力
 		let bgUrlCss = '';
 		if (bg.url) {
-			bgUrlCss = `url(${bg.url});`;
+			if (bgColorOutputDisable) {
+				bgUrlCss = 'background: ';
+			}
+			bgUrlCss += `url(${bg.url});`;
 		}
 
-		let separation = bgUrlCss ? ', ' : ';';
+		let separation = bgUrlCss && !bgColorOutputDisable ? ', ' : ';';
 
 		if ('' === bgColorCss && !bg.url) {
 			separation = '';

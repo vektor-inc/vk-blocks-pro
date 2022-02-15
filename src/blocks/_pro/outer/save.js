@@ -86,7 +86,7 @@ export default function save(props) {
 	let bgColorOutputDisable = false;
 	if (!isHexColor(bgColor)) {
 		bgColorOutputDisable = true;
-		bgColorClasses.push('has-background');
+		bgColorClasses.push('has-background-color');
 		bgColorClasses.push(`has-${bgColor}-background-color`);
 	}
 

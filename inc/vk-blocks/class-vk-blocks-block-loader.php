@@ -182,11 +182,11 @@ class VK_Blocks_Block_Loader {
 			wp_register_style( 'vk-blocks-utils-common-css', VK_BLOCKS_DIR_URL . 'build/utils/common.css', array(), VK_BLOCKS_VERSION );
 		} else {
 			// 一括読み込みの場合 : 結合CSSを登録.
-			wp_register_style( 'vk-blocks-build-css', $this->assets_build_url . 'block-build.css', array(), VK_BLOCKS_VERSION );
+			wp_register_style( 'vk-blocks-build-css', VK_BLOCKS_DIR_URL . 'build/block-build.css', array(), VK_BLOCKS_VERSION );
 		}
 
 		// 編集画面のCSS登録 : 設定に関わらず結合CSSを登録 -> 各ブロックのindex.phpから呼び出される
-		wp_register_style( 'vk-blocks-build-editor-css', $this->assets_build_url . 'block-build-editor.css', array(), VK_BLOCKS_VERSION );
+		wp_register_style( 'vk-blocks-build-editor-css', VK_BLOCKS_DIR_URL . 'build/block-build-editor.css', array(), VK_BLOCKS_VERSION );
 
 		// 編集画面のjs登録 : 設定に関わらず結合JSを登録 -> 各ブロックのindex.phpから呼び出される
 		wp_register_script(

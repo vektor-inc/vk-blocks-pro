@@ -41,7 +41,7 @@ bin/dist_kuru.sh
 
 ## Watch
 ```
-// CSSの変更のみ監視
+// CSS、JSの監視
 npm run watch
 ```
 

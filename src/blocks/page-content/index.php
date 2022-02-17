@@ -130,15 +130,15 @@ function vk_blocks_page_content_render_callback( $attributes ) {
  */
 function vk_blocks_content_enqueue_scripts( $page_content ) {
 	if ( has_block( 'vk-blocks/faq2', $page_content ) || has_block( 'vk-blocks/faq', $page_content ) ) {
-		wp_enqueue_script( 'vk-blocks-faq2', VK_BLOCKS_URL . 'build/faq2.min.js', array(), VK_BLOCKS_VERSION, true );
+		wp_enqueue_script( 'vk-blocks-faq2', VK_BLOCKS_DIR_URL . 'build/faq2.min.js', array(), VK_BLOCKS_VERSION, true );
 	}
 	if ( has_block( 'vk-blocks/animation', $page_content ) ) {
-		wp_enqueue_script( 'vk-blocks-animation', VK_BLOCKS_URL . 'build/vk-animation.min.js', array(), VK_BLOCKS_VERSION, true );
+		wp_enqueue_script( 'vk-blocks-animation', VK_BLOCKS_DIR_URL . 'build/vk-animation.min.js', array(), VK_BLOCKS_VERSION, true );
 	}
 	if ( has_block( 'vk-blocks/slider', $page_content ) ) {
-		wp_enqueue_style( 'vk-blocks-swiper', VK_BLOCKS_URL . 'build/swiper.min.css', array(), VK_BLOCKS_VERSION );
-		wp_enqueue_script( 'vk-blocks-swiper', VK_BLOCKS_URL . 'build/swiper.min.js', array(), VK_BLOCKS_VERSION, true );
-		wp_enqueue_script( 'vk-blocks-slider', VK_BLOCKS_URL . 'build/vk-slider.min.js', array( 'vk-blocks-swiper' ), VK_BLOCKS_VERSION, true );
+		wp_enqueue_style( 'vk-blocks-swiper', VK_BLOCKS_DIR_URL . 'build/swiper.min.css', array(), VK_BLOCKS_VERSION );
+		wp_enqueue_script( 'vk-blocks-swiper', VK_BLOCKS_DIR_URL . 'build/swiper.min.js', array(), VK_BLOCKS_VERSION, true );
+		wp_enqueue_script( 'vk-blocks-slider', VK_BLOCKS_DIR_URL . 'build/vk-slider.min.js', array( 'vk-blocks-swiper' ), VK_BLOCKS_VERSION, true );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'vk_blocks_content_enqueue_scripts' );

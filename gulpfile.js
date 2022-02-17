@@ -36,7 +36,7 @@ gulp.task('helper-js', (done) => {
 	gulp.src('src/blocks/faq2/enque-front.js')
 		.pipe(uglify())
 		.pipe(rename('vk-faq2.min.js'))
-		.pipe(gulp.dest('./inc/vk-blocks/build/'));
+		.pipe(gulp.dest('./build/'));
 	done();
 });
 
@@ -44,15 +44,15 @@ gulp.task('helper-js-pro', (done) => {
 	gulp.src('src/blocks/_pro/accordion/enque-front.js')
 		.pipe(uglify())
 		.pipe(rename('vk-accordion.min.js'))
-		.pipe(gulp.dest('./inc/vk-blocks/build/'));
+		.pipe(gulp.dest('./build/'));
 	gulp.src('src/blocks/_pro/animation/enque-front.js')
 		.pipe(uglify())
 		.pipe(rename('vk-animation.min.js'))
-		.pipe(gulp.dest('./inc/vk-blocks/build/'));
+		.pipe(gulp.dest('./build/'));
 	gulp.src('src/blocks/_pro/slider/enque-front.js')
 		.pipe(uglify())
 		.pipe(rename('vk-slider.min.js'))
-		.pipe(gulp.dest('./inc/vk-blocks/build/'));
+		.pipe(gulp.dest('./build/'));
 	done();
 });
 
@@ -71,7 +71,7 @@ gulp.task('sass', (done) => {
 		)
 		.pipe(autoprefixer())
 		.pipe(concat('block-build.css'))
-		.pipe(gulp.dest('./inc/vk-blocks/build/'));
+		.pipe(gulp.dest('./build/'));
 	done();
 });
 
@@ -91,7 +91,7 @@ gulp.task('sass_editor', (done) => {
 		)
 		.pipe(autoprefixer())
 		.pipe(concat('block-build-editor.css'))
-		.pipe(gulp.dest('./inc/vk-blocks/build/'));
+		.pipe(gulp.dest('./build/'));
 	done();
 });
 
@@ -107,7 +107,7 @@ gulp.task('sass_bootstrap', (done) => {
 		)
 		.pipe(autoprefixer())
 		.pipe(concat('bootstrap_vk_using.css'))
-		.pipe(gulp.dest('./inc/vk-blocks/build/'));
+		.pipe(gulp.dest('./build/'));
 	done();
 });
 
@@ -123,7 +123,7 @@ gulp.task('sass_vk_components', (done) => {
 		)
 		.pipe(autoprefixer())
 		.pipe(concat('vk-components.css'))
-		.pipe(gulp.dest('./inc/vk-blocks/build/'));
+		.pipe(gulp.dest('./build/'));
 	done();
 });
 
@@ -179,7 +179,9 @@ gulp.task('sass-separate-pro', (done) => {
 gulp.task('watch', () => {
 	gulp.watch('editor-css/_editor_before.scss', gulp.parallel('sass_editor'));
 	// gulp.watch('editor-css/*.scss', gulp.parallel('sass_editor'));
-	gulp.watch('src/**/*.scss', gulp.series('sass', 'sass_editor'));
+	gulp.watch('src/**/*.scss', gulp.series('sass', 'sass_editor', 'sass-separate-free', 'sass-separate-pro'));
+	//watch enque-front.js
+	gulp.watch('src/**/*.js', gulp.series('helper-js', 'helper-js-pro'));
 	gulp.watch(
 		'lib/bootstrap/scss/*.scss',
 		gulp.parallel('sass_bootstrap', 'sass_editor')

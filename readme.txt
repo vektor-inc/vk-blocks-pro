@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ fix ] color palette manager support border color
+
 = 1.24.5 =
 [ fix ][ Button ] Fix button alignment
 [ fix ][ Card(Pro) ] fix unify breakpoints.

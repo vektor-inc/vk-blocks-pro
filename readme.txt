@@ -63,6 +63,7 @@ e.g.
 
 == Changelog ==
 
+[ Improvement ] Change to always load bootstrap when the theme is not Lightning,Lightning Pro,Katawara.
 [ fix ] color palette manager support border color
 
 = 1.24.5 =

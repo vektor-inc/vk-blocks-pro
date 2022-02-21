@@ -36,6 +36,59 @@ $media-xxl-down: 1399.98px;
 		}
 		
 	}
+
+	.vk_outer__background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		z-index: -1;	
+		&.has-background-dim.has-background-dim-0 {
+			opacity: 0;
+		}	
+
+		&.has-background-dim.has-background-dim-10 {
+			opacity: .1;
+		}	
+
+		&.has-background-dim.has-background-dim-20 {
+			opacity: .2;
+		}		
+
+		&.has-background-dim.has-background-dim-30 {
+			opacity: .3;
+		}			
+
+		&.has-background-dim.has-background-dim-40 {
+			opacity: .4;
+		}		
+
+		&.has-background-dim.has-background-dim-50 {
+			opacity: .5;
+		}	
+
+		&.has-background-dim.has-background-dim-60 {
+			opacity: .6;
+		}
+
+		&.has-background-dim.has-background-dim-70 {
+			opacity: .7;
+		}		
+
+		&.has-background-dim.has-background-dim-80 {
+			opacity: .8;
+		}	
+
+		&.has-background-dim.has-background-dim-90 {
+			opacity: .9;
+		}	
+
+		&.has-background-dim.has-background-dim-100 {
+			opacity: 1;
+		}		
+		
+	}
 }
 // これがないとレスポンシブスペーサーの共通高さが検出しない。
 .vk_outer{
@@ -165,6 +218,7 @@ $padding-xxl: 4em;
 		position: absolute;
 		left: 0;
 		width: 100%;
+		z-index: 999;
 		pointer-events: none; //上に重なるとボタンなどのリンクが押せなくなるので追加
 	}
 }

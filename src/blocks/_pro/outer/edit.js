@@ -19,7 +19,7 @@ import {
 import { useEffect } from '@wordpress/element';
 import { dispatch } from '@wordpress/data';
 import { componentDivider } from './component-divider';
-import GenerateBgImage from './GenerateBgImage';
+import BgCover from './bgcover';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { colorSlugToColorCode } from '@vkblocks/utils/color-slug-to-color-code';
 
@@ -91,12 +91,6 @@ export default function OuterEdit(props) {
 		});
 	}
 
-	if (borderRadius < 0) {
-		setAttributes({
-			borderRadius: 0,
-		});
-	}
-
 	//幅のクラス切り替え
 	// eslint-disable-next-line prefer-const
 	const classWidth = `vk_outer-width-${outerWidth}`;
@@ -156,14 +150,8 @@ export default function OuterEdit(props) {
 		setAttributes({ bgColor: '#f3f4f5' });
 	}
 
-	const bgColorClasses = [];
 	let borderColorCss = borderColor;
-
-	if (!isHexColor(bgColor)) {
-		bgColorClasses.push('has-background-color');
-		bgColorClasses.push(`has-${bgColor}-background-color`);
-	}
-
+	const bgColorClasses = [];
 	if (!isHexColor(borderColor)) {
 		bgColorClasses.push('has-text-color');
 		bgColorClasses.push(`has-${borderColor}-color`);
@@ -193,9 +181,7 @@ export default function OuterEdit(props) {
 	}
 
 	const blockProps = useBlockProps({
-		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${bgColorClasses.join(
-			' '
-		)} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
+		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 		style: borderStyleProperty,
 	});
 
@@ -642,11 +628,7 @@ export default function OuterEdit(props) {
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
-				<GenerateBgImage
-					prefix={'vkb-outer'}
-					clientId={clientId}
-					{...props}
-				/>
+				<BgCover prefix={'vkb-outer'} clientId={clientId} {...props} />
 				<div>
 					{componentDivider(
 						upper_level,

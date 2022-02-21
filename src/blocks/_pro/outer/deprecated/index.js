@@ -101,6 +101,23 @@ const deprecated = [
 				type: 'string',
 				default: null,
 			},
+			innerSideSpaceValuePC: {
+				type: "number",
+				default: 0
+			},
+			innerSideSpaceValueTablet: {
+				type: "number",
+				default: 0
+			},
+			innerSideSpaceValueMobile: {
+				type: "number",
+				default: 0
+			},
+			innerSideSpaceUnit: {
+				type: "string",
+				default: "px"
+			}			
+
 		},
 		save: save1_20_2,
 		vkBlockOuterfilters: [

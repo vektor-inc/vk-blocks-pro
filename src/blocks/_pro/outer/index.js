@@ -101,7 +101,7 @@ addFilter(
 			const deprecatedFuncIndex = deprecated.findIndex(
 				(item) => item.save === type.save
 			);
-
+			//console.log(deprecatedFuncIndex);
 			const cssTag = generateInlineCss(attributes);
 
 			// 最新版 or deprecated において vkBlockOuterfiltersにaddInlineFrontCssが含まれているもの

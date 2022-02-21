@@ -1,38 +1,10 @@
-import hex2rgba from '@vkblocks/utils/hex-to-rgba';
-import { colorSlugToColorCode } from '@vkblocks/utils/color-slug-to-color-code';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
-const GenerateBgImage = (props) => {
-	const { attributes, clientId, prefix, bgColorOutputDisable } = props;
-	const { bgImageMobile, bgImageTablet, bgImage, bgColor, opacity, bgSize } =
-		attributes;
 
+const _buildBgInfo = (bgImage, bgImageTablet, bgImageMobile) => {
 	const mobileViewport = 'max-width: 575.98px';
 	const tabletViewport = 'min-width: 576px';
 	const pcViewport = 'min-width: 992px';
 	const underPcViewport = 'max-width: 991.98px';
-
-	let backgroundStyle;
-	const backgroundPosition = 'background-position:center!important;';
-	if ('cover' === bgSize) {
-		backgroundStyle = `background-size:${bgSize}!important; ${backgroundPosition}`;
-	} else if ('repeat' === bgSize) {
-		backgroundStyle = `background-repeat:${bgSize}!important; ${backgroundPosition}`;
-	} else {
-		backgroundStyle = ``;
-	}
-
-	let bgColorWOpacity;
-	let bgHexColor = bgColor;
-	//hexからrgbaに変換
-	if (bgColor) {
-		if (!isHexColor(bgColor)) {
-			bgHexColor = colorSlugToColorCode(bgColor);
-		}
-		bgColorWOpacity = hex2rgba(bgHexColor, opacity);
-	} else {
-		//背景色をクリアした時は、白に変更
-		bgColorWOpacity = hex2rgba('#fff', opacity);
-	}
 
 	/* eslint-disable */
 	let backgroundInfo = [];
@@ -82,11 +54,69 @@ const GenerateBgImage = (props) => {
 	}
 	/* eslint-enable */
 
-	// ここからCSSの組み立て処理
-	const selectorCss = `.${prefix}-${clientId}`;
-	const bgColorCss = bgColorOutputDisable
-		? `opacity: ${opacity}`
-		: `background: linear-gradient(${bgColorWOpacity}, ${bgColorWOpacity})`;
+	return backgroundInfo;
+};
+
+class VK_Outer_Container {
+	constructor(selector) {
+		this.selector = selector;
+		this.classNames = [];
+		this.styles = {};
+	}
+
+	setClassName(name) {
+		this.classNames.push(name);
+	}
+
+	setStyle(attr, value) {
+		this.styles[attr] = value;
+	}
+
+	outputClassName() {
+		return this.classNames.join(' ');
+	}
+
+	outputStyle() {
+		const styles = [];
+		Object.keys(this.styles).forEach((key) => {
+			styles.push(`${key}: ${this.styles[key]}`);
+		});
+		return `${this.selector} { ${styles.join('; ')} }`;
+	}
+}
+const bgCover = (props) => {
+	const { attributes, clientId, prefix } = props;
+
+	const blockContainer = new VK_Outer_Container(`.${prefix}-${clientId}`);
+	const bgContainer = new VK_Outer_Container(
+		`.${prefix}-${clientId} .vk_outer__background`
+	);
+
+	bgContainer.setClassName(`vk_outer__background`);
+
+	// 背景色がカラーパレット色指定の場合
+	if (!isHexColor(attributes.bgColor)) {
+		bgContainer.setClassName(`has-${attributes.bgColor}-background-color`);
+
+		// 背景色がカスタムカラー（カラーコード指定）の場合
+	} else if (attributes.bgColor) {
+		bgContainer.setStyle('background-color', attributes.bgColor);
+
+		// 背景色指定しない場合は白
+	} else {
+		bgContainer.setStyle('background-color', '#fff');
+	}
+
+	// 透過設定
+	bgContainer.setClassName('has-background-dim');
+	bgContainer.setClassName(`has-background-dim-${attributes.opacity * 100}`);
+
+	// 背景情報を構築
+	const backgroundInfo = _buildBgInfo(
+		attributes.bgImage,
+		attributes.bgImageTablet,
+		attributes.bgImageMobile
+	);
 	const outputCss = [];
 
 	backgroundInfo.forEach((bg) => {
@@ -100,27 +130,21 @@ const GenerateBgImage = (props) => {
 		}
 
 		// 背景が指定されているときのみ url出力
-		let bgUrlCss = '';
 		if (bg.url) {
-			if (bgColorOutputDisable) {
-				bgUrlCss = 'background: ';
-			}
-			bgUrlCss += `url(${bg.url});`;
-		}
-
-		let separation = bgUrlCss && !bgColorOutputDisable ? ', ' : ';';
-
-		if ('' === bgColorCss && !bg.url) {
-			separation = '';
+			blockContainer.setStyle('background-image', `url(${bg.url})`);
 		}
 
 		outputCss.push(mediaQueryBefore ?? '');
-		outputCss.push(
-			`${selectorCss}{${bgColorCss}${separation}${bgUrlCss} ${backgroundStyle}}\n`
-		);
+		outputCss.push(blockContainer.outputStyle());
+		outputCss.push(bgContainer.outputStyle());
 		outputCss.push(mediaQueryAfter ?? '');
 	});
 
-	return <style>{outputCss.join('')}</style>;
+	return (
+		<>
+			<span className={bgContainer.outputClassName()}></span>
+			<style>{outputCss.join('')}</style>
+		</>
+	);
 };
-export default GenerateBgImage;
+export default bgCover;

@@ -1,12 +1,11 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { componentDivider } from './component-divider';
-import GenerateBgImage from './GenerateBgImage';
+import BgCover from './bgcover';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function save(props) {
 	const { attributes } = props;
 	const {
-		bgColor,
 		bgPosition,
 		outerWidth,
 		padding_left_and_right, //eslint-disable-line camelcase
@@ -80,16 +79,8 @@ export default function save(props) {
 	//編集画面とサイト上の切り替え
 	const containerClass = 'vk_outer_container';
 
-	const bgColorClasses = [];
 	let borderColorCss = borderColor;
-
-	let bgColorOutputDisable = false;
-	if (!isHexColor(bgColor)) {
-		bgColorOutputDisable = true;
-		bgColorClasses.push('has-background-color');
-		bgColorClasses.push(`has-${bgColor}-background-color`);
-	}
-
+	const bgColorClasses = [];
 	if (!isHexColor(borderColor)) {
 		bgColorClasses.push('has-text-color');
 		bgColorClasses.push(`has-${borderColor}-color`);
@@ -107,7 +98,7 @@ export default function save(props) {
 	) {
 		borderStyleProperty = {
 			border: `${borderWidth}px ${borderStyle} ${borderColorCss}`,
-			borderRadius: `${borderRadius < 0 ? 0 : borderRadius}px`,
+			borderRadius: `${borderRadius}px`,
 		};
 		//eslint-disable-next-line camelcase
 	} else if (upper_level !== 0 || lower_level !== 0) {
@@ -119,19 +110,12 @@ export default function save(props) {
 	}
 
 	const blockProps = useBlockProps.save({
-		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${bgColorClasses.join(
-			' '
-		)} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
+		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 		style: borderStyleProperty,
 	});
 	return (
 		<div {...blockProps}>
-			<GenerateBgImage
-				prefix={'vkb-outer'}
-				clientId={clientId}
-				bgColorOutputDisable={bgColorOutputDisable}
-				{...props}
-			/>
+			<BgCover prefix={'vkb-outer'} clientId={clientId} {...props} />
 			<div>
 				{componentDivider(
 					upper_level,

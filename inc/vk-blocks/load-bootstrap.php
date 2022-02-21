@@ -28,15 +28,3 @@ function vk_blocks_load_bootstrap( $hook_suffix ) {
 }
 add_action( 'admin_enqueue_scripts', 'vk_blocks_load_bootstrap' );
 add_action( 'wp_enqueue_scripts', 'vk_blocks_load_bootstrap' );
-
-/**
- * VK Blocks add setting link
- *
- * @param array $links VK Blocks action links.
- */
-function vk_blocks_add_setting_link( $links ) {
-	$settings_link = '<a href="' . esc_url( admin_url( '/customize.php' ) ) . '">' . __( 'Setting', 'vk-blocks' ) . '</a>';
-	array_unshift( $links, $settings_link );
-	return $links;
-}
-add_filter( 'plugin_action_links_vk-blocks/vk-blocks.php', 'vk_blocks_add_setting_link', 10, 1 );

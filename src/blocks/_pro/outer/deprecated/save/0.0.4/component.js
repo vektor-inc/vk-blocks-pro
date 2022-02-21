@@ -1,4 +1,4 @@
-import { componentDivider } from '../component-divider';
+import { componentDivider } from '../../component-divider';
 import { InnerBlocks } from '@wordpress/block-editor';
 import { Component } from '@wordpress/element';
 
@@ -26,7 +26,7 @@ function hex2rgba(hex, alpha) {
 	return `rgba(${c[0]}, ${c[1]}, ${c[2]}, ${alpha})`;
 }
 
-export class ComponentV0 extends Component {
+export class ComponentForTemplate2 extends Component {
 	render() {
 		let {
 			bgColor,
@@ -49,9 +49,9 @@ export class ComponentV0 extends Component {
 			borderStyle,
 			borderColor,
 			borderRadius,
-			anchor,
 		} = this.props.attributes;
 
+		const className = this.props.className;
 		const for_ = this.props.for_;
 		let classPaddingLR;
 		let classPaddingVertical;
@@ -146,9 +146,10 @@ export class ComponentV0 extends Component {
 
 		return (
 			<div
-				id={anchor}
+				id={'vk-htags-5'}
 				className={
-					'vk_outer' +
+					className +
+					' vk_outer' +
 					classWidth +
 					classPaddingLR +
 					classPaddingVertical +

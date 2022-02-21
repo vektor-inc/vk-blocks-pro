@@ -9,7 +9,8 @@ import { createHigherOrderComponent } from '@wordpress/compose';
 import metadata from './block.json';
 import edit from './edit';
 import save from './save';
-import deprecated from './deprecated/';
+import deprecated from './deprecated/save/';
+import deprecatedHooks from './deprecated/hooks/'
 
 const { name } = metadata;
 
@@ -105,12 +106,7 @@ addFilter(
 			const cssTag = generateInlineCss(attributes);
 
 			// 最新版 or deprecated において vkBlockOuterfiltersにaddInlineFrontCssが含まれているもの
-			if (
-				-1 === deprecatedFuncIndex ||
-				deprecated[deprecatedFuncIndex].vkBlockOuterfilters?.includes(
-					'addInlineFrontCss'
-				)
-			) {
+			if ( -1 === deprecatedFuncIndex ) {
 				// NOTE: useBlockProps + style要素を挿入する場合、useBlockPropsを使った要素が最初（上）にこないと、
 				// カスタムクラスを追加する処理が失敗する
 				return (
@@ -120,6 +116,14 @@ addFilter(
 					</>
 				);
 			}
+
+			let DeprecatedHook;
+			// Deprecated Hooks が Deprecated Save関数より少ない場合にエラーが出ないように。
+			if (deprecatedHooks.length > deprecatedFuncIndex) {
+				DeprecatedHook = deprecatedHooks[deprecatedFuncIndex];
+				return <DeprecatedHook el={el} attributes={attributes} />;
+			} 
+			
 		}
 		return el;
 	},

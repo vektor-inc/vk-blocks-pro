@@ -1,8 +1,9 @@
-import { componentDivider } from '../component-divider';
+import { componentDivider } from '../../component-divider';
 import { InnerBlocks } from '@wordpress/block-editor';
 import hex2rgba from '@vkblocks/utils/hex-to-rgba';
 
-export const ComponentV2 = (props) => {
+// eslint-disable-next-line camelcase
+export const OuterBlock0371 = (props) => {
 	let {
 		bgPosition,
 		outerWidth,
@@ -52,11 +53,17 @@ export const ComponentV2 = (props) => {
 	}
 
 	//classPaddingLRのクラス切り替え
+	classPaddingLR = '';
 	// eslint-disable-next-line camelcase
-	if (padding_left_and_right === '1') {
-		classPaddingLR = ' vk_outer-paddingLR-use';
-	} else {
+	if (padding_left_and_right === '0') {
 		classPaddingLR = ' vk_outer-paddingLR-none';
+		// eslint-disable-next-line camelcase
+	} else if (padding_left_and_right === '1') {
+		classPaddingLR = ' vk_outer-paddingLR-use';
+		// eslint-disable-next-line camelcase
+	} else if (padding_left_and_right === '2') {
+		// Fit to content area width
+		classPaddingLR = ' vk_outer-paddingLR-zero';
 	}
 
 	//classPaddingVerticalのクラス切り替え
@@ -112,22 +119,41 @@ export const ComponentV2 = (props) => {
 		classBgPosition,
 		borderProperty,
 		borderRadiusProperty,
+		// eslint-disable-next-line camelcase
 		upper_level,
 		upperDividerBgColor,
 		whichSideUpper,
 		dividerType,
 		containerClass,
 		elm,
+		// eslint-disable-next-line camelcase
 		lower_level,
 		lowerDividerBgColor,
 		whichSideLower,
 	};
 
 	return (
-		<>
-			<GenerateMediaqueryCss { ...props } />
-			<OuterBlockInner { ...defaultProps } />
-		</>
+		<div
+			id={anchor}
+			className={
+				'vkb-outer-' +
+				clientId +
+				' ' +
+				className +
+				' vk_outer' +
+				classWidth +
+				classPaddingLR +
+				classPaddingVertical +
+				classBgPosition
+			}
+			style={{
+				border: borderProperty,
+				borderRadius: borderRadiusProperty,
+			}}
+		>
+			<GenerateMediaqueryCss {...props} />
+			<OuterBlockInner {...defaultProps} />
+		</div>
 	);
 };
 
@@ -247,15 +273,6 @@ const GenerateMediaqueryCss = (props) => {
 
 const OuterBlockInner = (props) => {
 	const {
-		clientId,
-		anchor,
-		className,
-		classWidth,
-		classPaddingLR,
-		classPaddingVertical,
-		classBgPosition,
-		borderProperty,
-		borderRadiusProperty,
 		// eslint-disable-next-line camelcase
 		upper_level,
 		upperDividerBgColor,
@@ -271,24 +288,7 @@ const OuterBlockInner = (props) => {
 
 	return (
 		<>
-			<div
-				id={anchor}
-				className={
-					'vkb-outer-' +
-					clientId +
-					' ' +
-					className +
-					' vk_outer' +
-					classWidth +
-					classPaddingLR +
-					classPaddingVertical +
-					classBgPosition
-				}
-				style={{
-					border: borderProperty,
-					borderRadius: borderRadiusProperty,
-				}}
-			>
+			<div>
 				{componentDivider(
 					upper_level,
 					upperDividerBgColor,

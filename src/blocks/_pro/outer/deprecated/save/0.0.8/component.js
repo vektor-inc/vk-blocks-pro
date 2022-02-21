@@ -1,4 +1,4 @@
-import { componentDivider } from '../component-divider';
+import { componentDivider } from '../../component-divider';
 import { InnerBlocks } from '@wordpress/block-editor';
 import { Component } from '@wordpress/element';
 
@@ -26,7 +26,7 @@ function hex2rgba(hex, alpha) {
 	return `rgba(${c[0]}, ${c[1]}, ${c[2]}, ${alpha})`;
 }
 
-export class ComponentForTemplate3 extends Component {
+export class ComponentForTemplate6 extends Component {
 	render() {
 		let {
 			bgColor,
@@ -78,7 +78,6 @@ export class ComponentForTemplate3 extends Component {
 		}
 
 		//classBgPositionのクラス切り替え
-		// eslint-disable-next-line camelcase
 		if (bgPosition === 'parallax') {
 			classBgPosition = ' vk_outer-bgPosition-parallax vk-prlx';
 		} else if (bgPosition === 'fixed') {
@@ -147,7 +146,7 @@ export class ComponentForTemplate3 extends Component {
 
 		return (
 			<div
-				id={'vk-htags-4'}
+				id={'vk-htags-17'}
 				className={
 					className +
 					' vk_outer' +

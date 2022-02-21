@@ -1,6 +1,6 @@
-import { componentDivider } from '../component-divider';
+import { componentDivider } from '../../component-divider';
 import { InnerBlocks } from '@wordpress/block-editor';
-import GenerateBgImage from '../GenerateBgImage';
+import GenerateBgImage from '../../GenerateBgImage';
 
 export const OuterBlock = (props) => {
 	let {

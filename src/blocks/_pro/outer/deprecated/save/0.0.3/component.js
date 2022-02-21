@@ -1,4 +1,4 @@
-import { componentDivider } from '../component-divider';
+import { componentDivider } from '../../component-divider';
 import { InnerBlocks } from '@wordpress/block-editor';
 import { Component } from '@wordpress/element';
 
@@ -26,7 +26,7 @@ function hex2rgba(hex, alpha) {
 	return `rgba(${c[0]}, ${c[1]}, ${c[2]}, ${alpha})`;
 }
 
-export class ComponentForTemplate0 extends Component {
+export class ComponentForTemplate1 extends Component {
 	render() {
 		let {
 			bgColor,
@@ -146,7 +146,7 @@ export class ComponentForTemplate0 extends Component {
 
 		return (
 			<div
-				id={'vk-htags-'}
+				id={'vk-htags-11'}
 				className={
 					className +
 					' vk_outer' +

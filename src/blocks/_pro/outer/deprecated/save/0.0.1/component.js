@@ -1,4 +1,4 @@
-import { componentDivider } from '../component-divider';
+import { componentDivider } from '../../component-divider';
 import { InnerBlocks } from '@wordpress/block-editor';
 import { Component } from '@wordpress/element';
 

@@ -63,6 +63,11 @@ e.g.
 
 == Changelog ==
 
+= 1.25.0 =
+[ Improvement ] Change to always load bootstrap when the theme is not Lightning,Lightning Pro,Katawara.
+[ fix ] Fix load FontAwesome when the theme is not Lightning,Lightning Pro,Katawara.
+[ fix ] color palette manager support border color
+
 = 1.24.5 =
 [ fix ][ Button ] Fix button alignment
 [ fix ][ Card(Pro) ] fix unify breakpoints.

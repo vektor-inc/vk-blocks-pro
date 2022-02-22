@@ -25,7 +25,7 @@ function vk_blocks_register_block_faq2() {
 	if ( ! is_admin() ) {
 		wp_register_script(
 			'vk-blocks-faq2',
-			VK_BLOCKS_URL . 'build/vk-faq2.min.js',
+			VK_BLOCKS_DIR_URL . 'build/vk-faq2.min.js',
 			array(),
 			VK_BLOCKS_VERSION,
 			true

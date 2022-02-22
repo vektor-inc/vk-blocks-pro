@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3973bcb28dd74d75897ac29fc4e1860c",
+    "content-hash": "42b1f2e6594392bfa8343b845ec394c2",
     "packages": [
         {
             "name": "tgmpa/tgm-plugin-activation",
@@ -113,16 +113,16 @@
         },
         {
             "name": "vektor-inc/vk-color-palette-manager",
-            "version": "0.1.0",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vektor-inc/vk-color-palette-manager.git",
-                "reference": "1dd6ebdbd1bdfc2ea1968036919a6f1000e98a5e"
+                "reference": "9a311154182fbbfa24a4f5a2930a6bcf8545ad4f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vektor-inc/vk-color-palette-manager/zipball/1dd6ebdbd1bdfc2ea1968036919a6f1000e98a5e",
-                "reference": "1dd6ebdbd1bdfc2ea1968036919a6f1000e98a5e",
+                "url": "https://api.github.com/repos/vektor-inc/vk-color-palette-manager/zipball/9a311154182fbbfa24a4f5a2930a6bcf8545ad4f",
+                "reference": "9a311154182fbbfa24a4f5a2930a6bcf8545ad4f",
                 "shasum": ""
             },
             "type": "library",
@@ -144,9 +144,9 @@
             "description": "Manage color palette for Gutenberg",
             "support": {
                 "issues": "https://github.com/vektor-inc/vk-color-palette-manager/issues",
-                "source": "https://github.com/vektor-inc/vk-color-palette-manager/tree/0.1.0"
+                "source": "https://github.com/vektor-inc/vk-color-palette-manager/tree/0.3.0"
             },
-            "time": "2022-01-21T06:30:19+00:00"
+            "time": "2022-02-18T01:03:48+00:00"
         },
         {
             "name": "yahnis-elsts/plugin-update-checker",

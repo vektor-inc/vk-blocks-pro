@@ -115,3 +115,15 @@ function vk_blocks_setting_option_save() {
 	// wp_safe_redirect( menu_page_url( 'vk_blocks_options', false ) );
 }
 add_action( 'admin_init', 'vk_blocks_setting_option_save', 10, 2 );
+
+/**
+ * VK Blocks add setting link
+ *
+ * @param array $links VK Blocks action links.
+ */
+function vk_blocks_add_setting_link( $links ) {
+	$settings_link = '<a href="' . esc_url( admin_url( '/options-general.php?page=vk_blocks_options' ) ) . '">' . __( 'Setting', 'vk-blocks' ) . '</a>';
+	array_unshift( $links, $settings_link );
+	return $links;
+}
+add_filter( 'plugin_action_links', 'vk_blocks_add_setting_link' );

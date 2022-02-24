@@ -23,7 +23,7 @@ function vk_blocks_register_block_outer() {
 	if ( ! is_admin() ) {
 		wp_register_script(
 			'vk-blocks/outer-script',
-			VK_BLOCKS_DIR_URL . 'inc/vk-blocks/build/vk-outer.min.js',
+			VK_BLOCKS_DIR_URL . 'build/vk-outer.min.js',
 			array(),
 			VK_BLOCKS_VERSION,
 			true

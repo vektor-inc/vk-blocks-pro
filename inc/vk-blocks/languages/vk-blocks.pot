@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.24.5\n"
+"Project-Id-Version: VK Blocks Pro 1.25.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-02-15T01:07:51+00:00\n"
+"POT-Creation-Date: 2022-02-24T05:14:27+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks\n"
@@ -1616,6 +1616,10 @@ msgstr ""
 msgid "margin-top"
 msgstr ""
 
+#: src/blocks/spacer/advanced-spacer-control.js:23
+msgid "margin-bottom"
+msgstr ""
+
 #: src/blocks/spacer/advanced-spacer-control.js:9
 msgid "Space Type"
 msgstr ""
@@ -2339,19 +2343,7 @@ msgstr ""
 msgid "Balloon Block Setting"
 msgstr ""
 
-#: inc/vk-blocks/load-bootstrap.php:61
-msgid "VK Blocks Bootstrap Setting"
-msgstr ""
-
-#: inc/vk-blocks/load-bootstrap.php:81
-msgid "Loading Bootstrap4"
-msgstr ""
-
-#: inc/vk-blocks/load-bootstrap.php:82
-msgid "Check here to load Bootstrap4. If your theme or plugins loading Bootstrap4, uncheck here."
-msgstr ""
-
-#: inc/vk-blocks/load-bootstrap.php:102
+#: inc/vk-blocks/admin/admin.php:125
 msgid "Setting"
 msgstr ""
 

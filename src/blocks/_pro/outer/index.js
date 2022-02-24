@@ -10,7 +10,7 @@ import metadata from './block.json';
 import edit from './edit';
 import save from './save';
 import deprecated from './deprecated/save/';
-import deprecatedHooks from './deprecated/hooks/'
+import deprecatedHooks from './deprecated/hooks/';
 
 const { name } = metadata;
 
@@ -52,13 +52,13 @@ const generateInlineCss = (attributes) => {
 		padding-left:${innerSideSpaceValueMobile}${innerSideSpaceUnit};
 		padding-right:${innerSideSpaceValueMobile}${innerSideSpaceUnit};
 	}
-	@media (min-width: 577px) {
+	@media (min-width: 576px) {
 		${containerSelector}{
 			padding-left:${innerSideSpaceValueTablet}${innerSideSpaceUnit};
 			padding-right:${innerSideSpaceValueTablet}${innerSideSpaceUnit};
 		}
 	}
-	@media (min-width: 769px) {
+	@media (min-width: 992px) {
 		${containerSelector}{
 			padding-left:${innerSideSpaceValuePC}${innerSideSpaceUnit};
 			padding-right:${innerSideSpaceValuePC}${innerSideSpaceUnit};
@@ -106,7 +106,7 @@ addFilter(
 			const cssTag = generateInlineCss(attributes);
 
 			// 最新版 or deprecated において vkBlockOuterfiltersにaddInlineFrontCssが含まれているもの
-			if ( -1 === deprecatedFuncIndex ) {
+			if (-1 === deprecatedFuncIndex) {
 				// NOTE: useBlockProps + style要素を挿入する場合、useBlockPropsを使った要素が最初（上）にこないと、
 				// カスタムクラスを追加する処理が失敗する
 				return (
@@ -122,8 +122,7 @@ addFilter(
 			if (deprecatedHooks.length > deprecatedFuncIndex) {
 				DeprecatedHook = deprecatedHooks[deprecatedFuncIndex];
 				return <DeprecatedHook el={el} attributes={attributes} />;
-			} 
-			
+			}
 		}
 		return el;
 	},

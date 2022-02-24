@@ -110,7 +110,9 @@ export default function save(props) {
 	}
 
 	const blockProps = useBlockProps.save({
-		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition} ${bgColorClasses.join(' ')}`,
+		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition} ${bgColorClasses.join(
+			' '
+		)}`,
 		style: borderStyleProperty,
 	});
 	return (

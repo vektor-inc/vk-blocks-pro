@@ -28,7 +28,7 @@ rm -rf src/*
 # プロ版のディレクトリに移動
 cd ../
 # 指定したファイルを除外して、Pro版を無料版（vk-blocks-copy-target）へコピー&上書き
-rsync -arvc --exclude 'vk-blocks-copy-target/' --exclude 'test/' --exclude 'bin/' --exclude 'build/_pro/' --exclude 'src/blocks/_pro/' --exclude 'inc/vk-blocks-pro/' --exclude '.git/' --exclude '.github/' --exclude 'inc/vk-blocks/build/block-build.css' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/bundle-pro.js' --exclude '.gitignore' --exclude 'inc/vk-blocks/build/*.css' --exclude 'inc/vk-blocks/build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' --exclude 'vk-blocks-pro.code-workspace' --exclude 'phpunit.xml.dist' ./* ./vk-blocks-copy-target/
+rsync -arvc --exclude 'vk-blocks-copy-target/' --exclude 'test/' --exclude 'bin/' --exclude 'build/_pro/' --exclude 'src/blocks/_pro/' --exclude 'inc/vk-blocks-pro/' --exclude '.git/' --exclude '.github/' --exclude 'build/block-build.css' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/bundle-pro.js' --exclude '.gitignore' --exclude 'build/*.css' --exclude 'build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' --exclude 'vk-blocks-pro.code-workspace' --exclude 'phpunit.xml.dist' ./* ./vk-blocks-copy-target/
 # 無料版のディレクトリに移動
 cd ./vk-blocks-copy-target/
 # プラグイン名を通常版へリネーム（vk-blocks.php の 3行目の /Pro/ を // に変更 ）

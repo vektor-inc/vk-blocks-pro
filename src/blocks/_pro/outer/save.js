@@ -117,7 +117,11 @@ export default function save(props) {
 	});
 	return (
 		<div {...blockProps}>
-			<OuterBackground prefix={'vkb-outer'} clientId={clientId} {...props} />
+			<OuterBackground
+				prefix={'vkb-outer'}
+				clientId={clientId}
+				{...props}
+			/>
 			<div>
 				{componentDivider(
 					upper_level,

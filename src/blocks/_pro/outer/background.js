@@ -145,11 +145,7 @@ const outerBackground = (props) => {
 	return (
 		<>
 			<span className={bgContainer.outputClassName()}></span>
-			{ outputStyle ?
-				<style>{outputStyle}</style>
-				:
-				''
-			}
+			{outputStyle ? <style>{outputStyle}</style> : ''}
 		</>
 	);
 };

@@ -628,7 +628,11 @@ export default function OuterEdit(props) {
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
-				<OuterBackground prefix={'vkb-outer'} clientId={clientId} {...props} />
+				<OuterBackground
+					prefix={'vkb-outer'}
+					clientId={clientId}
+					{...props}
+				/>
 				<div>
 					{componentDivider(
 						upper_level,

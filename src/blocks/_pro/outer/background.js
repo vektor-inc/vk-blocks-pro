@@ -81,18 +81,18 @@ class VK_Outer_Container {
 		Object.keys(this.styles).forEach((key) => {
 			styles.push(`${key}: ${this.styles[key]}`);
 		});
-		return `${this.selector} { ${styles.join('; ')} }`;
+		return styles.length ? `${this.selector} { ${styles.join('; ')} }` : '';
 	}
 }
-const bgCover = (props) => {
+const outerBackground = (props) => {
 	const { attributes, clientId, prefix } = props;
 
 	const blockContainer = new VK_Outer_Container(`.${prefix}-${clientId}`);
 	const bgContainer = new VK_Outer_Container(
-		`.${prefix}-${clientId} .vk_outer__background`
+		`.${prefix}-${clientId} .vk_outer_bgoverlay`
 	);
 
-	bgContainer.setClassName(`vk_outer__background`);
+	bgContainer.setClassName(`vk_outer_bgoverlay`);
 
 	// 背景色がカラーパレット色指定の場合
 	if (!isHexColor(attributes.bgColor)) {
@@ -117,7 +117,7 @@ const bgCover = (props) => {
 		attributes.bgImageTablet,
 		attributes.bgImageMobile
 	);
-	const outputCss = [];
+	const outputStyles = [];
 
 	backgroundInfo.forEach((bg) => {
 		let mediaQueryBefore = '';
@@ -134,17 +134,23 @@ const bgCover = (props) => {
 			blockContainer.setStyle('background-image', `url(${bg.url})`);
 		}
 
-		outputCss.push(mediaQueryBefore ?? '');
-		outputCss.push(blockContainer.outputStyle());
-		outputCss.push(bgContainer.outputStyle());
-		outputCss.push(mediaQueryAfter ?? '');
+		outputStyles.push(mediaQueryBefore ?? '');
+		outputStyles.push(blockContainer.outputStyle());
+		outputStyles.push(bgContainer.outputStyle());
+		outputStyles.push(mediaQueryAfter ?? '');
 	});
+
+	const outputStyle = outputStyles.join('');
 
 	return (
 		<>
 			<span className={bgContainer.outputClassName()}></span>
-			<style>{outputCss.join('')}</style>
+			{ outputStyle ?
+				<style>{outputStyle}</style>
+				:
+				''
+			}
 		</>
 	);
 };
-export default bgCover;
+export default outerBackground;

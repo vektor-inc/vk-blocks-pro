@@ -19,7 +19,7 @@ import {
 import { useEffect } from '@wordpress/element';
 import { dispatch } from '@wordpress/data';
 import { componentDivider } from './component-divider';
-import BgCover from './bgcover';
+import OuterBackground from './background';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { colorSlugToColorCode } from '@vkblocks/utils/color-slug-to-color-code';
 
@@ -628,7 +628,7 @@ export default function OuterEdit(props) {
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
-				<BgCover prefix={'vkb-outer'} clientId={clientId} {...props} />
+				<OuterBackground prefix={'vkb-outer'} clientId={clientId} {...props} />
 				<div>
 					{componentDivider(
 						upper_level,

@@ -1,6 +1,6 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { componentDivider } from './component-divider';
-import BgCover from './bgcover';
+import OuterBackground from './background';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function save(props) {
@@ -117,7 +117,7 @@ export default function save(props) {
 	});
 	return (
 		<div {...blockProps}>
-			<BgCover prefix={'vkb-outer'} clientId={clientId} {...props} />
+			<OuterBackground prefix={'vkb-outer'} clientId={clientId} {...props} />
 			<div>
 				{componentDivider(
 					upper_level,

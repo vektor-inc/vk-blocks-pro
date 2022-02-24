@@ -120,9 +120,6 @@ const deprecated = [
 
 		},
 		save: save1_20_2,
-		vkBlockOuterfilters: [
-			'addInlineFrontCss'
-		]
 	},	
 	{
 		attributes: {

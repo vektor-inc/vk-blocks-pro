@@ -22,6 +22,7 @@ class VK_Blocks_Block_Loader {
 		array( 'name' => 'query',                     'is_pro' =>  true  ),
 		array( 'name' => 'post-template',             'is_pro' =>  true  ),
 		array( 'name' => 'query-pagination',          'is_pro' =>  true  ),
+		array( 'name' => 'query-pagination-next',     'is_pro' =>  true  ),
 	);
 	// phpcs:enable
 

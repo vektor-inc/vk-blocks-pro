@@ -27,6 +27,7 @@ import * as timelineItem from './_pro/timeline-item';
 import * as query from './_pro/query';
 import * as postTemplate from './_pro/post-template';
 import * as queryPagination from './_pro/query-pagination';
+import * as queryPaginationNext from './_pro/query-pagination-next';
 
 const vkblocksPro = [
 	accordion,

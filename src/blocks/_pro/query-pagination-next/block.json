@@ -1,0 +1,27 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/query-pagination-next",
+	"title": "VK Next Page",
+	"category": "vk-blocks-cat-layout",
+	"parent": [ "vk-blocks/query-pagination" ],
+	"description": "Displays the next posts page link.",
+	"textdomain": "vk-blocks",
+	"attributes": {
+		"label": {
+			"type": "string"
+		}
+	},
+	"usesContext": [ "queryId", "query", "paginationArrow" ],
+	"supports": {
+		"reusable": false,
+		"html": false,
+		"color": {
+			"gradients": true,
+			"text": false
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true
+		}
+	}
+}

@@ -1,0 +1,28 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/query-pagination",
+	"title": "VK Pagination",
+	"category": "vk-blocks-cat-layout",
+	"parent": [ "vk-blocks/query" ],
+	"description": "Displays a paginated navigation to next/previous set of posts, when applicable.",
+	"textdomain": "vk-blocks",
+	"attributes": {
+		"paginationArrow": {
+			"type": "string",
+			"default": "none"
+		}
+	},
+	"usesContext": [ "queryId", "query" ],
+	"providesContext": {
+		"paginationArrow": "paginationArrow"
+	},
+	"supports": {
+		"align": true,
+		"reusable": false,
+		"html": false,
+		"color": {
+			"gradients": true,
+			"link": true
+		}
+	}
+}

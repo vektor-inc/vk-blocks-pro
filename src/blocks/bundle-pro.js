@@ -55,6 +55,12 @@ const vkblocksPro = [
 	tableofContentsNew,
 	timeline,
 	timelineItem,
+	query,
+	postTemplate,
+	queryPagination,
+	queryPaginationNext,
+	queryPaginationNumbers,
+	queryPaginationPrevious,
 ];
 
 export default vkblocksPro;

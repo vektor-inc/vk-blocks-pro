@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
 Tested up to: 5.9.0
-Stable tag: 1.24.5
+Stable tag: 1.25.1
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -62,6 +62,14 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 1.25.1 =
+Change stable version
+
+= 1.25.0 =
+[ Improvement ] Change to always load bootstrap when the theme is not Lightning,Lightning Pro,Katawara.
+[ fix ] Fix load FontAwesome when the theme is not Lightning,Lightning Pro,Katawara.
+[ fix ] color palette manager support border color
 
 = 1.24.5 =
 [ fix ][ Button ] Fix button alignment

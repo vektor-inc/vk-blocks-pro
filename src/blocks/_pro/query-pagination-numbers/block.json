@@ -1,0 +1,14 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/query-pagination-numbers",
+	"title": "VK Page Numbers",
+	"category": "vk-blocks-cat-layout",
+	"parent": [ "vk-blocks/query-pagination" ],
+	"description": "Displays a list of page numbers for pagination",
+	"textdomain": "vk-blocks",
+	"usesContext": [ "queryId", "query" ],
+	"supports": {
+		"reusable": false,
+		"html": false
+	}
+}

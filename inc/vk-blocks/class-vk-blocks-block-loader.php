@@ -20,6 +20,7 @@ class VK_Blocks_Block_Loader {
 	// phpcs:disable
 	private $blocks = array(
 		array( 'name' => 'query',                     'is_pro' =>  true  ),
+		array( 'name' => 'post-template',             'is_pro' =>  true  ),
 	);
 	// phpcs:enable
 

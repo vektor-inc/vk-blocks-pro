@@ -1,0 +1,21 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/post-template",
+	"title": "VK Post Template",
+	"category": "vk-blocks-cat-layout",
+	"parent": [ "vk-blocks/query" ],
+	"description": "vk-blocks/post-template",
+	"textdomain": "vk-blocks",
+	"usesContext": [
+		"queryId",
+		"query",
+		"queryContext",
+		"displayLayout",
+		"templateSlug"
+	],
+	"supports": {
+		"reusable": false,
+		"html": false,
+		"align": true
+	}
+}

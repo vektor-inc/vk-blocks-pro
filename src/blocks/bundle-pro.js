@@ -24,6 +24,7 @@ import * as stepItem from './_pro/step-item';
 import * as tableofContentsNew from './_pro/table-of-contents-new';
 import * as timeline from './_pro/timeline';
 import * as timelineItem from './_pro/timeline-item';
+import * as query from './_pro/query';
 
 const vkblocksPro = [
 	accordion,

@@ -1,0 +1,27 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/query-pagination-previous",
+	"title": "VK Previous Page",
+	"category": "vk-blocks-cat-layout",
+	"parent": [ "vk-blocks/query-pagination" ],
+	"description": "Displays the previous posts page link.",
+	"textdomain": "vk-blocks",
+	"attributes": {
+		"label": {
+			"type": "string"
+		}
+	},
+	"usesContext": [ "queryId", "query", "paginationArrow" ],
+	"supports": {
+		"reusable": false,
+		"html": false,
+		"color": {
+			"gradients": true,
+			"text": false
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true
+		}
+	}
+}

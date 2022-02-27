@@ -19,26 +19,7 @@ export default function Spacers({
 	};
 
 	if (spaceSize !== undefined && SPACE_SIZE_CLASSNAMES[spaceSize]) {
-		if (type === 'margin-top') {
-			return (
-				<div
-					className={
-						SPACE_SIZE_CLASSNAMES[spaceSize] + '--margin-top'
-					}
-				/>
-			);
-		} else if (type === 'margin-bottom') {
-			return (
-				<div
-					className={
-						SPACE_SIZE_CLASSNAMES[spaceSize] + '--margin-bottom'
-					}
-				/>
-			);
-		}
-		return (
-			<div className={SPACE_SIZE_CLASSNAMES[spaceSize] + '--height'} />
-		);
+		return <div className={SPACE_SIZE_CLASSNAMES[spaceSize]} />;
 	}
 
 	if (type === 'margin-top') {
@@ -52,23 +33,6 @@ export default function Spacers({
 				<Spacer
 					viewPort={'mobile'}
 					style={{ marginTop: mobileSize + unit }}
-				/>
-			</>
-		);
-	} else if (type === 'margin-bottom') {
-		return (
-			<>
-				<Spacer
-					viewPort={'pc'}
-					style={{ marginBottom: pcSize + unit }}
-				/>
-				<Spacer
-					viewPort={'tablet'}
-					style={{ marginBottom: tabletSize + unit }}
-				/>
-				<Spacer
-					viewPort={'mobile'}
-					style={{ marginBottom: mobileSize + unit }}
 				/>
 			</>
 		);

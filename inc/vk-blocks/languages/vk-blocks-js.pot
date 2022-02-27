@@ -1612,6 +1612,10 @@ msgstr ""
 msgid "margin-top"
 msgstr ""
 
+#: src/blocks/spacer/advanced-spacer-control.js:23
+msgid "margin-bottom"
+msgstr ""
+
 #: src/blocks/spacer/advanced-spacer-control.js:9
 msgid "Space Type"
 msgstr ""

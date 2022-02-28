@@ -1,0 +1,42 @@
+/*
+	アウターが全幅で インナーもコンテンツエリアを突き抜けて広げる処理
+-----------------------------------------------*/
+.vk_outer-width-full.vk_outer-paddingLR-use,
+.vk_outer-width-full.vk_outer-paddingLR-zero{
+	// コンテンツエリアをはみ出させる
+	.wp-block { max-width:100%; }
+}
+
+.is-sidebar-opened & .vk_outer-width-full.vk_outer-paddingLR-use,
+.is-sidebar-opened & .vk_outer-width-full.vk_outer-paddingLR-zero{
+	// サイドバー表示時に全幅要素がはみ出してサイドバーの下などに入り込むのを防止
+	margin-left: calc( 50% - 50vw + 140px );
+	margin-right: calc( 50% - 50vw + 140px );
+	// コンテンツエリアをはみ出させる
+	.wp-block { max-width:100%; }
+}
+
+.wp-block-vk-blocks-outer.vk_outer.vk_outer-width-full {
+	width: 100%;
+	max-width: 100vw;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
+	&.vk_outer-paddingLR-use,
+	&.vk_outer-paddingLR-zero {
+		width: 100%;
+		max-width: 100vw;
+
+		padding-left: var(--padding-left);
+		padding-right: var(--padding-right);
+
+		.block-editor-inner-blocks {
+			max-width: 100vw;
+		}
+	}
+	.block-editor-inner-blocks {
+		max-width: 1110px;
+		margin: auto;
+	}
+}

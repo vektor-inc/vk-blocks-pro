@@ -1,6 +1,13 @@
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+.vk_spacer-type-margin-top,
+.vk_spacer-type-margin-bottom{
+	div[class*="vk_block-margin"]{
+		display:block;
+		overflow:hidden;
+	}
+}
 .vk_spacer-type-height {
 	display:block;
 	overflow:hidden;

@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ fix ] fix plugin settings links.
+
 = 1.25.1 =
 Change stable version
 

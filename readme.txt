@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
 Tested up to: 5.9.0
-Stable tag: 1.25.1
+Stable tag: 1.26.0
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,7 +63,9 @@ e.g.
 
 == Changelog ==
 
+= 1.26.0 =
 [ fix ] fix plugin settings links.
+[ Add function ][ Spacer ] Add margin-top mode
 
 = 1.25.1 =
 Change stable version

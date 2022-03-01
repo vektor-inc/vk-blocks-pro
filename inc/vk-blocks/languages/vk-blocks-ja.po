@@ -427,13 +427,10 @@ msgstr "背景設定"
 msgid "Color Setting"
 msgstr "色設定"
 
-#: src/blocks/_pro/outer/edit.js:188 src/blocks/_pro/slider-item/edit.js:131
-msgid ""
-"Color will overcome background image. If you want to display image, clear "
-"background color or set opacity 0."
-msgstr ""
-"色を指定すると画像よりも優先されます。画像を表示したい場合は、背景色をクリア"
-"するか、不透明度を0に設定します。"
+#: src/blocks/_pro/outer/edit.js:188
+#: src/blocks/_pro/slider-item/edit.js:165
+msgid "Color will overcome background image. If you want to display image, set opacity 0."
+msgstr "色を指定すると画像よりも優先されます。画像を表示したい場合は、不透明度を0に設定します。"
 
 #: src/blocks/_pro/outer/edit.js:201 src/blocks/_pro/slider-item/edit.js:144
 msgid "Opacity Setting"

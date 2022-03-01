@@ -16,6 +16,7 @@
 }
 .vk_block{
 	&-margin-sm {
+		margin-top: var(--vk-margin-sm); /* 旧バージョンでdeprecatedが走ってない状態のfallback */
 		&--margin-top {
 			margin-top: var(--vk-margin-sm);
 		}
@@ -27,6 +28,7 @@
 		}
 	}
 	&-margin-md {
+		margin-top: var(--vk-margin-md); /* 旧バージョンでdeprecatedが走ってない状態のfallback */
 		&--margin-top {
 			margin-top: var(--vk-margin-md);
 		}
@@ -38,6 +40,7 @@
 		}
 	}
 	&-margin-lg {
+		margin-top: var(--vk-margin-lg); /* 旧バージョンでdeprecatedが走ってない状態のfallback */
 		&--margin-top {
 			margin-top: var(--vk-margin-lg);
 		}

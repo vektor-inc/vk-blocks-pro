@@ -81,6 +81,7 @@ const blockAttributes = {
 };
 
 const deprecated = [
+	//ブロックテンプレート用のdeprecated
 	{
 		attributes: {
 			...blockAttributes,
@@ -119,7 +120,6 @@ const deprecated = [
 		},
 		save: save1_26_0,
 	},
-	//ブロックテンプレート用のdeprecated
 	{
 		attributes: {
 			...blockAttributes,

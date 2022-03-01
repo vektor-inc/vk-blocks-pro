@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Outer(Pro) ] cope with custom color palette
+
 = 1.26.0 =
 [ fix ] fix plugin settings links.
 [ Add function ][ Spacer ] Add margin-top mode

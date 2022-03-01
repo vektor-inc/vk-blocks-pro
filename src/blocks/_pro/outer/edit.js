@@ -189,7 +189,6 @@ export default function OuterEdit(props) {
 		setAttributes({ borderColor: '#fff' });
 	}
 
-
 	//Dividerエフェクトがない時のみ枠線を追
 	let borderStyleProperty = {};
 

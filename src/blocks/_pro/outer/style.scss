@@ -20,8 +20,32 @@ $media-xxl-down: 1399.98px;
 	background-repeat: no-repeat;
 	position: relative;
 	transform: translateZ(0); // Safari 1px bug 対応
+
+	.has-background-dim::before {
+		content: "";
+		z-index: 1;
+	}
+
+	.vk_outer-background-area,
+	.has-background-dim::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		opacity: 0.5;
+	}
+
+	@for $i from 0 through 10 {
+		.has-background-dim-#{ $i } {
+			opacity: $i * 0.1;
+		}
+	}
+
 	.vk_outer_container {
+		position: relative;
 		min-height: 40px;
+		z-index: 1;
 		h1:first-child, 
 		h2:first-child, 
 		h3:first-child, 

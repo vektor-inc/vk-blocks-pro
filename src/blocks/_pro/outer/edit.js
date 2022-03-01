@@ -1,5 +1,22 @@
+/**
+ * External dependencies
+ */
+import classnames from 'classnames';
+
+/**
+ * Internal dependencies
+ */
 import toNumber from '@vkblocks/utils/to-number';
 import { AdvancedMediaUpload } from '@vkblocks/components/advanced-media-upload';
+import { componentDivider } from './component-divider';
+import GenerateBgImage from './GenerateBgImage';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
+const prefix = 'vkb-outer';
+
+/**
+ * WordPress dependencies
+ */
 import { __ } from '@wordpress/i18n';
 import {
 	RangeControl,
@@ -12,19 +29,19 @@ import {
 } from '@wordpress/components';
 import {
 	InspectorControls,
-	ColorPalette,
 	InnerBlocks,
 	useBlockProps,
 } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
 import { dispatch } from '@wordpress/data';
-import { componentDivider } from './component-divider';
-import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
 
 export default function OuterEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const {
 		bgColor,
+		bgImage,
+		bgImageTablet,
+		bgImageMobile,
 		bgPosition,
 		outerWidth,
 		padding_left_and_right, //eslint-disable-line camelcase
@@ -88,6 +105,35 @@ export default function OuterEdit(props) {
 			innerSideSpaceUnit: 'px',
 		});
 	}
+
+	const opacityClass = opacity && opacity * 10;
+	const bgColorClasses = classnames({
+		[`has-background`]: bgColor !== undefined,
+		[`has-${bgColor}-background-color`]:
+			bgColor !== undefined && !isHexColor(bgColor),
+		[`has-background-dim`]: opacity !== undefined,
+		[`has-background-dim-${opacityClass}`]: opacityClass !== undefined,
+	});
+
+	const bgColorStyles = {
+		backgroundColor: isHexColor(bgColor) ? bgColor : undefined,
+	};
+
+	const GetBgImage = (
+		<>
+			{(bgImage || bgImageTablet || bgImageMobile) && (
+				<GenerateBgImage
+					prefix={prefix}
+					clientId={clientId}
+					{...props}
+				/>
+			)}
+			<span
+				className={`vk_outer-background-area ${bgColorClasses}`}
+				style={bgColorStyles}
+			></span>
+		</>
+	);
 
 	//幅のクラス切り替え
 	// eslint-disable-next-line prefer-const
@@ -158,7 +204,12 @@ export default function OuterEdit(props) {
 		borderStyle !== 'none'
 	) {
 		borderStyleProperty = {
-			border: `${borderWidth}px ${borderStyle} ${borderColor}`,
+			borderWidth: `${borderWidth}px`,
+			borderStyle: `${borderStyle}`,
+			borderColor:
+				isHexColor(borderColor) && borderColor
+					? borderColor
+					: undefined,
 			borderRadius: `${borderRadius}px`,
 		};
 		//eslint-disable-next-line camelcase
@@ -171,7 +222,14 @@ export default function OuterEdit(props) {
 	}
 
 	const blockProps = useBlockProps({
-		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
+		className: classnames(
+			`vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
+			{
+				[`has-border-color`]: borderColor !== undefined,
+				[`has-${borderColor}-border-color`]:
+					borderColor !== undefined && !isHexColor(borderColor),
+			}
+		),
 		style: borderStyleProperty,
 	});
 
@@ -190,12 +248,7 @@ export default function OuterEdit(props) {
 							'vk-blocks'
 						)}
 					>
-						<ColorPalette
-							value={bgColor}
-							onChange={(value) =>
-								setAttributes({ bgColor: value })
-							}
-						/>
+						<AdvancedColorPalette schema={'bgColor'} {...props} />
 					</BaseControl>
 					<BaseControl
 						label={__('Opacity Setting', 'vk-blocks')}
@@ -427,13 +480,9 @@ export default function OuterEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl>
-						<ColorPalette
-							value={upperDividerBgColor}
-							onChange={(value) =>
-								setAttributes({
-									upperDividerBgColor: value,
-								})
-							}
+						<AdvancedColorPalette
+							schema={'upperDividerBgColor'}
+							{...props}
 						/>
 					</BaseControl>
 					<BaseControl
@@ -452,13 +501,9 @@ export default function OuterEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl>
-						<ColorPalette
-							value={lowerDividerBgColor}
-							onChange={(value) =>
-								setAttributes({
-									lowerDividerBgColor: value,
-								})
-							}
+						<AdvancedColorPalette
+							schema={'lowerDividerBgColor'}
+							{...props}
 						/>
 					</BaseControl>
 				</PanelBody>
@@ -520,11 +565,9 @@ export default function OuterEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl>
-						<ColorPalette
-							value={borderColor}
-							onChange={(value) =>
-								setAttributes({ borderColor: value })
-							}
+						<AdvancedColorPalette
+							schema={'borderColor'}
+							{...props}
 						/>
 					</BaseControl>
 					<BaseControl
@@ -633,11 +676,7 @@ export default function OuterEdit(props) {
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
-				<GenerateBgImage
-					prefix={'vkb-outer'}
-					clientId={clientId}
-					{...props}
-				/>
+				{GetBgImage}
 				<div>
 					{componentDivider(
 						upper_level,

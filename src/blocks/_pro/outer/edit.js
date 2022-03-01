@@ -189,10 +189,6 @@ export default function OuterEdit(props) {
 		setAttributes({ borderColor: '#fff' });
 	}
 
-	//bgColorクリア時に白をセットする
-	if (bgColor === null || bgColor === undefined) {
-		setAttributes({ bgColor: '#f3f4f5' });
-	}
 
 	//Dividerエフェクトがない時のみ枠線を追
 	let borderStyleProperty = {};

@@ -26,6 +26,11 @@ $media-xxl-down: 1399.98px;
 		z-index: 1;
 	}
 
+	// 背景色が選択されていない時
+	.vk_outer-background-area:not([class*=-background-color]) {
+		background-color: #f3f4f5;
+	}
+
 	.vk_outer-background-area,
 	.has-background-dim::before {
 		position: absolute;
@@ -46,10 +51,10 @@ $media-xxl-down: 1399.98px;
 		position: relative;
 		min-height: 40px;
 		z-index: 1;
-		h1:first-child, 
-		h2:first-child, 
-		h3:first-child, 
-		h4:first-child, 
+		h1:first-child,
+		h2:first-child,
+		h3:first-child,
+		h4:first-child,
 		h5:first-child {//他テーマ用
 			margin-top: 0;
 		}
@@ -57,7 +62,7 @@ $media-xxl-down: 1399.98px;
 }
 // これがないとレスポンシブスペーサーの共通高さが検出しない。
 .vk_outer{
-	display:block; 
+	display:block;
 	overflow:hidden;
 }
 //iOS Safari での1pxズレの予防のため　Only Safari 10.1+

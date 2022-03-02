@@ -171,7 +171,7 @@ class Vk_Blocks_PostList {
 		if ( ! empty( $date_query ) ) {
 			$args['date_query'] = $date_query;
 		}
-		return new WP_Query( $args );
+		return new WP_Query( apply_filters ('vk_blocks_post_list_get_loop_query', $args ) );
 	}
 
 	/**

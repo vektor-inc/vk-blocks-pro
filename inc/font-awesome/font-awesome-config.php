@@ -18,3 +18,31 @@ if ( ! class_exists( 'Vk_Font_Awesome_Versions' ) ) {
 		$font_awesome_directory_uri = VK_BLOCKS_DIR_URL . 'vendor/vektor-inc/font-awesome-versions/src/';
 	}
 }
+
+/**
+ * Font Awsome のアイコンの URL を渡す
+ */
+function vk_blocks_font_awesome_init() {
+	$options     = VkFontAwesomeVersions::get_option_fa();
+	$fa_icon_url = '';
+	if ( '4.7' === $options ) {
+		$fa_icon_url = 'https://fontawesome.com/v4/icons/';
+		$fa_family   = 'Font Awesome 4';
+	} elseif ( '5_WebFonts_CSS' === $options || '5_SVG_JS' === $options ) {
+		$fa_icon_url = 'https://fontawesome.com/v5/search?m=free';
+		$fa_family   = 'Font Awesome 5 Free';
+	} elseif ( '6_WebFonts_CSS' === $options || '6_SVG_JS' === $options ) {
+		$fa_icon_url = 'https://fontawesome.com/search?m=free';
+		$fa_family   = 'Font Awesome 6 Free';
+	}
+
+	wp_localize_script(
+		'vk-blocks-build-js',
+		'vkFontAwesome',
+		array(
+			'iconsUrl'   => $fa_icon_url,
+			'iconFamily' => $fa_family,
+		)
+	);
+}
+add_action( 'init', 'vk_blocks_font_awesome_init' );

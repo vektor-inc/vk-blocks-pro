@@ -255,11 +255,11 @@ gulp.task('dist', (done) => {
 		[
 			'./build/**',
 			'./inc/**',
-			'./src/**',
 			'./vendor/**',
 			'./*.txt',
 			'./*.png',
 			'./*.php',
+			'!./src/**',
 			'!./tests/**',
 			'!./dist/**',
 			'!./node_modules/**',

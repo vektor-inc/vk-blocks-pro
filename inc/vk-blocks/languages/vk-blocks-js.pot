@@ -1140,7 +1140,7 @@ msgid "White"
 msgstr ""
 
 #: src/blocks/border-box/edit.js:221
-#: src/utils/font-awesome-new.js:14
+#: src/utils/font-awesome-new.js:15
 msgid "Icon"
 msgstr ""
 
@@ -2052,21 +2052,21 @@ msgstr ""
 msgid "Lorem ipsum"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:188
+#: src/utils/font-awesome-new.js:189
 msgid ""
 "If you want to use an icon other than the ones listed above, you can use "
 "any of the icons from Font Awesome's icon list Please select a tag and "
 "enter it."
 msgstr ""
 
-#: src/utils/font-awesome-new.js:193
+#: src/utils/font-awesome-new.js:194
 msgid "Ex) <i class=\"fas fa-arrow-circle-right\"></i>"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:202
+#: src/utils/font-awesome-new.js:200
 msgid "Font Awesome icon list"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:217
+#: src/utils/font-awesome-new.js:215
 msgid "Select Icon"
 msgstr ""

@@ -63,10 +63,12 @@ e.g.
 
 == Changelog ==
 
+
+[ Bug fix ][ Outer(Pro) ] cope with custom color palette
+
 = 1.26.2 =
 [ Other ] Rerelease
 
-= 1.26.1 =
 [ Bugfix ][ Spacer ] fix spacer
 
 = 1.26.0 =

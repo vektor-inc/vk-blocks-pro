@@ -63,7 +63,7 @@ e.g.
 
 == Changelog ==
 
-
+[ Add function ][ Post-List (Pro) ] Add no-post message filter hook
 [ Bug fix ][ Outer(Pro) ] cope with custom color palette
 
 = 1.26.2 =

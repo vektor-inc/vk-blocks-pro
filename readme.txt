@@ -3,7 +3,7 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,m
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
-Tested up to: 5.9.0
+Tested up to: 5.9.1
 Stable tag: 1.26.2
 Requires PHP: 7.0
 License: GPLv2 or later
@@ -63,7 +63,9 @@ e.g.
 
 == Changelog ==
 
-
+= 1.27.0 =
+[ Add function ][ Font Awesome ] Cope with Font Awesome 6
+[ Add function ][ Post-List (Pro) ] Add no-post message filter hook
 [ Bug fix ][ Outer(Pro) ] cope with custom color palette
 
 = 1.26.2 =

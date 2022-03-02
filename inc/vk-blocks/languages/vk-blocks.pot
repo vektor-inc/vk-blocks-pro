@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.26.2\n"
+"Project-Id-Version: VK Blocks Pro 1.27.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-03-02T06:11:48+00:00\n"
+"POT-Creation-Date: 2022-03-02T15:42:50+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks\n"
@@ -2352,8 +2352,13 @@ msgstr ""
 msgid "Edit this area"
 msgstr ""
 
-#: inc/vk-blocks/view/class-vk-blocks-postlist.php:219
-msgid "No Post is selected"
+#: inc/vk-blocks/view/class-vk-blocks-postlist.php:225
+msgid "Post"
+msgstr ""
+
+#. translators: %s: 投稿タイプ名
+#: inc/vk-blocks/view/class-vk-blocks-postlist.php:229
+msgid "There are no %ss."
 msgstr ""
 
 #: inc/vk-blocks/vk-blocks-functions.php:214

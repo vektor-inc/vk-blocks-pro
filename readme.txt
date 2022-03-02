@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Add function ][ Post-List (Pro) ] Add filter hook
+
 = 1.26.2 =
 [ Other ] Rerelease
 

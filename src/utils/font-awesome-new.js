@@ -7,13 +7,15 @@ export const FontAwesome = (props) => {
 	const { attributeName, attributes, setAttributes } = props;
 	// eslint-disable-next-line no-undef
 	const iconsUrl = vkFontAwesome.iconsUrl;
+	// eslint-disable-next-line no-undef
+	const iconFamily = vkFontAwesome.iconFamily;
 
 	const render = (
 		<>
 			<BaseControl
 				className={'components-base-control__label'}
 				id={`vk_fa_icon_list`}
-				label={__('Icon', 'vk-blocks')}
+				label={__('Icon', 'vk-blocks') + ' ( ' + iconFamily + ' ) '}
 			>
 				<RadioControl
 					className={'vk_icon_list'}

@@ -63,6 +63,9 @@ e.g.
 
 == Changelog ==
 
+= 1.17.1 =
+[ Specification Change ] Change Version Only.
+
 = 1.27.0 =
 [ Add function ][ Font Awesome ] Cope with Font Awesome 6
 [ Add function ][ Post-List (Pro) ] Add no-post message filter hook

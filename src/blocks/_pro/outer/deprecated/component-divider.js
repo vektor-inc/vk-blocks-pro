@@ -1,3 +1,5 @@
+// 区切り設定 0系で使用
+
 const componentDivider = (level, color, whichSide, dividerType) => {
 	let sectionPadding;
 	let sectionClass;

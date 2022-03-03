@@ -38,6 +38,9 @@ export default function IconEdit(props) {
 		iconTarget,
 	} = attributes;
 
+	// eslint-disable-next-line no-undef
+	const iconFamily = vkFontAwesome.iconFamily;
+
 	/**
 	 * 親ブロックが vk-blocks/icon-outer かどうか判定
 	 */
@@ -234,7 +237,9 @@ export default function IconEdit(props) {
 			<InspectorControls>
 				<PanelBody title={__('Icon Setting', 'vk-blocks')}>
 					<BaseControl
-						label={__('Icon ( Font Awesome )', 'vk-blocks')}
+						label={
+							__('Icon', 'vk-blocks') + ' ( ' + iconFamily + ' )'
+						}
 						id={`vk_icon-font`}
 					>
 						<FontAwesome attributeName={'faIcon'} {...props} />

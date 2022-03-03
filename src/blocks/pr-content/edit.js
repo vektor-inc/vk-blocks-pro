@@ -41,7 +41,8 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 		fontAwesomeIconBefore,
 		fontAwesomeIconAfter,
 	} = attributes;
-
+	// eslint-disable-next-line no-undef
+	const iconFamily = vkFontAwesome.iconFamily;
 	const containerClass = getContainerClass(layout);
 	const btnClass = getButtonClass(buttonColorCustom);
 	const linkClass = getLinkClass(buttonColor, buttonColorCustom, buttonType);
@@ -193,7 +194,10 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 					</BaseControl>
 					<BaseControl id={`vk_prContent_icon-${clientId}`}>
 						<h4 className="mt-0 mb-2">
-							{__('Icon ( Font Awesome )', 'vk-blocks')}
+							{__('Icon', 'vk-blocks') +
+								' ( ' +
+								iconFamily +
+								' )'}
 						</h4>
 						<BaseControl
 							id={`vk_prContent_icon_beforeText${clientId}`}

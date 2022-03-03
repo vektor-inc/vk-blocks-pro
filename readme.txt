@@ -63,8 +63,8 @@ e.g.
 
 == Changelog ==
 
-= 1.17.1 =
-[ Specification Change ] Change Version Only.
+= 1.27.1 - 1.27.2  =
+[ Other ] Deploy Free Version.
 
 = 1.27.0 =
 [ Add function ][ Font Awesome ] Cope with Font Awesome 6

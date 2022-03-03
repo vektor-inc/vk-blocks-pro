@@ -39,6 +39,9 @@ export default function PrBlocksEdit(props) {
 		insertImage3,
 	} = attributes;
 
+	// eslint-disable-next-line no-undef
+	const iconFamily = vkFontAwesome.iconFamily;
+
 	const containerClass = `vk_prBlocks row`;
 
 	const blockProps = useBlockProps({
@@ -114,7 +117,12 @@ export default function PrBlocksEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Icon 1', 'vk-blocks')}
+						label={
+							__('Icon 1', 'vk-blocks') +
+							' ( ' +
+							iconFamily +
+							' )'
+						}
 						id={`vk_prBlocks_Icon1`}
 					>
 						<FontAwesome attributeName={'icon1'} {...props} />
@@ -184,7 +192,12 @@ export default function PrBlocksEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Icon 2', 'vk-blocks')}
+						label={
+							__('Icon 2', 'vk-blocks') +
+							' ( ' +
+							iconFamily +
+							' )'
+						}
 						id={`vk_prBlocks_Icon2`}
 					>
 						<FontAwesome attributeName={'icon2'} {...props} />
@@ -254,7 +267,12 @@ export default function PrBlocksEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Icon 3', 'vk-blocks')}
+						label={
+							__('Icon 3', 'vk-blocks') +
+							' ( ' +
+							iconFamily +
+							' )'
+						}
 						id={`vk_prBlocks_Icon3`}
 					>
 						<FontAwesome attributeName={'icon3'} {...props} />

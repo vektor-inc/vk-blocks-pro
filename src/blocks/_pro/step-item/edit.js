@@ -24,6 +24,9 @@ export default function StepItemEdit(props) {
 	let inlineStyle = {};
 	let styleLineClass = '';
 
+	// eslint-disable-next-line no-undef
+	const iconFamily = vkFontAwesome.iconFamily;
+
 	const TEMPLATE = [['core/heading', { level: 4 }], ['core/paragraph']];
 
 	if (style === 'solid') {
@@ -69,7 +72,9 @@ export default function StepItemEdit(props) {
 				<PanelBody title={__('Step Mark', 'vk-blocks')}>
 					<BaseControl
 						id="dot-fa"
-						label={__('Icon ( Font Awesome )', 'vk-blocks')}
+						label={
+							__('Icon', 'vk-blocks') + ' ( ' + iconFamily + ' )'
+						}
 						help={__(
 							'If Font Awesome tags entered, it will overrides the number.',
 							'vk-blocks'

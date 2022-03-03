@@ -83,6 +83,9 @@ export default function HeaddingEdit(props) {
 		fontAwesomeIconColor,
 	} = attributes;
 
+	// eslint-disable-next-line no-undef
+	const iconFamily = vkFontAwesome.iconFamily;
+
 	const setTitleFontSize = (newLevel) => {
 		setAttributes({ level: newLevel });
 	};
@@ -328,7 +331,7 @@ export default function HeaddingEdit(props) {
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
-					title={__('Font Awesome Icon Settings', 'vk-blocks')}
+					title={__('Icon', 'vk-blocks') + ' ( ' + iconFamily + ' )'}
 				>
 					<BaseControl
 						label={__('Before text', 'vk-blocks')}

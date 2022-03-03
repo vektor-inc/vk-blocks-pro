@@ -9,7 +9,7 @@ set -e
 #
 # $#にbashに渡された引数の個数が入る。
 # -lt は < と同じ
-#下のif文は、引数の個数が1以下（入ってこなかったら）ならexitする。
+# 下のif文は、引数の個数が1以下（入ってこなかったら）ならexitする。
 if [ $# -lt 1 ]; then
 	echo "usage: $0 <version>"
 	exit 1
@@ -19,16 +19,18 @@ fi
 # tagのバージョンを変数に代入（後で git で tag 付けしてプッシュする時に使用）
 version=$1
 
-# deploy-free.ymlで clone した VK Blocks Pro 内の vk blocks ディレクトリ名を重複しないように rsync の exclude オプションでvk-blocks-copy-targetに変更
+# deploy-free.ymlで clone した VK Blocks Pro 内の vk blocks ディレクトリ名が同じままだとややこしいので vk-blocks-copy-target に変更
 mv vk-blocks/ vk-blocks-copy-target/
 # Cloneした無料版のディレクトリに移動
 cd ./vk-blocks-copy-target/
 # コピー先の src/ を一旦削除
 rm -rf src/*
+
 # プロ版のディレクトリに移動
 cd ../
 # 指定したファイルを除外して、Pro版を無料版（vk-blocks-copy-target）へコピー&上書き
 rsync -arvc --exclude 'vk-blocks-copy-target/' --exclude 'test/' --exclude 'bin/' --exclude 'build/_pro/' --exclude 'src/blocks/_pro/' --exclude 'inc/vk-blocks-pro/' --exclude '.git/' --exclude '.github/' --exclude 'build/block-build.css' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/bundle-pro.js' --exclude '.gitignore' --exclude 'build/*.css' --exclude 'build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' --exclude 'vk-blocks-pro.code-workspace' --exclude 'phpunit.xml.dist' ./* ./vk-blocks-copy-target/
+
 # 無料版のディレクトリに移動
 cd ./vk-blocks-copy-target/
 # プラグイン名を通常版へリネーム（vk-blocks.php の 3行目の /Pro/ を // に変更 ）
@@ -54,7 +56,7 @@ composer install --no-dev
 npm run build:free
 # 無料版のmasterブランチにpush
 git add .
-git commit -m"Update from vk-blocks-pro"
+git commit -m "Update from vk-blocks-pro"
 git push -f origin master
 # 無料版のレポジトリでタグを切ってpush
 # 無料版の方でも下のGitHubActionが動いて、WordPress公式レポジトリにアップロードされる。

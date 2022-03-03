@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
 Tested up to: 5.9.1
-Stable tag: 1.26.2
+Stable tag: 1.27.3
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,8 +63,8 @@ e.g.
 
 == Changelog ==
 
-= 1.17.1 =
-[ Specification Change ] Change Version Only.
+= 1.27.1 - 1.27.3  =
+[ Other ] Deploy Free Version.
 
 = 1.27.0 =
 [ Add function ][ Font Awesome ] Cope with Font Awesome 6

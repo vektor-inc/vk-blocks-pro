@@ -1,6 +1,9 @@
 # vk-blocks
 
 This is a plugin that extends Gutenberg's blocks.
+#### GitHub repository
+Free version : https://github.com/vektor-inc/vk-blocks
+Rro version : https://github.com/vektor-inc/vk-blocks-pro ( Private )
 
 ## 環境構築（Windows編）
 - XAMPP 7.4 系をインストール

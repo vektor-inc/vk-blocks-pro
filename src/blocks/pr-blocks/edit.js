@@ -18,7 +18,7 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 
@@ -457,7 +457,7 @@ export class ComponentBlockEdit extends Component {
 					className={`vk_prBlocks_item_icon_outer ${iconOuterClass}`}
 					style={iconOuterInlineStyle}
 				>
-					{ReactHtmlParser(faIconTag)}
+					{parse(faIconTag)}
 				</div>
 			);
 		})();

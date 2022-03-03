@@ -1,7 +1,7 @@
 import { RichText } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 import { Fragment } from '@wordpress/element';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 
 const renderTitle = (level, contents,tStyle, headingStyle ) =>{
 
@@ -99,7 +99,7 @@ export const VKBHeading =(props) => {
 	if (for_ === "edit") {
 
 		const titleContent = <Fragment>
-			{ReactHtmlParser(iconBefore)}
+			{parse(iconBefore)}
 				<RichText
 					tagName={"span"}
 					value={title}
@@ -108,7 +108,7 @@ export const VKBHeading =(props) => {
 					}}
 					placeholder={__("Input title…", "vk-blocks")}
 				/>
-				{ReactHtmlParser(iconAfter)}
+				{parse(iconAfter)}
 		</Fragment>
 
 		let subtextContent;
@@ -131,7 +131,7 @@ export const VKBHeading =(props) => {
 		const spanCount = ( title.match( /span/g ) || [] ).length ;
 		let titleValue;
 		if(0 < spanCount){
-			titleValue = ReactHtmlParser(title)
+			titleValue = parse(title)
 		} else {
 			titleValue = <RichText.Content
 				tagName={"span"}
@@ -139,9 +139,9 @@ export const VKBHeading =(props) => {
 			/>
 		}
 		const titleContent = <Fragment>
-			{ReactHtmlParser(iconBefore)}
+			{parse(iconBefore)}
 			{titleValue}
-			{ReactHtmlParser(iconAfter)}
+			{parse(iconAfter)}
 		</Fragment>
 		// -----------------------------
 

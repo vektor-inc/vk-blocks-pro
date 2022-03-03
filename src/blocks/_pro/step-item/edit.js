@@ -11,7 +11,7 @@ import {
 	InnerBlocks,
 	useBlockProps,
 } from '@wordpress/block-editor';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 
@@ -143,7 +143,7 @@ export default function StepItemEdit(props) {
 					</div>
 					{(() => {
 						if (faIcon) {
-							return ReactHtmlParser(faIcon);
+							return parse(faIcon);
 						} else if (dotNum) {
 							return (
 								<div className={'vk_step_item_dot_num'}>

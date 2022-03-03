@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8be6154f183c499ba57dc85c47420821",
+    "content-hash": "12ea5d1ae762c458c30706b846986cbc",
     "packages": [
         {
             "name": "tgmpa/tgm-plugin-activation",
@@ -113,16 +113,16 @@
         },
         {
             "name": "vektor-inc/vk-breadcrumb",
-            "version": "0.0.4",
+            "version": "0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vektor-inc/vk-breadcrumb.git",
-                "reference": "d323e0597729824532d21795f1a986dbde89ab4e"
+                "reference": "6ba01e7f2ceaec7f5a59ac89e7aa7da1034c08eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vektor-inc/vk-breadcrumb/zipball/d323e0597729824532d21795f1a986dbde89ab4e",
-                "reference": "d323e0597729824532d21795f1a986dbde89ab4e",
+                "url": "https://api.github.com/repos/vektor-inc/vk-breadcrumb/zipball/6ba01e7f2ceaec7f5a59ac89e7aa7da1034c08eb",
+                "reference": "6ba01e7f2ceaec7f5a59ac89e7aa7da1034c08eb",
                 "shasum": ""
             },
             "require": {
@@ -147,9 +147,9 @@
             "description": "WordPress Bread Crumb Class",
             "support": {
                 "issues": "https://github.com/vektor-inc/vk-breadcrumb/issues",
-                "source": "https://github.com/vektor-inc/vk-breadcrumb/tree/0.0.4"
+                "source": "https://github.com/vektor-inc/vk-breadcrumb/tree/0.1.0"
             },
-            "time": "2022-02-09T05:38:27+00:00"
+            "time": "2022-03-03T05:43:11+00:00"
         },
         {
             "name": "vektor-inc/vk-color-palette-manager",

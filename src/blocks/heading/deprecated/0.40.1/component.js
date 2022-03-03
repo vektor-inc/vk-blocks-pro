@@ -1,6 +1,6 @@
 import { RichText } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 
 const renderTitle = (level, contents, tStyle, headingStyle) => {
 	switch (level) {
@@ -127,7 +127,7 @@ export default (props) => {
 	if (for_ === 'edit') {
 		const titleContent = (
 			<>
-				{ReactHtmlParser(iconBefore)}
+				{parse(iconBefore)}
 				<RichText
 					tagName={'span'}
 					value={title}
@@ -136,7 +136,7 @@ export default (props) => {
 					}}
 					placeholder={__('Input title…', 'vk-blocks')}
 				/>
-				{ReactHtmlParser(iconAfter)}
+				{parse(iconAfter)}
 			</>
 		);
 
@@ -163,9 +163,9 @@ export default (props) => {
 	} else if (for_ === 'save') {
 		const titleContent = (
 			<>
-				{ReactHtmlParser(iconBefore)}
+				{parse(iconBefore)}
 				<RichText.Content tagName={'span'} value={title} />
-				{ReactHtmlParser(iconAfter)}
+				{parse(iconAfter)}
 			</>
 		);
 

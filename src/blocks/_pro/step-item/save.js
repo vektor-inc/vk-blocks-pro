@@ -1,5 +1,5 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function save(props) {
@@ -59,7 +59,7 @@ export default function save(props) {
 				<div className={'vk_step_item_dot_caption'}>{dotCaption}</div>
 				{(() => {
 					if (faIcon) {
-						return ReactHtmlParser(faIcon);
+						return parse(faIcon);
 					} else if (dotNum) {
 						return (
 							<div className={'vk_step_item_dot_num'}>

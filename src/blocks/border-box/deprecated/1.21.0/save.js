@@ -1,5 +1,5 @@
 import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 
 export default function save(props) {
 	const { attributes } = props;
@@ -35,7 +35,7 @@ export default function save(props) {
 	return (
 		<div {...blockProps}>
 			<div className="vk_borderBox_title_container">
-				{ReactHtmlParser(icon)}
+				{parse(icon)}
 				{title}
 			</div>
 			<div className={`vk_borderBox_body`}>{inner}</div>

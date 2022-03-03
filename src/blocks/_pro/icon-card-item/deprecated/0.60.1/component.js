@@ -1,7 +1,7 @@
 import { __ } from '@wordpress/i18n';
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
 import { RichText } from '@wordpress/block-editor';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 
 export const PRcarditem = (props) => {
@@ -59,7 +59,7 @@ export const PRcarditem = (props) => {
 		contents = (
 			<>
 				<div className="vk_icon-card_item_icon_outer" style={style}>
-					{ReactHtmlParser(faIconTag)}
+					{parse(faIconTag)}
 				</div>
 				<RichText
 					className={`vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}`}
@@ -121,7 +121,7 @@ export const PRcarditem = (props) => {
 					rel={urlOpenType && 'noopener noreferrer'}
 				>
 					<div className="vk_icon-card_item_icon_outer" style={style}>
-						{ReactHtmlParser(faIconTag)}
+						{parse(faIconTag)}
 					</div>
 					<RichText.Content
 						className={`vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}`}

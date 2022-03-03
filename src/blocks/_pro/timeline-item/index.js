@@ -15,7 +15,7 @@ export { metadata, name };
 
 export const settings = {
 	icon: <Icon />,
-	parent: ['vk-blocks/timeline'],
+	parent: [ 'vk-blocks/timeline' ],
 	edit,
 	save,
 	deprecated,

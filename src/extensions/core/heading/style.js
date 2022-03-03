@@ -7,32 +7,36 @@ import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
 import { registerBlockStyle } from '@wordpress/blocks';
 
-const isValidBlockType = (name) => {
-	const validBlockTypes = ['core/heading'];
-	return validBlockTypes.includes(name);
+const isValidBlockType = ( name ) => {
+	const validBlockTypes = [ 'core/heading' ];
+	return validBlockTypes.includes( name );
 };
 
-export const addAttribute = (settings) => {
-	if (isValidBlockType(settings.name)) {
-		settings.attributes = assign(settings.attributes, {
+export const addAttribute = ( settings ) => {
+	if ( isValidBlockType( settings.name ) ) {
+		settings.attributes = assign( settings.attributes, {
 			color: {
 				type: 'string',
 			},
-		});
+		} );
 	}
 	return settings;
 };
-addFilter('blocks.registerBlockType', 'vk-blocks/heading-style', addAttribute);
+addFilter(
+	'blocks.registerBlockType',
+	'vk-blocks/heading-style',
+	addAttribute
+);
 
-registerBlockStyle('core/heading', [
+registerBlockStyle( 'core/heading', [
 	{
 		name: 'vk-heading-default',
-		label: __('Default', 'vk-blocks'),
+		label: __( 'Default', 'vk-blocks' ),
 		isDefault: true,
 	},
 	{
 		name: 'vk-heading-plain',
-		label: __('Plain', 'vk-blocks'),
+		label: __( 'Plain', 'vk-blocks' ),
 	},
 	// {
 	// 	name: 'vk-heading-speech_balloon_fill',
@@ -48,7 +52,7 @@ registerBlockStyle('core/heading', [
 	// },
 	{
 		name: 'vk-heading-background_fill_lightgray',
-		label: __('Background fill lightgray', 'vk-blocks'),
+		label: __( 'Background fill lightgray', 'vk-blocks' ),
 	},
 	// {
 	// 	name: 'vk-heading-topborder_background_fill_none',
@@ -64,7 +68,7 @@ registerBlockStyle('core/heading', [
 	// },
 	{
 		name: 'vk-heading-double_black',
-		label: __('Double border top and bottom black', 'vk-blocks'),
+		label: __( 'Double border top and bottom black', 'vk-blocks' ),
 	},
 	// {
 	// 	name: 'vk-heading-double_bottomborder',
@@ -72,7 +76,7 @@ registerBlockStyle('core/heading', [
 	// },
 	{
 		name: 'vk-heading-double_bottomborder_black',
-		label: __('Double border bottom black', 'vk-blocks'),
+		label: __( 'Double border bottom black', 'vk-blocks' ),
 	},
 	// {
 	// 	name: 'vk-heading-solid',
@@ -80,7 +84,7 @@ registerBlockStyle('core/heading', [
 	// },
 	{
 		name: 'vk-heading-solid_black',
-		label: __('Solid border top and bottom black', 'vk-blocks'),
+		label: __( 'Solid border top and bottom black', 'vk-blocks' ),
 	},
 	// {
 	// 	name: 'vk-heading-solid_bottomborder',
@@ -88,7 +92,7 @@ registerBlockStyle('core/heading', [
 	// },
 	{
 		name: 'vk-heading-solid_bottomborder_black',
-		label: __('Solid border bottom black', 'vk-blocks'),
+		label: __( 'Solid border bottom black', 'vk-blocks' ),
 	},
 	// {
 	// 	name: 'vk-heading-solid_bottomborder_leftkeycolor',
@@ -96,11 +100,11 @@ registerBlockStyle('core/heading', [
 	// },
 	{
 		name: 'vk-heading-dotted_bottomborder_black',
-		label: __('Dotted border bottom black', 'vk-blocks'),
+		label: __( 'Dotted border bottom black', 'vk-blocks' ),
 	},
 	{
 		name: 'vk-heading-both_ends',
-		label: __('Both ends', 'vk-blocks'),
+		label: __( 'Both ends', 'vk-blocks' ),
 	},
 	// {
 	// 	name: 'vk-heading-leftborder',
@@ -120,10 +124,10 @@ registerBlockStyle('core/heading', [
 	// },
 	{
 		name: 'vk-heading-brackets_black',
-		label: __('Brackets black', 'vk-blocks'),
+		label: __( 'Brackets black', 'vk-blocks' ),
 	},
 	// 	{
 	// 	name: 'vk-heading-small_bottomborder',
 	// 	label: __('Small border-bottom', 'vk-blocks')
 	// },
-]);
+] );

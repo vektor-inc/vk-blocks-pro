@@ -19,7 +19,7 @@ import {
 	RangeControl,
 } from '@wordpress/components';
 
-export default function SliderEdit(props) {
+export default function SliderEdit( props ) {
 	const { attributes, setAttributes, clientId } = props;
 	const {
 		pc,
@@ -38,47 +38,47 @@ export default function SliderEdit(props) {
 		navigationPosition,
 	} = attributes;
 
-	useEffect(() => {
-		setAttributes({ clientId });
+	useEffect( () => {
+		setAttributes( { clientId } );
 		// slidesPerView 互換設定
-		if (slidesPerView === undefined) {
-			setAttributes({
+		if ( slidesPerView === undefined ) {
+			setAttributes( {
 				slidesPerView: 1,
-			});
+			} );
 		}
 		// slidesPerGroup 互換設定
-		if (slidesPerGroup === undefined) {
-			setAttributes({
+		if ( slidesPerGroup === undefined ) {
+			setAttributes( {
 				slidesPerGroup: 1,
-			});
+			} );
 		}
 		// pagination 互換設定
-		if (pagination === false) {
-			setAttributes({ pagination: 'hide' });
+		if ( pagination === false ) {
+			setAttributes( { pagination: 'hide' } );
 		}
-		if (pagination === true) {
-			setAttributes({ pagination: 'bullets' });
+		if ( pagination === true ) {
+			setAttributes( { pagination: 'bullets' } );
 		}
 
 		// autoPlayStop 互換設定
-		if (autoPlayStop === undefined) {
-			setAttributes({ autoPlayStop: false });
+		if ( autoPlayStop === undefined ) {
+			setAttributes( { autoPlayStop: false } );
 		}
 
 		// navigationPosition 互換設定
-		if (navigationPosition === undefined) {
-			setAttributes({ navigationPosition: 'mobile-bottom' });
+		if ( navigationPosition === undefined ) {
+			setAttributes( { navigationPosition: 'mobile-bottom' } );
 		}
-	}, [clientId]);
+	}, [ clientId ] );
 
 	const containerClass = ' vk_grid-column';
 	let alignClass;
-	const ALLOWED_BLOCKS = ['vk-blocks/slider-item'];
-	const TEMPLATE = [['vk-blocks/slider-item']];
+	const ALLOWED_BLOCKS = [ 'vk-blocks/slider-item' ];
+	const TEMPLATE = [ [ 'vk-blocks/slider-item' ] ];
 
-	if ('full' === width) {
+	if ( 'full' === width ) {
 		alignClass = 'vk_width-full';
-	} else if ('wide' === width) {
+	} else if ( 'wide' === width ) {
 		alignClass = 'vk_width-wide';
 	} else {
 		alignClass = 'vk_width';
@@ -100,39 +100,39 @@ export default function SliderEdit(props) {
 
 	// 複数枚表示設定
 	let multiImageSetting = '';
-	if (effect !== 'fade') {
+	if ( effect !== 'fade' ) {
 		multiImageSetting = (
 			<PanelBody
-				title={__('Multi-image Display Setting', 'vk-blocks')}
-				initialOpen={false}
+				title={ __( 'Multi-image Display Setting', 'vk-blocks' ) }
+				initialOpen={ false }
 			>
 				<BaseControl
-					label={__('Display Multi Images per View', 'vk-blocks')}
-					id={`vk_slider-MultiImage`}
+					label={ __( 'Display Multi Images per View', 'vk-blocks' ) }
+					id={ `vk_slider-MultiImage` }
 				>
 					<TextControl
-						label={__('Images per View', 'vk-blocks')}
-						value={slidesPerView}
-						onChange={(value) =>
-							setAttributes({
-								slidesPerView: parseInt(value, 10),
-							})
+						label={ __( 'Images per View', 'vk-blocks' ) }
+						value={ slidesPerView }
+						onChange={ ( value ) =>
+							setAttributes( {
+								slidesPerView: parseInt( value, 10 ),
+							} )
 						}
-						type={'number'}
+						type={ 'number' }
 					/>
 				</BaseControl>
 				<BaseControl
-					label={__('Move Images per Slide', 'vk-blocks')}
-					id={`vk_slider-MultiImage`}
+					label={ __( 'Move Images per Slide', 'vk-blocks' ) }
+					id={ `vk_slider-MultiImage` }
 				>
 					<TextControl
-						value={slidesPerGroup}
-						onChange={(value) =>
-							setAttributes({
-								slidesPerGroup: parseInt(value, 10),
-							})
+						value={ slidesPerGroup }
+						onChange={ ( value ) =>
+							setAttributes( {
+								slidesPerGroup: parseInt( value, 10 ),
+							} )
 						}
-						type={'number'}
+						type={ 'number' }
 					/>
 				</BaseControl>
 			</PanelBody>
@@ -141,10 +141,10 @@ export default function SliderEdit(props) {
 
 	// ページネーションの HTML
 	let pagination_html = '';
-	if (pagination !== 'hide') {
+	if ( pagination !== 'hide' ) {
 		pagination_html = (
 			<div
-				className={`swiper-pagination swiper-pagination-${pagination}`}
+				className={ `swiper-pagination swiper-pagination-${ pagination }` }
 			></div>
 		);
 	}
@@ -152,222 +152,233 @@ export default function SliderEdit(props) {
 	// ナビゲーションの HTML
 	let navigation_next_html = '';
 	let navigation_prev_html = '';
-	if (navigationPosition !== 'hide') {
+	if ( navigationPosition !== 'hide' ) {
 		navigation_next_html = (
 			<div
-				className={`swiper-button-next swiper-button-${navigationPosition}`}
+				className={ `swiper-button-next swiper-button-${ navigationPosition }` }
 			></div>
 		);
 		navigation_prev_html = (
 			<div
-				className={`swiper-button-prev swiper-button-${navigationPosition}`}
+				className={ `swiper-button-prev swiper-button-${ navigationPosition }` }
 			></div>
 		);
 	}
 
-	const blockProps = useBlockProps({
-		className: `swiper-container vk_slider vk_slider_${clientId} ${alignClass}`,
-	});
+	const blockProps = useBlockProps( {
+		className: `swiper-container vk_slider vk_slider_${ clientId } ${ alignClass }`,
+	} );
 
 	return (
 		<>
 			<BlockControls>
 				<BlockAlignmentToolbar
-					value={width}
-					onChange={(nextWidth) =>
-						setAttributes({ width: nextWidth })
+					value={ width }
+					onChange={ ( nextWidth ) =>
+						setAttributes( { width: nextWidth } )
 					}
-					controls={['full']}
+					controls={ [ 'full' ] }
 				/>
 			</BlockControls>
 			<InspectorControls>
-				<PanelBody title={__('Width', 'vk-blocks')} initialOpen={true}>
-					<BaseControl id={`vk_slider-width`}>
+				<PanelBody
+					title={ __( 'Width', 'vk-blocks' ) }
+					initialOpen={ true }
+				>
+					<BaseControl id={ `vk_slider-width` }>
 						<ButtonGroup>
 							<Button
 								isSmall
-								isPrimary={width === ''}
-								isSecondary={width !== ''}
-								onClick={() => setAttributes({ width: '' })}
+								isPrimary={ width === '' }
+								isSecondary={ width !== '' }
+								onClick={ () => setAttributes( { width: '' } ) }
 							>
-								{__('Normal', 'vk-blocks')}
+								{ __( 'Normal', 'vk-blocks' ) }
 							</Button>
 							<Button
 								isSmall
-								isPrimary={width === 'full'}
-								isSecondary={width !== 'full'}
-								onClick={() => setAttributes({ width: 'full' })}
+								isPrimary={ width === 'full' }
+								isSecondary={ width !== 'full' }
+								onClick={ () =>
+									setAttributes( { width: 'full' } )
+								}
 							>
-								{__('Full Wide', 'vk-blocks')}
+								{ __( 'Full Wide', 'vk-blocks' ) }
 							</Button>
 						</ButtonGroup>
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
-					title={__('Height', 'vk-blocks')}
-					initialOpen={false}
+					title={ __( 'Height', 'vk-blocks' ) }
+					initialOpen={ false }
 				>
-					<AdvancedUnitControl {...props} />
+					<AdvancedUnitControl { ...props } />
 					<BaseControl
-						label={__('Slide Height for each device.', 'vk-blocks')}
-						id={`vk_slider-SlideHeight`}
+						label={ __(
+							'Slide Height for each device.',
+							'vk-blocks'
+						) }
+						id={ `vk_slider-SlideHeight` }
 					>
 						<RangeControl
-							label={__('PC', 'vk-blocks')}
-							value={pc}
-							onChange={(value) =>
-								setAttributes({ pc: parseFloat(value) })
+							label={ __( 'PC', 'vk-blocks' ) }
+							value={ pc }
+							onChange={ ( value ) =>
+								setAttributes( { pc: parseFloat( value ) } )
 							}
-							min={0}
-							max={1000}
-							allowReset={true}
-							resetFallbackValue={null}
+							min={ 0 }
+							max={ 1000 }
+							allowReset={ true }
+							resetFallbackValue={ null }
 						/>
 						<RangeControl
-							label={__('Tablet', 'vk-blocks')}
-							value={tablet}
-							onChange={(value) =>
-								setAttributes({ tablet: parseFloat(value) })
+							label={ __( 'Tablet', 'vk-blocks' ) }
+							value={ tablet }
+							onChange={ ( value ) =>
+								setAttributes( { tablet: parseFloat( value ) } )
 							}
-							min={0}
-							max={1000}
-							allowReset={true}
-							resetFallbackValue={null}
+							min={ 0 }
+							max={ 1000 }
+							allowReset={ true }
+							resetFallbackValue={ null }
 						/>
 						<RangeControl
-							label={__('Mobile', 'vk-blocks')}
-							value={mobile}
-							onChange={(value) =>
-								setAttributes({ mobile: parseFloat(value) })
+							label={ __( 'Mobile', 'vk-blocks' ) }
+							value={ mobile }
+							onChange={ ( value ) =>
+								setAttributes( { mobile: parseFloat( value ) } )
 							}
-							min={0}
-							max={1000}
-							allowReset={true}
-							resetFallbackValue={null}
+							min={ 0 }
+							max={ 1000 }
+							allowReset={ true }
+							resetFallbackValue={ null }
 						/>
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
-					title={__('Slider Settings', 'vk-blocks')}
-					initialOpen={false}
+					title={ __( 'Slider Settings', 'vk-blocks' ) }
+					initialOpen={ false }
 				>
 					<BaseControl
-						label={__('Effect ', 'vk-blocks')}
-						id={`vk_slider-effect`}
+						label={ __( 'Effect ', 'vk-blocks' ) }
+						id={ `vk_slider-effect` }
 					>
 						<SelectControl
-							value={effect}
-							onChange={(value) =>
-								setAttributes({ effect: value })
+							value={ effect }
+							onChange={ ( value ) =>
+								setAttributes( { effect: value } )
 							}
-							options={[
+							options={ [
 								{
-									label: __('Slide', 'vk-blocks'),
+									label: __( 'Slide', 'vk-blocks' ),
 									value: 'slide',
 								},
 								{
-									label: __('Fade', 'vk-blocks'),
+									label: __( 'Fade', 'vk-blocks' ),
 									value: 'fade',
 								},
-							]}
+							] }
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Loop ', 'vk-blocks')}
-						id={`vk_slider-loop`}
+						label={ __( 'Loop ', 'vk-blocks' ) }
+						id={ `vk_slider-loop` }
 					>
 						<AdvancedToggleControl
-							initialFixedTable={loop}
-							schema={'loop'}
-							{...props}
+							initialFixedTable={ loop }
+							schema={ 'loop' }
+							{ ...props }
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('AutoPlay', 'vk-blocks')}
-						id={`vk_slider-autoPlay`}
+						label={ __( 'AutoPlay', 'vk-blocks' ) }
+						id={ `vk_slider-autoPlay` }
 					>
 						<AdvancedToggleControl
-							initialFixedTable={autoPlay}
-							schema={'autoPlay'}
-							{...props}
+							initialFixedTable={ autoPlay }
+							schema={ 'autoPlay' }
+							{ ...props }
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Stop AutoPlay when swipe', 'vk-blocks')}
-						id={`vk_slider-autoPlay`}
+						label={ __( 'Stop AutoPlay when swipe', 'vk-blocks' ) }
+						id={ `vk_slider-autoPlay` }
 					>
 						<AdvancedToggleControl
-							initialFixedTable={autoPlayStop}
-							schema={'autoPlayStop'}
-							{...props}
+							initialFixedTable={ autoPlayStop }
+							schema={ 'autoPlayStop' }
+							{ ...props }
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Display Time', 'vk-blocks')}
-						id={`vk_slider-autoPlay`}
+						label={ __( 'Display Time', 'vk-blocks' ) }
+						id={ `vk_slider-autoPlay` }
 					>
 						<TextControl
-							value={autoPlayDelay}
-							onChange={(value) =>
-								setAttributes({
-									autoPlayDelay: parseInt(value, 10),
-								})
+							value={ autoPlayDelay }
+							onChange={ ( value ) =>
+								setAttributes( {
+									autoPlayDelay: parseInt( value, 10 ),
+								} )
 							}
-							type={'number'}
+							type={ 'number' }
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Change Speed', 'vk-blocks')}
-						id={`vk_slider-changeSpeed`}
+						label={ __( 'Change Speed', 'vk-blocks' ) }
+						id={ `vk_slider-changeSpeed` }
 					>
 						<TextControl
-							value={speed}
-							onChange={(value) =>
-								setAttributes({
-									speed: parseInt(value, 10),
-								})
+							value={ speed }
+							onChange={ ( value ) =>
+								setAttributes( {
+									speed: parseInt( value, 10 ),
+								} )
 							}
-							type={'number'}
+							type={ 'number' }
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Pagination Type', 'vk-blocks')}
-						id={`vk_slider-displayPagination`}
+						label={ __( 'Pagination Type', 'vk-blocks' ) }
+						id={ `vk_slider-displayPagination` }
 					>
 						<SelectControl
-							value={pagination}
-							options={[
+							value={ pagination }
+							options={ [
 								{
-									label: __('Hide', 'vk-blocks'),
+									label: __( 'Hide', 'vk-blocks' ),
 									value: 'hide',
 								},
 								{
-									label: __('Default', 'vk-blocks'),
+									label: __( 'Default', 'vk-blocks' ),
 									value: 'bullets',
 								},
 								{
-									label: __('Number of slides', 'vk-blocks'),
+									label: __(
+										'Number of slides',
+										'vk-blocks'
+									),
 									value: 'fraction',
 								},
-							]}
-							onChange={(value) =>
-								setAttributes({ pagination: value })
+							] }
+							onChange={ ( value ) =>
+								setAttributes( { pagination: value } )
 							}
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Navigation Position', 'vk-blocks')}
-						id={`vk_slider-navigationPosition`}
+						label={ __( 'Navigation Position', 'vk-blocks' ) }
+						id={ `vk_slider-navigationPosition` }
 					>
 						<SelectControl
-							value={navigationPosition}
-							options={[
+							value={ navigationPosition }
+							options={ [
 								{
-									label: __('Hide', 'vk-blocks'),
+									label: __( 'Hide', 'vk-blocks' ),
 									value: 'hide',
 								},
 								{
-									label: __('Center', 'vk-blocks'),
+									label: __( 'Center', 'vk-blocks' ),
 									value: 'center',
 								},
 								{
@@ -377,29 +388,32 @@ export default function SliderEdit(props) {
 									),
 									value: 'mobile-bottom',
 								},
-							]}
-							onChange={(value) =>
-								setAttributes({ navigationPosition: value })
+							] }
+							onChange={ ( value ) =>
+								setAttributes( { navigationPosition: value } )
 							}
 						/>
 					</BaseControl>
 				</PanelBody>
-				{multiImageSetting}
+				{ multiImageSetting }
 			</InspectorControls>
-			<div {...blockProps} data-vkb-slider={JSON.stringify(sliderData)}>
-				<div className={`swiper-wrapper`}>
+			<div
+				{ ...blockProps }
+				data-vkb-slider={ JSON.stringify( sliderData ) }
+			>
+				<div className={ `swiper-wrapper` }>
 					<div>
 						<InnerBlocks
 							//編集画面の追加タグ用に2回目のClassを挿入
-							className={`${containerClass} row`}
-							template={TEMPLATE}
-							allowedBlocks={ALLOWED_BLOCKS}
+							className={ `${ containerClass } row` }
+							template={ TEMPLATE }
+							allowedBlocks={ ALLOWED_BLOCKS }
 						/>
 					</div>
 				</div>
-				{navigation_next_html}
-				{navigation_prev_html}
-				{pagination_html}
+				{ navigation_next_html }
+				{ navigation_prev_html }
+				{ pagination_html }
 			</div>
 		</>
 	);

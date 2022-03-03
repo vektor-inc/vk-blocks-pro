@@ -15,26 +15,26 @@ import {
 } from '@wordpress/components';
 import { link, linkOff, keyboardReturn } from '@wordpress/icons';
 
-export default function SelectPostListItemEdit(props) {
+export default function SelectPostListItemEdit( props ) {
 	const { attributes, setAttributes } = props;
 	const url = attributes.url;
 	const blockProps = useBlockProps();
 
 	let editContent = '';
-	if (url !== '') {
+	if ( url !== '' ) {
 		editContent = (
 			<ServerSideRender
 				block="vk-blocks/select-post-list-item"
-				attributes={attributes}
+				attributes={ attributes }
 			/>
 		);
 	} else {
 		editContent = (
 			<div className="alert alert-warning text-center">
-				{__(
+				{ __(
 					'Because no post is selected, The block Will not render',
 					'vk-blocks'
-				)}
+				) }
 			</div>
 		);
 	}
@@ -46,60 +46,64 @@ export default function SelectPostListItemEdit(props) {
 			<BlockControls>
 				<ToolbarGroup>
 					<Dropdown
-						renderToggle={({ isOpen, onToggle }) => {
+						renderToggle={ ( { isOpen, onToggle } ) => {
 							const setLink = () => {
-								if (isOpen && url !== '') {
+								if ( isOpen && url !== '' ) {
 									// linkOff
-									setAttributes({ url: '' });
+									setAttributes( { url: '' } );
 								}
 								onToggle();
 							};
 							return (
 								<ToolbarButton
-									aria-expanded={isOpen}
-									icon={url !== '' && isOpen ? linkOff : link}
+									aria-expanded={ isOpen }
+									icon={
+										url !== '' && isOpen ? linkOff : link
+									}
 									isActive={
 										url !== '' && isOpen ? true : false
 									}
 									label={
 										url !== '' && isOpen
-											? __('Unlink')
+											? __( 'Unlink' )
 											: __(
 													'Input Internal Post URL',
 													'vk-blocks'
 											  )
 									}
-									onClick={setLink}
+									onClick={ setLink }
 								/>
 							);
-						}}
-						renderContent={(params) => {
+						} }
+						renderContent={ ( params ) => {
 							return (
 								<div className="block-editor-url-input__button block-editor-link-control">
 									<form
 										className="block-editor-link-control__search-input-wrapper"
-										onSubmit={() => {
-											if (url.indexOf(homeUrl) === -1) {
-												setAttributes({ url: '' });
+										onSubmit={ () => {
+											if (
+												url.indexOf( homeUrl ) === -1
+											) {
+												setAttributes( { url: '' } );
 											}
 											params.onClose();
-										}}
+										} }
 									>
 										<div className="block-editor-link-control__search-input">
 											<URLInput
-												value={url}
-												onChange={(v, post) => {
-													setAttributes({ url: v });
-													if (post && post.title) {
+												value={ url }
+												onChange={ ( v, post ) => {
+													setAttributes( { url: v } );
+													if ( post && post.title ) {
 														// select post
 														params.onClose();
 													}
-												}}
+												} }
 											/>
 											<div className="block-editor-link-control__search-actions">
 												<Button
-													icon={keyboardReturn}
-													label={__('Submit')}
+													icon={ keyboardReturn }
+													label={ __( 'Submit' ) }
 													type="submit"
 												/>
 											</div>
@@ -107,11 +111,11 @@ export default function SelectPostListItemEdit(props) {
 									</form>
 								</div>
 							);
-						}}
+						} }
 					/>
 				</ToolbarGroup>
 			</BlockControls>
-			<div {...blockProps}>{editContent}</div>
+			<div { ...blockProps }>{ editContent }</div>
 		</>
 	);
 }

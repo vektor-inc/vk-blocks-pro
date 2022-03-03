@@ -4,24 +4,24 @@ import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import ServerSideRender from '@wordpress/server-side-render';
 import { usePosts } from '@vkblocks/utils/hooks';
 
-const getPagesSelect = (pages) => {
+const getPagesSelect = ( pages ) => {
 	const defaultSelect = [
 		{
-			label: __('Unspecified', 'vk-blocks'),
+			label: __( 'Unspecified', 'vk-blocks' ),
 			value: -1,
 		},
 	];
-	const pagesSelect = pages.map((page) => {
+	const pagesSelect = pages.map( ( page ) => {
 		return {
 			label: page.title.rendered,
 			value: page.id,
 		};
-	});
+	} );
 
-	return defaultSelect.concat(pagesSelect);
+	return defaultSelect.concat( pagesSelect );
 };
 
-export default function PageContentEdit({ attributes, setAttributes }) {
+export default function PageContentEdit( { attributes, setAttributes } ) {
 	const { TargetPost } = attributes;
 
 	const pages = usePosts(
@@ -29,23 +29,23 @@ export default function PageContentEdit({ attributes, setAttributes }) {
 		{ per_page: -1, status: 'private,publish' }
 	);
 
-	const pagesSelect = getPagesSelect(pages);
+	const pagesSelect = getPagesSelect( pages );
 
 	let editContent;
-	if (TargetPost === -1) {
+	if ( TargetPost === -1 ) {
 		editContent = (
 			<div className="alert alert-warning text-center">
-				{__(
+				{ __(
 					'Because no post is selected, The block Will not render',
 					'vk-blocks'
-				)}
+				) }
 			</div>
 		);
 	} else {
 		editContent = (
 			<ServerSideRender
 				block="vk-blocks/page-content"
-				attributes={attributes}
+				attributes={ attributes }
 			/>
 		);
 	}
@@ -56,24 +56,24 @@ export default function PageContentEdit({ attributes, setAttributes }) {
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={__('Page Setting', 'vk-blocks')}
-					initialOpen={true}
+					title={ __( 'Page Setting', 'vk-blocks' ) }
+					initialOpen={ true }
 				>
-					<BaseControl id={'vb-call-01'}>
+					<BaseControl id={ 'vb-call-01' }>
 						<SelectControl
-							label={__('Select Page', 'vk-blocks')}
-							value={TargetPost}
-							options={pagesSelect}
-							onChange={(value) =>
-								setAttributes({
-									TargetPost: parseInt(value, 10),
-								})
+							label={ __( 'Select Page', 'vk-blocks' ) }
+							value={ TargetPost }
+							options={ pagesSelect }
+							onChange={ ( value ) =>
+								setAttributes( {
+									TargetPost: parseInt( value, 10 ),
+								} )
 							}
 						/>
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>
-			<div {...blockProps}>{editContent}</div>
+			<div { ...blockProps }>{ editContent }</div>
 		</>
 	);
 }

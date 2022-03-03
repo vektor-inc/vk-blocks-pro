@@ -69,15 +69,15 @@ const vkBlocks = [
 /**
  * Function to get all the VK Blocks in an array.
  */
-export const __getVKBlocks = () => vkBlocks.concat(vkblocksPro);
+export const __getVKBlocks = () => vkBlocks.concat( vkblocksPro );
 
 /**
  * Function to register an individual block.
  *
  * @param {Object} block The block to be registered.
  */
-const registerBlock = (block) => {
-	if (!block) {
+const registerBlock = ( block ) => {
+	if ( ! block ) {
 		return;
 	}
 
@@ -93,7 +93,7 @@ const registerBlock = (block) => {
 	if (
 		window.wpVersion !== undefined &&
 		window.wpVersion !== null &&
-		compareVersions(window.wpVersion, '5.5') < 0
+		compareVersions( window.wpVersion, '5.5' ) < 0
 	) {
 		//nameを削除
 		delete metadata.name;
@@ -102,16 +102,16 @@ const registerBlock = (block) => {
 			...settings,
 			...metadata,
 		};
-	} else if (metadata) {
+	} else if ( metadata ) {
 		// ServerSideBlockの設定読み込み
-		unstable__bootstrapServerSideBlockDefinitions({ [name]: metadata }); // eslint-disable-line camelcase
+		unstable__bootstrapServerSideBlockDefinitions( { [ name ]: metadata } ); // eslint-disable-line camelcase
 	}
 
 	// 5.8以前の場合はnameのみ渡す
-	if (typeof getBlockSettingsFromMetadata !== 'function') {
-		registerBlockType(name, settings);
-	} else if (metadata) {
-		registerBlockType(metadata, settings);
+	if ( typeof getBlockSettingsFromMetadata !== 'function' ) {
+		registerBlockType( name, settings );
+	} else if ( metadata ) {
+		registerBlockType( metadata, settings );
 	}
 };
 
@@ -120,6 +120,6 @@ const registerBlock = (block) => {
  *
  * @param {*} blocks
  */
-export const registerVKBlocks = (blocks = __getVKBlocks()) => {
-	blocks.forEach(registerBlock);
+export const registerVKBlocks = ( blocks = __getVKBlocks() ) => {
+	blocks.forEach( registerBlock );
 };

@@ -21,7 +21,7 @@ import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palett
 
 const prefix = 'vk_slider_item';
 
-export default function SliderItemEdit(props) {
+export default function SliderItemEdit( props ) {
 	const { attributes, setAttributes, clientId } = props;
 	const {
 		verticalAlignment,
@@ -34,84 +34,91 @@ export default function SliderItemEdit(props) {
 		bgImage,
 	} = attributes;
 
-	useEffect(() => {
-		setAttributes({ clientId });
-	}, [clientId]);
+	useEffect( () => {
+		setAttributes( { clientId } );
+	}, [ clientId ] );
 
 	//classPaddingLRのクラス切り替え
 	let classPaddingLR = '';
-	if (padding_left_and_right === '0') {
-		classPaddingLR = ` ${prefix}-paddingLR-none`;
-	} else if (padding_left_and_right === '1') {
-		classPaddingLR = ` ${prefix}-paddingLR-use`;
-	} else if (padding_left_and_right === '2') {
+	if ( padding_left_and_right === '0' ) {
+		classPaddingLR = ` ${ prefix }-paddingLR-none`;
+	} else if ( padding_left_and_right === '1' ) {
+		classPaddingLR = ` ${ prefix }-paddingLR-use`;
+	} else if ( padding_left_and_right === '2' ) {
 		// Fit to content area width
-		classPaddingLR = ` ${prefix}-paddingLR-zero`;
+		classPaddingLR = ` ${ prefix }-paddingLR-zero`;
 	}
 
 	let containerClass = '';
 	if (
-		classPaddingLR === ` ${prefix}-paddingLR-none` ||
+		classPaddingLR === ` ${ prefix }-paddingLR-none` ||
 		classPaddingLR === ''
 	) {
-		containerClass = `${prefix}_container container`;
+		containerClass = `${ prefix }_container container`;
 	} else {
-		containerClass = `${prefix}_container`;
+		containerClass = `${ prefix }_container`;
 	}
 
 	const bgColorClasses = [];
 	let style;
-	if (bgColor !== undefined) {
-		bgColorClasses.push('has-background');
-		if (!isHexColor(bgColor)) {
-			bgColorClasses.push(`has-${bgColor}-background-color`);
+	if ( bgColor !== undefined ) {
+		bgColorClasses.push( 'has-background' );
+		if ( ! isHexColor( bgColor ) ) {
+			bgColorClasses.push( `has-${ bgColor }-background-color` );
 		} else {
 			style = { backgroundColor: bgColor };
 		}
 	}
 
-	if (opacity !== undefined) {
+	if ( opacity !== undefined ) {
 		const opacityClass = opacity * 10;
-		bgColorClasses.push('has-background-dim');
-		bgColorClasses.push(`has-background-dim-${opacityClass}`);
+		bgColorClasses.push( 'has-background-dim' );
+		bgColorClasses.push( `has-background-dim-${ opacityClass }` );
 	}
 
 	let GetBgImage;
-	if (bgImage || bgImageTablet || bgImageMobile) {
+	if ( bgImage || bgImageTablet || bgImageMobile ) {
 		GetBgImage = (
-			<GenerateBgImage prefix={prefix} clientId={clientId} {...props} />
+			<GenerateBgImage
+				prefix={ prefix }
+				clientId={ clientId }
+				{ ...props }
+			/>
 		);
 	} else {
 		GetBgImage = <div className="vk_slider_item-background-area"></div>;
 	}
 
-	const blockProps = useBlockProps({
-		className: `vk_slider_item swiper-slide vk_valign-${verticalAlignment} ${prefix}-${clientId} ${classPaddingLR} ${prefix}-paddingVertical-none ${bgColorClasses.join(
+	const blockProps = useBlockProps( {
+		className: `vk_slider_item swiper-slide vk_valign-${ verticalAlignment } ${ prefix }-${ clientId } ${ classPaddingLR } ${ prefix }-paddingVertical-none ${ bgColorClasses.join(
 			' '
-		)}`,
+		) }`,
 		style,
-	});
+	} );
 
 	return (
 		<>
 			<BlockControls>
 				<BlockVerticalAlignmentToolbar
-					onChange={(alignment) =>
-						setAttributes({ verticalAlignment: alignment })
+					onChange={ ( alignment ) =>
+						setAttributes( { verticalAlignment: alignment } )
 					}
-					value={verticalAlignment}
+					value={ verticalAlignment }
 				/>
 			</BlockControls>
 			<InspectorControls>
 				<PanelBody
-					title={__('Layout Setting', 'vk-blocks')}
-					initialOpen={true}
+					title={ __( 'Layout Setting', 'vk-blocks' ) }
+					initialOpen={ true }
 				>
 					<BaseControl>
 						<RadioControl
-							label={__('Padding (Left and Right)', 'vk-blocks')}
-							selected={padding_left_and_right}
-							options={[
+							label={ __(
+								'Padding (Left and Right)',
+								'vk-blocks'
+							) }
+							selected={ padding_left_and_right }
+							options={ [
 								{
 									label: __(
 										'Fit to the Container area',
@@ -133,81 +140,84 @@ export default function SliderItemEdit(props) {
 									),
 									value: '2',
 								},
-							]}
-							onChange={(value) =>
-								setAttributes({
+							] }
+							onChange={ ( value ) =>
+								setAttributes( {
 									padding_left_and_right: value,
-								})
+								} )
 							}
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Vertical align', 'vk-blocks')}
-						id={`vk_sliderItem-verticalAlign`}
+						label={ __( 'Vertical align', 'vk-blocks' ) }
+						id={ `vk_sliderItem-verticalAlign` }
 					>
 						<BlockVerticalAlignmentToolbar
-							onChange={(alignment) =>
-								setAttributes({
+							onChange={ ( alignment ) =>
+								setAttributes( {
 									verticalAlignment: alignment,
-								})
+								} )
 							}
-							value={verticalAlignment}
+							value={ verticalAlignment }
 						/>
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
-					title={__('Background Setting', 'vk-blocks')}
-					initialOpen={false}
+					title={ __( 'Background Setting', 'vk-blocks' ) }
+					initialOpen={ false }
 				>
 					<BaseControl
-						label={__('Color Setting', 'vk-blocks')}
-						id={`vk_sliderItem-colorSetting`}
-						help={__(
+						label={ __( 'Color Setting', 'vk-blocks' ) }
+						id={ `vk_sliderItem-colorSetting` }
+						help={ __(
 							'Color will overcome background image. If you want to display image, set opacity 0.',
 							'vk-blocks'
-						)}
+						) }
 					>
-						<AdvancedColorPalette schema={'bgColor'} {...props} />
-					</BaseControl>
-					<BaseControl
-						label={__('Opacity Setting', 'vk-blocks')}
-						id={`vk_sliderItem-opacitySetting`}
-					>
-						<RangeControl
-							value={opacity}
-							onChange={(value) => {
-								setAttributes({ opacity: value });
-							}}
-							min={0}
-							max={1}
-							step={0.1}
+						<AdvancedColorPalette
+							schema={ 'bgColor' }
+							{ ...props }
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Background Image Size', 'vk-blocks')}
-						id={`vk_sliderItem-backgroundImageSize`}
+						label={ __( 'Opacity Setting', 'vk-blocks' ) }
+						id={ `vk_sliderItem-opacitySetting` }
+					>
+						<RangeControl
+							value={ opacity }
+							onChange={ ( value ) => {
+								setAttributes( { opacity: value } );
+							} }
+							min={ 0 }
+							max={ 1 }
+							step={ 0.1 }
+						/>
+					</BaseControl>
+					<BaseControl
+						label={ __( 'Background Image Size', 'vk-blocks' ) }
+						id={ `vk_sliderItem-backgroundImageSize` }
 					>
 						<RadioControl
-							selected={bgSize}
-							options={[
+							selected={ bgSize }
+							options={ [
 								{
-									label: __('cover', 'vk-blocks'),
+									label: __( 'cover', 'vk-blocks' ),
 									value: 'cover',
 								},
 								{
-									label: __('repeat', 'vk-blocks'),
+									label: __( 'repeat', 'vk-blocks' ),
 									value: 'repeat',
 								},
-							]}
-							onChange={(value) =>
-								setAttributes({ bgSize: value })
+							] }
+							onChange={ ( value ) =>
+								setAttributes( { bgSize: value } )
 							}
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Background Image PC', 'vk-blocks')}
-						id={`vk_sliderItem-backgroundImagePC`}
-						className={'vk_slider_item_sidebar_bgImage'}
+						label={ __( 'Background Image PC', 'vk-blocks' ) }
+						id={ `vk_sliderItem-backgroundImagePC` }
+						className={ 'vk_slider_item_sidebar_bgImage' }
 					>
 						<div
 							className={
@@ -215,36 +225,36 @@ export default function SliderItemEdit(props) {
 							}
 						>
 							<AdvancedMediaUpload
-								schema={'bgImage'}
-								{...props}
+								schema={ 'bgImage' }
+								{ ...props }
 							/>
 						</div>
 					</BaseControl>
 					<BaseControl
-						label={__('Background Image Tablet', 'vk-blocks')}
-						className={'vk_slider_item_sidebar_bgImage'}
-						id={`vk_sliderItem-backgroundImageTablet`}
+						label={ __( 'Background Image Tablet', 'vk-blocks' ) }
+						className={ 'vk_slider_item_sidebar_bgImage' }
+						id={ `vk_sliderItem-backgroundImageTablet` }
 					>
 						<AdvancedMediaUpload
-							schema={'bgImageTablet'}
-							{...props}
+							schema={ 'bgImageTablet' }
+							{ ...props }
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Background Image Mobile', 'vk-blocks')}
-						className={'vk_slider_item_sidebar_bgImage'}
-						id={`vk_sliderItem-backgroundImageMobile`}
+						label={ __( 'Background Image Mobile', 'vk-blocks' ) }
+						className={ 'vk_slider_item_sidebar_bgImage' }
+						id={ `vk_sliderItem-backgroundImageMobile` }
 					>
 						<AdvancedMediaUpload
-							schema={'bgImageMobile'}
-							{...props}
+							schema={ 'bgImageMobile' }
+							{ ...props }
 						/>
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>
-			<div {...blockProps}>
-				{GetBgImage}
-				<div className={containerClass}>
+			<div { ...blockProps }>
+				{ GetBgImage }
+				<div className={ containerClass }>
 					<InnerBlocks />
 				</div>
 			</div>

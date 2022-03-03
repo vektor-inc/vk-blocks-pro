@@ -2,8 +2,8 @@ import { Button, Popover } from '@wordpress/components';
 import { createRef, Component } from '@wordpress/element';
 
 export default class AdvancedPopOverControl extends Component {
-	constructor(props) {
-		super(props);
+	constructor( props ) {
+		super( props );
 		this.state = { open: false };
 		this.buttonRef = createRef();
 	}
@@ -13,17 +13,17 @@ export default class AdvancedPopOverControl extends Component {
 			'apc-icon-btn components-button is-secondary is-small';
 
 		const handleOpen = () => {
-			this.setState({ open: !this.state.open });
+			this.setState( { open: ! this.state.open } );
 		};
 
 		const handleClose = () => {
-			this.setState({ open: false });
+			this.setState( { open: false } );
 		};
 
-		const handleOnClickOutside = (event) => {
+		const handleOnClickOutside = ( event ) => {
 			if (
 				event.relatedTarget &&
-				!event.relatedTarget.closest(`.${popverBtnClass}`) &&
+				! event.relatedTarget.closest( `.${ popverBtnClass }` ) &&
 				event.relatedTarget !== this.buttonRef.current
 			) {
 				handleClose();
@@ -40,21 +40,23 @@ export default class AdvancedPopOverControl extends Component {
 					>
 						<Button
 							isTertiary
-							className={`${popverBtnClass} mb-1`}
-							onClick={handleOpen}
-							ref={this.buttonRef}
+							className={ `${ popverBtnClass } mb-1` }
+							onClick={ handleOpen }
+							ref={ this.buttonRef }
 						>
-							{this.props.label}
+							{ this.props.label }
 						</Button>
-						{this.state.open && this.buttonRef.current && (
+						{ this.state.open && this.buttonRef.current && (
 							<Popover
-								anchorRect={this.buttonRef.current.getBoundingClientRect()}
-								children={this.props.renderComp}
-								onFocusOutside={handleOnClickOutside}
-								focusOnMount={'container'}
-								className={'vk-blocks-advanced-popover-control'}
+								anchorRect={ this.buttonRef.current.getBoundingClientRect() }
+								children={ this.props.renderComp }
+								onFocusOutside={ handleOnClickOutside }
+								focusOnMount={ 'container' }
+								className={
+									'vk-blocks-advanced-popover-control'
+								}
 							></Popover>
-						)}
+						) }
 					</div>
 				</div>
 			</>

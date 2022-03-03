@@ -6,43 +6,47 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 
-export default function AlertEdit({ attributes, setAttributes }) {
+export default function AlertEdit( { attributes, setAttributes } ) {
 	const { style, content } = attributes;
 
-	const blockProps = useBlockProps({
-		className: `alert alert-${style}`,
-	});
+	const blockProps = useBlockProps( {
+		className: `alert alert-${ style }`,
+	} );
 
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Style Settings', 'vk-blocks')}>
+				<PanelBody title={ __( 'Style Settings', 'vk-blocks' ) }>
 					<SelectControl
-						value={style}
-						onChange={(value) => setAttributes({ style: value })}
-						options={[
+						value={ style }
+						onChange={ ( value ) =>
+							setAttributes( { style: value } )
+						}
+						options={ [
 							{
-								label: __('Success', 'vk-blocks'),
+								label: __( 'Success', 'vk-blocks' ),
 								value: 'success',
 							},
-							{ label: __('Info', 'vk-blocks'), value: 'info' },
+							{ label: __( 'Info', 'vk-blocks' ), value: 'info' },
 							{
-								label: __('Warning', 'vk-blocks'),
+								label: __( 'Warning', 'vk-blocks' ),
 								value: 'warning',
 							},
 							{
-								label: __('Danger', 'vk-blocks'),
+								label: __( 'Danger', 'vk-blocks' ),
 								value: 'danger',
 							},
-						]}
+						] }
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<div {...blockProps}>
+			<div { ...blockProps }>
 				<RichText
 					tagName="p"
-					onChange={(value) => setAttributes({ content: value })}
-					value={content}
+					onChange={ ( value ) =>
+						setAttributes( { content: value } )
+					}
+					value={ content }
 				/>
 			</div>
 		</>

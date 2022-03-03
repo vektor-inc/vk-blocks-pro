@@ -1,5 +1,5 @@
-export const convertColorClass = (color) => {
-	switch (color) {
+export const convertColorClass = ( color ) => {
+	switch ( color ) {
 		case '#f78da7':
 			return 'vk-has-pale-pink-color';
 

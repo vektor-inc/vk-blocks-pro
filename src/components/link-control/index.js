@@ -2,50 +2,50 @@ import { __ } from '@wordpress/i18n';
 import { BaseControl, TextControl, ToggleControl } from '@wordpress/components';
 import { useCallback } from '@wordpress/element';
 
-export const LinkControl = (props) => {
+export const LinkControl = ( props ) => {
 	const { setAttributes, attributes, blockName } = props;
 	const { linkTarget, rel } = attributes;
 
 	const NEW_TAB_REL = 'noreferrer noopener';
 	const onSetLinkRel = useCallback(
-		(value) => {
-			setAttributes({ rel: value });
+		( value ) => {
+			setAttributes( { rel: value } );
 		},
-		[setAttributes]
+		[ setAttributes ]
 	);
 	const onToggleOpenInNewTab = useCallback(
-		(value) => {
+		( value ) => {
 			const newLinkTarget = value ? '_blank' : undefined;
 
 			let updatedRel = rel;
-			if (newLinkTarget && !rel) {
+			if ( newLinkTarget && ! rel ) {
 				updatedRel = NEW_TAB_REL;
-			} else if (!newLinkTarget && rel === NEW_TAB_REL) {
+			} else if ( ! newLinkTarget && rel === NEW_TAB_REL ) {
 				updatedRel = undefined;
 			}
 
-			setAttributes({
+			setAttributes( {
 				linkTarget: newLinkTarget,
 				rel: updatedRel,
-			});
+			} );
 		},
-		[rel, setAttributes]
+		[ rel, setAttributes ]
 	);
 
 	return (
 		<BaseControl
-			label={__('Link target', 'vk-blocks')}
-			id={`sidebar-${blockName}-block-url-settings`}
+			label={ __( 'Link target', 'vk-blocks' ) }
+			id={ `sidebar-${ blockName }-block-url-settings` }
 		>
 			<ToggleControl
-				label={__('Open in new tab', 'vk-blocks')}
-				onChange={onToggleOpenInNewTab}
-				checked={linkTarget === '_blank'}
+				label={ __( 'Open in new tab', 'vk-blocks' ) }
+				onChange={ onToggleOpenInNewTab }
+				checked={ linkTarget === '_blank' }
 			/>
 			<TextControl
-				label={__('Link rel', 'vk-blocks')}
-				value={rel || ''}
-				onChange={onSetLinkRel}
+				label={ __( 'Link rel', 'vk-blocks' ) }
+				value={ rel || '' }
+				onChange={ onSetLinkRel }
 			/>
 		</BaseControl>
 	);

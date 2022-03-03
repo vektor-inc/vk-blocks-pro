@@ -18,7 +18,7 @@ import {
 	RadioControl,
 } from '@wordpress/components';
 
-export default function IconCardItemedit(props) {
+export default function IconCardItemedit( props ) {
 	const { setAttributes, attributes } = props;
 	let {
 		color,
@@ -37,144 +37,147 @@ export default function IconCardItemedit(props) {
 		col_xxl, //eslint-disable-line camelcase
 		activeControl,
 	} = attributes;
-	const align = JSON.parse(fixBrokenUnicode(activeControl));
+	const align = JSON.parse( fixBrokenUnicode( activeControl ) );
 
 	let style = {};
 	let iconOuterClass = '';
 	let iconColor = '';
 
-	if (color !== undefined) {
+	if ( color !== undefined ) {
 		//アイコン背景:ベタ塗り
-		if (bgType === '0') {
+		if ( bgType === '0' ) {
 			//カスタムカラーの時
-			if (isHexColor(color)) {
+			if ( isHexColor( color ) ) {
 				iconOuterClass = `has-background `;
 				style = {
-					backgroundColor: `${color}`,
+					backgroundColor: `${ color }`,
 				};
 				//カラーパレットの時
 			} else {
-				iconOuterClass = `has-background has-${color}-background-color`;
+				iconOuterClass = `has-background has-${ color }-background-color`;
 			}
 			//アイコン背景:背景なし
-		} else if (bgType === '1') {
+		} else if ( bgType === '1' ) {
 			//カスタムカラーの時
-			if (isHexColor(color)) {
+			if ( isHexColor( color ) ) {
 				iconOuterClass = `has-text-color `;
 				style = {
-					border: `1px solid ${color}`,
+					border: `1px solid ${ color }`,
 				};
-				iconColor = `${color}`;
+				iconColor = `${ color }`;
 				//カラーパレットの時
 			} else {
-				iconOuterClass = `has-text-color has-${color}-color`;
+				iconOuterClass = `has-text-color has-${ color }-color`;
 			}
 		}
 	}
 
 	//過去バージョンをリカバリーした時にiconを正常に表示する
-	if (faIcon && !faIcon.match(/<i/)) {
-		faIcon = `<i class="${faIcon}"></i>`;
+	if ( faIcon && ! faIcon.match( /<i/ ) ) {
+		faIcon = `<i class="${ faIcon }"></i>`;
 
 		//過去のicon attribuet用 deprecated処理
-	} else if (!faIcon && icon && !icon.match(/<i/)) {
-		faIcon = `<i class="${icon}"></i>`;
+	} else if ( ! faIcon && icon && ! icon.match( /<i/ ) ) {
+		faIcon = `<i class="${ icon }"></i>`;
 	}
 
 	//add class and inline css
-	const faIconFragment = faIcon.split(' ');
-	if (iconColor !== '') {
-		faIconFragment[0] = faIconFragment[0] + ` style="color:${iconColor}" `;
+	const faIconFragment = faIcon.split( ' ' );
+	if ( iconColor !== '' ) {
+		faIconFragment[ 0 ] =
+			faIconFragment[ 0 ] + ` style="color:${ iconColor }" `;
 	} else {
-		faIconFragment[0] = faIconFragment[0] + ` `;
+		faIconFragment[ 0 ] = faIconFragment[ 0 ] + ` `;
 	}
-	faIconFragment[1] = faIconFragment[1] + ` vk_icon-card_item_icon `;
-	const faIconTag = faIconFragment.join('');
+	faIconFragment[ 1 ] = faIconFragment[ 1 ] + ` vk_icon-card_item_icon `;
+	const faIconTag = faIconFragment.join( '' );
 
 	// アイコン背景:背景なし
 	let iconOutlineClass = '';
-	if (bgType === '1') {
+	if ( bgType === '1' ) {
 		iconOutlineClass = 'is-style-outline';
 	}
 
-	const blockProps = useBlockProps({
-		className: `vk_post vk_icon-card_item vk_post-col-xs-${convertToGrid(
+	const blockProps = useBlockProps( {
+		className: `vk_post vk_icon-card_item vk_post-col-xs-${ convertToGrid(
 			col_xs
-		)} vk_post-col-sm-${convertToGrid(
+		) } vk_post-col-sm-${ convertToGrid(
 			col_sm
-		)} vk_post-col-md-${convertToGrid(
+		) } vk_post-col-md-${ convertToGrid(
 			col_md
-		)} vk_post-col-lg-${convertToGrid(
+		) } vk_post-col-lg-${ convertToGrid(
 			col_lg
-		)} vk_post-col-xl-${convertToGrid(
+		) } vk_post-col-xl-${ convertToGrid(
 			col_xl
-		)} vk_post-col-xxl-${convertToGrid(col_xxl)}`,
-	});
+		) } vk_post-col-xxl-${ convertToGrid( col_xxl ) }`,
+	} );
 
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Icon Card Setting', 'vk-blocks')}>
+				<PanelBody title={ __( 'Icon Card Setting', 'vk-blocks' ) }>
 					<BaseControl
-						label={__('Link URL:', 'vk-blocks')}
-						id={`vk_iconCardItem-url`}
+						label={ __( 'Link URL:', 'vk-blocks' ) }
+						id={ `vk_iconCardItem-url` }
 					>
 						<TextControl
-							value={url}
-							onChange={(value) => setAttributes({ url: value })}
+							value={ url }
+							onChange={ ( value ) =>
+								setAttributes( { url: value } )
+							}
 						/>
 						<CheckboxControl
-							label={__('Open link new tab.', 'vk-blocks')}
-							checked={urlOpenType}
-							onChange={(checked) =>
-								setAttributes({ urlOpenType: checked })
+							label={ __( 'Open link new tab.', 'vk-blocks' ) }
+							checked={ urlOpenType }
+							onChange={ ( checked ) =>
+								setAttributes( { urlOpenType: checked } )
 							}
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Icon ( Font Awesome )', 'vk-blocks')}
-						id={`vk_iconCardItem-icon`}
+						label={ __( 'Icon ( Font Awesome )', 'vk-blocks' ) }
+						id={ `vk_iconCardItem-icon` }
 					>
-						<FontAwesome attributeName={'faIcon'} {...props} />
+						<FontAwesome attributeName={ 'faIcon' } { ...props } />
 					</BaseControl>
 					<BaseControl>
-						<AdvancedColorPalette schema={'color'} {...props} />
+						<AdvancedColorPalette schema={ 'color' } { ...props } />
 						<RadioControl
-							label={__('Icon Background:', 'vk-blocks')}
-							selected={bgType}
-							options={[
+							label={ __( 'Icon Background:', 'vk-blocks' ) }
+							selected={ bgType }
+							options={ [
 								{
-									label: __('Solid color', 'vk-blocks'),
+									label: __( 'Solid color', 'vk-blocks' ),
 									value: '0',
 								},
 								{
-									label: __('No background', 'vk-blocks'),
+									label: __( 'No background', 'vk-blocks' ),
 									value: '1',
 								},
-							]}
-							onChange={(value) =>
-								setAttributes({ bgType: value })
+							] }
+							onChange={ ( value ) =>
+								setAttributes( { bgType: value } )
 							}
 						/>
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>
 
-			<div {...blockProps}>
+			<div { ...blockProps }>
 				<div
-					className={`vk_icon-card_item_icon_outer ${iconOutlineClass} ${iconOuterClass}`}
-					style={style}
+					className={ `vk_icon-card_item_icon_outer ${ iconOutlineClass } ${ iconOuterClass }` }
+					style={ style }
 				>
-					{parse(faIconTag)}
+					{ parse( faIconTag ) }
 				</div>
 				<RichText
-					className={`vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}`}
-					tagName={'h3'}
-					onChange={(value) =>
-						props.setAttributes({ heading: value })
+					className={ `vk_icon-card_item_title vk_icon-card_item_title has-text-align-${ align.title }` }
+					tagName={ 'h3' }
+					onChange={ ( value ) =>
+						props.setAttributes( { heading: value } )
 					}
-					value={heading}
-					allowedFormats={[
+					value={ heading }
+					allowedFormats={ [
 						'core/bold', // 太字
 						'core/code', // インラインコード
 						'core/image', // インライン画像
@@ -187,15 +190,17 @@ export default function IconCardItemedit(props) {
 						'core/subscript', // 下付き
 						'vk-blocks/highlighter', // 蛍光マーカー
 						'vk-blocks/responsive-br', // Select a direction (レスポンシブ改行)
-					]}
-					placeholder={__('Input Title', 'vk-blocks')}
+					] }
+					placeholder={ __( 'Input Title', 'vk-blocks' ) }
 				/>
 				<RichText
-					className={`vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-${align.text}`}
-					tagName={'p'}
-					onChange={(value) => setAttributes({ content: value })}
-					value={content}
-					allowedFormats={[
+					className={ `vk_icon_card_item_summary vk_icon_card_item_summary has-text-align-${ align.text }` }
+					tagName={ 'p' }
+					onChange={ ( value ) =>
+						setAttributes( { content: value } )
+					}
+					value={ content }
+					allowedFormats={ [
 						'core/bold', // 太字
 						'core/code', // インラインコード
 						'core/image', // インライン画像
@@ -209,8 +214,8 @@ export default function IconCardItemedit(props) {
 						'vk-blocks/highlighter', // 蛍光マーカー
 						'vk-blocks/responsive-br', // Select a direction (レスポンシブ改行)
 						'vk-blocks/nowrap', // nowrap
-					]}
-					placeholder={__('Input Content', 'vk-blocks')}
+					] }
+					placeholder={ __( 'Input Content', 'vk-blocks' ) }
 				/>
 			</div>
 		</>

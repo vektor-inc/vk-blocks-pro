@@ -23,7 +23,7 @@ export const settings = {
 	deprecated,
 };
 
-const generateInlineCss = (attributes) => {
+const generateInlineCss = ( attributes ) => {
 	let {
 		clientId,
 		innerSideSpaceValuePC,
@@ -33,35 +33,35 @@ const generateInlineCss = (attributes) => {
 	} = attributes;
 
 	//For recovering block.
-	if (undefined === innerSideSpaceUnit) {
+	if ( undefined === innerSideSpaceUnit ) {
 		innerSideSpaceUnit = 'px';
 	}
-	if (undefined === innerSideSpaceValueMobile) {
+	if ( undefined === innerSideSpaceValueMobile ) {
 		innerSideSpaceValueMobile = 0;
 	}
-	if (undefined === innerSideSpaceValueTablet) {
+	if ( undefined === innerSideSpaceValueTablet ) {
 		innerSideSpaceValueTablet = 0;
 	}
-	if (undefined === innerSideSpaceValuePC) {
+	if ( undefined === innerSideSpaceValuePC ) {
 		innerSideSpaceValuePC = 0;
 	}
 
-	const containerSelector = `.vkb-outer-${clientId} .vk_outer_container`;
+	const containerSelector = `.vkb-outer-${ clientId } .vk_outer_container`;
 	return `
-	${containerSelector}{
-		padding-left:${innerSideSpaceValueMobile}${innerSideSpaceUnit};
-		padding-right:${innerSideSpaceValueMobile}${innerSideSpaceUnit};
+	${ containerSelector }{
+		padding-left:${ innerSideSpaceValueMobile }${ innerSideSpaceUnit };
+		padding-right:${ innerSideSpaceValueMobile }${ innerSideSpaceUnit };
 	}
 	@media (min-width: 576px) {
-		${containerSelector}{
-			padding-left:${innerSideSpaceValueTablet}${innerSideSpaceUnit};
-			padding-right:${innerSideSpaceValueTablet}${innerSideSpaceUnit};
+		${ containerSelector }{
+			padding-left:${ innerSideSpaceValueTablet }${ innerSideSpaceUnit };
+			padding-right:${ innerSideSpaceValueTablet }${ innerSideSpaceUnit };
 		}
 	}
 	@media (min-width: 992px) {
-		${containerSelector}{
-			padding-left:${innerSideSpaceValuePC}${innerSideSpaceUnit};
-			padding-right:${innerSideSpaceValuePC}${innerSideSpaceUnit};
+		${ containerSelector }{
+			padding-left:${ innerSideSpaceValuePC }${ innerSideSpaceUnit };
+			padding-right:${ innerSideSpaceValuePC }${ innerSideSpaceUnit };
 		}
 	}
 	`;
@@ -70,49 +70,49 @@ const generateInlineCss = (attributes) => {
 addFilter(
 	'editor.BlockEdit',
 	'vk-blocks/outer-addInlineEditorsCss',
-	createHigherOrderComponent((BlockEdit) => {
-		return (props) => {
+	createHigherOrderComponent( ( BlockEdit ) => {
+		return ( props ) => {
 			const { attributes, setAttributes, clientId } = props;
 
-			if ('vk-blocks/outer' === props.name) {
-				useEffect(() => {
-					setAttributes({ clientId });
-				}, []);
+			if ( 'vk-blocks/outer' === props.name ) {
+				useEffect( () => {
+					setAttributes( { clientId } );
+				}, [] );
 
-				const cssTag = generateInlineCss(attributes);
+				const cssTag = generateInlineCss( attributes );
 
 				return (
 					<>
-						<BlockEdit {...props} />
-						<style type="text/css">{cssTag}</style>
+						<BlockEdit { ...props } />
+						<style type="text/css">{ cssTag }</style>
 					</>
 				);
 			}
-			return <BlockEdit {...props} />;
+			return <BlockEdit { ...props } />;
 		};
-	}, 'addInlineEditorsCss')
+	}, 'addInlineEditorsCss' )
 );
 
 addFilter(
 	'blocks.getSaveElement',
 	'vk-blocks/outer-addInlineFrontCss',
-	(el, type, attributes) => {
-		if ('vk-blocks/outer' === type.name) {
+	( el, type, attributes ) => {
+		if ( 'vk-blocks/outer' === type.name ) {
 			//現在実行されている deprecated内の save関数のindexを取得
 			const deprecatedFuncIndex = deprecated.findIndex(
-				(item) => item.save === type.save
+				( item ) => item.save === type.save
 			);
 
-			const cssTag = generateInlineCss(attributes);
+			const cssTag = generateInlineCss( attributes );
 
 			// 最新版
-			if (-1 === deprecatedFuncIndex) {
+			if ( -1 === deprecatedFuncIndex ) {
 				// NOTE: useBlockProps + style要素を挿入する場合、useBlockPropsを使った要素が最初（上）にこないと、
 				// カスタムクラスを追加する処理が失敗する
 				return (
 					<>
-						{el}
-						<style type="text/css">{cssTag}</style>
+						{ el }
+						<style type="text/css">{ cssTag }</style>
 					</>
 				);
 			}
@@ -120,12 +120,12 @@ addFilter(
 			//後方互換
 			let DeprecatedHook;
 			// Deprecated Hooks が Deprecated Save関数より少ない場合にエラーが出ないように。
-			if (deprecatedHooks.length > deprecatedFuncIndex) {
-				DeprecatedHook = deprecatedHooks[deprecatedFuncIndex];
+			if ( deprecatedHooks.length > deprecatedFuncIndex ) {
+				DeprecatedHook = deprecatedHooks[ deprecatedFuncIndex ];
 			} else {
-				DeprecatedHook = deprecatedHooks[deprecatedHooks.length - 1];
+				DeprecatedHook = deprecatedHooks[ deprecatedHooks.length - 1 ];
 			}
-			return <DeprecatedHook el={el} attributes={attributes} />;
+			return <DeprecatedHook el={ el } attributes={ attributes } />;
 		}
 		return el;
 	},

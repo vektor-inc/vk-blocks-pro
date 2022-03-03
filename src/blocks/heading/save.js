@@ -4,48 +4,48 @@ import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import classnames from 'classnames';
 
-const renderTitle = (level, contents, tStyle, headingStyle) => {
-	switch (level) {
+const renderTitle = ( level, contents, tStyle, headingStyle ) => {
+	switch ( level ) {
 		case 1:
 			return (
-				<h1 style={tStyle} className={headingStyle}>
-					{contents}
+				<h1 style={ tStyle } className={ headingStyle }>
+					{ contents }
 				</h1>
 			);
 		case 2:
 			return (
-				<h2 style={tStyle} className={headingStyle}>
-					{contents}
+				<h2 style={ tStyle } className={ headingStyle }>
+					{ contents }
 				</h2>
 			);
 		case 3:
 			return (
-				<h3 style={tStyle} className={headingStyle}>
-					{contents}
+				<h3 style={ tStyle } className={ headingStyle }>
+					{ contents }
 				</h3>
 			);
 		case 4:
 			return (
-				<h4 style={tStyle} className={headingStyle}>
-					{contents}
+				<h4 style={ tStyle } className={ headingStyle }>
+					{ contents }
 				</h4>
 			);
 		case 5:
 			return (
-				<h5 style={tStyle} className={headingStyle}>
-					{contents}
+				<h5 style={ tStyle } className={ headingStyle }>
+					{ contents }
 				</h5>
 			);
 		case 6:
 			return (
-				<h6 style={tStyle} className={headingStyle}>
-					{contents}
+				<h6 style={ tStyle } className={ headingStyle }>
+					{ contents }
 				</h6>
 			);
 	}
 };
 
-export default function save(props) {
+export default function save( props ) {
 	const { attributes } = props;
 	const {
 		level,
@@ -64,7 +64,7 @@ export default function save(props) {
 		fontAwesomeIconAfter,
 		fontAwesomeIconColor,
 	} = attributes;
-	const containerClass = `vk_heading vk_heading-style-${titleStyle}`;
+	const containerClass = `vk_heading vk_heading-style-${ titleStyle }`;
 
 	const cStyle = {
 		marginBottom:
@@ -74,23 +74,23 @@ export default function save(props) {
 	};
 
 	let headingColorClassName = '';
-	if (titleColor !== undefined) {
+	if ( titleColor !== undefined ) {
 		headingColorClassName += `has-text-color`;
-		if (!isHexColor(titleColor)) {
-			headingColorClassName += ` has-${titleColor}-color`;
+		if ( ! isHexColor( titleColor ) ) {
+			headingColorClassName += ` has-${ titleColor }-color`;
 		}
 	}
 
-	const headingStyle = classnames('vk_heading_title', {
-		[`vk_heading_title-style-${titleStyle}`]: !!titleStyle,
-		[`${headingColorClassName}`]: !!headingColorClassName,
-	});
+	const headingStyle = classnames( 'vk_heading_title', {
+		[ `vk_heading_title-style-${ titleStyle }` ]: !! titleStyle,
+		[ `${ headingColorClassName }` ]: !! headingColorClassName,
+	} );
 
 	const tStyle = {
 		color:
 			titleColor !== null &&
 			titleColor !== undefined &&
-			isHexColor(titleColor)
+			isHexColor( titleColor )
 				? titleColor
 				: undefined,
 		fontSize:
@@ -105,23 +105,23 @@ export default function save(props) {
 	};
 
 	let subTextColorClassName = '';
-	if (subTextColor !== undefined) {
+	if ( subTextColor !== undefined ) {
 		subTextColorClassName += `has-text-color`;
-		if (!isHexColor(subTextColor)) {
-			subTextColorClassName += ` has-${subTextColor}-color`;
+		if ( ! isHexColor( subTextColor ) ) {
+			subTextColorClassName += ` has-${ subTextColor }-color`;
 		}
 	}
 
-	const subTextClass = classnames('vk_heading_subtext', {
-		[`vk_heading_subtext-style-${titleStyle}`]: !!titleStyle,
-		[`${subTextColorClassName}`]: !!subTextColorClassName,
-	});
+	const subTextClass = classnames( 'vk_heading_subtext', {
+		[ `vk_heading_subtext-style-${ titleStyle }` ]: !! titleStyle,
+		[ `${ subTextColorClassName }` ]: !! subTextColorClassName,
+	} );
 
 	const subTextStyle = {
 		color:
 			subTextColor !== null &&
 			subTextColor !== undefined &&
-			isHexColor(subTextColor)
+			isHexColor( subTextColor )
 				? subTextColor
 				: undefined,
 		fontSize:
@@ -132,79 +132,79 @@ export default function save(props) {
 	};
 
 	let iconColorClassName = '';
-	if (fontAwesomeIconColor !== undefined) {
+	if ( fontAwesomeIconColor !== undefined ) {
 		iconColorClassName += `has-text-color`;
-		if (!isHexColor(fontAwesomeIconColor)) {
-			iconColorClassName += ` has-${fontAwesomeIconColor}-color`;
+		if ( ! isHexColor( fontAwesomeIconColor ) ) {
+			iconColorClassName += ` has-${ fontAwesomeIconColor }-color`;
 		}
 	}
 
 	const fontAwesomeIconStyle =
-		fontAwesomeIconColor && isHexColor(fontAwesomeIconColor)
-			? `style="color:${fontAwesomeIconColor};"`
+		fontAwesomeIconColor && isHexColor( fontAwesomeIconColor )
+			? `style="color:${ fontAwesomeIconColor };"`
 			: '';
 
 	let iconBefore = fontAwesomeIconBefore;
 	let iconAfter = fontAwesomeIconAfter;
 	//add class
-	if (iconBefore && iconColorClassName) {
-		const faIconFragmentBefore = iconBefore.split('<i class="');
-		faIconFragmentBefore[0] =
-			faIconFragmentBefore[0] + `<i class="${iconColorClassName} `;
-		iconBefore = faIconFragmentBefore.join('');
+	if ( iconBefore && iconColorClassName ) {
+		const faIconFragmentBefore = iconBefore.split( '<i class="' );
+		faIconFragmentBefore[ 0 ] =
+			faIconFragmentBefore[ 0 ] + `<i class="${ iconColorClassName } `;
+		iconBefore = faIconFragmentBefore.join( '' );
 	}
 
-	if (iconAfter && iconColorClassName) {
-		const faIconFragmentAfter = iconAfter.split('<i class="');
-		faIconFragmentAfter[0] =
-			faIconFragmentAfter[0] + `<i class="${iconColorClassName} `;
-		iconAfter = faIconFragmentAfter.join('');
+	if ( iconAfter && iconColorClassName ) {
+		const faIconFragmentAfter = iconAfter.split( '<i class="' );
+		faIconFragmentAfter[ 0 ] =
+			faIconFragmentAfter[ 0 ] + `<i class="${ iconColorClassName } `;
+		iconAfter = faIconFragmentAfter.join( '' );
 	}
 
 	//add inline css
-	if (iconBefore && fontAwesomeIconStyle) {
-		const faIconFragmentBefore = iconBefore.split('<i');
-		faIconFragmentBefore[0] =
-			faIconFragmentBefore[0] + `<i ${fontAwesomeIconStyle} `;
-		iconBefore = faIconFragmentBefore.join('');
+	if ( iconBefore && fontAwesomeIconStyle ) {
+		const faIconFragmentBefore = iconBefore.split( '<i' );
+		faIconFragmentBefore[ 0 ] =
+			faIconFragmentBefore[ 0 ] + `<i ${ fontAwesomeIconStyle } `;
+		iconBefore = faIconFragmentBefore.join( '' );
 	}
 
-	if (iconAfter && fontAwesomeIconStyle) {
-		const faIconFragmentAfter = iconAfter.split('<i');
-		faIconFragmentAfter[0] =
-			faIconFragmentAfter[0] + `<i ${fontAwesomeIconStyle} `;
-		iconAfter = faIconFragmentAfter.join('');
+	if ( iconAfter && fontAwesomeIconStyle ) {
+		const faIconFragmentAfter = iconAfter.split( '<i' );
+		faIconFragmentAfter[ 0 ] =
+			faIconFragmentAfter[ 0 ] + `<i ${ fontAwesomeIconStyle } `;
+		iconAfter = faIconFragmentAfter.join( '' );
 	}
 
 	const titleContent = (
 		<>
-			{parse(iconBefore)}
-			<RichText.Content tagName={'span'} value={title} />
-			{parse(iconAfter)}
+			{ parse( iconBefore ) }
+			<RichText.Content tagName={ 'span' } value={ title } />
+			{ parse( iconAfter ) }
 		</>
 	);
 
 	let subtextContent;
-	if (subTextFlag === 'on') {
+	if ( subTextFlag === 'on' ) {
 		subtextContent = (
 			<RichText.Content
-				tagName={'p'}
-				value={subText}
-				style={subTextStyle}
-				className={subTextClass}
+				tagName={ 'p' }
+				value={ subText }
+				style={ subTextStyle }
+				className={ subTextClass }
 			/>
 		);
 	}
 
-	const blockProps = useBlockProps.save({
+	const blockProps = useBlockProps.save( {
 		className: ``,
-	});
+	} );
 
 	return (
-		<div {...blockProps}>
-			<div className={containerClass} style={cStyle}>
-				{renderTitle(level, titleContent, tStyle, headingStyle)}
-				{subtextContent}
+		<div { ...blockProps }>
+			<div className={ containerClass } style={ cStyle }>
+				{ renderTitle( level, titleContent, tStyle, headingStyle ) }
+				{ subtextContent }
 			</div>
 		</div>
 	);

@@ -1,11 +1,11 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 export default function save() {
-	const blockProps = useBlockProps.save({
+	const blockProps = useBlockProps.save( {
 		className: `vk_accordion-target`,
-	});
+	} );
 	return (
-		<div {...blockProps}>
+		<div { ...blockProps }>
 			<InnerBlocks.Content />
 		</div>
 	);

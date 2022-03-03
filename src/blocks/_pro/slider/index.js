@@ -23,31 +23,31 @@ export const settings = {
 	deprecated,
 };
 
-const generateHeightCss = (attributes, cssSelector = '') => {
+const generateHeightCss = ( attributes, cssSelector = '' ) => {
 	const { clientId, mobile, tablet, pc, unit } = attributes;
 	let css = '';
-	if (unit !== undefined && unit !== null) {
-		if (mobile !== undefined && mobile !== null) {
+	if ( unit !== undefined && unit !== null ) {
+		if ( mobile !== undefined && mobile !== null ) {
 			css += `@media (max-width: 576px) {
-				${cssSelector}
-				.vk_slider_${clientId} .vk_slider_item{
-					height:${mobile}${unit}!important;
+				${ cssSelector }
+				.vk_slider_${ clientId } .vk_slider_item{
+					height:${ mobile }${ unit }!important;
 				}
 			}`;
 		}
-		if (tablet !== undefined && tablet !== null) {
+		if ( tablet !== undefined && tablet !== null ) {
 			css += `@media (min-width: 577px) and (max-width: 768px) {
-				${cssSelector}
-				.vk_slider_${clientId} .vk_slider_item{
-					height:${tablet}${unit}!important;
+				${ cssSelector }
+				.vk_slider_${ clientId } .vk_slider_item{
+					height:${ tablet }${ unit }!important;
 				}
 			}`;
 		}
-		if (pc !== undefined && pc !== null) {
+		if ( pc !== undefined && pc !== null ) {
 			css += `@media (min-width: 769px) {
-				${cssSelector}
-				.vk_slider_${clientId} .vk_slider_item{
-					height:${pc}${unit}!important;
+				${ cssSelector }
+				.vk_slider_${ clientId } .vk_slider_item{
+					height:${ pc }${ unit }!important;
 				}
 			}`;
 		}
@@ -58,18 +58,18 @@ const generateHeightCss = (attributes, cssSelector = '') => {
 
 // Add column css for editor.
 const vkbwithClientIdClassName = createHigherOrderComponent(
-	(BlockListBlock) => {
-		return (props) => {
-			if ('vk-blocks/slider' === props.name) {
-				const cssTag = generateHeightCss(props.attributes, '');
+	( BlockListBlock ) => {
+		return ( props ) => {
+			if ( 'vk-blocks/slider' === props.name ) {
+				const cssTag = generateHeightCss( props.attributes, '' );
 				return (
 					<>
-						<BlockListBlock {...props} />
-						<style type="text/css">{cssTag}</style>
+						<BlockListBlock { ...props } />
+						<style type="text/css">{ cssTag }</style>
 					</>
 				);
 			}
-			return <BlockListBlock {...props} />;
+			return <BlockListBlock { ...props } />;
 		};
 	},
 	'vkbwithClientIdClassName'
@@ -88,30 +88,30 @@ addFilter(
  * @param {*} type
  * @param {*} attributes
  */
-const addSwiperConfig = (el, type, attributes) => {
-	if ('vk-blocks/slider' === type.name) {
+const addSwiperConfig = ( el, type, attributes ) => {
+	if ( 'vk-blocks/slider' === type.name ) {
 		//現在実行されている deprecated内の save関数のindexを取得
 		const deprecatedFuncIndex = deprecated.findIndex(
-			(item) => item.save === type.save
+			( item ) => item.save === type.save
 		);
 
 		// 最新版
-		if (-1 === deprecatedFuncIndex) {
-			const cssSelector = `.vk_slider_${attributes.clientId},`;
-			const cssTag = generateHeightCss(attributes, cssSelector);
+		if ( -1 === deprecatedFuncIndex ) {
+			const cssSelector = `.vk_slider_${ attributes.clientId },`;
+			const cssTag = generateHeightCss( attributes, cssSelector );
 			return (
 				<>
-					{el}
-					<style type="text/css">{cssTag}</style>
+					{ el }
+					<style type="text/css">{ cssTag }</style>
 				</>
 			);
 
 			//後方互換
 		}
-		const DeprecatedHook = deprecatedHooks[deprecatedFuncIndex];
-		return <DeprecatedHook el={el} attributes={attributes} />;
+		const DeprecatedHook = deprecatedHooks[ deprecatedFuncIndex ];
+		return <DeprecatedHook el={ el } attributes={ attributes } />;
 	}
 	// Slider以外のブロック
 	return el;
 };
-addFilter('blocks.getSaveElement', 'vk-blocks/slider', addSwiperConfig, 11);
+addFilter( 'blocks.getSaveElement', 'vk-blocks/slider', addSwiperConfig, 11 );

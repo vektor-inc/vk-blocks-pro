@@ -3,34 +3,34 @@ import { useState } from '@wordpress/element';
 import { Toolbar } from '@wordpress/components';
 import { alignLeft, alignRight, alignCenter } from '@wordpress/icons';
 
-export const AlignControl = (props) => {
+export const AlignControl = ( props ) => {
 	const { setAttributes, schema, initial, component } = props;
-	const [activeControl, setActiveControl] = useState(initial);
+	const [ activeControl, setActiveControl ] = useState( initial );
 
-	function createAlignControl(align) {
+	function createAlignControl( align ) {
 		let alignIcon = '';
-		if (align === 'left') {
+		if ( align === 'left' ) {
 			alignIcon = alignLeft;
-		} else if (align === 'center') {
+		} else if ( align === 'center' ) {
 			alignIcon = alignCenter;
-		} else if (align === 'right') {
+		} else if ( align === 'right' ) {
 			alignIcon = alignRight;
 		}
 		return {
 			icon: alignIcon,
 			// translators: %s is align.
-			title: sprintf(__(`Align %s`, 'vk-blocks'), align),
+			title: sprintf( __( `Align %s`, 'vk-blocks' ), align ),
 			isActive: activeControl === align,
 			onClick: () => {
-				schema[component] = align;
-				setAttributes({ activeControl: JSON.stringify(schema) });
-				setActiveControl(align);
+				schema[ component ] = align;
+				setAttributes( { activeControl: JSON.stringify( schema ) } );
+				setActiveControl( align );
 			},
 		};
 	}
 	return (
 		<Toolbar
-			controls={['left', 'center', 'right'].map(createAlignControl)}
+			controls={ [ 'left', 'center', 'right' ].map( createAlignControl ) }
 		/>
 	);
 };

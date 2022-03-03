@@ -2,26 +2,28 @@ import { useBlockProps } from '@wordpress/block-editor';
 import parse from 'html-react-parser';
 import { __ } from '@wordpress/i18n';
 
-export default function save(props) {
+export default function save( props ) {
 	const { attributes } = props;
 	const { style, open, renderHtml } = attributes;
-	const blockProps = useBlockProps.save({
-		className: `vk_tableOfContents vk_tableOfContents-style-${style} tabs`,
-	});
+	const blockProps = useBlockProps.save( {
+		className: `vk_tableOfContents vk_tableOfContents-style-${ style } tabs`,
+	} );
 	/* eslint jsx-a11y/label-has-associated-control: 0 */
 	return (
-		<div {...blockProps}>
+		<div { ...blockProps }>
 			<div className="tab">
-				<div className={'vk_tableOfContents_title'}>
-					{__('Table of Contents', 'vk-blocks')}
+				<div className={ 'vk_tableOfContents_title' }>
+					{ __( 'Table of Contents', 'vk-blocks' ) }
 				</div>
 				<input type="checkbox" id="chck1" />
 				<label
-					className={`tab-label vk_tableOfContents_openCloseBtn button_status button_status-${open}`}
+					className={ `tab-label vk_tableOfContents_openCloseBtn button_status button_status-${ open }` }
 					htmlFor="chck1"
 				/>
-				<ul className={`vk_tableOfContents_list tab_content-${open}`}>
-					{parse(renderHtml)}
+				<ul
+					className={ `vk_tableOfContents_list tab_content-${ open }` }
+				>
+					{ parse( renderHtml ) }
 				</ul>
 			</div>
 		</div>

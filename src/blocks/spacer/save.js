@@ -8,28 +8,28 @@ import { useBlockProps } from '@wordpress/block-editor';
  */
 import Spacers from './spacers';
 
-export default function save({ attributes, anchor }) {
+export default function save( { attributes, anchor } ) {
 	const { spaceType, unit, pc, tablet, mobile, spaceSize } = attributes;
 
 	let containerClass = `vk_spacer`;
-	if ('custom' !== spaceSize) {
-		containerClass += ` vk_spacer-type-${spaceType}`;
+	if ( 'custom' !== spaceSize ) {
+		containerClass += ` vk_spacer-type-${ spaceType }`;
 	}
 
 	return (
 		<div
-			{...useBlockProps.save({
+			{ ...useBlockProps.save( {
 				className: containerClass,
 				id: anchor,
-			})}
+			} ) }
 		>
 			<Spacers
-				spaceSize={spaceSize}
-				type={spaceType}
-				pcSize={pc}
-				tabletSize={tablet}
-				mobileSize={mobile}
-				unit={unit}
+				spaceSize={ spaceSize }
+				type={ spaceType }
+				pcSize={ pc }
+				tabletSize={ tablet }
+				mobileSize={ mobile }
+				unit={ unit }
 			/>
 		</div>
 	);

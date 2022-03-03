@@ -20,24 +20,24 @@ import { select, dispatch } from '@wordpress/data';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 import { useEffect } from '@wordpress/element';
 
-export default function CardEdit(props) {
+export default function CardEdit( props ) {
 	const { attributes, clientId, name } = props;
 	const { blockId } = attributes;
 	attributes.name = name;
 	attributes.clientId = clientId;
 
-	const { getBlocksByClientId } = select('core/block-editor');
-	const { updateBlockAttributes } = dispatch('core/block-editor');
+	const { getBlocksByClientId } = select( 'core/block-editor' );
+	const { updateBlockAttributes } = dispatch( 'core/block-editor' );
 
-	const thisBlock = getBlocksByClientId(clientId);
+	const thisBlock = getBlocksByClientId( clientId );
 
-	useEffect(() => {
-		if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
-			updateBlockAttributes(clientId, { clientId });
-			updateBlockAttributes(clientId, { blockId: clientId });
+	useEffect( () => {
+		if ( thisBlock && thisBlock[ 0 ] && thisBlock[ 0 ].innerBlocks ) {
+			updateBlockAttributes( clientId, { clientId } );
+			updateBlockAttributes( clientId, { blockId: clientId } );
 
-			const thisInnerBlocks = thisBlock[0].innerBlocks;
-			thisInnerBlocks.forEach(function (thisInnerBlock) {
+			const thisInnerBlocks = thisBlock[ 0 ].innerBlocks;
+			thisInnerBlocks.forEach( function ( thisInnerBlock ) {
 				//className以外の値で、子要素のattributesをアップデート
 				const updateAttributes = removeProperty(
 					attributes,
@@ -47,58 +47,62 @@ export default function CardEdit(props) {
 					thisInnerBlock.clientId,
 					updateAttributes
 				);
-			});
+			} );
 		}
-	}, [thisBlock, attributes, clientId]);
+	}, [ thisBlock, attributes, clientId ] );
 
 	let innerClass = '';
-	const ALLOWED_BLOCKS = ['vk-blocks/card-item'];
-	const TEMPLATE = [['vk-blocks/card-item']];
+	const ALLOWED_BLOCKS = [ 'vk-blocks/card-item' ];
+	const TEMPLATE = [ [ 'vk-blocks/card-item' ] ];
 
 	innerClass = 'editting';
 	innerClass += innerClass + ' vk_posts-edit';
-	innerClass += ' vk_posts-edit-col-xs-' + convertToGrid(attributes.col_xs);
-	innerClass += ' vk_posts-edit-col-sm-' + convertToGrid(attributes.col_sm);
-	innerClass += ' vk_posts-edit-col-md-' + convertToGrid(attributes.col_md);
-	innerClass += ' vk_posts-edit-col-lg-' + convertToGrid(attributes.col_lg);
-	innerClass += ' vk_posts-edit-col-xl-' + convertToGrid(attributes.col_xl);
-	innerClass += ' vk_posts-edit-col-xxl-' + convertToGrid(attributes.col_xxl);
+	innerClass += ' vk_posts-edit-col-xs-' + convertToGrid( attributes.col_xs );
+	innerClass += ' vk_posts-edit-col-sm-' + convertToGrid( attributes.col_sm );
+	innerClass += ' vk_posts-edit-col-md-' + convertToGrid( attributes.col_md );
+	innerClass += ' vk_posts-edit-col-lg-' + convertToGrid( attributes.col_lg );
+	innerClass += ' vk_posts-edit-col-xl-' + convertToGrid( attributes.col_xl );
+	innerClass +=
+		' vk_posts-edit-col-xxl-' + convertToGrid( attributes.col_xxl );
 
-	const blockProps = useBlockProps({
-		className: `vk_posts vk_card_${blockId}`,
-	});
+	const blockProps = useBlockProps( {
+		className: `vk_posts vk_card_${ blockId }`,
+	} );
 
 	return (
 		<>
 			<InspectorControls>
-				<ColumnLayoutControl {...props} />
-				<DisplayItemsControlForCards {...props} />
+				<ColumnLayoutControl { ...props } />
+				<DisplayItemsControlForCards { ...props } />
 				<PanelBody
-					title={__('Image Height', 'vk-blocks')}
-					initialOpen={false}
+					title={ __( 'Image Height', 'vk-blocks' ) }
+					initialOpen={ false }
 				>
-					<AdvancedUnitControl {...props} />
+					<AdvancedUnitControl { ...props } />
 					<BaseControl
-						label={__('Slide Height for each device.', 'vk-blocks')}
-						id={`vk_card-SlideHeight`}
+						label={ __(
+							'Slide Height for each device.',
+							'vk-blocks'
+						) }
+						id={ `vk_card-SlideHeight` }
 					>
 						<AdvancedViewportControl
-							{...props}
-							initial={{
+							{ ...props }
+							initial={ {
 								iPc: 150,
 								iTablet: 150,
 								iMobile: 150,
-							}}
+							} }
 						/>
 					</BaseControl>
 				</PanelBody>
-				<CardAlignControls {...props} />
+				<CardAlignControls { ...props } />
 			</InspectorControls>
-			<div {...blockProps}>
-				<div className={innerClass}>
+			<div { ...blockProps }>
+				<div className={ innerClass }>
 					<InnerBlocks
-						template={TEMPLATE}
-						allowedBlocks={ALLOWED_BLOCKS}
+						template={ TEMPLATE }
+						allowedBlocks={ ALLOWED_BLOCKS }
 						orientation="horizontal"
 					/>
 				</div>
@@ -107,7 +111,7 @@ export default function CardEdit(props) {
 	);
 }
 
-export const DisplayItemsControlForCards = (props) => {
+export const DisplayItemsControlForCards = ( props ) => {
 	const { setAttributes, attributes } = props;
 	const {
 		display_title, //eslint-disable-line camelcase
@@ -117,60 +121,65 @@ export const DisplayItemsControlForCards = (props) => {
 		btn_text, //eslint-disable-line camelcase
 	} = attributes;
 	return (
-		<PanelBody title={__('Display item', 'vk-blocks')} initialOpen={false}>
+		<PanelBody
+			title={ __( 'Display item', 'vk-blocks' ) }
+			initialOpen={ false }
+		>
 			<CheckboxControl
-				label={__('Title', 'vk-blocks')}
-				className={'mb-1'}
-				checked={display_title} //eslint-disable-line camelcase
-				onChange={(checked) =>
-					setAttributes({ display_title: checked })
+				label={ __( 'Title', 'vk-blocks' ) }
+				className={ 'mb-1' }
+				checked={ display_title } //eslint-disable-line camelcase
+				onChange={ ( checked ) =>
+					setAttributes( { display_title: checked } )
 				}
 			/>
 			<p className="alert alert-danger">
-				{__(
+				{ __(
 					'Warning! When you hidden this item, you will lose the content.',
 					'vk-blocks'
-				)}
+				) }
 			</p>
 			<CheckboxControl
-				label={__('Excerpt Text', 'vk-blocks')}
-				className={'mb-1'}
-				checked={display_excerpt} //eslint-disable-line camelcase
-				onChange={(checked) =>
-					setAttributes({ display_excerpt: checked })
+				label={ __( 'Excerpt Text', 'vk-blocks' ) }
+				className={ 'mb-1' }
+				checked={ display_excerpt } //eslint-disable-line camelcase
+				onChange={ ( checked ) =>
+					setAttributes( { display_excerpt: checked } )
 				}
 			/>
 			<p className="alert alert-danger">
-				{__(
+				{ __(
 					'Warning! When you hidden this item, you will lose the content.',
 					'vk-blocks'
-				)}
+				) }
 			</p>
 			<CheckboxControl
-				label={__('Image', 'vk-blocks')}
-				checked={display_image} //eslint-disable-line camelcase
-				onChange={(checked) =>
-					setAttributes({ display_image: checked })
+				label={ __( 'Image', 'vk-blocks' ) }
+				checked={ display_image } //eslint-disable-line camelcase
+				onChange={ ( checked ) =>
+					setAttributes( { display_image: checked } )
 				}
 			/>
 			<CheckboxControl
-				label={__('Button', 'vk-blocks')}
-				checked={display_btn} //eslint-disable-line camelcase
-				onChange={(checked) => setAttributes({ display_btn: checked })}
+				label={ __( 'Button', 'vk-blocks' ) }
+				checked={ display_btn } //eslint-disable-line camelcase
+				onChange={ ( checked ) =>
+					setAttributes( { display_btn: checked } )
+				}
 			/>
-			<h4 className={'postList_itemCard_button-option'}>
-				{__('Button option', 'vk-blocks')}
+			<h4 className={ 'postList_itemCard_button-option' }>
+				{ __( 'Button option', 'vk-blocks' ) }
 			</h4>
 			<p>
-				{__(
+				{ __(
 					"Click each card block to set the target url. You can find the url form at it's sidebar.",
 					'vk-blocks'
-				)}
+				) }
 			</p>
 			<TextControl
-				label={__('Button text', 'vk-blocks')}
-				value={btn_text} //eslint-disable-line camelcase
-				onChange={(value) => setAttributes({ btn_text: value })}
+				label={ __( 'Button text', 'vk-blocks' ) }
+				value={ btn_text } //eslint-disable-line camelcase
+				onChange={ ( value ) => setAttributes( { btn_text: value } ) }
 			/>
 		</PanelBody>
 	);

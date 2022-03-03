@@ -1,53 +1,53 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
-export default function save({ attributes }) {
+export default function save( { attributes } ) {
 	const { label, color, style, styleLine } = attributes;
 	const containerClass = ' vk_timeline_item';
 	let styleClass = '';
 	let inlineStyle = {};
 	let styleLineClass = '';
 
-	if (style === 'solid') {
+	if ( style === 'solid' ) {
 		styleClass = ' vk_timeline_item_style-default';
-		if (color !== undefined) {
+		if ( color !== undefined ) {
 			styleClass += ` has-background`;
-			if (isHexColor(color)) {
-				inlineStyle = { backgroundColor: `${color}` };
+			if ( isHexColor( color ) ) {
+				inlineStyle = { backgroundColor: `${ color }` };
 			} else {
-				styleClass += ` has-${color}-background-color`;
+				styleClass += ` has-${ color }-background-color`;
 			}
 		}
-	} else if (style === 'outlined') {
+	} else if ( style === 'outlined' ) {
 		styleClass = ' vk_timeline_item_style-outlined';
-		if (color !== undefined) {
+		if ( color !== undefined ) {
 			styleClass += ` has-text-color`;
-			if (isHexColor(color)) {
-				inlineStyle = { color: `${color}` };
+			if ( isHexColor( color ) ) {
+				inlineStyle = { color: `${ color }` };
 			} else {
-				styleClass += ` has-${color}-color`;
+				styleClass += ` has-${ color }-color`;
 			}
 		}
 	}
 
-	if (styleLine === 'default') {
+	if ( styleLine === 'default' ) {
 		styleLineClass = ' vk_timeline_item_lineStyle-default';
-	} else if (styleLine === 'none') {
+	} else if ( styleLine === 'none' ) {
 		styleLineClass = ' vk_timeline_item_lineStyle-none';
 	}
 
-	const blockProps = useBlockProps.save({
+	const blockProps = useBlockProps.save( {
 		className: containerClass + styleLineClass,
-	});
+	} );
 	return (
-		<div {...blockProps}>
-			<div className={'vk_timeline_item_caption'}>{label}</div>
-			<div className={'vk_timeline_item_contentnpm'}>
+		<div { ...blockProps }>
+			<div className={ 'vk_timeline_item_caption' }>{ label }</div>
+			<div className={ 'vk_timeline_item_contentnpm' }>
 				<InnerBlocks.Content />
 			</div>
 			<div
-				className={'vk_timeline_item_style' + styleClass}
-				style={inlineStyle}
+				className={ 'vk_timeline_item_style' + styleClass }
+				style={ inlineStyle }
 			/>
 		</div>
 	);

@@ -3,7 +3,7 @@ import { BaseControl, RadioControl, TextControl } from '@wordpress/components';
 
 import AdvancedPopOverControl from '@vkblocks/components/advanced-popover-control';
 
-export const FontAwesome = (props) => {
+export const FontAwesome = ( props ) => {
 	const { attributeName, attributes, setAttributes } = props;
 	// eslint-disable-next-line no-undef
 	const iconsUrl = vkFontAwesome.iconsUrl;
@@ -13,14 +13,14 @@ export const FontAwesome = (props) => {
 	const render = (
 		<>
 			<BaseControl
-				className={'components-base-control__label'}
-				id={`vk_fa_icon_list`}
-				label={__('Icon', 'vk-blocks') + ' ( ' + iconFamily + ' ) '}
+				className={ 'components-base-control__label' }
+				id={ `vk_fa_icon_list` }
+				label={ __( 'Icon', 'vk-blocks' ) + ' ( ' + iconFamily + ' ) ' }
 			>
 				<RadioControl
-					className={'vk_icon_list'}
-					selected={attributes[attributeName]}
-					options={[
+					className={ 'vk_icon_list' }
+					selected={ attributes[ attributeName ] }
+					options={ [
 						{
 							label: <i className="fas fa-arrow-right"></i>,
 							value: '<i class="fas fa-arrow-right"></i>',
@@ -51,25 +51,29 @@ export const FontAwesome = (props) => {
 							label: (
 								<i className="far fa-arrow-alt-circle-right"></i>
 							),
-							value: '<i class="far fa-arrow-alt-circle-right"></i>',
+							value:
+								'<i class="far fa-arrow-alt-circle-right"></i>',
 						},
 						{
 							label: (
 								<i className="far fa-arrow-alt-circle-down"></i>
 							),
-							value: '<i class="far fa-arrow-alt-circle-down"></i>',
+							value:
+								'<i class="far fa-arrow-alt-circle-down"></i>',
 						},
 						{
 							label: (
 								<i className="far fa-arrow-alt-circle-left"></i>
 							),
-							value: '<i class="far fa-arrow-alt-circle-left"></i>',
+							value:
+								'<i class="far fa-arrow-alt-circle-left"></i>',
 						},
 						{
 							label: (
 								<i className="fas fa-external-link-square-alt"></i>
 							),
-							value: '<i class="fas fa-external-link-square-alt"></i>',
+							value:
+								'<i class="fas fa-external-link-square-alt"></i>',
 						},
 						{
 							label: <i className="fas fa-external-link-alt"></i>,
@@ -84,7 +88,8 @@ export const FontAwesome = (props) => {
 							label: (
 								<i className="fas fa-exclamation-triangle"></i>
 							),
-							value: '<i class="fas fa-exclamation-triangle"></i>',
+							value:
+								'<i class="fas fa-exclamation-triangle"></i>',
 						},
 						{
 							label: (
@@ -181,26 +186,26 @@ export const FontAwesome = (props) => {
 							label: <i className="fab fa-line"></i>,
 							value: '<i class="fab fa-line"></i>',
 						},
-					]}
-					onChange={(value) =>
-						setAttributes({ [attributeName]: value })
+					] }
+					onChange={ ( value ) =>
+						setAttributes( { [ attributeName ]: value } )
 					}
 				/>
 			</BaseControl>
 			<hr></hr>
 			<p className="mt-1">
-				{__(
+				{ __(
 					"If you want to use an icon other than the ones listed above, you can use any of the icons from Font Awesome's icon list Please select a tag and enter it.",
 					'vk-blocks'
-				)}
+				) }
 				<br />
-				{__(
+				{ __(
 					'Ex) <i class="fas fa-arrow-circle-right"></i>',
 					'vk-blocks'
-				)}
+				) }
 				<br />
-				<a href={iconsUrl} target={`_blank`}>
-					{__('Font Awesome icon list', 'vk-blocks')}
+				<a href={ iconsUrl } target={ `_blank` }>
+					{ __( 'Font Awesome icon list', 'vk-blocks' ) }
 				</a>
 			</p>
 		</>
@@ -209,15 +214,17 @@ export const FontAwesome = (props) => {
 	return (
 		<>
 			<TextControl
-				value={attributes[attributeName]}
-				onChange={(value) => setAttributes({ [attributeName]: value })}
-				placeholder={'<i class="fas fa-arrow-circle-right"></i>'}
+				value={ attributes[ attributeName ] }
+				onChange={ ( value ) =>
+					setAttributes( { [ attributeName ]: value } )
+				}
+				placeholder={ '<i class="fas fa-arrow-circle-right"></i>' }
 				className="mb-0"
 			/>
 			<AdvancedPopOverControl
-				label={__('Select Icon', 'vk-blocks')}
-				renderComp={render}
-				setAttributes={setAttributes}
+				label={ __( 'Select Icon', 'vk-blocks' ) }
+				renderComp={ render }
+				setAttributes={ setAttributes }
 			/>
 		</>
 	);

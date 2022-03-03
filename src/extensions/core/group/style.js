@@ -11,29 +11,29 @@ import { InspectorControls, ColorPalette } from '@wordpress/block-editor';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { registerBlockStyle } from '@wordpress/blocks';
 
-const isValidBlockType = (name) => {
-	const validBlockTypes = ['core/group'];
-	return validBlockTypes.includes(name);
+const isValidBlockType = ( name ) => {
+	const validBlockTypes = [ 'core/group' ];
+	return validBlockTypes.includes( name );
 };
 
-export const addAttribute = (settings) => {
-	if (isValidBlockType(settings.name)) {
-		settings.attributes = assign(settings.attributes, {
+export const addAttribute = ( settings ) => {
+	if ( isValidBlockType( settings.name ) ) {
+		settings.attributes = assign( settings.attributes, {
 			color: {
 				type: 'string',
 			},
-		});
+		} );
 	}
 	return settings;
 };
-addFilter('blocks.registerBlockType', 'vk-blocks/group-style', addAttribute);
+addFilter( 'blocks.registerBlockType', 'vk-blocks/group-style', addAttribute );
 
-export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
+export const addBlockControl = createHigherOrderComponent( ( BlockEdit ) => {
 	let activeColor = '';
 
-	return (props) => {
-		if (isValidBlockType(props.name) && props.isSelected) {
-			if (props.attributes.color) {
+	return ( props ) => {
+		if ( isValidBlockType( props.name ) && props.isSelected ) {
+			if ( props.attributes.color ) {
 				activeColor = props.attributes.color;
 			} else {
 				activeColor = '#fffd6b';
@@ -41,108 +41,110 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 
 			return (
 				<>
-					<BlockEdit {...props} />
+					<BlockEdit { ...props } />
 					<InspectorControls>
 						<PanelBody
-							title={__('Border Color', 'vk-blocks')}
-							initialOpen={false}
+							title={ __( 'Border Color', 'vk-blocks' ) }
+							initialOpen={ false }
 							className="group-border-color-controle"
 						>
 							<ColorPalette
-								value={activeColor}
-								disableCustomColors={true}
-								onChange={(newColor) => {
-									let newClassName =
-										convertColorClass(newColor);
+								value={ activeColor }
+								disableCustomColors={ true }
+								onChange={ ( newColor ) => {
+									let newClassName = convertColorClass(
+										newColor
+									);
 
-									if (props.attributes.className) {
+									if ( props.attributes.className ) {
 										let inputClassName =
 											props.attributes.className;
 
-										inputClassName =
-											inputClassName.split(' ');
+										inputClassName = inputClassName.split(
+											' '
+										);
 
-										const filterClassName =
-											inputClassName.filter(function (
-												name
-											) {
+										const filterClassName = inputClassName.filter(
+											function ( name ) {
 												return (
 													-1 ===
-													name.indexOf('vk-has-')
+													name.indexOf( 'vk-has-' )
 												);
-											});
+											}
+										);
 
-										filterClassName.push(newClassName);
+										filterClassName.push( newClassName );
 
-										newClassName =
-											filterClassName.join(' ');
+										newClassName = filterClassName.join(
+											' '
+										);
 									}
 
 									activeColor = newColor;
-									props.setAttributes({
+									props.setAttributes( {
 										className: newClassName,
 										color: newColor,
-									});
-								}}
+									} );
+								} }
 							/>
 						</PanelBody>
 					</InspectorControls>
 				</>
 			);
 		}
-		return <BlockEdit {...props} />;
+		return <BlockEdit { ...props } />;
 	};
-}, 'addMyCustomBlockControls');
+}, 'addMyCustomBlockControls' );
 
-addFilter('editor.BlockEdit', 'vk-blocks/group-style', addBlockControl);
+addFilter( 'editor.BlockEdit', 'vk-blocks/group-style', addBlockControl );
 
-registerBlockStyle('core/group', [
+registerBlockStyle( 'core/group', [
 	{
 		name: 'vk-group-solid',
-		label: __('Solid', 'vk-blocks'),
+		label: __( 'Solid', 'vk-blocks' ),
 	},
 	{
 		name: 'vk-group-solid-roundcorner',
-		label: __('Solid Roundcorner', 'vk-blocks'),
+		label: __( 'Solid Roundcorner', 'vk-blocks' ),
 	},
 	{
 		name: 'vk-group-dotted',
-		label: __('Dotted', 'vk-blocks'),
+		label: __( 'Dotted', 'vk-blocks' ),
 	},
 	{
 		name: 'vk-group-dashed',
-		label: __('Dashed', 'vk-blocks'),
+		label: __( 'Dashed', 'vk-blocks' ),
 	},
 	{
 		name: 'vk-group-double',
-		label: __('Double', 'vk-blocks'),
+		label: __( 'Double', 'vk-blocks' ),
 	},
 	{
 		name: 'vk-group-stitch',
-		label: __('Stitch', 'vk-blocks'),
+		label: __( 'Stitch', 'vk-blocks' ),
 	},
 	{
 		name: 'vk-group-top-bottom-border',
-		label: __('Border Top Bottom', 'vk-blocks'),
+		label: __( 'Border Top Bottom', 'vk-blocks' ),
 	},
 	{
 		name: 'vk-group-shadow',
-		label: __('Shadow', 'vk-blocks'),
+		label: __( 'Shadow', 'vk-blocks' ),
 	},
 	{
 		name: 'vk-group-alert-info',
-		label: __('Info', 'vk-blocks'),
+		label: __( 'Info', 'vk-blocks' ),
 	},
 	{
 		name: 'vk-group-alert-success',
-		label: __('Success', 'vk-blocks'),
+		label: __( 'Success', 'vk-blocks' ),
 	},
 	{
 		name: 'vk-group-alert-warning',
-		label: __('Warning', 'vk-blocks'),
+		label: __( 'Warning', 'vk-blocks' ),
 	},
 	{
 		name: 'vk-group-alert-danger',
-		label: __('Danger', 'vk-blocks'),
+		label: __( 'Danger', 'vk-blocks' ),
 	},
-]);
+] );

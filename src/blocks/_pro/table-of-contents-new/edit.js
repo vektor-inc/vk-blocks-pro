@@ -12,28 +12,29 @@ import {
 } from './toc-utils';
 import { useCurrentBlocks, useBlocksByName } from '@vkblocks/utils/hooks';
 
-export default function TOCEdit(props) {
+export default function TOCEdit( props ) {
 	const { attributes, setAttributes, className } = props;
 	const { style, open, renderHtml } = attributes;
-	const blockProps = useBlockProps({
-		className: `vk_tableOfContents vk_tableOfContents-style-${style} tabs`,
-	});
+	const blockProps = useBlockProps( {
+		className: `vk_tableOfContents vk_tableOfContents-style-${ style } tabs`,
+	} );
 
 	const blocks = useCurrentBlocks();
-	const findBlocks = useBlocksByName('vk-blocks/table-of-contents-new');
+	const findBlocks = useBlocksByName( 'vk-blocks/table-of-contents-new' );
 
-	useEffect(() => {
+	useEffect( () => {
 		// 投稿に目次ブロックがなければ処理を実行しない
-		if (!findBlocks) {
+		if ( ! findBlocks ) {
 			return;
 		}
 
-		blocks.forEach(function (block) {
-			const { updateBlockAttributes } = dispatch('core/block-editor');
-			const { getBlockOrder, getBlockRootClientId } =
-				select('core/block-editor');
+		blocks.forEach( function ( block ) {
+			const { updateBlockAttributes } = dispatch( 'core/block-editor' );
+			const { getBlockOrder, getBlockRootClientId } = select(
+				'core/block-editor'
+			);
 
-			const headingBlocks = ['core/heading', 'vk-blocks/heading'];
+			const headingBlocks = [ 'core/heading', 'vk-blocks/heading' ];
 			const hasInnerBlocks = [
 				'vk-blocks/outer',
 				'core/cover',
@@ -43,56 +44,58 @@ export default function TOCEdit(props) {
 			// 見出しにカスタムIDを追加
 			if (
 				block.attributes.anchor === undefined &&
-				isAllowedBlock(block.name, headingBlocks)
+				isAllowedBlock( block.name, headingBlocks )
 			) {
-				updateBlockAttributes(block.clientId, {
-					anchor: `vk-htags-${block.clientId}`,
-				});
+				updateBlockAttributes( block.clientId, {
+					anchor: `vk-htags-${ block.clientId }`,
+				} );
 
 				// InnerBlock内の見出しにカスタムIDを追加
-			} else if (isAllowedBlock(block.name, hasInnerBlocks)) {
-				block.innerBlocks.forEach(function (innerBlock) {
+			} else if ( isAllowedBlock( block.name, hasInnerBlocks ) ) {
+				block.innerBlocks.forEach( function ( innerBlock ) {
 					// 見出しにカスタムIDを追加
 					if (
 						innerBlock.attributes.anchor === undefined &&
-						isAllowedBlock(innerBlock.name, headingBlocks)
+						isAllowedBlock( innerBlock.name, headingBlocks )
 					) {
-						updateBlockAttributes(innerBlock.clientId, {
-							anchor: `vk-htags-${innerBlock.clientId}`,
-						});
+						updateBlockAttributes( innerBlock.clientId, {
+							anchor: `vk-htags-${ innerBlock.clientId }`,
+						} );
 					}
-				});
+				} );
 			}
 
 			// 目次ブロックをアップデート
 			if (
-				isAllowedBlock(block.name, ['vk-blocks/table-of-contents-new'])
+				isAllowedBlock( block.name, [
+					'vk-blocks/table-of-contents-new',
+				] )
 			) {
 				const blocksOrder = getBlockOrder();
-				const headings = getHeadings(headingBlocks);
+				const headings = getHeadings( headingBlocks );
 				const innerHeadings = getInnerHeadings(
 					headingBlocks,
 					hasInnerBlocks
 				);
-				const allHeadings = headings.concat(innerHeadings);
+				const allHeadings = headings.concat( innerHeadings );
 
-				const allHeadingsSorted = allHeadings.map((heading) => {
-					const index = blocksOrder.indexOf(heading.clientId);
+				const allHeadingsSorted = allHeadings.map( ( heading ) => {
+					const index = blocksOrder.indexOf( heading.clientId );
 					const rootIndex = blocksOrder.indexOf(
-						getBlockRootClientId(heading.clientId)
+						getBlockRootClientId( heading.clientId )
 					);
 					let finalIndex;
 
-					if (index >= 0) {
+					if ( index >= 0 ) {
 						finalIndex = index;
-					} else if (rootIndex >= 0) {
+					} else if ( rootIndex >= 0 ) {
 						finalIndex = rootIndex;
 					}
 
 					return { index: finalIndex, block: heading };
-				});
+				} );
 				allHeadingsSorted.sort(
-					(first, second) => first.index - second.index
+					( first, second ) => first.index - second.index
 				);
 
 				const render = returnHtml(
@@ -102,90 +105,92 @@ export default function TOCEdit(props) {
 					block.attributes.open
 				);
 
-				updateBlockAttributes(block.clientId, {
+				updateBlockAttributes( block.clientId, {
 					renderHtml: render,
-				});
+				} );
 			}
-		});
-	}, [blocks]);
+		} );
+	}, [ blocks ] );
 
 	/* eslint jsx-a11y/label-has-associated-control: 0 */
 	return (
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={__('Note on duplicating headings', 'vk-blocks')}
-					initialOpen={false}
+					title={ __( 'Note on duplicating headings', 'vk-blocks' ) }
+					initialOpen={ false }
 				>
 					<BaseControl>
 						<p>
-							{__(
+							{ __(
 								'If you duplicate a heading, the table of contents block will not work properly, please reassign the ID.',
 								'vk-blocks'
-							)}
+							) }
 						</p>
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
-					title={__('Display type', 'vk-blocks')}
-					initialOpen={false}
+					title={ __( 'Display type', 'vk-blocks' ) }
+					initialOpen={ false }
 				>
 					<BaseControl
-						id={`vk-toc-style`}
-						label={__('Style', 'vk-blocks')}
+						id={ `vk-toc-style` }
+						label={ __( 'Style', 'vk-blocks' ) }
 					>
 						<SelectControl
-							value={style}
-							onChange={(value) =>
-								setAttributes({ style: value })
+							value={ style }
+							onChange={ ( value ) =>
+								setAttributes( { style: value } )
 							}
-							options={[
+							options={ [
 								{
 									value: 'default',
-									label: __('Default', 'vk-blocks'),
+									label: __( 'Default', 'vk-blocks' ),
 								},
 								{
 									value: '',
-									label: __('No frame', 'vk-blocks'),
+									label: __( 'No frame', 'vk-blocks' ),
 								},
-							]}
+							] }
 						/>
 					</BaseControl>
 					<BaseControl
-						id={`vk_toc-displayStaus`}
-						label={__('Default Display Status', 'vk-blocks')}
+						id={ `vk_toc-displayStaus` }
+						label={ __( 'Default Display Status', 'vk-blocks' ) }
 					>
 						<SelectControl
-							value={open}
-							onChange={(value) => setAttributes({ open: value })}
-							options={[
+							value={ open }
+							onChange={ ( value ) =>
+								setAttributes( { open: value } )
+							}
+							options={ [
 								{
 									value: 'open',
-									label: __('OPEN', 'vk-blocks'),
+									label: __( 'OPEN', 'vk-blocks' ),
 								},
 								{
 									value: 'close',
-									label: __('CLOSE', 'vk-blocks'),
+									label: __( 'CLOSE', 'vk-blocks' ),
 								},
-							]}
+							] }
 						/>
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>
-			<div {...blockProps}>
+			<div { ...blockProps }>
 				<div className="tab">
-					<div className={'vk_tableOfContents_title'}>
-						{__('Table of Contents', 'vk-blocks')}
+					<div className={ 'vk_tableOfContents_title' }>
+						{ __( 'Table of Contents', 'vk-blocks' ) }
 					</div>
 					<input type="checkbox" id="chck1" />
 					<label
-						className={`tab-label vk_tableOfContents_openCloseBtn button_status button_status-${open}`}
+						className={ `tab-label vk_tableOfContents_openCloseBtn button_status button_status-${ open }` }
 						htmlFor="chck1"
 					/>
 					<ul
-						className={`vk_tableOfContents_list tab_content-${open}`}
+						className={ `vk_tableOfContents_list tab_content-${ open }` }
 					>
-						{parse(renderHtml)}
+						{ parse( renderHtml ) }
 					</ul>
 				</div>
 			</div>

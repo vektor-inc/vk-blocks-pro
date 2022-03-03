@@ -2,7 +2,7 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
-export default function save({ attributes }) {
+export default function save( { attributes } ) {
 	// eslint-disable-next-line camelcase
 	const {
 		col_xs,
@@ -21,14 +21,16 @@ export default function save({ attributes }) {
 		paddingUnit,
 	} = attributes;
 	// eslint-disable-next-line camelcase
-	const columnClass = `col-${convertToGrid(col_xs)} col-sm-${convertToGrid(
-		col_sm
-	)} col-md-${convertToGrid(col_md)} col-lg-${convertToGrid(
-		col_lg
-	)} col-xl-${convertToGrid(col_xl)} col-xxl-${convertToGrid(col_xxl)}`;
+	const columnClass = `col-${ convertToGrid(
+		col_xs
+	) } col-sm-${ convertToGrid( col_sm ) } col-md-${ convertToGrid(
+		col_md
+	) } col-lg-${ convertToGrid( col_lg ) } col-xl-${ convertToGrid(
+		col_xl
+	) } col-xxl-${ convertToGrid( col_xxl ) }`;
 	// margin bottom
 	let style;
-	if (marginBottom) {
+	if ( marginBottom ) {
 		style = { marginBottom: marginBottom + unit };
 	}
 
@@ -36,13 +38,13 @@ export default function save({ attributes }) {
 		color:
 			textColor !== null &&
 			textColor !== undefined &&
-			isHexColor(textColor)
+			isHexColor( textColor )
 				? textColor
 				: undefined,
 		background:
 			backgroundColor !== null &&
 			backgroundColor !== undefined &&
-			isHexColor(backgroundColor)
+			isHexColor( backgroundColor )
 				? backgroundColor
 				: undefined,
 		paddingTop:
@@ -64,30 +66,30 @@ export default function save({ attributes }) {
 	};
 
 	let vkGridColumnTextColorClassName = '';
-	if (textColor !== undefined) {
+	if ( textColor !== undefined ) {
 		vkGridColumnTextColorClassName += ` has-text-color`;
-		if (!isHexColor(textColor)) {
-			vkGridColumnTextColorClassName += ` has-${textColor}-color`;
+		if ( ! isHexColor( textColor ) ) {
+			vkGridColumnTextColorClassName += ` has-${ textColor }-color`;
 		}
 	}
 
 	let vkGridColumnbackgroundColorColorClassName = '';
-	if (backgroundColor !== undefined) {
+	if ( backgroundColor !== undefined ) {
 		vkGridColumnbackgroundColorColorClassName += ` has-background-color`;
-		if (!isHexColor(backgroundColor)) {
-			vkGridColumnbackgroundColorColorClassName += ` has-${backgroundColor}-background-color`;
+		if ( ! isHexColor( backgroundColor ) ) {
+			vkGridColumnbackgroundColorColorClassName += ` has-${ backgroundColor }-background-color`;
 		}
 	}
 
-	const blockProps = useBlockProps.save({
-		className: `vk_gridColumn_item ${columnClass}`,
+	const blockProps = useBlockProps.save( {
+		className: `vk_gridColumn_item ${ columnClass }`,
 		style,
-	});
+	} );
 
 	return (
 		<>
-			<div {...blockProps}>
-				{(() => {
+			<div { ...blockProps }>
+				{ ( () => {
 					if (
 						textColor !== undefined ||
 						backgroundColor !== undefined ||
@@ -98,15 +100,15 @@ export default function save({ attributes }) {
 					) {
 						return (
 							<div
-								className={`vk_gridColumn_item_inner ${vkGridColumnTextColorClassName} ${vkGridColumnbackgroundColorColorClassName}`}
-								style={columStyle}
+								className={ `vk_gridColumn_item_inner ${ vkGridColumnTextColorClassName } ${ vkGridColumnbackgroundColorColorClassName }` }
+								style={ columStyle }
 							>
 								<InnerBlocks.Content />
 							</div>
 						);
 					}
 					return <InnerBlocks.Content />;
-				})()}
+				} )() }
 			</div>
 		</>
 	);

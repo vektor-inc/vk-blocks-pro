@@ -10,7 +10,7 @@ import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 // import StaffMediaUpload from './staffMediaUpload';
 
-export default function save({ attributes, className }) {
+export default function save( { attributes, className } ) {
 	const {
 		vk_staff_layout, // eslint-disable-line camelcase
 		vk_staff_text_name, // eslint-disable-line camelcase
@@ -29,111 +29,112 @@ export default function save({ attributes, className }) {
 		vk_staff_fontFamily,
 	} = attributes;
 
-	const classes = classnames('vk_staff', {
-		[className]: !!className,
-		[`vk_staff-layout-${vk_staff_layout}`]: !!vk_staff_layout, // eslint-disable-line camelcase
-	});
+	const classes = classnames( 'vk_staff', {
+		[ className ]: !! className,
+		[ `vk_staff-layout-${ vk_staff_layout }` ]: !! vk_staff_layout, // eslint-disable-line camelcase
+	} );
 
 	// 画像の線のクラスとimgタグの親タグのクラス名を生成.
-	const imgBorderClassName = classnames('vk_staff_photo', {
-		[`vk_staff_photo-border-${vk_staff_photoBorder}`]:
-			!!vk_staff_photoBorder, // eslint-disable-line camelcase
-	});
+	const imgBorderClassName = classnames( 'vk_staff_photo', {
+		[ `vk_staff_photo-border-${ vk_staff_photoBorder }` ]: !! vk_staff_photoBorder, // eslint-disable-line camelcase
+	} );
 
 	let staffTextClassName = classnames;
-	if (vk_staff_fontFamily === '1') {
+	if ( vk_staff_fontFamily === '1' ) {
 		staffTextClassName = classnames(
 			'vk_staff_text',
 			staffTextClassName,
 			'vk_staff-headingFont-serif'
 		);
 	} else {
-		staffTextClassName = classnames('vk_staff_text', staffTextClassName);
+		staffTextClassName = classnames( 'vk_staff_text', staffTextClassName );
 	}
 
 	let staffNameColorInlineStyle = {};
 	let staffTextNameClassName = '';
-	if (vk_staff_nameColor !== undefined) {
+	if ( vk_staff_nameColor !== undefined ) {
 		staffTextNameClassName += ` has-text-color`;
-		if (isHexColor(vk_staff_nameColor)) {
-			staffNameColorInlineStyle = { color: `${vk_staff_nameColor}` };
+		if ( isHexColor( vk_staff_nameColor ) ) {
+			staffNameColorInlineStyle = { color: `${ vk_staff_nameColor }` };
 		} else {
-			staffTextNameClassName += ` has-${vk_staff_nameColor}-color`;
+			staffTextNameClassName += ` has-${ vk_staff_nameColor }-color`;
 		}
 	}
 
 	let staffCaptionColorInlineStyle = {};
 	let staffCaptionClassName = '';
-	if (vk_staff_captionColor !== undefined) {
+	if ( vk_staff_captionColor !== undefined ) {
 		staffCaptionClassName += ` has-text-color`;
-		if (isHexColor(vk_staff_captionColor)) {
+		if ( isHexColor( vk_staff_captionColor ) ) {
 			staffCaptionColorInlineStyle = {
-				color: `${vk_staff_captionColor}`,
+				color: `${ vk_staff_captionColor }`,
 			};
 		} else {
-			staffCaptionClassName += ` has-${vk_staff_captionColor}-color`;
+			staffCaptionClassName += ` has-${ vk_staff_captionColor }-color`;
 		}
 	}
 
 	let staffPositionColorInlineStyle = {};
 	let staffPositionClassName = '';
-	if (vk_staff_positionColor !== undefined) {
+	if ( vk_staff_positionColor !== undefined ) {
 		staffPositionClassName += ` has-text-color`;
-		if (isHexColor(vk_staff_positionColor)) {
+		if ( isHexColor( vk_staff_positionColor ) ) {
 			staffPositionColorInlineStyle = {
-				color: `${vk_staff_positionColor}`,
+				color: `${ vk_staff_positionColor }`,
 			};
 		} else {
-			staffPositionClassName += ` has-${vk_staff_positionColor}-color`;
+			staffPositionClassName += ` has-${ vk_staff_positionColor }-color`;
 		}
 	}
 
 	let staffProfileTitleColorInlineStyle = {};
 	let staffProfileTitleClassName = '';
-	if (vk_staff_profileTitleColor !== undefined) {
+	if ( vk_staff_profileTitleColor !== undefined ) {
 		staffProfileTitleClassName += ` has-text-color`;
-		if (isHexColor(vk_staff_profileTitleColor)) {
+		if ( isHexColor( vk_staff_profileTitleColor ) ) {
 			staffProfileTitleColorInlineStyle = {
-				color: `${vk_staff_profileTitleColor}`,
+				color: `${ vk_staff_profileTitleColor }`,
 			};
 		} else {
-			staffProfileTitleClassName += ` has-${vk_staff_profileTitleColor}-color`;
+			staffProfileTitleClassName += ` has-${ vk_staff_profileTitleColor }-color`;
 		}
 	}
 
 	let staffProfileTextColorInlineStyle = {};
 	let staffProfileTextClassName = '';
-	if (vk_staff_profileTextColor !== undefined) {
+	if ( vk_staff_profileTextColor !== undefined ) {
 		staffProfileTextClassName += ` has-text-color`;
-		if (isHexColor(vk_staff_profileTextColor)) {
+		if ( isHexColor( vk_staff_profileTextColor ) ) {
 			staffProfileTextColorInlineStyle = {
-				color: `${vk_staff_profileTextColor}`,
+				color: `${ vk_staff_profileTextColor }`,
 			};
 		} else {
-			staffProfileTextClassName += ` has-${vk_staff_profileTextColor}-color`;
+			staffProfileTextClassName += ` has-${ vk_staff_profileTextColor }-color`;
 		}
 	}
 
 	return (
-		<div {...useBlockProps.save({ className: classes })}>
-			<div className={staffTextClassName}>
+		<div { ...useBlockProps.save( { className: classes } ) }>
+			<div className={ staffTextClassName }>
 				<RichText.Content
 					tagName="h3"
-					className={`vk_staff_text_name` + staffTextNameClassName}
-					style={staffNameColorInlineStyle}
-					value={vk_staff_text_name} // eslint-disable-line camelcase
+					className={ `vk_staff_text_name` + staffTextNameClassName }
+					style={ staffNameColorInlineStyle }
+					value={ vk_staff_text_name } // eslint-disable-line camelcase
 				/>
 				<RichText.Content
 					tagName="p"
-					className={`vk_staff_text_caption` + staffCaptionClassName}
-					style={staffCaptionColorInlineStyle}
-					value={vk_staff_text_caption} // eslint-disable-line camelcase
+					className={
+						`vk_staff_text_caption` + staffCaptionClassName
+					}
+					style={ staffCaptionColorInlineStyle }
+					value={ vk_staff_text_caption } // eslint-disable-line camelcase
 				/>
 				<RichText.Content
 					tagName="p"
-					className={`vk_staff_text_role` + staffPositionClassName}
-					style={staffPositionColorInlineStyle}
-					value={vk_staff_text_role} // eslint-disable-line camelcase
+					className={ `vk_staff_text_role` + staffPositionClassName }
+					style={ staffPositionColorInlineStyle }
+					value={ vk_staff_text_role } // eslint-disable-line camelcase
 				/>
 				<RichText.Content
 					tagName="h4"
@@ -141,27 +142,27 @@ export default function save({ attributes, className }) {
 						`vk_staff_text_profileTitle` +
 						staffProfileTitleClassName
 					}
-					style={staffProfileTitleColorInlineStyle}
-					value={vk_staff_text_profileTitle} // eslint-disable-line camelcase
+					style={ staffProfileTitleColorInlineStyle }
+					value={ vk_staff_text_profileTitle } // eslint-disable-line camelcase
 				/>
 				<RichText.Content
 					tagName="p"
 					className={
 						'vk_staff_text_profileText' + staffProfileTextClassName
 					}
-					style={staffProfileTextColorInlineStyle}
-					value={vk_staff_text_profileText} // eslint-disable-line camelcase
+					style={ staffProfileTextColorInlineStyle }
+					value={ vk_staff_text_profileText } // eslint-disable-line camelcase
 				/>
 			</div>
-			{vk_staff_photo_image && ( // eslint-disable-line camelcase
-				<div className={imgBorderClassName}>
+			{ vk_staff_photo_image && ( // eslint-disable-line camelcase
+				<div className={ imgBorderClassName }>
 					<img
-						className={`vk_staff_photo_image`}
-						src={vk_staff_photo_image} // eslint-disable-line camelcase
-						alt={vk_staff_photo_image_alt} // eslint-disable-line camelcase
+						className={ `vk_staff_photo_image` }
+						src={ vk_staff_photo_image } // eslint-disable-line camelcase
+						alt={ vk_staff_photo_image_alt } // eslint-disable-line camelcase
 					/>
 				</div>
-			)}
+			) }
 		</div>
 	);
 }

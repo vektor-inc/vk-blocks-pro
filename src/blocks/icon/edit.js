@@ -22,7 +22,7 @@ import { useEffect } from '@wordpress/element';
 
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 
-export default function IconEdit(props) {
+export default function IconEdit( props ) {
 	const { attributes, setAttributes, clientId } = props;
 	let {
 		faIcon,
@@ -41,24 +41,23 @@ export default function IconEdit(props) {
 	/**
 	 * 親ブロックが vk-blocks/icon-outer かどうか判定
 	 */
-	const parent = select('core/block-editor').getBlockParentsByBlockName(
-		clientId,
-		['vk-blocks/icon-outer']
-	);
+	const parent = select(
+		'core/block-editor'
+	).getBlockParentsByBlockName( clientId, [ 'vk-blocks/icon-outer' ] );
 
 	/**
 	 * 親ブロックが vk-blocks/icon-outer でなければ設定項目を追加
 	 */
 	let commonBlockControl = '';
-	if (!parent.length) {
+	if ( ! parent.length ) {
 		commonBlockControl = (
 			<BlockControls group="block">
 				<BlockAlignmentControl
-					value={iconAlign}
-					onChange={(value) => {
-						setAttributes({ iconAlign: value });
-					}}
-					controls={['left', 'center', 'right']}
+					value={ iconAlign }
+					onChange={ ( value ) => {
+						setAttributes( { iconAlign: value } );
+					} }
+					controls={ [ 'left', 'center', 'right' ] }
 				/>
 			</BlockControls>
 		);
@@ -68,208 +67,213 @@ export default function IconEdit(props) {
 	 * 親ブロックが vk-blocks/icon-outer でなければ設定項目を追加
 	 */
 	let commonInspectorControls = '';
-	if (!parent.length) {
+	if ( ! parent.length ) {
 		commonInspectorControls = (
 			<>
-				<p className={`mt-0 mb-2`}>{__('Size', 'vk-blocks')}</p>
+				<p className={ `mt-0 mb-2` }>{ __( 'Size', 'vk-blocks' ) }</p>
 				<div className="vk_icon_custombox">
 					<TextControl
-						className={`vk_icon_custombox_number`}
-						value={iconSize}
-						onChange={(value) =>
-							setAttributes({ iconSize: parseInt(value) })
+						className={ `vk_icon_custombox_number` }
+						value={ iconSize }
+						onChange={ ( value ) =>
+							setAttributes( { iconSize: parseInt( value ) } )
 						}
-						type={'number'}
+						type={ 'number' }
 					/>
 					<SelectControl
-						className={`vk_icon_custombox_unit`}
-						value={iconSizeUnit}
-						onChange={(value) => {
-							setAttributes({ iconSizeUnit: value });
-						}}
-						options={[
+						className={ `vk_icon_custombox_unit` }
+						value={ iconSizeUnit }
+						onChange={ ( value ) => {
+							setAttributes( { iconSizeUnit: value } );
+						} }
+						options={ [
 							{
 								value: 'px',
-								label: __('px', 'vk-blocks'),
+								label: __( 'px', 'vk-blocks' ),
 							},
 							{
 								value: 'em',
-								label: __('em', 'vk-blocks'),
+								label: __( 'em', 'vk-blocks' ),
 							},
 							{
 								value: 'rem',
-								label: __('rem', 'vk-blocks'),
+								label: __( 'rem', 'vk-blocks' ),
 							},
 							{
 								value: 'vw',
-								label: __('vw', 'vk-blocks'),
+								label: __( 'vw', 'vk-blocks' ),
 							},
-						]}
+						] }
 					/>
 					<Button
 						className="vk_icon_custombox_reset"
 						isSmall
 						isSecondary
-						onClick={() => {
-							setAttributes({ iconSize: 36 });
-							setAttributes({ iconSizeUnit: 'px' });
-						}}
+						onClick={ () => {
+							setAttributes( { iconSize: 36 } );
+							setAttributes( { iconSizeUnit: 'px' } );
+						} }
 					>
-						{__('Reset')}
+						{ __( 'Reset' ) }
 					</Button>
 				</div>
-				<p className={`mt-0 mb-2`}>{__('Margin', 'vk-blocks')}</p>
+				<p className={ `mt-0 mb-2` }>{ __( 'Margin', 'vk-blocks' ) }</p>
 				<div className="vk_icon_custombox">
 					<TextControl
-						className={`vk_icon_custombox_number`}
-						value={iconMargin}
-						onChange={(value) =>
-							setAttributes({ iconMargin: parseInt(value) })
+						className={ `vk_icon_custombox_number` }
+						value={ iconMargin }
+						onChange={ ( value ) =>
+							setAttributes( { iconMargin: parseInt( value ) } )
 						}
-						type={'number'}
+						type={ 'number' }
 					/>
 					<SelectControl
-						className={`vk_icon_custombox_unit`}
-						value={iconMarginUnit}
-						onChange={(value) => {
-							setAttributes({ iconMarginUnit: value });
-						}}
-						options={[
+						className={ `vk_icon_custombox_unit` }
+						value={ iconMarginUnit }
+						onChange={ ( value ) => {
+							setAttributes( { iconMarginUnit: value } );
+						} }
+						options={ [
 							{
 								value: 'px',
-								label: __('px', 'vk-blocks'),
+								label: __( 'px', 'vk-blocks' ),
 							},
 							{
 								value: 'em',
-								label: __('em', 'vk-blocks'),
+								label: __( 'em', 'vk-blocks' ),
 							},
 							{
 								value: 'rem',
-								label: __('rem', 'vk-blocks'),
+								label: __( 'rem', 'vk-blocks' ),
 							},
 							{
 								value: 'vw',
-								label: __('vw', 'vk-blocks'),
+								label: __( 'vw', 'vk-blocks' ),
 							},
-						]}
+						] }
 					/>
 					<Button
 						className="vk_icon_custombox_reset"
 						isSmall
 						isSecondary
-						onClick={() => {
-							setAttributes({ iconMargin: 22 });
-							setAttributes({ iconMarginUnit: 'px' });
-						}}
+						onClick={ () => {
+							setAttributes( { iconMargin: 22 } );
+							setAttributes( { iconMarginUnit: 'px' } );
+						} }
 					>
-						{__('Reset')}
+						{ __( 'Reset' ) }
 					</Button>
 				</div>
 				<BaseControl
-					label={__('Border radius', 'vk-blocks')}
-					id={`vk_icon-radius`}
+					label={ __( 'Border radius', 'vk-blocks' ) }
+					id={ `vk_icon-radius` }
 				>
 					<RangeControl
-						value={iconRadius}
-						onChange={(value) =>
-							setAttributes({
+						value={ iconRadius }
+						onChange={ ( value ) =>
+							setAttributes( {
 								iconRadius: value !== undefined ? value : 50,
-							})
+							} )
 						}
-						min={0}
-						max={50}
-						allowReset={true}
+						min={ 0 }
+						max={ 50 }
+						allowReset={ true }
 					/>
 				</BaseControl>
-				<p className={`mt-0 mb-2`}>{__('Style', 'vk-blocks')}</p>
-				<ButtonGroup className={`mb-3`}>
+				<p className={ `mt-0 mb-2` }>{ __( 'Style', 'vk-blocks' ) }</p>
+				<ButtonGroup className={ `mb-3` }>
 					<Button
 						isSmall
-						isPrimary={iconType === '0'}
-						isSecondary={iconType !== '0'}
-						onClick={() => setAttributes({ iconType: '0' })}
+						isPrimary={ iconType === '0' }
+						isSecondary={ iconType !== '0' }
+						onClick={ () => setAttributes( { iconType: '0' } ) }
 					>
-						{__('Solid color', 'vk-blocks')}
+						{ __( 'Solid color', 'vk-blocks' ) }
 					</Button>
 					<Button
 						isSmall
-						isPrimary={iconType === '1'}
-						isSecondary={iconType !== '1'}
-						onClick={() => setAttributes({ iconType: '1' })}
+						isPrimary={ iconType === '1' }
+						isSecondary={ iconType !== '1' }
+						onClick={ () => setAttributes( { iconType: '1' } ) }
 					>
-						{__('Icon & Frame', 'vk-blocks')}
+						{ __( 'Icon & Frame', 'vk-blocks' ) }
 					</Button>
 					<Button
 						isSmall
-						isPrimary={iconType === '2'}
-						isSecondary={iconType !== '2'}
-						onClick={() => setAttributes({ iconType: '2' })}
+						isPrimary={ iconType === '2' }
+						isSecondary={ iconType !== '2' }
+						onClick={ () => setAttributes( { iconType: '2' } ) }
 					>
-						{__('Icon only', 'vk-blocks')}
+						{ __( 'Icon only', 'vk-blocks' ) }
 					</Button>
 				</ButtonGroup>
 			</>
 		);
 	}
 
-	if (faIcon && !faIcon.match(/<i/)) {
-		faIcon = `<i class="${faIcon}"></i>`;
+	if ( faIcon && ! faIcon.match( /<i/ ) ) {
+		faIcon = `<i class="${ faIcon }"></i>`;
 	}
 
 	// コンソールエラー回避のため useEffect を使用（実行タイミングの問題）
-	useEffect(() => {
+	useEffect( () => {
 		// containerClass 互換設定
-		if (iconColor === 'undefined') {
-			setAttributes({ iconColor: undefined });
+		if ( iconColor === 'undefined' ) {
+			setAttributes( { iconColor: undefined } );
 		}
-	}, [clientId]);
+	}, [ clientId ] );
 
-	const blockProps = useBlockProps({
+	const blockProps = useBlockProps( {
 		className: `vk_icon`,
-	});
+	} );
 
 	return (
 		<>
-			{commonBlockControl}
+			{ commonBlockControl }
 			<InspectorControls>
-				<PanelBody title={__('Icon Setting', 'vk-blocks')}>
+				<PanelBody title={ __( 'Icon Setting', 'vk-blocks' ) }>
 					<BaseControl
-						label={__('Icon ( Font Awesome )', 'vk-blocks')}
-						id={`vk_icon-font`}
+						label={ __( 'Icon ( Font Awesome )', 'vk-blocks' ) }
+						id={ `vk_icon-font` }
 					>
-						<FontAwesome attributeName={'faIcon'} {...props} />
+						<FontAwesome attributeName={ 'faIcon' } { ...props } />
 					</BaseControl>
-					{commonInspectorControls}
+					{ commonInspectorControls }
 					<TextControl
-						label={__('Link URL', 'vk-blocks')}
-						value={iconUrl}
-						onChange={(value) => setAttributes({ iconUrl: value })}
+						label={ __( 'Link URL', 'vk-blocks' ) }
+						value={ iconUrl }
+						onChange={ ( value ) =>
+							setAttributes( { iconUrl: value } )
+						}
 					/>
 					<CheckboxControl
-						label={__('Open link new tab.', 'vk-blocks')}
-						checked={iconTarget}
-						onChange={(checked) => {
-							setAttributes({ iconTarget: checked });
-						}}
+						label={ __( 'Open link new tab.', 'vk-blocks' ) }
+						checked={ iconTarget }
+						onChange={ ( checked ) => {
+							setAttributes( { iconTarget: checked } );
+						} }
 					/>
 				</PanelBody>
-				<PanelBody title={__('Color', 'vk-blocks')}>
+				<PanelBody title={ __( 'Color', 'vk-blocks' ) }>
 					<BaseControl>
-						<AdvancedColorPalette schema={'iconColor'} {...props} />
+						<AdvancedColorPalette
+							schema={ 'iconColor' }
+							{ ...props }
+						/>
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>
-			<div {...blockProps}>
+			<div { ...blockProps }>
 				<VKBIcon
-					lbFontAwesomeIcon={faIcon}
-					lbSize={iconSize}
-					lbSizeUnit={iconSizeUnit}
-					lbMargin={iconMargin}
-					lbMarginUnit={iconMarginUnit}
-					lbRadius={iconRadius}
-					lbAlign={iconAlign}
-					lbType={iconType}
-					lbColor={iconColor}
+					lbFontAwesomeIcon={ faIcon }
+					lbSize={ iconSize }
+					lbSizeUnit={ iconSizeUnit }
+					lbMargin={ iconMargin }
+					lbMarginUnit={ iconMarginUnit }
+					lbRadius={ iconRadius }
+					lbAlign={ iconAlign }
+					lbType={ iconType }
+					lbColor={ iconColor }
 				/>
 			</div>
 		</>

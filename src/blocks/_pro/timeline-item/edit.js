@@ -13,7 +13,7 @@ import {
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 
-export default function TimelineItemEdit(props) {
+export default function TimelineItemEdit( props ) {
 	const { attributes, setAttributes } = props;
 	const { label, color, style, styleLine } = attributes;
 
@@ -22,100 +22,102 @@ export default function TimelineItemEdit(props) {
 	let styleClass = '';
 	let inlineStyle = {};
 	let styleLineClass = '';
-	const TEMPLATE = [['core/heading', { level: 4 }]];
+	const TEMPLATE = [ [ 'core/heading', { level: 4 } ] ];
 
-	if (style === 'solid') {
+	if ( style === 'solid' ) {
 		styleClass = ' vk_timeline_item_style-default';
-		if (color !== undefined) {
+		if ( color !== undefined ) {
 			styleClass += ` has-background`;
-			if (isHexColor(color)) {
-				inlineStyle = { backgroundColor: `${color}` };
+			if ( isHexColor( color ) ) {
+				inlineStyle = { backgroundColor: `${ color }` };
 			} else {
-				styleClass += ` has-${color}-background-color`;
+				styleClass += ` has-${ color }-background-color`;
 			}
 		}
-	} else if (style === 'outlined') {
+	} else if ( style === 'outlined' ) {
 		styleClass = ' vk_timeline_item_style-outlined';
-		if (color !== undefined) {
+		if ( color !== undefined ) {
 			styleClass += ` has-text-color`;
-			if (isHexColor(color)) {
-				inlineStyle = { color: `${color}` };
+			if ( isHexColor( color ) ) {
+				inlineStyle = { color: `${ color }` };
 			} else {
-				styleClass += ` has-${color}-color`;
+				styleClass += ` has-${ color }-color`;
 			}
 		}
 	}
 
-	if (styleLine === 'default') {
+	if ( styleLine === 'default' ) {
 		styleLineClass = ' vk_timeline_item_lineStyle-default';
-	} else if (styleLine === 'none') {
+	} else if ( styleLine === 'none' ) {
 		styleLineClass = ' vk_timeline_item_lineStyle-none';
 	}
 
-	const blockProps = useBlockProps({
+	const blockProps = useBlockProps( {
 		className: containerClass + styleLineClass,
-	});
+	} );
 
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('label', 'vk-blocks')}>
+				<PanelBody title={ __( 'label', 'vk-blocks' ) }>
 					<TextControl
-						value={label}
-						onChange={(value) => setAttributes({ label: value })}
-						placeholder={__('Ex,6:00AM', 'vk-blocks')}
+						value={ label }
+						onChange={ ( value ) =>
+							setAttributes( { label: value } )
+						}
+						placeholder={ __( 'Ex,6:00AM', 'vk-blocks' ) }
 					/>
 				</PanelBody>
-				<PanelBody title={__('Color', 'vk-blocks')}>
-					<AdvancedColorPalette schema={'color'} {...props} />
+				<PanelBody title={ __( 'Color', 'vk-blocks' ) }>
+					<AdvancedColorPalette schema={ 'color' } { ...props } />
 				</PanelBody>
-				<PanelBody title={__('Style', 'vk-blocks')}>
+				<PanelBody title={ __( 'Style', 'vk-blocks' ) }>
 					<BaseControl id="style-dot" label="Dot Style">
 						<SelectControl
-							value={style}
-							onChange={(value) =>
-								setAttributes({ style: value })
+							value={ style }
+							onChange={ ( value ) =>
+								setAttributes( { style: value } )
 							}
-							options={[
+							options={ [
 								{
 									value: 'outlined',
-									label: __('Outlined', 'vk-blocks'),
+									label: __( 'Outlined', 'vk-blocks' ),
 								},
 								{
 									value: 'solid',
-									label: __('Solid', 'vk-blocks'),
+									label: __( 'Solid', 'vk-blocks' ),
 								},
-							]}
+							] }
 						/>
 					</BaseControl>
 					<BaseControl id="style-line" label="Line Style">
 						<SelectControl
-							value={styleLine}
-							onChange={(value) =>
-								setAttributes({ styleLine: value })
+							value={ styleLine }
+							onChange={ ( value ) =>
+								setAttributes( { styleLine: value } )
 							}
-							options={[
+							options={ [
 								{
 									value: 'default',
-									label: __('Default', 'vk-blocks'),
+									label: __( 'Default', 'vk-blocks' ),
 								},
 								{
 									value: 'none',
-									label: __('None', 'vk-blocks'),
+									label: __( 'None', 'vk-blocks' ),
 								},
-							]}
+							] }
 						/>
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>
-			<div {...blockProps}>
-				<div className={'vk_timeline_item_caption'}>{label}</div>
-				<div className={'vk_timeline_item_contentnpm'}>
-					<InnerBlocks template={TEMPLATE} />
+			<div { ...blockProps }>
+				<div className={ 'vk_timeline_item_caption' }>{ label }</div>
+				<div className={ 'vk_timeline_item_contentnpm' }>
+					<InnerBlocks template={ TEMPLATE } />
 				</div>
 				<div
-					className={'vk_timeline_item_style' + styleClass}
-					style={inlineStyle}
+					className={ 'vk_timeline_item_style' + styleClass }
+					style={ inlineStyle }
 				/>
 			</div>
 		</>

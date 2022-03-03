@@ -1,23 +1,23 @@
-document.defaultView.addEventListener('load', function () {
+document.defaultView.addEventListener( 'load', function () {
 	//vk_animationクラスのNodeを取得
-	let animationNodeList = document.querySelectorAll('.vk_animation');
+	let animationNodeList = document.querySelectorAll( '.vk_animation' );
 	// 配列に変換。
-	animationNodeList = Array.from(animationNodeList);
+	animationNodeList = Array.from( animationNodeList );
 
-	if (animationNodeList) {
-		for (const index in animationNodeList) {
-			const animationNode = animationNodeList[index];
+	if ( animationNodeList ) {
+		for ( const index in animationNodeList ) {
+			const animationNode = animationNodeList[ index ];
 
 			// 取得した要素が表示された時に、activeクラスを追加
 			// eslint-disable-next-line no-undef
-			const observe = new IntersectionObserver((entries) => {
-				if (entries[0].isIntersecting) {
-					animationNode.classList.add('vk_animation-active');
+			const observe = new IntersectionObserver( ( entries ) => {
+				if ( entries[ 0 ].isIntersecting ) {
+					animationNode.classList.add( 'vk_animation-active' );
 				} else {
-					animationNode.classList.remove('vk_animation-active');
+					animationNode.classList.remove( 'vk_animation-active' );
 				}
-			});
-			observe.observe(animationNode);
+			} );
+			observe.observe( animationNode );
 		}
 	}
-});
+} );

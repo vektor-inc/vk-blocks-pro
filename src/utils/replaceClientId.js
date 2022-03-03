@@ -1,11 +1,11 @@
 /*
  * Return clientId wthiout "-".
  */
-const replaceClientId = (clientId) => {
-	if (!clientId) {
+const replaceClientId = ( clientId ) => {
+	if ( ! clientId ) {
 		return;
 	}
-	return clientId.replace(/-/g, '');
+	return clientId.replace( /-/g, '' );
 };
 
 export default replaceClientId;

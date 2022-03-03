@@ -68,80 +68,80 @@ export const settings = {
 	deprecated,
 };
 
-const generateInlineCss = (attributes) => {
+const generateInlineCss = ( attributes ) => {
 	let { clientId, mobile, tablet, pc, unit } = attributes;
 
 	//For recovering block.
-	if (undefined === unit) {
+	if ( undefined === unit ) {
 		unit = 'px';
 	}
-	if (undefined === mobile) {
+	if ( undefined === mobile ) {
 		mobile = 150;
 	}
-	if (undefined === tablet) {
+	if ( undefined === tablet ) {
 		tablet = 150;
 	}
-	if (undefined === pc) {
+	if ( undefined === pc ) {
 		pc = 150;
 	}
 
-	const cardImgSelector = `.${prefix}${clientId} .vk_card_item .vk_post_imgOuter::before`;
+	const cardImgSelector = `.${ prefix }${ clientId } .vk_card_item .vk_post_imgOuter::before`;
 	return `@media (max-width: 575.98px) {
-		${cardImgSelector}{
-			padding-top:${mobile}${unit}!important;
+		${ cardImgSelector }{
+			padding-top:${ mobile }${ unit }!important;
 		}
 	}
 	@media (min-width: 576px) and (max-width: 991.98px) {
-		${cardImgSelector}{
-			padding-top:${tablet}${unit}!important;
+		${ cardImgSelector }{
+			padding-top:${ tablet }${ unit }!important;
 		}
 	}
 	@media (min-width: 992px) {
-		${cardImgSelector}{
-			padding-top:${pc}${unit}!important;
+		${ cardImgSelector }{
+			padding-top:${ pc }${ unit }!important;
 		}
 	}`;
 };
 
-const VKCardInlineEditorCss = createHigherOrderComponent((BlockEdit) => {
-	return (props) => {
+const VKCardInlineEditorCss = createHigherOrderComponent( ( BlockEdit ) => {
+	return ( props ) => {
 		const { attributes, setAttributes, clientId } = props;
 
-		if ('vk-blocks/card' === props.name) {
-			useEffect(() => {
-				setAttributes({ clientId });
-			}, []);
+		if ( 'vk-blocks/card' === props.name ) {
+			useEffect( () => {
+				setAttributes( { clientId } );
+			}, [] );
 
-			const cssTag = generateInlineCss(attributes);
+			const cssTag = generateInlineCss( attributes );
 
 			return (
 				<>
-					<BlockEdit {...props} />
-					<style type="text/css">{cssTag}</style>
+					<BlockEdit { ...props } />
+					<style type="text/css">{ cssTag }</style>
 				</>
 			);
 		}
-		return <BlockEdit {...props} />;
+		return <BlockEdit { ...props } />;
 	};
-}, 'VKCardInlineEditorCss');
-addFilter('editor.BlockEdit', 'vk-blocks/card', VKCardInlineEditorCss);
+}, 'VKCardInlineEditorCss' );
+addFilter( 'editor.BlockEdit', 'vk-blocks/card', VKCardInlineEditorCss );
 
-const VKCardInlineCss = (el, type, attributes) => {
-	if ('vk-blocks/card' === type.name) {
+const VKCardInlineCss = ( el, type, attributes ) => {
+	if ( 'vk-blocks/card' === type.name ) {
 		//現在実行されている deprecated内の save関数のindexを取得
 		const deprecatedFuncIndex = deprecated.findIndex(
-			(item) => item.save === type.save
+			( item ) => item.save === type.save
 		);
 
 		// 最新版
-		if (-1 === deprecatedFuncIndex) {
+		if ( -1 === deprecatedFuncIndex ) {
 			// NOTE: useBlockProps + style要素を挿入する場合、useBlockPropsを使った要素が最初（上）にこないと、
 			// カスタムクラスを追加する処理が失敗する
-			const cssTag = generateInlineCss(attributes);
+			const cssTag = generateInlineCss( attributes );
 			return (
 				<>
-					{el}
-					<style type="text/css">{cssTag}</style>
+					{ el }
+					<style type="text/css">{ cssTag }</style>
 				</>
 			);
 
@@ -149,13 +149,13 @@ const VKCardInlineCss = (el, type, attributes) => {
 		}
 		let DeprecatedHook;
 		// Deprecated Hooks が Deprecated Save関数より少ない場合にエラーが出ないように。
-		if (deprecatedHooks.length > deprecatedFuncIndex) {
-			DeprecatedHook = deprecatedHooks[deprecatedFuncIndex];
+		if ( deprecatedHooks.length > deprecatedFuncIndex ) {
+			DeprecatedHook = deprecatedHooks[ deprecatedFuncIndex ];
 		} else {
-			DeprecatedHook = deprecatedHooks[deprecatedHooks.length - 1];
+			DeprecatedHook = deprecatedHooks[ deprecatedHooks.length - 1 ];
 		}
-		return <DeprecatedHook el={el} attributes={attributes} />;
+		return <DeprecatedHook el={ el } attributes={ attributes } />;
 	}
 	return el;
 };
-addFilter('blocks.getSaveElement', 'vk-blocks/card', VKCardInlineCss, 11);
+addFilter( 'blocks.getSaveElement', 'vk-blocks/card', VKCardInlineCss, 11 );

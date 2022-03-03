@@ -7,131 +7,137 @@ import {
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 
-export default function AnimationEdit(props) {
+export default function AnimationEdit( props ) {
 	const { attributes, setAttributes, clientId } = props;
 	const { effect, speed, range } = attributes;
 
-	useEffect(() => {
-		if (clientId === undefined || clientId === null || clientId === '') {
-			setAttributes({ clientId });
+	useEffect( () => {
+		if ( clientId === undefined || clientId === null || clientId === '' ) {
+			setAttributes( { clientId } );
 		}
-		if (effect === undefined || effect === null || effect === '') {
-			setAttributes({ effect: 'slide-up' });
-		}
-
-		if (speed === undefined || speed === null || speed === '') {
-			setAttributes({ speed: 'fast' });
+		if ( effect === undefined || effect === null || effect === '' ) {
+			setAttributes( { effect: 'slide-up' } );
 		}
 
-		if (range === undefined || range === null || range === '') {
-			setAttributes({ range: 'short' });
+		if ( speed === undefined || speed === null || speed === '' ) {
+			setAttributes( { speed: 'fast' } );
 		}
-	}, [clientId]);
 
-	const blockProps = useBlockProps({
-		className: `vk_animation vk_animation-${effect} vk_animation-speed-${speed} vk_animation-range-${range} vk_animation-${clientId}`,
-	});
+		if ( range === undefined || range === null || range === '' ) {
+			setAttributes( { range: 'short' } );
+		}
+	}, [ clientId ] );
+
+	const blockProps = useBlockProps( {
+		className: `vk_animation vk_animation-${ effect } vk_animation-speed-${ speed } vk_animation-range-${ range } vk_animation-${ clientId }`,
+	} );
 
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Animation Settings', 'vk-blocks')}>
-					{__('Animation effect', 'vk-blocks')}
+				<PanelBody title={ __( 'Animation Settings', 'vk-blocks' ) }>
+					{ __( 'Animation effect', 'vk-blocks' ) }
 					<SelectControl
-						value={effect}
-						onChange={(value) => setAttributes({ effect: value })}
-						options={[
+						value={ effect }
+						onChange={ ( value ) =>
+							setAttributes( { effect: value } )
+						}
+						options={ [
 							{
-								label: __('Fade In', 'vk-blocks'),
+								label: __( 'Fade In', 'vk-blocks' ),
 								value: 'fade-in',
 							},
 							{
-								label: __('Slide Up', 'vk-blocks'),
+								label: __( 'Slide Up', 'vk-blocks' ),
 								value: 'slide-up',
 							},
 							{
-								label: __('Slide Left', 'vk-blocks'),
+								label: __( 'Slide Left', 'vk-blocks' ),
 								value: 'slide-left',
 							},
 							{
-								label: __('Slide Right', 'vk-blocks'),
+								label: __( 'Slide Right', 'vk-blocks' ),
 								value: 'slide-right',
 							},
 							{
-								label: __('Left Right', 'vk-blocks'),
+								label: __( 'Left Right', 'vk-blocks' ),
 								value: 'left-right',
 							},
 							{
-								label: __('Up Down', 'vk-blocks'),
+								label: __( 'Up Down', 'vk-blocks' ),
 								value: 'up-down',
 							},
 							{
-								label: __('Trembling Y', 'vk-blocks'),
+								label: __( 'Trembling Y', 'vk-blocks' ),
 								value: 'trembling-y',
 							},
 							{
-								label: __('Trembling X', 'vk-blocks'),
+								label: __( 'Trembling X', 'vk-blocks' ),
 								value: 'trembling-x',
 							},
 							{
-								label: __('Pounding', 'vk-blocks'),
+								label: __( 'Pounding', 'vk-blocks' ),
 								value: 'pounding',
 							},
 							{
-								label: __('Shaking', 'vk-blocks'),
+								label: __( 'Shaking', 'vk-blocks' ),
 								value: 'shaking',
 							},
-						]}
+						] }
 					/>
-					{__('Animation speed', 'vk-blocks')}
+					{ __( 'Animation speed', 'vk-blocks' ) }
 					<SelectControl
-						value={speed}
-						onChange={(value) => setAttributes({ speed: value })}
-						options={[
+						value={ speed }
+						onChange={ ( value ) =>
+							setAttributes( { speed: value } )
+						}
+						options={ [
 							{
-								label: __('Very Slow', 'vk-blocks'),
+								label: __( 'Very Slow', 'vk-blocks' ),
 								value: 'very-slow',
 							},
 							{
-								label: __('Slow', 'vk-blocks'),
+								label: __( 'Slow', 'vk-blocks' ),
 								value: 'slow',
 							},
 							{
-								label: __('Normal', 'vk-blocks'),
+								label: __( 'Normal', 'vk-blocks' ),
 								value: 'normal',
 							},
 							{
-								label: __('Fast', 'vk-blocks'),
+								label: __( 'Fast', 'vk-blocks' ),
 								value: 'fast',
 							},
 							{
-								label: __('Very Fast', 'vk-blocks'),
+								label: __( 'Very Fast', 'vk-blocks' ),
 								value: 'very-fast',
 							},
-						]}
+						] }
 					/>
-					{__('Animation range', 'vk-blocks')}
+					{ __( 'Animation range', 'vk-blocks' ) }
 					<SelectControl
-						value={range}
-						onChange={(value) => setAttributes({ range: value })}
-						options={[
+						value={ range }
+						onChange={ ( value ) =>
+							setAttributes( { range: value } )
+						}
+						options={ [
 							{
-								label: __('Short', 'vk-blocks'),
+								label: __( 'Short', 'vk-blocks' ),
 								value: 'short',
 							},
 							{
-								label: __('Normal', 'vk-blocks'),
+								label: __( 'Normal', 'vk-blocks' ),
 								value: 'normal',
 							},
 							{
-								label: __('Long', 'vk-blocks'),
+								label: __( 'Long', 'vk-blocks' ),
 								value: 'long',
 							},
-						]}
+						] }
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<div {...blockProps}>
+			<div { ...blockProps }>
 				<InnerBlocks />
 			</div>
 		</>

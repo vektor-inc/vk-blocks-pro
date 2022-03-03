@@ -10,20 +10,20 @@ import { select, dispatch } from '@wordpress/data';
 import { PanelBody, RangeControl } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 
-export default function GridColumnEdit(props) {
+export default function GridColumnEdit( props ) {
 	const { attributes, clientId } = props;
 
-	const { getBlocksByClientId } = select('core/block-editor');
-	const { updateBlockAttributes } = dispatch('core/block-editor');
+	const { getBlocksByClientId } = select( 'core/block-editor' );
+	const { updateBlockAttributes } = dispatch( 'core/block-editor' );
 
-	const thisBlock = getBlocksByClientId(clientId);
+	const thisBlock = getBlocksByClientId( clientId );
 
-	useEffect(() => {
-		if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
-			const thisInnerBlocks = thisBlock[0].innerBlocks;
+	useEffect( () => {
+		if ( thisBlock && thisBlock[ 0 ] && thisBlock[ 0 ].innerBlocks ) {
+			const thisInnerBlocks = thisBlock[ 0 ].innerBlocks;
 
-			thisInnerBlocks.forEach(function (thisInnerBlock) {
-				updateBlockAttributes(thisInnerBlock.clientId, {
+			thisInnerBlocks.forEach( function ( thisInnerBlock ) {
+				updateBlockAttributes( thisInnerBlock.clientId, {
 					name: attributes.name,
 					layout: attributes.layout,
 					col_xs: attributes.col_xs,
@@ -34,53 +34,53 @@ export default function GridColumnEdit(props) {
 					col_xxl: attributes.col_xxl,
 					marginBottom: attributes.marginBottom,
 					unit: attributes.unit,
-				});
-			});
+				} );
+			} );
 		}
-	}, [thisBlock, attributes]);
+	}, [ thisBlock, attributes ] );
 
-	const ALLOWED_BLOCKS = ['vk-blocks/grid-column-item'];
-	const TEMPLATE = [['vk-blocks/grid-column-item']];
-	const blockProps = useBlockProps({
+	const ALLOWED_BLOCKS = [ 'vk-blocks/grid-column-item' ];
+	const TEMPLATE = [ [ 'vk-blocks/grid-column-item' ] ];
+	const blockProps = useBlockProps( {
 		className: `vk_gridColumn`,
-	});
+	} );
 	const marginBottom = attributes.marginBottom;
 
 	return (
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={__('Layout Columns', 'vk-blocks')}
-					initialOpen={false}
+					title={ __( 'Layout Columns', 'vk-blocks' ) }
+					initialOpen={ false }
 				>
-					<ColumnLayout {...props} />
+					<ColumnLayout { ...props } />
 				</PanelBody>
 				<PanelBody
-					title={__('Column Margin Bottom Setting', 'vk-blocks')}
-					initialOpen={false}
+					title={ __( 'Column Margin Bottom Setting', 'vk-blocks' ) }
+					initialOpen={ false }
 				>
 					<RangeControl
-						label={__('Margin Bottom', 'vk-blocks')}
-						value={marginBottom}
-						onChange={(value) => {
-							props.setAttributes({ marginBottom: value });
-							if (undefined === value) {
-								props.setAttributes({ unit: 'px' });
+						label={ __( 'Margin Bottom', 'vk-blocks' ) }
+						value={ marginBottom }
+						onChange={ ( value ) => {
+							props.setAttributes( { marginBottom: value } );
+							if ( undefined === value ) {
+								props.setAttributes( { unit: 'px' } );
 							}
-						}}
-						min={0}
-						max={100}
-						allowReset={true}
-						resetFallbackValue={null}
+						} }
+						min={ 0 }
+						max={ 100 }
+						allowReset={ true }
+						resetFallbackValue={ null }
 					/>
-					<AdvancedUnitControl {...props} />
+					<AdvancedUnitControl { ...props } />
 				</PanelBody>
 			</InspectorControls>
-			<div {...blockProps}>
+			<div { ...blockProps }>
 				<InnerBlocks
 					//編集画面の追加タグ用に2回目のClassを挿入
-					template={TEMPLATE}
-					allowedBlocks={ALLOWED_BLOCKS}
+					template={ TEMPLATE }
+					allowedBlocks={ ALLOWED_BLOCKS }
 					orientation="horizontal"
 				/>
 			</div>

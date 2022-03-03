@@ -16,7 +16,7 @@ const prefix = 'vkb-outer';
  */
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
-export default function save(props) {
+export default function save( props ) {
 	const { attributes } = props;
 	const {
 		bgColor,
@@ -47,43 +47,43 @@ export default function save(props) {
 	let whichSideLower;
 
 	const opacityClass = opacity && opacity * 10;
-	const bgColorClasses = classnames({
-		[`has-background`]: bgColor !== undefined,
-		[`has-${bgColor}-background-color`]:
-			bgColor !== undefined && !isHexColor(bgColor),
-		[`has-background-dim`]: opacity !== undefined,
-		[`has-background-dim-${opacityClass}`]: opacityClass !== undefined,
-	});
+	const bgColorClasses = classnames( {
+		[ `has-background` ]: bgColor !== undefined,
+		[ `has-${ bgColor }-background-color` ]:
+			bgColor !== undefined && ! isHexColor( bgColor ),
+		[ `has-background-dim` ]: opacity !== undefined,
+		[ `has-background-dim-${ opacityClass }` ]: opacityClass !== undefined,
+	} );
 
 	const bgColorStyles = {
-		backgroundColor: isHexColor(bgColor) && bgColor ? bgColor : undefined,
+		backgroundColor: isHexColor( bgColor ) && bgColor ? bgColor : undefined,
 	};
 
 	const GetBgImage = (
 		<>
-			{(bgImage || bgImageTablet || bgImageMobile) && (
+			{ ( bgImage || bgImageTablet || bgImageMobile ) && (
 				<GenerateBgImage
-					prefix={prefix}
-					clientId={clientId}
-					{...props}
+					prefix={ prefix }
+					clientId={ clientId }
+					{ ...props }
 				/>
-			)}
+			) }
 			<span
-				className={`vk_outer-background-area ${bgColorClasses}`}
-				style={bgColorStyles}
+				className={ `vk_outer-background-area ${ bgColorClasses }` }
+				style={ bgColorStyles }
 			></span>
 		</>
 	);
 
 	//幅のクラス切り替え
-	const classWidth = `vk_outer-width-${outerWidth}`;
+	const classWidth = `vk_outer-width-${ outerWidth }`;
 
 	//classBgPositionのクラス切り替え
-	if (bgPosition === 'parallax') {
+	if ( bgPosition === 'parallax' ) {
 		classBgPosition = 'vk_outer-bgPosition-parallax vk-prlx';
-	} else if (bgPosition === 'fixed') {
+	} else if ( bgPosition === 'fixed' ) {
 		classBgPosition = 'vk_outer-bgPosition-fixed';
-	} else if (bgPosition === 'repeat') {
+	} else if ( bgPosition === 'repeat' ) {
 		classBgPosition = 'vk_outer-bgPosition-repeat';
 	} else {
 		classBgPosition = 'vk_outer-bgPosition-normal';
@@ -92,20 +92,20 @@ export default function save(props) {
 	//classPaddingLRのクラス切り替え
 	classPaddingLR = '';
 	//eslint-disable-next-line camelcase
-	if (padding_left_and_right === '0') {
+	if ( padding_left_and_right === '0' ) {
 		classPaddingLR = 'vk_outer-paddingLR-none';
 		//eslint-disable-next-line camelcase
-	} else if (padding_left_and_right === '1') {
+	} else if ( padding_left_and_right === '1' ) {
 		classPaddingLR = 'vk_outer-paddingLR-use';
 		//eslint-disable-next-line camelcase
-	} else if (padding_left_and_right === '2') {
+	} else if ( padding_left_and_right === '2' ) {
 		// Fit to content area width
 		classPaddingLR = 'vk_outer-paddingLR-zero';
 	}
 
 	//classPaddingVerticalのクラス切り替
 	//eslint-disable-next-line camelcase
-	if (padding_top_and_bottom === '1') {
+	if ( padding_top_and_bottom === '1' ) {
 		classPaddingVertical = 'vk_outer-paddingVertical-use';
 	} else {
 		classPaddingVertical = 'vk_outer-paddingVertical-none';
@@ -113,13 +113,13 @@ export default function save(props) {
 
 	//上側セクションの傾き切り替
 	//eslint-disable-next-line camelcase
-	if (upper_level) {
+	if ( upper_level ) {
 		whichSideUpper = 'upper';
 	}
 
 	//下側セクションの傾き切り替
 	//eslint-disable-next-line camelcase
-	if (lower_level) {
+	if ( lower_level ) {
 		whichSideLower = 'lower';
 	}
 
@@ -136,16 +136,16 @@ export default function save(props) {
 		borderStyle !== 'none'
 	) {
 		borderStyleProperty = {
-			borderWidth: `${borderWidth}px`,
-			borderStyle: `${borderStyle}`,
+			borderWidth: `${ borderWidth }px`,
+			borderStyle: `${ borderStyle }`,
 			borderColor:
-				isHexColor(borderColor) && borderColor
+				isHexColor( borderColor ) && borderColor
 					? borderColor
 					: undefined,
-			borderRadius: `${borderRadius}px`,
+			borderRadius: `${ borderRadius }px`,
 		};
 		//eslint-disable-next-line camelcase
-	} else if (upper_level !== 0 || lower_level !== 0) {
+	} else if ( upper_level !== 0 || lower_level !== 0 ) {
 		//eslint-disable-line camelcase
 		borderStyleProperty = {
 			border: `none`,
@@ -153,36 +153,36 @@ export default function save(props) {
 		};
 	}
 
-	const blockProps = useBlockProps.save({
+	const blockProps = useBlockProps.save( {
 		className: classnames(
-			`vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
+			`vkb-outer-${ clientId } vk_outer ${ classWidth } ${ classPaddingLR } ${ classPaddingVertical } ${ classBgPosition }`,
 			{
-				[`has-border-color`]: borderColor !== undefined,
-				[`has-${borderColor}-border-color`]:
-					borderColor !== undefined && !isHexColor(borderColor),
+				[ `has-border-color` ]: borderColor !== undefined,
+				[ `has-${ borderColor }-border-color` ]:
+					borderColor !== undefined && ! isHexColor( borderColor ),
 			}
 		),
 		style: borderStyleProperty,
-	});
+	} );
 	return (
-		<div {...blockProps}>
-			{GetBgImage}
+		<div { ...blockProps }>
+			{ GetBgImage }
 			<div>
-				{componentDivider(
+				{ componentDivider(
 					upper_level,
 					upperDividerBgColor,
 					whichSideUpper,
 					dividerType
-				)}
-				<div className={containerClass}>
+				) }
+				<div className={ containerClass }>
 					<InnerBlocks.Content />
 				</div>
-				{componentDivider(
+				{ componentDivider(
 					lower_level,
 					lowerDividerBgColor,
 					whichSideLower,
 					dividerType
-				)}
+				) }
 			</div>
 		</div>
 	);

@@ -12,138 +12,140 @@ import { PanelBody } from '@wordpress/components';
 import { InspectorControls, ColorPalette } from '@wordpress/block-editor';
 import { createHigherOrderComponent } from '@wordpress/compose';
 
-const isValidBlockType = (name) => {
-	const validBlockTypes = ['core/list'];
-	return validBlockTypes.includes(name);
+const isValidBlockType = ( name ) => {
+	const validBlockTypes = [ 'core/list' ];
+	return validBlockTypes.includes( name );
 };
 
-export const addAttribute = (settings) => {
-	if (isValidBlockType(settings.name)) {
-		settings.attributes = assign(settings.attributes, {
+export const addAttribute = ( settings ) => {
+	if ( isValidBlockType( settings.name ) ) {
+		settings.attributes = assign( settings.attributes, {
 			color: {
 				type: 'string',
 			},
-		});
+		} );
 	}
 	return settings;
 };
-addFilter('blocks.registerBlockType', 'vk-blocks/list-style', addAttribute);
+addFilter( 'blocks.registerBlockType', 'vk-blocks/list-style', addAttribute );
 
-export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
+export const addBlockControl = createHigherOrderComponent( ( BlockEdit ) => {
 	let activeColor = '';
 
-	return (props) => {
-		if (isValidBlockType(props.name) && props.isSelected) {
-			if (props.attributes.color) {
+	return ( props ) => {
+		if ( isValidBlockType( props.name ) && props.isSelected ) {
+			if ( props.attributes.color ) {
 				activeColor = props.attributes.color;
 			} else {
 				activeColor = '#fffd6b';
 			}
 			return (
 				<>
-					<BlockEdit {...props} />
+					<BlockEdit { ...props } />
 					<InspectorControls>
 						<PanelBody
-							title={__('List Icon Color', 'vk-blocks')}
-							initialOpen={false}
+							title={ __( 'List Icon Color', 'vk-blocks' ) }
+							initialOpen={ false }
 							className="list-color-controle"
 						>
 							<ColorPalette
-								value={activeColor}
-								disableCustomColors={true}
-								onChange={(newColor) => {
-									let newClassName =
-										convertColorClass(newColor);
+								value={ activeColor }
+								disableCustomColors={ true }
+								onChange={ ( newColor ) => {
+									let newClassName = convertColorClass(
+										newColor
+									);
 
-									if (props.attributes.className) {
+									if ( props.attributes.className ) {
 										let inputClassName =
 											props.attributes.className;
 
-										inputClassName =
-											inputClassName.split(' ');
+										inputClassName = inputClassName.split(
+											' '
+										);
 
-										const filterClassName =
-											inputClassName.filter(function (
-												name
-											) {
+										const filterClassName = inputClassName.filter(
+											function ( name ) {
 												return (
 													-1 ===
-													name.indexOf('vk-has-')
+													name.indexOf( 'vk-has-' )
 												);
-											});
+											}
+										);
 
-										filterClassName.push(newClassName);
+										filterClassName.push( newClassName );
 
-										newClassName =
-											filterClassName.join(' ');
+										newClassName = filterClassName.join(
+											' '
+										);
 									}
 
 									activeColor = newColor;
-									props.setAttributes({
+									props.setAttributes( {
 										className: newClassName,
 										color: newColor,
-									});
-								}}
+									} );
+								} }
 							/>
 						</PanelBody>
 					</InspectorControls>
 				</>
 			);
 		}
-		return <BlockEdit {...props} />;
+		return <BlockEdit { ...props } />;
 	};
-}, 'addMyCustomBlockControls');
+}, 'addMyCustomBlockControls' );
 
-addFilter('editor.BlockEdit', 'vk-blocks/list-style', addBlockControl);
+addFilter( 'editor.BlockEdit', 'vk-blocks/list-style', addBlockControl );
 
-registerBlockStyle('core/list', [
+registerBlockStyle( 'core/list', [
 	{
 		name: 'vk-default',
-		label: __('Default', 'vk-blocks'),
+		label: __( 'Default', 'vk-blocks' ),
 		isDefault: true,
 	},
 	{
 		name: 'vk-arrow-mark',
-		label: __('Arrow', 'vk-blocks'),
+		label: __( 'Arrow', 'vk-blocks' ),
 	},
 	{
 		name: 'vk-triangle-mark',
-		label: __('Triangle', 'vk-blocks'),
+		label: __( 'Triangle', 'vk-blocks' ),
 	},
 	{
 		name: 'vk-check-mark',
-		label: __('Check', 'vk-blocks'),
+		label: __( 'Check', 'vk-blocks' ),
 	},
 	{
 		name: 'vk-check-square-mark',
-		label: __('Check Square', 'vk-blocks'),
+		label: __( 'Check Square', 'vk-blocks' ),
 	},
 	{
 		name: 'vk-check-circle-mark',
-		label: __('Check Circle', 'vk-blocks'),
+		label: __( 'Check Circle', 'vk-blocks' ),
 	},
 	{
 		name: 'vk-handpoint-mark',
-		label: __('Handpoint', 'vk-blocks'),
+		label: __( 'Handpoint', 'vk-blocks' ),
 	},
 	{
 		name: 'vk-pencil-mark',
-		label: __('Pencil', 'vk-blocks'),
+		label: __( 'Pencil', 'vk-blocks' ),
 	},
 	{
 		name: 'vk-smile-mark',
-		label: __('Smile', 'vk-blocks'),
+		label: __( 'Smile', 'vk-blocks' ),
 	},
 	{
 		name: 'vk-frown-mark',
-		label: __('Frown', 'vk-blocks'),
+		label: __( 'Frown', 'vk-blocks' ),
 	},
 	{
 		name: 'vk-numbered-circle-mark',
-		label: __('Numbered Circle', 'vk-blocks'),
+		label: __( 'Numbered Circle', 'vk-blocks' ),
 	},
 	{
 		name: 'vk-numbered-square-mark',
-		label: __('Numbered Square', 'vk-blocks'),
+		label: __( 'Numbered Square', 'vk-blocks' ),
 	},
-]);
+] );

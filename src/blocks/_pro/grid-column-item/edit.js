@@ -14,7 +14,7 @@ import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 
-export default function GridColumnItemEdit(props) {
+export default function GridColumnItemEdit( props ) {
 	const { attributes, setAttributes } = props;
 	// eslint-disable-next-line camelcase
 	const {
@@ -34,27 +34,29 @@ export default function GridColumnItemEdit(props) {
 		paddingUnit,
 	} = attributes;
 	// eslint-disable-next-line camelcase
-	const columnClass = `col-${convertToGrid(col_xs)} col-sm-${convertToGrid(
-		col_sm
-	)} col-md-${convertToGrid(col_md)} col-lg-${convertToGrid(
-		col_lg
-	)} col-xl-${convertToGrid(col_xl)} col-xxl-${convertToGrid(col_xxl)}`;
+	const columnClass = `col-${ convertToGrid(
+		col_xs
+	) } col-sm-${ convertToGrid( col_sm ) } col-md-${ convertToGrid(
+		col_md
+	) } col-lg-${ convertToGrid( col_lg ) } col-xl-${ convertToGrid(
+		col_xl
+	) } col-xxl-${ convertToGrid( col_xxl ) }`;
 	// margin bottom
 	let style;
-	if (marginBottom) {
+	if ( marginBottom ) {
 		style = { marginBottom: marginBottom + unit };
 	}
 	const columStyle = {
 		color:
 			textColor !== null &&
 			textColor !== undefined &&
-			isHexColor(textColor)
+			isHexColor( textColor )
 				? textColor
 				: undefined,
 		background:
 			backgroundColor !== null &&
 			backgroundColor !== undefined &&
-			isHexColor(backgroundColor)
+			isHexColor( backgroundColor )
 				? backgroundColor
 				: undefined,
 		paddingTop:
@@ -76,124 +78,130 @@ export default function GridColumnItemEdit(props) {
 	};
 
 	let vkGridColumnTextColorClassName = '';
-	if (textColor !== undefined) {
+	if ( textColor !== undefined ) {
 		vkGridColumnTextColorClassName += ` has-text-color`;
-		if (!isHexColor(textColor)) {
-			vkGridColumnTextColorClassName += ` has-${textColor}-color`;
+		if ( ! isHexColor( textColor ) ) {
+			vkGridColumnTextColorClassName += ` has-${ textColor }-color`;
 		}
 	}
 
 	let vkGridColumnbackgroundColorColorClassName = '';
-	if (backgroundColor !== undefined) {
+	if ( backgroundColor !== undefined ) {
 		vkGridColumnbackgroundColorColorClassName += ` has-background-color`;
-		if (!isHexColor(backgroundColor)) {
-			vkGridColumnbackgroundColorColorClassName += ` has-${backgroundColor}-background-color`;
+		if ( ! isHexColor( backgroundColor ) ) {
+			vkGridColumnbackgroundColorColorClassName += ` has-${ backgroundColor }-background-color`;
 		}
 	}
 
-	const blockProps = useBlockProps({
-		className: `vk_gridColumn_item ${columnClass}`,
+	const blockProps = useBlockProps( {
+		className: `vk_gridColumn_item ${ columnClass }`,
 		style,
-	});
+	} );
 
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Color Settings', 'vk-blocks')}>
+				<PanelBody title={ __( 'Color Settings', 'vk-blocks' ) }>
 					<BaseControl
-						label={__('Text Color', 'vk-blocks')}
-						id={`vk_grid_column_text_color`}
-					>
-						<AdvancedColorPalette schema={'textColor'} {...props} />
-					</BaseControl>
-					<BaseControl
-						label={__('Background Color', 'vk-blocks')}
-						id={`vk_grid_column_bg_color`}
+						label={ __( 'Text Color', 'vk-blocks' ) }
+						id={ `vk_grid_column_text_color` }
 					>
 						<AdvancedColorPalette
-							schema={'backgroundColor'}
-							{...props}
+							schema={ 'textColor' }
+							{ ...props }
+						/>
+					</BaseControl>
+					<BaseControl
+						label={ __( 'Background Color', 'vk-blocks' ) }
+						id={ `vk_grid_column_bg_color` }
+					>
+						<AdvancedColorPalette
+							schema={ 'backgroundColor' }
+							{ ...props }
 						/>
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
-					title={__('Margin setting inside the item', 'vk-blocks')}
-					initialOpen={false}
+					title={ __(
+						'Margin setting inside the item',
+						'vk-blocks'
+					) }
+					initialOpen={ false }
 				>
 					<RangeControl
-						label={__('Padding (Top)', 'vk-blocks')}
-						value={paddingTop}
-						initialPosition={0}
-						onChange={(value) => {
-							props.setAttributes({ paddingTop: value });
-							if (undefined === value) {
-								props.setAttributes({ paddingUnit: 'px' });
+						label={ __( 'Padding (Top)', 'vk-blocks' ) }
+						value={ paddingTop }
+						initialPosition={ 0 }
+						onChange={ ( value ) => {
+							props.setAttributes( { paddingTop: value } );
+							if ( undefined === value ) {
+								props.setAttributes( { paddingUnit: 'px' } );
 							}
-						}}
-						min={0}
-						max={300}
-						allowReset={true}
-						resetFallbackValue={null}
+						} }
+						min={ 0 }
+						max={ 300 }
+						allowReset={ true }
+						resetFallbackValue={ null }
 					/>
 					<RangeControl
-						label={__('Padding (Left and Right)', 'vk-blocks')}
-						value={paddingX}
-						initialPosition={0}
-						onChange={(value) => {
-							props.setAttributes({ paddingX: value });
-							if (undefined === value) {
-								props.setAttributes({ paddingUnit: 'px' });
+						label={ __( 'Padding (Left and Right)', 'vk-blocks' ) }
+						value={ paddingX }
+						initialPosition={ 0 }
+						onChange={ ( value ) => {
+							props.setAttributes( { paddingX: value } );
+							if ( undefined === value ) {
+								props.setAttributes( { paddingUnit: 'px' } );
 							}
-						}}
-						min={0}
-						max={300}
-						allowReset={true}
-						resetFallbackValue={null}
+						} }
+						min={ 0 }
+						max={ 300 }
+						allowReset={ true }
+						resetFallbackValue={ null }
 					/>
 					<RangeControl
-						label={__('Padding (Bottom)', 'vk-blocks')}
-						value={paddingBottom}
-						initialPosition={0}
-						onChange={(value) => {
-							props.setAttributes({ paddingBottom: value });
-							if (undefined === value) {
-								props.setAttributes({ paddingUnit: 'px' });
+						label={ __( 'Padding (Bottom)', 'vk-blocks' ) }
+						value={ paddingBottom }
+						initialPosition={ 0 }
+						onChange={ ( value ) => {
+							props.setAttributes( { paddingBottom: value } );
+							if ( undefined === value ) {
+								props.setAttributes( { paddingUnit: 'px' } );
 							}
-						}}
-						min={0}
-						max={300}
-						allowReset={true}
-						resetFallbackValue={null}
+						} }
+						min={ 0 }
+						max={ 300 }
+						allowReset={ true }
+						resetFallbackValue={ null }
 					/>
 					<SelectControl
-						label={__('Unit', 'vk-blocks')}
-						value={paddingUnit}
-						onChange={(value) =>
-							setAttributes({ paddingUnit: value })
+						label={ __( 'Unit', 'vk-blocks' ) }
+						value={ paddingUnit }
+						onChange={ ( value ) =>
+							setAttributes( { paddingUnit: value } )
 						}
-						options={[
+						options={ [
 							{
 								value: 'px',
-								label: __('px', 'vk-blocks'),
+								label: __( 'px', 'vk-blocks' ),
 							},
 							{
 								value: 'em',
-								label: __('em', 'vk-blocks'),
+								label: __( 'em', 'vk-blocks' ),
 							},
 							{
 								value: 'rem',
-								label: __('rem', 'vk-blocks'),
+								label: __( 'rem', 'vk-blocks' ),
 							},
 							{
 								value: 'vw',
-								label: __('vw', 'vk-blocks'),
+								label: __( 'vw', 'vk-blocks' ),
 							},
-						]}
+						] }
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<div {...blockProps}>
-				{(() => {
+			<div { ...blockProps }>
+				{ ( () => {
 					if (
 						textColor !== undefined ||
 						backgroundColor !== undefined ||
@@ -204,15 +212,15 @@ export default function GridColumnItemEdit(props) {
 					) {
 						return (
 							<div
-								className={`vk_gridColumn_item_inner ${vkGridColumnTextColorClassName} ${vkGridColumnbackgroundColorColorClassName}`}
-								style={columStyle}
+								className={ `vk_gridColumn_item_inner ${ vkGridColumnTextColorClassName } ${ vkGridColumnbackgroundColorColorClassName }` }
+								style={ columStyle }
 							>
 								<InnerBlocks />
 							</div>
 						);
 					}
 					return <InnerBlocks />;
-				})()}
+				} )() }
 			</div>
 		</>
 	);

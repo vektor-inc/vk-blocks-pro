@@ -4,14 +4,14 @@ import { AlignControl } from '@vkblocks/components/align-control';
 import { capitalize } from '@vkblocks/utils/capitalize';
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
 
-export const CardAlignControls = (props) => {
+export const CardAlignControls = ( props ) => {
 	const { attributes } = props;
-	const schema = JSON.parse(fixBrokenUnicode(attributes.activeControl));
-	const createAlignControl = (label, index) => {
+	const schema = JSON.parse( fixBrokenUnicode( attributes.activeControl ) );
+	const createAlignControl = ( label, index ) => {
 		props = {
 			...props,
 			...{
-				initial: schema[label],
+				initial: schema[ label ],
 			},
 			...{
 				component: label,
@@ -19,19 +19,21 @@ export const CardAlignControls = (props) => {
 		};
 		return (
 			<BaseControl
-				key={index}
-				label={__(capitalize(label), 'vk-blocks')} // eslint-disable-line @wordpress/i18n-no-variables
-				id={'vk_card-align'}
+				key={ index }
+				label={ __( capitalize( label ), 'vk-blocks' ) } // eslint-disable-line @wordpress/i18n-no-variables
+				id={ 'vk_card-align' }
 			>
-				<AlignControl schema={schema} {...props} />
+				<AlignControl schema={ schema } { ...props } />
 			</BaseControl>
 		);
 	};
 
-	const alignControls = ['title', 'text', 'button'].map(createAlignControl);
+	const alignControls = [ 'title', 'text', 'button' ].map(
+		createAlignControl
+	);
 	return (
-		<PanelBody title={__('Align', 'vk-blocks')} initialOpen={false}>
-			{alignControls}
+		<PanelBody title={ __( 'Align', 'vk-blocks' ) } initialOpen={ false }>
+			{ alignControls }
 		</PanelBody>
 	);
 };

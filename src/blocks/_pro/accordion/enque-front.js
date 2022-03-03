@@ -5,54 +5,56 @@ const accordion = document.querySelectorAll(
 let accordionTarget;
 let accordionToggle;
 
-const accordionToggleLoop = (i) => {
+const accordionToggleLoop = ( i ) => {
 	if (
-		accordion[i]
-			.querySelector('.vk_accordion-toggle')
-			.classList.contains('vk_accordion-toggle-open')
+		accordion[ i ]
+			.querySelector( '.vk_accordion-toggle' )
+			.classList.contains( 'vk_accordion-toggle-open' )
 	) {
-		accordion[i]
-			.querySelector('.vk_accordion-target')
-			.classList.add('vk_accordion-target-open');
+		accordion[ i ]
+			.querySelector( '.vk_accordion-target' )
+			.classList.add( 'vk_accordion-target-open' );
 	}
 
 	if (
-		accordion[i]
-			.querySelector('.vk_accordion-toggle')
-			.classList.contains('vk_accordion-toggle-close')
+		accordion[ i ]
+			.querySelector( '.vk_accordion-toggle' )
+			.classList.contains( 'vk_accordion-toggle-close' )
 	) {
-		accordion[i]
-			.querySelector('.vk_accordion-target')
-			.classList.add('vk_accordion-target-close');
+		accordion[ i ]
+			.querySelector( '.vk_accordion-target' )
+			.classList.add( 'vk_accordion-target-close' );
 	}
 
-	accordion[i].querySelector('.vk_accordion-toggle').addEventListener(
+	accordion[ i ].querySelector( '.vk_accordion-toggle' ).addEventListener(
 		'click',
 		() => {
-			accordionToggle = accordion[i].querySelector(
+			accordionToggle = accordion[ i ].querySelector(
 				'.vk_accordion-toggle'
 			);
-			accordionTarget = accordion[i].querySelector(
+			accordionTarget = accordion[ i ].querySelector(
 				'.vk_accordion-target'
 			);
 			if (
-				accordionToggle.classList.contains('vk_accordion-toggle-close')
+				accordionToggle.classList.contains(
+					'vk_accordion-toggle-close'
+				)
 			) {
-				accordionToggle.classList.remove('vk_accordion-toggle-close');
-				accordionToggle.classList.add('vk_accordion-toggle-open');
-				accordionTarget.classList.remove('vk_accordion-target-close');
-				accordionTarget.classList.add('vk_accordion-target-open');
+				accordionToggle.classList.remove( 'vk_accordion-toggle-close' );
+				accordionToggle.classList.add( 'vk_accordion-toggle-open' );
+				accordionTarget.classList.remove( 'vk_accordion-target-close' );
+				accordionTarget.classList.add( 'vk_accordion-target-open' );
 			} else {
-				accordionToggle.classList.remove('vk_accordion-toggle-open');
-				accordionToggle.classList.add('vk_accordion-toggle-close');
-				accordionTarget.classList.remove('vk_accordion-target-open');
-				accordionTarget.classList.add('vk_accordion-target-close');
+				accordionToggle.classList.remove( 'vk_accordion-toggle-open' );
+				accordionToggle.classList.add( 'vk_accordion-toggle-close' );
+				accordionTarget.classList.remove( 'vk_accordion-target-open' );
+				accordionTarget.classList.add( 'vk_accordion-target-close' );
 			}
 		},
 		false
 	);
 };
 
-for (let i = 0; i < accordion.length; i++) {
-	accordionToggleLoop(i);
+for ( let i = 0; i < accordion.length; i++ ) {
+	accordionToggleLoop( i );
 }

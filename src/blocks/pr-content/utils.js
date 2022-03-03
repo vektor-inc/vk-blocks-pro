@@ -1,51 +1,51 @@
-export const getContainerClass = (layout) => {
+export const getContainerClass = ( layout ) => {
 	let layoutClass;
-	if (layout === 'right') {
+	if ( layout === 'right' ) {
 		layoutClass = 'Right';
 	} else {
 		layoutClass = 'Left';
 	}
-	return `vk_prContent vk_prContent-layout-image${layoutClass}`;
+	return `vk_prContent vk_prContent-layout-image${ layoutClass }`;
 };
 
-export const getButtonClass = (buttonColorCustom) => {
+export const getButtonClass = ( buttonColorCustom ) => {
 	let btnClass = 'vk_button';
-	if (buttonColorCustom) {
-		btnClass = `${btnClass} vk_button-color-custom`;
+	if ( buttonColorCustom ) {
+		btnClass = `${ btnClass } vk_button-color-custom`;
 	}
 	return btnClass;
 };
 
-export const getLinkClass = (buttonColor, buttonColorCustom, buttonType) => {
+export const getLinkClass = ( buttonColor, buttonColorCustom, buttonType ) => {
 	let linkClass = 'btn btn-block vk_button_link vk_prContent_colTxt_btn';
 
-	if (buttonColorCustom) {
-		linkClass = `${linkClass} btn-primary`;
+	if ( buttonColorCustom ) {
+		linkClass = `${ linkClass } btn-primary`;
 		// カスタムカラーじゃない場合
-	} else if (!buttonColorCustom) {
+	} else if ( ! buttonColorCustom ) {
 		// 塗り
-		if (buttonType === '0') {
-			linkClass = `${linkClass} btn-${buttonColor}`;
+		if ( buttonType === '0' ) {
+			linkClass = `${ linkClass } btn-${ buttonColor }`;
 			// 塗りなし
-		} else if (buttonType === '1') {
-			linkClass = `${linkClass} btn-outline-${buttonColor}`;
+		} else if ( buttonType === '1' ) {
+			linkClass = `${ linkClass } btn-outline-${ buttonColor }`;
 		}
 	}
 
 	return linkClass;
 };
 
-export const getLinkStyle = (buttonColorCustom, buttonType) => {
+export const getLinkStyle = ( buttonColorCustom, buttonType ) => {
 	let linkStyle = null;
 
 	// 塗り
-	if (buttonType === '0') {
+	if ( buttonType === '0' ) {
 		linkStyle = {
 			backgroundColor: buttonColorCustom,
-			border: `1px solid ${buttonColorCustom}`,
+			border: `1px solid ${ buttonColorCustom }`,
 		};
 		// 塗りなし
-	} else if (buttonType === '1') {
+	} else if ( buttonType === '1' ) {
 		linkStyle = {
 			backgroundColor: 'transparent',
 			border: '1px solid ' + buttonColorCustom,
@@ -56,20 +56,23 @@ export const getLinkStyle = (buttonColorCustom, buttonType) => {
 	return linkStyle;
 };
 
-export const getFontawesomeIcon = (fontAwesomeIconSelector, iconClassName) => {
+export const getFontawesomeIcon = (
+	fontAwesomeIconSelector,
+	iconClassName
+) => {
 	let icon = '';
 	let faIconDatas;
 
 	//過去バージョンをリカバリーした時にiconを正常に表示する
-	if (fontAwesomeIconSelector && !fontAwesomeIconSelector.match(/<i/)) {
-		fontAwesomeIconSelector = `<i class="${fontAwesomeIconSelector}"></i>`;
+	if ( fontAwesomeIconSelector && ! fontAwesomeIconSelector.match( /<i/ ) ) {
+		fontAwesomeIconSelector = `<i class="${ fontAwesomeIconSelector }"></i>`;
 	}
 
-	if (fontAwesomeIconSelector) {
+	if ( fontAwesomeIconSelector ) {
 		//add class and inline css
-		faIconDatas = fontAwesomeIconSelector.split(' ');
-		faIconDatas[1] = ' ' + faIconDatas[1] + ' ' + iconClassName + ' ';
-		icon = faIconDatas.join('');
+		faIconDatas = fontAwesomeIconSelector.split( ' ' );
+		faIconDatas[ 1 ] = ' ' + faIconDatas[ 1 ] + ' ' + iconClassName + ' ';
+		icon = faIconDatas.join( '' );
 	}
 
 	return icon;

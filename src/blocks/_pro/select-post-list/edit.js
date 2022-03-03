@@ -12,7 +12,7 @@ import { DisplayItemsControl } from '@vkblocks/components/display-items-control'
 import { ColumnLayoutControl } from '@vkblocks/components/column-layout-control';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 
-export default function SelectPostListEdit(props) {
+export default function SelectPostListEdit( props ) {
 	const { attributes, clientId } = props;
 	// eslint-disable-next-line camelcase
 	const {
@@ -37,29 +37,29 @@ export default function SelectPostListEdit(props) {
 		btn_align, //eslint-disable-line camelcase
 	} = attributes;
 	// eslint-disable-next-line camelcase
-	const columnClass = `vk_selectPostList-edit-col-${convertToGrid(
+	const columnClass = `vk_selectPostList-edit-col-${ convertToGrid(
 		col_xs
-	)} vk_selectPostList-edit-col-sm-${convertToGrid(
+	) } vk_selectPostList-edit-col-sm-${ convertToGrid(
 		col_sm
-	)} vk_selectPostList-edit-col-md-${convertToGrid(
+	) } vk_selectPostList-edit-col-md-${ convertToGrid(
 		col_md
-	)} vk_selectPostList-edit-col-lg-${convertToGrid(
+	) } vk_selectPostList-edit-col-lg-${ convertToGrid(
 		col_lg
-	)} vk_selectPostList-edit-col-xl-${convertToGrid(
+	) } vk_selectPostList-edit-col-xl-${ convertToGrid(
 		col_xl
-	)} vk_selectPostList-edit-col-xxl-${convertToGrid(col_xxl)}`;
+	) } vk_selectPostList-edit-col-xxl-${ convertToGrid( col_xxl ) }`;
 
-	const { getBlocksByClientId } = select('core/block-editor');
-	const { updateBlockAttributes } = dispatch('core/block-editor');
+	const { getBlocksByClientId } = select( 'core/block-editor' );
+	const { updateBlockAttributes } = dispatch( 'core/block-editor' );
 
-	const thisBlock = getBlocksByClientId(clientId);
+	const thisBlock = getBlocksByClientId( clientId );
 
-	useEffect(() => {
-		if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
-			const thisInnerBlocks = thisBlock[0].innerBlocks;
+	useEffect( () => {
+		if ( thisBlock && thisBlock[ 0 ] && thisBlock[ 0 ].innerBlocks ) {
+			const thisInnerBlocks = thisBlock[ 0 ].innerBlocks;
 
-			thisInnerBlocks.forEach(function (thisInnerBlock) {
-				updateBlockAttributes(thisInnerBlock.clientId, {
+			thisInnerBlocks.forEach( function ( thisInnerBlock ) {
+				updateBlockAttributes( thisInnerBlock.clientId, {
 					layout,
 					col_xs,
 					col_sm,
@@ -79,35 +79,35 @@ export default function SelectPostListEdit(props) {
 					new_text,
 					btn_text,
 					btn_align,
-				});
-			});
+				} );
+			} );
 		}
-	}, [thisBlock, attributes]);
+	}, [ thisBlock, attributes ] );
 
-	const ALLOWED_BLOCKS = ['vk-blocks/select-post-list-item'];
-	const TEMPLATE = [['vk-blocks/select-post-list-item']];
+	const ALLOWED_BLOCKS = [ 'vk-blocks/select-post-list-item' ];
+	const TEMPLATE = [ [ 'vk-blocks/select-post-list-item' ] ];
 
 	let addColumnClass;
-	if (layout !== 'postListText') {
+	if ( layout !== 'postListText' ) {
 		addColumnClass = columnClass;
 	} else {
 		addColumnClass = '';
 	}
 
-	const blockProps = useBlockProps({
-		className: `vk_posts vk_posts-postType-post vk_posts-layout-${layout} vk_postList vk_selectPostList-edit ${addColumnClass}`,
-	});
+	const blockProps = useBlockProps( {
+		className: `vk_posts vk_posts-postType-post vk_posts-layout-${ layout } vk_postList vk_selectPostList-edit ${ addColumnClass }`,
+	} );
 
 	return (
 		<>
 			<InspectorControls>
-				<ColumnLayoutControl {...props} />
-				<DisplayItemsControl {...props} />
+				<ColumnLayoutControl { ...props } />
+				<DisplayItemsControl { ...props } />
 			</InspectorControls>
-			<div {...blockProps}>
+			<div { ...blockProps }>
 				<InnerBlocks
-					template={TEMPLATE}
-					allowedBlocks={ALLOWED_BLOCKS}
+					template={ TEMPLATE }
+					allowedBlocks={ ALLOWED_BLOCKS }
 					orientation="horizontal"
 				/>
 			</div>

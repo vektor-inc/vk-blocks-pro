@@ -1,17 +1,17 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 export default function TilelineEdit() {
-	const blockProps = useBlockProps({
+	const blockProps = useBlockProps( {
 		className: `vk_timeline`,
-	});
-	const ALLOWED_BLOCKS = ['vk-blocks/timeline-item'];
-	const TEMPLATE = [['vk-blocks/timeline-item']];
+	} );
+	const ALLOWED_BLOCKS = [ 'vk-blocks/timeline-item' ];
+	const TEMPLATE = [ [ 'vk-blocks/timeline-item' ] ];
 	return (
 		<>
-			<div {...blockProps}>
+			<div { ...blockProps }>
 				<InnerBlocks
-					template={TEMPLATE}
-					allowedBlocks={ALLOWED_BLOCKS}
+					template={ TEMPLATE }
+					allowedBlocks={ ALLOWED_BLOCKS }
 				/>
 			</div>
 		</>

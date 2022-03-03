@@ -1,22 +1,22 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
 
-export default function AccordionEdit(props) {
+export default function AccordionEdit( props ) {
 	const { attributes, setAttributes, clientId } = props;
 	const { containerClass } = attributes;
 
 	// コンソールエラー回避のため useEffect を使用（実行タイミングの問題）
-	useEffect(() => {
+	useEffect( () => {
 		// containerClass 互換設定
-		if (containerClass === undefined) {
-			setAttributes({ containerClass: `vk_accordion-container` });
+		if ( containerClass === undefined ) {
+			setAttributes( { containerClass: `vk_accordion-container` } );
 		}
-	}, [clientId]);
+	}, [ clientId ] );
 
 	// blocksProps を予め定義
-	const blockProps = useBlockProps({
-		className: `${containerClass}`,
-	});
+	const blockProps = useBlockProps( {
+		className: `${ containerClass }`,
+	} );
 
 	const ALLOWED_BLOCKS = [
 		'vk-blocks/accordion-trigger',
@@ -24,15 +24,15 @@ export default function AccordionEdit(props) {
 	];
 
 	const TEMPLATE = [
-		['vk-blocks/accordion-trigger'],
-		['vk-blocks/accordion-target'],
+		[ 'vk-blocks/accordion-trigger' ],
+		[ 'vk-blocks/accordion-target' ],
 	];
 
 	return (
-		<div {...blockProps}>
+		<div { ...blockProps }>
 			<InnerBlocks
-				allowedBlocks={ALLOWED_BLOCKS}
-				template={TEMPLATE}
+				allowedBlocks={ ALLOWED_BLOCKS }
+				template={ TEMPLATE }
 				templateLock="all"
 			/>
 		</div>

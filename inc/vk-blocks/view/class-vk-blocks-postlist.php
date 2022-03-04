@@ -220,7 +220,7 @@ class Vk_Blocks_PostList {
 	public static function get_render_no_post( $wp_query = null ) {
 		if ( ! empty( $wp_query->query['post_type'][0] ) ) {
 			$post_type_object = get_post_type_object( $wp_query->query['post_type'][0] );
-			$name             = $post_type_object->name;
+			$name             = $post_type_object->label;
 		} else {
 			$name = __( 'Post', 'vk-blocks' );
 		}

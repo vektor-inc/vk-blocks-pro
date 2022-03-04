@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Outer(Pro) ] Compatibility support
+
 = 1.27.1 - 1.27.4  =
 [ Other ] Deploy Free Version.
 

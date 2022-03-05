@@ -63,6 +63,10 @@ e.g.
 
 == Changelog ==
 
+= 1.27.5 =
+[ Bug fix ][ Outer(Pro) ] Compatibility support
+[ Bug fix ][ Post List(Pro) ] Fix no post message
+
 = 1.27.1 - 1.27.4  =
 [ Other ] Deploy Free Version.
 

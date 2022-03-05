@@ -51,7 +51,7 @@ done
 # import vkblocksPro from './bundle-pro'; -> const vkblocksPro = []; に置換
 sed -i "s/import vkblocksPro from '\.\/bundle-pro'/const vkblocksPro = \[\]/g" src/blocks/bundle.js
 # 各種 composer ライブラリインストール
-composer install --no-dev
+composer install --optimize-autoloader --prefer-dist --no-dev
 # ブロックをビルド
 npm install
 npm run build:free

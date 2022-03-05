@@ -13,7 +13,7 @@
 		"prebuild": "npx rimraf ./inc/vk-blocks/build/*",
 		"build:dev": "composer install && npx gulp text-domain && wp-scripts build --config webpack.config.js --mode=development && npx gulp build:dev:pro",
 		"build": "composer install && npx gulp text-domain && wp-scripts build --config webpack.config.js && npx gulp build:pro && npm run translate",
-		"build:free": "composer install && npx gulp text-domain && wp-scripts build --config webpack.config.js && npx gulp build:free",
+		"build:free": "composer install --optimize-autoloader --prefer-dist --no-dev && wp-scripts build --config webpack.config.js && npx gulp build:free",
 		"build:pot": "wp i18n make-pot --merge=inc/vk-blocks/languages/vk-blocks-js.pot --skip-js . inc/vk-blocks/languages/vk-blocks.pot",
 		"translate": "npm run build:pot && po2json ./inc/vk-blocks/languages/vk-blocks-ja.po ./inc/vk-blocks/languages/vk-blocks-ja-vk-blocks-build-js.json -f jed",
 		"gulp": "npx gulp",

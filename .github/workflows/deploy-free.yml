@@ -6,7 +6,7 @@ name: Deploy to VK Blocks Free
 on:
   push:
     tags:
-      - "[0-9]+.[0-9]+.[0-9]+"
+      - "*"
 env:
   plugin_name: vk-blocks-pro
   GIT_TOKEN: ${{ secrets.ACCESSTOKEN_FOR_VK_BLOCKS_FREE }}

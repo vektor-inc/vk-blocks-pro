@@ -268,10 +268,3 @@ gulp.task('dist', (done) => {
 	).pipe(gulp.dest('dist/vk-blocks-pro')); // distディレクトリに出力
 	done();
 });
-
-gulp.task('dist_ex', (done) => {
-	gulp.src(['./inc/vk-blocks/**'], { base: './inc/vk-blocks/' }).pipe(
-		gulp.dest('../vk-all-in-one-expansion-unit/inc/vk-blocks/package')
-	); // distディレクトリに出力
-	done();
-});

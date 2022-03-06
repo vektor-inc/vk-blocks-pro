@@ -4,12 +4,10 @@
 name: Deploy to VWS
 
 on:
-  # push:
-  #   tags:
-  #     - "[0-9]+.[0-9]+.[0-9]+"
   push:
-    branches:
-      - trunk
+    tags:
+    - "[0-9]+.[0-9]+.[0-9]+.[0-9]+"
+
 env:
   plugin_name: vk-blocks-pro
 

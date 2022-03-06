@@ -280,7 +280,7 @@ gulp.task('dist:free', (done) => {
 			'./*.png',
 			'./*.php',
 			'!./src/**',
-			'!./tests/**',
+			'!./test/**',
 			'!./dist/**',
 			'!./node_modules/**',
 		],

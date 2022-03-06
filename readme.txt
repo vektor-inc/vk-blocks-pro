@@ -63,6 +63,9 @@ e.g.
 
 == Changelog ==
 
+= 1.27.6 =
+[ Other ] Fix deploy flow
+
 = 1.27.5 =
 [ Bug fix ][ Outer(Pro) ] Compatibility support
 [ Bug fix ][ Post List(Pro) ] Fix no post message

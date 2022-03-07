@@ -26,6 +26,7 @@ jobs:
     - name: Install Node Scripts
       run: npm install
 
+    # build 漏れの状態で dist してしまう事がないように dist の中に build を含めている
     - name: Make Distribution
       run: |
         npm run dist

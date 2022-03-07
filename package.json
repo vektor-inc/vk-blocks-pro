@@ -9,7 +9,7 @@
 		"destroy": "wp-env destroy",
 		"watch": "npm run build && concurrently \"wp-scripts start\" \"npx gulp watch\"",
 		"update": "npx ncu -u -x 'sass react react-dom'",
-		"dist": "composer install --no-dev && npx gulp dist && composer install",
+		"dist": "npm run build && composer install --no-dev && npx gulp dist && composer install",
 		"prebuild": "npx rimraf ./inc/vk-blocks/build/*",
 		"build:dev": "composer install && npx gulp text-domain && wp-scripts build --config webpack.config.js --mode=development && npx gulp build:dev:pro",
 		"build": "composer install && npx gulp text-domain && wp-scripts build --config webpack.config.js && npx gulp build:pro && npm run translate",

@@ -46,10 +46,9 @@ jobs:
         curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
         chmod +x wp-cli.phar
         mv wp-cli.phar /usr/local/bin/wp
-    - name: Build
-      run: npm run build
     - name: Make Distribution
-    # npm run dist の中で composer install --no-dev した上で dist して （ compose install しなおして ） いる
+    # npm run dist の中で npm run build して composer install --no-dev した上で dist して （ compose install しなおして ） いる
+    # build 漏れの状態で dist してしまう事がないように dist の中に build を含めている
       run: | 
         npm run dist
         cd dist/ && zip -r ${{ env.plugin_name }}.zip ${{ env.plugin_name }}/ && mv ${{ env.plugin_name }}.zip ${GITHUB_WORKSPACE}

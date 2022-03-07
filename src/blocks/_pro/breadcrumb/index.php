@@ -58,10 +58,22 @@ function vk_blocks_breadcrumb_render_callback( $attributes ) {
  * @return void
  */
 function vk_blocks_register_block_breadcrumb() {
+
+	// Register Style.
+	if ( ! is_admin() ) {
+		wp_register_style(
+			'vk-blocks/breadcrumb',
+			VK_BLOCKS_DIR_URL . 'build/_pro/breadcrumb/style.css',
+			array(),
+			VK_BLOCKS_VERSION
+		);
+	}
+
 	global $vk_blocks_common_attributes;
 	register_block_type(
 		__DIR__,
 		array(
+			'style'           => 'vk-blocks/breadcrumb',
 			'editor_style'    => 'vk-blocks-build-editor-css',
 			'editor_script'   => 'vk-blocks-build-js',
 			'attributes'      => array_merge(

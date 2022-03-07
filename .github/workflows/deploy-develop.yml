@@ -2,11 +2,14 @@
 
 name: Deploy to VK Blocks Pro Test Site
 on:
-  push:
+  pull_request:
     branches:
       - develop
+    types:
+      - closed
+
 jobs:
-  deployment:
+  if_merged:
     name: Deployment
     runs-on: ubuntu-latest
     steps:

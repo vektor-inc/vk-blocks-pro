@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - develop
-    tags:
-    - "pre_[0-9]+.[0-9]+.[0-9]+.[0-9]+"
   pull_request:
     branches:
       - develop

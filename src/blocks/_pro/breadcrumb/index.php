@@ -16,38 +16,38 @@ use VektorInc\VK_Breadcrumb\VkBreadcrumb;
 function vk_blocks_breadcrumb_render_callback( $attributes ) {
 	$vk_breadcrumb = new VkBreadcrumb();
 
-	$classes = '';
+	$outer_classes = 'vk_breadcrumb';
 	if ( isset( $attributes['className'] ) ) {
-		$classes .= ' ' . $attributes['className'];
+		$outer_classes .= ' ' . $attributes['className'];
 	}
 	if ( isset( $attributes['vkb_hidden'] ) && $attributes['vkb_hidden'] ) {
-		$classes .= ' vk_hidden';
+		$outer_classes .= ' vk_hidden';
 	}
 	if ( isset( $attributes['vkb_hidden_xxl'] ) && $attributes['vkb_hidden_xxl'] ) {
-		$classes .= ' vk_hidden-xxl';
+		$outer_classes .= ' vk_hidden-xxl';
 	}
 	if ( isset( $attributes['vkb_hidden_xl_v2'] ) && $attributes['vkb_hidden_xl_v2'] ) {
-		$classes .= ' vk_hidden-xl';
+		$outer_classes .= ' vk_hidden-xl';
 	}
 	if ( isset( $attributes['vkb_hidden_lg'] ) && $attributes['vkb_hidden_lg'] ) {
-		$classes .= ' vk_hidden-lg';
+		$outer_classes .= ' vk_hidden-lg';
 	}
 	if ( isset( $attributes['vkb_hidden_md'] ) && $attributes['vkb_hidden_md'] ) {
-		$classes .= ' vk_hidden-md';
+		$outer_classes .= ' vk_hidden-md';
 	}
 	if ( isset( $attributes['vkb_hidden_sm'] ) && $attributes['vkb_hidden_sm'] ) {
-		$classes .= ' vk_hidden-sm';
+		$outer_classes .= ' vk_hidden-sm';
 	}
 	if ( isset( $attributes['vkb_hidden_xs'] ) && $attributes['vkb_hidden_xs'] ) {
-		$classes .= ' vk_hidden-xs';
+		$outer_classes .= ' vk_hidden-xs';
 	}
 
 	$breadcrumb_options = array(
-		'id_outer'        => 'breadcrumb',
-		'class_outer'     => 'breadcrumb' . $classes,
+		'id_outer'        => 'vk_breadcrumb',
+		'class_outer'     => $outer_classes,
 		'class_inner'     => 'container',
-		'class_list'      => 'breadcrumb-list',
-		'class_list_item' => 'breadcrumb-list__item',
+		'class_list'      => 'vk_breadcrumb-list',
+		'class_list_item' => 'vk_breadcrumb-list__item',
 	);
 	return $vk_breadcrumb->get_breadcrumb( $breadcrumb_options );
 }

@@ -1,4 +1,4 @@
-# WIP!!! Deploy develop branch to vs4 test
+# Deploy develop branch to vs4 test
 
 name: Deploy to VK Blocks Pro Test Site
 on:
@@ -34,7 +34,8 @@ jobs:
         run: npm run build
       - name: dist
         run: npm run dist
-      - name: rsync deployments
+
+      - name: Deploy to test server [ Deprecated ]
         uses: burnett01/rsync-deployments@4.1
         with:
           switches: -avzr

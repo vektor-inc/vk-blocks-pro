@@ -38,6 +38,9 @@ export default function ButtonEdit(props) {
 		blockId,
 	} = attributes;
 
+	// eslint-disable-next-line no-undef
+	const iconFamily = vkFontAwesome.iconFamily;
+
 	// 以前の値を切り替え
 	useEffect(() => {
 		if (attributes.clientId !== undefined) {
@@ -415,7 +418,10 @@ export default function ButtonEdit(props) {
 					</BaseControl>
 					<BaseControl>
 						<h4 className={`mt-0 mb-2`}>
-							{__('Icon ( Font Awesome )', 'vk-blocks')}
+							{__('Icon', 'vk-blocks') +
+								' ( ' +
+								iconFamily +
+								' )'}
 						</h4>
 						<BaseControl
 							id={`vk_block_button_fa_before_text`}

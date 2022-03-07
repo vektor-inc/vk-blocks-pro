@@ -38,7 +38,8 @@ export default function IconCardItemedit(props) {
 		activeControl,
 	} = attributes;
 	const align = JSON.parse(fixBrokenUnicode(activeControl));
-
+	// eslint-disable-next-line no-undef
+	const iconFamily = vkFontAwesome.iconFamily;
 	let style = {};
 	let iconOuterClass = '';
 	let iconColor = '';
@@ -132,7 +133,9 @@ export default function IconCardItemedit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Icon ( Font Awesome )', 'vk-blocks')}
+						label={
+							__('Icon', 'vk-blocks') + ' ( ' + iconFamily + ' )'
+						}
 						id={`vk_iconCardItem-icon`}
 					>
 						<FontAwesome attributeName={'faIcon'} {...props} />

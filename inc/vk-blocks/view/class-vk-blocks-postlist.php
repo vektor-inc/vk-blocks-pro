@@ -25,7 +25,7 @@ class Vk_Blocks_PostList {
 		}
 
 		if ( ! isset( $wp_query ) || false === $wp_query || 'false' === $wp_query || empty( $wp_query->posts ) ) {
-			return self::render_no_post();
+			return wp_kses_post( self::get_render_no_post( $wp_query ) );
 		}
 		$options = array(
 			'layout'                     => esc_html( $attributes['layout'] ),
@@ -66,7 +66,6 @@ class Vk_Blocks_PostList {
 
 		$elm = VK_Component_Posts::get_loop( $wp_query, $options, $options_loop );
 
-		wp_reset_query();
 		wp_reset_postdata();
 
 		return $elm;
@@ -181,7 +180,7 @@ class Vk_Blocks_PostList {
 	 */
 	public static function get_loop_query_child( $attributes ) {
 
-		// ParentIdを指定
+		// ParentIdを指定.
 		if ( isset( $attributes['selectId'] ) && 'false' !== $attributes['selectId'] ) {
 			$select_id = ( $attributes['selectId'] > 0 ) ? $attributes['selectId'] : get_the_ID();
 
@@ -214,9 +213,21 @@ class Vk_Blocks_PostList {
 
 	/**
 	 * Render No Posts
+	 *
+	 * @param object $wp_query @since 1.27.0.
+	 * @return string
 	 */
-	public static function render_no_post() {
-		return '<div class="alert alert-warning text-center">' . __( 'No Post is selected', 'vk-blocks' ) . '</div>';
+	public static function get_render_no_post( $wp_query = null ) {
+		if ( ! empty( $wp_query->query['post_type'][0] ) ) {
+			$post_type_object = get_post_type_object( $wp_query->query['post_type'][0] );
+			$name             = $post_type_object->label;
+		} else {
+			$name = __( 'Post', 'vk-blocks' );
+		}
+
+		/* translators: %s: 投稿タイプ名 */
+		$html = '<div class="alert alert-warning text-center">' . sprintf( __( 'There are no %ss.', 'vk-blocks' ), $name ) . '</div>';
+		return apply_filters( 'vk_blocks_post_list_render_no_post', $html, $wp_query );
 	}
 
 }

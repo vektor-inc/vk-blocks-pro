@@ -11,6 +11,11 @@ import * as cardItem from './_pro/card-item';
 import * as childPage from './_pro/child-page';
 import * as gridColumn from './_pro/grid-column';
 import * as gridColumnItem from './_pro/grid-column-item';
+import * as gridColCard from './_pro/gridcolcard';
+import * as gridColCardItem from './_pro/gridcolcard-item';
+import * as gridColCardItemBody from './_pro/gridcolcard-item-body';
+import * as gridColCardItemHeader from './_pro/gridcolcard-item-header';
+import * as gridColCardItemFooter from './_pro/gridcolcard-item-footer';
 import * as iconCard from './_pro/icon-card';
 import * as iconCardItem from './_pro/icon-card-item';
 import * as outer from './_pro/outer';
@@ -36,6 +41,11 @@ const vkblocksPro = [
 	childPage,
 	gridColumn,
 	gridColumnItem,
+	gridColCard,
+	gridColCardItem,
+	gridColCardItemBody,
+	gridColCardItemFooter,
+	gridColCardItemHeader,
 	iconCard,
 	iconCardItem,
 	outer,

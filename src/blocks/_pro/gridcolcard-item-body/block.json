@@ -1,0 +1,20 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/gridcolcard-item-body",
+	"title": "Grid Column Card Item Body",
+	"textdomain": "vk-blocks",
+	"category": "vk-blocks-cat-layout",
+	"icon": "smiley",
+	"description": "Flexible Column Block Item body",
+	"parent": [
+		"vk-blocks/gridcolcard-item"
+	],
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"verticalAlignment": {
+			"type": "string"
+		}
+	}
+}

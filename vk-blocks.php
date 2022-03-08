@@ -82,6 +82,14 @@ add_action(
 			$options['active_vk-blocks'] = false;
 			update_option( 'vkExUnit_common_options', $options );
 		}
+
+		// Deactive VK Grid Colomun Card Plugin
+		if ( is_plugin_active( 'vk-gridcolcard/vk-gridcolcard.php' ) ) {
+			// Deactive Plugin VK Blocks ( free ).
+			if ( function_exists( 'vk_blocks_deactivate_plugin' ) ) {
+				vk_blocks_deactivate_plugin( 'vk-gridcolcard/vk-gridcolcard.php' );
+			}
+		}
 	},
 	9999
 );

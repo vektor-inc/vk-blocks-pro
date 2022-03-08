@@ -1,0 +1,57 @@
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+
+export default function save(props) {
+	const { attributes } = props;
+	const {
+		backgroundColor,
+		textColor,
+		headerDisplay,
+		footerDisplay,
+		containerSpace,
+		border,
+		borderColor,
+	} = attributes;
+
+	const style = {
+		backgroundColor: null,
+		border: null,
+	};
+	if (textColor) {
+		style.color = `${textColor}`;
+	}
+	if (backgroundColor) {
+		style.backgroundColor = `${backgroundColor}`;
+	}
+	if (border) {
+		style.border = `1px solid ${borderColor}`;
+	}
+
+	const containerClasses = ['vk_gridcolcard_item'];
+	if (headerDisplay === 'delete') {
+		containerClasses.push('vk_gridcolcard_item-noHeader');
+	}
+	if (footerDisplay === 'delete') {
+		containerClasses.push('vk_gridcolcard_item-noFooter');
+	}
+	const containerClass = containerClasses.join(' ');
+
+	const blockProps = useBlockProps.save({
+		className: `${containerClass}`,
+		style,
+	});
+	return (
+		<div {...blockProps}>
+			<div
+				className={`vk_gridcolcard_item_container`}
+				style={{
+					paddingTop: containerSpace.top,
+					paddingBottom: containerSpace.bottom,
+					paddingLeft: containerSpace.left,
+					paddingRight: containerSpace.right,
+				}}
+			>
+				<InnerBlocks.Content />
+			</div>
+		</div>
+	);
+}

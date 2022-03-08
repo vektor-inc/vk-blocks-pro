@@ -180,10 +180,6 @@ VK Blocks の現在のデプロイフローは以下の通り
 * deprecated チェック
 * （ e2eテスト（ 調整中 ） ）
 
-#### php-unit-test.yml
-
-* PHPUnit テスト
-
 ### vk-blocks-pro/develop にプッシュ&マージ
 #### develop-test.yml
 

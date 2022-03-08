@@ -58,10 +58,8 @@ jobs:
         chmod +x wp-cli.phar
         mv wp-cli.phar /usr/local/bin/wp
 
-    - name: Build
-      run: npm run build
-
-    - name: dist
+    # dist の中で build は実行している
+    - name: Build and Dist
       run: npm run dist
 
     # PHPUnit

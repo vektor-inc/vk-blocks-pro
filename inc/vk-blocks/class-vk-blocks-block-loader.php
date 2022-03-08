@@ -254,7 +254,7 @@ class VK_Blocks_Block_Loader {
 		}
 
 		foreach ( $this->get_block_names( array( 'is_pro' => true ) ) as $block_name ) {
-			if ( file_exists( VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $block_name . '/index.php' ) ) {
+			if ( file_exists( VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/build/blocks/_pro/' . $block_name . '/index.php' ) ) {
 				if ( ! empty( $args['style'] ) && 'vk-blocks/' . $block_name === $args['style'] ) {
 					$args['style']  = null;
 					$args['script'] = null;
@@ -329,9 +329,9 @@ class VK_Blocks_Block_Loader {
 	public function load_block( $block_name ) {
 		$block_info = $this->get_block_info( $block_name );
 
-		$require_file_path = VK_BLOCKS_SRC_PATH . '/blocks/' . $block_name . '/index.php';
+		$require_file_path = VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/build/blocks/' . $block_name . '/index.php';
 		if ( $block_info['is_pro'] ) {
-			$require_file_path = VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $block_name . '/index.php';
+			$require_file_path = VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/build/blocks/_pro/' . $block_name . '/index.php';
 		}
 
 		if ( file_exists( $require_file_path ) ) {
@@ -347,7 +347,7 @@ class VK_Blocks_Block_Loader {
 	 * @return void
 	 */
 	public function load_block_style( $block_style_name ) {
-		$require_file_path = VK_BLOCKS_SRC_PATH . 'extensions/core/' . $block_style_name['name'] . '/index.php';
+		$require_file_path = VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/build/extensions/core/' . $block_style_name['name'] . '/index.php';
 		if ( file_exists( $require_file_path ) ) {
 			require_once $require_file_path;
 		}

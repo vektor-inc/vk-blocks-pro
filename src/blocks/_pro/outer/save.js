@@ -1,14 +1,33 @@
-import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+/**
+ * External dependencies
+ */
+import classnames from 'classnames';
+
+/**
+ * Internal dependencies
+ */
 import { componentDivider } from './component-divider';
-import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
+import GenerateBgImage from './GenerateBgImage';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
+const prefix = 'vkb-outer';
+
+/**
+ * WordPress dependencies
+ */
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 export default function save(props) {
 	const { attributes } = props;
 	const {
+		bgColor,
 		bgPosition,
+		bgImageMobile,
+		bgImageTablet,
+		bgImage,
 		outerWidth,
 		padding_left_and_right, //eslint-disable-line camelcase
 		padding_top_and_bottom, //eslint-disable-line camelcase
+		opacity,
 		upper_level, //eslint-disable-line camelcase
 		lower_level, //eslint-disable-line camelcase
 		upperDividerBgColor,
@@ -26,6 +45,35 @@ export default function save(props) {
 	let classBgPosition;
 	let whichSideUpper;
 	let whichSideLower;
+
+	const opacityClass = opacity && opacity * 10;
+	const bgColorClasses = classnames({
+		[`has-background`]: bgColor !== undefined,
+		[`has-${bgColor}-background-color`]:
+			bgColor !== undefined && !isHexColor(bgColor),
+		[`has-background-dim`]: opacity !== undefined,
+		[`has-background-dim-${opacityClass}`]: opacityClass !== undefined,
+	});
+
+	const bgColorStyles = {
+		backgroundColor: isHexColor(bgColor) && bgColor ? bgColor : undefined,
+	};
+
+	const GetBgImage = (
+		<>
+			{(bgImage || bgImageTablet || bgImageMobile) && (
+				<GenerateBgImage
+					prefix={prefix}
+					clientId={clientId}
+					{...props}
+				/>
+			)}
+			<span
+				className={`vk_outer-background-area ${bgColorClasses}`}
+				style={bgColorStyles}
+			></span>
+		</>
+	);
 
 	//幅のクラス切り替え
 	const classWidth = `vk_outer-width-${outerWidth}`;
@@ -88,7 +136,12 @@ export default function save(props) {
 		borderStyle !== 'none'
 	) {
 		borderStyleProperty = {
-			border: `${borderWidth}px ${borderStyle} ${borderColor}`,
+			borderWidth: `${borderWidth}px`,
+			borderStyle: `${borderStyle}`,
+			borderColor:
+				isHexColor(borderColor) && borderColor
+					? borderColor
+					: undefined,
 			borderRadius: `${borderRadius}px`,
 		};
 		//eslint-disable-next-line camelcase
@@ -101,16 +154,19 @@ export default function save(props) {
 	}
 
 	const blockProps = useBlockProps.save({
-		className: `vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
+		className: classnames(
+			`vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
+			{
+				[`has-border-color`]: borderColor !== undefined,
+				[`has-${borderColor}-border-color`]:
+					borderColor !== undefined && !isHexColor(borderColor),
+			}
+		),
 		style: borderStyleProperty,
 	});
 	return (
 		<div {...blockProps}>
-			<GenerateBgImage
-				prefix={'vkb-outer'}
-				clientId={clientId}
-				{...props}
-			/>
+			{GetBgImage}
 			<div>
 				{componentDivider(
 					upper_level,

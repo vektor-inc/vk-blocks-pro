@@ -163,7 +163,7 @@ export default function SliderItemEdit(props) {
 						label={__('Color Setting', 'vk-blocks')}
 						id={`vk_sliderItem-colorSetting`}
 						help={__(
-							'Color will overcome background image. If you want to display image, clear background color or set opacity 0.',
+							'Color will overcome background image. If you want to display image, set opacity 0.',
 							'vk-blocks'
 						)}
 					>

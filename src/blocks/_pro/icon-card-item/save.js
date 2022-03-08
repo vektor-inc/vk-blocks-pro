@@ -1,6 +1,6 @@
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
 import { RichText, useBlockProps } from '@wordpress/block-editor';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
@@ -103,7 +103,7 @@ export default function save(props) {
 				className={`vk_icon-card_item_icon_outer ${iconOutlineClass} ${iconOuterClass}`}
 				style={style}
 			>
-				{ReactHtmlParser(faIconTag)}
+				{parse(faIconTag)}
 			</div>
 			<RichText.Content
 				className={`vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}`}

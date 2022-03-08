@@ -18,7 +18,7 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 
@@ -38,6 +38,9 @@ export default function PrBlocksEdit(props) {
 		insertImage2,
 		insertImage3,
 	} = attributes;
+
+	// eslint-disable-next-line no-undef
+	const iconFamily = vkFontAwesome.iconFamily;
 
 	const containerClass = `vk_prBlocks row`;
 
@@ -114,7 +117,12 @@ export default function PrBlocksEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Icon 1', 'vk-blocks')}
+						label={
+							__('Icon 1', 'vk-blocks') +
+							' ( ' +
+							iconFamily +
+							' )'
+						}
 						id={`vk_prBlocks_Icon1`}
 					>
 						<FontAwesome attributeName={'icon1'} {...props} />
@@ -184,7 +192,12 @@ export default function PrBlocksEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Icon 2', 'vk-blocks')}
+						label={
+							__('Icon 2', 'vk-blocks') +
+							' ( ' +
+							iconFamily +
+							' )'
+						}
 						id={`vk_prBlocks_Icon2`}
 					>
 						<FontAwesome attributeName={'icon2'} {...props} />
@@ -254,7 +267,12 @@ export default function PrBlocksEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Icon 3', 'vk-blocks')}
+						label={
+							__('Icon 3', 'vk-blocks') +
+							' ( ' +
+							iconFamily +
+							' )'
+						}
 						id={`vk_prBlocks_Icon3`}
 					>
 						<FontAwesome attributeName={'icon3'} {...props} />
@@ -457,7 +475,7 @@ export class ComponentBlockEdit extends Component {
 					className={`vk_prBlocks_item_icon_outer ${iconOuterClass}`}
 					style={iconOuterInlineStyle}
 				>
-					{ReactHtmlParser(faIconTag)}
+					{parse(faIconTag)}
 				</div>
 			);
 		})();

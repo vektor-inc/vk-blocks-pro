@@ -11,7 +11,7 @@ import {
 	InnerBlocks,
 	useBlockProps,
 } from '@wordpress/block-editor';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 
@@ -23,6 +23,9 @@ export default function StepItemEdit(props) {
 	let styleClass = '';
 	let inlineStyle = {};
 	let styleLineClass = '';
+
+	// eslint-disable-next-line no-undef
+	const iconFamily = vkFontAwesome.iconFamily;
 
 	const TEMPLATE = [['core/heading', { level: 4 }], ['core/paragraph']];
 
@@ -69,7 +72,9 @@ export default function StepItemEdit(props) {
 				<PanelBody title={__('Step Mark', 'vk-blocks')}>
 					<BaseControl
 						id="dot-fa"
-						label={__('Icon ( Font Awesome )', 'vk-blocks')}
+						label={
+							__('Icon', 'vk-blocks') + ' ( ' + iconFamily + ' )'
+						}
 						help={__(
 							'If Font Awesome tags entered, it will overrides the number.',
 							'vk-blocks'
@@ -143,7 +148,7 @@ export default function StepItemEdit(props) {
 					</div>
 					{(() => {
 						if (faIcon) {
-							return ReactHtmlParser(faIcon);
+							return parse(faIcon);
 						} else if (dotNum) {
 							return (
 								<div className={'vk_step_item_dot_num'}>

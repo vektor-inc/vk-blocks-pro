@@ -6,7 +6,7 @@ import {
 	InspectorControls,
 	useBlockProps,
 } from '@wordpress/block-editor';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
@@ -38,7 +38,8 @@ export default function IconCardItemedit(props) {
 		activeControl,
 	} = attributes;
 	const align = JSON.parse(fixBrokenUnicode(activeControl));
-
+	// eslint-disable-next-line no-undef
+	const iconFamily = vkFontAwesome.iconFamily;
 	let style = {};
 	let iconOuterClass = '';
 	let iconColor = '';
@@ -132,7 +133,9 @@ export default function IconCardItemedit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Icon ( Font Awesome )', 'vk-blocks')}
+						label={
+							__('Icon', 'vk-blocks') + ' ( ' + iconFamily + ' )'
+						}
 						id={`vk_iconCardItem-icon`}
 					>
 						<FontAwesome attributeName={'faIcon'} {...props} />
@@ -165,7 +168,7 @@ export default function IconCardItemedit(props) {
 					className={`vk_icon-card_item_icon_outer ${iconOutlineClass} ${iconOuterClass}`}
 					style={style}
 				>
-					{ReactHtmlParser(faIconTag)}
+					{parse(faIconTag)}
 				</div>
 				<RichText
 					className={`vk_icon-card_item_title vk_icon-card_item_title has-text-align-${align.title}`}

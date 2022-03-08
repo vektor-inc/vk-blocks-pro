@@ -164,14 +164,6 @@ $color-danger: #dd3333;
 .edit-post-visual-editor,
 .components-tab-panel__tab-content{
 
-	/*
-	 アウターが全幅で インナーもコンテンツエリアを突き抜けて広げる処理
-	-----------------------------------------------*/
-	.vk_outer-width-full.vk_outer-paddingLR-use,
-	.vk_outer-width-full.vk_outer-paddingLR-zero{
-		// コンテンツエリアをはみ出させる
-		.wp-block { max-width:100%; }
-	}
 	.vk_width-full div[data-type="vk-blocks/slider-item"]{
 		max-width:100%;
 		.vk_slider_item-paddingLR-use,
@@ -179,15 +171,6 @@ $color-danger: #dd3333;
 			// コンテンツエリアをはみ出させる
 			.wp-block { max-width:100%; }
 		}
-	}
-
-	.is-sidebar-opened & .vk_outer-width-full.vk_outer-paddingLR-use,
-	.is-sidebar-opened & .vk_outer-width-full.vk_outer-paddingLR-zero{
-		// サイドバー表示時に全幅要素がはみ出してサイドバーの下などに入り込むのを防止
-		margin-left: calc( 50% - 50vw + 140px );
-		margin-right: calc( 50% - 50vw + 140px );
-		// コンテンツエリアをはみ出させる
-		.wp-block { max-width:100%; }
 	}
 
 	.is-sidebar-opened & .vk_slider.vk_width-full{
@@ -228,6 +211,9 @@ div[data-type="vk-blocks/page-content"].is-selected{
 		right:0;
 	}
 }
+
+// Outer編集用CSS
+@import "./_editor_before_outer";
 
 // 選択投稿リスト編集用CSS
 @import "./_editor_before_select-post";

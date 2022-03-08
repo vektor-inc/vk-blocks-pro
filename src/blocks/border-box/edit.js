@@ -15,7 +15,7 @@ import {
 	RichText,
 	useBlockProps,
 } from '@wordpress/block-editor';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 
 /**
  * Internal dependencies
@@ -26,7 +26,8 @@ import { isHexColor } from '@vkblocks/utils/is-hex-color';
 export default function BorderBoxEdit(props) {
 	const { attributes, setAttributes } = props;
 	const { heading, faIcon, color, bgColor, borderColor } = attributes;
-
+	// eslint-disable-next-line no-undef
+	const iconFamily = vkFontAwesome.iconFamily;
 	const inner = (
 		<InnerBlocks templateLock={false} template={[['core/paragraph']]} />
 	);
@@ -221,7 +222,9 @@ export default function BorderBoxEdit(props) {
 				<PanelBody title={__('Icon', 'vk-blocks')}>
 					<BaseControl
 						id="dot-fa"
-						label={__('Icon ( Font Awesome )', 'vk-blocks')}
+						label={
+							__('Icon', 'vk-blocks') + ' ( ' + iconFamily + ' )'
+						}
 					>
 						<FontAwesome
 							attributeName={'faIcon'}
@@ -235,7 +238,7 @@ export default function BorderBoxEdit(props) {
 			</InspectorControls>
 			<div {...blockProps}>
 				<div className={classnames(titleClasses)} style={titleStyle}>
-					{ReactHtmlParser(icon)}
+					{parse(icon)}
 					{title}
 				</div>
 				<div className={`vk_borderBox_body`}>{inner}</div>

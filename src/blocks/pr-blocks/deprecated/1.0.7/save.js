@@ -2,7 +2,7 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
 import { isNotJSON } from '@vkblocks/utils/is-not-json';
 import { Component } from '@wordpress/element';
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 
 export default function save(props) {
 	const { attributes } = props;
@@ -138,7 +138,7 @@ export class ComponentBlockSave extends Component {
 							border: `1px solid ${color[blockNumArrIndex]}`,
 						}}
 					>
-						{ReactHtmlParser(faIconTag)}
+						{parse(faIconTag)}
 					</div>
 				);
 			}
@@ -150,7 +150,7 @@ export class ComponentBlockSave extends Component {
 						border: '1px solid ' + color[blockNumArrIndex],
 					}}
 				>
-					{ReactHtmlParser(faIconTag)}
+					{parse(faIconTag)}
 				</div>
 			);
 		})();

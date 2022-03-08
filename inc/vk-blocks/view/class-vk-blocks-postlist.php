@@ -218,10 +218,20 @@ class Vk_Blocks_PostList {
 	 * @return string
 	 */
 	public static function get_render_no_post( $wp_query = null ) {
-		if ( ! empty( $wp_query->query['post_type'][0] ) ) {
-			$post_type_object = get_post_type_object( $wp_query->query['post_type'][0] );
-			$name             = $post_type_object->label;
-		} else {
+		$name = '';
+		if ( ! empty( $wp_query->query['post_type'] ) ) {
+			if ( is_array( $wp_query->query['post_type'] ) ) {
+				$post_type = $wp_query->query['post_type'][0];
+			} else {
+				$post_type = $wp_query->query['post_type'];
+			}
+			$post_type_object = get_post_type_object( $post_type );
+			if ( ! empty( $post_type_object->label ) ) {
+				$name = $post_type_object->label;
+			}
+		}
+
+		if ( ! $name ) {
 			$name = __( 'Post', 'vk-blocks' );
 		}
 

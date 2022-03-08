@@ -64,7 +64,8 @@ e.g.
 == Changelog ==
 
 = 1.27.7 =
-[ Bug fix ][ Post lis an so on (Pro) ] Fixed number of days to display the new post mark was not saved.
+[ Bug fix ][ Post list an so on (Pro) ] Fixed number of days to display the new post mark was not saved.
+[ Bug fix ][ Post list an so on (Pro) ] Fixed no post message php notice.
 
 = 1.27.6 =
 [ Other ] Fix deploy flow

@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
 Tested up to: 5.9.1
-Stable tag: 1.27.4
+Stable tag: 1.26.2
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -62,6 +62,15 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+[ Bug fix ] Fixed number of days to display the new post mark was not saved.
+
+= 1.27.6 =
+[ Other ] Fix deploy flow
+
+= 1.27.5 =
+[ Bug fix ][ Outer(Pro) ] Compatibility support
+[ Bug fix ][ Post List(Pro) ] Fix no post message
 
 = 1.27.1 - 1.27.4  =
 [ Other ] Deploy Free Version.

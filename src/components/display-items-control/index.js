@@ -86,7 +86,9 @@ export const DisplayItemsControl = (props) => {
 					'vk-blocks'
 				)}
 				value={new_date} //eslint-disable-line camelcase
-				onChange={(value) => setAttributes({ new_date: value })}
+				onChange={(value) =>
+					setAttributes({ new_date: parseInt(value) })
+				}
 				type={'number'}
 			/>
 			<TextControl

@@ -1,6 +1,6 @@
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import classnames from 'classnames';
 
@@ -178,9 +178,9 @@ export default function save(props) {
 
 	const titleContent = (
 		<>
-			{ReactHtmlParser(iconBefore)}
+			{parse(iconBefore)}
 			<RichText.Content tagName={'span'} value={title} />
-			{ReactHtmlParser(iconAfter)}
+			{parse(iconAfter)}
 		</>
 	);
 

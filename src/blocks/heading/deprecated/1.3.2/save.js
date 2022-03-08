@@ -1,6 +1,6 @@
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 
 const renderTitle = (level, contents, tStyle, headingStyle) => {
 	switch (level) {
@@ -125,9 +125,9 @@ export default function save(props) {
 	}
 	const titleContent = (
 		<>
-			{ReactHtmlParser(iconBefore)}
+			{parse(iconBefore)}
 			<RichText.Content tagName={'span'} value={title} />
-			{ReactHtmlParser(iconAfter)}
+			{parse(iconAfter)}
 		</>
 	);
 

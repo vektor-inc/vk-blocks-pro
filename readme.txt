@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ] Fixed number of days to display the new post mark was not saved.
+
 = 1.27.6 =
 [ Other ] Fix deploy flow
 

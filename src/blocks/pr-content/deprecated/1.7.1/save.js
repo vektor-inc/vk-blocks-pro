@@ -7,7 +7,7 @@ import {
 	getContainerClass,
 } from './utils';
 import { PrContentMediaUpload } from './mediaUpload';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 
 export default function save({ attributes }) {
 	const {
@@ -69,11 +69,11 @@ export default function save({ attributes }) {
 							style={linkStyle}
 							target={buttonTarget ? '_blank' : undefined}
 						>
-							{ReactHtmlParser(iconBefore)}
+							{parse(iconBefore)}
 							<span className="vk_button_link_txt">
 								{buttonText}
 							</span>
-							{ReactHtmlParser(iconAfter)}
+							{parse(iconAfter)}
 						</a>
 					</div>
 				)}

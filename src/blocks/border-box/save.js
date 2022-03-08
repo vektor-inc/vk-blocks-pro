@@ -7,7 +7,7 @@ import classnames from 'classnames';
  * WordPress dependencies
  */
 import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function save(props) {
@@ -121,7 +121,7 @@ export default function save(props) {
 	return (
 		<div {...blockProps}>
 			<div className={titleClasses} style={titleStyle}>
-				{ReactHtmlParser(icon)}
+				{parse(icon)}
 				{title}
 			</div>
 			<div className={`vk_borderBox_body`}>{inner}</div>

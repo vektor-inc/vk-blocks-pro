@@ -21,7 +21,7 @@ import {
 } from './utils';
 import { PrContentMediaUploadEdit } from './mediaUpload';
 import { FontAwesome } from '@vkblocks/utils/font-awesome-new';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 
 export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 	const {
@@ -279,11 +279,11 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 										: undefined
 								}
 							>
-								{ReactHtmlParser(iconBefore)}
+								{parse(iconBefore)}
 								<span className="vk_button_link_txt">
 									{buttonText}
 								</span>
-								{ReactHtmlParser(iconAfter)}
+								{parse(iconAfter)}
 							</a>
 						</div>
 					)}

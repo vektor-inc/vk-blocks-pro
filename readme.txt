@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
 Tested up to: 5.9.1
-Stable tag: 1.26.2
+Stable tag: 1.27.6.1
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,7 +63,8 @@ e.g.
 
 == Changelog ==
 
-[ Bug fix ] Fixed number of days to display the new post mark was not saved.
+= 1.27.7 =
+[ Bug fix ][ Post lis an so on (Pro) ] Fixed number of days to display the new post mark was not saved.
 
 = 1.27.6 =
 [ Other ] Fix deploy flow

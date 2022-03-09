@@ -1,5 +1,5 @@
 /**
- * card-item block type
+ * gridcolcard-item block type
  *
  */
 import { ReactComponent as Icon } from './icon.svg';

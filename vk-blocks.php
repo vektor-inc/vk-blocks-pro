@@ -85,7 +85,6 @@ add_action(
 
 		// Deactive VK Grid Colomun Card Plugin
 		if ( is_plugin_active( 'vk-gridcolcard/vk-gridcolcard.php' ) ) {
-			// Deactive Plugin VK Blocks ( free ).
 			if ( function_exists( 'vk_blocks_deactivate_plugin' ) ) {
 				vk_blocks_deactivate_plugin( 'vk-gridcolcard/vk-gridcolcard.php' );
 			}

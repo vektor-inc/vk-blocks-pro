@@ -247,7 +247,7 @@ describe( 'full post content fixture', () => {
 			// `save` functions and attributes.
 			// The `core/template` is not worth testing here because it's never saved, it's covered better in e2e tests.
 			.filter(
-				(name) => !['core/embed', 'core/template', 'vk-blocks/page-content', 'vk-blocks/post-list', 'vk-blocks/select-post-list-item', 'vk-blocks/child-page', 'vk-blocks/card-item', 'vk-blocks/grid-column-item', 'vk-blocks/step-item', 'vk-blocks/timeline-item', 'vk-blocks/grid-column-item', 'vk-blocks/icon-card-item', 'vk-blocks/faq2-a', 'vk-blocks/faq2-q', 'vk-blocks/slider-item', 'vk-blocks/accordion-trigger', 'vk-blocks/accordion-target',  ].includes( name )
+				(name) => !['core/embed', 'core/template', 'vk-blocks/page-content', 'vk-blocks/post-list', 'vk-blocks/select-post-list-item', 'vk-blocks/child-page', 'vk-blocks/card-item', 'vk-blocks/grid-column-item', 'vk-blocks/gridcolcard-item', 'vk-blocks/gridcolcard-item-body', 'vk-blocks/gridcolcard-item-footer', 'vk-blocks/gridcolcard-item-header', 'vk-blocks/step-item', 'vk-blocks/timeline-item', 'vk-blocks/grid-column-item', 'vk-blocks/icon-card-item', 'vk-blocks/faq2-a', 'vk-blocks/faq2-q', 'vk-blocks/slider-item', 'vk-blocks/accordion-trigger', 'vk-blocks/accordion-target',  ].includes( name )
 			)
 			.forEach( ( name ) => {
 				const nameToFilename = blockNameToFixtureBasename( name );

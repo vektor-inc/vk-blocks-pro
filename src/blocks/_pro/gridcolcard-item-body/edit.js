@@ -1,3 +1,4 @@
+import { __ } from '@wordpress/i18n';
 import {
 	InnerBlocks,
 	useBlockProps,
@@ -18,7 +19,7 @@ export default function Edit(props) {
 			'core/paragraph',
 			{
 				placeholder:
-					'グリッドカラムカードブロックでは様々なレイアウトが可能です。レイアウトパターンは、新規ブロック挿入時に画面左側に表示されるパネルで、「パターン」タブに切り替え -> セレクトボックスで「VK Grid Column Card」から呼び出す事ができます。',
+				__('You can create a variety of layouts with grid column card blocks.', 'vk-blocks'),
 			},
 		],
 	];

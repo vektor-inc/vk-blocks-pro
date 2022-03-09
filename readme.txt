@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Outer (Pro) ] Fixed a bug where css was hitting inner content
+
 = 1.27.7 =
 [ Bug fix ][ Post list an so on (Pro) ] Fixed number of days to display the new post mark was not saved.
 [ Bug fix ][ Post list an so on (Pro) ] Fixed no post message php notice.

@@ -65,7 +65,7 @@ export default function SliderItemEdit(props) {
 	}
 
 	const opacityClass = opacity && opacity * 10;
-	const bgAreaClasses = classnames('vk_slider_item-background-area',{
+	const bgAreaClasses = classnames('vk_slider_item-background-area', {
 		[`has-background`]: bgColor !== undefined,
 		[`has-${bgColor}-background-color`]:
 			bgColor !== undefined && !isHexColor(bgColor),

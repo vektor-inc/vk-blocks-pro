@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
 Tested up to: 5.9.1
-Stable tag: 1.27.6.1
+Stable tag: 1.27.7.1
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -64,6 +64,8 @@ e.g.
 == Changelog ==
 
 [ Bug fix ][ Slider(Pro) ] Fixed a bug that the background was not transparent when the transparency setting was set to 0.
+
+= 1.27.8 =
 [ Bug fix ][ Outer (Pro) ] Fixed a bug where css was hitting inner content
 
 = 1.27.7 =

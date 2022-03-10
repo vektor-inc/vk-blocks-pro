@@ -1,13 +1,11 @@
-name: PHP Unit Test
+name: PHP Unit Test & Deploy develop
 
 on:
   push:
     branches:
-      - master
       - develop
   pull_request:
     branches:
-      - master
       - develop
 
 jobs:
@@ -59,9 +57,25 @@ jobs:
         curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
         chmod +x wp-cli.phar
         mv wp-cli.phar /usr/local/bin/wp
-    - name: Build
-      run: npm run build
+
+    # dist の中で build は実行している
+    - name: Build and Dist
+      run: npm run dist
+
+    # PHPUnit
     - name: Run @wordpress/env
       run: npx wp-env start
     - name: PHP Unit Test
       run: npm run phpunit
+
+    # Deploy test server
+    - name: Deploy to test server [ Deprecated ]
+      uses: burnett01/rsync-deployments@4.1
+      with:
+        switches: -avzr
+        path: /dist/vk-blocks-pro/
+        remote_path: /home/vs4/www/vk-block-test/wp-content/plugins/vk-blocks-pro/
+        remote_host: ${{ secrets.DEPLOY_HOST_VS4 }}
+        remote_port: ${{ secrets.DEPLOY_PORT_VS4 }}
+        remote_user: ${{ secrets.DEPLOY_USER_VS4 }}
+        remote_key: ${{ secrets.DEPLOY_KEY_VS4 }}

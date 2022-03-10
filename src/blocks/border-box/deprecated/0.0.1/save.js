@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import { InnerBlocks, RichText } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 
@@ -58,7 +58,7 @@ export const DepBody = (props) => {
 			className={`vk_borderBox vk_borderBox-color-${color} vk_borderBox-background-${bgColor} ${customClass}`}
 		>
 			<div className="vk_borderBox_title_container">
-				{ReactHtmlParser(icon)}
+				{parse(icon)}
 				{title}
 			</div>
 			<div className={`vk_borderBox_body`}>{inner}</div>

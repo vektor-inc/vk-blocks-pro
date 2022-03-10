@@ -3,7 +3,7 @@ import { __ } from '@wordpress/i18n';
 import { Component } from '@wordpress/element';
 import { RichText } from '@wordpress/block-editor';
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 
 export class ComponentBlock extends Component {
 	render() {
@@ -124,7 +124,7 @@ export class ComponentBlock extends Component {
 							border: `1px solid ${color[blockNumArrIndex]}`,
 						}}
 					>
-						{ReactHtmlParser(faIconTag)}
+						{parse(faIconTag)}
 					</div>
 				);
 			}
@@ -136,7 +136,7 @@ export class ComponentBlock extends Component {
 						border: '1px solid ' + color[blockNumArrIndex],
 					}}
 				>
-					{ReactHtmlParser(faIconTag)}
+					{parse(faIconTag)}
 				</div>
 			);
 		})();

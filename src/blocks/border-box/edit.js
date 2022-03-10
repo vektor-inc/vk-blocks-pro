@@ -15,7 +15,7 @@ import {
 	RichText,
 	useBlockProps,
 } from '@wordpress/block-editor';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 
 /**
  * Internal dependencies
@@ -238,7 +238,7 @@ export default function BorderBoxEdit(props) {
 			</InspectorControls>
 			<div {...blockProps}>
 				<div className={classnames(titleClasses)} style={titleStyle}>
-					{ReactHtmlParser(icon)}
+					{parse(icon)}
 					{title}
 				</div>
 				<div className={`vk_borderBox_body`}>{inner}</div>

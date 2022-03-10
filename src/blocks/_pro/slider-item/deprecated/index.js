@@ -2,6 +2,7 @@
 import save0_0_0 from './0.0.0/save';
 import save0_60_1 from './0.60.1/save';
 import save1_22_1 from './1.22.1/save';
+import save1_27_7 from './1.27.7/save';
 
 const blockAttributes = {
 	verticalAlignment: {
@@ -77,6 +78,12 @@ const blockAttributes3 = {
 }
 
 export default [
+	{
+		attributes: {
+			...blockAttributes3
+		},
+		save: save1_27_7,
+	},
 	{
 		attributes: {
 			...blockAttributes3

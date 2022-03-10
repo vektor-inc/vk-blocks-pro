@@ -63,6 +63,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Slider(Pro) ] Fixed a bug that the background was not transparent when the transparency setting was set to 0.
 [ Bug fix ][ Outer (Pro) ] Fixed a bug where css was hitting inner content
 
 = 1.27.7 =

@@ -21,7 +21,7 @@ $media-xxl-down: 1399.98px;
 	position: relative;
 	transform: translateZ(0); // Safari 1px bug 対応
 
-	.has-background-dim::before {
+	.vk_outer-background-area.has-background-dim::before {
 		content: "";
 		z-index: 1;
 	}
@@ -32,7 +32,7 @@ $media-xxl-down: 1399.98px;
 	}
 
 	.vk_outer-background-area,
-	.has-background-dim::before {
+	.vk_outer-background-area.has-background-dim::before {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -42,7 +42,7 @@ $media-xxl-down: 1399.98px;
 	}
 
 	@for $i from 0 through 10 {
-		.has-background-dim-#{ $i } {
+		.vk_outer-background-area.has-background-dim-#{ $i } {
 			opacity: $i * 0.1;
 		}
 	}

@@ -41,7 +41,7 @@ gulp.task('helper-js', (done) => {
 });
 
 gulp.task('helper-js-pro', (done) => {
-	gulp.src('src/blocks/_pro/accordion/enque-front.js')
+	gulp.src('src/blocks/_pro/accordion/view.js')
 		.pipe(uglify())
 		.pipe(rename('vk-accordion.min.js'))
 		.pipe(gulp.dest('./build/'));

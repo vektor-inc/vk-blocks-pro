@@ -4,10 +4,11 @@
 /*-------------------------------------------*/
 
 .vk_slider_item {
-	background-color: #ffffff;
 	display: flex;
 	position: relative;
 	width: 100%;
+
+	// 互換性対応ここから 1.27.6以前
 	@for $i from 0 through 10 {
 		&.has-background-dim-#{ $i }::before {
 			opacity: $i * 0.1;
@@ -25,13 +26,38 @@
 		background-color: inherit;
 	}
 
-	.vk_slider_item-background-area {
+	&.has-background {
+		.vk_slider_item-background-area:not([class*=-background-color]) {
+			z-index: 0;
+		}
+	}
+	// 互換性対応ここまで
+
+	.has-background-dim::before {
+		z-index: 1;
+		content: "";
+	}
+
+	// 背景色が選択されていない時は白
+	.vk_slider_item-background-area:not([class*=-background-color]) {
+		background-color: #ffffff;
+	}
+
+	.vk_slider_item-background-area,
+	.has-background-dim::before {
 		position: absolute;
 		top: 0;
 		left: 0;
-		right: 0;
 		bottom: 0;
-		background-color: #fff;
+		right: 0;
+		z-index: 1;
+		content: "";
+	}
+
+	@for $i from 0 through 10 {
+		.has-background-dim-#{ $i } {
+			opacity: $i * 0.1;
+		}
 	}
 }
 

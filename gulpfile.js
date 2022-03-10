@@ -33,7 +33,7 @@ gulp.task('text-domain', (done) => {
 });
 
 gulp.task('helper-js', (done) => {
-	gulp.src('src/blocks/faq2/enque-front.js')
+	gulp.src('src/blocks/faq2/view.js')
 		.pipe(uglify())
 		.pipe(rename('vk-faq2.min.js'))
 		.pipe(gulp.dest('./build/'));

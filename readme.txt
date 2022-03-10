@@ -63,6 +63,7 @@ e.g.
 
 == Changelog ==
 
+= 1.27.9 =
 [ Bug fix ][ Slider(Pro) ] Fixed a bug that the background was not transparent when the transparency setting was set to 0.
 
 = 1.27.8 =

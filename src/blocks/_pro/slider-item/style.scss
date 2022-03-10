@@ -8,6 +8,9 @@
 	display: flex;
 	position: relative;
 	width: 100%;
+	&.has-background-dim-0{
+		background-color: transparent;
+	}
 	@for $i from 0 through 10 {
 		&.has-background-dim-#{ $i }::before {
 			opacity: $i * 0.1;
@@ -32,6 +35,12 @@
 		right: 0;
 		bottom: 0;
 		background-color: #fff;
+	}
+
+	&.has-background-dim-0{
+		.vk_slider_item-background-area {
+			background-color: transparent;
+		}
 	}
 }
 

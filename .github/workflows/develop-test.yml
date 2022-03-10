@@ -1,4 +1,4 @@
-name: PHP Unit Test
+name: PHP Unit Test & Deploy develop
 
 on:
   push:

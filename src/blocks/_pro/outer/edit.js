@@ -585,10 +585,10 @@ export default function OuterEdit(props) {
 							value={borderRadius}
 							onChange={(value) =>
 								setAttributes({
-									borderRadius: toNumber(value, -100, 100),
+									borderRadius: toNumber(value, 0, 100),
 								})
 							}
-							min="-100"
+							min="0"
 							max="100"
 						/>
 					</BaseControl>

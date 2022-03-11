@@ -7,7 +7,7 @@
 }
 
 /*-------------------------------------------*/
-/* 余白（まだ レスポンシブスペーサーでのみ使用）
+/* 余白（レスポンシブスペーサー,共通余白で使用）
 /*-------------------------------------------*/
 :root {
 	--vk-margin-sm : 1.5rem;
@@ -15,6 +15,11 @@
 	--vk-margin-lg : 4rem;
 }
 .vk_block{
+	&-margin-0 {
+		&--margin-bottom {
+			margin-bottom: 0 !important;
+		}
+	}
 	&-margin-sm {
 		margin-top: var(--vk-margin-sm); /* 旧バージョンでdeprecatedが走ってない状態のfallback */
 		&--margin-top {

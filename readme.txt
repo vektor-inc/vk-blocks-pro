@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ fix ]  [ Outer (Pro) ] Border radius range above 0.
+
 = 1.27.9 =
 [ Bug fix ][ Slider(Pro) ] Fixed a bug that the background was not transparent when the transparency setting was set to 0.
 

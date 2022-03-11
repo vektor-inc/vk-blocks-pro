@@ -186,6 +186,9 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 			if ( ! empty( $options['vkb_hidden_xs'] ) ) {
 				array_push( $hidden_class, 'vk_hidden-xs' );
 			}
+			if ( ! empty( $options['marginSetting'] ) ) {
+				array_push( $hidden_class, $options['marginSetting'] );
+			}
 
 			$loop = '';
 			if ( $wp_query->have_posts() ) :

@@ -33,7 +33,7 @@ gulp.task('text-domain', (done) => {
 });
 
 gulp.task('helper-js', (done) => {
-	gulp.src('src/blocks/faq2/enque-front.js')
+	gulp.src('src/blocks/faq2/view.js')
 		.pipe(uglify())
 		.pipe(rename('vk-faq2.min.js'))
 		.pipe(gulp.dest('./build/'));
@@ -41,15 +41,15 @@ gulp.task('helper-js', (done) => {
 });
 
 gulp.task('helper-js-pro', (done) => {
-	gulp.src('src/blocks/_pro/accordion/enque-front.js')
+	gulp.src('src/blocks/_pro/accordion/view.js')
 		.pipe(uglify())
 		.pipe(rename('vk-accordion.min.js'))
 		.pipe(gulp.dest('./build/'));
-	gulp.src('src/blocks/_pro/animation/enque-front.js')
+	gulp.src('src/blocks/_pro/animation/view.js')
 		.pipe(uglify())
 		.pipe(rename('vk-animation.min.js'))
 		.pipe(gulp.dest('./build/'));
-	gulp.src('src/blocks/_pro/slider/enque-front.js')
+	gulp.src('src/blocks/_pro/slider/view.js')
 		.pipe(uglify())
 		.pipe(rename('vk-slider.min.js'))
 		.pipe(gulp.dest('./build/'));

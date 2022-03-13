@@ -45,9 +45,9 @@ function vk_blocks_breadcrumb_render_callback( $attributes ) {
 	$breadcrumb_options = array(
 		'id_outer'        => 'vk_breadcrumb',
 		'class_outer'     => $outer_classes,
-		'class_inner'     => 'container',
-		'class_list'      => 'vk_breadcrumb-list',
-		'class_list_item' => 'vk_breadcrumb-list__item',
+		'class_inner'     => 'vk_breadcrumb_inner',
+		'class_list'      => 'vk_breadcrumb_list',
+		'class_list_item' => 'vk_breadcrumb_list_item',
 	);
 	return $vk_breadcrumb->get_breadcrumb( $breadcrumb_options );
 }

@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Add Block ] Breadcrumb(Pro)
+
 = 1.27.9 =
 [ Bug fix ][ Slider(Pro) ] Fixed a bug that the background was not transparent when the transparency setting was set to 0.
 

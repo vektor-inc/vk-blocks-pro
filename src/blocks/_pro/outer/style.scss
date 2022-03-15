@@ -13,9 +13,6 @@ $media-lg-down: 991.98px;
 $media-xl-down: 1199.98px;
 $media-xxl-down: 1399.98px;
 
-_::-webkit-full-page-media, _:future, :root .wp-block-vk-blocks-outer.vk_outer {
-	transform: translateZ(0); // Safari 1px bug 対応
-}
 //.wp-block-vk-blocks-outerがないと打ち消されてしまうので追加
 .wp-block-vk-blocks-outer.vk_outer {
 	background-position: center;

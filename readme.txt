@@ -63,7 +63,9 @@ e.g.
 
 == Changelog ==
 
-[ fix ]  [ Outer (Pro) ] Border radius range above 0.
+= 1.28.0 =
+[ Bug fix ][ Outer (Pro) ] Border radius range above 0.
+[ Bug fix ][ Outer (Pro) ] background position fix
 [ Add Block ] Breadcrumb(Pro)
 
 = 1.27.9 =

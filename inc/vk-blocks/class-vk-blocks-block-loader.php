@@ -53,6 +53,7 @@ class VK_Blocks_Block_Loader {
 		array( 'name' => 'post-list',             'is_pro' =>  true  ),
 		array( 'name' => 'select-post-list',      'is_pro' =>  true  ),
 		array( 'name' => 'select-post-list-item', 'is_pro' =>  true  ),
+		array( 'name' => 'single-term',           'is_pro' =>  true  ),
 		array( 'name' => 'slider',                'is_pro' =>  true  ),
 		array( 'name' => 'slider-item',           'is_pro' =>  true  ),
 		array( 'name' => 'step',                  'is_pro' =>  true  ),

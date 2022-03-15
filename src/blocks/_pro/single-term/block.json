@@ -1,0 +1,11 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/single-term",
+	"category": "vk-blocks-cat",
+	"title": "Single Term",
+	"description": "Displays single term",
+	"textdomain": "vk-blocks",
+	"supports": {
+		"className": true
+	}
+}

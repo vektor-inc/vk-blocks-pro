@@ -5,14 +5,58 @@ import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
 import { BlockControls } from '@wordpress/block-editor';
 import { createHigherOrderComponent } from '@wordpress/compose';
-import { ToolbarDropdownMenu } from '@wordpress/components';
+import {
+	ToolbarDropdownMenu,
+	Popover,
+	ButtonGroup,
+	Button,
+	ToolbarButton,
+} from '@wordpress/components';
 import { ReactComponent as Icon } from './icon.svg';
-
+import { createRef, useState } from '@wordpress/element';
 /**
  * External dependencies
  */
 import classnames from 'classnames';
 import { find } from 'lodash';
+
+const DEFAULT_MARGIN_BOTTOM_CONTROLS = [
+	{
+		title: __('0 bottom', 'vk-blocks'),
+		marginClass: 'vk_block-margin-0--margin-bottom',
+	},
+	{
+		title: __('sm bottom', 'vk-blocks'),
+		marginClass: 'vk_block-margin-sm--margin-bottom',
+	},
+	{
+		title: __('md bottom', 'vk-blocks'),
+		marginClass: 'vk_block-margin-md--margin-bottom',
+	},
+	{
+		title: __('lg bottom', 'vk-blocks'),
+		marginClass: 'vk_block-margin-lg--margin-bottom',
+	},
+];
+
+const DEFAULT_MARGIN_TOP_CONTROLS = [
+	{
+		title: __('0 top', 'vk-blocks'),
+		marginClass: 'vk_block-margin-0--margin-top',
+	},
+	{
+		title: __('sm top', 'vk-blocks'),
+		marginClass: 'vk_block-margin-sm--margin-top',
+	},
+	{
+		title: __('md top', 'vk-blocks'),
+		marginClass: 'vk_block-margin-md--margin-top',
+	},
+	{
+		title: __('lg top', 'vk-blocks'),
+		marginClass: 'vk_block-margin-lg--margin-top',
+	},
+];
 
 const DEFAULT_MARGIN_CONTROLS = [
 	{
@@ -104,6 +148,12 @@ addFilter(
 					marginSetting: {
 						type: 'string',
 					},
+					marginTop: {
+						type: 'string',
+					},
+					marginBottom: {
+						type: 'string',
+					},
 				},
 			};
 		}
@@ -122,19 +172,149 @@ addFilter(
 	createHigherOrderComponent((BlockEdit) => {
 		return (props) => {
 			const { name, attributes, setAttributes } = props;
-			const { marginSetting } = attributes;
+			const { marginSetting, marginTop, marginBottom } = attributes;
+			const marginTopControls = DEFAULT_MARGIN_TOP_CONTROLS;
+			const marginBottomControls = DEFAULT_MARGIN_BOTTOM_CONTROLS;
 			const marginControls = DEFAULT_MARGIN_CONTROLS;
+			const buttonRef = createRef();
 
 			const activeMargin = find(
 				marginControls,
 				(control) => control.marginClass === marginSetting
 			);
 
+			const activeMarginTop = find(
+				marginTopControls,
+				(control) => control.marginClass === marginTop
+			);
+			const activeMarginBottom = find(
+				marginBottomControls,
+				(control) => control.marginClass === marginBottom
+			);
+
+			const [isAddingMargin, setIsAddingMargin] = useState(false);
+			const toolBarClick = () => {
+				setIsAddingMargin(!isAddingMargin);
+			};
+
+			const handleOnClickOutside = (event) => {
+				if (
+					(event.relatedTarget &&
+						!event.relatedTarget.closest(
+							`.vk-blocks-margin-extension-popover`
+						),
+					event.relatedTarget !== buttonRef.current)
+				) {
+					setIsAddingMargin(false);
+				}
+			};
+
 			if (isHidden(name)) {
 				return (
 					<>
 						<BlockEdit {...props} />
 						<BlockControls group="block">
+							<ToolbarButton
+								onClick={() => {
+									toolBarClick();
+								}}
+								ref={buttonRef}
+							>
+								<Icon style={{ marginRight: '8px' }} />
+								{activeMarginTop && activeMarginTop.title}
+								{activeMarginTop && activeMarginBottom && (
+									<br />
+								)}
+								{activeMarginBottom && activeMarginBottom.title}
+							</ToolbarButton>
+							{isAddingMargin && (
+								<Popover
+									className="vk-margin-extension-popover components-dropdown__content components-dropdown-menu__popover"
+									onFocusOutside={handleOnClickOutside}
+									position="bottom right"
+								>
+									<ButtonGroup className="mb-1">
+										{marginBottomControls.map((control) => {
+											const { marginClass, title } =
+												control;
+											const isActive =
+												marginBottom === marginClass;
+											return (
+												<Button
+													className="vk-margin-extension-button"
+													key={title}
+													icon={<Icon />}
+													isSmall
+													isPrimary={
+														marginBottom ===
+														marginClass
+													}
+													isSecondary={
+														marginBottom !==
+														marginClass
+													}
+													onClick={() => {
+														// 選択されているものをクリックしたらundefinedをセットする
+														const newClass =
+															isActive
+																? undefined
+																: marginClass;
+														setAttributes({
+															marginBottom:
+																newClass,
+														});
+														setIsAddingMargin(
+															false
+														);
+													}}
+												>
+													{title}
+												</Button>
+											);
+										})}
+									</ButtonGroup>
+
+									<ButtonGroup>
+										{marginTopControls.map((control) => {
+											const { marginClass, title } =
+												control;
+											const isActive =
+												marginTop === marginClass;
+											return (
+												<Button
+													className="vk-margin-extension-button"
+													key={title}
+													icon={<Icon />}
+													isSmall
+													isPrimary={
+														marginTop ===
+														marginClass
+													}
+													isSecondary={
+														marginTop !==
+														marginClass
+													}
+													onClick={() => {
+														// 選択されているものをクリックしたらundefinedをセットする
+														const newClass =
+															isActive
+																? undefined
+																: marginClass;
+														setAttributes({
+															marginTop: newClass,
+														});
+														setIsAddingMargin(
+															false
+														);
+													}}
+												>
+													{title}
+												</Button>
+											);
+										})}
+									</ButtonGroup>
+								</Popover>
+							)}
 							<ToolbarDropdownMenu
 								icon={
 									activeMargin ? (
@@ -187,8 +367,8 @@ addFilter(
 	'blocks.getSaveElement',
 	'vk-blocks/margin-extension',
 	(element, blockType, attributes) => {
-		const { marginSetting } = attributes;
-		if (marginSetting) {
+		const { marginControls, marginTop, marginBottom } = attributes;
+		if (marginControls || marginTop || marginBottom) {
 			if (element) {
 				element = {
 					...element,
@@ -198,7 +378,9 @@ addFilter(
 							...{
 								className: classnames(
 									element.props.className,
-									marginSetting
+									marginControls,
+									marginTop,
+									marginBottom
 								),
 							},
 						},
@@ -218,7 +400,14 @@ addFilter(
 	createHigherOrderComponent((BlockListBlock) => {
 		return (props) => {
 			const marginClassName = props.attributes.marginSetting;
-			const attachedClass = classnames(marginClassName, props.className);
+			const marginTopClassName = props.attributes.marginTop;
+			const marginBottomClassName = props.attributes.marginBottom;
+			const attachedClass = classnames(
+				marginClassName,
+				marginTopClassName,
+				marginBottomClassName,
+				props.className
+			);
 			return <BlockListBlock {...props} className={attachedClass} />;
 		};
 	}, 'addMarginSetting')

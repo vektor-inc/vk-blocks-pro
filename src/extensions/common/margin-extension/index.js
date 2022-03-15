@@ -16,19 +16,35 @@ import { find } from 'lodash';
 
 const DEFAULT_MARGIN_CONTROLS = [
 	{
-		title: __('0', 'vk-blocks'),
+		title: __('0 top', 'vk-blocks'),
+		marginClass: 'vk_block-margin-0--margin-top',
+	},
+	{
+		title: __('sm top', 'vk-blocks'),
+		marginClass: 'vk_block-margin-sm--margin-top',
+	},
+	{
+		title: __('md top', 'vk-blocks'),
+		marginClass: 'vk_block-margin-md--margin-top',
+	},
+	{
+		title: __('lg top', 'vk-blocks'),
+		marginClass: 'vk_block-margin-lg--margin-top',
+	},
+	{
+		title: __('0 bottom', 'vk-blocks'),
 		marginClass: 'vk_block-margin-0--margin-bottom',
 	},
 	{
-		title: __('sm', 'vk-blocks'),
+		title: __('sm bottom', 'vk-blocks'),
 		marginClass: 'vk_block-margin-sm--margin-bottom',
 	},
 	{
-		title: __('md', 'vk-blocks'),
+		title: __('md bottom', 'vk-blocks'),
 		marginClass: 'vk_block-margin-md--margin-bottom',
 	},
 	{
-		title: __('lg', 'vk-blocks'),
+		title: __('lg bottom', 'vk-blocks'),
 		marginClass: 'vk_block-margin-lg--margin-bottom',
 	},
 ];

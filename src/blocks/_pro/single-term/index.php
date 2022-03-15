@@ -17,7 +17,7 @@ function vk_blocks_single_term_render_callback( $attributes ) {
 	$vk_term_color = new VkTermColor();
 	$vk_term_color::init();
 
-	$outer_classes = 'vk_breadcrumb btn btn-sm';
+	$outer_classes = 'vk_singleTerm btn btn-sm';
 	if ( isset( $attributes['className'] ) ) {
 		$outer_classes .= ' ' . $attributes['className'];
 	}

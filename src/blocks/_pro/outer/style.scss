@@ -19,7 +19,6 @@ $media-xxl-down: 1399.98px;
 	background-size: cover;
 	background-repeat: no-repeat;
 	position: relative;
-	transform: translateZ(0); // Safari 1px bug 対応
 
 	.vk_outer-background-area.has-background-dim::before {
 		content: "";

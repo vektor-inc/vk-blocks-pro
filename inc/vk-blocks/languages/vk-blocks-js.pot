@@ -217,19 +217,19 @@ msgid "Button"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:162
-#: src/components/display-items-control/index.js:98
+#: src/components/display-items-control/index.js:100
 msgid "Button option"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:165
-#: src/components/display-items-control/index.js:101
+#: src/components/display-items-control/index.js:103
 msgid ""
 "Click each card block to set the target url. You can find the url form at "
 "it's sidebar."
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:171
-#: src/components/display-items-control/index.js:107
+#: src/components/display-items-control/index.js:109
 msgid "Button text"
 msgstr ""
 
@@ -286,7 +286,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:139
 #: src/blocks/_pro/outer/edit.js:366
-#: src/blocks/_pro/slider-item/edit.js:112
+#: src/blocks/_pro/slider-item/edit.js:114
 msgid "Padding (Left and Right)"
 msgstr ""
 
@@ -427,40 +427,40 @@ msgid "Text"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:235
-#: src/blocks/_pro/slider-item/edit.js:159
+#: src/blocks/_pro/slider-item/edit.js:161
 msgid "Background Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:240
-#: src/blocks/_pro/slider-item/edit.js:163
+#: src/blocks/_pro/slider-item/edit.js:165
 #: src/blocks/pr-content/edit.js:67
 msgid "Color Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:241
-#: src/blocks/_pro/slider-item/edit.js:165
+#: src/blocks/_pro/slider-item/edit.js:167
 msgid ""
 "Color will overcome background image. If you want to display image, set "
 "opacity 0."
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:249
-#: src/blocks/_pro/slider-item/edit.js:173
+#: src/blocks/_pro/slider-item/edit.js:175
 msgid "Opacity Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:263
-#: src/blocks/_pro/slider-item/edit.js:208
+#: src/blocks/_pro/slider-item/edit.js:210
 msgid "Background Image PC"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:279
-#: src/blocks/_pro/slider-item/edit.js:224
+#: src/blocks/_pro/slider-item/edit.js:226
 msgid "Background Image Tablet"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:289
-#: src/blocks/_pro/slider-item/edit.js:234
+#: src/blocks/_pro/slider-item/edit.js:236
 msgid "Background Image Mobile"
 msgstr ""
 
@@ -485,7 +485,7 @@ msgid "Parallax (Non-guaranteed)"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:337
-#: src/blocks/_pro/slider-item/edit.js:107
+#: src/blocks/_pro/slider-item/edit.js:109
 #: src/blocks/pr-content/edit.js:229
 msgid "Layout Setting"
 msgstr ""
@@ -752,31 +752,31 @@ msgstr ""
 msgid "Input Internal Post URL"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:116
+#: src/blocks/_pro/slider-item/edit.js:118
 msgid "Fit to the Container area"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:123
+#: src/blocks/_pro/slider-item/edit.js:125
 msgid "Add padding to the Slider area"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:130
+#: src/blocks/_pro/slider-item/edit.js:132
 msgid "Remove padding from the Slider area"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:145
+#: src/blocks/_pro/slider-item/edit.js:147
 msgid "Vertical align"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:187
+#: src/blocks/_pro/slider-item/edit.js:189
 msgid "Background Image Size"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:194
+#: src/blocks/_pro/slider-item/edit.js:196
 msgid "cover"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:198
+#: src/blocks/_pro/slider-item/edit.js:200
 msgid "repeat"
 msgstr ""
 
@@ -866,7 +866,7 @@ msgstr ""
 
 #: src/blocks/_pro/slider/edit.js:370
 #: src/blocks/button/edit.js:260
-#: src/components/display-items-control/index.js:125
+#: src/components/display-items-control/index.js:127
 msgid "Center"
 msgstr ""
 
@@ -1029,14 +1029,14 @@ msgstr ""
 #: src/blocks/balloon/edit.js:426
 #: src/blocks/button/edit.js:250
 #: src/blocks/pr-content/edit.js:237
-#: src/components/display-items-control/index.js:121
+#: src/components/display-items-control/index.js:123
 msgid "Left"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:438
 #: src/blocks/button/edit.js:270
 #: src/blocks/pr-content/edit.js:236
-#: src/components/display-items-control/index.js:129
+#: src/components/display-items-control/index.js:131
 msgid "Right"
 msgstr ""
 
@@ -1754,7 +1754,7 @@ msgstr ""
 msgid "Column ( Screen size : Large )"
 msgstr ""
 
-#: src/components/display-items-control/index.js:112
+#: src/components/display-items-control/index.js:114
 msgid "Button align"
 msgstr ""
 
@@ -1790,7 +1790,7 @@ msgstr ""
 msgid "Number of days to display the new post mark"
 msgstr ""
 
-#: src/components/display-items-control/index.js:93
+#: src/components/display-items-control/index.js:95
 msgid "New post mark"
 msgstr ""
 

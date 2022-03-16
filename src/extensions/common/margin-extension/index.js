@@ -92,7 +92,6 @@ export const isHidden = (blockName) => {
 		'core/tag-cloud',
 		'core/shortcode',
 		'core/rss',
-		'vk-blocks/step-item',
 		'vk-blocks/slider-item',
 		'vk-blocks/card-item',
 		'vk-blocks/icon-card-item',

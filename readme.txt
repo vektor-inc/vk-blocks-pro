@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ] Add margin extension in toolbar.
+
 = 1.28.0 =
 [ Add Block ] Breadcrumb(Pro)
 [ Specification Change ][ Spacer ] Change break point

@@ -63,6 +63,12 @@ e.g.
 
 == Changelog ==
 
+= 1.28.0 =
+[ Add Block ] Breadcrumb(Pro)
+[ Specification Change ][ Spacer ] Change break point
+[ Bug fix ][ Outer (Pro) ] Border radius range above 0.
+[ Bug fix ][ Outer (Pro) ] background position fix
+
 = 1.27.9 =
 [ Bug fix ][ Slider(Pro) ] Fixed a bug that the background was not transparent when the transparency setting was set to 0.
 

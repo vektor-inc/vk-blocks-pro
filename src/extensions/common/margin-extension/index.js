@@ -14,11 +14,17 @@ import {
 } from '@wordpress/components';
 import { ReactComponent as Icon } from './icon.svg';
 import { createRef, useState } from '@wordpress/element';
+
 /**
  * External dependencies
  */
 import classnames from 'classnames';
 import { find } from 'lodash';
+
+/**
+ * Internal dependencies
+ */
+import { marginIcon, marginTopIcon, marginBottomIcon } from './icons';
 
 const DEFAULT_MARGIN_BOTTOM_CONTROLS = [
 	{
@@ -176,7 +182,7 @@ addFilter(
 			const marginTopControls = DEFAULT_MARGIN_TOP_CONTROLS;
 			const marginBottomControls = DEFAULT_MARGIN_BOTTOM_CONTROLS;
 			const marginControls = DEFAULT_MARGIN_CONTROLS;
-			const buttonRef = createRef();
+			const containerRef = createRef();
 
 			const activeMargin = find(
 				marginControls,
@@ -197,13 +203,19 @@ addFilter(
 				setIsAddingMargin(!isAddingMargin);
 			};
 
-			const handleOnClickOutside = (event) => {
+			const hideThresholdPopover = () => setIsAddingMargin(false);
+			// https://github.com/WordPress/gutenberg/blob/a082a0b669b0395480e9a69d70ad5a1648c2f9d4/packages/components/src/dropdown/index.js#L66-L75
+			const handleOnClickOutside = () => {
+				const { ownerDocument } = containerRef.current;
+				const toolbarButton = ownerDocument.activeElement.closest(
+					'.vk-margin-extension-toolbar-button'
+				);
 				if (
-					(event.relatedTarget &&
-						!event.relatedTarget.closest(
-							`.vk-blocks-margin-extension-popover`
-						),
-					event.relatedTarget !== buttonRef.current)
+					!containerRef.current.contains(
+						ownerDocument.activeElement
+					) &&
+					(!toolbarButton ||
+						toolbarButton.contains(containerRef.current))
 				) {
 					setIsAddingMargin(false);
 				}
@@ -218,9 +230,21 @@ addFilter(
 								onClick={() => {
 									toolBarClick();
 								}}
-								ref={buttonRef}
+								className="vk-margin-extension-toolbar-button"
+								ref={containerRef}
 							>
-								<Icon style={{ marginRight: '8px' }} />
+								{activeMarginTop &&
+									!activeMarginBottom &&
+									marginTopIcon}
+								{!activeMarginTop &&
+									activeMarginBottom &&
+									marginBottomIcon}
+								{activeMarginTop &&
+									activeMarginBottom &&
+									marginIcon}
+								{!activeMarginTop &&
+									!activeMarginBottom &&
+									marginIcon}
 								{activeMarginTop && activeMarginTop.title}
 								{activeMarginTop && activeMarginBottom && (
 									<br />
@@ -232,25 +256,22 @@ addFilter(
 									className="vk-margin-extension-popover components-dropdown__content components-dropdown-menu__popover"
 									onFocusOutside={handleOnClickOutside}
 									position="bottom right"
+									onClose={hideThresholdPopover}
 								>
 									<ButtonGroup className="mb-1">
-										{marginBottomControls.map((control) => {
+										{marginTopControls.map((control) => {
 											const { marginClass, title } =
 												control;
 											const isActive =
-												marginBottom === marginClass;
+												marginTop === marginClass;
 											return (
 												<Button
 													className="vk-margin-extension-button"
 													key={title}
-													icon={<Icon />}
+													icon={marginTopIcon}
 													isSmall
 													isPrimary={
-														marginBottom ===
-														marginClass
-													}
-													isSecondary={
-														marginBottom !==
+														marginTop ===
 														marginClass
 													}
 													onClick={() => {
@@ -260,8 +281,7 @@ addFilter(
 																? undefined
 																: marginClass;
 														setAttributes({
-															marginBottom:
-																newClass,
+															marginTop: newClass,
 														});
 														setIsAddingMargin(
 															false
@@ -273,25 +293,20 @@ addFilter(
 											);
 										})}
 									</ButtonGroup>
-
 									<ButtonGroup>
-										{marginTopControls.map((control) => {
+										{marginBottomControls.map((control) => {
 											const { marginClass, title } =
 												control;
 											const isActive =
-												marginTop === marginClass;
+												marginBottom === marginClass;
 											return (
 												<Button
 													className="vk-margin-extension-button"
 													key={title}
-													icon={<Icon />}
+													icon={marginBottomIcon}
 													isSmall
 													isPrimary={
-														marginTop ===
-														marginClass
-													}
-													isSecondary={
-														marginTop !==
+														marginBottom ===
 														marginClass
 													}
 													onClick={() => {
@@ -301,7 +316,8 @@ addFilter(
 																? undefined
 																: marginClass;
 														setAttributes({
-															marginTop: newClass,
+															marginBottom:
+																newClass,
 														});
 														setIsAddingMargin(
 															false
@@ -339,7 +355,7 @@ addFilter(
 									return {
 										...control,
 										isActive,
-										icon: <Icon />,
+										icon: <marginBottom />,
 										onClick: () => {
 											// 選択されているものをクリックしたらundefinedをセットする
 											const newClass = isActive

@@ -176,17 +176,19 @@ addFilter(
 										{!activeMarginTop &&
 											!activeMarginBottom &&
 											marginIcon}
-										{activeMarginTop || activeMarginBottom ?
-											<span style={{ marginLeft:'8px'}}>
+										{activeMarginTop ||
+										activeMarginBottom ? (
+											<span style={{ marginLeft: '8px' }}>
 												{activeMarginTop &&
-												activeMarginTop.title}
+													activeMarginTop.title}
 												{activeMarginTop &&
-													activeMarginBottom && <br />}
+													activeMarginBottom && (
+														<br />
+													)}
 												{activeMarginBottom &&
 													activeMarginBottom.title}
 											</span>
-											:null
-										}
+										) : null}
 									</>
 								}
 								label={__('Margin the block', 'vk-blocks')}

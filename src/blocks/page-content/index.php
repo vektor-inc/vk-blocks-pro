@@ -106,8 +106,11 @@ function vk_blocks_page_content_render_callback( $attributes ) {
 		if ( isset( $attributes['vkb_hidden_xs'] ) && $attributes['vkb_hidden_xs'] ) {
 			$classes .= ' vk_hidden-xs';
 		}
-		if ( isset( $attributes['marginSetting'] ) && $attributes['marginSetting'] ) {
-			$classes .= ' ' . $attributes['marginSetting'];
+		if ( isset( $attributes['marginTop'] ) && $attributes['marginTop'] ) {
+			$classes .= ' ' . $attributes['marginTop'];
+		}
+		if ( isset( $attributes['marginBottom'] ) && $attributes['marginBottom'] ) {
+			$classes .= ' ' . $attributes['marginBottom'];
 		}
 
 		$page_html .= '<div class="' . $classes . '">';

@@ -163,7 +163,11 @@ function vk_blocks_blocks_assets() {
 				'type'    => 'boolean',
 				'default' => false,
 			),
-			'marginSetting'    => array(
+			'marginTop'    => array(
+				'type'    => 'string',
+				'default' => '',
+			),
+			'marginBottom'    => array(
 				'type'    => 'string',
 				'default' => '',
 			),

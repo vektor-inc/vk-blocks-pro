@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Fix ] [ Breadcrumb(Pro) ] Add inserter Pro label.
+
 = 1.28.0 =
 [ Add Block ] Breadcrumb(Pro)
 [ Specification Change ][ Spacer ] Change break point

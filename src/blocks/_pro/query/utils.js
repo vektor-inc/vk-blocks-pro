@@ -4,6 +4,7 @@
 import { useSelect } from '@wordpress/data';
 import { useMemo } from '@wordpress/element';
 // import { store as coreStore } from '@wordpress/core-data';
+import { isMatch } from 'lodash';
 
 /**
  * @typedef IHasNameAndId
@@ -128,4 +129,18 @@ export const getFirstQueryClientIdFromBlocks = (blocks) => {
 			blocksQueue.push(innerBlock);
 		});
 	}
+};
+
+
+export const getMatchingVariation = (
+	blockAttributes,
+	variations
+) => {
+	if (!variations || !blockAttributes) return;
+	const matches = variations.filter(({ attributes }) => {
+		if (!attributes || !Object.keys(attributes).length) return false;
+		return isMatch(blockAttributes, attributes);
+	});
+	if (matches.length !== 1) return;
+	return matches[0];
 };

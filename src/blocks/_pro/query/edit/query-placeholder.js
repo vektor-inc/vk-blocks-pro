@@ -4,7 +4,6 @@
 import { useSelect, useDispatch } from '@wordpress/data';
 import {
 	useBlockProps,
-	__experimentalGetMatchingVariation as getMatchingVariation, // eslint-disable-line
 	store as blockEditorStore,
 } from '@wordpress/block-editor';
 import {
@@ -12,6 +11,7 @@ import {
 	store as blocksStore,
 } from '@wordpress/blocks';
 import BlockVariationPicker from './block-variation-picker';
+import { getMatchingVariation } from '../utils';
 
 //queryブロックを配置した時の初期画面を作る
 // variations.jsで設定した値を取得

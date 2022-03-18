@@ -29,7 +29,7 @@ function BlockVariationPicker({
 			instructions={instructions}
 			className={classes}
 		>
-			{ /*
+			{/*
 			 * Disable reason: The `list` ARIA role is redundant but
 			 * Safari+VoiceOver won't announce the list otherwise.
 			 */
@@ -58,7 +58,7 @@ function BlockVariationPicker({
 					</li>
 				))}
 			</ul>
-			{ /* eslint-enable jsx-a11y/no-redundant-roles */}
+			{/* eslint-enable jsx-a11y/no-redundant-roles */}
 			{allowSkip && (
 				<div className="block-editor-block-variation-picker__skip">
 					<Button variant="link" onClick={() => onSelect()}>

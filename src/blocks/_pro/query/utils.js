@@ -131,11 +131,7 @@ export const getFirstQueryClientIdFromBlocks = (blocks) => {
 	}
 };
 
-
-export const getMatchingVariation = (
-	blockAttributes,
-	variations
-) => {
+export const getMatchingVariation = (blockAttributes, variations) => {
 	if (!variations || !blockAttributes) return;
 	const matches = variations.filter(({ attributes }) => {
 		if (!attributes || !Object.keys(attributes).length) return false;

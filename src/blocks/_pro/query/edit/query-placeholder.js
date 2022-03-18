@@ -4,7 +4,6 @@
 import { useSelect, useDispatch } from '@wordpress/data';
 import {
 	useBlockProps,
-	__experimentalBlockVariationPicker, // eslint-disable-line
 	__experimentalGetMatchingVariation as getMatchingVariation, // eslint-disable-line
 	store as blockEditorStore,
 } from '@wordpress/block-editor';
@@ -12,6 +11,7 @@ import {
 	createBlocksFromInnerBlocksTemplate,
 	store as blocksStore,
 } from '@wordpress/blocks';
+import BlockVariationPicker from './block-variation-picker';
 
 //queryブロックを配置した時の初期画面を作る
 // variations.jsで設定した値を取得
@@ -46,7 +46,7 @@ const QueryPlaceholder = ({ clientId, name, attributes, setAttributes }) => {
 	const label = matchingVariation?.title || blockType?.title;
 	return (
 		<div {...blockProps}>
-			<__experimentalBlockVariationPicker
+			<BlockVariationPicker
 				icon={icon}
 				label={label}
 				variations={scopeVariations}

@@ -16,13 +16,40 @@
 }
 .vk_block{
 	&-margin-sm {
-		margin-top: var(--vk-margin-sm);
+		margin-top: var(--vk-margin-sm); /* 旧バージョンでdeprecatedが走ってない状態のfallback */
+		&--margin-top {
+			margin-top: var(--vk-margin-sm);
+		}
+		&--margin-bottom {
+			margin-bottom: var(--vk-margin-sm);
+		}
+		&--height {
+			height: var(--vk-margin-sm);
+		}
 	}
 	&-margin-md {
-		margin-top: var(--vk-margin-md);
+		margin-top: var(--vk-margin-md); /* 旧バージョンでdeprecatedが走ってない状態のfallback */
+		&--margin-top {
+			margin-top: var(--vk-margin-md);
+		}
+		&--margin-bottom {
+			margin-bottom: var(--vk-margin-md);
+		}
+		&--height {
+			height: var(--vk-margin-md);
+		}
 	}
 	&-margin-lg {
-		margin-top: var(--vk-margin-lg);
+		margin-top: var(--vk-margin-lg); /* 旧バージョンでdeprecatedが走ってない状態のfallback */
+		&--margin-top {
+			margin-top: var(--vk-margin-lg);
+		}
+		&--margin-bottom {
+			margin-bottom: var(--vk-margin-lg);
+		}
+		&--height {
+			height: var(--vk-margin-lg);
+		}
 	}
 }
 
@@ -406,7 +433,7 @@ ol {
 	// これがないとコアに勝手にwidthが左右1em余白をあけられる
 	// → だがしかし Grid Column 2 で中の要素が勝手に小さくされるので一旦コメントアウト
 	.wp-block{
-		// width:auto; 
+		// width:auto;
 	}
 }
 

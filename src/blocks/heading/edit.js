@@ -19,7 +19,7 @@ import {
 } from '@wordpress/block-editor';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import classnames from 'classnames';
 
 const renderTitle = (level, contents, tStyle, headingStyle) => {
@@ -82,6 +82,9 @@ export default function HeaddingEdit(props) {
 		fontAwesomeIconAfter,
 		fontAwesomeIconColor,
 	} = attributes;
+
+	// eslint-disable-next-line no-undef
+	const iconFamily = vkFontAwesome.iconFamily;
 
 	const setTitleFontSize = (newLevel) => {
 		setAttributes({ level: newLevel });
@@ -201,7 +204,7 @@ export default function HeaddingEdit(props) {
 
 	const titleContent = (
 		<>
-			{ReactHtmlParser(iconBefore)}
+			{parse(iconBefore)}
 			<RichText
 				tagName={'span'}
 				value={title}
@@ -210,7 +213,7 @@ export default function HeaddingEdit(props) {
 				}}
 				placeholder={__('Input title…', 'vk-blocks')}
 			/>
-			{ReactHtmlParser(iconAfter)}
+			{parse(iconAfter)}
 		</>
 	);
 
@@ -328,7 +331,7 @@ export default function HeaddingEdit(props) {
 					</BaseControl>
 				</PanelBody>
 				<PanelBody
-					title={__('Font Awesome Icon Settings', 'vk-blocks')}
+					title={__('Icon', 'vk-blocks') + ' ( ' + iconFamily + ' )'}
 				>
 					<BaseControl
 						label={__('Before text', 'vk-blocks')}

@@ -119,11 +119,16 @@ add_action( 'admin_init', 'vk_blocks_setting_option_save', 10, 2 );
 /**
  * VK Blocks add setting link
  *
- * @param array $links VK Blocks action links.
+ * @param array  $links VK Blocks action links.
+ * @param string $file Path to the plugin file relative to the plugins directory.
+ *
+ * @return array
  */
-function vk_blocks_add_setting_link( $links ) {
-	$settings_link = '<a href="' . esc_url( admin_url( '/options-general.php?page=vk_blocks_options' ) ) . '">' . __( 'Setting', 'vk-blocks' ) . '</a>';
-	array_unshift( $links, $settings_link );
+function vk_blocks_add_setting_link( $links, $file ) {
+	if ( plugin_basename( VK_BLOCKS_DIR_PATH . '/vk-blocks.php' ) === $file ) {
+		$settings_link = '<a href="' . esc_url( admin_url( '/options-general.php?page=vk_blocks_options' ) ) . '">' . __( 'Setting', 'vk-blocks' ) . '</a>';
+		array_unshift( $links, $settings_link );
+	}
 	return $links;
 }
-add_filter( 'plugin_action_links', 'vk_blocks_add_setting_link' );
+add_filter( 'plugin_action_links', 'vk_blocks_add_setting_link', 10, 2 );

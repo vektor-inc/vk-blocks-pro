@@ -33,7 +33,7 @@ gulp.task('text-domain', (done) => {
 });
 
 gulp.task('helper-js', (done) => {
-	gulp.src('src/blocks/faq2/enque-front.js')
+	gulp.src('src/blocks/faq2/view.js')
 		.pipe(uglify())
 		.pipe(rename('vk-faq2.min.js'))
 		.pipe(gulp.dest('./build/'));
@@ -41,15 +41,15 @@ gulp.task('helper-js', (done) => {
 });
 
 gulp.task('helper-js-pro', (done) => {
-	gulp.src('src/blocks/_pro/accordion/enque-front.js')
+	gulp.src('src/blocks/_pro/accordion/view.js')
 		.pipe(uglify())
 		.pipe(rename('vk-accordion.min.js'))
 		.pipe(gulp.dest('./build/'));
-	gulp.src('src/blocks/_pro/animation/enque-front.js')
+	gulp.src('src/blocks/_pro/animation/view.js')
 		.pipe(uglify())
 		.pipe(rename('vk-animation.min.js'))
 		.pipe(gulp.dest('./build/'));
-	gulp.src('src/blocks/_pro/slider/enque-front.js')
+	gulp.src('src/blocks/_pro/slider/view.js')
 		.pipe(uglify())
 		.pipe(rename('vk-slider.min.js'))
 		.pipe(gulp.dest('./build/'));
@@ -255,11 +255,11 @@ gulp.task('dist', (done) => {
 		[
 			'./build/**',
 			'./inc/**',
-			'./src/**',
 			'./vendor/**',
 			'./*.txt',
 			'./*.png',
 			'./*.php',
+			'!./src/**',
 			'!./tests/**',
 			'!./dist/**',
 			'!./node_modules/**',
@@ -269,9 +269,22 @@ gulp.task('dist', (done) => {
 	done();
 });
 
-gulp.task('dist_ex', (done) => {
-	gulp.src(['./inc/vk-blocks/**'], { base: './inc/vk-blocks/' }).pipe(
-		gulp.dest('../vk-all-in-one-expansion-unit/inc/vk-blocks/package')
-	); // distディレクトリに出力
+// 無料版のリポジトリにコピーされた上で無料版リポジトリで実行される
+gulp.task('dist:free', (done) => {
+	gulp.src(
+		[
+			'./build/**',
+			'./inc/**',
+			'./vendor/**',
+			'./*.txt',
+			'./*.png',
+			'./*.php',
+			'!./src/**',
+			'!./test/**',
+			'!./dist/**',
+			'!./node_modules/**',
+		],
+		{ base: './' }
+	).pipe(gulp.dest('dist/vk-blocks')); // distディレクトリに出力
 	done();
 });

@@ -19,46 +19,47 @@ class VK_Blocks_Block_Loader {
 	 */
 	// phpcs:disable
 	private $blocks = array(
-		array( 'name' => 'alert',                     'is_pro' =>  false ),
-		array( 'name' => 'balloon',                   'is_pro' =>  false ),
-		array( 'name' => 'border-box',                'is_pro' =>  false ),
-		array( 'name' => 'button',                    'is_pro' =>  false ),
-		array( 'name' => 'faq',                       'is_pro' =>  false ),
-		array( 'name' => 'faq2',                      'is_pro' =>  false ),
-		array( 'name' => 'faq2-a',                    'is_pro' =>  false ),
-		array( 'name' => 'faq2-q',                    'is_pro' =>  false ),
-		array( 'name' => 'flow',                      'is_pro' =>  false ),
-		array( 'name' => 'heading',                   'is_pro' =>  false ),
-		array( 'name' => 'icon',                      'is_pro' =>  false ),
-		array( 'name' => 'icon-outer',                'is_pro' =>  false ),
-		array( 'name' => 'page-content',              'is_pro' =>  false ),
-		array( 'name' => 'pr-blocks',                 'is_pro' =>  false ),
-		array( 'name' => 'pr-content',                'is_pro' =>  false ),
-		array( 'name' => 'spacer',                    'is_pro' =>  false ),
-		array( 'name' => 'staff',                     'is_pro' =>  false ),
-		array( 'name' => 'accordion',                 'is_pro' =>  true  ),
-		array( 'name' => 'accordion-target',          'is_pro' =>  true  ),
-		array( 'name' => 'accordion-trigger',         'is_pro' =>  true  ),
-		array( 'name' => 'animation',                 'is_pro' =>  true  ),
-		array( 'name' => 'button-outer',              'is_pro' =>  true  ),
-		array( 'name' => 'card',                      'is_pro' =>  true  ),
-		array( 'name' => 'card-item',                 'is_pro' =>  true  ),
-		array( 'name' => 'child-page',                'is_pro' =>  true  ),
-		array( 'name' => 'grid-column',               'is_pro' =>  true  ),
-		array( 'name' => 'grid-column-item',          'is_pro' =>  true  ),
-		array( 'name' => 'icon-card',                 'is_pro' =>  true  ),
-		array( 'name' => 'icon-card-item',            'is_pro' =>  true  ),
-		array( 'name' => 'outer',                     'is_pro' =>  true  ),
-		array( 'name' => 'post-list',                 'is_pro' =>  true  ),
-		array( 'name' => 'select-post-list',          'is_pro' =>  true  ),
-		array( 'name' => 'select-post-list-item',     'is_pro' =>  true  ),
-		array( 'name' => 'slider',                    'is_pro' =>  true  ),
-		array( 'name' => 'slider-item',               'is_pro' =>  true  ),
-		array( 'name' => 'step',                      'is_pro' =>  true  ),
-		array( 'name' => 'step-item',                 'is_pro' =>  true  ),
-		array( 'name' => 'table-of-contents-new',     'is_pro' =>  true  ),
-		array( 'name' => 'timeline',                  'is_pro' =>  true  ),
-		array( 'name' => 'timeline-item',             'is_pro' =>  true  ),
+		array( 'name' => 'alert',                 'is_pro' =>  false ),
+		array( 'name' => 'balloon',               'is_pro' =>  false ),
+		array( 'name' => 'border-box',            'is_pro' =>  false ),
+		array( 'name' => 'button',                'is_pro' =>  false ),
+		array( 'name' => 'faq',                   'is_pro' =>  false ),
+		array( 'name' => 'faq2',                  'is_pro' =>  false ),
+		array( 'name' => 'faq2-a',                'is_pro' =>  false ),
+		array( 'name' => 'faq2-q',                'is_pro' =>  false ),
+		array( 'name' => 'flow',                  'is_pro' =>  false ),
+		array( 'name' => 'heading',               'is_pro' =>  false ),
+		array( 'name' => 'icon',                  'is_pro' =>  false ),
+		array( 'name' => 'icon-outer',            'is_pro' =>  false ),
+		array( 'name' => 'page-content',          'is_pro' =>  false ),
+		array( 'name' => 'pr-blocks',             'is_pro' =>  false ),
+		array( 'name' => 'pr-content',            'is_pro' =>  false ),
+		array( 'name' => 'spacer',                'is_pro' =>  false ),
+		array( 'name' => 'staff',                 'is_pro' =>  false ),
+		array( 'name' => 'accordion',             'is_pro' =>  true  ),
+		array( 'name' => 'accordion-target',      'is_pro' =>  true  ),
+		array( 'name' => 'accordion-trigger',     'is_pro' =>  true  ),
+		array( 'name' => 'animation',             'is_pro' =>  true  ),
+		array( 'name' => 'breadcrumb',            'is_pro' =>  true  ),
+		array( 'name' => 'button-outer',          'is_pro' =>  true  ),
+		array( 'name' => 'card',                  'is_pro' =>  true  ),
+		array( 'name' => 'card-item',             'is_pro' =>  true  ),
+		array( 'name' => 'child-page',            'is_pro' =>  true  ),
+		array( 'name' => 'grid-column',           'is_pro' =>  true  ),
+		array( 'name' => 'grid-column-item',      'is_pro' =>  true  ),
+		array( 'name' => 'icon-card',             'is_pro' =>  true  ),
+		array( 'name' => 'icon-card-item',        'is_pro' =>  true  ),
+		array( 'name' => 'outer',                 'is_pro' =>  true  ),
+		array( 'name' => 'post-list',             'is_pro' =>  true  ),
+		array( 'name' => 'select-post-list',      'is_pro' =>  true  ),
+		array( 'name' => 'select-post-list-item', 'is_pro' =>  true  ),
+		array( 'name' => 'slider',                'is_pro' =>  true  ),
+		array( 'name' => 'slider-item',           'is_pro' =>  true  ),
+		array( 'name' => 'step',                  'is_pro' =>  true  ),
+		array( 'name' => 'step-item',             'is_pro' =>  true  ),
+		array( 'name' => 'table-of-contents-new', 'is_pro' =>  true  ),
+		array( 'name' => 'timeline',              'is_pro' =>  true  ),
+		array( 'name' => 'timeline-item',         'is_pro' =>  true  ),
 		array( 'name' => 'query',                     'is_pro' =>  true  ),
 		array( 'name' => 'post-template',             'is_pro' =>  true  ),
 		array( 'name' => 'query-pagination',          'is_pro' =>  true  ),
@@ -255,7 +256,7 @@ class VK_Blocks_Block_Loader {
 		}
 
 		foreach ( $this->get_block_names( array( 'is_pro' => true ) ) as $block_name ) {
-			if ( file_exists( VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $block_name . '/index.php' ) ) {
+			if ( file_exists( VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/build/blocks/_pro/' . $block_name . '/index.php' ) ) {
 				if ( ! empty( $args['style'] ) && 'vk-blocks/' . $block_name === $args['style'] ) {
 					$args['style']  = null;
 					$args['script'] = null;
@@ -330,9 +331,9 @@ class VK_Blocks_Block_Loader {
 	public function load_block( $block_name ) {
 		$block_info = $this->get_block_info( $block_name );
 
-		$require_file_path = VK_BLOCKS_SRC_PATH . '/blocks/' . $block_name . '/index.php';
+		$require_file_path = VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/build/blocks/' . $block_name . '/index.php';
 		if ( $block_info['is_pro'] ) {
-			$require_file_path = VK_BLOCKS_SRC_PATH . '/blocks/_pro/' . $block_name . '/index.php';
+			$require_file_path = VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/build/blocks/_pro/' . $block_name . '/index.php';
 		}
 
 		if ( file_exists( $require_file_path ) ) {
@@ -348,7 +349,7 @@ class VK_Blocks_Block_Loader {
 	 * @return void
 	 */
 	public function load_block_style( $block_style_name ) {
-		$require_file_path = VK_BLOCKS_SRC_PATH . 'extensions/core/' . $block_style_name['name'] . '/index.php';
+		$require_file_path = VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/build/extensions/core/' . $block_style_name['name'] . '/index.php';
 		if ( file_exists( $require_file_path ) ) {
 			require_once $require_file_path;
 		}

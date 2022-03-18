@@ -14,8 +14,6 @@ https://github.com/WordPress/gutenberg/issues/24934
 ブロックのパターンを選ぶ箇所で使用されている
 - `__experimentalUseBlockPreview`
 - `__experimentalBlockPatternSetup`
-- `__experimentalBlockVariationPicker`
-- `__experimentalGetMatchingVariation`
 これは__experimentalが外れるまで待つかオリジナルで実装するか判断する必要がある。
 複雑に絡み合っているので`__experimental`が外れるまで待ちたい
 
@@ -24,11 +22,6 @@ https://github.com/WordPress/gutenberg/issues/24934
 https://github.com/WordPress/gutenberg/pull/36431
 
 ### `__experimentalBlockPatternSetup as BlockPatternSetup`
-
-### `__experimentalBlockVariationPicker`
-
-### `__experimentalGetMatchingVariation`
-
 
 # 構造を理解したほうが良い箇所(調べている箇所)
 ## PHP 
@@ -40,6 +33,7 @@ https://developer.wordpress.org/reference/classes/wp_block/
 値を継承する
 https://ja.wordpress.org/team/handbook/block-editor/reference-guides/block-api/block-context/
 providesContextで継承する値を指定する
+親ブロック(queryブロック)からpaginationなどにqueryの情報を渡すことができる
 
 ### useInstanceId
 queryIdは一意のIDを保存しようと試みているが再利用ブロックではIDが被ってしまっている

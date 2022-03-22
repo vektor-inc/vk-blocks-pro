@@ -35,6 +35,7 @@ export default function Edit(props) {
 		headerDisplay,
 		footerDisplay,
 		containerSpace,
+		borderRadius,
 		border,
 		borderColor,
 		textColor,
@@ -101,6 +102,7 @@ export default function Edit(props) {
 							headerImageFit: attributes.headerImageFit,
 							headerDisplay: attributes.headerDisplay,
 							footerDisplay: attributes.footerDisplay,
+							borderRadius: attributes.borderRadius,
 							border: attributes.border,
 							borderColor: attributes.borderColor,
 							textColor: attributes.textColor,
@@ -116,6 +118,7 @@ export default function Edit(props) {
 					headerImageFit: attributes.headerImageFit,
 					headerDisplay: attributes.headerDisplay,
 					footerDisplay: attributes.footerDisplay,
+					borderRadius: attributes.borderRadius,
 					border: attributes.border,
 					borderColor: attributes.borderColor,
 					textColor: attributes.textColor,
@@ -137,6 +140,9 @@ export default function Edit(props) {
 	}
 	if (border) {
 		style.border = `1px solid ${borderColor}`;
+	}
+	if (borderRadius) {
+		style.borderRadius = `${borderRadius}`;
 	}
 
 	const containerClasses = ['vk_gridcolcard_item'];

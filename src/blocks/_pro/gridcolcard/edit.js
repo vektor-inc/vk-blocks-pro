@@ -56,6 +56,7 @@ export default function Edit(props) {
 						headerImageFit: attributes.headerImageFit,
 						headerDisplay: attributes.headerDisplay,
 						footerDisplay: attributes.footerDisplay,
+						borderRadius: attributes.borderRadius,
 						border: attributes.border,
 						borderColor: attributes.borderColor,
 						textColor: attributes.textColor,

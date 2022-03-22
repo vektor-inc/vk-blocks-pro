@@ -2,6 +2,7 @@ import { __ } from '@wordpress/i18n';
 import {
 	// eslint-disable-next-line
 	__experimentalBoxControl as BoxControl,
+	__experimentalUnitControl as UnitControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
 	ComboboxControl,
 	ToggleControl,
 	Button,
@@ -17,6 +18,7 @@ const CommonItemControl = (props) => {
 		headerDisplay,
 		footerDisplay,
 		containerSpace,
+		borderRadius,
 		border,
 		borderColor,
 		textColor,
@@ -175,6 +177,15 @@ const CommonItemControl = (props) => {
 				/>
 			</BaseControl>
 			<hr />
+			<UnitControl
+				label={__(
+					'Column Radius',
+					'vk-blocks'
+				)}
+				value={borderRadius}
+				onChange={(value) => setAttributes({ borderRadius: value })}
+			/>
+			<br />
 			<ToggleControl
 				label={__('Border', 'vk-blocks')}
 				checked={border}

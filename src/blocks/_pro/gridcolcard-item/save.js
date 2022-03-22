@@ -8,6 +8,7 @@ export default function save(props) {
 		headerDisplay,
 		footerDisplay,
 		containerSpace,
+		borderRadius,
 		border,
 		borderColor,
 	} = attributes;
@@ -24,6 +25,9 @@ export default function save(props) {
 	}
 	if (border) {
 		style.border = `1px solid ${borderColor}`;
+	}
+	if (borderRadius) {
+		style.borderRadius = `${borderRadius}`;
 	}
 
 	const containerClasses = ['vk_gridcolcard_item'];

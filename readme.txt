@@ -64,6 +64,7 @@ e.g.
 == Changelog ==
 
 [ Add Function ] Add margin extension in toolbar.
+[ Fix ] [ Breadcrumb(Pro) ] Add inserter Pro label.
 
 = 1.28.0 =
 [ Add Block ] Breadcrumb(Pro)

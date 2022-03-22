@@ -178,10 +178,7 @@ const CommonItemControl = (props) => {
 			</BaseControl>
 			<hr />
 			<UnitControl
-				label={__(
-					'Column Radius',
-					'vk-blocks'
-				)}
+				label={__('Column Radius', 'vk-blocks')}
 				value={borderRadius}
 				onChange={(value) => setAttributes({ borderRadius: value })}
 			/>

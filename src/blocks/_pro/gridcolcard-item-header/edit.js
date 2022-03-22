@@ -11,18 +11,19 @@ export default function Edit(props) {
 	const MY_TEMPLATE = [['core/image']];
 	const ALLOWED_BLOCKS = ['core/image'];
 
-	let style;
+	let style = {
+		aspectRatio: headerImageAspectRatio,
+	};
 	if (headerImageFit) {
-		style = {
-			top: `-` + containerSpace.top,
-			marginLeft: `-` + containerSpace.left,
-			marginRight: `-` + containerSpace.right,
-			aspectRatio: headerImageAspectRatio,
-		};
-	} else {
-		style = {
-			aspectRatio: headerImageAspectRatio,
-		};
+		if ( containerSpace.top ){
+			style.top = `-` + containerSpace.top;
+		}
+		if ( containerSpace.left ){
+			style.marginLeft = `-` + containerSpace.left;
+		}
+		if ( containerSpace.right ){
+			style.marginRight = `-` + containerSpace.right;
+		}
 	}
 
 	let containerClass;

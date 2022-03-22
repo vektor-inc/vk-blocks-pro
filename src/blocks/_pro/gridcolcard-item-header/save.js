@@ -9,18 +9,19 @@ export default function save(props) {
 		headerDisplay,
 	} = attributes;
 
-	let style;
+	let style = {
+		aspectRatio: headerImageAspectRatio,
+	};
 	if (headerImageFit) {
-		style = {
-			top: `-` + containerSpace.top,
-			marginLeft: `-` + containerSpace.left,
-			marginRight: `-` + containerSpace.right,
-			aspectRatio: headerImageAspectRatio,
-		};
-	} else {
-		style = {
-			aspectRatio: headerImageAspectRatio,
-		};
+		if ( containerSpace.top ){
+			style.top = `-` + containerSpace.top;
+		}
+		if ( containerSpace.left ){
+			style.marginLeft = `-` + containerSpace.left;
+		}
+		if ( containerSpace.right ){
+			style.marginRight = `-` + containerSpace.right;
+		}
 	}
 
 	let containerClass;

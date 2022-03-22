@@ -64,7 +64,9 @@ e.g.
 == Changelog ==
 
 [ Add Function ] Add margin extension in toolbar.
+[ Add Block ] GridColCard(Pro)
 [ Fix ] [ Breadcrumb(Pro) ] Add inserter Pro label.
+[ Other ] Update Font Awesome 6 -> 6.1
 
 = 1.28.0 =
 [ Add Block ] Breadcrumb(Pro)

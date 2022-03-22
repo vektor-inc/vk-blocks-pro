@@ -20,45 +20,45 @@ import { marginIcon, marginTopIcon, marginBottomIcon } from './icons';
 
 const DEFAULT_MARGIN_TOP_CONTROLS = [
 	{
-		title: __('0 top', 'vk-blocks'),
-		marginClass: 'vk_block-margin-0--margin-top',
+		title: __('top lg', 'vk-blocks'),
+		marginClass: 'vk_block-margin-lg--margin-top',
 		flag: 'top',
 	},
 	{
-		title: __('sm top', 'vk-blocks'),
-		marginClass: 'vk_block-margin-sm--margin-top',
-		flag: 'top',
-	},
-	{
-		title: __('md top', 'vk-blocks'),
+		title: __('top md', 'vk-blocks'),
 		marginClass: 'vk_block-margin-md--margin-top',
 		flag: 'top',
 	},
 	{
-		title: __('lg top', 'vk-blocks'),
-		marginClass: 'vk_block-margin-lg--margin-top',
+		title: __('top sm', 'vk-blocks'),
+		marginClass: 'vk_block-margin-sm--margin-top',
+		flag: 'top',
+	},
+	{
+		title: __('top 0', 'vk-blocks'),
+		marginClass: 'vk_block-margin-0--margin-top',
 		flag: 'top',
 	},
 ];
 
 const DEFAULT_MARGIN_BOTTOM_CONTROLS = [
 	{
-		title: __('0 bottom', 'vk-blocks'),
+		title: __('bottom 0', 'vk-blocks'),
 		marginClass: 'vk_block-margin-0--margin-bottom',
 		flag: 'bottom',
 	},
 	{
-		title: __('sm bottom', 'vk-blocks'),
+		title: __('bottom sm', 'vk-blocks'),
 		marginClass: 'vk_block-margin-sm--margin-bottom',
 		flag: 'bottom',
 	},
 	{
-		title: __('md bottom', 'vk-blocks'),
+		title: __('bottom md', 'vk-blocks'),
 		marginClass: 'vk_block-margin-md--margin-bottom',
 		flag: 'bottom',
 	},
 	{
-		title: __('lg bottom', 'vk-blocks'),
+		title: __('bottom lg', 'vk-blocks'),
 		marginClass: 'vk_block-margin-lg--margin-bottom',
 		flag: 'bottom',
 	},

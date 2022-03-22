@@ -180,14 +180,10 @@ VK Blocks の現在のデプロイフローは以下の通り
 * deprecated チェック
 * （ e2eテスト（ 調整中 ） ）
 
-#### php-unit-test.yml
+### vk-blocks-pro/develop にプッシュ&マージ
+#### develop-test.yml
 
 * PHPUnit テスト
-
-### vk-blocks-pro/develop にマージ
-
-#### deploy-develop.yml
-
 * 確認用サーバーにデプロイ
 
 ### テストサーバーで目視確認
@@ -220,10 +216,6 @@ VK Blocks の現在のデプロイフローは以下の通り
 
 `git tag -d pre_*.*.*.*` でタグ削除
 `git push origin :pre_*.*.*.*` でリモートタグ削除
-
-#### php-unit-test.yml
-
-* PHPUnit テスト
 
 #### release-github-and-deploy-test-sv.yml
 

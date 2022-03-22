@@ -62,6 +62,8 @@ class Vk_Blocks_PostList {
 			'vkb_hidden_md'              => $attributes['vkb_hidden_md'],
 			'vkb_hidden_sm'              => $attributes['vkb_hidden_sm'],
 			'vkb_hidden_xs'              => $attributes['vkb_hidden_xs'],
+			'marginTop'                  => $attributes['marginTop'],
+			'marginBottom'               => $attributes['marginBottom'],
 		);
 
 		$elm = VK_Component_Posts::get_loop( $wp_query, $options, $options_loop );
@@ -218,10 +220,20 @@ class Vk_Blocks_PostList {
 	 * @return string
 	 */
 	public static function get_render_no_post( $wp_query = null ) {
-		if ( ! empty( $wp_query->query['post_type'][0] ) ) {
-			$post_type_object = get_post_type_object( $wp_query->query['post_type'][0] );
-			$name             = $post_type_object->label;
-		} else {
+		$name = '';
+		if ( ! empty( $wp_query->query['post_type'] ) ) {
+			if ( is_array( $wp_query->query['post_type'] ) ) {
+				$post_type = $wp_query->query['post_type'][0];
+			} else {
+				$post_type = $wp_query->query['post_type'];
+			}
+			$post_type_object = get_post_type_object( $post_type );
+			if ( ! empty( $post_type_object->label ) ) {
+				$name = $post_type_object->label;
+			}
+		}
+
+		if ( ! $name ) {
 			$name = __( 'Post', 'vk-blocks' );
 		}
 

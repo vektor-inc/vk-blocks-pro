@@ -1,8 +1,3 @@
-/**
- * External dependencies
- */
-import classnames from 'classnames';
-
 /* eslint camelcase: 0 */
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import GenerateBgImage from './GenerateBgImage';
@@ -44,34 +39,37 @@ export default function save(props) {
 		containerClass = `${prefix}_container`;
 	}
 
-	const opacityClass = opacity && opacity * 10;
-	const bgAreaClasses = classnames('vk_slider_item-background-area', {
-		[`has-background`]: bgColor !== undefined,
-		[`has-${bgColor}-background-color`]:
-			bgColor !== undefined && !isHexColor(bgColor),
-		[`has-background-dim`]: opacity !== undefined,
-		[`has-background-dim-${opacityClass}`]: opacityClass !== undefined,
-	});
+	const bgColorClasses = [];
+	let style;
+	if (bgColor !== undefined) {
+		bgColorClasses.push('has-background');
+		if (!isHexColor(bgColor)) {
+			bgColorClasses.push(`has-${bgColor}-background-color`);
+		} else {
+			style = { backgroundColor: bgColor };
+		}
+	}
 
-	const bgAreaStyles = {
-		backgroundColor: isHexColor(bgColor) ? bgColor : undefined,
-	};
+	if (opacity !== undefined) {
+		const opacityClass = opacity * 10;
+		bgColorClasses.push('has-background-dim');
+		bgColorClasses.push(`has-background-dim-${opacityClass}`);
+	}
 
-	const GetBgImage = (
-		<>
-			{(bgImage || bgImageTablet || bgImageMobile) && (
-				<GenerateBgImage
-					prefix={prefix}
-					clientId={clientId}
-					{...props}
-				/>
-			)}
-			<div className={bgAreaClasses} style={bgAreaStyles}></div>
-		</>
-	);
+	let GetBgImage;
+	if (bgImage || bgImageTablet || bgImageMobile) {
+		GetBgImage = (
+			<GenerateBgImage prefix={prefix} clientId={clientId} {...props} />
+		);
+	} else {
+		GetBgImage = <div className="vk_slider_item-background-area"></div>;
+	}
 
 	const blockProps = useBlockProps.save({
-		className: `vk_slider_item swiper-slide vk_valign-${verticalAlignment} ${prefix}-${clientId} ${classPaddingLR} ${prefix}-paddingVertical-none`,
+		className: `vk_slider_item swiper-slide vk_valign-${verticalAlignment} ${prefix}-${clientId} ${classPaddingLR} ${prefix}-paddingVertical-none ${bgColorClasses.join(
+			' '
+		)}`,
+		style,
 	});
 	return (
 		<div {...blockProps}>

@@ -1960,35 +1960,35 @@ msgid "Margin the block"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:23
-msgid "top lg"
+msgid "Top lg"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:28
-msgid "top md"
+msgid "Top md"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:33
-msgid "top sm"
+msgid "Top sm"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:38
-msgid "top 0"
+msgid "Top 0"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:46
-msgid "bottom 0"
+msgid "Bottom 0"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:51
-msgid "bottom sm"
+msgid "Bottom sm"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:56
-msgid "bottom md"
+msgid "Bottom md"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:61
-msgid "bottom lg"
+msgid "Bottom lg"
 msgstr ""
 
 #: src/extensions/common/nowrap/index.js:21

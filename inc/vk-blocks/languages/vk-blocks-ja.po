@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2022-03-23T02:53:57+00:00\n"
-"PO-Revision-Date: 2022-03-23 11:57+0900\n"
+"POT-Creation-Date: 2022-03-23T03:01:35+00:00\n"
+"PO-Revision-Date: 2022-03-23 12:02+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -1933,36 +1933,36 @@ msgid "Margin the block"
 msgstr "ブロックの余白"
 
 #: src/extensions/common/margin-extension/index.js:23
-msgid "top lg"
-msgstr ""
+msgid "Top lg"
+msgstr "上 lg"
 
 #: src/extensions/common/margin-extension/index.js:28
-msgid "top md"
-msgstr ""
+msgid "Top md"
+msgstr "上 md"
 
 #: src/extensions/common/margin-extension/index.js:33
-msgid "top sm"
-msgstr ""
+msgid "Top sm"
+msgstr "上 sm"
 
 #: src/extensions/common/margin-extension/index.js:38
-msgid "top 0"
-msgstr ""
+msgid "Top 0"
+msgstr "上 0"
 
 #: src/extensions/common/margin-extension/index.js:46
-msgid "bottom 0"
-msgstr ""
+msgid "Bottom 0"
+msgstr "下 0"
 
 #: src/extensions/common/margin-extension/index.js:51
-msgid "bottom sm"
-msgstr ""
+msgid "Bottom sm"
+msgstr "下 sm"
 
 #: src/extensions/common/margin-extension/index.js:56
-msgid "bottom md"
-msgstr ""
+msgid "Bottom md"
+msgstr "下 md"
 
 #: src/extensions/common/margin-extension/index.js:61
-msgid "bottom lg"
-msgstr ""
+msgid "Bottom lg"
+msgstr "下 lg"
 
 #: src/extensions/common/nowrap/index.js:21
 msgid "No wrap"

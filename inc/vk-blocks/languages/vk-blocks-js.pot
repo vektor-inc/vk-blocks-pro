@@ -261,16 +261,19 @@ msgid "Ignore this post"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:102
+#: src/blocks/_pro/gridcolcard/edit-common.js:158
 msgid "Color Settings"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:104
+#: src/blocks/_pro/gridcolcard/edit-common.js:160
 #: src/blocks/button/edit.js:410
 #: src/blocks/heading/edit.js:324
 msgid "Text Color"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:110
+#: src/blocks/_pro/gridcolcard/edit-common.js:169
 #: src/blocks/border-box/edit.js:202
 #: src/blocks/button/edit.js:393
 msgid "Background Color"
@@ -340,6 +343,99 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column/edit.js:63
 msgid "Margin Bottom"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item-body/edit.js:21
+msgid "You can create a variety of layouts with grid column card blocks."
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:169
+msgid "Edit mode"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:179
+msgid "All columns"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:187
+msgid "This column only"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:192
+msgid "Edit Lock"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:195
+msgid "Lock edits this block from the parent and other Grid Column Item block"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:206
+#: src/blocks/_pro/gridcolcard/edit.js:88
+msgid "Column Setting"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:116
+msgid "Image fit to column"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:128
+msgid "Column footer button area"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:138
+#: src/blocks/heading/edit.js:370
+msgid "Display"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:146
+#: src/blocks/_pro/slider/edit.js:366
+#: src/blocks/heading/edit.js:374
+msgid "Hide"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:154
+msgid "Delete"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:181
+msgid "Column Radius"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:187
+#: src/blocks/balloon/edit.js:319
+#: src/extensions/core/image/style.js:15
+#: src/extensions/core/table/style.js:12
+msgid "Border"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:196
+#: src/blocks/border-box/edit.js:193
+#: src/extensions/core/group/style.js:47
+msgid "Border Color"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:64
+msgid "Column padding"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:72
+msgid "Column header media area"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:100
+msgid "Column gap size"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:106
+msgid "Column row-gap size (optional)"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:115
+msgid "Specify all columns at once"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:92
+msgid "Column min width"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/deprecated/0.0.0/component.js:55
@@ -859,11 +955,6 @@ msgstr ""
 msgid "Navigation Position"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:366
-#: src/blocks/heading/edit.js:374
-msgid "Hide"
-msgstr ""
-
 #: src/blocks/_pro/slider/edit.js:370
 #: src/blocks/button/edit.js:260
 #: src/components/display-items-control/index.js:127
@@ -1003,12 +1094,6 @@ msgstr ""
 msgid "Border color of speech balloon"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:319
-#: src/extensions/core/image/style.js:15
-#: src/extensions/core/table/style.js:12
-msgid "Border"
-msgstr ""
-
 #: src/blocks/balloon/edit.js:322
 msgid "Add border to balloon"
 msgstr ""
@@ -1126,11 +1211,6 @@ msgid ""
 "element in the border block will be automatically set to 0.If you want to "
 "add margins at the beginning and end, use a spacer block to specify height "
 "instead of margin."
-msgstr ""
-
-#: src/blocks/border-box/edit.js:193
-#: src/extensions/core/group/style.js:47
-msgid "Border Color"
 msgstr ""
 
 #: src/blocks/border-box/edit.js:212
@@ -1421,10 +1501,6 @@ msgstr ""
 
 #: src/blocks/heading/edit.js:364
 msgid "Sub Text Settings"
-msgstr ""
-
-#: src/blocks/heading/edit.js:370
-msgid "Display"
 msgstr ""
 
 #: src/blocks/heading/edit.js:382
@@ -1877,6 +1953,42 @@ msgstr ""
 
 #: src/extensions/common/inline-font-size/index.js:99
 msgid "Extra big"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:193
+msgid "Margin the block"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:23
+msgid "top lg"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:28
+msgid "top md"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:33
+msgid "top sm"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:38
+msgid "top 0"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:46
+msgid "bottom 0"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:51
+msgid "bottom sm"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:56
+msgid "bottom md"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:61
+msgid "bottom lg"
 msgstr ""
 
 #: src/extensions/common/nowrap/index.js:21

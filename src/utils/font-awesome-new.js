@@ -1,7 +1,14 @@
 import { __ } from '@wordpress/i18n';
-import { BaseControl, RadioControl, TextControl } from '@wordpress/components';
-
+import {
+	BaseControl,
+	RadioControl,
+	TextControl,
+	Button,
+} from '@wordpress/components';
+import { useState } from '@wordpress/element';
 import AdvancedPopOverControl from '@vkblocks/components/advanced-popover-control';
+import apiFetch from '@wordpress/api-fetch';
+import { /*useSelect,*/ useDispatch } from '@wordpress/data';
 
 export const FontAwesome = (props) => {
 	const { attributeName, attributes, setAttributes } = props;
@@ -9,6 +16,11 @@ export const FontAwesome = (props) => {
 	const iconsUrl = vkFontAwesome.iconsUrl;
 	// eslint-disable-next-line no-undef
 	const iconFamily = vkFontAwesome.iconFamily;
+
+	const REST_API_ROUTE = '/vk-blocks/v1/options';
+	const [isWaiting, setIsWaiting] = useState(false);
+	const [options /*setOptions*/] = useState();
+	const { setStoreOptions } = useDispatch('vk_font_awesome_version');
 
 	const render = (
 		<>
@@ -206,6 +218,24 @@ export const FontAwesome = (props) => {
 		</>
 	);
 
+	// Update options.
+	const handleUpdateOptions = () => {
+		setIsWaiting(true);
+		setStoreOptions(options);
+
+		apiFetch({
+			path: REST_API_ROUTE,
+			method: 'POST',
+			data: options,
+		})
+			.then(() => {
+				setIsWaiting(false);
+			})
+			.catch(() => {
+				setIsWaiting(false);
+			});
+	};
+
 	return (
 		<>
 			<TextControl
@@ -219,6 +249,13 @@ export const FontAwesome = (props) => {
 				renderComp={render}
 				setAttributes={setAttributes}
 			/>
+			<Button
+				isPrimary
+				disabled={isWaiting}
+				onClick={handleUpdateOptions}
+			>
+				{__('Save', 'vk-blocks')}
+			</Button>
 		</>
 	);
 };

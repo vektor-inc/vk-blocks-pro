@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.27.5\n"
+"Project-Id-Version: VK Blocks Pro 1.28.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-03-04T08:53:30+00:00\n"
+"POT-Creation-Date: 2022-03-23T03:03:37+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 "X-Domain: vk-blocks\n"
@@ -226,17 +226,17 @@ msgid "Button"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:162
-#: src/components/display-items-control/index.js:98
+#: src/components/display-items-control/index.js:100
 msgid "Button option"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:165
-#: src/components/display-items-control/index.js:101
+#: src/components/display-items-control/index.js:103
 msgid "Click each card block to set the target url. You can find the url form at it's sidebar."
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:171
-#: src/components/display-items-control/index.js:107
+#: src/components/display-items-control/index.js:109
 msgid "Button text"
 msgstr ""
 
@@ -268,16 +268,19 @@ msgid "Ignore this post"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:102
+#: src/blocks/_pro/gridcolcard/edit-common.js:158
 msgid "Color Settings"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:104
+#: src/blocks/_pro/gridcolcard/edit-common.js:160
 #: src/blocks/button/edit.js:410
 #: src/blocks/heading/edit.js:324
 msgid "Text Color"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:110
+#: src/blocks/_pro/gridcolcard/edit-common.js:169
 #: src/blocks/border-box/edit.js:202
 #: src/blocks/button/edit.js:393
 msgid "Background Color"
@@ -293,7 +296,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:139
 #: src/blocks/_pro/outer/edit.js:366
-#: src/blocks/_pro/slider-item/edit.js:112
+#: src/blocks/_pro/slider-item/edit.js:114
 msgid "Padding (Left and Right)"
 msgstr ""
 
@@ -355,6 +358,101 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column/edit.js:63
 msgid "Margin Bottom"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item-body/edit.js:21
+msgid "You can create a variety of layouts with grid column card blocks."
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:169
+msgid "Edit mode"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:179
+msgid "All columns"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:187
+msgid "This column only"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:192
+msgid "Edit Lock"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:195
+msgid "Lock edits this block from the parent and other Grid Column Item block"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:206
+#: src/blocks/_pro/gridcolcard/edit.js:88
+msgid "Column Setting"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:116
+msgid "Image fit to column"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:128
+msgid "Column footer button area"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:138
+#: src/blocks/heading/edit.js:370
+msgid "Display"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:146
+#: src/blocks/_pro/slider/edit.js:366
+#: src/blocks/heading/edit.js:374
+msgid "Hide"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:154
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:119
+#: inc/vk-blocks/admin/admin-balloon.php:119
+msgid "Delete"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:181
+msgid "Column Radius"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:187
+#: src/blocks/balloon/edit.js:319
+#: src/extensions/core/image/style.js:15
+#: src/extensions/core/table/style.js:12
+msgid "Border"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:196
+#: src/blocks/border-box/edit.js:193
+#: src/extensions/core/group/style.js:47
+msgid "Border Color"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:64
+msgid "Column padding"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:72
+msgid "Column header media area"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:100
+msgid "Column gap size"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:106
+msgid "Column row-gap size (optional)"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:115
+msgid "Specify all columns at once"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:92
+msgid "Column min width"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/deprecated/0.0.0/component.js:55
@@ -442,38 +540,38 @@ msgid "Text"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:235
-#: src/blocks/_pro/slider-item/edit.js:159
+#: src/blocks/_pro/slider-item/edit.js:161
 msgid "Background Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:240
-#: src/blocks/_pro/slider-item/edit.js:163
+#: src/blocks/_pro/slider-item/edit.js:165
 #: src/blocks/pr-content/edit.js:67
 msgid "Color Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:241
-#: src/blocks/_pro/slider-item/edit.js:165
+#: src/blocks/_pro/slider-item/edit.js:167
 msgid "Color will overcome background image. If you want to display image, set opacity 0."
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:249
-#: src/blocks/_pro/slider-item/edit.js:173
+#: src/blocks/_pro/slider-item/edit.js:175
 msgid "Opacity Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:263
-#: src/blocks/_pro/slider-item/edit.js:208
+#: src/blocks/_pro/slider-item/edit.js:210
 msgid "Background Image PC"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:279
-#: src/blocks/_pro/slider-item/edit.js:224
+#: src/blocks/_pro/slider-item/edit.js:226
 msgid "Background Image Tablet"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:289
-#: src/blocks/_pro/slider-item/edit.js:234
+#: src/blocks/_pro/slider-item/edit.js:236
 msgid "Background Image Mobile"
 msgstr ""
 
@@ -498,7 +596,7 @@ msgid "Parallax (Non-guaranteed)"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:337
-#: src/blocks/_pro/slider-item/edit.js:107
+#: src/blocks/_pro/slider-item/edit.js:109
 #: src/blocks/pr-content/edit.js:229
 msgid "Layout Setting"
 msgstr ""
@@ -767,31 +865,31 @@ msgstr ""
 msgid "Input Internal Post URL"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:116
+#: src/blocks/_pro/slider-item/edit.js:118
 msgid "Fit to the Container area"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:123
+#: src/blocks/_pro/slider-item/edit.js:125
 msgid "Add padding to the Slider area"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:130
+#: src/blocks/_pro/slider-item/edit.js:132
 msgid "Remove padding from the Slider area"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:145
+#: src/blocks/_pro/slider-item/edit.js:147
 msgid "Vertical align"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:187
+#: src/blocks/_pro/slider-item/edit.js:189
 msgid "Background Image Size"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:194
+#: src/blocks/_pro/slider-item/edit.js:196
 msgid "cover"
 msgstr ""
 
-#: src/blocks/_pro/slider-item/edit.js:198
+#: src/blocks/_pro/slider-item/edit.js:200
 msgid "repeat"
 msgstr ""
 
@@ -874,14 +972,9 @@ msgstr ""
 msgid "Navigation Position"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:366
-#: src/blocks/heading/edit.js:374
-msgid "Hide"
-msgstr ""
-
 #: src/blocks/_pro/slider/edit.js:370
 #: src/blocks/button/edit.js:260
-#: src/components/display-items-control/index.js:125
+#: src/components/display-items-control/index.js:127
 msgid "Center"
 msgstr ""
 
@@ -1022,12 +1115,6 @@ msgstr ""
 msgid "Border color of speech balloon"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:319
-#: src/extensions/core/image/style.js:15
-#: src/extensions/core/table/style.js:12
-msgid "Border"
-msgstr ""
-
 #: src/blocks/balloon/edit.js:322
 msgid "Add border to balloon"
 msgstr ""
@@ -1048,14 +1135,14 @@ msgstr ""
 #: src/blocks/balloon/edit.js:426
 #: src/blocks/button/edit.js:250
 #: src/blocks/pr-content/edit.js:237
-#: src/components/display-items-control/index.js:121
+#: src/components/display-items-control/index.js:123
 msgid "Left"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:438
 #: src/blocks/button/edit.js:270
 #: src/blocks/pr-content/edit.js:236
-#: src/components/display-items-control/index.js:129
+#: src/components/display-items-control/index.js:131
 msgid "Right"
 msgstr ""
 
@@ -1143,11 +1230,6 @@ msgstr ""
 
 #: src/blocks/border-box/edit.js:183
 msgid "The margin-top of the first element and the margin-bottom of the last element in the border block will be automatically set to 0.If you want to add margins at the beginning and end, use a spacer block to specify height instead of margin."
-msgstr ""
-
-#: src/blocks/border-box/edit.js:193
-#: src/extensions/core/group/style.js:47
-msgid "Border Color"
 msgstr ""
 
 #: src/blocks/border-box/edit.js:212
@@ -1440,10 +1522,6 @@ msgstr ""
 msgid "Sub Text Settings"
 msgstr ""
 
-#: src/blocks/heading/edit.js:370
-msgid "Display"
-msgstr ""
-
 #: src/blocks/heading/edit.js:382
 msgid "Text size (rem)"
 msgstr ""
@@ -1723,7 +1801,7 @@ msgstr ""
 
 #: src/components/column-layout-control/index.js:26
 #: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:733
-#: inc/vk-components/package/class-vk-component-posts.php:733
+#: inc/vk-components/package/class-vk-component-posts.php:739
 msgid "Card"
 msgstr ""
 
@@ -1741,7 +1819,7 @@ msgstr ""
 
 #: src/components/column-layout-control/index.js:42
 #: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:749
-#: inc/vk-components/package/class-vk-component-posts.php:749
+#: inc/vk-components/package/class-vk-component-posts.php:755
 msgid "Media"
 msgstr ""
 
@@ -1777,7 +1855,7 @@ msgstr ""
 msgid "Column ( Screen size : Large )"
 msgstr ""
 
-#: src/components/display-items-control/index.js:112
+#: src/components/display-items-control/index.js:114
 msgid "Button align"
 msgstr ""
 
@@ -1813,7 +1891,7 @@ msgstr ""
 msgid "Number of days to display the new post mark"
 msgstr ""
 
-#: src/components/display-items-control/index.js:93
+#: src/components/display-items-control/index.js:95
 msgid "New post mark"
 msgstr ""
 
@@ -1895,6 +1973,42 @@ msgstr ""
 
 #: src/extensions/common/inline-font-size/index.js:99
 msgid "Extra big"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:193
+msgid "Margin the block"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:23
+msgid "Top lg"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:28
+msgid "Top md"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:33
+msgid "Top sm"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:38
+msgid "Top 0"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:46
+msgid "Bottom 0"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:51
+msgid "Bottom sm"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:56
+msgid "Bottom md"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:61
+msgid "Bottom lg"
 msgstr ""
 
 #: src/extensions/common/nowrap/index.js:21
@@ -2347,11 +2461,6 @@ msgstr ""
 msgid "Select"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:119
-#: inc/vk-blocks/admin/admin-balloon.php:119
-msgid "Delete"
-msgstr ""
-
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:124
 #: inc/vk-blocks/admin/admin-balloon.php:124
 msgid "Balloon Image Name"
@@ -2413,29 +2522,30 @@ msgid "Setting"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/page-content/index.php:118
-#: inc/vk-blocks/build/blocks/page-content/index.php:118
-#: src/blocks/page-content/index.php:118
+#: inc/vk-blocks/build/blocks/page-content/index.php:124
+#: src/blocks/page-content/index.php:124
+#: test/phpunit/free/test-page-content.php:55
 msgid "Edit this area"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:225
-#: inc/vk-blocks/view/class-vk-blocks-postlist.php:225
+#: inc/vk-blocks/view/class-vk-blocks-postlist.php:237
 msgid "Post"
 msgstr ""
 
 #. translators: %s: 投稿タイプ名
 #: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:229
-#: inc/vk-blocks/view/class-vk-blocks-postlist.php:229
+#: inc/vk-blocks/view/class-vk-blocks-postlist.php:241
 msgid "There are no %ss."
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:214
-#: inc/vk-blocks/vk-blocks-functions.php:214
+#: inc/vk-blocks/vk-blocks-functions.php:222
 msgid "Blocks"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:227
-#: inc/vk-blocks/vk-blocks-functions.php:227
+#: inc/vk-blocks/vk-blocks-functions.php:235
 msgid "Blocks Layout"
 msgstr ""
 
@@ -2450,42 +2560,42 @@ msgid "New!!"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:255
-#: inc/vk-components/package/class-vk-component-posts.php:255
+#: inc/vk-components/package/class-vk-component-posts.php:261
 msgid "More"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:291
-#: inc/vk-components/package/class-vk-component-posts.php:291
+#: inc/vk-components/package/class-vk-component-posts.php:297
 msgid "Posts navigation"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:292
-#: inc/vk-components/package/class-vk-component-posts.php:292
+#: inc/vk-components/package/class-vk-component-posts.php:298
 msgid "Posts"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:294
-#: inc/vk-components/package/class-vk-component-posts.php:294
+#: inc/vk-components/package/class-vk-component-posts.php:300
 msgid "Page"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:737
-#: inc/vk-components/package/class-vk-component-posts.php:737
+#: inc/vk-components/package/class-vk-component-posts.php:743
 msgid "Card Noborder"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:741
-#: inc/vk-components/package/class-vk-component-posts.php:741
+#: inc/vk-components/package/class-vk-component-posts.php:747
 msgid "Card Intext"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:745
-#: inc/vk-components/package/class-vk-component-posts.php:745
+#: inc/vk-components/package/class-vk-component-posts.php:751
 msgid "Card Horizontal"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:753
-#: inc/vk-components/package/class-vk-component-posts.php:753
+#: inc/vk-components/package/class-vk-component-posts.php:759
 msgctxt "post list type"
 msgid "Text 1 Column"
 msgstr ""
@@ -2563,7 +2673,7 @@ msgid "If you choose \"Active Preload CSS\" that css load timing was changed.If 
 msgstr ""
 
 #: dist/vk-blocks-pro/vk-blocks.php:99
-#: vk-blocks.php:99
+#: vk-blocks.php:106
 msgid "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks Plugin running."
 msgstr ""
 
@@ -3125,4 +3235,76 @@ msgstr ""
 #: src/blocks/_pro/timeline/block.json
 msgctxt "block description"
 msgid "Displays a simple schedule and other information that is useful for explaining the order."
+msgstr ""
+
+#: inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
+#: src/blocks/_pro/breadcrumb/block.json
+msgctxt "block title"
+msgid "Breadcrumb"
+msgstr ""
+
+#: inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
+#: src/blocks/_pro/breadcrumb/block.json
+msgctxt "block description"
+msgid "Displays breadcrumbs of a page's hierarchy, or a post's categories"
+msgstr ""
+
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-body/block.json
+#: src/blocks/_pro/gridcolcard-item-body/block.json
+msgctxt "block title"
+msgid "Grid Column Card Item Body"
+msgstr ""
+
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-body/block.json
+#: src/blocks/_pro/gridcolcard-item-body/block.json
+msgctxt "block description"
+msgid "Body of Grid Column Card Block Item"
+msgstr ""
+
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-footer/block.json
+#: src/blocks/_pro/gridcolcard-item-footer/block.json
+msgctxt "block title"
+msgid "Grid Column Card Item Footer"
+msgstr ""
+
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-footer/block.json
+#: src/blocks/_pro/gridcolcard-item-footer/block.json
+msgctxt "block description"
+msgid "Footer button area of Grid Column Card Block Item"
+msgstr ""
+
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-header/block.json
+#: src/blocks/_pro/gridcolcard-item-header/block.json
+msgctxt "block title"
+msgid "Grid Column Card Item header"
+msgstr ""
+
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-header/block.json
+#: src/blocks/_pro/gridcolcard-item-header/block.json
+msgctxt "block description"
+msgid "Header image area of Grid Column Card Block Item"
+msgstr ""
+
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item/block.json
+#: src/blocks/_pro/gridcolcard-item/block.json
+msgctxt "block title"
+msgid "Grid Column Card Item"
+msgstr ""
+
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item/block.json
+#: src/blocks/_pro/gridcolcard-item/block.json
+msgctxt "block description"
+msgid "It is a block of single column of Grid Column Card."
+msgstr ""
+
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard/block.json
+#: src/blocks/_pro/gridcolcard/block.json
+msgctxt "block title"
+msgid "Grid Column Card"
+msgstr ""
+
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard/block.json
+#: src/blocks/_pro/gridcolcard/block.json
+msgctxt "block description"
+msgid "This block can flexible column layout"
 msgstr ""

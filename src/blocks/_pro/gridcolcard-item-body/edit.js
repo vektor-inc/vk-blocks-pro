@@ -1,0 +1,61 @@
+import { __ } from '@wordpress/i18n';
+import {
+	InnerBlocks,
+	useBlockProps,
+	BlockControls,
+	BlockVerticalAlignmentToolbar,
+} from '@wordpress/block-editor';
+
+export default function Edit(props) {
+	const { attributes, setAttributes } = props;
+	const MY_TEMPLATE = [
+		[
+			'core/heading',
+			{
+				placeholder: 'Heading',
+			},
+		],
+		[
+			'core/paragraph',
+			{
+				placeholder: __(
+					'You can create a variety of layouts with grid column card blocks.',
+					'vk-blocks'
+				),
+			},
+		],
+	];
+	const { verticalAlignment } = attributes;
+	const updateAlignment = (value) => {
+		setAttributes({ verticalAlignment: value });
+	};
+	let containerClass;
+	if (verticalAlignment === 'center') {
+		containerClass =
+			'vk_gridcolcard_item_body vk_gridcolcard_item_body-valign-center';
+	} else if (verticalAlignment === 'bottom') {
+		containerClass =
+			'vk_gridcolcard_item_body vk_gridcolcard_item_body-valign-bottom';
+	} else {
+		containerClass = 'vk_gridcolcard_item_body';
+	}
+	const blockProps = useBlockProps({
+		className: `${containerClass}`,
+	});
+
+	return (
+		<>
+			<BlockControls>
+				<BlockVerticalAlignmentToolbar
+					onChange={updateAlignment}
+					value={verticalAlignment}
+				/>
+			</BlockControls>
+			<div {...blockProps}>
+				<div className={`vk_gridcolcard_item_body_inner`}>
+					<InnerBlocks template={MY_TEMPLATE} templateLock={false} />
+				</div>
+			</div>
+		</>
+	);
+}

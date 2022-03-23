@@ -3,9 +3,9 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,m
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
-Tested up to: 5.9.1
+Tested up to: 5.9.2
 Stable tag: 1.27.7.1
-Requires PHP: 7.0
+Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,6 +62,12 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+= 1.29.0 =
+[ Add Function ] Add margin extension in toolbar.
+[ Add Block ] GridColCard(Pro)
+[ Fix ] [ Breadcrumb(Pro) ] Add inserter Pro label.
+[ Other ] Update Font Awesome 6 -> 6.1
 
 = 1.28.0 =
 [ Add Block ] Breadcrumb(Pro)

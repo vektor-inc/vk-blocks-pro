@@ -106,6 +106,12 @@ function vk_blocks_page_content_render_callback( $attributes ) {
 		if ( isset( $attributes['vkb_hidden_xs'] ) && $attributes['vkb_hidden_xs'] ) {
 			$classes .= ' vk_hidden-xs';
 		}
+		if ( isset( $attributes['marginTop'] ) && $attributes['marginTop'] ) {
+			$classes .= ' ' . $attributes['marginTop'];
+		}
+		if ( isset( $attributes['marginBottom'] ) && $attributes['marginBottom'] ) {
+			$classes .= ' ' . $attributes['marginBottom'];
+		}
 
 		$page_html .= '<div class="' . $classes . '">';
 		// Warning : 'vk_page_content' is old hook name that this line is old filter name fall back.

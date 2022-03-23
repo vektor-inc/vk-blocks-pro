@@ -9,6 +9,7 @@
 .editor-block-list-item-vk-blocks-accordion:after,
 .editor-block-list-item-vk-blocks-slider:after,
 .editor-block-list-item-vk-blocks-animation:after,
+.editor-block-list-item-vk-blocks-breadcrumb:after,
 .editor-block-list-item-vk-blocks-button-outer:after,
 .editor-block-list-item-vk-blocks-card:after,
 .editor-block-list-item-vk-blocks-child-page:after,
@@ -20,6 +21,7 @@
 .editor-block-list-item-vk-blocks-table-of-contents-new:after,
 .editor-block-list-item-vk-blocks-simple-table:after,
 .editor-block-list-item-vk-blocks-grid-column:after,
+.editor-block-list-item-vk-blocks-gridcolcard:after,
 .editor-block-list-item-vk-blocks-icon-card:after {
 	position: absolute;
 	top: 0;
@@ -172,7 +174,7 @@ $color-danger: #dd3333;
 		}
 	}
 
-	.is-sidebar-opened & .vk_slider.vk_width-full{
+	.is-sidebar-opened & .swiper-container.vk_slider.vk_width-full{
 		// サイドバー表示時に全幅要素がはみ出してサイドバーの下などに入り込むのを防止
 		margin-left: calc( 50% - 50vw + 140px );
 		margin-right: calc( 50% - 50vw + 140px );

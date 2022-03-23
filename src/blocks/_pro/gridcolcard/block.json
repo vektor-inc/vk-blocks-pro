@@ -4,7 +4,7 @@
 	"title": "Grid Column Card",
 	"textdomain": "vk-blocks",
 	"category": "vk-blocks-cat-layout",
-	"description": "Flexible Column Block",
+	"description": "This block can flexible column layout",
 	"supports": {
 		"html": false,
 		"align": true

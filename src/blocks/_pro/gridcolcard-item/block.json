@@ -4,7 +4,7 @@
 	"title": "Grid Column Card Item",
 	"textdomain": "vk-blocks",
 	"category": "vk-blocks-cat-layout",
-	"description": "Flexible Column Block Item",
+	"description": "It is a block of single column of Grid Column Card.",
 	"parent": [
 		"vk-blocks/gridcolcard"
 	],

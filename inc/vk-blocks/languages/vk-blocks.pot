@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-03-23T02:20:21+00:00\n"
+"POT-Creation-Date: 2022-03-23T02:53:57+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 "X-Domain: vk-blocks\n"
@@ -3258,7 +3258,7 @@ msgstr ""
 #: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-body/block.json
 #: src/blocks/_pro/gridcolcard-item-body/block.json
 msgctxt "block description"
-msgid "Flexible Column Block Item body"
+msgid "Body of Grid Column Card Block Item"
 msgstr ""
 
 #: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-footer/block.json
@@ -3270,7 +3270,7 @@ msgstr ""
 #: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-footer/block.json
 #: src/blocks/_pro/gridcolcard-item-footer/block.json
 msgctxt "block description"
-msgid "Flexible Column Block Item Footer"
+msgid "Footer button area of Grid Column Card Block Item"
 msgstr ""
 
 #: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-header/block.json
@@ -3282,7 +3282,7 @@ msgstr ""
 #: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-header/block.json
 #: src/blocks/_pro/gridcolcard-item-header/block.json
 msgctxt "block description"
-msgid "Flexible Column Block Item header"
+msgid "Header image area of Grid Column Card Block Item"
 msgstr ""
 
 #: inc/vk-blocks/build/blocks/_pro/gridcolcard-item/block.json
@@ -3294,7 +3294,7 @@ msgstr ""
 #: inc/vk-blocks/build/blocks/_pro/gridcolcard-item/block.json
 #: src/blocks/_pro/gridcolcard-item/block.json
 msgctxt "block description"
-msgid "Flexible Column Block Item"
+msgid "It is a block of single column of Grid Column Card."
 msgstr ""
 
 #: inc/vk-blocks/build/blocks/_pro/gridcolcard/block.json
@@ -3306,5 +3306,5 @@ msgstr ""
 #: inc/vk-blocks/build/blocks/_pro/gridcolcard/block.json
 #: src/blocks/_pro/gridcolcard/block.json
 msgctxt "block description"
-msgid "Flexible Column Block"
+msgid "This block can flexible column layout"
 msgstr ""

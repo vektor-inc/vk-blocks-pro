@@ -4,7 +4,7 @@
 	"title": "Grid Column Card Item header",
 	"textdomain": "vk-blocks",
 	"category": "vk-blocks-cat-layout",
-	"description": "Flexible Column Block Item header",
+	"description": "Header image area of Grid Column Card Block Item",
 	"parent": [
 		"vk-blocks/gridcolcard-item"
 	],

@@ -4,7 +4,7 @@
 	"title": "Grid Column Card Item Footer",
 	"textdomain": "vk-blocks",
 	"category": "vk-blocks-cat-layout",
-	"description": "Flexible Column Block Item Footer",
+	"description": "Footer button area of Grid Column Card Block Item",
 	"parent": [
 		"vk-blocks/gridcolcard-item"
 	],

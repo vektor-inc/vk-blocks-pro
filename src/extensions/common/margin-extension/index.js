@@ -247,6 +247,9 @@ addFilter(
 				marginBottomClassName,
 				props.className
 			);
+			if (!isAddMargin(props.name)) {
+				return <BlockListBlock {...props} />;
+			}
 			return <BlockListBlock {...props} className={attachedClass} />;
 		};
 	}, 'addMarginSetting')

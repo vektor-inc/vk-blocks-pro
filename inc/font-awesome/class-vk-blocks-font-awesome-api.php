@@ -59,10 +59,17 @@ class VK_Blocks_Font_Awesome_API {
 
 	/**
 	 * Update options
+	 *
 	 * @param string $request JSON.
 	 */
 	public function update_options( $request ) {
 		$options = $request->get_json_params();
 		update_option( 'vk_font_awesome_version', $options );
+		return rest_ensure_response(
+			array(
+				'status'  => 'success',
+				'message' => __( 'Setting saved.', 'vk-blocks' ),
+			)
+		);
 	}
 }

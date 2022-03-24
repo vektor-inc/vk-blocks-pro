@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ margin extension ] Optimize excludes block list.
+
 = 1.29.0 =
 [ Add Function ] Add margin extension in toolbar.
 [ Add Block ] GridColCard(Pro)

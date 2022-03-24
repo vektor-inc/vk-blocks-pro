@@ -3,24 +3,31 @@ import {
 	BaseControl,
 	RadioControl,
 	TextControl,
+	SelectControl,
 	Button,
 } from '@wordpress/components';
-import { useState } from '@wordpress/element';
+import { useState, useEffect } from '@wordpress/element';
+import { useDispatch } from '@wordpress/data';
 import AdvancedPopOverControl from '@vkblocks/components/advanced-popover-control';
 import apiFetch from '@wordpress/api-fetch';
-import { /*useSelect,*/ useDispatch } from '@wordpress/data';
-
 export const FontAwesome = (props) => {
 	const { attributeName, attributes, setAttributes } = props;
 	// eslint-disable-next-line no-undef
 	const iconsUrl = vkFontAwesome.iconsUrl;
 	// eslint-disable-next-line no-undef
 	const iconFamily = vkFontAwesome.iconFamily;
-
+	// eslint-disable-next-line no-undef
+	const versions = vkFontAwesome.versions;
+	// eslint-disable-next-line no-undef
+	const currentVersion = useDispatch('vk_font_awesome_version');
 	const REST_API_ROUTE = '/vk-blocks/v1/options';
 	const [isWaiting, setIsWaiting] = useState(false);
-	const [options /*setOptions*/] = useState();
-	const { setStoreOptions } = useDispatch('vk_font_awesome_version');
+	const [version, setVersion] = useState();
+
+	// Set options to state.
+	useEffect(() => {
+		setVersion(currentVersion);
+	}, [currentVersion]);
 
 	const render = (
 		<>
@@ -221,12 +228,11 @@ export const FontAwesome = (props) => {
 	// Update options.
 	const handleUpdateOptions = () => {
 		setIsWaiting(true);
-		setStoreOptions(options);
 
 		apiFetch({
 			path: REST_API_ROUTE,
 			method: 'POST',
-			data: options,
+			data: version,
 		})
 			.then(() => {
 				setIsWaiting(false);
@@ -248,6 +254,12 @@ export const FontAwesome = (props) => {
 				label={__('Select Icon', 'vk-blocks')}
 				renderComp={render}
 				setAttributes={setAttributes}
+			/>
+			<SelectControl
+				label="Size"
+				value={version}
+				options={versions}
+				onChange={(value) => setVersion(value)}
 			/>
 			<Button
 				isPrimary

@@ -36,11 +36,6 @@ class VK_Blocks_Font_Awesome_API {
 					'callback'            => array( $this, 'update_options' ),
 					'permission_callback' => array( $this, 'permission_callback' ),
 				),
-				array(
-					'methods'             => 'DELETE',
-					'callback'            => array( $this, 'delete_options' ),
-					'permission_callback' => array( $this, 'permission_callback' ),
-				),
 			)
 		);
 	}
@@ -64,83 +59,10 @@ class VK_Blocks_Font_Awesome_API {
 
 	/**
 	 * Update options
-	 *
-	 * @return WP_REST_Response|WP_Error
-	 *
 	 * @param string $request JSON.
 	 */
 	public function update_options( $request ) {
-		$params = $request->get_json_params();
-
-		// Sanitize option values.
-		foreach ( $params as $key => $value ) {
-			if ( ! array_key_exists( $key, Settings::OPTIONS ) ) {
-				continue;
-			}
-
-			if ( 'boolean' === Settings::OPTIONS[ $key ]['type'] ) {
-				$value = $value ? 1 : 0;
-			}
-
-			if ( 'array' === Settings::OPTIONS[ $key ]['type'] ) {
-				if ( ! is_array( $value ) ) {
-					continue;
-				}
-
-				$new_value = array();
-				foreach ( $value as $array_key => $array_value ) {
-					if ( isset( Settings::OPTIONS[ $key ]['default'][ $array_key ] ) ) {
-						$new_value[ $array_key ] = $array_value;
-					}
-				}
-			}
-
-			if ( isset( Settings::OPTIONS[ $key ]['range'] ) ) {
-				$min   = Settings::OPTIONS[ $key ]['range']['min'];
-				$max   = Settings::OPTIONS[ $key ]['range']['max'];
-				$value = min( max( $value, $min ), $max );
-			}
-
-			if ( is_wp_error( $value ) ) {
-				return rest_ensure_response(
-					array(
-						'status'  => 'error',
-						'message' => $value->get_error_message(),
-					)
-				);
-			} else {
-				update_option( FTB_OPTION_PREFIX . '_' . $key, $value );
-			}
-		}
-
-		return rest_ensure_response(
-			array(
-				'status'    => 'success',
-				'message'   => __( 'Setting saved.', 'vk-blocks' ),
-				'block_css' => Helper::minify_css( Helper::get_block_css( '.editor-styles-wrapper ' ) ),
-			)
-		);
-	}
-
-	/**
-	 * Delete options
-	 *
-	 * @return WP_REST_Response|WP_Error
-	 */
-	public function delete_options() {
-		foreach ( Settings::OPTIONS as $key => $value ) {
-			delete_option( FTB_OPTION_PREFIX . '_' . $key );
-		}
-
-		return rest_ensure_response(
-			array(
-				'options'   => Settings::get_options(),
-				'status'    => 'success',
-				'message'   => __( 'Settings have been restored.', 'vk-blocks' ),
-				'block_css' => Helper::minify_css( Helper::get_block_css( '.editor-styles-wrapper ' ) ),
-			)
-		);
+		$options = $request->get_json_params();
+		update_option( 'vk_font_awesome_version', $options );
 	}
 }
-
-new VK_Font_Awesome_API();

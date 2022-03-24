@@ -486,7 +486,7 @@ msgstr ""
 #: src/blocks/heading/edit.js:334
 #: src/blocks/icon/edit.js:241
 #: src/blocks/pr-content/edit.js:197
-#: src/utils/font-awesome-new.js:18
+#: src/utils/font-awesome-new.js:37
 msgid "Icon"
 msgstr ""
 
@@ -2157,21 +2157,25 @@ msgstr ""
 msgid "Lorem ipsum"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:192
+#: src/utils/font-awesome-new.js:211
 msgid ""
 "If you want to use an icon other than the ones listed above, you can use "
 "any of the icons from Font Awesome's icon list Please select a tag and "
 "enter it."
 msgstr ""
 
-#: src/utils/font-awesome-new.js:197
+#: src/utils/font-awesome-new.js:216
 msgid "Ex) <i class=\"fas fa-arrow-circle-right\"></i>"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:203
+#: src/utils/font-awesome-new.js:222
 msgid "Font Awesome icon list"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:218
+#: src/utils/font-awesome-new.js:254
 msgid "Select Icon"
+msgstr ""
+
+#: src/utils/font-awesome-new.js:269
+msgid "Save"
 msgstr ""

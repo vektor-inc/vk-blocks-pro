@@ -210,23 +210,25 @@ addFilter(
 	'vk-blocks/margin-extension',
 	(element, blockType, attributes) => {
 		const { marginTop, marginBottom } = attributes;
-		if (marginTop || marginBottom) {
-			if (element) {
-				element = {
-					...element,
-					...{
-						props: {
-							...element.props,
-							...{
-								className: classnames(
-									element.props.className,
-									marginTop,
-									marginBottom
-								),
+		if (isAddMargin(blockType.name)) {
+			if (marginTop || marginBottom) {
+				if (element) {
+					element = {
+						...element,
+						...{
+							props: {
+								...element.props,
+								...{
+									className: classnames(
+										element.props.className,
+										marginTop,
+										marginBottom
+									),
+								},
 							},
 						},
-					},
-				};
+					};
+				}
 			}
 		}
 		return element;

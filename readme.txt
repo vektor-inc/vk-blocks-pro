@@ -64,6 +64,8 @@ e.g.
 == Changelog ==
 
 [ Bug fix ][ margin extension ] Exclude grid column blocks because they are covered by the setting values.
+[ Bug fix ][ margin extension ] Optimize excludes core block list.
+[ Bug Fix ] fix editor style of button-outer & icon-outer in page-content
 
 = 1.29.1 =
 [ Bug fix ][ margin extension ] Optimize excludes block list.

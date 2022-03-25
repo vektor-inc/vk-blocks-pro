@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ margin extension ] Optimize excludes core block list.
+
 = 1.29.1 =
 [ Bug fix ][ margin extension ] Optimize excludes block list.
 

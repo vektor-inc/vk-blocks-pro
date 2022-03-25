@@ -38,7 +38,44 @@ export const isExcludesBlocks = ({ blockName, addExclude }) => {
 			}
 		}
 	}
-	const dynamicBlockLists = dynamicBlockArray.map((item) => item.name);
+	// これでコアのdynamic blockを取得出来ているはずだがなぜかコアのブロックがすべて除外されるので一旦仮で手打ち実装
+	// const dynamicBlockLists = dynamicBlockArray.map((item) => item.name);
+	// console.log(dynamicBlockLists);
+
+	const dynamicBlockLists = [
+		"core/archives",
+		"core/audio",
+		"core/calendar",
+		"core/categories",
+		"core/latest-comments",
+		"core/latest-posts",
+		"core/page-list",
+		"core/pattern",
+		"core/block",
+		"core/rss",
+		"core/search",
+		"core/social-link",
+		"core/tag-cloud",
+		"core/site-logo",
+		"core/site-title",
+		"core/site-tagline",
+		"core/template-part",
+		"core/post-title",
+		"core/post-excerpt",
+		"core/post-featured-image",
+		"core/post-content",
+		"core/post-author",
+		"core/post-date",
+		"core/post-terms",
+		"core/post-navigation-link",
+		"core/query-pagination-next",
+		"core/query-pagination-numbers",
+		"core/query-pagination-previous",
+		"core/post-comments",
+		"core/loginout",
+		"core/term-description",
+		"core/query-title",
+	];
 
 	// 除外するブロック名をまとめる
 	const excludesBlocks = [

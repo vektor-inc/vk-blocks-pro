@@ -63,6 +63,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ margin extension ] Optimize excludes core block list.
 [ Bug Fix ] fix editor style of button-outer & icon-outer in page-content
 
 = 1.29.1 =

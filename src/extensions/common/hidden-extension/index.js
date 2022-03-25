@@ -1,49 +1,31 @@
+/**
+ * WordPress dependencies
+ */
 import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
 import { PanelBody, BaseControl } from '@wordpress/components';
 import { InspectorControls } from '@wordpress/block-editor';
 import { createHigherOrderComponent } from '@wordpress/compose';
-import { AdvancedToggleControl } from '@vkblocks/components/advanced-toggle-control';
+
+/**
+ * External dependencies
+ */
 import classnames from 'classnames';
 
-// Check the keyword including str or not
-// eslint-disable-next-line camelcase
-export const in_string = (str, keyword) => {
-	// If keyword was included that return ( true or false )
-	return str.indexOf(keyword) !== -1;
-};
+/**
+ * Internal dependencies
+ */
+import { AdvancedToggleControl } from '@vkblocks/components/advanced-toggle-control';
+import { isExcludesBlocks } from '@vkblocks/utils/is-excludes-blocks';
 
-// The checking block is hidden function target or not
-// eslint-disable-next-line camelcase
-export const is_hidden = (blockName) => {
-	// Target of hidden function active
-	const allowed = ['core', 'vk-blocks'];
-	// name には allowed の項目が一つずつ入る
-	// 判断中のブロック名の中にname( core or vk-blocks )がある（ undefinedじゃない ）場合
-	// true を返す
-	let hiddenReturn =
-		allowed.find((name) => in_string(blockName, name)) !== undefined;
-
-	const excludes = [
-		'core/calendar',
-		'core/latest-comments',
-		'core/archives',
-		'core/tag-cloud',
-		'core/shortcode',
-		'core/rss',
+export const isAddHidden = (blockName) => {
+	const addExclude = [
 		'vk-blocks/card-item',
 		'vk-blocks/icon-card-item',
 		'vk-blocks/icon',
 		'vk-blocks/select-post-list-item',
 	];
-	const excludeBlock =
-		excludes.find((excludeName) => in_string(blockName, excludeName)) !==
-		undefined;
-
-	if (excludeBlock) {
-		hiddenReturn = false;
-	}
-	return hiddenReturn;
+	return isExcludesBlocks({ blockName, addExclude });
 };
 
 /* Filter of blocks.registerBlockType
@@ -53,7 +35,7 @@ addFilter(
 	'vk-blocks/hidden-extension',
 	(settings) => {
 		// If hidden function target block...
-		if (is_hidden(settings.name)) {
+		if (isAddHidden(settings.name)) {
 			settings.attributes = {
 				// Deploy original settings.attributes to array and...
 				...settings.attributes,
@@ -105,7 +87,7 @@ addFilter(
 	'vk-blocks/hidden-extension',
 	createHigherOrderComponent((BlockEdit) => {
 		return (props) => {
-			if (is_hidden(props.name)) {
+			if (isAddHidden(props.name)) {
 				//xxl用、deprecated追加
 				if (
 					props.attributes.vkb_hidden_xl &&
@@ -249,47 +231,49 @@ addFilter(
 			vkb_hidden_xs, // eslint-disable-line camelcase
 		} = attributes;
 
-		if (
-			vkb_hidden || // eslint-disable-line camelcase
-			vkb_hidden_xxl || // eslint-disable-line camelcase
-			vkb_hidden_xl_v2 || // eslint-disable-line camelcase
-			vkb_hidden_xl || // eslint-disable-line camelcase
-			vkb_hidden_lg || // eslint-disable-line camelcase
-			vkb_hidden_md || // eslint-disable-line camelcase
-			vkb_hidden_sm || // eslint-disable-line camelcase
-			vkb_hidden_xs // eslint-disable-line camelcase
-		) {
-			const custom = vkb_hidden && 'vk_hidden'; // eslint-disable-line camelcase
-			const customXxl = vkb_hidden_xxl && 'vk_hidden-xxl'; // eslint-disable-line camelcase
-			const customXl2 = vkb_hidden_xl_v2 && 'vk_hidden-xl-v2'; // eslint-disable-line camelcase
-			const customXl = vkb_hidden_xl && 'vk_hidden-xl'; // eslint-disable-line camelcase
-			const customLg = vkb_hidden_lg && 'vk_hidden-lg'; // eslint-disable-line camelcase
-			const customMd = vkb_hidden_md && 'vk_hidden-md'; // eslint-disable-line camelcase
-			const customSm = vkb_hidden_sm && 'vk_hidden-sm'; // eslint-disable-line camelcase
-			const customXs = vkb_hidden_xs && 'vk_hidden-xs'; // eslint-disable-line camelcase
+		if (isAddHidden(blockType.name)) {
+			if (
+				vkb_hidden || // eslint-disable-line camelcase
+				vkb_hidden_xxl || // eslint-disable-line camelcase
+				vkb_hidden_xl_v2 || // eslint-disable-line camelcase
+				vkb_hidden_xl || // eslint-disable-line camelcase
+				vkb_hidden_lg || // eslint-disable-line camelcase
+				vkb_hidden_md || // eslint-disable-line camelcase
+				vkb_hidden_sm || // eslint-disable-line camelcase
+				vkb_hidden_xs // eslint-disable-line camelcase
+			) {
+				const custom = vkb_hidden && 'vk_hidden'; // eslint-disable-line camelcase
+				const customXxl = vkb_hidden_xxl && 'vk_hidden-xxl'; // eslint-disable-line camelcase
+				const customXl2 = vkb_hidden_xl_v2 && 'vk_hidden-xl-v2'; // eslint-disable-line camelcase
+				const customXl = vkb_hidden_xl && 'vk_hidden-xl'; // eslint-disable-line camelcase
+				const customLg = vkb_hidden_lg && 'vk_hidden-lg'; // eslint-disable-line camelcase
+				const customMd = vkb_hidden_md && 'vk_hidden-md'; // eslint-disable-line camelcase
+				const customSm = vkb_hidden_sm && 'vk_hidden-sm'; // eslint-disable-line camelcase
+				const customXs = vkb_hidden_xs && 'vk_hidden-xs'; // eslint-disable-line camelcase
 
-			if (element) {
-				element = {
-					...element,
-					...{
-						props: {
-							...element.props,
-							...{
-								className: classnames(
-									element.props.className,
-									custom,
-									customXxl,
-									customXl2,
-									customXl,
-									customLg,
-									customMd,
-									customSm,
-									customXs
-								),
+				if (element) {
+					element = {
+						...element,
+						...{
+							props: {
+								...element.props,
+								...{
+									className: classnames(
+										element.props.className,
+										custom,
+										customXxl,
+										customXl2,
+										customXl,
+										customLg,
+										customMd,
+										customSm,
+										customXs
+									),
+								},
 							},
 						},
-					},
-				};
+					};
+				}
 			}
 		}
 		return element;
@@ -323,7 +307,9 @@ addFilter(
 
 			// Add default class too.
 			const attachedClass = classnames(hiddenClassName, props.className);
-
+			if (!isAddHidden(props.name)) {
+				return <BlockListBlock {...props} />;
+			}
 			return <BlockListBlock {...props} className={attachedClass} />;
 		};
 	}, 'addHiddenWarning')

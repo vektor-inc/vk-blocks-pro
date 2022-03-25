@@ -31,6 +31,7 @@ export const settings = {
 			buttonTextColorCustom: 'undefined',
 			buttonColorCustom: 'undefined',
 			buttonAlign: 'left',
+			buttonWidth: 25,
 			fontAwesomeIconBefore: iconUser,
 			fontAwesomeIconAfter: iconUser,
 		},

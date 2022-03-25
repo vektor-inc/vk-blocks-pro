@@ -41,6 +41,10 @@
 			"type": "string",
 			"default": "left"
 		},
+		"buttonAWidth": {
+			"type": "number",
+			"default": 25
+		},
 		"fontAwesomeIconBefore": {
 			"type": "string"
 		},

@@ -16,7 +16,7 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
-import { dispatch } from '@wordpress/data';
+import { dispatch, select } from '@wordpress/data';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
@@ -33,6 +33,7 @@ export default function ButtonEdit(props) {
 		buttonTextColorCustom,
 		buttonColorCustom,
 		buttonAlign,
+		buttonWidth,
 		fontAwesomeIconBefore,
 		fontAwesomeIconAfter,
 		blockId,
@@ -131,6 +132,13 @@ export default function ButtonEdit(props) {
 	} else {
 		containerClass = `vk_button vk_button-align-${buttonAlign} vk_button-color-custom`;
 	}
+
+	// 親ブロックが vk-blocks/button-outer かどうか判定
+	const parent = select('core/block-editor').getBlockParentsByBlockName(
+		clientId,
+		['vk-blocks/button-outer']
+	);
+	const isInnerButton = parent.length ? true : false;
 
 	const blockProps = useBlockProps({
 		className: containerClass,
@@ -235,61 +243,115 @@ export default function ButtonEdit(props) {
 						</Button>
 					</ButtonGroup>
 
-					<h4 className={`mt-0 mb-2`}>
-						{__('Button Position:', 'vk-blocks')}
-					</h4>
-					<ButtonGroup className={`mb-3`}>
-						<Button
-							isSmall
-							isPrimary={buttonAlign === 'left'}
-							isSecondary={buttonAlign !== 'left'}
-							onClick={() =>
-								setAttributes({ buttonAlign: 'left' })
-							}
-						>
-							{__('Left', 'vk-blocks')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={buttonAlign === 'center'}
-							isSecondary={buttonAlign !== 'center'}
-							onClick={() =>
-								setAttributes({ buttonAlign: 'center' })
-							}
-						>
-							{__('Center', 'vk-blocks')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={buttonAlign === 'right'}
-							isSecondary={buttonAlign !== 'right'}
-							onClick={() =>
-								setAttributes({ buttonAlign: 'right' })
-							}
-						>
-							{__('Right', 'vk-blocks')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={buttonAlign === 'wide'}
-							isSecondary={buttonAlign !== 'wide'}
-							onClick={() =>
-								setAttributes({ buttonAlign: 'wide' })
-							}
-						>
-							{__('Wide', 'vk-blocks')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={buttonAlign === 'block'}
-							isSecondary={buttonAlign !== 'block'}
-							onClick={() =>
-								setAttributes({ buttonAlign: 'block' })
-							}
-						>
-							{__('Block', 'vk-blocks')}
-						</Button>
-					</ButtonGroup>
+					{!isInnerButton && (
+						<>
+							<h4 className={`mt-0 mb-2`}>
+								{__('Button Position:', 'vk-blocks')}
+							</h4>
+							<ButtonGroup className={`mb-3`}>
+								<Button
+									isSmall
+									isPrimary={buttonAlign === 'left'}
+									isSecondary={buttonAlign !== 'left'}
+									onClick={() =>
+										setAttributes({ buttonAlign: 'left' })
+									}
+								>
+									{__('Left', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonAlign === 'center'}
+									isSecondary={buttonAlign !== 'center'}
+									onClick={() =>
+										setAttributes({ buttonAlign: 'center' })
+									}
+								>
+									{__('Center', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonAlign === 'right'}
+									isSecondary={buttonAlign !== 'right'}
+									onClick={() =>
+										setAttributes({ buttonAlign: 'right' })
+									}
+								>
+									{__('Right', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonAlign === 'wide'}
+									isSecondary={buttonAlign !== 'wide'}
+									onClick={() =>
+										setAttributes({ buttonAlign: 'wide' })
+									}
+								>
+									{__('Wide', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonAlign === 'block'}
+									isSecondary={buttonAlign !== 'block'}
+									onClick={() =>
+										setAttributes({ buttonAlign: 'block' })
+									}
+								>
+									{__('Block', 'vk-blocks')}
+								</Button>
+							</ButtonGroup>
+						</>
+					)}
+
+					{isInnerButton && (
+						<>
+							<h4 className={`mt-0 mb-2`}>
+								{__('Button Width:', 'vk-blocks')}
+							</h4>
+							<ButtonGroup className={`mb-3`}>
+								<Button
+									isSmall
+									isPrimary={buttonWidth === 25}
+									isSecondary={buttonWidth !== 25}
+									onClick={() =>
+										setAttributes({ buttonWidth: 25 })
+									}
+								>
+									{__('25%', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonWidth === 50}
+									isSecondary={buttonWidth !== 50}
+									onClick={() =>
+										setAttributes({ buttonWidth: 50 })
+									}
+								>
+									{__('50%', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonWidth === 75}
+									isSecondary={buttonWidth !== 75}
+									onClick={() =>
+										setAttributes({ buttonWidth: 75 })
+									}
+								>
+									{__('75%', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonWidth === 100}
+									isSecondary={buttonWidth !== 100}
+									onClick={() =>
+										setAttributes({ buttonWidth: 100 })
+									}
+								>
+									{__('100%', 'vk-blocks')}
+								</Button>
+							</ButtonGroup>
+						</>
+					)}
 
 					<h4 className={`mt-0 mb-2`}>
 						{__('Button Style:', 'vk-blocks')}

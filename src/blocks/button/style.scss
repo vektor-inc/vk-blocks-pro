@@ -76,6 +76,34 @@ $vk-color-dark:#343a40;
 		}
 	}
 
+	&-width {
+		&-25{
+			width: calc( 25% - 8px );
+
+			.vk_button_link {
+				display: block;
+			}
+		}
+		&-50{
+			width: calc( 50% - 8px );
+			.vk_button_link {
+				display: block;
+			}
+		}
+		&-75{
+			width: calc( 75% - 8px );
+			.vk_button_link {
+				display: block;
+			}
+		}
+		&-100{
+			width: 100%;			
+			.vk_button_link {
+				display: block;
+			}
+		}
+	}
+
 	// 塗り
 	.btn.has-background:not(.has-text-color) {
 		color: #fff;

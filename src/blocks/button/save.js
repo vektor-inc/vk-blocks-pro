@@ -15,6 +15,7 @@ export default function save(props) {
 		buttonTextColorCustom,
 		buttonColorCustom,
 		buttonAlign,
+		buttonWidth,
 		fontAwesomeIconBefore,
 		fontAwesomeIconAfter,
 		blockId,
@@ -45,6 +46,7 @@ export default function save(props) {
 				lbType={buttonType}
 				lbAlign={buttonAlign}
 				lbSize={buttonSize}
+				lbWidth={buttonWidth}
 				lbUrl={buttonUrl}
 				lbTarget={buttonTarget}
 				lbFontAwesomeIconBefore={fontAwesomeIconBefore}

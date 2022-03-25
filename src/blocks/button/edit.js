@@ -125,14 +125,6 @@ export default function ButtonEdit(props) {
 		}
 	}, [buttonColorCustom]);
 
-	let containerClass;
-	// カスタムカラーの場合
-	if (buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) {
-		containerClass = `vk_button vk_button-align-${buttonAlign} vk_button-color-custom vk_button-${blockId}`;
-	} else {
-		containerClass = `vk_button vk_button-align-${buttonAlign} vk_button-color-custom`;
-	}
-
 	// 親ブロックが vk-blocks/button-outer かどうか判定
 	const parent = select('core/block-editor').getBlockParentsByBlockName(
 		clientId,
@@ -140,6 +132,28 @@ export default function ButtonEdit(props) {
 	);
 	const isInnerButton = parent.length ? true : false;
 
+	let containerClass;
+	// カスタムカラーの場合
+	if (buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) {
+		containerClass = `vk_button vk_button-color-custom vk_button-${blockId}`;
+	} else {
+		containerClass = `vk_button vk_button-color-custom`;
+	}
+
+	if( !isInnerButton ){
+		// 単独ボタン
+		setAttributes({ buttonWidth: 0 })
+		containerClass += ` vk_button-width-${buttonAlign}`;
+	}
+	else {
+		// 横並びボタン
+		if (0 === buttonWidth){
+			// デフォルト
+			setAttributes({ buttonWidth: 25 })
+		}
+		containerClass += ` vk_button-width-${buttonWidth}`;
+	}
+	
 	const blockProps = useBlockProps({
 		className: containerClass,
 	});
@@ -513,6 +527,7 @@ export default function ButtonEdit(props) {
 					lbColor={buttonColor}
 					lbType={buttonType}
 					lbAlign={buttonAlign}
+					lbWidth={buttonWidth}
 					lbSize={buttonSize}
 					lbFontAwesomeIconBefore={fontAwesomeIconBefore}
 					lbFontAwesomeIconAfter={fontAwesomeIconAfter}

@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ margin extension ] Exclude grid column blocks because they are covered by the setting values.
+
 = 1.29.1 =
 [ Bug fix ][ margin extension ] Optimize excludes block list.
 

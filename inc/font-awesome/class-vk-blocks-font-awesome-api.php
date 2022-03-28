@@ -5,6 +5,8 @@
  * @package VK Blocks
  */
 
+use VektorInc\VK_Font_Awesome_Versions\VkFontAwesomeVersions;
+
 /**
  * VK Font Awesome API
  */
@@ -24,7 +26,7 @@ class VK_Blocks_Font_Awesome_API {
 	public function register_routes() {
 		register_rest_route(
 			'vk-blocks/v1',
-			'/options',
+			'/options/vk_font_awesome_version/',
 			array(
 				array(
 					'methods'             => 'GET',

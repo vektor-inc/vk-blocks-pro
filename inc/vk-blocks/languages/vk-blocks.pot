@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.29.1.0\n"
+"Project-Id-Version: VK Blocks Pro 1.29.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-03-25T08:03:07+00:00\n"
+"POT-Creation-Date: 2022-03-28T05:52:44+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks\n"
@@ -498,7 +498,7 @@ msgstr ""
 #: src/blocks/heading/edit.js:334
 #: src/blocks/icon/edit.js:241
 #: src/blocks/pr-content/edit.js:197
-#: src/utils/font-awesome-new.js:53
+#: src/utils/font-awesome-new.js:54
 msgid "Icon"
 msgstr ""
 
@@ -1958,7 +1958,7 @@ msgstr ""
 msgid "Extra big"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:166
+#: src/extensions/common/margin-extension/index.js:168
 msgid "Margin the block"
 msgstr ""
 
@@ -2160,27 +2160,27 @@ msgstr ""
 msgid "Lorem ipsum"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:227
+#: src/utils/font-awesome-new.js:228
 msgid "If you want to use an icon other than the ones listed above, you can use any of the icons from Font Awesome's icon list Please select a tag and enter it."
 msgstr ""
 
-#: src/utils/font-awesome-new.js:232
+#: src/utils/font-awesome-new.js:233
 msgid "Ex) <i class=\"fas fa-arrow-circle-right\"></i>"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:238
+#: src/utils/font-awesome-new.js:239
 msgid "Font Awesome icon list"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:248
-msgid "This setting will not be applied until you reload this browser"
+#: src/utils/font-awesome-new.js:249
+msgid "When you click save button, the window will be reloaded and this setting will be applied"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:258
+#: src/utils/font-awesome-new.js:259
 msgid "Save"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:272
+#: src/utils/font-awesome-new.js:273
 msgid "Select Icon"
 msgstr ""
 
@@ -2226,7 +2226,7 @@ msgstr ""
 msgid "Dismiss this notice"
 msgstr ""
 
-#: inc/font-awesome/class-vk-blocks-font-awesome-api.php:71
+#: inc/font-awesome/class-vk-blocks-font-awesome-api.php:73
 msgid "Setting saved."
 msgstr ""
 

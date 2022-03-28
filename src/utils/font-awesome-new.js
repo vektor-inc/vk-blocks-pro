@@ -19,7 +19,7 @@ export const FontAwesome = (props) => {
 	const versions = vkFontAwesome.versions;
 	// eslint-disable-next-line no-undef
 	const currentVersion = vkFontAwesome.currentVersion;
-	const REST_API_ROUTE = '/vk-blocks/v1/options';
+	const REST_API_ROUTE = '/vk-blocks/v1/options/vk_font_awesome_version/';
 	const [isWaiting, setIsWaiting] = useState(false);
 	const [version, setVersion] = useState();
 
@@ -39,6 +39,7 @@ export const FontAwesome = (props) => {
 		})
 			.then(() => {
 				setIsWaiting(false);
+				window.location.reload();
 			})
 			.catch(() => {
 				setIsWaiting(false);
@@ -246,7 +247,7 @@ export const FontAwesome = (props) => {
 			/>
 			<p className="mt-1">
 				{__(
-					'This setting will not be applied until you reload this browser',
+					'When you click save button, the window will be reloaded and this setting will be applied',
 					'vk-blocks'
 				)}
 			</p>

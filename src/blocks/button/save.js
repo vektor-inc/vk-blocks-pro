@@ -28,9 +28,9 @@ export default function save(props) {
 			isHexColor(buttonTextColorCustom)) ||
 		(buttonColorCustom !== undefined && isHexColor(buttonColorCustom))
 	) {
-		containerClass = `vk_button vk_button-color-custom} vk_button-${blockId}`;
+		containerClass = `vk_button vk_button-color-custom vk_button-${blockId}`;
 	} else {
-		containerClass = `vk_button vk_button-color-custom}`;
+		containerClass = `vk_button vk_button-color-custom`;
 	}
 
 	if (buttonWidth) {

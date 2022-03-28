@@ -53,7 +53,6 @@ export default function save(props) {
 				lbType={buttonType}
 				lbAlign={buttonAlign}
 				lbSize={buttonSize}
-				lbWidth={buttonWidth}
 				lbUrl={buttonUrl}
 				lbTarget={buttonTarget}
 				lbFontAwesomeIconBefore={fontAwesomeIconBefore}

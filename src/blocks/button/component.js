@@ -9,7 +9,6 @@ export class VKBButton extends Component {
 		const buttonColor = this.props.lbColor;
 		const buttonType = this.props.lbType;
 		const buttonAlign = this.props.lbAlign;
-		const buttonWidth = this.props.lbWidth;
 		const buttonSize = this.props.lbSize;
 		const buttonUrl = this.props.lbUrl;
 		const buttonTarget = this.props.lbTarget;
@@ -77,7 +76,7 @@ export class VKBButton extends Component {
 
 		aClass = `${aClass} btn-${buttonSize}`;
 
-		if (buttonAlign === 'block' && !buttonWidth) {
+		if (buttonAlign === 'block') {
 			aClass = `${aClass} btn-block`;
 		}
 

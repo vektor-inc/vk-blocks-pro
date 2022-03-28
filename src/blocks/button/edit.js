@@ -322,7 +322,10 @@ export default function ButtonEdit(props) {
 									isPrimary={buttonWidth === 25}
 									isSecondary={buttonWidth !== 25}
 									onClick={() =>
-										setAttributes({ buttonWidth: buttonWidth === 25? 0 : 25 })
+										setAttributes({
+											buttonWidth:
+												buttonWidth === 25 ? 0 : 25,
+										})
 									}
 								>
 									{__('25%', 'vk-blocks')}
@@ -332,7 +335,10 @@ export default function ButtonEdit(props) {
 									isPrimary={buttonWidth === 50}
 									isSecondary={buttonWidth !== 50}
 									onClick={() =>
-										setAttributes({ buttonWidth: buttonWidth === 50 ? 0 : 50 })
+										setAttributes({
+											buttonWidth:
+												buttonWidth === 50 ? 0 : 50,
+										})
 									}
 								>
 									{__('50%', 'vk-blocks')}
@@ -342,7 +348,10 @@ export default function ButtonEdit(props) {
 									isPrimary={buttonWidth === 75}
 									isSecondary={buttonWidth !== 75}
 									onClick={() =>
-										setAttributes({ buttonWidth: buttonWidth === 75 ? 0 : 75 })
+										setAttributes({
+											buttonWidth:
+												buttonWidth === 75 ? 0 : 75,
+										})
 									}
 								>
 									{__('75%', 'vk-blocks')}
@@ -352,7 +361,10 @@ export default function ButtonEdit(props) {
 									isPrimary={buttonWidth === 100}
 									isSecondary={buttonWidth !== 100}
 									onClick={() =>
-										setAttributes({ buttonWidth: buttonWidth === 100 ? 0 : 100 })
+										setAttributes({
+											buttonWidth:
+												buttonWidth === 100 ? 0 : 100,
+										})
 									}
 								>
 									{__('100%', 'vk-blocks')}
@@ -521,7 +533,6 @@ export default function ButtonEdit(props) {
 					lbColor={buttonColor}
 					lbType={buttonType}
 					lbAlign={buttonAlign}
-					lbWidth={buttonWidth}
 					lbSize={buttonSize}
 					lbFontAwesomeIconBefore={fontAwesomeIconBefore}
 					lbFontAwesomeIconAfter={fontAwesomeIconAfter}

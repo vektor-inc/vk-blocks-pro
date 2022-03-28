@@ -486,7 +486,7 @@ msgstr ""
 #: src/blocks/heading/edit.js:334
 #: src/blocks/icon/edit.js:241
 #: src/blocks/pr-content/edit.js:197
-#: src/utils/font-awesome-new.js:37
+#: src/utils/font-awesome-new.js:53
 msgid "Icon"
 msgstr ""
 
@@ -1955,39 +1955,39 @@ msgstr ""
 msgid "Extra big"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:193
+#: src/extensions/common/margin-extension/index.js:166
 msgid "Margin the block"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:23
+#: src/extensions/common/margin-extension/index.js:24
 msgid "Top lg"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:28
+#: src/extensions/common/margin-extension/index.js:29
 msgid "Top md"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:33
+#: src/extensions/common/margin-extension/index.js:34
 msgid "Top sm"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:38
+#: src/extensions/common/margin-extension/index.js:39
 msgid "Top 0"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:46
+#: src/extensions/common/margin-extension/index.js:47
 msgid "Bottom 0"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:51
+#: src/extensions/common/margin-extension/index.js:52
 msgid "Bottom sm"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:56
+#: src/extensions/common/margin-extension/index.js:57
 msgid "Bottom md"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:61
+#: src/extensions/common/margin-extension/index.js:62
 msgid "Bottom lg"
 msgstr ""
 
@@ -2157,25 +2157,29 @@ msgstr ""
 msgid "Lorem ipsum"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:211
+#: src/utils/font-awesome-new.js:227
 msgid ""
 "If you want to use an icon other than the ones listed above, you can use "
 "any of the icons from Font Awesome's icon list Please select a tag and "
 "enter it."
 msgstr ""
 
-#: src/utils/font-awesome-new.js:216
+#: src/utils/font-awesome-new.js:232
 msgid "Ex) <i class=\"fas fa-arrow-circle-right\"></i>"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:222
+#: src/utils/font-awesome-new.js:238
 msgid "Font Awesome icon list"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:254
-msgid "Select Icon"
+#: src/utils/font-awesome-new.js:248
+msgid "This setting will not be applied until you reload this browser"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:269
+#: src/utils/font-awesome-new.js:258
 msgid "Save"
+msgstr ""
+
+#: src/utils/font-awesome-new.js:272
+msgid "Select Icon"
 msgstr ""

@@ -7,7 +7,6 @@ import {
 	Button,
 } from '@wordpress/components';
 import { useState, useEffect } from '@wordpress/element';
-import { useDispatch } from '@wordpress/data';
 import AdvancedPopOverControl from '@vkblocks/components/advanced-popover-control';
 import apiFetch from '@wordpress/api-fetch';
 export const FontAwesome = (props) => {
@@ -19,7 +18,7 @@ export const FontAwesome = (props) => {
 	// eslint-disable-next-line no-undef
 	const versions = vkFontAwesome.versions;
 	// eslint-disable-next-line no-undef
-	const currentVersion = useDispatch('vk_font_awesome_version');
+	const currentVersion = vkFontAwesome.currentVersion;
 	const REST_API_ROUTE = '/vk-blocks/v1/options';
 	const [isWaiting, setIsWaiting] = useState(false);
 	const [version, setVersion] = useState();
@@ -27,7 +26,24 @@ export const FontAwesome = (props) => {
 	// Set options to state.
 	useEffect(() => {
 		setVersion(currentVersion);
-	}, [currentVersion]);
+	}, []);
+
+	// Update options.
+	const handleUpdateOptions = () => {
+		setIsWaiting(true);
+
+		apiFetch({
+			path: REST_API_ROUTE,
+			method: 'POST',
+			data: version,
+		})
+			.then(() => {
+				setIsWaiting(false);
+			})
+			.catch(() => {
+				setIsWaiting(false);
+			});
+	};
 
 	const render = (
 		<>
@@ -222,25 +238,27 @@ export const FontAwesome = (props) => {
 					{__('Font Awesome icon list', 'vk-blocks')}
 				</a>
 			</p>
+			<SelectControl
+				label="Size"
+				value={version}
+				options={versions}
+				onChange={(value) => setVersion(value)}
+			/>
+			<p className="mt-1">
+				{__(
+					'This setting will not be applied until you reload this browser',
+					'vk-blocks'
+				)}
+			</p>
+			<Button
+				isPrimary
+				disabled={isWaiting}
+				onClick={handleUpdateOptions}
+			>
+				{__('Save', 'vk-blocks')}
+			</Button>
 		</>
 	);
-
-	// Update options.
-	const handleUpdateOptions = () => {
-		setIsWaiting(true);
-
-		apiFetch({
-			path: REST_API_ROUTE,
-			method: 'POST',
-			data: version,
-		})
-			.then(() => {
-				setIsWaiting(false);
-			})
-			.catch(() => {
-				setIsWaiting(false);
-			});
-	};
 
 	return (
 		<>
@@ -255,19 +273,6 @@ export const FontAwesome = (props) => {
 				renderComp={render}
 				setAttributes={setAttributes}
 			/>
-			<SelectControl
-				label="Size"
-				value={version}
-				options={versions}
-				onChange={(value) => setVersion(value)}
-			/>
-			<Button
-				isPrimary
-				disabled={isWaiting}
-				onClick={handleUpdateOptions}
-			>
-				{__('Save', 'vk-blocks')}
-			</Button>
 		</>
 	);
 };

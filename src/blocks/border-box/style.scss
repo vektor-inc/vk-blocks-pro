@@ -93,7 +93,7 @@
 			background: none;
 			padding: 0;
 			border: none;
-			outline: none; // 見出しデザインの背景塗りスティッチなど対応 
+			outline: none; // 見出しデザインの背景塗りスティッチなど対応
 			&::before {
 				content: none;
 			}
@@ -229,7 +229,7 @@
 				border-radius: 50%;
 				border: solid 2px #fff;
 
-				& > i {	
+				& > i {
 					position: absolute;
 					font-size: 1.3em;
 					top: 50%;
@@ -406,5 +406,20 @@
 				background-color: var(--vk-color-background-black);
 			}
 		}
+	}
+}
+
+.vk_borderBox_body-align {
+	&-left {
+		display: flex;
+		justify-content: left;
+	}
+	&-center {
+		display: flex;
+		justify-content: center;
+	}
+	&-right {
+		display: flex;
+		justify-content: right;
 	}
 }

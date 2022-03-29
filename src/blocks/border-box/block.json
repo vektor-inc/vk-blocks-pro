@@ -13,7 +13,7 @@
 			"type": "string"
 		},
 		"borderColor": {
-			"type": "string"			
+			"type": "string"
 		},
 		"bgColor": {
 			"type": "string",
@@ -22,6 +22,10 @@
 		"faIcon": {
 			"type": "string",
 			"default": ""
+		},
+		"bodyAlign": {
+			"type": "string",
+			"default": "left"
 		}
 	},
 	"description": "This is a border box where you can place headings to attract attention.",

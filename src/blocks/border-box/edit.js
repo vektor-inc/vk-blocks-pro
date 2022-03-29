@@ -14,6 +14,8 @@ import {
 	InnerBlocks,
 	RichText,
 	useBlockProps,
+	BlockControls,
+	AlignmentControl,
 } from '@wordpress/block-editor';
 import parse from 'html-react-parser';
 
@@ -25,7 +27,8 @@ import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function BorderBoxEdit(props) {
 	const { attributes, setAttributes } = props;
-	const { heading, faIcon, color, bgColor, borderColor } = attributes;
+	const { heading, faIcon, color, bgColor, borderColor, bodyAlign } =
+		attributes;
 	// eslint-disable-next-line no-undef
 	const iconFamily = vkFontAwesome.iconFamily;
 	const inner = (
@@ -171,8 +174,18 @@ export default function BorderBoxEdit(props) {
 		icon = faIcon;
 	}
 
+	const bodyClasses = classnames('vk_borderBox_body', {
+		[`vk_borderBox_body-align-${bodyAlign}`]: !!bodyAlign,
+	});
+
 	return (
 		<>
+			<BlockControls group="block">
+				<AlignmentControl
+					value={bodyAlign}
+					onChange={(value) => setAttributes({ bodyAlign: value })}
+				/>
+			</BlockControls>
 			<InspectorControls>
 				<PanelBody
 					title={__('Margin', 'vk-blocks')}
@@ -241,7 +254,7 @@ export default function BorderBoxEdit(props) {
 					{parse(icon)}
 					{title}
 				</div>
-				<div className={`vk_borderBox_body`}>{inner}</div>
+				<div className={bodyClasses}>{inner}</div>
 			</div>
 		</>
 	);

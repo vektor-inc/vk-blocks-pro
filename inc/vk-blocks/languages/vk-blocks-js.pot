@@ -274,7 +274,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:110
 #: src/blocks/_pro/gridcolcard/edit-common.js:169
-#: src/blocks/border-box/edit.js:202
+#: src/blocks/border-box/edit.js:218
 #: src/blocks/button/edit.js:393
 msgid "Background Color"
 msgstr ""
@@ -409,7 +409,7 @@ msgid "Border"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:196
-#: src/blocks/border-box/edit.js:193
+#: src/blocks/border-box/edit.js:209
 #: src/extensions/core/group/style.js:47
 msgid "Border Color"
 msgstr ""
@@ -481,7 +481,7 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:137
 #: src/blocks/_pro/step-item/edit.js:76
-#: src/blocks/border-box/edit.js:226
+#: src/blocks/border-box/edit.js:242
 #: src/blocks/button/edit.js:421
 #: src/blocks/heading/edit.js:334
 #: src/blocks/icon/edit.js:241
@@ -985,7 +985,7 @@ msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:96
 #: src/blocks/_pro/timeline-item/edit.js:69
-#: src/blocks/border-box/edit.js:190
+#: src/blocks/border-box/edit.js:206
 #: src/blocks/button/edit.js:339
 #: src/blocks/icon/edit.js:261
 #: src/blocks/staff/edit.js:199
@@ -1195,17 +1195,21 @@ msgstr ""
 
 #: src/blocks/border-box/deprecated/0.0.0/save.js:24
 #: src/blocks/border-box/deprecated/0.0.1/save.js:25
-#: src/blocks/border-box/edit.js:40
+#: src/blocks/border-box/edit.js:43
 msgid "Please enter a title."
 msgstr ""
 
-#: src/blocks/border-box/edit.js:178
+#: src/blocks/border-box/edit.js:189
+msgid "body Align"
+msgstr ""
+
+#: src/blocks/border-box/edit.js:194
 #: src/blocks/icon-outer/edit.js:132
 #: src/blocks/icon/edit.js:124
 msgid "Margin"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:183
+#: src/blocks/border-box/edit.js:199
 msgid ""
 "The margin-top of the first element and the margin-bottom of the last "
 "element in the border block will be automatically set to 0.If you want to "
@@ -1213,11 +1217,11 @@ msgid ""
 "instead of margin."
 msgstr ""
 
-#: src/blocks/border-box/edit.js:212
+#: src/blocks/border-box/edit.js:228
 msgid "Transparent"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:216
+#: src/blocks/border-box/edit.js:232
 msgid "White"
 msgstr ""
 
@@ -1955,39 +1959,39 @@ msgstr ""
 msgid "Extra big"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:193
+#: src/extensions/common/margin-extension/index.js:168
 msgid "Margin the block"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:23
+#: src/extensions/common/margin-extension/index.js:24
 msgid "Top lg"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:28
+#: src/extensions/common/margin-extension/index.js:29
 msgid "Top md"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:33
+#: src/extensions/common/margin-extension/index.js:34
 msgid "Top sm"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:38
+#: src/extensions/common/margin-extension/index.js:39
 msgid "Top 0"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:46
+#: src/extensions/common/margin-extension/index.js:47
 msgid "Bottom 0"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:51
+#: src/extensions/common/margin-extension/index.js:52
 msgid "Bottom sm"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:56
+#: src/extensions/common/margin-extension/index.js:57
 msgid "Bottom md"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:61
+#: src/extensions/common/margin-extension/index.js:62
 msgid "Bottom lg"
 msgstr ""
 

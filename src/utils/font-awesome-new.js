@@ -5,10 +5,12 @@ import {
 	TextControl,
 	SelectControl,
 	Button,
+	ExternalLink,
 } from '@wordpress/components';
 import { useState, useEffect } from '@wordpress/element';
 import AdvancedPopOverControl from '@vkblocks/components/advanced-popover-control';
 import apiFetch from '@wordpress/api-fetch';
+
 export const FontAwesome = (props) => {
 	const { attributeName, attributes, setAttributes } = props;
 	// eslint-disable-next-line no-undef
@@ -223,7 +225,13 @@ export const FontAwesome = (props) => {
 					}
 				/>
 			</BaseControl>
-			<hr></hr>
+			<hr />
+			<ExternalLink
+				href={iconsUrl}
+				className="components-button is-primary mt-1"
+			>
+				{__('Font Awesome icon list', 'vk-blocks')}
+			</ExternalLink>
 			<p className="mt-1">
 				{__(
 					"If you want to use an icon other than the ones listed above, you can use any of the icons from Font Awesome's icon list Please select a tag and enter it.",
@@ -234,16 +242,14 @@ export const FontAwesome = (props) => {
 					'Ex) <i class="fas fa-arrow-circle-right"></i>',
 					'vk-blocks'
 				)}
-				<br />
-				<a href={iconsUrl} target={`_blank`}>
-					{__('Font Awesome icon list', 'vk-blocks')}
-				</a>
 			</p>
+			<hr />
 			<SelectControl
 				label="Font Awesome Version"
 				value={version}
 				options={versions}
 				onChange={(value) => setVersion(value)}
+				className="mt-1"
 			/>
 			<p className="mt-1">
 				{__(

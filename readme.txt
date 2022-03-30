@@ -63,7 +63,7 @@ e.g.
 
 == Changelog ==
 
-[ Fix ][ Button ] Move url intercase to block toolbar.
+[ Fix ][ Button ] Move url interface to block toolbar.
 
 = 1.29.2 =
 [ Bug fix ][ margin extension ] Exclude grid column blocks because they are covered by the setting values.

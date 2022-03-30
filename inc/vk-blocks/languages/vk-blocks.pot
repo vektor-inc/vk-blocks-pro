@@ -498,7 +498,7 @@ msgstr ""
 #: src/blocks/heading/edit.js:334
 #: src/blocks/icon/edit.js:241
 #: src/blocks/pr-content/edit.js:197
-#: src/utils/font-awesome-new.js:18
+#: src/utils/font-awesome-new.js:54
 msgid "Icon"
 msgstr ""
 
@@ -2180,19 +2180,27 @@ msgstr ""
 msgid "Lorem ipsum"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:192
+#: src/utils/font-awesome-new.js:228
 msgid "If you want to use an icon other than the ones listed above, you can use any of the icons from Font Awesome's icon list Please select a tag and enter it."
 msgstr ""
 
-#: src/utils/font-awesome-new.js:197
+#: src/utils/font-awesome-new.js:233
 msgid "Ex) <i class=\"fas fa-arrow-circle-right\"></i>"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:203
+#: src/utils/font-awesome-new.js:239
 msgid "Font Awesome icon list"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:218
+#: src/utils/font-awesome-new.js:249
+msgid "When you click save button, the window will be reloaded and this setting will be applied"
+msgstr ""
+
+#: src/utils/font-awesome-new.js:259
+msgid "Save"
+msgstr ""
+
+#: src/utils/font-awesome-new.js:273
 msgid "Select Icon"
 msgstr ""
 
@@ -2236,6 +2244,10 @@ msgstr ""
 
 #: inc/admin-notices.php:49
 msgid "Dismiss this notice"
+msgstr ""
+
+#: inc/font-awesome/class-vk-blocks-font-awesome-api.php:73
+msgid "Setting saved."
 msgstr ""
 
 #: inc/tgm-plugin-activation/tgm-config.php:72

@@ -240,7 +240,7 @@ export const FontAwesome = (props) => {
 				</a>
 			</p>
 			<SelectControl
-				label="Size"
+				label="Font Awesome Version"
 				value={version}
 				options={versions}
 				onChange={(value) => setVersion(value)}

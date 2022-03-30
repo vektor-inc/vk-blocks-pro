@@ -63,7 +63,9 @@ e.g.
 
 == Changelog ==
 
-[ Fix ][ Button ] Move url interface to block toolbar.
+[ Update ][ Button ] Move url interface to block toolbar.
+[ Update ][ Button outer(Pro) ] Add button width option.
+[ Update ][ Font Awesome ] Add version chenge setting on block-editor screen.
 
 = 1.29.2 =
 [ Bug fix ][ margin extension ] Exclude grid column blocks because they are covered by the setting values.

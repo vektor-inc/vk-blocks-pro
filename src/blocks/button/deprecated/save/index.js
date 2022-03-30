@@ -14,6 +14,7 @@ import save1_16_2 from './1.16.2/save';
 import save1_16_4 from './1.16.4/save';
 import save1_18_1 from './1.18.1/save';
 import save1_18_6 from './1.18.6/save';
+import save1_29_2 from './1.29.2/save';
 
 const blockAttributes = {
 	content: {
@@ -96,7 +97,6 @@ const blockAttributes4 = {
 	},
 }
 
-
 const blockAttributes5 = {
 	...blockAttributes4,
 	buttonTextColorCustom: {
@@ -104,7 +104,19 @@ const blockAttributes5 = {
 	},
 }
 
+const blockAttributes6 = {
+	...blockAttributes4,
+	buttonWidth: {
+		type: 'number',
+		default: 0,
+	},
+}
+
 export const deprecated = [
+	{
+		attributes: blockAttributes6,
+		save: save1_29_2,
+	},
 	{
 		attributes: blockAttributes4,
 		save: save1_18_6,

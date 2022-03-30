@@ -63,6 +63,7 @@ e.g.
 
 == Changelog ==
 
+[ fix ][ Button outer(Pro) ] Add button width option.
 [ Specification Change ][ Font Awesome ] Add version chenge setting on block-editor screen.
 
 = 1.29.2 =

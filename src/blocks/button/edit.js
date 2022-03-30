@@ -9,16 +9,22 @@ import {
 	TextControl,
 	ButtonGroup,
 	Button,
+	ToolbarGroup,
+	ToolbarButton,
+	Dropdown,
 } from '@wordpress/components';
 import {
 	RichText,
 	InspectorControls,
 	useBlockProps,
+	BlockControls,
+	URLInput,
 } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
 import { dispatch } from '@wordpress/data';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { link, linkOff, keyboardReturn } from '@wordpress/icons';
 
 export default function ButtonEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -138,6 +144,84 @@ export default function ButtonEdit(props) {
 
 	return (
 		<>
+			<BlockControls>
+				<ToolbarGroup>
+					<Dropdown
+						renderToggle={({ isOpen, onToggle }) => {
+							const setLink = () => {
+								if (isOpen && buttonUrl !== '') {
+									// linkOff
+									setAttributes({ buttonUrl: '' });
+								}
+								onToggle();
+							};
+							return (
+								<ToolbarButton
+									aria-expanded={isOpen}
+									icon={
+										buttonUrl !== '' && isOpen
+											? linkOff
+											: link
+									}
+									isActive={
+										buttonUrl !== '' && isOpen
+											? true
+											: false
+									}
+									label={
+										buttonUrl !== '' && isOpen
+											? __('Unlink')
+											: __('Input Link URL', 'vk-blocks')
+									}
+									onClick={setLink}
+								/>
+							);
+						}}
+						renderContent={(params) => {
+							return (
+								<div className="block-editor-url-input__button block-editor-link-control">
+									<form
+										className="block-editor-link-control__search-input-wrapper"
+										onSubmit={() => {
+											params.onClose();
+										}}
+									>
+										<div className="block-editor-link-control__search-input">
+											<URLInput
+												value={buttonUrl}
+												onChange={(value) => {
+													setAttributes({
+														buttonUrl: value,
+													});
+												}}
+											/>
+											<CheckboxControl
+												label={__(
+													'Open link new tab.',
+													'vk-blocks'
+												)}
+												checked={buttonTarget}
+												onChange={(checked) =>
+													setAttributes({
+														buttonTarget: checked,
+													})
+												}
+											/>
+											<div className="block-editor-link-control__search-actions">
+												<Button
+													icon={keyboardReturn}
+													label={__('Submit')}
+													type="submit"
+												/>
+											</div>
+										</div>
+									</form>
+								</div>
+							);
+						}}
+					/>
+				</ToolbarGroup>
+			</BlockControls>
 			<InspectorControls>
 				<PanelBody title={__('Button setting', 'vk-blocks')}>
 					<TextControl
@@ -176,24 +260,6 @@ export default function ButtonEdit(props) {
 					</ul>
 
 					<hr />
-
-					<TextControl
-						label={__('Button URL', 'vk-blocks')}
-						value={buttonUrl}
-						className={`mt-0 mb-3`}
-						onChange={(value) =>
-							setAttributes({ buttonUrl: value })
-						}
-						placeholder={'Button URL'}
-					/>
-
-					<CheckboxControl
-						label={__('Open link new tab.', 'vk-blocks')}
-						checked={buttonTarget}
-						onChange={(checked) =>
-							setAttributes({ buttonTarget: checked })
-						}
-					/>
 
 					<TextControl
 						label={__('Sub Caption', 'vk-blocks')}

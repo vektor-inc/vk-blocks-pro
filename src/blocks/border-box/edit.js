@@ -15,7 +15,7 @@ import {
 	RichText,
 	useBlockProps,
 	BlockControls,
-	AlignmentControl,
+	BlockAlignmentControl,
 } from '@wordpress/block-editor';
 import parse from 'html-react-parser';
 
@@ -181,9 +181,10 @@ export default function BorderBoxEdit(props) {
 	return (
 		<>
 			<BlockControls group="block">
-				<AlignmentControl
+				<BlockAlignmentControl
 					value={bodyAlign}
 					onChange={(value) => setAttributes({ bodyAlign: value })}
+					controls={['left', 'center', 'right']}
 				/>
 				<span style={{ marginTop: 'auto', marginBottom: 'auto' }}>
 					{__('body Align', 'vk-blocks')}

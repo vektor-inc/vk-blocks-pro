@@ -24,8 +24,7 @@
 			"default": ""
 		},
 		"bodyAlign": {
-			"type": "string",
-			"default": "left"
+			"type": "string"
 		}
 	},
 	"description": "This is a border box where you can place headings to attract attention.",

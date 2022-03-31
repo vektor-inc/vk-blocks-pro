@@ -186,9 +186,6 @@ export default function BorderBoxEdit(props) {
 					onChange={(value) => setAttributes({ bodyAlign: value })}
 					controls={['left', 'center', 'right']}
 				/>
-				<span style={{ marginTop: 'auto', marginBottom: 'auto' }}>
-					{__('body Align', 'vk-blocks')}
-				</span>
 			</BlockControls>
 			<InspectorControls>
 				<PanelBody

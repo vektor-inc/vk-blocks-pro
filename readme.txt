@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
 Tested up to: 5.9.2
-Stable tag: 1.27.7.1
+Stable tag: 1.29.2.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -62,6 +62,19 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
+
+[ Add Function ][ Border Box ] Add body align control in toolbar.
+[ Update ][ Button ] Move url interface to block toolbar.
+[ Update ][ Button outer(Pro) ] Add button width option.
+[ Update ][ Font Awesome ] Add version chenge setting on block-editor screen.
+
+= 1.29.2 =
+[ Bug fix ][ margin extension ] Exclude grid column blocks because they are covered by the setting values.
+[ Bug fix ][ margin extension ] Optimize excludes core block list.
+[ Bug Fix ] fix editor style of button-outer & icon-outer in page-content
+
+= 1.29.1 =
+[ Bug fix ][ margin extension ] Optimize excludes block list.
 
 = 1.29.0 =
 [ Add Function ] Add margin extension in toolbar.

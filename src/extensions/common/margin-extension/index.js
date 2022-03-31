@@ -17,6 +17,7 @@ import { find } from 'lodash';
  * Internal dependencies
  */
 import { marginIcon, marginTopIcon, marginBottomIcon } from './icons';
+import { isExcludesBlocks } from '@vkblocks/utils/is-excludes-blocks';
 
 const DEFAULT_MARGIN_TOP_CONTROLS = [
 	{
@@ -69,42 +70,16 @@ const DEFAULT_MARGIN_CONTROLS = [
 	...DEFAULT_MARGIN_BOTTOM_CONTROLS,
 ];
 
-// Check the keyword including str or not
-export const inString = (str, keyword) => {
-	// If keyword was included that return ( true or false )
-	return str.indexOf(keyword) !== -1;
-};
-
-// The checking block is hidden function target or not
-export const isHidden = (blockName) => {
-	// Target of hidden function active
-	const allowed = ['core', 'vk-blocks'];
-	// name には allowed の項目が一つずつ入る
-	// 判断中のブロック名の中にname( core or vk-blocks )がある（ undefinedじゃない ）場合
-	// true を返す
-	let hiddenReturn =
-		allowed.find((name) => inString(blockName, name)) !== undefined;
-
-	const excludes = [
-		'core/calendar',
-		'core/latest-comments',
-		'core/archives',
-		'core/tag-cloud',
-		'core/shortcode',
-		'core/rss',
+export const isAddMargin = (blockName) => {
+	const addExclude = [
 		'vk-blocks/slider-item',
 		'vk-blocks/card-item',
 		'vk-blocks/icon-card-item',
 		'vk-blocks/select-post-list-item',
+		'vk-blocks/grid-column',
+		'vk-blocks/grid-column-item',
 	];
-	const excludeBlock =
-		excludes.find((excludeName) => inString(blockName, excludeName)) !==
-		undefined;
-
-	if (excludeBlock) {
-		hiddenReturn = false;
-	}
-	return hiddenReturn;
+	return isExcludesBlocks({ blockName, addExclude });
 };
 
 /* Filter of blocks.registerBlockType
@@ -114,7 +89,7 @@ addFilter(
 	'vk-blocks/margin-extension',
 	(settings) => {
 		// If margin function target block...
-		if (isHidden(settings.name)) {
+		if (isAddMargin(settings.name)) {
 			settings.attributes = {
 				// Deploy original settings.attributes to array and...
 				...settings.attributes,
@@ -155,7 +130,7 @@ addFilter(
 				(control) => control.marginClass === marginBottom
 			);
 
-			if (isHidden(name)) {
+			if (isAddMargin(name)) {
 				return (
 					<>
 						<BlockEdit {...props} />
@@ -237,23 +212,25 @@ addFilter(
 	'vk-blocks/margin-extension',
 	(element, blockType, attributes) => {
 		const { marginTop, marginBottom } = attributes;
-		if (marginTop || marginBottom) {
-			if (element) {
-				element = {
-					...element,
-					...{
-						props: {
-							...element.props,
-							...{
-								className: classnames(
-									element.props.className,
-									marginTop,
-									marginBottom
-								),
+		if (isAddMargin(blockType.name)) {
+			if (marginTop || marginBottom) {
+				if (element) {
+					element = {
+						...element,
+						...{
+							props: {
+								...element.props,
+								...{
+									className: classnames(
+										element.props.className,
+										marginTop,
+										marginBottom
+									),
+								},
 							},
 						},
-					},
-				};
+					};
+				}
 			}
 		}
 		return element;
@@ -274,6 +251,9 @@ addFilter(
 				marginBottomClassName,
 				props.className
 			);
+			if (!isAddMargin(props.name)) {
+				return <BlockListBlock {...props} />;
+			}
 			return <BlockListBlock {...props} className={attachedClass} />;
 		};
 	}, 'addMarginSetting')

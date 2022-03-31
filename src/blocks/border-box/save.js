@@ -12,7 +12,8 @@ import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function save(props) {
 	const { attributes } = props;
-	const { heading, faIcon, color, bgColor, borderColor } = attributes;
+	const { heading, faIcon, color, bgColor, borderColor, bodyAlign } =
+		attributes;
 
 	const inner = <InnerBlocks.Content />;
 	const title = (
@@ -118,13 +119,17 @@ export default function save(props) {
 		icon = faIcon;
 	}
 
+	const bodyClasses = classnames('vk_borderBox_body', {
+		[`vk_borderBox_body-align-${bodyAlign}`]: !!bodyAlign,
+	});
+
 	return (
 		<div {...blockProps}>
 			<div className={titleClasses} style={titleStyle}>
 				{parse(icon)}
 				{title}
 			</div>
-			<div className={`vk_borderBox_body`}>{inner}</div>
+			<div className={bodyClasses}>{inner}</div>
 		</div>
 	);
 }

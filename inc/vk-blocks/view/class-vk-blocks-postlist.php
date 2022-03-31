@@ -62,6 +62,8 @@ class Vk_Blocks_PostList {
 			'vkb_hidden_md'              => $attributes['vkb_hidden_md'],
 			'vkb_hidden_sm'              => $attributes['vkb_hidden_sm'],
 			'vkb_hidden_xs'              => $attributes['vkb_hidden_xs'],
+			'marginTop'                  => $attributes['marginTop'],
+			'marginBottom'               => $attributes['marginBottom'],
 		);
 
 		$elm = VK_Component_Posts::get_loop( $wp_query, $options, $options_loop );

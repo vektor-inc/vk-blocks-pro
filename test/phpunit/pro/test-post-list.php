@@ -105,6 +105,8 @@ class PostListBlockTest extends WP_UnitTestCase {
 			'vkb_hidden_md'              => false,
 			'vkb_hidden_sm'              => false,
 			'vkb_hidden_xs'              => false,
+			'marginTop'                  => '',
+			'marginBottom'               => '',
 			'className'                  => '',
 		);
 

@@ -47,7 +47,7 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:351
 #: src/blocks/_pro/slider/edit.js:193
 #: src/blocks/balloon/edit.js:483
-#: src/blocks/button/edit.js:226
+#: src/blocks/button/edit.js:308
 #: src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:21
 #: src/extensions/common/inline-font-size/index.js:89
@@ -261,18 +261,21 @@ msgid "Ignore this post"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:102
+#: src/blocks/_pro/gridcolcard/edit-common.js:158
 msgid "Color Settings"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:104
-#: src/blocks/button/edit.js:410
+#: src/blocks/_pro/gridcolcard/edit-common.js:160
+#: src/blocks/button/edit.js:558
 #: src/blocks/heading/edit.js:324
 msgid "Text Color"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:110
-#: src/blocks/border-box/edit.js:202
-#: src/blocks/button/edit.js:393
+#: src/blocks/_pro/gridcolcard/edit-common.js:169
+#: src/blocks/border-box/edit.js:219
+#: src/blocks/button/edit.js:541
 msgid "Background Color"
 msgstr ""
 
@@ -342,6 +345,99 @@ msgstr ""
 msgid "Margin Bottom"
 msgstr ""
 
+#: src/blocks/_pro/gridcolcard-item-body/edit.js:21
+msgid "You can create a variety of layouts with grid column card blocks."
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:169
+msgid "Edit mode"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:179
+msgid "All columns"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:187
+msgid "This column only"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:192
+msgid "Edit Lock"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:195
+msgid "Lock edits this block from the parent and other Grid Column Item block"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:206
+#: src/blocks/_pro/gridcolcard/edit.js:88
+msgid "Column Setting"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:116
+msgid "Image fit to column"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:128
+msgid "Column footer button area"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:138
+#: src/blocks/heading/edit.js:370
+msgid "Display"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:146
+#: src/blocks/_pro/slider/edit.js:366
+#: src/blocks/heading/edit.js:374
+msgid "Hide"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:154
+msgid "Delete"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:181
+msgid "Column Radius"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:187
+#: src/blocks/balloon/edit.js:319
+#: src/extensions/core/image/style.js:15
+#: src/extensions/core/table/style.js:12
+msgid "Border"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:196
+#: src/blocks/border-box/edit.js:210
+#: src/extensions/core/group/style.js:47
+msgid "Border Color"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:64
+msgid "Column padding"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit-common.js:72
+msgid "Column header media area"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:100
+msgid "Column gap size"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:106
+msgid "Column row-gap size (optional)"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:115
+msgid "Specify all columns at once"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:92
+msgid "Column min width"
+msgstr ""
+
 #: src/blocks/_pro/icon-card-item/deprecated/0.0.0/component.js:55
 #: src/blocks/_pro/icon-card-item/deprecated/0.0.1/component.js:70
 #: src/blocks/_pro/icon-card-item/deprecated/0.49.8/component.js:71
@@ -376,7 +472,7 @@ msgid "Link URL:"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:128
-#: src/blocks/button/edit.js:191
+#: src/blocks/button/edit.js:215
 #: src/blocks/icon/edit.js:254
 #: src/blocks/pr-blocks/edit.js:262
 #: src/blocks/pr-content/edit.js:131
@@ -385,12 +481,12 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:137
 #: src/blocks/_pro/step-item/edit.js:76
-#: src/blocks/border-box/edit.js:226
-#: src/blocks/button/edit.js:421
+#: src/blocks/border-box/edit.js:243
+#: src/blocks/button/edit.js:569
 #: src/blocks/heading/edit.js:334
 #: src/blocks/icon/edit.js:241
 #: src/blocks/pr-content/edit.js:197
-#: src/utils/font-awesome-new.js:18
+#: src/utils/font-awesome-new.js:56
 msgid "Icon"
 msgstr ""
 
@@ -400,7 +496,7 @@ msgid "Icon Background:"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:150
-#: src/blocks/button/edit.js:304
+#: src/blocks/button/edit.js:452
 #: src/blocks/icon-outer/edit.js:204
 #: src/blocks/icon/edit.js:195
 #: src/blocks/pr-blocks/edit.js:285
@@ -408,7 +504,7 @@ msgid "Solid color"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:154
-#: src/blocks/button/edit.js:317
+#: src/blocks/button/edit.js:465
 #: src/blocks/pr-blocks/edit.js:289
 msgid "No background"
 msgstr ""
@@ -736,6 +832,7 @@ msgid "offset"
 msgstr ""
 
 #: src/blocks/_pro/select-post-list-item/edit.js:102
+#: src/blocks/button/edit.js:229
 msgid "Submit"
 msgstr ""
 
@@ -745,6 +842,7 @@ msgid "Because no post is selected, The block Will not render"
 msgstr ""
 
 #: src/blocks/_pro/select-post-list-item/edit.js:66
+#: src/blocks/button/edit.js:189
 msgid "Unlink"
 msgstr ""
 
@@ -859,13 +957,8 @@ msgstr ""
 msgid "Navigation Position"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:366
-#: src/blocks/heading/edit.js:374
-msgid "Hide"
-msgstr ""
-
 #: src/blocks/_pro/slider/edit.js:370
-#: src/blocks/button/edit.js:260
+#: src/blocks/button/edit.js:344
 #: src/components/display-items-control/index.js:127
 msgid "Center"
 msgstr ""
@@ -894,8 +987,8 @@ msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:96
 #: src/blocks/_pro/timeline-item/edit.js:69
-#: src/blocks/border-box/edit.js:190
-#: src/blocks/button/edit.js:339
+#: src/blocks/border-box/edit.js:207
+#: src/blocks/button/edit.js:487
 #: src/blocks/icon/edit.js:261
 #: src/blocks/staff/edit.js:199
 msgid "Color"
@@ -960,28 +1053,28 @@ msgid "Style Settings"
 msgstr ""
 
 #: src/blocks/alert/edit.js:25
-#: src/blocks/button/edit.js:353
+#: src/blocks/button/edit.js:501
 #: src/blocks/pr-content/edit.js:165
 #: src/extensions/core/group/style.js:138
 msgid "Success"
 msgstr ""
 
 #: src/blocks/alert/edit.js:28
-#: src/blocks/button/edit.js:357
+#: src/blocks/button/edit.js:505
 #: src/blocks/pr-content/edit.js:168
 #: src/extensions/core/group/style.js:134
 msgid "Info"
 msgstr ""
 
 #: src/blocks/alert/edit.js:30
-#: src/blocks/button/edit.js:361
+#: src/blocks/button/edit.js:509
 #: src/blocks/pr-content/edit.js:170
 #: src/extensions/core/group/style.js:142
 msgid "Warning"
 msgstr ""
 
 #: src/blocks/alert/edit.js:34
-#: src/blocks/button/edit.js:365
+#: src/blocks/button/edit.js:513
 #: src/blocks/pr-content/edit.js:174
 #: src/extensions/core/group/style.js:146
 msgid "Danger"
@@ -1003,12 +1096,6 @@ msgstr ""
 msgid "Border color of speech balloon"
 msgstr ""
 
-#: src/blocks/balloon/edit.js:319
-#: src/extensions/core/image/style.js:15
-#: src/extensions/core/table/style.js:12
-msgid "Border"
-msgstr ""
-
 #: src/blocks/balloon/edit.js:322
 msgid "Add border to balloon"
 msgstr ""
@@ -1027,14 +1114,14 @@ msgid "Please specify the layout of the balloon."
 msgstr ""
 
 #: src/blocks/balloon/edit.js:426
-#: src/blocks/button/edit.js:250
+#: src/blocks/button/edit.js:334
 #: src/blocks/pr-content/edit.js:237
 #: src/components/display-items-control/index.js:123
 msgid "Left"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:438
-#: src/blocks/button/edit.js:270
+#: src/blocks/button/edit.js:354
 #: src/blocks/pr-content/edit.js:236
 #: src/components/display-items-control/index.js:131
 msgid "Right"
@@ -1110,17 +1197,21 @@ msgstr ""
 
 #: src/blocks/border-box/deprecated/0.0.0/save.js:24
 #: src/blocks/border-box/deprecated/0.0.1/save.js:25
-#: src/blocks/border-box/edit.js:40
+#: src/blocks/border-box/edit.js:43
 msgid "Please enter a title."
 msgstr ""
 
-#: src/blocks/border-box/edit.js:178
+#: src/blocks/border-box/edit.js:190
+msgid "body Align"
+msgstr ""
+
+#: src/blocks/border-box/edit.js:195
 #: src/blocks/icon-outer/edit.js:132
 #: src/blocks/icon/edit.js:124
 msgid "Margin"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:183
+#: src/blocks/border-box/edit.js:200
 msgid ""
 "The margin-top of the first element and the margin-bottom of the last "
 "element in the border block will be automatically set to 0.If you want to "
@@ -1128,16 +1219,11 @@ msgid ""
 "instead of margin."
 msgstr ""
 
-#: src/blocks/border-box/edit.js:193
-#: src/extensions/core/group/style.js:47
-msgid "Border Color"
-msgstr ""
-
-#: src/blocks/border-box/edit.js:212
+#: src/blocks/border-box/edit.js:229
 msgid "Transparent"
 msgstr ""
 
-#: src/blocks/border-box/edit.js:216
+#: src/blocks/border-box/edit.js:233
 msgid "White"
 msgstr ""
 
@@ -1165,129 +1251,149 @@ msgstr ""
 msgid "Solid Angle iconFeature"
 msgstr ""
 
-#: src/blocks/button/edit.js:142
+#: src/blocks/button/edit.js:190
+msgid "Input Link URL"
+msgstr ""
+
+#: src/blocks/button/edit.js:242
 msgid "Button setting"
 msgstr ""
 
-#: src/blocks/button/edit.js:145
+#: src/blocks/button/edit.js:245
 msgid "Block ID"
 msgstr ""
 
-#: src/blocks/button/edit.js:151
+#: src/blocks/button/edit.js:251
 msgid "This is the identification ID for this block style."
 msgstr ""
 
-#: src/blocks/button/edit.js:157
+#: src/blocks/button/edit.js:257
 msgid "If you don't use custom colors, you don't have to worry about it."
 msgstr ""
 
-#: src/blocks/button/edit.js:164
+#: src/blocks/button/edit.js:264
 msgid "If you duplicate this block, please change the ID."
 msgstr ""
 
-#: src/blocks/button/edit.js:171
+#: src/blocks/button/edit.js:271
 msgid "This ID is'not id of HTML attribute."
 msgstr ""
 
-#: src/blocks/button/edit.js:181
-msgid "Button URL"
-msgstr ""
-
-#: src/blocks/button/edit.js:199
+#: src/blocks/button/edit.js:281
 msgid "Sub Caption"
 msgstr ""
 
-#: src/blocks/button/edit.js:209
+#: src/blocks/button/edit.js:291
 msgid "Button Size:"
 msgstr ""
 
-#: src/blocks/button/edit.js:218
+#: src/blocks/button/edit.js:300
 #: src/blocks/spacer/edit.js:105
 msgid "Large"
 msgstr ""
 
-#: src/blocks/button/edit.js:234
+#: src/blocks/button/edit.js:316
 #: src/blocks/spacer/edit.js:85
 #: src/extensions/common/inline-font-size/index.js:84
 msgid "Small"
 msgstr ""
 
-#: src/blocks/button/edit.js:239
+#: src/blocks/button/edit.js:323
 msgid "Button Position:"
 msgstr ""
 
-#: src/blocks/button/edit.js:280
+#: src/blocks/button/edit.js:364
 msgid "Wide"
 msgstr ""
 
-#: src/blocks/button/edit.js:290
+#: src/blocks/button/edit.js:374
 msgid "Block"
 msgstr ""
 
-#: src/blocks/button/edit.js:295
+#: src/blocks/button/edit.js:383
+msgid "Button Width:"
+msgstr ""
+
+#: src/blocks/button/edit.js:397
+msgid "25%"
+msgstr ""
+
+#: src/blocks/button/edit.js:410
+msgid "50%"
+msgstr ""
+
+#: src/blocks/button/edit.js:423
+msgid "75%"
+msgstr ""
+
+#: src/blocks/button/edit.js:436
+msgid "100%"
+msgstr ""
+
+#: src/blocks/button/edit.js:443
 msgid "Button Style:"
 msgstr ""
 
-#: src/blocks/button/edit.js:330
+#: src/blocks/button/edit.js:478
 msgid "Text only"
 msgstr ""
 
-#: src/blocks/button/edit.js:334
+#: src/blocks/button/edit.js:482
 msgid "If you select \"No background\", that you need to select a Custom Color."
 msgstr ""
 
-#: src/blocks/button/edit.js:341
+#: src/blocks/button/edit.js:489
 msgid "Default Color (Bootstrap)"
 msgstr ""
 
-#: src/blocks/button/edit.js:345
+#: src/blocks/button/edit.js:493
 #: src/blocks/pr-content/edit.js:157
 msgid "Primary"
 msgstr ""
 
-#: src/blocks/button/edit.js:349
+#: src/blocks/button/edit.js:497
 #: src/blocks/pr-content/edit.js:161
 msgid "Secondary"
 msgstr ""
 
-#: src/blocks/button/edit.js:369
+#: src/blocks/button/edit.js:517
 #: src/blocks/pr-content/edit.js:177
 msgid "Light"
 msgstr ""
 
-#: src/blocks/button/edit.js:373
+#: src/blocks/button/edit.js:521
 #: src/blocks/pr-content/edit.js:178
 msgid "Dark"
 msgstr ""
 
-#: src/blocks/button/edit.js:386
+#: src/blocks/button/edit.js:534
 msgid "Custom Color"
 msgstr ""
 
-#: src/blocks/button/edit.js:394
+#: src/blocks/button/edit.js:542
 #: src/blocks/pr-content/edit.js:186
 msgid "Button Color"
 msgstr ""
 
-#: src/blocks/button/edit.js:396
+#: src/blocks/button/edit.js:544
 msgid ""
 "This color palette overrides the default color. If you want to use the "
 "default color, click the clear button."
 msgstr ""
 
-#: src/blocks/button/edit.js:428
+#: src/blocks/button/edit.js:576
 #: src/blocks/heading/edit.js:337
 #: src/blocks/pr-content/edit.js:204
 msgid "Before text"
 msgstr ""
 
-#: src/blocks/button/edit.js:437
+#: src/blocks/button/edit.js:585
 #: src/blocks/heading/edit.js:346
 #: src/blocks/pr-content/edit.js:216
 msgid "After text"
 msgstr ""
 
-#: src/blocks/button/edit.js:466
+#: src/blocks/button/edit.js:614
 msgid "Input text"
 msgstr ""
 
@@ -1421,10 +1527,6 @@ msgstr ""
 
 #: src/blocks/heading/edit.js:364
 msgid "Sub Text Settings"
-msgstr ""
-
-#: src/blocks/heading/edit.js:370
-msgid "Display"
 msgstr ""
 
 #: src/blocks/heading/edit.js:382
@@ -1879,6 +1981,42 @@ msgstr ""
 msgid "Extra big"
 msgstr ""
 
+#: src/extensions/common/margin-extension/index.js:168
+msgid "Margin the block"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:24
+msgid "Top lg"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:29
+msgid "Top md"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:34
+msgid "Top sm"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:39
+msgid "Top 0"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:47
+msgid "Bottom 0"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:52
+msgid "Bottom sm"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:57
+msgid "Bottom md"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:62
+msgid "Bottom lg"
+msgstr ""
+
 #: src/extensions/common/nowrap/index.js:21
 msgid "No wrap"
 msgstr ""
@@ -2045,21 +2183,31 @@ msgstr ""
 msgid "Lorem ipsum"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:192
+#: src/utils/font-awesome-new.js:233
+msgid "Font Awesome icon list"
+msgstr ""
+
+#: src/utils/font-awesome-new.js:236
 msgid ""
 "If you want to use an icon other than the ones listed above, you can use "
 "any of the icons from Font Awesome's icon list Please select a tag and "
 "enter it."
 msgstr ""
 
-#: src/utils/font-awesome-new.js:197
+#: src/utils/font-awesome-new.js:241
 msgid "Ex) <i class=\"fas fa-arrow-circle-right\"></i>"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:203
-msgid "Font Awesome icon list"
+#: src/utils/font-awesome-new.js:255
+msgid ""
+"When you click save button, the window will be reloaded and this setting "
+"will be applied"
 msgstr ""
 
-#: src/utils/font-awesome-new.js:218
+#: src/utils/font-awesome-new.js:265
+msgid "Save"
+msgstr ""
+
+#: src/utils/font-awesome-new.js:279
 msgid "Select Icon"
 msgstr ""

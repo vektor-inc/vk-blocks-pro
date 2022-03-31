@@ -3,9 +3,9 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,m
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
-Tested up to: 5.9.1
-Stable tag: 1.27.7.1
-Requires PHP: 7.0
+Tested up to: 5.9.2
+Stable tag: 1.29.2.0
+Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -63,8 +63,30 @@ e.g.
 
 == Changelog ==
 
-[ fix ]  [ Outer (Pro) ] Border radius range above 0.
+[ Add Function ][ Border Box ] Add body align control in toolbar.
+[ Update ][ Button ] Move url interface to block toolbar.
+[ Update ][ Button outer(Pro) ] Add button width option.
+[ Update ][ Font Awesome ] Add version chenge setting on block-editor screen.
+
+= 1.29.2 =
+[ Bug fix ][ margin extension ] Exclude grid column blocks because they are covered by the setting values.
+[ Bug fix ][ margin extension ] Optimize excludes core block list.
+[ Bug Fix ] fix editor style of button-outer & icon-outer in page-content
+
+= 1.29.1 =
+[ Bug fix ][ margin extension ] Optimize excludes block list.
+
+= 1.29.0 =
+[ Add Function ] Add margin extension in toolbar.
+[ Add Block ] GridColCard(Pro)
+[ Fix ] [ Breadcrumb(Pro) ] Add inserter Pro label.
+[ Other ] Update Font Awesome 6 -> 6.1
+
+= 1.28.0 =
 [ Add Block ] Breadcrumb(Pro)
+[ Specification Change ][ Spacer ] Change break point
+[ Bug fix ][ Outer (Pro) ] Border radius range above 0.
+[ Bug fix ][ Outer (Pro) ] background position fix
 
 = 1.27.9 =
 [ Bug fix ][ Slider(Pro) ] Fixed a bug that the background was not transparent when the transparency setting was set to 0.

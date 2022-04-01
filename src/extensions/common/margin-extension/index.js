@@ -10,7 +10,6 @@ import { ToolbarDropdownMenu } from '@wordpress/components';
 /**
  * External dependencies
  */
-import classnames from 'classnames';
 import { find } from 'lodash';
 
 /**
@@ -84,29 +83,6 @@ export const isAddMargin = (blockName) => {
 
 /* Filter of blocks.registerBlockType
 	/*-----------------------------------*/
-addFilter(
-	'blocks.registerBlockType',
-	'vk-blocks/margin-extension',
-	(settings) => {
-		// If margin function target block...
-		if (isAddMargin(settings.name)) {
-			settings.attributes = {
-				// Deploy original settings.attributes to array and...
-				...settings.attributes,
-				// Add margin attributes
-				...{
-					marginTop: {
-						type: 'string',
-					},
-					marginBottom: {
-						type: 'string',
-					},
-				},
-			};
-		}
-		return settings;
-	}
-);
 
 /* Filter of editor.BlockEdit
 	/*-----------------------------------*/
@@ -116,145 +92,127 @@ addFilter(
 	createHigherOrderComponent((BlockEdit) => {
 		return (props) => {
 			const { name, attributes, setAttributes } = props;
-			const { marginTop, marginBottom } = attributes;
+			const { className } = attributes;
 			const marginTopControls = DEFAULT_MARGIN_TOP_CONTROLS;
 			const marginBottomControls = DEFAULT_MARGIN_BOTTOM_CONTROLS;
 			const marginControls = DEFAULT_MARGIN_CONTROLS;
+			// attributeの変数名がわかりにくいので別の変数にする
+			const nowClass = className || '';
 
+			// 追加CSSクラスを半角文字列で分けて配列化
+			const nowClassArray = nowClass ? nowClass.split(' ') : [];
+			// 現在カスタムcssに入っているvk_block-margin-(|0|sm|md|lg|)--margin-top,bottomが存在するかチェック
+			const activeMarginTopClass = nowClassArray.filter((item) => {
+				return item.match(/vk_block-margin-(|0|sm|md|lg|)--margin-top/);
+			});
+			const activeMarginBottomClass = nowClassArray.filter((item) => {
+				return item.match(
+					/vk_block-margin-(|0|sm|md|lg|)--margin-bottom/
+				);
+			});
+
+			// アクティブマージンのObjectを作る
 			const activeMarginTop = find(
 				marginTopControls,
-				(control) => control.marginClass === marginTop
+				(control) => control.marginClass === activeMarginTopClass[0]
 			);
 			const activeMarginBottom = find(
 				marginBottomControls,
-				(control) => control.marginClass === marginBottom
+				(control) => control.marginClass === activeMarginBottomClass[0]
 			);
 
-			if (isAddMargin(name)) {
-				return (
-					<>
-						<BlockEdit {...props} />
-						<BlockControls group="block">
-							<ToolbarDropdownMenu
-								icon={
-									<>
-										{activeMarginTop &&
-											!activeMarginBottom &&
-											marginTopIcon}
-										{!activeMarginTop &&
-											activeMarginBottom &&
-											marginBottomIcon}
-										{activeMarginTop &&
-											activeMarginBottom &&
-											marginIcon}
-										{!activeMarginTop &&
-											!activeMarginBottom &&
-											marginIcon}
-										{activeMarginTop ||
-										activeMarginBottom ? (
-											<span style={{ marginLeft: '8px' }}>
-												{activeMarginTop &&
-													activeMarginTop.title}
-												{activeMarginTop &&
-													activeMarginBottom && (
-														<br />
-													)}
-												{activeMarginBottom &&
-													activeMarginBottom.title}
-											</span>
-										) : null}
-									</>
-								}
-								label={__('Margin the block', 'vk-blocks')}
-								controls={marginControls.map((control) => {
-									const { marginClass, flag } = control;
-									const isActive =
-										marginTop === marginClass ||
-										marginBottom === marginClass;
-									return {
-										...control,
-										isActive,
-										icon:
-											flag === 'top'
-												? marginTopIcon
-												: marginBottomIcon,
-										onClick: () => {
-											// 選択されているものをクリックしたらundefinedをセットする
-											const newClass = isActive
-												? undefined
-												: marginClass;
-											if (flag === 'top') {
-												setAttributes({
-													marginTop: newClass,
-												});
-											} else {
-												setAttributes({
-													marginBottom: newClass,
-												});
-											}
-										},
-									};
-								})}
-							/>
-						</BlockControls>
-					</>
-				);
+			// 追加CSSに保存するクラスを作る
+			const getNewClasses = (
+				classArray, // 現在のクラス 配列
+				clickedClass, // クリックされたクラス名 文字列
+				spliceMarginClassName // アクティブなクラス名 文字列
+			) => {
+				// アクティブなクラスがなければ新規に新しいクラスを追加する
+				if (spliceMarginClassName === undefined) {
+					classArray.push(clickedClass);
+					return classArray;
+				}
+				// 選択されているクラスがクリックされたらそのクラス名を削除する
+				if (classArray.includes(clickedClass)) {
+					const clickIndex = classArray.indexOf(clickedClass);
+					classArray.splice(clickIndex, 1);
+					return classArray;
+				}
+				// アクティブなクラス名を削除
+				const spliceIndex = classArray.indexOf(spliceMarginClassName);
+				classArray.splice(spliceIndex, 1);
+				// 新しいクラスを追加する
+				classArray.push(clickedClass);
+				return classArray;
+			};
+
+			if (!isAddMargin(name)) {
+				return <BlockEdit {...props} />;
 			}
-			return <BlockEdit {...props} />;
+			return (
+				<>
+					<BlockEdit {...props} />
+					<BlockControls group="block">
+						<ToolbarDropdownMenu
+							icon={
+								<>
+									{activeMarginTop &&
+										!activeMarginBottom &&
+										marginTopIcon}
+									{!activeMarginTop &&
+										activeMarginBottom &&
+										marginBottomIcon}
+									{activeMarginTop &&
+										activeMarginBottom &&
+										marginIcon}
+									{!activeMarginTop &&
+										!activeMarginBottom &&
+										marginIcon}
+									{activeMarginTop || activeMarginBottom ? (
+										<span style={{ marginLeft: '8px' }}>
+											{activeMarginTop &&
+												activeMarginTop.title}
+											{activeMarginTop &&
+												activeMarginBottom && <br />}
+											{activeMarginBottom &&
+												activeMarginBottom.title}
+										</span>
+									) : null}
+								</>
+							}
+							label={__('Margin the block', 'vk-blocks')}
+							controls={marginControls.map((control) => {
+								const { marginClass, flag } = control;
+								const isActive =
+									activeMarginTopClass[0] === marginClass ||
+									activeMarginBottomClass[0] === marginClass;
+								return {
+									...control,
+									isActive,
+									icon:
+										flag === 'top'
+											? marginTopIcon
+											: marginBottomIcon,
+									onClick: () => {
+										// 現在のクラス,クリックされたクラス,アクティブのクラス名をgetNewClassesに渡してクラスを作り直す
+										const clickedClass = marginClass;
+										const newClasses = getNewClasses(
+											nowClassArray,
+											clickedClass,
+											flag === 'top'
+												? activeMarginTopClass[0]
+												: activeMarginBottomClass[0]
+										);
+										setAttributes({
+											className: newClasses.join(' '),
+										});
+									},
+								};
+							})}
+						/>
+					</BlockControls>
+				</>
+			);
 		};
 	}, 'addHiddenSection')
-);
-
-/* Filter of blocks.getSaveElement
-	/*-----------------------------------*/
-addFilter(
-	'blocks.getSaveElement',
-	'vk-blocks/margin-extension',
-	(element, blockType, attributes) => {
-		const { marginTop, marginBottom } = attributes;
-		if (isAddMargin(blockType.name)) {
-			if (marginTop || marginBottom) {
-				if (element) {
-					element = {
-						...element,
-						...{
-							props: {
-								...element.props,
-								...{
-									className: classnames(
-										element.props.className,
-										marginTop,
-										marginBottom
-									),
-								},
-							},
-						},
-					};
-				}
-			}
-		}
-		return element;
-	}
-);
-
-/* Filter of editor.BlockListBlock
-	/*-----------------------------------*/
-addFilter(
-	'editor.BlockListBlock',
-	'vk-blocks/margin-extension',
-	createHigherOrderComponent((BlockListBlock) => {
-		return (props) => {
-			const marginTopClassName = props.attributes.marginTop;
-			const marginBottomClassName = props.attributes.marginBottom;
-			const attachedClass = classnames(
-				marginTopClassName,
-				marginBottomClassName,
-				props.className
-			);
-			if (!isAddMargin(props.name)) {
-				return <BlockListBlock {...props} />;
-			}
-			return <BlockListBlock {...props} className={attachedClass} />;
-		};
-	}, 'addMarginSetting')
 );

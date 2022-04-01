@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Improvement ][ margin extension ] Changed to add common margin class names to additional CSS classes.
+
 = 1.29.2 =
 [ Bug fix ][ margin extension ] Exclude grid column blocks because they are covered by the setting values.
 [ Bug fix ][ margin extension ] Optimize excludes core block list.

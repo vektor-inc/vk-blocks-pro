@@ -11,8 +11,8 @@ import { useEffect } from '@wordpress/element';
 /**
  * External dependencies
  */
-import { find } from 'lodash';
 import classnames from 'classnames';
+import { find } from 'lodash';
 
 /**
  * Internal dependencies

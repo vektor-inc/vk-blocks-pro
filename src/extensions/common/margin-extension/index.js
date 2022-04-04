@@ -108,7 +108,7 @@ addFilter(
 			// 過去に使用していたmarginTop,marginBottomをclassNameに入れ,過去のmarginTopやmarginBottomはundefinedにする
 			const isMatchTop = marginTopRegex.test(marginTop);
 			const isMatchBottom = marginBottomRegex.test(marginBottom);
-			useEffect( () => {
+			useEffect(() => {
 				if (isMatchTop || isMatchBottom) {
 					setAttributes({
 						className: classnames({

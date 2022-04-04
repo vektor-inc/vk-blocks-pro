@@ -6,6 +6,7 @@ import { addFilter } from '@wordpress/hooks';
 import { BlockControls } from '@wordpress/block-editor';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { ToolbarDropdownMenu } from '@wordpress/components';
+import { useEffect } from '@wordpress/element';
 
 /**
  * External dependencies
@@ -107,17 +108,19 @@ addFilter(
 			// 過去に使用していたmarginTop,marginBottomをclassNameに入れ,過去のmarginTopやmarginBottomはundefinedにする
 			const isMatchTop = marginTopRegex.test(marginTop);
 			const isMatchBottom = marginBottomRegex.test(marginBottom);
-			if (isMatchTop || isMatchBottom) {
-				setAttributes({
-					className: classnames({
-						[nowClass]: nowClass,
-						[marginTop]: isMatchTop,
-						[marginBottom]: isMatchBottom,
-					}),
-				});
-				setAttributes({ marginTop: undefined });
-				setAttributes({ marginBottom: undefined });
-			}
+			useEffect( () => {
+				if (isMatchTop || isMatchBottom) {
+					setAttributes({
+						className: classnames({
+							[nowClass]: nowClass,
+							[marginTop]: isMatchTop,
+							[marginBottom]: isMatchBottom,
+						}),
+					});
+					setAttributes({ marginTop: undefined });
+					setAttributes({ marginBottom: undefined });
+				}
+			}, []);
 
 			// 追加CSSクラスを半角文字列で分けて配列化
 			const nowClassArray = nowClass ? nowClass.split(' ') : [];

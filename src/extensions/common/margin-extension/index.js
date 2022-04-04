@@ -11,6 +11,7 @@ import { ToolbarDropdownMenu } from '@wordpress/components';
  * External dependencies
  */
 import { find } from 'lodash';
+import classnames from 'classnames';
 
 /**
  * Internal dependencies
@@ -92,40 +93,64 @@ addFilter(
 	createHigherOrderComponent((BlockEdit) => {
 		return (props) => {
 			const { name, attributes, setAttributes } = props;
-			const { className } = attributes;
+			const { marginTop, marginBottom, className } = attributes;
 			const marginTopControls = DEFAULT_MARGIN_TOP_CONTROLS;
 			const marginBottomControls = DEFAULT_MARGIN_BOTTOM_CONTROLS;
 			const marginControls = DEFAULT_MARGIN_CONTROLS;
 			// attributeの変数名がわかりにくいので別の変数にする
 			const nowClass = className || '';
+			const marginTopRegex = /vk_block-margin-(|0|sm|md|lg|)--margin-top/;
+			const marginBottomRegex =
+				/vk_block-margin-(|0|sm|md|lg|)--margin-bottom/;
+
+			// deprecated
+			// 過去に使用していたmarginTop,marginBottomをclassNameに入れ,過去のmarginTopやmarginBottomはundefinedにする
+			const isMatchTop = marginTopRegex.test(marginTop);
+			const isMatchBottom = marginBottomRegex.test(marginBottom);
+			if (isMatchTop || isMatchBottom) {
+				setAttributes({
+					className: classnames({
+						[nowClass]: nowClass,
+						[marginTop]: isMatchTop,
+						[marginBottom]: isMatchBottom,
+					}),
+				});
+				setAttributes({ marginTop: undefined });
+				setAttributes({ marginBottom: undefined });
+			}
 
 			// 追加CSSクラスを半角文字列で分けて配列化
 			const nowClassArray = nowClass ? nowClass.split(' ') : [];
-			// 現在カスタムcssに入っているvk_block-margin-(|0|sm|md|lg|)--margin-top,bottomが存在するかチェック
-			const activeMarginTopClass = nowClassArray.filter((item) => {
-				return item.match(/vk_block-margin-(|0|sm|md|lg|)--margin-top/);
+			// 現在カスタムcssに入っているvk_block-margin-(|0|sm|md|lg|)--margin-top,bottomクラス名を取得
+			const activeMarginTopClassArray = nowClassArray.filter((item) => {
+				return item.match(marginTopRegex);
 			});
-			const activeMarginBottomClass = nowClassArray.filter((item) => {
-				return item.match(
-					/vk_block-margin-(|0|sm|md|lg|)--margin-bottom/
-				);
-			});
+			const activeMarginBottomClassArray = nowClassArray.filter(
+				(item) => {
+					return item.match(marginBottomRegex);
+				}
+			);
+
+			// 複数のクラス名が入っていた場合は最後のcssが当たるので最後のクラス名を取得する
+			const activeMarginTopClass = activeMarginTopClassArray.slice(-1)[0];
+			const activeMarginBottomClass =
+				activeMarginBottomClassArray.slice(-1)[0];
 
 			// アクティブマージンのObjectを作る
 			const activeMarginTop = find(
 				marginTopControls,
-				(control) => control.marginClass === activeMarginTopClass[0]
+				(control) => control.marginClass === activeMarginTopClass
 			);
 			const activeMarginBottom = find(
 				marginBottomControls,
-				(control) => control.marginClass === activeMarginBottomClass[0]
+				(control) => control.marginClass === activeMarginBottomClass
 			);
 
-			// 追加CSSに保存するクラスを作る
+			// 追加CSSに保存するクラスを作る関数
 			const getNewClasses = (
 				classArray, // 現在のクラス 配列
 				clickedClass, // クリックされたクラス名 文字列
-				spliceMarginClassName // アクティブなクラス名 文字列
+				spliceMarginClassName // アクティブなクラス名,削除するクラス名 文字列
 			) => {
 				// アクティブなクラスがなければ新規に新しいクラスを追加する
 				if (spliceMarginClassName === undefined) {
@@ -184,8 +209,8 @@ addFilter(
 							controls={marginControls.map((control) => {
 								const { marginClass, flag } = control;
 								const isActive =
-									activeMarginTopClass[0] === marginClass ||
-									activeMarginBottomClass[0] === marginClass;
+									activeMarginTopClass === marginClass ||
+									activeMarginBottomClass === marginClass;
 								return {
 									...control,
 									isActive,
@@ -194,14 +219,13 @@ addFilter(
 											? marginTopIcon
 											: marginBottomIcon,
 									onClick: () => {
-										// 現在のクラス,クリックされたクラス,アクティブのクラス名をgetNewClassesに渡してクラスを作り直す
-										const clickedClass = marginClass;
+										// 現在のクラス,クリックされたクラス,アクティブなクラス名をgetNewClassesに渡してクラス名を作り直す
 										const newClasses = getNewClasses(
 											nowClassArray,
-											clickedClass,
+											marginClass,
 											flag === 'top'
-												? activeMarginTopClass[0]
-												: activeMarginBottomClass[0]
+												? activeMarginTopClass
+												: activeMarginBottomClass
 										);
 										setAttributes({
 											className: newClasses.join(' '),
@@ -214,5 +238,5 @@ addFilter(
 				</>
 			);
 		};
-	}, 'addHiddenSection')
+	}, 'addMarginSection')
 );

@@ -67,6 +67,7 @@ e.g.
 [ Update ][ Button ] Move url interface to block toolbar.
 [ Update ][ Button outer(Pro) ] Add button width option.
 [ Update ][ Font Awesome ] Add version chenge setting on block-editor screen.
+[ Specification Change ] Change default --vk-margin-md size 2rem -> 2.4rem
 
 = 1.29.2 =
 [ Bug fix ][ margin extension ] Exclude grid column blocks because they are covered by the setting values.

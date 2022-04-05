@@ -63,6 +63,14 @@ e.g.
 
 == Changelog ==
 
+= 1.30.0 =
+[ Add Function ][ Border Box ] Add body align control in toolbar.
+[ Update ][ Button ] Move url interface to block toolbar.
+[ Update ][ Button outer(Pro) ] Add button width option.
+[ Update ][ Font Awesome ] Add version chenge setting on block-editor screen.
+[ Specification Change ] Change default --vk-margin-md size 2rem -> 2.4rem
+[ Specification Change ][ icon ] fix icon margin bottom
+
 = 1.29.2 =
 [ Bug fix ][ margin extension ] Exclude grid column blocks because they are covered by the setting values.
 [ Bug fix ][ margin extension ] Optimize excludes core block list.

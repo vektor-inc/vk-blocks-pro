@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/vektor-inc/vk-blocks
  * Description: This is a plugin that extends Gutenberg's blocks.
  * Version: 1.30.0.0
- * Stable tag: 1.29.2.0
+ * Stable tag: 1.30.0.0
  * Requires at least: 5.8
  * Author: Vektor,Inc.
  * Author URI: https://vektor-inc.co.jp

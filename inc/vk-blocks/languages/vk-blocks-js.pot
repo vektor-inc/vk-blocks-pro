@@ -2197,7 +2197,7 @@ msgstr ""
 #: src/utils/font-awesome-new.js:255
 msgid ""
 "When you click save button, the window will be reloaded and this setting "
-"will be applied"
+"will be applied."
 msgstr ""
 
 #: src/utils/font-awesome-new.js:265

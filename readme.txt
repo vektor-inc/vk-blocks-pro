@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
 Tested up to: 5.9.2
-Stable tag: 1.29.2.0
+Stable tag: 1.30.0.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -65,11 +65,13 @@ e.g.
 
 [ Improvement ][ margin extension ] Changed to add common margin class names to additional CSS classes.
 
+= 1.30.0 =
 [ Add Function ][ Border Box ] Add body align control in toolbar.
-[ Update ][ Button ] Move url interface to block toolbar.
-[ Update ][ Button outer(Pro) ] Add button width option.
+[ Add Function ][ Button outer(Pro) ] Add button width option.
 [ Update ][ Font Awesome ] Add version chenge setting on block-editor screen.
+[ Specification Change ][ Button ] Move url interface to block toolbar.
 [ Specification Change ] Change default --vk-margin-md size 2rem -> 2.4rem
+[ Specification Change ][ icon ] fix icon margin bottom
 
 = 1.29.2 =
 [ Bug fix ][ margin extension ] Exclude grid column blocks because they are covered by the setting values.

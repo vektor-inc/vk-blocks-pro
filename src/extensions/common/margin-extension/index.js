@@ -6,6 +6,7 @@ import { addFilter } from '@wordpress/hooks';
 import { BlockControls } from '@wordpress/block-editor';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { ToolbarDropdownMenu } from '@wordpress/components';
+// import { getBlockTypes } from '@wordpress/blocks';
 
 /**
  * External dependencies
@@ -88,6 +89,31 @@ addFilter(
 	'blocks.registerBlockType',
 	'vk-blocks/margin-extension',
 	(settings) => {
+		/**
+		 * e2eテストコード用 test/e2e-tests/specs/margin-extension.test.js
+		 *
+		 * ブラウザーコンソールで除外しないブロック一覧が表示されるので右クリックしてobjectのコピーして確認する
+		 */
+		// const blockArr = getBlockTypes();
+		// console.log(blockArr);
+		// const testBlockList = [];
+		// const testHasParentBlockList = [];
+		// for (let i = 0; i < blockArr.length; i++) {
+		// 	if (isAddMargin(blockArr[i].name)) {
+		// 		if (blockArr[i].parent) {
+		// 			testHasParentBlockList.push([
+		// 				blockArr[i].parent[0],
+		// 				blockArr[i].title,
+		// 				blockArr[i].name,
+		// 			]);
+		// 		} else {
+		// 			testBlockList.push([blockArr[i].title, blockArr[i].title, blockArr[i].name,]);
+		// 		}
+		// 	}
+		// }
+		// console.log(testBlockList);
+		// console.log(testHasParentBlockList);
+
 		// If margin function target block...
 		if (isAddMargin(settings.name)) {
 			settings.attributes = {

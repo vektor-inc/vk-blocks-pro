@@ -113,8 +113,6 @@ describe( 'MarginExtension', () => {
 					[ "Accordion", "Accordion Trigger", "vk-blocks-accordion" ],
 					[ "Grid Column Card", "Grid Column Card Item", "vk-blocks-gridcolcard" ],
 					[ "Grid Column Card", "Grid Column Card Item Body", "vk-blocks-gridcolcard" ],
-					[ "Grid Column Card", "Grid Column Card Item Footer", "vk-blocks-gridcolcard" ],
-					[ "Grid Column Card", "Grid Column Card Item header", "vk-blocks-gridcolcard" ],
 					[ "Step", "Step Item", "vk-blocks-step" ],
 					[ "Timeline", "Timeline Item", "vk-blocks-timeline" ],
 					[ "Buttons", "Button", "buttons" ]
@@ -152,6 +150,14 @@ describe( 'MarginExtension', () => {
 				}
 				await page.keyboard.press( 'Enter' );
 
+				// 共通余白のクラス名が存在するかチェック
+				expect(
+					await page.$( '.vk_block-margin-lg--margin-top' )
+				).not.toBeNull();
+				expect(
+					await page.$( '.vk_block-margin-0--margin-bottom' )
+				).not.toBeNull();
+
 				// 配置したブロックが増えるとテストが動かなくなる,またインナーブロックの場合、その中に配置されることがありテストわかりにくくなるので配置したブロックを削除
 				await clickButton( testBlockTitleLists[i][0] );
 				await page.keyboard.press( 'Escape' );
@@ -167,6 +173,9 @@ describe( 'MarginExtension', () => {
 	 * Navigation > Custom Link, Submenu
 	 * Query Loop > Post Template, Pagination
 	 *
+	 * 初期配置ではブロックが配置されないためクラス名が見当たらないため
+	 * Grid Column Card Item Footer
+	 * Grid Column Card Item header
 	 */
 
 });

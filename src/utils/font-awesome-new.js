@@ -253,7 +253,7 @@ export const FontAwesome = (props) => {
 			/>
 			<p className="mt-1">
 				{__(
-					'When you click save button, the window will be reloaded and this setting will be applied',
+					'When you click save button, the window will be reloaded and this setting will be applied.',
 					'vk-blocks'
 				)}
 			</p>

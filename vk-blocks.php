@@ -120,12 +120,12 @@ function vk_blocks_update_checker() {
 	add_filter( 'https_ssl_verify', '__return_false' );
 
 	$vk_blocks_update_checker = Puc_v4_Factory::buildUpdateChecker(
-		'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=vk-blocks-pro',
+		'https://dev.vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=vk-blocks-pro',
 		__FILE__,
 		'vk-blocks-pro'
 	);
 
-	$vk_blocks_update_checker->addQueryArgFilter( 'vk_blocks_get_icense_check_query_arg' );
+	$vk_blocks_update_checker->addQueryArgFilter( 'vk_blocks_get_license_check_query_arg' );
 	$options = get_option( 'vk_blocks_options' );
 	$license = esc_html( $options['vk_blocks_pro_license_key'] );
 
@@ -148,29 +148,16 @@ function vk_blocks_update_checker() {
 			$update = $state->getUpdate();
 
 			// ライセンスキーが未入力の場合.
-			if ( empty( $license ) ) {
-				add_action(
-					'admin_notices',
-					function() {
-						echo '<div class="error"><p>';
-						echo wp_kses_post( __( 'License Key has no registerd.', 'vk-blocks' ) );
-						echo wp_kses_post( __( 'You need register License Key at Settings > Lightning G3 Pro Unit Setting > License Key.', 'vk-blocks' ) );
-						echo '</p><p>';
-						/* translators: %s: admin_url */
-						echo wp_kses_post( sprintf( __( 'ライセンスキーを入力してもこの表示が消えない場合は<a href="%s">更新を再読み込み</a>してください。', 'vk-blocks' ), admin_url() . '/update-core.php?force-check=1' ) );
-						echo '</p></div>';
-					}
-				);
-			} elseif (
+			if (
 				! empty( $update )
-				&& version_compare( $update->version, vk_blocks_get_version(), '>' )
+				// && version_compare( $update->version, vk_blocks_get_version(), '>' )
 				&& empty( $update->download_url )
 				) {
 				add_action(
 					'admin_notices',
 					function() {
 						echo '<div class="error"><p>';
-						echo wp_kses_post( __( 'Your Lightning G3 Pro Unit license key is expired.', 'vk-blocks' ) );
+						echo wp_kses_post( __( 'Your license key is expired.', 'vk-blocks' ) );
 						if ( get_locale() === 'ja' ) {
 							echo wp_kses_post( __( 'If you need update. get <a href="https://vws.vektor-inc.co.jp/product/lightning-g3-pro-pack" target="_blank">Update License</a>.', 'vk-blocks' ) );
 						}
@@ -199,16 +186,19 @@ if ( strpos( $vk_blocks_plugin_base_dir, 'vk-blocks-pro' ) !== false ) {
  * @param array $query_args : updatechacker array.
  * @return $query_args
  */
-function vk_blocks_get_icense_check_query_arg( $query_args ) {
+function vk_blocks_get_license_check_query_arg( $query_args ) {
 	$options = get_option( 'vk_blocks_options' );
 	$license = esc_html( $options['vk_blocks_pro_license_key'] );
 
 	if ( ! empty( $license ) ) {
 		$query_args['vk-blocks-pro-license-key'] = $license;
 	}
+	$query_args['template'] = wp_get_theme()->Template;
 
 	return $query_args;
 }
+
+
 
 
 

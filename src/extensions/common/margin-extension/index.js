@@ -170,7 +170,7 @@ addFilter(
 				'vk-blocks/contact-section',
 				'vk-blocks/page-list-ancestor',
 				'vk-blocks/sitemap',
-			]
+			];
 			const isMatchTop = marginTopRegex.test(marginTop);
 			const isMatchBottom = marginBottomRegex.test(marginBottom);
 			useEffect(() => {

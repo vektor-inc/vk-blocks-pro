@@ -4,6 +4,9 @@ import {
 	Button,
 	ButtonGroup,
 	ToggleControl,
+	BaseControl,
+	CheckboxControl,
+	TextControl,
 } from '@wordpress/components';
 import {
 	InspectorControls,
@@ -40,6 +43,8 @@ export default function Edit(props) {
 		borderColor,
 		textColor,
 		backgroundColor,
+		url,
+		urlOpenType,
 	} = attributes;
 
 	// editModeは値として保持させずに常に個別モードでスタートさせる
@@ -207,10 +212,34 @@ export default function Edit(props) {
 					initialOpen={true}
 				>
 					<CommonItemControl {...props} />
+					<hr />
+					<BaseControl
+						label={__('Link URL:', 'vk-blocks')}
+						id={`	`}
+					>
+						<TextControl
+							value={url}
+							onChange={(value) => setAttributes({ url: value })}
+						/>
+						<CheckboxControl
+							label={__('Open link new tab.', 'vk-blocks')}
+							checked={urlOpenType}
+							onChange={(checked) =>
+								setAttributes({ urlOpenType: checked })
+							}
+						/>
+						<p class="mb-3">
+							{__(
+								'If you set a link URL, do not place the link (text or button) in the Grid Column Card Item.<br>It may not be displayed correctly.',
+								'vk-blocks'
+							)}
+						</p>
+					</BaseControl>					
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
 				<div
+					tagNamae={'a'}
 					className={`vk_gridcolcard_item_container`}
 					style={{
 						paddingTop: containerSpace.top,

@@ -154,20 +154,38 @@ addFilter(
 				/vk_block-margin-(|0|sm|md|lg|)--margin-bottom/;
 
 			// deprecated
-			// 過去に使用していたmarginTop,marginBottomをclassNameに入れ,過去のmarginTopやmarginBottomはundefinedにする
+			/**
+			 * 共通余白のattribute:marginTop,marginBottomが使用されている可能性があるdynamic blockは過去に使用していたmarginTop,marginBottomをclassNameに入れ,過去のmarginTopやmarginBottomはundefinedにする
+			 *
+			 * dynamic block以外はコアの仕様で追加 CSS クラスに自動的に追加される
+			 */
+			const mayUsedDynamicBlock = [
+				'vk-blocks/breadcrumb',
+				'vk-blocks/child-page',
+				'vk-blocks/post-list',
+				'vk-blocks/page-content',
+				// ExUnitに入っているvk blocksブロック,
+				'vk-blocks/share-button',
+				'vk-blocks/child-page-index',
+				'vk-blocks/contact-section',
+				'vk-blocks/page-list-ancestor',
+				'vk-blocks/sitemap',
+			]
 			const isMatchTop = marginTopRegex.test(marginTop);
 			const isMatchBottom = marginBottomRegex.test(marginBottom);
 			useEffect(() => {
-				if (isMatchTop || isMatchBottom) {
-					setAttributes({
-						className: classnames({
-							[nowClass]: nowClass,
-							[marginTop]: isMatchTop,
-							[marginBottom]: isMatchBottom,
-						}),
-					});
-					setAttributes({ marginTop: undefined });
-					setAttributes({ marginBottom: undefined });
+				if (mayUsedDynamicBlock.includes(name)) {
+					if (isMatchTop || isMatchBottom) {
+						setAttributes({
+							className: classnames({
+								[nowClass]: nowClass,
+								[marginTop]: isMatchTop,
+								[marginBottom]: isMatchBottom,
+							}),
+						});
+						setAttributes({ marginTop: undefined });
+						setAttributes({ marginBottom: undefined });
+					}
 				}
 			}, []);
 

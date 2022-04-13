@@ -150,14 +150,25 @@ function vk_blocks_update_checker() {
 			// ライセンスキーが未入力の場合.
 			if (
 				! empty( $update )
-				// && version_compare( $update->version, vk_blocks_get_version(), '>' )
+				&& version_compare( $update->version, vk_blocks_get_version(), '>' )
 				&& empty( $update->download_url )
 				) {
 				add_action(
 					'admin_notices',
-					function() {
+					function() use ( $vk_blocks_update_checker ) {
+						$link_url = wp_nonce_url(
+							add_query_arg(
+								array(
+									'puc_check_for_updates' => 1,
+									'puc_slug' => $vk_blocks_update_checker->slug,
+								),
+								self_admin_url( 'plugins.php' )
+							),
+							'puc_check_for_updates'
+						);
+
 						echo '<div class="error"><p>';
-						echo wp_kses_post( __( 'Your license key is expired.', 'vk-blocks' ) );
+						echo wp_kses_post( __( "Your license key is expired. <a href=\"${link_url}\">check</a>. ", 'vk-blocks' ) );
 						if ( get_locale() === 'ja' ) {
 							echo wp_kses_post( __( 'If you need update. get <a href="https://vws.vektor-inc.co.jp/product/lightning-g3-pro-pack" target="_blank">Update License</a>.', 'vk-blocks' ) );
 						}

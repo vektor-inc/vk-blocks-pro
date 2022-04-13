@@ -84,6 +84,57 @@ export const isAddMargin = (blockName) => {
 	return isExcludesBlocks({ blockName, addExclude });
 };
 
+/* Filter of blocks.registerBlockType
+	/*-----------------------------------*/
+addFilter(
+	'blocks.registerBlockType',
+	'vk-blocks/margin-extension',
+	(settings) => {
+		/**
+		 * e2eテストコード用 test/e2e-tests/specs/margin-extension.test.js
+		 *
+		 * ブラウザーコンソールで除外しないブロック一覧が表示されるので右クリックしてobjectのコピーして確認する
+		 */
+		// const blockArr = getBlockTypes();
+		// console.log(blockArr);
+		// const testBlockList = [];
+		// const testHasParentBlockList = [];
+		// for (let i = 0; i < blockArr.length; i++) {
+		// 	if (isAddMargin(blockArr[i].name)) {
+		// 		if (blockArr[i].parent) {
+		// 			testHasParentBlockList.push([
+		// 				blockArr[i].parent[0],
+		// 				blockArr[i].title,
+		// 				blockArr[i].name,
+		// 			]);
+		// 		} else {
+		// 			testBlockList.push([blockArr[i].title, blockArr[i].title, blockArr[i].name,]);
+		// 		}
+		// 	}
+		// }
+		// console.log(testBlockList);
+		// console.log(testHasParentBlockList);
+
+		// If margin function target block...
+		if (isAddMargin(settings.name)) {
+			settings.attributes = {
+				// Deploy original settings.attributes to array and...
+				...settings.attributes,
+				// Add margin attributes
+				...{
+					marginTop: {
+						type: 'string',
+					},
+					marginBottom: {
+						type: 'string',
+					},
+				},
+			};
+		}
+		return settings;
+	}
+);
+
 /* Filter of editor.BlockEdit
 	/*-----------------------------------*/
 addFilter(
@@ -91,31 +142,6 @@ addFilter(
 	'vk-blocks/margin-extension',
 	createHigherOrderComponent((BlockEdit) => {
 		return (props) => {
-			/**
-			 * e2eテストコード用 test/e2e-tests/specs/margin-extension.test.js
-			 *
-			 * ブラウザーコンソールで除外しないブロック一覧が表示されるので右クリックしてobjectのコピーして確認する
-			 */
-			// const blockArr = getBlockTypes();
-			// console.log(blockArr);
-			// const testBlockList = [];
-			// const testHasParentBlockList = [];
-			// for (let i = 0; i < blockArr.length; i++) {
-			// 	if (isAddMargin(blockArr[i].name)) {
-			// 		if (blockArr[i].parent) {
-			// 			testHasParentBlockList.push([
-			// 				blockArr[i].parent[0],
-			// 				blockArr[i].title,
-			// 				blockArr[i].name,
-			// 			]);
-			// 		} else {
-			// 			testBlockList.push([blockArr[i].title, blockArr[i].title, blockArr[i].name,]);
-			// 		}
-			// 	}
-			// }
-			// console.log(testBlockList);
-			// console.log(testHasParentBlockList);
-
 			const { name, attributes, setAttributes } = props;
 			const { marginTop, marginBottom, className } = attributes;
 			const marginTopControls = DEFAULT_MARGIN_TOP_CONTROLS;

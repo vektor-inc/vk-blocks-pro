@@ -149,9 +149,9 @@ addFilter(
 			const marginControls = DEFAULT_MARGIN_CONTROLS;
 			// attributeの変数名がわかりにくいので別の変数にする
 			const nowClass = className || '';
-			const marginTopRegex = /vk_block-margin-(|0|sm|md|lg|)--margin-top/;
+			const marginTopRegex = /vk_block-margin-(0|sm|md|lg)--margin-top/;
 			const marginBottomRegex =
-				/vk_block-margin-(|0|sm|md|lg|)--margin-bottom/;
+				/vk_block-margin-(0|sm|md|lg)--margin-bottom/;
 
 			// deprecated
 			/**
@@ -191,7 +191,7 @@ addFilter(
 
 			// 追加CSSクラスを半角文字列で分けて配列化
 			const nowClassArray = nowClass ? nowClass.split(' ') : [];
-			// 現在カスタムcssに入っているvk_block-margin-(|0|sm|md|lg|)--margin-top,bottomクラス名を取得
+			// 現在カスタムcssに入っているvk_block-margin-(0|sm|md|lg)--margin-top,bottomクラス名を取得
 			const activeMarginTopClassArray = nowClassArray.filter((item) => {
 				return item.match(marginTopRegex);
 			});

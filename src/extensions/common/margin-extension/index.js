@@ -72,6 +72,20 @@ const DEFAULT_MARGIN_CONTROLS = [
 	...DEFAULT_MARGIN_BOTTOM_CONTROLS,
 ];
 
+// deprecated用 共通余白使用している可能性があるdynamic block
+const MAY_USED_DYNAMIC_BLOCK = [
+	'vk-blocks/breadcrumb',
+	'vk-blocks/child-page',
+	'vk-blocks/post-list',
+	'vk-blocks/page-content',
+	// ExUnitに入っているvk blocksブロック,
+	'vk-blocks/share-button',
+	'vk-blocks/child-page-index',
+	'vk-blocks/contact-section',
+	'vk-blocks/page-list-ancestor',
+	'vk-blocks/sitemap',
+];
+
 export const isAddMargin = (blockName) => {
 	const addExclude = [
 		'vk-blocks/slider-item',
@@ -115,8 +129,9 @@ addFilter(
 		// console.log(testBlockList);
 		// console.log(testHasParentBlockList);
 
-		// If margin function target block...
-		if (isAddMargin(settings.name)) {
+		// deprecated用 dynamic blockは自動的に追加CSSクラスに追加されないのでattributeを残す
+		const mayUsedDynamicBlock = MAY_USED_DYNAMIC_BLOCK;
+		if (mayUsedDynamicBlock.includes(settings.name)) {
 			settings.attributes = {
 				// Deploy original settings.attributes to array and...
 				...settings.attributes,
@@ -159,18 +174,7 @@ addFilter(
 			 *
 			 * dynamic block以外はコアの仕様で追加 CSS クラスに自動的に追加される
 			 */
-			const mayUsedDynamicBlock = [
-				'vk-blocks/breadcrumb',
-				'vk-blocks/child-page',
-				'vk-blocks/post-list',
-				'vk-blocks/page-content',
-				// ExUnitに入っているvk blocksブロック,
-				'vk-blocks/share-button',
-				'vk-blocks/child-page-index',
-				'vk-blocks/contact-section',
-				'vk-blocks/page-list-ancestor',
-				'vk-blocks/sitemap',
-			];
+			const mayUsedDynamicBlock = MAY_USED_DYNAMIC_BLOCK;
 			const isMatchTop = marginTopRegex.test(marginTop);
 			const isMatchBottom = marginBottomRegex.test(marginBottom);
 			useEffect(() => {

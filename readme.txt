@@ -63,6 +63,7 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] Required license key entry.
 [ Fix ] [ Breadcrumb(Pro) ] Add inserter Pro label.
 
 = 1.28.0 =

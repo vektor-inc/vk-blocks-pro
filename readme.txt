@@ -63,6 +63,7 @@ e.g.
 
 == Changelog ==
 
+[ Improvement ][ margin extension ] Changed to add common margin class names to additional CSS classes.
 [ Bug fix ][ Accordion(Pro) ] Fix do not intend margin bottom 0 added to p tag.
 
 = 1.30.0 =

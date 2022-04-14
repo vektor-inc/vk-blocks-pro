@@ -11,8 +11,6 @@ export default function save(props) {
 		borderRadius,
 		border,
 		borderColor,
-		url,
-		urlOpenType,
 	} = attributes;
 
 	const style = {

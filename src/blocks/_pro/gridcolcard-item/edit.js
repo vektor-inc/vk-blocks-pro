@@ -7,16 +7,22 @@ import {
 	BaseControl,
 	CheckboxControl,
 	TextControl,
+	ToolbarGroup,
+	ToolbarButton,
+	Dropdown,
 } from '@wordpress/components';
 import {
 	InspectorControls,
 	InnerBlocks,
 	useBlockProps,
+	BlockControls,
 	store as blockEditorStore,
+	URLInput,
 } from '@wordpress/block-editor';
 import { useSelect, useDispatch } from '@wordpress/data';
 import { useEffect, useState } from '@wordpress/element';
 import CommonItemControl from '../gridcolcard/edit-common.js';
+import { link, linkOff, keyboardReturn } from '@wordpress/icons';
 
 export default function Edit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -169,6 +175,78 @@ export default function Edit(props) {
 
 	return (
 		<>
+			<BlockControls>
+				<ToolbarGroup>
+					<Dropdown
+						renderToggle={({ isOpen, onToggle }) => {
+							const setLink = () => {
+								if (isOpen && url !== '') {
+									// linkOff
+									setAttributes({ url: '' });
+								}
+								onToggle();
+							};
+							return (
+								<ToolbarButton
+									aria-expanded={isOpen}
+									icon={url !== '' && isOpen ? linkOff : link}
+									isActive={
+										url !== '' && isOpen ? true : false
+									}
+									label={
+										url !== '' && isOpen
+											? __('Unlink')
+											: __('Input Link URL', 'vk-blocks')
+									}
+									onClick={setLink}
+								/>
+							);
+						}}
+						renderContent={(params) => {
+							return (
+								<div className="block-editor-url-input__button block-editor-link-control">
+									<form
+										className="block-editor-link-control__search-input-wrapper"
+										onSubmit={() => {
+											params.onClose();
+										}}
+									>
+										<div className="block-editor-link-control__search-input">
+											<URLInput
+												value={url}
+												onChange={(value) => {
+													setAttributes({
+														url: value,
+													});
+												}}
+											/>
+											<CheckboxControl
+												label={__(
+													'Open link new tab.',
+													'vk-blocks'
+												)}
+												checked={urlOpenType}
+												onChange={(checked) =>
+													setAttributes({
+														urlOpenType: checked,
+													})
+												}
+											/>
+											<div className="block-editor-link-control__search-actions">
+												<Button
+													icon={keyboardReturn}
+													label={__('Submit')}
+													type="submit"
+												/>
+											</div>
+										</div>
+									</form>
+								</div>
+							);
+						}}
+					/>
+				</ToolbarGroup>
+			</BlockControls>
 			<InspectorControls>
 				<PanelBody
 					title={__('Edit mode', 'vk-blocks')}
@@ -213,10 +291,7 @@ export default function Edit(props) {
 				>
 					<CommonItemControl {...props} />
 					<hr />
-					<BaseControl
-						label={__('Link URL:', 'vk-blocks')}
-						id={`	`}
-					>
+					<BaseControl label={__('Link URL:', 'vk-blocks')} id={`	`}>
 						<TextControl
 							value={url}
 							onChange={(value) => setAttributes({ url: value })}
@@ -228,18 +303,17 @@ export default function Edit(props) {
 								setAttributes({ urlOpenType: checked })
 							}
 						/>
-						<p class="mb-3">
+						<p className="mb-3">
 							{__(
 								'If you set a link URL, do not place the link (text or button) in the Grid Column Card Item.<br>It may not be displayed correctly.',
 								'vk-blocks'
 							)}
 						</p>
-					</BaseControl>					
+					</BaseControl>
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
 				<div
-					tagNamae={'a'}
 					className={`vk_gridcolcard_item_container`}
 					style={{
 						paddingTop: containerSpace.top,

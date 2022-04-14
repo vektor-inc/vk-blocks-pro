@@ -120,7 +120,7 @@ function vk_blocks_update_checker() {
 	add_filter( 'https_ssl_verify', '__return_false' );
 
 	$vk_blocks_update_checker = Puc_v4_Factory::buildUpdateChecker(
-		'https://dev.vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=vk-blocks-pro',
+		'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=vk-blocks-pro',
 		__FILE__,
 		'vk-blocks-pro'
 	);
@@ -148,6 +148,21 @@ function vk_blocks_update_checker() {
 			$update = $state->getUpdate();
 
 			// ライセンスキーが未入力の場合.
+			if ( empty( $license ) && wp_get_theme()->Template !== 'katawara' ) {
+				add_action(
+					'admin_notices',
+					function() {
+						echo '<div class="error"><p>';
+						echo wp_kses_post( __( 'License Key has no registerd.', 'vk-blocks' ) );
+						echo wp_kses_post( __( 'You need register License Key at Settings > VK Blocks > License Key.', 'vk-blocks' ) );
+						echo '</p><p>';
+						/* translators: %s: 再読み込みURL */
+						echo wp_kses_post( sprintf( __( 'ライセンスキーを入力してもこの表示が消えない場合は<a href="%s">更新を再読み込み</a>してください。', 'vk-blocks' ), admin_url() . '/update-core.php?force-check=1' ) );
+						echo '</p></div>';
+					}
+				);
+			}
+
 			if (
 				! empty( $update )
 				&& version_compare( $update->version, vk_blocks_get_version(), '>' )
@@ -168,7 +183,17 @@ function vk_blocks_update_checker() {
 						);
 
 						echo '<div class="error"><p>';
-						echo wp_kses_post( __( "Your license key is expired. <a href=\"${link_url}\">check</a>. ", 'vk-blocks' ) );
+						echo wp_kses_post(
+							sprintf(
+							/* translators: %s: 再読み込みURL */
+								__(
+									'Your license is not valid are expired.
+						Even after license key registration you still seeing this message, <a href="%s">please click here</a>.',
+									'vk-blocks'
+								),
+								$link_url
+							)
+						);
 						if ( get_locale() === 'ja' ) {
 							echo wp_kses_post( __( 'If you need update. get <a href="https://vws.vektor-inc.co.jp/product/lightning-g3-pro-pack" target="_blank">Update License</a>.', 'vk-blocks' ) );
 						}

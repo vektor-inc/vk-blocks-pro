@@ -408,8 +408,8 @@ msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:310
 msgid ""
-"If you set a link URL, do not place the link (text or button) in the Grid "
-"Column Card Item. It may not be displayed correctly."
+"If you set a link URL, do not place the link element (text or button) in "
+"the Grid Column Card Item. It may not be displayed correctly."
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:116

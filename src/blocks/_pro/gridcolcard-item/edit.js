@@ -308,7 +308,7 @@ export default function Edit(props) {
 						/>
 						<p className={alertClass}>
 							{__(
-								'If you set a link URL, do not place the link (text or button) in the Grid Column Card Item. It may not be displayed correctly.',
+								'If you set a link URL, do not place the link element (text or button) in the Grid Column Card Item. It may not be displayed correctly.',
 								'vk-blocks'
 							)}
 						</p>

@@ -153,11 +153,11 @@ function vk_blocks_update_checker() {
 					'admin_notices',
 					function() {
 						echo '<div class="error"><p>';
-						echo wp_kses_post( __( 'License Key has no registerd.', 'vk-blocks' ) );
+						echo wp_kses_post( __( 'License Key has no registered.', 'vk-blocks' ) );
 						echo wp_kses_post( __( 'You need register License Key at Settings > VK Blocks > License Key.', 'vk-blocks' ) );
 						echo '</p><p>';
 						/* translators: %s: 再読み込みURL */
-						echo wp_kses_post( sprintf( __( 'ライセンスキーを入力してもこの表示が消えない場合は<a href="%s">更新を再読み込み</a>してください。', 'vk-blocks' ), admin_url() . '/update-core.php?force-check=1' ) );
+						echo wp_kses_post( sprintf( __( 'Even after license key registration you still seeing this message, <a href="%s">please click here</a>.', 'vk-blocks' ), admin_url() . '/update-core.php?force-check=1' ) );
 						echo '</p></div>';
 					}
 				);
@@ -195,7 +195,8 @@ function vk_blocks_update_checker() {
 							)
 						);
 						if ( get_locale() === 'ja' ) {
-							echo wp_kses_post( __( 'If you need update. get <a href="https://vws.vektor-inc.co.jp/product/lightning-g3-pro-pack" target="_blank">Update License</a>.', 'vk-blocks' ) );
+							/* translators: %s: アップデートURL */
+							echo wp_kses_post( sprintf( __( 'If you need update. get <a href="%s" target="_blank">Update License</a>.', 'vk-blocks' ), 'https://vws.vektor-inc.co.jp/product/lightning-g3-pro-pack' ) );
 						}
 						echo '</p></div>';
 					}

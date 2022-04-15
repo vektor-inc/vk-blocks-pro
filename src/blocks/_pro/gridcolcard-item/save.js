@@ -11,6 +11,8 @@ export default function save(props) {
 		borderRadius,
 		border,
 		borderColor,
+		url,
+		//urlOpenType,
 	} = attributes;
 
 	const style = {
@@ -43,9 +45,12 @@ export default function save(props) {
 		className: `${containerClass}`,
 		style,
 	});
+
+	const TagName = url ? 'a' : 'div';
+
 	return (
 		<div {...blockProps}>
-			<div
+			<TagName
 				className={`vk_gridcolcard_item_container`}
 				style={{
 					paddingTop: containerSpace.top,
@@ -55,7 +60,7 @@ export default function save(props) {
 				}}
 			>
 				<InnerBlocks.Content />
-			</div>
+			</TagName>
 		</div>
 	);
 }

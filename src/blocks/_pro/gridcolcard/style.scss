@@ -15,6 +15,15 @@
 			.vk_gridcolcard_item_container {
 				grid-template-rows: 1fr auto;
 			}
+
+			a.vk_gridcolcard_item_container {
+				cursor: pointer;
+				color: unset;
+
+				&:hover {
+					opacity: .85;
+				}
+			}
 		}
 		&.vk_gridcolcard_item-noFooter{
 			.vk_gridcolcard_item_container {

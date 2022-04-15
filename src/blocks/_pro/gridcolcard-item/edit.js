@@ -168,6 +168,9 @@ export default function Edit(props) {
 	}
 	const containerClass = containerClasses.join(' ');
 
+	// mb-3 alert alert-danger
+	const alertClass = url ? 'mb-3 alert alert-danger' : 'mb-3';
+
 	const blockProps = useBlockProps({
 		className: `${containerClass}`,
 		style,
@@ -303,9 +306,9 @@ export default function Edit(props) {
 								setAttributes({ urlOpenType: checked })
 							}
 						/>
-						<p className="mb-3">
+						<p className={alertClass}>
 							{__(
-								'If you set a link URL, do not place the link (text or button) in the Grid Column Card Item.<br>It may not be displayed correctly.',
+								'If you set a link URL, do not place the link (text or button) in the Grid Column Card Item. It may not be displayed correctly.',
 								'vk-blocks'
 							)}
 						</p>

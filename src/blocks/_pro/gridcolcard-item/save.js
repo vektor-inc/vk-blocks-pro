@@ -47,7 +47,6 @@ export default function save(props) {
 	});
 
 	const TagName = url ? 'a' : 'div';
-	const targetBlank = urlOpenType ? '_blank' : null;
 
 	return (
 		<div {...blockProps}>
@@ -60,7 +59,8 @@ export default function save(props) {
 					paddingRight: containerSpace.right,
 				}}
 				href={url}
-				target={targetBlank}
+				target={urlOpenType ? '_blank' : undefined}
+				rel={urlOpenType ? 'noopener noreferrer' : undefined}
 			>
 				<InnerBlocks.Content />
 			</TagName>

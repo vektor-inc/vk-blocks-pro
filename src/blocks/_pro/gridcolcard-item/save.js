@@ -12,7 +12,7 @@ export default function save(props) {
 		border,
 		borderColor,
 		url,
-		//urlOpenType,
+		urlOpenType,
 	} = attributes;
 
 	const style = {
@@ -47,6 +47,7 @@ export default function save(props) {
 	});
 
 	const TagName = url ? 'a' : 'div';
+	const targetBlank = urlOpenType ? '_blank' : null;
 
 	return (
 		<div {...blockProps}>
@@ -58,6 +59,8 @@ export default function save(props) {
 					paddingLeft: containerSpace.left,
 					paddingRight: containerSpace.right,
 				}}
+				href={url}
+				target={targetBlank}
 			>
 				<InnerBlocks.Content />
 			</TagName>

@@ -63,6 +63,13 @@
 		"borderColor": {
 			"type": "string",
 			"default": "#e5e5e5"
+		},
+		"url": {
+			"type": "string"
+		},
+		"urlOpenType": {
+			"type": "Boolean",
+			"default": false
 		}
 	}
 	

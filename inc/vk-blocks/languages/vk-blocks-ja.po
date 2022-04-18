@@ -383,6 +383,10 @@ msgstr ""
 msgid "Column Setting"
 msgstr "カラム設定"
 
+#: src/blocks/_pro/gridcolcard-item/edit.js:310
+msgid "If you set a link URL, do not place the link element (text or button) in the Grid Column Card Item. It may not be displayed correctly."
+msgstr "リンクURLを設定する場合は、グリッドカラムカードアイテム内にリンク要素（テキストやボタン）を配置しないでください。 正しく表示されない場合があります。"
+
 #: src/blocks/_pro/gridcolcard/edit-common.js:116
 msgid "Image fit to column"
 msgstr "画像とカラム内の余白をなくす"

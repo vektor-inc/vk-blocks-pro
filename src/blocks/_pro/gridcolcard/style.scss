@@ -65,5 +65,14 @@
 			height:0;
 			overflow: hidden;
 		}
+
+		a.vk_gridcolcard_item_container {
+			cursor: pointer;
+			color: unset;
+		
+			&:hover {
+				opacity: .9;
+			}
+		}
 	}
 }

@@ -17,7 +17,7 @@
 		"tgmpa/tgm-plugin-activation": "dev-develop",
 		"yahnis-elsts/plugin-update-checker": "*",
 		"vektor-inc/vk-color-palette-manager": "^0.3.0",
-		"vektor-inc/vk-breadcrumb": "^0.1.0"
+		"vektor-inc/vk-breadcrumb": "^0.2.2"
 	},
 	"require-dev": {
 		"squizlabs/php_codesniffer": "*",

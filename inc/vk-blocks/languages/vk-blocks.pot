@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.30.0.0\n"
+"Project-Id-Version: VK Blocks Pro 1.30.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-04-05T07:22:35+00:00\n"
+"POT-Creation-Date: 2022-04-19T03:32:54+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 "X-Domain: vk-blocks\n"
@@ -364,29 +364,69 @@ msgstr ""
 msgid "You can create a variety of layouts with grid column card blocks."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:169
+#: src/blocks/_pro/gridcolcard-item/edit.js:201
+#: src/blocks/_pro/select-post-list-item/edit.js:66
+#: src/blocks/button/edit.js:189
+msgid "Unlink"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:202
+#: src/blocks/button/edit.js:190
+msgid "Input Link URL"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:241
+#: src/blocks/_pro/select-post-list-item/edit.js:102
+#: src/blocks/button/edit.js:229
+msgid "Submit"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:255
 msgid "Edit mode"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:179
+#: src/blocks/_pro/gridcolcard-item/edit.js:265
 msgid "All columns"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:187
+#: src/blocks/_pro/gridcolcard-item/edit.js:273
 msgid "This column only"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:192
+#: src/blocks/_pro/gridcolcard-item/edit.js:278
 msgid "Edit Lock"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:195
+#: src/blocks/_pro/gridcolcard-item/edit.js:281
 msgid "Lock edits this block from the parent and other Grid Column Item block"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:206
+#: src/blocks/_pro/gridcolcard-item/edit.js:292
 #: src/blocks/_pro/gridcolcard/edit.js:88
 msgid "Column Setting"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:295
+#: src/blocks/_pro/icon-card-item/edit.js:120
+#: src/blocks/pr-blocks/edit.js:254
+msgid "Link URL:"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:301
+#: src/blocks/_pro/icon-card-item/edit.js:128
+#: src/blocks/button/edit.js:215
+#: src/blocks/icon/edit.js:254
+#: src/blocks/pr-blocks/edit.js:262
+#: src/blocks/pr-content/edit.js:131
+msgid "Open link new tab."
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:308
+msgid "If you set a link URL, do not place the link element (text or button) in the Grid Column Card Item. It may not be displayed correctly."
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:312
+msgid "Make sure that no link is specified for the image block, etc."
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:116
@@ -481,19 +521,6 @@ msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:118
 msgid "Icon Card Setting"
-msgstr ""
-
-#: src/blocks/_pro/icon-card-item/edit.js:120
-#: src/blocks/pr-blocks/edit.js:254
-msgid "Link URL:"
-msgstr ""
-
-#: src/blocks/_pro/icon-card-item/edit.js:128
-#: src/blocks/button/edit.js:215
-#: src/blocks/icon/edit.js:254
-#: src/blocks/pr-blocks/edit.js:262
-#: src/blocks/pr-content/edit.js:131
-msgid "Open link new tab."
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:137
@@ -848,19 +875,9 @@ msgstr ""
 msgid "offset"
 msgstr ""
 
-#: src/blocks/_pro/select-post-list-item/edit.js:102
-#: src/blocks/button/edit.js:229
-msgid "Submit"
-msgstr ""
-
 #: src/blocks/_pro/select-post-list-item/edit.js:34
 #: src/blocks/page-content/edit.js:38
 msgid "Because no post is selected, The block Will not render"
-msgstr ""
-
-#: src/blocks/_pro/select-post-list-item/edit.js:66
-#: src/blocks/button/edit.js:189
-msgid "Unlink"
 msgstr ""
 
 #: src/blocks/_pro/select-post-list-item/edit.js:67
@@ -1264,10 +1281,6 @@ msgstr ""
 
 #: src/blocks/border-box/index.js:59
 msgid "Solid Angle iconFeature"
-msgstr ""
-
-#: src/blocks/button/edit.js:190
-msgid "Input Link URL"
 msgstr ""
 
 #: src/blocks/button/edit.js:242
@@ -1997,39 +2010,39 @@ msgstr ""
 msgid "Extra big"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:168
-msgid "Margin the block"
-msgstr ""
-
-#: src/extensions/common/margin-extension/index.js:24
+#: src/extensions/common/margin-extension/index.js:26
 msgid "Top lg"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:29
+#: src/extensions/common/margin-extension/index.js:282
+msgid "Margin the block"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:31
 msgid "Top md"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:34
+#: src/extensions/common/margin-extension/index.js:36
 msgid "Top sm"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:39
+#: src/extensions/common/margin-extension/index.js:41
 msgid "Top 0"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:47
+#: src/extensions/common/margin-extension/index.js:49
 msgid "Bottom 0"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:52
+#: src/extensions/common/margin-extension/index.js:54
 msgid "Bottom sm"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:57
+#: src/extensions/common/margin-extension/index.js:59
 msgid "Bottom md"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:62
+#: src/extensions/common/margin-extension/index.js:64
 msgid "Bottom lg"
 msgstr ""
 

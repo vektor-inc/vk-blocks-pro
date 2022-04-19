@@ -156,7 +156,7 @@ export default function ButtonEdit(props) {
 		if (buttonWidthTablet) {
 			containerClass += ` vk_button-width-tablet-${buttonWidthTablet}`;
 		}
-		if (buttonWidth){
+		if (buttonWidth) {
 			containerClass += ` vk_button-width-${buttonWidth}`;
 		}
 	} else {
@@ -392,7 +392,9 @@ export default function ButtonEdit(props) {
 							<h4 className={`mt-0 mb-2`}>
 								{__('Button Width:', 'vk-blocks')}
 							</h4>
-							<p className={`mt-0 mb-2`}>{__('Mobile', 'vk-blocks')}</p>
+							<p className={`mt-0 mb-2`}>
+								{__('Mobile', 'vk-blocks')}
+							</p>
 							<ButtonGroup className={`mb-3`}>
 								<Button
 									isSmall
@@ -401,7 +403,9 @@ export default function ButtonEdit(props) {
 									onClick={() =>
 										setAttributes({
 											buttonWidthMobile:
-												buttonWidthMobile === 25 ? 0 : 25,
+												buttonWidthMobile === 25
+													? 0
+													: 25,
 										})
 									}
 								>
@@ -414,7 +418,9 @@ export default function ButtonEdit(props) {
 									onClick={() =>
 										setAttributes({
 											buttonWidthMobile:
-												buttonWidthMobile === 50 ? 0 : 50,
+												buttonWidthMobile === 50
+													? 0
+													: 50,
 										})
 									}
 								>
@@ -427,7 +433,9 @@ export default function ButtonEdit(props) {
 									onClick={() =>
 										setAttributes({
 											buttonWidthMobile:
-												buttonWidthMobile === 75 ? 0 : 75,
+												buttonWidthMobile === 75
+													? 0
+													: 75,
 										})
 									}
 								>
@@ -440,14 +448,18 @@ export default function ButtonEdit(props) {
 									onClick={() =>
 										setAttributes({
 											buttonWidthMobile:
-												buttonWidthMobile === 100 ? 0 : 100,
+												buttonWidthMobile === 100
+													? 0
+													: 100,
 										})
 									}
 								>
 									{__('100%', 'vk-blocks')}
 								</Button>
 							</ButtonGroup>
-							<p className={`mt-0 mb-2`}>{__('Tablet', 'vk-blocks')}</p>
+							<p className={`mt-0 mb-2`}>
+								{__('Tablet', 'vk-blocks')}
+							</p>
 							<ButtonGroup className={`mb-3`}>
 								<Button
 									isSmall
@@ -456,7 +468,9 @@ export default function ButtonEdit(props) {
 									onClick={() =>
 										setAttributes({
 											buttonWidthTablet:
-												buttonWidthTablet === 25 ? 0 : 25,
+												buttonWidthTablet === 25
+													? 0
+													: 25,
 										})
 									}
 								>
@@ -469,7 +483,9 @@ export default function ButtonEdit(props) {
 									onClick={() =>
 										setAttributes({
 											buttonWidthTablet:
-												buttonWidthTablet === 50 ? 0 : 50,
+												buttonWidthTablet === 50
+													? 0
+													: 50,
 										})
 									}
 								>
@@ -482,7 +498,9 @@ export default function ButtonEdit(props) {
 									onClick={() =>
 										setAttributes({
 											buttonWidthTablet:
-												buttonWidthTablet === 75 ? 0 : 75,
+												buttonWidthTablet === 75
+													? 0
+													: 75,
 										})
 									}
 								>
@@ -495,14 +513,18 @@ export default function ButtonEdit(props) {
 									onClick={() =>
 										setAttributes({
 											buttonWidthTablet:
-												buttonWidthTablet === 100 ? 0 : 100,
+												buttonWidthTablet === 100
+													? 0
+													: 100,
 										})
 									}
 								>
 									{__('100%', 'vk-blocks')}
 								</Button>
 							</ButtonGroup>
-							<p className={`mt-0 mb-2`}>{__('PC', 'vk-blocks')}</p>
+							<p className={`mt-0 mb-2`}>
+								{__('PC', 'vk-blocks')}
+							</p>
 							<ButtonGroup className={`mb-3`}>
 								<Button
 									isSmall

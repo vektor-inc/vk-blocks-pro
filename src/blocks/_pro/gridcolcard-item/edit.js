@@ -292,8 +292,6 @@ export default function Edit(props) {
 					title={__('Column Setting', 'vk-blocks')}
 					initialOpen={true}
 				>
-					<CommonItemControl {...props} />
-					<hr />
 					<BaseControl label={__('Link URL:', 'vk-blocks')} id={`	`}>
 						<TextControl
 							value={url}
@@ -311,8 +309,16 @@ export default function Edit(props) {
 								'If you set a link URL, do not place the link element (text or button) in the Grid Column Card Item. It may not be displayed correctly.',
 								'vk-blocks'
 							)}
+							{__(
+								'Make sure that no link is specified for the image block, etc.',
+								'vk-blocks'
+							)}
 						</p>
 					</BaseControl>
+
+					<hr />
+
+					<CommonItemControl {...props} />
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>

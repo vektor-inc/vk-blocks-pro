@@ -17,7 +17,7 @@ function vk_blocks_breadcrumb_render_callback( $attributes ) {
 	$vk_breadcrumb = new VkBreadcrumb();
 
 	$outer_classes = 'vk_breadcrumb';
-	if ( isset( $attributes['className'] ) ) {
+	if ( ! empty( $attributes['className'] ) ) {
 		$outer_classes .= ' ' . $attributes['className'];
 	}
 	if ( isset( $attributes['vkb_hidden'] ) && $attributes['vkb_hidden'] ) {
@@ -42,12 +42,16 @@ function vk_blocks_breadcrumb_render_callback( $attributes ) {
 		$outer_classes .= ' vk_hidden-xs';
 	}
 
+	// block.jsonのSupportsで設定したクラス名やスタイルを取得する
+	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => $outer_classes ) );
+
 	$breadcrumb_options = array(
-		'id_outer'        => 'vk_breadcrumb',
-		'class_outer'     => $outer_classes,
-		'class_inner'     => 'vk_breadcrumb_inner',
-		'class_list'      => 'vk_breadcrumb_list',
-		'class_list_item' => 'vk_breadcrumb_list_item',
+		'id_outer'           => 'vk_breadcrumb',
+		'class_outer'        => 'vk_breadcrumb', // wrapper_attributesを設定した場合、この文字列はパンくずリスト前後のコメントアウトに表示される
+		'wrapper_attributes' => $wrapper_attributes,
+		'class_inner'        => 'vk_breadcrumb_inner',
+		'class_list'         => 'vk_breadcrumb_list',
+		'class_list_item'    => 'vk_breadcrumb_list_item',
 	);
 	return $vk_breadcrumb->get_breadcrumb( $breadcrumb_options );
 }

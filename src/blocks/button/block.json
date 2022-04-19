@@ -41,6 +41,14 @@
 			"type": "string",
 			"default": "left"
 		},
+		"buttonWidthMobile": {
+			"type": "number",
+			"default": 0
+		},
+		"buttonWidthTablet": {
+			"type": "number",
+			"default": 0
+		},
 		"buttonWidth": {
 			"type": "number",
 			"default": 0

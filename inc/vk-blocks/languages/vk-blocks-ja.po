@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2022-04-05T07:19:04+00:00\n"
-"PO-Revision-Date: 2022-04-05 16:21+0900\n"
+"POT-Creation-Date: 2022-04-19T03:28:40+00:00\n"
+"PO-Revision-Date: 2022-04-19 12:32+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -356,36 +356,72 @@ msgstr "下部の余白"
 msgid "You can create a variety of layouts with grid column card blocks."
 msgstr "グリッドカラムカードブロックでは柔軟なレイアウトが可能です。"
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:169
+#: src/blocks/_pro/gridcolcard-item/edit.js:201
+#: src/blocks/_pro/select-post-list-item/edit.js:66
+#: src/blocks/button/edit.js:189
+msgid "Unlink"
+msgstr "リンクを解除する"
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:202 src/blocks/button/edit.js:190
+msgid "Input Link URL"
+msgstr "リンクURL"
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:241
+#: src/blocks/_pro/select-post-list-item/edit.js:102
+#: src/blocks/button/edit.js:229
+msgid "Submit"
+msgstr "送信"
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:255
 msgid "Edit mode"
 msgstr "編集モード"
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:179
+#: src/blocks/_pro/gridcolcard-item/edit.js:265
 msgid "All columns"
 msgstr "すべてのカラム"
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:187
+#: src/blocks/_pro/gridcolcard-item/edit.js:273
 msgid "This column only"
 msgstr "このカラムのみ"
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:192
+#: src/blocks/_pro/gridcolcard-item/edit.js:278
 msgid "Edit Lock"
 msgstr "編集ロック"
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:195
+#: src/blocks/_pro/gridcolcard-item/edit.js:281
 msgid "Lock edits this block from the parent and other Grid Column Item block"
 msgstr ""
 "このブロックをロックして親ブロックや他のブロックの変更を受け取らないようにす"
 "る"
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:206
+#: src/blocks/_pro/gridcolcard-item/edit.js:292
 #: src/blocks/_pro/gridcolcard/edit.js:88
 msgid "Column Setting"
 msgstr "カラム設定"
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:310
-msgid "If you set a link URL, do not place the link element (text or button) in the Grid Column Card Item. It may not be displayed correctly."
-msgstr "リンクURLを設定する場合は、グリッドカラムカードアイテム内にリンク要素（テキストやボタン）を配置しないでください。 正しく表示されない場合があります。"
+#: src/blocks/_pro/gridcolcard-item/edit.js:295
+#: src/blocks/_pro/icon-card-item/edit.js:120 src/blocks/pr-blocks/edit.js:254
+msgid "Link URL:"
+msgstr "リンク URL:"
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:301
+#: src/blocks/_pro/icon-card-item/edit.js:128 src/blocks/button/edit.js:215
+#: src/blocks/icon/edit.js:254 src/blocks/pr-blocks/edit.js:262
+#: src/blocks/pr-content/edit.js:131
+msgid "Open link new tab."
+msgstr "リンクを別ウィンドウで開く"
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:308
+msgid ""
+"If you set a link URL, do not place the link element (text or button) in the "
+"Grid Column Card Item. It may not be displayed correctly."
+msgstr ""
+"リンクURLを設定する場合は、グリッドカラムカードアイテム内にリンク要素（テキス"
+"トやボタン）を配置しないでください。 正しく表示されない場合があります。"
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:312
+msgid "Make sure that no link is specified for the image block, etc."
+msgstr "画像ブロックなどにもリンクが指定されていないか注意してください。"
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:116
 msgid "Image fit to column"
@@ -477,16 +513,6 @@ msgstr "文章を入力してください"
 #: src/blocks/_pro/icon-card-item/edit.js:118
 msgid "Icon Card Setting"
 msgstr "アイコンカード設定"
-
-#: src/blocks/_pro/icon-card-item/edit.js:120 src/blocks/pr-blocks/edit.js:254
-msgid "Link URL:"
-msgstr "リンク URL:"
-
-#: src/blocks/_pro/icon-card-item/edit.js:128 src/blocks/button/edit.js:215
-#: src/blocks/icon/edit.js:254 src/blocks/pr-blocks/edit.js:262
-#: src/blocks/pr-content/edit.js:131
-msgid "Open link new tab."
-msgstr "リンクを別ウィンドウで開く"
 
 #: src/blocks/_pro/icon-card-item/edit.js:137
 #: src/blocks/_pro/step-item/edit.js:76 src/blocks/border-box/edit.js:240
@@ -822,20 +848,10 @@ msgstr "ランダム"
 msgid "offset"
 msgstr "オフセット数"
 
-#: src/blocks/_pro/select-post-list-item/edit.js:102
-#: src/blocks/button/edit.js:229
-msgid "Submit"
-msgstr "送信"
-
 #: src/blocks/_pro/select-post-list-item/edit.js:34
 #: src/blocks/page-content/edit.js:38
 msgid "Because no post is selected, The block Will not render"
 msgstr "ページが選択されていないためこのブロックはレンダリングされません"
-
-#: src/blocks/_pro/select-post-list-item/edit.js:66
-#: src/blocks/button/edit.js:189
-msgid "Unlink"
-msgstr "リンクを解除する"
 
 #: src/blocks/_pro/select-post-list-item/edit.js:67
 msgid "Input Internal Post URL"
@@ -1229,10 +1245,6 @@ msgstr "直線 ピン角 内側"
 #: src/blocks/border-box/index.js:59
 msgid "Solid Angle iconFeature"
 msgstr "直線 ピン角 アイコン"
-
-#: src/blocks/button/edit.js:190
-msgid "Input Link URL"
-msgstr "リンクURL"
 
 #: src/blocks/button/edit.js:242
 msgid "Button setting"
@@ -1954,39 +1966,39 @@ msgstr "大"
 msgid "Extra big"
 msgstr "特大"
 
-#: src/extensions/common/margin-extension/index.js:168
-msgid "Margin the block"
-msgstr "ブロックの余白"
-
-#: src/extensions/common/margin-extension/index.js:24
+#: src/extensions/common/margin-extension/index.js:26
 msgid "Top lg"
 msgstr "上 lg"
 
-#: src/extensions/common/margin-extension/index.js:29
+#: src/extensions/common/margin-extension/index.js:282
+msgid "Margin the block"
+msgstr "ブロックの余白"
+
+#: src/extensions/common/margin-extension/index.js:31
 msgid "Top md"
 msgstr "上 md"
 
-#: src/extensions/common/margin-extension/index.js:34
+#: src/extensions/common/margin-extension/index.js:36
 msgid "Top sm"
 msgstr "上 sm"
 
-#: src/extensions/common/margin-extension/index.js:39
+#: src/extensions/common/margin-extension/index.js:41
 msgid "Top 0"
 msgstr "上 0"
 
-#: src/extensions/common/margin-extension/index.js:47
+#: src/extensions/common/margin-extension/index.js:49
 msgid "Bottom 0"
 msgstr "下 0"
 
-#: src/extensions/common/margin-extension/index.js:52
+#: src/extensions/common/margin-extension/index.js:54
 msgid "Bottom sm"
 msgstr "下 sm"
 
-#: src/extensions/common/margin-extension/index.js:57
+#: src/extensions/common/margin-extension/index.js:59
 msgid "Bottom md"
 msgstr "下 md"
 
-#: src/extensions/common/margin-extension/index.js:62
+#: src/extensions/common/margin-extension/index.js:64
 msgid "Bottom lg"
 msgstr "下 lg"
 
@@ -2705,10 +2717,8 @@ msgstr ""
 "た。"
 
 #: inc/font-awesome/class-vk-blocks-font-awesome-api.php:73
-#, fuzzy
-#| msgid "Setting"
 msgid "Setting saved."
-msgstr "設定"
+msgstr "設定を保存しました。"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/alert/block.json
 #: inc/vk-blocks/build/blocks/alert/block.json src/blocks/alert/block.json

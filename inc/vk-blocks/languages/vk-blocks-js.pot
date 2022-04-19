@@ -391,13 +391,13 @@ msgstr ""
 msgid "Column Setting"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:297
+#: src/blocks/_pro/gridcolcard-item/edit.js:295
 #: src/blocks/_pro/icon-card-item/edit.js:120
 #: src/blocks/pr-blocks/edit.js:254
 msgid "Link URL:"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:303
+#: src/blocks/_pro/gridcolcard-item/edit.js:301
 #: src/blocks/_pro/icon-card-item/edit.js:128
 #: src/blocks/button/edit.js:215
 #: src/blocks/icon/edit.js:254
@@ -406,10 +406,14 @@ msgstr ""
 msgid "Open link new tab."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:310
+#: src/blocks/_pro/gridcolcard-item/edit.js:308
 msgid ""
 "If you set a link URL, do not place the link element (text or button) in "
 "the Grid Column Card Item. It may not be displayed correctly."
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard-item/edit.js:312
+msgid "Make sure that no link is specified for the image block, etc."
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:116

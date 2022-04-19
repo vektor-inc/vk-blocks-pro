@@ -319,7 +319,6 @@ export default function Edit(props) {
 					<hr />
 
 					<CommonItemControl {...props} />
-					
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>

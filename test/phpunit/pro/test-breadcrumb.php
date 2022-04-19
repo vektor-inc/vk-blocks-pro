@@ -87,7 +87,7 @@ class Breadcrumb extends WP_UnitTestCase {
 
 		$actual = vk_blocks_breadcrumb_render_callback( $attributes );
 
-		$expected = vk_blocks_unescape_html( '<!-- [ #vk_breadcrumb-block ] --><div id=\"vk_breadcrumb\" class=\"vk_breadcrumb \"><div class=\"vk_breadcrumb_inner\"><ol class=\"vk_breadcrumb_list\" itemscope itemtype=\"https://schema.org/BreadcrumbList\"><li class=\"vk_breadcrumb_list_item breadcrumb-list__item--home\" itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a href=\"' . home_url() . '\" itemprop=\"item\"><i class=\"fas fa-fw fa-home\"></i><span itemprop=\"name\">HOME</span></a><meta itemprop=\"position\" content=\"1\" /></li></ol></div></div><!-- [ /#vk_breadcrumb-block ] -->' );
+		$expected = vk_blocks_unescape_html( '<!-- [ #vk_breadcrumb ] --><div id=\"vk_breadcrumb\" class=\"vk_breadcrumb\"><div class=\"vk_breadcrumb_inner\"><ol class=\"vk_breadcrumb_list\" itemscope itemtype=\"https://schema.org/BreadcrumbList\"><li class=\"vk_breadcrumb_list_item breadcrumb-list__item--home\" itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a href=\"' . home_url() . '\" itemprop=\"item\"><i class=\"fas fa-fw fa-home\"></i><span itemprop=\"name\">HOME</span></a><meta itemprop=\"position\" content=\"1\" /></li></ol></div></div><!-- [ /#vk_breadcrumb ] -->' );
 
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;

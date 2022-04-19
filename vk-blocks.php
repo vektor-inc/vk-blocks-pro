@@ -165,7 +165,6 @@ function vk_blocks_update_checker() {
 
 			if (
 				! empty( $update )
-				&& version_compare( $update->version, vk_blocks_get_version(), '>' )
 				&& empty( $update->download_url )
 				) {
 				add_action(

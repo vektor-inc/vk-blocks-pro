@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bbbfbe5086f906e706217309ea7084ab",
+    "content-hash": "3b5b25bf0a2554696d03127afd020d3a",
     "packages": [
         {
             "name": "tgmpa/tgm-plugin-activation",
@@ -117,20 +117,24 @@
         },
         {
             "name": "vektor-inc/vk-breadcrumb",
-            "version": "0.1.0",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vektor-inc/vk-breadcrumb.git",
-                "reference": "6ba01e7f2ceaec7f5a59ac89e7aa7da1034c08eb"
+                "reference": "ae8c339a1b1b25d402b722e99a8974420c324864"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vektor-inc/vk-breadcrumb/zipball/6ba01e7f2ceaec7f5a59ac89e7aa7da1034c08eb",
-                "reference": "6ba01e7f2ceaec7f5a59ac89e7aa7da1034c08eb",
+                "url": "https://api.github.com/repos/vektor-inc/vk-breadcrumb/zipball/ae8c339a1b1b25d402b722e99a8974420c324864",
+                "reference": "ae8c339a1b1b25d402b722e99a8974420c324864",
                 "shasum": ""
             },
             "require": {
                 "vektor-inc/vk-helpers": "^0.0.2"
+            },
+            "require-dev": {
+                "wp-phpunit/wp-phpunit": "^5.4",
+                "yoast/phpunit-polyfills": "^1.0"
             },
             "type": "library",
             "autoload": {
@@ -151,9 +155,9 @@
             "description": "WordPress Bread Crumb Class",
             "support": {
                 "issues": "https://github.com/vektor-inc/vk-breadcrumb/issues",
-                "source": "https://github.com/vektor-inc/vk-breadcrumb/tree/0.1.0"
+                "source": "https://github.com/vektor-inc/vk-breadcrumb/tree/0.2.0"
             },
-            "time": "2022-03-03T05:43:11+00:00"
+            "time": "2022-04-19T05:56:41+00:00"
         },
         {
             "name": "vektor-inc/vk-color-palette-manager",

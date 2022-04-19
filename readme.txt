@@ -63,10 +63,11 @@ e.g.
 
 == Changelog ==
 
+= 1.31.0 =
+[ Add Function ][ GridColCard(Pro) ] Add link URL in toolbar and sidebar.
 [ Add function ] [ Breadcrumb(Pro) ] Add support fontSize and spacing.
 [ Improvement ][ margin extension ] Changed to add common margin class names to additional CSS classes.
 [ Bug fix ][ Accordion(Pro) ] Fix do not intend margin bottom 0 added to p tag.
-[ Add Function ][ GridColCard(Pro) ] Add link URL in toolbar and sidebar.
 
 = 1.30.0 =
 [ Add Function ][ Border Box ] Add body align control in toolbar.

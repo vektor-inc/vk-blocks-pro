@@ -66,6 +66,7 @@ e.g.
 [ Improvement ][ margin extension ] Changed to add common margin class names to additional CSS classes.
 [ Bug fix ][ Accordion(Pro) ] Fix do not intend margin bottom 0 added to p tag.
 [ Add Function ][ GridColCard(Pro) ] Add link URL in toolbar and sidebar.
+[ Add Function ][ Button outer(Pro) ] Add button width option for mobile or tablet.
 
 = 1.30.0 =
 [ Add Function ][ Border Box ] Add body align control in toolbar.

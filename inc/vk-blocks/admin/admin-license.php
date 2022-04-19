@@ -7,6 +7,8 @@
 
 $vk_blocks_options = vk_blocks_get_options();
 ?>
+
+<?php if ( wp_get_theme()->Template <> 'katawara' ) : ?>
 <section>
 	<h3 id="license-setting"><?php esc_html_e( 'License key', 'vk-blocks' ); ?></h3>
 	<p><?php esc_html_e( 'Once you enter the license key you will be able to do a one click update from the administration screen.', 'vk-blocks' ); ?></p>
@@ -18,3 +20,4 @@ $vk_blocks_options = vk_blocks_get_options();
 
 	<?php submit_button(); ?>
 </section>
+<?php endif; ?>

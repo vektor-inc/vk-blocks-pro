@@ -187,7 +187,7 @@ function vk_blocks_update_checker() {
 							/* translators: %s: 再読み込みURL */
 								__(
 									'Your license is not valid are expired.
-						Even after license key registration you still seeing this message, <a href="%s">please click here</a>.',
+						Even after valid license key registration you still seeing this message, <a href="%s">please click here to reload</a>.',
 									'vk-blocks'
 								),
 								$link_url

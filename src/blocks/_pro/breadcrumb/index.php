@@ -17,7 +17,7 @@ function vk_blocks_breadcrumb_render_callback( $attributes ) {
 	$vk_breadcrumb = new VkBreadcrumb();
 
 	$outer_classes = 'vk_breadcrumb';
-	if ( isset( $attributes['className'] ) ) {
+	if ( ! empty( $attributes['className'] ) ) {
 		$outer_classes .= ' ' . $attributes['className'];
 	}
 	if ( isset( $attributes['vkb_hidden'] ) && $attributes['vkb_hidden'] ) {
@@ -47,7 +47,7 @@ function vk_blocks_breadcrumb_render_callback( $attributes ) {
 
 	$breadcrumb_options = array(
 		'id_outer'           => 'vk_breadcrumb',
-		'class_outer'        => 'vk_breadcrumb-block', // wrapper_attributesを設定した場合、この文字列はパンくずリスト前後のコメントアウトに表示される
+		'class_outer'        => 'vk_breadcrumb', // wrapper_attributesを設定した場合、この文字列はパンくずリスト前後のコメントアウトに表示される
 		'wrapper_attributes' => $wrapper_attributes,
 		'class_inner'        => 'vk_breadcrumb_inner',
 		'class_list'         => 'vk_breadcrumb_list',

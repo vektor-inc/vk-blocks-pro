@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Improvement ][ margin extension ] Enable margin settings in Grid column(Pro).
+
 = 1.31.0 =
 [ Add Function ][ GridColCard(Pro) ] Add link URL in toolbar and sidebar.
 [ Add function ] [ Breadcrumb(Pro) ] Add support fontSize and spacing.

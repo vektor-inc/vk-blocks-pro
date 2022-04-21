@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ Bugfix ][ Button ] Fix icon inner classes.
+
 = 1.31.0 =
 [ Add Function ][ GridColCard(Pro) ] Add link URL in toolbar and sidebar.
 [ Add function ] [ Breadcrumb(Pro) ] Add support fontSize and spacing.

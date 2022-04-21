@@ -64,6 +64,7 @@ e.g.
 == Changelog ==
 
 [ Add Function ][ Button outer(Pro) ] Add button width option for mobile or tablet.
+[ Bugfix ][ Button ] Fix icon inner classes.
 
 = 1.31.0 =
 [ Add Function ][ GridColCard(Pro) ] Add link URL in toolbar and sidebar.

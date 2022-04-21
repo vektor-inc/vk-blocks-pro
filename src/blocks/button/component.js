@@ -89,25 +89,16 @@ export class VKBButton extends Component {
 		}
 
 		if (fontAwesomeIconBefore) {
-			fontAwesomeIconBefore = fontAwesomeIconBefore.replace(
-				/ fas/g,
-				'fas'
-			);
-
-			//add class and inline css
-			const faIconFragmentBefore = fontAwesomeIconBefore.split(' ');
-			faIconFragmentBefore[1] =
-				' ' + faIconFragmentBefore[1] + ` vk_button_link_before `;
-			iconBefore = faIconFragmentBefore.join('');
+			let fontAwesomeIconBeforeClassName =
+				fontAwesomeIconBefore.match(/class="(.*?)"/)[1];
+			fontAwesomeIconBeforeClassName += ` vk_button_link_before`;
+			iconBefore = `<i class="${fontAwesomeIconBeforeClassName}"></i>`;
 		}
 		if (fontAwesomeIconAfter) {
-			fontAwesomeIconAfter = fontAwesomeIconAfter.replace(/ fas/g, 'fas');
-
-			//add class and inline css
-			const faIconFragmentAfter = fontAwesomeIconAfter.split(' ');
-			faIconFragmentAfter[1] =
-				' ' + faIconFragmentAfter[1] + ` vk_button_link_after `;
-			iconAfter = faIconFragmentAfter.join('');
+			let fontAwesomeIconAfterClassName =
+				fontAwesomeIconAfter.match(/class="(.*?)"/)[1];
+			fontAwesomeIconAfterClassName += ` vk_button_link_after`;
+			iconAfter = `<i class="${fontAwesomeIconAfterClassName}"></i>`;
 		}
 
 		return (

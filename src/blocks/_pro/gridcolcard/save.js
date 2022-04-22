@@ -26,10 +26,8 @@ export default function save(props) {
 	}
 
 	return (
-		<>
-			<div {...blockProps}>
-				<InnerBlocks.Content />
-			</div>
+		<div {...blockProps}>
+			<InnerBlocks.Content />
 			<style>
 				{`
 				.vk_gridcolcard-${blockId} {
@@ -48,6 +46,6 @@ export default function save(props) {
 				}
 				`}
 			</style>
-		</>
+		</div>
 	);
 }

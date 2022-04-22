@@ -101,6 +101,12 @@ export default function ButtonEdit(props) {
 		) {
 			setAttributes({ subCaption: undefined });
 		}
+		if (buttonWidthMobile === undefined) {
+			setAttributes({ buttonWidthMobile: buttonWidth });
+		}
+		if (buttonWidthTablet === undefined) {
+			setAttributes({ buttonWidthTablet: buttonWidth });
+		}
 	}, [clientId]);
 
 	const { updateBlockAttributes } = dispatch('core/block-editor');
@@ -149,8 +155,8 @@ export default function ButtonEdit(props) {
 	}
 
 	if (isInnerButton) {
-		// 横並びボタンで幅が指定されている
 		if (buttonWidthMobile) {
+			// 横並びボタンで幅が指定されている
 			containerClass += ` vk_button-width-mobile-${buttonWidthMobile}`;
 		}
 		if (buttonWidthTablet) {

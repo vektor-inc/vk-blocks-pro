@@ -62,7 +62,7 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-
+[ Add Function ][ GridColCard ( Pro ) ] add column min-width setting for tablet and pc.
 [ Bugfix ][ Button ] Fix icon inner classes.
 
 = 1.31.0 =

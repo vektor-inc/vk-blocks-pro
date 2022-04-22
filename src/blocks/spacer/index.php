@@ -21,16 +21,6 @@ function vk_blocks_register_block_spacer() {
 		);
 	}
 
-	// Register Script.
-	$asset = include VK_BLOCKS_DIR_PATH . 'build/spacer/block-build.asset.php';
-	wp_register_script(
-		'vk-blocks/spacer',
-		VK_BLOCKS_DIR_URL . 'build/spacer/block-build.js',
-		$asset['dependencies'],
-		VK_BLOCKS_VERSION,
-		true
-	);
-
 	register_block_type(
 		__DIR__,
 		array(
@@ -145,7 +135,7 @@ function vk_blocks_get_spacer_size_style_all( $options ) {
 
 		if ( vk_blocks_is_size_print( $options, 'mobile' ) ) {
 			$dynamic_css         .= '
-			@media (max-width: 576px) {
+			@media (max-width: 575.98px) {
 				:root{';
 					$dynamic_css .= esc_attr( vk_blocks_get_spacer_size_style( $options, 'sm', 'mobile', $unit ) );
 					$dynamic_css .= esc_attr( vk_blocks_get_spacer_size_style( $options, 'md', 'mobile', $unit ) );
@@ -156,7 +146,7 @@ function vk_blocks_get_spacer_size_style_all( $options ) {
 		}
 		if ( vk_blocks_is_size_print( $options, 'tablet' ) ) {
 			$dynamic_css         .= '
-			@media (min-width: 577px) and (max-width: 768px) {
+			@media (min-width: 576px) and (max-width: 991.98px) {
 				:root{';
 					$dynamic_css .= esc_attr( vk_blocks_get_spacer_size_style( $options, 'sm', 'tablet', $unit ) );
 					$dynamic_css .= esc_attr( vk_blocks_get_spacer_size_style( $options, 'md', 'tablet', $unit ) );
@@ -167,7 +157,7 @@ function vk_blocks_get_spacer_size_style_all( $options ) {
 		}
 		if ( vk_blocks_is_size_print( $options, 'pc' ) ) {
 			$dynamic_css         .= '
-			@media (min-width: 769px) {
+			@media (min-width: 992px) {
 				:root{';
 					$dynamic_css .= esc_attr( vk_blocks_get_spacer_size_style( $options, 'sm', 'pc', $unit ) );
 					$dynamic_css .= esc_attr( vk_blocks_get_spacer_size_style( $options, 'md', 'pc', $unit ) );

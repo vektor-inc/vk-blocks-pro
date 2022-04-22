@@ -21,16 +21,6 @@ function vk_blocks_register_block_button_outer() {
 		);
 	}
 
-	// Register Script.
-	$asset = include VK_BLOCKS_DIR_PATH . 'build/_pro/button-outer/block-build.asset.php';
-	wp_register_script(
-		'vk-blocks/button-outer',
-		VK_BLOCKS_DIR_URL . 'build/button-outer/block-build.js',
-		$asset['dependencies'],
-		VK_BLOCKS_VERSION,
-		true
-	);
-
 	register_block_type(
 		__DIR__,
 		array(

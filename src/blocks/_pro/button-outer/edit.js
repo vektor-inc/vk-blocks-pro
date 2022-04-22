@@ -46,6 +46,7 @@ export default function ButtonOuterEdit(props) {
 						allowedBlocks={ALLOWED_BLOCKS}
 						template={TEMPLATE}
 						templateLock={false}
+						orientation="horizontal"
 					/>
 				</div>
 			</div>

@@ -1,5 +1,5 @@
 import { Component } from '@wordpress/element';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export class VKBIcon extends Component {
@@ -120,7 +120,7 @@ export class VKBIcon extends Component {
 		const blockContent = (
 			<>
 				<div className={borderClass} style={borderStyle}>
-					{ReactHtmlParser(faIconTag)}
+					{parse(faIconTag)}
 				</div>
 			</>
 		);

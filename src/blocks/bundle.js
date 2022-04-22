@@ -47,6 +47,7 @@ import '@vkblocks/extensions/common/highlighter';
 import '@vkblocks/extensions/common/inline-font-size';
 import '@vkblocks/extensions/common/nowrap';
 import '@vkblocks/extensions/common/responsive-br';
+import '@vkblocks/extensions/common/margin-extension';
 
 const vkBlocks = [
 	alert,

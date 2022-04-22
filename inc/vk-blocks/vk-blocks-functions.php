@@ -11,6 +11,7 @@
 require_once dirname( __FILE__ ) . '/view/class-vk-blocks-postlist.php';
 require_once dirname( __FILE__ ) . '/view/responsive-br.php';
 require_once dirname( __FILE__ ) . '/style/balloon.php';
+require_once dirname( __FILE__ ) . '/style/hidden-extension.php';
 require_once dirname( __FILE__ ) . '/class-vk-blocks-print-css-variables.php';
 
 /**
@@ -162,6 +163,14 @@ function vk_blocks_blocks_assets() {
 				'type'    => 'boolean',
 				'default' => false,
 			),
+			'marginTop'        => array(
+				'type'    => 'string',
+				'default' => '',
+			),
+			'marginBottom'     => array(
+				'type'    => 'string',
+				'default' => '',
+			),
 		);
 	}
 
@@ -184,6 +193,8 @@ function vk_blocks_blocks_assets() {
 	// Change multiple spaces to single space.
 	$dynamic_css = preg_replace( '/\s(?=\s)/', '', $dynamic_css );
 	wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );
+	// --vk_image-mask-waveはコアの画像ブロックに依存するのでwp-edit-blocksを追加
+	wp_add_inline_style( 'wp-edit-blocks', $dynamic_css );
 }
 add_action( 'init', 'vk_blocks_blocks_assets', 10 );
 

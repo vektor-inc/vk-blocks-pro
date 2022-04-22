@@ -24,7 +24,7 @@
 /* .vk_icon-card
 /*-------------------------------------------*/
 .vk_icon-card_item {
-	@media screen and (max-width: 992px) {
+	@media screen and (max-width: 991.98px) {
 		margin-bottom: 1.5em;
 	}
 }
@@ -44,6 +44,28 @@
 			width: 80px;
 			height: 80px;
 			border-radius: 50%;
+			//背景なしの時
+			&.is-style-outline {
+				//カラー選択
+				background-color: transparent;
+				border: 1px solid currentColor;
+				//デフォルト状態
+				&:not(.has-text-color) {
+					color: #0693e3;
+				}
+			}
+			//デフォルト状態
+			//ベタ塗りの時
+			&:not(.is-style-outline) {
+				&:not(.has-background) {
+					background-color: #0693e3;
+				}
+				.vk_icon-card_item {
+					&_icon {
+						color: #fff;
+					}
+				}
+			}
 		}
 		&_icon {
 			position: absolute;
@@ -51,7 +73,6 @@
 			left: 50%;
 			transform: translateY(-50%) translateX(-50%);
 			font-size: 36px;
-			color: #fff;
 		}
 		&_title {
 			background-color: transparent;
@@ -91,7 +112,6 @@
 	.vk_icon_card_item_summary, // 本当は vk_icon-card が正しいのに vk_icon_card で出力されている
 	.vk_icon-card_item_summary {
 		margin-bottom: 0.5em;
-		text-align: center;
 		line-height: 1.8em;
 		a {
 			color:var(--vk-color-text-body);

@@ -1,17 +1,59 @@
 import { __ } from '@wordpress/i18n';
-import { BaseControl, RadioControl, TextControl } from '@wordpress/components';
-
+import {
+	BaseControl,
+	RadioControl,
+	TextControl,
+	SelectControl,
+	Button,
+	ExternalLink,
+} from '@wordpress/components';
+import { useState, useEffect } from '@wordpress/element';
 import AdvancedPopOverControl from '@vkblocks/components/advanced-popover-control';
+import apiFetch from '@wordpress/api-fetch';
 
 export const FontAwesome = (props) => {
 	const { attributeName, attributes, setAttributes } = props;
+	// eslint-disable-next-line no-undef
+	const iconsUrl = vkFontAwesome.iconsUrl;
+	// eslint-disable-next-line no-undef
+	const iconFamily = vkFontAwesome.iconFamily;
+	// eslint-disable-next-line no-undef
+	const versions = vkFontAwesome.versions;
+	// eslint-disable-next-line no-undef
+	const currentVersion = vkFontAwesome.currentVersion;
+	const REST_API_ROUTE = '/vk-blocks/v1/options/vk_font_awesome_version/';
+	const [isWaiting, setIsWaiting] = useState(false);
+	const [version, setVersion] = useState();
+
+	// Set options to state.
+	useEffect(() => {
+		setVersion(currentVersion);
+	}, []);
+
+	// Update options.
+	const handleUpdateOptions = () => {
+		setIsWaiting(true);
+
+		apiFetch({
+			path: REST_API_ROUTE,
+			method: 'POST',
+			data: version,
+		})
+			.then(() => {
+				setIsWaiting(false);
+				window.location.reload();
+			})
+			.catch(() => {
+				setIsWaiting(false);
+			});
+	};
 
 	const render = (
 		<>
 			<BaseControl
 				className={'components-base-control__label'}
 				id={`vk_fa_icon_list`}
-				label={__('Icon', 'vk-blocks')}
+				label={__('Icon', 'vk-blocks') + ' ( ' + iconFamily + ' ) '}
 			>
 				<RadioControl
 					className={'vk_icon_list'}
@@ -183,7 +225,13 @@ export const FontAwesome = (props) => {
 					}
 				/>
 			</BaseControl>
-			<hr></hr>
+			<hr />
+			<ExternalLink
+				href={iconsUrl}
+				className="components-button is-primary mt-1"
+			>
+				{__('Font Awesome icon list', 'vk-blocks')}
+			</ExternalLink>
 			<p className="mt-1">
 				{__(
 					"If you want to use an icon other than the ones listed above, you can use any of the icons from Font Awesome's icon list Please select a tag and enter it.",
@@ -194,14 +242,28 @@ export const FontAwesome = (props) => {
 					'Ex) <i class="fas fa-arrow-circle-right"></i>',
 					'vk-blocks'
 				)}
-				<br />
-				<a
-					href={`https://fontawesome.com/icons?d=gallery&m=free`}
-					target={`_blank`}
-				>
-					{__('Font Awesome icon list', 'vk-blocks')}
-				</a>
 			</p>
+			<hr />
+			<SelectControl
+				label="Font Awesome Version"
+				value={version}
+				options={versions}
+				onChange={(value) => setVersion(value)}
+				className="mt-1"
+			/>
+			<p className="mt-1">
+				{__(
+					'When you click save button, the window will be reloaded and this setting will be applied.',
+					'vk-blocks'
+				)}
+			</p>
+			<Button
+				isPrimary
+				disabled={isWaiting}
+				onClick={handleUpdateOptions}
+			>
+				{__('Save', 'vk-blocks')}
+			</Button>
 		</>
 	);
 

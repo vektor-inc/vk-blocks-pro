@@ -33,30 +33,30 @@ gulp.task('text-domain', (done) => {
 });
 
 gulp.task('helper-js', (done) => {
-	gulp.src('src/blocks/faq2/enque-front.js')
+	gulp.src('src/blocks/faq2/view.js')
 		.pipe(uglify())
 		.pipe(rename('vk-faq2.min.js'))
-		.pipe(gulp.dest('./inc/vk-blocks/build/'));
+		.pipe(gulp.dest('./build/'));
 	done();
 });
 
 gulp.task('helper-js-pro', (done) => {
-	gulp.src('src/blocks/_pro/accordion/enque-front.js')
+	gulp.src('src/blocks/_pro/accordion/view.js')
 		.pipe(uglify())
 		.pipe(rename('vk-accordion.min.js'))
-		.pipe(gulp.dest('./inc/vk-blocks/build/'));
-	gulp.src('src/blocks/_pro/animation/enque-front.js')
+		.pipe(gulp.dest('./build/'));
+	gulp.src('src/blocks/_pro/animation/view.js')
 		.pipe(uglify())
 		.pipe(rename('vk-animation.min.js'))
-		.pipe(gulp.dest('./inc/vk-blocks/build/'));
-	gulp.src('src/blocks/_pro/slider/enque-front.js')
+		.pipe(gulp.dest('./build/'));
+	gulp.src('src/blocks/_pro/slider/view.js')
 		.pipe(uglify())
 		.pipe(rename('vk-slider.min.js'))
-		.pipe(gulp.dest('./inc/vk-blocks/build/'));
+		.pipe(gulp.dest('./build/'));
 	gulp.src('src/blocks/layout-column/enque-front.js')
 		.pipe(uglify())
-		.pipe(rename('vk-layout-column.min.js'))
-		.pipe(gulp.dest('./inc/vk-blocks/build/'));		
+		.pipe(rename('vk-layout-column.min.js'))	
+		.pipe(gulp.dest('./build/'));
 	done();
 });
 
@@ -75,7 +75,7 @@ gulp.task('sass', (done) => {
 		)
 		.pipe(autoprefixer())
 		.pipe(concat('block-build.css'))
-		.pipe(gulp.dest('./inc/vk-blocks/build/'));
+		.pipe(gulp.dest('./build/'));
 	done();
 });
 
@@ -95,7 +95,7 @@ gulp.task('sass_editor', (done) => {
 		)
 		.pipe(autoprefixer())
 		.pipe(concat('block-build-editor.css'))
-		.pipe(gulp.dest('./inc/vk-blocks/build/'));
+		.pipe(gulp.dest('./build/'));
 	done();
 });
 
@@ -111,7 +111,7 @@ gulp.task('sass_bootstrap', (done) => {
 		)
 		.pipe(autoprefixer())
 		.pipe(concat('bootstrap_vk_using.css'))
-		.pipe(gulp.dest('./inc/vk-blocks/build/'));
+		.pipe(gulp.dest('./build/'));
 	done();
 });
 
@@ -127,7 +127,55 @@ gulp.task('sass_vk_components', (done) => {
 		)
 		.pipe(autoprefixer())
 		.pipe(concat('vk-components.css'))
-		.pipe(gulp.dest('./inc/vk-blocks/build/'));
+		.pipe(gulp.dest('./build/'));
+	done();
+});
+
+// ブロックごとのscssそれぞれビルド free
+gulp.task('sass-separate-free', (done) => {
+	gulp.src('./src/blocks/**/*.scss')
+		.pipe(
+			sass({
+				errLogToConsole: true,
+				outputStyle: 'compressed',
+			})
+		)
+		.pipe(autoprefixer())
+		.pipe(gulp.dest('./build'));
+	// extensions内をビルド
+	gulp.src('./src/extensions/**/**/*.scss')
+		.pipe(
+			sass({
+				errLogToConsole: true,
+				outputStyle: 'compressed',
+			})
+		)
+		.pipe(autoprefixer())
+		.pipe(gulp.dest('./build/extensions'));
+	// utils内をビルド
+	gulp.src('./src/utils/*.scss')
+		.pipe(
+			sass({
+				errLogToConsole: true,
+				outputStyle: 'compressed',
+			})
+		)
+		.pipe(autoprefixer())
+		.pipe(gulp.dest('./build/utils'));
+	done();
+});
+
+// ブロックごとのscssそれぞれビルド pro
+gulp.task('sass-separate-pro', (done) => {
+	gulp.src('./src/blocks/pro/**/*.scss')
+		.pipe(
+			sass({
+				errLogToConsole: true,
+				outputStyle: 'compressed',
+			})
+		)
+		.pipe(autoprefixer())
+		.pipe(gulp.dest('./build/pro'));
 	done();
 });
 
@@ -135,7 +183,9 @@ gulp.task('sass_vk_components', (done) => {
 gulp.task('watch', () => {
 	gulp.watch('editor-css/_editor_before.scss', gulp.parallel('sass_editor'));
 	// gulp.watch('editor-css/*.scss', gulp.parallel('sass_editor'));
-	gulp.watch('src/**/*.scss', gulp.series('sass', 'sass_editor'));
+	gulp.watch('src/**/*.scss', gulp.series('sass', 'sass_editor', 'sass-separate-free', 'sass-separate-pro'));
+	//watch enque-front.js
+	gulp.watch('src/**/*.js', gulp.series('helper-js', 'helper-js-pro'));
 	gulp.watch(
 		'lib/bootstrap/scss/*.scss',
 		gulp.parallel('sass_bootstrap', 'sass_editor')
@@ -180,7 +230,8 @@ gulp.task(
 		'helper-js',
 		'sass_editor',
 		'sass_bootstrap',
-		'sass_vk_components'
+		'sass_vk_components',
+		'sass-separate-free'
 	)
 );
 gulp.task(
@@ -192,7 +243,9 @@ gulp.task(
 		'helper-js-pro',
 		'sass_editor',
 		'sass_bootstrap',
-		'sass_vk_components'
+		'sass_vk_components',
+		'sass-separate-free',
+		'sass-separate-pro'
 	)
 );
 
@@ -206,20 +259,36 @@ gulp.task('dist', (done) => {
 		[
 			'./build/**',
 			'./inc/**',
-			'./src/**',
 			'./vendor/**',
 			'./*.txt',
 			'./*.png',
 			'./*.php',
+			'!./src/**',
+			'!./tests/**',
+			'!./dist/**',
+			'!./node_modules/**',
 		],
 		{ base: './' }
 	).pipe(gulp.dest('dist/vk-blocks-pro')); // distディレクトリに出力
 	done();
 });
 
-gulp.task('dist_ex', (done) => {
-	gulp.src(['./inc/vk-blocks/**'], { base: './inc/vk-blocks/' }).pipe(
-		gulp.dest('../vk-all-in-one-expansion-unit/inc/vk-blocks/package')
-	); // distディレクトリに出力
+// 無料版のリポジトリにコピーされた上で無料版リポジトリで実行される
+gulp.task('dist:free', (done) => {
+	gulp.src(
+		[
+			'./build/**',
+			'./inc/**',
+			'./vendor/**',
+			'./*.txt',
+			'./*.png',
+			'./*.php',
+			'!./src/**',
+			'!./test/**',
+			'!./dist/**',
+			'!./node_modules/**',
+		],
+		{ base: './' }
+	).pipe(gulp.dest('dist/vk-blocks')); // distディレクトリに出力
 	done();
 });

@@ -2,10 +2,10 @@
 Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird
 Donate link:
 Tags: Gutenberg,FAQ,alert
-Requires at least: 5.7
-Tested up to: 5.8.1
-Stable tag: 1.20.0
-Requires PHP: 7.0
+Requires at least: 5.8
+Tested up to: 5.9.2
+Stable tag: 1.30.0.1
+Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -63,8 +63,177 @@ e.g.
 
 == Changelog ==
 
+[ Bugfix ][ Button ] Fix icon inner classes.
+
+= 1.31.0 =
+[ Add Function ][ GridColCard(Pro) ] Add link URL in toolbar and sidebar.
+[ Add function ] [ Breadcrumb(Pro) ] Add support fontSize and spacing.
+[ Improvement ][ margin extension ] Changed to add common margin class names to additional CSS classes.
+[ Bug fix ][ Accordion(Pro) ] Fix do not intend margin bottom 0 added to p tag.
+
+= 1.30.0 =
+[ Add Function ][ Border Box ] Add body align control in toolbar.
+[ Add Function ][ Button outer(Pro) ] Add button width option.
+[ Update ][ Font Awesome ] Add version chenge setting on block-editor screen.
+[ Specification Change ][ Button ] Move url interface to block toolbar.
+[ Specification Change ] Change default --vk-margin-md size 2rem -> 2.4rem
+[ Specification Change ][ icon ] fix icon margin bottom
+
+= 1.29.2 =
+[ Bug fix ][ margin extension ] Exclude grid column blocks because they are covered by the setting values.
+[ Bug fix ][ margin extension ] Optimize excludes core block list.
+[ Bug Fix ] fix editor style of button-outer & icon-outer in page-content
+
+= 1.29.1 =
+[ Bug fix ][ margin extension ] Optimize excludes block list.
+
+= 1.29.0 =
+[ Add Function ] Add margin extension in toolbar.
+[ Add Block ] GridColCard(Pro)
+[ Fix ] [ Breadcrumb(Pro) ] Add inserter Pro label.
+[ Other ] Update Font Awesome 6 -> 6.1
+
+= 1.28.0 =
+[ Add Block ] Breadcrumb(Pro)
+[ Specification Change ][ Spacer ] Change break point
+[ Bug fix ][ Outer (Pro) ] Border radius range above 0.
+[ Bug fix ][ Outer (Pro) ] background position fix
+
+= 1.27.9 =
+[ Bug fix ][ Slider(Pro) ] Fixed a bug that the background was not transparent when the transparency setting was set to 0.
+
+= 1.27.8 =
+[ Bug fix ][ Outer (Pro) ] Fixed a bug where css was hitting inner content
+
+= 1.27.7 =
+[ Bug fix ][ Post list an so on (Pro) ] Fixed number of days to display the new post mark was not saved.
+[ Bug fix ][ Post list an so on (Pro) ] Fixed no post message php notice.
+
+= 1.27.6 =
+[ Other ] Fix deploy flow
+
+= 1.27.5 =
+[ Bug fix ][ Outer(Pro) ] Compatibility support
+[ Bug fix ][ Post List(Pro) ] Fix no post message
+
+= 1.27.1 - 1.27.4  =
+[ Other ] Deploy Free Version.
+
+= 1.27.0 =
+[ Add function ][ Font Awesome ] Cope with Font Awesome 6
+[ Add function ][ Post-List (Pro) ] Add no-post message filter hook
+[ Bug fix ][ Outer(Pro) ] cope with custom color palette
+
+= 1.26.2 =
+[ Other ] Rerelease
+
+[ Bugfix ][ Spacer ] fix spacer
+
+= 1.26.0 =
+[ fix ] fix plugin settings links.
+[ Add function ][ Spacer ] Add margin-top mode
+
+= 1.25.1 =
+Change stable version
+
+= 1.25.0 =
+[ Improvement ] Change to always load bootstrap when the theme is not Lightning,Lightning Pro,Katawara.
+[ fix ] Fix load FontAwesome when the theme is not Lightning,Lightning Pro,Katawara.
+[ fix ] color palette manager support border color
+
+= 1.24.5 =
+[ fix ][ Button ] Fix button alignment
+[ fix ][ Card(Pro) ] fix unify breakpoints.
+
+= 1.24.4 =
+[ Specification Change ][ Heading Design ] Strengthen selector on editor screen 
+
+= 1.24.3 =
+[ Bug fix ][ FAQ ] Fix list block last item can't edit.
+[ Bug fix ][ Slider(Pro) ] Fix Slider in Image block caption can't edit.
+[ Bug fix ] Bug fix Color palette not working in widget
+
+= 1.24.2 =
+[ Deploy ] Deploy Free Version 1.24.0
+
+= 1.24.1 =
+[ Specification Change ][ Dev ] fix deploy free script
+
+= 1.24.0 =
+[ fix ][ Icon outer ] add orientation horizontal & fix appender
+[ fix ][ Card(Pro) ] add orientation horizontal & fix appender
+[ fix ][ selected post list(Pro) ] add orientation horizontal & fix appender
+[ fix ][ Button outer(Pro) ] add orientation horizontal & fix appender
+[ fix ][ Icon Card(Pro) ] add orientation horizontal & fix appender
+[ fix ][ Grid column(Pro) ] add orientation horizontal & fix appender
+[ Specification Change ][ Dev ] change build script
+
+= 1.23.0 =
+[ Specification Change ][ Flow ] Release Image float on xs screen
+[ Specification Change ] Change required WordPress version to 5.8
+
+= 1.22.4 =
+[ Other ] Update the required WordPress version
+[ Bug fix ][ Heading ] Fix bug the color does not change when the style setting is no decoration.
+[ Bug fix ][ Slider(Pro) ] cope with custom color palette
+[ Bug fix ][ Icon Card(Pro) ] fix text align
+[ Bug fix ][ TOC(Pro) ] fix css corruption of block load separation mode
+
+= 1.22.3 =
+[ Bug fix ][ core/heading ] fix width
+
+= 1.22.2 =
+[ Bug fix ][ selected post list(Pro) ] fix post id
+
+= 1.22.1 =
+Cope with WordPress 5.9
+[ Add function ] load separate block setting from setting > vk blocks 
+[ fix ][ Heading ] Make text size not auto-include when changing heading level
+[ fix ][ Grid Column ] fix translate
+[ fix ][ Heading ] vertical heading levels for wp-5.9
+[ fix ][ Border Box ] cope with custom color palette
+[ Bug fix ] fix block style enqueue point
+[ Bug fix ][ button ] fix block-block size
+
+= 1.21.0 =
+[ Add Function ][ Post-List (Pro) ] add date filtering
+[ Bug fix ][ Balloon ] Balloon icon background color when custom color is selected
+[ Bug fix ][ Group ] fix alert style custom color
+
+= 1.20.7 =
+[ Bug fix ][ Heading ] cope with custom color palette
+[ Bug fix ][ Heading ] Fix recovery
+
+= 1.20.6 =
+[ Bug fix ][ Heading ] Fix recovery
+[ Bug fix ][ Heading ] cope with custom color palette
+[ Bug fix ][ Button ] change option order in panel
+[ Bug fix ][ Grid Column(Pro) ] cope with custom color palette
+[ Bug fix ][ Balloon ] cope with custom color palette
+
+= 1.20.5 =
+[ Bug fix ] cope with Old PHP.
+[ Bug fix ][ Timeline(Pro) ] cope with custom color palette
+
+= 1.20.4 =
+[ Other ] Only change stable version ( Deploy free version )
+
+= 1.20.3 =
+[ Bug fix ][ Post Media Layout ] Cope with not vektor theme
+[ Bug fix ][ PR Blocks ] cope with custom color palette
+[ Bug fix ][ Step(Pro) ] cope with custom color palette
+[ Bug fix ][ Icon Card(Pro) ] cope with custom color palette
+[ Other ] Change TGM & Plugin Update Checker load from composer
+
+= 1.20.2 =
+[ Bug fix ] Color palette manager in case of other theme
+
+= 1.20.1 =
+[ Bug fix ] Fix -wp5.7 error
+
 = 1.20.0 =
 [ Other ][ All ] Refactoring all blocks.
+[ Bug fix ] Color palette manager in case of other theme
 
 = 1.19.1 =
 [ Bug fix ][ Button ] Fix bootstrap color crash

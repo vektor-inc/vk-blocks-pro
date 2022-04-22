@@ -21,16 +21,6 @@ function vk_blocks_register_block_pr_blocks() {
 		);
 	}
 
-	// Register Script.
-	$asset = include VK_BLOCKS_DIR_PATH . 'build/pr-blocks/block-build.asset.php';
-	wp_register_script(
-		'vk-blocks/pr-blocks',
-		VK_BLOCKS_DIR_URL . 'build/pr-blocks/block-build.js',
-		$asset['dependencies'],
-		VK_BLOCKS_VERSION,
-		true
-	);
-
 	register_block_type(
 		__DIR__,
 		array(

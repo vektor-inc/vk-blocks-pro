@@ -6,6 +6,7 @@ import classnames from 'classnames';
  * WordPress dependencies
  */
 import { useBlockProps, RichText } from '@wordpress/block-editor';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 // import StaffMediaUpload from './staffMediaUpload';
 
@@ -50,37 +51,105 @@ export default function save({ attributes, className }) {
 		staffTextClassName = classnames('vk_staff_text', staffTextClassName);
 	}
 
+	let staffNameColorInlineStyle = {};
+	let staffTextNameClassName = '';
+	if (vk_staff_nameColor !== undefined) {
+		staffTextNameClassName += ` has-text-color`;
+		if (isHexColor(vk_staff_nameColor)) {
+			staffNameColorInlineStyle = { color: `${vk_staff_nameColor}` };
+		} else {
+			staffTextNameClassName += ` has-${vk_staff_nameColor}-color`;
+		}
+	}
+
+	let staffCaptionColorInlineStyle = {};
+	let staffCaptionClassName = '';
+	if (vk_staff_captionColor !== undefined) {
+		staffCaptionClassName += ` has-text-color`;
+		if (isHexColor(vk_staff_captionColor)) {
+			staffCaptionColorInlineStyle = {
+				color: `${vk_staff_captionColor}`,
+			};
+		} else {
+			staffCaptionClassName += ` has-${vk_staff_captionColor}-color`;
+		}
+	}
+
+	let staffPositionColorInlineStyle = {};
+	let staffPositionClassName = '';
+	if (vk_staff_positionColor !== undefined) {
+		staffPositionClassName += ` has-text-color`;
+		if (isHexColor(vk_staff_positionColor)) {
+			staffPositionColorInlineStyle = {
+				color: `${vk_staff_positionColor}`,
+			};
+		} else {
+			staffPositionClassName += ` has-${vk_staff_positionColor}-color`;
+		}
+	}
+
+	let staffProfileTitleColorInlineStyle = {};
+	let staffProfileTitleClassName = '';
+	if (vk_staff_profileTitleColor !== undefined) {
+		staffProfileTitleClassName += ` has-text-color`;
+		if (isHexColor(vk_staff_profileTitleColor)) {
+			staffProfileTitleColorInlineStyle = {
+				color: `${vk_staff_profileTitleColor}`,
+			};
+		} else {
+			staffProfileTitleClassName += ` has-${vk_staff_profileTitleColor}-color`;
+		}
+	}
+
+	let staffProfileTextColorInlineStyle = {};
+	let staffProfileTextClassName = '';
+	if (vk_staff_profileTextColor !== undefined) {
+		staffProfileTextClassName += ` has-text-color`;
+		if (isHexColor(vk_staff_profileTextColor)) {
+			staffProfileTextColorInlineStyle = {
+				color: `${vk_staff_profileTextColor}`,
+			};
+		} else {
+			staffProfileTextClassName += ` has-${vk_staff_profileTextColor}-color`;
+		}
+	}
+
 	return (
 		<div {...useBlockProps.save({ className: classes })}>
 			<div className={staffTextClassName}>
 				<RichText.Content
 					tagName="h3"
-					className={'vk_staff_text_name'}
-					style={{ color: vk_staff_nameColor }}
+					className={`vk_staff_text_name` + staffTextNameClassName}
+					style={staffNameColorInlineStyle}
 					value={vk_staff_text_name} // eslint-disable-line camelcase
 				/>
 				<RichText.Content
 					tagName="p"
-					className={'vk_staff_text_caption'}
-					style={{ color: vk_staff_captionColor }}
+					className={`vk_staff_text_caption` + staffCaptionClassName}
+					style={staffCaptionColorInlineStyle}
 					value={vk_staff_text_caption} // eslint-disable-line camelcase
 				/>
 				<RichText.Content
 					tagName="p"
-					className={'vk_staff_text_role'}
-					style={{ color: vk_staff_positionColor }}
+					className={`vk_staff_text_role` + staffPositionClassName}
+					style={staffPositionColorInlineStyle}
 					value={vk_staff_text_role} // eslint-disable-line camelcase
 				/>
 				<RichText.Content
 					tagName="h4"
-					className={'vk_staff_text_profileTitle'}
-					style={{ color: vk_staff_profileTitleColor }}
+					className={
+						`vk_staff_text_profileTitle` +
+						staffProfileTitleClassName
+					}
+					style={staffProfileTitleColorInlineStyle}
 					value={vk_staff_text_profileTitle} // eslint-disable-line camelcase
 				/>
 				<RichText.Content
 					tagName="p"
-					className={'vk_staff_text_profileText'}
-					style={{ color: vk_staff_profileTextColor }}
+					className={
+						'vk_staff_text_profileText' + staffProfileTextClassName
+					}
+					style={staffProfileTextColorInlineStyle}
 					value={vk_staff_text_profileText} // eslint-disable-line camelcase
 				/>
 			</div>

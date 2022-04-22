@@ -21,7 +21,7 @@ import {
 } from './utils';
 import { PrContentMediaUploadEdit } from './mediaUpload';
 import { FontAwesome } from '@vkblocks/utils/font-awesome-new';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 
 export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 	const {
@@ -41,7 +41,8 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 		fontAwesomeIconBefore,
 		fontAwesomeIconAfter,
 	} = attributes;
-
+	// eslint-disable-next-line no-undef
+	const iconFamily = vkFontAwesome.iconFamily;
 	const containerClass = getContainerClass(layout);
 	const btnClass = getButtonClass(buttonColorCustom);
 	const linkClass = getLinkClass(buttonColor, buttonColorCustom, buttonType);
@@ -193,7 +194,10 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 					</BaseControl>
 					<BaseControl id={`vk_prContent_icon-${clientId}`}>
 						<h4 className="mt-0 mb-2">
-							{__('Icon ( Font Awesome )', 'vk-blocks')}
+							{__('Icon', 'vk-blocks') +
+								' ( ' +
+								iconFamily +
+								' )'}
 						</h4>
 						<BaseControl
 							id={`vk_prContent_icon_beforeText${clientId}`}
@@ -275,11 +279,11 @@ export default function PrcontentEdit({ attributes, setAttributes, clientId }) {
 										: undefined
 								}
 							>
-								{ReactHtmlParser(iconBefore)}
+								{parse(iconBefore)}
 								<span className="vk_button_link_txt">
 									{buttonText}
 								</span>
-								{ReactHtmlParser(iconAfter)}
+								{parse(iconAfter)}
 							</a>
 						</div>
 					)}

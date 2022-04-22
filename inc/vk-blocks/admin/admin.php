@@ -23,6 +23,7 @@ if ( ! function_exists( 'vk_blocks_setting' ) ) {
 			<?php
 			require_once dirname( __FILE__ ) . '/admin-balloon.php';
 			require_once dirname( __FILE__ ) . '/admin-margin.php';
+			require_once dirname( __FILE__ ) . '/admin-load-separate.php';
 			do_action( 'vk_blocks_pro_admin' );
 			?>
 		</form>
@@ -69,6 +70,7 @@ function vk_blocks_setting_page() {
 	$get_menu_html  = '';
 	$get_menu_html .= '<li><a href="#balloon-setting">' . __( 'Balloon Block Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= '<li><a href="#margin-setting">' . __( 'Common Margin Setting', 'vk-blocks' ) . '</a></li>';
+	$get_menu_html .= '<li><a href="#load-separete-setting">' . __( 'Load Separete Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= apply_filters( 'vk_blocks_pro_menu', '' );
 
 	Vk_Admin::admin_page_frame( $get_page_title, 'vk_blocks_setting', $get_logo_html, $get_menu_html );
@@ -113,3 +115,20 @@ function vk_blocks_setting_option_save() {
 	// wp_safe_redirect( menu_page_url( 'vk_blocks_options', false ) );
 }
 add_action( 'admin_init', 'vk_blocks_setting_option_save', 10, 2 );
+
+/**
+ * VK Blocks add setting link
+ *
+ * @param array  $links VK Blocks action links.
+ * @param string $file Path to the plugin file relative to the plugins directory.
+ *
+ * @return array
+ */
+function vk_blocks_add_setting_link( $links, $file ) {
+	if ( plugin_basename( VK_BLOCKS_DIR_PATH . '/vk-blocks.php' ) === $file ) {
+		$settings_link = '<a href="' . esc_url( admin_url( '/options-general.php?page=vk_blocks_options' ) ) . '">' . __( 'Setting', 'vk-blocks' ) . '</a>';
+		array_unshift( $links, $settings_link );
+	}
+	return $links;
+}
+add_filter( 'plugin_action_links', 'vk_blocks_add_setting_link', 10, 2 );

@@ -1,7 +1,7 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/pr-blocks",
-	"title": "PR Blocks",
+	"title": "PR Blocks (not recommended)",
 	"category": "vk-blocks-cat",
 	"attributes": {
 		"heading1" :{
@@ -93,20 +93,16 @@
 			"default": "<i class=\"fas fa-file\"></i>"
 		},
 		"color1":{
-			"type": "string",
-			"default": "#0693e3"
+			"type": "string"
 		},
 		"color2":{
-			"type": "string",
-			"default": "#0693e3"
+			"type": "string"
 		},
 		"color3":{
-			"type": "string",
-			"default": "#0693e3"
+			"type": "string"
 		},
 		"color4":{
-			"type": "string",
-			"default": "#0693e3"
+			"type": "string"
 		},
 		"bgType1": {
 			"type": "string",
@@ -141,7 +137,7 @@
 			"default": ""
 		}
 	},
-	"description": "This is a PR block where you can place images and icon.",
+	"description": "This is a PR block where you can place images and icon. But currently, it is possible to create the same layout by combining Column Block and Icon Block, so this block is not recommended. Please check Columns category of Block Patterns.",
 	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true

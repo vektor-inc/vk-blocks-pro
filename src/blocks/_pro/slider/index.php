@@ -25,22 +25,12 @@ function vk_blocks_register_block_slider() {
 	if ( ! is_admin() ) {
 		wp_register_script(
 			'vk-blocks/slider-script',
-			VK_BLOCKS_DIR_URL . 'inc/vk-blocks/build/vk-slider.min.js',
+			VK_BLOCKS_DIR_URL . 'build/vk-slider.min.js',
 			array( 'vk-swiper-script' ),
 			VK_BLOCKS_VERSION,
 			true
 		);
 	}
-
-	// Register Script.
-	$asset = include VK_BLOCKS_DIR_PATH . 'build/_pro/slider/block-build.asset.php';
-	wp_register_script(
-		'vk-blocks/slider',
-		VK_BLOCKS_DIR_URL . 'build/_pro/slider/block-build.js',
-		$asset['dependencies'],
-		VK_BLOCKS_VERSION,
-		true
-	);
 
 	register_block_type(
 		__DIR__,

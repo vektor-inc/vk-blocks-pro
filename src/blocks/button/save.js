@@ -15,6 +15,7 @@ export default function save(props) {
 		buttonTextColorCustom,
 		buttonColorCustom,
 		buttonAlign,
+		buttonWidth,
 		fontAwesomeIconBefore,
 		fontAwesomeIconAfter,
 		blockId,
@@ -27,9 +28,16 @@ export default function save(props) {
 			isHexColor(buttonTextColorCustom)) ||
 		(buttonColorCustom !== undefined && isHexColor(buttonColorCustom))
 	) {
-		containerClass = `vk_button vk_button-color-custom vk_button-align-${buttonAlign} vk_button-${blockId}`;
+		containerClass = `vk_button vk_button-color-custom vk_button-${blockId}`;
 	} else {
-		containerClass = `vk_button vk_button-color-custom vk_button-align-${buttonAlign}`;
+		containerClass = `vk_button vk_button-color-custom`;
+	}
+
+	if (buttonWidth) {
+		// 横並びボタンで幅が指定されている
+		containerClass += ` vk_button-width-${buttonWidth}`;
+	} else {
+		containerClass += ` vk_button-align-${buttonAlign}`;
 	}
 
 	const blockProps = useBlockProps.save({

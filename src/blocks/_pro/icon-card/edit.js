@@ -97,6 +97,7 @@ export default function IconCardEdit(props) {
 					<InnerBlocks
 						template={TEMPLATE}
 						allowedBlocks={ALLOWED_BLOCKS}
+						orientation="horizontal"
 					/>
 				</div>
 			</div>

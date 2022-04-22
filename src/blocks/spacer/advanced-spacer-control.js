@@ -18,6 +18,10 @@ const AdvancedSpacerControl = (props) => {
 					value: 'margin-top',
 					label: __('margin-top', 'vk-blocks'),
 				},
+				{
+					value: 'margin-bottom',
+					label: __('margin-bottom', 'vk-blocks'),
+				},
 			]}
 		/>
 	);

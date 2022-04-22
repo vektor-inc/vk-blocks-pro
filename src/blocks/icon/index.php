@@ -21,16 +21,6 @@ function vk_blocks_register_block_icon() {
 		);
 	}
 
-	// Register Script.
-	$asset = include VK_BLOCKS_DIR_PATH . 'build/icon/block-build.asset.php';
-	wp_register_script(
-		'vk-blocks/icon',
-		VK_BLOCKS_DIR_URL . 'build/icon/block-build.js',
-		$asset['dependencies'],
-		VK_BLOCKS_VERSION,
-		true
-	);
-
 	register_block_type(
 		__DIR__,
 		array(

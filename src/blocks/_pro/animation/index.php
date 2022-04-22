@@ -25,22 +25,12 @@ function vk_blocks_register_block_animation() {
 	if ( ! is_admin() ) {
 		wp_register_script(
 			'vk-blocks/animation-script',
-			VK_BLOCKS_DIR_URL . 'inc/vk-blocks/build/vk-animation.min.js',
+			VK_BLOCKS_DIR_URL . 'build/vk-animation.min.js',
 			array(),
 			VK_BLOCKS_VERSION,
 			true
 		);
 	}
-
-	// Register Script.
-	$asset = include VK_BLOCKS_DIR_PATH . 'build/_pro/animation/block-build.asset.php';
-	wp_register_script(
-		'vk-blocks/animation',
-		VK_BLOCKS_DIR_URL . 'build/animation/block-build.js',
-		$asset['dependencies'],
-		VK_BLOCKS_VERSION,
-		true
-	);
 
 	register_block_type(
 		__DIR__,

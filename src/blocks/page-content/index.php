@@ -11,16 +11,6 @@
  * @return void
  */
 function vk_blocks_register_block_page_content() {
-	// Register Script.
-	$asset = include VK_BLOCKS_DIR_PATH . 'build/page-content/block-build.asset.php';
-	wp_register_script(
-		'vk-blocks/page_content',
-		VK_BLOCKS_DIR_URL . 'build/page_content/block-build.js',
-		$asset['dependencies'],
-		VK_BLOCKS_VERSION,
-		true
-	);
-
 	global $vk_blocks_common_attributes;
 	register_block_type(
 		__DIR__,
@@ -116,6 +106,12 @@ function vk_blocks_page_content_render_callback( $attributes ) {
 		if ( isset( $attributes['vkb_hidden_xs'] ) && $attributes['vkb_hidden_xs'] ) {
 			$classes .= ' vk_hidden-xs';
 		}
+		if ( isset( $attributes['marginTop'] ) && $attributes['marginTop'] ) {
+			$classes .= ' ' . $attributes['marginTop'];
+		}
+		if ( isset( $attributes['marginBottom'] ) && $attributes['marginBottom'] ) {
+			$classes .= ' ' . $attributes['marginBottom'];
+		}
 
 		$page_html .= '<div class="' . $classes . '">';
 		// Warning : 'vk_page_content' is old hook name that this line is old filter name fall back.
@@ -140,15 +136,15 @@ function vk_blocks_page_content_render_callback( $attributes ) {
  */
 function vk_blocks_content_enqueue_scripts( $page_content ) {
 	if ( has_block( 'vk-blocks/faq2', $page_content ) || has_block( 'vk-blocks/faq', $page_content ) ) {
-		wp_enqueue_script( 'vk-blocks-faq2', VK_BLOCKS_URL . 'build/faq2.min.js', array(), VK_BLOCKS_VERSION, true );
+		wp_enqueue_script( 'vk-blocks-faq2', VK_BLOCKS_DIR_URL . 'build/faq2.min.js', array(), VK_BLOCKS_VERSION, true );
 	}
 	if ( has_block( 'vk-blocks/animation', $page_content ) ) {
-		wp_enqueue_script( 'vk-blocks-animation', VK_BLOCKS_URL . 'build/vk-animation.min.js', array(), VK_BLOCKS_VERSION, true );
+		wp_enqueue_script( 'vk-blocks-animation', VK_BLOCKS_DIR_URL . 'build/vk-animation.min.js', array(), VK_BLOCKS_VERSION, true );
 	}
 	if ( has_block( 'vk-blocks/slider', $page_content ) ) {
-		wp_enqueue_style( 'vk-blocks-swiper', VK_BLOCKS_URL . 'build/swiper.min.css', array(), VK_BLOCKS_VERSION );
-		wp_enqueue_script( 'vk-blocks-swiper', VK_BLOCKS_URL . 'build/swiper.min.js', array(), VK_BLOCKS_VERSION, true );
-		wp_enqueue_script( 'vk-blocks-slider', VK_BLOCKS_URL . 'build/vk-slider.min.js', array( 'vk-blocks-swiper' ), VK_BLOCKS_VERSION, true );
+		wp_enqueue_style( 'vk-blocks-swiper', VK_BLOCKS_DIR_URL . 'build/swiper.min.css', array(), VK_BLOCKS_VERSION );
+		wp_enqueue_script( 'vk-blocks-swiper', VK_BLOCKS_DIR_URL . 'build/swiper.min.js', array(), VK_BLOCKS_VERSION, true );
+		wp_enqueue_script( 'vk-blocks-slider', VK_BLOCKS_DIR_URL . 'build/vk-slider.min.js', array( 'vk-blocks-swiper' ), VK_BLOCKS_VERSION, true );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'vk_blocks_content_enqueue_scripts' );

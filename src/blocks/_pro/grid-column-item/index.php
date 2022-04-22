@@ -21,16 +21,6 @@ function vk_blocks_register_block_grid_column_item() {
 		);
 	}
 
-	// Register Script.
-	$asset = include VK_BLOCKS_DIR_PATH . 'build/_pro/grid-column-item/block-build.asset.php';
-	wp_register_script(
-		'vk-blocks/grid-column-item',
-		VK_BLOCKS_DIR_URL . 'build/_pro/grid-column-item/block-build.js',
-		$asset['dependencies'],
-		VK_BLOCKS_VERSION,
-		true
-	);
-
 	register_block_type(
 		__DIR__,
 		array(

@@ -35,8 +35,7 @@ export default function save(props) {
 		containerClass = `vk_button vk_button-color-custom`;
 	}
 
-	if (buttonWidth) {
-		// 横並びボタンで幅が指定されている
+	if (buttonWidthMobile || buttonWidthTablet || buttonWidth) {
 		// 横並びボタンで幅が指定されている
 		if (buttonWidthMobile) {
 			containerClass += ` vk_button-width-mobile-${buttonWidthMobile}`;

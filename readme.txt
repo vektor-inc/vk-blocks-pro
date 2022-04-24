@@ -63,6 +63,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ] Fix load Font Awesome Files on WordPress.com
 [ Bugfix ][ Button ] Fix icon inner classes.
 
 = 1.31.0 =

@@ -79,6 +79,10 @@
 		},
 		"blockId": {
 			"type": "string"
+		},
+		"old_1_31_0": {
+			"type": "string",
+			"default": true
 		}
 	}
 }

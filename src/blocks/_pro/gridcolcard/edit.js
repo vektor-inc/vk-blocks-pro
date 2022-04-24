@@ -26,6 +26,7 @@ export default function Edit(props) {
 		gap,
 		gapRow,
 		blockId,
+		old_1_31_0,
 	} = attributes;
 
 	// ブロック全体のアウタークラス名
@@ -37,11 +38,14 @@ export default function Edit(props) {
 		if (blockId === undefined) {
 			setAttributes({ blockId: clientId });
 		}
-		if (colWidthMinTablet === undefined) {
-			setAttributes({ colWidthMinTablet: colWidthMin });
-		}
-		if (colWidthMinPC === undefined) {
-			setAttributes({ colWidthMinPC: colWidthMin });
+		if (old_1_31_0 === undefined) {
+			if (colWidthMinTablet === undefined) {
+				setAttributes({ colWidthMinTablet: colWidthMin });
+			}
+			if (colWidthMinPC === undefined) {
+				setAttributes({ colWidthMinPC: colWidthMin });
+			}
+			setAttributes({ old_1_31_0: true });
 		}
 	}, [clientId]);
 

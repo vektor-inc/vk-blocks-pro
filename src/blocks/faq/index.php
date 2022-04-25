@@ -53,15 +53,13 @@ add_action( 'init', 'vk_blocks_register_block_faq', 99 );
  */
 function vk_blocks_faq_render_callback( $block_content, $block ) {
 	$vk_blocks_options = vk_blocks_get_options();
-	if ( ! empty( $vk_blocks_options['new_faq_accordion'] ) ) {
-		if ( 'vk-blocks/faq' === $block['blockName'] ) {
-			if ( 'open' === $vk_blocks_options['new_faq_accordion'] ) {
-				$block_content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-accordion-open', $block_content );
-			} elseif ( 'close' === $vk_blocks_options['new_faq_accordion'] ) {
-				$block_content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-accordion-close', $block_content );
-			} else {
-				$block_content = str_replace( '[accordion_trigger_switch]', '', $block_content );
-			}
+	if ( 'vk-blocks/faq' === $block['blockName'] ) {
+		if ( ! empty( $vk_blocks_options['new_faq_accordion'] ) && 'open' === $vk_blocks_options['new_faq_accordion'] ) {
+			$block_content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-accordion-open', $block_content );
+		} elseif ( ! empty( $vk_blocks_options['new_faq_accordion'] ) && 'close' === $vk_blocks_options['new_faq_accordion'] ) {
+			$block_content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-accordion-close', $block_content );
+		} else {
+			$block_content = str_replace( '[accordion_trigger_switch]', '', $block_content );
 		}
 	}
 	return $block_content;

@@ -45,6 +45,7 @@ export default function ButtonEdit(props) {
 		fontAwesomeIconBefore,
 		fontAwesomeIconAfter,
 		blockId,
+		old_1_31_0,
 	} = attributes;
 
 	// eslint-disable-next-line no-undef
@@ -101,11 +102,14 @@ export default function ButtonEdit(props) {
 		) {
 			setAttributes({ subCaption: undefined });
 		}
-		if (buttonWidthMobile === undefined) {
-			setAttributes({ buttonWidthMobile: buttonWidth });
-		}
-		if (buttonWidthTablet === undefined) {
-			setAttributes({ buttonWidthTablet: buttonWidth });
+		if (old_1_31_0 === undefined) {
+			if (buttonWidthMobile === undefined) {
+				setAttributes({ buttonWidthMobile: buttonWidth });
+			}
+			if (buttonWidthTablet === undefined) {
+				setAttributes({ buttonWidthTablet: buttonWidth });
+			}
+			setAttributes({ old_1_31_0: true });
 		}
 	}, [clientId]);
 

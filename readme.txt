@@ -62,8 +62,12 @@ e.g.
 1. VK Blocks examples.
 
 == Changelog ==
-[ Add Function ][ GridColCard ( Pro ) ] add column min-width setting for tablet and pc.
+
+[ Add Function ][ Button outer(Pro) ] Add button width option for mobile or tablet.
+[ Bug Fix ] Fix load Font Awesome Files on WordPress.com
 [ Bugfix ][ Button ] Fix icon inner classes.
+[ Improvement ][ margin extension ] Enable margin settings in Grid column(Pro).
+[ Add Function ][ GridColCard ( Pro ) ] add column min-width setting for tablet and pc.
 
 = 1.31.0 =
 [ Add Function ][ GridColCard(Pro) ] Add link URL in toolbar and sidebar.

@@ -387,7 +387,6 @@ msgid "Lock edits this block from the parent and other Grid Column Item block"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:292
-#: src/blocks/_pro/gridcolcard/edit.js:88
 msgid "Column Setting"
 msgstr ""
 
@@ -464,20 +463,65 @@ msgstr ""
 msgid "Column header media area"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:100
+#: src/blocks/_pro/gridcolcard/edit.js:114
+#: src/blocks/button/edit.js:245
+msgid "Block ID"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:125
+msgid "Update Block ID"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:129
+#: src/blocks/button/edit.js:251
+msgid "This is the identification ID for this block style."
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:136
+msgid "If you duplicate this block, please update the ID on duplicated block."
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:143
+msgid "This ID is not id of HTML attribute."
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:152
+msgid "Column Width Setting"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:156
+msgid ""
+"If you specify the minimum column size on a tablet or PC with %, it will be "
+"easier to align the number of columns in the upper and lower rows according "
+"to the screen size."
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:162
+msgid "Column min width (Mobile)"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:170
+msgid "Column min width (Tablet)"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:178
+msgid "Column min width (PC)"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:186
+msgid "Column Gap Setting"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:190
 msgid "Column gap size"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:106
+#: src/blocks/_pro/gridcolcard/edit.js:196
 msgid "Column row-gap size (optional)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:115
+#: src/blocks/_pro/gridcolcard/edit.js:205
 msgid "Specify all columns at once"
-msgstr ""
-
-#: src/blocks/_pro/gridcolcard/edit.js:92
-msgid "Column min width"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/deprecated/0.0.0/component.js:55
@@ -1268,14 +1312,6 @@ msgstr ""
 
 #: src/blocks/button/edit.js:242
 msgid "Button setting"
-msgstr ""
-
-#: src/blocks/button/edit.js:245
-msgid "Block ID"
-msgstr ""
-
-#: src/blocks/button/edit.js:251
-msgid "This is the identification ID for this block style."
 msgstr ""
 
 #: src/blocks/button/edit.js:257

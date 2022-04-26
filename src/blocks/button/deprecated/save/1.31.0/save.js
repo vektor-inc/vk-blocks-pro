@@ -15,8 +15,6 @@ export default function save(props) {
 		buttonTextColorCustom,
 		buttonColorCustom,
 		buttonAlign,
-		buttonWidthMobile,
-		buttonWidthTablet,
 		buttonWidth,
 		fontAwesomeIconBefore,
 		fontAwesomeIconAfter,
@@ -35,17 +33,9 @@ export default function save(props) {
 		containerClass = `vk_button vk_button-color-custom`;
 	}
 
-	if (buttonWidthMobile || buttonWidthTablet || buttonWidth) {
+	if (buttonWidth) {
 		// 横並びボタンで幅が指定されている
-		if (buttonWidthMobile) {
-			containerClass += ` vk_button-width-mobile-${buttonWidthMobile}`;
-		}
-		if (buttonWidthTablet) {
-			containerClass += ` vk_button-width-tablet-${buttonWidthTablet}`;
-		}
-		if (buttonWidth) {
-			containerClass += ` vk_button-width-${buttonWidth}`;
-		}
+		containerClass += ` vk_button-width-${buttonWidth}`;
 	} else {
 		containerClass += ` vk_button-align-${buttonAlign}`;
 	}

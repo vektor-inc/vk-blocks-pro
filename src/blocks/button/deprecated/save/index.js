@@ -15,6 +15,7 @@ import save1_16_4 from './1.16.4/save';
 import save1_18_1 from './1.18.1/save';
 import save1_18_6 from './1.18.6/save';
 import save1_29_2 from './1.29.2/save';
+import save1_31_0 from './1.31.0/save';
 
 const blockAttributes = {
 	content: {
@@ -112,7 +113,27 @@ const blockAttributes6 = {
 	},
 }
 
+const blockAttributes7 = {
+	...blockAttributes4,
+	buttonWidthMobioe: {
+		type: 'number',
+		default: 0,
+	},
+	buttonWidthTablet: {
+		type: 'number',
+		default: 0,
+	},
+	buttonWidth: {
+		type: 'number',
+		default: 0,
+	},
+}
+
 export const deprecated = [
+	{
+		attributes: blockAttributes7,
+		save: save1_31_0,
+	},
 	{
 		attributes: blockAttributes6,
 		save: save1_29_2,

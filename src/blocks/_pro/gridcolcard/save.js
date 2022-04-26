@@ -5,27 +5,47 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 export default function save(props) {
 	const { attributes } = props;
 	const containerClass = 'vk_gridcolcard';
-	const { colWidthMin, gap, gapRow } = attributes;
+	const {
+		colWidthMin,
+		colWidthMinTablet,
+		colWidthMinPC,
+		gap,
+		gapRow,
+		blockId,
+	} = attributes;
 
-	let style;
-	if (colWidthMin) {
-		style = {
-			gridTemplateColumns: `repeat(auto-fit, minmax(${colWidthMin}, 1fr))`,
-		};
-		if (gapRow) {
-			style.gap = `${gapRow} ${gap}`;
-		} else {
-			style.gap = `${gap}`;
-		}
-	}
 	const blockProps = useBlockProps.save({
-		className: `${containerClass}`,
-		style,
+		className: `${containerClass} vk_gridcolcard-${blockId}`,
 	});
+
+	let blockGap = '';
+	if (gapRow) {
+		blockGap = gapRow + ' ' + gap;
+	} else {
+		blockGap = gap;
+	}
 
 	return (
 		<div {...blockProps}>
 			<InnerBlocks.Content />
+			<style>
+				{`
+				.vk_gridcolcard-${blockId} {
+					grid-template-columns:repeat(auto-fit, minmax(${colWidthMin}, 1fr));
+					gap:${blockGap};
+				}
+				@media (min-width: 576px) {
+					.vk_gridcolcard-${blockId} {
+						grid-template-columns:repeat(auto-fit, minmax(${colWidthMinTablet}, 1fr));
+					}
+				}
+				@media (min-width: 992px) {
+					.vk_gridcolcard-${blockId} {
+						grid-template-columns:repeat(auto-fit, minmax(${colWidthMinPC}, 1fr));
+					}
+				}
+				`}
+			</style>
 		</div>
 	);
 }

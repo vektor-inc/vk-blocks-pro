@@ -14,6 +14,14 @@
 			"type": "string",
 			"default": "300px"
 		},
+		"colWidthMinTablet": {
+			"type": "string",
+			"default": "300px"
+		},
+		"colWidthMinPC": {
+			"type": "string",
+			"default": "300px"
+		},
 		"gap": {
 			"type": "string",
 			"default": "30px"
@@ -68,6 +76,13 @@
 		"borderColor": {
 			"type": "string",
 			"default": "#e5e5e5"
+		},
+		"blockId": {
+			"type": "string"
+		},
+		"old_1_31_0": {
+			"type": "string",
+			"default": true
 		}
 	}
 }

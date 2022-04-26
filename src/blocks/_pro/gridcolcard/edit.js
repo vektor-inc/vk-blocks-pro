@@ -111,11 +111,11 @@ export default function Edit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Update Block ID', 'vk-video-block-pro')}>
+				<PanelBody title={__('Update Block ID', 'vk-blocks')}>
 					<BaseControl id={`vk_blocks_gridcolcard_updateBlockID`}>
 						<TextControl
 							className={`mb-0`}
-							label={__('Block ID', 'vk-video-block-pro')}
+							label={__('Block ID', 'vk-blocks')}
 							value={blockId}
 							disabled={true}
 							onChange={(value) =>
@@ -126,27 +126,27 @@ export default function Edit(props) {
 							isSecondary
 							onClick={() => setAttributes({ blockId: clientId })}
 						>
-							{__('Update Block ID', 'vk-video-block-pro')}
+							{__('Update Block ID', 'vk-blocks')}
 						</Button>
 						<ul className={`mt-0 mb-3`}>
 							<li>
 								{__(
 									'This is the identification ID for this block style.',
-									'vk-video-block-pro'
+									'vk-blocks'
 								)}
 							</li>
 							<li>
 								<strong>
 									{__(
 										'If you duplicate this block, please update the ID on duplicated block.',
-										'vk-video-block-pro'
+										'vk-blocks'
 									)}
 								</strong>
 							</li>
 							<li>
 								{__(
 									'This ID is not id of HTML attribute.',
-									'vk-video-block-pro'
+									'vk-blocks'
 								)}
 							</li>
 						</ul>

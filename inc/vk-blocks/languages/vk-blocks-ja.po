@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2022-04-26T05:55:14+00:00\n"
-"PO-Revision-Date: 2022-04-26 14:55+0900\n"
+"POT-Creation-Date: 2022-04-26T08:27:32+00:00\n"
+"PO-Revision-Date: 2022-04-26 17:29+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -510,23 +510,23 @@ msgstr "カラムの最小サイズ（モバイル）"
 msgid "Column min width (Tablet / Optional)"
 msgstr "カラムの最小サイズ（タブレット / 任意）"
 
-#: src/blocks/_pro/gridcolcard/edit.js:182
+#: src/blocks/_pro/gridcolcard/edit.js:185
 msgid "Column min width (PC / Optional)"
 msgstr "カラムの最小サイズ（PC / 任意）"
 
-#: src/blocks/_pro/gridcolcard/edit.js:190
+#: src/blocks/_pro/gridcolcard/edit.js:196
 msgid "Column Gap Setting"
 msgstr "カラム間の設定"
 
-#: src/blocks/_pro/gridcolcard/edit.js:194
+#: src/blocks/_pro/gridcolcard/edit.js:200
 msgid "Column gap size"
 msgstr "カラム間の余白"
 
-#: src/blocks/_pro/gridcolcard/edit.js:200
+#: src/blocks/_pro/gridcolcard/edit.js:206
 msgid "Column row-gap size (optional)"
 msgstr "カラム間の縦余白（任意）"
 
-#: src/blocks/_pro/gridcolcard/edit.js:209
+#: src/blocks/_pro/gridcolcard/edit.js:215
 msgid "Specify all columns at once"
 msgstr "全カラム一括指定"
 
@@ -1821,7 +1821,7 @@ msgid "Card (Image Round)"
 msgstr "カード（画像丸抜き）"
 
 #: src/components/column-layout-control/index.js:26
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:733
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:739
 #: inc/vk-components/package/class-vk-component-posts.php:739
 msgid "Card"
 msgstr "カード"
@@ -1839,7 +1839,7 @@ msgid "Card (Horizontal)"
 msgstr "カード（水平）"
 
 #: src/components/column-layout-control/index.js:42
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:749
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:755
 #: inc/vk-components/package/class-vk-component-posts.php:755
 msgid "Media"
 msgstr "メディア"
@@ -2287,6 +2287,11 @@ msgstr "続きを見る"
 msgid "Dismiss this notice"
 msgstr "通知を無視"
 
+#: dist/vk-blocks-pro/inc/font-awesome/class-vk-blocks-font-awesome-api.php:73
+#: inc/font-awesome/class-vk-blocks-font-awesome-api.php:73
+msgid "Setting saved."
+msgstr "設定を保存しました。"
+
 #: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:72
 #: inc/tgm-plugin-activation/tgm-config.php:72
 msgid "Install Required Plugins"
@@ -2584,30 +2589,30 @@ msgstr "吹き出しブロック設定"
 msgid "Setting"
 msgstr "設定"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/page-content/index.php:118
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/page-content/index.php:124
 #: inc/vk-blocks/build/blocks/page-content/index.php:124
 #: src/blocks/page-content/index.php:124
 #: test/phpunit/free/test-page-content.php:55
 msgid "Edit this area"
 msgstr "このエリアを編集"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:225
+#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:237
 #: inc/vk-blocks/view/class-vk-blocks-postlist.php:237
 msgid "Post"
 msgstr "投稿"
 
 #. translators: %s: 投稿タイプ名
-#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:229
+#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:241
 #: inc/vk-blocks/view/class-vk-blocks-postlist.php:241
 msgid "There are no %ss."
 msgstr "該当の%sはありません。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:214
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:222
 #: inc/vk-blocks/vk-blocks-functions.php:222
 msgid "Blocks"
 msgstr "Blocks"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:227
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:235
 #: inc/vk-blocks/vk-blocks-functions.php:235
 msgid "Blocks Layout"
 msgstr "ブロックレイアウト"
@@ -2622,42 +2627,42 @@ msgstr "続きを読む"
 msgid "New!!"
 msgstr "New!!"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:255
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:261
 #: inc/vk-components/package/class-vk-component-posts.php:261
 msgid "More"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:291
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:297
 #: inc/vk-components/package/class-vk-component-posts.php:297
 msgid "Posts navigation"
 msgstr "投稿ナビゲーション"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:292
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:298
 #: inc/vk-components/package/class-vk-component-posts.php:298
 msgid "Posts"
 msgstr "投稿リスト"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:294
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:300
 #: inc/vk-components/package/class-vk-component-posts.php:300
 msgid "Page"
 msgstr "ページ"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:737
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:743
 #: inc/vk-components/package/class-vk-component-posts.php:743
 msgid "Card Noborder"
 msgstr "カード（線なし）"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:741
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:747
 #: inc/vk-components/package/class-vk-component-posts.php:747
 msgid "Card Intext"
 msgstr "カード（インテキスト）"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:745
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:751
 #: inc/vk-components/package/class-vk-component-posts.php:751
 msgid "Card Horizontal"
 msgstr "カード（水平）"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:753
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:759
 #: inc/vk-components/package/class-vk-component-posts.php:759
 msgctxt "post list type"
 msgid "Text 1 Column"
@@ -2747,17 +2752,13 @@ msgstr ""
 "す。プリロードしたくないファイルがある場合は、ハンドル名（id）を入力してくだ"
 "さい。 例）pluginname_a-style,pluginname_b-css"
 
-#: dist/vk-blocks-pro/vk-blocks.php:99 vk-blocks.php:106
+#: dist/vk-blocks-pro/vk-blocks.php:106 vk-blocks.php:106
 msgid ""
 "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks "
 "Plugin running."
 msgstr ""
 "VK-Blocksと競合するため、VK All in One Expansion Unitの Block機能を停止しまし"
 "た。"
-
-#: inc/font-awesome/class-vk-blocks-font-awesome-api.php:73
-msgid "Setting saved."
-msgstr "設定を保存しました。"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/alert/block.json
 #: inc/vk-blocks/build/blocks/alert/block.json src/blocks/alert/block.json
@@ -2928,14 +2929,25 @@ msgid "Displays the body content of the specified parent page."
 msgstr "指定した基準ページの本文内容を表示します。"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/pr-blocks/block.json
+#: inc/vk-blocks/build/blocks/pr-blocks/block.json
+#: src/blocks/pr-blocks/block.json
 msgctxt "block title"
-msgid "PR Blocks"
-msgstr "PR ブロック"
+msgid "PR Blocks (not recommended)"
+msgstr "PR Blocks (非推奨)"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/pr-blocks/block.json
+#: inc/vk-blocks/build/blocks/pr-blocks/block.json
+#: src/blocks/pr-blocks/block.json
 msgctxt "block description"
-msgid "This is a PR block where you can place images and icon."
-msgstr "画像,アイコンの配置ができるPRブロックです。"
+msgid ""
+"This is a PR block where you can place images and icon. But currently, it is "
+"possible to create the same layout by combining Column Block and Icon Block, "
+"so this block is not recommended. Please check Columns category of Block "
+"Patterns."
+msgstr ""
+"画像やアイコンを配置できるPRブロックです。 ただし、現在、列ブロックとアイコン"
+"ブロックを組み合わせて同じレイアウトを作成できるため、このブロックはお勧めし"
+"ません。 ブロックパターンの「カラム（Column）」のカテゴリを確認してください。"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/pr-content/block.json
 #: inc/vk-blocks/build/blocks/pr-content/block.json
@@ -3034,6 +3046,20 @@ msgctxt "block description"
 msgid "Add animation to elements when scrolling the page."
 msgstr "ページをスクロールした時に要素に動きを加えます。"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
+#: inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
+#: src/blocks/_pro/breadcrumb/block.json
+msgctxt "block title"
+msgid "Breadcrumb"
+msgstr "パンくずリスト"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
+#: inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
+#: src/blocks/_pro/breadcrumb/block.json
+msgctxt "block description"
+msgid "Displays breadcrumbs of a page's hierarchy, or a post's categories"
+msgstr "ページや投稿カテゴリーなどページ階層のパンくずリストを表示します"
+
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/button-outer/block.json
 #: inc/vk-blocks/build/blocks/_pro/button-outer/block.json
 #: src/blocks/_pro/button-outer/block.json
@@ -3118,6 +3144,76 @@ msgstr "グリッドカラム"
 msgctxt "block description"
 msgid "Set the number of columns to be displayed for each screen size."
 msgstr "画面サイズ毎にカラム数を設定して表示させます。"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard-item-body/block.json
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-body/block.json
+#: src/blocks/_pro/gridcolcard-item-body/block.json
+msgctxt "block title"
+msgid "Grid Column Card Item Body"
+msgstr "グリッドカラムカードアイテムボディ"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard-item-body/block.json
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-body/block.json
+#: src/blocks/_pro/gridcolcard-item-body/block.json
+msgctxt "block description"
+msgid "Body of Grid Column Card Block Item"
+msgstr "グリッドカラムカードのボディ"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard-item-footer/block.json
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-footer/block.json
+#: src/blocks/_pro/gridcolcard-item-footer/block.json
+msgctxt "block title"
+msgid "Grid Column Card Item Footer"
+msgstr "グリッドカラムカードアイテムフッター"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard-item-footer/block.json
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-footer/block.json
+#: src/blocks/_pro/gridcolcard-item-footer/block.json
+msgctxt "block description"
+msgid "Footer button area of Grid Column Card Block Item"
+msgstr "グリッドカラムカードアイテムブロックのフッターボタンエリア"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard-item-header/block.json
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-header/block.json
+#: src/blocks/_pro/gridcolcard-item-header/block.json
+msgctxt "block title"
+msgid "Grid Column Card Item header"
+msgstr "グリッドカラムカードアイテムヘッダー"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard-item-header/block.json
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-header/block.json
+#: src/blocks/_pro/gridcolcard-item-header/block.json
+msgctxt "block description"
+msgid "Header image area of Grid Column Card Block Item"
+msgstr "グリッドカードカラムアイテムブロックのヘッダー画像エリア"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard-item/block.json
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item/block.json
+#: src/blocks/_pro/gridcolcard-item/block.json
+msgctxt "block title"
+msgid "Grid Column Card Item"
+msgstr "グリッドカラムカードアイテム"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard-item/block.json
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item/block.json
+#: src/blocks/_pro/gridcolcard-item/block.json
+msgctxt "block description"
+msgid "It is a block of single column of Grid Column Card."
+msgstr "グリッドカラムカードブロックのカラムブロック"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard/block.json
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard/block.json
+#: src/blocks/_pro/gridcolcard/block.json
+msgctxt "block title"
+msgid "Grid Column Card"
+msgstr "グリッドカラムカード"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard/block.json
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard/block.json
+#: src/blocks/_pro/gridcolcard/block.json
+msgctxt "block description"
+msgid "This block can flexible column layout"
+msgstr "柔軟なカラムレイアウトが作成できます"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/icon-card-item/block.json
 #: inc/vk-blocks/build/blocks/_pro/icon-card-item/block.json
@@ -3313,96 +3409,13 @@ msgid ""
 "explaining the order."
 msgstr "順番を説明する時に便利でシンプルなスケジュールなどを表示します。"
 
-#: inc/vk-blocks/build/blocks/pr-blocks/block.json
-#: src/blocks/pr-blocks/block.json
-msgctxt "block title"
-msgid "PR Blocks (not recommended)"
-msgstr "PR Blocks (非推奨)"
+#~ msgctxt "block title"
+#~ msgid "PR Blocks"
+#~ msgstr "PR ブロック"
 
-#: inc/vk-blocks/build/blocks/pr-blocks/block.json
-#: src/blocks/pr-blocks/block.json
-msgctxt "block description"
-msgid ""
-"This is a PR block where you can place images and icon. But currently, it is "
-"possible to create the same layout by combining Column Block and Icon Block, "
-"so this block is not recommended. Please check Columns category of Block "
-"Patterns."
-msgstr ""
-"画像やアイコンを配置できるPRブロックです。 ただし、現在、列ブロックとアイコン"
-"ブロックを組み合わせて同じレイアウトを作成できるため、このブロックはお勧めし"
-"ません。 ブロックパターンの「カラム（Column）」のカテゴリを確認してください。"
-
-#: inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
-#: src/blocks/_pro/breadcrumb/block.json
-msgctxt "block title"
-msgid "Breadcrumb"
-msgstr "パンくずリスト"
-
-#: inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
-#: src/blocks/_pro/breadcrumb/block.json
-msgctxt "block description"
-msgid "Displays breadcrumbs of a page's hierarchy, or a post's categories"
-msgstr "ページや投稿カテゴリーなどページ階層のパンくずリストを表示します"
-
-#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-body/block.json
-#: src/blocks/_pro/gridcolcard-item-body/block.json
-msgctxt "block title"
-msgid "Grid Column Card Item Body"
-msgstr "グリッドカラムカードアイテムボディ"
-
-#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-body/block.json
-#: src/blocks/_pro/gridcolcard-item-body/block.json
-msgctxt "block description"
-msgid "Body of Grid Column Card Block Item"
-msgstr "グリッドカラムカードのボディ"
-
-#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-footer/block.json
-#: src/blocks/_pro/gridcolcard-item-footer/block.json
-msgctxt "block title"
-msgid "Grid Column Card Item Footer"
-msgstr "グリッドカラムカードアイテムフッター"
-
-#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-footer/block.json
-#: src/blocks/_pro/gridcolcard-item-footer/block.json
-msgctxt "block description"
-msgid "Footer button area of Grid Column Card Block Item"
-msgstr "グリッドカラムカードアイテムブロックのフッターボタンエリア"
-
-#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-header/block.json
-#: src/blocks/_pro/gridcolcard-item-header/block.json
-msgctxt "block title"
-msgid "Grid Column Card Item header"
-msgstr "グリッドカラムカードアイテムヘッダー"
-
-#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-header/block.json
-#: src/blocks/_pro/gridcolcard-item-header/block.json
-msgctxt "block description"
-msgid "Header image area of Grid Column Card Block Item"
-msgstr "グリッドカードカラムアイテムブロックのヘッダー画像エリア"
-
-#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item/block.json
-#: src/blocks/_pro/gridcolcard-item/block.json
-msgctxt "block title"
-msgid "Grid Column Card Item"
-msgstr "グリッドカラムカードアイテム"
-
-#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item/block.json
-#: src/blocks/_pro/gridcolcard-item/block.json
-msgctxt "block description"
-msgid "It is a block of single column of Grid Column Card."
-msgstr "グリッドカラムカードブロックのカラムブロック"
-
-#: inc/vk-blocks/build/blocks/_pro/gridcolcard/block.json
-#: src/blocks/_pro/gridcolcard/block.json
-msgctxt "block title"
-msgid "Grid Column Card"
-msgstr "グリッドカラムカード"
-
-#: inc/vk-blocks/build/blocks/_pro/gridcolcard/block.json
-#: src/blocks/_pro/gridcolcard/block.json
-msgctxt "block description"
-msgid "This block can flexible column layout"
-msgstr "柔軟なカラムレイアウトが作成できます"
+#~ msgctxt "block description"
+#~ msgid "This is a PR block where you can place images and icon."
+#~ msgstr "画像,アイコンの配置ができるPRブロックです。"
 
 #~ msgid "Button URL"
 #~ msgstr "ボタン URL"

@@ -504,23 +504,23 @@ msgstr ""
 msgid "Column min width (Tablet / Optional)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:182
+#: src/blocks/_pro/gridcolcard/edit.js:185
 msgid "Column min width (PC / Optional)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:190
+#: src/blocks/_pro/gridcolcard/edit.js:196
 msgid "Column Gap Setting"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:194
+#: src/blocks/_pro/gridcolcard/edit.js:200
 msgid "Column gap size"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:200
+#: src/blocks/_pro/gridcolcard/edit.js:206
 msgid "Column row-gap size (optional)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:209
+#: src/blocks/_pro/gridcolcard/edit.js:215
 msgid "Specify all columns at once"
 msgstr ""
 

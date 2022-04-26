@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-04-26T05:55:14+00:00\n"
+"POT-Creation-Date: 2022-04-26T08:33:04+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 "X-Domain: vk-blocks\n"
@@ -516,23 +516,23 @@ msgstr ""
 msgid "Column min width (Tablet / Optional)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:182
+#: src/blocks/_pro/gridcolcard/edit.js:185
 msgid "Column min width (PC / Optional)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:190
+#: src/blocks/_pro/gridcolcard/edit.js:196
 msgid "Column Gap Setting"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:194
+#: src/blocks/_pro/gridcolcard/edit.js:200
 msgid "Column gap size"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:200
+#: src/blocks/_pro/gridcolcard/edit.js:206
 msgid "Column row-gap size (optional)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:209
+#: src/blocks/_pro/gridcolcard/edit.js:215
 msgid "Specify all columns at once"
 msgstr ""
 
@@ -1871,7 +1871,7 @@ msgid "Card (Image Round)"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:26
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:733
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:739
 #: inc/vk-components/package/class-vk-component-posts.php:739
 msgid "Card"
 msgstr ""
@@ -1889,7 +1889,7 @@ msgid "Card (Horizontal)"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:42
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:749
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:755
 #: inc/vk-components/package/class-vk-component-posts.php:755
 msgid "Media"
 msgstr ""
@@ -2320,6 +2320,11 @@ msgstr ""
 msgid "Dismiss this notice"
 msgstr ""
 
+#: dist/vk-blocks-pro/inc/font-awesome/class-vk-blocks-font-awesome-api.php:73
+#: inc/font-awesome/class-vk-blocks-font-awesome-api.php:73
+msgid "Setting saved."
+msgstr ""
+
 #: dist/vk-blocks-pro/inc/tgm-plugin-activation/tgm-config.php:72
 #: inc/tgm-plugin-activation/tgm-config.php:72
 msgid "Install Required Plugins"
@@ -2600,30 +2605,30 @@ msgstr ""
 msgid "Setting"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/page-content/index.php:118
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/page-content/index.php:124
 #: inc/vk-blocks/build/blocks/page-content/index.php:124
 #: src/blocks/page-content/index.php:124
 #: test/phpunit/free/test-page-content.php:55
 msgid "Edit this area"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:225
+#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:237
 #: inc/vk-blocks/view/class-vk-blocks-postlist.php:237
 msgid "Post"
 msgstr ""
 
 #. translators: %s: 投稿タイプ名
-#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:229
+#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:241
 #: inc/vk-blocks/view/class-vk-blocks-postlist.php:241
 msgid "There are no %ss."
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:214
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:222
 #: inc/vk-blocks/vk-blocks-functions.php:222
 msgid "Blocks"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:227
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:235
 #: inc/vk-blocks/vk-blocks-functions.php:235
 msgid "Blocks Layout"
 msgstr ""
@@ -2638,42 +2643,42 @@ msgstr ""
 msgid "New!!"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:255
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:261
 #: inc/vk-components/package/class-vk-component-posts.php:261
 msgid "More"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:291
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:297
 #: inc/vk-components/package/class-vk-component-posts.php:297
 msgid "Posts navigation"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:292
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:298
 #: inc/vk-components/package/class-vk-component-posts.php:298
 msgid "Posts"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:294
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:300
 #: inc/vk-components/package/class-vk-component-posts.php:300
 msgid "Page"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:737
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:743
 #: inc/vk-components/package/class-vk-component-posts.php:743
 msgid "Card Noborder"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:741
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:747
 #: inc/vk-components/package/class-vk-component-posts.php:747
 msgid "Card Intext"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:745
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:751
 #: inc/vk-components/package/class-vk-component-posts.php:751
 msgid "Card Horizontal"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:753
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:759
 #: inc/vk-components/package/class-vk-component-posts.php:759
 msgctxt "post list type"
 msgid "Text 1 Column"
@@ -2751,13 +2756,9 @@ msgstr ""
 msgid "If you choose \"Active Preload CSS\" that css load timing was changed.If you have any do not want to preload css file that please fill in handle(id) name. Ex) pluginname_a-style,pluginname_b-css"
 msgstr ""
 
-#: dist/vk-blocks-pro/vk-blocks.php:99
+#: dist/vk-blocks-pro/vk-blocks.php:106
 #: vk-blocks.php:106
 msgid "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks Plugin running."
-msgstr ""
-
-#: inc/font-awesome/class-vk-blocks-font-awesome-api.php:73
-msgid "Setting saved."
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/alert/block.json
@@ -2943,13 +2944,17 @@ msgid "Displays the body content of the specified parent page."
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/pr-blocks/block.json
+#: inc/vk-blocks/build/blocks/pr-blocks/block.json
+#: src/blocks/pr-blocks/block.json
 msgctxt "block title"
-msgid "PR Blocks"
+msgid "PR Blocks (not recommended)"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/pr-blocks/block.json
+#: inc/vk-blocks/build/blocks/pr-blocks/block.json
+#: src/blocks/pr-blocks/block.json
 msgctxt "block description"
-msgid "This is a PR block where you can place images and icon."
+msgid "This is a PR block where you can place images and icon. But currently, it is possible to create the same layout by combining Column Block and Icon Block, so this block is not recommended. Please check Columns category of Block Patterns."
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/pr-content/block.json
@@ -3050,6 +3055,20 @@ msgctxt "block description"
 msgid "Add animation to elements when scrolling the page."
 msgstr ""
 
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
+#: inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
+#: src/blocks/_pro/breadcrumb/block.json
+msgctxt "block title"
+msgid "Breadcrumb"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
+#: inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
+#: src/blocks/_pro/breadcrumb/block.json
+msgctxt "block description"
+msgid "Displays breadcrumbs of a page's hierarchy, or a post's categories"
+msgstr ""
+
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/button-outer/block.json
 #: inc/vk-blocks/build/blocks/_pro/button-outer/block.json
 #: src/blocks/_pro/button-outer/block.json
@@ -3132,6 +3151,76 @@ msgstr ""
 #: src/blocks/_pro/grid-column/block.json
 msgctxt "block description"
 msgid "Set the number of columns to be displayed for each screen size."
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard-item-body/block.json
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-body/block.json
+#: src/blocks/_pro/gridcolcard-item-body/block.json
+msgctxt "block title"
+msgid "Grid Column Card Item Body"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard-item-body/block.json
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-body/block.json
+#: src/blocks/_pro/gridcolcard-item-body/block.json
+msgctxt "block description"
+msgid "Body of Grid Column Card Block Item"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard-item-footer/block.json
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-footer/block.json
+#: src/blocks/_pro/gridcolcard-item-footer/block.json
+msgctxt "block title"
+msgid "Grid Column Card Item Footer"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard-item-footer/block.json
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-footer/block.json
+#: src/blocks/_pro/gridcolcard-item-footer/block.json
+msgctxt "block description"
+msgid "Footer button area of Grid Column Card Block Item"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard-item-header/block.json
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-header/block.json
+#: src/blocks/_pro/gridcolcard-item-header/block.json
+msgctxt "block title"
+msgid "Grid Column Card Item header"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard-item-header/block.json
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-header/block.json
+#: src/blocks/_pro/gridcolcard-item-header/block.json
+msgctxt "block description"
+msgid "Header image area of Grid Column Card Block Item"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard-item/block.json
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item/block.json
+#: src/blocks/_pro/gridcolcard-item/block.json
+msgctxt "block title"
+msgid "Grid Column Card Item"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard-item/block.json
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item/block.json
+#: src/blocks/_pro/gridcolcard-item/block.json
+msgctxt "block description"
+msgid "It is a block of single column of Grid Column Card."
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard/block.json
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard/block.json
+#: src/blocks/_pro/gridcolcard/block.json
+msgctxt "block title"
+msgid "Grid Column Card"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/gridcolcard/block.json
+#: inc/vk-blocks/build/blocks/_pro/gridcolcard/block.json
+#: src/blocks/_pro/gridcolcard/block.json
+msgctxt "block description"
+msgid "This block can flexible column layout"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/icon-card-item/block.json
@@ -3314,88 +3403,4 @@ msgstr ""
 #: src/blocks/_pro/timeline/block.json
 msgctxt "block description"
 msgid "Displays a simple schedule and other information that is useful for explaining the order."
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/pr-blocks/block.json
-#: src/blocks/pr-blocks/block.json
-msgctxt "block title"
-msgid "PR Blocks (not recommended)"
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/pr-blocks/block.json
-#: src/blocks/pr-blocks/block.json
-msgctxt "block description"
-msgid "This is a PR block where you can place images and icon. But currently, it is possible to create the same layout by combining Column Block and Icon Block, so this block is not recommended. Please check Columns category of Block Patterns."
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
-#: src/blocks/_pro/breadcrumb/block.json
-msgctxt "block title"
-msgid "Breadcrumb"
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
-#: src/blocks/_pro/breadcrumb/block.json
-msgctxt "block description"
-msgid "Displays breadcrumbs of a page's hierarchy, or a post's categories"
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-body/block.json
-#: src/blocks/_pro/gridcolcard-item-body/block.json
-msgctxt "block title"
-msgid "Grid Column Card Item Body"
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-body/block.json
-#: src/blocks/_pro/gridcolcard-item-body/block.json
-msgctxt "block description"
-msgid "Body of Grid Column Card Block Item"
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-footer/block.json
-#: src/blocks/_pro/gridcolcard-item-footer/block.json
-msgctxt "block title"
-msgid "Grid Column Card Item Footer"
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-footer/block.json
-#: src/blocks/_pro/gridcolcard-item-footer/block.json
-msgctxt "block description"
-msgid "Footer button area of Grid Column Card Block Item"
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-header/block.json
-#: src/blocks/_pro/gridcolcard-item-header/block.json
-msgctxt "block title"
-msgid "Grid Column Card Item header"
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item-header/block.json
-#: src/blocks/_pro/gridcolcard-item-header/block.json
-msgctxt "block description"
-msgid "Header image area of Grid Column Card Block Item"
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item/block.json
-#: src/blocks/_pro/gridcolcard-item/block.json
-msgctxt "block title"
-msgid "Grid Column Card Item"
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/_pro/gridcolcard-item/block.json
-#: src/blocks/_pro/gridcolcard-item/block.json
-msgctxt "block description"
-msgid "It is a block of single column of Grid Column Card."
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/_pro/gridcolcard/block.json
-#: src/blocks/_pro/gridcolcard/block.json
-msgctxt "block title"
-msgid "Grid Column Card"
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/_pro/gridcolcard/block.json
-#: src/blocks/_pro/gridcolcard/block.json
-msgctxt "block description"
-msgid "This block can flexible column layout"
 msgstr ""

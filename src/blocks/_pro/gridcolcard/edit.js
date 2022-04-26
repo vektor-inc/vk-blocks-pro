@@ -171,7 +171,10 @@ export default function Edit(props) {
 					/>
 					<br />
 					<UnitControl
-						label={__('Column min width (Tablet / Optional)', 'vk-blocks')}
+						label={__(
+							'Column min width (Tablet / Optional)',
+							'vk-blocks'
+						)}
 						value={colWidthMinTablet}
 						onChange={(value) =>
 							setAttributes({ colWidthMinTablet: value })
@@ -179,7 +182,10 @@ export default function Edit(props) {
 					/>
 					<br />
 					<UnitControl
-						label={__('Column min width (PC / Optional)', 'vk-blocks')}
+						label={__(
+							'Column min width (PC / Optional)',
+							'vk-blocks'
+						)}
 						value={colWidthMinPC}
 						onChange={(value) =>
 							setAttributes({ colWidthMinPC: value })

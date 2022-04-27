@@ -25,7 +25,7 @@ import { dispatch, select } from '@wordpress/data';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { link, linkOff, keyboardReturn } from '@wordpress/icons';
-
+import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 export default function ButtonEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const {
@@ -56,7 +56,10 @@ export default function ButtonEdit(props) {
 		if (attributes.clientId !== undefined) {
 			setAttributes({ clientId: undefined });
 		}
-		if (blockId === undefined) {
+		if (
+			blockId === undefined ||
+			isParentReusableBlock(clientId) === false
+		) {
 			setAttributes({ blockId: clientId });
 		}
 		if (
@@ -260,43 +263,6 @@ export default function ButtonEdit(props) {
 			</BlockControls>
 			<InspectorControls>
 				<PanelBody title={__('Button setting', 'vk-blocks')}>
-					<TextControl
-						className={`mb-0`}
-						label={__('Block ID', 'vk-blocks')}
-						value={blockId}
-						onChange={(value) => setAttributes({ blockId: value })}
-					/>
-					<ul className={`mt-0 mb-3`}>
-						<li>
-							{__(
-								'This is the identification ID for this block style.',
-								'vk-blocks'
-							)}
-						</li>
-						<li>
-							{__(
-								"If you don't use custom colors, you don't have to worry about it.",
-								'vk-blocks'
-							)}
-						</li>
-						<li>
-							<strong>
-								{__(
-									'If you duplicate this block, please change the ID.',
-									'vk-blocks'
-								)}
-							</strong>
-						</li>
-						<li>
-							{__(
-								"This ID is'not id of HTML attribute.",
-								'vk-blocks'
-							)}
-						</li>
-					</ul>
-
-					<hr />
-
 					<TextControl
 						label={__('Sub Caption', 'vk-blocks')}
 						value={subCaption}

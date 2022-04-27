@@ -63,6 +63,8 @@ e.g.
 
 == Changelog ==
 
+[ fix ][ Heading ] Heading-Adjusted padding when there is a background.
+
 = 1.32.0 =
 [ Add Function ][ GridColCard ( Pro ) ] add column min-width setting for tablet and pc.
 [ Add Function ][ Button outer(Pro) ] Add button width option for mobile or tablet.

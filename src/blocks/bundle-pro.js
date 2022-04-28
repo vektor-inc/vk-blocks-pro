@@ -30,6 +30,8 @@ import * as stepItem from './_pro/step-item';
 import * as tableofContentsNew from './_pro/table-of-contents-new';
 import * as timeline from './_pro/timeline';
 import * as timelineItem from './_pro/timeline-item';
+import * as tab from './_pro/tab';
+import * as tabItem from './_pro/tab-item';
 
 const vkblocksPro = [
 	accordion,
@@ -61,6 +63,8 @@ const vkblocksPro = [
 	tableofContentsNew,
 	timeline,
 	timelineItem,
+	tab,
+	tabItem,
 ];
 
 export default vkblocksPro;

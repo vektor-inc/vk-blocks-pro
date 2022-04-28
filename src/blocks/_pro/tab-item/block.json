@@ -1,0 +1,23 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/tab-item",
+	"category": "vk-blocks-cat",
+	"parent": ["vk-blocks/tab"],
+	"attributes": {
+		"tabLabel": {
+			"type": "string",
+			"default": ""
+		},
+		"clientId": {
+			"type": "string",
+			"default": ""
+		},
+		"tabBodyActive": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"supports": {
+		"className": true
+	}
+}

@@ -64,7 +64,9 @@ class VK_Blocks_Block_Loader {
 		array( 'name' => 'step-item',             'is_pro' =>  true  ),
 		array( 'name' => 'table-of-contents-new', 'is_pro' =>  true  ),
 		array( 'name' => 'timeline',              'is_pro' =>  true  ),
-		array( 'name' => 'timeline-item',         'is_pro' =>  true  )
+		array( 'name' => 'timeline-item',         'is_pro' =>  true  ),
+		array( 'name' => 'tab',              'is_pro' =>  true  ),
+		array( 'name' => 'tab-item',         'is_pro' =>  true  )
 	);
 	// phpcs:enable
 

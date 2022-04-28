@@ -1,0 +1,271 @@
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+:root {
+	--vk-color-border: rgba(0,0,0,.12);
+	--vk-size-text: 16px;
+	--vk-color-bg-accent-wh: rgba(255,255,255,0.65);
+	--default-color:#337ab7;
+}
+@mixin speechーballoon-li-after {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(136, 183, 213, 0);
+	border-top-color: var(--default-color);
+	border-width: 10px;
+	margin-left: -10px;
+}
+
+@mixin no-frame {
+	.vk_tab_bodys{
+		border: none;
+		padding-right: 0;
+		padding-left:0;
+		background-color: transparent;
+	}
+}
+
+
+@mixin line {
+	.vk_tab_labels .vk_tab_labels_label{
+		color: inherit;
+		background: none;
+		background-color: var(--vk-color-bg-accent-wh);
+		margin-left: 0;
+		margin-right: 0;
+		border-top: 1px solid var(--vk-color-border);
+		border-left: 1px solid var(--vk-color-border);
+		border-radius: 0;
+		&:last-child{
+			border-right: 1px solid var(--vk-color-border);
+		}
+		&::before,&::after{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			display: block;
+			width: 100%;
+			content: "";
+		}
+		&::before{
+			bottom:0;
+			z-index: 0;
+			height: 1px;
+			background-color: var(--vk-color-border);
+		}
+		&::after{
+			top:0;
+			bottom: unset;
+			transition: all .5s ease-out;
+		}
+		&:hover{
+			color:var(--default-color);
+			background-color: var(--vk-color-bg-accent-wh);
+			&::before{
+				bottom:0;
+				z-index: 0;
+				height: 1px;
+				background-color: var(--vk-color-bg-accent-wh);
+			}
+			&::after{
+				z-index: 1;
+				height: 2px;
+				background-color: var(--default-color);
+				transition: all .5s ease-out;
+			}
+		}
+
+		&.vk_tab_labels_label-state-active{
+			color:var(--default-color);
+			background-color: var(--vk-color-bg-accent-wh);
+			&::before{
+				// content: none;
+				background-color: #fff;
+			}
+			&::after{							
+				z-index: 1;
+				height: 2px;
+				background-color: var(--default-color);
+			}
+
+		}
+
+	}
+
+}
+  
+
+
+/* style
+--------------------------------------------*/
+.is-style-vk_tab_labels{
+
+	&-normal-no-frame{
+		@include no-frame();
+	}
+	&-speechーballoon{
+		.vk_tab_labels_label.vk_tab_labels_label-state-active::after{
+			@include speechーballoon-li-after();
+		}
+	}
+	&-speechーballoon-no-frame{
+		.vk_tab_labels_label.vk_tab_labels_label-state-active::after{
+			@include speechーballoon-li-after();
+		}
+		@include no-frame();
+	}
+	&-line{
+		@include line();
+		.vk_tab_labels{
+			margin-bottom:-1px;
+		}		
+		.vk_tab_bodys{
+			border-top:1px solid var(--vk-color-border);
+			background-color: var(--vk-color-bg-accent-wh);
+		}
+	}
+	&-line-no-frame{
+		@include line();
+		.vk_tab_labels {
+			margin-bottom: -1px;
+		}
+		@include no-frame();
+	}
+	&-line-simple{
+		.vk_tab_labels .vk_tab_labels_label{
+			color: inherit;
+			background: none;
+			background-color: transparent;
+			margin-left: 0;
+			margin-right: 0;
+			&::before,&::after{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				display: block;
+				width: 100%;
+				content: "";
+			}
+			&::before{
+				z-index: 0;
+				height: 1px;
+				background-color: var(--vk-color-border);
+			}
+			&:hover{
+				color:var(--default-color);
+				background-color: transparent;
+				&::after{
+					z-index: 1;
+					height: 2px;
+					background-color: var(--default-color);
+					transition: all .5s ease-out;
+				}
+			}
+
+			&.vk_tab_labels_label-state-active{
+				color:var(--default-color);
+				background-color: transparent;
+				&::after{							
+					z-index: 1;
+					height: 2px;
+					background-color: var(--default-color);
+				}
+
+			}
+
+		}
+		@include no-frame();
+	}
+
+}
+
+/* default style
+--------------------------------------------*/
+.vk_tab{
+	margin-bottom: calc( var(--vk-size-text) * 2);
+	&_labels{
+		
+		padding: 0;
+		margin: 0;
+		display: flex;
+		.vk_tab_labels_label{
+			// flex-grow: 1; 
+			background-color: var(--default-color);
+			position: relative;
+			list-style: none;
+			text-align: center;
+			transition: all .5s ease-out;
+
+			padding: calc( var(--vk-size-text) * 0.5 ) calc( var(--vk-size-text) * 1 );
+			cursor: pointer;
+			background-color: rgba(0,0,0,.08);
+			border-radius:calc( var(--vk-size-text) * 0.3 ) calc( var(--vk-size-text) * 0.3 ) 0 0;
+			margin:0 calc( var(--vk-size-text) * 0.15 );
+			line-height: 1.5;			
+			&:hover{
+				background-color: var(--default-color);
+				color: #fff;
+			}
+			
+			&:first-child{
+				margin-left:0;
+			}
+			&:last-child{
+				margin-right: 0;
+			}
+			&.vk_tab_labels_label-state-active{
+				background-color: var(--default-color);
+				// font-weight: bold;
+				color: #fff;
+			}
+		}
+		
+	}
+
+}
+.vk_tab_bodys{
+	border-top: 2px solid var(--default-color);
+	border-right: 1px solid var(--vk-color-border);
+	border-bottom: 1px solid var(--vk-color-border);
+	border-left: 1px solid var(--vk-color-border);
+	padding: calc( var(--vk-size-text) * 1);
+	background-color: var(--vk-color-bg-accent-wh);
+	@media (min-width: 768px){
+		padding: calc( var(--vk-size-text) * 2);	
+	}
+	.vk_tab_bodys_body {
+		display: none;
+		&.vk_tab_bodys_body-state-active{
+			display: block;
+		}
+	}
+}
+
+/*      編集画面
+/*-------------------------------------------*/
+.editor-styles-wrapper{
+	.vk_tab{
+		position: relative;
+		&.is-style-vk_tab_labels-line .vk_tab_labels {
+			margin-bottom: -1px;
+		}
+		ul.vk_tab_labels{
+			margin:0;
+			padding: 0;
+		}
+		.block-list-appender{
+			position: absolute;
+			top: calc(var(--vk-size-text) * -6 );
+			right: calc(var(--vk-size-text) * 0 );
+
+
+		}
+	}
+
+}

@@ -61,6 +61,8 @@ e.g.
 1. VK Blocks can be selected from the VK Blocks Panel.
 1. VK Blocks examples.
 
+[ Improvement ][ Button ] Delete block id UI.
+
 == Changelog ==
 
 = 1.32.0 =

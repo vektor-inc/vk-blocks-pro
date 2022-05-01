@@ -106,9 +106,7 @@ $xl-min: 1200px;
 			}
 
 		}
-
 	}
-
 }
   
 
@@ -116,7 +114,6 @@ $xl-min: 1200px;
 /* style
 --------------------------------------------*/
 .is-style-vk_tab_labels{
-
 	&-normal-no-frame{
 		@include no-frame();
 	}
@@ -208,7 +205,6 @@ $xl-min: 1200px;
 		flex-wrap: wrap;
 		justify-content: space-between;
 		.vk_tab_labels_label{
-			// flex-grow: 1; 
 			background-color: var(--default-color);
 			position: relative;
 			list-style: none;
@@ -218,19 +214,12 @@ $xl-min: 1200px;
 			cursor: pointer;
 			background-color: rgba(0,0,0,.08);
 			border-radius:calc( var(--vk-size-text) * 0.3 ) calc( var(--vk-size-text) * 0.3 ) 0 0;
-			// margin:0 calc( var(--vk-size-text) * 0.15 );
 			margin:0;
 			line-height: 1.5;		
 			&:hover{
 				background-color: var(--default-color);
 				color: #fff;
 			}	
-			// &:first-child{
-			// 	margin-left:0;
-			// }
-			// &:last-child{
-			// 	margin-right: 0;
-			// }
 			&.vk_tab_labels_label-state-active{
 				background-color: var(--default-color);
 				// font-weight: bold;
@@ -246,7 +235,7 @@ $xl-min: 1200px;
 	border-right: 1px solid var(--vk-color-border);
 	border-bottom: 1px solid var(--vk-color-border);
 	border-left: 1px solid var(--vk-color-border);
-	padding: calc( var(--vk-size-text) * 1);
+	padding: 1rem;
 	background-color: var(--vk-color-bg-accent-wh);
 	@media (min-width: 768px){
 		padding: calc( var(--vk-size-text) * 2);	

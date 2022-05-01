@@ -12,12 +12,7 @@ import { __, sprintf } from '@wordpress/i18n';
 
 export default function TabEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
-	const {
-		firstActive,
-		tabSizeSp,
-		tabSizeTab,
-		tabSizePc,
-	} = attributes;
+	const { firstActive, tabSizeSp, tabSizeTab, tabSizePc } = attributes;
 	attributes.clientId = clientId;
 
 	const ALLOWED_BLOCKS = ['vk-blocks/tab-item'];

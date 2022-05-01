@@ -237,9 +237,6 @@ $xl-min: 1200px;
 	border-left: 1px solid var(--vk-color-border);
 	padding: 1rem;
 	background-color: var(--vk-color-bg-accent-wh);
-	@media (min-width: 768px){
-		padding: calc( var(--vk-size-text) * 2);	
-	}
 	.vk_tab_bodys_body {
 		display: none;
 		&.vk_tab_bodys_body-state-active{

@@ -83,7 +83,7 @@ add_action(
 			update_option( 'vkExUnit_common_options', $options );
 		}
 
-		// Deactive VK Grid Colomun Card Plugin
+		// Deactive VK Grid Colomun Card Plugin.
 		if ( is_plugin_active( 'vk-gridcolcard/vk-gridcolcard.php' ) ) {
 			if ( function_exists( 'vk_blocks_deactivate_plugin' ) ) {
 				vk_blocks_deactivate_plugin( 'vk-gridcolcard/vk-gridcolcard.php' );
@@ -141,11 +141,11 @@ function vk_blocks_update_checker() {
 		$license = '';
 	}
 
-	// 管理画面 かつ  テーマオプションの編集権限がある場合
+	// 管理画面 かつ  テーマオプションの編集権限がある場合.
 	if ( is_admin() && current_user_can( 'edit_theme_options' ) ) {
 		$network_runnning_pro = false;
 
-		// マルチサイトでOriginal Brand Unitが動いていたら
+		// マルチサイトでOriginal Brand Unitが動いていたら.
 		if ( is_multisite() ) {
 			$network_options = get_site_option( 'active_sitewide_plugins', array() );
 			if ( isset( $network_options['lightning-original-brand-unit/lightning-original-brand-unit.php'] ) ) {
@@ -153,7 +153,7 @@ function vk_blocks_update_checker() {
 			}
 		}
 
-		// マルチサイトでOriginal Brand Unitが動いていない && Original Brand Unitが有効になっていない
+		// マルチサイトでOriginal Brand Unitが動いていない && Original Brand Unitが有効になっていない.
 		$active_plugins = get_option( 'active_plugins', array() );
 		if ( ! $network_runnning_pro && ! in_array( 'lightning-original-brand-unit/lightning-original-brand-unit.php', $active_plugins, true ) ) {
 			$state  = $vk_blocks_update_checker->getUpdateState();
@@ -161,6 +161,8 @@ function vk_blocks_update_checker() {
 
 			// ライセンスキーが未入力の場合.
 			if ( empty( $license ) && wp_get_theme()->Template !== 'katawara' ) {
+
+				// ライセンス入力を促すメッセージを表示.
 				add_action(
 					'admin_notices',
 					function() {
@@ -175,10 +177,14 @@ function vk_blocks_update_checker() {
 				);
 			}
 
+			// ライセンスが切れている場合.
+			// アップデートは存在するがURLが帰ってこなかった場合.
 			if (
 				! empty( $update )
 				&& empty( $update->download_url )
 				) {
+
+				// 期限切れのメッセージを表示.
 				add_action(
 					'admin_notices',
 					function() use ( $vk_blocks_update_checker ) {
@@ -205,10 +211,9 @@ function vk_blocks_update_checker() {
 								$link_url
 							)
 						);
-						if ( get_locale() === 'ja' ) {
-							/* translators: %s: アップデートURL */
-							echo wp_kses_post( sprintf( __( 'If you need update. get <a href="%s" target="_blank">Update License</a>.', 'vk-blocks' ), 'https://vws.vektor-inc.co.jp/product/lightning-g3-pro-pack' ) );
-						}
+
+						/* translators: %s: アップデートURL */
+						echo wp_kses_post( sprintf( __( 'If you need update. get <a href="%s" target="_blank">Update License</a>.', 'vk-blocks' ), 'https://vws.vektor-inc.co.jp/product/lightning-g3-pro-pack' ) );
 						echo '</p></div>';
 					}
 				);
@@ -245,9 +250,3 @@ function vk_blocks_get_license_check_query_arg( $query_args ) {
 
 	return $query_args;
 }
-
-
-
-
-
-

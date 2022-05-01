@@ -127,7 +127,12 @@ function vk_blocks_update_checker() {
 
 	$vk_blocks_update_checker->addQueryArgFilter( 'vk_blocks_get_license_check_query_arg' );
 	$options = get_option( 'vk_blocks_options' );
-	$license = esc_html( $options['vk_blocks_pro_license_key'] );
+
+	if ( ! empty( $options['vk_blocks_pro_license_key'] ) ) {
+		$license = esc_html( $options['vk_blocks_pro_license_key'] );
+	} else {
+		$license = '';
+	}
 
 	// 管理画面 かつ  テーマオプションの編集権限がある場合
 	if ( is_admin() && current_user_can( 'edit_theme_options' ) ) {

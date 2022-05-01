@@ -168,7 +168,8 @@ function vk_blocks_update_checker() {
 					function() {
 						echo '<div class="error"><p>';
 						echo wp_kses_post( __( 'License Key has no registered.', 'vk-blocks' ) );
-						echo wp_kses_post( __( 'You need register License Key at Settings > VK Blocks > License Key.', 'vk-blocks' ) );
+						/* translators: %s: 設定画面URL */
+						echo wp_kses_post( sprintf( __( 'You need register License Key at <a href="%s">Settings > VK Blocks > License Key</a>.', 'vk-blocks' ), admin_url() . '/options-general.php?page=vk_blocks_options' ) );
 						echo '</p><p>';
 						/* translators: %s: 再読み込みURL */
 						echo wp_kses_post( sprintf( __( 'Even after license key registration you still seeing this message, <a href="%s">please click here</a>.', 'vk-blocks' ), admin_url() . '/update-core.php?force-check=1' ) );

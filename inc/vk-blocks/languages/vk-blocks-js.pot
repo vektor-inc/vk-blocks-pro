@@ -1088,44 +1088,28 @@ msgstr ""
 msgid "Tab Size ( Extra small )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:231
+#: src/blocks/_pro/tab/edit.js:215
 msgid "Tab Size ( Small )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:264
+#: src/blocks/_pro/tab/edit.js:232
 msgid "Tab Size ( Mediium )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:297
+#: src/blocks/_pro/tab/edit.js:249
 msgid "Tab Size ( Large )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:330
+#: src/blocks/_pro/tab/edit.js:266
 msgid "Tab Size ( Extra large )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:334
+#: src/blocks/_pro/tab/edit.js:270
 msgid "Fit Text"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:338
+#: src/blocks/_pro/tab/edit.js:274
 msgid "Fit full Width"
-msgstr ""
-
-#: src/blocks/_pro/tab/edit.js:342
-msgid "Equal 1 Column"
-msgstr ""
-
-#: src/blocks/_pro/tab/edit.js:346
-msgid "Equal 2 Column"
-msgstr ""
-
-#: src/blocks/_pro/tab/edit.js:350
-msgid "Equal 3 Column"
-msgstr ""
-
-#: src/blocks/_pro/tab/edit.js:354
-msgid "Equal 4 Column"
 msgstr ""
 
 #: src/blocks/_pro/tab/index.js:55

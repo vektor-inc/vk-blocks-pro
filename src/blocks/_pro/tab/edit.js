@@ -93,7 +93,7 @@ export default function TabEdit(props) {
 		}
 	};
 
-	const tabSizePrefix = 'vk_tab_labels-tabSize-col-';
+	const tabSizePrefix = 'vk_tab_labels-tabSize';
 
 	const tabSizes = [
 		{
@@ -121,7 +121,7 @@ export default function TabEdit(props) {
 	let tabListClassName = `vk_tab_labels`;
 	tabSizes.forEach((tabSize) => {
 		if (tabSize.attribute !== null && tabSize.attribute !== undefined) {
-			tabListClassName += ` ${tabSizePrefix}-${tabSize.name}-${tabSize.attribute}`;
+			tabListClassName += ` ${tabSizePrefix}--${tabSize.name}-${tabSize.attribute}`;
 		}
 	});
 
@@ -206,22 +206,6 @@ export default function TabEdit(props) {
 								label: __('Fit full Width', 'vk-blocks'),
 								value: 'fit-width',
 							},
-							{
-								label: __('Equal 1 Column', 'vk-blocks'),
-								value: '12',
-							},
-							{
-								label: __('Equal 2 Column', 'vk-blocks'),
-								value: '6',
-							},
-							{
-								label: __('Equal 3 Column', 'vk-blocks'),
-								value: '4',
-							},
-							{
-								label: __('Equal 4 Column', 'vk-blocks'),
-								value: '3',
-							},
 						]}
 						onChange={(value) =>
 							setAttributes({ tabSizeXs: value })
@@ -238,22 +222,6 @@ export default function TabEdit(props) {
 							{
 								label: __('Fit full Width', 'vk-blocks'),
 								value: 'fit-width',
-							},
-							{
-								label: __('Equal 1 Column', 'vk-blocks'),
-								value: '12',
-							},
-							{
-								label: __('Equal 2 Column', 'vk-blocks'),
-								value: '6',
-							},
-							{
-								label: __('Equal 3 Column', 'vk-blocks'),
-								value: '4',
-							},
-							{
-								label: __('Equal 4 Column', 'vk-blocks'),
-								value: '3',
 							},
 						]}
 						onChange={(value) =>
@@ -272,22 +240,6 @@ export default function TabEdit(props) {
 								label: __('Fit full Width', 'vk-blocks'),
 								value: 'fit-width',
 							},
-							{
-								label: __('Equal 1 Column', 'vk-blocks'),
-								value: '12',
-							},
-							{
-								label: __('Equal 2 Column', 'vk-blocks'),
-								value: '6',
-							},
-							{
-								label: __('Equal 3 Column', 'vk-blocks'),
-								value: '4',
-							},
-							{
-								label: __('Equal 4 Column', 'vk-blocks'),
-								value: '3',
-							},
 						]}
 						onChange={(value) =>
 							setAttributes({ tabSizeMd: value })
@@ -305,22 +257,6 @@ export default function TabEdit(props) {
 								label: __('Fit full Width', 'vk-blocks'),
 								value: 'fit-width',
 							},
-							{
-								label: __('Equal 1 Column', 'vk-blocks'),
-								value: '12',
-							},
-							{
-								label: __('Equal 2 Column', 'vk-blocks'),
-								value: '6',
-							},
-							{
-								label: __('Equal 3 Column', 'vk-blocks'),
-								value: '4',
-							},
-							{
-								label: __('Equal 4 Column', 'vk-blocks'),
-								value: '3',
-							},
 						]}
 						onChange={(value) =>
 							setAttributes({ tabSizeLg: value })
@@ -337,23 +273,7 @@ export default function TabEdit(props) {
 							{
 								label: __('Fit full Width', 'vk-blocks'),
 								value: 'fit-width',
-							},
-							{
-								label: __('Equal 1 Column', 'vk-blocks'),
-								value: '12',
-							},
-							{
-								label: __('Equal 2 Column', 'vk-blocks'),
-								value: '6',
-							},
-							{
-								label: __('Equal 3 Column', 'vk-blocks'),
-								value: '4',
-							},
-							{
-								label: __('Equal 4 Column', 'vk-blocks'),
-								value: '3',
-							},
+							}
 						]}
 						onChange={(value) =>
 							setAttributes({ tabSizeXl: value })

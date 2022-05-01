@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-05-01T01:49:56+00:00\n"
+"POT-Creation-Date: 2022-05-01T06:13:25+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 "X-Domain: vk-blocks\n"
@@ -1114,36 +1114,36 @@ msgstr ""
 msgid "Tab Size ( Mediium )"
 msgstr ""
 
+#: src/blocks/_pro/tab/edit.js:276
+msgid "Equal 1 Column"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:280
+msgid "Equal 2 Column"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:284
+msgid "Equal 3 Column"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:288
+msgid "Equal 4 Column"
+msgstr ""
+
 #: src/blocks/_pro/tab/edit.js:297
 msgid "Tab Size ( Large )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:330
+#: src/blocks/_pro/tab/edit.js:314
 msgid "Tab Size ( Extra large )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:334
+#: src/blocks/_pro/tab/edit.js:318
 msgid "Fit Text"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:338
+#: src/blocks/_pro/tab/edit.js:322
 msgid "Fit full Width"
-msgstr ""
-
-#: src/blocks/_pro/tab/edit.js:342
-msgid "Equal 1 Column"
-msgstr ""
-
-#: src/blocks/_pro/tab/edit.js:346
-msgid "Equal 2 Column"
-msgstr ""
-
-#: src/blocks/_pro/tab/edit.js:350
-msgid "Equal 3 Column"
-msgstr ""
-
-#: src/blocks/_pro/tab/edit.js:354
-msgid "Equal 4 Column"
 msgstr ""
 
 #: src/blocks/_pro/tab/index.js:55

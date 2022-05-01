@@ -15,23 +15,15 @@
 			"type": "number",
 			"default": 0
 		},
-		"tabSizeXs": {
+		"tabSizeSp": {
 			"type": "string",
 			"default": "text"
 		},
-		"tabSizeSm": {
+		"tabSizeTab": {
 			"type": "string",
 			"default": "text"
 		},
-		"tabSizeMd": {
-			"type": "string",
-			"default": "text"
-		},
-		"tabSizeLg": {
-			"type": "string",
-			"default": "text"
-		},
-		"tabSizeXl": {
+		"tabSizePc": {
 			"type": "string",
 			"default": "text"
 		},

@@ -260,67 +260,41 @@ $xl-min: 1200px;
 
 .vk_tab_labels-tabSize{
 	@media(max-width:$xs-max){
-		&--xs-text {
+		&--sp-fitText {
 			justify-content: flex-start;
 		}
-		&--xs-text,
-		&--xs-fit-width{
+		&--sp-fitText,
+		&--sp-monospaced{
 			flex-wrap: nowrap;
 			gap:var(--vk-tab-gap);
 		}
-		&--xs-fit-width li { 
+		&--sp-monospaced li { 
 			width:100%;
 		}
 	}
 	@media ( min-width:$sm-min ){
-		&--sm-text {
+		&--tab-fitText {
 			justify-content: flex-start;
 		}
-		&--sm-text,
-		&--sm-fit-width{
+		&--tab-fitText,
+		&--tab-monospaced{
 			flex-wrap: nowrap;
 			gap:var(--vk-tab-gap);
 		}
-		&--sm-fit-width li { 
-			width:100%;
-		}
-	}
-	@media ( min-width:$md-min ){
-		&--md-text {
-			justify-content: flex-start;
-		}
-		&--md-text,
-		&--md-fit-width{
-			flex-wrap: nowrap;
-			gap:var(--vk-tab-gap);
-		}
-		&--md-fit-width li { 
+		&--tab-monospaced li { 
 			width:100%;
 		}
 	}
 	@media ( min-width:$lg-min ){
-		&--lg-text {
+		&--pc-fitText {
 			justify-content: flex-start;
 		}
-		&--lg-text,
-		&--lg-fit-width{
+		&--pc-fitText,
+		&--pc-monospaced{
 			flex-wrap: nowrap;
 			gap:var(--vk-tab-gap);
 		}
-		&--lg-fit-width li { 
-			width:100%;
-		}
-	}
-	@media ( min-width:$xl-min ){
-		&--xl-text {
-			justify-content: flex-start;
-		}
-		&--xl-text,
-		&--xl-fit-width{
-			flex-wrap: nowrap;
-			gap:var(--vk-tab-gap);
-		}
-		&--xl-fit-width li { 
+		&--pc-monospaced li { 
 			width:100%;
 		}
 	}

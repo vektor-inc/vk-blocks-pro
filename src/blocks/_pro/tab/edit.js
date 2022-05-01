@@ -14,11 +14,9 @@ export default function TabEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const {
 		firstActive,
-		tabSizeXs,
-		tabSizeSm,
-		tabSizeMd,
-		tabSizeLg,
-		tabSizeXl,
+		tabSizeSp,
+		tabSizeTab,
+		tabSizePc,
 	} = attributes;
 	attributes.clientId = clientId;
 
@@ -97,24 +95,16 @@ export default function TabEdit(props) {
 
 	const tabSizes = [
 		{
-			name: 'xs',
-			attribute: tabSizeXs,
+			name: 'sp',
+			attribute: tabSizeSp,
 		},
 		{
-			name: 'sm',
-			attribute: tabSizeSm,
+			name: 'tab',
+			attribute: tabSizeTab,
 		},
 		{
-			name: 'md',
-			attribute: tabSizeMd,
-		},
-		{
-			name: 'lg',
-			attribute: tabSizeLg,
-		},
-		{
-			name: 'xl',
-			attribute: tabSizeXl,
+			name: 'pc',
+			attribute: tabSizePc,
 		},
 	];
 
@@ -195,88 +185,54 @@ export default function TabEdit(props) {
 			<InspectorControls>
 				<PanelBody title={__('Tab size Setting', 'vk-blocks')}>
 					<RadioControl
-						label={__('Tab Size ( Extra small )', 'vk-blocks')}
-						selected={tabSizeXs}
+						label={__('Tab Size ( Smart Phone )', 'vk-blocks')}
+						selected={tabSizeSp}
 						options={[
 							{
-								label: __('Fit Text', 'vk-blocks'),
-								value: 'text',
+								label: __('Fit to the text', 'vk-blocks'),
+								value: 'fitText',
 							},
 							{
-								label: __('Fit full Width', 'vk-blocks'),
-								value: 'fit-width',
+								label: __('Monospaced', 'vk-blocks'),
+								value: 'monospaced',
 							},
 						]}
 						onChange={(value) =>
-							setAttributes({ tabSizeXs: value })
+							setAttributes({ tabSizeSp: value })
 						}
 					/>
 					<RadioControl
-						label={__('Tab Size ( Small )', 'vk-blocks')}
-						selected={tabSizeSm}
+						label={__('Tab Size ( Tablet )', 'vk-blocks')}
+						selected={tabSizeTab}
 						options={[
 							{
-								label: __('Fit Text', 'vk-blocks'),
-								value: 'text',
+								label: __('Fit to the text', 'vk-blocks'),
+								value: 'fitText',
 							},
 							{
-								label: __('Fit full Width', 'vk-blocks'),
-								value: 'fit-width',
+								label: __('Monospaced', 'vk-blocks'),
+								value: 'monospaced',
 							},
 						]}
 						onChange={(value) =>
-							setAttributes({ tabSizeSm: value })
+							setAttributes({ tabSizeTab: value })
 						}
 					/>
 					<RadioControl
-						label={__('Tab Size ( Mediium )', 'vk-blocks')}
-						selected={tabSizeMd}
+						label={__('Tab Size ( PC )', 'vk-blocks')}
+						selected={tabSizePc}
 						options={[
 							{
-								label: __('Fit Text', 'vk-blocks'),
-								value: 'text',
+								label: __('Fit to the text', 'vk-blocks'),
+								value: 'fitText',
 							},
 							{
-								label: __('Fit full Width', 'vk-blocks'),
-								value: 'fit-width',
+								label: __('Monospaced', 'vk-blocks'),
+								value: 'monospaced',
 							},
 						]}
 						onChange={(value) =>
-							setAttributes({ tabSizeMd: value })
-						}
-					/>
-					<RadioControl
-						label={__('Tab Size ( Large )', 'vk-blocks')}
-						selected={tabSizeLg}
-						options={[
-							{
-								label: __('Fit Text', 'vk-blocks'),
-								value: 'text',
-							},
-							{
-								label: __('Fit full Width', 'vk-blocks'),
-								value: 'fit-width',
-							},
-						]}
-						onChange={(value) =>
-							setAttributes({ tabSizeLg: value })
-						}
-					/>
-					<RadioControl
-						label={__('Tab Size ( Extra large )', 'vk-blocks')}
-						selected={tabSizeXl}
-						options={[
-							{
-								label: __('Fit Text', 'vk-blocks'),
-								value: 'text',
-							},
-							{
-								label: __('Fit full Width', 'vk-blocks'),
-								value: 'fit-width',
-							}
-						]}
-						onChange={(value) =>
-							setAttributes({ tabSizeXl: value })
+							setAttributes({ tabSizePc: value })
 						}
 					/>
 				</PanelBody>

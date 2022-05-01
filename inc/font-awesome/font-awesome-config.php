@@ -19,6 +19,14 @@ if ( ! class_exists( 'Vk_Font_Awesome_Versions' ) ) {
 	}
 }
 
+/*
+ * Font Awesome API Load modules
+ */
+if ( ! class_exists( 'VK_Blocks_Font_Awesome_API' ) ) {
+	require_once dirname( __FILE__ ) . '/class-vk-blocks-font-awesome-api.php';
+	new VK_Blocks_Font_Awesome_API();
+}
+
 /**
  * Font Awsome のアイコンの URL を渡す
  */
@@ -36,12 +44,25 @@ function vk_blocks_font_awesome_init() {
 		$fa_family   = 'Font Awesome 6 Free';
 	}
 
+	$choice_array = VkFontAwesomeVersions::versions();
+
+	$font_awesome_versions = array();
+
+	foreach ( $choice_array as $key => $value ) {
+		$font_awesome_versions[] = array(
+			'label' => $value['label'],
+			'value' => $key,
+		);
+	}
+
 	wp_localize_script(
 		'vk-blocks-build-js',
 		'vkFontAwesome',
 		array(
-			'iconsUrl'   => $fa_icon_url,
-			'iconFamily' => $fa_family,
+			'iconsUrl'       => $fa_icon_url,
+			'iconFamily'     => $fa_family,
+			'versions'       => $font_awesome_versions,
+			'currentVersion' => $options,
 		)
 	);
 }

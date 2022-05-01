@@ -3,8 +3,8 @@
  * Plugin Name: VK Blocks Pro
  * Plugin URI: https://github.com/vektor-inc/vk-blocks
  * Description: This is a plugin that extends Gutenberg's blocks.
- * Version: 1.28.0.0
- * Stable tag: 1.27.9.0
+ * Version: 1.32.0.1
+ * Stable tag: 1.31.0.0
  * Requires at least: 5.8
  * Author: Vektor,Inc.
  * Author URI: https://vektor-inc.co.jp
@@ -81,6 +81,13 @@ add_action(
 		if ( ! empty( $options['active_vk-blocks'] ) ) {
 			$options['active_vk-blocks'] = false;
 			update_option( 'vkExUnit_common_options', $options );
+		}
+
+		// Deactive VK Grid Colomun Card Plugin
+		if ( is_plugin_active( 'vk-gridcolcard/vk-gridcolcard.php' ) ) {
+			if ( function_exists( 'vk_blocks_deactivate_plugin' ) ) {
+				vk_blocks_deactivate_plugin( 'vk-gridcolcard/vk-gridcolcard.php' );
+			}
 		}
 	},
 	9999

@@ -41,6 +41,18 @@
 			"type": "string",
 			"default": "left"
 		},
+		"buttonWidthMobile": {
+			"type": "number",
+			"default": 0
+		},
+		"buttonWidthTablet": {
+			"type": "number",
+			"default": 0
+		},
+		"buttonWidth": {
+			"type": "number",
+			"default": 0
+		},
 		"fontAwesomeIconBefore": {
 			"type": "string"
 		},
@@ -52,6 +64,10 @@
 		},
 		"blockId": {
 			"type": "string"
+		},
+		"old_1_31_0": {
+			"type": "string",
+			"default": true
 		}
 	},
 	"description": "A button link that can display icons before and after.",

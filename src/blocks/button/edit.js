@@ -9,17 +9,23 @@ import {
 	TextControl,
 	ButtonGroup,
 	Button,
+	ToolbarGroup,
+	ToolbarButton,
+	Dropdown,
 } from '@wordpress/components';
 import {
 	RichText,
 	InspectorControls,
 	useBlockProps,
+	BlockControls,
+	URLInput,
 } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
-import { dispatch } from '@wordpress/data';
+import { dispatch, select } from '@wordpress/data';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
-
+import { link, linkOff, keyboardReturn } from '@wordpress/icons';
+import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 export default function ButtonEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const {
@@ -33,9 +39,13 @@ export default function ButtonEdit(props) {
 		buttonTextColorCustom,
 		buttonColorCustom,
 		buttonAlign,
+		buttonWidthMobile,
+		buttonWidthTablet,
+		buttonWidth,
 		fontAwesomeIconBefore,
 		fontAwesomeIconAfter,
 		blockId,
+		old_1_31_0,
 	} = attributes;
 
 	// eslint-disable-next-line no-undef
@@ -46,7 +56,10 @@ export default function ButtonEdit(props) {
 		if (attributes.clientId !== undefined) {
 			setAttributes({ clientId: undefined });
 		}
-		if (blockId === undefined) {
+		if (
+			blockId === undefined ||
+			isParentReusableBlock(clientId) === false
+		) {
 			setAttributes({ blockId: clientId });
 		}
 		if (
@@ -92,6 +105,15 @@ export default function ButtonEdit(props) {
 		) {
 			setAttributes({ subCaption: undefined });
 		}
+		if (old_1_31_0 === undefined) {
+			if (buttonWidthMobile === undefined) {
+				setAttributes({ buttonWidthMobile: buttonWidth });
+			}
+			if (buttonWidthTablet === undefined) {
+				setAttributes({ buttonWidthTablet: buttonWidth });
+			}
+			setAttributes({ old_1_31_0: true });
+		}
 	}, [clientId]);
 
 	const { updateBlockAttributes } = dispatch('core/block-editor');
@@ -124,12 +146,35 @@ export default function ButtonEdit(props) {
 		}
 	}, [buttonColorCustom]);
 
+	// 親ブロックが vk-blocks/button-outer かどうか判定
+	const parent = select('core/block-editor').getBlockParentsByBlockName(
+		clientId,
+		['vk-blocks/button-outer']
+	);
+	const isInnerButton = parent.length ? true : false;
+
 	let containerClass;
 	// カスタムカラーの場合
 	if (buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) {
-		containerClass = `vk_button vk_button-align-${buttonAlign} vk_button-color-custom vk_button-${blockId}`;
+		containerClass = `vk_button vk_button-color-custom vk_button-${blockId}`;
 	} else {
-		containerClass = `vk_button vk_button-align-${buttonAlign} vk_button-color-custom`;
+		containerClass = `vk_button vk_button-color-custom`;
+	}
+
+	if (isInnerButton) {
+		if (buttonWidthMobile) {
+			// 横並びボタンで幅が指定されている
+			containerClass += ` vk_button-width-mobile-${buttonWidthMobile}`;
+		}
+		if (buttonWidthTablet) {
+			containerClass += ` vk_button-width-tablet-${buttonWidthTablet}`;
+		}
+		if (buttonWidth) {
+			containerClass += ` vk_button-width-${buttonWidth}`;
+		}
+	} else {
+		containerClass += ` vk_button-align-${buttonAlign}`;
+		setAttributes({ buttonWidth: 0 });
 	}
 
 	const blockProps = useBlockProps({
@@ -138,63 +183,86 @@ export default function ButtonEdit(props) {
 
 	return (
 		<>
+			<BlockControls>
+				<ToolbarGroup>
+					<Dropdown
+						renderToggle={({ isOpen, onToggle }) => {
+							const setLink = () => {
+								if (isOpen && buttonUrl !== '') {
+									// linkOff
+									setAttributes({ buttonUrl: '' });
+								}
+								onToggle();
+							};
+							return (
+								<ToolbarButton
+									aria-expanded={isOpen}
+									icon={
+										buttonUrl !== '' && isOpen
+											? linkOff
+											: link
+									}
+									isActive={
+										buttonUrl !== '' && isOpen
+											? true
+											: false
+									}
+									label={
+										buttonUrl !== '' && isOpen
+											? __('Unlink')
+											: __('Input Link URL', 'vk-blocks')
+									}
+									onClick={setLink}
+								/>
+							);
+						}}
+						renderContent={(params) => {
+							return (
+								<div className="block-editor-url-input__button block-editor-link-control">
+									<form
+										className="block-editor-link-control__search-input-wrapper"
+										onSubmit={() => {
+											params.onClose();
+										}}
+									>
+										<div className="block-editor-link-control__search-input">
+											<URLInput
+												value={buttonUrl}
+												onChange={(value) => {
+													setAttributes({
+														buttonUrl: value,
+													});
+												}}
+											/>
+											<CheckboxControl
+												label={__(
+													'Open link new tab.',
+													'vk-blocks'
+												)}
+												checked={buttonTarget}
+												onChange={(checked) =>
+													setAttributes({
+														buttonTarget: checked,
+													})
+												}
+											/>
+											<div className="block-editor-link-control__search-actions">
+												<Button
+													icon={keyboardReturn}
+													label={__('Submit')}
+													type="submit"
+												/>
+											</div>
+										</div>
+									</form>
+								</div>
+							);
+						}}
+					/>
+				</ToolbarGroup>
+			</BlockControls>
 			<InspectorControls>
 				<PanelBody title={__('Button setting', 'vk-blocks')}>
-					<TextControl
-						className={`mb-0`}
-						label={__('Block ID', 'vk-blocks')}
-						value={blockId}
-						onChange={(value) => setAttributes({ blockId: value })}
-					/>
-					<ul className={`mt-0 mb-3`}>
-						<li>
-							{__(
-								'This is the identification ID for this block style.',
-								'vk-blocks'
-							)}
-						</li>
-						<li>
-							{__(
-								"If you don't use custom colors, you don't have to worry about it.",
-								'vk-blocks'
-							)}
-						</li>
-						<li>
-							<strong>
-								{__(
-									'If you duplicate this block, please change the ID.',
-									'vk-blocks'
-								)}
-							</strong>
-						</li>
-						<li>
-							{__(
-								"This ID is'not id of HTML attribute.",
-								'vk-blocks'
-							)}
-						</li>
-					</ul>
-
-					<hr />
-
-					<TextControl
-						label={__('Button URL', 'vk-blocks')}
-						value={buttonUrl}
-						className={`mt-0 mb-3`}
-						onChange={(value) =>
-							setAttributes({ buttonUrl: value })
-						}
-						placeholder={'Button URL'}
-					/>
-
-					<CheckboxControl
-						label={__('Open link new tab.', 'vk-blocks')}
-						checked={buttonTarget}
-						onChange={(checked) =>
-							setAttributes({ buttonTarget: checked })
-						}
-					/>
-
 					<TextControl
 						label={__('Sub Caption', 'vk-blocks')}
 						value={subCaption}
@@ -235,61 +303,260 @@ export default function ButtonEdit(props) {
 						</Button>
 					</ButtonGroup>
 
-					<h4 className={`mt-0 mb-2`}>
-						{__('Button Position:', 'vk-blocks')}
-					</h4>
-					<ButtonGroup className={`mb-3`}>
-						<Button
-							isSmall
-							isPrimary={buttonAlign === 'left'}
-							isSecondary={buttonAlign !== 'left'}
-							onClick={() =>
-								setAttributes({ buttonAlign: 'left' })
-							}
-						>
-							{__('Left', 'vk-blocks')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={buttonAlign === 'center'}
-							isSecondary={buttonAlign !== 'center'}
-							onClick={() =>
-								setAttributes({ buttonAlign: 'center' })
-							}
-						>
-							{__('Center', 'vk-blocks')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={buttonAlign === 'right'}
-							isSecondary={buttonAlign !== 'right'}
-							onClick={() =>
-								setAttributes({ buttonAlign: 'right' })
-							}
-						>
-							{__('Right', 'vk-blocks')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={buttonAlign === 'wide'}
-							isSecondary={buttonAlign !== 'wide'}
-							onClick={() =>
-								setAttributes({ buttonAlign: 'wide' })
-							}
-						>
-							{__('Wide', 'vk-blocks')}
-						</Button>
-						<Button
-							isSmall
-							isPrimary={buttonAlign === 'block'}
-							isSecondary={buttonAlign !== 'block'}
-							onClick={() =>
-								setAttributes({ buttonAlign: 'block' })
-							}
-						>
-							{__('Block', 'vk-blocks')}
-						</Button>
-					</ButtonGroup>
+					{!isInnerButton && (
+						<>
+							<h4 className={`mt-0 mb-2`}>
+								{__('Button Position:', 'vk-blocks')}
+							</h4>
+							<ButtonGroup className={`mb-3`}>
+								<Button
+									isSmall
+									isPrimary={buttonAlign === 'left'}
+									isSecondary={buttonAlign !== 'left'}
+									onClick={() =>
+										setAttributes({ buttonAlign: 'left' })
+									}
+								>
+									{__('Left', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonAlign === 'center'}
+									isSecondary={buttonAlign !== 'center'}
+									onClick={() =>
+										setAttributes({ buttonAlign: 'center' })
+									}
+								>
+									{__('Center', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonAlign === 'right'}
+									isSecondary={buttonAlign !== 'right'}
+									onClick={() =>
+										setAttributes({ buttonAlign: 'right' })
+									}
+								>
+									{__('Right', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonAlign === 'wide'}
+									isSecondary={buttonAlign !== 'wide'}
+									onClick={() =>
+										setAttributes({ buttonAlign: 'wide' })
+									}
+								>
+									{__('Wide', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonAlign === 'block'}
+									isSecondary={buttonAlign !== 'block'}
+									onClick={() =>
+										setAttributes({ buttonAlign: 'block' })
+									}
+								>
+									{__('Block', 'vk-blocks')}
+								</Button>
+							</ButtonGroup>
+						</>
+					)}
+
+					{isInnerButton && (
+						<>
+							<h4 className={`mt-0 mb-2`}>
+								{__('Button Width:', 'vk-blocks')}
+							</h4>
+							<p className={`mt-0 mb-2`}>
+								{__('Mobile', 'vk-blocks')}
+							</p>
+							<ButtonGroup className={`mb-3`}>
+								<Button
+									isSmall
+									isPrimary={buttonWidthMobile === 25}
+									isSecondary={buttonWidthMobile !== 25}
+									onClick={() =>
+										setAttributes({
+											buttonWidthMobile:
+												buttonWidthMobile === 25
+													? 0
+													: 25,
+										})
+									}
+								>
+									{__('25%', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonWidthMobile === 50}
+									isSecondary={buttonWidthMobile !== 50}
+									onClick={() =>
+										setAttributes({
+											buttonWidthMobile:
+												buttonWidthMobile === 50
+													? 0
+													: 50,
+										})
+									}
+								>
+									{__('50%', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonWidthMobile === 75}
+									isSecondary={buttonWidthMobile !== 75}
+									onClick={() =>
+										setAttributes({
+											buttonWidthMobile:
+												buttonWidthMobile === 75
+													? 0
+													: 75,
+										})
+									}
+								>
+									{__('75%', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonWidthMobile === 100}
+									isSecondary={buttonWidthMobile !== 100}
+									onClick={() =>
+										setAttributes({
+											buttonWidthMobile:
+												buttonWidthMobile === 100
+													? 0
+													: 100,
+										})
+									}
+								>
+									{__('100%', 'vk-blocks')}
+								</Button>
+							</ButtonGroup>
+							<p className={`mt-0 mb-2`}>
+								{__('Tablet', 'vk-blocks')}
+							</p>
+							<ButtonGroup className={`mb-3`}>
+								<Button
+									isSmall
+									isPrimary={buttonWidthTablet === 25}
+									isSecondary={buttonWidthTablet !== 25}
+									onClick={() =>
+										setAttributes({
+											buttonWidthTablet:
+												buttonWidthTablet === 25
+													? 0
+													: 25,
+										})
+									}
+								>
+									{__('25%', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonWidthTablet === 50}
+									isSecondary={buttonWidthTablet !== 50}
+									onClick={() =>
+										setAttributes({
+											buttonWidthTablet:
+												buttonWidthTablet === 50
+													? 0
+													: 50,
+										})
+									}
+								>
+									{__('50%', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonWidthTablet === 75}
+									isSecondary={buttonWidthTablet !== 75}
+									onClick={() =>
+										setAttributes({
+											buttonWidthTablet:
+												buttonWidthTablet === 75
+													? 0
+													: 75,
+										})
+									}
+								>
+									{__('75%', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonWidthTablet === 100}
+									isSecondary={buttonWidthTablet !== 100}
+									onClick={() =>
+										setAttributes({
+											buttonWidthTablet:
+												buttonWidthTablet === 100
+													? 0
+													: 100,
+										})
+									}
+								>
+									{__('100%', 'vk-blocks')}
+								</Button>
+							</ButtonGroup>
+							<p className={`mt-0 mb-2`}>
+								{__('PC', 'vk-blocks')}
+							</p>
+							<ButtonGroup className={`mb-3`}>
+								<Button
+									isSmall
+									isPrimary={buttonWidth === 25}
+									isSecondary={buttonWidth !== 25}
+									onClick={() =>
+										setAttributes({
+											buttonWidth:
+												buttonWidth === 25 ? 0 : 25,
+										})
+									}
+								>
+									{__('25%', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonWidth === 50}
+									isSecondary={buttonWidth !== 50}
+									onClick={() =>
+										setAttributes({
+											buttonWidth:
+												buttonWidth === 50 ? 0 : 50,
+										})
+									}
+								>
+									{__('50%', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonWidth === 75}
+									isSecondary={buttonWidth !== 75}
+									onClick={() =>
+										setAttributes({
+											buttonWidth:
+												buttonWidth === 75 ? 0 : 75,
+										})
+									}
+								>
+									{__('75%', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonWidth === 100}
+									isSecondary={buttonWidth !== 100}
+									onClick={() =>
+										setAttributes({
+											buttonWidth:
+												buttonWidth === 100 ? 0 : 100,
+										})
+									}
+								>
+									{__('100%', 'vk-blocks')}
+								</Button>
+							</ButtonGroup>
+						</>
+					)}
 
 					<h4 className={`mt-0 mb-2`}>
 						{__('Button Style:', 'vk-blocks')}

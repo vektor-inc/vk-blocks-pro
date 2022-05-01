@@ -207,7 +207,6 @@ $xl-min: 1200px;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		// gap:var(--vk-tab-gap);
 		.vk_tab_labels_label{
 			// flex-grow: 1; 
 			background-color: var(--default-color);
@@ -272,73 +271,128 @@ $xl-min: 1200px;
 
 .vk_tab_labels-tabSize-col{
 	@media(max-width:$xs-max){
+		&--xs-text {
+			justify-content: flex-start;
+		}
+		&--xs-text,
+		&--xs-fit-width{
+			flex-wrap: nowrap;
+			gap:var(--vk-tab-gap);
+		}
+		&--xs-fit-width li { 
+			width:100%;
+		}
 		&--xs-12 li {
 			width:100%;
 		}
 		&--xs-6 li {
-			width:calc( 50% - var(--vk-tab-gap) / 2 - 1px ) ;
+			width:calc( 50% - var(--vk-tab-gap) / 2 );
 		}
 		&--xs-4 li {
-			width:calc( 33.3% - var(--vk-tab-gap) / 2 - 1px ) ;
+			width:calc( 33.3% - var(--vk-tab-gap) / 2 );
 		}
 		&--xs-3 li {
-			width:calc( 25% - var(--vk-tab-gap) / 2 - 1px ) ;
+			width:calc( 25% - var(--vk-tab-gap) / 2 );
 		}
 	}
-	@media ( min-width:$sm-min ) and ( max-width:$sm-max){
+	@media ( min-width:$sm-min ){
+		&--sm-text {
+			justify-content: flex-start;
+		}
+		&--sm-text,
+		&--sm-fit-width{
+			flex-wrap: nowrap;
+			gap:var(--vk-tab-gap);
+		}
+		&--sm-fit-width li { 
+			width:100%;
+		}
 		&--sm-12 li {
 			width:100%;
 		}
 		&--sm-6 li {
-			width:calc( 50% - var(--vk-tab-gap) / 2 - 1px ) ;
+			width:calc( 50% - var(--vk-tab-gap) / 2 );
 		}
 		&--sm-4 li {
-			width:calc( 33.3% - var(--vk-tab-gap) / 2 - 1px ) ;
+			width:calc( 33.3% - var(--vk-tab-gap) / 2 );
 		}
 		&--sm-3 li {
-			width:calc( 25% - var(--vk-tab-gap) / 2 - 1px ) ;
+			width:calc( 25% - var(--vk-tab-gap) / 2 );
 		}
 	}
-	@media ( min-width:$md-min ) and ( max-width:$md-max){
+	@media ( min-width:$md-min ){
+		&--md-text {
+			justify-content: flex-start;
+		}
+		&--md-text,
+		&--md-fit-width{
+			flex-wrap: nowrap;
+			gap:var(--vk-tab-gap);
+		}
+		&--md-fit-width li { 
+			width:100%;
+		}
 		&--md-12 li {
 			width:100%;
 		}
 		&--md-6 li {
-			width:calc( 50% - var(--vk-tab-gap) / 2 - 1px ) ;
+			width:calc( 50% - var(--vk-tab-gap) / 2 );
 		}
 		&--md-4 li {
-			width:calc( 33.3% - var(--vk-tab-gap) / 2 - 1px ) ;
+			width:calc( 33.3% - var(--vk-tab-gap) / 2 );
 		}
 		&--md-3 li {
-			width:calc( 25% - var(--vk-tab-gap) / 2 - 1px ) ;
+			width:calc( 25% - var(--vk-tab-gap) / 2 );
 		}
 	}
-	@media ( min-width:$lg-min ) and ( max-width:$lg-max){
+	@media ( min-width:$lg-min ){
+		&--lg-text {
+			justify-content: flex-start;
+		}
+		&--lg-text,
+		&--lg-fit-width{
+			flex-wrap: nowrap;
+			gap:var(--vk-tab-gap);
+		}
+		&--lg-fit-width li { 
+			width:100%;
+		}
 		&--lg-12 li {
 			width:100%;
 		}
 		&--lg-6 li {
-			width:calc( 50% - var(--vk-tab-gap) / 2 - 1px ) ;
+			width:calc( 50% - var(--vk-tab-gap) / 2 );
 		}
 		&--lg-4 li {
-			width:calc( 33.3% - var(--vk-tab-gap) / 2 - 1px ) ;
+			width:calc( 33.3% - var(--vk-tab-gap) / 2 );
 		}
 		&--lg-3 li {
-			width:calc( 25% - var(--vk-tab-gap) / 2 - 1px ) ;
+			width:calc( 25% - var(--vk-tab-gap) / 2 );
 		}
 	}
-	@media (min-width:1200px){
+	@media ( min-width:$xl-min ){
+		&--xl-text {
+			justify-content: flex-start;
+		}
+		&--xl-text,
+		&--xl-fit-width{
+			flex-wrap: nowrap;
+			gap:var(--vk-tab-gap);
+		}
+		&--xl-fit-width li { 
+			width:100%;
+		}
 		&--xl-12 li {
 			width:100%;
 		}
 		&--xl-6 li {
-			width:calc( 50% - ( var(--vk-tab-gap) / 2 - 1px ) ) ;
+			width:calc( 50% - var(--vk-tab-gap) / 2 );
 		}
 		&--xl-4 li {
-			width:calc( 33.3% - var(--vk-tab-gap) / 2 - 1px ) ;
+			width:calc( 33.3% - var(--vk-tab-gap) / 2 );
 		}
 		&--xl-3 li {
-			width:calc( 25% - var(--vk-tab-gap) / 2 - 1px ) ;
+			width:calc( 25% - var(--vk-tab-gap) / 2 );
 		}
 	}
 }

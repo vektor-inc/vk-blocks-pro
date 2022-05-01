@@ -19,7 +19,6 @@ export default function TabEdit(props) {
 		tabSizeMd,
 		tabSizeLg,
 		tabSizeXl,
-		tabSizeXxl,
 	} = attributes;
 	attributes.clientId = clientId;
 
@@ -117,10 +116,6 @@ export default function TabEdit(props) {
 			name: 'xl',
 			attribute: tabSizeXl,
 		},
-		{
-			name: 'xxl',
-			attribute: tabSizeXxl,
-		},
 	];
 
 	let tabListClassName = `vk_tab_labels`;
@@ -209,7 +204,7 @@ export default function TabEdit(props) {
 							},
 							{
 								label: __('Fit full Width', 'vk-blocks'),
-								value: 'width',
+								value: 'fit-width',
 							},
 							{
 								label: __('Equal 1 Column', 'vk-blocks'),
@@ -242,7 +237,7 @@ export default function TabEdit(props) {
 							},
 							{
 								label: __('Fit full Width', 'vk-blocks'),
-								value: 'width',
+								value: 'fit-width',
 							},
 							{
 								label: __('Equal 1 Column', 'vk-blocks'),
@@ -275,7 +270,7 @@ export default function TabEdit(props) {
 							},
 							{
 								label: __('Fit full Width', 'vk-blocks'),
-								value: 'width',
+								value: 'fit-width',
 							},
 							{
 								label: __('Equal 1 Column', 'vk-blocks'),
@@ -308,7 +303,7 @@ export default function TabEdit(props) {
 							},
 							{
 								label: __('Fit full Width', 'vk-blocks'),
-								value: 'width',
+								value: 'fit-width',
 							},
 							{
 								label: __('Equal 1 Column', 'vk-blocks'),
@@ -341,7 +336,7 @@ export default function TabEdit(props) {
 							},
 							{
 								label: __('Fit full Width', 'vk-blocks'),
-								value: 'width',
+								value: 'fit-width',
 							},
 							{
 								label: __('Equal 1 Column', 'vk-blocks'),
@@ -362,39 +357,6 @@ export default function TabEdit(props) {
 						]}
 						onChange={(value) =>
 							setAttributes({ tabSizeXl: value })
-						}
-					/>
-					<RadioControl
-						label={__('Tab Size ( XX Large )', 'vk-blocks')}
-						selected={tabSizeXxl}
-						options={[
-							{
-								label: __('Fit Text', 'vk-blocks'),
-								value: 'text',
-							},
-							{
-								label: __('Fit full Width', 'vk-blocks'),
-								value: 'width',
-							},
-							{
-								label: __('Equal 1 Column', 'vk-blocks'),
-								value: '12',
-							},
-							{
-								label: __('Equal 2 Column', 'vk-blocks'),
-								value: '6',
-							},
-							{
-								label: __('Equal 3 Column', 'vk-blocks'),
-								value: '4',
-							},
-							{
-								label: __('Equal 4 Column', 'vk-blocks'),
-								value: '3',
-							},
-						]}
-						onChange={(value) =>
-							setAttributes({ tabSizeXxl: value })
 						}
 					/>
 				</PanelBody>

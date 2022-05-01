@@ -1075,60 +1075,56 @@ msgstr ""
 msgid "Tab Item"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:159
+#: src/blocks/_pro/tab/edit.js:154
 #. Tab label [i]
 msgid "Tab Label [ %s ]"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:201
+#: src/blocks/_pro/tab/edit.js:196
 msgid "Tab size Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:203
+#: src/blocks/_pro/tab/edit.js:198
 msgid "Tab Size ( Extra small )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:236
+#: src/blocks/_pro/tab/edit.js:231
 msgid "Tab Size ( Small )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:269
+#: src/blocks/_pro/tab/edit.js:264
 msgid "Tab Size ( Mediium )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:302
+#: src/blocks/_pro/tab/edit.js:297
 msgid "Tab Size ( Large )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:335
+#: src/blocks/_pro/tab/edit.js:330
 msgid "Tab Size ( Extra large )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:368
-msgid "Tab Size ( XX Large )"
-msgstr ""
-
-#: src/blocks/_pro/tab/edit.js:372
+#: src/blocks/_pro/tab/edit.js:334
 msgid "Fit Text"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:376
+#: src/blocks/_pro/tab/edit.js:338
 msgid "Fit full Width"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:380
+#: src/blocks/_pro/tab/edit.js:342
 msgid "Equal 1 Column"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:384
+#: src/blocks/_pro/tab/edit.js:346
 msgid "Equal 2 Column"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:388
+#: src/blocks/_pro/tab/edit.js:350
 msgid "Equal 3 Column"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:392
+#: src/blocks/_pro/tab/edit.js:354
 msgid "Equal 4 Column"
 msgstr ""
 

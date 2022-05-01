@@ -35,10 +35,6 @@
 			"type": "string",
 			"default": "text"
 		},
-		"tabSizeXxl": {
-			"type": "string",
-			"default": "text"
-		},
 		"activeColor": {
 			"type": "string",
 			"default": null

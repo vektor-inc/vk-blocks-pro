@@ -2,7 +2,6 @@
  * outer block type
  */
 import { ReactComponent as Icon } from './icon.svg';
-import { __ } from '@wordpress/i18n';
 import { useEffect } from '@wordpress/element';
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
@@ -11,13 +10,13 @@ import metadata from './block.json';
 import edit from './edit';
 import save from './save';
 import deprecated from './deprecated/';
+import deprecatedHooks from './deprecated/hooks/';
 
 const { name } = metadata;
 
 export { metadata, name };
 
 export const settings = {
-	title: __('Outer', 'vk-blocks'),
 	icon: <Icon />,
 	edit,
 	save,
@@ -53,13 +52,13 @@ const generateInlineCss = (attributes) => {
 		padding-left:${innerSideSpaceValueMobile}${innerSideSpaceUnit};
 		padding-right:${innerSideSpaceValueMobile}${innerSideSpaceUnit};
 	}
-	@media (min-width: 577px) {
+	@media (min-width: 576px) {
 		${containerSelector}{
 			padding-left:${innerSideSpaceValueTablet}${innerSideSpaceUnit};
 			padding-right:${innerSideSpaceValueTablet}${innerSideSpaceUnit};
 		}
 	}
-	@media (min-width: 769px) {
+	@media (min-width: 992px) {
 		${containerSelector}{
 			padding-left:${innerSideSpaceValuePC}${innerSideSpaceUnit};
 			padding-right:${innerSideSpaceValuePC}${innerSideSpaceUnit};
@@ -117,6 +116,16 @@ addFilter(
 					</>
 				);
 			}
+
+			//後方互換
+			let DeprecatedHook;
+			// Deprecated Hooks が Deprecated Save関数より少ない場合にエラーが出ないように。
+			if (deprecatedHooks.length > deprecatedFuncIndex) {
+				DeprecatedHook = deprecatedHooks[deprecatedFuncIndex];
+			} else {
+				DeprecatedHook = deprecatedHooks[deprecatedHooks.length - 1];
+			}
+			return <DeprecatedHook el={el} attributes={attributes} />;
 		}
 		return el;
 	},

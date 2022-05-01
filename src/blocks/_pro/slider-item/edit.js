@@ -1,3 +1,8 @@
+/**
+ * External dependencies
+ */
+import classnames from 'classnames';
+
 /* eslint camelcase: 0 */
 import { __ } from '@wordpress/i18n';
 import { useEffect } from '@wordpress/element';
@@ -5,7 +10,6 @@ import {
 	InspectorControls,
 	BlockControls,
 	BlockVerticalAlignmentToolbar,
-	ColorPalette,
 	InnerBlocks,
 	useBlockProps,
 } from '@wordpress/block-editor';
@@ -16,7 +20,10 @@ import {
 	BaseControl,
 } from '@wordpress/components';
 import { AdvancedMediaUpload } from '@vkblocks/components/advanced-media-upload';
-import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
+import GenerateBgImage from './GenerateBgImage';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
+
 const prefix = 'vk_slider_item';
 
 export default function SliderItemEdit(props) {
@@ -27,6 +34,9 @@ export default function SliderItemEdit(props) {
 		opacity,
 		padding_left_and_right,
 		bgSize,
+		bgImageMobile,
+		bgImageTablet,
+		bgImage,
 	} = attributes;
 
 	useEffect(() => {
@@ -53,6 +63,32 @@ export default function SliderItemEdit(props) {
 	} else {
 		containerClass = `${prefix}_container`;
 	}
+
+	const opacityClass = opacity && opacity * 10;
+	const bgAreaClasses = classnames('vk_slider_item-background-area', {
+		[`has-background`]: bgColor !== undefined,
+		[`has-${bgColor}-background-color`]:
+			bgColor !== undefined && !isHexColor(bgColor),
+		[`has-background-dim`]: opacity !== undefined,
+		[`has-background-dim-${opacityClass}`]: opacityClass !== undefined,
+	});
+
+	const bgAreaStyles = {
+		backgroundColor: isHexColor(bgColor) ? bgColor : undefined,
+	};
+
+	const GetBgImage = (
+		<>
+			{(bgImage || bgImageTablet || bgImageMobile) && (
+				<GenerateBgImage
+					prefix={prefix}
+					clientId={clientId}
+					{...props}
+				/>
+			)}
+			<div className={bgAreaClasses} style={bgAreaStyles}></div>
+		</>
+	);
 
 	const blockProps = useBlockProps({
 		className: `vk_slider_item swiper-slide vk_valign-${verticalAlignment} ${prefix}-${clientId} ${classPaddingLR} ${prefix}-paddingVertical-none`,
@@ -129,16 +165,11 @@ export default function SliderItemEdit(props) {
 						label={__('Color Setting', 'vk-blocks')}
 						id={`vk_sliderItem-colorSetting`}
 						help={__(
-							'Color will overcome background image. If you want to display image, clear background color or set opacity 0.',
+							'Color will overcome background image. If you want to display image, set opacity 0.',
 							'vk-blocks'
 						)}
 					>
-						<ColorPalette
-							value={bgColor}
-							onChange={(value) =>
-								setAttributes({ bgColor: value })
-							}
-						/>
+						<AdvancedColorPalette schema={'bgColor'} {...props} />
 					</BaseControl>
 					<BaseControl
 						label={__('Opacity Setting', 'vk-blocks')}
@@ -214,11 +245,7 @@ export default function SliderItemEdit(props) {
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
-				<GenerateBgImage
-					prefix={prefix}
-					clientId={clientId}
-					{...props}
-				/>
+				{GetBgImage}
 				<div className={containerClass}>
 					<InnerBlocks />
 				</div>

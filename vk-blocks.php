@@ -3,8 +3,9 @@
  * Plugin Name: VK Blocks Pro
  * Plugin URI: https://github.com/vektor-inc/vk-blocks
  * Description: This is a plugin that extends Gutenberg's blocks.
- * Version: 1.15.0
- * Requires at least: 5.7
+ * Version: 1.32.0.1
+ * Stable tag: 1.31.0.0
+ * Requires at least: 5.8
  * Author: Vektor,Inc.
  * Author URI: https://vektor-inc.co.jp
  * Text Domain: vk-blocks
@@ -13,9 +14,21 @@
  */
 
 // Do not load directly.
-defined( 'ABSPATH' ) || die();
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
-/* function_exists は VK Blocks 無料版の無効化が正常に動作しなかった場合のフォールバック */
+// Composer のファイルを読み込み ( composer install --no-dev ).
+require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
+// Set plugin dir path.
+define( 'VK_BLOCKS_DIR_PATH', plugin_dir_path( __FILE__ ) );
+// Set Plugin Dir URL.
+define( 'VK_BLOCKS_DIR_URL', plugin_dir_url( __FILE__ ) );
+
+/*
+無料版の VK Blocks の無効化が正常に動作しなかった場合に無料版の関数が先に定義され
+重複 -> Fatal error になるため function_exists は フォールバックとして付与している
+*/
 if ( ! function_exists( 'vk_blocks_get_version' ) ) {
 	/**
 	 * Get Plugin Version
@@ -27,8 +40,6 @@ if ( ! function_exists( 'vk_blocks_get_version' ) ) {
 		return $data['version'];
 	}
 }
-
-/* function_exists は VK Blocks 無料版の無効化が正常に動作しなかった場合のフォールバック */
 if ( ! function_exists( 'vk_blocks_deactivate_plugin' ) ) {
 	/**
 	 * Plugin deactive function
@@ -71,6 +82,13 @@ add_action(
 			$options['active_vk-blocks'] = false;
 			update_option( 'vkExUnit_common_options', $options );
 		}
+
+		// Deactive VK Grid Colomun Card Plugin
+		if ( is_plugin_active( 'vk-gridcolcard/vk-gridcolcard.php' ) ) {
+			if ( function_exists( 'vk_blocks_deactivate_plugin' ) ) {
+				vk_blocks_deactivate_plugin( 'vk-gridcolcard/vk-gridcolcard.php' );
+			}
+		}
 	},
 	9999
 );
@@ -102,13 +120,13 @@ require_once plugin_dir_path( __FILE__ ) . 'inc/vk-blocks-config.php';
  */
 $vk_blocks_plugin_base_dir = plugin_dir_path( __FILE__ );
 if ( strpos( $vk_blocks_plugin_base_dir, 'vk-blocks-pro' ) !== false ) {
-	$vk_blocks_updater_url = plugin_dir_path( __FILE__ ) . 'inc/vk-blocks-pro/plugin-update-checker/plugin-update-checker.php';
-	if ( file_exists( $vk_blocks_updater_url ) ) {
-		require plugin_dir_path( __FILE__ ) . 'inc/vk-blocks-pro/plugin-update-checker/plugin-update-checker.php';
-		$vk_blocks_update_checker = Puc_v4_Factory::buildUpdateChecker(
-			'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=vk-blocks-pro',
-			__FILE__,
-			'vk-blocks-pro'
-		);
-	}
+
+	// Cope with : WP HTTP Error: cURL error 60: SSL certificate problem: certificate has expired.
+	add_filter( 'https_ssl_verify', '__return_false' );
+
+	$vk_blocks_update_checker = Puc_v4_Factory::buildUpdateChecker(
+		'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=vk-blocks-pro',
+		__FILE__,
+		'vk-blocks-pro'
+	);
 }

@@ -1,6 +1,6 @@
 import { RichText } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
-import { Component } from '@wordpress/element';
+import { Component } from '@wordpress/element'
 
 export class VKBHeadingV0_24_1 extends Component {
 	render() {

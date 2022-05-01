@@ -1,0 +1,41 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/icon-outer",
+	"category": "vk-blocks-cat",
+	"title": "Icon Outer",
+	"attributes": {
+		"iconSize": {
+			"type": "number",
+			"default": 36
+		},
+		"iconSizeUnit": {
+			"type": "string",
+			"default": "px"
+		},
+		"iconMargin": {
+			"type": "number",
+			"default": 22
+		},
+		"iconMarginUnit": {
+			"type": "string",
+			"default": "px"
+		},
+		"iconRadius": {
+			"type": "number",
+			"default": 50
+		},
+		"iconsJustify": {
+			"type": "string",
+			"default": "left"
+		},
+		"iconType": {
+			"type": "string",
+			"default": "0"
+		}
+	},
+	"description": "Display the Font Awesome icons horizontally.",
+	"textdomain": "vk-blocks",
+	"supports": {
+		"className": true
+	}
+}

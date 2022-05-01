@@ -5,21 +5,30 @@
  * @package vk-blocks
  */
 
-if ( function_exists( 'register_block_type_from_metadata' ) ) {
+/**
+ * Register Step block.
+ *
+ * @return void
+ */
+function vk_blocks_register_block_step() {
 
-	/**
-	 * Register Step block.
-	 *
-	 * @return void
-	 */
-	function vk_blocks_register_block_step() {
-		register_block_type_from_metadata(
-			__DIR__,
-			array(
-				'editor_style'  => 'vk-blocks-build-editor-css',
-				'editor_script' => 'vk-blocks-build-js',
-			)
+	// Register Style.
+	if ( ! is_admin() ) {
+		wp_register_style(
+			'vk-blocks/step',
+			VK_BLOCKS_DIR_URL . 'build/_pro/step/style.css',
+			array(),
+			VK_BLOCKS_VERSION
 		);
 	}
-	add_action( 'init', 'vk_blocks_register_block_step', 99 );
+
+	register_block_type(
+		__DIR__,
+		array(
+			'style'         => 'vk-blocks/step',
+			'editor_style'  => 'vk-blocks-build-editor-css',
+			'editor_script' => 'vk-blocks-build-js',
+		)
+	);
 }
+add_action( 'init', 'vk_blocks_register_block_step', 99 );

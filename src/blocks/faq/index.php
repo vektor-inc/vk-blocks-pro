@@ -1,28 +1,48 @@
 <?php
 /**
- * VK Blocks - Faq Blocks
+ * Registers the `vk-blocks/faq` block.
  *
  * @package vk-blocks
  */
 
-if ( function_exists( 'register_block_type_from_metadata' ) ) {
-
-	/**
-	 * Registers the `vk-blocks/faq` block.
-	 *
-	 * @return void
-	 */
-	function vk_blocks_register_block_faq() {
-		register_block_type_from_metadata(
-			__DIR__,
-			array(
-				'editor_style'  => 'vk-blocks-build-editor-css',
-				'editor_script' => 'vk-blocks-build-js',
-			)
+/**
+ * Register FAQ block.
+ *
+ * @return void
+ */
+function vk_blocks_register_block_faq() {
+	// Register Style.
+	if ( ! is_admin() ) {
+		wp_register_style(
+			'vk-blocks/faq',
+			VK_BLOCKS_DIR_URL . 'build/faq/style.css',
+			array(),
+			VK_BLOCKS_VERSION
 		);
 	}
-	add_action( 'init', 'vk_blocks_register_block_faq', 99 );
+
+	// Register Style.
+	if ( ! is_admin() ) {
+		wp_register_script(
+			'vk-blocks/faq-script',
+			VK_BLOCKS_DIR_URL . 'build/vk-faq2.min.js',
+			array(),
+			VK_BLOCKS_VERSION,
+			true
+		);
+	}
+
+	register_block_type(
+		__DIR__,
+		array(
+			'style'         => 'vk-blocks/faq',
+			'script'        => 'vk-blocks/faq-script',
+			'editor_style'  => 'vk-blocks-build-editor-css',
+			'editor_script' => 'vk-blocks-build-js',
+		)
+	);
 }
+add_action( 'init', 'vk_blocks_register_block_faq', 99 );
 
 /**
  * Render faq block
@@ -34,9 +54,9 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 function vk_blocks_faq_render_callback( $block_content, $block ) {
 	$vk_blocks_options = vk_blocks_get_options();
 	if ( 'vk-blocks/faq' === $block['blockName'] ) {
-		if ( 'open' === $vk_blocks_options['new_faq_accordion'] ) {
+		if ( ! empty( $vk_blocks_options['new_faq_accordion'] ) && 'open' === $vk_blocks_options['new_faq_accordion'] ) {
 			$block_content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-accordion-open', $block_content );
-		} elseif ( 'close' === $vk_blocks_options['new_faq_accordion'] ) {
+		} elseif ( ! empty( $vk_blocks_options['new_faq_accordion'] ) && 'close' === $vk_blocks_options['new_faq_accordion'] ) {
 			$block_content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-accordion-close', $block_content );
 		} else {
 			$block_content = str_replace( '[accordion_trigger_switch]', '', $block_content );

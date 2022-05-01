@@ -7,22 +7,57 @@
 }
 
 /*-------------------------------------------*/
-/* 余白（まだ レスポンシブスペーサーでのみ使用）
+/* 余白（レスポンシブスペーサー,共通余白で使用）
 /*-------------------------------------------*/
 :root {
 	--vk-margin-sm : 1.5rem;
-	--vk-margin-md : 2rem;
+	--vk-margin-md : 2.4rem;
 	--vk-margin-lg : 4rem;
 }
 .vk_block{
+	&-margin-0 {
+		&--margin-top {
+			margin-top: 0 !important;
+		}
+		&--margin-bottom {
+			margin-bottom: 0 !important;
+		}
+	}
 	&-margin-sm {
-		margin-top: var(--vk-margin-sm);
+		margin-top: var(--vk-margin-sm); /* 旧バージョンでdeprecatedが走ってない状態のfallback */
+		&--margin-top {
+			margin-top: var(--vk-margin-sm) !important;
+		}
+		&--margin-bottom {
+			margin-bottom: var(--vk-margin-sm) !important;
+		}
+		&--height {
+			height: var(--vk-margin-sm);
+		}
 	}
 	&-margin-md {
-		margin-top: var(--vk-margin-md);
+		margin-top: var(--vk-margin-md); /* 旧バージョンでdeprecatedが走ってない状態のfallback */
+		&--margin-top {
+			margin-top: var(--vk-margin-md) !important;
+		}
+		&--margin-bottom {
+			margin-bottom: var(--vk-margin-md) !important;
+		}
+		&--height {
+			height: var(--vk-margin-md);
+		}
 	}
 	&-margin-lg {
-		margin-top: var(--vk-margin-lg);
+		margin-top: var(--vk-margin-lg); /* 旧バージョンでdeprecatedが走ってない状態のfallback */
+		&--margin-top {
+			margin-top: var(--vk-margin-lg) !important;
+		}
+		&--margin-bottom {
+			margin-bottom: var(--vk-margin-lg) !important;
+		}
+		&--height {
+			height: var(--vk-margin-lg);
+		}
 	}
 }
 
@@ -36,7 +71,6 @@
 }
 
 $stylePalette: (
-	is-style-vk-default: "•",
 	is-style-vk-arrow-mark: "\f138",
 	is-style-vk-triangle-mark: "\f0da",
 	is-style-vk-check-mark: "\f00c",
@@ -67,7 +101,6 @@ $colorPalette: (
 ul,
 ol {
 	&.is-style {
-		&-vk-default,
 		&-vk-arrow-mark,
 		&-vk-triangle-mark,
 		&-vk-check-mark,
@@ -85,7 +118,7 @@ ol {
 				position: relative;
 				margin-top:0;
 				margin-left: 0;
-				margin-bottom:calc( var(--vk-size-text) * 0.8 );
+				margin:calc( var(--vk-size-text) * 0.8 ) 0;
 				line-height: calc( var(--vk-size-text) * 1.65 );
 			}
 		}
@@ -117,6 +150,19 @@ ol {
 				height: 26px;
 				text-align: center;
 			}
+
+			ul,
+			ol {
+				counter-reset: num_inner;
+				content: counter(num_inner);
+
+				li {
+					&:before {
+						counter-increment: num_inner;
+						content: counter(num_inner);
+					}
+				}
+			}
 		}
 	}
 
@@ -145,6 +191,19 @@ ol {
 				height: 26px;
 				text-align: center;
 				border-radius: 2px;
+			}
+
+			ul,
+			ol {
+				counter-reset: num_inner;
+				content: counter(num_inner);
+
+				li {
+					&:before {
+						counter-increment: num_inner;
+						content: counter(num_inner);
+					}
+				}
 			}
 		}
 	}
@@ -242,8 +301,6 @@ ol {
 
 @mixin pad-mag {
 	padding: 1.8em;
-	margin-top:1.2em; // IE fall back
-	margin-bottom:1.2em; // IE fall back
 	margin-top: var( --vk-margin-elem );
 	margin-bottom: var( --vk-margin-elem );
 }
@@ -265,92 +322,6 @@ ol {
 }
 
 .wp-block-group {
-	&.is-style {
-		&-vk-group {
-			&-solid {
-				border: solid 3px;
-				@include pad-mag;
-				@include inner-item-pad-mag;
-			}
-			&-solid-roundcorner {
-				border: solid 3px;
-				border-radius: 8px;
-				@include pad-mag;
-				@include inner-item-pad-mag;
-			}
-			&-dotted {
-				border: dotted 1px;
-				@include pad-mag;
-				@include inner-item-pad-mag;
-			}
-			&-dashed {
-				border: dashed 2px;
-				@include pad-mag;
-				@include inner-item-pad-mag;
-			}
-			&-double {
-				border: double 5px;
-				@include pad-mag;
-				@include inner-item-pad-mag;
-			}
-			&-stitch {
-				margin: 1em auto;
-				padding: 0.5em;
-				border-radius: 8px;
-				@include inner-item-pad-mag;
-				.wp-block-group__inner-container {
-					border: dashed 2px;
-					border-radius: 8px;
-					padding: 1.8em;
-				}
-			}
-			&-top-bottom-border {
-				border-top: solid 1px;
-				border-bottom: solid 1px;
-				@include pad-mag;
-				@include inner-item-pad-mag;
-				padding-left: 0;
-				padding-right: 0;
-			}
-			&-shadow {
-				box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-				@include pad-mag;
-				@include inner-item-pad-mag;
-			}
-			&-alert-info {
-				background-color: #d9edf7;
-				color: #31708f;
-				border-radius: 3px;
-				border: 1px solid #bce8f1;
-				@include pad-mag;
-				@include inner-item-pad-mag;
-			}
-			&-alert-success {
-				background-color: #dff0d8;
-				color: #3c763d;
-				border-radius: 3px;
-				border: 1px solid #d6e9c6;
-				@include pad-mag;
-				@include inner-item-pad-mag;
-			}
-			&-alert-warning {
-				background-color: #fcf8e3;
-				color: #8a6d3b;
-				border-radius: 3px;
-				border: 1px solid #faebcc;
-				@include pad-mag;
-				@include inner-item-pad-mag;
-			}
-			&-alert-danger {
-				background-color: #f2dede;
-				color: #a94442;
-				border-radius: 3px;
-				border: 1px solid #ebccd1;
-				@include pad-mag;
-				@include inner-item-pad-mag;
-			}
-		}
-	}
 	h3:first-child,
 	h4:first-child {
 		margin-top: 0;
@@ -377,6 +348,90 @@ ol {
 		}
 	}
 } //.wp-block-group
+.is-style-vk-group {
+	&-solid {
+		border: solid 3px;
+		@include pad-mag;
+		@include inner-item-pad-mag;
+	}
+	&-solid-roundcorner {
+		border: solid 3px;
+		border-radius: 8px;
+		@include pad-mag;
+		@include inner-item-pad-mag;
+	}
+	&-dotted {
+		border: dotted 1px;
+		@include pad-mag;
+		@include inner-item-pad-mag;
+	}
+	&-dashed {
+		border: dashed 2px;
+		@include pad-mag;
+		@include inner-item-pad-mag;
+	}
+	&-double {
+		border: double 5px;
+		@include pad-mag;
+		@include inner-item-pad-mag;
+	}
+	&-stitch {
+		margin: 1em auto;
+		padding: 0.5em;
+		border-radius: 8px;
+		@include inner-item-pad-mag;
+		.wp-block-group__inner-container {
+			border: dashed 2px;
+			border-radius: 8px;
+			padding: 1.8em;
+		}
+	}
+	&-top-bottom-border {
+		border-top: solid 1px;
+		border-bottom: solid 1px;
+		@include pad-mag;
+		@include inner-item-pad-mag;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	&-shadow {
+		box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+		@include pad-mag;
+		@include inner-item-pad-mag;
+	}
+	&-alert-info {
+		background-color: #d9edf7;
+		color: #31708f;
+		border-radius: 3px;
+		border: 1px solid #bce8f1;
+		@include pad-mag;
+		@include inner-item-pad-mag;
+	}
+	&-alert-success {
+		background-color: #dff0d8;
+		color: #3c763d;
+		border-radius: 3px;
+		border: 1px solid #d6e9c6;
+		@include pad-mag;
+		@include inner-item-pad-mag;
+	}
+	&-alert-warning {
+		background-color: #fcf8e3;
+		color: #8a6d3b;
+		border-radius: 3px;
+		border: 1px solid #faebcc;
+		@include pad-mag;
+		@include inner-item-pad-mag;
+	}
+	&-alert-danger {
+		background-color: #f2dede;
+		color: #a94442;
+		border-radius: 3px;
+		border: 1px solid #ebccd1;
+		@include pad-mag;
+		@include inner-item-pad-mag;
+	}
+}
 
 
 /*-------------------------------------------*/
@@ -384,8 +439,9 @@ ol {
 /*-------------------------------------------*/
 .editor-styles-wrapper .wp-block-group {
 	// これがないとコアに勝手にwidthが左右1em余白をあけられる
+	// → だがしかし Grid Column 2 で中の要素が勝手に小さくされるので一旦コメントアウト
 	.wp-block{
-		width:auto;
+		// width:auto;
 	}
 }
 

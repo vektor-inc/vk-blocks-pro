@@ -14,12 +14,13 @@ import { Component } from '@wordpress/element';
 import {
 	InspectorControls,
 	MediaUpload,
-	ColorPalette,
 	RichText,
 	useBlockProps,
 } from '@wordpress/block-editor';
 
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 
 export default function PrBlocksEdit(props) {
 	const { attributes, setAttributes } = props;
@@ -30,9 +31,6 @@ export default function PrBlocksEdit(props) {
 		urlOpenType1,
 		urlOpenType2,
 		urlOpenType3,
-		color1,
-		color2,
-		color3,
 		bgType1,
 		bgType2,
 		bgType3,
@@ -40,6 +38,9 @@ export default function PrBlocksEdit(props) {
 		insertImage2,
 		insertImage3,
 	} = attributes;
+
+	// eslint-disable-next-line no-undef
+	const iconFamily = vkFontAwesome.iconFamily;
 
 	const containerClass = `vk_prBlocks row`;
 
@@ -116,21 +117,16 @@ export default function PrBlocksEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Icon 1', 'vk-blocks')}
+						label={
+							__('Icon 1', 'vk-blocks') +
+							' ( ' +
+							iconFamily +
+							' )'
+						}
 						id={`vk_prBlocks_Icon1`}
 					>
 						<FontAwesome attributeName={'icon1'} {...props} />
-						<ColorPalette
-							value={color1}
-							onChange={(value) => {
-								if (value) {
-									setAttributes({ color1: value });
-								} else {
-									setAttributes({ color1: '#0693e3' });
-									setAttributes({ bgType1: '0' });
-								}
-							}}
-						/>
+						<AdvancedColorPalette schema={'color1'} {...props} />
 						<RadioControl
 							label={__('Icon Background:', 'vk-blocks')}
 							selected={bgType1}
@@ -196,21 +192,16 @@ export default function PrBlocksEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Icon 2', 'vk-blocks')}
+						label={
+							__('Icon 2', 'vk-blocks') +
+							' ( ' +
+							iconFamily +
+							' )'
+						}
 						id={`vk_prBlocks_Icon2`}
 					>
 						<FontAwesome attributeName={'icon2'} {...props} />
-						<ColorPalette
-							value={color2}
-							onChange={(value) => {
-								if (value) {
-									setAttributes({ color2: value });
-								} else {
-									setAttributes({ color2: '#0693e3' });
-									setAttributes({ bgType2: '0' });
-								}
-							}}
-						/>
+						<AdvancedColorPalette schema={'color2'} {...props} />
 						<RadioControl
 							label={__('Icon Background:', 'vk-blocks')}
 							selected={bgType2}
@@ -276,21 +267,16 @@ export default function PrBlocksEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl
-						label={__('Icon 3', 'vk-blocks')}
+						label={
+							__('Icon 3', 'vk-blocks') +
+							' ( ' +
+							iconFamily +
+							' )'
+						}
 						id={`vk_prBlocks_Icon3`}
 					>
 						<FontAwesome attributeName={'icon3'} {...props} />
-						<ColorPalette
-							value={color3}
-							onChange={(value) => {
-								if (value) {
-									setAttributes({ color3: value });
-								} else {
-									setAttributes({ color3: '#0693e3' });
-									setAttributes({ bgType3: '0' });
-								}
-							}}
-						/>
+						<AdvancedColorPalette schema={'color3'} {...props} />
 						<RadioControl
 							label={__('Icon Background:', 'vk-blocks')}
 							selected={bgType3}
@@ -436,15 +422,36 @@ export class ComponentBlockEdit extends Component {
 				);
 			}
 
-			if (!color[blockNumArrIndex]) {
-				color[blockNumArrIndex] = '#0693e3';
-			}
-
-			let iconColor;
-			if (bgType[blockNumArrIndex] === '0') {
-				iconColor = '#fff';
-			} else {
-				iconColor = color[blockNumArrIndex];
+			let iconOuterClass = '';
+			let iconOuterInlineStyle = {};
+			let iconColor = '';
+			if (color[blockNumArrIndex] !== undefined) {
+				// アイコン背景:ベタ塗り
+				if (bgType[blockNumArrIndex] === '0') {
+					//カスタムカラーの時
+					if (isHexColor(color[blockNumArrIndex])) {
+						iconOuterClass = `has-background `;
+						iconOuterInlineStyle = {
+							backgroundColor: `${color[blockNumArrIndex]}`,
+						};
+						//カラーパレットの時
+					} else {
+						iconOuterClass = `has-background has-${color[blockNumArrIndex]}-background-color`;
+					}
+					// アイコン背景:背景なし
+				} else if (bgType[blockNumArrIndex] === '1') {
+					//カスタムカラーの時
+					if (isHexColor(color[blockNumArrIndex])) {
+						iconOuterClass = `has-text-color`;
+						iconOuterInlineStyle = {
+							border: `1px solid ${color[blockNumArrIndex]}`,
+						};
+						iconColor = color[blockNumArrIndex];
+						//カラーパレットの時
+					} else {
+						iconOuterClass = `has-text-color has-${color[blockNumArrIndex]}-color`;
+					}
+				}
 			}
 
 			let faIcon = icon[blockNumArrIndex];
@@ -454,36 +461,30 @@ export class ComponentBlockEdit extends Component {
 			}
 			//add class and inline css
 			const faIconFragment = faIcon.split(' ');
-			faIconFragment[0] =
-				faIconFragment[0] + ` style="color:${iconColor}" `;
+			if (iconColor !== '') {
+				faIconFragment[0] =
+					faIconFragment[0] + ` style="color:${iconColor}" `;
+			} else {
+				faIconFragment[0] = faIconFragment[0] + ` `;
+			}
 			faIconFragment[1] = faIconFragment[1] + ` vk_prBlocks_item_icon `;
 			const faIconTag = faIconFragment.join('');
 
-			if (bgType[blockNumArrIndex] === '0') {
-				return (
-					<div
-						className="vk_prBlocks_item_icon_outer"
-						style={{
-							backgroundColor: color[blockNumArrIndex],
-							border: `1px solid ${color[blockNumArrIndex]}`,
-						}}
-					>
-						{ReactHtmlParser(faIconTag)}
-					</div>
-				);
-			}
 			return (
 				<div
-					className="vk_prBlocks_item_icon_outer"
-					style={{
-						backgroundColor: 'transparent',
-						border: '1px solid ' + color[blockNumArrIndex],
-					}}
+					className={`vk_prBlocks_item_icon_outer ${iconOuterClass}`}
+					style={iconOuterInlineStyle}
 				>
-					{ReactHtmlParser(faIconTag)}
+					{parse(faIconTag)}
 				</div>
 			);
 		})();
+
+		// アイコン背景:背景なし
+		let iconOutlineClass = '';
+		if (bgType[blockNumArrIndex] === '1') {
+			iconOutlineClass = 'is-style-outline';
+		}
 
 		if (blockNum === 1) {
 			richTextH1Save = (
@@ -545,7 +546,7 @@ export class ComponentBlockEdit extends Component {
 		}
 
 		return (
-			<div className="vk_prBlocks_item col-sm-4">
+			<div className={`vk_prBlocks_item col-sm-4 ${iconOutlineClass}`}>
 				{drawElement}
 				{richTextH1Save}
 				{richTextPSave}

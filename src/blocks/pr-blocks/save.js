@@ -2,7 +2,8 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
 import { isNotJSON } from '@vkblocks/utils/is-not-json';
 import { Component } from '@wordpress/element';
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function save(props) {
 	const { attributes } = props;
@@ -106,15 +107,36 @@ export class ComponentBlockSave extends Component {
 				);
 			}
 
-			if (!color[blockNumArrIndex]) {
-				color[blockNumArrIndex] = '#0693e3';
-			}
-
-			let iconColor;
-			if (bgType[blockNumArrIndex] === '0') {
-				iconColor = '#fff';
-			} else {
-				iconColor = color[blockNumArrIndex];
+			let iconOuterClass = '';
+			let iconOuterInlineStyle = {};
+			let iconColor = '';
+			if (color[blockNumArrIndex] !== undefined) {
+				// アイコン背景:ベタ塗り
+				if (bgType[blockNumArrIndex] === '0') {
+					//カスタムカラーの時
+					if (isHexColor(color[blockNumArrIndex])) {
+						iconOuterClass = `has-background `;
+						iconOuterInlineStyle = {
+							backgroundColor: `${color[blockNumArrIndex]}`,
+						};
+						//カラーパレットの時
+					} else {
+						iconOuterClass = `has-background has-${color[blockNumArrIndex]}-background-color`;
+					}
+					// アイコン背景:背景なし
+				} else if (bgType[blockNumArrIndex] === '1') {
+					//カスタムカラーの時
+					if (isHexColor(color[blockNumArrIndex])) {
+						iconOuterClass = `has-text-color`;
+						iconOuterInlineStyle = {
+							border: `1px solid ${color[blockNumArrIndex]}`,
+						};
+						iconColor = color[blockNumArrIndex];
+						//カラーパレットの時
+					} else {
+						iconOuterClass = `has-text-color has-${color[blockNumArrIndex]}-color`;
+					}
+				}
 			}
 
 			let faIcon = icon[blockNumArrIndex];
@@ -124,36 +146,30 @@ export class ComponentBlockSave extends Component {
 			}
 			//add class and inline css
 			const faIconFragment = faIcon.split(' ');
-			faIconFragment[0] =
-				faIconFragment[0] + ` style="color:${iconColor}" `;
+			if (iconColor !== '') {
+				faIconFragment[0] =
+					faIconFragment[0] + ` style="color:${iconColor}" `;
+			} else {
+				faIconFragment[0] = faIconFragment[0] + ` `;
+			}
 			faIconFragment[1] = faIconFragment[1] + ` vk_prBlocks_item_icon `;
 			const faIconTag = faIconFragment.join('');
 
-			if (bgType[blockNumArrIndex] === '0') {
-				return (
-					<div
-						className="vk_prBlocks_item_icon_outer"
-						style={{
-							backgroundColor: color[blockNumArrIndex],
-							border: `1px solid ${color[blockNumArrIndex]}`,
-						}}
-					>
-						{ReactHtmlParser(faIconTag)}
-					</div>
-				);
-			}
 			return (
 				<div
-					className="vk_prBlocks_item_icon_outer"
-					style={{
-						backgroundColor: 'transparent',
-						border: '1px solid ' + color[blockNumArrIndex],
-					}}
+					className={`vk_prBlocks_item_icon_outer ${iconOuterClass}`}
+					style={iconOuterInlineStyle}
 				>
-					{ReactHtmlParser(faIconTag)}
+					{parse(faIconTag)}
 				</div>
 			);
 		})();
+
+		// アイコン背景:背景なし
+		let iconOutlineClass = '';
+		if (bgType[blockNumArrIndex] === '1') {
+			iconOutlineClass = 'is-style-outline';
+		}
 
 		richTextH1Save = (
 			<RichText.Content
@@ -171,7 +187,9 @@ export class ComponentBlockSave extends Component {
 		);
 		if (url[blockNumArrIndex]) {
 			return (
-				<div className="vk_prBlocks_item col-sm-4">
+				<div
+					className={`vk_prBlocks_item col-sm-4 ${iconOutlineClass}`}
+				>
 					<a
 						href={url[blockNumArrIndex]}
 						className="vk_prBlocks_item_link"
@@ -188,7 +206,7 @@ export class ComponentBlockSave extends Component {
 			);
 		}
 		return (
-			<div className="vk_prBlocks_item col-sm-4">
+			<div className={`vk_prBlocks_item col-sm-4 ${iconOutlineClass}`}>
 				{drawElement}
 				{richTextH1Save}
 				{richTextPSave}

@@ -25,6 +25,7 @@ import * as faq2q from './faq2-q';
 import * as flow from './flow';
 import * as heading from './heading';
 import * as icon from './icon';
+import * as iconOuter from './icon-outer';
 import * as pageContent from './page-content';
 import * as prBlocks from './pr-blocks';
 import * as prContent from './pr-content';
@@ -44,6 +45,7 @@ import '@vkblocks/extensions/common/highlighter';
 import '@vkblocks/extensions/common/inline-font-size';
 import '@vkblocks/extensions/common/nowrap';
 import '@vkblocks/extensions/common/responsive-br';
+import '@vkblocks/extensions/common/margin-extension';
 
 const vkBlocks = [
 	alert,
@@ -57,6 +59,7 @@ const vkBlocks = [
 	flow,
 	heading,
 	icon,
+	iconOuter,
 	pageContent,
 	prBlocks,
 	prContent,

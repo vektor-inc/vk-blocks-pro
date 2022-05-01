@@ -1,12 +1,12 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/step-item",
+	"title": "Step Item",
 	"category": "vk-blocks-cat",
 	"parent": ["vk-blocks/step"],
 	"attributes": {
 		"color": {
-			"type": "string",
-			"default": "#337ab7"
+			"type": "string"
 		},
 		"style": {
 			"type": "string",

@@ -1,12 +1,14 @@
 //管理画面側の見出しブロックのスタイルのcssになります。
 //cssを修正する場合はfunctions-color.phpのdynamic_css部分とこちらのscssを修正してください。
 
+:root {
+	--vk-heading-has-background-padding: 0.6em 0.7em 0.5em;
+}
+
 $color_key: #337ab7;
 
 @mixin title_unset {
 	position: relative;
-	margin-left: auto;
-	margin-right: auto;
 	outline: unset;
 	outline-offset: unset;
 	box-shadow: unset;
@@ -43,7 +45,7 @@ $color_key: #337ab7;
 
 .is-style-vk-heading {
 	&,
-	.edit-post-visual-editor .editor-styles-wrapper & {
+	.editor-styles-wrapper .block-editor-block-list__layout & {
 		h3.is-style-vk-heading:after {
 			border-bottom: none !important;
 		}
@@ -58,6 +60,10 @@ $color_key: #337ab7;
 			&::before,
 			&::after {
 				content: none;
+			}
+			//コア側の見出し背景色の余白が優先されるので上書き用
+			&[class*=has-background]{
+				padding: var(--vk-heading-has-background-padding);
 			}
 		}
 
@@ -138,6 +144,10 @@ $color_key: #337ab7;
 			&::after {
 				content: none;
 			}
+			//コア側の見出し背景色の余白が優先されるので上書き用
+			&[class*=has-background]{
+				padding: var(--vk-heading-has-background-padding);
+			}
 		}
 
 		// &-topborder_background_fill_none {
@@ -194,6 +204,10 @@ $color_key: #337ab7;
 			&::after {
 				content: none;
 			}
+			//コア側の見出し背景色の余白が優先されるので上書き用
+			&[class*=has-background]{
+				padding: var(--vk-heading-has-background-padding);
+			}
 		}
 
 		// &-double_bottomborder {
@@ -216,6 +230,10 @@ $color_key: #337ab7;
 			&::before,
 			&::after {
 				content: none;
+			}
+			//コア側の見出し背景色の余白が優先されるので上書き用
+			&[class*=has-background]{
+				padding: var(--vk-heading-has-background-padding);
 			}
 		}
 
@@ -242,6 +260,10 @@ $color_key: #337ab7;
 			&::after {
 				content: none;
 			}
+			//コア側の見出し背景色の余白が優先されるので上書き用
+			&[class*=has-background]{
+				padding: var(--vk-heading-has-background-padding);
+			}
 		}
 
 		// &-solid_bottomborder {
@@ -264,6 +286,10 @@ $color_key: #337ab7;
 			&::before,
 			&::after {
 				content: none;
+			}
+			//コア側の見出し背景色の余白が優先されるので上書き用
+			&[class*=has-background]{
+				padding: var(--vk-heading-has-background-padding);
 			}
 		}
 
@@ -303,6 +329,10 @@ $color_key: #337ab7;
 			&::before,
 			&::after {
 				content: none;
+			}
+			//コア側の見出し背景色の余白が優先されるので上書き用
+			&[class*=has-background]{
+				padding: var(--vk-heading-has-background-padding);
 			}
 		}
 

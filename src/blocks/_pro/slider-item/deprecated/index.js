@@ -1,6 +1,8 @@
 /* eslint camelcase: 0 */
 import save0_0_0 from './0.0.0/save';
 import save0_60_1 from './0.60.1/save';
+import save1_22_1 from './1.22.1/save';
+import save1_27_7 from './1.27.7/save';
 
 const blockAttributes = {
 	verticalAlignment: {
@@ -66,19 +68,38 @@ const blockAttributes2 = {
 		type: 'number',
 		default: 1,
 	},
-};
+}
+
+const blockAttributes3 = {
+	...blockAttributes,
+	bgColor: {
+		type: 'string',
+	},
+}
 
 export default [
 	{
 		attributes: {
-			...blockAttributes,
+			...blockAttributes3
+		},
+		save: save1_27_7,
+	},
+	{
+		attributes: {
+			...blockAttributes3
+		},
+		save: save1_22_1,
+	},
+	{
+		attributes: {
+			... blockAttributes
 		},
 		save: save0_60_1,
 	},
 	{
 		attributes: {
-			...blockAttributes2,
-			...blockAttributes,
+			... blockAttributes2,
+			... blockAttributes
 		},
 		save: save0_0_0,
 	},

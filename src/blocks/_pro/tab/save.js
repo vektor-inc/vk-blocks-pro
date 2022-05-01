@@ -1,5 +1,5 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 
 export default function save(props) {
 	const { attributes } = props;
@@ -7,7 +7,7 @@ export default function save(props) {
 
 	let tablist = '';
 	if (tabListHtml) {
-		tablist = ReactHtmlParser(tabListHtml);
+		tablist = parse(tabListHtml);
 	}
 
 	const blockProps = useBlockProps.save({

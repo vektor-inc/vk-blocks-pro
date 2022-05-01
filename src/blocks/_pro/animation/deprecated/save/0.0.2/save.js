@@ -1,17 +1,17 @@
-import classNames from 'classnames';
+import classNames from "classnames";
 import { InnerBlocks } from '@wordpress/block-editor';
 
-export default function save(props) {
-	let { effect, speed, range, clientId } = props.attributes;
+export default function save( props ) {
+	let {effect, speed, range, clientId} = props.attributes;
 	//For recovering block.
-	effect = effect ? effect : 'slide-up';
-	speed = speed ? speed : 'fast';
-	range = range ? range : 'short';
+	effect = effect ? effect : "slide-up"
+	speed = speed ? speed : "fast"
+	range = range ? range : "short"
 
 	return (
 		<div>
 			<script>
-				{`window.addEventListener('load', (event) => {
+				{ `window.addEventListener('load', (event) => {
 				let animationElm = document.querySelector('.vk_animation-${clientId}');
 				const observer = new IntersectionObserver((entries) => {
 					if(entries[0].isIntersecting){
@@ -21,12 +21,10 @@ export default function save(props) {
 					}
 				});
 				observer.observe(animationElm);
-				}, false);`}
+				}, false);` }
 			</script>
 			<div
-				className={classNames(
-					`vk_animation vk_animation-${effect} vk_animation-speed-${speed} vk_animation-range-${range} vk_animation-${clientId}`
-				)}
+				className={ classNames(`vk_animation vk_animation-${effect} vk_animation-speed-${speed} vk_animation-range-${range} vk_animation-${clientId}`) }
 			>
 				<InnerBlocks.Content />
 			</div>

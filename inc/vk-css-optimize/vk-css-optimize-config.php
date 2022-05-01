@@ -21,8 +21,8 @@ if ( ! class_exists( 'VK_CSS_Optimize' ) ) {
 function vk_blocks_css_tree_shaking_array( $vk_css_tree_shaking_array ) {
 	$vk_css_tree_shaking_array[] = array(
 		'id'      => 'vk-blocks-build-css',
-		'url'     => VK_BLOCKS_URL . 'build/block-build.css',
-		'path'    => VK_BLOCKS_PATH . 'build/block-build.css',
+		'url'     => VK_BLOCKS_DIR_URL . 'build/block-build.css',
+		'path'    => VK_BLOCKS_DIR_PATH . 'build/block-build.css',
 		'version' => VK_BLOCKS_VERSION,
 	);
 	return $vk_css_tree_shaking_array;
@@ -78,8 +78,6 @@ function vk_blocks_css_tree_shaking_exclude_class( $inidata ) {
 		'vk_post-col-xxl-4',
 		'vk_post-col-xxl-3',
 		'vk_post-col-xxl-2',
-		'vk_tab_labels_label-state-active',
-		'vk_tab_bodys_body-state-active',
 	);
 
 	$inidata['class'] = array_unique( array_merge( $inidata['class'], $exclude_classes_array ) );

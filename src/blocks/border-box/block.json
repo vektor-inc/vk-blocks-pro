@@ -1,6 +1,7 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/border-box",
+	"title": "Border Box",
 	"category": "vk-blocks-cat",
 	"attributes": {
 		"heading": {
@@ -9,8 +10,10 @@
 			"selector": "h4"
 		},
 		"color": {
-			"type": "string",
-			"default": "red"
+			"type": "string"
+		},
+		"borderColor": {
+			"type": "string"
 		},
 		"bgColor": {
 			"type": "string",
@@ -19,6 +22,9 @@
 		"faIcon": {
 			"type": "string",
 			"default": ""
+		},
+		"bodyAlign": {
+			"type": "string"
 		}
 	},
 	"description": "This is a border box where you can place headings to attract attention.",

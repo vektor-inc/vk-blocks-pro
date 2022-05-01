@@ -5,18 +5,30 @@
  * @package vk-blocks
  */
 
-if ( function_exists( 'register_block_type_from_metadata' ) ) {
-	/**
-	 * Registers the `vk-blocks/tab-item` block.
-	 */
-	function vk_blocks_register_block_tab_item() {
-		register_block_type_from_metadata(
-			__DIR__,
-			array(
-				'editor_style'  => 'vk-blocks-build-editor-css',
-				'editor_script' => 'vk-blocks-build-js',
-			)
+/**
+ * Register Tab Item block.
+ *
+ * @return void
+ */
+function vk_blocks_register_block_tab_item() {
+
+	// Register Style.
+	if ( ! is_admin() ) {
+		wp_register_style(
+			'vk-blocks/tab-item',
+			VK_BLOCKS_DIR_URL . 'build/_pro/tab-item/style.css',
+			array(),
+			VK_BLOCKS_VERSION
 		);
 	}
-	add_action( 'init', 'vk_blocks_register_block_tab_item', 99 );
+
+	register_block_type(
+		__DIR__,
+		array(
+			'style'         => 'vk-blocks/tab-item',
+			'editor_style'  => 'vk-blocks-build-editor-css',
+			'editor_script' => 'vk-blocks-build-js',
+		)
+	);
 }
+add_action( 'init', 'vk_blocks_register_block_tab_item', 99 );

@@ -1,5 +1,6 @@
 /*.html
 node_modules/
+build/
 dist/
 inc/vk-blocks/build/*
 editor-css/editor-block-build.scss
@@ -17,3 +18,4 @@ src/blocks/_pro/**/style.css.map
 test/e2e-tests/fixtures/blocks/*.json
 test/e2e-tests/fixtures/blocks/*.serialized.html
 .vscode/
+artifacts/

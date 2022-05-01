@@ -1,6 +1,9 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/slider-item",
+	"title": "Slider Item",
+	"description": "This is one item in the slider.",
+	"textdomain": "vk-blocks",
 	"category": "vk-blocks-cat-layout",
 	"parent": [ "vk-blocks/slider"] ,
 	"attributes": {
@@ -9,8 +12,7 @@
 			"default": "center"
 		},
 		"bgColor": {
-			"type": "string",
-			"default": "#ffffff"
+			"type": "string"
 		},
 		"bgImage": {
 			"type": "string",
@@ -44,8 +46,6 @@
 			"type": "string"
 		}
 	},
-	"description": "This is one item in the slider.",
-	"textdomain": "vk-blocks",
 	"supports": {
 		"className": true
 	}

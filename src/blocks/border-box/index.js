@@ -16,13 +16,11 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-	title: __('Border Box', 'vk-blocks'),
 	icon: <Icon />,
 	category: 'vk-blocks-cat',
 	example: {
 		attributes: {
 			heading: title,
-			color: 'red',
 			faIcon: iconUser,
 		},
 		innerBlocks: [

@@ -2,6 +2,7 @@ import { Component } from '@wordpress/element';
 import classNames from 'classnames';
 
 export class SpacerComponent extends Component {
+
     render() {
         const {
 			anchor,

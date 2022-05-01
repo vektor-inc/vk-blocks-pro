@@ -1,88 +1,88 @@
-import save000 from './0.0.0/save';
-import save001 from './0.0.1/save';
-import save002 from './0.0.2/save';
-import save003 from './0.0.3/save';
-import save0_49_1 from './0.49.1/save';
-import save0_58_7 from './0.58.7/save';
+import save000 from "./0.0.0/save"
+import save001 from "./0.0.1/save"
+import save002 from "./0.0.2/save"
+import save003 from "./0.0.3/save"
+import save0_49_1 from "./0.49.1/save"
+import save0_58_7 from "./0.58.7/save"
 
 const blockAttributes = {
 	effect: {
-		type: 'string',
-		default: 'slide-up',
+		type: "string",
+		default: "slide-up",
 	},
 	clientId: {
-		type: 'string',
-		default: '',
+		type: "string",
+		default: "",
 	},
 };
 
 const deprecated = [
 	{
-		attributes: {
+		attributes:	{
 			...blockAttributes,
 			speed: {
-				type: 'string',
-				default: 'fast',
+				type: "string",
+				default: "fast",
 			},
 			range: {
-				type: 'string',
-				default: 'short',
+				type: "string",
+				default: "short",
 			},
 		},
-		save: save0_58_7,
+		save: save0_58_7
 	},
 	{
-		attributes: {
+		attributes:	{
 			...blockAttributes,
 			speed: {
-				type: 'string',
-				default: 'fast',
+				type: "string",
+				default: "fast",
 			},
 			range: {
-				type: 'string',
-				default: 'short',
+				type: "string",
+				default: "short",
 			},
 		},
-		save: save0_49_1,
+		save: save0_49_1
 	},
 	{
-		attributes: {
+		attributes:	{
 			...blockAttributes,
 			speed: {
-				type: 'string',
-				default: 'fast',
+				type: "string",
+				default: "fast",
 			},
 			range: {
-				type: 'string',
-				default: 'short',
+				type: "string",
+				default: "short",
 			},
 		},
 		save: save003,
 	},
 	{
-		attributes: {
+		attributes:	{
 			...blockAttributes,
 			speed: {
-				type: 'string',
-				default: 'fast',
+				type: "string",
+				default: "fast",
 			},
 			range: {
-				type: 'string',
-				default: 'short',
+				type: "string",
+				default: "short",
 			},
 		},
 		save: save002,
 	},
 	{
-		attributes: {
+		attributes:	{
 			...blockAttributes,
 			speed: {
-				type: 'string',
-				default: 'fast',
+				type: "string",
+				default: "fast",
 			},
 			range: {
-				type: 'string',
-				default: 'short',
+				type: "string",
+				default: "short",
 			},
 		},
 		save: save001,
@@ -90,7 +90,7 @@ const deprecated = [
 	{
 		attributes: blockAttributes,
 		save: save000,
-	},
+	}
 ];
 
 export default deprecated;

@@ -3,7 +3,7 @@ import { PanelBody, SelectControl, BaseControl } from '@wordpress/components';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { dispatch, select } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import {
 	isAllowedBlock,
 	returnHtml,
@@ -185,7 +185,7 @@ export default function TOCEdit(props) {
 					<ul
 						className={`vk_tableOfContents_list tab_content-${open}`}
 					>
-						{ReactHtmlParser(renderHtml)}
+						{parse(renderHtml)}
 					</ul>
 				</div>
 			</div>

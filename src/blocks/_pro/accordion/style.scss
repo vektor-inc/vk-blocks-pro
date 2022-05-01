@@ -143,7 +143,7 @@
 	}//&-trigger
 	&-target{
 		padding:calc( var(--vk-size-text) * 1 );
-		p:last-of-type{
+		& > *:last-of-type{
 			margin-bottom: 0;
 		}
 		//オープン時

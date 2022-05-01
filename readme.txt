@@ -3,9 +3,9 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,m
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
-Tested up to: 5.9.1
-Stable tag: 1.27.7.1
-Requires PHP: 7.0
+Tested up to: 5.9.2
+Stable tag: 1.31.0.0
+Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,10 +61,48 @@ e.g.
 1. VK Blocks can be selected from the VK Blocks Panel.
 1. VK Blocks examples.
 
+[ Improvement ][ Button ] Delete block id UI.
+
 == Changelog ==
 
 [ Specification Change ] Required license key entry.
+[ fix ][ Heading ] Heading-Adjusted padding when there is a background.
+
+= 1.32.0 =
+[ Add Function ][ GridColCard ( Pro ) ] add column min-width setting for tablet and pc.
+[ Add Function ][ Button outer(Pro) ] Add button width option for mobile or tablet.
+[ Improvement ][ margin extension ] Enable margin settings in Grid column(Pro).
+[ Bug Fix ] Fix FAQ option array error for free.
+[ Bug Fix ] Fix load Font Awesome Files on WordPress.com
+[ Bugfix ][ Button ] Fix icon inner classes.
+
+= 1.31.0 =
+[ Add Function ][ GridColCard(Pro) ] Add link URL in toolbar and sidebar.
+[ Add function ] [ Breadcrumb(Pro) ] Add support fontSize and spacing.
+[ Improvement ][ margin extension ] Changed to add common margin class names to additional CSS classes.
+[ Bug fix ][ Accordion(Pro) ] Fix do not intend margin bottom 0 added to p tag.
+
+= 1.30.0 =
+[ Add Function ][ Border Box ] Add body align control in toolbar.
+[ Add Function ][ Button outer(Pro) ] Add button width option.
+[ Update ][ Font Awesome ] Add version chenge setting on block-editor screen.
+[ Specification Change ][ Button ] Move url interface to block toolbar.
+[ Specification Change ] Change default --vk-margin-md size 2rem -> 2.4rem
+[ Specification Change ][ icon ] fix icon margin bottom
+
+= 1.29.2 =
+[ Bug fix ][ margin extension ] Exclude grid column blocks because they are covered by the setting values.
+[ Bug fix ][ margin extension ] Optimize excludes core block list.
+[ Bug Fix ] fix editor style of button-outer & icon-outer in page-content
+
+= 1.29.1 =
+[ Bug fix ][ margin extension ] Optimize excludes block list.
+
+= 1.29.0 =
+[ Add Function ] Add margin extension in toolbar.
+[ Add Block ] GridColCard(Pro)
 [ Fix ] [ Breadcrumb(Pro) ] Add inserter Pro label.
+[ Other ] Update Font Awesome 6 -> 6.1
 
 = 1.28.0 =
 [ Add Block ] Breadcrumb(Pro)

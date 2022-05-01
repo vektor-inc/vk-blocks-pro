@@ -7,21 +7,29 @@
 }
 
 /*-------------------------------------------*/
-/* 余白（まだ レスポンシブスペーサーでのみ使用）
+/* 余白（レスポンシブスペーサー,共通余白で使用）
 /*-------------------------------------------*/
 :root {
 	--vk-margin-sm : 1.5rem;
-	--vk-margin-md : 2rem;
+	--vk-margin-md : 2.4rem;
 	--vk-margin-lg : 4rem;
 }
 .vk_block{
+	&-margin-0 {
+		&--margin-top {
+			margin-top: 0 !important;
+		}
+		&--margin-bottom {
+			margin-bottom: 0 !important;
+		}
+	}
 	&-margin-sm {
 		margin-top: var(--vk-margin-sm); /* 旧バージョンでdeprecatedが走ってない状態のfallback */
 		&--margin-top {
-			margin-top: var(--vk-margin-sm);
+			margin-top: var(--vk-margin-sm) !important;
 		}
 		&--margin-bottom {
-			margin-bottom: var(--vk-margin-sm);
+			margin-bottom: var(--vk-margin-sm) !important;
 		}
 		&--height {
 			height: var(--vk-margin-sm);
@@ -30,10 +38,10 @@
 	&-margin-md {
 		margin-top: var(--vk-margin-md); /* 旧バージョンでdeprecatedが走ってない状態のfallback */
 		&--margin-top {
-			margin-top: var(--vk-margin-md);
+			margin-top: var(--vk-margin-md) !important;
 		}
 		&--margin-bottom {
-			margin-bottom: var(--vk-margin-md);
+			margin-bottom: var(--vk-margin-md) !important;
 		}
 		&--height {
 			height: var(--vk-margin-md);
@@ -42,10 +50,10 @@
 	&-margin-lg {
 		margin-top: var(--vk-margin-lg); /* 旧バージョンでdeprecatedが走ってない状態のfallback */
 		&--margin-top {
-			margin-top: var(--vk-margin-lg);
+			margin-top: var(--vk-margin-lg) !important;
 		}
 		&--margin-bottom {
-			margin-bottom: var(--vk-margin-lg);
+			margin-bottom: var(--vk-margin-lg) !important;
 		}
 		&--height {
 			height: var(--vk-margin-lg);

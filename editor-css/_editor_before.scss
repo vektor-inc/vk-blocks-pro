@@ -21,6 +21,7 @@
 .editor-block-list-item-vk-blocks-table-of-contents-new:after,
 .editor-block-list-item-vk-blocks-simple-table:after,
 .editor-block-list-item-vk-blocks-grid-column:after,
+.editor-block-list-item-vk-blocks-gridcolcard:after,
 .editor-block-list-item-vk-blocks-icon-card:after {
 	position: absolute;
 	top: 0;
@@ -122,6 +123,8 @@ button.image-button:not(.button-delete) {
 @import "./editor_before_vk-heading";
 // faq
 @import "./editor_before_faq";
+// breadcrumb
+@import "./editor_before_breadcrumb";
 
 // VK Outer 編集パネル
 $color-danger: #dd3333;
@@ -173,7 +176,7 @@ $color-danger: #dd3333;
 		}
 	}
 
-	.is-sidebar-opened & .vk_slider.vk_width-full{
+	.is-sidebar-opened & .swiper-container.vk_slider.vk_width-full{
 		// サイドバー表示時に全幅要素がはみ出してサイドバーの下などに入り込むのを防止
 		margin-left: calc( 50% - 50vw + 140px );
 		margin-right: calc( 50% - 50vw + 140px );

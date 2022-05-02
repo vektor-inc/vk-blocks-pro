@@ -218,7 +218,7 @@ function vk_blocks_update_checker() {
 						echo '<li><a href="https://vws.vektor-inc.co.jp/product/lightning-pro-update-license?rel=vk-blocks-pro-alert" target="_blank">Lightning Pro</a></li>';
 						echo '</ul>';
 
-						echo '<p><a href="' . esc_url( admin_url( '/options-general.php?page=vk_blocks_options' ) ) . '" class="button button-primary">' . __( 'Click here to enter the license key', 'vk-blocks' ) . '</a></p>';
+						echo '<p><a href="' . esc_url( admin_url( '/options-general.php?page=vk_blocks_options' ) ) . '" class="button button-primary">' . esc_html( __( 'Click here to enter the license key', 'vk-blocks' ) ) . '</a></p>';
 
 						echo '<p>' . wp_kses_post(
 							sprintf(

@@ -200,22 +200,37 @@ function vk_blocks_update_checker() {
 							'puc_check_for_updates'
 						);
 
-						echo '<div class="error"><p>';
-						echo wp_kses_post(
+						echo '<div class="error">';
+						echo '<h4>' . wp_kses_post(
+							__(
+								'The VK Blocks Pro license is invalid.',
+								'vk-blocks'
+							)
+						) . '</h4>';
+						echo '<p>' . wp_kses_post(
+							__(
+								'Enter a valid license key for any of the following products on the settings screen.',
+								'vk-blocks'
+							)
+						) . '</p>';
+						echo '<ul>';
+						echo '<li><a href="https://vws.vektor-inc.co.jp/product/lightning-g3-pro-pack/?rel=vk-blocks-pro-alert" target="_blank">Lightning G3 Pro Pack</a></li>';
+						echo '<li><a href="https://vws.vektor-inc.co.jp/product/lightning-pro-update-license?rel=vk-blocks-pro-alert" target="_blank">Lightning Pro</a></li>';
+						echo '</ul>';
+
+						echo '<p><a href="' . esc_url( admin_url( '/options-general.php?page=vk_blocks_options' ) ) . '" class="button button-primary">' . __( 'Click here to enter the license key', 'vk-blocks' ) . '</a></p>';
+
+						echo '<p>' . wp_kses_post(
 							sprintf(
 							/* translators: %s: 再読み込みURL */
 								__(
-									'Your license is not valid are expired.
-						Even after valid license key registration you still seeing this message, <a href="%s">please click here to reload</a>.',
+									'Even after valid license key registration you still seeing this message, <a href="%s">please click here to reload</a>.',
 									'vk-blocks'
 								),
 								$link_url
 							)
-						);
-
-						/* translators: %s: アップデートURL */
-						echo wp_kses_post( sprintf( __( 'If you need update. get <a href="%s" target="_blank">Update License</a>.', 'vk-blocks' ), 'https://vws.vektor-inc.co.jp/product/lightning-g3-pro-pack' ) );
-						echo '</p></div>';
+						) . '</p>';
+						echo '</div>';
 					}
 				);
 			}

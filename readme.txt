@@ -65,6 +65,7 @@ e.g.
 
 == Changelog ==
 
+= 1.33.0 =
 [ Specification Change ] Required license key entry.
 [ Bug Fix ][ Slider(Pro) ] Cope with auto height.
 [ Bug Fix ][ Heading ] Heading-Adjusted padding when there is a background.

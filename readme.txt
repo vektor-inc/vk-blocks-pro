@@ -65,6 +65,7 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] Required license key entry.
 [ fix ][ Heading ] Heading-Adjusted padding when there is a background.
 
 = 1.32.0 =

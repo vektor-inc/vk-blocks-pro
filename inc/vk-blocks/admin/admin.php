@@ -21,6 +21,7 @@ if ( ! function_exists( 'vk_blocks_setting' ) ) {
 		<form method="post" action="">
 			<?php wp_nonce_field( 'vkb-nonce-key', 'vkb-setting-page' ); ?>
 			<?php
+			require_once dirname( __FILE__ ) . '/admin-license.php';
 			require_once dirname( __FILE__ ) . '/admin-balloon.php';
 			require_once dirname( __FILE__ ) . '/admin-margin.php';
 			require_once dirname( __FILE__ ) . '/admin-load-separate.php';
@@ -68,6 +69,7 @@ function vk_blocks_setting_page() {
 	$get_logo_html = apply_filters( 'vk_blocks_logo_html', $get_logo_html );
 
 	$get_menu_html  = '';
+	$get_menu_html .= '<li><a href="#license-setting">' . __( 'License Key', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= '<li><a href="#balloon-setting">' . __( 'Balloon Block Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= '<li><a href="#margin-setting">' . __( 'Common Margin Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= '<li><a href="#load-separete-setting">' . __( 'Load Separete Setting', 'vk-blocks' ) . '</a></li>';

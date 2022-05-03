@@ -109,7 +109,7 @@ function vk_blocks_the_update_messsage( $update_checker ) {
 	$alert_html .= '<li><a href="https://vws.vektor-inc.co.jp/product/lightning-pro-update-license?rel=vk-blocks-pro-alert" target="_blank">Lightning Pro</a></li>';
 	$alert_html .= '</ul>';
 
-	$alert_html .= '<p><a href="' . admin_url( '/options-general.php?page=vk_blocks_options' ) . '" class="button button-primary">' . __( 'Click here to enter the license key', 'vk-blocks' ) . '</a></p>';
+	$alert_html .= '<p><a href="' . admin_url( '/options-general.php?page=vk_blocks_options' ) . '" class="button button-primary">' . __( 'Enter the license key', 'vk-blocks' ) . '</a></p>';
 
 	$alert_html .= '<p>' . sprintf(
 		/* translators: %s: 再読み込みURL */

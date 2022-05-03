@@ -115,14 +115,26 @@ if ( is_admin() && ! is_network_admin() ) {
  */
 require_once plugin_dir_path( __FILE__ ) . 'inc/vk-blocks-config.php';
 
+/**
+ * Check Free or Pro
+ *
+ * @return bool
+ */
+function vk_blocks_is_pro() {
+	$return = false;
+	// 注意 : strpos() は合致した開始位置を返すので、最初に合致すると、
+	// "合致している"にも関わらず返り値は"0"を返してしまうため !== false で処理している.
+	if ( strpos( plugin_dir_path( __FILE__ ), 'vk-blocks-pro' ) !== false ) {
+		$return = true;
+	}
+	return $return;
+}
+
 /****************************************************************************************
  * Load updater ( Pro version only )
  */
 
-$vk_blocks_plugin_base_dir = plugin_dir_path( __FILE__ );
-// 注意 : strpos() は合致した開始位置を返すので、最初に合致すると、
-// "合致している"にも関わらず返り値は"0"を返してしまうため !== false で処理している.
-if ( strpos( $vk_blocks_plugin_base_dir, 'vk-blocks-pro' ) !== false ) {
+if ( vk_blocks_is_pro() ) {
 	add_action( 'after_setup_theme', 'vk_blocks_update_checker' );
 }
 

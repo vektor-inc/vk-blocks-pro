@@ -6,6 +6,18 @@
  */
 
 if ( ! function_exists( 'vk_blocks_setting' ) ) {
+
+	/**
+	 * Check need license environment
+	 *
+	 * @return bool
+	 */
+	function vk_blocks_is_license_setting() {
+		if ( vk_blocks_is_pro() && wp_get_theme()->Template !== 'katawara' ) {
+			return true;
+		}
+	}
+
 	/**
 	 * VK Blocks Setting
 	 *
@@ -21,7 +33,9 @@ if ( ! function_exists( 'vk_blocks_setting' ) ) {
 		<form method="post" action="">
 			<?php wp_nonce_field( 'vkb-nonce-key', 'vkb-setting-page' ); ?>
 			<?php
-			require_once dirname( __FILE__ ) . '/admin-license.php';
+			if ( vk_blocks_is_license_setting() ) {
+				require_once dirname( __FILE__ ) . '/admin-license.php';
+			}
 			require_once dirname( __FILE__ ) . '/admin-balloon.php';
 			require_once dirname( __FILE__ ) . '/admin-margin.php';
 			require_once dirname( __FILE__ ) . '/admin-load-separate.php';
@@ -46,11 +60,11 @@ $vk_blocks_prefix = 'VK';
 function vk_blocks_setting_menu() {
 	global $vk_blocks_prefix;
 	$custom_page = add_options_page(
-		$vk_blocks_prefix . ' ' . __( 'Blocks setting', 'vk-blocks' ),       // Name of page
-		$vk_blocks_prefix . ' ' . _x( 'Blocks', 'label in admin menu', 'vk-blocks' ),                // Label in menu
-		'edit_theme_options',               // Capability required　このメニューページを閲覧・使用するために最低限必要なユーザーレベルまたはユーザーの種類と権限。
-		'vk_blocks_options',               // ユニークなこのサブメニューページの識別子
-		'vk_blocks_setting_page'         // メニューページのコンテンツを出力する関数
+		$vk_blocks_prefix . ' ' . __( 'Blocks setting', 'vk-blocks' ),       // Name of page.
+		$vk_blocks_prefix . ' ' . _x( 'Blocks', 'label in admin menu', 'vk-blocks' ),                // Label in menu.
+		'edit_theme_options',               // Capability required　このメニューページを閲覧・使用するために最低限必要なユーザーレベルまたはユーザーの種類と権限.
+		'vk_blocks_options',               // ユニークなこのサブメニューページの識別子.
+		'vk_blocks_setting_page'         // メニューページのコンテンツを出力する関数.
 	);
 	if ( ! $custom_page ) {
 		return;
@@ -68,8 +82,10 @@ function vk_blocks_setting_page() {
 	$get_logo_html = '<img src="' . plugin_dir_url( __FILE__ ) . '/images/vk-blocks-logo_ol.svg" alt="VK Blocks" />';
 	$get_logo_html = apply_filters( 'vk_blocks_logo_html', $get_logo_html );
 
-	$get_menu_html  = '';
-	$get_menu_html .= '<li><a href="#license-setting">' . __( 'License Key', 'vk-blocks' ) . '</a></li>';
+	$get_menu_html = '';
+	if ( vk_blocks_is_license_setting() ) {
+		$get_menu_html .= '<li><a href="#license-setting">' . __( 'License Key', 'vk-blocks' ) . '</a></li>';
+	}
 	$get_menu_html .= '<li><a href="#balloon-setting">' . __( 'Balloon Block Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= '<li><a href="#margin-setting">' . __( 'Common Margin Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= '<li><a href="#load-separete-setting">' . __( 'Load Separete Setting', 'vk-blocks' ) . '</a></li>';
@@ -87,7 +103,7 @@ function vk_blocks_setting_option_save() {
 		&& wp_verify_nonce( sanitize_key( $_POST['vkb-setting-page'] ), 'vkb-nonce-key' )
 	) {
 		if ( check_admin_referer( 'vkb-nonce-key', 'vkb-setting-page' ) ) {
-			// 保存処理
+			// 保存処理.
 			if (
 				isset( $_POST['vk_blocks_balloon_meta'], $_POST['vkb-setting-page'] )
 				&& wp_verify_nonce( sanitize_key( $_POST['vkb-setting-page'] ), 'vkb-nonce-key' )
@@ -114,7 +130,6 @@ function vk_blocks_setting_option_save() {
 			}
 		}
 	}
-	// wp_safe_redirect( menu_page_url( 'vk_blocks_options', false ) );
 }
 add_action( 'admin_init', 'vk_blocks_setting_option_save', 10, 2 );
 

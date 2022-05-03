@@ -3,7 +3,7 @@
  * Plugin Name: VK Blocks Pro
  * Plugin URI: https://github.com/vektor-inc/vk-blocks
  * Description: This is a plugin that extends Gutenberg's blocks.
- * Version: 1.32.0.1
+ * Version: 1.2.0.1
  * Stable tag: 1.31.0.0
  * Requires at least: 5.8
  * Author: Vektor,Inc.
@@ -120,6 +120,8 @@ require_once plugin_dir_path( __FILE__ ) . 'inc/vk-blocks-config.php';
  */
 
 $vk_blocks_plugin_base_dir = plugin_dir_path( __FILE__ );
+// 注意 : strpos() は合致した開始位置を返すので、最初に合致すると、
+// "合致している"にも関わらず返り値は"0"を返してしまうため !== false で処理している.
 if ( strpos( $vk_blocks_plugin_base_dir, 'vk-blocks-pro' ) !== false ) {
 	add_action( 'after_setup_theme', 'vk_blocks_update_checker' );
 }
@@ -135,8 +137,8 @@ function vk_blocks_update_checker() {
 	add_filter( 'https_ssl_verify', '__return_false' );
 
 	$update_checker = Puc_v4_Factory::buildUpdateChecker(
-		'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=vk-blocks-pro',
-		__FILE__,
+		'https://dev.vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=vk-blocks-pro',
+		__FILE__, // この処理を他の場所に移動するとここを変更しないといけなくなるので注意.
 		'vk-blocks-pro'
 	);
 

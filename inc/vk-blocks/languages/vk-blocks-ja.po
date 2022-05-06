@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2022-05-03T05:51:18+00:00\n"
-"PO-Revision-Date: 2022-05-03 14:59+0900\n"
+"POT-Creation-Date: 2022-05-06T02:55:20+00:00\n"
+"PO-Revision-Date: 2022-05-06 12:20+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -620,7 +620,7 @@ msgstr "背景画像 ( タブレット )"
 
 #: src/blocks/_pro/outer/edit.js:289 src/blocks/_pro/slider-item/edit.js:236
 msgid "Background Image Mobile"
-msgstr "背景画像背景画像 ( モバイル )"
+msgstr "背景画像 ( モバイル )"
 
 #: src/blocks/_pro/outer/edit.js:299
 msgid "Background image Position"

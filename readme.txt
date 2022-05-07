@@ -61,11 +61,11 @@ e.g.
 1. VK Blocks can be selected from the VK Blocks Panel.
 1. VK Blocks examples.
 
-[ Improvement ][ Button ] Delete block id UI.
-
 == Changelog ==
 
 [ Fix ][ common mergin ] cope with table bottom
+[ Fix ][ Breadcrumb(Pro) ] Fix front page breadcrumb
+[ Improvement ][ Button ] Delete block id UI.
 
 = 1.33.1 =
 [ Bug Fix ] Fix PHP notice ( Pro version only )

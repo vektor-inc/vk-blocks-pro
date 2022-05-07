@@ -65,6 +65,8 @@ e.g.
 
 == Changelog ==
 
+[ Fix ][ common mergin ] cope with table bottom
+
 = 1.33.1 =
 [ Bug Fix ] Fix PHP notice ( Pro version only )
 [ Fix ] Translation ( Pro version only )

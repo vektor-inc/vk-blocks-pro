@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Button ] Fix horizontal padding for X-T9 
 [ Bug Fix ][ Common mergin ] cope with table bottom
 [ Bug Fix ][ Breadcrumb(Pro) ] Fix front page breadcrumb
 [ Improvement ][ Button ] Delete block id UI.

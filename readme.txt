@@ -68,7 +68,7 @@ e.g.
 [ Bug Fix ][ Common mergin ] cope with table bottom
 [ Bug Fix ][ Breadcrumb(Pro) ] Fix front page breadcrumb
 [ Improvement ][ Button ] Delete block id UI.
-[ Add Function ][ Button ] Support for transformation of Paragraph Block to VK Button Block.
+[ Add Function ][ Button ] Support for transformation of paragraph block to VK button block.
 
 = 1.33.1 =
 [ Bug Fix ] Fix PHP notice ( Pro version only )

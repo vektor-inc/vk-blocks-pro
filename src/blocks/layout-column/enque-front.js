@@ -125,6 +125,6 @@ class vkbLayoutColumnManager {
 	const layoutColumns = document.querySelectorAll('.vk_layoutColumn');
 
 	layoutColumns.forEach((layoutColumn) => {
-		new vkbLayoutColumnManager(layoutColumn);
+		//new vkbLayoutColumnManager(layoutColumn);
 	});
 })();

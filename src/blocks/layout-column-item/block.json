@@ -40,7 +40,11 @@
 		"is_grid": {
 			"type": "boolean",
 			"default": true
-		}		
+		},
+		
+		"blockId": {
+			"type": "string"
+		}	
 	},
 	"description": "Column blocks for layout.",
 	"textdomain": "vk-blocks",

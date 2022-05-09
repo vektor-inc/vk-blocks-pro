@@ -16,7 +16,7 @@ import { useMediaQuery } from '@wordpress/compose';
 
 export default function LayoutColumnItemEdit(props) {
 	const { attributes, setAttributes } = props;
-	const { width, margin_pc, margin_tb, margin_sp, is_grid } = attributes;
+	const { width, margin_pc, margin_tb, margin_sp, is_grid, blockId } = attributes;
 	const blockProps = useBlockProps({
 		className: `vk_layoutColumnItem`,
 	});
@@ -40,13 +40,12 @@ export default function LayoutColumnItemEdit(props) {
 		displayWidth = '100%';
 	}
 
-	const cStyle = {
-		width: displayWidth,
-		paddingTop: paddingObject.top,
-		paddingRight: paddingObject.right,
-		paddingBottom: paddingObject.bottom,
-		paddingLeft: paddingObject.left,
-	};
+	useEffect(() => {
+		if (blockId === undefined) {
+			setAttributes({ blockId: clientId });
+		}
+	}, [clientId]);
+
 
 	return (
 		<>

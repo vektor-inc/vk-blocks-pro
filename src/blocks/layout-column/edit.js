@@ -19,7 +19,7 @@ import { useEffect } from '@wordpress/element';
 
 export default function LayoutColumnEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
-	const { totalWidth, breakPoint } = attributes;
+	const { totalWidth, breakPoint, blockId } = attributes;
 
 	const { getBlocksByClientId } = select('core/block-editor');
 	const { updateBlockAttributes } = dispatch('core/block-editor');
@@ -28,18 +28,36 @@ export default function LayoutColumnEdit(props) {
 	let displayWidth = totalWidth;
 	let isGrid = true;
 
+	// サイドバーがひらいているかどうか
 	const isSidebarOpened = select('core/edit-post').isEditorSidebarOpened();
+
+	// エディタ用のbreakpointは設定されたもの＋280px
 	const editorBreakPoint = isSidebarOpened ? breakPoint + 280 : breakPoint;
 
+	// コンテナブロックのクラス名
 	let className = 'vk_layoutColumn';
+
+	// エディタ用breakpointで min-widthにマッチするかどうか
 	const matches = useMediaQuery('(min-width:' + editorBreakPoint + 'px)');
+
+	// min-widthにマッチする場合は Grid(Flex)レイアウト
 	if (matches) {
 		className += ' vk_layoutColumn_grid';
+
+	// それ以外は 通常のdisplay: block で幅100%
 	} else {
 		isGrid = false;
 		displayWidth = '100%';
 	}
 
+
+	useEffect(() => {
+		if (blockId === undefined) {
+			setAttributes({ blockId: clientId });
+		}
+	}, [clientId]);
+
+	// 内包するLayoutItemの is_gridに状態を保存する。
 	useEffect(() => {
 		if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
 			const thisInnerBlocks = thisBlock[0].innerBlocks;
@@ -51,6 +69,7 @@ export default function LayoutColumnEdit(props) {
 		}
 	}, [isGrid]);
 
+	// 内包するLayoutItemの個数を取得する。
 	const innerBlockCount = useSelect(
 		(s) => s('core/block-editor').getBlock(clientId).innerBlocks
 	);
@@ -68,7 +87,6 @@ export default function LayoutColumnEdit(props) {
 		<>
 			<div {...blockProps} style={{ width: displayWidth }}>
 				<InnerBlocks
-					//編集画面の追加タグ用に2回目のClassを挿入
 					template={TEMPLATE}
 					allowedBlocks={ALLOWED_BLOCKS}
 					renderAppender={() =>

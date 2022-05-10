@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
 Tested up to: 5.9.3
-Stable tag: 1.33.1.0
+Stable tag: 1.33.2.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -64,8 +64,11 @@ e.g.
 
 == Changelog ==
 
+= 1.33.2 =
+[ Bug Fix ][ Button ] Fix horizontal padding for X-T9 
 [ Bug Fix ][ Common mergin ] cope with table bottom
 [ Bug Fix ][ Breadcrumb(Pro) ] Fix front page breadcrumb
+[ Bug Fix ][ Grid Column(Pro) ] fix row block layout in Grid Column Block
 [ Improvement ][ Button ] Delete block id UI.
 
 = 1.33.1 =

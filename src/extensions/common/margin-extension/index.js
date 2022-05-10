@@ -92,8 +92,6 @@ export const isAddMargin = (blockName) => {
 		'vk-blocks/card-item',
 		'vk-blocks/icon-card-item',
 		'vk-blocks/select-post-list-item',
-		'vk-blocks/grid-column',
-		'vk-blocks/grid-column-item',
 	];
 	return isExcludesBlocks({ blockName, addExclude });
 };

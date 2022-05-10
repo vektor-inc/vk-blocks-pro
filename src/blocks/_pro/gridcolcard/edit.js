@@ -6,6 +6,9 @@ import {
 } from '@wordpress/block-editor';
 import {
 	PanelBody,
+	BaseControl,
+	Button,
+	TextControl,
 	__experimentalUnitControl as UnitControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
 } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
@@ -16,7 +19,15 @@ export default function Edit(props) {
 	const { attributes, setAttributes, clientId } = props;
 
 	// このブロックで直接使う「カラムの最小幅」と「ギャップ」
-	const { colWidthMin, gap, gapRow } = attributes;
+	const {
+		colWidthMin,
+		colWidthMinTablet,
+		colWidthMinPC,
+		gap,
+		gapRow,
+		blockId,
+		old_1_31_0,
+	} = attributes;
 
 	// ブロック全体のアウタークラス名
 	const containerClass = 'vk_gridcolcard';
@@ -24,8 +35,17 @@ export default function Edit(props) {
 	const { updateBlockAttributes } = dispatch('core/block-editor');
 
 	useEffect(() => {
-		if (clientId) {
-			updateBlockAttributes(clientId, { clientId });
+		if (blockId === undefined) {
+			setAttributes({ blockId: clientId });
+		}
+		if (old_1_31_0 === undefined) {
+			if (colWidthMinTablet === undefined) {
+				setAttributes({ colWidthMinTablet: colWidthMin });
+			}
+			if (colWidthMinPC === undefined) {
+				setAttributes({ colWidthMinPC: colWidthMin });
+			}
+			setAttributes({ old_1_31_0: true });
 		}
 	}, [clientId]);
 
@@ -78,24 +98,104 @@ export default function Edit(props) {
 	// 編集画面側は grid 指定は .block-editor-block-list__layout に対して付与するので、
 	// blockProps には付与しなくて良い
 	const blockProps = useBlockProps({
-		className: `${containerClass} block-${clientId}`,
+		className: `${containerClass} vk_gridcolcard-${blockId}`,
 	});
+
+	let blockGap = '';
+	if (gapRow) {
+		blockGap = gapRow + ' ' + gap;
+	} else {
+		blockGap = gap;
+	}
 
 	return (
 		<>
 			<InspectorControls>
+				<PanelBody title={__('Update Block ID', 'vk-blocks')}>
+					<BaseControl id={`vk_blocks_gridcolcard_updateBlockID`}>
+						<TextControl
+							className={`mb-0`}
+							label={__('Block ID', 'vk-blocks')}
+							value={blockId}
+							disabled={true}
+							onChange={(value) =>
+								setAttributes({ blockId: value })
+							}
+						/>
+						<Button
+							isSecondary
+							onClick={() => setAttributes({ blockId: clientId })}
+						>
+							{__('Update Block ID', 'vk-blocks')}
+						</Button>
+						<ul className={`mt-0 mb-3`}>
+							<li>
+								{__(
+									'This is the identification ID for this block style.',
+									'vk-blocks'
+								)}
+							</li>
+							<li>
+								<strong>
+									{__(
+										'If you duplicate this block, please update the ID on duplicated block.',
+										'vk-blocks'
+									)}
+								</strong>
+							</li>
+							<li>
+								{__(
+									'This ID is not id of HTML attribute.',
+									'vk-blocks'
+								)}
+							</li>
+						</ul>
+					</BaseControl>
+				</PanelBody>
 				<PanelBody
-					title={__('Column Setting', 'vk-blocks')}
+					title={__('Column Width Setting', 'vk-blocks')}
 					initialOpen={true}
 				>
+					<p>
+						{__(
+							'If you specify the minimum column size on a tablet or PC with %, it will be easier to align the number of columns in the upper and lower rows according to the screen size.',
+							'vk-blocks'
+						)}
+					</p>
 					<UnitControl
-						label={__('Column min width', 'vk-blocks')}
+						label={__('Column min width (Mobile)', 'vk-blocks')}
 						value={colWidthMin}
 						onChange={(value) =>
 							setAttributes({ colWidthMin: value })
 						}
 					/>
 					<br />
+					<UnitControl
+						label={__(
+							'Column min width (Tablet / Optional)',
+							'vk-blocks'
+						)}
+						value={colWidthMinTablet}
+						onChange={(value) =>
+							setAttributes({ colWidthMinTablet: value })
+						}
+					/>
+					<br />
+					<UnitControl
+						label={__(
+							'Column min width (PC / Optional)',
+							'vk-blocks'
+						)}
+						value={colWidthMinPC}
+						onChange={(value) =>
+							setAttributes({ colWidthMinPC: value })
+						}
+					/>
+				</PanelBody>
+				<PanelBody
+					title={__('Column Gap Setting', 'vk-blocks')}
+					initialOpen={true}
+				>
 					<UnitControl
 						label={__('Column gap size', 'vk-blocks')}
 						value={gap}
@@ -119,24 +219,29 @@ export default function Edit(props) {
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
-				<style>
-					{`
-					.block-${clientId} > .block-editor-inner-blocks > .block-editor-block-list__layout{
-					grid-template-columns:repeat(auto-fit, minmax(${colWidthMin}, 1fr));
-					gap:`}
-					{(() => {
-						if (gapRow) {
-							return gapRow + ' ' + gap;
-						}
-						return gap;
-					})()}
-					{`;}`}
-				</style>
 				<InnerBlocks
 					allowedBlocks={ALLOWED_BLOCKS}
 					template={MY_TEMPLATE}
 					orientation="horizontal"
 				/>
+				<style>
+					{`
+					.vk_gridcolcard-${blockId} > .block-editor-inner-blocks > .block-editor-block-list__layout{
+						grid-template-columns:repeat(auto-fit, minmax(${colWidthMin}, 1fr));
+						gap:${blockGap};
+					}
+					@media (min-width: 576px) {
+						.vk_gridcolcard-${blockId} > .block-editor-inner-blocks > .block-editor-block-list__layout{
+							grid-template-columns:repeat(auto-fit, minmax(${colWidthMinTablet}, 1fr));
+						}
+					}
+					@media (min-width: 992px) {
+						.vk_gridcolcard-${blockId} > .block-editor-inner-blocks > .block-editor-block-list__layout{
+							grid-template-columns:repeat(auto-fit, minmax(${colWidthMinPC}, 1fr));
+						}
+					}
+					`}
+				</style>
 			</div>
 		</>
 	);

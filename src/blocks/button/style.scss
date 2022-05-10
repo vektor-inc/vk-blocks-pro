@@ -6,6 +6,18 @@ $vk-color-danger: #dc3545;
 $vk-color-light:#f8f9fa;
 $vk-color-dark:#343a40;
 
+$xs-max: 575.98px;
+$sm-max: 767.98px;
+$md-max: 991.98px;
+$lg-max: 1199.98px;
+$xl-max: 1399.98px;
+
+$sm-min: 576px;
+$md-min: 768px;
+$lg-min: 992px;
+$xl-min: 1200px;
+$xxl-min: 1400px;
+
 :root,
 :root .editor-styles-wrapper {
 	.has-vk-color-primary-background-color {
@@ -76,28 +88,82 @@ $vk-color-dark:#343a40;
 		}
 	}
 
-	&[class*="vk_button-width-"]{
-		.vk_button_link {
-			display: block;
-			min-width: 50px;
+	@media (max-width: $xs-max) {
+		&[class*="vk_button-width-mobile-"]{
+			.vk_button_link {
+				display: block;
+				min-width: 50px;
+			}
+		}
+
+		&-width-mobile {
+			&-25 {
+				width: calc( 25% - 8px );
+			}
+			&-50 {
+				width: calc( 50% - 8px );
+			}
+			&-75 {
+				width: calc( 75% - 8px );
+			}
+			&-100 {
+				width: 100%;			
+			}
 		}
 	}
 
-	&-width {
-		&-25{
-			width: calc( 25% - 8px );
+	@media (min-width: $sm-min) and (max-width: $md-max) {
+		&[class*="vk_button-width-tablet-"] {
+			.vk_button_link {
+				display: block;
+			}
 		}
-		&-50{
-			width: calc( 50% - 8px );
-		}
-		&-75{
-			width: calc( 75% - 8px );
-		}
-		&-100{
-			width: 100%;			
+		
+		&-width-tablet {
+			&-25 {
+				width: calc(25% - 8px);
+			}
+		
+			&-50 {
+				width: calc(50% - 8px);
+			}
+		
+			&-75 {
+				width: calc(75% - 8px);
+			}
+		
+			&-100 {
+				width: 100%;
+			}
 		}
 	}
 
+	@media (min-width: $lg-min) {
+		&[class*="vk_button-width-"] {
+			.vk_button_link {
+				display: block;
+			}
+		}
+		
+		&-width {
+			&-25 {
+				width: calc(25% - 8px);
+			}
+		
+			&-50 {
+				width: calc(50% - 8px);
+			}
+		
+			&-75 {
+				width: calc(75% - 8px);
+			}
+		
+			&-100 {
+				width: 100%;
+			}
+		}
+	}
+	
 	// 塗り
 	.btn.has-background:not(.has-text-color) {
 		color: #fff;
@@ -290,9 +356,9 @@ $vk-color-dark:#343a40;
 		}
 
 		&.btn {
-			// .btn指定がないと管理画面で標準の .btn の指定に負ける
-			padding-top: 0.6em;
-			padding-bottom: 0.6em;
+			// .btn指定がないと編集画面で標準の .btn の指定に負ける
+			// X-T9で .has-background に対して padding:0; 指定しているので、左右余白が 0 にならないように上書き
+			padding: 0.6em 1.5rem;
 			user-select: text;
 			text-decoration: none;
 			font-size: calc( var(--vk-size-text) * 1 );

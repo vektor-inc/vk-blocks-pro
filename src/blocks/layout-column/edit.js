@@ -44,12 +44,11 @@ export default function LayoutColumnEdit(props) {
 	if (matches) {
 		className += ' vk_layoutColumn_grid';
 
-	// それ以外は 通常のdisplay: block で幅100%
+		// それ以外は 通常のdisplay: block で幅100%
 	} else {
 		isGrid = false;
 		displayWidth = '100%';
 	}
-
 
 	useEffect(() => {
 		if (blockId === undefined) {

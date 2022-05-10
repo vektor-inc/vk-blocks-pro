@@ -12,11 +12,13 @@ import {
 	InspectorControls,
 } from '@wordpress/block-editor';
 
+import { useEffect } from '@wordpress/element';
 import { useMediaQuery } from '@wordpress/compose';
 
 export default function LayoutColumnItemEdit(props) {
 	const { attributes, setAttributes } = props;
-	const { width, margin_pc, margin_tb, margin_sp, is_grid, blockId } = attributes;
+	const { width, margin_pc, margin_tb, margin_sp, is_grid, blockId } =
+		attributes;
 	const blockProps = useBlockProps({
 		className: `vk_layoutColumnItem`,
 	});
@@ -40,12 +42,13 @@ export default function LayoutColumnItemEdit(props) {
 		displayWidth = '100%';
 	}
 
-	useEffect(() => {
-		if (blockId === undefined) {
-			setAttributes({ blockId: clientId });
-		}
-	}, [clientId]);
-
+	const cStyle = {
+		width: displayWidth,
+		paddingTop: paddingObject.top,
+		paddingRight: paddingObject.right,
+		paddingBottom: paddingObject.bottom,
+		paddingLeft: paddingObject.left,
+	};
 
 	return (
 		<>

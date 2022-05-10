@@ -10,6 +10,7 @@
 	height: 100%;
 	position: relative;
 	&_item {
+		height:auto; // これがないと高さが100%にならない
 		&.vk_valign-top {
 			align-items: flex-start;
 			justify-content: flex-start;
@@ -61,12 +62,15 @@
 
 	}
 }
+
+// ↓ これ要る？
 .swiper-slide {
 	font-size: 18px;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 }
+
 //paginationの親枠
 .swiper-container-horizontal>.swiper-pagination-bullets{
 	padding-left:3.2rem;

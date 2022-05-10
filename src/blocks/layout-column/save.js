@@ -1,10 +1,7 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 export default function save({ attributes }) {
-	const {
-		breakPoint,
-		blockId
-	} = attributes;
+	const { breakPoint, blockId } = attributes;
 
 	const blockProps = useBlockProps.save({
 		className: `vk_layoutColumn vk-layoutColumn-${blockId}`,
@@ -22,9 +19,7 @@ export default function save({ attributes }) {
 			<div {...blockProps} data-breakpoint={breakPoint}>
 				<InnerBlocks.Content />
 			</div>
-			<style>
-				{style}
-			</style>
+			<style>{style}</style>
 		</>
 	);
 }

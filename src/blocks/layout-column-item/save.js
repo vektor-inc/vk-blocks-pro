@@ -2,7 +2,7 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 export default function LayoutColumnItemSave(props) {
 	const { attributes } = props;
-	const { width, margin_pc, margin_tb, margin_sp } = attributes;
+	const { width } = attributes;
 
 	const blockProps = useBlockProps.save({
 		className: `vk_layoutColumnItem`,
@@ -12,12 +12,14 @@ export default function LayoutColumnItemSave(props) {
 		width,
 	};
 
+	const style = {};
+
 	return (
-		<div
-			{...blockProps}
-			style={cStyle}
-		>
-			<InnerBlocks.Content />
-		</div>
+		<>
+			<div {...blockProps} style={cStyle}>
+				<InnerBlocks.Content />
+			</div>
+			<style>{style}</style>
+		</>
 	);
 }

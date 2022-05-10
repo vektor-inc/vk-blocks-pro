@@ -2,24 +2,16 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-<<<<<<< HEAD
-"Project-Id-Version: VK Blocks Pro 1.20.0\n"
-=======
-"Project-Id-Version: VK Blocks Pro 1.31.0.0\n"
->>>>>>> develop
+"Project-Id-Version: VK Blocks Pro 1.33.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-<<<<<<< HEAD
-"POT-Creation-Date: 2021-11-17T02:13:20+00:00\n"
-=======
-"POT-Creation-Date: 2022-04-21T02:06:31+00:00\n"
->>>>>>> develop
+"POT-Creation-Date: 2022-05-10T01:42:08+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.6.0\n"
+"X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
 
 #: src/blocks/_pro/accordion/index.js:22
@@ -66,7 +58,7 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:351
 #: src/blocks/_pro/slider/edit.js:193
 #: src/blocks/balloon/edit.js:483
-#: src/blocks/button/edit.js:308
+#: src/blocks/button/edit.js:294
 #: src/blocks/faq/index.js:26
 #: src/blocks/faq2/index.js:21
 #: src/extensions/common/inline-font-size/index.js:89
@@ -282,7 +274,7 @@ msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:104
 #: src/blocks/_pro/gridcolcard/edit-common.js:160
-#: src/blocks/button/edit.js:558
+#: src/blocks/button/edit.js:677
 #: src/blocks/heading/edit.js:324
 msgid "Text Color"
 msgstr ""
@@ -290,7 +282,7 @@ msgstr ""
 #: src/blocks/_pro/grid-column-item/edit.js:110
 #: src/blocks/_pro/gridcolcard/edit-common.js:169
 #: src/blocks/border-box/edit.js:216
-#: src/blocks/button/edit.js:541
+#: src/blocks/button/edit.js:660
 msgid "Background Color"
 msgstr ""
 
@@ -352,27 +344,7 @@ msgstr ""
 msgid "vw"
 msgstr ""
 
-<<<<<<< HEAD
-#: src/blocks/_pro/grid-column-item/edit.js:81
-msgid "Color Settings"
-msgstr ""
-
-#: src/blocks/_pro/grid-column-item/edit.js:83
-#: src/blocks/button/edit.js:404
-#: src/blocks/heading/edit.js:288
-msgid "Text Color"
-msgstr ""
-
-#: src/blocks/_pro/grid-column-item/edit.js:94
-#: src/blocks/border-box/edit.js:99
-#: src/blocks/button/edit.js:387
-msgid "Background Color"
-msgstr ""
-
 #: src/blocks/_pro/grid-column/edit.js:52
-=======
-#: src/blocks/_pro/grid-column/edit.js:53
->>>>>>> develop
 msgid "Layout Columns"
 msgstr ""
 
@@ -390,18 +362,18 @@ msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:201
 #: src/blocks/_pro/select-post-list-item/edit.js:66
-#: src/blocks/button/edit.js:189
+#: src/blocks/button/edit.js:212
 msgid "Unlink"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:202
-#: src/blocks/button/edit.js:190
+#: src/blocks/button/edit.js:213
 msgid "Input Link URL"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:241
 #: src/blocks/_pro/select-post-list-item/edit.js:102
-#: src/blocks/button/edit.js:229
+#: src/blocks/button/edit.js:252
 msgid "Submit"
 msgstr ""
 
@@ -426,7 +398,6 @@ msgid "Lock edits this block from the parent and other Grid Column Item block"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:292
-#: src/blocks/_pro/gridcolcard/edit.js:88
 msgid "Column Setting"
 msgstr ""
 
@@ -438,7 +409,7 @@ msgstr ""
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:301
 #: src/blocks/_pro/icon-card-item/edit.js:128
-#: src/blocks/button/edit.js:215
+#: src/blocks/button/edit.js:238
 #: src/blocks/icon/edit.js:254
 #: src/blocks/pr-blocks/edit.js:262
 #: src/blocks/pr-content/edit.js:131
@@ -502,20 +473,60 @@ msgstr ""
 msgid "Column header media area"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:100
+#: src/blocks/_pro/gridcolcard/edit.js:118
+msgid "Block ID"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:129
+msgid "Update Block ID"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:133
+msgid "This is the identification ID for this block style."
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:140
+msgid "If you duplicate this block, please update the ID on duplicated block."
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:147
+msgid "This ID is not id of HTML attribute."
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:156
+msgid "Column Width Setting"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:160
+msgid "If you specify the minimum column size on a tablet or PC with %, it will be easier to align the number of columns in the upper and lower rows according to the screen size."
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:166
+msgid "Column min width (Mobile)"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:174
+msgid "Column min width (Tablet / Optional)"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:185
+msgid "Column min width (PC / Optional)"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:196
+msgid "Column Gap Setting"
+msgstr ""
+
+#: src/blocks/_pro/gridcolcard/edit.js:200
 msgid "Column gap size"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:106
+#: src/blocks/_pro/gridcolcard/edit.js:206
 msgid "Column row-gap size (optional)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:115
+#: src/blocks/_pro/gridcolcard/edit.js:215
 msgid "Specify all columns at once"
-msgstr ""
-
-#: src/blocks/_pro/gridcolcard/edit.js:92
-msgid "Column min width"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/deprecated/0.0.0/component.js:55
@@ -549,7 +560,7 @@ msgstr ""
 #: src/blocks/_pro/icon-card-item/edit.js:137
 #: src/blocks/_pro/step-item/edit.js:76
 #: src/blocks/border-box/edit.js:240
-#: src/blocks/button/edit.js:569
+#: src/blocks/button/edit.js:688
 #: src/blocks/heading/edit.js:334
 #: src/blocks/icon/edit.js:241
 #: src/blocks/pr-content/edit.js:197
@@ -563,7 +574,7 @@ msgid "Icon Background:"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:150
-#: src/blocks/button/edit.js:452
+#: src/blocks/button/edit.js:571
 #: src/blocks/icon-outer/edit.js:204
 #: src/blocks/icon/edit.js:195
 #: src/blocks/pr-blocks/edit.js:285
@@ -571,7 +582,7 @@ msgid "Solid color"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:154
-#: src/blocks/button/edit.js:465
+#: src/blocks/button/edit.js:584
 #: src/blocks/pr-blocks/edit.js:289
 msgid "No background"
 msgstr ""
@@ -798,6 +809,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:604
 #: src/blocks/_pro/slider/edit.js:238
+#: src/blocks/button/edit.js:372
 #: src/blocks/layout-column-item/edit.js:87
 #: src/components/advanced-viewport-control/index.js:39
 #: inc/vk-blocks/admin/admin-margin.php:62
@@ -806,6 +818,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:619
 #: src/blocks/_pro/slider/edit.js:227
+#: src/blocks/button/edit.js:437
 #: src/blocks/layout-column-item/edit.js:79
 #: src/components/advanced-viewport-control/index.js:31
 #: inc/vk-blocks/admin/admin-margin.php:61
@@ -814,6 +827,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:634
 #: src/blocks/_pro/slider/edit.js:216
+#: src/blocks/button/edit.js:502
 #: src/blocks/layout-column-item/edit.js:71
 #: src/components/advanced-viewport-control/index.js:25
 #: inc/vk-blocks/admin/admin-margin.php:60
@@ -1015,7 +1029,7 @@ msgid "Navigation Position"
 msgstr ""
 
 #: src/blocks/_pro/slider/edit.js:370
-#: src/blocks/button/edit.js:344
+#: src/blocks/button/edit.js:330
 #: src/components/display-items-control/index.js:127
 msgid "Center"
 msgstr ""
@@ -1045,7 +1059,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/edit.js:96
 #: src/blocks/_pro/timeline-item/edit.js:69
 #: src/blocks/border-box/edit.js:204
-#: src/blocks/button/edit.js:487
+#: src/blocks/button/edit.js:606
 #: src/blocks/icon/edit.js:261
 #: src/blocks/staff/edit.js:199
 #: inc/term-color/package/class.term-color.php:41
@@ -1111,28 +1125,28 @@ msgid "Style Settings"
 msgstr ""
 
 #: src/blocks/alert/edit.js:25
-#: src/blocks/button/edit.js:501
+#: src/blocks/button/edit.js:620
 #: src/blocks/pr-content/edit.js:165
 #: src/extensions/core/group/style.js:138
 msgid "Success"
 msgstr ""
 
 #: src/blocks/alert/edit.js:28
-#: src/blocks/button/edit.js:505
+#: src/blocks/button/edit.js:624
 #: src/blocks/pr-content/edit.js:168
 #: src/extensions/core/group/style.js:134
 msgid "Info"
 msgstr ""
 
 #: src/blocks/alert/edit.js:30
-#: src/blocks/button/edit.js:509
+#: src/blocks/button/edit.js:628
 #: src/blocks/pr-content/edit.js:170
 #: src/extensions/core/group/style.js:142
 msgid "Warning"
 msgstr ""
 
 #: src/blocks/alert/edit.js:34
-#: src/blocks/button/edit.js:513
+#: src/blocks/button/edit.js:632
 #: src/blocks/pr-content/edit.js:174
 #: src/extensions/core/group/style.js:146
 msgid "Danger"
@@ -1172,14 +1186,14 @@ msgid "Please specify the layout of the balloon."
 msgstr ""
 
 #: src/blocks/balloon/edit.js:426
-#: src/blocks/button/edit.js:334
+#: src/blocks/button/edit.js:320
 #: src/blocks/pr-content/edit.js:237
 #: src/components/display-items-control/index.js:123
 msgid "Left"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:438
-#: src/blocks/button/edit.js:354
+#: src/blocks/button/edit.js:340
 #: src/blocks/pr-content/edit.js:236
 #: src/components/display-items-control/index.js:131
 msgid "Right"
@@ -1302,145 +1316,125 @@ msgstr ""
 msgid "Solid Angle iconFeature"
 msgstr ""
 
-#: src/blocks/button/edit.js:242
+#: src/blocks/button/edit.js:265
 msgid "Button setting"
 msgstr ""
 
-#: src/blocks/button/edit.js:245
-msgid "Block ID"
-msgstr ""
-
-#: src/blocks/button/edit.js:251
-msgid "This is the identification ID for this block style."
-msgstr ""
-
-#: src/blocks/button/edit.js:257
-msgid "If you don't use custom colors, you don't have to worry about it."
-msgstr ""
-
-#: src/blocks/button/edit.js:264
-msgid "If you duplicate this block, please change the ID."
-msgstr ""
-
-#: src/blocks/button/edit.js:271
-msgid "This ID is'not id of HTML attribute."
-msgstr ""
-
-#: src/blocks/button/edit.js:281
+#: src/blocks/button/edit.js:267
 msgid "Sub Caption"
 msgstr ""
 
-#: src/blocks/button/edit.js:291
+#: src/blocks/button/edit.js:277
 msgid "Button Size:"
 msgstr ""
 
-#: src/blocks/button/edit.js:300
+#: src/blocks/button/edit.js:286
 #: src/blocks/spacer/edit.js:105
 #: inc/vk-blocks/vk-blocks-functions.php:31
 msgid "Large"
 msgstr ""
 
-#: src/blocks/button/edit.js:316
+#: src/blocks/button/edit.js:302
 #: src/blocks/spacer/edit.js:85
 #: src/extensions/common/inline-font-size/index.js:84
 #: inc/vk-blocks/vk-blocks-functions.php:23
 msgid "Small"
 msgstr ""
 
-#: src/blocks/button/edit.js:323
+#: src/blocks/button/edit.js:309
 msgid "Button Position:"
 msgstr ""
 
-#: src/blocks/button/edit.js:364
+#: src/blocks/button/edit.js:350
 msgid "Wide"
 msgstr ""
 
-#: src/blocks/button/edit.js:374
+#: src/blocks/button/edit.js:360
 msgid "Block"
 msgstr ""
 
-#: src/blocks/button/edit.js:383
+#: src/blocks/button/edit.js:369
 msgid "Button Width:"
 msgstr ""
 
-#: src/blocks/button/edit.js:397
+#: src/blocks/button/edit.js:516
 msgid "25%"
 msgstr ""
 
-#: src/blocks/button/edit.js:410
+#: src/blocks/button/edit.js:529
 msgid "50%"
 msgstr ""
 
-#: src/blocks/button/edit.js:423
+#: src/blocks/button/edit.js:542
 msgid "75%"
 msgstr ""
 
-#: src/blocks/button/edit.js:436
+#: src/blocks/button/edit.js:555
 msgid "100%"
 msgstr ""
 
-#: src/blocks/button/edit.js:443
+#: src/blocks/button/edit.js:562
 msgid "Button Style:"
 msgstr ""
 
-#: src/blocks/button/edit.js:478
+#: src/blocks/button/edit.js:597
 msgid "Text only"
 msgstr ""
 
-#: src/blocks/button/edit.js:482
+#: src/blocks/button/edit.js:601
 msgid "If you select \"No background\", that you need to select a Custom Color."
 msgstr ""
 
-#: src/blocks/button/edit.js:489
+#: src/blocks/button/edit.js:608
 msgid "Default Color (Bootstrap)"
 msgstr ""
 
-#: src/blocks/button/edit.js:493
+#: src/blocks/button/edit.js:612
 #: src/blocks/pr-content/edit.js:157
 msgid "Primary"
 msgstr ""
 
-#: src/blocks/button/edit.js:497
+#: src/blocks/button/edit.js:616
 #: src/blocks/pr-content/edit.js:161
 msgid "Secondary"
 msgstr ""
 
-#: src/blocks/button/edit.js:517
+#: src/blocks/button/edit.js:636
 #: src/blocks/pr-content/edit.js:177
 msgid "Light"
 msgstr ""
 
-#: src/blocks/button/edit.js:521
+#: src/blocks/button/edit.js:640
 #: src/blocks/pr-content/edit.js:178
 msgid "Dark"
 msgstr ""
 
-#: src/blocks/button/edit.js:534
+#: src/blocks/button/edit.js:653
 msgid "Custom Color"
 msgstr ""
 
-#: src/blocks/button/edit.js:542
+#: src/blocks/button/edit.js:661
 #: src/blocks/pr-content/edit.js:186
 msgid "Button Color"
 msgstr ""
 
-#: src/blocks/button/edit.js:544
+#: src/blocks/button/edit.js:663
 msgid "This color palette overrides the default color. If you want to use the default color, click the clear button."
 msgstr ""
 
-#: src/blocks/button/edit.js:576
+#: src/blocks/button/edit.js:695
 #: src/blocks/heading/edit.js:337
 #: src/blocks/pr-content/edit.js:204
 msgid "Before text"
 msgstr ""
 
-#: src/blocks/button/edit.js:585
+#: src/blocks/button/edit.js:704
 #: src/blocks/heading/edit.js:346
 #: src/blocks/pr-content/edit.js:216
 msgid "After text"
 msgstr ""
 
-#: src/blocks/button/edit.js:614
+#: src/blocks/button/edit.js:733
 msgid "Input text"
 msgstr ""
 
@@ -1550,12 +1544,8 @@ msgstr ""
 msgid "Plain"
 msgstr ""
 
-<<<<<<< HEAD
-#: src/blocks/heading/edit.js:238
-#: src/blocks/layout-column-item/edit.js:67
-=======
 #: src/blocks/heading/edit.js:274
->>>>>>> develop
+#: src/blocks/layout-column-item/edit.js:67
 msgid "Margin Setting"
 msgstr ""
 
@@ -1630,7 +1620,7 @@ msgid "Layout Column item Setting"
 msgstr ""
 
 #: src/blocks/layout-column-item/edit.js:63
-#: src/blocks/layout-column/edit.js:84
+#: src/blocks/layout-column/edit.js:105
 msgid "Block width"
 msgstr ""
 
@@ -1638,11 +1628,11 @@ msgstr ""
 msgid "Layout Column Item"
 msgstr ""
 
-#: src/blocks/layout-column/edit.js:79
+#: src/blocks/layout-column/edit.js:100
 msgid "Layout Column Setting"
 msgstr ""
 
-#: src/blocks/layout-column/edit.js:99
+#: src/blocks/layout-column/edit.js:120
 msgid "BreakPoint(px)"
 msgstr ""
 
@@ -2058,7 +2048,7 @@ msgstr ""
 msgid "Top lg"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:282
+#: src/extensions/common/margin-extension/index.js:280
 msgid "Margin the block"
 msgstr ""
 
@@ -2339,7 +2329,6 @@ msgstr ""
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#. translators: %s = plugin name.
 #: inc/tgm-plugin-activation/tgm-config.php:76
 msgid "Something went wrong with the plugin API."
 msgstr ""
@@ -2514,8 +2503,21 @@ msgstr ""
 msgid "Balloon Image Name"
 msgstr ""
 
+#: inc/vk-blocks/admin/admin-license.php:12
+#: inc/vk-blocks/admin/admin-license.php:16
+msgid "License key"
+msgstr ""
+
+#: inc/vk-blocks/admin/admin-license.php:13
+msgid "Enter a valid Lightning G3 Pro Pack or Lightning Pro license key."
+msgstr ""
+
+#: inc/vk-blocks/admin/admin-license.php:14
+msgid "Once you enter the license key you will be able to do a one click update from the administration screen."
+msgstr ""
+
 #: inc/vk-blocks/admin/admin-load-separate.php:11
-#: inc/vk-blocks/admin/admin.php:73
+#: inc/vk-blocks/admin/admin.php:91
 msgid "Load Separete Setting"
 msgstr ""
 
@@ -2528,7 +2530,7 @@ msgid "Load Separete Option on"
 msgstr ""
 
 #: inc/vk-blocks/admin/admin-margin.php:27
-#: inc/vk-blocks/admin/admin.php:72
+#: inc/vk-blocks/admin/admin.php:90
 msgid "Common Margin Setting"
 msgstr ""
 
@@ -2536,24 +2538,28 @@ msgstr ""
 msgid "Please specify the size of the common margin used for responsive spacers, etc."
 msgstr ""
 
-#: inc/vk-blocks/admin/admin.php:48
+#: inc/vk-blocks/admin/admin.php:63
 msgid "Blocks setting"
 msgstr ""
 
-#: inc/vk-blocks/admin/admin.php:49
+#: inc/vk-blocks/admin/admin.php:64
 msgctxt "label in admin menu"
 msgid "Blocks"
 msgstr ""
 
-#: inc/vk-blocks/admin/admin.php:65
+#: inc/vk-blocks/admin/admin.php:80
 msgid "Blocks Setting"
 msgstr ""
 
-#: inc/vk-blocks/admin/admin.php:71
+#: inc/vk-blocks/admin/admin.php:87
+msgid "License Key"
+msgstr ""
+
+#: inc/vk-blocks/admin/admin.php:89
 msgid "Balloon Block Setting"
 msgstr ""
 
-#: inc/vk-blocks/admin/admin.php:129
+#: inc/vk-blocks/admin/admin.php:146
 msgid "Setting"
 msgstr ""
 
@@ -2680,6 +2686,27 @@ msgstr ""
 
 #: vk-blocks.php:106
 msgid "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks Plugin running."
+msgstr ""
+
+#: vk-blocks.php:205
+msgid "License Key has no registered."
+msgstr ""
+
+#: vk-blocks.php:210
+msgid "The VK Blocks Pro license is invalid."
+msgstr ""
+
+#: vk-blocks.php:234
+msgid "Enter a valid license key for any of the following products on the settings screen."
+msgstr ""
+
+#: vk-blocks.php:243
+msgid "Enter the license key"
+msgstr ""
+
+#. translators: %s: 再読み込みURL
+#: vk-blocks.php:247
+msgid "Even after valid license key registration you still seeing this message, <a href=\"%s\">please click here to reload</a>."
 msgstr ""
 
 #: inc/vk-blocks/build/blocks/alert/block.json
@@ -2826,16 +2853,15 @@ msgctxt "block description"
 msgid "Display icons with Font Awesome."
 msgstr ""
 
-<<<<<<< HEAD
+#: inc/vk-blocks/build/blocks/layout-column-item/block.json
+#: inc/vk-blocks/build/blocks/layout-column/block.json
 #: src/blocks/layout-column-item/block.json
 #: src/blocks/layout-column/block.json
 msgctxt "block description"
 msgid "Column blocks for layout."
 msgstr ""
 
-=======
 #: inc/vk-blocks/build/blocks/page-content/block.json
->>>>>>> develop
 #: src/blocks/page-content/block.json
 msgctxt "block title"
 msgid "Page Content"

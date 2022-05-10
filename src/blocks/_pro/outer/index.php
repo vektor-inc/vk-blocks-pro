@@ -31,3 +31,25 @@ function vk_blocks_register_block_outer() {
 	);
 }
 add_action( 'init', 'vk_blocks_register_block_outer', 99 );
+
+/**
+ * Render Outer block deprecated method.
+ *
+ * 1.26.0 〜 1.33.2.0までの間,枠線の種類をなし(none)を選んだとしてもborderのclassがついてしまったため #1187
+ *
+ * @param string $block_content block_content.
+ * @param array  $block block.
+ * @return string
+ */
+function vk_blocks_outer_deprecated_render_callback( $block_content, $block ) {
+	if ( 'vk-blocks/outer' === $block['blockName'] ) {
+		$border_style = isset( $block['attrs']['borderStyle'] ) ? $block['attrs']['borderStyle'] : '';
+		if ( '' === $border_style ) {
+			$block_content = str_replace( ' has-border-color', '', $block_content );
+			$regex         = '/ has-.*-border-color/';
+			$block_content = preg_replace( $regex, '', $block_content );
+		}
+	}
+	return $block_content;
+}
+add_filter( 'render_block', 'vk_blocks_outer_deprecated_render_callback', 10, 2 );

@@ -76,6 +76,10 @@ export default function save({ attributes }) {
 		className: `swiper-container vk_slider vk_slider_${clientId}${alignClass}`,
 	});
 
+	// Delete old class name
+	blockProps.className = blockProps.className.replace(' vk_width-full', '');
+	blockProps.className = blockProps.className.replace(' vk_width-wide', '');
+
 	return (
 		<div {...blockProps} data-vkb-slider={JSON.stringify(sliderData)}>
 			<div className={`swiper-wrapper`}>

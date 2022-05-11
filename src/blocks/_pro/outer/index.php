@@ -42,14 +42,12 @@ add_action( 'init', 'vk_blocks_register_block_outer', 99 );
  * @return string
  */
 function vk_blocks_outer_deprecated_render_callback( $block_content, $block ) {
-	if ( 'vk-blocks/outer' === $block['blockName'] ) {
-		$border_style = isset( $block['attrs']['borderStyle'] ) ? $block['attrs']['borderStyle'] : '';
-		if ( '' === $border_style ) {
-			$block_content = str_replace( ' has-border-color', '', $block_content );
-			$regex         = '/ has-.*-border-color/';
-			$block_content = preg_replace( $regex, '', $block_content );
-		}
+	$border_style = isset( $block['attrs']['borderStyle'] ) ? $block['attrs']['borderStyle'] : '';
+	if ( '' === $border_style ) {
+		$block_content = str_replace( ' has-border-color', '', $block_content );
+		$regex         = '/ has-.*-border-color/';
+		$block_content = preg_replace( $regex, '', $block_content );
 	}
 	return $block_content;
 }
-add_filter( 'render_block', 'vk_blocks_outer_deprecated_render_callback', 10, 2 );
+add_filter( 'render_block_vk-blocks/outer', 'vk_blocks_outer_deprecated_render_callback', 10, 2 );

@@ -77,7 +77,7 @@ export default function OuterEdit(props) {
 			updateBlockAttributes(clientId, { clientId });
 		}
 		// 互換処理 #1187
-		if (borderStyle === 'none') {
+		if (borderStyle === 'none' && attributes.className) {
 			// 追加CSSクラスを半角文字列で分けて配列化
 			const nowClassArray = attributes.className.split(' ');
 			// has-border-color,has-〇〇-border-colorクラスを削除する

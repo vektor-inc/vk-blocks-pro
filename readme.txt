@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Gridcolcard(Pro) ] Fix bocome narrow width in case of innner block on edit screen 
+
 = 1.33.2 =
 [ Bug Fix ][ Button ] Fix horizontal padding for X-T9 
 [ Bug Fix ][ Common mergin ] cope with table bottom

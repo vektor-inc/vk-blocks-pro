@@ -1075,41 +1075,33 @@ msgstr ""
 msgid "Tab Item"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:154
+#: src/blocks/_pro/tab/edit.js:139
 #. Tab label [i]
 msgid "Tab Label [ %s ]"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:196
+#: src/blocks/_pro/tab/edit.js:181
 msgid "Tab size Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:198
-msgid "Tab Size ( Extra small )"
+#: src/blocks/_pro/tab/edit.js:183
+msgid "Tab Size ( Smart Phone )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:215
-msgid "Tab Size ( Small )"
+#: src/blocks/_pro/tab/edit.js:200
+msgid "Tab Size ( Tablet )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:232
-msgid "Tab Size ( Mediium )"
+#: src/blocks/_pro/tab/edit.js:217
+msgid "Tab Size ( PC )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:249
-msgid "Tab Size ( Large )"
+#: src/blocks/_pro/tab/edit.js:221
+msgid "Fit to the text"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:266
-msgid "Tab Size ( Extra large )"
-msgstr ""
-
-#: src/blocks/_pro/tab/edit.js:270
-msgid "Fit Text"
-msgstr ""
-
-#: src/blocks/_pro/tab/edit.js:274
-msgid "Fit full Width"
+#: src/blocks/_pro/tab/edit.js:225
+msgid "Monospaced"
 msgstr ""
 
 #: src/blocks/_pro/tab/index.js:55

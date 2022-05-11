@@ -1,6 +1,10 @@
 /*-------------------------------------------*/
 /* CSS
 /*-------------------------------------------*/
+:root {
+	--vk-step-item-dot-num-line-height:calc(var(--vk-size-text) * 1.2 );
+}
+
 .vk_step {
 	margin: 2em auto;
 
@@ -24,8 +28,6 @@
 			margin-bottom: 0.5em;
 			color: #666;
 		}
-		.vk_step_item_content {
-		}
 		.vk_step_item_dot {
 			content: "";
 			display: block;
@@ -39,11 +41,14 @@
 			padding: 9px 0;
 			text-align: center;
 			&_num {
-				line-height: calc(var(--vk-size-text) * 1.2 );
+				line-height: var(--vk-step-item-dot-num-line-height);
 			}
 			i {
 				margin-right:auto;
 				margin-left:auto;
+				//line-heightがきいてなかったので追加
+				display: block;
+				line-height: var(--vk-step-item-dot-num-line-height);
 			}
 			&.vk_step_item_style-default {
 				color: #ffffff;			
@@ -60,6 +65,7 @@
 		}
 		.vk_step_item_dot_caption {
 			font-size: calc(var(--vk-size-text) * 0.5 );
+			line-height: calc(var(--vk-size-text) * 0.875 );
 		}
 	}
 }

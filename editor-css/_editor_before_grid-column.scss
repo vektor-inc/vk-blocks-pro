@@ -15,8 +15,8 @@
 		display: unset;
 		flex-direction:unset;
 		flex-wrap: unset;
-		//inner-blocksの中のinner-blocksがソーシャルアイコンブロックだった場合
-		&.wp-block-social-links {
+		&.wp-block-social-links, //inner-blocksの中のinner-blocksがソーシャルアイコンブロックだった場合
+		&.wp-block-group { //inner-blocksの中のinner-blocksがグループブロックだった場合
 			display: flex;
 			flex-direction: row;
 			flex-wrap: wrap;

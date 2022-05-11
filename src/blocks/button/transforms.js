@@ -2,6 +2,7 @@
  * WordPress dependencies
  */
 import { createBlock } from '@wordpress/blocks';
+import { __unstableCreateElement as createElement } from '@wordpress/rich-text'; // eslint-disable-line @wordpress/no-unsafe-wp-apis
 
 /**
  * Internal dependencies
@@ -26,6 +27,12 @@ const transforms = {
 					buttonUrl: url,
 					buttonTarget: target,
 				});
+			},
+			isMatch: (attributes) => {
+				const element = createElement(document, attributes.content);
+				const text = element.innerText || '';
+				const links = element.querySelectorAll('a');
+				return text.length <= 30 && links.length <= 1;
 			},
 		},
 	],

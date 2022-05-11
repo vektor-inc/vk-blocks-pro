@@ -5,7 +5,6 @@
 import { ReactComponent as Icon } from './icon.svg';
 import { __ } from '@wordpress/i18n';
 
-// import { content, title } from '@vkblocks/utils/example-data';
 import edit from './edit';
 import metadata from './block.json';
 import save from './save';
@@ -13,43 +12,6 @@ import save from './save';
 const { name } = metadata;
 
 export { metadata, name };
-
-/*
-const example = {
-	innerBlocks: [
-		{
-			name: 'vk-blocks/tab-item',
-			attributes: {
-				tabLabel: title,
-				tabBodyActive: true,
-			},
-			innerBlocks: [
-				{
-					name: 'core/paragraph',
-					attributes: {
-						content,
-					},
-				},
-			],
-		},
-		{
-			name: 'vk-blocks/tab-item',
-			attributes: {
-				tabLabel: title,
-				tabBodyActive: false,
-			},
-			innerBlocks: [
-				{
-					name: 'core/paragraph',
-					attributes: {
-						content,
-					},
-				},
-			],
-		},
-	],
-};
-*/
 
 export const settings = {
 	title: __('Tab', 'vk-blocks'), // Block title.
@@ -85,7 +47,6 @@ export const settings = {
 			label: __('Line Simple', 'vk-blocks'),
 		},
 	],
-	// example,
 	edit,
 	save,
 };

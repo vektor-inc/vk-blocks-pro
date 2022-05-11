@@ -8,15 +8,19 @@
 			"type": "string",
 			"default": ""
 		},
-		"clientId": {
-			"type": "string",
-			"default": ""
-		},
 		"tabBodyActive": {
 			"type": "boolean",
 			"default": false
 		},
+		"tabBodyPadding": {
+			"type": "string",
+			"default": ""
+		},
 		"tabColor": {
+			"type": "string",
+			"default": ""
+		},
+		"blockId": {
 			"type": "string",
 			"default": ""
 		}

@@ -2,7 +2,7 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 export default function save(props) {
 	const { attributes } = props;
-	const { clientId, tabBodyActive } = attributes;
+	const { tabBodyActive, blockId } = attributes;
 
 	let activeBodyClass = '';
 	if (tabBodyActive === true) {
@@ -11,7 +11,7 @@ export default function save(props) {
 
 	const blockProps = useBlockProps.save({
 		className: `vk_tab_bodys_body ${activeBodyClass}`,
-		id: `vk_tab_bodys_body-${clientId}`,
+		id: `vk_tab_bodys_body-${blockId}`,
 	});
 
 	return (

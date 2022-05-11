@@ -1,21 +1,17 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
-import { dispatch } from '@wordpress/data';
-
+import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 export default function TabItemEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
-	const { tabBodyActive } = attributes;
+	const { tabBodyActive, blockId } = attributes;
 	attributes.clientId = clientId;
 
-	const { updateBlockAttributes } = dispatch('core/block-editor');
-
-	if (tabBodyActive === undefined) {
-		setAttributes({ tabBodyActive: false });
-	}
-
 	useEffect(() => {
-		if (clientId) {
-			updateBlockAttributes(clientId, { clientId });
+		if (
+			blockId === undefined ||
+			isParentReusableBlock(clientId) === false
+		) {
+			setAttributes({ blockId: clientId });
 		}
 	}, [clientId]);
 
@@ -26,7 +22,7 @@ export default function TabItemEdit(props) {
 
 	const blockProps = useBlockProps({
 		className: `vk_tab_bodys_body ${activeBodyClass}`,
-		id: `vk_tab_bodys_body-${clientId}`,
+		id: `vk_tab_bodys_body-${blockId}`,
 	});
 
 	return (

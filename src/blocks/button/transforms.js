@@ -2,7 +2,6 @@
  * WordPress dependencies
  */
 import { createBlock } from '@wordpress/blocks';
-import { __unstableCreateElement as createElement } from '@wordpress/rich-text'; // eslint-disable-line @wordpress/no-unsafe-wp-apis
 
 /**
  * Internal dependencies
@@ -29,9 +28,10 @@ const transforms = {
 				});
 			},
 			isMatch: (attributes) => {
-				const element = createElement(document, attributes.content);
-				const text = element.innerText || '';
-				const links = element.querySelectorAll('a');
+				const div = document.createElement('div');
+				div.innerHTML = attributes.content;
+				const text = div.innerText || '';
+				const links = div.querySelectorAll('a');
 				return text.length <= 30 && links.length <= 1;
 			},
 		},

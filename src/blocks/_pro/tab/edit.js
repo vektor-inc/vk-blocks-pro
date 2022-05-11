@@ -153,7 +153,7 @@ export default function TabEdit(props) {
 					}}
 					placeholder={
 						// translators: Tab label [i]
-						sprintf(__('Tab Label [ %s ]'), index + 1)
+						sprintf(__('Tab Label [ %s ]', 'vk-Blocks'), index + 1)
 					}
 					onClick={(e) => {
 						liOnClick(e);

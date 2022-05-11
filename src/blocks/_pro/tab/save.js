@@ -3,8 +3,14 @@ import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function save(props) {
 	const { attributes } = props;
-	const { tabSizeSp, tabSizeTab, tabSizePc, blockId, tabListArray } =
-		attributes;
+	const {
+		tabListArray,
+		tabSizeSp,
+		tabSizeTab,
+		tabSizePc,
+		firstActive,
+		blockId,
+	} = attributes;
 
 	const tabOption = JSON.parse(tabListArray);
 	let tabList = '';
@@ -12,7 +18,7 @@ export default function save(props) {
 	if (tabOption) {
 		tabListInner = tabOption.map((tab, index) => {
 			let activeLabelClass = '';
-			if (index === 0) {
+			if (firstActive === index) {
 				activeLabelClass = 'vk_tab_labels_label-state-active';
 			}
 			let tabColorClass = '';

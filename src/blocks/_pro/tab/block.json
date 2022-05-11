@@ -19,6 +19,10 @@
 			"type": "string",
 			"default": "fitText"
 		},
+		"firstActive": {
+			"type": "number",
+			"default": 0
+		},
 		"blockId": {
 			"type": "string",
 			"default": ""

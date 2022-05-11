@@ -5,7 +5,7 @@ import {
 	InspectorControls,
 } from '@wordpress/block-editor';
 import { PanelBody, RadioControl } from '@wordpress/components';
-import { useEffect, useState } from '@wordpress/element';
+import { useEffect } from '@wordpress/element';
 import { select, dispatch } from '@wordpress/data';
 import { __, sprintf } from '@wordpress/i18n';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
@@ -13,7 +13,8 @@ import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block'
 
 export default function TabEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
-	const { tabSizeSp, tabSizeTab, tabSizePc, blockId } = attributes;
+	const { tabSizeSp, tabSizeTab, tabSizePc, firstActive, blockId } =
+		attributes;
 
 	const ALLOWED_BLOCKS = ['vk-blocks/tab-item'];
 	const TEMPLATE = [
@@ -28,9 +29,6 @@ export default function TabEdit(props) {
 	];
 
 	const { updateBlockAttributes } = dispatch('core/block-editor');
-
-	// アクティブなタブ
-	const [tabActive, setTabActive] = useState(0);
 
 	useEffect(() => {
 		if (
@@ -51,7 +49,7 @@ export default function TabEdit(props) {
 	useEffect(() => {
 		if (childBlocks !== []) {
 			childBlocks.forEach((childBlock, index) => {
-				if (tabActive === index) {
+				if (firstActive === index) {
 					updateBlockAttributes(childBlock.clientId, {
 						tabBodyActive: true,
 					});
@@ -62,7 +60,7 @@ export default function TabEdit(props) {
 				}
 			});
 		}
-	}, [tabActive]);
+	}, [firstActive]);
 
 	const liOnClick = (e) => {
 		if (childBlocks !== []) {
@@ -92,7 +90,7 @@ export default function TabEdit(props) {
 			/* 本体の処理 */
 			childBlocks.forEach((childBlock, index) => {
 				if (TabId === childBlock.clientId) {
-					setTabActive(index);
+					setAttributes({ firstActive: parseInt(index, 10) });
 				}
 			});
 		}
@@ -127,7 +125,7 @@ export default function TabEdit(props) {
 	if (childBlocks !== []) {
 		tablabelsEditList = childBlocks.map((childBlock, index) => {
 			let activeLabelClass = '';
-			if (tabActive === index) {
+			if (firstActive === index) {
 				activeLabelClass = 'vk_tab_labels_label-state-active';
 			}
 			let tabColorClass = '';

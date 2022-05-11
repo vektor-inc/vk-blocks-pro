@@ -1075,40 +1075,40 @@ msgstr ""
 msgid "Tab Item"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:158
+#: src/blocks/_pro/tab/edit.js:156
 #. Tab label [i]
 msgid "Tab Label [ %s ]"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:192
+#: src/blocks/_pro/tab/edit.js:190
 msgid "Tab size Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:194
+#: src/blocks/_pro/tab/edit.js:192
 msgid "Tab Size ( Smart Phone )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:211
+#: src/blocks/_pro/tab/edit.js:209
 msgid "Tab Size ( Tablet )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:22
-msgid "Tab 01"
-msgstr ""
-
-#: src/blocks/_pro/tab/edit.js:228
+#: src/blocks/_pro/tab/edit.js:226
 msgid "Tab Size ( PC )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:232
+#: src/blocks/_pro/tab/edit.js:23
+msgid "Tab 01"
+msgstr ""
+
+#: src/blocks/_pro/tab/edit.js:230
 msgid "Fit to the text"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:236
+#: src/blocks/_pro/tab/edit.js:234
 msgid "Monospaced"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:26
+#: src/blocks/_pro/tab/edit.js:27
 msgid "Tab 02"
 msgstr ""
 

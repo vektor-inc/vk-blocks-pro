@@ -5,15 +5,15 @@ import {
 	InspectorControls,
 } from '@wordpress/block-editor';
 import { PanelBody, RadioControl } from '@wordpress/components';
-import { useEffect } from '@wordpress/element';
+import { useEffect, useState } from '@wordpress/element';
 import { select, dispatch } from '@wordpress/data';
-import { renderToStaticMarkup } from 'react-dom/server';
 import { __, sprintf } from '@wordpress/i18n';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 
 export default function TabEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
-	const { firstActive, tabSizeSp, tabSizeTab, tabSizePc } = attributes;
-	attributes.clientId = clientId;
+	const { tabSizeSp, tabSizeTab, tabSizePc, blockId } = attributes;
 
 	const ALLOWED_BLOCKS = ['vk-blocks/tab-item'];
 	const TEMPLATE = [
@@ -23,20 +23,29 @@ export default function TabEdit(props) {
 
 	const { updateBlockAttributes } = dispatch('core/block-editor');
 
+	// アクティブなタブ
+	const [tabActive, setTabActive] = useState(0);
+
 	useEffect(() => {
-		if (clientId) {
-			updateBlockAttributes(clientId, { clientId });
+		if (
+			blockId === undefined ||
+			isParentReusableBlock(clientId) === false
+		) {
+			setAttributes({ blockId: clientId });
 		}
 	}, [clientId]);
 
 	const parentBlock =
 		select('core/block-editor').getBlocksByClientId(clientId);
+	const childBlocks =
+		parentBlock && parentBlock[0] && parentBlock[0].innerBlocks
+			? parentBlock[0].innerBlocks
+			: [];
 
 	useEffect(() => {
-		if (parentBlock && parentBlock[0] && parentBlock[0].innerBlocks) {
-			const childBlocks = parentBlock[0].innerBlocks;
+		if (childBlocks !== []) {
 			childBlocks.forEach((childBlock, index) => {
-				if (firstActive === index) {
+				if (tabActive === index) {
 					updateBlockAttributes(childBlock.clientId, {
 						tabBodyActive: true,
 					});
@@ -47,11 +56,10 @@ export default function TabEdit(props) {
 				}
 			});
 		}
-	}, [parentBlock, firstActive]);
+	}, [tabActive]);
 
 	const liOnClick = (e) => {
-		if (parentBlock && parentBlock[0] && parentBlock[0].innerBlocks) {
-			const childBlocks = parentBlock[0].innerBlocks;
+		if (childBlocks !== []) {
 			const vkTab = e.target.closest('.vk_tab');
 			const vkTabLabels = vkTab.querySelector('.vk_tab_labels');
 
@@ -64,7 +72,7 @@ export default function TabEdit(props) {
 			const activeLabels = vkTabLabels.querySelectorAll(
 				'.vk_tab_labels_label-state-active'
 			);
-			Array.prototype.forEach.call(activeLabels, (activeLabel) => {
+			activeLabels.forEach((activeLabel) => {
 				activeLabel.classList.remove(
 					'vk_tab_labels_label-state-active'
 				);
@@ -78,9 +86,7 @@ export default function TabEdit(props) {
 			/* 本体の処理 */
 			childBlocks.forEach((childBlock, index) => {
 				if (TabId === childBlock.clientId) {
-					updateBlockAttributes(clientId, {
-						firstActive: parseInt(index, 10),
-					});
+					setTabActive(index);
 				}
 			});
 		}
@@ -110,23 +116,30 @@ export default function TabEdit(props) {
 		}
 	});
 
-	let tabList = '';
 	let tablabelsEditList = '';
 	let tablabelsEdit = '';
-	let tablabels = '';
-	if (parentBlock && parentBlock[0] && parentBlock[0].innerBlocks) {
-		const childBlocks = parentBlock[0].innerBlocks;
+	if (childBlocks !== []) {
 		tablabelsEditList = childBlocks.map((childBlock, index) => {
 			let activeLabelClass = '';
-			if (firstActive === index) {
+			if (tabActive === index) {
 				activeLabelClass = 'vk_tab_labels_label-state-active';
+			}
+			let tabColorClass = '';
+			let tabColorStyle = {};
+			if (!isHexColor(childBlock.attributes.tabColor)) {
+				tabColorClass = `has-${childBlock.attributes.tabColor}-background-color`;
+			} else {
+				tabColorStyle = {
+					backGroundColor: childBlock.attributes.tabColor,
+				};
 			}
 
 			return (
 				<RichText
 					tagName="li"
 					id={`vk_tab_labels_label-${childBlock.attributes.clientId}`}
-					className={`vk_tab_labels_label ${activeLabelClass}`}
+					className={`vk_tab_labels_label ${activeLabelClass} has-background ${tabColorClass}`}
+					style={tabColorStyle}
 					key={index}
 					value={childBlock.attributes.tabLabel}
 					onChange={(content) => {
@@ -147,28 +160,20 @@ export default function TabEdit(props) {
 		tablabelsEdit = (
 			<ul className={tabListClassName}>{tablabelsEditList}</ul>
 		);
-		tablabels = childBlocks.map((childBlock, index) => {
-			let activeLabelClass = '';
-			if (firstActive === index) {
-				activeLabelClass = 'vk_tab_labels_label-state-active';
-			}
-			return (
-				<li
-					id={`vk_tab_labels_label-${childBlock.attributes.clientId}`}
-					className={`vk_tab_labels_label ${activeLabelClass}`}
-					key={index}
-				>
-					{childBlock.attributes.tabLabel}
-				</li>
-			);
-		});
-
-		tabList = <ul className={tabListClassName}>{tablabels}</ul>;
 	}
 
 	useEffect(() => {
-		setAttributes({ tabListHtml: renderToStaticMarkup(tabList) });
-	}, [parentBlock, tabList]);
+		if (childBlocks !== []) {
+			const tabOption = childBlocks.map((childBlock) => {
+				return {
+					tabLabel: childBlock.attributes.tabLabel,
+					tabColor: childBlock.attributes.tabColor,
+					tabId: childBlock.attributes.clientId,
+				};
+			});
+			setAttributes({ tabListArray: JSON.stringify(tabOption) });
+		}
+	}, [childBlocks]);
 
 	const blockProps = useBlockProps({
 		className: `vk_tab`,

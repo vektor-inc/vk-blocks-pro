@@ -3,33 +3,25 @@
 	"name": "vk-blocks/tab",
 	"category": "vk-blocks-cat",
 	"attributes": {
-		"clientId": {
+		"tabListArray": {
 			"type": "string",
-			"default": ""
-		},
-		"tabListHtml": {
-			"type": "string",
-			"default": ""
-		},
-		"firstActive": {
-			"type": "number",
-			"default": 0
+			"default": "[]"
 		},
 		"tabSizeSp": {
 			"type": "string",
-			"default": "text"
+			"default": "fitText"
 		},
 		"tabSizeTab": {
 			"type": "string",
-			"default": "text"
+			"default": "fitText"
 		},
 		"tabSizePc": {
 			"type": "string",
-			"default": "text"
+			"default": "fitText"
 		},
-		"activeColor": {
+		"blockId": {
 			"type": "string",
-			"default": null
+			"default": ""
 		}
 	},
 	"supports": {

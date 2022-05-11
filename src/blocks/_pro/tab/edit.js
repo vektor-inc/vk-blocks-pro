@@ -17,8 +17,14 @@ export default function TabEdit(props) {
 
 	const ALLOWED_BLOCKS = ['vk-blocks/tab-item'];
 	const TEMPLATE = [
-		['vk-blocks/tab-item', { tabLabel: 'Tab 01', tabBodyActive: true }],
-		['vk-blocks/tab-item', { tabLabel: 'Tab 02', tabBodyActive: false }],
+		[
+			'vk-blocks/tab-item',
+			{ tabLabel: __('Tab 01', 'vk-blocks'), tabBodyActive: true },
+		],
+		[
+			'vk-blocks/tab-item',
+			{ tabLabel: __('Tab 02', 'vk-blocks'), tabBodyActive: false },
+		],
 	];
 
 	const { updateBlockAttributes } = dispatch('core/block-editor');

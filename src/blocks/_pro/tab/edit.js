@@ -302,7 +302,7 @@ export default function TabEdit(props) {
 				>
 					<BaseControl
 						id={`vk_block_button_custom_background_color`}
-						label={__('Tab Color', 'vk-blocks')}
+						label={__('Padding Setting Mode', 'vk-blocks')}
 					>
 						<ButtonGroup className={`mb-2`}>
 							<Button

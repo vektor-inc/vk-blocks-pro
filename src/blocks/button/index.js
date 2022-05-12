@@ -9,6 +9,7 @@ import metadata from './block.json';
 import save from './save';
 import { deprecated } from './deprecated/save/';
 import deprecatedHooks from './deprecated/hooks';
+import transforms from './transforms';
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
@@ -41,6 +42,7 @@ export const settings = {
 	edit,
 	save,
 	deprecated,
+	transforms,
 };
 
 const generateInlineCss = (attributes) => {

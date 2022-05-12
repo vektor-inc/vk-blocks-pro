@@ -65,6 +65,9 @@ e.g.
 == Changelog ==
 
 [ Bug Fix ][ Outer (Pro) ] Fix border color class.
+[ Other ] add term color composer library
+[ Bug Fix ][ Gridcolcard(Pro) ] Fix bocome narrow width in case of innner block on edit screen
+[ Add Function ][ Button ] Support for transformation of paragraph block to VK button block.
 
 = 1.33.2 =
 [ Bug Fix ][ Button ] Fix horizontal padding for X-T9 

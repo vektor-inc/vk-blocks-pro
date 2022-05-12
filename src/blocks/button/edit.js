@@ -25,7 +25,7 @@ import { dispatch, select } from '@wordpress/data';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { link, linkOff, keyboardReturn } from '@wordpress/icons';
-
+import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 export default function ButtonEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const {
@@ -39,10 +39,13 @@ export default function ButtonEdit(props) {
 		buttonTextColorCustom,
 		buttonColorCustom,
 		buttonAlign,
+		buttonWidthMobile,
+		buttonWidthTablet,
 		buttonWidth,
 		fontAwesomeIconBefore,
 		fontAwesomeIconAfter,
 		blockId,
+		old_1_31_0,
 	} = attributes;
 
 	// eslint-disable-next-line no-undef
@@ -53,7 +56,10 @@ export default function ButtonEdit(props) {
 		if (attributes.clientId !== undefined) {
 			setAttributes({ clientId: undefined });
 		}
-		if (blockId === undefined) {
+		if (
+			blockId === undefined ||
+			isParentReusableBlock(clientId) === false
+		) {
 			setAttributes({ blockId: clientId });
 		}
 		if (
@@ -98,6 +104,15 @@ export default function ButtonEdit(props) {
 			subCaption === ''
 		) {
 			setAttributes({ subCaption: undefined });
+		}
+		if (old_1_31_0 === undefined) {
+			if (buttonWidthMobile === undefined) {
+				setAttributes({ buttonWidthMobile: buttonWidth });
+			}
+			if (buttonWidthTablet === undefined) {
+				setAttributes({ buttonWidthTablet: buttonWidth });
+			}
+			setAttributes({ old_1_31_0: true });
 		}
 	}, [clientId]);
 
@@ -147,8 +162,16 @@ export default function ButtonEdit(props) {
 	}
 
 	if (isInnerButton) {
-		// 横並びボタンで幅が指定されている
-		containerClass += ` vk_button-width-${buttonWidth}`;
+		if (buttonWidthMobile) {
+			// 横並びボタンで幅が指定されている
+			containerClass += ` vk_button-width-mobile-${buttonWidthMobile}`;
+		}
+		if (buttonWidthTablet) {
+			containerClass += ` vk_button-width-tablet-${buttonWidthTablet}`;
+		}
+		if (buttonWidth) {
+			containerClass += ` vk_button-width-${buttonWidth}`;
+		}
 	} else {
 		containerClass += ` vk_button-align-${buttonAlign}`;
 		setAttributes({ buttonWidth: 0 });
@@ -240,43 +263,6 @@ export default function ButtonEdit(props) {
 			</BlockControls>
 			<InspectorControls>
 				<PanelBody title={__('Button setting', 'vk-blocks')}>
-					<TextControl
-						className={`mb-0`}
-						label={__('Block ID', 'vk-blocks')}
-						value={blockId}
-						onChange={(value) => setAttributes({ blockId: value })}
-					/>
-					<ul className={`mt-0 mb-3`}>
-						<li>
-							{__(
-								'This is the identification ID for this block style.',
-								'vk-blocks'
-							)}
-						</li>
-						<li>
-							{__(
-								"If you don't use custom colors, you don't have to worry about it.",
-								'vk-blocks'
-							)}
-						</li>
-						<li>
-							<strong>
-								{__(
-									'If you duplicate this block, please change the ID.',
-									'vk-blocks'
-								)}
-							</strong>
-						</li>
-						<li>
-							{__(
-								"This ID is'not id of HTML attribute.",
-								'vk-blocks'
-							)}
-						</li>
-					</ul>
-
-					<hr />
-
 					<TextControl
 						label={__('Sub Caption', 'vk-blocks')}
 						value={subCaption}
@@ -382,6 +368,139 @@ export default function ButtonEdit(props) {
 							<h4 className={`mt-0 mb-2`}>
 								{__('Button Width:', 'vk-blocks')}
 							</h4>
+							<p className={`mt-0 mb-2`}>
+								{__('Mobile', 'vk-blocks')}
+							</p>
+							<ButtonGroup className={`mb-3`}>
+								<Button
+									isSmall
+									isPrimary={buttonWidthMobile === 25}
+									isSecondary={buttonWidthMobile !== 25}
+									onClick={() =>
+										setAttributes({
+											buttonWidthMobile:
+												buttonWidthMobile === 25
+													? 0
+													: 25,
+										})
+									}
+								>
+									{__('25%', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonWidthMobile === 50}
+									isSecondary={buttonWidthMobile !== 50}
+									onClick={() =>
+										setAttributes({
+											buttonWidthMobile:
+												buttonWidthMobile === 50
+													? 0
+													: 50,
+										})
+									}
+								>
+									{__('50%', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonWidthMobile === 75}
+									isSecondary={buttonWidthMobile !== 75}
+									onClick={() =>
+										setAttributes({
+											buttonWidthMobile:
+												buttonWidthMobile === 75
+													? 0
+													: 75,
+										})
+									}
+								>
+									{__('75%', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonWidthMobile === 100}
+									isSecondary={buttonWidthMobile !== 100}
+									onClick={() =>
+										setAttributes({
+											buttonWidthMobile:
+												buttonWidthMobile === 100
+													? 0
+													: 100,
+										})
+									}
+								>
+									{__('100%', 'vk-blocks')}
+								</Button>
+							</ButtonGroup>
+							<p className={`mt-0 mb-2`}>
+								{__('Tablet', 'vk-blocks')}
+							</p>
+							<ButtonGroup className={`mb-3`}>
+								<Button
+									isSmall
+									isPrimary={buttonWidthTablet === 25}
+									isSecondary={buttonWidthTablet !== 25}
+									onClick={() =>
+										setAttributes({
+											buttonWidthTablet:
+												buttonWidthTablet === 25
+													? 0
+													: 25,
+										})
+									}
+								>
+									{__('25%', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonWidthTablet === 50}
+									isSecondary={buttonWidthTablet !== 50}
+									onClick={() =>
+										setAttributes({
+											buttonWidthTablet:
+												buttonWidthTablet === 50
+													? 0
+													: 50,
+										})
+									}
+								>
+									{__('50%', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonWidthTablet === 75}
+									isSecondary={buttonWidthTablet !== 75}
+									onClick={() =>
+										setAttributes({
+											buttonWidthTablet:
+												buttonWidthTablet === 75
+													? 0
+													: 75,
+										})
+									}
+								>
+									{__('75%', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonWidthTablet === 100}
+									isSecondary={buttonWidthTablet !== 100}
+									onClick={() =>
+										setAttributes({
+											buttonWidthTablet:
+												buttonWidthTablet === 100
+													? 0
+													: 100,
+										})
+									}
+								>
+									{__('100%', 'vk-blocks')}
+								</Button>
+							</ButtonGroup>
+							<p className={`mt-0 mb-2`}>
+								{__('PC', 'vk-blocks')}
+							</p>
 							<ButtonGroup className={`mb-3`}>
 								<Button
 									isSmall

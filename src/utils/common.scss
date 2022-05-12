@@ -11,7 +11,7 @@
 /*-------------------------------------------*/
 :root {
 	--vk-margin-sm : 1.5rem;
-	--vk-margin-md : 2rem;
+	--vk-margin-md : 2.4rem;
 	--vk-margin-lg : 4rem;
 }
 .vk_block{
@@ -21,6 +21,9 @@
 		}
 		&--margin-bottom {
 			margin-bottom: 0 !important;
+			& > table {
+				margin-bottom:0;
+			}
 		}
 	}
 	&-margin-sm {
@@ -30,6 +33,9 @@
 		}
 		&--margin-bottom {
 			margin-bottom: var(--vk-margin-sm) !important;
+			& > table {
+				margin-bottom: var(--vk-margin-sm);
+			}
 		}
 		&--height {
 			height: var(--vk-margin-sm);
@@ -42,6 +48,9 @@
 		}
 		&--margin-bottom {
 			margin-bottom: var(--vk-margin-md) !important;
+			& > table {
+				margin-bottom: var(--vk-margin-md);
+			}
 		}
 		&--height {
 			height: var(--vk-margin-md);
@@ -54,6 +63,9 @@
 		}
 		&--margin-bottom {
 			margin-bottom: var(--vk-margin-lg) !important;
+			& > table {
+				margin-bottom: var(--vk-margin-lg);
+			}
 		}
 		&--height {
 			height: var(--vk-margin-lg);

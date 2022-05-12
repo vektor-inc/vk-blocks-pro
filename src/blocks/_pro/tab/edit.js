@@ -13,11 +13,12 @@ import {
 	// eslint-disable-next-line @wordpress/no-unsafe-wp-apis
 	__experimentalBoxControl as BoxControl,
 } from '@wordpress/components';
-import { useEffect } from '@wordpress/element';
+import { useEffect, useState } from '@wordpress/element';
 import { select, dispatch } from '@wordpress/data';
 import { __, sprintf } from '@wordpress/i18n';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
+import { renderToString } from 'react-dom/server';
 
 export default function TabEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -163,7 +164,7 @@ export default function TabEdit(props) {
 					tabColorClass += ` has-${childBlock.attributes.tabColor}-background-color`;
 				} else {
 					tabColorStyle = {
-						backGroundColor: childBlock.attributes.tabColor,
+						backgroundColor: childBlock.attributes.tabColor,
 					};
 				}
 			}
@@ -197,16 +198,41 @@ export default function TabEdit(props) {
 	}
 
 	useEffect(() => {
+		let tablabelsList = '';
+		let tablabels = '';
 		if (childBlocks !== []) {
-			const tabOption = childBlocks.map((childBlock) => {
-				return {
-					tabLabel: childBlock.attributes.tabLabel,
-					tabColor: childBlock.attributes.tabColor,
-					tabId: childBlock.attributes.blockId,
-				};
+			tablabelsList = childBlocks.map((childBlock, index) => {
+				let activeLabelClass = '';
+				if (firstActive === index) {
+					activeLabelClass = 'vk_tab_labels_label-state-active';
+				}
+				let tabColorClass = '';
+				let tabColorStyle = {};
+				if (childBlock.attributes.tabColor !== '') {
+					tabColorClass = 'has-background';
+					if (!isHexColor(childBlock.attributes.tabColor)) {
+						tabColorClass += ` has-${childBlock.attributes.tabColor}-background-color`;
+					} else {
+						tabColorStyle = {
+							backgroundColor: childBlock.attributes.tabColor,
+						};
+					}
+				}
+
+				return (
+					<li
+						id={`vk_tab_labels_label-${childBlock.attributes.blockId}`}
+						className={`vk_tab_labels_label ${activeLabelClass} ${tabColorClass}`}
+						style={tabColorStyle}
+						key={index}
+					>
+						{childBlock.attributes.tabLabel}
+					</li>
+				);
 			});
-			setAttributes({ tabListArray: JSON.stringify(tabOption) });
+			tablabels = <ul className={tabListClassName}>{tablabelsList}</ul>;
 		}
+		setAttributes({ tabLabelHtml: renderToString(tablabels) });
 	}, [childBlocks]);
 
 	const blockProps = useBlockProps({
@@ -231,9 +257,9 @@ export default function TabEdit(props) {
 								value: 'monospaced',
 							},
 						]}
-						onChange={(value) =>
-							setAttributes({ tabSizeSp: value })
-						}
+						onChange={(value) => {
+							setAttributes({ tabSizeSp: value });
+						}}
 					/>
 					<RadioControl
 						label={__('Tab Size ( Tablet )', 'vk-blocks')}
@@ -248,9 +274,9 @@ export default function TabEdit(props) {
 								value: 'monospaced',
 							},
 						]}
-						onChange={(value) =>
-							setAttributes({ tabSizeTab: value })
-						}
+						onChange={(value) => {
+							setAttributes({ tabSizeTab: value });
+						}}
 					/>
 					<RadioControl
 						label={__('Tab Size ( PC )', 'vk-blocks')}
@@ -265,9 +291,9 @@ export default function TabEdit(props) {
 								value: 'monospaced',
 							},
 						]}
-						onChange={(value) =>
-							setAttributes({ tabSizePc: value })
-						}
+						onChange={(value) => {
+							setAttributes({ tabSizePc: value });
+						}}
 					/>
 				</PanelBody>
 				<PanelBody
@@ -283,11 +309,11 @@ export default function TabEdit(props) {
 								isSmall
 								isPrimary={tabBodyPaddingMode === 'separate'}
 								isSecondary={tabBodyPaddingMode !== 'separate'}
-								onClick={() =>
+								onClick={() => {
 									setAttributes({
 										tabBodyPaddingMode: 'separate',
-									})
-								}
+									});
+								}}
 							>
 								{__('Separate', 'vk-blocks')}
 							</Button>
@@ -296,7 +322,6 @@ export default function TabEdit(props) {
 								isPrimary={tabBodyPaddingMode === 'bundle'}
 								isSecondary={tabBodyPaddingMode !== 'bundle'}
 								onClick={() => {
-									setAttributes({ buttonType: 'bundle' });
 									setAttributes({
 										tabBodyPaddingMode: 'bundle',
 									});
@@ -309,9 +334,9 @@ export default function TabEdit(props) {
 					{tabBodyPaddingMode === 'bundle' && (
 						<BoxControl
 							values={tabBodyPaddingAll}
-							onChange={(value) =>
-								setAttributes({ tabBodyPaddingAll: value })
-							}
+							onChange={(value) => {
+								setAttributes({ tabBodyPaddingAll: value });
+							}}
 							label={__('Padding of Tab Body', 'vk-blocks')}
 						/>
 					)}

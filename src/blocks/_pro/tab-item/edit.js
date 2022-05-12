@@ -1,6 +1,14 @@
-import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import {
+	InnerBlocks,
+	useBlockProps,
+	InspectorControls,
+} from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
+import { PanelBody, BaseControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
+import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
+
 export default function TabItemEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const { tabBodyActive, blockId } = attributes;
@@ -27,6 +35,16 @@ export default function TabItemEdit(props) {
 
 	return (
 		<>
+			<InspectorControls>
+				<PanelBody title={__('Tab Color Setting', 'vk-blocks')}>
+					<BaseControl
+						id={`vk_block_button_custom_background_color`}
+						label={__('Tab Color', 'vk-blocks')}
+					>
+						<AdvancedColorPalette schema={'tabColor'} {...props} />
+					</BaseControl>
+				</PanelBody>
+			</InspectorControls>
 			<div {...blockProps}>
 				<InnerBlocks
 					templateLock={false}

@@ -1071,6 +1071,14 @@ msgstr ""
 msgid "First Dot Number"
 msgstr ""
 
+#: src/blocks/_pro/tab-item/edit.js:39
+msgid "Tab Color Setting"
+msgstr ""
+
+#: src/blocks/_pro/tab-item/edit.js:42
+msgid "Tab Color"
+msgstr ""
+
 #: src/blocks/_pro/tab-item/index.js:17
 msgid "Tab Item"
 msgstr ""

@@ -310,6 +310,44 @@ $xxl-min: 1400px;
 			text-decoration-thickness: 1px;
 		}
 	}
+	@keyframes shine {
+		0% { left: -20%; }
+		10% { left: 120%; }
+		100% { left: 120%; }
+	}
+
+	// 光るボタン
+	.btn.has-background{
+		// テキスト色が入ってない場合は白にしたいので追加
+		&:not(.has-text-color){
+			color: #fff;
+		}
+		//光る
+		&.is-style-shine {		
+			overflow:hidden;
+			position: relative;
+			&::before { // 光りの擬似要素
+				content: '';
+				position: absolute;
+				top: -10%;
+				left: -20%;
+				width: 50%;
+				height: 100%;
+				transform: scale(2) rotate(20deg);
+				background-image: linear-gradient(100deg, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, .5) 100%, rgba(255, 255, 255, 0) 0%);			
+				/* アニメーション */
+				animation-name: shine;
+				animation-duration: 3s;
+				animation-timing-function: ease-in-out;
+				animation-iteration-count: infinite;
+			}
+			/* 白っぽい色に対する対策 */
+			&.has-vk-color-light-background-color,
+			&.has-white-background-color {
+				color:#212529;
+			}
+		}
+	}
 
 	&.vk_button-align {
 		&-left {

@@ -23,9 +23,10 @@ export default function save(props) {
 			}
 			let tabColorClass = '';
 			let tabColorStyle = {};
-			if (!!tab.tabColor) {
+			if (tab.tabColor !== '') {
+				tabColorClass = 'has-background';
 				if (!isHexColor(tab.tabColor)) {
-					tabColorClass = `has-${tab.tabColor}-background-color`;
+					tabColorClass += ` has-${tab.tabColor}-background-color`;
 				} else {
 					tabColorStyle = {
 						backGroundColor: tab.tabColor,
@@ -35,7 +36,7 @@ export default function save(props) {
 			return (
 				<li
 					id={`vk_tab_labels_label-${tab.tabId}`}
-					className={`vk_tab_labels_label ${activeLabelClass} has-background ${tabColorClass}`}
+					className={`vk_tab_labels_label ${activeLabelClass} ${tabColorClass}`}
 					style={tabColorStyle}
 					key={index}
 				>

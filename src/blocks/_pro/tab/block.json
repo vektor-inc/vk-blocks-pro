@@ -19,6 +19,14 @@
 			"type": "string",
 			"default": "fitText"
 		},
+		"tabBodyPaddingMode": {
+			"type": "string",
+			"default": "bundle"
+		},
+		"tabBodyPaddingAll": {
+			"type": "object",
+			"default": {"top":null,"right":null,"bottom":null,"left":null}
+		},
 		"firstActive": {
 			"type": "number",
 			"default": 0

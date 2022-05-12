@@ -18,7 +18,7 @@
 		"yahnis-elsts/plugin-update-checker": "*",
 		"vektor-inc/vk-color-palette-manager": "^0.3.0",
 		"vektor-inc/vk-breadcrumb": "^0.2.3",
-		"vektor-inc/vk-term-color": "^0.2.0"
+		"vektor-inc/vk-term-color": "^0.3.0"
 	},
 	"require-dev": {
 		"squizlabs/php_codesniffer": "*",

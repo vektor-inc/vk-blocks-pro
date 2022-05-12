@@ -48,6 +48,7 @@
 }
 
 .swiper-container {
+	/* vk_width-full は廃止になったが互換処理のために 2022年10月末までは残す */
 	&.vk_width-full {
 		//全幅の時
 		margin: 0 calc(50% - 50vw);
@@ -59,7 +60,6 @@
 				margin: 0 5px;
 			}
 		}
-
 	}
 }
 

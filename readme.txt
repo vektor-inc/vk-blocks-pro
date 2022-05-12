@@ -72,6 +72,7 @@ e.g.
 [ Bug Fix ][ Breadcrumb(Pro) ] Fix front page breadcrumb
 [ Bug Fix ][ Grid Column(Pro) ] fix row block layout in Grid Column Block
 [ Improvement ][ Button ] Delete block id UI.
+[ Add Function ][ Button ] Support for transformation of paragraph block to VK button block.
 
 = 1.33.1 =
 [ Bug Fix ] Fix PHP notice ( Pro version only )

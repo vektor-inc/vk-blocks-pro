@@ -168,8 +168,8 @@ export default function SliderEdit(props) {
 	});
 
 	// Delete old class name
-	blockProps.className = blockProps.className.replace(' vk_width-full', '');
-	blockProps.className = blockProps.className.replace(' vk_width-wide', '');
+	// blockProps.className = blockProps.className.replace(' vk_width-full', '');
+	// blockProps.className = blockProps.className.replace(' vk_width-wide', '');
 
 	return (
 		<>

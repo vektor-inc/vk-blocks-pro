@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Add Block ] Add Tab Block
+
 = 1.34.1 =
 [ Bug Fix ] Fix term color library ( since 1.34.0 )
 

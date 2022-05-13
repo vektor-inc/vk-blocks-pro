@@ -1071,22 +1071,22 @@ msgstr ""
 msgid "First Dot Number"
 msgstr ""
 
-#: src/blocks/_pro/tab-item/edit.js:49
+#: src/blocks/_pro/tab-item/edit.js:113
+msgid "Tab Color Setting"
+msgstr ""
+
+#: src/blocks/_pro/tab-item/edit.js:116
+msgid "Tab Color"
+msgstr ""
+
+#: src/blocks/_pro/tab-item/edit.js:84
 #: src/blocks/_pro/tab/edit.js:275
 msgid "Body Layout Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab-item/edit.js:57
+#: src/blocks/_pro/tab-item/edit.js:92
 #: src/blocks/_pro/tab/edit.js:315
 msgid "Padding of Tab Body"
-msgstr ""
-
-#: src/blocks/_pro/tab-item/edit.js:80
-msgid "Tab Color Setting"
-msgstr ""
-
-#: src/blocks/_pro/tab-item/edit.js:83
-msgid "Tab Color"
 msgstr ""
 
 #: src/blocks/_pro/tab-item/index.js:17

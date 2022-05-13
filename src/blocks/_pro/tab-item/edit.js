@@ -12,12 +12,14 @@ import {
 	__experimentalBoxControl as BoxControl,
 } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import { select } from '@wordpress/data';
+import { select, dispatch } from '@wordpress/data';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 
 export default function TabItemEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
-	const { tabBodyActive, tabBodyPadding, blockId } = attributes;
+	const { tabBodyActive, tabBodyPadding, tabColor, blockId } = attributes;
+
+	const { updateBlockAttributes } = dispatch('core/block-editor');
 
 	useEffect(() => {
 		if (
@@ -30,37 +32,68 @@ export default function TabItemEdit(props) {
 
 	let tabBodyPaddingControl = '';
 
-	const parentTabBlockList = select(
+	const parentTabBlockIdList = select(
 		'core/block-editor'
 	).getBlockParentsByBlockName(clientId, ['vk-blocks/tab']);
 
-	if (parentTabBlockList) {
-		const parentTabBlock = select('core/block-editor').getBlocksByClientId(
-			parentTabBlockList[0]
-		);
+	const parentTabBlockList = parentTabBlockIdList[0]
+		? select('core/block-editor').getBlocksByClientId(
+				parentTabBlockIdList[0]
+		  )
+		: [];
+
+	const parentTabBlock = parentTabBlockList[0] ? parentTabBlockList[0] : {};
+
+	useEffect(() => {
 		if (
 			parentTabBlock &&
-			parentTabBlock[0] &&
-			parentTabBlock[0].attributes &&
-			parentTabBlock[0].attributes.tabBodyPaddingMode === 'separate'
+			parentTabBlock.attributes &&
+			parentTabBlock.innerBlocks
 		) {
-			tabBodyPaddingControl = (
-				<PanelBody
-					title={__('Body Layout Setting', 'vk-blocks')}
-					initialOpen={true}
-				>
-					<BoxControl
-						values={tabBodyPadding}
-						onChange={(value) => {
-							setAttributes({ tabBodyPadding: value });
-						}}
-						label={__('Padding of Tab Body', 'vk-blocks')}
-					/>
-				</PanelBody>
-			);
-		}
-	}
+			const tabListArray = parentTabBlock.attributes.tabListArray;
+			const childBlocks = parentTabBlock.innerBlocks;
 
+			if (tabListArray && childBlocks && tabColor) {
+				const optionTemp = JSON.parse(tabListArray);
+				if (optionTemp !== []) {
+					let childIndex = -1;
+					childBlocks.forEach((chiildBlock, index) => {
+						if (chiildBlock.clientId === clientId) {
+							childIndex = index;
+						}
+					});
+					if (childIndex !== -1) {
+						optionTemp[childIndex].tabColor = tabColor;
+						updateBlockAttributes(parentTabBlock.clientId, {
+							tabListArray: optionTemp,
+						});
+					}
+				}
+			}
+		}
+	}, [tabColor]);
+
+	if (
+		parentTabBlock &&
+		parentTabBlock.attributes &&
+		parentTabBlock.attributes.tabBodyPaddingMode &&
+		parentTabBlock.attributes.tabBodyPaddingMode === 'separate'
+	) {
+		tabBodyPaddingControl = (
+			<PanelBody
+				title={__('Body Layout Setting', 'vk-blocks')}
+				initialOpen={true}
+			>
+				<BoxControl
+					values={tabBodyPadding}
+					onChange={(value) => {
+						setAttributes({ tabBodyPadding: value });
+					}}
+					label={__('Padding of Tab Body', 'vk-blocks')}
+				/>
+			</PanelBody>
+		);
+	}
 	let activeBodyClass = '';
 	if (tabBodyActive === true) {
 		activeBodyClass = 'vk_tab_bodys_body-state-active';

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-05-13T06:33:06+00:00\n"
+"POT-Creation-Date: 2022-05-13T07:00:42+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks\n"
@@ -1078,22 +1078,22 @@ msgstr ""
 msgid "First Dot Number"
 msgstr ""
 
-#: src/blocks/_pro/tab-item/edit.js:49
+#: src/blocks/_pro/tab-item/edit.js:113
+msgid "Tab Color Setting"
+msgstr ""
+
+#: src/blocks/_pro/tab-item/edit.js:116
+msgid "Tab Color"
+msgstr ""
+
+#: src/blocks/_pro/tab-item/edit.js:84
 #: src/blocks/_pro/tab/edit.js:275
 msgid "Body Layout Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab-item/edit.js:57
+#: src/blocks/_pro/tab-item/edit.js:92
 #: src/blocks/_pro/tab/edit.js:315
 msgid "Padding of Tab Body"
-msgstr ""
-
-#: src/blocks/_pro/tab-item/edit.js:80
-msgid "Tab Color Setting"
-msgstr ""
-
-#: src/blocks/_pro/tab-item/edit.js:83
-msgid "Tab Color"
 msgstr ""
 
 #: src/blocks/_pro/tab-item/index.js:17

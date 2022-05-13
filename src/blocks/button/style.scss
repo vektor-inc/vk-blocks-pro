@@ -310,13 +310,14 @@ $xxl-min: 1400px;
 			text-decoration-thickness: 1px;
 		}
 	}
-	@keyframes shine {
-		0% { left: -20%; }
+
+	// 光るボタン
+	@keyframes shine {//光る速さのキーフレーム
+		0% { left: -40%; }
 		10% { left: 120%; }
 		100% { left: 120%; }
 	}
-
-	// 光るボタン
+	
 	.btn.has-background{
 		// テキスト色が入ってない場合は白にしたいので追加
 		&:not(.has-text-color){
@@ -329,17 +330,17 @@ $xxl-min: 1400px;
 			&::before { // 光りの擬似要素
 				content: '';
 				position: absolute;
-				top: -10%;
-				left: -20%;
+				top: 0;
+				left: -40%;
 				width: 50%;
 				height: 100%;
-				transform: scale(2) rotate(20deg);
-				background-image: linear-gradient(100deg, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, .5) 100%, rgba(255, 255, 255, 0) 0%);			
+				background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+				transform: skewX(-25deg);		
 				/* アニメーション */
 				animation-name: shine;
-				animation-duration: 3s;
+				animation-duration: 5s;
 				animation-timing-function: ease-in-out;
-				animation-iteration-count: infinite;
+				animation-iteration-count: infinite;//無制限に繰り返し
 			}
 			/* 白っぽい色に対する対策 */
 			&.has-vk-color-light-background-color,

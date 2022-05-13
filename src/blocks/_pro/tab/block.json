@@ -3,9 +3,9 @@
 	"name": "vk-blocks/tab",
 	"category": "vk-blocks-cat",
 	"attributes": {
-		"tabLabelHtml": {
+		"tabListArray": {
 			"type": "string",
-			"default": ""
+			"default": "[]"
 		},
 		"tabSizeSp": {
 			"type": "string",

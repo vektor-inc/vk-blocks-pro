@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
 Tested up to: 5.9.3
-Stable tag: 1.33.2.0
+Stable tag: 1.34.1.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -64,10 +64,15 @@ e.g.
 
 == Changelog ==
 
-[ Bug Fix ][ Outer (Pro) ] Fix border color class.
 [ Other ] add term color composer library
-[ Bug Fix ][ Gridcolcard(Pro) ] Fix bocome narrow width in case of innner block on edit screen
-[ Add Function ][ Button ] Support for transformation of paragraph block to VK button block.
+
+= 1.34.1 =
+[ Bug Fix ] Fix term color library ( since 1.34.0 )
+
+= 1.34.0 =
+[ Improvement ][ Button ] Support for transformation of paragraph block to VK button block.
+[ Other ] add term color composer library
+[ Bug Fix ][ Grid Col Card(Pro) ] Fix bocome narrow width in case of innner block on edit screen
 
 = 1.33.2 =
 [ Bug Fix ][ Button ] Fix horizontal padding for X-T9 

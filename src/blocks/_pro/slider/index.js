@@ -27,7 +27,7 @@ const generateHeightCss = (attributes, cssSelector = '') => {
 	const { clientId, mobile, tablet, pc, unit } = attributes;
 	let css = '';
 	if (unit !== undefined && unit !== null) {
-		if (mobile !== undefined && mobile !== null && ! isNaN(mobile)) {
+		if (mobile !== undefined && mobile !== null && !isNaN(mobile)) {
 			css += `@media (max-width: 575.98px) {
 				${cssSelector}
 				.vk_slider_${clientId} .vk_slider_item{
@@ -35,7 +35,7 @@ const generateHeightCss = (attributes, cssSelector = '') => {
 				}
 			}`;
 		}
-		if (tablet !== undefined && tablet !== null && ! isNaN(tablet)) {
+		if (tablet !== undefined && tablet !== null && !isNaN(tablet)) {
 			css += `@media (min-width: 576px) and (max-width: 991.98px) {
 				${cssSelector}
 				.vk_slider_${clientId} .vk_slider_item{
@@ -43,7 +43,7 @@ const generateHeightCss = (attributes, cssSelector = '') => {
 				}
 			}`;
 		}
-		if (pc !== undefined && pc !== null && ! isNaN(pc)) {
+		if (pc !== undefined && pc !== null && !isNaN(pc)) {
 			css += `@media (min-width: 992px) {
 				${cssSelector}
 				.vk_slider_${clientId} .vk_slider_item{

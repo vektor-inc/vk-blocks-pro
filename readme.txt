@@ -64,8 +64,9 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ][ Slider(Pro) ] Change width class name
 [ Bug Fix ][ Outer (Pro) ] Fix border color class.
- 
+
 = 1.34.1 =
 [ Bug Fix ] Fix term color library ( since 1.34.0 )
 

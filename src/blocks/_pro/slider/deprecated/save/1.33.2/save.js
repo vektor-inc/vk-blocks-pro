@@ -41,9 +41,11 @@ export default function save({ attributes }) {
 
 	let alignClass;
 	if ('full' === width) {
-		alignClass = ' alignfull';
+		alignClass = 'vk_width-full';
 	} else if ('wide' === width) {
-		alignClass = ' alignwide';
+		alignClass = 'vk_width-wide';
+	} else {
+		alignClass = 'vk_width';
 	}
 
 	// ページネーションの HTML
@@ -73,7 +75,7 @@ export default function save({ attributes }) {
 	}
 
 	const blockProps = useBlockProps.save({
-		className: `swiper-container vk_slider vk_slider_${clientId}${alignClass}`,
+		className: `swiper-container vk_slider vk_slider_${clientId} ${alignClass}`,
 	});
 
 	return (

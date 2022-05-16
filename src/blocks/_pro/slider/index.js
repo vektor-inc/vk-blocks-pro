@@ -67,9 +67,7 @@ const vkbwithClientIdClassName = createHigherOrderComponent(
 						<BlockListBlock {...props} />
 						{(() => {
 							if (cssTag) {
-								return (
-									<style type="text/css">{cssTag}</style>
-								);
+								return <style type="text/css">{cssTag}</style>;
 							}
 						})()}
 					</>
@@ -110,9 +108,7 @@ const addSwiperConfig = (el, type, attributes) => {
 					{el}
 					{(() => {
 						if (cssTag) {
-							return (
-								<style type="text/css">{cssTag}</style>
-							);
+							return <style type="text/css">{cssTag}</style>;
 						}
 					})()}
 				</>

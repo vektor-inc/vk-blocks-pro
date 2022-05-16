@@ -44,6 +44,9 @@
 		},
 		"clientId": {
 			"type": "string"
+		},
+		"blockId": {
+			"type": "string"
 		}
 	},
 	"supports": {

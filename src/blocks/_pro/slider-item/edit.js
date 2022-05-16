@@ -23,6 +23,7 @@ import { AdvancedMediaUpload } from '@vkblocks/components/advanced-media-upload'
 import GenerateBgImage from './GenerateBgImage';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
+import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 
 const prefix = 'vk_slider_item';
 
@@ -37,10 +38,19 @@ export default function SliderItemEdit(props) {
 		bgImageMobile,
 		bgImageTablet,
 		bgImage,
+		blockId,
 	} = attributes;
 
 	useEffect(() => {
-		setAttributes({ clientId });
+		if (attributes.clientId !== undefined) {
+			setAttributes({ clientId: undefined });
+		}
+		if (
+			clientId !== undefined &&
+			(blockId === undefined || isParentReusableBlock(clientId) === false)
+		) {
+			setAttributes({ blockId: clientId });
+		}
 	}, [clientId]);
 
 	//classPaddingLRのクラス切り替え
@@ -80,18 +90,14 @@ export default function SliderItemEdit(props) {
 	const GetBgImage = (
 		<>
 			{(bgImage || bgImageTablet || bgImageMobile) && (
-				<GenerateBgImage
-					prefix={prefix}
-					clientId={clientId}
-					{...props}
-				/>
+				<GenerateBgImage prefix={prefix} blockId={blockId} {...props} />
 			)}
 			<div className={bgAreaClasses} style={bgAreaStyles}></div>
 		</>
 	);
 
 	const blockProps = useBlockProps({
-		className: `vk_slider_item swiper-slide vk_valign-${verticalAlignment} ${prefix}-${clientId} ${classPaddingLR} ${prefix}-paddingVertical-none`,
+		className: `vk_slider_item swiper-slide vk_valign-${verticalAlignment} ${prefix}-${blockId} ${classPaddingLR} ${prefix}-paddingVertical-none`,
 	});
 
 	return (

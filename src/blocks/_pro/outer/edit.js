@@ -76,6 +76,18 @@ export default function OuterEdit(props) {
 		if (clientId) {
 			updateBlockAttributes(clientId, { clientId });
 		}
+		// 互換処理 #1187
+		if (borderStyle === 'none' && attributes.className) {
+			// 追加CSSクラスを半角文字列で分けて配列化
+			const nowClassArray = attributes.className.split(' ');
+			// has-border-color,has-〇〇-border-colorクラスを削除する
+			const newClassName = nowClassArray.filter((nowClassName) => {
+				return !nowClassName.match(/has(.*)border-color/);
+			});
+			setAttributes({
+				className: classnames(newClassName),
+			});
+		}
 	}, [clientId]);
 
 	// 前バージョンとの互換処理
@@ -220,9 +232,12 @@ export default function OuterEdit(props) {
 		className: classnames(
 			`vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 			{
-				[`has-border-color`]: borderColor !== undefined,
+				[`has-border-color`]:
+					borderStyle !== 'none' && borderColor !== undefined,
 				[`has-${borderColor}-border-color`]:
-					borderColor !== undefined && !isHexColor(borderColor),
+					borderStyle !== 'none' &&
+					borderColor !== undefined &&
+					!isHexColor(borderColor),
 			}
 		),
 		style: borderStyleProperty,

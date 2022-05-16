@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Outer (Pro) ] Fix border color class.
+ 
 = 1.34.1 =
 [ Bug Fix ] Fix term color library ( since 1.34.0 )
 

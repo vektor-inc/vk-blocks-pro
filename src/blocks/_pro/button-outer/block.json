@@ -9,6 +9,10 @@
 		"buttonsJustify": {
 			"type": "string",
 			"default": "left"
+		},
+		"gap": {
+			"type": "string",
+			"default": "8px"
 		}
 	},
 	"supports": {

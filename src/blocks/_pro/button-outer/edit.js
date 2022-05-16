@@ -1,13 +1,22 @@
+import { __ } from '@wordpress/i18n'; 
 import {
 	InnerBlocks,
 	useBlockProps,
 	JustifyContentControl,
 	BlockControls,
+	InspectorControls
 } from '@wordpress/block-editor';
+import {
+	PanelBody,
+	__experimentalUnitControl as UnitControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
+} from '@wordpress/components';
 
 export default function ButtonOuterEdit(props) {
 	const { attributes, setAttributes } = props;
-	const { buttonsJustify } = attributes;
+	const {
+		buttonsJustify,
+		gap
+	} = attributes;
 
 	// blocksProps を予め定義
 	const blockProps = useBlockProps({
@@ -20,6 +29,18 @@ export default function ButtonOuterEdit(props) {
 
 	return (
 		<>
+			<InspectorControls>
+				<PanelBody
+					title={__('Button Common Setting', 'vk-blocks')}
+					initialOpen={true}
+				>
+					<UnitControl
+						label={__('Button gap size', 'vk-blocks')}
+						value={gap}
+						onChange={(value) => setAttributes({ gap: value })}
+					/>
+				</PanelBody>
+			</InspectorControls>
 			<BlockControls group="block">
 				<JustifyContentControl
 					allowedControls={[

@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Improvement ][ Slider ] Corresponds reuse block & deprecate
 [ Specification Change ][ Slider(Pro) ] Change width class name
 [ Bug Fix ][ Outer (Pro) ] Fix border color class.
 

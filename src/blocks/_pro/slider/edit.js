@@ -18,6 +18,7 @@ import {
 	SelectControl,
 	RangeControl,
 } from '@wordpress/components';
+import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 
 export default function SliderEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -36,10 +37,19 @@ export default function SliderEdit(props) {
 		slidesPerView,
 		slidesPerGroup,
 		navigationPosition,
+		blockId,
 	} = attributes;
 
 	useEffect(() => {
-		setAttributes({ clientId });
+		if (attributes.clientId !== undefined) {
+			setAttributes({ clientId: undefined });
+		}
+		if (
+			blockId === undefined ||
+			isParentReusableBlock(clientId) === false
+		) {
+			setAttributes({ blockId: clientId });
+		}
 		// slidesPerView 互換設定
 		if (slidesPerView === undefined) {
 			setAttributes({
@@ -75,7 +85,7 @@ export default function SliderEdit(props) {
 	const ALLOWED_BLOCKS = ['vk-blocks/slider-item'];
 	const TEMPLATE = [['vk-blocks/slider-item']];
 
-	let alignClass;
+	let alignClass = '';
 	if ('full' === width) {
 		alignClass = ' alignfull';
 	} else if ('wide' === width) {
@@ -87,7 +97,7 @@ export default function SliderEdit(props) {
 		autoPlayStop,
 		autoPlayDelay,
 		pagination,
-		clientId,
+		blockId,
 		width,
 		loop,
 		effect,

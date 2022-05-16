@@ -1,10 +1,10 @@
-import { __ } from '@wordpress/i18n'; 
+import { __ } from '@wordpress/i18n';
 import {
 	InnerBlocks,
 	useBlockProps,
 	JustifyContentControl,
 	BlockControls,
-	InspectorControls
+	InspectorControls,
 } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -12,11 +12,8 @@ import {
 } from '@wordpress/components';
 
 export default function ButtonOuterEdit(props) {
-	const { attributes, setAttributes } = props;
-	const {
-		buttonsJustify,
-		gap
-	} = attributes;
+	const { attributes, setAttributes, clientId } = props;
+	const { buttonsJustify, gap } = attributes;
 
 	// blocksProps を予め定義
 	const blockProps = useBlockProps({
@@ -61,7 +58,7 @@ export default function ButtonOuterEdit(props) {
 			</BlockControls>
 			<div {...blockProps}>
 				<div
-					className={`vk_buttons_col vk_buttons_col-justify-${buttonsJustify}`}
+					className={`vk_buttons_col vk_buttons_col-justify-${buttonsJustify}  vk_buttonouter-${clientId}`}
 				>
 					<InnerBlocks
 						allowedBlocks={ALLOWED_BLOCKS}
@@ -69,6 +66,13 @@ export default function ButtonOuterEdit(props) {
 						templateLock={false}
 						orientation="horizontal"
 					/>
+					<style>
+						{`
+						.vk_buttonouter-${clientId} > .block-editor-inner-blocks > .block-editor-block-list__layout{
+							gap:${gap};
+						}
+						`}
+					</style>
 				</div>
 			</div>
 		</>

@@ -45,7 +45,7 @@ msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:123
 #: src/blocks/_pro/outer/edit.js:351
-#: src/blocks/_pro/slider/edit.js:193
+#: src/blocks/_pro/slider/edit.js:203
 #: src/blocks/balloon/edit.js:483
 #: src/blocks/button/edit.js:294
 #: src/blocks/faq/index.js:26
@@ -238,7 +238,7 @@ msgid "Image Height"
 msgstr ""
 
 #: src/blocks/_pro/card/edit.js:82
-#: src/blocks/_pro/slider/edit.js:212
+#: src/blocks/_pro/slider/edit.js:222
 msgid "Slide Height for each device."
 msgstr ""
 
@@ -429,7 +429,7 @@ msgid "Display"
 msgstr ""
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:146
-#: src/blocks/_pro/slider/edit.js:366
+#: src/blocks/_pro/slider/edit.js:376
 #: src/blocks/heading/edit.js:374
 msgid "Hide"
 msgstr ""
@@ -658,12 +658,12 @@ msgid "Layout Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:340
-#: src/blocks/_pro/slider/edit.js:184
+#: src/blocks/_pro/slider/edit.js:194
 msgid "Width"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:361
-#: src/blocks/_pro/slider/edit.js:201
+#: src/blocks/_pro/slider/edit.js:211
 msgid "Full Wide"
 msgstr ""
 
@@ -805,21 +805,21 @@ msgid "Container Inner Side Space Setting"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:604
-#: src/blocks/_pro/slider/edit.js:238
+#: src/blocks/_pro/slider/edit.js:248
 #: src/blocks/button/edit.js:372
 #: src/components/advanced-viewport-control/index.js:39
 msgid "Mobile"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:619
-#: src/blocks/_pro/slider/edit.js:227
+#: src/blocks/_pro/slider/edit.js:237
 #: src/blocks/button/edit.js:437
 #: src/components/advanced-viewport-control/index.js:31
 msgid "Tablet"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:634
-#: src/blocks/_pro/slider/edit.js:216
+#: src/blocks/_pro/slider/edit.js:226
 #: src/blocks/button/edit.js:502
 #: src/components/advanced-viewport-control/index.js:25
 msgid "PC"
@@ -942,67 +942,67 @@ msgstr ""
 msgid "repeat"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:106
+#: src/blocks/_pro/slider/edit.js:116
 msgid "Multi-image Display Setting"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:110
+#: src/blocks/_pro/slider/edit.js:120
 msgid "Display Multi Images per View"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:114
+#: src/blocks/_pro/slider/edit.js:124
 msgid "Images per View"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:125
+#: src/blocks/_pro/slider/edit.js:135
 msgid "Move Images per Slide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:207
+#: src/blocks/_pro/slider/edit.js:217
 msgid "Height"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:251
+#: src/blocks/_pro/slider/edit.js:261
 msgid "Slider Settings"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:255
+#: src/blocks/_pro/slider/edit.js:265
 msgid "Effect "
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:265
+#: src/blocks/_pro/slider/edit.js:275
 msgid "Slide"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:269
+#: src/blocks/_pro/slider/edit.js:279
 msgid "Fade"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:276
+#: src/blocks/_pro/slider/edit.js:286
 msgid "Loop "
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:286
+#: src/blocks/_pro/slider/edit.js:296
 msgid "AutoPlay"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:296
+#: src/blocks/_pro/slider/edit.js:306
 msgid "Stop AutoPlay when swipe"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:306
+#: src/blocks/_pro/slider/edit.js:316
 msgid "Display Time"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:320
+#: src/blocks/_pro/slider/edit.js:330
 msgid "Change Speed"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:334
+#: src/blocks/_pro/slider/edit.js:344
 msgid "Pagination Type"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:345
+#: src/blocks/_pro/slider/edit.js:355
 #: src/blocks/_pro/step-item/edit.js:127
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
 #: src/blocks/_pro/timeline-item/edit.js:100
@@ -1013,21 +1013,21 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:349
+#: src/blocks/_pro/slider/edit.js:359
 msgid "Number of slides"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:359
+#: src/blocks/_pro/slider/edit.js:369
 msgid "Navigation Position"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:370
+#: src/blocks/_pro/slider/edit.js:380
 #: src/blocks/button/edit.js:330
 #: src/components/display-items-control/index.js:127
 msgid "Center"
 msgstr ""
 
-#: src/blocks/_pro/slider/edit.js:374
+#: src/blocks/_pro/slider/edit.js:384
 msgid "Bottom on Mobile device"
 msgstr ""
 

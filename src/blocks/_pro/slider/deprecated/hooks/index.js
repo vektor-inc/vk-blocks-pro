@@ -10,7 +10,7 @@ import SliderHook0_56_4 from './0.56.4';
 import SliderHook0_49_7 from './0.49.7';
 
 export default [
-	SliderHook1_13_1,
+	SliderHook1_34_1,
 	SliderHook1_13_1,
 	SliderHook1_10_0,
 	SliderHook1_9_2,

@@ -46,8 +46,8 @@ export default function SliderItemEdit(props) {
 			setAttributes({ clientId: undefined });
 		}
 		if (
-			clientId !== undefined &&
-			(blockId === undefined || isParentReusableBlock(clientId) === false)
+			blockId === undefined ||
+			isParentReusableBlock(clientId) === false
 		) {
 			setAttributes({ blockId: clientId });
 		}

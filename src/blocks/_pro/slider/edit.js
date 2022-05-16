@@ -18,6 +18,7 @@ import {
 	SelectControl,
 	RangeControl,
 } from '@wordpress/components';
+import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 
 export default function SliderEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -36,10 +37,19 @@ export default function SliderEdit(props) {
 		slidesPerView,
 		slidesPerGroup,
 		navigationPosition,
+		blockId,
 	} = attributes;
 
 	useEffect(() => {
-		setAttributes({ clientId });
+		if (attributes.clientId !== undefined) {
+			setAttributes({ clientId: undefined });
+		}
+		if (
+			clientId !== undefined &&
+			(blockId === undefined || isParentReusableBlock(clientId) === false)
+		) {
+			setAttributes({ blockId: clientId });
+		}
 		// slidesPerView 互換設定
 		if (slidesPerView === undefined) {
 			setAttributes({
@@ -89,7 +99,7 @@ export default function SliderEdit(props) {
 		autoPlayStop,
 		autoPlayDelay,
 		pagination,
-		clientId,
+		blockId,
 		width,
 		loop,
 		effect,
@@ -166,7 +176,7 @@ export default function SliderEdit(props) {
 	}
 
 	const blockProps = useBlockProps({
-		className: `swiper-container vk_slider vk_slider_${clientId} ${alignClass}`,
+		className: `swiper-container vk_slider vk_slider_${blockId} ${alignClass}`,
 	});
 
 	return (

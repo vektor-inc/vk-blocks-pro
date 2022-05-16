@@ -1,6 +1,7 @@
 /* eslint camelcase: 0 */
 import save0_0_0 from './0.0.0/save';
 import save0_60_1 from './0.60.1/save';
+import save1_9_2 from './1.9.2/save';
 import save1_22_1 from './1.22.1/save';
 import save1_27_7 from './1.27.7/save';
 
@@ -69,9 +70,15 @@ const blockAttributes2 = {
 		default: 1,
 	},
 }
-
 const blockAttributes3 = {
 	...blockAttributes,
+	clientId: {
+		type: 'string',
+	},
+}
+
+const blockAttributes4 = {
+	...blockAttributes3,
 	bgColor: {
 		type: 'string',
 	},
@@ -80,7 +87,7 @@ const blockAttributes3 = {
 export default [
 	{
 		attributes: {
-			...blockAttributes3
+			...blockAttributes4
 		},
 		save: save1_27_7,
 	},
@@ -91,9 +98,11 @@ export default [
 		save: save1_22_1,
 	},
 	{
-		attributes: {
-			... blockAttributes
-		},
+		attributes: blockAttributes,
+		save: save1_9_2,
+	},
+	{
+		attributes: blockAttributes,
 		save: save0_60_1,
 	},
 	{

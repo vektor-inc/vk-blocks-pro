@@ -82,16 +82,14 @@ export default function SliderEdit(props) {
 	}, [clientId]);
 
 	const containerClass = ' vk_grid-column';
-	let alignClass;
 	const ALLOWED_BLOCKS = ['vk-blocks/slider-item'];
 	const TEMPLATE = [['vk-blocks/slider-item']];
 
+	let alignClass = '';
 	if ('full' === width) {
-		alignClass = 'vk_width-full';
+		alignClass = ' alignfull';
 	} else if ('wide' === width) {
-		alignClass = 'vk_width-wide';
-	} else {
-		alignClass = 'vk_width';
+		alignClass = ' alignwide';
 	}
 
 	const sliderData = {
@@ -176,7 +174,7 @@ export default function SliderEdit(props) {
 	}
 
 	const blockProps = useBlockProps({
-		className: `swiper-container vk_slider vk_slider_${blockId} ${alignClass}`,
+		className: `swiper-container vk_slider vk_slider_${clientId}${alignClass}`,
 	});
 
 	return (

@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ List ] cope with custom color palette
+
 = 1.33.2 =
 [ Bug Fix ][ Button ] Fix horizontal padding for X-T9 
 [ Bug Fix ][ Common mergin ] cope with table bottom

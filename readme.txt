@@ -65,6 +65,11 @@ e.g.
 == Changelog ==
 
 [ Add Block ] Add Tab Block
+[ Specification Change ][ Slider(Pro) ] Changed slider breakpoints to match specified breakpoints in VK Blocks
+[ Specification Change ][ Slider(Pro) ] Corresponds reuse block & deprecate
+[ Specification Change ][ Slider(Pro) ] Change width class name
+[ Bug Fix ][ Slider(Pro) ] Fixed not to output empty CSS tags
+[ Bug Fix ][ Outer (Pro) ] Fix border color class.
 
 = 1.34.1 =
 [ Bug Fix ] Fix term color library ( since 1.34.0 )

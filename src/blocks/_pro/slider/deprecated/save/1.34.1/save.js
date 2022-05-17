@@ -3,7 +3,7 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 export default function save({ attributes }) {
 	let {
 		pagination,
-		blockId,
+		clientId,
 		width,
 		autoPlay,
 		autoPlayStop,
@@ -30,7 +30,7 @@ export default function save({ attributes }) {
 		autoPlayStop,
 		autoPlayDelay,
 		pagination,
-		blockId,
+		clientId,
 		width,
 		loop,
 		effect,
@@ -39,11 +39,13 @@ export default function save({ attributes }) {
 		slidesPerGroup,
 	};
 
-	let alignClass = '';
+	let alignClass;
 	if ('full' === width) {
-		alignClass = ' alignfull';
+		alignClass = 'vk_width-full';
 	} else if ('wide' === width) {
-		alignClass = ' alignwide';
+		alignClass = 'vk_width-wide';
+	} else {
+		alignClass = 'vk_width';
 	}
 
 	// ページネーションの HTML
@@ -73,7 +75,7 @@ export default function save({ attributes }) {
 	}
 
 	const blockProps = useBlockProps.save({
-		className: `swiper-container vk_slider vk_slider_${blockId}${alignClass}`,
+		className: `swiper-container vk_slider vk_slider_${clientId} ${alignClass}`,
 	});
 
 	return (

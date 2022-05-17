@@ -139,7 +139,24 @@ const blockAttributes3 = {
 	}
 }
 
+/*
+// 1.34.1 で attributes を変更
+const blockAttributes4 = {
+	...blockAttributes3,
+	clientId: {
+		type: 'string'
+	},
+	blockId: {
+		type: 'string',
+	}
+}
+*/
+
 const deprecated = [
+	{
+		attributes: blockAttributes3,
+		save: save1_23_0
+	},
 	{
 		attributes: blockAttributes3,
 		save: save1_23_0

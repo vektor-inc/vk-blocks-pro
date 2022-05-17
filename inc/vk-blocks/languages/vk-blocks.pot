@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-05-17T00:06:19+00:00\n"
+"POT-Creation-Date: 2022-05-17T05:17:19+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks\n"
@@ -150,7 +150,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:206
 #: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:210
 #: src/blocks/_pro/card-item/edit.js:182
-#: src/blocks/_pro/card/edit.js:122
+#: src/blocks/_pro/card/edit.js:128
 #: src/blocks/_pro/icon-card/edit.js:72
 #: src/blocks/_pro/post-list/edit.js:307
 msgid "Title"
@@ -202,49 +202,49 @@ msgstr ""
 msgid "https://example.com"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:120
+#: src/blocks/_pro/card/edit.js:126
 #: src/components/display-items-control/index.js:28
 msgid "Display item"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:136
+#: src/blocks/_pro/card/edit.js:142
 msgid "Excerpt Text"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:144
+#: src/blocks/_pro/card/edit.js:150
 msgid "Warning! When you hidden this item, you will lose the content."
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:150
+#: src/blocks/_pro/card/edit.js:156
 #: src/components/display-items-control/index.js:30
 msgid "Image"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:157
+#: src/blocks/_pro/card/edit.js:163
 #: src/components/display-items-control/index.js:78
 msgid "Button"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:162
+#: src/blocks/_pro/card/edit.js:168
 #: src/components/display-items-control/index.js:100
 msgid "Button option"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:165
+#: src/blocks/_pro/card/edit.js:171
 #: src/components/display-items-control/index.js:103
 msgid "Click each card block to set the target url. You can find the url form at it's sidebar."
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:171
+#: src/blocks/_pro/card/edit.js:177
 #: src/components/display-items-control/index.js:109
 msgid "Button text"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:77
+#: src/blocks/_pro/card/edit.js:83
 msgid "Image Height"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:82
+#: src/blocks/_pro/card/edit.js:88
 #: src/blocks/_pro/slider/edit.js:220
 msgid "Slide Height for each device."
 msgstr ""

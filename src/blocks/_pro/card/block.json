@@ -122,12 +122,10 @@
 			"default": 150
 		},
 		"clientId": {
-			"type": "string",
-			"default": ""
+			"type": "string"
 		},
 		"blockId": {
-			"type": "string",
-			"default": ""
+			"type": "string"
 		}
 	},
 	"supports": {

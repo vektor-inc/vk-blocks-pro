@@ -37,7 +37,7 @@ export default function save(props) {
 		borderStyle,
 		borderColor,
 		borderRadius,
-		clientId,
+		blockId,
 	} = attributes;
 
 	let classPaddingLR;
@@ -62,11 +62,7 @@ export default function save(props) {
 	const GetBgImage = (
 		<>
 			{(bgImage || bgImageTablet || bgImageMobile) && (
-				<GenerateBgImage
-					prefix={prefix}
-					clientId={clientId}
-					{...props}
-				/>
+				<GenerateBgImage prefix={prefix} blockId={blockId} {...props} />
 			)}
 			<span
 				className={`vk_outer-background-area ${bgColorClasses}`}
@@ -155,7 +151,7 @@ export default function save(props) {
 
 	const blockProps = useBlockProps.save({
 		className: classnames(
-			`vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
+			`vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 			{
 				[`has-border-color`]:
 					borderStyle !== 'none' && borderColor !== undefined,

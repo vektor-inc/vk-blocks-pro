@@ -80,7 +80,7 @@ const vkbwithClientIdClassName = createHigherOrderComponent(
 );
 addFilter(
 	'editor.BlockListBlock',
-	'vk-blocks/slider-item',
+	'vk-blocks/slider',
 	vkbwithClientIdClassName
 );
 
@@ -101,7 +101,7 @@ const addSwiperConfig = (el, type, attributes) => {
 
 		// 最新版
 		if (-1 === deprecatedFuncIndex) {
-			const cssSelector = `.vk_slider_${attributes.clientId},`;
+			const cssSelector = `.vk_slider_${attributes.blockId},`;
 			const cssTag = generateHeightCss(attributes, cssSelector);
 			return (
 				<>

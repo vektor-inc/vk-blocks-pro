@@ -13,6 +13,9 @@
 		"gap": {
 			"type": "string",
 			"default": "8px"
+		},
+		"blockId": {
+			"type": "string"
 		}
 	},
 	"supports": {

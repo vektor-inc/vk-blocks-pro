@@ -13,6 +13,7 @@ import transforms from './transforms';
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { select } from '@wordpress/data';
 
 const { name } = metadata;
 
@@ -92,6 +93,32 @@ const generateInlineCss = (attributes) => {
 		}
 	}
 
+	// ここで親ブロックのギャップを取得するように
+
+	return inlineCss;
+};
+
+const generateEditorCss = (attributes) => {
+	const { buttonWidth, blockId } = attributes;
+	let inlineCss = '';
+
+	// 親ブロックのギャップを取得
+	let parentGap = null;
+	const parents = select('core/block-editor').getBlockParentsByBlockName(
+		blockId,
+		['vk-blocks/button-outer']
+	);
+	if (parents.length) {
+		parentGap = select('core/block-editor').getBlock(parents[0]).attributes
+			.gap;
+	}
+	if (parentGap) {
+		inlineCss += `.editor-styles-wrapper .vk_button-${blockId} {
+			width: calc(${buttonWidth}% - ${parentGap});
+		}`;
+		// さらに メディアクエリも必要
+	}
+
 	return inlineCss;
 };
 
@@ -101,11 +128,14 @@ const VKButtonInlineEditorCss = createHigherOrderComponent((BlockEdit) => {
 
 		if ('vk-blocks/button' === props.name) {
 			const cssTag = generateInlineCss(attributes);
-			if (cssTag !== '') {
+			const cssEditor = generateEditorCss(attributes);
+			if (cssTag !== '' || cssEditor !== '') {
 				return (
 					<>
 						<BlockEdit {...props} />
-						<style type="text/css">{cssTag}</style>
+						<style type="text/css">
+							{cssTag} {cssEditor}
+						</style>
 					</>
 				);
 			}

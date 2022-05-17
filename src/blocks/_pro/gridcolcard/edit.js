@@ -6,14 +6,12 @@ import {
 } from '@wordpress/block-editor';
 import {
 	PanelBody,
-	BaseControl,
-	Button,
-	TextControl,
 	__experimentalUnitControl as UnitControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
 } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 import { select, dispatch } from '@wordpress/data';
 import CommonItemControl from './edit-common.js';
+import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 
 export default function Edit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -35,7 +33,10 @@ export default function Edit(props) {
 	const { updateBlockAttributes } = dispatch('core/block-editor');
 
 	useEffect(() => {
-		if (blockId === undefined) {
+		if (
+			blockId === undefined ||
+			isParentReusableBlock(clientId) === false
+		) {
 			setAttributes({ blockId: clientId });
 		}
 		if (old_1_31_0 === undefined) {
@@ -111,47 +112,6 @@ export default function Edit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Update Block ID', 'vk-blocks')}>
-					<BaseControl id={`vk_blocks_gridcolcard_updateBlockID`}>
-						<TextControl
-							className={`mb-0`}
-							label={__('Block ID', 'vk-blocks')}
-							value={blockId}
-							disabled={true}
-							onChange={(value) =>
-								setAttributes({ blockId: value })
-							}
-						/>
-						<Button
-							isSecondary
-							onClick={() => setAttributes({ blockId: clientId })}
-						>
-							{__('Update Block ID', 'vk-blocks')}
-						</Button>
-						<ul className={`mt-0 mb-3`}>
-							<li>
-								{__(
-									'This is the identification ID for this block style.',
-									'vk-blocks'
-								)}
-							</li>
-							<li>
-								<strong>
-									{__(
-										'If you duplicate this block, please update the ID on duplicated block.',
-										'vk-blocks'
-									)}
-								</strong>
-							</li>
-							<li>
-								{__(
-									'This ID is not id of HTML attribute.',
-									'vk-blocks'
-								)}
-							</li>
-						</ul>
-					</BaseControl>
-				</PanelBody>
 				<PanelBody
 					title={__('Column Width Setting', 'vk-blocks')}
 					initialOpen={true}

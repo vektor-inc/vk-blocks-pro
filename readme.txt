@@ -63,7 +63,7 @@ e.g.
 
 
 == Changelog ==
-
+[ Specification Change ][ Outer (Pro) ] Corresponds reuse block & duplicate
 [ Specification Change ][ Slider(Pro) ] Changed slider breakpoints to match specified breakpoints in VK Blocks
 [ Specification Change ][ Slider(Pro) ] Corresponds reuse block & deprecate
 [ Specification Change ][ Slider(Pro) ] Change width class name

@@ -235,10 +235,10 @@ $xl-min: 1200px;
 	border-right: 1px solid var(--vk-color-border);
 	border-bottom: 1px solid var(--vk-color-border);
 	border-left: 1px solid var(--vk-color-border);
-	padding: 1rem;
 	background-color: var(--vk-color-bg-accent-wh);
 	.vk_tab_bodys_body {
 		display: none;
+		padding: 1rem;
 		&.vk_tab_bodys_body-state-active{
 			display: block;
 		}

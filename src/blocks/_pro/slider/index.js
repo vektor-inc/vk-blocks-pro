@@ -24,29 +24,29 @@ export const settings = {
 };
 
 const generateHeightCss = (attributes, cssSelector = '') => {
-	const { clientId, mobile, tablet, pc, unit } = attributes;
+	const { blockId, mobile, tablet, pc, unit } = attributes;
 	let css = '';
 	if (unit !== undefined && unit !== null) {
-		if (mobile !== undefined && mobile !== null) {
-			css += `@media (max-width: 576px) {
+		if (mobile !== undefined && mobile !== null && !isNaN(mobile)) {
+			css += `@media (max-width: 575.98px) {
 				${cssSelector}
-				.vk_slider_${clientId} .vk_slider_item{
+				.vk_slider_${blockId} .vk_slider_item{
 					height:${mobile}${unit}!important;
 				}
 			}`;
 		}
-		if (tablet !== undefined && tablet !== null) {
-			css += `@media (min-width: 577px) and (max-width: 768px) {
+		if (tablet !== undefined && tablet !== null && !isNaN(tablet)) {
+			css += `@media (min-width: 576px) and (max-width: 991.98px) {
 				${cssSelector}
-				.vk_slider_${clientId} .vk_slider_item{
+				.vk_slider_${blockId} .vk_slider_item{
 					height:${tablet}${unit}!important;
 				}
 			}`;
 		}
-		if (pc !== undefined && pc !== null) {
-			css += `@media (min-width: 769px) {
+		if (pc !== undefined && pc !== null && !isNaN(pc)) {
+			css += `@media (min-width: 992px) {
 				${cssSelector}
-				.vk_slider_${clientId} .vk_slider_item{
+				.vk_slider_${blockId} .vk_slider_item{
 					height:${pc}${unit}!important;
 				}
 			}`;
@@ -65,7 +65,11 @@ const vkbwithClientIdClassName = createHigherOrderComponent(
 				return (
 					<>
 						<BlockListBlock {...props} />
-						<style type="text/css">{cssTag}</style>
+						{(() => {
+							if (cssTag) {
+								return <style type="text/css">{cssTag}</style>;
+							}
+						})()}
 					</>
 				);
 			}
@@ -76,7 +80,7 @@ const vkbwithClientIdClassName = createHigherOrderComponent(
 );
 addFilter(
 	'editor.BlockListBlock',
-	'vk-blocks/slider-item',
+	'vk-blocks/slider',
 	vkbwithClientIdClassName
 );
 
@@ -97,12 +101,16 @@ const addSwiperConfig = (el, type, attributes) => {
 
 		// 最新版
 		if (-1 === deprecatedFuncIndex) {
-			const cssSelector = `.vk_slider_${attributes.clientId},`;
+			const cssSelector = `.vk_slider_${attributes.blockId},`;
 			const cssTag = generateHeightCss(attributes, cssSelector);
 			return (
 				<>
 					{el}
-					<style type="text/css">{cssTag}</style>
+					{(() => {
+						if (cssTag) {
+							return <style type="text/css">{cssTag}</style>;
+						}
+					})()}
 				</>
 			);
 

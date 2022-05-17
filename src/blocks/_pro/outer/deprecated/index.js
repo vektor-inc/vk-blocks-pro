@@ -12,6 +12,7 @@ import save0_37_1 from './0.37.1/save';
 import save0_60_0 from './0.60.0/save';
 import save1_0_13 from './1.0.13/save';
 import save1_26_0 from './1.26.0/save';
+import save1_33_2 from './1.33.2/save';
 
 const blockAttributes = {
 	bgColor: {
@@ -82,6 +83,44 @@ const blockAttributes = {
 
 const deprecated = [
 	//ブロックテンプレート用のdeprecated
+	{
+		attributes: {
+			...blockAttributes,
+			defaultBgColor: {
+				type: 'string',
+				default: '#f3f4f5',
+			},
+			bgImageTablet: {
+				type: 'string',
+				default: null,
+			},
+			bgImageMobile: {
+				type: 'string',
+				default: null,
+			},
+			clientId: {
+				type: 'string',
+				default: null,
+			},
+			innerSideSpaceValuePC: {
+				type: "number",
+				default: 0
+			},
+			innerSideSpaceValueTablet: {
+				type: "number",
+				default: 0
+			},
+			innerSideSpaceValueMobile: {
+				type: "number",
+				default: 0
+			},
+			innerSideSpaceUnit: {
+				type: "string",
+				default: "px"
+			},
+		},
+		save: save1_33_2,
+	},
 	{
 		attributes: {
 			...blockAttributes,

@@ -157,12 +157,9 @@ export default function save(props) {
 		className: classnames(
 			`vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 			{
-				[`has-border-color`]:
-					borderStyle !== 'none' && borderColor !== undefined,
+				[`has-border-color`]: borderColor !== undefined,
 				[`has-${borderColor}-border-color`]:
-					borderStyle !== 'none' &&
-					borderColor !== undefined &&
-					!isHexColor(borderColor),
+					borderColor !== undefined && !isHexColor(borderColor),
 			}
 		),
 		style: borderStyleProperty,

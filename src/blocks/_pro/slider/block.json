@@ -65,6 +65,9 @@
 		"navigationPosition": {
 			"type": "string",
 			"default": "mobile-bottom"
+		},
+		"blockId": {
+			"type": "string"
 		}
 	},
 	"supports": {

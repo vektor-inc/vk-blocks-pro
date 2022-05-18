@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-05-17T05:26:36+00:00\n"
+"POT-Creation-Date: 2022-05-17T03:49:04+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks\n"
@@ -38,23 +38,27 @@ msgstr ""
 msgid "Background color / Rounded / Border"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:104
+#: src/blocks/_pro/animation/edit.js:103
+msgid "Slow"
+msgstr ""
+
+#: src/blocks/_pro/animation/edit.js:111
 msgid "Fast"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:108
+#: src/blocks/_pro/animation/edit.js:115
 msgid "Very Fast"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:113
+#: src/blocks/_pro/animation/edit.js:120
 msgid "Animation range"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:119
+#: src/blocks/_pro/animation/edit.js:126
 msgid "Short"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:123
+#: src/blocks/_pro/animation/edit.js:130
 #: src/blocks/_pro/outer/edit.js:366
 #: src/blocks/_pro/slider/edit.js:201
 #: src/blocks/balloon/edit.js:483
@@ -65,71 +69,67 @@ msgstr ""
 msgid "Normal"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:127
+#: src/blocks/_pro/animation/edit.js:134
 msgid "Long"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:38
+#: src/blocks/_pro/animation/edit.js:45
 msgid "Animation Settings"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:39
+#: src/blocks/_pro/animation/edit.js:46
 msgid "Animation effect"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:45
+#: src/blocks/_pro/animation/edit.js:52
 msgid "Fade In"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:49
+#: src/blocks/_pro/animation/edit.js:56
 msgid "Slide Up"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:53
+#: src/blocks/_pro/animation/edit.js:60
 msgid "Slide Left"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:57
+#: src/blocks/_pro/animation/edit.js:64
 msgid "Slide Right"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:61
+#: src/blocks/_pro/animation/edit.js:68
 msgid "Left Right"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:65
+#: src/blocks/_pro/animation/edit.js:72
 msgid "Up Down"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:69
+#: src/blocks/_pro/animation/edit.js:76
 msgid "Trembling Y"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:73
+#: src/blocks/_pro/animation/edit.js:80
 #: src/blocks/balloon/edit.js:551
 msgid "Trembling X"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:77
+#: src/blocks/_pro/animation/edit.js:84
 #: src/blocks/balloon/edit.js:555
 msgid "Pounding"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:81
+#: src/blocks/_pro/animation/edit.js:88
 #: src/blocks/balloon/edit.js:559
 msgid "Shaking"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:86
+#: src/blocks/_pro/animation/edit.js:93
 msgid "Animation speed"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:92
+#: src/blocks/_pro/animation/edit.js:99
 msgid "Very Slow"
-msgstr ""
-
-#: src/blocks/_pro/animation/edit.js:96
-msgid "Slow"
 msgstr ""
 
 #: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:149

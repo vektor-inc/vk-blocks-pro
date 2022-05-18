@@ -63,6 +63,8 @@ e.g.
 
 
 == Changelog ==
+
+[ Specification Change ][ Animation(Pro) ] Corresponds reuse block & duplicate
 [ Specification Change ][ Grid Column Card(Pro) ]  Corresponds reuse block & duplicate automatically
 [ Specification Change ][ Card(Pro) ] Corresponds reuse block & duplicate automatically
 [ Specification Change ][ Slider(Pro) ] Corresponds reuse block & duplicate automatically

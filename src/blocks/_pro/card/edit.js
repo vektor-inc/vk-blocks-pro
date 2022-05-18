@@ -19,12 +19,12 @@ import {
 import { select, dispatch } from '@wordpress/data';
 import { convertToGrid } from '@vkblocks/utils/convert-to-grid';
 import { useEffect } from '@wordpress/element';
+import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 
 export default function CardEdit(props) {
-	const { attributes, clientId, name } = props;
+	const { attributes, setAttributes, clientId, name } = props;
 	const { blockId } = attributes;
 	attributes.name = name;
-	attributes.clientId = clientId;
 
 	const { getBlocksByClientId } = select('core/block-editor');
 	const { updateBlockAttributes } = dispatch('core/block-editor');
@@ -32,10 +32,16 @@ export default function CardEdit(props) {
 	const thisBlock = getBlocksByClientId(clientId);
 
 	useEffect(() => {
+		if (attributes.clientId !== undefined) {
+			setAttributes({ clientId: undefined });
+		}
+		if (
+			blockId === undefined ||
+			isParentReusableBlock(clientId) === false
+		) {
+			setAttributes({ blockId: clientId });
+		}
 		if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
-			updateBlockAttributes(clientId, { clientId });
-			updateBlockAttributes(clientId, { blockId: clientId });
-
 			const thisInnerBlocks = thisBlock[0].innerBlocks;
 			thisInnerBlocks.forEach(function (thisInnerBlock) {
 				//className以外の値で、子要素のattributesをアップデート

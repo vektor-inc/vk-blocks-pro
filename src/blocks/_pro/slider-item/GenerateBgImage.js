@@ -1,6 +1,7 @@
 const GenerateBgImage = (props) => {
-	const { attributes, clientId, prefix } = props;
-	const { bgImageMobile, bgImageTablet, bgImage, bgSize } = attributes;
+	const { attributes, prefix } = props;
+	const { bgImageMobile, bgImageTablet, bgImage, bgSize, blockId } =
+		attributes;
 
 	const mobileViewport = 'max-width: 575.98px';
 	const tabletViewport = 'min-width: 576px';
@@ -20,19 +21,19 @@ const GenerateBgImage = (props) => {
 	//moible only
 	if (bgImageMobile && !bgImageTablet && !bgImage) {
 		return (
-			<style>{`.${prefix}-${clientId}{background-image: url(${bgImageMobile}); ${backgroundStyle}}`}</style>
+			<style>{`.${prefix}-${blockId}{background-image: url(${bgImageMobile}); ${backgroundStyle}}`}</style>
 		);
 	}
 	//tablet only
 	if (!bgImageMobile && bgImageTablet && !bgImage) {
 		return (
-			<style>{`.${prefix}-${clientId}{background-image: url(${bgImageTablet}); ${backgroundStyle}}`}</style>
+			<style>{`.${prefix}-${blockId}{background-image: url(${bgImageTablet}); ${backgroundStyle}}`}</style>
 		);
 	}
 	//pc only
 	if (!bgImageMobile && !bgImageTablet && bgImage) {
 		return (
-			<style>{`.${prefix}-${clientId}{background-image: url(${bgImage}); ${backgroundStyle}}`}</style>
+			<style>{`.${prefix}-${blockId}{background-image: url(${bgImage}); ${backgroundStyle}}`}</style>
 		);
 	}
 	//pc -mobile
@@ -41,10 +42,10 @@ const GenerateBgImage = (props) => {
 			<style>
 				{`
           @media screen and (${underPcViewport}) {
-            .${prefix}-${clientId}{background-image: url(${bgImageMobile}); ${backgroundStyle}}
+            .${prefix}-${blockId}{background-image: url(${bgImageMobile}); ${backgroundStyle}}
          }
           @media screen and (${pcViewport}) {
-            .${prefix}-${clientId}{background-image: url(${bgImage}); ${backgroundStyle}}
+            .${prefix}-${blockId}{background-image: url(${bgImage}); ${backgroundStyle}}
          }
           `}
 			</style>
@@ -56,10 +57,10 @@ const GenerateBgImage = (props) => {
 			<style>
 				{`
           @media screen and (${underPcViewport}) {
-            .${prefix}-${clientId}{background-image: url(${bgImageTablet}); ${backgroundStyle}}
+            .${prefix}-${blockId}{background-image: url(${bgImageTablet}); ${backgroundStyle}}
          }
           @media screen and (${pcViewport}) {
-            .${prefix}-${clientId}{background-image: url(${bgImage}); ${backgroundStyle}}
+            .${prefix}-${blockId}{background-image: url(${bgImage}); ${backgroundStyle}}
          }
           `}
 			</style>
@@ -71,10 +72,10 @@ const GenerateBgImage = (props) => {
 			<style>
 				{`
           @media screen and (${mobileViewport}) {
-            .${prefix}-${clientId}{background-image: url(${bgImageMobile}); ${backgroundStyle}}
+            .${prefix}-${blockId}{background-image: url(${bgImageMobile}); ${backgroundStyle}}
          }
           @media screen and (${tabletViewport}) {
-            .${prefix}-${clientId}{background-image: url(${bgImageTablet}); ${backgroundStyle}}
+            .${prefix}-${blockId}{background-image: url(${bgImageTablet}); ${backgroundStyle}}
          }
         `}
 			</style>
@@ -86,13 +87,13 @@ const GenerateBgImage = (props) => {
 			<style>
 				{`
         @media screen and (${mobileViewport}) {
-          .${prefix}-${clientId}{background-image: url(${bgImageMobile}); ${backgroundStyle}}
+          .${prefix}-${blockId}{background-image: url(${bgImageMobile}); ${backgroundStyle}}
        }
         @media screen and (${tabletViewport}) {
-          .${prefix}-${clientId}{background-image: url(${bgImageTablet}); ${backgroundStyle}}
+          .${prefix}-${blockId}{background-image: url(${bgImageTablet}); ${backgroundStyle}}
        }
         @media screen and (${pcViewport}) {
-          .${prefix}-${clientId}{background-image: url(${bgImage}); ${backgroundStyle}}
+          .${prefix}-${blockId}{background-image: url(${bgImage}); ${backgroundStyle}}
        }
         `}
 			</style>

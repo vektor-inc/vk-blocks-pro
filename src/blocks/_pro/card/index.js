@@ -5,7 +5,6 @@
 import { title, content, pictureJson } from '@vkblocks/utils/example-data';
 import { ReactComponent as Icon } from './icon.svg';
 
-import { useEffect } from '@wordpress/element';
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
 
@@ -69,7 +68,7 @@ export const settings = {
 };
 
 const generateInlineCss = (attributes) => {
-	let { clientId, mobile, tablet, pc, unit } = attributes;
+	let { blockId, mobile, tablet, pc, unit } = attributes;
 
 	//For recovering block.
 	if (undefined === unit) {
@@ -85,7 +84,7 @@ const generateInlineCss = (attributes) => {
 		pc = 150;
 	}
 
-	const cardImgSelector = `.${prefix}${clientId} .vk_card_item .vk_post_imgOuter::before`;
+	const cardImgSelector = `.${prefix}${blockId} .vk_card_item .vk_post_imgOuter::before`;
 	return `@media (max-width: 575.98px) {
 		${cardImgSelector}{
 			padding-top:${mobile}${unit}!important;
@@ -105,13 +104,9 @@ const generateInlineCss = (attributes) => {
 
 const VKCardInlineEditorCss = createHigherOrderComponent((BlockEdit) => {
 	return (props) => {
-		const { attributes, setAttributes, clientId } = props;
+		const { attributes } = props;
 
 		if ('vk-blocks/card' === props.name) {
-			useEffect(() => {
-				setAttributes({ clientId });
-			}, []);
-
 			const cssTag = generateInlineCss(attributes);
 
 			return (

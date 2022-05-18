@@ -12,7 +12,13 @@ export default function save({ attributes }) {
 			display: flex;
 			flex-wrap: wrap;
 		}
-	}`;
+	}
+	@media (max-width: ${breakPoint - 0.02}px) {
+		.vk-layoutColumn-${blockId} .vk_layoutColumnItem {
+			width:100%;
+		}
+	}
+	`;
 
 	return (
 		<>

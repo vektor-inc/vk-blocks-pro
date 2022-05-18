@@ -13,8 +13,7 @@ import {
 } from '@wordpress/block-editor';
 
 import { useMediaQuery } from '@wordpress/compose';
-//import { useState } from 'react';
-import { select, dispatch, useSelect } from '@wordpress/data';
+import { select, dispatch } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
 
 export default function LayoutColumnEdit(props) {
@@ -48,6 +47,7 @@ export default function LayoutColumnEdit(props) {
 	} else {
 		isGrid = false;
 		displayWidth = '100%';
+		className += ' vk_layoutColumn_block';
 	}
 
 	useEffect(() => {
@@ -68,11 +68,6 @@ export default function LayoutColumnEdit(props) {
 		}
 	}, [isGrid]);
 
-	// 内包するLayoutItemの個数を取得する。
-	const innerBlockCount = useSelect(
-		(s) => s('core/block-editor').getBlock(clientId).innerBlocks
-	);
-
 	const ALLOWED_BLOCKS = ['vk-blocks/layout-column-item'];
 	const TEMPLATE = [
 		['vk-blocks/layout-column-item', {}],
@@ -88,11 +83,6 @@ export default function LayoutColumnEdit(props) {
 				<InnerBlocks
 					template={TEMPLATE}
 					allowedBlocks={ALLOWED_BLOCKS}
-					renderAppender={() =>
-						innerBlockCount.length < 3 && (
-							<InnerBlocks.ButtonBlockAppender />
-						)
-					}
 				/>
 			</div>
 			<InspectorControls>

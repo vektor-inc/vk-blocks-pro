@@ -10,15 +10,13 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 
 	// Register Style.
 	if ( ! is_admin() ) {
-		wp_register_script(
-			'vk-blocks/layout-column-script',
-			VK_BLOCKS_DIR_URL . 'inc/vk-blocks/build/vk-layout-column.min.js',
+		wp_register_style(
+			'vk-blocks/layout-column',
+			VK_BLOCKS_DIR_URL . 'build/layout-column/style.css',
 			array(),
-			VK_BLOCKS_VERSION,
-			true
+			VK_BLOCKS_VERSION
 		);
 	}
-
 	/**
 	 * Register Icon block.
 	 *
@@ -28,7 +26,7 @@ if ( function_exists( 'register_block_type_from_metadata' ) ) {
 		register_block_type_from_metadata(
 			__DIR__,
 			array(
-				'script'        => 'vk-blocks/layout-column-script',
+				'style'         => 'vk-blocks/layout-column',
 				'editor_style'  => 'vk-blocks-build-editor-css',
 				'editor_script' => 'vk-blocks-build-js',
 			)

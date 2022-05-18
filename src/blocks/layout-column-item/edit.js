@@ -16,19 +16,24 @@ import { useEffect } from '@wordpress/element';
 import { useMediaQuery } from '@wordpress/compose';
 
 export default function LayoutColumnItemEdit(props) {
-	const { attributes, setAttributes } = props;
+	const { attributes, setAttributes, clientId } = props;
 	const { width, margin_pc, margin_tb, margin_sp, is_grid, blockId } =
 		attributes;
 	const blockProps = useBlockProps({
 		className: `vk_layoutColumnItem`,
 	});
 
-	const isMobile = useMediaQuery('(max-width: 689px)');
+	useEffect(() => {
+		if (blockId === undefined) {
+			setAttributes({ blockId: clientId });
+		}
+	}, [clientId]);
+
+	const isMobile = useMediaQuery('(max-width: 575.98px)');
 	const isTablet = useMediaQuery(
-		'(min-width: 690px) and (max-width: 1079px)'
+		'(min-width: 576px) and (max-width: 991.98px)'
 	);
-	const isPC = useMediaQuery('(min-width: 1080px)');
-	//console.log(isMobile + ':' + isTablet + ':' + isPC);
+	const isPC = useMediaQuery('(min-width: 992px)');
 
 	let paddingObject = margin_pc;
 	if (isMobile) {

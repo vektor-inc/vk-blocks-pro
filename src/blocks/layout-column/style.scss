@@ -41,10 +41,16 @@
 	}
 }
 
-.edit-post-visual-editor {
+
+.vk_layoutColumnItem {
+	box-sizing: border-box;
+}
+
+
+.editor-styles-wrapper {
 	.vk_layoutColumnItem {
 		border: 1px dotted #aaa;
 		min-width: 100px;
-		min-height: 100px;
+		min-height: 50px;
 	}
 }

@@ -2,14 +2,13 @@
  * outer block type
  */
 import { ReactComponent as Icon } from './icon.svg';
-import { useEffect } from '@wordpress/element';
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
 
 import metadata from './block.json';
 import edit from './edit';
 import save from './save';
-import deprecated from './deprecated/';
+import deprecated from './deprecated/save/';
 import deprecatedHooks from './deprecated/hooks/';
 
 const { name } = metadata;
@@ -25,7 +24,7 @@ export const settings = {
 
 const generateInlineCss = (attributes) => {
 	let {
-		clientId,
+		blockId,
 		innerSideSpaceValuePC,
 		innerSideSpaceValueTablet,
 		innerSideSpaceValueMobile,
@@ -46,7 +45,7 @@ const generateInlineCss = (attributes) => {
 		innerSideSpaceValuePC = 0;
 	}
 
-	const containerSelector = `.vkb-outer-${clientId} .vk_outer_container`;
+	const containerSelector = `.vkb-outer-${blockId} .vk_outer_container`;
 	return `
 	${containerSelector}{
 		padding-left:${innerSideSpaceValueMobile}${innerSideSpaceUnit};
@@ -72,15 +71,10 @@ addFilter(
 	'vk-blocks/outer-addInlineEditorsCss',
 	createHigherOrderComponent((BlockEdit) => {
 		return (props) => {
-			const { attributes, setAttributes, clientId } = props;
+			const { attributes } = props;
 
 			if ('vk-blocks/outer' === props.name) {
-				useEffect(() => {
-					setAttributes({ clientId });
-				}, []);
-
 				const cssTag = generateInlineCss(attributes);
-
 				return (
 					<>
 						<BlockEdit {...props} />

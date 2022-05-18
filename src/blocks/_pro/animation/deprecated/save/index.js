@@ -16,75 +16,50 @@ const blockAttributes = {
 	},
 };
 
+const blockAttributes2 = {
+	...blockAttributes,
+	speed: {
+		type: "string",
+		default: "fast",
+	},
+	range: {
+		type: "string",
+		default: "short",
+	},
+}
+
+/*
+// 1.34.1 で attributes を変更
+const blockAttributes3 = {
+	...blockAttributes2,
+	clientId: {
+		type: "string"
+	},
+	blockId": {
+		type: "string"
+	}
+}
+*/
+
 const deprecated = [
 	{
-		attributes:	{
-			...blockAttributes,
-			speed: {
-				type: "string",
-				default: "fast",
-			},
-			range: {
-				type: "string",
-				default: "short",
-			},
-		},
+		attributes:	blockAttributes2,
 		save: save0_58_7
 	},
 	{
-		attributes:	{
-			...blockAttributes,
-			speed: {
-				type: "string",
-				default: "fast",
-			},
-			range: {
-				type: "string",
-				default: "short",
-			},
-		},
+		attributes:	blockAttributes2,
 		save: save0_49_1
 	},
 	{
-		attributes:	{
-			...blockAttributes,
-			speed: {
-				type: "string",
-				default: "fast",
-			},
-			range: {
-				type: "string",
-				default: "short",
-			},
-		},
+		attributes:	blockAttributes2,
 		save: save003,
 	},
 	{
-		attributes:	{
-			...blockAttributes,
-			speed: {
-				type: "string",
-				default: "fast",
-			},
-			range: {
-				type: "string",
-				default: "short",
-			},
-		},
+		attributes:	blockAttributes2,
 		save: save002,
 	},
 	{
-		attributes:	{
-			...blockAttributes,
-			speed: {
-				type: "string",
-				default: "fast",
-			},
-			range: {
-				type: "string",
-				default: "short",
-			},
-		},
+		attributes:	blockAttributes2,
 		save: save001,
 	},
 	{

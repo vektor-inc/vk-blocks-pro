@@ -38,19 +38,23 @@ msgstr ""
 msgid "Background color / Rounded / Border"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:104
+#: src/blocks/_pro/animation/edit.js:103
+msgid "Slow"
+msgstr ""
+
+#: src/blocks/_pro/animation/edit.js:111
 msgid "Fast"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:108
+#: src/blocks/_pro/animation/edit.js:115
 msgid "Very Fast"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:113
+#: src/blocks/_pro/animation/edit.js:120
 msgid "Animation range"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:119
+#: src/blocks/_pro/animation/edit.js:126
 msgid "Short"
 msgstr ""
 
@@ -65,71 +69,67 @@ msgstr ""
 msgid "Normal"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:127
+#: src/blocks/_pro/animation/edit.js:134
 msgid "Long"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:38
+#: src/blocks/_pro/animation/edit.js:45
 msgid "Animation Settings"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:39
+#: src/blocks/_pro/animation/edit.js:46
 msgid "Animation effect"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:45
+#: src/blocks/_pro/animation/edit.js:52
 msgid "Fade In"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:49
+#: src/blocks/_pro/animation/edit.js:56
 msgid "Slide Up"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:53
+#: src/blocks/_pro/animation/edit.js:60
 msgid "Slide Left"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:57
+#: src/blocks/_pro/animation/edit.js:64
 msgid "Slide Right"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:61
+#: src/blocks/_pro/animation/edit.js:68
 msgid "Left Right"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:65
+#: src/blocks/_pro/animation/edit.js:72
 msgid "Up Down"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:69
+#: src/blocks/_pro/animation/edit.js:76
 msgid "Trembling Y"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:73
+#: src/blocks/_pro/animation/edit.js:80
 #: src/blocks/balloon/edit.js:551
 msgid "Trembling X"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:77
+#: src/blocks/_pro/animation/edit.js:84
 #: src/blocks/balloon/edit.js:555
 msgid "Pounding"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:81
+#: src/blocks/_pro/animation/edit.js:88
 #: src/blocks/balloon/edit.js:559
 msgid "Shaking"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:86
+#: src/blocks/_pro/animation/edit.js:93
 msgid "Animation speed"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:92
+#: src/blocks/_pro/animation/edit.js:99
 msgid "Very Slow"
-msgstr ""
-
-#: src/blocks/_pro/animation/edit.js:96
-msgid "Slow"
 msgstr ""
 
 #: src/blocks/_pro/card-item/deprecated/0.20.2/component.js:149
@@ -150,7 +150,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:206
 #: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:210
 #: src/blocks/_pro/card-item/edit.js:182
-#: src/blocks/_pro/card/edit.js:122
+#: src/blocks/_pro/card/edit.js:128
 #: src/blocks/_pro/icon-card/edit.js:72
 #: src/blocks/_pro/post-list/edit.js:307
 msgid "Title"
@@ -202,49 +202,49 @@ msgstr ""
 msgid "https://example.com"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:120
+#: src/blocks/_pro/card/edit.js:126
 #: src/components/display-items-control/index.js:28
 msgid "Display item"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:136
+#: src/blocks/_pro/card/edit.js:142
 msgid "Excerpt Text"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:144
+#: src/blocks/_pro/card/edit.js:150
 msgid "Warning! When you hidden this item, you will lose the content."
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:150
+#: src/blocks/_pro/card/edit.js:156
 #: src/components/display-items-control/index.js:30
 msgid "Image"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:157
+#: src/blocks/_pro/card/edit.js:163
 #: src/components/display-items-control/index.js:78
 msgid "Button"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:162
+#: src/blocks/_pro/card/edit.js:168
 #: src/components/display-items-control/index.js:100
 msgid "Button option"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:165
+#: src/blocks/_pro/card/edit.js:171
 #: src/components/display-items-control/index.js:103
 msgid "Click each card block to set the target url. You can find the url form at it's sidebar."
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:171
+#: src/blocks/_pro/card/edit.js:177
 #: src/components/display-items-control/index.js:109
 msgid "Button text"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:77
+#: src/blocks/_pro/card/edit.js:83
 msgid "Image Height"
 msgstr ""
 
-#: src/blocks/_pro/card/edit.js:82
+#: src/blocks/_pro/card/edit.js:88
 #: src/blocks/_pro/slider/edit.js:220
 msgid "Slide Height for each device."
 msgstr ""
@@ -473,59 +473,39 @@ msgstr ""
 msgid "Column header media area"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:118
-msgid "Block ID"
-msgstr ""
-
-#: src/blocks/_pro/gridcolcard/edit.js:129
-msgid "Update Block ID"
-msgstr ""
-
-#: src/blocks/_pro/gridcolcard/edit.js:133
-msgid "This is the identification ID for this block style."
-msgstr ""
-
-#: src/blocks/_pro/gridcolcard/edit.js:140
-msgid "If you duplicate this block, please update the ID on duplicated block."
-msgstr ""
-
-#: src/blocks/_pro/gridcolcard/edit.js:147
-msgid "This ID is not id of HTML attribute."
-msgstr ""
-
-#: src/blocks/_pro/gridcolcard/edit.js:156
+#: src/blocks/_pro/gridcolcard/edit.js:116
 msgid "Column Width Setting"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:160
+#: src/blocks/_pro/gridcolcard/edit.js:120
 msgid "If you specify the minimum column size on a tablet or PC with %, it will be easier to align the number of columns in the upper and lower rows according to the screen size."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:166
+#: src/blocks/_pro/gridcolcard/edit.js:126
 msgid "Column min width (Mobile)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:174
+#: src/blocks/_pro/gridcolcard/edit.js:134
 msgid "Column min width (Tablet / Optional)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:185
+#: src/blocks/_pro/gridcolcard/edit.js:145
 msgid "Column min width (PC / Optional)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:196
+#: src/blocks/_pro/gridcolcard/edit.js:156
 msgid "Column Gap Setting"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:200
+#: src/blocks/_pro/gridcolcard/edit.js:160
 msgid "Column gap size"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:206
+#: src/blocks/_pro/gridcolcard/edit.js:166
 msgid "Column row-gap size (optional)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:215
+#: src/blocks/_pro/gridcolcard/edit.js:175
 msgid "Specify all columns at once"
 msgstr ""
 

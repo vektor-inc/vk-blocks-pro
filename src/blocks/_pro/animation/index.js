@@ -43,7 +43,7 @@ const addAnimationActiveClass = (el, type, attributes) => {
 
 			//後方互換
 		}
-		const DeprecatedHook = deprecatedHooks[0];
+		const DeprecatedHook = deprecatedHooks[deprecatedFuncIndex];
 		return <DeprecatedHook el={el} attributes={attributes} />;
 	}
 	// Slider以外のブロック

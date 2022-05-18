@@ -75,6 +75,7 @@
 .swiper-container-horizontal>.swiper-pagination-bullets{
 	padding-left:3.2rem;
 	padding-right:3.2rem;
+	box-sizing: border-box; //他のFSEテーマではみ出るので追加
 }
 //pagination
 .swiper-pagination{

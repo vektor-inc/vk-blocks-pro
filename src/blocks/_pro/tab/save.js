@@ -44,12 +44,12 @@ export default function save(props) {
 		tabListInner = optionTemp.map((option, index) => {
 			let activeLabelClass = '';
 			if (firstActive === index) {
-				activeLabelClass = 'vk_tab_labels_label-state-active';
+				activeLabelClass = ' vk_tab_labels_label-state-active';
 			}
 			let tabColorClass = '';
 			let tabColorStyle = {};
 			if (option.tabColor !== '') {
-				tabColorClass = 'has-background';
+				tabColorClass = ' has-background';
 				if (!isHexColor(option.tabColor)) {
 					tabColorClass += ` has-${option.tabColor}-background-color`;
 				} else {
@@ -62,7 +62,7 @@ export default function save(props) {
 			return (
 				<li
 					id={`vk_tab_labels_label-${option.blockId}`}
-					className={`vk_tab_labels_label ${activeLabelClass} ${tabColorClass}`}
+					className={`vk_tab_labels_label${activeLabelClass}${tabColorClass}`}
 					style={tabColorStyle}
 					key={index}
 				>

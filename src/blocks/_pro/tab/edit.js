@@ -167,12 +167,12 @@ export default function TabEdit(props) {
 		tablabelsEditList = childBlocks.map((childBlock, index) => {
 			let activeLabelClass = '';
 			if (firstActive === index) {
-				activeLabelClass = 'vk_tab_labels_label-state-active';
+				activeLabelClass = ' vk_tab_labels_label-state-active';
 			}
 			let tabColorClass = '';
 			let tabColorStyle = {};
 			if (childBlock.attributes.tabColor !== '') {
-				tabColorClass = 'has-background';
+				tabColorClass = ' has-background';
 				if (!isHexColor(childBlock.attributes.tabColor)) {
 					tabColorClass += ` has-${childBlock.attributes.tabColor}-background-color`;
 				} else {
@@ -186,7 +186,7 @@ export default function TabEdit(props) {
 				<RichText
 					tagName="li"
 					id={`vk_tab_labels_label-${childBlock.attributes.blockId}`}
-					className={`vk_tab_labels_label ${activeLabelClass} ${tabColorClass}`}
+					className={`vk_tab_labels_label${activeLabelClass}${tabColorClass}`}
 					style={tabColorStyle}
 					key={index}
 					value={childBlock.attributes.tabLabel}
@@ -212,7 +212,7 @@ export default function TabEdit(props) {
 
 	const blockProps = useBlockProps({
 		className: `vk_tab`,
-		id: `vk-tab-id-${clientId}`,
+		id: `vk-tab-id-${blockId}`,
 	});
 
 	return (

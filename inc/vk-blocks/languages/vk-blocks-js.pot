@@ -44,8 +44,8 @@ msgid "Short"
 msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:123
-#: src/blocks/_pro/outer/edit.js:351
-#: src/blocks/_pro/slider/edit.js:193
+#: src/blocks/_pro/outer/edit.js:366
+#: src/blocks/_pro/slider/edit.js:201
 #: src/blocks/_pro/tab/index.js:22
 #: src/blocks/balloon/edit.js:483
 #: src/blocks/button/edit.js:294

@@ -18,7 +18,7 @@ $md-min: 768px;
 $lg-min: 992px;
 $xl-min: 1200px;
 
-@mixin speechーballoon-li-after {
+@mixin speech-balloon-li-after {
 	top: 100%;
 	left: 50%;
 	border: solid transparent;
@@ -99,7 +99,7 @@ $xl-min: 1200px;
 				// content: none;
 				background-color: #fff;
 			}
-			&::after{							
+			&::after{
 				z-index: 1;
 				height: 2px;
 				background-color: var(--default-color);
@@ -108,7 +108,7 @@ $xl-min: 1200px;
 		}
 	}
 }
-  
+
 
 
 /* style
@@ -117,14 +117,14 @@ $xl-min: 1200px;
 	&-normal-no-frame{
 		@include no-frame();
 	}
-	&-speechーballoon{
+	&-speech-balloon{
 		.vk_tab_labels_label.vk_tab_labels_label-state-active::after{
-			@include speechーballoon-li-after();
+			@include speech-balloon-li-after();
 		}
 	}
-	&-speechーballoon-no-frame{
+	&-speech-balloon-no-frame{
 		.vk_tab_labels_label.vk_tab_labels_label-state-active::after{
-			@include speechーballoon-li-after();
+			@include speech-balloon-li-after();
 		}
 		@include no-frame();
 	}
@@ -132,7 +132,7 @@ $xl-min: 1200px;
 		@include line();
 		.vk_tab_labels{
 			margin-bottom:-1px;
-		}		
+		}
 		.vk_tab_bodys{
 			border-top:1px solid var(--vk-color-border);
 			background-color: var(--vk-color-bg-accent-wh);
@@ -179,7 +179,7 @@ $xl-min: 1200px;
 			&.vk_tab_labels_label-state-active{
 				color:var(--default-color);
 				background-color: transparent;
-				&::after{							
+				&::after{
 					z-index: 1;
 					height: 2px;
 					background-color: var(--default-color);
@@ -215,18 +215,18 @@ $xl-min: 1200px;
 			background-color: rgba(0,0,0,.08);
 			border-radius:calc( var(--vk-size-text) * 0.3 ) calc( var(--vk-size-text) * 0.3 ) 0 0;
 			margin:0;
-			line-height: 1.5;		
+			line-height: 1.5;
 			&:hover{
 				background-color: var(--default-color);
 				color: #fff;
-			}	
+			}
 			&.vk_tab_labels_label-state-active{
 				background-color: var(--default-color);
 				// font-weight: bold;
 				color: #fff;
 			}
 		}
-		
+
 	}
 
 }
@@ -265,7 +265,7 @@ $xl-min: 1200px;
 			flex-wrap: nowrap;
 			gap:var(--vk-tab-gap);
 		}
-		&--sp-monospaced li { 
+		&--sp-monospaced li {
 			width:100%;
 		}
 	}
@@ -278,7 +278,7 @@ $xl-min: 1200px;
 			flex-wrap: nowrap;
 			gap:var(--vk-tab-gap);
 		}
-		&--tab-monospaced li { 
+		&--tab-monospaced li {
 			width:100%;
 		}
 	}
@@ -291,7 +291,7 @@ $xl-min: 1200px;
 			flex-wrap: nowrap;
 			gap:var(--vk-tab-gap);
 		}
-		&--pc-monospaced li { 
+		&--pc-monospaced li {
 			width:100%;
 		}
 	}

@@ -96,11 +96,11 @@ export default function TabItemEdit(props) {
 	}
 	let activeBodyClass = '';
 	if (tabBodyActive === true) {
-		activeBodyClass = 'vk_tab_bodys_body-state-active';
+		activeBodyClass = ' vk_tab_bodys_body-state-active';
 	}
 
 	const blockProps = useBlockProps({
-		className: `vk_tab_bodys_body ${activeBodyClass}`,
+		className: `vk_tab_bodys_body${activeBodyClass}`,
 		id: `vk_tab_bodys_body-${blockId}`,
 		style: {
 			padding: `${tabBodyPadding.top} ${tabBodyPadding.right} ${tabBodyPadding.bottom} ${tabBodyPadding.left}`,
@@ -126,6 +126,9 @@ export default function TabItemEdit(props) {
 					template={[['core/paragraph']]}
 				/>
 			</div>
+			<style>{`
+
+			`}</style>
 		</>
 	);
 }

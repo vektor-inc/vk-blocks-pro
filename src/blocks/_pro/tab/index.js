@@ -27,11 +27,11 @@ export const settings = {
 			label: __('Normal No Frame', 'vk-blocks'),
 		},
 		{
-			name: 'vk_tab_labels-speechーballoon',
+			name: 'vk_tab_labels-speech-balloon',
 			label: __('Speech Balloon', 'vk-blocks'),
 		},
 		{
-			name: 'vk_tab_labels-speechーballoon-no-frame',
+			name: 'vk_tab_labels-speech-balloon-no-frame',
 			label: __('Speech Balloon No Frame', 'vk-blocks'),
 		},
 		{

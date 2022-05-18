@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ List ] cope with custom color palette
 [ Specification Change ][ Outer (Pro) ] Corresponds reuse block & duplicate
 [ Specification Change ][ Animation(Pro) ] Corresponds reuse block & duplicate
 [ Specification Change ][ Grid Column Card(Pro) ]  Corresponds reuse block & duplicate automatically

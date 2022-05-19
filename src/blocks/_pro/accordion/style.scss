@@ -160,6 +160,12 @@
 			height: 0;
 			opacity: 0;
 			transition: .25s;
+			//クローズ時はリストブロックのmarginを0に
+			ul,
+			li{
+				margin-top:0;
+				margin-bottom: 0;
+			}
 		}
 	}
 

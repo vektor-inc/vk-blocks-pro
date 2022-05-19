@@ -85,8 +85,12 @@
     	font-size: 16px;
 		background: transparent;
 		cursor: pointer;
-		p:first-of-type{
-			margin-bottom:0;
+		p {
+			//ブラウザ側のスタイルが勝手につくので0に(lightning以外のテーマ用)
+			margin-block-start: 0;
+			&:last-of-type{
+				margin-bottom:0;
+			}
 		}
 		.vk_accordion-toggle{
 			position: absolute;
@@ -143,8 +147,12 @@
 	}//&-trigger
 	&-target{
 		padding:calc( var(--vk-size-text) * 1 );
-		& > *:last-of-type{
+		& > *:last-child{ //要素内の最後の要素のmarginを0にしたいのでlast-childの方を使用
 			margin-bottom: 0;
+		}
+		p {
+			//ブラウザ側のスタイルが勝手につくので0に(lightning以外のテーマ用)
+			margin-block-start: 0;
 		}
 		//オープン時
 		&-open{
@@ -160,9 +168,8 @@
 			height: 0;
 			opacity: 0;
 			transition: .25s;
-			//クローズ時はリストブロックのmarginを0に
-			ul,
-			li{
+			//クローズ時に余計なmarginが入るので全ての要素のmarginを0に
+			* {
 				margin-top:0;
 				margin-bottom: 0;
 			}

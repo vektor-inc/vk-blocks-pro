@@ -33,7 +33,7 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
-import { dispatch } from '@wordpress/data';
+import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 
 export default function OuterEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -60,6 +60,7 @@ export default function OuterEdit(props) {
 		innerSideSpaceValueTablet,
 		innerSideSpaceValueMobile,
 		innerSideSpaceUnit,
+		blockId,
 	} = attributes;
 
 	let classPaddingLR;
@@ -70,11 +71,15 @@ export default function OuterEdit(props) {
 
 	const containerClass = 'vk_outer_container';
 
-	const { updateBlockAttributes } = dispatch('core/block-editor');
-
 	useEffect(() => {
-		if (clientId) {
-			updateBlockAttributes(clientId, { clientId });
+		if (attributes.clientId !== undefined) {
+			setAttributes({ clientId: undefined });
+		}
+		if (
+			blockId === undefined ||
+			isParentReusableBlock(clientId) === false
+		) {
+			setAttributes({ blockId: clientId });
 		}
 		// 互換処理 #1187
 		if (borderStyle === 'none' && attributes.className) {
@@ -134,11 +139,7 @@ export default function OuterEdit(props) {
 	const GetBgImage = (
 		<>
 			{(bgImage || bgImageTablet || bgImageMobile) && (
-				<GenerateBgImage
-					prefix={prefix}
-					clientId={clientId}
-					{...props}
-				/>
+				<GenerateBgImage prefix={prefix} blockId={blockId} {...props} />
 			)}
 			<span
 				className={`vk_outer-background-area ${bgColorClasses}`}
@@ -230,7 +231,7 @@ export default function OuterEdit(props) {
 
 	const blockProps = useBlockProps({
 		className: classnames(
-			`vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
+			`vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 			{
 				[`has-border-color`]:
 					borderStyle !== 'none' && borderColor !== undefined,

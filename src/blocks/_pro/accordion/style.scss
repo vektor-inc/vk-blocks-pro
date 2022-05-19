@@ -88,10 +88,15 @@
 		p {
 			//ブラウザ側のスタイルが勝手につくので0に(lightning以外のテーマ用)
 			margin-block-start: 0;
-			&:last-of-type{
-				margin-bottom:0;
-			}
 		}
+		//全要素の一番最後のmarginを0に
+		//ここはタイトル部分なのでおそらく全要素のmarginがない方が使いやすいと思う
+		//last-childだと、vk_accordion-toggleのspanタグが最後にあるので効かないからlast-of-typeにしている
+		& > *:last-of-type{ 
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
 		.vk_accordion-toggle{
 			position: absolute;
 			top: 0;

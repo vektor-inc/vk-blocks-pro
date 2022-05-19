@@ -1080,12 +1080,12 @@ msgid "Tab Color"
 msgstr ""
 
 #: src/blocks/_pro/tab-item/edit.js:84
-#: src/blocks/_pro/tab/edit.js:302
+#: src/blocks/_pro/tab/edit.js:286
 msgid "Body Layout Setting"
 msgstr ""
 
 #: src/blocks/_pro/tab-item/edit.js:92
-#: src/blocks/_pro/tab/edit.js:342
+#: src/blocks/_pro/tab/edit.js:326
 msgid "Padding of Tab Body"
 msgstr ""
 
@@ -1093,52 +1093,52 @@ msgstr ""
 msgid "Tab Item"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:227
+#: src/blocks/_pro/tab/edit.js:211
 #. Tab label [i]
 msgid "Tab Label [ %s ]"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:248
+#: src/blocks/_pro/tab/edit.js:232
 msgid "Tab size Setting"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:250
+#: src/blocks/_pro/tab/edit.js:234
 msgid "Tab Size ( Smart Phone )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:267
+#: src/blocks/_pro/tab/edit.js:251
 msgid "Tab Size ( Tablet )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:284
+#: src/blocks/_pro/tab/edit.js:268
 msgid "Tab Size ( PC )"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:288
+#: src/blocks/_pro/tab/edit.js:272
 msgid "Fit to the text"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:292
+#: src/blocks/_pro/tab/edit.js:276
 msgid "Monospaced"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:307
+#: src/blocks/_pro/tab/edit.js:291
 msgid "Padding Setting Mode"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:320
+#: src/blocks/_pro/tab/edit.js:304
 msgid "Separate"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:332
+#: src/blocks/_pro/tab/edit.js:316
 msgid "Bundle"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:39
+#: src/blocks/_pro/tab/edit.js:38
 msgid "Tab 01"
 msgstr ""
 
-#: src/blocks/_pro/tab/edit.js:43
+#: src/blocks/_pro/tab/edit.js:42
 msgid "Tab 02"
 msgstr ""
 

@@ -18,7 +18,6 @@ import { select, dispatch } from '@wordpress/data';
 import { __, sprintf } from '@wordpress/i18n';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
-import { colorSlugToColorCode } from '@vkblocks/utils/color-slug-to-color-code';
 
 export default function TabEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -140,21 +139,9 @@ export default function TabEdit(props) {
 			const activeTab = vkTabLabels.querySelector(
 				`#vk_tab_labels_label-${TabId}`
 			);
-			let currentColor = '';
-			if (activeTab.style && activeTab.style.backgroundColor) {
-				currentColor = activeTab.style.backgroundColor;
-			} else if (
-				activeTab.className &&
-				activeTab.className.match(/(has-[\w-]+-background-color)/)
-			) {
-				currentColor = colorSlugToColorCode(
-					activeTab.className.match(
-						/has-([\w-]+)-background-color/
-					)[1]
-				);
-			}
-
-			if (currentColor) {
+			const currentColor =
+				window.getComputedStyle(activeTab).backgroundColor;
+			if (!!currentColor) {
 				const tabBody = vkTab.querySelector('.vk_tab_bodys');
 				tabBody.style.borderTopColor = currentColor;
 			}

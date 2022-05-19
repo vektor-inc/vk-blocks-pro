@@ -34,6 +34,17 @@ Array.prototype.forEach.call(vkTabs, (vkTab) => {
 			vkTabBodies
 				.querySelector(`#vk_tab_bodys_body-${TabId}`)
 				.classList.add('vk_tab_bodys_body-state-active');
+
+			// 色の処理
+			const activeTab = vkTabLabels.querySelector(
+				`#vk_tab_labels_label-${TabId}`
+			);
+			const currentColor =
+				window.getComputedStyle(activeTab).backgroundColor;
+			if (!!currentColor) {
+				const tabBody = vkTab.querySelector('.vk_tab_bodys');
+				tabBody.style.borderTopColor = currentColor;
+			}
 		});
 	});
 });

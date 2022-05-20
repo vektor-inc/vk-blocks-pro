@@ -17,10 +17,11 @@
 		display: flex;
 		flex-wrap: wrap;
 		clear: both; /* To be cope with inline image float and so on. */
-		margin-left: -8px;
+//		margin-left: -8px;
+		gap: 8px;
 
 		.vk_button {
-			margin: 4px 0 4px 8px;
+			margin: 0;
 
 			&_frame {
 				line-height: 1;

@@ -42,6 +42,7 @@ export default function ButtonEdit(props) {
 		buttonWidthMobile,
 		buttonWidthTablet,
 		buttonWidth,
+		outerGap,
 		fontAwesomeIconBefore,
 		fontAwesomeIconAfter,
 		blockId,
@@ -154,17 +155,17 @@ export default function ButtonEdit(props) {
 	const isInnerButton = parents.length ? true : false;
 
 	// 親ブロックのギャップを取得
-	let parentGap = null;
+	let gap = null;
 	if (isInnerButton) {
-		parentGap = select('core/block-editor').getBlock(parents[0]).attributes
-			.gap;
+		gap = select('core/block-editor').getBlock(parents[0]).attributes.gap;
+		setAttributes({ outerGap: gap });
 	}
 
 	let containerClass;
 	// カスタムカラーの場合 またはアウターにギャップが指定されれいる場合
 	if (
 		(buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) ||
-		parentGap
+		outerGap
 	) {
 		containerClass = `vk_button vk_button-color-custom vk_button-${blockId}`;
 	} else {

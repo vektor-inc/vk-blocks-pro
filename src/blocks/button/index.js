@@ -120,14 +120,14 @@ const generateInlineGapCss = (attributes, isSave) => {
 		}
 		if (buttonWidthTablet) {
 			inlineCss += `@media(min-width: 576px) and (max-width: 991.98px) {
-				${propaty}.vk_button-${blockId} { {
+				${propaty}.vk_button-${blockId} {
 					width: calc(${buttonWidthTablet}% - ${outerGap});
 				}
 			}`;
 		}
 		if (buttonWidth) {
 			inlineCss += `@media (min-width: 992px) {
-					${propaty}.vk_button-${blockId} { {
+					${propaty}.vk_button-${blockId} {
 						width: calc(${buttonWidth}% - ${outerGap});
 				}
 			}`;

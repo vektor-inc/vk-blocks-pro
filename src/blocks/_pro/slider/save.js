@@ -3,7 +3,7 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 export default function save({ attributes }) {
 	let {
 		pagination,
-		clientId,
+		blockId,
 		width,
 		autoPlay,
 		autoPlayStop,
@@ -30,7 +30,7 @@ export default function save({ attributes }) {
 		autoPlayStop,
 		autoPlayDelay,
 		pagination,
-		clientId,
+		blockId,
 		width,
 		loop,
 		effect,
@@ -39,7 +39,7 @@ export default function save({ attributes }) {
 		slidesPerGroup,
 	};
 
-	let alignClass;
+	let alignClass = '';
 	if ('full' === width) {
 		alignClass = ' alignfull';
 	} else if ('wide' === width) {
@@ -73,7 +73,7 @@ export default function save({ attributes }) {
 	}
 
 	const blockProps = useBlockProps.save({
-		className: `swiper-container vk_slider vk_slider_${clientId}${alignClass}`,
+		className: `swiper-container vk_slider vk_slider_${blockId}${alignClass}`,
 	});
 
 	return (

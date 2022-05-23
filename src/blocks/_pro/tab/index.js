@@ -26,6 +26,7 @@ export const settings = {
 			name: 'vk_tab_labels-normal-no-frame',
 			label: __('Normal No Frame', 'vk-blocks'),
 		},
+		/*
 		{
 			name: 'vk_tab_labels-speech-balloon',
 			label: __('Speech Balloon', 'vk-blocks'),
@@ -34,6 +35,7 @@ export const settings = {
 			name: 'vk_tab_labels-speech-balloon-no-frame',
 			label: __('Speech Balloon No Frame', 'vk-blocks'),
 		},
+		*/
 		{
 			name: 'vk_tab_labels-line',
 			label: __('Line', 'vk-blocks'),
@@ -42,10 +44,12 @@ export const settings = {
 			name: 'vk_tab_labels-line-no-frame',
 			label: __('Line No Frame', 'vk-blocks'),
 		},
+		/*
 		{
 			name: 'vk_tab_labels-line-simple',
 			label: __('Line Simple', 'vk-blocks'),
 		},
+		*/
 	],
 	edit,
 	save,

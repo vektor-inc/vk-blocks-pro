@@ -12,7 +12,7 @@ document.defaultView.addEventListener('load', function () {
 			);
 
 			let SwiperSetting = `
-			var swiper${index} = new Swiper ('.vk_slider_${attributes.clientId}', {
+			var swiper${index} = new Swiper ('.vk_slider_${attributes.blockId}', {
 			`;
 
 			if (attributes.autoPlay) {

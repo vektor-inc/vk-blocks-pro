@@ -7,7 +7,7 @@
 .vk_slider {
 	//共通ではないためvk_sliderの中に格納
 	width: 100%;
-	height: 100%;
+	height: auto; //100%だとサイトエディター画面でおかしくなるのでautoに
 	position: relative;
 	&_item {
 		height:auto; // これがないと高さが100%にならない
@@ -75,6 +75,7 @@
 .swiper-container-horizontal>.swiper-pagination-bullets{
 	padding-left:3.2rem;
 	padding-right:3.2rem;
+	box-sizing: border-box; //他のFSEテーマではみ出るので追加
 }
 //pagination
 .swiper-pagination{
@@ -112,3 +113,36 @@
 		}
 	}
 }
+
+
+/*-------------------------------------------*/
+/* 管理画面
+/*-------------------------------------------*/
+.editor-styles-wrapper {
+	.swiper-button-prev,
+	.swiper-button-next {
+		//button非表示
+		display: none;
+	}
+	.swiper-container.vk_slider.vk_width-full {
+		//全幅の時
+		margin-left: -10px;
+		margin-right: -10px;
+		width: calc(100% - -20px);
+		max-width: 100vw;
+		.vk_slider_item {
+			margin: auto;
+			&.vk_slider_item-paddingLR-use,
+			&.vk_slider_item-paddingLR-zero{
+				.vk_slider_item_container{
+						max-width:100%;
+					.wp-block{
+						max-width:100%;
+					}
+				}
+			}
+		}
+	}
+}
+
+

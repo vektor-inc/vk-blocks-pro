@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-05-10T01:42:08+00:00\n"
+"POT-Creation-Date: 2022-05-24T03:20:47+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -810,7 +810,7 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:604
 #: src/blocks/_pro/slider/edit.js:238
 #: src/blocks/button/edit.js:372
-#: src/blocks/layout-column-item/edit.js:87
+#: src/blocks/layout-column-item/edit.js:93
 #: src/components/advanced-viewport-control/index.js:39
 #: inc/vk-blocks/admin/admin-margin.php:62
 msgid "Mobile"
@@ -819,7 +819,7 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:619
 #: src/blocks/_pro/slider/edit.js:227
 #: src/blocks/button/edit.js:437
-#: src/blocks/layout-column-item/edit.js:79
+#: src/blocks/layout-column-item/edit.js:85
 #: src/components/advanced-viewport-control/index.js:31
 #: inc/vk-blocks/admin/admin-margin.php:61
 msgid "Tablet"
@@ -828,7 +828,7 @@ msgstr ""
 #: src/blocks/_pro/outer/edit.js:634
 #: src/blocks/_pro/slider/edit.js:216
 #: src/blocks/button/edit.js:502
-#: src/blocks/layout-column-item/edit.js:71
+#: src/blocks/layout-column-item/edit.js:77
 #: src/components/advanced-viewport-control/index.js:25
 #: inc/vk-blocks/admin/admin-margin.php:60
 msgid "PC"
@@ -1545,7 +1545,7 @@ msgid "Plain"
 msgstr ""
 
 #: src/blocks/heading/edit.js:274
-#: src/blocks/layout-column-item/edit.js:67
+#: src/blocks/layout-column-item/edit.js:73
 msgid "Margin Setting"
 msgstr ""
 
@@ -1615,12 +1615,12 @@ msgstr ""
 msgid "Link URL"
 msgstr ""
 
-#: src/blocks/layout-column-item/edit.js:59
+#: src/blocks/layout-column-item/edit.js:65
 msgid "Layout Column item Setting"
 msgstr ""
 
-#: src/blocks/layout-column-item/edit.js:63
-#: src/blocks/layout-column/edit.js:105
+#: src/blocks/layout-column-item/edit.js:69
+#: src/blocks/layout-column/edit.js:94
 msgid "Block width"
 msgstr ""
 
@@ -1628,12 +1628,12 @@ msgstr ""
 msgid "Layout Column Item"
 msgstr ""
 
-#: src/blocks/layout-column/edit.js:100
-msgid "Layout Column Setting"
+#: src/blocks/layout-column/edit.js:109
+msgid "BreakPoint(px)"
 msgstr ""
 
-#: src/blocks/layout-column/edit.js:120
-msgid "BreakPoint(px)"
+#: src/blocks/layout-column/edit.js:89
+msgid "Layout Column Setting"
 msgstr ""
 
 #: src/blocks/layout-column/index.js:17

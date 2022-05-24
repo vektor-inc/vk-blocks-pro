@@ -9,13 +9,15 @@ export default function save({ attributes }) {
 
 	const style = `@media (min-width: ${breakPoint}px) {
 		.vk-layoutColumn-${blockId} {
-			display: flex;
-			flex-wrap: wrap;
+			flex-wrap: nowrap;
 		}
 	}
 	@media (max-width: ${breakPoint - 0.02}px) {
+		.vk-layoutColumn-${blockId} {
+			flex-wrap: wrap;
+		}		
 		.vk-layoutColumn-${blockId} .vk_layoutColumnItem {
-			width:100%;
+			flex-basis:100% !important;
 		}
 	}
 	`;

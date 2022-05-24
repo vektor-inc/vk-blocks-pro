@@ -4,7 +4,7 @@ import { isHexColor } from '@vkblocks/utils/is-hex-color';
 export default function save(props) {
 	const { attributes } = props;
 	const {
-		tabListArray,
+		tabOptionJSON,
 		tabSizeSp,
 		tabSizeTab,
 		tabSizePc,
@@ -36,12 +36,12 @@ export default function save(props) {
 		}
 	});
 
-	const optionTemp = JSON.parse(tabListArray);
+	const tabOption = JSON.parse(tabOptionJSON);
 
 	let tabList = '';
 	let tabListInner = '';
-	if (optionTemp !== []) {
-		tabListInner = optionTemp.map((option, index) => {
+	if (tabOption !== {} && tabOption.listArray !== []) {
+		tabListInner = tabOption.listArray.map((option, index) => {
 			let activeLabelClass = '';
 			if (firstActive === index) {
 				activeLabelClass = ' vk_tab_labels_label-state-active';
@@ -49,13 +49,24 @@ export default function save(props) {
 			let tabColorClass = '';
 			let tabColorStyle = {};
 			if (option.tabColor !== '') {
-				tabColorClass = ' has-background';
-				if (!isHexColor(option.tabColor)) {
-					tabColorClass += ` has-${option.tabColor}-background-color`;
-				} else {
-					tabColorStyle = {
-						backgroundColor: option.tabColor,
-					};
+				if (tabOption.TabLabelBackground) {
+					tabColorClass = ' has-background';
+					if (!isHexColor(option.tabColor)) {
+						tabColorClass += ` has-${option.tabColor}-background-color`;
+					} else {
+						tabColorStyle = {
+							backgroundColor: option.tabColor,
+						};
+					}
+				} else if (tabOption.TabLabelBorderTop) {
+					tabColorClass = ' has-border-top';
+					if (!isHexColor(option.tabColor)) {
+						tabColorClass += ` has-${option.tabColor}-border-top-color`;
+					} else {
+						tabColorStyle = {
+							borderTopColor: option.tabColor,
+						};
+					}
 				}
 			}
 

@@ -14,6 +14,7 @@ import {
 import { __ } from '@wordpress/i18n';
 import { select, dispatch } from '@wordpress/data';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function TabItemEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -50,12 +51,12 @@ export default function TabItemEdit(props) {
 			parentTabBlock.attributes &&
 			parentTabBlock.innerBlocks
 		) {
-			const tabListArray = parentTabBlock.attributes.tabListArray;
+			const tabOptionJSON = parentTabBlock.attributes.tabOptionJSON;
 			const childBlocks = parentTabBlock.innerBlocks;
 
-			if (tabListArray && childBlocks && tabColor) {
-				const optionTemp = JSON.parse(tabListArray);
-				if (optionTemp !== []) {
+			if (tabOptionJSON && childBlocks && tabColor) {
+				const tabOption = JSON.parse(tabOptionJSON);
+				if (tabOption !== {} && tabOption.listArray !== []) {
 					let childIndex = -1;
 					childBlocks.forEach((chiildBlock, index) => {
 						if (chiildBlock.clientId === clientId) {
@@ -63,9 +64,9 @@ export default function TabItemEdit(props) {
 						}
 					});
 					if (childIndex !== -1) {
-						optionTemp[childIndex].tabColor = tabColor;
+						tabOption.listArray[childIndex].tabColor = tabColor;
 						updateBlockAttributes(parentTabBlock.clientId, {
-							tabListArray: optionTemp,
+							tabOptionJSON: JSON.stringify(tabOption),
 						});
 					}
 				}
@@ -98,11 +99,35 @@ export default function TabItemEdit(props) {
 	if (tabBodyActive === true) {
 		activeBodyClass = ' vk_tab_bodys_body-state-active';
 	}
+	let tabBodyClass = '';
+	let tabBodyStyle = {};
+	if (
+		parentTabBlock &&
+		parentTabBlock.attributes &&
+		parentTabBlock.attributes.tabOptionJSON
+	) {
+		const tabOptionJSON = parentTabBlock.attributes.tabOptionJSON;
+		const tabOption = JSON.parse(tabOptionJSON);
+		if (tabOption.tabBodyBorderTop) {
+			tabBodyClass = ' has-border-top';
+			if (!isHexColor(tabOption.tabColor)) {
+				tabBodyClass += ` has-${tabOption.tabColor}-border-top-color`;
+			} else {
+				tabBodyStyle = {
+					borderTopColor: tabOption.tabColor,
+				};
+			}
+			setAttributes({ tabBodyBorderTop: true });
+		} else {
+			setAttributes({ tabBodyBorderTop: false });
+		}
+	}
 
 	const blockProps = useBlockProps({
-		className: `vk_tab_bodys_body${activeBodyClass}`,
+		className: `vk_tab_bodys_body${activeBodyClass}${tabBodyClass}`,
 		id: `vk_tab_bodys_body-${blockId}`,
 		style: {
+			...tabBodyStyle,
 			padding: `${tabBodyPadding.top} ${tabBodyPadding.right} ${tabBodyPadding.bottom} ${tabBodyPadding.left}`,
 		},
 	});

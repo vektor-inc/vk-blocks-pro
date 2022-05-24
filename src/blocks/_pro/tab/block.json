@@ -3,7 +3,7 @@
 	"name": "vk-blocks/tab",
 	"category": "vk-blocks-cat",
 	"attributes": {
-		"tabListArray": {
+		"tabOptionJSON": {
 			"type": "string",
 			"default": "[]"
 		},

@@ -22,6 +22,7 @@ import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block'
 export default function TabEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const {
+		tabOptionJSON,
 		tabSizeSp,
 		tabSizeTab,
 		tabSizePc,
@@ -29,6 +30,7 @@ export default function TabEdit(props) {
 		tabBodyPaddingAll,
 		firstActive,
 		blockId,
+		className,
 	} = attributes;
 
 	const ALLOWED_BLOCKS = ['vk-blocks/tab-item'];
@@ -62,17 +64,49 @@ export default function TabEdit(props) {
 			: [];
 
 	useEffect(() => {
-		const optionTemp = [];
+		const tabOption = {
+			listArray: [],
+			tabLabelBackground: true,
+			tabLabelBorderTop: false,
+			tabBodyBorderTop: true,
+		};
 		if (childBlocks !== []) {
 			childBlocks.forEach((childBlock) => {
-				optionTemp.push({
+				tabOption.listArray.push({
 					tabLabel: childBlock.attributes.tabLabel,
 					tabColor: childBlock.attributes.tabColor,
 					blockId: childBlock.attributes.blockId,
 				});
 			});
 		}
-		setAttributes({ tabListArray: JSON.stringify(optionTemp) });
+		if (className !== undefined) {
+			if (className.indexOf('is-style-vk_tab_labels-normal') !== false) {
+				tabOption.tabLabelBackground = true;
+				tabOption.tabLabelBorderTop = false;
+				tabOption.tabBodyBorderTop = true;
+			} else if (
+				className.indexOf('is-style-vk_tab_labels-normal-no-frame') !==
+				false
+			) {
+				tabOption.tabLabelBackground = true;
+				tabOption.tabLabelBorderTop = false;
+				tabOption.tabBodyBorderTop = false;
+			} else if (
+				className.indexOf('is-style-vk_tab_labels-line') !== false
+			) {
+				tabOption.tabLabelBackground = false;
+				tabOption.tabLabelBorderTop = true;
+				tabOption.tabBodyBorderTop = false;
+			} else if (
+				className.indexOf('is-style-vk_tab_labels-line-no-frame') !==
+				false
+			) {
+				tabOption.tabLabelBackground = false;
+				tabOption.tabLabelBorderTop = true;
+				tabOption.tabBodyBorderTop = false;
+			}
+		}
+		setAttributes({ tabOptionJSON: JSON.stringify(tabOption) });
 	}, [childBlocks]);
 
 	useEffect(() => {
@@ -134,17 +168,6 @@ export default function TabEdit(props) {
 					setAttributes({ firstActive: parseInt(index, 10) });
 				}
 			});
-
-			// 色の処理
-			const activeTab = vkTabLabels.querySelector(
-				`#vk_tab_labels_label-${TabId}`
-			);
-			const currentColor =
-				window.getComputedStyle(activeTab).backgroundColor;
-			if (!!currentColor) {
-				const tabBody = vkTab.querySelector('.vk_tab_bodys');
-				tabBody.style.borderTopColor = currentColor;
-			}
 		}
 	};
 
@@ -174,6 +197,7 @@ export default function TabEdit(props) {
 
 	let tablabelsEditList = '';
 	let tablabelsEdit = '';
+	const tabOption = JSON.parse(tabOptionJSON);
 	if (childBlocks !== []) {
 		tablabelsEditList = childBlocks.map((childBlock, index) => {
 			let activeLabelClass = '';
@@ -183,13 +207,24 @@ export default function TabEdit(props) {
 			let tabColorClass = '';
 			let tabColorStyle = {};
 			if (childBlock.attributes.tabColor !== '') {
-				tabColorClass = ' has-background';
-				if (!isHexColor(childBlock.attributes.tabColor)) {
-					tabColorClass += ` has-${childBlock.attributes.tabColor}-background-color`;
-				} else {
-					tabColorStyle = {
-						backgroundColor: childBlock.attributes.tabColor,
-					};
+				if (tabOption.tabLabelBackground) {
+					tabColorClass = ' has-background';
+					if (!isHexColor(childBlock.attributes.tabColor)) {
+						tabColorClass += ` has-${childBlock.attributes.tabColor}-background-color`;
+					} else {
+						tabColorStyle = {
+							backgroundColor: childBlock.attributes.tabColor,
+						};
+					}
+				} else if (tabOption.tabLabelBorderTop) {
+					tabColorClass = ' has-border-top';
+					if (!isHexColor(childBlock.attributes.tabColor)) {
+						tabColorClass += ` has-${childBlock.attributes.tabColor}-border-top-color`;
+					} else {
+						tabColorStyle = {
+							borderTopColor: childBlock.attributes.tabColor,
+						};
+					}
 				}
 			}
 

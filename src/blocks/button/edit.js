@@ -158,7 +158,9 @@ export default function ButtonEdit(props) {
 	let gap = null;
 	if (isInnerButton) {
 		gap = select('core/block-editor').getBlock(parents[0]).attributes.gap;
-		setAttributes({ outerGap: gap });
+		if (gap) {
+			setAttributes({ outerGap: gap });
+		}
 	}
 
 	let containerClass;

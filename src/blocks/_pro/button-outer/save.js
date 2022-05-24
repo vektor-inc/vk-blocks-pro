@@ -8,9 +8,11 @@ export default function save(props) {
 		className: `vk_buttons`,
 	});
 
-	const style = gap? {
-		gap: `${gap};`,
-	} : '';
+	const style = gap
+		? {
+				gap: `${gap};`,
+		  }
+		: null;
 
 	return (
 		<div {...blockProps}>

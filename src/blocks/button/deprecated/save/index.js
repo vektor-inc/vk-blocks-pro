@@ -130,9 +130,17 @@ const blockAttributes7 = {
 	},
 }
 
+const blockAttributes8 = {
+	...blockAttributes7,
+	"old_1_31_0": {
+		'type': 'string',
+		'default': true
+	}
+}
+
 export const deprecated = [
 	{
-		attributes: blockAttributes7,
+		attributes: blockAttributes8,
 		save: save1_34_1,
 	},
 	{

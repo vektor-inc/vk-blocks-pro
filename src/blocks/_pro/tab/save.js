@@ -49,7 +49,7 @@ export default function save(props) {
 			let tabColorClass = '';
 			let tabColorStyle = {};
 			if (option.tabColor !== '') {
-				if (tabOption.TabLabelBackground) {
+				if (tabOption.tabLabelBackground) {
 					tabColorClass = ' has-background';
 					if (!isHexColor(option.tabColor)) {
 						tabColorClass += ` has-${option.tabColor}-background-color`;
@@ -58,7 +58,7 @@ export default function save(props) {
 							backgroundColor: option.tabColor,
 						};
 					}
-				} else if (tabOption.TabLabelBorderTop) {
+				} else if (tabOption.tabLabelBorderTop) {
 					tabColorClass = ' has-border-top';
 					if (!isHexColor(option.tabColor)) {
 						tabColorClass += ` has-${option.tabColor}-border-top-color`;

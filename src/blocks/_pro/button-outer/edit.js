@@ -17,10 +17,9 @@ export default function ButtonOuterEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const { buttonsJustify, gap } = attributes;
 
-
 	// インナーブロックに gap を反映
 	// このブロックの情報を取得するメソッドを取得
-	const { updateBlockAttributes } = dispatch('core/block-editor')
+	const { updateBlockAttributes } = dispatch('core/block-editor');
 	const { getBlocksByClientId } = select('core/block-editor');
 
 	// このブロックの情報を取得
@@ -34,14 +33,13 @@ export default function ButtonOuterEdit(props) {
 			// インナーブロックをループ
 			thisInnerBlocks.forEach(function (thisInnerBlock) {
 				// 子ブロックのattributeをアップデート
-				const gap = attributes.gap ? attributes.gap : null;
 				updateBlockAttributes(thisInnerBlock.clientId, {
 					outerGap: gap,
 				});
 			});
 		}
 	}, [thisBlock, attributes]);
-	
+
 	// blocksProps を予め定義
 	const blockProps = useBlockProps({
 		className: `vk_buttons`,
@@ -61,7 +59,9 @@ export default function ButtonOuterEdit(props) {
 					<UnitControl
 						label={__('Button gap size', 'vk-blocks')}
 						value={gap}
-						onChange={(value) => setAttributes({ gap: value })}
+						onChange={(value) =>
+							setAttributes({ gap: value ? value : null })
+						}
 					/>
 				</PanelBody>
 			</InspectorControls>

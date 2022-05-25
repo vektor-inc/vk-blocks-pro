@@ -80,10 +80,6 @@
 			"type": "number",
 			"default": 0
 		},
-		"clientId": {
-			"type": "string",
-			"default": null
-		},
 		"innerSideSpaceValuePC": {
 			"type": "number",
 			"default": 0
@@ -99,6 +95,12 @@
 		"innerSideSpaceUnit": {
 			"type": "string",
 			"default": "px"
+		},
+		"clientId": {
+			"type": "string"
+		},
+		"blockId": {
+			"type": "string"
 		}
 	},
 	"description": "Set the background image, color, and border to show the layout and divisions.",

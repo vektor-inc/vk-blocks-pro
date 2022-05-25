@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Button outer(Pro) ] Add gap option.
+
 = 1.35.0 =
 [ Specification Change ][ Outer (Pro) ] Corresponds reuse block & duplicate
 [ Specification Change ][ Animation(Pro) ] Corresponds reuse block & duplicate

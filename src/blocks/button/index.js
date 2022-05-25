@@ -114,21 +114,21 @@ const generateInlineGapCss = (attributes, isSave) => {
 		if (buttonWidthMobile) {
 			inlineCss += `@media (max-width: 575.98px) {
 				${propaty}.vk_button-${blockId} {
-					width: calc(${buttonWidthMobile}% - calc(${outerGap} - calc(${outerGap} / (100 / ${buttonWidthMobile}))));
+					width: calc(${buttonWidthMobile}% - calc(${outerGap} - calc(${outerGap} / (100 / ${buttonWidthMobile}))) - 1px);
 				}
 			}`;
 		}
 		if (buttonWidthTablet) {
 			inlineCss += `@media(min-width: 576px) and (max-width: 991.98px) {
 				${propaty}.vk_button-${blockId} {
-					width: calc(${buttonWidthTablet}% - calc(${outerGap} - calc(${outerGap} / (100 / ${buttonWidthTablet}))));
+					width: calc(${buttonWidthTablet}% - calc(${outerGap} - calc(${outerGap} / (100 / ${buttonWidthTablet}))) - 1px);
 				}
 			}`;
 		}
 		if (buttonWidth) {
 			inlineCss += `@media (min-width: 992px) {
 					${propaty}.vk_button-${blockId} {
-					width: calc(${buttonWidth}% - calc(${outerGap} - calc(${outerGap} / (100 / ${buttonWidth}))));
+					width: calc(${buttonWidth}% - calc(${outerGap} - calc(${outerGap} / (100 / ${buttonWidth}))) - 1px );
 				}
 			}`;
 		}

@@ -10,11 +10,38 @@ import {
 	PanelBody,
 	__experimentalUnitControl as UnitControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
 } from '@wordpress/components';
+import { useEffect } from '@wordpress/element';
+import { select, dispatch } from '@wordpress/data';
 
 export default function ButtonOuterEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const { buttonsJustify, gap } = attributes;
 
+
+	// インナーブロックに gap を反映
+	// このブロックの情報を取得するメソッドを取得
+	const { updateBlockAttributes } = dispatch('core/block-editor')
+	const { getBlocksByClientId } = select('core/block-editor');
+
+	// このブロックの情報を取得
+	const thisBlock = getBlocksByClientId(clientId);
+
+	useEffect(() => {
+		if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
+			// インナーブロックの情報を取得
+			const thisInnerBlocks = thisBlock[0].innerBlocks;
+
+			// インナーブロックをループ
+			thisInnerBlocks.forEach(function (thisInnerBlock) {
+				// 子ブロックのattributeをアップデート
+				const gap = attributes.gap ? attributes.gap : null;
+				updateBlockAttributes(thisInnerBlock.clientId, {
+					outerGap: gap,
+				});
+			});
+		}
+	}, [thisBlock, attributes]);
+	
 	// blocksProps を予め定義
 	const blockProps = useBlockProps({
 		className: `vk_buttons`,

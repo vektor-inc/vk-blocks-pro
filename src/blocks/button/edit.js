@@ -154,15 +154,6 @@ export default function ButtonEdit(props) {
 	);
 	const isInnerButton = parents.length ? true : false;
 
-	// 親ブロックのギャップを取得
-	let gap = null;
-	if (isInnerButton) {
-		gap = select('core/block-editor').getBlock(parents[0]).attributes.gap;
-		if (gap) {
-			setAttributes({ outerGap: gap });
-		}
-	}
-
 	let containerClass;
 	// カスタムカラーの場合 またはアウターにギャップが指定されれいる場合
 	if (

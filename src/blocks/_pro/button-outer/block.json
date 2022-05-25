@@ -12,7 +12,7 @@
 		},
 		"gap": {
 			"type": "string",
-			"default": ""
+			"default": null
 		},
 		"blockId": {
 			"type": "string"

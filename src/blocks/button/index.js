@@ -109,7 +109,7 @@ const generateInlineGapCss = (attributes, isSave) => {
 		? '.vk_button'
 		: '.vk_buttons .vk_buttons_col .block-editor-block-list__layout .vk_button';
 
-	// 親ブロックのギャップを取得
+	// 親ブロックのギャップを反映
 	if (outerGap) {
 		if (buttonWidthMobile) {
 			inlineCss += `@media (max-width: 575.98px) {

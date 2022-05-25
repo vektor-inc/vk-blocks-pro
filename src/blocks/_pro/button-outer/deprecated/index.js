@@ -1,4 +1,4 @@
-import save1_34_1 from './1.34.1/save';
+import save1_35_0 from './1.35.0/save';
 
 const blockAttributes = {
 	buttonsJustify: {
@@ -10,7 +10,7 @@ const blockAttributes = {
 const deprecated = [
 	{
 		attributes: blockAttributes,
-		save: save1_34_1,
+		save: save1_35_0,
 	}
 ];
 export default deprecated;

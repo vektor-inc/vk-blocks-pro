@@ -4,6 +4,7 @@ import save0400 from './0.40.0/save';
 import save0601 from './0.60.1/save';
 import save1_0_4 from './1.0.4/save';
 import save1_23_0 from './1.23.0/save';
+import save1_34_1 from './1.34.1/save';
 
 const blockAttributes = {
 	postId: {
@@ -139,7 +140,24 @@ const blockAttributes3 = {
 	}
 }
 
+/*
+// 1.34.1 で attributes を変更
+const blockAttributes4 = {
+	...blockAttributes3,
+	clientId: {
+		type: 'string'
+	},
+	blockId: {
+		type: 'string',
+	}
+}
+*/
+
 const deprecated = [
+	{
+		attributes: blockAttributes3,
+		save: save1_34_1
+	},
 	{
 		attributes: blockAttributes3,
 		save: save1_23_0

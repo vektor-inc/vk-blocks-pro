@@ -6,14 +6,21 @@ import {
 } from '@wordpress/block-editor';
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
+import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 
 export default function AnimationEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
-	const { effect, speed, range } = attributes;
+	const { effect, speed, range, blockId } = attributes;
 
 	useEffect(() => {
-		if (clientId === undefined || clientId === null || clientId === '') {
-			setAttributes({ clientId });
+		if (attributes.clientId !== undefined) {
+			setAttributes({ clientId: undefined });
+		}
+		if (
+			blockId === undefined ||
+			isParentReusableBlock(clientId) === false
+		) {
+			setAttributes({ blockId: clientId });
 		}
 		if (effect === undefined || effect === null || effect === '') {
 			setAttributes({ effect: 'slide-up' });
@@ -29,7 +36,7 @@ export default function AnimationEdit(props) {
 	}, [clientId]);
 
 	const blockProps = useBlockProps({
-		className: `vk_animation vk_animation-${effect} vk_animation-speed-${speed} vk_animation-range-${range} vk_animation-${clientId}`,
+		className: `vk_animation vk_animation-${effect} vk_animation-speed-${speed} vk_animation-range-${range} vk_animation-${blockId}`,
 	});
 
 	return (

@@ -19,7 +19,7 @@ export default function save(props) {
 		bgImageMobile,
 		bgImageTablet,
 		bgImage,
-		clientId,
+		blockId,
 	} = attributes;
 	let classPaddingLR;
 	let containerClass;
@@ -60,18 +60,14 @@ export default function save(props) {
 	const GetBgImage = (
 		<>
 			{(bgImage || bgImageTablet || bgImageMobile) && (
-				<GenerateBgImage
-					prefix={prefix}
-					clientId={clientId}
-					{...props}
-				/>
+				<GenerateBgImage prefix={prefix} blockId={blockId} {...props} />
 			)}
 			<div className={bgAreaClasses} style={bgAreaStyles}></div>
 		</>
 	);
 
 	const blockProps = useBlockProps.save({
-		className: `vk_slider_item swiper-slide vk_valign-${verticalAlignment} ${prefix}-${clientId} ${classPaddingLR} ${prefix}-paddingVertical-none`,
+		className: `vk_slider_item swiper-slide vk_valign-${verticalAlignment} ${prefix}-${blockId} ${classPaddingLR} ${prefix}-paddingVertical-none`,
 	});
 	return (
 		<div {...blockProps}>

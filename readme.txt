@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
 Tested up to: 5.9.3
-Stable tag: 1.33.2.0
+Stable tag: 1.35.0.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,6 +63,27 @@ e.g.
 
 
 == Changelog ==
+
+= 1.35.0 =
+[ Specification Change ][ Outer (Pro) ] Corresponds reuse block & duplicate
+[ Specification Change ][ Animation(Pro) ] Corresponds reuse block & duplicate
+[ Specification Change ][ Grid Column Card(Pro) ]  Corresponds reuse block & duplicate automatically
+[ Specification Change ][ Card(Pro) ] Corresponds reuse block & duplicate automatically
+[ Specification Change ][ Slider(Pro) ] Corresponds reuse block & duplicate automatically
+[ Specification Change ][ Slider(Pro) ] Changed slider breakpoints to match specified breakpoints in VK Blocks
+[ Specification Change ][ Slider(Pro) ] Change width class name
+[ Bug Fix ][ List ] cope with custom color palette
+[ Bug Fix ][ Slider(Pro) ] Fixed not to output empty CSS tags
+[ Bug Fix ][ Outer (Pro) ] Fix border color class.
+[ Bug Fix ] [ Spacer ][ Animation (Pro) ][ Slider (Pro) ] height and border style on Full Site Editor
+
+= 1.34.1 =
+[ Bug Fix ] Fix term color library ( since 1.34.0 )
+
+= 1.34.0 =
+[ Improvement ][ Button ] Support for transformation of paragraph block to VK button block.
+[ Other ] add term color composer library
+[ Bug Fix ][ Grid Col Card(Pro) ] Fix bocome narrow width in case of innner block on edit screen
 
 = 1.33.2 =
 [ Bug Fix ][ Button ] Fix horizontal padding for X-T9 

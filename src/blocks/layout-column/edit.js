@@ -12,20 +12,14 @@ import {
 	InspectorControls,
 } from '@wordpress/block-editor';
 
-import { useMediaQuery } from '@wordpress/compose';
-import { select, dispatch } from '@wordpress/data';
+import { select } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
 
 export default function LayoutColumnEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const { totalWidth, breakPoint, blockId } = attributes;
 
-	const { getBlocksByClientId } = select('core/block-editor');
-	const { updateBlockAttributes } = dispatch('core/block-editor');
-	const thisBlock = getBlocksByClientId(clientId);
-
-	let displayWidth = totalWidth;
-	let isGrid = true;
+	const displayWidth = totalWidth;
 
 	// サイドバーがひらいているかどうか
 	const isSidebarOpened = select('core/edit-post').isEditorSidebarOpened();
@@ -34,21 +28,7 @@ export default function LayoutColumnEdit(props) {
 	const editorBreakPoint = isSidebarOpened ? breakPoint + 280 : breakPoint;
 
 	// コンテナブロックのクラス名
-	let className = 'vk_layoutColumn';
-
-	// エディタ用breakpointで min-widthにマッチするかどうか
-	const matches = useMediaQuery('(min-width:' + editorBreakPoint + 'px)');
-
-	// min-widthにマッチする場合は Grid(Flex)レイアウト
-	if (matches) {
-		className += ' vk_layoutColumn_grid';
-
-		// それ以外は 通常のdisplay: block で幅100%
-	} else {
-		isGrid = false;
-		displayWidth = '100%';
-		className += ' vk_layoutColumn_block';
-	}
+	const className = `vk_layoutColumn vk-layoutColumn-${clientId}`;
 
 	useEffect(() => {
 		if (blockId === undefined) {
@@ -56,17 +36,20 @@ export default function LayoutColumnEdit(props) {
 		}
 	}, [clientId]);
 
-	// 内包するLayoutItemの is_gridに状態を保存する。
-	useEffect(() => {
-		if (thisBlock && thisBlock[0] && thisBlock[0].innerBlocks) {
-			const thisInnerBlocks = thisBlock[0].innerBlocks;
-			thisInnerBlocks.forEach(function (thisInnerBlock) {
-				updateBlockAttributes(thisInnerBlock.clientId, {
-					is_grid: isGrid,
-				});
-			});
+	const style = `@media (min-width: ${editorBreakPoint}px) {
+		.vk-layoutColumn-${clientId} > .block-editor-inner-blocks > .block-editor-block-list__layout {
+			flex-wrap: nowrap;
 		}
-	}, [isGrid]);
+	}
+	@media (max-width: ${editorBreakPoint - 0.02}px) {
+		.vk-layoutColumn-${clientId} > .block-editor-inner-blocks > .block-editor-block-list__layout {
+			flex-wrap: wrap;
+		}		
+		.vk-layoutColumn-${clientId} .vk_layoutColumnItem {
+			flex-basis:100% !important;
+		}
+	}
+	`;
 
 	const ALLOWED_BLOCKS = ['vk-blocks/layout-column-item'];
 	const TEMPLATE = [
@@ -85,6 +68,7 @@ export default function LayoutColumnEdit(props) {
 					allowedBlocks={ALLOWED_BLOCKS}
 				/>
 			</div>
+			<style>{style}</style>
 			<InspectorControls>
 				<PanelBody title={__('Layout Column Setting', 'vk-blocks')}>
 					<UnitControl

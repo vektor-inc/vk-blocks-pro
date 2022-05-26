@@ -35,24 +35,19 @@ export default function LayoutColumnItemEdit(props) {
 	);
 	const isPC = useMediaQuery('(min-width: 992px)');
 
-	let paddingObject = margin_pc;
+	let padding = margin_pc;
 	if (isMobile) {
-		paddingObject = margin_sp;
+		padding = margin_sp;
 	} else if (isTablet) {
-		paddingObject = margin_tb;
-	}
-
-	let displayWidth = width;
-	if (!is_grid) {
-		displayWidth = '100%';
+		padding = margin_tb;
 	}
 
 	const cStyle = {
-		width: displayWidth,
-		paddingTop: paddingObject.top,
-		paddingRight: paddingObject.right,
-		paddingBottom: paddingObject.bottom,
-		paddingLeft: paddingObject.left,
+		width,
+		paddingTop: padding.top,
+		paddingRight: padding.right,
+		paddingBottom: padding.bottom,
+		paddingLeft: padding.left,
 	};
 
 	return (

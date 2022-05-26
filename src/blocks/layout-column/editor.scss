@@ -1,40 +1,18 @@
 
 
 .editor-styles-wrapper {
-
+ 
     .vk_layoutColumn {
         display: block;
-    }
-
-    .vk_layoutColumn_grid {
         >.block-editor-inner-blocks {
-
             >.block-editor-block-list__layout {
                 display: flex;
-                flex-wrap: nowrap;
             }
-
-            .components-unit-control-wrapper {
+            >.components-unit-control-wrapper {
                 margin-top: 20px;
             }
-
         }
     }
-
-    .vk_layoutColumn_block {
-        >.block-editor-inner-blocks {
-
-            >.block-editor-block-list__layout {
-                display: flex;
-                flex-wrap: wrap;
-            }
-
-            .components-unit-control-wrapper {
-                margin-top: 20px;
-            }
-
-        }
-    }    
 
     .vk_layoutColumnItem {
 		border: 1px dotted #aaa;

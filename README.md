@@ -78,9 +78,10 @@ WP_BASE_URL='http://localhost:xxxx/' npm run test:e2e
 ```
 
 
-## pre-push
-プッシュ時にphpのformat、phpcsのチェックと、lintが実行されます。
-エラーがある場合プッシュできません。
+## pre-push、pre-commit
+プッシュ時にphpのformat、phpcsのチェック、
+コミット時にlintが実行されます。
+それぞれ、エラーがある場合コミットやプッシュができません。
 
 ---
 ## コミットプリフィックス

@@ -12,10 +12,17 @@ export default function LayoutColumnItemSave(props) {
 	const tabletViewport = '(min-width: 576px) and (max-width: 991.98px)';
 	const pcViewport = '(min-width: 992px)';
 
+	const flexBasis = undefined === width || '' === width ? 'auto' : width;
+	const flexShrink = undefined === width || '' === width ? 1 : 0;
+	const flexGrow = undefined === width || '' === width ? 1 : 0;
+
+	const cStyle = {
+		flexBasis,
+		flexGrow,
+		flexShrink,
+	};
+
 	const style = `
-	.vk_layoutColumn .vk_layoutColumnItem-${blockId} {
-		width: ${width}
-	}
 	@media ${pcViewport} {
 		.vk_layoutColumn .vk_layoutColumnItem-${blockId} {
 			padding: ${margin_pc.top} ${margin_pc.right} ${margin_pc.bottom} ${margin_pc.left}
@@ -33,7 +40,7 @@ export default function LayoutColumnItemSave(props) {
 	}`;
 	return (
 		<>
-			<div {...blockProps}>
+			<div {...blockProps} style={cStyle}>
 				<InnerBlocks.Content />
 			</div>
 			<style>{style}</style>

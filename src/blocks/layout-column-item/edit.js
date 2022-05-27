@@ -42,8 +42,14 @@ export default function LayoutColumnItemEdit(props) {
 		padding = margin_tb;
 	}
 
+	const flexBasis = undefined === width || '' === width ? 'auto' : width;
+	const flexShrink = undefined === width || '' === width ? 1 : 0;
+	const flexGrow = undefined === width || '' === width ? 1 : 0;
+
 	const cStyle = {
-		width,
+		flexBasis,
+		flexGrow,
+		flexShrink,
 		paddingTop: padding.top,
 		paddingRight: padding.right,
 		paddingBottom: padding.bottom,

@@ -8,7 +8,7 @@ Array.prototype.forEach.call(vkTabs, (vkTab) => {
 	Array.prototype.forEach.call(vkTabLabel, (TabLabel) => {
 		TabLabel.addEventListener('click', (e) => {
 			// ブロック ID を抽出
-			const TabLabelId = e.path[0].id;
+			const TabLabelId = e.target.closest('.vk_tab_labels_label').id;
 			const TabId = TabLabelId.replace('vk_tab_labels_label-', '');
 
 			// カレントを探して全て外す

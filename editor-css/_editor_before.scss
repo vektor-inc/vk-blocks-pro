@@ -166,7 +166,8 @@ $color-danger: #dd3333;
 
 
 /* editor area *********************************************/
-.edit-post-visual-editor,
+.editor-styles-wrapper, //サイトエディター用に追加
+// .edit-post-visual-editor,
 .components-tab-panel__tab-content{
 
 	.vk_width-full div[data-type="vk-blocks/slider-item"]{

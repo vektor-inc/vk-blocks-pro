@@ -230,7 +230,7 @@ function vk_blocks_the_update_messsage( $update_checker ) {
 
 	$alert_html  = '';
 	$alert_html .= '<div class="error">';
-	$alert_html .= '<h4>' . $notice_title . '</h4>';
+	$alert_html .= '<h4>VK Blocks Pro : ' . $notice_title . '</h4>';
 	$alert_html .= '<p>' . __(
 		'Enter a valid license key for any of the following products on the settings screen.',
 		'vk-blocks'
@@ -242,14 +242,11 @@ function vk_blocks_the_update_messsage( $update_checker ) {
 
 	$alert_html .= '<p><a href="' . admin_url( '/options-general.php?page=vk_blocks_options' ) . '" class="button button-primary">' . __( 'Enter the license key', 'vk-blocks' ) . '</a></p>';
 
-	$alert_html .= '<p>' . sprintf(
-		/* translators: %s: 再読み込みURL */
-		__(
-			'Even after valid license key registration you still seeing this message, <a href="%s">please click here to reload</a>.',
-			'vk-blocks'
-		),
-		$link_url
-	) . '</p>';
+	$alert_html .= '<p>';
+	$alert_html .= __( 'If this display does not disappear even after entering a valid license key, re-acquire the update.', 'vk-blocks' );
+	$alert_html .= ' [ <a href="' . $link_url . '">' . __( 'Re-acquisition of updates', 'vk-blocks' ) . '</a> ]';
+	$alert_html .= '</p>';
+
 	$alert_html .= '</div>';
 	echo wp_kses_post( $alert_html );
 }

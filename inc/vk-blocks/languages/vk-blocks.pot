@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-05-27T05:25:04+00:00\n"
+"POT-Creation-Date: 2022-05-27T05:38:19+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks\n"
@@ -2744,9 +2744,12 @@ msgstr ""
 msgid "Enter the license key"
 msgstr ""
 
-#. translators: %s: 再読み込みURL
+#: vk-blocks.php:246
+msgid "If this display does not disappear even after entering a valid license key, re-acquire the update."
+msgstr ""
+
 #: vk-blocks.php:247
-msgid "Even after valid license key registration you still seeing this message, <a href=\"%s\">please click here to reload</a>."
+msgid "Re-acquisition of updates"
 msgstr ""
 
 #: inc/vk-blocks/build/blocks/alert/block.json

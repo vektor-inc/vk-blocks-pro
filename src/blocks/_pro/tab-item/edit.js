@@ -18,7 +18,13 @@ import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function TabItemEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
-	const { tabBodyActive, tabBodyPadding, tabColor, blockId } = attributes;
+	const {
+		tabBodyActive,
+		tabBodyPadding,
+		tabColor,
+		tabBodyBorderTop,
+		blockId,
+	} = attributes;
 
 	const { updateBlockAttributes } = dispatch('core/block-editor');
 
@@ -101,25 +107,14 @@ export default function TabItemEdit(props) {
 	}
 	let tabBodyClass = '';
 	let tabBodyStyle = {};
-	if (
-		parentTabBlock &&
-		parentTabBlock.attributes &&
-		parentTabBlock.attributes.tabOptionJSON
-	) {
-		const tabOptionJSON = parentTabBlock.attributes.tabOptionJSON;
-		const tabOption = JSON.parse(tabOptionJSON);
-		if (tabOption.tabBodyBorderTop) {
-			tabBodyClass = ' has-border-top';
-			if (!isHexColor(tabOption.tabColor)) {
-				tabBodyClass += ` has-${tabOption.tabColor}-border-top-color`;
-			} else {
-				tabBodyStyle = {
-					borderTopColor: tabOption.tabColor,
-				};
-			}
-			setAttributes({ tabBodyBorderTop: true });
+	if (tabBodyBorderTop === true) {
+		tabBodyClass = ' has-border-top';
+		if (!isHexColor(tabColor)) {
+			tabBodyClass += ` has-${tabColor}-border-color`;
 		} else {
-			setAttributes({ tabBodyBorderTop: false });
+			tabBodyStyle = {
+				borderTopColor: tabColor,
+			};
 		}
 	}
 

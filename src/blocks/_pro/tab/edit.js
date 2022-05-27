@@ -47,6 +47,9 @@ export default function TabEdit(props) {
 
 	const { updateBlockAttributes } = dispatch('core/block-editor');
 
+	const tabOption = JSON.parse(tabOptionJSON);
+	const classNames = className.split(' ');
+
 	useEffect(() => {
 		if (
 			blockId === undefined ||
@@ -64,7 +67,7 @@ export default function TabEdit(props) {
 			: [];
 
 	useEffect(() => {
-		const tabOption = {
+		const tabOptionTemp = {
 			listArray: [],
 			tabLabelBackground: true,
 			tabLabelBorderTop: false,
@@ -72,7 +75,7 @@ export default function TabEdit(props) {
 		};
 		if (childBlocks !== []) {
 			childBlocks.forEach((childBlock) => {
-				tabOption.listArray.push({
+				tabOptionTemp.listArray.push({
 					tabLabel: childBlock.attributes.tabLabel,
 					tabColor: childBlock.attributes.tabColor,
 					blockId: childBlock.attributes.blockId,
@@ -80,26 +83,57 @@ export default function TabEdit(props) {
 			});
 		}
 		if (className !== undefined) {
-			if (className.indexOf('is-style-vk_tab_labels-normal') !== false) {
+			if (classNames.indexOf('is-style-vk_tab_labels-normal') !== -1) {
+				tabOptionTemp.tabLabelBackground = true;
+				tabOptionTemp.tabLabelBorderTop = false;
+				tabOptionTemp.tabBodyBorderTop = true;
+			} else if (
+				classNames.indexOf('is-style-vk_tab_labels-normal-no-frame') !==
+				-1
+			) {
+				tabOptionTemp.tabLabelBackground = true;
+				tabOptionTemp.tabLabelBorderTop = false;
+				tabOptionTemp.tabBodyBorderTop = false;
+			} else if (
+				classNames.indexOf('is-style-vk_tab_labels-line') !== -1
+			) {
+				tabOptionTemp.tabLabelBackground = false;
+				tabOptionTemp.tabLabelBorderTop = true;
+				tabOptionTemp.tabBodyBorderTop = false;
+			} else if (
+				classNames.indexOf('is-style-vk_tab_labels-line-no-frame') !==
+				-1
+			) {
+				tabOptionTemp.tabLabelBackground = false;
+				tabOptionTemp.tabLabelBorderTop = true;
+				tabOptionTemp.tabBodyBorderTop = false;
+			}
+		}
+		setAttributes({ tabOptionJSON: JSON.stringify(tabOptionTemp) });
+	}, [childBlocks]);
+
+	useEffect(() => {
+		if (className !== undefined) {
+			if (classNames.indexOf('is-style-vk_tab_labels-normal') !== -1) {
 				tabOption.tabLabelBackground = true;
 				tabOption.tabLabelBorderTop = false;
 				tabOption.tabBodyBorderTop = true;
 			} else if (
-				className.indexOf('is-style-vk_tab_labels-normal-no-frame') !==
-				false
+				classNames.indexOf('is-style-vk_tab_labels-normal-no-frame') !==
+				-1
 			) {
 				tabOption.tabLabelBackground = true;
 				tabOption.tabLabelBorderTop = false;
 				tabOption.tabBodyBorderTop = false;
 			} else if (
-				className.indexOf('is-style-vk_tab_labels-line') !== false
+				classNames.indexOf('is-style-vk_tab_labels-line') !== -1
 			) {
 				tabOption.tabLabelBackground = false;
 				tabOption.tabLabelBorderTop = true;
 				tabOption.tabBodyBorderTop = false;
 			} else if (
-				className.indexOf('is-style-vk_tab_labels-line-no-frame') !==
-				false
+				classNames.indexOf('is-style-vk_tab_labels-line-no-frame') !==
+				-1
 			) {
 				tabOption.tabLabelBackground = false;
 				tabOption.tabLabelBorderTop = true;
@@ -107,7 +141,23 @@ export default function TabEdit(props) {
 			}
 		}
 		setAttributes({ tabOptionJSON: JSON.stringify(tabOption) });
-	}, [childBlocks]);
+	}, [className]);
+
+	useEffect(() => {
+		if (childBlocks !== []) {
+			childBlocks.forEach((childBlock) => {
+				if (tabOption.tabBodyBorderTop === true) {
+					updateBlockAttributes(childBlock.clientId, {
+						tabBodyBorderTop: true,
+					});
+				} else {
+					updateBlockAttributes(childBlock.clientId, {
+						tabBodyBorderTop: false,
+					});
+				}
+			});
+		}
+	}, [tabOption.tabBodyBorderTop]);
 
 	useEffect(() => {
 		if (childBlocks !== []) {
@@ -197,7 +247,6 @@ export default function TabEdit(props) {
 
 	let tablabelsEditList = '';
 	let tablabelsEdit = '';
-	const tabOption = JSON.parse(tabOptionJSON);
 	if (childBlocks !== []) {
 		tablabelsEditList = childBlocks.map((childBlock, index) => {
 			let activeLabelClass = '';
@@ -217,9 +266,9 @@ export default function TabEdit(props) {
 						};
 					}
 				} else if (tabOption.tabLabelBorderTop) {
-					tabColorClass = ' has-border-top';
+					tabColorClass = '  has-border-top';
 					if (!isHexColor(childBlock.attributes.tabColor)) {
-						tabColorClass += ` has-${childBlock.attributes.tabColor}-border-top-color`;
+						tabColorClass += ` has-${childBlock.attributes.tabColor}-border-color`;
 					} else {
 						tabColorStyle = {
 							borderTopColor: childBlock.attributes.tabColor,

@@ -231,7 +231,6 @@ $xl-min: 1200px;
 
 }
 .vk_tab_bodys{
-	border-top: 2px solid var(--default-color);
 	border-right: 1px solid var(--vk-color-border);
 	border-bottom: 1px solid var(--vk-color-border);
 	border-left: 1px solid var(--vk-color-border);
@@ -243,6 +242,10 @@ $xl-min: 1200px;
 			display: block;
 		}
 	}
+}
+
+.has-border-top{
+	border-top: 2px solid var(--default-color);
 }
 
 $xs-max: 575.98px;

@@ -17,10 +17,10 @@ export default function save(props) {
 
 	let tabBodyClass = '';
 	let tabBodyStyle = {};
-	if (tabBodyBorderTop) {
-		tabBodyClass = ' has-border-top';
+	if (tabBodyBorderTop === true) {
+		tabBodyClass = '  has-border-top';
 		if (!isHexColor(tabColor)) {
-			tabBodyClass += ` has-${tabColor}-border-top-color`;
+			tabBodyClass += ` has-${tabColor}-border-color`;
 		} else {
 			tabBodyStyle = {
 				borderTopColor: tabColor,

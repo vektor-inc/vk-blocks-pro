@@ -61,7 +61,7 @@ export default function save(props) {
 				} else if (tabOption.tabLabelBorderTop) {
 					tabColorClass = ' has-border-top';
 					if (!isHexColor(option.tabColor)) {
-						tabColorClass += ` has-${option.tabColor}-border-top-color`;
+						tabColorClass += ` has-${option.tabColor}-border-color`;
 					} else {
 						tabColorStyle = {
 							borderTopColor: option.tabColor,

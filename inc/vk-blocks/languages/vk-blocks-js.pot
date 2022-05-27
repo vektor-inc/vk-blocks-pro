@@ -47,7 +47,7 @@ msgstr ""
 msgid "Short"
 msgstr ""
 
-#: src/blocks/_pro/animation/edit.js:123
+#: src/blocks/_pro/animation/edit.js:130
 #: src/blocks/_pro/outer/edit.js:367
 #: src/blocks/_pro/slider/edit.js:201
 #: src/blocks/balloon/edit.js:483
@@ -699,7 +699,7 @@ msgid "Wave"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:473
-#: src/extensions/core/list/style.js:111
+#: src/extensions/core/list/style.js:165
 msgid "Triangle"
 msgstr ""
 
@@ -989,7 +989,7 @@ msgstr ""
 #: src/blocks/heading/edit.js:264
 #: src/blocks/staff/edit.js:173
 #: src/extensions/core/heading/style.js:30
-#: src/extensions/core/list/style.js:102
+#: src/extensions/core/list/style.js:156
 msgid "Default"
 msgstr ""
 
@@ -2127,47 +2127,47 @@ msgstr ""
 msgid "Wave04"
 msgstr ""
 
-#: src/extensions/core/list/style.js:107
+#: src/extensions/core/list/style.js:161
 msgid "Arrow"
 msgstr ""
 
-#: src/extensions/core/list/style.js:115
+#: src/extensions/core/list/style.js:169
 msgid "Check"
 msgstr ""
 
-#: src/extensions/core/list/style.js:119
+#: src/extensions/core/list/style.js:173
 msgid "Check Square"
 msgstr ""
 
-#: src/extensions/core/list/style.js:123
+#: src/extensions/core/list/style.js:177
 msgid "Check Circle"
 msgstr ""
 
-#: src/extensions/core/list/style.js:127
+#: src/extensions/core/list/style.js:181
 msgid "Handpoint"
 msgstr ""
 
-#: src/extensions/core/list/style.js:131
+#: src/extensions/core/list/style.js:185
 msgid "Pencil"
 msgstr ""
 
-#: src/extensions/core/list/style.js:135
+#: src/extensions/core/list/style.js:189
 msgid "Smile"
 msgstr ""
 
-#: src/extensions/core/list/style.js:139
+#: src/extensions/core/list/style.js:193
 msgid "Frown"
 msgstr ""
 
-#: src/extensions/core/list/style.js:143
+#: src/extensions/core/list/style.js:197
 msgid "Numbered Circle"
 msgstr ""
 
-#: src/extensions/core/list/style.js:147
+#: src/extensions/core/list/style.js:201
 msgid "Numbered Square"
 msgstr ""
 
-#: src/extensions/core/list/style.js:47
+#: src/extensions/core/list/style.js:89
 msgid "List Icon Color"
 msgstr ""
 

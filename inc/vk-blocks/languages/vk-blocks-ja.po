@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "POT-Creation-Date: 2022-05-27T08:34:23+00:00\n"
-"PO-Revision-Date: 2022-05-27 17:42+0900\n"
+"PO-Revision-Date: 2022-05-27 17:50+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -3043,7 +3043,7 @@ msgstr "スタッフ紹介,会社紹介,スクール紹介,メニューなどで
 #: src/blocks/_pro/accordion-target/block.json
 msgctxt "block title"
 msgid "Accordion Target"
-msgstr "アコーディオンタイトル"
+msgstr "アコーディオン コンテンツ"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/accordion-target/block.json
 #: inc/vk-blocks/build/blocks/_pro/accordion-target/block.json
@@ -3057,7 +3057,7 @@ msgstr "コンテンツが長い時にコンテンツを折りたたんで隠し
 #: src/blocks/_pro/accordion-trigger/block.json
 msgctxt "block title"
 msgid "Accordion Trigger"
-msgstr "アコーディオンコンテンツ"
+msgstr "アコーディオン タイトル"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/accordion-trigger/block.json
 #: inc/vk-blocks/build/blocks/_pro/accordion-trigger/block.json

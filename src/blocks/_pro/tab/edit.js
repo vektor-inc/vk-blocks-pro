@@ -48,7 +48,7 @@ export default function TabEdit(props) {
 	const { updateBlockAttributes } = dispatch('core/block-editor');
 
 	const tabOption = JSON.parse(tabOptionJSON);
-	const classNames = className.split(' ');
+	const classNames = className !== undefined ? className.split(' ') : [];
 
 	useEffect(() => {
 		if (
@@ -193,7 +193,7 @@ export default function TabEdit(props) {
 			const vkTabLabels = vkTab.querySelector('.vk_tab_labels');
 
 			// ブロック ID を抽出
-			const TabLabelId = e.target.id;
+			const TabLabelId = e.target.closest('.vk_tab_labels_label').id;
 			const TabId = TabLabelId.replace('vk_tab_labels_label-', '');
 
 			/* ラベルの処理 */
@@ -255,6 +255,8 @@ export default function TabEdit(props) {
 			}
 			let tabColorClass = '';
 			let tabColorStyle = {};
+			let tabSpanColorClass = '';
+			let tabSpanColorStyle = {};
 			if (childBlock.attributes.tabColor !== '') {
 				if (tabOption.tabLabelBackground) {
 					tabColorClass = ' has-background';
@@ -266,11 +268,11 @@ export default function TabEdit(props) {
 						};
 					}
 				} else if (tabOption.tabLabelBorderTop) {
-					tabColorClass = '  has-border-top';
+					tabSpanColorClass = '  has-border-top';
 					if (!isHexColor(childBlock.attributes.tabColor)) {
-						tabColorClass += ` has-${childBlock.attributes.tabColor}-border-color`;
+						tabSpanColorClass += ` has-${childBlock.attributes.tabColor}-border-color`;
 					} else {
-						tabColorStyle = {
+						tabSpanColorStyle = {
 							borderTopColor: childBlock.attributes.tabColor,
 						};
 					}
@@ -278,26 +280,32 @@ export default function TabEdit(props) {
 			}
 
 			return (
-				<RichText
-					tagName="li"
+				<li
+					key={index}
 					id={`vk_tab_labels_label-${childBlock.attributes.blockId}`}
 					className={`vk_tab_labels_label${activeLabelClass}${tabColorClass}`}
 					style={tabColorStyle}
-					key={index}
-					value={childBlock.attributes.tabLabel}
-					onChange={(content) => {
-						updateBlockAttributes(childBlock.clientId, {
-							tabLabel: content,
-						});
-					}}
-					placeholder={
-						// translators: Tab label [i]
-						sprintf(__('Tab Label [ %s ]', 'vk-Blocks'), index + 1)
-					}
-					onClick={(e) => {
-						liOnClick(e);
-					}}
-				/>
+				>
+					<RichText
+						tagName="span"
+						className={tabSpanColorClass}
+						style={tabSpanColorStyle}
+						value={childBlock.attributes.tabLabel}
+						onChange={(content) => {
+							updateBlockAttributes(childBlock.clientId, {
+								tabLabel: content,
+							});
+						}}
+						placeholder={sprintf(
+							// translators: Tab label [i]
+							__('Tab Label [ %s ]', 'vk-Blocks'),
+							index + 1
+						)}
+						onClick={(e) => {
+							liOnClick(e);
+						}}
+					/>
+				</li>
 			);
 		});
 		tablabelsEdit = (

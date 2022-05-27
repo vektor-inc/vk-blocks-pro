@@ -48,6 +48,8 @@ export default function save(props) {
 			}
 			let tabColorClass = '';
 			let tabColorStyle = {};
+			let tabSpanColorClass = '';
+			let tabSpanColorStyle = {};
 			if (option.tabColor !== '') {
 				if (tabOption.tabLabelBackground) {
 					tabColorClass = ' has-background';
@@ -59,11 +61,11 @@ export default function save(props) {
 						};
 					}
 				} else if (tabOption.tabLabelBorderTop) {
-					tabColorClass = ' has-border-top';
+					tabSpanColorClass = ' has-border-top';
 					if (!isHexColor(option.tabColor)) {
-						tabColorClass += ` has-${option.tabColor}-border-color`;
+						tabSpanColorClass += ` has-${option.tabColor}-border-color`;
 					} else {
-						tabColorStyle = {
+						tabSpanColorStyle = {
 							borderTopColor: option.tabColor,
 						};
 					}
@@ -77,7 +79,12 @@ export default function save(props) {
 					style={tabColorStyle}
 					key={index}
 				>
-					{option.tabLabel}
+					<span
+						className={tabSpanColorClass}
+						style={tabSpanColorStyle}
+					>
+						{option.tabLabel}
+					</span>
 				</li>
 			);
 		});

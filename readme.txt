@@ -3,8 +3,8 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,m
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
-Tested up to: 5.9.3
-Stable tag: 1.35.0.0
+Tested up to: 6.0.0
+Stable tag: 1.36.0.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+= 1.36.0 =
 [ Add Function ][ Button outer(Pro) ] Add gap option.
 [ Bug fix ][ Accordion(Pro) ] Fix margin bottom on Accordion close.
 

@@ -65,9 +65,9 @@ e.g.
 == Changelog ==
 
 [ Add Function ][ Button outer(Pro) ] Add gap option.
+[ Bug fix ][ Accordion(Pro) ] Fix margin bottom on Accordion close.
 
 = 1.35.0 =
-[ Specification Change ][ Outer (Pro) ] Corresponds reuse block & duplicate
 [ Specification Change ][ Animation(Pro) ] Corresponds reuse block & duplicate
 [ Specification Change ][ Grid Column Card(Pro) ]  Corresponds reuse block & duplicate automatically
 [ Specification Change ][ Card(Pro) ] Corresponds reuse block & duplicate automatically
@@ -78,7 +78,6 @@ e.g.
 [ Bug Fix ][ Slider(Pro) ] Fixed not to output empty CSS tags
 [ Bug Fix ][ Outer (Pro) ] Fix WordPress 6.0 border color class.
 [ Bug Fix ][ Spacer ][ Animation (Pro) ][ Slider (Pro) ] height and border style on Full Site Editor
-[ Bug fix ][ Accordion(Pro) ] Fix margin bottom on Accordion close.
 
 = 1.34.1 =
 [ Bug Fix ] Fix term color library ( since 1.34.0 )

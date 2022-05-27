@@ -53,6 +53,10 @@
 			"type": "number",
 			"default": 0
 		},
+		"outerGap": {
+			"type": "string",
+			"default": null
+		},
 		"fontAwesomeIconBefore": {
 			"type": "string"
 		},

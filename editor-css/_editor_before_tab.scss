@@ -1,6 +1,6 @@
 /*      編集画面
 /*-------------------------------------------*/
-.editor-styles-wrapper{
+
 	.vk_tab{
 		position: relative;
 		&.is-style-vk_tab_labels-line .vk_tab_labels {
@@ -19,4 +19,8 @@
 			right: calc(var(--vk-size-text) * 0 );
 		}
 	}
+
+.vk_tab_bodys .vk_tab_bodys_body.vk_tab_bodys_body-state-active {
+	margin-top: 0;
+	margin-bottom: 0;
 }

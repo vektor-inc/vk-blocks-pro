@@ -79,12 +79,12 @@ export default function save(props) {
 					style={tabColorStyle}
 					key={index}
 				>
-					<span
+					<div
 						className={tabSpanColorClass}
 						style={tabSpanColorStyle}
 					>
 						{option.tabLabel}
-					</span>
+					</div>
 				</li>
 			);
 		});

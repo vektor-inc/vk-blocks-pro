@@ -287,7 +287,7 @@ export default function TabEdit(props) {
 					style={tabColorStyle}
 				>
 					<RichText
-						tagName="span"
+						tagName="div"
 						className={tabSpanColorClass}
 						style={tabSpanColorStyle}
 						value={childBlock.attributes.tabLabel}

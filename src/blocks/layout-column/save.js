@@ -4,19 +4,19 @@ export default function save({ attributes }) {
 	const { breakPoint, blockId } = attributes;
 
 	const blockProps = useBlockProps.save({
-		className: `vk_layoutColumn vk-layoutColumn-${blockId}`,
+		className: `vk_layoutColumn vk_layoutColumn-${blockId}`,
 	});
 
 	const style = `@media (min-width: ${breakPoint}px) {
-		.vk-layoutColumn-${blockId} {
+		.vk_layoutColumn-${blockId} {
 			flex-wrap: nowrap;
 		}
 	}
 	@media (max-width: ${breakPoint - 0.02}px) {
-		.vk-layoutColumn-${blockId} {
+		.vk_layoutColumn-${blockId} {
 			flex-wrap: wrap;
 		}		
-		.vk-layoutColumn-${blockId} .vk_layoutColumnItem {
+		.vk_layoutColumn-${blockId} .vk_layoutColumnItem {
 			flex-basis:100% !important;
 		}
 	}

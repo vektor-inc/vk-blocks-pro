@@ -28,7 +28,7 @@ export default function LayoutColumnEdit(props) {
 	const editorBreakPoint = isSidebarOpened ? breakPoint + 280 : breakPoint;
 
 	// コンテナブロックのクラス名
-	const className = `vk_layoutColumn vk-layoutColumn-${clientId}`;
+	const className = `vk_layoutColumn vk_layoutColumn-${clientId}`;
 
 	useEffect(() => {
 		if (blockId === undefined) {
@@ -37,15 +37,15 @@ export default function LayoutColumnEdit(props) {
 	}, [clientId]);
 
 	const style = `@media (min-width: ${editorBreakPoint}px) {
-		.vk-layoutColumn-${clientId} > .block-editor-inner-blocks > .block-editor-block-list__layout {
+		.vk_layoutColumn-${clientId} > .block-editor-inner-blocks > .block-editor-block-list__layout {
 			flex-wrap: nowrap;
 		}
 	}
 	@media (max-width: ${editorBreakPoint - 0.02}px) {
-		.vk-layoutColumn-${clientId} > .block-editor-inner-blocks > .block-editor-block-list__layout {
+		.vk_layoutColumn-${clientId} > .block-editor-inner-blocks > .block-editor-block-list__layout {
 			flex-wrap: wrap;
 		}		
-		.vk-layoutColumn-${clientId} .vk_layoutColumnItem {
+		.vk_layoutColumn-${clientId} .vk_layoutColumnItem {
 			flex-basis:100% !important;
 		}
 	}

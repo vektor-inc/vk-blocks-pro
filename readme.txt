@@ -64,6 +64,9 @@ e.g.
 
 == Changelog ==
 
+= 1.36.1 =
+[ Bug fix ] Fix active pro version
+
 = 1.36.0 =
 [ Add Function ][ Button outer(Pro) ] Add gap option.
 [ Bug fix ][ Accordion(Pro) ] Fix margin bottom on Accordion close.

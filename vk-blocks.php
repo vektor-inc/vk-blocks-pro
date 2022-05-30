@@ -61,6 +61,8 @@ if ( ! function_exists( 'vk_blocks_deactivate_plugin' ) ) {
  * VK Blocks 無料版の 1.36.0 で vk_blocks_is_pro を function_exists を経由せずに定義してしまっているため、
  * 無料版 1.36.0 を停止する前に せずに vk_blocks_is_pro を定義するとエラーになるため、
  * vk_blocks_is_pro の定義前に無料版の無効化処理を行っている
+ * 1.36.0無料版有効化時にPRo版を有効化時に一瞬エラーが表示されるが再読み込みで復帰する
+ * 1.36.0無料版をアップデートしてもらわないとこれは避けられないので、同麺はこのまま運用する
  * プロ版での読み込みかどうかは strpos を使っているが、
  * strpos は"合致している"にも関わらず返り値は"0"を返してしまうため !== false で処理している.
  */
@@ -75,10 +77,10 @@ if ( strpos( plugin_dir_path( __FILE__ ), 'vk-blocks-pro' ) !== false ) {
 	}
 
 	// Deactive ExUnit included VK Blocks.
-	$options = get_option( 'vkExUnit_common_options' );
-	if ( ! empty( $options['active_vk-blocks'] ) ) {
-		$options['active_vk-blocks'] = false;
-		update_option( 'vkExUnit_common_options', $options );
+	$vk_blocks_exunit_common_options = get_option( 'vkExUnit_common_options' );
+	if ( ! empty( $vk_blocks_exunit_common_options['active_vk-blocks'] ) ) {
+		$vk_blocks_exunit_common_options['active_vk-blocks'] = false;
+		update_option( 'vkExUnit_common_options', $vk_blocks_exunit_common_options );
 	}
 
 	// Deactive VK Grid Colomun Card Plugin.

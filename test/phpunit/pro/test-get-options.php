@@ -14,12 +14,16 @@ class GetOptionsTest extends WP_UnitTestCase {
 				'correct' => array(
 					'balloon_border_width' => 1,
 					'margin_unit' => 'rem',
+					'display_vk_block_template' => 'display',
+					'new_faq_accordion' => 'disable',
 				),
 			),
 			array(
 				'option'  => array(
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
+					'display_vk_block_template' => 'display',
+					'new_faq_accordion' => 'open',
 					'margin_size' => array(
 						'lg' => array(
 							'mobile' => 1,
@@ -42,6 +46,8 @@ class GetOptionsTest extends WP_UnitTestCase {
 				'correct' => array(
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
+					'display_vk_block_template' => 'display',
+					'new_faq_accordion' => 'open',
 					'margin_size' => array(
 						'lg' => array(
 							'mobile' => 1,

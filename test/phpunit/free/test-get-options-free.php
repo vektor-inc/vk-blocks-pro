@@ -1,11 +1,11 @@
 <?php
 /**
- * Class GetOptionsTest
+ * Class GetOptionsTestFree
  *
  * @package vk-blocks
  */
 
-class GetOptionsTest extends WP_UnitTestCase {
+class GetOptionsTestFree extends WP_UnitTestCase {
 
 	public function test_vk_blocks_get_options() {
 		$test_data = array(

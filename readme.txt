@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
 Tested up to: 6.0.0
-Stable tag: 1.36.0.0
+Stable tag: 1.36.1.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,6 +63,9 @@ e.g.
 
 
 == Changelog ==
+
+= 1.36.1 =
+[ Bug fix ] Fix active pro version
 
 = 1.36.0 =
 [ Add Function ][ Button outer(Pro) ] Add gap option.

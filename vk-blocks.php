@@ -143,7 +143,7 @@ if ( ! defined( 'VK_BLOCKS_DIR_PATH' ) ) {
 }
 // Set Plugin Dir URL.
 if ( ! defined( 'VK_BLOCKS_DIR_URL' ) ) {
-	define( 'VK_BLOCKS_DIR_URL', plugin_dir_path( __FILE__ ) );
+	define( 'VK_BLOCKS_DIR_URL', plugin_dir_url( __FILE__ ) );
 }
 // Load VK Blocks
 require_once plugin_dir_path( __FILE__ ) . 'inc/vk-blocks-config.php';

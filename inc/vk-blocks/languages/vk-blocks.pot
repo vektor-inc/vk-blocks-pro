@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.36.0.0\n"
+"Project-Id-Version: VK Blocks Pro 1.36.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-05-27T08:52:10+00:00\n"
+"POT-Creation-Date: 2022-05-30T14:16:41+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 "X-Domain: vk-blocks\n"
@@ -2300,32 +2300,31 @@ msgid "Setting saved."
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/plugin-update-check.php:74
-#: dist/vk-blocks-pro/vk-blocks.php:205
-#: vk-blocks.php:205
+#: dist/vk-blocks-pro/vk-blocks.php:229
+#: vk-blocks.php:229
 msgid "License Key has no registered."
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/plugin-update-check.php:79
-#: dist/vk-blocks-pro/vk-blocks.php:210
-#: vk-blocks.php:210
+#: dist/vk-blocks-pro/vk-blocks.php:234
+#: vk-blocks.php:234
 msgid "The VK Blocks Pro license is invalid."
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/plugin-update-check.php:103
-#: dist/vk-blocks-pro/vk-blocks.php:234
-#: vk-blocks.php:234
+#: dist/vk-blocks-pro/vk-blocks.php:258
+#: vk-blocks.php:258
 msgid "Enter a valid license key for any of the following products on the settings screen."
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/plugin-update-check.php:112
-#: dist/vk-blocks-pro/vk-blocks.php:243
-#: vk-blocks.php:243
+#: dist/vk-blocks-pro/vk-blocks.php:267
+#: vk-blocks.php:267
 msgid "Enter the license key"
 msgstr ""
 
 #. translators: %s: 再読み込みURL
 #: dist/vk-blocks-pro/inc/plugin-update-check.php:116
-#: dist/vk-blocks-pro/vk-blocks.php:247
 msgid "Even after valid license key registration you still seeing this message, <a href=\"%s\">please click here to reload</a>."
 msgstr ""
 
@@ -2782,16 +2781,18 @@ msgstr ""
 msgid "If you choose \"Active Preload CSS\" that css load timing was changed.If you have any do not want to preload css file that please fill in handle(id) name. Ex) pluginname_a-style,pluginname_b-css"
 msgstr ""
 
-#: dist/vk-blocks-pro/vk-blocks.php:106
-#: vk-blocks.php:106
+#: dist/vk-blocks-pro/vk-blocks.php:105
+#: vk-blocks.php:105
 msgid "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks Plugin running."
 msgstr ""
 
-#: vk-blocks.php:246
+#: dist/vk-blocks-pro/vk-blocks.php:270
+#: vk-blocks.php:270
 msgid "If this display does not disappear even after entering a valid license key, re-acquire the update."
 msgstr ""
 
-#: vk-blocks.php:247
+#: dist/vk-blocks-pro/vk-blocks.php:271
+#: vk-blocks.php:271
 msgid "Re-acquisition of updates"
 msgstr ""
 

@@ -12,6 +12,7 @@ import {
 	ToolbarGroup,
 	ToolbarButton,
 	Dropdown,
+	FontSizePicker,
 } from '@wordpress/components';
 import {
 	RichText,
@@ -185,6 +186,29 @@ export default function ButtonEdit(props) {
 		className: containerClass,
 	});
 
+	const buttonSizes = [
+		{
+			name: __('Small', 'vk-blocks'),
+			slug: 'small',
+			size: '12px',
+		},
+		{
+			name: __('Normal', 'vk-blocks'),
+			slug: 'normal',
+			size: '16px',
+		},
+		{
+			name: __('Big', 'vk-blocks'),
+			slug: 'big',
+			size: '18px',
+		},
+		{
+			name: __('Extra big', 'vk-blocks'),
+			slug: 'extra-big',
+			size: '21px',
+		},
+	];
+
 	return (
 		<>
 			<BlockControls>
@@ -306,7 +330,18 @@ export default function ButtonEdit(props) {
 							{__('Small', 'vk-blocks')}
 						</Button>
 					</ButtonGroup>
-
+					<FontSizePicker
+						fontSizes={buttonSizes}
+						value={buttonSize}
+						onChange={(value) => {
+							if (value) {
+								setAttributes({ buttonSize: value });
+							} else if (buttonSize.match(/\d/)) {
+								// reset font size
+								setAttributes({ buttonSize: 'md' });
+							}
+						}}
+					/>
 					{!isInnerButton && (
 						<>
 							<h4 className={`mt-0 mb-2`}>

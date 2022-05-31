@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Slider(Pro) ] Add .alignfull because .vk_width-full is obsolete
+
 = 1.36.1 =
 [ Bug fix ] Fix active pro version
 

@@ -17,6 +17,7 @@ import save1_18_6 from './1.18.6/save';
 import save1_29_2 from './1.29.2/save';
 import save1_31_0 from './1.31.0/save';
 import save1_35_0 from './1.35.0/save';
+import save1_36_1 from './1.36.1/save';
 
 const blockAttributes = {
 	content: {
@@ -138,7 +139,19 @@ const blockAttributes8 = {
 	}
 }
 
+const blockAttributes9 = {
+	...blockAttributes8,
+	"outerGap": {
+		'type': 'string',
+		'outerGap': null
+	}
+}
+
 export const deprecated = [
+	{
+		attributes: blockAttributes9,
+		save: save1_36_1,
+	},
 	{
 		attributes: blockAttributes8,
 		save: save1_35_0,

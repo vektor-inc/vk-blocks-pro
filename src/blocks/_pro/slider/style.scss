@@ -64,14 +64,6 @@
 	}
 }
 
-// ↓ これ要る？
-.swiper-slide {
-	font-size: 18px;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-}
-
 //paginationの親枠
 .swiper-container-horizontal>.swiper-pagination-bullets{
 	padding-left:3.2rem;

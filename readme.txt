@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Button ] Add custom size option
+
 = 1.36.1 =
 [ Bug fix ] Fix active pro version
 

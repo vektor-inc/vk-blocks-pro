@@ -27,6 +27,7 @@ import * as slider from './_pro/slider';
 import * as sliderItem from './_pro/slider-item';
 import * as step from './_pro/step';
 import * as stepItem from './_pro/step-item';
+import * as taxonomy from './_pro/taxonomy';
 import * as tableofContentsNew from './_pro/table-of-contents-new';
 import * as timeline from './_pro/timeline';
 import * as timelineItem from './_pro/timeline-item';
@@ -59,6 +60,7 @@ const vkblocksPro = [
 	slider,
 	sliderItem,
 	tableofContentsNew,
+	taxonomy,
 	timeline,
 	timelineItem,
 ];

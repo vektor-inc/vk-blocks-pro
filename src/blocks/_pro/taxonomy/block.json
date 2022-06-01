@@ -1,0 +1,29 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/taxonomy",
+	"category": "vk-blocks-cat",
+	"title": "Taxonomy",
+	"description": "Display Taxnomy List Pulldown",
+	"textdomain": "vk-blocks",
+	"attributes": {
+		"blockLabel": {
+			"type": "string",
+			"default": ""
+		},
+		"isSelectedTaxonomy": {
+			"type": "string",
+			"default": "category"
+		},
+		"hideIfEmpty": {
+			"type": "string",
+			"default": false
+		},
+		"outerClassName": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"className": true
+	}
+}

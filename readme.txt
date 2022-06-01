@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Slider ( Pro ) ] Add compatibility process.
 [ Bug fix ][ Heading design ] Fix plain design text-align
 
 = 1.36.1 =

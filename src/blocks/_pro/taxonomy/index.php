@@ -73,7 +73,7 @@ function vk_blocks_register_block_taxonomy() {
 						'type'    => 'boolean',
 						'default' => false,
 					),
-					'className'     => array(
+					'className'          => array(
 						'type'    => 'string',
 						'default' => '',
 					),

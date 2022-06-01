@@ -15,10 +15,10 @@
 			"default": "category"
 		},
 		"hideIfEmpty": {
-			"type": "string",
+			"type": "boolean",
 			"default": false
 		},
-		"outerClassName": {
+		"className": {
 			"type": "string",
 			"default": ""
 		}

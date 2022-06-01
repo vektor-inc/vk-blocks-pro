@@ -62,6 +62,7 @@ class VK_Blocks_Block_Loader {
 		array( 'name' => 'slider-item',           'is_pro' =>  true  ),
 		array( 'name' => 'step',                  'is_pro' =>  true  ),
 		array( 'name' => 'step-item',             'is_pro' =>  true  ),
+		array( 'name' => 'taxonomy',             'is_pro' =>  true  ),
 		array( 'name' => 'table-of-contents-new', 'is_pro' =>  true  ),
 		array( 'name' => 'timeline',              'is_pro' =>  true  ),
 		array( 'name' => 'timeline-item',         'is_pro' =>  true  )

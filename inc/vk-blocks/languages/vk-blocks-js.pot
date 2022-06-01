@@ -1095,6 +1095,30 @@ msgstr ""
 msgid "CLOSE"
 msgstr ""
 
+#: src/blocks/_pro/taxonomy/edit.js:105
+msgid "Hide if term has no posts"
+msgstr ""
+
+#: src/blocks/_pro/taxonomy/edit.js:49
+msgid "This block will not be displayed because no taxonomy is selected."
+msgstr ""
+
+#: src/blocks/_pro/taxonomy/edit.js:62
+msgid "This block will not be displayed because this taxonomy has no term."
+msgstr ""
+
+#: src/blocks/_pro/taxonomy/edit.js:79
+msgid "Taxonomy Block Option"
+msgstr ""
+
+#: src/blocks/_pro/taxonomy/edit.js:84
+msgid "Label of This Block"
+msgstr ""
+
+#: src/blocks/_pro/taxonomy/edit.js:93
+msgid "Taxonomy"
+msgstr ""
+
 #: src/blocks/_pro/timeline-item/edit.js:62
 msgid "label"
 msgstr ""

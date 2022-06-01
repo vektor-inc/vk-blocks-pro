@@ -8,10 +8,9 @@ import {
 } from '@wordpress/components';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import ServerSideRender from '@wordpress/server-side-render';
-import { useEffect } from '@wordpress/element';
 
 export default function TaxonomyEdit(props) {
-	const { attributes, setAttributes, className } = props;
+	const { attributes, setAttributes } = props;
 
 	const { blockLabel, isSelectedTaxonomy, hideIfEmpty } = attributes;
 
@@ -70,15 +69,8 @@ export default function TaxonomyEdit(props) {
 	}
 
 	const blockProps = useBlockProps({
-		className: `vk_taxonomy`,
+		className: `vk_taxonomy vk_taxonomy-edit-wrap`,
 	});
-
-	// コンソールエラー回避のため useEffect を使用（実行タイミングの問題）
-	useEffect(() => {
-		setAttributes({
-			outerClassName: blockProps.className + ' ' + className,
-		});
-	}, [className]);
 
 	return (
 		<>

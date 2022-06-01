@@ -14,7 +14,7 @@ document.defaultView.addEventListener('load', function () {
 			if (attributes.blockId !== undefined) {
 				sliderId = attributes.blockId;
 			} else if (attributes.clientId !== undefined) {
-			// 1.36.0 より古い状態で保存されてる場合の互換処理
+				// 1.36.0 より古い状態で保存されてる場合の互換処理
 				sliderId = attributes.clientId;
 			}
 

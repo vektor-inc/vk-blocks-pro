@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Heading design ] Fix plain design text-align
+
 = 1.36.1 =
 [ Bug fix ] Fix active pro version
 

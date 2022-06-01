@@ -10,9 +10,15 @@ document.defaultView.addEventListener('load', function () {
 			const attributes = JSON.parse(
 				sliderNode.getAttribute('data-vkb-slider')
 			);
+			let sliderId = '';
+			if (attributes.blockId !== undefined) {
+				sliderId = attributes.blockId;
+			} else if (attributes.clientId !== undefined) {
+				sliderId = attributes.clientId;
+			}
 
 			let SwiperSetting = `
-			var swiper${index} = new Swiper ('.vk_slider_${attributes.blockId}', {
+			var swiper${index} = new Swiper ('.vk_slider_${sliderId}', {
 			`;
 
 			if (attributes.autoPlay) {

@@ -65,6 +65,9 @@ $color_key: #337ab7;
 			&[class*=has-background]{
 				padding: var(--vk-heading-has-background-padding);
 			}
+			&:not(.has-text-align-center,.has-text-align-right){
+				text-align: left;
+			}
 		}
 
 		// &-speech_balloon_fill {

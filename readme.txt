@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Add Block ] Add taxonomy block.
+
 = 1.36.1 =
 [ Bug fix ] Fix active pro version
 

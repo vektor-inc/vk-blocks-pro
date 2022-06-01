@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Slider ( Pro ) ] Add compatibility process.
+
 = 1.36.1 =
 [ Bug fix ] Fix active pro version
 

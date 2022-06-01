@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
 Tested up to: 6.0.0
-Stable tag: 1.36.1.5
+Stable tag: 1.36.2.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+= 1.36.2 =
+[ Specification Change ] allow iframe on post list filter 
 [ Bug Fix ][ Slider ( Pro ) ] Add compatibility process.
 [ Bug fix ][ Heading design ] Fix plain design text-align
 

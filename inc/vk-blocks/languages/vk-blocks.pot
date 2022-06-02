@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.36.1.5\n"
+"Project-Id-Version: VK Blocks Pro 1.36.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-05-31T16:50:32+00:00\n"
+"POT-Creation-Date: 2022-06-02T06:54:58+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks\n"
@@ -1830,7 +1830,7 @@ msgid "Card (Image Round)"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:26
-#: inc/vk-components/package/class-vk-component-posts.php:739
+#: inc/vk-components/package/class-vk-component-posts.php:747
 msgid "Card"
 msgstr ""
 
@@ -1847,7 +1847,7 @@ msgid "Card (Horizontal)"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:42
-#: inc/vk-components/package/class-vk-component-posts.php:755
+#: inc/vk-components/package/class-vk-component-posts.php:763
 msgid "Media"
 msgstr ""
 
@@ -2570,19 +2570,19 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: inc/vk-components/package/class-vk-component-posts.php:743
+#: inc/vk-components/package/class-vk-component-posts.php:751
 msgid "Card Noborder"
 msgstr ""
 
-#: inc/vk-components/package/class-vk-component-posts.php:747
+#: inc/vk-components/package/class-vk-component-posts.php:755
 msgid "Card Intext"
 msgstr ""
 
-#: inc/vk-components/package/class-vk-component-posts.php:751
+#: inc/vk-components/package/class-vk-component-posts.php:759
 msgid "Card Horizontal"
 msgstr ""
 
-#: inc/vk-components/package/class-vk-component-posts.php:759
+#: inc/vk-components/package/class-vk-component-posts.php:767
 msgctxt "post list type"
 msgid "Text 1 Column"
 msgstr ""

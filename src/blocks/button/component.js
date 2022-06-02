@@ -78,9 +78,8 @@ export class VKBButton extends Component {
 			aStyle = {
 				fontSize: `${buttonSize}`,
 			};
-		}
-		{
-			aClass += ` btn-${buttonSize}`;
+		} else {
+			aClass = `${aClass} btn-${buttonSize}`;
 		}
 
 		if (buttonAlign === 'block') {

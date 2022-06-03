@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ][ Timeline Item] add padding-bottom setting.
+
 = 1.36.2 =
 [ Specification Change ] allow iframe on post list filter 
 [ Bug Fix ][ Slider ( Pro ) ] Add compatibility process.

@@ -4,15 +4,7 @@ import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function save(props) {
 	const { attributes } = props;
-	let {
-		color,
-		style,
-		styleLine,
-		dotCaption,
-		dotNum,
-		faIcon,
-		outerPaddingBottom,
-	} = attributes;
+	let { color, style, styleLine, dotCaption, dotNum, faIcon } = attributes;
 
 	const containerClass = ' vk_step_item';
 	let styleClass = '';
@@ -54,7 +46,6 @@ export default function save(props) {
 
 	const blockProps = useBlockProps.save({
 		className: `${containerClass} ${styleLineClass}`,
-		style: { paddingBottom: outerPaddingBottom },
 	});
 	return (
 		<div {...blockProps}>

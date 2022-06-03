@@ -12,7 +12,7 @@ import {
 	ToolbarGroup,
 	ToolbarButton,
 	Dropdown,
-	FontSizePicker,
+	__experimentalUnitControl as UnitControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
 } from '@wordpress/components';
 import {
 	RichText,
@@ -188,26 +188,30 @@ export default function ButtonEdit(props) {
 
 	const buttonSizes = [
 		{
-			name: __('Small', 'vk-blocks'),
-			slug: 'small',
-			size: '12px',
+			slug: 'sm',
+			size: '14px',
 		},
 		{
-			name: __('Normal', 'vk-blocks'),
-			slug: 'normal',
+			slug: 'md',
 			size: '16px',
 		},
 		{
-			name: __('Big', 'vk-blocks'),
-			slug: 'big',
-			size: '18px',
-		},
-		{
-			name: __('Extra big', 'vk-blocks'),
-			slug: 'extra-big',
-			size: '21px',
+			slug: 'lg',
+			size: '20px',
 		},
 	];
+
+	let buttonSizeCustom = buttonSize;
+	useEffect(() => {
+		buttonSizes.forEach(function (item) {
+			if (buttonSizeCustom === item.slug) {
+				buttonSizeCustom = parseInt(item.size);
+			}
+		})
+
+	}, [buttonSize]);
+
+//	let buttonSizeUnit = "px";
 
 	return (
 		<>
@@ -330,17 +334,13 @@ export default function ButtonEdit(props) {
 							{__('Small', 'vk-blocks')}
 						</Button>
 					</ButtonGroup>
-					<FontSizePicker
-						fontSizes={buttonSizes}
+					<UnitControl
+						className={`mb-3`}
+						label={__('Button Size:', 'vk-blocks')}
 						value={buttonSize}
-						onChange={(value) => {
-							if (value) {
-								setAttributes({ buttonSize: value });
-							} else if (buttonSize.match(/\d/)) {
-								// reset font size
-								setAttributes({ buttonSize: 'md' });
-							}
-						}}
+						onChange={(value) =>
+							setAttributes({ buttonSize: value ? value : 'md' })
+						}
 					/>
 					{!isInnerButton && (
 						<>

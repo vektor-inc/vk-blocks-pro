@@ -733,7 +733,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:541
 #: src/blocks/_pro/step-item/edit.js:131
-#: src/blocks/_pro/timeline-item/edit.js:104
+#: src/blocks/_pro/timeline-item/edit.js:106
 #: src/blocks/balloon/edit.js:543
 #: src/blocks/staff/edit.js:177
 msgid "None"
@@ -741,7 +741,7 @@ msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:545
 #: src/blocks/_pro/step-item/edit.js:109
-#: src/blocks/_pro/timeline-item/edit.js:86
+#: src/blocks/_pro/timeline-item/edit.js:88
 #: src/blocks/pr-content/edit.js:144
 #: src/extensions/core/group/style.js:102
 msgid "Solid"
@@ -993,7 +993,7 @@ msgstr ""
 #: src/blocks/_pro/slider/edit.js:353
 #: src/blocks/_pro/step-item/edit.js:127
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
-#: src/blocks/_pro/timeline-item/edit.js:100
+#: src/blocks/_pro/timeline-item/edit.js:102
 #: src/blocks/heading/edit.js:264
 #: src/blocks/staff/edit.js:173
 #: src/extensions/core/heading/style.js:30
@@ -1020,7 +1020,7 @@ msgid "Bottom on Mobile device"
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:113
-#: src/blocks/_pro/timeline-item/edit.js:82
+#: src/blocks/_pro/timeline-item/edit.js:84
 msgid "Outlined"
 msgstr ""
 
@@ -1033,12 +1033,12 @@ msgid "If Font Awesome tags entered, it will overrides the number."
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:92
-#: src/blocks/_pro/timeline-item/edit.js:66
+#: src/blocks/_pro/timeline-item/edit.js:68
 msgid "Ex,6:00AM"
 msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:96
-#: src/blocks/_pro/timeline-item/edit.js:69
+#: src/blocks/_pro/timeline-item/edit.js:71
 #: src/blocks/border-box/edit.js:204
 #: src/blocks/button/edit.js:610
 #: src/blocks/icon/edit.js:261
@@ -1048,7 +1048,7 @@ msgstr ""
 
 #: src/blocks/_pro/step-item/edit.js:99
 #: src/blocks/_pro/table-of-contents-new/edit.js:135
-#: src/blocks/_pro/timeline-item/edit.js:72
+#: src/blocks/_pro/timeline-item/edit.js:74
 #: src/blocks/icon-outer/edit.js:196
 #: src/blocks/icon/edit.js:187
 msgid "Style"
@@ -1095,7 +1095,7 @@ msgstr ""
 msgid "CLOSE"
 msgstr ""
 
-#: src/blocks/_pro/timeline-item/edit.js:62
+#: src/blocks/_pro/timeline-item/edit.js:64
 msgid "label"
 msgstr ""
 

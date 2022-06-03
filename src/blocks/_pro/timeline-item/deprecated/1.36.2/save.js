@@ -41,9 +41,7 @@ export default function save({ attributes }) {
 	});
 	return (
 		<div {...blockProps}>
-			{label !== undefined && label !== '' && (
-				<div className={'vk_timeline_item_caption'}>{label}</div>
-			)}
+			<div className={'vk_timeline_item_caption'}>{label}</div>
 			<div className={'vk_timeline_item_contentnpm'}>
 				<InnerBlocks.Content />
 			</div>

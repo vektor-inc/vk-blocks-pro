@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ][ Timeline ]  if no label, the outer html will not be displayed.
+
 = 1.36.2 =
 [ Specification Change ] allow iframe on post list filter 
 [ Bug Fix ][ Slider ( Pro ) ] Add compatibility process.

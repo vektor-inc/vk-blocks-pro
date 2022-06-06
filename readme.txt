@@ -67,6 +67,7 @@ e.g.
 [ Specification Change ][ Step Item ] add padding-bottom setting.
 [ Specification Change ][ Timeline ] If no label, the outer html will not be displayed.
 [ Specification Change ][ Timeline Item ] add padding-bottom setting.
+[ Bug fix ][ Tree Shaking ] cope with not(***,***)
 [ Bug fix ][ Heading design ] Fix text-align
 
 = 1.36.2 =

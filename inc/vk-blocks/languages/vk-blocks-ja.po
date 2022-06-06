@@ -1307,7 +1307,7 @@ msgid "Small"
 msgstr "小"
 
 #: src/blocks/button/edit.js:348
-msgid "Custom Size:"
+msgid "Custom Size"
 msgstr "カスタムサイズ"
 
 #: src/blocks/button/edit.js:313

@@ -74,11 +74,7 @@ export class VKBButton extends Component {
 			}
 		}
 
-		if (buttonSize.match(/\d/)) {
-			aStyle = {
-				fontSize: `${buttonSize}`,
-			};
-		} else {
+		if (!buttonSize.match(/\d/)) {
 			aClass = `${aClass} btn-${buttonSize}`;
 		}
 

@@ -25,10 +25,11 @@ export default function save(props) {
 	} = attributes;
 
 	let containerClass = '';
-	// カスタムカラーの場合 またはアウターにギャップが指定されれいる場合
+	// カスタムカラーの場合 またはアウターにギャップ、またはカスタムサイズが指定されれいる場合
 	if (
 		(buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) ||
-		outerGap
+		outerGap ||
+		buttonSize.match(/\d/)
 	) {
 		containerClass = `vk_button vk_button-color-custom vk_button-${blockId}`;
 	} else {

@@ -2,7 +2,7 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function save({ attributes }) {
-	const { label, color, style, styleLine } = attributes;
+	const { label, color, style, styleLine, outerPaddingBottom } = attributes;
 	const containerClass = ' vk_timeline_item';
 	let styleClass = '';
 	let inlineStyle = {};
@@ -38,6 +38,7 @@ export default function save({ attributes }) {
 
 	const blockProps = useBlockProps.save({
 		className: containerClass + styleLineClass,
+		style: { paddingBottom: outerPaddingBottom },
 	});
 	return (
 		<div {...blockProps}>

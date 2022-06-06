@@ -28,6 +28,17 @@ const blockAttributes2 = {
 	},
 }
 
+// 1.36.2 で outerPaddingBottom を追加
+/*
+const blockAttributes3 = {
+	...blockAttributes2,
+	outerPaddingBottom: {
+		type: 'string',
+		default: null
+	}
+}
+*/
+
 const deprecated = [
 	{
 		attributes: blockAttributes2,

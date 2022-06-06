@@ -5,6 +5,7 @@ import {
 	BaseControl,
 	SelectControl,
 	TextControl,
+	__experimentalUnitControl as UnitControl,
 } from '@wordpress/components';
 import {
 	InspectorControls,
@@ -17,7 +18,15 @@ import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palett
 
 export default function StepItemEdit(props) {
 	const { attributes, setAttributes } = props;
-	let { color, style, styleLine, dotCaption, dotNum, faIcon } = attributes;
+	let {
+		color,
+		style,
+		styleLine,
+		dotCaption,
+		dotNum,
+		faIcon,
+		outerPaddingBottom,
+	} = attributes;
 
 	const containerClass = ' vk_step_item';
 	let styleClass = '';
@@ -64,6 +73,7 @@ export default function StepItemEdit(props) {
 
 	const blockProps = useBlockProps({
 		className: `${containerClass} ${styleLineClass}`,
+		style: { paddingBottom: outerPaddingBottom },
 	});
 
 	return (
@@ -131,6 +141,19 @@ export default function StepItemEdit(props) {
 									label: __('None', 'vk-blocks'),
 								},
 							]}
+						/>
+					</BaseControl>
+					<BaseControl
+						id="outer-padding-bottom"
+						label="Outer Padding Bottom"
+					>
+						<UnitControl
+							value={outerPaddingBottom}
+							onChange={(value) =>
+								setAttributes({
+									outerPaddingBottom: value ? value : null,
+								})
+							}
 						/>
 					</BaseControl>
 				</PanelBody>

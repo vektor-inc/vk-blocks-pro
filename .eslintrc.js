@@ -4,5 +4,6 @@ module.exports = {
 		'import/no-unresolved': 'off',
 		'import/no-extraneous-dependencies': 'off',
 		camelcase: 'off',
+		'@wordpress/no-unsafe-wp-apis': 'off',
 	},
 };

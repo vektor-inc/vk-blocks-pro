@@ -64,9 +64,10 @@ e.g.
 
 == Changelog ==
 
-[ Specification Change ][ Step Item ] add padding-bottom setting.
+= 1.37.0 =
+[ Improvement ][ Step Item ] add padding-bottom setting.
+[ Improvement ][ Timeline Item ] add padding-bottom setting.
 [ Specification Change ][ Timeline ] If no label, the outer html will not be displayed.
-[ Specification Change ][ Timeline Item ] add padding-bottom setting.
 [ Bug fix ][ Tree Shaking ] cope with not(***,***)
 [ Bug fix ][ Heading design ] Fix text-align
 

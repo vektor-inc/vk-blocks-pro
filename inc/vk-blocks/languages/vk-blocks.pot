@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-06-06T15:08:58+00:00\n"
+"POT-Creation-Date: 2022-06-06T15:18:51+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 "X-Domain: vk-blocks\n"
@@ -2710,74 +2710,74 @@ msgid "Text 1 Column"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:47
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:48
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:47
 msgid "CSS Optimize ( Speed up ) Settings"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:66
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:65
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:66
 msgid "Tree shaking"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:87
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:85
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:87
 msgid "Tree shaking activation settings"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:91
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:89
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:91
 msgid "Output only the main CSS of the page inline"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:93
 #: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:159
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:91
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:155
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:93
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:159
 msgid "Nothing to do"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:94
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:92
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:94
 msgid "Active Tree shaking (Recomend)"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:111
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:109
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:111
 msgid "Exclude class of Tree shaking"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:115
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:113
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:115
 msgid "If you choose \"Active Tree shaking\" that delete the useless css.If you using active css class that please fill in class name. Ex) btn-active,slide-active,scrolled"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:132
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:129
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:132
 msgid "Preload CSS"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:153
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:149
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:153
 msgid "Preload CSS activation settings"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:156
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:152
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:156
 msgid "Preload css except for critical css"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:160
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:156
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:160
 msgid "Active Preload CSS (Recomend)"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:177
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:173
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:177
 msgid "Exclude class of Preload CSS"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:181
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:177
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:181
 msgid "If you choose \"Active Preload CSS\" that css load timing was changed.If you have any do not want to preload css file that please fill in handle(id) name. Ex) pluginname_a-style,pluginname_b-css"
 msgstr ""
 

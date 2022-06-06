@@ -186,6 +186,7 @@ export default function ButtonEdit(props) {
 		className: containerClass,
 	});
 
+	//  font-size カスタムサイズをスラッグに変換
 	const buttonSizes = [
 		{
 			slug: 'sm',
@@ -200,8 +201,6 @@ export default function ButtonEdit(props) {
 			size: '20px',
 		},
 	];
-
-	// 選択した font-size を格納
 	let buttonSizeCustom = buttonSize;
 	buttonSizes.forEach(function (item) {
 		if (buttonSize === item.slug) {
@@ -211,7 +210,7 @@ export default function ButtonEdit(props) {
 
 	useEffect(() => {
 		buttonSizes.forEach(function (item) {
-			if (buttonSizeCustom === item.size) {
+			if (item.size === buttonSizeCustom) {
 				setAttributes({ buttonSize: item.slug });
 			}
 		});
@@ -346,10 +345,10 @@ export default function ButtonEdit(props) {
 					</ButtonGroup>
 					<UnitControl
 						className={`mb-3`}
-						label={__('Custom Size:', 'vk-blocks')}
+						label={__('Custom Size', 'vk-blocks')}
 						value={buttonSizeCustom}
 						onChange={(value) => {
-							buttonSizeCustom = value ? value : '14px';
+							buttonSizeCustom = value ? value : '16px';
 							setAttributes({ buttonSize: value });
 						}}
 						units={sizeUnits}

@@ -201,17 +201,27 @@ export default function ButtonEdit(props) {
 		},
 	];
 
+	// 選択した font-size を格納
 	let buttonSizeCustom = buttonSize;
+	buttonSizes.forEach(function (item) {
+		if (buttonSize === item.slug) {
+			buttonSizeCustom = item.size;
+		}
+	});
+
 	useEffect(() => {
 		buttonSizes.forEach(function (item) {
-			if (buttonSizeCustom === item.slug) {
-				buttonSizeCustom = parseInt(item.size);
+			if (buttonSizeCustom === item.size) {
+				setAttributes({ buttonSize: item.slug });
 			}
-		})
+		});
+	}, [buttonSizeCustom]);
 
-	}, [buttonSize]);
-
-//	let buttonSizeUnit = "px";
+	const sizeUnits = [
+		{ value: 'px', label: 'px', default: 16 },
+		{ value: 'em', label: 'em', default: 1 },
+		{ value: 'rem', label: 'rem', default: 1 },
+	];
 
 	return (
 		<>
@@ -336,11 +346,13 @@ export default function ButtonEdit(props) {
 					</ButtonGroup>
 					<UnitControl
 						className={`mb-3`}
-						label={__('Button Size:', 'vk-blocks')}
-						value={buttonSize}
-						onChange={(value) =>
-							setAttributes({ buttonSize: value ? value : 'md' })
-						}
+						label={__('Custom Size:', 'vk-blocks')}
+						value={buttonSizeCustom}
+						onChange={(value) => {
+							buttonSizeCustom = value ? value : '14px';
+							setAttributes({ buttonSize: value });
+						}}
+						units={sizeUnits}
 					/>
 					{!isInnerButton && (
 						<>

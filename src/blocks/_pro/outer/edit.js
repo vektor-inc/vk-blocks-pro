@@ -24,13 +24,13 @@ import {
 	PanelBody,
 	BaseControl,
 	SelectControl,
-	ButtonGroup,
-	Button,
 } from '@wordpress/components';
 import {
 	InspectorControls,
 	InnerBlocks,
 	useBlockProps,
+	BlockControls,
+	BlockAlignmentToolbar,
 } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
@@ -150,7 +150,9 @@ export default function OuterEdit(props) {
 
 	//幅のクラス切り替え
 	// eslint-disable-next-line prefer-const
-	const classWidth = `vk_outer-width-${outerWidth}`;
+	const classWidth = !!outerWidth
+		? `vk_outer-width-${outerWidth}`
+		: 'vk_outer-width-normal';
 
 	//classBgPositionのクラス切り替え
 	if (bgPosition === 'parallax') {
@@ -246,6 +248,15 @@ export default function OuterEdit(props) {
 
 	return (
 		<>
+			<BlockControls>
+				<BlockAlignmentToolbar
+					value={outerWidth}
+					onChange={(nextWidth) =>
+						setAttributes({ outerWidth: nextWidth })
+					}
+					controls={['full']}
+				/>
+			</BlockControls>
 			<InspectorControls>
 				<PanelBody
 					title={__('Background Setting', 'vk-blocks')}
@@ -355,29 +366,6 @@ export default function OuterEdit(props) {
 				>
 					<p>{__('Width', 'vk-blocks')} </p>
 					<BaseControl>
-						<ButtonGroup className="mb-3">
-							<Button
-								isSmall
-								isPrimary={outerWidth === 'normal'}
-								isSecondary={outerWidth !== 'normal'}
-								onClick={() =>
-									setAttributes({ outerWidth: 'normal' })
-								}
-							>
-								{__('Normal', 'vk-blocks')}
-							</Button>
-							<Button
-								isSmall
-								isPrimary={outerWidth === 'full'}
-								isSecondary={outerWidth !== 'full'}
-								onClick={() =>
-									setAttributes({ outerWidth: 'full' })
-								}
-							>
-								{__('Full Wide', 'vk-blocks')}
-							</Button>
-						</ButtonGroup>
-
 						<RadioControl
 							label={__('Padding (Left and Right)', 'vk-blocks')}
 							selected={padding_left_and_right} //eslint-disable-line camelcase

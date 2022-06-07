@@ -27,10 +27,6 @@
 		"faIcon": {
 			"type": "string",
 			"default": ""
-		},
-		"outerPaddingBottom": {
-			"type": "string",
-			"default": null
 		}
 	},
 	"description": "This element sets the icon, color, and style of the step mark.",

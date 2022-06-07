@@ -538,7 +538,7 @@ msgid "Icon Card Setting"
 msgstr ""
 
 #: src/blocks/_pro/icon-card-item/edit.js:137
-#: src/blocks/_pro/step-item/edit.js:86
+#: src/blocks/_pro/step-item/edit.js:80
 #: src/blocks/border-box/edit.js:240
 #: src/blocks/button/edit.js:692
 #: src/blocks/heading/edit.js:334
@@ -726,16 +726,16 @@ msgid "Border type"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:529
-#: src/blocks/_pro/step-item/edit.js:141
-#: src/blocks/_pro/timeline-item/edit.js:106
+#: src/blocks/_pro/step-item/edit.js:135
+#: src/blocks/_pro/timeline-item/edit.js:104
 #: src/blocks/balloon/edit.js:543
 #: src/blocks/staff/edit.js:177
 msgid "None"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:533
-#: src/blocks/_pro/step-item/edit.js:119
-#: src/blocks/_pro/timeline-item/edit.js:88
+#: src/blocks/_pro/step-item/edit.js:113
+#: src/blocks/_pro/timeline-item/edit.js:86
 #: src/blocks/pr-content/edit.js:144
 #: src/extensions/core/group/style.js:102
 msgid "Solid"
@@ -989,9 +989,9 @@ msgid "Pagination Type"
 msgstr ""
 
 #: src/blocks/_pro/slider/edit.js:353
-#: src/blocks/_pro/step-item/edit.js:137
+#: src/blocks/_pro/step-item/edit.js:131
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
-#: src/blocks/_pro/timeline-item/edit.js:102
+#: src/blocks/_pro/timeline-item/edit.js:100
 #: src/blocks/heading/edit.js:264
 #: src/blocks/staff/edit.js:173
 #: src/extensions/core/heading/style.js:30
@@ -1017,13 +1017,8 @@ msgstr ""
 msgid "Bottom on Mobile device"
 msgstr ""
 
-#: src/blocks/_pro/step-item/edit.js:102
-#: src/blocks/_pro/timeline-item/edit.js:68
-msgid "Ex,6:00AM"
-msgstr ""
-
-#: src/blocks/_pro/step-item/edit.js:106
-#: src/blocks/_pro/timeline-item/edit.js:71
+#: src/blocks/_pro/step-item/edit.js:100
+#: src/blocks/_pro/timeline-item/edit.js:69
 #: src/blocks/border-box/edit.js:204
 #: src/blocks/button/edit.js:610
 #: src/blocks/icon/edit.js:261
@@ -1031,25 +1026,30 @@ msgstr ""
 msgid "Color"
 msgstr ""
 
-#: src/blocks/_pro/step-item/edit.js:109
+#: src/blocks/_pro/step-item/edit.js:103
 #: src/blocks/_pro/table-of-contents-new/edit.js:135
-#: src/blocks/_pro/timeline-item/edit.js:74
+#: src/blocks/_pro/timeline-item/edit.js:72
 #: src/blocks/icon-outer/edit.js:196
 #: src/blocks/icon/edit.js:187
 msgid "Style"
 msgstr ""
 
-#: src/blocks/_pro/step-item/edit.js:123
-#: src/blocks/_pro/timeline-item/edit.js:84
+#: src/blocks/_pro/step-item/edit.js:117
+#: src/blocks/_pro/timeline-item/edit.js:82
 msgid "Outlined"
 msgstr ""
 
-#: src/blocks/_pro/step-item/edit.js:82
+#: src/blocks/_pro/step-item/edit.js:76
 msgid "Step Mark"
 msgstr ""
 
-#: src/blocks/_pro/step-item/edit.js:88
+#: src/blocks/_pro/step-item/edit.js:82
 msgid "If Font Awesome tags entered, it will overrides the number."
+msgstr ""
+
+#: src/blocks/_pro/step-item/edit.js:96
+#: src/blocks/_pro/timeline-item/edit.js:66
+msgid "Ex,6:00AM"
 msgstr ""
 
 #: src/blocks/_pro/step/edit.js:35
@@ -1093,7 +1093,7 @@ msgstr ""
 msgid "CLOSE"
 msgstr ""
 
-#: src/blocks/_pro/timeline-item/edit.js:64
+#: src/blocks/_pro/timeline-item/edit.js:62
 msgid "label"
 msgstr ""
 

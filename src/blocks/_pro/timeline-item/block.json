@@ -18,10 +18,6 @@
 		"styleLine": {
 			"type": "string",
 			"default": "default"
-		},
-		"outerPaddingBottom": {
-			"type": "string",
-			"default": null
 		}
 	},
 	"description": "This element sets the label, color, and style of the timeline.",

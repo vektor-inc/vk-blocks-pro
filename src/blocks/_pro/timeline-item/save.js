@@ -45,7 +45,7 @@ export default function save({ attributes }) {
 			{label !== undefined && label !== '' && (
 				<div className={'vk_timeline_item_caption'}>{label}</div>
 			)}
-			<div className={'vk_timeline_item_contentnpm'}>
+			<div className={'vk_timeline_item_content'}>
 				<InnerBlocks.Content />
 			</div>
 			<div

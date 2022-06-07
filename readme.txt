@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Improvement ] Change the style loaded on the options page to a css file.
+
 = 1.37.0 =
 [ Improvement ][ Step Item ] add padding-bottom setting.
 [ Improvement ][ Timeline Item ] add padding-bottom setting.

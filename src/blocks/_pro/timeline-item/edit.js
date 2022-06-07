@@ -4,7 +4,6 @@ import {
 	BaseControl,
 	SelectControl,
 	TextControl,
-	__experimentalUnitControl as UnitControl,
 } from '@wordpress/components';
 import {
 	InnerBlocks,
@@ -16,7 +15,7 @@ import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palett
 
 export default function TimelineItemEdit(props) {
 	const { attributes, setAttributes } = props;
-	const { label, color, style, styleLine, outerPaddingBottom } = attributes;
+	const { label, color, style, styleLine } = attributes;
 
 	const containerClass = ' vk_timeline_item';
 
@@ -55,7 +54,6 @@ export default function TimelineItemEdit(props) {
 
 	const blockProps = useBlockProps({
 		className: containerClass + styleLineClass,
-		style: { paddingBottom: outerPaddingBottom },
 	});
 
 	return (
@@ -108,26 +106,13 @@ export default function TimelineItemEdit(props) {
 							]}
 						/>
 					</BaseControl>
-					<BaseControl
-						id="outer-padding-bottom"
-						label="Outer Padding Bottom"
-					>
-						<UnitControl
-							value={outerPaddingBottom}
-							onChange={(value) =>
-								setAttributes({
-									outerPaddingBottom: value ? value : null,
-								})
-							}
-						/>
-					</BaseControl>
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
 				{label !== undefined && label !== '' && (
 					<div className={'vk_timeline_item_caption'}>{label}</div>
 				)}
-				<div className={'vk_timeline_item_contentnpm'}>
+				<div className={'vk_timeline_item_content'}>
 					<InnerBlocks template={TEMPLATE} />
 				</div>
 				<div

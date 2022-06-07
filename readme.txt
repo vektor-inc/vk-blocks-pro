@@ -67,8 +67,8 @@ e.g.
 [ Improvement ] Change the style loaded on the options page to a css file.
 
 = 1.37.0 =
-[ Improvement ][ Step Item ] add padding-bottom setting.
-[ Improvement ][ Timeline Item ] add padding-bottom setting.
+[ Specification Change ][ Step Item ] Change padding-bottom to margin-bottom
+[ Specification Change ][ Timeline Item ] Change padding-bottom to margin-bottom
 [ Specification Change ][ Timeline ] If no label, the outer html will not be displayed.
 [ Bug fix ][ Tree Shaking ] cope with not(***,***)
 [ Bug fix ][ Heading design ] Fix text-align

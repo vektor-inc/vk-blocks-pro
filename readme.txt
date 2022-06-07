@@ -65,8 +65,7 @@ e.g.
 == Changelog ==
 
 = 1.37.0 =
-[ Specification Change ][ Step Item ] Change padding-bottom to margin-bottom
-[ Specification Change ][ Timeline Item ] Change padding-bottom to margin-bottom
+[ Specification Change ][ Step Item(Pro) / Timeline Item()Pro ] Change padding-bottom to inner-item last-child margin-bottom
 [ Specification Change ][ Timeline ] If no label, the outer html will not be displayed.
 [ Specification Change ][ Outer ] Move width control to block toolbar.
 [ Specification Change ] Change the style loaded on the options page to a css file.

@@ -109,8 +109,10 @@ export default function TimelineItemEdit(props) {
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
-				<div className={'vk_timeline_item_caption'}>{label}</div>
-				<div className={'vk_timeline_item_contentnpm'}>
+				{label !== undefined && label !== '' && (
+					<div className={'vk_timeline_item_caption'}>{label}</div>
+				)}
+				<div className={'vk_timeline_item_content'}>
 					<InnerBlocks template={TEMPLATE} />
 				</div>
 				<div

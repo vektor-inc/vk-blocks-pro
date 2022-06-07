@@ -13,6 +13,7 @@ import save0_60_0 from './0.60.0/save';
 import save1_0_13 from './1.0.13/save';
 import save1_26_0 from './1.26.0/save';
 import save1_34_1 from './1.34.1/save';
+import save1_36_2 from './1.36.2/save';
 
 const blockAttributes = {
 	bgColor: {
@@ -125,7 +126,7 @@ const blockAttributes4 = {
 	},
 };
 
-/*
+
 // 1.34.1 から attributes を変更
 const blockAttributes5 = {
 	...blockAttributes4,
@@ -136,9 +137,13 @@ const blockAttributes5 = {
 		type: 'string',
 	},
 };
-*/
+
 const deprecated = [
 	//ブロックテンプレート用のdeprecated
+	{
+		attributes: blockAttributes5,
+		save: save1_36_2,
+	},
 	{
 		attributes: blockAttributes4,
 		save: save1_34_1,

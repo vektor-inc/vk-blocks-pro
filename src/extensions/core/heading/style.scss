@@ -49,6 +49,17 @@ $color_key: #337ab7;
 		h3.is-style-vk-heading:after {
 			border-bottom: none !important;
 		}
+		&-plain,
+		&-background_fill_lightgray,
+		&-double_black,
+		&-double_bottomborder_black,
+		&-solid_black,
+		&-solid_bottomborder_black,
+		&-dotted_bottomborder_black{
+			&:not(.has-text-align-center,.has-text-align-right){
+				text-align: left;
+			}
+		}
 		&-plain {
 			@include title_unset;
 
@@ -65,9 +76,7 @@ $color_key: #337ab7;
 			&[class*=has-background]{
 				padding: var(--vk-heading-has-background-padding);
 			}
-			&:not(.has-text-align-center,.has-text-align-right){
-				text-align: left;
-			}
+
 		}
 
 		// &-speech_balloon_fill {

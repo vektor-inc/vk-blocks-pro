@@ -64,6 +64,15 @@ e.g.
 
 == Changelog ==
 
+= 1.37.0 =
+[ Specification Change ][ Step Item ] Change padding-bottom to margin-bottom
+[ Specification Change ][ Timeline Item ] Change padding-bottom to margin-bottom
+[ Specification Change ][ Timeline ] If no label, the outer html will not be displayed.
+[ Specification Change ][ Outer ] Move width control to block toolbar.
+[ Specification Change ] Change the style loaded on the options page to a css file.
+[ Bug fix ][ Tree Shaking ] cope with not(***,***)
+[ Bug fix ][ Heading design ] Fix text-align
+
 = 1.36.2 =
 [ Specification Change ] allow iframe on post list filter 
 [ Bug Fix ][ Slider ( Pro ) ] Add compatibility process.

@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ][ Outer ] Move width control to block toolbar.
+
 = 1.37.0 =
 [ Improvement ][ Step Item ] add padding-bottom setting.
 [ Improvement ][ Timeline Item ] add padding-bottom setting.

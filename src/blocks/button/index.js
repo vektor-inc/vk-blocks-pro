@@ -137,12 +137,13 @@ const generateInlineGapCss = (attributes, isSave) => {
 	return inlineCss;
 };
 
-const generateInlineCustomsizeCss = (attributes) => {
+const generateInlineCustomsizeCss = (attributes, isSave) => {
 	const { buttonSize, blockId } = attributes;
 	let inlineCss = '';
+	const propaty = isSave ? '.vk_button' : '.editor-styles-wrapper .vk_button';
 
 	if (buttonSize.match(/\d/)) {
-		inlineCss = ` .vk_button.vk_button-${blockId} .vk_button_link.btn, .editor-styles-wrapper .vk_button.vk_button-${blockId} .vk_button_link.btn {
+		inlineCss = `${propaty}.vk_button-${blockId} .vk_button_link.btn {
 			font-size: ${buttonSize};
 			}`;
 	}
@@ -156,7 +157,10 @@ const VKButtonInlineEditorCss = createHigherOrderComponent((BlockEdit) => {
 		if ('vk-blocks/button' === props.name) {
 			const cssTag = generateInlineCss(attributes);
 			const cssEditor = generateInlineGapCss(attributes, false);
-			const cssCustomSize = generateInlineCustomsizeCss(attributes);
+			const cssCustomSize = generateInlineCustomsizeCss(
+				attributes,
+				false
+			);
 			if (cssTag !== '' || cssEditor !== '' || cssCustomSize !== '') {
 				return (
 					<>
@@ -187,7 +191,7 @@ const VKButtonInlineCss = (el, type, attributes) => {
 			// カスタムクラスを追加する処理が失敗する[
 			const cssTag = generateInlineCss(attributes);
 			const cssEditor = generateInlineGapCss(attributes, true);
-			const cssCustomSize = generateInlineCustomsizeCss(attributes);
+			const cssCustomSize = generateInlineCustomsizeCss(attributes, true);
 			if (cssTag !== '' || cssEditor !== '' || cssCustomSize !== '') {
 				return (
 					<>

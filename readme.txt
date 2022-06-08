@@ -63,12 +63,16 @@ e.g.
 
 
 == Changelog ==
-[ Specification Change ][ Step Item ] add padding-bottom setting.
-[ Specification Change ][ Timeline Item ] add padding-bottom setting.
-
-[ Specification Change ][ Timeline ]  if no label, the outer html will not be displayed.
 
 [ Add Function ][ Button ] Add custom size option
+
+= 1.37.0 =
+[ Specification Change ][ Step Item(Pro) / Timeline Item()Pro ] Change padding-bottom to inner-item last-child margin-bottom
+[ Specification Change ][ Timeline ] If no label, the outer html will not be displayed.
+[ Specification Change ][ Outer ] Move width control to block toolbar.
+[ Specification Change ] Change the style loaded on the options page to a css file.
+[ Bug fix ][ Tree Shaking ] cope with not(***,***)
+[ Bug fix ][ Heading design ] Fix text-align
 
 = 1.36.2 =
 [ Specification Change ] allow iframe on post list filter 

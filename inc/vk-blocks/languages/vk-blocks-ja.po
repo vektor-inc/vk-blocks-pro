@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2022-05-27T08:34:23+00:00\n"
-"PO-Revision-Date: 2022-05-27 17:50+0900\n"
+"POT-Creation-Date: 2022-06-07T06:57:58+00:00\n"
+"PO-Revision-Date: 2022-06-07 16:00+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -450,7 +450,7 @@ msgstr "非表示"
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:154
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:119
-#: inc/vk-blocks/admin/admin-balloon.php:119
+#: inc/vk-blocks/admin/admin-balloon.php:54
 msgid "Delete"
 msgstr "削除"
 
@@ -547,7 +547,7 @@ msgid "Icon Card Setting"
 msgstr "アイコンカード設定"
 
 #: src/blocks/_pro/icon-card-item/edit.js:137
-#: src/blocks/_pro/step-item/edit.js:76 src/blocks/border-box/edit.js:240
+#: src/blocks/_pro/step-item/edit.js:80 src/blocks/border-box/edit.js:240
 #: src/blocks/button/edit.js:692 src/blocks/heading/edit.js:334
 #: src/blocks/icon/edit.js:241 src/blocks/pr-content/edit.js:197
 #: src/utils/font-awesome-new.js:56
@@ -724,13 +724,13 @@ msgstr "枠線は区切りレベルを適用すると表示されなくなりま
 msgid "Border type"
 msgstr "枠線の種類"
 
-#: src/blocks/_pro/outer/edit.js:541 src/blocks/_pro/step-item/edit.js:131
+#: src/blocks/_pro/outer/edit.js:541 src/blocks/_pro/step-item/edit.js:135
 #: src/blocks/_pro/timeline-item/edit.js:104 src/blocks/balloon/edit.js:543
 #: src/blocks/staff/edit.js:177
 msgid "None"
 msgstr "なし"
 
-#: src/blocks/_pro/outer/edit.js:545 src/blocks/_pro/step-item/edit.js:109
+#: src/blocks/_pro/outer/edit.js:545 src/blocks/_pro/step-item/edit.js:113
 #: src/blocks/_pro/timeline-item/edit.js:86 src/blocks/pr-content/edit.js:144
 #: src/extensions/core/group/style.js:102
 msgid "Solid"
@@ -781,7 +781,7 @@ msgstr "コンテナ内側のスペース設定"
 #: src/blocks/button/edit.js:376
 #: src/components/advanced-viewport-control/index.js:39
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:62
-#: inc/vk-blocks/admin/admin-margin.php:62
+#: inc/vk-blocks/admin/admin-margin.php:55
 msgid "Mobile"
 msgstr "モバイル"
 
@@ -789,7 +789,7 @@ msgstr "モバイル"
 #: src/blocks/button/edit.js:441
 #: src/components/advanced-viewport-control/index.js:31
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:61
-#: inc/vk-blocks/admin/admin-margin.php:61
+#: inc/vk-blocks/admin/admin-margin.php:54
 msgid "Tablet"
 msgstr "タブレット"
 
@@ -797,7 +797,7 @@ msgstr "タブレット"
 #: src/blocks/button/edit.js:506
 #: src/components/advanced-viewport-control/index.js:25
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:60
-#: inc/vk-blocks/admin/admin-margin.php:60
+#: inc/vk-blocks/admin/admin-margin.php:53
 msgid "PC"
 msgstr "PC"
 
@@ -980,7 +980,7 @@ msgstr "切り替え時間"
 msgid "Pagination Type"
 msgstr "ページネーションの種類"
 
-#: src/blocks/_pro/slider/edit.js:353 src/blocks/_pro/step-item/edit.js:127
+#: src/blocks/_pro/slider/edit.js:353 src/blocks/_pro/step-item/edit.js:131
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
 #: src/blocks/_pro/timeline-item/edit.js:100 src/blocks/heading/edit.js:264
 #: src/blocks/staff/edit.js:173 src/extensions/core/heading/style.js:30
@@ -1005,25 +1005,7 @@ msgstr "中央"
 msgid "Bottom on Mobile device"
 msgstr "モバイルでは下部に表示"
 
-#: src/blocks/_pro/step-item/edit.js:113
-#: src/blocks/_pro/timeline-item/edit.js:82
-msgid "Outlined"
-msgstr "アウトライン"
-
-#: src/blocks/_pro/step-item/edit.js:72
-msgid "Step Mark"
-msgstr "ステップマーク"
-
-#: src/blocks/_pro/step-item/edit.js:78
-msgid "If Font Awesome tags entered, it will overrides the number."
-msgstr "Font Awesome の class 名が入力されている場合は数字は上書きされます。"
-
-#: src/blocks/_pro/step-item/edit.js:92
-#: src/blocks/_pro/timeline-item/edit.js:66
-msgid "Ex,6:00AM"
-msgstr "例) 午前 6:00"
-
-#: src/blocks/_pro/step-item/edit.js:96
+#: src/blocks/_pro/step-item/edit.js:100
 #: src/blocks/_pro/timeline-item/edit.js:69 src/blocks/border-box/edit.js:204
 #: src/blocks/button/edit.js:610 src/blocks/icon/edit.js:261
 #: src/blocks/staff/edit.js:199
@@ -1036,12 +1018,30 @@ msgstr "例) 午前 6:00"
 msgid "Color"
 msgstr "色"
 
-#: src/blocks/_pro/step-item/edit.js:99
+#: src/blocks/_pro/step-item/edit.js:103
 #: src/blocks/_pro/table-of-contents-new/edit.js:135
 #: src/blocks/_pro/timeline-item/edit.js:72 src/blocks/icon-outer/edit.js:196
 #: src/blocks/icon/edit.js:187
 msgid "Style"
 msgstr "スタイル"
+
+#: src/blocks/_pro/step-item/edit.js:117
+#: src/blocks/_pro/timeline-item/edit.js:82
+msgid "Outlined"
+msgstr "アウトライン"
+
+#: src/blocks/_pro/step-item/edit.js:76
+msgid "Step Mark"
+msgstr "ステップマーク"
+
+#: src/blocks/_pro/step-item/edit.js:82
+msgid "If Font Awesome tags entered, it will overrides the number."
+msgstr "Font Awesome の class 名が入力されている場合は数字は上書きされます。"
+
+#: src/blocks/_pro/step-item/edit.js:96
+#: src/blocks/_pro/timeline-item/edit.js:66
+msgid "Ex,6:00AM"
+msgstr "例) 午前 6:00"
 
 #: src/blocks/_pro/step/edit.js:35
 msgid "First Dot Number"
@@ -1234,7 +1234,7 @@ msgstr "見出しを入力してください。"
 #: src/blocks/border-box/edit.js:192 src/blocks/icon-outer/edit.js:132
 #: src/blocks/icon/edit.js:124
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-margin.php:57
-#: inc/vk-blocks/admin/admin-margin.php:57
+#: inc/vk-blocks/admin/admin-margin.php:50
 msgid "Margin"
 msgstr "余白"
 
@@ -1801,8 +1801,8 @@ msgid "Card (Image Round)"
 msgstr "カード（画像丸抜き）"
 
 #: src/components/column-layout-control/index.js:26
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:739
-#: inc/vk-components/package/class-vk-component-posts.php:739
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:747
+#: inc/vk-components/package/class-vk-component-posts.php:747
 msgid "Card"
 msgstr "カード"
 
@@ -1819,8 +1819,8 @@ msgid "Card (Horizontal)"
 msgstr "カード（水平）"
 
 #: src/components/column-layout-control/index.js:42
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:755
-#: inc/vk-components/package/class-vk-component-posts.php:755
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:763
+#: inc/vk-components/package/class-vk-component-posts.php:763
 msgid "Media"
 msgstr "メディア"
 
@@ -2273,30 +2273,29 @@ msgid "Setting saved."
 msgstr "設定を保存しました。"
 
 #: dist/vk-blocks-pro/inc/plugin-update-check.php:74
-#: dist/vk-blocks-pro/vk-blocks.php:205 vk-blocks.php:205
+#: dist/vk-blocks-pro/vk-blocks.php:229 vk-blocks.php:229
 msgid "License Key has no registered."
 msgstr "ライセンスキーが登録されていません。"
 
 #: dist/vk-blocks-pro/inc/plugin-update-check.php:79
-#: dist/vk-blocks-pro/vk-blocks.php:210 vk-blocks.php:210
+#: dist/vk-blocks-pro/vk-blocks.php:234 vk-blocks.php:234
 msgid "The VK Blocks Pro license is invalid."
 msgstr "VK Blocks Pro のライセンスが無効です。"
 
 #: dist/vk-blocks-pro/inc/plugin-update-check.php:103
-#: dist/vk-blocks-pro/vk-blocks.php:234 vk-blocks.php:234
+#: dist/vk-blocks-pro/vk-blocks.php:258 vk-blocks.php:258
 msgid ""
 "Enter a valid license key for any of the following products on the settings "
 "screen."
 msgstr "以下の製品のライセンスキーを設定画面から入力してください。"
 
 #: dist/vk-blocks-pro/inc/plugin-update-check.php:112
-#: dist/vk-blocks-pro/vk-blocks.php:243 vk-blocks.php:243
+#: dist/vk-blocks-pro/vk-blocks.php:267 vk-blocks.php:267
 msgid "Enter the license key"
 msgstr "ライセンスキーを入力"
 
 #. translators: %s: 再読み込みURL
 #: dist/vk-blocks-pro/inc/plugin-update-check.php:116
-#: dist/vk-blocks-pro/vk-blocks.php:247
 msgid ""
 "Even after valid license key registration you still seeing this message, <a "
 "href=\"%s\">please click here to reload</a>."
@@ -2525,22 +2524,22 @@ msgid "Balloon Image Setting"
 msgstr "吹き出し画像設定"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:89
-#: inc/vk-blocks/admin/admin-balloon.php:89
+#: inc/vk-blocks/admin/admin-balloon.php:24
 msgid "You can register frequently used icon images for speech bubble blocks."
 msgstr "よく使う吹き出し用のアイコン画像を登録する事ができます。"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:90
-#: inc/vk-blocks/admin/admin-balloon.php:90
+#: inc/vk-blocks/admin/admin-balloon.php:25
 msgid "If you change image or name that please click Save Changes button."
 msgstr "画像を変更したら「変更を保存」ボタンをクリックしてください。"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:116
-#: inc/vk-blocks/admin/admin-balloon.php:116
+#: inc/vk-blocks/admin/admin-balloon.php:51
 msgid "Select"
 msgstr "選択"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-balloon.php:124
-#: inc/vk-blocks/admin/admin-balloon.php:124
+#: inc/vk-blocks/admin/admin-balloon.php:59
 msgid "Balloon Image Name"
 msgstr "吹き出し画像の名前"
 
@@ -2687,66 +2686,66 @@ msgstr "投稿リスト"
 msgid "Page"
 msgstr "ページ"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:743
-#: inc/vk-components/package/class-vk-component-posts.php:743
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:751
+#: inc/vk-components/package/class-vk-component-posts.php:751
 msgid "Card Noborder"
 msgstr "カード（線なし）"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:747
-#: inc/vk-components/package/class-vk-component-posts.php:747
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:755
+#: inc/vk-components/package/class-vk-component-posts.php:755
 msgid "Card Intext"
 msgstr "カード（インテキスト）"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:751
-#: inc/vk-components/package/class-vk-component-posts.php:751
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:759
+#: inc/vk-components/package/class-vk-component-posts.php:759
 msgid "Card Horizontal"
 msgstr "カード（水平）"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:759
-#: inc/vk-components/package/class-vk-component-posts.php:759
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:767
+#: inc/vk-components/package/class-vk-component-posts.php:767
 msgctxt "post list type"
 msgid "Text 1 Column"
 msgstr "テキスト 1 カラム"
 
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:47
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:47
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:48
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:48
 msgid "CSS Optimize ( Speed up ) Settings"
 msgstr "CSS最適化（高速化）設定"
 
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:66
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:66
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:65
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:65
 msgid "Tree shaking"
 msgstr "Tree shaking"
 
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:87
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:87
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:85
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:85
 msgid "Tree shaking activation settings"
 msgstr "Tree shaking 有効化設定"
 
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:91
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:91
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:89
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:89
 msgid "Output only the main CSS of the page inline"
 msgstr "主要なCSSのみインラインで出力します"
 
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:93
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:159
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:93
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:159
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:91
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:155
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:91
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:155
 msgid "Nothing to do"
 msgstr "何もしない"
 
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:94
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:94
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:92
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:92
 msgid "Active Tree shaking (Recomend)"
 msgstr "Tree shakingを有効化（推奨）"
 
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:111
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:111
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:109
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:109
 msgid "Exclude class of Tree shaking"
 msgstr "CSSの軽量化から除外するCSSのclass名"
 
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:115
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:115
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:113
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:113
 msgid ""
 "If you choose \"Active Tree shaking\" that delete the useless css.If you "
 "using active css class that please fill in class name. Ex) btn-active,slide-"
@@ -2756,33 +2755,33 @@ msgstr ""
 "している動的クラスがある場合はクラス名を入力してください。 例）btn-active,"
 "slide-active,scrolled"
 
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:132
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:132
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:129
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:129
 msgid "Preload CSS"
 msgstr "Preload CSS"
 
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:153
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:153
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:149
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:149
 msgid "Preload CSS activation settings"
 msgstr "Preload CSS 有効化設定"
 
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:156
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:156
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:152
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:152
 msgid "Preload css except for critical css"
 msgstr "クリティカルなCSSを除いてCSSをプリロードします"
 
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:160
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:160
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:156
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:156
 msgid "Active Preload CSS (Recomend)"
 msgstr "Preload CSS を有効化（推奨）"
 
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:177
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:177
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:173
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:173
 msgid "Exclude class of Preload CSS"
 msgstr "Preload CSSから除外するハンドル名"
 
-#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:181
-#: inc/vk-css-optimize/package/class-vk-css-optimize.php:181
+#: dist/vk-blocks-pro/inc/vk-css-optimize/package/class-vk-css-optimize.php:177
+#: inc/vk-css-optimize/package/class-vk-css-optimize.php:177
 msgid ""
 "If you choose \"Active Preload CSS\" that css load timing was changed.If you "
 "have any do not want to preload css file that please fill in handle(id) "
@@ -2792,7 +2791,7 @@ msgstr ""
 "す。プリロードしたくないファイルがある場合は、ハンドル名（id）を入力してくだ"
 "さい。 例）pluginname_a-style,pluginname_b-css"
 
-#: dist/vk-blocks-pro/vk-blocks.php:106 vk-blocks.php:106
+#: dist/vk-blocks-pro/vk-blocks.php:105 vk-blocks.php:105
 msgid ""
 "Disabled Blocks module on VK All in One Expansion Unit. Because VK-Blocks "
 "Plugin running."
@@ -2800,7 +2799,7 @@ msgstr ""
 "VK-Blocksと競合するため、VK All in One Expansion Unitの Block機能を停止しまし"
 "た。"
 
-#: vk-blocks.php:246
+#: dist/vk-blocks-pro/vk-blocks.php:270 vk-blocks.php:270
 msgid ""
 "If this display does not disappear even after entering a valid license key, "
 "re-acquire the update."
@@ -2808,7 +2807,7 @@ msgstr ""
 "有効なライセンスキーを入力してもこの表示が消えない場合は更新の再取得をしてく"
 "ださい。"
 
-#: vk-blocks.php:247
+#: dist/vk-blocks-pro/vk-blocks.php:271 vk-blocks.php:271
 msgid "Re-acquisition of updates"
 msgstr "更新の再取得"
 
@@ -3392,7 +3391,7 @@ msgstr ""
 #: src/blocks/_pro/step-item/block.json
 msgctxt "block title"
 msgid "Step Item"
-msgstr "ステップ"
+msgstr "ステップ要素"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/step-item/block.json
 #: inc/vk-blocks/build/blocks/_pro/step-item/block.json
@@ -3406,7 +3405,7 @@ msgstr "ステップマークのアイコン、色、スタイルを設定する
 #: src/blocks/_pro/step/block.json
 msgctxt "block title"
 msgid "Step"
-msgstr "ステップ要素"
+msgstr "ステップ"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/step/block.json
 #: inc/vk-blocks/build/blocks/_pro/step/block.json

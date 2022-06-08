@@ -95,6 +95,21 @@ gulp.task('sass_editor', (done) => {
 	done();
 });
 
+// vk_blocks_options管理画面 css
+gulp.task('sass_vk_blocks_options', (done) => {
+	gulp.src(['./options-css/*.scss'])
+		.pipe(
+			sass({
+				errLogToConsole: true,
+				outputStyle: 'compressed',
+			})
+		)
+		.pipe(autoprefixer())
+		.pipe(concat('vk_blocks_options.css'))
+		.pipe(gulp.dest('./build/'));
+	done();
+});
+
 // VK Block で使用しているBootstrapのみコンパイル
 // ※ Lightning 以外のテーマで利用の際に読込
 gulp.task('sass_bootstrap', (done) => {
@@ -190,6 +205,10 @@ gulp.task('watch', () => {
 		'inc/vk-components/**/*.scss',
 		gulp.parallel('sass_vk_components', 'sass_editor')
 	);
+	gulp.watch(
+		'options-css/*.scss',
+		gulp.parallel('sass_vk_blocks_options')
+	);
 });
 
 //Build : Development
@@ -225,6 +244,7 @@ gulp.task(
 		'sass',
 		'helper-js',
 		'sass_editor',
+		'sass_vk_blocks_options',
 		'sass_bootstrap',
 		'sass_vk_components',
 		'sass-separate-free'
@@ -238,6 +258,7 @@ gulp.task(
 		'helper-js',
 		'helper-js-pro',
 		'sass_editor',
+		'sass_vk_blocks_options',
 		'sass_bootstrap',
 		'sass_vk_components',
 		'sass-separate-free',

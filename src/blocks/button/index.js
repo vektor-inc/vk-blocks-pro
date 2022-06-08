@@ -138,12 +138,23 @@ const generateInlineGapCss = (attributes, isSave) => {
 };
 
 const generateInlineCustomsizeCss = (attributes, isSave) => {
-	const { buttonSize, blockId } = attributes;
+	const { buttonType, buttonSize, blockId } = attributes;
 	let inlineCss = '';
-	const propaty = isSave ? '.vk_button' : '.editor-styles-wrapper .vk_button';
 
 	if (buttonSize.match(/\d/)) {
-		inlineCss = `${propaty}.vk_button-${blockId} .vk_button_link.btn {
+		let propaty = isSave
+			? '.vk_button'
+			: '.editor-styles-wrapper .vk_button';
+		propaty += `.vk_button-${blockId}`;
+
+		if (buttonType === '2') {
+			// テキストのみ
+			propaty += ' .vk_button_link-type-text';
+		} else {
+			propaty += ' .vk_button_link.btn';
+		}
+
+		inlineCss = `${propaty} {
 			font-size: ${buttonSize};
 			}`;
 	}

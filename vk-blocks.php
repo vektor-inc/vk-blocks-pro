@@ -287,7 +287,7 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 			$options = get_option( 'vk_blocks_options' );
 			$license = '';
 			if ( ! empty( $options['vk_blocks_pro_license_key'] ) ) {
-				$license = esc_html( $options['vk_blocks_pro_license_key'] );
+				$license = esc_html( trim( $options['vk_blocks_pro_license_key'] ) );
 			}
 
 			if ( ! empty( $license ) ) {

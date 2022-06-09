@@ -21,7 +21,7 @@ $vk_blocks_options = vk_blocks_get_options();
 </section>
 <script>
 	const licenseKeyElem = document.getElementById('vk-blocks-pro-license-key');
-	licenseKeyElem.addEventListener('change', (e) => {
-	 //	licenseKeyElem.value = licenseKeyElem.value.trim();
+	licenseKeyElem.addEventListener('blur', (e) => {
+	 	licenseKeyElem.value = licenseKeyElem.value.trim();
 	});
 </script>

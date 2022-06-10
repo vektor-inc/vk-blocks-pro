@@ -1,4 +1,5 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export default function save(props) {
 	const { attributes } = props;
@@ -19,12 +20,6 @@ export default function save(props) {
 		backgroundColor: null,
 		border: null,
 	};
-	if (textColor) {
-		style.color = `${textColor}`;
-	}
-	if (backgroundColor) {
-		style.backgroundColor = `${backgroundColor}`;
-	}
 	if (border) {
 		style.border = `1px solid ${borderColor}`;
 	}
@@ -39,6 +34,45 @@ export default function save(props) {
 	if (footerDisplay === 'delete') {
 		containerClasses.push('vk_gridcolcard_item-noFooter');
 	}
+
+	// 文字色
+	if (textColor) {
+		containerClasses.push('has-text-color');
+		if (isHexColor(textColor)) {
+			// custom color
+			style.color = `${textColor}`;
+		} else {
+			// palette color
+			containerClasses.push(`has-${textColor}-color`);
+		}
+	}
+
+	// 背景色
+	if (backgroundColor) {
+		containerClasses.push('has-background');
+		if (isHexColor(backgroundColor)) {
+			// custom color
+			style.backgroundColor = `${backgroundColor}`;
+		} else {
+			// palette color
+			containerClasses.push(`has-${backgroundColor}-background-color`);
+		}
+	}
+
+	// 線の色
+	if (border) {
+		containerClasses.push('has-text-color');
+		if (isHexColor(borderColor)) {
+			// custom color
+			style.color = `${borderColor}`;
+			style.border = `1px solid ${borderColor}`;
+		} else {
+			// palette color
+			style.border = `1px solid currentColor`;
+			containerClasses.push(`has-${borderColor}-color`);
+		}
+	}
+
 	const containerClass = containerClasses.join(' ');
 
 	const blockProps = useBlockProps.save({

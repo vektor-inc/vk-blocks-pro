@@ -268,7 +268,7 @@ export default function TabEdit(props) {
 						};
 					}
 				} else if (tabOption.tabLabelBorderTop) {
-					tabSpanColorClass = '  has-border-top';
+					tabSpanColorClass = ' has-border-top';
 					if (!isHexColor(childBlock.attributes.tabColor)) {
 						tabSpanColorClass += ` has-${childBlock.attributes.tabColor}-border-color`;
 					} else {

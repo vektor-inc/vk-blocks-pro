@@ -160,16 +160,19 @@ export default function Edit(props) {
 	}
 
 	// 文字色
+	const innerClasses = ['vk_gridcolcard_item_container'];
+	let textColorCustom = null;
 	if (textColor) {
-		containerClasses.push('has-text-color');
+		innerClasses.push('has-text-color');
 		if (isHexColor(textColor)) {
 			// custom color
-			style.color = `${textColor}`;
+			textColorCustom = textColor;
 		} else {
 			// palette color
-			containerClasses.push(`has-${textColor}-color`);
+			innerClasses.push(`has-${textColor}-color`);
 		}
 	}
+	const innerClass = innerClasses.join(' ');
 
 	// 背景色
 	if (backgroundColor) {
@@ -186,17 +189,20 @@ export default function Edit(props) {
 	// 線の色
 	if (border) {
 		containerClasses.push('has-text-color');
+		style.border = `1px solid currentColor`;
 		if (isHexColor(borderColor)) {
 			// custom color
 			style.color = `${borderColor}`;
-			style.border = `1px solid ${borderColor}`;
 		} else {
 			// palette color
-			style.border = `1px solid currentColor`;
 			containerClasses.push(`has-${borderColor}-color`);
 		}
-	}
 
+		if (!textColor) {
+			// 文字色リセット
+			textColorCustom = 'initial';
+		}
+	}
 	const containerClass = containerClasses.join(' ');
 
 	// mb-3 alert alert-danger
@@ -354,12 +360,13 @@ export default function Edit(props) {
 			</InspectorControls>
 			<div {...blockProps}>
 				<div
-					className={`vk_gridcolcard_item_container`}
+					className={innerClass}
 					style={{
 						paddingTop: containerSpace.top,
 						paddingBottom: containerSpace.bottom,
 						paddingLeft: containerSpace.left,
 						paddingRight: containerSpace.right,
+						color: textColorCustom,
 					}}
 				>
 					<InnerBlocks

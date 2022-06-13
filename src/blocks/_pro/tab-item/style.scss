@@ -209,24 +209,25 @@ $xl-min: 1200px;
 			position: relative;
 			list-style: none;
 			text-align: center;
-			transition: all .5s ease-out;
+			transition: all .3s ease-out;
 			padding: calc( var(--vk-size-text) * 0.5 ) calc( var(--vk-size-text) * 1 );
 			cursor: pointer;
 			background-color: rgba(0,0,0,.08);
 			border-radius:calc( var(--vk-size-text) * 0.3 ) calc( var(--vk-size-text) * 0.3 ) 0 0;
 			margin:0;
 			line-height: 1.5;
-			&:hover{
-				background-color: var(--default-color);
-				color: #fff;
-			}
-			&.vk_tab_labels_label-state-active{
+			&.vk_tab_labels_label-state-active,
+			&.has-background{
 				background-color: var(--default-color);
 				// font-weight: bold;
 				color: #fff;
 			}
+			&:hover{
+				background-color: var(--default-color);
+				color: #fff;
+				opacity: 0.8;
+			}
 		}
-
 	}
 
 }

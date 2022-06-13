@@ -144,6 +144,9 @@ export default function Edit(props) {
 		backgroundColor: null,
 		border: null,
 	};
+	if (textColor) {
+		style.color = null;
+	}
 	if (borderRadius) {
 		style.borderRadius = `${borderRadius}`;
 	}
@@ -163,7 +166,7 @@ export default function Edit(props) {
 	const innerClasses = ['vk_gridcolcard_item_container'];
 	let textColorCustom = null;
 	if (textColor) {
-		innerClasses.push('has-text-color');
+//		innerClasses.push('has-text-color');
 		if (isHexColor(textColor)) {
 			// custom color
 			textColorCustom = textColor;
@@ -172,11 +175,10 @@ export default function Edit(props) {
 			innerClasses.push(`has-${textColor}-color`);
 		}
 	}
-	const innerClass = innerClasses.join(' ');
 
 	// 背景色
 	if (backgroundColor) {
-		containerClasses.push('has-background');
+//		containerClasses.push('has-background');
 		if (isHexColor(backgroundColor)) {
 			// custom color
 			style.backgroundColor = `${backgroundColor}`;
@@ -188,22 +190,22 @@ export default function Edit(props) {
 
 	// 線の色
 	if (border) {
-		containerClasses.push('has-text-color');
-		style.border = `1px solid currentColor`;
+//		containerClasses.push('has-text-color');
 		if (isHexColor(borderColor)) {
 			// custom color
-			style.color = `${borderColor}`;
+			style.border = `1px solid ${borderColor}`;
 		} else {
 			// palette color
+			style.border = `1px solid currentColor`;
 			containerClasses.push(`has-${borderColor}-color`);
-		}
-
-		if (!textColor) {
-			// 文字色リセット
-			textColorCustom = 'initial';
+			if (!textColor) {
+				// 文字色リセット
+				textColorCustom = 'initial';
+			}
 		}
 	}
 	const containerClass = containerClasses.join(' ');
+	const innerClass = innerClasses.join(' ');
 
 	// mb-3 alert alert-danger
 	const alertClass = url ? 'mb-3 alert alert-danger' : 'mb-3';

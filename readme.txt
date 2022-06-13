@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ fix ][ GridColCard ( Pro ) ] cope with custom color palette
+
 = 1.37.0 =
 [ Specification Change ][ Step Item(Pro) / Timeline Item()Pro ] Change padding-bottom to inner-item last-child margin-bottom
 [ Specification Change ][ Timeline ] If no label, the outer html will not be displayed.

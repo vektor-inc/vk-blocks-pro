@@ -20,9 +20,6 @@ export default function save(props) {
 		backgroundColor: null,
 		border: null,
 	};
-	if (textColor) {
-		style.color = `${textColor}`;
-	}
 	if (borderRadius) {
 		style.borderRadius = `${borderRadius}`;
 	}
@@ -39,19 +36,19 @@ export default function save(props) {
 	const innerClasses = ['vk_gridcolcard_item_container'];
 	let textColorCustom = null;
 	if (textColor) {
-//		innerClasses.push('has-text-color');
+		innerClasses.push('has-text-color');
 		if (isHexColor(textColor)) {
 			// custom color
-//			textColorCustom = textColor;
+			textColorCustom = textColor;
 		} else {
 			// palette color
-//			innerClasses.push(`has-${textColor}-color`);
+			innerClasses.push(`has-${textColor}-color`);
 		}
 	}
 
 	// 背景色
 	if (backgroundColor) {
-//		containerClasses.push('has-background');
+		containerClasses.push('has-background');
 		if (isHexColor(backgroundColor)) {
 			// custom color
 			style.backgroundColor = `${backgroundColor}`;
@@ -63,7 +60,7 @@ export default function save(props) {
 
 	// 線の色
 	if (border) {
-//		containerClasses.push('has-text-color');
+		containerClasses.push('has-text-color');
 		if (isHexColor(borderColor)) {
 			// custom color
 			style.border = `1px solid ${borderColor}`;

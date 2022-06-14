@@ -749,6 +749,7 @@ export default function ButtonEdit(props) {
 								// 'vk-blocks/highlighter',
 								'vk-blocks/responsive-br',
 								'vk-blocks/nowrap',
+								'vk-blocks/inline-font-size',
 							]}
 							isSelected={true}
 						/>

@@ -74,9 +74,7 @@ export class VKBButton extends Component {
 			}
 		}
 
-		if (!buttonSize.match(/\d/)) {
-			aClass = `${aClass} btn-${buttonSize}`;
-		}
+		aClass = `${aClass} btn-${buttonSize}`;
 
 		if (buttonAlign === 'block') {
 			aClass = `${aClass} btn-block`;

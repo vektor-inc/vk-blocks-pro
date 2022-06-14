@@ -137,30 +137,6 @@ const generateInlineGapCss = (attributes, isSave) => {
 	return inlineCss;
 };
 
-const generateInlineCustomsizeCss = (attributes, isSave) => {
-	const { buttonType, buttonSize, blockId } = attributes;
-	let inlineCss = '';
-
-	if (buttonSize.match(/\d/)) {
-		let propaty = isSave
-			? '.vk_button'
-			: '.editor-styles-wrapper .vk_button';
-		propaty += `.vk_button-${blockId}`;
-
-		if (buttonType === '2') {
-			// テキストのみ
-			propaty += ' .vk_button_link-type-text';
-		} else {
-			propaty += ' .vk_button_link.btn';
-		}
-
-		inlineCss = `${propaty} {
-			font-size: ${buttonSize};
-			}`;
-	}
-	return inlineCss;
-};
-
 const VKButtonInlineEditorCss = createHigherOrderComponent((BlockEdit) => {
 	return (props) => {
 		const { attributes } = props;
@@ -168,16 +144,12 @@ const VKButtonInlineEditorCss = createHigherOrderComponent((BlockEdit) => {
 		if ('vk-blocks/button' === props.name) {
 			const cssTag = generateInlineCss(attributes);
 			const cssEditor = generateInlineGapCss(attributes, false);
-			const cssCustomSize = generateInlineCustomsizeCss(
-				attributes,
-				false
-			);
-			if (cssTag !== '' || cssEditor !== '' || cssCustomSize !== '') {
+			if (cssTag !== '' || cssEditor !== '') {
 				return (
 					<>
 						<BlockEdit {...props} />
 						<style type="text/css">
-							{cssTag} {cssEditor} {cssCustomSize}
+							{cssTag} {cssEditor}
 						</style>
 					</>
 				);
@@ -202,13 +174,12 @@ const VKButtonInlineCss = (el, type, attributes) => {
 			// カスタムクラスを追加する処理が失敗する[
 			const cssTag = generateInlineCss(attributes);
 			const cssEditor = generateInlineGapCss(attributes, true);
-			const cssCustomSize = generateInlineCustomsizeCss(attributes, true);
-			if (cssTag !== '' || cssEditor !== '' || cssCustomSize !== '') {
+			if (cssTag !== '' || cssEditor !== '') {
 				return (
 					<>
 						{el}
 						<style type="text/css">
-							{cssTag} {cssEditor} {cssCustomSize}
+							{cssTag} {cssEditor}
 						</style>
 					</>
 				);

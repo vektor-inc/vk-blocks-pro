@@ -12,7 +12,6 @@ import {
 	ToolbarGroup,
 	ToolbarButton,
 	Dropdown,
-	__experimentalUnitControl as UnitControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
 } from '@wordpress/components';
 import {
 	RichText,
@@ -156,11 +155,10 @@ export default function ButtonEdit(props) {
 	const isInnerButton = parents.length ? true : false;
 
 	let containerClass;
-	// カスタムカラーの場合 またはアウターにギャップ、またはカスタムサイズが指定されれいる場合
+	// カスタムカラーの場合 またはアウターにギャップが指定されれいる場合
 	if (
 		(buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) ||
-		outerGap ||
-		buttonSize.match(/\d/)
+		outerGap
 	) {
 		containerClass = `vk_button vk_button-color-custom vk_button-${blockId}`;
 	} else {
@@ -186,42 +184,6 @@ export default function ButtonEdit(props) {
 	const blockProps = useBlockProps({
 		className: containerClass,
 	});
-
-	//  font-size カスタムサイズをスラッグに変換
-	const buttonSizes = [
-		{
-			slug: 'sm',
-			size: '14px',
-		},
-		{
-			slug: 'md',
-			size: '16px',
-		},
-		{
-			slug: 'lg',
-			size: '20px',
-		},
-	];
-	let buttonSizeCustom = buttonSize;
-	buttonSizes.forEach(function (item) {
-		if (buttonSize === item.slug) {
-			buttonSizeCustom = item.size;
-		}
-	});
-
-	useEffect(() => {
-		buttonSizes.forEach(function (item) {
-			if (item.size === buttonSizeCustom) {
-				setAttributes({ buttonSize: item.slug });
-			}
-		});
-	}, [buttonSizeCustom]);
-
-	const sizeUnits = [
-		{ value: 'px', label: 'px', default: 16 },
-		{ value: 'em', label: 'em', default: 1 },
-		{ value: 'rem', label: 'rem', default: 1 },
-	];
 
 	return (
 		<>
@@ -344,16 +306,7 @@ export default function ButtonEdit(props) {
 							{__('Small', 'vk-blocks')}
 						</Button>
 					</ButtonGroup>
-					<UnitControl
-						className={`mb-3`}
-						label={__('Custom Size', 'vk-blocks')}
-						value={buttonSizeCustom}
-						onChange={(value) => {
-							buttonSizeCustom = value ? value : '16px';
-							setAttributes({ buttonSize: value });
-						}}
-						units={sizeUnits}
-					/>
+
 					{!isInnerButton && (
 						<>
 							<h4 className={`mt-0 mb-2`}>

@@ -8,6 +8,9 @@
 // Pro 用の管理画面を読み込み.
 require_once dirname( __FILE__ ) . '/admin-pro/admin-pro.php';
 
+require_once dirname( __FILE__ ) . '/class-vk-blocks-pro-options.php';
+VK_Blocks_Pro_Options::init();
+
 /**
  * VK Blocks Pro Get Options
  *
@@ -15,14 +18,14 @@ require_once dirname( __FILE__ ) . '/admin-pro/admin-pro.php';
  *
  * @param array $defaults defaults.
  */
-function vk_blocks_pro_get_options( $defaults ) {
-	$defaults = array(
-		'display_vk_block_template' => 'display',
-		'new_faq_accordion'         => 'disable',
-	);
-	return $defaults;
-}
-add_filter( 'vk_blocks_default_options', 'vk_blocks_pro_get_options' );
+// function vk_blocks_pro_get_options( $defaults ) {
+// $defaults = array(
+// 'display_vk_block_template' => 'display',
+// 'new_faq_accordion'         => 'disable',
+// );
+// return $defaults;
+// }
+// add_filter( 'vk_blocks_default_options', 'vk_blocks_pro_get_options' );
 
 /**
  * Pro 専用のスクリプトの読み込み

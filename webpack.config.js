@@ -2,12 +2,17 @@ let defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
 defaultConfig.module.rules.splice(0, 1) // JSをトランスパイルするルールを削除。下の独自ルールでPOTファイルを上書きして空にしてしまう。
 const path = require( 'path' );
 
+let entries = {
+  'blocks/index': __dirname + '/src/blocks/index.js',
+  'admin/index': __dirname + '/src/admin/index.js',
+};
+
 module.exports = {
 	...defaultConfig,
-	entry: __dirname + '/src/blocks/index.js',
+	entry: entries,
 	output: {
 		path: __dirname + '/inc/vk-blocks/build/',
-		filename: 'block-build.js',
+		filename: '[name]-build.js',
 	},
 	resolve: {
 		...defaultConfig.resolve,

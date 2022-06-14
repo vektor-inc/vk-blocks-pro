@@ -24,6 +24,11 @@ if ( ! function_exists( 'vk_blocks_setting' ) ) {
 	 * @return void
 	 */
 	function vk_blocks_setting() {
+		?>
+		<div id="vk-blocks-admin"></div>
+
+		<h1>以下はPHPで出力</h1>
+		<?php
 		$options           = get_option( 'vk_blocks_balloon_meta' );
 		$image_number      = 15;
 		$image_number      = apply_filters( 'vk_blocks_image_number', $image_number );
@@ -166,6 +171,36 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 		VK_BLOCKS_DIR_URL . 'build/vk_blocks_options.css',
 		array(),
 		VK_BLOCKS_VERSION
+	);
+
+	$asset = include VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/build/admin/index-build.asset.php';
+	// Enqueue CSS dependencies.
+	foreach ( $asset['dependencies'] as $style ) {
+		wp_enqueue_style( $style );
+	}
+
+	// メディアピッカーを使用するため.
+	wp_enqueue_media();
+
+	wp_enqueue_script(
+		'vk-blocks-admin-js',
+		VK_BLOCKS_DIR_URL . 'inc/vk-blocks/build/admin/index-build.js',
+		$asset['dependencies'],
+		$asset['version'],
+		true
+	);
+	wp_set_script_translations( 'vk-blocks-admin-js', 'vk-blocks', VK_BLOCKS_DIR_PATH . 'languages' );
+
+	wp_localize_script(
+		'vk-blocks-admin-js',
+		'vkBlocksObject',
+		array(
+			'options'          => vk_blocks_get_options(),
+			'balloonMeta'      => get_option( 'vk_blocks_balloon_meta' ),
+			'imageNumber'      => VK_Blocks_Options::balloon_image_number(),
+			'isLicenseSetting' => vk_blocks_is_license_setting(),
+			'isPro'            => vk_blocks_is_pro(),
+		)
 	);
 }
 add_action( 'admin_enqueue_scripts', 'vk_blocks_options_enqueue_scripts' );

@@ -650,13 +650,14 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 
 			if ( $options['display_excerpt'] ) {
 				$is_veu_show_sitemap_exists = function_exists( 'veu_show_sitemap' );
+				$remove_result = false;
 				if ( $is_veu_show_sitemap_exists ) {
-					remove_filter( 'the_content', 'veu_show_sitemap', 7 );
+					$remove_result = remove_filter( 'the_content', 'veu_show_sitemap', 7 );
 				}
 				$html .= '<p class="vk_post_excerpt ' . $layout_type . '-text">';
 				$html .= wp_kses_post( nl2br( get_the_excerpt( $post->ID ) ) );
 				$html .= '</p>';
-				if ( $is_veu_show_sitemap_exists ) {
+				if ( $is_veu_show_sitemap_exists && $remove_result ) {
 					add_filter( 'the_content', 'veu_show_sitemap', 7, 1 );
 				}
 			}

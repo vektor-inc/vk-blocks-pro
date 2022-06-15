@@ -71,6 +71,7 @@ e.g.
 [ Specification Change ] Change the style loaded on the options page to a css file.
 [ Bug fix ][ Tree Shaking ] cope with not(***,***)
 [ Bug fix ][ Heading design ] Fix text-align
+[ Bug fix ][ Post List(Pro) ] Fixed a problem with "Post-List" when ExUnit is enabled.
 
 = 1.36.2 =
 [ Specification Change ] allow iframe on post list filter 

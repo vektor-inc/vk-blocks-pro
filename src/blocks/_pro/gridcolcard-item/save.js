@@ -60,18 +60,14 @@ export default function save(props) {
 
 	// 線の色
 	if (border) {
-		containerClasses.push('has-text-color');
+		containerClasses.push('has-border-color');
+		style.borderWidth = `1px`;
 		if (isHexColor(borderColor)) {
 			// custom color
-			style.border = `1px solid ${borderColor}`;
+			style.borderColor = `${borderColor}`;
 		} else {
 			// palette color
-			style.border = `1px solid currentColor`;
-			containerClasses.push(`has-${borderColor}-color`);
-			if (!textColor) {
-				// 文字色リセット
-				textColorCustom = 'initial';
-			}
+			containerClasses.push(`has-${borderColor}-border-color`);
 		}
 	}
 	const containerClass = containerClasses.join(' ');

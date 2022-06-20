@@ -147,13 +147,15 @@ export default function Edit(props) {
 		[`vk_gridcolcard_item-noFooterr`]: footerDisplay === 'delete',
 		[`has-background`]: !!backgroundColor,
 		[`has-border-color`]: !!border,
-		[`has-${backgroundColor}-background-color`]:  !!backgroundColor && !isHexColor(backgroundColor),
-		[`has-${borderColor}-border-color`]:  !!border && !!borderColor && !isHexColor(borderColor),
+		[`has-${backgroundColor}-background-color`]:
+			!!backgroundColor && !isHexColor(backgroundColor),
+		[`has-${borderColor}-border-color`]:
+			!!border && !!borderColor && !isHexColor(borderColor),
 	});
 
 	const innerClasses = classnames('innerClasses', {
 		[`has-text-color`]: !!textColor,
-		[`has-${textColor}-color`]:  !!textColor && !isHexColor(textColor),
+		[`has-${textColor}-color`]: !!textColor && !isHexColor(textColor),
 	});
 
 	const style = {
@@ -180,14 +182,15 @@ export default function Edit(props) {
 	}
 
 	// 文字色
-	const textColorCustom = textColor && isHexColor(textColor)? textColor : null;
+	const textColorCustom =
+		textColor && isHexColor(textColor) ? textColor : null;
 
 	// mb-3 alert alert-danger
 	const alertClass = url ? 'mb-3 alert alert-danger' : 'mb-3';
 
 	const blockProps = useBlockProps({
 		className: classnames(containerClasses),
-		style: style,
+		style,
 	});
 
 	return (

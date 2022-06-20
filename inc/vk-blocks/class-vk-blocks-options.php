@@ -188,6 +188,18 @@ class VK_Blocks_Options {
 	}
 
 	/**
+	 * Get Balloon Meta
+	 *
+	 * @return options
+	 */
+	public static function get_balloon_meta() {
+		$options = get_option( 'vk_blocks_balloon_meta' );
+		$defaults = self::get_defaults( self::balloon_meta_schema() );
+		$options = wp_parse_args( $options, $defaults );
+		return $options;
+	}
+
+	/**
 	 * Register Setting
 	 *
 	 * @see https://developer.wordpress.org/reference/functions/register_setting/#comment-5289

@@ -23,6 +23,10 @@ export default function AdminBalloon() {
 	} = useContext(AdminContext);
 	const vkBlocksImageNumber = vkBlocksObject.imageNumber;
 
+	// console.log(vkBlocksOption);
+	// console.log(vkBlocksBalloonMeta);
+	// console.log(vkBlocksBalloonMeta.default_icons);
+
 	return (
 		<>
 			<section>
@@ -37,7 +41,7 @@ export default function AdminBalloon() {
 					onChange={(newValue) => {
 						setVkBlocksOption({
 							...vkBlocksOption,
-							balloon_border_width: parseInt(newValue),
+							balloon_border_width: newValue,
 						});
 					}}
 					options={[
@@ -101,6 +105,8 @@ export default function AdminBalloon() {
 									type="image"
 									allowedTypes={['image']}
 									value={
+										!vkBlocksBalloonMeta.default_icons[i]
+											.src &&
 										vkBlocksBalloonMeta.default_icons[i].src
 									}
 									render={({ open }) => (
@@ -178,7 +184,13 @@ export default function AdminBalloon() {
 																	vkBlocksBalloonMeta
 																		.default_icons[
 																		i
-																	].src === ''
+																	].src ===
+																		'' ||
+																	vkBlocksBalloonMeta
+																		.default_icons[
+																		i
+																	].src ===
+																		undefined
 																		? noImage
 																		: vkBlocksBalloonMeta
 																				.default_icons[
@@ -237,6 +249,7 @@ export default function AdminBalloon() {
 								</label>
 								<TextControl
 									className="balloonIconList_name_input"
+									name={`vk_blocks_balloon_meta[default_icons][${i}][name]`}
 									onChange={(newValue) => {
 										setVkBlocksBalloonMeta({
 											...vkBlocksBalloonMeta,

@@ -2,7 +2,10 @@
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { SelectControl, TextControl } from '@wordpress/components';
+import {
+	SelectControl,
+	__experimentalNumberControl as NumberControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
+} from '@wordpress/components';
 import { useContext } from '@wordpress/element';
 
 /**
@@ -87,81 +90,58 @@ export default function AdminMargin() {
 							<li key={marginLabel}>
 								<span>
 									{__('Margin', 'vk-blocks')} [ {marginLabel}{' '}
-									] :{/* {marginValue} */}
+									] :
 								</span>
 								{DEVICE_ARRAY.map((device) => {
 									const { deviceLabel, deviceValue } = device;
 									return (
-										<TextControl
-											key={deviceLabel}
-											label={deviceLabel}
-											type="number"
-											onChange={(newValue) => {
-												setVkBlocksOption({
-													...vkBlocksOption,
-													margin_size: {
-														...vkBlocksOption.margin_size,
-														[marginValue]: {
-															...vkBlocksOption
+										<>
+											<NumberControl
+												className="margin_size_input"
+												key={deviceLabel}
+												label={deviceLabel}
+												name={`vk_blocks_options[margin_size][${marginValue}][${deviceValue}]`}
+												step="0.05"
+												value={
+													!vkBlocksOption.margin_size[
+														marginValue
+													][deviceValue]
+														? ''
+														: vkBlocksOption
 																.margin_size[
 																marginValue
-															],
-															[deviceValue]:
-																parseInt(
-																	newValue
-																),
+														  ][deviceValue]
+												}
+												onChange={(newValue) => {
+													setVkBlocksOption({
+														...vkBlocksOption,
+														margin_size: {
+															...vkBlocksOption.margin_size,
+															[marginValue]: {
+																...vkBlocksOption
+																	.margin_size[
+																	marginValue
+																],
+																[deviceValue]:
+																	newValue,
+															},
 														},
-													},
-												});
-											}}
-											value={
-												!vkBlocksOption.margin_size[
-													marginValue
-												][deviceValue]
-													? ''
-													: vkBlocksOption
-															.margin_size[
-															marginValue
-													  ][deviceValue]
-											}
-											// step="0.05" // stepが0.05を使えるようにする
-										/>
+													});
+												}}
+											/>
+										</>
 									);
 								})}
 							</li>
 						);
 					})}
 				</ul>
-				{/* { MARGIN_SIZE_ARRAY.map( ( control ) => {
-					const { label, value } = control;
-					return (
-						<li>
-							<TextControl
-								label={__('PC', 'vk-blocks')}
-								value={vkBlocksOption.margin_size.lg.pc !== '' && vkBlocksOption.margin_size.lg.pc}
-								onChange={ ( newValue ) => {
-									setVkBlocksOption( {
-										...vkBlocksOption,
-										margin_size: {
-											...vkBlocksOption.margin_size,
-											lg: {
-												...vkBlocksOption.margin_size.lg,
-												pc: parseInt(newValue),
-											},
-										}
-									});
-								} }
-								type={'number'}
-							/>
-						</li>
-					);
-				} ) } */}
-				{/* <TextControl
+				{/* <p>step0.05</p>
+				<input
 					label={__('PC', 'vk-blocks')}
-					value={
-						vkBlocksOption.margin_size.lg.pc !== '' &&
-						vkBlocksOption.margin_size.lg.pc
-					}
+					type="number"
+					step="0.05"
+					//value={vkBlocksOption.margin_size.lg.tablet !== '' && vkBlocksOption.margin_size.lg.tablet}
 					onChange={(newValue) => {
 						setVkBlocksOption({
 							...vkBlocksOption,
@@ -169,31 +149,11 @@ export default function AdminMargin() {
 								...vkBlocksOption.margin_size,
 								lg: {
 									...vkBlocksOption.margin_size.lg,
-									pc: parseInt(newValue),
+									tablet: newValue,
 								},
 							},
 						});
 					}}
-					type={'number'}
-				/> */}
-				{/* <input
-					name="vk_blocks_options[margin_size][lg][tablet]"
-					label={__('Tablet', 'vk-blocks')}
-					type="number"
-					step="0.05"
-					// value={vkBlocksOption.margin_size.lg.tablet !== '' && vkBlocksOption.margin_size.lg.tablet}
-					onChange={ ( newValue ) => {
-						setVkBlocksOption( {
-							...vkBlocksOption,
-							margin_size: {
-								...vkBlocksOption.margin_size,
-								lg: {
-									...vkBlocksOption.margin_size.lg,
-									tablet: parseInt(newValue),
-								},
-							}
-						});
-					} }
 				/> */}
 			</section>
 			<SaveButton

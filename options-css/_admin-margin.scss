@@ -2,3 +2,23 @@
 	width: 5em;
 	text-align: center;
 }
+
+.spacer-input {
+
+	li {
+		display: flex;
+	}
+
+	.margin_size_input {
+		flex-direction: row;
+		align-items: center;
+
+		.components-input-control__label {
+			margin: 0!important;
+		}
+
+		input {
+			width: 5em!important;
+		}
+	}
+}

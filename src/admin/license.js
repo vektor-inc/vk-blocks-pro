@@ -18,7 +18,7 @@ export default function AdminLicense() {
 	return (
 		<>
 			<section>
-				<h3 id="admin-license">{__('License key', 'vk-blocks')}</h3>
+				<h3 id="license-setting">{__('License key', 'vk-blocks')}</h3>
 				<p>
 					{__(
 						'Enter a valid Lightning G3 Pro Pack or Lightning Pro license key.',
@@ -34,6 +34,7 @@ export default function AdminLicense() {
 				<TextControl
 					label={__('License key', 'vk-blocks')}
 					className="admin-text-control"
+					name="vk_blocks_options[vk_blocks_pro_license_key]"
 					value={
 						!vkBlocksOption.vk_blocks_pro_license_key
 							? ''

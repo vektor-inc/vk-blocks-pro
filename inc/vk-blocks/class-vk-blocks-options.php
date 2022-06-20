@@ -102,7 +102,6 @@ class VK_Blocks_Options {
 	 */
 	private function __construct() {
 		add_action( 'admin_init', array( $this, 'register_setting' ) );
-		add_action( 'rest_api_init', array( $this, 'register_setting' ) );
 	}
 
 	/**
@@ -130,9 +129,10 @@ class VK_Blocks_Options {
 	 * @return $balloon_meta_schema
 	 */
 	public function balloon_meta_schema() {
-		$number = $this->balloon_image_number();
+		$number                    = self::balloon_image_number();
+		$balloon_meta_schema_array = array();
 		for ( $i = 1; $i <= $number; $i++ ) {
-			$balloon_meta_schema = array(
+			$balloon_meta_schema         = array(
 				'default_icons' => array(
 					'type'  => 'object',
 					'items' => array(
@@ -152,8 +152,9 @@ class VK_Blocks_Options {
 					),
 				),
 			);
+			$balloon_meta_schema_array[] = $balloon_meta_schema;
 		};
-		return $balloon_meta_schema;
+		return $balloon_meta_schema_array;
 	}
 
 	/**
@@ -181,7 +182,7 @@ class VK_Blocks_Options {
 	public static function get_properties( $schema ) {
 		$properties = array();
 		foreach ( $schema as $key => $value ) {
-			$properties[ $key ] = 'object' === $value['type'] ? self::get_properties( $value['items'] ) : $value['type'];
+			$properties[ $key ]['properties'] = 'object' === $value['type'] ? self::get_properties( $value['items'] ) : $value['type'];
 		}
 		return $properties;
 	}

@@ -1,5 +1,6 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import classnames from 'classnames';
 
 export default function save(props) {
 	const { attributes } = props;
@@ -16,6 +17,21 @@ export default function save(props) {
 		urlOpenType,
 	} = attributes;
 
+	// カラーパレットに対応
+	const containerClasses = classnames('vk_gridcolcard_item', {
+		[`vk_gridcolcard_item-noHeader`]: headerDisplay === 'delete',
+		[`vk_gridcolcard_item-noFooterr`]: footerDisplay === 'delete',
+		[`has-background`]: !!backgroundColor,
+		[`has-border-color`]: !!border,
+		[`has-${backgroundColor}-background-color`]:  !!backgroundColor && !isHexColor(backgroundColor),
+		[`has-${borderColor}-border-color`]:  !!border && !!borderColor && !isHexColor(borderColor),
+	});
+
+	const innerClasses = classnames('innerClasses', {
+		[`has-text-color`]: !!textColor,
+		[`has-${textColor}-color`]:  !!textColor && !isHexColor(textColor),
+	});
+
 	const style = {
 		backgroundColor: null,
 		border: null,
@@ -24,58 +40,27 @@ export default function save(props) {
 		style.borderRadius = `${borderRadius}`;
 	}
 
-	const containerClasses = ['vk_gridcolcard_item'];
-	if (headerDisplay === 'delete') {
-		containerClasses.push('vk_gridcolcard_item-noHeader');
-	}
-	if (footerDisplay === 'delete') {
-		containerClasses.push('vk_gridcolcard_item-noFooter');
-	}
-
-	// 文字色
-	const innerClasses = ['vk_gridcolcard_item_container'];
-	let textColorCustom = null;
-	if (textColor) {
-		innerClasses.push('has-text-color');
-		if (isHexColor(textColor)) {
-			// custom color
-			textColorCustom = textColor;
-		} else {
-			// palette color
-			innerClasses.push(`has-${textColor}-color`);
-		}
-	}
-
 	// 背景色
-	if (backgroundColor) {
-		containerClasses.push('has-background');
-		if (isHexColor(backgroundColor)) {
-			// custom color
-			style.backgroundColor = `${backgroundColor}`;
-		} else {
-			// palette color
-			containerClasses.push(`has-${backgroundColor}-background-color`);
-		}
+	if (backgroundColor && isHexColor(backgroundColor)) {
+		// custom color
+		style.backgroundColor = `${backgroundColor}`;
 	}
 
 	// 線の色
 	if (border) {
-		containerClasses.push('has-border-color');
 		style.borderWidth = `1px`;
 		if (isHexColor(borderColor)) {
 			// custom color
 			style.borderColor = `${borderColor}`;
-		} else {
-			// palette color
-			containerClasses.push(`has-${borderColor}-border-color`);
 		}
 	}
-	const containerClass = containerClasses.join(' ');
-	const innerClass = innerClasses.join(' ');
+
+	// 文字色
+	const textColorCustom = textColor && isHexColor(textColor)? textColor : null;
 
 	const blockProps = useBlockProps.save({
-		className: `${containerClass}`,
-		style,
+		className: classnames(containerClasses),
+		style: style,
 	});
 
 	const TagName = url ? 'a' : 'div';
@@ -83,7 +68,7 @@ export default function save(props) {
 	return (
 		<div {...blockProps}>
 			<TagName
-				className={innerClass}
+				className={classnames(innerClasses)}
 				style={{
 					paddingTop: containerSpace.top,
 					paddingBottom: containerSpace.bottom,

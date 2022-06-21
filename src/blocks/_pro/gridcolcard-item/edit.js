@@ -153,7 +153,7 @@ export default function Edit(props) {
 			!!border && !!borderColor && !isHexColor(borderColor),
 	});
 
-	const innerClasses = classnames('innerClasses', {
+	const innerClasses = classnames('vk_gridcolcard_item_container', {
 		[`has-text-color`]: !!textColor,
 		[`has-${textColor}-color`]: !!textColor && !isHexColor(textColor),
 	});

@@ -14,6 +14,8 @@ export class VKBButton extends Component {
 		const buttonTarget = this.props.lbTarget;
 		let fontAwesomeIconBefore = this.props.lbFontAwesomeIconBefore;
 		let fontAwesomeIconAfter = this.props.lbFontAwesomeIconAfter;
+		let iconSizeBefore = this.props.lbIconSizeBefore;
+		let iconSizeAfter = this.props.lbIconSizeAfter;
 		const richText = this.props.lbRichtext;
 		const subCaption = this.props.lbsubCaption;
 		let aClass = '';
@@ -92,13 +94,15 @@ export class VKBButton extends Component {
 			let fontAwesomeIconBeforeClassName =
 				fontAwesomeIconBefore.match(/class="(.*?)"/)[1];
 			fontAwesomeIconBeforeClassName += ` vk_button_link_before`;
-			iconBefore = `<i class="${fontAwesomeIconBeforeClassName}"></i>`;
+			const styleBefore = iconSizeBefore? ` style='font-size: ${iconSizeBefore}'` : '';
+			iconBefore = `<i class="${fontAwesomeIconBeforeClassName}"${styleBefore}></i>`;
 		}
 		if (fontAwesomeIconAfter) {
 			let fontAwesomeIconAfterClassName =
 				fontAwesomeIconAfter.match(/class="(.*?)"/)[1];
 			fontAwesomeIconAfterClassName += ` vk_button_link_after`;
-			iconAfter = `<i class="${fontAwesomeIconAfterClassName}"></i>`;
+			const styleAfter = iconSizeBefore? ` style='font-size: ${iconSizeAfter}'` : '';
+			iconAfter = `<i class="${fontAwesomeIconAfterClassName}"${styleAfter}></i>`;
 		}
 
 		return (

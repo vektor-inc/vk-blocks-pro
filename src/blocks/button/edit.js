@@ -739,6 +739,8 @@ export default function ButtonEdit(props) {
 					lbSize={buttonSize}
 					lbFontAwesomeIconBefore={fontAwesomeIconBefore}
 					lbFontAwesomeIconAfter={fontAwesomeIconAfter}
+					lbIconSizeBefore={iconSizeBefore}
+					lbIconSizeAfter={iconSizeAfter}
 					lbsubCaption={subCaption}
 					lbRichtext={
 						<RichText

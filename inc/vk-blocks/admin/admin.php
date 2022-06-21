@@ -196,7 +196,7 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 		'vkBlocksObject',
 		array(
 			'options'          => vk_blocks_get_options(),
-			'balloonMeta'      => VK_Blocks_Options::get_balloon_meta(),
+			'balloonMeta'      => VK_Blocks_Options::get_balloon_meta_options(),
 			'imageNumber'      => VK_Blocks_Options::balloon_image_number(),
 			'isLicenseSetting' => vk_blocks_is_license_setting(),
 			'isPro'            => vk_blocks_is_pro(),

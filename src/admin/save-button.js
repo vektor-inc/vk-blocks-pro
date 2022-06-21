@@ -2,8 +2,8 @@
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { useState } from '@wordpress/element';
-import { Button } from '@wordpress/components';
+import { useState, useEffect } from '@wordpress/element';
+import { Button, Snackbar } from '@wordpress/components';
 import apiFetch from '@wordpress/api-fetch';
 // import api from '@wordpress/api';
 
@@ -65,6 +65,15 @@ export const SaveButton = (props) => {
 		});
 	};
 
+	// snackbar更新する
+	useEffect(() => {
+		if (isSaveSuccess) {
+			setTimeout(() => {
+				setIsSaveSuccess();
+			}, 3000);
+		}
+	}, [isSaveSuccess]);
+
 	return (
 		<>
 			<div className="submit">
@@ -76,10 +85,17 @@ export const SaveButton = (props) => {
 				>
 					{__('Save setting', 'vk-blocks')}
 				</Button>
-				{isSaveSuccess === false && (
-					<p>{__('Failed to save.', 'vk-blocks')}</p>
+				{isSaveSuccess && (
+					<div
+						style={{
+							position: 'fixed',
+							right: '30px',
+							bottom: '50px',
+						}}
+					>
+						<Snackbar>{__('Save Success', 'vk-blocks')} </Snackbar>
+					</div>
 				)}
-				{isSaveSuccess === true && <p>{__('OK.', 'vk-blocks')}</p>}
 			</div>
 		</>
 	);

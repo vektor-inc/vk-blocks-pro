@@ -12,6 +12,7 @@ import {
 	ToolbarGroup,
 	ToolbarButton,
 	Dropdown,
+	__experimentalUnitControl as UnitControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
 } from '@wordpress/components';
 import {
 	RichText,
@@ -45,6 +46,8 @@ export default function ButtonEdit(props) {
 		outerGap,
 		fontAwesomeIconBefore,
 		fontAwesomeIconAfter,
+		iconSizeBefore,
+		iconSizeAfter,
 		blockId,
 		old_1_31_0,
 	} = attributes;
@@ -702,7 +705,13 @@ export default function ButtonEdit(props) {
 								attributeName={'fontAwesomeIconBefore'}
 								{...props}
 							/>
+						<UnitControl
+							label={__('Size', 'vk-blocks')}
+							value={iconSizeBefore}
+							onChange={(value) => setAttributes({ iconSizeBefore: value })}
+						/>
 						</BaseControl>
+						<hr />
 						<BaseControl
 							id={`vk_block_button_fa_after_text`}
 							label={__('After text', 'vk-blocks')}
@@ -711,6 +720,11 @@ export default function ButtonEdit(props) {
 								attributeName={'fontAwesomeIconAfter'}
 								{...props}
 							/>
+						<UnitControl
+							label={__('Size', 'vk-blocks')}
+							value={iconSizeAfter}
+							onChange={(value) => setAttributes({ iconSizeAfter: value })}
+						/>
 						</BaseControl>
 					</BaseControl>
 				</PanelBody>

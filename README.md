@@ -77,10 +77,15 @@ wp-env の port を変更している場合
 WP_BASE_URL='http://localhost:xxxx/' npm run test:e2e
 ```
 
+単体で動かしたい場合
+```
+npm run test:e2e ./test/e2e-tests/specs/xxxx.test.js
+```
 
-## pre-commit
-コミット時にphpのformat、phpcsのチェックと、lintが実行されます。
-エラーがある場合コミットできません。
+## pre-push、pre-commit
+プッシュ時にphpのformat、phpcsのチェック、
+コミット時にlintが実行されます。
+それぞれ、エラーがある場合コミットやプッシュができません。
 
 ---
 ## コミットプリフィックス

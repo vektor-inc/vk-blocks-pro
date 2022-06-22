@@ -18,17 +18,17 @@ export default function save(props) {
 		buttonWidthMobile,
 		buttonWidthTablet,
 		buttonWidth,
+		outerGap,
 		fontAwesomeIconBefore,
 		fontAwesomeIconAfter,
 		blockId,
 	} = attributes;
 
 	let containerClass = '';
-	// カスタムカラーの場合
+	// カスタムカラーの場合 またはアウターにギャップが指定されれいる場合
 	if (
-		(buttonTextColorCustom !== undefined &&
-			isHexColor(buttonTextColorCustom)) ||
-		(buttonColorCustom !== undefined && isHexColor(buttonColorCustom))
+		(buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) ||
+		outerGap
 	) {
 		containerClass = `vk_button vk_button-color-custom vk_button-${blockId}`;
 	} else {

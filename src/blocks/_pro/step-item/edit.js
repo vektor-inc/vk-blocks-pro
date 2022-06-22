@@ -13,11 +13,12 @@ import {
 } from '@wordpress/block-editor';
 import parse from 'html-react-parser';
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
+import { useEffect } from '@wordpress/element';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 
 export default function StepItemEdit(props) {
-	const { attributes, setAttributes } = props;
-	let { color, style, styleLine, dotCaption, dotNum, faIcon } = attributes;
+	const { attributes, setAttributes, clientId } = props;
+	const { color, style, styleLine, dotCaption, dotNum, faIcon } = attributes;
 
 	const containerClass = ' vk_step_item';
 	let styleClass = '';
@@ -28,6 +29,14 @@ export default function StepItemEdit(props) {
 	const iconFamily = vkFontAwesome.iconFamily;
 
 	const TEMPLATE = [['core/heading', { level: 4 }], ['core/paragraph']];
+
+	// コンソールエラー回避のため useEffect を使用（実行タイミングの問題）
+	useEffect(() => {
+		//過去バージョンをリカバリーした時にiconを正常に表示する
+		if (faIcon && !faIcon.match(/<i/)) {
+			setAttributes({ faIcon: `<i class="${faIcon}"></i>` });
+		}
+	}, [clientId]);
 
 	if (style === 'solid') {
 		styleClass = ' vk_step_item_style-default';
@@ -55,11 +64,6 @@ export default function StepItemEdit(props) {
 		styleLineClass = ' vk_step_item_lineStyle-default';
 	} else if (styleLine === 'none') {
 		styleLineClass = ' vk_step_item_lineStyle-none';
-	}
-
-	//過去バージョンをリカバリーした時にiconを正常に表示する
-	if (faIcon && !faIcon.match(/<i/)) {
-		faIcon = `<i class="${faIcon}"></i>`;
 	}
 
 	const blockProps = useBlockProps({

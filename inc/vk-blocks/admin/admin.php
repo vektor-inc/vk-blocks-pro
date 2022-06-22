@@ -149,3 +149,23 @@ function vk_blocks_add_setting_link( $links, $file ) {
 	return $links;
 }
 add_filter( 'plugin_action_links', 'vk_blocks_add_setting_link', 10, 2 );
+
+/**
+ * Enqueue scripts
+ *
+ * @param string $hook_suffix hook suffix.
+ */
+function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
+	// 作成したオプションページ以外では読み込まない.
+	if ( 'settings_page_vk_blocks_options' !== $hook_suffix ) {
+		return;
+	}
+
+	wp_enqueue_style(
+		'vk_blocks_options-style',
+		VK_BLOCKS_DIR_URL . 'build/vk_blocks_options.css',
+		array(),
+		VK_BLOCKS_VERSION
+	);
+}
+add_action( 'admin_enqueue_scripts', 'vk_blocks_options_enqueue_scripts' );

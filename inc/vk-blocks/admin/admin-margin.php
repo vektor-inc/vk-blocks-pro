@@ -43,13 +43,6 @@ $vk_blocks_options           = vk_blocks_get_options();
 			<?php endforeach; ?>
 			</select>
 			</p>
-
-			<style type="text/css">
-			.spacer-input input[type="number"]{
-				width:5em;
-				text-align:center;
-			}
-			</style>
 			<ul class="no-style spacer-input">
 			<?php foreach ( $vk_blocks_margin_size_array as $vk_blocks_margin_size ) : ?>
 				<li>

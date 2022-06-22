@@ -1,6 +1,6 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { componentDivider } from './component-divider';
-import GenerateBgImage from '@vkblocks/utils/GenerateBgImage';
+import GenerateBgImage from './GenerateBgImage';
 
 export default function save(props) {
 	const { attributes } = props;

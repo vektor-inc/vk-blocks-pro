@@ -189,7 +189,7 @@ export default function Edit(props) {
 	const alertClass = url ? 'mb-3 alert alert-danger' : 'mb-3';
 
 	const blockProps = useBlockProps({
-		className: classnames(containerClasses),
+		className: containerClasses,
 		style,
 	});
 
@@ -340,7 +340,7 @@ export default function Edit(props) {
 			</InspectorControls>
 			<div {...blockProps}>
 				<div
-					className={classnames(innerClasses)}
+					className={innerClasses}
 					style={{
 						paddingTop: containerSpace.top,
 						paddingBottom: containerSpace.bottom,

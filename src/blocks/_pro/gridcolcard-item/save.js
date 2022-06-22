@@ -20,7 +20,7 @@ export default function save(props) {
 	// カラーパレットに対応
 	const containerClasses = classnames('vk_gridcolcard_item', {
 		[`vk_gridcolcard_item-noHeader`]: headerDisplay === 'delete',
-		[`vk_gridcolcard_item-noFooterr`]: footerDisplay === 'delete',
+		[`vk_gridcolcard_item-noFooter`]: footerDisplay === 'delete',
 		[`has-background`]: !!backgroundColor,
 		[`has-border-color`]: !!border,
 		[`has-${backgroundColor}-background-color`]:
@@ -62,7 +62,7 @@ export default function save(props) {
 		textColor && isHexColor(textColor) ? textColor : null;
 
 	const blockProps = useBlockProps.save({
-		className: classnames(containerClasses),
+		className: containerClasses,
 		style,
 	});
 
@@ -71,7 +71,7 @@ export default function save(props) {
 	return (
 		<div {...blockProps}>
 			<TagName
-				className={classnames(innerClasses)}
+				className={innerClasses}
 				style={{
 					paddingTop: containerSpace.top,
 					paddingBottom: containerSpace.bottom,

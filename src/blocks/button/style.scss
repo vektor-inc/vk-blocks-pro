@@ -88,6 +88,11 @@ $xxl-min: 1400px;
 		}
 	}
 
+	&_link{
+		display: flex;
+		align-items: center;
+	}
+
 	@media (max-width: $xs-max) {
 		&[class*="vk_button-width-mobile-"]{
 			.vk_button_link {

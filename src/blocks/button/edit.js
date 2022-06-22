@@ -705,11 +705,13 @@ export default function ButtonEdit(props) {
 								attributeName={'fontAwesomeIconBefore'}
 								{...props}
 							/>
-						<UnitControl
-							label={__('Size', 'vk-blocks')}
-							value={iconSizeBefore}
-							onChange={(value) => setAttributes({ iconSizeBefore: value })}
-						/>
+							<UnitControl
+								label={__('Size', 'vk-blocks')}
+								value={iconSizeBefore}
+								onChange={(value) =>
+									setAttributes({ iconSizeBefore: value })
+								}
+							/>
 						</BaseControl>
 						<hr />
 						<BaseControl
@@ -720,11 +722,13 @@ export default function ButtonEdit(props) {
 								attributeName={'fontAwesomeIconAfter'}
 								{...props}
 							/>
-						<UnitControl
-							label={__('Size', 'vk-blocks')}
-							value={iconSizeAfter}
-							onChange={(value) => setAttributes({ iconSizeAfter: value })}
-						/>
+							<UnitControl
+								label={__('Size', 'vk-blocks')}
+								value={iconSizeAfter}
+								onChange={(value) =>
+									setAttributes({ iconSizeAfter: value })
+								}
+							/>
 						</BaseControl>
 					</BaseControl>
 				</PanelBody>

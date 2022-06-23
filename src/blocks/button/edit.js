@@ -184,6 +184,13 @@ export default function ButtonEdit(props) {
 		setAttributes({ buttonWidth: 0 });
 	}
 
+	// アイコン単位
+	const units = [
+		{ value: 'px', label: 'px', default: 16 },
+		{ value: 'em', label: 'em', default: 1 },
+		{ value: 'rem', label: 'rem', default: 1 },
+	];
+
 	const blockProps = useBlockProps({
 		className: containerClass,
 	});
@@ -708,9 +715,14 @@ export default function ButtonEdit(props) {
 							<UnitControl
 								label={__('Size', 'vk-blocks')}
 								value={iconSizeBefore}
-								onChange={(value) =>
-									setAttributes({ iconSizeBefore: value })
-								}
+								units={units}
+								onChange={(value) => {
+									setAttributes({
+										iconSizeBefore: parseFloat(value)
+											? value
+											: '',
+									});
+								}}
 							/>
 						</BaseControl>
 						<hr />
@@ -725,9 +737,14 @@ export default function ButtonEdit(props) {
 							<UnitControl
 								label={__('Size', 'vk-blocks')}
 								value={iconSizeAfter}
-								onChange={(value) =>
-									setAttributes({ iconSizeAfter: value })
-								}
+								units={units}
+								onChange={(value) => {
+									setAttributes({
+										iconSizeAfter: parseFloat(value)
+											? value
+											: '',
+									});
+								}}
 							/>
 						</BaseControl>
 					</BaseControl>

@@ -88,11 +88,6 @@ $xxl-min: 1400px;
 		}
 	}
 
-	&_link{
-		display: flex;
-		align-items: center;
-	}
-
 	@media (max-width: $xs-max) {
 		&[class*="vk_button-width-mobile-"]{
 			.vk_button_link {
@@ -380,6 +375,7 @@ $xxl-min: 1400px;
 
 		&_after {
 			margin-left: 0.7rem;
+			margin-right: 0;
 		}
 
 		&_subCaption {
@@ -387,6 +383,11 @@ $xxl-min: 1400px;
 			overflow: hidden;
 			margin: 0;
 			font-size: 80%;
+		}
+
+		&.has-icon {
+			display: inline-flex;
+			align-items: center;
 		}
 	}
 

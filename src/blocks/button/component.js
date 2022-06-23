@@ -103,10 +103,14 @@ export class VKBButton extends Component {
 			let fontAwesomeIconAfterClassName =
 				fontAwesomeIconAfter.match(/class="(.*?)"/)[1];
 			fontAwesomeIconAfterClassName += ` vk_button_link_after`;
-			const styleAfter = iconSizeBefore
+			const styleAfter = iconSizeAfter
 				? ` style='font-size: ${iconSizeAfter}'`
 				: '';
 			iconAfter = `<i class="${fontAwesomeIconAfterClassName}"${styleAfter}></i>`;
+		}
+
+		if (fontAwesomeIconBefore || fontAwesomeIconAfter) {
+			aClass += ` has-icon`;
 		}
 
 		return (

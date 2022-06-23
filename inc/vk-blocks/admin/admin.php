@@ -26,27 +26,6 @@ if ( ! function_exists( 'vk_blocks_setting' ) ) {
 	function vk_blocks_setting() {
 		?>
 		<div id="vk-blocks-admin"></div>
-
-		<h1>以下はPHPで出力</h1>
-		<?php
-		$options           = get_option( 'vk_blocks_balloon_meta' );
-		$image_number      = 15;
-		$image_number      = apply_filters( 'vk_blocks_image_number', $image_number );
-		$vk_blocks_options = vk_blocks_get_options();
-		?>
-
-		<form method="post" action="">
-			<?php wp_nonce_field( 'vkb-nonce-key', 'vkb-setting-page' ); ?>
-			<?php
-			if ( vk_blocks_is_license_setting() ) {
-				require_once dirname( __FILE__ ) . '/admin-license.php';
-			}
-			require_once dirname( __FILE__ ) . '/admin-balloon.php';
-			require_once dirname( __FILE__ ) . '/admin-margin.php';
-			require_once dirname( __FILE__ ) . '/admin-load-separate.php';
-			do_action( 'vk_blocks_pro_admin' );
-			?>
-		</form>
 		<?php
 	}
 }

@@ -144,7 +144,7 @@ export default function Edit(props) {
 	// カラーパレットに対応
 	const containerClasses = classnames('vk_gridcolcard_item', {
 		[`vk_gridcolcard_item-noHeader`]: headerDisplay === 'delete',
-		[`vk_gridcolcard_item-noFooterr`]: footerDisplay === 'delete',
+		[`vk_gridcolcard_item-noFooter`]: footerDisplay === 'delete',
 		[`has-background`]: !!backgroundColor,
 		[`has-border-color`]: !!border,
 		[`has-${backgroundColor}-background-color`]:

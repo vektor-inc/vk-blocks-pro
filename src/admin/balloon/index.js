@@ -37,6 +37,7 @@ export default function AdminBalloon() {
 					{__('Balloon Border Width Setting', 'vk-blocks')}
 				</h4>
 				<SelectControl
+					className="vk_admin_selectControl"
 					value={vkBlocksOption.balloon_border_width}
 					onChange={(newValue) => {
 						setVkBlocksOption({

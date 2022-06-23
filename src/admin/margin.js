@@ -51,7 +51,7 @@ export default function AdminMargin() {
 	return (
 		<>
 			<section>
-				<h3 id="balloon-setting">
+				<h3 id="margin-setting">
 					{__('Common Margin Setting', 'vk-blocks')}
 				</h3>
 				<p>
@@ -60,29 +60,33 @@ export default function AdminMargin() {
 						'vk-blocks'
 					)}
 				</p>
-				<SelectControl
-					value={vkBlocksOption.margin_unit}
-					onChange={(newValue) => {
-						setVkBlocksOption({
-							...vkBlocksOption,
-							margin_unit: newValue,
-						});
-					}}
-					options={[
-						{
-							label: __('px', 'vk-blocks'),
-							value: 'px',
-						},
-						{
-							label: __('em', 'vk-blocks'),
-							value: 'em',
-						},
-						{
-							label: __('rem', 'vk-blocks'),
-							value: 'rem',
-						},
-					]}
-				/>
+				<p className="vk_admin_marginUnit">
+					<span>{__('Unit', 'vk-blocks')}</span>
+					<SelectControl
+						className="vk_admin_selectControl unit-select"
+						value={vkBlocksOption.margin_unit}
+						onChange={(newValue) => {
+							setVkBlocksOption({
+								...vkBlocksOption,
+								margin_unit: newValue,
+							});
+						}}
+						options={[
+							{
+								label: __('px', 'vk-blocks'),
+								value: 'px',
+							},
+							{
+								label: __('em', 'vk-blocks'),
+								value: 'em',
+							},
+							{
+								label: __('rem', 'vk-blocks'),
+								value: 'rem',
+							},
+						]}
+					/>
+				</p>
 				<ul className="no-style spacer-input">
 					{MARGIN_SIZE_ARRAY.map((size) => {
 						const { marginLabel, marginValue } = size;

@@ -65,11 +65,11 @@
 		},
 		"iconSizeBefore": {
 			"type": "string",
-			"default": ""
+			"default": null
 		},
 		"iconSizeAfter": {
 			"type": "string",
-			"default": ""
+			"default": null
 		},
 		"clientId": {
 			"type": "string"

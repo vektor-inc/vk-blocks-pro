@@ -720,7 +720,7 @@ export default function ButtonEdit(props) {
 									setAttributes({
 										iconSizeBefore: parseFloat(value)
 											? value
-											: '',
+											: null,
 									});
 								}}
 							/>
@@ -742,7 +742,7 @@ export default function ButtonEdit(props) {
 									setAttributes({
 										iconSizeAfter: parseFloat(value)
 											? value
-											: '',
+											: null,
 									});
 								}}
 							/>

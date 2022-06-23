@@ -8,6 +8,7 @@ export default [
 	ButtonHook1_29_2,
 	ButtonHook1_29_2,
 	ButtonHook1_29_2,
+	ButtonHook1_29_2,
 	ButtonHook1_18_1,
 	ButtonHook1_18_1,
 	ButtonHook1_16_4,

@@ -64,7 +64,7 @@ e.g.
 
 == Changelog ==
 
-[ Add Function ][ Button ] Add custom size option
+[ Add Function ][ Button ] Enable inline font size and add icon size option.
 
 = 1.37.0 =
 [ Specification Change ][ Step Item(Pro) / Timeline Item()Pro ] Change padding-bottom to inner-item last-child margin-bottom

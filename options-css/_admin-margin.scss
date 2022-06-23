@@ -3,6 +3,23 @@
 	text-align: center;
 }
 
+.vk_admin_marginUnit {
+	display: flex;
+	align-items: center;
+
+	span {
+		margin-right: 4px;
+	}
+
+	.components-base-control__field {
+		margin-bottom: 0;
+	}
+}
+
+.vk_admin_selectControl.unit-select {
+	width: 7em;
+}
+
 .spacer-input {
 
 	li {

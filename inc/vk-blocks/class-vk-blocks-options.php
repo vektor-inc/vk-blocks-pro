@@ -188,24 +188,6 @@ class VK_Blocks_Options {
 	 * @return options
 	 */
 	public static function get_balloon_meta_options() {
-		// defaults配列の形
-		// $defaults = array(
-		// 'default_icons' => array(
-		// '1' => array(
-		// 'name' => null,
-		// 'src' => null,
-		// ),
-		// '2' => array(
-		// 'name' => null,
-		// 'src' => null,
-		// ),
-		// '3' => array(
-		// 'name' => null,
-		// 'src' => null,
-		// ),
-		// ),
-		// );
-
 		$options                   = get_option( 'vk_blocks_balloon_meta' );
 		$number                    = self::balloon_image_number();
 		$defaults                  = array();

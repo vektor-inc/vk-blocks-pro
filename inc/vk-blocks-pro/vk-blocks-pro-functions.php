@@ -18,14 +18,14 @@ VK_Blocks_Pro_Options::init();
  *
  * @param array $defaults defaults.
  */
-// function vk_blocks_pro_get_options( $defaults ) {
-// $defaults = array(
-// 'display_vk_block_template' => 'display',
-// 'new_faq_accordion'         => 'disable',
-// );
-// return $defaults;
-// }
-// add_filter( 'vk_blocks_default_options', 'vk_blocks_pro_get_options' );
+function vk_blocks_pro_get_options( $defaults ) {
+	$defaults = array(
+		'display_vk_block_template' => 'display',
+		'new_faq_accordion'         => 'disable',
+	);
+	return $defaults;
+}
+add_filter( 'vk_blocks_default_options', 'vk_blocks_pro_get_options' );
 
 /**
  * Pro 専用のスクリプトの読み込み

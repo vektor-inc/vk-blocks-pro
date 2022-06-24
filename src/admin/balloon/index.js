@@ -33,6 +33,7 @@ export default function AdminBalloon() {
 					{__('Balloon Border Width Setting', 'vk-blocks')}
 				</h4>
 				<SelectControl
+					id='balloon-border-width-selector'
 					className="vk_admin_selectControl"
 					name="vk_blocks_options[balloon_border_width]"
 					value={vkBlocksOption.balloon_border_width}
@@ -246,6 +247,7 @@ export default function AdminBalloon() {
 									{__('Balloon Image Name', 'vk-blocks')}
 								</label>
 								<TextControl
+									id={`icon_title['${i}']`}
 									className="balloonIconList_name_input"
 									name={`vk_blocks_balloon_meta[default_icons][${i}][name]`}
 									onChange={(newValue) => {

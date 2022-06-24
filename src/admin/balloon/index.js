@@ -23,10 +23,6 @@ export default function AdminBalloon() {
 	} = useContext(AdminContext);
 	const vkBlocksImageNumber = vkBlocksObject.imageNumber;
 
-	// console.log(vkBlocksOption);
-	// console.log(vkBlocksBalloonMeta);
-	// console.log(vkBlocksBalloonMeta.default_icons);
-
 	return (
 		<>
 			<section>

@@ -76,7 +76,6 @@ class Vk_Blocks_EntryPoint {
 		return rest_ensure_response(
 			array(
 				'success' => true,
-				'message' => __( 'Settings saved.', 'vk-blocks' ),
 			)
 		);
 	}

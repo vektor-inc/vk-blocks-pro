@@ -100,6 +100,7 @@ export default function AdminMargin() {
 									const { deviceLabel, deviceValue } = device;
 									return (
 										<>
+											{/* TextControlでは以前の実装が出来なかったので致し方なく__experimentalNumberControlを利用 */}
 											<NumberControl
 												className="margin_size_input"
 												key={deviceLabel}
@@ -140,25 +141,6 @@ export default function AdminMargin() {
 						);
 					})}
 				</ul>
-				{/* <p>step0.05</p>
-				<input
-					label={__('PC', 'vk-blocks')}
-					type="number"
-					step="0.05"
-					//value={vkBlocksOption.margin_size.lg.tablet !== '' && vkBlocksOption.margin_size.lg.tablet}
-					onChange={(newValue) => {
-						setVkBlocksOption({
-							...vkBlocksOption,
-							margin_size: {
-								...vkBlocksOption.margin_size,
-								lg: {
-									...vkBlocksOption.margin_size.lg,
-									tablet: newValue,
-								},
-							},
-						});
-					}}
-				/> */}
 			</section>
 			<SaveButton
 				vkBlocksOption={vkBlocksOption}

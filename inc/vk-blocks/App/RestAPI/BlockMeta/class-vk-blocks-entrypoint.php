@@ -62,7 +62,7 @@ class Vk_Blocks_EntryPoint {
 	}
 
 	/**
-	 * Function to update editor config.
+	 * VK Blocks Rest Update Callback
 	 *
 	 * @param object $request — .
 	 * @return \WP_REST_Response|\WP_Error

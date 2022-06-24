@@ -189,10 +189,10 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 		print '------------------------------------' . PHP_EOL;
 		foreach ( $test_data as $test_value ) {
 			if ( ! empty( $test_value['option'] ) ){
-				$array = isset($test_value['option']) ? $test_value['option'] : null;
+				$array = isset( $test_value['option'] ) ? $test_value['option'] : null;
 				add_filter(
 					'vk_blocks_default_options_scheme',
-					function() use($array) {
+					function() use( $array ) {
 						return $array;
 					}
 				);
@@ -230,7 +230,7 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 		print '------------------------------------' . PHP_EOL;
 		foreach ( $test_data as $test_value ) {
 			if ( ! empty( $test_value['option'] ) ){
-				$number = isset($test_value['option']) ? $test_value['option'] : null;
+				$number = isset( $test_value['option'] ) ? $test_value['option'] : null;
 				add_filter(
 					'vk_blocks_image_number',
 					function() use ( $number ) {
@@ -506,10 +506,10 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 		print '------------------------------------' . PHP_EOL;
 		foreach ( $test_data as $test_value ) {
 			if ( ! empty( $test_value['option'] ) ){
-				$number = isset($test_value['option']) ? $test_value['option'] : null;
+				$number = isset( $test_value['option'] ) ? $test_value['option'] : null;
 				add_filter(
 					'vk_blocks_image_number',
-					function()  use ( $number ) {
+					function() use ( $number ) {
 						return $number;
 					}
 				);
@@ -971,68 +971,5 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 			$this->assertSame( $correct, $return );
 		}
 	}
-
-	/**
-	 * @see https://github.com/WordPress/wordpress-develop/blob/bd08b221273b8b367a18fef8c9efb873819ac89d/tests/phpunit/tests/rest-api/rest-settings-controller.php#L219
-	 */
-	// public function test_register_setting() {
-	// 	$test_data = array(
-	// 		array(
-	// 			'option' => 2,
-	// 			'correct' => array(
-	// 				'default_icons' => array(
-	// 					'type'  => 'object',
-	// 					'items' => array(
-	// 						'1' => array(
-	// 							'type'  => 'object',
-	// 							'items' => array(
-	// 								'name' => array(
-	// 									'type'    => 'string',
-	// 									'default' => null,
-	// 								),
-	// 								'src'  => array(
-	// 									'type'    => 'string',
-	// 									'default' => null,
-	// 								),
-	// 							),
-	// 						),
-	// 						'2' => array(
-	// 							'type'  => 'object',
-	// 							'items' => array(
-	// 								'name' => array(
-	// 									'type'    => 'string',
-	// 									'default' => null,
-	// 								),
-	// 								'src'  => array(
-	// 									'type'    => 'string',
-	// 									'default' => null,
-	// 								),
-	// 							),
-	// 						),
-	// 					),
-	// 				),
-	// 			),
-	// 		),
-	// 	);
-	// 	print PHP_EOL;
-	// 	print '------------------------------------' . PHP_EOL;
-	// 	print 'register_setting()' . PHP_EOL;
-	// 	print '------------------------------------' . PHP_EOL;
-	// 	foreach ( $test_data as $test_value ) {
-
-	// 		$return  = VK_Blocks_Options::register_setting();
-	// 		$correct = $test_value['correct'];
-
-	// 		print 'return  :';
-	// 		print PHP_EOL;
-	// 		var_dump( $return );
-	// 		print PHP_EOL;
-	// 		print 'correct  :';
-	// 		print PHP_EOL;
-	// 		var_dump( $correct );
-	// 		print PHP_EOL;
-	// 		$this->assertSame( $correct, $return );
-	// 	}
-	// }
 
 }

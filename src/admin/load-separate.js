@@ -17,7 +17,7 @@ export default function AdminLoadSeparate() {
 	return (
 		<>
 			<section>
-				<h3 id="balloon-setting">
+				<h3 id="load-separete-setting">
 					{__('Load Separate Setting', 'vk-blocks')}
 				</h3>
 				<p>

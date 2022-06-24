@@ -60,7 +60,7 @@ export default function AdminMargin() {
 						'vk-blocks'
 					)}
 				</p>
-				<p className="vk_admin_marginUnit">
+				<div className="vk_admin_marginUnit">
 					<span>{__('Unit', 'vk-blocks')}</span>
 					<SelectControl
 						name="vk_blocks_options[margin_unit]"
@@ -87,7 +87,7 @@ export default function AdminMargin() {
 							},
 						]}
 					/>
-				</p>
+				</div>
 				<ul className="no-style spacer-input">
 					{MARGIN_SIZE_ARRAY.map((size) => {
 						const { marginLabel, marginValue } = size;
@@ -99,43 +99,41 @@ export default function AdminMargin() {
 								</span>
 								{DEVICE_ARRAY.map((device) => {
 									const { deviceLabel, deviceValue } = device;
+									{/* TextControlでは以前の実装が出来なかったので致し方なく__experimentalNumberControlを利用 */}
 									return (
-										<>
-											{/* TextControlでは以前の実装が出来なかったので致し方なく__experimentalNumberControlを利用 */}
-											<NumberControl
-												className="margin_size_input"
-												key={deviceLabel}
-												label={deviceLabel}
-												name={`vk_blocks_options[margin_size][${marginValue}][${deviceValue}]`}
-												step="0.05"
-												value={
-													!vkBlocksOption.margin_size[
-														marginValue
-													][deviceValue]
-														? ''
-														: vkBlocksOption
+										<NumberControl
+											className="margin_size_input"
+											key={deviceLabel}
+											label={deviceLabel}
+											name={`vk_blocks_options[margin_size][${marginValue}][${deviceValue}]`}
+											step="0.05"
+											value={
+												!vkBlocksOption.margin_size[
+													marginValue
+												][deviceValue]
+													? ''
+													: vkBlocksOption
+															.margin_size[
+															marginValue
+														][deviceValue]
+											}
+											onChange={(newValue) => {
+												setVkBlocksOption({
+													...vkBlocksOption,
+													margin_size: {
+														...vkBlocksOption.margin_size,
+														[marginValue]: {
+															...vkBlocksOption
 																.margin_size[
 																marginValue
-														  ][deviceValue]
-												}
-												onChange={(newValue) => {
-													setVkBlocksOption({
-														...vkBlocksOption,
-														margin_size: {
-															...vkBlocksOption.margin_size,
-															[marginValue]: {
-																...vkBlocksOption
-																	.margin_size[
-																	marginValue
-																],
-																[deviceValue]:
-																	newValue,
-															},
+															],
+															[deviceValue]:
+																newValue,
 														},
-													});
-												}}
-											/>
-										</>
+													},
+												});
+											}}
+										/>
 									);
 								})}
 							</li>

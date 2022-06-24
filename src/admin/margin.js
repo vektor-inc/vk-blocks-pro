@@ -99,7 +99,9 @@ export default function AdminMargin() {
 								</span>
 								{DEVICE_ARRAY.map((device) => {
 									const { deviceLabel, deviceValue } = device;
-									{/* TextControlでは以前の実装が出来なかったので致し方なく__experimentalNumberControlを利用 */}
+									{
+										/* TextControlでは以前の実装が出来なかったので致し方なく__experimentalNumberControlを利用 */
+									}
 									return (
 										<NumberControl
 											className="margin_size_input"
@@ -115,7 +117,7 @@ export default function AdminMargin() {
 													: vkBlocksOption
 															.margin_size[
 															marginValue
-														][deviceValue]
+													  ][deviceValue]
 											}
 											onChange={(newValue) => {
 												setVkBlocksOption({

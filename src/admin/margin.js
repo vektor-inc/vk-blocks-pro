@@ -63,7 +63,7 @@ export default function AdminMargin() {
 				<p className="vk_admin_marginUnit">
 					<span>{__('Unit', 'vk-blocks')}</span>
 					<SelectControl
-						name='vk_blocks_options[margin_unit]'
+						name="vk_blocks_options[margin_unit]"
 						className="vk_admin_selectControl unit-select"
 						value={vkBlocksOption.margin_unit}
 						onChange={(newValue) => {

@@ -20,7 +20,7 @@ export default function AdminNewFaq() {
 			<section>
 				<h3 id="faq-setting">{__('FAQ Block Setting', 'vk-blocks')}</h3>
 				<SelectControl
-					name='vk_blocks_options[new_faq_accordion]'
+					name="vk_blocks_options[new_faq_accordion]"
 					className="vk_admin_selectControl"
 					value={vkBlocksOption.new_faq_accordion}
 					onChange={(newValue) => {

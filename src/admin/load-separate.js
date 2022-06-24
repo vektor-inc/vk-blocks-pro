@@ -27,6 +27,7 @@ export default function AdminLoadSeparate() {
 					)}
 				</p>
 				<CheckboxControl
+					name='vk_blocks_options[load_separate_option]'
 					label={__('Load Separate Option on', 'vk-blocks')}
 					checked={vkBlocksOption.load_separate_option}
 					onChange={(newValue) => {

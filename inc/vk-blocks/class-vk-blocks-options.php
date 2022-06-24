@@ -11,82 +11,6 @@
 class VK_Blocks_Options {
 
 	/**
-	 * Default Options schema
-	 *
-	 * @var array
-	 */
-	private $default_options_schema = array(
-		'balloon_border_width' => array(
-			'type'    => 'number',
-			'default' => 1,
-		),
-		'margin_unit'          => array(
-			'type'    => 'string',
-			'default' => 'rem',
-		),
-		'margin_size'          => array(
-			'type'  => 'object',
-			'items' => array(
-				'lg' => array(
-					'type'  => 'object',
-					'items' => array(
-						'mobile' => array(
-							'type'    => 'number',
-							'default' => null,
-						),
-						'tablet' => array(
-							'type'    => 'number',
-							'default' => null,
-						),
-						'pc'     => array(
-							'type'    => 'number',
-							'default' => null,
-						),
-					),
-				),
-				'md' => array(
-					'type'  => 'object',
-					'items' => array(
-						'mobile' => array(
-							'type'    => 'number',
-							'default' => null,
-						),
-						'tablet' => array(
-							'type'    => 'number',
-							'default' => null,
-						),
-						'pc'     => array(
-							'type'    => 'number',
-							'default' => null,
-						),
-					),
-				),
-				'sm' => array(
-					'type'  => 'object',
-					'items' => array(
-						'mobile' => array(
-							'type'    => 'number',
-							'default' => null,
-						),
-						'tablet' => array(
-							'type'    => 'number',
-							'default' => null,
-						),
-						'pc'     => array(
-							'type'    => 'number',
-							'default' => null,
-						),
-					),
-				),
-			),
-		),
-		'load_separate_option' => array(
-			'type'    => 'boolean',
-			'default' => false,
-		),
-	);
-
-	/**
 	 * Initialize
 	 *
 	 * @return VK_Blocks_Options
@@ -109,8 +33,78 @@ class VK_Blocks_Options {
 	 *
 	 * @return number
 	 */
-	public function options_scheme() {
-		$array = array_merge( $this->default_options_schema, apply_filters( 'vk_blocks_default_options_scheme', array() ) );
+	public static function options_scheme() {
+		$default_options_schema = array(
+			'balloon_border_width' => array(
+				'type'    => 'number',
+				'default' => 1,
+			),
+			'margin_unit'          => array(
+				'type'    => 'string',
+				'default' => 'rem',
+			),
+			'margin_size'          => array(
+				'type'  => 'object',
+				'items' => array(
+					'lg' => array(
+						'type'  => 'object',
+						'items' => array(
+							'mobile' => array(
+								'type'    => 'number',
+								'default' => null,
+							),
+							'tablet' => array(
+								'type'    => 'number',
+								'default' => null,
+							),
+							'pc'     => array(
+								'type'    => 'number',
+								'default' => null,
+							),
+						),
+					),
+					'md' => array(
+						'type'  => 'object',
+						'items' => array(
+							'mobile' => array(
+								'type'    => 'number',
+								'default' => null,
+							),
+							'tablet' => array(
+								'type'    => 'number',
+								'default' => null,
+							),
+							'pc'     => array(
+								'type'    => 'number',
+								'default' => null,
+							),
+						),
+					),
+					'sm' => array(
+						'type'  => 'object',
+						'items' => array(
+							'mobile' => array(
+								'type'    => 'number',
+								'default' => null,
+							),
+							'tablet' => array(
+								'type'    => 'number',
+								'default' => null,
+							),
+							'pc'     => array(
+								'type'    => 'number',
+								'default' => null,
+							),
+						),
+					),
+				),
+			),
+			'load_separate_option' => array(
+				'type'    => 'boolean',
+				'default' => false,
+			),
+		);
+		$array                  = array_merge( $default_options_schema, apply_filters( 'vk_blocks_default_options_scheme', array() ) );
 		return $array;
 	}
 

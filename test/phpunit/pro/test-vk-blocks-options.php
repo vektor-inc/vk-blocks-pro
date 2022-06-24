@@ -7,231 +7,218 @@
 
 class VKBlocksOptionsTest extends WP_UnitTestCase {
 
-	// public function test_options_scheme() {
-	// 	$test_data = array(
-	// 		array(
-	// 			'option' =>null,
-	// 			'correct' => array(
-	// 				'balloon_border_width' => array(
-	// 					'type'    => 'number',
-	// 					'default' => 1,
-	// 				),
-	// 				'margin_unit'          => array(
-	// 					'type'    => 'string',
-	// 					'default' => 'rem',
-	// 				),
-	// 				'margin_size'          => array(
-	// 					'type'  => 'object',
-	// 					'items' => array(
-	// 						'lg' => array(
-	// 							'type'  => 'object',
-	// 							'items' => array(
-	// 								'mobile' => array(
-	// 									'type'    => 'number',
-	// 									'default' => null,
-	// 								),
-	// 								'tablet' => array(
-	// 									'type'    => 'number',
-	// 									'default' => null,
-	// 								),
-	// 								'pc'     => array(
-	// 									'type'    => 'number',
-	// 									'default' => null,
-	// 								),
-	// 							),
-	// 						),
-	// 						'md' => array(
-	// 							'type'  => 'object',
-	// 							'items' => array(
-	// 								'mobile' => array(
-	// 									'type'    => 'number',
-	// 									'default' => null,
-	// 								),
-	// 								'tablet' => array(
-	// 									'type'    => 'number',
-	// 									'default' => null,
-	// 								),
-	// 								'pc'     => array(
-	// 									'type'    => 'number',
-	// 									'default' => null,
-	// 								),
-	// 							),
-	// 						),
-	// 						'sm' => array(
-	// 							'type'  => 'object',
-	// 							'items' => array(
-	// 								'mobile' => array(
-	// 									'type'    => 'number',
-	// 									'default' => null,
-	// 								),
-	// 								'tablet' => array(
-	// 									'type'    => 'number',
-	// 									'default' => null,
-	// 								),
-	// 								'pc'     => array(
-	// 									'type'    => 'number',
-	// 									'default' => null,
-	// 								),
-	// 							),
-	// 						),
-	// 					),
-	// 				),
-	// 				'load_separate_option' => array(
-	// 					'type'    => 'boolean',
-	// 					'default' => false,
-	// 				),
-	// 			),
-	// 		),
-	// 		array(
-	// 			'option' => array(
-	// 				'vk_blocks_pro_license_key' => array(
-	// 					'type'    => 'string',
-	// 					'default' => null,
-	// 				),
-	// 				'display_vk_block_template' => array(
-	// 					'type'    => 'string',
-	// 					'default' => 'display',
-	// 				),
-	// 				'new_faq_accordion'         => array(
-	// 					'type'    => 'string',
-	// 					'default' => 'disable',
-	// 				),
-	// 			),
-	// 			'correct' => array(
-	// 				'balloon_border_width' => array(
-	// 					'type'    => 'number',
-	// 					'default' => 1,
-	// 				),
-	// 				'margin_unit'          => array(
-	// 					'type'    => 'string',
-	// 					'default' => 'rem',
-	// 				),
-	// 				'margin_size'          => array(
-	// 					'type'  => 'object',
-	// 					'items' => array(
-	// 						'lg' => array(
-	// 							'type'  => 'object',
-	// 							'items' => array(
-	// 								'mobile' => array(
-	// 									'type'    => 'number',
-	// 									'default' => null,
-	// 								),
-	// 								'tablet' => array(
-	// 									'type'    => 'number',
-	// 									'default' => null,
-	// 								),
-	// 								'pc'     => array(
-	// 									'type'    => 'number',
-	// 									'default' => null,
-	// 								),
-	// 							),
-	// 						),
-	// 						'md' => array(
-	// 							'type'  => 'object',
-	// 							'items' => array(
-	// 								'mobile' => array(
-	// 									'type'    => 'number',
-	// 									'default' => null,
-	// 								),
-	// 								'tablet' => array(
-	// 									'type'    => 'number',
-	// 									'default' => null,
-	// 								),
-	// 								'pc'     => array(
-	// 									'type'    => 'number',
-	// 									'default' => null,
-	// 								),
-	// 							),
-	// 						),
-	// 						'sm' => array(
-	// 							'type'  => 'object',
-	// 							'items' => array(
-	// 								'mobile' => array(
-	// 									'type'    => 'number',
-	// 									'default' => null,
-	// 								),
-	// 								'tablet' => array(
-	// 									'type'    => 'number',
-	// 									'default' => null,
-	// 								),
-	// 								'pc'     => array(
-	// 									'type'    => 'number',
-	// 									'default' => null,
-	// 								),
-	// 							),
-	// 						),
-	// 					),
-	// 				),
-	// 				'load_separate_option' => array(
-	// 					'type'    => 'boolean',
-	// 					'default' => false,
-	// 				),
-	// 				'vk_blocks_pro_license_key' => array(
-	// 					'type'    => 'string',
-	// 					'default' => null,
-	// 				),
-	// 				'display_vk_block_template' => array(
-	// 					'type'    => 'string',
-	// 					'default' => 'display',
-	// 				),
-	// 				'new_faq_accordion'         => array(
-	// 					'type'    => 'string',
-	// 					'default' => 'disable',
-	// 				),
-	// 			),
-	// 		),
-	// 	);
-	// 	print PHP_EOL;
-	// 	print '------------------------------------' . PHP_EOL;
-	// 	print 'options_scheme()' . PHP_EOL;
-	// 	print '------------------------------------' . PHP_EOL;
-	// 	foreach ( $test_data as $test_value ) {
+	public function test_options_scheme() {
+		$test_data = array(
+			// 無料版
+			// array(
+			// 	'option' =>null,
+			// 	'correct' => array(
+			// 		'balloon_border_width' => array(
+			// 			'type'    => 'number',
+			// 			'default' => 1,
+			// 		),
+			// 		'margin_unit'          => array(
+			// 			'type'    => 'string',
+			// 			'default' => 'rem',
+			// 		),
+			// 		'margin_size'          => array(
+			// 			'type'  => 'object',
+			// 			'items' => array(
+			// 				'lg' => array(
+			// 					'type'  => 'object',
+			// 					'items' => array(
+			// 						'mobile' => array(
+			// 							'type'    => 'number',
+			// 							'default' => null,
+			// 						),
+			// 						'tablet' => array(
+			// 							'type'    => 'number',
+			// 							'default' => null,
+			// 						),
+			// 						'pc'     => array(
+			// 							'type'    => 'number',
+			// 							'default' => null,
+			// 						),
+			// 					),
+			// 				),
+			// 				'md' => array(
+			// 					'type'  => 'object',
+			// 					'items' => array(
+			// 						'mobile' => array(
+			// 							'type'    => 'number',
+			// 							'default' => null,
+			// 						),
+			// 						'tablet' => array(
+			// 							'type'    => 'number',
+			// 							'default' => null,
+			// 						),
+			// 						'pc'     => array(
+			// 							'type'    => 'number',
+			// 							'default' => null,
+			// 						),
+			// 					),
+			// 				),
+			// 				'sm' => array(
+			// 					'type'  => 'object',
+			// 					'items' => array(
+			// 						'mobile' => array(
+			// 							'type'    => 'number',
+			// 							'default' => null,
+			// 						),
+			// 						'tablet' => array(
+			// 							'type'    => 'number',
+			// 							'default' => null,
+			// 						),
+			// 						'pc'     => array(
+			// 							'type'    => 'number',
+			// 							'default' => null,
+			// 						),
+			// 					),
+			// 				),
+			// 			),
+			// 		),
+			// 		'load_separate_option' => array(
+			// 			'type'    => 'boolean',
+			// 			'default' => false,
+			// 		),
+			// 	),
+			// ),
+			// Pro版 マージ
+			array(
+				'option' => array(
+					'vk_blocks_pro_license_key' => array(
+						'type'    => 'string',
+						'default' => null,
+					),
+					'display_vk_block_template' => array(
+						'type'    => 'string',
+						'default' => 'display',
+					),
+					'new_faq_accordion'         => array(
+						'type'    => 'string',
+						'default' => 'disable',
+					),
+				),
+				'correct' => array(
+					'balloon_border_width' => array(
+						'type'    => 'number',
+						'default' => 1,
+					),
+					'margin_unit'          => array(
+						'type'    => 'string',
+						'default' => 'rem',
+					),
+					'margin_size'          => array(
+						'type'  => 'object',
+						'items' => array(
+							'lg' => array(
+								'type'  => 'object',
+								'items' => array(
+									'mobile' => array(
+										'type'    => 'number',
+										'default' => null,
+									),
+									'tablet' => array(
+										'type'    => 'number',
+										'default' => null,
+									),
+									'pc'     => array(
+										'type'    => 'number',
+										'default' => null,
+									),
+								),
+							),
+							'md' => array(
+								'type'  => 'object',
+								'items' => array(
+									'mobile' => array(
+										'type'    => 'number',
+										'default' => null,
+									),
+									'tablet' => array(
+										'type'    => 'number',
+										'default' => null,
+									),
+									'pc'     => array(
+										'type'    => 'number',
+										'default' => null,
+									),
+								),
+							),
+							'sm' => array(
+								'type'  => 'object',
+								'items' => array(
+									'mobile' => array(
+										'type'    => 'number',
+										'default' => null,
+									),
+									'tablet' => array(
+										'type'    => 'number',
+										'default' => null,
+									),
+									'pc'     => array(
+										'type'    => 'number',
+										'default' => null,
+									),
+								),
+							),
+						),
+					),
+					'load_separate_option' => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+					'vk_blocks_pro_license_key' => array(
+						'type'    => 'string',
+						'default' => null,
+					),
+					'display_vk_block_template' => array(
+						'type'    => 'string',
+						'default' => 'display',
+					),
+					'new_faq_accordion'         => array(
+						'type'    => 'string',
+						'default' => 'disable',
+					),
+				),
+			),
+		);
+		print PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+		print 'options_scheme()' . PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+		foreach ( $test_data as $test_value ) {
+			if ( ! empty( $test_value['option'] ) ){
+				$array = isset($test_value['option']) ? $test_value['option'] : null;
+				add_filter(
+					'vk_blocks_default_options_scheme',
+					function() use($array) {
+						return $array;
+					}
+				);
+			}
+			$return  = VK_Blocks_Options::options_scheme();
+			$correct = $test_value['correct'];
 
-	// 		add_filter(
-	// 			'vk_blocks_default_options_scheme',
-	// 			function() {
-	// 				$array = array(
-	// 					'vk_blocks_pro_license_key' => array(
-	// 						'type'    => 'string',
-	// 						'default' => null,
-	// 					),
-	// 					'display_vk_block_template' => array(
-	// 						'type'    => 'string',
-	// 						'default' => 'display',
-	// 					),
-	// 					'new_faq_accordion'         => array(
-	// 						'type'    => 'string',
-	// 						'default' => 'disable',
-	// 					),
-	// 				);
-	// 				return $array;
-	// 			}
-	// 		);
+			// print 'return  :';
+			// print PHP_EOL;
+			// var_dump( $return );
+			// print PHP_EOL;
+			// print 'correct  :';
+			// print PHP_EOL;
+			// var_dump( $correct );
+			// print PHP_EOL;
+			$this->assertSame( $correct, $return );
 
-	// 		// staticファンクションでないからreturnの値がない？
-	// 		$return  = VK_Blocks_Options::options_scheme();
-	// 		$correct = $test_value['correct'];
+		}
+	}
 
-	// 		print 'return  :';
-	// 		print PHP_EOL;
-	// 		var_dump( $return );
-	// 		print PHP_EOL;
-	// 		print 'correct  :';
-	// 		print PHP_EOL;
-	// 		var_dump( $correct );
-	// 		print PHP_EOL;
-	// 		$this->assertSame( $correct, $return );
-
-	// 	}
-	// }
-
-	// ループの中でフィルターフックを使用することが出来ないっぽい？
 	public function test_balloon_image_number() {
 		$test_data = array(
-			// array(
-			// 	'option' => 5,
-			// 	'correct' => 5,
-			// ),
+			array(
+				'option' => 5,
+				'correct' => 5,
+			),
 			array(
 				'option' => 20,
 				'correct' => 20,
@@ -243,26 +230,25 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 		print '------------------------------------' . PHP_EOL;
 		foreach ( $test_data as $test_value ) {
 			if ( ! empty( $test_value['option'] ) ){
+				$number = isset($test_value['option']) ? $test_value['option'] : null;
 				add_filter(
 					'vk_blocks_image_number',
-					function() {
-						// $number = isset($test_value['option']);
-						// $number = $test_value['option'];
-						return 20;
+					function() use ( $number ) {
+						return $number;
 					}
 				);
 			}
 			$return  = VK_Blocks_Options::balloon_image_number();
 			$correct = $test_value['correct'];
 
-			print 'return  :';
-			print PHP_EOL;
-			var_dump( $return );
-			print PHP_EOL;
-			print 'correct  :';
-			print PHP_EOL;
-			var_dump( $correct );
-			print PHP_EOL;
+			// print 'return  :';
+			// print PHP_EOL;
+			// var_dump( $return );
+			// print PHP_EOL;
+			// print 'correct  :';
+			// print PHP_EOL;
+			// var_dump( $correct );
+			// print PHP_EOL;
 			$this->assertSame( $correct, $return );
 		}
 	}
@@ -270,10 +256,213 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 	// balloon_meta_schemaを作る
 	public function test_balloon_meta_schema() {
 		$test_data = array(
-			// array(
-			// 	'option' => 5,
-			// 	'correct' => 5,
-			// ),
+			// デフォルト
+			array(
+				'option' => null,
+				'correct' => array(
+					'default_icons' => array(
+						'type'  => 'object',
+						'items' => array(
+							'1' => array(
+								'type'  => 'object',
+								'items' => array(
+									'name' => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'src'  => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+								),
+							),
+							'2' => array(
+								'type'  => 'object',
+								'items' => array(
+									'name' => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'src'  => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+								),
+							),
+							'3' => array(
+								'type'  => 'object',
+								'items' => array(
+									'name' => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'src'  => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+								),
+							),
+							'4' => array(
+								'type'  => 'object',
+								'items' => array(
+									'name' => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'src'  => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+								),
+							),
+							'5' => array(
+								'type'  => 'object',
+								'items' => array(
+									'name' => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'src'  => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+								),
+							),
+							'6' => array(
+								'type'  => 'object',
+								'items' => array(
+									'name' => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'src'  => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+								),
+							),
+							'7' => array(
+								'type'  => 'object',
+								'items' => array(
+									'name' => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'src'  => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+								),
+							),
+							'8' => array(
+								'type'  => 'object',
+								'items' => array(
+									'name' => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'src'  => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+								),
+							),
+							'9' => array(
+								'type'  => 'object',
+								'items' => array(
+									'name' => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'src'  => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+								),
+							),
+							'10' => array(
+								'type'  => 'object',
+								'items' => array(
+									'name' => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'src'  => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+								),
+							),
+							'11' => array(
+								'type'  => 'object',
+								'items' => array(
+									'name' => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'src'  => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+								),
+							),
+							'12' => array(
+								'type'  => 'object',
+								'items' => array(
+									'name' => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'src'  => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+								),
+							),
+							'13' => array(
+								'type'  => 'object',
+								'items' => array(
+									'name' => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'src'  => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+								),
+							),
+							'14' => array(
+								'type'  => 'object',
+								'items' => array(
+									'name' => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'src'  => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+								),
+							),
+							'15' => array(
+								'type'  => 'object',
+								'items' => array(
+									'name' => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'src'  => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+								),
+							),
+						),
+					),
+				),
+			),
+			// 吹き出しの数を変更した時
 			array(
 				'option' => 2,
 				'correct' => array(
@@ -317,24 +506,25 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 		print '------------------------------------' . PHP_EOL;
 		foreach ( $test_data as $test_value ) {
 			if ( ! empty( $test_value['option'] ) ){
+				$number = isset($test_value['option']) ? $test_value['option'] : null;
 				add_filter(
 					'vk_blocks_image_number',
-					function() {
-						return 2;
+					function()  use ( $number ) {
+						return $number;
 					}
 				);
 			}
 			$return  = VK_Blocks_Options::balloon_meta_schema();
 			$correct = $test_value['correct'];
 
-			print 'return  :';
-			print PHP_EOL;
-			var_dump( $return );
-			print PHP_EOL;
-			print 'correct  :';
-			print PHP_EOL;
-			var_dump( $correct );
-			print PHP_EOL;
+			// print 'return  :';
+			// print PHP_EOL;
+			// var_dump( $return );
+			// print PHP_EOL;
+			// print 'correct  :';
+			// print PHP_EOL;
+			// var_dump( $correct );
+			// print PHP_EOL;
 			$this->assertSame( $correct, $return );
 		}
 	}

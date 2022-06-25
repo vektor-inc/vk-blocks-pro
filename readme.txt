@@ -64,6 +64,9 @@ e.g.
 
 == Changelog ==
 
+= 1.38.1 =
+[ Bug fix ][ Post List (Pro) ] Fix pagenation mid size 0
+
 = 1.38.0 =
 [ Bug fix ][ Post List (Pro) ] cope with pagenation hook
 

@@ -158,10 +158,19 @@ class Vk_Blocks_PostList {
 			}
 		}
 
+		global $wp_query;
+		// とりあえず１を入れつつ2ページ目の情報があったら上書き
+		$paged = 1;
+		if ( is_singular() && isset( $wp_query->query_vars['page'] ) ) {
+			$paged = $wp_query->query_vars['page'];
+		} elseif ( isset( $wp_query->query_vars['paged'] ) ) {
+			$paged = $wp_query->query_vars['paged'];
+		}
+
 		$args = array(
 			'post_type'      => $is_checked_post_type,
 			'tax_query'      => self::format_terms( $is_checked_terms ),
-			'paged'          => 1,
+			'paged'          => $paged,
 			// 0で全件取得
 			'posts_per_page' => intval( $attributes['numberPosts'] ),
 			'order'          => $attributes['order'],

@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
 Tested up to: 6.0.0
-Stable tag: 1.38.1.0
+Stable tag: 1.38.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,9 +63,6 @@ e.g.
 
 
 == Changelog ==
-
-= 1.38.1 =
-[ Bug fix ][ Post List (Pro) ] Fix pagenation mid size 0
 
 = 1.38.0 =
 [ Bug fix ][ Post List (Pro) ] cope with pagenation hook

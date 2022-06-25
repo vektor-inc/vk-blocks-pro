@@ -76,6 +76,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 		public static function get_loop_options( $loop_options, $wp_query ) {
 			$default = array(
 				'pagination_display'   => false,
+				'pagination_mid_size'  => 1,
 				'archive_link_display' => false,
 				'class_loop_outer'     => null,
 			);
@@ -220,7 +221,11 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				}
 
 				if ( ! empty( $loop_options['pagination_display'] ) ) {
-					$loop .= self::get_pagenation( $wp_query );
+					$pagenation_args = array();
+					if ( ! empty( $loop_options['pagination_mid_size'] ) ) {
+						$pagenation_args['mid_size'] = $loop_options['pagination_mid_size'];
+					}
+					$loop .= self::get_pagenation( $wp_query, $pagenation_args );
 				}
 
 			endif;
@@ -292,7 +297,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 			$args = wp_parse_args(
 				$args,
 				array(
-					'mid_size'           => 0,
+					'mid_size'           => 1, // get_loop では loop_options のデフォルト値で上書きされる.
 					'prev_text'          => '&laquo;',
 					'next_text'          => '&raquo;',
 					'screen_reader_text' => __( 'Posts navigation', 'vk-blocks' ),
@@ -328,7 +333,6 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				$html .= '<nav class="navigation ' . $args['class'] . '" role="navigation" aria-label="' . $args['aria_label'] . '">';
 				$html .= '<h4 class="screen-reader-text">' . $args['screen_reader_text'] . '</h4>';
 				$html .= '<div class="nav-links"><ul class="page-numbers">';
-
 
 				// [ << ]
 				// 現在のページが２ページ目以降の場合 << を表示.

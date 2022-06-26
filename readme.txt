@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
 Tested up to: 6.0.0
-Stable tag: 1.36.2.0
+Stable tag: 1.38.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -65,6 +65,10 @@ e.g.
 == Changelog ==
 
 [ Specification Change ] License key remove space.
+
+= 1.38.0 =
+[ Bug fix ][ Post List (Pro) ] cope with pagenation hook
+
 
 = 1.37.0 =
 [ Specification Change ][ Step Item(Pro) / Timeline Item()Pro ] Change padding-bottom to inner-item last-child margin-bottom

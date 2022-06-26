@@ -19,3 +19,9 @@ $vk_blocks_options = vk_blocks_get_options();
 
 	<?php submit_button(); ?>
 </section>
+<script>
+	const licenseKeyElem = document.getElementById('vk-blocks-pro-license-key');
+	licenseKeyElem.addEventListener('blur', (e) => {
+		 licenseKeyElem.value = licenseKeyElem.value.trim();
+	});
+</script>

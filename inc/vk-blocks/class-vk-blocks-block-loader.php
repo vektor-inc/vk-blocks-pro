@@ -176,7 +176,7 @@ class VK_Blocks_Block_Loader {
 	 * Register Blocks Assets
 	 */
 	public function register_blocks_assets() {
-		$asset_file = include $this->assets_build_path . 'block-build.asset.php';
+		$asset_file = include VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/build/blocks/index-build.asset.php';
 
 		// 結合CSSを登録.
 		if ( self::should_load_separate_assets() && ! is_admin() ) {
@@ -197,7 +197,7 @@ class VK_Blocks_Block_Loader {
 		// 編集画面のjs登録 : 設定に関わらず結合JSを登録 -> 各ブロックのindex.phpから呼び出される
 		wp_register_script(
 			'vk-blocks-build-js',
-			$this->assets_build_url . 'block-build.js',
+			VK_BLOCKS_DIR_URL . 'inc/vk-blocks/build/blocks/index-build.js',
 			$asset_file['dependencies'],
 			VK_BLOCKS_VERSION,
 			true

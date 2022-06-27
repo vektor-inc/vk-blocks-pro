@@ -17,7 +17,7 @@
 	<exclude-pattern type="relative">^inc/vk-customize-helpers/package/*</exclude-pattern>
 	<exclude-pattern type="relative">^inc/vk-admin/package/*</exclude-pattern>
 	<exclude-pattern type="relative">^inc/term-color/package/*</exclude-pattern>
-	<exclude-pattern type="relative">^inc/vk-blocks/build/block-build.asset.php</exclude-pattern>
+	<exclude-pattern type="relative">^inc/vk-blocks/build/*/index-build.asset.php</exclude-pattern>
 	<exclude-pattern type="relative">^test/phpunit/*</exclude-pattern>
 	<exclude-pattern type="relative">^.git/*</exclude-pattern>
 	<exclude-pattern type="relative">^build/*</exclude-pattern>

@@ -15,7 +15,7 @@ function vk_blocks_register_block_archive_list() {
 	if ( ! is_admin() ) {
 		wp_register_style(
 			'vk-blocks/archive-list',
-			VK_BLOCKS_DIR_URL . 'build/icon/style.css',
+			VK_BLOCKS_DIR_URL . 'build/archive-list/style.css',
 			array(),
 			VK_BLOCKS_VERSION
 		);

@@ -17,9 +17,12 @@ export const settings = {
 	example: {
 		attributes: {
 			title: '',
+			postType: 'post',
+			archiveType: 'm',
+			titdisplayDesignle: 'list',
 		},
 	},
 	edit,
 	save,
-//	deprecated,
+	//	deprecated,
 };

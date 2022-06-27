@@ -2,9 +2,7 @@ import { VKBArchiveList } from './component';
 import { useBlockProps } from '@wordpress/block-editor';
 
 export default function save({ attributes }) {
-	let {
-		title,
-	} = attributes;
+	const { title, postType, archiveType, displayDesign } = attributes;
 
 	const blockProps = useBlockProps.save({
 		className: `vk_archive_list`,
@@ -14,6 +12,9 @@ export default function save({ attributes }) {
 		<div {...blockProps}>
 			<VKBArchiveList
 				lbTitle={title}
+				lbPostType={postType}
+				lbArchiveType={archiveType}
+				lbDisplayDesigne={displayDesign}
 			/>
 		</div>
 	);

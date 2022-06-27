@@ -7,6 +7,18 @@
 		"title": {
 			"type": "string",
 			"default": ""
+		},
+		"postType": {
+			"type": "string",
+			"default": "post"
+		},
+		"archiveType": {
+			"type": "string",
+			"default": "m"
+		},
+		"displayDesign": {
+			"type": "string",
+			"default": "list"
 		}
 	},
 	"description": "Displays a list of archives.",

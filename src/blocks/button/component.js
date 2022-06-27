@@ -109,14 +109,6 @@ export class VKBButton extends Component {
 			iconAfter = `<i class="${fontAwesomeIconAfterClassName}"${styleAfter}></i>`;
 		}
 
-		if (iconSizeBefore || iconSizeAfter){
-			aClass += ` has-icon`;
-		}
-
-		const hasIconSize = (iconSizeBefore || iconSizeAfter) ? true : false;
-		const TagName = '';
-
-
 		return (
 			/* eslint react/jsx-no-target-blank: 0 */
 			<a

@@ -109,9 +109,13 @@ export class VKBButton extends Component {
 			iconAfter = `<i class="${fontAwesomeIconAfterClassName}"${styleAfter}></i>`;
 		}
 
-		if (fontAwesomeIconBefore || fontAwesomeIconAfter) {
+		if (iconSizeBefore || iconSizeAfter){
 			aClass += ` has-icon`;
 		}
+
+		const hasIconSize = (iconSizeBefore || iconSizeAfter) ? true : false;
+		const TagName = '';
+
 
 		return (
 			/* eslint react/jsx-no-target-blank: 0 */
@@ -124,9 +128,21 @@ export class VKBButton extends Component {
 				target={buttonTarget ? '_blank' : null}
 				rel={'noopener'}
 			>
-				{parse(iconBefore)}
-				{richText}
-				{parse(iconAfter)}
+				{/*アイコンのサイズがある場合は階層つける*/}
+				{(iconSizeBefore || iconSizeAfter) && (
+					<div className={'has-icon'}>
+						{parse(iconBefore)}
+						{richText}
+						{parse(iconAfter)}
+					</div>
+				)}
+				{!(iconSizeBefore || iconSizeAfter) && (
+					<>
+						{parse(iconBefore)}
+						{richText}
+						{parse(iconAfter)}
+					</>
+				)}
 				{/*サブキャプションが入力された時のみ表示*/}
 				{subCaption && (
 					<p className={'vk_button_link_subCaption'}>{subCaption}</p>

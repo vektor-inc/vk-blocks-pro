@@ -64,8 +64,11 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] License key remove space.
+
 = 1.38.0 =
 [ Bug fix ][ Post List (Pro) ] cope with pagenation hook
+
 
 = 1.37.0 =
 [ Specification Change ][ Step Item(Pro) / Timeline Item()Pro ] Change padding-bottom to inner-item last-child margin-bottom

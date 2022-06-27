@@ -2,16 +2,16 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.37.0.0\n"
+"Project-Id-Version: VK Blocks Pro 1.38.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-06-14T05:32:17+00:00\n"
+"POT-Creation-Date: 2022-06-25T18:35:02+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.5.0\n"
+"X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 "X-Domain: vk-blocks\n"
 
 #: src/blocks/_pro/accordion/index.js:22
@@ -1828,7 +1828,7 @@ msgid "Card (Image Round)"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:26
-#: inc/vk-components/package/class-vk-component-posts.php:747
+#: inc/vk-components/package/class-vk-component-posts.php:760
 msgid "Card"
 msgstr ""
 
@@ -1845,7 +1845,7 @@ msgid "Card (Horizontal)"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:42
-#: inc/vk-components/package/class-vk-component-posts.php:763
+#: inc/vk-components/package/class-vk-component-posts.php:776
 msgid "Media"
 msgstr ""
 
@@ -2527,12 +2527,12 @@ msgstr ""
 msgid "Edit this area"
 msgstr ""
 
-#: inc/vk-blocks/view/class-vk-blocks-postlist.php:237
+#: inc/vk-blocks/view/class-vk-blocks-postlist.php:246
 msgid "Post"
 msgstr ""
 
 #. translators: %s: 投稿タイプ名
-#: inc/vk-blocks/view/class-vk-blocks-postlist.php:241
+#: inc/vk-blocks/view/class-vk-blocks-postlist.php:250
 msgid "There are no %ss."
 msgstr ""
 
@@ -2552,35 +2552,35 @@ msgstr ""
 msgid "New!!"
 msgstr ""
 
-#: inc/vk-components/package/class-vk-component-posts.php:261
+#: inc/vk-components/package/class-vk-component-posts.php:267
 msgid "More"
 msgstr ""
 
-#: inc/vk-components/package/class-vk-component-posts.php:297
+#: inc/vk-components/package/class-vk-component-posts.php:303
 msgid "Posts navigation"
 msgstr ""
 
-#: inc/vk-components/package/class-vk-component-posts.php:298
+#: inc/vk-components/package/class-vk-component-posts.php:304
 msgid "Posts"
 msgstr ""
 
-#: inc/vk-components/package/class-vk-component-posts.php:300
+#: inc/vk-components/package/class-vk-component-posts.php:306
 msgid "Page"
 msgstr ""
 
-#: inc/vk-components/package/class-vk-component-posts.php:751
+#: inc/vk-components/package/class-vk-component-posts.php:764
 msgid "Card Noborder"
 msgstr ""
 
-#: inc/vk-components/package/class-vk-component-posts.php:755
+#: inc/vk-components/package/class-vk-component-posts.php:768
 msgid "Card Intext"
 msgstr ""
 
-#: inc/vk-components/package/class-vk-component-posts.php:759
+#: inc/vk-components/package/class-vk-component-posts.php:772
 msgid "Card Horizontal"
 msgstr ""
 
-#: inc/vk-components/package/class-vk-component-posts.php:767
+#: inc/vk-components/package/class-vk-component-posts.php:780
 msgctxt "post list type"
 msgid "Text 1 Column"
 msgstr ""

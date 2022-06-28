@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
 Tested up to: 6.0.0
-Stable tag: 1.38.0.1
+Stable tag: 1.39.0.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -64,13 +64,14 @@ e.g.
 
 == Changelog ==
 
+= 1.39.0 =
+[ Improvement ] License key remove space.
 [ Bug Fix ][ Common mergin ] cope with table margin bottom 0,margin top 0
-[ Specification Change ] License key remove space.
-[ fix ][ GridColCard ( Pro ) ] cope with custom color palette
+[ Bug fix ][ GridColCard ( Pro ) ] cope with custom color palette
+[ Other ] VK Compo ( mini-content ) Update ( Fix slider align ) 
 
 = 1.38.0 =
 [ Bug fix ][ Post List (Pro) ] cope with pagenation hook
-
 
 = 1.37.0 =
 [ Specification Change ][ Step Item(Pro) / Timeline Item()Pro ] Change padding-bottom to inner-item last-child margin-bottom

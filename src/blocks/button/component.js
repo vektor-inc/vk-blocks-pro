@@ -109,6 +109,15 @@ export class VKBButton extends Component {
 			iconAfter = `<i class="${fontAwesomeIconAfterClassName}"${styleAfter}></i>`;
 		}
 
+		//インラインフォントサイズ、またはアイコンサイズがある場合
+		const hasInlineSize =
+			richText.props.value &&
+			(richText.props.value.match(/vk_inline-font-size/) ||
+			iconSizeBefore ||
+			iconSizeAfter )
+				? true
+				: false;
+
 		return (
 			/* eslint react/jsx-no-target-blank: 0 */
 			<a
@@ -120,15 +129,14 @@ export class VKBButton extends Component {
 				target={buttonTarget ? '_blank' : null}
 				rel={'noopener'}
 			>
-				{/*アイコンのサイズがある場合は階層つける*/}
-				{(iconSizeBefore || iconSizeAfter) && (
+				{hasInlineSize && (
 					<div className={'has-icon'}>
 						{parse(iconBefore)}
 						{richText}
 						{parse(iconAfter)}
 					</div>
 				)}
-				{!(iconSizeBefore || iconSizeAfter) && (
+				{!hasInlineSize && (
 					<>
 						{parse(iconBefore)}
 						{richText}

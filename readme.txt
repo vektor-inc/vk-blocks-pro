@@ -65,6 +65,7 @@ e.g.
 == Changelog ==
 
 [ Specification Change ] License key remove space.
+[ fix ][ GridColCard ( Pro ) ] cope with custom color palette
 
 = 1.38.0 =
 [ Bug fix ][ Post List (Pro) ] cope with pagenation hook

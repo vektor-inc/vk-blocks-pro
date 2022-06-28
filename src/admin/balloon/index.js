@@ -36,7 +36,10 @@ export default function AdminBalloon() {
 					id="balloon-border-width-selector"
 					className="vk_admin_selectControl"
 					name="vk_blocks_options[balloon_border_width]"
-					value={vkBlocksOption.balloon_border_width}
+					value={
+						!!vkBlocksOption.balloon_border_width &&
+						vkBlocksOption.balloon_border_width
+					}
 					onChange={(newValue) => {
 						setVkBlocksOption({
 							...vkBlocksOption,
@@ -178,6 +181,7 @@ export default function AdminBalloon() {
 															}}
 														>
 															<img
+																id={`balloonIconList_iconFrame_src_${i}`}
 																className="balloonIconList_iconFrame_src"
 																src={
 																	vkBlocksBalloonMeta
@@ -265,7 +269,11 @@ export default function AdminBalloon() {
 									}}
 									value={
 										vkBlocksBalloonMeta.default_icons[i]
-											.name === ''
+											.name === '' ||
+										vkBlocksBalloonMeta.default_icons[i]
+											.name === undefined ||
+										vkBlocksBalloonMeta.default_icons[i]
+											.name === null
 											? ''
 											: vkBlocksBalloonMeta.default_icons[
 													i

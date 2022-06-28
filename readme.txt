@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Common mergin ] cope with table margin bottom 0,margin top 0
 [ Specification Change ] License key remove space.
 [ fix ][ GridColCard ( Pro ) ] cope with custom color palette
 

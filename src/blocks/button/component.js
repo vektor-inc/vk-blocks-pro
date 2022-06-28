@@ -113,8 +113,8 @@ export class VKBButton extends Component {
 		const hasInlineSize =
 			richText.props.value &&
 			(richText.props.value.match(/vk_inline-font-size/) ||
-			iconSizeBefore ||
-			iconSizeAfter )
+				iconSizeBefore ||
+				iconSizeAfter)
 				? true
 				: false;
 

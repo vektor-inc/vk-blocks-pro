@@ -65,6 +65,7 @@ e.g.
 == Changelog ==
 
 [ Specification Change ] License key remove space.
+[ fix ][ GridColCard ( Pro ) ] cope with custom color palette
 [ Add Function ][ Button ] Enable inline font size and add icon size option.
 
 = 1.38.0 =

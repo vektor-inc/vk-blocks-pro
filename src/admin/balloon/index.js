@@ -251,7 +251,7 @@ export default function AdminBalloon() {
 									{__('Balloon Image Name', 'vk-blocks')}
 								</label>
 								<TextControl
-									id={`icon_title['${i}']`}
+									id={`icon_title_${i}`}
 									className="balloonIconList_name_input"
 									name={`vk_blocks_balloon_meta[default_icons][${i}][name]`}
 									onChange={(newValue) => {

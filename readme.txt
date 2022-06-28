@@ -65,7 +65,6 @@ e.g.
 == Changelog ==
 
 [ Specification Change ] Change the script loaded on the options page to a script file.
-[ Specification Change ][ Dev ] change build script file.
 [ Specification Change ] License key remove space.
 
 = 1.38.0 =

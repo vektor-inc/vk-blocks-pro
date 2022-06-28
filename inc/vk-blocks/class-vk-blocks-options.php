@@ -181,7 +181,7 @@ class VK_Blocks_Options {
 				'type' => $value['type'],
 			);
 
-			if ( 'object' === $value['type']  ) {
+			if ( 'object' === $value['type'] ) {
 				$properties[ $key ]['properties'] = array();
 				foreach ( $value['items'] as $key_1 => $value_1 ) {
 					$properties[ $key ]['properties'][ $key_1 ] = array(
@@ -197,7 +197,6 @@ class VK_Blocks_Options {
 							);
 						}
 					}
-
 				}
 			}
 		}

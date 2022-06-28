@@ -216,6 +216,10 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 	public function test_balloon_image_number() {
 		$test_data = array(
 			array(
+				'option' => null,
+				'correct' => 15,
+			),
+			array(
 				'option' => 5,
 				'correct' => 5,
 			),
@@ -684,36 +688,39 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 				),
 				'correct' => array(
 					'some_bool' => array(
-						'properties' => 'boolean',
+						'type' => 'boolean',
 					),
 					'some_int' => array(
-						'properties' => 'integer',
+						'type' => 'integer',
 					),
 					'some_number' => array(
-						'properties' => 'number',
+						'type' => 'number',
 					),
 					'some_array' => array(
-						'properties' => 'array',
+						'type' => 'array',
 					),
 					'some_object_1'  => array(
+						'type' => 'object',
 						'properties' => array(
 							'some_object_1_grand_child_1' => array(
-								'properties' => 'string',
+								'type' => 'string',
 							),
 							'some_object_1_grand_child_2' => array(
-								'properties' => 'string',
+								'type' => 'string',
 							),
 						),
 					),
 					'some_object_2'  => array(
+						'type' => 'object',
 						'properties' => array(
 							'some_object_child' => array(
+								'type' => 'object',
 								'properties' => array(
 									'some_object_2_grand_child_1' => array(
-										'properties' => 'string',
+										'type' => 'string',
 									),
 									'some_object_2_grand_child_2' => array(
-										'properties' => 'string',
+										'type' => 'string',
 									),
 								),
 							),

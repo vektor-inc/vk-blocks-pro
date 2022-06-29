@@ -10,7 +10,10 @@ export default function save(props) {
 	} = attributes;
 
 	const style = {
-		aspectRatio: headerImageAspectRatio,
+		aspectRatio:
+			!!headerImageAspectRatio && headerImageAspectRatio !== ''
+				? headerImageAspectRatio
+				: 'auto',
 	};
 	if (headerImageFit) {
 		if (containerSpace.top) {

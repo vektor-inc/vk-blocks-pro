@@ -33,23 +33,23 @@ function vk_blocks_register_block_archive_list() {
 			'editor_script'   => 'vk-blocks-build-js',
 			'attributes'      => array_merge(
 				array(
-					'title'                       => array(
+					'title'         => array(
 						'type'    => 'string',
 						'default' => '',
 					),
-					'postType'                     => array(
+					'postType'      => array(
 						'type'    => 'string',
 						'default' => 'card',
 					),
-					'archiveType'                     => array(
+					'archiveType'   => array(
 						'type'    => 'number',
 						'default' => 1,
 					),
-					'displayDesign'                     => array(
+					'displayDesign' => array(
 						'type'    => 'number',
 						'default' => 2,
 					),
-					'className'                  => array(
+					'className'     => array(
 						'type'    => 'string',
 						'default' => '',
 					),

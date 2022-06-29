@@ -95,9 +95,9 @@ class Vk_Blocks_ArchiveList {
 
 		$is_checked_terms = json_decode( $attributes['isCheckedTerms'], true );
 
-//		if ( empty( $is_checked_post_type ) ) {
-//			return false;
-//		}
+		// if ( empty( $is_checked_post_type ) ) {
+		// return false;
+		// }
 
 		$post__not_in = array();
 		if ( ! empty( $attributes['selfIgnore'] ) ) {
@@ -138,7 +138,7 @@ class Vk_Blocks_ArchiveList {
 		}
 
 		$args = array(
-			'post_type'      => 'post',
+			'post_type' => 'post',
 		);
 		if ( ! empty( $date_query ) ) {
 			$args['date_query'] = $date_query;

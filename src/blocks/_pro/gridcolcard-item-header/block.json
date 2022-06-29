@@ -32,6 +32,10 @@
 		"headerDisplay": {
 			"type": "string",
 			"default": "delete"
+		},
+		"old_1_39_0": {
+			"type": "Boolean",
+			"default": true
 		}
 	}
 

@@ -70,6 +70,10 @@
 		"urlOpenType": {
 			"type": "Boolean",
 			"default": false
+		},
+		"old_1_39_0": {
+			"type": "Boolean",
+			"default": true
 		}
 	}
 

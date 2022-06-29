@@ -79,7 +79,7 @@ const blockAttributes2 = {
 		type: 'string'
 	},
 	old_1_31_0: {
-		'type': 'string',
+		type: 'string',
 		default: true
 	},
 };
@@ -90,6 +90,10 @@ const blockAttributes2 = {
 	headerImageAspectRatio: {
 		type: 'string',
 		default: 'auto'
+	},
+	old_1_39_0: {
+		type: 'string',
+		default: true
 	},
 };
 */

@@ -18,7 +18,6 @@ export default function Edit(props) {
 
 	// このブロックで直接使う「カラムの最小幅」と「ギャップ」
 	const {
-		headerImageAspectRatio,
 		colWidthMin,
 		colWidthMinTablet,
 		colWidthMinPC,
@@ -26,6 +25,7 @@ export default function Edit(props) {
 		gapRow,
 		blockId,
 		old_1_31_0,
+		old_1_39_0,
 	} = attributes;
 
 	// ブロック全体のアウタークラス名
@@ -49,8 +49,9 @@ export default function Edit(props) {
 			}
 			setAttributes({ old_1_31_0: true });
 		}
-		if (!!headerImageAspectRatio || headerImageAspectRatio === '') {
-			setAttributes({ headerImageAspectRatio: 'auto' });
+		if (old_1_39_0 === undefined) {
+			setAttributes({ headerImageAspectRatio: '1.618/1' });
+			setAttributes({ old_1_39_0: true });
 		}
 	}, [clientId]);
 

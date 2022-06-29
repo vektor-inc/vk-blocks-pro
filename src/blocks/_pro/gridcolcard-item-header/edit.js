@@ -7,13 +7,15 @@ export default function Edit(props) {
 		headerImageAspectRatio,
 		headerImageFit,
 		headerDisplay,
+		old_1_39_0,
 	} = attributes;
 	const MY_TEMPLATE = [['core/image']];
 	const ALLOWED_BLOCKS = ['core/image'];
 
 	useEffect(() => {
-		if (!!headerImageAspectRatio || headerImageAspectRatio === '') {
-			setAttributes({ headerImageAspectRatio: 'auto' });
+		if (old_1_39_0 === undefined) {
+			setAttributes({ headerImageAspectRatio: '1.618/1' });
+			setAttributes({ old_1_39_0: true });
 		}
 	}, [clientId]);
 

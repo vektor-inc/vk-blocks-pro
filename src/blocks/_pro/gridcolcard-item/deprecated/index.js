@@ -65,6 +65,10 @@ const blockAttributes2 = {
 		type: 'string',
 		default: 'auto'
 	},
+	old_1_39_0: {
+		type: 'string',
+		default: true
+	},
 };
 */
 

@@ -152,7 +152,7 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 		VK_BLOCKS_VERSION
 	);
 
-	$asset = include VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/build/admin/index-build.asset.php';
+	$asset = include VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/build/admin-build.asset.php';
 	// Enqueue CSS dependencies.
 	foreach ( $asset['dependencies'] as $style ) {
 		wp_enqueue_style( $style );
@@ -163,7 +163,7 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 
 	wp_enqueue_script(
 		'vk-blocks-admin-js',
-		VK_BLOCKS_DIR_URL . 'inc/vk-blocks/build/admin/index-build.js',
+		VK_BLOCKS_DIR_URL . 'inc/vk-blocks/build/admin-build.js',
 		$asset['dependencies'],
 		$asset['version'],
 		true

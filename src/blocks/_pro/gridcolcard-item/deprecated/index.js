@@ -1,20 +1,7 @@
 import save1_39_0 from './1.39.0/save';
-import save1_31_0 from './1.31.0/save';
 
 const blockAttributes = {
-	colWidthMin: {
-		type: 'string',
-		default: '300px'
-	},
-	gap: {
-		type: 'string',
-		default: '30px'
-	},
-	gapRow: {
-		type: 'string',
-		default: null
-	},
-	overwrite: {
+	editLock: {
 		type: 'boolean',
 		default: false
 	},
@@ -60,21 +47,13 @@ const blockAttributes = {
 	borderColor: {
 		type: 'string',
 		default: '#e5e5e5'
-	}
-};
-
-// 1.31.0 からの変更で追加したもの
-const blockAttributes2 = {
-	colWidthMinTablet: {
-		type: 'string',
-		default: '300px'
 	},
-	colWidthMinPC: {
-		type: 'string',
-		default: '300px'
-	},
-	blockId: {
+	url: {
 		type: 'string'
+	},
+	urlOpenType: {
+		type: 'Boolean',
+		default: false
 	}
 };
 
@@ -90,12 +69,8 @@ const blockAttributes2 = {
 
 const deprecated = [
 	{
-		attributes: blockAttributes2,
-		save: save1_39_0,
-	},
-	{
 		attributes: blockAttributes,
-		save: save1_31_0,
+		save: save1_39_0,
 	},
 ];
 export default deprecated;

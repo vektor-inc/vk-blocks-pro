@@ -29,6 +29,10 @@ const CommonItemControl = (props) => {
 
 	const options = [
 		{
+			value: 'auto',
+			label: 'auto',
+		},
+		{
 			value: '1/1',
 			label: '1:1',
 		},

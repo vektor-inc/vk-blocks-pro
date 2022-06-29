@@ -1,3 +1,4 @@
+import save1_39_0 from './1.39.0/save';
 import save000 from './0.0.0/save';
 
 const blockAttributes = {
@@ -24,7 +25,22 @@ const blockAttributes = {
 	}
 };
 
+/*
+// 1.39.0 からの変更で追加したもの
+const blockAttributes2 = {
+	headerImageAspectRatio: {
+		type: 'string',
+		default: 'auto'
+	},
+};
+*/
+
+
 const deprecated = [
+	{
+		attributes: blockAttributes,
+		save: save1_39_0
+	},
 	{
 		attributes: blockAttributes,
 		save: save000,

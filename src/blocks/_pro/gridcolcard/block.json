@@ -51,7 +51,7 @@
 		},
 		"headerImageAspectRatio": {
 			"type": "string",
-			"default": "1.618/1"
+			"default": "auto"
 		},
 		"headerImageFit": {
 			"type": "boolean",

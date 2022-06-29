@@ -1,5 +1,6 @@
 import save1_39_0 from './1.39.0/save';
 import save1_31_0 from './1.31.0/save';
+import save1_37_0 from './1.37.0/save';
 
 const blockAttributes = {
 	colWidthMin: {
@@ -65,6 +66,7 @@ const blockAttributes = {
 
 // 1.31.0 からの変更で追加したもの
 const blockAttributes2 = {
+	...blockAttributes,
 	colWidthMinTablet: {
 		type: 'string',
 		default: '300px'
@@ -75,7 +77,11 @@ const blockAttributes2 = {
 	},
 	blockId: {
 		type: 'string'
-	}
+	},
+	old_1_31_0: {
+		'type': 'string',
+		default: true
+	},
 };
 
 /*
@@ -92,6 +98,10 @@ const deprecated = [
 	{
 		attributes: blockAttributes2,
 		save: save1_39_0,
+	},
+	{
+		attributes: blockAttributes,
+		save: save1_37_0,
 	},
 	{
 		attributes: blockAttributes,

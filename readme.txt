@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Grid Column Card ] fix bug when aspect retio is empty.
+
 = 1.39.0 =
 [ Improvement ] License key remove space.
 [ Bug Fix ][ Common mergin ] cope with table margin bottom 0,margin top 0

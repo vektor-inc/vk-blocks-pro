@@ -65,6 +65,7 @@ e.g.
 == Changelog ==
 
 [ Bug Fix ][ Grid Column Card ] fix bug when aspect retio is empty.
+[ Specification Change ] Change the script loaded on the options page to a script file.
 
 = 1.39.0 =
 [ Improvement ] License key remove space.

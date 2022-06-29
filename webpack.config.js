@@ -3,7 +3,7 @@ defaultConfig.module.rules.splice(0, 1) // JSをトランスパイルするル�
 const path = require( 'path' );
 
 let entries = {
-  'blocks': __dirname + '/src/blocks/index.js',
+  'block': __dirname + '/src/blocks/index.js',
   'admin': __dirname + '/src/admin/index.js',
 };
 

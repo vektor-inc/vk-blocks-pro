@@ -1,7 +1,7 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
-
+import { useEffect } from '@wordpress/element';
 export default function Edit(props) {
-	const { attributes } = props;
+	const { attributes, setAttributes, clientId } = props;
 	const {
 		containerSpace,
 		headerImageAspectRatio,
@@ -10,6 +10,12 @@ export default function Edit(props) {
 	} = attributes;
 	const MY_TEMPLATE = [['core/image']];
 	const ALLOWED_BLOCKS = ['core/image'];
+
+	useEffect(() => {
+		if (!!headerImageAspectRatio || headerImageAspectRatio === '') {
+			setAttributes({ headerImageAspectRatio: 'auto' });
+		}
+	}, [clientId]);
 
 	const style = {
 		aspectRatio: headerImageAspectRatio,

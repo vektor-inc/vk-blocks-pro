@@ -18,6 +18,7 @@ export default function Edit(props) {
 
 	// このブロックで直接使う「カラムの最小幅」と「ギャップ」
 	const {
+		headerImageAspectRatio,
 		colWidthMin,
 		colWidthMinTablet,
 		colWidthMinPC,
@@ -47,6 +48,9 @@ export default function Edit(props) {
 				setAttributes({ colWidthMinPC: colWidthMin });
 			}
 			setAttributes({ old_1_31_0: true });
+		}
+		if (!!headerImageAspectRatio || headerImageAspectRatio === '') {
+			setAttributes({ headerImageAspectRatio: 'auto' });
 		}
 	}, [clientId]);
 

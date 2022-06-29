@@ -42,6 +42,7 @@ export default function Edit(props) {
 	];
 
 	const {
+		headerImageAspectRatio,
 		editLock,
 		headerDisplay,
 		footerDisplay,
@@ -54,6 +55,12 @@ export default function Edit(props) {
 		url,
 		urlOpenType,
 	} = attributes;
+
+	useEffect(() => {
+		if (!!headerImageAspectRatio || headerImageAspectRatio === '') {
+			setAttributes({ headerImageAspectRatio: 'auto' });
+		}
+	}, [clientId]);
 
 	// editModeは値として保持させずに常に個別モードでスタートさせる
 	const [editMode, setEditMode] = useState('self');

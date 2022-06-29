@@ -1,15 +1,19 @@
+// import WordPress Scripts
 import { __ } from '@wordpress/i18n';
-import { VKBArchiveList } from './component';
-import { PanelBody, TextControl, SelectControl } from '@wordpress/components';
-import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
+import { PanelBody, SelectControl, TextControl } from '@wordpress/components';
+import ServerSideRender from '@wordpress/server-side-render';
+import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 
-export default function IconEdit(props) {
-	const { attributes, setAttributes } = props;
-	const { title, postType, archiveType, displayDesign } = attributes;
+// Load VK Blocks Compornents
+import { DisplayItemsControl } from '@vkblocks/components/display-items-control';
+import { ColumnLayoutControl } from '@vkblocks/components/column-layout-control';
 
-	const blockProps = useBlockProps({
-		className: `vk_archive_list`,
-	});
+export default function PostListEdit(props) {
+	const { attributes, setAttributes, name } = props;
+	const { title, postType } = attributes;
+	attributes.name = name;
+
+	const blockProps = useBlockProps();
 
 	return (
 		<>
@@ -32,13 +36,13 @@ export default function IconEdit(props) {
 						]}
 					/>
 				</PanelBody>
+				<ColumnLayoutControl {...props} />
+				<DisplayItemsControl {...props} />
 			</InspectorControls>
 			<div {...blockProps}>
-				<VKBArchiveList
-					lbTitle={title}
-					lbPostType={postType}
-					lbArchiveType={archiveType}
-					lbDisplayDesigne={displayDesign}
+				<ServerSideRender
+					block="vk-blocks/archive-list"
+					attributes={attributes}
 				/>
 			</div>
 		</>

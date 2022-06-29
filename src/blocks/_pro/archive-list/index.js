@@ -1,12 +1,13 @@
 /**
- * Archive List Block
+ * archive-list block type
  *
  */
+// import React
 import { ReactComponent as Icon } from './icon.svg';
-import edit from './edit';
+
+// import block files
 import metadata from './block.json';
-import save from './save';
-//import { deprecated } from './deprecated/';
+import edit from './edit';
 
 const { name } = metadata;
 
@@ -19,10 +20,8 @@ export const settings = {
 			title: '',
 			postType: 'post',
 			archiveType: 'm',
-			titdisplayDesignle: 'list',
+			displayDesignle: 'list',
 		},
 	},
 	edit,
-	save,
-	//	deprecated,
 };

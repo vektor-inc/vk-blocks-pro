@@ -2,7 +2,7 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/archive-list",
 	"category": "vk-blocks-cat",
-	"title": "Archive List",
+	"title": "Archive list",
 	"attributes": {
 		"title": {
 			"type": "string",
@@ -21,10 +21,9 @@
 			"default": "list"
 		}
 	},
-	"description": "Displays a list of archives.",
+	"description": "Displays a list of archives",
 	"textdomain": "vk-blocks",
 	"supports": {
-		"className": true,
-		"anchor": true
+		"className": true
 	}
 }

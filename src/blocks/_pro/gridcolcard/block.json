@@ -81,11 +81,11 @@
 			"type": "string"
 		},
 		"old_1_31_0": {
-			"type": "string",
+			"type": "boolean",
 			"default": true
 		},
 		"old_1_39_0": {
-			"type": "string",
+			"type": "boolean",
 			"default": true
 		}
 	}

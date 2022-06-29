@@ -34,7 +34,7 @@
 			"default": "delete"
 		},
 		"old_1_39_0": {
-			"type": "Boolean",
+			"type": "boolean",
 			"default": true
 		}
 	}

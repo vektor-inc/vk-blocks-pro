@@ -470,42 +470,42 @@ msgstr ""
 msgid "Column header media area"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:121
+#: src/blocks/_pro/gridcolcard/edit.js:122
 msgid "Column Width Setting"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:125
+#: src/blocks/_pro/gridcolcard/edit.js:126
 msgid ""
 "If you specify the minimum column size on a tablet or PC with %, it will be "
 "easier to align the number of columns in the upper and lower rows according "
 "to the screen size."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:131
+#: src/blocks/_pro/gridcolcard/edit.js:132
 msgid "Column min width (Mobile)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:139
+#: src/blocks/_pro/gridcolcard/edit.js:140
 msgid "Column min width (Tablet / Optional)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:150
+#: src/blocks/_pro/gridcolcard/edit.js:151
 msgid "Column min width (PC / Optional)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:161
+#: src/blocks/_pro/gridcolcard/edit.js:162
 msgid "Column Gap Setting"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:165
+#: src/blocks/_pro/gridcolcard/edit.js:166
 msgid "Column gap size"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:171
+#: src/blocks/_pro/gridcolcard/edit.js:172
 msgid "Column row-gap size (optional)"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit.js:180
+#: src/blocks/_pro/gridcolcard/edit.js:181
 msgid "Specify all columns at once"
 msgstr ""
 

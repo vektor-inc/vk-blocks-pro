@@ -68,11 +68,11 @@
 			"type": "string"
 		},
 		"urlOpenType": {
-			"type": "Boolean",
+			"type": "boolean",
 			"default": false
 		},
 		"old_1_39_0": {
-			"type": "Boolean",
+			"type": "boolean",
 			"default": true
 		}
 	}

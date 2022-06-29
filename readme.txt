@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] Change the script loaded on the options page to a script file.
+
 = 1.39.0 =
 [ Improvement ] License key remove space.
 [ Bug Fix ][ Common mergin ] cope with table margin bottom 0,margin top 0

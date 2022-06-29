@@ -108,7 +108,10 @@ const CommonItemControl = (props) => {
 								value={headerImageAspectRatio}
 								onChange={(value) =>
 									setAttributes({
-										headerImageAspectRatio: value,
+										headerImageAspectRatio:
+											value !== '' && !!value
+												? value
+												: 'auto',
 									})
 								}
 								options={options}

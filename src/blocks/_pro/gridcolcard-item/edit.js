@@ -53,15 +53,7 @@ export default function Edit(props) {
 		backgroundColor,
 		url,
 		urlOpenType,
-		old_1_39_0,
 	} = attributes;
-
-	useEffect(() => {
-		if (old_1_39_0 === undefined) {
-			setAttributes({ headerImageAspectRatio: '1.618/1' });
-			setAttributes({ old_1_39_0: true });
-		}
-	}, [clientId]);
 
 	// editModeは値として保持させずに常に個別モードでスタートさせる
 	const [editMode, setEditMode] = useState('self');

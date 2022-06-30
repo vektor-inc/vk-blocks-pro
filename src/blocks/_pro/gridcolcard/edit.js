@@ -25,7 +25,6 @@ export default function Edit(props) {
 		gapRow,
 		blockId,
 		old_1_31_0,
-		old_1_39_0,
 	} = attributes;
 
 	// ブロック全体のアウタークラス名
@@ -48,10 +47,6 @@ export default function Edit(props) {
 				setAttributes({ colWidthMinPC: colWidthMin });
 			}
 			setAttributes({ old_1_31_0: true });
-		}
-		if (old_1_39_0 === undefined) {
-			setAttributes({ headerImageAspectRatio: '1.618/1' });
-			setAttributes({ old_1_39_0: true });
 		}
 	}, [clientId]);
 

@@ -38,7 +38,7 @@
 		},
 		"headerImageAspectRatio": {
 			"type": "string",
-			"default": "auto"
+			"default": "1.618/1"
 		},
 		"headerImageFit": {
 			"type": "boolean",
@@ -70,10 +70,6 @@
 		"urlOpenType": {
 			"type": "boolean",
 			"default": false
-		},
-		"old_1_39_0": {
-			"type": "boolean",
-			"default": true
 		}
 	}
 

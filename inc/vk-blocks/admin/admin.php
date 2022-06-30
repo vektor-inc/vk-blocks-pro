@@ -161,6 +161,15 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 		return;
 	}
 
+	$asset = include VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/build/admin-build.asset.php';
+	wp_enqueue_script(
+		'vk-blocks-admin-js',
+		VK_BLOCKS_DIR_URL . 'inc/vk-blocks/build/admin-build.js',
+		$asset['dependencies'],
+		$asset['version'],
+		true
+	);
+
 	wp_enqueue_style(
 		'vk_blocks_options-style',
 		VK_BLOCKS_DIR_URL . 'build/vk_blocks_options.css',

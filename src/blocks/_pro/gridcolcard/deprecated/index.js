@@ -63,6 +63,7 @@ const blockAttributes = {
 	}
 };
 
+// 1.31.0 からの変更で追加したもの
 const blockAttributes2 = {
 	...blockAttributes,
 	colWidthMinTablet: {
@@ -76,9 +77,9 @@ const blockAttributes2 = {
 	blockId: {
 		type: 'string'
 	},
-	"old_1_31_0": {
-		"type": "string",
-		"default": true
+	old_1_31_0: {
+		type: 'string',
+		default: true
 	},
 };
 

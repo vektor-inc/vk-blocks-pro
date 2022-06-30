@@ -42,6 +42,7 @@ export default function AdminLicense() {
 							: vkBlocksOption.vk_blocks_pro_license_key
 					}
 					onChange={(newValue) => {
+						newValue = newValue.trim()
 						setVkBlocksOption({
 							...vkBlocksOption,
 							vk_blocks_pro_license_key: newValue,

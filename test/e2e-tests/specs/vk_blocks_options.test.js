@@ -20,6 +20,19 @@ describe( 'Options', () => {
 		await visitAdminPage( 'options-general.php', 'page=vk_blocks_options' );
 	} );
 
+	it( 'Test License Key Space', async () => {
+		// license入力フォームにフォーカス
+		await page.click( '#vk-blocks-pro-license-key[type="text"]' );
+		//全選択
+		await pressKeyWithModifier( 'primary', 'a' );
+		// スペース付きの文字列を入力
+		await page.keyboard.type( ' test-license-key　' );
+		// フォーカスを外す
+		await page.$eval('#vk-blocks-pro-license-key', el => el.blur())
+		// test-license-keyがあるか確認
+		await expect(await page.$eval('#vk-blocks-pro-license-key', el => el.value)).toBe('test-license-key')
+	} )
+
 	it( 'Test License key', async () => {
 		// license入力フォームにフォーカス
 		await page.focus( `#vk-blocks-pro-license-key` );

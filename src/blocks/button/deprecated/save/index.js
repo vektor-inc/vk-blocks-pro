@@ -17,7 +17,7 @@ import save1_18_6 from './1.18.6/save';
 import save1_29_2 from './1.29.2/save';
 import save1_31_0 from './1.31.0/save';
 import save1_35_0 from './1.35.0/save';
-import save1_38_0 from './1.38.0/save';
+import save1_39_1 from './1.39.1/save';
 
 const blockAttributes = {
 	content: {
@@ -164,7 +164,7 @@ const blockAttributes10 = {
 export const deprecated = [
 	{
 		attributes: blockAttributes9,
-		save: save1_38_0,
+		save: save1_39_1,
 	},
 	{
 		attributes: blockAttributes8,

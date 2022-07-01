@@ -82,7 +82,7 @@ class Vk_Blocks_ArchiveList {
 		$is_checked_terms = json_decode( $attributes['isCheckedTerms'], true );
 
 		// if ( empty( $is_checked_post_type ) ) {
-		// return false;
+			// return false;
 		// }
 
 		$args = array(
@@ -109,12 +109,12 @@ class Vk_Blocks_ArchiveList {
 			'archiveType'   => 'm',
 			'displayDesign' => 'list',
 		);
-		$return  = apply_filters( 'vk_post_options', wp_parse_args( $options, $default ) );
+		$return  = apply_filters( 'vk_blocks_archive_list_view_options', wp_parse_args( $options, $default ) );
 		return $return;
 	}
 
 	/**
-	 * archive options
+	 * Archive options
 	 *
 	 * @param array  $archive_options : archive options.
 	 * @param object $archives : object.
@@ -124,12 +124,12 @@ class Vk_Blocks_ArchiveList {
 		$default = array(
 			'class_archives_outer' => null,
 		);
-		$return  = apply_filters( 'vk_archive_archive_options', wp_parse_args( $archive_options, $default ), $archives );
+		$return  = apply_filters( 'vk_blocks_archive_list_options', wp_parse_args( $archive_options, $default ), $archives );
 		return $return;
 	}
 
 	/**
-	 * archive view
+	 * Archive view
 	 *
 	 * @param array $options component options.
 	 *
@@ -138,9 +138,9 @@ class Vk_Blocks_ArchiveList {
 	public static function get_archive_list_view( $options ) {
 		$options = self::get_archive_list_view_options( $options );
 		$html    = '';
-		$html   .= '<h2 class="vk_post_title">';
-		$html   .= apply_filters( 'vk_post_title', $options['title'] );
+		$html   .= '<h2 class="vk_archive_list_title">';
+		$html   .= $options['title'];
 		$html   .= '</h2>';
-		return apply_filters( 'vk_post_view', $html, $post, $options );
+		return apply_filters( 'vk_blocks_archive_list_view', $html );
 	}
 }

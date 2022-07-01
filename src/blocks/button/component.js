@@ -118,6 +118,14 @@ export class VKBButton extends Component {
 				? true
 				: false;
 
+		const buttonContent = (
+			<>
+				{parse(iconBefore)}
+				{richText}
+				{parse(iconAfter)}
+			</>
+		);
+
 		return (
 			/* eslint react/jsx-no-target-blank: 0 */
 			<a
@@ -130,19 +138,9 @@ export class VKBButton extends Component {
 				rel={'noopener'}
 			>
 				{hasInlineSize && (
-					<div className={'has-icon'}>
-						{parse(iconBefore)}
-						{richText}
-						{parse(iconAfter)}
-					</div>
+					<div className={'has-icon'}>{buttonContent}</div>
 				)}
-				{!hasInlineSize && (
-					<>
-						{parse(iconBefore)}
-						{richText}
-						{parse(iconAfter)}
-					</>
-				)}
+				{!hasInlineSize && <>{buttonContent}</>}
 				{/*サブキャプションが入力された時のみ表示*/}
 				{subCaption && (
 					<p className={'vk_button_link_subCaption'}>{subCaption}</p>

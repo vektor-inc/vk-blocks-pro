@@ -12,10 +12,10 @@
  * @return string
  */
 function vk_blocks_archive_list_render_callback( $attributes ) {
-	$wp_query     = Vk_Blocks_ArchiveList::get_loop_query( $attributes );
-	$options_loop = array( 'class_loop_outer' => 'vk_archiveList' );
+	$archives = Vk_Blocks_ArchiveList::get_archive_list( $attributes );
+	$options = array( 'class_archive_outer' => 'vk_archiveList' );
 
-	return Vk_Blocks_ArchiveList::render_archive_list( $attributes, $wp_query, $options_loop );
+	return Vk_Blocks_ArchiveList::render_archive_list( $attributes, $archives, $options );
 }
 
 /**
@@ -33,25 +33,25 @@ function vk_blocks_register_block_archive_list() {
 			'editor_script'   => 'vk-blocks-build-js',
 			'attributes'      => array_merge(
 				array(
-					'title'         => array(
-						'type'    => 'string',
-						'default' => '',
+					'title'			=> array(
+						'type'		=> 'string',
+						'default'	=> '',
 					),
-					'postType'      => array(
-						'type'    => 'string',
-						'default' => 'card',
+					'postType'		=> array(
+						'type'		=> 'string',
+						'default'	=> 'post',
 					),
-					'archiveType'   => array(
-						'type'    => 'number',
-						'default' => 1,
+					'archiveType'	=> array(
+						'type'		=> 'string',
+						'default'	=> 'm',
 					),
-					'displayDesign' => array(
-						'type'    => 'number',
-						'default' => 2,
+					'displayDesign'	=> array(
+						'type'		=> 'string',
+						'default'	=> 'list',
 					),
-					'className'     => array(
-						'type'    => 'string',
-						'default' => '',
+					'className'		=> array(
+						'type'		=> 'string',
+						'default'	=> '',
 					),
 				),
 				$vk_blocks_common_attributes

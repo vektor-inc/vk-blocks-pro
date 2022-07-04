@@ -129,7 +129,7 @@ function vk_blocks_taxonomy_render_callback( $attributes, $content ) {
 
 	$block_label = '' !== $attributes['blockLabel'] ? $attributes['blockLabel'] : $default_label;
 
-	$content  = '<div class="vk_taxonomy vk_taxonomy--' . $attributes['isSelectedTaxonomy'] . 'vk_taxonomy-outer-wrap ' . $attributes['className'] . '">';
+	$content  = '<div class="vk_taxonomy vk_taxonomy--' . $attributes['isSelectedTaxonomy'] . ' vk_taxonomy-outer-wrap ' . $attributes['className'] . '">';
 	$content .= '<div class="vk_taxnomy-label">' . $block_label . '</div>';
 	$content .= '<ul class="vk_taxnomy-list vk_taxonomy-input-wrap">';
 	$content .= wp_list_categories( $args );

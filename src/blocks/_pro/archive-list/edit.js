@@ -4,9 +4,12 @@ import { PanelBody, SelectControl, ToggleControl } from '@wordpress/components';
 import ServerSideRender from '@wordpress/server-side-render';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 
+// Load VK Blocks Compornents
+import { AdvancedPosttypeDropdownControl } from '@vkblocks/components/advanced-posttype-dropdown-control';
+
 export default function PostListEdit(props) {
 	const { attributes, setAttributes, name } = props;
-	const { postType, displayType, displayDropdown, showCount } = attributes;
+	const { displayType, displayDropdown, showCount } = attributes;
 	attributes.name = name;
 
 	const blockProps = useBlockProps({
@@ -17,16 +20,9 @@ export default function PostListEdit(props) {
 		<>
 			<InspectorControls>
 				<PanelBody title={__('Archive List Setting', 'vk-blocks')}>
-					<SelectControl
-						label={__('Post Type', 'vk-blocks')}
-						value={postType}
-						onChange={(value) => setAttributes({ postType: value })}
-						options={[
-							{
-								value: 'post',
-								label: __('Post', 'vk-blocks'),
-							},
-						]}
+					<AdvancedPosttypeDropdownControl
+						attributes={attributes}
+						setAttributes={setAttributes}
 					/>
 					<SelectControl
 						label={__('Archive Type', 'vk-blocks')}

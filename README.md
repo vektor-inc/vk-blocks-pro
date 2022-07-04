@@ -77,6 +77,10 @@ wp-env の port を変更している場合
 WP_BASE_URL='http://localhost:xxxx/' npm run test:e2e
 ```
 
+単体で動かしたい場合
+```
+npm run test:e2e ./test/e2e-tests/specs/xxxx.test.js
+```
 
 ## pre-push、pre-commit
 プッシュ時にphpのformat、phpcsのチェック、

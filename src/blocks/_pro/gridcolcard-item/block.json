@@ -68,9 +68,9 @@
 			"type": "string"
 		},
 		"urlOpenType": {
-			"type": "Boolean",
+			"type": "boolean",
 			"default": false
 		}
 	}
-	
+
 }

@@ -72,7 +72,9 @@ export default function save(props) {
 	);
 
 	//幅のクラス切り替え
-	const classWidth = `vk_outer-width-${outerWidth}`;
+	const classWidth = !!outerWidth
+		? `vk_outer-width-${outerWidth}`
+		: 'vk_outer-width-normal';
 
 	//classBgPositionのクラス切り替え
 	if (bgPosition === 'parallax') {

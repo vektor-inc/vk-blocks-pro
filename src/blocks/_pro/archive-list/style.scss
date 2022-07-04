@@ -1,0 +1,47 @@
+/*-------------------------------------------*/
+/* CSS
+/*-------------------------------------------*/
+/*-------------------------------------------*/
+/* .vk_archive_list
+/*-------------------------------------------*/
+.vk_archive_list,
+.editor-styles-wrapper .vk_archive_list {
+	@media screen and (max-width: 991.98px) {
+		margin-bottom: 1.5em;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		li {
+			margin: 0;
+
+			a {
+				display: block;
+				padding: .7em 0;
+				border-bottom: 1px solid var(--vk-color-border-hr);
+				text-decoration: none;
+			}
+		}
+	}
+
+	&_label {
+		margin-bottom: 0;
+	}
+}
+
+// disable at editor
+.editor-styles-wrapper .vk_archive_list {
+	a,
+	select {
+		pointer-events: none;
+	}
+
+	select {
+		color: #a7aaad;
+		border-color: #dcdcde;
+		background-color: #f6f7f7;
+	}
+}

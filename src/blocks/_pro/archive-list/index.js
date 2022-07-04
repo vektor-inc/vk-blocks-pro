@@ -17,10 +17,11 @@ export const settings = {
 	icon: <Icon />,
 	example: {
 		attributes: {
-			title: '',
+			label: '',
 			postType: 'post',
-			archiveType: 'm',
-			displayDesignle: 'list',
+			displayType: 'monthly',
+			displayDesign: 'list',
+			showCount: false,
 		},
 	},
 	edit,

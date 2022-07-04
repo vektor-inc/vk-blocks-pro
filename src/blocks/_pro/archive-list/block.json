@@ -4,21 +4,21 @@
 	"category": "vk-blocks-cat",
 	"title": "Archive list",
 	"attributes": {
-		"title": {
-			"type": "string",
-			"default": ""
-		},
 		"postType": {
 			"type": "string",
 			"default": "post"
 		},
-		"archiveType": {
+		"displayType": {
 			"type": "string",
-			"default": "m"
+			"default": "monthly"
 		},
-		"displayDesign": {
-			"type": "string",
-			"default": "list"
+		"displayDropdown": {
+			"type": "boolean",
+			"default": false
+		},
+		"showCount": {
+			"type": "boolean",
+			"default": false
 		}
 	},
 	"description": "Displays a list of archives",

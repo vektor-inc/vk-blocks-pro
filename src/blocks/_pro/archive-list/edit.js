@@ -1,6 +1,6 @@
 // import WordPress Scripts
 import { __ } from '@wordpress/i18n';
-import { PanelBody, SelectControl, TextControl, ToggleControl } from '@wordpress/components';
+import { PanelBody, SelectControl, ToggleControl } from '@wordpress/components';
 import ServerSideRender from '@wordpress/server-side-render';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 
@@ -10,7 +10,7 @@ export default function PostListEdit(props) {
 	attributes.name = name;
 
 	const blockProps = useBlockProps({
-		className: `vk_icon`
+		className: `vk_icon`,
 	});
 
 	return (
@@ -31,7 +31,9 @@ export default function PostListEdit(props) {
 					<SelectControl
 						label={__('Archive Type', 'vk-blocks')}
 						value={displayType}
-						onChange={(value) => setAttributes({ displayType: value })}
+						onChange={(value) =>
+							setAttributes({ displayType: value })
+						}
 						options={[
 							{
 								value: 'monthly',
@@ -46,12 +48,16 @@ export default function PostListEdit(props) {
 					<ToggleControl
 						label={__('Display as dropdown', 'vk-blocks')}
 						checked={displayDropdown}
-						onChange={(checked) => setAttributes({ displayDropdown: checked })}
+						onChange={(checked) =>
+							setAttributes({ displayDropdown: checked })
+						}
 					/>
 					<ToggleControl
 						label={__('Show post counts', 'vk-blocks')}
 						checked={showCount}
-						onChange={(checked) => setAttributes({ showCount: checked })}
+						onChange={(checked) =>
+							setAttributes({ showCount: checked })
+						}
 					/>
 				</PanelBody>
 			</InspectorControls>

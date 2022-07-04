@@ -12,8 +12,8 @@
  * @return string
  */
 function vk_blocks_archive_list_render_callback( $attributes ) {
-	$archives = Vk_Blocks_ArchiveList::get_archive_list( $attributes );
-	$options_archive  = array( 'class_archive_outer' => 'vk_archiveList' );
+	$archives        = Vk_Blocks_ArchiveList::get_archive_list( $attributes );
+	$options_archive = array( 'class_archive_outer' => 'vk_archiveList' );
 
 	return Vk_Blocks_ArchiveList::render_archive_list( $attributes, $archives, $options_archive );
 }
@@ -44,25 +44,25 @@ function vk_blocks_register_block_archive_list() {
 			'editor_script'   => 'vk-blocks-build-js',
 			'attributes'      => array_merge(
 				array(
-					'postType'			=> array(
-						'type'			=> 'string',
-						'default'		=> 'post',
+					'postType'        => array(
+						'type'    => 'string',
+						'default' => 'post',
 					),
-					'displayType'		=> array(
-						'type'			=> 'string',
-						'default'		=> 'monthly',
+					'displayType'     => array(
+						'type'    => 'string',
+						'default' => 'monthly',
 					),
-					'displayDropdown'	=> array(
-						'type'			=> 'boolean',
-						'default'		=> false,
+					'displayDropdown' => array(
+						'type'    => 'boolean',
+						'default' => false,
 					),
-					'showCount'			=> array(
-						'type'			=> 'boolean',
-						'default'		=> false,
+					'showCount'       => array(
+						'type'    => 'boolean',
+						'default' => false,
 					),
-					'className'			=> array(
-						'type'			=> 'string',
-						'default'		=> '',
+					'className'       => array(
+						'type'    => 'string',
+						'default' => '',
 					),
 				),
 				$vk_blocks_common_attributes

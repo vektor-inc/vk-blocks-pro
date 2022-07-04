@@ -30,16 +30,16 @@ class Vk_Blocks_ArchiveList {
 		}
 
 		$options = array(
-			'postType'			=> esc_html( $attributes['postType'] ),
-			'displayType'		=> esc_html( $attributes['displayType'] ),
-			'displayDropdown'	=> $attributes['displayDropdown'] ? true : false,
-			'showCount'			=> $attributes['showCount'] ? true : false,
+			'postType'        => esc_html( $attributes['postType'] ),
+			'displayType'     => esc_html( $attributes['displayType'] ),
+			'displayDropdown' => $attributes['displayDropdown'] ? true : false,
+			'showCount'       => $attributes['showCount'] ? true : false,
 		);
 
 		// Outer classes
-		$classes = array();
+		$classes   = array();
 		$classes[] = 'vk_archive-list-postType-' . $options['postType'];
-		if( $options['displayDropdown'] ){
+		if ( $options['displayDropdown'] ) {
 			$classes[] = 'vk_archive-list-display-dropdown';
 		}
 		$outer_classname = implode( ' ', $classes );
@@ -52,14 +52,13 @@ class Vk_Blocks_ArchiveList {
 		$html  = '';
 		$html .= '<div class="vk_archive_list ' . esc_attr( $outer_classname ) . '">';
 
-		if( $options['displayDropdown'] ){
+		if ( $options['displayDropdown'] ) {
 			// Dropdown
 			$html .= '<select name="archive-list-dropdown" onChange="document.location.href=this.options[this.selectedIndex].value;">';
-			$html .= '<option value="" ' .selected( $options['displayType'], '', true ) .'>' .__( 'Please select', 'vk-blocks' ) .'</option>';
+			$html .= '<option value="" ' . selected( $options['displayType'], '', true ) . '>' . __( 'Please select', 'vk-blocks' ) . '</option>';
 			$html .= $archives;
 			$html .= '</select>';
-		}
-		else{
+		} else {
 			// list
 			$html .= '<ul>';
 			$html .= $archives;
@@ -76,22 +75,21 @@ class Vk_Blocks_ArchiveList {
 	 * @param array $attributes attributes.
 	 */
 	public static function get_archive_list( $attributes ) {
-
 		$get_posts = get_posts(
 			array(
-				'post_type' => esc_html( $attributes['postType'] )
+				'post_type' => esc_html( $attributes['postType'] ),
 			)
 		);
-		if ( empty( $get_posts )) {
+		if ( empty( $get_posts ) ) {
 			return null;
 		}
 
 		$args = array(
-			'type'             	=> esc_html( $attributes['displayType'] ),
-			'format'			=> $attributes['displayDropdown'] ? 'option' : 'html', 
-			'show_post_count'	=> $attributes['showCount']? true : false,
-			'echo'             	=> false,
-			'post_type'        	=> esc_html( $attributes['postType'] )
+			'type'            => esc_html( $attributes['displayType'] ),
+			'format'          => $attributes['displayDropdown'] ? 'option' : 'html',
+			'show_post_count' => $attributes['showCount'] ? true : false,
+			'echo'            => false,
+			'post_type'       => esc_html( $attributes['postType'] ),
 		);
 		return wp_get_archives( $args );
 	}

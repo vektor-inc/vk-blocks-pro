@@ -119,7 +119,7 @@ function vk_blocks_register_block_archive_list() {
 		'vk-blocks-build-js',
 		'vk_block_archve_list_post_type_params',
 		array(
-			'post_types'	=> $post_types,
+			'post_types' => $post_types,
 		)
 	);
 }

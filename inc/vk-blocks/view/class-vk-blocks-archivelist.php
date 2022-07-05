@@ -30,7 +30,7 @@ class Vk_Blocks_ArchiveList {
 		}
 
 		$options = array(
-			'postType'        => esc_html( $attributes['postType'] ),
+			'postType'        => ( 'yearly' === $attributes['displayType'] ) ? 'yearly' : 'monthly',
 			'displayType'     => esc_html( $attributes['displayType'] ),
 			'displayDropdown' => $attributes['displayDropdown'] ? true : false,
 			'showCount'       => $attributes['showCount'] ? true : false,
@@ -84,13 +84,20 @@ class Vk_Blocks_ArchiveList {
 			return null;
 		}
 
-		$args = array(
-			'type'            => esc_html( $attributes['displayType'] ),
+		$arg = array(
 			'format'          => $attributes['displayDropdown'] ? 'option' : 'html',
 			'show_post_count' => $attributes['showCount'] ? true : false,
 			'echo'            => false,
 			'post_type'       => esc_html( $attributes['postType'] ),
 		);
-		return wp_get_archives( $args );
+
+		if ( 'yearly' === $attributes['displayType'] ){
+			$arg['type'] = 'yearly';
+			if ( !$attributes['showCount'] && strtoupper( get_locale() ) == 'JA' ) {
+				$arg['after'] = '年';
+			}
+		}
+
+		return wp_get_archives( $arg );
 	}
 }

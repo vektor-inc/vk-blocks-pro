@@ -68,7 +68,7 @@ jobs:
       with:
         switches: -avzr
         path: ${{ env.plugin_name }}.zip
-        remote_path: /home/vs2/vektor-inc.co.jp/public_html/vws/wp-content/themes/lightning-pro-child-vws/updates/packages/
+        remote_path: ${{ secrets.DEPLOY_PATH_VWS }}
         remote_host: ${{ secrets.DEPLOY_HOST_VWS }}
         remote_port: ${{ secrets.DEPLOY_PORT_VWS }}
         remote_user: ${{ secrets.DEPLOY_USER_VWS }}

@@ -377,20 +377,20 @@ $xxl-min: 1400px;
 			margin-left: 0.7rem;
 		}
 
-		&_subCaption {
-			display: block;
-			overflow: hidden;
-			margin: 0;
-			font-size: 80%;
-		}
-
-		.has-icon {
-			display: flex;
+		&_caption {
+			display: inline-flex;
 			align-items: center;
  			justify-content: center;
 			.vk_button_link_after {
 				margin-right: 0;
 			}
+		}
+
+		&_subCaption {
+			display: block;
+			overflow: hidden;
+			margin: 0;
+			font-size: 80%;
 		}
 	}
 

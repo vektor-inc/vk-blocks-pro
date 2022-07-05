@@ -109,23 +109,6 @@ export class VKBButton extends Component {
 			iconAfter = `<i class="${fontAwesomeIconAfterClassName}"${styleAfter}></i>`;
 		}
 
-		//インラインフォントサイズ、またはアイコンサイズがある場合
-		const hasInlineSize =
-			richText.props.value &&
-			(richText.props.value.match(/vk_inline-font-size/) ||
-				iconSizeBefore ||
-				iconSizeAfter)
-				? true
-				: false;
-
-		const buttonContent = (
-			<>
-				{parse(iconBefore)}
-				{richText}
-				{parse(iconAfter)}
-			</>
-		);
-
 		return (
 			/* eslint react/jsx-no-target-blank: 0 */
 			<a
@@ -137,10 +120,11 @@ export class VKBButton extends Component {
 				target={buttonTarget ? '_blank' : null}
 				rel={'noopener'}
 			>
-				{hasInlineSize && (
-					<div className={'has-icon'}>{buttonContent}</div>
-				)}
-				{!hasInlineSize && <>{buttonContent}</>}
+				<div className={'vk_button_link_caption'}>
+					{parse(iconBefore)}
+					{richText}
+					{parse(iconAfter)}
+				</div>
 				{/*サブキャプションが入力された時のみ表示*/}
 				{subCaption && (
 					<p className={'vk_button_link_subCaption'}>{subCaption}</p>

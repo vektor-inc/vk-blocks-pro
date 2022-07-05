@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Breadcrumb ] Fix in case of filter search result category & keyword
+
 = 1.39.1 =
 [ Bug Fix ][ Grid Column Card ] fix bug when aspect retio is empty.
 [ Other ] Change the script loaded on the options page to a script file.

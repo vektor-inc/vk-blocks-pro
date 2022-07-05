@@ -120,6 +120,34 @@ msgstr ""
 msgid "Very Slow"
 msgstr ""
 
+#: src/blocks/_pro/archive-list/edit.js:32
+msgid "Archive List Setting"
+msgstr ""
+
+#: src/blocks/_pro/archive-list/edit.js:34
+msgid "Post type"
+msgstr ""
+
+#: src/blocks/_pro/archive-list/edit.js:40
+msgid "Archive type"
+msgstr ""
+
+#: src/blocks/_pro/archive-list/edit.js:48
+msgid "Monthly"
+msgstr ""
+
+#: src/blocks/_pro/archive-list/edit.js:52
+msgid "Yearly"
+msgstr ""
+
+#: src/blocks/_pro/archive-list/edit.js:57
+msgid "Display as dropdown"
+msgstr ""
+
+#: src/blocks/_pro/archive-list/edit.js:64
+msgid "Show post counts"
+msgstr ""
+
 #: src/blocks/_pro/button-outer/edit.js:56
 msgid "Button Common Setting"
 msgstr ""

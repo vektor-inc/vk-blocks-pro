@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "POT-Creation-Date: 2022-06-07T06:57:58+00:00\n"
-"PO-Revision-Date: 2022-06-07 16:00+0900\n"
+"PO-Revision-Date: 2022-07-05 17:42+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -134,6 +134,34 @@ msgstr "アニメーションの速度"
 #: src/blocks/_pro/animation/edit.js:99
 msgid "Very Slow"
 msgstr "非常に遅い"
+
+#: src/blocks/_pro/archive-list/edit.js:32
+msgid "Archive List Setting"
+msgstr "アーカイブリスト設定"
+
+#: src/blocks/_pro/archive-list/edit.js:34
+msgid "Post type"
+msgstr "投稿タイプ"
+
+#: src/blocks/_pro/archive-list/edit.js:40
+msgid "Archive type"
+msgstr "アーカイブタイプ "
+
+#: src/blocks/_pro/archive-list/edit.js:48
+msgid "Monthly"
+msgstr "毎月"
+
+#: src/blocks/_pro/archive-list/edit.js:52
+msgid "Yearly"
+msgstr "毎年"
+
+#: src/blocks/_pro/archive-list/edit.js:57
+msgid "Display as dropdown"
+msgstr "ドロップダウンで表示"
+
+#: src/blocks/_pro/archive-list/edit.js:64
+msgid "Show post counts"
+msgstr "投稿数を表示"
 
 #: src/blocks/_pro/button-outer/edit.js:56
 msgid "Button Common Setting"
@@ -3092,6 +3120,18 @@ msgstr "アニメーション"
 msgctxt "block description"
 msgid "Add animation to elements when scrolling the page."
 msgstr "ページをスクロールした時に要素に動きを加えます。"
+
+#: inc/vk-blocks/build/blocks/_pro/archive-list/block.json
+#: src/blocks/_pro/archive-list/block.json
+msgctxt "block title"
+msgid "Archive list"
+msgstr "アーカイブリスト"
+
+#: inc/vk-blocks/build/blocks/_pro/archive-list/block.json
+#: src/blocks/_pro/archive-list/block.json
+msgctxt "block description"
+msgid "Displays a list of archives"
+msgstr "投稿のアーカイブ一覧を表示します。"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
 #: inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json

@@ -91,9 +91,9 @@ class Vk_Blocks_ArchiveList {
 			'post_type'       => esc_html( $attributes['postType'] ),
 		);
 
-		if ( 'yearly' === $attributes['displayType'] ){
+		if ( 'yearly' === $attributes['displayType'] ) {
 			$arg['type'] = 'yearly';
-			if ( !$attributes['showCount'] && strtoupper( get_locale() ) == 'JA' ) {
+			if ( ! $attributes['showCount'] && strtoupper( get_locale() ) == 'JA' ) {
 				$arg['after'] = '年';
 			}
 		}

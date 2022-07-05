@@ -17,10 +17,9 @@ export const settings = {
 	icon: <Icon />,
 	example: {
 		attributes: {
-			label: '',
 			postType: 'post',
 			displayType: 'monthly',
-			displayDesign: 'list',
+			displayDropdown: false,
 			showCount: false,
 		},
 	},

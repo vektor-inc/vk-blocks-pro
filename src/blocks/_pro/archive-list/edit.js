@@ -4,28 +4,57 @@ import { PanelBody, SelectControl, ToggleControl } from '@wordpress/components';
 import ServerSideRender from '@wordpress/server-side-render';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 
-// Load VK Blocks Compornents
-import { AdvancedPosttypeDropdownControl } from '@vkblocks/components/advanced-posttype-dropdown-control';
+// Load VK Blocks Utils
+import { usePostTypes } from '@vkblocks/utils/hooks';
+
+const getPostTypesSelect = (data) => {
+	const types = data.map((item) => {
+		return {
+			value: item.slug,
+			label: item.label,
+		};
+	});
+
+	return types;
+};
 
 export default function PostListEdit(props) {
 	const { attributes, setAttributes, name } = props;
-	const { displayType, displayDropdown, showCount } = attributes;
+	const { postType, displayType, displayDropdown, showCount } = attributes;
 	attributes.name = name;
 
 	const blockProps = useBlockProps({
 		className: `vk_icon`,
 	});
 
+	// 投稿タイプ
+	const postTypes = usePostTypes({ public: true });
+	let postTypesProps = postTypes.map((item) => {
+		return {
+			label: item.name,
+			slug: item.slug,
+		};
+	});
+	// メディアと再利用ブロックを除外
+	postTypesProps = postTypesProps.filter(
+		(item) =>
+			'attachment' !== item.slug && 'wp_block' !== item.slug
+	);
+
+	const postTypesSelect = getPostTypesSelect(postTypesProps);
+
 	return (
 		<>
 			<InspectorControls>
 				<PanelBody title={__('Archive List Setting', 'vk-blocks')}>
-					<AdvancedPosttypeDropdownControl
-						attributes={attributes}
-						setAttributes={setAttributes}
+					<SelectControl
+						label={__('Post type', 'vk-blocks')}
+						value={postType}
+						options={postTypesSelect}
+						onChange={(value) => setAttributes({ postType: value })}
 					/>
 					<SelectControl
-						label={__('Archive Type', 'vk-blocks')}
+						label={__('Archive type', 'vk-blocks')}
 						value={displayType}
 						onChange={(value) =>
 							setAttributes({ displayType: value })

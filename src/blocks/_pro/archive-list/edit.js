@@ -1,20 +1,19 @@
+/*globals vk_block_archve_list_post_type_params */
 // import WordPress Scripts
 import { __ } from '@wordpress/i18n';
 import { PanelBody, SelectControl, ToggleControl } from '@wordpress/components';
 import ServerSideRender from '@wordpress/server-side-render';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 
-// Load VK Blocks Utils
-import { usePostTypes } from '@vkblocks/utils/hooks';
-
-const getPostTypesSelect = (data) => {
-	const types = data.map((item) => {
-		return {
-			value: item.slug,
-			label: item.label,
-		};
-	});
-
+const getPostTypesSelect = () => {
+	const types = vk_block_archve_list_post_type_params.post_types.map(
+		(item) => {
+			return {
+				label: item.label,
+				value: item.slug,
+			};
+		}
+	);
 	return types;
 };
 
@@ -27,22 +26,6 @@ export default function PostListEdit(props) {
 		className: `vk_icon`,
 	});
 
-	// 投稿タイプ
-	const postTypes = usePostTypes({ public: true });
-	let postTypesProps = postTypes.map((item) => {
-		return {
-			label: item.name,
-			slug: item.slug,
-		};
-	});
-	// メディアと再利用ブロックを除外
-	postTypesProps = postTypesProps.filter(
-		(item) =>
-			'attachment' !== item.slug && 'wp_block' !== item.slug
-	);
-
-	const postTypesSelect = getPostTypesSelect(postTypesProps);
-
 	return (
 		<>
 			<InspectorControls>
@@ -50,7 +33,7 @@ export default function PostListEdit(props) {
 					<SelectControl
 						label={__('Post type', 'vk-blocks')}
 						value={postType}
-						options={postTypesSelect}
+						options={getPostTypesSelect()}
 						onChange={(value) => setAttributes({ postType: value })}
 					/>
 					<SelectControl

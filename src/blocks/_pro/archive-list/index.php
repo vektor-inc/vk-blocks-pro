@@ -70,6 +70,57 @@ function vk_blocks_register_block_archive_list() {
 			'render_callback' => 'vk_blocks_archive_list_render_callback',
 		)
 	);
+
+	// 投稿タイプの選択で使うスリストを作成
+	$post_types = array();
+
+	// 投稿が空でない場合にリスト・選択肢に追加.
+	$get_posts = get_posts(
+		array(
+			'post_type'        => 'post',
+			'suppress_filters' => false,
+		)
+	);
+	if ( ! empty( $get_posts ) ) {
+		$post_types[] = array(
+			'label' => get_post_type_object( 'post' )->labels->singular_name,
+			'slug'  => get_post_type_object( 'post' )->name,
+		);
+	}
+
+	// その他の投稿タイプが空でない場合にリスト・選択肢に追加.
+	$the_post_types = get_post_types(
+		array(
+			'public'   => true,
+			'show_ui'  => true,
+			'_builtin' => false,
+		),
+		'objects',
+		'and'
+	);
+
+	foreach ( $the_post_types as $the_post_type ) {
+		$get_posts = get_posts(
+			array(
+				'post_type'        => $the_post_type->name,
+				'suppress_filters' => false,
+			)
+		);
+		if ( ! empty( $get_posts ) ) {
+			$post_types[] = array(
+				'label' => $the_post_type->labels->singular_name,
+				'slug'  => $the_post_type->name,
+			);
+		}
+	}
+
+	// ブロックに値を渡す
+	wp_localize_script(
+		'vk-blocks-build-js',
+		'vk_block_archve_list_post_type_params',
+		array(
+			'post_types'	=> $post_types,
+		)
+	);
 }
 add_action( 'init', 'vk_blocks_register_block_archive_list', 99 );
-

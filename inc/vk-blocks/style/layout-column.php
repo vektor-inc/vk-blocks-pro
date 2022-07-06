@@ -1,8 +1,12 @@
 <?php
+/**
+ * Layout Column Style Setting
+ *
+ * @package VK Blocks
+ */
 
 
 function vk_blocks_layout_column_block_style() {
-
 	$vk_blocks_options = vk_blocks_get_options();
 
 	/**
@@ -19,7 +23,6 @@ function vk_blocks_layout_column_block_style() {
 	// サイドバーカラムの最小保持幅
 	$sub_column_min_width = '280px';
 
-
 	$dynamic_css = <<<__CSS__
 	:root {
 		--vk-layout-column-gap: ${layout_column_gap};
@@ -28,9 +31,8 @@ function vk_blocks_layout_column_block_style() {
 	}
 __CSS__;
 
-	    wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );
+		wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );
 		wp_add_inline_style( 'wp-edit-blocks', $dynamic_css );
-
 }
 add_action( 'init', 'vk_blocks_layout_column_block_style' );
 

@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Breadcrumb ] Fix in case of filter search result category & keyword
 [ Add Function ][ Button ] Enable inline font size and add icon size option.
 
 = 1.39.1 =

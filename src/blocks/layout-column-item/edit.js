@@ -2,6 +2,8 @@
 import { __ } from '@wordpress/i18n';
 import {
 	PanelBody,
+	ButtonGroup,
+	Button,
 	__experimentalBoxControl as BoxControl,
 	__experimentalUnitControl as UnitControl,
 } from '@wordpress/components';
@@ -12,90 +14,76 @@ import {
 	InspectorControls,
 } from '@wordpress/block-editor';
 
-import { useEffect } from '@wordpress/element';
-import { useMediaQuery } from '@wordpress/compose';
+import classnames from 'classnames';
 
 export default function LayoutColumnItemEdit(props) {
-	const { attributes, setAttributes, clientId } = props;
-	const { width, margin_pc, margin_tb, margin_sp, is_grid, blockId } =
-		attributes;
-	const blockProps = useBlockProps({
-		className: `vk_layoutColumnItem`,
+	const { attributes, setAttributes } = props;
+	const { layoutType, customMinWidth } = attributes;
+
+	const classes = classnames(`vk_layoutColumnItem`, {
+		[`vk_layoutColumnItem-layout-${layoutType}`]:
+			'custom' !== layoutType && undefined !== layoutType,
 	});
 
-	useEffect(() => {
-		if (blockId === undefined) {
-			setAttributes({ blockId: clientId });
-		}
-	}, [clientId]);
+	const cStyle =
+		layoutType === 'custom' && customMinWidth
+			? { flexBasis: customMinWidth }
+			: {};
 
-	const isMobile = useMediaQuery('(max-width: 575.98px)');
-	const isTablet = useMediaQuery(
-		'(min-width: 576px) and (max-width: 991.98px)'
-	);
-	const isPC = useMediaQuery('(min-width: 992px)');
-
-	let padding = margin_pc;
-	if (isMobile) {
-		padding = margin_sp;
-	} else if (isTablet) {
-		padding = margin_tb;
-	}
-
-	const flexBasis = undefined === width || '' === width ? 'auto' : width;
-	const flexShrink = undefined === width || '' === width ? 1 : 0;
-	const flexGrow = undefined === width || '' === width ? 1 : 0;
-
-	const cStyle = {
-		flexBasis,
-		flexGrow,
-		flexShrink,
-		paddingTop: padding.top,
-		paddingRight: padding.right,
-		paddingBottom: padding.bottom,
-		paddingLeft: padding.left,
-	};
+	const blockProps = useBlockProps({
+		className: classes,
+		style: cStyle,
+	});
 
 	return (
 		<>
-			<div {...blockProps} style={cStyle}>
+			<div {...blockProps}>
 				<InnerBlocks />
 			</div>
 			<InspectorControls>
-				<PanelBody
-					title={__('Layout Column item Setting', 'vk-blocks')}
-				>
-					<UnitControl
-						onChange={(value) => setAttributes({ width: value })}
-						label={__('Block width', 'vk-blocks')}
-						value={width}
-					/>
-				</PanelBody>
-				<PanelBody title={__('Margin Setting', 'vk-blocks')}>
-					<BoxControl
-						className={blockProps.className + '-boxcontrol'}
-						values={margin_pc}
-						label={__('PC')}
-						onChange={(nextValues) =>
-							setAttributes({ margin_pc: nextValues })
-						}
-					/>
-					<BoxControl
-						className={blockProps.className + '-boxcontrol'}
-						values={margin_tb}
-						label={__('Tablet')}
-						onChange={(nextValues) =>
-							setAttributes({ margin_tb: nextValues })
-						}
-					/>
-					<BoxControl
-						className={blockProps.className + '-boxcontrol'}
-						values={margin_sp}
-						label={__('Mobile')}
-						onChange={(nextValues) =>
-							setAttributes({ margin_sp: nextValues })
-						}
-					/>
+				<PanelBody title={__('レイアウト属性', 'vk-blocks')}>
+					<ButtonGroup className="mb-3">
+						<Button
+							isSmall
+							isPrimary={layoutType === 'main'}
+							isSecondary={layoutType !== 'main'}
+							onClick={() =>
+								setAttributes({ layoutType: 'main' })
+							}
+						>
+							{__('メイン', 'vk-blocks')}
+						</Button>
+						<Button
+							isSmall
+							isPrimary={layoutType === 'sub'}
+							isSecondary={layoutType !== 'sub'}
+							onClick={() => setAttributes({ layoutType: 'sub' })}
+						>
+							{__('サイドバー', 'vk-blocks')}
+						</Button>
+						<Button
+							isSmall
+							isPrimary={layoutType === 'custom'}
+							isSecondary={layoutType !== 'custom'}
+							onClick={() =>
+								setAttributes({ layoutType: 'custom' })
+							}
+						>
+							{__('カスタム', 'vk-blocks')}
+						</Button>
+						{layoutType === 'custom' && (
+							<UnitControl
+								className={blockProps.className + '-boxcontrol'}
+								value={customMinWidth}
+								label={__('最小幅')}
+								onChange={(nextValues) =>
+									setAttributes({
+										customMinWidth: nextValues,
+									})
+								}
+							/>
+						)}
+					</ButtonGroup>
 				</PanelBody>
 			</InspectorControls>
 		</>

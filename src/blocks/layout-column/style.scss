@@ -6,8 +6,22 @@
 /*-------------------------------------------*/
 .vk_layoutColumn {
 	display: flex;
+	flex-wrap: wrap;
+	gap: var(--vk-layout-column-gap);
 }
 
 .vk_layoutColumnItem {
-	box-sizing: border-box;
+	flex-shrink: 0;
+	flex-grow: 1;
+	max-width: 100%;
+
+	&.vk_layoutColumnItem-layout-main {
+		width: 500px;
+		flex-basis:var(--vk-layout-column-main-column-min-width);		
+	}
+
+	&.vk_layoutColumnItem-layout-sub {
+		flex-basis:var(--vk-layout-column-sub-column-min-width);
+	}
 }
+

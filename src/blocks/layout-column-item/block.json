@@ -6,44 +6,16 @@
 		"vk-blocks/layout-column"
 	],
 	"attributes": {
-		"width": {
-			"type": "string"
-		},
-		"margin_pc": {
-			"type": "object",
-			"default": {
-				"top": "0px",
-				"left": "0px",
-				"right": "0px",
-				"bottom": "0px"	
-			}
-		},
-		"margin_tb": {
-			"type": "object",
-			"default": {
-				"top": "0px",
-				"left": "0px",
-				"right": "0px",
-				"bottom": "0px"	
-			}
-		},
-		"margin_sp": {
-			"type": "object",
-			"default": {
-				"top": "0px",
-				"left": "0px",
-				"right": "0px",
-				"bottom": "0px"	
-			}
-		},
-		"is_grid": {
-			"type": "boolean",
-			"default": true
-		},
 		
 		"blockId": {
 			"type": "string"
-		}	
+		},
+		"layoutType": {
+			"type": "string"
+		},
+		"customMinWidth": {
+			"type": "string"
+		}
 	},
 	"description": "Column blocks for layout.",
 	"textdomain": "vk-blocks",

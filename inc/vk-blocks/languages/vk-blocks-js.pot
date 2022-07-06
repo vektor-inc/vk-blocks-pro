@@ -340,15 +340,15 @@ msgstr ""
 msgid "vw"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:53
+#: src/blocks/_pro/grid-column/edit.js:52
 msgid "Layout Columns"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:59
+#: src/blocks/_pro/grid-column/edit.js:58
 msgid "Column Margin Bottom Setting"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:63
+#: src/blocks/_pro/grid-column/edit.js:62
 msgid "Margin Bottom"
 msgstr ""
 
@@ -1595,6 +1595,51 @@ msgstr ""
 #: src/blocks/icon/edit.js:249
 #: src/blocks/pr-content/edit.js:122
 msgid "Link URL"
+msgstr ""
+
+#: src/blocks/layout-column-item/edit.js:44
+msgid "レイアウト属性"
+msgstr ""
+
+#: src/blocks/layout-column-item/edit.js:54
+msgid "メイン"
+msgstr ""
+
+#: src/blocks/layout-column-item/edit.js:62
+msgid "サイドバー"
+msgstr ""
+
+#: src/blocks/layout-column-item/edit.js:72
+#: src/blocks/layout-column/edit.js:74
+msgid "カスタム"
+msgstr ""
+
+#: src/blocks/layout-column-item/edit.js:78
+msgid "最小幅"
+msgstr ""
+
+#: src/blocks/layout-column-item/index.js:17
+msgid "Layout Column Item"
+msgstr ""
+
+#: src/blocks/layout-column/edit.js:54
+msgid "カラム間余白設定"
+msgstr ""
+
+#: src/blocks/layout-column/edit.js:64
+msgid "サイトレイアウト余白"
+msgstr ""
+
+#: src/blocks/layout-column/edit.js:80
+msgid "カスタム余白サイズ"
+msgstr ""
+
+#: src/blocks/layout-column/edit.js:87
+msgid "※ サイトレイアウト余白は「レイアウトカラム共通設定」より指定できます。この値はサイト内共通です。"
+msgstr ""
+
+#: src/blocks/layout-column/index.js:17
+msgid "Layout Column"
 msgstr ""
 
 #: src/blocks/page-content/edit.js:10

@@ -3,16 +3,13 @@
 	"name": "vk-blocks/layout-column",
 	"category": "vk-blocks-cat",
 	"attributes": {
-		"totalWidth": {
+		"marginType": {
 			"type": "string",
-			"default": "100%"
+			"default": "site-setting"
 		},
-		"breakPoint": {
-			"type": "number",
-			"default": 900
-		},
-		"blockId": {
-			"type": "string"
+		"customMargin": {
+			"type": "string",
+			"default": "10px"
 		}
 	},
 	"description": "Column blocks for layout.",

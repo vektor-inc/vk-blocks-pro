@@ -1,9 +1,11 @@
 import { __ } from '@wordpress/i18n';
 import {
 	PanelBody,
-	RangeControl,
+	ButtonGroup,
+	Button,
 	// eslint-disable-next-line
 	__experimentalUnitControl as UnitControl,
+	//__experimentalBoxControl as BoxControl
 } from '@wordpress/components';
 
 import {
@@ -12,44 +14,14 @@ import {
 	InspectorControls,
 } from '@wordpress/block-editor';
 
-import { select } from '@wordpress/data';
-import { useEffect } from '@wordpress/element';
+import classnames from 'classnames';
 
 export default function LayoutColumnEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
-	const { totalWidth, breakPoint, blockId } = attributes;
-
-	const displayWidth = totalWidth;
-
-	// サイドバーがひらいているかどうか
-	const isSidebarOpened = select('core/edit-post').isEditorSidebarOpened();
-
-	// エディタ用のbreakpointは設定されたもの＋280px
-	const editorBreakPoint = isSidebarOpened ? breakPoint + 280 : breakPoint;
+	const { marginType, customMargin } = attributes;
 
 	// コンテナブロックのクラス名
-	const className = `vk_layoutColumn vk_layoutColumn-${clientId}`;
-
-	useEffect(() => {
-		if (blockId === undefined) {
-			setAttributes({ blockId: clientId });
-		}
-	}, [clientId]);
-
-	const style = `@media (min-width: ${editorBreakPoint}px) {
-		.vk_layoutColumn-${clientId} > .block-editor-inner-blocks > .block-editor-block-list__layout {
-			flex-wrap: nowrap;
-		}
-	}
-	@media (max-width: ${editorBreakPoint - 0.02}px) {
-		.vk_layoutColumn-${clientId} > .block-editor-inner-blocks > .block-editor-block-list__layout {
-			flex-wrap: wrap;
-		}		
-		.vk_layoutColumn-${clientId} .vk_layoutColumnItem {
-			flex-basis:100% !important;
-		}
-	}
-	`;
+	const classes = classnames(`vk_layoutColumn vk_layoutColumn-${clientId}`);
 
 	const ALLOWED_BLOCKS = ['vk-blocks/layout-column-item'];
 	const TEMPLATE = [
@@ -57,12 +29,21 @@ export default function LayoutColumnEdit(props) {
 		['vk-blocks/layout-column-item', {}],
 	];
 	const blockProps = useBlockProps({
-		className,
+		className: classes,
 	});
+
+	const style =
+		'custom' === marginType && !!customMargin
+			? `
+		.editor-styles-wrapper .vk_layoutColumn-${clientId} > .block-editor-inner-blocks > .block-editor-block-list__layout {
+			gap: ${customMargin};
+		}
+	`
+			: '';
 
 	return (
 		<>
-			<div {...blockProps} style={{ width: displayWidth }}>
+			<div {...blockProps}>
 				<InnerBlocks
 					template={TEMPLATE}
 					allowedBlocks={ALLOWED_BLOCKS}
@@ -70,29 +51,44 @@ export default function LayoutColumnEdit(props) {
 			</div>
 			<style>{style}</style>
 			<InspectorControls>
-				<PanelBody title={__('Layout Column Setting', 'vk-blocks')}>
-					<UnitControl
-						onChange={(value) =>
-							setAttributes({ totalWidth: value })
-						}
-						label={__('Block width', 'vk-blocks')}
-						value={totalWidth}
-					/>
-					<div style={{ marginTop: '10px' }}>
-						<RangeControl
-							value={breakPoint}
-							onChange={(value) =>
-								setAttributes({
-									breakPoint: value,
-								})
+				<PanelBody title={__('カラム間余白設定', 'vk-blocks')}>
+					<ButtonGroup className="mb-3">
+						<Button
+							isSmall
+							isPrimary={marginType === 'site-setting'}
+							isSecondary={marginType !== 'site-setting'}
+							onClick={() =>
+								setAttributes({ marginType: 'site-setting' })
 							}
-							min={0}
-							max={2000}
-							allowReset={true}
-							resetFallbackValue={900}
-							label={__('BreakPoint(px)', 'vk-blocks')}
+						>
+							{__('サイトレイアウト余白', 'vk-blocks')}
+						</Button>
+						<Button
+							isSmall
+							isPrimary={marginType === 'custom'}
+							isSecondary={marginType !== ''}
+							onClick={() =>
+								setAttributes({ marginType: 'custom' })
+							}
+						>
+							{__('カスタム', 'vk-blocks')}
+						</Button>
+					</ButtonGroup>
+					{marginType === 'custom' && (
+						<UnitControl
+							value={customMargin}
+							label={__('カスタム余白サイズ')}
+							onChange={(nextValues) =>
+								setAttributes({ customMargin: nextValues })
+							}
 						/>
-					</div>
+					)}
+					<p>
+						{__(
+							'※ サイトレイアウト余白は「レイアウトカラム共通設定」より指定できます。この値はサイト内共通です。',
+							'vk-blocks'
+						)}
+					</p>
 				</PanelBody>
 			</InspectorControls>
 		</>

@@ -2,16 +2,16 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.39.0.0\n"
+"Project-Id-Version: VK Blocks Pro 1.39.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-06-30T02:59:20+00:00\n"
+"POT-Creation-Date: 2022-07-06T08:48:21+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.6.0\n"
+"X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
 
 #: src/blocks/_pro/accordion/index.js:22
@@ -351,15 +351,15 @@ msgstr ""
 msgid "vw"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:53
+#: src/blocks/_pro/grid-column/edit.js:52
 msgid "Layout Columns"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:59
+#: src/blocks/_pro/grid-column/edit.js:58
 msgid "Column Margin Bottom Setting"
 msgstr ""
 
-#: src/blocks/_pro/grid-column/edit.js:63
+#: src/blocks/_pro/grid-column/edit.js:62
 msgid "Margin Bottom"
 msgstr ""
 
@@ -1313,14 +1313,14 @@ msgstr ""
 
 #: src/blocks/button/edit.js:290
 #: src/blocks/spacer/edit.js:105
-#: inc/vk-blocks/vk-blocks-functions.php:31
+#: inc/vk-blocks/vk-blocks-functions.php:32
 msgid "Large"
 msgstr ""
 
 #: src/blocks/button/edit.js:306
 #: src/blocks/spacer/edit.js:85
 #: src/extensions/common/inline-font-size/index.js:84
-#: inc/vk-blocks/vk-blocks-functions.php:23
+#: inc/vk-blocks/vk-blocks-functions.php:24
 msgid "Small"
 msgstr ""
 
@@ -1597,6 +1597,51 @@ msgstr ""
 msgid "Link URL"
 msgstr ""
 
+#: src/blocks/layout-column-item/edit.js:44
+msgid "レイアウト属性"
+msgstr ""
+
+#: src/blocks/layout-column-item/edit.js:54
+msgid "メイン"
+msgstr ""
+
+#: src/blocks/layout-column-item/edit.js:62
+msgid "サイドバー"
+msgstr ""
+
+#: src/blocks/layout-column-item/edit.js:72
+#: src/blocks/layout-column/edit.js:74
+msgid "カスタム"
+msgstr ""
+
+#: src/blocks/layout-column-item/edit.js:78
+msgid "最小幅"
+msgstr ""
+
+#: src/blocks/layout-column-item/index.js:17
+msgid "Layout Column Item"
+msgstr ""
+
+#: src/blocks/layout-column/edit.js:54
+msgid "カラム間余白設定"
+msgstr ""
+
+#: src/blocks/layout-column/edit.js:64
+msgid "サイトレイアウト余白"
+msgstr ""
+
+#: src/blocks/layout-column/edit.js:80
+msgid "カスタム余白サイズ"
+msgstr ""
+
+#: src/blocks/layout-column/edit.js:87
+msgid "※ サイトレイアウト余白は「レイアウトカラム共通設定」より指定できます。この値はサイト内共通です。"
+msgstr ""
+
+#: src/blocks/layout-column/index.js:17
+msgid "Layout Column"
+msgstr ""
+
 #: src/blocks/page-content/edit.js:10
 #: src/blocks/staff/edit.js:257
 msgid "Unspecified"
@@ -1754,7 +1799,7 @@ msgid "Spacer Settings"
 msgstr ""
 
 #: src/blocks/spacer/edit.js:95
-#: inc/vk-blocks/vk-blocks-functions.php:27
+#: inc/vk-blocks/vk-blocks-functions.php:28
 msgid "Medium"
 msgstr ""
 
@@ -2536,11 +2581,11 @@ msgstr ""
 msgid "There are no %ss."
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:222
+#: inc/vk-blocks/vk-blocks-functions.php:223
 msgid "Blocks"
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:235
+#: inc/vk-blocks/vk-blocks-functions.php:236
 msgid "Blocks Layout"
 msgstr ""
 
@@ -2812,6 +2857,14 @@ msgstr ""
 #: src/blocks/icon/block.json
 msgctxt "block description"
 msgid "Display icons with Font Awesome."
+msgstr ""
+
+#: inc/vk-blocks/build/blocks/layout-column-item/block.json
+#: inc/vk-blocks/build/blocks/layout-column/block.json
+#: src/blocks/layout-column-item/block.json
+#: src/blocks/layout-column/block.json
+msgctxt "block description"
+msgid "Column blocks for layout."
 msgstr ""
 
 #: inc/vk-blocks/build/blocks/page-content/block.json

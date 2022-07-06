@@ -5,6 +5,8 @@
         >.block-editor-inner-blocks {
             >.block-editor-block-list__layout {
                 display: flex;
+                flex-wrap: wrap;
+                gap: var(--vk-layout-column-gap);                
             }
             >.components-unit-control-wrapper {
                 margin-top: 20px;

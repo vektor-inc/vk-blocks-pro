@@ -9,9 +9,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-07-05T08:41:24+00:00\n"
+"POT-Creation-Date: 2022-06-30T02:59:20+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.5.0\n"
+"X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks\n"
 
 #: src/blocks/_pro/accordion/index.js:22
@@ -129,34 +129,6 @@ msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:99
 msgid "Very Slow"
-msgstr ""
-
-#: src/blocks/_pro/archive-list/edit.js:32
-msgid "Archive List Setting"
-msgstr ""
-
-#: src/blocks/_pro/archive-list/edit.js:34
-msgid "Post type"
-msgstr ""
-
-#: src/blocks/_pro/archive-list/edit.js:40
-msgid "Archive type"
-msgstr ""
-
-#: src/blocks/_pro/archive-list/edit.js:48
-msgid "Monthly"
-msgstr ""
-
-#: src/blocks/_pro/archive-list/edit.js:52
-msgid "Yearly"
-msgstr ""
-
-#: src/blocks/_pro/archive-list/edit.js:57
-msgid "Display as dropdown"
-msgstr ""
-
-#: src/blocks/_pro/archive-list/edit.js:64
-msgid "Show post counts"
 msgstr ""
 
 #: src/blocks/_pro/button-outer/edit.js:56
@@ -303,19 +275,19 @@ msgid "Ignore this post"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:102
-#: src/blocks/_pro/gridcolcard/edit-common.js:155
+#: src/blocks/_pro/gridcolcard/edit-common.js:159
 msgid "Color Settings"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:104
-#: src/blocks/_pro/gridcolcard/edit-common.js:157
+#: src/blocks/_pro/gridcolcard/edit-common.js:161
 #: src/blocks/button/edit.js:681
 #: src/blocks/heading/edit.js:324
 msgid "Text Color"
 msgstr ""
 
 #: src/blocks/_pro/grid-column-item/edit.js:110
-#: src/blocks/_pro/gridcolcard/edit-common.js:163
+#: src/blocks/_pro/gridcolcard/edit-common.js:167
 #: src/blocks/border-box/edit.js:216
 #: src/blocks/button/edit.js:664
 msgid "Background Color"
@@ -459,52 +431,52 @@ msgstr ""
 msgid "Make sure that no link is specified for the image block, etc."
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:113
+#: src/blocks/_pro/gridcolcard/edit-common.js:117
 msgid "Image fit to column"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:125
+#: src/blocks/_pro/gridcolcard/edit-common.js:129
 msgid "Column footer button area"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:135
+#: src/blocks/_pro/gridcolcard/edit-common.js:139
 #: src/blocks/heading/edit.js:370
 msgid "Display"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:143
+#: src/blocks/_pro/gridcolcard/edit-common.js:147
 #: src/blocks/_pro/slider/edit.js:374
 #: src/blocks/heading/edit.js:374
 msgid "Hide"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:151
+#: src/blocks/_pro/gridcolcard/edit-common.js:155
 #: inc/vk-blocks/admin/admin-balloon.php:54
 msgid "Delete"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:170
+#: src/blocks/_pro/gridcolcard/edit-common.js:174
 msgid "Column Radius"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:176
+#: src/blocks/_pro/gridcolcard/edit-common.js:180
 #: src/blocks/balloon/edit.js:319
 #: src/extensions/core/image/style.js:15
 #: src/extensions/core/table/style.js:12
 msgid "Border"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:185
+#: src/blocks/_pro/gridcolcard/edit-common.js:189
 #: src/blocks/border-box/edit.js:207
 #: src/extensions/core/group/style.js:47
 msgid "Border Color"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:61
+#: src/blocks/_pro/gridcolcard/edit-common.js:65
 msgid "Column padding"
 msgstr ""
 
-#: src/blocks/_pro/gridcolcard/edit-common.js:69
+#: src/blocks/_pro/gridcolcard/edit-common.js:73
 msgid "Column header media area"
 msgstr ""
 
@@ -1341,14 +1313,14 @@ msgstr ""
 
 #: src/blocks/button/edit.js:290
 #: src/blocks/spacer/edit.js:105
-#: inc/vk-blocks/vk-blocks-functions.php:32
+#: inc/vk-blocks/vk-blocks-functions.php:31
 msgid "Large"
 msgstr ""
 
 #: src/blocks/button/edit.js:306
 #: src/blocks/spacer/edit.js:85
 #: src/extensions/common/inline-font-size/index.js:84
-#: inc/vk-blocks/vk-blocks-functions.php:24
+#: inc/vk-blocks/vk-blocks-functions.php:23
 msgid "Small"
 msgstr ""
 
@@ -1782,7 +1754,7 @@ msgid "Spacer Settings"
 msgstr ""
 
 #: src/blocks/spacer/edit.js:95
-#: inc/vk-blocks/vk-blocks-functions.php:28
+#: inc/vk-blocks/vk-blocks-functions.php:27
 msgid "Medium"
 msgstr ""
 
@@ -2555,10 +2527,6 @@ msgstr ""
 msgid "Edit this area"
 msgstr ""
 
-#: inc/vk-blocks/view/class-vk-blocks-archivelist.php:58
-msgid "Please select"
-msgstr ""
-
 #: inc/vk-blocks/view/class-vk-blocks-postlist.php:246
 msgid "Post"
 msgstr ""
@@ -2568,11 +2536,11 @@ msgstr ""
 msgid "There are no %ss."
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:223
+#: inc/vk-blocks/vk-blocks-functions.php:222
 msgid "Blocks"
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:236
+#: inc/vk-blocks/vk-blocks-functions.php:235
 msgid "Blocks Layout"
 msgstr ""
 
@@ -2952,18 +2920,6 @@ msgstr ""
 #: src/blocks/_pro/animation/block.json
 msgctxt "block description"
 msgid "Add animation to elements when scrolling the page."
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/_pro/archive-list/block.json
-#: src/blocks/_pro/archive-list/block.json
-msgctxt "block title"
-msgid "Archive list"
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/_pro/archive-list/block.json
-#: src/blocks/_pro/archive-list/block.json
-msgctxt "block description"
-msgid "Displays a list of archives"
 msgstr ""
 
 #: inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json

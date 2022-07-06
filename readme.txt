@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
 Tested up to: 6.0.0
-Stable tag: 1.39.0.0
+Stable tag: 1.39.1.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -64,8 +64,12 @@ e.g.
 
 == Changelog ==
 
-[ Specification Change ] Change the script loaded on the options page to a script file.
+[ Bug Fix ][ Breadcrumb ] Fix in case of filter search result category & keyword
 [ Add New Block ][ Archive list block ] Displays a list of archives
+
+= 1.39.1 =
+[ Bug Fix ][ Grid Column Card ] fix bug when aspect retio is empty.
+[ Other ] Change the script loaded on the options page to a script file.
 
 = 1.39.0 =
 [ Improvement ] License key remove space.

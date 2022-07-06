@@ -5,13 +5,12 @@
  * @package VK Blocks
  */
 
+ /**
+  * Load Scripts
+  */
 function vk_blocks_layout_column_block_style() {
+    
 	$vk_blocks_options = vk_blocks_get_options();
-
-	/**
-	 * サイト設定（最終的にはサイト設定値から読み込む）
-	 * 変更したら npm run build してください。
-	 */
 
 	// サイトレイアウト余白
 	$layout_column_gap = '20px';

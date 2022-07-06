@@ -9,7 +9,6 @@
   * Load Scripts
   */
 function vk_blocks_layout_column_block_style() {
-    
 	$vk_blocks_options = vk_blocks_get_options();
 
 	// サイトレイアウト余白

@@ -29,10 +29,8 @@ function vk_blocks_layout_column_block_style() {
 __CSS__;
 
 	    wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );
-	//if ( is_admin() && class_exists( 'WP_Screen' ) && WP_Screen::get()->is_block_editor() ) {
 		wp_add_inline_style( 'wp-edit-blocks', $dynamic_css );
-	//}
+
 }
 add_action( 'init', 'vk_blocks_layout_column_block_style' );
-//add_action( 'enqueue_block_editor_assets', 'vk_blocks_layout_column_block_style' );
 

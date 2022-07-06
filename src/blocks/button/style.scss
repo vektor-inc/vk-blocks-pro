@@ -291,6 +291,15 @@ $xxl-min: 1400px;
 
 	// テキストのみ
 	.has-text-color.vk_button_link-type-text {
+		&:hover .vk_button_link_txt,
+		&:hover .vk_button_link_subCaption {
+			text-decoration: underline;
+			text-decoration-style: dotted;
+			text-underline-offset:2px;
+			text-decoration-color:currentColor;
+			text-decoration-thickness: 1px;
+		}
+
 		&:hover {
 			/* 白っぽい色に対する対策 */
 			&.has-vk-color-light-background-color .vk_button_link_before,
@@ -302,12 +311,8 @@ $xxl-min: 1400px;
 			&.has-white-color .vk_button_link_after,
 			&.has-white-color .vk_button_link_subCaption {
 				color:#212529;
+				text-decoration: none;
 			}
-			text-decoration: underline;
-			text-decoration-style: dotted;
-			text-underline-offset:2px;
-			text-decoration-color:currentColor;
-			text-decoration-thickness: 1px;
 		}
 	}
 

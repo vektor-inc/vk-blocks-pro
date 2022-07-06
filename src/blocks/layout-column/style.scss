@@ -16,6 +16,7 @@
 	max-width: 100%;
 
 	&.vk_layoutColumnItem-layout-main {
+		flex-grow:999;
 		width: 500px;
 		flex-basis:var(--vk-layout-column-main-column-min-width);		
 	}

@@ -145,13 +145,6 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 		return;
 	}
 
-	wp_enqueue_style(
-		'vk_blocks_options-style',
-		VK_BLOCKS_DIR_URL . 'build/vk_blocks_options.css',
-		array(),
-		VK_BLOCKS_VERSION
-	);
-
 	$asset = include VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/build/admin-build.asset.php';
 	// Enqueue CSS dependencies.
 	foreach ( $asset['dependencies'] as $style ) {
@@ -180,6 +173,13 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 			'isLicenseSetting' => vk_blocks_is_license_setting(),
 			'isPro'            => vk_blocks_is_pro(),
 		)
+	);
+
+	wp_enqueue_style(
+		'vk_blocks_options-style',
+		VK_BLOCKS_DIR_URL . 'build/vk_blocks_options.css',
+		array(),
+		VK_BLOCKS_VERSION
 	);
 }
 add_action( 'admin_enqueue_scripts', 'vk_blocks_options_enqueue_scripts' );

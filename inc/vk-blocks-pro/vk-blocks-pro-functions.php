@@ -8,6 +8,9 @@
 // Pro 用の管理画面を読み込み.
 require_once dirname( __FILE__ ) . '/admin-pro/admin-pro.php';
 
+require_once dirname( __FILE__ ) . '/class-vk-blocks-pro-options.php';
+VK_Blocks_Pro_Options::init();
+
 /**
  * VK Blocks Pro Get Options
  *

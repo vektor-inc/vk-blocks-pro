@@ -9,7 +9,7 @@ import {
 	ButtonGroup,
 	BaseControl,
 } from '@wordpress/components';
-import { ColorPalette } from '@wordpress/block-editor';
+import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 
 const CommonItemControl = (props) => {
 	const { attributes, setAttributes } = props;
@@ -20,9 +20,6 @@ const CommonItemControl = (props) => {
 		containerSpace,
 		borderRadius,
 		border,
-		borderColor,
-		textColor,
-		backgroundColor,
 		headerImageAspectRatio,
 		headerImageFit,
 	} = attributes;
@@ -164,21 +161,13 @@ const CommonItemControl = (props) => {
 				label={__('Text Color', 'vk-blocks')}
 				id={`vk_gridcolcard_text_color`}
 			>
-				<ColorPalette
-					value={textColor}
-					onChange={(value) => setAttributes({ textColor: value })}
-				/>
+				<AdvancedColorPalette schema={'textColor'} {...props} />
 			</BaseControl>
 			<BaseControl
 				label={__('Background Color', 'vk-blocks')}
 				id={`vk_gridcolcard_background_color`}
 			>
-				<ColorPalette
-					value={backgroundColor}
-					onChange={(value) =>
-						setAttributes({ backgroundColor: value })
-					}
-				/>
+				<AdvancedColorPalette schema={'backgroundColor'} {...props} />
 			</BaseControl>
 			<hr />
 			<UnitControl
@@ -200,11 +189,9 @@ const CommonItemControl = (props) => {
 								label={__('Border Color', 'vk-blocks')}
 								id={`vk_gridcolcard_border_color`}
 							>
-								<ColorPalette
-									value={borderColor}
-									onChange={(value) =>
-										setAttributes({ borderColor: value })
-									}
+								<AdvancedColorPalette
+									schema={'borderColor'}
+									{...props}
 								/>
 							</BaseControl>
 						</>

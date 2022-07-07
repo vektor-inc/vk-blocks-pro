@@ -169,12 +169,6 @@ class VK_Blocks_Options {
 	 * @return options
 	 */
 	public static function get_properties( $schema ) {
-		// $properties = array();
-		// foreach ( $schema as $key => $value ) {
-		// $properties[ $key ]['properties'] = 'object' === $value['type'] ? self::get_properties( $value['items'] ) : array( 'type' => $value['type'] );
-		// }
-		// return $properties;
-
 		$properties = array();
 		foreach ( $schema as $key => $value ) {
 			$properties[ $key ] = array(
@@ -182,22 +176,7 @@ class VK_Blocks_Options {
 			);
 
 			if ( 'object' === $value['type'] ) {
-				$properties[ $key ]['properties'] = array();
-				foreach ( $value['items'] as $key_1 => $value_1 ) {
-					$properties[ $key ]['properties'][ $key_1 ] = array(
-						'type' => $value_1['type'],
-					);
-
-					// ここから似たようなことを繰り返している
-					if ( 'object' === $value_1['type'] ) {
-						$properties[ $key ]['properties'][ $key_1 ]['properties'] = array();
-						foreach ( $value_1['items'] as $key_2 => $value_2 ) {
-							$properties[ $key ]['properties'][ $key_1 ]['properties'][ $key_2 ] = array(
-								'type' => $value_2['type'],
-							);
-						}
-					}
-				}
+				$properties[ $key ]['properties'] = self::get_properties( $value['items'] );
 			}
 		}
 		return $properties;

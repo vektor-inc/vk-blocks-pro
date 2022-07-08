@@ -2,16 +2,16 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.39.0.0\n"
+"Project-Id-Version: VK Blocks Pro 1.39.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-06-30T02:59:20+00:00\n"
+"POT-Creation-Date: 2022-07-06T09:49:16+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.6.0\n"
+"X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
 
 #: src/blocks/_pro/accordion/index.js:22
@@ -129,6 +129,34 @@ msgstr ""
 
 #: src/blocks/_pro/animation/edit.js:99
 msgid "Very Slow"
+msgstr ""
+
+#: src/blocks/_pro/archive-list/edit.js:32
+msgid "Archive List Setting"
+msgstr ""
+
+#: src/blocks/_pro/archive-list/edit.js:34
+msgid "Post type"
+msgstr ""
+
+#: src/blocks/_pro/archive-list/edit.js:40
+msgid "Archive type"
+msgstr ""
+
+#: src/blocks/_pro/archive-list/edit.js:48
+msgid "Monthly"
+msgstr ""
+
+#: src/blocks/_pro/archive-list/edit.js:52
+msgid "Yearly"
+msgstr ""
+
+#: src/blocks/_pro/archive-list/edit.js:57
+msgid "Display as dropdown"
+msgstr ""
+
+#: src/blocks/_pro/archive-list/edit.js:64
+msgid "Show post counts"
 msgstr ""
 
 #: src/blocks/_pro/button-outer/edit.js:56
@@ -1313,14 +1341,14 @@ msgstr ""
 
 #: src/blocks/button/edit.js:290
 #: src/blocks/spacer/edit.js:105
-#: inc/vk-blocks/vk-blocks-functions.php:31
+#: inc/vk-blocks/vk-blocks-functions.php:32
 msgid "Large"
 msgstr ""
 
 #: src/blocks/button/edit.js:306
 #: src/blocks/spacer/edit.js:85
 #: src/extensions/common/inline-font-size/index.js:84
-#: inc/vk-blocks/vk-blocks-functions.php:23
+#: inc/vk-blocks/vk-blocks-functions.php:24
 msgid "Small"
 msgstr ""
 
@@ -1754,7 +1782,7 @@ msgid "Spacer Settings"
 msgstr ""
 
 #: src/blocks/spacer/edit.js:95
-#: inc/vk-blocks/vk-blocks-functions.php:27
+#: inc/vk-blocks/vk-blocks-functions.php:28
 msgid "Medium"
 msgstr ""
 
@@ -2527,6 +2555,14 @@ msgstr ""
 msgid "Edit this area"
 msgstr ""
 
+#: inc/vk-blocks/view/class-vk-blocks-archivelist.php:55
+msgid "Please select year"
+msgstr ""
+
+#: inc/vk-blocks/view/class-vk-blocks-archivelist.php:58
+msgid "Please select month"
+msgstr ""
+
 #: inc/vk-blocks/view/class-vk-blocks-postlist.php:246
 msgid "Post"
 msgstr ""
@@ -2536,11 +2572,11 @@ msgstr ""
 msgid "There are no %ss."
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:222
+#: inc/vk-blocks/vk-blocks-functions.php:223
 msgid "Blocks"
 msgstr ""
 
-#: inc/vk-blocks/vk-blocks-functions.php:235
+#: inc/vk-blocks/vk-blocks-functions.php:236
 msgid "Blocks Layout"
 msgstr ""
 
@@ -2920,6 +2956,18 @@ msgstr ""
 #: src/blocks/_pro/animation/block.json
 msgctxt "block description"
 msgid "Add animation to elements when scrolling the page."
+msgstr ""
+
+#: inc/vk-blocks/build/blocks/_pro/archive-list/block.json
+#: src/blocks/_pro/archive-list/block.json
+msgctxt "block title"
+msgid "Archive list"
+msgstr ""
+
+#: inc/vk-blocks/build/blocks/_pro/archive-list/block.json
+#: src/blocks/_pro/archive-list/block.json
+msgctxt "block description"
+msgid "Displays a list of archives"
 msgstr ""
 
 #: inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json

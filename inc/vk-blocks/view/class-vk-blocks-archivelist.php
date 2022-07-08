@@ -14,86 +14,100 @@ class Vk_Blocks_ArchiveList {
 	 * Return html to display archive list.
 	 *
 	 * @param array  $attributes attributes.
-	 * @param object $archives wp_get_archives().
-	 * @param array  $options_archive options archive.
 	 *
 	 * @return string
 	 */
-	public static function render_archive_list( $attributes, $archives, $options_archive ) {
-		if ( ! empty( $attributes['className'] ) ) {
-			$options_archive['class_archive_outer'] .= ' ' . $attributes['className'];
-		}
+	public static function render_archive_list( $attributes ) {
 
-		if ( ! isset( $archives ) || false === $archives ) {
+		$options = array(
+			'postType'			=> esc_html( $attributes['postType'] ),
+			'displayType'		=> ( 'yearly' === $attributes['displayType'] ) ? 'yearly' : 'monthly',
+			'displayDropdown'	=> $attributes['displayDropdown'] ? true : false,
+			'showCount'			=> $attributes['showCount'] ? true : false,
+			'className'			=> esc_html( $attributes['className'] ),
+		);
+
+		// Get archive list html
+		$archives = self::get_archive_list( $options );
+
+		if ( empty( $archives ) ) {
 			// no archives
 			return null;
 		}
 
-		$options = array(
-			'postType'        => ( 'yearly' === $attributes['displayType'] ) ? 'yearly' : 'monthly',
-			'displayType'     => esc_html( $attributes['displayType'] ),
-			'displayDropdown' => $attributes['displayDropdown'] ? true : false,
-			'showCount'       => $attributes['showCount'] ? true : false,
-		);
-
-		// Outer classes
+		// wrapper class
 		$classes   = array();
+		$classes[] = 'vk_archiveList';
 		$classes[] = 'vk_archive-list-postType-' . $options['postType'];
+		$classes[] = 'vk_archive-list-display-type-' . $options['displayType'];
 		if ( $options['displayDropdown'] ) {
 			$classes[] = 'vk_archive-list-display-dropdown';
 		}
-		$outer_classname = implode( ' ', $classes );
-
-		// Additional classes
-		if ( ! empty( $options_archive['class_archive_outer'] ) ) {
-			$outer_classname .= ' ' . $options_archive['class_archive_outer'];
+		if ( ! empty( $attributes['className'] ) ) {
+			$classes[] .= $options['className'];
 		}
+		$wrapper_classes = implode( ' ', $classes );
 
-		$html  = '';
-		$html .= '<div class="vk_archive_list ' . esc_attr( $outer_classname ) . '">';
+		$block_content ='';
 
 		if ( $options['displayDropdown'] ) {
-			// Dropdown
-			$html .= '<select name="archive-list-dropdown" onChange="document.location.href=this.options[this.selectedIndex].value;">';
-			$html .= '<option value="" ' . selected( $options['displayType'], '', true ) . '>' . __( 'Please select', 'vk-blocks' ) . '</option>';
-			$html .= $archives;
-			$html .= '</select>';
+			// dropdown
+			$label = '';
+			if ( 'yearly' === $attributes['displayType'] ) {
+				$label .= __( 'Please select year', 'vk-blocks' );
+			}
+			else{
+				$label .= __( 'Please select month', 'vk-blocks' );
+			}
+
+			$block_content = sprintf(
+				'<select name="archive-list-dropdown" onChange="document.location.href=this.options[this.selectedIndex].value;"><option value="">%1$s</option>%2$s</select>',
+				$label,
+				$archives
+			);
 		} else {
 			// list
-			$html .= '<ul>';
-			$html .= $archives;
-			$html .= '</ul>';
+			$block_content = sprintf(
+				'<ul class="vk_archive-list">%1$s</ul>',
+				$archives
+			);
 		}
-		$html .= '</div>';
 
-		return $html;
+		return sprintf(
+			'<div class="%1$s">%2$s</div>',
+			$wrapper_classes,
+			$block_content
+		);
 	}
 
 	/**
 	 * Get archive list html
 	 *
-	 * @param array $attributes attributes.
+	 * @param array $options setting value.
+	 *
+	 * @return string
 	 */
-	public static function get_archive_list( $attributes ) {
+	public static function get_archive_list( $options ) {
 		$get_posts = get_posts(
 			array(
-				'post_type' => esc_html( $attributes['postType'] ),
+				'post_type' => $options['postType'],
 			)
 		);
+
 		if ( empty( $get_posts ) ) {
 			return null;
 		}
 
 		$arg = array(
-			'format'          => $attributes['displayDropdown'] ? 'option' : 'html',
-			'show_post_count' => $attributes['showCount'] ? true : false,
+			'format'          => $options['displayDropdown'] ? 'option' : 'html',
+			'show_post_count' => $options['showCount'],
 			'echo'            => false,
-			'post_type'       => esc_html( $attributes['postType'] ),
+			'post_type'       => $options['postType'],
 		);
 
-		if ( 'yearly' === $attributes['displayType'] ) {
+		if ( 'yearly' === $options['displayType'] ) {
 			$arg['type'] = 'yearly';
-			if ( ! $attributes['showCount'] && strtoupper( get_locale() ) == 'JA' ) {
+			if ( ! $options['showCount'] && strtoupper( get_locale() ) == 'JA' ) {
 				$arg['after'] = '年';
 			}
 		}

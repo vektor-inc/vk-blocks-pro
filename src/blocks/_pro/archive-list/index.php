@@ -12,10 +12,7 @@
  * @return string
  */
 function vk_blocks_archive_list_render_callback( $attributes ) {
-	$archives        = Vk_Blocks_ArchiveList::get_archive_list( $attributes );
-	$options_archive = array( 'class_archive_outer' => 'vk_archiveList' );
-
-	return Vk_Blocks_ArchiveList::render_archive_list( $attributes, $archives, $options_archive );
+	return Vk_Blocks_ArchiveList::render_archive_list( $attributes );
 }
 
 /**
@@ -24,16 +21,6 @@ function vk_blocks_archive_list_render_callback( $attributes ) {
  * @return void
  */
 function vk_blocks_register_block_archive_list() {
-
-	// Register Style.
-	if ( ! is_admin() ) {
-		wp_register_style(
-			'vk-blocks/archive-list',
-			VK_BLOCKS_DIR_URL . 'build/archive-list/style.css',
-			array(),
-			VK_BLOCKS_VERSION
-		);
-	}
 
 	global $vk_blocks_common_attributes;
 
@@ -44,23 +31,23 @@ function vk_blocks_register_block_archive_list() {
 			'editor_script'   => 'vk-blocks-build-js',
 			'attributes'      => array_merge(
 				array(
-					'postType'        => array(
-						'type'    => 'string',
-						'default' => 'post',
+					'postType'		=> array(
+						'type'		=> 'string',
+						'default'	=> 'post',
 					),
-					'displayType'     => array(
-						'type'    => 'string',
-						'default' => 'monthly',
+					'displayType'	=> array(
+						'type'		=> 'string',
+						'default'	=> 'monthly',
 					),
-					'displayDropdown' => array(
+					'displayDropdown'	=> array(
+						'type'    		=> 'boolean',
+						'default'		=> false,
+					),
+					'showCount'   => array(
 						'type'    => 'boolean',
 						'default' => false,
 					),
-					'showCount'       => array(
-						'type'    => 'boolean',
-						'default' => false,
-					),
-					'className'       => array(
+					'className'   => array(
 						'type'    => 'string',
 						'default' => '',
 					),
@@ -69,6 +56,7 @@ function vk_blocks_register_block_archive_list() {
 			),
 			'render_callback' => 'vk_blocks_archive_list_render_callback',
 		)
+
 	);
 
 	// 投稿タイプの選択で使うスリストを作成

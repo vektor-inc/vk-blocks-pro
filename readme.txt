@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ] Fixed a bug that CSS for edit screen is not loaded in iframe
 [ Bug Fix ][ Breadcrumb ] Fix in case of filter search result category & keyword
 
 = 1.39.1 =

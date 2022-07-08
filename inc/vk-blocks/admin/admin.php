@@ -161,7 +161,7 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 		$asset['version'],
 		true
 	);
-	wp_set_script_translations( 'vk-blocks-admin-js', 'vk-blocks', VK_BLOCKS_DIR_PATH . 'languages' );
+	wp_set_script_translations( 'vk-blocks-admin-js', 'vk-blocks', VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/languages' );
 
 	wp_localize_script(
 		'vk-blocks-admin-js',

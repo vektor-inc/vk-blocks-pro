@@ -65,6 +65,7 @@ e.g.
 == Changelog ==
 
 [ Bug Fix ][ Breadcrumb ] Fix in case of filter search result category & keyword
+[ Specification Change ][ icon ] enable float value at icon size and margin
 
 = 1.39.1 =
 [ Bug Fix ][ Grid Column Card ] fix bug when aspect retio is empty.

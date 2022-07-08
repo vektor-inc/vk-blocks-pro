@@ -88,7 +88,7 @@ export default function IconOuterEdit(props) {
 							className={`vk_icon_custombox_number`}
 							value={iconSize}
 							onChange={(value) =>
-								setAttributes({ iconSize: parseInt(value) })
+								setAttributes({ iconSize: parseFloat(value) })
 							}
 							type={'number'}
 						/>
@@ -135,7 +135,7 @@ export default function IconOuterEdit(props) {
 							className={`vk_icon_custombox_number`}
 							value={iconMargin}
 							onChange={(value) =>
-								setAttributes({ iconMargin: parseInt(value) })
+								setAttributes({ iconMargin: parseFloat(value) })
 							}
 							type={'number'}
 						/>

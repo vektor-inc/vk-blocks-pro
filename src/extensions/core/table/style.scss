@@ -5,12 +5,10 @@
     }
     &.is-style-vk-table {
         &-border-top-bottom {
-			table,th,td {
-                border-left: none;
-                border-right: none;
-			}
             th,td{
                 border-top: none;
+                border-left: none;
+                border-right: none;
                 border-bottom:1px solid var(--vk-color-border-hr);
             }
         }

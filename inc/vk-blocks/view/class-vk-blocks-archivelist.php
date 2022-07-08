@@ -13,18 +13,17 @@ class Vk_Blocks_ArchiveList {
 	/**
 	 * Return html to display archive list.
 	 *
-	 * @param array  $attributes attributes.
+	 * @param array $attributes attributes.
 	 *
 	 * @return string
 	 */
 	public static function render_archive_list( $attributes ) {
-
 		$options = array(
-			'postType'			=> esc_html( $attributes['postType'] ),
-			'displayType'		=> ( 'yearly' === $attributes['displayType'] ) ? 'yearly' : 'monthly',
-			'displayDropdown'	=> $attributes['displayDropdown'] ? true : false,
-			'showCount'			=> $attributes['showCount'] ? true : false,
-			'className'			=> esc_html( $attributes['className'] ),
+			'postType'        => esc_html( $attributes['postType'] ),
+			'displayType'     => ( 'yearly' === $attributes['displayType'] ) ? 'yearly' : 'monthly',
+			'displayDropdown' => $attributes['displayDropdown'] ? true : false,
+			'showCount'       => $attributes['showCount'] ? true : false,
+			'className'       => esc_html( $attributes['className'] ),
 		);
 
 		// Get archive list html
@@ -48,15 +47,14 @@ class Vk_Blocks_ArchiveList {
 		}
 		$wrapper_classes = implode( ' ', $classes );
 
-		$block_content ='';
+		$block_content = '';
 
 		if ( $options['displayDropdown'] ) {
 			// dropdown
 			$label = '';
 			if ( 'yearly' === $attributes['displayType'] ) {
 				$label .= __( 'Please select year', 'vk-blocks' );
-			}
-			else{
+			} else {
 				$label .= __( 'Please select month', 'vk-blocks' );
 			}
 

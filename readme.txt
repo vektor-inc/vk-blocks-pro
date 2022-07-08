@@ -65,6 +65,7 @@ e.g.
 == Changelog ==
 
 [ Bug Fix ][ Breadcrumb ] Fix in case of filter search result category & keyword
+[ Bug Fix ][ Table style ] Delete border left and right specified vk-table-border-top-bottom 
 
 = 1.39.1 =
 [ Bug Fix ][ Grid Column Card ] fix bug when aspect retio is empty.

@@ -67,11 +67,6 @@ class ArchiveList extends WP_UnitTestCase {
 	/**
 	 * A single example test.
 	 */
-	postType: 'post',
-	displayType: 'monthly',
-	displayDropdown: false,
-	showCount: false,
-
 	public function test_archivelist() {
 		$attributes = array(
 			'name'                       => 'vk-blocks/archive-list',

@@ -43,7 +43,7 @@ function vk_blocks_archive_list_render_callback( $attributes ) {
 			$arg['after'] = '年';
 		}
 	}
-	
+
 	$archives = wp_get_archives( $arg );
 
 	if ( empty( $archives ) ) {

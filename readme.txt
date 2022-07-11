@@ -65,6 +65,7 @@ e.g.
 == Changelog ==
 
 [ Bug Fix ][ Breadcrumb ] Fix in case of filter search result category & keyword
+[ Bug Fix ][ Table style ] Delete border left and right specified vk-table-border-top-bottom 
 [ Add New Block ][ Archive list block ] Displays a list of archives
 
 = 1.39.1 =

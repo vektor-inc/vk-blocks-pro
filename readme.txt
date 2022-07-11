@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] Change the style of the options page to Gutenberg components.
 [ Bug Fix ][ Breadcrumb ] Fix in case of filter search result category & keyword
 
 = 1.39.1 =

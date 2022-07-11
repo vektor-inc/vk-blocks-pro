@@ -62,6 +62,10 @@ export default function IconOuterEdit(props) {
 
 	const TEMPLATE = [['vk-blocks/icon'], ['vk-blocks/icon']];
 
+	// 空白チェック
+	const defaultIconSize = 'px' === iconSizeUnit ? 36 : 1;
+	const defaultIconMargin = 'px' === iconMarginUnit ? 22 : 1;
+
 	return (
 		<>
 			<BlockControls group="block">
@@ -87,9 +91,13 @@ export default function IconOuterEdit(props) {
 						<TextControl
 							className={`vk_icon_custombox_number`}
 							value={iconSize}
-							onChange={(value) =>
-								setAttributes({ iconSize: parseFloat(value) })
-							}
+							onChange={(value) => {
+								setAttributes({
+									iconSize: value
+										? parseFloat(value)
+										: defaultIconSize,
+								});
+							}}
 							type={'number'}
 						/>
 						<SelectControl
@@ -134,9 +142,13 @@ export default function IconOuterEdit(props) {
 						<TextControl
 							className={`vk_icon_custombox_number`}
 							value={iconMargin}
-							onChange={(value) =>
-								setAttributes({ iconMargin: parseFloat(value) })
-							}
+							onChange={(value) => {
+								setAttributes({
+									iconMargin: value
+										? parseFloat(value)
+										: defaultIconMargin,
+								});
+							}}
 							type={'number'}
 						/>
 						<SelectControl

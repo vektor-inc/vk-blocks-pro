@@ -19,10 +19,6 @@
 		"showCount": {
 			"type": "boolean",
 			"default": false
-		},
-		"className": {
-			"type": "string",
-			"default":""
 		}
 	},
 	"description": "Displays a list of archives",

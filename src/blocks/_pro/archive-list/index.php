@@ -12,7 +12,76 @@
  * @return string
  */
 function vk_blocks_archive_list_render_callback( $attributes ) {
-	return Vk_Blocks_ArchiveList::render_archive_list( $attributes );
+	$options = array(
+		'postType'        => esc_html( $attributes['postType'] ),
+		'displayType'     => ( 'yearly' === $attributes['displayType'] ) ? 'yearly' : 'monthly',
+		'displayDropdown' => $attributes['displayDropdown'] ? true : false,
+		'showCount'       => $attributes['showCount'] ? true : false,
+	);
+
+	// Get archive list html
+	$get_posts = get_posts(
+		array(
+			'post_type' => $options['postType'],
+		)
+	);
+
+	if ( empty( $get_posts ) ) {
+		return null;
+	}
+
+	$arg = array(
+		'format'          => $options['displayDropdown'] ? 'option' : 'html',
+		'show_post_count' => $options['showCount'],
+		'echo'            => false,
+		'post_type'       => $options['postType'],
+	);
+
+	if ( 'yearly' === $options['displayType'] ) {
+		$arg['type'] = 'yearly';
+		if ( ! $options['showCount'] && strtoupper( get_locale() ) == 'JA' ) {
+			$arg['after'] = '年';
+		}
+	}
+	
+	$archives = wp_get_archives( $arg );
+
+	if ( empty( $archives ) ) {
+		// no archive
+		return null;
+	}
+
+	// block.jsonのSupportsで設定したクラス名やスタイルを取得する
+	$wrapper_classes = get_block_wrapper_attributes( array( 'class' => 'vk_archiveList' ) );
+
+	$block_content = '';
+	if ( $options['displayDropdown'] ) {
+		// dropdown
+		$label = '';
+		if ( 'yearly' === $attributes['displayType'] ) {
+			$label .= __( 'Please select year', 'vk-blocks' );
+		} else {
+			$label .= __( 'Please select month', 'vk-blocks' );
+		}
+
+		$block_content = sprintf(
+			'<select name="archive-list-dropdown" onChange="document.location.href=this.options[this.selectedIndex].value;"><option value="">%1$s</option>%2$s</select>',
+			$label,
+			$archives
+		);
+	} else {
+		// list
+		$block_content = sprintf(
+			'<ul class="vk_archive-list">%1$s</ul>',
+			$archives
+		);
+	}
+
+	return sprintf(
+		'<div %1$s>%2$s</div>',
+		$wrapper_classes,
+		$block_content
+	);
 }
 
 /**

@@ -22,9 +22,7 @@ export default function PostListEdit(props) {
 	const { postType, displayType, displayDropdown, showCount } = attributes;
 	attributes.name = name;
 
-	const blockProps = useBlockProps({
-		className: `vk_icon`,
-	});
+	const blockProps = useBlockProps();
 
 	return (
 		<>

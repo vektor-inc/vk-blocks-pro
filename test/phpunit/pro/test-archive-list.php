@@ -74,16 +74,6 @@ class ArchiveList extends WP_UnitTestCase {
 			'displayType'                => 'monthly',
 			'displayDropdown'            => false,
 			'showCount'                  => false,
-			'vkb_hidden'                 => false,
-			'vkb_hidden_xxl'             => false,
-			'vkb_hidden_xl_v2'           => false,
-			'vkb_hidden_xl'              => false,
-			'vkb_hidden_lg'              => false,
-			'vkb_hidden_md'              => false,
-			'vkb_hidden_sm'              => false,
-			'vkb_hidden_xs'              => false,
-			'marginTop'                  => '',
-			'marginBottom'               => '',
 			'className'                  => '',
 		);
 
@@ -95,7 +85,7 @@ class ArchiveList extends WP_UnitTestCase {
 			'echo' => false,
 		);
 	
-		$expected = vk_blocks_unescape_html( '<!-- [ #vk_archive-list] --><div class=\"vk_archiveList wp-block-vk-blocks-archive-list\"><ul class=\"vk_archive-list\">' .wp_get_archives( $arg ) .'</ul></div><!-- [ /#vk_archive-list ] -->' );
+		$expected = vk_blocks_unescape_html( '<div class=\"vk_archiveList\"><ul class=\"vk_archive-list\">' .wp_get_archives( $arg ) .'</ul></div>' );
 
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
@@ -105,7 +95,6 @@ class ArchiveList extends WP_UnitTestCase {
 		print 'actual :' . $actual . PHP_EOL;
 
 		$this->assertEquals( $expected, $actual );
-
 	}
 
 	/**

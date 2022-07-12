@@ -69,7 +69,7 @@ describe( 'MarginExtension', () => {
 					[ "Staff", "Staff", "vk-blocks-staff" ],
 					[ "Accordion", "Accordion", "vk-blocks-accordion" ],
 					[ "Animation", "Animation", "vk-blocks-animation" ],
-					[ "Archive List", "Archive List", "vk-blocks-archive-list" ],
+					[ "Archive list", "Archive list", "vk-blocks-archive-list" ],
 					[ "Breadcrumb", "Breadcrumb", "vk-blocks-breadcrumb" ],
 					[ "Button Outer", "Button Outer", "vk-blocks-button-outer" ],
 					[ "Card", "Card", "vk-blocks-card" ],

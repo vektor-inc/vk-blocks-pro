@@ -16,6 +16,25 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'margin_unit' => 'rem',
 					'display_vk_block_template' => 'display',
 					'new_faq_accordion' => 'disable',
+					'margin_size' => array(
+						'lg' => array(
+							'mobile' => null,
+							'tablet' => null,
+							'pc' => null,
+						),
+						'md' => array(
+							'mobile' => null,
+							'tablet' => null,
+							'pc' => null,
+						),
+						'sm' => array(
+							'mobile' => null,
+							'tablet' => null,
+							'pc' => null,
+						),
+					),
+					'load_separate_option' => false,
+					'vk_blocks_pro_license_key' => null,
 				),
 			),
 			array(

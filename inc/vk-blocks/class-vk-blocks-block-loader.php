@@ -313,7 +313,6 @@ class VK_Blocks_Block_Loader {
 	 */
 	public static function should_load_separate_assets() {
 		$vk_blocks_options = get_option( 'vk_blocks_options' );
-		// var_dump($vk_blocks_options['load_separate_option']);
 		if ( function_exists( 'wp_should_load_separate_core_block_assets' ) && isset( $vk_blocks_options['load_separate_option'] ) && $vk_blocks_options['load_separate_option'] ) {
 			$bool = true;
 		} else {

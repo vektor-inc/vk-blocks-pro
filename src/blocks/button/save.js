@@ -30,6 +30,8 @@ export default function save(props) {
 	// カスタムカラーの場合 またはアウターにギャップが指定されれいる場合
 	if (
 		(buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) ||
+		(buttonTextColorCustom !== undefined &&
+			isHexColor(buttonTextColorCustom)) ||
 		outerGap
 	) {
 		containerClass = `vk_button vk_button-color-custom vk_button-${blockId}`;

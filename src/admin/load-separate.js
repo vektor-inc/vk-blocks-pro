@@ -14,6 +14,20 @@ import { AdminContext } from '@vkblocks/admin/index';
 export default function AdminLoadSeparate() {
 	const { vkBlocksOption, setVkBlocksOption, vkBlocksBalloonMeta } =
 		useContext(AdminContext);
+
+	// PHPでstringで保存されていたオプション値を変換する
+	let migrateLoadSeparateOption;
+	if (vkBlocksOption.load_separate_option === 'true') {
+		migrateLoadSeparateOption = true;
+	} else if (
+		!!vkBlocksOption.load_separate_option &&
+		vkBlocksOption.load_separate_option
+	) {
+		migrateLoadSeparateOption = true;
+	} else {
+		migrateLoadSeparateOption = false;
+	}
+
 	return (
 		<>
 			<section>
@@ -29,10 +43,7 @@ export default function AdminLoadSeparate() {
 				<CheckboxControl
 					name="vk_blocks_options[load_separate_option]"
 					label={__('Load Separate Option on', 'vk-blocks')}
-					checked={
-						!!vkBlocksOption.load_separate_option &&
-						vkBlocksOption.load_separate_option
-					}
+					checked={migrateLoadSeparateOption}
 					onChange={(newValue) => {
 						setVkBlocksOption({
 							...vkBlocksOption,

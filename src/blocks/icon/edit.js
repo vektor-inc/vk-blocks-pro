@@ -83,12 +83,16 @@ export default function IconEdit(props) {
 					<TextControl
 						className={`vk_icon_custombox_number`}
 						value={iconSize}
+						step={'px' === iconSizeUnit ? 1 : 0.1}
+						min={0}
 						onChange={(value) => {
-							setAttributes({
-								iconSize: value
-									? parseFloat(value)
-									: defaultIconSize,
-							});
+							let newIconSize = value
+								? parseFloat(value)
+								: defaultIconSize;
+							if ('px' === iconSizeUnit) {
+								newIconSize = parseInt(value);
+							}
+							setAttributes({ iconSize: newIconSize });
 						}}
 						type={'number'}
 					/>
@@ -97,6 +101,9 @@ export default function IconEdit(props) {
 						value={iconSizeUnit}
 						onChange={(value) => {
 							setAttributes({ iconSizeUnit: value });
+							if ('px' === value) {
+								setAttributes({ iconSize: parseInt(iconSize) });
+							}
 						}}
 						options={[
 							{
@@ -134,12 +141,16 @@ export default function IconEdit(props) {
 					<TextControl
 						className={`vk_icon_custombox_number`}
 						value={iconMargin}
+						step={'px' === iconMarginUnit ? 1 : 0.1}
+						min={0}
 						onChange={(value) => {
-							setAttributes({
-								iconMargin: value
-									? parseFloat(value)
-									: defaultIconMargin,
-							});
+							let newIconMargin = value
+								? parseFloat(value)
+								: defaultIconMargin;
+							if ('px' === iconMarginUnit) {
+								newIconMargin = parseInt(value);
+							}
+							setAttributes({ iconMargin: newIconMargin });
 						}}
 						type={'number'}
 					/>
@@ -148,6 +159,11 @@ export default function IconEdit(props) {
 						value={iconMarginUnit}
 						onChange={(value) => {
 							setAttributes({ iconMarginUnit: value });
+							if ('px' === value) {
+								setAttributes({
+									iconMargin: parseInt(iconMargin),
+								});
+							}
 						}}
 						options={[
 							{

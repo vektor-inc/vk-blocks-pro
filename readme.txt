@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
 Tested up to: 6.0.0
-Stable tag: 1.39.1.0
+Stable tag: 1.37.0.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -65,7 +65,10 @@ e.g.
 == Changelog ==
 
 [ Specification Change ] Change the style of the options page to Gutenberg components.
+
+= 1.39.2 =
 [ Bug Fix ][ Breadcrumb ] Fix in case of filter search result category & keyword
+[ Bug Fix ][ Table style ] Delete border left and right specified vk-table-border-top-bottom 
 
 = 1.39.1 =
 [ Bug Fix ][ Grid Column Card ] fix bug when aspect retio is empty.

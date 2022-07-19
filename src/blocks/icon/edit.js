@@ -90,7 +90,7 @@ export default function IconEdit(props) {
 								? parseFloat(value)
 								: defaultIconSize;
 							if ('px' === iconSizeUnit) {
-								newIconSize = parseInt(value);
+								newIconSize = parseInt(newIconSize);
 							}
 							setAttributes({ iconSize: newIconSize });
 						}}
@@ -148,7 +148,7 @@ export default function IconEdit(props) {
 								? parseFloat(value)
 								: defaultIconMargin;
 							if ('px' === iconMarginUnit) {
-								newIconMargin = parseInt(value);
+								newIconMargin = parseInt(newIconMargin);
 							}
 							setAttributes({ iconMargin: newIconMargin });
 						}}

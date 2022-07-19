@@ -94,7 +94,7 @@ const generateInlineGapCss = (attributes, isSave) => {
 export default function ButtonHook({ el, attributes }) {
 	const cssTag = generateInlineCss(attributes);
 	const cssEditor = generateInlineGapCss(attributes, true);
-	if (cssTag !== '') {
+	if (cssTag !== '' || cssEditor !== '') {
 		return (
 			<>
 				{el}

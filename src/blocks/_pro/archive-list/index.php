@@ -51,8 +51,32 @@ function vk_blocks_archive_list_render_callback( $attributes ) {
 		return null;
 	}
 
+	// 非表示クラス
+	$classes = 'vk_archiveList';
+	if ( isset( $attributes['vkb_hidden'] ) && $attributes['vkb_hidden'] ) {
+		$classes .= ' vk_hidden';
+	}
+	if ( isset( $attributes['vkb_hidden_xxl'] ) && $attributes['vkb_hidden_xxl'] ) {
+		$classes .= ' vk_hidden-xxl';
+	}
+	if ( isset( $attributes['vkb_hidden_xl_v2'] ) && $attributes['vkb_hidden_xl_v2'] ) {
+		$classes .= ' vk_hidden-xl';
+	}
+	if ( isset( $attributes['vkb_hidden_lg'] ) && $attributes['vkb_hidden_lg'] ) {
+		$classes .= ' vk_hidden-lg';
+	}
+	if ( isset( $attributes['vkb_hidden_md'] ) && $attributes['vkb_hidden_md'] ) {
+		$classes .= ' vk_hidden-md';
+	}
+	if ( isset( $attributes['vkb_hidden_sm'] ) && $attributes['vkb_hidden_sm'] ) {
+		$classes .= ' vk_hidden-sm';
+	}
+	if ( isset( $attributes['vkb_hidden_xs'] ) && $attributes['vkb_hidden_xs'] ) {
+		$classes .= ' vk_hidden-xs';
+	}
+	
 	// block.jsonのSupportsで設定したクラス名やスタイルを取得する
-	$wrapper_classes = get_block_wrapper_attributes( array( 'class' => 'vk_archiveList' ) );
+	$wrapper_classes = get_block_wrapper_attributes( array( 'class' => $classes ));
 
 	$block_content = '';
 	if ( $options['displayDropdown'] ) {

@@ -74,9 +74,9 @@ function vk_blocks_archive_list_render_callback( $attributes ) {
 	if ( isset( $attributes['vkb_hidden_xs'] ) && $attributes['vkb_hidden_xs'] ) {
 		$classes .= ' vk_hidden-xs';
 	}
-	
+
 	// block.jsonのSupportsで設定したクラス名やスタイルを取得する
-	$wrapper_classes = get_block_wrapper_attributes( array( 'class' => $classes ));
+	$wrapper_classes = get_block_wrapper_attributes( array( 'class' => $classes ) );
 
 	$block_content = '';
 	if ( $options['displayDropdown'] ) {

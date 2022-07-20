@@ -1,5 +1,9 @@
 let defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
+// ↑ node_modules の中の該当ファイルが config の配列をエクスポートしている
+// ↑ の module.rules の 0番目の要素を一つ削除
 defaultConfig.module.rules.splice(0, 1) // JSをトランスパイルするルールを削除。下の独自ルールでPOTファイルを上書きして空にしてしまう。
+
+// path 操作用のモジュールをインポート
 const path = require( 'path' );
 
 let entries = {
@@ -12,8 +16,9 @@ module.exports = {
 	entry: entries,
 	output: {
 		path: __dirname + '/inc/vk-blocks/build/',
-		filename: '[name]-build.js',
+		filename: '[name]-build.js', // [name]に block と admin が入ってくる
 	},
+	// @import **** = @vkblocks の参照先が ( __dirname, 'src' ) やでという指定
 	resolve: {
 		...defaultConfig.resolve,
 		alias: {
@@ -35,6 +40,7 @@ module.exports = {
 						babelrc: false, // babelrcを反映させない
 						configFile: false, // babel.config.jsonを反映させない
 						presets: [ "@wordpress/default" ],
+						// @wordpress の pot ファイル生成ライブラリ使って vk-blocks の post ファイルを生成する
 						plugins: [
 							[
 								"@wordpress/babel-plugin-makepot",

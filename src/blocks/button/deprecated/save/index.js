@@ -96,7 +96,7 @@ const blockAttributes5 = {
 }
 
 const blockAttributes6 = {
-	...blockAttributes4,
+	...blockAttributes5,
 	buttonWidth: {
 		type: 'number',
 		default: 0,
@@ -104,8 +104,8 @@ const blockAttributes6 = {
 }
 
 const blockAttributes7 = {
-	...blockAttributes4,
-	buttonWidthMobioe: {
+	...blockAttributes6,
+	buttonWidthMobile: {
 		type: 'number',
 		default: 0,
 	},

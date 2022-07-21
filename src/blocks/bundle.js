@@ -66,7 +66,7 @@ const vkBlocks = [
 	prContent,
 	spacer,
 	staff,
-	ancestorPageList
+	ancestorPageList,
 ];
 
 /**

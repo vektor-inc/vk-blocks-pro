@@ -16,24 +16,26 @@ function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
 	global $post;
 
 	if ( $post->ancestors ) {
-		foreach ( $post->ancestors as $post_anc_id ) {
-			$post_id = $post_anc_id;
+		foreach ( $post->ancestors as $post_id ) {
+			$post_anc_id = $post_id;
 		}
 	} else {
-		$post_id = $post->ID;
+		$post_anc_id = $post->ID;
 	}
 
-	if ( $post_id ) {
+	if ( $post_anc_id ) {
 		$page_list = wp_list_pages(
 			array(
 				'title_li' => '',
-				'child_of' => $post_id,
+				'child_of' => $post_anc_id,
 				'echo'     => 0,
 			)
 		);
 
-		if ( ! $page_list ) {
-			return '';
+		if ( ! empty( $attributes['displayHasChildOnly'] ) ){
+			if ( ! $page_list ) {
+				return '';
+			}
 		}
 	}
 	wp_reset_query();
@@ -63,11 +65,38 @@ function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
 		$classes .= ' vk_hidden-xs';
 	}
 
+	if ( isset( $attributes['hiddenGrandChild'] ) && $attributes['hiddenGrandChild'] ) {
+		$classes .= ' vk_ancestorPageList-hiddenGrandChild-true';
+	}
+
 	// block.jsonのSupportsで設定したクラス名やスタイルを取得する.
 	$wrapper_classes = get_block_wrapper_attributes( array( 'class' => $classes ) );
-	$title           = '<h3>' . esc_html( $post->post_title ) . '</h3>';
-	$block           = sprintf(
-		'<aside %1$s>' . $title . '<ul %1$s>%2$s</ul></aside>',
+	if ( $attributes['ancestorTitleDisplay'] ) {
+
+		// Ancestor Title Tag.
+		$tag_name = $attributes['ancestorTitleTagName'];
+		// Ancestor Title Class.
+		$class = 'vk_ancestorPageList_title';
+		if ( ! empty( $attributes['ancestorTitleClassName'] ) ) {
+			$class .= ' ' . $attributes['ancestorTitleClassName'];
+		}
+
+		$title = '<' . $tag_name . ' class="' . $class . '">';
+		if ( ! empty( $attributes['ancestorTitleLink'] ) ) {
+			$title .= '<a href="' . get_permalink( $post_anc_id ) . '">';
+		}
+		$title .= esc_html( $post->post_title );
+		if ( ! empty( $attributes['ancestorTitleLink'] ) ) {
+			$title .= '</a>';
+		}
+		$title .= ' </' . $tag_name . '>';
+
+	} else {
+		$title = '';
+	}
+
+	$block = sprintf(
+		'<aside %1$s>' . $title . '<ul class="vk_ancestorPageList_list">%2$s</ul></aside>',
 		$wrapper_classes,
 		$page_list
 	);
@@ -95,7 +124,37 @@ function vk_blocks_register_block_archive_list() {
 					),
 				),
 				array(
-					'hideGrandChild' => array(
+					'ancestorTitleDisplay' => array(
+						'type'    => 'boolean',
+						'default' => true,
+					),
+				),
+				array(
+					'ancestorTitleTagName' => array(
+						'type'    => 'string',
+						'default' => 'h4',
+					),
+				),
+				array(
+					'ancestorTitleClassName' => array(
+						'type'    => 'string',
+						'default' => null,
+					),
+				),
+				array(
+					'ancestorTitleLink' => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+				),
+				array(
+					'displayHasChildOnly' => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+				),
+				array(
+					'hiddenGrandChild' => array(
 						'type'    => 'boolean',
 						'default' => false,
 					),

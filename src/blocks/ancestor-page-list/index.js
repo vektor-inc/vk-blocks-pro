@@ -17,7 +17,7 @@ export const settings = {
 	icon: <Icon />,
 	example: {
 		attributes: {
-			hideGrandChild: false,
+			hiddenGrandChild: false,
 		},
 	},
 	edit,

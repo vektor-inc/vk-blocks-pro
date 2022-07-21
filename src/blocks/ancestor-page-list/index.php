@@ -12,7 +12,6 @@
  * @return string
  */
 function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
-
 	global $post;
 
 	if ( $post->ancestors ) {
@@ -32,7 +31,7 @@ function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
 			)
 		);
 
-		if ( ! empty( $attributes['displayHasChildOnly'] ) ){
+		if ( ! empty( $attributes['displayHasChildOnly'] ) ) {
 			if ( ! $page_list ) {
 				return '';
 			}
@@ -90,7 +89,6 @@ function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
 			$title .= '</a>';
 		}
 		$title .= ' </' . $tag_name . '>';
-
 	} else {
 		$title = '';
 	}

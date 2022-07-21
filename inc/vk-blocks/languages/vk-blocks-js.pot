@@ -1130,6 +1130,14 @@ msgstr ""
 msgid "Danger"
 msgstr ""
 
+#: src/blocks/ancestor-page-list/edit.js:18
+msgid "Ancestor Page List Setting"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:20
+msgid "Dont't display under grand child pages"
+msgstr ""
+
 #: src/blocks/balloon/edit.js:144
 msgid " Image Border"
 msgstr ""

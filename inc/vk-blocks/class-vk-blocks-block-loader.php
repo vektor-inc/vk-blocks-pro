@@ -20,6 +20,7 @@ class VK_Blocks_Block_Loader {
 	// phpcs:disable
 	private $blocks = array(
 		array( 'name' => 'alert',                 'is_pro' =>  false ),
+		array( 'name' => 'ancestor-page-list',    'is_pro' =>  false ),
 		array( 'name' => 'balloon',               'is_pro' =>  false ),
 		array( 'name' => 'border-box',            'is_pro' =>  false ),
 		array( 'name' => 'button',                'is_pro' =>  false ),

@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Button ] Enable inline font size and add icon size option.
+
 = 1.39.2 =
 [ Bug Fix ][ Breadcrumb ] Fix in case of filter search result category & keyword
 [ Bug Fix ][ Table style ] Delete border left and right specified vk-table-border-top-bottom 

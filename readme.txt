@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] Change the style of the options page to Gutenberg components.
 [ Add Function ][ Button ] Enable inline font size and add icon size option.
 
 = 1.39.2 =

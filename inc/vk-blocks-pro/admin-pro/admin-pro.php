@@ -6,14 +6,6 @@
  */
 
 /**
- * Vk Blocks Pro Admin
- */
-function vk_blocks_pro_admin() {
-	require_once dirname( __FILE__ ) . '/admin-new-faq.php';
-}
-add_action( 'vk_blocks_pro_admin', 'vk_blocks_pro_admin' );
-
-/**
  * Vk Blocks Pro Menu
  *
  * @param string $pro_menu_html pro menu html.

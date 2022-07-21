@@ -48,12 +48,14 @@
 	border-color:#c00;
 	float:right;
 }
-input.balloonIconList_name_input[type=text] {
-	display:block;
-	width:100%;
-	text-align:center;
-	border-color:#ccc;
-	box-shadow:inset 1px 1px 2px 0 rgba(0,0,0,0.1);
+.balloonIconList_name_input {
+	input[type=text] {
+		display:block;
+		width:100%;
+		text-align:center;
+		border-color:#ccc;
+		box-shadow:inset 1px 1px 2px 0 rgba(0,0,0,0.1);
+	}
 }
 .balloonIconList_nameLabel {
 	clear:both;

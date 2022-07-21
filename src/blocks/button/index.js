@@ -38,6 +38,8 @@ export const settings = {
 			buttonWidth: 0,
 			fontAwesomeIconBefore: iconUser,
 			fontAwesomeIconAfter: iconUser,
+			iconSizeBefore: null,
+			iconSizeAfter: null,
 		},
 	},
 	edit,

@@ -1,4 +1,37 @@
-.spacer-input input[type="number"]{
-	width: 5em;
-	text-align: center;
+.vk_admin_marginUnit {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1em;
+
+	span {
+		margin-right: 4px;
+	}
+
+	.components-base-control__field {
+		margin-bottom: 0;
+	}
+}
+
+.vk_admin_selectControl.unit-select {
+	width: 7em;
+}
+
+.spacer-input {
+
+	li {
+		display: flex;
+	}
+
+	.margin_size_input {
+		flex-direction: row;
+		align-items: center;
+
+		.components-input-control__label {
+			margin: 0!important;
+		}
+
+		input {
+			width: 5em!important;
+		}
+	}
 }

@@ -69,6 +69,7 @@ e.g.
 = 1.39.2 =
 [ Bug Fix ][ Breadcrumb ] Fix in case of filter search result category & keyword
 [ Bug Fix ][ Table style ] Delete border left and right specified vk-table-border-top-bottom 
+[ Specification Change ][ icon ] enable float value at icon size and margin
 
 = 1.39.1 =
 [ Bug Fix ][ Grid Column Card ] fix bug when aspect retio is empty.

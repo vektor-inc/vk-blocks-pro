@@ -12,6 +12,7 @@ import {
 	ToolbarGroup,
 	ToolbarButton,
 	Dropdown,
+	__experimentalUnitControl as UnitControl, // eslint-disable-line @wordpress/no-unsafe-wp-apis
 } from '@wordpress/components';
 import {
 	RichText,
@@ -45,6 +46,8 @@ export default function ButtonEdit(props) {
 		outerGap,
 		fontAwesomeIconBefore,
 		fontAwesomeIconAfter,
+		iconSizeBefore,
+		iconSizeAfter,
 		blockId,
 		old_1_31_0,
 	} = attributes;
@@ -158,6 +161,8 @@ export default function ButtonEdit(props) {
 	// カスタムカラーの場合 またはアウターにギャップが指定されれいる場合
 	if (
 		(buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) ||
+		(buttonTextColorCustom !== undefined &&
+			isHexColor(buttonTextColorCustom)) ||
 		outerGap
 	) {
 		containerClass = `vk_button vk_button-color-custom vk_button-${blockId}`;
@@ -180,6 +185,13 @@ export default function ButtonEdit(props) {
 		containerClass += ` vk_button-align-${buttonAlign}`;
 		setAttributes({ buttonWidth: 0 });
 	}
+
+	// アイコン単位
+	const units = [
+		{ value: 'px', label: 'px', default: 16 },
+		{ value: 'em', label: 'em', default: 1 },
+		{ value: 'rem', label: 'rem', default: 1 },
+	];
 
 	const blockProps = useBlockProps({
 		className: containerClass,
@@ -702,7 +714,20 @@ export default function ButtonEdit(props) {
 								attributeName={'fontAwesomeIconBefore'}
 								{...props}
 							/>
+							<UnitControl
+								label={__('Size', 'vk-blocks')}
+								value={iconSizeBefore}
+								units={units}
+								onChange={(value) => {
+									setAttributes({
+										iconSizeBefore: parseFloat(value)
+											? value
+											: null,
+									});
+								}}
+							/>
 						</BaseControl>
+						<hr />
 						<BaseControl
 							id={`vk_block_button_fa_after_text`}
 							label={__('After text', 'vk-blocks')}
@@ -710,6 +735,18 @@ export default function ButtonEdit(props) {
 							<FontAwesome
 								attributeName={'fontAwesomeIconAfter'}
 								{...props}
+							/>
+							<UnitControl
+								label={__('Size', 'vk-blocks')}
+								value={iconSizeAfter}
+								units={units}
+								onChange={(value) => {
+									setAttributes({
+										iconSizeAfter: parseFloat(value)
+											? value
+											: null,
+									});
+								}}
 							/>
 						</BaseControl>
 					</BaseControl>
@@ -725,6 +762,8 @@ export default function ButtonEdit(props) {
 					lbSize={buttonSize}
 					lbFontAwesomeIconBefore={fontAwesomeIconBefore}
 					lbFontAwesomeIconAfter={fontAwesomeIconAfter}
+					lbIconSizeBefore={iconSizeBefore}
+					lbIconSizeAfter={iconSizeAfter}
 					lbsubCaption={subCaption}
 					lbRichtext={
 						<RichText
@@ -749,6 +788,7 @@ export default function ButtonEdit(props) {
 								// 'vk-blocks/highlighter',
 								'vk-blocks/responsive-br',
 								'vk-blocks/nowrap',
+								'vk-blocks/inline-font-size',
 							]}
 							isSelected={true}
 						/>

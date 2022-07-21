@@ -111,6 +111,16 @@ function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
 function vk_blocks_register_block_archive_list() {
 	global $vk_blocks_common_attributes;
 
+	// Register Style.
+	if ( ! is_admin() ) {
+		wp_register_style(
+			'vk-blocks/ancestor-page-list',
+			VK_BLOCKS_DIR_URL . 'build/button/style.css',
+			array(),
+			VK_BLOCKS_VERSION
+		);
+	}
+
 	register_block_type(
 		__DIR__,
 		array(

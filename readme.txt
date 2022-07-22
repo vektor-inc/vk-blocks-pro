@@ -66,6 +66,7 @@ e.g.
 
 [ Add Function ][ Button ] Enable inline font size and add icon size option.
 [ Specification Change ] Change the style of the options page to Gutenberg components.
+[ Bug Fix ] fix editor style in Inline font size and Highlighter.
 [ Bug Fix ] Fixed a bug that CSS for edit screen is not loaded in iframe
 
 = 1.39.2 =

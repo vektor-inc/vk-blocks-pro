@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Improvement ][ hidden extension ] Changed to add common hidden class names to additional CSS classes.
+
 = 1.39.2 =
 [ Bug Fix ][ Breadcrumb ] Fix in case of filter search result category & keyword
 [ Bug Fix ][ Table style ] Delete border left and right specified vk-table-border-top-bottom 

@@ -32,11 +32,9 @@ function vk_blocks_get_ancestor_page_id() {
  * @return string $title : title html .
  */
 function vk_blocks_get_ancestor_page_list_title( $attributes ) {
-
 	$title = '';
 
 	if ( $attributes['ancestorTitleDisplay'] ) {
-
 		$post_anc_id = vk_blocks_get_ancestor_page_id();
 		$title_text  = get_the_title( $post_anc_id );
 		$title_link  = get_permalink( $post_anc_id );
@@ -70,7 +68,6 @@ function vk_blocks_get_ancestor_page_list_title( $attributes ) {
  * @return string
  */
 function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
-
 	$post_anc_id = vk_blocks_get_ancestor_page_id();
 
 	if ( $post_anc_id ) {

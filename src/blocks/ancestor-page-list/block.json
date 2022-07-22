@@ -2,7 +2,7 @@
 	"apiVersion": 2,
 	"name": "vk-blocks/ancestor-page-list",
 	"category": "vk-blocks-cat",
-	"title": "Page list from ancestor",
+	"title": "Page list from ancestors",
 	"attributes": {
 		"ancestorTitleDisplay": {
 			"type": "boolean",

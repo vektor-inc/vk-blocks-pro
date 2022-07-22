@@ -67,6 +67,10 @@ export default function IconEdit(props) {
 		);
 	}
 
+	// 空白チェック
+	const defaultIconSize = 'px' === iconSizeUnit ? 36 : 1;
+	const defaultIconMargin = 'px' === iconMarginUnit ? 22 : 1;
+
 	/**
 	 * 親ブロックが vk-blocks/icon-outer でなければ設定項目を追加
 	 */
@@ -79,9 +83,17 @@ export default function IconEdit(props) {
 					<TextControl
 						className={`vk_icon_custombox_number`}
 						value={iconSize}
-						onChange={(value) =>
-							setAttributes({ iconSize: parseInt(value) })
-						}
+						step={'px' === iconSizeUnit ? 1 : 0.1}
+						min={0}
+						onChange={(value) => {
+							let newIconSize = value
+								? parseFloat(value)
+								: defaultIconSize;
+							if ('px' === iconSizeUnit) {
+								newIconSize = parseInt(newIconSize);
+							}
+							setAttributes({ iconSize: newIconSize });
+						}}
 						type={'number'}
 					/>
 					<SelectControl
@@ -89,6 +101,9 @@ export default function IconEdit(props) {
 						value={iconSizeUnit}
 						onChange={(value) => {
 							setAttributes({ iconSizeUnit: value });
+							if ('px' === value) {
+								setAttributes({ iconSize: parseInt(iconSize) });
+							}
 						}}
 						options={[
 							{
@@ -126,9 +141,17 @@ export default function IconEdit(props) {
 					<TextControl
 						className={`vk_icon_custombox_number`}
 						value={iconMargin}
-						onChange={(value) =>
-							setAttributes({ iconMargin: parseInt(value) })
-						}
+						step={'px' === iconMarginUnit ? 1 : 0.1}
+						min={0}
+						onChange={(value) => {
+							let newIconMargin = value
+								? parseFloat(value)
+								: defaultIconMargin;
+							if ('px' === iconMarginUnit) {
+								newIconMargin = parseInt(newIconMargin);
+							}
+							setAttributes({ iconMargin: newIconMargin });
+						}}
 						type={'number'}
 					/>
 					<SelectControl
@@ -136,6 +159,11 @@ export default function IconEdit(props) {
 						value={iconMarginUnit}
 						onChange={(value) => {
 							setAttributes({ iconMarginUnit: value });
+							if ('px' === value) {
+								setAttributes({
+									iconMargin: parseInt(iconMargin),
+								});
+							}
 						}}
 						options={[
 							{

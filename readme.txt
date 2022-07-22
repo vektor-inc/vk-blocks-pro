@@ -64,11 +64,14 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Button ] Enable inline font size and add icon size option.
+[ Specification Change ] Change the style of the options page to Gutenberg components.
 [ Bug Fix ] Fixed a bug that CSS for edit screen is not loaded in iframe
 
 = 1.39.2 =
 [ Bug Fix ][ Breadcrumb ] Fix in case of filter search result category & keyword
 [ Bug Fix ][ Table style ] Delete border left and right specified vk-table-border-top-bottom 
+[ Specification Change ][ icon ] enable float value at icon size and margin
 
 = 1.39.1 =
 [ Bug Fix ][ Grid Column Card ] fix bug when aspect retio is empty.

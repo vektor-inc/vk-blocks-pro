@@ -63,6 +63,14 @@
 		"fontAwesomeIconAfter": {
 			"type": "string"
 		},
+		"iconSizeBefore": {
+			"type": "string",
+			"default": null
+		},
+		"iconSizeAfter": {
+			"type": "string",
+			"default": null
+		},
 		"clientId": {
 			"type": "string"
 		},

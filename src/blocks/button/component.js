@@ -14,6 +14,8 @@ export class VKBButton extends Component {
 		const buttonTarget = this.props.lbTarget;
 		let fontAwesomeIconBefore = this.props.lbFontAwesomeIconBefore;
 		let fontAwesomeIconAfter = this.props.lbFontAwesomeIconAfter;
+		const iconSizeBefore = this.props.lbIconSizeBefore;
+		const iconSizeAfter = this.props.lbIconSizeAfter;
 		const richText = this.props.lbRichtext;
 		const subCaption = this.props.lbsubCaption;
 		let aClass = '';
@@ -92,13 +94,19 @@ export class VKBButton extends Component {
 			let fontAwesomeIconBeforeClassName =
 				fontAwesomeIconBefore.match(/class="(.*?)"/)[1];
 			fontAwesomeIconBeforeClassName += ` vk_button_link_before`;
-			iconBefore = `<i class="${fontAwesomeIconBeforeClassName}"></i>`;
+			const styleBefore = iconSizeBefore
+				? ` style='font-size: ${iconSizeBefore}'`
+				: '';
+			iconBefore = `<i class="${fontAwesomeIconBeforeClassName}"${styleBefore}></i>`;
 		}
 		if (fontAwesomeIconAfter) {
 			let fontAwesomeIconAfterClassName =
 				fontAwesomeIconAfter.match(/class="(.*?)"/)[1];
 			fontAwesomeIconAfterClassName += ` vk_button_link_after`;
-			iconAfter = `<i class="${fontAwesomeIconAfterClassName}"></i>`;
+			const styleAfter = iconSizeAfter
+				? ` style='font-size: ${iconSizeAfter}'`
+				: '';
+			iconAfter = `<i class="${fontAwesomeIconAfterClassName}"${styleAfter}></i>`;
 		}
 
 		return (
@@ -112,9 +120,11 @@ export class VKBButton extends Component {
 				target={buttonTarget ? '_blank' : null}
 				rel={'noopener'}
 			>
-				{parse(iconBefore)}
-				{richText}
-				{parse(iconAfter)}
+				<div className={'vk_button_link_caption'}>
+					{parse(iconBefore)}
+					{richText}
+					{parse(iconAfter)}
+				</div>
 				{/*サブキャプションが入力された時のみ表示*/}
 				{subCaption && (
 					<p className={'vk_button_link_subCaption'}>{subCaption}</p>

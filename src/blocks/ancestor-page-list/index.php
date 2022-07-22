@@ -5,6 +5,12 @@
  * @package vk-blocks
  */
 
+/**
+ * Get Ancestor Page ID
+ * 先祖階層の投稿IDを取得する関数
+ *
+ * @return init $post_anc_id : 先祖階層の投稿ID
+ */
 function vk_blocks_get_ancestor_page_id() {
 	global $post;
 	$post_anc_id = '';
@@ -19,7 +25,46 @@ function vk_blocks_get_ancestor_page_id() {
 }
 
 /**
+ * Get Block heading part html
+ * ブロックのタイトル部分のHTMLを取得する関数
+ *
+ * @param array $attributes : block attributes .
+ * @return string $title : title html .
+ */
+function vk_blocks_get_ancestor_page_list_title( $attributes ) {
+
+	$title = '';
+
+	if ( $attributes['ancestorTitleDisplay'] ) {
+
+		$post_anc_id = vk_blocks_get_ancestor_page_id();
+		$title_text  = get_the_title( $post_anc_id );
+		$title_link  = get_permalink( $post_anc_id );
+
+		// Ancestor Title Tag.
+		$tag_name = $attributes['ancestorTitleTagName'];
+		// Ancestor Title Class.
+		$class = 'vk_ancestorPageList_title';
+		if ( ! empty( $attributes['ancestorTitleClassName'] ) ) {
+			$class .= ' ' . $attributes['ancestorTitleClassName'];
+		}
+
+		$title .= '<' . $tag_name . ' class="' . $class . '">';
+		if ( ! empty( $attributes['ancestorTitleLink'] ) ) {
+			$title .= '<a href="' . $title_link . '">';
+		}
+		$title .= esc_html( $title_text );
+		if ( ! empty( $attributes['ancestorTitleLink'] ) ) {
+			$title .= '</a>';
+		}
+		$title .= '</' . $tag_name . '>';
+	}
+	return $title;
+}
+
+/**
  * Archive list render callback
+ * ブロックのレンダリングコールバック
  *
  * @param array $attributes Block attributes.
  * @return string
@@ -77,57 +122,19 @@ function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
 	// block.jsonのSupportsで設定したクラス名やスタイルを取得する.
 	$wrapper_classes = get_block_wrapper_attributes( array( 'class' => $classes ) );
 
-	$title = vk_blocks_get_ancestor_page_list_title( $attributes );
+	$block  = '<aside ' . $wrapper_classes . '>';
+	$block .= vk_blocks_get_ancestor_page_list_title( $attributes );
 	if ( $page_list ) {
-		$page_list = sprintf( '<ul class="vk_ancestorPageList_list">%1$s</ul></aside>', $page_list );
+		$block .= '<ul class="vk_ancestorPageList_list">' . $page_list . '</ul></aside>';
 	}
+	$block .= '</aside>';
 
-	$block = sprintf(
-		'<aside %1$s>' . $title . $page_list . '</aside>',
-		$wrapper_classes,
-	);
 	return $block;
 }
 
 /**
- * Ancestor Page List Title
- *
- * @param array $attributes : block attributes .
- * @return string $title : title html .
- */
-function vk_blocks_get_ancestor_page_list_title( $attributes ) {
-
-	$title = '';
-
-	if ( $attributes['ancestorTitleDisplay'] ) {
-
-		$post_anc_id = vk_blocks_get_ancestor_page_id();
-		$title_text  = get_the_title( $post_anc_id );
-		$title_link  = get_permalink( $post_anc_id );
-
-		// Ancestor Title Tag.
-		$tag_name = $attributes['ancestorTitleTagName'];
-		// Ancestor Title Class.
-		$class = 'vk_ancestorPageList_title';
-		if ( ! empty( $attributes['ancestorTitleClassName'] ) ) {
-			$class .= ' ' . $attributes['ancestorTitleClassName'];
-		}
-
-		$title .= '<' . $tag_name . ' class="' . $class . '">';
-		if ( ! empty( $attributes['ancestorTitleLink'] ) ) {
-			$title .= '<a href="' . $title_link . '">';
-		}
-		$title .= esc_html( $title_text );
-		if ( ! empty( $attributes['ancestorTitleLink'] ) ) {
-			$title .= '</a>';
-		}
-		$title .= '</' . $tag_name . '>';
-	}
-	return $title;
-}
-
-/**
  * Register block archive-list
+ * ブロックの登録
  *
  * @return void
  */

@@ -64,8 +64,9 @@ e.g.
 
 == Changelog ==
 
-[ Specification Change ] Change the style of the options page to Gutenberg components.
 [ Add Function ][ Button ] Enable inline font size and add icon size option.
+[ Specification Change ] Change the style of the options page to Gutenberg components.
+[ Bug Fix ] Fixed a bug that CSS for edit screen is not loaded in iframe
 
 = 1.39.2 =
 [ Bug Fix ][ Breadcrumb ] Fix in case of filter search result category & keyword

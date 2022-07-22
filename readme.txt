@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Breadcrumb ] Fix duplicate Additional CSS classes.
 [ Specification Change ] Change the style of the options page to Gutenberg components.
 [ Add Function ][ Button ] Enable inline font size and add icon size option.
 

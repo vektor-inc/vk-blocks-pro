@@ -2479,20 +2479,25 @@ msgstr "申し訳ありませんが投稿がありません。"
 msgid "Vektor WordPress Information"
 msgstr "Vektor WordPress Information"
 
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:13
-#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:13
+#: src/admin/new-faq.js:34
 msgid "Disable accordion"
 msgstr "アコーディオン無効"
 
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:17
-#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:17
-msgid "Enable accordion and default open "
+#: src/admin/new-faq.js:38
+msgid "Enable accordion and default open"
 msgstr "アコーディオン有効 / 初期状態で開く"
 
-#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:21
-#: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:21
-msgid "Enable accordion and default close "
+#: src/admin/new-faq.js:45
+msgid "Enable accordion and default close"
 msgstr "アコーディオン有効 / 初期状態で閉じる"
+
+#: src/admin/save-button.js:52
+msgid "Save setting"
+msgstr "変更を保存"
+
+#: src/admin/save-button.js:62
+msgid "Save Success"
+msgstr "保存しました"
 
 #: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-new-faq.php:29
 #: inc/vk-blocks-pro/admin-pro/admin-new-faq.php:29
@@ -2545,6 +2550,14 @@ msgstr "吹き出し画像の名前"
 #: inc/vk-blocks/admin/admin-license.php:16
 msgid "License key"
 msgstr "ライセンスキー"
+
+#: src/admin/load-separate.js:35
+msgid "Load Separate Setting"
+msgstr "分割読み込み設定"
+
+#: src/admin/load-separate.js:45
+msgid "Load Separate Option on"
+msgstr "分割読み込みを有効にする"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin-license.php:13
 #: inc/vk-blocks/admin/admin-license.php:13

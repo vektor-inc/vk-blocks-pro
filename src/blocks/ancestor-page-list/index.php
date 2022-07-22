@@ -5,15 +5,9 @@
  * @package vk-blocks
  */
 
-/**
- * Archive list render callback
- *
- * @param array $attributes Block attributes.
- * @return string
- */
-function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
+function vk_blocks_get_ancestor_page_id() {
 	global $post;
-
+	$post_anc_id = '';
 	if ( $post->ancestors ) {
 		foreach ( $post->ancestors as $post_id ) {
 			$post_anc_id = $post_id;
@@ -21,6 +15,18 @@ function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
 	} else {
 		$post_anc_id = $post->ID;
 	}
+	return $post_anc_id;
+}
+
+/**
+ * Archive list render callback
+ *
+ * @param array $attributes Block attributes.
+ * @return string
+ */
+function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
+
+	$post_anc_id = vk_blocks_get_ancestor_page_id();
 
 	if ( $post_anc_id ) {
 		$page_list = wp_list_pages(
@@ -31,14 +37,14 @@ function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
 			)
 		);
 
+		// 子ページがある場合のみ表示 .
 		if ( ! empty( $attributes['displayHasChildOnly'] ) ) {
+			// 子ページがない場合 .
 			if ( ! $page_list ) {
 				return '';
 			}
 		}
 	}
-	wp_reset_query();
-	wp_reset_postdata();
 
 	// 非表示クラス.
 	$classes = 'vk_ancestorPageList';
@@ -70,7 +76,34 @@ function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
 
 	// block.jsonのSupportsで設定したクラス名やスタイルを取得する.
 	$wrapper_classes = get_block_wrapper_attributes( array( 'class' => $classes ) );
+
+	$title = vk_blocks_get_ancestor_page_list_title( $attributes );
+	if ( $page_list ) {
+		$page_list = sprintf( '<ul class="vk_ancestorPageList_list">%1$s</ul></aside>', $page_list );
+	}
+
+	$block = sprintf(
+		'<aside %1$s>' . $title . $page_list . '</aside>',
+		$wrapper_classes,
+	);
+	return $block;
+}
+
+/**
+ * Ancestor Page List Title
+ *
+ * @param array $attributes : block attributes .
+ * @return string $title : title html .
+ */
+function vk_blocks_get_ancestor_page_list_title( $attributes ) {
+
+	$title = '';
+
 	if ( $attributes['ancestorTitleDisplay'] ) {
+
+		$post_anc_id = vk_blocks_get_ancestor_page_id();
+		$title_text  = get_the_title( $post_anc_id );
+		$title_link  = get_permalink( $post_anc_id );
 
 		// Ancestor Title Tag.
 		$tag_name = $attributes['ancestorTitleTagName'];
@@ -80,25 +113,17 @@ function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
 			$class .= ' ' . $attributes['ancestorTitleClassName'];
 		}
 
-		$title = '<' . $tag_name . ' class="' . $class . '">';
+		$title .= '<' . $tag_name . ' class="' . $class . '">';
 		if ( ! empty( $attributes['ancestorTitleLink'] ) ) {
-			$title .= '<a href="' . get_permalink( $post_anc_id ) . '">';
+			$title .= '<a href="' . $title_link . '">';
 		}
-		$title .= esc_html( $post->post_title );
+		$title .= esc_html( $title_text );
 		if ( ! empty( $attributes['ancestorTitleLink'] ) ) {
 			$title .= '</a>';
 		}
-		$title .= ' </' . $tag_name . '>';
-	} else {
-		$title = '';
+		$title .= '</' . $tag_name . '>';
 	}
-
-	$block = sprintf(
-		'<aside %1$s>' . $title . '<ul class="vk_ancestorPageList_list">%2$s</ul></aside>',
-		$wrapper_classes,
-		$page_list
-	);
-	return $block;
+	return $title;
 }
 
 /**

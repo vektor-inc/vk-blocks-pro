@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-07-22T02:09:55+00:00\n"
+"POT-Creation-Date: 2022-07-22T07:05:15+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 "X-Domain: vk-blocks\n"
@@ -3452,7 +3452,7 @@ msgstr ""
 #: inc/vk-blocks/build/blocks/ancestor-page-list/block.json
 #: src/blocks/ancestor-page-list/block.json
 msgctxt "block title"
-msgid "Page list from ancestors"
+msgid "Page list from ancestor"
 msgstr ""
 
 #: inc/vk-blocks/build/blocks/ancestor-page-list/block.json

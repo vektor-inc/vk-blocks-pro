@@ -53,7 +53,7 @@ describe( 'MarginExtension', () => {
 
 			const testBlockTitleLists = [
 					[ "Alert", "Alert", "vk-blocks-alert" ],
-					[ "Page list from ancestors", "Page list from ancestors", "vk-blocks-ancestor-page-list" ],
+					[ "Page list from ancestor", "Page list from ancestor", "vk-blocks-ancestor-page-list" ],
 					[ "Ballon", "Ballon", "vk-blocks-balloon" ],
 					[ "Border Box", "Border Box", "vk-blocks-border-box" ],
 					[ "Button", "Button", "vk-blocks-button" ],

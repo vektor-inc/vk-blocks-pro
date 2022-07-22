@@ -24,24 +24,8 @@ if ( ! function_exists( 'vk_blocks_setting' ) ) {
 	 * @return void
 	 */
 	function vk_blocks_setting() {
-		$options           = get_option( 'vk_blocks_balloon_meta' );
-		$image_number      = 15;
-		$image_number      = apply_filters( 'vk_blocks_image_number', $image_number );
-		$vk_blocks_options = vk_blocks_get_options();
 		?>
-
-		<form method="post" action="">
-			<?php wp_nonce_field( 'vkb-nonce-key', 'vkb-setting-page' ); ?>
-			<?php
-			if ( vk_blocks_is_license_setting() ) {
-				require_once dirname( __FILE__ ) . '/admin-license.php';
-			}
-			require_once dirname( __FILE__ ) . '/admin-balloon.php';
-			require_once dirname( __FILE__ ) . '/admin-margin.php';
-			require_once dirname( __FILE__ ) . '/admin-load-separate.php';
-			do_action( 'vk_blocks_pro_admin' );
-			?>
-		</form>
+		<div id="vk-blocks-admin"></div>
 		<?php
 	}
 }
@@ -162,12 +146,33 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 	}
 
 	$asset = include VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/build/admin-build.asset.php';
+	// Enqueue CSS dependencies.
+	foreach ( $asset['dependencies'] as $style ) {
+		wp_enqueue_style( $style );
+	}
+
+	// メディアピッカーを使用するため.
+	wp_enqueue_media();
+
 	wp_enqueue_script(
 		'vk-blocks-admin-js',
 		VK_BLOCKS_DIR_URL . 'inc/vk-blocks/build/admin-build.js',
 		$asset['dependencies'],
 		$asset['version'],
 		true
+	);
+	wp_set_script_translations( 'vk-blocks-admin-js', 'vk-blocks', VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/languages' );
+
+	wp_localize_script(
+		'vk-blocks-admin-js',
+		'vkBlocksObject',
+		array(
+			'options'          => vk_blocks_get_options(),
+			'balloonMeta'      => VK_Blocks_Options::get_balloon_meta_options(),
+			'imageNumber'      => VK_Blocks_Options::balloon_image_number(),
+			'isLicenseSetting' => vk_blocks_is_license_setting(),
+			'isPro'            => vk_blocks_is_pro(),
+		)
 	);
 
 	wp_enqueue_style(

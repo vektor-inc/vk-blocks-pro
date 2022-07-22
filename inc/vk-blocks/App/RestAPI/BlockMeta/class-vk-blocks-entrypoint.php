@@ -33,6 +33,20 @@ class Vk_Blocks_EntryPoint {
 				},
 			)
 		);
+
+		register_rest_route(
+			'vk-blocks/v1',
+			'/update_vk_blocks_options',
+			array(
+				array(
+					'methods'             => 'POST',
+					'callback'            => array( $this, 'update_vk_blocks_options' ),
+					'permission_callback' => function () {
+						return current_user_can( 'edit_posts' );
+					},
+				),
+			)
+		);
 	}
 
 	/**
@@ -46,4 +60,24 @@ class Vk_Blocks_EntryPoint {
 		$block_meta = get_option( 'vk_blocks_' . $block_name . '_meta' );
 		return rest_ensure_response( $block_meta );
 	}
+
+	/**
+	 * VK Blocks Rest Update Callback
+	 *
+	 * @param object $request — .
+	 * @return \WP_REST_Response|\WP_Error
+	 */
+	public function update_vk_blocks_options( $request ) {
+		$json_params = $request->get_json_params();
+
+		update_option( 'vk_blocks_options', $json_params['vkBlocksOption'] );
+		update_option( 'vk_blocks_balloon_meta', $json_params['vkBlocksBalloonMeta'] );
+
+		return rest_ensure_response(
+			array(
+				'success' => true,
+			)
+		);
+	}
+
 }

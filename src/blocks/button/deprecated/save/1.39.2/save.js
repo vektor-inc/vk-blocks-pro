@@ -21,8 +21,6 @@ export default function save(props) {
 		outerGap,
 		fontAwesomeIconBefore,
 		fontAwesomeIconAfter,
-		iconSizeBefore,
-		iconSizeAfter,
 		blockId,
 	} = attributes;
 
@@ -30,8 +28,6 @@ export default function save(props) {
 	// カスタムカラーの場合 またはアウターにギャップが指定されれいる場合
 	if (
 		(buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) ||
-		(buttonTextColorCustom !== undefined &&
-			isHexColor(buttonTextColorCustom)) ||
 		outerGap
 	) {
 		containerClass = `vk_button vk_button-color-custom vk_button-${blockId}`;
@@ -71,8 +67,6 @@ export default function save(props) {
 				lbTarget={buttonTarget}
 				lbFontAwesomeIconBefore={fontAwesomeIconBefore}
 				lbFontAwesomeIconAfter={fontAwesomeIconAfter}
-				lbIconSizeBefore={iconSizeBefore}
-				lbIconSizeAfter={iconSizeAfter}
 				lbsubCaption={subCaption}
 				lbRichtext={
 					<RichText.Content

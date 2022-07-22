@@ -1,8 +1,10 @@
 import { Component } from '@wordpress/element';
 import parse from 'html-react-parser';
+import { isHexColor } from '@vkblocks/utils/is-hex-color';
 
 export class VKBButton extends Component {
 	render() {
+		const buttonTextColorCustom = this.props.lbTextColorCustom;
 		const buttonColorCustom = this.props.lbColorCustom;
 		const buttonColor = this.props.lbColor;
 		const buttonType = this.props.lbType;
@@ -22,64 +24,53 @@ export class VKBButton extends Component {
 		aStyle = null;
 		aClass = `vk_button_link`;
 
-		if (buttonType === '0' || buttonType === null || buttonType === '1') {
-			aClass = `${aClass} btn`;
-		} else {
-			aClass = `${aClass} vk_button_link-type-text`;
-		}
-
 		// 塗り
 		if (buttonType === '0' || buttonType === null) {
 			// 規定カラーの場合
-			if (
-				buttonColorCustom === 'undefined' ||
-				buttonColorCustom === undefined ||
-				buttonColorCustom === null
-			) {
-				aClass = `${aClass} btn-${buttonColor}`;
-				aStyle = null;
-
-				// カスタムカラーの場合
+			if (buttonColor !== 'custom' && buttonColorCustom === undefined) {
+				aClass += ` btn has-background has-vk-color-${buttonColor}-background-color`;
 			} else {
-				aStyle = {
-					backgroundColor: buttonColorCustom,
-					border: `1px solid ${buttonColorCustom}`,
-					color: `#fff`,
-				};
+				aClass += ` btn has-background`;
+				// カスタムパレットカラーの場合
+				if (!isHexColor(buttonColorCustom)) {
+					aClass += ` has-${buttonColorCustom}-background-color`;
+				}
+			}
+
+			// 文字色
+			if (
+				buttonColor === 'custom' &&
+				buttonTextColorCustom !== undefined
+			) {
+				aClass += ` btn has-text-color`;
+				// カスタムパレットカラーの場合
+				if (!isHexColor(buttonTextColorCustom)) {
+					aClass += ` has-${buttonTextColorCustom}-color`;
+				}
 			}
 			// 塗りなし
 		} else if (buttonType === '1') {
 			// 規定カラーの場合
-			if (
-				buttonColorCustom === 'undefined' ||
-				buttonColorCustom === undefined ||
-				buttonColorCustom === null
-			) {
-				aClass = `${aClass} btn-outline-${buttonColor}`;
-				aStyle = null;
-				// カスタムカラーの場合
+			if (buttonColor !== 'custom' && buttonColorCustom === undefined) {
+				aClass += ` btn has-text-color is-style-outline has-vk-color-${buttonColor}-color`;
 			} else {
-				aStyle = {
-					backgroundColor: 'transparent',
-					border: '1px solid ' + buttonColorCustom,
-					color: buttonColorCustom,
-				};
+				aClass += ` btn has-text-color is-style-outline`;
+				// カスタムパレットカラーの場合
+				if (!isHexColor(buttonColorCustom)) {
+					aClass += ` has-${buttonColorCustom}-color`;
+				}
 			}
 			// テキストのみ
 		} else if (buttonType === '2') {
 			// 規定カラーの場合
-			if (
-				buttonColorCustom === 'undefined' ||
-				buttonColorCustom === undefined ||
-				buttonColorCustom === null
-			) {
-				aClass = `${aClass} btn-outline-${buttonColor}`;
-				aStyle = null;
-				// カスタムカラーの場合
+			if (buttonColor !== 'custom' && buttonColorCustom === undefined) {
+				aClass += ` has-text-color vk_button_link-type-text has-vk-color-${buttonColor}-color`;
 			} else {
-				aStyle = {
-					color: buttonColorCustom,
-				};
+				aClass += ` has-text-color vk_button_link-type-text`;
+				// カスタムパレットカラーの場合
+				if (!isHexColor(buttonColorCustom)) {
+					aClass += ` has-${buttonColorCustom}-color`;
+				}
 			}
 		}
 
@@ -98,37 +89,28 @@ export class VKBButton extends Component {
 		}
 
 		if (fontAwesomeIconBefore) {
-			fontAwesomeIconBefore = fontAwesomeIconBefore.replace(
-				/ fas/g,
-				'fas'
-			);
-
-			//add class and inline css
-			const faIconFragmentBefore = fontAwesomeIconBefore.split(' ');
-			faIconFragmentBefore[1] =
-				' ' + faIconFragmentBefore[1] + ` vk_button_link_before `;
-			iconBefore = faIconFragmentBefore.join('');
+			let fontAwesomeIconBeforeClassName =
+				fontAwesomeIconBefore.match(/class="(.*?)"/)[1];
+			fontAwesomeIconBeforeClassName += ` vk_button_link_before`;
+			iconBefore = `<i class="${fontAwesomeIconBeforeClassName}"></i>`;
 		}
 		if (fontAwesomeIconAfter) {
-			fontAwesomeIconAfter = fontAwesomeIconAfter.replace(/ fas/g, 'fas');
-
-			//add class and inline css
-			const faIconFragmentAfter = fontAwesomeIconAfter.split(' ');
-			faIconFragmentAfter[1] =
-				' ' + faIconFragmentAfter[1] + ` vk_button_link_after `;
-			iconAfter = faIconFragmentAfter.join('');
+			let fontAwesomeIconAfterClassName =
+				fontAwesomeIconAfter.match(/class="(.*?)"/)[1];
+			fontAwesomeIconAfterClassName += ` vk_button_link_after`;
+			iconAfter = `<i class="${fontAwesomeIconAfterClassName}"></i>`;
 		}
 
 		return (
+			/* eslint react/jsx-no-target-blank: 0 */
 			<a
 				href={buttonUrl}
-				id={'vk_button_link'}
 				style={aStyle}
 				className={aClass}
 				role={'button'}
 				aria-pressed={true}
 				target={buttonTarget ? '_blank' : null}
-				rel={'noopener noreferrer'}
+				rel={'noopener'}
 			>
 				{parse(iconBefore)}
 				{richText}

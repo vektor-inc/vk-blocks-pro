@@ -142,7 +142,7 @@ function vk_blocks_register_block_ancestor_page_list() {
 	if ( ! is_admin() ) {
 		wp_register_style(
 			'vk-blocks/ancestor-page-list',
-			VK_BLOCKS_DIR_URL . 'build/button/style.css',
+			VK_BLOCKS_DIR_URL . 'build/ancestor-page-list/style.css',
 			array(),
 			VK_BLOCKS_VERSION
 		);

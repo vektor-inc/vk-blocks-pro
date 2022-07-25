@@ -130,12 +130,12 @@ function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
 }
 
 /**
- * Register block archive-list
+ * Register block ancestor-page-list
  * ブロックの登録
  *
  * @return void
  */
-function vk_blocks_register_block_archive_list() {
+function vk_blocks_register_block_ancestor_page_list() {
 	global $vk_blocks_common_attributes;
 
 	// Register Style.
@@ -151,6 +151,7 @@ function vk_blocks_register_block_archive_list() {
 	register_block_type(
 		__DIR__,
 		array(
+			'style'           => 'vk-blocks/ancestor-page-list',
 			'editor_style'    => 'vk-blocks-build-editor-css',
 			'editor_script'   => 'vk-blocks-build-js',
 			'attributes'      => array_merge(
@@ -202,4 +203,4 @@ function vk_blocks_register_block_archive_list() {
 		)
 	);
 }
-add_action( 'init', 'vk_blocks_register_block_archive_list', 99 );
+add_action( 'init', 'vk_blocks_register_block_ancestor_page_list', 99 );

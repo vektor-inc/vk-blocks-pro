@@ -52,13 +52,7 @@ export const SaveButton = (props) => {
 					{__('Save setting', 'vk-blocks')}
 				</Button>
 				{isSaveSuccess && (
-					<div
-						style={{
-							position: 'fixed',
-							right: '30px',
-							bottom: '50px',
-						}}
-					>
+					<div>
 						<Snackbar>{__('Save Success', 'vk-blocks')} </Snackbar>
 					</div>
 				)}

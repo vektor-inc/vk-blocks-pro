@@ -25,13 +25,19 @@
 	.margin_size_input {
 		flex-direction: row;
 		align-items: center;
-
-		.components-input-control__label {
-			margin: 0!important;
-		}
-
 		input {
 			width: 5em!important;
+		}
+		.components-input-control__container {
+			background-color: unset;
+			.components-input-control__input {
+				margin:0 10px;
+				background-color: #fff;
+			}
+			.components-input-control__backdrop {
+				margin:0 10px;
+				border:1px solid #ccc;
+			}
 		}
 	}
 }

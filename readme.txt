@@ -64,9 +64,12 @@ e.g.
 
 == Changelog ==
 
-[ Specification Change ] Change the style of the options page to Gutenberg components.
-[ Add Function ][ Button ] Enable inline font size and add icon size option.
 [ Add New Block ][ Archive list block ] Displays a list of archives
+[ Add Function ][ Button ] Enable inline font size and add icon size option.
+[ Specification Change ] Change the style of the options page to Gutenberg components.
+[ Bug Fix ] fix editor style in Inline font size and Highlighter.
+[ Bug Fix ] Fixed a bug that CSS for edit screen is not loaded in iframe.
+[ Bug Fix ][ Breadcrumb ] Fix duplicate Additional CSS classes.
 
 = 1.39.2 =
 [ Bug Fix ][ Breadcrumb ] Fix in case of filter search result category & keyword

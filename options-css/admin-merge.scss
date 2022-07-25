@@ -6,17 +6,3 @@
 
 // balloon
 @import "./admin-balloon";
-
-body{
-	--admin-sidebar-width: 160px;
-	--admin-sidebar-folded-width: 36px;
-	--admin-vk-blocks-snacbar-margin : 22px;
-}
-.components-snackbar {
-	position: fixed;
-	bottom: var(--admin-vk-blocks-snacbar-margin);
-	left:calc(var(--admin-sidebar-width) + var(--admin-vk-blocks-snacbar-margin));
-	.folded & {
-		left:calc(var(--admin-sidebar-folded-width) + var(--admin-vk-blocks-snacbar-margin));
-	}
-}

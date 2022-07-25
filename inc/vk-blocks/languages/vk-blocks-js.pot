@@ -1272,7 +1272,7 @@ msgid "Danger"
 msgstr ""
 
 #: src/blocks/ancestor-page-list/edit.js:101
-msgid "Dont't display inactive grand child pages"
+msgid "Don't display inactive grand child pages"
 msgstr ""
 
 #: src/blocks/ancestor-page-list/edit.js:30

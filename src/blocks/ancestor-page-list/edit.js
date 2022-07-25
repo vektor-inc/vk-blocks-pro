@@ -99,7 +99,7 @@ export default function PostListEdit(props) {
 					/>
 					<ToggleControl
 						label={__(
-							"Dont't display inactive grand child pages",
+							"Don't display inactive grand child pages",
 							'vk-blocks'
 						)}
 						checked={hiddenGrandChild}

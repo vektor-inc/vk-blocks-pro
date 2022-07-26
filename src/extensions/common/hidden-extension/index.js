@@ -64,6 +64,7 @@ const mayUsedDynamicBlock = [
 	'vk-blocks/child-page',
 	'vk-blocks/post-list',
 	'vk-blocks/page-content',
+	'vk-blocks/ancestor-page-list',
 	// ExUnitに入っているvk blocksブロック,
 	'vk-blocks/share-button',
 	'vk-blocks/child-page-index',

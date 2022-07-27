@@ -193,7 +193,7 @@ msgstr ""
 msgid "Save setting"
 msgstr ""
 
-#: src/admin/save-button.js:56
+#: src/admin/save-button.js:62
 msgid "Save Success"
 msgstr ""
 

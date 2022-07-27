@@ -1,0 +1,37 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/ancestor-page-list",
+	"category": "vk-blocks-cat",
+	"title": "Page list from ancestor",
+	"attributes": {
+		"ancestorTitleDisplay": {
+			"type": "boolean",
+			"default": true
+		},
+		"ancestorTitleTagName": {
+			"type": "string",
+			"default": "h4"
+		},
+		"ancestorTitleClassName": {
+			"type": "string",
+			"default": null
+		},
+		"ancestorTitleLink": {
+			"type": "boolean",
+			"default": false
+		},
+		"displayHasChildOnly": {
+			"type": "boolean",
+			"default": false
+		},
+		"hiddenGrandChild": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"description": "Display Page list from ancestor page",
+	"textdomain": "vk-blocks",
+	"supports": {
+		"className": true
+	}
+}

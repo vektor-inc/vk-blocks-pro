@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Add Block ][ Page list from ancestors ]
 [ Add Function ][ Button ] Enable inline font size and add icon size option.
 [ Specification Change ] Change the style of the options page to Gutenberg components.
 [ Bug Fix ] fix editor style in Inline font size and Highlighter.

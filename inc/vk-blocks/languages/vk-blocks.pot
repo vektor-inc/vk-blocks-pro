@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-07-24T14:05:51+00:00\n"
+"POT-Creation-Date: 2022-07-25T17:35:43+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 "X-Domain: vk-blocks\n"
@@ -208,7 +208,7 @@ msgstr ""
 msgid "Save setting"
 msgstr ""
 
-#: src/admin/save-button.js:62
+#: src/admin/save-button.js:56
 msgid "Save Success"
 msgstr ""
 
@@ -1273,6 +1273,54 @@ msgstr ""
 #: src/blocks/pr-content/edit.js:174
 #: src/extensions/core/group/style.js:146
 msgid "Danger"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:101
+msgid "Don't display inactive grand child pages"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:30
+msgid "Ancestor Page List Setting"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:33
+msgid "Display Ancestor Page Title"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:40
+msgid "Archive type"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:48
+msgid "h2"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:52
+msgid "h3"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:56
+msgid "h4"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:60
+msgid "h5"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:64
+msgid "h6"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:69
+msgid "Ancestor page title class name"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:80
+msgid "Add link to ancestor page title"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:91
+msgid "If there is no child page, the block itself is not displayed"
 msgstr ""
 
 #: src/blocks/balloon/edit.js:144
@@ -2805,11 +2853,15 @@ msgid "A colored box with four statuses, including annotations and alerts."
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/block.json
+#: inc/vk-blocks/build/blocks/ancestor-page-list/block.json
+#: src/blocks/ancestor-page-list/block.json
 msgctxt "block title"
 msgid "Page list from ancestor"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/block.json
+#: inc/vk-blocks/build/blocks/ancestor-page-list/block.json
+#: src/blocks/ancestor-page-list/block.json
 msgctxt "block description"
 msgid "Display Page list from ancestor page"
 msgstr ""

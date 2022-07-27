@@ -1271,6 +1271,54 @@ msgstr ""
 msgid "Danger"
 msgstr ""
 
+#: src/blocks/ancestor-page-list/edit.js:101
+msgid "Don't display inactive grand child pages"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:30
+msgid "Ancestor Page List Setting"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:33
+msgid "Display Ancestor Page Title"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:40
+msgid "Archive type"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:48
+msgid "h2"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:52
+msgid "h3"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:56
+msgid "h4"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:60
+msgid "h5"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:64
+msgid "h6"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:69
+msgid "Ancestor page title class name"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:80
+msgid "Add link to ancestor page title"
+msgstr ""
+
+#: src/blocks/ancestor-page-list/edit.js:91
+msgid "If there is no child page, the block itself is not displayed"
+msgstr ""
+
 #: src/blocks/balloon/edit.js:144
 msgid " Image Border"
 msgstr ""

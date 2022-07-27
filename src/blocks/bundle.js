@@ -15,6 +15,7 @@ import vkblocksPro from './bundle-pro';
  * Blocks
  */
 import * as alert from './alert';
+import * as ancestorPageList from './ancestor-page-list';
 import * as balloon from './balloon';
 import * as borderBox from './border-box';
 import * as button from './button';
@@ -65,6 +66,7 @@ const vkBlocks = [
 	prContent,
 	spacer,
 	staff,
+	ancestorPageList,
 ];
 
 /**

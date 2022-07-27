@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-07-25T17:35:43+00:00\n"
+"POT-Creation-Date: 2022-07-27T06:48:25+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 "X-Domain: vk-blocks\n"
@@ -2099,47 +2099,47 @@ msgstr ""
 msgid "Link rel"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:124
+#: src/extensions/common/hidden-extension/index.js:180
 msgid "Hidden Settings"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:128
+#: src/extensions/common/hidden-extension/index.js:184
 msgid "Hidden at screel size"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:135
+#: src/extensions/common/hidden-extension/index.js:191
 msgid "Note : This function is display hidden only. Actually Block is output to HTML.Pleade don't use you must not bisible item.Don't use it for blocks you really don't want to display."
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:141
+#: src/extensions/common/hidden-extension/index.js:197
 msgid "Hidden ( Screen size : all )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:152
+#: src/extensions/common/hidden-extension/index.js:207
 msgid "Hidden ( Screen size : xs )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:163
+#: src/extensions/common/hidden-extension/index.js:220
 msgid "Hidden ( Screen size : sm )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:174
+#: src/extensions/common/hidden-extension/index.js:233
 msgid "Hidden ( Screen size : md )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:185
+#: src/extensions/common/hidden-extension/index.js:246
 msgid "Hidden ( Screen size : lg )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:196
+#: src/extensions/common/hidden-extension/index.js:259
 msgid "Hidden ( Screen size : xl )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:207
+#: src/extensions/common/hidden-extension/index.js:274
 msgid "Hidden ( Screen size : xxl )"
 msgstr ""
 
-#: src/extensions/common/hidden-extension/index.js:218
+#: src/extensions/common/hidden-extension/index.js:287
 msgid "If you want to hide multiple blocks, that first you set to group block and the next, hide for the that group block."
 msgstr ""
 

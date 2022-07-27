@@ -182,14 +182,14 @@ addFilter(
 							>
 								<BaseControl
 									label={__(
-										'Hidden at screel size',
+										'Hidden at screen size',
 										'vk-blocks'
 									)}
 									id={`vk_hiddenControl-hiddenScreenSize`}
 								>
 									<p>
 										{__(
-											"Note : This function is display hidden only. Actually Block is output to HTML.Pleade don't use you must not bisible item.Don't use it for blocks you really don't want to display.",
+											"Note : This function is display hidden only. Actually Block is output to HTML.Please don't use you must not visible item.Don't use it for blocks you really don't want to display.",
 											'vk-blocks'
 										)}
 									</p>

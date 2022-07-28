@@ -26,6 +26,7 @@ export default function BalloonEdit(props) {
 		balloonName,
 		balloonType,
 		balloonBorder,
+		balloonWidthFull,
 		balloonImageBorder,
 		balloonBorderColor,
 		balloonBgColor,
@@ -503,6 +504,19 @@ export default function BalloonEdit(props) {
 							{__('Circle', 'vk-blocks')}
 						</Button>
 					</ButtonGroup>
+
+					<BaseControl>
+						<p className={'mb-1 block-prop-title'}>
+							{__('Width', 'vk-blocks')}
+						</p>
+						<ToggleControl
+							label={__('100%', 'vk-blocks')}
+							checked={balloonWidthFull}
+							onChange={(checked) =>
+								setAttributes({ balloonWidthFull: checked })
+							}
+						/>
+					</BaseControl>
 
 					{BorderSetting}
 

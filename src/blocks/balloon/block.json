@@ -17,6 +17,10 @@
 			"type": "string",
 			"default": "type-speech"
 		},
+		"balloonWidthFull": {
+			"type": "boolean",
+			"default": false
+		},
 		"balloonBorder": {
 			"type": "boolean",
 			"default": false

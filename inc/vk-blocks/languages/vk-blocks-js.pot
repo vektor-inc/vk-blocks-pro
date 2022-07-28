@@ -2104,14 +2104,14 @@ msgid "Hidden Settings"
 msgstr ""
 
 #: src/extensions/common/hidden-extension/index.js:184
-msgid "Hidden at screel size"
+msgid "Hidden at screen size"
 msgstr ""
 
 #: src/extensions/common/hidden-extension/index.js:191
 msgid ""
 "Note : This function is display hidden only. Actually Block is output to "
-"HTML.Pleade don't use you must not bisible item.Don't use it for blocks you "
-"really don't want to display."
+"HTML. Please don't use you must not visible item. Don't use it for blocks "
+"you really don't want to display."
 msgstr ""
 
 #: src/extensions/common/hidden-extension/index.js:197

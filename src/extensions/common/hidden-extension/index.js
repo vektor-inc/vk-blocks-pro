@@ -189,7 +189,7 @@ addFilter(
 								>
 									<p>
 										{__(
-											"Note : This function is display hidden only. Actually Block is output to HTML.Please don't use you must not visible item.Don't use it for blocks you really don't want to display.",
+											"Note : This function is display hidden only. Actually Block is output to HTML. Please don't use you must not visible item. Don't use it for blocks you really don't want to display.",
 											'vk-blocks'
 										)}
 									</p>

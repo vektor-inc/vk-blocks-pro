@@ -1915,7 +1915,7 @@ msgstr "非表示にする画面サイズ"
 #: src/extensions/common/hidden-extension/index.js:135
 msgid ""
 "Note : This function is display hidden only. Actually Block is output to "
-"HTML.Please don't use you must not visible item.Don't use it for blocks you "
+"HTML. Please don't use you must not visible item. Don't use it for blocks you "
 "really don't want to display."
 msgstr ""
 "注意 : この機能はあくまでHTMLに出力される要素を非表示にするだけです。本当に見"

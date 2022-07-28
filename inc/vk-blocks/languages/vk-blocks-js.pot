@@ -2110,8 +2110,8 @@ msgstr ""
 #: src/extensions/common/hidden-extension/index.js:191
 msgid ""
 "Note : This function is display hidden only. Actually Block is output to "
-"HTML.Please don't use you must not visible item.Don't use it for blocks you "
-"really don't want to display."
+"HTML. Please don't use you must not visible item. Don't use it for blocks "
+"you really don't want to display."
 msgstr ""
 
 #: src/extensions/common/hidden-extension/index.js:197

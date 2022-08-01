@@ -19,6 +19,7 @@ import * as ancestorPageList from './ancestor-page-list';
 import * as balloon from './balloon';
 import * as borderBox from './border-box';
 import * as button from './button';
+import * as customCss from './custom-css';
 import * as faq from './faq';
 import * as faq2 from './faq2';
 import * as faq2a from './faq2-a';
@@ -53,6 +54,7 @@ const vkBlocks = [
 	balloon,
 	borderBox,
 	button,
+	customCss,
 	faq,
 	faq2,
 	faq2a,

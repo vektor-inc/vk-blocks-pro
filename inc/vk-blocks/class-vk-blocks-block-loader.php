@@ -24,6 +24,7 @@ class VK_Blocks_Block_Loader {
 		array( 'name' => 'balloon',               'is_pro' =>  false ),
 		array( 'name' => 'border-box',            'is_pro' =>  false ),
 		array( 'name' => 'button',                'is_pro' =>  false ),
+		array( 'name' => 'custom-css',            'is_pro' =>  false ),
 		array( 'name' => 'faq',                   'is_pro' =>  false ),
 		array( 'name' => 'faq2',                  'is_pro' =>  false ),
 		array( 'name' => 'faq2-a',                'is_pro' =>  false ),

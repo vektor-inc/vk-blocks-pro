@@ -1,0 +1,23 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/custom-css",
+	"category": "vk-blocks-cat",
+	"keywords": [
+		"code",
+		"css"
+	],
+	"title": "Custom CSS",
+	"description": "Custom CSS",
+	"textdomain": "vk-blocks",
+	"attributes": {
+		"content": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"className": false,
+		"customClassName": false,
+		"html": false
+	}
+}

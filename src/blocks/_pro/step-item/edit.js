@@ -127,7 +127,9 @@ export default function StepItemEdit(props) {
 								isSmall
 								isPrimary={styleLine === 'default'}
 								isSecondary={styleLine !== 'default'}
-								onClick={() => setAttributes({ styleLine: 'default' })}
+								onClick={() =>
+									setAttributes({ styleLine: 'default' })
+								}
 							>
 								{__('Default', 'vk-blocks')}
 							</Button>
@@ -135,7 +137,9 @@ export default function StepItemEdit(props) {
 								isSmall
 								isPrimary={styleLine === 'none'}
 								isSecondary={styleLine !== 'none'}
-								onClick={() => setAttributes({ styleLine: 'none' })}
+								onClick={() =>
+									setAttributes({ styleLine: 'none' })
+								}
 							>
 								{__('None', 'vk-blocks')}
 							</Button>

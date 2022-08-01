@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ][step/Timeline] Change lineStyle ui.
+
 = 1.40.0 =
 [ Improvement ][ hidden extension ] Changed to add common hidden class names to additional CSS classes.
 [ Add Block ][ Page list from ancestors ]

@@ -59,15 +59,19 @@
 .vk_balloon_content {
 	max-width: calc(100% - 6.2em);
 
-	&.vk_balloon-position-left {
-		max-width: calc(100% - 6.2em);
-	}
-
 	.vk_balloon-position-left & {
 		float:left;
 	}
 	.vk_balloon-position-right & {
 		float:right;
+	}
+	&.vk_balloon_content_fullwidth {
+		max-width: 100%;
+		float: none;		
+
+		.vk_balloon-position-right & {
+			text-align: right;
+		}
 	}
 	position: relative;
 	text-align: left;

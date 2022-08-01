@@ -65,6 +65,7 @@ e.g.
 == Changelog ==
 
 [ Specification Change ][step/Timeline] Change lineStyle ui.
+[ Bug Fix ][ FAQ ] fix faq block js error when load separation mode.
 
 = 1.40.0 =
 [ Improvement ][ hidden extension ] Changed to add common hidden class names to additional CSS classes.

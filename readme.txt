@@ -64,6 +64,10 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Balloon ] Add width option.
+
+= 1.40.0 =
+[ Improvement ][ hidden extension ] Changed to add common hidden class names to additional CSS classes.
 [ Add Block ][ Page list from ancestors ]
 [ Add Function ][ Button ] Enable inline font size and add icon size option.
 [ Specification Change ] Change the style of the options page to Gutenberg components.

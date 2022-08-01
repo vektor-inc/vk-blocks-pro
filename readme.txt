@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ FAQ ] fix faq block js error when load separation mode.
 [ Add Function ][ Balloon ] Add width option.
 
 = 1.40.0 =

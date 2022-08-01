@@ -888,8 +888,8 @@ msgid "Border type"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:529
-#: src/blocks/_pro/step-item/edit.js:140
-#: src/blocks/_pro/timeline-item/edit.js:109
+#: src/blocks/_pro/step-item/edit.js:144
+#: src/blocks/_pro/timeline-item/edit.js:113
 #: src/blocks/balloon/edit.js:543
 #: src/blocks/staff/edit.js:177
 msgid "None"
@@ -1130,9 +1130,9 @@ msgid "Pagination Type"
 msgstr ""
 
 #: src/blocks/_pro/slider/edit.js:353
-#: src/blocks/_pro/step-item/edit.js:132
+#: src/blocks/_pro/step-item/edit.js:134
 #: src/blocks/_pro/table-of-contents-new/edit.js:145
-#: src/blocks/_pro/timeline-item/edit.js:101
+#: src/blocks/_pro/timeline-item/edit.js:103
 #: src/blocks/heading/edit.js:264
 #: src/blocks/staff/edit.js:173
 #: src/extensions/core/heading/style.js:30

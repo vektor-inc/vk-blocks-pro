@@ -3,7 +3,7 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,m
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
-Tested up to: 6.0.0
+Tested up to: 6.0.1
 Stable tag: 1.37.0.0
 Requires PHP: 7.2
 License: GPLv2 or later
@@ -63,6 +63,11 @@ e.g.
 
 
 == Changelog ==
+
+= 1.40.1 =
+[ Specification Change ][Step(Pro)/Timeline(Pro)] Change lineStyle ui.
+[ Bug Fix ][ hidden extension ] fix hidden extension class when Screen size xl.
+[ Bug Fix ][ FAQ ] fix faq block js error when load separation mode.
 
 = 1.40.0 =
 [ Improvement ][ hidden extension ] Changed to add common hidden class names to additional CSS classes.

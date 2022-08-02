@@ -4,7 +4,9 @@
  import {
 	createNewPost,
 	searchForBlock,
-	clickButton,
+	openListView,
+	clickMenuItem,
+	clickBlockToolbarButton,
 } from '@wordpress/e2e-test-utils';
 
 /**
@@ -14,6 +16,12 @@ import { changeSiteLang } from '../helper/changeSiteLang';
 
 // https://github.com/WordPress/gutenberg/blob/7d880708c6281c185256b8e7d3dffe178da33d09/packages/e2e-tests/specs/performance/post-editor.test.js#L34
 jest.setTimeout( 1000000 );
+
+async function getListViewBlocks( blockLabel ) {
+	return page.$x(
+		`//table[contains(@aria-label,'Block navigation structure')]//a[.//span[text()='${ blockLabel }']]`
+	);
+}
 
 describe( 'MarginExtension', () => {
 	let oldLanguage;
@@ -64,7 +72,7 @@ describe( 'MarginExtension', () => {
 					[ "Icon", "Icon", "vk-blocks-icon" ],
 					[ "Icon Outer", "Icon Outer", "vk-blocks-icon-outer" ],
 					[ "Page Content", "Page Content", "vk-blocks-page-content" ],
-					[ "PR Blocks (not recommended)", "PR Blocks (not recommended)", "vk-blocks-pr-blocks" ],
+					// [ "PR Blocks (not recommended)", "PR Blocks (not recommended)", "vk-blocks-pr-blocks" ],// ブロック名が長く省略されブロックの削除ができないため
 					[ "PR Content", "PR Content", "vk-blocks-pr-content" ],
 					[ "Responsive Spacer", "Responsive Spacer", "vk-blocks-spacer" ],
 					[ "Staff", "Staff", "vk-blocks-staff" ],
@@ -115,10 +123,8 @@ describe( 'MarginExtension', () => {
 					[ "Accordion", "Accordion Trigger", "vk-blocks-accordion" ],
 					[ "Grid Column", "Grid Column Item", "vk-blocks-grid-column" ],
 					[ "Grid Column Card", "Grid Column Card Item", "vk-blocks-gridcolcard" ],
-					[ "Grid Column Card", "Grid Column Card Item Body", "vk-blocks-gridcolcard" ],
 					[ "Step", "Step Item", "vk-blocks-step" ],
 					[ "Timeline", "Timeline Item", "vk-blocks-timeline" ],
-					[ "Buttons", "Button", "buttons" ]
 			]
 
 			for (let i = 0; i < testBlockTitleLists.length; i++) {
@@ -131,23 +137,27 @@ describe( 'MarginExtension', () => {
 				await insertButton.click();
 
 				// List viewをクリック
-				const listViewButtonSelector = `//button[@aria-label='List View']`;
-				const [listViewButton] = await page.$x(listViewButtonSelector);
-				await listViewButton.click();
+				await openListView();
+
+				const navExpander = await page.waitForXPath(
+					`//a[.//span[text()='${testBlockTitleLists[i][0]}']]/span[contains(@class, 'block-editor-list-view__expander')]`
+				);
+				await navExpander.click();
 
 				// 共通余白を設定したいブロックをクリック
-				await clickButton( testBlockTitleLists[i][1] );
+				const targetBlock = (
+					await getListViewBlocks( `${ testBlockTitleLists[i][1] }` )
+				)[ 0 ];
+				await targetBlock.click();
 
 				// 共通余白のドロップダウンをクリック
-				const marginDropdownButtonSelector = `//button[@aria-label='Margin the block']`;
-				const [marginDropdownButton] = await page.$x(marginDropdownButtonSelector);
-				await marginDropdownButton.click();
+				await clickBlockToolbarButton( 'Margin the block' );
 
 				//共通余白 Top lgを選択
 				await page.keyboard.press( 'Enter' );
 
 				//共通余白 下をクリック
-				await marginDropdownButton.click();
+				await clickBlockToolbarButton( 'Margin the block' );
 				for (let i = 0; i < 4; i++) {
 					await page.keyboard.press( 'Tab' );
 				}
@@ -161,10 +171,18 @@ describe( 'MarginExtension', () => {
 					await page.$( '.vk_block-margin-0--margin-bottom' )
 				).not.toBeNull();
 
-				// 配置したブロックが増えるとテストが動かなくなる,またインナーブロックの場合、その中に配置されることがありテストわかりにくくなるので配置したブロックを削除
-				await clickButton( testBlockTitleLists[i][0] );
-				await page.keyboard.press( 'Escape' );
-				await page.keyboard.press( 'Backspace' );
+				// List viewをクリック
+				await openListView();
+
+				// 削除したいブロックをクリック
+				const deleteBlock = (
+					await getListViewBlocks( `${ testBlockTitleLists[i][0] }` )
+				)[ 0 ];
+				await deleteBlock.click();
+
+				// 配置したブロックを削除
+				await clickBlockToolbarButton( 'Options' );
+				await clickMenuItem( `Remove ${testBlockTitleLists[i][0]}` );
 
 			}
 	} )
@@ -172,11 +190,11 @@ describe( 'MarginExtension', () => {
 	/**
 	 * 以下のブロックは上記のテストではブロックの配置が単純ではないため対応出来ていない
 	 *
+	 * Buttons > Button
 	 * Columns, Columns > Column
 	 * Navigation > Custom Link, Submenu
 	 * Query Loop > Post Template, Pagination
-	 *
-	 * 初期配置ではブロックが配置されないためクラス名が見当たらないため
+	 * Grid Column Card Item Body
 	 * Grid Column Card Item Footer
 	 * Grid Column Card Item header
 	 */

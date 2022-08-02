@@ -125,7 +125,7 @@ addFilter(
 									[className]: className,
 									[`vk_hidden`]: vkb_hidden,
 									[`vk_hidden-xxl`]: vkb_hidden_xxl,
-									[`vk_hidden-xl_v2`]: vkb_hidden_xl_v2,
+									[`vk_hidden-xl-v2`]: vkb_hidden_xl_v2,
 									[`vk_hidden-xl`]: vkb_hidden_xl,
 									[`vk_hidden-lg`]: vkb_hidden_lg,
 									[`vk_hidden-md`]: vkb_hidden_md,
@@ -142,6 +142,15 @@ addFilter(
 								vkb_hidden_xs: undefined,
 							});
 						}
+					}
+					// vk_hidden-xl_v2をvk_hidden-xl-v2にする
+					if (/vk_hidden-xl_v2/.test(className)) {
+						setAttributes({
+							className: className.replace(
+								/vk_hidden-xl_v2/,
+								'vk_hidden-xl-v2'
+							),
+						});
 					}
 				}, []);
 
@@ -182,14 +191,14 @@ addFilter(
 							>
 								<BaseControl
 									label={__(
-										'Hidden at screel size',
+										'Hidden at screen size',
 										'vk-blocks'
 									)}
 									id={`vk_hiddenControl-hiddenScreenSize`}
 								>
 									<p>
 										{__(
-											"Note : This function is display hidden only. Actually Block is output to HTML.Pleade don't use you must not bisible item.Don't use it for blocks you really don't want to display.",
+											"Note : This function is display hidden only. Actually Block is output to HTML. Please don't use you must not visible item. Don't use it for blocks you really don't want to display.",
 											'vk-blocks'
 										)}
 									</p>
@@ -261,12 +270,12 @@ addFilter(
 											'vk-blocks'
 										)}
 										checked={isActiveClass(
-											'vk_hidden-xl_v2'
+											'vk_hidden-xl-v2'
 										)}
 										onChange={(checked) => {
 											setNewClass(
 												checked,
-												'vk_hidden-xl_v2'
+												'vk_hidden-xl-v2'
 											);
 										}}
 									/>

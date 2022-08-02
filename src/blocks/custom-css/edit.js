@@ -1,8 +1,14 @@
 /**
  * WordPress dependencies
  */
-import { __ } from '@wordpress/i18n';
-import { PlainText, useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps } from '@wordpress/block-editor';
+
+/**
+ * External dependencies
+ *
+ * https://github.com/react-monaco-editor/react-monaco-editor
+ */
+import MonacoEditor from '@monaco-editor/react';
 
 export default function CustomCSSEdit({ attributes, setAttributes }) {
 	const { content } = attributes;
@@ -11,11 +17,18 @@ export default function CustomCSSEdit({ attributes, setAttributes }) {
 		<>
 			<div {...useBlockProps()}>
 				<style>{content}</style>
-				<PlainText
+				<MonacoEditor
+					className="vk-custom-css"
+					height="200px"
+					defaultLanguage="css"
+					theme="vs-dark"
+					// theme="vs-light"
+					options={{
+						wordWrap: true,
+						quickSuggestions: true,
+					}}
 					value={content}
 					onChange={(value) => setAttributes({ content: value })}
-					placeholder={__('Write CSS…')}
-					aria-label={__('CSS')}
 				/>
 			</div>
 		</>

@@ -68,10 +68,6 @@
 	&.vk_balloon_content_fullwidth {
 		max-width: 100%;
 		float: none;		
-
-		.vk_balloon-position-right & {
-			text-align: right;
-		}
 	}
 	position: relative;
 	text-align: left;

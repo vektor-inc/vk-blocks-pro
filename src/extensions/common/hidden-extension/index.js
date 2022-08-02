@@ -146,7 +146,10 @@ addFilter(
 					// vk_hidden-xl_v2をvk_hidden-xl-v2にする
 					if (/vk_hidden-xl_v2/.test(className)) {
 						setAttributes({
-							className: className.replace(/vk_hidden-xl_v2/, 'vk_hidden-xl-v2'),
+							className: className.replace(
+								/vk_hidden-xl_v2/,
+								'vk_hidden-xl-v2'
+							),
 						});
 					}
 				}, []);

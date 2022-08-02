@@ -125,7 +125,7 @@ addFilter(
 									[className]: className,
 									[`vk_hidden`]: vkb_hidden,
 									[`vk_hidden-xxl`]: vkb_hidden_xxl,
-									[`vk_hidden-xl_v2`]: vkb_hidden_xl_v2,
+									[`vk_hidden-xl-v2`]: vkb_hidden_xl_v2,
 									[`vk_hidden-xl`]: vkb_hidden_xl,
 									[`vk_hidden-lg`]: vkb_hidden_lg,
 									[`vk_hidden-md`]: vkb_hidden_md,
@@ -261,12 +261,12 @@ addFilter(
 											'vk-blocks'
 										)}
 										checked={isActiveClass(
-											'vk_hidden-xl_v2'
+											'vk_hidden-xl-v2'
 										)}
 										onChange={(checked) => {
 											setNewClass(
 												checked,
-												'vk_hidden-xl_v2'
+												'vk_hidden-xl-v2'
 											);
 										}}
 									/>

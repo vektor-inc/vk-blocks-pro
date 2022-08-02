@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ hidden extension ] fix hidden extension class when Screen size xl.
 [ Specification Change ][step/Timeline] Change lineStyle ui.
 [ Bug Fix ][ FAQ ] fix faq block js error when load separation mode.
 

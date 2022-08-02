@@ -18,7 +18,7 @@ function vk_blocks_hidden_extension_filter( $block_content, $block ) {
 		$hidden_class     = array(
 			'vk_hidden',
 			'vk_hidden-xxl',
-			'vk_hidden-xl_v2',
+			'vk_hidden-xl-v2',
 			'vk_hidden-xl',
 			'vk_hidden-lg',
 			'vk_hidden-md',

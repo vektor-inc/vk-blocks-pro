@@ -58,6 +58,11 @@
 }
 .vk_balloon_content {
 	max-width: calc(100% - 6.2em);
+	&::after {
+		display: block;
+		clear: both;
+		content: "";
+	  }
 
 	.vk_balloon-position-left & {
 		float:left;

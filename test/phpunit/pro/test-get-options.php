@@ -17,6 +17,11 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'display_vk_block_template' => 'display',
 					'new_faq_accordion' => 'disable',
 					'margin_size' => array(
+						'xl' => array(
+							'mobile' => null,
+							'tablet' => null,
+							'pc' => null,
+						),
 						'lg' => array(
 							'mobile' => null,
 							'tablet' => null,
@@ -28,6 +33,11 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'pc' => null,
 						),
 						'sm' => array(
+							'mobile' => null,
+							'tablet' => null,
+							'pc' => null,
+						),
+						'xs' => array(
 							'mobile' => null,
 							'tablet' => null,
 							'pc' => null,

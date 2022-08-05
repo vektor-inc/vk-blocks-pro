@@ -15,6 +15,11 @@ class GetOptionsTestFree extends WP_UnitTestCase {
 					'balloon_border_width' => 1,
 					'margin_unit' => 'rem',
 					'margin_size' => array(
+						'xl' => array(
+							'mobile' => null,
+							'tablet' => null,
+							'pc' => null,
+						),
 						'lg' => array(
 							'mobile' => null,
 							'tablet' => null,
@@ -26,6 +31,11 @@ class GetOptionsTestFree extends WP_UnitTestCase {
 							'pc' => null,
 						),
 						'sm' => array(
+							'mobile' => null,
+							'tablet' => null,
+							'pc' => null,
+						),
+						'xs' => array(
 							'mobile' => null,
 							'tablet' => null,
 							'pc' => null,

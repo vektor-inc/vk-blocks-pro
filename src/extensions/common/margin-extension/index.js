@@ -23,6 +23,11 @@ import { isExcludesBlocks } from '@vkblocks/utils/is-excludes-blocks';
 
 const DEFAULT_MARGIN_TOP_CONTROLS = [
 	{
+		title: __('Top xl', 'vk-blocks'),
+		marginClass: 'vk_block-margin-xl--margin-top',
+		flag: 'top',
+	},
+	{
 		title: __('Top lg', 'vk-blocks'),
 		marginClass: 'vk_block-margin-lg--margin-top',
 		flag: 'top',
@@ -35,6 +40,11 @@ const DEFAULT_MARGIN_TOP_CONTROLS = [
 	{
 		title: __('Top sm', 'vk-blocks'),
 		marginClass: 'vk_block-margin-sm--margin-top',
+		flag: 'top',
+	},
+	{
+		title: __('Top xs', 'vk-blocks'),
+		marginClass: 'vk_block-margin-xs--margin-top',
 		flag: 'top',
 	},
 	{
@@ -51,6 +61,11 @@ const DEFAULT_MARGIN_BOTTOM_CONTROLS = [
 		flag: 'bottom',
 	},
 	{
+		title: __('Bottom xs', 'vk-blocks'),
+		marginClass: 'vk_block-margin-xs--margin-bottom',
+		flag: 'bottom',
+	},
+	{
 		title: __('Bottom sm', 'vk-blocks'),
 		marginClass: 'vk_block-margin-sm--margin-bottom',
 		flag: 'bottom',
@@ -63,6 +78,11 @@ const DEFAULT_MARGIN_BOTTOM_CONTROLS = [
 	{
 		title: __('Bottom lg', 'vk-blocks'),
 		marginClass: 'vk_block-margin-lg--margin-bottom',
+		flag: 'bottom',
+	},
+	{
+		title: __('Bottom xl', 'vk-blocks'),
+		marginClass: 'vk_block-margin-xl--margin-bottom',
 		flag: 'bottom',
 	},
 ];

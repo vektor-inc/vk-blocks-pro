@@ -16,23 +16,23 @@ import { AdminContext } from '@vkblocks/admin/index';
 
 const MARGIN_SIZE_ARRAY = [
 	{
-		marginLabel: __('Extra Small', 'vk-blocks'),
+		marginLabel: __('XS', 'vk-blocks'),
 		marginValue: 'xs',
 	},
 	{
-		marginLabel: __('Small', 'vk-blocks'),
+		marginLabel: __('S', 'vk-blocks'),
 		marginValue: 'sm',
 	},
 	{
-		marginLabel: __('Medium', 'vk-blocks'),
+		marginLabel: __('M', 'vk-blocks'),
 		marginValue: 'md',
 	},
 	{
-		marginLabel: __('Large', 'vk-blocks'),
+		marginLabel: __('L', 'vk-blocks'),
 		marginValue: 'lg',
 	},
 	{
-		marginLabel: __('Extra Large', 'vk-blocks'),
+		marginLabel: __('XL', 'vk-blocks'),
 		marginValue: 'xl',
 	},
 ];

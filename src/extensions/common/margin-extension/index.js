@@ -182,9 +182,10 @@ addFilter(
 			const marginControls = DEFAULT_MARGIN_CONTROLS;
 			// attributeの変数名がわかりにくいので別の変数にする
 			const nowClass = className || '';
-			const marginTopRegex = /vk_block-margin-(0|sm|md|lg)--margin-top/;
+			const marginTopRegex =
+				/vk_block-margin-(0|xs|sm|md|lg|xl)--margin-top/;
 			const marginBottomRegex =
-				/vk_block-margin-(0|sm|md|lg)--margin-bottom/;
+				/vk_block-margin-(0|xs|sm|md|lg|xl)--margin-bottom/;
 
 			// deprecated
 			/**

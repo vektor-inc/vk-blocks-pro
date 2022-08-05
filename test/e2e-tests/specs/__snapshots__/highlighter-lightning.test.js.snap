@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Lightning Highlighter Lightning Highlighter 1`] = `
+"<!-- wp:paragraph -->
+<p><span data-color=\\"#000000\\" style=\\"background: linear-gradient(transparent 60%,rgba(0, 0, 0, 0.7) 0);\\" class=\\"vk_highlighter\\">1</span></p>
+<!-- /wp:paragraph -->"
+`;

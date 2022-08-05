@@ -22,6 +22,10 @@ VK_Blocks_Options::init();
 function vk_blocks_margin_size_array() {
 	$vk_margin_size_array = array(
 		array(
+			'label' => __( 'XS', 'vk-blocks' ),
+			'value' => 'xs',
+		),
+		array(
 			'label' => __( 'Small', 'vk-blocks' ),
 			'value' => 'sm',
 		),
@@ -32,6 +36,10 @@ function vk_blocks_margin_size_array() {
 		array(
 			'label' => __( 'Large', 'vk-blocks' ),
 			'value' => 'lg',
+		),
+		array(
+			'label' => __( 'XL', 'vk-blocks' ),
+			'value' => 'xl',
 		),
 	);
 	return $vk_margin_size_array;

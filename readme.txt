@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ highlighter ] cope with color palette with alpha.
+
 = 1.40.1 =
 [ Specification Change ][Step(Pro)/Timeline(Pro)] Change lineStyle ui.
 [ Bug Fix ][ hidden extension ] fix hidden extension class when Screen size xl.

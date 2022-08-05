@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-08-05T01:42:14+00:00\n"
+"POT-Creation-Date: 2022-08-05T04:54:30+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks\n"
@@ -99,29 +99,30 @@ msgid "Margin"
 msgstr ""
 
 #: src/admin/margin.js:19
-msgid "Extra Small"
+#: src/blocks/spacer/edit.js:83
+#: inc/vk-blocks/vk-blocks-functions.php:25
+msgid "XS"
 msgstr ""
 
 #: src/admin/margin.js:23
-#: src/blocks/button/edit.js:318
-#: src/extensions/common/inline-font-size/index.js:84
-#: inc/vk-blocks/vk-blocks-functions.php:29
-msgid "Small"
+#: src/blocks/spacer/edit.js:93
+msgid "S"
 msgstr ""
 
 #: src/admin/margin.js:27
-#: inc/vk-blocks/vk-blocks-functions.php:33
-msgid "Medium"
+#: src/blocks/spacer/edit.js:103
+msgid "M"
 msgstr ""
 
 #: src/admin/margin.js:31
-#: src/blocks/button/edit.js:302
-#: inc/vk-blocks/vk-blocks-functions.php:37
-msgid "Large"
+#: src/blocks/spacer/edit.js:113
+msgid "L"
 msgstr ""
 
 #: src/admin/margin.js:35
-msgid "Extra Large"
+#: src/blocks/spacer/edit.js:121
+#: inc/vk-blocks/vk-blocks-functions.php:41
+msgid "XL"
 msgstr ""
 
 #: src/admin/margin.js:42
@@ -1490,6 +1491,17 @@ msgstr ""
 msgid "Button Size:"
 msgstr ""
 
+#: src/blocks/button/edit.js:302
+#: inc/vk-blocks/vk-blocks-functions.php:37
+msgid "Large"
+msgstr ""
+
+#: src/blocks/button/edit.js:318
+#: src/extensions/common/inline-font-size/index.js:84
+#: inc/vk-blocks/vk-blocks-functions.php:29
+msgid "Small"
+msgstr ""
+
 #: src/blocks/button/edit.js:325
 msgid "Button Position:"
 msgstr ""
@@ -1904,19 +1916,6 @@ msgstr ""
 msgid "Space Type"
 msgstr ""
 
-#: src/blocks/spacer/edit.js:103
-msgid "M"
-msgstr ""
-
-#: src/blocks/spacer/edit.js:113
-msgid "L"
-msgstr ""
-
-#: src/blocks/spacer/edit.js:121
-#: inc/vk-blocks/vk-blocks-functions.php:41
-msgid "XL"
-msgstr ""
-
 #: src/blocks/spacer/edit.js:131
 msgid "Custom"
 msgstr ""
@@ -1931,15 +1930,6 @@ msgstr ""
 
 #: src/blocks/spacer/edit.js:75
 msgid "Spacer Settings"
-msgstr ""
-
-#: src/blocks/spacer/edit.js:83
-#: inc/vk-blocks/vk-blocks-functions.php:25
-msgid "XS"
-msgstr ""
-
-#: src/blocks/spacer/edit.js:93
-msgid "S"
 msgstr ""
 
 #: src/blocks/staff/deprecated/0.58/component.js:50
@@ -2186,27 +2176,27 @@ msgid "Extra big"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:26
-msgid "Top xl"
+msgid "Top XL"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:300
+#: src/extensions/common/margin-extension/index.js:301
 msgid "Margin the block"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:31
-msgid "Top lg"
+msgid "Top L"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:36
-msgid "Top md"
+msgid "Top M"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:41
-msgid "Top sm"
+msgid "Top S"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:46
-msgid "Top xs"
+msgid "Top XS"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:51
@@ -2218,23 +2208,23 @@ msgid "Bottom 0"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:64
-msgid "Bottom xs"
+msgid "Bottom XS"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:69
-msgid "Bottom sm"
+msgid "Bottom S"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:74
-msgid "Bottom md"
+msgid "Bottom M"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:79
-msgid "Bottom lg"
+msgid "Bottom L"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:84
-msgid "Bottom xl"
+msgid "Bottom XL"
 msgstr ""
 
 #: src/extensions/common/nowrap/index.js:21
@@ -2659,6 +2649,10 @@ msgstr ""
 #. translators: %s: 投稿タイプ名
 #: inc/vk-blocks/view/class-vk-blocks-postlist.php:250
 msgid "There are no %ss."
+msgstr ""
+
+#: inc/vk-blocks/vk-blocks-functions.php:33
+msgid "Medium"
 msgstr ""
 
 #: inc/vk-blocks/vk-blocks-functions.php:232

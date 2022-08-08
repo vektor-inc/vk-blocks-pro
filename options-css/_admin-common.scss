@@ -11,6 +11,17 @@ body{
 		left:calc(var(--admin-sidebar-folded-width) + var(--admin-vk-blocks-snacbar-margin));
 	}
 }
+
+// カラーパレットを選択した時の円がズレるので編集画面と同じCSSを追加する
+// https://github.com/WordPress/gutenberg/blob/b452a86c0ab7c2fe4d2dc8b6c04afdbfa6403775/packages/edit-post/src/style.scss#L62-L71
+#vk-blocks-admin {
+	*,
+	*::after,
+	*::before {
+		box-sizing: border-box;
+	}
+}
+
 .vk_admin_selectControl {
 	width: 50%;
 }

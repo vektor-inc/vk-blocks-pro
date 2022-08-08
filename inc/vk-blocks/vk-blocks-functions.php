@@ -10,6 +10,7 @@
 // サーバーサイドレンダリングスクリプトを読み込み.
 require_once dirname( __FILE__ ) . '/view/class-vk-blocks-postlist.php';
 require_once dirname( __FILE__ ) . '/view/responsive-br.php';
+require_once dirname( __FILE__ ) . '/style/text-style.php';
 require_once dirname( __FILE__ ) . '/style/balloon.php';
 require_once dirname( __FILE__ ) . '/style/hidden-extension.php';
 require_once dirname( __FILE__ ) . '/class-vk-blocks-print-css-variables.php';
@@ -72,11 +73,7 @@ add_filter(
  */
 function vk_blocks_get_options() {
 	$options  = get_option( 'vk_blocks_options' );
-	$defaults = array(
-		'balloon_border_width' => 1,
-		'margin_unit'          => 'rem',
-	);
-	$defaults = array_merge( $defaults, apply_filters( 'vk_blocks_default_options', array() ) );
+	$defaults = VK_Blocks_Options::get_defaults( VK_Blocks_Options::options_scheme() );
 	$options  = wp_parse_args( $options, $defaults );
 	return $options;
 }

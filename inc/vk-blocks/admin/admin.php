@@ -71,6 +71,7 @@ function vk_blocks_setting_page() {
 		$get_menu_html .= '<li><a href="#license-setting">' . __( 'License Key', 'vk-blocks' ) . '</a></li>';
 	}
 	$get_menu_html .= '<li><a href="#balloon-setting">' . __( 'Balloon Block Setting', 'vk-blocks' ) . '</a></li>';
+	$get_menu_html .= '<li><a href="#text-style-setting">' . __( 'Text Style Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= '<li><a href="#margin-setting">' . __( 'Common Margin Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= '<li><a href="#load-separete-setting">' . __( 'Load Separete Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= apply_filters( 'vk_blocks_pro_menu', '' );
@@ -134,6 +135,11 @@ function vk_blocks_add_setting_link( $links, $file ) {
 }
 add_filter( 'plugin_action_links', 'vk_blocks_add_setting_link', 10, 2 );
 
+// Load composer autoload.
+require_once VK_BLOCKS_DIR_PATH . '/vendor/autoload.php';
+use VektorInc\VK_Color_Palette_Manager\VkColorPaletteManager;
+new VkColorPaletteManager();
+
 /**
  * Enqueue scripts
  *
@@ -163,6 +169,10 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 	);
 	wp_set_script_translations( 'vk-blocks-admin-js', 'vk-blocks', VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/languages' );
 
+	if ( function_exists( 'wp_get_global_settings' ) ) {
+		$vk_color_palette = wp_get_global_settings( array( 'color', 'palette' ) );
+	}
+
 	wp_localize_script(
 		'vk-blocks-admin-js',
 		'vkBlocksObject',
@@ -172,6 +182,9 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 			'imageNumber'      => VK_Blocks_Options::balloon_image_number(),
 			'isLicenseSetting' => vk_blocks_is_license_setting(),
 			'isPro'            => vk_blocks_is_pro(),
+			'textStyleNumber'  => VK_Blocks_Options::text_style_number(),
+			'vkColorPalette'   => VkColorPaletteManager::add_color_array(),
+			'colorPalette'     => $vk_color_palette,
 		)
 	);
 

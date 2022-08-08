@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VK Text Style VK Text Style 1`] = `
+"<!-- wp:paragraph -->
+<p><span class=\\"vk-text-style--1\\">1</span></p>
+<!-- /wp:paragraph -->"
+`;

@@ -104,8 +104,79 @@ class VK_Blocks_Options {
 				'default' => false,
 			),
 		);
+		$default_options_schema = array_merge( $default_options_schema, self::text_style_options_scheme() );
 		$array                  = array_merge( $default_options_schema, apply_filters( 'vk_blocks_default_options_scheme', array() ) );
 		return $array;
+	}
+
+	/**
+	 * よく使う書式設定数
+	 *
+	 * @return number
+	 */
+	public static function text_style_number() {
+		return apply_filters( 'vk_blocks_text_style_number', 5 );
+	}
+
+	/**
+	 * よく使う書式設定
+	 *
+	 * @return array
+	 */
+	public static function text_style_options_scheme() {
+		$number                     = self::text_style_number();
+		$return_array               = array();
+		$return_array['text_style'] = array(
+			'type' => 'object',
+		);
+		for ( $i = 1; $i <= $number; $i++ ) {
+			$return_array['text_style']['items'][ $i ] = array(
+				'type'  => 'object',
+				'items' => array(
+					'title'              => array(
+						'type'    => 'string',
+						'default' => null,
+					),
+					'active'             => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+					'font_weight_bold'   => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+					'font_italic'        => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+					'font_strikethrough' => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+					'color'              => array(
+						'type'    => 'string',
+						'default' => null,
+					),
+					'background_color'   => array(
+						'type'    => 'string',
+						'default' => null,
+					),
+					'highlighter'        => array(
+						'type'    => 'string',
+						'default' => null,
+					),
+					'font_size'          => array(
+						'type'    => 'string',
+						'default' => null,
+					),
+					'nowrap'             => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
+				),
+			);
+		};
+		return $return_array;
 	}
 
 	/**

@@ -94,6 +94,236 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 						'type'    => 'boolean',
 						'default' => false,
 					),
+					'text_style'          => array(
+						'type'  => 'object',
+						'items' => array(
+							'1' => array(
+								'type'  => 'object',
+								'items' => array(
+									'title'   => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'active'             => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
+									'font_weight_bold'   => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
+									'font_italic'        => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
+									'font_strikethrough' => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
+									'color'              => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'background_color'   => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'highlighter'        => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'font_size'          => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'nowrap'             => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
+								),
+							),
+							'2' => array(
+								'type'  => 'object',
+								'items' => array(
+									'title'   => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'active'             => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
+									'font_weight_bold'   => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
+									'font_italic'        => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
+									'font_strikethrough' => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
+									'color'              => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'background_color'   => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'highlighter'        => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'font_size'          => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'nowrap'             => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
+								),
+							),
+							'3' => array(
+								'type'  => 'object',
+								'items' => array(
+									'title'   => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'active'             => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
+									'font_weight_bold'   => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
+									'font_italic'        => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
+									'font_strikethrough' => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
+									'color'              => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'background_color'   => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'highlighter'        => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'font_size'          => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'nowrap'             => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
+								),
+							),
+							'4' => array(
+								'type'  => 'object',
+								'items' => array(
+									'title'   => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'active'             => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
+									'font_weight_bold'   => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
+									'font_italic'        => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
+									'font_strikethrough' => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
+									'color'              => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'background_color'   => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'highlighter'        => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'font_size'          => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'nowrap'             => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
+								),
+							),
+							'5' => array(
+								'type'  => 'object',
+								'items' => array(
+									'title'   => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'active'             => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
+									'font_weight_bold'   => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
+									'font_italic'        => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
+									'font_strikethrough' => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
+									'color'              => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'background_color'   => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'highlighter'        => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'font_size'          => array(
+										'type'    => 'string',
+										'default' => null,
+									),
+									'nowrap'             => array(
+										'type'    => 'boolean',
+										'default' => false,
+									),
+								),
+							),
+						),
+					),
 					'vk_blocks_pro_license_key' => array(
 						'type'    => 'string',
 						'default' => null,
@@ -136,6 +366,50 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 			// print PHP_EOL;
 			$this->assertSame( $correct, $return );
 
+		}
+	}
+
+	public function test_text_style_number() {
+		$test_data = array(
+			array(
+				'option' => null,
+				'correct' => 5,
+			),
+			array(
+				'option' => 2,
+				'correct' => 2,
+			),
+			array(
+				'option' => 10,
+				'correct' => 10,
+			),
+		);
+		print PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+		print 'text_style_number()' . PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+		foreach ( $test_data as $test_value ) {
+			if ( ! empty( $test_value['option'] ) ){
+				$number = isset( $test_value['option'] ) ? $test_value['option'] : null;
+				add_filter(
+					'vk_blocks_text_style_number',
+					function() use ( $number ) {
+						return $number;
+					}
+				);
+			}
+			$return  = VK_Blocks_Options::text_style_number();
+			$correct = $test_value['correct'];
+
+			// print 'return  :';
+			// print PHP_EOL;
+			// var_dump( $return );
+			// print PHP_EOL;
+			// print 'correct  :';
+			// print PHP_EOL;
+			// var_dump( $correct );
+			// print PHP_EOL;
+			$this->assertSame( $correct, $return );
 		}
 	}
 

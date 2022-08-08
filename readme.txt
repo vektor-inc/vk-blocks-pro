@@ -65,6 +65,7 @@ e.g.
 == Changelog ==
 
 [ Add Function ][ Balloon ] Add width option.
+[ Specification Change ][ Breadcrumb(Pro) ] Hidden front page breadcrumb.
 
 = 1.40.1 =
 [ Specification Change ][Step(Pro)/Timeline(Pro)] Change lineStyle ui.

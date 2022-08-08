@@ -65,6 +65,7 @@ e.g.
 == Changelog ==
 
 [ Bug Fix ][ highlighter ] cope with color palette with alpha.
+[ Add Function ][ Balloon ] Add width option.
 [ Specification Change ][ Breadcrumb(Pro) ] Hidden front page breadcrumb.
 
 = 1.40.1 =

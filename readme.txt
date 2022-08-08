@@ -65,6 +65,7 @@ e.g.
 == Changelog ==
 
 [ Bug Fix ][ highlighter ] cope with color palette with alpha.
+[ Specification Change ][ Breadcrumb(Pro) ] Hidden front page breadcrumb.
 
 = 1.40.1 =
 [ Specification Change ][Step(Pro)/Timeline(Pro)] Change lineStyle ui.

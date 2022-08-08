@@ -1,7 +1,7 @@
 /**
  * WordPress dependencies
  */
-import { __ , sprintf} from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import { useContext } from '@wordpress/element';
 
 /**
@@ -73,9 +73,7 @@ export default function TextStylePreview(props) {
 				>
 					{sprintf(
 						/* translators: %s: number of i. */
-						__(
-							'Preview Text %s'
-						),
+						__('Preview Text %s'),
 						i
 					)}
 				</span>

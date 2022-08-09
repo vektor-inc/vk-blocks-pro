@@ -32,20 +32,20 @@ function vk_blocks_text_style() {
 				$dynamic_css .= 'font-size:' . $text_style['font_size'] . ';';
 			}
 			if ( ! empty( $text_style['color'] ) ) {
-				$dynamic_css .= 'color: ' . vk_blocks_get_color_value( $text_style['color'] ) . ';';
+				$dynamic_css .= 'color:' . vk_blocks_get_color_value( $text_style['color'] ) . ';';
 			}
-			$highlighter_color = $text_style['highlighter'] ? $text_style['highlighter'] : '#fffd6b';
+			$highlighter_color = ! empty( $text_style['highlighter'] ) && $text_style['highlighter'] ? $text_style['highlighter'] : '#fffd6b';
 			if ( $text_style['active_highlighter'] && ! empty( $text_style['background_color'] ) ) {
 				// background_colorとhighlighter両方
-				$dynamic_css .= 'background: linear-gradient(' . vk_blocks_get_color_value( $text_style['background_color'] ) . ' 60%, ' . vk_blocks_get_hex_to_rgb( $highlighter_color, '0.7' ) . ' 0);';
+				$dynamic_css .= 'background:linear-gradient(' . vk_blocks_get_color_value( $text_style['background_color'] ) . ' 60%, ' . vk_blocks_get_hex_to_rgb( $highlighter_color, '0.7' ) . ' 0);';
 			}
 			if ( ! $text_style['active_highlighter'] && ! empty( $text_style['background_color'] ) ) {
 				// background_colorのみ
-				$dynamic_css .= 'background: ' . vk_blocks_get_color_value( $text_style['background_color'] ) . ';';
+				$dynamic_css .= 'background:' . vk_blocks_get_color_value( $text_style['background_color'] ) . ';';
 			}
 			if ( $text_style['active_highlighter'] && empty( $text_style['background_color'] ) ) {
 				// highlighterのみ
-				$dynamic_css .= 'background: linear-gradient(transparent 60%, ' . vk_blocks_get_hex_to_rgb( $highlighter_color, '0.7' ) . ' 0);';
+				$dynamic_css .= 'background:linear-gradient(transparent 60%, ' . vk_blocks_get_hex_to_rgb( $highlighter_color, '0.7' ) . ' 0);';
 			}
 			$dynamic_css .= '}';
 		}

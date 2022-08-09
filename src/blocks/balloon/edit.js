@@ -26,6 +26,7 @@ export default function BalloonEdit(props) {
 		balloonName,
 		balloonType,
 		balloonBorder,
+		balloonFullWidth,
 		balloonImageBorder,
 		balloonBorderColor,
 		balloonBgColor,
@@ -397,6 +398,11 @@ export default function BalloonEdit(props) {
 		}
 	}
 
+	// 吹き出しの幅 Class
+	if (!!balloonFullWidth) {
+		contentBorderClass += ` vk_balloon_content_fullwidth`;
+	}
+
 	const blockProps = useBlockProps({
 		className: `vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation}`,
 	});
@@ -503,6 +509,19 @@ export default function BalloonEdit(props) {
 							{__('Circle', 'vk-blocks')}
 						</Button>
 					</ButtonGroup>
+
+					<BaseControl>
+						<p className={'mb-1 block-prop-title'}>
+							{__('Width', 'vk-blocks')}
+						</p>
+						<ToggleControl
+							label={__('100%', 'vk-blocks')}
+							checked={balloonFullWidth}
+							onChange={(checked) =>
+								setAttributes({ balloonFullWidth: checked })
+							}
+						/>
+					</BaseControl>
 
 					{BorderSetting}
 

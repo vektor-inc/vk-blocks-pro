@@ -65,6 +65,7 @@ e.g.
 == Changelog ==
 
 [ Bug Fix ][ Outer (Pro) ] Fixed the border color of the Outer block within the Outer block was not attached.
+[ Add Function ][ Balloon ] Add width option.
 [ Specification Change ][ Breadcrumb(Pro) ] Hidden front page breadcrumb.
 
 = 1.40.1 =

@@ -391,8 +391,20 @@ export default function AdminTextStyle() {
 												'vk-blocks'
 											)}
 										>
-											<ColorPalette
-												colors={colorPalette}
+											<ToggleControl
+												name={`vk_blocks_options[text_style][${i}][active_highlighter]`}
+												id={`vk_blocks_text_style_${i}_active_highlighter`}
+												label={__(
+													'Activate Highlighter',
+													'vk-blocks'
+												)}
+												checked={
+													!!vkBlocksOption.text_style[
+														i
+													].active_highlighter &&
+													vkBlocksOption.text_style[i]
+														.active_highlighter
+												}
 												onChange={(newValue) => {
 													setVkBlocksOption({
 														...vkBlocksOption,
@@ -403,26 +415,54 @@ export default function AdminTextStyle() {
 																	.text_style[
 																	i
 																],
-																highlighter:
+																active_highlighter:
 																	newValue,
 															},
 														},
 													});
 												}}
-												value={
-													vkBlocksOption.text_style[i]
-														.highlighter === '' ||
-													vkBlocksOption.text_style[i]
-														.highlighter ===
-														undefined ||
-													vkBlocksOption.text_style[i]
-														.highlighter === null
-														? ''
-														: vkBlocksOption
-																.text_style[i]
-																.highlighter
-												}
 											/>
+											{vkBlocksOption.text_style[i]
+												.active_highlighter && (
+												<ColorPalette
+													colors={colorPalette}
+													onChange={(newValue) => {
+														setVkBlocksOption({
+															...vkBlocksOption,
+															text_style: {
+																...vkBlocksOption.text_style,
+																[i]: {
+																	...vkBlocksOption
+																		.text_style[
+																		i
+																	],
+																	highlighter:
+																		newValue,
+																},
+															},
+														});
+													}}
+													value={
+														vkBlocksOption
+															.text_style[i]
+															.highlighter ===
+															'' ||
+														vkBlocksOption
+															.text_style[i]
+															.highlighter ===
+															undefined ||
+														vkBlocksOption
+															.text_style[i]
+															.highlighter ===
+															null
+															? '#fffd6b'
+															: vkBlocksOption
+																	.text_style[
+																	i
+															  ].highlighter
+													}
+												/>
+											)}
 										</BaseControl>
 									</PanelBody>
 								</div>

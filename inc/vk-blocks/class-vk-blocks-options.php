@@ -161,9 +161,13 @@ class VK_Blocks_Options {
 						'type'    => 'string',
 						'default' => null,
 					),
+					'active_highlighter' => array(
+						'type'    => 'boolean',
+						'default' => false,
+					),
 					'highlighter'        => array(
 						'type'    => 'string',
-						'default' => null,
+						'default' => '#fffd6b',
 					),
 					'font_size'          => array(
 						'type'    => 'string',

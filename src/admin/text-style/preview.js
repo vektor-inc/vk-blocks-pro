@@ -15,30 +15,37 @@ export default function TextStylePreview(props) {
 	const { vkBlocksOption } = useContext(AdminContext);
 	const { i } = props;
 
+	let highlighterColor;
+	if (!!vkBlocksOption.text_style[i].highlighter) {
+		highlighterColor = vkBlocksOption.text_style[i].highlighter;
+	} else {
+		highlighterColor = '#fffd6b';
+	}
+
 	let backgroundProperty = '';
 	if (
-		!!vkBlocksOption.text_style[i].background_color &&
-		!!vkBlocksOption.text_style[i].highlighter
+		vkBlocksOption.text_style[i].active_highlighter &&
+		!!vkBlocksOption.text_style[i].background_color
 	) {
-		// background_colorとhighlighter両方ある時
+		// background_colorとhighlighter両方
 		backgroundProperty = `linear-gradient(${colorSlugToColorCode(
 			vkBlocksOption.text_style[i].background_color
-		)} 60%,${hex2rgba(vkBlocksOption.text_style[i].highlighter, 0.7)} 0)`;
+		)} 60%,${hex2rgba(highlighterColor, 0.7)} 0)`;
 	} else if (
-		!!vkBlocksOption.text_style[i].background_color &&
-		!!!vkBlocksOption.text_style[i].highlighter
+		!vkBlocksOption.text_style[i].active_highlighter &&
+		!!vkBlocksOption.text_style[i].background_color
 	) {
-		// background_colorのみある時
+		// background_colorのみ
 		backgroundProperty = `${colorSlugToColorCode(
 			vkBlocksOption.text_style[i].background_color
 		)}`;
 	} else if (
-		!!!vkBlocksOption.text_style[i].background_color &&
-		!!vkBlocksOption.text_style[i].highlighter
+		vkBlocksOption.text_style[i].active_highlighter &&
+		!!!vkBlocksOption.text_style[i].background_color
 	) {
-		// highlighterのみある時
+		// highlighterのみ
 		backgroundProperty = `linear-gradient(transparent 60%,${hex2rgba(
-			vkBlocksOption.text_style[i].highlighter,
+			highlighterColor,
 			0.7
 		)} 0)`;
 	}

@@ -10,12 +10,14 @@
  */
 function vk_blocks_text_style() {
 	$vk_blocks_options = vk_blocks_get_options();
-	$number            = 0;
 	$dynamic_css       = '';
 	foreach ( $vk_blocks_options['text_style'] as $text_style ) {
-		$number++;
 		if ( $text_style['active'] ) {
-			$dynamic_css .= '.vk-text-style--' . $number . '{';
+			if ( $text_style['class_name'] ) {
+				$dynamic_css .= '.' . $text_style['class_name'] . '{';
+			} else {
+				$dynamic_css .= '.vk-text-style--' . $text_style['index'] . '{';
+			}
 			if ( $text_style['font_weight_bold'] ) {
 				$dynamic_css .= 'font-weight:bold;';
 			}

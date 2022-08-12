@@ -182,7 +182,6 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 			'imageNumber'      => VK_Blocks_Options::balloon_image_number(),
 			'isLicenseSetting' => vk_blocks_is_license_setting(),
 			'isPro'            => vk_blocks_is_pro(),
-			'textStyleNumber'  => VK_Blocks_Options::text_style_number(),
 			'vkColorPalette'   => VkColorPaletteManager::add_color_array(),
 			'colorPalette'     => $vk_color_palette,
 		)

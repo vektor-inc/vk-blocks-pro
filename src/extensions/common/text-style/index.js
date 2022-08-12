@@ -12,18 +12,19 @@ import { Icon } from '@wordpress/components';
 import { ReactComponent as IconSVG } from './icon.svg';
 /*globals vkBlocksOptions */
 
-Object.keys(vkBlocksOptions.textStyle).forEach((index) => {
-	const textStyle = vkBlocksOptions.textStyle[index];
-	if (!!textStyle.active) {
-		const name = `vk-blocks/text-style-${index}`;
-		const title = textStyle.title
-			? textStyle.title
+vkBlocksOptions.textStyle.forEach((option) => {
+	if (!!option.active) {
+		const name = `vk-blocks/text-style-${option.index}`;
+		const title = option.title
+			? option.title
 			: sprintf(
 					/* translators: %s: number of index. */
 					__('Custom Text Style %s'),
-					index
+					option.index
 			  );
-		const className = `vk-text-style--${index}`;
+		const className = option.class_name
+			? option.class_name
+			: `vk-text-style--${option.index}`;
 
 		registerFormatType(name, {
 			title,

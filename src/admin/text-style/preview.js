@@ -1,7 +1,7 @@
 /**
  * WordPress dependencies
  */
-import { __, sprintf } from '@wordpress/i18n';
+import { __ } from '@wordpress/i18n';
 import { useContext } from '@wordpress/element';
 
 /**
@@ -52,9 +52,19 @@ export default function TextStylePreview(props) {
 
 	return (
 		<div className="text_style_item_preview">
-			<p>
+			<p
+				className={
+					vkBlocksOption.text_style[i].active
+						? 'active-text-style'
+						: null
+				}
+			>
 				<span
-					className={`vk-text-style--${i}`}
+					className={
+						vkBlocksOption.text_style[i].class_name
+							? vkBlocksOption.text_style[i].class_name
+							: `vk-text-style--${vkBlocksOption.text_style[i].index}`
+					}
 					style={{
 						fontWeight:
 							vkBlocksOption.text_style[i].font_weight_bold &&
@@ -78,11 +88,7 @@ export default function TextStylePreview(props) {
 						background: backgroundProperty,
 					}}
 				>
-					{sprintf(
-						/* translators: %s: number of i. */
-						__('Preview Text %s'),
-						i
-					)}
+					{__('Preview Text', 'vk-blocks')}
 				</span>
 			</p>
 		</div>

@@ -103,36 +103,13 @@ class VK_Blocks_Options {
 				'type'    => 'boolean',
 				'default' => false,
 			),
-		);
-		$default_options_schema = array_merge( $default_options_schema, self::text_style_options_scheme() );
-		$array                  = array_merge( $default_options_schema, apply_filters( 'vk_blocks_default_options_scheme', array() ) );
-		return $array;
-	}
-
-	/**
-	 * よく使う書式設定数
-	 *
-	 * @return number
-	 */
-	public static function text_style_number() {
-		return apply_filters( 'vk_blocks_text_style_number', 5 );
-	}
-
-	/**
-	 * よく使う書式設定
-	 *
-	 * @return array
-	 */
-	public static function text_style_options_scheme() {
-		$number                     = self::text_style_number();
-		$return_array               = array();
-		$return_array['text_style'] = array(
-			'type' => 'object',
-		);
-		for ( $i = 1; $i <= $number; $i++ ) {
-			$return_array['text_style']['items'][ $i ] = array(
-				'type'  => 'object',
+			'text_style'           => array(
+				'type'  => 'array',
 				'items' => array(
+					'index'              => array(
+						'type'    => 'integer',
+						'default' => 1,
+					),
 					'title'              => array(
 						'type'    => 'string',
 						'default' => null,
@@ -177,10 +154,15 @@ class VK_Blocks_Options {
 						'type'    => 'boolean',
 						'default' => false,
 					),
+					'class_name'         => array(
+						'type'    => 'string',
+						'default' => null,
+					),
 				),
-			);
-		};
-		return $return_array;
+			),
+		);
+		$array                  = array_merge( $default_options_schema, apply_filters( 'vk_blocks_default_options_scheme', array() ) );
+		return $array;
 	}
 
 	/**
@@ -231,7 +213,13 @@ class VK_Blocks_Options {
 	public static function get_defaults( $schema ) {
 		$default = array();
 		foreach ( $schema as $key => $value ) {
-			$default[ $key ] = 'object' === $value['type'] ? self::get_defaults( $value['items'] ) : $value['default'];
+			if ( 'object' === $value['type'] ) {
+				$default[ $key ] = self::get_defaults( $value['items'] );
+			} elseif ( 'array' === $value['type'] && $value['items'] ) {
+				$default[ $key ] = array( self::get_defaults( $value['items'] ) );
+			} else {
+				$default[ $key ] = $value['default'];
+			}
 		}
 		return $default;
 	}
@@ -252,6 +240,17 @@ class VK_Blocks_Options {
 
 			if ( 'object' === $value['type'] ) {
 				$properties[ $key ]['properties'] = self::get_properties( $value['items'] );
+			}
+
+			if ( 'array' === $value['type'] && $value['items'] ) {
+				$properties[ $key ]['items'] = array(
+					'type' => 'object',
+				);
+				foreach ( $value['items'] as $key_1 => $value_2 ) {
+					$properties[ $key ]['items']['properties'][ $key_1 ] = array(
+						'type' => $value_2['type'],
+					);
+				}
 			}
 		}
 		return $properties;

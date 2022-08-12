@@ -114,9 +114,13 @@ export default function AdminTextStyle() {
 													onChange('title', value, i)
 												}
 												value={
-													!!vkBlocksOption.text_style[i]
-														.title ? vkBlocksOption.text_style[i]
-														.title : ''
+													!!vkBlocksOption.text_style[
+														i
+													].title
+														? vkBlocksOption
+																.text_style[i]
+																.title
+														: ''
 												}
 											/>
 											<Button
@@ -373,9 +377,13 @@ export default function AdminTextStyle() {
 													)
 												}
 												value={
-													!!vkBlocksOption.text_style[i]
-														.class_name ? vkBlocksOption.text_style[i]
-														.class_name : ''
+													!!vkBlocksOption.text_style[
+														i
+													].class_name
+														? vkBlocksOption
+																.text_style[i]
+																.class_name
+														: ''
 												}
 											/>
 										</BaseControl>

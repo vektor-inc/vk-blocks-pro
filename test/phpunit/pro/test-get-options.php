@@ -14,8 +14,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 				'correct' => array(
 					'balloon_border_width' => 1,
 					'margin_unit' => 'rem',
-					'display_vk_block_template' => 'display',
-					'new_faq_accordion' => 'disable',
 					'margin_size' => array(
 						'lg' => array(
 							'mobile' => null,
@@ -35,14 +33,14 @@ class GetOptionsTest extends WP_UnitTestCase {
 					),
 					'load_separate_option' => false,
 					'vk_blocks_pro_license_key' => null,
+					'display_vk_block_template' => 'display',
+					'new_faq_accordion' => 'disable',
 				),
 			),
 			array(
 				'option'  => array(
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
-					'display_vk_block_template' => 'display',
-					'new_faq_accordion' => 'open',
 					'margin_size' => array(
 						'lg' => array(
 							'mobile' => 1,
@@ -61,12 +59,13 @@ class GetOptionsTest extends WP_UnitTestCase {
 						),
 					),
 					'load_separate_option' => true,
+					'vk_blocks_pro_license_key' => 'test_license_key',
+					'display_vk_block_template' => 'display',
+					'new_faq_accordion' => 'open',
 				),
 				'correct' => array(
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
-					'display_vk_block_template' => 'display',
-					'new_faq_accordion' => 'open',
 					'margin_size' => array(
 						'lg' => array(
 							'mobile' => 1,
@@ -85,6 +84,9 @@ class GetOptionsTest extends WP_UnitTestCase {
 						),
 					),
 					'load_separate_option' => true,
+					'vk_blocks_pro_license_key' => 'test_license_key',
+					'display_vk_block_template' => 'display',
+					'new_faq_accordion' => 'open',
 				),
 			),
 		);
@@ -103,14 +105,14 @@ class GetOptionsTest extends WP_UnitTestCase {
 			$return  = vk_blocks_get_options();
 			$correct = $test_value['correct'];
 
-			print 'return  :';
-			print PHP_EOL;
-			var_dump( $return );
-			print PHP_EOL;
-			print 'correct  :';
-			print PHP_EOL;
-			var_dump( $correct );
-			print PHP_EOL;
+			// print 'return  :';
+			// print PHP_EOL;
+			// var_dump( $return );
+			// print PHP_EOL;
+			// print 'correct  :';
+			// print PHP_EOL;
+			// var_dump( $correct );
+			// print PHP_EOL;
 			$this->assertSame( $correct, $return );
 
 		}

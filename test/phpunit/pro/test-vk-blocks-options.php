@@ -540,6 +540,19 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 							'c'
 						),
 					),
+					'some_array_in_object' => array(
+						'type'    => 'array',
+						'items' => array(
+							'some_array_in_object_child_1' => array(
+								'type'    => 'integer',
+								'default' => 1,
+							),
+							'some_array_in_object_child_2' => array(
+								'type'    => 'string',
+								'default' => 'some_array_in_object_child_2_text',
+							),
+						),
+					),
 					'some_object_1' => array(
 						'type'  => 'object',
 						'items' => array(
@@ -580,6 +593,12 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 						'a',
 						'b',
 						'c'
+					),
+					'some_array_in_object'  => array(
+						array(
+							'some_array_in_object_child_1' => 1,
+							'some_array_in_object_child_2' => 'some_array_in_object_child_2_text',
+						),
 					),
 					'some_object_1'  => array(
 						'some_object_1_grand_child_1' => 'some_object_1_grand_child_1_text',
@@ -637,6 +656,19 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 							'c'
 						),
 					),
+					'some_array_in_object' => array(
+						'type'    => 'array',
+						'items' => array(
+							'some_array_in_object_child_1' => array(
+								'type'    => 'integer',
+								'default' => 1,
+							),
+							'some_array_in_object_child_2' => array(
+								'type'    => 'string',
+								'default' => 'some_array_in_object_child_2_text',
+							),
+						),
+					),
 					'some_object_1' => array(
 						'type'  => 'object',
 						'items' => array(
@@ -681,6 +713,20 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 					),
 					'some_array' => array(
 						'type' => 'array',
+					),
+					'some_array_in_object' => array(
+						'type' => 'array',
+						'items' => array(
+							'type' => 'object',
+							'properties' => array(
+								'some_array_in_object_child_1' => array(
+									'type' => 'integer',
+								),
+								'some_array_in_object_child_2' => array(
+									'type' => 'string',
+								),
+							),
+						),
 					),
 					'some_object_1'  => array(
 						'type' => 'object',

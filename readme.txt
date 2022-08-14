@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ] Fatal error in WordPress 5.8
 [ Bug Fix ][ highlighter ] cope with color palette with alpha.
 
 = 1.41.1 =

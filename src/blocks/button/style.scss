@@ -404,3 +404,9 @@ $xxl-min: 1400px;
 		display: inline-block;
 	}
 }
+
+// 背景色が不明の場合
+ .has-background,
+.editor-styles-wrapper .has-background {
+	background-color: var(--vk-color-primary);
+}	

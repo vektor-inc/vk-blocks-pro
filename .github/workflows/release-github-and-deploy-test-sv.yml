@@ -1,4 +1,4 @@
-name: Release test GitHub and Deploy to test server
+name: Release GitHub and Deploy to test server
 on:
   # push:
   #   tags:
@@ -50,7 +50,7 @@ jobs:
         chmod +x wp-cli.phar
         mv wp-cli.phar /usr/local/bin/wp
 
-    - name: Make Distribution
+    # - name: Make Distribution
     # npm run dist の中で npm run build して composer install --no-dev した上で dist して （ compose install しなおして ） いる
     # build 漏れの状態で dist してしまう事がないように dist の中に build を含めている
     #   run: | 

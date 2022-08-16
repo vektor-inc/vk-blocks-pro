@@ -1,4 +1,4 @@
-name: Release GitHub and Deploy to test server
+name: Release test GitHub and Deploy to test server
 on:
   # push:
   #   tags:

@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Other ] Add PHPUnit test on Several PHP and WordPress 
 [ Bug Fix ][ highlighter ] cope with color palette with alpha.
 
 = 1.41.1 =

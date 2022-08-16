@@ -60,45 +60,45 @@ jobs:
 
     # [ End ] pre_ リリース と 本リリースで同じ処理 ##########################################
 
-    # - name: Create GitHub Release
-    #   id: create_release
-    #   uses: actions/create-release@v1
-    #   env:
-    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    #   with:
-    #     tag_name: ${{ github.ref }}
-    #     release_name: Release ${{ github.ref }}
-    #     draft: false
-    #     prerelease: false
-    # - name: Upload Release Asset
-    #   id: upload-release-asset
-    #   uses: actions/upload-release-asset@v1.0.1
-    #   env:
-    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    #   with:
-    #     upload_url: ${{ steps.create_release.outputs.upload_url }}
-    #     asset_path: ${{ env.plugin_name }}.zip
-    #     asset_name: ${{ env.plugin_name }}.zip
-    #     asset_content_type: application/zip
+    - name: Create GitHub Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+    - name: Upload Release Asset
+      id: upload-release-asset
+      uses: actions/upload-release-asset@v1.0.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ${{ env.plugin_name }}.zip
+        asset_name: ${{ env.plugin_name }}.zip
+        asset_content_type: application/zip
 
-    # - name: Deploy to test server [ VK Blocks Pro (Single) ]
-    #   uses: burnett01/rsync-deployments@4.1
-    #   with:
-    #     switches: -avzr
-    #     path: /dist/vk-blocks-pro/
-    #     remote_path: /home/vs4/www/test/vk-blocks-pro/wp-content/plugins/vk-blocks-pro/
-    #     remote_host: ${{ secrets.DEPLOY_HOST_VS4 }}
-    #     remote_port: ${{ secrets.DEPLOY_PORT_VS4 }}
-    #     remote_user: ${{ secrets.DEPLOY_USER_VS4 }}
-    #     remote_key: ${{ secrets.DEPLOY_KEY_VS4 }}
+    - name: Deploy to test server [ VK Blocks Pro (Single) ]
+      uses: burnett01/rsync-deployments@4.1
+      with:
+        switches: -avzr
+        path: /dist/vk-blocks-pro/
+        remote_path: /home/vs4/www/test/vk-blocks-pro/wp-content/plugins/vk-blocks-pro/
+        remote_host: ${{ secrets.DEPLOY_HOST_VS4 }}
+        remote_port: ${{ secrets.DEPLOY_PORT_VS4 }}
+        remote_user: ${{ secrets.DEPLOY_USER_VS4 }}
+        remote_key: ${{ secrets.DEPLOY_KEY_VS4 }}
 
-    # - name: Deploy to test server [ Lightning G3 Pro ]
-    #   uses: burnett01/rsync-deployments@4.1
-    #   with:
-    #     switches: -avzr
-    #     path: /dist/vk-blocks-pro/
-    #     remote_path: /home/vs4/www/test/lightning-g3-pro/wp-content/plugins/vk-blocks-pro/
-    #     remote_host: ${{ secrets.DEPLOY_HOST_VS4 }}
-    #     remote_port: ${{ secrets.DEPLOY_PORT_VS4 }}
-    #     remote_user: ${{ secrets.DEPLOY_USER_VS4 }}
-    #     remote_key: ${{ secrets.DEPLOY_KEY_VS4 }}
+    - name: Deploy to test server [ Lightning G3 Pro ]
+      uses: burnett01/rsync-deployments@4.1
+      with:
+        switches: -avzr
+        path: /dist/vk-blocks-pro/
+        remote_path: /home/vs4/www/test/lightning-g3-pro/wp-content/plugins/vk-blocks-pro/
+        remote_host: ${{ secrets.DEPLOY_HOST_VS4 }}
+        remote_port: ${{ secrets.DEPLOY_PORT_VS4 }}
+        remote_user: ${{ secrets.DEPLOY_USER_VS4 }}
+        remote_key: ${{ secrets.DEPLOY_KEY_VS4 }}

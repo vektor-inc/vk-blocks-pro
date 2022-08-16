@@ -1,11 +1,8 @@
 name: Release GitHub and Deploy to test server
 on:
-  # push:
-  #   tags:
-  #   - "pre_[0-9]+.[0-9]+.[0-9]+.[0-9]+"
   push:
-    branches:
-      - test/github-wp-env
+    tags:
+    - "pre_[0-9]+.[0-9]+.[0-9]+.[0-9]+"
 env:
   plugin_name: vk-blocks-pro
 

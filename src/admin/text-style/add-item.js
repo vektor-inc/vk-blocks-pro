@@ -12,7 +12,7 @@ import { plusCircle } from '@wordpress/icons';
 import { AdminContext } from '@vkblocks/admin/index';
 import { schema } from '@vkblocks/admin/text-style/schema';
 
-export default function AddTextStyleItem() {
+export const AddItemButton = () => {
 	const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
 
 	// indexは被らないように設定されているindexの最大値+1を設定する
@@ -24,10 +24,12 @@ export default function AddTextStyleItem() {
 	});
 
 	const addItem = () => {
+		const addIndex = maxIndex + 1;
 		vkBlocksOption.text_style.push({
 			...schema,
 			...{
-				index: maxIndex + 1,
+				index: addIndex,
+				class_name: `vk-text-style--${addIndex}`,
 			},
 		});
 		setVkBlocksOption({ ...vkBlocksOption });
@@ -40,12 +42,10 @@ export default function AddTextStyleItem() {
 				icon={plusCircle}
 				iconSize={18}
 				variant="secondary"
-				onClick={() => {
-					addItem();
-				}}
+				onClick={addItem}
 			>
 				{__('Add Text Style', 'vk-blocks')}
 			</Button>
 		</div>
 	);
-}
+};

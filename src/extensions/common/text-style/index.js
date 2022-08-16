@@ -12,45 +12,47 @@ import { Icon } from '@wordpress/components';
 import { ReactComponent as IconSVG } from './icon.svg';
 /*globals vkBlocksOptions */
 
-vkBlocksOptions.textStyle.forEach((option) => {
-	if (!!option.active) {
-		const name = `vk-blocks/text-style-${option.index}`;
-		const title = option.title
-			? option.title
-			: sprintf(
-					/* translators: %s: number of index. */
-					__('Custom Text Style %s'),
-					option.index
-			  );
-		const className = option.class_name
-			? option.class_name
-			: `vk-text-style--${option.index}`;
+if (window.vkBlocksOptions) {
+	vkBlocksOptions.textStyle.forEach((option) => {
+		if (!!option.active) {
+			const name = option.class_name && `vk-blocks/${option.class_name}`;
+			const title = option.title
+				? option.title
+				: sprintf(
+						/* translators: %s: number of index. */
+						__('Custom Text Style %s'),
+						option.index
+				  );
+			const className = option.class_name
+				? option.class_name
+				: `vk-text-style--${option.index}`;
 
-		registerFormatType(name, {
-			title,
-			tagName: 'span',
-			className,
-			edit(props) {
-				const { value, isActive } = props;
-				return (
-					<>
-						<RichTextToolbarButton
-							icon={
-								<>
-									<Icon icon={IconSVG} />
-								</>
-							}
-							title={title}
-							onClick={() => {
-								props.onChange(
-									toggleFormat(value, { type: name })
-								);
-							}}
-							isActive={isActive}
-						/>
-					</>
-				);
-			},
-		});
-	}
-});
+			registerFormatType(name, {
+				title,
+				tagName: 'span',
+				className,
+				edit(props) {
+					const { value, isActive } = props;
+					return (
+						<>
+							<RichTextToolbarButton
+								icon={
+									<>
+										<Icon icon={IconSVG} />
+									</>
+								}
+								title={title}
+								onClick={() => {
+									props.onChange(
+										toggleFormat(value, { type: name })
+									);
+								}}
+								isActive={isActive}
+							/>
+						</>
+					);
+				},
+			});
+		}
+	});
+}

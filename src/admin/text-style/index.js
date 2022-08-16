@@ -11,7 +11,6 @@ import {
 	ToggleControl,
 	ColorPalette,
 	TextControl,
-	Button,
 } from '@wordpress/components';
 import { getColorObjectByColorValue } from '@wordpress/block-editor';
 
@@ -19,11 +18,13 @@ import { getColorObjectByColorValue } from '@wordpress/block-editor';
  * Internal dependencies
  */
 import { AdminContext } from '@vkblocks/admin/index';
-import TextStylePreview from '@vkblocks/admin/text-style/preview';
+import { TextStylePreview } from '@vkblocks/admin/text-style/preview';
 import { colorPalette } from '@vkblocks/admin/utils/settings';
 import { colorSlugToColorCode } from '@vkblocks/admin/utils/color-slug-to-color-code';
 import { SaveButton } from '@vkblocks/admin/save-button';
-import AddTextStyleItem from '@vkblocks/admin/text-style/add-item';
+import { AddItemButton } from '@vkblocks/admin/text-style/add-item';
+import { DeleteItemButton } from '@vkblocks/admin/text-style/delete-item-button';
+import { ClassNameControl } from '@vkblocks/admin/text-style/class-name-control';
 
 export default function AdminTextStyle() {
 	const { vkBlocksOption, setVkBlocksOption, vkBlocksBalloonMeta } =
@@ -106,6 +107,10 @@ export default function AdminTextStyle() {
 												className="text_style_item_name"
 												name={`vk_blocks_options[text_style][${i}][title]`}
 												id={`vk_blocks_text_style_${i}_title`}
+												help={__(
+													'※ Required',
+													'vk-blocks'
+												)}
 												label={__(
 													'Toolbar title',
 													'vk-blocks'
@@ -123,21 +128,7 @@ export default function AdminTextStyle() {
 														: ''
 												}
 											/>
-											<Button
-												className="delete-item-button"
-												isDestructive
-												onClick={() => {
-													vkBlocksOption.text_style.splice(
-														i,
-														1
-													);
-													setVkBlocksOption({
-														...vkBlocksOption,
-													});
-												}}
-											>
-												{__('Delete', 'vk-blocks')}
-											</Button>
+											<DeleteItemButton i={i} />
 										</BaseControl>
 									</PanelBody>
 									<PanelBody
@@ -356,36 +347,8 @@ export default function AdminTextStyle() {
 										title={__('Advanced', 'vk-blocks')}
 										initialOpen={false}
 									>
-										<BaseControl id="format-setting">
-											<TextControl
-												className="text_style_item_class_name"
-												name={`vk_blocks_options[text_style][${i}][class_name]`}
-												id={`vk_blocks_text_style_${i}_class_name`}
-												label={__(
-													'CSS class(es)',
-													'vk-blocks'
-												)}
-												help={__(
-													'If you are using this formatting for saved content, changing the class name may change the style.',
-													'vk-blocks'
-												)}
-												onChange={(value) =>
-													onChange(
-														'class_name',
-														value,
-														i
-													)
-												}
-												value={
-													!!vkBlocksOption.text_style[
-														i
-													].class_name
-														? vkBlocksOption
-																.text_style[i]
-																.class_name
-														: ''
-												}
-											/>
+										<BaseControl id="class-name-setting">
+											<ClassNameControl i={i} />
 										</BaseControl>
 									</PanelBody>
 								</div>
@@ -394,7 +357,7 @@ export default function AdminTextStyle() {
 					}
 					return items;
 				})()}
-				<AddTextStyleItem />
+				<AddItemButton />
 			</section>
 			<SaveButton
 				vkBlocksOption={vkBlocksOption}

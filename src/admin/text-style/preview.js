@@ -11,7 +11,7 @@ import { AdminContext } from '@vkblocks/admin/index';
 import { colorSlugToColorCode } from '@vkblocks/admin/utils/color-slug-to-color-code';
 import hex2rgba from '@vkblocks/utils/hex-to-rgba';
 
-export default function TextStylePreview(props) {
+export const TextStylePreview = (props) => {
 	const { vkBlocksOption } = useContext(AdminContext);
 	const { i } = props;
 
@@ -93,4 +93,4 @@ export default function TextStylePreview(props) {
 			</p>
 		</div>
 	);
-}
+};

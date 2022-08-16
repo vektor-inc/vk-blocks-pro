@@ -20,7 +20,8 @@ $xxl-min: 1400px;
 
 :root,
 :root .editor-styles-wrapper {
-	.has-vk-color-primary-background-color {
+	.has-vk-color-primary-background-color,
+	.has-undefined-background-color {
 		background-color: var(--vk-color-primary);
 	}
 	.has-vk-color-secondary-background-color {
@@ -367,6 +368,8 @@ $xxl-min: 1400px;
 			user-select: text;
 			text-decoration: none;
 			font-size: calc( var(--vk-size-text) * 1 );
+
+			
 		}
 		&.btn-lg{
 			font-size:calc( var(--vk-size-text) * 1.25 );
@@ -404,9 +407,3 @@ $xxl-min: 1400px;
 		display: inline-block;
 	}
 }
-
-// 背景色が不明の場合
- .has-background,
-.editor-styles-wrapper .has-background {
-	background-color: var(--vk-color-primary);
-}	

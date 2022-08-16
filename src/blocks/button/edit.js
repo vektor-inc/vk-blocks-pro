@@ -75,7 +75,6 @@ export default function ButtonEdit(props) {
 			setAttributes({ buttonUrl: undefined });
 		}
 		if (buttonColorCustom === undefined) {
-			setAttributes({ buttonColor: 'primary' });
 			setAttributes({ buttonTextColorCustom: undefined });
 		}
 		if (
@@ -148,10 +147,9 @@ export default function ButtonEdit(props) {
 	useEffect(() => {
 		if (buttonColorCustom !== undefined) {
 			updateBlockAttributes(clientId, { buttonColor: 'custom' });
-		}
-		else{
-			// 背景色がクリアされたらデフォルトに戻す
-//			updateBlockAttributes(clientId, { buttonColor: 'primary' });
+		} else if (buttonColor === 'custom') {
+			// 背景色クリアされたらデフォルトに戻す
+			updateBlockAttributes(clientId, { buttonColor: 'primary' });
 		}
 	}, [buttonColorCustom]);
 

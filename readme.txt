@@ -65,6 +65,7 @@ e.g.
 == Changelog ==
 
 [ Bug Fix ][ highlighter ] cope with color palette with alpha.
+[ Bug Fix ][ button ] buttonColorCustom clear convert to primary.
 
 = 1.41.1 =
 [ Bug Fix ] Fix don't display Admin screen in case of spacific option value

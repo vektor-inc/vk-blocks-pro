@@ -35,7 +35,6 @@ function vk_blocks_get_ancestor_page_list_title( $attributes ) {
 	$title = '';
 
 	if ( $attributes['ancestorTitleDisplay'] ) {
-
 		$post_anc_id = vk_blocks_get_ancestor_page_id();
 
 		if ( is_singular() ) {

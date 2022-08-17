@@ -31,7 +31,7 @@ export default function AdminTextStyle() {
 	const { vkBlocksOption, setVkBlocksOption, vkBlocksBalloonMeta } =
 		useContext(AdminContext);
 
-	const fontSizes = [ ...vkBlocksObject.fontSizes ];
+	const fontSizes = [...vkBlocksObject.fontSizes];
 
 	const onChange = (key, value, i) => {
 		const newItems = vkBlocksOption.text_style;
@@ -306,7 +306,8 @@ export default function AdminTextStyle() {
 														if (
 															value === undefined
 														) {
-															value = vkBlocksObject.highlighterColor;
+															value =
+																vkBlocksObject.highlighterColor;
 														}
 														onChange(
 															'highlighter',

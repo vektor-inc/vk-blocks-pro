@@ -64,6 +64,11 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ highlighter ] cope with color palette with alpha.
+
+= 1.41.1 =
+[ Bug Fix ] Fix don't display Admin screen in case of spacific option value
+
 = 1.41.0 =
 [ Add Function ][ Balloon ] Add width option.
 [ Bug Fix ][ Outer (Pro) ] Fixed the border color of the Outer block within the Outer block was not attached.

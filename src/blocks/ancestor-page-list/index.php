@@ -35,9 +35,17 @@ function vk_blocks_get_ancestor_page_list_title( $attributes ) {
 	$title = '';
 
 	if ( $attributes['ancestorTitleDisplay'] ) {
+
 		$post_anc_id = vk_blocks_get_ancestor_page_id();
-		$title_text  = get_the_title( $post_anc_id );
-		$title_link  = get_permalink( $post_anc_id );
+
+		if ( is_singular() ) {
+			$title_text = get_the_title( $post_anc_id );
+		} else {
+			// On site editor screen.
+			$title_text = esc_html__( 'Ancestor Page Title', 'vk-blocks' );
+		}
+
+		$title_link = get_permalink( $post_anc_id );
 
 		// Ancestor Title Tag.
 		$tag_name = $attributes['ancestorTitleTagName'];
@@ -70,8 +78,11 @@ function vk_blocks_get_ancestor_page_list_title( $attributes ) {
 function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
 	$post_anc_id = vk_blocks_get_ancestor_page_id();
 
-	$page_list        = '';
+	$page_list = '';
+
+	// Site editor screen message.
 	$massage_no_child = '<div class="alert alert-warning">' . esc_html__( 'This page has no child page.', 'vk-blocks' ) . '</div>';
+
 	if ( $post_anc_id ) {
 		$page_list = wp_list_pages(
 			array(

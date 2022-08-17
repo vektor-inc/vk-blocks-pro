@@ -183,6 +183,8 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 			'isPro'            => vk_blocks_is_pro(),
 			'vkColorPalette'   => VkColorPaletteManager::add_color_array(),
 			'colorPalette'     => $vk_color_palette,
+			'fontSizes'        => VK_Blocks_Global_Settings::font_sizes(),
+			'highlighterColor' => VK_Blocks_Global_Settings::highlighter_color(),
 		)
 	);
 

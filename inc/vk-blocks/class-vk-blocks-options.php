@@ -144,7 +144,7 @@ class VK_Blocks_Options {
 					),
 					'highlighter'        => array(
 						'type'    => 'string',
-						'default' => '#fffd6b',
+						'default' => VK_Blocks_Global_Settings::highlighter_color(),
 					),
 					'font_size'          => array(
 						'type'    => 'string',

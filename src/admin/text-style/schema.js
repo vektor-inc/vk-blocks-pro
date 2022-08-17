@@ -1,3 +1,8 @@
+/**
+ * Internal dependencies
+ */
+/*globals vkBlocksObject */
+
 // 書式設定 初期値
 export const schema = {
 	index: 1,
@@ -9,7 +14,7 @@ export const schema = {
 	color: '',
 	background_color: '',
 	active_highlighter: false,
-	highlighter: '#fffd6b',
+	highlighter: vkBlocksObject.highlighterColor,
 	font_size: '',
 	nowrap: false,
 	class_name: '',

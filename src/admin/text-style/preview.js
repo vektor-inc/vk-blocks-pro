@@ -10,6 +10,7 @@ import { useContext } from '@wordpress/element';
 import { AdminContext } from '@vkblocks/admin/index';
 import { colorSlugToColorCode } from '@vkblocks/admin/utils/color-slug-to-color-code';
 import hex2rgba from '@vkblocks/utils/hex-to-rgba';
+/*globals vkBlocksObject */
 
 export const TextStylePreview = (props) => {
 	const { vkBlocksOption } = useContext(AdminContext);
@@ -19,7 +20,7 @@ export const TextStylePreview = (props) => {
 	if (!!vkBlocksOption.text_style[i].highlighter) {
 		highlighterColor = vkBlocksOption.text_style[i].highlighter;
 	} else {
-		highlighterColor = '#fffd6b';
+		highlighterColor = vkBlocksObject.highlighterColor;
 	}
 
 	let backgroundProperty = '';

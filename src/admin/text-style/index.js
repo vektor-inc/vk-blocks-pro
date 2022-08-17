@@ -25,33 +25,13 @@ import { SaveButton } from '@vkblocks/admin/save-button';
 import { AddItemButton } from '@vkblocks/admin/text-style/add-item';
 import { DeleteItemButton } from '@vkblocks/admin/text-style/delete-item-button';
 import { ClassNameControl } from '@vkblocks/admin/text-style/class-name-control';
+/*globals vkBlocksObject */
 
 export default function AdminTextStyle() {
 	const { vkBlocksOption, setVkBlocksOption, vkBlocksBalloonMeta } =
 		useContext(AdminContext);
 
-	const fontSizes = [
-		{
-			name: __('Small', 'vk-blocks'),
-			slug: 'small',
-			size: '12px',
-		},
-		{
-			name: __('Normal', 'vk-blocks'),
-			slug: 'normal',
-			size: '16px',
-		},
-		{
-			name: __('Big', 'vk-blocks'),
-			slug: 'big',
-			size: '18px',
-		},
-		{
-			name: __('Extra big', 'vk-blocks'),
-			slug: 'extra-big',
-			size: '21px',
-		},
-	];
+	const fontSizes = [ ...vkBlocksObject.fontSizes ];
 
 	const onChange = (key, value, i) => {
 		const newItems = vkBlocksOption.text_style;
@@ -326,7 +306,7 @@ export default function AdminTextStyle() {
 														if (
 															value === undefined
 														) {
-															value = '#fffd6b';
+															value = vkBlocksObject.highlighterColor;
 														}
 														onChange(
 															'highlighter',

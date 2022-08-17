@@ -70,6 +70,8 @@ function vk_blocks_get_ancestor_page_list_title( $attributes ) {
 function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
 	$post_anc_id = vk_blocks_get_ancestor_page_id();
 
+	$page_list        = '';
+	$massage_no_child = '<div class="alert alert-warning">' . esc_html__( 'This page has no child page.', 'vk-blocks' ) . '</div>';
 	if ( $post_anc_id ) {
 		$page_list = wp_list_pages(
 			array(
@@ -79,11 +81,12 @@ function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
 			)
 		);
 
-		// 子ページがある場合のみ表示 .
-		if ( ! empty( $attributes['displayHasChildOnly'] ) ) {
-			// 子ページがない場合 .
-			if ( ! $page_list ) {
-				return '';
+		// 子ページがある場合のみ表示の設定 && 子ページがない場合.
+		if ( ! empty( $attributes['displayHasChildOnly'] ) && ! $page_list ) {
+			if ( ! is_singular() ) { // フルサイト編集では is_admin が効かないので is_singular で判定.
+				return $massage_no_child;
+			} else {
+				return;
 			}
 		}
 	}
@@ -123,6 +126,10 @@ function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
 	$block .= vk_blocks_get_ancestor_page_list_title( $attributes );
 	if ( $page_list ) {
 		$block .= '<ul class="vk_ancestorPageList_list">' . $page_list . '</ul></aside>';
+	} else {
+		if ( ! is_singular() ) { // フルサイト編集では is_admin が効かないので is_singular で判定.
+			$block .= $massage_no_child;
+		}
 	}
 	$block .= '</aside>';
 

@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Improvement ][ Page list from ancestor ] Fix behavior site editor.
 [ Bug Fix ][ highlighter ] cope with color palette with alpha.
 
 = 1.41.1 =

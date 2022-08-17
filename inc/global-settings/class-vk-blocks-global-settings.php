@@ -28,22 +28,22 @@ class VK_Blocks_Global_Settings {
 	public static function font_sizes() {
 		$font_sizes = array(
 			array(
-				'name' => __('Small', 'vk-blocks'),
+				'name' => __( 'Small', 'vk-blocks' ),
 				'slug' => 'small',
 				'size' => '12px',
 			),
 			array(
-				'name' => __('Normal', 'vk-blocks'),
+				'name' => __( 'Normal', 'vk-blocks' ),
 				'slug' => 'normal',
 				'size' => '16px',
 			),
 			array(
-				'name' => __('Big', 'vk-blocks'),
+				'name' => __( 'Big', 'vk-blocks' ),
 				'slug' => 'big',
 				'size' => '18px',
 			),
 			array(
-				'name' => __('Extra big', 'vk-blocks'),
+				'name' => __( 'Extra big', 'vk-blocks' ),
 				'slug' => 'extra-big',
 				'size' => '21px',
 			),

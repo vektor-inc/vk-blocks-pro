@@ -77,6 +77,17 @@ class AncestorPageListTest extends WP_UnitTestCase {
 				'target_url' => get_permalink( $data['child_page_id'] ),
 				'correct'    => '<h3 class="vk_ancestorPageList_title"><a href="' . get_permalink( $data['ancestor_page_id'] ) . '">ancestor_page</a></h3>',
 			),
+			// Not public page.
+			// サイトエディター上でのテストだが、サイトエディターの中身が iframe で判別方法が不明のため、一般公開でないURLを target_url 指定している .
+			array(
+				'attributes' => array(
+					'ancestorTitleDisplay' => true,
+					'ancestorTitleTagName' => 'h3',
+					'ancestorTitleLink'    => false,
+				),
+				'target_url' => admin_url() . '/site-editor.php?postType=wp_template',
+				'correct'    => '<h3 class="vk_ancestorPageList_title">' . esc_html__( 'Ancestor Page Title', 'vk-blocks' ) . '</h3>',
+			),
 		);
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
@@ -125,7 +136,7 @@ class AncestorPageListTest extends WP_UnitTestCase {
 					'displayHasChildOnly'  => true,
 				),
 				'target_url' => get_permalink( $data['no_child_page_id'] ),
-				'correct'    => '',
+				'correct'    => null,
 			),
 			array(
 				'attributes' => array(
@@ -148,6 +159,19 @@ class AncestorPageListTest extends WP_UnitTestCase {
 				'target_url' => get_permalink( $data['no_child_page_id'] ),
 				'correct'    => '<aside class="vk_ancestorPageList vk_ancestorPageList-hiddenGrandChild-true"><h3 class="vk_ancestorPageList_title">no_child_page</h3></aside>',
 			),
+			// Not public page.
+			// サイトエディター上でのテストだが、サイトエディターの中身が iframe で判別方法が不明のため、一般公開でないURLを target_url 指定している .
+			array(
+				'attributes' => array(
+					'ancestorTitleDisplay' => true,
+					'ancestorTitleTagName' => 'h3',
+					'ancestorTitleLink'    => false,
+					'displayHasChildOnly'  => false,
+					'hiddenGrandChild'     => true,
+				),
+				'target_url' => admin_url() . '/site-editor.php?postType=wp_template',
+				'correct'    => '<aside class="vk_ancestorPageList vk_ancestorPageList-hiddenGrandChild-true"><h3 class="vk_ancestorPageList_title">' . esc_html__( 'Ancestor Page Title', 'vk-blocks' ) . '</h3><div class="alert alert-warning">' . esc_html__( 'This page has no child page.', 'vk - blocks' ) . '</div></aside>',
+			),
 		);
 
 		print PHP_EOL;
@@ -162,9 +186,9 @@ class AncestorPageListTest extends WP_UnitTestCase {
 			$return  = vk_blocks_ancestor_page_list_render_callback( $value['attributes'] );
 			$correct = $value['correct'];
 
-			print 'return  :' . wp_kses_post( $return );
+			print 'return  :' . $return;
 			print PHP_EOL;
-			print 'correct :' . wp_kses_post( $correct );
+			print 'correct :' . $correct;
 			print PHP_EOL;
 			$this->assertSame( $correct, $return );
 

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2022-08-05T08:30:27+00:00\n"
-"PO-Revision-Date: 2022-08-05 17:37+0900\n"
+"POT-Creation-Date: 2022-08-18T01:45:03+00:00\n"
+"PO-Revision-Date: 2022-08-18 10:50+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -261,7 +261,7 @@ msgid "Short"
 msgstr "短い"
 
 #: src/blocks/_pro/animation/edit.js:130 src/blocks/_pro/slider/edit.js:201
-#: src/blocks/balloon/edit.js:483 src/blocks/button/edit.js:310
+#: src/blocks/balloon/edit.js:489 src/blocks/button/edit.js:310
 #: src/blocks/faq/index.js:26 src/blocks/faq2/index.js:21
 #: src/extensions/common/inline-font-size/index.js:89
 msgid "Normal"
@@ -307,15 +307,15 @@ msgstr "上下"
 msgid "Trembling Y"
 msgstr "ぶるぶる（Y方向）"
 
-#: src/blocks/_pro/animation/edit.js:80 src/blocks/balloon/edit.js:551
+#: src/blocks/_pro/animation/edit.js:80 src/blocks/balloon/edit.js:570
 msgid "Trembling X"
 msgstr "ぶるぶる（X方向）"
 
-#: src/blocks/_pro/animation/edit.js:84 src/blocks/balloon/edit.js:555
+#: src/blocks/_pro/animation/edit.js:84 src/blocks/balloon/edit.js:574
 msgid "Pounding"
 msgstr "どきどき"
 
-#: src/blocks/_pro/animation/edit.js:88 src/blocks/balloon/edit.js:559
+#: src/blocks/_pro/animation/edit.js:88 src/blocks/balloon/edit.js:578
 msgid "Shaking"
 msgstr "ゆらゆら"
 
@@ -366,7 +366,7 @@ msgstr "タイトル"
 #: src/blocks/_pro/card-item/deprecated/0.20.5/component.js:80
 #: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:82
 #: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:86
-#: src/blocks/_pro/card-item/edit.js:88 src/blocks/balloon/edit.js:584
+#: src/blocks/_pro/card-item/edit.js:88 src/blocks/balloon/edit.js:603
 #: src/blocks/flow/edit.js:84 src/blocks/pr-blocks/edit.js:89
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:130
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:112
@@ -615,7 +615,7 @@ msgid "Column Radius"
 msgstr "カラムの角丸の大きさ"
 
 #: src/blocks/_pro/gridcolcard/edit-common.js:180
-#: src/blocks/balloon/edit.js:319 src/extensions/core/image/style.js:15
+#: src/blocks/balloon/edit.js:320 src/extensions/core/image/style.js:15
 #: src/extensions/core/table/style.js:12
 msgid "Border"
 msgstr "枠線"
@@ -797,6 +797,7 @@ msgid "Layout Setting"
 msgstr "レイアウト設定"
 
 #: src/blocks/_pro/outer/edit.js:367 src/blocks/_pro/slider/edit.js:192
+#: src/blocks/balloon/edit.js:515
 msgid "Width"
 msgstr "幅"
 
@@ -836,7 +837,7 @@ msgstr ""
 msgid "Divider Setting"
 msgstr "区切りの設定"
 
-#: src/blocks/_pro/outer/edit.js:441 src/blocks/balloon/edit.js:443
+#: src/blocks/_pro/outer/edit.js:441 src/blocks/balloon/edit.js:449
 msgid "Type"
 msgstr "タイプ"
 
@@ -877,7 +878,7 @@ msgid "Border type"
 msgstr "枠線の種類"
 
 #: src/blocks/_pro/outer/edit.js:529 src/blocks/_pro/step-item/edit.js:144
-#: src/blocks/_pro/timeline-item/edit.js:113 src/blocks/balloon/edit.js:543
+#: src/blocks/_pro/timeline-item/edit.js:113 src/blocks/balloon/edit.js:562
 #: src/blocks/staff/edit.js:177
 msgid "None"
 msgstr "なし"
@@ -1293,100 +1294,104 @@ msgstr "先祖階層のページタイトルにリンクを追加"
 msgid "If there is no child page, the block itself is not displayed"
 msgstr "子ページがない場合、このブロック自体を表示しない"
 
-#: src/blocks/balloon/edit.js:144
+#: src/blocks/balloon/edit.js:145
 msgid " Image Border"
 msgstr "画像の線"
 
-#: src/blocks/balloon/edit.js:147
+#: src/blocks/balloon/edit.js:148
 msgid "Add border to image"
 msgstr "画像に枠線を追加する"
 
-#: src/blocks/balloon/edit.js:155
+#: src/blocks/balloon/edit.js:156
 msgid "* You can change border width on Setting > VK Blocks"
 msgstr "* 線の太さは 管理画面の 設定 > VK Blocks から選択する事ができます。"
 
-#: src/blocks/balloon/edit.js:162
+#: src/blocks/balloon/edit.js:163
 msgid "Border color of speech balloon"
 msgstr "吹き出しの線の色"
 
-#: src/blocks/balloon/edit.js:322
+#: src/blocks/balloon/edit.js:323
 msgid "Add border to balloon"
 msgstr "吹き出しに枠線を追加する"
 
-#: src/blocks/balloon/edit.js:407
+#: src/blocks/balloon/edit.js:413
 msgid "Balloon setting"
 msgstr "吹き出しブロック設定"
 
-#: src/blocks/balloon/edit.js:409 src/blocks/heading/edit.js:366
+#: src/blocks/balloon/edit.js:415 src/blocks/heading/edit.js:366
 msgid "Position"
 msgstr "位置"
 
-#: src/blocks/balloon/edit.js:412
+#: src/blocks/balloon/edit.js:418
 msgid "Please specify the layout of the balloon."
 msgstr "吹き出しの配置を指定してください。"
 
-#: src/blocks/balloon/edit.js:426 src/blocks/button/edit.js:336
+#: src/blocks/balloon/edit.js:432 src/blocks/button/edit.js:336
 #: src/blocks/pr-content/edit.js:237
 #: src/components/display-items-control/index.js:123
 msgid "Left"
 msgstr "左"
 
-#: src/blocks/balloon/edit.js:438 src/blocks/button/edit.js:356
+#: src/blocks/balloon/edit.js:444 src/blocks/button/edit.js:356
 #: src/blocks/pr-content/edit.js:236
 #: src/components/display-items-control/index.js:131
 msgid "Right"
 msgstr "右"
 
-#: src/blocks/balloon/edit.js:446
+#: src/blocks/balloon/edit.js:452
 msgid "Please select the type of balloon."
 msgstr "吹き出しのタイプを指定してください。"
 
-#: src/blocks/balloon/edit.js:457
+#: src/blocks/balloon/edit.js:463
 msgid "Speech"
 msgstr "吹き出し"
 
-#: src/blocks/balloon/edit.js:467
+#: src/blocks/balloon/edit.js:473
 msgid "Thinking"
 msgstr "もくもく"
 
-#: src/blocks/balloon/edit.js:472
+#: src/blocks/balloon/edit.js:478
 msgid "Image Style"
 msgstr "画像スタイル"
 
-#: src/blocks/balloon/edit.js:493
+#: src/blocks/balloon/edit.js:499
 msgid "Rounded"
 msgstr "角丸２"
 
-#: src/blocks/balloon/edit.js:503
+#: src/blocks/balloon/edit.js:509
 msgid "Circle"
 msgstr "丸抜き"
 
-#: src/blocks/balloon/edit.js:510
+#: src/blocks/balloon/edit.js:518 src/blocks/button/edit.js:571
+msgid "100%"
+msgstr "100%"
+
+#: src/blocks/balloon/edit.js:529
 msgid "Background color of speech balloon"
 msgstr "吹き出しの背景色"
 
-#: src/blocks/balloon/edit.js:517
+#: src/blocks/balloon/edit.js:536
 msgid "Default Icon Setting"
 msgstr "デフォルトアイコン設定"
 
-#: src/blocks/balloon/edit.js:522
+#: src/blocks/balloon/edit.js:541
 msgid "You can register default icons from Settings > VK Blocks in Admin."
 msgstr ""
 "管理画面の 設定 > VK Blocks から よく使うアイコンを登録する事ができます。"
 
-#: src/blocks/balloon/edit.js:528
+#: src/blocks/balloon/edit.js:547
 msgid "Animation setting"
 msgstr "アニメーション設定"
 
-#: src/blocks/balloon/edit.js:530
+#: src/blocks/balloon/edit.js:549
 msgid "Please select the type of animation."
 msgstr "アニメーションのタイプを指定してください。"
 
-#: src/blocks/balloon/edit.js:547
+#: src/blocks/balloon/edit.js:566
 msgid "Trembling"
 msgstr "ぶるぶる"
 
-#: src/blocks/balloon/edit.js:590 src/blocks/pr-blocks/edit.js:83
+#: src/blocks/balloon/edit.js:609 src/blocks/pr-blocks/edit.js:83
 #: src/blocks/pr-content/deprecated/0.0.0/save.js:135
 #: src/blocks/pr-content/deprecated/0.0.1/save.js:117
 #: src/blocks/pr-content/deprecated/0.0.2/save.js:214
@@ -1401,7 +1406,7 @@ msgstr "ぶるぶる"
 msgid "Upload image"
 msgstr "画像をアップロード"
 
-#: src/blocks/balloon/edit.js:603
+#: src/blocks/balloon/edit.js:622
 msgid "Icon Name"
 msgstr "アイコンの名前"
 
@@ -1493,10 +1498,6 @@ msgstr "50%"
 #: src/blocks/button/edit.js:558
 msgid "75%"
 msgstr "75%"
-
-#: src/blocks/button/edit.js:571
-msgid "100%"
-msgstr "100%"
 
 #: src/blocks/button/edit.js:578
 msgid "Button Style:"
@@ -2594,12 +2595,12 @@ msgid "Please contact the administrator of this site for help."
 msgstr "ヘルプが必要な場合はこのサイトの管理者にお問い合わせください。"
 
 #: dist/vk-blocks-pro/inc/vk-admin/package/class-vk-admin.php:316
-#: inc/vk-admin/package/class-vk-admin.php:316
+#: inc/vk-admin/package/class-vk-admin.php:333
 msgid "Sorry, there is no post"
 msgstr "申し訳ありませんが投稿がありません。"
 
 #: dist/vk-blocks-pro/inc/vk-admin/package/class-vk-admin.php:370
-#: inc/vk-admin/package/class-vk-admin.php:370
+#: inc/vk-admin/package/class-vk-admin.php:387
 msgid "Vektor WordPress Information"
 msgstr "Vektor WordPress Information"
 
@@ -2663,12 +2664,12 @@ msgid "There are no %ss."
 msgstr "該当の%sはありません。"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:224
-#: inc/vk-blocks/vk-blocks-functions.php:224
+#: inc/vk-blocks/vk-blocks-functions.php:220
 msgid "Blocks"
 msgstr "Blocks"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:237
-#: inc/vk-blocks/vk-blocks-functions.php:237
+#: inc/vk-blocks/vk-blocks-functions.php:233
 msgid "Blocks Layout"
 msgstr "ブロックレイアウト"
 
@@ -2844,6 +2845,23 @@ msgstr ""
 #: dist/vk-blocks-pro/vk-blocks.php:271 vk-blocks.php:271
 msgid "Re-acquisition of updates"
 msgstr "更新の再取得"
+
+#: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
+#: src/blocks/ancestor-page-list/index.php:44
+#: test/phpunit/pro/test-ancestor-page-list.php:89
+#: test/phpunit/pro/test-ancestor-page-list.php:173
+msgid "Ancestor Page Title"
+msgstr "先祖ページのタイトル"
+
+#: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
+#: src/blocks/ancestor-page-list/index.php:83
+msgid "The page you are currently viewing has no child pages."
+msgstr "現在表示中のページには子ページはありません。"
+
+#: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
+#: src/blocks/ancestor-page-list/index.php:83
+msgid "This message only display on the edit screen."
+msgstr "このメッセージは編集画面でのみ表示されます。"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/alert/block.json
 #: inc/vk-blocks/build/blocks/alert/block.json src/blocks/alert/block.json

@@ -170,7 +170,7 @@ class AncestorPageListTest extends WP_UnitTestCase {
 					'hiddenGrandChild'     => true,
 				),
 				'target_url' => admin_url() . '/site-editor.php?postType=wp_template',
-				'correct'    => '<aside class="vk_ancestorPageList vk_ancestorPageList-hiddenGrandChild-true"><h3 class="vk_ancestorPageList_title">' . esc_html__( 'Ancestor Page Title', 'vk-blocks' ) . '</h3><div class="alert alert-warning">' . esc_html__( 'This page has no child page.', 'vk - blocks' ) . '</div></aside>',
+				'correct'    => '<aside class="vk_ancestorPageList vk_ancestorPageList-hiddenGrandChild-true"><h3 class="vk_ancestorPageList_title">' . esc_html__( 'Ancestor Page Title', 'vk-blocks' ) . '</h3><div class="alert alert-warning">' . esc_html__( 'The page you are currently viewing has no child pages.', 'vk-blocks' ) . '<br />* ' . esc_html__( 'This message only display on the edit screen.', 'vk-blocks' ) . '</div></aside>',
 			),
 		);
 

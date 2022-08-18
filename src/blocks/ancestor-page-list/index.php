@@ -80,7 +80,7 @@ function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
 	$page_list = '';
 
 	// Site editor screen message.
-	$massage_no_child = '<div class="alert alert-warning">' . esc_html__( 'The page you are currently viewing has no child pages.', 'vk-blocks' ) . '<br />* ' . esc_html__( 'This message only display on the edit screen.', 'vk-blocks' ) . '</div>';
+	$massage_no_child = '<ul class="vk_ancestorPageList_list"><li class="page_item page-item-**"><a href="#">' . esc_html__( 'Dummy Text', 'vk-blocks' ) . '</a></li><li class="page_item page-item-**"><a href="#">' . esc_html__( 'Dummy Text', 'vk-blocks' ) . '</a></li></ul><div class="alert alert-warning">' . esc_html__( 'Because of the site editor have not child page that, the page list from ancestor is not displayed. Now displaying the dummy text list instead of the page list from ancestor.', 'vk-blocks' ) . '<br />* ' . esc_html__( 'This message only display on the edit screen.', 'vk-blocks' ) . '</div>';
 
 	if ( $post_anc_id ) {
 		$page_list = wp_list_pages(

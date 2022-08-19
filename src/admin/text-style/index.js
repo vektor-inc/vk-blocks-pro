@@ -87,10 +87,6 @@ export default function AdminTextStyle() {
 												className="text_style_item_name"
 												name={`vk_blocks_options[text_style][${i}][title]`}
 												id={`vk_blocks_text_style_${i}_title`}
-												help={__(
-													'※ Required',
-													'vk-blocks'
-												)}
 												label={__(
 													'Toolbar title',
 													'vk-blocks'
@@ -108,6 +104,15 @@ export default function AdminTextStyle() {
 														: ''
 												}
 											/>
+											{!vkBlocksOption.text_style[i]
+												.title && (
+												<p className="text_style_item_name_warning">
+													{__(
+														'※ Required If no title is entered, it will not appear on the toolbar.',
+														'vk-blocks'
+													)}
+												</p>
+											)}
 											<DeleteItemButton i={i} />
 										</BaseControl>
 									</PanelBody>
@@ -121,10 +126,7 @@ export default function AdminTextStyle() {
 										<BaseControl id="format-setting">
 											<CheckboxControl
 												name={`vk_blocks_options[text_style][${i}][font_weight_bold]`}
-												label={__(
-													'Font Weight Bold',
-													'vk-blocks'
-												)}
+												label={__('Bold', 'vk-blocks')}
 												checked={
 													vkBlocksOption.text_style[i]
 														.font_weight_bold

@@ -114,10 +114,6 @@ class VK_Blocks_Options {
 						'type'    => 'string',
 						'default' => null,
 					),
-					'active'             => array(
-						'type'    => 'boolean',
-						'default' => false,
-					),
 					'font_weight_bold'   => array(
 						'type'    => 'boolean',
 						'default' => false,
@@ -156,7 +152,7 @@ class VK_Blocks_Options {
 					),
 					'class_name'         => array(
 						'type'    => 'string',
-						'default' => null,
+						'default' => 'vk-text-style--1',
 					),
 				),
 			),

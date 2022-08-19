@@ -14,7 +14,7 @@ import { ReactComponent as IconSVG } from './icon.svg';
 
 if (window.vkBlocksOptions) {
 	vkBlocksOptions.textStyle.forEach((option) => {
-		if (!!option.active) {
+		if (!!option.title) {
 			const name = option.class_name && `vk-blocks/${option.class_name}`;
 			const title = option.title
 				? option.title

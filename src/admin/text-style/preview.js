@@ -55,7 +55,7 @@ export const TextStylePreview = (props) => {
 		<div className="text_style_item_preview">
 			<p
 				className={
-					vkBlocksOption.text_style[i].active
+					vkBlocksOption.text_style[i].title
 						? 'active-text-style'
 						: null
 				}

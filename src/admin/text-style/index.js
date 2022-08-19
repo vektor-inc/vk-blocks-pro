@@ -68,21 +68,6 @@ export default function AdminTextStyle() {
 										title={__('Text Style', 'vk-blocks')}
 									>
 										<BaseControl id="custom-text-style">
-											<ToggleControl
-												name={`vk_blocks_options[text_style][${i}][active]`}
-												id={`vk_blocks_text_style_${i}_active`}
-												label={__(
-													'Activate text style',
-													'vk-blocks'
-												)}
-												checked={
-													vkBlocksOption.text_style[i]
-														.active
-												}
-												onChange={(value) =>
-													onChange('active', value, i)
-												}
-											/>
 											<TextControl
 												className="text_style_item_name"
 												name={`vk_blocks_options[text_style][${i}][title]`}

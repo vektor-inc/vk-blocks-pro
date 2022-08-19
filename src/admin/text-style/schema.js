@@ -7,7 +7,6 @@
 export const schema = {
 	index: 1,
 	title: '',
-	active: false,
 	font_weight_bold: false,
 	font_italic: false,
 	font_strikethrough: false,

@@ -1,4 +1,4 @@
-import { GET_OPTIONS, POPULATE_OPTIONS } from './types';
+import { POPULATE_OPTIONS } from './types';
 
 const DEFAULT_STATE = { options: {} };
 

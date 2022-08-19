@@ -1,7 +1,7 @@
 /**
  * WordPress dependencies
  */
-import { render, useState, createContext,useEffect } from '@wordpress/element';
+import { render, useState, createContext, useEffect } from '@wordpress/element';
 import { useSelect } from '@wordpress/data';
 
 /**
@@ -17,42 +17,38 @@ import AdminNewFaq from '@vkblocks/admin/new-faq';
 export const AdminContext = createContext();
 
 export default function VKBlocksAdmin() {
-
 	const options = useSelect((select) => {
 		return select('vk-blocks-pro/options').getOptions();
 	}, []);
 
-	const [vkBlocksOption, setVkBlocksOption] = useState(
-		
-	);
+	const [vkBlocksOption, setVkBlocksOption] = useState();
 	const [vkBlocksBalloonMeta, setVkBlocksBalloonMeta] = useState(
 		vkBlocksObject.balloonMeta
 	);
-	console.log(options);
 
-	useEffect( () => {
-		setVkBlocksOption( options );
-	}, [ options ] );
+	useEffect(() => {
+		setVkBlocksOption(options);
+	}, [options]);
 
 	return (
 		<>
 			{/* AdminContext.Providerで各コンポーネントにvalueを渡す */}
-			{ vkBlocksOption?.vk_blocks_pro_license_key && 
-			<AdminContext.Provider
-				value={{
-					vkBlocksOption,
-					setVkBlocksOption,
-					vkBlocksBalloonMeta,
-					setVkBlocksBalloonMeta,
-				}}
-			>
-				{vkBlocksObject.isLicenseSetting && <AdminLicense />}
-				<AdminBalloon />
-				<AdminMargin />
-				<AdminLoadSeparate />
-				{vkBlocksObject.isPro && <AdminNewFaq />}
-			</AdminContext.Provider>
-			}
+			{vkBlocksOption?.vk_blocks_pro_license_key && (
+				<AdminContext.Provider
+					value={{
+						vkBlocksOption,
+						setVkBlocksOption,
+						vkBlocksBalloonMeta,
+						setVkBlocksBalloonMeta,
+					}}
+				>
+					{vkBlocksObject.isLicenseSetting && <AdminLicense />}
+					<AdminBalloon />
+					<AdminMargin />
+					<AdminLoadSeparate />
+					{vkBlocksObject.isPro && <AdminNewFaq />}
+				</AdminContext.Provider>
+			)}
 		</>
 	);
 }

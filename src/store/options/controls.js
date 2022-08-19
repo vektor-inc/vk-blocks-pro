@@ -10,7 +10,7 @@ export const fetchOptions = () => {
 export default {
 	FETCH_OPTIONS() {
 		return apiFetch({
-			path: '/vk-blocks/v1/get_vk_blocks_options'
+			path: '/vk-blocks/v1/get_vk_blocks_options',
 		});
-	}
-}
+	},
+};

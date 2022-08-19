@@ -23,8 +23,8 @@ version=$1
 mv vk-blocks/ vk-blocks-copy-target/
 # Cloneした無料版のディレクトリに移動
 cd ./vk-blocks-copy-target/
-# コピー先の src/ を一旦削除
-rm -rf src/*
+# コピー先の トップディレクトリ を一旦削除
+rm -rf editor-css/* inc/* lib/* options-css/* src/*
 
 # プロ版のディレクトリに移動
 cd ../

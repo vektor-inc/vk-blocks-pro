@@ -16,6 +16,8 @@ require_once dirname( __FILE__ ) . '/style/hidden-extension.php';
 require_once dirname( __FILE__ ) . '/class-vk-blocks-print-css-variables.php';
 require_once dirname( __FILE__ ) . '/class-vk-blocks-options.php';
 VK_Blocks_Options::init();
+require_once dirname( __FILE__ ) . '/global-settings/class-vk-blocks-global-settings.php';
+VK_Blocks_Global_Settings::init();
 
 /**
  * スペーサーのサイズの配列

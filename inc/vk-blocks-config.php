@@ -31,9 +31,6 @@ if ( ! function_exists( 'vk_blocks_active' ) ) {
 	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/class-vk-blocks-block-loader.php';
 	VK_Blocks_Block_Loader::init();
 
-	require_once plugin_dir_path( __FILE__ ) . 'global-settings/class-vk-blocks-global-settings.php';
-	VK_Blocks_Global_Settings::init();
-
 	require_once plugin_dir_path( __FILE__ ) . 'vk-helpers/config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-admin/vk-admin-config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/helpers.php';

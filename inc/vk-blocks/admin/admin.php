@@ -184,7 +184,7 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 			'vkColorPalette'   => VkColorPaletteManager::add_color_array(),
 			'colorPalette'     => $vk_color_palette,
 			'fontSizes'        => VK_Blocks_Global_Settings::font_sizes(),
-			'highlighterColor' => VK_Blocks_Global_Settings::highlighter_color(),
+			'highlighterColor' => VK_Blocks_Global_Settings::HIGHLIGHTER_COLOR,
 		)
 	);
 

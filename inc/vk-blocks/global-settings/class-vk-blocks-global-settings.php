@@ -2,6 +2,8 @@
 /**
  * VK Blocks Global Settings class.
  *
+ * ブロックエディタとVK Blocksの管理画面(wp-admin/options-general.php?page=vk_blocks_options)で共通で使用する変数を定義
+ *
  * @package vk-blocks
  */
 
@@ -21,7 +23,15 @@ class VK_Blocks_Global_Settings {
 	}
 
 	/**
+	 * HIGHLIGHTER_COLOR
+	 * 蛍光マーカー デフォルト色
+	 */
+	const HIGHLIGHTER_COLOR = '#fffd6b';
+
+	/**
 	 * Font_sizes
+	 *
+	 * 翻訳関数があるため定数に出来ない
 	 *
 	 * @return array
 	 */
@@ -51,13 +61,4 @@ class VK_Blocks_Global_Settings {
 		return $font_sizes;
 	}
 
-	/**
-	 * Highlighter color
-	 * 蛍光マーカー デフォルト色
-	 *
-	 * @return string
-	 */
-	public static function highlighter_color() {
-		return '#fffd6b';
-	}
 }

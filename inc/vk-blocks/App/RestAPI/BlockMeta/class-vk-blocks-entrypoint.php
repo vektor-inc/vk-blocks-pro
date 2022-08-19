@@ -36,6 +36,20 @@ class Vk_Blocks_EntryPoint {
 
 		register_rest_route(
 			'vk-blocks/v1',
+			'/get_vk_blocks_options',
+			array(
+				array(
+					'methods'             => 'GET',
+					'callback'            => array( $this, 'get_vk_blocks_options' ),
+					'permission_callback' => function () {
+						return current_user_can( 'edit_posts' );
+					},		
+				),
+			)
+		);
+
+		register_rest_route(
+			'vk-blocks/v1',
 			'/update_vk_blocks_options',
 			array(
 				array(
@@ -59,6 +73,18 @@ class Vk_Blocks_EntryPoint {
 		$block_name = esc_html( $request['name'] );
 		$block_meta = get_option( 'vk_blocks_' . $block_name . '_meta' );
 		return rest_ensure_response( $block_meta );
+	}
+
+	/**
+	 * VK Blocks Rest Get Callback
+	 *
+	 * @return \WP_REST_Response|\WP_Error
+	 */
+	public function get_vk_blocks_options() {
+
+		return rest_ensure_response(
+			vk_blocks_get_options()
+		);
 	}
 
 	/**

@@ -9,6 +9,7 @@ const path = require( 'path' );
 let entries = {
   'block': __dirname + '/src/blocks/index.js',
   'admin': __dirname + '/src/admin/index.js',
+  'store': __dirname + '/src/store/index.js'
 };
 
 module.exports = {

@@ -196,6 +196,25 @@ function vk_blocks_blocks_assets() {
 }
 add_action( 'init', 'vk_blocks_blocks_assets', 10 );
 
+
+$asset = include VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/build/store-build.asset.php';
+// Enqueue CSS dependencies.
+foreach ( $asset['dependencies'] as $style ) {
+	wp_enqueue_style( $style );
+}
+
+wp_enqueue_script(
+	'vk-blocks-store-js',
+	VK_BLOCKS_DIR_URL . 'inc/vk-blocks/build/store-build.js',
+	$asset['dependencies'],
+	$asset['version'],
+	true
+);
+wp_set_script_translations( 'vk-blocks-admin-js', 'vk-blocks', VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/languages' );
+
+
+
+
 // Add Block Category.
 if ( ! function_exists( 'vk_blocks_blocks_categories' ) ) {
 	/**

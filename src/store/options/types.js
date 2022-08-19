@@ -1,0 +1,3 @@
+export const GET_OPTIONS = 'GET_OPTIONS';
+export const POPULATE_OPTIONS = 'POPULATE_OPTIONS';
+export const FETCH_OPTIONS = 'FETCH_OPTIONS';

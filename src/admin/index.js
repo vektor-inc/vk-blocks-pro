@@ -1,7 +1,8 @@
 /**
  * WordPress dependencies
  */
-import { render, useState, createContext } from '@wordpress/element';
+import { render, useState, createContext,useEffect } from '@wordpress/element';
+import { useSelect } from '@wordpress/data';
 
 /**
  * Internal dependencies
@@ -16,16 +17,27 @@ import AdminNewFaq from '@vkblocks/admin/new-faq';
 export const AdminContext = createContext();
 
 export default function VKBlocksAdmin() {
+
+	const options = useSelect((select) => {
+		return select('vk-blocks-pro/options').getOptions();
+	}, []);
+
 	const [vkBlocksOption, setVkBlocksOption] = useState(
-		vkBlocksObject.options
+		
 	);
 	const [vkBlocksBalloonMeta, setVkBlocksBalloonMeta] = useState(
 		vkBlocksObject.balloonMeta
 	);
+	console.log(options);
+
+	useEffect( () => {
+		setVkBlocksOption( options );
+	}, [ options ] );
 
 	return (
 		<>
 			{/* AdminContext.Providerで各コンポーネントにvalueを渡す */}
+			{ vkBlocksOption?.vk_blocks_pro_license_key && 
 			<AdminContext.Provider
 				value={{
 					vkBlocksOption,
@@ -40,6 +52,7 @@ export default function VKBlocksAdmin() {
 				<AdminLoadSeparate />
 				{vkBlocksObject.isPro && <AdminNewFaq />}
 			</AdminContext.Provider>
+			}
 		</>
 	);
 }

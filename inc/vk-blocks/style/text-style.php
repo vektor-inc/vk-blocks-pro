@@ -47,8 +47,8 @@ function vk_blocks_text_style() {
 		}
 
 		// CSSがあったらCSSを出力
-		if ($declarations) {
-			$dynamic_css .= '.' . $text_style['class_name'] . '{' . $declarations .'}';
+		if ( $declarations ) {
+			$dynamic_css .= '.' . $text_style['class_name'] . '{' . $declarations . '}';
 		}
 	}
 

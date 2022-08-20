@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Other ] Add PHPUnit test on Several PHP and WordPress 
 [ Improvement ][ Page list from ancestor ] Fix behavior site editor.
 [ Bug Fix ][ highlighter ] cope with color palette with alpha.
 [ Bug Fix ][ button ] buttonColorCustom clear convert to primary.

@@ -48,7 +48,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 			// デフォルトの表示非表示調整 v0.44.13
 			// https://github.com/vektor-inc/vk-blocks-pro/commit/b17c2ae4097a5530eb88a7fdcf03885d89ece643#diff-9b75d117946ae115e35175fb160346351a75f98e850679a65de42680bd4611e1
 			array(
-				'option_target' => 'display_vk_block_template',
+				'option_check_target' => 'display_vk_block_template',
 				'option'  => array(
 					'hide_wp_block_template' => true,
 					'hide_vk_block_template' => false,
@@ -60,7 +60,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 			// New FAQ アコーディオン機能 v0.46.0
 			// https://github.com/vektor-inc/vk-blocks-pro/pull/21
 			array(
-				'option_target' => 'new_faq_accordion',
+				'option_check_target' => 'new_faq_accordion',
 				'option'  => array(
 					'display_vk_block_template' => 'hide',
 				),
@@ -69,7 +69,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 			// 吹き出し線の太さ v0.55.0
 			// https://github.com/vektor-inc/vk-blocks-pro/commit/e0ede110ada73f0eb65af611382d899469b8d84b
 			array(
-				'option_target' => 'balloon_border_width',
+				'option_check_target' => 'balloon_border_width',
 				'option'  => array(
 					'display_vk_block_template' => 'hide',
 					'new_faq_accordion' => 'open',
@@ -79,7 +79,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 			// 余白 単位 margin_unit v1.7.1
 			// https://github.com/vektor-inc/vk-blocks-pro/pull/584/
 			array(
-				'option_target' => 'margin_unit',
+				'option_check_target' => 'margin_unit',
 				'option'  => array(
 					'display_vk_block_template' => 'hide',
 					'new_faq_accordion' => 'open',
@@ -90,7 +90,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 			// 余白の共通サイズ設定 margin_size v1.7.1
 			// https://github.com/vektor-inc/vk-blocks-pro/pull/584/
 			array(
-				'option_target' => 'margin_size',
+				'option_check_target' => 'margin_size',
 				'option'  => array(
 					'display_vk_block_template' => 'hide',
 					'new_faq_accordion' => 'open',
@@ -117,7 +117,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 			// 分割読み込み load_separate_option v1.21.0
 			// https://github.com/vektor-inc/vk-blocks-pro/commit/b6f3575cb2ebcb4e64ecb8070b81ccd391abc13c
 			array(
-				'option_target' => 'load_separate_option',
+				'option_check_target' => 'load_separate_option',
 				'option'  => array(
 					'display_vk_block_template' => 'hide',
 					'new_faq_accordion' => 'open',
@@ -146,7 +146,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 			// ライセンスキー v1.32.0
 			// https://github.com/vektor-inc/vk-blocks-pro/pull/1166
 			array(
-				'option_target' => 'vk_blocks_pro_license_key',
+				'option_check_target' => 'vk_blocks_pro_license_key',
 				'option'  => array(
 					'display_vk_block_template' => 'hide',
 					'new_faq_accordion' => 'open',
@@ -251,8 +251,8 @@ class GetOptionsTest extends WP_UnitTestCase {
 			// var_dump( $correct );
 			// print PHP_EOL;
 
-			if ( $test_value['option_target'] ) {
-				$this->assertSame( $correct, $return[ $test_value['option_target'] ] );
+			if ( $test_value['option_check_target'] ) {
+				$this->assertSame( $correct, $return[ $test_value['option_check_target'] ] );
 			} else {
 				$this->assertSame( $correct, $return );
 			}

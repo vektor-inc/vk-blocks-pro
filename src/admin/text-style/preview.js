@@ -61,11 +61,7 @@ export const TextStylePreview = (props) => {
 				}
 			>
 				<span
-					className={
-						vkBlocksOption.text_style[i].class_name
-							? vkBlocksOption.text_style[i].class_name
-							: `vk-text-style--${vkBlocksOption.text_style[i].index}`
-					}
+					className={vkBlocksOption.text_style[i].class_name}
 					style={{
 						fontWeight:
 							vkBlocksOption.text_style[i].font_weight_bold &&

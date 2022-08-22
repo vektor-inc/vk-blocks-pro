@@ -97,10 +97,6 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 					'text_style'           => array(
 						'type'  => 'array',
 						'items' => array(
-							'index'              => array(
-								'type'    => 'integer',
-								'default' => 1,
-							),
 							'title'              => array(
 								'type'    => 'string',
 								'default' => null,

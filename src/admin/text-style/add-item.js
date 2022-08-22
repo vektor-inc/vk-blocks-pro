@@ -30,20 +30,10 @@ export const AddItemButton = () => {
 		setErrorMessage('');
 	};
 
-	// indexは被らないように設定されているindexの最大値+1を設定する
-	let maxIndex = 0;
-	vkBlocksOption.text_style.forEach((option) => {
-		if (option.index > maxIndex) {
-			maxIndex = option.index;
-		}
-	});
-
 	const addItem = () => {
-		const addIndex = maxIndex + 1;
 		vkBlocksOption.text_style.push({
 			...schema,
 			...{
-				index: addIndex,
 				class_name: className,
 				title,
 			},

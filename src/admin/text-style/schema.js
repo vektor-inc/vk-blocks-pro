@@ -5,7 +5,6 @@
 
 // 書式設定 初期値
 export const schema = {
-	index: 1,
 	title: '',
 	font_weight_bold: false,
 	font_italic: false,

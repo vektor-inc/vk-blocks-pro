@@ -42,7 +42,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'load_separate_option' => false,
 					'text_style' => array(
 						array(
-							'index' => 1,
 							'title' => null,
 							'font_weight_bold' => false,
 							'font_italic' => false,
@@ -219,7 +218,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 				),
 				'correct' => array(
 					array(
-						'index' => 1,
 						'title' => null,
 						'font_weight_bold' => false,
 						'font_italic' => false,
@@ -259,7 +257,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'load_separate_option' => true,
 					'text_style' => array(
 						array(
-							'index' => 1,
 							'title' => '書式設定1',
 							'font_weight_bold' => true,
 							'font_italic' => true,
@@ -273,7 +270,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'class_name' => 'vk-text-style--1',
 						),
 						array(
-							'index' => 2,
 							'title' => '書式設定2',
 							'font_weight_bold' => true,
 							'font_italic' => true,
@@ -314,7 +310,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'load_separate_option' => true,
 					'text_style' => array(
 						array(
-							'index' => 1,
 							'title' => '書式設定1',
 							'font_weight_bold' => true,
 							'font_italic' => true,
@@ -328,7 +323,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'class_name' => 'vk-text-style--1',
 						),
 						array(
-							'index' => 2,
 							'title' => '書式設定2',
 							'font_weight_bold' => true,
 							'font_italic' => true,

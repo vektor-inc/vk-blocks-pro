@@ -41,19 +41,19 @@ export const DeleteItemButton = (props) => {
 			</Button>
 			{isModalOpen && (
 				<Modal
-					title={__('Delete Text Style Setting ?', 'vk-blocks')}
+					title={sprintf(
+						// translators: Would you like to delete %s
+						__('Would you like to delete %s?', 'vk-blocks'),
+						textStyleTitle
+					)}
 					onRequestClose={closeModal}
 					isDismissible={false}
 				>
 					<div className="text-style-delete-modal">
 						<p>
-							{sprintf(
-								// translators: Do you want to delete %s
-								__(
-									'Do you want to delete %s? If you are using this formatting for saved content, changing the class name may change the style.',
-									'vk-blocks'
-								),
-								textStyleTitle
+							{__(
+								'If you are using this formatting for saved content, changing the class name may change the style.',
+								'vk-blocks'
 							)}
 						</p>
 						<div className="text-style-delete-modal-button-area">

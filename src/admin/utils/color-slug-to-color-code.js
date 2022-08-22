@@ -6,12 +6,15 @@ import { getColorObjectByAttributeValues } from '@wordpress/block-editor';
 /**
  * Internal dependencies
  */
-import { colorPalette } from '@vkblocks/admin/utils/settings';
+import { vkColorPalette } from '@vkblocks/admin/utils/settings';
 
 export const colorSlugToColorCode = (color) => {
 	let colorCode;
 	if (color) {
-		const ColorValue = getColorObjectByAttributeValues(colorPalette, color);
+		const ColorValue = getColorObjectByAttributeValues(
+			vkColorPalette,
+			color
+		);
 		if (ColorValue.color !== undefined) {
 			colorCode = ColorValue.color;
 		} else {

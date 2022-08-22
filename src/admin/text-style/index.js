@@ -19,7 +19,7 @@ import { getColorObjectByColorValue } from '@wordpress/block-editor';
  */
 import { AdminContext } from '@vkblocks/admin/index';
 import { TextStylePreview } from '@vkblocks/admin/text-style/preview';
-import { colorPalette } from '@vkblocks/admin/utils/settings';
+import { vkColorPalette } from '@vkblocks/admin/utils/settings';
 import { colorSlugToColorCode } from '@vkblocks/admin/utils/color-slug-to-color-code';
 import { SaveButton } from '@vkblocks/admin/save-button';
 import { AddItemButton } from '@vkblocks/admin/text-style/add-item';
@@ -202,7 +202,7 @@ export default function AdminTextStyle() {
 										>
 											<ColorPalette
 												clearable
-												colors={colorPalette}
+												colors={vkColorPalette}
 												value={colorSlugToColorCode(
 													vkBlocksOption.text_style[i]
 														.color
@@ -210,7 +210,7 @@ export default function AdminTextStyle() {
 												onChange={(value) => {
 													const ColorValue =
 														getColorObjectByColorValue(
-															colorPalette,
+															vkColorPalette,
 															value
 														);
 													const newValue =
@@ -234,7 +234,7 @@ export default function AdminTextStyle() {
 										>
 											<ColorPalette
 												clearable
-												colors={colorPalette}
+												colors={vkColorPalette}
 												value={colorSlugToColorCode(
 													vkBlocksOption.text_style[i]
 														.background_color
@@ -242,7 +242,7 @@ export default function AdminTextStyle() {
 												onChange={(value) => {
 													const ColorValue =
 														getColorObjectByColorValue(
-															colorPalette,
+															vkColorPalette,
 															value
 														);
 													const newValue =
@@ -286,7 +286,7 @@ export default function AdminTextStyle() {
 											{vkBlocksOption.text_style[i]
 												.active_highlighter && (
 												<ColorPalette
-													colors={colorPalette}
+													colors={vkColorPalette}
 													onChange={(value) => {
 														// clearボタンを押した時
 														if (
@@ -317,7 +317,14 @@ export default function AdminTextStyle() {
 										<BaseControl id="class-name-setting">
 											<span>
 												{__('CSS class', 'vk-blocks')}:
-												<code>.{vkBlocksOption.text_style[i].class_name}</code>
+												<code>
+													.
+													{
+														vkBlocksOption
+															.text_style[i]
+															.class_name
+													}
+												</code>
 											</span>
 										</BaseControl>
 									</PanelBody>

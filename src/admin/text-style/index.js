@@ -24,7 +24,6 @@ import { colorSlugToColorCode } from '@vkblocks/admin/utils/color-slug-to-color-
 import { SaveButton } from '@vkblocks/admin/save-button';
 import { AddItemButton } from '@vkblocks/admin/text-style/add-item';
 import { DeleteItemButton } from '@vkblocks/admin/text-style/delete-item-button';
-import { ClassNameControl } from '@vkblocks/admin/text-style/class-name-control';
 /*globals vkBlocksObject */
 
 export default function AdminTextStyle() {
@@ -316,7 +315,10 @@ export default function AdminTextStyle() {
 										initialOpen={false}
 									>
 										<BaseControl id="class-name-setting">
-											<ClassNameControl i={i} />
+											<span>
+												{__('CSS class', 'vk-blocks')}:
+												<code>.{vkBlocksOption.text_style[i].class_name}</code>
+											</span>
 										</BaseControl>
 									</PanelBody>
 								</div>

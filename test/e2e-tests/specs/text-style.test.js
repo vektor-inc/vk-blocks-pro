@@ -21,15 +21,11 @@ describe( 'VK Text Style', () => {
 		 * よく使う書式設定の値を保存する
 		 */
 		// Text Style 1をアクティベート
-		const activateButtonSelector = `//label[contains(text(), "Activate text style 1")]`;
-		const [activateButton] = await page.$x(activateButtonSelector);
-		await activateButton.click();
-
-		await page.focus( `#vk_blocks_text_style_1_title` );
+		await page.focus( `#vk_blocks_text_style_0_title` );
 		//全選択
 		await pressKeyWithModifier( 'primary', 'a' );
 		// 文字列を入力
-		await page.type( `#vk_blocks_text_style_1_title`, 'Test Text Style' );
+		await page.type( `#vk_blocks_text_style_0_title`, 'Test Text Style' );
 		// 保存ボタンを押す
 		await clickButton('Save setting');
 		// 保存処理を待つ

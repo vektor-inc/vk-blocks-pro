@@ -69,6 +69,7 @@ export const AddItemButton = () => {
 			bool = false;
 			message = __('Class name is required.', 'vk-blocks');
 		}
+		// クラス名が既に登録されているか
 		vkBlocksOption.text_style.forEach((option) => {
 			if (option.class_name === value) {
 				bool = false;

@@ -26,6 +26,10 @@ export const DeleteItemButton = (props) => {
 		});
 	};
 
+	const textStyleTitle = !!vkBlocksOption.text_style[i].title
+		? vkBlocksOption.text_style[i].title
+		: '';
+
 	return (
 		<>
 			<Button
@@ -49,7 +53,7 @@ export const DeleteItemButton = (props) => {
 									'Do you want to delete %s? If you are using this formatting for saved content, changing the class name may change the style.',
 									'vk-blocks'
 								),
-								vkBlocksOption.text_style[i].title
+								textStyleTitle
 							)}
 						</p>
 						<div className="text-style-delete-modal-button-area">

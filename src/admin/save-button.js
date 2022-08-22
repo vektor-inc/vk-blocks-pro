@@ -5,6 +5,7 @@ import { __ } from '@wordpress/i18n';
 import { useState, useEffect } from '@wordpress/element';
 import { Button, Snackbar } from '@wordpress/components';
 import apiFetch from '@wordpress/api-fetch';
+import { useDispatch } from '@wordpress/data';
 
 export const SaveButton = (props) => {
 	const { vkBlocksOption, vkBlocksBalloonMeta } = props;
@@ -13,6 +14,8 @@ export const SaveButton = (props) => {
 
 	const onClickUpdate = () => {
 		setIsLoading(true);
+
+		const { setOptions } = useDispatch('vk-blocks/options');
 
 		apiFetch({
 			path: '/vk-blocks/v1/update_vk_blocks_options',

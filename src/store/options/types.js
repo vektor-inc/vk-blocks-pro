@@ -1,3 +1,5 @@
 export const GET_OPTIONS = 'GET_OPTIONS';
-export const POPULATE_OPTIONS = 'POPULATE_OPTIONS';
+export const SET_OPTIONS = 'SET_OPTIONS';
 export const FETCH_OPTIONS = 'FETCH_OPTIONS';
+export const POST_OPTIONS = 'POST_OPTIONS';
+export const POPULATE_OPTIONS = 'POPULATE_OPTIONS';

@@ -189,11 +189,11 @@ msgstr ""
 msgid "Enable accordion and default close"
 msgstr ""
 
-#: src/admin/save-button.js:52
+#: src/admin/save-button.js:55
 msgid "Save setting"
 msgstr ""
 
-#: src/admin/save-button.js:56
+#: src/admin/save-button.js:59
 msgid "Save Success"
 msgstr ""
 

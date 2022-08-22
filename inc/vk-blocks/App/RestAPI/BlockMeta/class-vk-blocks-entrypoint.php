@@ -36,7 +36,7 @@ class Vk_Blocks_EntryPoint {
 
 		register_rest_route(
 			'vk-blocks/v1',
-			'/get_vk_blocks_options',
+			'/get_vk_blocks_options/(?P<type>[a-zA-Z0-9-_]+)',
 			array(
 				array(
 					'methods'             => 'GET',
@@ -80,11 +80,14 @@ class Vk_Blocks_EntryPoint {
 	 *
 	 * @return \WP_REST_Response|\WP_Error
 	 */
-	public function get_vk_blocks_options() {
-
-		return rest_ensure_response(
-			vk_blocks_get_options()
-		);
+	public function get_vk_blocks_options( $param ) {
+		switch ( $param['type'] ) {
+			case "balloon_meta":
+				return rest_ensure_response( VK_Blocks_Options::get_balloon_meta_options() );
+			case "vk_blocks_options":
+			default: 
+				return rest_ensure_response( vk_blocks_get_options() );
+		}
 	}
 
 	/**
@@ -96,8 +99,13 @@ class Vk_Blocks_EntryPoint {
 	public function update_vk_blocks_options( $request ) {
 		$json_params = $request->get_json_params();
 
-		update_option( 'vk_blocks_options', $json_params['vkBlocksOption'] );
-		update_option( 'vk_blocks_balloon_meta', $json_params['vkBlocksBalloonMeta'] );
+		if ( isset($json_params['vkBlocksOption']) ) {
+			update_option( 'vk_blocks_options', $json_params['vkBlocksOption'] );
+		}
+
+		if ( isset($json_params['vk_blocks_balloon_meta']) ) {
+			update_option( 'vk_blocks_balloon_meta', $json_params['vkBlocksBalloonMeta'] );
+		}
 
 		return rest_ensure_response(
 			array(

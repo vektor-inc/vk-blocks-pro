@@ -1,3 +1,7 @@
-export const getOptions = (state) => {
-	return state.options;
+export const getVKBlocksOption = (state) => {
+	return state.vkBlocksOption;
+};
+
+export const getBalloonMeta = (state) => {
+	return state.balloonMeta;
 };

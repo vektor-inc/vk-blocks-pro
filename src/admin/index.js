@@ -16,24 +16,45 @@ import AdminNewFaq from '@vkblocks/admin/new-faq';
 
 export const AdminContext = createContext();
 
+const isEmptyObject = (val) => {
+	return (
+	  val !== null &&
+	  typeof val === 'object' &&
+	  val.constructor === Object &&
+	  Object.keys(val).length === 0
+	);
+  };
+
 export default function VKBlocksAdmin() {
-	const options = useSelect((select) => {
-		return select('vk-blocks-pro/options').getOptions();
+	const storeVKBlocksOption = useSelect((select) => {
+		return select('vk-blocks-pro/options').getVKBlocksOption();
 	}, []);
 
+	const storeBalloonMeta = useSelect((select) => {
+		return select('vk-blocks-pro/options').getBalloonMeta();
+	}, []);
+
+
 	const [vkBlocksOption, setVkBlocksOption] = useState();
-	const [vkBlocksBalloonMeta, setVkBlocksBalloonMeta] = useState(
-		vkBlocksObject.balloonMeta
-	);
+	const [vkBlocksBalloonMeta, setVkBlocksBalloonMeta] = useState();
+
+
 
 	useEffect(() => {
-		setVkBlocksOption(options);
-	}, [options]);
+		setVkBlocksOption(storeVKBlocksOption);
+	}, [storeVKBlocksOption]);
+
+	useEffect(() => {
+		setVkBlocksBalloonMeta(storeBalloonMeta);
+	}, [storeBalloonMeta]);
+
+	console.log(storeBalloonMeta);
+	console.log(vkBlocksObject.balloonMeta);
 
 	return (
 		<>
 			{/* AdminContext.Providerで各コンポーネントにvalueを渡す */}
-			{vkBlocksOption?.vk_blocks_pro_license_key && (
+			{ !isEmptyObject(vkBlocksOption) && !isEmptyObject(vkBlocksBalloonMeta) && (
 				<AdminContext.Provider
 					value={{
 						vkBlocksOption,

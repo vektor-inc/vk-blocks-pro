@@ -10,7 +10,7 @@
  *
  * $argsにキーが存在したらそのまま存在しない時に$defaultsの配列をマージする
  *
- * wp_parse_argsの配列処理に再帰処理を追加した関数
+ * wp_parse_args配列のマージに再帰処理を追加した関数
  *
  * @see https://developer.wordpress.org/reference/functions/wp_parse_args/
  *

@@ -9,6 +9,7 @@
  * Get Color Palette
  *
  * テーマが設定したカラーパレットまたはtheme.jsonで設定されたカラーパレットを取得
+ *
  * @see https://developer.wordpress.org/reference/functions/wp_get_global_settings/
  *
  * @return array
@@ -28,6 +29,7 @@ new VkColorPaletteManager();
  * Get Add Color Array
  *
  * テーマが設定したカラーパレットまたはtheme.jsonで設定されたカラーパレットを取得
+ *
  * @see https://developer.wordpress.org/reference/functions/wp_get_global_settings/
  *
  * @return array

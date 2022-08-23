@@ -36,11 +36,13 @@ add_action( 'wp_enqueue_scripts', 'vk_blocks_load_bootstrap' );
  * @return void
  */
 function vk_blocks_load_bootstrap_for_site_editor() {
-	if ( wp_is_block_theme() && is_admin() ) {
-		$style_path = wp_normalize_path( VK_BLOCKS_DIR_PATH . '/build/bootstrap_vk_using.css' );
-		if ( file_exists( $style_path ) ) {
-			$dynamic_css = file_get_contents( $style_path );
-			wp_add_inline_style( 'wp-edit-blocks', $dynamic_css );
+	if ( function_exists( 'wp_is_block_theme' ) ) { // Cope with bofore WP5.8.
+		if ( wp_is_block_theme() && is_admin() ) {
+			$style_path = wp_normalize_path( VK_BLOCKS_DIR_PATH . '/build/bootstrap_vk_using.css' );
+			if ( file_exists( $style_path ) ) {
+				$dynamic_css = file_get_contents( $style_path );
+				wp_add_inline_style( 'wp-edit-blocks', $dynamic_css );
+			}
 		}
 	}
 }

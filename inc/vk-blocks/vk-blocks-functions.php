@@ -10,7 +10,6 @@
 // サーバーサイドレンダリングスクリプトを読み込み.
 require_once dirname( __FILE__ ) . '/view/class-vk-blocks-postlist.php';
 require_once dirname( __FILE__ ) . '/view/responsive-br.php';
-require_once dirname( __FILE__ ) . '/style/text-style.php';
 require_once dirname( __FILE__ ) . '/style/balloon.php';
 require_once dirname( __FILE__ ) . '/style/hidden-extension.php';
 require_once dirname( __FILE__ ) . '/class-vk-blocks-print-css-variables.php';
@@ -21,6 +20,12 @@ VK_Blocks_Global_Settings::init();
 
 // utils
 require_once dirname( __FILE__ ) . '/utils/color-palette.php';
+require_once dirname( __FILE__ ) . '/utils/hex-to-rgba.php';
+require_once dirname( __FILE__ ) . '/utils/color-slug-to-color-code.php';
+
+// extensions
+// common
+require_once dirname( __FILE__ ) . '/extensions/common/text-style.php';
 
 /**
  * スペーサーのサイズの配列

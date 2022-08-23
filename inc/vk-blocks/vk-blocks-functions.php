@@ -19,6 +19,9 @@ VK_Blocks_Options::init();
 require_once dirname( __FILE__ ) . '/global-settings/class-vk-blocks-global-settings.php';
 VK_Blocks_Global_Settings::init();
 
+// utils
+require_once dirname( __FILE__ ) . '/utils/color-palette.php';
+
 /**
  * スペーサーのサイズの配列
  */

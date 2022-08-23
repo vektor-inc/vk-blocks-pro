@@ -168,10 +168,6 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 	);
 	wp_set_script_translations( 'vk-blocks-admin-js', 'vk-blocks', VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/languages' );
 
-	if ( function_exists( 'wp_get_global_settings' ) ) {
-		$vk_color_palette = wp_get_global_settings( array( 'color', 'palette' ) );
-	}
-
 	wp_localize_script(
 		'vk-blocks-admin-js',
 		'vkBlocksObject',
@@ -181,8 +177,8 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 			'imageNumber'      => VK_Blocks_Options::balloon_image_number(),
 			'isLicenseSetting' => vk_blocks_is_license_setting(),
 			'isPro'            => vk_blocks_is_pro(),
-			'vkColorPalette'   => VkColorPaletteManager::add_color_array(),
-			'colorPalette'     => $vk_color_palette,
+			'vkColorPalette'   => vk_blocks_get_add_color_array(),
+			'colorPalette'     => vk_blocks_get_color_palette(),
 			'fontSizes'        => VK_Blocks_Global_Settings::font_sizes(),
 			'highlighterColor' => VK_Blocks_Global_Settings::HIGHLIGHTER_COLOR,
 		)

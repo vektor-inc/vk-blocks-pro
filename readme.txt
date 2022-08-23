@@ -64,6 +64,13 @@ e.g.
 
 == Changelog ==
 
+= 1.41.2 =
+[ Improvement ][ Page list from ancestor ] Fix behavior site editor.
+[ Other ] Add PHPUnit test on Several PHP and WordPress versions
+[ Bug Fix ] Fatal error in WordPress 5.8
+[ Bug Fix ][ highlighter ] cope with color palette with alpha.
+[ Bug Fix ][ button ] buttonColorCustom clear convert to primary.
+
 = 1.41.1 =
 [ Bug Fix ] Fix don't display Admin screen in case of spacific option value
 

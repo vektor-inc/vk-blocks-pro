@@ -36,7 +36,8 @@
 		"update:savedVersion": "bash -c 'npm run cli wp post meta update $0 _vkb_saved_block_version $1'",
 		"packages-update": "npx wp-scripts packages-update",
 		"reinstall": "rm -rf node_modules/ && npm install && npm run build",
-		"prepare": "husky install"
+		"prepare": "husky install",
+		"wp-env": "wp-env"
 	},
 	"author": "",
 	"license": "MIT",
@@ -56,7 +57,7 @@
 		"@wordpress/e2e-test-utils": "^6.0.2",
 		"@wordpress/edit-post": "^6.0.2",
 		"@wordpress/element": "^4.1.1",
-		"@wordpress/env": "^4.2.2",
+		"@wordpress/env": "^4.9.0",
 		"@wordpress/hooks": "^3.3.1",
 		"@wordpress/i18n": "^4.3.1",
 		"@wordpress/icons": "^7.0.1",

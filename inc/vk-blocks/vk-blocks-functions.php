@@ -16,6 +16,9 @@ require_once dirname( __FILE__ ) . '/class-vk-blocks-print-css-variables.php';
 require_once dirname( __FILE__ ) . '/class-vk-blocks-options.php';
 VK_Blocks_Options::init();
 
+// utils
+require_once dirname( __FILE__ ) . '/utils/array-merge.php';
+
 /**
  * スペーサーのサイズの配列
  */
@@ -73,7 +76,7 @@ add_filter(
 function vk_blocks_get_options() {
 	$options  = get_option( 'vk_blocks_options' );
 	$defaults = VK_Blocks_Options::get_defaults( VK_Blocks_Options::options_scheme() );
-	$options  = wp_parse_args( $options, $defaults );
+	$options  = vk_blocks_array_merge( $options, $defaults );
 	return $options;
 }
 /**

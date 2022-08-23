@@ -147,6 +147,9 @@ export default function ButtonEdit(props) {
 	useEffect(() => {
 		if (buttonColorCustom !== undefined) {
 			updateBlockAttributes(clientId, { buttonColor: 'custom' });
+		} else if (buttonColor === 'custom') {
+			// 背景色クリアされたらデフォルトに戻す
+			updateBlockAttributes(clientId, { buttonColor: 'primary' });
 		}
 	}, [buttonColorCustom]);
 

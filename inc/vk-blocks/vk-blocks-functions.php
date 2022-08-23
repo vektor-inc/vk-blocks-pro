@@ -80,11 +80,7 @@ add_filter(
  */
 function vk_blocks_get_options() {
 	$options  = get_option( 'vk_blocks_options' );
-	$defaults = array(
-		'balloon_border_width' => 1,
-		'margin_unit'          => 'rem',
-	);
-	$defaults = array_merge( $defaults, apply_filters( 'vk_blocks_default_options', array() ) );
+	$defaults = VK_Blocks_Options::get_defaults( VK_Blocks_Options::options_scheme() );
 	$options  = wp_parse_args( $options, $defaults );
 	return $options;
 }

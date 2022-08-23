@@ -14,6 +14,9 @@ use VektorInc\VK_Breadcrumb\VkBreadcrumb;
  * @return string
  */
 function vk_blocks_breadcrumb_render_callback( $attributes ) {
+	if ( is_front_page() ) {
+		return;
+	}
 	$vk_breadcrumb = new VkBreadcrumb();
 
 	$outer_classes = 'vk_breadcrumb';

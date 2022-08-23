@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
 Tested up to: 6.0.1
-Stable tag: 1.37.0.0
+Stable tag: 1.40.1.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -64,7 +64,19 @@ e.g.
 
 == Changelog ==
 
-[ Add Function ][ Spacer ] Add size option.
+[ Improvement ][ Page list from ancestor ] Fix behavior site editor.
+[ Other ] Add PHPUnit test on Several PHP and WordPress versions
+[ Bug Fix ] Fatal error in WordPress 5.8
+[ Bug Fix ][ highlighter ] cope with color palette with alpha.
+[ Bug Fix ][ button ] buttonColorCustom clear convert to primary.
+
+= 1.41.1 =
+[ Bug Fix ] Fix don't display Admin screen in case of spacific option value
+
+= 1.41.0 =
+[ Add Function ][ Balloon ] Add width option.
+[ Bug Fix ][ Outer (Pro) ] Fixed the border color of the Outer block within the Outer block was not attached.
+[ Specification Change ][ Breadcrumb(Pro) ] Hidden front page breadcrumb.
 
 = 1.40.1 =
 [ Specification Change ][Step(Pro)/Timeline(Pro)] Change lineStyle ui.

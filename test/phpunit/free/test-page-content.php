@@ -20,7 +20,7 @@ class PageContentBlockTest extends WP_UnitTestCase {
 	/**
 	 * 各テストケースの実行直前に呼ばれる
 	 */
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 
 		$page          = array(
@@ -35,7 +35,7 @@ class PageContentBlockTest extends WP_UnitTestCase {
 	/**
 	 * Tear down each test method.
 	 */
-	public function tearDown() {
+	public function tearDown(): void {
 		wp_delete_post( $this->page_id, true );
 		$this->page_id = 0;
 	}

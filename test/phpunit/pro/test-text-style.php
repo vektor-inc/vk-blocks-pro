@@ -1,0 +1,98 @@
+<?php
+/**
+ * Class GetHexToRgbaTest
+ *
+ * @package vk-blocks
+ */
+
+class TextStyleTest extends WP_UnitTestCase {
+
+	/**
+	 * よく使う書式設定のインラインCSSテスト
+	 */
+	public function test_vk_blocks_get_text_style_inline_css() {
+		$test_data = array(
+			// スタイルを変更していない時はCSSを表示しない
+			array(
+				'option'  => array(
+					'text_style' => array(
+						array(
+							'title' => '書式設定1',
+							'font_weight_bold' => false,
+							'font_italic' => false,
+							'font_strikethrough' => false,
+							'color' => null,
+							'background_color' => null,
+							'active_highlighter' => false,
+							'highlighter' => null,
+							'font_size' => null,
+							'nowrap' => false,
+							'class_name' => 'vk-text-style--1',
+						),
+					),
+				),
+				'correct' => '',
+			),
+			// 保存したCSSを取得できるかテスト
+			array(
+				'option'  => array(
+					'text_style' => array(
+						array(
+							'title' => '書式設定1',
+							'font_weight_bold' => false,
+							'font_italic' => false,
+							'font_strikethrough' => false,
+							'color' => '#fffd6b',
+							'background_color' => null,
+							'active_highlighter' => false,
+							'highlighter' => null,
+							'font_size' => null,
+							'nowrap' => false,
+							'class_name' => 'vk-text-style--1',
+						),
+						array(
+							'title' => '書式設定2',
+							'font_weight_bold' => true,
+							'font_italic' => true,
+							'font_strikethrough' => true,
+							'color' => '#fff',
+							'background_color' => '#fff',
+							'active_highlighter' => true,
+							'highlighter' => '#fffd6b',
+							'font_size' => '#fff',
+							'nowrap' => true,
+							'class_name' => 'custom-text-style',
+						),
+					),
+				),
+				'correct' => '.vk-text-style--1{color:#fffd6b;}.custom-text-style{font-weight:bold;font-style:italic;text-decoration:line-through;white-space:nowrap;font-size:#fff;color:#fff;background:linear-gradient(#fff 60%, rgba(255, 253, 107, 0.7) 0);}',
+			),
+		);
+		print PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+		print 'vk_blocks_get_text_style_inline_css()' . PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+		foreach ( $test_data as $test_value ) {
+
+			if ( ! empty( $test_value['option'] ) ){
+				update_option( 'vk_blocks_options', $test_value['option'] );
+			}
+
+			$return  = vk_blocks_get_text_style_inline_css();
+			$correct = $test_value['correct'];
+
+			// print 'return  :';
+			// print PHP_EOL;
+			// var_dump( $return );
+			// print PHP_EOL;
+			// print 'correct  :';
+			// print PHP_EOL;
+			// var_dump( $correct );
+			// print PHP_EOL;
+			$this->assertSame( $return, $correct );
+
+			// 他のテストに影響が出ないようにオプション値を削除する
+			delete_option( 'vk_blocks_options' );
+		}
+	}
+}

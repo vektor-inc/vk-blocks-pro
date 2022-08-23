@@ -6,9 +6,11 @@
  */
 
 /**
- * Load Scripts
+ * Create Text Style CSS
+ *
+ * @return string
  */
-function vk_blocks_text_style() {
+function vk_blocks_get_text_style_inline_css() {
 	$vk_blocks_options = vk_blocks_get_options();
 	$dynamic_css       = '';
 	foreach ( $vk_blocks_options['text_style'] as $text_style ) {
@@ -51,26 +53,5 @@ function vk_blocks_text_style() {
 			$dynamic_css .= '.' . $text_style['class_name'] . '{' . $declarations . '}';
 		}
 	}
-
-	wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );
-	if ( is_admin() && class_exists( 'WP_Screen' ) && WP_Screen::get()->is_block_editor() ) {
-		wp_add_inline_style( 'vk-blocks-build-editor-css', $dynamic_css );
-	}
+	return $dynamic_css;
 }
-add_action( 'wp_enqueue_scripts', 'vk_blocks_text_style' );
-add_action( 'enqueue_block_editor_assets', 'vk_blocks_text_style' );
-
-/**
- * Text_styleのオプション値を渡す
- */
-function vk_blocks_text_style_init() {
-	$vk_blocks_options = vk_blocks_get_options();
-	wp_localize_script(
-		'vk-blocks-build-js',
-		'vkBlocksOptions',
-		array(
-			'textStyle' => $vk_blocks_options['text_style'],
-		)
-	);
-}
-add_action( 'init', 'vk_blocks_text_style_init' );

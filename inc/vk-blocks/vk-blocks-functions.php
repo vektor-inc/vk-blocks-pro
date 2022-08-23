@@ -18,6 +18,9 @@ VK_Blocks_Options::init();
 require_once dirname( __FILE__ ) . '/global-settings/class-vk-blocks-global-settings.php';
 VK_Blocks_Global_Settings::init();
 
+require_once dirname( __FILE__ ) . '/enqueue/class-vk-blocks-enqueue.php';
+new Vk_Blocks_Enqueue();
+
 // utils
 require_once dirname( __FILE__ ) . '/utils/color-palette.php';
 require_once dirname( __FILE__ ) . '/utils/hex-to-rgba.php';

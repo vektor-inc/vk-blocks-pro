@@ -1,6 +1,8 @@
 <?php
 /**
- * Load VK Blocks Files
+ * Load VK Blocks Inc Files
+ *
+ * このファイルはinc直下にある各ロードするファイルを読み込むだけ
  *
  * @package vk-blocks
  */

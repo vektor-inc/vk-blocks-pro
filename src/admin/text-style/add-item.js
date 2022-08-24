@@ -83,11 +83,11 @@ export const AddItemButton = () => {
 			</Button>
 			{isModalOpen && (
 				<Modal
-					title={__('Add Text Style Setting ?', 'vk-blocks')}
+					title={__('Add Text Style', 'vk-blocks')}
 					onRequestClose={closeModal}
 					isDismissible={false}
 				>
-					<div className="text-style-add-modal">
+					<div className="text_style_add_modal">
 						<TextControl
 							className="text_style_item_class_name"
 							label={__(
@@ -117,7 +117,7 @@ export const AddItemButton = () => {
 							}}
 							value={title}
 						/>
-						<div className="text-style-add-modal-button-area">
+						<div className="text_style_add_modal_button_area">
 							<Button
 								onClick={() => {
 									addItem();

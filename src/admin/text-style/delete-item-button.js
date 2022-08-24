@@ -49,14 +49,14 @@ export const DeleteItemButton = (props) => {
 					onRequestClose={closeModal}
 					isDismissible={false}
 				>
-					<div className="text-style-delete-modal">
+					<div className="text_style_delete_modal">
 						<p>
 							{__(
-								'If you are using this formatting for saved content, changing the class name may change the style.',
+								'If this format is used for saved content, the style may change.',
 								'vk-blocks'
 							)}
 						</p>
-						<div className="text-style-delete-modal-button-area">
+						<div className="text_style_delete_modal_button_area">
 							<Button
 								isDestructive
 								onClick={() => {

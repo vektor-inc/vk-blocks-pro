@@ -14,3 +14,22 @@ body{
 .vk_admin_selectControl {
 	width: 50%;
 }
+
+.vk_admin_page {
+	.adminMain #adminContent_main,
+	.adminMain.column_3 {
+		overflow: visible;
+	}
+
+	.submit.sticky {
+		position: sticky;
+		bottom: 0;
+		padding: 2em 0;
+		margin: 2em 0 0;
+		background-color: rgba(240,240,240, .75);
+	
+		.update-button {
+			padding: 0 3em;
+		}
+	}
+}

@@ -23,13 +23,17 @@ version=$1
 mv vk-blocks/ vk-blocks-copy-target/
 # Cloneした無料版のディレクトリに移動
 cd ./vk-blocks-copy-target/
-# コピー先の src/ を一旦削除
-rm -rf src/*
+# コピー先の トップディレクトリ を一旦削除
+rm -rf editor-css/* inc/* lib/* options-css/* src/*
 
 # プロ版のディレクトリに移動
 cd ../
 # 指定したファイルを除外して、Pro版を無料版（vk-blocks-copy-target）へコピー&上書き
-rsync -arvc --exclude 'vk-blocks-copy-target/' --exclude 'vendor/' --exclude 'bin/' --exclude 'build/_pro/' --exclude 'src/blocks/_pro/' --exclude 'inc/vk-blocks-pro/' --exclude '.git/' --exclude '.github/' --exclude 'build/block-build.css' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/bundle-pro.js' --exclude '.gitignore' --exclude 'build/*.css' --exclude 'build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' --exclude 'vk-blocks-pro.code-workspace' --exclude 'phpunit.xml.dist' ./* ./vk-blocks-copy-target/
+# -a : archive -rlptgoDとイコール
+# -r : 指定ディレクトリ配下をすべて対象
+# -v : コピーファイルの転送情報を出力
+# -c : チェックサムで差分を確認
+rsync -arvc --exclude 'vk-blocks-copy-target/' --exclude './vendor/' --exclude 'bin/' --exclude 'build/_pro/' --exclude 'src/blocks/_pro/' --exclude 'inc/vk-blocks-pro/' --exclude '.git/' --exclude '.github/' --exclude 'build/block-build.css' --exclude 'inc/vk-blocks-pro-config.php' --exclude 'src/blocks/bundle-pro.js' --exclude '.gitignore' --exclude 'build/*.css' --exclude 'build/*.js' --exclude 'editor-css/*.css' --exclude 'editor-css/*.css.map' --exclude 'vk-blocks-pro.code-workspace' --exclude 'phpunit.xml.dist' ./* ./vk-blocks-copy-target/
 
 # 無料版のディレクトリに移動
 cd ./vk-blocks-copy-target/

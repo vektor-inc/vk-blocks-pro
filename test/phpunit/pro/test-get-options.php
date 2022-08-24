@@ -217,6 +217,63 @@ class GetOptionsTest extends WP_UnitTestCase {
 				),
 				'correct' => null
 			),
+			// margin_sizeのlg,md,smに値が設定されているときに、xl,xsが追加された場合
+			array(
+				'option_check_target' => 'margin_size',
+				'option'  => array(
+					'display_vk_block_template' => 'hide',
+					'new_faq_accordion' => 'open',
+					'balloon_border_width' => 2,
+					'margin_unit' => 'px',
+					'margin_size' => array(
+						'lg' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'md' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'sm' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+					),
+					'load_separate_option' => true,
+				),
+				'correct' => array(
+					'margin_size' => array(
+						'xl' => array(
+							'mobile' => null,
+							'tablet' => null,
+							'pc' => null,
+						),
+						'lg' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'md' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'sm' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'xs' => array(
+							'mobile' => null,
+							'tablet' => null,
+							'pc' => null,
+						),
+					),
+				),
+			),
 			// 全てのオプション値を変更した時
 			array(
 				'option'  => array(

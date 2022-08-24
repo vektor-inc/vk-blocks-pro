@@ -63,6 +63,7 @@ e.g.
 
 
 == Changelog ==
+[Improvement][Admin screen] Display the SaveButton sticky .
 
 = 1.41.2 =
 [ Improvement ][ Page list from ancestor ] Fix behavior site editor.

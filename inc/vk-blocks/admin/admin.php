@@ -135,7 +135,6 @@ function vk_blocks_add_setting_link( $links, $file ) {
 }
 add_filter( 'plugin_action_links', 'vk_blocks_add_setting_link', 10, 2 );
 
-// Load composer autoload.
 use VektorInc\VK_Color_Palette_Manager\VkColorPaletteManager;
 new VkColorPaletteManager();
 

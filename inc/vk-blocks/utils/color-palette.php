@@ -21,16 +21,13 @@ function vk_blocks_get_color_palette() {
 	return $color_palette;
 }
 
-// Load composer autoload.
 use VektorInc\VK_Color_Palette_Manager\VkColorPaletteManager;
 new VkColorPaletteManager();
 
 /**
  * Get Add Color Array
  *
- * テーマが設定したカラーパレットまたはtheme.jsonで設定されたカラーパレットを取得
- *
- * @see https://developer.wordpress.org/reference/functions/wp_get_global_settings/
+ * カラーパレットマネージャーが追加する色を取得
  *
  * @return array
  */

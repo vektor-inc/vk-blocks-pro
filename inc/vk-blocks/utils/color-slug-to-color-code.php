@@ -8,6 +8,8 @@
 /**
  * Get_color_code
  *
+ * 保存されたカラーの名前orカラーコードからCSS変数に変換する関数
+ *
  * @param string $value : color string.
  *
  * @return string

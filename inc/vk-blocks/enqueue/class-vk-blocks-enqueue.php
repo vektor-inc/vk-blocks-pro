@@ -27,6 +27,7 @@ class Vk_Blocks_Enqueue {
 		$dynamic_css = '';
 		// よく使う書式設定
 		$dynamic_css .= vk_blocks_get_text_style_inline_css();
+		// TODO:吹き出し線の太さのCSSもここで追加する
 
 		wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );
 	}
@@ -40,6 +41,7 @@ class Vk_Blocks_Enqueue {
 		$dynamic_css = '';
 		// よく使う書式設定
 		$dynamic_css .= vk_blocks_get_text_style_inline_css();
+		// TODO:吹き出し線の太さのCSSもここで追加する
 
 		// インラインで読み込むCSSを出力
 		wp_add_inline_style( 'vk-blocks-build-editor-css', $dynamic_css );

@@ -8,6 +8,8 @@
 /**
  * Get_hex_to_rgb カラーコードHEXをRGBに変換.
  *
+ * Alpha付きの場合は、そのまま返す（例：rgba( 255,255,255,0.1 )）
+ *
  * @param string $color : color string.
  * @param string $alpha : alpha string.
  *

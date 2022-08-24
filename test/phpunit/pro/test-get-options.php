@@ -188,7 +188,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 				),
 				'correct' => null
 			),
-			// カスタム書式追加 v1.41.1 ←プルリク出す時に再調整
+			// カスタム書式追加 v1.41.2
 			array(
 				'option_target' => 'text_style',
 				'option'  => array(

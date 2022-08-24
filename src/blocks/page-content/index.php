@@ -57,7 +57,7 @@ function vk_blocks_page_content_render_callback( $attributes ) {
 	$page_content    = -1 !== $page_content_id ? get_post( $page_content_id )->post_content : '';
 	vk_blocks_content_enqueue_scripts( $page_content );
 
-	$vk_blocks_options = vk_blocks_get_options();
+	$vk_blocks_options = VK_Blocks_Options::get_options();
 	if ( has_block( 'vk-blocks/faq2', $page_content ) || has_block( 'vk-blocks/faq', $page_content ) ) {
 		if ( 'open' === $vk_blocks_options['new_faq_accordion'] ) {
 			$page_content = str_replace( '[accordion_trigger_switch]', 'vk_faq-accordion vk_faq-accordion-open', $page_content );

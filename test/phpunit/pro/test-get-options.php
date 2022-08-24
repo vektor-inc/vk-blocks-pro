@@ -224,7 +224,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 			),
 			// カスタム書式追加 v1.41.2
 			array(
-				'option_target' => 'text_style',
+				'option_check_target' => 'text_style',
 				'option'  => array(
 					'display_vk_block_template' => 'hide',
 					'new_faq_accordion' => 'open',

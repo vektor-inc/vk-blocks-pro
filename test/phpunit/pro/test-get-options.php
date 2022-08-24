@@ -11,9 +11,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 		/**
 		 * option値を追加した場合
 		 * ・プラグインインストール初期状態
-		 * ・他のオプション値が保存されている状態から追加したoption値の初期値がmargeされるか
-		 *
-		 * テストを追加してください
 		 * ・他のoption値が保存されている状態から追加したoption値の初期値がmargeされるか
 		 * ・全てのオプション値を変更した時
 		 * の3つのテストを追加してください

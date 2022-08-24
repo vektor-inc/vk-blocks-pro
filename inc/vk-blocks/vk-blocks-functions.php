@@ -1,18 +1,22 @@
 <?php
 /**
- * VK Blocks main functions
+ * Load VK Blocks Files
  *
- * Main Functions for VK Blocks
+ * このファイルはinc/vk-blocks内にあるフォルダ内を読み込むだけ
  *
  * @package vk_blocks
  */
 
-// サーバーサイドレンダリングスクリプトを読み込み.
-require_once dirname( __FILE__ ) . '/view/class-vk-blocks-postlist.php';
-require_once dirname( __FILE__ ) . '/view/responsive-br.php';
+// オプション値などでスタイルを作る処理を読み込み.
 require_once dirname( __FILE__ ) . '/style/balloon.php';
 require_once dirname( __FILE__ ) . '/style/hidden-extension.php';
+
+require_once dirname( __FILE__ ) . '/view/responsive-br.php';
+require_once dirname( __FILE__ ) . '/view/class-vk-blocks-postlist.php';
+
 require_once dirname( __FILE__ ) . '/class-vk-blocks-print-css-variables.php';
+
+// オプション値を定義
 require_once dirname( __FILE__ ) . '/class-vk-blocks-options.php';
 VK_Blocks_Options::init();
 require_once dirname( __FILE__ ) . '/global-settings/class-vk-blocks-global-settings.php';
@@ -29,6 +33,9 @@ require_once dirname( __FILE__ ) . '/utils/color-slug-to-color-code.php';
 // extensions
 // common
 require_once dirname( __FILE__ ) . '/extensions/common/text-style.php';
+
+// utils
+require_once dirname( __FILE__ ) . '/utils/array-merge.php';
 
 /**
  * スペーサーのサイズの配列
@@ -87,7 +94,7 @@ add_filter(
 function vk_blocks_get_options() {
 	$options  = get_option( 'vk_blocks_options' );
 	$defaults = VK_Blocks_Options::get_defaults( VK_Blocks_Options::options_scheme() );
-	$options  = wp_parse_args( $options, $defaults );
+	$options  = vk_blocks_array_merge( $options, $defaults );
 	return $options;
 }
 /**

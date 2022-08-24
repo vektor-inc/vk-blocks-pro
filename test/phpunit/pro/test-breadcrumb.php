@@ -27,7 +27,7 @@ class Breadcrumb extends WP_UnitTestCase {
 	/**
 	 * 各テストケースの実行直前に呼ばれる
 	 */
-	public function setUp() {
+	public function setUp() : void {
 		parent::setUp();
 
 		$catarr                           = array(
@@ -56,7 +56,7 @@ class Breadcrumb extends WP_UnitTestCase {
 	/**
 	 * Tear down each test method.
 	 */
-	public function tearDown() {
+	public function tearDown(): void {
 		wp_delete_post( $this->page_id, true );
 		$this->page_id = 0;
 
@@ -106,7 +106,7 @@ class Breadcrumb extends WP_UnitTestCase {
 	 * @param  string $role administrator, editor, author, contributor ...
 	 * @return void
 	 */
-	public function set_current_user( $role ) {
+	public function set_current_user( $role ) : void {
 		$user = $this->factory()->user->create_and_get(
 			array(
 				'role' => $role,

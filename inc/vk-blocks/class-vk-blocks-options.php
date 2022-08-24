@@ -171,7 +171,7 @@ class VK_Blocks_Options {
 	 *
 	 * @return $balloon_meta_schema
 	 */
-	public function balloon_meta_schema() {
+	public static function balloon_meta_schema() {
 		$number                        = self::balloon_image_number();
 		$return_array                  = array();
 		$return_array['default_icons'] = array(
@@ -254,17 +254,9 @@ class VK_Blocks_Options {
 	 * @return options
 	 */
 	public static function get_balloon_meta_options() {
-		$options                   = get_option( 'vk_blocks_balloon_meta' );
-		$number                    = self::balloon_image_number();
-		$defaults                  = array();
-		$defaults['default_icons'] = array();
-		for ( $i = 1; $i <= $number; $i++ ) {
-			$defaults['default_icons'][ $i ] = array(
-				'name' => null,
-				'src'  => null,
-			);
-		};
-		$options = wp_parse_args( $options, $defaults );
+		$options  = get_option( 'vk_blocks_balloon_meta' );
+		$defaults = self::get_properties( self::balloon_meta_schema() );
+		$options  = wp_parse_args( $options, $defaults );
 		return $options;
 	}
 

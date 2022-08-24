@@ -2,7 +2,7 @@
 /**
  * Load VK Blocks Inc Files
  *
- * このファイルはinc内にある各ロードするファイルを読み込むファイルだけ
+ * このファイルはinc直下にある各ロードするファイルを読み込むだけ
  *
  * @package vk-blocks
  */

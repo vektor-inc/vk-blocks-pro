@@ -37,24 +37,20 @@ export const isAddBlockCss = (blockName) => {
  *
  * @param {string} settings
  */
-addFilter(
-	'blocks.registerBlockType',
-	'vk-blocks/custom-css',
-	(settings) => {
-		if (
-			isAddBlockCss(settings.name) &&
-			hasBlockSupport(settings.name, 'customClassName', true)
-		) {
-			settings.attributes = assign(settings.attributes, {
-				vkbCustomCss: {
-					type: 'string',
-					default: null,
-				},
-			});
-		}
-		return settings;
+addFilter('blocks.registerBlockType', 'vk-blocks/custom-css', (settings) => {
+	if (
+		isAddBlockCss(settings.name) &&
+		hasBlockSupport(settings.name, 'customClassName', true)
+	) {
+		settings.attributes = assign(settings.attributes, {
+			vkbCustomCss: {
+				type: 'string',
+				default: null,
+			},
+		});
 	}
-);
+	return settings;
+});
 
 /**
  * edit.js
@@ -86,13 +82,13 @@ addFilter(
 									className="custom-css-editor"
 									height="200px"
 									// https://uiwjs.github.io/react-codemirror/#/extensions/color
-									extensions={ [
+									extensions={[
 										css(),
 										EditorView.lineWrapping,
-									] }
-									value={ vkbCustomCss ? vkbCustomCss : '' }
+									]}
+									value={vkbCustomCss ? vkbCustomCss : ''}
 									onChange={(value) => {
-										setAttributes({ vkbCustomCss: value })
+										setAttributes({ vkbCustomCss: value });
 									}}
 								/>
 								MonacoEditor
@@ -106,9 +102,9 @@ addFilter(
 										wordWrap: true,
 										quickSuggestions: false, //コンテンツエリアに被るため無効
 									}}
-									value={ vkbCustomCss ? vkbCustomCss : '' }
+									value={vkbCustomCss ? vkbCustomCss : ''}
 									onChange={(value) => {
-										setAttributes({ vkbCustomCss: value })
+										setAttributes({ vkbCustomCss: value });
 									}}
 								/>
 							</PanelBody>

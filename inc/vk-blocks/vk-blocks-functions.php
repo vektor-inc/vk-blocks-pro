@@ -23,27 +23,6 @@ VK_Blocks_Options::init();
 // utils
 require_once dirname( __FILE__ ) . '/utils/array-merge.php';
 
-/**
- * スペーサーのサイズの配列
- */
-function vk_blocks_margin_size_array() {
-	$vk_margin_size_array = array(
-		array(
-			'label' => __( 'Small', 'vk-blocks' ),
-			'value' => 'sm',
-		),
-		array(
-			'label' => __( 'Medium', 'vk-blocks' ),
-			'value' => 'md',
-		),
-		array(
-			'label' => __( 'Large', 'vk-blocks' ),
-			'value' => 'lg',
-		),
-	);
-	return $vk_margin_size_array;
-}
-
 // VK Blocks の管理画面.
 require_once dirname( __FILE__ ) . '/admin/admin.php';
 

@@ -3,7 +3,7 @@
  * VK Components Posts
  *
  * @package VK Component
- * @version 1.2.0
+ * @version 1.3.0
  *
  * *********************** CAUTION ***********************
  * The original of this file is located at:
@@ -464,7 +464,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				'rt',
 				'iframe',
 			);
-			foreach ( $tags as $tag ) {
+			foreach ( $tags as $tag ){
 				$allowed_html[ $tag ] = $common_attr;
 			}
 			$allowed_html['a']['href']                = array();
@@ -479,6 +479,13 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 			$allowed_html['iframe']['loading']        = array();
 			$allowed_html['iframe']['referrerpolicy'] = array();
 			$allowed_html['iframe']['allow']          = array();
+			$allowed_html['form']['method']           = array();
+			$allowed_html['form']['action']           = array();
+			$allowed_html['input']['type']            = array();
+			$allowed_html['input']['name']            = array();
+			$allowed_html['input']['value']           = array();
+			$allowed_html['input']['class']           = array();
+			$allowed_html['input']['style']           = array();
 			return $allowed_html;
 		}
 
@@ -513,8 +520,8 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 			}
 
 			// Add Outer class.
-			if ( ! empty( $options['class_outer'] ) ) {
-				$class_outer .= ' ' . esc_attr( $options['class_outer'] );
+			if ( ! empty( $options['class_outer'] )) {
+				$class_outer .= ' ' .esc_attr( $options['class_outer'] );
 			}
 
 			// Add btn class.
@@ -522,7 +529,7 @@ if ( ! class_exists( 'VK_Component_Posts' ) ) {
 				$class_outer .= ' vk_post-btn-display';
 			}
 
-			$html = '<div id="post-' . esc_attr( $post->ID ) . '" class="vk_post vk_post-postType-' . esc_attr( $post->post_type ) . ' ' . join( ' ', get_post_class( $class_outer ) ) . '">';
+			$html = '<div id="post-' .esc_attr( $post->ID ) . '" class="vk_post vk_post-postType-' . esc_attr( $post->post_type ) . ' ' . join( ' ', get_post_class( $class_outer ) ) . '">';
 			return $html;
 		}
 

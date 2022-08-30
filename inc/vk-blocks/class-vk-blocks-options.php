@@ -183,6 +183,18 @@ class VK_Blocks_Options {
 	}
 
 	/**
+	 * Get vk_blocks_options
+	 *
+	 * @return array
+	 */
+	public static function get_options() {
+		$options  = get_option( 'vk_blocks_options' );
+		$defaults = self::get_defaults( self::options_scheme() );
+		$options  = vk_blocks_array_merge( $options, $defaults );
+		return $options;
+	}
+
+	/**
 	 * Get Balloon Meta Options
 	 *
 	 * @return options

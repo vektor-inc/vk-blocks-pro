@@ -126,8 +126,7 @@ function vk_blocks_get_spacer_size_style( $options, $spacer_size, $device = '', 
  * @return string $dynamic_css : 出力するcss
  */
 function vk_blocks_get_spacer_size_style_all( $options ) {
-	$vk_margin_size_array = vk_blocks_margin_size_array();
-	$dynamic_css          = '';
+	$dynamic_css = '';
 	if (
 		! empty( $options['margin_size']['xs'] ) ||
 		! empty( $options['margin_size']['sm'] ) ||

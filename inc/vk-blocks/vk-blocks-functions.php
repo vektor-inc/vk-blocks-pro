@@ -23,27 +23,6 @@ VK_Blocks_Options::init();
 // utils
 require_once dirname( __FILE__ ) . '/utils/array-merge.php';
 
-/**
- * スペーサーのサイズの配列
- */
-function vk_blocks_margin_size_array() {
-	$vk_margin_size_array = array(
-		array(
-			'label' => __( 'Small', 'vk-blocks' ),
-			'value' => 'sm',
-		),
-		array(
-			'label' => __( 'Medium', 'vk-blocks' ),
-			'value' => 'md',
-		),
-		array(
-			'label' => __( 'Large', 'vk-blocks' ),
-			'value' => 'lg',
-		),
-	);
-	return $vk_margin_size_array;
-}
-
 // VK Blocks の管理画面.
 require_once dirname( __FILE__ ) . '/admin/admin.php';
 
@@ -74,15 +53,6 @@ add_filter(
 	}
 );
 
-/**
- * VK Blocks Get Option
- */
-function vk_blocks_get_options() {
-	$options  = get_option( 'vk_blocks_options' );
-	$defaults = VK_Blocks_Options::get_defaults( VK_Blocks_Options::options_scheme() );
-	$options  = vk_blocks_array_merge( $options, $defaults );
-	return $options;
-}
 /**
  * VK Blocks Get Selected
  *
@@ -121,7 +91,7 @@ function vk_blocks_is_lager_than_wp( $target_version, $syntax = '>=' ) {
  * VK Blocks Assets
  */
 function vk_blocks_blocks_assets() {
-	$vk_blocks_options = vk_blocks_get_options();
+	$vk_blocks_options = VK_Blocks_Options::get_options();
 
 	// プロ版の値をフロントエンドに出力.
 	include_once ABSPATH . 'wp-admin/includes/plugin.php';

@@ -90,10 +90,8 @@ msgid "Margin"
 msgstr ""
 
 #: src/admin/margin.js:19
-#: src/blocks/button/edit.js:321
-#: src/blocks/spacer/edit.js:85
-#: src/extensions/common/inline-font-size/index.js:84
-msgid "Small"
+#: src/blocks/spacer/edit.js:83
+msgid "XS"
 msgstr ""
 
 #: src/admin/margin.js:23
@@ -102,9 +100,8 @@ msgid "S"
 msgstr ""
 
 #: src/admin/margin.js:27
-#: src/blocks/button/edit.js:305
-#: src/blocks/spacer/edit.js:105
-msgid "Large"
+#: src/blocks/spacer/edit.js:103
+msgid "M"
 msgstr ""
 
 #: src/admin/margin.js:31
@@ -1506,6 +1503,15 @@ msgstr ""
 
 #: src/blocks/button/edit.js:296
 msgid "Button Size:"
+msgstr ""
+
+#: src/blocks/button/edit.js:305
+msgid "Large"
+msgstr ""
+
+#: src/blocks/button/edit.js:321
+#: src/extensions/common/inline-font-size/index.js:84
+msgid "Small"
 msgstr ""
 
 #: src/blocks/button/edit.js:328

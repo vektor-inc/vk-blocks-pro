@@ -141,6 +141,11 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'balloon_border_width' => 2,
 				),
 				'correct' => array(
+					'xl' => array(
+						'mobile' => null,
+						'tablet' => null,
+						'pc' => null,
+					),
 					'lg' => array(
 						'mobile' => null,
 						'tablet' => null,
@@ -152,6 +157,11 @@ class GetOptionsTest extends WP_UnitTestCase {
 						'pc' => null,
 					),
 					'sm' => array(
+						'mobile' => null,
+						'tablet' => null,
+						'pc' => null,
+					),
+					'xs' => array(
 						'mobile' => null,
 						'tablet' => null,
 						'pc' => null,
@@ -245,32 +255,30 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'load_separate_option' => true,
 				),
 				'correct' => array(
-					'margin_size' => array(
-						'xl' => array(
-							'mobile' => null,
-							'tablet' => null,
-							'pc' => null,
-						),
-						'lg' => array(
-							'mobile' => 1,
-							'tablet' => 2,
-							'pc' => 3,
-						),
-						'md' => array(
-							'mobile' => 1,
-							'tablet' => 2,
-							'pc' => 3,
-						),
-						'sm' => array(
-							'mobile' => 1,
-							'tablet' => 2,
-							'pc' => 3,
-						),
-						'xs' => array(
-							'mobile' => null,
-							'tablet' => null,
-							'pc' => null,
-						),
+					'lg' => array(
+						'mobile' => 1,
+						'tablet' => 2,
+						'pc' => 3,
+					),
+					'md' => array(
+						'mobile' => 1,
+						'tablet' => 2,
+						'pc' => 3,
+					),
+					'sm' => array(
+						'mobile' => 1,
+						'tablet' => 2,
+						'pc' => 3,
+					),
+					'xl' => array(
+						'mobile' => null,
+						'tablet' => null,
+						'pc' => null,
+					),
+					'xs' => array(
+						'mobile' => null,
+						'tablet' => null,
+						'pc' => null,
 					),
 				),
 			),
@@ -319,6 +327,16 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'mobile' => 1,
 							'tablet' => 2,
 							'pc' => 3,
+						),
+						'xl' => array(
+							'mobile' => null,
+							'tablet' => null,
+							'pc' => null,
+						),
+						'xs' => array(
+							'mobile' => null,
+							'tablet' => null,
+							'pc' => null,
 						),
 					),
 					'load_separate_option' => true,

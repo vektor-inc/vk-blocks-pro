@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] Update VK Component Posts ( Can use input tag on filter  )
 [ Improvement ] Delete vk_blocks_get_options() function and change to VK_Blocks_Options::get_options().
 
 = 1.41.2 =

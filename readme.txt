@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+= 1.42.1 =
 [ Other ] Update VK Component Posts 1.3.1
 
 = 1.42.0 =

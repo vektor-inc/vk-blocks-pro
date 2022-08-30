@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] Update VK Component Posts ( Can use input tag on filter  )
+
 = 1.41.2 =
 [ Improvement ][ Page list from ancestor ] Fix behavior site editor.
 [ Other ] Add PHPUnit test on Several PHP and WordPress versions

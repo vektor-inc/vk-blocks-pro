@@ -1,41 +1,27 @@
 <?php
 /**
- * VK Blocks main functions
+ * Load VK Blocks Files
  *
- * Main Functions for VK Blocks
+ * このファイルはinc/vk-blocks内にあるフォルダ内を読み込むだけ
  *
  * @package vk_blocks
  */
 
-// サーバーサイドレンダリングスクリプトを読み込み.
-require_once dirname( __FILE__ ) . '/view/class-vk-blocks-postlist.php';
-require_once dirname( __FILE__ ) . '/view/responsive-br.php';
+// オプション値などでスタイルを作る処理を読み込み.
 require_once dirname( __FILE__ ) . '/style/balloon.php';
 require_once dirname( __FILE__ ) . '/style/hidden-extension.php';
+
+require_once dirname( __FILE__ ) . '/view/responsive-br.php';
+require_once dirname( __FILE__ ) . '/view/class-vk-blocks-postlist.php';
+
 require_once dirname( __FILE__ ) . '/class-vk-blocks-print-css-variables.php';
+
+// オプション値を定義
 require_once dirname( __FILE__ ) . '/class-vk-blocks-options.php';
 VK_Blocks_Options::init();
 
-/**
- * スペーサーのサイズの配列
- */
-function vk_blocks_margin_size_array() {
-	$vk_margin_size_array = array(
-		array(
-			'label' => __( 'Small', 'vk-blocks' ),
-			'value' => 'sm',
-		),
-		array(
-			'label' => __( 'Medium', 'vk-blocks' ),
-			'value' => 'md',
-		),
-		array(
-			'label' => __( 'Large', 'vk-blocks' ),
-			'value' => 'lg',
-		),
-	);
-	return $vk_margin_size_array;
-}
+// utils
+require_once dirname( __FILE__ ) . '/utils/array-merge.php';
 
 // VK Blocks の管理画面.
 require_once dirname( __FILE__ ) . '/admin/admin.php';
@@ -67,15 +53,6 @@ add_filter(
 	}
 );
 
-/**
- * VK Blocks Get Option
- */
-function vk_blocks_get_options() {
-	$options  = get_option( 'vk_blocks_options' );
-	$defaults = VK_Blocks_Options::get_defaults( VK_Blocks_Options::options_scheme() );
-	$options  = wp_parse_args( $options, $defaults );
-	return $options;
-}
 /**
  * VK Blocks Get Selected
  *
@@ -114,7 +91,7 @@ function vk_blocks_is_lager_than_wp( $target_version, $syntax = '>=' ) {
  * VK Blocks Assets
  */
 function vk_blocks_blocks_assets() {
-	$vk_blocks_options = vk_blocks_get_options();
+	$vk_blocks_options = VK_Blocks_Options::get_options();
 
 	// プロ版の値をフロントエンドに出力.
 	include_once ABSPATH . 'wp-admin/includes/plugin.php';

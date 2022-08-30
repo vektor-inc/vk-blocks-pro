@@ -9,6 +9,13 @@
 		"buttonsJustify": {
 			"type": "string",
 			"default": "left"
+		},
+		"gap": {
+			"type": "string",
+			"default": null
+		},
+		"blockId": {
+			"type": "string"
 		}
 	},
 	"supports": {

@@ -24,16 +24,16 @@ import {
 	PanelBody,
 	BaseControl,
 	SelectControl,
-	ButtonGroup,
-	Button,
 } from '@wordpress/components';
 import {
 	InspectorControls,
 	InnerBlocks,
 	useBlockProps,
+	BlockControls,
+	BlockAlignmentToolbar,
 } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
-import { dispatch } from '@wordpress/data';
+import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 
 export default function OuterEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -60,6 +60,7 @@ export default function OuterEdit(props) {
 		innerSideSpaceValueTablet,
 		innerSideSpaceValueMobile,
 		innerSideSpaceUnit,
+		blockId,
 	} = attributes;
 
 	let classPaddingLR;
@@ -70,11 +71,27 @@ export default function OuterEdit(props) {
 
 	const containerClass = 'vk_outer_container';
 
-	const { updateBlockAttributes } = dispatch('core/block-editor');
-
 	useEffect(() => {
-		if (clientId) {
-			updateBlockAttributes(clientId, { clientId });
+		if (attributes.clientId !== undefined) {
+			setAttributes({ clientId: undefined });
+		}
+		if (
+			blockId === undefined ||
+			isParentReusableBlock(clientId) === false
+		) {
+			setAttributes({ blockId: clientId });
+		}
+		// 互換処理 #1187
+		if (borderStyle === 'none' && attributes.className) {
+			// 追加CSSクラスを半角文字列で分けて配列化
+			const nowClassArray = attributes.className.split(' ');
+			// has-border-color,has-〇〇-border-colorクラスを削除する
+			const newClassName = nowClassArray.filter((nowClassName) => {
+				return !nowClassName.match(/has(.*)border-color/);
+			});
+			setAttributes({
+				className: classnames(newClassName),
+			});
 		}
 	}, [clientId]);
 
@@ -122,11 +139,7 @@ export default function OuterEdit(props) {
 	const GetBgImage = (
 		<>
 			{(bgImage || bgImageTablet || bgImageMobile) && (
-				<GenerateBgImage
-					prefix={prefix}
-					clientId={clientId}
-					{...props}
-				/>
+				<GenerateBgImage prefix={prefix} blockId={blockId} {...props} />
 			)}
 			<span
 				className={`vk_outer-background-area ${bgColorClasses}`}
@@ -137,7 +150,9 @@ export default function OuterEdit(props) {
 
 	//幅のクラス切り替え
 	// eslint-disable-next-line prefer-const
-	const classWidth = `vk_outer-width-${outerWidth}`;
+	const classWidth = !!outerWidth
+		? `vk_outer-width-${outerWidth}`
+		: 'vk_outer-width-normal';
 
 	//classBgPositionのクラス切り替え
 	if (bgPosition === 'parallax') {
@@ -218,11 +233,14 @@ export default function OuterEdit(props) {
 
 	const blockProps = useBlockProps({
 		className: classnames(
-			`vkb-outer-${clientId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
+			`vkb-outer-${blockId} vk_outer ${classWidth} ${classPaddingLR} ${classPaddingVertical} ${classBgPosition}`,
 			{
-				[`has-border-color`]: borderColor !== undefined,
+				[`has-border-color`]:
+					borderStyle !== 'none' && borderColor !== undefined,
 				[`has-${borderColor}-border-color`]:
-					borderColor !== undefined && !isHexColor(borderColor),
+					borderStyle !== 'none' &&
+					borderColor !== undefined &&
+					!isHexColor(borderColor),
 			}
 		),
 		style: borderStyleProperty,
@@ -230,6 +248,15 @@ export default function OuterEdit(props) {
 
 	return (
 		<>
+			<BlockControls>
+				<BlockAlignmentToolbar
+					value={outerWidth}
+					onChange={(nextWidth) =>
+						setAttributes({ outerWidth: nextWidth })
+					}
+					controls={['full']}
+				/>
+			</BlockControls>
 			<InspectorControls>
 				<PanelBody
 					title={__('Background Setting', 'vk-blocks')}
@@ -339,29 +366,6 @@ export default function OuterEdit(props) {
 				>
 					<p>{__('Width', 'vk-blocks')} </p>
 					<BaseControl>
-						<ButtonGroup className="mb-3">
-							<Button
-								isSmall
-								isPrimary={outerWidth === 'normal'}
-								isSecondary={outerWidth !== 'normal'}
-								onClick={() =>
-									setAttributes({ outerWidth: 'normal' })
-								}
-							>
-								{__('Normal', 'vk-blocks')}
-							</Button>
-							<Button
-								isSmall
-								isPrimary={outerWidth === 'full'}
-								isSecondary={outerWidth !== 'full'}
-								onClick={() =>
-									setAttributes({ outerWidth: 'full' })
-								}
-							>
-								{__('Full Wide', 'vk-blocks')}
-							</Button>
-						</ButtonGroup>
-
 						<RadioControl
 							label={__('Padding (Left and Right)', 'vk-blocks')}
 							selected={padding_left_and_right} //eslint-disable-line camelcase

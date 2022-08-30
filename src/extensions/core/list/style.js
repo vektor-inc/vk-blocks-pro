@@ -1,20 +1,57 @@
 /**
- * list-style block type
- *
+ * External dependencies
  */
-import { convertColorClass } from '@vkblocks/utils/color-code-to-class.js';
-
 import { assign } from 'lodash';
+
+/**
+ * WordPress dependencies
+ */
 import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
 import { registerBlockStyle } from '@wordpress/blocks';
 import { PanelBody } from '@wordpress/components';
-import { InspectorControls, ColorPalette } from '@wordpress/block-editor';
+import {
+	InspectorControls,
+	ColorPalette,
+	getColorObjectByColorValue,
+} from '@wordpress/block-editor';
+import { select } from '@wordpress/data';
 import { createHigherOrderComponent } from '@wordpress/compose';
 
 const isValidBlockType = (name) => {
 	const validBlockTypes = ['core/list'];
 	return validBlockTypes.includes(name);
+};
+
+// サポートしているクラス名かどうか
+const isVKColorPaletteManager = (colorSet) => {
+	// 設定されているカラーパレットのスラッグ配列
+	const colorSetSlugArray = [];
+	colorSet.forEach((item) => {
+		colorSetSlugArray.push(item.slug);
+	});
+
+	const supportColorSlugArray = [
+		'black',
+		'cyan-bluish-gray',
+		'white',
+		'pale-pink',
+		'vivid-red',
+		'luminous-vivid-orange',
+		'luminous-vivid-amber',
+		'light-green-cyan',
+		'pale-cyan-blue',
+		'vivid-cyan-blue',
+		'vivid-purple',
+	];
+	if (
+		supportColorSlugArray.every(
+			(element) => colorSetSlugArray.indexOf(element) !== -1
+		)
+	) {
+		return true;
+	}
+	return false;
 };
 
 export const addAttribute = (settings) => {
@@ -33,7 +70,12 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 	let activeColor = '';
 
 	return (props) => {
-		if (isValidBlockType(props.name) && props.isSelected) {
+		const colorSet = select('core/block-editor').getSettings().colors;
+		if (
+			isVKColorPaletteManager(colorSet) &&
+			isValidBlockType(props.name) &&
+			props.isSelected
+		) {
 			if (props.attributes.color) {
 				activeColor = props.attributes.color;
 			} else {
@@ -52,31 +94,43 @@ export const addBlockControl = createHigherOrderComponent((BlockEdit) => {
 								value={activeColor}
 								disableCustomColors={true}
 								onChange={(newColor) => {
-									let newClassName =
-										convertColorClass(newColor);
+									// 色コードを colorSet から探して色データを取得
+									const ColorValue =
+										getColorObjectByColorValue(
+											colorSet,
+											newColor
+										);
 
-									if (props.attributes.className) {
-										let inputClassName =
-											props.attributes.className;
+									// 現在のクラス名を配列化
+									const nowClassArray =
+										props.attributes.className &&
+										props.attributes.className.split(' ');
 
-										inputClassName =
-											inputClassName.split(' ');
+									// 新しいクラス名の配列
+									let newClassNameArray = nowClassArray
+										? nowClassArray
+										: [];
 
-										const filterClassName =
-											inputClassName.filter(function (
-												name
-											) {
-												return (
-													-1 ===
-													name.indexOf('vk-has-')
+									// 設定されていたクラス名vk-has-〇〇-colorを削除する
+									if (nowClassArray) {
+										newClassNameArray =
+											nowClassArray.filter((name) => {
+												return !name.match(
+													/vk-has-(.*)-color/
 												);
 											});
-
-										filterClassName.push(newClassName);
-
-										newClassName =
-											filterClassName.join(' ');
 									}
+
+									// newColorがあれば新しいクラス名を追加する
+									if (newColor !== undefined) {
+										// コアのテキストカラーと被らないようにvk-has-〇〇-colorを追加する
+										newClassNameArray.push(
+											`vk-has-${ColorValue.slug}-color`
+										);
+									}
+
+									const newClassName =
+										newClassNameArray.join(' ');
 
 									activeColor = newColor;
 									props.setAttributes({

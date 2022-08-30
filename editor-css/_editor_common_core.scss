@@ -1,8 +1,7 @@
 /*
 コア側のブロックcssを上書き用のファイルです
 --------------------------------------------*/
-
-.edit-post-visual-editor {
+.editor-styles-wrapper { //サイトエディター
 	//ソーシャルアイコン
 	.vk_card_item .block-editor-inner-blocks .block-editor-block-list__layout,//これがないとカード内のインナーブロックで効かない
 	.wp-block-social-links{
@@ -11,27 +10,27 @@
 			margin: 0 8px .8em 0;
 		}
 	}
-	//他テーマ（Twenty Twenty）上書き用
-	.editor-styles-wrapper .wp-block-image figcaption{
-		display: block;
-	}
-	//他テーマ（Twenty Twenty）上書き用
-	.editor-styles-wrapper ul li,
-	.editor-styles-wrapper ol li{
-		margin:calc( var(--vk-size-text) * 0.8 ) 0;
-	}
 
-	.vk-blocks-format-popover {
-		// WP5.9でPopoverコンポーネントにpaddingがなくなったため
-		.components-popover__content > div {
-				padding: 20px 18px;
+	//他テーマ（Twenty Twenty）上書き用
+		.wp-block-image figcaption{
+			display: block;
 		}
-
-		// インライン文字サイズを再編集時に選択されたフォントサイズが黒バックの白抜きになるため
-		.components-toggle-group-control > div[data-active=true] {
-			background: rgb(30, 30, 30);
-			border-radius: 2px;
+		//他テーマ（Twenty Twenty）上書き用
+		ul li,
+		ol li{
+			margin:calc( var(--vk-size-text) * 0.8 ) 0;
 		}
-	}
 }
 
+.vk-blocks-format-popover {
+	// WP5.9でPopoverコンポーネントにpaddingがなくなったため
+	.components-popover__content > div {
+			padding: 20px 18px;
+	}
+
+	// インライン文字サイズを再編集時に選択されたフォントサイズが黒バックの白抜きになるため
+	.components-toggle-group-control > div[data-active=true] {
+		background: rgb(30, 30, 30);
+		border-radius: 2px;
+	}
+}

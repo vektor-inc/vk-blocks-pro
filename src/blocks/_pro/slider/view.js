@@ -10,9 +10,16 @@ document.defaultView.addEventListener('load', function () {
 			const attributes = JSON.parse(
 				sliderNode.getAttribute('data-vkb-slider')
 			);
+			let sliderId = '';
+			if (attributes.blockId !== undefined) {
+				sliderId = attributes.blockId;
+			} else if (attributes.clientId !== undefined) {
+				// 1.36.0 より古い状態で保存されてる場合の互換処理
+				sliderId = attributes.clientId;
+			}
 
 			let SwiperSetting = `
-			var swiper${index} = new Swiper ('.vk_slider_${attributes.clientId}', {
+			var swiper${index} = new Swiper ('.vk_slider_${sliderId}', {
 			`;
 
 			if (attributes.autoPlay) {

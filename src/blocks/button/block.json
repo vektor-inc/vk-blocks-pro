@@ -53,11 +53,23 @@
 			"type": "number",
 			"default": 0
 		},
+		"outerGap": {
+			"type": "string",
+			"default": null
+		},
 		"fontAwesomeIconBefore": {
 			"type": "string"
 		},
 		"fontAwesomeIconAfter": {
 			"type": "string"
+		},
+		"iconSizeBefore": {
+			"type": "string",
+			"default": null
+		},
+		"iconSizeAfter": {
+			"type": "string",
+			"default": null
 		},
 		"clientId": {
 			"type": "string"

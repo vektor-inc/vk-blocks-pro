@@ -1,0 +1,33 @@
+/*-------------------------------------------*/
+/* 管理画面
+/*-------------------------------------------*/
+.edit-post-visual-editor {
+	.swiper-button-prev,
+	.swiper-button-next {
+		//button非表示
+		display: none;
+	}
+	/* vk_width-full は廃止になったが互換処理のために 2022年7月末までは残す */
+	.swiper-container.vk_slider.vk_width-full,
+	.swiper-container.vk_slider.alignfull {
+		max-width: 100vw;
+		.vk_slider_item {
+			margin: auto;
+			max-width: 100vw;
+			&.vk_slider_item-paddingLR-use,
+			&.vk_slider_item-paddingLR-zero{
+				.vk_slider_item_container{
+						max-width:100%;
+					.wp-block{
+						max-width:100%;
+					}
+				}
+			}
+		}
+	}
+}
+// インサーターが左右左右中央にならないので補正
+.swiper-container>.swiper-wrapper>div>.block-editor-inner-blocks>.block-editor-block-list__layout>.block-list-appender {
+	margin-left:auto;
+	margin-right:auto;
+}

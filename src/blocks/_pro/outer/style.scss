@@ -20,6 +20,17 @@ $media-xxl-down: 1399.98px;
 	background-repeat: no-repeat;
 	position: relative;
 
+	/**
+	* Outer block deprecated
+	* WordPress6.0からhas-border-colorのクラス全体にborder-style: solid;がつくようになった
+	* https://github.com/WordPress/gutenberg/pull/33743
+	* vk-blocks 1.26.0 〜 1.33.2.0までの間,枠線の種類をなし(none)を選んだとしてもborderのclassがついてしまったためhas-border-colorはborder-styleはnoneにする
+	* https://github.com/vektor-inc/vk-blocks-pro/issues/1187
+	*/
+	&.has-border-color {
+		border-style: none;
+	}
+
 	.vk_outer-background-area.has-background-dim::before {
 		content: "";
 		z-index: 1;
@@ -48,7 +59,7 @@ $media-xxl-down: 1399.98px;
 
 	.vk_outer_container {
 		position: relative;
-		min-height: 40px;
+		min-height: 24px;
 		z-index: 1;
 		h1:first-child,
 		h2:first-child,

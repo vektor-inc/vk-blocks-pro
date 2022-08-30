@@ -1,0 +1,65 @@
+.vk_admin_page .adminMain_main .balloonIconList {
+	margin-left:0;
+}
+.vk_admin_page .adminMain_main .balloonIconList li {
+	list-style:none;
+}
+.balloonIconList {
+	width:100%;
+	display:flex;
+	flex-wrap: wrap;
+}
+.balloonIconList li {
+	box-sizing:border-box;
+	width:29.5%;
+	padding:20px 15px 15px;
+	margin:10px;
+	border:1px solid #ccc;
+	border-radius:5px;
+	background-color:rgba(255,255,255,0.9);
+	box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);
+}
+.balloonIconList_iconFrame {
+	width:100px;
+	margin:0 auto 0.5rem;
+}
+.balloonIconList_iconFrame_src {
+	width:100px;
+	height:100px;
+	object-fit:cover;
+	border-radius:50%;
+	border:1px solid #e5e5e5;
+}
+.balloonIconList li img {
+
+}
+.balloonIconList li .button {
+	width:49%;
+	margin-top:5px;
+	box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,0.7);
+}
+.balloonIconList li .button.button-set {
+	color:#464646;
+	border-color:#999;
+	float:left;
+}
+.balloonIconList li .button.button-delete {
+	color:#c00;
+	border-color:#c00;
+	float:right;
+}
+.balloonIconList_name_input {
+	input[type=text] {
+		display:block;
+		width:100%;
+		text-align:center;
+		border-color:#ccc;
+		box-shadow:inset 1px 1px 2px 0 rgba(0,0,0,0.1);
+	}
+}
+.balloonIconList_nameLabel {
+	clear:both;
+	display:block; overflow:hidden;
+	padding-top:0.5rem;
+	padding-bottom:0.3rem;
+}

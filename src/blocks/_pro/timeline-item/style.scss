@@ -6,7 +6,7 @@
 	.vk_timeline_item {
 		position: relative;
 		padding: 0 0 2.4em 1.8em;
-		padding:0 0 calc(var(--vk-size-text) * 2.4 ) calc(var(--vk-size-text) * 1.8 );
+		padding:0 0 0 calc(var(--vk-size-text) * 1.8 );
 		h3:first-of-type,
 		h4:first-of-type {
 			margin-top: calc(var(--vk-size-text) * 0.5 );
@@ -14,6 +14,12 @@
 		&_caption {
 			margin-bottom: 1.5em;
 			color: #666;
+		}
+		&_content {
+			display:block; overflow:hidden; // これがないと margin-bottom が content を貫通してしまう
+			& > *:last-child{
+				margin-bottom:var(--vk-margin-md);
+			}
 		}
 
 		&_style {

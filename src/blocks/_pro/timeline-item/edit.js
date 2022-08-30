@@ -4,6 +4,8 @@ import {
 	BaseControl,
 	SelectControl,
 	TextControl,
+	ButtonGroup,
+	Button,
 } from '@wordpress/components';
 import {
 	InnerBlocks,
@@ -89,28 +91,36 @@ export default function TimelineItemEdit(props) {
 						/>
 					</BaseControl>
 					<BaseControl id="style-line" label="Line Style">
-						<SelectControl
-							value={styleLine}
-							onChange={(value) =>
-								setAttributes({ styleLine: value })
-							}
-							options={[
-								{
-									value: 'default',
-									label: __('Default', 'vk-blocks'),
-								},
-								{
-									value: 'none',
-									label: __('None', 'vk-blocks'),
-								},
-							]}
-						/>
+						<ButtonGroup className={`mb-3`}>
+							<Button
+								isSmall
+								isPrimary={styleLine === 'default'}
+								isSecondary={styleLine !== 'default'}
+								onClick={() =>
+									setAttributes({ styleLine: 'default' })
+								}
+							>
+								{__('Default', 'vk-blocks')}
+							</Button>
+							<Button
+								isSmall
+								isPrimary={styleLine === 'none'}
+								isSecondary={styleLine !== 'none'}
+								onClick={() =>
+									setAttributes({ styleLine: 'none' })
+								}
+							>
+								{__('None', 'vk-blocks')}
+							</Button>
+						</ButtonGroup>
 					</BaseControl>
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
-				<div className={'vk_timeline_item_caption'}>{label}</div>
-				<div className={'vk_timeline_item_contentnpm'}>
+				{label !== undefined && label !== '' && (
+					<div className={'vk_timeline_item_caption'}>{label}</div>
+				)}
+				<div className={'vk_timeline_item_content'}>
 					<InnerBlocks template={TEMPLATE} />
 				</div>
 				<div

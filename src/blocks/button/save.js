@@ -18,17 +18,21 @@ export default function save(props) {
 		buttonWidthMobile,
 		buttonWidthTablet,
 		buttonWidth,
+		outerGap,
 		fontAwesomeIconBefore,
 		fontAwesomeIconAfter,
+		iconSizeBefore,
+		iconSizeAfter,
 		blockId,
 	} = attributes;
 
 	let containerClass = '';
-	// カスタムカラーの場合
+	// カスタムカラーの場合 またはアウターにギャップが指定されれいる場合
 	if (
+		(buttonColorCustom !== undefined && isHexColor(buttonColorCustom)) ||
 		(buttonTextColorCustom !== undefined &&
 			isHexColor(buttonTextColorCustom)) ||
-		(buttonColorCustom !== undefined && isHexColor(buttonColorCustom))
+		outerGap
 	) {
 		containerClass = `vk_button vk_button-color-custom vk_button-${blockId}`;
 	} else {
@@ -67,6 +71,8 @@ export default function save(props) {
 				lbTarget={buttonTarget}
 				lbFontAwesomeIconBefore={fontAwesomeIconBefore}
 				lbFontAwesomeIconAfter={fontAwesomeIconAfter}
+				lbIconSizeBefore={iconSizeBefore}
+				lbIconSizeAfter={iconSizeAfter}
 				lbsubCaption={subCaption}
 				lbRichtext={
 					<RichText.Content

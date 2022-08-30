@@ -1,0 +1,43 @@
+.vk_admin_marginUnit {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1em;
+
+	span {
+		margin-right: 4px;
+	}
+
+	.components-base-control__field {
+		margin-bottom: 0;
+	}
+}
+
+.vk_admin_selectControl.unit-select {
+	width: 7em;
+}
+
+.spacer-input {
+
+	li {
+		display: flex;
+	}
+
+	.margin_size_input {
+		flex-direction: row;
+		align-items: center;
+		input {
+			width: 5em!important;
+		}
+		.components-input-control__container {
+			background-color: unset;
+			.components-input-control__input {
+				margin:0 10px;
+				background-color: #fff;
+			}
+			.components-input-control__backdrop {
+				margin:0 10px;
+				border:1px solid #ccc;
+			}
+		}
+	}
+}

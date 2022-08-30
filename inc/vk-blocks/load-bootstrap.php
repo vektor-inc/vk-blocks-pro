@@ -30,6 +30,25 @@ add_action( 'admin_enqueue_scripts', 'vk_blocks_load_bootstrap' );
 add_action( 'wp_enqueue_scripts', 'vk_blocks_load_bootstrap' );
 
 /**
+ * Load Bootstrap on iframe(Site editor)
+ * for Block theme
+ *
+ * @return void
+ */
+function vk_blocks_load_bootstrap_for_site_editor() {
+	if ( function_exists( 'wp_is_block_theme' ) ) { // Cope with bofore WP5.8.
+		if ( wp_is_block_theme() && is_admin() ) {
+			$style_path = wp_normalize_path( VK_BLOCKS_DIR_PATH . '/build/bootstrap_vk_using.css' );
+			if ( file_exists( $style_path ) ) {
+				$dynamic_css = file_get_contents( $style_path );
+				wp_add_inline_style( 'wp-edit-blocks', $dynamic_css );
+			}
+		}
+	}
+}
+add_action( 'init', 'vk_blocks_load_bootstrap_for_site_editor' );
+
+/**
  * Delete old load bootstrap options
  *
  * 以前はBootstrapを読み組むかどうかの設定値 vk_blocks_load_bootstrap があったが、

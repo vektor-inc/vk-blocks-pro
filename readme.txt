@@ -3,8 +3,8 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,m
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
-Tested up to: 5.9.3
-Stable tag: 1.33.2.0
+Tested up to: 6.0.1
+Stable tag: 1.40.1.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,6 +63,95 @@ e.g.
 
 
 == Changelog ==
+
+[ Improvement ] Delete vk_blocks_get_options() function and change to VK_Blocks_Options::get_options().
+
+= 1.41.2 =
+[ Improvement ][ Page list from ancestor ] Fix behavior site editor.
+[ Other ] Add PHPUnit test on Several PHP and WordPress versions
+[ Bug Fix ] Fatal error in WordPress 5.8
+[ Bug Fix ][ highlighter ] cope with color palette with alpha.
+[ Bug Fix ][ button ] buttonColorCustom clear convert to primary.
+
+= 1.41.1 =
+[ Bug Fix ] Fix don't display Admin screen in case of spacific option value
+
+= 1.41.0 =
+[ Add Function ][ Balloon ] Add width option.
+[ Bug Fix ][ Outer (Pro) ] Fixed the border color of the Outer block within the Outer block was not attached.
+[ Specification Change ][ Breadcrumb(Pro) ] Hidden front page breadcrumb.
+
+= 1.40.1 =
+[ Specification Change ][Step(Pro)/Timeline(Pro)] Change lineStyle ui.
+[ Bug Fix ][ hidden extension ] fix hidden extension class when Screen size xl.
+[ Bug Fix ][ FAQ ] fix faq block js error when load separation mode.
+
+= 1.40.0 =
+[ Improvement ][ hidden extension ] Changed to add common hidden class names to additional CSS classes.
+[ Add Block ][ Page list from ancestors ]
+[ Add Function ][ Button ] Enable inline font size and add icon size option.
+[ Specification Change ] Change the style of the options page to Gutenberg components.
+[ Bug Fix ] fix editor style in Inline font size and Highlighter.
+[ Bug Fix ] Fixed a bug that CSS for edit screen is not loaded in iframe.
+[ Bug Fix ][ Breadcrumb ] Fix duplicate Additional CSS classes.
+
+= 1.39.2 =
+[ Bug Fix ][ Breadcrumb ] Fix in case of filter search result category & keyword
+[ Bug Fix ][ Table style ] Delete border left and right specified vk-table-border-top-bottom 
+[ Specification Change ][ icon ] enable float value at icon size and margin
+
+= 1.39.1 =
+[ Bug Fix ][ Grid Column Card ] fix bug when aspect retio is empty.
+[ Other ] Change the script loaded on the options page to a script file.
+
+= 1.39.0 =
+[ Improvement ] License key remove space.
+[ Bug Fix ][ Common mergin ] cope with table margin bottom 0,margin top 0
+[ Bug fix ][ GridColCard ( Pro ) ] cope with custom color palette
+[ Other ] VK Compo ( mini-content ) Update ( Fix slider align ) 
+
+= 1.38.0 =
+[ Bug fix ][ Post List (Pro) ] cope with pagenation hook
+
+= 1.37.0 =
+[ Specification Change ][ Step Item(Pro) / Timeline Item()Pro ] Change padding-bottom to inner-item last-child margin-bottom
+[ Specification Change ][ Timeline ] If no label, the outer html will not be displayed.
+[ Specification Change ][ Outer ] Move width control to block toolbar.
+[ Specification Change ] Change the style loaded on the options page to a css file.
+[ Bug fix ][ Tree Shaking ] cope with not(***,***)
+[ Bug fix ][ Heading design ] Fix text-align
+
+= 1.36.2 =
+[ Specification Change ] allow iframe on post list filter 
+[ Bug Fix ][ Slider ( Pro ) ] Add compatibility process.
+[ Bug fix ][ Heading design ] Fix plain design text-align
+
+= 1.36.1 =
+[ Bug fix ] Fix active pro version
+
+= 1.36.0 =
+[ Add Function ][ Button outer(Pro) ] Add gap option.
+[ Bug fix ][ Accordion(Pro) ] Fix margin bottom on Accordion close.
+
+= 1.35.0 =
+[ Specification Change ][ Animation(Pro) ] Corresponds reuse block & duplicate
+[ Specification Change ][ Grid Column Card(Pro) ]  Corresponds reuse block & duplicate automatically
+[ Specification Change ][ Card(Pro) ] Corresponds reuse block & duplicate automatically
+[ Specification Change ][ Slider(Pro) ] Corresponds reuse block & duplicate automatically
+[ Specification Change ][ Slider(Pro) ] Changed slider breakpoints to match specified breakpoints in VK Blocks
+[ Specification Change ][ Slider(Pro) ] Change width class name
+[ Bug Fix ][ List ] cope with custom color palette
+[ Bug Fix ][ Slider(Pro) ] Fixed not to output empty CSS tags
+[ Bug Fix ][ Outer (Pro) ] Fix WordPress 6.0 border color class.
+[ Bug Fix ][ Spacer ][ Animation (Pro) ][ Slider (Pro) ] height and border style on Full Site Editor
+
+= 1.34.1 =
+[ Bug Fix ] Fix term color library ( since 1.34.0 )
+
+= 1.34.0 =
+[ Improvement ][ Button ] Support for transformation of paragraph block to VK button block.
+[ Other ] add term color composer library
+[ Bug Fix ][ Grid Col Card(Pro) ] Fix bocome narrow width in case of innner block on edit screen
 
 = 1.33.2 =
 [ Bug Fix ][ Button ] Fix horizontal padding for X-T9 

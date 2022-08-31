@@ -10,10 +10,10 @@ import { Icon } from '@wordpress/components';
  * Internal dependencies
  */
 import { ReactComponent as IconSVG } from './icon.svg';
-/*globals vkBlocksConfig */
+/*globals vk_blocks_params */
 
-if (window.vkBlocksConfig) {
-	vkBlocksConfig.textStyle.forEach((option) => {
+if (window.vk_blocks_params) {
+	vk_blocks_params.textStyle.forEach((option) => {
 		if (!!option.title) {
 			const name = option.class_name && `vk-blocks/${option.class_name}`;
 			const title = option.title

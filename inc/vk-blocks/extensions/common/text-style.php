@@ -11,7 +11,7 @@
  * @return string
  */
 function vk_blocks_get_text_style_inline_css() {
-	$vk_blocks_options = vk_blocks_get_options();
+	$vk_blocks_options = VK_Blocks_Options::get_options();
 	$dynamic_css       = '';
 	foreach ( $vk_blocks_options['text_style'] as $text_style ) {
 		// CSSの中身を作る

@@ -22,9 +22,6 @@ VK_Blocks_Options::init();
 require_once dirname( __FILE__ ) . '/global-settings/class-vk-blocks-global-settings.php';
 VK_Blocks_Global_Settings::init();
 
-require_once dirname( __FILE__ ) . '/enqueue/class-vk-blocks-enqueue.php';
-new Vk_Blocks_Enqueue();
-
 // utils
 require_once dirname( __FILE__ ) . '/utils/color-palette.php';
 require_once dirname( __FILE__ ) . '/utils/hex-to-rgba.php';
@@ -114,8 +111,16 @@ function vk_blocks_blocks_assets() {
 	} else {
 		wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_check', array( 'is_pro' => false ) );
 	}
-	// ホーム URL を渡す用.
-	wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_params', array( 'home_url' => home_url( '/' ) ) );
+
+	// ブロックエディタに値を渡す用.
+	wp_localize_script(
+		'vk-blocks-build-js',
+		'vk_blocks_params',
+		array(
+			'home_url'  => home_url( '/' ),
+			'textStyle' => $vk_blocks_options['text_style'],
+		)
+	);
 
 	if ( vk_blocks_is_lager_than_wp( '5.0' ) ) {
 		global $vk_blocks_common_attributes;
@@ -174,6 +179,8 @@ function vk_blocks_blocks_assets() {
 	';
 
 	$dynamic_css .= vk_blocks_get_spacer_size_style_all( $vk_blocks_options );
+	// よく使う書式設定
+	$dynamic_css .= vk_blocks_get_text_style_inline_css();
 
 	// delete before after space.
 	$dynamic_css = trim( $dynamic_css );

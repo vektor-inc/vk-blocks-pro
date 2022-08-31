@@ -323,7 +323,7 @@ $xxl-min: 1400px;
 		10% { left: 120%; }
 		100% { left: 120%; }
 	}
-	
+
 	.btn.has-background{
 		// テキスト色が入ってない場合は白にしたいので追加
 		&:not(.has-text-color){
@@ -344,7 +344,7 @@ $xxl-min: 1400px;
 				transform: skewX(-25deg);		
 				/* アニメーション */
 				animation-name: shine;
-				animation-duration: 5s;
+				animation-duration: 3s;
 				animation-timing-function: ease-in-out;
 				animation-iteration-count: infinite;//無制限に繰り返し
 			}
@@ -354,6 +354,23 @@ $xxl-min: 1400px;
 				color:#212529;
 			}
 		}
+
+		//立体ボタン
+		&.is-style-solid {
+			box-shadow: 0 4px rgb(0 0 0 / 20%), 0 4px var(--vk-color-primary);
+			// transform: translateY(-6px);
+			transition:0.3s all;
+			&:hover {
+				box-shadow: 0 0 0 transparent;
+				transform: translate3d(0,4px,0);
+			}
+			/* 白っぽい色に対する対策 */
+			&.has-vk-color-light-background-color,
+			&.has-white-background-color {
+				color:#212529;
+			}
+		}
+
 	}
 
 	&.vk_button-align {

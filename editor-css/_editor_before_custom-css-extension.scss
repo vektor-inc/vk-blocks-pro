@@ -1,0 +1,16 @@
+// animationブロックにカスタムCSSを使った時にどうする？
+.vk_edit_custom_css {
+	border: 1px dashed #ccc;
+	min-height:3em;
+	left:0;
+	&:before {
+		position:absolute;
+		right:0;
+		top:0;
+		font-size:10px;
+		background: #eeeeee;
+		padding: .2em .6em;
+		z-index:1000;
+		content:'Custom Css';
+	}
+}

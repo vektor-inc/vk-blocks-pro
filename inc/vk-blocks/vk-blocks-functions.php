@@ -16,12 +16,15 @@ require_once dirname( __FILE__ ) . '/view/class-vk-blocks-postlist.php';
 
 require_once dirname( __FILE__ ) . '/class-vk-blocks-print-css-variables.php';
 
+require_once dirname( __FILE__ ) . '/extensions/common/custom-css-extension.php';
+
 // オプション値を定義
 require_once dirname( __FILE__ ) . '/class-vk-blocks-options.php';
 VK_Blocks_Options::init();
 
 // utils
 require_once dirname( __FILE__ ) . '/utils/array-merge.php';
+require_once dirname( __FILE__ ) . '/utils/minify-css.php';
 
 /**
  * スペーサーのサイズの配列
@@ -191,12 +194,7 @@ function vk_blocks_blocks_assets() {
 
 	$dynamic_css .= vk_blocks_get_spacer_size_style_all( $vk_blocks_options );
 
-	// delete before after space.
-	$dynamic_css = trim( $dynamic_css );
-	// convert tab and br to space.
-	$dynamic_css = preg_replace( '/[\n\r\t]/', '', $dynamic_css );
-	// Change multiple spaces to single space.
-	$dynamic_css = preg_replace( '/\s(?=\s)/', '', $dynamic_css );
+	$dynamic_css = vk_blocks_minify_css( $dynamic_css );
 	wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );
 	// --vk_image-mask-waveはコアの画像ブロックに依存するのでwp-edit-blocksを追加
 	wp_add_inline_style( 'wp-edit-blocks', $dynamic_css );

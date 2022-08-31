@@ -91,7 +91,12 @@ $media-xxl-down: 1399.98px;
 .vk_outer-width-full.vk_outer-paddingLR-none {
 	padding-left: calc(50vw - 50%);
 	padding-right: calc(50vw - 50%);
+	.main-section--base--on &{ //セクションベースありの時
+			padding-left: 0;
+			padding-right: 0;
+	}
 }
+
 $padding-none: 1.5em;
 $padding-sm: 2em;
 $padding-md: 2.5em;

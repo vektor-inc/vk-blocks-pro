@@ -168,7 +168,7 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 		'vk-blocks-admin-js',
 		'vkBlocksObject',
 		array(
-			'options'          => vk_blocks_get_options(),
+			'options'          => VK_Blocks_Options::get_options(),
 			'balloonMeta'      => VK_Blocks_Options::get_balloon_meta_options(),
 			'imageNumber'      => VK_Blocks_Options::balloon_image_number(),
 			'isLicenseSetting' => vk_blocks_is_license_setting(),

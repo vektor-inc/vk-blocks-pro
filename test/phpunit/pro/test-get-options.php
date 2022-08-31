@@ -378,7 +378,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 		);
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
-		print 'vk_blocks_get_options()' . PHP_EOL;
+		print 'VK_Blocks_Options::get_options()' . PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
 		foreach ( $test_data as $test_value ) {
 
@@ -388,7 +388,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 				update_option( 'vk_blocks_options', $test_value['option'] );
 			}
 
-			$return  = vk_blocks_get_options();
+			$return  = VK_Blocks_Options::get_options();
 			$correct = $test_value['correct'];
 
 			// print 'return  :';

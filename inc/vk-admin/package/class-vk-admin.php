@@ -17,7 +17,7 @@ if ( ! class_exists( 'Vk_Admin' ) ) {
 	*/
 	class Vk_Admin {
 
-		public static $version = '2.2.0';
+		public static $version = '2.3.0';
 
 		static function init() {
 			add_action( 'admin_enqueue_scripts', array( __CLASS__, 'admin_common_css' ) );

@@ -11,6 +11,7 @@ import AdminBalloon from '@vkblocks/admin/balloon';
 import AdminMargin from '@vkblocks/admin/margin';
 import AdminLoadSeparate from '@vkblocks/admin/load-separate';
 import AdminNewFaq from '@vkblocks/admin/new-faq';
+import { SaveButton } from '@vkblocks/admin/save-button';
 /*globals vkBlocksObject */
 
 export const AdminContext = createContext();
@@ -39,6 +40,11 @@ export default function VKBlocksAdmin() {
 				<AdminMargin />
 				<AdminLoadSeparate />
 				{vkBlocksObject.isPro && <AdminNewFaq />}
+				<SaveButton
+					classOption={'sticky'}
+					vkBlocksOption={vkBlocksOption}
+					vkBlocksBalloonMeta={vkBlocksBalloonMeta}
+				/>
 			</AdminContext.Provider>
 		</>
 	);

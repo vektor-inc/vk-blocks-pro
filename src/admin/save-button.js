@@ -5,9 +5,10 @@ import { __ } from '@wordpress/i18n';
 import { useState, useEffect } from '@wordpress/element';
 import { Button, Snackbar } from '@wordpress/components';
 import apiFetch from '@wordpress/api-fetch';
+import classNames from 'classnames';
 
 export const SaveButton = (props) => {
-	const { vkBlocksOption, vkBlocksBalloonMeta } = props;
+	const { vkBlocksOption, vkBlocksBalloonMeta, classOption } = props;
 	const [isLoading, setIsLoading] = useState(false);
 	const [isSaveSuccess, setIsSaveSuccess] = useState('');
 
@@ -42,7 +43,7 @@ export const SaveButton = (props) => {
 
 	return (
 		<>
-			<div className="submit">
+			<div className={classNames('submit', classOption)}>
 				<Button
 					className="update-button"
 					isPrimary

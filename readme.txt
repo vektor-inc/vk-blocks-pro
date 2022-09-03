@@ -63,6 +63,7 @@ e.g.
 
 
 == Changelog ==
+[Improvement][Admin screen] Display the SaveButton sticky.
 
 = 1.42.1 =
 [ Other ] Update VK Component Posts 1.3.1

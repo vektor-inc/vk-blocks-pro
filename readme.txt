@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Button ] Add Button Effect option in Solid color button.
 [ Improvement ] Delete vk_blocks_get_options() function and change to VK_Blocks_Options::get_options().
 
 = 1.41.2 =

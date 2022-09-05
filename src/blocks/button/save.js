@@ -11,6 +11,7 @@ export default function save(props) {
 		buttonTarget,
 		buttonSize,
 		buttonType,
+		buttonEffect,
 		buttonColor,
 		buttonTextColorCustom,
 		buttonColorCustom,
@@ -65,6 +66,7 @@ export default function save(props) {
 				lbColorCustom={buttonColorCustom}
 				lbColor={buttonColor}
 				lbType={buttonType}
+				lbEffect={buttonEffect}
 				lbAlign={buttonAlign}
 				lbSize={buttonSize}
 				lbUrl={buttonUrl}

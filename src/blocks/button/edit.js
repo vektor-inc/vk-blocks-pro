@@ -36,6 +36,7 @@ export default function ButtonEdit(props) {
 		buttonTarget,
 		buttonSize,
 		buttonType,
+		buttonEffect,
 		buttonColor,
 		buttonTextColorCustom,
 		buttonColorCustom,
@@ -598,6 +599,7 @@ export default function ButtonEdit(props) {
 								setAttributes({
 									buttonTextColorCustom: undefined,
 								});
+								setAttributes({ buttonEffect: '0' });
 							}}
 						>
 							{__('No background', 'vk-blocks')}
@@ -611,6 +613,7 @@ export default function ButtonEdit(props) {
 								setAttributes({
 									buttonTextColorCustom: undefined,
 								});
+								setAttributes({ buttonEffect: '0' });
 							}}
 						>
 							{__('Text only', 'vk-blocks')}
@@ -622,6 +625,47 @@ export default function ButtonEdit(props) {
 							'vk-blocks'
 						)}
 					</p>
+
+					{'0' === buttonType && (
+						<>
+							<h4 className={`mt-0 mb-2`}>
+								{__('Button Effect:', 'vk-blocks')}
+							</h4>
+							<ButtonGroup className={`mb-3`}>
+								<Button
+									isSmall
+									isPrimary={buttonEffect === '0'}
+									isSecondary={buttonEffect !== '0'}
+									onClick={() =>
+										setAttributes({ buttonEffect: '0' })
+									}
+								>
+									{__('None', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonEffect === '1'}
+									isSecondary={buttonEffect !== '1'}
+									onClick={() => {
+										setAttributes({ buttonEffect: '1' });
+									}}
+								>
+									{__('Shine', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonEffect === '2'}
+									isSecondary={buttonEffect !== '2'}
+									onClick={() => {
+										setAttributes({ buttonEffect: '2' });
+									}}
+								>
+									{__('Solid', 'vk-blocks')}
+								</Button>
+							</ButtonGroup>
+						</>
+					)}
+
 					<h4 className={`mt-0 mb-2`}>{__('Color', 'vk-blocks')}</h4>
 					<SelectControl
 						label={__('Default Color (Bootstrap)', 'vk-blocks')}
@@ -761,6 +805,7 @@ export default function ButtonEdit(props) {
 					lbColorCustom={buttonColorCustom}
 					lbColor={buttonColor}
 					lbType={buttonType}
+					lbEffect={buttonEffect}
 					lbAlign={buttonAlign}
 					lbSize={buttonSize}
 					lbFontAwesomeIconBefore={fontAwesomeIconBefore}

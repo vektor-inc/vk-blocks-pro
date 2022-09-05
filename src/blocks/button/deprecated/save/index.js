@@ -6,6 +6,7 @@ import save1_29_2 from './1.29.2/save';
 import save1_31_0 from './1.31.0/save';
 import save1_35_0 from './1.35.0/save';
 import save1_39_2 from './1.39.2/save';
+import save1_42_1 from './1.42.1/save';
 
 const blockAttributes = {
 	content: {
@@ -135,7 +136,6 @@ const blockAttributes9 = {
 	},
 }
 
-/* 次回対応おねがいします
 const blockAttributes10 = {
 	...blockAttributes9,
 	"iconSizeBefore": {
@@ -147,9 +147,22 @@ const blockAttributes10 = {
 		"default": null
 	},
 }
+
+/* 次回対応おねがいします
+const blockAttributes11 = {
+	...blockAttributes10,
+	"buttonEffect": {
+		"type": "string",
+		"default": "0"
+	},
+}
 */
 
 export const deprecated = [
+	{
+		attributes: blockAttributes10,
+		save: save1_42_1,
+	},
 	{
 		attributes: blockAttributes9,
 		save: save1_39_2,

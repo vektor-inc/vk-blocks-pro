@@ -1,19 +1,18 @@
 /**
  * WordPress dependencies
  */
+import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
 import { PanelBody, Icon } from '@wordpress/components';
 import { InspectorControls } from '@wordpress/block-editor';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { hasBlockSupport } from '@wordpress/blocks';
-import { __ } from '@wordpress/i18n';
 import { useEffect } from '@wordpress/element';
 
 /**
  * External dependencies
  */
 import classnames from 'classnames';
-import { assign } from 'lodash';
 import CodeMirror from '@uiw/react-codemirror';
 import { css } from '@codemirror/lang-css';
 import { EditorView } from '@codemirror/view';
@@ -36,26 +35,6 @@ export const isAddBlockCss = (blockName) => {
 };
 
 /**
- * Block.json
- *
- * @param {string} settings
- */
-addFilter('blocks.registerBlockType', 'vk-blocks/custom-css', (settings) => {
-	if (
-		isAddBlockCss(settings.name) &&
-		hasBlockSupport(settings.name, 'customClassName', true)
-	) {
-		settings.attributes = assign(settings.attributes, {
-			vkbCustomCss: {
-				type: 'string',
-				default: null,
-			},
-		});
-	}
-	return settings;
-});
-
-/**
  * edit.js
  */
 addFilter(
@@ -74,7 +53,7 @@ addFilter(
 			// 追加CSSクラスを半角文字列で分けて配列化
 			const nowClassArray = className ? className.split(' ') : [];
 			// clientId サンプル7cdd8cf7-7645-4cf5-9d73-1181f8734cfb
-			const customCssRegex = /vk_custom_css-(|)/;
+			const customCssRegex = /vk_custom_css-(.+)/;
 			const customCssSelectorRegex = /selector/;
 
 			// vkbCustomCssが変わった時にclassNameに追加CSSが無いかつ、selectorがあったら追加cssクラスにクラス名を追加する
@@ -93,30 +72,27 @@ addFilter(
 
 				// selectorがなければユニーククラスを削除
 				if (!customCssSelectorRegex.test(vkbCustomCss)) {
-					const deleteClass =
-						nowClassArray.indexOf(/vk_custom_css-(.+)/);
+					const deleteClass = nowClassArray.indexOf(customCssRegex);
 					nowClassArray.splice(deleteClass, 1);
-					const newClassName = classnames(nowClassArray);
-					setAttributes({ className: newClassName });
+					setAttributes({ className: classnames(nowClassArray) });
 				}
 			}, [vkbCustomCss]);
 
-			// 複製されたら再利用ブロック以外の時は以前付いていたクラス名vk-custom_css-${clientId}は削除する
+			// 複製されたら再利用ブロック以外の時は以前付いていたクラス名vk-custom_css-${clientId}を振り直す
 			useEffect(() => {
 				if (
 					customCssSelectorRegex.test(vkbCustomCss) &&
 					isParentReusableBlock(clientId) === false
 				) {
 					// 前のクラス名を削除する
-					// const deleteClass = nowClassArray.find(/vk_custom_css-(|)/);
-					const deleteClass =
-						nowClassArray.indexOf(/vk_custom_css-(.+)/);
+					const deleteClass = nowClassArray.indexOf(customCssRegex);
 					nowClassArray.splice(deleteClass, 1);
-					const newClassName = classnames(
-						nowClassArray,
-						`vk_custom_css-${clientId}`
-					);
-					setAttributes({ className: newClassName });
+					setAttributes({
+						className: classnames(
+							nowClassArray,
+							`vk_custom_css-${clientId}`
+						),
+					});
 				}
 			}, [clientId]);
 
@@ -124,7 +100,8 @@ addFilter(
 				width: '24px',
 				height: '24px',
 			};
-			if (vkbCustomCss) {
+			// vkbCustomCssが存在するかつ空白文字のみではない
+			if (vkbCustomCss && vkbCustomCss.match(/\S/g)) {
 				iconStyle = {
 					...iconStyle,
 					color: '#fff',
@@ -192,8 +169,10 @@ addFilter(
 			const { vkbCustomCss, className } = attributes;
 
 			// editor class
-			const attachedClass = classnames(className, {
-				[`vk_edit_custom_css`]: vkbCustomCss,
+			const customCssClass = classnames(props.className, {
+				// vkbCustomCssが存在するかつ空白文字のみではない
+				[`vk_edit_custom_css`]:
+					vkbCustomCss && vkbCustomCss.match(/\S/g),
 			});
 
 			// selectorをvk_custom_css-${clientId}に変換する
@@ -211,7 +190,7 @@ addFilter(
 			if (isAddBlockCss(name) && hasCustomClassName) {
 				return (
 					<>
-						<BlockListBlock {...props} className={attachedClass} />
+						<BlockListBlock {...props} className={customCssClass} />
 						{(() => {
 							if (cssTag) {
 								return <style type="text/css">{cssTag}</style>;
@@ -224,29 +203,3 @@ addFilter(
 		};
 	}, 'vkbCustomCss')
 );
-
-/**
- * save.js
- * attributeの内容を変更するのでsave.jsの内容とedit.js
- * フロントエンドの出力はrender_blockする？
- */
-// addFilter(
-// 	'blocks.getSaveElement',
-// 	'vk-blocks/custom-css',
-// 	(el, type, attributes) => {
-// 		const cssTag = attributes.vkbCustomCss;
-// 		if (!cssTag) {
-// 			return el;
-// 		}
-// 		// selectorというクラス名をvk_custom_css-${clientId}に変更する
-
-// 		// NOTE: useBlockProps + style要素を挿入する場合、useBlockPropsを使った要素が最初（上）にこないと、
-// 		// カスタムクラスを追加する処理が失敗する
-// 		return (
-// 			<>
-// 				{el}
-// 				<style type="text/css">{cssTag}</style>
-// 			</>
-// 		);
-// 	}
-// );

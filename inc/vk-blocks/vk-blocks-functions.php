@@ -16,8 +16,6 @@ require_once dirname( __FILE__ ) . '/view/class-vk-blocks-postlist.php';
 
 require_once dirname( __FILE__ ) . '/class-vk-blocks-print-css-variables.php';
 
-require_once dirname( __FILE__ ) . '/extensions/common/custom-css-extension.php';
-
 // オプション値を定義
 require_once dirname( __FILE__ ) . '/class-vk-blocks-options.php';
 VK_Blocks_Options::init();

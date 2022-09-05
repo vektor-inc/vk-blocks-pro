@@ -1512,6 +1512,18 @@ msgid ""
 "If you select \"No background\", that you need to select a Custom Color."
 msgstr "もし「背景なし」を選択した場合はカスタムカラーで色を指定してください。"
 
+#: src/blocks/button/edit.js:632
+msgid "Button Effect:"
+msgstr "ボタン エフェクト"
+
+#: src/blocks/button/edit.js:653
+msgid "Shine"
+msgstr "光る"
+
+#: src/blocks/button/edit.js:663
+msgid "Dimensional"
+msgstr "立体"
+
 #: src/blocks/button/edit.js:627
 msgid "Default Color (Bootstrap)"
 msgstr "標準色 (Bootstrap)"

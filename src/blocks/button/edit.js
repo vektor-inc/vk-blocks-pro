@@ -660,7 +660,7 @@ export default function ButtonEdit(props) {
 										setAttributes({ buttonEffect: '2' });
 									}}
 								>
-									{__('Solid', 'vk-blocks')}
+									{__('Dimensional', 'vk-blocks')}
 								</Button>
 							</ButtonGroup>
 						</>

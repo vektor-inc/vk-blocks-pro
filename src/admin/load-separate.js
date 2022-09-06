@@ -8,12 +8,10 @@ import { CheckboxControl } from '@wordpress/components';
 /**
  * Internal dependencies
  */
-import { SaveButton } from '@vkblocks/admin/save-button';
 import { AdminContext } from '@vkblocks/admin/index';
 
 export default function AdminLoadSeparate() {
-	const { vkBlocksOption, setVkBlocksOption, vkBlocksBalloonMeta } =
-		useContext(AdminContext);
+	const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
 
 	// PHPでstringで保存されていたオプション値を変換する
 	let migrateLoadSeparateOption;
@@ -52,10 +50,6 @@ export default function AdminLoadSeparate() {
 					}}
 				/>
 			</section>
-			<SaveButton
-				vkBlocksOption={vkBlocksOption}
-				vkBlocksBalloonMeta={vkBlocksBalloonMeta}
-			/>
 		</>
 	);
 }

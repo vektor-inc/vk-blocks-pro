@@ -8,12 +8,10 @@ import { useContext } from '@wordpress/element';
 /**
  * Internal dependencies
  */
-import { SaveButton } from '@vkblocks/admin/save-button';
 import { AdminContext } from '@vkblocks/admin/index';
 
 export default function AdminNewFaq() {
-	const { vkBlocksOption, setVkBlocksOption, vkBlocksBalloonMeta } =
-		useContext(AdminContext);
+	const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
 
 	return (
 		<>
@@ -51,10 +49,6 @@ export default function AdminNewFaq() {
 					]}
 				/>
 			</section>
-			<SaveButton
-				vkBlocksOption={vkBlocksOption}
-				vkBlocksBalloonMeta={vkBlocksBalloonMeta}
-			/>
 		</>
 	);
 }

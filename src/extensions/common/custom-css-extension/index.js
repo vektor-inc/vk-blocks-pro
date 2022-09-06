@@ -133,6 +133,7 @@ addFilter(
 								initialOpen={false}
 							>
 								<CodeMirror
+									id="vk-custom-css-code-mirror"
 									className="custom-css-editor"
 									height="200px"
 									// https://uiwjs.github.io/react-codemirror/#/extensions/color

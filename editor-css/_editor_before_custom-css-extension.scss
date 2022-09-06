@@ -14,3 +14,10 @@
 		content:'Custom CSS';
 	}
 }
+
+// animationブロックの中のブロックにカスタムCSSを使われた時にラベルがかぶらないようにずらす
+.vk_animation>.block-editor-inner-blocks>.block-editor-block-list__layout {
+	&>*[class*="vk_custom_css-"]:before {
+		top: 2em;
+	}
+}

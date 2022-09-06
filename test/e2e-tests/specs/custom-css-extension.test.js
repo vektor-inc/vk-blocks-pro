@@ -25,21 +25,6 @@ describe( 'CustomCssExtension', () => {
 		await changeSiteLang( oldLanguage );
 	});
 
-	/**
-	 * カスタムCSSテストブロック
-	 */
-	const testBlockTitleLists = [
-		// コアブロック
-		'Paragraph',
-		// コアブロック dynamic block
-		'Calendar',
-		// VK Blockブロック
-		'Alert',
-		// VK Blockブロック dynamic block
-		'Breadcrumb',
-	]
-
-
 	it( `CustomCssExtension Paragraph`, async () => {
 		// ブロックを追加
 		await insertBlock('Paragraph');

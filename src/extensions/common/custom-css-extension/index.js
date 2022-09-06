@@ -152,7 +152,14 @@ addFilter(
 										'vk-blocks'
 									)}
 								</p>
-								<pre style={{ whiteSpace: 'pre-wrap',padding: '16px', display: 'block',background: '#f5f5f5' }}>
+								<pre
+									style={{
+										whiteSpace: 'pre-wrap',
+										padding: '16px',
+										display: 'block',
+										background: '#f5f5f5',
+									}}
+								>
 									{'selector {\n    background: #f5f5f5;\n}'}
 								</pre>
 							</PanelBody>

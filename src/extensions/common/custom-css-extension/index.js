@@ -34,6 +34,9 @@ export const isAddBlockCss = (blockName) => {
 	return returnBool;
 };
 
+export const customCssRegex = /vk_custom_css-(.+)/;
+export const customCssSelectorRegex = /selector/;
+
 /**
  * edit.js
  */
@@ -50,24 +53,24 @@ addFilter(
 				'customClassName',
 				true
 			);
-			// 追加CSSクラスを半角文字列で分けて配列化
+			// 追加CSSを半角文字列で分けて配列化
 			const nowClassArray = className ? className.split(' ') : [];
-			// clientId サンプル7cdd8cf7-7645-4cf5-9d73-1181f8734cfb
-			const customCssRegex = /vk_custom_css-(.+)/;
-			const customCssSelectorRegex = /selector/;
 
-			// vkbCustomCssが変わった時にclassNameに追加CSSが無いかつ、selectorがあったら追加cssクラスにクラス名を追加する
+			// 追加CSSにUniqueクラスを追加したクラス名を取得する
+			const getUniqueClassName = (_nowClassArray, _clientId) => {
+				return classnames(_nowClassArray, `vk_custom_css-${_clientId}`);
+			};
+
+			// vkbCustomCssが変更されたときにclassNameにUniqueクラスが無いかつvkbCustomCssにselectorがあったらクラス名を追加
 			useEffect(() => {
-				// vk_custom_css-${clientId}が無いかつselectorがあればユニーククラスを追加
+				// Uniqueクラスが無いかつselectorがあればユニーククラスを追加
 				if (
 					!customCssRegex.test(className) &&
 					customCssSelectorRegex.test(vkbCustomCss)
 				) {
-					const newClassName = classnames(
-						className,
-						`vk_custom_css-${clientId}`
-					);
-					setAttributes({ className: newClassName });
+					setAttributes({
+						className: getUniqueClassName(nowClassArray, clientId),
+					});
 				}
 
 				// selectorがなければユニーククラスを削除
@@ -78,20 +81,29 @@ addFilter(
 				}
 			}, [vkbCustomCss]);
 
-			// 複製されたら再利用ブロック以外の時は以前付いていたクラス名vk-custom_css-${clientId}を振り直す
+			// classNameが変更されたときにvkbCustomCssにselectorがあるかつclassNameにUniqueクラスが無かったらクラス名を追加
 			useEffect(() => {
 				if (
 					customCssSelectorRegex.test(vkbCustomCss) &&
+					!customCssRegex.test(className)
+				) {
+					setAttributes({
+						className: getUniqueClassName(nowClassArray, clientId),
+					});
+				}
+			}, [className]);
+
+			// 複製されたときにclassNameにUniqueクラスがあるかつ再利用ブロックではない時はUniqueクラスを振り直す
+			useEffect(() => {
+				if (
+					customCssRegex.test(className) &&
 					isParentReusableBlock(clientId) === false
 				) {
 					// 前のクラス名を削除する
 					const deleteClass = nowClassArray.indexOf(customCssRegex);
 					nowClassArray.splice(deleteClass, 1);
 					setAttributes({
-						className: classnames(
-							nowClassArray,
-							`vk_custom_css-${clientId}`
-						),
+						className: getUniqueClassName(nowClassArray, clientId),
 					});
 				}
 			}, [clientId]);
@@ -167,35 +179,34 @@ addFilter(
 				true
 			);
 			const { vkbCustomCss, className } = attributes;
+			// 追加CSSを半角文字列で分けて配列化
+			const nowClassArray = className ? className.split(' ') : [];
 
-			// editor class
+			// editor用のクラス名
 			const customCssClass = classnames(props.className, {
 				// vkbCustomCssが存在するかつ空白文字のみではない
 				[`vk_edit_custom_css`]:
 					vkbCustomCss && vkbCustomCss.match(/\S/g),
 			});
 
-			// selectorをvk_custom_css-${clientId}に変換する
+			// selectorをUniqueクラスに変換する
 			let cssTag;
-			const classes =
-				vkbCustomCss && className?.includes('vk_custom_css-')
-					? className
-							.split(' ')
-							.find((i) => i.includes('vk_custom_css'))
-					: null;
-			if (vkbCustomCss) {
-				cssTag = vkbCustomCss.replace('selector', '.' + classes);
+			const uniqueClass = customCssRegex.test(className)
+				? nowClassArray.find((i) => i.includes('vk_custom_css'))
+				: null;
+			if (vkbCustomCss && uniqueClass) {
+				cssTag = vkbCustomCss.replace('selector', '.' + uniqueClass);
 			}
 
 			if (isAddBlockCss(name) && hasCustomClassName) {
 				return (
 					<>
-						<BlockListBlock {...props} className={customCssClass} />
 						{(() => {
 							if (cssTag) {
-								return <style type="text/css">{cssTag}</style>;
+								return <style>{cssTag}</style>;
 							}
 						})()}
+						<BlockListBlock {...props} className={customCssClass} />
 					</>
 				);
 			}

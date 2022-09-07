@@ -8,6 +8,7 @@ import { InspectorControls } from '@wordpress/block-editor';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { hasBlockSupport } from '@wordpress/blocks';
 import { useEffect } from '@wordpress/element';
+import { addQueryArgs } from '@wordpress/url';
 
 /**
  * External dependencies
@@ -166,6 +167,22 @@ addFilter(
 								>
 									{'selector {\n    background: #f5f5f5;\n}'}
 								</pre>
+								<p>
+									{__(
+										'If you want the edit screen to be as close to the public screen as possible, or if your own CSS interferes with the CSS for the identification display and does not display as intended on the edit screen, please hide it.',
+										'vk-blocks'
+									)}
+								</p>
+								<a
+									href={addQueryArgs(
+										'options-general.php?page=vk_blocks_options#custom-css-setting'
+									)}
+								>
+									{__(
+										'Custom CSS Setting',
+										'vk-blocks'
+									)}
+								</a>
 							</PanelBody>
 						</InspectorControls>
 					</>

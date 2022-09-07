@@ -77,6 +77,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'vk_blocks_pro_license_key' => null,
 					'display_vk_block_template' => 'display',
 					'new_faq_accordion' => 'disable',
+					'show_custom_css_editor_flag' => 'true',
 				),
 			),
 			// デフォルトの表示非表示調整 v0.44.13
@@ -207,6 +208,36 @@ class GetOptionsTest extends WP_UnitTestCase {
 				),
 				'correct' => null
 			),
+			// カスタムCSS編集画面識別フラグ非表示 v
+			array(
+				'option_check_target' => 'show_custom_css_editor_flag',
+				'option'  => array(
+					'display_vk_block_template' => 'hide',
+					'new_faq_accordion' => 'open',
+					'balloon_border_width' => 2,
+					'margin_unit' => 'px',
+					'margin_size' => array(
+						'lg' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'md' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'sm' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+					),
+					'load_separate_option' => true,
+					'vk_blocks_pro_license_key' => 'test_license_key',
+				),
+				'correct' => 'true'
+			),
 			// 全てのオプション値を変更した時
 			array(
 				'option'  => array(
@@ -233,6 +264,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'vk_blocks_pro_license_key' => 'test_license_key',
 					'display_vk_block_template' => 'display',
 					'new_faq_accordion' => 'open',
+					'show_custom_css_editor_flag' => 'false',
 				),
 				'correct' => array(
 					'balloon_border_width' => 2,
@@ -258,6 +290,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'vk_blocks_pro_license_key' => 'test_license_key',
 					'display_vk_block_template' => 'display',
 					'new_faq_accordion' => 'open',
+					'show_custom_css_editor_flag' => 'false',
 				),
 			),
 		);

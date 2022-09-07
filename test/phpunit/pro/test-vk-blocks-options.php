@@ -24,6 +24,10 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 						'type'    => 'string',
 						'default' => 'disable',
 					),
+					'show_custom_css_editor_flag' => array(
+						'type'    => 'string',
+						'default' => 'true',
+					),
 				),
 				'correct' => array(
 					'balloon_border_width' => array(
@@ -105,6 +109,10 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 					'new_faq_accordion'         => array(
 						'type'    => 'string',
 						'default' => 'disable',
+					),
+					'show_custom_css_editor_flag' => array(
+						'type'    => 'string',
+						'default' => 'true',
 					),
 				),
 			),

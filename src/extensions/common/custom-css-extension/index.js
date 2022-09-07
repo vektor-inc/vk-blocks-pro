@@ -22,6 +22,7 @@ import { EditorView } from '@codemirror/view';
  */
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 import { ReactComponent as IconSVG } from './icon.svg';
+/*globals vk_blocks_params */
 
 export const inString = (str, keyword) => {
 	return str.indexOf(keyword) !== -1;
@@ -197,7 +198,9 @@ addFilter(
 			const customCssClass = classnames(props.className, {
 				// vkbCustomCssが存在するかつ空白文字のみではない
 				[`vk_edit_custom_css`]:
-					vkbCustomCss && vkbCustomCss.match(/\S/g),
+					vk_blocks_params.show_custom_css_editor_flag === 'true' &&
+					vkbCustomCss &&
+					vkbCustomCss.match(/\S/g),
 			});
 
 			// selectorをUniqueクラスに変換する

@@ -63,7 +63,7 @@ addFilter(
 
 			// vkbCustomCssが変更されたときにclassNameにUniqueクラスが無いかつvkbCustomCssにselectorがあったらクラス名を追加
 			useEffect(() => {
-				// Uniqueクラスが無いかつselectorがあればユニーククラスを追加
+				// Uniqueクラスが無いかつselectorがあればUniqueクラスを追加
 				if (
 					!customCssRegex.test(className) &&
 					customCssSelectorRegex.test(vkbCustomCss)
@@ -73,11 +73,12 @@ addFilter(
 					});
 				}
 
-				// selectorがなければユニーククラスを削除
+				// selectorがなければUniqueクラスを削除
 				if (!customCssSelectorRegex.test(vkbCustomCss)) {
-					const deleteClass = nowClassArray.indexOf(customCssRegex);
-					nowClassArray.splice(deleteClass, 1);
-					setAttributes({ className: classnames(nowClassArray) });
+					const newClassArray = nowClassArray.filter(
+						(x) => !customCssRegex.test(x)
+					);
+					setAttributes({ className: classnames(newClassArray) });
 				}
 			}, [vkbCustomCss]);
 
@@ -93,21 +94,23 @@ addFilter(
 				}
 			}, [className]);
 
-			// 複製されたときにclassNameにUniqueクラスがあるかつ再利用ブロックではない時はUniqueクラスを振り直す
+			// 複製された時にclassNameにUniqueクラスがあるかつ再利用ブロックではない時はUniqueクラスを振り直す
 			useEffect(() => {
 				if (
 					customCssRegex.test(className) &&
 					isParentReusableBlock(clientId) === false
 				) {
-					// 前のクラス名を削除する
-					const deleteClass = nowClassArray.indexOf(customCssRegex);
-					nowClassArray.splice(deleteClass, 1);
+					// 以前のUniqueクラスを削除する
+					const newClassArray = nowClassArray.filter(
+						(x) => !customCssRegex.test(x)
+					);
 					setAttributes({
-						className: getUniqueClassName(nowClassArray, clientId),
+						className: getUniqueClassName(newClassArray, clientId),
 					});
 				}
 			}, [clientId]);
 
+			// アイコンのスタイル
 			let iconStyle = {
 				width: '24px',
 				height: '24px',

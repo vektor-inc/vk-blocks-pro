@@ -178,10 +178,7 @@ addFilter(
 										'options-general.php?page=vk_blocks_options#custom-css-setting'
 									)}
 								>
-									{__(
-										'Custom CSS Setting',
-										'vk-blocks'
-									)}
+									{__('Custom CSS Setting', 'vk-blocks')}
 								</a>
 							</PanelBody>
 						</InspectorControls>

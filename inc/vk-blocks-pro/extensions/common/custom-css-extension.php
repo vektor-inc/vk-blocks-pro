@@ -15,7 +15,7 @@
 function vk_blocks_custom_css_extension( $block_content, $block ) {
 	if ( ! empty( $block['attrs']['vkbCustomCss'] ) ) {
 		$css        = $block['attrs']['vkbCustomCss'];
-		$class_name = $block['attrs']['className'];
+		$class_name = ! empty( $block['attrs']['className']) ? $block['attrs']['className'] : '';
 		// 追加CSSクラスを半角文字列で分けて配列化
 		$now_class_array  = ! empty( $class_name ) ? explode( ' ', $class_name ) : array();
 		$custom_css_class = preg_grep( '/vk_custom_css-[\S]/', $now_class_array );

@@ -198,11 +198,11 @@ addFilter(
 			});
 
 			// selectorをUniqueクラスに変換する
-			let cssTag;
+			let cssTag = vkbCustomCss ? vkbCustomCss : '';
 			const uniqueClass = customCssRegex.test(className)
 				? nowClassArray.find((i) => i.includes('vk_custom_css'))
 				: null;
-			if (vkbCustomCss && uniqueClass) {
+			if (cssTag && uniqueClass) {
 				cssTag = vkbCustomCss.replace('selector', '.' + uniqueClass);
 			}
 

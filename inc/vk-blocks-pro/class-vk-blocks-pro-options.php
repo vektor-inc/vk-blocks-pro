@@ -16,11 +16,11 @@ class VK_Blocks_Pro_Options {
 	 * @var array
 	 */
 	private $vk_blocks_pro_option_schema = array(
-		'display_vk_block_template' => array(
+		'display_vk_block_template'   => array(
 			'type'    => 'string',
 			'default' => 'display',
 		),
-		'new_faq_accordion'         => array(
+		'new_faq_accordion'           => array(
 			'type'    => 'string',
 			'default' => 'disable',
 		),

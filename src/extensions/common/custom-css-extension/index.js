@@ -179,7 +179,7 @@ addFilter(
 									)}
 									target="_blank"
 									rel="noreferrer"
-									className='components-button is-secondary is-small'
+									className="components-button is-secondary is-small"
 								>
 									{__('Custom CSS Setting', 'vk-blocks')}
 								</a>

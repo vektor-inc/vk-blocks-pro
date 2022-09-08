@@ -178,6 +178,7 @@ addFilter(
 										'options-general.php?page=vk_blocks_options#custom-css-setting'
 									)}
 									target="_blank"
+									rel="noreferrer"
 								>
 									{__('Custom CSS Setting', 'vk-blocks')}
 								</a>

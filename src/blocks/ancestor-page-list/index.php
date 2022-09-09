@@ -129,8 +129,6 @@ function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
 		$classes .= ' vk_ancestorPageList-hiddenGrandChild-true';
 	}
 
-
-
 	// block.jsonのSupportsで設定したクラス名やスタイルを取得する.
 	$core_attributes = get_block_wrapper_attributes();
 	if ( ! empty( $core_attributes ) ) {

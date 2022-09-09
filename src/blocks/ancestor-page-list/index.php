@@ -14,7 +14,7 @@
 function vk_blocks_get_ancestor_page_id() {
 	global $post;
 	$post_anc_id = '';
-	if ( $post->ancestors ) {
+	if ( ! empty( $post->ancestors ) ) {
 		foreach ( $post->ancestors as $post_id ) {
 			$post_anc_id = $post_id;
 		}

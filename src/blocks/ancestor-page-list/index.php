@@ -130,7 +130,12 @@ function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
 	}
 
 	// block.jsonのSupportsで設定したクラス名やスタイルを取得する.
-	$wrapper_classes = get_block_wrapper_attributes( array( 'class' => $classes, 'style' => '' ) );
+	$wrapper_classes = get_block_wrapper_attributes(
+		array(
+			'class' => $classes,
+			'style' => '',
+		)
+	);
 
 	$block  = '<aside ' . $wrapper_classes . '>';
 	$block .= vk_blocks_get_ancestor_page_list_title( $attributes );

@@ -43,7 +43,12 @@ function vk_blocks_breadcrumb_render_callback( $attributes ) {
 	}
 
 	// block.jsonのSupportsで設定したクラス名やスタイルを取得する
-	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => $classes, 'style' => '' ) );
+	$wrapper_attributes = get_block_wrapper_attributes(
+		array(
+			'class' => $classes,
+			'style' => '',
+		)
+	);
 
 	$breadcrumb_options = array(
 		'id_outer'           => 'vk_breadcrumb',

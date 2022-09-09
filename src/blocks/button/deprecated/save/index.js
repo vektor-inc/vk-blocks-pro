@@ -80,21 +80,21 @@ const blockAttributes3 = {
 	clientId: {
 		type: 'string',
 	},
-}
+};
 
 const blockAttributes4 = {
 	...blockAttributes3,
 	blockId: {
 		type: 'string',
 	},
-}
+};
 
 const blockAttributes5 = {
 	...blockAttributes4,
 	buttonTextColorCustom: {
 		type: 'string',
 	},
-}
+};
 
 const blockAttributes6 = {
 	...blockAttributes5,
@@ -102,7 +102,7 @@ const blockAttributes6 = {
 		type: 'number',
 		default: 0,
 	},
-}
+};
 
 const blockAttributes7 = {
 	...blockAttributes6,
@@ -118,42 +118,42 @@ const blockAttributes7 = {
 		type: 'number',
 		default: 0,
 	},
-}
+};
 
 const blockAttributes8 = {
 	...blockAttributes7,
-	"old_1_31_0": {
-		'type': 'string',
-		'default': true
+	old_1_31_0: {
+		type: 'string',
+		default: true,
 	}
-}
+};
 
 const blockAttributes9 = {
 	...blockAttributes8,
-	"outerGap": {
-		"type": "string",
-		"default": null
+	outerGap: {
+		type: 'string',
+		default: null,
 	},
-}
+};
 
 const blockAttributes10 = {
 	...blockAttributes9,
-	"iconSizeBefore": {
-		"type": "string",
-		"default": null
+	iconSizeBefore: {
+		type: 'string',
+		default: null,
 	},
-	"iconSizeAfter": {
-		"type": "string",
-		"default": null
+	iconSizeAfter: {
+		type: 'string',
+		default: null,
 	},
-}
+};
 
 /* 次回対応おねがいします
 const blockAttributes11 = {
 	...blockAttributes10,
-	"buttonEffect": {
-		"type": "string",
-		"default": "0"
+	buttonEffect: {
+		type: 'string',
+		default: '0'
 	},
 }
 */

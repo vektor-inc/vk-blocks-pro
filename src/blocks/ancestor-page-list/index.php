@@ -136,8 +136,6 @@ function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
 		)
 	);
 
-	
-
 	$block  = '<aside ' . $wrapper_classes . '>';
 	$block .= vk_blocks_get_ancestor_page_list_title( $attributes );
 	if ( $page_list ) {

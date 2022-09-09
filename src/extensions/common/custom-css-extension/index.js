@@ -177,6 +177,9 @@ addFilter(
 									href={addQueryArgs(
 										'options-general.php?page=vk_blocks_options#custom-css-setting'
 									)}
+									target="_blank"
+									rel="noreferrer"
+									className="components-button is-secondary is-small"
 								>
 									{__('Custom CSS Setting', 'vk-blocks')}
 								</a>

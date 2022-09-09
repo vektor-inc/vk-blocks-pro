@@ -129,8 +129,11 @@ function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
 		$classes .= ' vk_ancestorPageList-hiddenGrandChild-true';
 	}
 
+
+
 	// block.jsonのSupportsで設定したクラス名やスタイルを取得する.
-	if ( ! empty( get_block_wrapper_attributes() ) ) {
+	$core_attributes = get_block_wrapper_attributes();
+	if ( ! empty( $core_attributes ) ) {
 		$wrapper_classes = get_block_wrapper_attributes(
 			array(
 				'class' => $classes,
@@ -139,7 +142,6 @@ function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
 	} else {
 		$wrapper_classes = 'class="' . $classes . '"';
 	}
-
 
 	$block  = '<aside ' . $wrapper_classes . '>';
 	$block .= vk_blocks_get_ancestor_page_list_title( $attributes );

@@ -79,15 +79,15 @@ class AncestorPageListTest extends WP_UnitTestCase {
 			),
 			// Not public page.
 			// サイトエディター上でのテストだが、サイトエディターの中身が iframe で判別方法が不明のため、一般公開でないURLを target_url 指定している .
-			array(
-				'attributes' => array(
-					'ancestorTitleDisplay' => true,
-					'ancestorTitleTagName' => 'h3',
-					'ancestorTitleLink'    => false,
-				),
-				'target_url' => admin_url() . '/site-editor.php?postType=wp_template',
-				'correct'    => '<h3 class="vk_ancestorPageList_title">' . esc_html__( 'Ancestor Page Title', 'vk-blocks' ) . '</h3>',
-			),
+			//array(
+			//	'attributes' => array(
+			//		'ancestorTitleDisplay' => true,
+			//		'ancestorTitleTagName' => 'h3',
+			//		'ancestorTitleLink'    => false,
+			//	),
+			//	'target_url' => admin_url() . '/site-editor.php?postType=wp_template',
+			//	'correct'    => '<h3 class="vk_ancestorPageList_title">' . esc_html__( 'Ancestor Page Title', 'vk-blocks' ) . '</h3>',
+			//),
 		);
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;

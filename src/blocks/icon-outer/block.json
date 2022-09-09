@@ -31,6 +31,9 @@
 		"iconType": {
 			"type": "string",
 			"default": "0"
+		},
+		"iconColor": {
+			"type": "string"
 		}
 	},
 	"description": "Display the Font Awesome icons horizontally.",

@@ -17,6 +17,7 @@ import {
 } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 import { select, dispatch } from '@wordpress/data';
+import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
 
 export default function IconOuterEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
@@ -28,6 +29,7 @@ export default function IconOuterEdit(props) {
 		iconRadius,
 		iconsJustify,
 		iconType,
+		iconColor,
 	} = attributes;
 
 	const { getBlocksByClientId } = select('core/block-editor');
@@ -49,6 +51,7 @@ export default function IconOuterEdit(props) {
 				});
 				updateBlockAttributes(thisInnerBlock.clientId, { iconRadius });
 				updateBlockAttributes(thisInnerBlock.clientId, { iconType });
+				updateBlockAttributes(thisInnerBlock.clientId, { iconColor });
 			});
 		}
 	}, [thisBlock, attributes, clientId]);
@@ -250,6 +253,11 @@ export default function IconOuterEdit(props) {
 							{__('Icon only', 'vk-blocks')}
 						</Button>
 					</ButtonGroup>
+				</PanelBody>
+				<PanelBody title={__('Color', 'vk-blocks')}>
+					<BaseControl>
+						<AdvancedColorPalette schema={'iconColor'} {...props} />
+					</BaseControl>
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>

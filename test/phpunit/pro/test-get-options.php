@@ -285,7 +285,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 			// var_dump( $correct );
 			// print PHP_EOL;
 
-			if ( $test_value['option_check_target'] ) {
+			if ( ! empty( $test_value['option_check_target'] ) ) {
 				$this->assertSame( $correct, $return[ $test_value['option_check_target'] ] );
 			} else {
 				$this->assertSame( $correct, $return );

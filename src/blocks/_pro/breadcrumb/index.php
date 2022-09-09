@@ -46,7 +46,6 @@ function vk_blocks_breadcrumb_render_callback( $attributes ) {
 	$wrapper_attributes = get_block_wrapper_attributes(
 		array(
 			'class' => $outer_classes,
-			'style' => '',
 		)
 	);
 

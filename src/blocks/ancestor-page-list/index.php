@@ -55,7 +55,7 @@ function vk_blocks_get_ancestor_page_list_title( $attributes ) {
 		}
 
 		$title .= '<' . $tag_name . ' class="' . $class . '">';
-		if ( ! empty( $attributes['ancestorTitleLink'] ) && ! empty( $title_link  ) ) {
+		if ( ! empty( $attributes['ancestorTitleLink'] ) && ! empty( $title_link ) ) {
 			$title .= '<a href="' . $title_link . '">';
 		}
 		$title .= esc_html( $title_text );

@@ -14,6 +14,7 @@ use VektorInc\VK_Breadcrumb\VkBreadcrumb;
  * @return string
  */
 function vk_blocks_breadcrumb_render_callback( $attributes ) {
+	$test_mode = apply_filters( 'vk_blocks_test_mode', false );
 	if ( is_front_page() ) {
 		return;
 	}
@@ -44,7 +45,7 @@ function vk_blocks_breadcrumb_render_callback( $attributes ) {
 
 	// block.jsonのSupportsで設定したクラス名やスタイルを取得する
 	$core_attributes = get_block_wrapper_attributes();
-	if ( ! empty( $core_attributes ) ) {
+	if ( false === $test_mode ) {
 		$wrapper_attributes = get_block_wrapper_attributes(
 			array(
 				'class' => $outer_classes,

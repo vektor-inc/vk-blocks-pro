@@ -68,6 +68,10 @@ class Breadcrumb extends WP_UnitTestCase {
 	 * A single example test.
 	 */
 	public function test_breadcrumb() {
+		add_filter(
+			'vk_blocks_test_mode',
+			function() { return true;}
+		);
 		$attributes = array(
 			'name'                       => 'vk-blocks/breadcrumb',
 			'vkb_hidden'                 => false,

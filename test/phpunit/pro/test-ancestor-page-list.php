@@ -119,6 +119,10 @@ class AncestorPageListTest extends WP_UnitTestCase {
 	 * @return void
 	 */
 	public function test_vk_blocks_ancestor_page_list_render_callback() {
+		add_filter(
+			'vk_blocks_test_mode',
+			function() { return true;}
+		);
 
 		// Create test page .
 		$post                     = array(

@@ -75,6 +75,7 @@ function vk_blocks_get_ancestor_page_list_title( $attributes ) {
  * @return string
  */
 function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
+	$test_mode   = apply_filters( 'vk_blocks_test_mode', false );
 	$post_anc_id = vk_blocks_get_ancestor_page_id();
 
 	$page_list = '';
@@ -130,8 +131,7 @@ function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
 	}
 
 	// block.jsonのSupportsで設定したクラス名やスタイルを取得する.
-	$core_attributes = get_block_wrapper_attributes();
-	if ( ! empty( $core_attributes ) ) {
+	if ( false === $test_mode ) {
 		$wrapper_classes = get_block_wrapper_attributes(
 			array(
 				'class' => $classes,

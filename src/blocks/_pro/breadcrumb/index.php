@@ -14,7 +14,9 @@ use VektorInc\VK_Breadcrumb\VkBreadcrumb;
  * @return string
  */
 function vk_blocks_breadcrumb_render_callback( $attributes ) {
+	// テスト中に get_block_wrapper_attributes を使うと PHP 8.0 のテストがコケるのを回避
 	$test_mode = apply_filters( 'vk_blocks_test_mode', false );
+
 	if ( is_front_page() ) {
 		return;
 	}

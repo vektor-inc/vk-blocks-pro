@@ -75,6 +75,7 @@ function vk_blocks_get_ancestor_page_list_title( $attributes ) {
  * @return string
  */
 function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
+	// テスト中に get_block_wrapper_attributes を使うと PHP 8.0 のテストがコケるのを回避
 	$test_mode   = apply_filters( 'vk_blocks_test_mode', false );
 	$post_anc_id = vk_blocks_get_ancestor_page_id();
 

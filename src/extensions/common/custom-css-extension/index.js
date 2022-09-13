@@ -3,7 +3,7 @@
  */
 import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
-import { PanelBody, Icon } from '@wordpress/components';
+import { PanelBody, Icon, Button } from '@wordpress/components';
 import { InspectorControls } from '@wordpress/block-editor';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { hasBlockSupport } from '@wordpress/blocks';
@@ -204,16 +204,17 @@ addFilter(
 										'vk-blocks'
 									)}
 								</p>
-								<a
+								<Button
 									href={addQueryArgs(
 										'options-general.php?page=vk_blocks_options#custom-css-setting'
 									)}
 									target="_blank"
 									rel="noreferrer"
-									className="components-button is-secondary is-small"
+									variant="secondary"
+									isSmall
 								>
 									{__('Custom CSS Setting', 'vk-blocks')}
-								</a>
+								</Button>
 							</PanelBody>
 						</InspectorControls>
 					</>

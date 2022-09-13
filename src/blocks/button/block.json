@@ -29,7 +29,7 @@
 		},
 		"buttonEffect": {
 			"type": "string",
-			"default": "0"
+			"default": ""
 		},
 		"buttonColor": {
 			"type": "string",

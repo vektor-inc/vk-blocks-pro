@@ -599,7 +599,7 @@ export default function ButtonEdit(props) {
 								setAttributes({
 									buttonTextColorCustom: undefined,
 								});
-								setAttributes({ buttonEffect: '0' });
+								setAttributes({ buttonEffect: '' });
 							}}
 						>
 							{__('No background', 'vk-blocks')}
@@ -613,7 +613,7 @@ export default function ButtonEdit(props) {
 								setAttributes({
 									buttonTextColorCustom: undefined,
 								});
-								setAttributes({ buttonEffect: '0' });
+								setAttributes({ buttonEffect: '' });
 							}}
 						>
 							{__('Text only', 'vk-blocks')}
@@ -634,30 +634,30 @@ export default function ButtonEdit(props) {
 							<ButtonGroup className={`mb-3`}>
 								<Button
 									isSmall
-									isPrimary={buttonEffect === '0'}
-									isSecondary={buttonEffect !== '0'}
+									isPrimary={buttonEffect === ''}
+									isSecondary={buttonEffect !== ''}
 									onClick={() =>
-										setAttributes({ buttonEffect: '0' })
+										setAttributes({ buttonEffect: '' })
 									}
 								>
 									{__('None', 'vk-blocks')}
 								</Button>
 								<Button
 									isSmall
-									isPrimary={buttonEffect === '1'}
-									isSecondary={buttonEffect !== '1'}
+									isPrimary={buttonEffect === 'shine'}
+									isSecondary={buttonEffect !== 'shine'}
 									onClick={() => {
-										setAttributes({ buttonEffect: '1' });
+										setAttributes({ buttonEffect: 'shine' });
 									}}
 								>
 									{__('Shine', 'vk-blocks')}
 								</Button>
 								<Button
 									isSmall
-									isPrimary={buttonEffect === '2'}
-									isSecondary={buttonEffect !== '2'}
+									isPrimary={buttonEffect === 'dimensional'}
+									isSecondary={buttonEffect !== 'dimensional'}
 									onClick={() => {
-										setAttributes({ buttonEffect: '2' });
+										setAttributes({ buttonEffect: 'dimensional' });
 									}}
 								>
 									{__('Dimensional', 'vk-blocks')}

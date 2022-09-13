@@ -153,7 +153,7 @@ const blockAttributes11 = {
 	...blockAttributes10,
 	buttonEffect: {
 		type: 'string',
-		default: '0'
+		default: ''
 	},
 }
 */

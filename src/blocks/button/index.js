@@ -28,7 +28,7 @@ export const settings = {
 			buttonTarget: false,
 			buttonSize: 'md',
 			buttonType: '0',
-			buttonEffect: '0',
+			buttonEffect: '',
 			buttonColor: 'primary',
 			buttonTextColorCustom: 'undefined',
 			buttonColorCustom: 'undefined',

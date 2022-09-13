@@ -78,10 +78,10 @@ export class VKBButton extends Component {
 		}
 
 		// エフェクト
-		if (buttonEffect === '1') {
+		if (buttonEffect === 'shine') {
 			aClass += ` is-style-shine`;
-		} else if (buttonEffect === '2') {
-			aClass += ` is-style-solid`;
+		} else if (buttonEffect === 'dimensional') {
+			aClass += ` is-style-dimensional`;
 		}
 
 		aClass = `${aClass} btn-${buttonSize}`;

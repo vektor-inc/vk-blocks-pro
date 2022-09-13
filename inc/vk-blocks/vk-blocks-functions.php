@@ -55,29 +55,6 @@ add_filter(
 );
 
 /**
- * VK Blocks Get Selected
- *
- * @param string $current current.
- * @param string $value value.
- */
-function vk_blocks_get_selected( $current, $value ) {
-	$vk_blocks_selected = '';
-	if ( $current === $value ) {
-		$vk_blocks_selected = ' selected';
-	}
-	return $vk_blocks_selected;
-}
-/**
- * VK Blocks The Selected
- *
- * @param string $current current.
- * @param string $value value.
- */
-function vk_blocks_the_selected( $current, $value ) {
-	echo esc_attr( vk_blocks_get_selected( $current, $value ) );
-}
-
-/**
  * VK Blocks is Larger than WP
  *
  * @param string $target_version Target version.

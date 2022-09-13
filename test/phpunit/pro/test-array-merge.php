@@ -70,7 +70,7 @@ class ArrayMergeTest extends WP_UnitTestCase {
 					),
 				),
 			),
-			// 連想配列
+			// 連想配列 順番はdefaultsに合わせる
 			array(
 				'args'  => array(
 					'string' => 'a',
@@ -84,6 +84,10 @@ class ArrayMergeTest extends WP_UnitTestCase {
 				'defaults'  => array(
 					'string' => 'b',
 					'array_1'  => array(
+						'array_0_1' => array(
+							'array_key_0_1' => 'array_value_0_1',
+							'array_key_0_2' => 'array_value_0_1',
+						),
 						'array_1_1' => array(
 							'array_key_1_1' => 'array_value_defaults_1_1',
 							'array_key_1_2' => 'array_value_defaults_1_2',
@@ -97,6 +101,10 @@ class ArrayMergeTest extends WP_UnitTestCase {
 				'correct' => array(
 					'string' => 'a',
 					'array_1'  => array(
+						'array_0_1' => array(
+							'array_key_0_1' => 'array_value_0_1',
+							'array_key_0_2' => 'array_value_0_1',
+						),
 						'array_1_1' => array(
 							'array_key_1_1' => 'array_value_1_1',
 							'array_key_1_2' => 'array_value_1_2',

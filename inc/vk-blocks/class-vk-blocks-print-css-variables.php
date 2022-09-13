@@ -57,12 +57,7 @@ class Vk_Blocks_Print_CSS_Variables {
 			--vk-line-height-low: 1.5em;
 			*/
 
-		// delete before after space.
-		$dynamic_css = trim( $dynamic_css );
-		// convert tab and br to space.
-		$dynamic_css = preg_replace( '/[\n\r\t]/', '', $dynamic_css );
-		// Change multiple spaces to single space.
-		$dynamic_css = preg_replace( '/\s(?=\s)/', '', $dynamic_css );
+		$dynamic_css = vk_blocks_minify_css( $dynamic_css );
 		return $dynamic_css;
 	}
 

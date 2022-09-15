@@ -21,14 +21,12 @@ import { AdminContext } from '@vkblocks/admin/index';
 import { TextStylePreview } from '@vkblocks/admin/text-style/preview';
 import { vkColorPalette } from '@vkblocks/admin/utils/settings';
 import { colorSlugToColorCode } from '@vkblocks/admin/utils/color-slug-to-color-code';
-import { SaveButton } from '@vkblocks/admin/save-button';
 import { AddItemButton } from '@vkblocks/admin/text-style/add-item';
 import { DeleteItemButton } from '@vkblocks/admin/text-style/delete-item-button';
 /*globals vkBlocksObject */
 
 export default function AdminTextStyle() {
-	const { vkBlocksOption, setVkBlocksOption, vkBlocksBalloonMeta } =
-		useContext(AdminContext);
+	const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
 
 	const fontSizes = [...vkBlocksObject.fontSizes];
 
@@ -336,10 +334,6 @@ export default function AdminTextStyle() {
 				})()}
 				<AddItemButton />
 			</section>
-			<SaveButton
-				vkBlocksOption={vkBlocksOption}
-				vkBlocksBalloonMeta={vkBlocksBalloonMeta}
-			/>
 		</>
 	);
 }

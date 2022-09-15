@@ -301,9 +301,10 @@ class GetOptionsTest extends WP_UnitTestCase {
 			if ( is_array( $test_value['option_check_target'] ) ) {
 				foreach($test_value['option_check_target'] as $keys){
 					$correct_target = $correct;
+					$return_target  = $return;
 					foreach($keys as $value){
 						// VK_Blocks_Options::get_optionsから返ってきた値
-						$return_target  = $return[$value];
+						$return_target  = $return_target[$value];
 						// $test_dataのcorrectの指定した配列
 						$correct_target = $correct_target[$value];
 					}

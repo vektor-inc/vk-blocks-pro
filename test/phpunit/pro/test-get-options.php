@@ -257,6 +257,11 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'load_separate_option' => true,
 				),
 				'correct' => array(
+					'xl' => array(
+						'mobile' => null,
+						'tablet' => null,
+						'pc' => null,
+					),
 					'lg' => array(
 						'mobile' => 1,
 						'tablet' => 2,
@@ -271,11 +276,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 						'mobile' => 1,
 						'tablet' => 2,
 						'pc' => 3,
-					),
-					'xl' => array(
-						'mobile' => null,
-						'tablet' => null,
-						'pc' => null,
 					),
 					'xs' => array(
 						'mobile' => null,
@@ -315,6 +315,11 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
 					'margin_size' => array(
+						'xl' => array(
+							'mobile' => null,
+							'tablet' => null,
+							'pc' => null,
+						),
 						'lg' => array(
 							'mobile' => 1,
 							'tablet' => 2,
@@ -329,11 +334,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'mobile' => 1,
 							'tablet' => 2,
 							'pc' => 3,
-						),
-						'xl' => array(
-							'mobile' => null,
-							'tablet' => null,
-							'pc' => null,
 						),
 						'xs' => array(
 							'mobile' => null,

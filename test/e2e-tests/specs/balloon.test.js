@@ -35,7 +35,7 @@ describe( 'Balloon', () => {
 	// 吹き出しブロック
 	it('insertBlock Balloon', async () => {
 		// ブロックを挿入する
-		await insertBlock('Ballon');
+		await insertBlock('Balloon');
 		await clickButton('Select image');
 		await page.waitForSelector('.media-frame');
 

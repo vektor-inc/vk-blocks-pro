@@ -1,7 +1,7 @@
 {
 	"apiVersion": 2,
 	"name": "vk-blocks/balloon",
-	"title": "Ballon",
+	"title": "Balloon",
 	"description": "These speech balloons are perfect for recreating conversations.",
 	"category": "vk-blocks-cat",
 	"attributes": {

@@ -647,7 +647,9 @@ export default function ButtonEdit(props) {
 									isPrimary={buttonEffect === 'shine'}
 									isSecondary={buttonEffect !== 'shine'}
 									onClick={() => {
-										setAttributes({ buttonEffect: 'shine' });
+										setAttributes({
+											buttonEffect: 'shine',
+										});
 									}}
 								>
 									{__('Shine', 'vk-blocks')}
@@ -657,7 +659,9 @@ export default function ButtonEdit(props) {
 									isPrimary={buttonEffect === 'dimensional'}
 									isSecondary={buttonEffect !== 'dimensional'}
 									onClick={() => {
-										setAttributes({ buttonEffect: 'dimensional' });
+										setAttributes({
+											buttonEffect: 'dimensional',
+										});
 									}}
 								>
 									{__('Dimensional', 'vk-blocks')}

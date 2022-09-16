@@ -75,7 +75,6 @@ function vk_blocks_get_ancestor_page_list_title( $attributes ) {
  * @return string
  */
 function vk_blocks_ancestor_page_list_render_callback( $attributes ) {
-
 	$post_anc_id = vk_blocks_get_ancestor_page_id();
 
 	$page_list = '';

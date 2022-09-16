@@ -297,7 +297,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 			// var_dump( $correct );
 			// print PHP_EOL;
 
-
 			// 配列の時 指定したキー同士を比べる
 			if ( is_array( $test_value['option_check_target'] ) ) {
 				foreach($test_value['option_check_target'] as $keys){

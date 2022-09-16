@@ -270,21 +270,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'tablet' => null,
 							'pc' => null,
 						),
-						'lg' => array(
-							'mobile' => 1,
-							'tablet' => 2,
-							'pc' => 3,
-						),
-						'md' => array(
-							'mobile' => 1,
-							'tablet' => 2,
-							'pc' => 3,
-						),
-						'sm' => array(
-							'mobile' => 1,
-							'tablet' => 2,
-							'pc' => 3,
-						),
 						'xs' => array(
 							'mobile' => null,
 							'tablet' => null,

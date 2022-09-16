@@ -33,6 +33,7 @@ export default function SliderEdit(props) {
 		width,
 		loop,
 		effect,
+		bgAnimation,
 		speed,
 		slidesPerView,
 		slidesPerGroup,
@@ -101,6 +102,7 @@ export default function SliderEdit(props) {
 		width,
 		loop,
 		effect,
+		bgAnimation,
 		speed,
 		slidesPerView,
 		slidesPerGroup,
@@ -144,6 +146,36 @@ export default function SliderEdit(props) {
 					/>
 				</BaseControl>
 			</PanelBody>
+		);
+	}
+
+	// スライド画像のアニメーション設定
+	let bgAnimationSetting = '';
+	if (effect === 'fade') {
+		bgAnimationSetting = (
+			<BaseControl
+				label={__('Background Image Animation ', 'vk-blocks')}
+				id={`vk_slider-bgAnimation`}
+			>
+				<SelectControl
+					value={bgAnimation}
+					onChange={(value) => setAttributes({ bgAnimation: value })}
+					options={[
+						{
+							label: __('None', 'vk-blocks'),
+							value: 'none',
+						},
+						{
+							label: __('Zoom up', 'vk-blocks'),
+							value: 'zoomup',
+						},
+						{
+							label: __('Zoom out', 'vk-blocks'),
+							value: 'zoomout',
+						},
+					]}
+				/>
+			</BaseControl>
 		);
 	}
 
@@ -391,6 +423,7 @@ export default function SliderEdit(props) {
 							}
 						/>
 					</BaseControl>
+					{bgAnimationSetting}
 				</PanelBody>
 				{multiImageSetting}
 			</InspectorControls>

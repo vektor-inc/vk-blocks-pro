@@ -50,6 +50,10 @@
 			"type": "string",
 			"default": "slide"
 		},
+		"bgAnimation": {
+			"type": "string",
+			"default": "none"
+		},
 		"speed": {
 			"type": "number",
 			"default": 500

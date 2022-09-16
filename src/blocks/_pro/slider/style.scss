@@ -30,7 +30,7 @@
 	.swiper-wrapper {
 		transition-timing-function: cubic-bezier(0.77, 0.2, 0.05, 1);
 	}
-	//vk_slider用のnextとprevボタン	
+	//vk_slider用のnextとprevボタン
 	.swiper-button-next,
 	.swiper-button-prev {
 		color: var(--vk-color-text-body);
@@ -71,6 +71,32 @@
 	flex-direction: column;
 }
 
+// スライド画像のアニメーション
+.zoomout .swiper-slide-active,
+.zoomout .swiper-slide-duplicate-active {
+	animation: zoomOut 20s ease-out;
+}
+.zoomup .swiper-slide-active,
+.zoomup .swiper-slide-duplicate-active {
+	animation: zoomUp 20s ease-out;
+}
+@keyframes zoomOut {
+	0% {
+		transform: scale(1.5);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+@keyframes zoomUp {
+	0% {
+		background-size: 150% !important;
+	}
+	100% {
+		background-size: 100% !important;
+	}
+}
+
 //paginationの親枠
 .swiper-container-horizontal>.swiper-pagination-bullets{
 	padding-left:3.2rem;
@@ -80,7 +106,7 @@
 //pagination
 .swiper-pagination{
 	//標準
-	&-bullet{ 
+	&-bullet{
 		border-radius: unset;
 		width: 30px;
 		height: 5px;
@@ -105,7 +131,7 @@
 
 //矢印ボタン モバイルは下部
 @media (max-width: 575.98px) {
-	.swiper-button-next, 
+	.swiper-button-next,
 	.swiper-button-prev{
 		&.swiper-button-mobile-bottom{
 		top:unset;

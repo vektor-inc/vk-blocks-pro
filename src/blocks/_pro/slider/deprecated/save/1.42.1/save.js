@@ -10,7 +10,6 @@ export default function save({ attributes }) {
 		autoPlayDelay,
 		loop,
 		effect,
-		bgAnimation,
 		speed,
 		slidesPerView,
 		slidesPerGroup,
@@ -35,7 +34,6 @@ export default function save({ attributes }) {
 		width,
 		loop,
 		effect,
-		bgAnimation,
 		speed,
 		slidesPerView,
 		slidesPerGroup,
@@ -46,14 +44,6 @@ export default function save({ attributes }) {
 		alignClass = ' alignfull';
 	} else if ('wide' === width) {
 		alignClass = ' alignwide';
-	}
-
-	// スライド背景画像のアニメーションの追加クラス
-	let bgAnimationClass = '';
-	if ('zoomup' === bgAnimation) {
-		bgAnimationClass = ' zoomup';
-	} else if ('zoomout' === bgAnimation) {
-		bgAnimationClass = ' zoomout';
 	}
 
 	// ページネーションの HTML
@@ -83,7 +73,7 @@ export default function save({ attributes }) {
 	}
 
 	const blockProps = useBlockProps.save({
-		className: `swiper-container vk_slider vk_slider_${blockId}${alignClass}${bgAnimationClass}`,
+		className: `swiper-container vk_slider vk_slider_${blockId}${alignClass}`,
 	});
 
 	return (

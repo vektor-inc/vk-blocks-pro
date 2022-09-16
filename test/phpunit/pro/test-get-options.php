@@ -231,7 +231,14 @@ class GetOptionsTest extends WP_UnitTestCase {
 			),
 			// margin_sizeのlg,md,smに値が設定されているときに、xl,xsが追加された場合
 			array(
-				'option_check_target' => 'margin_size',
+				'option_check_target' => array(
+					['margin_size','xl','mobile'],
+					['margin_size','xl','tablet'],
+					['margin_size','xl','pc'],
+					['margin_size','xs','mobile'],
+					['margin_size','xs','tablet'],
+					['margin_size','xs','pc'],
+				),
 				'option'  => array(
 					'display_vk_block_template' => 'hide',
 					'new_faq_accordion' => 'open',
@@ -257,63 +264,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'load_separate_option' => true,
 				),
 				'correct' => array(
-					'xl' => array(
-						'mobile' => null,
-						'tablet' => null,
-						'pc' => null,
-					),
-					'lg' => array(
-						'mobile' => 1,
-						'tablet' => 2,
-						'pc' => 3,
-					),
-					'md' => array(
-						'mobile' => 1,
-						'tablet' => 2,
-						'pc' => 3,
-					),
-					'sm' => array(
-						'mobile' => 1,
-						'tablet' => 2,
-						'pc' => 3,
-					),
-					'xs' => array(
-						'mobile' => null,
-						'tablet' => null,
-						'pc' => null,
-					),
-				),
-			),
-			// 全てのオプション値を変更した時
-			array(
-				'option'  => array(
-					'balloon_border_width' => 2,
-					'margin_unit' => 'px',
-					'margin_size' => array(
-						'lg' => array(
-							'mobile' => 1,
-							'tablet' => 2,
-							'pc' => 3,
-						),
-						'md' => array(
-							'mobile' => 1,
-							'tablet' => 2,
-							'pc' => 3,
-						),
-						'sm' => array(
-							'mobile' => 1,
-							'tablet' => 2,
-							'pc' => 3,
-						),
-					),
-					'load_separate_option' => true,
-					'vk_blocks_pro_license_key' => 'test_license_key',
-					'display_vk_block_template' => 'display',
-					'new_faq_accordion' => 'open',
-				),
-				'correct' => array(
-					'balloon_border_width' => 2,
-					'margin_unit' => 'px',
 					'margin_size' => array(
 						'xl' => array(
 							'mobile' => null,
@@ -339,6 +289,75 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'mobile' => null,
 							'tablet' => null,
 							'pc' => null,
+						),
+					),
+				),
+			),
+			// 全てのオプション値を変更した時
+			array(
+				'option'  => array(
+					'balloon_border_width' => 2,
+					'margin_unit' => 'px',
+					'margin_size' => array(
+						'xl' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'lg' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'md' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'sm' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'xs' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+					),
+					'load_separate_option' => true,
+					'vk_blocks_pro_license_key' => 'test_license_key',
+					'display_vk_block_template' => 'display',
+					'new_faq_accordion' => 'open',
+				),
+				'correct' => array(
+					'balloon_border_width' => 2,
+					'margin_unit' => 'px',
+					'margin_size' => array(
+						'xl' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'lg' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'md' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'sm' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'xs' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
 						),
 					),
 					'load_separate_option' => true,

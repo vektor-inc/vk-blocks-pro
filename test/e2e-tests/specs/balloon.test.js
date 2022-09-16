@@ -94,7 +94,7 @@ describe( 'Balloon', () => {
 		await colorButton.click();
 	
 		//Border colorをカスタムカラーに変更
-		const backgroundColorButtonSelector = `//button[@aria-label='Custom color picker']`;
+		const backgroundColorButtonSelector = `//button[@aria-label='Custom color picker.']`;
 		const [backgroundColorButton] = await page.$x(backgroundColorButtonSelector);
 		await backgroundColorButton.click();
 

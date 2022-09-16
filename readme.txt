@@ -63,6 +63,9 @@ e.g.
 
 
 == Changelog ==
+
+
+[ Add Function ][ Spacer ][ Common mergin ] Add size option xl/xs.
 [Improvement][Admin screen] Display the SaveButton sticky.
 
 = 1.42.1 =

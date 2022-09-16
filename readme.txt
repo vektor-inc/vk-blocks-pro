@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
 Tested up to: 6.0.1
-Stable tag: 1.40.1.1
+Stable tag: 1.41.2.3
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,7 +63,13 @@ e.g.
 
 
 == Changelog ==
+[Improvement][Admin screen] Display the SaveButton sticky.
 
+= 1.42.1 =
+[ Other ] Update VK Component Posts 1.3.1
+
+= 1.42.0 =
+[ Specification Change ] Update VK Component Posts ( Can use input tag on filter  )
 [ Improvement ] Delete vk_blocks_get_options() function and change to VK_Blocks_Options::get_options().
 
 = 1.41.2 =

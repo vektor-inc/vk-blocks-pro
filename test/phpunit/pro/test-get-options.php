@@ -134,37 +134,39 @@ class GetOptionsTest extends WP_UnitTestCase {
 			// 余白の共通サイズ設定 margin_size v1.7.1
 			// https://github.com/vektor-inc/vk-blocks-pro/pull/584/
 			array(
-				'option_check_target' => 'margin_size',
+				'option_check_target' => array(
+					['margin_size','lg','mobile'],
+					['margin_size','lg','tablet'],
+					['margin_size','lg','pc'],
+					['margin_size','md','mobile'],
+					['margin_size','md','tablet'],
+					['margin_size','md','pc'],
+					['margin_size','sm','mobile'],
+					['margin_size','sm','tablet'],
+					['margin_size','sm','pc'],
+				),
 				'option'  => array(
 					'display_vk_block_template' => 'hide',
 					'new_faq_accordion' => 'open',
 					'balloon_border_width' => 2,
 				),
 				'correct' => array(
-					'xl' => array(
-						'mobile' => null,
-						'tablet' => null,
-						'pc' => null,
-					),
-					'lg' => array(
-						'mobile' => null,
-						'tablet' => null,
-						'pc' => null,
-					),
-					'md' => array(
-						'mobile' => null,
-						'tablet' => null,
-						'pc' => null,
-					),
-					'sm' => array(
-						'mobile' => null,
-						'tablet' => null,
-						'pc' => null,
-					),
-					'xs' => array(
-						'mobile' => null,
-						'tablet' => null,
-						'pc' => null,
+					'margin_size' => array(
+						'lg' => array(
+							'mobile' => null,
+							'tablet' => null,
+							'pc' => null,
+						),
+						'md' => array(
+							'mobile' => null,
+							'tablet' => null,
+							'pc' => null,
+						),
+						'sm' => array(
+							'mobile' => null,
+							'tablet' => null,
+							'pc' => null,
+						),
 					),
 				),
 			),
@@ -370,7 +372,24 @@ class GetOptionsTest extends WP_UnitTestCase {
 			// var_dump( $correct );
 			// print PHP_EOL;
 
-			if ( $test_value['option_check_target'] ) {
+			// 配列の時 指定したキー同士を比べる
+			if ( is_array( $test_value['option_check_target'] ) ) {
+				foreach($test_value['option_check_target'] as $keys){
+					$correct_target = $correct;
+					$return_target  = $return;
+					foreach($keys as $value){
+						// VK_Blocks_Options::get_optionsから返ってきた値
+						$return_target  = $return_target[$value];
+						// $test_dataのcorrectの指定した配列
+						$correct_target = $correct_target[$value];
+					}
+					// var_dump('$return_target');
+					// var_dump($return_target);
+					// var_dump('$correct_target');
+					// var_dump($correct_target);
+					$this->assertSame( $correct_target, $return_target );
+				}
+			} else if ( ! is_array( $test_value['option_check_target'] ) && $test_value['option_check_target'] ) {
 				$this->assertSame( $correct, $return[ $test_value['option_check_target'] ] );
 			} else {
 				$this->assertSame( $correct, $return );

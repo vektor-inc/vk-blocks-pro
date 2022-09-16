@@ -9,7 +9,6 @@ import { MediaUpload } from '@wordpress/media-utils';
 /**
  * Internal dependencies
  */
-import { SaveButton } from '@vkblocks/admin/save-button';
 import noImage from '@vkblocks/admin/balloon/images/no-image.png';
 import { AdminContext } from '@vkblocks/admin/index';
 /*globals vkBlocksObject */
@@ -66,10 +65,6 @@ export default function AdminBalloon() {
 					]}
 				/>
 			</section>
-			<SaveButton
-				vkBlocksOption={vkBlocksOption}
-				vkBlocksBalloonMeta={vkBlocksBalloonMeta}
-			/>
 			<h4 id="balloon-image-setting">
 				{__('Balloon Image Setting', 'vk-blocks')}
 			</h4>
@@ -286,10 +281,6 @@ export default function AdminBalloon() {
 					return items;
 				})()}
 			</ul>
-			<SaveButton
-				vkBlocksOption={vkBlocksOption}
-				vkBlocksBalloonMeta={vkBlocksBalloonMeta}
-			/>
 		</>
 	);
 }

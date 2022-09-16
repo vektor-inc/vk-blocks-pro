@@ -14,8 +14,6 @@ use VektorInc\VK_Breadcrumb\VkBreadcrumb;
  * @return string
  */
 function vk_blocks_breadcrumb_render_callback( $attributes ) {
-	// テスト中に get_block_wrapper_attributes を使うと PHP 8.0 のテストがコケるのを回避
-	$test_mode = apply_filters( 'vk_blocks_test_mode', false );
 
 	if ( is_front_page() ) {
 		return;
@@ -46,15 +44,11 @@ function vk_blocks_breadcrumb_render_callback( $attributes ) {
 	}
 
 	// block.jsonのSupportsで設定したクラス名やスタイルを取得する
-	if ( false === $test_mode ) {
-		$wrapper_attributes = get_block_wrapper_attributes(
-			array(
-				'class' => $outer_classes,
-			)
-		);
-	} else {
-		$wrapper_attributes = 'class="' . $outer_classes . '"';
-	}
+	$wrapper_attributes = get_block_wrapper_attributes(
+		array(
+			'class' => $outer_classes,
+		)
+	);
 
 	$breadcrumb_options = array(
 		'id_outer'           => 'vk_breadcrumb',

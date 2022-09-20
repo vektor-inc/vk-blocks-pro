@@ -63,6 +63,8 @@ e.g.
 
 
 == Changelog ==
+
+[ Bug Fix ][ Select Post List Item ( Pro ) ] Fixed a bug where additional CSS classes were not attached.
 [Improvement][Admin screen] Display the SaveButton sticky.
 
 = 1.42.1 =

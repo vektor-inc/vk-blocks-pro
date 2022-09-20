@@ -20,7 +20,7 @@
 	}
 
 	.text_style_item_control {
-		max-height: 90vh;
+		max-height: 70vh;
 		overflow: auto;
 
 		.components-circular-option-picker {
@@ -30,7 +30,7 @@
 
 	.text_style_item_preview {
 		text-align: center;
-		
+
 		> p{
 			margin-top: 0;
 			border: 1px solid #e0e0e0;
@@ -43,7 +43,7 @@
 	input[type=text].components-text-control__input{
 		border: 1px solid #ccc;
 	}
-	
+
 }
 //ボタン
 #vk-blocks-admin{

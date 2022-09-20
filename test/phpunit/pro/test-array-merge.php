@@ -142,14 +142,13 @@ class ArrayMergeTest extends WP_UnitTestCase {
 					),
 				),
 			),
-			// 配列 複数の配列
+			// 多次元配列 キーが無ければdefaultsをマージ
 			array(
 				'args'  => array(
 					'array_key' => array(
 						array(
 							'array_key_1' => 'array_value_1_1',
 							'array_key_2' => 'array_value_1_2',
-							'array_key_3' => 'array_value_1_3',
 						),
 						array(
 							'array_key_1' => 'array_value_2_1',
@@ -172,7 +171,7 @@ class ArrayMergeTest extends WP_UnitTestCase {
 						array(
 							'array_key_1' => 'array_value_1_1',
 							'array_key_2' => 'array_value_1_2',
-							'array_key_3' => 'array_value_1_3',
+							'array_key_3' => 'array_defaults_value_1_3',
 						),
 						array(
 							'array_key_1' => 'array_value_2_1',

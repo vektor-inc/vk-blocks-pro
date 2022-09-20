@@ -23,6 +23,8 @@ require_once dirname( __FILE__ ) . '/global-settings/class-vk-blocks-global-sett
 VK_Blocks_Global_Settings::init();
 
 // utils
+require_once dirname( __FILE__ ) . '/utils/array-merge.php';
+require_once dirname( __FILE__ ) . '/utils/minify-css.php';
 require_once dirname( __FILE__ ) . '/utils/color-palette.php';
 require_once dirname( __FILE__ ) . '/utils/hex-to-rgba.php';
 require_once dirname( __FILE__ ) . '/utils/color-slug-to-color-code.php';
@@ -30,10 +32,6 @@ require_once dirname( __FILE__ ) . '/utils/color-slug-to-color-code.php';
 // extensions
 // common
 require_once dirname( __FILE__ ) . '/extensions/common/text-style.php';
-
-// utils
-require_once dirname( __FILE__ ) . '/utils/array-merge.php';
-require_once dirname( __FILE__ ) . '/utils/minify-css.php';
 
 // VK Blocks の管理画面.
 require_once dirname( __FILE__ ) . '/admin/admin.php';

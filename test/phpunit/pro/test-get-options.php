@@ -377,7 +377,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 			// print PHP_EOL;
 
 			// 配列の時 指定したキー同士を比べる
-			if ( is_array( $test_value['option_check_target'] ) ) {
+			if ( array_key_exists('option_check_target', $test_value) && is_array( $test_value['option_check_target'] ) ) {
 				foreach($test_value['option_check_target'] as $keys){
 					$correct_target = $correct;
 					$return_target  = $return;
@@ -393,7 +393,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 					// var_dump($correct_target);
 					$this->assertSame( $correct_target, $return_target );
 				}
-			} else if ( ! is_array( $test_value['option_check_target'] ) && $test_value['option_check_target'] ) {
+			} else if ( array_key_exists('option_check_target', $test_value) && ! is_array( $test_value['option_check_target'] ) && $test_value['option_check_target'] ) {
 				$this->assertSame( $correct, $return[ $test_value['option_check_target'] ] );
 			} else {
 				$this->assertSame( $correct, $return );

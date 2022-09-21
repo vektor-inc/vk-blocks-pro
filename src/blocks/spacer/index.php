@@ -41,7 +41,7 @@ add_action( 'init', 'vk_blocks_register_block_spacer', 99 );
  *
  * @return integer|float $return 返り値
  */
-function vk_blocks_get_spacer_size( $options, $spacer_size, $device = '' ) {
+function vk_blocks_get_spacer_size( $options, $spacer_size, $device ) {
 
 	// そもそも値がなかった場合.
 	if ( ! isset( $options['margin_size'][ $spacer_size ] ) ) {
@@ -110,7 +110,7 @@ function vk_blocks_is_size_print( $options, $device ) {
  *
  * @return string $style CSS変数指定（１行分）.
  */
-function vk_blocks_get_spacer_size_style( $options, $spacer_size, $device = '', $unit ) {
+function vk_blocks_get_spacer_size_style( $options, $spacer_size, $device, $unit ) {
 	$style       = '';
 	$return_size = vk_blocks_get_spacer_size( $options, $spacer_size, $device );
 	if ( is_numeric( $return_size ) ) {

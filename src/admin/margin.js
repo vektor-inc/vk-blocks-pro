@@ -99,9 +99,9 @@ export default function AdminMargin() {
 						const { marginLabel, marginValue } = size;
 						return (
 							<li key={marginLabel}>
-								<span>
+								<span className="spacer-input__size-name">
 									{__('Margin', 'vk-blocks')} [ {marginLabel}{' '}
-									] :
+									]
 								</span>
 								{DEVICE_ARRAY.map((device) => {
 									const { deviceLabel, deviceValue } = device;

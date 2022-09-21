@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2022-08-18T09:49:45+00:00\n"
-"PO-Revision-Date: 2022-08-18 18:50+0900\n"
+"POT-Creation-Date: 2022-09-21T19:29:05+00:00\n"
+"PO-Revision-Date: 2022-09-22 04:32+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -23,74 +23,74 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 
-#: src/admin/balloon/index.js:211
+#: src/admin/balloon/index.js:206
 msgid "Select"
 msgstr "選択"
 
-#: src/admin/balloon/index.js:237
+#: src/admin/balloon/index.js:232
 #: src/blocks/_pro/gridcolcard/edit-common.js:155
 msgid "Delete"
 msgstr "削除"
 
-#: src/admin/balloon/index.js:251
+#: src/admin/balloon/index.js:246
 msgid "Balloon Image Name"
 msgstr "吹き出し画像の名前"
 
-#: src/admin/balloon/index.js:30
+#: src/admin/balloon/index.js:29
 msgid "Balloon Setting"
 msgstr "吹き出しブロック設定"
 
-#: src/admin/balloon/index.js:33
+#: src/admin/balloon/index.js:32
 msgid "Balloon Border Width Setting"
 msgstr "吹き出しの線幅の設定"
 
-#: src/admin/balloon/index.js:51
+#: src/admin/balloon/index.js:50
 #, fuzzy
 #| msgid "px"
 msgid "1px"
 msgstr "px"
 
-#: src/admin/balloon/index.js:55
+#: src/admin/balloon/index.js:54
 #, fuzzy
 #| msgid "px"
 msgid "2px"
 msgstr "px"
 
-#: src/admin/balloon/index.js:59
+#: src/admin/balloon/index.js:58
 #, fuzzy
 #| msgid "px"
 msgid "3px"
 msgstr "px"
 
-#: src/admin/balloon/index.js:63
+#: src/admin/balloon/index.js:62
 #, fuzzy
 #| msgid "px"
 msgid "4px"
 msgstr "px"
 
-#: src/admin/balloon/index.js:74
+#: src/admin/balloon/index.js:69
 msgid "Balloon Image Setting"
 msgstr "吹き出し画像設定"
 
-#: src/admin/balloon/index.js:77
+#: src/admin/balloon/index.js:72
 msgid "You can register frequently used icon images for speech bubble blocks."
 msgstr "よく使う吹き出し用のアイコン画像を登録する事ができます。"
 
-#: src/admin/balloon/index.js:81
+#: src/admin/balloon/index.js:76
 msgid "If you change image or name that please click Save Changes button."
 msgstr "画像を変更したら「変更を保存」ボタンをクリックしてください。"
 
-#: src/admin/balloon/index.js:93
+#: src/admin/balloon/index.js:88
 msgid "image"
 msgstr "画像"
 
-#: src/admin/license.js:23
+#: src/admin/license.js:21
 msgid "Enter a valid Lightning G3 Pro Pack or Lightning Pro license key."
 msgstr ""
 "Lightning G3 Pro Pack あるいは Lightning Pro の有効なライセンスキーを入力して"
 "ください。"
 
-#: src/admin/license.js:29
+#: src/admin/license.js:27
 msgid ""
 "Once you enter the license key you will be able to do a one click update "
 "from the administration screen."
@@ -98,121 +98,120 @@ msgstr ""
 "有効なライセンスキーを入力すると、管理画面からワンクリックでアップデートが可"
 "能になります。"
 
-#: src/admin/license.js:36
+#: src/admin/license.js:34
 msgid "License key"
 msgstr "ライセンスキー"
 
-#: src/admin/load-separate.js:35
+#: src/admin/load-separate.js:33
 msgid "Load Separate Setting"
 msgstr "分割読み込み設定"
 
-#: src/admin/load-separate.js:38
+#: src/admin/load-separate.js:36
 msgid "Note that the order in which CSS/JS are loaded will change."
 msgstr "CSS / JSの読み込み順序が変わることに注意してください。"
 
-#: src/admin/load-separate.js:45
+#: src/admin/load-separate.js:43
 msgid "Load Separate Option on"
 msgstr "分割読み込みを有効にする"
 
-#: src/admin/margin.js:19 src/blocks/button/edit.js:321
-#: src/blocks/spacer/edit.js:85
-#: src/extensions/common/inline-font-size/index.js:84
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:25
-#: inc/vk-blocks/vk-blocks-functions.php:25
-msgid "Small"
-msgstr "小"
+#: src/admin/margin.js:103 src/blocks/border-box/edit.js:192
+#: src/blocks/icon-outer/edit.js:149 src/blocks/icon/edit.js:139
+msgid "Margin"
+msgstr "余白"
 
-#: src/admin/margin.js:23 src/blocks/spacer/edit.js:95
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:29
-#: inc/vk-blocks/vk-blocks-functions.php:29
-msgid "Medium"
-msgstr "中"
+#: src/admin/margin.js:18 src/blocks/spacer/edit.js:83
+msgid "XS"
+msgstr ""
 
-#: src/admin/margin.js:27 src/blocks/button/edit.js:305
-#: src/blocks/spacer/edit.js:105
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:33
-#: inc/vk-blocks/vk-blocks-functions.php:33
-msgid "Large"
-msgstr "大"
+#: src/admin/margin.js:22 src/blocks/spacer/edit.js:93
+msgid "S"
+msgstr ""
 
-#: src/admin/margin.js:34 src/blocks/_pro/outer/edit.js:638
+#: src/admin/margin.js:26 src/blocks/spacer/edit.js:103
+msgid "M"
+msgstr ""
+
+#: src/admin/margin.js:30 src/blocks/spacer/edit.js:113
+msgid "L"
+msgstr ""
+
+#: src/admin/margin.js:34 src/blocks/spacer/edit.js:121
+msgid "XL"
+msgstr ""
+
+#: src/admin/margin.js:41 src/blocks/_pro/outer/edit.js:638
 #: src/blocks/_pro/slider/edit.js:224 src/blocks/button/edit.js:521
 #: src/components/advanced-viewport-control/index.js:25
 msgid "PC"
 msgstr "PC"
 
-#: src/admin/margin.js:38 src/blocks/_pro/outer/edit.js:623
+#: src/admin/margin.js:45 src/blocks/_pro/outer/edit.js:623
 #: src/blocks/_pro/slider/edit.js:235 src/blocks/button/edit.js:456
 #: src/components/advanced-viewport-control/index.js:31
 msgid "Tablet"
 msgstr "タブレット"
 
-#: src/admin/margin.js:42 src/blocks/_pro/outer/edit.js:608
+#: src/admin/margin.js:49 src/blocks/_pro/outer/edit.js:608
 #: src/blocks/_pro/slider/edit.js:246 src/blocks/button/edit.js:391
 #: src/components/advanced-viewport-control/index.js:39
 msgid "Mobile"
 msgstr "モバイル"
 
-#: src/admin/margin.js:55 dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:74
+#: src/admin/margin.js:61 dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:74
 #: inc/vk-blocks/admin/admin.php:74
 msgid "Common Margin Setting"
 msgstr "共通余白設定"
 
-#: src/admin/margin.js:58
+#: src/admin/margin.js:64
 msgid ""
 "Please specify the size of the common margin used for responsive spacers, "
 "etc."
 msgstr ""
 "レスポンシブスペーサーなどで使用する共通余白のサイズを指定してください。"
 
-#: src/admin/margin.js:64 src/blocks/_pro/grid-column-item/edit.js:169
+#: src/admin/margin.js:70 src/blocks/_pro/grid-column-item/edit.js:169
 msgid "Unit"
 msgstr "単位"
 
-#: src/admin/margin.js:77 src/blocks/_pro/grid-column-item/edit.js:177
+#: src/admin/margin.js:83 src/blocks/_pro/grid-column-item/edit.js:177
 #: src/blocks/_pro/outer/edit.js:659 src/blocks/icon-outer/edit.js:181
 #: src/blocks/icon/edit.js:171 src/components/advanced-unit-control/index.js:18
 msgid "px"
 msgstr "px"
 
-#: src/admin/margin.js:81 src/blocks/_pro/grid-column-item/edit.js:181
+#: src/admin/margin.js:87 src/blocks/_pro/grid-column-item/edit.js:181
 #: src/blocks/_pro/outer/edit.js:663 src/blocks/icon-outer/edit.js:185
 #: src/blocks/icon/edit.js:175 src/components/advanced-unit-control/index.js:22
 msgid "em"
 msgstr "em"
 
-#: src/admin/margin.js:85 src/blocks/_pro/grid-column-item/edit.js:185
+#: src/admin/margin.js:91 src/blocks/_pro/grid-column-item/edit.js:185
 #: src/blocks/_pro/outer/edit.js:667 src/blocks/icon-outer/edit.js:189
 #: src/blocks/icon/edit.js:179 src/components/advanced-unit-control/index.js:26
 msgid "rem"
 msgstr "rem"
 
-#: src/admin/margin.js:97 src/blocks/border-box/edit.js:192
-#: src/blocks/icon-outer/edit.js:149 src/blocks/icon/edit.js:139
-msgid "Margin"
-msgstr "余白"
-
-#: src/admin/new-faq.js:21
+#: src/admin/new-faq.js:19
 msgid "FAQ Block Setting"
 msgstr "FAQ Blocks 設定"
 
-#: src/admin/new-faq.js:34
+#: src/admin/new-faq.js:32
 msgid "Disable accordion"
 msgstr "アコーディオン無効"
 
-#: src/admin/new-faq.js:38
+#: src/admin/new-faq.js:36
 msgid "Enable accordion and default open"
 msgstr "アコーディオン有効 / 初期状態で開く"
 
-#: src/admin/new-faq.js:45
+#: src/admin/new-faq.js:43
 msgid "Enable accordion and default close"
 msgstr "アコーディオン有効 / 初期状態で閉じる"
 
-#: src/admin/save-button.js:52
+#: src/admin/save-button.js:53
 msgid "Save setting"
 msgstr "変更を保存"
 
-#: src/admin/save-button.js:56
+#: src/admin/save-button.js:57
 msgid "Save Success"
 msgstr "保存しました"
 
@@ -1471,6 +1470,15 @@ msgstr "サブテキスト"
 msgid "Button Size:"
 msgstr "ボタンサイズ:"
 
+#: src/blocks/button/edit.js:305
+msgid "Large"
+msgstr "大"
+
+#: src/blocks/button/edit.js:321
+#: src/extensions/common/inline-font-size/index.js:84
+msgid "Small"
+msgstr "小"
+
 #: src/blocks/button/edit.js:328
 msgid "Button Position:"
 msgstr "ボタンの位置:"
@@ -1878,11 +1886,11 @@ msgstr "margin-bottom"
 msgid "Space Type"
 msgstr "余白タイプ"
 
-#: src/blocks/spacer/edit.js:115
+#: src/blocks/spacer/edit.js:131
 msgid "Custom"
 msgstr "カスタム"
 
-#: src/blocks/spacer/edit.js:119
+#: src/blocks/spacer/edit.js:135
 msgid "You can change each common margin size from Setting > VK Blocks"
 msgstr ""
 "* 共通の余白サイズは管理画面の 設定 > VK Blocks から変更する事ができます。"
@@ -1965,8 +1973,8 @@ msgid "Card (Image Round)"
 msgstr "カード（画像丸抜き）"
 
 #: src/components/column-layout-control/index.js:26
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:760
-#: inc/vk-components/package/class-vk-component-posts.php:760
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:768
+#: inc/vk-components/package/class-vk-component-posts.php:768
 msgid "Card"
 msgstr "カード"
 
@@ -1983,8 +1991,8 @@ msgid "Card (Horizontal)"
 msgstr "カード（水平）"
 
 #: src/components/column-layout-control/index.js:42
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:776
-#: inc/vk-components/package/class-vk-component-posts.php:776
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:784
+#: inc/vk-components/package/class-vk-component-posts.php:784
 msgid "Media"
 msgstr "メディア"
 
@@ -2150,40 +2158,56 @@ msgid "Extra big"
 msgstr "特大"
 
 #: src/extensions/common/margin-extension/index.js:26
-msgid "Top lg"
-msgstr "上 lg"
+msgid "Top XL"
+msgstr "上 XL"
 
-#: src/extensions/common/margin-extension/index.js:280
+#: src/extensions/common/margin-extension/index.js:301
 msgid "Margin the block"
 msgstr "ブロックの余白"
 
 #: src/extensions/common/margin-extension/index.js:31
-msgid "Top md"
-msgstr "上 md"
+msgid "Top L"
+msgstr "上 L"
 
 #: src/extensions/common/margin-extension/index.js:36
-msgid "Top sm"
-msgstr "上 sm"
+msgid "Top M"
+msgstr "上 M"
 
 #: src/extensions/common/margin-extension/index.js:41
+msgid "Top S"
+msgstr "上 S"
+
+#: src/extensions/common/margin-extension/index.js:46
+msgid "Top XS"
+msgstr "上 XS"
+
+#: src/extensions/common/margin-extension/index.js:51
 msgid "Top 0"
 msgstr "上 0"
 
-#: src/extensions/common/margin-extension/index.js:49
+#: src/extensions/common/margin-extension/index.js:59
 msgid "Bottom 0"
 msgstr "下 0"
 
-#: src/extensions/common/margin-extension/index.js:54
-msgid "Bottom sm"
-msgstr "下 sm"
-
-#: src/extensions/common/margin-extension/index.js:59
-msgid "Bottom md"
-msgstr "下 md"
-
 #: src/extensions/common/margin-extension/index.js:64
-msgid "Bottom lg"
-msgstr "下 lg"
+msgid "Bottom XS"
+msgstr "下 XS"
+
+#: src/extensions/common/margin-extension/index.js:69
+msgid "Bottom S"
+msgstr "下 S"
+
+#: src/extensions/common/margin-extension/index.js:74
+msgid "Bottom M"
+msgstr "下 M"
+
+#: src/extensions/common/margin-extension/index.js:79
+msgid "Bottom L"
+msgstr "下 L"
+
+#: src/extensions/common/margin-extension/index.js:84
+msgid "Bottom XL"
+msgstr "下 XL"
 
 #: src/extensions/common/nowrap/index.js:21
 msgid "No wrap"
@@ -2606,13 +2630,13 @@ msgstr "すべてのプラグインを正常にインストールし、有効化
 msgid "Please contact the administrator of this site for help."
 msgstr "ヘルプが必要な場合はこのサイトの管理者にお問い合わせください。"
 
-#: dist/vk-blocks-pro/inc/vk-admin/package/class-vk-admin.php:316
-#: inc/vk-admin/package/class-vk-admin.php:333
+#: dist/vk-blocks-pro/inc/vk-admin/package/class-vk-admin.php:332
+#: inc/vk-admin/package/class-vk-admin.php:332
 msgid "Sorry, there is no post"
 msgstr "申し訳ありませんが投稿がありません。"
 
-#: dist/vk-blocks-pro/inc/vk-admin/package/class-vk-admin.php:370
-#: inc/vk-admin/package/class-vk-admin.php:387
+#: dist/vk-blocks-pro/inc/vk-admin/package/class-vk-admin.php:386
+#: inc/vk-admin/package/class-vk-admin.php:386
 msgid "Vektor WordPress Information"
 msgstr "Vektor WordPress Information"
 
@@ -2657,6 +2681,41 @@ msgstr "分割読み込み設定"
 msgid "Setting"
 msgstr "設定"
 
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
+#: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
+#: src/blocks/ancestor-page-list/index.php:44
+#: test/phpunit/pro/test-ancestor-page-list.php:89
+#: test/phpunit/pro/test-ancestor-page-list.php:173
+msgid "Ancestor Page Title"
+msgstr "先祖ページのタイトル"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
+#: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
+#: src/blocks/ancestor-page-list/index.php:83
+#: test/phpunit/pro/test-ancestor-page-list.php:173
+msgid "Dummy Text"
+msgstr "ダミーテキスト"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
+#: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
+#: src/blocks/ancestor-page-list/index.php:83
+#: test/phpunit/pro/test-ancestor-page-list.php:173
+msgid ""
+"Because of the site editor have not child page that, the page list from "
+"ancestor is not displayed. Now displaying the dummy text list instead of the "
+"page list from ancestor."
+msgstr ""
+"サイトエディタには子ページがないため、先祖階層からのページ一覧は表示されませ"
+"ん。 先祖階層からのページリストの代わりにダミーテキストのリストを表示していま"
+"す。"
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
+#: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
+#: src/blocks/ancestor-page-list/index.php:83
+#: test/phpunit/pro/test-ancestor-page-list.php:173
+msgid "This message only display on the edit screen."
+msgstr "このメッセージは編集画面でのみ表示されます。"
+
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/page-content/index.php:124
 #: inc/vk-blocks/build/blocks/page-content/index.php:124
 #: src/blocks/page-content/index.php:124
@@ -2675,13 +2734,13 @@ msgstr "投稿"
 msgid "There are no %ss."
 msgstr "該当の%sはありません。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:224
-#: inc/vk-blocks/vk-blocks-functions.php:220
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:197
+#: inc/vk-blocks/vk-blocks-functions.php:157
 msgid "Blocks"
 msgstr "Blocks"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:237
-#: inc/vk-blocks/vk-blocks-functions.php:233
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:210
+#: inc/vk-blocks/vk-blocks-functions.php:170
 msgid "Blocks Layout"
 msgstr "ブロックレイアウト"
 
@@ -2695,43 +2754,43 @@ msgstr "続きを読む"
 msgid "New!!"
 msgstr "New!!"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:267
-#: inc/vk-components/package/class-vk-component-posts.php:267
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:268
+#: inc/vk-components/package/class-vk-component-posts.php:268
 msgid "More"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:303
-#: inc/vk-components/package/class-vk-component-posts.php:303
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:304
+#: inc/vk-components/package/class-vk-component-posts.php:304
 msgid "Posts navigation"
 msgstr "投稿ナビゲーション"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:304
-#: inc/vk-components/package/class-vk-component-posts.php:304
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:305
+#: inc/vk-components/package/class-vk-component-posts.php:305
 msgid "Posts"
 msgstr "投稿リスト"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:306
-#: inc/vk-components/package/class-vk-component-posts.php:306
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:307
+#: inc/vk-components/package/class-vk-component-posts.php:307
 msgid "Page"
 msgstr "ページ"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:764
-#: inc/vk-components/package/class-vk-component-posts.php:764
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:772
+#: inc/vk-components/package/class-vk-component-posts.php:772
 msgid "Card Noborder"
 msgstr "カード（線なし）"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:768
-#: inc/vk-components/package/class-vk-component-posts.php:768
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:776
+#: inc/vk-components/package/class-vk-component-posts.php:776
 msgid "Card Intext"
 msgstr "カード（インテキスト）"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:772
-#: inc/vk-components/package/class-vk-component-posts.php:772
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:780
+#: inc/vk-components/package/class-vk-component-posts.php:780
 msgid "Card Horizontal"
 msgstr "カード（水平）"
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:780
-#: inc/vk-components/package/class-vk-component-posts.php:780
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:788
+#: inc/vk-components/package/class-vk-component-posts.php:788
 msgctxt "post list type"
 msgid "Text 1 Column"
 msgstr "テキスト 1 カラム"
@@ -2857,40 +2916,6 @@ msgstr ""
 #: dist/vk-blocks-pro/vk-blocks.php:271 vk-blocks.php:271
 msgid "Re-acquisition of updates"
 msgstr "更新の再取得"
-
-#: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
-#: src/blocks/ancestor-page-list/index.php:44
-#: test/phpunit/pro/test-ancestor-page-list.php:89
-#: test/phpunit/pro/test-ancestor-page-list.php:173
-msgid "Ancestor Page Title"
-msgstr "先祖ページのタイトル"
-
-#: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
-#: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:84
-#: src/blocks/ancestor-page-list/index.php:83
-#: src/blocks/ancestor-page-list/index.php:84
-#: test/phpunit/pro/test-ancestor-page-list.php:173
-#: test/phpunit/pro/test-ancestor-page-list.php:174
-msgid "Dummy Text"
-msgstr "ダミーテキスト"
-
-#: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:85
-#: src/blocks/ancestor-page-list/index.php:85
-#: test/phpunit/pro/test-ancestor-page-list.php:175
-msgid ""
-"Because of the site editor have not child page that, the page list from "
-"ancestor is not displayed. Now displaying the dummy text list instead of the "
-"page list from ancestor."
-msgstr ""
-"サイトエディタには子ページがないため、先祖階層からのページ一覧は表示されませ"
-"ん。 先祖階層からのページリストの代わりにダミーテキストのリストを表示していま"
-"す。"
-
-#: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:85
-#: src/blocks/ancestor-page-list/index.php:85
-#: test/phpunit/pro/test-ancestor-page-list.php:175
-msgid "This message only display on the edit screen."
-msgstr "このメッセージは編集画面でのみ表示されます。"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/alert/block.json
 #: inc/vk-blocks/build/blocks/alert/block.json src/blocks/alert/block.json
@@ -3200,9 +3225,15 @@ msgid "Breadcrumb"
 msgstr "パンくずリスト"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
+#: inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
+#: src/blocks/_pro/breadcrumb/block.json
 msgctxt "block description"
-msgid "Displays breadcrumbs of a page's hierarchy, or a post's categories"
-msgstr "ページや投稿カテゴリーなどページ階層のパンくずリストを表示します"
+msgid ""
+"Displays breadcrumbs of a page's hierarchy, or a post's categories.This "
+"block is not displayed on the front page."
+msgstr ""
+"ページや投稿カテゴリーなどページ階層のパンくずリストを表示します。このブロッ"
+"クはトップページでは表示されません。"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/button-outer/block.json
 #: inc/vk-blocks/build/blocks/_pro/button-outer/block.json
@@ -3553,15 +3584,30 @@ msgid ""
 "explaining the order."
 msgstr "順番を説明する時に便利でシンプルなスケジュールなどを表示します。"
 
-#: inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
-#: src/blocks/_pro/breadcrumb/block.json
-msgctxt "block description"
-msgid ""
-"Displays breadcrumbs of a page's hierarchy, or a post's categories.This "
-"block is not displayed on the front page."
-msgstr ""
-"ページや投稿カテゴリーなどページ階層のパンくずリストを表示します。このブロッ"
-"クはトップページでは表示されません。"
+#~ msgid "Medium"
+#~ msgstr "中"
+
+#~ msgid "Top lg"
+#~ msgstr "上 lg"
+
+#~ msgid "Top md"
+#~ msgstr "上 md"
+
+#~ msgid "Top sm"
+#~ msgstr "上 sm"
+
+#~ msgid "Bottom sm"
+#~ msgstr "下 sm"
+
+#~ msgid "Bottom md"
+#~ msgstr "下 md"
+
+#~ msgid "Bottom lg"
+#~ msgstr "下 lg"
+
+#~ msgctxt "block description"
+#~ msgid "Displays breadcrumbs of a page's hierarchy, or a post's categories"
+#~ msgstr "ページや投稿カテゴリーなどページ階層のパンくずリストを表示します"
 
 #~ msgid "The page you are currently viewing has no child pages."
 #~ msgstr "現在表示中のページには子ページはありません。"

@@ -63,6 +63,8 @@ e.g.
 
 
 == Changelog ==
+
+[ Bug Fix ] Fix PHP 8.X Error
 [ Improvement ][ Admin screen ] Display the SaveButton sticky.
 [ Add Function ][ Button ] Add Button Effect option in Solid color button.
 

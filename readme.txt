@@ -63,8 +63,9 @@ e.g.
 
 
 == Changelog ==
-[ Bugfix ] Fix PHP 8.X Error
-[Improvement][Admin screen] Display the SaveButton sticky.
+
+[ Bug Fix ] Fix PHP 8.X Error
+[ Improvement ][ Admin screen ] Display the SaveButton sticky.
 
 = 1.42.1 =
 [ Other ] Update VK Component Posts 1.3.1

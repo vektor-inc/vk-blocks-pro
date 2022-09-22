@@ -241,7 +241,7 @@ class VK_Blocks_Options {
 		foreach ( $schema as $key => $value ) {
 			if ( 'object' === $value['type'] ) {
 				$default[ $key ] = self::get_defaults( $value['items'] );
-			} elseif ( 'array' === $value['type'] && $value['items'] ) {
+			} elseif ( 'array' === $value['type'] && array_key_exists('items', $value) && $value['items'] ) {
 				$default[ $key ] = array( self::get_defaults( $value['items'] ) );
 			} else {
 				$default[ $key ] = $value['default'];
@@ -268,7 +268,7 @@ class VK_Blocks_Options {
 				$properties[ $key ]['properties'] = self::get_properties( $value['items'] );
 			}
 
-			if ( 'array' === $value['type'] && $value['items'] ) {
+			if ( 'array' === $value['type'] && array_key_exists('items', $value) && $value['items'] ) {
 				$properties[ $key ]['items'] = array(
 					'type' => 'object',
 				);

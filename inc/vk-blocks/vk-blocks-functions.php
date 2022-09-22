@@ -64,17 +64,6 @@ add_filter(
 );
 
 /**
- * VK Blocks is Larger than WP
- *
- * @param string $target_version Target version.
- * @param string $syntax syntax.
- */
-function vk_blocks_is_lager_than_wp( $target_version, $syntax = '>=' ) {
-	global $wp_version;
-	return defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, $target_version, $syntax );
-}
-
-/**
  * VK Blocks Assets
  */
 function vk_blocks_blocks_assets() {
@@ -98,51 +87,49 @@ function vk_blocks_blocks_assets() {
 		)
 	);
 
-	if ( vk_blocks_is_lager_than_wp( '5.0' ) ) {
-		global $vk_blocks_common_attributes;
-		$vk_blocks_common_attributes = array(
-			'vkb_hidden'       => array(
-				'type'    => 'boolean',
-				'default' => false,
-			),
-			'vkb_hidden_xxl'   => array(
-				'type'    => 'boolean',
-				'default' => false,
-			),
-			'vkb_hidden_xl_v2' => array(
-				'type'    => 'boolean',
-				'default' => false,
-			),
-			'vkb_hidden_xl'    => array(
-				'type'    => 'boolean',
-				'default' => false,
-			),
-			'vkb_hidden_lg'    => array(
-				'type'    => 'boolean',
-				'default' => false,
-			),
-			'vkb_hidden_md'    => array(
-				'type'    => 'boolean',
-				'default' => false,
-			),
-			'vkb_hidden_sm'    => array(
-				'type'    => 'boolean',
-				'default' => false,
-			),
-			'vkb_hidden_xs'    => array(
-				'type'    => 'boolean',
-				'default' => false,
-			),
-			'marginTop'        => array(
-				'type'    => 'string',
-				'default' => '',
-			),
-			'marginBottom'     => array(
-				'type'    => 'string',
-				'default' => '',
-			),
-		);
-	}
+	global $vk_blocks_common_attributes;
+	$vk_blocks_common_attributes = array(
+		'vkb_hidden'       => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'vkb_hidden_xxl'   => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'vkb_hidden_xl_v2' => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'vkb_hidden_xl'    => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'vkb_hidden_lg'    => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'vkb_hidden_md'    => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'vkb_hidden_sm'    => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'vkb_hidden_xs'    => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'marginTop'        => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+		'marginBottom'     => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+	);
 
 	$dynamic_css = '
 		:root {

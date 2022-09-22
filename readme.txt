@@ -3,7 +3,7 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,m
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
-Tested up to: 6.0.1
+Tested up to: 6.0.2
 Stable tag: 1.41.2.3
 Requires PHP: 7.2
 License: GPLv2 or later
@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+= 1.43.0 =
 [ Add Function ][ Spacer ][ Common mergin ] Add size option xl/xs.
 [ Improvement ][ Admin screen ] Display the SaveButton sticky.
 [ Bug Fix ] Fix PHP 8.X Error

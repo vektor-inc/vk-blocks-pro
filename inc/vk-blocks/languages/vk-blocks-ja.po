@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "POT-Creation-Date: 2022-09-21T19:29:05+00:00\n"
-"PO-Revision-Date: 2022-09-22 04:32+0900\n"
+"PO-Revision-Date: 2022-09-22 17:34+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -1527,10 +1527,6 @@ msgstr "ボタン エフェクト"
 #: src/blocks/button/edit.js:653
 msgid "Shine"
 msgstr "光る"
-
-#: src/blocks/button/edit.js:663
-msgid "Dimensional"
-msgstr "立体"
 
 #: src/blocks/button/edit.js:627
 msgid "Default Color (Bootstrap)"

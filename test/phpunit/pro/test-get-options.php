@@ -321,7 +321,17 @@ class GetOptionsTest extends WP_UnitTestCase {
 			),
 			// 全てのオプション値を変更した時
 			array(
+				'option_check_target' => array(
+					['margin_size','xl','mobile'],
+					['margin_size','xl','tablet'],
+					['margin_size','xl','pc'],
+					['margin_size','xs','mobile'],
+					['margin_size','xs','tablet'],
+					['margin_size','xs','pc'],
+				),
 				'option'  => array(
+					'display_vk_block_template' => 'hide',
+					'new_faq_accordion' => 'open',
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
 					'margin_size' => array(
@@ -358,6 +368,23 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'show_custom_css_editor_flag' => 'false',
 				),
 				'correct' => array(
+					'margin_size' => array(
+						'xl' => array(
+							'mobile' => null,
+							'tablet' => null,
+							'pc' => null,
+						),
+						'xs' => array(
+							'mobile' => null,
+							'tablet' => null,
+							'pc' => null,
+						),
+					),
+				),
+			),
+			// 全てのオプション値を変更した時
+			array(
+				'option'  => array(
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
 					'margin_size' => array(

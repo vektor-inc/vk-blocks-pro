@@ -31,44 +31,30 @@ export const inString = (str, keyword) => {
 
 export const isAddBlockCss = (blockName) => {
 	const allowed = ['core', 'vk-blocks'];
-	const returnBool =
+	let returnBool =
 		allowed.find((item) => inString(blockName, item)) !== undefined;
+
+	const excludeBlocks = [
+		// ExUnitに入っているvk blocksブロック
+		'vk-blocks/share-button',
+		'vk-blocks/child-page-index',
+		'vk-blocks/contact-section',
+		'vk-blocks/page-list-ancestor',
+		'vk-blocks/sitemap',
+		'vk-blocks/cta',
+	];
+	const excludeBlock =
+		excludeBlocks.find((excludeName) =>
+			inString(blockName, excludeName)
+		) !== undefined;
+	if (excludeBlock) {
+		returnBool = false;
+	}
 	return returnBool;
 };
 
 export const customCssRegex = /vk_custom_css-(.+)/;
 export const customCssSelectorRegex = /selector/;
-
-// ExUnitに入っているvk blocksブロック,
-const ex_unit_block = [
-	'vk-blocks/share-button',
-	'vk-blocks/child-page-index',
-	'vk-blocks/contact-section',
-	'vk-blocks/page-list-ancestor',
-	'vk-blocks/sitemap',
-	'vk-blocks/cta',
-];
-
-/**
- * index.js
- *
- * vk-blocksのブロックはPHPのフックblock_type_metadata_settingsで対応できるがExUnitのブロックはjsのフックを使う必要がある
- */
-addFilter('blocks.registerBlockType', 'vk-blocks/custom-css', (settings) => {
-	if (ex_unit_block.includes(settings.name)) {
-		settings.attributes = {
-			// Deploy original settings.attributes to array and...
-			...settings.attributes,
-			// Add vkbCustomCss attributes
-			...{
-				vkbCustomCss: {
-					type: 'string',
-				},
-			},
-		};
-	}
-	return settings;
-});
 
 /**
  * edit.js

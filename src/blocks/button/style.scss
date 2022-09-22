@@ -355,21 +355,6 @@ $xxl-min: 1400px;
 			}
 		}
 
-		//立体ボタン
-		&.is-style-dimensional {
-			box-shadow: 0 4px rgb(0 0 0 / 20%), 0 4px var(--vk-color-primary);
-			// transform: translateY(-6px);
-			transition:0.3s all;
-			&:hover {
-				box-shadow: 0 0 0 transparent;
-				transform: translate3d(0,4px,0);
-			}
-			/* 白っぽい色に対する対策 */
-			&.has-vk-color-light-background-color,
-			&.has-white-background-color {
-				color:#212529;
-			}
-		}
 
 	}
 

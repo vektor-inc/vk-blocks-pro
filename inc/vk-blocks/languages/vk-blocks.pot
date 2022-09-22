@@ -2,120 +2,128 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.41.1.0\n"
+"Project-Id-Version: VK Blocks Pro 1.42.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-08-18T12:07:44+00:00\n"
+"POT-Creation-Date: 2022-09-21T19:34:33+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks\n"
 
-#: src/admin/balloon/index.js:211
+#: src/admin/balloon/index.js:206
 msgid "Select"
 msgstr ""
 
-#: src/admin/balloon/index.js:237
+#: src/admin/balloon/index.js:232
 #: src/blocks/_pro/gridcolcard/edit-common.js:155
 msgid "Delete"
 msgstr ""
 
-#: src/admin/balloon/index.js:251
+#: src/admin/balloon/index.js:246
 msgid "Balloon Image Name"
 msgstr ""
 
-#: src/admin/balloon/index.js:30
+#: src/admin/balloon/index.js:29
 msgid "Balloon Setting"
 msgstr ""
 
-#: src/admin/balloon/index.js:33
+#: src/admin/balloon/index.js:32
 msgid "Balloon Border Width Setting"
 msgstr ""
 
-#: src/admin/balloon/index.js:51
+#: src/admin/balloon/index.js:50
 msgid "1px"
 msgstr ""
 
-#: src/admin/balloon/index.js:55
+#: src/admin/balloon/index.js:54
 msgid "2px"
 msgstr ""
 
-#: src/admin/balloon/index.js:59
+#: src/admin/balloon/index.js:58
 msgid "3px"
 msgstr ""
 
-#: src/admin/balloon/index.js:63
+#: src/admin/balloon/index.js:62
 msgid "4px"
 msgstr ""
 
-#: src/admin/balloon/index.js:74
+#: src/admin/balloon/index.js:69
 msgid "Balloon Image Setting"
 msgstr ""
 
-#: src/admin/balloon/index.js:77
+#: src/admin/balloon/index.js:72
 msgid "You can register frequently used icon images for speech bubble blocks."
 msgstr ""
 
-#: src/admin/balloon/index.js:81
+#: src/admin/balloon/index.js:76
 msgid "If you change image or name that please click Save Changes button."
 msgstr ""
 
-#: src/admin/balloon/index.js:93
+#: src/admin/balloon/index.js:88
 msgid "image"
 msgstr ""
 
-#: src/admin/license.js:23
+#: src/admin/license.js:21
 msgid "Enter a valid Lightning G3 Pro Pack or Lightning Pro license key."
 msgstr ""
 
-#: src/admin/license.js:29
+#: src/admin/license.js:27
 msgid "Once you enter the license key you will be able to do a one click update from the administration screen."
 msgstr ""
 
-#: src/admin/license.js:36
+#: src/admin/license.js:34
 msgid "License key"
 msgstr ""
 
-#: src/admin/load-separate.js:35
+#: src/admin/load-separate.js:33
 msgid "Load Separate Setting"
 msgstr ""
 
-#: src/admin/load-separate.js:38
+#: src/admin/load-separate.js:36
 msgid "Note that the order in which CSS/JS are loaded will change."
 msgstr ""
 
-#: src/admin/load-separate.js:45
+#: src/admin/load-separate.js:43
 msgid "Load Separate Option on"
 msgstr ""
 
-#: src/admin/margin.js:19
-#: src/blocks/button/edit.js:321
-#: src/blocks/spacer/edit.js:85
-#: src/extensions/common/inline-font-size/index.js:84
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:25
-#: inc/vk-blocks/vk-blocks-functions.php:25
-msgid "Small"
+#: src/admin/margin.js:103
+#: src/blocks/border-box/edit.js:192
+#: src/blocks/icon-outer/edit.js:149
+#: src/blocks/icon/edit.js:139
+msgid "Margin"
 msgstr ""
 
-#: src/admin/margin.js:23
-#: src/blocks/spacer/edit.js:95
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:29
-#: inc/vk-blocks/vk-blocks-functions.php:29
-msgid "Medium"
+#: src/admin/margin.js:18
+#: src/blocks/spacer/edit.js:83
+msgid "XS"
 msgstr ""
 
-#: src/admin/margin.js:27
-#: src/blocks/button/edit.js:305
-#: src/blocks/spacer/edit.js:105
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:33
-#: inc/vk-blocks/vk-blocks-functions.php:33
-msgid "Large"
+#: src/admin/margin.js:22
+#: src/blocks/spacer/edit.js:93
+msgid "S"
+msgstr ""
+
+#: src/admin/margin.js:26
+#: src/blocks/spacer/edit.js:103
+msgid "M"
+msgstr ""
+
+#: src/admin/margin.js:30
+#: src/blocks/spacer/edit.js:113
+msgid "L"
 msgstr ""
 
 #: src/admin/margin.js:34
+#: src/blocks/spacer/edit.js:121
+msgid "XL"
+msgstr ""
+
+#: src/admin/margin.js:41
 #: src/blocks/_pro/outer/edit.js:638
 #: src/blocks/_pro/slider/edit.js:224
 #: src/blocks/button/edit.js:521
@@ -123,7 +131,7 @@ msgstr ""
 msgid "PC"
 msgstr ""
 
-#: src/admin/margin.js:38
+#: src/admin/margin.js:45
 #: src/blocks/_pro/outer/edit.js:623
 #: src/blocks/_pro/slider/edit.js:235
 #: src/blocks/button/edit.js:456
@@ -131,7 +139,7 @@ msgstr ""
 msgid "Tablet"
 msgstr ""
 
-#: src/admin/margin.js:42
+#: src/admin/margin.js:49
 #: src/blocks/_pro/outer/edit.js:608
 #: src/blocks/_pro/slider/edit.js:246
 #: src/blocks/button/edit.js:391
@@ -139,22 +147,22 @@ msgstr ""
 msgid "Mobile"
 msgstr ""
 
-#: src/admin/margin.js:55
+#: src/admin/margin.js:61
 #: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:74
 #: inc/vk-blocks/admin/admin.php:74
 msgid "Common Margin Setting"
 msgstr ""
 
-#: src/admin/margin.js:58
+#: src/admin/margin.js:64
 msgid "Please specify the size of the common margin used for responsive spacers, etc."
 msgstr ""
 
-#: src/admin/margin.js:64
+#: src/admin/margin.js:70
 #: src/blocks/_pro/grid-column-item/edit.js:169
 msgid "Unit"
 msgstr ""
 
-#: src/admin/margin.js:77
+#: src/admin/margin.js:83
 #: src/blocks/_pro/grid-column-item/edit.js:177
 #: src/blocks/_pro/outer/edit.js:659
 #: src/blocks/icon-outer/edit.js:181
@@ -163,7 +171,7 @@ msgstr ""
 msgid "px"
 msgstr ""
 
-#: src/admin/margin.js:81
+#: src/admin/margin.js:87
 #: src/blocks/_pro/grid-column-item/edit.js:181
 #: src/blocks/_pro/outer/edit.js:663
 #: src/blocks/icon-outer/edit.js:185
@@ -172,7 +180,7 @@ msgstr ""
 msgid "em"
 msgstr ""
 
-#: src/admin/margin.js:85
+#: src/admin/margin.js:91
 #: src/blocks/_pro/grid-column-item/edit.js:185
 #: src/blocks/_pro/outer/edit.js:667
 #: src/blocks/icon-outer/edit.js:189
@@ -181,34 +189,27 @@ msgstr ""
 msgid "rem"
 msgstr ""
 
-#: src/admin/margin.js:97
-#: src/blocks/border-box/edit.js:192
-#: src/blocks/icon-outer/edit.js:149
-#: src/blocks/icon/edit.js:139
-msgid "Margin"
-msgstr ""
-
-#: src/admin/new-faq.js:21
+#: src/admin/new-faq.js:19
 msgid "FAQ Block Setting"
 msgstr ""
 
-#: src/admin/new-faq.js:34
+#: src/admin/new-faq.js:32
 msgid "Disable accordion"
 msgstr ""
 
-#: src/admin/new-faq.js:38
+#: src/admin/new-faq.js:36
 msgid "Enable accordion and default open"
 msgstr ""
 
-#: src/admin/new-faq.js:45
+#: src/admin/new-faq.js:43
 msgid "Enable accordion and default close"
 msgstr ""
 
-#: src/admin/save-button.js:52
+#: src/admin/save-button.js:53
 msgid "Save setting"
 msgstr ""
 
-#: src/admin/save-button.js:56
+#: src/admin/save-button.js:57
 msgid "Save Success"
 msgstr ""
 
@@ -1498,6 +1499,15 @@ msgstr ""
 msgid "Button Size:"
 msgstr ""
 
+#: src/blocks/button/edit.js:305
+msgid "Large"
+msgstr ""
+
+#: src/blocks/button/edit.js:321
+#: src/extensions/common/inline-font-size/index.js:84
+msgid "Small"
+msgstr ""
+
 #: src/blocks/button/edit.js:328
 msgid "Button Position:"
 msgstr ""
@@ -1908,11 +1918,11 @@ msgstr ""
 msgid "Space Type"
 msgstr ""
 
-#: src/blocks/spacer/edit.js:115
+#: src/blocks/spacer/edit.js:131
 msgid "Custom"
 msgstr ""
 
-#: src/blocks/spacer/edit.js:119
+#: src/blocks/spacer/edit.js:135
 msgid "You can change each common margin size from Setting > VK Blocks"
 msgstr ""
 
@@ -1994,8 +2004,8 @@ msgid "Card (Image Round)"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:26
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:760
-#: inc/vk-components/package/class-vk-component-posts.php:760
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:768
+#: inc/vk-components/package/class-vk-component-posts.php:768
 msgid "Card"
 msgstr ""
 
@@ -2012,8 +2022,8 @@ msgid "Card (Horizontal)"
 msgstr ""
 
 #: src/components/column-layout-control/index.js:42
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:776
-#: inc/vk-components/package/class-vk-component-posts.php:776
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:784
+#: inc/vk-components/package/class-vk-component-posts.php:784
 msgid "Media"
 msgstr ""
 
@@ -2170,39 +2180,55 @@ msgid "Extra big"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:26
-msgid "Top lg"
+msgid "Top XL"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:280
+#: src/extensions/common/margin-extension/index.js:301
 msgid "Margin the block"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:31
-msgid "Top md"
+msgid "Top L"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:36
-msgid "Top sm"
+msgid "Top M"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:41
+msgid "Top S"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:46
+msgid "Top XS"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:51
 msgid "Top 0"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:49
+#: src/extensions/common/margin-extension/index.js:59
 msgid "Bottom 0"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:54
-msgid "Bottom sm"
-msgstr ""
-
-#: src/extensions/common/margin-extension/index.js:59
-msgid "Bottom md"
-msgstr ""
-
 #: src/extensions/common/margin-extension/index.js:64
-msgid "Bottom lg"
+msgid "Bottom XS"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:69
+msgid "Bottom S"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:74
+msgid "Bottom M"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:79
+msgid "Bottom L"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:84
+msgid "Bottom XL"
 msgstr ""
 
 #: src/extensions/common/nowrap/index.js:21
@@ -2603,13 +2629,13 @@ msgstr ""
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-admin/package/class-vk-admin.php:316
-#: inc/vk-admin/package/class-vk-admin.php:333
+#: dist/vk-blocks-pro/inc/vk-admin/package/class-vk-admin.php:332
+#: inc/vk-admin/package/class-vk-admin.php:332
 msgid "Sorry, there is no post"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-admin/package/class-vk-admin.php:370
-#: inc/vk-admin/package/class-vk-admin.php:387
+#: dist/vk-blocks-pro/inc/vk-admin/package/class-vk-admin.php:386
+#: inc/vk-admin/package/class-vk-admin.php:386
 msgid "Vektor WordPress Information"
 msgstr ""
 
@@ -2654,6 +2680,35 @@ msgstr ""
 msgid "Setting"
 msgstr ""
 
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
+#: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
+#: src/blocks/ancestor-page-list/index.php:44
+#: test/phpunit/pro/test-ancestor-page-list.php:89
+#: test/phpunit/pro/test-ancestor-page-list.php:173
+msgid "Ancestor Page Title"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
+#: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
+#: src/blocks/ancestor-page-list/index.php:83
+#: test/phpunit/pro/test-ancestor-page-list.php:173
+msgid "Dummy Text"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
+#: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
+#: src/blocks/ancestor-page-list/index.php:83
+#: test/phpunit/pro/test-ancestor-page-list.php:173
+msgid "Because of the site editor have not child page that, the page list from ancestor is not displayed. Now displaying the dummy text list instead of the page list from ancestor."
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
+#: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
+#: src/blocks/ancestor-page-list/index.php:83
+#: test/phpunit/pro/test-ancestor-page-list.php:173
+msgid "This message only display on the edit screen."
+msgstr ""
+
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/page-content/index.php:124
 #: inc/vk-blocks/build/blocks/page-content/index.php:124
 #: src/blocks/page-content/index.php:124
@@ -2672,13 +2727,13 @@ msgstr ""
 msgid "There are no %ss."
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:224
-#: inc/vk-blocks/vk-blocks-functions.php:220
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:197
+#: inc/vk-blocks/vk-blocks-functions.php:157
 msgid "Blocks"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:237
-#: inc/vk-blocks/vk-blocks-functions.php:233
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:210
+#: inc/vk-blocks/vk-blocks-functions.php:170
 msgid "Blocks Layout"
 msgstr ""
 
@@ -2692,43 +2747,43 @@ msgstr ""
 msgid "New!!"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:267
-#: inc/vk-components/package/class-vk-component-posts.php:267
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:268
+#: inc/vk-components/package/class-vk-component-posts.php:268
 msgid "More"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:303
-#: inc/vk-components/package/class-vk-component-posts.php:303
-msgid "Posts navigation"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:304
 #: inc/vk-components/package/class-vk-component-posts.php:304
+msgid "Posts navigation"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:305
+#: inc/vk-components/package/class-vk-component-posts.php:305
 msgid "Posts"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:306
-#: inc/vk-components/package/class-vk-component-posts.php:306
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:307
+#: inc/vk-components/package/class-vk-component-posts.php:307
 msgid "Page"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:764
-#: inc/vk-components/package/class-vk-component-posts.php:764
-msgid "Card Noborder"
-msgstr ""
-
-#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:768
-#: inc/vk-components/package/class-vk-component-posts.php:768
-msgid "Card Intext"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:772
 #: inc/vk-components/package/class-vk-component-posts.php:772
-msgid "Card Horizontal"
+msgid "Card Noborder"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:776
+#: inc/vk-components/package/class-vk-component-posts.php:776
+msgid "Card Intext"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:780
 #: inc/vk-components/package/class-vk-component-posts.php:780
+msgid "Card Horizontal"
+msgstr ""
+
+#: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:788
+#: inc/vk-components/package/class-vk-component-posts.php:788
 msgctxt "post list type"
 msgid "Text 1 Column"
 msgstr ""
@@ -2838,31 +2893,6 @@ msgstr ""
 #: dist/vk-blocks-pro/vk-blocks.php:271
 #: vk-blocks.php:271
 msgid "Re-acquisition of updates"
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
-#: src/blocks/ancestor-page-list/index.php:44
-#: test/phpunit/pro/test-ancestor-page-list.php:89
-#: test/phpunit/pro/test-ancestor-page-list.php:173
-msgid "Ancestor Page Title"
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
-#: src/blocks/ancestor-page-list/index.php:83
-#: test/phpunit/pro/test-ancestor-page-list.php:173
-msgid "Dummy Text"
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
-#: src/blocks/ancestor-page-list/index.php:83
-#: test/phpunit/pro/test-ancestor-page-list.php:173
-msgid "Because of the site editor have not child page that, the page list from ancestor is not displayed. Now displaying the dummy text list instead of the page list from ancestor."
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:83
-#: src/blocks/ancestor-page-list/index.php:83
-#: test/phpunit/pro/test-ancestor-page-list.php:173
-msgid "This message only display on the edit screen."
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/alert/block.json
@@ -3181,8 +3211,10 @@ msgid "Breadcrumb"
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
+#: inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
+#: src/blocks/_pro/breadcrumb/block.json
 msgctxt "block description"
-msgid "Displays breadcrumbs of a page's hierarchy, or a post's categories"
+msgid "Displays breadcrumbs of a page's hierarchy, or a post's categories.This block is not displayed on the front page."
 msgstr ""
 
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/_pro/button-outer/block.json
@@ -3519,10 +3551,4 @@ msgstr ""
 #: src/blocks/_pro/timeline/block.json
 msgctxt "block description"
 msgid "Displays a simple schedule and other information that is useful for explaining the order."
-msgstr ""
-
-#: inc/vk-blocks/build/blocks/_pro/breadcrumb/block.json
-#: src/blocks/_pro/breadcrumb/block.json
-msgctxt "block description"
-msgid "Displays breadcrumbs of a page's hierarchy, or a post's categories.This block is not displayed on the front page."
 msgstr ""

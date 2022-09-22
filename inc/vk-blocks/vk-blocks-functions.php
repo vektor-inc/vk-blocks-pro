@@ -22,6 +22,7 @@ VK_Blocks_Options::init();
 
 // utils
 require_once dirname( __FILE__ ) . '/utils/array-merge.php';
+require_once dirname( __FILE__ ) . '/utils/minify-css.php';
 
 // VK Blocks の管理画面.
 require_once dirname( __FILE__ ) . '/admin/admin.php';
@@ -54,40 +55,6 @@ add_filter(
 );
 
 /**
- * VK Blocks Get Selected
- *
- * @param string $current current.
- * @param string $value value.
- */
-function vk_blocks_get_selected( $current, $value ) {
-	$vk_blocks_selected = '';
-	if ( $current === $value ) {
-		$vk_blocks_selected = ' selected';
-	}
-	return $vk_blocks_selected;
-}
-/**
- * VK Blocks The Selected
- *
- * @param string $current current.
- * @param string $value value.
- */
-function vk_blocks_the_selected( $current, $value ) {
-	echo esc_attr( vk_blocks_get_selected( $current, $value ) );
-}
-
-/**
- * VK Blocks is Larger than WP
- *
- * @param string $target_version Target version.
- * @param string $syntax syntax.
- */
-function vk_blocks_is_lager_than_wp( $target_version, $syntax = '>=' ) {
-	global $wp_version;
-	return defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, $target_version, $syntax );
-}
-
-/**
  * VK Blocks Assets
  */
 function vk_blocks_blocks_assets() {
@@ -103,51 +70,49 @@ function vk_blocks_blocks_assets() {
 	// ホーム URL を渡す用.
 	wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_params', array( 'home_url' => home_url( '/' ) ) );
 
-	if ( vk_blocks_is_lager_than_wp( '5.0' ) ) {
-		global $vk_blocks_common_attributes;
-		$vk_blocks_common_attributes = array(
-			'vkb_hidden'       => array(
-				'type'    => 'boolean',
-				'default' => false,
-			),
-			'vkb_hidden_xxl'   => array(
-				'type'    => 'boolean',
-				'default' => false,
-			),
-			'vkb_hidden_xl_v2' => array(
-				'type'    => 'boolean',
-				'default' => false,
-			),
-			'vkb_hidden_xl'    => array(
-				'type'    => 'boolean',
-				'default' => false,
-			),
-			'vkb_hidden_lg'    => array(
-				'type'    => 'boolean',
-				'default' => false,
-			),
-			'vkb_hidden_md'    => array(
-				'type'    => 'boolean',
-				'default' => false,
-			),
-			'vkb_hidden_sm'    => array(
-				'type'    => 'boolean',
-				'default' => false,
-			),
-			'vkb_hidden_xs'    => array(
-				'type'    => 'boolean',
-				'default' => false,
-			),
-			'marginTop'        => array(
-				'type'    => 'string',
-				'default' => '',
-			),
-			'marginBottom'     => array(
-				'type'    => 'string',
-				'default' => '',
-			),
-		);
-	}
+	global $vk_blocks_common_attributes;
+	$vk_blocks_common_attributes = array(
+		'vkb_hidden'       => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'vkb_hidden_xxl'   => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'vkb_hidden_xl_v2' => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'vkb_hidden_xl'    => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'vkb_hidden_lg'    => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'vkb_hidden_md'    => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'vkb_hidden_sm'    => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'vkb_hidden_xs'    => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'marginTop'        => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+		'marginBottom'     => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+	);
 
 	$dynamic_css = '
 		:root {
@@ -161,12 +126,7 @@ function vk_blocks_blocks_assets() {
 
 	$dynamic_css .= vk_blocks_get_spacer_size_style_all( $vk_blocks_options );
 
-	// delete before after space.
-	$dynamic_css = trim( $dynamic_css );
-	// convert tab and br to space.
-	$dynamic_css = preg_replace( '/[\n\r\t]/', '', $dynamic_css );
-	// Change multiple spaces to single space.
-	$dynamic_css = preg_replace( '/\s(?=\s)/', '', $dynamic_css );
+	$dynamic_css = vk_blocks_minify_css( $dynamic_css );
 	wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );
 	// --vk_image-mask-waveはコアの画像ブロックに依存するのでwp-edit-blocksを追加
 	wp_add_inline_style( 'wp-edit-blocks', $dynamic_css );

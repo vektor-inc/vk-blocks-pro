@@ -76,13 +76,21 @@ export default function SpacerEdit({
 					<ButtonGroup className="mb-3">
 						<Button
 							isSmall
+							isPrimary={spaceSize === 'xs'}
+							isSecondary={spaceSize !== 'xs'}
+							onClick={() => setAttributes({ spaceSize: 'xs' })}
+						>
+							{__('XS', 'vk-blocks')}
+						</Button>
+						<Button
+							isSmall
 							isPrimary={spaceSize === 'small'}
 							isSecondary={spaceSize !== 'small'}
 							onClick={() =>
 								setAttributes({ spaceSize: 'small' })
 							}
 						>
-							{__('Small', 'vk-blocks')}
+							{__('S', 'vk-blocks')}
 						</Button>
 						<Button
 							isSmall
@@ -92,7 +100,7 @@ export default function SpacerEdit({
 								setAttributes({ spaceSize: 'medium' })
 							}
 						>
-							{__('Medium', 'vk-blocks')}
+							{__('M', 'vk-blocks')}
 						</Button>
 						<Button
 							isSmall
@@ -102,7 +110,15 @@ export default function SpacerEdit({
 								setAttributes({ spaceSize: 'large' })
 							}
 						>
-							{__('Large', 'vk-blocks')}
+							{__('L', 'vk-blocks')}
+						</Button>
+						<Button
+							isSmall
+							isPrimary={spaceSize === 'xl'}
+							isSecondary={spaceSize !== 'xl'}
+							onClick={() => setAttributes({ spaceSize: 'xl' })}
+						>
+							{__('XL', 'vk-blocks')}
 						</Button>
 						<Button
 							isSmall

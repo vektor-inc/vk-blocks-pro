@@ -119,7 +119,7 @@ class AncestorPageListTest extends WP_UnitTestCase {
 	 * @return void
 	 */
 	public function test_vk_blocks_ancestor_page_list_render_callback() {
-
+		
 		// Create test page .
 		$post                     = array(
 			'post_title'   => 'no_child_page',
@@ -146,7 +146,7 @@ class AncestorPageListTest extends WP_UnitTestCase {
 					'displayHasChildOnly'  => false,
 				),
 				'target_url' => get_permalink( $data['no_child_page_id'] ),
-				'correct'    => '<aside class="vk_ancestorPageList"><h3 class="vk_ancestorPageList_title">no_child_page</h3></aside>',
+				'correct'    => '<aside class="vk_ancestorPageList wp-block-vk-blocks-ancestor-page-list"><h3 class="vk_ancestorPageList_title">no_child_page</h3></aside>',
 			),
 			array(
 				'attributes' => array(
@@ -157,12 +157,12 @@ class AncestorPageListTest extends WP_UnitTestCase {
 					'hiddenGrandChild'     => true,
 				),
 				'target_url' => get_permalink( $data['no_child_page_id'] ),
-				'correct'    => '<aside class="vk_ancestorPageList vk_ancestorPageList-hiddenGrandChild-true"><h3 class="vk_ancestorPageList_title">no_child_page</h3></aside>',
+				'correct'    => '<aside class="vk_ancestorPageList vk_ancestorPageList-hiddenGrandChild-true wp-block-vk-blocks-ancestor-page-list"><h3 class="vk_ancestorPageList_title">no_child_page</h3></aside>',
 			),
 			// Not public page.
 			// サイトエディター上でのテストだが、サイトエディターの中身が iframe で判別方法が不明のため、一般公開でないURLを target_url 指定している .
 			array(
-				'attributes' => array(
+			'attributes' => array(
 					'ancestorTitleDisplay' => true,
 					'ancestorTitleTagName' => 'h3',
 					'ancestorTitleLink'    => false,
@@ -170,7 +170,7 @@ class AncestorPageListTest extends WP_UnitTestCase {
 					'hiddenGrandChild'     => true,
 				),
 				'target_url' => admin_url() . '/site-editor.php?postType=wp_template',
-				'correct'    => '<aside class="vk_ancestorPageList vk_ancestorPageList-hiddenGrandChild-true"><h3 class="vk_ancestorPageList_title">' . esc_html__( 'Ancestor Page Title', 'vk-blocks' ) . '</h3><ul class="vk_ancestorPageList_list"><li class="page_item page-item-**"><a href="#">' . esc_html__( 'Dummy Text', 'vk-blocks' ) . '</a></li><li class="page_item page-item-**"><a href="#">' . esc_html__( 'Dummy Text', 'vk-blocks' ) . '</a></li></ul><div class="alert alert-warning">' . esc_html__( 'Because of the site editor have not child page that, the page list from ancestor is not displayed. Now displaying the dummy text list instead of the page list from ancestor.', 'vk-blocks' ) . '<br />* ' . esc_html__( 'This message only display on the edit screen.', 'vk-blocks' ) . '</div></aside>',
+				'correct'    => '<aside class="vk_ancestorPageList vk_ancestorPageList-hiddenGrandChild-true wp-block-vk-blocks-ancestor-page-list"><h3 class="vk_ancestorPageList_title">' . esc_html__( 'Ancestor Page Title', 'vk-blocks' ) . '</h3><ul class="vk_ancestorPageList_list"><li class="page_item page-item-**"><a href="#">' . esc_html__( 'Dummy Text', 'vk-blocks' ) . '</a></li><li class="page_item page-item-**"><a href="#">' . esc_html__( 'Dummy Text', 'vk-blocks' ) . '</a></li></ul><div class="alert alert-warning">' . esc_html__( 'Because of the site editor have not child page that, the page list from ancestor is not displayed. Now displaying the dummy text list instead of the page list from ancestor.', 'vk-blocks' ) . '<br />* ' . esc_html__( 'This message only display on the edit screen.', 'vk-blocks' ) . '</div></aside>',
 			),
 		);
 
@@ -178,11 +178,14 @@ class AncestorPageListTest extends WP_UnitTestCase {
 		print '------------------------------------' . PHP_EOL;
 		print 'vk_blocks_ancestor_page_list_render_callback()' . PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
+
+		WP_Block_Supports::init();
+
 		foreach ( $test_data as $value ) {
 
 			// Move to test page.
 			$this->go_to( $value['target_url'] );
-
+			WP_Block_Supports::$block_to_render =  array('blockName'=> 'vk-blocks/ancestor-page-list', 'attrs' => $value['attributes'] );			
 			$return  = vk_blocks_ancestor_page_list_render_callback( $value['attributes'] );
 			$correct = $value['correct'];
 

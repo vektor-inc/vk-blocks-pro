@@ -10,9 +10,11 @@
 /* 余白（レスポンシブスペーサー,共通余白で使用）
 /*-------------------------------------------*/
 :root {
+	--vk-margin-xs : 0.75rem;
 	--vk-margin-sm : 1.5rem;
 	--vk-margin-md : 2.4rem;
 	--vk-margin-lg : 4rem;
+	--vk-margin-xl : 6rem;
 }
 .vk_block{
 	&-margin-0 {
@@ -27,6 +29,18 @@
 			& > table { //テーマ側でtableにmargin-bottom や margin-top の余白がついている場合、完全に0にならないので必要
 				margin-bottom:0;
 			}
+		}
+	}
+	&-margin-xs {
+		margin-top: var(--vk-margin-xs); /* 旧バージョンでdeprecatedが走ってない状態のfallback */
+		&--margin-top {
+			margin-top: var(--vk-margin-xs) !important;
+		}
+		&--margin-bottom {
+			margin-bottom: var(--vk-margin-xs) !important;
+		}
+		&--height {
+			height: var(--vk-margin-xs);
 		}
 	}
 	&-margin-sm {
@@ -63,6 +77,18 @@
 		}
 		&--height {
 			height: var(--vk-margin-lg);
+		}
+	}
+	&-margin-xl {
+		margin-top: var(--vk-margin-xl); /* 旧バージョンでdeprecatedが走ってない状態のfallback */
+		&--margin-top {
+			margin-top: var(--vk-margin-xl) !important;
+		}
+		&--margin-bottom {
+			margin-bottom: var(--vk-margin-xl) !important;
+		}
+		&--height {
+			height: var(--vk-margin-xl);
 		}
 	}
 }

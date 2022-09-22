@@ -46,6 +46,23 @@ class VK_Blocks_Options {
 			'margin_size'          => array(
 				'type'  => 'object',
 				'items' => array(
+					'xl' => array(
+						'type'  => 'object',
+						'items' => array(
+							'mobile' => array(
+								'type'    => 'number',
+								'default' => null,
+							),
+							'tablet' => array(
+								'type'    => 'number',
+								'default' => null,
+							),
+							'pc'     => array(
+								'type'    => 'number',
+								'default' => null,
+							),
+						),
+					),
 					'lg' => array(
 						'type'  => 'object',
 						'items' => array(
@@ -81,6 +98,23 @@ class VK_Blocks_Options {
 						),
 					),
 					'sm' => array(
+						'type'  => 'object',
+						'items' => array(
+							'mobile' => array(
+								'type'    => 'number',
+								'default' => null,
+							),
+							'tablet' => array(
+								'type'    => 'number',
+								'default' => null,
+							),
+							'pc'     => array(
+								'type'    => 'number',
+								'default' => null,
+							),
+						),
+					),
+					'xs' => array(
 						'type'  => 'object',
 						'items' => array(
 							'mobile' => array(

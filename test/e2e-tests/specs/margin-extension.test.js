@@ -158,17 +158,17 @@ describe( 'MarginExtension', () => {
 
 				//共通余白 下をクリック
 				await clickBlockToolbarButton( 'Margin the block' );
-				for (let i = 0; i < 4; i++) {
+				for (let i = 0; i < 7; i++) {
 					await page.keyboard.press( 'Tab' );
 				}
 				await page.keyboard.press( 'Enter' );
 
 				// 共通余白のクラス名が存在するかチェック
 				expect(
-					await page.$( '.vk_block-margin-lg--margin-top' )
+					await page.$( '.vk_block-margin-xl--margin-top' )
 				).not.toBeNull();
 				expect(
-					await page.$( '.vk_block-margin-0--margin-bottom' )
+					await page.$( '.vk_block-margin-xs--margin-bottom' )
 				).not.toBeNull();
 
 				// List viewをクリック

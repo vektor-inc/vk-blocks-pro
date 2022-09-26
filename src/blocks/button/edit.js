@@ -654,18 +654,7 @@ export default function ButtonEdit(props) {
 								>
 									{__('Shine', 'vk-blocks')}
 								</Button>
-								<Button
-									isSmall
-									isPrimary={buttonEffect === 'dimensional'}
-									isSecondary={buttonEffect !== 'dimensional'}
-									onClick={() => {
-										setAttributes({
-											buttonEffect: 'dimensional',
-										});
-									}}
-								>
-									{__('Dimensional', 'vk-blocks')}
-								</Button>
+
 							</ButtonGroup>
 						</>
 					)}

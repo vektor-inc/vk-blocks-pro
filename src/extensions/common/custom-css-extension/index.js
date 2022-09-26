@@ -77,20 +77,22 @@ addFilter(
 			useEffect(() => {
 				// カスタムCSS用クラスが無いかつselectorがあればカスタムCSS用クラスを追加
 				if (
-					customCssSelectorRegex.test(vkbCustomCss) &&
-					nowClassArray.indexOf('vk_custom_css') === -1
+					nowClassArray.indexOf('vk_custom_css') === -1 &&
+					customCssSelectorRegex.test(vkbCustomCss)
 				) {
 					setAttributes({
 						className: classnames(nowClassArray, `vk_custom_css`),
 					});
 				}
 
-				// selectorがなければカスタムCSS用クラスを削除
-				if (!customCssSelectorRegex.test(vkbCustomCss)) {
-					const newClassArray = nowClassArray.filter(
-						(x) => !customCssRegex.test(x)
-					);
-					setAttributes({ className: classnames(newClassArray) });
+				// カスタムCSS用クラスがあるかつselectorがなければカスタムCSS用クラスを削除
+				if (
+					nowClassArray.indexOf('vk_custom_css') !== -1 &&
+					!customCssSelectorRegex.test(vkbCustomCss)
+				) {
+					const deleteClass = nowClassArray.indexOf('vk_custom_css');
+					nowClassArray.splice(deleteClass, 1);
+					setAttributes({ className: classnames(nowClassArray) });
 				}
 			}, [vkbCustomCss]);
 
@@ -98,8 +100,8 @@ addFilter(
 			useEffect(() => {
 				// カスタムCSS用クラスが無いかつselectorがあればカスタムCSS用クラスを追加
 				if (
-					customCssSelectorRegex.test(vkbCustomCss) &&
-					nowClassArray.indexOf('vk_custom_css') === -1
+					nowClassArray.indexOf('vk_custom_css') === -1 &&
+					customCssSelectorRegex.test(vkbCustomCss)
 				) {
 					setAttributes({
 						className: classnames(nowClassArray, `vk_custom_css`),

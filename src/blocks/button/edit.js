@@ -322,7 +322,6 @@ export default function ButtonEdit(props) {
 							{__('Small', 'vk-blocks')}
 						</Button>
 					</ButtonGroup>
-
 					{!isInnerButton && (
 						<>
 							<h4 className={`mt-0 mb-2`}>
@@ -654,7 +653,6 @@ export default function ButtonEdit(props) {
 								>
 									{__('Shine', 'vk-blocks')}
 								</Button>
-
 							</ButtonGroup>
 						</>
 					)}

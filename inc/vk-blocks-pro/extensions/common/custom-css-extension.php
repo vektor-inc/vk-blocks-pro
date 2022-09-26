@@ -8,22 +8,24 @@
 /**
  * Render Custom Css Extension css
  *
+ * @see https://github.com/WordPress/gutenberg/blob/3358251ae150e33dd6c0e0fb15be110cca1b5c59/lib/block-supports/layout.php#L294
+ *
  * @param string $block_content block_content.
  * @param array  $block block.
  * @return string
  */
 function vk_blocks_custom_css_extension( $block_content, $block ) {
 	if ( ! empty( $block['attrs']['vkbCustomCss'] ) ) {
-		$css        = $block['attrs']['vkbCustomCss'];
-		$class_name = ! empty( $block['attrs']['className'] ) ? $block['attrs']['className'] : '';
-		// 追加CSSクラスを半角文字列で分けて配列化
-		$now_class_array  = ! empty( $class_name ) ? explode( ' ', $class_name ) : array();
-		$custom_css_class = preg_grep( '/vk_custom_css-[\S]/', $now_class_array );
-		// selector文字列をクラス名に変換
-		$css = preg_replace( '/selector/', '.' . current( $custom_css_class ), $css );
+		$css = $block['attrs']['vkbCustomCss'];
+		// Uniqueクラスを生成
+		$custom_css_class = wp_unique_id( 'vk_custom_css_' );
+		// selector文字列をUniqueクラスに変換
+		$css = preg_replace( '/selector/', '.' . $custom_css_class, $css );
 		$css = vk_blocks_minify_css( $css );
+		// vk_custom_css文字列をUniqueクラスに変換
+		$content = preg_replace( '/vk_custom_css/', $custom_css_class, $block_content );
 		if ( ! empty( $css ) ) {
-			return '<style>' . $css . '</style>' . $block_content;
+			return '<style>' . $css . '</style>' . $content;
 		}
 		return $block_content;
 	}

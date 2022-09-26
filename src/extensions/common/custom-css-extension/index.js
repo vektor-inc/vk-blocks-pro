@@ -5,7 +5,7 @@ import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
 import { PanelBody, Icon, Button } from '@wordpress/components';
 import { InspectorControls } from '@wordpress/block-editor';
-import { createHigherOrderComponent } from '@wordpress/compose';
+import { createHigherOrderComponent, useInstanceId } from '@wordpress/compose';
 import { hasBlockSupport } from '@wordpress/blocks';
 import { useEffect } from '@wordpress/element';
 import { addQueryArgs } from '@wordpress/url';
@@ -21,7 +21,6 @@ import { EditorView } from '@codemirror/view';
 /**
  * Internal dependencies
  */
-import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 import { ReactComponent as IconSVG } from './icon.svg';
 /*globals vk_blocks_params */
 
@@ -53,7 +52,7 @@ export const isAddBlockCss = (blockName) => {
 	return returnBool;
 };
 
-export const customCssRegex = /vk_custom_css-(.+)/;
+export const customCssRegex = /vk_custom_css/;
 export const customCssSelectorRegex = /selector/;
 
 /**
@@ -64,8 +63,7 @@ addFilter(
 	'vk-blocks/custom-css',
 	createHigherOrderComponent((BlockEdit) => {
 		return (props) => {
-			const { name, attributes, setAttributes, isSelected, clientId } =
-				props;
+			const { name, attributes, setAttributes, isSelected } = props;
 			const { vkbCustomCss, className } = attributes;
 			const hasCustomClassName = hasBlockSupport(
 				name,
@@ -75,24 +73,19 @@ addFilter(
 			// 追加CSSを半角文字列で分けて配列化
 			const nowClassArray = className ? className.split(' ') : [];
 
-			// 追加CSSにUniqueクラスを追加したクラス名を取得する
-			const getUniqueClassName = (_nowClassArray, _clientId) => {
-				return classnames(_nowClassArray, `vk_custom_css-${_clientId}`);
-			};
-
-			// vkbCustomCssが変更されたときにclassNameにUniqueクラスが無いかつvkbCustomCssにselectorがあったらクラス名を追加
+			// vkbCustomCssが変更されたとき
 			useEffect(() => {
-				// Uniqueクラスが無いかつselectorがあればUniqueクラスを追加
+				// カスタムCSS用クラスが無いかつselectorがあればカスタムCSS用クラスを追加
 				if (
-					!customCssRegex.test(className) &&
-					customCssSelectorRegex.test(vkbCustomCss)
+					customCssSelectorRegex.test(vkbCustomCss) &&
+					nowClassArray.indexOf('vk_custom_css') === -1
 				) {
 					setAttributes({
-						className: getUniqueClassName(nowClassArray, clientId),
+						className: classnames(nowClassArray, `vk_custom_css`),
 					});
 				}
 
-				// selectorがなければUniqueクラスを削除
+				// selectorがなければカスタムCSS用クラスを削除
 				if (!customCssSelectorRegex.test(vkbCustomCss)) {
 					const newClassArray = nowClassArray.filter(
 						(x) => !customCssRegex.test(x)
@@ -101,33 +94,18 @@ addFilter(
 				}
 			}, [vkbCustomCss]);
 
-			// classNameが変更されたときにvkbCustomCssにselectorがあるかつclassNameにUniqueクラスが無かったらクラス名を追加
+			// classNameが変更されたときに
 			useEffect(() => {
+				// カスタムCSS用クラスが無いかつselectorがあればカスタムCSS用クラスを追加
 				if (
 					customCssSelectorRegex.test(vkbCustomCss) &&
-					!customCssRegex.test(className)
+					nowClassArray.indexOf('vk_custom_css') === -1
 				) {
 					setAttributes({
-						className: getUniqueClassName(nowClassArray, clientId),
+						className: classnames(nowClassArray, `vk_custom_css`),
 					});
 				}
 			}, [className]);
-
-			// 複製された時にclassNameにUniqueクラスがあるかつ再利用ブロックではない時はUniqueクラスを振り直す
-			useEffect(() => {
-				if (
-					customCssRegex.test(className) &&
-					isParentReusableBlock(clientId) === false
-				) {
-					// 以前のUniqueクラスを削除する
-					const newClassArray = nowClassArray.filter(
-						(x) => !customCssRegex.test(x)
-					);
-					setAttributes({
-						className: getUniqueClassName(newClassArray, clientId),
-					});
-				}
-			}, [clientId]);
 
 			// アイコンのスタイル
 			let iconStyle = {
@@ -244,13 +222,16 @@ addFilter(
 				'customClassName',
 				true
 			);
-			const { vkbCustomCss, className } = attributes;
-			// 追加CSSを半角文字列で分けて配列化
-			const nowClassArray = className ? className.split(' ') : [];
+			const { vkbCustomCss } = attributes;
+			// 編集画面で使用出来る Unique id
+			// @see https://github.com/WordPress/gutenberg/blob/086b77ed409a70a6c6a6e74dee704851eff812f2/packages/compose/src/hooks/use-instance-id/README.md
+			const id = useInstanceId(BlockListBlock);
+			const uniqueClass = `vk_custom_css_${id}`;
 
-			// editor用のクラス名
+			// editor用のクラス名を追加
 			const customCssClass = classnames(props.className, {
 				// vkbCustomCssが存在するかつ空白文字のみではない
+				[uniqueClass]: vkbCustomCss && vkbCustomCss.match(/\S/g),
 				[`vk_edit_custom_css`]:
 					vk_blocks_params.show_custom_css_editor_flag === 'true' &&
 					vkbCustomCss &&
@@ -259,9 +240,6 @@ addFilter(
 
 			// selectorをUniqueクラスに変換する
 			let cssTag = vkbCustomCss ? vkbCustomCss : '';
-			const uniqueClass = customCssRegex.test(className)
-				? nowClassArray.find((i) => i.includes('vk_custom_css'))
-				: null;
 			if (cssTag && uniqueClass) {
 				cssTag = vkbCustomCss.replace('selector', '.' + uniqueClass);
 			}

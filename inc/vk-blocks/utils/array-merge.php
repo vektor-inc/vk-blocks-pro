@@ -24,9 +24,7 @@
 function vk_blocks_array_merge( $args, $defaults ) {
 	$merged = $defaults;
 	foreach ( $args as $key => $value ) {
-		if ( ! is_array( $value ) && array_key_exists( $key, $defaults ) ) {
-			$merged[ $key ] = $value;
-		} elseif ( is_array( $value ) && isset( $defaults[ $key ] ) && is_array( $defaults[ $key ] ) ) {
+		if ( is_array( $value ) && isset( $defaults[ $key ] ) && is_array( $defaults[ $key ] ) ) {
 			$merged[ $key ] = vk_blocks_array_merge( $value, $defaults[ $key ] );
 		} else {
 			$merged[ $key ] = $value;

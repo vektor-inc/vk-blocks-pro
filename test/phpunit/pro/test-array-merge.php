@@ -116,6 +116,71 @@ class ArrayMergeTest extends WP_UnitTestCase {
 					),
 				),
 			),
+			// 配列 argsにキーが無ければdefaultsをマージ
+			array(
+				'args'  => array(
+					'string' => 'b',
+				),
+				'defaults'  => array(
+					'string' => 'a',
+					'array_key' => array(
+						array(
+							'array_key_1' => 'array_defaults_value_1_1',
+							'array_key_2' => 'array_defaults_value_1_2',
+							'array_key_3' => 'array_defaults_value_1_3',
+						),
+					),
+				),
+				'correct' => array(
+					'string' => 'b',
+					'array_key' => array(
+						array(
+							'array_key_1' => 'array_defaults_value_1_1',
+							'array_key_2' => 'array_defaults_value_1_2',
+							'array_key_3' => 'array_defaults_value_1_3',
+						),
+					),
+				),
+			),
+			// 多次元配列 キーが無ければdefaultsをマージ
+			array(
+				'args'  => array(
+					'array_key' => array(
+						array(
+							'array_key_1' => 'array_value_1_1',
+							'array_key_2' => 'array_value_1_2',
+						),
+						array(
+							'array_key_1' => 'array_value_2_1',
+							'array_key_2' => 'array_value_2_2',
+							'array_key_3' => 'array_value_2_3',
+						),
+					),
+				),
+				'defaults'  => array(
+					'array_key' => array(
+						array(
+							'array_key_1' => 'array_defaults_value_1_1',
+							'array_key_2' => 'array_defaults_value_1_2',
+							'array_key_3' => 'array_defaults_value_1_3',
+						),
+					),
+				),
+				'correct' => array(
+					'array_key' => array(
+						array(
+							'array_key_1' => 'array_value_1_1',
+							'array_key_2' => 'array_value_1_2',
+							'array_key_3' => 'array_defaults_value_1_3',
+						),
+						array(
+							'array_key_1' => 'array_value_2_1',
+							'array_key_2' => 'array_value_2_2',
+							'array_key_3' => 'array_value_2_3',
+						),
+					),
+				),
+			),
 		);
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;

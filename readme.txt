@@ -64,6 +64,9 @@ e.g.
 
 == Changelog ==
 
+
+[ Bug Fix ][ Select Post List Item ( Pro ) ] Fixed a bug where additional CSS classes were not attached.
+
 = 1.43.0 =
 [ Add Function ][ Spacer ][ Common mergin ] Add size option xl/xs.
 [ Improvement ][ Admin screen ] Display the SaveButton sticky.

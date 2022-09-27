@@ -207,7 +207,7 @@ class VK_Blocks_Block_Loader {
 			'vk-blocks-build-js',
 			$this->assets_build_url . 'block-build.js',
 			$asset_file['dependencies'],
-			VK_BLOCKS_VERSION,
+			$asset_file['version'],
 			true
 		);
 

@@ -32,8 +32,6 @@
 		"phpunit": "composer install && npx wp-env run phpunit \"phpunit -c /var/www/html/wp-content/plugins/vk-blocks-pro/phpunit.xml.dist --verbose\"",
 		"phpunit:free": "composer install && npx wp-env run phpunit \"phpunit -c /var/www/html/wp-content/plugins/vk-blocks/phpunit.xml.free --verbose\"",
 		"cli": "npx wp-env run cli",
-		"show:savedVersion": "bash -c 'npm run cli wp post meta get $0 _vkb_saved_block_version'",
-		"update:savedVersion": "bash -c 'npm run cli wp post meta update $0 _vkb_saved_block_version $1'",
 		"packages-update": "npx wp-scripts packages-update",
 		"reinstall": "rm -rf node_modules/ && npm install && npm run build",
 		"prepare": "husky install",

@@ -22,6 +22,10 @@
 		display: flex;
 	}
 
+	&__size-name {
+		min-width:90px;
+	}
+
 	.margin_size_input {
 		flex-direction: row;
 		align-items: center;

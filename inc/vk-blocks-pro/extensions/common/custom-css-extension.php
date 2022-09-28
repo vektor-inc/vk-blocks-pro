@@ -23,7 +23,7 @@ function vk_blocks_custom_css_extension( $block_content, $block ) {
 		$css = preg_replace( '/selector/', '.' . $custom_css_class, $css );
 		$css = vk_blocks_minify_css( $css );
 		// vk_custom_css文字列をUniqueクラスに変換
-		$content = preg_replace( '/vk_custom_css/', $custom_css_class, $block_content );
+		$content = preg_replace( '/vk_custom_css/', $custom_css_class, $block_content, 1 );
 		if ( ! empty( $css ) ) {
 			return '<style>' . $css . '</style>' . $content;
 		}

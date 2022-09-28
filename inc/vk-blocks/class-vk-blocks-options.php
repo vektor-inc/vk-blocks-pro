@@ -137,9 +137,20 @@ class VK_Blocks_Options {
 				'type'    => 'boolean',
 				'default' => false,
 			),
+			'vk_blocks_pro_license_key' => array(
+				'type'    => 'string',
+				'default' => null,
+			),
+			'display_vk_block_template' => array(
+				'type'    => 'string',
+				'default' => 'display',
+			),
+			'new_faq_accordion'         => array(
+				'type'    => 'string',
+				'default' => 'disable',
+			),
 		);
-		$array                  = array_merge( $default_options_schema, apply_filters( 'vk_blocks_default_options_scheme', array() ) );
-		return $array;
+		return $default_options_schema;
 	}
 
 	/**

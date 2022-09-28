@@ -24,10 +24,6 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 						'type'    => 'string',
 						'default' => 'disable',
 					),
-					'show_custom_css_editor_flag' => array(
-						'type'    => 'string',
-						'default' => 'true',
-					),
 				),
 				'correct' => array(
 					'balloon_border_width' => array(
@@ -132,6 +128,10 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 						'type'    => 'boolean',
 						'default' => false,
 					),
+					'show_custom_css_editor_flag' => array(
+						'type'    => 'string',
+						'default' => 'true',
+					),
 					'vk_blocks_pro_license_key' => array(
 						'type'    => 'string',
 						'default' => null,
@@ -143,10 +143,6 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 					'new_faq_accordion'         => array(
 						'type'    => 'string',
 						'default' => 'disable',
-					),
-					'show_custom_css_editor_flag' => array(
-						'type'    => 'string',
-						'default' => 'true',
 					),
 				),
 			),

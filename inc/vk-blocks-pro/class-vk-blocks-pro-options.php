@@ -16,19 +16,13 @@ class VK_Blocks_Pro_Options {
 	 * @var array
 	 */
 	private $vk_blocks_pro_option_schema = array(
-		'display_vk_block_template'   => array(
+		'display_vk_block_template' => array(
 			'type'    => 'string',
 			'default' => 'display',
 		),
-		'new_faq_accordion'           => array(
+		'new_faq_accordion'         => array(
 			'type'    => 'string',
 			'default' => 'disable',
-		),
-		// 後から追加したbooleanは値がない時にupdate_option出来なくなるのでstringで保存
-		// https://core.trac.wordpress.org/ticket/40007
-		'show_custom_css_editor_flag' => array(
-			'type'    => 'string',
-			'default' => 'true',
 		),
 	);
 

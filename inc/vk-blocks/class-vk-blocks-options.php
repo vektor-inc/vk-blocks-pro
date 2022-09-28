@@ -35,15 +35,15 @@ class VK_Blocks_Options {
 	 */
 	public static function options_scheme() {
 		$default_options_schema = array(
-			'balloon_border_width' => array(
+			'balloon_border_width'      => array(
 				'type'    => 'number',
 				'default' => 1,
 			),
-			'margin_unit'          => array(
+			'margin_unit'               => array(
 				'type'    => 'string',
 				'default' => 'rem',
 			),
-			'margin_size'          => array(
+			'margin_size'               => array(
 				'type'  => 'object',
 				'items' => array(
 					'xl' => array(
@@ -133,7 +133,7 @@ class VK_Blocks_Options {
 					),
 				),
 			),
-			'load_separate_option' => array(
+			'load_separate_option'      => array(
 				'type'    => 'boolean',
 				'default' => false,
 			),

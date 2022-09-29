@@ -161,14 +161,16 @@ function vk_blocks_register_block_post_list() {
 	);
 
 	$the_taxonomies = get_taxonomies(
-		array(),
+		array(
+			'public' => true,
+		),
 		'objects',
 		'and'
 	);
 
 	$term_by_taxonomy_name = array();
 	foreach ( $the_taxonomies as $the_taxonomy ) {
-		$terms                                        = get_terms( $the_taxonomy->name, array( 'hide_empty' => false ) );
+		$terms                                        = get_terms( $the_taxonomy->name, array( 'hide_empty' => true ) );
 		$term_by_taxonomy_name[ $the_taxonomy->name ] = array_map(
 			function( $term ) {
 				return array(

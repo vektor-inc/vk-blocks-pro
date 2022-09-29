@@ -30,7 +30,7 @@ class SelectPostListBlockTest extends WP_UnitTestCase {
 			'post_status'  => 'publish',
 			'post_excerpt' => 'Select Post List Excerpt.'
 		);
-		$this->page_id = $this->factory->post->create( $page );
+		$this->page_id = self::factory()->post->create( $page );
 	}
 
 	/**

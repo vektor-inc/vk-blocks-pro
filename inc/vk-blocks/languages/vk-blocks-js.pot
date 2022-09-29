@@ -3,104 +3,118 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/admin/balloon/index.js:211
+#: src/admin/balloon/index.js:206
 msgid "Select"
 msgstr ""
 
-#: src/admin/balloon/index.js:237
+#: src/admin/balloon/index.js:232
 #: src/blocks/_pro/gridcolcard/edit-common.js:155
 msgid "Delete"
 msgstr ""
 
-#: src/admin/balloon/index.js:251
+#: src/admin/balloon/index.js:246
 msgid "Balloon Image Name"
 msgstr ""
 
-#: src/admin/balloon/index.js:30
+#: src/admin/balloon/index.js:29
 msgid "Balloon Setting"
 msgstr ""
 
-#: src/admin/balloon/index.js:33
+#: src/admin/balloon/index.js:32
 msgid "Balloon Border Width Setting"
 msgstr ""
 
-#: src/admin/balloon/index.js:51
+#: src/admin/balloon/index.js:50
 msgid "1px"
 msgstr ""
 
-#: src/admin/balloon/index.js:55
+#: src/admin/balloon/index.js:54
 msgid "2px"
 msgstr ""
 
-#: src/admin/balloon/index.js:59
+#: src/admin/balloon/index.js:58
 msgid "3px"
 msgstr ""
 
-#: src/admin/balloon/index.js:63
+#: src/admin/balloon/index.js:62
 msgid "4px"
 msgstr ""
 
-#: src/admin/balloon/index.js:74
+#: src/admin/balloon/index.js:69
 msgid "Balloon Image Setting"
 msgstr ""
 
-#: src/admin/balloon/index.js:77
+#: src/admin/balloon/index.js:72
 msgid "You can register frequently used icon images for speech bubble blocks."
 msgstr ""
 
-#: src/admin/balloon/index.js:81
+#: src/admin/balloon/index.js:76
 msgid "If you change image or name that please click Save Changes button."
 msgstr ""
 
-#: src/admin/balloon/index.js:93
+#: src/admin/balloon/index.js:88
 msgid "image"
 msgstr ""
 
-#: src/admin/license.js:23
+#: src/admin/license.js:21
 msgid "Enter a valid Lightning G3 Pro Pack or Lightning Pro license key."
 msgstr ""
 
-#: src/admin/license.js:29
+#: src/admin/license.js:27
 msgid ""
 "Once you enter the license key you will be able to do a one click update "
 "from the administration screen."
 msgstr ""
 
-#: src/admin/license.js:36
+#: src/admin/license.js:34
 msgid "License key"
 msgstr ""
 
-#: src/admin/load-separate.js:35
+#: src/admin/load-separate.js:33
 msgid "Load Separate Setting"
 msgstr ""
 
-#: src/admin/load-separate.js:38
+#: src/admin/load-separate.js:36
 msgid "Note that the order in which CSS/JS are loaded will change."
 msgstr ""
 
-#: src/admin/load-separate.js:45
+#: src/admin/load-separate.js:43
 msgid "Load Separate Option on"
 msgstr ""
 
-#: src/admin/margin.js:19
-#: src/blocks/button/edit.js:321
-#: src/blocks/spacer/edit.js:85
-#: src/extensions/common/inline-font-size/index.js:84
-msgid "Small"
+#: src/admin/margin.js:103
+#: src/blocks/border-box/edit.js:192
+#: src/blocks/icon-outer/edit.js:149
+#: src/blocks/icon/edit.js:139
+msgid "Margin"
 msgstr ""
 
-#: src/admin/margin.js:23
-#: src/blocks/spacer/edit.js:95
-msgid "Medium"
+#: src/admin/margin.js:18
+#: src/blocks/spacer/edit.js:83
+msgid "XS"
 msgstr ""
 
-#: src/admin/margin.js:27
-#: src/blocks/button/edit.js:305
-#: src/blocks/spacer/edit.js:105
-msgid "Large"
+#: src/admin/margin.js:22
+#: src/blocks/spacer/edit.js:93
+msgid "S"
+msgstr ""
+
+#: src/admin/margin.js:26
+#: src/blocks/spacer/edit.js:103
+msgid "M"
+msgstr ""
+
+#: src/admin/margin.js:30
+#: src/blocks/spacer/edit.js:113
+msgid "L"
 msgstr ""
 
 #: src/admin/margin.js:34
+#: src/blocks/spacer/edit.js:121
+msgid "XL"
+msgstr ""
+
+#: src/admin/margin.js:41
 #: src/blocks/_pro/outer/edit.js:638
 #: src/blocks/_pro/slider/edit.js:224
 #: src/blocks/button/edit.js:521
@@ -108,7 +122,7 @@ msgstr ""
 msgid "PC"
 msgstr ""
 
-#: src/admin/margin.js:38
+#: src/admin/margin.js:45
 #: src/blocks/_pro/outer/edit.js:623
 #: src/blocks/_pro/slider/edit.js:235
 #: src/blocks/button/edit.js:456
@@ -116,7 +130,7 @@ msgstr ""
 msgid "Tablet"
 msgstr ""
 
-#: src/admin/margin.js:42
+#: src/admin/margin.js:49
 #: src/blocks/_pro/outer/edit.js:608
 #: src/blocks/_pro/slider/edit.js:246
 #: src/blocks/button/edit.js:391
@@ -124,22 +138,22 @@ msgstr ""
 msgid "Mobile"
 msgstr ""
 
-#: src/admin/margin.js:55
+#: src/admin/margin.js:61
 msgid "Common Margin Setting"
 msgstr ""
 
-#: src/admin/margin.js:58
+#: src/admin/margin.js:64
 msgid ""
 "Please specify the size of the common margin used for responsive spacers, "
 "etc."
 msgstr ""
 
-#: src/admin/margin.js:64
+#: src/admin/margin.js:70
 #: src/blocks/_pro/grid-column-item/edit.js:169
 msgid "Unit"
 msgstr ""
 
-#: src/admin/margin.js:77
+#: src/admin/margin.js:83
 #: src/blocks/_pro/grid-column-item/edit.js:177
 #: src/blocks/_pro/outer/edit.js:659
 #: src/blocks/icon-outer/edit.js:181
@@ -148,7 +162,7 @@ msgstr ""
 msgid "px"
 msgstr ""
 
-#: src/admin/margin.js:81
+#: src/admin/margin.js:87
 #: src/blocks/_pro/grid-column-item/edit.js:181
 #: src/blocks/_pro/outer/edit.js:663
 #: src/blocks/icon-outer/edit.js:185
@@ -157,7 +171,7 @@ msgstr ""
 msgid "em"
 msgstr ""
 
-#: src/admin/margin.js:85
+#: src/admin/margin.js:91
 #: src/blocks/_pro/grid-column-item/edit.js:185
 #: src/blocks/_pro/outer/edit.js:667
 #: src/blocks/icon-outer/edit.js:189
@@ -166,34 +180,27 @@ msgstr ""
 msgid "rem"
 msgstr ""
 
-#: src/admin/margin.js:97
-#: src/blocks/border-box/edit.js:192
-#: src/blocks/icon-outer/edit.js:149
-#: src/blocks/icon/edit.js:139
-msgid "Margin"
-msgstr ""
-
-#: src/admin/new-faq.js:21
+#: src/admin/new-faq.js:19
 msgid "FAQ Block Setting"
 msgstr ""
 
-#: src/admin/new-faq.js:34
+#: src/admin/new-faq.js:32
 msgid "Disable accordion"
 msgstr ""
 
-#: src/admin/new-faq.js:38
+#: src/admin/new-faq.js:36
 msgid "Enable accordion and default open"
 msgstr ""
 
-#: src/admin/new-faq.js:45
+#: src/admin/new-faq.js:43
 msgid "Enable accordion and default close"
 msgstr ""
 
-#: src/admin/save-button.js:52
+#: src/admin/save-button.js:53
 msgid "Save setting"
 msgstr ""
 
-#: src/admin/save-button.js:56
+#: src/admin/save-button.js:57
 msgid "Save Success"
 msgstr ""
 
@@ -1498,6 +1505,15 @@ msgstr ""
 msgid "Button Size:"
 msgstr ""
 
+#: src/blocks/button/edit.js:305
+msgid "Large"
+msgstr ""
+
+#: src/blocks/button/edit.js:321
+#: src/extensions/common/inline-font-size/index.js:84
+msgid "Small"
+msgstr ""
+
 #: src/blocks/button/edit.js:328
 msgid "Button Position:"
 msgstr ""
@@ -1912,11 +1928,11 @@ msgstr ""
 msgid "Space Type"
 msgstr ""
 
-#: src/blocks/spacer/edit.js:115
+#: src/blocks/spacer/edit.js:131
 msgid "Custom"
 msgstr ""
 
-#: src/blocks/spacer/edit.js:119
+#: src/blocks/spacer/edit.js:135
 msgid "You can change each common margin size from Setting > VK Blocks"
 msgstr ""
 
@@ -2175,39 +2191,55 @@ msgid "Extra big"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:26
-msgid "Top lg"
+msgid "Top XL"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:280
+#: src/extensions/common/margin-extension/index.js:301
 msgid "Margin the block"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:31
-msgid "Top md"
+msgid "Top L"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:36
-msgid "Top sm"
+msgid "Top M"
 msgstr ""
 
 #: src/extensions/common/margin-extension/index.js:41
+msgid "Top S"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:46
+msgid "Top XS"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:51
 msgid "Top 0"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:49
+#: src/extensions/common/margin-extension/index.js:59
 msgid "Bottom 0"
 msgstr ""
 
-#: src/extensions/common/margin-extension/index.js:54
-msgid "Bottom sm"
-msgstr ""
-
-#: src/extensions/common/margin-extension/index.js:59
-msgid "Bottom md"
-msgstr ""
-
 #: src/extensions/common/margin-extension/index.js:64
-msgid "Bottom lg"
+msgid "Bottom XS"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:69
+msgid "Bottom S"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:74
+msgid "Bottom M"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:79
+msgid "Bottom L"
+msgstr ""
+
+#: src/extensions/common/margin-extension/index.js:84
+msgid "Bottom XL"
 msgstr ""
 
 #: src/extensions/common/nowrap/index.js:21

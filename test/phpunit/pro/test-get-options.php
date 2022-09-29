@@ -57,6 +57,11 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'balloon_border_width' => 1,
 					'margin_unit' => 'rem',
 					'margin_size' => array(
+						'xl' => array(
+							'mobile' => null,
+							'tablet' => null,
+							'pc' => null,
+						),
 						'lg' => array(
 							'mobile' => null,
 							'tablet' => null,
@@ -68,6 +73,11 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'pc' => null,
 						),
 						'sm' => array(
+							'mobile' => null,
+							'tablet' => null,
+							'pc' => null,
+						),
+						'xs' => array(
 							'mobile' => null,
 							'tablet' => null,
 							'pc' => null,
@@ -219,9 +229,19 @@ class GetOptionsTest extends WP_UnitTestCase {
 				),
 				'correct' => null
 			),
-			// 全てのオプション値を変更した時
+			// margin_sizeのlg,md,smに値が設定されているときに、xl,xsが追加された場合
 			array(
+				'option_check_target' => array(
+					['margin_size','xl','mobile'],
+					['margin_size','xl','tablet'],
+					['margin_size','xl','pc'],
+					['margin_size','xs','mobile'],
+					['margin_size','xs','tablet'],
+					['margin_size','xs','pc'],
+				),
 				'option'  => array(
+					'display_vk_block_template' => 'hide',
+					'new_faq_accordion' => 'open',
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
 					'margin_size' => array(
@@ -242,14 +262,33 @@ class GetOptionsTest extends WP_UnitTestCase {
 						),
 					),
 					'load_separate_option' => true,
-					'vk_blocks_pro_license_key' => 'test_license_key',
-					'display_vk_block_template' => 'display',
-					'new_faq_accordion' => 'open',
 				),
 				'correct' => array(
+					'margin_size' => array(
+						'xl' => array(
+							'mobile' => null,
+							'tablet' => null,
+							'pc' => null,
+						),
+						'xs' => array(
+							'mobile' => null,
+							'tablet' => null,
+							'pc' => null,
+						),
+					),
+				),
+			),
+			// 全てのオプション値を変更した時
+			array(
+				'option'  => array(
 					'balloon_border_width' => 2,
 					'margin_unit' => 'px',
 					'margin_size' => array(
+						'xl' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
 						'lg' => array(
 							'mobile' => 1,
 							'tablet' => 2,
@@ -261,6 +300,46 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'pc' => 3,
 						),
 						'sm' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'xs' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+					),
+					'load_separate_option' => true,
+					'vk_blocks_pro_license_key' => 'test_license_key',
+					'display_vk_block_template' => 'display',
+					'new_faq_accordion' => 'open',
+				),
+				'correct' => array(
+					'balloon_border_width' => 2,
+					'margin_unit' => 'px',
+					'margin_size' => array(
+						'xl' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'lg' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'md' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'sm' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'xs' => array(
 							'mobile' => 1,
 							'tablet' => 2,
 							'pc' => 3,
@@ -298,7 +377,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 			// print PHP_EOL;
 
 			// 配列の時 指定したキー同士を比べる
-			if ( is_array( $test_value['option_check_target'] ) ) {
+			if ( array_key_exists('option_check_target', $test_value) && is_array( $test_value['option_check_target'] ) ) {
 				foreach($test_value['option_check_target'] as $keys){
 					$correct_target = $correct;
 					$return_target  = $return;
@@ -314,7 +393,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 					// var_dump($correct_target);
 					$this->assertSame( $correct_target, $return_target );
 				}
-			} else if ( ! is_array( $test_value['option_check_target'] ) && $test_value['option_check_target'] ) {
+			} else if ( array_key_exists('option_check_target', $test_value) && ! is_array( $test_value['option_check_target'] ) && $test_value['option_check_target'] ) {
 				$this->assertSame( $correct, $return[ $test_value['option_check_target'] ] );
 			} else {
 				$this->assertSame( $correct, $return );

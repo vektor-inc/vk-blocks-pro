@@ -205,32 +205,3 @@ if ( ! function_exists( 'vk_blocks_set_wp_version' ) ) {
 	}
 	add_action( 'admin_head', 'vk_blocks_set_wp_version', 10, 0 );
 }
-
-if ( function_exists( 'vk_blocks_get_version' ) ) {
-	/**
-	 * VK Blocks Set VKBPro Version
-	 */
-	function vk_blocks_set_vkbpro_version() {
-		$vkbpro_version = vk_blocks_get_version();
-		if ( $vkbpro_version ) {
-			echo '<script>',
-			'var vkbproVersion = "' . esc_attr( $vkbpro_version ) . '";',
-			'</script>';
-		}
-	}
-	add_action( 'admin_head', 'vk_blocks_set_vkbpro_version', 10, 0 );
-}
-
-/**
- * VK BLocks Set VKB Saved Block Version
- */
-function vk_blocks_set_vkb_saved_block_version() {
-	$post_id                  = get_the_ID();
-	$_vkb_saved_block_version = get_post_meta( $post_id, '_vkb_saved_block_version', true );
-	if ( $_vkb_saved_block_version ) {
-		echo '<script>',
-		'var vkbSavedBlockVersion = "' . esc_attr( $_vkb_saved_block_version ) . '";',
-		'</script>';
-	}
-}
-add_action( 'admin_head', 'vk_blocks_set_vkb_saved_block_version' );

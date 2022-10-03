@@ -95,8 +95,8 @@ class Vk_Blocks_PostList {
 		$return['relation'] = 'OR';
 
 		foreach ( $is_checked_terms as $key => $value ) {
-			$term      = get_term( $value );
-			if ( ! empty( $term->taxonomy ) ){
+			$term = get_term( $value );
+			if ( ! empty( $term->taxonomy ) ) {
 				$new_array = array(
 					'taxonomy' => isset( $term->taxonomy ) ? $term->taxonomy : $key,
 					'field'    => 'term_id',

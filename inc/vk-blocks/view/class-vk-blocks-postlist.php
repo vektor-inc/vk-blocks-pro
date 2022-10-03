@@ -96,12 +96,15 @@ class Vk_Blocks_PostList {
 
 		foreach ( $is_checked_terms as $key => $value ) {
 			$term      = get_term( $value );
-			$new_array = array(
-				'taxonomy' => isset( $term->taxonomy ) ? $term->taxonomy : $key,
-				'field'    => 'term_id',
-				'terms'    => $value,
-			);
-			array_push( $return, $new_array );
+			if ( ! empty( $term->taxonomy ) ){
+				$new_array = array(
+					'taxonomy' => isset( $term->taxonomy ) ? $term->taxonomy : $key,
+					'field'    => 'term_id',
+					'terms'    => $value,
+					'operator' => 'IN',
+				);
+				array_push( $return, $new_array );
+			}
 		}
 		return $return;
 	}

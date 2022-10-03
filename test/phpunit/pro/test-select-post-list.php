@@ -37,9 +37,9 @@ class SelectPostListBlockTest extends WP_UnitTestCase {
 	 * Tear down each test method.
 	 */
 	public function tearDown(): void {
+		parent::tearDown();
 		wp_delete_post( $this->page_id, true );
 		$this->page_id = 0;
-
 	}
 
 	/**

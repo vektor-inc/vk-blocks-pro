@@ -160,6 +160,22 @@ function vk_blocks_register_block_post_list() {
 		)
 	);
 
+	$the_post_types = get_post_types(
+		array(
+			'public' => true,
+		),
+		'objects',
+		'and'
+	);
+
+	$post_type_option = array();
+	foreach ( $the_post_types as $post_type ) {
+		$post_type_option[] = array(
+			'label' => $post_type->label,
+			'slug'  => $post_type->name,
+		);
+	}
+
 	$the_taxonomies = get_taxonomies(
 		array(
 			'public' => true,
@@ -186,6 +202,7 @@ function vk_blocks_register_block_post_list() {
 		'vk-blocks-build-js',
 		'vk_block_post_type_params',
 		array(
+			'post_type_option'      => $post_type_option,
 			'term_by_taxonomy_name' => $term_by_taxonomy_name,
 		)
 	);
@@ -194,6 +211,7 @@ function vk_blocks_register_block_post_list() {
 		'vk-blocks/post-list',
 		'vk_block_post_type_params',
 		array(
+			'post_type_option'      => $post_type_option,
 			'term_by_taxonomy_name' => $term_by_taxonomy_name,
 		)
 	);

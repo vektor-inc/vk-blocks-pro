@@ -317,20 +317,22 @@ $xxl-min: 1400px;
 		}
 	}
 
-	// 光るボタン
-	@keyframes shine {//光る速さのキーフレーム
-		0% { left: -40%; }
-		10% { left: 120%; }
-		100% { left: 120%; }
-	}
+	//光る
+	&.is-style-shine {		
 
-	.btn.has-background{
-		// テキスト色が入ってない場合は白にしたいので追加
-		&:not(.has-text-color){
-			color: #fff;
+		// 光るボタン
+		@keyframes shine {//光る速さのキーフレーム
+			0% { left: -40%; }
+			10% { left: 120%; }
+			100% { left: 120%; }
 		}
-		//光る
-		&.is-style-shine {		
+
+		.btn.has-background {
+			// テキスト色が入ってない場合は白にしたいので追加
+			&:not(.has-text-color){
+				color: #fff;
+			}
+
 			overflow:hidden;
 			position: relative;
 			&::before { // 光りの擬似要素
@@ -354,10 +356,8 @@ $xxl-min: 1400px;
 				color:#212529;
 			}
 		}
-
-
 	}
-
+		
 	&.vk_button-align {
 		&-left {
 			text-align: left;

@@ -8,7 +8,6 @@ export class VKBButton extends Component {
 		const buttonColorCustom = this.props.lbColorCustom;
 		const buttonColor = this.props.lbColor;
 		const buttonType = this.props.lbType;
-		const buttonEffect = this.props.lbEffect;
 		const buttonAlign = this.props.lbAlign;
 		const buttonSize = this.props.lbSize;
 		const buttonUrl = this.props.lbUrl;
@@ -75,11 +74,6 @@ export class VKBButton extends Component {
 					aClass += ` has-${buttonColorCustom}-color`;
 				}
 			}
-		}
-
-		// エフェクト
-		if (buttonEffect !== '') {
-			aClass += ` is-style-${buttonEffect}`;
 		}
 
 		aClass = `${aClass} btn-${buttonSize}`;

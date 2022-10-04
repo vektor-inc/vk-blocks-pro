@@ -55,6 +55,11 @@ export default function save(props) {
 		containerClass += ` vk_button-align-${buttonAlign}`;
 	}
 
+	// エフェクト
+	if (buttonEffect !== '') {
+		containerClass += ` is-style-${buttonEffect}`;
+	}
+
 	const blockProps = useBlockProps.save({
 		className: containerClass,
 	});
@@ -66,7 +71,6 @@ export default function save(props) {
 				lbColorCustom={buttonColorCustom}
 				lbColor={buttonColor}
 				lbType={buttonType}
-				lbEffect={buttonEffect}
 				lbAlign={buttonAlign}
 				lbSize={buttonSize}
 				lbUrl={buttonUrl}

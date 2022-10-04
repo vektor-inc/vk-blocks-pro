@@ -190,6 +190,11 @@ export default function ButtonEdit(props) {
 		setAttributes({ buttonWidth: 0 });
 	}
 
+	// エフェクト
+	if (buttonEffect !== '') {
+		containerClass += ` is-style-${buttonEffect}`;
+	}
+
 	// アイコン単位
 	const units = [
 		{ value: 'px', label: 'px', default: 16 },
@@ -796,7 +801,6 @@ export default function ButtonEdit(props) {
 					lbColorCustom={buttonColorCustom}
 					lbColor={buttonColor}
 					lbType={buttonType}
-					lbEffect={buttonEffect}
 					lbAlign={buttonAlign}
 					lbSize={buttonSize}
 					lbFontAwesomeIconBefore={fontAwesomeIconBefore}

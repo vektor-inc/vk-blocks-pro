@@ -186,7 +186,7 @@ function vk_blocks_register_block_post_list() {
 
 	$term_by_taxonomy_name = array();
 	foreach ( $the_taxonomies as $the_taxonomy ) {
-		$terms                                        = array_values( get_terms( $the_taxonomy->name, array( 'hide_empty' => 1 ) ) );
+		$terms                                        = array_values( get_terms( $the_taxonomy->name, array( 'hide_empty' => false ) ) );
 		$term_by_taxonomy_name[ $the_taxonomy->name ] = array_map(
 			function( $term ) {
 				return array(

@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.41.2.2\n"
+"Project-Id-Version: VK Blocks Pro 1.43.0.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-09-05T05:45:38+00:00\n"
+"POT-Creation-Date: 2022-10-04T00:48:44+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -350,7 +350,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/edit.js:182
 #: src/blocks/_pro/card/edit.js:128
 #: src/blocks/_pro/icon-card/edit.js:72
-#: src/blocks/_pro/post-list/edit.js:307
+#: src/blocks/_pro/post-list/edit.js:302
 msgid "Title"
 msgstr ""
 
@@ -452,7 +452,7 @@ msgid "Current page"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:63
-#: src/blocks/_pro/post-list/edit.js:204
+#: src/blocks/_pro/post-list/edit.js:199
 msgid "Display conditions"
 msgstr ""
 
@@ -461,7 +461,7 @@ msgid "Parent"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:82
-#: src/blocks/_pro/post-list/edit.js:331
+#: src/blocks/_pro/post-list/edit.js:326
 msgid "Ignore this post"
 msgstr ""
 
@@ -951,75 +951,75 @@ msgid "Unit Type"
 msgstr ""
 
 #. Filter by %s
-#: src/blocks/_pro/post-list/edit.js:181
+#: src/blocks/_pro/post-list/edit.js:176
 msgid "Filter by %s"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:208
+#: src/blocks/_pro/post-list/edit.js:203
 msgid "Filter by PostTypes"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:222
+#: src/blocks/_pro/post-list/edit.js:217
 msgid "Number of Posts"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:235
+#: src/blocks/_pro/post-list/edit.js:230
 msgid "Filter by Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:239
+#: src/blocks/_pro/post-list/edit.js:234
 msgid "Period of Time"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:247
+#: src/blocks/_pro/post-list/edit.js:242
 msgid "Whole Period"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:251
+#: src/blocks/_pro/post-list/edit.js:246
 msgid "From Today"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:255
+#: src/blocks/_pro/post-list/edit.js:250
 msgid "From Now"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:259
+#: src/blocks/_pro/post-list/edit.js:254
 msgid "From Tomorrow"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:264
+#: src/blocks/_pro/post-list/edit.js:259
 msgid "* If you choose a future period, you will need to customize it so that future posts will be published immediately."
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:271
+#: src/blocks/_pro/post-list/edit.js:266
 msgid "Order"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:280
+#: src/blocks/_pro/post-list/edit.js:275
 msgid "ASC"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:284
+#: src/blocks/_pro/post-list/edit.js:279
 msgid "DESC"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:290
+#: src/blocks/_pro/post-list/edit.js:285
 msgid "Order by"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:299
+#: src/blocks/_pro/post-list/edit.js:294
 msgid "Published Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:303
+#: src/blocks/_pro/post-list/edit.js:298
 msgid "Modefied Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:311
+#: src/blocks/_pro/post-list/edit.js:306
 msgid "Random"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:317
+#: src/blocks/_pro/post-list/edit.js:312
 msgid "offset"
 msgstr ""
 

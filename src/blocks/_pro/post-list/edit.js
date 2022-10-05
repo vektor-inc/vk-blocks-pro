@@ -60,7 +60,8 @@ export default function PostListEdit(props) {
 		setIsCheckedPostTypeData(isCheckedPostTypeData);
 	};
 
-	let postTypesProps = vk_block_post_list_localize_options.post_list_post_types;
+	let postTypesProps =
+		vk_block_post_list_localize_options.post_list_post_types;
 
 	// メディアと再利用ブロックを除外
 	postTypesProps = postTypesProps.filter(
@@ -69,7 +70,8 @@ export default function PostListEdit(props) {
 	);
 
 	const taxonomies = useTaxonomies();
-	const termsByTaxonomyName = vk_block_post_list_localize_options.post_list_taxonomies;
+	const termsByTaxonomyName =
+		vk_block_post_list_localize_options.post_list_taxonomies;
 
 	const replaceIsCheckedTermData = (taxonomyRestbase, termIds, newIds) => {
 		const removedTermIds = termIds.filter((termId) => {

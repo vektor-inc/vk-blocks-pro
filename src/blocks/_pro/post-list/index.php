@@ -206,7 +206,8 @@ function vk_blocks_register_block_post_list() {
 	// Pass post type and taxonomy information created in PHP to js /////////
 	wp_localize_script(
 		'vk-blocks-build-js',
-		'vk_block_post_list_localize_options',
+		'vk_block_post_list_localize_options', 
+		// post_type や taxonomy だけだと今後文字列置換した時に不都合が発生する可能性があるので、一応 "post_list" を追加
 		array(
 			'post_list_post_types' => $post_list_post_types,
 			'post_list_taxonomies' => $post_list_taxonomies,

@@ -64,7 +64,7 @@ e.g.
 
 == Changelog ==
 
-[ Specification Change ][ Post List ] fix taxonomies & terms list.
+[ Specification Change ][ Post List ( Pro ) ] Change to don't display unpublic posttype and terms list.
 [ Bug Fix ][ Select Post List Item ( Pro ) ] Fixed a bug where additional CSS classes were not attached.
 
 = 1.43.0 =

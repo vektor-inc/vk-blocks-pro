@@ -160,7 +160,9 @@ function vk_blocks_register_block_post_list() {
 		)
 	);
 
+	// Create $post_type_option ///////////////////////////
 	$the_post_types = get_post_types(
+		// Only public post types.
 		array(
 			'public' => true,
 		),
@@ -176,7 +178,9 @@ function vk_blocks_register_block_post_list() {
 		);
 	}
 
+	// Set up taxonomies ///////////////////////////
 	$the_taxonomies = get_taxonomies(
+		// Only public taxonomies.
 		array(
 			'public' => true,
 		),
@@ -198,6 +202,8 @@ function vk_blocks_register_block_post_list() {
 		);
 	}
 
+	// PHPで作った投稿タイプとタクソノミー情報をjsに渡す ///////////////////////////
+	// Pass post type and taxonomy information created in PHP to js /////////
 	wp_localize_script(
 		'vk-blocks-build-js',
 		'vk_block_post_type_params',
@@ -217,4 +223,3 @@ function vk_blocks_register_block_post_list() {
 	);
 }
 add_action( 'init', 'vk_blocks_register_block_post_list', 99 );
-

@@ -1,4 +1,4 @@
-/*globals vk_block_post_type_params */
+/* globals vk_block_post_type_params */
 // import WordPress Scripts
 import { __, sprintf } from '@wordpress/i18n';
 import {
@@ -211,6 +211,7 @@ export default function PostListEdit(props) {
 							{...props}
 						/>
 					</BaseControl>
+					<hr />
 					{taxonomiesCheckBox}
 					{termFormTokenFields}
 					<BaseControl

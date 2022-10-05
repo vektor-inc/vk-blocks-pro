@@ -20,6 +20,9 @@ require_once dirname( __FILE__ ) . '/class-vk-blocks-print-css-variables.php';
 require_once dirname( __FILE__ ) . '/class-vk-blocks-options.php';
 VK_Blocks_Options::init();
 
+// font-awesome
+require_once dirname( __FILE__ ) . '/font-awesome/font-awesome-config.php';
+
 // utils
 require_once dirname( __FILE__ ) . '/utils/array-merge.php';
 require_once dirname( __FILE__ ) . '/utils/minify-css.php';

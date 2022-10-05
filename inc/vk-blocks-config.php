@@ -39,7 +39,6 @@ if ( ! function_exists( 'vk_blocks_active' ) ) {
 	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/helpers.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-components/vk-components-config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/load-vk-components.php';
-	require_once plugin_dir_path( __FILE__ ) . 'font-awesome/font-awesome-config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'term-color/term-color-config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-css-optimize/vk-css-optimize-config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-swiper/config.php';

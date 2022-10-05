@@ -1,4 +1,4 @@
-/* globals vk_block_post_type_params */
+/* globals vk_block_post_list_localize_options */
 // import WordPress Scripts
 import { __, sprintf } from '@wordpress/i18n';
 import {
@@ -60,7 +60,7 @@ export default function PostListEdit(props) {
 		setIsCheckedPostTypeData(isCheckedPostTypeData);
 	};
 
-	let postTypesProps = vk_block_post_type_params.post_type_option;
+	let postTypesProps = vk_block_post_list_localize_options.post_list_post_types;
 
 	// メディアと再利用ブロックを除外
 	postTypesProps = postTypesProps.filter(
@@ -69,7 +69,7 @@ export default function PostListEdit(props) {
 	);
 
 	const taxonomies = useTaxonomies();
-	const termsByTaxonomyName = vk_block_post_type_params.term_by_taxonomy_name;
+	const termsByTaxonomyName = vk_block_post_list_localize_options.post_list_taxonomies;
 
 	const replaceIsCheckedTermData = (taxonomyRestbase, termIds, newIds) => {
 		const removedTermIds = termIds.filter((termId) => {

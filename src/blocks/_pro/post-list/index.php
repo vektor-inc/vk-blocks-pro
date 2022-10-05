@@ -160,7 +160,7 @@ function vk_blocks_register_block_post_list() {
 		)
 	);
 
-	// Create $post_type_option ///////////////////////////
+	// Set up post types ///////////////////////////
 	$the_post_types = get_post_types(
 		// Only public post types.
 		array(
@@ -170,9 +170,9 @@ function vk_blocks_register_block_post_list() {
 		'and'
 	);
 
-	$post_type_option = array();
+	$post_list_post_types = array();
 	foreach ( $the_post_types as $post_type ) {
-		$post_type_option[] = array(
+		$post_list_post_types[] = array(
 			'label' => $post_type->label,
 			'slug'  => $post_type->name,
 		);
@@ -188,10 +188,10 @@ function vk_blocks_register_block_post_list() {
 		'and'
 	);
 
-	$term_by_taxonomy_name = array();
+	$post_list_taxonomies = array();
 	foreach ( $the_taxonomies as $the_taxonomy ) {
-		$terms                                        = array_values( get_terms( $the_taxonomy->name, array( 'hide_empty' => false ) ) );
-		$term_by_taxonomy_name[ $the_taxonomy->name ] = array_map(
+		$terms                                       = array_values( get_terms( $the_taxonomy->name, array( 'hide_empty' => false ) ) );
+		$post_list_taxonomies[ $the_taxonomy->name ] = array_map(
 			function( $term ) {
 				return array(
 					'term_id' => $term->term_id,
@@ -206,19 +206,19 @@ function vk_blocks_register_block_post_list() {
 	// Pass post type and taxonomy information created in PHP to js /////////
 	wp_localize_script(
 		'vk-blocks-build-js',
-		'vk_block_post_type_params',
+		'vk_block_post_list_localize_options',
 		array(
-			'post_type_option'      => $post_type_option,
-			'term_by_taxonomy_name' => $term_by_taxonomy_name,
+			'post_list_post_types' => $post_list_post_types,
+			'post_list_taxonomies' => $post_list_taxonomies,
 		)
 	);
 
 	wp_localize_script(
 		'vk-blocks/post-list',
-		'vk_block_post_type_params',
+		'vk_block_post_list_localize_options',
 		array(
-			'post_type_option'      => $post_type_option,
-			'term_by_taxonomy_name' => $term_by_taxonomy_name,
+			'post_list_post_types' => $post_list_post_types,
+			'post_list_taxonomies' => $post_list_taxonomies,
 		)
 	);
 }

@@ -36,6 +36,7 @@ $xxl-min: 1400px;
 	.has-vk-color-warning-background-color {
 		background-color: $vk-color-warning;
 	}
+	// https://getbootstrap.jp/docs/5.0/components/buttons/
 	.has-vk-color-danger-background-color {
 		background-color: $vk-color-danger;
 	}
@@ -169,7 +170,7 @@ $xxl-min: 1400px;
 	.btn.has-background:not(.has-text-color) {
 		color: #fff;
 		/* 白っぽい色に対する対策 */
-		&.has-vk-color-light-background-color,
+		&.has-vk-color-light-background-color, // https://getbootstrap.jp/docs/5.0/components/buttons/
 		&.has-white-background-color {
 			color:#212529;
 		}

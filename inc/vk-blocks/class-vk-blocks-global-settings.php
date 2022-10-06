@@ -30,8 +30,8 @@ class VK_Blocks_Global_Settings {
 	public static function blocks() {
 		$blocks = array(
 			array(
-				'name'   => 'alert',
-				'is_pro' => false,
+				'name'                    => 'alert',
+				'is_pro'                  => false,
 				'not_recommended_version' => '1.41.1.0',
 			),
 			array(

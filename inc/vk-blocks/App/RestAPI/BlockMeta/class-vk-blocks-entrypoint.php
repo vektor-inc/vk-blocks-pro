@@ -46,7 +46,7 @@ class Vk_Blocks_EntryPoint {
 					},
 				),
 			)
-		);		
+		);
 
 		register_rest_route(
 			'vk-blocks/v1',
@@ -80,12 +80,13 @@ class Vk_Blocks_EntryPoint {
 	 *
 	 * @return \WP_REST_Response|\WP_Error
 	 */
-	public function get_vk_blocks_options( $param ) {
-
-		return rest_ensure_response( array(
-			'vkBlocksOption' => VK_Blocks_Options::get_options(),
-			'vkBlocksBalloonMeta' => VK_Blocks_Options::get_balloon_meta_options()
-		) );
+	public function get_vk_blocks_options() {
+		return rest_ensure_response(
+			array(
+				'vkBlocksOption'      => VK_Blocks_Options::get_options(),
+				'vkBlocksBalloonMeta' => VK_Blocks_Options::get_balloon_meta_options(),
+			)
+		);
 	}
 
 	/**

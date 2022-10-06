@@ -16,6 +16,13 @@ require_once dirname( __FILE__ ) . '/view/class-vk-blocks-postlist.php';
 
 require_once dirname( __FILE__ ) . '/class-vk-blocks-print-css-variables.php';
 
+// グローバル設定を定義
+require_once dirname( __FILE__ ) . '/class-vk-blocks-global-settings.php';
+VK_Blocks_Global_Settings::init();
+
+require_once dirname( __FILE__ ) . '/class-vk-blocks-block-loader.php';
+VK_Blocks_Block_Loader::init();
+
 // オプション値を定義
 require_once dirname( __FILE__ ) . '/class-vk-blocks-options.php';
 VK_Blocks_Options::init();
@@ -29,6 +36,11 @@ require_once dirname( __FILE__ ) . '/utils/minify-css.php';
 
 // VK Blocks の管理画面.
 require_once dirname( __FILE__ ) . '/admin/admin.php';
+
+// init.
+require_once dirname( __FILE__ ) . '/init.php';
+
+require_once dirname( __FILE__ ) . '/blocks.php';
 
 /**
  * VK Blocks active

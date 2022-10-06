@@ -1,0 +1,17 @@
+.vk_admin_page .adminMain_main {
+	.blockManagerList {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		margin-left: 0;
+
+		li {
+			list-style: none;
+			width: calc(100% / 3);
+			margin: 0;
+			@media screen and (max-width: 991.98px) {
+				width: 50%;
+			}
+		}
+	}
+}

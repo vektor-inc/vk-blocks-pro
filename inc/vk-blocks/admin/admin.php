@@ -74,6 +74,7 @@ function vk_blocks_setting_page() {
 	$get_menu_html .= '<li><a href="#margin-setting">' . __( 'Common Margin Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= '<li><a href="#load-separete-setting">' . __( 'Load Separete Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= apply_filters( 'vk_blocks_pro_menu', '' );
+	$get_menu_html .= '<li><a href="#block-manager-setting">' . __( 'Block Manager Setting', 'vk-blocks' ) . '</a></li>';
 
 	Vk_Admin::admin_page_frame( $get_page_title, 'vk_blocks_setting', $get_logo_html, $get_menu_html );
 }
@@ -172,6 +173,8 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 			'imageNumber'      => VK_Blocks_Options::balloon_image_number(),
 			'isLicenseSetting' => vk_blocks_is_license_setting(),
 			'isPro'            => vk_blocks_is_pro(),
+			'blocks'           => VK_Blocks_Global_Settings::blocks(),
+			'vkBlocksVersion'  => VK_BLOCKS_VERSION,
 		)
 	);
 

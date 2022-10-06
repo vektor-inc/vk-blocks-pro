@@ -31,9 +31,11 @@ class VK_Blocks_Options {
 	/**
 	 * Options scheme
 	 *
-	 * @return number
+	 * @param bool $activation activation 有効化時かどうか.
+	 *
+	 * @return array
 	 */
-	public static function options_scheme() {
+	public static function options_scheme( $activation = false ) {
 		$default_options_schema = array(
 			'balloon_border_width' => array(
 				'type'    => 'number',
@@ -137,9 +139,43 @@ class VK_Blocks_Options {
 				'type'    => 'boolean',
 				'default' => false,
 			),
+			// プラグイン有効化時はその時のバージョンをそれ以外はこのオプション値を追加したバージョン1.42.1.0を返す
+			'activation_version'   => array(
+				'type'    => 'string',
+				'default' => $activation ? VK_BLOCKS_VERSION : '1.42.1.0',
+			),
 		);
-		$array                  = array_merge( $default_options_schema, apply_filters( 'vk_blocks_default_options_scheme', array() ) );
+		$array = array_merge( $default_options_schema, apply_filters( 'vk_blocks_default_options_scheme', array() ) );
+		$array = array_merge( $array, self::block_manager_schema() );
 		return $array;
+	}
+
+	/**
+	 * ブロックマネージャー用schema 生成
+	 * ブロック(alert)に対して他のオプション値を持たせる可能性が0ではないのでalertもobjectにする
+	 *
+	 * プラグイン有効化時にオプション値を保存するのでデフォルトはnull
+	 * 実行する箇所でnullの時の条件分岐を行う
+	 *
+	 * @return $array
+	 */
+	public static function block_manager_schema() {
+		$return_array                  = array();
+		$return_array['block_manager'] = array(
+			'type' => 'object',
+		);
+		foreach ( VK_Blocks_Global_Settings::blocks() as $key => $value ) {
+			$return_array['block_manager']['items'][ $value['name'] ] = array(
+				'type'  => 'object',
+				'items' => array(
+					'inserter' => array(
+						'type'    => 'boolean',
+						'default' => null,
+					),
+				),
+			);
+		}
+		return $return_array;
 	}
 
 	/**

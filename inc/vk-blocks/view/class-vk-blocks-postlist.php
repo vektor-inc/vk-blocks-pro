@@ -117,10 +117,10 @@ class Vk_Blocks_PostList {
 	public static function get_loop_query( $attributes ) {
 		$is_checked_post_type = json_decode( $attributes['isCheckedPostType'], true );
 
-		$is_checked_terms = json_decode( $attributes['isCheckedTerms'], true );
-		$tax_query_relation   = 'AND';
-		if ( ! empty( $attributes['taxQueryRelation']) ){
-			$tax_query_relation   = $attributes['taxQueryRelation'];
+		$is_checked_terms   = json_decode( $attributes['isCheckedTerms'], true );
+		$tax_query_relation = 'AND';
+		if ( ! empty( $attributes['taxQueryRelation'] ) ) {
+			$tax_query_relation = $attributes['taxQueryRelation'];
 		}
 
 		if ( empty( $is_checked_post_type ) ) {

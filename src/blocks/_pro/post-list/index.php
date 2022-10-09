@@ -125,6 +125,10 @@ function vk_blocks_register_block_post_list() {
 						'type'    => 'string',
 						'default' => '[]',
 					),
+					'taxQueryRelation'             => array(
+						'type'    => 'string',
+						'default' => 'AND',
+					),
 					'isCheckedTerms'             => array(
 						'type'    => 'string',
 						'default' => '[]',

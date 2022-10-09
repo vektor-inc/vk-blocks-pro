@@ -96,6 +96,10 @@
 			"type": "string",
 			"default": "[]"
 		},
+		"taxQueryRelation": {
+			"type": "string",
+			"default": "AND"
+		},
 		"isCheckedTerms": {
 			"type": "string",
 			"default": "[]"

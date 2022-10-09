@@ -88,23 +88,23 @@ class Vk_Blocks_PostList {
 	/**
 	 * Format Terms
 	 *
-	 * @param array $is_checked_terms checked terms.
+	 * @param array $tax_query_relation : AND or OR
+	 * @param array $is_checked_terms : checked terms. チェックされたタームidの配列
+	 *
+	 * @return array $return : tax_query
 	 */
-	private static function format_terms( $is_checked_terms ) {
+	private static function format_terms( $tax_query_relation, $is_checked_terms ) {
 		$return             = array();
-		$return['relation'] = 'OR';
+		$return['relation'] = $tax_query_relation;
 
 		foreach ( $is_checked_terms as $key => $value ) {
-			$term = get_term( $value );
-			if ( ! empty( $term->taxonomy ) ) {
-				$new_array = array(
-					'taxonomy' => isset( $term->taxonomy ) ? $term->taxonomy : $key,
-					'field'    => 'term_id',
-					'terms'    => $value,
-					'operator' => 'IN',
-				);
-				array_push( $return, $new_array );
-			}
+			$term      = get_term( $value );
+			$new_array = array(
+				'taxonomy' => isset( $term->taxonomy ) ? $term->taxonomy : $key,
+				'field'    => 'term_id',
+				'terms'    => $value,
+			);
+			array_push( $return, $new_array );
 		}
 		return $return;
 	}
@@ -118,6 +118,10 @@ class Vk_Blocks_PostList {
 		$is_checked_post_type = json_decode( $attributes['isCheckedPostType'], true );
 
 		$is_checked_terms = json_decode( $attributes['isCheckedTerms'], true );
+		$tax_query_relation   = 'AND';
+		if ( ! empty( $attributes['taxQueryRelation']) ){
+			$tax_query_relation   = $attributes['taxQueryRelation'];
+		}
 
 		if ( empty( $is_checked_post_type ) ) {
 			return false;
@@ -172,7 +176,7 @@ class Vk_Blocks_PostList {
 
 		$args = array(
 			'post_type'      => $is_checked_post_type,
-			'tax_query'      => self::format_terms( $is_checked_terms ),
+			'tax_query'      => self::format_terms( $tax_query_relation, $is_checked_terms ),
 			'paged'          => $paged,
 			// 0で全件取得
 			'posts_per_page' => intval( $attributes['numberPosts'] ),

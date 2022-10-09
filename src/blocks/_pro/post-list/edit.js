@@ -226,7 +226,9 @@ export default function PostListEdit(props) {
 							isSmall
 							isPrimary={taxQueryRelation === 'OR'}
 							isSecondary={taxQueryRelation !== 'OR'}
-							onClick={() => setAttributes({ taxQueryRelation: 'OR' })}
+							onClick={() =>
+								setAttributes({ taxQueryRelation: 'OR' })
+							}
 						>
 							{__('OR search', 'vk-blocks')}
 						</Button>
@@ -234,7 +236,9 @@ export default function PostListEdit(props) {
 							isSmall
 							isPrimary={taxQueryRelation === 'AND'}
 							isSecondary={taxQueryRelation !== 'AND'}
-							onClick={() => setAttributes({ taxQueryRelation: 'AND' })}
+							onClick={() =>
+								setAttributes({ taxQueryRelation: 'AND' })
+							}
 						>
 							{__('AND search', 'vk-blocks')}
 						</Button>

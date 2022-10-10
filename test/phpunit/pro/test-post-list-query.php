@@ -125,6 +125,9 @@ class PostListBlockQueryTest extends WP_UnitTestCase {
 		parent::tearDown();
 	}
 
+	/**
+	 * Attributeで投げた条件で正しく絞り込みが効くかのテスト
+	 */
 	public function test_get_loop_query() {
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;

@@ -118,7 +118,7 @@ class Vk_Blocks_PostList {
 		$is_checked_post_type = json_decode( $attributes['isCheckedPostType'], true );
 
 		$is_checked_terms   = json_decode( $attributes['isCheckedTerms'], true );
-		$tax_query_relation = 'AND';
+		$tax_query_relation = 'OR';
 		if ( ! empty( $attributes['taxQueryRelation'] ) ) {
 			$tax_query_relation = $attributes['taxQueryRelation'];
 		}

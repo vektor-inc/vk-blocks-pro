@@ -144,6 +144,26 @@ class PostListBlockQueryTest extends WP_UnitTestCase {
 		);
 
 		$tests = array(
+			// 1.43.0 before /////////////////////////////////////////////////
+			// taxQueryRelation 指定なし
+			// カテゴリー A  / エリア aichi
+			array(
+				'attributes' => array(
+					'isCheckedPostType' => '["event"]',
+					'isCheckedTerms'    => json_encode(
+						array(
+							$test_data['term_id_event_area_aichi'],
+							$test_data['term_id_event_cat_a'],
+						)
+					),
+				),
+				'expected'   => array(
+					$test_data['post_id_a_aichi'],
+					$test_data['post_id_b_aichi'],
+					$test_data['post_id_a_online'],
+				),
+			),
+			// 1.44.0 after /////////////////////////////////////////////////
 			// カテゴリー A
 			array(
 				'attributes' => array(

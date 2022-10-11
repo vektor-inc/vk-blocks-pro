@@ -127,7 +127,7 @@ function vk_blocks_register_block_post_list() {
 					),
 					'taxQueryRelation'           => array(
 						'type'    => 'string',
-						'default' => 'AND',
+						'default' => 'OR',
 					),
 					'isCheckedTerms'             => array(
 						'type'    => 'string',

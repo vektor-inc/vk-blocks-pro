@@ -64,7 +64,7 @@ e.g.
 
 == Changelog ==
 
-[ Add Function / Specification Change ][ Post List ( Pro ) ] Add post filter tazonomy relation / Change taxonomy default filter relation OR to AND
+[ Add Function ][ Post List ( Pro ) ] Add post filter taxonomy relation
 [ Add Function ][ Button ] Add Button Effect option in Solid color button.
 [ Specification Change ][ Post List ( Pro ) ] Change to don't display unpublic posttype and terms list.
 [ Bug Fix ][ Grid Column Card ] Fixed a bug that css for editor was displayed in front.

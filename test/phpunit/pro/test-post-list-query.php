@@ -240,12 +240,7 @@ class PostListBlockQueryTest extends WP_UnitTestCase {
 			foreach ( $posts->posts as $post ) {
 				$actual[] = $post->ID;
 			}
-			// print '<pre style="text-align:left">';
-			// print_r( $actual );
-			// print '</pre>';
-			// print '<pre style="text-align:left">';
-			// print_r( $test['expected'] );
-			// print '</pre>';
+
 			$this->assertSame( $test['expected'], $actual );
 		}
 	}

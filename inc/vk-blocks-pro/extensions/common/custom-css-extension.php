@@ -25,7 +25,12 @@ function vk_blocks_custom_css_extension( $block_content, $block ) {
 		// vk_custom_css文字列をUniqueクラスに変換
 		$content = preg_replace( '/vk_custom_css/', $custom_css_class, $block_content, 1 );
 		if ( ! empty( $css ) ) {
-			return '<style>' . $css . '</style>' . $content;
+			if ( function_exists( 'wp_enqueue_block_support_styles' ) ) {
+				wp_enqueue_block_support_styles( $css );
+				return $content;
+			} else {
+				return '<style>' . $css . '</style>' . $content;
+			}
 		}
 		return $block_content;
 	}

@@ -75,7 +75,7 @@ class PostListBlockQueryTest extends WP_UnitTestCase {
 		/******************************************
 		 * テスト用投稿の登録 */
 
-		$post                        = array(
+		$post                         = array(
 			'post_title'   => 'Event A-aichi',
 			'post_type'    => 'event',
 			'post_status'  => 'publish',
@@ -85,7 +85,7 @@ class PostListBlockQueryTest extends WP_UnitTestCase {
 		wp_set_object_terms( $test_data['post_id_a_aichi'], 'event_cat_a', 'event_cat' );
 		wp_set_object_terms( $test_data['post_id_a_aichi'], 'event_area_aichi', 'event_area' );
 
-		$post                        = array(
+		$post                         = array(
 			'post_title'   => 'Event B-aichi',
 			'post_type'    => 'event',
 			'post_status'  => 'publish',
@@ -134,7 +134,14 @@ class PostListBlockQueryTest extends WP_UnitTestCase {
 		print 'post-list-query' . PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
 
-		$test_data = self::create_test_posts();
+		$test_data         = self::create_test_posts();
+
+		// テストで共通の attribute
+		$common_attributes = array(
+			'numberPosts' => 6,
+			'order'       => 'ASC',
+			'orderby'     => 'ID',
+		);
 
 		$tests = array(
 			// カテゴリー A
@@ -207,9 +214,9 @@ class PostListBlockQueryTest extends WP_UnitTestCase {
 		$vk_blocks_post_list = new Vk_Blocks_PostList();
 
 		foreach ( $tests as $test ) {
-
-			$posts  = Vk_Blocks_PostList::get_loop_query( $test['attributes'] );
-			$actual = array();
+			$attributes = array_merge( $common_attributes, $test['attributes'] );
+			$posts      = Vk_Blocks_PostList::get_loop_query( $attributes );
+			$actual     = array();
 			foreach ( $posts->posts as $post ) {
 				$actual[] = $post->ID;
 			}

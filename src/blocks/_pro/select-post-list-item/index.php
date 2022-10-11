@@ -171,6 +171,7 @@ function vk_blocks_select_post_list_item_render_callback( $attributes, $content 
 		'image_default_url'          => VK_BLOCKS_URL . 'images/no-image.png',
 		'overlay'                    => false,
 		'slug'                       => '',
+		'class_outer'                => $attributes['className'],
 	);
 
 	if ( 'postListText' !== $options['layout'] ) {

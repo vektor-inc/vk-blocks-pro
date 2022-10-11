@@ -44,7 +44,7 @@
 // パネルの文字サイズがテーマなどの影響を受けるので上書き
 .components-panel {
 	h4 {
-		font-size:16px;
+		font-size:14px;
 	}
 }
 
@@ -127,6 +127,8 @@ button.image-button:not(.button-delete) {
 @import "./editor_before_breadcrumb";
 // slider
 @import "./editor_before_slider";
+// グリッドカラムカード
+@import "./editor_before_gridcolcard";
 // edit custom css extension
 @import "./editor_before_custom-css-extension";
 

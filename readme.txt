@@ -64,6 +64,11 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Button ] Add Button Effect option in Solid color button.
+[ Specification Change ][ Post List ( Pro ) ] Change to don't display unpublic posttype and terms list.
+[ Bug Fix ][ Grid Column Card ] Fixed a bug that css for editor was displayed in front.
+[ Bug Fix ][ Select Post List Item ( Pro ) ] Fixed a bug where additional CSS classes were not attached.
+
 = 1.43.0 =
 [ Add Function ][ Spacer ][ Common mergin ] Add size option xl/xs.
 [ Improvement ][ Admin screen ] Display the SaveButton sticky.

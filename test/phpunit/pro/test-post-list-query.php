@@ -119,13 +119,6 @@ class PostListBlockQueryTest extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Tear down each test method.
-	 */
-	public function tearDown(): void {
-		parent::tearDown();
-	}
-
-	/**
 	 * Attributeで投げた条件で正しく絞り込みが効くかのテスト
 	 */
 	public function test_get_loop_query() {
@@ -240,7 +233,7 @@ class PostListBlockQueryTest extends WP_UnitTestCase {
 			foreach ( $posts->posts as $post ) {
 				$actual[] = $post->ID;
 			}
-
+print '<pre style="text-align:left">';print_r($actual);print '</pre>';
 			$this->assertSame( $test['expected'], $actual );
 		}
 	}

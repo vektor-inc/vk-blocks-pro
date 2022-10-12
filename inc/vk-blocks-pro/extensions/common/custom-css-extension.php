@@ -19,15 +19,21 @@ function vk_blocks_custom_css_extension( $block_content, $block ) {
 		$css = $block['attrs']['vkbCustomCss'];
 		// Uniqueクラスを生成
 		$custom_css_class = wp_unique_id( 'vk_custom_css_' );
-		// selector文字列をUniqueクラスに変換
-		$css = preg_replace( '/selector/', '.' . $custom_css_class, $css );
+		// selector文字列があるとき
+		if ( strpos( $css, 'selector' ) !== false ) {
+			// selectorをUniqueクラスに変換
+			$css = preg_replace( '/selector/', '.' . $custom_css_class, $css );
+			// vk_custom_cssをUniqueクラスに変換
+			$content = preg_replace( '/vk_custom_css/', $custom_css_class, $block_content, 1 );
+		} else {
+			$content = $block_content;
+		}
 		$css = vk_blocks_minify_css( $css );
-		// vk_custom_css文字列をUniqueクラスに変換
-		$content = preg_replace( '/vk_custom_css/', $custom_css_class, $block_content, 1 );
 		if ( ! empty( $css ) ) {
 			if ( function_exists( 'wp_enqueue_block_support_styles' ) ) {
 				wp_enqueue_block_support_styles( $css );
 				return $content;
+				// 5.8のサポートを切るならelse内は削除する
 			} else {
 				return '<style>' . $css . '</style>' . $content;
 			}

@@ -1,4 +1,4 @@
-/*globals vk_block_post_type_params */
+/* globals vk_block_post_type_params */
 // import WordPress Scripts
 import { __, sprintf } from '@wordpress/i18n';
 import {
@@ -14,7 +14,7 @@ import { useState, useEffect } from '@wordpress/element';
 import ServerSideRender from '@wordpress/server-side-render';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 // Load VK Blocks Utils
-import { usePostTypes, useTaxonomies } from '@vkblocks/utils/hooks';
+import { useTaxonomies } from '@vkblocks/utils/hooks';
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
 
 // Load VK Blocks Compornents
@@ -60,13 +60,8 @@ export default function PostListEdit(props) {
 		setIsCheckedPostTypeData(isCheckedPostTypeData);
 	};
 
-	const postTypes = usePostTypes();
-	let postTypesProps = postTypes.map((postType) => {
-		return {
-			label: postType.name,
-			slug: postType.slug,
-		};
-	});
+	let postTypesProps = vk_block_post_type_params.post_type_option;
+
 	// メディアと再利用ブロックを除外
 	postTypesProps = postTypesProps.filter(
 		(postType) =>
@@ -216,6 +211,7 @@ export default function PostListEdit(props) {
 							{...props}
 						/>
 					</BaseControl>
+					<hr />
 					{taxonomiesCheckBox}
 					{termFormTokenFields}
 					<BaseControl

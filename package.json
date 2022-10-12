@@ -27,13 +27,11 @@
 		"test-unit": "npm run test-unit:clean && npm run fixtures:regenerate",
 		"test-unit:withcache": "npm run fixtures:regenerate",
 		"test-unit:clean": "wp-scripts test-unit-js --clearCache",
-		"test:e2e": "node ./test/e2e-tests/run-tests.js",
+		"test:e2e": "wp-scripts test-e2e --config ./test/e2e-tests/jest-e2e.config.js",
 		"composer:install": "wp-env run composer \"composer install\"",
 		"phpunit": "composer install && npx wp-env run phpunit \"phpunit -c /var/www/html/wp-content/plugins/vk-blocks-pro/phpunit.xml.dist --verbose\"",
 		"phpunit:free": "composer install && npx wp-env run phpunit \"phpunit -c /var/www/html/wp-content/plugins/vk-blocks/phpunit.xml.free --verbose\"",
 		"cli": "npx wp-env run cli",
-		"show:savedVersion": "bash -c 'npm run cli wp post meta get $0 _vkb_saved_block_version'",
-		"update:savedVersion": "bash -c 'npm run cli wp post meta update $0 _vkb_saved_block_version $1'",
 		"packages-update": "npx wp-scripts packages-update",
 		"reinstall": "rm -rf node_modules/ && npm install && npm run build",
 		"prepare": "husky install",
@@ -101,5 +99,6 @@
 		"react-with-direction": "^1.4.0",
 		"rimraf": "^3.0.2",
 		"sass": "1.32.12"
-	}
+	},
+	"dependencies": {}
 }

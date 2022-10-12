@@ -36,6 +36,7 @@ export default function ButtonEdit(props) {
 		buttonTarget,
 		buttonSize,
 		buttonType,
+		buttonEffect,
 		buttonColor,
 		buttonTextColorCustom,
 		buttonColorCustom,
@@ -189,6 +190,11 @@ export default function ButtonEdit(props) {
 		setAttributes({ buttonWidth: 0 });
 	}
 
+	// エフェクト
+	if (buttonEffect !== '') {
+		containerClass += ` is-style-${buttonEffect}`;
+	}
+
 	// アイコン単位
 	const units = [
 		{ value: 'px', label: 'px', default: 16 },
@@ -321,7 +327,6 @@ export default function ButtonEdit(props) {
 							{__('Small', 'vk-blocks')}
 						</Button>
 					</ButtonGroup>
-
 					{!isInnerButton && (
 						<>
 							<h4 className={`mt-0 mb-2`}>
@@ -598,6 +603,7 @@ export default function ButtonEdit(props) {
 								setAttributes({
 									buttonTextColorCustom: undefined,
 								});
+								setAttributes({ buttonEffect: '' });
 							}}
 						>
 							{__('No background', 'vk-blocks')}
@@ -611,6 +617,7 @@ export default function ButtonEdit(props) {
 								setAttributes({
 									buttonTextColorCustom: undefined,
 								});
+								setAttributes({ buttonEffect: '' });
 							}}
 						>
 							{__('Text only', 'vk-blocks')}
@@ -622,6 +629,39 @@ export default function ButtonEdit(props) {
 							'vk-blocks'
 						)}
 					</p>
+
+					{'0' === buttonType && (
+						<>
+							<h4 className={`mt-0 mb-2`}>
+								{__('Button Effect:', 'vk-blocks')}
+							</h4>
+							<ButtonGroup className={`mb-3`}>
+								<Button
+									isSmall
+									isPrimary={buttonEffect === ''}
+									isSecondary={buttonEffect !== ''}
+									onClick={() =>
+										setAttributes({ buttonEffect: '' })
+									}
+								>
+									{__('None', 'vk-blocks')}
+								</Button>
+								<Button
+									isSmall
+									isPrimary={buttonEffect === 'shine'}
+									isSecondary={buttonEffect !== 'shine'}
+									onClick={() => {
+										setAttributes({
+											buttonEffect: 'shine',
+										});
+									}}
+								>
+									{__('Shine', 'vk-blocks')}
+								</Button>
+							</ButtonGroup>
+						</>
+					)}
+
 					<h4 className={`mt-0 mb-2`}>{__('Color', 'vk-blocks')}</h4>
 					<SelectControl
 						label={__('Default Color (Bootstrap)', 'vk-blocks')}

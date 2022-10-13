@@ -148,6 +148,18 @@ addFilter(
 										setAttributes({ vkbCustomCss: value });
 									}}
 								/>
+								{(() => {
+									if (vkbCustomCss.indexOf('　') !== -1) {
+										return (
+											<p>
+												{__(
+													'全角スペースが含まれています。CSSが効かない可能性があります。',
+													'vk-blocks'
+												)}
+											</p>
+										);
+									}
+								})()}
 								<p>
 									{__(
 										'selector を指定した場合、ブロック固有の CSS クラスに置き換わります。',

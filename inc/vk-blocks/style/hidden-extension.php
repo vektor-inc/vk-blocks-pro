@@ -14,7 +14,7 @@
  */
 function vk_blocks_hidden_extension_filter( $block_content, $block ) {
 	global $vk_blocks_common_attributes;
-	if ( array_key_exists( 'attrs', $block ) ) {
+	if ( isset( $block['attrs'] ) && is_array( $block['attrs'] ) ) {
 		foreach ( $block['attrs'] as $key => $value ) {
 			$hidden_class     = array(
 				'vk_hidden',

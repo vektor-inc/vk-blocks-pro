@@ -32,7 +32,6 @@ function vk_blocks_custom_css_extension( $block_content, $block ) {
 				// vk_custom_cssが途中に付いている時半角スペースが後に続く (ex:class="hoge vk_custom_css huga")
 				$block_content = preg_replace( '/vk_custom_css/', $custom_css_class, $block_content, 1 );
 			}
-
 		}
 		$css = vk_blocks_minify_css( $css );
 		if ( ! empty( $css ) ) {

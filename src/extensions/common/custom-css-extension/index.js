@@ -14,13 +14,11 @@ import { addQueryArgs } from '@wordpress/url';
  * External dependencies
  */
 import classnames from 'classnames';
-import CodeMirror from '@uiw/react-codemirror';
-import { css } from '@codemirror/lang-css';
-import { EditorView } from '@codemirror/view';
 
 /**
  * Internal dependencies
  */
+import { CodeMirrorCss } from '@vkblocks/components/code-mirror-css';
 import { ReactComponent as IconSVG } from './icon.svg';
 /*globals vk_blocks_params */
 
@@ -134,15 +132,8 @@ addFilter(
 								title={__('Custom CSS', 'vk-blocks')}
 								initialOpen={false}
 							>
-								<CodeMirror
-									id="vk-custom-css-code-mirror"
-									className="custom-css-editor"
-									height="200px"
-									// https://uiwjs.github.io/react-codemirror/#/extensions/color
-									extensions={[
-										css(),
-										EditorView.lineWrapping,
-									]}
+								<CodeMirrorCss
+									className="vk-codemirror-block-editor"
 									value={vkbCustomCss ? vkbCustomCss : ''}
 									onChange={(value) => {
 										setAttributes({ vkbCustomCss: value });

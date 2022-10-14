@@ -23,8 +23,16 @@ function vk_blocks_custom_css_extension( $block_content, $block ) {
 		if ( strpos( $css, 'selector' ) !== false ) {
 			// selectorをUniqueクラスに変換
 			$css = preg_replace( '/selector/', '.' . $custom_css_class, $css );
+
 			// vk_custom_cssをUniqueクラスに変換
-			$block_content = preg_replace( '/vk_custom_css/', $custom_css_class, $block_content, 1 );
+			if ( strpos( $block_content, 'vk_custom_css"' ) !== false ) {
+				// vk_custom_cssが最後に(のみ)付いている時 (ex:class="hoge vk_custom_css")
+				$block_content = preg_replace( '/vk_custom_css"/', $custom_css_class . '"', $block_content, 1 );
+			} elseif ( strpos( $block_content, 'vk_custom_css ' ) !== false ) {
+				// vk_custom_cssが途中に付いている時半角スペースが後に続く (ex:class="hoge vk_custom_css huga")
+				$block_content = preg_replace( '/vk_custom_css/', $custom_css_class, $block_content, 1 );
+			}
+
 		}
 		$css = vk_blocks_minify_css( $css );
 		if ( ! empty( $css ) ) {

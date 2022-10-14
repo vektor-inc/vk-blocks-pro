@@ -140,7 +140,10 @@ addFilter(
 									}}
 								/>
 								{(() => {
-									if (vkbCustomCss.indexOf('　') !== -1) {
+									if (
+										vkbCustomCss &&
+										vkbCustomCss.indexOf('　') !== -1
+									) {
 										return (
 											<p>
 												{__(

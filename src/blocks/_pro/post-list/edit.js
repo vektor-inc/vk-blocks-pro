@@ -1,4 +1,4 @@
-/*globals vk_block_post_type_params */
+/* globals vk_block_post_type_params */
 // import WordPress Scripts
 import { __, sprintf } from '@wordpress/i18n';
 import {
@@ -7,6 +7,8 @@ import {
 	BaseControl,
 	SelectControl,
 	CheckboxControl,
+	ButtonGroup,
+	Button,
 	TextControl,
 	FormTokenField,
 } from '@wordpress/components';
@@ -14,7 +16,7 @@ import { useState, useEffect } from '@wordpress/element';
 import ServerSideRender from '@wordpress/server-side-render';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 // Load VK Blocks Utils
-import { usePostTypes, useTaxonomies } from '@vkblocks/utils/hooks';
+import { useTaxonomies } from '@vkblocks/utils/hooks';
 import { fixBrokenUnicode } from '@vkblocks/utils/depModules';
 
 // Load VK Blocks Compornents
@@ -27,6 +29,7 @@ export default function PostListEdit(props) {
 	const {
 		numberPosts,
 		isCheckedPostType,
+		taxQueryRelation,
 		isCheckedTerms,
 		offset,
 		targetPeriod,
@@ -60,13 +63,8 @@ export default function PostListEdit(props) {
 		setIsCheckedPostTypeData(isCheckedPostTypeData);
 	};
 
-	const postTypes = usePostTypes();
-	let postTypesProps = postTypes.map((postType) => {
-		return {
-			label: postType.name,
-			slug: postType.slug,
-		};
-	});
+	let postTypesProps = vk_block_post_type_params.post_type_option;
+
 	// メディアと再利用ブロックを除外
 	postTypesProps = postTypesProps.filter(
 		(postType) =>
@@ -89,6 +87,8 @@ export default function PostListEdit(props) {
 		return removedTermIds.concat(newIds);
 	};
 
+	// termFormTokenFields ////////////////////////////////////////////////////////
+	// Tag Filter
 	const termFormTokenFields = taxonomies
 		.filter((taxonomy) => {
 			return !taxonomy.hierarchical && termsByTaxonomyName[taxonomy.slug];
@@ -156,6 +156,7 @@ export default function PostListEdit(props) {
 			) : null;
 		}, taxonomies);
 
+	// taxonomiesCheckBox ////////////////////////////////////////////////////////
 	// key を BaseControlのlabelに代入。valueの配列をmapでAdvancedCheckboxControlに渡す
 	const taxonomiesCheckBox = taxonomies
 		.filter((taxonomy) => {
@@ -216,6 +217,32 @@ export default function PostListEdit(props) {
 							{...props}
 						/>
 					</BaseControl>
+					<hr />
+					<h4 className={`mt-0 mb-2`}>
+						{__('Taxonomy filter condition', 'vk-blocks')}
+					</h4>
+					<ButtonGroup className={`mb-3`}>
+						<Button
+							isSmall
+							isPrimary={taxQueryRelation === 'OR'}
+							isSecondary={taxQueryRelation !== 'OR'}
+							onClick={() =>
+								setAttributes({ taxQueryRelation: 'OR' })
+							}
+						>
+							{__('OR ( Whichever apply )', 'vk-blocks')}
+						</Button>
+						<Button
+							isSmall
+							isPrimary={taxQueryRelation === 'AND'}
+							isSecondary={taxQueryRelation !== 'AND'}
+							onClick={() =>
+								setAttributes({ taxQueryRelation: 'AND' })
+							}
+						>
+							{__('AND ( All apply )', 'vk-blocks')}
+						</Button>
+					</ButtonGroup>
 					{taxonomiesCheckBox}
 					{termFormTokenFields}
 					<BaseControl

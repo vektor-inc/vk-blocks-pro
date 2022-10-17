@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VK Blocks Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
-"POT-Creation-Date: 2022-09-21T19:29:05+00:00\n"
-"PO-Revision-Date: 2022-09-22 04:32+0900\n"
+"POT-Creation-Date: 2022-10-17T05:13:53+00:00\n"
+"PO-Revision-Date: 2022-10-17 14:24+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -140,19 +140,19 @@ msgid "XL"
 msgstr ""
 
 #: src/admin/margin.js:41 src/blocks/_pro/outer/edit.js:638
-#: src/blocks/_pro/slider/edit.js:224 src/blocks/button/edit.js:521
+#: src/blocks/_pro/slider/edit.js:224 src/blocks/button/edit.js:526
 #: src/components/advanced-viewport-control/index.js:25
 msgid "PC"
 msgstr "PC"
 
 #: src/admin/margin.js:45 src/blocks/_pro/outer/edit.js:623
-#: src/blocks/_pro/slider/edit.js:235 src/blocks/button/edit.js:456
+#: src/blocks/_pro/slider/edit.js:235 src/blocks/button/edit.js:461
 #: src/components/advanced-viewport-control/index.js:31
 msgid "Tablet"
 msgstr "タブレット"
 
 #: src/admin/margin.js:49 src/blocks/_pro/outer/edit.js:608
-#: src/blocks/_pro/slider/edit.js:246 src/blocks/button/edit.js:391
+#: src/blocks/_pro/slider/edit.js:246 src/blocks/button/edit.js:396
 #: src/components/advanced-viewport-control/index.js:39
 msgid "Mobile"
 msgstr "モバイル"
@@ -260,7 +260,7 @@ msgid "Short"
 msgstr "短い"
 
 #: src/blocks/_pro/animation/edit.js:130 src/blocks/_pro/slider/edit.js:201
-#: src/blocks/balloon/edit.js:489 src/blocks/button/edit.js:313
+#: src/blocks/balloon/edit.js:489 src/blocks/button/edit.js:319
 #: src/blocks/faq/index.js:26 src/blocks/faq2/index.js:21
 #: src/extensions/common/inline-font-size/index.js:89
 msgid "Normal"
@@ -355,7 +355,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/deprecated/0.20.6/component.js:206
 #: src/blocks/_pro/card-item/deprecated/0.60.1/component.js:210
 #: src/blocks/_pro/card-item/edit.js:182 src/blocks/_pro/card/edit.js:128
-#: src/blocks/_pro/icon-card/edit.js:72 src/blocks/_pro/post-list/edit.js:307
+#: src/blocks/_pro/icon-card/edit.js:72 src/blocks/_pro/post-list/edit.js:334
 msgid "Title"
 msgstr "タイトル"
 
@@ -457,7 +457,7 @@ msgstr "デバイス毎の高さ"
 msgid "Current page"
 msgstr "現在のページ"
 
-#: src/blocks/_pro/child-page/edit.js:63 src/blocks/_pro/post-list/edit.js:204
+#: src/blocks/_pro/child-page/edit.js:63 src/blocks/_pro/post-list/edit.js:205
 msgid "Display conditions"
 msgstr "表示条件"
 
@@ -465,7 +465,7 @@ msgstr "表示条件"
 msgid "Parent"
 msgstr "親ページ"
 
-#: src/blocks/_pro/child-page/edit.js:82 src/blocks/_pro/post-list/edit.js:331
+#: src/blocks/_pro/child-page/edit.js:82 src/blocks/_pro/post-list/edit.js:358
 msgid "Ignore this post"
 msgstr "この投稿を除く"
 
@@ -475,14 +475,14 @@ msgid "Color Settings"
 msgstr "色設定"
 
 #: src/blocks/_pro/grid-column-item/edit.js:104
-#: src/blocks/_pro/gridcolcard/edit-common.js:161 src/blocks/button/edit.js:696
+#: src/blocks/_pro/gridcolcard/edit-common.js:161 src/blocks/button/edit.js:736
 #: src/blocks/heading/edit.js:324
 msgid "Text Color"
 msgstr "文字の色"
 
 #: src/blocks/_pro/grid-column-item/edit.js:110
 #: src/blocks/_pro/gridcolcard/edit-common.js:167
-#: src/blocks/border-box/edit.js:216 src/blocks/button/edit.js:679
+#: src/blocks/border-box/edit.js:216 src/blocks/button/edit.js:719
 msgid "Background Color"
 msgstr "背景色"
 
@@ -527,17 +527,17 @@ msgstr "グリッドカラムカードブロックでは柔軟なレイアウト
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:218
 #: src/blocks/_pro/select-post-list-item/edit.js:66
-#: src/blocks/button/edit.js:231
+#: src/blocks/button/edit.js:237
 msgid "Unlink"
 msgstr "リンクを解除する"
 
-#: src/blocks/_pro/gridcolcard-item/edit.js:219 src/blocks/button/edit.js:232
+#: src/blocks/_pro/gridcolcard-item/edit.js:219 src/blocks/button/edit.js:238
 msgid "Input Link URL"
 msgstr "リンクURL"
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:258
 #: src/blocks/_pro/select-post-list-item/edit.js:102
-#: src/blocks/button/edit.js:271
+#: src/blocks/button/edit.js:277
 msgid "Submit"
 msgstr "送信"
 
@@ -573,7 +573,7 @@ msgid "Link URL:"
 msgstr "リンク URL:"
 
 #: src/blocks/_pro/gridcolcard-item/edit.js:318
-#: src/blocks/_pro/icon-card-item/edit.js:128 src/blocks/button/edit.js:257
+#: src/blocks/_pro/icon-card-item/edit.js:128 src/blocks/button/edit.js:263
 #: src/blocks/icon/edit.js:282 src/blocks/pr-blocks/edit.js:262
 #: src/blocks/pr-content/edit.js:131
 msgid "Open link new tab."
@@ -703,7 +703,7 @@ msgstr "アイコンカード設定"
 
 #: src/blocks/_pro/icon-card-item/edit.js:137
 #: src/blocks/_pro/step-item/edit.js:82 src/blocks/border-box/edit.js:240
-#: src/blocks/button/edit.js:707 src/blocks/heading/edit.js:334
+#: src/blocks/button/edit.js:747 src/blocks/heading/edit.js:334
 #: src/blocks/icon/edit.js:269 src/blocks/pr-content/edit.js:197
 #: src/utils/font-awesome-new.js:56
 msgid "Icon"
@@ -713,13 +713,13 @@ msgstr "アイコン"
 msgid "Icon Background:"
 msgstr "アイコン背景:"
 
-#: src/blocks/_pro/icon-card-item/edit.js:150 src/blocks/button/edit.js:590
+#: src/blocks/_pro/icon-card-item/edit.js:150 src/blocks/button/edit.js:595
 #: src/blocks/icon-outer/edit.js:234 src/blocks/icon/edit.js:223
 #: src/blocks/pr-blocks/edit.js:285
 msgid "Solid color"
 msgstr "ベタ塗り"
 
-#: src/blocks/_pro/icon-card-item/edit.js:154 src/blocks/button/edit.js:603
+#: src/blocks/_pro/icon-card-item/edit.js:154 src/blocks/button/edit.js:609
 #: src/blocks/pr-blocks/edit.js:289
 msgid "No background"
 msgstr "背景なし"
@@ -878,7 +878,7 @@ msgstr "枠線の種類"
 
 #: src/blocks/_pro/outer/edit.js:529 src/blocks/_pro/step-item/edit.js:144
 #: src/blocks/_pro/timeline-item/edit.js:113 src/blocks/balloon/edit.js:562
-#: src/blocks/staff/edit.js:177
+#: src/blocks/button/edit.js:647 src/blocks/staff/edit.js:177
 msgid "None"
 msgstr "なし"
 
@@ -935,43 +935,55 @@ msgid "Unit Type"
 msgstr "単位"
 
 #. Filter by %s
-#: src/blocks/_pro/post-list/edit.js:181
+#: src/blocks/_pro/post-list/edit.js:182
 msgid "Filter by %s"
 msgstr "%sで絞り込み"
 
-#: src/blocks/_pro/post-list/edit.js:208
+#: src/blocks/_pro/post-list/edit.js:209
 msgid "Filter by PostTypes"
 msgstr "投稿タイプ"
 
 #: src/blocks/_pro/post-list/edit.js:222
+msgid "Taxonomy filter condition"
+msgstr "分類絞り込み条件"
+
+#: src/blocks/_pro/post-list/edit.js:233
+msgid "OR ( Whichever apply )"
+msgstr "OR ( どれか )"
+
+#: src/blocks/_pro/post-list/edit.js:243
+msgid "AND ( All apply )"
+msgstr "AND ( すべて )"
+
+#: src/blocks/_pro/post-list/edit.js:249
 msgid "Number of Posts"
 msgstr "表示件数"
 
-#: src/blocks/_pro/post-list/edit.js:235
+#: src/blocks/_pro/post-list/edit.js:262
 msgid "Filter by Date"
 msgstr "日付で絞り込み"
 
-#: src/blocks/_pro/post-list/edit.js:239
+#: src/blocks/_pro/post-list/edit.js:266
 msgid "Period of Time"
 msgstr "期間"
 
-#: src/blocks/_pro/post-list/edit.js:247
+#: src/blocks/_pro/post-list/edit.js:274
 msgid "Whole Period"
 msgstr "全期間"
 
-#: src/blocks/_pro/post-list/edit.js:251
+#: src/blocks/_pro/post-list/edit.js:278
 msgid "From Today"
 msgstr "今日以降"
 
-#: src/blocks/_pro/post-list/edit.js:255
+#: src/blocks/_pro/post-list/edit.js:282
 msgid "From Now"
 msgstr "現在以降"
 
-#: src/blocks/_pro/post-list/edit.js:259
+#: src/blocks/_pro/post-list/edit.js:286
 msgid "From Tomorrow"
 msgstr "明日以降"
 
-#: src/blocks/_pro/post-list/edit.js:264
+#: src/blocks/_pro/post-list/edit.js:291
 msgid ""
 "* If you choose a future period, you will need to customize it so that "
 "future posts will be published immediately."
@@ -979,35 +991,35 @@ msgstr ""
 "※ 未来の期間を選択する場合は、未来の投稿が即時公開になるように別途カスタマイ"
 "ズが必要です。"
 
-#: src/blocks/_pro/post-list/edit.js:271
+#: src/blocks/_pro/post-list/edit.js:298
 msgid "Order"
 msgstr "表示順"
 
-#: src/blocks/_pro/post-list/edit.js:280
+#: src/blocks/_pro/post-list/edit.js:307
 msgid "ASC"
 msgstr "昇順"
 
-#: src/blocks/_pro/post-list/edit.js:284
+#: src/blocks/_pro/post-list/edit.js:311
 msgid "DESC"
 msgstr "降順"
 
-#: src/blocks/_pro/post-list/edit.js:290
+#: src/blocks/_pro/post-list/edit.js:317
 msgid "Order by"
 msgstr "表示順"
 
-#: src/blocks/_pro/post-list/edit.js:299
+#: src/blocks/_pro/post-list/edit.js:326
 msgid "Published Date"
 msgstr "公開日"
 
-#: src/blocks/_pro/post-list/edit.js:303
+#: src/blocks/_pro/post-list/edit.js:330
 msgid "Modefied Date"
 msgstr "更新日"
 
-#: src/blocks/_pro/post-list/edit.js:311
+#: src/blocks/_pro/post-list/edit.js:338
 msgid "Random"
 msgstr "ランダム"
 
-#: src/blocks/_pro/post-list/edit.js:317
+#: src/blocks/_pro/post-list/edit.js:344
 msgid "offset"
 msgstr "オフセット数"
 
@@ -1128,7 +1140,7 @@ msgstr "スライドの枚数"
 msgid "Navigation Position"
 msgstr "ナビゲーションの位置"
 
-#: src/blocks/_pro/slider/edit.js:378 src/blocks/button/edit.js:349
+#: src/blocks/_pro/slider/edit.js:378 src/blocks/button/edit.js:354
 #: src/components/display-items-control/index.js:127
 msgid "Center"
 msgstr "中央"
@@ -1139,7 +1151,7 @@ msgstr "モバイルでは下部に表示"
 
 #: src/blocks/_pro/step-item/edit.js:102
 #: src/blocks/_pro/timeline-item/edit.js:71 src/blocks/border-box/edit.js:204
-#: src/blocks/button/edit.js:625 src/blocks/icon/edit.js:289
+#: src/blocks/button/edit.js:665 src/blocks/icon/edit.js:289
 #: src/blocks/staff/edit.js:199
 #: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:41
 #: dist/vk-blocks-pro/inc/term-color/package/class.term-color.php:56
@@ -1225,22 +1237,22 @@ msgstr "ラベル"
 msgid "Style Settings"
 msgstr "スタイル設定"
 
-#: src/blocks/alert/edit.js:25 src/blocks/button/edit.js:639
+#: src/blocks/alert/edit.js:25 src/blocks/button/edit.js:679
 #: src/blocks/pr-content/edit.js:165 src/extensions/core/group/style.js:138
 msgid "Success"
 msgstr "Success"
 
-#: src/blocks/alert/edit.js:28 src/blocks/button/edit.js:643
+#: src/blocks/alert/edit.js:28 src/blocks/button/edit.js:683
 #: src/blocks/pr-content/edit.js:168 src/extensions/core/group/style.js:134
 msgid "Info"
 msgstr "Info"
 
-#: src/blocks/alert/edit.js:30 src/blocks/button/edit.js:647
+#: src/blocks/alert/edit.js:30 src/blocks/button/edit.js:687
 #: src/blocks/pr-content/edit.js:170 src/extensions/core/group/style.js:142
 msgid "Warning"
 msgstr "Warning"
 
-#: src/blocks/alert/edit.js:34 src/blocks/button/edit.js:651
+#: src/blocks/alert/edit.js:34 src/blocks/button/edit.js:691
 #: src/blocks/pr-content/edit.js:174 src/extensions/core/group/style.js:146
 msgid "Danger"
 msgstr "Danger"
@@ -1325,13 +1337,13 @@ msgstr "位置"
 msgid "Please specify the layout of the balloon."
 msgstr "吹き出しの配置を指定してください。"
 
-#: src/blocks/balloon/edit.js:432 src/blocks/button/edit.js:339
+#: src/blocks/balloon/edit.js:432 src/blocks/button/edit.js:344
 #: src/blocks/pr-content/edit.js:237
 #: src/components/display-items-control/index.js:123
 msgid "Left"
 msgstr "左"
 
-#: src/blocks/balloon/edit.js:444 src/blocks/button/edit.js:359
+#: src/blocks/balloon/edit.js:444 src/blocks/button/edit.js:364
 #: src/blocks/pr-content/edit.js:236
 #: src/components/display-items-control/index.js:131
 msgid "Right"
@@ -1361,7 +1373,7 @@ msgstr "角丸２"
 msgid "Circle"
 msgstr "丸抜き"
 
-#: src/blocks/balloon/edit.js:518 src/blocks/button/edit.js:574
+#: src/blocks/balloon/edit.js:518 src/blocks/button/edit.js:579
 msgid "100%"
 msgstr "100%"
 
@@ -1458,97 +1470,105 @@ msgstr "直線 ピン角 内側"
 msgid "Solid Angle iconFeature"
 msgstr "直線 ピン角 アイコン"
 
-#: src/blocks/button/edit.js:284
+#: src/blocks/button/edit.js:290
 msgid "Button setting"
 msgstr "ボタン設定"
 
-#: src/blocks/button/edit.js:286
+#: src/blocks/button/edit.js:292
 msgid "Sub Caption"
 msgstr "サブテキスト"
 
-#: src/blocks/button/edit.js:296
+#: src/blocks/button/edit.js:302
 msgid "Button Size:"
 msgstr "ボタンサイズ:"
 
-#: src/blocks/button/edit.js:305
+#: src/blocks/button/edit.js:311
 msgid "Large"
 msgstr "大"
 
-#: src/blocks/button/edit.js:321
+#: src/blocks/button/edit.js:327
 #: src/extensions/common/inline-font-size/index.js:84
 msgid "Small"
 msgstr "小"
 
-#: src/blocks/button/edit.js:328
+#: src/blocks/button/edit.js:333
 msgid "Button Position:"
 msgstr "ボタンの位置:"
 
-#: src/blocks/button/edit.js:369
+#: src/blocks/button/edit.js:374
 msgid "Wide"
 msgstr "幅広"
 
-#: src/blocks/button/edit.js:379
+#: src/blocks/button/edit.js:384
 msgid "Block"
 msgstr "Block"
 
-#: src/blocks/button/edit.js:388
+#: src/blocks/button/edit.js:393
 msgid "Button Width:"
 msgstr "ボタンの幅:"
 
-#: src/blocks/button/edit.js:535
+#: src/blocks/button/edit.js:540
 msgid "25%"
 msgstr "25%"
 
-#: src/blocks/button/edit.js:548
+#: src/blocks/button/edit.js:553
 msgid "50%"
 msgstr "50%"
 
-#: src/blocks/button/edit.js:561
+#: src/blocks/button/edit.js:566
 msgid "75%"
 msgstr "75%"
 
-#: src/blocks/button/edit.js:581
+#: src/blocks/button/edit.js:586
 msgid "Button Style:"
 msgstr "ボタンスタイル:"
 
-#: src/blocks/button/edit.js:616
+#: src/blocks/button/edit.js:623
 msgid "Text only"
 msgstr "テキストのみ"
 
-#: src/blocks/button/edit.js:620
+#: src/blocks/button/edit.js:627
 msgid ""
 "If you select \"No background\", that you need to select a Custom Color."
 msgstr "もし「背景なし」を選択した場合はカスタムカラーで色を指定してください。"
 
-#: src/blocks/button/edit.js:627
+#: src/blocks/button/edit.js:636
+msgid "Button Effect:"
+msgstr "ボタン エフェクト"
+
+#: src/blocks/button/edit.js:659
+msgid "Shine"
+msgstr "光る"
+
+#: src/blocks/button/edit.js:667
 msgid "Default Color (Bootstrap)"
 msgstr "標準色 (Bootstrap)"
 
-#: src/blocks/button/edit.js:631 src/blocks/pr-content/edit.js:157
+#: src/blocks/button/edit.js:671 src/blocks/pr-content/edit.js:157
 msgid "Primary"
 msgstr "Primary"
 
-#: src/blocks/button/edit.js:635 src/blocks/pr-content/edit.js:161
+#: src/blocks/button/edit.js:675 src/blocks/pr-content/edit.js:161
 msgid "Secondary"
 msgstr "Secondary"
 
-#: src/blocks/button/edit.js:655 src/blocks/pr-content/edit.js:177
+#: src/blocks/button/edit.js:695 src/blocks/pr-content/edit.js:177
 msgid "Light"
 msgstr "Light"
 
-#: src/blocks/button/edit.js:659 src/blocks/pr-content/edit.js:178
+#: src/blocks/button/edit.js:699 src/blocks/pr-content/edit.js:178
 msgid "Dark"
 msgstr "Dark"
 
-#: src/blocks/button/edit.js:672
+#: src/blocks/button/edit.js:712
 msgid "Custom Color"
 msgstr "カスタムカラー"
 
-#: src/blocks/button/edit.js:680 src/blocks/pr-content/edit.js:186
+#: src/blocks/button/edit.js:720 src/blocks/pr-content/edit.js:186
 msgid "Button Color"
 msgstr "ボタンカラー"
 
-#: src/blocks/button/edit.js:682
+#: src/blocks/button/edit.js:722
 msgid ""
 "This color palette overrides the default color. If you want to use the "
 "default color, click the clear button."
@@ -1556,22 +1576,22 @@ msgstr ""
 "このカラーパレットの色は標準色を上書きします。 デフォルトの色を使用したい場合"
 "は、クリアボタンをクリックしてください。"
 
-#: src/blocks/button/edit.js:714 src/blocks/heading/edit.js:337
+#: src/blocks/button/edit.js:754 src/blocks/heading/edit.js:337
 #: src/blocks/pr-content/edit.js:204
 msgid "Before text"
 msgstr "文字の前"
 
-#: src/blocks/button/edit.js:736 src/blocks/heading/edit.js:346
+#: src/blocks/button/edit.js:776 src/blocks/heading/edit.js:346
 #: src/blocks/pr-content/edit.js:216
 msgid "After text"
 msgstr "文字の後"
 
-#: src/blocks/button/edit.js:743 src/blocks/icon-outer/edit.js:89
+#: src/blocks/button/edit.js:783 src/blocks/icon-outer/edit.js:89
 #: src/blocks/icon/edit.js:81
 msgid "Size"
 msgstr "サイズ"
 
-#: src/blocks/button/edit.js:779
+#: src/blocks/button/edit.js:819
 msgid "Input text"
 msgstr "文字を入力"
 
@@ -2444,7 +2464,8 @@ msgid "Dismiss this notice"
 msgstr "通知を無視"
 
 #: dist/vk-blocks-pro/inc/font-awesome/class-vk-blocks-font-awesome-api.php:73
-#: inc/font-awesome/class-vk-blocks-font-awesome-api.php:73
+#: dist/vk-blocks-pro/inc/vk-blocks/font-awesome/class-vk-blocks-font-awesome-api.php:73
+#: inc/vk-blocks/font-awesome/class-vk-blocks-font-awesome-api.php:73
 msgid "Setting saved."
 msgstr "設定を保存しました。"
 
@@ -2712,23 +2733,23 @@ msgid "Edit this area"
 msgstr "このエリアを編集"
 
 #: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:246
-#: inc/vk-blocks/view/class-vk-blocks-postlist.php:246
+#: inc/vk-blocks/view/class-vk-blocks-postlist.php:253
 msgid "Post"
 msgstr "投稿"
 
 #. translators: %s: 投稿タイプ名
 #: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:250
-#: inc/vk-blocks/view/class-vk-blocks-postlist.php:250
+#: inc/vk-blocks/view/class-vk-blocks-postlist.php:257
 msgid "There are no %ss."
 msgstr "該当の%sはありません。"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:197
-#: inc/vk-blocks/vk-blocks-functions.php:157
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:160
+#: inc/vk-blocks/vk-blocks-functions.php:160
 msgid "Blocks"
 msgstr "Blocks"
 
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:210
-#: inc/vk-blocks/vk-blocks-functions.php:170
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:173
+#: inc/vk-blocks/vk-blocks-functions.php:173
 msgid "Blocks Layout"
 msgstr "ブロックレイアウト"
 
@@ -3571,6 +3592,12 @@ msgid ""
 "Displays a simple schedule and other information that is useful for "
 "explaining the order."
 msgstr "順番を説明する時に便利でシンプルなスケジュールなどを表示します。"
+
+#~ msgid "OR(Partial Match)"
+#~ msgstr "OR(部分一致)"
+
+#~ msgid "AND(Perfect match)"
+#~ msgstr "AND(すべて当てはまる)"
 
 #~ msgid "Medium"
 #~ msgstr "中"

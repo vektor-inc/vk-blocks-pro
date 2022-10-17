@@ -230,7 +230,7 @@ export default function PostListEdit(props) {
 								setAttributes({ taxQueryRelation: 'OR' })
 							}
 						>
-							{__('OR search', 'vk-blocks')}
+							{__('OR ( Whichever apply )', 'vk-blocks')}
 						</Button>
 						<Button
 							isSmall
@@ -240,7 +240,7 @@ export default function PostListEdit(props) {
 								setAttributes({ taxQueryRelation: 'AND' })
 							}
 						>
-							{__('AND search', 'vk-blocks')}
+							{__('AND ( All apply )', 'vk-blocks')}
 						</Button>
 					</ButtonGroup>
 					{taxonomiesCheckBox}

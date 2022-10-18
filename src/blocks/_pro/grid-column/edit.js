@@ -70,6 +70,7 @@ export default function GridColumnEdit(props) {
 						}}
 						min={0}
 						max={100}
+						step={0.1}
 						allowReset={true}
 						resetFallbackValue={null}
 					/>

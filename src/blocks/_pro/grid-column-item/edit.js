@@ -132,6 +132,7 @@ export default function GridColumnItemEdit(props) {
 						}}
 						min={0}
 						max={300}
+						step={0.1}
 						allowReset={true}
 						resetFallbackValue={null}
 					/>
@@ -147,6 +148,7 @@ export default function GridColumnItemEdit(props) {
 						}}
 						min={0}
 						max={300}
+						step={0.1}
 						allowReset={true}
 						resetFallbackValue={null}
 					/>
@@ -162,6 +164,7 @@ export default function GridColumnItemEdit(props) {
 						}}
 						min={0}
 						max={300}
+						step={0.1}
 						allowReset={true}
 						resetFallbackValue={null}
 					/>

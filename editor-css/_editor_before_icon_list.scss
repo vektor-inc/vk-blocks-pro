@@ -8,9 +8,12 @@
 		padding: 20px 15px;
 		.vk_icon_list {
 			margin-top: 5px;
-			.components-base-control__field {
+			.components-base-control__field,
+			.components-flex {
 				display: flex;
 				flex-wrap: wrap;
+				flex-direction: row;
+				gap: 0;
 				.components-radio-control__option {
 					border: 1px solid #666;
 					width: 38px;
@@ -30,6 +33,9 @@
 						transform: translateY(-50%) translateX(-50%);
 					}
 				}
+				.components-radio-control__option:not(:last-child) {
+					margin-bottom: 4px;
+				}					
 			}
 		}
 	}

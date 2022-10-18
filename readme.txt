@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ][ Grid Column ( Pro ) ] Changed margin setting from 1 to 0.1 separator.
+
 = 1.44.0 =
 [ Add Function ][ Post List ( Pro ) ] Add post filter taxonomy relation
 [ Add Function ][ Button ] Add Button Effect option in Solid color button.

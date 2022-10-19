@@ -153,7 +153,11 @@ addFilter(
 							<PanelBody
 								className={'vk_custom_css_panel'}
 								icon={<Icon icon={IconSVG} style={iconStyle} />}
-								title={__('Custom CSS', 'vk-blocks')}
+								title={__(
+									'カスタムCSS',
+									// 'Custom CSS',
+									'vk-blocks'
+								)}
 								initialOpen={false}
 							>
 								<CodeMirrorCss
@@ -172,6 +176,7 @@ addFilter(
 											<p>
 												{__(
 													'注意 : 全角スペースが含まれています。CSSが効かない可能性があります。',
+													// 'Note : Contains double-byte spaces; CSS may not work.',
 													'vk-blocks'
 												)}
 											</p>
@@ -181,22 +186,24 @@ addFilter(
 								<p>
 									{__(
 										'selector を指定した場合、ブロック固有の CSS クラスに置き換わります。',
+										// 'If selector is specified, it is replaced by a block-specific CSS class.',
 										'vk-blocks'
 									)}
 								</p>
 								<p>
 									{__(
 										'"selector"以外のCSSセレクターは、ページ全体に影響する可能性があります。',
+										// 'If selector is set to "selector", it will be replaced with a block-specific CSS class. CSS selectors other than "selector" may affect the entire page.',
 										'vk-blocks'
 									)}
 								</p>
-								{/* <p>
+								<p>
 									{__(
-										'If selector is set to "selector", it will be replaced with a block-specific CSS class. CSS selectors other than "selector" may affect the entire page.',
+										'例:',
+										// 'Example:',
 										'vk-blocks'
 									)}
-								</p> */}
-								<p>{__('Example:', 'vk-blocks')}</p>
+								</p>
 								<pre
 									style={{
 										whiteSpace: 'pre-wrap',
@@ -210,15 +217,10 @@ addFilter(
 								<p>
 									{__(
 										'編集画面をできるだけ公開画面に近づけたい場合や、自作のCSSが識別表示用のCSSと干渉して編集画面で意図した通りに表示されない場合は、非表示にすることをお勧めします。',
+										// 'If you want the edit screen to be as close to the public screen as possible, or if your own CSS interferes with the CSS for the identification display and does not display as intended on the edit screen, please hide it.',
 										'vk-blocks'
 									)}
 								</p>
-								{/* <p>
-									{__(
-										'If you want the edit screen to be as close to the public screen as possible, or if your own CSS interferes with the CSS for the identification display and does not display as intended on the edit screen, please hide it.',
-										'vk-blocks'
-									)}
-								</p> */}
 								<Button
 									href={addQueryArgs(
 										'options-general.php?page=vk_blocks_options#custom-css-setting'
@@ -228,7 +230,11 @@ addFilter(
 									variant="secondary"
 									isSmall
 								>
-									{__('Custom CSS Setting', 'vk-blocks')}
+									{__(
+										'カスタムCSS設定',
+										// 'Custom CSS Setting',
+										'vk-blocks'
+									)}
 								</Button>
 							</PanelBody>
 						</InspectorControls>

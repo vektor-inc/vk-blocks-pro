@@ -24,11 +24,19 @@ export default function AdminCustomCss() {
 		<>
 			<section>
 				<h3 id="custom-css-setting">
-					{__('Custom CSS Setting', 'vk-blocks')}
+					{__(
+						'カスタムCSS設定',
+						// 'Custom CSS Setting',
+						'vk-blocks'
+					)}
 				</h3>
 				<ToggleControl
 					name="vk_blocks_options[show_custom_css_editor_flag]"
-					label={__('Show Custom CSS flag in editor', 'vk-blocks')}
+					label={__(
+						'エディタにカスタムCSS識別表示を表示する',
+						// 'Show Custom CSS flag in editor',
+						'vk-blocks'
+					)}
 					checked={migrateLoadSeparateOption}
 					onChange={(newValue) => {
 						if (newValue) {

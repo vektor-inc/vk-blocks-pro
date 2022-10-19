@@ -54,6 +54,30 @@ export const customCssRegex = /vk_custom_css/;
 export const customCssSelectorRegex = /selector/;
 
 /**
+ * Filters registered block settings.
+ */
+addFilter(
+	'blocks.registerBlockType',
+	'vk-blocks/custom-css-extension',
+	(settings) => {
+		const hasCustomClassName = hasBlockSupport(
+			settings.name,
+			'customClassName',
+			true
+		);
+		if (isAddBlockCss(settings.name) && hasCustomClassName) {
+			settings.attributes = {
+				...settings.attributes,
+				vkbCustomCss: {
+					type: 'string',
+				},
+			};
+		}
+		return settings;
+	}
+);
+
+/**
  * edit.js
  */
 addFilter(

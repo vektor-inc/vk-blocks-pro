@@ -37,7 +37,7 @@ export default function PostListEdit(props) {
 						}
 					/>
 					<SelectControl
-						label={__('Archive type', 'vk-blocks')}
+						label={__('Archive title tag', 'vk-blocks')}
 						value={ancestorTitleTagName}
 						onChange={(value) =>
 							setAttributes({ ancestorTitleTagName: value })

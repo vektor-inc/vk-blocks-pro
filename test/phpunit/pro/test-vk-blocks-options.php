@@ -37,6 +37,23 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 					'margin_size'          => array(
 						'type'  => 'object',
 						'items' => array(
+							'xl' => array(
+								'type'  => 'object',
+								'items' => array(
+									'mobile' => array(
+										'type'    => 'number',
+										'default' => null,
+									),
+									'tablet' => array(
+										'type'    => 'number',
+										'default' => null,
+									),
+									'pc'     => array(
+										'type'    => 'number',
+										'default' => null,
+									),
+								),
+							),
 							'lg' => array(
 								'type'  => 'object',
 								'items' => array(
@@ -72,6 +89,23 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 								),
 							),
 							'sm' => array(
+								'type'  => 'object',
+								'items' => array(
+									'mobile' => array(
+										'type'    => 'number',
+										'default' => null,
+									),
+									'tablet' => array(
+										'type'    => 'number',
+										'default' => null,
+									),
+									'pc'     => array(
+										'type'    => 'number',
+										'default' => null,
+									),
+								),
+							),
+							'xs' => array(
 								'type'  => 'object',
 								'items' => array(
 									'mobile' => array(

@@ -46,6 +46,23 @@ class VK_Blocks_Options {
 			'margin_size'          => array(
 				'type'  => 'object',
 				'items' => array(
+					'xl' => array(
+						'type'  => 'object',
+						'items' => array(
+							'mobile' => array(
+								'type'    => 'number',
+								'default' => null,
+							),
+							'tablet' => array(
+								'type'    => 'number',
+								'default' => null,
+							),
+							'pc'     => array(
+								'type'    => 'number',
+								'default' => null,
+							),
+						),
+					),
 					'lg' => array(
 						'type'  => 'object',
 						'items' => array(
@@ -97,6 +114,23 @@ class VK_Blocks_Options {
 							),
 						),
 					),
+					'xs' => array(
+						'type'  => 'object',
+						'items' => array(
+							'mobile' => array(
+								'type'    => 'number',
+								'default' => null,
+							),
+							'tablet' => array(
+								'type'    => 'number',
+								'default' => null,
+							),
+							'pc'     => array(
+								'type'    => 'number',
+								'default' => null,
+							),
+						),
+					),
 				),
 			),
 			'load_separate_option' => array(
@@ -122,7 +156,7 @@ class VK_Blocks_Options {
 	 *
 	 * @return $balloon_meta_schema
 	 */
-	public function balloon_meta_schema() {
+	public static function balloon_meta_schema() {
 		$number                        = self::balloon_image_number();
 		$return_array                  = array();
 		$return_array['default_icons'] = array(
@@ -183,22 +217,26 @@ class VK_Blocks_Options {
 	}
 
 	/**
+	 * Get vk_blocks_options
+	 *
+	 * @return array
+	 */
+	public static function get_options() {
+		$options  = get_option( 'vk_blocks_options' );
+		$defaults = self::get_defaults( self::options_scheme() );
+		$options  = vk_blocks_array_merge( $options, $defaults );
+		return $options;
+	}
+
+	/**
 	 * Get Balloon Meta Options
 	 *
 	 * @return options
 	 */
 	public static function get_balloon_meta_options() {
-		$options                   = get_option( 'vk_blocks_balloon_meta' );
-		$number                    = self::balloon_image_number();
-		$defaults                  = array();
-		$defaults['default_icons'] = array();
-		for ( $i = 1; $i <= $number; $i++ ) {
-			$defaults['default_icons'][ $i ] = array(
-				'name' => null,
-				'src'  => null,
-			);
-		};
-		$options = wp_parse_args( $options, $defaults );
+		$options  = get_option( 'vk_blocks_balloon_meta' );
+		$defaults = self::get_properties( self::balloon_meta_schema() );
+		$options  = wp_parse_args( $options, $defaults );
 		return $options;
 	}
 

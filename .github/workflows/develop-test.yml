@@ -10,11 +10,14 @@ on:
 
 jobs:
   php_unit:
-    name: php unit test
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php: [7.3, 7.4]
+        # これが先にdevelopにマージされたら 8.0 を追加して 8.0 でおそらく baloon関連のテストでエラーになるので修正する
+        php-versions: ['7.3', '7.4', '8.0', '8.1']
+        # これが先にdevelopにマージされたら 5.8.4 不具合修正のブランチ（ https://github.com/vektor-inc/vk-blocks-pro/pull/1372 ）にマージして '5.8.4' を追加
+        wp-versions: ['6.0.1','5.9.3','5.8.4']
+    name: PHP Unit test ${{ matrix.php-versions }} / WP ${{ matrix.wp-versions }} Test on ${{ matrix.operating-system }}
     services:
       mysql:
         image: mysql:5.7
@@ -43,11 +46,11 @@ jobs:
       uses: actions/cache@v2
       with:
         path: vendor
-        key: ${{ runner.os }}-php${{ matrix.php }}-${{ hashFiles('**/composer.lock') }}
-    - name: Setup PHP ${{ matrix.php }}
+        key: ${{ runner.os }}-php${{ matrix.php-versions }}-${{ hashFiles('**/composer.lock') }}
+    - name: Setup PHP ${{ matrix.php-versions }}
       uses: shivammathur/setup-php@v2
       with:
-        php-version: ${{ matrix.php }}
+        php-version: ${{ matrix.php-versions }}
     - name: install npm scripts
       run: npm install
     - name: install Composer Package
@@ -57,14 +60,15 @@ jobs:
         curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
         chmod +x wp-cli.phar
         mv wp-cli.phar /usr/local/bin/wp
-
+    - name: Install several WordPress version by wp-env.override.json
+      run: WP_ENV_PHP_VERSION=${{ matrix.php-versions }} WP_ENV_CORE=WordPress/WordPress#${{ matrix.wp-versions }} npm run wp-env start --update
+    - name: Check WordPress Version
+      run: npm run wp-env run cli wp core version 
     # dist の中で build は実行している
     - name: Build and Dist
       run: npm run dist
 
     # PHPUnit
-    - name: Run @wordpress/env
-      run: npx wp-env start
     - name: PHP Unit Test
       run: npm run phpunit
 

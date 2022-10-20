@@ -27,7 +27,7 @@ class Breadcrumb extends WP_UnitTestCase {
 	/**
 	 * 各テストケースの実行直前に呼ばれる
 	 */
-	public function setUp() {
+	public function setUp() : void {
 		parent::setUp();
 
 		$catarr                           = array(
@@ -56,7 +56,7 @@ class Breadcrumb extends WP_UnitTestCase {
 	/**
 	 * Tear down each test method.
 	 */
-	public function tearDown() {
+	public function tearDown(): void {
 		wp_delete_post( $this->page_id, true );
 		$this->page_id = 0;
 
@@ -85,9 +85,11 @@ class Breadcrumb extends WP_UnitTestCase {
 
 		$this->set_current_user( 'administrator' );
 
-		$actual = vk_blocks_breadcrumb_render_callback( $attributes );
+		WP_Block_Supports::init();
+		WP_Block_Supports::$block_to_render =  array('blockName'=> $attributes['name'], 'attrs' => $attributes );	
 
-		$expected = vk_blocks_unescape_html( '<!-- [ #vk_breadcrumb ] --><div id=\"vk_breadcrumb\" class=\"vk_breadcrumb\"><div class=\"vk_breadcrumb_inner\"><ol class=\"vk_breadcrumb_list\" itemscope itemtype=\"https://schema.org/BreadcrumbList\"><li class=\"vk_breadcrumb_list_item breadcrumb-list__item--home\" itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a href=\"' . home_url() . '\" itemprop=\"item\"><i class=\"fas fa-fw fa-home\"></i><span itemprop=\"name\">HOME</span></a><meta itemprop=\"position\" content=\"1\" /></li></ol></div></div><!-- [ /#vk_breadcrumb ] -->' );
+		$actual = vk_blocks_breadcrumb_render_callback( $attributes );
+		$expected = vk_blocks_unescape_html( '<!-- [ #vk_breadcrumb ] --><div id=\"vk_breadcrumb\" class=\"vk_breadcrumb wp-block-vk-blocks-breadcrumb\"><div class=\"vk_breadcrumb_inner\"><ol class=\"vk_breadcrumb_list\" itemscope itemtype=\"https://schema.org/BreadcrumbList\"><li class=\"vk_breadcrumb_list_item breadcrumb-list__item--home\" itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a href=\"' . home_url() . '\" itemprop=\"item\"><i class=\"fas fa-fw fa-home\"></i><span itemprop=\"name\">HOME</span></a><meta itemprop=\"position\" content=\"1\" /></li></ol></div></div><!-- [ /#vk_breadcrumb ] -->' );
 
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
@@ -106,7 +108,7 @@ class Breadcrumb extends WP_UnitTestCase {
 	 * @param  string $role administrator, editor, author, contributor ...
 	 * @return void
 	 */
-	public function set_current_user( $role ) {
+	public function set_current_user( $role ) : void {
 		$user = $this->factory()->user->create_and_get(
 			array(
 				'role' => $role,

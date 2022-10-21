@@ -85,7 +85,11 @@ export const TextStylePreview = (props) => {
 						background: backgroundProperty,
 					}}
 				>
-					{__('Preview Text', 'vk-blocks')}
+					{__(
+						'プレビューテキスト',
+						// 'Preview Text',
+						'vk-blocks'
+					)}
 				</span>
 			</p>
 		</div>

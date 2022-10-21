@@ -3,7 +3,7 @@
  */
 import { __, sprintf } from '@wordpress/i18n';
 import { useContext, useState } from '@wordpress/element';
-import { Button, Modal } from '@wordpress/components';
+import { Button, Modal, Flex, FlexItem } from '@wordpress/components';
 
 /**
  * Internal dependencies
@@ -43,7 +43,11 @@ export const DeleteItemButton = (props) => {
 				<Modal
 					title={sprintf(
 						// translators: Would you like to delete %s
-						__('Would you like to delete %s?', 'vk-blocks'),
+						__(
+							'%s を削除しますか？',
+							// 'Would you like to delete %s?',
+							'vk-blocks'
+						),
 						textStyleTitle
 					)}
 					onRequestClose={closeModal}
@@ -52,23 +56,30 @@ export const DeleteItemButton = (props) => {
 					<div className="text_style_delete_modal">
 						<p>
 							{__(
-								'If this format is used for saved content, the style may change.',
+								'保存したコンテンツにこのフォーマットがある場合、スタイルが変更されます。',
+								// 'If this format is used for saved content, the style may change.',
 								'vk-blocks'
 							)}
 						</p>
 						<div className="text_style_delete_modal_button_area">
-							<Button
-								isDestructive
-								onClick={() => {
-									deleteItem();
-									closeModal();
-								}}
-							>
-								{__('Delete', 'vk-blocks')}
-							</Button>
-							<Button isSecondary onClick={closeModal}>
-								{__('Cancel', 'vk-blocks')}
-							</Button>
+							<Flex justify="flex-end">
+								<FlexItem>
+									<Button isSecondary onClick={closeModal}>
+										{__('Cancel')}
+									</Button>
+								</FlexItem>
+								<FlexItem>
+									<Button
+										isDestructive
+										onClick={() => {
+											deleteItem();
+											closeModal();
+										}}
+									>
+										{__('Delete', 'vk-blocks')}
+									</Button>
+								</FlexItem>
+							</Flex>
 						</div>
 					</div>
 				</Modal>

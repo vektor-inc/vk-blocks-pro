@@ -46,11 +46,16 @@ export default function AdminTextStyle() {
 		<>
 			<section>
 				<h3 id="text-style-setting">
-					{__('Text Style Setting', 'vk-blocks')}
+					{__(
+						'書式設定',
+						// 'Text Style Setting',
+						'vk-blocks'
+					)}
 				</h3>
 				<p>
 					{__(
-						'Additional formatting can be applied with the block toolbar.',
+						'ブロックツールバーで追加書式を適用することができます。',
+						// 'Additional formatting can be applied with the block toolbar.',
 						'vk-blocks'
 					)}
 				</p>
@@ -62,7 +67,11 @@ export default function AdminTextStyle() {
 								<TextStylePreview i={i} />
 								<div className="text_style_item_control">
 									<PanelBody
-										title={__('Text Style', 'vk-blocks')}
+										title={__(
+											'書式設定',
+											// 'Text Style',
+											'vk-blocks'
+										)}
 									>
 										<BaseControl id="custom-text-style">
 											<TextControl
@@ -70,7 +79,8 @@ export default function AdminTextStyle() {
 												name={`vk_blocks_options[text_style][${i}][title]`}
 												id={`vk_blocks_text_style_${i}_title`}
 												label={__(
-													'Toolbar title',
+													'ツールバー タイトル',
+													// 'Toolbar title',
 													'vk-blocks'
 												)}
 												onChange={(value) =>
@@ -90,7 +100,8 @@ export default function AdminTextStyle() {
 												.title && (
 												<p className="text_style_item_name_warning">
 													{__(
-														'※ Required If no title is entered, it will not appear on the toolbar.',
+														'※ タイトルが入力されていない場合、ツールバーには表示されません。',
+														// '※ Required If no title is entered, it will not appear on the toolbar.',
 														'vk-blocks'
 													)}
 												</p>
@@ -100,7 +111,8 @@ export default function AdminTextStyle() {
 									</PanelBody>
 									<PanelBody
 										title={__(
-											'Format Setting',
+											'フォーマット設定',
+											// 'Format Setting',
 											'vk-blocks'
 										)}
 										initialOpen={false}
@@ -258,7 +270,8 @@ export default function AdminTextStyle() {
 										<BaseControl
 											id="highlighter"
 											label={__(
-												'Highlighter Color',
+												'蛍光マーカー',
+												// 'Highlighter Color',
 												'vk-blocks'
 											)}
 										>
@@ -266,7 +279,8 @@ export default function AdminTextStyle() {
 												name={`vk_blocks_options[text_style][${i}][active_highlighter]`}
 												id={`vk_blocks_text_style_${i}_active_highlighter`}
 												label={__(
-													'Activate Highlighter',
+													'蛍光マーカーを有効化',
+													// 'Activate Highlighter',
 													'vk-blocks'
 												)}
 												checked={
@@ -309,12 +323,17 @@ export default function AdminTextStyle() {
 										</BaseControl>
 									</PanelBody>
 									<PanelBody
-										title={__('Advanced', 'vk-blocks')}
+										title={__('Advanced')}
 										initialOpen={false}
 									>
 										<BaseControl id="class-name-setting">
 											<span>
-												{__('CSS class', 'vk-blocks')}:
+												{__(
+													'CSSクラス',
+													// 'CSS class',
+													'vk-blocks'
+												)}
+												:
 												<code>
 													.
 													{

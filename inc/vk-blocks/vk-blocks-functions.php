@@ -26,8 +26,6 @@ VK_Blocks_Block_Loader::init();
 // オプション値を定義
 require_once dirname( __FILE__ ) . '/class-vk-blocks-options.php';
 VK_Blocks_Options::init();
-require_once dirname( __FILE__ ) . '/global-settings/class-vk-blocks-global-settings.php';
-VK_Blocks_Global_Settings::init();
 
 // font-awesome
 require_once dirname( __FILE__ ) . '/font-awesome/font-awesome-config.php';

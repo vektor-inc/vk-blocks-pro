@@ -3,7 +3,13 @@
  */
 import { __ } from '@wordpress/i18n';
 import { useContext, useState } from '@wordpress/element';
-import { Button, Modal, TextControl } from '@wordpress/components';
+import {
+	Button,
+	Modal,
+	TextControl,
+	Flex,
+	FlexItem,
+} from '@wordpress/components';
 import { plusCircle } from '@wordpress/icons';
 
 /**
@@ -46,24 +52,37 @@ export const AddItemButton = () => {
 		let message;
 		if (typeof value !== 'string') {
 			bool = false;
-			message = __('Please enter a string', 'vk-blocks');
+			message = __(
+				'文字列を入力してください',
+				// 'Please enter a string',
+				'vk-blocks'
+			);
 		}
 		if (!/^[a-z][a-z0-9-]*$/.test(value)) {
 			bool = false;
 			message = __(
-				'Only alpha-numeric characters are allowed.',
+				'英数字のみ使用可能です',
+				// 'Only alpha-numeric characters are allowed',
 				'vk-blocks'
 			);
 		}
 		if (value === '') {
 			bool = false;
-			message = __('Class name is required.', 'vk-blocks');
+			message = __(
+				'クラス名は必須項目です',
+				// 'Class name is required',
+				'vk-blocks'
+			);
 		}
 		// クラス名が既に登録されているか
 		vkBlocksOption.text_style.forEach((option) => {
 			if (option.class_name === value) {
 				bool = false;
-				message = __('Already registered.', 'vk-blocks');
+				message = __(
+					'すでに登録されています',
+					// 'Already registered',
+					'vk-blocks'
+				);
 			}
 		});
 		setIsDisableAdd(bool);
@@ -79,11 +98,19 @@ export const AddItemButton = () => {
 				variant="secondary"
 				onClick={openModal}
 			>
-				{__('Add Text Style', 'vk-blocks')}
+				{__(
+					'書式設定を追加',
+					// 'Add Text Style',
+					'vk-blocks'
+				)}
 			</Button>
 			{isModalOpen && (
 				<Modal
-					title={__('Add Text Style', 'vk-blocks')}
+					title={__(
+						'書式設定を追加',
+						// 'Add Text Style',
+						'vk-blocks'
+					)}
 					onRequestClose={closeModal}
 					isDismissible={false}
 				>
@@ -91,7 +118,13 @@ export const AddItemButton = () => {
 						<TextControl
 							className="text_style_item_class_name"
 							label={__(
-								'CSS class/ID (Required/Unchangeable)',
+								'CSSクラス/固有のID (必須/変更不可)',
+								// 'CSS class/unique ID (Required/Unchangeable)',
+								'vk-blocks'
+							)}
+							placeholder={__(
+								'(例) vk-text-style-1',
+								// '(ex) vk-text-style-1',
 								'vk-blocks'
 							)}
 							onChange={(value) => {
@@ -109,7 +142,8 @@ export const AddItemButton = () => {
 						<TextControl
 							className="text_style_item_title"
 							label={__(
-								'Toolbar title (Changeable)',
+								'ツールバーのタイトル（変更可能）',
+								// 'Toolbar title (Changeable)',
 								'vk-blocks'
 							)}
 							onChange={(value) => {
@@ -118,19 +152,32 @@ export const AddItemButton = () => {
 							value={title}
 						/>
 						<div className="text_style_add_modal_button_area">
-							<Button
-								onClick={() => {
-									addItem();
-									closeModal();
-								}}
-								variant="primary"
-								disabled={!isDisableAdd}
-							>
-								{__('Add', 'vk-blocks')}
-							</Button>
-							<Button variant="secondary" onClick={closeModal}>
-								{__('Cancel', 'vk-blocks')}
-							</Button>
+							<Flex justify="flex-end">
+								<FlexItem>
+									<Button
+										variant="secondary"
+										onClick={closeModal}
+									>
+										{__('Cancel')}
+									</Button>
+								</FlexItem>
+								<FlexItem>
+									<Button
+										onClick={() => {
+											addItem();
+											closeModal();
+										}}
+										variant="primary"
+										disabled={!isDisableAdd}
+									>
+										{__(
+											'追加',
+											// 'Add',
+											'vk-blocks'
+										)}
+									</Button>
+								</FlexItem>
+							</Flex>
 						</div>
 					</div>
 				</Modal>

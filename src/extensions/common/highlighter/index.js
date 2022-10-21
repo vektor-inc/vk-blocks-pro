@@ -8,7 +8,7 @@ import {
 	applyFormat,
 	removeFormat,
 	getActiveFormat,
-	useAnchorRef,
+	useAnchor,
 } from '@wordpress/rich-text';
 import {
 	RichTextToolbarButton,
@@ -71,7 +71,7 @@ const HighlighterEdit = (props) => {
 			background: `linear-gradient(transparent 60%, ${rgbaHeightlightColor} 0)`,
 		};
 	}
-	const anchorRef = useAnchorRef({ ref: contentRef, value });
+	const anchorRef = useAnchor({ ref: contentRef, value });
 	const [isAddingColor, setIsAddingColor] = useState(false);
 
 	const enableIsAddingColor = useCallback(

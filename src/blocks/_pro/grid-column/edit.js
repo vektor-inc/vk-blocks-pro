@@ -45,6 +45,7 @@ export default function GridColumnEdit(props) {
 		className: `vk_gridColumn`,
 	});
 	const marginBottom = attributes.marginBottom;
+	const unit = attributes.unit;
 
 	return (
 		<>
@@ -70,7 +71,7 @@ export default function GridColumnEdit(props) {
 						}}
 						min={0}
 						max={100}
-						step={0.1}
+						step={'px' === unit ? 1 : 0.1}
 						allowReset={true}
 						resetFallbackValue={null}
 					/>

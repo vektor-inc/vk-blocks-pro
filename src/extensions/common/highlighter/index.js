@@ -8,6 +8,7 @@ import {
 	applyFormat,
 	removeFormat,
 	getActiveFormat,
+	useAnchorRef,
 	useAnchor,
 } from '@wordpress/rich-text';
 import {
@@ -71,7 +72,9 @@ const HighlighterEdit = (props) => {
 			background: `linear-gradient(transparent 60%, ${rgbaHeightlightColor} 0)`,
 		};
 	}
-	const anchorRef = useAnchor({ ref: contentRef, value });
+	const _useAnchor =
+		typeof useAnchor === 'function' ? useAnchor : useAnchorRef;
+	const anchorRef = _useAnchor({ ref: contentRef, value });
 	const [isAddingColor, setIsAddingColor] = useState(false);
 
 	const enableIsAddingColor = useCallback(

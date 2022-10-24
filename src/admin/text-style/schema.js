@@ -11,7 +11,7 @@ export const schema = {
 	font_strikethrough: false,
 	color: '',
 	background_color: '',
-	active_highlighter: false,
+	is_active_highlighter: false,
 	highlighter: vkBlocksObject.highlighterColor,
 	font_size: '',
 	nowrap: false,

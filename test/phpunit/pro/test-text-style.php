@@ -10,12 +10,12 @@ class TextStyleTest extends WP_UnitTestCase {
 	/**
 	 * よく使う書式設定のインラインCSSテスト
 	 */
-	public function test_vk_blocks_get_text_style_inline_css() {
+	public function test_vk_blocks_get_text_style_lists_inline_css() {
 		$test_data = array(
 			// スタイルを変更していない時はCSSを表示しない
 			array(
 				'option'  => array(
-					'text_style' => array(
+					'text_style_lists' => array(
 						array(
 							'title' => '書式設定1',
 							'font_weight_bold' => false,
@@ -23,7 +23,7 @@ class TextStyleTest extends WP_UnitTestCase {
 							'font_strikethrough' => false,
 							'color' => null,
 							'background_color' => null,
-							'active_highlighter' => false,
+							'is_active_highlighter' => false,
 							'highlighter' => null,
 							'font_size' => null,
 							'nowrap' => false,
@@ -36,7 +36,7 @@ class TextStyleTest extends WP_UnitTestCase {
 			// 保存したCSSを取得できるかテスト
 			array(
 				'option'  => array(
-					'text_style' => array(
+					'text_style_lists' => array(
 						array(
 							'title' => '書式設定1',
 							'font_weight_bold' => false,
@@ -44,7 +44,7 @@ class TextStyleTest extends WP_UnitTestCase {
 							'font_strikethrough' => false,
 							'color' => '#fffd6b',
 							'background_color' => null,
-							'active_highlighter' => false,
+							'is_active_highlighter' => false,
 							'highlighter' => null,
 							'font_size' => null,
 							'nowrap' => false,
@@ -57,7 +57,7 @@ class TextStyleTest extends WP_UnitTestCase {
 							'font_strikethrough' => true,
 							'color' => '#fff',
 							'background_color' => '#fff',
-							'active_highlighter' => true,
+							'is_active_highlighter' => true,
 							'highlighter' => '#fffd6b',
 							'font_size' => '#fff',
 							'nowrap' => true,
@@ -70,7 +70,7 @@ class TextStyleTest extends WP_UnitTestCase {
 		);
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
-		print 'vk_blocks_get_text_style_inline_css()' . PHP_EOL;
+		print 'vk_blocks_get_text_style_lists_inline_css()' . PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
 		foreach ( $test_data as $test_value ) {
 
@@ -78,7 +78,7 @@ class TextStyleTest extends WP_UnitTestCase {
 				update_option( 'vk_blocks_options', $test_value['option'] );
 			}
 
-			$return  = vk_blocks_get_text_style_inline_css();
+			$return  = vk_blocks_get_text_style_lists_inline_css();
 			$correct = $test_value['correct'];
 
 			// print 'return  :';

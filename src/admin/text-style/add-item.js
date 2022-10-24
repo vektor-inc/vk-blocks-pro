@@ -37,7 +37,7 @@ export const AddItemButton = () => {
 	};
 
 	const addItem = () => {
-		vkBlocksOption.text_style.push({
+		vkBlocksOption.text_style_lists.push({
 			...schema,
 			...{
 				class_name: className,
@@ -75,7 +75,7 @@ export const AddItemButton = () => {
 			);
 		}
 		// クラス名が既に登録されているか
-		vkBlocksOption.text_style.forEach((option) => {
+		vkBlocksOption.text_style_lists.forEach((option) => {
 			if (option.class_name === value) {
 				bool = false;
 				message = __(
@@ -90,7 +90,7 @@ export const AddItemButton = () => {
 	};
 
 	return (
-		<div className="text_style_item_add">
+		<div className="text_style_lists_item_add">
 			<Button
 				className="add-item-button"
 				icon={plusCircle}

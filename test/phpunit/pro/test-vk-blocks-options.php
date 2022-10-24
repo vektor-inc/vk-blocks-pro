@@ -128,7 +128,7 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 						'type'    => 'boolean',
 						'default' => false,
 					),
-					'text_style'           => array(
+					'text_style_lists'           => array(
 						'type'  => 'array',
 						'items' => array(
 							'title'              => array(
@@ -155,7 +155,7 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 								'type'    => 'string',
 								'default' => null,
 							),
-							'active_highlighter' => array(
+							'is_active_highlighter' => array(
 								'type'    => 'boolean',
 								'default' => false,
 							),

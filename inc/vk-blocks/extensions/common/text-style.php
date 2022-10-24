@@ -10,10 +10,10 @@
  *
  * @return string
  */
-function vk_blocks_get_text_style_inline_css() {
+function vk_blocks_get_text_style_lists_inline_css() {
 	$vk_blocks_options = VK_Blocks_Options::get_options();
 	$dynamic_css       = '';
-	foreach ( $vk_blocks_options['text_style'] as $text_style ) {
+	foreach ( $vk_blocks_options['text_style_lists'] as $text_style ) {
 		// CSSの中身を作る
 		$declarations = '';
 		if ( $text_style['font_weight_bold'] ) {
@@ -35,15 +35,15 @@ function vk_blocks_get_text_style_inline_css() {
 			$declarations .= 'color:' . vk_blocks_get_color_code( $text_style['color'] ) . ';';
 		}
 		$highlighter_color = ! empty( $text_style['highlighter'] ) && $text_style['highlighter'] ? $text_style['highlighter'] : VK_Blocks_Global_Settings::HIGHLIGHTER_COLOR;
-		if ( $text_style['active_highlighter'] && ! empty( $text_style['background_color'] ) ) {
+		if ( $text_style['is_active_highlighter'] && ! empty( $text_style['background_color'] ) ) {
 			// background_colorとhighlighter両方
 			$declarations .= 'background:linear-gradient(' . vk_blocks_get_color_code( $text_style['background_color'] ) . ' 60%, ' . vk_blocks_get_hex_to_rgba( $highlighter_color, '0.7' ) . ' 0);';
 		}
-		if ( ! $text_style['active_highlighter'] && ! empty( $text_style['background_color'] ) ) {
+		if ( ! $text_style['is_active_highlighter'] && ! empty( $text_style['background_color'] ) ) {
 			// background_colorのみ
 			$declarations .= 'background:' . vk_blocks_get_color_code( $text_style['background_color'] ) . ';';
 		}
-		if ( $text_style['active_highlighter'] && empty( $text_style['background_color'] ) ) {
+		if ( $text_style['is_active_highlighter'] && empty( $text_style['background_color'] ) ) {
 			// highlighterのみ
 			$declarations .= 'background:linear-gradient(transparent 60%, ' . vk_blocks_get_hex_to_rgba( $highlighter_color, '0.7' ) . ' 0);';
 		}

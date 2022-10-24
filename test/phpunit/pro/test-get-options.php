@@ -84,7 +84,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 						),
 					),
 					'load_separate_option' => false,
-					'text_style' => array(
+					'text_style_lists' => array(
 						array(
 							'title' => null,
 							'font_weight_bold' => false,
@@ -92,7 +92,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'font_strikethrough' => false,
 							'color' => null,
 							'background_color' => null,
-							'active_highlighter' => false,
+							'is_active_highlighter' => false,
 							'highlighter' => '#fffd6b',
 							'font_size' => null,
 							'nowrap' => false,
@@ -298,7 +298,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 			),
 			// カスタム書式追加 v1.41.2
 			array(
-				'option_check_target' => 'text_style',
+				'option_check_target' => 'text_style_lists',
 				'option'  => array(
 					'display_vk_block_template' => 'hide',
 					'new_faq_accordion' => 'open',
@@ -332,7 +332,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 						'font_strikethrough' => false,
 						'color' => null,
 						'background_color' => null,
-						'active_highlighter' => false,
+						'is_active_highlighter' => false,
 						'highlighter' => '#fffd6b',
 						'font_size' => null,
 						'nowrap' => false,
@@ -373,7 +373,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 						),
 					),
 					'load_separate_option' => true,
-					'text_style' => array(
+					'text_style_lists' => array(
 						array(
 							'title' => '書式設定1',
 							'font_weight_bold' => true,
@@ -381,7 +381,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'font_strikethrough' => true,
 							'color' => '#fff',
 							'background_color' => '#fff',
-							'active_highlighter' => true,
+							'is_active_highlighter' => true,
 							'highlighter' => '#fffd6b',
 							'font_size' => '#fff',
 							'nowrap' => true,
@@ -394,7 +394,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'font_strikethrough' => true,
 							'color' => '#fff',
 							'background_color' => '#fff',
-							'active_highlighter' => true,
+							'is_active_highlighter' => true,
 							'highlighter' => '#fffd6b',
 							'font_size' => '#fff',
 							'nowrap' => true,
@@ -436,7 +436,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 						),
 					),
 					'load_separate_option' => true,
-					'text_style' => array(
+					'text_style_lists' => array(
 						array(
 							'title' => '書式設定1',
 							'font_weight_bold' => true,
@@ -444,7 +444,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'font_strikethrough' => true,
 							'color' => '#fff',
 							'background_color' => '#fff',
-							'active_highlighter' => true,
+							'is_active_highlighter' => true,
 							'highlighter' => '#fffd6b',
 							'font_size' => '#fff',
 							'nowrap' => true,
@@ -457,7 +457,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'font_strikethrough' => true,
 							'color' => '#fff',
 							'background_color' => '#fff',
-							'active_highlighter' => true,
+							'is_active_highlighter' => true,
 							'highlighter' => '#fffd6b',
 							'font_size' => '#fff',
 							'nowrap' => true,

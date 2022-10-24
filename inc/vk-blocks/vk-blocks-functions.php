@@ -91,7 +91,7 @@ function vk_blocks_blocks_assets() {
 		'vk_blocks_params',
 		array(
 			'home_url'  => home_url( '/' ),
-			'textStyle' => $vk_blocks_options['text_style'],
+			'textStyle' => $vk_blocks_options['text_style_lists'],
 		)
 	);
 
@@ -151,7 +151,7 @@ function vk_blocks_blocks_assets() {
 
 	$dynamic_css .= vk_blocks_get_spacer_size_style_all( $vk_blocks_options );
 	// よく使う書式設定
-	$dynamic_css .= vk_blocks_get_text_style_inline_css();
+	$dynamic_css .= vk_blocks_get_text_style_lists_inline_css();
 
 	$dynamic_css = vk_blocks_minify_css( $dynamic_css );
 	wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );

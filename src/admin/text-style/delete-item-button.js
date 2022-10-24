@@ -20,14 +20,14 @@ export const DeleteItemButton = (props) => {
 	const closeModal = () => setIsModalOpen(false);
 
 	const deleteItem = () => {
-		vkBlocksOption.text_style.splice(i, 1);
+		vkBlocksOption.text_style_lists.splice(i, 1);
 		setVkBlocksOption({
 			...vkBlocksOption,
 		});
 	};
 
-	const textStyleTitle = !!vkBlocksOption.text_style[i].title
-		? vkBlocksOption.text_style[i].title
+	const textStyleTitle = !!vkBlocksOption.text_style_lists[i].title
+		? vkBlocksOption.text_style_lists[i].title
 		: '';
 
 	return (

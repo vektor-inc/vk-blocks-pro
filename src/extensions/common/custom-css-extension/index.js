@@ -26,7 +26,12 @@ export const inString = (str, keyword) => {
 	return str.indexOf(keyword) !== -1;
 };
 
-export const isAddBlockCss = (blockName) => {
+export const hasCustomCssSupport = (blockName) => {
+	// 追加CSSクラスを許可していない場合はfalse
+	if (!hasBlockSupport(blockName, 'customClassName', true)) {
+		return false;
+	}
+
 	const allowed = ['core', 'vk-blocks'];
 	let returnBool =
 		allowed.find((item) => inString(blockName, item)) !== undefined;
@@ -50,251 +55,254 @@ export const isAddBlockCss = (blockName) => {
 	return returnBool;
 };
 
-export const customCssRegex = /vk_custom_css/;
+export const existsCss = (css) => {
+	// cssが存在するかつ空白文字のみではない
+	return css && css.match(/\S/g);
+};
+
 export const customCssSelectorRegex = /selector/;
 
 /**
  * Filters registered block settings.
+ *
+ * @param {Object} settings
  */
-addFilter(
-	'blocks.registerBlockType',
-	'vk-blocks/custom-css-extension',
-	(settings) => {
-		const hasCustomClassName = hasBlockSupport(
-			settings.name,
-			'customClassName',
-			true
-		);
-		if (isAddBlockCss(settings.name) && hasCustomClassName) {
-			settings.attributes = {
-				...settings.attributes,
-				vkbCustomCss: {
-					type: 'string',
-				},
+export function addAttribute(settings) {
+	if (!hasCustomCssSupport(settings.name)) {
+		return settings;
+	}
+	settings.attributes = {
+		...settings.attributes,
+		vkbCustomCss: {
+			type: 'string',
+		},
+	};
+	return settings;
+}
+
+/**
+ * Override the default edit UI to include layout controls
+ */
+export const withInspectorControls = createHigherOrderComponent(
+	(BlockEdit) => (props) => {
+		const { name, attributes, setAttributes, isSelected } = props;
+		if (!hasCustomCssSupport(name) || !isSelected) {
+			return <BlockEdit {...props} />;
+		}
+
+		const { vkbCustomCss, className } = attributes;
+		// 追加CSSを半角文字列で分けて配列化
+		const nowClassArray = className ? className.split(' ') : [];
+
+		// 追加 CSS クラスにvk_custom_cssがあるか
+		const existsCustomCssClass = (_nowClassArray) => {
+			return _nowClassArray.indexOf('vk_custom_css') !== -1
+				? true
+				: false;
+		};
+
+		// カスタムCSSにselectorがあるか
+		const existsCustomCssSelector = (_vkbCustomCss) => {
+			return customCssSelectorRegex.test(_vkbCustomCss);
+		};
+
+		// vkbCustomCssが変更されたとき
+		useEffect(() => {
+			if (
+				!existsCustomCssClass(nowClassArray) &&
+				existsCustomCssSelector(vkbCustomCss)
+			) {
+				// カスタムCSS用クラスを追加
+				setAttributes({
+					className: classnames(nowClassArray, `vk_custom_css`),
+				});
+			}
+
+			if (
+				existsCustomCssClass(nowClassArray) &&
+				!existsCustomCssSelector(vkbCustomCss)
+			) {
+				// カスタムCSS用クラスを削除
+				const deleteClass = nowClassArray.indexOf('vk_custom_css');
+				nowClassArray.splice(deleteClass, 1);
+				setAttributes({ className: classnames(nowClassArray) });
+			}
+		}, [vkbCustomCss]);
+
+		// classNameが変更されたときに
+		useEffect(() => {
+			if (
+				!existsCustomCssClass(nowClassArray) &&
+				existsCustomCssSelector(vkbCustomCss)
+			) {
+				// カスタムCSS用クラスを追加
+				setAttributes({
+					className: classnames(`vk_custom_css`, nowClassArray),
+				});
+			}
+		}, [className]);
+
+		// アイコンのスタイル
+		let iconStyle = {
+			width: '24px',
+			height: '24px',
+		};
+		if (existsCss(vkbCustomCss)) {
+			iconStyle = {
+				...iconStyle,
+				color: '#fff',
+				background: '#1e1e1e',
 			};
 		}
-		return settings;
+
+		return (
+			<>
+				<BlockEdit {...props} />
+				<InspectorControls>
+					<PanelBody
+						className={'vk_custom_css_panel'}
+						icon={<Icon icon={IconSVG} style={iconStyle} />}
+						title={__(
+							'カスタムCSS',
+							// 'Custom CSS',
+							'vk-blocks'
+						)}
+						initialOpen={false}
+					>
+						<CodeMirrorCss
+							className="vk-codemirror-block-editor"
+							value={vkbCustomCss ? vkbCustomCss : ''}
+							onChange={(value) => {
+								setAttributes({ vkbCustomCss: value });
+							}}
+						/>
+						{(() => {
+							if (
+								vkbCustomCss &&
+								vkbCustomCss.indexOf('　') !== -1
+							) {
+								return (
+									<p>
+										{__(
+											'注意 : 全角スペースが含まれています。CSSが効かない可能性があります。',
+											// 'Note : Contains double-byte spaces; CSS may not work.',
+											'vk-blocks'
+										)}
+									</p>
+								);
+							}
+						})()}
+						<p>
+							{__(
+								'selector を指定した場合、ブロック固有の CSS クラスに置き換わります。',
+								// 'If selector is specified, it is replaced by a block-specific CSS class.',
+								'vk-blocks'
+							)}
+						</p>
+						<p>
+							{__(
+								'"selector"以外のCSSセレクターは、ページ全体に影響する可能性があります。',
+								// 'If selector is set to "selector", it will be replaced with a block-specific CSS class. CSS selectors other than "selector" may affect the entire page.',
+								'vk-blocks'
+							)}
+						</p>
+						<p>
+							{__(
+								'例:',
+								// 'Example:',
+								'vk-blocks'
+							)}
+						</p>
+						<pre className="vk-custom-css-sample-code">
+							{'selector {\n    background: #f5f5f5;\n}'}
+						</pre>
+						<p>
+							{__(
+								'編集画面をできるだけ公開画面に近づけたい場合や、自作のCSSが識別表示用のCSSと干渉して編集画面で意図した通りに表示されない場合は、非表示にすることをお勧めします。',
+								// 'If you want the edit screen to be as close to the public screen as possible, or if your own CSS interferes with the CSS for the identification display and does not display as intended on the edit screen, please hide it.',
+								'vk-blocks'
+							)}
+						</p>
+						<Button
+							href={addQueryArgs(
+								'options-general.php?page=vk_blocks_options#custom-css-setting'
+							)}
+							target="_blank"
+							rel="noreferrer"
+							variant="secondary"
+							isSmall
+						>
+							{__(
+								'カスタムCSS設定',
+								// 'Custom CSS Setting',
+								'vk-blocks'
+							)}
+						</Button>
+					</PanelBody>
+				</InspectorControls>
+			</>
+		);
+	},
+	'withInspectorControls'
+);
+
+/**
+ * Override the default block element to include elements styles.
+ */
+const withElementsStyles = createHigherOrderComponent(
+	(BlockListBlock) => (props) => {
+		const { name, attributes } = props;
+		if (!hasCustomCssSupport(name)) {
+			return <BlockListBlock {...props} />;
+		}
+		// 編集画面で使用出来る Unique id
+		// @see https://github.com/WordPress/gutenberg/blob/086b77ed409a70a6c6a6e74dee704851eff812f2/packages/compose/src/hooks/use-instance-id/README.md
+		const id = useInstanceId(BlockListBlock);
+		const uniqueClass = `vk_custom_css_${id}`;
+
+		const { vkbCustomCss } = attributes;
+		// editor用のクラス名を追加
+		const customCssClass = classnames(props.className, {
+			[uniqueClass]: existsCss(vkbCustomCss),
+			[`vk_edit_custom_css`]:
+				vk_blocks_params.show_custom_css_editor_flag === 'show' &&
+				existsCss(vkbCustomCss),
+		});
+
+		// selectorをUniqueクラスに変換する
+		let cssTag = vkbCustomCss ? vkbCustomCss : '';
+		if (cssTag && uniqueClass) {
+			cssTag = vkbCustomCss.replace(
+				customCssSelectorRegex,
+				'.' + uniqueClass
+			);
+		}
+
+		return (
+			<>
+				{(() => {
+					if (cssTag) {
+						return <style>{cssTag}</style>;
+					}
+				})()}
+				<BlockListBlock {...props} className={customCssClass} />
+			</>
+		);
 	}
 );
 
-/**
- * edit.js
- */
+addFilter(
+	'blocks.registerBlockType',
+	'vk-blocks/custom-css/addAttribute',
+	addAttribute
+);
 addFilter(
 	'editor.BlockEdit',
-	'vk-blocks/custom-css',
-	createHigherOrderComponent((BlockEdit) => {
-		return (props) => {
-			const { name, attributes, setAttributes, isSelected } = props;
-			const { vkbCustomCss, className } = attributes;
-			const hasCustomClassName = hasBlockSupport(
-				name,
-				'customClassName',
-				true
-			);
-			// 追加CSSを半角文字列で分けて配列化
-			const nowClassArray = className ? className.split(' ') : [];
-
-			// vkbCustomCssが変更されたとき
-			useEffect(() => {
-				// カスタムCSS用クラスが無いかつselectorがあればカスタムCSS用クラスを追加
-				if (
-					nowClassArray.indexOf('vk_custom_css') === -1 &&
-					customCssSelectorRegex.test(vkbCustomCss)
-				) {
-					setAttributes({
-						className: classnames(nowClassArray, `vk_custom_css`),
-					});
-				}
-
-				// カスタムCSS用クラスがあるかつselectorがなければカスタムCSS用クラスを削除
-				if (
-					nowClassArray.indexOf('vk_custom_css') !== -1 &&
-					!customCssSelectorRegex.test(vkbCustomCss)
-				) {
-					const deleteClass = nowClassArray.indexOf('vk_custom_css');
-					nowClassArray.splice(deleteClass, 1);
-					setAttributes({ className: classnames(nowClassArray) });
-				}
-			}, [vkbCustomCss]);
-
-			// classNameが変更されたときに
-			useEffect(() => {
-				// カスタムCSS用クラスが無いかつselectorがあればカスタムCSS用クラスを追加
-				if (
-					nowClassArray.indexOf('vk_custom_css') === -1 &&
-					customCssSelectorRegex.test(vkbCustomCss)
-				) {
-					setAttributes({
-						className: classnames(nowClassArray, `vk_custom_css`),
-					});
-				}
-			}, [className]);
-
-			// アイコンのスタイル
-			let iconStyle = {
-				width: '24px',
-				height: '24px',
-			};
-			// vkbCustomCssが存在するかつ空白文字のみではない
-			if (vkbCustomCss && vkbCustomCss.match(/\S/g)) {
-				iconStyle = {
-					...iconStyle,
-					color: '#fff',
-					background: '#1e1e1e',
-				};
-			}
-
-			if (isAddBlockCss(name) && hasCustomClassName && isSelected) {
-				return (
-					<>
-						<BlockEdit {...props} />
-						<InspectorControls>
-							<PanelBody
-								className={'vk_custom_css_panel'}
-								icon={<Icon icon={IconSVG} style={iconStyle} />}
-								title={__(
-									'カスタムCSS',
-									// 'Custom CSS',
-									'vk-blocks'
-								)}
-								initialOpen={false}
-							>
-								<CodeMirrorCss
-									className="vk-codemirror-block-editor"
-									value={vkbCustomCss ? vkbCustomCss : ''}
-									onChange={(value) => {
-										setAttributes({ vkbCustomCss: value });
-									}}
-								/>
-								{(() => {
-									if (
-										vkbCustomCss &&
-										vkbCustomCss.indexOf('　') !== -1
-									) {
-										return (
-											<p>
-												{__(
-													'注意 : 全角スペースが含まれています。CSSが効かない可能性があります。',
-													// 'Note : Contains double-byte spaces; CSS may not work.',
-													'vk-blocks'
-												)}
-											</p>
-										);
-									}
-								})()}
-								<p>
-									{__(
-										'selector を指定した場合、ブロック固有の CSS クラスに置き換わります。',
-										// 'If selector is specified, it is replaced by a block-specific CSS class.',
-										'vk-blocks'
-									)}
-								</p>
-								<p>
-									{__(
-										'"selector"以外のCSSセレクターは、ページ全体に影響する可能性があります。',
-										// 'If selector is set to "selector", it will be replaced with a block-specific CSS class. CSS selectors other than "selector" may affect the entire page.',
-										'vk-blocks'
-									)}
-								</p>
-								<p>
-									{__(
-										'例:',
-										// 'Example:',
-										'vk-blocks'
-									)}
-								</p>
-								<pre
-									style={{
-										whiteSpace: 'pre-wrap',
-										padding: '16px',
-										display: 'block',
-										background: '#f5f5f5',
-									}}
-								>
-									{'selector {\n    background: #f5f5f5;\n}'}
-								</pre>
-								<p>
-									{__(
-										'編集画面をできるだけ公開画面に近づけたい場合や、自作のCSSが識別表示用のCSSと干渉して編集画面で意図した通りに表示されない場合は、非表示にすることをお勧めします。',
-										// 'If you want the edit screen to be as close to the public screen as possible, or if your own CSS interferes with the CSS for the identification display and does not display as intended on the edit screen, please hide it.',
-										'vk-blocks'
-									)}
-								</p>
-								<Button
-									href={addQueryArgs(
-										'options-general.php?page=vk_blocks_options#custom-css-setting'
-									)}
-									target="_blank"
-									rel="noreferrer"
-									variant="secondary"
-									isSmall
-								>
-									{__(
-										'カスタムCSS設定',
-										// 'Custom CSS Setting',
-										'vk-blocks'
-									)}
-								</Button>
-							</PanelBody>
-						</InspectorControls>
-					</>
-				);
-			}
-			return <BlockEdit {...props} />;
-		};
-	}, 'vkbCustomCssSection')
+	'vk-blocks/editor/custom-css/with-inspector-controls',
+	withInspectorControls
 );
-
-/**
- * edit.js
- */
 addFilter(
 	'editor.BlockListBlock',
-	'vk-blocks/custom-css',
-	createHigherOrderComponent((BlockListBlock) => {
-		return (props) => {
-			const { name, attributes } = props;
-			const hasCustomClassName = hasBlockSupport(
-				name,
-				'customClassName',
-				true
-			);
-			const { vkbCustomCss } = attributes;
-			// 編集画面で使用出来る Unique id
-			// @see https://github.com/WordPress/gutenberg/blob/086b77ed409a70a6c6a6e74dee704851eff812f2/packages/compose/src/hooks/use-instance-id/README.md
-			const id = useInstanceId(BlockListBlock);
-			const uniqueClass = `vk_custom_css_${id}`;
-
-			// editor用のクラス名を追加
-			const customCssClass = classnames(props.className, {
-				// vkbCustomCssが存在するかつ空白文字のみではない
-				[uniqueClass]: vkbCustomCss && vkbCustomCss.match(/\S/g),
-				[`vk_edit_custom_css`]:
-					vk_blocks_params.show_custom_css_editor_flag === 'true' &&
-					vkbCustomCss &&
-					vkbCustomCss.match(/\S/g),
-			});
-
-			// selectorをUniqueクラスに変換する
-			let cssTag = vkbCustomCss ? vkbCustomCss : '';
-			if (cssTag && uniqueClass) {
-				cssTag = vkbCustomCss.replace('selector', '.' + uniqueClass);
-			}
-
-			if (isAddBlockCss(name) && hasCustomClassName) {
-				return (
-					<>
-						{(() => {
-							if (cssTag) {
-								return <style>{cssTag}</style>;
-							}
-						})()}
-						<BlockListBlock {...props} className={customCssClass} />
-					</>
-				);
-			}
-			return <BlockListBlock {...props} />;
-		};
-	}, 'vkbCustomCss')
+	'vk-blocks/style/with-block-controls',
+	withElementsStyles
 );

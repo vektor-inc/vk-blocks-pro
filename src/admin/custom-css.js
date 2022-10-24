@@ -12,14 +12,7 @@ import { AdminContext } from '@vkblocks/admin/index';
 
 export default function AdminCustomCss() {
 	const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
-	// 後から追加したbooleanは値がない時にupdate_optionできない
-	// https://core.trac.wordpress.org/ticket/40007
-	let migrateLoadSeparateOption;
-	if (vkBlocksOption.show_custom_css_editor_flag === 'true') {
-		migrateLoadSeparateOption = true;
-	} else {
-		migrateLoadSeparateOption = false;
-	}
+
 	return (
 		<>
 			<section>
@@ -37,12 +30,16 @@ export default function AdminCustomCss() {
 						// 'Show Custom CSS flag in editor',
 						'vk-blocks'
 					)}
-					checked={migrateLoadSeparateOption}
+					checked={
+						vkBlocksOption.show_custom_css_editor_flag === 'show'
+							? true
+							: false
+					}
 					onChange={(newValue) => {
 						if (newValue) {
-							newValue = 'true';
+							newValue = 'show';
 						} else {
-							newValue = 'false';
+							newValue = 'hide';
 						}
 						setVkBlocksOption({
 							...vkBlocksOption,

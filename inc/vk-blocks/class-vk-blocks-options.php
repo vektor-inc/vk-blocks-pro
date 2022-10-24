@@ -137,14 +137,12 @@ class VK_Blocks_Options {
 				'type'    => 'boolean',
 				'default' => false,
 			),
-			// 後から追加したbooleanは値がない時にupdate_option出来なくなるのでstringで保存
-			// https://core.trac.wordpress.org/ticket/40007
 			'show_custom_css_editor_flag' => array(
 				'type'    => 'string',
-				'default' => 'true',
+				'default' => 'show',
 			),
 		);
-		$array = array_merge( $default_options_schema, apply_filters( 'vk_blocks_default_options_scheme', array() ) );
+		$array                  = array_merge( $default_options_schema, apply_filters( 'vk_blocks_default_options_scheme', array() ) );
 		return $array;
 	}
 

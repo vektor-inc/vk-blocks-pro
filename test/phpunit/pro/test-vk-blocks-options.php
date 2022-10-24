@@ -130,7 +130,7 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 					),
 					'show_custom_css_editor_flag' => array(
 						'type'    => 'string',
-						'default' => 'true',
+						'default' => 'show',
 					),
 					'vk_blocks_pro_license_key' => array(
 						'type'    => 'string',

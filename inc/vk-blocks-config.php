@@ -30,16 +30,12 @@ if ( ! function_exists( 'vk_blocks_active' ) ) {
 	if ( $vk_blocks_prefix ) {
 		$vk_blocks_prefix .= ' ';
 	}
-	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/class-vk-blocks-block-loader.php';
-	VK_Blocks_Block_Loader::init();
-
 
 	require_once plugin_dir_path( __FILE__ ) . 'vk-helpers/config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-admin/vk-admin-config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/helpers.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-components/vk-components-config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-blocks/load-vk-components.php';
-	require_once plugin_dir_path( __FILE__ ) . 'font-awesome/font-awesome-config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'term-color/term-color-config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-css-optimize/vk-css-optimize-config.php';
 	require_once plugin_dir_path( __FILE__ ) . 'vk-swiper/config.php';

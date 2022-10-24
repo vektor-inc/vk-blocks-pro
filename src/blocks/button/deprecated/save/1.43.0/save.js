@@ -11,7 +11,6 @@ export default function save(props) {
 		buttonTarget,
 		buttonSize,
 		buttonType,
-		buttonEffect,
 		buttonColor,
 		buttonTextColorCustom,
 		buttonColorCustom,
@@ -53,11 +52,6 @@ export default function save(props) {
 		}
 	} else {
 		containerClass += ` vk_button-align-${buttonAlign}`;
-	}
-
-	// エフェクト
-	if (buttonEffect !== '') {
-		containerClass += ` is-style-${buttonEffect}`;
 	}
 
 	const blockProps = useBlockProps.save({

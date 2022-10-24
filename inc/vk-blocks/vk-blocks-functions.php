@@ -16,9 +16,19 @@ require_once dirname( __FILE__ ) . '/view/class-vk-blocks-postlist.php';
 
 require_once dirname( __FILE__ ) . '/class-vk-blocks-print-css-variables.php';
 
+// グローバル設定を定義
+require_once dirname( __FILE__ ) . '/class-vk-blocks-global-settings.php';
+VK_Blocks_Global_Settings::init();
+
+require_once dirname( __FILE__ ) . '/class-vk-blocks-block-loader.php';
+VK_Blocks_Block_Loader::init();
+
 // オプション値を定義
 require_once dirname( __FILE__ ) . '/class-vk-blocks-options.php';
 VK_Blocks_Options::init();
+
+// font-awesome
+require_once dirname( __FILE__ ) . '/font-awesome/font-awesome-config.php';
 
 // utils
 require_once dirname( __FILE__ ) . '/utils/array-merge.php';
@@ -55,17 +65,6 @@ add_filter(
 );
 
 /**
- * VK Blocks is Larger than WP
- *
- * @param string $target_version Target version.
- * @param string $syntax syntax.
- */
-function vk_blocks_is_lager_than_wp( $target_version, $syntax = '>=' ) {
-	global $wp_version;
-	return defined( 'GUTENBERG_VERSION' ) || version_compare( $wp_version, $target_version, $syntax );
-}
-
-/**
  * VK Blocks Assets
  */
 function vk_blocks_blocks_assets() {
@@ -81,51 +80,49 @@ function vk_blocks_blocks_assets() {
 	// ホーム URL を渡す用.
 	wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_params', array( 'home_url' => home_url( '/' ) ) );
 
-	if ( vk_blocks_is_lager_than_wp( '5.0' ) ) {
-		global $vk_blocks_common_attributes;
-		$vk_blocks_common_attributes = array(
-			'vkb_hidden'       => array(
-				'type'    => 'boolean',
-				'default' => false,
-			),
-			'vkb_hidden_xxl'   => array(
-				'type'    => 'boolean',
-				'default' => false,
-			),
-			'vkb_hidden_xl_v2' => array(
-				'type'    => 'boolean',
-				'default' => false,
-			),
-			'vkb_hidden_xl'    => array(
-				'type'    => 'boolean',
-				'default' => false,
-			),
-			'vkb_hidden_lg'    => array(
-				'type'    => 'boolean',
-				'default' => false,
-			),
-			'vkb_hidden_md'    => array(
-				'type'    => 'boolean',
-				'default' => false,
-			),
-			'vkb_hidden_sm'    => array(
-				'type'    => 'boolean',
-				'default' => false,
-			),
-			'vkb_hidden_xs'    => array(
-				'type'    => 'boolean',
-				'default' => false,
-			),
-			'marginTop'        => array(
-				'type'    => 'string',
-				'default' => '',
-			),
-			'marginBottom'     => array(
-				'type'    => 'string',
-				'default' => '',
-			),
-		);
-	}
+	global $vk_blocks_common_attributes;
+	$vk_blocks_common_attributes = array(
+		'vkb_hidden'       => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'vkb_hidden_xxl'   => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'vkb_hidden_xl_v2' => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'vkb_hidden_xl'    => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'vkb_hidden_lg'    => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'vkb_hidden_md'    => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'vkb_hidden_sm'    => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'vkb_hidden_xs'    => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'marginTop'        => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+		'marginBottom'     => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+	);
 
 	$dynamic_css = '
 		:root {
@@ -218,32 +215,3 @@ if ( ! function_exists( 'vk_blocks_set_wp_version' ) ) {
 	}
 	add_action( 'admin_head', 'vk_blocks_set_wp_version', 10, 0 );
 }
-
-if ( function_exists( 'vk_blocks_get_version' ) ) {
-	/**
-	 * VK Blocks Set VKBPro Version
-	 */
-	function vk_blocks_set_vkbpro_version() {
-		$vkbpro_version = vk_blocks_get_version();
-		if ( $vkbpro_version ) {
-			echo '<script>',
-			'var vkbproVersion = "' . esc_attr( $vkbpro_version ) . '";',
-			'</script>';
-		}
-	}
-	add_action( 'admin_head', 'vk_blocks_set_vkbpro_version', 10, 0 );
-}
-
-/**
- * VK BLocks Set VKB Saved Block Version
- */
-function vk_blocks_set_vkb_saved_block_version() {
-	$post_id                  = get_the_ID();
-	$_vkb_saved_block_version = get_post_meta( $post_id, '_vkb_saved_block_version', true );
-	if ( $_vkb_saved_block_version ) {
-		echo '<script>',
-		'var vkbSavedBlockVersion = "' . esc_attr( $_vkb_saved_block_version ) . '";',
-		'</script>';
-	}
-}
-add_action( 'admin_head', 'vk_blocks_set_vkb_saved_block_version' );

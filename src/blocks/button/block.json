@@ -27,6 +27,10 @@
 			"type": "string",
 			"default": "0"
 		},
+		"buttonEffect": {
+			"type": "string",
+			"default": ""
+		},
 		"buttonColor": {
 			"type": "string",
 			"default": "primary"

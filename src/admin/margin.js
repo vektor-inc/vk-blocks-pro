@@ -15,16 +15,24 @@ import { AdminContext } from '@vkblocks/admin/index';
 
 const MARGIN_SIZE_ARRAY = [
 	{
-		marginLabel: __('Small', 'vk-blocks'),
+		marginLabel: __('XS', 'vk-blocks'),
+		marginValue: 'xs',
+	},
+	{
+		marginLabel: __('S', 'vk-blocks'),
 		marginValue: 'sm',
 	},
 	{
-		marginLabel: __('Medium', 'vk-blocks'),
+		marginLabel: __('M', 'vk-blocks'),
 		marginValue: 'md',
 	},
 	{
-		marginLabel: __('Large', 'vk-blocks'),
+		marginLabel: __('L', 'vk-blocks'),
 		marginValue: 'lg',
+	},
+	{
+		marginLabel: __('XL', 'vk-blocks'),
+		marginValue: 'xl',
 	},
 ];
 
@@ -91,9 +99,9 @@ export default function AdminMargin() {
 						const { marginLabel, marginValue } = size;
 						return (
 							<li key={marginLabel}>
-								<span>
+								<span className="spacer-input__size-name">
 									{__('Margin', 'vk-blocks')} [ {marginLabel}{' '}
-									] :
+									]
 								</span>
 								{DEVICE_ARRAY.map((device) => {
 									const { deviceLabel, deviceValue } = device;

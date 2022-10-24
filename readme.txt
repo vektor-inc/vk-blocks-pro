@@ -3,8 +3,8 @@ Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,m
 Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
-Tested up to: 6.0.1
-Stable tag: 1.41.2.3
+Tested up to: 6.0.2
+Stable tag: 1.43.0.2
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,7 +63,18 @@ e.g.
 
 
 == Changelog ==
-[Improvement][Admin screen] Display the SaveButton sticky.
+
+= 1.44.0 =
+[ Add Function ][ Post List ( Pro ) ] Add post filter taxonomy relation
+[ Add Function ][ Button ] Add Button Effect option in Solid color button.
+[ Specification Change ][ Post List ( Pro ) ] Change to don't display unpublic posttype and terms list.
+[ Bug Fix ][ Grid Column Card( Pro ) ] Fixed a bug that css for editor was displayed in front.
+[ Bug Fix ][ Select Post List Item ( Pro ) ] Fixed a bug where additional CSS classes were not attached.
+
+= 1.43.0 =
+[ Add Function ][ Spacer ][ Common mergin ] Add size option xl/xs.
+[ Improvement ][ Admin screen ] Display the SaveButton sticky.
+[ Bug Fix ] Fix PHP 8.X Error
 
 = 1.42.1 =
 [ Other ] Update VK Component Posts 1.3.1

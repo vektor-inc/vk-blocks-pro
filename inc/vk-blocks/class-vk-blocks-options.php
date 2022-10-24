@@ -137,30 +137,30 @@ class VK_Blocks_Options {
 				'type'    => 'boolean',
 				'default' => false,
 			),
-			'text_style_lists'           => array(
+			'text_style_lists'     => array(
 				'type'  => 'array',
 				'items' => array(
-					'title'              => array(
+					'title'                 => array(
 						'type'    => 'string',
 						'default' => null,
 					),
-					'font_weight_bold'   => array(
+					'font_weight_bold'      => array(
 						'type'    => 'boolean',
 						'default' => false,
 					),
-					'font_italic'        => array(
+					'font_italic'           => array(
 						'type'    => 'boolean',
 						'default' => false,
 					),
-					'font_strikethrough' => array(
+					'font_strikethrough'    => array(
 						'type'    => 'boolean',
 						'default' => false,
 					),
-					'color'              => array(
+					'color'                 => array(
 						'type'    => 'string',
 						'default' => null,
 					),
-					'background_color'   => array(
+					'background_color'      => array(
 						'type'    => 'string',
 						'default' => null,
 					),
@@ -168,19 +168,19 @@ class VK_Blocks_Options {
 						'type'    => 'boolean',
 						'default' => false,
 					),
-					'highlighter'        => array(
+					'highlighter'           => array(
 						'type'    => 'string',
 						'default' => VK_Blocks_Global_Settings::HIGHLIGHTER_COLOR,
 					),
-					'font_size'          => array(
+					'font_size'             => array(
 						'type'    => 'string',
 						'default' => null,
 					),
-					'nowrap'             => array(
+					'nowrap'                => array(
 						'type'    => 'boolean',
 						'default' => false,
 					),
-					'class_name'         => array(
+					'class_name'            => array(
 						'type'    => 'string',
 						'default' => 'vk-text-style--1',
 					),

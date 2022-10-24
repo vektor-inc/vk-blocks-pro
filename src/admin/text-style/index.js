@@ -61,7 +61,11 @@ export default function AdminTextStyle() {
 				</p>
 				{(() => {
 					const items = [];
-					for (let i = 0; i < vkBlocksOption.text_style_lists.length; i++) {
+					for (
+						let i = 0;
+						i < vkBlocksOption.text_style_lists.length;
+						i++
+					) {
 						items.push(
 							<div className="text_style_item" key={i}>
 								<TextStylePreview i={i} />
@@ -87,12 +91,13 @@ export default function AdminTextStyle() {
 													onChange('title', value, i)
 												}
 												value={
-													!!vkBlocksOption.text_style_lists[
-														i
-													].title
+													!!vkBlocksOption
+														.text_style_lists[i]
+														.title
 														? vkBlocksOption
-																.text_style_lists[i]
-																.title
+																.text_style_lists[
+																i
+														  ].title
 														: ''
 												}
 											/>
@@ -122,7 +127,8 @@ export default function AdminTextStyle() {
 												name={`vk_blocks_options[text_style_lists][${i}][font_weight_bold]`}
 												label={__('Bold', 'vk-blocks')}
 												checked={
-													vkBlocksOption.text_style_lists[i]
+													vkBlocksOption
+														.text_style_lists[i]
 														.font_weight_bold
 												}
 												onChange={(value) =>
@@ -140,7 +146,8 @@ export default function AdminTextStyle() {
 													'vk-blocks'
 												)}
 												checked={
-													vkBlocksOption.text_style_lists[i]
+													vkBlocksOption
+														.text_style_lists[i]
 														.font_italic
 												}
 												onChange={(value) =>
@@ -158,7 +165,8 @@ export default function AdminTextStyle() {
 													'vk-blocks'
 												)}
 												checked={
-													vkBlocksOption.text_style_lists[i]
+													vkBlocksOption
+														.text_style_lists[i]
 														.font_strikethrough
 												}
 												onChange={(value) =>
@@ -176,7 +184,8 @@ export default function AdminTextStyle() {
 													'vk-blocks'
 												)}
 												checked={
-													vkBlocksOption.text_style_lists[i]
+													vkBlocksOption
+														.text_style_lists[i]
 														.nowrap
 												}
 												onChange={(value) =>
@@ -193,7 +202,8 @@ export default function AdminTextStyle() {
 													)
 												}
 												value={
-													vkBlocksOption.text_style_lists[i]
+													vkBlocksOption
+														.text_style_lists[i]
 														.font_size
 												}
 											/>
@@ -214,7 +224,8 @@ export default function AdminTextStyle() {
 												clearable
 												colors={vkColorPalette}
 												value={colorSlugToColorCode(
-													vkBlocksOption.text_style_lists[i]
+													vkBlocksOption
+														.text_style_lists[i]
 														.color
 												)}
 												onChange={(value) => {
@@ -246,7 +257,8 @@ export default function AdminTextStyle() {
 												clearable
 												colors={vkColorPalette}
 												value={colorSlugToColorCode(
-													vkBlocksOption.text_style_lists[i]
+													vkBlocksOption
+														.text_style_lists[i]
 														.background_color
 												)}
 												onChange={(value) => {
@@ -284,7 +296,8 @@ export default function AdminTextStyle() {
 													'vk-blocks'
 												)}
 												checked={
-													vkBlocksOption.text_style_lists[i]
+													vkBlocksOption
+														.text_style_lists[i]
 														.is_active_highlighter
 												}
 												onChange={(value) =>

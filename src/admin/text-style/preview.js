@@ -64,16 +64,17 @@ export const TextStylePreview = (props) => {
 					className={vkBlocksOption.text_style_lists[i].class_name}
 					style={{
 						fontWeight:
-							vkBlocksOption.text_style_lists[i].font_weight_bold &&
-							'bold',
+							vkBlocksOption.text_style_lists[i]
+								.font_weight_bold && 'bold',
 						fontStyle:
 							vkBlocksOption.text_style_lists[i].font_italic &&
 							'italic',
 						textDecoration:
-							vkBlocksOption.text_style_lists[i].font_strikethrough &&
-							'line-through',
+							vkBlocksOption.text_style_lists[i]
+								.font_strikethrough && 'line-through',
 						whiteSpace:
-							vkBlocksOption.text_style_lists[i].nowrap && 'nowrap',
+							vkBlocksOption.text_style_lists[i].nowrap &&
+							'nowrap',
 						fontSize:
 							vkBlocksOption.text_style_lists[i].font_size &&
 							vkBlocksOption.text_style_lists[i].font_size,

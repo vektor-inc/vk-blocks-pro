@@ -30,6 +30,10 @@ export default function AdminTextStyle() {
 
 	const fontSizes = [...vkBlocksObject.fontSizes];
 
+	const getTextStyleValue = (key, textStyleIndex) => {
+		return vkBlocksOption.text_style_lists[textStyleIndex][key];
+	};
+
 	const onChange = (key, value, textStyleIndex) => {
 		const newItems = vkBlocksOption.text_style_lists;
 		newItems[textStyleIndex] = {
@@ -100,20 +104,21 @@ export default function AdminTextStyle() {
 													)
 												}
 												value={
-													!!vkBlocksOption
-														.text_style_lists[
+													!!getTextStyleValue(
+														'title',
 														textStyleIndex
-													].title
-														? vkBlocksOption
-																.text_style_lists[
+													)
+														? getTextStyleValue(
+																'title',
 																textStyleIndex
-														  ].title
+														  )
 														: ''
 												}
 											/>
-											{!vkBlocksOption.text_style_lists[
+											{!getTextStyleValue(
+												'title',
 												textStyleIndex
-											].title && (
+											) && (
 												<p className="text_style_item_name_warning">
 													{__(
 														'※ タイトルが入力されていない場合、ツールバーには表示されません。',
@@ -139,12 +144,10 @@ export default function AdminTextStyle() {
 											<CheckboxControl
 												name={`vk_blocks_options[text_style_lists][${textStyleIndex}][font_weight_bold]`}
 												label={__('Bold', 'vk-blocks')}
-												checked={
-													vkBlocksOption
-														.text_style_lists[
-														textStyleIndex
-													].font_weight_bold
-												}
+												checked={getTextStyleValue(
+													'font_weight_bold',
+													textStyleIndex
+												)}
 												onChange={(value) =>
 													onChange(
 														'font_weight_bold',
@@ -159,12 +162,10 @@ export default function AdminTextStyle() {
 													'Italic',
 													'vk-blocks'
 												)}
-												checked={
-													vkBlocksOption
-														.text_style_lists[
-														textStyleIndex
-													].font_italic
-												}
+												checked={getTextStyleValue(
+													'font_italic',
+													textStyleIndex
+												)}
 												onChange={(value) =>
 													onChange(
 														'font_italic',
@@ -179,12 +180,10 @@ export default function AdminTextStyle() {
 													'Strikethrough',
 													'vk-blocks'
 												)}
-												checked={
-													vkBlocksOption
-														.text_style_lists[
-														textStyleIndex
-													].font_strikethrough
-												}
+												checked={getTextStyleValue(
+													'font_strikethrough',
+													textStyleIndex
+												)}
 												onChange={(value) =>
 													onChange(
 														'font_strikethrough',
@@ -199,12 +198,10 @@ export default function AdminTextStyle() {
 													'Nowrap',
 													'vk-blocks'
 												)}
-												checked={
-													vkBlocksOption
-														.text_style_lists[
-														textStyleIndex
-													].nowrap
-												}
+												checked={getTextStyleValue(
+													'nowrap',
+													textStyleIndex
+												)}
 												onChange={(value) =>
 													onChange(
 														'nowrap',
@@ -222,12 +219,10 @@ export default function AdminTextStyle() {
 														textStyleIndex
 													)
 												}
-												value={
-													vkBlocksOption
-														.text_style_lists[
-														textStyleIndex
-													].font_size
-												}
+												value={getTextStyleValue(
+													'font_size',
+													textStyleIndex
+												)}
 											/>
 										</BaseControl>
 									</PanelBody>
@@ -246,10 +241,10 @@ export default function AdminTextStyle() {
 												clearable
 												colors={vkColorPalette}
 												value={colorSlugToColorCode(
-													vkBlocksOption
-														.text_style_lists[
+													getTextStyleValue(
+														'color',
 														textStyleIndex
-													].color
+													)
 												)}
 												onChange={(value) => {
 													const ColorValue =
@@ -280,10 +275,10 @@ export default function AdminTextStyle() {
 												clearable
 												colors={vkColorPalette}
 												value={colorSlugToColorCode(
-													vkBlocksOption
-														.text_style_lists[
+													getTextStyleValue(
+														'background_color',
 														textStyleIndex
-													].background_color
+													)
 												)}
 												onChange={(value) => {
 													const ColorValue =
@@ -319,12 +314,10 @@ export default function AdminTextStyle() {
 													// 'Activate Highlighter',
 													'vk-blocks'
 												)}
-												checked={
-													vkBlocksOption
-														.text_style_lists[
-														textStyleIndex
-													].is_active_highlighter
-												}
+												checked={getTextStyleValue(
+													'is_active_highlighter',
+													textStyleIndex
+												)}
 												onChange={(value) =>
 													onChange(
 														'is_active_highlighter',
@@ -333,9 +326,10 @@ export default function AdminTextStyle() {
 													)
 												}
 											/>
-											{vkBlocksOption.text_style_lists[
+											{getTextStyleValue(
+												'is_active_highlighter',
 												textStyleIndex
-											].is_active_highlighter && (
+											) && (
 												<ColorPalette
 													colors={vkColorPalette}
 													onChange={(value) => {
@@ -352,12 +346,10 @@ export default function AdminTextStyle() {
 															textStyleIndex
 														);
 													}}
-													value={
-														vkBlocksOption
-															.text_style_lists[
-															textStyleIndex
-														].highlighter
-													}
+													value={getTextStyleValue(
+														'highlighter',
+														textStyleIndex
+													)}
 												/>
 											)}
 										</BaseControl>
@@ -376,12 +368,10 @@ export default function AdminTextStyle() {
 												:
 												<code>
 													.
-													{
-														vkBlocksOption
-															.text_style_lists[
-															textStyleIndex
-														].class_name
-													}
+													{getTextStyleValue(
+														'class_name',
+														textStyleIndex
+													)}
 												</code>
 											</span>
 										</BaseControl>

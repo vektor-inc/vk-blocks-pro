@@ -16,7 +16,22 @@ import { plusCircle } from '@wordpress/icons';
  * Internal dependencies
  */
 import { AdminContext } from '@vkblocks/admin/index';
-import { schema } from '@vkblocks/admin/text-style/schema';
+/*globals vkBlocksObject */
+
+// 書式設定 初期値
+export const textStyleDefaultList = {
+	title: '',
+	font_weight_bold: false,
+	font_italic: false,
+	font_strikethrough: false,
+	color: '',
+	background_color: '',
+	is_active_highlighter: false,
+	highlighter: vkBlocksObject.highlighterColor,
+	font_size: '',
+	nowrap: false,
+	class_name: '',
+};
 
 export const AddItemButton = () => {
 	const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
@@ -38,7 +53,7 @@ export const AddItemButton = () => {
 
 	const addItem = () => {
 		vkBlocksOption.text_style_lists.push({
-			...schema,
+			...textStyleDefaultList,
 			...{
 				class_name: className,
 				title,
@@ -47,7 +62,7 @@ export const AddItemButton = () => {
 		setVkBlocksOption({ ...vkBlocksOption });
 	};
 
-	const checkClassName = (value) => {
+	const validateClassName = (value) => {
 		let bool = true;
 		let message;
 		if (typeof value !== 'string') {
@@ -124,13 +139,13 @@ export const AddItemButton = () => {
 							)}
 							placeholder={__(
 								'(例) vk-text-style-1',
-								// '(ex) vk-text-style-1',
+								// '(e.g.) vk-text-style-1',
 								'vk-blocks'
 							)}
 							onChange={(value) => {
 								value = value.trim();
 								setClassName(value);
-								checkClassName(value);
+								validateClassName(value);
 							}}
 							value={className ? className : ''}
 						/>

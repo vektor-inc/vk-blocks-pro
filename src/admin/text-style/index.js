@@ -30,10 +30,10 @@ export default function AdminTextStyle() {
 
 	const fontSizes = [...vkBlocksObject.fontSizes];
 
-	const onChange = (key, value, i) => {
+	const onChange = (key, value, textStyleIndex) => {
 		const newItems = vkBlocksOption.text_style_lists;
-		newItems[i] = {
-			...vkBlocksOption.text_style_lists[i],
+		newItems[textStyleIndex] = {
+			...vkBlocksOption.text_style_lists[textStyleIndex],
 			[key]: value,
 		};
 		setVkBlocksOption({
@@ -60,15 +60,20 @@ export default function AdminTextStyle() {
 					)}
 				</p>
 				{(() => {
-					const items = [];
+					const lists = [];
 					for (
-						let i = 0;
-						i < vkBlocksOption.text_style_lists.length;
-						i++
+						let textStyleIndex = 0;
+						textStyleIndex < vkBlocksOption.text_style_lists.length;
+						textStyleIndex++
 					) {
-						items.push(
-							<div className="text_style_item" key={i}>
-								<TextStylePreview i={i} />
+						lists.push(
+							<div
+								className="text_style_item"
+								key={textStyleIndex}
+							>
+								<TextStylePreview
+									textStyleIndex={textStyleIndex}
+								/>
 								<div className="text_style_item_control">
 									<PanelBody
 										title={__(
@@ -80,29 +85,35 @@ export default function AdminTextStyle() {
 										<BaseControl id="custom-text-style">
 											<TextControl
 												className="text_style_item_name"
-												name={`vk_blocks_options[text_style_lists][${i}][title]`}
-												id={`vk_blocks_text_style_${i}_title`}
+												name={`vk_blocks_options[text_style_lists][${textStyleIndex}][title]`}
+												id={`vk_blocks_text_style_${textStyleIndex}_title`}
 												label={__(
 													'ツールバー タイトル',
 													// 'Toolbar title',
 													'vk-blocks'
 												)}
 												onChange={(value) =>
-													onChange('title', value, i)
+													onChange(
+														'title',
+														value,
+														textStyleIndex
+													)
 												}
 												value={
 													!!vkBlocksOption
-														.text_style_lists[i]
-														.title
+														.text_style_lists[
+														textStyleIndex
+													].title
 														? vkBlocksOption
 																.text_style_lists[
-																i
+																textStyleIndex
 														  ].title
 														: ''
 												}
 											/>
-											{!vkBlocksOption.text_style_lists[i]
-												.title && (
+											{!vkBlocksOption.text_style_lists[
+												textStyleIndex
+											].title && (
 												<p className="text_style_item_name_warning">
 													{__(
 														'※ タイトルが入力されていない場合、ツールバーには表示されません。',
@@ -111,7 +122,9 @@ export default function AdminTextStyle() {
 													)}
 												</p>
 											)}
-											<DeleteItemButton i={i} />
+											<DeleteItemButton
+												textStyleIndex={textStyleIndex}
+											/>
 										</BaseControl>
 									</PanelBody>
 									<PanelBody
@@ -124,72 +137,80 @@ export default function AdminTextStyle() {
 									>
 										<BaseControl id="format-setting">
 											<CheckboxControl
-												name={`vk_blocks_options[text_style_lists][${i}][font_weight_bold]`}
+												name={`vk_blocks_options[text_style_lists][${textStyleIndex}][font_weight_bold]`}
 												label={__('Bold', 'vk-blocks')}
 												checked={
 													vkBlocksOption
-														.text_style_lists[i]
-														.font_weight_bold
+														.text_style_lists[
+														textStyleIndex
+													].font_weight_bold
 												}
 												onChange={(value) =>
 													onChange(
 														'font_weight_bold',
 														value,
-														i
+														textStyleIndex
 													)
 												}
 											/>
 											<CheckboxControl
-												name={`vk_blocks_options[text_style_lists][${i}][font_italic]`}
+												name={`vk_blocks_options[text_style_lists][${textStyleIndex}][font_italic]`}
 												label={__(
 													'Italic',
 													'vk-blocks'
 												)}
 												checked={
 													vkBlocksOption
-														.text_style_lists[i]
-														.font_italic
+														.text_style_lists[
+														textStyleIndex
+													].font_italic
 												}
 												onChange={(value) =>
 													onChange(
 														'font_italic',
 														value,
-														i
+														textStyleIndex
 													)
 												}
 											/>
 											<CheckboxControl
-												name={`vk_blocks_options[text_style_lists][${i}][font_strikethrough]`}
+												name={`vk_blocks_options[text_style_lists][${textStyleIndex}][font_strikethrough]`}
 												label={__(
 													'Strikethrough',
 													'vk-blocks'
 												)}
 												checked={
 													vkBlocksOption
-														.text_style_lists[i]
-														.font_strikethrough
+														.text_style_lists[
+														textStyleIndex
+													].font_strikethrough
 												}
 												onChange={(value) =>
 													onChange(
 														'font_strikethrough',
 														value,
-														i
+														textStyleIndex
 													)
 												}
 											/>
 											<CheckboxControl
-												name={`vk_blocks_options[text_style_lists][${i}][nowrap]`}
+												name={`vk_blocks_options[text_style_lists][${textStyleIndex}][nowrap]`}
 												label={__(
 													'Nowrap',
 													'vk-blocks'
 												)}
 												checked={
 													vkBlocksOption
-														.text_style_lists[i]
-														.nowrap
+														.text_style_lists[
+														textStyleIndex
+													].nowrap
 												}
 												onChange={(value) =>
-													onChange('nowrap', value, i)
+													onChange(
+														'nowrap',
+														value,
+														textStyleIndex
+													)
 												}
 											/>
 											<FontSizePicker
@@ -198,13 +219,14 @@ export default function AdminTextStyle() {
 													onChange(
 														'font_size',
 														value,
-														i
+														textStyleIndex
 													)
 												}
 												value={
 													vkBlocksOption
-														.text_style_lists[i]
-														.font_size
+														.text_style_lists[
+														textStyleIndex
+													].font_size
 												}
 											/>
 										</BaseControl>
@@ -225,8 +247,9 @@ export default function AdminTextStyle() {
 												colors={vkColorPalette}
 												value={colorSlugToColorCode(
 													vkBlocksOption
-														.text_style_lists[i]
-														.color
+														.text_style_lists[
+														textStyleIndex
+													].color
 												)}
 												onChange={(value) => {
 													const ColorValue =
@@ -241,7 +264,7 @@ export default function AdminTextStyle() {
 													onChange(
 														'color',
 														newValue,
-														i
+														textStyleIndex
 													);
 												}}
 											/>
@@ -258,8 +281,9 @@ export default function AdminTextStyle() {
 												colors={vkColorPalette}
 												value={colorSlugToColorCode(
 													vkBlocksOption
-														.text_style_lists[i]
-														.background_color
+														.text_style_lists[
+														textStyleIndex
+													].background_color
 												)}
 												onChange={(value) => {
 													const ColorValue =
@@ -274,7 +298,7 @@ export default function AdminTextStyle() {
 													onChange(
 														'background_color',
 														newValue,
-														i
+														textStyleIndex
 													);
 												}}
 											/>
@@ -288,8 +312,8 @@ export default function AdminTextStyle() {
 											)}
 										>
 											<ToggleControl
-												name={`vk_blocks_options[text_style_lists][${i}][is_active_highlighter]`}
-												id={`vk_blocks_text_style_lists_${i}_is_active_highlighter`}
+												name={`vk_blocks_options[text_style_lists][${textStyleIndex}][is_active_highlighter]`}
+												id={`vk_blocks_text_style_lists_${textStyleIndex}_is_active_highlighter`}
 												label={__(
 													'蛍光マーカーを有効化',
 													// 'Activate Highlighter',
@@ -297,19 +321,21 @@ export default function AdminTextStyle() {
 												)}
 												checked={
 													vkBlocksOption
-														.text_style_lists[i]
-														.is_active_highlighter
+														.text_style_lists[
+														textStyleIndex
+													].is_active_highlighter
 												}
 												onChange={(value) =>
 													onChange(
 														'is_active_highlighter',
 														value,
-														i
+														textStyleIndex
 													)
 												}
 											/>
-											{vkBlocksOption.text_style_lists[i]
-												.is_active_highlighter && (
+											{vkBlocksOption.text_style_lists[
+												textStyleIndex
+											].is_active_highlighter && (
 												<ColorPalette
 													colors={vkColorPalette}
 													onChange={(value) => {
@@ -323,13 +349,14 @@ export default function AdminTextStyle() {
 														onChange(
 															'highlighter',
 															value,
-															i
+															textStyleIndex
 														);
 													}}
 													value={
 														vkBlocksOption
-															.text_style_lists[i]
-															.highlighter
+															.text_style_lists[
+															textStyleIndex
+														].highlighter
 													}
 												/>
 											)}
@@ -351,8 +378,9 @@ export default function AdminTextStyle() {
 													.
 													{
 														vkBlocksOption
-															.text_style_lists[i]
-															.class_name
+															.text_style_lists[
+															textStyleIndex
+														].class_name
 													}
 												</code>
 											</span>
@@ -362,7 +390,7 @@ export default function AdminTextStyle() {
 							</div>
 						);
 					}
-					return items;
+					return lists;
 				})()}
 				<AddItemButton />
 			</section>

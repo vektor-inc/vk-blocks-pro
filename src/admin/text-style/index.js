@@ -335,7 +335,7 @@ export default function AdminTextStyle() {
 												:
 												<code>
 													.
-													{textStyleListObj.className}
+													{textStyleListObj.class_name}
 												</code>
 											</span>
 										</BaseControl>

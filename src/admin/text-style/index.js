@@ -54,8 +54,8 @@ export default function AdminTextStyle() {
 				</h3>
 				<p>
 					{__(
-						'ブロックツールバーで追加書式を適用することができます。',
-						// 'Additional formatting can be applied with the block toolbar.',
+						'ブロックツールバーでよく使う書式設定を適用することができます。',
+						// 'You can apply commonly used formatting on the block toolbar.',
 						'vk-blocks'
 					)}
 				</p>

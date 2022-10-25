@@ -19,7 +19,7 @@ import { AdminContext } from '@vkblocks/admin/index';
 /*globals vkBlocksObject */
 
 // 書式設定 初期値
-export const textStyleDefaultList = {
+const TEXT_STYLE_DEFAULT_OBJ = {
 	title: '',
 	font_weight_bold: false,
 	font_italic: false,
@@ -53,7 +53,7 @@ export const AddItemButton = () => {
 
 	const addItem = () => {
 		vkBlocksOption.text_style_lists.push({
-			...textStyleDefaultList,
+			...TEXT_STYLE_DEFAULT_OBJ,
 			...{
 				class_name: className,
 				title,

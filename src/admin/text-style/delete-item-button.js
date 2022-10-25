@@ -26,8 +26,7 @@ export const DeleteItemButton = (props) => {
 		});
 	};
 
-	const textStyleTitle = !!vkBlocksOption.text_style_lists[index]
-		.title
+	const textStyleTitle = !!vkBlocksOption.text_style_lists[index].title
 		? vkBlocksOption.text_style_lists[index].title
 		: __(
 				'書式設定',

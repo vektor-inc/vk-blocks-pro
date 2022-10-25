@@ -126,9 +126,7 @@ export default function AdminTextStyle() {
 													)}
 												</p>
 											)}
-											<DeleteItemButton
-												index={index}
-											/>
+											<DeleteItemButton index={index} />
 										</BaseControl>
 									</PanelBody>
 									<PanelBody
@@ -142,10 +140,7 @@ export default function AdminTextStyle() {
 										<BaseControl id="format-setting">
 											<CheckboxControl
 												name={`vk_blocks_options[text_style_lists][${index}][font_weight_bold]`}
-												label={__(
-													'Bold',
-													'vk-blocks'
-												)}
+												label={__('Bold', 'vk-blocks')}
 												checked={fontWeightBold}
 												onChange={(value) =>
 													onChange(
@@ -228,7 +223,9 @@ export default function AdminTextStyle() {
 											<ColorPalette
 												clearable
 												colors={vkColorPalette}
-												value={colorSlugToColorCode(color)}
+												value={colorSlugToColorCode(
+													color
+												)}
 												onChange={(value) => {
 													const ColorValue =
 														getColorObjectByColorValue(
@@ -236,8 +233,7 @@ export default function AdminTextStyle() {
 															value
 														);
 													const newValue =
-														ColorValue !==
-														undefined
+														ColorValue !== undefined
 															? ColorValue.slug
 															: value;
 													onChange(
@@ -258,7 +254,9 @@ export default function AdminTextStyle() {
 											<ColorPalette
 												clearable
 												colors={vkColorPalette}
-												value={colorSlugToColorCode(backgroundColor)}
+												value={colorSlugToColorCode(
+													backgroundColor
+												)}
 												onChange={(value) => {
 													const ColorValue =
 														getColorObjectByColorValue(
@@ -266,8 +264,7 @@ export default function AdminTextStyle() {
 															value
 														);
 													const newValue =
-														ColorValue !==
-														undefined
+														ColorValue !== undefined
 															? ColorValue.slug
 															: value;
 													onChange(
@@ -294,9 +291,7 @@ export default function AdminTextStyle() {
 													// 'Activate Highlighter',
 													'vk-blocks'
 												)}
-												checked={
-													isActiveHighlighter
-												}
+												checked={isActiveHighlighter}
 												onChange={(value) =>
 													onChange(
 														'is_active_highlighter',
@@ -311,8 +306,7 @@ export default function AdminTextStyle() {
 													onChange={(value) => {
 														// clearボタンを押した時
 														if (
-															value ===
-															undefined
+															value === undefined
 														) {
 															value =
 																vkBlocksObject.highlighterColor;

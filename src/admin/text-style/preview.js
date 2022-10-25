@@ -18,8 +18,7 @@ export const TextStylePreview = (props) => {
 
 	let highlighterColor;
 	if (!!vkBlocksOption.text_style_lists[index].highlighter) {
-		highlighterColor =
-			vkBlocksOption.text_style_lists[index].highlighter;
+		highlighterColor = vkBlocksOption.text_style_lists[index].highlighter;
 	} else {
 		highlighterColor = vkBlocksObject.highlighterColor;
 	}
@@ -34,8 +33,7 @@ export const TextStylePreview = (props) => {
 			vkBlocksOption.text_style_lists[index].background_color
 		)} 60%,${hex2rgba(highlighterColor, 0.7)} 0)`;
 	} else if (
-		!vkBlocksOption.text_style_lists[index]
-			.is_active_highlighter &&
+		!vkBlocksOption.text_style_lists[index].is_active_highlighter &&
 		!!vkBlocksOption.text_style_lists[index].background_color
 	) {
 		// background_colorのみ
@@ -64,8 +62,7 @@ export const TextStylePreview = (props) => {
 			>
 				<span
 					className={
-						vkBlocksOption.text_style_lists[index]
-							.class_name
+						vkBlocksOption.text_style_lists[index].class_name
 					}
 					style={{
 						fontWeight:
@@ -78,19 +75,15 @@ export const TextStylePreview = (props) => {
 							vkBlocksOption.text_style_lists[index]
 								.font_strikethrough && 'line-through',
 						whiteSpace:
-							vkBlocksOption.text_style_lists[index]
-								.nowrap && 'nowrap',
+							vkBlocksOption.text_style_lists[index].nowrap &&
+							'nowrap',
 						fontSize:
-							vkBlocksOption.text_style_lists[index]
-								.font_size &&
-							vkBlocksOption.text_style_lists[index]
-								.font_size,
+							vkBlocksOption.text_style_lists[index].font_size &&
+							vkBlocksOption.text_style_lists[index].font_size,
 						color:
-							!!vkBlocksOption.text_style_lists[index]
-								.color &&
+							!!vkBlocksOption.text_style_lists[index].color &&
 							colorSlugToColorCode(
-								vkBlocksOption.text_style_lists[index]
-									.color
+								vkBlocksOption.text_style_lists[index].color
 							),
 						background: backgroundProperty,
 					}}

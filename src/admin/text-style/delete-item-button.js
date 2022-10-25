@@ -12,7 +12,7 @@ import { AdminContext } from '@vkblocks/admin/index';
 
 export const DeleteItemButton = (props) => {
 	const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
-	const { textStyleIndex } = props;
+	const { index } = props;
 
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -20,15 +20,15 @@ export const DeleteItemButton = (props) => {
 	const closeModal = () => setIsModalOpen(false);
 
 	const deleteItem = () => {
-		vkBlocksOption.text_style_lists.splice(textStyleIndex, 1);
+		vkBlocksOption.text_style_lists.splice(index, 1);
 		setVkBlocksOption({
 			...vkBlocksOption,
 		});
 	};
 
-	const textStyleTitle = !!vkBlocksOption.text_style_lists[textStyleIndex]
+	const textStyleTitle = !!vkBlocksOption.text_style_lists[index]
 		.title
-		? vkBlocksOption.text_style_lists[textStyleIndex].title
+		? vkBlocksOption.text_style_lists[index].title
 		: __(
 				'書式設定',
 				// 'Text Style',

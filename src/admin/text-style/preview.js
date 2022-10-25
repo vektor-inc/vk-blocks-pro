@@ -14,37 +14,37 @@ import hex2rgba from '@vkblocks/utils/hex-to-rgba';
 
 export const TextStylePreview = (props) => {
 	const { vkBlocksOption } = useContext(AdminContext);
-	const { textStyleIndex } = props;
+	const { index } = props;
 
 	let highlighterColor;
-	if (!!vkBlocksOption.text_style_lists[textStyleIndex].highlighter) {
+	if (!!vkBlocksOption.text_style_lists[index].highlighter) {
 		highlighterColor =
-			vkBlocksOption.text_style_lists[textStyleIndex].highlighter;
+			vkBlocksOption.text_style_lists[index].highlighter;
 	} else {
 		highlighterColor = vkBlocksObject.highlighterColor;
 	}
 
 	let backgroundProperty = '';
 	if (
-		vkBlocksOption.text_style_lists[textStyleIndex].is_active_highlighter &&
-		!!vkBlocksOption.text_style_lists[textStyleIndex].background_color
+		vkBlocksOption.text_style_lists[index].is_active_highlighter &&
+		!!vkBlocksOption.text_style_lists[index].background_color
 	) {
 		// background_colorとhighlighter両方
 		backgroundProperty = `linear-gradient(${colorSlugToColorCode(
-			vkBlocksOption.text_style_lists[textStyleIndex].background_color
+			vkBlocksOption.text_style_lists[index].background_color
 		)} 60%,${hex2rgba(highlighterColor, 0.7)} 0)`;
 	} else if (
-		!vkBlocksOption.text_style_lists[textStyleIndex]
+		!vkBlocksOption.text_style_lists[index]
 			.is_active_highlighter &&
-		!!vkBlocksOption.text_style_lists[textStyleIndex].background_color
+		!!vkBlocksOption.text_style_lists[index].background_color
 	) {
 		// background_colorのみ
 		backgroundProperty = `${colorSlugToColorCode(
-			vkBlocksOption.text_style_lists[textStyleIndex].background_color
+			vkBlocksOption.text_style_lists[index].background_color
 		)}`;
 	} else if (
-		vkBlocksOption.text_style_lists[textStyleIndex].is_active_highlighter &&
-		!!!vkBlocksOption.text_style_lists[textStyleIndex].background_color
+		vkBlocksOption.text_style_lists[index].is_active_highlighter &&
+		!!!vkBlocksOption.text_style_lists[index].background_color
 	) {
 		// highlighterのみ
 		backgroundProperty = `linear-gradient(transparent 60%,${hex2rgba(
@@ -57,39 +57,39 @@ export const TextStylePreview = (props) => {
 		<div className="text_style_item_preview">
 			<p
 				className={
-					vkBlocksOption.text_style_lists[textStyleIndex].title
+					vkBlocksOption.text_style_lists[index].title
 						? 'active-text-style'
 						: null
 				}
 			>
 				<span
 					className={
-						vkBlocksOption.text_style_lists[textStyleIndex]
+						vkBlocksOption.text_style_lists[index]
 							.class_name
 					}
 					style={{
 						fontWeight:
-							vkBlocksOption.text_style_lists[textStyleIndex]
+							vkBlocksOption.text_style_lists[index]
 								.font_weight_bold && 'bold',
 						fontStyle:
-							vkBlocksOption.text_style_lists[textStyleIndex]
+							vkBlocksOption.text_style_lists[index]
 								.font_italic && 'italic',
 						textDecoration:
-							vkBlocksOption.text_style_lists[textStyleIndex]
+							vkBlocksOption.text_style_lists[index]
 								.font_strikethrough && 'line-through',
 						whiteSpace:
-							vkBlocksOption.text_style_lists[textStyleIndex]
+							vkBlocksOption.text_style_lists[index]
 								.nowrap && 'nowrap',
 						fontSize:
-							vkBlocksOption.text_style_lists[textStyleIndex]
+							vkBlocksOption.text_style_lists[index]
 								.font_size &&
-							vkBlocksOption.text_style_lists[textStyleIndex]
+							vkBlocksOption.text_style_lists[index]
 								.font_size,
 						color:
-							!!vkBlocksOption.text_style_lists[textStyleIndex]
+							!!vkBlocksOption.text_style_lists[index]
 								.color &&
 							colorSlugToColorCode(
-								vkBlocksOption.text_style_lists[textStyleIndex]
+								vkBlocksOption.text_style_lists[index]
 									.color
 							),
 						background: backgroundProperty,

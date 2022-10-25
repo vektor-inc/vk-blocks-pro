@@ -2,47 +2,44 @@
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { useContext } from '@wordpress/element';
 
 /**
  * Internal dependencies
  */
-import { AdminContext } from '@vkblocks/admin/index';
 import { colorSlugToColorCode } from '@vkblocks/admin/utils/color-slug-to-color-code';
 import hex2rgba from '@vkblocks/utils/hex-to-rgba';
 /*globals vkBlocksObject */
 
 export const TextStylePreview = (props) => {
-	const { vkBlocksOption } = useContext(AdminContext);
-	const { index } = props;
+	const { textStyleListObj } = props;
 
 	let highlighterColor;
-	if (!!vkBlocksOption.text_style_lists[index].highlighter) {
-		highlighterColor = vkBlocksOption.text_style_lists[index].highlighter;
+	if (!!textStyleListObj.highlighter) {
+		highlighterColor = textStyleListObj.highlighter;
 	} else {
 		highlighterColor = vkBlocksObject.highlighterColor;
 	}
 
 	let backgroundProperty = '';
 	if (
-		vkBlocksOption.text_style_lists[index].is_active_highlighter &&
-		!!vkBlocksOption.text_style_lists[index].background_color
+		textStyleListObj.is_active_highlighter &&
+		!!textStyleListObj.background_color
 	) {
 		// background_colorとhighlighter両方
 		backgroundProperty = `linear-gradient(${colorSlugToColorCode(
-			vkBlocksOption.text_style_lists[index].background_color
+			textStyleListObj.background_color
 		)} 60%,${hex2rgba(highlighterColor, 0.7)} 0)`;
 	} else if (
-		!vkBlocksOption.text_style_lists[index].is_active_highlighter &&
-		!!vkBlocksOption.text_style_lists[index].background_color
+		!textStyleListObj.is_active_highlighter &&
+		!!textStyleListObj.background_color
 	) {
 		// background_colorのみ
 		backgroundProperty = `${colorSlugToColorCode(
-			vkBlocksOption.text_style_lists[index].background_color
+			textStyleListObj.background_color
 		)}`;
 	} else if (
-		vkBlocksOption.text_style_lists[index].is_active_highlighter &&
-		!!!vkBlocksOption.text_style_lists[index].background_color
+		textStyleListObj.is_active_highlighter &&
+		!!!textStyleListObj.background_color
 	) {
 		// highlighterのみ
 		backgroundProperty = `linear-gradient(transparent 60%,${hex2rgba(
@@ -53,38 +50,22 @@ export const TextStylePreview = (props) => {
 
 	return (
 		<div className="text_style_item_preview">
-			<p
-				className={
-					vkBlocksOption.text_style_lists[index].title
-						? 'active-text-style'
-						: null
-				}
-			>
+			<p className={textStyleListObj.title ? 'active-text-style' : null}>
 				<span
-					className={
-						vkBlocksOption.text_style_lists[index].class_name
-					}
+					className={textStyleListObj.class_name}
 					style={{
-						fontWeight:
-							vkBlocksOption.text_style_lists[index]
-								.font_weight_bold && 'bold',
-						fontStyle:
-							vkBlocksOption.text_style_lists[index]
-								.font_italic && 'italic',
+						fontWeight: textStyleListObj.font_weight_bold && 'bold',
+						fontStyle: textStyleListObj.font_italic && 'italic',
 						textDecoration:
-							vkBlocksOption.text_style_lists[index]
-								.font_strikethrough && 'line-through',
-						whiteSpace:
-							vkBlocksOption.text_style_lists[index].nowrap &&
-							'nowrap',
+							textStyleListObj.font_strikethrough &&
+							'line-through',
+						whiteSpace: textStyleListObj.nowrap && 'nowrap',
 						fontSize:
-							vkBlocksOption.text_style_lists[index].font_size &&
-							vkBlocksOption.text_style_lists[index].font_size,
+							textStyleListObj.font_size &&
+							textStyleListObj.font_size,
 						color:
-							!!vkBlocksOption.text_style_lists[index].color &&
-							colorSlugToColorCode(
-								vkBlocksOption.text_style_lists[index].color
-							),
+							!!textStyleListObj.color &&
+							colorSlugToColorCode(textStyleListObj.color),
 						background: backgroundProperty,
 					}}
 				>

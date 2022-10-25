@@ -76,10 +76,10 @@ const HighlighterEdit = (props) => {
 	// NOTE: useAnchorRefが非推奨になったのでフォールバック WP6.0以下をサポートしなくなったら削除すること #1456
 	const existsUseAnchor = typeof useAnchor === 'function';
 	const _useAnchor = existsUseAnchor ? useAnchor : useAnchorRef;
-	const _useAnchorObj = existsUseAnchor
+	const useAnchorObj = existsUseAnchor
 		? { editableContentElement: contentRef.current, value }
 		: { ref: contentRef, value };
-	const anchorRef = _useAnchor(_useAnchorObj);
+	const anchorRef = _useAnchor(useAnchorObj);
 
 	const [isAddingColor, setIsAddingColor] = useState(false);
 

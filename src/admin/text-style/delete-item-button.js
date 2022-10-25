@@ -27,12 +27,13 @@ export const DeleteItemButton = (props) => {
 	};
 
 	const textStyleTitle =
-		textStyleListObj ??
-		__(
-			'書式設定',
-			// 'Text Style',
-			'vk-blocks'
-		);
+		textStyleListObj.title !== ''
+			? textStyleListObj.title
+			: __(
+					'書式設定',
+					// 'Text Style',
+					'vk-blocks'
+			  );
 
 	return (
 		<>

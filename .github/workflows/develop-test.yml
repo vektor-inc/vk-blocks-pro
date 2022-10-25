@@ -13,10 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        # これが先にdevelopにマージされたら 8.0 を追加して 8.0 でおそらく baloon関連のテストでエラーになるので修正する
         php-versions: ['7.3', '7.4', '8.0', '8.1']
-        # これが先にdevelopにマージされたら 5.8.4 不具合修正のブランチ（ https://github.com/vektor-inc/vk-blocks-pro/pull/1372 ）にマージして '5.8.4' を追加
-        wp-versions: ['6.0.1','5.9.3','5.8.4']
+        wp-versions: ['6.1.0','6.0.3','5.9.3']
     name: PHP Unit test ${{ matrix.php-versions }} / WP ${{ matrix.wp-versions }} Test on ${{ matrix.operating-system }}
     services:
       mysql:

@@ -38,10 +38,9 @@ describe( 'CustomCssExtension', () => {
 		// cssを記述
 		await page.keyboard.type( 'selector { \n background: #f5f5f5;' );
 
-		const clientId = ( await getAllBlocks() )[ 0 ].clientId;
 		const regexBefore = new RegExp(
-			`<!-- wp:paragraph {\\"vkbCustomCss\\":\\"selector {\\\\n   background: #f5f5f5;\\\\n}\\",\\"className\\":\\"vk_custom_css-${clientId}"} -->
-<p class=\\"vk_custom_css-${clientId}"></p>
+			`<!-- wp:paragraph {\\"vkbCustomCss\\":\\"selector {\\\\n   background: #f5f5f5;\\\\n}\\",\\"className\\":\\"vk_custom_css"} -->
+<p class=\\"vk_custom_css"></p>
 <!-- /wp:paragraph -->`
 		);
 		expect(await getEditedPostContent()).toMatch(regexBefore);
@@ -54,9 +53,8 @@ describe( 'CustomCssExtension', () => {
 		await openButton.click();
 		await page.click( '[id$="vk-custom-css-code-mirror"]' );
 		await page.keyboard.type( 'selector { \n background: #f5f5f5;' );
-		const clientId = ( await getAllBlocks() )[ 0 ].clientId;
 		const regexBefore = new RegExp(
-			`<!-- wp:archives {\\"vkbCustomCss\\":\\"selector {\\\\n   background: #f5f5f5;\\\\n}\\",\\"className\\":\\"vk_custom_css-${clientId}\\"} /-->`
+			`<!-- wp:archives {\\"vkbCustomCss\\":\\"selector {\\\\n   background: #f5f5f5;\\\\n}\\",\\"className\\":\\"vk_custom_css\\"} /-->`
 		);
 		expect(await getEditedPostContent()).toMatch(regexBefore);
 	} )
@@ -68,10 +66,9 @@ describe( 'CustomCssExtension', () => {
 		await openButton.click();
 		await page.click( '[id$="vk-custom-css-code-mirror"]' );
 		await page.keyboard.type( 'selector { \n background: #f5f5f5;' );
-		const clientId = ( await getAllBlocks() )[ 0 ].clientId;
 		const regexBefore = new RegExp(
-			`<!-- wp:vk-blocks/alert {\\"vkbCustomCss\\":\\"selector {\\\\n   background: #f5f5f5;\\\\n}\\",\\"className\\":\\"vk_custom_css-${clientId}\\"} -->
-<div class=\\"wp-block-vk-blocks-alert alert alert-info vk_custom_css-${clientId}\\"><p></p></div>
+			`<!-- wp:vk-blocks/alert {\\"vkbCustomCss\\":\\"selector {\\\\n   background: #f5f5f5;\\\\n}\\",\\"className\\":\\"vk_custom_css\\"} -->
+<div class=\\"wp-block-vk-blocks-alert alert alert-info vk_custom_css\\"><p></p></div>
 <!-- /wp:vk-blocks/alert -->`
 		);
 		expect(await getEditedPostContent()).toMatch(regexBefore);
@@ -84,9 +81,8 @@ describe( 'CustomCssExtension', () => {
 		await openButton.click();
 		await page.click( '[id$="vk-custom-css-code-mirror"]' );
 		await page.keyboard.type( 'selector { \n background: #f5f5f5;' );
-		const clientId = ( await getAllBlocks() )[ 0 ].clientId;
 		const regexBefore = new RegExp(
-			`<!-- wp:vk-blocks/breadcrumb {\\"className\\":\\"vk_custom_css-${clientId}\\",\\"vkbCustomCss\\":\\"selector {\\\\n   background: #f5f5f5;\\\\n}\\"} /-->`
+			`<!-- wp:vk-blocks/breadcrumb {\\"className\\":\\"vk_custom_css\\",\\"vkbCustomCss\\":\\"selector {\\\\n   background: #f5f5f5;\\\\n}\\"} /-->`
 		);
 		expect(await getEditedPostContent()).toMatch(regexBefore);
 	} )

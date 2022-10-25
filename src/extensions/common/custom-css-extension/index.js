@@ -1,9 +1,9 @@
 /**
  * WordPress dependencies
  */
-import { __ } from '@wordpress/i18n';
+import { __, getLocaleData } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
-import { PanelBody, Icon, Button } from '@wordpress/components';
+import { PanelBody, Icon, Button, ExternalLink } from '@wordpress/components';
 import { InspectorControls } from '@wordpress/block-editor';
 import { createHigherOrderComponent, useInstanceId } from '@wordpress/compose';
 import { hasBlockSupport } from '@wordpress/blocks';
@@ -163,8 +163,8 @@ export const withInspectorControls = createHigherOrderComponent(
 						className={'vk_custom_css_panel'}
 						icon={<Icon icon={IconSVG} style={iconStyle} />}
 						title={__(
-							'カスタムCSS',
-							// 'Custom CSS',
+							// 'カスタムCSS',
+							'Custom CSS',
 							'vk-blocks'
 						)}
 						initialOpen={false}
@@ -194,17 +194,24 @@ export const withInspectorControls = createHigherOrderComponent(
 						})()}
 						<p>
 							{__(
-								'selector を指定した場合、ブロック固有の CSS クラスに置き換わります。',
-								// 'If selector is specified, it is replaced by a block-specific CSS class.',
+								'selector を指定した場合ブロック固有の CSS クラスに置き換わります。selector以外のCSSセレクターは、ページ全体に影響する可能性があります。',
+								// 'If selector is specified, it is replaced by a block-specific CSS class. If selector is set to "selector", it will be replaced with a block-specific CSS class. CSS selectors other than "selector" may affect the entire page.',
 								'vk-blocks'
 							)}
-						</p>
-						<p>
-							{__(
-								'"selector"以外のCSSセレクターは、ページ全体に影響する可能性があります。',
-								// 'If selector is set to "selector", it will be replaced with a block-specific CSS class. CSS selectors other than "selector" may affect the entire page.',
-								'vk-blocks'
-							)}
+							{(() => {
+								const lang = getLocaleData()[''].lang;
+								if (lang === 'ja_JP') {
+									return (
+										<ExternalLink
+											href="https://www.vektor-inc.co.jp/service/wordpress-plugins/vk-blocks/vk-custom-css/"
+											target="_blank"
+											rel="noreferrer"
+										>
+											詳しくはこちら
+										</ExternalLink>
+									);
+								}
+							})()}
 						</p>
 						<p>
 							{__(

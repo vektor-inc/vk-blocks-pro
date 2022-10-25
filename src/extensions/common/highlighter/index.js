@@ -72,9 +72,15 @@ const HighlighterEdit = (props) => {
 			background: `linear-gradient(transparent 60%, ${rgbaHeightlightColor} 0)`,
 		};
 	}
-	const _useAnchor =
-		typeof useAnchor === 'function' ? useAnchor : useAnchorRef;
-	const anchorRef = _useAnchor({ ref: contentRef, value });
+
+	// NOTE: useAnchorRefが非推奨になったのでフォールバック WP6.0以下をサポートしなくなったら削除すること #1456
+	const existsUseAnchor = typeof useAnchor === 'function';
+	const _useAnchor = existsUseAnchor ? useAnchor : useAnchorRef;
+	const _useAnchorObj = existsUseAnchor
+		? { editableContentElement: contentRef.current, value }
+		: { ref: contentRef, value };
+	const anchorRef = _useAnchor(_useAnchorObj);
+
 	const [isAddingColor, setIsAddingColor] = useState(false);
 
 	const enableIsAddingColor = useCallback(

@@ -35,15 +35,15 @@ class VK_Blocks_Options {
 	 */
 	public static function options_scheme() {
 		$default_options_schema = array(
-			'balloon_border_width'        => array(
+			'balloon_border_width'      => array(
 				'type'    => 'number',
 				'default' => 1,
 			),
-			'margin_unit'                 => array(
+			'margin_unit'               => array(
 				'type'    => 'string',
 				'default' => 'rem',
 			),
-			'margin_size'                 => array(
+			'margin_size'               => array(
 				'type'  => 'object',
 				'items' => array(
 					'xl' => array(
@@ -133,17 +133,28 @@ class VK_Blocks_Options {
 					),
 				),
 			),
-			'load_separate_option'        => array(
+			'load_separate_option'      => array(
 				'type'    => 'boolean',
 				'default' => false,
+			),
+			'vk_blocks_pro_license_key' => array(
+				'type'    => 'string',
+				'default' => null,
+			),
+			'display_vk_block_template' => array(
+				'type'    => 'string',
+				'default' => 'display',
+			),
+			'new_faq_accordion'         => array(
+				'type'    => 'string',
+				'default' => 'disable',
 			),
 			'show_custom_css_editor_flag' => array(
 				'type'    => 'string',
 				'default' => 'show',
 			),
 		);
-		$array                  = array_merge( $default_options_schema, apply_filters( 'vk_blocks_default_options_scheme', array() ) );
-		return $array;
+		return $default_options_schema;
 	}
 
 	/**

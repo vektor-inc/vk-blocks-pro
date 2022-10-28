@@ -72,28 +72,31 @@
 }
 
 // スライド画像のアニメーション
-.zoomout .swiper-slide-active,
-.zoomout .swiper-slide-duplicate-active {
-	animation: zoomOut 20s ease-out;
-}
-.zoomup .swiper-slide-active,
+.zoomup .swiper-slide-active.vk_slider_item,
 .zoomup .swiper-slide-duplicate-active {
-	animation: zoomUp 20s ease-out;
+	animation: slider-background-zoomup 2s ease-in-out forwards;
 }
-@keyframes zoomOut {
+
+.zoomout .swiper-slide-active.vk_slider_item,
+.zoomout .swiper-slide-duplicate-active {
+	animation: slider-background-zoomout 2s ease-in-out forwards;
+}
+
+@keyframes slider-background-zoomup {
 	0% {
-		transform: scale(1.5);
+		background-size: 100%;
 	}
 	100% {
-		transform: scale(1);
+		background-size: 120%;
 	}
 }
-@keyframes zoomUp {
+
+@keyframes slider-background-zoomout {
 	0% {
-		background-size: 150% !important;
-	}
+		background-size: 120%;
+	 }
 	100% {
-		background-size: 100% !important;
+		background-size: 100%;
 	}
 }
 

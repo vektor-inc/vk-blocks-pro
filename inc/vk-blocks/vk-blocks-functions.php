@@ -77,7 +77,7 @@ function vk_blocks_blocks_assets() {
 	} else {
 		wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_check', array( 'is_pro' => false ) );
 	}
-	// ホーム URL を渡す用.
+
 	wp_localize_script(
 		'vk-blocks-build-js',
 		'vk_blocks_params',

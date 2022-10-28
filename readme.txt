@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Custom CSS ( Pro ) ] Add custom css extension in inspector controls.
+
 = 1.44.0 =
 [ Add Function ][ Post List ( Pro ) ] Add post filter taxonomy relation
 [ Add Function ][ Button ] Add Button Effect option in Solid color button.

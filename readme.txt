@@ -64,6 +64,9 @@ e.g.
 
 == Changelog ==
 
+[ fix ] color palette manager use wp_theme_json_data_default filter.
+[ fix ] color palette manager added warning that --vk-color-custom-${number} is deprecated and replaced with --wp--preset--color--vk-color-custom-${number}.
+
 = 1.44.0 =
 [ Add Function ][ Post List ( Pro ) ] Add post filter taxonomy relation
 [ Add Function ][ Button ] Add Button Effect option in Solid color button.

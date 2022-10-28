@@ -216,6 +216,5 @@ function vk_blocks_register_block_post_list() {
 			'term_by_taxonomy_name' => $term_by_taxonomy_name,
 		)
 	);
-
 }
 add_action( 'init', 'vk_blocks_register_block_post_list', 99 );

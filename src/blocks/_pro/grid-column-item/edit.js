@@ -171,9 +171,18 @@ export default function GridColumnItemEdit(props) {
 					<SelectControl
 						label={__('Unit', 'vk-blocks')}
 						value={paddingUnit}
-						onChange={(value) =>
-							setAttributes({ paddingUnit: value })
-						}
+						onChange={(value) => {
+							setAttributes({ paddingUnit: value });
+							if ('px' === value) {
+								setAttributes({
+									paddingTop: parseInt(paddingTop),
+								});
+								setAttributes({ paddingX: parseInt(paddingX) });
+								setAttributes({
+									paddingBottom: parseInt(paddingBottom),
+								});
+							}
+						}}
 						options={[
 							{
 								value: 'px',

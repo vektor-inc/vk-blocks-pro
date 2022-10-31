@@ -1,5 +1,4 @@
 import { ColumnLayout } from '@vkblocks/components/column-layout';
-import AdvancedUnitControl from '@vkblocks/components/advanced-unit-control';
 import { __ } from '@wordpress/i18n';
 import {
 	InspectorControls,
@@ -7,7 +6,7 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 import { select, dispatch } from '@wordpress/data';
-import { PanelBody, RangeControl } from '@wordpress/components';
+import { PanelBody, RangeControl, SelectControl } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 
 export default function GridColumnEdit(props) {
@@ -75,7 +74,36 @@ export default function GridColumnEdit(props) {
 						allowReset={true}
 						resetFallbackValue={null}
 					/>
-					<AdvancedUnitControl {...props} />
+					<SelectControl
+						label={__('Unit', 'vk-blocks')}
+						value={unit}
+						onChange={(value) => {
+							props.setAttributes({ unit: value });
+							if ('px' === value) {
+								props.setAttributes({
+									marginBottom: parseInt(marginBottom),
+								});
+							}
+						}}
+						options={[
+							{
+								value: 'px',
+								label: __('px', 'vk-blocks'),
+							},
+							{
+								value: 'em',
+								label: __('em', 'vk-blocks'),
+							},
+							{
+								value: 'rem',
+								label: __('rem', 'vk-blocks'),
+							},
+							{
+								value: 'vw',
+								label: __('vw', 'vk-blocks'),
+							},
+						]}
+					/>
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>

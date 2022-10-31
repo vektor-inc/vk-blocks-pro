@@ -65,6 +65,7 @@ e.g.
 == Changelog ==
 
 [ Add Function ][ Custom CSS ( Pro ) ] Add custom css extension in inspector controls.
+[ Bug fix ][ Button ] Delete non intentional underline.
 
 = 1.44.0 =
 [ Add Function ][ Post List ( Pro ) ] Add post filter taxonomy relation

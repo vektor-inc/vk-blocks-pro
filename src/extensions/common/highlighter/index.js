@@ -61,17 +61,17 @@ function HighlighterEdit({
 	const shortcutType = 'primary';
 	const shortcutChar = 'h';
 
-	let highlightColor;
+	let heightlightColor;
 	if (isActive) {
 		const activeFormat = getActiveFormat(value, name);
-		highlightColor = activeFormat.attributes.data;
+		heightlightColor = activeFormat.attributes.data;
 	}
 	let iconStyle = {};
-	if (highlightColor) {
-		const rgbaHighlightColor = hex2rgba(highlightColor, alpha);
+	if (heightlightColor) {
+		const rgbaHeightlightColor = hex2rgba(heightlightColor, alpha);
 		iconStyle = {
 			color: 'initial',
-			background: `linear-gradient(transparent 60%, ${rgbaHighlightColor} 0)`,
+			background: `linear-gradient(transparent 60%, ${rgbaHeightlightColor} 0)`,
 		};
 	}
 
@@ -96,10 +96,10 @@ function HighlighterEdit({
 			<RichTextToolbarButton
 				title={__('Highlighter', 'vk-blocks')}
 				onClick={() => {
-					if (highlightColor === undefined) {
+					if (heightlightColor === undefined) {
 						// set default color on initial
 						highlighterOnApply({
-							highlightColor,
+							heightlightColor,
 							value,
 							onChange,
 						});

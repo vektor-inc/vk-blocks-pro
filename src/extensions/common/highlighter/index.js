@@ -9,6 +9,7 @@ import {
 	removeFormat,
 	getActiveFormat,
 	useAnchorRef,
+	useAnchor,
 } from '@wordpress/rich-text';
 import {
 	RichTextToolbarButton,
@@ -71,7 +72,15 @@ const HighlighterEdit = (props) => {
 			background: `linear-gradient(transparent 60%, ${rgbaHeightlightColor} 0)`,
 		};
 	}
-	const anchorRef = useAnchorRef({ ref: contentRef, value });
+
+	// NOTE: useAnchorRefが非推奨になったのでフォールバック WP6.0以下をサポートしなくなったら削除すること #1456
+	const existsUseAnchor = typeof useAnchor === 'function';
+	const _useAnchor = existsUseAnchor ? useAnchor : useAnchorRef;
+	const useAnchorObj = existsUseAnchor
+		? { editableContentElement: contentRef.current, value }
+		: { ref: contentRef, value };
+	const anchorRef = _useAnchor(useAnchorObj);
+
 	const [isAddingColor, setIsAddingColor] = useState(false);
 
 	const enableIsAddingColor = useCallback(

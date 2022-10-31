@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.8
 Tested up to: 6.0.2
-Stable tag: 1.43.0.2
+Stable tag: 1.44.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,6 +63,11 @@ e.g.
 
 
 == Changelog ==
+
+= 1.45.0 =
+[ Specification Change ] Color palette manager use wp_theme_json_data_default filter.
+[ Bug fix ][ Button ] Delete non intentional underline.
+[ Other ] color palette manager added warning that --vk-color-custom-${number} is deprecated and replaced with --wp--preset--color--vk-color-custom-${number}.
 
 = 1.44.0 =
 [ Add Function ][ Post List ( Pro ) ] Add post filter taxonomy relation

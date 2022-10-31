@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ] color palette manager use wp_theme_json_data_default filter.
+[ fix ] color palette manager added warning that --vk-color-custom-${number} is deprecated and replaced with --wp--preset--color--vk-color-custom-${number}.
 [ Bug fix ][ Button ] Delete non intentional underline.
 
 = 1.44.0 =

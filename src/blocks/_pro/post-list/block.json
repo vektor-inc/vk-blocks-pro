@@ -96,6 +96,10 @@
 			"type": "string",
 			"default": "[]"
 		},
+		"taxQueryRelation": {
+			"type": "string",
+			"default": "OR"
+		},
 		"isCheckedTerms": {
 			"type": "string",
 			"default": "[]"
@@ -122,7 +126,7 @@
 		},
 		"className": {
 			"type": "string",
-			"default":""
+			"default": ""
 		}
 	},
 	"description": "Displays the list of posts by setting the post type, classification, and number of posts to display.",

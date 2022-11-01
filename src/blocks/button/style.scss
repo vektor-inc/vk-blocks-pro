@@ -18,6 +18,10 @@ $lg-min: 992px;
 $xl-min: 1200px;
 $xxl-min: 1400px;
 
+// theme.json があるとコアに a:where(:not(.wp-element-button)) { text-decoration: underline; } が入るため打ち消し
+a.vk_button_link {
+	text-decoration: none;
+}
 :root,
 :root .editor-styles-wrapper {
 	.has-vk-color-primary-background-color,

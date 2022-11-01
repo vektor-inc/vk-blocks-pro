@@ -351,7 +351,7 @@ msgstr ""
 #: src/blocks/_pro/card-item/edit.js:182
 #: src/blocks/_pro/card/edit.js:128
 #: src/blocks/_pro/icon-card/edit.js:72
-#: src/blocks/_pro/post-list/edit.js:303
+#: src/blocks/_pro/post-list/edit.js:334
 msgid "Title"
 msgstr ""
 
@@ -455,7 +455,7 @@ msgid "Current page"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:63
-#: src/blocks/_pro/post-list/edit.js:199
+#: src/blocks/_pro/post-list/edit.js:205
 msgid "Display conditions"
 msgstr ""
 
@@ -464,7 +464,7 @@ msgid "Parent"
 msgstr ""
 
 #: src/blocks/_pro/child-page/edit.js:82
-#: src/blocks/_pro/post-list/edit.js:327
+#: src/blocks/_pro/post-list/edit.js:358
 msgid "Ignore this post"
 msgstr ""
 
@@ -962,78 +962,90 @@ msgstr ""
 msgid "Unit Type"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:176
+#: src/blocks/_pro/post-list/edit.js:182
 #. Filter by %s
 msgid "Filter by %s"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:203
+#: src/blocks/_pro/post-list/edit.js:209
 msgid "Filter by PostTypes"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:218
-msgid "Number of Posts"
+#: src/blocks/_pro/post-list/edit.js:222
+msgid "Taxonomy filter condition"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:231
-msgid "Filter by Date"
-msgstr ""
-
-#: src/blocks/_pro/post-list/edit.js:235
-msgid "Period of Time"
+#: src/blocks/_pro/post-list/edit.js:233
+msgid "OR ( Whichever apply )"
 msgstr ""
 
 #: src/blocks/_pro/post-list/edit.js:243
+msgid "AND ( All apply )"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:249
+msgid "Number of Posts"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:262
+msgid "Filter by Date"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:266
+msgid "Period of Time"
+msgstr ""
+
+#: src/blocks/_pro/post-list/edit.js:274
 msgid "Whole Period"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:247
+#: src/blocks/_pro/post-list/edit.js:278
 msgid "From Today"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:251
+#: src/blocks/_pro/post-list/edit.js:282
 msgid "From Now"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:255
+#: src/blocks/_pro/post-list/edit.js:286
 msgid "From Tomorrow"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:260
+#: src/blocks/_pro/post-list/edit.js:291
 msgid ""
 "* If you choose a future period, you will need to customize it so that "
 "future posts will be published immediately."
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:267
+#: src/blocks/_pro/post-list/edit.js:298
 msgid "Order"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:276
+#: src/blocks/_pro/post-list/edit.js:307
 msgid "ASC"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:280
+#: src/blocks/_pro/post-list/edit.js:311
 msgid "DESC"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:286
+#: src/blocks/_pro/post-list/edit.js:317
 msgid "Order by"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:295
+#: src/blocks/_pro/post-list/edit.js:326
 msgid "Published Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:299
+#: src/blocks/_pro/post-list/edit.js:330
 msgid "Modefied Date"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:307
+#: src/blocks/_pro/post-list/edit.js:338
 msgid "Random"
 msgstr ""
 
-#: src/blocks/_pro/post-list/edit.js:313
+#: src/blocks/_pro/post-list/edit.js:344
 msgid "offset"
 msgstr ""
 

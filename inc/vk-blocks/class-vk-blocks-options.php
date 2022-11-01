@@ -37,15 +37,15 @@ class VK_Blocks_Options {
 	 */
 	public static function options_scheme( $activation = false ) {
 		$default_options_schema = array(
-			'balloon_border_width' => array(
+			'balloon_border_width'      => array(
 				'type'    => 'number',
 				'default' => 1,
 			),
-			'margin_unit'          => array(
+			'margin_unit'               => array(
 				'type'    => 'string',
 				'default' => 'rem',
 			),
-			'margin_size'          => array(
+			'margin_size'               => array(
 				'type'  => 'object',
 				'items' => array(
 					'xl' => array(
@@ -135,19 +135,24 @@ class VK_Blocks_Options {
 					),
 				),
 			),
-			'load_separate_option' => array(
+			'load_separate_option'      => array(
 				'type'    => 'boolean',
 				'default' => false,
 			),
-			// プラグイン有効化時はその時のバージョンをそれ以外はこのオプション値を追加したバージョン1.42.1.0を返す
-			'activation_version'   => array(
+			'vk_blocks_pro_license_key' => array(
 				'type'    => 'string',
-				'default' => $activation ? VK_BLOCKS_VERSION : '1.42.1.0',
+				'default' => null,
+			),
+			'display_vk_block_template' => array(
+				'type'    => 'string',
+				'default' => 'display',
+			),
+			'new_faq_accordion'         => array(
+				'type'    => 'string',
+				'default' => 'disable',
 			),
 		);
-		$array = array_merge( $default_options_schema, apply_filters( 'vk_blocks_default_options_scheme', array() ) );
-		$array = array_merge( $array, self::block_manager_schema() );
-		return $array;
+		return $default_options_schema;
 	}
 
 	/**

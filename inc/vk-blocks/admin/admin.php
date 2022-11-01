@@ -184,5 +184,26 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 		array(),
 		VK_BLOCKS_VERSION
 	);
+
+	$block_categories = get_block_categories( get_post() );
+
+	wp_add_inline_script(
+		'wp-blocks',
+		sprintf(
+			'wp.blocks.setCategories( %s );',
+			wp_json_encode( $block_categories )
+		),
+		'after'
+	);
+
+	// ブロック一覧を取得する
+	// @see https://developer.wordpress.org/reference/classes/wp_block_type_registry/.
+	// 参考 https://github.com/ndiego/block-visibility/blob/main/includes/admin/settings.php
+	$block_registry = \WP_Block_Type_Registry::get_instance();
+	foreach ( $block_registry->get_all_registered() as $block_name => $block_type ) {
+		if ( ! empty( $block_type->editor_script ) ) {
+			wp_enqueue_script( $block_type->editor_script );
+		}
+	}
 }
 add_action( 'admin_enqueue_scripts', 'vk_blocks_options_enqueue_scripts' );

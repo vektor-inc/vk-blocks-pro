@@ -151,36 +151,12 @@ class VK_Blocks_Options {
 				'type'    => 'string',
 				'default' => 'disable',
 			),
+			'deprecated_blocks'         => array(
+				'type'    => 'array',
+				'default' => array(), // インストール時によってdefault値を変える可能性がある
+			),
 		);
 		return $default_options_schema;
-	}
-
-	/**
-	 * ブロックマネージャー用schema 生成
-	 * ブロック(alert)に対して他のオプション値を持たせる可能性が0ではないのでalertもobjectにする
-	 *
-	 * プラグイン有効化時にオプション値を保存するのでデフォルトはnull
-	 * 実行する箇所でnullの時の条件分岐を行う
-	 *
-	 * @return $array
-	 */
-	public static function block_manager_schema() {
-		$return_array                  = array();
-		$return_array['block_manager'] = array(
-			'type' => 'object',
-		);
-		foreach ( VK_Blocks_Global_Settings::blocks() as $key => $value ) {
-			$return_array['block_manager']['items'][ $value['name'] ] = array(
-				'type'  => 'object',
-				'items' => array(
-					'inserter' => array(
-						'type'    => 'boolean',
-						'default' => null,
-					),
-				),
-			);
-		}
-		return $return_array;
 	}
 
 	/**

@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Step(Pro) / Time line(Pro) ] Fix margin of WordPress 6.1 
+
 = 1.45.0 =
 [ Other ] Cope with WordPress 6.1
 [ Specification Change ] Color palette manager use wp_theme_json_data_default filter.

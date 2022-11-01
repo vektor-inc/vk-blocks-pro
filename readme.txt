@@ -64,7 +64,7 @@ e.g.
 
 == Changelog ==
 
-[ Bug fix ][ Step(Pro) / Time line(Pro) ] Fix margin of WordPress 6.1 
+[ Bug fix ][ Step(Pro) / Time line(Pro) ] Fix margin of theme.json
 
 = 1.45.0 =
 [ Other ] Cope with WordPress 6.1

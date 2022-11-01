@@ -19,8 +19,7 @@ function BlockManager(props) {
 
 	const allowedBlockTypes = blockTypes.filter(
 		(blockType) =>
-			hasBlockSupport(blockType, 'inserter', true) &&
-			!blockType.parent
+			hasBlockSupport(blockType, 'inserter', true) && !blockType.parent
 	);
 
 	const filteredBlockTypes = allowedBlockTypes;

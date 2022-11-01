@@ -54,10 +54,7 @@ export default function BlockCategory(props) {
 				{blockTypes.map((blockType) => {
 					return (
 						<>
-							<BlockType
-								key={blockType}
-								blockType={blockType}
-							/>
+							<BlockType key={blockType} blockType={blockType} />
 						</>
 					);
 				})}

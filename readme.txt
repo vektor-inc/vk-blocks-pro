@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Specification Change ][ Grid Column ( Pro ) ] Changed margin setting from 1 to 0.1 separator.
 [ Bug fix ][ Step(Pro) / Time line(Pro) ] Fix margin of WordPress 6.1 
 
 = 1.45.0 =

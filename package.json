@@ -100,5 +100,8 @@
 		"rimraf": "^3.0.2",
 		"sass": "1.32.12"
 	},
-	"dependencies": {}
+	"dependencies": {},
+	"volta": {
+		"node": "14.20.1"
+	}
 }

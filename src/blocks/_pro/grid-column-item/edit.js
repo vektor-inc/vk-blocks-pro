@@ -47,14 +47,14 @@ export default function GridColumnItemEdit(props) {
 	const columStyle = {
 		color:
 			textColor !== null &&
-			textColor !== undefined &&
-			isHexColor(textColor)
+				textColor !== undefined &&
+				isHexColor(textColor)
 				? textColor
 				: undefined,
 		background:
 			backgroundColor !== null &&
-			backgroundColor !== undefined &&
-			isHexColor(backgroundColor)
+				backgroundColor !== undefined &&
+				isHexColor(backgroundColor)
 				? backgroundColor
 				: undefined,
 		paddingTop:

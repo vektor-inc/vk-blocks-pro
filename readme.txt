@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Custom CSS ( Pro ) ] Add custom css extension in inspector controls.
 [ Specification Change ][ Grid Column ( Pro ) ] Changed margin setting from 1 to 0.1 separator.
 [ Bug fix ][ Step(Pro) / Time line(Pro) ] Fix margin of WordPress 6.1 
 

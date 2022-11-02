@@ -30,8 +30,9 @@ class VK_Blocks_Global_Settings {
 	public static function blocks() {
 		$blocks = array(
 			array(
-				'name'   => 'alert',
-				'is_pro' => false,
+				'name'               => 'alert',
+				'is_pro'             => false,
+				'deprecated_version' => '1.45.0.0',
 			),
 			array(
 				'name'   => 'ancestor-page-list',

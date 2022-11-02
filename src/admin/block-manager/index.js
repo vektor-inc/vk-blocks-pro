@@ -3,7 +3,7 @@
  */
 import { withSelect } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
-// これがないとregisterブロックされたものが取得できない
+// 登録されたブロックを取得するため
 import '@wordpress/block-library';
 // コアブロックを取得するならこれ
 // import { registerCoreBlocks } from '@wordpress/block-library';
@@ -13,17 +13,48 @@ import '@wordpress/block-library';
  * Internal dependencies
  */
 import BlockCategory from './block-category';
+/*globals vkBlocksObject */
 
 function BlockManager(props) {
 	const { blockTypes, categories, hasBlockSupport } = props;
 
-	const allowedBlockTypes = blockTypes.filter(
+	const showCategories = categories.filter((category) => {
+		return category.slug.match(/vk-blocks/);
+	});
+	const addCategory = {
+		slug: 'vk-blocks-deprecated-cat',
+		title: __('非推奨ブロック', 'vk-blocks'),
+		icon: '',
+	};
+	showCategories.push(addCategory);
+
+	const showBlockTypes = blockTypes.filter(
 		(blockType) =>
-			hasBlockSupport(blockType, 'inserter', true) && !blockType.parent
+			// showCategoriesにcategoryが含まれる
+			showCategories.find((showCategory) => {
+				return showCategory.slug === blockType.category;
+			}) !== undefined &&
+			// vk-blocksが含まれる
+			blockType.name.match(/vk-blocks/) &&
+			// inserterがtrueのもの
+			hasBlockSupport(blockType, 'inserter', true) &&
+			// 子ブロックではない
+			!blockType.parent
 	);
 
-	const filteredBlockTypes = allowedBlockTypes;
-	// console.log(filteredBlockTypes);
+	let filterBlockTypes = [...showBlockTypes];
+	vkBlocksObject.blocks.forEach((block, index) => {
+		// vkBlocksObject.blocksにdeprecated_versionが含まれていたらvk-blocks-deprecated-catに書き換える
+		if (!!block.deprecated_version) {
+			filterBlockTypes = {
+				...filterBlockTypes,
+				[index]: {
+					...filterBlockTypes[index],
+					category: 'vk-blocks-deprecated-cat',
+				},
+			};
+		}
+	});
 
 	return (
 		<>
@@ -32,22 +63,21 @@ function BlockManager(props) {
 					{__('Block Manager', 'vk-blocks')}
 				</h3>
 				<ul className="blockManagerList">
-					{categories.map((category) => {
+					{showCategories.map((category) => {
 						// <p>{category.slug}</p>
 						return (
 							<BlockCategory
 								key={category.slug}
 								category={category}
-								// blockTypes={ filter( filteredBlockTypes, {
+								// blockTypes={ filter( showBlockTypes, {
 								// 	category: category.slug,
 								// } ) }
-								blockTypes={filteredBlockTypes}
+								blockTypes={showBlockTypes}
 								// disabledBlocks={ disabledBlocksState }
 							/>
 						);
 					})}
 				</ul>
-				<h4>{__('非推奨ブロック', 'vk-blocks')}</h4>
 			</section>
 		</>
 	);

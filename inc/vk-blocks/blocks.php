@@ -14,8 +14,8 @@
  */
 function vk_blocks_hide_blocks( $metadata ) {
 	$vk_blocks_options = VK_Blocks_Options::get_options();
-	foreach ( $vk_blocks_options['deprecated_blocks'] as $value ) {
-		if ( $value === $metadata['name'] ) {
+	foreach ( VK_Blocks_Global_Settings::blocks() as $key => $value ) {
+		if ( false === $vk_blocks_options['block_manager'][ $value['name'] ]['inserter'] && 'vk-blocks/' . $value['name'] === $metadata['name'] ) {
 			$metadata['supports']['inserter'] = false;
 		}
 	}

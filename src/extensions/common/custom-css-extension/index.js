@@ -211,12 +211,7 @@ export const withInspectorControls = createHigherOrderComponent(
 								}
 							})()}
 						</p>
-						<p>
-							{__(
-								'Example:',
-								'vk-blocks'
-							)}
-						</p>
+						<p>{__('Example:', 'vk-blocks')}</p>
 						<pre className="vk-custom-css-sample-code">
 							{'selector {\n    background: #f5f5f5;\n}'}
 						</pre>
@@ -235,10 +230,7 @@ export const withInspectorControls = createHigherOrderComponent(
 							variant="secondary"
 							isSmall
 						>
-							{__(
-								'Custom CSS Setting',
-								'vk-blocks'
-							)}
+							{__('Custom CSS Setting', 'vk-blocks')}
 						</Button>
 					</PanelBody>
 				</InspectorControls>

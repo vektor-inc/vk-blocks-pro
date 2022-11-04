@@ -1,3 +1,9 @@
+
+// theme.json があるとコアに a:where(:not(.wp-element-button)) { text-decoration: underline; } が入るため打ち消し
+.editor-styles-wrapper a.vk_button_link {
+	text-decoration: none;
+}
+
 .wp-block-vk-blocks-button.block-editor-block-list__block.wp-block.vk_button.vk_button-align-wide {
 	display: block;
 	margin-left: auto;

@@ -6,29 +6,27 @@ import { useCallback, useState } from '@wordpress/element';
 import {
 	registerFormatType,
 	applyFormat,
-	removeFormat,
 	getActiveFormat,
-	useAnchorRef,
 } from '@wordpress/rich-text';
 import {
 	RichTextToolbarButton,
 	RichTextShortcut,
-	ColorPalette,
 } from '@wordpress/block-editor';
-import { Popover, Icon } from '@wordpress/components';
+import { Icon } from '@wordpress/components';
 
 /**
  * Internal dependencies
  */
 import { ReactComponent as IconSVG } from './icon.svg';
 import hex2rgba from '@vkblocks/utils/hex-to-rgba';
+import { default as InlineColorUI } from './inline';
 
 const name = 'vk-blocks/highlighter';
-const alpha = 0.7;
-const defaultColor = '#fffd6b';
+export const alpha = 0.7;
+export const defaultColor = '#fffd6b';
 
 // 色が指定されていなかったらデフォルトカラーを指定する
-const setColorIfUndefined = (color) => {
+export const setColorIfUndefined = (color) => {
 	if (color === undefined) {
 		color = defaultColor;
 	}
@@ -36,7 +34,7 @@ const setColorIfUndefined = (color) => {
 };
 
 //ハイライトカラーが選択されたら
-const hightliterOnApply = ({ color, value, onChange }) => {
+export const highlighterOnApply = ({ color, value, onChange }) => {
 	color = setColorIfUndefined(color);
 
 	onChange(
@@ -53,8 +51,13 @@ const hightliterOnApply = ({ color, value, onChange }) => {
 	);
 };
 
-const HighlighterEdit = (props) => {
-	const { value, isActive, onChange, contentRef } = props;
+function HighlighterEdit({
+	value,
+	onChange,
+	isActive,
+	activeAttributes,
+	contentRef,
+}) {
 	const shortcutType = 'primary';
 	const shortcutChar = 'h';
 
@@ -71,7 +74,7 @@ const HighlighterEdit = (props) => {
 			background: `linear-gradient(transparent 60%, ${rgbaHeightlightColor} 0)`,
 		};
 	}
-	const anchorRef = useAnchorRef({ ref: contentRef, value });
+
 	const [isAddingColor, setIsAddingColor] = useState(false);
 
 	const enableIsAddingColor = useCallback(
@@ -95,7 +98,7 @@ const HighlighterEdit = (props) => {
 				onClick={() => {
 					if (heightlightColor === undefined) {
 						// set default color on initial
-						hightliterOnApply({
+						highlighterOnApply({
 							heightlightColor,
 							value,
 							onChange,
@@ -115,36 +118,21 @@ const HighlighterEdit = (props) => {
 				}
 			/>
 			{isAddingColor && (
-				<Popover
-					value={value}
-					className="vk-blocks-format-popover components-inline-color-popover"
-					anchorRef={anchorRef}
+				<InlineColorUI
+					name={name}
 					onClose={disableIsAddingColor}
-				>
-					<ColorPalette
-						value={heightlightColor}
-						onChange={(color) => {
-							if (color) {
-								// select color on palette
-								hightliterOnApply({
-									color,
-									value,
-									onChange,
-								});
-							} else {
-								// clear palette
-								onChange(removeFormat(value, name));
-							}
-							setIsAddingColor(false);
-						}}
-					/>
-				</Popover>
+					activeAttributes={activeAttributes}
+					value={value}
+					onChange={onChange}
+					contentRef={contentRef}
+					setIsAddingColor={setIsAddingColor}
+				/>
 			)}
 		</>
 	);
-};
+}
 
-registerFormatType(name, {
+export const highlighColor = {
 	title: __('Highlighter', 'vk-blocks'),
 	tagName: 'span',
 	className: 'vk_highlighter',
@@ -153,4 +141,6 @@ registerFormatType(name, {
 		style: 'style',
 	},
 	edit: HighlighterEdit,
-});
+};
+
+registerFormatType(name, highlighColor);

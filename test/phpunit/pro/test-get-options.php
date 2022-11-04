@@ -84,6 +84,10 @@ class GetOptionsTest extends WP_UnitTestCase {
 						),
 					),
 					'load_separate_option' => false,
+					'vk_blocks_pro_license_key' => null,
+					'display_vk_block_template' => 'display',
+					'new_faq_accordion' => 'disable',
+					'show_custom_css_editor_flag' => 'show',
 					'text_style_lists' => array(
 						array(
 							'title' => null,
@@ -99,10 +103,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'class_name' => 'vk-text-style--1',
 						),
 					),
-					'vk_blocks_pro_license_key' => null,
-					'display_vk_block_template' => 'display',
-					'new_faq_accordion' => 'disable',
-					'show_custom_css_editor_flag' => 'show',
 				),
 			),
 			// デフォルトの表示非表示調整 v0.44.13
@@ -425,6 +425,10 @@ class GetOptionsTest extends WP_UnitTestCase {
 						),
 					),
 					'load_separate_option' => true,
+					'vk_blocks_pro_license_key' => 'test_license_key',
+					'display_vk_block_template' => 'display',
+					'new_faq_accordion' => 'open',
+					'show_custom_css_editor_flag' => 'hide',
 					'text_style_lists' => array(
 						array(
 							'title' => '書式設定1',
@@ -453,10 +457,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'class_name' => 'vk-text-style--2',
 						),
 					),
-					'vk_blocks_pro_license_key' => 'test_license_key',
-					'display_vk_block_template' => 'display',
-					'new_faq_accordion' => 'open',
-					'show_custom_css_editor_flag' => 'hide',
 				),
 				'correct'  => array(
 					'balloon_border_width' => 2,
@@ -489,6 +489,10 @@ class GetOptionsTest extends WP_UnitTestCase {
 						),
 					),
 					'load_separate_option' => true,
+					'vk_blocks_pro_license_key' => 'test_license_key',
+					'display_vk_block_template' => 'display',
+					'new_faq_accordion' => 'open',
+					'show_custom_css_editor_flag' => 'hide',
 					'text_style_lists' => array(
 						array(
 							'title' => '書式設定1',
@@ -517,10 +521,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'class_name' => 'vk-text-style--2',
 						),
 					),
-					'vk_blocks_pro_license_key' => 'test_license_key',
-					'display_vk_block_template' => 'display',
-					'new_faq_accordion' => 'open',
-					'show_custom_css_editor_flag' => 'hide',
 				),
 			),
 		);

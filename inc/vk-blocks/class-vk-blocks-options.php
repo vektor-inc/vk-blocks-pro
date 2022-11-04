@@ -153,7 +153,7 @@ class VK_Blocks_Options {
 				'type'    => 'string',
 				'default' => 'show',
 			),
-			'text_style_lists'     => array(
+			'text_style_lists'            => array(
 				'type'  => 'array',
 				'items' => array(
 					'title'                 => array(
@@ -201,6 +201,7 @@ class VK_Blocks_Options {
 						'default' => 'vk-text-style--1',
 					),
 				),
+			),
 		);
 		return $default_options_schema;
 	}

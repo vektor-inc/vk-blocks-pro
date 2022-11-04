@@ -90,9 +90,9 @@ function vk_blocks_blocks_assets() {
 		'vk-blocks-build-js',
 		'vk_blocks_params',
 		array(
-			'home_url'  => home_url( '/' ),
+			'home_url'                    => home_url( '/' ),
 			'show_custom_css_editor_flag' => $vk_blocks_options['show_custom_css_editor_flag'],
-			'textStyle' => $vk_blocks_options['text_style_lists'],
+			'textStyle'                   => $vk_blocks_options['text_style_lists'],
 		)
 	);
 

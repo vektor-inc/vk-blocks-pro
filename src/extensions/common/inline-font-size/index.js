@@ -1,33 +1,31 @@
 /**
- * External dependencies
- */
-import { isEmpty } from 'lodash';
-
-/**
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
 import { useCallback, useState } from '@wordpress/element';
 import {
 	registerFormatType,
-	applyFormat,
 	removeFormat,
 	getActiveFormat,
-	useAnchorRef,
 } from '@wordpress/rich-text';
 import { RichTextToolbarButton } from '@wordpress/block-editor';
-import { FontSizePicker, Button, Popover, Icon } from '@wordpress/components';
+import { Icon } from '@wordpress/components';
 
 /**
  * Internal dependencies
  */
 import { ReactComponent as IconSVG } from './icon.svg';
-import compareVersions from 'compare-versions';
+import { default as InlineFontSizeUI } from './inline';
 
 const name = 'vk-blocks/inline-font-size';
 
-const FontSizeEdit = (props) => {
-	const { value, isActive, onChange, contentRef } = props;
+function FontSizeEdit({
+	value,
+	onChange,
+	isActive,
+	activeAttributes,
+	contentRef,
+}) {
 	const shortcutType = 'primary';
 	const shortcutChar = 'h';
 
@@ -50,19 +48,10 @@ const FontSizeEdit = (props) => {
 		}
 	}
 
-	const pickerStyle = {
-		width: '200px',
-	};
 	const iconStyle = {
 		width: '24px',
 		height: '24px',
 	};
-	const buttonStyle = {
-		marginTop: '16px',
-		padding: '0 16px',
-		height: '30px',
-	};
-	const anchorRef = useAnchorRef({ ref: contentRef, value });
 	const [isSettingFontSize, setIsSettingFontSize] = useState(false);
 
 	const enableIsAddingFontSize = useCallback(
@@ -74,37 +63,10 @@ const FontSizeEdit = (props) => {
 		[setIsSettingFontSize]
 	);
 
-	const hasFontSizeToChoose = !isEmpty(value) || !selectedFontSize;
+	const hasFontSizeToChoose = !!!value.length || !selectedFontSize;
 	if (!hasFontSizeToChoose && !isActive) {
 		return null;
 	}
-
-	const fontSizes = [
-		{
-			name: __('Small', 'vk-blocks'),
-			slug: 'small',
-			size: '12px',
-		},
-		{
-			name: __('Normal', 'vk-blocks'),
-			slug: 'normal',
-			size: '16px',
-		},
-		{
-			name: __('Big', 'vk-blocks'),
-			slug: 'big',
-			size: '18px',
-		},
-		{
-			name: __('Extra big', 'vk-blocks'),
-			slug: 'extra-big',
-			size: '21px',
-		},
-	];
-
-	// Sliderを使用するときに必要になるfallbackFontSizeを用意 wp5.8以下
-	const getFontSizeNoUnit = parseInt(getFontSize);
-	const fallbackFontSize = !getFontSizeNoUnit ? 16 : getFontSizeNoUnit;
 
 	return (
 		<>
@@ -126,65 +88,21 @@ const FontSizeEdit = (props) => {
 				}
 			/>
 			{isSettingFontSize && (
-				<Popover
-					className="vk-blocks-format-popover components-inline-color-popover"
-					anchorRef={anchorRef}
+				<InlineFontSizeUI
+					name={name}
 					onClose={disableIsAddingFontSize}
-				>
-					<div style={pickerStyle}>
-						<FontSizePicker
-							fontSizes={fontSizes}
-							value={selectedFontSize}
-							fallbackFontSize={
-								window.wpVersion !== undefined &&
-								window.wpVersion !== null &&
-								compareVersions(window.wpVersion, '5.9') < 0
-									? fallbackFontSize
-									: false
-							}
-							withSlider={
-								window.wpVersion !== undefined &&
-								window.wpVersion !== null &&
-								compareVersions(window.wpVersion, '5.9') < 0
-									? true
-									: false
-							}
-							onChange={(newFontSize) => {
-								if (newFontSize) {
-									onChange(
-										applyFormat(value, {
-											type: name,
-											attributes: {
-												data: `${newFontSize}`,
-												style: `font-size: ${newFontSize};`,
-											},
-										})
-									);
-								} else {
-									// reset font size
-									onChange(removeFormat(value, name));
-								}
-								//setIsSettingFontSize(false);
-							}}
-						/>
-						<Button
-							onClick={() => {
-								setIsSettingFontSize(false);
-							}}
-							isSmall
-							isSecondary
-							style={buttonStyle}
-						>
-							{__('Apply', 'vk-blocks')}
-						</Button>
-					</div>
-				</Popover>
+					activeAttributes={activeAttributes}
+					value={value}
+					onChange={onChange}
+					contentRef={contentRef}
+					setIsSettingFontSize={setIsSettingFontSize}
+				/>
 			)}
 		</>
 	);
-};
+}
 
-registerFormatType(name, {
+export const inlineFontSize = {
 	title: __('Inline font size', 'vk-blocks'),
 	tagName: 'span',
 	className: 'vk_inline-font-size',
@@ -193,4 +111,6 @@ registerFormatType(name, {
 		style: 'style',
 	},
 	edit: FontSizeEdit,
-});
+};
+
+registerFormatType(name, inlineFontSize);

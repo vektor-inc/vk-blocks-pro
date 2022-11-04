@@ -20,17 +20,3 @@ function vk_blocks_get_color_palette() {
 	}
 	return $color_palette;
 }
-
-use VektorInc\VK_Color_Palette_Manager\VkColorPaletteManager;
-new VkColorPaletteManager();
-
-/**
- * Get Add Color Array
- *
- * カラーパレットマネージャーが追加する色を取得
- *
- * @return array
- */
-function vk_blocks_get_add_color_array() {
-	return VkColorPaletteManager::add_color_array();
-}

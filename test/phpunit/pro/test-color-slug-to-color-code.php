@@ -14,10 +14,6 @@ class colorSlugToClorCodeTest extends WP_UnitTestCase {
 				'correct' => '#F0F0F1',
 			),
 			array(
-				'value'  => 'vk-color-primary',
-				'correct' => 'var(--vk-color-primary)',
-			),
-			array(
 				'value'  => 'black',
 				'correct' => 'var(--wp--preset--color--black)',
 			),

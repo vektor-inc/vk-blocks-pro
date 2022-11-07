@@ -158,8 +158,9 @@ class VK_Blocks_Options {
 			'deprecated_blocks'         => array(
 				'type'    => 'array',
 				'default' => array(), // インストール時によってdefault値を変える可能性がある
-		);
-		return $default_options_schema;
+				)
+			);
+			return $default_options_schema;
 	}
 
 	/**

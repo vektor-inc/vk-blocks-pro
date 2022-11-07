@@ -12,7 +12,7 @@ import '@wordpress/block-library';
 /**
  * Internal dependencies
  */
-import BlockCategory from './block-category';
+import BlockManagerCategory from './category';
 /*globals vkBlocksObject */
 
 function BlockManager(props) {
@@ -62,22 +62,22 @@ function BlockManager(props) {
 				<h3 id="block-manager-setting">
 					{__('Block Manager', 'vk-blocks')}
 				</h3>
-				<ul className="blockManagerList">
+				<div
+					tabIndex="0"
+					role="region"
+					aria-label={__('Available block types', 'vk-blocks')}
+					className="block-manager__results"
+				>
 					{showCategories.map((category) => {
-						// <p>{category.slug}</p>
 						return (
-							<BlockCategory
+							<BlockManagerCategory
 								key={category.slug}
-								category={category}
-								// blockTypes={ filter( showBlockTypes, {
-								// 	category: category.slug,
-								// } ) }
+								title={category.title}
 								blockTypes={showBlockTypes}
-								// disabledBlocks={ disabledBlocksState }
 							/>
 						);
 					})}
-				</ul>
+				</div>
 			</section>
 		</>
 	);

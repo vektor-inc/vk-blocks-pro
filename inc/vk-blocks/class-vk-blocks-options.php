@@ -155,11 +155,11 @@ class VK_Blocks_Options {
 				'type'    => 'string',
 				'default' => 'show',
 			),
-			'deprecated_blocks'         => array(
+			'deprecated_blocks'           => array(
 				'type'    => 'array',
 				'default' => array(), // インストール時によってdefault値を変える可能性がある
-				)
-			);
+			),
+		);
 			return $default_options_schema;
 	}
 

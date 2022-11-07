@@ -71,7 +71,7 @@ function vk_blocks_setting_page() {
 		$get_menu_html .= '<li><a href="#license-setting">' . __( 'License Key', 'vk-blocks' ) . '</a></li>';
 	}
 	$get_menu_html .= '<li><a href="#balloon-setting">' . __( 'Balloon Block Setting', 'vk-blocks' ) . '</a></li>';
-	$get_menu_html .= '<li><a href="#text-style-setting">' . __( 'Text Style Setting', 'vk-blocks' ) . '</a></li>';
+	$get_menu_html .= '<li><a href="#custom-text-style-setting">' . __( 'Custom Text Style Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= '<li><a href="#margin-setting">' . __( 'Common Margin Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= '<li><a href="#load-separete-setting">' . __( 'Load Separete Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= apply_filters( 'vk_blocks_pro_menu', '' );

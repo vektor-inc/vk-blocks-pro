@@ -1,7 +1,7 @@
 /**
  * WordPress dependencies
  */
-import { __, sprintf } from '@wordpress/i18n';
+import { __ } from '@wordpress/i18n';
 import { registerFormatType, toggleFormat } from '@wordpress/rich-text';
 import { RichTextToolbarButton } from '@wordpress/block-editor';
 import { Icon } from '@wordpress/components';
@@ -13,23 +13,15 @@ import { ReactComponent as IconSVG } from './icon.svg';
 /*globals vk_blocks_params */
 
 if (window.vk_blocks_params) {
-	vk_blocks_params.textStyle.forEach((option) => {
+	vk_blocks_params.textStyleLists.forEach((textStyleList) => {
 		// titleがなければregisterしない
-		if (!!!option.title) {
+		if (!!!textStyleList.title) {
 			return;
 		}
 
-		const name = option.class_name && `vk-blocks/${option.class_name}`;
-		const title = option.title
-			? option.title
-			: sprintf(
-					/* translators: %s: number of index. */
-					__('Custom Text Style %s'),
-					option.index
-			  );
-		const className = option.class_name
-			? option.class_name
-			: `vk-text-style--${option.index}`;
+		const name = textStyleList.class_name && `vk-blocks/${textStyleList.class_name}`;
+		const title = textStyleList.title;
+		const className = textStyleList.class_name;
 
 		registerFormatType(name, {
 			title,
@@ -40,11 +32,7 @@ if (window.vk_blocks_params) {
 				return (
 					<>
 						<RichTextToolbarButton
-							icon={
-								<>
-									<Icon icon={IconSVG} />
-								</>
-							}
+							icon={<Icon icon={IconSVG} />}
 							title={title}
 							onClick={() => {
 								props.onChange(

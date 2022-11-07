@@ -45,10 +45,10 @@ export default function AdminTextStyle() {
 	return (
 		<>
 			<section>
-				<h3 id="text-style-setting">
+				<h3 id="custom-text-style-setting">
 					{__(
-						'書式設定',
-						// 'Text Style Setting',
+						'カスタム書式設定',
+						// 'Custom Text Style Setting',
 						'vk-blocks'
 					)}
 				</h3>

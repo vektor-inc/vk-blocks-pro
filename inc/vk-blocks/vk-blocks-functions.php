@@ -82,8 +82,15 @@ function vk_blocks_blocks_assets() {
 	} else {
 		wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_check', array( 'is_pro' => false ) );
 	}
-	// ホーム URL を渡す用.
-	wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_params', array( 'home_url' => home_url( '/' ) ) );
+
+	wp_localize_script(
+		'vk-blocks-build-js',
+		'vk_blocks_params',
+		array(
+			'home_url'                    => home_url( '/' ),
+			'show_custom_css_editor_flag' => $vk_blocks_options['show_custom_css_editor_flag'],
+		)
+	);
 
 	global $vk_blocks_common_attributes;
 	$vk_blocks_common_attributes = array(

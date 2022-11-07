@@ -31,6 +31,11 @@ import * as tableofContentsNew from './_pro/table-of-contents-new';
 import * as timeline from './_pro/timeline';
 import * as timelineItem from './_pro/timeline-item';
 
+/**
+ * Extensions
+ */
+import '@vkblocks/extensions/common/custom-css-extension';
+
 const vkblocksPro = [
 	accordion,
 	accordionTarget,

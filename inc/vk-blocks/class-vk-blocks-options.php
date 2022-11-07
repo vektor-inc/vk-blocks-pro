@@ -37,15 +37,15 @@ class VK_Blocks_Options {
 	 */
 	public static function options_scheme( $activation = false ) {
 		$default_options_schema = array(
-			'balloon_border_width'      => array(
+			'balloon_border_width'        => array(
 				'type'    => 'number',
 				'default' => 1,
 			),
-			'margin_unit'               => array(
+			'margin_unit'                 => array(
 				'type'    => 'string',
 				'default' => 'rem',
 			),
-			'margin_size'               => array(
+			'margin_size'                 => array(
 				'type'  => 'object',
 				'items' => array(
 					'xl' => array(
@@ -135,26 +135,29 @@ class VK_Blocks_Options {
 					),
 				),
 			),
-			'load_separate_option'      => array(
+			'load_separate_option'        => array(
 				'type'    => 'boolean',
 				'default' => false,
 			),
-			'vk_blocks_pro_license_key' => array(
+			'vk_blocks_pro_license_key'   => array(
 				'type'    => 'string',
 				'default' => null,
 			),
-			'display_vk_block_template' => array(
+			'display_vk_block_template'   => array(
 				'type'    => 'string',
 				'default' => 'display',
 			),
-			'new_faq_accordion'         => array(
+			'new_faq_accordion'           => array(
 				'type'    => 'string',
 				'default' => 'disable',
+			),
+			'show_custom_css_editor_flag' => array(
+				'type'    => 'string',
+				'default' => 'show',
 			),
 			'deprecated_blocks'         => array(
 				'type'    => 'array',
 				'default' => array(), // インストール時によってdefault値を変える可能性がある
-			),
 		);
 		return $default_options_schema;
 	}

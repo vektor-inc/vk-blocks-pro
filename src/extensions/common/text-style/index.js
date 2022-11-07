@@ -1,7 +1,6 @@
 /**
  * WordPress dependencies
  */
-import { __ } from '@wordpress/i18n';
 import { registerFormatType, toggleFormat } from '@wordpress/rich-text';
 import { RichTextToolbarButton } from '@wordpress/block-editor';
 import { Icon } from '@wordpress/components';
@@ -19,7 +18,8 @@ if (window.vk_blocks_params) {
 			return;
 		}
 
-		const name = textStyleList.class_name && `vk-blocks/${textStyleList.class_name}`;
+		const name =
+			textStyleList.class_name && `vk-blocks/${textStyleList.class_name}`;
 		const title = textStyleList.title;
 		const className = textStyleList.class_name;
 

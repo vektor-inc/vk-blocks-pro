@@ -33,7 +33,7 @@ if (window.vk_blocks_params) {
 					<>
 						<RichTextToolbarButton
 							icon={<Icon icon={IconSVG} />}
-							title={title}
+							title={<span className={className}>{title}</span>}
 							onClick={() => {
 								props.onChange(
 									toggleFormat(value, { type: name })

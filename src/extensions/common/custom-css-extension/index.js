@@ -3,7 +3,7 @@
  */
 import { __, getLocaleData } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
-import { PanelBody, Icon, Button, ExternalLink } from '@wordpress/components';
+import { PanelBody, BaseControl, Icon, Button, ExternalLink } from '@wordpress/components';
 import { InspectorControls } from '@wordpress/block-editor';
 import { createHigherOrderComponent, useInstanceId } from '@wordpress/compose';
 import { hasBlockSupport } from '@wordpress/blocks';
@@ -170,7 +170,7 @@ export const withInspectorControls = createHigherOrderComponent(
 						initialOpen={false}
 					>
 						<CodeMirrorCss
-							className="vk-codemirror-block-editor"
+							className="vk-codemirror-block-editor mb-2"
 							value={vkbCustomCss ? vkbCustomCss : ''}
 							onChange={(value) => {
 								setAttributes({ vkbCustomCss: value });
@@ -193,45 +193,60 @@ export const withInspectorControls = createHigherOrderComponent(
 						})()}
 						<p>
 							{__(
-								'If selector is specified, it is replaced by a block-specific CSS class. If selector is set to "selector", it will be replaced with a block-specific CSS class. CSS selectors other than "selector" may affect the entire page.',
+								'A CSS selector, when specified as "selector", is automatically converted to a CSS class specific to this block, and the CSS you wrote will be reflected only in this block.',
+								'vk-blocks'
+							)}
+							{__(
+								'Selectors other than "selector" can affect the entire page.',
 								'vk-blocks'
 							)}
 							{(() => {
 								const lang = getLocaleData()[''].lang;
 								if (lang === 'ja_JP') {
 									return (
-										<ExternalLink
+										<>
+										<br />
+											<ExternalLink
 											href="https://www.vektor-inc.co.jp/service/wordpress-plugins/vk-blocks/vk-custom-css/"
 											target="_blank"
 											rel="noreferrer"
-										>
-											詳しくはこちら
-										</ExternalLink>
+											>
+											{__('Click here for details', 'vk-blocks')}
+											</ExternalLink>
+										</>
 									);
 								}
 							})()}
 						</p>
 						<p>{__('Example:', 'vk-blocks')}</p>
 						<pre className="vk-custom-css-sample-code">
-							{'selector {\n    background: #f5f5f5;\n}'}
+							{'/* ' + __('Applies only to this block', 'vk-blocks') + ' */\n' + 
+							 'selector {\n    background: #f5f5f5;\n}\n'}
+							{'/* ' + __( 'Affects page-wide p tags', 'vk-blocks' ) + ' */\n' + 'p {\n    background: #f5f5ff;\n}'}
 						</pre>
-						<p>
-							{__(
-								'If you want the edit screen to be as close to the public screen as possible, or if your own CSS interferes with the CSS for the identification display and does not display as intended on the edit screen, please hide it.',
-								'vk-blocks'
-							)}
-						</p>
-						<Button
-							href={addQueryArgs(
-								'options-general.php?page=vk_blocks_options#custom-css-setting'
-							)}
-							target="_blank"
-							rel="noreferrer"
-							variant="secondary"
-							isSmall
+						<hr />
+						<BaseControl
+							label={__('Custom CSS identification display', 'vk-blocks')}
+							id={`custom-css-identification-display`}
 						>
-							{__('Custom CSS Setting', 'vk-blocks')}
-						</Button>
+							<p>
+								{__(
+									'If you want the edit screen to be as close to the public screen as possible, or if your own CSS interferes with the CSS for the identification display and does not display as intended on the edit screen, you can hide it.',
+									'vk-blocks'
+								)}
+							</p>
+							<Button
+								href={addQueryArgs(
+									'options-general.php?page=vk_blocks_options#custom-css-setting'
+								)}
+								target="_blank"
+								rel="noreferrer"
+								variant="secondary"
+								isSmall
+							>
+								{__('Custom CSS Setting', 'vk-blocks')}
+							</Button>
+						</BaseControl>
 					</PanelBody>
 				</InspectorControls>
 			</>

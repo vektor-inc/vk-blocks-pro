@@ -57,11 +57,11 @@ msgid "image"
 msgstr ""
 
 #: src/admin/custom-css.js:20
-#: src/extensions/common/custom-css-extension/index.js:238
+#: src/extensions/common/custom-css-extension/index.js:247
 msgid "Custom CSS Setting"
 msgstr ""
 
-#: src/admin/custom-css.js:27
+#: src/admin/custom-css.js:24
 msgid "Show Custom CSS flag in editor"
 msgstr ""
 
@@ -2162,20 +2162,41 @@ msgstr ""
 
 #: src/extensions/common/custom-css-extension/index.js:195
 msgid ""
-"If selector is specified, it is replaced by a block-specific CSS class. If "
-"selector is set to \"selector\", it will be replaced with a block-specific "
-"CSS class. CSS selectors other than \"selector\" may affect the entire page."
+"A CSS selector, when specified as \"selector\", is automatically converted "
+"to a CSS class specific to this block, and the CSS you wrote will be "
+"reflected only in this block."
 msgstr ""
 
-#: src/extensions/common/custom-css-extension/index.js:215
+#: src/extensions/common/custom-css-extension/index.js:199
+msgid "Selectors other than \"selector\" can affect the entire page."
+msgstr ""
+
+#: src/extensions/common/custom-css-extension/index.js:214
+msgid "Click here for details"
+msgstr ""
+
+#: src/extensions/common/custom-css-extension/index.js:221
 msgid "Example:"
 msgstr ""
 
-#: src/extensions/common/custom-css-extension/index.js:224
+#: src/extensions/common/custom-css-extension/index.js:223
+msgid "Applies only to this block"
+msgstr ""
+
+#: src/extensions/common/custom-css-extension/index.js:225
+msgid "Affects page-wide p tags"
+msgstr ""
+
+#: src/extensions/common/custom-css-extension/index.js:229
+msgid "Custom CSS identification display"
+msgstr ""
+
+#: src/extensions/common/custom-css-extension/index.js:233
 msgid ""
 "If you want the edit screen to be as close to the public screen as "
 "possible, or if your own CSS interferes with the CSS for the identification "
-"display and does not display as intended on the edit screen, please hide it."
+"display and does not display as intended on the edit screen, you can hide "
+"it."
 msgstr ""
 
 #: src/extensions/common/hidden-extension/index.js:189

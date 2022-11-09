@@ -206,6 +206,12 @@
 }//.wp-block-vk-blocks-grid-column 
 
 .wp-block-vk-blocks-grid-column  {
+	&-item {
+		.vk_gridColumn_item_inner {
+			// 編集画面で背景色がはみ出すのを防ぐ
+			box-sizing: border-box;
+		}
+	}
 	div[data-type="vk-blocks/grid-column-item"]{
 		// これがないとカラムのセルが潰れて中に何もいれられない
 		min-height:30px;

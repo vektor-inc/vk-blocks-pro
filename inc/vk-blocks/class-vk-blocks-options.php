@@ -155,12 +155,29 @@ class VK_Blocks_Options {
 				'type'    => 'string',
 				'default' => 'show',
 			),
+			// 新規インストール時によってdefault値を変える
 			'deprecated_blocks'           => array(
 				'type'    => 'array',
-				'default' => array(), // インストール時によってdefault値を変える可能性がある
+				'default' => $activation ? self::get_deprecated_blocks() : array(),
 			),
 		);
 			return $default_options_schema;
+	}
+
+	/**
+	 * 非推奨ブロック配列
+	 *
+	 * @return array
+	 */
+	public static function get_deprecated_blocks() {
+		$blocks            = VK_Blocks_Global_Settings::blocks();
+		$deprecated_blocks = array();
+		foreach ( $blocks as $block ) {
+			if ( array_key_exists( 'deprecated_version', $block ) ) {
+				$deprecated_blocks[] = 'vk-blocks/' . $block['name'];
+			}
+		}
+		return $deprecated_blocks;
 	}
 
 	/**

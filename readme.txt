@@ -2,8 +2,8 @@
 Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird
 Donate link:
 Tags: Gutenberg,FAQ,alert
-Requires at least: 5.8
-Tested up to: 6.0.2
+Requires at least: 5.9
+Tested up to: 6.1.0
 Stable tag: 1.44.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
@@ -64,9 +64,11 @@ e.g.
 
 == Changelog ==
 
+[ Other ] Update the required WordPress version
 [ Add Function ][ Custom CSS ( Pro ) ] Add custom css extension in inspector controls.
 [ Specification Change ][ Grid Column ( Pro ) ] Changed margin setting from 1 to 0.1 separator.
 [ Bug fix ][ Step(Pro) / Time line(Pro) ] Fix margin of WordPress 6.1 
+[ Bug fix ][ GridColumn(Pro) ] Fix bg color overflow bug on edit screen.
 
 = 1.45.0 =
 [ Other ] Cope with WordPress 6.1

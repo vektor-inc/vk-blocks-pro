@@ -35,8 +35,8 @@ class VK_Blocks_Global_Settings {
 				'deprecated_version' => '1.45.0.0',
 			),
 			array(
-				'name'   => 'ancestor-page-list',
-				'is_pro' => false,
+				'name'               => 'ancestor-page-list',
+				'is_pro'             => false,
 				'deprecated_version' => '1.45.0.0',
 			),
 			array(

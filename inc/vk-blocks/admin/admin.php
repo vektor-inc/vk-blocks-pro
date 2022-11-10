@@ -137,17 +137,16 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 
 	// ブロック一覧を取得する
 	// @see https://developer.wordpress.org/reference/classes/wp_block_type_registry/.
-	$block_registry = WP_Block_Type_Registry::get_instance();
-	$block_json_lists   = array();
-	$i = 0;
+	$block_registry   = WP_Block_Type_Registry::get_instance();
+	$block_json_lists = array();
+	$i                = 0;
 	foreach ( $block_registry->get_all_registered() as $block_name => $block_type ) {
-
 		$return_bool = preg_match( '/core|vk-blocks/', $block_type->name ) ? true : false;
-		if ( ! $return_bool )  {
+		if ( ! $return_bool ) {
 			continue;
 		}
 
-		$block_json_lists[$i] = array(
+		$block_json_lists[ $i ] = array(
 			'name'  => $block_name,
 			'title' => $block_type->title,
 		);
@@ -178,7 +177,5 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 		array(),
 		VK_BLOCKS_VERSION
 	);
-
-
 }
 add_action( 'admin_enqueue_scripts', 'vk_blocks_options_enqueue_scripts' );

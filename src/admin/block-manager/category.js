@@ -1,35 +1,84 @@
 /**
+ * External dependencies
+ */
+import classnames from 'classnames';
+
+/**
  * WordPress dependencies
  */
 import { CheckboxControl } from '@wordpress/components';
-import { useState } from '@wordpress/element';
+import { useMemo, useContext, useCallback } from '@wordpress/element';
 import { useInstanceId } from '@wordpress/compose';
 
 /**
  * Internal dependencies
  */
 import BlockTypesChecklist from './checklist';
-// import { AdminContext } from '@vkblocks/admin/index';
+import { AdminContext } from '@vkblocks/admin/index';
 
 function BlockManagerCategory({ title, blockTypes }) {
 	const instanceId = useInstanceId(BlockManagerCategory);
-	const [isChecked, setIsChecked] = useState(false);
-	// const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
+	const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
+	const defaultAllowedBlockTypes = true;
+	const hiddenBlockTypes = vkBlocksOption.deprecated_blocks;
+	const filteredBlockTypes = useMemo(() => {
+		if (defaultAllowedBlockTypes === true) {
+			return blockTypes;
+		}
+		return blockTypes.filter(({ name }) => {
+			return !vkBlocksOption.deprecated_blocks.includes(name);
+		});
+	}, [defaultAllowedBlockTypes, blockTypes]);
 
-	if (!blockTypes.length) {
-		return null;
-	}
+	const showBlockTypes = (blockNames) => {
+		const existingBlockNames = vkBlocksOption.deprecated_blocks ?? [];
+		const newBlockNames = existingBlockNames.filter(
+			(type) =>
+				!(
+					Array.isArray(blockNames) ? blockNames : [blockNames]
+				).includes(type)
+		);
+		vkBlocksOption.deprecated_blocks = newBlockNames;
+		setVkBlocksOption({ ...vkBlocksOption });
+	};
 
-	const filteredBlockTypes = blockTypes.map((blockType) => {
-		return blockType.name;
-	});
+	const hideBlockTypes = (blockNames) => {
+		const existingBlockNames = vkBlocksOption.deprecated_blocks ?? [];
+		const mergedBlockNames = new Set([
+			...existingBlockNames,
+			...(Array.isArray(blockNames) ? blockNames : [blockNames]),
+		]);
+		vkBlocksOption.deprecated_blocks = [...mergedBlockNames];
+		setVkBlocksOption({ ...vkBlocksOption });
+	};
+
+	const toggleVisible = useCallback((blockName, nextIsChecked) => {
+		if (nextIsChecked) {
+			showBlockTypes(blockName);
+		} else {
+			hideBlockTypes(blockName);
+		}
+	}, []);
+	const toggleAllVisible = useCallback(
+		(nextIsChecked) => {
+			const blockNames = blockTypes.map((blockType) => blockType.name);
+			if (nextIsChecked) {
+				showBlockTypes(blockNames);
+			} else {
+				hideBlockTypes(blockNames);
+			}
+		},
+		[blockTypes]
+	);
 
 	if (!filteredBlockTypes.length) {
 		return null;
 	}
 
-	// checkされたブロック名配列を作る
-	const checkedBlockNames = blockTypes;
+	// checkするブロック名配列を作る
+	const checkedBlockNames = filteredBlockTypes
+		.map((blockType) => blockType.name)
+		.filter((type) => !hiddenBlockTypes.includes(type));
 
 	const titleId = 'block-manager__category-title-' + instanceId;
 
@@ -48,17 +97,24 @@ function BlockManagerCategory({ title, blockTypes }) {
 		<div
 			role="group"
 			aria-labelledby={titleId}
-			className="block-manager__category"
+			className={classnames(
+				'block-manager__category',
+				'blockManagerList'
+			)}
 		>
 			<CheckboxControl
 				__nextHasNoMarginBottom
-				checked={isChecked}
-				onChange={(checked) => setIsChecked(checked)}
+				checked={isAllChecked}
+				onChange={toggleAllVisible}
 				className="block-manager__category-title"
 				aria-checked={ariaChecked}
 				label={<span id={titleId}>{title}</span>}
 			/>
-			<BlockTypesChecklist blockTypes={blockTypes} />
+			<BlockTypesChecklist
+				blockTypes={filteredBlockTypes}
+				value={checkedBlockNames}
+				onItemChange={toggleVisible}
+			/>
 		</div>
 	);
 }

@@ -125,29 +125,7 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 	);
 	wp_set_script_translations( 'vk-blocks-admin-js', 'vk-blocks', VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/languages' );
 
-	wp_localize_script(
-		'vk-blocks-admin-js',
-		'vkBlocksObject',
-		array(
-			'options'          => VK_Blocks_Options::get_options(),
-			'balloonMeta'      => VK_Blocks_Options::get_balloon_meta_options(),
-			'imageNumber'      => VK_Blocks_Options::balloon_image_number(),
-			'isLicenseSetting' => vk_blocks_is_license_setting(),
-			'isPro'            => vk_blocks_is_pro(),
-			'blocks'           => VK_Blocks_Global_Settings::blocks(),
-			'vkBlocksVersion'  => VK_BLOCKS_VERSION,
-		)
-	);
-
-	wp_enqueue_style(
-		'vk_blocks_options-style',
-		VK_BLOCKS_DIR_URL . 'build/vk_blocks_options.css',
-		array(),
-		VK_BLOCKS_VERSION
-	);
-
 	$block_categories = get_block_categories( get_post() );
-
 	wp_add_inline_script(
 		'wp-blocks',
 		sprintf(
@@ -159,12 +137,48 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 
 	// ブロック一覧を取得する
 	// @see https://developer.wordpress.org/reference/classes/wp_block_type_registry/.
-	// 参考 https://github.com/ndiego/block-visibility/blob/main/includes/admin/settings.php
-	$block_registry = \WP_Block_Type_Registry::get_instance();
+	$block_registry = WP_Block_Type_Registry::get_instance();
+	$block_json_lists   = array();
+	$i = 0;
 	foreach ( $block_registry->get_all_registered() as $block_name => $block_type ) {
+
+		$return_bool = preg_match( '/core|vk-blocks/', $block_type->name ) ? true : false;
+		if ( ! $return_bool )  {
+			continue;
+		}
+
+		$block_json_lists[$i] = array(
+			'name'  => $block_name,
+			'title' => $block_type->title,
+		);
+		$i++;
+
 		if ( ! empty( $block_type->editor_script ) ) {
 			wp_enqueue_script( $block_type->editor_script );
 		}
 	}
+
+	wp_localize_script(
+		'vk-blocks-admin-js',
+		'vkBlocksObject',
+		array(
+			'options'          => VK_Blocks_Options::get_options(),
+			'balloonMeta'      => VK_Blocks_Options::get_balloon_meta_options(),
+			'imageNumber'      => VK_Blocks_Options::balloon_image_number(),
+			'isLicenseSetting' => vk_blocks_is_license_setting(),
+			'isPro'            => vk_blocks_is_pro(),
+			'vkBlockSettings'  => VK_Blocks_Global_Settings::blocks(),
+			'blockJsonLists'   => $block_json_lists,
+		)
+	);
+
+	wp_enqueue_style(
+		'vk_blocks_options-style',
+		VK_BLOCKS_DIR_URL . 'build/vk_blocks_options.css',
+		array(),
+		VK_BLOCKS_VERSION
+	);
+
+
 }
 add_action( 'admin_enqueue_scripts', 'vk_blocks_options_enqueue_scripts' );

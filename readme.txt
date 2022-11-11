@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Button ] Fixed a bug that the color palette does not change on the edit screen when there is no background.
+
 [ Other ] Update the required WordPress version
 [ Add Function ][ Custom CSS ( Pro ) ] Add custom css extension in inspector controls.
 [ Specification Change ][ Grid Column ( Pro ) ] Changed margin setting from 1 to 0.1 separator.

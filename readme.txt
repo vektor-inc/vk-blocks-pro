@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ List ] Fixed a bug that the color of the list icon was not reflected on the edit screen
 [ Other ] Update the required WordPress version
 [ Add Function ][ Custom CSS (Pro) ] Add custom css extension in inspector controls.
 [ Specification Change ][ Grid Column (Pro) ] Changed margin setting from 1 to 0.1 separator.

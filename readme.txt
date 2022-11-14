@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Highlighter ] Fixed a bug that custom colors cannot be used.
 [ Other ] Update the required WordPress version
 [ Add Function ][ Custom CSS ( Pro ) ] Add custom css extension in inspector controls.
 [ Specification Change ][ Grid Column ( Pro ) ] Changed margin setting from 1 to 0.1 separator.

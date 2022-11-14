@@ -11,6 +11,7 @@ import AdminBalloon from '@vkblocks/admin/balloon';
 import AdminMargin from '@vkblocks/admin/margin';
 import AdminLoadSeparate from '@vkblocks/admin/load-separate';
 import AdminNewFaq from '@vkblocks/admin/new-faq';
+import AdminCustomCss from '@vkblocks/admin/custom-css';
 import { SaveButton } from '@vkblocks/admin/save-button';
 /*globals vkBlocksObject */
 
@@ -40,6 +41,7 @@ export default function VKBlocksAdmin() {
 				<AdminMargin />
 				<AdminLoadSeparate />
 				{vkBlocksObject.isPro && <AdminNewFaq />}
+				{vkBlocksObject.isPro && <AdminCustomCss />}
 				<SaveButton
 					classOption={'sticky'}
 					vkBlocksOption={vkBlocksOption}

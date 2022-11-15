@@ -87,7 +87,7 @@ function vk_blocks_blocks_assets() {
 		array(
 			'home_url'                    => home_url( '/' ),
 			'show_custom_css_editor_flag' => $vk_blocks_options['show_custom_css_editor_flag'],
-			'custom_format_lists'              => $vk_blocks_options['custom_format_lists'],
+			'custom_format_lists'         => $vk_blocks_options['custom_format_lists'],
 		)
 	);
 

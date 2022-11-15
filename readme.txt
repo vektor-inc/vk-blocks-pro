@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Bug Fix ][ Highlighter ] Fixed a bug that custom colors cannot be used.
 [ Bug Fix ][ Button ] Fixed a bug that the color palette does not change on the edit screen when there is no background.
 [ Bug Fix ][ List ] Fixed a bug that the color of the list icon was not reflected on the edit screen
 [ Other ] Update the required WordPress version

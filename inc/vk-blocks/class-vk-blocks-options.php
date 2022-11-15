@@ -134,49 +134,41 @@ class VK_Blocks_Options {
 			'text_style_lists'            => array(
 				'type'  => 'array',
 				'items' => array(
-					'title'                 => array(
-						'type'    => 'string',
-						'default' => null,
-					),
-					'font_weight_bold'      => array(
-						'type'    => 'boolean',
-						'default' => false,
-					),
-					'font_italic'           => array(
-						'type'    => 'boolean',
-						'default' => false,
-					),
-					'font_strikethrough'    => array(
-						'type'    => 'boolean',
-						'default' => false,
-					),
-					'color'                 => array(
-						'type'    => 'string',
-						'default' => null,
-					),
-					'background_color'      => array(
-						'type'    => 'string',
-						'default' => null,
-					),
-					'is_active_highlighter' => array(
-						'type'    => 'boolean',
-						'default' => false,
-					),
-					'highlighter'           => array(
-						'type'    => 'string',
-						'default' => VK_Blocks_Global_Settings::HIGHLIGHTER_COLOR,
-					),
-					'font_size'             => array(
-						'type'    => 'string',
-						'default' => null,
-					),
-					'nowrap'                => array(
-						'type'    => 'boolean',
-						'default' => false,
-					),
-					'class_name'            => array(
-						'type'    => 'string',
-						'default' => 'vk-text-style--1',
+					'type'       => 'object',
+					'properties' => array(
+						'title'                 => array(
+							'type' => 'string',
+						),
+						'font_weight_bold'      => array(
+							'type' => 'boolean',
+						),
+						'font_italic'           => array(
+							'type' => 'boolean',
+						),
+						'font_strikethrough'    => array(
+							'type' => 'boolean',
+						),
+						'color'                 => array(
+							'type' => 'string',
+						),
+						'background_color'      => array(
+							'type' => 'string',
+						),
+						'is_active_highlighter' => array(
+							'type' => 'boolean',
+						),
+						'highlighter'           => array(
+							'type' => 'string',
+						),
+						'font_size'             => array(
+							'type' => 'string',
+						),
+						'nowrap'                => array(
+							'type' => 'boolean',
+						),
+						'class_name'            => array(
+							'type' => 'string',
+						),
 					),
 				),
 			),
@@ -225,6 +217,21 @@ class VK_Blocks_Options {
 			'display_vk_block_template'   => 'display',
 			'new_faq_accordion'           => 'disable',
 			'show_custom_css_editor_flag' => 'show',
+			'text_style_lists'            => array(
+				array(
+					'title'                 => null,
+					'font_weight_bold'      => false,
+					'font_italic'           => false,
+					'font_strikethrough'    => false,
+					'color'                 => null,
+					'background_color'      => null,
+					'is_active_highlighter' => false,
+					'highlighter'           => VK_Blocks_Global_Settings::HIGHLIGHTER_COLOR,
+					'font_size'             => null,
+					'nowrap'                => false,
+					'class_name'            => 'vk-text-style--1',
+				),
+			),
 		);
 		return $default;
 	}

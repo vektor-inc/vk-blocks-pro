@@ -17,19 +17,11 @@ export default function AdminCustomCss() {
 		<>
 			<section>
 				<h3 id="custom-css-setting">
-					{__(
-						'カスタムCSS設定',
-						// 'Custom CSS Setting',
-						'vk-blocks'
-					)}
+					{__('Custom CSS Setting', 'vk-blocks')}
 				</h3>
 				<ToggleControl
 					name="vk_blocks_options[show_custom_css_editor_flag]"
-					label={__(
-						'エディタにカスタムCSS識別表示を表示する',
-						// 'Show Custom CSS flag in editor',
-						'vk-blocks'
-					)}
+					label={__('Show Custom CSS flag in editor', 'vk-blocks')}
 					checked={
 						vkBlocksOption.show_custom_css_editor_flag === 'show'
 							? true

@@ -26,14 +26,13 @@ export const DeleteItemButton = (props) => {
 		});
 	};
 
-	const textStyleTitle =
-		!!textStyleListObj.title
-			? textStyleListObj.title
-			: __(
-					'書式設定',
-					// 'Custom Format',
-					'vk-blocks'
-			  );
+	const textStyleTitle = !!textStyleListObj.title
+		? textStyleListObj.title
+		: __(
+				'書式設定',
+				// 'Custom Format',
+				'vk-blocks'
+		  );
 
 	return (
 		<>

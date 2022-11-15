@@ -29,15 +29,10 @@ VK_Blocks_Options::init();
 
 // font-awesome
 require_once dirname( __FILE__ ) . '/font-awesome/font-awesome-config.php';
-
-// utils
-require_once dirname( __FILE__ ) . '/utils/array-merge.php';
-require_once dirname( __FILE__ ) . '/utils/minify-css.php';
 require_once dirname( __FILE__ ) . '/utils/hex-to-rgba.php';
 require_once dirname( __FILE__ ) . '/utils/color-slug-to-color-code.php';
-
-// extensions
-// common
+require_once dirname( __FILE__ ) . '/utils/array-merge.php';
+require_once dirname( __FILE__ ) . '/utils/minify-css.php';
 require_once dirname( __FILE__ ) . '/extensions/common/text-style.php';
 
 // VK Blocks の管理画面.

@@ -1,9 +1,4 @@
 /**
- * External dependencies
- */
-import { assign } from 'lodash';
-
-/**
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
@@ -56,11 +51,12 @@ const isVKColorPaletteManager = (colorSet) => {
 
 export const addAttribute = (settings) => {
 	if (isValidBlockType(settings.name)) {
-		settings.attributes = assign(settings.attributes, {
+		settings.attributes = {
+			...settings.attributes,
 			color: {
 				type: 'string',
 			},
-		});
+		};
 	}
 	return settings;
 };

@@ -2,7 +2,11 @@
 /* CSS
 /*-------------------------------------------*/
 .vk_timeline {
-	margin: 2em auto;
+	// theme.json があると body .is-layout-flow > * に対して margin-block-start/end ともに 0 がつくので暫定的な上書き処理
+	&,
+	body .container .is-layout-flow > & {
+		margin: 2em auto; 
+	}
 	.vk_timeline_item {
 		position: relative;
 		padding: 0 0 2.4em 1.8em;

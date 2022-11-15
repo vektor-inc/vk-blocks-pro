@@ -61,11 +61,11 @@ class FormatCssTest extends WP_UnitTestCase {
 							'highlighter' => '#fffd6b',
 							'font_size' => '#fff',
 							'nowrap' => true,
-							'class_name' => 'custom-text-style',
+							'class_name' => 'custom-format',
 						),
 					),
 				),
-				'correct' => '.vk-format--1{color:#fffd6b;}.custom-text-style{font-weight:bold;font-style:italic;text-decoration:line-through;white-space:nowrap;font-size:#fff;color:#fff;background:linear-gradient(#fff 60%, rgba(255, 253, 107, 0.7) 0);}',
+				'correct' => '.vk-format--1{color:#fffd6b;}.custom-format{font-weight:bold;font-style:italic;text-decoration:line-through;white-space:nowrap;font-size:#fff;color:#fff;background:linear-gradient(#fff 60%, rgba(255, 253, 107, 0.7) 0);}',
 			),
 		);
 		print PHP_EOL;

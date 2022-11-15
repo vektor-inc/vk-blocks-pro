@@ -133,7 +133,7 @@ export const AddItemButton = () => {
 						<TextControl
 							className="custom_format_item_class_name"
 							label={__(
-								'CSSクラス/固有のID (必須/変更不可)',
+								'CSSクラス/固有ID (必須/変更不可)',
 								// 'CSS class/unique ID (Required/Unchangeable)',
 								'vk-blocks'
 							)}
@@ -157,7 +157,7 @@ export const AddItemButton = () => {
 						<TextControl
 							className="custom_format_item_title"
 							label={__(
-								'ツールバーのタイトル（変更可能）',
+								'ツールバー タイトル（変更可能）',
 								// 'Toolbar title (Changeable)',
 								'vk-blocks'
 							)}

@@ -29,6 +29,7 @@ VK_Blocks_Options::init();
 
 // font-awesome
 require_once dirname( __FILE__ ) . '/font-awesome/font-awesome-config.php';
+
 require_once dirname( __FILE__ ) . '/utils/hex-to-rgba.php';
 require_once dirname( __FILE__ ) . '/utils/color-slug-to-color-code.php';
 require_once dirname( __FILE__ ) . '/utils/array-merge.php';

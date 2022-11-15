@@ -131,7 +131,7 @@ class VK_Blocks_Options {
 			'show_custom_css_editor_flag' => array(
 				'type' => 'string',
 			),
-			'text_style_lists'            => array(
+			'custom_format_lists'            => array(
 				'type'  => 'array',
 				'items' => array(
 					'type'       => 'object',
@@ -217,7 +217,7 @@ class VK_Blocks_Options {
 			'display_vk_block_template'   => 'display',
 			'new_faq_accordion'           => 'disable',
 			'show_custom_css_editor_flag' => 'show',
-			'text_style_lists'            => array(
+			'custom_format_lists'            => array(
 				array(
 					'title'                 => null,
 					'font_weight_bold'      => false,
@@ -229,7 +229,7 @@ class VK_Blocks_Options {
 					'highlighter'           => VK_Blocks_Global_Settings::HIGHLIGHTER_COLOR,
 					'font_size'             => null,
 					'nowrap'                => false,
-					'class_name'            => 'vk-text-style--1',
+					'class_name'            => 'vk-format--1',
 				),
 			),
 		);

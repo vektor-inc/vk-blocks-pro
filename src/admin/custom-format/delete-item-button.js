@@ -20,18 +20,18 @@ export const DeleteItemButton = (props) => {
 	const closeModal = () => setIsModalOpen(false);
 
 	const deleteItem = () => {
-		vkBlocksOption.text_style_lists.splice(index, 1);
+		vkBlocksOption.custom_format_lists.splice(index, 1);
 		setVkBlocksOption({
 			...vkBlocksOption,
 		});
 	};
 
 	const textStyleTitle =
-		textStyleListObj.title !== ''
+		!!textStyleListObj.title
 			? textStyleListObj.title
 			: __(
 					'書式設定',
-					// 'Text Style',
+					// 'Custom Format',
 					'vk-blocks'
 			  );
 
@@ -49,7 +49,7 @@ export const DeleteItemButton = (props) => {
 					title={sprintf(
 						// translators: Would you like to delete %s
 						__(
-							'%s を削除しますか？',
+							'%sを削除しますか？',
 							// 'Would you like to delete %s?',
 							'vk-blocks'
 						),
@@ -58,7 +58,7 @@ export const DeleteItemButton = (props) => {
 					onRequestClose={closeModal}
 					isDismissible={false}
 				>
-					<div className="text_style_delete_modal">
+					<div className="custom_format_delete_modal">
 						<p>
 							{__(
 								'保存したコンテンツにこのフォーマットがある場合、スタイルが変更されます。',
@@ -66,7 +66,7 @@ export const DeleteItemButton = (props) => {
 								'vk-blocks'
 							)}
 						</p>
-						<div className="text_style_delete_modal_button_area">
+						<div className="custom_format_delete_modal_button_area">
 							<Flex justify="flex-end">
 								<FlexItem>
 									<Button isSecondary onClick={closeModal}>

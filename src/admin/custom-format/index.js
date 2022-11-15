@@ -18,37 +18,37 @@ import { getColorObjectByColorValue } from '@wordpress/block-editor';
  * Internal dependencies
  */
 import { AdminContext } from '@vkblocks/admin/index';
-import { TextStylePreview } from '@vkblocks/admin/text-style/preview';
 import { vkColorPalette } from '@vkblocks/admin/utils/settings';
 import { colorSlugToColorCode } from '@vkblocks/admin/utils/color-slug-to-color-code';
-import { AddItemButton } from '@vkblocks/admin/text-style/add-item';
-import { DeleteItemButton } from '@vkblocks/admin/text-style/delete-item-button';
+import { TextStylePreview } from '@vkblocks/admin/custom-format/preview';
+import { AddItemButton } from '@vkblocks/admin/custom-format/add-item';
+import { DeleteItemButton } from '@vkblocks/admin/custom-format/delete-item-button';
 
 /*globals vkBlocksObject */
 const FONT_SIZES = [...vkBlocksObject.fontSizes];
 
-export default function AdminTextStyle() {
+export default function AdminCustomFormat() {
 	const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
 
 	const onChange = (key, value, index) => {
-		const newItems = vkBlocksOption.text_style_lists;
+		const newItems = vkBlocksOption.custom_format_lists;
 		newItems[index] = {
-			...vkBlocksOption.text_style_lists[index],
+			...vkBlocksOption.custom_format_lists[index],
 			[key]: value,
 		};
 		setVkBlocksOption({
 			...vkBlocksOption,
-			text_style_lists: [...newItems],
+			custom_format_lists: [...newItems],
 		});
 	};
 
 	return (
 		<>
 			<section>
-				<h3 id="custom-text-style-setting">
+				<h3 id="custom-format-setting">
 					{__(
 						'カスタム書式設定',
-						// 'Custom Text Style Setting',
+						// 'Custom Format Setting',
 						'vk-blocks'
 					)}
 				</h3>
@@ -59,28 +59,28 @@ export default function AdminTextStyle() {
 						'vk-blocks'
 					)}
 				</p>
-				{Object.keys(vkBlocksOption.text_style_lists).map(
+				{Object.keys(vkBlocksOption.custom_format_lists).map(
 					(key, index) => {
 						const textStyleListObj =
-							vkBlocksOption.text_style_lists[key];
+							vkBlocksOption.custom_format_lists[key];
 						return (
-							<div className="text_style_item" key={index}>
+							<div className="custom_format_item" key={index}>
 								<TextStylePreview
 									textStyleListObj={textStyleListObj}
 								/>
-								<div className="text_style_item_control">
+								<div className="custom_format_item_control">
 									<PanelBody
 										title={__(
 											'書式設定',
-											// 'Text Style',
+											// 'Custom Format',
 											'vk-blocks'
 										)}
 									>
-										<BaseControl id="custom-text-style">
+										<BaseControl id="custom-format">
 											<TextControl
-												className="text_style_item_name"
-												name={`vk_blocks_options[text_style_lists][${index}][title]`}
-												id={`vk_blocks_text_style_${index}_title`}
+												className="custom_format_item_name"
+												name={`vk_blocks_options[custom_format_lists][${index}][title]`}
+												id={`vk_blocks_custom_format_${index}_title`}
 												label={__(
 													'ツールバー タイトル',
 													// 'Toolbar title',
@@ -98,7 +98,7 @@ export default function AdminTextStyle() {
 												}
 											/>
 											{!textStyleListObj.title && (
-												<p className="text_style_item_name_warning">
+												<p className="custom_format_item_name_warning">
 													{__(
 														'※ タイトルが入力されていない場合、ツールバーには表示されません。',
 														// '※ Required If no title is entered, it will not appear on the toolbar.',
@@ -124,7 +124,7 @@ export default function AdminTextStyle() {
 									>
 										<BaseControl id="format-setting">
 											<CheckboxControl
-												name={`vk_blocks_options[text_style_lists][${index}][font_weight_bold]`}
+												name={`vk_blocks_options[custom_format_lists][${index}][font_weight_bold]`}
 												label={__('Bold', 'vk-blocks')}
 												checked={
 													textStyleListObj.font_weight_bold
@@ -138,7 +138,7 @@ export default function AdminTextStyle() {
 												}
 											/>
 											<CheckboxControl
-												name={`vk_blocks_options[text_style_lists][${index}][font_italic]`}
+												name={`vk_blocks_options[custom_format_lists][${index}][font_italic]`}
 												label={__(
 													'Italic',
 													'vk-blocks'
@@ -155,7 +155,7 @@ export default function AdminTextStyle() {
 												}
 											/>
 											<CheckboxControl
-												name={`vk_blocks_options[text_style_lists][${index}][font_strikethrough]`}
+												name={`vk_blocks_options[custom_format_lists][${index}][font_strikethrough]`}
 												label={__(
 													'Strikethrough',
 													'vk-blocks'
@@ -172,7 +172,7 @@ export default function AdminTextStyle() {
 												}
 											/>
 											<CheckboxControl
-												name={`vk_blocks_options[text_style_lists][${index}][nowrap]`}
+												name={`vk_blocks_options[custom_format_lists][${index}][nowrap]`}
 												label={__(
 													'Nowrap',
 													'vk-blocks'
@@ -279,8 +279,8 @@ export default function AdminTextStyle() {
 											)}
 										>
 											<ToggleControl
-												name={`vk_blocks_options[text_style_lists][${index}][is_active_highlighter]`}
-												id={`vk_blocks_text_style_lists_${index}_is_active_highlighter`}
+												name={`vk_blocks_options[custom_format_lists][${index}][is_active_highlighter]`}
+												id={`vk_blocks_custom_format_lists_${index}_is_active_highlighter`}
 												label={__(
 													'蛍光マーカーを有効化',
 													// 'Activate Highlighter',

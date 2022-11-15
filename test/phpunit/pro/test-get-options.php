@@ -88,7 +88,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'display_vk_block_template' => 'display',
 					'new_faq_accordion' => 'disable',
 					'show_custom_css_editor_flag' => 'show',
-					'text_style_lists' => array(
+					'custom_format_lists' => array(
 						array(
 							'title' => null,
 							'font_weight_bold' => false,
@@ -100,7 +100,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'highlighter' => '#fffd6b',
 							'font_size' => null,
 							'nowrap' => false,
-							'class_name' => 'vk-text-style--1',
+							'class_name' => 'vk-format--1',
 						),
 					),
 				),
@@ -339,7 +339,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 			),
 			// カスタム書式追加 v1.41.2
 			array(
-				'option_check_target' => 'text_style_lists',
+				'option_check_target' => 'custom_format_lists',
 				'option'  => array(
 					'display_vk_block_template' => 'hide',
 					'new_faq_accordion' => 'open',
@@ -388,7 +388,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 						'highlighter' => '#fffd6b',
 						'font_size' => null,
 						'nowrap' => false,
-						'class_name' => 'vk-text-style--1',
+						'class_name' => 'vk-format--1',
 					),
 				),
 			),
@@ -429,7 +429,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'display_vk_block_template' => 'display',
 					'new_faq_accordion' => 'open',
 					'show_custom_css_editor_flag' => 'hide',
-					'text_style_lists' => array(
+					'custom_format_lists' => array(
 						array(
 							'title' => '書式設定1',
 							'font_weight_bold' => true,
@@ -441,7 +441,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'highlighter' => '#fffd6b',
 							'font_size' => '#fff',
 							'nowrap' => true,
-							'class_name' => 'vk-text-style--1',
+							'class_name' => 'vk-format--1',
 						),
 						array(
 							'title' => '書式設定2',
@@ -454,7 +454,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'highlighter' => '#fffd6b',
 							'font_size' => '#fff',
 							'nowrap' => true,
-							'class_name' => 'vk-text-style--2',
+							'class_name' => 'vk-format--2',
 						),
 					),
 				),
@@ -493,7 +493,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'display_vk_block_template' => 'display',
 					'new_faq_accordion' => 'open',
 					'show_custom_css_editor_flag' => 'hide',
-					'text_style_lists' => array(
+					'custom_format_lists' => array(
 						array(
 							'title' => '書式設定1',
 							'font_weight_bold' => true,
@@ -505,7 +505,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'highlighter' => '#fffd6b',
 							'font_size' => '#fff',
 							'nowrap' => true,
-							'class_name' => 'vk-text-style--1',
+							'class_name' => 'vk-format--1',
 						),
 						array(
 							'title' => '書式設定2',
@@ -518,7 +518,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'highlighter' => '#fffd6b',
 							'font_size' => '#fff',
 							'nowrap' => true,
-							'class_name' => 'vk-text-style--2',
+							'class_name' => 'vk-format--2',
 						),
 					),
 				),

@@ -1,4 +1,4 @@
-.text_style_item {
+.custom_format_item {
 	display: flex;
 	flex-wrap: wrap;
 	box-sizing: border-box;
@@ -10,8 +10,8 @@
 	justify-content: space-between;
 	border: 1px solid #ccc;
 
-	.text_style_item_control,
-	.text_style_item_preview {
+	.custom_format_item_control,
+	.custom_format_item_preview {
 		width: 49%;
 
 		@media screen and (max-width: 991.98px) {
@@ -19,7 +19,7 @@
 		}
 	}
 
-	.text_style_item_control {
+	.custom_format_item_control {
 		max-height: 70vh;
 		overflow: auto;
 
@@ -28,7 +28,7 @@
 		}
 	}
 
-	.text_style_item_preview {
+	.custom_format_item_preview {
 		text-align: center;
 
 		> p{

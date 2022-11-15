@@ -52,7 +52,7 @@ export const AddItemButton = () => {
 	};
 
 	const addItem = () => {
-		vkBlocksOption.text_style_lists.push({
+		vkBlocksOption.custom_format_lists.push({
 			...TEXT_STYLE_DEFAULT_OBJ,
 			...{
 				class_name: className,
@@ -90,7 +90,7 @@ export const AddItemButton = () => {
 			);
 		}
 		// クラス名が既に登録されているか
-		vkBlocksOption.text_style_lists.forEach((option) => {
+		vkBlocksOption.custom_format_lists.forEach((option) => {
 			if (option.class_name === value) {
 				bool = false;
 				message = __(
@@ -105,7 +105,7 @@ export const AddItemButton = () => {
 	};
 
 	return (
-		<div className="text_style_lists_item_add">
+		<div className="custom_format_lists_item_add">
 			<Button
 				className="add-item-button"
 				icon={plusCircle}
@@ -115,7 +115,7 @@ export const AddItemButton = () => {
 			>
 				{__(
 					'書式設定を追加',
-					// 'Add Text Style',
+					// 'Add Custom Format',
 					'vk-blocks'
 				)}
 			</Button>
@@ -123,23 +123,23 @@ export const AddItemButton = () => {
 				<Modal
 					title={__(
 						'書式設定を追加',
-						// 'Add Text Style',
+						// 'Add Custom Format',
 						'vk-blocks'
 					)}
 					onRequestClose={closeModal}
 					isDismissible={false}
 				>
-					<div className="text_style_add_modal">
+					<div className="custom_format_add_modal">
 						<TextControl
-							className="text_style_item_class_name"
+							className="custom_format_item_class_name"
 							label={__(
 								'CSSクラス/固有のID (必須/変更不可)',
 								// 'CSS class/unique ID (Required/Unchangeable)',
 								'vk-blocks'
 							)}
 							placeholder={__(
-								'(例) vk-text-style-1',
-								// '(e.g.) vk-text-style-1',
+								'(例) vk-format-1',
+								// '(e.g.) vk-format-1',
 								'vk-blocks'
 							)}
 							onChange={(value) => {
@@ -150,12 +150,12 @@ export const AddItemButton = () => {
 							value={className ? className : ''}
 						/>
 						{!isDisableAdd && (
-							<p className="text_style_item_name_error">
+							<p className="custom_format_item_name_error">
 								{errorMessage}
 							</p>
 						)}
 						<TextControl
-							className="text_style_item_title"
+							className="custom_format_item_title"
 							label={__(
 								'ツールバーのタイトル（変更可能）',
 								// 'Toolbar title (Changeable)',
@@ -166,7 +166,7 @@ export const AddItemButton = () => {
 							}}
 							value={title}
 						/>
-						<div className="text_style_add_modal_button_area">
+						<div className="custom_format_add_modal_button_area">
 							<Flex justify="flex-end">
 								<FlexItem>
 									<Button

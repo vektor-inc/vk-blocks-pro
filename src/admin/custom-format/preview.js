@@ -49,7 +49,7 @@ export const TextStylePreview = (props) => {
 	}
 
 	return (
-		<div className="text_style_item_preview">
+		<div className="custom_format_item_preview">
 			<p className={textStyleListObj.title ? 'active-text-style' : null}>
 				<span
 					className={textStyleListObj.class_name}

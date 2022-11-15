@@ -12,16 +12,16 @@ import { ReactComponent as IconSVG } from './icon.svg';
 /*globals vk_blocks_params */
 
 if (window.vk_blocks_params) {
-	vk_blocks_params.textStyleLists.forEach((textStyleList) => {
+	vk_blocks_params.custom_format_lists.forEach((formatList) => {
 		// titleがなければregisterしない
-		if (!!!textStyleList.title) {
+		if (!!!formatList.title) {
 			return;
 		}
 
 		const name =
-			textStyleList.class_name && `vk-blocks/${textStyleList.class_name}`;
-		const title = textStyleList.title;
-		const className = textStyleList.class_name;
+			formatList.class_name && `vk-blocks/${formatList.class_name}`;
+		const title = formatList.title;
+		const className = formatList.class_name;
 
 		registerFormatType(name, {
 			title,

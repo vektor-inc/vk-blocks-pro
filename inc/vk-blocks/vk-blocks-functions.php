@@ -34,7 +34,7 @@ require_once dirname( __FILE__ ) . '/utils/hex-to-rgba.php';
 require_once dirname( __FILE__ ) . '/utils/color-slug-to-color-code.php';
 require_once dirname( __FILE__ ) . '/utils/array-merge.php';
 require_once dirname( __FILE__ ) . '/utils/minify-css.php';
-require_once dirname( __FILE__ ) . '/extensions/common/text-style.php';
+require_once dirname( __FILE__ ) . '/extensions/common/custom-format.php';
 
 // VK Blocks の管理画面.
 require_once dirname( __FILE__ ) . '/admin/admin.php';
@@ -87,7 +87,7 @@ function vk_blocks_blocks_assets() {
 		array(
 			'home_url'                    => home_url( '/' ),
 			'show_custom_css_editor_flag' => $vk_blocks_options['show_custom_css_editor_flag'],
-			'textStyleLists'              => $vk_blocks_options['text_style_lists'],
+			'custom_format_lists'              => $vk_blocks_options['custom_format_lists'],
 		)
 	);
 
@@ -147,7 +147,7 @@ function vk_blocks_blocks_assets() {
 
 	$dynamic_css .= vk_blocks_get_spacer_size_style_all( $vk_blocks_options );
 	// よく使う書式設定
-	$dynamic_css .= vk_blocks_get_text_style_lists_inline_css();
+	$dynamic_css .= vk_blocks_get_custom_format_lists_inline_css();
 
 	$dynamic_css = vk_blocks_minify_css( $dynamic_css );
 	wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );

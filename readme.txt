@@ -64,12 +64,13 @@ e.g.
 
 == Changelog ==
 
+= 1.46.0 =
+[ Add Function ][ Custom CSS (Pro) ] Add custom css extension in inspector controls.
+[ Specification Change ][ Grid Column (Pro) ] Changed margin setting from 1 to 0.1 separator.
+[ Specification Change ] Update the required WordPress version
 [ Bug Fix ][ Highlighter ] Fixed a bug that custom colors cannot be used.
 [ Bug Fix ][ Button ] Fixed a bug that the color palette does not change on the edit screen when there is no background.
 [ Bug Fix ][ List ] Fixed a bug that the color of the list icon was not reflected on the edit screen
-[ Other ] Update the required WordPress version
-[ Add Function ][ Custom CSS (Pro) ] Add custom css extension in inspector controls.
-[ Specification Change ][ Grid Column (Pro) ] Changed margin setting from 1 to 0.1 separator.
 [ Bug fix ][ Step (Pro) / Time line (Pro) ] Fix margin of theme.json
 [ Bug fix ][ Grid Column (Pro) ] Fix bg color overflow bug on edit screen.
 

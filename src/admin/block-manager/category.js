@@ -20,35 +20,35 @@ function BlockManagerCategory({ title, blockTypes }) {
 	const instanceId = useInstanceId(BlockManagerCategory);
 	const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
 	const defaultAllowedBlockTypes = true;
-	const hiddenBlockTypes = vkBlocksOption.deprecated_blocks;
+	const hiddenBlockTypes = vkBlocksOption.disable_block_lists;
 	const filteredBlockTypes = useMemo(() => {
 		if (defaultAllowedBlockTypes === true) {
 			return blockTypes;
 		}
 		return blockTypes.filter(({ name }) => {
-			return !vkBlocksOption.deprecated_blocks.includes(name);
+			return !vkBlocksOption.disable_block_lists.includes(name);
 		});
 	}, [defaultAllowedBlockTypes, blockTypes]);
 
 	const showBlockTypes = (blockNames) => {
-		const existingBlockNames = vkBlocksOption.deprecated_blocks ?? [];
+		const existingBlockNames = vkBlocksOption.disable_block_lists ?? [];
 		const newBlockNames = existingBlockNames.filter(
 			(type) =>
 				!(
 					Array.isArray(blockNames) ? blockNames : [blockNames]
 				).includes(type)
 		);
-		vkBlocksOption.deprecated_blocks = newBlockNames;
+		vkBlocksOption.disable_block_lists = newBlockNames;
 		setVkBlocksOption({ ...vkBlocksOption });
 	};
 
 	const hideBlockTypes = (blockNames) => {
-		const existingBlockNames = vkBlocksOption.deprecated_blocks ?? [];
+		const existingBlockNames = vkBlocksOption.disable_block_lists ?? [];
 		const mergedBlockNames = new Set([
 			...existingBlockNames,
 			...(Array.isArray(blockNames) ? blockNames : [blockNames]),
 		]);
-		vkBlocksOption.deprecated_blocks = [...mergedBlockNames];
+		vkBlocksOption.disable_block_lists = [...mergedBlockNames];
 		setVkBlocksOption({ ...vkBlocksOption });
 	};
 

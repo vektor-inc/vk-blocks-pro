@@ -141,8 +141,7 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 	$block_json_lists = array();
 	$i                = 0;
 	foreach ( $block_registry->get_all_registered() as $block_name => $block_type ) {
-		$return_bool = preg_match( '/core|vk-blocks/', $block_type->name ) ? true : false;
-		if ( ! $return_bool ) {
+		if ( ! preg_match( '/core|vk-blocks/', $block_type->name ) ) {
 			continue;
 		}
 

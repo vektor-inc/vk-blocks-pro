@@ -181,7 +181,7 @@ class VK_Blocks_Options {
 			'display_vk_block_template'   => 'display',
 			'new_faq_accordion'           => 'disable',
 			'show_custom_css_editor_flag' => 'show',
-			'deprecated_blocks'           => $activation ? self::get_deprecated_lists() : array(),
+			'disable_block_lists'         => $activation ? self::get_deprecated_lists() : array(),
 		);
 		return $default;
 	}
@@ -195,7 +195,7 @@ class VK_Blocks_Options {
 		$blocks            = VK_Blocks_Global_Settings::blocks();
 		$deprecated_blocks = array();
 		foreach ( $blocks as $block ) {
-			if ( array_key_exists( 'is_deprecated_block', $block ) && $block['is_deprecated_block'] ) {
+			if ( array_key_exists( 'is_deprecated', $block ) && $block['is_deprecated'] ) {
 				$deprecated_blocks[] = 'vk-blocks/' . $block['name'];
 			}
 		}

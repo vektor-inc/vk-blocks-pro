@@ -26,7 +26,8 @@ a.vk_button_link {
 :root .editor-styles-wrapper {
 	.has-vk-color-primary-background-color,
 	.has-undefined-background-color {
-		background-color: var(--wp--preset--color--vk-color-primary);
+		// has-vk-color-primary-background-colorクラスはデフォルトで設定される。Lightning以外のテーマに対応するため代替値を設定
+		background-color: var(--wp--preset--color--vk-color-primary,#337ab7);
 	}
 	.has-vk-color-secondary-background-color {
 		background-color: $vk-color-secondary;
@@ -113,7 +114,7 @@ a.vk_button_link {
 				width: calc( 75% - 8px );
 			}
 			&-100 {
-				width: 100%;			
+				width: 100%;
 			}
 		}
 	}
@@ -124,20 +125,20 @@ a.vk_button_link {
 				display: block;
 			}
 		}
-		
+
 		&-width-tablet {
 			&-25 {
 				width: calc(25% - 8px);
 			}
-		
+
 			&-50 {
 				width: calc(50% - 8px);
 			}
-		
+
 			&-75 {
 				width: calc(75% - 8px);
 			}
-		
+
 			&-100 {
 				width: 100%;
 			}
@@ -150,26 +151,26 @@ a.vk_button_link {
 				display: block;
 			}
 		}
-		
+
 		&-width {
 			&-25 {
 				width: calc(25% - 8px);
 			}
-		
+
 			&-50 {
 				width: calc(50% - 8px);
 			}
-		
+
 			&-75 {
 				width: calc(75% - 8px);
 			}
-		
+
 			&-100 {
 				width: 100%;
 			}
 		}
 	}
-	
+
 	// 塗り
 	.btn.has-background:not(.has-text-color) {
 		color: #fff;
@@ -323,7 +324,7 @@ a.vk_button_link {
 	}
 
 	//光る
-	&.is-style-shine {		
+	&.is-style-shine {
 
 		// 光るボタン
 		@keyframes shine {//光る速さのキーフレーム
@@ -348,7 +349,7 @@ a.vk_button_link {
 				width: 50%;
 				height: 100%;
 				background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
-				transform: skewX(-25deg);		
+				transform: skewX(-25deg);
 				/* アニメーション */
 				animation-name: shine;
 				animation-duration: 3s;
@@ -362,7 +363,7 @@ a.vk_button_link {
 			}
 		}
 	}
-		
+
 	&.vk_button-align {
 		&-left {
 			text-align: left;
@@ -415,7 +416,7 @@ a.vk_button_link {
 			text-decoration: none;
 			font-size: calc( var(--vk-size-text) * 1 );
 
-			
+
 		}
 		&.btn-lg{
 			font-size:calc( var(--vk-size-text) * 1.25 );

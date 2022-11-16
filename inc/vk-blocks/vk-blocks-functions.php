@@ -38,6 +38,8 @@ require_once dirname( __FILE__ ) . '/extensions/common/custom-format.php';
 
 // VK Blocks の管理画面.
 require_once dirname( __FILE__ ) . '/admin/admin.php';
+require_once dirname( __FILE__ ) . '/App/RestAPI/BlockMeta/class-vk-blocks-entrypoint.php';
+new Vk_Blocks_EntryPoint();
 
 /**
  * VK Blocks active

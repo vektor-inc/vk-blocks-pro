@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.9
 Tested up to: 6.1.0
-Stable tag: 1.44.0.1
+Stable tag: 1.46.0.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -64,10 +64,13 @@ e.g.
 
 == Changelog ==
 
-[ Bug Fix ][ List ] Fixed a bug that the color of the list icon was not reflected on the edit screen
-[ Other ] Update the required WordPress version
+= 1.46.0 =
 [ Add Function ][ Custom CSS (Pro) ] Add custom css extension in inspector controls.
 [ Specification Change ][ Grid Column (Pro) ] Changed margin setting from 1 to 0.1 separator.
+[ Specification Change ] Update the required WordPress version
+[ Bug Fix ][ Highlighter ] Fixed a bug that custom colors cannot be used.
+[ Bug Fix ][ Button ] Fixed a bug that the color palette does not change on the edit screen when there is no background.
+[ Bug Fix ][ List ] Fixed a bug that the color of the list icon was not reflected on the edit screen
 [ Bug fix ][ Step (Pro) / Time line (Pro) ] Fix margin of theme.json
 [ Bug fix ][ Grid Column (Pro) ] Fix bg color overflow bug on edit screen.
 

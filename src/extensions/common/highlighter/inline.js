@@ -37,8 +37,8 @@ function ColorPicker({ name, value, onChange, setIsAddingColor }) {
 		} else {
 			// clear palette
 			onChange(removeFormat(value, name));
+			setIsAddingColor(false);
 		}
-		setIsAddingColor(false);
 	};
 
 	const activeColor = getActiveColors(value, name);

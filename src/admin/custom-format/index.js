@@ -54,7 +54,7 @@ export default function AdminCustomFormat() {
 				</h3>
 				<p>
 					{__(
-						'ブロックツールバーでよく使う書式設定を適用することができます。',
+						'ブロックツールバーのよく使う書式設定を登録することができます。',
 						// 'You can apply commonly used formatting on the block toolbar.',
 						'vk-blocks'
 					)}

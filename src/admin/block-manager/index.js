@@ -12,8 +12,6 @@ import '@wordpress/block-library';
 import BlockManagerCategory from './category';
 /*globals vkBlocksObject */
 
-const DEPRECATED_BLOCKS = vkBlocksObject.deprecatedBlocks;
-
 function BlockManager({ blockTypes, categories, hasBlockSupport }) {
 	const showCategories = categories.filter((category) => {
 		return category.slug.match(/vk-blocks/);
@@ -33,10 +31,10 @@ function BlockManager({ blockTypes, categories, hasBlockSupport }) {
 			// 子ブロックではない
 			!blockType.parent &&
 			// 非推奨ブロックに含まれない
-			!DEPRECATED_BLOCKS.includes(blockType.name)
+			!vkBlocksObject.deprecatedLists.includes(blockType.name)
 		) {
 			showBlockTypes.push(blockType);
-		} else if (DEPRECATED_BLOCKS.includes(blockType.name)) {
+		} else if (vkBlocksObject.deprecatedLists.includes(blockType.name)) {
 			// 非推奨ブロックの時はカテゴリー名を上書きする
 			const pushBlockType = {
 				...blockType,

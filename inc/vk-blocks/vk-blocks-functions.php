@@ -36,8 +36,6 @@ require_once dirname( __FILE__ ) . '/utils/minify-css.php';
 
 // VK Blocks の管理画面.
 require_once dirname( __FILE__ ) . '/admin/admin.php';
-
-// init.
 require_once dirname( __FILE__ ) . '/init.php';
 require_once dirname( __FILE__ ) . '/blocks.php';
 

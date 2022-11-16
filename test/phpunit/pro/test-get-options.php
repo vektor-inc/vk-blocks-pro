@@ -320,7 +320,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 				),
 				'correct' => 'show',
 			),
-			// 非推奨ブロック v
+			// 非推奨ブロック
 			array(
 				'option_check_target' => 'disable_block_lists',
 				'option'  => array(

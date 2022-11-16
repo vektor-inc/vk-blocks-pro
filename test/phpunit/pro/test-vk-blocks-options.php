@@ -7,21 +7,24 @@
 
 class VKBlocksOptionsTest extends WP_UnitTestCase {
 
-	public function test_get_deprecated_blocks() {
+	public function test_get_deprecated_lists() {
 		$test_data = array(
 			array(
 				'correct' => array(
-					"vk-blocks/alert",
-					"vk-blocks/ancestor-page-list",
+					'vk-blocks/pr-blocks',
+					'vk-blocks/pr-content',
+					'vk-blocks/staff',
+					'vk-blocks/card',
+					'vk-blocks/icon-card',
 				),
 			),
 		);
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
-		print 'get_deprecated_blocks()' . PHP_EOL;
+		print 'get_deprecated_lists()' . PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
 		foreach ( $test_data as $test_value ) {
-			$return  = VK_Blocks_Options::get_deprecated_blocks();
+			$return  = VK_Blocks_Options::get_deprecated_lists();
 			$correct = $test_value['correct'];
 
 			// print 'return  :';

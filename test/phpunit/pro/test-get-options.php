@@ -399,8 +399,11 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'new_faq_accordion' => 'open',
 					'show_custom_css_editor_flag' => 'hide',
 					'deprecated_blocks' => array(
-						"vk-blocks/alert",
-						"vk-blocks/ancestor-page-list",
+						'vk-blocks/pr-blocks',
+						'vk-blocks/pr-content',
+						'vk-blocks/staff',
+						'vk-blocks/card',
+						'vk-blocks/icon-card',
 					)
 				),
 				'correct'  => array(
@@ -439,8 +442,11 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'new_faq_accordion' => 'open',
 					'show_custom_css_editor_flag' => 'hide',
 					'deprecated_blocks' => array(
-						"vk-blocks/alert",
-						"vk-blocks/ancestor-page-list",
+						'vk-blocks/pr-blocks',
+						'vk-blocks/pr-content',
+						'vk-blocks/staff',
+						'vk-blocks/card',
+						'vk-blocks/icon-card',
 					)
 				),
 			),

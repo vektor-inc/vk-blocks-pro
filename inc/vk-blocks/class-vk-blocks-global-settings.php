@@ -30,14 +30,12 @@ class VK_Blocks_Global_Settings {
 	public static function blocks() {
 		$blocks = array(
 			array(
-				'name'               => 'alert',
-				'is_pro'             => false,
-				'deprecated_version' => '1.45.0.0',
+				'name'   => 'alert',
+				'is_pro' => false,
 			),
 			array(
-				'name'               => 'ancestor-page-list',
-				'is_pro'             => false,
-				'deprecated_version' => '1.45.0.0',
+				'name'   => 'ancestor-page-list',
+				'is_pro' => false,
 			),
 			array(
 				'name'   => 'balloon',
@@ -88,20 +86,23 @@ class VK_Blocks_Global_Settings {
 				'is_pro' => false,
 			),
 			array(
-				'name'   => 'pr-blocks',
-				'is_pro' => false,
+				'name'                => 'pr-blocks',
+				'is_pro'              => false,
+				'is_deprecated_block' => true,
 			),
 			array(
-				'name'   => 'pr-content',
-				'is_pro' => false,
+				'name'                => 'pr-content',
+				'is_pro'              => false,
+				'is_deprecated_block' => true,
 			),
 			array(
 				'name'   => 'spacer',
 				'is_pro' => false,
 			),
 			array(
-				'name'   => 'staff',
-				'is_pro' => false,
+				'name'                => 'staff',
+				'is_pro'              => false,
+				'is_deprecated_block' => true,
 			),
 			array(
 				'name'   => 'accordion',
@@ -128,8 +129,9 @@ class VK_Blocks_Global_Settings {
 				'is_pro' => true,
 			),
 			array(
-				'name'   => 'card',
-				'is_pro' => true,
+				'name'                => 'card',
+				'is_pro'              => true,
+				'is_deprecated_block' => true,
 			),
 			array(
 				'name'   => 'card-item',
@@ -168,8 +170,9 @@ class VK_Blocks_Global_Settings {
 				'is_pro' => true,
 			),
 			array(
-				'name'   => 'icon-card',
-				'is_pro' => true,
+				'name'                => 'icon-card',
+				'is_pro'              => true,
+				'is_deprecated_block' => true,
 			),
 			array(
 				'name'   => 'icon-card-item',

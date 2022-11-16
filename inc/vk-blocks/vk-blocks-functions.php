@@ -195,6 +195,19 @@ if ( ! function_exists( 'vk_blocks_blocks_categories' ) ) {
 			);
 		}
 
+		if ( ! in_array( 'vk-blocks-cat-deprecated', $keys, true ) ) {
+			$categories = array_merge(
+				$categories,
+				array(
+					array(
+						'slug'  => 'vk-blocks-cat-deprecated',
+						'title' => $vk_blocks_prefix . __( 'Deprecated Blocks', 'vk-blocks' ),
+						'icon'  => '',
+					),
+				)
+			);
+		}
+
 		return $categories;
 	}
 

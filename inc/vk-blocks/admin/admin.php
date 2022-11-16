@@ -166,7 +166,7 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 			'imageNumber'      => VK_Blocks_Options::balloon_image_number(),
 			'isLicenseSetting' => vk_blocks_is_license_setting(),
 			'isPro'            => vk_blocks_is_pro(),
-			'vkBlockSettings'  => VK_Blocks_Global_Settings::blocks(),
+			'deprecatedBlocks' => VK_Blocks_Options::get_deprecated_lists(),
 			'blockJsonLists'   => $block_json_lists,
 		)
 	);

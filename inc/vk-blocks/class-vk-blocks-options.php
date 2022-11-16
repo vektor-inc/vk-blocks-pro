@@ -31,11 +31,9 @@ class VK_Blocks_Options {
 	/**
 	 * Get vk_blocks_options properties 生成
 	 *
-	 * @param bool $activation activation 有効化時かどうか.
-	 *
 	 * @return $properties
 	 */
-	public static function get_vk_blocks_options_properties( $activation = false ) {
+	public static function get_vk_blocks_options_properties() {
 		$properties = array(
 			'balloon_border_width'        => array(
 				'type' => 'number',
@@ -133,37 +131,21 @@ class VK_Blocks_Options {
 			'show_custom_css_editor_flag' => array(
 				'type' => 'string',
 			),
-			// 新規インストール時によってdefault値を変える
 			'deprecated_blocks'           => array(
-				'type'    => 'array',
-				'default' => $activation ? self::get_deprecated_blocks() : array(),
+				'type' => 'array',
 			),
 		);
 		return $properties;
 	}
 
 	/**
-	 * 非推奨ブロック配列
-	 *
-	 * @return array
-	 */
-	public static function get_deprecated_blocks() {
-		$blocks            = VK_Blocks_Global_Settings::blocks();
-		$deprecated_blocks = array();
-		foreach ( $blocks as $block ) {
-			if ( array_key_exists( 'deprecated_version', $block ) ) {
-				$deprecated_blocks[] = 'vk-blocks/' . $block['name'];
-			}
-		}
-		return $deprecated_blocks;
-	}
-
-	/**
 	 * Get vk_blocks_options default 生成
+	 *
+	 * @param bool $activation activation 有効化時かどうか.
 	 *
 	 * @return $default
 	 */
-	public static function get_vk_blocks_options_defaults() {
+	public static function get_vk_blocks_options_defaults( $activation = false ) {
 		$default = array(
 			'balloon_border_width'        => 1,
 			'margin_unit'                 => 'rem',
@@ -199,8 +181,25 @@ class VK_Blocks_Options {
 			'display_vk_block_template'   => 'display',
 			'new_faq_accordion'           => 'disable',
 			'show_custom_css_editor_flag' => 'show',
+			'deprecated_blocks'           => $activation ? self::get_deprecated_lists() : array(),
 		);
 		return $default;
+	}
+
+	/**
+	 * 非推奨ブロックリスト
+	 *
+	 * @return array
+	 */
+	public static function get_deprecated_lists() {
+		$blocks            = VK_Blocks_Global_Settings::blocks();
+		$deprecated_blocks = array();
+		foreach ( $blocks as $block ) {
+			if ( array_key_exists( 'is_deprecated_block', $block ) && $block['is_deprecated_block'] ) {
+				$deprecated_blocks[] = 'vk-blocks/' . $block['name'];
+			}
+		}
+		return $deprecated_blocks;
 	}
 
 	/**

@@ -5,9 +5,6 @@ import { withSelect } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
 // 登録されたブロックを取得するため
 import '@wordpress/block-library';
-// コアブロックを取得するならこれ
-// import { registerCoreBlocks } from '@wordpress/block-library';
-// registerCoreBlocks();
 
 /**
  * Internal dependencies
@@ -15,19 +12,16 @@ import '@wordpress/block-library';
 import BlockManagerCategory from './category';
 /*globals vkBlocksObject */
 
+const DEPRECATED_BLOCKS = vkBlocksObject.deprecatedBlocks;
+
 function BlockManager({ blockTypes, categories, hasBlockSupport }) {
 	const showCategories = categories.filter((category) => {
 		return category.slug.match(/vk-blocks/);
 	});
-	const addCategory = {
-		slug: 'vk-blocks-deprecated-cat',
-		title: __('非推奨ブロック', 'vk-blocks'),
-		icon: '',
-	};
-	showCategories.push(addCategory);
 
-	const showBlockTypes = blockTypes.filter(
-		(blockType) =>
+	const showBlockTypes = [];
+	blockTypes.forEach((blockType) => {
+		if (
 			// showCategoriesにcategoryが含まれる
 			showCategories.find((showCategory) => {
 				return showCategory.slug === blockType.category;
@@ -37,42 +31,20 @@ function BlockManager({ blockTypes, categories, hasBlockSupport }) {
 			// inserterがtrueのもの
 			hasBlockSupport(blockType, 'inserter', true) &&
 			// 子ブロックではない
-			!blockType.parent
-	);
-
-	const filterBlockTypes = [...showBlockTypes];
-	vkBlocksObject.vkBlockSettings.forEach((block, index) => {
-		// vkBlocksObject.blocksにdeprecated_versionが含まれていたらvk-blocks-deprecated-catに書き換える
-		// nameを指定して非推奨カテゴリーをつける
-		if (
-			filterBlockTypes[index] &&
-			filterBlockTypes[index].name === 'vk-blocks/' + block.name &&
-			!!block.deprecated_version
+			!blockType.parent &&
+			// 非推奨ブロックに含まれない
+			!DEPRECATED_BLOCKS.includes(blockType.name)
 		) {
-			filterBlockTypes[index].category = 'vk-blocks-deprecated-cat';
+			showBlockTypes.push(blockType);
+		} else if (DEPRECATED_BLOCKS.includes(blockType.name)) {
+			// 非推奨ブロックの時はカテゴリー名を上書きする
+			const pushBlockType = {
+				...blockType,
+				category: 'vk-blocks-cat-deprecated',
+			};
+			showBlockTypes.push(pushBlockType);
 		}
 	});
-
-	// const deprecatedBlockNameLists = vkBlocksObject.vkBlockSettings.filter(
-	// 	(setting) => !!setting.deprecated_version
-	// );
-	// console.log(deprecatedBlockNameLists);
-	// const filterBlockTypesTest = [...showBlockTypes];
-	// filterBlockTypesTest.map((block, index) => {
-	// 	// blockType.name
-	// 	if (
-	// 		block.name === 'vk-blocks/' + block.name &&
-	// 		!!block.deprecated_version
-	// 	) {
-	// 		filterBlockTypes = {
-	// 			...filterBlockTypes,
-	// 			[index]: {
-	// 				...filterBlockTypes[index],
-	// 				category: 'vk-blocks-deprecated-cat',
-	// 			},
-	// 		};
-	// 	}
-	// });
 
 	return (
 		<>
@@ -88,8 +60,8 @@ function BlockManager({ blockTypes, categories, hasBlockSupport }) {
 				>
 					{showCategories.map((category) => {
 						const propsBlockTypes =
-							filterBlockTypes &&
-							filterBlockTypes.filter((blockType) => {
+							showBlockTypes &&
+							showBlockTypes.filter((blockType) => {
 								return (
 									blockType &&
 									blockType.category &&

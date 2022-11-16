@@ -40,6 +40,7 @@ class Vk_Blocks_Print_CSS_Variables {
 	 *
 	 * --vk-color-primaryは非推奨css変数
 	 * cssカスタマイズしているユーザーのために残している
+	 *
 	 * @see https://github.com/vektor-inc/vk-color-palette-manager/pull/19
 	 *
 	 * @return string $dynamic_css 最小化したCSS

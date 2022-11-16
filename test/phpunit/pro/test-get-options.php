@@ -88,7 +88,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'display_vk_block_template' => 'display',
 					'new_faq_accordion' => 'disable',
 					'show_custom_css_editor_flag' => 'show',
-					'deprecated_blocks' => array(),
+					'disable_block_lists' => array(),
 				),
 			),
 			// デフォルトの表示非表示調整 v0.44.13
@@ -322,7 +322,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 			),
 			// 非推奨ブロック v
 			array(
-				'option_check_target' => 'deprecated_blocks',
+				'option_check_target' => 'disable_block_lists',
 				'option'  => array(
 					'display_vk_block_template' => 'hide',
 					'new_faq_accordion' => 'open',
@@ -398,7 +398,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'display_vk_block_template' => 'display',
 					'new_faq_accordion' => 'open',
 					'show_custom_css_editor_flag' => 'hide',
-					'deprecated_blocks' => array(
+					'disable_block_lists' => array(
 						'vk-blocks/pr-blocks',
 						'vk-blocks/pr-content',
 						'vk-blocks/staff',
@@ -441,7 +441,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'display_vk_block_template' => 'display',
 					'new_faq_accordion' => 'open',
 					'show_custom_css_editor_flag' => 'hide',
-					'deprecated_blocks' => array(
+					'disable_block_lists' => array(
 						'vk-blocks/pr-blocks',
 						'vk-blocks/pr-content',
 						'vk-blocks/staff',

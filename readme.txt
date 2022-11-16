@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Button ] Fixed a bug where the default color was not hit in all themes except Lightning.
+
 = 1.46.0 =
 [ Add Function ][ Custom CSS (Pro) ] Add custom css extension in inspector controls.
 [ Specification Change ][ Grid Column (Pro) ] Changed margin setting from 1 to 0.1 separator.

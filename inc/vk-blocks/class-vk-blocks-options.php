@@ -29,131 +29,109 @@ class VK_Blocks_Options {
 	}
 
 	/**
-	 * Options scheme
+	 * Get vk_blocks_options properties 生成
 	 *
 	 * @param bool $activation activation 有効化時かどうか.
 	 *
-	 * @return array
+	 * @return $properties
 	 */
-	public static function options_scheme( $activation = false ) {
-		$default_options_schema = array(
+	public static function get_vk_blocks_options_properties( $activation = false ) {
+		$properties = array(
 			'balloon_border_width'        => array(
-				'type'    => 'number',
-				'default' => 1,
+				'type' => 'number',
 			),
 			'margin_unit'                 => array(
-				'type'    => 'string',
-				'default' => 'rem',
+				'type' => 'string',
 			),
 			'margin_size'                 => array(
-				'type'  => 'object',
-				'items' => array(
+				'type'       => 'object',
+				'properties' => array(
 					'xl' => array(
-						'type'  => 'object',
-						'items' => array(
+						'type'       => 'object',
+						'properties' => array(
 							'mobile' => array(
-								'type'    => 'number',
-								'default' => null,
+								'type' => 'number',
 							),
 							'tablet' => array(
-								'type'    => 'number',
-								'default' => null,
+								'type' => 'number',
 							),
 							'pc'     => array(
-								'type'    => 'number',
-								'default' => null,
+								'type' => 'number',
 							),
 						),
 					),
 					'lg' => array(
-						'type'  => 'object',
-						'items' => array(
+						'type'       => 'object',
+						'properties' => array(
 							'mobile' => array(
-								'type'    => 'number',
-								'default' => null,
+								'type' => 'number',
 							),
 							'tablet' => array(
-								'type'    => 'number',
-								'default' => null,
+								'type' => 'number',
 							),
 							'pc'     => array(
-								'type'    => 'number',
-								'default' => null,
+								'type' => 'number',
 							),
 						),
 					),
 					'md' => array(
-						'type'  => 'object',
-						'items' => array(
+						'type'       => 'object',
+						'properties' => array(
 							'mobile' => array(
-								'type'    => 'number',
-								'default' => null,
+								'type' => 'number',
 							),
 							'tablet' => array(
-								'type'    => 'number',
-								'default' => null,
+								'type' => 'number',
 							),
 							'pc'     => array(
-								'type'    => 'number',
-								'default' => null,
+								'type' => 'number',
 							),
 						),
 					),
 					'sm' => array(
-						'type'  => 'object',
-						'items' => array(
+						'type'       => 'object',
+						'properties' => array(
 							'mobile' => array(
-								'type'    => 'number',
-								'default' => null,
+								'type' => 'number',
 							),
 							'tablet' => array(
-								'type'    => 'number',
-								'default' => null,
+								'type' => 'number',
 							),
 							'pc'     => array(
-								'type'    => 'number',
-								'default' => null,
+								'type' => 'number',
 							),
 						),
 					),
 					'xs' => array(
-						'type'  => 'object',
-						'items' => array(
+						'type'       => 'object',
+						'properties' => array(
 							'mobile' => array(
-								'type'    => 'number',
-								'default' => null,
+								'type' => 'number',
 							),
 							'tablet' => array(
-								'type'    => 'number',
-								'default' => null,
+								'type' => 'number',
 							),
 							'pc'     => array(
-								'type'    => 'number',
-								'default' => null,
+								'type' => 'number',
 							),
 						),
 					),
 				),
 			),
 			'load_separate_option'        => array(
-				'type'    => 'boolean',
-				'default' => false,
+				'type' => 'boolean',
 			),
 			'vk_blocks_pro_license_key'   => array(
-				'type'    => 'string',
-				'default' => null,
+				'type' => 'string',
 			),
 			'display_vk_block_template'   => array(
-				'type'    => 'string',
-				'default' => 'display',
+				'type' => 'string',
 			),
 			'new_faq_accordion'           => array(
-				'type'    => 'string',
-				'default' => 'disable',
+				'type' => 'string',
 			),
 			'show_custom_css_editor_flag' => array(
-				'type'    => 'string',
-				'default' => 'show',
+				'type' => 'string',
 			),
 			// 新規インストール時によってdefault値を変える
 			'deprecated_blocks'           => array(
@@ -161,7 +139,7 @@ class VK_Blocks_Options {
 				'default' => $activation ? self::get_deprecated_blocks() : array(),
 			),
 		);
-			return $default_options_schema;
+		return $properties;
 	}
 
 	/**
@@ -181,6 +159,51 @@ class VK_Blocks_Options {
 	}
 
 	/**
+	 * Get vk_blocks_options default 生成
+	 *
+	 * @return $default
+	 */
+	public static function get_vk_blocks_options_defaults() {
+		$default = array(
+			'balloon_border_width'        => 1,
+			'margin_unit'                 => 'rem',
+			'margin_size'                 => array(
+				'xl' => array(
+					'mobile' => null,
+					'tablet' => null,
+					'pc'     => null,
+				),
+				'lg' => array(
+					'mobile' => null,
+					'tablet' => null,
+					'pc'     => null,
+				),
+				'md' => array(
+					'mobile' => null,
+					'tablet' => null,
+					'pc'     => null,
+				),
+				'sm' => array(
+					'mobile' => null,
+					'tablet' => null,
+					'pc'     => null,
+				),
+				'xs' => array(
+					'mobile' => null,
+					'tablet' => null,
+					'pc'     => null,
+				),
+			),
+			'load_separate_option'        => false,
+			'vk_blocks_pro_license_key'   => null,
+			'display_vk_block_template'   => 'display',
+			'new_faq_accordion'           => 'disable',
+			'show_custom_css_editor_flag' => 'show',
+		);
+		return $default;
+	}
+
+	/**
 	 * 吹き出し数
 	 *
 	 * @return number
@@ -190,68 +213,47 @@ class VK_Blocks_Options {
 	}
 
 	/**
-	 * 吹き出しschema 生成
+	 * Get vk_blocks_balloon_meta properties 生成
 	 *
-	 * @return $balloon_meta_schema
+	 * @return $properties
 	 */
-	public static function balloon_meta_schema() {
-		$number                        = self::balloon_image_number();
-		$return_array                  = array();
-		$return_array['default_icons'] = array(
+	public static function get_vk_blocks_balloon_meta_properties() {
+		$number                      = self::balloon_image_number();
+		$properties                  = array();
+		$properties['default_icons'] = array(
 			'type' => 'object',
 		);
 		for ( $i = 1; $i <= $number; $i++ ) {
-			$return_array['default_icons']['items'][ $i ] = array(
-				'type'  => 'object',
-				'items' => array(
+			$properties['default_icons']['properties'][ $i ] = array(
+				'type'       => 'object',
+				'properties' => array(
 					'name' => array(
-						'type'    => 'string',
-						'default' => null,
+						'type' => 'string',
 					),
 					'src'  => array(
-						'type'    => 'string',
-						'default' => null,
+						'type' => 'string',
 					),
 				),
 			);
 		};
-		return $return_array;
-	}
-
-	/**
-	 * Get Defaults
-	 *
-	 * @param array $schema option defaults.
-	 *
-	 * @return options
-	 */
-	public static function get_defaults( $schema ) {
-		$default = array();
-		foreach ( $schema as $key => $value ) {
-			$default[ $key ] = 'object' === $value['type'] ? self::get_defaults( $value['items'] ) : $value['default'];
-		}
-		return $default;
-	}
-
-	/**
-	 * Get properties
-	 *
-	 * @param array $schema option schema.
-	 *
-	 * @return options
-	 */
-	public static function get_properties( $schema ) {
-		$properties = array();
-		foreach ( $schema as $key => $value ) {
-			$properties[ $key ] = array(
-				'type' => $value['type'],
-			);
-
-			if ( 'object' === $value['type'] ) {
-				$properties[ $key ]['properties'] = self::get_properties( $value['items'] );
-			}
-		}
 		return $properties;
+	}
+
+	/**
+	 * Get vk_blocks_balloon_meta default 生成
+	 *
+	 * @return $default
+	 */
+	public static function get_vk_blocks_balloon_meta_defaults() {
+		$number  = self::balloon_image_number();
+		$default = array();
+		for ( $i = 1; $i <= $number; $i++ ) {
+			$default['default_icons'][ $i ] = array(
+				'name' => null,
+				'src'  => null,
+			);
+		};
+		return $default;
 	}
 
 	/**
@@ -261,7 +263,7 @@ class VK_Blocks_Options {
 	 */
 	public static function get_options() {
 		$options  = get_option( 'vk_blocks_options' );
-		$defaults = self::get_defaults( self::options_scheme() );
+		$defaults = self::get_vk_blocks_options_defaults();
 		$options  = vk_blocks_array_merge( $options, $defaults );
 		return $options;
 	}
@@ -273,7 +275,7 @@ class VK_Blocks_Options {
 	 */
 	public static function get_balloon_meta_options() {
 		$options  = get_option( 'vk_blocks_balloon_meta' );
-		$defaults = self::get_properties( self::balloon_meta_schema() );
+		$defaults = self::get_vk_blocks_balloon_meta_defaults();
 		$options  = wp_parse_args( $options, $defaults );
 		return $options;
 	}
@@ -292,10 +294,10 @@ class VK_Blocks_Options {
 				'show_in_rest' => array(
 					'schema' => array(
 						'type'       => 'object',
-						'properties' => self::get_properties( self::options_scheme() ),
+						'properties' => self::get_vk_blocks_options_properties(),
 					),
 				),
-				'default'      => self::get_defaults( self::options_scheme() ),
+				'default'      => self::get_vk_blocks_options_defaults(),
 			)
 		);
 
@@ -307,10 +309,10 @@ class VK_Blocks_Options {
 				'show_in_rest' => array(
 					'schema' => array(
 						'type'       => 'object',
-						'properties' => self::get_properties( self::balloon_meta_schema() ),
+						'properties' => self::get_vk_blocks_balloon_meta_properties(),
 					),
 				),
-				'default'      => self::get_defaults( $this->balloon_meta_schema() ),
+				'default'      => self::get_vk_blocks_balloon_meta_defaults(),
 			)
 		);
 	}

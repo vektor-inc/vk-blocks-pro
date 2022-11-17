@@ -49,7 +49,8 @@ class Vk_Blocks_Print_CSS_Variables {
 		$dynamic_css = '
             :root {
                 --vk-size-text: 16px;
-								/* --vk-color-primary is deprecated. */ --vk-color-primary:#337ab7;
+                /* --vk-color-primary is deprecated. */
+                --vk-color-primary:#337ab7;
             }';
 
 		/*

@@ -73,3 +73,4 @@ jobs:
         remote_port: ${{ secrets.DEPLOY_PORT_VWS }}
         remote_user: ${{ secrets.DEPLOY_USER_VWS }}
         remote_key: ${{ secrets.DEPLOY_KEY_VWS }}
+        remote_key_pass: ${{ secrets.DEPLOY_KEYPASS_VWS }}

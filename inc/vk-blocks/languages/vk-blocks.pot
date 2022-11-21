@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the VK Blocks Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: VK Blocks Pro 1.43.0.2\n"
+"Project-Id-Version: VK Blocks Pro 1.45.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vk-blocks-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-10-17T05:25:27+00:00\n"
+"POT-Creation-Date: 2022-11-15T05:47:30+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks\n"
@@ -65,6 +65,17 @@ msgstr ""
 
 #: src/admin/balloon/index.js:88
 msgid "image"
+msgstr ""
+
+#: src/admin/custom-css.js:20
+#: src/extensions/common/custom-css-extension/index.js:233
+#: dist/vk-blocks-pro/inc/vk-blocks-pro/admin-pro/admin-pro.php:15
+#: inc/vk-blocks-pro/admin-pro/admin-pro.php:15
+msgid "Custom CSS Setting"
+msgstr ""
+
+#: src/admin/custom-css.js:24
+msgid "Show Custom CSS flag in editor"
 msgstr ""
 
 #: src/admin/license.js:21
@@ -158,12 +169,14 @@ msgid "Please specify the size of the common margin used for responsive spacers,
 msgstr ""
 
 #: src/admin/margin.js:70
-#: src/blocks/_pro/grid-column-item/edit.js:169
+#: src/blocks/_pro/grid-column-item/edit.js:172
+#: src/blocks/_pro/grid-column/edit.js:78
 msgid "Unit"
 msgstr ""
 
 #: src/admin/margin.js:83
-#: src/blocks/_pro/grid-column-item/edit.js:177
+#: src/blocks/_pro/grid-column-item/edit.js:187
+#: src/blocks/_pro/grid-column/edit.js:91
 #: src/blocks/_pro/outer/edit.js:659
 #: src/blocks/icon-outer/edit.js:181
 #: src/blocks/icon/edit.js:171
@@ -172,7 +185,8 @@ msgid "px"
 msgstr ""
 
 #: src/admin/margin.js:87
-#: src/blocks/_pro/grid-column-item/edit.js:181
+#: src/blocks/_pro/grid-column-item/edit.js:191
+#: src/blocks/_pro/grid-column/edit.js:95
 #: src/blocks/_pro/outer/edit.js:663
 #: src/blocks/icon-outer/edit.js:185
 #: src/blocks/icon/edit.js:175
@@ -181,7 +195,8 @@ msgid "em"
 msgstr ""
 
 #: src/admin/margin.js:91
-#: src/blocks/_pro/grid-column-item/edit.js:185
+#: src/blocks/_pro/grid-column-item/edit.js:195
+#: src/blocks/_pro/grid-column/edit.js:99
 #: src/blocks/_pro/outer/edit.js:667
 #: src/blocks/icon-outer/edit.js:189
 #: src/blocks/icon/edit.js:179
@@ -500,17 +515,18 @@ msgstr ""
 msgid "Padding (Top)"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:139
+#: src/blocks/_pro/grid-column-item/edit.js:140
 #: src/blocks/_pro/outer/edit.js:370
 #: src/blocks/_pro/slider-item/edit.js:120
 msgid "Padding (Left and Right)"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:154
+#: src/blocks/_pro/grid-column-item/edit.js:156
 msgid "Padding (Bottom)"
 msgstr ""
 
-#: src/blocks/_pro/grid-column-item/edit.js:189
+#: src/blocks/_pro/grid-column-item/edit.js:199
+#: src/blocks/_pro/grid-column/edit.js:103
 #: src/blocks/_pro/outer/edit.js:671
 #: src/blocks/icon-outer/edit.js:193
 #: src/blocks/icon/edit.js:183
@@ -867,7 +883,7 @@ msgid "Wave"
 msgstr ""
 
 #: src/blocks/_pro/outer/edit.js:461
-#: src/extensions/core/list/style.js:165
+#: src/extensions/core/list/style.js:161
 msgid "Triangle"
 msgstr ""
 
@@ -1150,8 +1166,8 @@ msgstr ""
 #: src/blocks/_pro/timeline-item/edit.js:103
 #: src/blocks/heading/edit.js:264
 #: src/blocks/staff/edit.js:173
-#: src/extensions/core/heading/style.js:30
-#: src/extensions/core/list/style.js:156
+#: src/extensions/core/heading/style.js:11
+#: src/extensions/core/list/style.js:152
 msgid "Default"
 msgstr ""
 
@@ -1730,7 +1746,7 @@ msgid "Heading style"
 msgstr ""
 
 #: src/blocks/heading/edit.js:268
-#: src/extensions/core/heading/style.js:35
+#: src/extensions/core/heading/style.js:16
 msgid "Plain"
 msgstr ""
 
@@ -2132,6 +2148,26 @@ msgstr ""
 msgid "Link rel"
 msgstr ""
 
+#: src/extensions/common/custom-css-extension/index.js:165
+msgid "Custom CSS"
+msgstr ""
+
+#: src/extensions/common/custom-css-extension/index.js:186
+msgid "Note : Contains double-byte spaces; CSS may not work."
+msgstr ""
+
+#: src/extensions/common/custom-css-extension/index.js:195
+msgid "If selector is specified, it is replaced by a block-specific CSS class. If selector is set to \"selector\", it will be replaced with a block-specific CSS class. CSS selectors other than \"selector\" may affect the entire page."
+msgstr ""
+
+#: src/extensions/common/custom-css-extension/index.js:214
+msgid "Example:"
+msgstr ""
+
+#: src/extensions/common/custom-css-extension/index.js:219
+msgid "If you want the edit screen to be as close to the public screen as possible, or if your own CSS interferes with the CSS for the identification display and does not display as intended on the edit screen, please hide it."
+msgstr ""
+
 #: src/extensions/common/hidden-extension/index.js:189
 msgid "Hidden Settings"
 msgstr ""
@@ -2176,7 +2212,7 @@ msgstr ""
 msgid "If you want to hide multiple blocks, that first you set to group block and the next, hide for the that group block."
 msgstr ""
 
-#: src/extensions/common/highlighter/index.js:148
+#: src/extensions/common/highlighter/index.js:136
 msgid "Highlighter"
 msgstr ""
 
@@ -2282,36 +2318,36 @@ msgstr ""
 msgid "Shadow"
 msgstr ""
 
-#: src/extensions/core/heading/style.js:103
-msgid "Both ends"
-msgstr ""
-
-#: src/extensions/core/heading/style.js:123
+#: src/extensions/core/heading/style.js:104
 msgid "Brackets black"
 msgstr ""
 
-#: src/extensions/core/heading/style.js:51
+#: src/extensions/core/heading/style.js:32
 msgid "Background fill lightgray"
 msgstr ""
 
-#: src/extensions/core/heading/style.js:67
+#: src/extensions/core/heading/style.js:48
 msgid "Double border top and bottom black"
 msgstr ""
 
-#: src/extensions/core/heading/style.js:75
+#: src/extensions/core/heading/style.js:56
 msgid "Double border bottom black"
 msgstr ""
 
-#: src/extensions/core/heading/style.js:83
+#: src/extensions/core/heading/style.js:64
 msgid "Solid border top and bottom black"
 msgstr ""
 
-#: src/extensions/core/heading/style.js:91
+#: src/extensions/core/heading/style.js:72
 msgid "Solid border bottom black"
 msgstr ""
 
-#: src/extensions/core/heading/style.js:99
+#: src/extensions/core/heading/style.js:80
 msgid "Dotted border bottom black"
+msgstr ""
+
+#: src/extensions/core/heading/style.js:84
+msgid "Both ends"
 msgstr ""
 
 #: src/extensions/core/image/style.js:11
@@ -2346,47 +2382,47 @@ msgstr ""
 msgid "Wave04"
 msgstr ""
 
-#: src/extensions/core/list/style.js:161
+#: src/extensions/core/list/style.js:157
 msgid "Arrow"
 msgstr ""
 
-#: src/extensions/core/list/style.js:169
+#: src/extensions/core/list/style.js:165
 msgid "Check"
 msgstr ""
 
-#: src/extensions/core/list/style.js:173
+#: src/extensions/core/list/style.js:169
 msgid "Check Square"
 msgstr ""
 
-#: src/extensions/core/list/style.js:177
+#: src/extensions/core/list/style.js:173
 msgid "Check Circle"
 msgstr ""
 
-#: src/extensions/core/list/style.js:181
+#: src/extensions/core/list/style.js:177
 msgid "Handpoint"
 msgstr ""
 
-#: src/extensions/core/list/style.js:185
+#: src/extensions/core/list/style.js:181
 msgid "Pencil"
 msgstr ""
 
-#: src/extensions/core/list/style.js:189
+#: src/extensions/core/list/style.js:185
 msgid "Smile"
 msgstr ""
 
-#: src/extensions/core/list/style.js:193
+#: src/extensions/core/list/style.js:189
 msgid "Frown"
 msgstr ""
 
-#: src/extensions/core/list/style.js:197
+#: src/extensions/core/list/style.js:193
 msgid "Numbered Circle"
 msgstr ""
 
-#: src/extensions/core/list/style.js:201
+#: src/extensions/core/list/style.js:197
 msgid "Numbered Square"
 msgstr ""
 
-#: src/extensions/core/list/style.js:89
+#: src/extensions/core/list/style.js:85
 msgid "List Icon Color"
 msgstr ""
 
@@ -2697,8 +2733,8 @@ msgstr ""
 msgid "Load Separete Setting"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:130
-#: inc/vk-blocks/admin/admin.php:130
+#: dist/vk-blocks-pro/inc/vk-blocks/admin/admin.php:91
+#: inc/vk-blocks/admin/admin.php:91
 msgid "Setting"
 msgstr ""
 
@@ -2738,24 +2774,24 @@ msgstr ""
 msgid "Edit this area"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:246
+#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:253
 #: inc/vk-blocks/view/class-vk-blocks-postlist.php:253
 msgid "Post"
 msgstr ""
 
 #. translators: %s: 投稿タイプ名
-#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:250
+#: dist/vk-blocks-pro/inc/vk-blocks/view/class-vk-blocks-postlist.php:257
 #: inc/vk-blocks/view/class-vk-blocks-postlist.php:257
 msgid "There are no %ss."
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:160
-#: inc/vk-blocks/vk-blocks-functions.php:160
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:174
+#: inc/vk-blocks/vk-blocks-functions.php:174
 msgid "Blocks"
 msgstr ""
 
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:173
-#: inc/vk-blocks/vk-blocks-functions.php:173
+#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:187
+#: inc/vk-blocks/vk-blocks-functions.php:187
 msgid "Blocks Layout"
 msgstr ""
 

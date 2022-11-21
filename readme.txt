@@ -2,9 +2,9 @@
 Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird
 Donate link:
 Tags: Gutenberg,FAQ,alert
-Requires at least: 5.8
-Tested up to: 6.0.2
-Stable tag: 1.43.0.2
+Requires at least: 5.9
+Tested up to: 6.1.0
+Stable tag: 1.46.0.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -64,7 +64,23 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Button ] Fixed a bug where the default color was not hit in all themes except Lightning.
+
+= 1.46.0 =
+[ Add Function ][ Custom CSS (Pro) ] Add custom css extension in inspector controls.
+[ Specification Change ][ Grid Column (Pro) ] Changed margin setting from 1 to 0.1 separator.
+[ Specification Change ] Update the required WordPress version
+[ Bug Fix ][ Highlighter ] Fixed a bug that custom colors cannot be used.
+[ Bug Fix ][ Button ] Fixed a bug that the color palette does not change on the edit screen when there is no background.
+[ Bug Fix ][ List ] Fixed a bug that the color of the list icon was not reflected on the edit screen
+[ Bug fix ][ Step (Pro) / Time line (Pro) ] Fix margin of theme.json
+[ Bug fix ][ Grid Column (Pro) ] Fix bg color overflow bug on edit screen.
+
+= 1.45.0 =
+[ Other ] Cope with WordPress 6.1
+[ Specification Change ] Color palette manager use wp_theme_json_data_default filter.
 [ Bug fix ][ Button ] Delete non intentional underline.
+[ Other ] color palette manager added warning that --vk-color-custom-${number} is deprecated and replaced with --wp--preset--color--vk-color-custom-${number}.
 
 = 1.44.0 =
 [ Add Function ][ Post List ( Pro ) ] Add post filter taxonomy relation

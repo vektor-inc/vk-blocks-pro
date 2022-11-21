@@ -36,6 +36,8 @@ require_once dirname( __FILE__ ) . '/utils/minify-css.php';
 
 // VK Blocks の管理画面.
 require_once dirname( __FILE__ ) . '/admin/admin.php';
+require_once dirname( __FILE__ ) . '/App/RestAPI/BlockMeta/class-vk-blocks-entrypoint.php';
+new Vk_Blocks_EntryPoint();
 
 /**
  * VK Blocks active
@@ -77,8 +79,15 @@ function vk_blocks_blocks_assets() {
 	} else {
 		wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_check', array( 'is_pro' => false ) );
 	}
-	// ホーム URL を渡す用.
-	wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_params', array( 'home_url' => home_url( '/' ) ) );
+
+	wp_localize_script(
+		'vk-blocks-build-js',
+		'vk_blocks_params',
+		array(
+			'home_url'                    => home_url( '/' ),
+			'show_custom_css_editor_flag' => $vk_blocks_options['show_custom_css_editor_flag'],
+		)
+	);
 
 	global $vk_blocks_common_attributes;
 	$vk_blocks_common_attributes = array(

@@ -6,7 +6,11 @@
 }
 
 .vk_step {
-	margin: 2em auto;
+	// theme.json があると body .is-layout-flow > * に対して margin-block-start/end ともに 0 がつくので暫定的な上書き処理
+	&,
+	body .container .is-layout-flow > & {
+		margin: 2em auto; 
+	}
 	.vk_step_item {
 		position: relative;
 		padding:0 0 0 calc(var(--vk-size-text) * 4.5 );

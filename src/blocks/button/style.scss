@@ -26,7 +26,8 @@ a.vk_button_link {
 :root .editor-styles-wrapper {
 	.has-vk-color-primary-background-color,
 	.has-undefined-background-color {
-		background-color: var(--vk-color-primary);
+		// has-vk-color-primary-background-colorクラスはデフォルトで設定される。Lightning以外のテーマに対応するため代替値を設定
+		background-color: var(--wp--preset--color--vk-color-primary,#337ab7);
 	}
 	.has-vk-color-secondary-background-color {
 		background-color: $vk-color-secondary;
@@ -51,7 +52,7 @@ a.vk_button_link {
 		background-color: $vk-color-dark;
 	}
 	.has-vk-color-primary-color {
-		color: var(--vk-color-primary);
+		color: var(--wp--preset--color--vk-color-primary);
 	}
 	.has-vk-color-secondary-color {
 		color: $vk-color-secondary;
@@ -187,7 +188,7 @@ a.vk_button_link {
 		&:hover {
 			/* 応急処置：規定カラー */
 			&.has-vk-color-primary-color {
-				background-color: var(--vk-color-primary);
+				background-color: var(--wp--preset--color--vk-color-primary);
 			}
 			&.has-vk-color-secondary-color {
 				background-color: $vk-color-secondary;
@@ -249,28 +250,28 @@ a.vk_button_link {
 			}
 			/* 応急処置：カラーパレットVK */
 			&.has-vk-color-primary-color {
-				background-color: var(--vk-color-primary);
+				background-color: var(--wp--preset--color--vk-color-primary);
 			}
 			&.has-vk-color-primary-dark-color {
-				background-color: var(--vk-color-primary-dark);
+				background-color: var(--wp--preset--color--vk-color-primary-dark);
 			}
 			&.has-vk-color-primary-vivid-color {
-				background-color: var(--vk-color-primary-vivid);
+				background-color: var(--wp--preset--color--vk-color-primary-vivid);
 			}
 			&.has-vk-color-custom-1-color {
-				background-color: var(--vk-color-custom-1);
+				background-color: var(--wp--preset--color--vk-color-custom-1);
 			}
 			&.has-vk-color-custom-2-color {
-				background-color: var(--vk-color-custom-2);
+				background-color: var(--wp--preset--color--vk-color-custom-2);
 			}
 			&.has-vk-color-custom-3-color {
-				background-color: var(--vk-color-custom-3);
+				background-color: var(--wp--preset--color--vk-color-custom-3);
 			}
 			&.has-vk-color-custom-4-color {
-				background-color: var(--vk-color-custom-4);
+				background-color: var(--wp--preset--color--vk-color-custom-4);
 			}
 			&.has-vk-color-custom-5-color {
-				background-color: var(--vk-color-custom-5);
+				background-color: var(--wp--preset--color--vk-color-custom-5);
 			}
 			// ここから標準装備
 			// background-color: currentColor;

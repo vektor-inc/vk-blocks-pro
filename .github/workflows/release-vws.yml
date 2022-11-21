@@ -64,7 +64,7 @@ jobs:
     # [ End ] pre_ リリース と 本リリースで同じ処理 ##########################################
 
     - name: rsync deployments
-      uses: burnett01/rsync-deployments@4.1
+      uses: burnett01/rsync-deployments@5.2.1
       with:
         switches: -avzr
         path: ${{ env.plugin_name }}.zip

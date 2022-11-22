@@ -39,7 +39,7 @@ export default function VKBlocksAdmin() {
 			>
 				{vkBlocksObject.isLicenseSetting && <AdminLicense />}
 				<AdminBalloon />
-				<AdminCustomFormat />
+				{vkBlocksObject.isPro && <AdminCustomFormat />}
 				<AdminMargin />
 				<AdminLoadSeparate />
 				{vkBlocksObject.isPro && <AdminNewFaq />}

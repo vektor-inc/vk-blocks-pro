@@ -55,7 +55,8 @@ function vk_blocks_get_custom_format_lists_inline_css() {
 
 		// custom_cssからCSSを出力
 		if ( ! empty( $custom_format['custom_css'] ) ) {
-			$dynamic_css .= $custom_format['custom_css'];
+			// selectorをクラスに変換
+			$dynamic_css .= preg_replace( '/selector/', '.' . $custom_format['class_name'], $custom_format['custom_css'] );
 		}
 	}
 	return $dynamic_css;

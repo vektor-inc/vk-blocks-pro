@@ -50,7 +50,7 @@ class FormatCssTest extends WP_UnitTestCase {
 							'font_size' => null,
 							'nowrap' => false,
 							'class_name' => 'vk-format--1',
-							'custom_css' => '.vk-format--1 { border:1px red solid; }',
+							'custom_css' => '.vk-format--1 { border:1px red solid; } selector { background: #f5f5f5; }',
 						),
 						array(
 							'title' => '書式設定2',
@@ -68,7 +68,7 @@ class FormatCssTest extends WP_UnitTestCase {
 						),
 					),
 				),
-				'correct' => '.vk-format--1{color:#fffd6b;}.vk-format--1 { border:1px red solid; }.custom-format{font-weight:bold;font-style:italic;text-decoration:line-through;white-space:nowrap;font-size:#fff;color:#fff;background:linear-gradient(#fff 60%, rgba(255, 253, 107, 0.7) 0);}',
+				'correct' => '.vk-format--1{color:#fffd6b;}.vk-format--1 { border:1px red solid; } .vk-format--1 { background: #f5f5f5; }.custom-format{font-weight:bold;font-style:italic;text-decoration:line-through;white-space:nowrap;font-size:#fff;color:#fff;background:linear-gradient(#fff 60%, rgba(255, 253, 107, 0.7) 0);}',
 			),
 		);
 		print PHP_EOL;

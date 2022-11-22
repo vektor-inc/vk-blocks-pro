@@ -1,7 +1,7 @@
 /**
  * WordPress dependencies
  */
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import { useContext } from '@wordpress/element';
 import {
 	CheckboxControl,
@@ -366,6 +366,31 @@ export default function AdminCustomFormat() {
 													)
 												}
 											/>
+											<p>
+												{sprintf(
+													// translators: If selector is specified, it will be replaced by a unique CSS class (%s); CSS selectors other than selector may affect the entire page.
+													__(
+														'selector を指定した場合、固有の CSS クラス(%s)に置き換わります。selector以外のCSSセレクターは、ページ全体に影響する可能性があります。',
+														// 'If selector is specified, it will be replaced by a unique CSS class (%s); CSS selectors other than selector may affect the entire page.?',
+														'vk-blocks'
+													),
+													textStyleListObj.class_name
+												)}
+											</p>
+											<p>{__('Example:', 'vk-blocks')}</p>
+											<pre
+												className="vk-custom-css-sample-code"
+												style={{
+													whiteSpace: 'pre-wrap',
+													padding: '16px',
+													display: 'block',
+													background: '#f5f5f5',
+												}}
+											>
+												{
+													'selector {\n    background: #f5f5f5;\n}'
+												}
+											</pre>
 										</BaseControl>
 									</PanelBody>
 								</div>

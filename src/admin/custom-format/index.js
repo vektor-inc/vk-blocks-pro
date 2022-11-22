@@ -23,6 +23,7 @@ import { colorSlugToColorCode } from '@vkblocks/admin/utils/color-slug-to-color-
 import { TextStylePreview } from '@vkblocks/admin/custom-format/preview';
 import { AddItemButton } from '@vkblocks/admin/custom-format/add-item';
 import { DeleteItemButton } from '@vkblocks/admin/custom-format/delete-item-button';
+import { CodeMirrorCss } from '@vkblocks/components/code-mirror-css';
 
 /*globals vkBlocksObject */
 const FONT_SIZES = [...vkBlocksObject.fontSizes];
@@ -328,7 +329,11 @@ export default function AdminCustomFormat() {
 										</BaseControl>
 									</PanelBody>
 									<PanelBody
-										title={__('Advanced')}
+										title={__(
+											'カスタムCSS',
+											// 'Custom CSS',
+											'vk-blocks'
+										)}
 										initialOpen={false}
 									>
 										<BaseControl id="class-name-setting">
@@ -346,6 +351,21 @@ export default function AdminCustomFormat() {
 													}
 												</code>
 											</span>
+											<CodeMirrorCss
+												className="vk-codemirror-block-editor"
+												value={
+													textStyleListObj.custom_css
+														? textStyleListObj.custom_css
+														: ''
+												}
+												onChange={(value) =>
+													onChange(
+														'custom_css',
+														value,
+														index
+													)
+												}
+											/>
 										</BaseControl>
 									</PanelBody>
 								</div>

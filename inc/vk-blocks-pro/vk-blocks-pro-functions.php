@@ -9,6 +9,7 @@
 require_once dirname( __FILE__ ) . '/admin-pro/admin-pro.php';
 
 require_once dirname( __FILE__ ) . '/extensions/common/custom-css-extension.php';
+require_once dirname( __FILE__ ) . '/extensions/common/custom-format.php';
 
 /**
  * Pro 専用のスクリプトの読み込み

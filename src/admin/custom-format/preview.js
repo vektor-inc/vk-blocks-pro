@@ -13,40 +13,70 @@ import hex2rgba from '@vkblocks/utils/hex-to-rgba';
 export const TextStylePreview = (props) => {
 	const { textStyleListObj } = props;
 
-	let highlighterColor;
-	if (!!textStyleListObj.highlighter) {
-		highlighterColor = textStyleListObj.highlighter;
-	} else {
-		highlighterColor = vkBlocksObject.highlighterColor;
-	}
+	const generateCustomFormatCss = () => {
+		let declarations = '';
+		if (textStyleListObj.font_weight_bold) {
+			declarations += `font-weight:bold;`;
+		}
+		if (textStyleListObj.font_italic) {
+			declarations += `font-style:italic;`;
+		}
+		if (textStyleListObj.font_strikethrough) {
+			declarations += `text-decoration:line-through;`;
+		}
+		if (textStyleListObj.nowrap) {
+			declarations += `white-space:nowrap;`;
+		}
+		if (!!textStyleListObj.font_size) {
+			declarations += `font-size: ${textStyleListObj.font_size};`;
+		}
+		if (!!textStyleListObj.color) {
+			declarations += `color: ${colorSlugToColorCode(
+				textStyleListObj.color
+			)};`;
+		}
 
-	let backgroundProperty = '';
-	if (
-		textStyleListObj.is_active_highlighter &&
-		!!textStyleListObj.background_color
-	) {
-		// background_colorとhighlighter両方
-		backgroundProperty = `linear-gradient(${colorSlugToColorCode(
-			textStyleListObj.background_color
-		)} 60%,${hex2rgba(highlighterColor, 0.7)} 0)`;
-	} else if (
-		!textStyleListObj.is_active_highlighter &&
-		!!textStyleListObj.background_color
-	) {
-		// background_colorのみ
-		backgroundProperty = `${colorSlugToColorCode(
-			textStyleListObj.background_color
-		)}`;
-	} else if (
-		textStyleListObj.is_active_highlighter &&
-		!!!textStyleListObj.background_color
-	) {
-		// highlighterのみ
-		backgroundProperty = `linear-gradient(transparent 60%,${hex2rgba(
-			highlighterColor,
-			0.7
-		)} 0)`;
-	}
+		const highlighterColor = !!textStyleListObj.highlighter
+			? textStyleListObj.highlighter
+			: vkBlocksObject.highlighterColor;
+		if (
+			textStyleListObj.is_active_highlighter &&
+			!!textStyleListObj.background_color
+		) {
+			// background_colorとhighlighter両方
+			declarations += `background: linear-gradient(${colorSlugToColorCode(
+				textStyleListObj.background_color
+			)} 60%,${hex2rgba(highlighterColor, 0.7)} 0)`;
+		} else if (
+			!textStyleListObj.is_active_highlighter &&
+			!!textStyleListObj.background_color
+		) {
+			// background_colorのみ
+			declarations += `background: ${colorSlugToColorCode(
+				textStyleListObj.background_color
+			)}`;
+		} else if (
+			textStyleListObj.is_active_highlighter &&
+			!!!textStyleListObj.background_color
+		) {
+			// highlighterのみ
+			declarations += `background: linear-gradient(transparent 60%,${hex2rgba(
+				highlighterColor,
+				0.7
+			)} 0)`;
+		}
+
+		let dynamic_css = '';
+		if (declarations) {
+			dynamic_css += `.${textStyleListObj.class_name} { ${declarations} }`;
+		}
+
+		if (textStyleListObj.custom_css) {
+			dynamic_css += textStyleListObj.custom_css;
+		}
+
+		return dynamic_css;
+	};
 
 	return (
 		<div className="custom_format_item_preview">
@@ -55,24 +85,13 @@ export const TextStylePreview = (props) => {
 					textStyleListObj.title ? 'active-custom-format' : null
 				}
 			>
-				<span
-					className={textStyleListObj.class_name}
-					style={{
-						fontWeight: textStyleListObj.font_weight_bold && 'bold',
-						fontStyle: textStyleListObj.font_italic && 'italic',
-						textDecoration:
-							textStyleListObj.font_strikethrough &&
-							'line-through',
-						whiteSpace: textStyleListObj.nowrap && 'nowrap',
-						fontSize:
-							textStyleListObj.font_size &&
-							textStyleListObj.font_size,
-						color:
-							!!textStyleListObj.color &&
-							colorSlugToColorCode(textStyleListObj.color),
-						background: backgroundProperty,
-					}}
-				>
+				{(() => {
+					const cssTag = generateCustomFormatCss(textStyleListObj);
+					if (cssTag) {
+						return <style>{cssTag}</style>;
+					}
+				})()}
+				<span className={textStyleListObj.class_name}>
 					{__(
 						'プレビューテキスト',
 						// 'Preview Text',

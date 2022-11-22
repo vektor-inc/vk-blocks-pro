@@ -169,6 +169,9 @@ class VK_Blocks_Options {
 						'class_name'            => array(
 							'type' => 'string',
 						),
+						'custom_css'            => array(
+							'type' => 'string',
+						),
 					),
 				),
 			),
@@ -230,6 +233,7 @@ class VK_Blocks_Options {
 					'font_size'             => null,
 					'nowrap'                => false,
 					'class_name'            => 'vk-format--1',
+					'custom_css'            => null,
 				),
 			),
 		);

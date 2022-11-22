@@ -101,6 +101,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'font_size' => null,
 							'nowrap' => false,
 							'class_name' => 'vk-format--1',
+							'custom_css' => null,
 						),
 					),
 				),
@@ -337,7 +338,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 				),
 				'correct' => 'show',
 			),
-			// カスタム書式追加 v1.41.2
+			// カスタム書式追加
 			array(
 				'option_check_target' => 'custom_format_lists',
 				'option'  => array(
@@ -389,6 +390,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 						'font_size' => null,
 						'nowrap' => false,
 						'class_name' => 'vk-format--1',
+						'custom_css' => null,
 					),
 				),
 			),
@@ -442,6 +444,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'font_size' => '#fff',
 							'nowrap' => true,
 							'class_name' => 'vk-format--1',
+							'custom_css' => '.vk-format--1 { border:1px red solid; }',
 						),
 						array(
 							'title' => '書式設定2',
@@ -455,6 +458,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'font_size' => '#fff',
 							'nowrap' => true,
 							'class_name' => 'vk-format--2',
+							'custom_css' => null,
 						),
 					),
 				),
@@ -506,6 +510,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'font_size' => '#fff',
 							'nowrap' => true,
 							'class_name' => 'vk-format--1',
+							'custom_css' => '.vk-format--1 { border:1px red solid; }',
 						),
 						array(
 							'title' => '書式設定2',
@@ -519,6 +524,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'font_size' => '#fff',
 							'nowrap' => true,
 							'class_name' => 'vk-format--2',
+							'custom_css' => null,
 						),
 					),
 				),

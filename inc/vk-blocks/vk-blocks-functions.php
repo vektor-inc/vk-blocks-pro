@@ -34,7 +34,6 @@ require_once dirname( __FILE__ ) . '/utils/hex-to-rgba.php';
 require_once dirname( __FILE__ ) . '/utils/color-slug-to-color-code.php';
 require_once dirname( __FILE__ ) . '/utils/array-merge.php';
 require_once dirname( __FILE__ ) . '/utils/minify-css.php';
-require_once dirname( __FILE__ ) . '/extensions/common/custom-format.php';
 
 // VK Blocks の管理画面.
 require_once dirname( __FILE__ ) . '/admin/admin.php';

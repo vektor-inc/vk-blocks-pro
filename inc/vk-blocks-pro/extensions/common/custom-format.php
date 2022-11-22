@@ -48,9 +48,14 @@ function vk_blocks_get_custom_format_lists_inline_css() {
 			$declarations .= 'background:linear-gradient(transparent 60%, ' . vk_blocks_get_hex_to_rgba( $highlighter_color, '0.7' ) . ' 0);';
 		}
 
-		// CSSがあったらCSSを出力
+		// declarationsからCSSを出力
 		if ( $declarations ) {
 			$dynamic_css .= '.' . $custom_format['class_name'] . '{' . $declarations . '}';
+		}
+
+		// custom_cssからCSSを出力
+		if ( ! empty( $custom_format['custom_css'] ) ) {
+			$dynamic_css .= $custom_format['custom_css'];
 		}
 	}
 	return $dynamic_css;

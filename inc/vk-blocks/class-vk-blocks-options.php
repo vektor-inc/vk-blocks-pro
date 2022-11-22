@@ -131,7 +131,7 @@ class VK_Blocks_Options {
 			'show_custom_css_editor_flag' => array(
 				'type' => 'string',
 			),
-			'deprecated_blocks'           => array(
+			'disable_block_lists'           => array(
 				'type' => 'array',
 			),
 		);
@@ -193,13 +193,13 @@ class VK_Blocks_Options {
 	 */
 	public static function get_deprecated_lists() {
 		$blocks            = VK_Blocks_Global_Settings::blocks();
-		$deprecated_blocks = array();
+		$disable_block_lists = array();
 		foreach ( $blocks as $block ) {
 			if ( array_key_exists( 'is_deprecated', $block ) && $block['is_deprecated'] ) {
-				$deprecated_blocks[] = 'vk-blocks/' . $block['name'];
+				$disable_block_lists[] = 'vk-blocks/' . $block['name'];
 			}
 		}
-		return $deprecated_blocks;
+		return $disable_block_lists;
 	}
 
 	/**

@@ -48,12 +48,15 @@ function BlockManager({ blockTypes, categories, hasBlockSupport }) {
 		<>
 			<section>
 				<h3 id="block-manager-setting">
-					{__('Block Manager', 'vk-blocks')}
+					{__(
+						'ブロックマネージャー',
+						// 'Block Manager',
+						'vk-blocks'
+					)}
 				</h3>
 				<div
 					tabIndex="0"
 					role="region"
-					aria-label={__('Available block types', 'vk-blocks')}
 					className="block-manager__results"
 				>
 					{showCategories.map((category) => {

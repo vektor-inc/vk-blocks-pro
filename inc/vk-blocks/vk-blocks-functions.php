@@ -202,7 +202,8 @@ if ( ! function_exists( 'vk_blocks_blocks_categories' ) ) {
 						'title' => $vk_blocks_prefix . __(
 							'非推奨ブロック',
 							// 'Deprecated Blocks',
-							'vk-blocks' ),
+							'vk-blocks'
+						),
 						'icon'  => '',
 					),
 				)

@@ -131,7 +131,7 @@ class VK_Blocks_Options {
 			'show_custom_css_editor_flag' => array(
 				'type' => 'string',
 			),
-			'disable_block_lists'           => array(
+			'disable_block_lists'         => array(
 				'type' => 'array',
 			),
 		);
@@ -192,7 +192,7 @@ class VK_Blocks_Options {
 	 * @return array
 	 */
 	public static function get_deprecated_lists() {
-		$blocks            = VK_Blocks_Global_Settings::blocks();
+		$blocks              = VK_Blocks_Global_Settings::blocks();
 		$disable_block_lists = array();
 		foreach ( $blocks as $block ) {
 			if ( array_key_exists( 'is_deprecated', $block ) && $block['is_deprecated'] ) {

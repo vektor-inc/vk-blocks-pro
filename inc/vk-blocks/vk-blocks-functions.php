@@ -146,7 +146,6 @@ function vk_blocks_blocks_assets() {
 	';
 
 	$dynamic_css .= vk_blocks_get_spacer_size_style_all( $vk_blocks_options );
-	// よく使う書式設定
 	$dynamic_css .= vk_blocks_get_custom_format_lists_inline_css();
 
 	$dynamic_css = vk_blocks_minify_css( $dynamic_css );

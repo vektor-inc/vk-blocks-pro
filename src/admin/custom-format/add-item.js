@@ -36,8 +36,8 @@ const CUSTOM_FORMAT_DEFAULT_OBJ = {
 export const AddItemButton = () => {
 	const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
 	const [isModalOpen, setIsModalOpen] = useState(false);
-	const [title, setTitle] = useState();
-	const [className, setClassName] = useState();
+	const [title, setTitle] = useState('');
+	const [className, setClassName] = useState('');
 	const [isDisableAdd, setIsDisableAdd] = useState(false);
 	const [errorMessage, setErrorMessage] = useState('');
 
@@ -45,8 +45,8 @@ export const AddItemButton = () => {
 	// モーダルをクローズしたらstateを初期値に戻す
 	const closeModal = () => {
 		setIsModalOpen(false);
-		setTitle();
-		setClassName();
+		setTitle('');
+		setClassName('');
 		setIsDisableAdd(false);
 		setErrorMessage('');
 	};

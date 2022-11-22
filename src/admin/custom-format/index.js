@@ -125,7 +125,11 @@ export default function AdminCustomFormat() {
 										<BaseControl id="format-setting">
 											<CheckboxControl
 												name={`vk_blocks_options[custom_format_lists][${index}][font_weight_bold]`}
-												label={__('Bold', 'vk-blocks')}
+												label={__(
+													'太字',
+													// 'Bold',
+													'vk-blocks'
+												)}
 												checked={
 													textStyleListObj.font_weight_bold
 												}
@@ -140,7 +144,8 @@ export default function AdminCustomFormat() {
 											<CheckboxControl
 												name={`vk_blocks_options[custom_format_lists][${index}][font_italic]`}
 												label={__(
-													'Italic',
+													'イタリック',
+													// 'Italic',
 													'vk-blocks'
 												)}
 												checked={
@@ -157,7 +162,8 @@ export default function AdminCustomFormat() {
 											<CheckboxControl
 												name={`vk_blocks_options[custom_format_lists][${index}][font_strikethrough]`}
 												label={__(
-													'Strikethrough',
+													'打ち消し線',
+													// 'Strikethrough',
 													'vk-blocks'
 												)}
 												checked={

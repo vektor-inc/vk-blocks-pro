@@ -38,6 +38,8 @@ require_once dirname( __FILE__ ) . '/utils/minify-css.php';
 require_once dirname( __FILE__ ) . '/admin/admin.php';
 require_once dirname( __FILE__ ) . '/init.php';
 require_once dirname( __FILE__ ) . '/blocks.php';
+require_once dirname( __FILE__ ) . '/App/RestAPI/BlockMeta/class-vk-blocks-entrypoint.php';
+new Vk_Blocks_EntryPoint();
 
 /**
  * VK Blocks active

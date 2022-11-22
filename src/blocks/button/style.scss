@@ -26,7 +26,8 @@ a.vk_button_link {
 :root .editor-styles-wrapper {
 	.has-vk-color-primary-background-color,
 	.has-undefined-background-color {
-		background-color: var(--wp--preset--color--vk-color-primary);
+		// has-vk-color-primary-background-colorクラスはデフォルトで設定される。Lightning以外のテーマに対応するため代替値を設定
+		background-color: var(--wp--preset--color--vk-color-primary,#337ab7);
 	}
 	.has-vk-color-secondary-background-color {
 		background-color: $vk-color-secondary;

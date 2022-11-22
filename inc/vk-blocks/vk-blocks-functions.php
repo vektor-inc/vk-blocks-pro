@@ -81,7 +81,6 @@ function vk_blocks_blocks_assets() {
 		wp_localize_script( 'vk-blocks-build-js', 'vk_blocks_check', array( 'is_pro' => false ) );
 	}
 
-	// ブロックエディタに値を渡す用.
 	wp_localize_script(
 		'vk-blocks-build-js',
 		'vk_blocks_params',

@@ -76,8 +76,8 @@ export const AddItemButton = () => {
 		if (!/^[a-z][a-z0-9-]*$/.test(value)) {
 			bool = false;
 			message = __(
-				'英数字のみ使用可能です',
-				// 'Only alpha-numeric characters are allowed',
+				'英字から始まり、英数字,ハイフン-のみ使用可能です',
+				// 'Must begin with an alphabetic character and only alphanumeric characters and hyphens may be used.',
 				'vk-blocks'
 			);
 		}

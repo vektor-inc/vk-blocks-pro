@@ -83,7 +83,7 @@ class Vk_Blocks_EntryPoint {
 	public function get_vk_blocks_options() {
 		return rest_ensure_response(
 			array(
-				'vkBlocksOption'      => VK_Blocks_Options::get_options(),
+				'vkBlocksOption'      => VK_Blocks_Options::get_exclude_manage_options(),
 				'vkBlocksBalloonMeta' => VK_Blocks_Options::get_balloon_meta_options(),
 			)
 		);

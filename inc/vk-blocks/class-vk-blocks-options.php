@@ -29,6 +29,21 @@ class VK_Blocks_Options {
 	}
 
 	/**
+	 * Remove Manage Options
+	 *
+	 * @param array $options
+	 * @return void
+	 */
+	public static function remove_manage_option_keys( $options ) {
+
+		// REST APIで非表示にするoption値をunsetしてください。
+		unset( $options['vk_blocks_pro_license_key'] );
+		unset( $options['load_separate_option'] );
+
+		return $options;
+	}
+
+	/**
 	 * Get vk_blocks_options properties 生成
 	 *
 	 * @return $properties
@@ -243,6 +258,15 @@ class VK_Blocks_Options {
 		$defaults = self::get_vk_blocks_options_defaults();
 		$options  = vk_blocks_array_merge( $options, $defaults );
 		return $options;
+	}
+
+	/**
+	 * Get exclude manage option
+	 *
+	 * @return array
+	 */
+	public static function get_exclude_manage_options() {
+		return self::remove_manage_option_keys(self::get_options());
 	}
 
 	/**

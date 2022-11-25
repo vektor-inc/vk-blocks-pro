@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Custom Format Setting (Pro) ] Add Custom Format Setting extension in admin.
 [ Bug fix ][ Button ] Fixed a bug where the default color was not hit in all themes except Lightning.
 
 = 1.46.0 =

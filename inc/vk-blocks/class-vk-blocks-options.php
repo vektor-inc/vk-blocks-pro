@@ -29,21 +29,6 @@ class VK_Blocks_Options {
 	}
 
 	/**
-	 * Remove Manage Options.
-	 *
-	 * @param array $options VK Blocks options array.
-	 * @return array
-	 */
-	public static function remove_manage_option_keys( $options ) {
-
-		// REST APIで非表示にするoption値をunsetしてください。
-		unset( $options['vk_blocks_pro_license_key'] );
-		unset( $options['load_separate_option'] );
-
-		return $options;
-	}
-
-	/**
 	 * Get vk_blocks_options properties 生成
 	 *
 	 * @return $properties
@@ -205,6 +190,22 @@ class VK_Blocks_Options {
 	}
 
 	/**
+	 * Remove Manage Options
+	 * 編集以外の管理項目をここで指定します。
+	 *
+	 * @param array $options VK Blocks options array.
+	 * @return array
+	 */
+	public static function remove_manage_options( $options ) {
+
+		// REST APIで非表示にするoption値をunsetしてください。
+		unset( $options['vk_blocks_pro_license_key'] );
+		unset( $options['load_separate_option'] );
+
+		return $options;
+	}
+
+	/**
 	 * Get vk_blocks_balloon_meta properties 生成
 	 *
 	 * @return $properties
@@ -266,7 +267,7 @@ class VK_Blocks_Options {
 	 * @return array
 	 */
 	public static function get_exclude_manage_options() {
-		return self::remove_manage_option_keys( self::get_options() );
+		return self::remove_manage_options( self::get_options() );
 	}
 
 	/**

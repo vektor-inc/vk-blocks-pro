@@ -57,7 +57,7 @@ class RestAPITest extends WP_UnitTestCase {
         $response = self::$server->dispatch( $request );
         $actual = $response->get_data();
 
-        $vk_options_expect  = VK_Blocks_Options::get_options();
+        $vk_options_expect  = VK_Blocks_Options::get_exclude_manage_options();
         $vk_balloon_meta_expect = VK_Blocks_Options::get_balloon_meta_options();
 
         print '------------------------------------' . PHP_EOL;

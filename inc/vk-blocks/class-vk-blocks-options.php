@@ -29,10 +29,10 @@ class VK_Blocks_Options {
 	}
 
 	/**
-	 * Remove Manage Options
+	 * Remove Manage Options.
 	 *
-	 * @param array $options
-	 * @return void
+	 * @param array $options VK Blocks options array.
+	 * @return array
 	 */
 	public static function remove_manage_option_keys( $options ) {
 
@@ -266,7 +266,7 @@ class VK_Blocks_Options {
 	 * @return array
 	 */
 	public static function get_exclude_manage_options() {
-		return self::remove_manage_option_keys(self::get_options());
+		return self::remove_manage_option_keys( self::get_options() );
 	}
 
 	/**

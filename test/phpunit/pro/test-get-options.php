@@ -375,7 +375,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 					),
 					'load_separate_option' => true,
 					'vk_blocks_pro_license_key' => 'test_license_key',
-					'show_custom_css_editor_flag' => 'show'
+					'show_custom_css_editor_flag' => 'hide'
 				),
 				'correct' => array(
 					array(

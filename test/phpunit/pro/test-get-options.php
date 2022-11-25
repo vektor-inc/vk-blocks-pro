@@ -279,9 +279,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 						),
 					),
 					'load_separate_option' => true,
-					'vk_blocks_pro_license_key' => 'test_license_key',
-					'display_vk_block_template' => 'display',
-					'new_faq_accordion' => 'open',
 				),
 				'correct' => array(
 					'margin_size' => array(

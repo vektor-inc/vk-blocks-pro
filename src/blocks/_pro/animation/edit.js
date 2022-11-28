@@ -4,13 +4,13 @@ import {
 	InspectorControls,
 	useBlockProps,
 } from '@wordpress/block-editor';
-import { PanelBody, SelectControl } from '@wordpress/components';
+import { PanelBody, SelectControl, ToggleControl } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block';
 
 export default function AnimationEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
-	const { effect, speed, range, blockId } = attributes;
+	const { effect, speed, range, once, blockId } = attributes;
 
 	useEffect(() => {
 		if (attributes.clientId !== undefined) {
@@ -136,6 +136,18 @@ export default function AnimationEdit(props) {
 							},
 						]}
 					/>
+					{('fade-in' === effect  || 'slide-up' === effect || 'slide-left' === effect || 'slide-right' === effect) && (
+						<>
+							{__('Animation iteration', 'vk-blocks')}
+							<ToggleControl
+								label={__('Once', 'vk-blocks')}
+								checked={once}
+								onChange={(checked) =>
+									setAttributes({ once: checked })
+								}
+							/>
+						</>
+					)}
 				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>

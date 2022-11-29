@@ -280,6 +280,10 @@ msgstr "標準"
 msgid "Long"
 msgstr "長い"
 
+#: src/blocks/_pro/animation/edit.js:145
+msgid "Animation only the first view"
+msgstr "初回表示のみアニメーション"
+
 #: src/blocks/_pro/animation/edit.js:45
 msgid "Animation Settings"
 msgstr "アニメーション設定"

@@ -275,6 +275,10 @@ msgstr ""
 msgid "Long"
 msgstr ""
 
+#: src/blocks/_pro/animation/edit.js:145
+msgid "Animation only the first view"
+msgstr ""
+
 #: src/blocks/_pro/animation/edit.js:45
 msgid "Animation Settings"
 msgstr ""

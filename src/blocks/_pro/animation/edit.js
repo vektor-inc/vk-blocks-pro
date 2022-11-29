@@ -142,7 +142,10 @@ export default function AnimationEdit(props) {
 						'slide-right' === effect) && (
 						<>
 							<ToggleControl
-								label={__('Animation only the first view', 'vk-blocks')}
+								label={__(
+									'Animation only the first view',
+									'vk-blocks'
+								)}
 								checked={once}
 								onChange={(checked) =>
 									setAttributes({ once: checked })

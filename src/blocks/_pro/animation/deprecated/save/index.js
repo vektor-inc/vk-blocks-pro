@@ -40,10 +40,10 @@ const blockAttributes3 = {
 }
 
 /*
-// 1.46.1以降 で attributes を追加
+// 1.46.0 の次で attributes を追加
 const blockAttributes4 = {
 	...blockAttributes3,
-	iteration: {
+	once: {
 		type: "boolean"
 	}
 }

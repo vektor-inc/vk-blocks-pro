@@ -136,7 +136,10 @@ export default function AnimationEdit(props) {
 							},
 						]}
 					/>
-					{('fade-in' === effect  || 'slide-up' === effect || 'slide-left' === effect || 'slide-right' === effect) && (
+					{('fade-in' === effect ||
+						'slide-up' === effect ||
+						'slide-left' === effect ||
+						'slide-right' === effect) && (
 						<>
 							{__('Animation iteration', 'vk-blocks')}
 							<ToggleControl

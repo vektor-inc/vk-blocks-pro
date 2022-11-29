@@ -13,7 +13,9 @@ document.defaultView.addEventListener('load', function () {
 			const observe = new IntersectionObserver((entries) => {
 				if (entries[0].isIntersecting) {
 					animationNode.classList.add('vk_animation-active');
-				} else if(!animationNode.classList.contains('vk_animation-once')) {
+				} else if (
+					!animationNode.classList.contains('vk_animation-once')
+				) {
 					// 非表示で繰り返し
 					animationNode.classList.remove('vk_animation-active');
 				}

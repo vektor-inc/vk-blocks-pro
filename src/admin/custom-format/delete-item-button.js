@@ -60,8 +60,8 @@ export const DeleteItemButton = (props) => {
 					<div className="custom_format_delete_modal">
 						<p>
 							{__(
-								'保存したコンテンツにこのフォーマットがある場合、スタイルが変更されます。',
-								// 'If this format is used for saved content, the style may change.',
+								'保存したコンテンツにこのフォーマットがある場合、スタイルが解除されます。',
+								// 'If the saved content has this format, the style will be unstyled.',
 								'vk-blocks'
 							)}
 						</p>

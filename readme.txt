@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Other ][ Slider ( Pro ) ] Change Pro to Free.
 [ Bug fix ][ Button ] Fixed a bug where the default color was not hit in all themes except Lightning.
 
 = 1.46.0 =

@@ -37,6 +37,10 @@ gulp.task('helper-js', (done) => {
 		.pipe(uglify())
 		.pipe(rename('vk-faq2.min.js'))
 		.pipe(gulp.dest('./build/'));
+	gulp.src('src/blocks/slider/view.js')
+		.pipe(uglify())
+		.pipe(rename('vk-slider.min.js'))
+		.pipe(gulp.dest('./build/'));
 	done();
 });
 
@@ -48,10 +52,6 @@ gulp.task('helper-js-pro', (done) => {
 	gulp.src('src/blocks/_pro/animation/view.js')
 		.pipe(uglify())
 		.pipe(rename('vk-animation.min.js'))
-		.pipe(gulp.dest('./build/'));
-	gulp.src('src/blocks/_pro/slider/view.js')
-		.pipe(uglify())
-		.pipe(rename('vk-slider.min.js'))
 		.pipe(gulp.dest('./build/'));
 	done();
 });

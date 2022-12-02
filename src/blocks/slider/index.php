@@ -15,7 +15,7 @@ function vk_blocks_register_block_slider() {
 	if ( ! is_admin() ) {
 		wp_register_style(
 			'vk-blocks/slider',
-			VK_BLOCKS_DIR_URL . 'build/_pro/slider/style.css',
+			VK_BLOCKS_DIR_URL . 'build/slider/style.css',
 			array( 'vk-swiper-style' ),
 			VK_BLOCKS_VERSION
 		);

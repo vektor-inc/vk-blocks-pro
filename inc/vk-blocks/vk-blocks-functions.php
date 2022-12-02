@@ -36,6 +36,8 @@ require_once dirname( __FILE__ ) . '/utils/minify-css.php';
 
 // VK Blocks の管理画面.
 require_once dirname( __FILE__ ) . '/admin/admin.php';
+require_once dirname( __FILE__ ) . '/App/RestAPI/BlockMeta/class-vk-blocks-entrypoint.php';
+new Vk_Blocks_EntryPoint();
 
 /**
  * VK Blocks active
@@ -222,3 +224,15 @@ if ( ! function_exists( 'vk_blocks_set_wp_version' ) ) {
 	}
 	add_action( 'admin_head', 'vk_blocks_set_wp_version', 10, 0 );
 }
+
+/**
+ * スクリプトの読み込み
+ */
+function vk_blocks_load_scripts() {
+	// Slider Block
+	global $vk_swiper_url;
+	wp_enqueue_style( 'vk-swiper-style', $vk_swiper_url . 'assets/css/swiper.min.css', array(), SWIPER_VERSION );
+
+	wp_enqueue_script( 'vk-blocks-slider', VK_BLOCKS_DIR_URL . 'build/vk-slider.min.js', array( 'vk-swiper-script' ), VK_BLOCKS_VERSION, true );
+}
+add_action( 'wp_enqueue_scripts', 'vk_blocks_load_scripts' );

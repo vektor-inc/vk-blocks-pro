@@ -3,12 +3,19 @@
  */
 import { __, getLocaleData } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
-import { PanelBody, Icon, Button, ExternalLink } from '@wordpress/components';
+import {
+	PanelBody,
+	Icon,
+	Button,
+	ExternalLink,
+	ToggleControl,
+} from '@wordpress/components';
 import { InspectorControls } from '@wordpress/block-editor';
 import { createHigherOrderComponent, useInstanceId } from '@wordpress/compose';
 import { hasBlockSupport } from '@wordpress/blocks';
 import { useEffect } from '@wordpress/element';
 import { addQueryArgs } from '@wordpress/url';
+import { useSelect, useDispatch } from '@wordpress/data';
 
 /**
  * External dependencies
@@ -20,7 +27,8 @@ import classnames from 'classnames';
  */
 import { CodeMirrorCss } from '@vkblocks/components/code-mirror-css';
 import { ReactComponent as IconSVG } from './icon.svg';
-/*globals vk_blocks_params */
+import { STORE_NAME } from '@vkblocks/extensions/store/constants';
+import { updateOptions } from '@vkblocks/utils/api';
 
 export const inString = (str, keyword) => {
 	return str.indexOf(keyword) !== -1;
@@ -155,6 +163,26 @@ export const withInspectorControls = createHigherOrderComponent(
 			};
 		}
 
+		const { vkBlocksOptions } = useSelect((select) => {
+			const { getOptions } = select(STORE_NAME);
+			return {
+				vkBlocksOptions: getOptions(),
+			};
+		}, []);
+		const { setOptions } = useDispatch(STORE_NAME);
+
+		const updateSettings = (value) => {
+			if (value) {
+				vkBlocksOptions.show_custom_css_editor_flag = 'show';
+				setOptions(vkBlocksOptions);
+				updateOptions(vkBlocksOptions);
+			} else {
+				vkBlocksOptions.show_custom_css_editor_flag = 'hide';
+				setOptions(vkBlocksOptions);
+				updateOptions(vkBlocksOptions);
+			}
+		};
+
 		return (
 			<>
 				<BlockEdit {...props} />
@@ -215,6 +243,19 @@ export const withInspectorControls = createHigherOrderComponent(
 						<pre className="vk-custom-css-sample-code">
 							{'selector {\n    background: #f5f5f5;\n}'}
 						</pre>
+						<ToggleControl
+							label={__(
+								'Show Custom CSS flag in editor',
+								'vk-blocks'
+							)}
+							checked={
+								vkBlocksOptions.show_custom_css_editor_flag ===
+								'show'
+									? true
+									: false
+							}
+							onChange={updateSettings}
+						/>
 						<p>
 							{__(
 								'If you want the edit screen to be as close to the public screen as possible, or if your own CSS interferes with the CSS for the identification display and does not display as intended on the edit screen, please hide it.',
@@ -254,13 +295,19 @@ const withElementsStyles = createHigherOrderComponent(
 		const id = useInstanceId(BlockListBlock);
 		const uniqueClass = `vk_custom_css_${id}`;
 
+		const { showFlagOption } = useSelect((select) => {
+			const { getOptions } = select(STORE_NAME);
+			return {
+				showFlagOption: getOptions().show_custom_css_editor_flag,
+			};
+		}, []);
+
 		const { vkbCustomCss } = attributes;
 		// editor用のクラス名を追加
 		const customCssClass = classnames(props.className, {
 			[uniqueClass]: existsCss(vkbCustomCss),
 			[`vk_edit_custom_css`]:
-				vk_blocks_params.show_custom_css_editor_flag === 'show' &&
-				existsCss(vkbCustomCss),
+				showFlagOption === 'show' && existsCss(vkbCustomCss),
 		});
 
 		// selectorをUniqueクラスに変換する

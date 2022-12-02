@@ -36,6 +36,7 @@ import * as staff from './staff';
 /**
  * Extensions
  */
+import '@vkblocks/extensions/store';
 import '@vkblocks/extensions/core/heading/style';
 import '@vkblocks/extensions/core/group/style';
 import '@vkblocks/extensions/core/list/style';

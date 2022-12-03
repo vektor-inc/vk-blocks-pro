@@ -68,6 +68,10 @@ button.image-button:not(.button-delete) {
 }
 
 .components-base-control {
+	// サイトエディタ で スライドアイテム などの設定パネルで画像がはみ出る不具合を修正
+	img {
+		max-width: 100%;
+	}
 	// 独自に追加
 	&__title {
 		padding-bottom: 3px;

@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Slider ] Stick out background image on setting panel of site editor
+
 = 1.47.0 =
 [ Other ][ Slider ( Pro ) ] Change Pro to Free.
 [ Bug fix ][ Button ] Fixed a bug where the default color was not hit in all themes except Lightning.

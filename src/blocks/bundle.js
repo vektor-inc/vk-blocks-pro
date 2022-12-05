@@ -30,6 +30,8 @@ import * as iconOuter from './icon-outer';
 import * as pageContent from './page-content';
 import * as prBlocks from './pr-blocks';
 import * as prContent from './pr-content';
+import * as slider from './slider';
+import * as sliderItem from './slider-item';
 import * as spacer from './spacer';
 import * as staff from './staff';
 
@@ -64,6 +66,8 @@ const vkBlocks = [
 	pageContent,
 	prBlocks,
 	prContent,
+	slider,
+	sliderItem,
 	spacer,
 	staff,
 	ancestorPageList,

@@ -94,6 +94,14 @@ class VK_Blocks_Global_Settings {
 				'is_pro' => false,
 			),
 			array(
+				'name'   => 'slider',
+				'is_pro' => false,
+			),
+			array(
+				'name'   => 'slider-item',
+				'is_pro' => false,
+			),
+			array(
 				'name'   => 'spacer',
 				'is_pro' => false,
 			),
@@ -187,14 +195,6 @@ class VK_Blocks_Global_Settings {
 			),
 			array(
 				'name'   => 'select-post-list-item',
-				'is_pro' => true,
-			),
-			array(
-				'name'   => 'slider',
-				'is_pro' => true,
-			),
-			array(
-				'name'   => 'slider-item',
 				'is_pro' => true,
 			),
 			array(

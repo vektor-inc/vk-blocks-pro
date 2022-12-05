@@ -70,6 +70,7 @@ e.g.
 = 1.47.0 =
 [ Other ][ Slider ( Pro ) ] Change Pro to Free.
 [ Bug fix ][ Button ] Fixed a bug where the default color was not hit in all themes except Lightning.
+[ Specification Change ][ Animation(Pro) ] add setting option Animation only the first view.
 
 = 1.46.0 =
 [ Add Function ][ Custom CSS (Pro) ] Add custom css extension in inspector controls.

@@ -41,28 +41,27 @@ export default function VKBlocksAdmin() {
 		<>
 			{/* AdminContext.Providerで各コンポーネントにvalueを渡す */}
 
-			{vkBlocksOption &&
-				vkBlocksBalloonMeta && (
-					<AdminContext.Provider
-						value={{
-							vkBlocksOption,
-							setVkBlocksOption,
-							vkBlocksBalloonMeta,
-							setVkBlocksBalloonMeta,
-						}}
-					>
-						{vkBlocksObject.isLicenseSetting && <AdminLicense />}
-						<AdminBalloon />
-						<AdminMargin />
-						<AdminLoadSeparate />
-						{vkBlocksObject.isPro && <AdminNewFaq />}
-						<SaveButton
-							classOption={'sticky'}
-							vkBlocksOption={vkBlocksOption}
-							vkBlocksBalloonMeta={vkBlocksBalloonMeta}
-						/>
-					</AdminContext.Provider>
-				)}
+			{vkBlocksOption && vkBlocksBalloonMeta && (
+				<AdminContext.Provider
+					value={{
+						vkBlocksOption,
+						setVkBlocksOption,
+						vkBlocksBalloonMeta,
+						setVkBlocksBalloonMeta,
+					}}
+				>
+					{vkBlocksObject.isLicenseSetting && <AdminLicense />}
+					<AdminBalloon />
+					<AdminMargin />
+					<AdminLoadSeparate />
+					{vkBlocksObject.isPro && <AdminNewFaq />}
+					<SaveButton
+						classOption={'sticky'}
+						vkBlocksOption={vkBlocksOption}
+						vkBlocksBalloonMeta={vkBlocksBalloonMeta}
+					/>
+				</AdminContext.Provider>
+			)}
 		</>
 	);
 }

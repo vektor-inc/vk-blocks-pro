@@ -3,7 +3,7 @@ import apiFetch from '@wordpress/api-fetch';
 
 export const fetchOptions = () => {
 	return {
-		type: FETCH_OPTIONS
+		type: FETCH_OPTIONS,
 	};
 };
 

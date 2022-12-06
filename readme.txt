@@ -64,13 +64,15 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Custom Format Setting (Pro) ] Add Custom Format Setting extension in admin.
+[ Specification Change ][ Animation(Pro) ] add setting option Animation only the first view.
+
 = 1.47.1 =
 [ Bug fix ][ Slider ] Stick out background image on setting panel of site editor
 
 = 1.47.0 =
 [ Other ][ Slider ( Pro ) ] Change Pro to Free.
 [ Bug fix ][ Button ] Fixed a bug where the default color was not hit in all themes except Lightning.
-[ Specification Change ][ Animation(Pro) ] add setting option Animation only the first view.
 
 = 1.46.0 =
 [ Add Function ][ Custom CSS (Pro) ] Add custom css extension in inspector controls.

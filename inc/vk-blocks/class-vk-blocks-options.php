@@ -131,6 +131,50 @@ class VK_Blocks_Options {
 			'show_custom_css_editor_flag' => array(
 				'type' => 'string',
 			),
+			'custom_format_lists'         => array(
+				'type'  => 'array',
+				'items' => array(
+					'type'       => 'object',
+					'properties' => array(
+						'title'                 => array(
+							'type' => 'string',
+						),
+						'font_weight_bold'      => array(
+							'type' => 'boolean',
+						),
+						'font_italic'           => array(
+							'type' => 'boolean',
+						),
+						'font_strikethrough'    => array(
+							'type' => 'boolean',
+						),
+						'color'                 => array(
+							'type' => 'string',
+						),
+						'background_color'      => array(
+							'type' => 'string',
+						),
+						'is_active_highlighter' => array(
+							'type' => 'boolean',
+						),
+						'highlighter'           => array(
+							'type' => 'string',
+						),
+						'font_size'             => array(
+							'type' => 'string',
+						),
+						'nowrap'                => array(
+							'type' => 'boolean',
+						),
+						'class_name'            => array(
+							'type' => 'string',
+						),
+						'custom_css'            => array(
+							'type' => 'string',
+						),
+					),
+				),
+			),
 		);
 		return $properties;
 	}
@@ -176,6 +220,22 @@ class VK_Blocks_Options {
 			'display_vk_block_template'   => 'display',
 			'new_faq_accordion'           => 'disable',
 			'show_custom_css_editor_flag' => 'show',
+			'custom_format_lists'         => array(
+				array(
+					'title'                 => null,
+					'font_weight_bold'      => false,
+					'font_italic'           => false,
+					'font_strikethrough'    => false,
+					'color'                 => null,
+					'background_color'      => null,
+					'is_active_highlighter' => false,
+					'highlighter'           => VK_Blocks_Global_Settings::HIGHLIGHTER_COLOR,
+					'font_size'             => null,
+					'nowrap'                => false,
+					'class_name'            => 'vk-format--1',
+					'custom_css'            => null,
+				),
+			),
 		);
 		return $default;
 	}

@@ -17,15 +17,6 @@ import { SaveButton } from '@vkblocks/admin/save-button';
 
 export const AdminContext = createContext();
 
-const isEmptyObject = (val) => {
-	return (
-		val !== null &&
-		typeof val === 'object' &&
-		val.constructor === Object &&
-		Object.keys(val).length === 0
-	);
-};
-
 export default function VKBlocksAdmin() {
 	const storeVKBlocksOption = useSelect((select) => {
 		return select('vk-blocks-pro/options').getVKBlocksOption();
@@ -50,8 +41,8 @@ export default function VKBlocksAdmin() {
 		<>
 			{/* AdminContext.Providerで各コンポーネントにvalueを渡す */}
 
-			{!isEmptyObject(vkBlocksOption) &&
-				!isEmptyObject(vkBlocksBalloonMeta) && (
+			{vkBlocksOption &&
+				vkBlocksBalloonMeta && (
 					<AdminContext.Provider
 						value={{
 							vkBlocksOption,

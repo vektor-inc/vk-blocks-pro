@@ -5,10 +5,9 @@ export function* setOptions(options) {
 	return populateOptions(options);
 }
 
-export function populateOptions(optionType, options) {
+export function populateOptions(options) {
 	return {
 		type: POPULATE_OPTIONS,
-		optionType,
 		options,
 	};
 }

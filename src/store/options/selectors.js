@@ -3,5 +3,5 @@ export const getVKBlocksOption = (state) => {
 };
 
 export const getBalloonMeta = (state) => {
-	return state.balloonMeta;
+	return state.vkBlocksBalloonMeta;
 };

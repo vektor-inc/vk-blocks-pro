@@ -1,8 +1,6 @@
 import { POPULATE_OPTIONS } from './types';
 
 const DEFAULT_STATE = {
-	vkBlocksOption: {},
-	balloonMeta: {},
 };
 
 const reducer = (state = DEFAULT_STATE, action) => {
@@ -10,9 +8,9 @@ const reducer = (state = DEFAULT_STATE, action) => {
 		case POPULATE_OPTIONS:
 			return {
 				...state,
-				[action.optionType]: action.options,
+				vkBlocksOption: action.options.vkBlocksOption,
+				vkBlocksBalloonMeta: action.options.vkBlocksBalloonMeta
 			};
-
 		default:
 			return state;
 	}

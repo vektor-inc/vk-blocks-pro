@@ -144,10 +144,10 @@ function vk_blocks_blocks_assets() {
 add_action( 'init', 'vk_blocks_blocks_assets', 10 );
 
 
-$vk_block_store_asset = include VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/build/store-build.asset.php';
+$vk_blocks_store_asset = include VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/build/store-build.asset.php';
 // Enqueue CSS dependencies.
-foreach ( $vk_block_store_asset['dependencies'] as $style ) {
-	wp_enqueue_style( $style );
+foreach ( $vk_block_store_asset['dependencies'] as $vk_blocks_style ) {
+	wp_enqueue_style( $vk_blocks_style );
 }
 
 wp_enqueue_script(

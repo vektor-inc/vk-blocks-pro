@@ -7,7 +7,7 @@
 
 // Pro 用の管理画面を読み込み.
 require_once dirname( __FILE__ ) . '/admin-pro/admin-pro.php';
-
+require_once dirname( __FILE__ ) . '/extensions/common/custom-block-style.php';
 require_once dirname( __FILE__ ) . '/extensions/common/custom-css-extension.php';
 
 /**

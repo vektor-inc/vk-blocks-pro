@@ -1,0 +1,131 @@
+/**
+ * WordPress dependencies
+ */
+import { __, sprintf } from '@wordpress/i18n';
+import { select } from '@wordpress/data';
+import { TextControl } from '@wordpress/components';
+import { useContext, useEffect } from '@wordpress/element';
+
+/**
+ * Internal dependencies
+ */
+import { AdminContext } from '@vkblocks/admin/index';
+
+export const SetPropertyName = ({
+	propertyName,
+	isDisableAdd,
+	setIsDisableAdd,
+	blockName,
+	setPropertyName,
+	errorMessage,
+	setErrorMessage,
+}) => {
+	const { vkBlocksOption } = useContext(AdminContext);
+
+	const { getBlockStyles } = select('core/blocks');
+
+	const validatePropertyName = (value) => {
+		let bool = true;
+		let message;
+
+		if (typeof value !== 'string') {
+			bool = false;
+			message = __(
+				'文字列を入力してください',
+				// 'Please enter a string',
+				'vk-blocks'
+			);
+		}
+		if (!/^[a-z][a-z0-9-_]*$/.test(value)) {
+			bool = false;
+			message = __(
+				'英字から始まり,英数字,ハイフン,アンダーバーのみ使用可能です',
+				// 'Only alphanumeric characters, hyphens, and underscores are allowed.',
+				'vk-blocks'
+			);
+		}
+		if (value === '') {
+			bool = false;
+			message = __(
+				'クラス名は必須項目です',
+				// 'Class name is required',
+				'vk-blocks'
+			);
+		}
+
+		// ブロックスタイルが既に登録されているか
+		vkBlocksOption.custom_block_style_lists?.forEach((option) => {
+			if (
+				option.block_name === blockName &&
+				option.property_name === value
+			) {
+				bool = false;
+				message = __(
+					'すでに登録されています',
+					// 'Already registered',
+					'vk-blocks'
+				);
+			}
+		});
+
+		// ブロックスタイルが既に登録されているか
+		getBlockStyles(blockName)?.forEach((blockStyle) => {
+			if (blockStyle.name === value) {
+				bool = false;
+				message = __(
+					'すでに登録されています',
+					// 'Already registered',
+					'vk-blocks'
+				);
+			}
+		});
+		setIsDisableAdd(bool);
+		setErrorMessage(message);
+	};
+
+	useEffect(() => {
+		validatePropertyName(propertyName);
+	}, [blockName]);
+
+	const hyphenBlockName = blockName.replace(/\//, '-');
+	const isCore = blockName.startsWith('core');
+	const placeHolder = isCore ? `vk-${hyphenBlockName}` : hyphenBlockName;
+
+	return (
+		<>
+			<TextControl
+				className="custom_block_style_item_class_name"
+				label={__(
+					`CSSクラスの算出に使用されるスタイルの識別子 (必須/変更不可)`,
+					// 'the identifier of the style used to compute a CSS class. (Required/Unchangeable)',
+					'vk-blocks'
+				)}
+				help={__(
+					`is-style-に続くCSSクラス名になります。`,
+					// 'This will be the CSS class name following is-style-.',
+					'vk-blocks'
+				)}
+				placeholder={sprintf(
+					/* translators: (e.g.) %s-block-style */
+					__(
+						'(例) %s-block-style',
+						// (e.g.) %s-block-style
+						'vk-blocks'
+					),
+					placeHolder ? placeHolder : 'block-name'
+				)}
+				onChange={(value) => {
+					value = value.trim();
+					setPropertyName(value);
+					validatePropertyName(value);
+				}}
+				value={propertyName ? propertyName : ''}
+			/>
+			{!isDisableAdd && (
+				<p className="custom_block_style_item_name_error">
+					{errorMessage}
+				</p>
+			)}
+		</>
+	);
+};

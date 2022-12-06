@@ -89,6 +89,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 					'new_faq_accordion' => 'disable',
 					'show_custom_css_editor_flag' => 'show',
 					'disable_block_lists' => array(),
+					'custom_block_style_lists' => array(),
 				),
 			),
 			// デフォルトの表示非表示調整 v0.44.13
@@ -361,6 +362,54 @@ class GetOptionsTest extends WP_UnitTestCase {
 				),
 				'correct' => array(),
 			),
+			// カスタムブロックスタイル
+			array(
+				'option_check_target' => 'custom_block_style_lists',
+				'option'  => array(
+					'display_vk_block_template' => 'hide',
+					'new_faq_accordion' => 'open',
+					'balloon_border_width' => 2,
+					'margin_unit' => 'px',
+					'margin_size' => array(
+						'xl' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'lg' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'md' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'sm' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+						'xs' => array(
+							'mobile' => 1,
+							'tablet' => 2,
+							'pc' => 3,
+						),
+					),
+					'load_separate_option' => true,
+					'vk_blocks_pro_license_key' => 'test_license_key',
+					'show_custom_css_editor_flag' => 'hide',
+					'disable_block_lists' => array(
+						'vk-blocks/pr-blocks',
+						'vk-blocks/pr-content',
+						'vk-blocks/staff',
+						'vk-blocks/card',
+						'vk-blocks/icon-card',
+					),
+				),
+				'correct' => array(),
+			),
 			// 全てのオプション値を変更した時
 			array(
 				'option'  => array(
@@ -404,7 +453,15 @@ class GetOptionsTest extends WP_UnitTestCase {
 						'vk-blocks/staff',
 						'vk-blocks/card',
 						'vk-blocks/icon-card',
-					)
+					),
+					'custom_block_style_lists' => array(
+						array(
+							'block_name'            => 'core/paragraph',
+							'property_name'         => 'vk-block-style-paragraph-1',
+							'property_label'        => '段落カスタムブロックスタイル１',
+							'property_inline_style' => '.vk-block-style-paragraph-1 { color:red; }',
+						),
+					),
 				),
 				'correct'  => array(
 					'balloon_border_width' => 2,
@@ -447,7 +504,15 @@ class GetOptionsTest extends WP_UnitTestCase {
 						'vk-blocks/staff',
 						'vk-blocks/card',
 						'vk-blocks/icon-card',
-					)
+					),
+					'custom_block_style_lists' => array(
+						array(
+							'block_name'            => 'core/paragraph',
+							'property_name'         => 'vk-block-style-paragraph-1',
+							'property_label'        => '段落カスタムブロックスタイル１',
+							'property_inline_style' => '.vk-block-style-paragraph-1 { color:red; }',
+						),
+					),
 				),
 			),
 		);

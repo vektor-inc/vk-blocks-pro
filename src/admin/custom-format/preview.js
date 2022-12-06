@@ -96,11 +96,7 @@ export const TextStylePreview = (props) => {
 					}
 				})()}
 				<span className={textStyleListObj.class_name}>
-					{__(
-						'プレビューテキスト',
-						// 'Preview Text',
-						'vk-blocks'
-					)}
+					{__('Preview Text', 'vk-blocks')}
 				</span>
 			</p>
 		</div>

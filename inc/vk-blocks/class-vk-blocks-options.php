@@ -26,6 +26,35 @@ class VK_Blocks_Options {
 	 */
 	private function __construct() {
 		add_action( 'init', array( $this, 'register_setting' ) );
+		add_action( 'admin_init', array( $this, 'migrate_balloon_meta' ) );
+	}
+
+	/**
+	 *  Migrate Balloon Meta
+	 */
+	public static function migrate_balloon_meta() {
+		$old_balloon_options = get_option( 'vk_blocks_balloon_meta' );
+		$options             = get_option( 'vk_blocks_options' );
+		// Balloon_meta_listsが初期値以外の時に実行
+		$options_defaults = self::get_vk_blocks_options_defaults();
+		if ( ! empty( $old_balloon_options ) && $options['balloon_meta_lists'] === $options_defaults['balloon_meta_lists'] ) {
+			$migrate_balloon_meta_lists = array();
+			foreach ( $old_balloon_options['default_icons'] as $option ) {
+				$new_array = array(
+					'name' => $option['name'],
+					'src'  => $option['src'],
+				);
+				if ( $new_array['name'] || $new_array['src'] ) {
+					array_push( $migrate_balloon_meta_lists, $new_array );
+				}
+			}
+
+			$options['balloon_meta_lists'] = $migrate_balloon_meta_lists;
+			update_option( 'vk_blocks_options', $options );
+		}
+		if ( array_key_exists( 'balloon_meta_lists', $options ) ) {
+			delete_option( 'vk_blocks_balloon_meta' );
+		}
 	}
 
 	/**
@@ -131,6 +160,20 @@ class VK_Blocks_Options {
 			'show_custom_css_editor_flag' => array(
 				'type' => 'string',
 			),
+			'balloon_meta_lists'          => array(
+				'type'  => 'array',
+				'items' => array(
+					'type'       => 'object',
+					'properties' => array(
+						'name' => array(
+							'type' => 'string',
+						),
+						'src'  => array(
+							'type' => 'string',
+						),
+					),
+				),
+			),
 		);
 		return $properties;
 	}
@@ -176,61 +219,41 @@ class VK_Blocks_Options {
 			'display_vk_block_template'   => 'display',
 			'new_faq_accordion'           => 'disable',
 			'show_custom_css_editor_flag' => 'show',
+			'balloon_meta_lists'          => array(
+				array(
+					'name' => null,
+					'src'  => null,
+				),
+				array(
+					'name' => null,
+					'src'  => null,
+				),
+				array(
+					'name' => null,
+					'src'  => null,
+				),
+			),
 		);
 		return $default;
 	}
 
 	/**
-	 * 吹き出し数
+	 * 吹き出し数(非推奨フック)
 	 *
 	 * @return number
 	 */
 	public static function balloon_image_number() {
-		return apply_filters( 'vk_blocks_image_number', 15 );
-	}
-
-	/**
-	 * Get vk_blocks_balloon_meta properties 生成
-	 *
-	 * @return $properties
-	 */
-	public static function get_vk_blocks_balloon_meta_properties() {
-		$number                      = self::balloon_image_number();
-		$properties                  = array();
-		$properties['default_icons'] = array(
-			'type' => 'object',
+		return apply_filters_deprecated(
+			'vk_blocks_image_number',
+			array( 15 ),
+			'VK Blocks 1.48.1',
+			'',
+			__(
+				'吹き出し画像の数はフックを利用しなくても任意の数、登録出来るようになりました。',
+				// 'Any number of callout images can be registered without using hooks.',
+				'vk-blocks'
+			)
 		);
-		for ( $i = 1; $i <= $number; $i++ ) {
-			$properties['default_icons']['properties'][ $i ] = array(
-				'type'       => 'object',
-				'properties' => array(
-					'name' => array(
-						'type' => 'string',
-					),
-					'src'  => array(
-						'type' => 'string',
-					),
-				),
-			);
-		};
-		return $properties;
-	}
-
-	/**
-	 * Get vk_blocks_balloon_meta default 生成
-	 *
-	 * @return $default
-	 */
-	public static function get_vk_blocks_balloon_meta_defaults() {
-		$number  = self::balloon_image_number();
-		$default = array();
-		for ( $i = 1; $i <= $number; $i++ ) {
-			$default['default_icons'][ $i ] = array(
-				'name' => null,
-				'src'  => null,
-			);
-		};
-		return $default;
 	}
 
 	/**
@@ -242,18 +265,6 @@ class VK_Blocks_Options {
 		$options  = get_option( 'vk_blocks_options' );
 		$defaults = self::get_vk_blocks_options_defaults();
 		$options  = vk_blocks_array_merge( $options, $defaults );
-		return $options;
-	}
-
-	/**
-	 * Get Balloon Meta Options
-	 *
-	 * @return options
-	 */
-	public static function get_balloon_meta_options() {
-		$options  = get_option( 'vk_blocks_balloon_meta' );
-		$defaults = self::get_vk_blocks_balloon_meta_defaults();
-		$options  = wp_parse_args( $options, $defaults );
 		return $options;
 	}
 
@@ -275,21 +286,6 @@ class VK_Blocks_Options {
 					),
 				),
 				'default'      => self::get_vk_blocks_options_defaults(),
-			)
-		);
-
-		register_setting(
-			'vk_blocks_setting',
-			'vk_blocks_balloon_meta',
-			array(
-				'type'         => 'object',
-				'show_in_rest' => array(
-					'schema' => array(
-						'type'       => 'object',
-						'properties' => self::get_vk_blocks_balloon_meta_properties(),
-					),
-				),
-				'default'      => self::get_vk_blocks_balloon_meta_defaults(),
 			)
 		);
 	}

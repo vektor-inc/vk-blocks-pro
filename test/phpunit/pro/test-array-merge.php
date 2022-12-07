@@ -199,6 +199,52 @@ class ArrayMergeTest extends WP_UnitTestCase {
 					'array_key' => array(),
 				),
 			),
+			// 配列 複数あってもそのまま
+			array(
+				'args'  => array(
+					'some_string' => 'a',
+					'array_key' => array(
+						array(
+							'array_key_1' => 'array_value_1_1',
+							'array_key_2' => 'array_value_1_2',
+						),
+						array(
+							'array_key_1' => 'array_value_2_1',
+							'array_key_2' => 'array_value_2_2',
+						),
+					),
+				),
+				'defaults'  => array(
+					'some_string' => 'b',
+					'array_key' => array(
+						array(
+							'array_key_1' => 'array_defaults_value_1_1',
+							'array_key_2' => 'array_defaults_value_1_2',
+						),
+						array(
+							'array_key_1' => 'array_defaults_value_2_1',
+							'array_key_2' => 'array_defaults_value_2_2',
+						),
+						array(
+							'array_key_1' => 'array_defaults_value_3_1',
+							'array_key_2' => 'array_defaults_value_3_2',
+						),
+					),
+				),
+				'correct' => array(
+					'some_string' => 'a',
+					'array_key' => array(
+						array(
+							'array_key_1' => 'array_value_1_1',
+							'array_key_2' => 'array_value_1_2',
+						),
+						array(
+							'array_key_1' => 'array_value_2_1',
+							'array_key_2' => 'array_value_2_2',
+						),
+					),
+				),
+			),
 		);
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;

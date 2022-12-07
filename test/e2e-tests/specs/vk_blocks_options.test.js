@@ -130,4 +130,14 @@ describe( 'Options', () => {
 		await expect(await page.$eval('select[name="vk_blocks_options[new_faq_accordion]', el => el.value)).toBe('open')
 	} )
 
+	it( 'Custom Format Setting', async () => {
+		await page.focus( `#vk_blocks_custom_format_0_title` );
+		await pressKeyWithModifier( 'primary', 'a' );
+		await page.type( `#vk_blocks_custom_format_0_title`, 'Test Custom Format' );
+		await clickButton('Save setting');
+		await new Promise( ( resolve ) => setTimeout( resolve, 3000 ) );
+		await page.reload();
+		await expect(await page.$eval(`input[name="vk_blocks_options[custom_format_lists][0][title]"]`, el => el.value)).toBe('Test Custom Format')
+	} )
+
 });

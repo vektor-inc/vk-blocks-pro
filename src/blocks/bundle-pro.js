@@ -33,6 +33,7 @@ import * as timelineItem from './_pro/timeline-item';
  * Extensions
  */
 import '@vkblocks/extensions/common/custom-css-extension';
+import '@vkblocks/extensions/common/custom-format';
 
 const vkblocksPro = [
 	accordion,

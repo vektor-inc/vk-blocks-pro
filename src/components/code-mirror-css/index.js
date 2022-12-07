@@ -1,4 +1,9 @@
 /**
+ * WordPress dependencies
+ */
+import { __ } from '@wordpress/i18n';
+
+/**
  * External dependencies
  */
 import classnames from 'classnames';
@@ -16,14 +21,28 @@ export const CodeMirrorCss = (props) => {
 	} = props;
 
 	return (
-		<CodeMirror
-			id={id}
-			className={classnames(`vk_custom-css-editor`, className)}
-			height={height}
-			// https://uiwjs.github.io/react-codemirror/#/extensions/color
-			extensions={[css(), EditorView.lineWrapping]}
-			value={value}
-			onChange={onChange}
-		/>
+		<>
+			<CodeMirror
+				id={id}
+				className={classnames(`vk_custom-css-editor`, className)}
+				height={height}
+				// https://uiwjs.github.io/react-codemirror/#/extensions/color
+				extensions={[css(), EditorView.lineWrapping]}
+				value={value}
+				onChange={onChange}
+			/>
+			{(() => {
+				if (value && value.indexOf('　') !== -1) {
+					return (
+						<p>
+							{__(
+								'Note : Contains double-byte spaces; CSS may not work.',
+								'vk-blocks'
+							)}
+						</p>
+					);
+				}
+			})()}
+		</>
 	);
 };

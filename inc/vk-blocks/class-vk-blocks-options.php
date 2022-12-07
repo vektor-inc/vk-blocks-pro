@@ -31,6 +31,8 @@ class VK_Blocks_Options {
 
 	/**
 	 *  Migrate Balloon Meta
+	 *
+	 * 以前使用されていたvk_blocks_balloon_metaをvk_blocks_optionsにマイグレーションする
 	 */
 	public static function migrate_balloon_meta() {
 		$old_balloon_options = get_option( 'vk_blocks_balloon_meta' );

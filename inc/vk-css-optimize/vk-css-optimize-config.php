@@ -19,12 +19,14 @@ if ( ! class_exists( 'VK_CSS_Optimize' ) ) {
  * @param array $vk_css_tree_shaking_array CSS Tree Shaking Array Paramator.
  */
 function vk_blocks_css_tree_shaking_array( $vk_css_tree_shaking_array ) {
-	$vk_css_tree_shaking_array[] = array(
-		'id'      => 'vk-blocks-build-css',
-		'url'     => VK_BLOCKS_DIR_URL . 'build/block-build.css',
-		'path'    => VK_BLOCKS_DIR_PATH . 'build/block-build.css',
-		'version' => VK_BLOCKS_VERSION,
+
+	$vk_css_tree_shaking_array = array_merge(
+		$vk_css_tree_shaking_array,
+		array(
+			'vk-blocks-build-css'
+		)
 	);
+
 	return $vk_css_tree_shaking_array;
 }
 add_filter( 'vk_css_tree_shaking_array', 'vk_blocks_css_tree_shaking_array' );

@@ -177,7 +177,7 @@ class VK_Blocks_Options {
 			),
 			'disable_block_lists'         => array(
 				'type' => 'array',
-			)
+			),
 		);
 		return $properties;
 	}

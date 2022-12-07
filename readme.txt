@@ -64,6 +64,9 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Custom Format Setting (Pro) ] Add Custom Format Setting extension in admin.
+[ Specification Change ][ Animation(Pro) ] add setting option Animation only the first view.
+
 = 1.47.1 =
 [ Bug fix ][ Slider ] Stick out background image on setting panel of site editor
 

@@ -66,6 +66,7 @@ e.g.
 
 [ Add Function ][ Custom Format Setting (Pro) ] Add Custom Format Setting extension in admin.
 [ Specification Change ][ Animation(Pro) ] add setting option Animation only the first view.
+[ Bug fix ][ CSS Optimize ] Fix Tree Shaking and Preload.
 
 = 1.47.1 =
 [ Bug fix ][ Slider ] Stick out background image on setting panel of site editor

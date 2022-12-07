@@ -24,9 +24,7 @@
 function vk_blocks_array_merge( $args, $defaults ) {
 	$merged = $defaults;
 	foreach ( $args as $key => $value ) {
-		if ( is_array( $value ) && vk_blocks_array_kind( $value ) === 'multidimensional' && $defaults[ $key ] !== $value && vk_blocks_multidimensional_min_number( $value ) !== 0 && vk_blocks_multidimensional_min_number( $value ) === vk_blocks_multidimensional_min_number( $defaults[ $key ] ) ) {
-			$merged[ $key ] = $value;
-		} else if ( is_array( $value ) && isset( $defaults[ $key ] ) && is_array( $defaults[ $key ] ) && ! empty( $value ) ) {
+		if ( is_array( $value ) && isset( $defaults[ $key ] ) && is_array( $defaults[ $key ] ) && ! empty( $value ) && vk_blocks_multidimensional_min_count( $value ) !== vk_blocks_multidimensional_min_count( $defaults[ $key ] ) ) {
 			$merged[ $key ] = vk_blocks_array_merge( $value, $defaults[ $key ] );
 		} else {
 			$merged[ $key ] = $value;
@@ -41,7 +39,7 @@ function vk_blocks_array_merge( $args, $defaults ) {
  *
  * @param array $array array.
  *
- * @return string
+ * @return string associative(連想配列)| multidimensional(多次元配列) | array(配列)
  */
 function vk_blocks_array_kind( array $array ) {
 	if ( array_values( $array ) !== $array ) {
@@ -51,14 +49,14 @@ function vk_blocks_array_kind( array $array ) {
 }
 
 /**
- * Vk_blocks_multidimensional_min_number
+ * Vk_blocks_multidimensional_min_count
  * 多次元配列の中の配列の数の最小を調べる関数
  *
  * @param array $array array.
  *
  * @return number
  */
-function vk_blocks_multidimensional_min_number( array $array ) {
+function vk_blocks_multidimensional_min_count( array $array ) {
 	if ( vk_blocks_array_kind( $array ) !== 'multidimensional' ) {
 		return $array;
 	}

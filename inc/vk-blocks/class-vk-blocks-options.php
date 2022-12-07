@@ -262,6 +262,7 @@ class VK_Blocks_Options {
 				),
 			),
 			'disable_block_lists'         => array(),
+			'custom_block_style_lists'    => array(),
 		);
 		return $default;
 	}

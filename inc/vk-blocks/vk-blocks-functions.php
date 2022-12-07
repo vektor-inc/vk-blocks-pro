@@ -30,7 +30,8 @@ VK_Blocks_Options::init();
 // font-awesome
 require_once dirname( __FILE__ ) . '/font-awesome/font-awesome-config.php';
 
-// utils
+require_once dirname( __FILE__ ) . '/utils/hex-to-rgba.php';
+require_once dirname( __FILE__ ) . '/utils/color-slug-to-color-code.php';
 require_once dirname( __FILE__ ) . '/utils/array-merge.php';
 require_once dirname( __FILE__ ) . '/utils/minify-css.php';
 
@@ -87,6 +88,7 @@ function vk_blocks_blocks_assets() {
 			'home_url'                    => home_url( '/' ),
 			'show_custom_css_editor_flag' => $vk_blocks_options['show_custom_css_editor_flag'],
 			'balloon_meta_lists'          => $vk_blocks_options['balloon_meta_lists'],
+			'custom_format_lists'         => $vk_blocks_options['custom_format_lists'],
 		)
 	);
 
@@ -145,6 +147,7 @@ function vk_blocks_blocks_assets() {
 	';
 
 	$dynamic_css .= vk_blocks_get_spacer_size_style_all( $vk_blocks_options );
+	$dynamic_css .= vk_blocks_get_custom_format_lists_inline_css();
 
 	$dynamic_css = vk_blocks_minify_css( $dynamic_css );
 	wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );

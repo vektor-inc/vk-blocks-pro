@@ -1,0 +1,405 @@
+/**
+ * WordPress dependencies
+ */
+import { __, sprintf } from '@wordpress/i18n';
+import { useContext } from '@wordpress/element';
+import {
+	CheckboxControl,
+	BaseControl,
+	PanelBody,
+	FontSizePicker,
+	ToggleControl,
+	ColorPalette,
+	TextControl,
+} from '@wordpress/components';
+import { getColorObjectByColorValue } from '@wordpress/block-editor';
+
+/**
+ * Internal dependencies
+ */
+import { AdminContext } from '@vkblocks/admin/index';
+import { vkColorPalette } from '@vkblocks/admin/utils/settings';
+import { colorSlugToColorCode } from '@vkblocks/admin/utils/color-slug-to-color-code';
+import { TextStylePreview } from '@vkblocks/admin/custom-format/preview';
+import { AddItemButton } from '@vkblocks/admin/custom-format/add-item';
+import { DeleteItemButton } from '@vkblocks/admin/custom-format/delete-item-button';
+import { CodeMirrorCss } from '@vkblocks/components/code-mirror-css';
+
+/*globals vkBlocksObject */
+const FONT_SIZES = [...vkBlocksObject.fontSizes];
+
+export default function AdminCustomFormat() {
+	const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
+
+	const onChange = (key, value, index) => {
+		const newItems = vkBlocksOption.custom_format_lists;
+		newItems[index] = {
+			...vkBlocksOption.custom_format_lists[index],
+			[key]: value,
+		};
+		setVkBlocksOption({
+			...vkBlocksOption,
+			custom_format_lists: [...newItems],
+		});
+	};
+
+	return (
+		<>
+			<section>
+				<h3 id="custom-format-setting">
+					{__(
+						'カスタム書式設定',
+						// 'Custom Format Setting',
+						'vk-blocks'
+					)}
+				</h3>
+				<p>
+					{__(
+						'ブロックツールバーのよく使う書式設定を登録することができます。',
+						// 'You can apply commonly used formatting on the block toolbar.',
+						'vk-blocks'
+					)}
+				</p>
+				{Object.keys(vkBlocksOption.custom_format_lists).map(
+					(key, index) => {
+						const textStyleListObj =
+							vkBlocksOption.custom_format_lists[key];
+						return (
+							<div className="custom_format_item" key={index}>
+								<TextStylePreview
+									textStyleListObj={textStyleListObj}
+								/>
+								<div className="custom_format_item_control">
+									<PanelBody
+										title={__(
+											'書式設定',
+											// 'Custom Format',
+											'vk-blocks'
+										)}
+									>
+										<BaseControl id="custom-format">
+											<TextControl
+												className="custom_format_item_name"
+												name={`vk_blocks_options[custom_format_lists][${index}][title]`}
+												id={`vk_blocks_custom_format_${index}_title`}
+												label={__(
+													'ツールバー タイトル',
+													// 'Toolbar title',
+													'vk-blocks'
+												)}
+												onChange={(value) =>
+													onChange(
+														'title',
+														value,
+														index
+													)
+												}
+												value={
+													textStyleListObj.title ?? ''
+												}
+											/>
+											{!textStyleListObj.title && (
+												<p className="custom_format_item_name_warning">
+													{__(
+														'※ タイトルが入力されていない場合、ツールバーには表示されません。',
+														// '※ Required If no title is entered, it will not appear on the toolbar.',
+														'vk-blocks'
+													)}
+												</p>
+											)}
+											<DeleteItemButton
+												index={index}
+												textStyleListObj={
+													textStyleListObj
+												}
+											/>
+										</BaseControl>
+									</PanelBody>
+									<PanelBody
+										title={__(
+											'フォーマット設定',
+											// 'Format Setting',
+											'vk-blocks'
+										)}
+										initialOpen={false}
+									>
+										<BaseControl id="format-setting">
+											<CheckboxControl
+												name={`vk_blocks_options[custom_format_lists][${index}][font_weight_bold]`}
+												label={__(
+													'太字',
+													// 'Bold',
+													'vk-blocks'
+												)}
+												checked={
+													textStyleListObj.font_weight_bold
+												}
+												onChange={(value) =>
+													onChange(
+														'font_weight_bold',
+														value,
+														index
+													)
+												}
+											/>
+											<CheckboxControl
+												name={`vk_blocks_options[custom_format_lists][${index}][font_italic]`}
+												label={__(
+													'イタリック',
+													// 'Italic',
+													'vk-blocks'
+												)}
+												checked={
+													textStyleListObj.font_italic
+												}
+												onChange={(value) =>
+													onChange(
+														'font_italic',
+														value,
+														index
+													)
+												}
+											/>
+											<CheckboxControl
+												name={`vk_blocks_options[custom_format_lists][${index}][font_strikethrough]`}
+												label={__(
+													'打ち消し線',
+													// 'Strikethrough',
+													'vk-blocks'
+												)}
+												checked={
+													textStyleListObj.font_strikethrough
+												}
+												onChange={(value) =>
+													onChange(
+														'font_strikethrough',
+														value,
+														index
+													)
+												}
+											/>
+											<CheckboxControl
+												name={`vk_blocks_options[custom_format_lists][${index}][nowrap]`}
+												label={__(
+													'Nowrap',
+													'vk-blocks'
+												)}
+												checked={
+													textStyleListObj.nowrap
+												}
+												onChange={(value) =>
+													onChange(
+														'nowrap',
+														value,
+														index
+													)
+												}
+											/>
+											<FontSizePicker
+												__nextHasNoMarginBottom
+												fontSizes={FONT_SIZES}
+												onChange={(value) =>
+													onChange(
+														'font_size',
+														value,
+														index
+													)
+												}
+												value={
+													textStyleListObj.font_size
+												}
+											/>
+										</BaseControl>
+									</PanelBody>
+									<PanelBody
+										title={__('Color', 'vk-blocks')}
+										initialOpen={false}
+									>
+										<BaseControl
+											id="text-color"
+											label={__(
+												'Text Color',
+												'vk-blocks'
+											)}
+										>
+											<ColorPalette
+												clearable
+												colors={vkColorPalette}
+												value={colorSlugToColorCode(
+													textStyleListObj.color
+												)}
+												onChange={(value) => {
+													const ColorValue =
+														getColorObjectByColorValue(
+															vkColorPalette,
+															value
+														);
+													const newValue =
+														ColorValue !== undefined
+															? ColorValue.slug
+															: value;
+													onChange(
+														'color',
+														newValue,
+														index
+													);
+												}}
+											/>
+										</BaseControl>
+										<BaseControl
+											id="background-color"
+											label={__(
+												'Background Color',
+												'vk-blocks'
+											)}
+										>
+											<ColorPalette
+												clearable
+												colors={vkColorPalette}
+												value={colorSlugToColorCode(
+													textStyleListObj.background_color
+												)}
+												onChange={(value) => {
+													const ColorValue =
+														getColorObjectByColorValue(
+															vkColorPalette,
+															value
+														);
+													const newValue =
+														ColorValue !== undefined
+															? ColorValue.slug
+															: value;
+													onChange(
+														'background_color',
+														newValue,
+														index
+													);
+												}}
+											/>
+										</BaseControl>
+										<BaseControl
+											id="highlighter"
+											label={__(
+												'蛍光マーカー',
+												// 'Highlighter Color',
+												'vk-blocks'
+											)}
+										>
+											<ToggleControl
+												name={`vk_blocks_options[custom_format_lists][${index}][is_active_highlighter]`}
+												id={`vk_blocks_custom_format_lists_${index}_is_active_highlighter`}
+												label={__(
+													'蛍光マーカーを有効化',
+													// 'Activate Highlighter',
+													'vk-blocks'
+												)}
+												checked={
+													textStyleListObj.is_active_highlighter
+												}
+												onChange={(value) =>
+													onChange(
+														'is_active_highlighter',
+														value,
+														index
+													)
+												}
+											/>
+											{textStyleListObj.is_active_highlighter && (
+												<ColorPalette
+													colors={vkColorPalette}
+													onChange={(value) => {
+														// clearボタンを押した時
+														if (
+															value === undefined
+														) {
+															value =
+																vkBlocksObject.highlighterColor;
+														}
+														onChange(
+															'highlighter',
+															value,
+															index
+														);
+													}}
+													value={
+														textStyleListObj.highlighter
+													}
+												/>
+											)}
+										</BaseControl>
+									</PanelBody>
+									<PanelBody
+										title={__(
+											'カスタムCSS',
+											// 'Custom CSS',
+											'vk-blocks'
+										)}
+										initialOpen={false}
+									>
+										<BaseControl id="class-name-setting">
+											<span>
+												{__(
+													'CSSクラス',
+													// 'CSS class',
+													'vk-blocks'
+												)}
+												:
+												<code>
+													.
+													{
+														textStyleListObj.class_name
+													}
+												</code>
+											</span>
+											<CodeMirrorCss
+												className="vk-codemirror-block-editor"
+												value={
+													textStyleListObj.custom_css
+														? textStyleListObj.custom_css
+														: ''
+												}
+												onChange={(value) =>
+													onChange(
+														'custom_css',
+														value,
+														index
+													)
+												}
+											/>
+											<p>
+												{sprintf(
+													// translators: If selector is specified, it will be replaced by a unique CSS class (%s); CSS selectors other than selector may affect the entire page.
+													__(
+														'selector を指定した場合、固有の CSS クラス(%s)に置き換わります。selector以外のCSSセレクターは、ページ全体に影響する可能性があります。',
+														// 'If selector is specified, it will be replaced by a unique CSS class (%s); CSS selectors other than selector may affect the entire page.?',
+														'vk-blocks'
+													),
+													textStyleListObj.class_name
+												)}
+											</p>
+											<p>{__('Example:', 'vk-blocks')}</p>
+											<pre
+												className="vk-custom-css-sample-code"
+												style={{
+													whiteSpace: 'pre-wrap',
+													padding: '16px',
+													display: 'block',
+													background: '#f5f5f5',
+												}}
+											>
+												{
+													'selector {\n    background: #f5f5f5;\n}'
+												}
+											</pre>
+										</BaseControl>
+									</PanelBody>
+								</div>
+							</div>
+						);
+					}
+				)}
+				<AddItemButton />
+			</section>
+		</>
+	);
+}

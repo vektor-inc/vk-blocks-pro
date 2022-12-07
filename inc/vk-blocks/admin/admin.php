@@ -71,6 +71,13 @@ function vk_blocks_setting_page() {
 		$get_menu_html .= '<li><a href="#license-setting">' . __( 'License Key', 'vk-blocks' ) . '</a></li>';
 	}
 	$get_menu_html .= '<li><a href="#balloon-setting">' . __( 'Balloon Block Setting', 'vk-blocks' ) . '</a></li>';
+	if ( vk_blocks_is_pro() ) {
+		$get_menu_html .= '<li><a href="#custom-format-setting">' . __(
+			'カスタム書式設定',
+			// 'Custom Format Setting',
+			'vk-blocks'
+		) . '</a></li>';
+	}
 	$get_menu_html .= '<li><a href="#margin-setting">' . __( 'Common Margin Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= '<li><a href="#load-separete-setting">' . __( 'Load Separete Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= apply_filters( 'vk_blocks_pro_menu', '' );
@@ -131,6 +138,9 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 			'options'          => VK_Blocks_Options::get_options(),
 			'isLicenseSetting' => vk_blocks_is_license_setting(),
 			'isPro'            => vk_blocks_is_pro(),
+			'colorPalette'     => wp_get_global_settings( array( 'color', 'palette' ) ),
+			'fontSizes'        => VK_Blocks_Global_Settings::font_sizes(),
+			'highlighterColor' => VK_Blocks_Global_Settings::HIGHLIGHTER_COLOR,
 		)
 	);
 

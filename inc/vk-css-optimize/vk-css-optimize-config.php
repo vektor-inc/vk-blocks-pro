@@ -19,11 +19,10 @@ if ( ! class_exists( 'VK_CSS_Optimize' ) ) {
  * @param array $vk_css_tree_shaking_array CSS Tree Shaking Array Paramator.
  */
 function vk_blocks_css_tree_shaking_array( $vk_css_tree_shaking_array ) {
-
 	$vk_css_tree_shaking_array = array_merge(
 		$vk_css_tree_shaking_array,
 		array(
-			'vk-blocks-build-css'
+			'vk-blocks-build-css',
 		)
 	);
 

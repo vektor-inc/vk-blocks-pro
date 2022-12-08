@@ -41,7 +41,10 @@ function vk_blocks_array_merge( $args, $defaults ) {
  *
  * @return string associative(連想配列)| multidimensional(多次元配列) | array(配列)
  */
-function vk_blocks_array_kind( array $array ) {
+function vk_blocks_array_kind( $array ) {
+	if ( ! is_array( $array ) ) {
+		return false;
+	}
 	if ( array_values( $array ) !== $array ) {
 		return 'associative';
 	}
@@ -54,9 +57,9 @@ function vk_blocks_array_kind( array $array ) {
  *
  * @param array $array array.
  *
- * @return number
+ * @return number|array
  */
-function vk_blocks_multidimensional_min_count( array $array ) {
+function vk_blocks_multidimensional_min_count( $array ) {
 	if ( vk_blocks_array_kind( $array ) !== 'multidimensional' ) {
 		return $array;
 	}

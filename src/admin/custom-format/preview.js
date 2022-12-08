@@ -74,7 +74,7 @@ export const TextStylePreview = (props) => {
 		if (textStyleListObj.custom_css) {
 			// selectorをクラスに変換する
 			dynamic_css += textStyleListObj.custom_css.replace(
-				/selector/,
+				/selector/g,
 				'.' + textStyleListObj.class_name
 			);
 		}

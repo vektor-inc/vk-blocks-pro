@@ -28,11 +28,7 @@ export const DeleteItemButton = (props) => {
 
 	const textStyleTitle = !!textStyleListObj.title
 		? textStyleListObj.title
-		: __(
-				'書式設定',
-				// 'Custom Format',
-				'vk-blocks'
-		  );
+		: __('Custom Format', 'vk-blocks');
 
 	return (
 		<>
@@ -47,11 +43,7 @@ export const DeleteItemButton = (props) => {
 				<Modal
 					title={sprintf(
 						// translators: Would you like to delete %s
-						__(
-							'%sを削除しますか？',
-							// 'Would you like to delete %s?',
-							'vk-blocks'
-						),
+						__('Would you like to delete %s?', 'vk-blocks'),
 						textStyleTitle
 					)}
 					onRequestClose={closeModal}
@@ -60,8 +52,7 @@ export const DeleteItemButton = (props) => {
 					<div className="custom_format_delete_modal">
 						<p>
 							{__(
-								'保存したコンテンツにこのフォーマットがある場合、スタイルが解除されます。',
-								// 'If the saved content has this format, the style will be unstyled.',
+								'If the saved content has this format, the style will be unstyled.',
 								'vk-blocks'
 							)}
 						</p>

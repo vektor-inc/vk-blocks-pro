@@ -7,7 +7,7 @@
 
 class CustomCssExtensionTest extends WP_UnitTestCase {
 
-	public function test_should_load_separate_assets() {
+	public function test_block_content_preg_replace() {
 
         // ブロックコンテナのCSSクラス内のvk_custom_cssだけを変える。ブロックコンテンツ内のspan class内の vk_custom_cssは変更しないようにする。
         // correct内 %d の箇所が連番になります。

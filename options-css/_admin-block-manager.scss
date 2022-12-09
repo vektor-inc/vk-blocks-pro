@@ -5,22 +5,25 @@
 		.block-manager__checklist {
 			display: flex;
 			flex-wrap: wrap;
+			margin-left: calc(1.5em - 1.8em);
 		}
 
 		.block-manager__checklist-item {
 			list-style: none;
-			width: calc(100% / 3);
-			margin: 0;
+			width: calc((100% / 3) - 1.8em);
+			margin: 0 0 0 1.8em;
+			border-bottom: solid 1px #c5c5c5;
 			@media screen and (max-width: 991.98px) {
-				width: 50%;
+				width:  calc(50% - 1.8em);
 			}
 
 			.components-base-control__field {
 				align-items: center;
 				display: flex;
+				margin: 0 0 0 1.8em;
 				margin: 0;
 			}
-
+			
 			.components-checkbox-control__label {
 				display: flex;
 				align-items: center;

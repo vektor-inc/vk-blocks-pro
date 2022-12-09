@@ -94,8 +94,7 @@ function vk_blocks_render_custom_css( $block_content, $block ) {
 		$css = preg_replace( '/selector/', '.' . $unique_class, $css );
 
 		// vk_custom_cssをUniqueクラスに変換
-		$block_content = preg_replace( '/(class="[^"]*)vk_custom_css([^"]*")/', '$1'. $unique_class . '$2', $block_content, 1);
-
+		$block_content = preg_replace( '/(class="[^"]*)vk_custom_css([^"]*")/', '$1' . $unique_class . '$2', $block_content, 1 );
 	}
 	$css = vk_blocks_minify_css( $css );
 	if ( function_exists( 'wp_enqueue_block_support_styles' ) ) {

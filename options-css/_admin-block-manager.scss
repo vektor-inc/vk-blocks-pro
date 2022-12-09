@@ -1,12 +1,11 @@
 .vk_admin_page .adminMain_main {
 	.blockManagerList {
 		margin-left: 0;
-		margin-bottom: 2em;
 
 		.block-manager__checklist {
 			display: flex;
 			flex-wrap: wrap;
-			margin: 0 0 0 calc(1.5em - 2em);
+			margin-left: calc(1.5em - 2em);
 		}
 
 		.block-manager__checklist-item {

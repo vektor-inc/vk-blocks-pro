@@ -87,8 +87,8 @@ function vk_blocks_blocks_assets() {
 		'vk-blocks-build-js',
 		'vk_blocks_params',
 		array(
-			'home_url'                    => home_url( '/' ),
-			'custom_format_lists'         => $vk_blocks_options['custom_format_lists'],
+			'home_url'            => home_url( '/' ),
+			'custom_format_lists' => $vk_blocks_options['custom_format_lists'],
 		)
 	);
 

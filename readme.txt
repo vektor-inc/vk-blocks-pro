@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Admin screen ] Added block manager function.
 [ Bug fix ][ Custom CSS (Pro) ] Fixed bug in not replacing all selector strings.
 [ Add Function ][ Custom Format Setting (Pro) ] Add Custom Format Setting extension in admin.
 [ Specification Change ][ Animation(Pro) ] add setting option Animation only the first view.

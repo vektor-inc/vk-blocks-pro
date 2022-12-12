@@ -68,7 +68,7 @@ export const existsCss = (css) => {
 	return css && css.match(/\S/g);
 };
 
-export const customCssSelectorRegex = /selector/;
+export const customCssSelectorRegex = /selector/g;
 
 /**
  * Filters registered block settings.
@@ -204,21 +204,6 @@ export const withInspectorControls = createHigherOrderComponent(
 								setAttributes({ vkbCustomCss: value });
 							}}
 						/>
-						{(() => {
-							if (
-								vkbCustomCss &&
-								vkbCustomCss.indexOf('　') !== -1
-							) {
-								return (
-									<p>
-										{__(
-											'Note : Contains double-byte spaces; CSS may not work.',
-											'vk-blocks'
-										)}
-									</p>
-								);
-							}
-						})()}
 						<p>
 							{__(
 								'If selector is specified, it is replaced by a block-specific CSS class. If selector is set to "selector", it will be replaced with a block-specific CSS class. CSS selectors other than "selector" may affect the entire page.',

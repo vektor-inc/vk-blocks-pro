@@ -261,7 +261,7 @@ class VK_Blocks_Options {
 					'custom_css'            => null,
 				),
 			),
-			'disable_block_lists'         => array(),
+			'disable_block_lists'         => $activation ? self::get_deprecated_lists() : array(),
 			'custom_block_style_lists'    => array(),
 		);
 		return $default;

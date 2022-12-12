@@ -77,6 +77,7 @@ function vk_blocks_setting_page() {
 			// 'Custom Block Style Setting',
 			'vk-blocks'
 		) . '</a></li>';
+		$get_menu_html .= '<li><a href="#custom-format-setting">' . __( 'Custom Format Setting', 'vk-blocks' ) . '</a></li>';
 	}
 	$get_menu_html .= '<li><a href="#margin-setting">' . __( 'Common Margin Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= '<li><a href="#load-separete-setting">' . __( 'Load Separete Setting', 'vk-blocks' ) . '</a></li>';

@@ -60,7 +60,7 @@ export const existsCss = (css) => {
 	return css && css.match(/\S/g);
 };
 
-export const customCssSelectorRegex = /selector/;
+export const customCssSelectorRegex = /selector/g;
 
 /**
  * Filters registered block settings.

@@ -190,10 +190,7 @@ export const withInspectorControls = createHigherOrderComponent(
 					<PanelBody
 						className={'vk_custom_css_panel'}
 						icon={<Icon icon={IconSVG} style={iconStyle} />}
-						title={__(
-							'Custom CSS',
-							'vk-blocks'
-						)}
+						title={__('Custom CSS', 'vk-blocks')}
 						initialOpen={false}
 					>
 						<CodeMirrorCss

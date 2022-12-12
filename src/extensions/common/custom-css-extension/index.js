@@ -191,7 +191,6 @@ export const withInspectorControls = createHigherOrderComponent(
 						className={'vk_custom_css_panel'}
 						icon={<Icon icon={IconSVG} style={iconStyle} />}
 						title={__(
-							// 'カスタムCSS',
 							'Custom CSS',
 							'vk-blocks'
 						)}
@@ -230,7 +229,8 @@ export const withInspectorControls = createHigherOrderComponent(
 						</pre>
 						<ToggleControl
 							label={__(
-								'Show Custom CSS flag in editor',
+								'識別表示を表示する。',
+								// 'Display a custom CSS identification display.',
 								'vk-blocks'
 							)}
 							checked={

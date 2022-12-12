@@ -13,10 +13,5 @@ export const updateOptions = (options) => {
 		path: API_PATH,
 		method: 'POST',
 		data: options,
-	}).then((/*response, status*/) => {
-		// setTimeout(() => {
-		// 	console.log(response);
-		// 	console.log( status );
-		// }, 600);
 	});
 };

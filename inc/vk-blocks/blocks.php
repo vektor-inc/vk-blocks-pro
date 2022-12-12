@@ -50,11 +50,7 @@ function vk_blocks_blocks_categories( $categories, $post ) {
 			array(
 				array(
 					'slug'  => 'vk-blocks-cat-deprecated',
-					'title' => $vk_blocks_prefix . __(
-						'非推奨ブロック',
-						// 'Deprecated Blocks',
-						'vk-blocks'
-					),
+					'title' => $vk_blocks_prefix . __( 'Deprecated Blocks', 'vk-blocks' ),
 					'icon'  => '',
 				),
 			)

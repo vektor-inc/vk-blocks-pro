@@ -57,6 +57,10 @@ msgstr ""
 msgid "image"
 msgstr ""
 
+#: src/admin/block-manager/index.js:51
+msgid "Block Manager Setting"
+msgstr ""
+
 #: src/admin/custom-css.js:20
 #: src/extensions/common/custom-css-extension/index.js:218
 msgid "Custom CSS Setting"

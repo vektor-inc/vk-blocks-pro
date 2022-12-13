@@ -125,6 +125,7 @@ class Vk_Blocks_EntryPoint {
 			}
 		}
 
+		$options['vkBlocksBalloonMeta'] = VK_Blocks_Options::get_balloon_meta_options();
 		return rest_ensure_response( $options );
 	}
 
@@ -146,6 +147,8 @@ class Vk_Blocks_EntryPoint {
 		}
 		$completed_options = array_merge( $json_params['vkBlocksOptions'], $waiting_lists );
 		update_option( 'vk_blocks_options', $completed_options );
+		update_option( 'vk_blocks_balloon_meta', $json_params['vkBlocksBalloonMeta'] );
+
 		return rest_ensure_response(
 			array(
 				'success' => true,

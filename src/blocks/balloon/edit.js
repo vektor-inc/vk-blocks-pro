@@ -5,7 +5,7 @@ import {
 	InnerBlocks,
 	useBlockProps,
 } from '@wordpress/block-editor';
-import apiFetch from '@wordpress/api-fetch';
+// import apiFetch from '@wordpress/api-fetch';
 import {
 	ButtonGroup,
 	PanelBody,
@@ -14,10 +14,14 @@ import {
 	BaseControl,
 	ToggleControl,
 } from '@wordpress/components';
-import { useState, useEffect } from '@wordpress/element';
+// import { useState, useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
+import { useSelect, useDispatch } from '@wordpress/data';
+
 import { isHexColor } from '@vkblocks/utils/is-hex-color';
 import { AdvancedColorPalette } from '@vkblocks/components/advanced-color-palette';
+import { STORE_NAME } from '@vkblocks/extensions/store/constants';
+import { updateOptions } from '@vkblocks/utils/api';
 
 export default function BalloonEdit(props) {
 	const { attributes, setAttributes } = props;
@@ -35,54 +39,60 @@ export default function BalloonEdit(props) {
 		balloonImageType,
 		balloonAnimation,
 	} = attributes;
-	const [blockMeta, setBlockMeta] = useState(null);
-
-	useEffect(() => {
-		apiFetch({
-			path: '/vk-blocks/v1/block-meta/balloon/',
-			method: 'GET',
-			parse: true,
-		}).then((result) => {
-			setBlockMeta(result);
-		});
+	// const [blockMeta, setBlockMeta] = useState(null);
+	const { optionObj } = useSelect((select) => {
+		const { getOptions } = select(STORE_NAME);
+		return {
+			optionObj: getOptions(),
+		};
 	}, []);
+	const { setOptions } = useDispatch(STORE_NAME);
+
+	// useEffect(() => {
+	// 	apiFetch({
+	// 		path: '/vk-blocks/v1/block-meta/balloon/',
+	// 		method: 'GET',
+	// 		parse: true,
+	// 	}).then((result) => {
+	// 		setBlockMeta(result);
+	// 	});
+	// }, []);
 
 	let defautIconButtons;
-	if (blockMeta && blockMeta.default_icons) {
-		defautIconButtons = Object.keys(blockMeta.default_icons).map(
-			(index) => {
-				const defaultIcon = blockMeta.default_icons[index];
+	if (optionObj && optionObj.vkBlocksBalloonMeta?.default_icons) {
+		defautIconButtons = Object.keys(
+			optionObj.vkBlocksBalloonMeta?.default_icons
+		).map((index) => {
+			const defaultIcon =
+				optionObj.vkBlocksBalloonMeta?.default_icons[index];
 
-				let contentIcon = '';
+			let contentIcon = '';
 
-				if (defaultIcon.src) {
-					contentIcon = (
-						<div key={index}>
-							<Button
-								onClick={() => {
-									setAttributes({
-										IconImage: defaultIcon.src,
-									});
-									setAttributes({
-										balloonName: defaultIcon.name,
-									});
-								}}
-								className={
-									'button button-large components-button'
-								}
-							>
-								<img
-									className={'icon-image'}
-									src={defaultIcon.src}
-									alt={defaultIcon.name}
-								/>
-							</Button>
-						</div>
-					);
-				}
-				return contentIcon;
+			if (defaultIcon.src) {
+				contentIcon = (
+					<div key={index}>
+						<Button
+							onClick={() => {
+								setAttributes({
+									IconImage: defaultIcon.src,
+								});
+								setAttributes({
+									balloonName: defaultIcon.name,
+								});
+							}}
+							className={'button button-large components-button'}
+						>
+							<img
+								className={'icon-image'}
+								src={defaultIcon.src}
+								alt={defaultIcon.name}
+							/>
+						</Button>
+					</div>
+				);
 			}
-		);
+			return contentIcon;
+		});
 	}
 
 	if ('type-serif' === balloonType) {
@@ -407,6 +417,26 @@ export default function BalloonEdit(props) {
 		className: `vk_balloon vk_balloon-${balloonAlign} vk_balloon-${balloonType} vk_balloon-animation-${balloonAnimation}`,
 	});
 
+	const onClickPresetButton = () => {
+		if (balloonName) {
+			const newObj = {
+				...optionObj,
+				vkBlocksBalloonMeta: {
+					default_icons: {
+						...optionObj.vkBlocksBalloonMeta.default_icons,
+						1: {
+							...optionObj.vkBlocksBalloonMeta.default_icons[1],
+							name: balloonName,
+							src: IconImage,
+						},
+					},
+				},
+			};
+			setOptions(newObj);
+			updateOptions(newObj);
+		}
+	};
+
 	return (
 		<>
 			<InspectorControls>
@@ -543,6 +573,12 @@ export default function BalloonEdit(props) {
 							'vk-blocks'
 						)}
 					</div>
+					<Button onClick={onClickPresetButton}>
+						{__(
+							'設定しているアイコンと名前をプリセットとして登録する',
+							'vk-blocks'
+						)}
+					</Button>
 				</PanelBody>
 				<PanelBody title={__('Animation setting', 'vk-blocks')}>
 					<p className={'mb-1'}>

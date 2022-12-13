@@ -102,12 +102,11 @@ class Vk_Blocks_EntryPoint {
 	}
 
 	/**
-	 * Storeの読み書きを許可するオプションリスト
+	 * Storeの読み書きを許可するvk_blocks_optionsのオプションリスト
 	 *
 	 * @var array
 	 */
 	private $allow_block_editor_option_lists = array(
-		// 'new_faq_accordion',
 		'show_custom_css_editor_flag',
 	);
 

@@ -7,12 +7,39 @@
 	box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,1);
 	border: 1px solid #ccc;
 
-	.custom_block_style_item_block_name {
+	&_block_name {
 		display: flex;
+		align-items: center;
+		margin-bottom: 1em;
+		gap: 3px;
+		font-size: 1.15em;
 	}
-
+    &_delete_button{
+		margin-bottom:2em;
+	}
 	.vk-codemirror-options {
 		width: 100%;
+	}
+	&_property_label{
+		.components-base-control__label{
+			margin-bottom:0;
+			padding-right: 8px;
+			font-size: 12px;
+		}
+		.components-text-control__input{
+			border-color: #ccc;
+		}
+
+	}
+	&_property_inline_style{
+		> div:not(.vk_custom-css-editor){
+			font-size: 14px;
+		}
+		.vk_custom-css-editor{
+			margin-top: 0.5em;
+			border:1px solid #ddd
+		}
+
 	}
 }
 
@@ -20,16 +47,35 @@
 	.custom_block_style_block-manager__results {
 		height: 30vh;
 		overflow-y: scroll;
+		border: 1px solid #ddd;
+		padding: 1em;
+		margin-bottom:1em;
 	}
 
+	.block-manager__checklist{
+		margin-bottom: 1.25em;
+	}
 	.block_name_radio_control {
+		margin-bottom: 5px;
 		.components-radio-control__option {
 			display: flex;
+			align-items: center;
 		}
 	}
-
 	.block_name_radio_label {
 		display: flex;
+		align-items: center;
+		gap: 3px;
 	}
-
+	.components-base-control__help{
+		margin-bottom:0.5em;
+	}
+	.components-base-control__label{
+		font-size: 13px;
+	}
+	.custom_block_style_item_name_error{
+		margin-top:0.5em;
+	}
 }
+
+

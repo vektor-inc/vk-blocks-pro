@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-12-06T09:00:31+00:00\n"
+"POT-Creation-Date: 2022-12-12T04:00:32+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: vk-blocks\n"
@@ -66,6 +66,11 @@ msgstr ""
 
 #: src/admin/balloon/index.js:88
 msgid "image"
+msgstr ""
+
+#: src/admin/block-manager/index.js:51
+#: inc/vk-blocks/admin/admin.php:80
+msgid "Block Manager Setting"
 msgstr ""
 
 #: src/admin/custom-css.js:20
@@ -430,7 +435,7 @@ msgstr ""
 #: src/blocks/faq2/index.js:21
 #: src/blocks/slider/edit.js:201
 #: src/extensions/common/inline-font-size/index.js:89
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:247
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:252
 msgid "Normal"
 msgstr ""
 
@@ -1551,7 +1556,7 @@ msgstr ""
 
 #: src/blocks/button/edit.js:327
 #: src/extensions/common/inline-font-size/index.js:84
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:242
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:247
 msgid "Small"
 msgstr ""
 
@@ -2347,12 +2352,12 @@ msgid "Inline font size"
 msgstr ""
 
 #: src/extensions/common/inline-font-size/index.js:94
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:252
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:257
 msgid "Big"
 msgstr ""
 
 #: src/extensions/common/inline-font-size/index.js:99
-#: inc/vk-blocks/class-vk-blocks-global-settings.php:257
+#: inc/vk-blocks/class-vk-blocks-global-settings.php:262
 msgid "Extra big"
 msgstr ""
 
@@ -2808,8 +2813,20 @@ msgstr ""
 msgid "Load Separete Setting"
 msgstr ""
 
-#: inc/vk-blocks/admin/admin.php:94
+#: inc/vk-blocks/admin/admin.php:95
 msgid "Setting"
+msgstr ""
+
+#: inc/vk-blocks/blocks.php:27
+msgid "Blocks"
+msgstr ""
+
+#: inc/vk-blocks/blocks.php:40
+msgid "Blocks Layout"
+msgstr ""
+
+#: inc/vk-blocks/blocks.php:53
+msgid "Deprecated Blocks"
 msgstr ""
 
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
@@ -2854,14 +2871,6 @@ msgstr ""
 #. translators: %s: 投稿タイプ名
 #: inc/vk-blocks/view/class-vk-blocks-postlist.php:257
 msgid "There are no %ss."
-msgstr ""
-
-#: inc/vk-blocks/vk-blocks-functions.php:179
-msgid "Blocks"
-msgstr ""
-
-#: inc/vk-blocks/vk-blocks-functions.php:192
-msgid "Blocks Layout"
 msgstr ""
 
 #: inc/vk-components/package/class-vk-component-posts.php:55

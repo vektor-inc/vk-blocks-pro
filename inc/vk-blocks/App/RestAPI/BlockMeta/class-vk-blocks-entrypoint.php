@@ -117,10 +117,11 @@ class Vk_Blocks_EntryPoint {
 	 * @return \WP_REST_Response|\WP_Error
 	 */
 	public function block_editor_get_options() {
-		$options = VK_Blocks_Options::get_options();
-		foreach ( $options as $option_name => $value ) {
+		$options                    = array();
+		$options['vkBlocksOptions'] = VK_Blocks_Options::get_options();
+		foreach ( $options['vkBlocksOptions'] as $option_name => $value ) {
 			if ( ! in_array( $option_name, $this->allow_block_editor_option_lists ) ) {
-				unset( $options[ $option_name ] );
+				unset( $options['vkBlocksOptions'][ $option_name ] );
 			}
 		}
 
@@ -143,8 +144,7 @@ class Vk_Blocks_EntryPoint {
 				$waiting_lists[ $option_name ] = $options[ $option_name ];
 			}
 		}
-		$completed_options = array_merge( $json_params, $waiting_lists );
-
+		$completed_options = array_merge( $json_params['vkBlocksOptions'], $waiting_lists );
 		update_option( 'vk_blocks_options', $completed_options );
 		return rest_ensure_response(
 			array(

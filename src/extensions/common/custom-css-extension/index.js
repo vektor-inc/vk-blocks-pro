@@ -163,24 +163,24 @@ export const withInspectorControls = createHigherOrderComponent(
 			};
 		}
 
-		const { vkBlocksOptions } = useSelect((select) => {
+		const { optionObj } = useSelect((select) => {
 			const { getOptions } = select(STORE_NAME);
 			return {
-				vkBlocksOptions: getOptions(),
+				optionObj: getOptions(),
 			};
 		}, []);
 		const { setOptions } = useDispatch(STORE_NAME);
 
 		const updateSettings = (value) => {
-			if (value) {
-				vkBlocksOptions.show_custom_css_editor_flag = 'show';
-				setOptions(vkBlocksOptions);
-				updateOptions(vkBlocksOptions);
-			} else {
-				vkBlocksOptions.show_custom_css_editor_flag = 'hide';
-				setOptions(vkBlocksOptions);
-				updateOptions(vkBlocksOptions);
-			}
+			const newObj = {
+				...optionObj,
+				vkBlocksOptions: {
+					...optionObj.vkBlocksOptions,
+					show_custom_css_editor_flag: value ? 'show' : 'hide',
+				},
+			};
+			setOptions(newObj);
+			updateOptions(newObj);
 		};
 
 		return (
@@ -231,8 +231,8 @@ export const withInspectorControls = createHigherOrderComponent(
 								'vk-blocks'
 							)}
 							checked={
-								vkBlocksOptions.show_custom_css_editor_flag ===
-								'show'
+								optionObj?.vkBlocksOptions
+									?.show_custom_css_editor_flag === 'show'
 									? true
 									: false
 							}
@@ -277,19 +277,19 @@ const withElementsStyles = createHigherOrderComponent(
 		const id = useInstanceId(BlockListBlock);
 		const uniqueClass = `vk_custom_css_${id}`;
 
-		const { showFlagOption } = useSelect((select) => {
+		const { vkbCustomCss } = attributes;
+		const { vkBlocksOptions } = useSelect((select) => {
 			const { getOptions } = select(STORE_NAME);
 			return {
-				showFlagOption: getOptions().show_custom_css_editor_flag,
+				vkBlocksOptions: getOptions().vkBlocksOptions,
 			};
 		}, []);
-
-		const { vkbCustomCss } = attributes;
 		// editor用のクラス名を追加
 		const customCssClass = classnames(props.className, {
 			[uniqueClass]: existsCss(vkbCustomCss),
 			[`vk_edit_custom_css`]:
-				showFlagOption === 'show' && existsCss(vkbCustomCss),
+				vkBlocksOptions?.show_custom_css_editor_flag === 'show' &&
+				existsCss(vkbCustomCss),
 		});
 
 		// selectorをUniqueクラスに変換する

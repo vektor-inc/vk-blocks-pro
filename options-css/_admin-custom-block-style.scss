@@ -1,3 +1,6 @@
+:root {
+	--border-color: #ccc;
+}
 .custom_block_style_item {
 	box-sizing: border-box;
 	padding: 20px;
@@ -5,7 +8,7 @@
 	border-radius: 5px;
 	background-color: rgba(255,255,255,0.9);
 	box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,1);
-	border: 1px solid #ccc;
+	border: 1px solid var(--border-color);
 
 	&_block_name {
 		display: flex;
@@ -21,35 +24,57 @@
 		width: 100%;
 	}
 	&_property_label{
-		.components-base-control__label{
-			margin-bottom:0;
-			padding-right: 8px;
-			font-size: 12px;
+		margin-bottom:1em;
+		.components-base-control{
+			&__field{
+				margin-bottom:0;
+			}
+			&__label{
+				margin-bottom:0;
+				padding-right: 8px;
+				font-size: 12px;
+			}
 		}
 		.components-text-control__input{
-			border-color: #ccc;
+			border-color: var(--border-color);
 		}
-
+	}
+	&_name_warning{
+		margin-top:0;
 	}
 	&_property_inline_style{
-		> div:not(.vk_custom-css-editor){
-			font-size: 14px;
-		}
+
 		.vk_custom-css-editor{
 			margin-top: 0.5em;
-			border:1px solid #ddd
+			border:1px solid var(--border-color)
 		}
 
 	}
 }
 
 .custom_block_style_add_modal {
-	.custom_block_style_block-manager__results {
-		height: 30vh;
-		overflow-y: scroll;
-		border: 1px solid #ddd;
-		padding: 1em;
-		margin-bottom:1em;
+	.custom_block_style{
+		&_block-manager__results {
+			height: 30vh;
+			overflow-y: scroll;
+			border: 1px solid var(--border-color);
+			padding: 1em;
+			margin-bottom:1em;
+		}
+		&_item_active_block_type_area{
+			display: flex;
+			align-items: center;
+			margin-bottom: 1em;
+		}
+		&_item_name_error{
+			margin-top:0;
+		}
+	}
+
+	.block-manager__search{
+		.components-base-control__field{
+			margin-bottom: 1em;
+		}
 	}
 
 	.block-manager__checklist{
@@ -67,15 +92,23 @@
 		align-items: center;
 		gap: 3px;
 	}
-	.components-base-control__help{
-		margin-bottom:0.5em;
+	.components{
+	   &-base-control{
+			&__input{
+				border-color: var(--border-color);
+			}
+			&__help{
+				margin-bottom:0.2em;
+			}
+			&__label{
+				font-size: 13px;
+			}
+		}
+		&-text-control__input{
+			border-color: var(--border-color);
+		}
 	}
-	.components-base-control__label{
-		font-size: 13px;
-	}
-	.custom_block_style_item_name_error{
-		margin-top:0.5em;
-	}
+
 }
 
 

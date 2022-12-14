@@ -106,7 +106,7 @@ class Vk_Blocks_EntryPoint {
 	 *
 	 * @var array
 	 */
-	private $allow_block_editor_option_lists = array(
+	public static $allow_block_editor_option_lists = array(
 		'show_custom_css_editor_flag',
 	);
 
@@ -115,11 +115,11 @@ class Vk_Blocks_EntryPoint {
 	 *
 	 * @return \WP_REST_Response|\WP_Error
 	 */
-	public function block_editor_get_options() {
+	public static function block_editor_get_options() {
 		$options                    = array();
 		$options['vkBlocksOptions'] = VK_Blocks_Options::get_options();
 		foreach ( $options['vkBlocksOptions'] as $option_name => $value ) {
-			if ( ! in_array( $option_name, $this->allow_block_editor_option_lists ) ) {
+			if ( ! in_array( $option_name, self::$allow_block_editor_option_lists ) ) {
 				unset( $options['vkBlocksOptions'][ $option_name ] );
 			}
 		}

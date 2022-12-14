@@ -190,14 +190,15 @@ msgstr ""
 msgid "CSS class"
 msgstr ""
 
-#: src/admin/custom-format/index.js:343
-#. If selector is specified, it will be replaced by a unique CSS class (%s); CSS selectors other than selector may affect the entire page.
+#: src/admin/custom-format/index.js:352
+#. If selector is specified, it will be replaced by a unique CSS class (<code>.%s</code>); CSS selectors other than selector may affect the entire page.
 msgid ""
-"If selector is specified, it will be replaced by a unique CSS class (%s); "
-"CSS selectors other than selector may affect the entire page.?"
+"If selector is specified, it will be replaced by a unique CSS class "
+"(<code>.%s</code>); CSS selectors other than selector may affect the entire "
+"page."
 msgstr ""
 
-#: src/admin/custom-format/index.js:350
+#: src/admin/custom-format/index.js:363
 #: src/extensions/common/custom-css-extension/index.js:199
 msgid "Example:"
 msgstr ""

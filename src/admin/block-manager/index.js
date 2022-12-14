@@ -48,11 +48,7 @@ function BlockManager({ blockTypes, categories, hasBlockSupport }) {
 		<>
 			<section>
 				<h3 id="block-manager-setting">
-					{__(
-						'ブロックマネージャー',
-						// 'Block Manager',
-						'vk-blocks'
-					)}
+					{__('Block Manager Setting', 'vk-blocks')}
 				</h3>
 				<div
 					tabIndex="0"

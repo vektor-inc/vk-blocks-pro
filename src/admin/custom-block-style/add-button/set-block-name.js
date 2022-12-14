@@ -36,15 +36,15 @@ export const SetBlockName = ({
 				</p>
 			)}
 			{activeBlockType && (
-				<>
+				<div className="custom_block_style_item_active_block_type_area">
 					<BlockIcon icon={activeBlockType.icon} />
-					<span className="active_block_name">
+					<span className="custom_block_style_item_active_block_title">
 						{activeBlockType.title}
 					</span>
-					<span className="custom_block_style_item_block_name_block_name">
+					<span className="custom_block_style_item_active_block_name">
 						{blockName}
 					</span>
-				</>
+				</div>
 			)}
 			<SearchControl
 				label={__(

@@ -2,6 +2,7 @@
  * WordPress dependencies
  */
 import { __, sprintf } from '@wordpress/i18n';
+import { createInterpolateElement } from '@wordpress/element';
 
 /**
  * Internal dependencies
@@ -17,7 +18,7 @@ export const PropertyInlineStyle = ({ index, onChange, textStyleListObj }) => {
 					// 'CSS class name',
 					'vk-blocks'
 				)}
-				.is-style-{textStyleListObj.property_name}
+				<code>.is-style-{textStyleListObj.property_name}</code>
 			</div>
 			<CodeMirrorCss
 				className="vk-codemirror-options"
@@ -27,15 +28,20 @@ export const PropertyInlineStyle = ({ index, onChange, textStyleListObj }) => {
 				}
 			/>
 			<p>
-				{sprintf(
-					/* translators: If selector is specified, it is replaced by CSS class (is-style-%1$s); CSS selectors other than selector and is-style-%2$s may affect the entire page. */
-					__(
-						'selector を指定した場合、CSS クラス(is-style-%1$s)に置き換わります。selector、is-style-%2$s以外のCSSセレクターは、ページ全体に影響する可能性があります。',
-						// If selector is specified, it is replaced by CSS class (is-style-%1$s); CSS selectors other than selector and is-style-%2$s may affect the entire page.
-						'vk-blocks'
+				{createInterpolateElement(
+					sprintf(
+						/* translators: If selector is specified, it is replaced by CSS class (is-style-%1$s); CSS selectors other than selector and is-style-%2$s may affect the entire page. */
+						__(
+							'selector を指定した場合、CSS クラス(<code>.is-style-%1$s</code>)に置き換わります。selector,<code>.is-style-%2$s</code>以外のCSSセレクターは、ページ全体に影響する可能性があります。',
+							// If selector is specified, it is replaced by CSS class (is-style-%1$s); CSS selectors other than selector and is-style-%2$s may affect the entire page.
+							'vk-blocks'
+						),
+						textStyleListObj.property_name,
+						textStyleListObj.property_name
 					),
-					textStyleListObj.property_name,
-					textStyleListObj.property_name
+					{
+						code: <code />,
+					}
 				)}
 			</p>
 		</div>

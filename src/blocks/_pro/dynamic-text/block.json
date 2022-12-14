@@ -1,0 +1,17 @@
+{
+	"apiVersion": 2,
+	"name": "vk-blocks/dynamic-text",
+	"category": "vk-blocks-cat",
+	"title": "Dynamic Text",
+	"attributes": {
+		"displayElement": {
+			"type": "string",
+			"default": "please-select"
+		}
+	},
+	"description": "Display dynamic Text",
+	"textdomain": "vk-blocks",
+	"supports": {
+		"className": true
+	}
+}

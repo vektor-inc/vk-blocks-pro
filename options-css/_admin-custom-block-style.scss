@@ -58,8 +58,14 @@
 			height: 30vh;
 			overflow-y: scroll;
 			border: 1px solid var(--border-color);
-			padding: 1em;
+			padding: 2em;
 			margin-bottom:1em;
+			> div{
+				margin-bottom: 2em;
+				&:last-of-type{
+					margin-bottom:0;
+				}
+			}
 		}
 		&_item_active_block_type_area{
 			display: flex;
@@ -77,20 +83,25 @@
 		}
 	}
 
-	.block-manager__checklist{
-		margin-bottom: 1.25em;
-	}
 	.block_name_radio_control {
-		margin-bottom: 5px;
-		.components-radio-control__option {
-			display: flex;
-			align-items: center;
+		border-bottom:1px solid #ddd;
+		.components-radio-control{
+			&__option {
+				display: flex;
+				align-items: center;
+				&__input{
+					margin-right: 12px;
+				}
+			}
 		}
 	}
 	.block_name_radio_label {
 		display: flex;
 		align-items: center;
-		gap: 3px;
+    	justify-content: space-between;
+    	flex-grow: 1;
+    	padding: 8px 0;
+		width: 450px;
 	}
 	.components{
 	   &-base-control{

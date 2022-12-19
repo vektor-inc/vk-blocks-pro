@@ -68,6 +68,7 @@ e.g.
 [ Bug fix ][ Custom CSS (Pro) ] Fixed bug in not replacing all selector strings.
 [ Add Function ][ Custom Format Setting (Pro) ] Add Custom Format Setting extension in admin.
 [ Specification Change ][ Animation(Pro) ] add setting option Animation only the first view.
+[ Specification Change ][ Slider ] enable float value at Slide Height.
 
 = 1.47.1 =
 [ Bug fix ][ Slider ] Stick out background image on setting panel of site editor

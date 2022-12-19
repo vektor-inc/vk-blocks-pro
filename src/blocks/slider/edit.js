@@ -225,13 +225,11 @@ export default function SliderEdit(props) {
 							label={__('PC', 'vk-blocks')}
 							value={pc}
 							onChange={(value) => {
-								let newValue = value
-									? parseFloat(value)
-									: 0;
+								let newValue = value ? parseFloat(value) : 0;
 								if ('px' === unit) {
 									newValue = parseInt(newValue);
 								}
-								setAttributes({ pc: newValue })
+								setAttributes({ pc: newValue });
 							}}
 							step={'px' === unit ? 1 : 0.1}
 							min={0}
@@ -243,13 +241,11 @@ export default function SliderEdit(props) {
 							label={__('Tablet', 'vk-blocks')}
 							value={tablet}
 							onChange={(value) => {
-								let newValue = value
-									? parseFloat(value)
-									: 0;
+								let newValue = value ? parseFloat(value) : 0;
 								if ('px' === unit) {
 									newValue = parseInt(newValue);
 								}
-								setAttributes({ tablet: newValue })
+								setAttributes({ tablet: newValue });
 							}}
 							step={'px' === unit ? 1 : 0.1}
 							min={0}
@@ -261,13 +257,11 @@ export default function SliderEdit(props) {
 							label={__('Mobile', 'vk-blocks')}
 							value={mobile}
 							onChange={(value) => {
-								let newValue = value
-									? parseFloat(value)
-									: 0;
+								let newValue = value ? parseFloat(value) : 0;
 								if ('px' === unit) {
 									newValue = parseInt(newValue);
 								}
-								setAttributes({ mobile: newValue })
+								setAttributes({ mobile: newValue });
 							}}
 							step={'px' === unit ? 1 : 0.1}
 							min={0}
@@ -340,8 +334,13 @@ export default function SliderEdit(props) {
 							value={autoPlayDelay}
 							onChange={(value) => {
 								setAttributes({
-									autoPlayDelay : value === undefined || value === null || value === '' ? 2500 : parseInt(value, 10),
-								})
+									autoPlayDelay:
+										value === undefined ||
+										value === null ||
+										value === ''
+											? 2500
+											: parseInt(value, 10),
+								});
 							}}
 							type={'number'}
 						/>
@@ -354,7 +353,12 @@ export default function SliderEdit(props) {
 							value={speed}
 							onChange={(value) =>
 								setAttributes({
-									speed : value === undefined || value === null || value === '' ? 500 : parseInt(value, 10),
+									speed:
+										value === undefined ||
+										value === null ||
+										value === ''
+											? 500
+											: parseInt(value, 10),
 								})
 							}
 							type={'number'}

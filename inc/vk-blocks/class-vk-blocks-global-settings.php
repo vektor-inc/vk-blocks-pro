@@ -86,12 +86,14 @@ class VK_Blocks_Global_Settings {
 				'is_pro' => false,
 			),
 			array(
-				'name'   => 'pr-blocks',
-				'is_pro' => false,
+				'name'          => 'pr-blocks',
+				'is_pro'        => false,
+				'is_deprecated' => true,
 			),
 			array(
-				'name'   => 'pr-content',
-				'is_pro' => false,
+				'name'          => 'pr-content',
+				'is_pro'        => false,
+				'is_deprecated' => true,
 			),
 			array(
 				'name'   => 'slider',
@@ -106,8 +108,9 @@ class VK_Blocks_Global_Settings {
 				'is_pro' => false,
 			),
 			array(
-				'name'   => 'staff',
-				'is_pro' => false,
+				'name'          => 'staff',
+				'is_pro'        => false,
+				'is_deprecated' => true,
 			),
 			array(
 				'name'   => 'accordion',
@@ -134,8 +137,9 @@ class VK_Blocks_Global_Settings {
 				'is_pro' => true,
 			),
 			array(
-				'name'   => 'card',
-				'is_pro' => true,
+				'name'          => 'card',
+				'is_pro'        => true,
+				'is_deprecated' => true,
 			),
 			array(
 				'name'   => 'card-item',
@@ -174,8 +178,9 @@ class VK_Blocks_Global_Settings {
 				'is_pro' => true,
 			),
 			array(
-				'name'   => 'icon-card',
-				'is_pro' => true,
+				'name'          => 'icon-card',
+				'is_pro'        => true,
+				'is_deprecated' => true,
 			),
 			array(
 				'name'   => 'icon-card-item',
@@ -219,6 +224,47 @@ class VK_Blocks_Global_Settings {
 			),
 		);
 		return $blocks;
+	}
+
+	/**
+	 * HIGHLIGHTER_COLOR
+	 * 蛍光マーカー デフォルト色
+	 * TODO:変更箇所を少なくするために蛍光マーカーのデフォルト色をこの定数を使う
+	 */
+	const HIGHLIGHTER_COLOR = '#fffd6b';
+
+	/**
+	 * Font_sizes
+	 *
+	 * 翻訳関数があるため定数に出来ない
+	 * TODO:インラインフォントサイズをこの定数を使う
+	 *
+	 * @return array
+	 */
+	public static function font_sizes() {
+		$font_sizes = array(
+			array(
+				'name' => __( 'Small', 'vk-blocks' ),
+				'slug' => 'small',
+				'size' => '12px',
+			),
+			array(
+				'name' => __( 'Normal', 'vk-blocks' ),
+				'slug' => 'normal',
+				'size' => '16px',
+			),
+			array(
+				'name' => __( 'Big', 'vk-blocks' ),
+				'slug' => 'big',
+				'size' => '18px',
+			),
+			array(
+				'name' => __( 'Extra big', 'vk-blocks' ),
+				'slug' => 'extra-big',
+				'size' => '21px',
+			),
+		);
+		return $font_sizes;
 	}
 
 }

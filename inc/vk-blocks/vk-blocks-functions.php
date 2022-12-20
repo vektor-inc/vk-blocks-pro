@@ -148,7 +148,11 @@ function vk_blocks_blocks_assets() {
 	';
 
 	$dynamic_css .= vk_blocks_get_spacer_size_style_all( $vk_blocks_options );
-	$dynamic_css .= vk_blocks_get_custom_format_lists_inline_css();
+
+	// Pro版のためfunction_existsを挟む
+	if ( function_exists( 'vk_blocks_get_custom_format_lists_inline_css' ) ) {
+		$dynamic_css .= vk_blocks_get_custom_format_lists_inline_css();
+	}
 
 	$dynamic_css = vk_blocks_minify_css( $dynamic_css );
 	wp_add_inline_style( 'vk-blocks-build-css', $dynamic_css );

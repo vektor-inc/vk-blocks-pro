@@ -190,7 +190,7 @@ msgstr ""
 msgid "CSS class"
 msgstr ""
 
-#: src/admin/custom-format/index.js:352
+#: src/admin/custom-format/index.js:344
 #. If selector is specified, it will be replaced by a unique CSS class (<code>.%s</code>); CSS selectors other than selector may affect the entire page.
 msgid ""
 "If selector is specified, it will be replaced by a unique CSS class "
@@ -198,7 +198,7 @@ msgid ""
 "page."
 msgstr ""
 
-#: src/admin/custom-format/index.js:363
+#: src/admin/custom-format/index.js:355
 #: src/extensions/common/custom-css-extension/index.js:199
 msgid "Example:"
 msgstr ""

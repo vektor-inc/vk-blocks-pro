@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Slider ] Set default value for unset time and speed.
+
 = 1.48.0 =
 [ Add Function ][ Admin screen ] Added block manager function.
 [ Add Function ][ Custom Format Setting (Pro) ] Add Custom Format Setting extension in admin.

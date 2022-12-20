@@ -23,7 +23,6 @@ import { isParentReusableBlock } from '@vkblocks/utils/is-parent-reusable-block'
 export default function SliderEdit(props) {
 	const { attributes, setAttributes, clientId } = props;
 	const {
-		unit,
 		pc,
 		tablet,
 		mobile,
@@ -224,14 +223,9 @@ export default function SliderEdit(props) {
 						<RangeControl
 							label={__('PC', 'vk-blocks')}
 							value={pc}
-							onChange={(value) => {
-								let newValue = value ? parseFloat(value) : 0;
-								if ('px' === unit) {
-									newValue = parseInt(newValue);
-								}
-								setAttributes({ pc: newValue });
-							}}
-							step={'px' === unit ? 1 : 0.1}
+							onChange={(value) =>
+								setAttributes({ pc: parseFloat(value) })
+							}
 							min={0}
 							max={1000}
 							allowReset={true}
@@ -240,14 +234,9 @@ export default function SliderEdit(props) {
 						<RangeControl
 							label={__('Tablet', 'vk-blocks')}
 							value={tablet}
-							onChange={(value) => {
-								let newValue = value ? parseFloat(value) : 0;
-								if ('px' === unit) {
-									newValue = parseInt(newValue);
-								}
-								setAttributes({ tablet: newValue });
-							}}
-							step={'px' === unit ? 1 : 0.1}
+							onChange={(value) =>
+								setAttributes({ tablet: parseFloat(value) })
+							}
 							min={0}
 							max={1000}
 							allowReset={true}
@@ -256,14 +245,9 @@ export default function SliderEdit(props) {
 						<RangeControl
 							label={__('Mobile', 'vk-blocks')}
 							value={mobile}
-							onChange={(value) => {
-								let newValue = value ? parseFloat(value) : 0;
-								if ('px' === unit) {
-									newValue = parseInt(newValue);
-								}
-								setAttributes({ mobile: newValue });
-							}}
-							step={'px' === unit ? 1 : 0.1}
+							onChange={(value) =>
+								setAttributes({ mobile: parseFloat(value) })
+							}
 							min={0}
 							max={1000}
 							allowReset={true}

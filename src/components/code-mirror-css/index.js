@@ -20,9 +20,9 @@ export const CodeMirrorCss = (props) => {
 		onChange,
 		style = {
 			...style,
-			marginTop: "0.5em",
-			border: "1px solid #ccc",
-		}
+			marginTop: '0.5em',
+			border: '1px solid #ccc',
+		},
 	} = props;
 
 	return (

@@ -13,11 +13,7 @@ export const PropertyInlineStyle = ({ index, onChange, textStyleListObj }) => {
 	return (
 		<div className="custom_block_style_item_property_inline_style">
 			<div>
-				{__(
-					'CSSクラス名',
-					// 'CSS class name',
-					'vk-blocks'
-				)}
+				{__('CSS class', 'vk-blocks')}:
 				<code>.is-style-{textStyleListObj.property_name}</code>
 			</div>
 			<CodeMirrorCss

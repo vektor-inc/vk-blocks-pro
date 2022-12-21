@@ -36,7 +36,7 @@ function vk_blocks_dynamic_text_render_callback( $attributes ) {
 	// block.jsonのSupportsで設定したクラス名やスタイルを取得する
 	$wrapper_classes = get_block_wrapper_attributes( array( 'class' => $classes ) );
 
-	$block = __('表示されるテキストはありません。', 'vk-blocks');
+	$block = __( '表示されるテキストはありません。', 'vk-blocks' );
 
 	if ( 'post-type' === $options['displayElement'] ) {
 		$block = sprintf( '<p class="vk_dynamicText">%1$s</p>', $post_type_label );

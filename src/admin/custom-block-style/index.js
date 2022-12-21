@@ -13,10 +13,9 @@ registerCoreBlocks();
  */
 import { AdminContext } from '@vkblocks/admin/index';
 import { AddButton } from '@vkblocks/admin/custom-block-style/add-button';
-import { DeleteButton } from '@vkblocks/admin/custom-block-style/delete-button';
-import { BlockName } from '@vkblocks/admin/custom-block-style/block-name';
-import { PropertyLabel } from '@vkblocks/admin/custom-block-style/property-label';
-import { PropertyInlineStyle } from '@vkblocks/admin/custom-block-style/property-inline-style';
+import { PropertyPanelBody } from '@vkblocks/admin/custom-block-style/property-panel-body';
+import { MoverButton } from '@vkblocks/admin/custom-block-style/mover-button';
+import { SortBlockStyleLists } from './sort-block-style-lists';
 /*globals vkBlocksObject */
 
 function AdminCustomBlockStyle({
@@ -88,6 +87,7 @@ function AdminCustomBlockStyle({
 						'vk-blocks'
 					)}
 				</p>
+				<SortBlockStyleLists />
 				{Object.keys(vkBlocksOption.custom_block_style_lists).map(
 					(key, index) => {
 						const textStyleListObj =
@@ -97,20 +97,9 @@ function AdminCustomBlockStyle({
 								className="custom_block_style_item"
 								key={index}
 							>
-								<BlockName
+								<MoverButton index={index} />
+								<PropertyPanelBody
 									showBlockTypes={showBlockTypes}
-									textStyleListObj={textStyleListObj}
-								/>
-								<DeleteButton
-									index={index}
-									textStyleListObj={textStyleListObj}
-								/>
-								<PropertyLabel
-									index={index}
-									onChange={onChange}
-									textStyleListObj={textStyleListObj}
-								/>
-								<PropertyInlineStyle
 									index={index}
 									onChange={onChange}
 									textStyleListObj={textStyleListObj}

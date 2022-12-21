@@ -13,8 +13,7 @@ registerCoreBlocks();
  */
 import { AdminContext } from '@vkblocks/admin/index';
 import { AddButton } from '@vkblocks/admin/custom-block-style/add-button';
-import { PropertyPanelBody } from '@vkblocks/admin/custom-block-style/property-panel-body';
-import { MoverButton } from '@vkblocks/admin/custom-block-style/mover-button';
+import { Item } from './item';
 import { SortBlockStyleLists } from './sort-block-style-lists';
 /*globals vkBlocksObject */
 
@@ -97,8 +96,7 @@ function AdminCustomBlockStyle({
 								className="custom_block_style_item"
 								key={index}
 							>
-								<MoverButton index={index} />
-								<PropertyPanelBody
+								<Item
 									showBlockTypes={showBlockTypes}
 									index={index}
 									onChange={onChange}

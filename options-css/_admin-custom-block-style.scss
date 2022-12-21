@@ -14,8 +14,13 @@
 		gap: 3px;
 		font-size: 1.15em;
 	}
-	&_delete_button {
-		margin-bottom:2em;
+	.move-button-container {
+		display: flex;
+		flex-direction: column;
+		.components-button.has-icon {
+			height: 24px;
+			padding: 6px;
+		}
 	}
 	.vk-codemirror-options {
 		width: 100%;

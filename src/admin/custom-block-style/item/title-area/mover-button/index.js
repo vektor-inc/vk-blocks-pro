@@ -14,7 +14,7 @@ export const MoverButton = ({ index }) => {
 	const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
 
 	return (
-		<>
+		<div className="move-button-container">
 			<Button
 				icon={chevronUp}
 				disabled={index === 0}
@@ -51,6 +51,6 @@ export const MoverButton = ({ index }) => {
 					});
 				}}
 			/>
-		</>
+		</div>
 	);
 };

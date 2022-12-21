@@ -20,15 +20,16 @@ body{
 	*::before {
 		box-sizing: border-box;
 	}
+
+	.components-text-control__input {
+		border-color: #ccc;
+	}
 }
 
 .vk_admin_selectControl {
 	width: 50%;
 }
 
-.components-text-control__input{
-	border-color: #ccc;
-}
 
 .vk_admin_page {
 	.adminMain #adminContent_main,

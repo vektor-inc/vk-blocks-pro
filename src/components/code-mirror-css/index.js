@@ -18,6 +18,11 @@ export const CodeMirrorCss = (props) => {
 		height = '200px',
 		value,
 		onChange,
+		style = {
+			...style,
+			marginTop: "0.5em",
+			border: "1px solid #ccc",
+		}
 	} = props;
 
 	return (
@@ -30,6 +35,7 @@ export const CodeMirrorCss = (props) => {
 				extensions={[css(), EditorView.lineWrapping]}
 				value={value}
 				onChange={onChange}
+				style={style}
 			/>
 			{(() => {
 				if (value && value.indexOf('　') !== -1) {

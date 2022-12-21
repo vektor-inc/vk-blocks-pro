@@ -316,11 +316,16 @@ export default function SliderEdit(props) {
 					>
 						<TextControl
 							value={autoPlayDelay}
-							onChange={(value) =>
+							onChange={(value) => {
 								setAttributes({
-									autoPlayDelay: parseInt(value, 10),
-								})
-							}
+									autoPlayDelay:
+										value === undefined ||
+										value === null ||
+										value === ''
+											? 2500
+											: parseInt(value, 10),
+								});
+							}}
 							type={'number'}
 						/>
 					</BaseControl>
@@ -332,7 +337,12 @@ export default function SliderEdit(props) {
 							value={speed}
 							onChange={(value) =>
 								setAttributes({
-									speed: parseInt(value, 10),
+									speed:
+										value === undefined ||
+										value === null ||
+										value === ''
+											? 500
+											: parseInt(value, 10),
 								})
 							}
 							type={'number'}

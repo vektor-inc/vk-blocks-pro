@@ -84,6 +84,11 @@ msgstr "画像を変更したら「変更を保存」ボタンをクリックし
 msgid "image"
 msgstr "画像"
 
+#: src/admin/block-manager/index.js:51
+#: inc/vk-blocks/admin/admin.php:80
+msgid "Block Manager Setting"
+msgstr "ブロックマネージャー設定"
+
 #: src/admin/custom-css.js:20
 #: src/extensions/common/custom-css-extension/index.js:238
 #: inc/vk-blocks-pro/admin-pro/admin-pro.php:15
@@ -168,35 +173,6 @@ msgstr "打ち消し線"
 msgid "Nowrap"
 msgstr ""
 
-#: src/admin/custom-format/index.js:206
-#: src/blocks/_pro/step-item/edit.js:102
-#: src/blocks/_pro/timeline-item/edit.js:71
-#: src/blocks/border-box/edit.js:204
-#: src/blocks/button/edit.js:665
-#: src/blocks/icon/edit.js:289
-#: src/blocks/staff/edit.js:199
-#: inc/term-color/package/class.term-color.php:41
-#: inc/term-color/package/class.term-color.php:56
-#: inc/term-color/package/class.term-color.php:130
-msgid "Color"
-msgstr ""
-
-#: src/admin/custom-format/index.js:211
-#: src/blocks/_pro/grid-column-item/edit.js:104
-#: src/blocks/_pro/gridcolcard/edit-common.js:161
-#: src/blocks/button/edit.js:736
-#: src/blocks/heading/edit.js:324
-msgid "Text Color"
-msgstr ""
-
-#: src/admin/custom-format/index.js:242
-#: src/blocks/_pro/grid-column-item/edit.js:110
-#: src/blocks/_pro/gridcolcard/edit-common.js:167
-#: src/blocks/border-box/edit.js:216
-#: src/blocks/button/edit.js:719
-msgid "Background Color"
-msgstr ""
-
 #: src/admin/custom-format/index.js:273
 msgid "Highlighter Color"
 msgstr "蛍光マーカー"
@@ -213,15 +189,10 @@ msgstr "カスタムCSS"
 msgid "CSS class"
 msgstr "CSSクラス"
 
-#. If selector is specified, it will be replaced by a unique CSS class (%s); CSS selectors other than selector may affect the entire page.
-#: src/admin/custom-format/index.js:360
-msgid "If selector is specified, it will be replaced by a unique CSS class (%s); CSS selectors other than selector may affect the entire page.?"
-msgstr "selector を指定した場合、固有の CSS クラス(%s)に置き換わります。selector以外のCSSセレクターは、ページ全体に影響する可能性があります。"
-
-#: src/admin/custom-format/index.js:367
-#: src/extensions/common/custom-css-extension/index.js:199
-msgid "Example:"
-msgstr ""
+#. If selector is specified, it will be replaced by a unique CSS class (<code>.%s</code>); CSS selectors other than selector may affect the entire page.
+#: src/admin/custom-format/index.js:352
+msgid "If selector is specified, it will be replaced by a unique CSS class (<code>.%s</code>); CSS selectors other than selector may affect the entire page."
+msgstr "selector を指定した場合、固有の CSS クラス(<code>.%s</code>)に置き換わります。selector以外のCSSセレクターは、ページ全体に影響する可能性があります。"
 
 #: src/admin/custom-format/index.js:50
 #: inc/vk-blocks/admin/admin.php:75
@@ -2256,10 +2227,6 @@ msgstr "リンクを別ウィンドウで開く"
 msgid "Link rel"
 msgstr "rel属性"
 
-#: src/extensions/common/custom-css-extension/index.js:165
-msgid "Custom CSS"
-msgstr "カスタムCSS"
-
 #: src/extensions/common/custom-css-extension/index.js:186
 msgid "Note : Contains double-byte spaces; CSS may not work."
 msgstr "注意 : 全角スペースが含まれています。CSSが効かない可能性があります。"
@@ -2878,6 +2845,14 @@ msgstr "分割読み込み設定"
 msgid "Setting"
 msgstr "設定"
 
+#: inc/vk-blocks/blocks.php:40
+msgid "Blocks Layout"
+msgstr "ブロックレイアウト"
+
+#: inc/vk-blocks/blocks.php:53
+msgid "Deprecated Blocks"
+msgstr "非推奨ブロック"
+
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
 #: src/blocks/ancestor-page-list/index.php:44
@@ -2930,16 +2905,6 @@ msgstr "投稿"
 #: inc/vk-blocks/view/class-vk-blocks-postlist.php:257
 msgid "There are no %ss."
 msgstr "該当の%sはありません。"
-
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:160
-#: inc/vk-blocks/vk-blocks-functions.php:160
-msgid "Blocks"
-msgstr "Blocks"
-
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:173
-#: inc/vk-blocks/vk-blocks-functions.php:173
-msgid "Blocks Layout"
-msgstr "ブロックレイアウト"
 
 #: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:55
 #: inc/vk-components/package/class-vk-component-posts.php:55

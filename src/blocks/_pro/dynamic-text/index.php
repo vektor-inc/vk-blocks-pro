@@ -31,14 +31,24 @@ function vk_blocks_dynamic_text_render_callback( $attributes ) {
 		return null;
 	}
 
-	$block_content = '';
+	$classes = 'vk_dynamicText';
+
+	// block.jsonのSupportsで設定したクラス名やスタイルを取得する
+	$wrapper_classes = get_block_wrapper_attributes( array( 'class' => $classes ) );
+
+	$block = __('表示されるテキストはありません。', 'vk-blocks');
+
 	if ( 'post-type' === $options['displayElement'] ) {
-		$block_content = sprintf( $post_type_label );
+		$block = sprintf( '<p class="vk_dynamicText">%1$s</p>', $post_type_label );
 	} elseif ( 'ancestor-page' === $options['displayElement'] ) {
-		$block_content = sprintf( $parent_title );
+		$block = sprintf( '<p class="vk_dynamicText">%1$s</p>', $parent_title );
 	}
 
-	return sprintf( $block_content );
+	return sprintf(
+		'<div %1$s>%2$s</div>',
+		$wrapper_classes,
+		$block
+	);
 }
 
 /**

@@ -1,3 +1,4 @@
+// import WordPress Scripts
 import { __ } from '@wordpress/i18n';
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';

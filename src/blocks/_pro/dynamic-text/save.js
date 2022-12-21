@@ -1,10 +1,12 @@
-import { useBlockProps } from '@wordpress/block-editor';
-import { __ } from '@wordpress/i18n';
+// import WordPress Scripts
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 export default function save() {
+	const blockProps = useBlockProps.save();
+
 	return (
-		<p {...useBlockProps.save()}>
-			{__('Vk Block Pro - Dynamic text block front', 'vk-blocks')}
-		</p>
+		<div {...blockProps}>
+			<InnerBlocks.Content />
+		</div>
 	);
 }

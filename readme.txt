@@ -64,9 +64,13 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Slider ] Set default value for unset time and speed.
+[ Specification Change ] Update Plugin Update Checker to 5.0
+
+= 1.48.0 =
 [ Add Function ][ Admin screen ] Added block manager function.
-[ Bug fix ][ Custom CSS (Pro) ] Fixed bug in not replacing all selector strings.
 [ Add Function ][ Custom Format Setting (Pro) ] Add Custom Format Setting extension in admin.
+[ Bug fix ][ Custom CSS (Pro) ] Fixed bug in not replacing all selector strings.
 [ Specification Change ][ Animation(Pro) ] add setting option Animation only the first view.
 
 = 1.47.1 =

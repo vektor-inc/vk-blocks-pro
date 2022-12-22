@@ -9,9 +9,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-12-12T04:00:32+00:00\n"
+"POT-Creation-Date: 2022-12-19T13:08:25+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.5.0\n"
+"X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: vk-blocks\n"
 
 #: src/admin/balloon/index.js:206
@@ -204,12 +204,12 @@ msgstr ""
 msgid "CSS class"
 msgstr ""
 
-#. If selector is specified, it will be replaced by a unique CSS class (%s); CSS selectors other than selector may affect the entire page.
-#: src/admin/custom-format/index.js:343
-msgid "If selector is specified, it will be replaced by a unique CSS class (%s); CSS selectors other than selector may affect the entire page.?"
+#. If selector is specified, it will be replaced by a unique CSS class (<code>.%s</code>); CSS selectors other than selector may affect the entire page.
+#: src/admin/custom-format/index.js:344
+msgid "If selector is specified, it will be replaced by a unique CSS class (<code>.%s</code>); CSS selectors other than selector may affect the entire page."
 msgstr ""
 
-#: src/admin/custom-format/index.js:350
+#: src/admin/custom-format/index.js:355
 #: src/extensions/common/custom-css-extension/index.js:199
 msgid "Example:"
 msgstr ""
@@ -2658,6 +2658,7 @@ msgstr ""
 msgid "Installing Plugin: %s"
 msgstr ""
 
+#. translators: %s = plugin name.
 #: inc/tgm-plugin-activation/tgm-config.php:76
 msgid "Something went wrong with the plugin API."
 msgstr ""

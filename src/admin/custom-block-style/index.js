@@ -89,7 +89,7 @@ function AdminCustomBlockStyle({
 				<SortBlockStyleLists />
 				{Object.keys(vkBlocksOption.custom_block_style_lists).map(
 					(key, index) => {
-						const textStyleListObj =
+						const blockStyleListObj =
 							vkBlocksOption.custom_block_style_lists[key];
 						return (
 							<div
@@ -100,7 +100,7 @@ function AdminCustomBlockStyle({
 									showBlockTypes={showBlockTypes}
 									index={index}
 									onChange={onChange}
-									textStyleListObj={textStyleListObj}
+									blockStyleListObj={blockStyleListObj}
 								/>
 							</div>
 						);

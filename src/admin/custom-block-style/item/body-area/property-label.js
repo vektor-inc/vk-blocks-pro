@@ -4,7 +4,7 @@
 import { __ } from '@wordpress/i18n';
 import { TextControl } from '@wordpress/components';
 
-export const PropertyLabel = ({ index, onChange, textStyleListObj }) => {
+export const PropertyLabel = ({ index, onChange, blockStyleListObj }) => {
 	return (
 		<div className="custom_block_style_item_property_label">
 			<TextControl
@@ -17,9 +17,9 @@ export const PropertyLabel = ({ index, onChange, textStyleListObj }) => {
 					'vk-blocks'
 				)}
 				onChange={(value) => onChange('property_label', value, index)}
-				value={textStyleListObj.property_label ?? ''}
+				value={blockStyleListObj.property_label ?? ''}
 			/>
-			{!textStyleListObj.property_label && (
+			{!blockStyleListObj.property_label && (
 				<p className="custom_block_style_item_name_warning">
 					{__(
 						'※ ラベルが入力されていない場合、ブロックスタイルには表示されません。',

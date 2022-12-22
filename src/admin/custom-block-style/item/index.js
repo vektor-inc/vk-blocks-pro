@@ -9,7 +9,7 @@ import { useState } from '@wordpress/element';
 import { TitleArea } from './title-area';
 import { BodyArea } from './body-area';
 
-export const Item = ({ showBlockTypes, index, onChange, textStyleListObj }) => {
+export const Item = ({ showBlockTypes, index, onChange, blockStyleListObj }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
@@ -17,7 +17,7 @@ export const Item = ({ showBlockTypes, index, onChange, textStyleListObj }) => {
 			<TitleArea
 				showBlockTypes={showBlockTypes}
 				index={index}
-				textStyleListObj={textStyleListObj}
+				blockStyleListObj={blockStyleListObj}
 				isOpen={isOpen}
 				setIsOpen={setIsOpen}
 			/>
@@ -26,7 +26,7 @@ export const Item = ({ showBlockTypes, index, onChange, textStyleListObj }) => {
 					showBlockTypes={showBlockTypes}
 					index={index}
 					onChange={onChange}
-					textStyleListObj={textStyleListObj}
+					blockStyleListObj={blockStyleListObj}
 				/>
 			)}
 		</>

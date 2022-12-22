@@ -9,27 +9,27 @@ export const BodyArea = ({
 	showBlockTypes,
 	index,
 	onChange,
-	textStyleListObj,
+	blockStyleListObj,
 }) => {
 	const activeBlockType = showBlockTypes.find(
-		(blockType) => blockType.name === textStyleListObj.block_name
+		(blockType) => blockType.name === blockStyleListObj.block_name
 	);
 
 	return (
 		<div className="custom_block_style_body-area">
 			<BlockName
 				activeBlockType={activeBlockType}
-				textStyleListObj={textStyleListObj}
+				blockStyleListObj={blockStyleListObj}
 			/>
 			<PropertyLabel
 				index={index}
 				onChange={onChange}
-				textStyleListObj={textStyleListObj}
+				blockStyleListObj={blockStyleListObj}
 			/>
 			<PropertyInlineStyle
 				index={index}
 				onChange={onChange}
-				textStyleListObj={textStyleListObj}
+				blockStyleListObj={blockStyleListObj}
 			/>
 		</div>
 	);

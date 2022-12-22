@@ -15,12 +15,12 @@ import { DeleteButton } from './delete-button';
 export const TitleArea = ({
 	showBlockTypes,
 	index,
-	textStyleListObj,
+	blockStyleListObj,
 	isOpen,
 	setIsOpen,
 }) => {
 	const activeBlockType = showBlockTypes.find(
-		(blockType) => blockType.name === textStyleListObj.block_name
+		(blockType) => blockType.name === blockStyleListObj.block_name
 	);
 
 	return (
@@ -37,7 +37,7 @@ export const TitleArea = ({
 						<FlexItem>
 							<MoverButton index={index} />
 						</FlexItem>
-						<FlexItem>{textStyleListObj.property_label}</FlexItem>
+						<FlexItem>{blockStyleListObj.property_label}</FlexItem>
 					</Flex>
 				</FlexItem>
 				<FlexItem>
@@ -58,7 +58,7 @@ export const TitleArea = ({
 						<FlexItem>
 							<DeleteButton
 								index={index}
-								textStyleListObj={textStyleListObj}
+								blockStyleListObj={blockStyleListObj}
 							/>
 						</FlexItem>
 					</Flex>

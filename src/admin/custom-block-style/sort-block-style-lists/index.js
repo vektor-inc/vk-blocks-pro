@@ -14,17 +14,17 @@ export const SortBlockStyleLists = () => {
 	const [droppingToIndex, setDroppingToIndex] = useState();
 	const [draggedElID, setDragedElementID] = useState();
 
-	const rearrangeStories = (oldIndex, newIndex) => {
-		const selectedStoryIds = [...vkBlocksOption.custom_block_style_lists];
-		selectedStoryIds.splice(
+	const rearrangeLists = (oldIndex, newIndex) => {
+		const newLists = [...vkBlocksOption.custom_block_style_lists];
+		newLists.splice(
 			newIndex,
 			0,
-			selectedStoryIds.splice(oldIndex, 1).pop()
+			newLists.splice(oldIndex, 1).pop()
 		);
 		setVkBlocksOption(() => {
 			return {
 				...vkBlocksOption,
-				custom_block_style_lists: [...selectedStoryIds],
+				custom_block_style_lists: [...newLists],
 			};
 		});
 	};
@@ -33,7 +33,7 @@ export const SortBlockStyleLists = () => {
 		<>
 			{Object.keys(vkBlocksOption.custom_block_style_lists).map(
 				(key, index) => {
-					const textStyleListObj =
+					const blockStyleListObj =
 						vkBlocksOption.custom_block_style_lists[key];
 					return (
 						<div
@@ -66,7 +66,7 @@ export const SortBlockStyleLists = () => {
 												item.property_name ===
 												draggedElID
 										);
-									rearrangeStories(oldIndex, droppingToIndex);
+									rearrangeLists(oldIndex, droppingToIndex);
 								}
 
 								event.target.closest(
@@ -77,15 +77,15 @@ export const SortBlockStyleLists = () => {
 						>
 							<div
 								data-order={index}
-								id={`draggable-example-box-${textStyleListObj.property_name}`}
+								id={`draggable-example-box-${blockStyleListObj.property_name}`}
 							>
 								<Draggable
-									elementId={`draggable-example-box-${textStyleListObj.property_name}`}
+									elementId={`draggable-example-box-${blockStyleListObj.property_name}`}
 								>
 									{({ onDraggableStart, onDraggableEnd }) => {
 										const handleOnDragStart = (event) => {
 											setDragedElementID(
-												textStyleListObj.property_name
+												blockStyleListObj.property_name
 											);
 											onDraggableStart(event);
 										};
@@ -96,13 +96,13 @@ export const SortBlockStyleLists = () => {
 										return (
 											<div
 												role="listitem"
-												data-testid={`key-property_nameid-item-${textStyleListObj.property_name}`}
+												data-testid={`key-property_nameid-item-${blockStyleListObj.property_name}`}
 												onDragStart={handleOnDragStart}
 												onDragEnd={handleOnDragEnd}
 												data-order={index}
 												draggable
 											>
-												{textStyleListObj.property_name}
+												{blockStyleListObj.property_name}
 											</div>
 										);
 									}}
@@ -114,7 +114,7 @@ export const SortBlockStyleLists = () => {
 			)}
 			{Object.keys(vkBlocksOption.custom_block_style_lists).map(
 				(key, index) => {
-					const textStyleListObj =
+					const blockStyleListObj =
 						vkBlocksOption.custom_block_style_lists[key];
 					return (
 						<div id="draggable-example-box" key={index}>
@@ -125,7 +125,7 @@ export const SortBlockStyleLists = () => {
 								{({ onDraggableStart, onDraggableEnd }) => {
 									const handleOnDragStart = (event) => {
 										setDragedElementID(
-											textStyleListObj.property_name
+											blockStyleListObj.property_name
 										);
 										onDraggableStart(event);
 									};
@@ -147,7 +147,7 @@ export const SortBlockStyleLists = () => {
 											onDragEnd={handleOnDragEnd}
 											draggable
 										>
-											{textStyleListObj.property_name}
+											{blockStyleListObj.property_name}
 										</div>
 									);
 								}}

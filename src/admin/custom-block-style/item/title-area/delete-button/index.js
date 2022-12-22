@@ -12,7 +12,7 @@ import { AdminContext } from '@vkblocks/admin/index';
 
 export const DeleteButton = (props) => {
 	const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
-	const { index, textStyleListObj } = props;
+	const { index, blockStyleListObj } = props;
 
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -26,8 +26,8 @@ export const DeleteButton = (props) => {
 		});
 	};
 
-	const textStyleTitle = !!textStyleListObj.property_label
-		? textStyleListObj.property_label
+	const textStyleTitle = !!blockStyleListObj.property_label
+		? blockStyleListObj.property_label
 		: __(
 				'ブロックスタイル設定',
 				// 'Custom Block Style',

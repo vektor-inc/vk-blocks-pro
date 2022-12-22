@@ -7,7 +7,7 @@
 	box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,1);
 	border: 1px solid #ccc;
 
-	&_block_name {
+	.custom_block_style_item_block_name {
 		display: flex;
 		align-items: center;
 		margin-bottom: 1em;
@@ -25,47 +25,43 @@
 	.vk-codemirror-options {
 		width: 100%;
 	}
-	&_property_label {
+	.custom_block_style_item_property_label {
 		margin-bottom: 1em;
-		.components-base-control {
-			&__field {
-				margin-bottom: 0;
-			}
-			&__label {
-				margin-bottom:0;
-				padding-right: 8px;
-				font-size: 12px;
-			}
+		.components-base-control__field {
+			margin-bottom: 0;
+		}
+		.components-base-control__label {
+			margin-bottom:0;
+			padding-right: 8px;
+			font-size: 12px;
 		}
 	}
-	&_name_warning {
+	.custom_block_style_item_name_warning {
 		margin-top: 0;
 	}
 }
 
 .custom_block_style_add_modal {
-	.custom_block_style {
-		&_block-manager__results {
-			height: 30vh;
-			overflow-y: scroll;
-			border: 1px solid #ccc;
-			padding: 2em;
-			margin-bottom: 1em;
-			> div {
-				margin-bottom: 2em;
-				&:last-of-type{
-					margin-bottom: 0;
-				}
+	.custom_block_style_block-manager__results {
+		height: 30vh;
+		overflow-y: scroll;
+		border: 1px solid #ccc;
+		padding: 2em;
+		margin-bottom: 1em;
+		> div {
+			margin-bottom: 2em;
+			&:last-of-type{
+				margin-bottom: 0;
 			}
 		}
-		&_item_active_block_type_area {
-			display: flex;
-			align-items: center;
-			margin-bottom: 1em;
-		}
-		&_item_name_error {
-			margin-top: 0;
-		}
+	}
+	.custom_block_style_item_active_block_type_area {
+		display: flex;
+		align-items: center;
+		margin-bottom: 1em;
+	}
+	.custom_block_style_item_name_error {
+		margin-top: 0;
 	}
 
 	.block-manager__search {
@@ -76,14 +72,15 @@
 
 	.block_name_radio_control {
 		border-bottom:1px solid #ddd;
-		.components-radio-control{
-			&__option {
-				display: flex;
-				align-items: center;
-				&__input {
-					margin-right: 12px;
-				}
-			}
+		label {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			flex-grow: 1;
+		}
+		.components-radio-control__option {
+			display: flex;
+			align-items: center;
 		}
 	}
 	.block_name_radio_label {
@@ -92,16 +89,11 @@
 		justify-content: space-between;
 		flex-grow: 1;
 		padding: 8px 0;
-		width: 450px;
 	}
-	.components{
-	   &-base-control{
-			&__help {
-				margin-bottom:0.2em;
-			}
-			&__label {
-				font-size: 13px;
-			}
-		}
+	.components-base-control__help {
+		margin-bottom: 0.2em;
+	}
+	.components-base-control__label {
+		font-size: 13px;
 	}
 }

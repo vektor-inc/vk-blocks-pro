@@ -16,11 +16,7 @@ export const SortBlockStyleLists = () => {
 
 	const rearrangeLists = (oldIndex, newIndex) => {
 		const newLists = [...vkBlocksOption.custom_block_style_lists];
-		newLists.splice(
-			newIndex,
-			0,
-			newLists.splice(oldIndex, 1).pop()
-		);
+		newLists.splice(newIndex, 0, newLists.splice(oldIndex, 1).pop());
 		setVkBlocksOption(() => {
 			return {
 				...vkBlocksOption,
@@ -102,7 +98,9 @@ export const SortBlockStyleLists = () => {
 												data-order={index}
 												draggable
 											>
-												{blockStyleListObj.property_name}
+												{
+													blockStyleListObj.property_name
+												}
 											</div>
 										);
 									}}

@@ -5,7 +5,12 @@ import { PropertyLabel } from './property-label';
 import { PropertyInlineStyle } from './property-inline-style';
 import { BlockName } from './block-name';
 
-export const BodyArea = ({ showBlockTypes, index, onChange, textStyleListObj }) => {
+export const BodyArea = ({
+	showBlockTypes,
+	index,
+	onChange,
+	textStyleListObj,
+}) => {
 	const activeBlockType = showBlockTypes.find(
 		(blockType) => blockType.name === textStyleListObj.block_name
 	);

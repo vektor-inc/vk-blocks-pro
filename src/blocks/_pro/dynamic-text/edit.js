@@ -13,9 +13,9 @@ export default function DynamicTextEdit(props) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Display Element', 'vk-blocks')}>
+				<PanelBody title={__('表示要素の設定', 'vk-blocks')}>
 					<SelectControl
-						label={__('Select Display Element', 'vk-blocks')}
+						label={__('表示要素を選択', 'vk-blocks')}
 						value={displayElement}
 						onChange={(value) =>
 							setAttributes({ displayElement: value })
@@ -23,7 +23,7 @@ export default function DynamicTextEdit(props) {
 						options={[
 							{
 								value: 'please-select',
-								label: __('選択してください', 'vk-blocks'),
+								label: __('指定しない', 'vk-blocks'),
 							},
 							{
 								value: 'post-type',

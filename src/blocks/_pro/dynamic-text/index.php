@@ -17,19 +17,16 @@ function vk_blocks_dynamic_text_render_callback( $attributes ) {
 		'displayElement' => $attributes['displayElement'],
 	);
 
-	global $post;
+	$post_type_info = VK_Helpers::get_post_type_info();
+	$post_type_name = $post_type_info['name'];
 
-	$post_type       = get_post_type();
-	$post_type_obj   = get_post_type_object( $post_type );
-	$post_type_label = $post_type_obj->labels->name;
+	// $post_type       = get_post_type();
+	// $post_type_obj   = get_post_type_object( $post_type );
+	// $post_type_name = $post_type_obj->labels->name;
 
 	// 親ページのタイトルを取得
-	$parent_id    = $post->post_parent;
-	$parent_title = get_post( $parent_id )->post_title;
-
-	if ( empty( $post_type ) ) {
-		return null;
-	}
+	$post = get_post();
+	$parent_title = get_post( $post->post_parent )->post_title;
 
 	$classes = 'vk_dynamicText';
 
@@ -39,7 +36,7 @@ function vk_blocks_dynamic_text_render_callback( $attributes ) {
 	$block = __( '表示されるテキストはありません。', 'vk-blocks' );
 
 	if ( 'post-type' === $options['displayElement'] ) {
-		$block = sprintf( '<p class="vk_dynamicText">%1$s</p>', $post_type_label );
+		$block = sprintf( '<p class="vk_dynamicText">%1$s</p>', $post_type_name );
 	} elseif ( 'ancestor-page' === $options['displayElement'] ) {
 		$block = sprintf( '<p class="vk_dynamicText">%1$s</p>', $parent_title );
 	}

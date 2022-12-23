@@ -27,10 +27,12 @@ export const TitleArea = ({
 		<div className="custom_block_style_title-area">
 			<Flex>
 				<FlexItem>
-					<Flex expanded={false}>
-						<FlexItem>
-							<BlockIcon icon={activeBlockType.icon} />
-						</FlexItem>
+					<Flex>
+						{activeBlockType && (
+							<FlexItem>
+								<BlockIcon icon={activeBlockType.icon} />
+							</FlexItem>
+						)}
 						<FlexItem>
 							<BlockIcon icon={dragHandle} />
 						</FlexItem>

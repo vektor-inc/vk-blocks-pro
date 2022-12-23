@@ -18,12 +18,9 @@ function vk_blocks_dynamic_text_render_callback( $attributes ) {
 		'displayElement' => $attributes['displayElement'],
 	);
 
+	// 投稿タイプの名前取得
 	$post_type_info = VkHelpers::get_post_type_info();
 	$post_type_name = $post_type_info['name'];
-
-	// $post_type       = get_post_type();
-	// $post_type_obj   = get_post_type_object( $post_type );
-	// $post_type_name = $post_type_obj->labels->name;
 
 	// 親ページのタイトルを取得
 	$post         = get_post();

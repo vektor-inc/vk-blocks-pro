@@ -168,7 +168,7 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 			// Cope with : WP HTTP Error: cURL error 60: SSL certificate problem: certificate has expired.
 			add_filter( 'https_ssl_verify', '__return_false' );
 
-			$update_checker = Puc_v4_Factory::buildUpdateChecker(
+			$update_checker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
 				'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=vk-blocks-pro',
 				__FILE__, // この処理を他の場所に移動するとここを変更しないといけなくなるので注意.
 				'vk-blocks-pro'

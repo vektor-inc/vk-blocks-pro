@@ -64,6 +64,9 @@ e.g.
 
 == Changelog ==
 
+[ Bug fix ][ Slider ] Set default value for unset time and speed.
+[ Specification Change ] Update Plugin Update Checker to 5.0
+
 = 1.48.0 =
 [ Add Function ][ Admin screen ] Added block manager function.
 [ Add Function ][ Custom Format Setting (Pro) ] Add Custom Format Setting extension in admin.

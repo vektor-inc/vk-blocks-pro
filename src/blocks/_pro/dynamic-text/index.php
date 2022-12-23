@@ -5,6 +5,7 @@
  * @package vk-blocks
  */
 
+use VektorInc\VK_Helpers\VkHelpers;
 
 /**
  * Dynamic text render callback
@@ -17,7 +18,7 @@ function vk_blocks_dynamic_text_render_callback( $attributes ) {
 		'displayElement' => $attributes['displayElement'],
 	);
 
-	$post_type_info = VK_Helpers::get_post_type_info();
+	$post_type_info = VkHelpers::get_post_type_info();
 	$post_type_name = $post_type_info['name'];
 
 	// $post_type       = get_post_type();

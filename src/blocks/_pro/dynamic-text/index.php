@@ -25,7 +25,7 @@ function vk_blocks_dynamic_text_render_callback( $attributes ) {
 	// $post_type_name = $post_type_obj->labels->name;
 
 	// 親ページのタイトルを取得
-	$post = get_post();
+	$post         = get_post();
 	$parent_title = get_post( $post->post_parent )->post_title;
 
 	$classes = 'vk_dynamicText';

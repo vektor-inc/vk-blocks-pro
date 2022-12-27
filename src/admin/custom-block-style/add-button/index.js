@@ -50,6 +50,7 @@ export const AddButton = ({
 		setPropertyLabel('');
 		setIsDisableAdd(false);
 		setErrorMessage('');
+		setSearch('');
 	};
 
 	const addItem = () => {

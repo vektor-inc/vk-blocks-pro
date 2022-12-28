@@ -66,6 +66,7 @@ e.g.
 
 [ Bug fix ][ Slider ] Set default value for unset time and speed.
 [ Specification Change ] Update Plugin Update Checker to 5.0
+[ Other ] Update VK Breadcrumb lib 0.2.5
 
 = 1.48.0 =
 [ Add Function ][ Admin screen ] Added block manager function.

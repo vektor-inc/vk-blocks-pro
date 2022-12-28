@@ -13,16 +13,12 @@ import { MoverButton } from './mover-button';
 import { DeleteButton } from './delete-button';
 
 export const TitleArea = ({
-	showBlockTypes,
+	activeBlockType,
 	index,
 	blockStyleListObj,
 	isOpen,
 	setIsOpen,
 }) => {
-	const activeBlockType = showBlockTypes.find(
-		(blockType) => blockType.name === blockStyleListObj.block_name
-	);
-
 	return (
 		<div className="custom_block_style_title-area">
 			<Flex>
@@ -33,16 +29,18 @@ export const TitleArea = ({
 								<BlockIcon icon={activeBlockType.icon} />
 							</FlexItem>
 						)}
-						<FlexItem>
+						<FlexItem className="custom_block_style_drag-handle">
 							<BlockIcon icon={dragHandle} />
 						</FlexItem>
 						<FlexItem>
 							<MoverButton index={index} />
 						</FlexItem>
-						<FlexItem>{blockStyleListObj.property_label}</FlexItem>
+						<FlexItem className="custom_block_style_title-area-label">
+							{blockStyleListObj.property_label}
+						</FlexItem>
 					</Flex>
 				</FlexItem>
-				<FlexItem>
+				<FlexItem className="custom_block_style_title-area-button">
 					<Flex>
 						<FlexItem>
 							<Button

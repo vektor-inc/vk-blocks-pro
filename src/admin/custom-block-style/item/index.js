@@ -10,7 +10,7 @@ import { TitleArea } from './title-area';
 import { BodyArea } from './body-area';
 
 export const Item = ({
-	showBlockTypes,
+	activeBlockType,
 	index,
 	onChange,
 	blockStyleListObj,
@@ -18,9 +18,9 @@ export const Item = ({
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<>
+		<div className="custom_block_style_item">
 			<TitleArea
-				showBlockTypes={showBlockTypes}
+				activeBlockType={activeBlockType}
 				index={index}
 				blockStyleListObj={blockStyleListObj}
 				isOpen={isOpen}
@@ -28,12 +28,12 @@ export const Item = ({
 			/>
 			{isOpen && (
 				<BodyArea
-					showBlockTypes={showBlockTypes}
+					activeBlockType={activeBlockType}
 					index={index}
 					onChange={onChange}
 					blockStyleListObj={blockStyleListObj}
 				/>
 			)}
-		</>
+		</div>
 	);
 };

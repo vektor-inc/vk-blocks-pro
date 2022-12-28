@@ -6,15 +6,11 @@ import { PropertyInlineStyle } from './property-inline-style';
 import { BlockName } from './block-name';
 
 export const BodyArea = ({
-	showBlockTypes,
+	activeBlockType,
 	index,
 	onChange,
 	blockStyleListObj,
 }) => {
-	const activeBlockType = showBlockTypes.find(
-		(blockType) => blockType.name === blockStyleListObj.block_name
-	);
-
 	return (
 		<div className="custom_block_style_body-area">
 			<BlockName

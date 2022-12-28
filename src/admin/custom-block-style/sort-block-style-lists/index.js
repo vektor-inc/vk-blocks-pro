@@ -12,7 +12,7 @@ import { AdminContext } from '@vkblocks/admin/index';
 export const SortBlockStyleLists = () => {
 	const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
 	const [droppingToIndex, setDroppingToIndex] = useState();
-	const [draggedElID, setDragedElementID] = useState();
+	const [draggedElID, setDraggedElementID] = useState();
 
 	const rearrangeLists = (oldIndex, newIndex) => {
 		const newLists = [...vkBlocksOption.custom_block_style_lists];
@@ -38,7 +38,7 @@ export const SortBlockStyleLists = () => {
 								event.preventDefault();
 								event.target.closest(
 									'.droppable'
-								).style.borderTop = '5px solid #000';
+								).style.borderLeft = '5px solid #000';
 
 								setDroppingToIndex(
 									event.target.parentElement.dataset.order
@@ -48,7 +48,7 @@ export const SortBlockStyleLists = () => {
 								event.preventDefault();
 								event.target.closest(
 									'.droppable'
-								).style.borderTop = 0;
+								).style.borderLeft = 0;
 							}}
 							onDrop={(event) => {
 								event.preventDefault();
@@ -67,7 +67,7 @@ export const SortBlockStyleLists = () => {
 
 								event.target.closest(
 									'.droppable'
-								).style.borderTop = 0;
+								).style.borderLeft = 0;
 							}}
 							className="droppable"
 						>
@@ -80,7 +80,7 @@ export const SortBlockStyleLists = () => {
 								>
 									{({ onDraggableStart, onDraggableEnd }) => {
 										const handleOnDragStart = (event) => {
-											setDragedElementID(
+											setDraggedElementID(
 												blockStyleListObj.property_name
 											);
 											onDraggableStart(event);
@@ -91,6 +91,7 @@ export const SortBlockStyleLists = () => {
 
 										return (
 											<div
+												variant="secondary"
 												role="listitem"
 												data-testid={`key-property_nameid-item-${blockStyleListObj.property_name}`}
 												onDragStart={handleOnDragStart}
@@ -99,57 +100,13 @@ export const SortBlockStyleLists = () => {
 												draggable
 											>
 												{
-													blockStyleListObj.property_name
+													blockStyleListObj.property_label
 												}
 											</div>
 										);
 									}}
 								</Draggable>
 							</div>
-						</div>
-					);
-				}
-			)}
-			{Object.keys(vkBlocksOption.custom_block_style_lists).map(
-				(key, index) => {
-					const blockStyleListObj =
-						vkBlocksOption.custom_block_style_lists[key];
-					return (
-						<div id="draggable-example-box" key={index}>
-							<Draggable
-								elementId="draggable-example-box"
-								transferData={{ index: 1 }}
-							>
-								{({ onDraggableStart, onDraggableEnd }) => {
-									const handleOnDragStart = (event) => {
-										setDragedElementID(
-											blockStyleListObj.property_name
-										);
-										onDraggableStart(event);
-									};
-									const handleOnDragEnd = (event) => {
-										onDraggableEnd(event);
-									};
-
-									return (
-										<div
-											style={{
-												alignItems: 'center',
-												display: 'flex',
-												justifyContent: 'center',
-												width: 100,
-												height: 100,
-												background: '#ddd',
-											}}
-											onDragStart={handleOnDragStart}
-											onDragEnd={handleOnDragEnd}
-											draggable
-										>
-											{blockStyleListObj.property_name}
-										</div>
-									);
-								}}
-							</Draggable>
 						</div>
 					);
 				}

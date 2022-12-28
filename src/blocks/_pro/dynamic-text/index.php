@@ -26,24 +26,28 @@ function vk_blocks_dynamic_text_render_callback( $attributes ) {
 	$post         = get_post();
 	$parent_title = get_post( $post->post_parent )->post_title;
 
-	$classes = 'vk_dynamicText';
+	// カスタムフィールド
+	$custom_field = __( 'カスタムフィールドを入れる', 'vk-blocks' );
 
+	$classes = 'vk_dynamicText';
 	// block.jsonのSupportsで設定したクラス名やスタイルを取得する
 	$wrapper_classes = get_block_wrapper_attributes( array( 'class' => $classes ) );
 
-	$block = __( '表示されるテキストはありません。', 'vk-blocks' );
-
+	$block_content = '';
 	if ( 'post-type' === $options['displayElement'] ) {
-		$block = sprintf( '<p class="vk_dynamicText">%1$s</p>', $post_type_name );
+		$block_content = sprintf( '<p class="vk_dynamicText_content">%1$s</p>', $post_type_name );
 	} elseif ( 'ancestor-page' === $options['displayElement'] ) {
-		$block = sprintf( '<p class="vk_dynamicText">%1$s</p>', $parent_title );
+		$block_content = sprintf( '<p class="vk_dynamicText_content">%1$s</p>', $parent_title );
+	} elseif ( 'custom-field' === $options['displayElement'] ) {
+		$block_content = sprintf( '<p class="vk_dynamicText_content">%1$s</p>', $custom_field );
 	}
 
-	return sprintf(
-		'<div %1$s>%2$s</div>',
-		$wrapper_classes,
-		$block
-	);
+	$block = '';
+	if ( 'please-select' !== $options['displayElement'] ) {
+		$block = sprintf( '<div %1$s>%2$s</div>', $wrapper_classes, $block_content );
+	}
+
+	return $block;
 }
 
 /**

@@ -18,6 +18,7 @@ export const TitleArea = ({
 	blockStyleListObj,
 	openNameLists,
 	setOpenNameLists,
+	array,
 }) => {
 	const editButtonClick = (clickedName) => {
 		const openNames = [...openNameLists];
@@ -41,12 +42,16 @@ export const TitleArea = ({
 								<BlockIcon icon={activeBlockType.icon} />
 							</FlexItem>
 						)}
-						<FlexItem className="custom_block_style_drag-handle">
-							<BlockIcon icon={dragHandle} />
-						</FlexItem>
-						<FlexItem>
-							<MoverButton index={index} />
-						</FlexItem>
+						{array.length > 1 && (
+							<>
+								<FlexItem className="custom_block_style_drag-handle">
+									<BlockIcon icon={dragHandle} />
+								</FlexItem>
+								<FlexItem>
+									<MoverButton index={index} />
+								</FlexItem>
+							</>
+						)}
 						<FlexItem className="custom_block_style_title-area-label">
 							{blockStyleListObj.property_label}
 						</FlexItem>

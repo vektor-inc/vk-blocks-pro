@@ -31,8 +31,7 @@ export const SetPropertyName = ({
 		if (typeof value !== 'string') {
 			bool = false;
 			message = __(
-				'文字列を入力してください',
-				// 'Please enter a string',
+				'Please enter a string',
 				'vk-blocks'
 			);
 		}
@@ -44,12 +43,20 @@ export const SetPropertyName = ({
 				'vk-blocks'
 			);
 		}
-		if (!blockName || value === '') {
-			bool = true;
-			message = null;
+
+		if (value === '') {
+			bool = false;
+			message = __(
+				'Class name is required',
+				'vk-blocks'
+			);
 		}
 
-		// ブロックスタイルが既に登録されているか
+		if (blockName === '') {
+			bool = false;
+		}
+
+		// オプション値からブロックスタイルが既に登録されているか
 		vkBlocksOption.custom_block_style_lists?.forEach((option) => {
 			if (
 				option.block_name === blockName &&
@@ -64,7 +71,7 @@ export const SetPropertyName = ({
 			}
 		});
 
-		// ブロックスタイルが既に登録されているか
+		// プラグインからブロックスタイルが既に登録されているか
 		getBlockStyles(blockName)?.forEach((blockStyle) => {
 			if (blockStyle.name === value) {
 				bool = false;
@@ -75,6 +82,7 @@ export const SetPropertyName = ({
 				);
 			}
 		});
+
 		setIsDisableAdd(bool);
 		setErrorMessage(message);
 	};

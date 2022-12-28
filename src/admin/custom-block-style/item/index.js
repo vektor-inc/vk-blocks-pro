@@ -11,6 +11,7 @@ export const Item = ({
 	blockStyleListObj,
 	openNameLists,
 	setOpenNameLists,
+	array,
 }) => {
 	const isOpen = openNameLists.includes(blockStyleListObj.property_name);
 
@@ -22,6 +23,7 @@ export const Item = ({
 				blockStyleListObj={blockStyleListObj}
 				openNameLists={openNameLists}
 				setOpenNameLists={setOpenNameLists}
+				array={array}
 			/>
 			{isOpen && (
 				<BodyArea

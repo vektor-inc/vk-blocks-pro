@@ -100,7 +100,7 @@ function AdminCustomBlockStyle({
 					handle={'.custom_block_style_drag-handle'}
 				>
 					{Object.keys(vkBlocksOption.custom_block_style_lists).map(
-						(key, index) => {
+						(key, index, array) => {
 							const blockStyleListObj =
 								vkBlocksOption.custom_block_style_lists[key];
 							const activeBlockType = blockTypes.find(
@@ -117,6 +117,7 @@ function AdminCustomBlockStyle({
 										blockStyleListObj={blockStyleListObj}
 										openNameLists={openNameLists}
 										setOpenNameLists={setOpenNameLists}
+										array={array}
 									/>
 								</div>
 							);

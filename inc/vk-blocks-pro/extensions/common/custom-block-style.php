@@ -10,7 +10,7 @@
  *
  * @return void
  */
-function vk_blocks_custom_register_block_style() {
+function vk_blocks_register_custom_block_style() {
 	$vk_blocks_options = VK_Blocks_Options::get_options();
 	$editor_css        = '';
 	foreach ( $vk_blocks_options['custom_block_style_lists'] as $custom_block_style ) {
@@ -34,4 +34,4 @@ function vk_blocks_custom_register_block_style() {
 	// エディターiframe内で読み込ませるため
 	wp_add_inline_style( 'wp-edit-blocks', $editor_css );
 }
-add_action( 'init', 'vk_blocks_custom_register_block_style' );
+add_action( 'init', 'vk_blocks_register_custom_block_style' );

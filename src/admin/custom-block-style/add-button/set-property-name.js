@@ -44,13 +44,9 @@ export const SetPropertyName = ({
 				'vk-blocks'
 			);
 		}
-		if (value === '') {
-			bool = false;
-			message = __(
-				'クラス名は必須項目です',
-				// 'Class name is required',
-				'vk-blocks'
-			);
+		if (!blockName || value === '') {
+			bool = true;
+			message = null;
 		}
 
 		// ブロックスタイルが既に登録されているか

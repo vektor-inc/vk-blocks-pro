@@ -11,6 +11,10 @@
 		flex-shrink: 50;
 	}
 
+	.custom_block_style_drag-handle {
+		cursor: grab;
+	}
+
 	.custom_block_style_title-area-button {
 		flex-shrink: 0;
 	}
@@ -54,13 +58,18 @@
 		height: 30vh;
 		overflow-y: scroll;
 		border: 1px solid #ccc;
-		padding: 2em;
+		padding: 16px;
 		margin-bottom: 1em;
-		> div {
+		.custom_block_style_block-manager__category {
 			margin-bottom: 2em;
 			&:last-of-type{
 				margin-bottom: 0;
 			}
+		}
+		.block-manager__checklist {
+			display: grid;
+    	grid-template-columns: repeat(3, 1fr);
+			grid-gap: 0 16px;
 		}
 	}
 	.custom_block_style_item_active_block_type_area {
@@ -80,6 +89,10 @@
 
 	.block_name_radio_control {
 		border-bottom:1px solid #ddd;
+		.components-radio-control__input {
+			flex-shrink: 0;
+		}
+
 		label {
 			display: flex;
 			align-items: center;

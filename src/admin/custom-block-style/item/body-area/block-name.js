@@ -23,7 +23,7 @@ export const BlockName = ({ activeBlockType, blockStyleListObj }) => {
 				</>
 			)}
 			<span className="custom_block_style_item_block_name_block_name">
-				{blockStyleListObj.block_name}
+				({blockStyleListObj.block_name})
 			</span>
 		</div>
 	);

@@ -32,6 +32,8 @@ export const AddButton = ({
 	categories,
 	search,
 	setSearch,
+	openNameLists,
+	setOpenNameLists,
 }) => {
 	const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
 	const [isModalOpen, setIsModalOpen] = useState(false);
@@ -63,6 +65,9 @@ export const AddButton = ({
 			},
 		});
 		setVkBlocksOption({ ...vkBlocksOption });
+		const openNames = [...openNameLists];
+		openNames.push(propertyName);
+		setOpenNameLists(openNames);
 	};
 
 	return (
@@ -90,6 +95,7 @@ export const AddButton = ({
 					onRequestClose={closeModal}
 					isDismissible={false}
 					className="custom_block_style_add_modal"
+					isFullScreen={true}
 				>
 					<div className="custom_block_style_add_modal">
 						<SetBlockName

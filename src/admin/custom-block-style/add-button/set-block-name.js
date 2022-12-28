@@ -42,7 +42,7 @@ export const SetBlockName = ({
 						{activeBlockType.title}
 					</span>
 					<span className="custom_block_style_item_active_block_name">
-						{blockName}
+						({blockName})
 					</span>
 				</div>
 			)}
@@ -76,7 +76,10 @@ export const SetBlockName = ({
 						return null;
 					}
 					return (
-						<div key={category.slug}>
+						<div
+							className="custom_block_style_block-manager__category"
+							key={category.slug}
+						>
 							{category.title}
 							<ul className="block-manager__checklist">
 								{propsBlockTypes.map((blockType) => {

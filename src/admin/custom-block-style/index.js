@@ -128,6 +128,8 @@ function AdminCustomBlockStyle({
 					categories={categories}
 					search={search}
 					setSearch={setSearch}
+					openNameLists={openNameLists}
+					setOpenNameLists={setOpenNameLists}
 				/>
 			</section>
 		</>

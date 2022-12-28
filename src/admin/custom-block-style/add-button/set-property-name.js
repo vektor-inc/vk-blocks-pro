@@ -30,10 +30,7 @@ export const SetPropertyName = ({
 
 		if (typeof value !== 'string') {
 			bool = false;
-			message = __(
-				'Please enter a string',
-				'vk-blocks'
-			);
+			message = __('Please enter a string', 'vk-blocks');
 		}
 		if (!/^[a-z][a-z0-9-_]*$/.test(value)) {
 			bool = false;
@@ -46,10 +43,7 @@ export const SetPropertyName = ({
 
 		if (value === '') {
 			bool = false;
-			message = __(
-				'Class name is required',
-				'vk-blocks'
-			);
+			message = __('Class name is required', 'vk-blocks');
 		}
 
 		if (blockName === '') {

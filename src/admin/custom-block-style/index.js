@@ -26,6 +26,7 @@ function AdminCustomBlockStyle({
 }) {
 	const { vkBlocksOption, setVkBlocksOption } = useContext(AdminContext);
 	const [search, setSearch] = useState('');
+	const [openNameLists, setOpenNameLists] = useState([]);
 
 	const onChange = (key, value, index) => {
 		const newItems = vkBlocksOption.custom_block_style_lists;
@@ -114,6 +115,8 @@ function AdminCustomBlockStyle({
 										index={index}
 										onChange={onChange}
 										blockStyleListObj={blockStyleListObj}
+										openNameLists={openNameLists}
+										setOpenNameLists={setOpenNameLists}
 									/>
 								</div>
 							);

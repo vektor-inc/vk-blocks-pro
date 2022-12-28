@@ -16,9 +16,21 @@ export const TitleArea = ({
 	activeBlockType,
 	index,
 	blockStyleListObj,
-	isOpen,
-	setIsOpen,
+	openNameLists,
+	setOpenNameLists,
 }) => {
+	const editButtonClick = (clickedName) => {
+		const openNames = [...openNameLists];
+		if (openNames.includes(clickedName)) {
+			const spliceIndex = openNames.indexOf(clickedName);
+			openNames.splice(spliceIndex, 1);
+			setOpenNameLists(openNames);
+		} else {
+			openNames.push(clickedName);
+			setOpenNameLists(openNames);
+		}
+	};
+
 	return (
 		<div className="custom_block_style_title-area">
 			<Flex>
@@ -46,7 +58,11 @@ export const TitleArea = ({
 							<Button
 								className="edit-item-button"
 								variant="secondary"
-								onClick={() => setIsOpen(!isOpen)}
+								onClick={() =>
+									editButtonClick(
+										blockStyleListObj.property_name
+									)
+								}
 							>
 								{__(
 									'編集',

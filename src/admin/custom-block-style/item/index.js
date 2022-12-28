@@ -1,9 +1,4 @@
 /**
- * WordPress dependencies
- */
-import { useState } from '@wordpress/element';
-
-/**
  * Internal dependencies
  */
 import { TitleArea } from './title-area';
@@ -14,8 +9,10 @@ export const Item = ({
 	index,
 	onChange,
 	blockStyleListObj,
+	openNameLists,
+	setOpenNameLists,
 }) => {
-	const [isOpen, setIsOpen] = useState(false);
+	const isOpen = openNameLists.includes(blockStyleListObj.property_name);
 
 	return (
 		<div className="custom_block_style_item">
@@ -23,8 +20,8 @@ export const Item = ({
 				activeBlockType={activeBlockType}
 				index={index}
 				blockStyleListObj={blockStyleListObj}
-				isOpen={isOpen}
-				setIsOpen={setIsOpen}
+				openNameLists={openNameLists}
+				setOpenNameLists={setOpenNameLists}
 			/>
 			{isOpen && (
 				<BodyArea

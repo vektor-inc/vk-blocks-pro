@@ -101,8 +101,7 @@ function AdminCustomBlockStyle({
 							vkBlocksOption.custom_block_style_lists[key];
 						const activeBlockType = blockTypes.find(
 							(blockType) =>
-								blockType.name ===
-								blockStyleListObj.block_name
+								blockType.name === blockStyleListObj.block_name
 						);
 						return (
 							<div key={index}>

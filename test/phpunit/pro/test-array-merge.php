@@ -181,6 +181,24 @@ class ArrayMergeTest extends WP_UnitTestCase {
 					),
 				),
 			),
+			// 配列 空配列であればそのままarray()を返す
+			array(
+				'args'  => array(
+					'array_key' => array(),
+				),
+				'defaults'  => array(
+					'array_key' => array(
+						array(
+							'array_key_1' => 'array_defaults_value_1_1',
+							'array_key_2' => 'array_defaults_value_1_2',
+							'array_key_3' => 'array_defaults_value_1_3',
+						),
+					),
+				),
+				'correct' => array(
+					'array_key' => array(),
+				),
+			),
 		);
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;

@@ -3,9 +3,9 @@
  * Plugin Name: VK Blocks Pro
  * Plugin URI: https://github.com/vektor-inc/vk-blocks
  * Description: This is a plugin that extends Gutenberg's blocks.
- * Version: 1.45.0.0
- * Stable tag: 1.44.0.1
- * Requires at least: 5.8
+ * Version: 1.48.0.1
+ * Stable tag: 1.47.0.1
+ * Requires at least: 5.9
  * Author: Vektor,Inc.
  * Author URI: https://vektor-inc.co.jp
  * Text Domain: vk-blocks
@@ -168,7 +168,7 @@ if ( function_exists( 'vk_blocks_is_pro' ) && vk_blocks_is_pro() ) {
 			// Cope with : WP HTTP Error: cURL error 60: SSL certificate problem: certificate has expired.
 			add_filter( 'https_ssl_verify', '__return_false' );
 
-			$update_checker = Puc_v4_Factory::buildUpdateChecker(
+			$update_checker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
 				'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=vk-blocks-pro',
 				__FILE__, // この処理を他の場所に移動するとここを変更しないといけなくなるので注意.
 				'vk-blocks-pro'

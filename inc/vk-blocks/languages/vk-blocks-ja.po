@@ -84,6 +84,141 @@ msgstr "画像を変更したら「変更を保存」ボタンをクリックし
 msgid "image"
 msgstr "画像"
 
+#: src/admin/block-manager/index.js:51
+#: inc/vk-blocks/admin/admin.php:80
+msgid "Block Manager Setting"
+msgstr "ブロックマネージャー設定"
+
+#: src/admin/custom-css.js:20
+#: src/extensions/common/custom-css-extension/index.js:238
+#: inc/vk-blocks-pro/admin-pro/admin-pro.php:15
+msgid "Custom CSS Setting"
+msgstr "カスタムCSS設定"
+
+#: src/admin/custom-css.js:27
+msgid "Show Custom CSS flag in editor"
+msgstr "エディタにカスタムCSS識別表示を表示する"
+
+#: src/admin/custom-format/add-item.js:119
+msgid "Add Custom Format"
+msgstr "書式設定を追加"
+
+#: src/admin/custom-format/add-item.js:129
+msgid "CSS class/unique ID (Required/Unchangeable)"
+msgstr "CSSクラス/固有ID (必須/変更不可)"
+
+#: src/admin/custom-format/add-item.js:133
+msgid "(e.g.) vk-format-1"
+msgstr "(例) vk-format-1"
+
+#: src/admin/custom-format/add-item.js:151
+msgid "Toolbar title (Changeable)"
+msgstr "ツールバー タイトル（変更可能）"
+
+#: src/admin/custom-format/add-item.js:167
+#: src/admin/custom-format/delete-item-button.js:70
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: src/admin/custom-format/add-item.js:179
+msgid "Add"
+msgstr "追加"
+
+#: src/admin/custom-format/add-item.js:70
+msgid "Please enter a string"
+msgstr "文字列を入力してください"
+
+#: src/admin/custom-format/add-item.js:77
+msgid "Must begin with an alphabetic character and only alphanumeric characters and hyphens may be used."
+msgstr "英字から始まり、英数字,ハイフン-のみ使用可能です"
+
+#: src/admin/custom-format/add-item.js:84
+msgid "Class name is required"
+msgstr "クラス名は必須項目です"
+
+#: src/admin/custom-format/add-item.js:93
+msgid "Already registered"
+msgstr "すでに登録されています"
+
+#: src/admin/custom-format/delete-item-button.js:31
+msgid "書式設定"
+msgstr ""
+
+#. Would you like to delete %s
+#: src/admin/custom-format/delete-item-button.js:50
+msgid "Would you like to delete %s?"
+msgstr "%sを削除しますか？"
+
+#: src/admin/custom-format/delete-item-button.js:61
+msgid "If the saved content has this format, the style will be unstyled."
+msgstr "保存したコンテンツにこのフォーマットがある場合、スタイルが解除されます。"
+
+#: src/admin/custom-format/index.js:114
+msgid "Format Setting"
+msgstr "フォーマット設定"
+
+#: src/admin/custom-format/index.js:123
+msgid "Bold"
+msgstr "太字"
+
+#: src/admin/custom-format/index.js:140
+msgid "Italic"
+msgstr "イタリック"
+
+#: src/admin/custom-format/index.js:157
+msgid "Strikethrough"
+msgstr "打ち消し線"
+
+#: src/admin/custom-format/index.js:174
+msgid "Nowrap"
+msgstr ""
+
+#: src/admin/custom-format/index.js:273
+msgid "Highlighter Color"
+msgstr "蛍光マーカー"
+
+#: src/admin/custom-format/index.js:281
+msgid "Activate Highlighter"
+msgstr "蛍光マーカーを有効化"
+
+#: src/admin/custom-format/index.js:321
+msgid "Custom CSS"
+msgstr "カスタムCSS"
+
+#: src/admin/custom-format/index.js:330
+msgid "CSS class"
+msgstr "CSSクラス"
+
+#. If selector is specified, it will be replaced by a unique CSS class (<code>.%s</code>); CSS selectors other than selector may affect the entire page.
+#: src/admin/custom-format/index.js:352
+msgid "If selector is specified, it will be replaced by a unique CSS class (<code>.%s</code>); CSS selectors other than selector may affect the entire page."
+msgstr "selector を指定した場合、固有の CSS クラス(<code>.%s</code>)に置き換わります。selector以外のCSSセレクターは、ページ全体に影響する可能性があります。"
+
+#: src/admin/custom-format/index.js:50
+#: inc/vk-blocks/admin/admin.php:75
+msgid "Custom Format Setting"
+msgstr "カスタム書式設定"
+
+#: src/admin/custom-format/index.js:56
+msgid "You can apply commonly used formatting on the block toolbar."
+msgstr "ブロックツールバーのよく使う書式設定を登録することができます。"
+
+#: src/admin/custom-format/index.js:72
+msgid "Custom Format"
+msgstr "書式設定"
+
+#: src/admin/custom-format/index.js:82
+msgid "Toolbar title"
+msgstr "ツールバー タイトル"
+
+#: src/admin/custom-format/index.js:99
+msgid "※ Required If no title is entered, it will not appear on the toolbar."
+msgstr "※ タイトルが入力されていない場合、ツールバーには表示されません。"
+
+#: src/admin/custom-format/preview.js:99
+msgid "Preview Text"
+msgstr "プレビューテキスト"
+
 #: src/admin/license.js:21
 msgid "Enter a valid Lightning G3 Pro Pack or Lightning Pro license key."
 msgstr ""
@@ -269,6 +404,10 @@ msgstr "標準"
 #: src/blocks/_pro/animation/edit.js:134
 msgid "Long"
 msgstr "長い"
+
+#: src/blocks/_pro/animation/edit.js:145
+msgid "Animation only the first view"
+msgstr "初回表示のみアニメーション"
 
 #: src/blocks/_pro/animation/edit.js:45
 msgid "Animation Settings"
@@ -2088,6 +2227,22 @@ msgstr "リンクを別ウィンドウで開く"
 msgid "Link rel"
 msgstr "rel属性"
 
+#: src/extensions/common/custom-css-extension/index.js:186
+msgid "Note : Contains double-byte spaces; CSS may not work."
+msgstr "注意 : 全角スペースが含まれています。CSSが効かない可能性があります。"
+
+#: src/extensions/common/custom-css-extension/index.js:195
+msgid "If selector is specified, it is replaced by a block-specific CSS class. If selector is set to \"selector\", it will be replaced with a block-specific CSS class. CSS selectors other than \"selector\" may affect the entire page."
+msgstr "selector を指定した場合ブロック固有の CSS クラスに置き換わります。selector以外のCSSセレクターは、ページ全体に影響する可能性があります。"
+
+#: src/extensions/common/custom-css-extension/index.js:215
+msgid "Example:"
+msgstr "例:"
+
+#: src/extensions/common/custom-css-extension/index.js:224
+msgid "If you want the edit screen to be as close to the public screen as possible, or if your own CSS interferes with the CSS for the identification display and does not display as intended on the edit screen, please hide it."
+msgstr "編集画面をできるだけ公開画面に近づけたい場合や、自作のCSSが識別表示用のCSSと干渉して編集画面で意図した通りに表示されない場合は、非表示にすることをお勧めします。"
+
 #: src/extensions/common/hidden-extension/index.js:189
 msgid "Hidden Settings"
 msgstr "非表示設定"
@@ -2690,6 +2845,14 @@ msgstr "分割読み込み設定"
 msgid "Setting"
 msgstr "設定"
 
+#: inc/vk-blocks/blocks.php:40
+msgid "Blocks Layout"
+msgstr "ブロックレイアウト"
+
+#: inc/vk-blocks/blocks.php:53
+msgid "Deprecated Blocks"
+msgstr "非推奨ブロック"
+
 #: dist/vk-blocks-pro/inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
 #: inc/vk-blocks/build/blocks/ancestor-page-list/index.php:44
 #: src/blocks/ancestor-page-list/index.php:44
@@ -2742,16 +2905,6 @@ msgstr "投稿"
 #: inc/vk-blocks/view/class-vk-blocks-postlist.php:257
 msgid "There are no %ss."
 msgstr "該当の%sはありません。"
-
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:160
-#: inc/vk-blocks/vk-blocks-functions.php:160
-msgid "Blocks"
-msgstr "Blocks"
-
-#: dist/vk-blocks-pro/inc/vk-blocks/vk-blocks-functions.php:173
-#: inc/vk-blocks/vk-blocks-functions.php:173
-msgid "Blocks Layout"
-msgstr "ブロックレイアウト"
 
 #: dist/vk-blocks-pro/inc/vk-components/package/class-vk-component-posts.php:55
 #: inc/vk-components/package/class-vk-component-posts.php:55

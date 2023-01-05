@@ -71,51 +71,16 @@ function vk_blocks_setting_page() {
 		$get_menu_html .= '<li><a href="#license-setting">' . __( 'License Key', 'vk-blocks' ) . '</a></li>';
 	}
 	$get_menu_html .= '<li><a href="#balloon-setting">' . __( 'Balloon Block Setting', 'vk-blocks' ) . '</a></li>';
+	if ( vk_blocks_is_pro() ) {
+		$get_menu_html .= '<li><a href="#custom-format-setting">' . __( 'Custom Format Setting', 'vk-blocks' ) . '</a></li>';
+	}
 	$get_menu_html .= '<li><a href="#margin-setting">' . __( 'Common Margin Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= '<li><a href="#load-separete-setting">' . __( 'Load Separete Setting', 'vk-blocks' ) . '</a></li>';
 	$get_menu_html .= apply_filters( 'vk_blocks_pro_menu', '' );
+	$get_menu_html .= '<li><a href="#block-manager-setting">' . __( 'Block Manager Setting', 'vk-blocks' ) . '</a></li>';
 
 	Vk_Admin::admin_page_frame( $get_page_title, 'vk_blocks_setting', $get_logo_html, $get_menu_html );
 }
-
-/**
- * VK Blocks Save Option
- */
-function vk_blocks_setting_option_save() {
-	if (
-		isset( $_POST['vk_blocks_balloon_meta'], $_POST['vkb-setting-page'] )
-		&& wp_verify_nonce( sanitize_key( $_POST['vkb-setting-page'] ), 'vkb-nonce-key' )
-	) {
-		if ( check_admin_referer( 'vkb-nonce-key', 'vkb-setting-page' ) ) {
-			// 保存処理.
-			if (
-				isset( $_POST['vk_blocks_balloon_meta'], $_POST['vkb-setting-page'] )
-				&& wp_verify_nonce( sanitize_key( $_POST['vkb-setting-page'] ), 'vkb-nonce-key' )
-			) {
-				$vk_blocks_balloon_meta = sanitize_option( 'vk_blocks_balloon_meta', wp_unslash( $_POST['vk_blocks_balloon_meta'] ) );
-				update_option( 'vk_blocks_balloon_meta', $vk_blocks_balloon_meta );
-			} else {
-				update_option( 'vk_blocks_balloon_meta', '' );
-			}
-		}
-	}
-	if (
-		isset( $_POST['vk_blocks_options'], $_POST['vkb-setting-page'] )
-		&& wp_verify_nonce( sanitize_key( $_POST['vkb-setting-page'] ), 'vkb-nonce-key' )
-	) {
-		if ( check_admin_referer( 'vkb-nonce-key', 'vkb-setting-page' ) ) {
-			if (
-				isset( $_POST['vk_blocks_options'], $_POST['vkb-setting-page'] )
-				&& wp_verify_nonce( sanitize_key( $_POST['vkb-setting-page'] ), 'vkb-nonce-key' )
-			) {
-				update_option( 'vk_blocks_options', sanitize_option( 'vk_blocks_options', wp_unslash( $_POST['vk_blocks_options'] ) ) );
-			} else {
-				update_option( 'vk_blocks_options', '' );
-			}
-		}
-	}
-}
-add_action( 'admin_init', 'vk_blocks_setting_option_save', 10, 2 );
 
 /**
  * VK Blocks add setting link
@@ -163,6 +128,37 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 	);
 	wp_set_script_translations( 'vk-blocks-admin-js', 'vk-blocks', VK_BLOCKS_DIR_PATH . 'inc/vk-blocks/languages' );
 
+	$block_categories = get_block_categories( get_post() );
+	wp_add_inline_script(
+		'wp-blocks',
+		sprintf(
+			'wp.blocks.setCategories( %s );',
+			wp_json_encode( $block_categories )
+		),
+		'after'
+	);
+
+	// ブロック一覧を取得する
+	// @see https://developer.wordpress.org/reference/classes/wp_block_type_registry/.
+	$block_registry   = WP_Block_Type_Registry::get_instance();
+	$block_json_lists = array();
+	$i                = 0;
+	foreach ( $block_registry->get_all_registered() as $block_name => $block_type ) {
+		if ( ! preg_match( '/core|vk-blocks/', $block_type->name ) ) {
+			continue;
+		}
+
+		$block_json_lists[ $i ] = array(
+			'name'  => $block_name,
+			'title' => $block_type->title,
+		);
+		$i++;
+
+		if ( ! empty( $block_type->editor_script ) ) {
+			wp_enqueue_script( $block_type->editor_script );
+		}
+	}
+
 	wp_localize_script(
 		'vk-blocks-admin-js',
 		'vkBlocksObject',
@@ -172,6 +168,11 @@ function vk_blocks_options_enqueue_scripts( $hook_suffix ) {
 			'imageNumber'      => VK_Blocks_Options::balloon_image_number(),
 			'isLicenseSetting' => vk_blocks_is_license_setting(),
 			'isPro'            => vk_blocks_is_pro(),
+			'deprecatedLists'  => VK_Blocks_Options::get_deprecated_lists(),
+			'blockJsonLists'   => $block_json_lists,
+			'colorPalette'     => wp_get_global_settings( array( 'color', 'palette' ) ),
+			'fontSizes'        => VK_Blocks_Global_Settings::font_sizes(),
+			'highlighterColor' => VK_Blocks_Global_Settings::HIGHLIGHTER_COLOR,
 		)
 	);
 

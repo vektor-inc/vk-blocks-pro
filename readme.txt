@@ -2,9 +2,9 @@
 Contributors: vektor-inc,kurudrive,naoki0h,nc30,una9,kaorock72,rickaddison7634,mimitips,mthaichi,shimotomoki,sysbird
 Donate link:
 Tags: Gutenberg,FAQ,alert
-Requires at least: 5.8
-Tested up to: 6.0.2
-Stable tag: 1.44.0.1
+Requires at least: 5.9
+Tested up to: 6.1.0
+Stable tag: 1.47.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -64,9 +64,32 @@ e.g.
 
 == Changelog ==
 
-[ Add Function ][ Custom CSS ( Pro ) ] Add custom css extension in inspector controls.
-[ Specification Change ][ Grid Column ( Pro ) ] Changed margin setting from 1 to 0.1 separator.
-[ Bug fix ][ Step(Pro) / Time line(Pro) ] Fix margin of WordPress 6.1 
+[ Bug fix ][ Slider ] Set default value for unset time and speed.
+[ Specification Change ] Update Plugin Update Checker to 5.0
+[ Other ] Update VK Breadcrumb lib 0.2.5
+
+= 1.48.0 =
+[ Add Function ][ Admin screen ] Added block manager function.
+[ Add Function ][ Custom Format Setting (Pro) ] Add Custom Format Setting extension in admin.
+[ Bug fix ][ Custom CSS (Pro) ] Fixed bug in not replacing all selector strings.
+[ Specification Change ][ Animation(Pro) ] add setting option Animation only the first view.
+
+= 1.47.1 =
+[ Bug fix ][ Slider ] Stick out background image on setting panel of site editor
+
+= 1.47.0 =
+[ Other ][ Slider ( Pro ) ] Change Pro to Free.
+[ Bug fix ][ Button ] Fixed a bug where the default color was not hit in all themes except Lightning.
+
+= 1.46.0 =
+[ Add Function ][ Custom CSS (Pro) ] Add custom css extension in inspector controls.
+[ Specification Change ][ Grid Column (Pro) ] Changed margin setting from 1 to 0.1 separator.
+[ Specification Change ] Update the required WordPress version
+[ Bug Fix ][ Highlighter ] Fixed a bug that custom colors cannot be used.
+[ Bug Fix ][ Button ] Fixed a bug that the color palette does not change on the edit screen when there is no background.
+[ Bug Fix ][ List ] Fixed a bug that the color of the list icon was not reflected on the edit screen
+[ Bug fix ][ Step (Pro) / Time line (Pro) ] Fix margin of theme.json
+[ Bug fix ][ Grid Column (Pro) ] Fix bg color overflow bug on edit screen.
 
 = 1.45.0 =
 [ Other ] Cope with WordPress 6.1

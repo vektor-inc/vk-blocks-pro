@@ -7,6 +7,38 @@
 
 class VKBlocksOptionsTest extends WP_UnitTestCase {
 
+	public function test_get_deprecated_lists() {
+		$test_data = array(
+			array(
+				'correct' => array(
+					'vk-blocks/pr-blocks',
+					'vk-blocks/pr-content',
+					'vk-blocks/staff',
+					'vk-blocks/card',
+					'vk-blocks/icon-card',
+				),
+			),
+		);
+		print PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+		print 'get_deprecated_lists()' . PHP_EOL;
+		print '------------------------------------' . PHP_EOL;
+		foreach ( $test_data as $test_value ) {
+			$return  = VK_Blocks_Options::get_deprecated_lists();
+			$correct = $test_value['correct'];
+
+			// print 'return  :';
+			// print PHP_EOL;
+			// var_dump( $return );
+			// print PHP_EOL;
+			// print 'correct  :';
+			// print PHP_EOL;
+			// var_dump( $correct );
+			// print PHP_EOL;
+			$this->assertSame( $correct, $return );
+		}
+	}
+
 	public function test_balloon_image_number() {
 		$test_data = array(
 			array(
@@ -51,8 +83,8 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 		}
 	}
 
-	// balloon_meta_schemaを作る
-	public function test_balloon_meta_schema() {
+	// get_vk_blocks_balloon_meta_propertiesを作る
+	public function test_get_vk_blocks_balloon_meta_properties() {
 		$test_data = array(
 			// デフォルト
 			array(
@@ -60,199 +92,169 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 				'correct' => array(
 					'default_icons' => array(
 						'type'  => 'object',
-						'items' => array(
+						'properties' => array(
 							'1' => array(
 								'type'  => 'object',
-								'items' => array(
+								'properties' => array(
 									'name' => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 									'src'  => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 								),
 							),
 							'2' => array(
 								'type'  => 'object',
-								'items' => array(
+								'properties' => array(
 									'name' => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 									'src'  => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 								),
 							),
 							'3' => array(
 								'type'  => 'object',
-								'items' => array(
+								'properties' => array(
 									'name' => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 									'src'  => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 								),
 							),
 							'4' => array(
 								'type'  => 'object',
-								'items' => array(
+								'properties' => array(
 									'name' => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 									'src'  => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 								),
 							),
 							'5' => array(
 								'type'  => 'object',
-								'items' => array(
+								'properties' => array(
 									'name' => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 									'src'  => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 								),
 							),
 							'6' => array(
 								'type'  => 'object',
-								'items' => array(
+								'properties' => array(
 									'name' => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 									'src'  => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 								),
 							),
 							'7' => array(
 								'type'  => 'object',
-								'items' => array(
+								'properties' => array(
 									'name' => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 									'src'  => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 								),
 							),
 							'8' => array(
 								'type'  => 'object',
-								'items' => array(
+								'properties' => array(
 									'name' => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 									'src'  => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 								),
 							),
 							'9' => array(
 								'type'  => 'object',
-								'items' => array(
+								'properties' => array(
 									'name' => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 									'src'  => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 								),
 							),
 							'10' => array(
 								'type'  => 'object',
-								'items' => array(
+								'properties' => array(
 									'name' => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 									'src'  => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 								),
 							),
 							'11' => array(
 								'type'  => 'object',
-								'items' => array(
+								'properties' => array(
 									'name' => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 									'src'  => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 								),
 							),
 							'12' => array(
 								'type'  => 'object',
-								'items' => array(
+								'properties' => array(
 									'name' => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 									'src'  => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 								),
 							),
 							'13' => array(
 								'type'  => 'object',
-								'items' => array(
+								'properties' => array(
 									'name' => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 									'src'  => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 								),
 							),
 							'14' => array(
 								'type'  => 'object',
-								'items' => array(
+								'properties' => array(
 									'name' => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 									'src'  => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 								),
 							),
 							'15' => array(
 								'type'  => 'object',
-								'items' => array(
+								'properties' => array(
 									'name' => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 									'src'  => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 								),
 							),
@@ -266,30 +268,26 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 				'correct' => array(
 					'default_icons' => array(
 						'type'  => 'object',
-						'items' => array(
+						'properties' => array(
 							'1' => array(
 								'type'  => 'object',
-								'items' => array(
+								'properties' => array(
 									'name' => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 									'src'  => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 								),
 							),
 							'2' => array(
 								'type'  => 'object',
-								'items' => array(
+								'properties' => array(
 									'name' => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 									'src'  => array(
 										'type'    => 'string',
-										'default' => null,
 									),
 								),
 							),
@@ -300,7 +298,7 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 		);
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
-		print 'balloon_meta_schema()' . PHP_EOL;
+		print 'get_vk_blocks_balloon_meta_properties()' . PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
 		foreach ( $test_data as $test_value ) {
 			if ( ! empty( $test_value['option'] ) ){
@@ -312,7 +310,7 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 					}
 				);
 			}
-			$return  = VK_Blocks_Options::balloon_meta_schema();
+			$return  = VK_Blocks_Options::get_vk_blocks_balloon_meta_properties();
 			$correct = $test_value['correct'];
 
 			// print 'return  :';
@@ -327,209 +325,111 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 		}
 	}
 
-	public function test_get_defaults() {
+	// get_vk_blocks_balloon_meta_defaultsを作る
+	public function test_get_vk_blocks_balloon_meta_defaults() {
 		$test_data = array(
+			// デフォルト
 			array(
-				'option' => array(
-					'some_bool'  => array(
-						'type'    => 'boolean',
-						'default' => false,
-					),
-					'some_int' => array(
-						'type'    => 'integer',
-						'default' => 1,
-					),
-					'some_number' => array(
-						'type'    => 'number',
-						'default' => 1.5,
-					),
-					'some_array' => array(
-						'type'    => 'array',
-						'default' => array(
-							'a',
-							'b',
-							'c'
+				'option' => null,
+				'correct' => array(
+					'default_icons' => array(
+						'1' => array(
+							'name' => null,
+							'src'  => null,
 						),
-					),
-					'some_object_1' => array(
-						'type'  => 'object',
-						'items' => array(
-							'some_object_1_grand_child_1' => array(
-								'type'    => 'string',
-								'default' => 'some_object_1_grand_child_1_text',
-							),
-							'some_object_1_grand_child_2'  => array(
-								'type'    => 'string',
-								'default' => 'some_object_1_grand_child_2_text',
-							),
+						'2' => array(
+							'name' => null,
+							'src'  => null,
 						),
-					),
-					'some_object_2' => array(
-						'type'  => 'object',
-						'items' => array(
-							'some_object_child' => array(
-								'type'  => 'object',
-								'items' => array(
-									'some_object_2_grand_child_1' => array(
-										'type'    => 'string',
-										'default' => 'some_object_2_grand_child_1_text',
-									),
-									'some_object_2_grand_child_2'  => array(
-										'type'    => 'string',
-										'default' => 'some_object_2_grand_child_2_text',
-									),
-								),
-							),
+						'3' => array(
+							'name' => null,
+							'src'  => null,
+						),
+						'4' => array(
+							'name' => null,
+							'src'  => null,
+						),
+						'5' => array(
+							'name' => null,
+							'src'  => null,
+						),
+						'6' => array(
+							'name' => null,
+							'src'  => null,
+						),
+						'7' => array(
+							'name' => null,
+							'src'  => null,
+						),
+						'8' => array(
+							'name' => null,
+							'src'  => null,
+						),
+						'9' => array(
+							'name' => null,
+							'src'  => null,
+						),
+						'10' => array(
+							'name' => null,
+							'src'  => null,
+						),
+						'11' => array(
+							'name' => null,
+							'src'  => null,
+						),
+						'12' => array(
+							'name' => null,
+							'src'  => null,
+						),
+						'13' => array(
+							'name' => null,
+							'src'  => null,
+						),
+						'14' => array(
+							'name' => null,
+							'src'  => null,
+						),
+						'15' => array(
+							'name' => null,
+							'src'  => null,
 						),
 					),
 				),
+			),
+			// 吹き出しの数を変更した時
+			array(
+				'option' => 2,
 				'correct' => array(
-					'some_bool'  => false,
-					'some_int'  => 1,
-					'some_number'  => 1.5,
-					'some_array'  => array(
-						'a',
-						'b',
-						'c'
-					),
-					'some_object_1'  => array(
-						'some_object_1_grand_child_1' => 'some_object_1_grand_child_1_text',
-						'some_object_1_grand_child_2' => 'some_object_1_grand_child_2_text',
-					),
-					'some_object_2'  => array(
-						'some_object_child' => array(
-							'some_object_2_grand_child_1' => 'some_object_2_grand_child_1_text',
-							'some_object_2_grand_child_2' => 'some_object_2_grand_child_2_text',
-						)
+					'default_icons' => array(
+						'1' => array(
+							'name' => null,
+							'src'  => null,
+						),
+						'2' => array(
+							'name' => null,
+							'src'  => null,
+						),
 					),
 				),
 			),
 		);
 		print PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
-		print 'get_defaults()' . PHP_EOL;
+		print 'get_vk_blocks_balloon_meta_defaults()' . PHP_EOL;
 		print '------------------------------------' . PHP_EOL;
 		foreach ( $test_data as $test_value ) {
-			$return  = VK_Blocks_Options::get_defaults($test_value['option']);
+			if ( ! empty( $test_value['option'] ) ){
+				$number = isset( $test_value['option'] ) ? $test_value['option'] : null;
+				add_filter(
+					'vk_blocks_image_number',
+					function() use ( $number ) {
+						return $number;
+					}
+				);
+			}
+			$return  = VK_Blocks_Options::get_vk_blocks_balloon_meta_defaults();
 			$correct = $test_value['correct'];
-			// print 'return  :';
-			// print PHP_EOL;
-			// var_dump( $return );
-			// print PHP_EOL;
-			// print 'correct  :';
-			// print PHP_EOL;
-			// var_dump( $correct );
-			// print PHP_EOL;
-			$this->assertSame( $correct, $return );
-		}
-	}
 
-	public function test_get_properties() {
-		$test_data = array(
-			array(
-				'option' => array(
-					'some_bool'  => array(
-						'type'    => 'boolean',
-						'default' => false,
-					),
-					'some_int' => array(
-						'type'    => 'integer',
-						'default' => 1,
-					),
-					'some_number' => array(
-						'type'    => 'number',
-						'default' => 1.5,
-					),
-					'some_array' => array(
-						'type'    => 'array',
-						'default' => array(
-							'a',
-							'b',
-							'c'
-						),
-					),
-					'some_object_1' => array(
-						'type'  => 'object',
-						'items' => array(
-							'some_object_1_grand_child_1' => array(
-								'type'    => 'string',
-								'default' => 'some_object_1_grand_child_1_text',
-							),
-							'some_object_1_grand_child_2'  => array(
-								'type'    => 'string',
-								'default' => 'some_object_1_grand_child_2_text',
-							),
-						),
-					),
-					'some_object_2' => array(
-						'type'  => 'object',
-						'items' => array(
-							'some_object_child' => array(
-								'type'  => 'object',
-								'items' => array(
-									'some_object_2_grand_child_1' => array(
-										'type'    => 'string',
-										'default' => 'some_object_2_grand_child_1_text',
-									),
-									'some_object_2_grand_child_2'  => array(
-										'type'    => 'string',
-										'default' => 'some_object_2_grand_child_2_text',
-									),
-								),
-							),
-						),
-					),
-				),
-				'correct' => array(
-					'some_bool' => array(
-						'type' => 'boolean',
-					),
-					'some_int' => array(
-						'type' => 'integer',
-					),
-					'some_number' => array(
-						'type' => 'number',
-					),
-					'some_array' => array(
-						'type' => 'array',
-					),
-					'some_object_1'  => array(
-						'type' => 'object',
-						'properties' => array(
-							'some_object_1_grand_child_1' => array(
-								'type' => 'string',
-							),
-							'some_object_1_grand_child_2' => array(
-								'type' => 'string',
-							),
-						),
-					),
-					'some_object_2'  => array(
-						'type' => 'object',
-						'properties' => array(
-							'some_object_child' => array(
-								'type' => 'object',
-								'properties' => array(
-									'some_object_2_grand_child_1' => array(
-										'type' => 'string',
-									),
-									'some_object_2_grand_child_2' => array(
-										'type' => 'string',
-									),
-								),
-							),
-						),
-					),
-				),
-			),
-		);
-		print PHP_EOL;
-		print '------------------------------------' . PHP_EOL;
-		print 'get_properties()' . PHP_EOL;
-		print '------------------------------------' . PHP_EOL;
-		foreach ( $test_data as $test_value ) {
-			$return  = VK_Blocks_Options::get_properties($test_value['option']);
-			$correct = $test_value['correct'];
 			// print 'return  :';
 			// print PHP_EOL;
 			// var_dump( $return );
@@ -616,7 +516,7 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 				'option'  => array(
 					'default_icons' => array(
 						'type'  => 'object',
-						'items' => array(
+						'properties' => array(
 							'1' => array(
 								'name' => '吹き出し名前',
 								'src' => 'https://demo.dev3.biz/lightning-pro/wp-content/uploads/2018/02/agent-18762_1920-200x300.jpg',
@@ -683,7 +583,7 @@ class VKBlocksOptionsTest extends WP_UnitTestCase {
 				'correct' => array(
 					'default_icons' => array(
 						'type'  => 'object',
-						'items' => array(
+						'properties' => array(
 							'1' => array(
 								'name' => '吹き出し名前',
 								'src' => 'https://demo.dev3.biz/lightning-pro/wp-content/uploads/2018/02/agent-18762_1920-200x300.jpg',

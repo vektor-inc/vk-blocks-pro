@@ -95,7 +95,7 @@ export const SetPropertyName = ({
 				className="custom_block_style_item_class_name"
 				label={__(
 					`CSSクラスの算出に使用されるスタイルの識別子 (必須/変更不可)`,
-					// 'the identifier of the style used to compute a CSS class. (Required/Unchangeable)',
+					// 'The identifier of the style used to compute a CSS class. (Required/Unchangeable)',
 					'vk-blocks'
 				)}
 				help={__(

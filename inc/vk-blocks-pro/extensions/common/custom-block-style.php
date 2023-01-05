@@ -15,9 +15,7 @@ function vk_blocks_register_custom_block_style() {
 	$editor_css        = '';
 	foreach ( $vk_blocks_options['custom_block_style_lists'] as $custom_block_style ) {
 		$inline_style = '';
-		// property_inline_styleからCSSを出力
 		if ( ! empty( $custom_block_style['property_inline_style'] ) ) {
-			// selectorをクラスに変換
 			$inline_style .= preg_replace( '/selector/', '.is-style-' . $custom_block_style['property_name'], $custom_block_style['property_inline_style'] );
 			$editor_css   .= $inline_style;
 		}

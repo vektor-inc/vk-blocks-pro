@@ -49,9 +49,18 @@ function AdminCustomBlockStyle({
 			? blockJsonList.title
 			: blockTypeTitle;
 	};
+
+	const showCategories = categories.filter((category) => {
+		return !category.slug.match(/veu-block/);
+	});
+
 	const showBlockTypes = [];
 	blockTypes.forEach((blockType) => {
 		if (
+			// showCategoriesにcategoryが含まれる
+			showCategories.find((showCategory) => {
+				return showCategory.slug === blockType.category;
+			}) !== undefined &&
 			// inserterがtrueのもの
 			hasBlockSupport(blockType, 'inserter', true) &&
 			// search

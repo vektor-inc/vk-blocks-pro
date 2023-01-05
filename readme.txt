@@ -64,6 +64,7 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Custom Block Style Setting (Pro) ] Add Custom Block Style Setting extension in admin.
 [ Bug fix ][ Slider ] Set default value for unset time and speed.
 [ Specification Change ] Update Plugin Update Checker to 5.0
 [ Other ] Update VK Breadcrumb lib 0.2.5

@@ -15,7 +15,6 @@ import { AdminContext } from '@vkblocks/admin/index';
 import { AddButton } from '@vkblocks/admin/custom-block-style/add-button';
 import { ReactSortableJs } from '@vkblocks/components/react-sortablejs';
 import { Item } from './item';
-import { SortBlockStyleLists } from './sort-block-style-lists';
 /*globals vkBlocksObject */
 
 function AdminCustomBlockStyle({
@@ -97,7 +96,6 @@ function AdminCustomBlockStyle({
 						'vk-blocks'
 					)}
 				</p>
-				<SortBlockStyleLists />
 				<ReactSortableJs
 					list={vkBlocksOption.custom_block_style_lists}
 					setList={(newState) =>

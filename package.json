@@ -99,11 +99,9 @@
 		"po2json": "^1.0.0-beta-3",
 		"postcss-cli": "^9.1.0",
 		"prettier": "^2.5.1",
-		"react-sortablejs": "^6.1.4",
 		"react-with-direction": "^1.4.0",
 		"rimraf": "^3.0.2",
-		"sass": "1.32.12",
-		"sortablejs": "^1.15.0"
+		"sass": "1.32.12"
 	},
 	"dependencies": {},
 	"volta": {

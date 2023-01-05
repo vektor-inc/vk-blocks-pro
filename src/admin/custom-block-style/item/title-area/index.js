@@ -4,7 +4,6 @@
 import { Button, Flex, FlexItem } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { BlockIcon } from '@wordpress/block-editor';
-import { dragHandle } from '@wordpress/icons';
 
 /**
  * Internal dependencies
@@ -43,14 +42,9 @@ export const TitleArea = ({
 							</FlexItem>
 						)}
 						{array.length > 1 && (
-							<>
-								<FlexItem className="custom_block_style_drag-handle">
-									<BlockIcon icon={dragHandle} />
-								</FlexItem>
-								<FlexItem>
-									<MoverButton index={index} />
-								</FlexItem>
-							</>
+							<FlexItem>
+								<MoverButton index={index} />
+							</FlexItem>
 						)}
 						<FlexItem className="custom_block_style_title-area-label">
 							{blockStyleListObj.property_label}

@@ -13,7 +13,6 @@ registerCoreBlocks();
  */
 import { AdminContext } from '@vkblocks/admin/index';
 import { AddButton } from '@vkblocks/admin/custom-block-style/add-button';
-import { ReactSortableJs } from '@vkblocks/components/react-sortablejs';
 import { Item } from './item';
 /*globals vkBlocksObject */
 
@@ -96,41 +95,30 @@ function AdminCustomBlockStyle({
 						'vk-blocks'
 					)}
 				</p>
-				<ReactSortableJs
-					list={vkBlocksOption.custom_block_style_lists}
-					setList={(newState) =>
-						setVkBlocksOption({
-							...vkBlocksOption,
-							custom_block_style_lists: [...newState],
-						})
+				{Object.keys(vkBlocksOption.custom_block_style_lists).map(
+					(key, index, array) => {
+						const blockStyleListObj =
+							vkBlocksOption.custom_block_style_lists[key];
+						const activeBlockType = blockTypes.find(
+							(blockType) =>
+								blockType.name ===
+								blockStyleListObj.block_name
+						);
+						return (
+							<div key={index}>
+								<Item
+									activeBlockType={activeBlockType}
+									index={index}
+									onChange={onChange}
+									blockStyleListObj={blockStyleListObj}
+									openNameLists={openNameLists}
+									setOpenNameLists={setOpenNameLists}
+									array={array}
+								/>
+							</div>
+						);
 					}
-					handle={'.custom_block_style_drag-handle'}
-				>
-					{Object.keys(vkBlocksOption.custom_block_style_lists).map(
-						(key, index, array) => {
-							const blockStyleListObj =
-								vkBlocksOption.custom_block_style_lists[key];
-							const activeBlockType = blockTypes.find(
-								(blockType) =>
-									blockType.name ===
-									blockStyleListObj.block_name
-							);
-							return (
-								<div key={index}>
-									<Item
-										activeBlockType={activeBlockType}
-										index={index}
-										onChange={onChange}
-										blockStyleListObj={blockStyleListObj}
-										openNameLists={openNameLists}
-										setOpenNameLists={setOpenNameLists}
-										array={array}
-									/>
-								</div>
-							);
-						}
-					)}
-				</ReactSortableJs>
+				)}
 				<AddButton
 					showBlockTypes={showBlockTypes}
 					categories={categories}

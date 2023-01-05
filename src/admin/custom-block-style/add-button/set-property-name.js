@@ -53,7 +53,6 @@ export const SetPropertyName = ({
 		// オプション値からブロックスタイルが既に登録されているか
 		vkBlocksOption.custom_block_style_lists?.forEach((option) => {
 			if (
-				option.block_name === blockName &&
 				option.property_name === value
 			) {
 				bool = false;

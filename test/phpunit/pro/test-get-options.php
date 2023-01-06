@@ -549,7 +549,21 @@ class GetOptionsTest extends WP_UnitTestCase {
 						'vk-blocks/staff',
 						'vk-blocks/card',
 						'vk-blocks/icon-card',
-					)
+					),
+					'balloon_meta_lists' => array(
+						array(
+							'name' => 'test-name-1',
+							'src'  => 'https://www.vektor-inc.co.jp/wp-content/uploads/2020/04/vws_logo_2020_og.png',
+						),
+						array(
+							'name' => null,
+							'src'  => 'https://www.vektor-inc.co.jp/wp-content/uploads/2020/04/vws_logo_2020_og.png',
+						),
+						array(
+							'name' => null,
+							'src'  => 'https://www.vektor-inc.co.jp/wp-content/uploads/2020/04/vws_logo_2020_og.png',
+						),
+					),
 				),
 				'correct'  => array(
 					'balloon_border_width' => 2,
@@ -622,7 +636,21 @@ class GetOptionsTest extends WP_UnitTestCase {
 						'vk-blocks/staff',
 						'vk-blocks/card',
 						'vk-blocks/icon-card',
-					)
+					),
+					'balloon_meta_lists' => array(
+						array(
+							'name' => 'test-name-1',
+							'src'  => 'https://www.vektor-inc.co.jp/wp-content/uploads/2020/04/vws_logo_2020_og.png',
+						),
+						array(
+							'name' => null,
+							'src'  => 'https://www.vektor-inc.co.jp/wp-content/uploads/2020/04/vws_logo_2020_og.png',
+						),
+						array(
+							'name' => null,
+							'src'  => 'https://www.vektor-inc.co.jp/wp-content/uploads/2020/04/vws_logo_2020_og.png',
+						),
+					),
 				),
 			),
 		);

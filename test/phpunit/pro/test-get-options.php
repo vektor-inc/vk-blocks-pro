@@ -104,6 +104,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'custom_css' => null,
 						),
 					),
+					'disable_block_lists' => array(),
 					'balloon_meta_lists' => array(
 						array(
 							'name' => null,
@@ -405,9 +406,9 @@ class GetOptionsTest extends WP_UnitTestCase {
 					),
 				),
 			),
-			// 吹き出しブロック画像設定
+			// 非推奨ブロック
 			array(
-				'option_check_target' => 'balloon_meta_lists',
+				'option_check_target' => 'disable_block_lists',
 				'option'  => array(
 					'display_vk_block_template' => 'hide',
 					'new_faq_accordion' => 'open',
@@ -472,20 +473,6 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'class_name' => 'vk-format--2',
 							'custom_css' => null,
 						),
-					),
-				),
-				'correct' => array(
-					array(
-						'name' => null,
-						'src'  => null,
-					),
-					array(
-						'name' => null,
-						'src'  => null,
-					),
-					array(
-						'name' => null,
-						'src'  => null,
 					),
 				),
 			),
@@ -556,20 +543,13 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'custom_css' => null,
 						),
 					),
-					'balloon_meta_lists' => array(
-						array(
-							'name' => 'balloon meta name 1',
-							'src'  => 'https://www.vektor-inc.co.jp/wp-content/uploads/2020/08/vk-blocks-logo_og.png',
-						),
-						array(
-							'name' => 'balloon meta name 2',
-							'src'  => '',
-						),
-						array(
-							'name' => '',
-							'src'  => 'https://www.vektor-inc.co.jp/wp-content/uploads/2020/08/vk-blocks-logo_og.png',
-						),
-					),
+					'disable_block_lists' => array(
+						'vk-blocks/pr-blocks',
+						'vk-blocks/pr-content',
+						'vk-blocks/staff',
+						'vk-blocks/card',
+						'vk-blocks/icon-card',
+					)
 				),
 				'correct'  => array(
 					'balloon_border_width' => 2,
@@ -636,20 +616,13 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'custom_css' => null,
 						),
 					),
-					'balloon_meta_lists' => array(
-						array(
-							'name' => 'balloon meta name 1',
-							'src'  => 'https://www.vektor-inc.co.jp/wp-content/uploads/2020/08/vk-blocks-logo_og.png',
-						),
-						array(
-							'name' => 'balloon meta name 2',
-							'src'  => '',
-						),
-						array(
-							'name' => '',
-							'src'  => 'https://www.vektor-inc.co.jp/wp-content/uploads/2020/08/vk-blocks-logo_og.png',
-						),
-					),
+					'disable_block_lists' => array(
+						'vk-blocks/pr-blocks',
+						'vk-blocks/pr-content',
+						'vk-blocks/staff',
+						'vk-blocks/card',
+						'vk-blocks/icon-card',
+					)
 				),
 			),
 		);

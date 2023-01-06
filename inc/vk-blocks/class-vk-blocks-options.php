@@ -206,6 +206,9 @@ class VK_Blocks_Options {
 					),
 				),
 			),
+			'disable_block_lists'         => array(
+				'type' => 'array',
+			),
 			'balloon_meta_lists'          => array(
 				'type'  => 'array',
 				'items' => array(
@@ -227,9 +230,11 @@ class VK_Blocks_Options {
 	/**
 	 * Get vk_blocks_options default 生成
 	 *
+	 * @param bool $activation activation 有効化時かどうか.
+	 *
 	 * @return $default
 	 */
-	public static function get_vk_blocks_options_defaults() {
+	public static function get_vk_blocks_options_defaults( $activation = false ) {
 		$default = array(
 			'balloon_border_width'        => 1,
 			'margin_unit'                 => 'rem',
@@ -281,6 +286,7 @@ class VK_Blocks_Options {
 					'custom_css'            => null,
 				),
 			),
+			'disable_block_lists'         => $activation ? self::get_deprecated_lists() : array(),
 			'balloon_meta_lists'          => array(
 				array(
 					'name' => null,
@@ -297,6 +303,22 @@ class VK_Blocks_Options {
 			),
 		);
 		return $default;
+	}
+
+	/**
+	 * 非推奨ブロックリスト
+	 *
+	 * @return array
+	 */
+	public static function get_deprecated_lists() {
+		$blocks              = VK_Blocks_Global_Settings::blocks();
+		$disable_block_lists = array();
+		foreach ( $blocks as $block ) {
+			if ( array_key_exists( 'is_deprecated', $block ) && $block['is_deprecated'] ) {
+				$disable_block_lists[] = 'vk-blocks/' . $block['name'];
+			}
+		}
+		return $disable_block_lists;
 	}
 
 	/**

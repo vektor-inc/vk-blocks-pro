@@ -86,12 +86,14 @@ class VK_Blocks_Global_Settings {
 				'is_pro' => false,
 			),
 			array(
-				'name'   => 'pr-blocks',
-				'is_pro' => false,
+				'name'          => 'pr-blocks',
+				'is_pro'        => false,
+				'is_deprecated' => true,
 			),
 			array(
-				'name'   => 'pr-content',
-				'is_pro' => false,
+				'name'          => 'pr-content',
+				'is_pro'        => false,
+				'is_deprecated' => true,
 			),
 			array(
 				'name'   => 'slider',
@@ -106,8 +108,9 @@ class VK_Blocks_Global_Settings {
 				'is_pro' => false,
 			),
 			array(
-				'name'   => 'staff',
-				'is_pro' => false,
+				'name'          => 'staff',
+				'is_pro'        => false,
+				'is_deprecated' => true,
 			),
 			array(
 				'name'   => 'accordion',
@@ -134,8 +137,9 @@ class VK_Blocks_Global_Settings {
 				'is_pro' => true,
 			),
 			array(
-				'name'   => 'card',
-				'is_pro' => true,
+				'name'          => 'card',
+				'is_pro'        => true,
+				'is_deprecated' => true,
 			),
 			array(
 				'name'   => 'card-item',
@@ -174,8 +178,9 @@ class VK_Blocks_Global_Settings {
 				'is_pro' => true,
 			),
 			array(
-				'name'   => 'icon-card',
-				'is_pro' => true,
+				'name'          => 'icon-card',
+				'is_pro'        => true,
+				'is_deprecated' => true,
 			),
 			array(
 				'name'   => 'icon-card-item',

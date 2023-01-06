@@ -67,37 +67,24 @@ export const AddItemButton = () => {
 		let message;
 		if (typeof value !== 'string') {
 			bool = false;
-			message = __(
-				'文字列を入力してください',
-				// 'Please enter a string',
-				'vk-blocks'
-			);
+			message = __('Please enter a string', 'vk-blocks');
 		}
 		if (!/^[a-z][a-z0-9-]*$/.test(value)) {
 			bool = false;
 			message = __(
-				'英字から始まり、英数字,ハイフン-のみ使用可能です',
-				// 'Must begin with an alphabetic character and only alphanumeric characters and hyphens may be used.',
+				'Must begin with an alphabetic character and only alphanumeric characters and hyphens may be used.',
 				'vk-blocks'
 			);
 		}
 		if (value === '') {
 			bool = false;
-			message = __(
-				'クラス名は必須項目です',
-				// 'Class name is required',
-				'vk-blocks'
-			);
+			message = __('Class name is required', 'vk-blocks');
 		}
 		// クラス名が既に登録されているか
 		vkBlocksOption.custom_format_lists.forEach((option) => {
 			if (option.class_name === value) {
 				bool = false;
-				message = __(
-					'すでに登録されています',
-					// 'Already registered',
-					'vk-blocks'
-				);
+				message = __('Already registered', 'vk-blocks');
 			}
 		});
 		setIsDisableAdd(bool);
@@ -113,19 +100,11 @@ export const AddItemButton = () => {
 				variant="secondary"
 				onClick={openModal}
 			>
-				{__(
-					'書式設定を追加',
-					// 'Add Custom Format',
-					'vk-blocks'
-				)}
+				{__('Add Custom Format', 'vk-blocks')}
 			</Button>
 			{isModalOpen && (
 				<Modal
-					title={__(
-						'書式設定を追加',
-						// 'Add Custom Format',
-						'vk-blocks'
-					)}
+					title={__('Add Custom Format', 'vk-blocks')}
 					onRequestClose={closeModal}
 					isDismissible={false}
 				>
@@ -133,15 +112,10 @@ export const AddItemButton = () => {
 						<TextControl
 							className="custom_format_item_class_name"
 							label={__(
-								'CSSクラス/固有ID (必須/変更不可)',
-								// 'CSS class/unique ID (Required/Unchangeable)',
+								'CSS class/unique ID (Required/Unchangeable)',
 								'vk-blocks'
 							)}
-							placeholder={__(
-								'(例) vk-format-1',
-								// '(e.g.) vk-format-1',
-								'vk-blocks'
-							)}
+							placeholder={__('(e.g.) vk-format-1', 'vk-blocks')}
 							onChange={(value) => {
 								value = value.trim();
 								setClassName(value);
@@ -157,8 +131,7 @@ export const AddItemButton = () => {
 						<TextControl
 							className="custom_format_item_title"
 							label={__(
-								'ツールバー タイトル（変更可能）',
-								// 'Toolbar title (Changeable)',
+								'Toolbar title (Changeable)',
 								'vk-blocks'
 							)}
 							onChange={(value) => {
@@ -185,11 +158,7 @@ export const AddItemButton = () => {
 										variant="primary"
 										disabled={!isDisableAdd}
 									>
-										{__(
-											'追加',
-											// 'Add',
-											'vk-blocks'
-										)}
+										{__('Add', 'vk-blocks')}
 									</Button>
 								</FlexItem>
 							</Flex>

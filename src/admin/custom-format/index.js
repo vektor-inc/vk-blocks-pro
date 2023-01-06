@@ -2,7 +2,7 @@
  * WordPress dependencies
  */
 import { __, sprintf } from '@wordpress/i18n';
-import { useContext } from '@wordpress/element';
+import { useContext, createInterpolateElement } from '@wordpress/element';
 import {
 	CheckboxControl,
 	BaseControl,
@@ -47,16 +47,11 @@ export default function AdminCustomFormat() {
 		<>
 			<section>
 				<h3 id="custom-format-setting">
-					{__(
-						'カスタム書式設定',
-						// 'Custom Format Setting',
-						'vk-blocks'
-					)}
+					{__('Custom Format Setting', 'vk-blocks')}
 				</h3>
 				<p>
 					{__(
-						'ブロックツールバーのよく使う書式設定を登録することができます。',
-						// 'You can apply commonly used formatting on the block toolbar.',
+						'You can apply commonly used formatting on the block toolbar.',
 						'vk-blocks'
 					)}
 				</p>
@@ -71,11 +66,7 @@ export default function AdminCustomFormat() {
 								/>
 								<div className="custom_format_item_control">
 									<PanelBody
-										title={__(
-											'書式設定',
-											// 'Custom Format',
-											'vk-blocks'
-										)}
+										title={__('Custom Format', 'vk-blocks')}
 									>
 										<BaseControl id="custom-format">
 											<TextControl
@@ -83,8 +74,7 @@ export default function AdminCustomFormat() {
 												name={`vk_blocks_options[custom_format_lists][${index}][title]`}
 												id={`vk_blocks_custom_format_${index}_title`}
 												label={__(
-													'ツールバー タイトル',
-													// 'Toolbar title',
+													'Toolbar title',
 													'vk-blocks'
 												)}
 												onChange={(value) =>
@@ -101,8 +91,7 @@ export default function AdminCustomFormat() {
 											{!textStyleListObj.title && (
 												<p className="custom_format_item_name_warning">
 													{__(
-														'※ タイトルが入力されていない場合、ツールバーには表示されません。',
-														// '※ Required If no title is entered, it will not appear on the toolbar.',
+														'※ Required If no title is entered, it will not appear on the toolbar.',
 														'vk-blocks'
 													)}
 												</p>
@@ -117,8 +106,7 @@ export default function AdminCustomFormat() {
 									</PanelBody>
 									<PanelBody
 										title={__(
-											'フォーマット設定',
-											// 'Format Setting',
+											'Format Setting',
 											'vk-blocks'
 										)}
 										initialOpen={false}
@@ -126,11 +114,7 @@ export default function AdminCustomFormat() {
 										<BaseControl id="format-setting">
 											<CheckboxControl
 												name={`vk_blocks_options[custom_format_lists][${index}][font_weight_bold]`}
-												label={__(
-													'太字',
-													// 'Bold',
-													'vk-blocks'
-												)}
+												label={__('Bold', 'vk-blocks')}
 												checked={
 													textStyleListObj.font_weight_bold
 												}
@@ -145,8 +129,7 @@ export default function AdminCustomFormat() {
 											<CheckboxControl
 												name={`vk_blocks_options[custom_format_lists][${index}][font_italic]`}
 												label={__(
-													'イタリック',
-													// 'Italic',
+													'Italic',
 													'vk-blocks'
 												)}
 												checked={
@@ -163,8 +146,7 @@ export default function AdminCustomFormat() {
 											<CheckboxControl
 												name={`vk_blocks_options[custom_format_lists][${index}][font_strikethrough]`}
 												label={__(
-													'打ち消し線',
-													// 'Strikethrough',
+													'Strikethrough',
 													'vk-blocks'
 												)}
 												checked={
@@ -280,8 +262,7 @@ export default function AdminCustomFormat() {
 										<BaseControl
 											id="highlighter"
 											label={__(
-												'蛍光マーカー',
-												// 'Highlighter Color',
+												'Highlighter Color',
 												'vk-blocks'
 											)}
 										>
@@ -289,8 +270,7 @@ export default function AdminCustomFormat() {
 												name={`vk_blocks_options[custom_format_lists][${index}][is_active_highlighter]`}
 												id={`vk_blocks_custom_format_lists_${index}_is_active_highlighter`}
 												label={__(
-													'蛍光マーカーを有効化',
-													// 'Activate Highlighter',
+													'Activate Highlighter',
 													'vk-blocks'
 												)}
 												checked={
@@ -329,21 +309,12 @@ export default function AdminCustomFormat() {
 										</BaseControl>
 									</PanelBody>
 									<PanelBody
-										title={__(
-											'カスタムCSS',
-											// 'Custom CSS',
-											'vk-blocks'
-										)}
+										title={__('Custom CSS', 'vk-blocks')}
 										initialOpen={false}
 									>
 										<BaseControl id="class-name-setting">
 											<span>
-												{__(
-													'CSSクラス',
-													// 'CSS class',
-													'vk-blocks'
-												)}
-												:
+												{__('CSS class', 'vk-blocks')}:
 												<code>
 													.
 													{
@@ -367,14 +338,18 @@ export default function AdminCustomFormat() {
 												}
 											/>
 											<p>
-												{sprintf(
-													// translators: If selector is specified, it will be replaced by a unique CSS class (%s); CSS selectors other than selector may affect the entire page.
-													__(
-														'selector を指定した場合、固有の CSS クラス(%s)に置き換わります。selector以外のCSSセレクターは、ページ全体に影響する可能性があります。',
-														// 'If selector is specified, it will be replaced by a unique CSS class (%s); CSS selectors other than selector may affect the entire page.?',
-														'vk-blocks'
+												{createInterpolateElement(
+													sprintf(
+														/* translators: If selector is specified, it will be replaced by a unique CSS class (<code>.%s</code>); CSS selectors other than selector may affect the entire page. */
+														__(
+															'If selector is specified, it will be replaced by a unique CSS class (<code>.%s</code>); CSS selectors other than selector may affect the entire page.',
+															'vk-blocks'
+														),
+														textStyleListObj.class_name
 													),
-													textStyleListObj.class_name
+													{
+														code: <code />,
+													}
 												)}
 											</p>
 											<p>{__('Example:', 'vk-blocks')}</p>

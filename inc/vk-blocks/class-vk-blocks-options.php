@@ -26,20 +26,17 @@ class VK_Blocks_Options {
 	 */
 	private function __construct() {
 		add_action( 'init', array( $this, 'register_setting' ) );
-		add_action( 'admin_init', array( $this, 'migrate_balloon_meta' ) );
+		add_action( 'admin_init', array( $this, 'migrate_options' ) );
 	}
 
 	/**
-	 *  Migrate Balloon Meta
-	 *
-	 * 以前使用されていたvk_blocks_balloon_metaをvk_blocks_optionsにマイグレーションする
+	 *  Migrate Options
 	 */
-	public static function migrate_balloon_meta() {
+	public static function migrate_options() {
+		// 以前使用されていたvk_blocks_balloon_metaをvk_blocks_optionsにマイグレーションする
 		$old_balloon_options = get_option( 'vk_blocks_balloon_meta' );
 		$options             = get_option( 'vk_blocks_options' );
-		// Balloon_meta_listsが初期値以外の時に実行
-		$options_defaults = self::get_vk_blocks_options_defaults();
-		if ( ! empty( $old_balloon_options ) && ! empty( $options['balloon_meta_lists'] ) && $options['balloon_meta_lists'] === $options_defaults['balloon_meta_lists'] ) {
+		if ( ! empty( $old_balloon_options ) && empty( $options['balloon_meta_lists'] ) ) {
 			$migrate_balloon_meta_lists = array();
 			foreach ( $old_balloon_options['default_icons'] as $option ) {
 				$new_array = array(
@@ -54,7 +51,7 @@ class VK_Blocks_Options {
 			$options['balloon_meta_lists'] = $migrate_balloon_meta_lists;
 			update_option( 'vk_blocks_options', $options );
 		}
-		if ( array_key_exists( 'balloon_meta_lists', $options ) ) {
+		if ( ! empty( $old_balloon_options ) ) {
 			delete_option( 'vk_blocks_balloon_meta' );
 		}
 	}

@@ -2,7 +2,7 @@
  * WordPress dependencies
  */
 import { __, sprintf } from '@wordpress/i18n';
-import { useContext } from '@wordpress/element';
+import { useContext, createInterpolateElement } from '@wordpress/element';
 import {
 	CheckboxControl,
 	BaseControl,
@@ -338,13 +338,18 @@ export default function AdminCustomFormat() {
 												}
 											/>
 											<p>
-												{sprintf(
-													// translators: If selector is specified, it will be replaced by a unique CSS class (%s); CSS selectors other than selector may affect the entire page.
-													__(
-														'If selector is specified, it will be replaced by a unique CSS class (%s); CSS selectors other than selector may affect the entire page.?',
-														'vk-blocks'
+												{createInterpolateElement(
+													sprintf(
+														/* translators: If selector is specified, it will be replaced by a unique CSS class (<code>.%s</code>); CSS selectors other than selector may affect the entire page. */
+														__(
+															'If selector is specified, it will be replaced by a unique CSS class (<code>.%s</code>); CSS selectors other than selector may affect the entire page.',
+															'vk-blocks'
+														),
+														textStyleListObj.class_name
 													),
-													textStyleListObj.class_name
+													{
+														code: <code />,
+													}
 												)}
 											</p>
 											<p>{__('Example:', 'vk-blocks')}</p>

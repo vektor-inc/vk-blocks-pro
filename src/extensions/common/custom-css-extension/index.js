@@ -6,7 +6,6 @@ import { addFilter } from '@wordpress/hooks';
 import {
 	PanelBody,
 	Icon,
-	Button,
 	ExternalLink,
 	ToggleControl,
 } from '@wordpress/components';
@@ -14,7 +13,6 @@ import { InspectorControls } from '@wordpress/block-editor';
 import { createHigherOrderComponent, useInstanceId } from '@wordpress/compose';
 import { hasBlockSupport } from '@wordpress/blocks';
 import { useEffect } from '@wordpress/element';
-import { addQueryArgs } from '@wordpress/url';
 import { useSelect, useDispatch } from '@wordpress/data';
 
 /**
@@ -226,8 +224,8 @@ export const withInspectorControls = createHigherOrderComponent(
 						</pre>
 						<ToggleControl
 							label={__(
-								'識別表示を表示する。',
-								// 'Display a custom CSS identification display.',
+								'全てのCSS識別表示を表示する。',
+								// 'Show all CSS identifiers.',
 								'vk-blocks'
 							)}
 							checked={
@@ -238,23 +236,6 @@ export const withInspectorControls = createHigherOrderComponent(
 							}
 							onChange={updateSettings}
 						/>
-						<p>
-							{__(
-								'If you want the edit screen to be as close to the public screen as possible, or if your own CSS interferes with the CSS for the identification display and does not display as intended on the edit screen, please hide it.',
-								'vk-blocks'
-							)}
-						</p>
-						<Button
-							href={addQueryArgs(
-								'options-general.php?page=vk_blocks_options#custom-css-setting'
-							)}
-							target="_blank"
-							rel="noreferrer"
-							variant="secondary"
-							isSmall
-						>
-							{__('Custom CSS Setting', 'vk-blocks')}
-						</Button>
 					</PanelBody>
 				</InspectorControls>
 			</>

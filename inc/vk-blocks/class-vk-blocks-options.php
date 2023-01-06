@@ -39,7 +39,7 @@ class VK_Blocks_Options {
 		$options             = get_option( 'vk_blocks_options' );
 		// Balloon_meta_listsが初期値以外の時に実行
 		$options_defaults = self::get_vk_blocks_options_defaults();
-		if ( ! empty( $old_balloon_options ) && $options['balloon_meta_lists'] === $options_defaults['balloon_meta_lists'] ) {
+		if ( ! empty( $old_balloon_options ) && ! empty( $options['balloon_meta_lists'] ) && $options['balloon_meta_lists'] === $options_defaults['balloon_meta_lists'] ) {
 			$migrate_balloon_meta_lists = array();
 			foreach ( $old_balloon_options['default_icons'] as $option ) {
 				$new_array = array(

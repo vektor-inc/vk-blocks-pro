@@ -67,6 +67,7 @@ e.g.
 [ Bug fix ][ Slider ] Set default value for unset time and speed.
 [ Specification Change ] Update Plugin Update Checker to 5.0
 [ Other ] Update VK Breadcrumb lib 0.2.5
+[ Bug fix ][ table style ] Fix bug of under the active theme.json environment, If you use the table styles that, table border property become not reflection.
 
 = 1.48.0 =
 [ Add Function ][ Admin screen ] Added block manager function.

@@ -52,8 +52,6 @@ class DynamicText extends WP_UnitTestCase {
 		);
 		$data['child_page_id'] = wp_insert_post( $post );
 
-		$post_type_name = get_post_type_object( $post['post_type'] );
-
 		$test_data = array(
 			// 投稿ページの投稿タイプ名
 			array(
@@ -87,13 +85,13 @@ class DynamicText extends WP_UnitTestCase {
 				'target_url' => get_permalink( $data['parent_page_id'] ),
 				'correct'    => '<div class="vk_dynamicText wp-block-vk-blocks-dynamic-text"><p class="vk_dynamicText_content">ancestor_page</p></div>',
 			),
-			// 親ページのタイトル（先祖ではなく親ページ）
+			// 親ページのタイトル（先祖ページ）
 			array(
 				'attributes' => array(
 					'displayElement' => 'ancestor-page',
 				),
 				'target_url' => get_permalink( $data['child_page_id'] ),
-				'correct'    => '<div class="vk_dynamicText wp-block-vk-blocks-dynamic-text"><p class="vk_dynamicText_content">parent_page</p></div>',
+				'correct'    => '<div class="vk_dynamicText wp-block-vk-blocks-dynamic-text"><p class="vk_dynamicText_content">ancestor_page</p></div>',
 			),
 		);
 

@@ -41,7 +41,7 @@ function vk_blocks_dynamic_text_render_callback( $attributes ) {
 	}
 	// カスタムフィールド選択時を未実装のためコメントアウト
 	// elseif ( 'custom-field' === $options['displayElement'] ) {
-	// 	$block_content = sprintf( '<p class="vk_dynamicText_content">%1$s</p>', $custom_field );
+	// $block_content = sprintf( '<p class="vk_dynamicText_content">%1$s</p>', $custom_field );
 	// }
 
 	$block = '';

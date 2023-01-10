@@ -11,6 +11,7 @@ import {
 import { useCachedTruthy } from '@wordpress/block-editor';
 import { Popover, FontSizePicker, Button } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
+import { useMemo } from '@wordpress/element';
 
 /**
  * Internal dependencies
@@ -117,6 +118,11 @@ export default function InlineFontSizeUI({
 		? { editableContentElement: contentRef.current, value, settings }
 		: { ref: contentRef, value };
 	const popoverAnchor = useCachedTruthy(_useAnchor(useAnchorObj));
+
+	const rect = useMemo( () => popoverAnchor.getBoundingClientRect(), [] );
+	if ( !! popoverAnchor?.ownerDocument ) {
+		popoverAnchor.getBoundingClientRect = () => rect;
+	}
 
 	return (
 		<Popover

@@ -22,9 +22,16 @@ function vk_blocks_dynamic_text_render_callback( $attributes ) {
 	$post_type_info = VkHelpers::get_post_type_info();
 	$post_type_name = $post_type_info['name'];
 
-	// 親ページのタイトルを取得
-	$post         = get_post();
-	$parent_title = get_post( $post->post_parent )->post_title;
+	// 先祖階層のページタイトルを取得
+	$post                = get_post();
+	$ancestor_post_title = '';
+	if ( ! empty( $post ) && ! empty( $post->ancestors ) ) {
+		foreach ( $post->ancestors as $post_id ) {
+			$ancestor_post_title = get_post( $post_id )->post_title;
+		}
+	} elseif ( ! empty( $post ) ) {
+		$ancestor_post_title = get_post( $post->ID )->post_title;
+	}
 
 	// カスタムフィールド
 	// $custom_field = __( 'カスタムフィールドを入れる', 'vk-blocks' );
@@ -37,7 +44,7 @@ function vk_blocks_dynamic_text_render_callback( $attributes ) {
 	if ( 'post-type' === $options['displayElement'] ) {
 		$block_content = sprintf( '<p class="vk_dynamicText_content">%1$s</p>', $post_type_name );
 	} elseif ( 'ancestor-page' === $options['displayElement'] ) {
-		$block_content = sprintf( '<p class="vk_dynamicText_content">%1$s</p>', $parent_title );
+		$block_content = sprintf( '<p class="vk_dynamicText_content">%1$s</p>', $ancestor_post_title );
 	}
 	// カスタムフィールド選択時を未実装のためコメントアウト
 	// elseif ( 'custom-field' === $options['displayElement'] ) {

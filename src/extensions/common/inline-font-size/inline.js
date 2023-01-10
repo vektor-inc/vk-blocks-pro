@@ -119,8 +119,8 @@ export default function InlineFontSizeUI({
 		: { ref: contentRef, value };
 	const popoverAnchor = useCachedTruthy(_useAnchor(useAnchorObj));
 
-	const rect = useMemo( () => popoverAnchor.getBoundingClientRect(), [] );
-	if ( !! popoverAnchor?.ownerDocument ) {
+	const rect = useMemo(() => popoverAnchor.getBoundingClientRect(), []);
+	if (!!popoverAnchor?.ownerDocument) {
 		popoverAnchor.getBoundingClientRect = () => rect;
 	}
 

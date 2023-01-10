@@ -59,10 +59,10 @@ export default function DynamicTextEdit(props) {
 									'vk-blocks'
 								),
 							},
-							{
-								value: 'custom-field',
-								label: __('カスタムフィールド', 'vk-blocks'),
-							},
+							// {
+							// 	value: 'custom-field',
+							// 	label: __('カスタムフィールド', 'vk-blocks'),
+							// },
 						]}
 					/>
 				</PanelBody>

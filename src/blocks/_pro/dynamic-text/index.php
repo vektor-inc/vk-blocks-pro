@@ -27,7 +27,7 @@ function vk_blocks_dynamic_text_render_callback( $attributes ) {
 	$parent_title = get_post( $post->post_parent )->post_title;
 
 	// カスタムフィールド
-	$custom_field = __( 'カスタムフィールドを入れる', 'vk-blocks' );
+	// $custom_field = __( 'カスタムフィールドを入れる', 'vk-blocks' );
 
 	$classes = 'vk_dynamicText';
 	// block.jsonのSupportsで設定したクラス名やスタイルを取得する
@@ -38,9 +38,11 @@ function vk_blocks_dynamic_text_render_callback( $attributes ) {
 		$block_content = sprintf( '<p class="vk_dynamicText_content">%1$s</p>', $post_type_name );
 	} elseif ( 'ancestor-page' === $options['displayElement'] ) {
 		$block_content = sprintf( '<p class="vk_dynamicText_content">%1$s</p>', $parent_title );
-	} elseif ( 'custom-field' === $options['displayElement'] ) {
-		$block_content = sprintf( '<p class="vk_dynamicText_content">%1$s</p>', $custom_field );
 	}
+	// カスタムフィールド選択時を未実装のためコメントアウト
+	// elseif ( 'custom-field' === $options['displayElement'] ) {
+	// 	$block_content = sprintf( '<p class="vk_dynamicText_content">%1$s</p>', $custom_field );
+	// }
 
 	$block = '';
 	if ( 'please-select' !== $options['displayElement'] ) {

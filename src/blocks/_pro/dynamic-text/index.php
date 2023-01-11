@@ -81,6 +81,18 @@ function vk_blocks_register_block_dynamic_text() {
 			'style'           => 'vk-blocks/dynamic-text',
 			'editor_style'    => 'vk-blocks-build-editor-css',
 			'editor_script'   => 'vk-blocks-build-js',
+			'attributes'      => array_merge(
+				array(
+					'className' => array(
+						'type'    => 'string',
+						'default' => '',
+					),
+					'displayElement' => array(
+						'type'    => 'string',
+						'default' => 'please-select',
+					),
+				),
+			),
 			'render_callback' => 'vk_blocks_dynamic_text_render_callback',
 		)
 	);

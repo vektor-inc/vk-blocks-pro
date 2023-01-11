@@ -83,7 +83,7 @@ function vk_blocks_register_block_dynamic_text() {
 			'editor_script'   => 'vk-blocks-build-js',
 			'attributes'      => array_merge(
 				array(
-					'className' => array(
+					'className'      => array(
 						'type'    => 'string',
 						'default' => '',
 					),
@@ -91,7 +91,7 @@ function vk_blocks_register_block_dynamic_text() {
 						'type'    => 'string',
 						'default' => 'please-select',
 					),
-				),
+				)
 			),
 			'render_callback' => 'vk_blocks_dynamic_text_render_callback',
 		)

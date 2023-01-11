@@ -13,7 +13,6 @@ import { useEffect } from '@wordpress/element';
  * External dependencies
  */
 import classnames from 'classnames';
-import { find } from 'lodash';
 
 /**
  * Internal dependencies
@@ -230,12 +229,10 @@ addFilter(
 				activeMarginBottomClassArray.slice(-1)[0];
 
 			// アクティブマージンのObjectを作る
-			const activeMarginTop = find(
-				marginTopControls,
+			const activeMarginTop = marginTopControls.find(
 				(control) => control.marginClass === activeMarginTopClass
 			);
-			const activeMarginBottom = find(
-				marginBottomControls,
+			const activeMarginBottom = marginBottomControls.find(
 				(control) => control.marginClass === activeMarginBottomClass
 			);
 

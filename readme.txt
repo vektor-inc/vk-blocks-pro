@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.9
 Tested up to: 6.1.0
-Stable tag: 1.47.0.1
+Stable tag: 1.48.0.2
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,6 +63,12 @@ e.g.
 
 
 == Changelog ==
+
+= 1.48.1 =
+[ Bug fix ][ Slider ] Set default value for unset time and speed.
+[ Bug fix ][ table style ] Fix bug of under the active theme.json environment, If you use the table styles that, table border property become not reflection.
+[ Other ] Update Plugin Update Checker to 5.0
+[ Other ] Update VK Breadcrumb lib 0.2.5
 
 = 1.48.0 =
 [ Add Function ][ Admin screen ] Added block manager function.

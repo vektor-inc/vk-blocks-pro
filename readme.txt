@@ -64,6 +64,8 @@ e.g.
 
 == Changelog ==
 
+[ Add Function ][ Custom Block Style Setting (Pro) ] Add Custom Block Style Setting extension in admin.
+
 = 1.48.1 =
 [ Bug fix ][ Slider ] Set default value for unset time and speed.
 [ Bug fix ][ table style ] Fix bug of under the active theme.json environment, If you use the table styles that, table border property become not reflection.

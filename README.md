@@ -82,6 +82,12 @@ WP_BASE_URL='http://localhost:xxxx/' npm run test:e2e
 npm run test:e2e ./test/e2e-tests/specs/xxxx.test.js
 ```
 
+wp-env の port を変更していて、単体でテストしたい場合
+（spacerの例）
+```
+WP_BASE_URL='http://localhost:xxxx/'npm run test:e2e ./test/e2e-tests/specs/spacer.test.js    
+```
+
 ## pre-push、pre-commit
 プッシュ時にphpのformat、phpcsのチェック、
 コミット時にlintが実行されます。

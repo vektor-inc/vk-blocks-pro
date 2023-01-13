@@ -71,6 +71,11 @@ npm run phpunit
 npm run test:e2e
 ```
 
+GUI無しの場合
+```
+npm run test:e2e-no-gui
+```
+
 wp-env の port を変更している場合
 
 ```
@@ -87,6 +92,9 @@ wp-env の port を変更していて、単体でテストしたい場合
 ```
 WP_BASE_URL='http://localhost:xxxx/' npm run test:e2e ./test/e2e-tests/specs/spacer.test.js    
 ```
+
+
+
 
 ## pre-push、pre-commit
 プッシュ時にphpのformat、phpcsのチェック、

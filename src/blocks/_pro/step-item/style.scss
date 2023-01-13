@@ -21,7 +21,7 @@
 			margin-top: 0;
 		}
 		&_content {
-			display:block; overflow:hidden; // これがないと margin-bottom が content を貫通してしまう
+			display:grid; // block & hidden だと中の要素のシャドウが切れるので grid に変更
 			& > *:last-child{
 				margin-bottom:var(--vk-margin-md);
 			}

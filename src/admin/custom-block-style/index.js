@@ -82,18 +82,10 @@ function AdminCustomBlockStyle({
 		<>
 			<section>
 				<h3 id="custom-block-style-setting">
-					{__(
-						'カスタムブロックスタイル設定',
-						// 'Custom Format Setting',
-						'vk-blocks'
-					)}
+					{__('Custom Block Style Setting', 'vk-blocks')}
 				</h3>
 				<p>
-					{__(
-						'ブロックスタイル設定を登録することができます。',
-						// 'You can apply commonly used block style on the block toolbar.',
-						'vk-blocks'
-					)}
+					{__('Block style settings can be registered.', 'vk-blocks')}
 				</p>
 				{Object.keys(vkBlocksOption.custom_block_style_lists).map(
 					(key, index, array) => {

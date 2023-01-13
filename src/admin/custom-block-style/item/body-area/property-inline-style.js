@@ -28,8 +28,7 @@ export const PropertyInlineStyle = ({ index, onChange, blockStyleListObj }) => {
 					sprintf(
 						/* translators: If selector is specified, it is replaced by CSS class (is-style-%1$s); CSS selectors other than selector and is-style-%2$s may affect the entire page. */
 						__(
-							'selector を指定した場合、CSS クラス(<code>.is-style-%1$s</code>)に置き換わります。selector,<code>.is-style-%2$s</code>以外のCSSセレクターは、ページ全体に影響する可能性があります。',
-							// If selector is specified, it is replaced by CSS class (is-style-%1$s); CSS selectors other than selector and is-style-%2$s may affect the entire page.
+							'If selector is specified, it will be replaced with CSS class (<code>.is-style-%1$s</code>). CSS selectors other than selector,<code>.is-style-%2$s</code> may affect the entire page.',
 							'vk-blocks'
 						),
 						blockStyleListObj.property_name,

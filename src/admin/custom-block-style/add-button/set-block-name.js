@@ -19,20 +19,10 @@ export const SetBlockName = ({
 
 	return (
 		<>
-			<p>
-				{__(
-					'対象のブロック (必須/変更不可)',
-					// 'Target Block (Required/Unchangeable)',
-					'vk-blocks'
-				)}
-			</p>
+			<p>{__('Target Block (Required/Unchangeable)', 'vk-blocks')}</p>
 			{!blockName && (
 				<p className="custom_block_style_item_name_error">
-					{__(
-						'対象のブロックを設定してください。',
-						// 'Set the target block.',
-						'vk-blocks'
-					)}
+					{__('Set the target block.', 'vk-blocks')}
 				</p>
 			)}
 			{activeBlockType && (
@@ -47,16 +37,8 @@ export const SetBlockName = ({
 				</div>
 			)}
 			<SearchControl
-				label={__(
-					'ブロックの検索',
-					// 'Search for a block',
-					'vk-blocks'
-				)}
-				placeholder={__(
-					'ブロックの検索',
-					// 'Search for a block',
-					'vk-blocks'
-				)}
+				label={__('Search for a block', 'vk-blocks')}
+				placeholder={__('Search for a block', 'vk-blocks')}
 				value={search}
 				onChange={(nextSearch) => setSearch(nextSearch)}
 				className="block-manager__search"

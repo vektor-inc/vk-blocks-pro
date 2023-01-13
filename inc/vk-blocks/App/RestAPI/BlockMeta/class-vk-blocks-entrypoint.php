@@ -139,7 +139,7 @@ class Vk_Blocks_EntryPoint {
 		$options       = VK_Blocks_Options::get_options();
 		$waiting_lists = array();
 		foreach ( $options as $option_name => $value ) {
-			if ( ! in_array( $option_name, $this->allow_block_editor_option_lists ) ) {
+			if ( ! in_array( $option_name, self::$allow_block_editor_option_lists ) ) {
 				$waiting_lists[ $option_name ] = $options[ $option_name ];
 			}
 		}

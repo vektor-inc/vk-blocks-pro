@@ -62,10 +62,10 @@ class RestAPITest extends WP_UnitTestCase {
         print '------------------------------------' . PHP_EOL;
         print 'RestAPITest::test_get_vk_options_value()' . PHP_EOL;
         print '------------------------------------' . PHP_EOL;
-				// var_dump('$vk_options_expect');
-				// var_dump($vk_options_expect->{'data'});
-				// var_dump('$actual');
-				// var_dump($actual);
+        // var_dump('$vk_options_expect');
+        // var_dump($vk_options_expect->{'data'});
+        // var_dump('$actual');
+        // var_dump($actual);
         $this->assertSame( $vk_options_expect->{'data'}, $actual );
 
     }

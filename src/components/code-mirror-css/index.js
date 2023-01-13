@@ -34,7 +34,10 @@ export const CodeMirrorCss = (props) => {
 				// https://uiwjs.github.io/react-codemirror/#/extensions/color
 				extensions={[css(), EditorView.lineWrapping]}
 				value={value}
-				onChange={onChange}
+				onChange={(newValue) => {
+					newValue = newValue.replace(/(<([^>]+)>)/gi, '');
+					onChange(newValue);
+				}}
 				style={style}
 			/>
 			{(() => {

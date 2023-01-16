@@ -87,7 +87,7 @@ function vk_blocks_post_list_editor_refresh_block_data() {
 	$last_cached = ! empty( $options['last-block-data-cached'] ) ? $options['last-block-data-cached'] : '1970-01-01 00:00:00';
 
 	// 現在の時刻を取得
-	$current_time = date( 'Y-m-d H:i:s' );
+	$current_time = gmdate( 'Y-m-d H:i:s' );
 
 	// 差分を取得・キャッシュが初めてならキャッシュの有効時間が経過したものとみなす
 	$diff = strtotime( $current_time ) - strtotime( $last_cached );

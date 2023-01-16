@@ -7,7 +7,7 @@
 
 /**
  * Post List Get Block Data
- * 
+ *
  * @return array
  */
 function vk_blocks_post_list_get_block_data() {
@@ -70,7 +70,6 @@ function vk_blocks_post_list_get_block_data() {
 	set_transient( 'vk_blocks_post_list_block_data', $data, 60 * 60 * 24 );
 
 	return $data;
-
 }
 
 /**
@@ -85,16 +84,16 @@ function vk_blocks_post_list_editor_refresh_block_data() {
 	$cache_time = 60 * 60;
 
 	// 最後にキャッシュされた時間を取得
-	$last_cached = ! empty( $options['last-block-data-cached'] ) ? $options['last-block-data-cached'] : '1970-01-01 00:00:00' ;
+	$last_cached = ! empty( $options['last-block-data-cached'] ) ? $options['last-block-data-cached'] : '1970-01-01 00:00:00';
 
 	// 現在の時刻を取得
 	$current_time = date( 'Y-m-d H:i:s' );
 
 	// 差分を取得・キャッシュが初めてならキャッシュの有効時間が経過したものとみなす
-	$diff = strtotime( $current_time ) -  strtotime( $last_cached );
+	$diff = strtotime( $current_time ) - strtotime( $last_cached );
 
 	// フラグがなければパターンのデータのキャッシュをパージ
-	if ( $diff > $cache_time  ) {
+	if ( $diff > $cache_time ) {
 		// パターンのデータのキャッシュをパージ
 		delete_transient( 'vkfs_block_data' );
 		// 最後にキャッシュされた時間を更新

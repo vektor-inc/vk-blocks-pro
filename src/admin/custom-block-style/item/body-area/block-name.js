@@ -8,11 +8,7 @@ export const BlockName = ({ activeBlockType, blockStyleListObj }) => {
 	return (
 		<div className="custom_block_style_item_block_name">
 			<div className="custom_block_style_item_block_name_target">
-				{__(
-					`対象のブロック`,
-					// 'Target block',
-					'vk-blocks'
-				)}
+				{__('Target block', 'vk-blocks')}
 			</div>
 			{activeBlockType && (
 				<>

@@ -79,19 +79,11 @@ export const AddButton = ({
 				variant="secondary"
 				onClick={openModal}
 			>
-				{__(
-					'ブロックスタイル設定を追加',
-					// 'Add Custom Format',
-					'vk-blocks'
-				)}
+				{__('Add Custom Block Style', 'vk-blocks')}
 			</Button>
 			{isModalOpen && (
 				<Modal
-					title={__(
-						'ブロックスタイル設定を追加',
-						// 'Add Custom Format',
-						'vk-blocks'
-					)}
+					title={__('Add Custom Block Style', 'vk-blocks')}
 					onRequestClose={closeModal}
 					isDismissible={false}
 					className="custom_block_style_add_modal"
@@ -118,8 +110,7 @@ export const AddButton = ({
 						<TextControl
 							className="custom_block_style_item_title"
 							label={__(
-								'ブロックスタイル タイトル（変更可能）',
-								// 'Toolbar title (Changeable)',
+								'Toolbar title (Changeable)',
 								'vk-blocks'
 							)}
 							onChange={(value) => {
@@ -146,11 +137,7 @@ export const AddButton = ({
 										variant="primary"
 										disabled={!isDisableAdd}
 									>
-										{__(
-											'追加',
-											// 'Add',
-											'vk-blocks'
-										)}
+										{__('Add', 'vk-blocks')}
 									</Button>
 								</FlexItem>
 							</Flex>

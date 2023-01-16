@@ -63,11 +63,7 @@ export const TitleArea = ({
 									)
 								}
 							>
-								{__(
-									'編集',
-									// 'Edit',
-									'vk-blocks'
-								)}
+								{__('Edit', 'vk-blocks')}
 							</Button>
 						</FlexItem>
 						<FlexItem>

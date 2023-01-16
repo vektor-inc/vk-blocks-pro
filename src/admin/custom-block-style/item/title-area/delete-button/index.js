@@ -28,11 +28,7 @@ export const DeleteButton = (props) => {
 
 	const textStyleTitle = !!blockStyleListObj.property_label
 		? blockStyleListObj.property_label
-		: __(
-				'ブロックスタイル設定',
-				// 'Custom Block Style',
-				'vk-blocks'
-		  );
+		: __('Custom Block Style Setting', 'vk-blocks');
 
 	return (
 		<div className="custom_block_style_item_delete_button">
@@ -47,11 +43,7 @@ export const DeleteButton = (props) => {
 				<Modal
 					title={sprintf(
 						// translators: Would you like to delete %s
-						__(
-							'%sを削除しますか？',
-							// 'Would you like to delete %s?',
-							'vk-blocks'
-						),
+						__('Would you like to delete %s?', 'vk-blocks'),
 						textStyleTitle
 					)}
 					onRequestClose={closeModal}
@@ -60,8 +52,7 @@ export const DeleteButton = (props) => {
 					<div className="custom_block_style_delete_modal">
 						<p>
 							{__(
-								'保存したコンテンツにこのブロックスタイルがある場合、スタイルが解除されます。',
-								// 'If this Block Style is used for saved content, the style may change.',
+								'If this Block Style is used for saved content, the style may change.',
 								'vk-blocks'
 							)}
 						</p>

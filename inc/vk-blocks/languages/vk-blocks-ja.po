@@ -89,6 +89,61 @@ msgstr "画像"
 msgid "Block Manager Setting"
 msgstr "ブロックマネージャー設定"
 
+#: src/admin/custom-block-style/index.js:85
+#: inc/vk-blocks/admin/admin.php:76
+msgid "Custom Block Style Setting"
+msgstr "カスタムブロックスタイル設定"
+
+#: src/admin/custom-block-style/index.js:91
+msgid "Block style settings can be registered."
+msgstr "ブロックスタイル設定を登録することができます。"
+
+#: src/admin/custom-block-style/item/body-area/block-name.js:11
+msgid "Target block"
+msgstr "対象のブロック"
+
+#: src/admin/custom-block-style/add-button/index.js:89
+msgid "Add Custom Block Style"
+msgstr "ブロックスタイル設定を追加"
+
+#: src/admin/custom-block-style/add-button/set-block-name.js:23
+msgid "Target Block (Required/Unchangeable)"
+msgstr "対象のブロック (必須/変更不可)"
+
+#: src/admin/custom-block-style/add-button/set-block-name.js:30
+msgid "Set the target block."
+msgstr "対象のブロックを設定してください。"
+
+#: src/admin/custom-block-style/add-button/set-block-name.js:52
+msgid "Search for a block"
+msgstr "ブロックの検索"
+
+#. (e.g.) %s-block-style
+#: src/admin/custom-block-style/add-button/set-property-name.js:100
+msgid "(e.g.) %s-block-style"
+msgstr "(例) %s-block-style"
+
+#: src/admin/custom-block-style/add-button/set-property-name.js:37
+msgid "Only alphanumeric characters, hyphens, and underscores are allowed."
+msgstr "英字から始まり,英数字,ハイフン,アンダーバーのみ使用可能です"
+
+#. If selector is specified, it is replaced by CSS class (is-style-%1$s); CSS selectors other than selector and is-style-%2$s may affect the entire page.
+#: src/admin/custom-block-style/item/body-area/property-inline-style.js:30
+msgid "If selector is specified, it will be replaced with CSS class (<code>.is-style-%1$s</code>). CSS selectors other than selector,<code>.is-style-%2$s</code> may affect the entire page."
+msgstr "selector を指定した場合、CSS クラス(<code>.is-style-%1$s</code>)に置き換わります。selector,<code>.is-style-%2$s</code>以外のCSSセレクターは、ページ全体に影響する可能性があります。"
+
+#: src/admin/custom-block-style/item/body-area/property-label.js:14
+msgid "Block Style Labels"
+msgstr "ブロックスタイル ラベル"
+
+#: src/admin/custom-block-style/item/title-area/delete-button/index.js:60
+msgid "If this Block Style is used for saved content, the style may change."
+msgstr "保存したコンテンツにこのブロックスタイルがある場合、スタイルが解除されます。"
+
+#: src/admin/custom-block-style/item/title-area/index.js:66
+msgid "Edit"
+msgstr "編集"
+
 #: src/admin/custom-css.js:20
 #: src/extensions/common/custom-css-extension/index.js:238
 #: inc/vk-blocks-pro/admin-pro/admin-pro.php:15
@@ -124,6 +179,7 @@ msgstr "キャンセル"
 msgid "Add"
 msgstr "追加"
 
+#: src/admin/custom-block-style/add-button/set-property-name.js:33
 #: src/admin/custom-format/add-item.js:70
 msgid "Please enter a string"
 msgstr "文字列を入力してください"
@@ -139,6 +195,14 @@ msgstr "クラス名は必須項目です"
 #: src/admin/custom-format/add-item.js:93
 msgid "Already registered"
 msgstr "すでに登録されています"
+
+#: src/admin/custom-block-style/add-button/set-property-name.js:90
+msgid "The identifier of the style used to compute a CSS class. (Required/Unchangeable)"
+msgstr "CSSクラスの算出に使用されるスタイルの識別子 (必須/変更不可)"
+
+#: src/admin/custom-block-style/add-button/set-property-name.js:94
+msgid "This will be the CSS class name following is-style-."
+msgstr "is-style-に続くCSSクラス名になります。"
 
 #: src/admin/custom-format/delete-item-button.js:31
 msgid "書式設定"

@@ -35,8 +35,7 @@ export const SetPropertyName = ({
 		if (!/^[a-z][a-z0-9-_]*$/.test(value)) {
 			bool = false;
 			message = __(
-				'英字から始まり,英数字,ハイフン,アンダーバーのみ使用可能です',
-				// 'Only alphanumeric characters, hyphens, and underscores are allowed.',
+				'Only alphanumeric characters, hyphens, and underscores are allowed.',
 				'vk-blocks'
 			);
 		}
@@ -54,11 +53,7 @@ export const SetPropertyName = ({
 		vkBlocksOption.custom_block_style_lists?.forEach((option) => {
 			if (option.property_name === value) {
 				bool = false;
-				message = __(
-					'すでに登録されています',
-					// 'Already registered',
-					'vk-blocks'
-				);
+				message = __('Already registered', 'vk-blocks');
 			}
 		});
 
@@ -66,11 +61,7 @@ export const SetPropertyName = ({
 		getBlockStyles(blockName)?.forEach((blockStyle) => {
 			if (blockStyle.name === value) {
 				bool = false;
-				message = __(
-					'すでに登録されています',
-					// 'Already registered',
-					'vk-blocks'
-				);
+				message = __('Already registered', 'vk-blocks');
 			}
 		});
 
@@ -91,22 +82,16 @@ export const SetPropertyName = ({
 			<TextControl
 				className="custom_block_style_item_class_name"
 				label={__(
-					`CSSクラスの算出に使用されるスタイルの識別子 (必須/変更不可)`,
-					// 'The identifier of the style used to compute a CSS class. (Required/Unchangeable)',
+					'The identifier of the style used to compute a CSS class. (Required/Unchangeable)',
 					'vk-blocks'
 				)}
 				help={__(
-					`is-style-に続くCSSクラス名になります。`,
-					// 'This will be the CSS class name following is-style-.',
+					'This will be the CSS class name following is-style-.',
 					'vk-blocks'
 				)}
 				placeholder={sprintf(
 					/* translators: (e.g.) %s-block-style */
-					__(
-						'(例) %s-block-style',
-						// (e.g.) %s-block-style
-						'vk-blocks'
-					),
+					__('(e.g.) %s-block-style', 'vk-blocks'),
 					placeHolder ? placeHolder : 'block-name'
 				)}
 				onChange={(value) => {

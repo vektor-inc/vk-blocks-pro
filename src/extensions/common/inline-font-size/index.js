@@ -3,11 +3,7 @@
  */
 import { __ } from '@wordpress/i18n';
 import { useCallback, useState } from '@wordpress/element';
-import {
-	registerFormatType,
-	removeFormat,
-	getActiveFormat,
-} from '@wordpress/rich-text';
+import { registerFormatType, removeFormat } from '@wordpress/rich-text';
 import { RichTextToolbarButton } from '@wordpress/block-editor';
 import { Icon } from '@wordpress/components';
 
@@ -15,7 +11,7 @@ import { Icon } from '@wordpress/components';
  * Internal dependencies
  */
 import { ReactComponent as IconSVG } from './icon.svg';
-import { default as InlineFontSizeUI } from './inline';
+import { default as InlineFontSizeUI, getActiveInlineFontSize } from './inline';
 
 const name = 'vk-blocks/inline-font-size';
 
@@ -28,25 +24,6 @@ function FontSizeEdit({
 }) {
 	const shortcutType = 'primary';
 	const shortcutChar = 'h';
-
-	// 選択した font-size を格納
-	let selectedFontSize;
-
-	// 保存された font-sizeを取得 font-size:数字+単位
-	let getFontSizeStyle;
-	let getFontSize;
-	if (isActive) {
-		const activeFormat = getActiveFormat(value, name);
-		selectedFontSize = activeFormat.attributes.data;
-
-		getFontSizeStyle = activeFormat.attributes.style;
-		getFontSize = getFontSizeStyle.replace('font-size:', '');
-
-		// フォントサイズを変更した後にリロードするとselectedFontSizeはundefinedになるため
-		if (selectedFontSize === undefined && getFontSize) {
-			selectedFontSize = getFontSize;
-		}
-	}
 
 	const iconStyle = {
 		width: '24px',
@@ -63,7 +40,9 @@ function FontSizeEdit({
 		[setIsSettingFontSize]
 	);
 
-	const hasFontSizeToChoose = !!!value.length || !selectedFontSize;
+	const activeInlineFontSize = getActiveInlineFontSize(value, name);
+
+	const hasFontSizeToChoose = !!!value.length || !activeInlineFontSize;
 	if (!hasFontSizeToChoose && !isActive) {
 		return null;
 	}

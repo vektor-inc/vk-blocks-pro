@@ -41,6 +41,10 @@ const fontSizes = [
 	},
 ];
 
+function parseFontSize(fontSize = '') {
+	return fontSize.replace('font-size:', '');
+}
+
 export function getActiveInlineFontSize(value, name) {
 	const activeInlineFontSizeFormat = getActiveFormat(value, name);
 
@@ -48,7 +52,11 @@ export function getActiveInlineFontSize(value, name) {
 		return undefined;
 	}
 
-	return activeInlineFontSizeFormat.attributes.data;
+	if (activeInlineFontSizeFormat.attributes.data !== undefined) {
+		return activeInlineFontSizeFormat.attributes.data;
+	}
+
+	return parseFontSize(activeInlineFontSizeFormat.attributes.style);
 }
 
 function InlineFontSizePicker({ name, value, onChange, setIsSettingFontSize }) {
@@ -79,14 +87,14 @@ function InlineFontSizePicker({ name, value, onChange, setIsSettingFontSize }) {
 		//setIsSettingFontSize(false);
 	};
 
-	const activeColor = getActiveInlineFontSize(value, name);
+	const activeFontSize = getActiveInlineFontSize(value, name);
 
 	return (
 		<div style={pickerStyle}>
 			<FontSizePicker
 				__nextHasNoMarginBottom
 				fontSizes={fontSizes}
-				value={activeColor}
+				value={activeFontSize}
 				onChange={onInlineFontSizeChange}
 			/>
 			<Button
@@ -94,7 +102,7 @@ function InlineFontSizePicker({ name, value, onChange, setIsSettingFontSize }) {
 					setIsSettingFontSize(false);
 				}}
 				isSmall
-				isSecondary
+				variant="secondary"
 				style={buttonStyle}
 			>
 				{__('Apply', 'vk-blocks')}

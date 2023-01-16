@@ -95,7 +95,7 @@ function vk_blocks_post_list_editor_refresh_block_data() {
 	// フラグがなければパターンのデータのキャッシュをパージ
 	if ( $diff > $cache_time ) {
 		// パターンのデータのキャッシュをパージ
-		delete_transient( 'vkfs_block_data' );
+		delete_transient( 'vk_blocks_post_list_block_data' );
 		// 最後にキャッシュされた時間を更新
 		$options['last-block-data-cached'] = $current_time;
 		// 最低１時間はキャッシュを保持

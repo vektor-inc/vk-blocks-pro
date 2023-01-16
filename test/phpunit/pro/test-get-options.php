@@ -106,6 +106,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 					),
 					'disable_block_lists' => array(),
 					'custom_block_style_lists' => array(),
+					'last-block-data-cached' => '1970-01-01 00:00:00'
 				),
 			),
 			// デフォルトの表示非表示調整 v0.44.13
@@ -564,6 +565,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'property_inline_style' => '.vk-block-style-paragraph-1 { color:red; }',
 						),
 					),
+					'last-block-data-cached' => '2023-01-01 00:00:00',
 				),
 				'correct'  => array(
 					'balloon_border_width' => 2,
@@ -645,6 +647,7 @@ class GetOptionsTest extends WP_UnitTestCase {
 							'property_inline_style' => '.vk-block-style-paragraph-1 { color:red; }',
 						),
 					),
+					'last-block-data-cached' => '2023-01-01 00:00:00'
 				),
 			),
 		);

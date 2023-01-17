@@ -54,6 +54,8 @@ document.defaultView.addEventListener('load', function () {
 			if (attributes.effect !== 'fade') {
 				if (attributes.slidesPerViewMobile) {
 					SwiperSetting += `slidesPerView: ${attributes.slidesPerViewMobile},`;
+				} else if (attributes.slidesPerView) {
+					SwiperSetting += `slidesPerView: ${attributes.slidesPerView},`;
 				} else {
 					SwiperSetting += `slidesPerView: 1,`;
 				}
@@ -70,7 +72,7 @@ document.defaultView.addEventListener('load', function () {
 							},
 						`;
 					}
-					if (attributes.slidesPerViewTablet) {
+					if (attributes.slidesPerViewPC) {
 						SwiperSetting += `
 						992: {
 							slidesPerView: ${attributes.slidesPerViewPC}

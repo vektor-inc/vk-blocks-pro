@@ -57,7 +57,10 @@ document.defaultView.addEventListener('load', function () {
 				} else {
 					SwiperSetting += `slidesPerView: 1,`;
 				}
-				if (attributes.slidesPerViewTablet || attributes.slidesPerViewPC) {
+				if (
+					attributes.slidesPerViewTablet ||
+					attributes.slidesPerViewPC
+				) {
 					// Responsive breakpoints
 					SwiperSetting += `breakpoints: {`;
 					if (attributes.slidesPerViewTablet) {

@@ -69,7 +69,7 @@ document.defaultView.addEventListener('load', function () {
 						SwiperSetting += `
 						576: {
 							slidesPerView: ${attributes.slidesPerViewTablet}
-							},
+						},
 						`;
 					}
 					if (attributes.slidesPerViewPC) {

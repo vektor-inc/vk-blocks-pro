@@ -264,7 +264,6 @@ function vk_blocks_register_block_post_list() {
 			'render_callback' => 'vk_blocks_post_list_render_callback',
 		)
 	);
-
 }
 add_action( 'init', 'vk_blocks_register_block_post_list', 99 );
 
@@ -286,6 +285,5 @@ function VK_blocks_post_list_set_data() {
 			'term_by_taxonomy_name' => $block_data['term_by_taxonomy_name'],
 		)
 	);
-
 }
 add_action( 'enqueue_block_editor_assets', 'vk_blocks_register_block_post_list', 99 );

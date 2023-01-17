@@ -33,7 +33,7 @@ const generateHeightCss = (attributes, cssSelector = '') => {
 
 
 export default function SliderHook( {el,attributes}) {
-	const cssSelector = `.vk_slider_${attributes.clientId},`;
+	const cssSelector = `.vk_slider_${attributes.blockId},`;
 	const cssTag = generateHeightCss(attributes, cssSelector);
 	return (
 		<>

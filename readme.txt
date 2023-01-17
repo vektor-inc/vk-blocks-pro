@@ -65,6 +65,8 @@ e.g.
 == Changelog ==
 
 [ Add Function ][ Custom Block Style Setting (Pro) ] Add Custom Block Style Setting extension in admin.
+[ Bug fix ][ Slider ] Add Slider per view Setting for Mobile, Tablet, PC.
+
 
 = 1.48.1 =
 [ Bug fix ][ Slider ] Set default value for unset time and speed.

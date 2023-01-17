@@ -265,6 +265,14 @@ function vk_blocks_register_block_post_list() {
 		)
 	);
 
+}
+add_action( 'init', 'vk_blocks_register_block_post_list', 99 );
+
+/**
+ * 投稿タイプとタクソノミーを JS に渡す
+ */
+function VK_blocks_post_list_set_data() {
+
 	// キャッシュからデータを取得
 	$block_data = vk_blocks_post_list_get_block_data();
 
@@ -278,5 +286,6 @@ function vk_blocks_register_block_post_list() {
 			'term_by_taxonomy_name' => $block_data['term_by_taxonomy_name'],
 		)
 	);
+
 }
-add_action( 'init', 'vk_blocks_register_block_post_list', 99 );
+add_action( 'enqueue_block_editor_assets', 'vk_blocks_register_block_post_list', 99 );

@@ -53,12 +53,6 @@ export default function SliderEdit(props) {
 		) {
 			setAttributes({ blockId: clientId });
 		}
-		// slidesPerView 互換設定
-		if (slidesPerView === undefined) {
-			setAttributes({
-				slidesPerView: 1,
-			});
-		}
 		// slidesPerViewMobile 互換設定
 		if (slidesPerViewMobile === undefined) {
 			setAttributes({
@@ -73,8 +67,20 @@ export default function SliderEdit(props) {
 		}
 		// slidesPerViewPC 互換設定
 		if (slidesPerViewPC === undefined) {
+			if (slidesPerView !== undefined) {
+				setAttributes({
+					slidesPerViewPC: slidesPerView,
+				});
+			} else {
+				setAttributes({
+					slidesPerViewPC: 1,
+				});
+			}
+		}
+		// slidesPerView 互換設定
+		if (slidesPerView === undefined) {
 			setAttributes({
-				slidesPerViewPC: slidesPerView,
+				slidesPerView: 1,
 			});
 		}
 		// slidesPerGroup 互換設定

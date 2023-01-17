@@ -38,7 +38,11 @@ export default function SliderHook( {el,attributes}) {
 	return (
 		<>
 			{el}
-			<style type="text/css">{cssTag}</style>
+			{(() => {
+				if (cssTag) {
+					return <style type="text/css">{cssTag}</style>;
+				}
+			})()}
 		</>
 	);
 }

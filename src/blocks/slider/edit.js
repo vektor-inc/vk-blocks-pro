@@ -35,9 +35,9 @@ export default function SliderEdit(props) {
 		effect,
 		speed,
 		slidesPerView,
-		slidesPerViewSm,
-		slidesPerViewMd,
-		slidesPerViewLg,
+		slidesPerViewMobile,
+		slidesPerViewTablet,
+		slidesPerViewPC,
 		slidesPerGroup,
 		navigationPosition,
 		blockId,
@@ -59,10 +59,22 @@ export default function SliderEdit(props) {
 				slidesPerView: 1,
 			});
 		}
-		// slidesPerViewSm 互換設定
-		if (slidesPerViewSm === undefined) {
+		// slidesPerViewMobile 互換設定
+		if (slidesPerViewMobile === undefined) {
 			setAttributes({
-				slidesPerViewSm: 1,
+				slidesPerViewMobile: 1,
+			});
+		}
+		// slidesPerViewTablet 互換設定
+		if (slidesPerViewTablet === undefined) {
+			setAttributes({
+				slidesPerViewTablet: 1,
+			});
+		}
+		// slidesPerViewPC 互換設定
+		if (slidesPerViewPC === undefined) {
+			setAttributes({
+				slidesPerViewPC: slidesPerView,
 			});
 		}
 		// slidesPerGroup 互換設定
@@ -111,9 +123,9 @@ export default function SliderEdit(props) {
 		loop,
 		effect,
 		speed,
-		slidesPerViewSm,
-		slidesPerViewMd,
-		slidesPerViewLg,
+		slidesPerViewMobile,
+		slidesPerViewTablet,
+		slidesPerViewPC,
 		slidesPerGroup,
 	};
 
@@ -130,11 +142,31 @@ export default function SliderEdit(props) {
 					id={`vk_slider-MultiImage`}
 				>
 					<TextControl
-						label={__('Images per View', 'vk-blocks')}
-						value={slidesPerView}
+						label={__('Images per View for Mobile', 'vk-blocks')}
+						value={slidesPerViewMobile}
 						onChange={(value) =>
 							setAttributes({
-								slidesPerView: parseInt(value, 10),
+								slidesPerViewMobile: parseInt(value, 10),
+							})
+						}
+						type={'number'}
+					/>
+					<TextControl
+						label={__('Images per View for Tablet', 'vk-blocks')}
+						value={slidesPerViewTablet}
+						onChange={(value) =>
+							setAttributes({
+								slidesPerViewTablet: parseInt(value, 10),
+							})
+						}
+						type={'number'}
+					/>
+					<TextControl
+						label={__('Images per View for PC', 'vk-blocks')}
+						value={slidesPerViewPC}
+						onChange={(value) =>
+							setAttributes({
+								slidesPerViewPC: parseInt(value, 10),
 							})
 						}
 						type={'number'}

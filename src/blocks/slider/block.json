@@ -58,15 +58,15 @@
 			"type": "number",
 			"default": 1
 		},
-		"slidesPerViewSm": {
+		"slidesPerViewMobile": {
 			"type": "number",
 			"default": 1
 		},
-		"slidesPerViewMd": {
+		"slidesPerViewTablet": {
 			"type": "number",
 			"default": 1
 		},
-		"slidesPerViewLg": {
+		"slidesPerViewPC": {
 			"type": "number",
 			"default": 1
 		},

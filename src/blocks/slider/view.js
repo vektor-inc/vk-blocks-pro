@@ -52,27 +52,25 @@ document.defaultView.addEventListener('load', function () {
 			}
 
 			if (attributes.effect !== 'fade') {
-				
-				if (attributes.slidesPerViewSm) {
-					SwiperSetting += `slidesPerView: ${attributes.slidesPerViewSm},`;					
+				if (attributes.slidesPerViewMobile) {
+					SwiperSetting += `slidesPerView: ${attributes.slidesPerViewMobile},`;
 				} else {
 					SwiperSetting += `slidesPerView: 1,`;
-
 				}
-				if (attributes.slidesPerViewMd || attributes.slidesPerViewLg ) {
+				if (attributes.slidesPerViewTablet || attributes.slidesPerViewPC) {
 					// Responsive breakpoints
 					SwiperSetting += `breakpoints: {`;
-					if ( attributes.slidesPerViewMd ) {
+					if (attributes.slidesPerViewTablet) {
 						SwiperSetting += `
 						576: {
-							slidesPerView: ${attributes.slidesPerViewMd}
+							slidesPerView: ${attributes.slidesPerViewTablet}
 							},
 						`;
 					}
-					if ( attributes.slidesPerViewMd ) {
+					if (attributes.slidesPerViewTablet) {
 						SwiperSetting += `
 						992: {
-							slidesPerView: ${attributes.slidesPerViewLg}
+							slidesPerView: ${attributes.slidesPerViewPC}
 						}
 						`;
 					}

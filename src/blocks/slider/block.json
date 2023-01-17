@@ -58,6 +58,18 @@
 			"type": "number",
 			"default": 1
 		},
+		"slidesPerViewSm": {
+			"type": "number",
+			"default": 1
+		},
+		"slidesPerViewMd": {
+			"type": "number",
+			"default": 1
+		},
+		"slidesPerViewLg": {
+			"type": "number",
+			"default": 1
+		},
 		"slidesPerGroup": {
 			"type": "number",
 			"default": 1

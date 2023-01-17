@@ -35,6 +35,9 @@ export default function SliderEdit(props) {
 		effect,
 		speed,
 		slidesPerView,
+		slidesPerViewSm,
+		slidesPerViewMd,
+		slidesPerViewLg,
 		slidesPerGroup,
 		navigationPosition,
 		blockId,
@@ -54,6 +57,12 @@ export default function SliderEdit(props) {
 		if (slidesPerView === undefined) {
 			setAttributes({
 				slidesPerView: 1,
+			});
+		}
+		// slidesPerViewSm 互換設定
+		if (slidesPerViewSm === undefined) {
+			setAttributes({
+				slidesPerViewSm: 1,
 			});
 		}
 		// slidesPerGroup 互換設定
@@ -102,7 +111,9 @@ export default function SliderEdit(props) {
 		loop,
 		effect,
 		speed,
-		slidesPerView,
+		slidesPerViewSm,
+		slidesPerViewMd,
+		slidesPerViewLg,
 		slidesPerGroup,
 	};
 

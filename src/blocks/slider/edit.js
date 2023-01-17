@@ -44,9 +44,11 @@ export default function SliderEdit(props) {
 	} = attributes;
 
 	useEffect(() => {
+		// clientId 互換設定
 		if (attributes.clientId !== undefined) {
 			setAttributes({ clientId: undefined });
 		}
+		// blockId 互換設定
 		if (
 			blockId === undefined ||
 			isParentReusableBlock(clientId) === false

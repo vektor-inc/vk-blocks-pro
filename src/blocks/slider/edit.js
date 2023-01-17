@@ -131,7 +131,6 @@ export default function SliderEdit(props) {
 		loop,
 		effect,
 		speed,
-		slidesPerView,
 		slidesPerViewMobile,
 		slidesPerViewTablet,
 		slidesPerViewPC,

@@ -270,7 +270,7 @@ add_action( 'init', 'vk_blocks_register_block_post_list', 99 );
 /**
  * 投稿タイプとタクソノミーを JS に渡す
  */
-function VK_blocks_post_list_set_data() {
+function vk_blocks_post_list_set_data() {
 
 	// キャッシュからデータを取得
 	$block_data = vk_blocks_post_list_get_block_data();

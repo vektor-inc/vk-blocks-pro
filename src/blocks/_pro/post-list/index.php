@@ -12,14 +12,6 @@
  */
 function vk_blocks_post_list_get_block_data() {
 
-	// キャッシュを取得
-	$transients = get_transient( 'vk_blocks_post_list_block_data' );
-
-	// キャッシュがあればそれを返す
-	if ( ! empty( $transients ) ) {
-		return $transients;
-	}
-
 	// Create $post_type_option ///////////////////////////
 	$the_post_types = get_post_types(
 		// Only public post types.
@@ -66,8 +58,6 @@ function vk_blocks_post_list_get_block_data() {
 		'post_type_option'      => $post_type_option,
 		'term_by_taxonomy_name' => $term_by_taxonomy_name,
 	);
-
-	set_transient( 'vk_blocks_post_list_block_data', $data, 60 * 60 * 24 );
 
 	return $data;
 }

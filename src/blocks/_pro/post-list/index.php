@@ -242,4 +242,4 @@ function vk_blocks_post_list_set_data() {
 		)
 	);
 }
-add_action( 'enqueue_block_editor_assets', 'vk_blocks_register_block_post_list' );
+add_action( 'enqueue_block_editor_assets', 'vk_blocks_post_list_set_data' );

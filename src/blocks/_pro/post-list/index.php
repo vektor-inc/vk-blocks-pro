@@ -63,40 +63,6 @@ function vk_blocks_post_list_get_block_data() {
 }
 
 /**
- * 編集画面を開いた時点で条件付きでキャッシュをクリア
- */
-function vk_blocks_post_list_editor_refresh_block_data() {
-
-	// オプションを取得
-	$options = VK_Blocks_Options::get_options();
-
-	// キャッシュの有効時間（秒）
-	$cache_time = 60 * 60;
-
-	// 最後にキャッシュされた時間を取得
-	$last_cached = ! empty( $options['last-block-data-cached'] ) ? $options['last-block-data-cached'] : '1970-01-01 00:00:00';
-
-	// 現在の時刻を取得
-	$current_time = gmdate( 'Y-m-d H:i:s' );
-
-	// 差分を取得・キャッシュが初めてならキャッシュの有効時間が経過したものとみなす
-	$diff = strtotime( $current_time ) - strtotime( $last_cached );
-
-	// フラグがなければパターンのデータのキャッシュをパージ
-	if ( $diff > $cache_time ) {
-		// パターンのデータのキャッシュをパージ
-		delete_transient( 'vk_blocks_post_list_block_data' );
-		// 最後にキャッシュされた時間を更新
-		$options['last-block-data-cached'] = $current_time;
-		// 最低１時間はキャッシュを保持
-		update_option( 'vk_blocks_options', $options );
-	}
-}
-add_action( 'load-post.php', 'vk_blocks_post_list_editor_refresh_block_data' );
-add_action( 'load-post-new.php', 'vk_blocks_post_list_editor_refresh_block_data' );
-add_action( 'load-site-editor.php', 'vk_blocks_post_list_editor_refresh_block_data' );
-
-/**
  * Post list render callback
  *
  * @param array $attributes Block attributes.
@@ -262,7 +228,7 @@ add_action( 'init', 'vk_blocks_register_block_post_list', 99 );
  */
 function vk_blocks_post_list_set_data() {
 
-	// キャッシュからデータを取得
+	// データを取得
 	$block_data = vk_blocks_post_list_get_block_data();
 
 	// PHPで作った投稿タイプとタクソノミー情報をjsに渡す ///////////////////////////

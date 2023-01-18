@@ -263,7 +263,6 @@ class VK_Blocks_Options {
 			),
 			'disable_block_lists'         => $activation ? self::get_deprecated_lists() : array(),
 			'custom_block_style_lists'    => array(),
-			'last-block-data-cached'      => '1970-01-01 00:00:00',
 		);
 		return $default;
 	}

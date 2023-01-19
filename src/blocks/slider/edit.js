@@ -181,31 +181,37 @@ export default function SliderEdit(props) {
 					<TextControl
 						label={__('Images per View for Mobile', 'vk-blocks')}
 						value={slidesPerViewMobile}
-						onChange={(value) =>
-							setAttributes({
-								slidesPerViewMobile: parseInt(value, 10),
-							})
-						}
+						onChange={(value) => {
+							if (parseInt(value, 10)) {
+								setAttributes({
+									slidesPerViewMobile: parseInt(value, 10),
+								});
+							}
+						}}
 						type={'number'}
 					/>
 					<TextControl
 						label={__('Images per View for Tablet', 'vk-blocks')}
 						value={slidesPerViewTablet}
-						onChange={(value) =>
-							setAttributes({
-								slidesPerViewTablet: parseInt(value, 10),
-							})
-						}
+						onChange={(value) => {
+							if (parseInt(value, 10)) {
+								setAttributes({
+									slidesPerViewTablet: parseInt(value, 10),
+								});
+							}
+						}}
 						type={'number'}
 					/>
 					<TextControl
 						label={__('Images per View for PC', 'vk-blocks')}
 						value={slidesPerViewPC}
-						onChange={(value) =>
-							setAttributes({
-								slidesPerViewPC: parseInt(value, 10),
-							})
-						}
+						onChange={(value) => {
+							if (parseInt(value, 10)) {
+								setAttributes({
+									slidesPerViewPC: parseInt(value, 10),
+								});
+							}
+						}}
 						type={'number'}
 					/>
 				</BaseControl>
@@ -216,31 +222,37 @@ export default function SliderEdit(props) {
 					<TextControl
 						label={__('Image Slides for Mobile', 'vk-blocks')}
 						value={slidesPerGroupMobile}
-						onChange={(value) =>
-							setAttributes({
-								slidesPerGroupMobile: parseInt(value, 10),
-							})
-						}
+						onChange={(value) => {
+							if (parseInt(value, 10)) {
+								setAttributes({
+									slidesPerGroupMobile: parseInt(value, 10),
+								});
+							}
+						}}
 						type={'number'}
 					/>
 					<TextControl
 						label={__('Image Slides for Tablet', 'vk-blocks')}
 						value={slidesPerGroupTablet}
-						onChange={(value) =>
-							setAttributes({
-								slidesPerGroupTablet: parseInt(value, 10),
-							})
-						}
+						onChange={(value) => {
+							if (parseInt(value, 10)) {
+								setAttributes({
+									slidesPerGroupTablet: parseInt(value, 10),
+								});
+							}
+						}}
 						type={'number'}
 					/>
 					<TextControl
 						label={__('Image Slides for PC', 'vk-blocks')}
 						value={slidesPerGroupPC}
-						onChange={(value) =>
-							setAttributes({
-								slidesPerGroupPC: parseInt(value, 10),
-							})
-						}
+						onChange={(value) => {
+							if (parseInt(value, 10)) {
+								setAttributes({
+									slidesPerGroupPC: parseInt(value, 10),
+								});
+							}
+						}}
 						type={'number'}
 					/>
 				</BaseControl>

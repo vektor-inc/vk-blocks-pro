@@ -39,6 +39,9 @@ export default function SliderEdit(props) {
 		slidesPerViewTablet,
 		slidesPerViewPC,
 		slidesPerGroup,
+		slidesPerGroupMobile,
+		slidesPerGroupTablet,
+		slidesPerGroupPC,
 		navigationPosition,
 		blockId,
 	} = attributes;
@@ -84,6 +87,30 @@ export default function SliderEdit(props) {
 			setAttributes({
 				slidesPerView: 1,
 			});
+		}
+		// slidesPerGroupMobile 互換設定
+		if (slidesPerGroupMobile === undefined) {
+			setAttributes({
+				slidesPerGroupMobile: 1,
+			});
+		}
+		// slidesPerGroupTablet 互換設定
+		if (slidesPerGroupTablet === undefined) {
+			setAttributes({
+				slidesPerGroupTablet: 1,
+			});
+		}
+		// slidesPerGroupPC 互換設定
+		if (slidesPerGroupPC === undefined) {
+			if (slidesPerGroup !== undefined) {
+				setAttributes({
+					slidesPerGroupPC: slidesPerGroup,
+				});
+			} else {
+				setAttributes({
+					slidesPerGroupPC: 1,
+				});
+			}
 		}
 		// slidesPerGroup 互換設定
 		if (slidesPerGroup === undefined) {
@@ -134,7 +161,9 @@ export default function SliderEdit(props) {
 		slidesPerViewMobile,
 		slidesPerViewTablet,
 		slidesPerViewPC,
-		slidesPerGroup,
+		slidesPerGroupMobile,
+		slidesPerGroupTablet,
+		slidesPerGroupPC,
 	};
 
 	// 複数枚表示設定
@@ -185,10 +214,31 @@ export default function SliderEdit(props) {
 					id={`vk_slider-MultiImage`}
 				>
 					<TextControl
-						value={slidesPerGroup}
+						label={__('Image Slides for Mobile', 'vk-blocks')}
+						value={slidesPerGroupMobile}
 						onChange={(value) =>
 							setAttributes({
-								slidesPerGroup: parseInt(value, 10),
+								slidesPerGroupMobile: parseInt(value, 10),
+							})
+						}
+						type={'number'}
+					/>
+					<TextControl
+						label={__('Image Slides for Tablet', 'vk-blocks')}
+						value={slidesPerGroupTablet}
+						onChange={(value) =>
+							setAttributes({
+								slidesPerGroupTablet: parseInt(value, 10),
+							})
+						}
+						type={'number'}
+					/>
+					<TextControl
+						label={__('Image Slides for PC', 'vk-blocks')}
+						value={slidesPerGroupPC}
+						onChange={(value) =>
+							setAttributes({
+								slidesPerGroupPC: parseInt(value, 10),
 							})
 						}
 						type={'number'}

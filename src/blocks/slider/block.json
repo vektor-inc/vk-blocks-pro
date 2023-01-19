@@ -74,6 +74,18 @@
 			"type": "number",
 			"default": 1
 		},
+		"slidesPerGroupMobile": {
+			"type": "number",
+			"default": 1
+		},
+		"slidesPerGroupTablet": {
+			"type": "number",
+			"default": 1
+		},
+		"slidesPerGroupPC": {
+			"type": "number",
+			"default": 1
+		},
 		"navigationPosition": {
 			"type": "string",
 			"default": "mobile-bottom"

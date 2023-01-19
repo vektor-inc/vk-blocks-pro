@@ -54,10 +54,35 @@ document.defaultView.addEventListener('load', function () {
 			if (attributes.effect !== 'fade') {
 				if (attributes.slidesPerViewMobile) {
 					SwiperSetting += `slidesPerView: ${attributes.slidesPerViewMobile},`;
+					if (attributes.slidesPerGroupMobile) {
+						if (
+							attributes.slidesPerGroupMobile <=
+							attributes.slidesPerViewMobile
+						) {
+							SwiperSetting += `slidesPerGroup: ${attributes.slidesPerGroupMobile},`;
+						} else {
+							SwiperSetting += `slidesPerGroup: ${attributes.slidesPerViewMobile},`;
+						}
+					} else {
+						SwiperSetting += `slidesPerGroup: 1,`;
+					}
 				} else if (attributes.slidesPerView) {
 					SwiperSetting += `slidesPerView: ${attributes.slidesPerView},`;
+					if (attributes.slidesPerGroup) {
+						if (
+							attributes.slidesPerGroup <=
+							attributes.slidesPerView
+						) {
+							SwiperSetting += `slidesPerGroup: ${attributes.slidesPerGroup},`;
+						} else {
+							SwiperSetting += `slidesPerGroup: ${attributes.slidesPerView},`;
+						}
+					} else {
+						SwiperSetting += `slidesPerGroup: 1,`;
+					}
 				} else {
 					SwiperSetting += `slidesPerView: 1,`;
+					SwiperSetting += `slidesPerGroup: 1,`;
 				}
 				if (
 					attributes.slidesPerViewTablet ||
@@ -66,25 +91,36 @@ document.defaultView.addEventListener('load', function () {
 					// Responsive breakpoints
 					SwiperSetting += `breakpoints: {`;
 					if (attributes.slidesPerViewTablet) {
-						SwiperSetting += `
-						576: {
-							slidesPerView: ${attributes.slidesPerViewTablet}
-						},
-						`;
+						SwiperSetting += `576: {`;
+						SwiperSetting += `slidesPerView: ${attributes.slidesPerViewTablet},`;
+						if (attributes.slidesPerGroupTablet) {
+							if (
+								attributes.slidesPerGroupTablet <=
+								attributes.slidesPerViewTablet
+							) {
+								SwiperSetting += `slidesPerGroup: ${attributes.slidesPerGroupTablet},`;
+							} else {
+								SwiperSetting += `slidesPerGroup: ${attributes.slidesPerViewTablet},`;
+							}
+						}
+						SwiperSetting += `},`;
 					}
 					if (attributes.slidesPerViewPC) {
-						SwiperSetting += `
-						992: {
-							slidesPerView: ${attributes.slidesPerViewPC}
+						SwiperSetting += `992: {`;
+						SwiperSetting += `slidesPerView: ${attributes.slidesPerViewPC},`;
+						if (attributes.slidesPerGroupPC) {
+							if (
+								attributes.slidesPerGroupPC <=
+								attributes.slidesPerViewPC
+							) {
+								SwiperSetting += `slidesPerGroup: ${attributes.slidesPerGroupPC},`;
+							} else {
+								SwiperSetting += `slidesPerGroup: ${attributes.slidesPerViewPC},`;
+							}
 						}
-						`;
+						SwiperSetting += `},`;
 					}
 					SwiperSetting += `},`;
-				}
-				if (attributes.slidesPerGroup) {
-					SwiperSetting += `
-				slidesPerGroup: ${attributes.slidesPerGroup},
-					`;
 				}
 			}
 

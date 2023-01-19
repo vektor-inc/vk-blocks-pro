@@ -66,7 +66,7 @@ e.g.
 
 [ Add Function ][ Custom Block Style Setting (Pro) ] Add Custom Block Style Setting extension in admin.
 [ Add Function ][ Slider ] Add Slider per view Setting for Mobile, Tablet, PC.
-
+[ Bug fix ][ Step(Pro) / Time Line(Pro) ] Fix item content overflow hidden
 
 = 1.48.1 =
 [ Bug fix ][ Slider ] Set default value for unset time and speed.

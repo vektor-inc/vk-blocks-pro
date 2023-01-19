@@ -63,6 +63,7 @@ e.g.
 
 
 == Changelog ==
+[ Specification Change ][ Post List ( Pro ) ] Lightweight data acquisition process
 
 [ Add Function ][ Custom Block Style Setting (Pro) ] Add Custom Block Style Setting extension in admin.
 [ Bug fix ][ Step(Pro) / Time Line(Pro) ] Fix item content overflow hidden

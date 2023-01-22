@@ -178,6 +178,26 @@ class VK_Blocks_Options {
 			'disable_block_lists'         => array(
 				'type' => 'array',
 			),
+			'custom_block_style_lists'    => array(
+				'type'  => 'array',
+				'items' => array(
+					'type'       => 'object',
+					'properties' => array(
+						'block_name'            => array(
+							'type' => 'string',
+						),
+						'property_name'         => array(
+							'type' => 'string',
+						),
+						'property_label'        => array(
+							'type' => 'string',
+						),
+						'property_inline_style' => array(
+							'type' => 'string',
+						),
+					),
+				),
+			),
 		);
 		return $properties;
 	}
@@ -242,6 +262,7 @@ class VK_Blocks_Options {
 				),
 			),
 			'disable_block_lists'         => $activation ? self::get_deprecated_lists() : array(),
+			'custom_block_style_lists'    => array(),
 		);
 		return $default;
 	}

@@ -4,7 +4,7 @@ Donate link:
 Tags: Gutenberg,FAQ,alert
 Requires at least: 5.9
 Tested up to: 6.1.0
-Stable tag: 1.48.0.2
+Stable tag: 1.48.1.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,9 +63,10 @@ e.g.
 
 
 == Changelog ==
-[ Specification Change ][ Post List ( Pro ) ] Lightweight data acquisition process
 
+= 1.49.0 =
 [ Add Function ][ Custom Block Style Setting (Pro) ] Add Custom Block Style Setting extension in admin.
+[ Specification Change ][ Post List ( Pro ) ] Lightweight data acquisition process
 [ Bug fix ][ Step(Pro) / Time Line(Pro) ] Fix item content overflow hidden
 
 = 1.48.1 =
